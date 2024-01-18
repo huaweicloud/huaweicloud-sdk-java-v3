@@ -67,7 +67,7 @@ public class DebugCaseResult {
     }
 
     /**
-     * body
+     * 响应内容
      * @return body
      */
     public String getBody() {
@@ -84,7 +84,7 @@ public class DebugCaseResult {
     }
 
     /**
-     * errorReason
+     * 错误原因
      * @return errorReason
      */
     public String getErrorReason() {
@@ -127,7 +127,7 @@ public class DebugCaseResult {
     }
 
     /**
-     * name
+     * 请求名称
      * @return name
      */
     public String getName() {
@@ -144,7 +144,7 @@ public class DebugCaseResult {
     }
 
     /**
-     * responseTime
+     * 响应时间
      * minimum: 0
      * maximum: 1024
      * @return responseTime
@@ -163,7 +163,7 @@ public class DebugCaseResult {
     }
 
     /**
-     * result
+     * 调试结果（1：成功；）
      * minimum: 0
      * maximum: 2147483647
      * @return result
@@ -182,7 +182,7 @@ public class DebugCaseResult {
     }
 
     /**
-     * returnBody
+     * 响应正文
      * @return returnBody
      */
     public String getReturnBody() {
@@ -225,7 +225,7 @@ public class DebugCaseResult {
     }
 
     /**
-     * statusCode
+     * 响应状态码
      * @return statusCode
      */
     public String getStatusCode() {
@@ -242,7 +242,7 @@ public class DebugCaseResult {
     }
 
     /**
-     * url
+     * 请求地址
      * @return url
      */
     public String getUrl() {

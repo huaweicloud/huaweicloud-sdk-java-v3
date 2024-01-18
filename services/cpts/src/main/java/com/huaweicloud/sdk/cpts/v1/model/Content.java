@@ -27,7 +27,7 @@ public class Content {
     }
 
     /**
-     * content_type
+     * 用例卡片类型（1：思考时间；2：报文；3：检查点；4：变量提取）
      * minimum: 0
      * maximum: 2147483647
      * @return contentType

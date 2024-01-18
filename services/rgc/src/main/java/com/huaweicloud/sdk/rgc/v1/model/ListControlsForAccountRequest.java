@@ -16,11 +16,6 @@ public class ListControlsForAccountRequest {
     private String managedAccountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-
-    private String xSecurityToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -36,7 +31,7 @@ public class ListControlsForAccountRequest {
     }
 
     /**
-     * 账号ID。
+     * 纳管账号ID。
      * @return managedAccountId
      */
     public String getManagedAccountId() {
@@ -45,25 +40,6 @@ public class ListControlsForAccountRequest {
 
     public void setManagedAccountId(String managedAccountId) {
         this.managedAccountId = managedAccountId;
-    }
-
-    public ListControlsForAccountRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-        return this;
-    }
-
-    /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
-    }
-
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
     }
 
     public ListControlsForAccountRequest withLimit(Integer limit) {
@@ -111,14 +87,13 @@ public class ListControlsForAccountRequest {
             return false;
         }
         ListControlsForAccountRequest that = (ListControlsForAccountRequest) obj;
-        return Objects.equals(this.managedAccountId, that.managedAccountId)
-            && Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.limit, that.limit)
+        return Objects.equals(this.managedAccountId, that.managedAccountId) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(managedAccountId, xSecurityToken, limit, marker);
+        return Objects.hash(managedAccountId, limit, marker);
     }
 
     @Override
@@ -126,7 +101,6 @@ public class ListControlsForAccountRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListControlsForAccountRequest {\n");
         sb.append("    managedAccountId: ").append(toIndentedString(managedAccountId)).append("\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");

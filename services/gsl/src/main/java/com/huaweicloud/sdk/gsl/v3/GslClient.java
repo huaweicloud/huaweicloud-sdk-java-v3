@@ -90,7 +90,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSetAttributesRequest 请求对象
+     * @param request BatchSetAttributesRequest 请求对象
      * @return BatchSetAttributesResponse
      */
     public BatchSetAttributesResponse batchSetAttributes(BatchSetAttributesRequest request) {
@@ -104,13 +104,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSetAttributesRequest 请求对象
+     * @param request BatchSetAttributesRequest 请求对象
      * @return SyncInvoker<BatchSetAttributesRequest, BatchSetAttributesResponse>
      */
     public SyncInvoker<BatchSetAttributesRequest, BatchSetAttributesResponse> batchSetAttributesInvoker(
         BatchSetAttributesRequest request) {
-        return new SyncInvoker<BatchSetAttributesRequest, BatchSetAttributesResponse>(request,
-            GslMeta.batchSetAttributes, hcClient);
+        return new SyncInvoker<>(request, GslMeta.batchSetAttributes, hcClient);
     }
 
     /**
@@ -120,7 +119,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAttributeRequest 请求对象
+     * @param request CreateAttributeRequest 请求对象
      * @return CreateAttributeResponse
      */
     public CreateAttributeResponse createAttribute(CreateAttributeRequest request) {
@@ -134,13 +133,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAttributeRequest 请求对象
+     * @param request CreateAttributeRequest 请求对象
      * @return SyncInvoker<CreateAttributeRequest, CreateAttributeResponse>
      */
     public SyncInvoker<CreateAttributeRequest, CreateAttributeResponse> createAttributeInvoker(
         CreateAttributeRequest request) {
-        return new SyncInvoker<CreateAttributeRequest, CreateAttributeResponse>(request, GslMeta.createAttribute,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.createAttribute, hcClient);
     }
 
     /**
@@ -150,7 +148,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableAttributeRequest 请求对象
+     * @param request DisableAttributeRequest 请求对象
      * @return DisableAttributeResponse
      */
     public DisableAttributeResponse disableAttribute(DisableAttributeRequest request) {
@@ -164,13 +162,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableAttributeRequest 请求对象
+     * @param request DisableAttributeRequest 请求对象
      * @return SyncInvoker<DisableAttributeRequest, DisableAttributeResponse>
      */
     public SyncInvoker<DisableAttributeRequest, DisableAttributeResponse> disableAttributeInvoker(
         DisableAttributeRequest request) {
-        return new SyncInvoker<DisableAttributeRequest, DisableAttributeResponse>(request, GslMeta.disableAttribute,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.disableAttribute, hcClient);
     }
 
     /**
@@ -180,7 +177,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableAttributeRequest 请求对象
+     * @param request EnableAttributeRequest 请求对象
      * @return EnableAttributeResponse
      */
     public EnableAttributeResponse enableAttribute(EnableAttributeRequest request) {
@@ -194,13 +191,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableAttributeRequest 请求对象
+     * @param request EnableAttributeRequest 请求对象
      * @return SyncInvoker<EnableAttributeRequest, EnableAttributeResponse>
      */
     public SyncInvoker<EnableAttributeRequest, EnableAttributeResponse> enableAttributeInvoker(
         EnableAttributeRequest request) {
-        return new SyncInvoker<EnableAttributeRequest, EnableAttributeResponse>(request, GslMeta.enableAttribute,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.enableAttribute, hcClient);
     }
 
     /**
@@ -210,7 +206,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttributesRequest 请求对象
+     * @param request ListAttributesRequest 请求对象
      * @return ListAttributesResponse
      */
     public ListAttributesResponse listAttributes(ListAttributesRequest request) {
@@ -224,13 +220,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttributesRequest 请求对象
+     * @param request ListAttributesRequest 请求对象
      * @return SyncInvoker<ListAttributesRequest, ListAttributesResponse>
      */
     public SyncInvoker<ListAttributesRequest, ListAttributesResponse> listAttributesInvoker(
         ListAttributesRequest request) {
-        return new SyncInvoker<ListAttributesRequest, ListAttributesResponse>(request, GslMeta.listAttributes,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.listAttributes, hcClient);
     }
 
     /**
@@ -240,7 +235,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAttributeRequest 请求对象
+     * @param request UpdateAttributeRequest 请求对象
      * @return UpdateAttributeResponse
      */
     public UpdateAttributeResponse updateAttribute(UpdateAttributeRequest request) {
@@ -254,13 +249,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAttributeRequest 请求对象
+     * @param request UpdateAttributeRequest 请求对象
      * @return SyncInvoker<UpdateAttributeRequest, UpdateAttributeResponse>
      */
     public SyncInvoker<UpdateAttributeRequest, UpdateAttributeResponse> updateAttributeInvoker(
         UpdateAttributeRequest request) {
-        return new SyncInvoker<UpdateAttributeRequest, UpdateAttributeResponse>(request, GslMeta.updateAttribute,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.updateAttribute, hcClient);
     }
 
     /**
@@ -270,7 +264,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackPoolMembersRequest 请求对象
+     * @param request ListBackPoolMembersRequest 请求对象
      * @return ListBackPoolMembersResponse
      */
     public ListBackPoolMembersResponse listBackPoolMembers(ListBackPoolMembersRequest request) {
@@ -284,13 +278,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackPoolMembersRequest 请求对象
+     * @param request ListBackPoolMembersRequest 请求对象
      * @return SyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>
      */
     public SyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse> listBackPoolMembersInvoker(
         ListBackPoolMembersRequest request) {
-        return new SyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>(request,
-            GslMeta.listBackPoolMembers, hcClient);
+        return new SyncInvoker<>(request, GslMeta.listBackPoolMembers, hcClient);
     }
 
     /**
@@ -300,7 +293,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackPoolsRequest 请求对象
+     * @param request ListBackPoolsRequest 请求对象
      * @return ListBackPoolsResponse
      */
     public ListBackPoolsResponse listBackPools(ListBackPoolsRequest request) {
@@ -314,11 +307,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackPoolsRequest 请求对象
+     * @param request ListBackPoolsRequest 请求对象
      * @return SyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>
      */
     public SyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse> listBackPoolsInvoker(ListBackPoolsRequest request) {
-        return new SyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>(request, GslMeta.listBackPools, hcClient);
+        return new SyncInvoker<>(request, GslMeta.listBackPools, hcClient);
     }
 
     /**
@@ -328,7 +321,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProPricePlansRequest 请求对象
+     * @param request ListProPricePlansRequest 请求对象
      * @return ListProPricePlansResponse
      */
     public ListProPricePlansResponse listProPricePlans(ListProPricePlansRequest request) {
@@ -342,13 +335,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProPricePlansRequest 请求对象
+     * @param request ListProPricePlansRequest 请求对象
      * @return SyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse>
      */
     public SyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse> listProPricePlansInvoker(
         ListProPricePlansRequest request) {
-        return new SyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse>(request, GslMeta.listProPricePlans,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.listProPricePlans, hcClient);
     }
 
     /**
@@ -358,7 +350,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRealNameRequest 请求对象
+     * @param request DeleteRealNameRequest 请求对象
      * @return DeleteRealNameResponse
      */
     public DeleteRealNameResponse deleteRealName(DeleteRealNameRequest request) {
@@ -372,13 +364,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRealNameRequest 请求对象
+     * @param request DeleteRealNameRequest 请求对象
      * @return SyncInvoker<DeleteRealNameRequest, DeleteRealNameResponse>
      */
     public SyncInvoker<DeleteRealNameRequest, DeleteRealNameResponse> deleteRealNameInvoker(
         DeleteRealNameRequest request) {
-        return new SyncInvoker<DeleteRealNameRequest, DeleteRealNameResponse>(request, GslMeta.deleteRealName,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.deleteRealName, hcClient);
     }
 
     /**
@@ -388,7 +379,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableSimCardRequest 请求对象
+     * @param request EnableSimCardRequest 请求对象
      * @return EnableSimCardResponse
      */
     public EnableSimCardResponse enableSimCard(EnableSimCardRequest request) {
@@ -402,11 +393,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableSimCardRequest 请求对象
+     * @param request EnableSimCardRequest 请求对象
      * @return SyncInvoker<EnableSimCardRequest, EnableSimCardResponse>
      */
     public SyncInvoker<EnableSimCardRequest, EnableSimCardResponse> enableSimCardInvoker(EnableSimCardRequest request) {
-        return new SyncInvoker<EnableSimCardRequest, EnableSimCardResponse>(request, GslMeta.enableSimCard, hcClient);
+        return new SyncInvoker<>(request, GslMeta.enableSimCard, hcClient);
     }
 
     /**
@@ -416,7 +407,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimCardsRequest 请求对象
+     * @param request ListSimCardsRequest 请求对象
      * @return ListSimCardsResponse
      */
     public ListSimCardsResponse listSimCards(ListSimCardsRequest request) {
@@ -430,11 +421,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimCardsRequest 请求对象
+     * @param request ListSimCardsRequest 请求对象
      * @return SyncInvoker<ListSimCardsRequest, ListSimCardsResponse>
      */
     public SyncInvoker<ListSimCardsRequest, ListSimCardsResponse> listSimCardsInvoker(ListSimCardsRequest request) {
-        return new SyncInvoker<ListSimCardsRequest, ListSimCardsResponse>(request, GslMeta.listSimCards, hcClient);
+        return new SyncInvoker<>(request, GslMeta.listSimCards, hcClient);
     }
 
     /**
@@ -444,7 +435,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterImeiRequest 请求对象
+     * @param request RegisterImeiRequest 请求对象
      * @return RegisterImeiResponse
      */
     public RegisterImeiResponse registerImei(RegisterImeiRequest request) {
@@ -458,11 +449,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterImeiRequest 请求对象
+     * @param request RegisterImeiRequest 请求对象
      * @return SyncInvoker<RegisterImeiRequest, RegisterImeiResponse>
      */
     public SyncInvoker<RegisterImeiRequest, RegisterImeiResponse> registerImeiInvoker(RegisterImeiRequest request) {
-        return new SyncInvoker<RegisterImeiRequest, RegisterImeiResponse>(request, GslMeta.registerImei, hcClient);
+        return new SyncInvoker<>(request, GslMeta.registerImei, hcClient);
     }
 
     /**
@@ -472,7 +463,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetSimCardRequest 请求对象
+     * @param request ResetSimCardRequest 请求对象
      * @return ResetSimCardResponse
      */
     public ResetSimCardResponse resetSimCard(ResetSimCardRequest request) {
@@ -486,11 +477,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetSimCardRequest 请求对象
+     * @param request ResetSimCardRequest 请求对象
      * @return SyncInvoker<ResetSimCardRequest, ResetSimCardResponse>
      */
     public SyncInvoker<ResetSimCardRequest, ResetSimCardResponse> resetSimCardInvoker(ResetSimCardRequest request) {
-        return new SyncInvoker<ResetSimCardRequest, ResetSimCardResponse>(request, GslMeta.resetSimCard, hcClient);
+        return new SyncInvoker<>(request, GslMeta.resetSimCard, hcClient);
     }
 
     /**
@@ -500,7 +491,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetExceedCutNetRequest 请求对象
+     * @param request SetExceedCutNetRequest 请求对象
      * @return SetExceedCutNetResponse
      */
     public SetExceedCutNetResponse setExceedCutNet(SetExceedCutNetRequest request) {
@@ -514,13 +505,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetExceedCutNetRequest 请求对象
+     * @param request SetExceedCutNetRequest 请求对象
      * @return SyncInvoker<SetExceedCutNetRequest, SetExceedCutNetResponse>
      */
     public SyncInvoker<SetExceedCutNetRequest, SetExceedCutNetResponse> setExceedCutNetInvoker(
         SetExceedCutNetRequest request) {
-        return new SyncInvoker<SetExceedCutNetRequest, SetExceedCutNetResponse>(request, GslMeta.setExceedCutNet,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.setExceedCutNet, hcClient);
     }
 
     /**
@@ -530,7 +520,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetSpeedValueRequest 请求对象
+     * @param request SetSpeedValueRequest 请求对象
      * @return SetSpeedValueResponse
      */
     public SetSpeedValueResponse setSpeedValue(SetSpeedValueRequest request) {
@@ -544,11 +534,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetSpeedValueRequest 请求对象
+     * @param request SetSpeedValueRequest 请求对象
      * @return SyncInvoker<SetSpeedValueRequest, SetSpeedValueResponse>
      */
     public SyncInvoker<SetSpeedValueRequest, SetSpeedValueResponse> setSpeedValueInvoker(SetSpeedValueRequest request) {
-        return new SyncInvoker<SetSpeedValueRequest, SetSpeedValueResponse>(request, GslMeta.setSpeedValue, hcClient);
+        return new SyncInvoker<>(request, GslMeta.setSpeedValue, hcClient);
     }
 
     /**
@@ -558,7 +548,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMonthUsagesRequest 请求对象
+     * @param request ShowMonthUsagesRequest 请求对象
      * @return ShowMonthUsagesResponse
      */
     public ShowMonthUsagesResponse showMonthUsages(ShowMonthUsagesRequest request) {
@@ -572,13 +562,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMonthUsagesRequest 请求对象
+     * @param request ShowMonthUsagesRequest 请求对象
      * @return SyncInvoker<ShowMonthUsagesRequest, ShowMonthUsagesResponse>
      */
     public SyncInvoker<ShowMonthUsagesRequest, ShowMonthUsagesResponse> showMonthUsagesInvoker(
         ShowMonthUsagesRequest request) {
-        return new SyncInvoker<ShowMonthUsagesRequest, ShowMonthUsagesResponse>(request, GslMeta.showMonthUsages,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.showMonthUsages, hcClient);
     }
 
     /**
@@ -588,7 +577,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealNamedRequest 请求对象
+     * @param request ShowRealNamedRequest 请求对象
      * @return ShowRealNamedResponse
      */
     public ShowRealNamedResponse showRealNamed(ShowRealNamedRequest request) {
@@ -602,11 +591,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealNamedRequest 请求对象
+     * @param request ShowRealNamedRequest 请求对象
      * @return SyncInvoker<ShowRealNamedRequest, ShowRealNamedResponse>
      */
     public SyncInvoker<ShowRealNamedRequest, ShowRealNamedResponse> showRealNamedInvoker(ShowRealNamedRequest request) {
-        return new SyncInvoker<ShowRealNamedRequest, ShowRealNamedResponse>(request, GslMeta.showRealNamed, hcClient);
+        return new SyncInvoker<>(request, GslMeta.showRealNamed, hcClient);
     }
 
     /**
@@ -616,7 +605,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSimCardRequest 请求对象
+     * @param request ShowSimCardRequest 请求对象
      * @return ShowSimCardResponse
      */
     public ShowSimCardResponse showSimCard(ShowSimCardRequest request) {
@@ -630,11 +619,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSimCardRequest 请求对象
+     * @param request ShowSimCardRequest 请求对象
      * @return SyncInvoker<ShowSimCardRequest, ShowSimCardResponse>
      */
     public SyncInvoker<ShowSimCardRequest, ShowSimCardResponse> showSimCardInvoker(ShowSimCardRequest request) {
-        return new SyncInvoker<ShowSimCardRequest, ShowSimCardResponse>(request, GslMeta.showSimCard, hcClient);
+        return new SyncInvoker<>(request, GslMeta.showSimCard, hcClient);
     }
 
     /**
@@ -644,7 +633,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartStopNetRequest 请求对象
+     * @param request StartStopNetRequest 请求对象
      * @return StartStopNetResponse
      */
     public StartStopNetResponse startStopNet(StartStopNetRequest request) {
@@ -658,11 +647,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartStopNetRequest 请求对象
+     * @param request StartStopNetRequest 请求对象
      * @return SyncInvoker<StartStopNetRequest, StartStopNetResponse>
      */
     public SyncInvoker<StartStopNetRequest, StartStopNetResponse> startStopNetInvoker(StartStopNetRequest request) {
-        return new SyncInvoker<StartStopNetRequest, StartStopNetResponse>(request, GslMeta.startStopNet, hcClient);
+        return new SyncInvoker<>(request, GslMeta.startStopNet, hcClient);
     }
 
     /**
@@ -672,7 +661,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopSimCardRequest 请求对象
+     * @param request StopSimCardRequest 请求对象
      * @return StopSimCardResponse
      */
     public StopSimCardResponse stopSimCard(StopSimCardRequest request) {
@@ -686,11 +675,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopSimCardRequest 请求对象
+     * @param request StopSimCardRequest 请求对象
      * @return SyncInvoker<StopSimCardRequest, StopSimCardResponse>
      */
     public SyncInvoker<StopSimCardRequest, StopSimCardResponse> stopSimCardInvoker(StopSimCardRequest request) {
-        return new SyncInvoker<StopSimCardRequest, StopSimCardResponse>(request, GslMeta.stopSimCard, hcClient);
+        return new SyncInvoker<>(request, GslMeta.stopSimCard, hcClient);
     }
 
     /**
@@ -700,7 +689,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPoolMembersRequest 请求对象
+     * @param request ListSimPoolMembersRequest 请求对象
      * @return ListSimPoolMembersResponse
      */
     public ListSimPoolMembersResponse listSimPoolMembers(ListSimPoolMembersRequest request) {
@@ -714,13 +703,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPoolMembersRequest 请求对象
+     * @param request ListSimPoolMembersRequest 请求对象
      * @return SyncInvoker<ListSimPoolMembersRequest, ListSimPoolMembersResponse>
      */
     public SyncInvoker<ListSimPoolMembersRequest, ListSimPoolMembersResponse> listSimPoolMembersInvoker(
         ListSimPoolMembersRequest request) {
-        return new SyncInvoker<ListSimPoolMembersRequest, ListSimPoolMembersResponse>(request,
-            GslMeta.listSimPoolMembers, hcClient);
+        return new SyncInvoker<>(request, GslMeta.listSimPoolMembers, hcClient);
     }
 
     /**
@@ -730,7 +718,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPoolsRequest 请求对象
+     * @param request ListSimPoolsRequest 请求对象
      * @return ListSimPoolsResponse
      */
     public ListSimPoolsResponse listSimPools(ListSimPoolsRequest request) {
@@ -744,11 +732,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPoolsRequest 请求对象
+     * @param request ListSimPoolsRequest 请求对象
      * @return SyncInvoker<ListSimPoolsRequest, ListSimPoolsResponse>
      */
     public SyncInvoker<ListSimPoolsRequest, ListSimPoolsResponse> listSimPoolsInvoker(ListSimPoolsRequest request) {
-        return new SyncInvoker<ListSimPoolsRequest, ListSimPoolsResponse>(request, GslMeta.listSimPools, hcClient);
+        return new SyncInvoker<>(request, GslMeta.listSimPools, hcClient);
     }
 
     /**
@@ -758,7 +746,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlowBySimCardsRequest 请求对象
+     * @param request ListFlowBySimCardsRequest 请求对象
      * @return ListFlowBySimCardsResponse
      */
     public ListFlowBySimCardsResponse listFlowBySimCards(ListFlowBySimCardsRequest request) {
@@ -772,13 +760,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlowBySimCardsRequest 请求对象
+     * @param request ListFlowBySimCardsRequest 请求对象
      * @return SyncInvoker<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse>
      */
     public SyncInvoker<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse> listFlowBySimCardsInvoker(
         ListFlowBySimCardsRequest request) {
-        return new SyncInvoker<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse>(request,
-            GslMeta.listFlowBySimCards, hcClient);
+        return new SyncInvoker<>(request, GslMeta.listFlowBySimCards, hcClient);
     }
 
     /**
@@ -788,7 +775,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPricePlansRequest 请求对象
+     * @param request ListSimPricePlansRequest 请求对象
      * @return ListSimPricePlansResponse
      */
     public ListSimPricePlansResponse listSimPricePlans(ListSimPricePlansRequest request) {
@@ -802,13 +789,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPricePlansRequest 请求对象
+     * @param request ListSimPricePlansRequest 请求对象
      * @return SyncInvoker<ListSimPricePlansRequest, ListSimPricePlansResponse>
      */
     public SyncInvoker<ListSimPricePlansRequest, ListSimPricePlansResponse> listSimPricePlansInvoker(
         ListSimPricePlansRequest request) {
-        return new SyncInvoker<ListSimPricePlansRequest, ListSimPricePlansResponse>(request, GslMeta.listSimPricePlans,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.listSimPricePlans, hcClient);
     }
 
     /**
@@ -818,7 +804,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSmsDetailsRequest 请求对象
+     * @param request ListSmsDetailsRequest 请求对象
      * @return ListSmsDetailsResponse
      */
     public ListSmsDetailsResponse listSmsDetails(ListSmsDetailsRequest request) {
@@ -832,13 +818,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSmsDetailsRequest 请求对象
+     * @param request ListSmsDetailsRequest 请求对象
      * @return SyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse>
      */
     public SyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse> listSmsDetailsInvoker(
         ListSmsDetailsRequest request) {
-        return new SyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse>(request, GslMeta.listSmsDetails,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.listSmsDetails, hcClient);
     }
 
     /**
@@ -848,7 +833,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSmsRequest 请求对象
+     * @param request SendSmsRequest 请求对象
      * @return SendSmsResponse
      */
     public SendSmsResponse sendSms(SendSmsRequest request) {
@@ -862,11 +847,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSmsRequest 请求对象
+     * @param request SendSmsRequest 请求对象
      * @return SyncInvoker<SendSmsRequest, SendSmsResponse>
      */
     public SyncInvoker<SendSmsRequest, SendSmsResponse> sendSmsInvoker(SendSmsRequest request) {
-        return new SyncInvoker<SendSmsRequest, SendSmsResponse>(request, GslMeta.sendSms, hcClient);
+        return new SyncInvoker<>(request, GslMeta.sendSms, hcClient);
     }
 
     /**
@@ -876,7 +861,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSetTagsRequest 请求对象
+     * @param request BatchSetTagsRequest 请求对象
      * @return BatchSetTagsResponse
      */
     public BatchSetTagsResponse batchSetTags(BatchSetTagsRequest request) {
@@ -890,11 +875,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSetTagsRequest 请求对象
+     * @param request BatchSetTagsRequest 请求对象
      * @return SyncInvoker<BatchSetTagsRequest, BatchSetTagsResponse>
      */
     public SyncInvoker<BatchSetTagsRequest, BatchSetTagsResponse> batchSetTagsInvoker(BatchSetTagsRequest request) {
-        return new SyncInvoker<BatchSetTagsRequest, BatchSetTagsResponse>(request, GslMeta.batchSetTags, hcClient);
+        return new SyncInvoker<>(request, GslMeta.batchSetTags, hcClient);
     }
 
     /**
@@ -904,7 +889,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return CreateTagResponse
      */
     public CreateTagResponse createTag(CreateTagRequest request) {
@@ -918,11 +903,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return SyncInvoker<CreateTagRequest, CreateTagResponse>
      */
     public SyncInvoker<CreateTagRequest, CreateTagResponse> createTagInvoker(CreateTagRequest request) {
-        return new SyncInvoker<CreateTagRequest, CreateTagResponse>(request, GslMeta.createTag, hcClient);
+        return new SyncInvoker<>(request, GslMeta.createTag, hcClient);
     }
 
     /**
@@ -932,7 +917,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return DeleteTagResponse
      */
     public DeleteTagResponse deleteTag(DeleteTagRequest request) {
@@ -946,11 +931,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return SyncInvoker<DeleteTagRequest, DeleteTagResponse>
      */
     public SyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagInvoker(DeleteTagRequest request) {
-        return new SyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, GslMeta.deleteTag, hcClient);
+        return new SyncInvoker<>(request, GslMeta.deleteTag, hcClient);
     }
 
     /**
@@ -960,7 +945,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return ListTagsResponse
      */
     public ListTagsResponse listTags(ListTagsRequest request) {
@@ -974,11 +959,11 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return SyncInvoker<ListTagsRequest, ListTagsResponse>
      */
     public SyncInvoker<ListTagsRequest, ListTagsResponse> listTagsInvoker(ListTagsRequest request) {
-        return new SyncInvoker<ListTagsRequest, ListTagsResponse>(request, GslMeta.listTags, hcClient);
+        return new SyncInvoker<>(request, GslMeta.listTags, hcClient);
     }
 
     /**
@@ -988,7 +973,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkOrderDetailsRequest 请求对象
+     * @param request ListWorkOrderDetailsRequest 请求对象
      * @return ListWorkOrderDetailsResponse
      */
     public ListWorkOrderDetailsResponse listWorkOrderDetails(ListWorkOrderDetailsRequest request) {
@@ -1002,13 +987,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkOrderDetailsRequest 请求对象
+     * @param request ListWorkOrderDetailsRequest 请求对象
      * @return SyncInvoker<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse>
      */
     public SyncInvoker<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse> listWorkOrderDetailsInvoker(
         ListWorkOrderDetailsRequest request) {
-        return new SyncInvoker<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse>(request,
-            GslMeta.listWorkOrderDetails, hcClient);
+        return new SyncInvoker<>(request, GslMeta.listWorkOrderDetails, hcClient);
     }
 
     /**
@@ -1018,7 +1002,7 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkOrdersRequest 请求对象
+     * @param request ListWorkOrdersRequest 请求对象
      * @return ListWorkOrdersResponse
      */
     public ListWorkOrdersResponse listWorkOrders(ListWorkOrdersRequest request) {
@@ -1032,13 +1016,12 @@ public class GslClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkOrdersRequest 请求对象
+     * @param request ListWorkOrdersRequest 请求对象
      * @return SyncInvoker<ListWorkOrdersRequest, ListWorkOrdersResponse>
      */
     public SyncInvoker<ListWorkOrdersRequest, ListWorkOrdersResponse> listWorkOrdersInvoker(
         ListWorkOrdersRequest request) {
-        return new SyncInvoker<ListWorkOrdersRequest, ListWorkOrdersResponse>(request, GslMeta.listWorkOrders,
-            hcClient);
+        return new SyncInvoker<>(request, GslMeta.listWorkOrders, hcClient);
     }
 
 }

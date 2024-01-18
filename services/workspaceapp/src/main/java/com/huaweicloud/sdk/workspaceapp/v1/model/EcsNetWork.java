@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 服务器网络信息
+ * 服务器网络信息。
  */
 public class EcsNetWork {
 
@@ -56,7 +56,7 @@ public class EcsNetWork {
     }
 
     /**
-     * IP地址信息
+     * IP地址信息。
      * @return addr
      */
     public String getAddr() {
@@ -73,7 +73,7 @@ public class EcsNetWork {
     }
 
     /**
-     * IP地址类型， `4` - IPV4 `6` - IPV6
+     * IP地址类型： `4` - IPV4 `6` - IPV6
      * @return version
      */
     public Integer getVersion() {
@@ -90,7 +90,7 @@ public class EcsNetWork {
     }
 
     /**
-     * MAC地址
+     * MAC地址。
      * @return osEXTIPSMACMacAddr
      */
     public String getOsEXTIPSMACMacAddr() {
@@ -107,7 +107,7 @@ public class EcsNetWork {
     }
 
     /**
-     * IP地址分配方式，字符串是大小写不敏感格式 * `fixed` - 代表私有IP地址 * `floating` - 代表浮动IP地址
+     * IP地址分配方式，字符串是大小写不敏感格式。 * `fixed` - 代表私有IP地址。 * `floating` - 代表浮动IP地址。
      * @return osEXTIPSType
      */
     public String getOsEXTIPSType() {
@@ -141,7 +141,7 @@ public class EcsNetWork {
     }
 
     /**
-     * 虚拟私有云ID
+     * 虚拟私有云ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -158,7 +158,7 @@ public class EcsNetWork {
     }
 
     /**
-     * 子网id
+     * 子网id。
      * @return subnetId
      */
     public String getSubnetId() {

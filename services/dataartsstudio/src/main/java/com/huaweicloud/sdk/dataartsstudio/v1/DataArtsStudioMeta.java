@@ -220,6 +220,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.JobAndNodeInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.JobInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.JobLogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.LinkAttributeAndElementVO;
@@ -453,12 +454,16 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConditionByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConditionByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConsistencyTaskDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConsistencyTaskDetailResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataDetailRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataSetsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataSetsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatamapLineageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatamapLineageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDimensionByIdRequest;
@@ -477,10 +482,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequ
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowGlossaryListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowGlossaryListResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceInfosRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceInfosResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceResultResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageBulkRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageBulkResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMessageDetailRequest;
@@ -489,6 +498,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMetricAssetsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMetricAssetsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMetricTreeRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMetricTreeResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowNodesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowNodesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowPathByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowPathByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowPathObjectByIdRequest;
@@ -584,15 +595,16 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkspaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkspaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.WorkspaceVO;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class DataArtsStudioMeta {
 
     public static final HttpRequestDef<AddTagToAssetRequest, AddTagToAssetResponse> addTagToAsset =
-        genForaddTagToAsset();
+        genForAddTagToAsset();
 
-    private static HttpRequestDef<AddTagToAssetRequest, AddTagToAssetResponse> genForaddTagToAsset() {
+    private static HttpRequestDef<AddTagToAssetRequest, AddTagToAssetResponse> genForAddTagToAsset() {
         // basic
         HttpRequestDef.Builder<AddTagToAssetRequest, AddTagToAssetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddTagToAssetRequest.class, AddTagToAssetResponse.class)
@@ -605,23 +617,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddTagToAssetRequest::getTermGuid, (req, v) -> {
-                req.setTermGuid(v);
-            }));
+            f -> f.withMarshaller(AddTagToAssetRequest::getTermGuid, AddTagToAssetRequest::setTermGuid));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddTagToAssetRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(AddTagToAssetRequest::getWorkspace, AddTagToAssetRequest::setWorkspace));
         builder.<CatalogInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogInfo.class),
-            f -> f.withMarshaller(AddTagToAssetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddTagToAssetRequest::getBody, AddTagToAssetRequest::setBody));
 
         // response
 
@@ -629,9 +635,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<AddWorkSpaceUsersRequest, AddWorkSpaceUsersResponse> addWorkSpaceUsers =
-        genForaddWorkSpaceUsers();
+        genForAddWorkSpaceUsers();
 
-    private static HttpRequestDef<AddWorkSpaceUsersRequest, AddWorkSpaceUsersResponse> genForaddWorkSpaceUsers() {
+    private static HttpRequestDef<AddWorkSpaceUsersRequest, AddWorkSpaceUsersResponse> genForAddWorkSpaceUsers() {
         // basic
         HttpRequestDef.Builder<AddWorkSpaceUsersRequest, AddWorkSpaceUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddWorkSpaceUsersRequest.class, AddWorkSpaceUsersResponse.class)
@@ -644,16 +650,12 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddWorkSpaceUsersRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(AddWorkSpaceUsersRequest::getWorkspaceId, AddWorkSpaceUsersRequest::setWorkspaceId));
         builder.<ApigWorkspaceUserDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApigWorkspaceUserDto.class),
-            f -> f.withMarshaller(AddWorkSpaceUsersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddWorkSpaceUsersRequest::getBody, AddWorkSpaceUsersRequest::setBody));
 
         // response
 
@@ -661,9 +663,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<AssociateClassificationToEntityRequest, AssociateClassificationToEntityResponse> associateClassificationToEntity =
-        genForassociateClassificationToEntity();
+        genForAssociateClassificationToEntity();
 
-    private static HttpRequestDef<AssociateClassificationToEntityRequest, AssociateClassificationToEntityResponse> genForassociateClassificationToEntity() {
+    private static HttpRequestDef<AssociateClassificationToEntityRequest, AssociateClassificationToEntityResponse> genForAssociateClassificationToEntity() {
         // basic
         HttpRequestDef.Builder<AssociateClassificationToEntityRequest, AssociateClassificationToEntityResponse> builder =
             HttpRequestDef
@@ -679,23 +681,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateClassificationToEntityRequest::getGuid, (req, v) -> {
-                req.setGuid(v);
-            }));
+            f -> f.withMarshaller(AssociateClassificationToEntityRequest::getGuid,
+                AssociateClassificationToEntityRequest::setGuid));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateClassificationToEntityRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(AssociateClassificationToEntityRequest::getWorkspace,
+                AssociateClassificationToEntityRequest::setWorkspace));
         builder.<OpenClassification>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OpenClassification.class),
-            f -> f.withMarshaller(AssociateClassificationToEntityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateClassificationToEntityRequest::getBody,
+                AssociateClassificationToEntityRequest::setBody));
 
         // response
 
@@ -703,9 +702,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<AssociateSecurityLevelToEntitieRequest, AssociateSecurityLevelToEntitieResponse> associateSecurityLevelToEntitie =
-        genForassociateSecurityLevelToEntitie();
+        genForAssociateSecurityLevelToEntitie();
 
-    private static HttpRequestDef<AssociateSecurityLevelToEntitieRequest, AssociateSecurityLevelToEntitieResponse> genForassociateSecurityLevelToEntitie() {
+    private static HttpRequestDef<AssociateSecurityLevelToEntitieRequest, AssociateSecurityLevelToEntitieResponse> genForAssociateSecurityLevelToEntitie() {
         // basic
         HttpRequestDef.Builder<AssociateSecurityLevelToEntitieRequest, AssociateSecurityLevelToEntitieResponse> builder =
             HttpRequestDef
@@ -721,23 +720,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateSecurityLevelToEntitieRequest::getGuid, (req, v) -> {
-                req.setGuid(v);
-            }));
+            f -> f.withMarshaller(AssociateSecurityLevelToEntitieRequest::getGuid,
+                AssociateSecurityLevelToEntitieRequest::setGuid));
         builder.<String>withRequestField("security-level",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateSecurityLevelToEntitieRequest::getSecurityLevel, (req, v) -> {
-                req.setSecurityLevel(v);
-            }));
+            f -> f.withMarshaller(AssociateSecurityLevelToEntitieRequest::getSecurityLevel,
+                AssociateSecurityLevelToEntitieRequest::setSecurityLevel));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateSecurityLevelToEntitieRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(AssociateSecurityLevelToEntitieRequest::getWorkspace,
+                AssociateSecurityLevelToEntitieRequest::setWorkspace));
 
         // response
 
@@ -745,9 +741,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<BatchApproveApplyRequest, BatchApproveApplyResponse> batchApproveApply =
-        genForbatchApproveApply();
+        genForBatchApproveApply();
 
-    private static HttpRequestDef<BatchApproveApplyRequest, BatchApproveApplyResponse> genForbatchApproveApply() {
+    private static HttpRequestDef<BatchApproveApplyRequest, BatchApproveApplyResponse> genForBatchApproveApply() {
         // basic
         HttpRequestDef.Builder<BatchApproveApplyRequest, BatchApproveApplyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchApproveApplyRequest.class, BatchApproveApplyResponse.class)
@@ -760,23 +756,17 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchApproveApplyRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(BatchApproveApplyRequest::getWorkspace, BatchApproveApplyRequest::setWorkspace));
         builder.<BatchApproveApplyRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchApproveApplyRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(BatchApproveApplyRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(BatchApproveApplyRequest::getDlmType, BatchApproveApplyRequest::setDlmType));
         builder.<OpenApplyIdsForApproveApply>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenApplyIdsForApproveApply.class),
-            f -> f.withMarshaller(BatchApproveApplyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchApproveApplyRequest::getBody, BatchApproveApplyRequest::setBody));
 
         // response
 
@@ -784,9 +774,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<BatchAssociateClassificationToEntitiesRequest, BatchAssociateClassificationToEntitiesResponse> batchAssociateClassificationToEntities =
-        genForbatchAssociateClassificationToEntities();
+        genForBatchAssociateClassificationToEntities();
 
-    private static HttpRequestDef<BatchAssociateClassificationToEntitiesRequest, BatchAssociateClassificationToEntitiesResponse> genForbatchAssociateClassificationToEntities() {
+    private static HttpRequestDef<BatchAssociateClassificationToEntitiesRequest, BatchAssociateClassificationToEntitiesResponse> genForBatchAssociateClassificationToEntities() {
         // basic
         HttpRequestDef.Builder<BatchAssociateClassificationToEntitiesRequest, BatchAssociateClassificationToEntitiesResponse> builder =
             HttpRequestDef
@@ -802,16 +792,14 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateClassificationToEntitiesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateClassificationToEntitiesRequest::getWorkspace,
+                BatchAssociateClassificationToEntitiesRequest::setWorkspace));
         builder.<OpenBulkClassifications>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenBulkClassifications.class),
-            f -> f.withMarshaller(BatchAssociateClassificationToEntitiesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateClassificationToEntitiesRequest::getBody,
+                BatchAssociateClassificationToEntitiesRequest::setBody));
 
         // response
 
@@ -819,9 +807,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<BatchAssociateSecurityLevelToEntitiesRequest, BatchAssociateSecurityLevelToEntitiesResponse> batchAssociateSecurityLevelToEntities =
-        genForbatchAssociateSecurityLevelToEntities();
+        genForBatchAssociateSecurityLevelToEntities();
 
-    private static HttpRequestDef<BatchAssociateSecurityLevelToEntitiesRequest, BatchAssociateSecurityLevelToEntitiesResponse> genForbatchAssociateSecurityLevelToEntities() {
+    private static HttpRequestDef<BatchAssociateSecurityLevelToEntitiesRequest, BatchAssociateSecurityLevelToEntitiesResponse> genForBatchAssociateSecurityLevelToEntities() {
         // basic
         HttpRequestDef.Builder<BatchAssociateSecurityLevelToEntitiesRequest, BatchAssociateSecurityLevelToEntitiesResponse> builder =
             HttpRequestDef
@@ -837,16 +825,14 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateSecurityLevelToEntitiesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateSecurityLevelToEntitiesRequest::getWorkspace,
+                BatchAssociateSecurityLevelToEntitiesRequest::setWorkspace));
         builder.<BulkSecurityLevel>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BulkSecurityLevel.class),
-            f -> f.withMarshaller(BatchAssociateSecurityLevelToEntitiesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateSecurityLevelToEntitiesRequest::getBody,
+                BatchAssociateSecurityLevelToEntitiesRequest::setBody));
 
         // response
 
@@ -854,9 +840,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse> batchDeleteSecurityDataClassificationRule =
-        genForbatchDeleteSecurityDataClassificationRule();
+        genForBatchDeleteSecurityDataClassificationRule();
 
-    private static HttpRequestDef<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse> genForbatchDeleteSecurityDataClassificationRule() {
+    private static HttpRequestDef<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse> genForBatchDeleteSecurityDataClassificationRule() {
         // basic
         HttpRequestDef.Builder<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse> builder =
             HttpRequestDef
@@ -872,16 +858,14 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteSecurityDataClassificationRuleRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteSecurityDataClassificationRuleRequest::getWorkspace,
+                BatchDeleteSecurityDataClassificationRuleRequest::setWorkspace));
         builder.<BatchDeleteRulesBaseDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteRulesBaseDTO.class),
-            f -> f.withMarshaller(BatchDeleteSecurityDataClassificationRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteSecurityDataClassificationRuleRequest::getBody,
+                BatchDeleteSecurityDataClassificationRuleRequest::setBody));
 
         // response
 
@@ -889,9 +873,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteSecurityPermissionSetMembersRequest, BatchDeleteSecurityPermissionSetMembersResponse> batchDeleteSecurityPermissionSetMembers =
-        genForbatchDeleteSecurityPermissionSetMembers();
+        genForBatchDeleteSecurityPermissionSetMembers();
 
-    private static HttpRequestDef<BatchDeleteSecurityPermissionSetMembersRequest, BatchDeleteSecurityPermissionSetMembersResponse> genForbatchDeleteSecurityPermissionSetMembers() {
+    private static HttpRequestDef<BatchDeleteSecurityPermissionSetMembersRequest, BatchDeleteSecurityPermissionSetMembersResponse> genForBatchDeleteSecurityPermissionSetMembers() {
         // basic
         HttpRequestDef.Builder<BatchDeleteSecurityPermissionSetMembersRequest, BatchDeleteSecurityPermissionSetMembersResponse> builder =
             HttpRequestDef
@@ -907,23 +891,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetMembersRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetMembersRequest::getPermissionSetId,
+                BatchDeleteSecurityPermissionSetMembersRequest::setPermissionSetId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetMembersRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetMembersRequest::getWorkspace,
+                BatchDeleteSecurityPermissionSetMembersRequest::setWorkspace));
         builder.<BatchDeleteBaseDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteBaseDTO.class),
-            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetMembersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetMembersRequest::getBody,
+                BatchDeleteSecurityPermissionSetMembersRequest::setBody));
 
         // response
 
@@ -931,9 +912,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteSecurityPermissionSetPermissionsRequest, BatchDeleteSecurityPermissionSetPermissionsResponse> batchDeleteSecurityPermissionSetPermissions =
-        genForbatchDeleteSecurityPermissionSetPermissions();
+        genForBatchDeleteSecurityPermissionSetPermissions();
 
-    private static HttpRequestDef<BatchDeleteSecurityPermissionSetPermissionsRequest, BatchDeleteSecurityPermissionSetPermissionsResponse> genForbatchDeleteSecurityPermissionSetPermissions() {
+    private static HttpRequestDef<BatchDeleteSecurityPermissionSetPermissionsRequest, BatchDeleteSecurityPermissionSetPermissionsResponse> genForBatchDeleteSecurityPermissionSetPermissions() {
         // basic
         HttpRequestDef.Builder<BatchDeleteSecurityPermissionSetPermissionsRequest, BatchDeleteSecurityPermissionSetPermissionsResponse> builder =
             HttpRequestDef
@@ -949,23 +930,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetPermissionsRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetPermissionsRequest::getPermissionSetId,
+                BatchDeleteSecurityPermissionSetPermissionsRequest::setPermissionSetId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetPermissionsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetPermissionsRequest::getWorkspace,
+                BatchDeleteSecurityPermissionSetPermissionsRequest::setWorkspace));
         builder.<BatchDeleteBaseDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteBaseDTO.class),
-            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetPermissionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetPermissionsRequest::getBody,
+                BatchDeleteSecurityPermissionSetPermissionsRequest::setBody));
 
         // response
 
@@ -973,9 +951,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteTemplatesRequest, BatchDeleteTemplatesResponse> batchDeleteTemplates =
-        genForbatchDeleteTemplates();
+        genForBatchDeleteTemplates();
 
-    private static HttpRequestDef<BatchDeleteTemplatesRequest, BatchDeleteTemplatesResponse> genForbatchDeleteTemplates() {
+    private static HttpRequestDef<BatchDeleteTemplatesRequest, BatchDeleteTemplatesResponse> genForBatchDeleteTemplates() {
         // basic
         HttpRequestDef.Builder<BatchDeleteTemplatesRequest, BatchDeleteTemplatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteTemplatesRequest.class, BatchDeleteTemplatesResponse.class)
@@ -988,25 +966,22 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteTemplatesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTemplatesRequest::getWorkspace,
+                BatchDeleteTemplatesRequest::setWorkspace));
         builder.<TemplateListRO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TemplateListRO.class),
-            f -> f.withMarshaller(BatchDeleteTemplatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTemplatesRequest::getBody, BatchDeleteTemplatesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchOfflineRequest, BatchOfflineResponse> batchOffline = genForbatchOffline();
+    public static final HttpRequestDef<BatchOfflineRequest, BatchOfflineResponse> batchOffline = genForBatchOffline();
 
-    private static HttpRequestDef<BatchOfflineRequest, BatchOfflineResponse> genForbatchOffline() {
+    private static HttpRequestDef<BatchOfflineRequest, BatchOfflineResponse> genForBatchOffline() {
         // basic
         HttpRequestDef.Builder<BatchOfflineRequest, BatchOfflineResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchOfflineRequest.class, BatchOfflineResponse.class)
@@ -1019,25 +994,21 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchOfflineRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(BatchOfflineRequest::getWorkspace, BatchOfflineRequest::setWorkspace));
         builder.<ApprovalBatchParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApprovalBatchParam.class),
-            f -> f.withMarshaller(BatchOfflineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchOfflineRequest::getBody, BatchOfflineRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchPublishRequest, BatchPublishResponse> batchPublish = genForbatchPublish();
+    public static final HttpRequestDef<BatchPublishRequest, BatchPublishResponse> batchPublish = genForBatchPublish();
 
-    private static HttpRequestDef<BatchPublishRequest, BatchPublishResponse> genForbatchPublish() {
+    private static HttpRequestDef<BatchPublishRequest, BatchPublishResponse> genForBatchPublish() {
         // basic
         HttpRequestDef.Builder<BatchPublishRequest, BatchPublishResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchPublishRequest.class, BatchPublishResponse.class)
@@ -1050,16 +1021,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchPublishRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(BatchPublishRequest::getWorkspace, BatchPublishRequest::setWorkspace));
         builder.<ApprovalBatchParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApprovalBatchParam.class),
-            f -> f.withMarshaller(BatchPublishRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchPublishRequest::getBody, BatchPublishRequest::setBody));
 
         // response
 
@@ -1067,9 +1034,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<BatchSyncMetadataRequest, BatchSyncMetadataResponse> batchSyncMetadata =
-        genForbatchSyncMetadata();
+        genForBatchSyncMetadata();
 
-    private static HttpRequestDef<BatchSyncMetadataRequest, BatchSyncMetadataResponse> genForbatchSyncMetadata() {
+    private static HttpRequestDef<BatchSyncMetadataRequest, BatchSyncMetadataResponse> genForBatchSyncMetadata() {
         // basic
         HttpRequestDef.Builder<BatchSyncMetadataRequest, BatchSyncMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSyncMetadataRequest.class, BatchSyncMetadataResponse.class)
@@ -1082,9 +1049,7 @@ public class DataArtsStudioMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogMetaDataEventRequest.class),
-            f -> f.withMarshaller(BatchSyncMetadataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchSyncMetadataRequest::getBody, BatchSyncMetadataRequest::setBody));
 
         // response
 
@@ -1092,9 +1057,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ChangeCatalogRequest, ChangeCatalogResponse> changeCatalog =
-        genForchangeCatalog();
+        genForChangeCatalog();
 
-    private static HttpRequestDef<ChangeCatalogRequest, ChangeCatalogResponse> genForchangeCatalog() {
+    private static HttpRequestDef<ChangeCatalogRequest, ChangeCatalogResponse> genForChangeCatalog() {
         // basic
         HttpRequestDef.Builder<ChangeCatalogRequest, ChangeCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeCatalogRequest.class, ChangeCatalogResponse.class)
@@ -1107,16 +1072,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeCatalogRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ChangeCatalogRequest::getWorkspace, ChangeCatalogRequest::setWorkspace));
         builder.<BizCatalogVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BizCatalogVO.class),
-            f -> f.withMarshaller(ChangeCatalogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeCatalogRequest::getBody, ChangeCatalogRequest::setBody));
 
         // response
 
@@ -1124,9 +1085,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ChangeResourceRequest, ChangeResourceResponse> changeResource =
-        genForchangeResource();
+        genForChangeResource();
 
-    private static HttpRequestDef<ChangeResourceRequest, ChangeResourceResponse> genForchangeResource() {
+    private static HttpRequestDef<ChangeResourceRequest, ChangeResourceResponse> genForChangeResource() {
         // basic
         HttpRequestDef.Builder<ChangeResourceRequest, ChangeResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ChangeResourceRequest.class, ChangeResourceResponse.class)
@@ -1139,9 +1100,7 @@ public class DataArtsStudioMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApigChangeResourceReq.class),
-            f -> f.withMarshaller(ChangeResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeResourceRequest::getBody, ChangeResourceRequest::setBody));
 
         // response
 
@@ -1149,9 +1108,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ChangeSubjectsRequest, ChangeSubjectsResponse> changeSubjects =
-        genForchangeSubjects();
+        genForChangeSubjects();
 
-    private static HttpRequestDef<ChangeSubjectsRequest, ChangeSubjectsResponse> genForchangeSubjects() {
+    private static HttpRequestDef<ChangeSubjectsRequest, ChangeSubjectsResponse> genForChangeSubjects() {
         // basic
         HttpRequestDef.Builder<ChangeSubjectsRequest, ChangeSubjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeSubjectsRequest.class, ChangeSubjectsResponse.class)
@@ -1164,16 +1123,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeSubjectsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ChangeSubjectsRequest::getWorkspace, ChangeSubjectsRequest::setWorkspace));
         builder.<CatalogLevelVOList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogLevelVOList.class),
-            f -> f.withMarshaller(ChangeSubjectsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeSubjectsRequest::getBody, ChangeSubjectsRequest::setBody));
 
         // response
 
@@ -1181,9 +1136,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CheckDimensionStatusRequest, CheckDimensionStatusResponse> checkDimensionStatus =
-        genForcheckDimensionStatus();
+        genForCheckDimensionStatus();
 
-    private static HttpRequestDef<CheckDimensionStatusRequest, CheckDimensionStatusResponse> genForcheckDimensionStatus() {
+    private static HttpRequestDef<CheckDimensionStatusRequest, CheckDimensionStatusResponse> genForCheckDimensionStatus() {
         // basic
         HttpRequestDef.Builder<CheckDimensionStatusRequest, CheckDimensionStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, CheckDimensionStatusRequest.class, CheckDimensionStatusResponse.class)
@@ -1196,9 +1151,8 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckDimensionStatusRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CheckDimensionStatusRequest::getWorkspace,
+                CheckDimensionStatusRequest::setWorkspace));
 
         // response
 
@@ -1206,9 +1160,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CheckFactLogicTableStatusRequest, CheckFactLogicTableStatusResponse> checkFactLogicTableStatus =
-        genForcheckFactLogicTableStatus();
+        genForCheckFactLogicTableStatus();
 
-    private static HttpRequestDef<CheckFactLogicTableStatusRequest, CheckFactLogicTableStatusResponse> genForcheckFactLogicTableStatus() {
+    private static HttpRequestDef<CheckFactLogicTableStatusRequest, CheckFactLogicTableStatusResponse> genForCheckFactLogicTableStatus() {
         // basic
         HttpRequestDef.Builder<CheckFactLogicTableStatusRequest, CheckFactLogicTableStatusResponse> builder =
             HttpRequestDef
@@ -1224,9 +1178,8 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckFactLogicTableStatusRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CheckFactLogicTableStatusRequest::getWorkspace,
+                CheckFactLogicTableStatusRequest::setWorkspace));
 
         // response
 
@@ -1234,9 +1187,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ConfirmApprovalsRequest, ConfirmApprovalsResponse> confirmApprovals =
-        genForconfirmApprovals();
+        genForConfirmApprovals();
 
-    private static HttpRequestDef<ConfirmApprovalsRequest, ConfirmApprovalsResponse> genForconfirmApprovals() {
+    private static HttpRequestDef<ConfirmApprovalsRequest, ConfirmApprovalsResponse> genForConfirmApprovals() {
         // basic
         HttpRequestDef.Builder<ConfirmApprovalsRequest, ConfirmApprovalsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ConfirmApprovalsRequest.class, ConfirmApprovalsResponse.class)
@@ -1249,23 +1202,17 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfirmApprovalsRequest.ActionIdEnum.class),
-            f -> f.withMarshaller(ConfirmApprovalsRequest::getActionId, (req, v) -> {
-                req.setActionId(v);
-            }));
+            f -> f.withMarshaller(ConfirmApprovalsRequest::getActionId, ConfirmApprovalsRequest::setActionId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmApprovalsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ConfirmApprovalsRequest::getWorkspace, ConfirmApprovalsRequest::setWorkspace));
         builder.<ApprovalInfoParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApprovalInfoParam.class),
-            f -> f.withMarshaller(ConfirmApprovalsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ConfirmApprovalsRequest::getBody, ConfirmApprovalsRequest::setBody));
 
         // response
 
@@ -1273,9 +1220,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ConfirmMessageRequest, ConfirmMessageResponse> confirmMessage =
-        genForconfirmMessage();
+        genForConfirmMessage();
 
-    private static HttpRequestDef<ConfirmMessageRequest, ConfirmMessageResponse> genForconfirmMessage() {
+    private static HttpRequestDef<ConfirmMessageRequest, ConfirmMessageResponse> genForConfirmMessage() {
         // basic
         HttpRequestDef.Builder<ConfirmMessageRequest, ConfirmMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ConfirmMessageRequest.class, ConfirmMessageResponse.class)
@@ -1288,23 +1235,17 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmMessageRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ConfirmMessageRequest::getWorkspace, ConfirmMessageRequest::setWorkspace));
         builder.<ConfirmMessageRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ConfirmMessageRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ConfirmMessageRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ConfirmMessageRequest::getDlmType, ConfirmMessageRequest::setDlmType));
         builder.<OpenApiParaForCheckMessage>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenApiParaForCheckMessage.class),
-            f -> f.withMarshaller(ConfirmMessageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ConfirmMessageRequest::getBody, ConfirmMessageRequest::setBody));
 
         // response
 
@@ -1312,9 +1253,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CountAllModelsRequest, CountAllModelsResponse> countAllModels =
-        genForcountAllModels();
+        genForCountAllModels();
 
-    private static HttpRequestDef<CountAllModelsRequest, CountAllModelsResponse> genForcountAllModels() {
+    private static HttpRequestDef<CountAllModelsRequest, CountAllModelsResponse> genForCountAllModels() {
         // basic
         HttpRequestDef.Builder<CountAllModelsRequest, CountAllModelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CountAllModelsRequest.class, CountAllModelsResponse.class)
@@ -1327,9 +1268,7 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountAllModelsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CountAllModelsRequest::getWorkspace, CountAllModelsRequest::setWorkspace));
 
         // response
 
@@ -1337,9 +1276,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CountOverviewsRequest, CountOverviewsResponse> countOverviews =
-        genForcountOverviews();
+        genForCountOverviews();
 
-    private static HttpRequestDef<CountOverviewsRequest, CountOverviewsResponse> genForcountOverviews() {
+    private static HttpRequestDef<CountOverviewsRequest, CountOverviewsResponse> genForCountOverviews() {
         // basic
         HttpRequestDef.Builder<CountOverviewsRequest, CountOverviewsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CountOverviewsRequest.class, CountOverviewsResponse.class)
@@ -1352,9 +1291,7 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountOverviewsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CountOverviewsRequest::getWorkspace, CountOverviewsRequest::setWorkspace));
 
         // response
 
@@ -1362,9 +1299,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CountStandardsRequest, CountStandardsResponse> countStandards =
-        genForcountStandards();
+        genForCountStandards();
 
-    private static HttpRequestDef<CountStandardsRequest, CountStandardsResponse> genForcountStandards() {
+    private static HttpRequestDef<CountStandardsRequest, CountStandardsResponse> genForCountStandards() {
         // basic
         HttpRequestDef.Builder<CountStandardsRequest, CountStandardsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CountStandardsRequest.class, CountStandardsResponse.class)
@@ -1377,23 +1314,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountStandardsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(CountStandardsRequest::getId, CountStandardsRequest::setId));
         builder.<String>withRequestField("biz_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountStandardsRequest::getBizType, (req, v) -> {
-                req.setBizType(v);
-            }));
+            f -> f.withMarshaller(CountStandardsRequest::getBizType, CountStandardsRequest::setBizType));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountStandardsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CountStandardsRequest::getWorkspace, CountStandardsRequest::setWorkspace));
 
         // response
 
@@ -1401,9 +1332,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CountTableModelsRequest, CountTableModelsResponse> countTableModels =
-        genForcountTableModels();
+        genForCountTableModels();
 
-    private static HttpRequestDef<CountTableModelsRequest, CountTableModelsResponse> genForcountTableModels() {
+    private static HttpRequestDef<CountTableModelsRequest, CountTableModelsResponse> genForCountTableModels() {
         // basic
         HttpRequestDef.Builder<CountTableModelsRequest, CountTableModelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CountTableModelsRequest.class, CountTableModelsResponse.class)
@@ -1416,25 +1347,21 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(CountTableModelsRequest::getModelId, (req, v) -> {
-                req.setModelId(v);
-            }));
+            f -> f.withMarshaller(CountTableModelsRequest::getModelId, CountTableModelsRequest::setModelId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountTableModelsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CountTableModelsRequest::getWorkspace, CountTableModelsRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForcreateApp();
+    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForCreateApp();
 
-    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForcreateApp() {
+    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForCreateApp() {
         // basic
         HttpRequestDef.Builder<CreateAppRequest, CreateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppRequest.class, CreateAppResponse.class)
@@ -1447,23 +1374,17 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getWorkspace, CreateAppRequest::setWorkspace));
         builder.<CreateAppRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateAppRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(CreateAppRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getDlmType, CreateAppRequest::setDlmType));
         builder.<AppRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AppRequestDTO.class),
-            f -> f.withMarshaller(CreateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getBody, CreateAppRequest::setBody));
 
         // response
 
@@ -1471,9 +1392,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateApproverRequest, CreateApproverResponse> createApprover =
-        genForcreateApprover();
+        genForCreateApprover();
 
-    private static HttpRequestDef<CreateApproverRequest, CreateApproverResponse> genForcreateApprover() {
+    private static HttpRequestDef<CreateApproverRequest, CreateApproverResponse> genForCreateApprover() {
         // basic
         HttpRequestDef.Builder<CreateApproverRequest, CreateApproverResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApproverRequest.class, CreateApproverResponse.class)
@@ -1486,16 +1407,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApproverRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateApproverRequest::getWorkspace, CreateApproverRequest::setWorkspace));
         builder.<ApproverParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApproverParam.class),
-            f -> f.withMarshaller(CreateApproverRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApproverRequest::getBody, CreateApproverRequest::setBody));
 
         // response
 
@@ -1503,9 +1420,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateBizMetricRequest, CreateBizMetricResponse> createBizMetric =
-        genForcreateBizMetric();
+        genForCreateBizMetric();
 
-    private static HttpRequestDef<CreateBizMetricRequest, CreateBizMetricResponse> genForcreateBizMetric() {
+    private static HttpRequestDef<CreateBizMetricRequest, CreateBizMetricResponse> genForCreateBizMetric() {
         // basic
         HttpRequestDef.Builder<CreateBizMetricRequest, CreateBizMetricResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateBizMetricRequest.class, CreateBizMetricResponse.class)
@@ -1518,16 +1435,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBizMetricRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateBizMetricRequest::getWorkspace, CreateBizMetricRequest::setWorkspace));
         builder.<BizMetricVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BizMetricVO.class),
-            f -> f.withMarshaller(CreateBizMetricRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBizMetricRequest::getBody, CreateBizMetricRequest::setBody));
 
         // response
 
@@ -1535,9 +1448,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateCatalogRequest, CreateCatalogResponse> createCatalog =
-        genForcreateCatalog();
+        genForCreateCatalog();
 
-    private static HttpRequestDef<CreateCatalogRequest, CreateCatalogResponse> genForcreateCatalog() {
+    private static HttpRequestDef<CreateCatalogRequest, CreateCatalogResponse> genForCreateCatalog() {
         // basic
         HttpRequestDef.Builder<CreateCatalogRequest, CreateCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCatalogRequest.class, CreateCatalogResponse.class)
@@ -1550,16 +1463,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCatalogRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateCatalogRequest::getWorkspace, CreateCatalogRequest::setWorkspace));
         builder.<BizCatalogVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BizCatalogVO.class),
-            f -> f.withMarshaller(CreateCatalogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCatalogRequest::getBody, CreateCatalogRequest::setBody));
 
         // response
 
@@ -1567,9 +1476,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateCodeTableRequest, CreateCodeTableResponse> createCodeTable =
-        genForcreateCodeTable();
+        genForCreateCodeTable();
 
-    private static HttpRequestDef<CreateCodeTableRequest, CreateCodeTableResponse> genForcreateCodeTable() {
+    private static HttpRequestDef<CreateCodeTableRequest, CreateCodeTableResponse> genForCreateCodeTable() {
         // basic
         HttpRequestDef.Builder<CreateCodeTableRequest, CreateCodeTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCodeTableRequest.class, CreateCodeTableResponse.class)
@@ -1582,16 +1491,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCodeTableRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateCodeTableRequest::getWorkspace, CreateCodeTableRequest::setWorkspace));
         builder.<CodeTableVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CodeTableVO.class),
-            f -> f.withMarshaller(CreateCodeTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCodeTableRequest::getBody, CreateCodeTableRequest::setBody));
 
         // response
 
@@ -1599,9 +1504,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateConnectionsRequest, CreateConnectionsResponse> createConnections =
-        genForcreateConnections();
+        genForCreateConnections();
 
-    private static HttpRequestDef<CreateConnectionsRequest, CreateConnectionsResponse> genForcreateConnections() {
+    private static HttpRequestDef<CreateConnectionsRequest, CreateConnectionsResponse> genForCreateConnections() {
         // basic
         HttpRequestDef.Builder<CreateConnectionsRequest, CreateConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConnectionsRequest.class, CreateConnectionsResponse.class)
@@ -1614,16 +1519,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConnectionsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateConnectionsRequest::getWorkspace, CreateConnectionsRequest::setWorkspace));
         builder.<ApigDataSourcesVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApigDataSourcesVo.class),
-            f -> f.withMarshaller(CreateConnectionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConnectionsRequest::getBody, CreateConnectionsRequest::setBody));
 
         // response
 
@@ -1631,9 +1532,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateDirectoryRequest, CreateDirectoryResponse> createDirectory =
-        genForcreateDirectory();
+        genForCreateDirectory();
 
-    private static HttpRequestDef<CreateDirectoryRequest, CreateDirectoryResponse> genForcreateDirectory() {
+    private static HttpRequestDef<CreateDirectoryRequest, CreateDirectoryResponse> genForCreateDirectory() {
         // basic
         HttpRequestDef.Builder<CreateDirectoryRequest, CreateDirectoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDirectoryRequest.class, CreateDirectoryResponse.class)
@@ -1646,16 +1547,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDirectoryRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateDirectoryRequest::getWorkspace, CreateDirectoryRequest::setWorkspace));
         builder.<DirectoryVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DirectoryVO.class),
-            f -> f.withMarshaller(CreateDirectoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDirectoryRequest::getBody, CreateDirectoryRequest::setBody));
 
         // response
 
@@ -1663,9 +1560,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateFactoryEnvRequest, CreateFactoryEnvResponse> createFactoryEnv =
-        genForcreateFactoryEnv();
+        genForCreateFactoryEnv();
 
-    private static HttpRequestDef<CreateFactoryEnvRequest, CreateFactoryEnvResponse> genForcreateFactoryEnv() {
+    private static HttpRequestDef<CreateFactoryEnvRequest, CreateFactoryEnvResponse> genForCreateFactoryEnv() {
         // basic
         HttpRequestDef.Builder<CreateFactoryEnvRequest, CreateFactoryEnvResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateFactoryEnvRequest.class, CreateFactoryEnvResponse.class)
@@ -1678,16 +1575,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFactoryEnvRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateFactoryEnvRequest::getWorkspace, CreateFactoryEnvRequest::setWorkspace));
         builder.<EnvRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvRequestBody.class),
-            f -> f.withMarshaller(CreateFactoryEnvRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFactoryEnvRequest::getBody, CreateFactoryEnvRequest::setBody));
 
         // response
 
@@ -1705,9 +1598,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateFactoryJobRequest, CreateFactoryJobResponse> createFactoryJob =
-        genForcreateFactoryJob();
+        genForCreateFactoryJob();
 
-    private static HttpRequestDef<CreateFactoryJobRequest, CreateFactoryJobResponse> genForcreateFactoryJob() {
+    private static HttpRequestDef<CreateFactoryJobRequest, CreateFactoryJobResponse> genForCreateFactoryJob() {
         // basic
         HttpRequestDef.Builder<CreateFactoryJobRequest, CreateFactoryJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFactoryJobRequest.class, CreateFactoryJobResponse.class)
@@ -1720,16 +1613,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFactoryJobRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateFactoryJobRequest::getWorkspace, CreateFactoryJobRequest::setWorkspace));
         builder.<JobInfoRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JobInfoRequest.class),
-            f -> f.withMarshaller(CreateFactoryJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFactoryJobRequest::getBody, CreateFactoryJobRequest::setBody));
 
         // response
 
@@ -1737,9 +1626,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse> createFactorySupplementDataInstance =
-        genForcreateFactorySupplementDataInstance();
+        genForCreateFactorySupplementDataInstance();
 
-    private static HttpRequestDef<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse> genForcreateFactorySupplementDataInstance() {
+    private static HttpRequestDef<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse> genForCreateFactorySupplementDataInstance() {
         // basic
         HttpRequestDef.Builder<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse> builder =
             HttpRequestDef
@@ -1755,16 +1644,14 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFactorySupplementDataInstanceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateFactorySupplementDataInstanceRequest::getWorkspace,
+                CreateFactorySupplementDataInstanceRequest::setWorkspace));
         builder.<CreateFactorySupplementDataInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFactorySupplementDataInstanceRequestBody.class),
-            f -> f.withMarshaller(CreateFactorySupplementDataInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFactorySupplementDataInstanceRequest::getBody,
+                CreateFactorySupplementDataInstanceRequest::setBody));
 
         // response
 
@@ -1778,9 +1665,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateManagerWorkSpaceRequest, CreateManagerWorkSpaceResponse> createManagerWorkSpace =
-        genForcreateManagerWorkSpace();
+        genForCreateManagerWorkSpace();
 
-    private static HttpRequestDef<CreateManagerWorkSpaceRequest, CreateManagerWorkSpaceResponse> genForcreateManagerWorkSpace() {
+    private static HttpRequestDef<CreateManagerWorkSpaceRequest, CreateManagerWorkSpaceResponse> genForCreateManagerWorkSpace() {
         // basic
         HttpRequestDef.Builder<CreateManagerWorkSpaceRequest, CreateManagerWorkSpaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateManagerWorkSpaceRequest.class, CreateManagerWorkSpaceResponse.class)
@@ -1793,16 +1680,13 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateManagerWorkSpaceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateManagerWorkSpaceRequest::getInstanceId,
+                CreateManagerWorkSpaceRequest::setInstanceId));
         builder.<CreateWorkspaceParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateWorkspaceParams.class),
-            f -> f.withMarshaller(CreateManagerWorkSpaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateManagerWorkSpaceRequest::getBody, CreateManagerWorkSpaceRequest::setBody));
 
         // response
 
@@ -1810,9 +1694,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateOrUpdateAssetRequest, CreateOrUpdateAssetResponse> createOrUpdateAsset =
-        genForcreateOrUpdateAsset();
+        genForCreateOrUpdateAsset();
 
-    private static HttpRequestDef<CreateOrUpdateAssetRequest, CreateOrUpdateAssetResponse> genForcreateOrUpdateAsset() {
+    private static HttpRequestDef<CreateOrUpdateAssetRequest, CreateOrUpdateAssetResponse> genForCreateOrUpdateAsset() {
         // basic
         HttpRequestDef.Builder<CreateOrUpdateAssetRequest, CreateOrUpdateAssetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateOrUpdateAssetRequest.class, CreateOrUpdateAssetResponse.class)
@@ -1825,16 +1709,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateOrUpdateAssetRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateOrUpdateAssetRequest::getWorkspace, CreateOrUpdateAssetRequest::setWorkspace));
         builder.<EntityWithExtInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EntityWithExtInfo.class),
-            f -> f.withMarshaller(CreateOrUpdateAssetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOrUpdateAssetRequest::getBody, CreateOrUpdateAssetRequest::setBody));
 
         // response
 
@@ -1842,9 +1722,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> createSecurityDataClassificationRule =
-        genForcreateSecurityDataClassificationRule();
+        genForCreateSecurityDataClassificationRule();
 
-    private static HttpRequestDef<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> genForcreateSecurityDataClassificationRule() {
+    private static HttpRequestDef<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> genForCreateSecurityDataClassificationRule() {
         // basic
         HttpRequestDef.Builder<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> builder =
             HttpRequestDef
@@ -1860,16 +1740,14 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecurityDataClassificationRuleRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityDataClassificationRuleRequest::getWorkspace,
+                CreateSecurityDataClassificationRuleRequest::setWorkspace));
         builder.<DataClassificationRuleOperateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DataClassificationRuleOperateDTO.class),
-            f -> f.withMarshaller(CreateSecurityDataClassificationRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityDataClassificationRuleRequest::getBody,
+                CreateSecurityDataClassificationRuleRequest::setBody));
 
         // response
 
@@ -1877,9 +1755,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateSecurityPermissionSetRequest, CreateSecurityPermissionSetResponse> createSecurityPermissionSet =
-        genForcreateSecurityPermissionSet();
+        genForCreateSecurityPermissionSet();
 
-    private static HttpRequestDef<CreateSecurityPermissionSetRequest, CreateSecurityPermissionSetResponse> genForcreateSecurityPermissionSet() {
+    private static HttpRequestDef<CreateSecurityPermissionSetRequest, CreateSecurityPermissionSetResponse> genForCreateSecurityPermissionSet() {
         // basic
         HttpRequestDef.Builder<CreateSecurityPermissionSetRequest, CreateSecurityPermissionSetResponse> builder =
             HttpRequestDef
@@ -1895,16 +1773,14 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecurityPermissionSetRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityPermissionSetRequest::getWorkspace,
+                CreateSecurityPermissionSetRequest::setWorkspace));
         builder.<PermissionSetCreateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PermissionSetCreateDTO.class),
-            f -> f.withMarshaller(CreateSecurityPermissionSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityPermissionSetRequest::getBody,
+                CreateSecurityPermissionSetRequest::setBody));
 
         // response
 
@@ -1912,9 +1788,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateSecurityPermissionSetMemberRequest, CreateSecurityPermissionSetMemberResponse> createSecurityPermissionSetMember =
-        genForcreateSecurityPermissionSetMember();
+        genForCreateSecurityPermissionSetMember();
 
-    private static HttpRequestDef<CreateSecurityPermissionSetMemberRequest, CreateSecurityPermissionSetMemberResponse> genForcreateSecurityPermissionSetMember() {
+    private static HttpRequestDef<CreateSecurityPermissionSetMemberRequest, CreateSecurityPermissionSetMemberResponse> genForCreateSecurityPermissionSetMember() {
         // basic
         HttpRequestDef.Builder<CreateSecurityPermissionSetMemberRequest, CreateSecurityPermissionSetMemberResponse> builder =
             HttpRequestDef
@@ -1930,23 +1806,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecurityPermissionSetMemberRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityPermissionSetMemberRequest::getPermissionSetId,
+                CreateSecurityPermissionSetMemberRequest::setPermissionSetId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecurityPermissionSetMemberRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityPermissionSetMemberRequest::getWorkspace,
+                CreateSecurityPermissionSetMemberRequest::setWorkspace));
         builder.<PermissionSetMemberCreateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PermissionSetMemberCreateDTO.class),
-            f -> f.withMarshaller(CreateSecurityPermissionSetMemberRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityPermissionSetMemberRequest::getBody,
+                CreateSecurityPermissionSetMemberRequest::setBody));
 
         // response
 
@@ -1954,9 +1827,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateSecurityPermissionSetPermissionRequest, CreateSecurityPermissionSetPermissionResponse> createSecurityPermissionSetPermission =
-        genForcreateSecurityPermissionSetPermission();
+        genForCreateSecurityPermissionSetPermission();
 
-    private static HttpRequestDef<CreateSecurityPermissionSetPermissionRequest, CreateSecurityPermissionSetPermissionResponse> genForcreateSecurityPermissionSetPermission() {
+    private static HttpRequestDef<CreateSecurityPermissionSetPermissionRequest, CreateSecurityPermissionSetPermissionResponse> genForCreateSecurityPermissionSetPermission() {
         // basic
         HttpRequestDef.Builder<CreateSecurityPermissionSetPermissionRequest, CreateSecurityPermissionSetPermissionResponse> builder =
             HttpRequestDef
@@ -1972,23 +1845,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecurityPermissionSetPermissionRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityPermissionSetPermissionRequest::getPermissionSetId,
+                CreateSecurityPermissionSetPermissionRequest::setPermissionSetId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecurityPermissionSetPermissionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityPermissionSetPermissionRequest::getWorkspace,
+                CreateSecurityPermissionSetPermissionRequest::setWorkspace));
         builder.<PermissionSetPermissionCreateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PermissionSetPermissionCreateDTO.class),
-            f -> f.withMarshaller(CreateSecurityPermissionSetPermissionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityPermissionSetPermissionRequest::getBody,
+                CreateSecurityPermissionSetPermissionRequest::setBody));
 
         // response
 
@@ -1996,9 +1866,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateServiceCatalogRequest, CreateServiceCatalogResponse> createServiceCatalog =
-        genForcreateServiceCatalog();
+        genForCreateServiceCatalog();
 
-    private static HttpRequestDef<CreateServiceCatalogRequest, CreateServiceCatalogResponse> genForcreateServiceCatalog() {
+    private static HttpRequestDef<CreateServiceCatalogRequest, CreateServiceCatalogResponse> genForCreateServiceCatalog() {
         // basic
         HttpRequestDef.Builder<CreateServiceCatalogRequest, CreateServiceCatalogResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateServiceCatalogRequest.class, CreateServiceCatalogResponse.class)
@@ -2011,23 +1881,18 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateServiceCatalogRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateServiceCatalogRequest::getWorkspace,
+                CreateServiceCatalogRequest::setWorkspace));
         builder.<CreateServiceCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateServiceCatalogRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(CreateServiceCatalogRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(CreateServiceCatalogRequest::getDlmType, CreateServiceCatalogRequest::setDlmType));
         builder.<ApiCatalogCreateParaDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiCatalogCreateParaDTO.class),
-            f -> f.withMarshaller(CreateServiceCatalogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateServiceCatalogRequest::getBody, CreateServiceCatalogRequest::setBody));
 
         // response
 
@@ -2035,9 +1900,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateStandardRequest, CreateStandardResponse> createStandard =
-        genForcreateStandard();
+        genForCreateStandard();
 
-    private static HttpRequestDef<CreateStandardRequest, CreateStandardResponse> genForcreateStandard() {
+    private static HttpRequestDef<CreateStandardRequest, CreateStandardResponse> genForCreateStandard() {
         // basic
         HttpRequestDef.Builder<CreateStandardRequest, CreateStandardResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStandardRequest.class, CreateStandardResponse.class)
@@ -2050,16 +1915,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStandardRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateStandardRequest::getWorkspace, CreateStandardRequest::setWorkspace));
         builder.<StandElementValueVOList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StandElementValueVOList.class),
-            f -> f.withMarshaller(CreateStandardRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStandardRequest::getBody, CreateStandardRequest::setBody));
 
         // response
 
@@ -2067,9 +1928,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateStandardTemplateRequest, CreateStandardTemplateResponse> createStandardTemplate =
-        genForcreateStandardTemplate();
+        genForCreateStandardTemplate();
 
-    private static HttpRequestDef<CreateStandardTemplateRequest, CreateStandardTemplateResponse> genForcreateStandardTemplate() {
+    private static HttpRequestDef<CreateStandardTemplateRequest, CreateStandardTemplateResponse> genForCreateStandardTemplate() {
         // basic
         HttpRequestDef.Builder<CreateStandardTemplateRequest, CreateStandardTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateStandardTemplateRequest.class, CreateStandardTemplateResponse.class)
@@ -2082,16 +1943,13 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStandardTemplateRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateStandardTemplateRequest::getWorkspace,
+                CreateStandardTemplateRequest::setWorkspace));
         builder.<StandElementFieldVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StandElementFieldVO.class),
-            f -> f.withMarshaller(CreateStandardTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStandardTemplateRequest::getBody, CreateStandardTemplateRequest::setBody));
 
         // response
 
@@ -2099,9 +1957,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateSubjectRequest, CreateSubjectResponse> createSubject =
-        genForcreateSubject();
+        genForCreateSubject();
 
-    private static HttpRequestDef<CreateSubjectRequest, CreateSubjectResponse> genForcreateSubject() {
+    private static HttpRequestDef<CreateSubjectRequest, CreateSubjectResponse> genForCreateSubject() {
         // basic
         HttpRequestDef.Builder<CreateSubjectRequest, CreateSubjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSubjectRequest.class, CreateSubjectResponse.class)
@@ -2114,16 +1972,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSubjectRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateSubjectRequest::getWorkspace, CreateSubjectRequest::setWorkspace));
         builder.<CatalogParamsVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogParamsVO.class),
-            f -> f.withMarshaller(CreateSubjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSubjectRequest::getBody, CreateSubjectRequest::setBody));
 
         // response
 
@@ -2131,9 +1985,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateSubjectNewRequest, CreateSubjectNewResponse> createSubjectNew =
-        genForcreateSubjectNew();
+        genForCreateSubjectNew();
 
-    private static HttpRequestDef<CreateSubjectNewRequest, CreateSubjectNewResponse> genForcreateSubjectNew() {
+    private static HttpRequestDef<CreateSubjectNewRequest, CreateSubjectNewResponse> genForCreateSubjectNew() {
         // basic
         HttpRequestDef.Builder<CreateSubjectNewRequest, CreateSubjectNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSubjectNewRequest.class, CreateSubjectNewResponse.class)
@@ -2146,16 +2000,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSubjectNewRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateSubjectNewRequest::getWorkspace, CreateSubjectNewRequest::setWorkspace));
         builder.<SubjectParamsVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubjectParamsVO.class),
-            f -> f.withMarshaller(CreateSubjectNewRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSubjectNewRequest::getBody, CreateSubjectNewRequest::setBody));
 
         // response
 
@@ -2163,9 +2013,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateTableModelRequest, CreateTableModelResponse> createTableModel =
-        genForcreateTableModel();
+        genForCreateTableModel();
 
-    private static HttpRequestDef<CreateTableModelRequest, CreateTableModelResponse> genForcreateTableModel() {
+    private static HttpRequestDef<CreateTableModelRequest, CreateTableModelResponse> genForCreateTableModel() {
         // basic
         HttpRequestDef.Builder<CreateTableModelRequest, CreateTableModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTableModelRequest.class, CreateTableModelResponse.class)
@@ -2178,25 +2028,21 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTableModelRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateTableModelRequest::getWorkspace, CreateTableModelRequest::setWorkspace));
         builder.<TableModelVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TableModelVO.class),
-            f -> f.withMarshaller(CreateTableModelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTableModelRequest::getBody, CreateTableModelRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForcreateTask();
+    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForCreateTask();
 
-    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForcreateTask() {
+    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForCreateTask() {
         // basic
         HttpRequestDef.Builder<CreateTaskRequest, CreateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskRequest.class, CreateTaskResponse.class)
@@ -2209,16 +2055,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTaskRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getWorkspace, CreateTaskRequest::setWorkspace));
         builder.<MetadataCollectionTask>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MetadataCollectionTask.class),
-            f -> f.withMarshaller(CreateTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getBody, CreateTaskRequest::setBody));
 
         // response
 
@@ -2226,9 +2068,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> createTemplate =
-        genForcreateTemplate();
+        genForCreateTemplate();
 
-    private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForcreateTemplate() {
+    private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForCreateTemplate() {
         // basic
         HttpRequestDef.Builder<CreateTemplateRequest, CreateTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTemplateRequest.class, CreateTemplateResponse.class)
@@ -2241,16 +2083,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTemplateRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateTemplateRequest::getWorkspace, CreateTemplateRequest::setWorkspace));
         builder.<TemplateRO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TemplateRO.class),
-            f -> f.withMarshaller(CreateTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTemplateRequest::getBody, CreateTemplateRequest::setBody));
 
         // response
 
@@ -2258,9 +2096,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> createWorkspace =
-        genForcreateWorkspace();
+        genForCreateWorkspace();
 
-    private static HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> genForcreateWorkspace() {
+    private static HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> genForCreateWorkspace() {
         // basic
         HttpRequestDef.Builder<CreateWorkspaceRequest, CreateWorkspaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateWorkspaceRequest.class, CreateWorkspaceResponse.class)
@@ -2273,16 +2111,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateWorkspaceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateWorkspaceRequest::getWorkspace, CreateWorkspaceRequest::setWorkspace));
         builder.<WorkspaceVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WorkspaceVO.class),
-            f -> f.withMarshaller(CreateWorkspaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateWorkspaceRequest::getBody, CreateWorkspaceRequest::setBody));
 
         // response
 
@@ -2290,9 +2124,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DebugDataconnectionRequest, DebugDataconnectionResponse> debugDataconnection =
-        genFordebugDataconnection();
+        genForDebugDataconnection();
 
-    private static HttpRequestDef<DebugDataconnectionRequest, DebugDataconnectionResponse> genFordebugDataconnection() {
+    private static HttpRequestDef<DebugDataconnectionRequest, DebugDataconnectionResponse> genForDebugDataconnection() {
         // basic
         HttpRequestDef.Builder<DebugDataconnectionRequest, DebugDataconnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DebugDataconnectionRequest.class, DebugDataconnectionResponse.class)
@@ -2305,25 +2139,21 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugDataconnectionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DebugDataconnectionRequest::getWorkspace, DebugDataconnectionRequest::setWorkspace));
         builder.<ApigDataSourceVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApigDataSourceVo.class),
-            f -> f.withMarshaller(DebugDataconnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DebugDataconnectionRequest::getBody, DebugDataconnectionRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genFordeleteApp();
+    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genForDeleteApp();
 
-    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genFordeleteApp() {
+    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genForDeleteApp() {
         // basic
         HttpRequestDef.Builder<DeleteAppRequest, DeleteAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppRequest.class, DeleteAppResponse.class)
@@ -2336,23 +2166,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getAppId, DeleteAppRequest::setAppId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getWorkspace, DeleteAppRequest::setWorkspace));
         builder.<DeleteAppRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteAppRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(DeleteAppRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getDlmType, DeleteAppRequest::setDlmType));
 
         // response
 
@@ -2360,9 +2184,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteApproverRequest, DeleteApproverResponse> deleteApprover =
-        genFordeleteApprover();
+        genForDeleteApprover();
 
-    private static HttpRequestDef<DeleteApproverRequest, DeleteApproverResponse> genFordeleteApprover() {
+    private static HttpRequestDef<DeleteApproverRequest, DeleteApproverResponse> genForDeleteApprover() {
         // basic
         HttpRequestDef.Builder<DeleteApproverRequest, DeleteApproverResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApproverRequest.class, DeleteApproverResponse.class)
@@ -2375,25 +2199,21 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApproverRequest::getApproverIds, (req, v) -> {
-                req.setApproverIds(v);
-            }));
+            f -> f.withMarshaller(DeleteApproverRequest::getApproverIds, DeleteApproverRequest::setApproverIds));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApproverRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteApproverRequest::getWorkspace, DeleteApproverRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> deleteAsset = genFordeleteAsset();
+    public static final HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> deleteAsset = genForDeleteAsset();
 
-    private static HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> genFordeleteAsset() {
+    private static HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> genForDeleteAsset() {
         // basic
         HttpRequestDef.Builder<DeleteAssetRequest, DeleteAssetResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAssetRequest.class, DeleteAssetResponse.class)
@@ -2406,16 +2226,12 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAssetRequest::getGuid, (req, v) -> {
-                req.setGuid(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetRequest::getGuid, DeleteAssetRequest::setGuid));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAssetRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetRequest::getWorkspace, DeleteAssetRequest::setWorkspace));
 
         // response
 
@@ -2423,9 +2239,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteBizMetricRequest, DeleteBizMetricResponse> deleteBizMetric =
-        genFordeleteBizMetric();
+        genForDeleteBizMetric();
 
-    private static HttpRequestDef<DeleteBizMetricRequest, DeleteBizMetricResponse> genFordeleteBizMetric() {
+    private static HttpRequestDef<DeleteBizMetricRequest, DeleteBizMetricResponse> genForDeleteBizMetric() {
         // basic
         HttpRequestDef.Builder<DeleteBizMetricRequest, DeleteBizMetricResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBizMetricRequest.class, DeleteBizMetricResponse.class)
@@ -2438,16 +2254,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBizMetricRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteBizMetricRequest::getWorkspace, DeleteBizMetricRequest::setWorkspace));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdsParam.class),
-            f -> f.withMarshaller(DeleteBizMetricRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteBizMetricRequest::getBody, DeleteBizMetricRequest::setBody));
 
         // response
 
@@ -2455,9 +2267,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteCatalogRequest, DeleteCatalogResponse> deleteCatalog =
-        genFordeleteCatalog();
+        genForDeleteCatalog();
 
-    private static HttpRequestDef<DeleteCatalogRequest, DeleteCatalogResponse> genFordeleteCatalog() {
+    private static HttpRequestDef<DeleteCatalogRequest, DeleteCatalogResponse> genForDeleteCatalog() {
         // basic
         HttpRequestDef.Builder<DeleteCatalogRequest, DeleteCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCatalogRequest.class, DeleteCatalogResponse.class)
@@ -2470,16 +2282,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCatalogRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteCatalogRequest::getWorkspace, DeleteCatalogRequest::setWorkspace));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdsParam.class),
-            f -> f.withMarshaller(DeleteCatalogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteCatalogRequest::getBody, DeleteCatalogRequest::setBody));
 
         // response
 
@@ -2487,9 +2295,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteClassificationFromEntitiesRequest, DeleteClassificationFromEntitiesResponse> deleteClassificationFromEntities =
-        genFordeleteClassificationFromEntities();
+        genForDeleteClassificationFromEntities();
 
-    private static HttpRequestDef<DeleteClassificationFromEntitiesRequest, DeleteClassificationFromEntitiesResponse> genFordeleteClassificationFromEntities() {
+    private static HttpRequestDef<DeleteClassificationFromEntitiesRequest, DeleteClassificationFromEntitiesResponse> genForDeleteClassificationFromEntities() {
         // basic
         HttpRequestDef.Builder<DeleteClassificationFromEntitiesRequest, DeleteClassificationFromEntitiesResponse> builder =
             HttpRequestDef
@@ -2505,23 +2313,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteClassificationFromEntitiesRequest::getGuid, (req, v) -> {
-                req.setGuid(v);
-            }));
+            f -> f.withMarshaller(DeleteClassificationFromEntitiesRequest::getGuid,
+                DeleteClassificationFromEntitiesRequest::setGuid));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteClassificationFromEntitiesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteClassificationFromEntitiesRequest::getWorkspace,
+                DeleteClassificationFromEntitiesRequest::setWorkspace));
         builder.<OpenClassification>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenClassification.class),
-            f -> f.withMarshaller(DeleteClassificationFromEntitiesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteClassificationFromEntitiesRequest::getBody,
+                DeleteClassificationFromEntitiesRequest::setBody));
 
         // response
 
@@ -2529,9 +2334,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteCodeTableRequest, DeleteCodeTableResponse> deleteCodeTable =
-        genFordeleteCodeTable();
+        genForDeleteCodeTable();
 
-    private static HttpRequestDef<DeleteCodeTableRequest, DeleteCodeTableResponse> genFordeleteCodeTable() {
+    private static HttpRequestDef<DeleteCodeTableRequest, DeleteCodeTableResponse> genForDeleteCodeTable() {
         // basic
         HttpRequestDef.Builder<DeleteCodeTableRequest, DeleteCodeTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCodeTableRequest.class, DeleteCodeTableResponse.class)
@@ -2544,16 +2349,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCodeTableRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteCodeTableRequest::getWorkspace, DeleteCodeTableRequest::setWorkspace));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdsParam.class),
-            f -> f.withMarshaller(DeleteCodeTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteCodeTableRequest::getBody, DeleteCodeTableRequest::setBody));
 
         // response
 
@@ -2561,9 +2362,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteDataconnectionRequest, DeleteDataconnectionResponse> deleteDataconnection =
-        genFordeleteDataconnection();
+        genForDeleteDataconnection();
 
-    private static HttpRequestDef<DeleteDataconnectionRequest, DeleteDataconnectionResponse> genFordeleteDataconnection() {
+    private static HttpRequestDef<DeleteDataconnectionRequest, DeleteDataconnectionResponse> genForDeleteDataconnection() {
         // basic
         HttpRequestDef.Builder<DeleteDataconnectionRequest, DeleteDataconnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteDataconnectionRequest.class, DeleteDataconnectionResponse.class)
@@ -2576,16 +2377,14 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataconnectionRequest::getDataConnectionId, (req, v) -> {
-                req.setDataConnectionId(v);
-            }));
+            f -> f.withMarshaller(DeleteDataconnectionRequest::getDataConnectionId,
+                DeleteDataconnectionRequest::setDataConnectionId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataconnectionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteDataconnectionRequest::getWorkspace,
+                DeleteDataconnectionRequest::setWorkspace));
 
         // response
 
@@ -2593,9 +2392,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteDirectoryRequest, DeleteDirectoryResponse> deleteDirectory =
-        genFordeleteDirectory();
+        genForDeleteDirectory();
 
-    private static HttpRequestDef<DeleteDirectoryRequest, DeleteDirectoryResponse> genFordeleteDirectory() {
+    private static HttpRequestDef<DeleteDirectoryRequest, DeleteDirectoryResponse> genForDeleteDirectory() {
         // basic
         HttpRequestDef.Builder<DeleteDirectoryRequest, DeleteDirectoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDirectoryRequest.class, DeleteDirectoryResponse.class)
@@ -2608,16 +2407,12 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteDirectoryRequest::getIds, (req, v) -> {
-                req.setIds(v);
-            }));
+            f -> f.withMarshaller(DeleteDirectoryRequest::getIds, DeleteDirectoryRequest::setIds));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDirectoryRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteDirectoryRequest::getWorkspace, DeleteDirectoryRequest::setWorkspace));
 
         // response
 
@@ -2625,9 +2420,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteSecurityDataClassificationRuleRequest, DeleteSecurityDataClassificationRuleResponse> deleteSecurityDataClassificationRule =
-        genFordeleteSecurityDataClassificationRule();
+        genForDeleteSecurityDataClassificationRule();
 
-    private static HttpRequestDef<DeleteSecurityDataClassificationRuleRequest, DeleteSecurityDataClassificationRuleResponse> genFordeleteSecurityDataClassificationRule() {
+    private static HttpRequestDef<DeleteSecurityDataClassificationRuleRequest, DeleteSecurityDataClassificationRuleResponse> genForDeleteSecurityDataClassificationRule() {
         // basic
         HttpRequestDef.Builder<DeleteSecurityDataClassificationRuleRequest, DeleteSecurityDataClassificationRuleResponse> builder =
             HttpRequestDef
@@ -2643,16 +2438,14 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecurityDataClassificationRuleRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteSecurityDataClassificationRuleRequest::getId,
+                DeleteSecurityDataClassificationRuleRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecurityDataClassificationRuleRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteSecurityDataClassificationRuleRequest::getWorkspace,
+                DeleteSecurityDataClassificationRuleRequest::setWorkspace));
 
         // response
 
@@ -2660,9 +2453,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteSecurityLevelFromEntityRequest, DeleteSecurityLevelFromEntityResponse> deleteSecurityLevelFromEntity =
-        genFordeleteSecurityLevelFromEntity();
+        genForDeleteSecurityLevelFromEntity();
 
-    private static HttpRequestDef<DeleteSecurityLevelFromEntityRequest, DeleteSecurityLevelFromEntityResponse> genFordeleteSecurityLevelFromEntity() {
+    private static HttpRequestDef<DeleteSecurityLevelFromEntityRequest, DeleteSecurityLevelFromEntityResponse> genForDeleteSecurityLevelFromEntity() {
         // basic
         HttpRequestDef.Builder<DeleteSecurityLevelFromEntityRequest, DeleteSecurityLevelFromEntityResponse> builder =
             HttpRequestDef
@@ -2678,16 +2471,14 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecurityLevelFromEntityRequest::getGuid, (req, v) -> {
-                req.setGuid(v);
-            }));
+            f -> f.withMarshaller(DeleteSecurityLevelFromEntityRequest::getGuid,
+                DeleteSecurityLevelFromEntityRequest::setGuid));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecurityLevelFromEntityRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteSecurityLevelFromEntityRequest::getWorkspace,
+                DeleteSecurityLevelFromEntityRequest::setWorkspace));
 
         // response
 
@@ -2695,9 +2486,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteSecurityPermissionSetRequest, DeleteSecurityPermissionSetResponse> deleteSecurityPermissionSet =
-        genFordeleteSecurityPermissionSet();
+        genForDeleteSecurityPermissionSet();
 
-    private static HttpRequestDef<DeleteSecurityPermissionSetRequest, DeleteSecurityPermissionSetResponse> genFordeleteSecurityPermissionSet() {
+    private static HttpRequestDef<DeleteSecurityPermissionSetRequest, DeleteSecurityPermissionSetResponse> genForDeleteSecurityPermissionSet() {
         // basic
         HttpRequestDef.Builder<DeleteSecurityPermissionSetRequest, DeleteSecurityPermissionSetResponse> builder =
             HttpRequestDef
@@ -2713,16 +2504,14 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecurityPermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(DeleteSecurityPermissionSetRequest::getPermissionSetId,
+                DeleteSecurityPermissionSetRequest::setPermissionSetId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecurityPermissionSetRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteSecurityPermissionSetRequest::getWorkspace,
+                DeleteSecurityPermissionSetRequest::setWorkspace));
 
         // response
 
@@ -2730,9 +2519,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteServiceCatalogRequest, DeleteServiceCatalogResponse> deleteServiceCatalog =
-        genFordeleteServiceCatalog();
+        genForDeleteServiceCatalog();
 
-    private static HttpRequestDef<DeleteServiceCatalogRequest, DeleteServiceCatalogResponse> genFordeleteServiceCatalog() {
+    private static HttpRequestDef<DeleteServiceCatalogRequest, DeleteServiceCatalogResponse> genForDeleteServiceCatalog() {
         // basic
         HttpRequestDef.Builder<DeleteServiceCatalogRequest, DeleteServiceCatalogResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DeleteServiceCatalogRequest.class, DeleteServiceCatalogResponse.class)
@@ -2745,23 +2534,18 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceCatalogRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceCatalogRequest::getWorkspace,
+                DeleteServiceCatalogRequest::setWorkspace));
         builder.<DeleteServiceCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteServiceCatalogRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(DeleteServiceCatalogRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceCatalogRequest::getDlmType, DeleteServiceCatalogRequest::setDlmType));
         builder.<ApiCatalogDeleteParaDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiCatalogDeleteParaDTO.class),
-            f -> f.withMarshaller(DeleteServiceCatalogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceCatalogRequest::getBody, DeleteServiceCatalogRequest::setBody));
 
         // response
 
@@ -2769,9 +2553,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteStandardRequest, DeleteStandardResponse> deleteStandard =
-        genFordeleteStandard();
+        genForDeleteStandard();
 
-    private static HttpRequestDef<DeleteStandardRequest, DeleteStandardResponse> genFordeleteStandard() {
+    private static HttpRequestDef<DeleteStandardRequest, DeleteStandardResponse> genForDeleteStandard() {
         // basic
         HttpRequestDef.Builder<DeleteStandardRequest, DeleteStandardResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteStandardRequest.class, DeleteStandardResponse.class)
@@ -2784,16 +2568,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStandardRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteStandardRequest::getWorkspace, DeleteStandardRequest::setWorkspace));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdsParam.class),
-            f -> f.withMarshaller(DeleteStandardRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteStandardRequest::getBody, DeleteStandardRequest::setBody));
 
         // response
 
@@ -2801,9 +2581,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteStandardTemplateRequest, DeleteStandardTemplateResponse> deleteStandardTemplate =
-        genFordeleteStandardTemplate();
+        genForDeleteStandardTemplate();
 
-    private static HttpRequestDef<DeleteStandardTemplateRequest, DeleteStandardTemplateResponse> genFordeleteStandardTemplate() {
+    private static HttpRequestDef<DeleteStandardTemplateRequest, DeleteStandardTemplateResponse> genForDeleteStandardTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteStandardTemplateRequest, DeleteStandardTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteStandardTemplateRequest.class, DeleteStandardTemplateResponse.class)
@@ -2816,16 +2596,13 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStandardTemplateRequest::getIds, (req, v) -> {
-                req.setIds(v);
-            }));
+            f -> f.withMarshaller(DeleteStandardTemplateRequest::getIds, DeleteStandardTemplateRequest::setIds));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStandardTemplateRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteStandardTemplateRequest::getWorkspace,
+                DeleteStandardTemplateRequest::setWorkspace));
 
         // response
 
@@ -2833,9 +2610,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteSubjectRequest, DeleteSubjectResponse> deleteSubject =
-        genFordeleteSubject();
+        genForDeleteSubject();
 
-    private static HttpRequestDef<DeleteSubjectRequest, DeleteSubjectResponse> genFordeleteSubject() {
+    private static HttpRequestDef<DeleteSubjectRequest, DeleteSubjectResponse> genForDeleteSubject() {
         // basic
         HttpRequestDef.Builder<DeleteSubjectRequest, DeleteSubjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubjectRequest.class, DeleteSubjectResponse.class)
@@ -2848,16 +2625,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSubjectRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteSubjectRequest::getWorkspace, DeleteSubjectRequest::setWorkspace));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdsParam.class),
-            f -> f.withMarshaller(DeleteSubjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteSubjectRequest::getBody, DeleteSubjectRequest::setBody));
 
         // response
 
@@ -2865,9 +2638,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteSubjectNewRequest, DeleteSubjectNewResponse> deleteSubjectNew =
-        genFordeleteSubjectNew();
+        genForDeleteSubjectNew();
 
-    private static HttpRequestDef<DeleteSubjectNewRequest, DeleteSubjectNewResponse> genFordeleteSubjectNew() {
+    private static HttpRequestDef<DeleteSubjectNewRequest, DeleteSubjectNewResponse> genForDeleteSubjectNew() {
         // basic
         HttpRequestDef.Builder<DeleteSubjectNewRequest, DeleteSubjectNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubjectNewRequest.class, DeleteSubjectNewResponse.class)
@@ -2880,16 +2653,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSubjectNewRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteSubjectNewRequest::getWorkspace, DeleteSubjectNewRequest::setWorkspace));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdsParam.class),
-            f -> f.withMarshaller(DeleteSubjectNewRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteSubjectNewRequest::getBody, DeleteSubjectNewRequest::setBody));
 
         // response
 
@@ -2897,9 +2666,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteTableModelRequest, DeleteTableModelResponse> deleteTableModel =
-        genFordeleteTableModel();
+        genForDeleteTableModel();
 
-    private static HttpRequestDef<DeleteTableModelRequest, DeleteTableModelResponse> genFordeleteTableModel() {
+    private static HttpRequestDef<DeleteTableModelRequest, DeleteTableModelResponse> genForDeleteTableModel() {
         // basic
         HttpRequestDef.Builder<DeleteTableModelRequest, DeleteTableModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTableModelRequest.class, DeleteTableModelResponse.class)
@@ -2912,16 +2681,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableModelRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteTableModelRequest::getWorkspace, DeleteTableModelRequest::setWorkspace));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdsParam.class),
-            f -> f.withMarshaller(DeleteTableModelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteTableModelRequest::getBody, DeleteTableModelRequest::setBody));
 
         // response
 
@@ -2929,9 +2694,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteTaskInfoRequest, DeleteTaskInfoResponse> deleteTaskInfo =
-        genFordeleteTaskInfo();
+        genForDeleteTaskInfo();
 
-    private static HttpRequestDef<DeleteTaskInfoRequest, DeleteTaskInfoResponse> genFordeleteTaskInfo() {
+    private static HttpRequestDef<DeleteTaskInfoRequest, DeleteTaskInfoResponse> genForDeleteTaskInfo() {
         // basic
         HttpRequestDef.Builder<DeleteTaskInfoRequest, DeleteTaskInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskInfoRequest.class, DeleteTaskInfoResponse.class)
@@ -2944,16 +2709,12 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskInfoRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskInfoRequest::getTaskId, DeleteTaskInfoRequest::setTaskId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskInfoRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskInfoRequest::getWorkspace, DeleteTaskInfoRequest::setWorkspace));
 
         // response
 
@@ -2961,9 +2722,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteWorkspacesRequest, DeleteWorkspacesResponse> deleteWorkspaces =
-        genFordeleteWorkspaces();
+        genForDeleteWorkspaces();
 
-    private static HttpRequestDef<DeleteWorkspacesRequest, DeleteWorkspacesResponse> genFordeleteWorkspaces() {
+    private static HttpRequestDef<DeleteWorkspacesRequest, DeleteWorkspacesResponse> genForDeleteWorkspaces() {
         // basic
         HttpRequestDef.Builder<DeleteWorkspacesRequest, DeleteWorkspacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteWorkspacesRequest.class, DeleteWorkspacesResponse.class)
@@ -2976,16 +2737,12 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteWorkspacesRequest::getIds, (req, v) -> {
-                req.setIds(v);
-            }));
+            f -> f.withMarshaller(DeleteWorkspacesRequest::getIds, DeleteWorkspacesRequest::setIds));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWorkspacesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteWorkspacesRequest::getWorkspace, DeleteWorkspacesRequest::setWorkspace));
 
         // response
 
@@ -2993,9 +2750,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<DeleteWorkspaceusersRequest, DeleteWorkspaceusersResponse> deleteWorkspaceusers =
-        genFordeleteWorkspaceusers();
+        genForDeleteWorkspaceusers();
 
-    private static HttpRequestDef<DeleteWorkspaceusersRequest, DeleteWorkspaceusersResponse> genFordeleteWorkspaceusers() {
+    private static HttpRequestDef<DeleteWorkspaceusersRequest, DeleteWorkspaceusersResponse> genForDeleteWorkspaceusers() {
         // basic
         HttpRequestDef.Builder<DeleteWorkspaceusersRequest, DeleteWorkspaceusersResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DeleteWorkspaceusersRequest.class, DeleteWorkspaceusersResponse.class)
@@ -3008,16 +2765,13 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWorkspaceusersRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteWorkspaceusersRequest::getWorkspaceId,
+                DeleteWorkspaceusersRequest::setWorkspaceId));
         builder.<ApigDelUserParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApigDelUserParams.class),
-            f -> f.withMarshaller(DeleteWorkspaceusersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteWorkspaceusersRequest::getBody, DeleteWorkspaceusersRequest::setBody));
 
         // response
 
@@ -3025,9 +2779,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ExecuteTaskActionRequest, ExecuteTaskActionResponse> executeTaskAction =
-        genForexecuteTaskAction();
+        genForExecuteTaskAction();
 
-    private static HttpRequestDef<ExecuteTaskActionRequest, ExecuteTaskActionResponse> genForexecuteTaskAction() {
+    private static HttpRequestDef<ExecuteTaskActionRequest, ExecuteTaskActionResponse> genForExecuteTaskAction() {
         // basic
         HttpRequestDef.Builder<ExecuteTaskActionRequest, ExecuteTaskActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExecuteTaskActionRequest.class, ExecuteTaskActionResponse.class)
@@ -3040,23 +2794,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteTaskActionRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ExecuteTaskActionRequest::getTaskId, ExecuteTaskActionRequest::setTaskId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteTaskActionRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(ExecuteTaskActionRequest::getAction, ExecuteTaskActionRequest::setAction));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteTaskActionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ExecuteTaskActionRequest::getWorkspace, ExecuteTaskActionRequest::setWorkspace));
 
         // response
 
@@ -3064,9 +2812,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ImportCatalogsRequest, ImportCatalogsResponse> importCatalogs =
-        genForimportCatalogs();
+        genForImportCatalogs();
 
-    private static HttpRequestDef<ImportCatalogsRequest, ImportCatalogsResponse> genForimportCatalogs() {
+    private static HttpRequestDef<ImportCatalogsRequest, ImportCatalogsResponse> genForImportCatalogs() {
         // basic
         HttpRequestDef.Builder<ImportCatalogsRequest, ImportCatalogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportCatalogsRequest.class, ImportCatalogsResponse.class)
@@ -3079,30 +2827,22 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportCatalogsRequest::getActionId, (req, v) -> {
-                req.setActionId(v);
-            }));
+            f -> f.withMarshaller(ImportCatalogsRequest::getActionId, ImportCatalogsRequest::setActionId));
         builder.<Boolean>withRequestField("skip-exist",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ImportCatalogsRequest::getSkipExist, (req, v) -> {
-                req.setSkipExist(v);
-            }));
+            f -> f.withMarshaller(ImportCatalogsRequest::getSkipExist, ImportCatalogsRequest::setSkipExist));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportCatalogsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ImportCatalogsRequest::getWorkspace, ImportCatalogsRequest::setWorkspace));
         builder.<ImportCatalogsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportCatalogsRequestBody.class),
-            f -> f.withMarshaller(ImportCatalogsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportCatalogsRequest::getBody, ImportCatalogsRequest::setBody));
 
         // response
 
@@ -3110,9 +2850,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ImportLineageRequest, ImportLineageResponse> importLineage =
-        genForimportLineage();
+        genForImportLineage();
 
-    private static HttpRequestDef<ImportLineageRequest, ImportLineageResponse> genForimportLineage() {
+    private static HttpRequestDef<ImportLineageRequest, ImportLineageResponse> genForImportLineage() {
         // basic
         HttpRequestDef.Builder<ImportLineageRequest, ImportLineageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportLineageRequest.class, ImportLineageResponse.class)
@@ -3125,32 +2865,28 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportLineageRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ImportLineageRequest::getWorkspace, ImportLineageRequest::setWorkspace));
         builder.<List<TableLineage>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ImportLineageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(TableLineage.class));
+            f -> f.withMarshaller(ImportLineageRequest::getBody, ImportLineageRequest::setBody)
+                .withInnerContainerType(TableLineage.class));
 
         // response
         builder.<List<ObjectIdInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ImportLineageResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ObjectIdInfo.class));
+            f -> f.withMarshaller(ImportLineageResponse::getBody, ImportLineageResponse::setBody)
+                .withInnerContainerType(ObjectIdInfo.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportModelsRequest, ImportModelsResponse> importModels = genForimportModels();
+    public static final HttpRequestDef<ImportModelsRequest, ImportModelsResponse> importModels = genForImportModels();
 
-    private static HttpRequestDef<ImportModelsRequest, ImportModelsResponse> genForimportModels() {
+    private static HttpRequestDef<ImportModelsRequest, ImportModelsResponse> genForImportModels() {
         // basic
         HttpRequestDef.Builder<ImportModelsRequest, ImportModelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportModelsRequest.class, ImportModelsResponse.class)
@@ -3163,53 +2899,41 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportModelsRequest.ActionIdEnum.class),
-            f -> f.withMarshaller(ImportModelsRequest::getActionId, (req, v) -> {
-                req.setActionId(v);
-            }));
+            f -> f.withMarshaller(ImportModelsRequest::getActionId, ImportModelsRequest::setActionId));
         builder.<String>withRequestField("model_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportModelsRequest::getModelId, (req, v) -> {
-                req.setModelId(v);
-            }));
+            f -> f.withMarshaller(ImportModelsRequest::getModelId, ImportModelsRequest::setModelId));
         builder.<String>withRequestField("directory_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportModelsRequest::getDirectoryId, (req, v) -> {
-                req.setDirectoryId(v);
-            }));
+            f -> f.withMarshaller(ImportModelsRequest::getDirectoryId, ImportModelsRequest::setDirectoryId));
         builder.<Boolean>withRequestField("skip-exist",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ImportModelsRequest::getSkipExist, (req, v) -> {
-                req.setSkipExist(v);
-            }));
+            f -> f.withMarshaller(ImportModelsRequest::getSkipExist, ImportModelsRequest::setSkipExist));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportModelsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ImportModelsRequest::getWorkspace, ImportModelsRequest::setWorkspace));
         builder.<ImportModelsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportModelsRequestBody.class),
-            f -> f.withMarshaller(ImportModelsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportModelsRequest::getBody, ImportModelsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportResultRequest, ImportResultResponse> importResult = genForimportResult();
+    public static final HttpRequestDef<ImportResultRequest, ImportResultResponse> importResult = genForImportResult();
 
-    private static HttpRequestDef<ImportResultRequest, ImportResultResponse> genForimportResult() {
+    private static HttpRequestDef<ImportResultRequest, ImportResultResponse> genForImportResult() {
         // basic
         HttpRequestDef.Builder<ImportResultRequest, ImportResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ImportResultRequest.class, ImportResultResponse.class)
@@ -3222,16 +2946,12 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportResultRequest::getUuid, (req, v) -> {
-                req.setUuid(v);
-            }));
+            f -> f.withMarshaller(ImportResultRequest::getUuid, ImportResultRequest::setUuid));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportResultRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ImportResultRequest::getWorkspace, ImportResultRequest::setWorkspace));
 
         // response
 
@@ -3239,9 +2959,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<InitializeStandardTemplateRequest, InitializeStandardTemplateResponse> initializeStandardTemplate =
-        genForinitializeStandardTemplate();
+        genForInitializeStandardTemplate();
 
-    private static HttpRequestDef<InitializeStandardTemplateRequest, InitializeStandardTemplateResponse> genForinitializeStandardTemplate() {
+    private static HttpRequestDef<InitializeStandardTemplateRequest, InitializeStandardTemplateResponse> genForInitializeStandardTemplate() {
         // basic
         HttpRequestDef.Builder<InitializeStandardTemplateRequest, InitializeStandardTemplateResponse> builder =
             HttpRequestDef
@@ -3257,23 +2977,20 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InitializeStandardTemplateRequest::getActionId, (req, v) -> {
-                req.setActionId(v);
-            }));
+            f -> f.withMarshaller(InitializeStandardTemplateRequest::getActionId,
+                InitializeStandardTemplateRequest::setActionId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InitializeStandardTemplateRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(InitializeStandardTemplateRequest::getWorkspace,
+                InitializeStandardTemplateRequest::setWorkspace));
         builder.<StandElementFieldVOList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StandElementFieldVOList.class),
-            f -> f.withMarshaller(InitializeStandardTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InitializeStandardTemplateRequest::getBody,
+                InitializeStandardTemplateRequest::setBody));
 
         // response
 
@@ -3281,9 +2998,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListAggregationLogicTablesRequest, ListAggregationLogicTablesResponse> listAggregationLogicTables =
-        genForlistAggregationLogicTables();
+        genForListAggregationLogicTables();
 
-    private static HttpRequestDef<ListAggregationLogicTablesRequest, ListAggregationLogicTablesResponse> genForlistAggregationLogicTables() {
+    private static HttpRequestDef<ListAggregationLogicTablesRequest, ListAggregationLogicTablesResponse> genForListAggregationLogicTables() {
         // basic
         HttpRequestDef.Builder<ListAggregationLogicTablesRequest, ListAggregationLogicTablesResponse> builder =
             HttpRequestDef
@@ -3299,107 +3016,92 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getName,
+                ListAggregationLogicTablesRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getCreateBy,
+                ListAggregationLogicTablesRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getApprover,
+                ListAggregationLogicTablesRequest::setApprover));
         builder.<String>withRequestField("owner",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getOwner, (req, v) -> {
-                req.setOwner(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getOwner,
+                ListAggregationLogicTablesRequest::setOwner));
         builder.<ListAggregationLogicTablesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAggregationLogicTablesRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getStatus,
+                ListAggregationLogicTablesRequest::setStatus));
         builder.<ListAggregationLogicTablesRequest.SyncStatusEnum>withRequestField("sync_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAggregationLogicTablesRequest.SyncStatusEnum.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getSyncStatus, (req, v) -> {
-                req.setSyncStatus(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getSyncStatus,
+                ListAggregationLogicTablesRequest::setSyncStatus));
         builder.<List<ListAggregationLogicTablesRequest.SyncKeyEnum>>withRequestField("sync_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getSyncKey, (req, v) -> {
-                req.setSyncKey(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getSyncKey,
+                ListAggregationLogicTablesRequest::setSyncKey));
         builder.<Long>withRequestField("l3_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getL3Id, (req, v) -> {
-                req.setL3Id(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getL3Id,
+                ListAggregationLogicTablesRequest::setL3Id));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getBeginTime,
+                ListAggregationLogicTablesRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getEndTime,
+                ListAggregationLogicTablesRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getLimit,
+                ListAggregationLogicTablesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getOffset,
+                ListAggregationLogicTablesRequest::setOffset));
         builder.<String>withRequestField("biz_catalog_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getBizCatalogId, (req, v) -> {
-                req.setBizCatalogId(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getBizCatalogId,
+                ListAggregationLogicTablesRequest::setBizCatalogId));
         builder.<Boolean>withRequestField("auto_generate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getAutoGenerate, (req, v) -> {
-                req.setAutoGenerate(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getAutoGenerate,
+                ListAggregationLogicTablesRequest::setAutoGenerate));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getWorkspace,
+                ListAggregationLogicTablesRequest::setWorkspace));
 
         // response
 
@@ -3407,9 +3109,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListAllCatalogListRequest, ListAllCatalogListResponse> listAllCatalogList =
-        genForlistAllCatalogList();
+        genForListAllCatalogList();
 
-    private static HttpRequestDef<ListAllCatalogListRequest, ListAllCatalogListResponse> genForlistAllCatalogList() {
+    private static HttpRequestDef<ListAllCatalogListRequest, ListAllCatalogListResponse> genForListAllCatalogList() {
         // basic
         HttpRequestDef.Builder<ListAllCatalogListRequest, ListAllCatalogListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllCatalogListRequest.class, ListAllCatalogListResponse.class)
@@ -3422,37 +3124,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllCatalogListRequest::getCatalogId, (req, v) -> {
-                req.setCatalogId(v);
-            }));
+            f -> f.withMarshaller(ListAllCatalogListRequest::getCatalogId, ListAllCatalogListRequest::setCatalogId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllCatalogListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAllCatalogListRequest::getOffset, ListAllCatalogListRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllCatalogListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAllCatalogListRequest::getLimit, ListAllCatalogListRequest::setLimit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllCatalogListRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListAllCatalogListRequest::getWorkspace, ListAllCatalogListRequest::setWorkspace));
         builder.<ListAllCatalogListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAllCatalogListRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListAllCatalogListRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListAllCatalogListRequest::getDlmType, ListAllCatalogListRequest::setDlmType));
 
         // response
 
@@ -3460,9 +3152,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListAllStandardsRequest, ListAllStandardsResponse> listAllStandards =
-        genForlistAllStandards();
+        genForListAllStandards();
 
-    private static HttpRequestDef<ListAllStandardsRequest, ListAllStandardsResponse> genForlistAllStandards() {
+    private static HttpRequestDef<ListAllStandardsRequest, ListAllStandardsResponse> genForListAllStandards() {
         // basic
         HttpRequestDef.Builder<ListAllStandardsRequest, ListAllStandardsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllStandardsRequest.class, ListAllStandardsResponse.class)
@@ -3475,44 +3167,32 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllStandardsRequest::getDirectoryId, (req, v) -> {
-                req.setDirectoryId(v);
-            }));
+            f -> f.withMarshaller(ListAllStandardsRequest::getDirectoryId, ListAllStandardsRequest::setDirectoryId));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllStandardsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListAllStandardsRequest::getBeginTime, ListAllStandardsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllStandardsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAllStandardsRequest::getEndTime, ListAllStandardsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllStandardsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAllStandardsRequest::getLimit, ListAllStandardsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllStandardsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAllStandardsRequest::getOffset, ListAllStandardsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllStandardsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListAllStandardsRequest::getWorkspace, ListAllStandardsRequest::setWorkspace));
 
         // response
 
@@ -3520,9 +3200,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListAllTablesRequest, ListAllTablesResponse> listAllTables =
-        genForlistAllTables();
+        genForListAllTables();
 
-    private static HttpRequestDef<ListAllTablesRequest, ListAllTablesResponse> genForlistAllTables() {
+    private static HttpRequestDef<ListAllTablesRequest, ListAllTablesResponse> genForListAllTables() {
         // basic
         HttpRequestDef.Builder<ListAllTablesRequest, ListAllTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllTablesRequest.class, ListAllTablesResponse.class)
@@ -3535,93 +3215,68 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getName, ListAllTablesRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getCreateBy, ListAllTablesRequest::setCreateBy));
         builder.<ListAllTablesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAllTablesRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getStatus, ListAllTablesRequest::setStatus));
         builder.<ListAllTablesRequest.SyncStatusEnum>withRequestField("sync_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAllTablesRequest.SyncStatusEnum.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getSyncStatus, (req, v) -> {
-                req.setSyncStatus(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getSyncStatus, ListAllTablesRequest::setSyncStatus));
         builder.<List<ListAllTablesRequest.SyncKeyEnum>>withRequestField("sync_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getSyncKey, (req, v) -> {
-                req.setSyncKey(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getSyncKey, ListAllTablesRequest::setSyncKey));
         builder.<String>withRequestField("biz_catalog_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getBizCatalogId, (req, v) -> {
-                req.setBizCatalogId(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getBizCatalogId, ListAllTablesRequest::setBizCatalogId));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getBeginTime, ListAllTablesRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getEndTime, ListAllTablesRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getLimit, ListAllTablesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getOffset, ListAllTablesRequest::setOffset));
         builder.<List<Long>>withRequestField("biz_catalog_id_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getBizCatalogIdList, (req, v) -> {
-                req.setBizCatalogIdList(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getBizCatalogIdList,
+                ListAllTablesRequest::setBizCatalogIdList));
         builder.<List<ListAllTablesRequest.BizTypeListEnum>>withRequestField("biz_type_list",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getBizTypeList, (req, v) -> {
-                req.setBizTypeList(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getBizTypeList, ListAllTablesRequest::setBizTypeList));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListAllTablesRequest::getWorkspace, ListAllTablesRequest::setWorkspace));
 
         // response
 
@@ -3629,9 +3284,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListApiCatalogListRequest, ListApiCatalogListResponse> listApiCatalogList =
-        genForlistApiCatalogList();
+        genForListApiCatalogList();
 
-    private static HttpRequestDef<ListApiCatalogListRequest, ListApiCatalogListResponse> genForlistApiCatalogList() {
+    private static HttpRequestDef<ListApiCatalogListRequest, ListApiCatalogListResponse> genForListApiCatalogList() {
         // basic
         HttpRequestDef.Builder<ListApiCatalogListRequest, ListApiCatalogListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiCatalogListRequest.class, ListApiCatalogListResponse.class)
@@ -3644,46 +3299,36 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiCatalogListRequest::getCatalogId, (req, v) -> {
-                req.setCatalogId(v);
-            }));
+            f -> f.withMarshaller(ListApiCatalogListRequest::getCatalogId, ListApiCatalogListRequest::setCatalogId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiCatalogListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApiCatalogListRequest::getOffset, ListApiCatalogListRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiCatalogListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApiCatalogListRequest::getLimit, ListApiCatalogListRequest::setLimit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiCatalogListRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListApiCatalogListRequest::getWorkspace, ListApiCatalogListRequest::setWorkspace));
         builder.<ListApiCatalogListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApiCatalogListRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListApiCatalogListRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListApiCatalogListRequest::getDlmType, ListApiCatalogListRequest::setDlmType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApiTopNRequest, ListApiTopNResponse> listApiTopN = genForlistApiTopN();
+    public static final HttpRequestDef<ListApiTopNRequest, ListApiTopNResponse> listApiTopN = genForListApiTopN();
 
-    private static HttpRequestDef<ListApiTopNRequest, ListApiTopNResponse> genForlistApiTopN() {
+    private static HttpRequestDef<ListApiTopNRequest, ListApiTopNResponse> genForListApiTopN() {
         // basic
         HttpRequestDef.Builder<ListApiTopNRequest, ListApiTopNResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiTopNRequest.class, ListApiTopNResponse.class)
@@ -3696,65 +3341,47 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiTopNRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApiTopNRequest::getApiId, ListApiTopNRequest::setApiId));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiTopNRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiTopNRequest::getInstanceId, ListApiTopNRequest::setInstanceId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApiTopNRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListApiTopNRequest::getStartTime, ListApiTopNRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApiTopNRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListApiTopNRequest::getEndTime, ListApiTopNRequest::setEndTime));
         builder.<ListApiTopNRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListApiTopNRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ListApiTopNRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ListApiTopNRequest::getTimeUnit, ListApiTopNRequest::setTimeUnit));
         builder.<Integer>withRequestField("top_num",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiTopNRequest::getTopNum, (req, v) -> {
-                req.setTopNum(v);
-            }));
+            f -> f.withMarshaller(ListApiTopNRequest::getTopNum, ListApiTopNRequest::setTopNum));
         builder.<ListApiTopNRequest.OrderByEnum>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListApiTopNRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListApiTopNRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListApiTopNRequest::getOrderBy, ListApiTopNRequest::setOrderBy));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiTopNRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListApiTopNRequest::getWorkspace, ListApiTopNRequest::setWorkspace));
         builder.<ListApiTopNRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApiTopNRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListApiTopNRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListApiTopNRequest::getDlmType, ListApiTopNRequest::setDlmType));
 
         // response
 
@@ -3762,9 +3389,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListApicGroupsRequest, ListApicGroupsResponse> listApicGroups =
-        genForlistApicGroups();
+        genForListApicGroups();
 
-    private static HttpRequestDef<ListApicGroupsRequest, ListApicGroupsResponse> genForlistApicGroups() {
+    private static HttpRequestDef<ListApicGroupsRequest, ListApicGroupsResponse> genForListApicGroups() {
         // basic
         HttpRequestDef.Builder<ListApicGroupsRequest, ListApicGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApicGroupsRequest.class, ListApicGroupsResponse.class)
@@ -3777,44 +3404,32 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApicGroupsRequest::getApigInstanceId, (req, v) -> {
-                req.setApigInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApicGroupsRequest::getApigInstanceId, ListApicGroupsRequest::setApigInstanceId));
         builder.<ListApicGroupsRequest.ApigTypeEnum>withRequestField("apig_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListApicGroupsRequest.ApigTypeEnum.class),
-            f -> f.withMarshaller(ListApicGroupsRequest::getApigType, (req, v) -> {
-                req.setApigType(v);
-            }));
+            f -> f.withMarshaller(ListApicGroupsRequest::getApigType, ListApicGroupsRequest::setApigType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApicGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApicGroupsRequest::getLimit, ListApicGroupsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApicGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApicGroupsRequest::getOffset, ListApicGroupsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApicGroupsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListApicGroupsRequest::getWorkspace, ListApicGroupsRequest::setWorkspace));
         builder.<ListApicGroupsRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApicGroupsRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListApicGroupsRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListApicGroupsRequest::getDlmType, ListApicGroupsRequest::setDlmType));
 
         // response
 
@@ -3822,9 +3437,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListApicInstancesRequest, ListApicInstancesResponse> listApicInstances =
-        genForlistApicInstances();
+        genForListApicInstances();
 
-    private static HttpRequestDef<ListApicInstancesRequest, ListApicInstancesResponse> genForlistApicInstances() {
+    private static HttpRequestDef<ListApicInstancesRequest, ListApicInstancesResponse> genForListApicInstances() {
         // basic
         HttpRequestDef.Builder<ListApicInstancesRequest, ListApicInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApicInstancesRequest.class, ListApicInstancesResponse.class)
@@ -3837,46 +3452,36 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListApicInstancesRequest.ApigTypeEnum.class),
-            f -> f.withMarshaller(ListApicInstancesRequest::getApigType, (req, v) -> {
-                req.setApigType(v);
-            }));
+            f -> f.withMarshaller(ListApicInstancesRequest::getApigType, ListApicInstancesRequest::setApigType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApicInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApicInstancesRequest::getLimit, ListApicInstancesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApicInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApicInstancesRequest::getOffset, ListApicInstancesRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApicInstancesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListApicInstancesRequest::getWorkspace, ListApicInstancesRequest::setWorkspace));
         builder.<ListApicInstancesRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApicInstancesRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListApicInstancesRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListApicInstancesRequest::getDlmType, ListApicInstancesRequest::setDlmType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApisTopRequest, ListApisTopResponse> listApisTop = genForlistApisTop();
+    public static final HttpRequestDef<ListApisTopRequest, ListApisTopResponse> listApisTop = genForListApisTop();
 
-    private static HttpRequestDef<ListApisTopRequest, ListApisTopResponse> genForlistApisTop() {
+    private static HttpRequestDef<ListApisTopRequest, ListApisTopResponse> genForListApisTop() {
         // basic
         HttpRequestDef.Builder<ListApisTopRequest, ListApisTopResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisTopRequest.class, ListApisTopResponse.class)
@@ -3889,67 +3494,51 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisTopRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisTopRequest::getInstanceId, ListApisTopRequest::setInstanceId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisTopRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListApisTopRequest::getStartTime, ListApisTopRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisTopRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListApisTopRequest::getEndTime, ListApisTopRequest::setEndTime));
         builder.<ListApisTopRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListApisTopRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ListApisTopRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ListApisTopRequest::getTimeUnit, ListApisTopRequest::setTimeUnit));
         builder.<Integer>withRequestField("top_num",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisTopRequest::getTopNum, (req, v) -> {
-                req.setTopNum(v);
-            }));
+            f -> f.withMarshaller(ListApisTopRequest::getTopNum, ListApisTopRequest::setTopNum));
         builder.<ListApisTopRequest.OrderByEnum>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListApisTopRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListApisTopRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListApisTopRequest::getOrderBy, ListApisTopRequest::setOrderBy));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisTopRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListApisTopRequest::getWorkspace, ListApisTopRequest::setWorkspace));
         builder.<ListApisTopRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApisTopRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListApisTopRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListApisTopRequest::getDlmType, ListApisTopRequest::setDlmType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApplyRequest, ListApplyResponse> listApply = genForlistApply();
+    public static final HttpRequestDef<ListApplyRequest, ListApplyResponse> listApply = genForListApply();
 
-    private static HttpRequestDef<ListApplyRequest, ListApplyResponse> genForlistApply() {
+    private static HttpRequestDef<ListApplyRequest, ListApplyResponse> genForListApply() {
         // basic
         HttpRequestDef.Builder<ListApplyRequest, ListApplyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApplyRequest.class, ListApplyResponse.class)
@@ -3962,44 +3551,32 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApplyRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApplyRequest::getOffset, ListApplyRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApplyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApplyRequest::getLimit, ListApplyRequest::setLimit));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplyRequest::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApplyRequest::getApiName, ListApplyRequest::setApiName));
         builder.<Integer>withRequestField("query_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApplyRequest::getQueryType, (req, v) -> {
-                req.setQueryType(v);
-            }));
+            f -> f.withMarshaller(ListApplyRequest::getQueryType, ListApplyRequest::setQueryType));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplyRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListApplyRequest::getWorkspace, ListApplyRequest::setWorkspace));
         builder.<ListApplyRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApplyRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListApplyRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListApplyRequest::getDlmType, ListApplyRequest::setDlmType));
 
         // response
 
@@ -4007,9 +3584,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListApproversRequest, ListApproversResponse> listApprovers =
-        genForlistApprovers();
+        genForListApprovers();
 
-    private static HttpRequestDef<ListApproversRequest, ListApproversResponse> genForlistApprovers() {
+    private static HttpRequestDef<ListApproversRequest, ListApproversResponse> genForListApprovers() {
         // basic
         HttpRequestDef.Builder<ListApproversRequest, ListApproversResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApproversRequest.class, ListApproversResponse.class)
@@ -4022,39 +3599,31 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApproversRequest::getApproverName, (req, v) -> {
-                req.setApproverName(v);
-            }));
+            f -> f.withMarshaller(ListApproversRequest::getApproverName, ListApproversRequest::setApproverName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApproversRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApproversRequest::getLimit, ListApproversRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApproversRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApproversRequest::getOffset, ListApproversRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApproversRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListApproversRequest::getWorkspace, ListApproversRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForlistApps();
+    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForListApps();
 
-    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForlistApps() {
+    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForListApps() {
         // basic
         HttpRequestDef.Builder<ListAppsRequest, ListAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsRequest.class, ListAppsResponse.class)
@@ -4067,53 +3636,41 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getLimit, ListAppsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getOffset, ListAppsRequest::setOffset));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getName, ListAppsRequest::setName));
         builder.<ListAppsRequest.AppTypeEnum>withRequestField("app_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAppsRequest.AppTypeEnum.class),
-            f -> f.withMarshaller(ListAppsRequest::getAppType, (req, v) -> {
-                req.setAppType(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getAppType, ListAppsRequest::setAppType));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getWorkspace, ListAppsRequest::setWorkspace));
         builder.<ListAppsRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAppsRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListAppsRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getDlmType, ListAppsRequest::setDlmType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppsTopRequest, ListAppsTopResponse> listAppsTop = genForlistAppsTop();
+    public static final HttpRequestDef<ListAppsTopRequest, ListAppsTopResponse> listAppsTop = genForListAppsTop();
 
-    private static HttpRequestDef<ListAppsTopRequest, ListAppsTopResponse> genForlistAppsTop() {
+    private static HttpRequestDef<ListAppsTopRequest, ListAppsTopResponse> genForListAppsTop() {
         // basic
         HttpRequestDef.Builder<ListAppsTopRequest, ListAppsTopResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsTopRequest.class, ListAppsTopResponse.class)
@@ -4126,51 +3683,37 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsTopRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListAppsTopRequest::getStartTime, ListAppsTopRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsTopRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAppsTopRequest::getEndTime, ListAppsTopRequest::setEndTime));
         builder.<ListAppsTopRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListAppsTopRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ListAppsTopRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ListAppsTopRequest::getTimeUnit, ListAppsTopRequest::setTimeUnit));
         builder.<Integer>withRequestField("top_num",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsTopRequest::getTopNum, (req, v) -> {
-                req.setTopNum(v);
-            }));
+            f -> f.withMarshaller(ListAppsTopRequest::getTopNum, ListAppsTopRequest::setTopNum));
         builder.<ListAppsTopRequest.OrderByEnum>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListAppsTopRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListAppsTopRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListAppsTopRequest::getOrderBy, ListAppsTopRequest::setOrderBy));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsTopRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListAppsTopRequest::getWorkspace, ListAppsTopRequest::setWorkspace));
         builder.<ListAppsTopRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAppsTopRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListAppsTopRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListAppsTopRequest::getDlmType, ListAppsTopRequest::setDlmType));
 
         // response
 
@@ -4178,9 +3721,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListBizMetricDimensionsRequest, ListBizMetricDimensionsResponse> listBizMetricDimensions =
-        genForlistBizMetricDimensions();
+        genForListBizMetricDimensions();
 
-    private static HttpRequestDef<ListBizMetricDimensionsRequest, ListBizMetricDimensionsResponse> genForlistBizMetricDimensions() {
+    private static HttpRequestDef<ListBizMetricDimensionsRequest, ListBizMetricDimensionsResponse> genForListBizMetricDimensions() {
         // basic
         HttpRequestDef.Builder<ListBizMetricDimensionsRequest, ListBizMetricDimensionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListBizMetricDimensionsRequest.class, ListBizMetricDimensionsResponse.class)
@@ -4193,23 +3736,19 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBizMetricDimensionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricDimensionsRequest::getLimit, ListBizMetricDimensionsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBizMetricDimensionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricDimensionsRequest::getOffset,
+                ListBizMetricDimensionsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBizMetricDimensionsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricDimensionsRequest::getWorkspace,
+                ListBizMetricDimensionsRequest::setWorkspace));
 
         // response
 
@@ -4217,9 +3756,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListBizMetricOwnersRequest, ListBizMetricOwnersResponse> listBizMetricOwners =
-        genForlistBizMetricOwners();
+        genForListBizMetricOwners();
 
-    private static HttpRequestDef<ListBizMetricOwnersRequest, ListBizMetricOwnersResponse> genForlistBizMetricOwners() {
+    private static HttpRequestDef<ListBizMetricOwnersRequest, ListBizMetricOwnersResponse> genForListBizMetricOwners() {
         // basic
         HttpRequestDef.Builder<ListBizMetricOwnersRequest, ListBizMetricOwnersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBizMetricOwnersRequest.class, ListBizMetricOwnersResponse.class)
@@ -4232,23 +3771,17 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBizMetricOwnersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricOwnersRequest::getLimit, ListBizMetricOwnersRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBizMetricOwnersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricOwnersRequest::getOffset, ListBizMetricOwnersRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBizMetricOwnersRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricOwnersRequest::getWorkspace, ListBizMetricOwnersRequest::setWorkspace));
 
         // response
 
@@ -4256,9 +3789,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListBizMetricsRequest, ListBizMetricsResponse> listBizMetrics =
-        genForlistBizMetrics();
+        genForListBizMetrics();
 
-    private static HttpRequestDef<ListBizMetricsRequest, ListBizMetricsResponse> genForlistBizMetrics() {
+    private static HttpRequestDef<ListBizMetricsRequest, ListBizMetricsResponse> genForListBizMetrics() {
         // basic
         HttpRequestDef.Builder<ListBizMetricsRequest, ListBizMetricsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBizMetricsRequest.class, ListBizMetricsResponse.class)
@@ -4271,95 +3804,71 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getName, ListBizMetricsRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getCreateBy, ListBizMetricsRequest::setCreateBy));
         builder.<String>withRequestField("owner",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getOwner, (req, v) -> {
-                req.setOwner(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getOwner, ListBizMetricsRequest::setOwner));
         builder.<ListBizMetricsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBizMetricsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getStatus, ListBizMetricsRequest::setStatus));
         builder.<ListBizMetricsRequest.SyncStatusEnum>withRequestField("sync_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBizMetricsRequest.SyncStatusEnum.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getSyncStatus, (req, v) -> {
-                req.setSyncStatus(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getSyncStatus, ListBizMetricsRequest::setSyncStatus));
         builder.<List<ListBizMetricsRequest.SyncKeyEnum>>withRequestField("sync_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getSyncKey, (req, v) -> {
-                req.setSyncKey(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getSyncKey, ListBizMetricsRequest::setSyncKey));
         builder.<String>withRequestField("biz_catalog_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getBizCatalogId, (req, v) -> {
-                req.setBizCatalogId(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getBizCatalogId, ListBizMetricsRequest::setBizCatalogId));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getBeginTime, ListBizMetricsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getEndTime, ListBizMetricsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getLimit, ListBizMetricsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getOffset, ListBizMetricsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBizMetricsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListBizMetricsRequest::getWorkspace, ListBizMetricsRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBusinessRequest, ListBusinessResponse> listBusiness = genForlistBusiness();
+    public static final HttpRequestDef<ListBusinessRequest, ListBusinessResponse> listBusiness = genForListBusiness();
 
-    private static HttpRequestDef<ListBusinessRequest, ListBusinessResponse> genForlistBusiness() {
+    private static HttpRequestDef<ListBusinessRequest, ListBusinessResponse> genForListBusiness() {
         // basic
         HttpRequestDef.Builder<ListBusinessRequest, ListBusinessResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBusinessRequest.class, ListBusinessResponse.class)
@@ -4372,23 +3881,17 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBusinessRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBusinessRequest::getLimit, ListBusinessRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBusinessRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBusinessRequest::getOffset, ListBusinessRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBusinessRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListBusinessRequest::getWorkspace, ListBusinessRequest::setWorkspace));
 
         // response
 
@@ -4396,9 +3899,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListCatalogListRequest, ListCatalogListResponse> listCatalogList =
-        genForlistCatalogList();
+        genForListCatalogList();
 
-    private static HttpRequestDef<ListCatalogListRequest, ListCatalogListResponse> genForlistCatalogList() {
+    private static HttpRequestDef<ListCatalogListRequest, ListCatalogListResponse> genForListCatalogList() {
         // basic
         HttpRequestDef.Builder<ListCatalogListRequest, ListCatalogListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCatalogListRequest.class, ListCatalogListResponse.class)
@@ -4411,37 +3914,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCatalogListRequest::getCatalogId, (req, v) -> {
-                req.setCatalogId(v);
-            }));
+            f -> f.withMarshaller(ListCatalogListRequest::getCatalogId, ListCatalogListRequest::setCatalogId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCatalogListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCatalogListRequest::getLimit, ListCatalogListRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCatalogListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCatalogListRequest::getOffset, ListCatalogListRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCatalogListRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListCatalogListRequest::getWorkspace, ListCatalogListRequest::setWorkspace));
         builder.<ListCatalogListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListCatalogListRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListCatalogListRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListCatalogListRequest::getDlmType, ListCatalogListRequest::setDlmType));
 
         // response
 
@@ -4449,9 +3942,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListCatalogTreeRequest, ListCatalogTreeResponse> listCatalogTree =
-        genForlistCatalogTree();
+        genForListCatalogTree();
 
-    private static HttpRequestDef<ListCatalogTreeRequest, ListCatalogTreeResponse> genForlistCatalogTree() {
+    private static HttpRequestDef<ListCatalogTreeRequest, ListCatalogTreeResponse> genForListCatalogTree() {
         // basic
         HttpRequestDef.Builder<ListCatalogTreeRequest, ListCatalogTreeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCatalogTreeRequest.class, ListCatalogTreeResponse.class)
@@ -4464,18 +3957,16 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCatalogTreeRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListCatalogTreeRequest::getWorkspace, ListCatalogTreeRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCategoryRequest, ListCategoryResponse> listCategory = genForlistCategory();
+    public static final HttpRequestDef<ListCategoryRequest, ListCategoryResponse> listCategory = genForListCategory();
 
-    private static HttpRequestDef<ListCategoryRequest, ListCategoryResponse> genForlistCategory() {
+    private static HttpRequestDef<ListCategoryRequest, ListCategoryResponse> genForListCategory() {
         // basic
         HttpRequestDef.Builder<ListCategoryRequest, ListCategoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCategoryRequest.class, ListCategoryResponse.class)
@@ -4488,46 +3979,37 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCategoryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCategoryRequest::getLimit, ListCategoryRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCategoryRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCategoryRequest::getOffset, ListCategoryRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCategoryRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListCategoryRequest::getWorkspace, ListCategoryRequest::setWorkspace));
         builder.<String>withRequestField("accept",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCategoryRequest::getAccept, (req, v) -> {
-                req.setAccept(v);
-            }));
+            f -> f.withMarshaller(ListCategoryRequest::getAccept, ListCategoryRequest::setAccept));
 
         // response
         builder.<List<CategoryDetailVO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCategoryResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(CategoryDetailVO.class));
+            f -> f.withMarshaller(ListCategoryResponse::getBody, ListCategoryResponse::setBody)
+                .withInnerContainerType(CategoryDetailVO.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListColumnsRequest, ListColumnsResponse> listColumns = genForlistColumns();
+    public static final HttpRequestDef<ListColumnsRequest, ListColumnsResponse> listColumns = genForListColumns();
 
-    private static HttpRequestDef<ListColumnsRequest, ListColumnsResponse> genForlistColumns() {
+    private static HttpRequestDef<ListColumnsRequest, ListColumnsResponse> genForListColumns() {
         // basic
         HttpRequestDef.Builder<ListColumnsRequest, ListColumnsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListColumnsRequest.class, ListColumnsResponse.class)
@@ -4540,37 +4022,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListColumnsRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListColumnsRequest::getConnectionId, ListColumnsRequest::setConnectionId));
         builder.<String>withRequestField("table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListColumnsRequest::getTableId, (req, v) -> {
-                req.setTableId(v);
-            }));
+            f -> f.withMarshaller(ListColumnsRequest::getTableId, ListColumnsRequest::setTableId));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListColumnsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListColumnsRequest::getLimit, ListColumnsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListColumnsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListColumnsRequest::getOffset, ListColumnsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListColumnsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListColumnsRequest::getWorkspace, ListColumnsRequest::setWorkspace));
 
         // response
 
@@ -4578,9 +4050,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListCompoundMetricsRequest, ListCompoundMetricsResponse> listCompoundMetrics =
-        genForlistCompoundMetrics();
+        genForListCompoundMetrics();
 
-    private static HttpRequestDef<ListCompoundMetricsRequest, ListCompoundMetricsResponse> genForlistCompoundMetrics() {
+    private static HttpRequestDef<ListCompoundMetricsRequest, ListCompoundMetricsResponse> genForListCompoundMetrics() {
         // basic
         HttpRequestDef.Builder<ListCompoundMetricsRequest, ListCompoundMetricsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCompoundMetricsRequest.class, ListCompoundMetricsResponse.class)
@@ -4593,86 +4065,64 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getName, ListCompoundMetricsRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getCreateBy, ListCompoundMetricsRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getApprover, ListCompoundMetricsRequest::setApprover));
         builder.<ListCompoundMetricsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListCompoundMetricsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getStatus, ListCompoundMetricsRequest::setStatus));
         builder.<String>withRequestField("dimension_group",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getDimensionGroup, (req, v) -> {
-                req.setDimensionGroup(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getDimensionGroup,
+                ListCompoundMetricsRequest::setDimensionGroup));
         builder.<Long>withRequestField("atomic_index_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getAtomicIndexId, (req, v) -> {
-                req.setAtomicIndexId(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getAtomicIndexId,
+                ListCompoundMetricsRequest::setAtomicIndexId));
         builder.<Long>withRequestField("l3_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getL3Id, (req, v) -> {
-                req.setL3Id(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getL3Id, ListCompoundMetricsRequest::setL3Id));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getBeginTime, ListCompoundMetricsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getEndTime, ListCompoundMetricsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getLimit, ListCompoundMetricsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getOffset, ListCompoundMetricsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCompoundMetricsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getWorkspace, ListCompoundMetricsRequest::setWorkspace));
 
         // response
 
@@ -4680,9 +4130,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListConditionRequest, ListConditionResponse> listCondition =
-        genForlistCondition();
+        genForListCondition();
 
-    private static HttpRequestDef<ListConditionRequest, ListConditionResponse> genForlistCondition() {
+    private static HttpRequestDef<ListConditionRequest, ListConditionResponse> genForListCondition() {
         // basic
         HttpRequestDef.Builder<ListConditionRequest, ListConditionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConditionRequest.class, ListConditionResponse.class)
@@ -4695,65 +4145,47 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConditionRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListConditionRequest::getName, ListConditionRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConditionRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListConditionRequest::getCreateBy, ListConditionRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConditionRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(ListConditionRequest::getApprover, ListConditionRequest::setApprover));
         builder.<ListConditionRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListConditionRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListConditionRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListConditionRequest::getStatus, ListConditionRequest::setStatus));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConditionRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListConditionRequest::getBeginTime, ListConditionRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConditionRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListConditionRequest::getEndTime, ListConditionRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConditionRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConditionRequest::getLimit, ListConditionRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConditionRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConditionRequest::getOffset, ListConditionRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConditionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListConditionRequest::getWorkspace, ListConditionRequest::setWorkspace));
 
         // response
 
@@ -4761,9 +4193,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListConsistencyTaskRequest, ListConsistencyTaskResponse> listConsistencyTask =
-        genForlistConsistencyTask();
+        genForListConsistencyTask();
 
-    private static HttpRequestDef<ListConsistencyTaskRequest, ListConsistencyTaskResponse> genForlistConsistencyTask() {
+    private static HttpRequestDef<ListConsistencyTaskRequest, ListConsistencyTaskResponse> genForListConsistencyTask() {
         // basic
         HttpRequestDef.Builder<ListConsistencyTaskRequest, ListConsistencyTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConsistencyTaskRequest.class, ListConsistencyTaskResponse.class)
@@ -4776,65 +4208,49 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListConsistencyTaskRequest::getCategoryId, (req, v) -> {
-                req.setCategoryId(v);
-            }));
+            f -> f.withMarshaller(ListConsistencyTaskRequest::getCategoryId,
+                ListConsistencyTaskRequest::setCategoryId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsistencyTaskRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListConsistencyTaskRequest::getName, ListConsistencyTaskRequest::setName));
         builder.<ListConsistencyTaskRequest.ScheduleStatusEnum>withRequestField("schedule_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListConsistencyTaskRequest.ScheduleStatusEnum.class),
-            f -> f.withMarshaller(ListConsistencyTaskRequest::getScheduleStatus, (req, v) -> {
-                req.setScheduleStatus(v);
-            }));
+            f -> f.withMarshaller(ListConsistencyTaskRequest::getScheduleStatus,
+                ListConsistencyTaskRequest::setScheduleStatus));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListConsistencyTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListConsistencyTaskRequest::getStartTime, ListConsistencyTaskRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListConsistencyTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListConsistencyTaskRequest::getEndTime, ListConsistencyTaskRequest::setEndTime));
         builder.<String>withRequestField("creator",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsistencyTaskRequest::getCreator, (req, v) -> {
-                req.setCreator(v);
-            }));
+            f -> f.withMarshaller(ListConsistencyTaskRequest::getCreator, ListConsistencyTaskRequest::setCreator));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListConsistencyTaskRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConsistencyTaskRequest::getLimit, ListConsistencyTaskRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListConsistencyTaskRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConsistencyTaskRequest::getOffset, ListConsistencyTaskRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsistencyTaskRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListConsistencyTaskRequest::getWorkspace, ListConsistencyTaskRequest::setWorkspace));
 
         // response
 
@@ -4842,9 +4258,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListDataArtsStudioInstancesRequest, ListDataArtsStudioInstancesResponse> listDataArtsStudioInstances =
-        genForlistDataArtsStudioInstances();
+        genForListDataArtsStudioInstances();
 
-    private static HttpRequestDef<ListDataArtsStudioInstancesRequest, ListDataArtsStudioInstancesResponse> genForlistDataArtsStudioInstances() {
+    private static HttpRequestDef<ListDataArtsStudioInstancesRequest, ListDataArtsStudioInstancesResponse> genForListDataArtsStudioInstances() {
         // basic
         HttpRequestDef.Builder<ListDataArtsStudioInstancesRequest, ListDataArtsStudioInstancesResponse> builder =
             HttpRequestDef
@@ -4860,16 +4276,14 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDataArtsStudioInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDataArtsStudioInstancesRequest::getLimit,
+                ListDataArtsStudioInstancesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDataArtsStudioInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDataArtsStudioInstancesRequest::getOffset,
+                ListDataArtsStudioInstancesRequest::setOffset));
 
         // response
 
@@ -4877,9 +4291,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListDataTablesRequest, ListDataTablesResponse> listDataTables =
-        genForlistDataTables();
+        genForListDataTables();
 
-    private static HttpRequestDef<ListDataTablesRequest, ListDataTablesResponse> genForlistDataTables() {
+    private static HttpRequestDef<ListDataTablesRequest, ListDataTablesResponse> genForListDataTables() {
         // basic
         HttpRequestDef.Builder<ListDataTablesRequest, ListDataTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDataTablesRequest.class, ListDataTablesResponse.class)
@@ -4892,44 +4306,32 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataTablesRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListDataTablesRequest::getConnectionId, ListDataTablesRequest::setConnectionId));
         builder.<String>withRequestField("database_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataTablesRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListDataTablesRequest::getDatabaseName, ListDataTablesRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataTablesRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ListDataTablesRequest::getTableName, ListDataTablesRequest::setTableName));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataTablesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDataTablesRequest::getLimit, ListDataTablesRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataTablesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDataTablesRequest::getOffset, ListDataTablesRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataTablesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListDataTablesRequest::getWorkspace, ListDataTablesRequest::setWorkspace));
 
         // response
 
@@ -4937,9 +4339,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> listDatabases =
-        genForlistDatabases();
+        genForListDatabases();
 
-    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForlistDatabases() {
+    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForListDatabases() {
         // basic
         HttpRequestDef.Builder<ListDatabasesRequest, ListDatabasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatabasesRequest.class, ListDatabasesResponse.class)
@@ -4952,30 +4354,22 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getConnectionId, ListDatabasesRequest::setConnectionId));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getLimit, ListDatabasesRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getOffset, ListDatabasesRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getWorkspace, ListDatabasesRequest::setWorkspace));
 
         // response
 
@@ -4983,9 +4377,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListDataconnectionsRequest, ListDataconnectionsResponse> listDataconnections =
-        genForlistDataconnections();
+        genForListDataconnections();
 
-    private static HttpRequestDef<ListDataconnectionsRequest, ListDataconnectionsResponse> genForlistDataconnections() {
+    private static HttpRequestDef<ListDataconnectionsRequest, ListDataconnectionsResponse> genForListDataconnections() {
         // basic
         HttpRequestDef.Builder<ListDataconnectionsRequest, ListDataconnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDataconnectionsRequest.class, ListDataconnectionsResponse.class)
@@ -4998,37 +4392,27 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataconnectionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDataconnectionsRequest::getName, ListDataconnectionsRequest::setName));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataconnectionsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListDataconnectionsRequest::getType, ListDataconnectionsRequest::setType));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataconnectionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDataconnectionsRequest::getLimit, ListDataconnectionsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataconnectionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDataconnectionsRequest::getOffset, ListDataconnectionsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataconnectionsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListDataconnectionsRequest::getWorkspace, ListDataconnectionsRequest::setWorkspace));
 
         // response
 
@@ -5036,9 +4420,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListDerivativeIndexesRequest, ListDerivativeIndexesResponse> listDerivativeIndexes =
-        genForlistDerivativeIndexes();
+        genForListDerivativeIndexes();
 
-    private static HttpRequestDef<ListDerivativeIndexesRequest, ListDerivativeIndexesResponse> genForlistDerivativeIndexes() {
+    private static HttpRequestDef<ListDerivativeIndexesRequest, ListDerivativeIndexesResponse> genForListDerivativeIndexes() {
         // basic
         HttpRequestDef.Builder<ListDerivativeIndexesRequest, ListDerivativeIndexesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListDerivativeIndexesRequest.class, ListDerivativeIndexesResponse.class)
@@ -5051,107 +4435,85 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getName, ListDerivativeIndexesRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getCreateBy,
+                ListDerivativeIndexesRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getApprover,
+                ListDerivativeIndexesRequest::setApprover));
         builder.<ListDerivativeIndexesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDerivativeIndexesRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getStatus, ListDerivativeIndexesRequest::setStatus));
         builder.<Long>withRequestField("dimension_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getDimensionId, (req, v) -> {
-                req.setDimensionId(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getDimensionId,
+                ListDerivativeIndexesRequest::setDimensionId));
         builder.<String>withRequestField("dimension_group",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getDimensionGroup, (req, v) -> {
-                req.setDimensionGroup(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getDimensionGroup,
+                ListDerivativeIndexesRequest::setDimensionGroup));
         builder.<Long>withRequestField("atomic_index_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getAtomicIndexId, (req, v) -> {
-                req.setAtomicIndexId(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getAtomicIndexId,
+                ListDerivativeIndexesRequest::setAtomicIndexId));
         builder.<Boolean>withRequestField("all_metrics",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getAllMetrics, (req, v) -> {
-                req.setAllMetrics(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getAllMetrics,
+                ListDerivativeIndexesRequest::setAllMetrics));
         builder.<String>withRequestField("dw_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getDwType, (req, v) -> {
-                req.setDwType(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getDwType, ListDerivativeIndexesRequest::setDwType));
         builder.<Long>withRequestField("l3_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getL3Id, (req, v) -> {
-                req.setL3Id(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getL3Id, ListDerivativeIndexesRequest::setL3Id));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getBeginTime,
+                ListDerivativeIndexesRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getEndTime, ListDerivativeIndexesRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getLimit, ListDerivativeIndexesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getOffset, ListDerivativeIndexesRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDerivativeIndexesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getWorkspace,
+                ListDerivativeIndexesRequest::setWorkspace));
 
         // response
 
@@ -5159,9 +4521,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListDimensionGroupsRequest, ListDimensionGroupsResponse> listDimensionGroups =
-        genForlistDimensionGroups();
+        genForListDimensionGroups();
 
-    private static HttpRequestDef<ListDimensionGroupsRequest, ListDimensionGroupsResponse> genForlistDimensionGroups() {
+    private static HttpRequestDef<ListDimensionGroupsRequest, ListDimensionGroupsResponse> genForListDimensionGroups() {
         // basic
         HttpRequestDef.Builder<ListDimensionGroupsRequest, ListDimensionGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDimensionGroupsRequest.class, ListDimensionGroupsResponse.class)
@@ -5174,37 +4536,27 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDimensionGroupsRequest::getTableId, (req, v) -> {
-                req.setTableId(v);
-            }));
+            f -> f.withMarshaller(ListDimensionGroupsRequest::getTableId, ListDimensionGroupsRequest::setTableId));
         builder.<String>withRequestField("biz_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionGroupsRequest::getBizType, (req, v) -> {
-                req.setBizType(v);
-            }));
+            f -> f.withMarshaller(ListDimensionGroupsRequest::getBizType, ListDimensionGroupsRequest::setBizType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDimensionGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDimensionGroupsRequest::getLimit, ListDimensionGroupsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDimensionGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDimensionGroupsRequest::getOffset, ListDimensionGroupsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionGroupsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListDimensionGroupsRequest::getWorkspace, ListDimensionGroupsRequest::setWorkspace));
 
         // response
 
@@ -5212,9 +4564,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListDimensionLogicTablesRequest, ListDimensionLogicTablesResponse> listDimensionLogicTables =
-        genForlistDimensionLogicTables();
+        genForListDimensionLogicTables();
 
-    private static HttpRequestDef<ListDimensionLogicTablesRequest, ListDimensionLogicTablesResponse> genForlistDimensionLogicTables() {
+    private static HttpRequestDef<ListDimensionLogicTablesRequest, ListDimensionLogicTablesResponse> genForListDimensionLogicTables() {
         // basic
         HttpRequestDef.Builder<ListDimensionLogicTablesRequest, ListDimensionLogicTablesResponse> builder =
             HttpRequestDef
@@ -5228,114 +4580,96 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getName, ListDimensionLogicTablesRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getCreateBy,
+                ListDimensionLogicTablesRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getApprover,
+                ListDimensionLogicTablesRequest::setApprover));
         builder.<String>withRequestField("owner",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getOwner, (req, v) -> {
-                req.setOwner(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getOwner,
+                ListDimensionLogicTablesRequest::setOwner));
         builder.<ListDimensionLogicTablesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDimensionLogicTablesRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getStatus,
+                ListDimensionLogicTablesRequest::setStatus));
         builder.<ListDimensionLogicTablesRequest.SyncStatusEnum>withRequestField("sync_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDimensionLogicTablesRequest.SyncStatusEnum.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getSyncStatus, (req, v) -> {
-                req.setSyncStatus(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getSyncStatus,
+                ListDimensionLogicTablesRequest::setSyncStatus));
         builder.<List<ListDimensionLogicTablesRequest.SyncKeyEnum>>withRequestField("sync_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getSyncKey, (req, v) -> {
-                req.setSyncKey(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getSyncKey,
+                ListDimensionLogicTablesRequest::setSyncKey));
         builder.<Long>withRequestField("l2_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getL2Id, (req, v) -> {
-                req.setL2Id(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getL2Id, ListDimensionLogicTablesRequest::setL2Id));
         builder.<Long>withRequestField("dimension_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getDimensionId, (req, v) -> {
-                req.setDimensionId(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getDimensionId,
+                ListDimensionLogicTablesRequest::setDimensionId));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getBeginTime,
+                ListDimensionLogicTablesRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getEndTime,
+                ListDimensionLogicTablesRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getLimit,
+                ListDimensionLogicTablesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getOffset,
+                ListDimensionLogicTablesRequest::setOffset));
         builder.<String>withRequestField("biz_catalog_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getBizCatalogId, (req, v) -> {
-                req.setBizCatalogId(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getBizCatalogId,
+                ListDimensionLogicTablesRequest::setBizCatalogId));
         builder.<ListDimensionLogicTablesRequest.DimensionTypeEnum>withRequestField("dimension_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDimensionLogicTablesRequest.DimensionTypeEnum.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getDimensionType, (req, v) -> {
-                req.setDimensionType(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getDimensionType,
+                ListDimensionLogicTablesRequest::setDimensionType));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getWorkspace,
+                ListDimensionLogicTablesRequest::setWorkspace));
 
         // response
 
@@ -5343,9 +4677,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListDimensionsRequest, ListDimensionsResponse> listDimensions =
-        genForlistDimensions();
+        genForListDimensions();
 
-    private static HttpRequestDef<ListDimensionsRequest, ListDimensionsResponse> genForlistDimensions() {
+    private static HttpRequestDef<ListDimensionsRequest, ListDimensionsResponse> genForListDimensions() {
         // basic
         HttpRequestDef.Builder<ListDimensionsRequest, ListDimensionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDimensionsRequest.class, ListDimensionsResponse.class)
@@ -5358,100 +4692,72 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getName, ListDimensionsRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getCreateBy, ListDimensionsRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getApprover, ListDimensionsRequest::setApprover));
         builder.<ListDimensionsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDimensionsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getStatus, ListDimensionsRequest::setStatus));
         builder.<Long>withRequestField("l2_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getL2Id, (req, v) -> {
-                req.setL2Id(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getL2Id, ListDimensionsRequest::setL2Id));
         builder.<List<Long>>withRequestField("derivative_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getDerivativeIds, (req, v) -> {
-                req.setDerivativeIds(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getDerivativeIds, ListDimensionsRequest::setDerivativeIds));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getBeginTime, ListDimensionsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getEndTime, ListDimensionsRequest::setEndTime));
         builder.<Long>withRequestField("fact_logic_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getFactLogicId, (req, v) -> {
-                req.setFactLogicId(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getFactLogicId, ListDimensionsRequest::setFactLogicId));
         builder.<ListDimensionsRequest.DimensionTypeEnum>withRequestField("dimension_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDimensionsRequest.DimensionTypeEnum.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getDimensionType, (req, v) -> {
-                req.setDimensionType(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getDimensionType, ListDimensionsRequest::setDimensionType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getLimit, ListDimensionsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getOffset, ListDimensionsRequest::setOffset));
         builder.<String>withRequestField("biz_catalog_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getBizCatalogId, (req, v) -> {
-                req.setBizCatalogId(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getBizCatalogId, ListDimensionsRequest::setBizCatalogId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDimensionsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListDimensionsRequest::getWorkspace, ListDimensionsRequest::setWorkspace));
 
         // response
 
@@ -5459,9 +4765,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListDirectoriesRequest, ListDirectoriesResponse> listDirectories =
-        genForlistDirectories();
+        genForListDirectories();
 
-    private static HttpRequestDef<ListDirectoriesRequest, ListDirectoriesResponse> genForlistDirectories() {
+    private static HttpRequestDef<ListDirectoriesRequest, ListDirectoriesResponse> genForListDirectories() {
         // basic
         HttpRequestDef.Builder<ListDirectoriesRequest, ListDirectoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDirectoriesRequest.class, ListDirectoriesResponse.class)
@@ -5474,30 +4780,22 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDirectoriesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDirectoriesRequest::getLimit, ListDirectoriesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDirectoriesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDirectoriesRequest::getOffset, ListDirectoriesRequest::setOffset));
         builder.<ListDirectoriesRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListDirectoriesRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListDirectoriesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListDirectoriesRequest::getType, ListDirectoriesRequest::setType));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDirectoriesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListDirectoriesRequest::getWorkspace, ListDirectoriesRequest::setWorkspace));
 
         // response
 
@@ -5505,9 +4803,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListFactLogicTablesRequest, ListFactLogicTablesResponse> listFactLogicTables =
-        genForlistFactLogicTables();
+        genForListFactLogicTables();
 
-    private static HttpRequestDef<ListFactLogicTablesRequest, ListFactLogicTablesResponse> genForlistFactLogicTables() {
+    private static HttpRequestDef<ListFactLogicTablesRequest, ListFactLogicTablesResponse> genForListFactLogicTables() {
         // basic
         HttpRequestDef.Builder<ListFactLogicTablesRequest, ListFactLogicTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFactLogicTablesRequest.class, ListFactLogicTablesResponse.class)
@@ -5520,100 +4818,74 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getName, ListFactLogicTablesRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getCreateBy, ListFactLogicTablesRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getApprover, ListFactLogicTablesRequest::setApprover));
         builder.<String>withRequestField("owner",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getOwner, (req, v) -> {
-                req.setOwner(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getOwner, ListFactLogicTablesRequest::setOwner));
         builder.<ListFactLogicTablesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFactLogicTablesRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getStatus, ListFactLogicTablesRequest::setStatus));
         builder.<ListFactLogicTablesRequest.SyncStatusEnum>withRequestField("sync_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFactLogicTablesRequest.SyncStatusEnum.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getSyncStatus, (req, v) -> {
-                req.setSyncStatus(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getSyncStatus,
+                ListFactLogicTablesRequest::setSyncStatus));
         builder.<List<ListFactLogicTablesRequest.SyncKeyEnum>>withRequestField("sync_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getSyncKey, (req, v) -> {
-                req.setSyncKey(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getSyncKey, ListFactLogicTablesRequest::setSyncKey));
         builder.<Long>withRequestField("l3_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getL3Id, (req, v) -> {
-                req.setL3Id(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getL3Id, ListFactLogicTablesRequest::setL3Id));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getBeginTime, ListFactLogicTablesRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getEndTime, ListFactLogicTablesRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getLimit, ListFactLogicTablesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getOffset, ListFactLogicTablesRequest::setOffset));
         builder.<String>withRequestField("biz_catalog_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getBizCatalogId, (req, v) -> {
-                req.setBizCatalogId(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getBizCatalogId,
+                ListFactLogicTablesRequest::setBizCatalogId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactLogicTablesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getWorkspace, ListFactLogicTablesRequest::setWorkspace));
 
         // response
 
@@ -5621,9 +4893,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse> listFactoryAlarmInfo =
-        genForlistFactoryAlarmInfo();
+        genForListFactoryAlarmInfo();
 
-    private static HttpRequestDef<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse> genForlistFactoryAlarmInfo() {
+    private static HttpRequestDef<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse> genForListFactoryAlarmInfo() {
         // basic
         HttpRequestDef.Builder<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListFactoryAlarmInfoRequest.class, ListFactoryAlarmInfoResponse.class)
@@ -5636,37 +4908,29 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getStartTime,
+                ListFactoryAlarmInfoRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getEndTime, ListFactoryAlarmInfoRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getOffset, ListFactoryAlarmInfoRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getLimit, ListFactoryAlarmInfoRequest::setLimit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getWorkspace,
+                ListFactoryAlarmInfoRequest::setWorkspace));
 
         // response
 
@@ -5674,9 +4938,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListFactoryJobsRequest, ListFactoryJobsResponse> listFactoryJobs =
-        genForlistFactoryJobs();
+        genForListFactoryJobs();
 
-    private static HttpRequestDef<ListFactoryJobsRequest, ListFactoryJobsResponse> genForlistFactoryJobs() {
+    private static HttpRequestDef<ListFactoryJobsRequest, ListFactoryJobsResponse> genForListFactoryJobs() {
         // basic
         HttpRequestDef.Builder<ListFactoryJobsRequest, ListFactoryJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFactoryJobsRequest.class, ListFactoryJobsResponse.class)
@@ -5689,44 +4953,32 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFactoryJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFactoryJobsRequest::getLimit, ListFactoryJobsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFactoryJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFactoryJobsRequest::getOffset, ListFactoryJobsRequest::setOffset));
         builder.<ListFactoryJobsRequest.JobTypeEnum>withRequestField("job_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFactoryJobsRequest.JobTypeEnum.class),
-            f -> f.withMarshaller(ListFactoryJobsRequest::getJobType, (req, v) -> {
-                req.setJobType(v);
-            }));
+            f -> f.withMarshaller(ListFactoryJobsRequest::getJobType, ListFactoryJobsRequest::setJobType));
         builder.<String>withRequestField("job_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactoryJobsRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ListFactoryJobsRequest::getJobName, ListFactoryJobsRequest::setJobName));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactoryJobsRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListFactoryJobsRequest::getTags, ListFactoryJobsRequest::setTags));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactoryJobsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListFactoryJobsRequest::getWorkspace, ListFactoryJobsRequest::setWorkspace));
 
         // response
 
@@ -5734,9 +4986,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse> listFactoryTaskCompletion =
-        genForlistFactoryTaskCompletion();
+        genForListFactoryTaskCompletion();
 
-    private static HttpRequestDef<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse> genForlistFactoryTaskCompletion() {
+    private static HttpRequestDef<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse> genForListFactoryTaskCompletion() {
         // basic
         HttpRequestDef.Builder<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse> builder =
             HttpRequestDef
@@ -5752,16 +5004,14 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactoryTaskCompletionRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListFactoryTaskCompletionRequest::getType,
+                ListFactoryTaskCompletionRequest::setType));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactoryTaskCompletionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListFactoryTaskCompletionRequest::getWorkspace,
+                ListFactoryTaskCompletionRequest::setWorkspace));
 
         // response
 
@@ -5769,9 +5019,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListFactoryTaskOverviewRequest, ListFactoryTaskOverviewResponse> listFactoryTaskOverview =
-        genForlistFactoryTaskOverview();
+        genForListFactoryTaskOverview();
 
-    private static HttpRequestDef<ListFactoryTaskOverviewRequest, ListFactoryTaskOverviewResponse> genForlistFactoryTaskOverview() {
+    private static HttpRequestDef<ListFactoryTaskOverviewRequest, ListFactoryTaskOverviewResponse> genForListFactoryTaskOverview() {
         // basic
         HttpRequestDef.Builder<ListFactoryTaskOverviewRequest, ListFactoryTaskOverviewResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListFactoryTaskOverviewRequest.class, ListFactoryTaskOverviewResponse.class)
@@ -5784,23 +5034,19 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactoryTaskOverviewRequest::getIsOwn, (req, v) -> {
-                req.setIsOwn(v);
-            }));
+            f -> f.withMarshaller(ListFactoryTaskOverviewRequest::getIsOwn, ListFactoryTaskOverviewRequest::setIsOwn));
         builder.<String>withRequestField("query_days",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactoryTaskOverviewRequest::getQueryDays, (req, v) -> {
-                req.setQueryDays(v);
-            }));
+            f -> f.withMarshaller(ListFactoryTaskOverviewRequest::getQueryDays,
+                ListFactoryTaskOverviewRequest::setQueryDays));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFactoryTaskOverviewRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListFactoryTaskOverviewRequest::getWorkspace,
+                ListFactoryTaskOverviewRequest::setWorkspace));
 
         // response
 
@@ -5808,9 +5054,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
-        genForlistInstances();
+        genForListInstances();
 
-    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
@@ -5823,65 +5069,47 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getName, ListInstancesRequest::setName));
         builder.<ListInstancesRequest.TaskTypeEnum>withRequestField("task_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.TaskTypeEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getTaskType, (req, v) -> {
-                req.setTaskType(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getTaskType, ListInstancesRequest::setTaskType));
         builder.<ListInstancesRequest.RunStatusEnum>withRequestField("run_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.RunStatusEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getRunStatus, (req, v) -> {
-                req.setRunStatus(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getRunStatus, ListInstancesRequest::setRunStatus));
         builder.<ListInstancesRequest.NotifyStatusEnum>withRequestField("notify_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.NotifyStatusEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getNotifyStatus, (req, v) -> {
-                req.setNotifyStatus(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getNotifyStatus, ListInstancesRequest::setNotifyStatus));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListInstancesRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getStartTime, ListInstancesRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListInstancesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getEndTime, ListInstancesRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, ListInstancesRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getWorkspace, ListInstancesRequest::setWorkspace));
 
         // response
 
@@ -5889,9 +5117,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListManagerWorkSpacesRequest, ListManagerWorkSpacesResponse> listManagerWorkSpaces =
-        genForlistManagerWorkSpaces();
+        genForListManagerWorkSpaces();
 
-    private static HttpRequestDef<ListManagerWorkSpacesRequest, ListManagerWorkSpacesResponse> genForlistManagerWorkSpaces() {
+    private static HttpRequestDef<ListManagerWorkSpacesRequest, ListManagerWorkSpacesResponse> genForListManagerWorkSpaces() {
         // basic
         HttpRequestDef.Builder<ListManagerWorkSpacesRequest, ListManagerWorkSpacesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListManagerWorkSpacesRequest.class, ListManagerWorkSpacesResponse.class)
@@ -5904,32 +5132,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagerWorkSpacesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListManagerWorkSpacesRequest::getInstanceId,
+                ListManagerWorkSpacesRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListManagerWorkSpacesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListManagerWorkSpacesRequest::getLimit, ListManagerWorkSpacesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListManagerWorkSpacesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListManagerWorkSpacesRequest::getOffset, ListManagerWorkSpacesRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMessageRequest, ListMessageResponse> listMessage = genForlistMessage();
+    public static final HttpRequestDef<ListMessageRequest, ListMessageResponse> listMessage = genForListMessage();
 
-    private static HttpRequestDef<ListMessageRequest, ListMessageResponse> genForlistMessage() {
+    private static HttpRequestDef<ListMessageRequest, ListMessageResponse> genForListMessage() {
         // basic
         HttpRequestDef.Builder<ListMessageRequest, ListMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMessageRequest.class, ListMessageResponse.class)
@@ -5942,37 +5165,27 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMessageRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMessageRequest::getOffset, ListMessageRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMessageRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMessageRequest::getLimit, ListMessageRequest::setLimit));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessageRequest::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListMessageRequest::getApiName, ListMessageRequest::setApiName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessageRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListMessageRequest::getWorkspace, ListMessageRequest::setWorkspace));
         builder.<ListMessageRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListMessageRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListMessageRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListMessageRequest::getDlmType, ListMessageRequest::setDlmType));
 
         // response
 
@@ -5980,9 +5193,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListMetricRelationsRequest, ListMetricRelationsResponse> listMetricRelations =
-        genForlistMetricRelations();
+        genForListMetricRelations();
 
-    private static HttpRequestDef<ListMetricRelationsRequest, ListMetricRelationsResponse> genForlistMetricRelations() {
+    private static HttpRequestDef<ListMetricRelationsRequest, ListMetricRelationsResponse> genForListMetricRelations() {
         // basic
         HttpRequestDef.Builder<ListMetricRelationsRequest, ListMetricRelationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMetricRelationsRequest.class, ListMetricRelationsResponse.class)
@@ -5995,23 +5208,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricRelationsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListMetricRelationsRequest::getId, ListMetricRelationsRequest::setId));
         builder.<String>withRequestField("biz_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricRelationsRequest::getBizType, (req, v) -> {
-                req.setBizType(v);
-            }));
+            f -> f.withMarshaller(ListMetricRelationsRequest::getBizType, ListMetricRelationsRequest::setBizType));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricRelationsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListMetricRelationsRequest::getWorkspace, ListMetricRelationsRequest::setWorkspace));
 
         // response
 
@@ -6019,9 +5226,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListQualityTaskRequest, ListQualityTaskResponse> listQualityTask =
-        genForlistQualityTask();
+        genForListQualityTask();
 
-    private static HttpRequestDef<ListQualityTaskRequest, ListQualityTaskResponse> genForlistQualityTask() {
+    private static HttpRequestDef<ListQualityTaskRequest, ListQualityTaskResponse> genForListQualityTask() {
         // basic
         HttpRequestDef.Builder<ListQualityTaskRequest, ListQualityTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQualityTaskRequest.class, ListQualityTaskResponse.class)
@@ -6034,65 +5241,48 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListQualityTaskRequest::getCategoryId, (req, v) -> {
-                req.setCategoryId(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskRequest::getCategoryId, ListQualityTaskRequest::setCategoryId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTaskRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskRequest::getName, ListQualityTaskRequest::setName));
         builder.<ListQualityTaskRequest.ScheduleStatusEnum>withRequestField("schedule_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListQualityTaskRequest.ScheduleStatusEnum.class),
-            f -> f.withMarshaller(ListQualityTaskRequest::getScheduleStatus, (req, v) -> {
-                req.setScheduleStatus(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskRequest::getScheduleStatus,
+                ListQualityTaskRequest::setScheduleStatus));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListQualityTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskRequest::getStartTime, ListQualityTaskRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListQualityTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskRequest::getEndTime, ListQualityTaskRequest::setEndTime));
         builder.<String>withRequestField("creator",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTaskRequest::getCreator, (req, v) -> {
-                req.setCreator(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskRequest::getCreator, ListQualityTaskRequest::setCreator));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListQualityTaskRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskRequest::getLimit, ListQualityTaskRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListQualityTaskRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskRequest::getOffset, ListQualityTaskRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTaskRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskRequest::getWorkspace, ListQualityTaskRequest::setWorkspace));
 
         // response
 
@@ -6100,9 +5290,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListQualityTaskListsRequest, ListQualityTaskListsResponse> listQualityTaskLists =
-        genForlistQualityTaskLists();
+        genForListQualityTaskLists();
 
-    private static HttpRequestDef<ListQualityTaskListsRequest, ListQualityTaskListsResponse> genForlistQualityTaskLists() {
+    private static HttpRequestDef<ListQualityTaskListsRequest, ListQualityTaskListsResponse> genForListQualityTaskLists() {
         // basic
         HttpRequestDef.Builder<ListQualityTaskListsRequest, ListQualityTaskListsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListQualityTaskListsRequest.class, ListQualityTaskListsResponse.class)
@@ -6115,93 +5305,72 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getStart, (req, v) -> {
-                req.setStart(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getStart, ListQualityTaskListsRequest::setStart));
         builder.<Long>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getPageSize, ListQualityTaskListsRequest::setPageSize));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getOffset, ListQualityTaskListsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getLimit, ListQualityTaskListsRequest::setLimit));
         builder.<Long>withRequestField("category_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getCategoryId, (req, v) -> {
-                req.setCategoryId(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getCategoryId,
+                ListQualityTaskListsRequest::setCategoryId));
         builder.<String>withRequestField("rule_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getRuleName, (req, v) -> {
-                req.setRuleName(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getRuleName, ListQualityTaskListsRequest::setRuleName));
         builder.<Integer>withRequestField("schedule_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getScheduleStatus, (req, v) -> {
-                req.setScheduleStatus(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getScheduleStatus,
+                ListQualityTaskListsRequest::setScheduleStatus));
         builder.<Integer>withRequestField("schedule_period",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getSchedulePeriod, (req, v) -> {
-                req.setSchedulePeriod(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getSchedulePeriod,
+                ListQualityTaskListsRequest::setSchedulePeriod));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getStartTime,
+                ListQualityTaskListsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getEndTime, ListQualityTaskListsRequest::setEndTime));
         builder.<Integer>withRequestField("result_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getResultStatus, (req, v) -> {
-                req.setResultStatus(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getResultStatus,
+                ListQualityTaskListsRequest::setResultStatus));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getSort, ListQualityTaskListsRequest::setSort));
         builder.<String>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTaskListsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ListQualityTaskListsRequest::getOrder, ListQualityTaskListsRequest::setOrder));
 
         // response
 
@@ -6209,9 +5378,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListQualityTemplatesRequest, ListQualityTemplatesResponse> listQualityTemplates =
-        genForlistQualityTemplates();
+        genForListQualityTemplates();
 
-    private static HttpRequestDef<ListQualityTemplatesRequest, ListQualityTemplatesResponse> genForlistQualityTemplates() {
+    private static HttpRequestDef<ListQualityTemplatesRequest, ListQualityTemplatesResponse> genForListQualityTemplates() {
         // basic
         HttpRequestDef.Builder<ListQualityTemplatesRequest, ListQualityTemplatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListQualityTemplatesRequest.class, ListQualityTemplatesResponse.class)
@@ -6224,51 +5393,40 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListQualityTemplatesRequest::getCategoryId, (req, v) -> {
-                req.setCategoryId(v);
-            }));
+            f -> f.withMarshaller(ListQualityTemplatesRequest::getCategoryId,
+                ListQualityTemplatesRequest::setCategoryId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTemplatesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListQualityTemplatesRequest::getName, ListQualityTemplatesRequest::setName));
         builder.<Boolean>withRequestField("system_template",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListQualityTemplatesRequest::getSystemTemplate, (req, v) -> {
-                req.setSystemTemplate(v);
-            }));
+            f -> f.withMarshaller(ListQualityTemplatesRequest::getSystemTemplate,
+                ListQualityTemplatesRequest::setSystemTemplate));
         builder.<String>withRequestField("creator",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTemplatesRequest::getCreator, (req, v) -> {
-                req.setCreator(v);
-            }));
+            f -> f.withMarshaller(ListQualityTemplatesRequest::getCreator, ListQualityTemplatesRequest::setCreator));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQualityTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListQualityTemplatesRequest::getLimit, ListQualityTemplatesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQualityTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListQualityTemplatesRequest::getOffset, ListQualityTemplatesRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQualityTemplatesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListQualityTemplatesRequest::getWorkspace,
+                ListQualityTemplatesRequest::setWorkspace));
 
         // response
 
@@ -6276,9 +5434,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListRelationsRequest, ListRelationsResponse> listRelations =
-        genForlistRelations();
+        genForListRelations();
 
-    private static HttpRequestDef<ListRelationsRequest, ListRelationsResponse> genForlistRelations() {
+    private static HttpRequestDef<ListRelationsRequest, ListRelationsResponse> genForListRelations() {
         // basic
         HttpRequestDef.Builder<ListRelationsRequest, ListRelationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRelationsRequest.class, ListRelationsResponse.class)
@@ -6291,60 +5449,46 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRelationsRequest::getName, ListRelationsRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationsRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListRelationsRequest::getCreateBy, ListRelationsRequest::setCreateBy));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListRelationsRequest::getBeginTime, ListRelationsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRelationsRequest::getEndTime, ListRelationsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRelationsRequest::getLimit, ListRelationsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRelationsRequest::getOffset, ListRelationsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListRelationsRequest::getWorkspace, ListRelationsRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSchemasRequest, ListSchemasResponse> listSchemas = genForlistSchemas();
+    public static final HttpRequestDef<ListSchemasRequest, ListSchemasResponse> listSchemas = genForListSchemas();
 
-    private static HttpRequestDef<ListSchemasRequest, ListSchemasResponse> genForlistSchemas() {
+    private static HttpRequestDef<ListSchemasRequest, ListSchemasResponse> genForListSchemas() {
         // basic
         HttpRequestDef.Builder<ListSchemasRequest, ListSchemasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSchemasRequest.class, ListSchemasResponse.class)
@@ -6357,37 +5501,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSchemasRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListSchemasRequest::getConnectionId, ListSchemasRequest::setConnectionId));
         builder.<String>withRequestField("database_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSchemasRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListSchemasRequest::getDatabaseName, ListSchemasRequest::setDatabaseName));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSchemasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSchemasRequest::getLimit, ListSchemasRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSchemasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSchemasRequest::getOffset, ListSchemasRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSchemasRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListSchemasRequest::getWorkspace, ListSchemasRequest::setWorkspace));
 
         // response
 
@@ -6395,9 +5529,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse> listSecurityDataClassificationRuleGroups =
-        genForlistSecurityDataClassificationRuleGroups();
+        genForListSecurityDataClassificationRuleGroups();
 
-    private static HttpRequestDef<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse> genForlistSecurityDataClassificationRuleGroups() {
+    private static HttpRequestDef<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse> genForListSecurityDataClassificationRuleGroups() {
         // basic
         HttpRequestDef.Builder<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse> builder =
             HttpRequestDef
@@ -6413,51 +5547,44 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getLimit,
+                ListSecurityDataClassificationRuleGroupsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getOffset,
+                ListSecurityDataClassificationRuleGroupsRequest::setOffset));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getName,
+                ListSecurityDataClassificationRuleGroupsRequest::setName));
         builder.<String>withRequestField("creator",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getCreator, (req, v) -> {
-                req.setCreator(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getCreator,
+                ListSecurityDataClassificationRuleGroupsRequest::setCreator));
         builder.<ListSecurityDataClassificationRuleGroupsRequest.OrderByEnum>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityDataClassificationRuleGroupsRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getOrderBy,
+                ListSecurityDataClassificationRuleGroupsRequest::setOrderBy));
         builder.<Boolean>withRequestField("desc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getDesc, (req, v) -> {
-                req.setDesc(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getDesc,
+                ListSecurityDataClassificationRuleGroupsRequest::setDesc));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getWorkspace,
+                ListSecurityDataClassificationRuleGroupsRequest::setWorkspace));
 
         // response
 
@@ -6465,9 +5592,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListSecurityDataClassificationRulesRequest, ListSecurityDataClassificationRulesResponse> listSecurityDataClassificationRules =
-        genForlistSecurityDataClassificationRules();
+        genForListSecurityDataClassificationRules();
 
-    private static HttpRequestDef<ListSecurityDataClassificationRulesRequest, ListSecurityDataClassificationRulesResponse> genForlistSecurityDataClassificationRules() {
+    private static HttpRequestDef<ListSecurityDataClassificationRulesRequest, ListSecurityDataClassificationRulesResponse> genForListSecurityDataClassificationRules() {
         // basic
         HttpRequestDef.Builder<ListSecurityDataClassificationRulesRequest, ListSecurityDataClassificationRulesResponse> builder =
             HttpRequestDef
@@ -6483,79 +5610,68 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getOffset,
+                ListSecurityDataClassificationRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getLimit,
+                ListSecurityDataClassificationRulesRequest::setLimit));
         builder.<String>withRequestField("secrecy_level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getSecrecyLevel, (req, v) -> {
-                req.setSecrecyLevel(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getSecrecyLevel,
+                ListSecurityDataClassificationRulesRequest::setSecrecyLevel));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getName,
+                ListSecurityDataClassificationRulesRequest::setName));
         builder.<String>withRequestField("creator",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getCreator, (req, v) -> {
-                req.setCreator(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getCreator,
+                ListSecurityDataClassificationRulesRequest::setCreator));
         builder.<Boolean>withRequestField("enable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getEnable, (req, v) -> {
-                req.setEnable(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getEnable,
+                ListSecurityDataClassificationRulesRequest::setEnable));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getStartTime,
+                ListSecurityDataClassificationRulesRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getEndTime,
+                ListSecurityDataClassificationRulesRequest::setEndTime));
         builder.<ListSecurityDataClassificationRulesRequest.OrderByEnum>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityDataClassificationRulesRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getOrderBy,
+                ListSecurityDataClassificationRulesRequest::setOrderBy));
         builder.<Boolean>withRequestField("desc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getDesc, (req, v) -> {
-                req.setDesc(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getDesc,
+                ListSecurityDataClassificationRulesRequest::setDesc));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getWorkspace,
+                ListSecurityDataClassificationRulesRequest::setWorkspace));
 
         // response
 
@@ -6563,9 +5679,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse> listSecurityPermissionSetMembers =
-        genForlistSecurityPermissionSetMembers();
+        genForListSecurityPermissionSetMembers();
 
-    private static HttpRequestDef<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse> genForlistSecurityPermissionSetMembers() {
+    private static HttpRequestDef<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse> genForListSecurityPermissionSetMembers() {
         // basic
         HttpRequestDef.Builder<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse> builder =
             HttpRequestDef
@@ -6581,58 +5697,50 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getPermissionSetId,
+                ListSecurityPermissionSetMembersRequest::setPermissionSetId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getLimit,
+                ListSecurityPermissionSetMembersRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getOffset,
+                ListSecurityPermissionSetMembersRequest::setOffset));
         builder.<String>withRequestField("member_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getMemberName, (req, v) -> {
-                req.setMemberName(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getMemberName,
+                ListSecurityPermissionSetMembersRequest::setMemberName));
         builder.<ListSecurityPermissionSetMembersRequest.MemberTypeEnum>withRequestField("member_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetMembersRequest.MemberTypeEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getMemberType, (req, v) -> {
-                req.setMemberType(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getMemberType,
+                ListSecurityPermissionSetMembersRequest::setMemberType));
         builder.<Boolean>withRequestField("order_by_asc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getOrderByAsc, (req, v) -> {
-                req.setOrderByAsc(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getOrderByAsc,
+                ListSecurityPermissionSetMembersRequest::setOrderByAsc));
         builder.<ListSecurityPermissionSetMembersRequest.OrderByEnum>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetMembersRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getOrderBy,
+                ListSecurityPermissionSetMembersRequest::setOrderBy));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getWorkspace,
+                ListSecurityPermissionSetMembersRequest::setWorkspace));
 
         // response
 
@@ -6640,9 +5748,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListSecurityPermissionSetPermissionsRequest, ListSecurityPermissionSetPermissionsResponse> listSecurityPermissionSetPermissions =
-        genForlistSecurityPermissionSetPermissions();
+        genForListSecurityPermissionSetPermissions();
 
-    private static HttpRequestDef<ListSecurityPermissionSetPermissionsRequest, ListSecurityPermissionSetPermissionsResponse> genForlistSecurityPermissionSetPermissions() {
+    private static HttpRequestDef<ListSecurityPermissionSetPermissionsRequest, ListSecurityPermissionSetPermissionsResponse> genForListSecurityPermissionSetPermissions() {
         // basic
         HttpRequestDef.Builder<ListSecurityPermissionSetPermissionsRequest, ListSecurityPermissionSetPermissionsResponse> builder =
             HttpRequestDef
@@ -6658,107 +5766,92 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getPermissionSetId,
+                ListSecurityPermissionSetPermissionsRequest::setPermissionSetId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getLimit,
+                ListSecurityPermissionSetPermissionsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getOffset,
+                ListSecurityPermissionSetPermissionsRequest::setOffset));
         builder.<ListSecurityPermissionSetPermissionsRequest.PermissionTypeEnum>withRequestField("permission_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetPermissionsRequest.PermissionTypeEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getPermissionType, (req, v) -> {
-                req.setPermissionType(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getPermissionType,
+                ListSecurityPermissionSetPermissionsRequest::setPermissionType));
         builder.<ListSecurityPermissionSetPermissionsRequest.PermissionActionEnum>withRequestField("permission_action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetPermissionsRequest.PermissionActionEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getPermissionAction, (req, v) -> {
-                req.setPermissionAction(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getPermissionAction,
+                ListSecurityPermissionSetPermissionsRequest::setPermissionAction));
         builder.<String>withRequestField("cluster_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getClusterId,
+                ListSecurityPermissionSetPermissionsRequest::setClusterId));
         builder.<String>withRequestField("cluster_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getClusterName, (req, v) -> {
-                req.setClusterName(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getClusterName,
+                ListSecurityPermissionSetPermissionsRequest::setClusterName));
         builder.<ListSecurityPermissionSetPermissionsRequest.DatasourceTypeEnum>withRequestField("datasource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetPermissionsRequest.DatasourceTypeEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getDatasourceType, (req, v) -> {
-                req.setDatasourceType(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getDatasourceType,
+                ListSecurityPermissionSetPermissionsRequest::setDatasourceType));
         builder.<String>withRequestField("database_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getDatabaseName,
+                ListSecurityPermissionSetPermissionsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getTableName,
+                ListSecurityPermissionSetPermissionsRequest::setTableName));
         builder.<String>withRequestField("column_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getColumnName, (req, v) -> {
-                req.setColumnName(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getColumnName,
+                ListSecurityPermissionSetPermissionsRequest::setColumnName));
         builder.<ListSecurityPermissionSetPermissionsRequest.SyncStatusEnum>withRequestField("sync_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetPermissionsRequest.SyncStatusEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getSyncStatus, (req, v) -> {
-                req.setSyncStatus(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getSyncStatus,
+                ListSecurityPermissionSetPermissionsRequest::setSyncStatus));
         builder.<ListSecurityPermissionSetPermissionsRequest.OrderByEnum>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetPermissionsRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getOrderBy,
+                ListSecurityPermissionSetPermissionsRequest::setOrderBy));
         builder.<Boolean>withRequestField("order_by_asc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getOrderByAsc, (req, v) -> {
-                req.setOrderByAsc(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getOrderByAsc,
+                ListSecurityPermissionSetPermissionsRequest::setOrderByAsc));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getWorkspace,
+                ListSecurityPermissionSetPermissionsRequest::setWorkspace));
 
         // response
 
@@ -6766,9 +5859,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListSecurityPermissionSetsRequest, ListSecurityPermissionSetsResponse> listSecurityPermissionSets =
-        genForlistSecurityPermissionSets();
+        genForListSecurityPermissionSets();
 
-    private static HttpRequestDef<ListSecurityPermissionSetsRequest, ListSecurityPermissionSetsResponse> genForlistSecurityPermissionSets() {
+    private static HttpRequestDef<ListSecurityPermissionSetsRequest, ListSecurityPermissionSetsResponse> genForListSecurityPermissionSets() {
         // basic
         HttpRequestDef.Builder<ListSecurityPermissionSetsRequest, ListSecurityPermissionSetsResponse> builder =
             HttpRequestDef
@@ -6784,93 +5877,80 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getLimit,
+                ListSecurityPermissionSetsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getOffset,
+                ListSecurityPermissionSetsRequest::setOffset));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getName,
+                ListSecurityPermissionSetsRequest::setName));
         builder.<String>withRequestField("parent_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getParentId, (req, v) -> {
-                req.setParentId(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getParentId,
+                ListSecurityPermissionSetsRequest::setParentId));
         builder.<ListSecurityPermissionSetsRequest.TypeFilterEnum>withRequestField("type_filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetsRequest.TypeFilterEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getTypeFilter, (req, v) -> {
-                req.setTypeFilter(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getTypeFilter,
+                ListSecurityPermissionSetsRequest::setTypeFilter));
         builder.<String>withRequestField("manager_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getManagerId, (req, v) -> {
-                req.setManagerId(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getManagerId,
+                ListSecurityPermissionSetsRequest::setManagerId));
         builder.<String>withRequestField("manager_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getManagerName, (req, v) -> {
-                req.setManagerName(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getManagerName,
+                ListSecurityPermissionSetsRequest::setManagerName));
         builder.<ListSecurityPermissionSetsRequest.ManagerTypeEnum>withRequestField("manager_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetsRequest.ManagerTypeEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getManagerType, (req, v) -> {
-                req.setManagerType(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getManagerType,
+                ListSecurityPermissionSetsRequest::setManagerType));
         builder.<ListSecurityPermissionSetsRequest.DatasourceTypeEnum>withRequestField("datasource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetsRequest.DatasourceTypeEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getDatasourceType, (req, v) -> {
-                req.setDatasourceType(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getDatasourceType,
+                ListSecurityPermissionSetsRequest::setDatasourceType));
         builder.<ListSecurityPermissionSetsRequest.SyncStatusEnum>withRequestField("sync_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetsRequest.SyncStatusEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getSyncStatus, (req, v) -> {
-                req.setSyncStatus(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getSyncStatus,
+                ListSecurityPermissionSetsRequest::setSyncStatus));
         builder.<ListSecurityPermissionSetsRequest.OrderByEnum>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSecurityPermissionSetsRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getOrderBy,
+                ListSecurityPermissionSetsRequest::setOrderBy));
         builder.<Boolean>withRequestField("order_by_asc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getOrderByAsc, (req, v) -> {
-                req.setOrderByAsc(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getOrderByAsc,
+                ListSecurityPermissionSetsRequest::setOrderByAsc));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getWorkspace,
+                ListSecurityPermissionSetsRequest::setWorkspace));
 
         // response
 
@@ -6878,9 +5958,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListSubjectLevelsRequest, ListSubjectLevelsResponse> listSubjectLevels =
-        genForlistSubjectLevels();
+        genForListSubjectLevels();
 
-    private static HttpRequestDef<ListSubjectLevelsRequest, ListSubjectLevelsResponse> genForlistSubjectLevels() {
+    private static HttpRequestDef<ListSubjectLevelsRequest, ListSubjectLevelsResponse> genForListSubjectLevels() {
         // basic
         HttpRequestDef.Builder<ListSubjectLevelsRequest, ListSubjectLevelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubjectLevelsRequest.class, ListSubjectLevelsResponse.class)
@@ -6893,23 +5973,17 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubjectLevelsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSubjectLevelsRequest::getLimit, ListSubjectLevelsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubjectLevelsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSubjectLevelsRequest::getOffset, ListSubjectLevelsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubjectLevelsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListSubjectLevelsRequest::getWorkspace, ListSubjectLevelsRequest::setWorkspace));
 
         // response
 
@@ -6917,9 +5991,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListTableModelRelationsRequest, ListTableModelRelationsResponse> listTableModelRelations =
-        genForlistTableModelRelations();
+        genForListTableModelRelations();
 
-    private static HttpRequestDef<ListTableModelRelationsRequest, ListTableModelRelationsResponse> genForlistTableModelRelations() {
+    private static HttpRequestDef<ListTableModelRelationsRequest, ListTableModelRelationsResponse> genForListTableModelRelations() {
         // basic
         HttpRequestDef.Builder<ListTableModelRelationsRequest, ListTableModelRelationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTableModelRelationsRequest.class, ListTableModelRelationsResponse.class)
@@ -6932,44 +6006,37 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelRelationsRequest::getModelId, (req, v) -> {
-                req.setModelId(v);
-            }));
+            f -> f.withMarshaller(ListTableModelRelationsRequest::getModelId,
+                ListTableModelRelationsRequest::setModelId));
         builder.<String>withRequestField("table_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelRelationsRequest::getTableIds, (req, v) -> {
-                req.setTableIds(v);
-            }));
+            f -> f.withMarshaller(ListTableModelRelationsRequest::getTableIds,
+                ListTableModelRelationsRequest::setTableIds));
         builder.<ListTableModelRelationsRequest.BizTypeEnum>withRequestField("biz_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTableModelRelationsRequest.BizTypeEnum.class),
-            f -> f.withMarshaller(ListTableModelRelationsRequest::getBizType, (req, v) -> {
-                req.setBizType(v);
-            }));
+            f -> f.withMarshaller(ListTableModelRelationsRequest::getBizType,
+                ListTableModelRelationsRequest::setBizType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTableModelRelationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTableModelRelationsRequest::getLimit, ListTableModelRelationsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTableModelRelationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTableModelRelationsRequest::getOffset,
+                ListTableModelRelationsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelRelationsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListTableModelRelationsRequest::getWorkspace,
+                ListTableModelRelationsRequest::setWorkspace));
 
         // response
 
@@ -6977,9 +6044,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListTableModelsRequest, ListTableModelsResponse> listTableModels =
-        genForlistTableModels();
+        genForListTableModels();
 
-    private static HttpRequestDef<ListTableModelsRequest, ListTableModelsResponse> genForlistTableModels() {
+    private static HttpRequestDef<ListTableModelsRequest, ListTableModelsResponse> genForListTableModels() {
         // basic
         HttpRequestDef.Builder<ListTableModelsRequest, ListTableModelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTableModelsRequest.class, ListTableModelsResponse.class)
@@ -6992,93 +6059,67 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getName, ListTableModelsRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getCreateBy, ListTableModelsRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getApprover, ListTableModelsRequest::setApprover));
         builder.<ListTableModelsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTableModelsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getStatus, ListTableModelsRequest::setStatus));
         builder.<ListTableModelsRequest.SyncStatusEnum>withRequestField("sync_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTableModelsRequest.SyncStatusEnum.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getSyncStatus, (req, v) -> {
-                req.setSyncStatus(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getSyncStatus, ListTableModelsRequest::setSyncStatus));
         builder.<List<ListTableModelsRequest.SyncKeyEnum>>withRequestField("sync_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getSyncKey, (req, v) -> {
-                req.setSyncKey(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getSyncKey, ListTableModelsRequest::setSyncKey));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getBeginTime, ListTableModelsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getEndTime, ListTableModelsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getLimit, ListTableModelsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getOffset, ListTableModelsRequest::setOffset));
         builder.<String>withRequestField("model_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getModelId, (req, v) -> {
-                req.setModelId(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getModelId, ListTableModelsRequest::setModelId));
         builder.<String>withRequestField("biz_catalog_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getBizCatalogId, (req, v) -> {
-                req.setBizCatalogId(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getBizCatalogId, ListTableModelsRequest::setBizCatalogId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableModelsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListTableModelsRequest::getWorkspace, ListTableModelsRequest::setWorkspace));
 
         // response
 
@@ -7086,9 +6127,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListWorkspaceRolesRequest, ListWorkspaceRolesResponse> listWorkspaceRoles =
-        genForlistWorkspaceRoles();
+        genForListWorkspaceRoles();
 
-    private static HttpRequestDef<ListWorkspaceRolesRequest, ListWorkspaceRolesResponse> genForlistWorkspaceRoles() {
+    private static HttpRequestDef<ListWorkspaceRolesRequest, ListWorkspaceRolesResponse> genForListWorkspaceRoles() {
         // basic
         HttpRequestDef.Builder<ListWorkspaceRolesRequest, ListWorkspaceRolesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWorkspaceRolesRequest.class, ListWorkspaceRolesResponse.class)
@@ -7101,33 +6142,29 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspaceRolesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListWorkspaceRolesRequest::getInstanceId, ListWorkspaceRolesRequest::setInstanceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspaceRolesRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListWorkspaceRolesRequest::getWorkspaceId,
+                ListWorkspaceRolesRequest::setWorkspaceId));
 
         // response
         builder.<List<ApigRoleVo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListWorkspaceRolesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ApigRoleVo.class));
+            f -> f.withMarshaller(ListWorkspaceRolesResponse::getBody, ListWorkspaceRolesResponse::setBody)
+                .withInnerContainerType(ApigRoleVo.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspaces =
-        genForlistWorkspaces();
+        genForListWorkspaces();
 
-    private static HttpRequestDef<ListWorkspacesRequest, ListWorkspacesResponse> genForlistWorkspaces() {
+    private static HttpRequestDef<ListWorkspacesRequest, ListWorkspacesResponse> genForListWorkspaces() {
         // basic
         HttpRequestDef.Builder<ListWorkspacesRequest, ListWorkspacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWorkspacesRequest.class, ListWorkspacesResponse.class)
@@ -7140,37 +6177,27 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListWorkspacesRequest.WorkspaceTypeEnum.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getWorkspaceType, (req, v) -> {
-                req.setWorkspaceType(v);
-            }));
+            f -> f.withMarshaller(ListWorkspacesRequest::getWorkspaceType, ListWorkspacesRequest::setWorkspaceType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListWorkspacesRequest::getLimit, ListWorkspacesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListWorkspacesRequest::getOffset, ListWorkspacesRequest::setOffset));
         builder.<String>withRequestField("dw_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getDwType, (req, v) -> {
-                req.setDwType(v);
-            }));
+            f -> f.withMarshaller(ListWorkspacesRequest::getDwType, ListWorkspacesRequest::setDwType));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListWorkspacesRequest::getWorkspace, ListWorkspacesRequest::setWorkspace));
 
         // response
 
@@ -7178,9 +6205,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListWorkspaceusersRequest, ListWorkspaceusersResponse> listWorkspaceusers =
-        genForlistWorkspaceusers();
+        genForListWorkspaceusers();
 
-    private static HttpRequestDef<ListWorkspaceusersRequest, ListWorkspaceusersResponse> genForlistWorkspaceusers() {
+    private static HttpRequestDef<ListWorkspaceusersRequest, ListWorkspaceusersResponse> genForListWorkspaceusers() {
         // basic
         HttpRequestDef.Builder<ListWorkspaceusersRequest, ListWorkspaceusersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWorkspaceusersRequest.class, ListWorkspaceusersResponse.class)
@@ -7193,32 +6220,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspaceusersRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListWorkspaceusersRequest::getWorkspaceId,
+                ListWorkspaceusersRequest::setWorkspaceId));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspaceusersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListWorkspaceusersRequest::getLimit, ListWorkspaceusersRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspaceusersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListWorkspaceusersRequest::getOffset, ListWorkspaceusersRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<MigrateApiRequest, MigrateApiResponse> migrateApi = genFormigrateApi();
+    public static final HttpRequestDef<MigrateApiRequest, MigrateApiResponse> migrateApi = genForMigrateApi();
 
-    private static HttpRequestDef<MigrateApiRequest, MigrateApiResponse> genFormigrateApi() {
+    private static HttpRequestDef<MigrateApiRequest, MigrateApiResponse> genForMigrateApi() {
         // basic
         HttpRequestDef.Builder<MigrateApiRequest, MigrateApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, MigrateApiRequest.class, MigrateApiResponse.class)
@@ -7231,23 +6253,17 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MigrateApiRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(MigrateApiRequest::getWorkspace, MigrateApiRequest::setWorkspace));
         builder.<MigrateApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(MigrateApiRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(MigrateApiRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(MigrateApiRequest::getDlmType, MigrateApiRequest::setDlmType));
         builder.<ApiMoveParaDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiMoveParaDTO.class),
-            f -> f.withMarshaller(MigrateApiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MigrateApiRequest::getBody, MigrateApiRequest::setBody));
 
         // response
 
@@ -7255,9 +6271,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<MigrateCatalogRequest, MigrateCatalogResponse> migrateCatalog =
-        genFormigrateCatalog();
+        genForMigrateCatalog();
 
-    private static HttpRequestDef<MigrateCatalogRequest, MigrateCatalogResponse> genFormigrateCatalog() {
+    private static HttpRequestDef<MigrateCatalogRequest, MigrateCatalogResponse> genForMigrateCatalog() {
         // basic
         HttpRequestDef.Builder<MigrateCatalogRequest, MigrateCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, MigrateCatalogRequest.class, MigrateCatalogResponse.class)
@@ -7270,30 +6286,22 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MigrateCatalogRequest::getCatalogId, (req, v) -> {
-                req.setCatalogId(v);
-            }));
+            f -> f.withMarshaller(MigrateCatalogRequest::getCatalogId, MigrateCatalogRequest::setCatalogId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MigrateCatalogRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(MigrateCatalogRequest::getWorkspace, MigrateCatalogRequest::setWorkspace));
         builder.<MigrateCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(MigrateCatalogRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(MigrateCatalogRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(MigrateCatalogRequest::getDlmType, MigrateCatalogRequest::setDlmType));
         builder.<CatalogMoveParaDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogMoveParaDTO.class),
-            f -> f.withMarshaller(MigrateCatalogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MigrateCatalogRequest::getBody, MigrateCatalogRequest::setBody));
 
         // response
 
@@ -7301,9 +6309,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ModifyCustomizedFieldsRequest, ModifyCustomizedFieldsResponse> modifyCustomizedFields =
-        genFormodifyCustomizedFields();
+        genForModifyCustomizedFields();
 
-    private static HttpRequestDef<ModifyCustomizedFieldsRequest, ModifyCustomizedFieldsResponse> genFormodifyCustomizedFields() {
+    private static HttpRequestDef<ModifyCustomizedFieldsRequest, ModifyCustomizedFieldsResponse> genForModifyCustomizedFields() {
         // basic
         HttpRequestDef.Builder<ModifyCustomizedFieldsRequest, ModifyCustomizedFieldsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, ModifyCustomizedFieldsRequest.class, ModifyCustomizedFieldsResponse.class)
@@ -7316,16 +6324,13 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyCustomizedFieldsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ModifyCustomizedFieldsRequest::getWorkspace,
+                ModifyCustomizedFieldsRequest::setWorkspace));
         builder.<CustomizedFieldsVOList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CustomizedFieldsVOList.class),
-            f -> f.withMarshaller(ModifyCustomizedFieldsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyCustomizedFieldsRequest::getBody, ModifyCustomizedFieldsRequest::setBody));
 
         // response
 
@@ -7333,9 +6338,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ParseUserBehaviorRequest, ParseUserBehaviorResponse> parseUserBehavior =
-        genForparseUserBehavior();
+        genForParseUserBehavior();
 
-    private static HttpRequestDef<ParseUserBehaviorRequest, ParseUserBehaviorResponse> genForparseUserBehavior() {
+    private static HttpRequestDef<ParseUserBehaviorRequest, ParseUserBehaviorResponse> genForParseUserBehavior() {
         // basic
         HttpRequestDef.Builder<ParseUserBehaviorRequest, ParseUserBehaviorResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ParseUserBehaviorRequest.class, ParseUserBehaviorResponse.class)
@@ -7348,33 +6353,27 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ParseUserBehaviorRequest::getInstance, (req, v) -> {
-                req.setInstance(v);
-            }));
+            f -> f.withMarshaller(ParseUserBehaviorRequest::getInstance, ParseUserBehaviorRequest::setInstance));
         builder.<BehaviorRestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BehaviorRestBody.class),
-            f -> f.withMarshaller(ParseUserBehaviorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ParseUserBehaviorRequest::getBody, ParseUserBehaviorRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ParseUserBehaviorResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ParseUserBehaviorResponse::getBody, ParseUserBehaviorResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<PayForDgcOneKeyRequest, PayForDgcOneKeyResponse> payForDgcOneKey =
-        genForpayForDgcOneKey();
+        genForPayForDgcOneKey();
 
-    private static HttpRequestDef<PayForDgcOneKeyRequest, PayForDgcOneKeyResponse> genForpayForDgcOneKey() {
+    private static HttpRequestDef<PayForDgcOneKeyRequest, PayForDgcOneKeyResponse> genForPayForDgcOneKey() {
         // basic
         HttpRequestDef.Builder<PayForDgcOneKeyRequest, PayForDgcOneKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PayForDgcOneKeyRequest.class, PayForDgcOneKeyResponse.class)
@@ -7387,9 +6386,7 @@ public class DataArtsStudioMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OrderReq.class),
-            f -> f.withMarshaller(PayForDgcOneKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PayForDgcOneKeyRequest::getBody, PayForDgcOneKeyRequest::setBody));
 
         // response
 
@@ -7397,9 +6394,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ResetLinkAttributeAndStandardRequest, ResetLinkAttributeAndStandardResponse> resetLinkAttributeAndStandard =
-        genForresetLinkAttributeAndStandard();
+        genForResetLinkAttributeAndStandard();
 
-    private static HttpRequestDef<ResetLinkAttributeAndStandardRequest, ResetLinkAttributeAndStandardResponse> genForresetLinkAttributeAndStandard() {
+    private static HttpRequestDef<ResetLinkAttributeAndStandardRequest, ResetLinkAttributeAndStandardResponse> genForResetLinkAttributeAndStandard() {
         // basic
         HttpRequestDef.Builder<ResetLinkAttributeAndStandardRequest, ResetLinkAttributeAndStandardResponse> builder =
             HttpRequestDef
@@ -7415,16 +6412,14 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetLinkAttributeAndStandardRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ResetLinkAttributeAndStandardRequest::getWorkspace,
+                ResetLinkAttributeAndStandardRequest::setWorkspace));
         builder.<LinkAttributeAndElementVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LinkAttributeAndElementVO.class),
-            f -> f.withMarshaller(ResetLinkAttributeAndStandardRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetLinkAttributeAndStandardRequest::getBody,
+                ResetLinkAttributeAndStandardRequest::setBody));
 
         // response
 
@@ -7432,9 +6427,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<RollbackApprovalRequest, RollbackApprovalResponse> rollbackApproval =
-        genForrollbackApproval();
+        genForRollbackApproval();
 
-    private static HttpRequestDef<RollbackApprovalRequest, RollbackApprovalResponse> genForrollbackApproval() {
+    private static HttpRequestDef<RollbackApprovalRequest, RollbackApprovalResponse> genForRollbackApproval() {
         // basic
         HttpRequestDef.Builder<RollbackApprovalRequest, RollbackApprovalResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RollbackApprovalRequest.class, RollbackApprovalResponse.class)
@@ -7447,16 +6442,12 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RollbackApprovalRequest::getIds, (req, v) -> {
-                req.setIds(v);
-            }));
+            f -> f.withMarshaller(RollbackApprovalRequest::getIds, RollbackApprovalRequest::setIds));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RollbackApprovalRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(RollbackApprovalRequest::getWorkspace, RollbackApprovalRequest::setWorkspace));
 
         // response
 
@@ -7464,9 +6455,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchApprovalsRequest, SearchApprovalsResponse> searchApprovals =
-        genForsearchApprovals();
+        genForSearchApprovals();
 
-    private static HttpRequestDef<SearchApprovalsRequest, SearchApprovalsResponse> genForsearchApprovals() {
+    private static HttpRequestDef<SearchApprovalsRequest, SearchApprovalsResponse> genForSearchApprovals() {
         // basic
         HttpRequestDef.Builder<SearchApprovalsRequest, SearchApprovalsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchApprovalsRequest.class, SearchApprovalsResponse.class)
@@ -7479,93 +6470,69 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getBizId, (req, v) -> {
-                req.setBizId(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getBizId, SearchApprovalsRequest::setBizId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getName, SearchApprovalsRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getCreateBy, SearchApprovalsRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getApprover, SearchApprovalsRequest::setApprover));
         builder.<SearchApprovalsRequest.ApprovalStatusEnum>withRequestField("approval_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchApprovalsRequest.ApprovalStatusEnum.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getApprovalStatus, (req, v) -> {
-                req.setApprovalStatus(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getApprovalStatus,
+                SearchApprovalsRequest::setApprovalStatus));
         builder.<SearchApprovalsRequest.ApprovalStatusDetailEnum>withRequestField("approval_status_detail",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchApprovalsRequest.ApprovalStatusDetailEnum.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getApprovalStatusDetail, (req, v) -> {
-                req.setApprovalStatusDetail(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getApprovalStatusDetail,
+                SearchApprovalsRequest::setApprovalStatusDetail));
         builder.<SearchApprovalsRequest.ApprovalTypeEnum>withRequestField("approval_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchApprovalsRequest.ApprovalTypeEnum.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getApprovalType, (req, v) -> {
-                req.setApprovalType(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getApprovalType, SearchApprovalsRequest::setApprovalType));
         builder.<String>withRequestField("biz_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getBizType, (req, v) -> {
-                req.setBizType(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getBizType, SearchApprovalsRequest::setBizType));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getBeginTime, SearchApprovalsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getEndTime, SearchApprovalsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getLimit, SearchApprovalsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getOffset, SearchApprovalsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchApprovalsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchApprovalsRequest::getWorkspace, SearchApprovalsRequest::setWorkspace));
 
         // response
 
@@ -7573,9 +6540,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchAtomicIndexesRequest, SearchAtomicIndexesResponse> searchAtomicIndexes =
-        genForsearchAtomicIndexes();
+        genForSearchAtomicIndexes();
 
-    private static HttpRequestDef<SearchAtomicIndexesRequest, SearchAtomicIndexesResponse> genForsearchAtomicIndexes() {
+    private static HttpRequestDef<SearchAtomicIndexesRequest, SearchAtomicIndexesResponse> genForSearchAtomicIndexes() {
         // basic
         HttpRequestDef.Builder<SearchAtomicIndexesRequest, SearchAtomicIndexesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchAtomicIndexesRequest.class, SearchAtomicIndexesResponse.class)
@@ -7588,79 +6555,57 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getName, SearchAtomicIndexesRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getCreateBy, SearchAtomicIndexesRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getApprover, SearchAtomicIndexesRequest::setApprover));
         builder.<SearchAtomicIndexesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchAtomicIndexesRequest.StatusEnum.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getStatus, SearchAtomicIndexesRequest::setStatus));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getBeginTime, SearchAtomicIndexesRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getEndTime, SearchAtomicIndexesRequest::setEndTime));
         builder.<Long>withRequestField("l3_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getL3Id, (req, v) -> {
-                req.setL3Id(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getL3Id, SearchAtomicIndexesRequest::setL3Id));
         builder.<Long>withRequestField("table_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getTableId, (req, v) -> {
-                req.setTableId(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getTableId, SearchAtomicIndexesRequest::setTableId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getLimit, SearchAtomicIndexesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getOffset, SearchAtomicIndexesRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAtomicIndexesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getWorkspace, SearchAtomicIndexesRequest::setWorkspace));
 
         // response
 
@@ -7668,9 +6613,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchAuthorizeAppRequest, SearchAuthorizeAppResponse> searchAuthorizeApp =
-        genForsearchAuthorizeApp();
+        genForSearchAuthorizeApp();
 
-    private static HttpRequestDef<SearchAuthorizeAppRequest, SearchAuthorizeAppResponse> genForsearchAuthorizeApp() {
+    private static HttpRequestDef<SearchAuthorizeAppRequest, SearchAuthorizeAppResponse> genForSearchAuthorizeApp() {
         // basic
         HttpRequestDef.Builder<SearchAuthorizeAppRequest, SearchAuthorizeAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchAuthorizeAppRequest.class, SearchAuthorizeAppResponse.class)
@@ -7683,37 +6628,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAuthorizeAppRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(SearchAuthorizeAppRequest::getApiId, SearchAuthorizeAppRequest::setApiId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchAuthorizeAppRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchAuthorizeAppRequest::getOffset, SearchAuthorizeAppRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchAuthorizeAppRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchAuthorizeAppRequest::getLimit, SearchAuthorizeAppRequest::setLimit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAuthorizeAppRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchAuthorizeAppRequest::getWorkspace, SearchAuthorizeAppRequest::setWorkspace));
         builder.<SearchAuthorizeAppRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchAuthorizeAppRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(SearchAuthorizeAppRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(SearchAuthorizeAppRequest::getDlmType, SearchAuthorizeAppRequest::setDlmType));
 
         // response
 
@@ -7721,9 +6656,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchBindApiRequest, SearchBindApiResponse> searchBindApi =
-        genForsearchBindApi();
+        genForSearchBindApi();
 
-    private static HttpRequestDef<SearchBindApiRequest, SearchBindApiResponse> genForsearchBindApi() {
+    private static HttpRequestDef<SearchBindApiRequest, SearchBindApiResponse> genForSearchBindApi() {
         // basic
         HttpRequestDef.Builder<SearchBindApiRequest, SearchBindApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchBindApiRequest.class, SearchBindApiResponse.class)
@@ -7736,37 +6671,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchBindApiRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(SearchBindApiRequest::getAppId, SearchBindApiRequest::setAppId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchBindApiRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchBindApiRequest::getOffset, SearchBindApiRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchBindApiRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchBindApiRequest::getLimit, SearchBindApiRequest::setLimit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchBindApiRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchBindApiRequest::getWorkspace, SearchBindApiRequest::setWorkspace));
         builder.<SearchBindApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchBindApiRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(SearchBindApiRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(SearchBindApiRequest::getDlmType, SearchBindApiRequest::setDlmType));
 
         // response
 
@@ -7774,9 +6699,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchCatalogsRequest, SearchCatalogsResponse> searchCatalogs =
-        genForsearchCatalogs();
+        genForSearchCatalogs();
 
-    private static HttpRequestDef<SearchCatalogsRequest, SearchCatalogsResponse> genForsearchCatalogs() {
+    private static HttpRequestDef<SearchCatalogsRequest, SearchCatalogsResponse> genForSearchCatalogs() {
         // basic
         HttpRequestDef.Builder<SearchCatalogsRequest, SearchCatalogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCatalogsRequest.class, SearchCatalogsResponse.class)
@@ -7789,58 +6714,42 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCatalogsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(SearchCatalogsRequest::getName, SearchCatalogsRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCatalogsRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(SearchCatalogsRequest::getCreateBy, SearchCatalogsRequest::setCreateBy));
         builder.<String>withRequestField("owner",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCatalogsRequest::getOwner, (req, v) -> {
-                req.setOwner(v);
-            }));
+            f -> f.withMarshaller(SearchCatalogsRequest::getOwner, SearchCatalogsRequest::setOwner));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCatalogsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(SearchCatalogsRequest::getBeginTime, SearchCatalogsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCatalogsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchCatalogsRequest::getEndTime, SearchCatalogsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCatalogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCatalogsRequest::getLimit, SearchCatalogsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCatalogsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCatalogsRequest::getOffset, SearchCatalogsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCatalogsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchCatalogsRequest::getWorkspace, SearchCatalogsRequest::setWorkspace));
 
         // response
 
@@ -7848,9 +6757,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchCodeTableValuesRequest, SearchCodeTableValuesResponse> searchCodeTableValues =
-        genForsearchCodeTableValues();
+        genForSearchCodeTableValues();
 
-    private static HttpRequestDef<SearchCodeTableValuesRequest, SearchCodeTableValuesResponse> genForsearchCodeTableValues() {
+    private static HttpRequestDef<SearchCodeTableValuesRequest, SearchCodeTableValuesResponse> genForSearchCodeTableValues() {
         // basic
         HttpRequestDef.Builder<SearchCodeTableValuesRequest, SearchCodeTableValuesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchCodeTableValuesRequest.class, SearchCodeTableValuesResponse.class)
@@ -7863,30 +6772,23 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCodeTableValuesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTableValuesRequest::getId, SearchCodeTableValuesRequest::setId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCodeTableValuesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTableValuesRequest::getLimit, SearchCodeTableValuesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCodeTableValuesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTableValuesRequest::getOffset, SearchCodeTableValuesRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCodeTableValuesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTableValuesRequest::getWorkspace,
+                SearchCodeTableValuesRequest::setWorkspace));
 
         // response
 
@@ -7894,9 +6796,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchCodeTablesRequest, SearchCodeTablesResponse> searchCodeTables =
-        genForsearchCodeTables();
+        genForSearchCodeTables();
 
-    private static HttpRequestDef<SearchCodeTablesRequest, SearchCodeTablesResponse> genForsearchCodeTables() {
+    private static HttpRequestDef<SearchCodeTablesRequest, SearchCodeTablesResponse> genForSearchCodeTables() {
         // basic
         HttpRequestDef.Builder<SearchCodeTablesRequest, SearchCodeTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCodeTablesRequest.class, SearchCodeTablesResponse.class)
@@ -7909,72 +6811,52 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCodeTablesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTablesRequest::getName, SearchCodeTablesRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCodeTablesRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTablesRequest::getCreateBy, SearchCodeTablesRequest::setCreateBy));
         builder.<String>withRequestField("approver",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCodeTablesRequest::getApprover, (req, v) -> {
-                req.setApprover(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTablesRequest::getApprover, SearchCodeTablesRequest::setApprover));
         builder.<Long>withRequestField("directory_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchCodeTablesRequest::getDirectoryId, (req, v) -> {
-                req.setDirectoryId(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTablesRequest::getDirectoryId, SearchCodeTablesRequest::setDirectoryId));
         builder.<SearchCodeTablesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchCodeTablesRequest.StatusEnum.class),
-            f -> f.withMarshaller(SearchCodeTablesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTablesRequest::getStatus, SearchCodeTablesRequest::setStatus));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCodeTablesRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTablesRequest::getBeginTime, SearchCodeTablesRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCodeTablesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTablesRequest::getEndTime, SearchCodeTablesRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCodeTablesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTablesRequest::getLimit, SearchCodeTablesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCodeTablesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTablesRequest::getOffset, SearchCodeTablesRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCodeTablesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchCodeTablesRequest::getWorkspace, SearchCodeTablesRequest::setWorkspace));
 
         // response
 
@@ -7982,9 +6864,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchCustomizedFieldsRequest, SearchCustomizedFieldsResponse> searchCustomizedFields =
-        genForsearchCustomizedFields();
+        genForSearchCustomizedFields();
 
-    private static HttpRequestDef<SearchCustomizedFieldsRequest, SearchCustomizedFieldsResponse> genForsearchCustomizedFields() {
+    private static HttpRequestDef<SearchCustomizedFieldsRequest, SearchCustomizedFieldsResponse> genForSearchCustomizedFields() {
         // basic
         HttpRequestDef.Builder<SearchCustomizedFieldsRequest, SearchCustomizedFieldsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchCustomizedFieldsRequest.class, SearchCustomizedFieldsResponse.class)
@@ -7997,30 +6879,23 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCustomizedFieldsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCustomizedFieldsRequest::getLimit, SearchCustomizedFieldsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCustomizedFieldsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCustomizedFieldsRequest::getOffset, SearchCustomizedFieldsRequest::setOffset));
         builder.<SearchCustomizedFieldsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchCustomizedFieldsRequest.TypeEnum.class),
-            f -> f.withMarshaller(SearchCustomizedFieldsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(SearchCustomizedFieldsRequest::getType, SearchCustomizedFieldsRequest::setType));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCustomizedFieldsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchCustomizedFieldsRequest::getWorkspace,
+                SearchCustomizedFieldsRequest::setWorkspace));
 
         // response
 
@@ -8028,9 +6903,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchDwByTypeRequest, SearchDwByTypeResponse> searchDwByType =
-        genForsearchDwByType();
+        genForSearchDwByType();
 
-    private static HttpRequestDef<SearchDwByTypeRequest, SearchDwByTypeResponse> genForsearchDwByType() {
+    private static HttpRequestDef<SearchDwByTypeRequest, SearchDwByTypeResponse> genForSearchDwByType() {
         // basic
         HttpRequestDef.Builder<SearchDwByTypeRequest, SearchDwByTypeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchDwByTypeRequest.class, SearchDwByTypeResponse.class)
@@ -8043,37 +6918,27 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchDwByTypeRequest::getForceRefresh, (req, v) -> {
-                req.setForceRefresh(v);
-            }));
+            f -> f.withMarshaller(SearchDwByTypeRequest::getForceRefresh, SearchDwByTypeRequest::setForceRefresh));
         builder.<String>withRequestField("dw_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDwByTypeRequest::getDwType, (req, v) -> {
-                req.setDwType(v);
-            }));
+            f -> f.withMarshaller(SearchDwByTypeRequest::getDwType, SearchDwByTypeRequest::setDwType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchDwByTypeRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchDwByTypeRequest::getLimit, SearchDwByTypeRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchDwByTypeRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchDwByTypeRequest::getOffset, SearchDwByTypeRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDwByTypeRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchDwByTypeRequest::getWorkspace, SearchDwByTypeRequest::setWorkspace));
 
         // response
 
@@ -8081,9 +6946,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchIdByPathRequest, SearchIdByPathResponse> searchIdByPath =
-        genForsearchIdByPath();
+        genForSearchIdByPath();
 
-    private static HttpRequestDef<SearchIdByPathRequest, SearchIdByPathResponse> genForsearchIdByPath() {
+    private static HttpRequestDef<SearchIdByPathRequest, SearchIdByPathResponse> genForSearchIdByPath() {
         // basic
         HttpRequestDef.Builder<SearchIdByPathRequest, SearchIdByPathResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchIdByPathRequest.class, SearchIdByPathResponse.class)
@@ -8096,37 +6961,27 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchIdByPathRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(SearchIdByPathRequest::getPath, SearchIdByPathRequest::setPath));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchIdByPathRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchIdByPathRequest::getLimit, SearchIdByPathRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchIdByPathRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchIdByPathRequest::getOffset, SearchIdByPathRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchIdByPathRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchIdByPathRequest::getWorkspace, SearchIdByPathRequest::setWorkspace));
         builder.<SearchIdByPathRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchIdByPathRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(SearchIdByPathRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(SearchIdByPathRequest::getDlmType, SearchIdByPathRequest::setDlmType));
 
         // response
 
@@ -8134,9 +6989,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchSubjectRequest, SearchSubjectResponse> searchSubject =
-        genForsearchSubject();
+        genForSearchSubject();
 
-    private static HttpRequestDef<SearchSubjectRequest, SearchSubjectResponse> genForsearchSubject() {
+    private static HttpRequestDef<SearchSubjectRequest, SearchSubjectResponse> genForSearchSubject() {
         // basic
         HttpRequestDef.Builder<SearchSubjectRequest, SearchSubjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchSubjectRequest.class, SearchSubjectResponse.class)
@@ -8149,72 +7004,52 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectRequest::getName, SearchSubjectRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectRequest::getCreateBy, SearchSubjectRequest::setCreateBy));
         builder.<String>withRequestField("owner",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectRequest::getOwner, (req, v) -> {
-                req.setOwner(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectRequest::getOwner, SearchSubjectRequest::setOwner));
         builder.<SearchSubjectRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchSubjectRequest.StatusEnum.class),
-            f -> f.withMarshaller(SearchSubjectRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectRequest::getStatus, SearchSubjectRequest::setStatus));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectRequest::getBeginTime, SearchSubjectRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectRequest::getEndTime, SearchSubjectRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchSubjectRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectRequest::getLimit, SearchSubjectRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchSubjectRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectRequest::getOffset, SearchSubjectRequest::setOffset));
         builder.<Long>withRequestField("parent_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchSubjectRequest::getParentId, (req, v) -> {
-                req.setParentId(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectRequest::getParentId, SearchSubjectRequest::setParentId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectRequest::getWorkspace, SearchSubjectRequest::setWorkspace));
 
         // response
 
@@ -8222,9 +7057,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchSubjectNewRequest, SearchSubjectNewResponse> searchSubjectNew =
-        genForsearchSubjectNew();
+        genForSearchSubjectNew();
 
-    private static HttpRequestDef<SearchSubjectNewRequest, SearchSubjectNewResponse> genForsearchSubjectNew() {
+    private static HttpRequestDef<SearchSubjectNewRequest, SearchSubjectNewResponse> genForSearchSubjectNew() {
         // basic
         HttpRequestDef.Builder<SearchSubjectNewRequest, SearchSubjectNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchSubjectNewRequest.class, SearchSubjectNewResponse.class)
@@ -8237,72 +7072,52 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectNewRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectNewRequest::getName, SearchSubjectNewRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectNewRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectNewRequest::getCreateBy, SearchSubjectNewRequest::setCreateBy));
         builder.<String>withRequestField("owner",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectNewRequest::getOwner, (req, v) -> {
-                req.setOwner(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectNewRequest::getOwner, SearchSubjectNewRequest::setOwner));
         builder.<SearchSubjectNewRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchSubjectNewRequest.StatusEnum.class),
-            f -> f.withMarshaller(SearchSubjectNewRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectNewRequest::getStatus, SearchSubjectNewRequest::setStatus));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectNewRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectNewRequest::getBeginTime, SearchSubjectNewRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectNewRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectNewRequest::getEndTime, SearchSubjectNewRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchSubjectNewRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectNewRequest::getLimit, SearchSubjectNewRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchSubjectNewRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectNewRequest::getOffset, SearchSubjectNewRequest::setOffset));
         builder.<Long>withRequestField("parent_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchSubjectNewRequest::getParentId, (req, v) -> {
-                req.setParentId(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectNewRequest::getParentId, SearchSubjectNewRequest::setParentId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchSubjectNewRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchSubjectNewRequest::getWorkspace, SearchSubjectNewRequest::setWorkspace));
 
         // response
 
@@ -8310,9 +7125,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchVersionsRequest, SearchVersionsResponse> searchVersions =
-        genForsearchVersions();
+        genForSearchVersions();
 
-    private static HttpRequestDef<SearchVersionsRequest, SearchVersionsResponse> genForsearchVersions() {
+    private static HttpRequestDef<SearchVersionsRequest, SearchVersionsResponse> genForSearchVersions() {
         // basic
         HttpRequestDef.Builder<SearchVersionsRequest, SearchVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchVersionsRequest.class, SearchVersionsResponse.class)
@@ -8325,65 +7140,47 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchVersionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(SearchVersionsRequest::getName, SearchVersionsRequest::setName));
         builder.<String>withRequestField("create_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchVersionsRequest::getCreateBy, (req, v) -> {
-                req.setCreateBy(v);
-            }));
+            f -> f.withMarshaller(SearchVersionsRequest::getCreateBy, SearchVersionsRequest::setCreateBy));
         builder.<Long>withRequestField("biz_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchVersionsRequest::getBizId, (req, v) -> {
-                req.setBizId(v);
-            }));
+            f -> f.withMarshaller(SearchVersionsRequest::getBizId, SearchVersionsRequest::setBizId));
         builder.<String>withRequestField("biz_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchVersionsRequest::getBizType, (req, v) -> {
-                req.setBizType(v);
-            }));
+            f -> f.withMarshaller(SearchVersionsRequest::getBizType, SearchVersionsRequest::setBizType));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchVersionsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(SearchVersionsRequest::getBeginTime, SearchVersionsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchVersionsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchVersionsRequest::getEndTime, SearchVersionsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchVersionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchVersionsRequest::getLimit, SearchVersionsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchVersionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchVersionsRequest::getOffset, SearchVersionsRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchVersionsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchVersionsRequest::getWorkspace, SearchVersionsRequest::setWorkspace));
 
         // response
 
@@ -8391,9 +7188,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowAggregationLogicTableByIdRequest, ShowAggregationLogicTableByIdResponse> showAggregationLogicTableById =
-        genForshowAggregationLogicTableById();
+        genForShowAggregationLogicTableById();
 
-    private static HttpRequestDef<ShowAggregationLogicTableByIdRequest, ShowAggregationLogicTableByIdResponse> genForshowAggregationLogicTableById() {
+    private static HttpRequestDef<ShowAggregationLogicTableByIdRequest, ShowAggregationLogicTableByIdResponse> genForShowAggregationLogicTableById() {
         // basic
         HttpRequestDef.Builder<ShowAggregationLogicTableByIdRequest, ShowAggregationLogicTableByIdResponse> builder =
             HttpRequestDef
@@ -8409,23 +7206,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAggregationLogicTableByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowAggregationLogicTableByIdRequest::getId,
+                ShowAggregationLogicTableByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowAggregationLogicTableByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowAggregationLogicTableByIdRequest::getLatest,
+                ShowAggregationLogicTableByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAggregationLogicTableByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowAggregationLogicTableByIdRequest::getWorkspace,
+                ShowAggregationLogicTableByIdRequest::setWorkspace));
 
         // response
 
@@ -8433,9 +7227,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowApiDashboardRequest, ShowApiDashboardResponse> showApiDashboard =
-        genForshowApiDashboard();
+        genForShowApiDashboard();
 
-    private static HttpRequestDef<ShowApiDashboardRequest, ShowApiDashboardResponse> genForshowApiDashboard() {
+    private static HttpRequestDef<ShowApiDashboardRequest, ShowApiDashboardResponse> genForShowApiDashboard() {
         // basic
         HttpRequestDef.Builder<ShowApiDashboardRequest, ShowApiDashboardResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiDashboardRequest.class, ShowApiDashboardResponse.class)
@@ -8448,51 +7242,37 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiDashboardRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ShowApiDashboardRequest::getApiId, ShowApiDashboardRequest::setApiId));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiDashboardRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowApiDashboardRequest::getInstanceId, ShowApiDashboardRequest::setInstanceId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowApiDashboardRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowApiDashboardRequest::getStartTime, ShowApiDashboardRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowApiDashboardRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowApiDashboardRequest::getEndTime, ShowApiDashboardRequest::setEndTime));
         builder.<ShowApiDashboardRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowApiDashboardRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ShowApiDashboardRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ShowApiDashboardRequest::getTimeUnit, ShowApiDashboardRequest::setTimeUnit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiDashboardRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowApiDashboardRequest::getWorkspace, ShowApiDashboardRequest::setWorkspace));
         builder.<ShowApiDashboardRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApiDashboardRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowApiDashboardRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowApiDashboardRequest::getDlmType, ShowApiDashboardRequest::setDlmType));
 
         // response
 
@@ -8500,9 +7280,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowApisDashboardRequest, ShowApisDashboardResponse> showApisDashboard =
-        genForshowApisDashboard();
+        genForShowApisDashboard();
 
-    private static HttpRequestDef<ShowApisDashboardRequest, ShowApisDashboardResponse> genForshowApisDashboard() {
+    private static HttpRequestDef<ShowApisDashboardRequest, ShowApisDashboardResponse> genForShowApisDashboard() {
         // basic
         HttpRequestDef.Builder<ShowApisDashboardRequest, ShowApisDashboardResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApisDashboardRequest.class, ShowApisDashboardResponse.class)
@@ -8515,58 +7295,42 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApisDashboardRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowApisDashboardRequest::getInstanceId, ShowApisDashboardRequest::setInstanceId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowApisDashboardRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowApisDashboardRequest::getStartTime, ShowApisDashboardRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowApisDashboardRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowApisDashboardRequest::getEndTime, ShowApisDashboardRequest::setEndTime));
         builder.<ShowApisDashboardRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowApisDashboardRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ShowApisDashboardRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ShowApisDashboardRequest::getTimeUnit, ShowApisDashboardRequest::setTimeUnit));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowApisDashboardRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowApisDashboardRequest::getLimit, ShowApisDashboardRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowApisDashboardRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowApisDashboardRequest::getOffset, ShowApisDashboardRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApisDashboardRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowApisDashboardRequest::getWorkspace, ShowApisDashboardRequest::setWorkspace));
         builder.<ShowApisDashboardRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApisDashboardRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowApisDashboardRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowApisDashboardRequest::getDlmType, ShowApisDashboardRequest::setDlmType));
 
         // response
 
@@ -8574,9 +7338,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowApisDetailRequest, ShowApisDetailResponse> showApisDetail =
-        genForshowApisDetail();
+        genForShowApisDetail();
 
-    private static HttpRequestDef<ShowApisDetailRequest, ShowApisDetailResponse> genForshowApisDetail() {
+    private static HttpRequestDef<ShowApisDetailRequest, ShowApisDetailResponse> genForShowApisDetail() {
         // basic
         HttpRequestDef.Builder<ShowApisDetailRequest, ShowApisDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApisDetailRequest.class, ShowApisDetailResponse.class)
@@ -8589,51 +7353,37 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApisDetailRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ShowApisDetailRequest::getApiId, ShowApisDetailRequest::setApiId));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApisDetailRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowApisDetailRequest::getInstanceId, ShowApisDetailRequest::setInstanceId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowApisDetailRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowApisDetailRequest::getStartTime, ShowApisDetailRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowApisDetailRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowApisDetailRequest::getEndTime, ShowApisDetailRequest::setEndTime));
         builder.<ShowApisDetailRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowApisDetailRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ShowApisDetailRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ShowApisDetailRequest::getTimeUnit, ShowApisDetailRequest::setTimeUnit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApisDetailRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowApisDetailRequest::getWorkspace, ShowApisDetailRequest::setWorkspace));
         builder.<ShowApisDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApisDetailRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowApisDetailRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowApisDetailRequest::getDlmType, ShowApisDetailRequest::setDlmType));
 
         // response
 
@@ -8641,9 +7391,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowApisOverviewRequest, ShowApisOverviewResponse> showApisOverview =
-        genForshowApisOverview();
+        genForShowApisOverview();
 
-    private static HttpRequestDef<ShowApisOverviewRequest, ShowApisOverviewResponse> genForshowApisOverview() {
+    private static HttpRequestDef<ShowApisOverviewRequest, ShowApisOverviewResponse> genForShowApisOverview() {
         // basic
         HttpRequestDef.Builder<ShowApisOverviewRequest, ShowApisOverviewResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApisOverviewRequest.class, ShowApisOverviewResponse.class)
@@ -8656,46 +7406,36 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowApisOverviewRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowApisOverviewRequest::getStartTime, ShowApisOverviewRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowApisOverviewRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowApisOverviewRequest::getEndTime, ShowApisOverviewRequest::setEndTime));
         builder.<ShowApisOverviewRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowApisOverviewRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ShowApisOverviewRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ShowApisOverviewRequest::getTimeUnit, ShowApisOverviewRequest::setTimeUnit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApisOverviewRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowApisOverviewRequest::getWorkspace, ShowApisOverviewRequest::setWorkspace));
         builder.<ShowApisOverviewRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApisOverviewRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowApisOverviewRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowApisOverviewRequest::getDlmType, ShowApisOverviewRequest::setDlmType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppInfoRequest, ShowAppInfoResponse> showAppInfo = genForshowAppInfo();
+    public static final HttpRequestDef<ShowAppInfoRequest, ShowAppInfoResponse> showAppInfo = genForShowAppInfo();
 
-    private static HttpRequestDef<ShowAppInfoRequest, ShowAppInfoResponse> genForshowAppInfo() {
+    private static HttpRequestDef<ShowAppInfoRequest, ShowAppInfoResponse> genForShowAppInfo() {
         // basic
         HttpRequestDef.Builder<ShowAppInfoRequest, ShowAppInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppInfoRequest.class, ShowAppInfoResponse.class)
@@ -8708,23 +7448,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppInfoRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowAppInfoRequest::getAppId, ShowAppInfoRequest::setAppId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppInfoRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowAppInfoRequest::getWorkspace, ShowAppInfoRequest::setWorkspace));
         builder.<ShowAppInfoRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAppInfoRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowAppInfoRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowAppInfoRequest::getDlmType, ShowAppInfoRequest::setDlmType));
 
         // response
 
@@ -8732,9 +7466,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowApplyDetailRequest, ShowApplyDetailResponse> showApplyDetail =
-        genForshowApplyDetail();
+        genForShowApplyDetail();
 
-    private static HttpRequestDef<ShowApplyDetailRequest, ShowApplyDetailResponse> genForshowApplyDetail() {
+    private static HttpRequestDef<ShowApplyDetailRequest, ShowApplyDetailResponse> genForShowApplyDetail() {
         // basic
         HttpRequestDef.Builder<ShowApplyDetailRequest, ShowApplyDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApplyDetailRequest.class, ShowApplyDetailResponse.class)
@@ -8747,23 +7481,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplyDetailRequest::getApplyId, (req, v) -> {
-                req.setApplyId(v);
-            }));
+            f -> f.withMarshaller(ShowApplyDetailRequest::getApplyId, ShowApplyDetailRequest::setApplyId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplyDetailRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowApplyDetailRequest::getWorkspace, ShowApplyDetailRequest::setWorkspace));
         builder.<ShowApplyDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApplyDetailRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowApplyDetailRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowApplyDetailRequest::getDlmType, ShowApplyDetailRequest::setDlmType));
 
         // response
 
@@ -8771,9 +7499,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowAppsDashboardRequest, ShowAppsDashboardResponse> showAppsDashboard =
-        genForshowAppsDashboard();
+        genForShowAppsDashboard();
 
-    private static HttpRequestDef<ShowAppsDashboardRequest, ShowAppsDashboardResponse> genForshowAppsDashboard() {
+    private static HttpRequestDef<ShowAppsDashboardRequest, ShowAppsDashboardResponse> genForShowAppsDashboard() {
         // basic
         HttpRequestDef.Builder<ShowAppsDashboardRequest, ShowAppsDashboardResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppsDashboardRequest.class, ShowAppsDashboardResponse.class)
@@ -8786,51 +7514,37 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAppsDashboardRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDashboardRequest::getStartTime, ShowAppsDashboardRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAppsDashboardRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDashboardRequest::getEndTime, ShowAppsDashboardRequest::setEndTime));
         builder.<ShowAppsDashboardRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowAppsDashboardRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ShowAppsDashboardRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDashboardRequest::getTimeUnit, ShowAppsDashboardRequest::setTimeUnit));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAppsDashboardRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDashboardRequest::getLimit, ShowAppsDashboardRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAppsDashboardRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDashboardRequest::getOffset, ShowAppsDashboardRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppsDashboardRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDashboardRequest::getWorkspace, ShowAppsDashboardRequest::setWorkspace));
         builder.<ShowAppsDashboardRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAppsDashboardRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowAppsDashboardRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDashboardRequest::getDlmType, ShowAppsDashboardRequest::setDlmType));
 
         // response
 
@@ -8838,9 +7552,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowAppsDetailRequest, ShowAppsDetailResponse> showAppsDetail =
-        genForshowAppsDetail();
+        genForShowAppsDetail();
 
-    private static HttpRequestDef<ShowAppsDetailRequest, ShowAppsDetailResponse> genForshowAppsDetail() {
+    private static HttpRequestDef<ShowAppsDetailRequest, ShowAppsDetailResponse> genForShowAppsDetail() {
         // basic
         HttpRequestDef.Builder<ShowAppsDetailRequest, ShowAppsDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppsDetailRequest.class, ShowAppsDetailResponse.class)
@@ -8853,44 +7567,32 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppsDetailRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDetailRequest::getAppId, ShowAppsDetailRequest::setAppId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAppsDetailRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDetailRequest::getStartTime, ShowAppsDetailRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAppsDetailRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDetailRequest::getEndTime, ShowAppsDetailRequest::setEndTime));
         builder.<ShowAppsDetailRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowAppsDetailRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ShowAppsDetailRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDetailRequest::getTimeUnit, ShowAppsDetailRequest::setTimeUnit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppsDetailRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDetailRequest::getWorkspace, ShowAppsDetailRequest::setWorkspace));
         builder.<ShowAppsDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAppsDetailRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowAppsDetailRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowAppsDetailRequest::getDlmType, ShowAppsDetailRequest::setDlmType));
 
         // response
 
@@ -8898,9 +7600,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowAppsOverviewRequest, ShowAppsOverviewResponse> showAppsOverview =
-        genForshowAppsOverview();
+        genForShowAppsOverview();
 
-    private static HttpRequestDef<ShowAppsOverviewRequest, ShowAppsOverviewResponse> genForshowAppsOverview() {
+    private static HttpRequestDef<ShowAppsOverviewRequest, ShowAppsOverviewResponse> genForShowAppsOverview() {
         // basic
         HttpRequestDef.Builder<ShowAppsOverviewRequest, ShowAppsOverviewResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppsOverviewRequest.class, ShowAppsOverviewResponse.class)
@@ -8913,37 +7615,27 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAppsOverviewRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowAppsOverviewRequest::getStartTime, ShowAppsOverviewRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAppsOverviewRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowAppsOverviewRequest::getEndTime, ShowAppsOverviewRequest::setEndTime));
         builder.<ShowAppsOverviewRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowAppsOverviewRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ShowAppsOverviewRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ShowAppsOverviewRequest::getTimeUnit, ShowAppsOverviewRequest::setTimeUnit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppsOverviewRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowAppsOverviewRequest::getWorkspace, ShowAppsOverviewRequest::setWorkspace));
         builder.<ShowAppsOverviewRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAppsOverviewRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowAppsOverviewRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowAppsOverviewRequest::getDlmType, ShowAppsOverviewRequest::setDlmType));
 
         // response
 
@@ -8951,9 +7643,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowAtomicIndexByIdRequest, ShowAtomicIndexByIdResponse> showAtomicIndexById =
-        genForshowAtomicIndexById();
+        genForShowAtomicIndexById();
 
-    private static HttpRequestDef<ShowAtomicIndexByIdRequest, ShowAtomicIndexByIdResponse> genForshowAtomicIndexById() {
+    private static HttpRequestDef<ShowAtomicIndexByIdRequest, ShowAtomicIndexByIdResponse> genForShowAtomicIndexById() {
         // basic
         HttpRequestDef.Builder<ShowAtomicIndexByIdRequest, ShowAtomicIndexByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAtomicIndexByIdRequest.class, ShowAtomicIndexByIdResponse.class)
@@ -8966,23 +7658,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAtomicIndexByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowAtomicIndexByIdRequest::getId, ShowAtomicIndexByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowAtomicIndexByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowAtomicIndexByIdRequest::getLatest, ShowAtomicIndexByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAtomicIndexByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowAtomicIndexByIdRequest::getWorkspace, ShowAtomicIndexByIdRequest::setWorkspace));
 
         // response
 
@@ -8990,9 +7676,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowBizCatalogDetailRequest, ShowBizCatalogDetailResponse> showBizCatalogDetail =
-        genForshowBizCatalogDetail();
+        genForShowBizCatalogDetail();
 
-    private static HttpRequestDef<ShowBizCatalogDetailRequest, ShowBizCatalogDetailResponse> genForshowBizCatalogDetail() {
+    private static HttpRequestDef<ShowBizCatalogDetailRequest, ShowBizCatalogDetailResponse> genForShowBizCatalogDetail() {
         // basic
         HttpRequestDef.Builder<ShowBizCatalogDetailRequest, ShowBizCatalogDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowBizCatalogDetailRequest.class, ShowBizCatalogDetailResponse.class)
@@ -9005,16 +7691,13 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBizCatalogDetailRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowBizCatalogDetailRequest::getId, ShowBizCatalogDetailRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBizCatalogDetailRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowBizCatalogDetailRequest::getWorkspace,
+                ShowBizCatalogDetailRequest::setWorkspace));
 
         // response
 
@@ -9022,9 +7705,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowBizMetricByIdRequest, ShowBizMetricByIdResponse> showBizMetricById =
-        genForshowBizMetricById();
+        genForShowBizMetricById();
 
-    private static HttpRequestDef<ShowBizMetricByIdRequest, ShowBizMetricByIdResponse> genForshowBizMetricById() {
+    private static HttpRequestDef<ShowBizMetricByIdRequest, ShowBizMetricByIdResponse> genForShowBizMetricById() {
         // basic
         HttpRequestDef.Builder<ShowBizMetricByIdRequest, ShowBizMetricByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBizMetricByIdRequest.class, ShowBizMetricByIdResponse.class)
@@ -9037,23 +7720,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBizMetricByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowBizMetricByIdRequest::getId, ShowBizMetricByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowBizMetricByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowBizMetricByIdRequest::getLatest, ShowBizMetricByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBizMetricByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowBizMetricByIdRequest::getWorkspace, ShowBizMetricByIdRequest::setWorkspace));
 
         // response
 
@@ -9061,9 +7738,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowBusinessAssetsRequest, ShowBusinessAssetsResponse> showBusinessAssets =
-        genForshowBusinessAssets();
+        genForShowBusinessAssets();
 
-    private static HttpRequestDef<ShowBusinessAssetsRequest, ShowBusinessAssetsResponse> genForshowBusinessAssets() {
+    private static HttpRequestDef<ShowBusinessAssetsRequest, ShowBusinessAssetsResponse> genForShowBusinessAssets() {
         // basic
         HttpRequestDef.Builder<ShowBusinessAssetsRequest, ShowBusinessAssetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowBusinessAssetsRequest.class, ShowBusinessAssetsResponse.class)
@@ -9076,16 +7753,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBusinessAssetsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowBusinessAssetsRequest::getWorkspace, ShowBusinessAssetsRequest::setWorkspace));
         builder.<BusinessAssetRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BusinessAssetRequest.class),
-            f -> f.withMarshaller(ShowBusinessAssetsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowBusinessAssetsRequest::getBody, ShowBusinessAssetsRequest::setBody));
 
         // response
 
@@ -9093,9 +7766,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowBusinessAssetsStatisticRequest, ShowBusinessAssetsStatisticResponse> showBusinessAssetsStatistic =
-        genForshowBusinessAssetsStatistic();
+        genForShowBusinessAssetsStatistic();
 
-    private static HttpRequestDef<ShowBusinessAssetsStatisticRequest, ShowBusinessAssetsStatisticResponse> genForshowBusinessAssetsStatistic() {
+    private static HttpRequestDef<ShowBusinessAssetsStatisticRequest, ShowBusinessAssetsStatisticResponse> genForShowBusinessAssetsStatistic() {
         // basic
         HttpRequestDef.Builder<ShowBusinessAssetsStatisticRequest, ShowBusinessAssetsStatisticResponse> builder =
             HttpRequestDef
@@ -9111,23 +7784,20 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBusinessAssetsStatisticRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowBusinessAssetsStatisticRequest::getOffset,
+                ShowBusinessAssetsStatisticRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBusinessAssetsStatisticRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowBusinessAssetsStatisticRequest::getLimit,
+                ShowBusinessAssetsStatisticRequest::setLimit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBusinessAssetsStatisticRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowBusinessAssetsStatisticRequest::getWorkspace,
+                ShowBusinessAssetsStatisticRequest::setWorkspace));
 
         // response
 
@@ -9135,9 +7805,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowCatalogDetailRequest, ShowCatalogDetailResponse> showCatalogDetail =
-        genForshowCatalogDetail();
+        genForShowCatalogDetail();
 
-    private static HttpRequestDef<ShowCatalogDetailRequest, ShowCatalogDetailResponse> genForshowCatalogDetail() {
+    private static HttpRequestDef<ShowCatalogDetailRequest, ShowCatalogDetailResponse> genForShowCatalogDetail() {
         // basic
         HttpRequestDef.Builder<ShowCatalogDetailRequest, ShowCatalogDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCatalogDetailRequest.class, ShowCatalogDetailResponse.class)
@@ -9150,23 +7820,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCatalogDetailRequest::getCatalogId, (req, v) -> {
-                req.setCatalogId(v);
-            }));
+            f -> f.withMarshaller(ShowCatalogDetailRequest::getCatalogId, ShowCatalogDetailRequest::setCatalogId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCatalogDetailRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowCatalogDetailRequest::getWorkspace, ShowCatalogDetailRequest::setWorkspace));
         builder.<ShowCatalogDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowCatalogDetailRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowCatalogDetailRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowCatalogDetailRequest::getDlmType, ShowCatalogDetailRequest::setDlmType));
 
         // response
 
@@ -9174,9 +7838,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowCodeTableByIdRequest, ShowCodeTableByIdResponse> showCodeTableById =
-        genForshowCodeTableById();
+        genForShowCodeTableById();
 
-    private static HttpRequestDef<ShowCodeTableByIdRequest, ShowCodeTableByIdResponse> genForshowCodeTableById() {
+    private static HttpRequestDef<ShowCodeTableByIdRequest, ShowCodeTableByIdResponse> genForShowCodeTableById() {
         // basic
         HttpRequestDef.Builder<ShowCodeTableByIdRequest, ShowCodeTableByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCodeTableByIdRequest.class, ShowCodeTableByIdResponse.class)
@@ -9189,16 +7853,12 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCodeTableByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowCodeTableByIdRequest::getId, ShowCodeTableByIdRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCodeTableByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowCodeTableByIdRequest::getWorkspace, ShowCodeTableByIdRequest::setWorkspace));
 
         // response
 
@@ -9206,9 +7866,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowCompoundMetricByIdRequest, ShowCompoundMetricByIdResponse> showCompoundMetricById =
-        genForshowCompoundMetricById();
+        genForShowCompoundMetricById();
 
-    private static HttpRequestDef<ShowCompoundMetricByIdRequest, ShowCompoundMetricByIdResponse> genForshowCompoundMetricById() {
+    private static HttpRequestDef<ShowCompoundMetricByIdRequest, ShowCompoundMetricByIdResponse> genForShowCompoundMetricById() {
         // basic
         HttpRequestDef.Builder<ShowCompoundMetricByIdRequest, ShowCompoundMetricByIdResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowCompoundMetricByIdRequest.class, ShowCompoundMetricByIdResponse.class)
@@ -9221,23 +7881,18 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCompoundMetricByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowCompoundMetricByIdRequest::getId, ShowCompoundMetricByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowCompoundMetricByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowCompoundMetricByIdRequest::getLatest, ShowCompoundMetricByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCompoundMetricByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowCompoundMetricByIdRequest::getWorkspace,
+                ShowCompoundMetricByIdRequest::setWorkspace));
 
         // response
 
@@ -9245,9 +7900,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowConditionByIdRequest, ShowConditionByIdResponse> showConditionById =
-        genForshowConditionById();
+        genForShowConditionById();
 
-    private static HttpRequestDef<ShowConditionByIdRequest, ShowConditionByIdResponse> genForshowConditionById() {
+    private static HttpRequestDef<ShowConditionByIdRequest, ShowConditionByIdResponse> genForShowConditionById() {
         // basic
         HttpRequestDef.Builder<ShowConditionByIdRequest, ShowConditionByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConditionByIdRequest.class, ShowConditionByIdResponse.class)
@@ -9260,23 +7915,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConditionByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowConditionByIdRequest::getId, ShowConditionByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowConditionByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowConditionByIdRequest::getLatest, ShowConditionByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConditionByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowConditionByIdRequest::getWorkspace, ShowConditionByIdRequest::setWorkspace));
 
         // response
 
@@ -9284,9 +7933,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowConsistencyTaskDetailRequest, ShowConsistencyTaskDetailResponse> showConsistencyTaskDetail =
-        genForshowConsistencyTaskDetail();
+        genForShowConsistencyTaskDetail();
 
-    private static HttpRequestDef<ShowConsistencyTaskDetailRequest, ShowConsistencyTaskDetailResponse> genForshowConsistencyTaskDetail() {
+    private static HttpRequestDef<ShowConsistencyTaskDetailRequest, ShowConsistencyTaskDetailResponse> genForShowConsistencyTaskDetail() {
         // basic
         HttpRequestDef.Builder<ShowConsistencyTaskDetailRequest, ShowConsistencyTaskDetailResponse> builder =
             HttpRequestDef
@@ -9302,16 +7951,47 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConsistencyTaskDetailRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowConsistencyTaskDetailRequest::getId, ShowConsistencyTaskDetailRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConsistencyTaskDetailRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowConsistencyTaskDetailRequest::getWorkspace,
+                ShowConsistencyTaskDetailRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDataDetailRequest, ShowDataDetailResponse> showDataDetail =
+        genForShowDataDetail();
+
+    private static HttpRequestDef<ShowDataDetailRequest, ShowDataDetailResponse> genForShowDataDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowDataDetailRequest, ShowDataDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDataDetailRequest.class, ShowDataDetailResponse.class)
+                .withName("ShowDataDetail")
+                .withUri("/v1/{project_id}/datamap/entities/guid/{guid}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("guid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataDetailRequest::getGuid, ShowDataDetailRequest::setGuid));
+        builder.<Boolean>withRequestField("ignore_relationships",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowDataDetailRequest::getIgnoreRelationships,
+                ShowDataDetailRequest::setIgnoreRelationships));
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataDetailRequest::getInstance, ShowDataDetailRequest::setInstance));
 
         // response
 
@@ -9319,9 +7999,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowDataProfileRequest, ShowDataProfileResponse> showDataProfile =
-        genForshowDataProfile();
+        genForShowDataProfile();
 
-    private static HttpRequestDef<ShowDataProfileRequest, ShowDataProfileResponse> genForshowDataProfile() {
+    private static HttpRequestDef<ShowDataProfileRequest, ShowDataProfileResponse> genForShowDataProfile() {
         // basic
         HttpRequestDef.Builder<ShowDataProfileRequest, ShowDataProfileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDataProfileRequest.class, ShowDataProfileResponse.class)
@@ -9334,46 +8014,36 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataProfileRequest::getDwId, (req, v) -> {
-                req.setDwId(v);
-            }));
+            f -> f.withMarshaller(ShowDataProfileRequest::getDwId, ShowDataProfileRequest::setDwId));
         builder.<String>withRequestField("db_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataProfileRequest::getDbType, (req, v) -> {
-                req.setDbType(v);
-            }));
+            f -> f.withMarshaller(ShowDataProfileRequest::getDbType, ShowDataProfileRequest::setDbType));
         builder.<String>withRequestField("database_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataProfileRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ShowDataProfileRequest::getDatabaseName, ShowDataProfileRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataProfileRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ShowDataProfileRequest::getTableName, ShowDataProfileRequest::setTableName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataProfileRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowDataProfileRequest::getWorkspace, ShowDataProfileRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDataSetsRequest, ShowDataSetsResponse> showDataSets = genForshowDataSets();
+    public static final HttpRequestDef<ShowDataSetsRequest, ShowDataSetsResponse> showDataSets = genForShowDataSets();
 
-    private static HttpRequestDef<ShowDataSetsRequest, ShowDataSetsResponse> genForshowDataSets() {
+    private static HttpRequestDef<ShowDataSetsRequest, ShowDataSetsResponse> genForShowDataSets() {
         // basic
         HttpRequestDef.Builder<ShowDataSetsRequest, ShowDataSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowDataSetsRequest.class, ShowDataSetsResponse.class)
@@ -9386,16 +8056,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataSetsRequest::getInstance, (req, v) -> {
-                req.setInstance(v);
-            }));
+            f -> f.withMarshaller(ShowDataSetsRequest::getInstance, ShowDataSetsRequest::setInstance));
         builder.<SearchParameter>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchParameter.class),
-            f -> f.withMarshaller(ShowDataSetsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowDataSetsRequest::getBody, ShowDataSetsRequest::setBody));
 
         // response
 
@@ -9403,9 +8069,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowDataconnectionRequest, ShowDataconnectionResponse> showDataconnection =
-        genForshowDataconnection();
+        genForShowDataconnection();
 
-    private static HttpRequestDef<ShowDataconnectionRequest, ShowDataconnectionResponse> genForshowDataconnection() {
+    private static HttpRequestDef<ShowDataconnectionRequest, ShowDataconnectionResponse> genForShowDataconnection() {
         // basic
         HttpRequestDef.Builder<ShowDataconnectionRequest, ShowDataconnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDataconnectionRequest.class, ShowDataconnectionResponse.class)
@@ -9418,16 +8084,76 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataconnectionRequest::getDataConnectionId, (req, v) -> {
-                req.setDataConnectionId(v);
-            }));
+            f -> f.withMarshaller(ShowDataconnectionRequest::getDataConnectionId,
+                ShowDataconnectionRequest::setDataConnectionId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataconnectionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowDataconnectionRequest::getWorkspace, ShowDataconnectionRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDatamapLineageRequest, ShowDatamapLineageResponse> showDatamapLineage =
+        genForShowDatamapLineage();
+
+    private static HttpRequestDef<ShowDatamapLineageRequest, ShowDatamapLineageResponse> genForShowDatamapLineage() {
+        // basic
+        HttpRequestDef.Builder<ShowDatamapLineageRequest, ShowDatamapLineageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDatamapLineageRequest.class, ShowDatamapLineageResponse.class)
+                .withName("ShowDatamapLineage")
+                .withUri("/v2/{project_id}/datamap/lineage/guid/{guid}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("guid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatamapLineageRequest::getGuid, ShowDatamapLineageRequest::setGuid));
+        builder.<String>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatamapLineageRequest::getDirection, ShowDatamapLineageRequest::setDirection));
+        builder.<List<String>>withRequestField("relationship_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowDatamapLineageRequest::getRelationshipTypes,
+                ShowDatamapLineageRequest::setRelationshipTypes));
+        builder.<List<String>>withRequestField("relationship_type_categories",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowDatamapLineageRequest::getRelationshipTypeCategories,
+                ShowDatamapLineageRequest::setRelationshipTypeCategories));
+        builder.<List<String>>withRequestField("related_entity_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowDatamapLineageRequest::getRelatedEntityTypes,
+                ShowDatamapLineageRequest::setRelatedEntityTypes));
+        builder.<Boolean>withRequestField("extend_process_data_flow",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowDatamapLineageRequest::getExtendProcessDataFlow,
+                ShowDatamapLineageRequest::setExtendProcessDataFlow));
+        builder.<Boolean>withRequestField("include_parent_entity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowDatamapLineageRequest::getIncludeParentEntity,
+                ShowDatamapLineageRequest::setIncludeParentEntity));
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatamapLineageRequest::getInstance, ShowDatamapLineageRequest::setInstance));
 
         // response
 
@@ -9435,9 +8161,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowDerivativeIndexByIdRequest, ShowDerivativeIndexByIdResponse> showDerivativeIndexById =
-        genForshowDerivativeIndexById();
+        genForShowDerivativeIndexById();
 
-    private static HttpRequestDef<ShowDerivativeIndexByIdRequest, ShowDerivativeIndexByIdResponse> genForshowDerivativeIndexById() {
+    private static HttpRequestDef<ShowDerivativeIndexByIdRequest, ShowDerivativeIndexByIdResponse> genForShowDerivativeIndexById() {
         // basic
         HttpRequestDef.Builder<ShowDerivativeIndexByIdRequest, ShowDerivativeIndexByIdResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDerivativeIndexByIdRequest.class, ShowDerivativeIndexByIdResponse.class)
@@ -9450,23 +8176,19 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDerivativeIndexByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowDerivativeIndexByIdRequest::getId, ShowDerivativeIndexByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowDerivativeIndexByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowDerivativeIndexByIdRequest::getLatest,
+                ShowDerivativeIndexByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDerivativeIndexByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowDerivativeIndexByIdRequest::getWorkspace,
+                ShowDerivativeIndexByIdRequest::setWorkspace));
 
         // response
 
@@ -9474,9 +8196,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowDimensionByIdRequest, ShowDimensionByIdResponse> showDimensionById =
-        genForshowDimensionById();
+        genForShowDimensionById();
 
-    private static HttpRequestDef<ShowDimensionByIdRequest, ShowDimensionByIdResponse> genForshowDimensionById() {
+    private static HttpRequestDef<ShowDimensionByIdRequest, ShowDimensionByIdResponse> genForShowDimensionById() {
         // basic
         HttpRequestDef.Builder<ShowDimensionByIdRequest, ShowDimensionByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDimensionByIdRequest.class, ShowDimensionByIdResponse.class)
@@ -9489,23 +8211,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDimensionByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowDimensionByIdRequest::getId, ShowDimensionByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowDimensionByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowDimensionByIdRequest::getLatest, ShowDimensionByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDimensionByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowDimensionByIdRequest::getWorkspace, ShowDimensionByIdRequest::setWorkspace));
 
         // response
 
@@ -9513,9 +8229,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowDimensionLogicTableByIdRequest, ShowDimensionLogicTableByIdResponse> showDimensionLogicTableById =
-        genForshowDimensionLogicTableById();
+        genForShowDimensionLogicTableById();
 
-    private static HttpRequestDef<ShowDimensionLogicTableByIdRequest, ShowDimensionLogicTableByIdResponse> genForshowDimensionLogicTableById() {
+    private static HttpRequestDef<ShowDimensionLogicTableByIdRequest, ShowDimensionLogicTableByIdResponse> genForShowDimensionLogicTableById() {
         // basic
         HttpRequestDef.Builder<ShowDimensionLogicTableByIdRequest, ShowDimensionLogicTableByIdResponse> builder =
             HttpRequestDef
@@ -9531,32 +8247,29 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDimensionLogicTableByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowDimensionLogicTableByIdRequest::getId,
+                ShowDimensionLogicTableByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowDimensionLogicTableByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowDimensionLogicTableByIdRequest::getLatest,
+                ShowDimensionLogicTableByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDimensionLogicTableByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowDimensionLogicTableByIdRequest::getWorkspace,
+                ShowDimensionLogicTableByIdRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEntitiesRequest, ShowEntitiesResponse> showEntities = genForshowEntities();
+    public static final HttpRequestDef<ShowEntitiesRequest, ShowEntitiesResponse> showEntities = genForShowEntities();
 
-    private static HttpRequestDef<ShowEntitiesRequest, ShowEntitiesResponse> genForshowEntities() {
+    private static HttpRequestDef<ShowEntitiesRequest, ShowEntitiesResponse> genForShowEntities() {
         // basic
         HttpRequestDef.Builder<ShowEntitiesRequest, ShowEntitiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowEntitiesRequest.class, ShowEntitiesResponse.class)
@@ -9569,16 +8282,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEntitiesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowEntitiesRequest::getWorkspace, ShowEntitiesRequest::setWorkspace));
         builder.<OpenEntitySearchRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenEntitySearchRequest.class),
-            f -> f.withMarshaller(ShowEntitiesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowEntitiesRequest::getBody, ShowEntitiesRequest::setBody));
 
         // response
 
@@ -9586,9 +8295,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowEntityInfoByGuidRequest, ShowEntityInfoByGuidResponse> showEntityInfoByGuid =
-        genForshowEntityInfoByGuid();
+        genForShowEntityInfoByGuid();
 
-    private static HttpRequestDef<ShowEntityInfoByGuidRequest, ShowEntityInfoByGuidResponse> genForshowEntityInfoByGuid() {
+    private static HttpRequestDef<ShowEntityInfoByGuidRequest, ShowEntityInfoByGuidResponse> genForShowEntityInfoByGuid() {
         // basic
         HttpRequestDef.Builder<ShowEntityInfoByGuidRequest, ShowEntityInfoByGuidResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEntityInfoByGuidRequest.class, ShowEntityInfoByGuidResponse.class)
@@ -9601,16 +8310,13 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEntityInfoByGuidRequest::getGuid, (req, v) -> {
-                req.setGuid(v);
-            }));
+            f -> f.withMarshaller(ShowEntityInfoByGuidRequest::getGuid, ShowEntityInfoByGuidRequest::setGuid));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEntityInfoByGuidRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowEntityInfoByGuidRequest::getWorkspace,
+                ShowEntityInfoByGuidRequest::setWorkspace));
 
         // response
 
@@ -9618,9 +8324,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowFactLogicTableByIdRequest, ShowFactLogicTableByIdResponse> showFactLogicTableById =
-        genForshowFactLogicTableById();
+        genForShowFactLogicTableById();
 
-    private static HttpRequestDef<ShowFactLogicTableByIdRequest, ShowFactLogicTableByIdResponse> genForshowFactLogicTableById() {
+    private static HttpRequestDef<ShowFactLogicTableByIdRequest, ShowFactLogicTableByIdResponse> genForShowFactLogicTableById() {
         // basic
         HttpRequestDef.Builder<ShowFactLogicTableByIdRequest, ShowFactLogicTableByIdResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowFactLogicTableByIdRequest.class, ShowFactLogicTableByIdResponse.class)
@@ -9633,23 +8339,18 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactLogicTableByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowFactLogicTableByIdRequest::getId, ShowFactLogicTableByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowFactLogicTableByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowFactLogicTableByIdRequest::getLatest, ShowFactLogicTableByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactLogicTableByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowFactLogicTableByIdRequest::getWorkspace,
+                ShowFactLogicTableByIdRequest::setWorkspace));
 
         // response
 
@@ -9657,9 +8358,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowFactoryEnvRequest, ShowFactoryEnvResponse> showFactoryEnv =
-        genForshowFactoryEnv();
+        genForShowFactoryEnv();
 
-    private static HttpRequestDef<ShowFactoryEnvRequest, ShowFactoryEnvResponse> genForshowFactoryEnv() {
+    private static HttpRequestDef<ShowFactoryEnvRequest, ShowFactoryEnvResponse> genForShowFactoryEnv() {
         // basic
         HttpRequestDef.Builder<ShowFactoryEnvRequest, ShowFactoryEnvResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFactoryEnvRequest.class, ShowFactoryEnvResponse.class)
@@ -9672,9 +8373,7 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactoryEnvRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowFactoryEnvRequest::getWorkspace, ShowFactoryEnvRequest::setWorkspace));
 
         // response
 
@@ -9682,9 +8381,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowFactorySupplementDataRequest, ShowFactorySupplementDataResponse> showFactorySupplementData =
-        genForshowFactorySupplementData();
+        genForShowFactorySupplementData();
 
-    private static HttpRequestDef<ShowFactorySupplementDataRequest, ShowFactorySupplementDataResponse> genForshowFactorySupplementData() {
+    private static HttpRequestDef<ShowFactorySupplementDataRequest, ShowFactorySupplementDataResponse> genForShowFactorySupplementData() {
         // basic
         HttpRequestDef.Builder<ShowFactorySupplementDataRequest, ShowFactorySupplementDataResponse> builder =
             HttpRequestDef
@@ -9700,65 +8399,56 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getSort,
+                ShowFactorySupplementDataRequest::setSort));
         builder.<String>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getPage,
+                ShowFactorySupplementDataRequest::setPage));
         builder.<String>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getSize,
+                ShowFactorySupplementDataRequest::setSize));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getName,
+                ShowFactorySupplementDataRequest::setName));
         builder.<String>withRequestField("user_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getUserName,
+                ShowFactorySupplementDataRequest::setUserName));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getStatus,
+                ShowFactorySupplementDataRequest::setStatus));
         builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getStartDate,
+                ShowFactorySupplementDataRequest::setStartDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getEndDate,
+                ShowFactorySupplementDataRequest::setEndDate));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getWorkspace,
+                ShowFactorySupplementDataRequest::setWorkspace));
 
         // response
 
@@ -9772,9 +8462,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowGlossaryListRequest, ShowGlossaryListResponse> showGlossaryList =
-        genForshowGlossaryList();
+        genForShowGlossaryList();
 
-    private static HttpRequestDef<ShowGlossaryListRequest, ShowGlossaryListResponse> genForshowGlossaryList() {
+    private static HttpRequestDef<ShowGlossaryListRequest, ShowGlossaryListResponse> genForShowGlossaryList() {
         // basic
         HttpRequestDef.Builder<ShowGlossaryListRequest, ShowGlossaryListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowGlossaryListRequest.class, ShowGlossaryListResponse.class)
@@ -9787,72 +8477,110 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGlossaryListRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowGlossaryListRequest::getType, ShowGlossaryListRequest::setType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGlossaryListRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowGlossaryListRequest::getName, ShowGlossaryListRequest::setName));
         builder.<String>withRequestField("create_user",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGlossaryListRequest::getCreateUser, (req, v) -> {
-                req.setCreateUser(v);
-            }));
+            f -> f.withMarshaller(ShowGlossaryListRequest::getCreateUser, ShowGlossaryListRequest::setCreateUser));
         builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGlossaryListRequest::getStart, (req, v) -> {
-                req.setStart(v);
-            }));
+            f -> f.withMarshaller(ShowGlossaryListRequest::getStart, ShowGlossaryListRequest::setStart));
         builder.<String>withRequestField("end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGlossaryListRequest::getEnd, (req, v) -> {
-                req.setEnd(v);
-            }));
+            f -> f.withMarshaller(ShowGlossaryListRequest::getEnd, ShowGlossaryListRequest::setEnd));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGlossaryListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowGlossaryListRequest::getLimit, ShowGlossaryListRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGlossaryListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowGlossaryListRequest::getOffset, ShowGlossaryListRequest::setOffset));
         builder.<String>withRequestField("sort_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGlossaryListRequest::getSortBy, (req, v) -> {
-                req.setSortBy(v);
-            }));
+            f -> f.withMarshaller(ShowGlossaryListRequest::getSortBy, ShowGlossaryListRequest::setSortBy));
         builder.<String>withRequestField("sort_order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGlossaryListRequest::getSortOrder, (req, v) -> {
-                req.setSortOrder(v);
-            }));
+            f -> f.withMarshaller(ShowGlossaryListRequest::getSortOrder, ShowGlossaryListRequest::setSortOrder));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGlossaryListRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowGlossaryListRequest::getWorkspace, ShowGlossaryListRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceInfosRequest, ShowInstanceInfosResponse> showInstanceInfos =
+        genForShowInstanceInfos();
+
+    private static HttpRequestDef<ShowInstanceInfosRequest, ShowInstanceInfosResponse> genForShowInstanceInfos() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceInfosRequest, ShowInstanceInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceInfosRequest.class, ShowInstanceInfosResponse.class)
+                .withName("ShowInstanceInfos")
+                .withUri("/v1/{project_id}/datamap/node/{task_id}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceInfosRequest::getTaskId, ShowInstanceInfosRequest::setTaskId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceInfosRequest::getWorkspaceId, ShowInstanceInfosRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceInfosRequest::getJobName, ShowInstanceInfosRequest::setJobName));
+        builder.<BigDecimal>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ShowInstanceInfosRequest::getStartTime, ShowInstanceInfosRequest::setStartTime));
+        builder.<BigDecimal>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ShowInstanceInfosRequest::getEndTime, ShowInstanceInfosRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowInstanceInfosRequest::getOffset, ShowInstanceInfosRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowInstanceInfosRequest::getLimit, ShowInstanceInfosRequest::setLimit));
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceInfosRequest::getInstance, ShowInstanceInfosRequest::setInstance));
 
         // response
 
@@ -9860,9 +8588,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceLogRequest, ShowInstanceLogResponse> showInstanceLog =
-        genForshowInstanceLog();
+        genForShowInstanceLog();
 
-    private static HttpRequestDef<ShowInstanceLogRequest, ShowInstanceLogResponse> genForshowInstanceLog() {
+    private static HttpRequestDef<ShowInstanceLogRequest, ShowInstanceLogResponse> genForShowInstanceLog() {
         // basic
         HttpRequestDef.Builder<ShowInstanceLogRequest, ShowInstanceLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowInstanceLogRequest.class, ShowInstanceLogResponse.class)
@@ -9875,30 +8603,22 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceLogRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceLogRequest::getTaskId, ShowInstanceLogRequest::setTaskId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceLogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceLogRequest::getInstanceId, ShowInstanceLogRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceLogRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceLogRequest::getWorkspace, ShowInstanceLogRequest::setWorkspace));
         builder.<JobLogRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JobLogRequest.class),
-            f -> f.withMarshaller(ShowInstanceLogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceLogRequest::getBody, ShowInstanceLogRequest::setBody));
 
         // response
 
@@ -9906,9 +8626,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceResultRequest, ShowInstanceResultResponse> showInstanceResult =
-        genForshowInstanceResult();
+        genForShowInstanceResult();
 
-    private static HttpRequestDef<ShowInstanceResultRequest, ShowInstanceResultResponse> genForshowInstanceResult() {
+    private static HttpRequestDef<ShowInstanceResultRequest, ShowInstanceResultResponse> genForShowInstanceResult() {
         // basic
         HttpRequestDef.Builder<ShowInstanceResultRequest, ShowInstanceResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceResultRequest.class, ShowInstanceResultResponse.class)
@@ -9921,25 +8641,21 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceResultRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceResultRequest::getInstanceId, ShowInstanceResultRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceResultRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceResultRequest::getWorkspace, ShowInstanceResultRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowLineageRequest, ShowLineageResponse> showLineage = genForshowLineage();
+    public static final HttpRequestDef<ShowLineageRequest, ShowLineageResponse> showLineage = genForShowLineage();
 
-    private static HttpRequestDef<ShowLineageRequest, ShowLineageResponse> genForshowLineage() {
+    private static HttpRequestDef<ShowLineageRequest, ShowLineageResponse> genForShowLineage() {
         // basic
         HttpRequestDef.Builder<ShowLineageRequest, ShowLineageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLineageRequest.class, ShowLineageResponse.class)
@@ -9952,30 +8668,55 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLineageRequest::getGuid, (req, v) -> {
-                req.setGuid(v);
-            }));
+            f -> f.withMarshaller(ShowLineageRequest::getGuid, ShowLineageRequest::setGuid));
         builder.<String>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLineageRequest::getDirection, (req, v) -> {
-                req.setDirection(v);
-            }));
+            f -> f.withMarshaller(ShowLineageRequest::getDirection, ShowLineageRequest::setDirection));
         builder.<Integer>withRequestField("depth",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowLineageRequest::getDepth, (req, v) -> {
-                req.setDepth(v);
-            }));
+            f -> f.withMarshaller(ShowLineageRequest::getDepth, ShowLineageRequest::setDepth));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLineageRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowLineageRequest::getWorkspace, ShowLineageRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLineageBulkRequest, ShowLineageBulkResponse> showLineageBulk =
+        genForShowLineageBulk();
+
+    private static HttpRequestDef<ShowLineageBulkRequest, ShowLineageBulkResponse> genForShowLineageBulk() {
+        // basic
+        HttpRequestDef.Builder<ShowLineageBulkRequest, ShowLineageBulkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLineageBulkRequest.class, ShowLineageBulkResponse.class)
+                .withName("ShowLineageBulk")
+                .withUri("/v1/{project_id}/datamap/lineage/bulk")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowLineageBulkRequest::getOffset, ShowLineageBulkRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowLineageBulkRequest::getLimit, ShowLineageBulkRequest::setLimit));
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLineageBulkRequest::getInstance, ShowLineageBulkRequest::setInstance));
 
         // response
 
@@ -9983,9 +8724,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowMessageDetailRequest, ShowMessageDetailResponse> showMessageDetail =
-        genForshowMessageDetail();
+        genForShowMessageDetail();
 
-    private static HttpRequestDef<ShowMessageDetailRequest, ShowMessageDetailResponse> genForshowMessageDetail() {
+    private static HttpRequestDef<ShowMessageDetailRequest, ShowMessageDetailResponse> genForShowMessageDetail() {
         // basic
         HttpRequestDef.Builder<ShowMessageDetailRequest, ShowMessageDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMessageDetailRequest.class, ShowMessageDetailResponse.class)
@@ -9998,23 +8739,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMessageDetailRequest::getMessageId, (req, v) -> {
-                req.setMessageId(v);
-            }));
+            f -> f.withMarshaller(ShowMessageDetailRequest::getMessageId, ShowMessageDetailRequest::setMessageId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMessageDetailRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowMessageDetailRequest::getWorkspace, ShowMessageDetailRequest::setWorkspace));
         builder.<ShowMessageDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowMessageDetailRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowMessageDetailRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowMessageDetailRequest::getDlmType, ShowMessageDetailRequest::setDlmType));
 
         // response
 
@@ -10022,9 +8757,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowMetricAssetsRequest, ShowMetricAssetsResponse> showMetricAssets =
-        genForshowMetricAssets();
+        genForShowMetricAssets();
 
-    private static HttpRequestDef<ShowMetricAssetsRequest, ShowMetricAssetsResponse> genForshowMetricAssets() {
+    private static HttpRequestDef<ShowMetricAssetsRequest, ShowMetricAssetsResponse> genForShowMetricAssets() {
         // basic
         HttpRequestDef.Builder<ShowMetricAssetsRequest, ShowMetricAssetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowMetricAssetsRequest.class, ShowMetricAssetsResponse.class)
@@ -10037,16 +8772,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMetricAssetsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowMetricAssetsRequest::getWorkspace, ShowMetricAssetsRequest::setWorkspace));
         builder.<MetricOpenSearchParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MetricOpenSearchParams.class),
-            f -> f.withMarshaller(ShowMetricAssetsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowMetricAssetsRequest::getBody, ShowMetricAssetsRequest::setBody));
 
         // response
 
@@ -10054,9 +8785,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowMetricTreeRequest, ShowMetricTreeResponse> showMetricTree =
-        genForshowMetricTree();
+        genForShowMetricTree();
 
-    private static HttpRequestDef<ShowMetricTreeRequest, ShowMetricTreeResponse> genForshowMetricTree() {
+    private static HttpRequestDef<ShowMetricTreeRequest, ShowMetricTreeResponse> genForShowMetricTree() {
         // basic
         HttpRequestDef.Builder<ShowMetricTreeRequest, ShowMetricTreeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMetricTreeRequest.class, ShowMetricTreeResponse.class)
@@ -10069,18 +8800,49 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMetricTreeRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowMetricTreeRequest::getWorkspace, ShowMetricTreeRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPathByIdRequest, ShowPathByIdResponse> showPathById = genForshowPathById();
+    public static final HttpRequestDef<ShowNodesRequest, ShowNodesResponse> showNodes = genForShowNodes();
 
-    private static HttpRequestDef<ShowPathByIdRequest, ShowPathByIdResponse> genForshowPathById() {
+    private static HttpRequestDef<ShowNodesRequest, ShowNodesResponse> genForShowNodes() {
+        // basic
+        HttpRequestDef.Builder<ShowNodesRequest, ShowNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNodesRequest.class, ShowNodesResponse.class)
+                .withName("ShowNodes")
+                .withUri("/v1/{project_id}/datamap/table/{guid}/node")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("guid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNodesRequest::getGuid, ShowNodesRequest::setGuid));
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNodesRequest::getInstance, ShowNodesRequest::setInstance));
+
+        // response
+        builder.<List<JobAndNodeInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowNodesResponse::getBody, ShowNodesResponse::setBody)
+                .withInnerContainerType(JobAndNodeInfo.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPathByIdRequest, ShowPathByIdResponse> showPathById = genForShowPathById();
+
+    private static HttpRequestDef<ShowPathByIdRequest, ShowPathByIdResponse> genForShowPathById() {
         // basic
         HttpRequestDef.Builder<ShowPathByIdRequest, ShowPathByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPathByIdRequest.class, ShowPathByIdResponse.class)
@@ -10093,37 +8855,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPathByIdRequest::getCatalogId, (req, v) -> {
-                req.setCatalogId(v);
-            }));
+            f -> f.withMarshaller(ShowPathByIdRequest::getCatalogId, ShowPathByIdRequest::setCatalogId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPathByIdRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowPathByIdRequest::getLimit, ShowPathByIdRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPathByIdRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowPathByIdRequest::getOffset, ShowPathByIdRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPathByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowPathByIdRequest::getWorkspace, ShowPathByIdRequest::setWorkspace));
         builder.<ShowPathByIdRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowPathByIdRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowPathByIdRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowPathByIdRequest::getDlmType, ShowPathByIdRequest::setDlmType));
 
         // response
 
@@ -10131,9 +8883,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowPathObjectByIdRequest, ShowPathObjectByIdResponse> showPathObjectById =
-        genForshowPathObjectById();
+        genForShowPathObjectById();
 
-    private static HttpRequestDef<ShowPathObjectByIdRequest, ShowPathObjectByIdResponse> genForshowPathObjectById() {
+    private static HttpRequestDef<ShowPathObjectByIdRequest, ShowPathObjectByIdResponse> genForShowPathObjectById() {
         // basic
         HttpRequestDef.Builder<ShowPathObjectByIdRequest, ShowPathObjectByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPathObjectByIdRequest.class, ShowPathObjectByIdResponse.class)
@@ -10146,37 +8898,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPathObjectByIdRequest::getCatalogId, (req, v) -> {
-                req.setCatalogId(v);
-            }));
+            f -> f.withMarshaller(ShowPathObjectByIdRequest::getCatalogId, ShowPathObjectByIdRequest::setCatalogId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPathObjectByIdRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowPathObjectByIdRequest::getLimit, ShowPathObjectByIdRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPathObjectByIdRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowPathObjectByIdRequest::getOffset, ShowPathObjectByIdRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPathObjectByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowPathObjectByIdRequest::getWorkspace, ShowPathObjectByIdRequest::setWorkspace));
         builder.<ShowPathObjectByIdRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowPathObjectByIdRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowPathObjectByIdRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowPathObjectByIdRequest::getDlmType, ShowPathObjectByIdRequest::setDlmType));
 
         // response
 
@@ -10184,9 +8926,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowQualityTaskDetailRequest, ShowQualityTaskDetailResponse> showQualityTaskDetail =
-        genForshowQualityTaskDetail();
+        genForShowQualityTaskDetail();
 
-    private static HttpRequestDef<ShowQualityTaskDetailRequest, ShowQualityTaskDetailResponse> genForshowQualityTaskDetail() {
+    private static HttpRequestDef<ShowQualityTaskDetailRequest, ShowQualityTaskDetailResponse> genForShowQualityTaskDetail() {
         // basic
         HttpRequestDef.Builder<ShowQualityTaskDetailRequest, ShowQualityTaskDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowQualityTaskDetailRequest.class, ShowQualityTaskDetailResponse.class)
@@ -10199,16 +8941,13 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQualityTaskDetailRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowQualityTaskDetailRequest::getId, ShowQualityTaskDetailRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQualityTaskDetailRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowQualityTaskDetailRequest::getWorkspace,
+                ShowQualityTaskDetailRequest::setWorkspace));
 
         // response
 
@@ -10216,9 +8955,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowRelationByIdRequest, ShowRelationByIdResponse> showRelationById =
-        genForshowRelationById();
+        genForShowRelationById();
 
-    private static HttpRequestDef<ShowRelationByIdRequest, ShowRelationByIdResponse> genForshowRelationById() {
+    private static HttpRequestDef<ShowRelationByIdRequest, ShowRelationByIdResponse> genForShowRelationById() {
         // basic
         HttpRequestDef.Builder<ShowRelationByIdRequest, ShowRelationByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRelationByIdRequest.class, ShowRelationByIdResponse.class)
@@ -10231,23 +8970,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRelationByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowRelationByIdRequest::getId, ShowRelationByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowRelationByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowRelationByIdRequest::getLatest, ShowRelationByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRelationByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowRelationByIdRequest::getWorkspace, ShowRelationByIdRequest::setWorkspace));
 
         // response
 
@@ -10255,9 +8988,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse> showSecurityDataClassificationRule =
-        genForshowSecurityDataClassificationRule();
+        genForShowSecurityDataClassificationRule();
 
-    private static HttpRequestDef<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse> genForshowSecurityDataClassificationRule() {
+    private static HttpRequestDef<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse> genForShowSecurityDataClassificationRule() {
         // basic
         HttpRequestDef.Builder<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse> builder =
             HttpRequestDef
@@ -10273,16 +9006,14 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecurityDataClassificationRuleRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowSecurityDataClassificationRuleRequest::getId,
+                ShowSecurityDataClassificationRuleRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecurityDataClassificationRuleRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowSecurityDataClassificationRuleRequest::getWorkspace,
+                ShowSecurityDataClassificationRuleRequest::setWorkspace));
 
         // response
 
@@ -10290,9 +9021,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowSecurityDataClassificationRuleGroupRequest, ShowSecurityDataClassificationRuleGroupResponse> showSecurityDataClassificationRuleGroup =
-        genForshowSecurityDataClassificationRuleGroup();
+        genForShowSecurityDataClassificationRuleGroup();
 
-    private static HttpRequestDef<ShowSecurityDataClassificationRuleGroupRequest, ShowSecurityDataClassificationRuleGroupResponse> genForshowSecurityDataClassificationRuleGroup() {
+    private static HttpRequestDef<ShowSecurityDataClassificationRuleGroupRequest, ShowSecurityDataClassificationRuleGroupResponse> genForShowSecurityDataClassificationRuleGroup() {
         // basic
         HttpRequestDef.Builder<ShowSecurityDataClassificationRuleGroupRequest, ShowSecurityDataClassificationRuleGroupResponse> builder =
             HttpRequestDef
@@ -10308,16 +9039,14 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecurityDataClassificationRuleGroupRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowSecurityDataClassificationRuleGroupRequest::getId,
+                ShowSecurityDataClassificationRuleGroupRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecurityDataClassificationRuleGroupRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowSecurityDataClassificationRuleGroupRequest::getWorkspace,
+                ShowSecurityDataClassificationRuleGroupRequest::setWorkspace));
 
         // response
 
@@ -10325,9 +9054,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse> showSecurityPermissionSet =
-        genForshowSecurityPermissionSet();
+        genForShowSecurityPermissionSet();
 
-    private static HttpRequestDef<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse> genForshowSecurityPermissionSet() {
+    private static HttpRequestDef<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse> genForShowSecurityPermissionSet() {
         // basic
         HttpRequestDef.Builder<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse> builder =
             HttpRequestDef
@@ -10343,16 +9072,14 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecurityPermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(ShowSecurityPermissionSetRequest::getPermissionSetId,
+                ShowSecurityPermissionSetRequest::setPermissionSetId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecurityPermissionSetRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowSecurityPermissionSetRequest::getWorkspace,
+                ShowSecurityPermissionSetRequest::setWorkspace));
 
         // response
 
@@ -10360,9 +9087,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowStandardByIdRequest, ShowStandardByIdResponse> showStandardById =
-        genForshowStandardById();
+        genForShowStandardById();
 
-    private static HttpRequestDef<ShowStandardByIdRequest, ShowStandardByIdResponse> genForshowStandardById() {
+    private static HttpRequestDef<ShowStandardByIdRequest, ShowStandardByIdResponse> genForShowStandardById() {
         // basic
         HttpRequestDef.Builder<ShowStandardByIdRequest, ShowStandardByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStandardByIdRequest.class, ShowStandardByIdResponse.class)
@@ -10375,16 +9102,12 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStandardByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowStandardByIdRequest::getId, ShowStandardByIdRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStandardByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowStandardByIdRequest::getWorkspace, ShowStandardByIdRequest::setWorkspace));
 
         // response
 
@@ -10392,9 +9115,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowStandardTemplateRequest, ShowStandardTemplateResponse> showStandardTemplate =
-        genForshowStandardTemplate();
+        genForShowStandardTemplate();
 
-    private static HttpRequestDef<ShowStandardTemplateRequest, ShowStandardTemplateResponse> genForshowStandardTemplate() {
+    private static HttpRequestDef<ShowStandardTemplateRequest, ShowStandardTemplateResponse> genForShowStandardTemplate() {
         // basic
         HttpRequestDef.Builder<ShowStandardTemplateRequest, ShowStandardTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowStandardTemplateRequest.class, ShowStandardTemplateResponse.class)
@@ -10407,23 +9130,18 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowStandardTemplateRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowStandardTemplateRequest::getLimit, ShowStandardTemplateRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowStandardTemplateRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowStandardTemplateRequest::getOffset, ShowStandardTemplateRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStandardTemplateRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowStandardTemplateRequest::getWorkspace,
+                ShowStandardTemplateRequest::setWorkspace));
 
         // response
 
@@ -10431,9 +9149,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowTableModelByIdRequest, ShowTableModelByIdResponse> showTableModelById =
-        genForshowTableModelById();
+        genForShowTableModelById();
 
-    private static HttpRequestDef<ShowTableModelByIdRequest, ShowTableModelByIdResponse> genForshowTableModelById() {
+    private static HttpRequestDef<ShowTableModelByIdRequest, ShowTableModelByIdResponse> genForShowTableModelById() {
         // basic
         HttpRequestDef.Builder<ShowTableModelByIdRequest, ShowTableModelByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTableModelByIdRequest.class, ShowTableModelByIdResponse.class)
@@ -10446,32 +9164,26 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTableModelByIdRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowTableModelByIdRequest::getId, ShowTableModelByIdRequest::setId));
         builder.<Boolean>withRequestField("latest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowTableModelByIdRequest::getLatest, (req, v) -> {
-                req.setLatest(v);
-            }));
+            f -> f.withMarshaller(ShowTableModelByIdRequest::getLatest, ShowTableModelByIdRequest::setLatest));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTableModelByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowTableModelByIdRequest::getWorkspace, ShowTableModelByIdRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForshowTags();
+    public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForShowTags();
 
-    private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForshowTags() {
+    private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForShowTags() {
         // basic
         HttpRequestDef.Builder<ShowTagsRequest, ShowTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowTagsRequest.class, ShowTagsResponse.class)
@@ -10484,25 +9196,21 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTagsRequest::getInstance, (req, v) -> {
-                req.setInstance(v);
-            }));
+            f -> f.withMarshaller(ShowTagsRequest::getInstance, ShowTagsRequest::setInstance));
         builder.<TagRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagRequest.class),
-            f -> f.withMarshaller(ShowTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowTagsRequest::getBody, ShowTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskInfoRequest, ShowTaskInfoResponse> showTaskInfo = genForshowTaskInfo();
+    public static final HttpRequestDef<ShowTaskInfoRequest, ShowTaskInfoResponse> showTaskInfo = genForShowTaskInfo();
 
-    private static HttpRequestDef<ShowTaskInfoRequest, ShowTaskInfoResponse> genForshowTaskInfo() {
+    private static HttpRequestDef<ShowTaskInfoRequest, ShowTaskInfoResponse> genForShowTaskInfo() {
         // basic
         HttpRequestDef.Builder<ShowTaskInfoRequest, ShowTaskInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskInfoRequest.class, ShowTaskInfoResponse.class)
@@ -10515,25 +9223,21 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskInfoRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskInfoRequest::getTaskId, ShowTaskInfoRequest::setTaskId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskInfoRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowTaskInfoRequest::getWorkspace, ShowTaskInfoRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskListRequest, ShowTaskListResponse> showTaskList = genForshowTaskList();
+    public static final HttpRequestDef<ShowTaskListRequest, ShowTaskListResponse> showTaskList = genForShowTaskList();
 
-    private static HttpRequestDef<ShowTaskListRequest, ShowTaskListResponse> genForshowTaskList() {
+    private static HttpRequestDef<ShowTaskListRequest, ShowTaskListResponse> genForShowTaskList() {
         // basic
         HttpRequestDef.Builder<ShowTaskListRequest, ShowTaskListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowTaskListRequest.class, ShowTaskListResponse.class)
@@ -10546,16 +9250,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskListRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowTaskListRequest::getWorkspace, ShowTaskListRequest::setWorkspace));
         builder.<QueryTaskRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryTaskRequest.class),
-            f -> f.withMarshaller(ShowTaskListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowTaskListRequest::getBody, ShowTaskListRequest::setBody));
 
         // response
 
@@ -10563,9 +9263,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowTechnicalAssetsStatisticRequest, ShowTechnicalAssetsStatisticResponse> showTechnicalAssetsStatistic =
-        genForshowTechnicalAssetsStatistic();
+        genForShowTechnicalAssetsStatistic();
 
-    private static HttpRequestDef<ShowTechnicalAssetsStatisticRequest, ShowTechnicalAssetsStatisticResponse> genForshowTechnicalAssetsStatistic() {
+    private static HttpRequestDef<ShowTechnicalAssetsStatisticRequest, ShowTechnicalAssetsStatisticResponse> genForShowTechnicalAssetsStatistic() {
         // basic
         HttpRequestDef.Builder<ShowTechnicalAssetsStatisticRequest, ShowTechnicalAssetsStatisticResponse> builder =
             HttpRequestDef
@@ -10581,30 +9281,26 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTechnicalAssetsStatisticRequest::getTag, (req, v) -> {
-                req.setTag(v);
-            }));
+            f -> f.withMarshaller(ShowTechnicalAssetsStatisticRequest::getTag,
+                ShowTechnicalAssetsStatisticRequest::setTag));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTechnicalAssetsStatisticRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowTechnicalAssetsStatisticRequest::getOffset,
+                ShowTechnicalAssetsStatisticRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTechnicalAssetsStatisticRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowTechnicalAssetsStatisticRequest::getLimit,
+                ShowTechnicalAssetsStatisticRequest::setLimit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTechnicalAssetsStatisticRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowTechnicalAssetsStatisticRequest::getWorkspace,
+                ShowTechnicalAssetsStatisticRequest::setWorkspace));
 
         // response
 
@@ -10612,9 +9308,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowTemplatesDetailRequest, ShowTemplatesDetailResponse> showTemplatesDetail =
-        genForshowTemplatesDetail();
+        genForShowTemplatesDetail();
 
-    private static HttpRequestDef<ShowTemplatesDetailRequest, ShowTemplatesDetailResponse> genForshowTemplatesDetail() {
+    private static HttpRequestDef<ShowTemplatesDetailRequest, ShowTemplatesDetailResponse> genForShowTemplatesDetail() {
         // basic
         HttpRequestDef.Builder<ShowTemplatesDetailRequest, ShowTemplatesDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplatesDetailRequest.class, ShowTemplatesDetailResponse.class)
@@ -10627,16 +9323,12 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowTemplatesDetailRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplatesDetailRequest::getId, ShowTemplatesDetailRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplatesDetailRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowTemplatesDetailRequest::getWorkspace, ShowTemplatesDetailRequest::setWorkspace));
 
         // response
 
@@ -10644,9 +9336,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowUnrelatedTableRequest, ShowUnrelatedTableResponse> showUnrelatedTable =
-        genForshowUnrelatedTable();
+        genForShowUnrelatedTable();
 
-    private static HttpRequestDef<ShowUnrelatedTableRequest, ShowUnrelatedTableResponse> genForshowUnrelatedTable() {
+    private static HttpRequestDef<ShowUnrelatedTableRequest, ShowUnrelatedTableResponse> genForShowUnrelatedTable() {
         // basic
         HttpRequestDef.Builder<ShowUnrelatedTableRequest, ShowUnrelatedTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowUnrelatedTableRequest.class, ShowUnrelatedTableResponse.class)
@@ -10659,16 +9351,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUnrelatedTableRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowUnrelatedTableRequest::getWorkspace, ShowUnrelatedTableRequest::setWorkspace));
         builder.<SearchParametersExt>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchParametersExt.class),
-            f -> f.withMarshaller(ShowUnrelatedTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowUnrelatedTableRequest::getBody, ShowUnrelatedTableRequest::setBody));
 
         // response
 
@@ -10676,9 +9364,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowWorkSpaceRequest, ShowWorkSpaceResponse> showWorkSpace =
-        genForshowWorkSpace();
+        genForShowWorkSpace();
 
-    private static HttpRequestDef<ShowWorkSpaceRequest, ShowWorkSpaceResponse> genForshowWorkSpace() {
+    private static HttpRequestDef<ShowWorkSpaceRequest, ShowWorkSpaceResponse> genForShowWorkSpace() {
         // basic
         HttpRequestDef.Builder<ShowWorkSpaceRequest, ShowWorkSpaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowWorkSpaceRequest.class, ShowWorkSpaceResponse.class)
@@ -10691,16 +9379,12 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWorkSpaceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowWorkSpaceRequest::getInstanceId, ShowWorkSpaceRequest::setInstanceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWorkSpaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowWorkSpaceRequest::getWorkspaceId, ShowWorkSpaceRequest::setWorkspaceId));
 
         // response
 
@@ -10708,9 +9392,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ShowWorkspaceDetailByIdRequest, ShowWorkspaceDetailByIdResponse> showWorkspaceDetailById =
-        genForshowWorkspaceDetailById();
+        genForShowWorkspaceDetailById();
 
-    private static HttpRequestDef<ShowWorkspaceDetailByIdRequest, ShowWorkspaceDetailByIdResponse> genForshowWorkspaceDetailById() {
+    private static HttpRequestDef<ShowWorkspaceDetailByIdRequest, ShowWorkspaceDetailByIdResponse> genForShowWorkspaceDetailById() {
         // basic
         HttpRequestDef.Builder<ShowWorkspaceDetailByIdRequest, ShowWorkspaceDetailByIdResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowWorkspaceDetailByIdRequest.class, ShowWorkspaceDetailByIdResponse.class)
@@ -10723,16 +9407,14 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWorkspaceDetailByIdRequest::getModelId, (req, v) -> {
-                req.setModelId(v);
-            }));
+            f -> f.withMarshaller(ShowWorkspaceDetailByIdRequest::getModelId,
+                ShowWorkspaceDetailByIdRequest::setModelId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWorkspaceDetailByIdRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowWorkspaceDetailByIdRequest::getWorkspace,
+                ShowWorkspaceDetailByIdRequest::setWorkspace));
 
         // response
 
@@ -10740,9 +9422,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<StopFactorySupplementDataInstanceRequest, StopFactorySupplementDataInstanceResponse> stopFactorySupplementDataInstance =
-        genForstopFactorySupplementDataInstance();
+        genForStopFactorySupplementDataInstance();
 
-    private static HttpRequestDef<StopFactorySupplementDataInstanceRequest, StopFactorySupplementDataInstanceResponse> genForstopFactorySupplementDataInstance() {
+    private static HttpRequestDef<StopFactorySupplementDataInstanceRequest, StopFactorySupplementDataInstanceResponse> genForStopFactorySupplementDataInstance() {
         // basic
         HttpRequestDef.Builder<StopFactorySupplementDataInstanceRequest, StopFactorySupplementDataInstanceResponse> builder =
             HttpRequestDef
@@ -10758,16 +9440,14 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopFactorySupplementDataInstanceRequest::getInstanceName, (req, v) -> {
-                req.setInstanceName(v);
-            }));
+            f -> f.withMarshaller(StopFactorySupplementDataInstanceRequest::getInstanceName,
+                StopFactorySupplementDataInstanceRequest::setInstanceName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopFactorySupplementDataInstanceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(StopFactorySupplementDataInstanceRequest::getWorkspace,
+                StopFactorySupplementDataInstanceRequest::setWorkspace));
 
         // response
 
@@ -10780,9 +9460,9 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForupdateApp();
+    public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForUpdateApp();
 
-    private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForupdateApp() {
+    private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForUpdateApp() {
         // basic
         HttpRequestDef.Builder<UpdateAppRequest, UpdateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppRequest.class, UpdateAppResponse.class)
@@ -10795,30 +9475,22 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getAppId, UpdateAppRequest::setAppId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getWorkspace, UpdateAppRequest::setWorkspace));
         builder.<UpdateAppRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateAppRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(UpdateAppRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getDlmType, UpdateAppRequest::setDlmType));
         builder.<AppUpdateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AppUpdateDTO.class),
-            f -> f.withMarshaller(UpdateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getBody, UpdateAppRequest::setBody));
 
         // response
 
@@ -10826,9 +9498,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateBizMetricRequest, UpdateBizMetricResponse> updateBizMetric =
-        genForupdateBizMetric();
+        genForUpdateBizMetric();
 
-    private static HttpRequestDef<UpdateBizMetricRequest, UpdateBizMetricResponse> genForupdateBizMetric() {
+    private static HttpRequestDef<UpdateBizMetricRequest, UpdateBizMetricResponse> genForUpdateBizMetric() {
         // basic
         HttpRequestDef.Builder<UpdateBizMetricRequest, UpdateBizMetricResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateBizMetricRequest.class, UpdateBizMetricResponse.class)
@@ -10841,16 +9513,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBizMetricRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateBizMetricRequest::getWorkspace, UpdateBizMetricRequest::setWorkspace));
         builder.<BizMetricVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BizMetricVO.class),
-            f -> f.withMarshaller(UpdateBizMetricRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBizMetricRequest::getBody, UpdateBizMetricRequest::setBody));
 
         // response
 
@@ -10858,9 +9526,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateCatalogRequest, UpdateCatalogResponse> updateCatalog =
-        genForupdateCatalog();
+        genForUpdateCatalog();
 
-    private static HttpRequestDef<UpdateCatalogRequest, UpdateCatalogResponse> genForupdateCatalog() {
+    private static HttpRequestDef<UpdateCatalogRequest, UpdateCatalogResponse> genForUpdateCatalog() {
         // basic
         HttpRequestDef.Builder<UpdateCatalogRequest, UpdateCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCatalogRequest.class, UpdateCatalogResponse.class)
@@ -10873,30 +9541,22 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCatalogRequest::getCatalogId, (req, v) -> {
-                req.setCatalogId(v);
-            }));
+            f -> f.withMarshaller(UpdateCatalogRequest::getCatalogId, UpdateCatalogRequest::setCatalogId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCatalogRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateCatalogRequest::getWorkspace, UpdateCatalogRequest::setWorkspace));
         builder.<UpdateCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateCatalogRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(UpdateCatalogRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(UpdateCatalogRequest::getDlmType, UpdateCatalogRequest::setDlmType));
         builder.<ApiCatalogUpdateParaDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiCatalogUpdateParaDTO.class),
-            f -> f.withMarshaller(UpdateCatalogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCatalogRequest::getBody, UpdateCatalogRequest::setBody));
 
         // response
 
@@ -10904,9 +9564,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateCodeTableRequest, UpdateCodeTableResponse> updateCodeTable =
-        genForupdateCodeTable();
+        genForUpdateCodeTable();
 
-    private static HttpRequestDef<UpdateCodeTableRequest, UpdateCodeTableResponse> genForupdateCodeTable() {
+    private static HttpRequestDef<UpdateCodeTableRequest, UpdateCodeTableResponse> genForUpdateCodeTable() {
         // basic
         HttpRequestDef.Builder<UpdateCodeTableRequest, UpdateCodeTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCodeTableRequest.class, UpdateCodeTableResponse.class)
@@ -10919,23 +9579,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCodeTableRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateCodeTableRequest::getId, UpdateCodeTableRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCodeTableRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateCodeTableRequest::getWorkspace, UpdateCodeTableRequest::setWorkspace));
         builder.<CodeTableVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CodeTableVO.class),
-            f -> f.withMarshaller(UpdateCodeTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCodeTableRequest::getBody, UpdateCodeTableRequest::setBody));
 
         // response
 
@@ -10943,9 +9597,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateCodeTableValuesRequest, UpdateCodeTableValuesResponse> updateCodeTableValues =
-        genForupdateCodeTableValues();
+        genForUpdateCodeTableValues();
 
-    private static HttpRequestDef<UpdateCodeTableValuesRequest, UpdateCodeTableValuesResponse> genForupdateCodeTableValues() {
+    private static HttpRequestDef<UpdateCodeTableValuesRequest, UpdateCodeTableValuesResponse> genForUpdateCodeTableValues() {
         // basic
         HttpRequestDef.Builder<UpdateCodeTableValuesRequest, UpdateCodeTableValuesResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateCodeTableValuesRequest.class, UpdateCodeTableValuesResponse.class)
@@ -10958,23 +9612,18 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCodeTableValuesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateCodeTableValuesRequest::getId, UpdateCodeTableValuesRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCodeTableValuesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateCodeTableValuesRequest::getWorkspace,
+                UpdateCodeTableValuesRequest::setWorkspace));
         builder.<CodeTableFieldValueUpdateVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CodeTableFieldValueUpdateVO.class),
-            f -> f.withMarshaller(UpdateCodeTableValuesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCodeTableValuesRequest::getBody, UpdateCodeTableValuesRequest::setBody));
 
         // response
 
@@ -10982,9 +9631,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateDataconnectionRequest, UpdateDataconnectionResponse> updateDataconnection =
-        genForupdateDataconnection();
+        genForUpdateDataconnection();
 
-    private static HttpRequestDef<UpdateDataconnectionRequest, UpdateDataconnectionResponse> genForupdateDataconnection() {
+    private static HttpRequestDef<UpdateDataconnectionRequest, UpdateDataconnectionResponse> genForUpdateDataconnection() {
         // basic
         HttpRequestDef.Builder<UpdateDataconnectionRequest, UpdateDataconnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateDataconnectionRequest.class, UpdateDataconnectionResponse.class)
@@ -10997,23 +9646,19 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDataconnectionRequest::getDataConnectionId, (req, v) -> {
-                req.setDataConnectionId(v);
-            }));
+            f -> f.withMarshaller(UpdateDataconnectionRequest::getDataConnectionId,
+                UpdateDataconnectionRequest::setDataConnectionId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDataconnectionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateDataconnectionRequest::getWorkspace,
+                UpdateDataconnectionRequest::setWorkspace));
         builder.<ApigDataSourcesVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApigDataSourcesVo.class),
-            f -> f.withMarshaller(UpdateDataconnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDataconnectionRequest::getBody, UpdateDataconnectionRequest::setBody));
 
         // response
 
@@ -11021,9 +9666,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateDirectoryRequest, UpdateDirectoryResponse> updateDirectory =
-        genForupdateDirectory();
+        genForUpdateDirectory();
 
-    private static HttpRequestDef<UpdateDirectoryRequest, UpdateDirectoryResponse> genForupdateDirectory() {
+    private static HttpRequestDef<UpdateDirectoryRequest, UpdateDirectoryResponse> genForUpdateDirectory() {
         // basic
         HttpRequestDef.Builder<UpdateDirectoryRequest, UpdateDirectoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDirectoryRequest.class, UpdateDirectoryResponse.class)
@@ -11036,16 +9681,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDirectoryRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateDirectoryRequest::getWorkspace, UpdateDirectoryRequest::setWorkspace));
         builder.<DirectoryVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DirectoryVO.class),
-            f -> f.withMarshaller(UpdateDirectoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDirectoryRequest::getBody, UpdateDirectoryRequest::setBody));
 
         // response
 
@@ -11053,9 +9694,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse> updateFactoryJobName =
-        genForupdateFactoryJobName();
+        genForUpdateFactoryJobName();
 
-    private static HttpRequestDef<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse> genForupdateFactoryJobName() {
+    private static HttpRequestDef<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse> genForUpdateFactoryJobName() {
         // basic
         HttpRequestDef.Builder<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateFactoryJobNameRequest.class, UpdateFactoryJobNameResponse.class)
@@ -11068,37 +9709,29 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getJobName, UpdateFactoryJobNameRequest::setJobName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getWorkspace,
+                UpdateFactoryJobNameRequest::setWorkspace));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getAuthorization,
+                UpdateFactoryJobNameRequest::setAuthorization));
         builder.<String>withRequestField("Host",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getHost, (req, v) -> {
-                req.setHost(v);
-            }));
+            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getHost, UpdateFactoryJobNameRequest::setHost));
         builder.<UpdateFactoryJobNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFactoryJobNameRequestBody.class),
-            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getBody, UpdateFactoryJobNameRequest::setBody));
 
         // response
 
@@ -11106,9 +9739,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse> updateSecurityDataClassificationRule =
-        genForupdateSecurityDataClassificationRule();
+        genForUpdateSecurityDataClassificationRule();
 
-    private static HttpRequestDef<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse> genForupdateSecurityDataClassificationRule() {
+    private static HttpRequestDef<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse> genForUpdateSecurityDataClassificationRule() {
         // basic
         HttpRequestDef.Builder<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse> builder =
             HttpRequestDef
@@ -11124,23 +9757,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getId,
+                UpdateSecurityDataClassificationRuleRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getWorkspace,
+                UpdateSecurityDataClassificationRuleRequest::setWorkspace));
         builder.<DataClassificationRuleOperateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DataClassificationRuleOperateDTO.class),
-            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getBody,
+                UpdateSecurityDataClassificationRuleRequest::setBody));
 
         // response
 
@@ -11148,9 +9778,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateSecurityPermissionSetRequest, UpdateSecurityPermissionSetResponse> updateSecurityPermissionSet =
-        genForupdateSecurityPermissionSet();
+        genForUpdateSecurityPermissionSet();
 
-    private static HttpRequestDef<UpdateSecurityPermissionSetRequest, UpdateSecurityPermissionSetResponse> genForupdateSecurityPermissionSet() {
+    private static HttpRequestDef<UpdateSecurityPermissionSetRequest, UpdateSecurityPermissionSetResponse> genForUpdateSecurityPermissionSet() {
         // basic
         HttpRequestDef.Builder<UpdateSecurityPermissionSetRequest, UpdateSecurityPermissionSetResponse> builder =
             HttpRequestDef
@@ -11166,23 +9796,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityPermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityPermissionSetRequest::getPermissionSetId,
+                UpdateSecurityPermissionSetRequest::setPermissionSetId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityPermissionSetRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityPermissionSetRequest::getWorkspace,
+                UpdateSecurityPermissionSetRequest::setWorkspace));
         builder.<PermissionSetCreateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PermissionSetCreateDTO.class),
-            f -> f.withMarshaller(UpdateSecurityPermissionSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityPermissionSetRequest::getBody,
+                UpdateSecurityPermissionSetRequest::setBody));
 
         // response
 
@@ -11190,9 +9817,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateSecurityPermissionSetPermissionRequest, UpdateSecurityPermissionSetPermissionResponse> updateSecurityPermissionSetPermission =
-        genForupdateSecurityPermissionSetPermission();
+        genForUpdateSecurityPermissionSetPermission();
 
-    private static HttpRequestDef<UpdateSecurityPermissionSetPermissionRequest, UpdateSecurityPermissionSetPermissionResponse> genForupdateSecurityPermissionSetPermission() {
+    private static HttpRequestDef<UpdateSecurityPermissionSetPermissionRequest, UpdateSecurityPermissionSetPermissionResponse> genForUpdateSecurityPermissionSetPermission() {
         // basic
         HttpRequestDef.Builder<UpdateSecurityPermissionSetPermissionRequest, UpdateSecurityPermissionSetPermissionResponse> builder =
             HttpRequestDef
@@ -11208,30 +9835,26 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getPermissionSetId,
+                UpdateSecurityPermissionSetPermissionRequest::setPermissionSetId));
         builder.<String>withRequestField("permission_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getPermissionId, (req, v) -> {
-                req.setPermissionId(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getPermissionId,
+                UpdateSecurityPermissionSetPermissionRequest::setPermissionId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getWorkspace,
+                UpdateSecurityPermissionSetPermissionRequest::setWorkspace));
         builder.<PermissionSetPermissionUpdateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PermissionSetPermissionUpdateDTO.class),
-            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getBody,
+                UpdateSecurityPermissionSetPermissionRequest::setBody));
 
         // response
 
@@ -11239,9 +9862,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateSecurityRuleEnableStatusRequest, UpdateSecurityRuleEnableStatusResponse> updateSecurityRuleEnableStatus =
-        genForupdateSecurityRuleEnableStatus();
+        genForUpdateSecurityRuleEnableStatus();
 
-    private static HttpRequestDef<UpdateSecurityRuleEnableStatusRequest, UpdateSecurityRuleEnableStatusResponse> genForupdateSecurityRuleEnableStatus() {
+    private static HttpRequestDef<UpdateSecurityRuleEnableStatusRequest, UpdateSecurityRuleEnableStatusResponse> genForUpdateSecurityRuleEnableStatus() {
         // basic
         HttpRequestDef.Builder<UpdateSecurityRuleEnableStatusRequest, UpdateSecurityRuleEnableStatusResponse> builder =
             HttpRequestDef
@@ -11257,23 +9880,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityRuleEnableStatusRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityRuleEnableStatusRequest::getId,
+                UpdateSecurityRuleEnableStatusRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityRuleEnableStatusRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityRuleEnableStatusRequest::getWorkspace,
+                UpdateSecurityRuleEnableStatusRequest::setWorkspace));
         builder.<DataClassificationRuleEnableDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DataClassificationRuleEnableDTO.class),
-            f -> f.withMarshaller(UpdateSecurityRuleEnableStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityRuleEnableStatusRequest::getBody,
+                UpdateSecurityRuleEnableStatusRequest::setBody));
 
         // response
 
@@ -11281,9 +9901,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateStandardRequest, UpdateStandardResponse> updateStandard =
-        genForupdateStandard();
+        genForUpdateStandard();
 
-    private static HttpRequestDef<UpdateStandardRequest, UpdateStandardResponse> genForupdateStandard() {
+    private static HttpRequestDef<UpdateStandardRequest, UpdateStandardResponse> genForUpdateStandard() {
         // basic
         HttpRequestDef.Builder<UpdateStandardRequest, UpdateStandardResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateStandardRequest.class, UpdateStandardResponse.class)
@@ -11296,23 +9916,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStandardRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateStandardRequest::getId, UpdateStandardRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStandardRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateStandardRequest::getWorkspace, UpdateStandardRequest::setWorkspace));
         builder.<StandElementValueVOList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StandElementValueVOList.class),
-            f -> f.withMarshaller(UpdateStandardRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStandardRequest::getBody, UpdateStandardRequest::setBody));
 
         // response
 
@@ -11320,9 +9934,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateStandardTemplateRequest, UpdateStandardTemplateResponse> updateStandardTemplate =
-        genForupdateStandardTemplate();
+        genForUpdateStandardTemplate();
 
-    private static HttpRequestDef<UpdateStandardTemplateRequest, UpdateStandardTemplateResponse> genForupdateStandardTemplate() {
+    private static HttpRequestDef<UpdateStandardTemplateRequest, UpdateStandardTemplateResponse> genForUpdateStandardTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateStandardTemplateRequest, UpdateStandardTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateStandardTemplateRequest.class, UpdateStandardTemplateResponse.class)
@@ -11335,16 +9949,13 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStandardTemplateRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateStandardTemplateRequest::getWorkspace,
+                UpdateStandardTemplateRequest::setWorkspace));
         builder.<StandElementFieldVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StandElementFieldVO.class),
-            f -> f.withMarshaller(UpdateStandardTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStandardTemplateRequest::getBody, UpdateStandardTemplateRequest::setBody));
 
         // response
 
@@ -11352,9 +9963,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateSubjectRequest, UpdateSubjectResponse> updateSubject =
-        genForupdateSubject();
+        genForUpdateSubject();
 
-    private static HttpRequestDef<UpdateSubjectRequest, UpdateSubjectResponse> genForupdateSubject() {
+    private static HttpRequestDef<UpdateSubjectRequest, UpdateSubjectResponse> genForUpdateSubject() {
         // basic
         HttpRequestDef.Builder<UpdateSubjectRequest, UpdateSubjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSubjectRequest.class, UpdateSubjectResponse.class)
@@ -11367,16 +9978,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSubjectRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateSubjectRequest::getWorkspace, UpdateSubjectRequest::setWorkspace));
         builder.<CatalogParamsVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogParamsVO.class),
-            f -> f.withMarshaller(UpdateSubjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSubjectRequest::getBody, UpdateSubjectRequest::setBody));
 
         // response
 
@@ -11384,9 +9991,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateSubjectNewRequest, UpdateSubjectNewResponse> updateSubjectNew =
-        genForupdateSubjectNew();
+        genForUpdateSubjectNew();
 
-    private static HttpRequestDef<UpdateSubjectNewRequest, UpdateSubjectNewResponse> genForupdateSubjectNew() {
+    private static HttpRequestDef<UpdateSubjectNewRequest, UpdateSubjectNewResponse> genForUpdateSubjectNew() {
         // basic
         HttpRequestDef.Builder<UpdateSubjectNewRequest, UpdateSubjectNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSubjectNewRequest.class, UpdateSubjectNewResponse.class)
@@ -11399,16 +10006,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSubjectNewRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateSubjectNewRequest::getWorkspace, UpdateSubjectNewRequest::setWorkspace));
         builder.<SubjectParamsVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubjectParamsVO.class),
-            f -> f.withMarshaller(UpdateSubjectNewRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSubjectNewRequest::getBody, UpdateSubjectNewRequest::setBody));
 
         // response
 
@@ -11416,9 +10019,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateTableModelRequest, UpdateTableModelResponse> updateTableModel =
-        genForupdateTableModel();
+        genForUpdateTableModel();
 
-    private static HttpRequestDef<UpdateTableModelRequest, UpdateTableModelResponse> genForupdateTableModel() {
+    private static HttpRequestDef<UpdateTableModelRequest, UpdateTableModelResponse> genForUpdateTableModel() {
         // basic
         HttpRequestDef.Builder<UpdateTableModelRequest, UpdateTableModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTableModelRequest.class, UpdateTableModelResponse.class)
@@ -11431,16 +10034,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTableModelRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateTableModelRequest::getWorkspace, UpdateTableModelRequest::setWorkspace));
         builder.<TableModelUpdateVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TableModelUpdateVO.class),
-            f -> f.withMarshaller(UpdateTableModelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTableModelRequest::getBody, UpdateTableModelRequest::setBody));
 
         // response
 
@@ -11448,9 +10047,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateTaskInfoRequest, UpdateTaskInfoResponse> updateTaskInfo =
-        genForupdateTaskInfo();
+        genForUpdateTaskInfo();
 
-    private static HttpRequestDef<UpdateTaskInfoRequest, UpdateTaskInfoResponse> genForupdateTaskInfo() {
+    private static HttpRequestDef<UpdateTaskInfoRequest, UpdateTaskInfoResponse> genForUpdateTaskInfo() {
         // basic
         HttpRequestDef.Builder<UpdateTaskInfoRequest, UpdateTaskInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTaskInfoRequest.class, UpdateTaskInfoResponse.class)
@@ -11463,23 +10062,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTaskInfoRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskInfoRequest::getTaskId, UpdateTaskInfoRequest::setTaskId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTaskInfoRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskInfoRequest::getWorkspace, UpdateTaskInfoRequest::setWorkspace));
         builder.<MetadataCollectionTask>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MetadataCollectionTask.class),
-            f -> f.withMarshaller(UpdateTaskInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskInfoRequest::getBody, UpdateTaskInfoRequest::setBody));
 
         // response
 
@@ -11487,9 +10080,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplate =
-        genForupdateTemplate();
+        genForUpdateTemplate();
 
-    private static HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> genForupdateTemplate() {
+    private static HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> genForUpdateTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateTemplateRequest, UpdateTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTemplateRequest.class, UpdateTemplateResponse.class)
@@ -11502,23 +10095,17 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTemplateRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateRequest::getId, UpdateTemplateRequest::setId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTemplateRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateRequest::getWorkspace, UpdateTemplateRequest::setWorkspace));
         builder.<TemplateRO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TemplateRO.class),
-            f -> f.withMarshaller(UpdateTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateRequest::getBody, UpdateTemplateRequest::setBody));
 
         // response
 
@@ -11526,9 +10113,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateWorkSpaceUserOrGroupRequest, UpdateWorkSpaceUserOrGroupResponse> updateWorkSpaceUserOrGroup =
-        genForupdateWorkSpaceUserOrGroup();
+        genForUpdateWorkSpaceUserOrGroup();
 
-    private static HttpRequestDef<UpdateWorkSpaceUserOrGroupRequest, UpdateWorkSpaceUserOrGroupResponse> genForupdateWorkSpaceUserOrGroup() {
+    private static HttpRequestDef<UpdateWorkSpaceUserOrGroupRequest, UpdateWorkSpaceUserOrGroupResponse> genForUpdateWorkSpaceUserOrGroup() {
         // basic
         HttpRequestDef.Builder<UpdateWorkSpaceUserOrGroupRequest, UpdateWorkSpaceUserOrGroupResponse> builder =
             HttpRequestDef
@@ -11544,23 +10131,20 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWorkSpaceUserOrGroupRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkSpaceUserOrGroupRequest::getWorkspaceId,
+                UpdateWorkSpaceUserOrGroupRequest::setWorkspaceId));
         builder.<String>withRequestField("user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWorkSpaceUserOrGroupRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkSpaceUserOrGroupRequest::getUserId,
+                UpdateWorkSpaceUserOrGroupRequest::setUserId));
         builder.<ApigWorkspaceUserDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApigWorkspaceUserDto.class),
-            f -> f.withMarshaller(UpdateWorkSpaceUserOrGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkSpaceUserOrGroupRequest::getBody,
+                UpdateWorkSpaceUserOrGroupRequest::setBody));
 
         // response
 
@@ -11568,9 +10152,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<UpdateWorkspaceRequest, UpdateWorkspaceResponse> updateWorkspace =
-        genForupdateWorkspace();
+        genForUpdateWorkspace();
 
-    private static HttpRequestDef<UpdateWorkspaceRequest, UpdateWorkspaceResponse> genForupdateWorkspace() {
+    private static HttpRequestDef<UpdateWorkspaceRequest, UpdateWorkspaceResponse> genForUpdateWorkspace() {
         // basic
         HttpRequestDef.Builder<UpdateWorkspaceRequest, UpdateWorkspaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateWorkspaceRequest.class, UpdateWorkspaceResponse.class)
@@ -11583,16 +10167,12 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWorkspaceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkspaceRequest::getWorkspace, UpdateWorkspaceRequest::setWorkspace));
         builder.<WorkspaceVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WorkspaceVO.class),
-            f -> f.withMarshaller(UpdateWorkspaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkspaceRequest::getBody, UpdateWorkspaceRequest::setBody));
 
         // response
 
@@ -11600,9 +10180,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<AuthorizeActionApiToInstanceRequest, AuthorizeActionApiToInstanceResponse> authorizeActionApiToInstance =
-        genForauthorizeActionApiToInstance();
+        genForAuthorizeActionApiToInstance();
 
-    private static HttpRequestDef<AuthorizeActionApiToInstanceRequest, AuthorizeActionApiToInstanceResponse> genForauthorizeActionApiToInstance() {
+    private static HttpRequestDef<AuthorizeActionApiToInstanceRequest, AuthorizeActionApiToInstanceResponse> genForAuthorizeActionApiToInstance() {
         // basic
         HttpRequestDef.Builder<AuthorizeActionApiToInstanceRequest, AuthorizeActionApiToInstanceResponse> builder =
             HttpRequestDef
@@ -11618,23 +10198,20 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AuthorizeActionApiToInstanceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(AuthorizeActionApiToInstanceRequest::getWorkspace,
+                AuthorizeActionApiToInstanceRequest::setWorkspace));
         builder.<AuthorizeActionApiToInstanceRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AuthorizeActionApiToInstanceRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(AuthorizeActionApiToInstanceRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(AuthorizeActionApiToInstanceRequest::getDlmType,
+                AuthorizeActionApiToInstanceRequest::setDlmType));
         builder.<ApiParaForAuthToInstance>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiParaForAuthToInstance.class),
-            f -> f.withMarshaller(AuthorizeActionApiToInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AuthorizeActionApiToInstanceRequest::getBody,
+                AuthorizeActionApiToInstanceRequest::setBody));
 
         // response
 
@@ -11642,9 +10219,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<AuthorizeApiToInstanceRequest, AuthorizeApiToInstanceResponse> authorizeApiToInstance =
-        genForauthorizeApiToInstance();
+        genForAuthorizeApiToInstance();
 
-    private static HttpRequestDef<AuthorizeApiToInstanceRequest, AuthorizeApiToInstanceResponse> genForauthorizeApiToInstance() {
+    private static HttpRequestDef<AuthorizeApiToInstanceRequest, AuthorizeApiToInstanceResponse> genForAuthorizeApiToInstance() {
         // basic
         HttpRequestDef.Builder<AuthorizeApiToInstanceRequest, AuthorizeApiToInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AuthorizeApiToInstanceRequest.class, AuthorizeApiToInstanceResponse.class)
@@ -11657,46 +10234,39 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getApiId, AuthorizeApiToInstanceRequest::setApiId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getInstanceId,
+                AuthorizeApiToInstanceRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getWorkspace,
+                AuthorizeApiToInstanceRequest::setWorkspace));
         builder.<AuthorizeApiToInstanceRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AuthorizeApiToInstanceRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getDlmType,
+                AuthorizeApiToInstanceRequest::setDlmType));
         builder.<ApiParaForAuthorizeToInstance>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiParaForAuthorizeToInstance.class),
-            f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getBody, AuthorizeApiToInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateApiRequest, CreateApiResponse> createApi = genForcreateApi();
+    public static final HttpRequestDef<CreateApiRequest, CreateApiResponse> createApi = genForCreateApi();
 
-    private static HttpRequestDef<CreateApiRequest, CreateApiResponse> genForcreateApi() {
+    private static HttpRequestDef<CreateApiRequest, CreateApiResponse> genForCreateApi() {
         // basic
         HttpRequestDef.Builder<CreateApiRequest, CreateApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApiRequest.class, CreateApiResponse.class)
@@ -11709,32 +10279,26 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApiRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateApiRequest::getWorkspace, CreateApiRequest::setWorkspace));
         builder.<CreateApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateApiRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(CreateApiRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(CreateApiRequest::getDlmType, CreateApiRequest::setDlmType));
         builder.<Api>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Api.class),
-            f -> f.withMarshaller(CreateApiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApiRequest::getBody, CreateApiRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DebugApiRequest, DebugApiResponse> debugApi = genFordebugApi();
+    public static final HttpRequestDef<DebugApiRequest, DebugApiResponse> debugApi = genForDebugApi();
 
-    private static HttpRequestDef<DebugApiRequest, DebugApiResponse> genFordebugApi() {
+    private static HttpRequestDef<DebugApiRequest, DebugApiResponse> genForDebugApi() {
         // basic
         HttpRequestDef.Builder<DebugApiRequest, DebugApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DebugApiRequest.class, DebugApiResponse.class)
@@ -11747,46 +10311,36 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugApiRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(DebugApiRequest::getApiId, DebugApiRequest::setApiId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugApiRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DebugApiRequest::getInstanceId, DebugApiRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugApiRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DebugApiRequest::getWorkspace, DebugApiRequest::setWorkspace));
         builder.<DebugApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DebugApiRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(DebugApiRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(DebugApiRequest::getDlmType, DebugApiRequest::setDlmType));
         builder.<ApiTestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiTestDTO.class),
-            f -> f.withMarshaller(DebugApiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DebugApiRequest::getBody, DebugApiRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteApiRequest, DeleteApiResponse> deleteApi = genFordeleteApi();
+    public static final HttpRequestDef<DeleteApiRequest, DeleteApiResponse> deleteApi = genForDeleteApi();
 
-    private static HttpRequestDef<DeleteApiRequest, DeleteApiResponse> genFordeleteApi() {
+    private static HttpRequestDef<DeleteApiRequest, DeleteApiResponse> genForDeleteApi() {
         // basic
         HttpRequestDef.Builder<DeleteApiRequest, DeleteApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteApiRequest.class, DeleteApiResponse.class)
@@ -11799,23 +10353,18 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteApiRequest::getWorkspace, DeleteApiRequest::setWorkspace));
         builder.<DeleteApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteApiRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(DeleteApiRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(DeleteApiRequest::getDlmType, DeleteApiRequest::setDlmType));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteApiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(DeleteApiRequest::getBody, DeleteApiRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -11823,9 +10372,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ExecuteApiToInstanceRequest, ExecuteApiToInstanceResponse> executeApiToInstance =
-        genForexecuteApiToInstance();
+        genForExecuteApiToInstance();
 
-    private static HttpRequestDef<ExecuteApiToInstanceRequest, ExecuteApiToInstanceResponse> genForexecuteApiToInstance() {
+    private static HttpRequestDef<ExecuteApiToInstanceRequest, ExecuteApiToInstanceResponse> genForExecuteApiToInstance() {
         // basic
         HttpRequestDef.Builder<ExecuteApiToInstanceRequest, ExecuteApiToInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ExecuteApiToInstanceRequest.class, ExecuteApiToInstanceResponse.class)
@@ -11838,46 +10387,38 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteApiToInstanceRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ExecuteApiToInstanceRequest::getApiId, ExecuteApiToInstanceRequest::setApiId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteApiToInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExecuteApiToInstanceRequest::getInstanceId,
+                ExecuteApiToInstanceRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteApiToInstanceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ExecuteApiToInstanceRequest::getWorkspace,
+                ExecuteApiToInstanceRequest::setWorkspace));
         builder.<ExecuteApiToInstanceRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExecuteApiToInstanceRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ExecuteApiToInstanceRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ExecuteApiToInstanceRequest::getDlmType, ExecuteApiToInstanceRequest::setDlmType));
         builder.<ApiActionDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiActionDTO.class),
-            f -> f.withMarshaller(ExecuteApiToInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteApiToInstanceRequest::getBody, ExecuteApiToInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApisRequest, ListApisResponse> listApis = genForlistApis();
+    public static final HttpRequestDef<ListApisRequest, ListApisResponse> listApis = genForListApis();
 
-    private static HttpRequestDef<ListApisRequest, ListApisResponse> genForlistApis() {
+    private static HttpRequestDef<ListApisRequest, ListApisResponse> genForListApis() {
         // basic
         HttpRequestDef.Builder<ListApisRequest, ListApisResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisRequest.class, ListApisResponse.class)
@@ -11890,37 +10431,28 @@ public class DataArtsStudioMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisRequest::getOffset, ListApisRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisRequest::getLimit, ListApisRequest::setLimit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListApisRequest::getWorkspace, ListApisRequest::setWorkspace));
         builder.<ListApisRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApisRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListApisRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListApisRequest::getDlmType, ListApisRequest::setDlmType));
         builder.<String>withRequestField("x-return-publish-messages",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisRequest::getXReturnPublishMessages, (req, v) -> {
-                req.setXReturnPublishMessages(v);
-            }));
+            f -> f.withMarshaller(ListApisRequest::getXReturnPublishMessages,
+                ListApisRequest::setXReturnPublishMessages));
 
         // response
 
@@ -11928,9 +10460,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<ListInstanceListRequest, ListInstanceListResponse> listInstanceList =
-        genForlistInstanceList();
+        genForListInstanceList();
 
-    private static HttpRequestDef<ListInstanceListRequest, ListInstanceListResponse> genForlistInstanceList() {
+    private static HttpRequestDef<ListInstanceListRequest, ListInstanceListResponse> genForListInstanceList() {
         // basic
         HttpRequestDef.Builder<ListInstanceListRequest, ListInstanceListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceListRequest.class, ListInstanceListResponse.class)
@@ -11943,81 +10475,61 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceListRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceListRequest::getApiId, ListInstanceListRequest::setApiId));
         builder.<ListInstanceListRequest.ActionEnum>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListInstanceListRequest.ActionEnum.class),
-            f -> f.withMarshaller(ListInstanceListRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(ListInstanceListRequest::getAction, ListInstanceListRequest::setAction));
         builder.<Boolean>withRequestField("show_all",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListInstanceListRequest::getShowAll, (req, v) -> {
-                req.setShowAll(v);
-            }));
+            f -> f.withMarshaller(ListInstanceListRequest::getShowAll, ListInstanceListRequest::setShowAll));
         builder.<Boolean>withRequestField("check_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListInstanceListRequest::getCheckStatus, (req, v) -> {
-                req.setCheckStatus(v);
-            }));
+            f -> f.withMarshaller(ListInstanceListRequest::getCheckStatus, ListInstanceListRequest::setCheckStatus));
         builder.<Boolean>withRequestField("check_debug",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListInstanceListRequest::getCheckDebug, (req, v) -> {
-                req.setCheckDebug(v);
-            }));
+            f -> f.withMarshaller(ListInstanceListRequest::getCheckDebug, ListInstanceListRequest::setCheckDebug));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceListRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceListRequest::getAppId, ListInstanceListRequest::setAppId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstanceListRequest::getLimit, ListInstanceListRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstanceListRequest::getOffset, ListInstanceListRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceListRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListInstanceListRequest::getWorkspace, ListInstanceListRequest::setWorkspace));
         builder.<ListInstanceListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstanceListRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ListInstanceListRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ListInstanceListRequest::getDlmType, ListInstanceListRequest::setDlmType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PublishApiRequest, PublishApiResponse> publishApi = genForpublishApi();
+    public static final HttpRequestDef<PublishApiRequest, PublishApiResponse> publishApi = genForPublishApi();
 
-    private static HttpRequestDef<PublishApiRequest, PublishApiResponse> genForpublishApi() {
+    private static HttpRequestDef<PublishApiRequest, PublishApiResponse> genForPublishApi() {
         // basic
         HttpRequestDef.Builder<PublishApiRequest, PublishApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishApiRequest.class, PublishApiResponse.class)
@@ -12030,23 +10542,17 @@ public class DataArtsStudioMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishApiRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(PublishApiRequest::getWorkspace, PublishApiRequest::setWorkspace));
         builder.<PublishApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PublishApiRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(PublishApiRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(PublishApiRequest::getDlmType, PublishApiRequest::setDlmType));
         builder.<OpenApiParaForPublish>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenApiParaForPublish.class),
-            f -> f.withMarshaller(PublishApiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PublishApiRequest::getBody, PublishApiRequest::setBody));
 
         // response
 
@@ -12054,9 +10560,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<PublishApiToInstanceRequest, PublishApiToInstanceResponse> publishApiToInstance =
-        genForpublishApiToInstance();
+        genForPublishApiToInstance();
 
-    private static HttpRequestDef<PublishApiToInstanceRequest, PublishApiToInstanceResponse> genForpublishApiToInstance() {
+    private static HttpRequestDef<PublishApiToInstanceRequest, PublishApiToInstanceResponse> genForPublishApiToInstance() {
         // basic
         HttpRequestDef.Builder<PublishApiToInstanceRequest, PublishApiToInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, PublishApiToInstanceRequest.class, PublishApiToInstanceResponse.class)
@@ -12069,37 +10575,29 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishApiToInstanceRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(PublishApiToInstanceRequest::getApiId, PublishApiToInstanceRequest::setApiId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishApiToInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(PublishApiToInstanceRequest::getInstanceId,
+                PublishApiToInstanceRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishApiToInstanceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(PublishApiToInstanceRequest::getWorkspace,
+                PublishApiToInstanceRequest::setWorkspace));
         builder.<PublishApiToInstanceRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PublishApiToInstanceRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(PublishApiToInstanceRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(PublishApiToInstanceRequest::getDlmType, PublishApiToInstanceRequest::setDlmType));
         builder.<GatewayDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GatewayDTO.class),
-            f -> f.withMarshaller(PublishApiToInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PublishApiToInstanceRequest::getBody, PublishApiToInstanceRequest::setBody));
 
         // response
 
@@ -12107,9 +10605,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchDebugInfoRequest, SearchDebugInfoResponse> searchDebugInfo =
-        genForsearchDebugInfo();
+        genForSearchDebugInfo();
 
-    private static HttpRequestDef<SearchDebugInfoRequest, SearchDebugInfoResponse> genForsearchDebugInfo() {
+    private static HttpRequestDef<SearchDebugInfoRequest, SearchDebugInfoResponse> genForSearchDebugInfo() {
         // basic
         HttpRequestDef.Builder<SearchDebugInfoRequest, SearchDebugInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchDebugInfoRequest.class, SearchDebugInfoResponse.class)
@@ -12122,37 +10620,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDebugInfoRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(SearchDebugInfoRequest::getApiId, SearchDebugInfoRequest::setApiId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchDebugInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchDebugInfoRequest::getLimit, SearchDebugInfoRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchDebugInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchDebugInfoRequest::getOffset, SearchDebugInfoRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDebugInfoRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchDebugInfoRequest::getWorkspace, SearchDebugInfoRequest::setWorkspace));
         builder.<SearchDebugInfoRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchDebugInfoRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(SearchDebugInfoRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(SearchDebugInfoRequest::getDlmType, SearchDebugInfoRequest::setDlmType));
 
         // response
 
@@ -12160,9 +10648,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SearchPublishInfoRequest, SearchPublishInfoResponse> searchPublishInfo =
-        genForsearchPublishInfo();
+        genForSearchPublishInfo();
 
-    private static HttpRequestDef<SearchPublishInfoRequest, SearchPublishInfoResponse> genForsearchPublishInfo() {
+    private static HttpRequestDef<SearchPublishInfoRequest, SearchPublishInfoResponse> genForSearchPublishInfo() {
         // basic
         HttpRequestDef.Builder<SearchPublishInfoRequest, SearchPublishInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchPublishInfoRequest.class, SearchPublishInfoResponse.class)
@@ -12175,37 +10663,27 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchPublishInfoRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(SearchPublishInfoRequest::getApiId, SearchPublishInfoRequest::setApiId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchPublishInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchPublishInfoRequest::getLimit, SearchPublishInfoRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchPublishInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchPublishInfoRequest::getOffset, SearchPublishInfoRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchPublishInfoRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SearchPublishInfoRequest::getWorkspace, SearchPublishInfoRequest::setWorkspace));
         builder.<SearchPublishInfoRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchPublishInfoRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(SearchPublishInfoRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(SearchPublishInfoRequest::getDlmType, SearchPublishInfoRequest::setDlmType));
 
         // response
 
@@ -12213,9 +10691,9 @@ public class DataArtsStudioMeta {
     }
 
     public static final HttpRequestDef<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> setFactoryJobTags =
-        genForsetFactoryJobTags();
+        genForSetFactoryJobTags();
 
-    private static HttpRequestDef<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> genForsetFactoryJobTags() {
+    private static HttpRequestDef<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> genForSetFactoryJobTags() {
         // basic
         HttpRequestDef.Builder<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SetFactoryJobTagsRequest.class, SetFactoryJobTagsResponse.class)
@@ -12228,46 +10706,37 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetFactoryJobTagsRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getJobName, SetFactoryJobTagsRequest::setJobName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetFactoryJobTagsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getWorkspace, SetFactoryJobTagsRequest::setWorkspace));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetFactoryJobTagsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getAuthorization,
+                SetFactoryJobTagsRequest::setAuthorization));
         builder.<String>withRequestField("Host",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetFactoryJobTagsRequest::getHost, (req, v) -> {
-                req.setHost(v);
-            }));
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getHost, SetFactoryJobTagsRequest::setHost));
         builder.<SetJobTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetJobTagsRequestBody.class),
-            f -> f.withMarshaller(SetFactoryJobTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getBody, SetFactoryJobTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowApiRequest, ShowApiResponse> showApi = genForshowApi();
+    public static final HttpRequestDef<ShowApiRequest, ShowApiResponse> showApi = genForShowApi();
 
-    private static HttpRequestDef<ShowApiRequest, ShowApiResponse> genForshowApi() {
+    private static HttpRequestDef<ShowApiRequest, ShowApiResponse> genForShowApi() {
         // basic
         HttpRequestDef.Builder<ShowApiRequest, ShowApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiRequest.class, ShowApiResponse.class)
@@ -12280,32 +10749,26 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ShowApiRequest::getApiId, ShowApiRequest::setApiId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowApiRequest::getWorkspace, ShowApiRequest::setWorkspace));
         builder.<ShowApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApiRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(ShowApiRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(ShowApiRequest::getDlmType, ShowApiRequest::setDlmType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateApiRequest, UpdateApiResponse> updateApi = genForupdateApi();
+    public static final HttpRequestDef<UpdateApiRequest, UpdateApiResponse> updateApi = genForUpdateApi();
 
-    private static HttpRequestDef<UpdateApiRequest, UpdateApiResponse> genForupdateApi() {
+    private static HttpRequestDef<UpdateApiRequest, UpdateApiResponse> genForUpdateApi() {
         // basic
         HttpRequestDef.Builder<UpdateApiRequest, UpdateApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateApiRequest.class, UpdateApiResponse.class)
@@ -12318,30 +10781,22 @@ public class DataArtsStudioMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateApiRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(UpdateApiRequest::getApiId, UpdateApiRequest::setApiId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateApiRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateApiRequest::getWorkspace, UpdateApiRequest::setWorkspace));
         builder.<UpdateApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateApiRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(UpdateApiRequest::getDlmType, (req, v) -> {
-                req.setDlmType(v);
-            }));
+            f -> f.withMarshaller(UpdateApiRequest::getDlmType, UpdateApiRequest::setDlmType));
         builder.<Api>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Api.class),
-            f -> f.withMarshaller(UpdateApiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateApiRequest::getBody, UpdateApiRequest::setBody));
 
         // response
 

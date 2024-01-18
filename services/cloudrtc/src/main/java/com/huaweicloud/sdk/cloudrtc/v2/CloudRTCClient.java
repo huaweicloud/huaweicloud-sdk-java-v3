@@ -84,7 +84,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return CreateAppResponse
      */
     public CreateAppResponse createApp(CreateAppRequest request) {
@@ -98,11 +98,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return SyncInvoker<CreateAppRequest, CreateAppResponse>
      */
     public SyncInvoker<CreateAppRequest, CreateAppResponse> createAppInvoker(CreateAppRequest request) {
-        return new SyncInvoker<CreateAppRequest, CreateAppResponse>(request, CloudRTCMeta.createApp, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.createApp, hcClient);
     }
 
     /**
@@ -116,7 +116,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIndividualStreamJobRequest 请求对象
+     * @param request CreateIndividualStreamJobRequest 请求对象
      * @return CreateIndividualStreamJobResponse
      */
     public CreateIndividualStreamJobResponse createIndividualStreamJob(CreateIndividualStreamJobRequest request) {
@@ -134,13 +134,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIndividualStreamJobRequest 请求对象
+     * @param request CreateIndividualStreamJobRequest 请求对象
      * @return SyncInvoker<CreateIndividualStreamJobRequest, CreateIndividualStreamJobResponse>
      */
     public SyncInvoker<CreateIndividualStreamJobRequest, CreateIndividualStreamJobResponse> createIndividualStreamJobInvoker(
         CreateIndividualStreamJobRequest request) {
-        return new SyncInvoker<CreateIndividualStreamJobRequest, CreateIndividualStreamJobResponse>(request,
-            CloudRTCMeta.createIndividualStreamJob, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.createIndividualStreamJob, hcClient);
     }
 
     /**
@@ -166,7 +165,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMixJobRequest 请求对象
+     * @param request CreateMixJobRequest 请求对象
      * @return CreateMixJobResponse
      */
     public CreateMixJobResponse createMixJob(CreateMixJobRequest request) {
@@ -196,11 +195,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMixJobRequest 请求对象
+     * @param request CreateMixJobRequest 请求对象
      * @return SyncInvoker<CreateMixJobRequest, CreateMixJobResponse>
      */
     public SyncInvoker<CreateMixJobRequest, CreateMixJobResponse> createMixJobInvoker(CreateMixJobRequest request) {
-        return new SyncInvoker<CreateMixJobRequest, CreateMixJobResponse>(request, CloudRTCMeta.createMixJob, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.createMixJob, hcClient);
     }
 
     /**
@@ -213,7 +212,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordRuleRequest 请求对象
+     * @param request CreateRecordRuleRequest 请求对象
      * @return CreateRecordRuleResponse
      */
     public CreateRecordRuleResponse createRecordRule(CreateRecordRuleRequest request) {
@@ -230,13 +229,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordRuleRequest 请求对象
+     * @param request CreateRecordRuleRequest 请求对象
      * @return SyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse>
      */
     public SyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse> createRecordRuleInvoker(
         CreateRecordRuleRequest request) {
-        return new SyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse>(request,
-            CloudRTCMeta.createRecordRule, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.createRecordRule, hcClient);
     }
 
     /**
@@ -246,7 +244,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return DeleteAppResponse
      */
     public DeleteAppResponse deleteApp(DeleteAppRequest request) {
@@ -260,11 +258,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return SyncInvoker<DeleteAppRequest, DeleteAppResponse>
      */
     public SyncInvoker<DeleteAppRequest, DeleteAppResponse> deleteAppInvoker(DeleteAppRequest request) {
-        return new SyncInvoker<DeleteAppRequest, DeleteAppResponse>(request, CloudRTCMeta.deleteApp, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.deleteApp, hcClient);
     }
 
     /**
@@ -274,7 +272,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordRuleRequest 请求对象
+     * @param request DeleteRecordRuleRequest 请求对象
      * @return DeleteRecordRuleResponse
      */
     public DeleteRecordRuleResponse deleteRecordRule(DeleteRecordRuleRequest request) {
@@ -288,13 +286,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordRuleRequest 请求对象
+     * @param request DeleteRecordRuleRequest 请求对象
      * @return SyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse>
      */
     public SyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse> deleteRecordRuleInvoker(
         DeleteRecordRuleRequest request) {
-        return new SyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse>(request,
-            CloudRTCMeta.deleteRecordRule, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.deleteRecordRule, hcClient);
     }
 
     /**
@@ -304,7 +301,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsRequest 请求对象
+     * @param request ListAppsRequest 请求对象
      * @return ListAppsResponse
      */
     public ListAppsResponse listApps(ListAppsRequest request) {
@@ -318,11 +315,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsRequest 请求对象
+     * @param request ListAppsRequest 请求对象
      * @return SyncInvoker<ListAppsRequest, ListAppsResponse>
      */
     public SyncInvoker<ListAppsRequest, ListAppsResponse> listAppsInvoker(ListAppsRequest request) {
-        return new SyncInvoker<ListAppsRequest, ListAppsResponse>(request, CloudRTCMeta.listApps, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.listApps, hcClient);
     }
 
     /**
@@ -332,7 +329,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordRulesRequest 请求对象
+     * @param request ListRecordRulesRequest 请求对象
      * @return ListRecordRulesResponse
      */
     public ListRecordRulesResponse listRecordRules(ListRecordRulesRequest request) {
@@ -346,13 +343,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordRulesRequest 请求对象
+     * @param request ListRecordRulesRequest 请求对象
      * @return SyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse>
      */
     public SyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse> listRecordRulesInvoker(
         ListRecordRulesRequest request) {
-        return new SyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse>(request, CloudRTCMeta.listRecordRules,
-            hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.listRecordRules, hcClient);
     }
 
     /**
@@ -362,7 +358,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveRoomRequest 请求对象
+     * @param request RemoveRoomRequest 请求对象
      * @return RemoveRoomResponse
      */
     public RemoveRoomResponse removeRoom(RemoveRoomRequest request) {
@@ -376,11 +372,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveRoomRequest 请求对象
+     * @param request RemoveRoomRequest 请求对象
      * @return SyncInvoker<RemoveRoomRequest, RemoveRoomResponse>
      */
     public SyncInvoker<RemoveRoomRequest, RemoveRoomResponse> removeRoomInvoker(RemoveRoomRequest request) {
-        return new SyncInvoker<RemoveRoomRequest, RemoveRoomResponse>(request, CloudRTCMeta.removeRoom, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.removeRoom, hcClient);
     }
 
     /**
@@ -390,7 +386,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveUsersRequest 请求对象
+     * @param request RemoveUsersRequest 请求对象
      * @return RemoveUsersResponse
      */
     public RemoveUsersResponse removeUsers(RemoveUsersRequest request) {
@@ -404,11 +400,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveUsersRequest 请求对象
+     * @param request RemoveUsersRequest 请求对象
      * @return SyncInvoker<RemoveUsersRequest, RemoveUsersResponse>
      */
     public SyncInvoker<RemoveUsersRequest, RemoveUsersResponse> removeUsersInvoker(RemoveUsersRequest request) {
-        return new SyncInvoker<RemoveUsersRequest, RemoveUsersResponse>(request, CloudRTCMeta.removeUsers, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.removeUsers, hcClient);
     }
 
     /**
@@ -418,7 +414,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return ShowAppResponse
      */
     public ShowAppResponse showApp(ShowAppRequest request) {
@@ -432,11 +428,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return SyncInvoker<ShowAppRequest, ShowAppResponse>
      */
     public SyncInvoker<ShowAppRequest, ShowAppResponse> showAppInvoker(ShowAppRequest request) {
-        return new SyncInvoker<ShowAppRequest, ShowAppResponse>(request, CloudRTCMeta.showApp, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.showApp, hcClient);
     }
 
     /**
@@ -446,7 +442,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoRecordRequest 请求对象
+     * @param request ShowAutoRecordRequest 请求对象
      * @return ShowAutoRecordResponse
      */
     public ShowAutoRecordResponse showAutoRecord(ShowAutoRecordRequest request) {
@@ -460,13 +456,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoRecordRequest 请求对象
+     * @param request ShowAutoRecordRequest 请求对象
      * @return SyncInvoker<ShowAutoRecordRequest, ShowAutoRecordResponse>
      */
     public SyncInvoker<ShowAutoRecordRequest, ShowAutoRecordResponse> showAutoRecordInvoker(
         ShowAutoRecordRequest request) {
-        return new SyncInvoker<ShowAutoRecordRequest, ShowAutoRecordResponse>(request, CloudRTCMeta.showAutoRecord,
-            hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.showAutoRecord, hcClient);
     }
 
     /**
@@ -478,7 +473,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIndividualStreamJobRequest 请求对象
+     * @param request ShowIndividualStreamJobRequest 请求对象
      * @return ShowIndividualStreamJobResponse
      */
     public ShowIndividualStreamJobResponse showIndividualStreamJob(ShowIndividualStreamJobRequest request) {
@@ -494,13 +489,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIndividualStreamJobRequest 请求对象
+     * @param request ShowIndividualStreamJobRequest 请求对象
      * @return SyncInvoker<ShowIndividualStreamJobRequest, ShowIndividualStreamJobResponse>
      */
     public SyncInvoker<ShowIndividualStreamJobRequest, ShowIndividualStreamJobResponse> showIndividualStreamJobInvoker(
         ShowIndividualStreamJobRequest request) {
-        return new SyncInvoker<ShowIndividualStreamJobRequest, ShowIndividualStreamJobResponse>(request,
-            CloudRTCMeta.showIndividualStreamJob, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.showIndividualStreamJob, hcClient);
     }
 
     /**
@@ -510,7 +504,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMixJobRequest 请求对象
+     * @param request ShowMixJobRequest 请求对象
      * @return ShowMixJobResponse
      */
     public ShowMixJobResponse showMixJob(ShowMixJobRequest request) {
@@ -524,11 +518,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMixJobRequest 请求对象
+     * @param request ShowMixJobRequest 请求对象
      * @return SyncInvoker<ShowMixJobRequest, ShowMixJobResponse>
      */
     public SyncInvoker<ShowMixJobRequest, ShowMixJobResponse> showMixJobInvoker(ShowMixJobRequest request) {
-        return new SyncInvoker<ShowMixJobRequest, ShowMixJobResponse>(request, CloudRTCMeta.showMixJob, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.showMixJob, hcClient);
     }
 
     /**
@@ -538,7 +532,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordCallbackRequest 请求对象
+     * @param request ShowRecordCallbackRequest 请求对象
      * @return ShowRecordCallbackResponse
      */
     public ShowRecordCallbackResponse showRecordCallback(ShowRecordCallbackRequest request) {
@@ -552,13 +546,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordCallbackRequest 请求对象
+     * @param request ShowRecordCallbackRequest 请求对象
      * @return SyncInvoker<ShowRecordCallbackRequest, ShowRecordCallbackResponse>
      */
     public SyncInvoker<ShowRecordCallbackRequest, ShowRecordCallbackResponse> showRecordCallbackInvoker(
         ShowRecordCallbackRequest request) {
-        return new SyncInvoker<ShowRecordCallbackRequest, ShowRecordCallbackResponse>(request,
-            CloudRTCMeta.showRecordCallback, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.showRecordCallback, hcClient);
     }
 
     /**
@@ -568,7 +561,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordRuleRequest 请求对象
+     * @param request ShowRecordRuleRequest 请求对象
      * @return ShowRecordRuleResponse
      */
     public ShowRecordRuleResponse showRecordRule(ShowRecordRuleRequest request) {
@@ -582,13 +575,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordRuleRequest 请求对象
+     * @param request ShowRecordRuleRequest 请求对象
      * @return SyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse>
      */
     public SyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse> showRecordRuleInvoker(
         ShowRecordRuleRequest request) {
-        return new SyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse>(request, CloudRTCMeta.showRecordRule,
-            hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.showRecordRule, hcClient);
     }
 
     /**
@@ -598,7 +590,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUrlAuthRequest 请求对象
+     * @param request ShowUrlAuthRequest 请求对象
      * @return ShowUrlAuthResponse
      */
     public ShowUrlAuthResponse showUrlAuth(ShowUrlAuthRequest request) {
@@ -612,11 +604,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUrlAuthRequest 请求对象
+     * @param request ShowUrlAuthRequest 请求对象
      * @return SyncInvoker<ShowUrlAuthRequest, ShowUrlAuthResponse>
      */
     public SyncInvoker<ShowUrlAuthRequest, ShowUrlAuthResponse> showUrlAuthInvoker(ShowUrlAuthRequest request) {
-        return new SyncInvoker<ShowUrlAuthRequest, ShowUrlAuthResponse>(request, CloudRTCMeta.showUrlAuth, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.showUrlAuth, hcClient);
     }
 
     /**
@@ -626,7 +618,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAppRequest 请求对象
+     * @param request StartAppRequest 请求对象
      * @return StartAppResponse
      */
     public StartAppResponse startApp(StartAppRequest request) {
@@ -640,11 +632,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAppRequest 请求对象
+     * @param request StartAppRequest 请求对象
      * @return SyncInvoker<StartAppRequest, StartAppResponse>
      */
     public SyncInvoker<StartAppRequest, StartAppResponse> startAppInvoker(StartAppRequest request) {
-        return new SyncInvoker<StartAppRequest, StartAppResponse>(request, CloudRTCMeta.startApp, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.startApp, hcClient);
     }
 
     /**
@@ -656,7 +648,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopAppRequest 请求对象
+     * @param request StopAppRequest 请求对象
      * @return StopAppResponse
      */
     public StopAppResponse stopApp(StopAppRequest request) {
@@ -672,11 +664,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopAppRequest 请求对象
+     * @param request StopAppRequest 请求对象
      * @return SyncInvoker<StopAppRequest, StopAppResponse>
      */
     public SyncInvoker<StopAppRequest, StopAppResponse> stopAppInvoker(StopAppRequest request) {
-        return new SyncInvoker<StopAppRequest, StopAppResponse>(request, CloudRTCMeta.stopApp, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.stopApp, hcClient);
     }
 
     /**
@@ -686,7 +678,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopIndividualStreamJobRequest 请求对象
+     * @param request StopIndividualStreamJobRequest 请求对象
      * @return StopIndividualStreamJobResponse
      */
     public StopIndividualStreamJobResponse stopIndividualStreamJob(StopIndividualStreamJobRequest request) {
@@ -700,13 +692,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopIndividualStreamJobRequest 请求对象
+     * @param request StopIndividualStreamJobRequest 请求对象
      * @return SyncInvoker<StopIndividualStreamJobRequest, StopIndividualStreamJobResponse>
      */
     public SyncInvoker<StopIndividualStreamJobRequest, StopIndividualStreamJobResponse> stopIndividualStreamJobInvoker(
         StopIndividualStreamJobRequest request) {
-        return new SyncInvoker<StopIndividualStreamJobRequest, StopIndividualStreamJobResponse>(request,
-            CloudRTCMeta.stopIndividualStreamJob, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.stopIndividualStreamJob, hcClient);
     }
 
     /**
@@ -716,7 +707,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopMixJobRequest 请求对象
+     * @param request StopMixJobRequest 请求对象
      * @return StopMixJobResponse
      */
     public StopMixJobResponse stopMixJob(StopMixJobRequest request) {
@@ -730,11 +721,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopMixJobRequest 请求对象
+     * @param request StopMixJobRequest 请求对象
      * @return SyncInvoker<StopMixJobRequest, StopMixJobResponse>
      */
     public SyncInvoker<StopMixJobRequest, StopMixJobResponse> stopMixJobInvoker(StopMixJobRequest request) {
-        return new SyncInvoker<StopMixJobRequest, StopMixJobResponse>(request, CloudRTCMeta.stopMixJob, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.stopMixJob, hcClient);
     }
 
     /**
@@ -744,7 +735,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAutoRecordRequest 请求对象
+     * @param request UpdateAutoRecordRequest 请求对象
      * @return UpdateAutoRecordResponse
      */
     public UpdateAutoRecordResponse updateAutoRecord(UpdateAutoRecordRequest request) {
@@ -758,13 +749,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAutoRecordRequest 请求对象
+     * @param request UpdateAutoRecordRequest 请求对象
      * @return SyncInvoker<UpdateAutoRecordRequest, UpdateAutoRecordResponse>
      */
     public SyncInvoker<UpdateAutoRecordRequest, UpdateAutoRecordResponse> updateAutoRecordInvoker(
         UpdateAutoRecordRequest request) {
-        return new SyncInvoker<UpdateAutoRecordRequest, UpdateAutoRecordResponse>(request,
-            CloudRTCMeta.updateAutoRecord, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.updateAutoRecord, hcClient);
     }
 
     /**
@@ -776,7 +766,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIndividualStreamJobRequest 请求对象
+     * @param request UpdateIndividualStreamJobRequest 请求对象
      * @return UpdateIndividualStreamJobResponse
      */
     public UpdateIndividualStreamJobResponse updateIndividualStreamJob(UpdateIndividualStreamJobRequest request) {
@@ -792,13 +782,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIndividualStreamJobRequest 请求对象
+     * @param request UpdateIndividualStreamJobRequest 请求对象
      * @return SyncInvoker<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse>
      */
     public SyncInvoker<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse> updateIndividualStreamJobInvoker(
         UpdateIndividualStreamJobRequest request) {
-        return new SyncInvoker<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse>(request,
-            CloudRTCMeta.updateIndividualStreamJob, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.updateIndividualStreamJob, hcClient);
     }
 
     /**
@@ -808,7 +797,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMixJobRequest 请求对象
+     * @param request UpdateMixJobRequest 请求对象
      * @return UpdateMixJobResponse
      */
     public UpdateMixJobResponse updateMixJob(UpdateMixJobRequest request) {
@@ -822,11 +811,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMixJobRequest 请求对象
+     * @param request UpdateMixJobRequest 请求对象
      * @return SyncInvoker<UpdateMixJobRequest, UpdateMixJobResponse>
      */
     public SyncInvoker<UpdateMixJobRequest, UpdateMixJobResponse> updateMixJobInvoker(UpdateMixJobRequest request) {
-        return new SyncInvoker<UpdateMixJobRequest, UpdateMixJobResponse>(request, CloudRTCMeta.updateMixJob, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.updateMixJob, hcClient);
     }
 
     /**
@@ -840,7 +829,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordCallbackRequest 请求对象
+     * @param request UpdateRecordCallbackRequest 请求对象
      * @return UpdateRecordCallbackResponse
      */
     public UpdateRecordCallbackResponse updateRecordCallback(UpdateRecordCallbackRequest request) {
@@ -858,13 +847,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordCallbackRequest 请求对象
+     * @param request UpdateRecordCallbackRequest 请求对象
      * @return SyncInvoker<UpdateRecordCallbackRequest, UpdateRecordCallbackResponse>
      */
     public SyncInvoker<UpdateRecordCallbackRequest, UpdateRecordCallbackResponse> updateRecordCallbackInvoker(
         UpdateRecordCallbackRequest request) {
-        return new SyncInvoker<UpdateRecordCallbackRequest, UpdateRecordCallbackResponse>(request,
-            CloudRTCMeta.updateRecordCallback, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.updateRecordCallback, hcClient);
     }
 
     /**
@@ -874,7 +862,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordRuleRequest 请求对象
+     * @param request UpdateRecordRuleRequest 请求对象
      * @return UpdateRecordRuleResponse
      */
     public UpdateRecordRuleResponse updateRecordRule(UpdateRecordRuleRequest request) {
@@ -888,13 +876,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordRuleRequest 请求对象
+     * @param request UpdateRecordRuleRequest 请求对象
      * @return SyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse>
      */
     public SyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse> updateRecordRuleInvoker(
         UpdateRecordRuleRequest request) {
-        return new SyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse>(request,
-            CloudRTCMeta.updateRecordRule, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.updateRecordRule, hcClient);
     }
 
     /**
@@ -904,7 +891,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUrlAuthRequest 请求对象
+     * @param request UpdateUrlAuthRequest 请求对象
      * @return UpdateUrlAuthResponse
      */
     public UpdateUrlAuthResponse updateUrlAuth(UpdateUrlAuthRequest request) {
@@ -918,12 +905,11 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUrlAuthRequest 请求对象
+     * @param request UpdateUrlAuthRequest 请求对象
      * @return SyncInvoker<UpdateUrlAuthRequest, UpdateUrlAuthResponse>
      */
     public SyncInvoker<UpdateUrlAuthRequest, UpdateUrlAuthResponse> updateUrlAuthInvoker(UpdateUrlAuthRequest request) {
-        return new SyncInvoker<UpdateUrlAuthRequest, UpdateUrlAuthResponse>(request, CloudRTCMeta.updateUrlAuth,
-            hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.updateUrlAuth, hcClient);
     }
 
     /**
@@ -933,7 +919,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketObjectsRequest 请求对象
+     * @param request ListObsBucketObjectsRequest 请求对象
      * @return ListObsBucketObjectsResponse
      */
     public ListObsBucketObjectsResponse listObsBucketObjects(ListObsBucketObjectsRequest request) {
@@ -947,13 +933,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketObjectsRequest 请求对象
+     * @param request ListObsBucketObjectsRequest 请求对象
      * @return SyncInvoker<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse>
      */
     public SyncInvoker<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse> listObsBucketObjectsInvoker(
         ListObsBucketObjectsRequest request) {
-        return new SyncInvoker<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse>(request,
-            CloudRTCMeta.listObsBucketObjects, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.listObsBucketObjects, hcClient);
     }
 
     /**
@@ -963,7 +948,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketsRequest 请求对象
+     * @param request ListObsBucketsRequest 请求对象
      * @return ListObsBucketsResponse
      */
     public ListObsBucketsResponse listObsBuckets(ListObsBucketsRequest request) {
@@ -977,13 +962,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketsRequest 请求对象
+     * @param request ListObsBucketsRequest 请求对象
      * @return SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>
      */
     public SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse> listObsBucketsInvoker(
         ListObsBucketsRequest request) {
-        return new SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>(request, CloudRTCMeta.listObsBuckets,
-            hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.listObsBuckets, hcClient);
     }
 
     /**
@@ -993,7 +977,7 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateObsBucketAuthorityRequest 请求对象
+     * @param request UpdateObsBucketAuthorityRequest 请求对象
      * @return UpdateObsBucketAuthorityResponse
      */
     public UpdateObsBucketAuthorityResponse updateObsBucketAuthority(UpdateObsBucketAuthorityRequest request) {
@@ -1007,13 +991,12 @@ public class CloudRTCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateObsBucketAuthorityRequest 请求对象
+     * @param request UpdateObsBucketAuthorityRequest 请求对象
      * @return SyncInvoker<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse>
      */
     public SyncInvoker<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse> updateObsBucketAuthorityInvoker(
         UpdateObsBucketAuthorityRequest request) {
-        return new SyncInvoker<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse>(request,
-            CloudRTCMeta.updateObsBucketAuthority, hcClient);
+        return new SyncInvoker<>(request, CloudRTCMeta.updateObsBucketAuthority, hcClient);
     }
 
 }

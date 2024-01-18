@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.rgc.v1.model.DisableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DisableControlResponse;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlResponse;
+import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountRequest;
+import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListConfigRuleComplianceRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListConfigRuleComplianceResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListControlViolationsRequest;
@@ -35,6 +37,8 @@ import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedOrganizationalUnitsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedOrganizationalUnitsResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ReRegisterOrganizationalUnitRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ReRegisterOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.RegisterOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.RegisterOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.SetupLandingZoneRequest;
@@ -67,6 +71,8 @@ import com.huaweicloud.sdk.rgc.v1.model.ShowManagedOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowManagedOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowOperationRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowOperationResponse;
+import com.huaweicloud.sdk.rgc.v1.model.UnEnrollAccountRequest;
+import com.huaweicloud.sdk.rgc.v1.model.UnEnrollAccountResponse;
 import com.huaweicloud.sdk.rgc.v1.model.UpdateManagedAccountRequest;
 import com.huaweicloud.sdk.rgc.v1.model.UpdateManagedAccountResponse;
 
@@ -90,7 +96,7 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableControlRequest 请求对象
+     * @param request DisableControlRequest 请求对象
      * @return DisableControlResponse
      */
     public DisableControlResponse disableControl(DisableControlRequest request) {
@@ -104,13 +110,12 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableControlRequest 请求对象
+     * @param request DisableControlRequest 请求对象
      * @return SyncInvoker<DisableControlRequest, DisableControlResponse>
      */
     public SyncInvoker<DisableControlRequest, DisableControlResponse> disableControlInvoker(
         DisableControlRequest request) {
-        return new SyncInvoker<DisableControlRequest, DisableControlResponse>(request, RgcMeta.disableControl,
-            hcClient);
+        return new SyncInvoker<>(request, RgcMeta.disableControl, hcClient);
     }
 
     /**
@@ -120,7 +125,7 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableControlRequest 请求对象
+     * @param request EnableControlRequest 请求对象
      * @return EnableControlResponse
      */
     public EnableControlResponse enableControl(EnableControlRequest request) {
@@ -134,21 +139,21 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableControlRequest 请求对象
+     * @param request EnableControlRequest 请求对象
      * @return SyncInvoker<EnableControlRequest, EnableControlResponse>
      */
     public SyncInvoker<EnableControlRequest, EnableControlResponse> enableControlInvoker(EnableControlRequest request) {
-        return new SyncInvoker<EnableControlRequest, EnableControlResponse>(request, RgcMeta.enableControl, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.enableControl, hcClient);
     }
 
     /**
-     * 查询账号的合规性状态
+     * 查询纳管账号的Config规则合规性信息
      *
-     * 查询组织里某个账号下开启的所有控制策略的详细信息。
+     * 查询纳管账号的Config规则合规性信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigRuleComplianceRequest 请求对象
+     * @param request ListConfigRuleComplianceRequest 请求对象
      * @return ListConfigRuleComplianceResponse
      */
     public ListConfigRuleComplianceResponse listConfigRuleCompliance(ListConfigRuleComplianceRequest request) {
@@ -156,29 +161,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询账号的合规性状态
+     * 查询纳管账号的Config规则合规性信息
      *
-     * 查询组织里某个账号下开启的所有控制策略的详细信息。
+     * 查询纳管账号的Config规则合规性信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigRuleComplianceRequest 请求对象
+     * @param request ListConfigRuleComplianceRequest 请求对象
      * @return SyncInvoker<ListConfigRuleComplianceRequest, ListConfigRuleComplianceResponse>
      */
     public SyncInvoker<ListConfigRuleComplianceRequest, ListConfigRuleComplianceResponse> listConfigRuleComplianceInvoker(
         ListConfigRuleComplianceRequest request) {
-        return new SyncInvoker<ListConfigRuleComplianceRequest, ListConfigRuleComplianceResponse>(request,
-            RgcMeta.listConfigRuleCompliance, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.listConfigRuleCompliance, hcClient);
     }
 
     /**
-     * 查询不合规信息
+     * 列出不合规信息
      *
-     * 查询组织里所有不合规的资源信息。
+     * 列出组织里所有不合规的资源信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlViolationsRequest 请求对象
+     * @param request ListControlViolationsRequest 请求对象
      * @return ListControlViolationsResponse
      */
     public ListControlViolationsResponse listControlViolations(ListControlViolationsRequest request) {
@@ -186,29 +190,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询不合规信息
+     * 列出不合规信息
      *
-     * 查询组织里所有不合规的资源信息。
+     * 列出组织里所有不合规的资源信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlViolationsRequest 请求对象
+     * @param request ListControlViolationsRequest 请求对象
      * @return SyncInvoker<ListControlViolationsRequest, ListControlViolationsResponse>
      */
     public SyncInvoker<ListControlViolationsRequest, ListControlViolationsResponse> listControlViolationsInvoker(
         ListControlViolationsRequest request) {
-        return new SyncInvoker<ListControlViolationsRequest, ListControlViolationsResponse>(request,
-            RgcMeta.listControlViolations, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.listControlViolations, hcClient);
     }
 
     /**
-     * 查询控制策略
+     * 列出控制策略
      *
-     * 查询RGC服务里所有的预置控制策略。
+     * 列出RGC服务里所有的预置控制策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsRequest 请求对象
+     * @param request ListControlsRequest 请求对象
      * @return ListControlsResponse
      */
     public ListControlsResponse listControls(ListControlsRequest request) {
@@ -216,27 +219,27 @@ public class RgcClient {
     }
 
     /**
-     * 查询控制策略
+     * 列出控制策略
      *
-     * 查询RGC服务里所有的预置控制策略。
+     * 列出RGC服务里所有的预置控制策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsRequest 请求对象
+     * @param request ListControlsRequest 请求对象
      * @return SyncInvoker<ListControlsRequest, ListControlsResponse>
      */
     public SyncInvoker<ListControlsRequest, ListControlsResponse> listControlsInvoker(ListControlsRequest request) {
-        return new SyncInvoker<ListControlsRequest, ListControlsResponse>(request, RgcMeta.listControls, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.listControls, hcClient);
     }
 
     /**
-     * 查询账号下开启的控制策略
+     * 列出纳管账号下开启的控制策略
      *
-     * 查询组织里某个账号开启的所有控制策略信息。
+     * 列出组织里某个纳管账号开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsForAccountRequest 请求对象
+     * @param request ListControlsForAccountRequest 请求对象
      * @return ListControlsForAccountResponse
      */
     public ListControlsForAccountResponse listControlsForAccount(ListControlsForAccountRequest request) {
@@ -244,29 +247,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询账号下开启的控制策略
+     * 列出纳管账号下开启的控制策略
      *
-     * 查询组织里某个账号开启的所有控制策略信息。
+     * 列出组织里某个纳管账号开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsForAccountRequest 请求对象
+     * @param request ListControlsForAccountRequest 请求对象
      * @return SyncInvoker<ListControlsForAccountRequest, ListControlsForAccountResponse>
      */
     public SyncInvoker<ListControlsForAccountRequest, ListControlsForAccountResponse> listControlsForAccountInvoker(
         ListControlsForAccountRequest request) {
-        return new SyncInvoker<ListControlsForAccountRequest, ListControlsForAccountResponse>(request,
-            RgcMeta.listControlsForAccount, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.listControlsForAccount, hcClient);
     }
 
     /**
-     * 查询OU下开启的控制策略
+     * 列出注册OU下开启的控制策略
      *
-     * 查询组织里某个OU开启的所有控制策略信息。
+     * 列出组织里某个注册OU开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsForOrganizationUnitRequest 请求对象
+     * @param request ListControlsForOrganizationUnitRequest 请求对象
      * @return ListControlsForOrganizationUnitResponse
      */
     public ListControlsForOrganizationUnitResponse listControlsForOrganizationUnit(
@@ -275,29 +277,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询OU下开启的控制策略
+     * 列出注册OU下开启的控制策略
      *
-     * 查询组织里某个OU开启的所有控制策略信息。
+     * 列出组织里某个注册OU开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsForOrganizationUnitRequest 请求对象
+     * @param request ListControlsForOrganizationUnitRequest 请求对象
      * @return SyncInvoker<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse>
      */
     public SyncInvoker<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> listControlsForOrganizationUnitInvoker(
         ListControlsForOrganizationUnitRequest request) {
-        return new SyncInvoker<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse>(request,
-            RgcMeta.listControlsForOrganizationUnit, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.listControlsForOrganizationUnit, hcClient);
     }
 
     /**
-     * 查询漂移信息
+     * 列出漂移信息
      *
-     * 查询Landing Zone的所有漂移详细信息。
+     * 列出Landing Zone的所有漂移详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDriftDetailsRequest 请求对象
+     * @param request ListDriftDetailsRequest 请求对象
      * @return ListDriftDetailsResponse
      */
     public ListDriftDetailsResponse listDriftDetails(ListDriftDetailsRequest request) {
@@ -305,29 +306,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询漂移信息
+     * 列出漂移信息
      *
-     * 查询Landing Zone的所有漂移详细信息。
+     * 列出Landing Zone的所有漂移详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDriftDetailsRequest 请求对象
+     * @param request ListDriftDetailsRequest 请求对象
      * @return SyncInvoker<ListDriftDetailsRequest, ListDriftDetailsResponse>
      */
     public SyncInvoker<ListDriftDetailsRequest, ListDriftDetailsResponse> listDriftDetailsInvoker(
         ListDriftDetailsRequest request) {
-        return new SyncInvoker<ListDriftDetailsRequest, ListDriftDetailsResponse>(request, RgcMeta.listDriftDetails,
-            hcClient);
+        return new SyncInvoker<>(request, RgcMeta.listDriftDetails, hcClient);
     }
 
     /**
-     * 查询开启的控制策略
+     * 列出开启的控制策略
      *
-     * 查询组织里开启的所有控制策略信息。
+     * 列出组织里开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnabledControlsRequest 请求对象
+     * @param request ListEnabledControlsRequest 请求对象
      * @return ListEnabledControlsResponse
      */
     public ListEnabledControlsResponse listEnabledControls(ListEnabledControlsRequest request) {
@@ -335,29 +335,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询开启的控制策略
+     * 列出开启的控制策略
      *
-     * 查询组织里开启的所有控制策略信息。
+     * 列出组织里开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnabledControlsRequest 请求对象
+     * @param request ListEnabledControlsRequest 请求对象
      * @return SyncInvoker<ListEnabledControlsRequest, ListEnabledControlsResponse>
      */
     public SyncInvoker<ListEnabledControlsRequest, ListEnabledControlsResponse> listEnabledControlsInvoker(
         ListEnabledControlsRequest request) {
-        return new SyncInvoker<ListEnabledControlsRequest, ListEnabledControlsResponse>(request,
-            RgcMeta.listEnabledControls, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.listEnabledControls, hcClient);
     }
 
     /**
-     * 查询账号的合规状态
+     * 查询纳管账号的合规状态
      *
-     * 查询组织里某个账号的资源合规状态。
+     * 查询组织里某个纳管账号的资源合规状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComplianceStatusForAccountRequest 请求对象
+     * @param request ShowComplianceStatusForAccountRequest 请求对象
      * @return ShowComplianceStatusForAccountResponse
      */
     public ShowComplianceStatusForAccountResponse showComplianceStatusForAccount(
@@ -366,29 +365,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询账号的合规状态
+     * 查询纳管账号的合规状态
      *
-     * 查询组织里某个账号的资源合规状态。
+     * 查询组织里某个纳管账号的资源合规状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComplianceStatusForAccountRequest 请求对象
+     * @param request ShowComplianceStatusForAccountRequest 请求对象
      * @return SyncInvoker<ShowComplianceStatusForAccountRequest, ShowComplianceStatusForAccountResponse>
      */
     public SyncInvoker<ShowComplianceStatusForAccountRequest, ShowComplianceStatusForAccountResponse> showComplianceStatusForAccountInvoker(
         ShowComplianceStatusForAccountRequest request) {
-        return new SyncInvoker<ShowComplianceStatusForAccountRequest, ShowComplianceStatusForAccountResponse>(request,
-            RgcMeta.showComplianceStatusForAccount, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showComplianceStatusForAccount, hcClient);
     }
 
     /**
-     * 查询OU的合规状态
+     * 查询注册OU的合规状态
      *
-     * 查询组织里某个OU下所有账号的资源合规状态。
+     * 查询组织里某个注册OU下所有纳管账号的资源合规状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComplianceStatusForOrganizationUnitRequest 请求对象
+     * @param request ShowComplianceStatusForOrganizationUnitRequest 请求对象
      * @return ShowComplianceStatusForOrganizationUnitResponse
      */
     public ShowComplianceStatusForOrganizationUnitResponse showComplianceStatusForOrganizationUnit(
@@ -397,19 +395,18 @@ public class RgcClient {
     }
 
     /**
-     * 查询OU的合规状态
+     * 查询注册OU的合规状态
      *
-     * 查询组织里某个OU下所有账号的资源合规状态。
+     * 查询组织里某个注册OU下所有纳管账号的资源合规状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComplianceStatusForOrganizationUnitRequest 请求对象
+     * @param request ShowComplianceStatusForOrganizationUnitRequest 请求对象
      * @return SyncInvoker<ShowComplianceStatusForOrganizationUnitRequest, ShowComplianceStatusForOrganizationUnitResponse>
      */
     public SyncInvoker<ShowComplianceStatusForOrganizationUnitRequest, ShowComplianceStatusForOrganizationUnitResponse> showComplianceStatusForOrganizationUnitInvoker(
         ShowComplianceStatusForOrganizationUnitRequest request) {
-        return new SyncInvoker<ShowComplianceStatusForOrganizationUnitRequest, ShowComplianceStatusForOrganizationUnitResponse>(
-            request, RgcMeta.showComplianceStatusForOrganizationUnit, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showComplianceStatusForOrganizationUnit, hcClient);
     }
 
     /**
@@ -419,7 +416,7 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlRequest 请求对象
+     * @param request ShowControlRequest 请求对象
      * @return ShowControlResponse
      */
     public ShowControlResponse showControl(ShowControlRequest request) {
@@ -433,11 +430,11 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlRequest 请求对象
+     * @param request ShowControlRequest 请求对象
      * @return SyncInvoker<ShowControlRequest, ShowControlResponse>
      */
     public SyncInvoker<ShowControlRequest, ShowControlResponse> showControlInvoker(ShowControlRequest request) {
-        return new SyncInvoker<ShowControlRequest, ShowControlResponse>(request, RgcMeta.showControl, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showControl, hcClient);
     }
 
     /**
@@ -447,7 +444,7 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlOperateRequest 请求对象
+     * @param request ShowControlOperateRequest 请求对象
      * @return ShowControlOperateResponse
      */
     public ShowControlOperateResponse showControlOperate(ShowControlOperateRequest request) {
@@ -461,23 +458,22 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlOperateRequest 请求对象
+     * @param request ShowControlOperateRequest 请求对象
      * @return SyncInvoker<ShowControlOperateRequest, ShowControlOperateResponse>
      */
     public SyncInvoker<ShowControlOperateRequest, ShowControlOperateResponse> showControlOperateInvoker(
         ShowControlOperateRequest request) {
-        return new SyncInvoker<ShowControlOperateRequest, ShowControlOperateResponse>(request,
-            RgcMeta.showControlOperate, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showControlOperate, hcClient);
     }
 
     /**
-     * 查询OU开启的控制策略
+     * 查询注册OU开启的控制策略
      *
-     * 查询组织里某个OU下开启的某个控制策略的详细信息。
+     * 查询组织里某个注册OU下开启的某个控制策略的详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlsForOrganizationUnitRequest 请求对象
+     * @param request ShowControlsForOrganizationUnitRequest 请求对象
      * @return ShowControlsForOrganizationUnitResponse
      */
     public ShowControlsForOrganizationUnitResponse showControlsForOrganizationUnit(
@@ -486,19 +482,18 @@ public class RgcClient {
     }
 
     /**
-     * 查询OU开启的控制策略
+     * 查询注册OU开启的控制策略
      *
-     * 查询组织里某个OU下开启的某个控制策略的详细信息。
+     * 查询组织里某个注册OU下开启的某个控制策略的详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlsForOrganizationUnitRequest 请求对象
+     * @param request ShowControlsForOrganizationUnitRequest 请求对象
      * @return SyncInvoker<ShowControlsForOrganizationUnitRequest, ShowControlsForOrganizationUnitResponse>
      */
     public SyncInvoker<ShowControlsForOrganizationUnitRequest, ShowControlsForOrganizationUnitResponse> showControlsForOrganizationUnitInvoker(
         ShowControlsForOrganizationUnitRequest request) {
-        return new SyncInvoker<ShowControlsForOrganizationUnitRequest, ShowControlsForOrganizationUnitResponse>(request,
-            RgcMeta.showControlsForOrganizationUnit, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showControlsForOrganizationUnit, hcClient);
     }
 
     /**
@@ -508,7 +503,7 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckLaunchRequest 请求对象
+     * @param request CheckLaunchRequest 请求对象
      * @return CheckLaunchResponse
      */
     public CheckLaunchResponse checkLaunch(CheckLaunchRequest request) {
@@ -522,11 +517,11 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckLaunchRequest 请求对象
+     * @param request CheckLaunchRequest 请求对象
      * @return SyncInvoker<CheckLaunchRequest, CheckLaunchResponse>
      */
     public SyncInvoker<CheckLaunchRequest, CheckLaunchResponse> checkLaunchInvoker(CheckLaunchRequest request) {
-        return new SyncInvoker<CheckLaunchRequest, CheckLaunchResponse>(request, RgcMeta.checkLaunch, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.checkLaunch, hcClient);
     }
 
     /**
@@ -536,7 +531,7 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetupLandingZoneRequest 请求对象
+     * @param request SetupLandingZoneRequest 请求对象
      * @return SetupLandingZoneResponse
      */
     public SetupLandingZoneResponse setupLandingZone(SetupLandingZoneRequest request) {
@@ -550,23 +545,22 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetupLandingZoneRequest 请求对象
+     * @param request SetupLandingZoneRequest 请求对象
      * @return SyncInvoker<SetupLandingZoneRequest, SetupLandingZoneResponse>
      */
     public SyncInvoker<SetupLandingZoneRequest, SetupLandingZoneResponse> setupLandingZoneInvoker(
         SetupLandingZoneRequest request) {
-        return new SyncInvoker<SetupLandingZoneRequest, SetupLandingZoneResponse>(request, RgcMeta.setupLandingZone,
-            hcClient);
+        return new SyncInvoker<>(request, RgcMeta.setupLandingZone, hcClient);
     }
 
     /**
-     * 获取Landing Zone可更新状态
+     * 查询Landing Zone可更新状态
      *
-     * 获取Landing Zone当前是否需要升级更新。
+     * 查询Landing Zone当前是否需要升级更新。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAvailableUpdatesRequest 请求对象
+     * @param request ShowAvailableUpdatesRequest 请求对象
      * @return ShowAvailableUpdatesResponse
      */
     public ShowAvailableUpdatesResponse showAvailableUpdates(ShowAvailableUpdatesRequest request) {
@@ -574,19 +568,18 @@ public class RgcClient {
     }
 
     /**
-     * 获取Landing Zone可更新状态
+     * 查询Landing Zone可更新状态
      *
-     * 获取Landing Zone当前是否需要升级更新。
+     * 查询Landing Zone当前是否需要升级更新。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAvailableUpdatesRequest 请求对象
+     * @param request ShowAvailableUpdatesRequest 请求对象
      * @return SyncInvoker<ShowAvailableUpdatesRequest, ShowAvailableUpdatesResponse>
      */
     public SyncInvoker<ShowAvailableUpdatesRequest, ShowAvailableUpdatesResponse> showAvailableUpdatesInvoker(
         ShowAvailableUpdatesRequest request) {
-        return new SyncInvoker<ShowAvailableUpdatesRequest, ShowAvailableUpdatesResponse>(request,
-            RgcMeta.showAvailableUpdates, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showAvailableUpdates, hcClient);
     }
 
     /**
@@ -596,7 +589,7 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHomeRegionRequest 请求对象
+     * @param request ShowHomeRegionRequest 请求对象
      * @return ShowHomeRegionResponse
      */
     public ShowHomeRegionResponse showHomeRegion(ShowHomeRegionRequest request) {
@@ -610,23 +603,22 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHomeRegionRequest 请求对象
+     * @param request ShowHomeRegionRequest 请求对象
      * @return SyncInvoker<ShowHomeRegionRequest, ShowHomeRegionResponse>
      */
     public SyncInvoker<ShowHomeRegionRequest, ShowHomeRegionResponse> showHomeRegionInvoker(
         ShowHomeRegionRequest request) {
-        return new SyncInvoker<ShowHomeRegionRequest, ShowHomeRegionResponse>(request, RgcMeta.showHomeRegion,
-            hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showHomeRegion, hcClient);
     }
 
     /**
-     * 获取Landing Zone的配置
+     * 查询Landing Zone的配置
      *
-     * 获取当前客户的Landing Zone的所有配置。
+     * 查询当前客户的Landing Zone的所有配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneConfigurationRequest 请求对象
+     * @param request ShowLandingZoneConfigurationRequest 请求对象
      * @return ShowLandingZoneConfigurationResponse
      */
     public ShowLandingZoneConfigurationResponse showLandingZoneConfiguration(
@@ -635,29 +627,28 @@ public class RgcClient {
     }
 
     /**
-     * 获取Landing Zone的配置
+     * 查询Landing Zone的配置
      *
-     * 获取当前客户的Landing Zone的所有配置。
+     * 查询当前客户的Landing Zone的所有配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneConfigurationRequest 请求对象
+     * @param request ShowLandingZoneConfigurationRequest 请求对象
      * @return SyncInvoker<ShowLandingZoneConfigurationRequest, ShowLandingZoneConfigurationResponse>
      */
     public SyncInvoker<ShowLandingZoneConfigurationRequest, ShowLandingZoneConfigurationResponse> showLandingZoneConfigurationInvoker(
         ShowLandingZoneConfigurationRequest request) {
-        return new SyncInvoker<ShowLandingZoneConfigurationRequest, ShowLandingZoneConfigurationResponse>(request,
-            RgcMeta.showLandingZoneConfiguration, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showLandingZoneConfiguration, hcClient);
     }
 
     /**
-     * 获取当前客户的Identity Center用户信息
+     * 查询当前客户的Identity Center用户信息
      *
-     * 获取当前客户的Identity Center用户信息。
+     * 查询当前客户的Identity Center用户信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneIdentityCenterRequest 请求对象
+     * @param request ShowLandingZoneIdentityCenterRequest 请求对象
      * @return ShowLandingZoneIdentityCenterResponse
      */
     public ShowLandingZoneIdentityCenterResponse showLandingZoneIdentityCenter(
@@ -666,19 +657,18 @@ public class RgcClient {
     }
 
     /**
-     * 获取当前客户的Identity Center用户信息
+     * 查询当前客户的Identity Center用户信息
      *
-     * 获取当前客户的Identity Center用户信息。
+     * 查询当前客户的Identity Center用户信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneIdentityCenterRequest 请求对象
+     * @param request ShowLandingZoneIdentityCenterRequest 请求对象
      * @return SyncInvoker<ShowLandingZoneIdentityCenterRequest, ShowLandingZoneIdentityCenterResponse>
      */
     public SyncInvoker<ShowLandingZoneIdentityCenterRequest, ShowLandingZoneIdentityCenterResponse> showLandingZoneIdentityCenterInvoker(
         ShowLandingZoneIdentityCenterRequest request) {
-        return new SyncInvoker<ShowLandingZoneIdentityCenterRequest, ShowLandingZoneIdentityCenterResponse>(request,
-            RgcMeta.showLandingZoneIdentityCenter, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showLandingZoneIdentityCenter, hcClient);
     }
 
     /**
@@ -688,7 +678,7 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneStatusRequest 请求对象
+     * @param request ShowLandingZoneStatusRequest 请求对象
      * @return ShowLandingZoneStatusResponse
      */
     public ShowLandingZoneStatusResponse showLandingZoneStatus(ShowLandingZoneStatusRequest request) {
@@ -702,23 +692,22 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneStatusRequest 请求对象
+     * @param request ShowLandingZoneStatusRequest 请求对象
      * @return SyncInvoker<ShowLandingZoneStatusRequest, ShowLandingZoneStatusResponse>
      */
     public SyncInvoker<ShowLandingZoneStatusRequest, ShowLandingZoneStatusResponse> showLandingZoneStatusInvoker(
         ShowLandingZoneStatusRequest request) {
-        return new SyncInvoker<ShowLandingZoneStatusRequest, ShowLandingZoneStatusResponse>(request,
-            RgcMeta.showLandingZoneStatus, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showLandingZoneStatus, hcClient);
     }
 
     /**
      * 创建账号
      *
-     * 在组织里的某个OU下创建账号。
+     * 在组织里的某个注册OU下创建账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccountRequest 请求对象
+     * @param request CreateAccountRequest 请求对象
      * @return CreateAccountResponse
      */
     public CreateAccountResponse createAccount(CreateAccountRequest request) {
@@ -728,25 +717,25 @@ public class RgcClient {
     /**
      * 创建账号
      *
-     * 在组织里的某个OU下创建账号。
+     * 在组织里的某个注册OU下创建账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccountRequest 请求对象
+     * @param request CreateAccountRequest 请求对象
      * @return SyncInvoker<CreateAccountRequest, CreateAccountResponse>
      */
     public SyncInvoker<CreateAccountRequest, CreateAccountResponse> createAccountInvoker(CreateAccountRequest request) {
-        return new SyncInvoker<CreateAccountRequest, CreateAccountResponse>(request, RgcMeta.createAccount, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.createAccount, hcClient);
     }
 
     /**
-     * 删除注册的OU
+     * 删除注册OU
      *
-     * 在组织里删除已注册的OU。
+     * 在组织里删除已注册OU。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteManagedOrganizationalUnitsRequest 请求对象
+     * @param request DeleteManagedOrganizationalUnitsRequest 请求对象
      * @return DeleteManagedOrganizationalUnitsResponse
      */
     public DeleteManagedOrganizationalUnitsResponse deleteManagedOrganizationalUnits(
@@ -755,29 +744,28 @@ public class RgcClient {
     }
 
     /**
-     * 删除注册的OU
+     * 删除注册OU
      *
-     * 在组织里删除已注册的OU。
+     * 在组织里删除已注册OU。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteManagedOrganizationalUnitsRequest 请求对象
+     * @param request DeleteManagedOrganizationalUnitsRequest 请求对象
      * @return SyncInvoker<DeleteManagedOrganizationalUnitsRequest, DeleteManagedOrganizationalUnitsResponse>
      */
     public SyncInvoker<DeleteManagedOrganizationalUnitsRequest, DeleteManagedOrganizationalUnitsResponse> deleteManagedOrganizationalUnitsInvoker(
         DeleteManagedOrganizationalUnitsRequest request) {
-        return new SyncInvoker<DeleteManagedOrganizationalUnitsRequest, DeleteManagedOrganizationalUnitsResponse>(
-            request, RgcMeta.deleteManagedOrganizationalUnits, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.deleteManagedOrganizationalUnits, hcClient);
     }
 
     /**
-     * 去注册OU
+     * 取消注册OU
      *
      * 将组织里的某个OU从RGC服务里取消注册。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeregisterOrganizationalUnitRequest 请求对象
+     * @param request DeregisterOrganizationalUnitRequest 请求对象
      * @return DeregisterOrganizationalUnitResponse
      */
     public DeregisterOrganizationalUnitResponse deregisterOrganizationalUnit(
@@ -786,29 +774,56 @@ public class RgcClient {
     }
 
     /**
-     * 去注册OU
+     * 取消注册OU
      *
      * 将组织里的某个OU从RGC服务里取消注册。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeregisterOrganizationalUnitRequest 请求对象
+     * @param request DeregisterOrganizationalUnitRequest 请求对象
      * @return SyncInvoker<DeregisterOrganizationalUnitRequest, DeregisterOrganizationalUnitResponse>
      */
     public SyncInvoker<DeregisterOrganizationalUnitRequest, DeregisterOrganizationalUnitResponse> deregisterOrganizationalUnitInvoker(
         DeregisterOrganizationalUnitRequest request) {
-        return new SyncInvoker<DeregisterOrganizationalUnitRequest, DeregisterOrganizationalUnitResponse>(request,
-            RgcMeta.deregisterOrganizationalUnit, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.deregisterOrganizationalUnit, hcClient);
     }
 
     /**
-     * 查询注册的账号信息
+     * 纳管账号
      *
-     * 查询组织里所有注册的账号信息。
+     * 将组织里的某个账号纳管到RGC服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedAccountsRequest 请求对象
+     * @param request EnrollAccountRequest 请求对象
+     * @return EnrollAccountResponse
+     */
+    public EnrollAccountResponse enrollAccount(EnrollAccountRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.enrollAccount);
+    }
+
+    /**
+     * 纳管账号
+     *
+     * 将组织里的某个账号纳管到RGC服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnrollAccountRequest 请求对象
+     * @return SyncInvoker<EnrollAccountRequest, EnrollAccountResponse>
+     */
+    public SyncInvoker<EnrollAccountRequest, EnrollAccountResponse> enrollAccountInvoker(EnrollAccountRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.enrollAccount, hcClient);
+    }
+
+    /**
+     * 列举控制策略生效的纳管账号信息
+     *
+     * 列举控制策略生效的纳管账号信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListManagedAccountsRequest 请求对象
      * @return ListManagedAccountsResponse
      */
     public ListManagedAccountsResponse listManagedAccounts(ListManagedAccountsRequest request) {
@@ -816,29 +831,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询注册的账号信息
+     * 列举控制策略生效的纳管账号信息
      *
-     * 查询组织里所有注册的账号信息。
+     * 列举控制策略生效的纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedAccountsRequest 请求对象
+     * @param request ListManagedAccountsRequest 请求对象
      * @return SyncInvoker<ListManagedAccountsRequest, ListManagedAccountsResponse>
      */
     public SyncInvoker<ListManagedAccountsRequest, ListManagedAccountsResponse> listManagedAccountsInvoker(
         ListManagedAccountsRequest request) {
-        return new SyncInvoker<ListManagedAccountsRequest, ListManagedAccountsResponse>(request,
-            RgcMeta.listManagedAccounts, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.listManagedAccounts, hcClient);
     }
 
     /**
-     * 查询纳管OU下的账号信息
+     * 列出注册OU下的纳管账号信息
      *
-     * 查询组织里某个注册OU下的所有账号信息。
+     * 列出组织里某个注册OU下的所有纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedAccountsForParentRequest 请求对象
+     * @param request ListManagedAccountsForParentRequest 请求对象
      * @return ListManagedAccountsForParentResponse
      */
     public ListManagedAccountsForParentResponse listManagedAccountsForParent(
@@ -847,29 +861,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询纳管OU下的账号信息
+     * 列出注册OU下的纳管账号信息
      *
-     * 查询组织里某个注册OU下的所有账号信息。
+     * 列出组织里某个注册OU下的所有纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedAccountsForParentRequest 请求对象
+     * @param request ListManagedAccountsForParentRequest 请求对象
      * @return SyncInvoker<ListManagedAccountsForParentRequest, ListManagedAccountsForParentResponse>
      */
     public SyncInvoker<ListManagedAccountsForParentRequest, ListManagedAccountsForParentResponse> listManagedAccountsForParentInvoker(
         ListManagedAccountsForParentRequest request) {
-        return new SyncInvoker<ListManagedAccountsForParentRequest, ListManagedAccountsForParentResponse>(request,
-            RgcMeta.listManagedAccountsForParent, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.listManagedAccountsForParent, hcClient);
     }
 
     /**
-     * 查询纳管的OU信息
+     * 列举控制策略生效的注册OU信息
      *
-     * 查询组织里所有通过RGC服务注册的OU信息。
+     * 列举控制策略生效的注册OU信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedOrganizationalUnitsRequest 请求对象
+     * @param request ListManagedOrganizationalUnitsRequest 请求对象
      * @return ListManagedOrganizationalUnitsResponse
      */
     public ListManagedOrganizationalUnitsResponse listManagedOrganizationalUnits(
@@ -878,19 +891,48 @@ public class RgcClient {
     }
 
     /**
-     * 查询纳管的OU信息
+     * 列举控制策略生效的注册OU信息
      *
-     * 查询组织里所有通过RGC服务注册的OU信息。
+     * 列举控制策略生效的注册OU信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedOrganizationalUnitsRequest 请求对象
+     * @param request ListManagedOrganizationalUnitsRequest 请求对象
      * @return SyncInvoker<ListManagedOrganizationalUnitsRequest, ListManagedOrganizationalUnitsResponse>
      */
     public SyncInvoker<ListManagedOrganizationalUnitsRequest, ListManagedOrganizationalUnitsResponse> listManagedOrganizationalUnitsInvoker(
         ListManagedOrganizationalUnitsRequest request) {
-        return new SyncInvoker<ListManagedOrganizationalUnitsRequest, ListManagedOrganizationalUnitsResponse>(request,
-            RgcMeta.listManagedOrganizationalUnits, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.listManagedOrganizationalUnits, hcClient);
+    }
+
+    /**
+     * 重新注册OU
+     *
+     * 重新注册组织里的某个OU到RGC服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ReRegisterOrganizationalUnitRequest 请求对象
+     * @return ReRegisterOrganizationalUnitResponse
+     */
+    public ReRegisterOrganizationalUnitResponse reRegisterOrganizationalUnit(
+        ReRegisterOrganizationalUnitRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.reRegisterOrganizationalUnit);
+    }
+
+    /**
+     * 重新注册OU
+     *
+     * 重新注册组织里的某个OU到RGC服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ReRegisterOrganizationalUnitRequest 请求对象
+     * @return SyncInvoker<ReRegisterOrganizationalUnitRequest, ReRegisterOrganizationalUnitResponse>
+     */
+    public SyncInvoker<ReRegisterOrganizationalUnitRequest, ReRegisterOrganizationalUnitResponse> reRegisterOrganizationalUnitInvoker(
+        ReRegisterOrganizationalUnitRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.reRegisterOrganizationalUnit, hcClient);
     }
 
     /**
@@ -900,7 +942,7 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterOrganizationalUnitRequest 请求对象
+     * @param request RegisterOrganizationalUnitRequest 请求对象
      * @return RegisterOrganizationalUnitResponse
      */
     public RegisterOrganizationalUnitResponse registerOrganizationalUnit(RegisterOrganizationalUnitRequest request) {
@@ -914,23 +956,22 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterOrganizationalUnitRequest 请求对象
+     * @param request RegisterOrganizationalUnitRequest 请求对象
      * @return SyncInvoker<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse>
      */
     public SyncInvoker<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse> registerOrganizationalUnitInvoker(
         RegisterOrganizationalUnitRequest request) {
-        return new SyncInvoker<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse>(request,
-            RgcMeta.registerOrganizationalUnit, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.registerOrganizationalUnit, hcClient);
     }
 
     /**
-     * 查询注册的账号信息
+     * 查询纳管账号信息
      *
-     * 查询组织里某个注册的账号信息。
+     * 查询组织里某个纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedAccountRequest 请求对象
+     * @param request ShowManagedAccountRequest 请求对象
      * @return ShowManagedAccountResponse
      */
     public ShowManagedAccountResponse showManagedAccount(ShowManagedAccountRequest request) {
@@ -938,29 +979,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询注册的账号信息
+     * 查询纳管账号信息
      *
-     * 查询组织里某个注册的账号信息。
+     * 查询组织里某个纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedAccountRequest 请求对象
+     * @param request ShowManagedAccountRequest 请求对象
      * @return SyncInvoker<ShowManagedAccountRequest, ShowManagedAccountResponse>
      */
     public SyncInvoker<ShowManagedAccountRequest, ShowManagedAccountResponse> showManagedAccountInvoker(
         ShowManagedAccountRequest request) {
-        return new SyncInvoker<ShowManagedAccountRequest, ShowManagedAccountResponse>(request,
-            RgcMeta.showManagedAccount, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showManagedAccount, hcClient);
     }
 
     /**
-     * 查询核心账号
+     * 列出核心纳管账号
      *
-     * 查询组织里的所有核心账号信息。
+     * 列出组织里的所有核心纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedCoreAccountRequest 请求对象
+     * @param request ShowManagedCoreAccountRequest 请求对象
      * @return ShowManagedCoreAccountResponse
      */
     public ShowManagedCoreAccountResponse showManagedCoreAccount(ShowManagedCoreAccountRequest request) {
@@ -968,29 +1008,28 @@ public class RgcClient {
     }
 
     /**
-     * 查询核心账号
+     * 列出核心纳管账号
      *
-     * 查询组织里的所有核心账号信息。
+     * 列出组织里的所有核心纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedCoreAccountRequest 请求对象
+     * @param request ShowManagedCoreAccountRequest 请求对象
      * @return SyncInvoker<ShowManagedCoreAccountRequest, ShowManagedCoreAccountResponse>
      */
     public SyncInvoker<ShowManagedCoreAccountRequest, ShowManagedCoreAccountResponse> showManagedCoreAccountInvoker(
         ShowManagedCoreAccountRequest request) {
-        return new SyncInvoker<ShowManagedCoreAccountRequest, ShowManagedCoreAccountResponse>(request,
-            RgcMeta.showManagedCoreAccount, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showManagedCoreAccount, hcClient);
     }
 
     /**
-     * 查询纳管的OU信息
+     * 查询已注册OU信息
      *
-     * 查询在RGC服务里注册的OU信息。
+     * 查询在RGC服务里的注册OU信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedOrganizationalUnitRequest 请求对象
+     * @param request ShowManagedOrganizationalUnitRequest 请求对象
      * @return ShowManagedOrganizationalUnitResponse
      */
     public ShowManagedOrganizationalUnitResponse showManagedOrganizationalUnit(
@@ -999,19 +1038,18 @@ public class RgcClient {
     }
 
     /**
-     * 查询纳管的OU信息
+     * 查询已注册OU信息
      *
-     * 查询在RGC服务里注册的OU信息。
+     * 查询在RGC服务里的注册OU信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedOrganizationalUnitRequest 请求对象
+     * @param request ShowManagedOrganizationalUnitRequest 请求对象
      * @return SyncInvoker<ShowManagedOrganizationalUnitRequest, ShowManagedOrganizationalUnitResponse>
      */
     public SyncInvoker<ShowManagedOrganizationalUnitRequest, ShowManagedOrganizationalUnitResponse> showManagedOrganizationalUnitInvoker(
         ShowManagedOrganizationalUnitRequest request) {
-        return new SyncInvoker<ShowManagedOrganizationalUnitRequest, ShowManagedOrganizationalUnitResponse>(request,
-            RgcMeta.showManagedOrganizationalUnit, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showManagedOrganizationalUnit, hcClient);
     }
 
     /**
@@ -1021,7 +1059,7 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOperationRequest 请求对象
+     * @param request ShowOperationRequest 请求对象
      * @return ShowOperationResponse
      */
     public ShowOperationResponse showOperation(ShowOperationRequest request) {
@@ -1035,21 +1073,50 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOperationRequest 请求对象
+     * @param request ShowOperationRequest 请求对象
      * @return SyncInvoker<ShowOperationRequest, ShowOperationResponse>
      */
     public SyncInvoker<ShowOperationRequest, ShowOperationResponse> showOperationInvoker(ShowOperationRequest request) {
-        return new SyncInvoker<ShowOperationRequest, ShowOperationResponse>(request, RgcMeta.showOperation, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.showOperation, hcClient);
     }
 
     /**
-     * 更新注册的账号
+     * 取消纳管账号
      *
-     * 更新组织里某个已在RGC服务注册的账号。
+     * 将组织里的某个账号从RGC服务里取消纳管。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateManagedAccountRequest 请求对象
+     * @param request UnEnrollAccountRequest 请求对象
+     * @return UnEnrollAccountResponse
+     */
+    public UnEnrollAccountResponse unEnrollAccount(UnEnrollAccountRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.unEnrollAccount);
+    }
+
+    /**
+     * 取消纳管账号
+     *
+     * 将组织里的某个账号从RGC服务里取消纳管。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnEnrollAccountRequest 请求对象
+     * @return SyncInvoker<UnEnrollAccountRequest, UnEnrollAccountResponse>
+     */
+    public SyncInvoker<UnEnrollAccountRequest, UnEnrollAccountResponse> unEnrollAccountInvoker(
+        UnEnrollAccountRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.unEnrollAccount, hcClient);
+    }
+
+    /**
+     * 更新纳管账号
+     *
+     * 更新组织里某个已在RGC服务的纳管账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateManagedAccountRequest 请求对象
      * @return UpdateManagedAccountResponse
      */
     public UpdateManagedAccountResponse updateManagedAccount(UpdateManagedAccountRequest request) {
@@ -1057,19 +1124,18 @@ public class RgcClient {
     }
 
     /**
-     * 更新注册的账号
+     * 更新纳管账号
      *
-     * 更新组织里某个已在RGC服务注册的账号。
+     * 更新组织里某个已在RGC服务的纳管账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateManagedAccountRequest 请求对象
+     * @param request UpdateManagedAccountRequest 请求对象
      * @return SyncInvoker<UpdateManagedAccountRequest, UpdateManagedAccountResponse>
      */
     public SyncInvoker<UpdateManagedAccountRequest, UpdateManagedAccountResponse> updateManagedAccountInvoker(
         UpdateManagedAccountRequest request) {
-        return new SyncInvoker<UpdateManagedAccountRequest, UpdateManagedAccountResponse>(request,
-            RgcMeta.updateManagedAccount, hcClient);
+        return new SyncInvoker<>(request, RgcMeta.updateManagedAccount, hcClient);
     }
 
 }

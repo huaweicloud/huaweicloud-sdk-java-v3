@@ -176,7 +176,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteKafkaTagRequest 请求对象
+     * @param request BatchCreateOrDeleteKafkaTagRequest 请求对象
      * @return BatchCreateOrDeleteKafkaTagResponse
      */
     public BatchCreateOrDeleteKafkaTagResponse batchCreateOrDeleteKafkaTag(BatchCreateOrDeleteKafkaTagRequest request) {
@@ -190,13 +190,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteKafkaTagRequest 请求对象
+     * @param request BatchCreateOrDeleteKafkaTagRequest 请求对象
      * @return SyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse>
      */
     public SyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> batchCreateOrDeleteKafkaTagInvoker(
         BatchCreateOrDeleteKafkaTagRequest request) {
-        return new SyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse>(request,
-            KafkaMeta.batchCreateOrDeleteKafkaTag, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.batchCreateOrDeleteKafkaTag, hcClient);
     }
 
     /**
@@ -206,7 +205,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteGroupRequest 请求对象
+     * @param request BatchDeleteGroupRequest 请求对象
      * @return BatchDeleteGroupResponse
      */
     public BatchDeleteGroupResponse batchDeleteGroup(BatchDeleteGroupRequest request) {
@@ -220,13 +219,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteGroupRequest 请求对象
+     * @param request BatchDeleteGroupRequest 请求对象
      * @return SyncInvoker<BatchDeleteGroupRequest, BatchDeleteGroupResponse>
      */
     public SyncInvoker<BatchDeleteGroupRequest, BatchDeleteGroupResponse> batchDeleteGroupInvoker(
         BatchDeleteGroupRequest request) {
-        return new SyncInvoker<BatchDeleteGroupRequest, BatchDeleteGroupResponse>(request, KafkaMeta.batchDeleteGroup,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.batchDeleteGroup, hcClient);
     }
 
     /**
@@ -236,7 +234,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceTopicRequest 请求对象
+     * @param request BatchDeleteInstanceTopicRequest 请求对象
      * @return BatchDeleteInstanceTopicResponse
      */
     public BatchDeleteInstanceTopicResponse batchDeleteInstanceTopic(BatchDeleteInstanceTopicRequest request) {
@@ -250,13 +248,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceTopicRequest 请求对象
+     * @param request BatchDeleteInstanceTopicRequest 请求对象
      * @return SyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse>
      */
     public SyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> batchDeleteInstanceTopicInvoker(
         BatchDeleteInstanceTopicRequest request) {
-        return new SyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse>(request,
-            KafkaMeta.batchDeleteInstanceTopic, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.batchDeleteInstanceTopic, hcClient);
     }
 
     /**
@@ -266,7 +263,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceUsersRequest 请求对象
+     * @param request BatchDeleteInstanceUsersRequest 请求对象
      * @return BatchDeleteInstanceUsersResponse
      */
     public BatchDeleteInstanceUsersResponse batchDeleteInstanceUsers(BatchDeleteInstanceUsersRequest request) {
@@ -280,13 +277,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceUsersRequest 请求对象
+     * @param request BatchDeleteInstanceUsersRequest 请求对象
      * @return SyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse>
      */
     public SyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> batchDeleteInstanceUsersInvoker(
         BatchDeleteInstanceUsersRequest request) {
-        return new SyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse>(request,
-            KafkaMeta.batchDeleteInstanceUsers, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.batchDeleteInstanceUsers, hcClient);
     }
 
     /**
@@ -300,7 +296,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRestartOrDeleteInstancesRequest 请求对象
+     * @param request BatchRestartOrDeleteInstancesRequest 请求对象
      * @return BatchRestartOrDeleteInstancesResponse
      */
     public BatchRestartOrDeleteInstancesResponse batchRestartOrDeleteInstances(
@@ -319,13 +315,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRestartOrDeleteInstancesRequest 请求对象
+     * @param request BatchRestartOrDeleteInstancesRequest 请求对象
      * @return SyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse>
      */
     public SyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstancesInvoker(
         BatchRestartOrDeleteInstancesRequest request) {
-        return new SyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse>(request,
-            KafkaMeta.batchRestartOrDeleteInstances, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.batchRestartOrDeleteInstances, hcClient);
     }
 
     /**
@@ -335,7 +330,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CloseKafkaManagerRequest 请求对象
+     * @param request CloseKafkaManagerRequest 请求对象
      * @return CloseKafkaManagerResponse
      */
     public CloseKafkaManagerResponse closeKafkaManager(CloseKafkaManagerRequest request) {
@@ -349,13 +344,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CloseKafkaManagerRequest 请求对象
+     * @param request CloseKafkaManagerRequest 请求对象
      * @return SyncInvoker<CloseKafkaManagerRequest, CloseKafkaManagerResponse>
      */
     public SyncInvoker<CloseKafkaManagerRequest, CloseKafkaManagerResponse> closeKafkaManagerInvoker(
         CloseKafkaManagerRequest request) {
-        return new SyncInvoker<CloseKafkaManagerRequest, CloseKafkaManagerResponse>(request,
-            KafkaMeta.closeKafkaManager, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.closeKafkaManager, hcClient);
     }
 
     /**
@@ -367,7 +361,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectorRequest 请求对象
+     * @param request CreateConnectorRequest 请求对象
      * @return CreateConnectorResponse
      */
     public CreateConnectorResponse createConnector(CreateConnectorRequest request) {
@@ -383,13 +377,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectorRequest 请求对象
+     * @param request CreateConnectorRequest 请求对象
      * @return SyncInvoker<CreateConnectorRequest, CreateConnectorResponse>
      */
     public SyncInvoker<CreateConnectorRequest, CreateConnectorResponse> createConnectorInvoker(
         CreateConnectorRequest request) {
-        return new SyncInvoker<CreateConnectorRequest, CreateConnectorResponse>(request, KafkaMeta.createConnector,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createConnector, hcClient);
     }
 
     /**
@@ -399,7 +392,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeleteConnectorOrderRequest 请求对象
+     * @param request CreateDeleteConnectorOrderRequest 请求对象
      * @return CreateDeleteConnectorOrderResponse
      */
     public CreateDeleteConnectorOrderResponse createDeleteConnectorOrder(CreateDeleteConnectorOrderRequest request) {
@@ -413,13 +406,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeleteConnectorOrderRequest 请求对象
+     * @param request CreateDeleteConnectorOrderRequest 请求对象
      * @return SyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse>
      */
     public SyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> createDeleteConnectorOrderInvoker(
         CreateDeleteConnectorOrderRequest request) {
-        return new SyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse>(request,
-            KafkaMeta.createDeleteConnectorOrder, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createDeleteConnectorOrder, hcClient);
     }
 
     /**
@@ -431,7 +423,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceByEngineRequest 请求对象
+     * @param request CreateInstanceByEngineRequest 请求对象
      * @return CreateInstanceByEngineResponse
      */
     public CreateInstanceByEngineResponse createInstanceByEngine(CreateInstanceByEngineRequest request) {
@@ -447,13 +439,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceByEngineRequest 请求对象
+     * @param request CreateInstanceByEngineRequest 请求对象
      * @return SyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse>
      */
     public SyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> createInstanceByEngineInvoker(
         CreateInstanceByEngineRequest request) {
-        return new SyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse>(request,
-            KafkaMeta.createInstanceByEngine, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createInstanceByEngine, hcClient);
     }
 
     /**
@@ -463,7 +454,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceTopicRequest 请求对象
+     * @param request CreateInstanceTopicRequest 请求对象
      * @return CreateInstanceTopicResponse
      */
     public CreateInstanceTopicResponse createInstanceTopic(CreateInstanceTopicRequest request) {
@@ -477,13 +468,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceTopicRequest 请求对象
+     * @param request CreateInstanceTopicRequest 请求对象
      * @return SyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse>
      */
     public SyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse> createInstanceTopicInvoker(
         CreateInstanceTopicRequest request) {
-        return new SyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse>(request,
-            KafkaMeta.createInstanceTopic, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createInstanceTopic, hcClient);
     }
 
     /**
@@ -493,7 +483,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceUserRequest 请求对象
+     * @param request CreateInstanceUserRequest 请求对象
      * @return CreateInstanceUserResponse
      */
     public CreateInstanceUserResponse createInstanceUser(CreateInstanceUserRequest request) {
@@ -507,13 +497,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceUserRequest 请求对象
+     * @param request CreateInstanceUserRequest 请求对象
      * @return SyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse>
      */
     public SyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse> createInstanceUserInvoker(
         CreateInstanceUserRequest request) {
-        return new SyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse>(request,
-            KafkaMeta.createInstanceUser, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createInstanceUser, hcClient);
     }
 
     /**
@@ -523,7 +512,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKafkaConsumerGroupRequest 请求对象
+     * @param request CreateKafkaConsumerGroupRequest 请求对象
      * @return CreateKafkaConsumerGroupResponse
      */
     public CreateKafkaConsumerGroupResponse createKafkaConsumerGroup(CreateKafkaConsumerGroupRequest request) {
@@ -537,13 +526,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKafkaConsumerGroupRequest 请求对象
+     * @param request CreateKafkaConsumerGroupRequest 请求对象
      * @return SyncInvoker<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse>
      */
     public SyncInvoker<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse> createKafkaConsumerGroupInvoker(
         CreateKafkaConsumerGroupRequest request) {
-        return new SyncInvoker<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse>(request,
-            KafkaMeta.createKafkaConsumerGroup, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createKafkaConsumerGroup, hcClient);
     }
 
     /**
@@ -553,7 +541,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request CreateKafkaUserClientQuotaTaskRequest 请求对象
      * @return CreateKafkaUserClientQuotaTaskResponse
      */
     public CreateKafkaUserClientQuotaTaskResponse createKafkaUserClientQuotaTask(
@@ -568,13 +556,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request CreateKafkaUserClientQuotaTaskRequest 请求对象
      * @return SyncInvoker<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse>
      */
     public SyncInvoker<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse> createKafkaUserClientQuotaTaskInvoker(
         CreateKafkaUserClientQuotaTaskRequest request) {
-        return new SyncInvoker<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse>(request,
-            KafkaMeta.createKafkaUserClientQuotaTask, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createKafkaUserClientQuotaTask, hcClient);
     }
 
     /**
@@ -584,7 +571,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceRequest 请求对象
+     * @param request CreatePostPaidInstanceRequest 请求对象
      * @return CreatePostPaidInstanceResponse
      */
     public CreatePostPaidInstanceResponse createPostPaidInstance(CreatePostPaidInstanceRequest request) {
@@ -598,13 +585,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceRequest 请求对象
+     * @param request CreatePostPaidInstanceRequest 请求对象
      * @return SyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>
      */
     public SyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstanceInvoker(
         CreatePostPaidInstanceRequest request) {
-        return new SyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>(request,
-            KafkaMeta.createPostPaidInstance, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createPostPaidInstance, hcClient);
     }
 
     /**
@@ -614,7 +600,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateReassignmentTaskRequest 请求对象
+     * @param request CreateReassignmentTaskRequest 请求对象
      * @return CreateReassignmentTaskResponse
      */
     public CreateReassignmentTaskResponse createReassignmentTask(CreateReassignmentTaskRequest request) {
@@ -628,13 +614,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateReassignmentTaskRequest 请求对象
+     * @param request CreateReassignmentTaskRequest 请求对象
      * @return SyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse>
      */
     public SyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> createReassignmentTaskInvoker(
         CreateReassignmentTaskRequest request) {
-        return new SyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse>(request,
-            KafkaMeta.createReassignmentTask, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createReassignmentTask, hcClient);
     }
 
     /**
@@ -644,7 +629,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateShrinkageJobRequest 请求对象
+     * @param request CreateShrinkageJobRequest 请求对象
      * @return CreateShrinkageJobResponse
      */
     public CreateShrinkageJobResponse createShrinkageJob(CreateShrinkageJobRequest request) {
@@ -658,13 +643,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateShrinkageJobRequest 请求对象
+     * @param request CreateShrinkageJobRequest 请求对象
      * @return SyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse>
      */
     public SyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse> createShrinkageJobInvoker(
         CreateShrinkageJobRequest request) {
-        return new SyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse>(request,
-            KafkaMeta.createShrinkageJob, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createShrinkageJob, hcClient);
     }
 
     /**
@@ -674,7 +658,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSinkTaskRequest 请求对象
+     * @param request CreateSinkTaskRequest 请求对象
      * @return CreateSinkTaskResponse
      */
     public CreateSinkTaskResponse createSinkTask(CreateSinkTaskRequest request) {
@@ -688,13 +672,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSinkTaskRequest 请求对象
+     * @param request CreateSinkTaskRequest 请求对象
      * @return SyncInvoker<CreateSinkTaskRequest, CreateSinkTaskResponse>
      */
     public SyncInvoker<CreateSinkTaskRequest, CreateSinkTaskResponse> createSinkTaskInvoker(
         CreateSinkTaskRequest request) {
-        return new SyncInvoker<CreateSinkTaskRequest, CreateSinkTaskResponse>(request, KafkaMeta.createSinkTask,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.createSinkTask, hcClient);
     }
 
     /**
@@ -704,7 +687,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackgroundTaskRequest 请求对象
+     * @param request DeleteBackgroundTaskRequest 请求对象
      * @return DeleteBackgroundTaskResponse
      */
     public DeleteBackgroundTaskResponse deleteBackgroundTask(DeleteBackgroundTaskRequest request) {
@@ -718,13 +701,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackgroundTaskRequest 请求对象
+     * @param request DeleteBackgroundTaskRequest 请求对象
      * @return SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>
      */
     public SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTaskInvoker(
         DeleteBackgroundTaskRequest request) {
-        return new SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>(request,
-            KafkaMeta.deleteBackgroundTask, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.deleteBackgroundTask, hcClient);
     }
 
     /**
@@ -734,7 +716,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectorRequest 请求对象
+     * @param request DeleteConnectorRequest 请求对象
      * @return DeleteConnectorResponse
      */
     public DeleteConnectorResponse deleteConnector(DeleteConnectorRequest request) {
@@ -748,13 +730,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectorRequest 请求对象
+     * @param request DeleteConnectorRequest 请求对象
      * @return SyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse>
      */
     public SyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse> deleteConnectorInvoker(
         DeleteConnectorRequest request) {
-        return new SyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse>(request, KafkaMeta.deleteConnector,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.deleteConnector, hcClient);
     }
 
     /**
@@ -764,7 +745,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
      */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
@@ -778,13 +759,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
         DeleteInstanceRequest request) {
-        return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, KafkaMeta.deleteInstance,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -794,7 +774,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request DeleteKafkaUserClientQuotaTaskRequest 请求对象
      * @return DeleteKafkaUserClientQuotaTaskResponse
      */
     public DeleteKafkaUserClientQuotaTaskResponse deleteKafkaUserClientQuotaTask(
@@ -809,13 +789,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request DeleteKafkaUserClientQuotaTaskRequest 请求对象
      * @return SyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse>
      */
     public SyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> deleteKafkaUserClientQuotaTaskInvoker(
         DeleteKafkaUserClientQuotaTaskRequest request) {
-        return new SyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse>(request,
-            KafkaMeta.deleteKafkaUserClientQuotaTask, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.deleteKafkaUserClientQuotaTask, hcClient);
     }
 
     /**
@@ -825,7 +804,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSinkTaskRequest 请求对象
+     * @param request DeleteSinkTaskRequest 请求对象
      * @return DeleteSinkTaskResponse
      */
     public DeleteSinkTaskResponse deleteSinkTask(DeleteSinkTaskRequest request) {
@@ -839,13 +818,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSinkTaskRequest 请求对象
+     * @param request DeleteSinkTaskRequest 请求对象
      * @return SyncInvoker<DeleteSinkTaskRequest, DeleteSinkTaskResponse>
      */
     public SyncInvoker<DeleteSinkTaskRequest, DeleteSinkTaskResponse> deleteSinkTaskInvoker(
         DeleteSinkTaskRequest request) {
-        return new SyncInvoker<DeleteSinkTaskRequest, DeleteSinkTaskResponse>(request, KafkaMeta.deleteSinkTask,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.deleteSinkTask, hcClient);
     }
 
     /**
@@ -855,7 +833,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return ListAvailableZonesResponse
      */
     public ListAvailableZonesResponse listAvailableZones(ListAvailableZonesRequest request) {
@@ -869,13 +847,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
      */
     public SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesInvoker(
         ListAvailableZonesRequest request) {
-        return new SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request,
-            KafkaMeta.listAvailableZones, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.listAvailableZones, hcClient);
     }
 
     /**
@@ -885,7 +862,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackgroundTasksRequest 请求对象
+     * @param request ListBackgroundTasksRequest 请求对象
      * @return ListBackgroundTasksResponse
      */
     public ListBackgroundTasksResponse listBackgroundTasks(ListBackgroundTasksRequest request) {
@@ -899,13 +876,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackgroundTasksRequest 请求对象
+     * @param request ListBackgroundTasksRequest 请求对象
      * @return SyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse>
      */
     public SyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasksInvoker(
         ListBackgroundTasksRequest request) {
-        return new SyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse>(request,
-            KafkaMeta.listBackgroundTasks, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.listBackgroundTasks, hcClient);
     }
 
     /**
@@ -915,7 +891,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEngineProductsRequest 请求对象
+     * @param request ListEngineProductsRequest 请求对象
      * @return ListEngineProductsResponse
      */
     public ListEngineProductsResponse listEngineProducts(ListEngineProductsRequest request) {
@@ -929,13 +905,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEngineProductsRequest 请求对象
+     * @param request ListEngineProductsRequest 请求对象
      * @return SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>
      */
     public SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProductsInvoker(
         ListEngineProductsRequest request) {
-        return new SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>(request,
-            KafkaMeta.listEngineProducts, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.listEngineProducts, hcClient);
     }
 
     /**
@@ -945,7 +920,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConsumerGroupsRequest 请求对象
+     * @param request ListInstanceConsumerGroupsRequest 请求对象
      * @return ListInstanceConsumerGroupsResponse
      */
     public ListInstanceConsumerGroupsResponse listInstanceConsumerGroups(ListInstanceConsumerGroupsRequest request) {
@@ -959,13 +934,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConsumerGroupsRequest 请求对象
+     * @param request ListInstanceConsumerGroupsRequest 请求对象
      * @return SyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>
      */
     public SyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> listInstanceConsumerGroupsInvoker(
         ListInstanceConsumerGroupsRequest request) {
-        return new SyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>(request,
-            KafkaMeta.listInstanceConsumerGroups, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.listInstanceConsumerGroups, hcClient);
     }
 
     /**
@@ -975,7 +949,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTopicsRequest 请求对象
+     * @param request ListInstanceTopicsRequest 请求对象
      * @return ListInstanceTopicsResponse
      */
     public ListInstanceTopicsResponse listInstanceTopics(ListInstanceTopicsRequest request) {
@@ -989,13 +963,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTopicsRequest 请求对象
+     * @param request ListInstanceTopicsRequest 请求对象
      * @return SyncInvoker<ListInstanceTopicsRequest, ListInstanceTopicsResponse>
      */
     public SyncInvoker<ListInstanceTopicsRequest, ListInstanceTopicsResponse> listInstanceTopicsInvoker(
         ListInstanceTopicsRequest request) {
-        return new SyncInvoker<ListInstanceTopicsRequest, ListInstanceTopicsResponse>(request,
-            KafkaMeta.listInstanceTopics, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.listInstanceTopics, hcClient);
     }
 
     /**
@@ -1005,7 +978,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return ListInstancesResponse
      */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
@@ -1019,11 +992,11 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
-        return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, KafkaMeta.listInstances, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.listInstances, hcClient);
     }
 
     /**
@@ -1039,7 +1012,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return ListProductsResponse
      */
     public ListProductsResponse listProducts(ListProductsRequest request) {
@@ -1059,11 +1032,11 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return SyncInvoker<ListProductsRequest, ListProductsResponse>
      */
     public SyncInvoker<ListProductsRequest, ListProductsResponse> listProductsInvoker(ListProductsRequest request) {
-        return new SyncInvoker<ListProductsRequest, ListProductsResponse>(request, KafkaMeta.listProducts, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.listProducts, hcClient);
     }
 
     /**
@@ -1073,7 +1046,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSinkTasksRequest 请求对象
+     * @param request ListSinkTasksRequest 请求对象
      * @return ListSinkTasksResponse
      */
     public ListSinkTasksResponse listSinkTasks(ListSinkTasksRequest request) {
@@ -1087,11 +1060,11 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSinkTasksRequest 请求对象
+     * @param request ListSinkTasksRequest 请求对象
      * @return SyncInvoker<ListSinkTasksRequest, ListSinkTasksResponse>
      */
     public SyncInvoker<ListSinkTasksRequest, ListSinkTasksResponse> listSinkTasksInvoker(ListSinkTasksRequest request) {
-        return new SyncInvoker<ListSinkTasksRequest, ListSinkTasksResponse>(request, KafkaMeta.listSinkTasks, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.listSinkTasks, hcClient);
     }
 
     /**
@@ -1101,7 +1074,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicPartitionsRequest 请求对象
+     * @param request ListTopicPartitionsRequest 请求对象
      * @return ListTopicPartitionsResponse
      */
     public ListTopicPartitionsResponse listTopicPartitions(ListTopicPartitionsRequest request) {
@@ -1115,13 +1088,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicPartitionsRequest 请求对象
+     * @param request ListTopicPartitionsRequest 请求对象
      * @return SyncInvoker<ListTopicPartitionsRequest, ListTopicPartitionsResponse>
      */
     public SyncInvoker<ListTopicPartitionsRequest, ListTopicPartitionsResponse> listTopicPartitionsInvoker(
         ListTopicPartitionsRequest request) {
-        return new SyncInvoker<ListTopicPartitionsRequest, ListTopicPartitionsResponse>(request,
-            KafkaMeta.listTopicPartitions, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.listTopicPartitions, hcClient);
     }
 
     /**
@@ -1131,7 +1103,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicProducersRequest 请求对象
+     * @param request ListTopicProducersRequest 请求对象
      * @return ListTopicProducersResponse
      */
     public ListTopicProducersResponse listTopicProducers(ListTopicProducersRequest request) {
@@ -1145,13 +1117,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicProducersRequest 请求对象
+     * @param request ListTopicProducersRequest 请求对象
      * @return SyncInvoker<ListTopicProducersRequest, ListTopicProducersResponse>
      */
     public SyncInvoker<ListTopicProducersRequest, ListTopicProducersResponse> listTopicProducersInvoker(
         ListTopicProducersRequest request) {
-        return new SyncInvoker<ListTopicProducersRequest, ListTopicProducersResponse>(request,
-            KafkaMeta.listTopicProducers, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.listTopicProducers, hcClient);
     }
 
     /**
@@ -1161,7 +1132,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyInstanceConfigsRequest 请求对象
+     * @param request ModifyInstanceConfigsRequest 请求对象
      * @return ModifyInstanceConfigsResponse
      */
     public ModifyInstanceConfigsResponse modifyInstanceConfigs(ModifyInstanceConfigsRequest request) {
@@ -1175,13 +1146,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyInstanceConfigsRequest 请求对象
+     * @param request ModifyInstanceConfigsRequest 请求对象
      * @return SyncInvoker<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse>
      */
     public SyncInvoker<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> modifyInstanceConfigsInvoker(
         ModifyInstanceConfigsRequest request) {
-        return new SyncInvoker<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse>(request,
-            KafkaMeta.modifyInstanceConfigs, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.modifyInstanceConfigs, hcClient);
     }
 
     /**
@@ -1191,7 +1161,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetManagerPasswordRequest 请求对象
+     * @param request ResetManagerPasswordRequest 请求对象
      * @return ResetManagerPasswordResponse
      */
     public ResetManagerPasswordResponse resetManagerPassword(ResetManagerPasswordRequest request) {
@@ -1205,13 +1175,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetManagerPasswordRequest 请求对象
+     * @param request ResetManagerPasswordRequest 请求对象
      * @return SyncInvoker<ResetManagerPasswordRequest, ResetManagerPasswordResponse>
      */
     public SyncInvoker<ResetManagerPasswordRequest, ResetManagerPasswordResponse> resetManagerPasswordInvoker(
         ResetManagerPasswordRequest request) {
-        return new SyncInvoker<ResetManagerPasswordRequest, ResetManagerPasswordResponse>(request,
-            KafkaMeta.resetManagerPassword, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.resetManagerPassword, hcClient);
     }
 
     /**
@@ -1223,7 +1192,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMessageOffsetRequest 请求对象
+     * @param request ResetMessageOffsetRequest 请求对象
      * @return ResetMessageOffsetResponse
      */
     public ResetMessageOffsetResponse resetMessageOffset(ResetMessageOffsetRequest request) {
@@ -1239,13 +1208,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMessageOffsetRequest 请求对象
+     * @param request ResetMessageOffsetRequest 请求对象
      * @return SyncInvoker<ResetMessageOffsetRequest, ResetMessageOffsetResponse>
      */
     public SyncInvoker<ResetMessageOffsetRequest, ResetMessageOffsetResponse> resetMessageOffsetInvoker(
         ResetMessageOffsetRequest request) {
-        return new SyncInvoker<ResetMessageOffsetRequest, ResetMessageOffsetResponse>(request,
-            KafkaMeta.resetMessageOffset, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.resetMessageOffset, hcClient);
     }
 
     /**
@@ -1257,7 +1225,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMessageOffsetWithEngineRequest 请求对象
+     * @param request ResetMessageOffsetWithEngineRequest 请求对象
      * @return ResetMessageOffsetWithEngineResponse
      */
     public ResetMessageOffsetWithEngineResponse resetMessageOffsetWithEngine(
@@ -1274,13 +1242,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMessageOffsetWithEngineRequest 请求对象
+     * @param request ResetMessageOffsetWithEngineRequest 请求对象
      * @return SyncInvoker<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse>
      */
     public SyncInvoker<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse> resetMessageOffsetWithEngineInvoker(
         ResetMessageOffsetWithEngineRequest request) {
-        return new SyncInvoker<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse>(request,
-            KafkaMeta.resetMessageOffsetWithEngine, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.resetMessageOffsetWithEngine, hcClient);
     }
 
     /**
@@ -1290,7 +1257,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
      */
     public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
@@ -1304,11 +1271,11 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
     public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
-        return new SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, KafkaMeta.resetPassword, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.resetPassword, hcClient);
     }
 
     /**
@@ -1318,7 +1285,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetUserPasswrodRequest 请求对象
+     * @param request ResetUserPasswrodRequest 请求对象
      * @return ResetUserPasswrodResponse
      */
     public ResetUserPasswrodResponse resetUserPasswrod(ResetUserPasswrodRequest request) {
@@ -1332,13 +1299,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetUserPasswrodRequest 请求对象
+     * @param request ResetUserPasswrodRequest 请求对象
      * @return SyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse>
      */
     public SyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse> resetUserPasswrodInvoker(
         ResetUserPasswrodRequest request) {
-        return new SyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse>(request,
-            KafkaMeta.resetUserPasswrod, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.resetUserPasswrod, hcClient);
     }
 
     /**
@@ -1348,7 +1314,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeEngineInstanceRequest 请求对象
+     * @param request ResizeEngineInstanceRequest 请求对象
      * @return ResizeEngineInstanceResponse
      */
     public ResizeEngineInstanceResponse resizeEngineInstance(ResizeEngineInstanceRequest request) {
@@ -1362,13 +1328,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeEngineInstanceRequest 请求对象
+     * @param request ResizeEngineInstanceRequest 请求对象
      * @return SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>
      */
     public SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstanceInvoker(
         ResizeEngineInstanceRequest request) {
-        return new SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>(request,
-            KafkaMeta.resizeEngineInstance, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.resizeEngineInstance, hcClient);
     }
 
     /**
@@ -1378,7 +1343,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse
      */
     public ResizeInstanceResponse resizeInstance(ResizeInstanceRequest request) {
@@ -1392,13 +1357,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
      */
     public SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceInvoker(
         ResizeInstanceRequest request) {
-        return new SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request, KafkaMeta.resizeInstance,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.resizeInstance, hcClient);
     }
 
     /**
@@ -1408,7 +1372,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartManagerRequest 请求对象
+     * @param request RestartManagerRequest 请求对象
      * @return RestartManagerResponse
      */
     public RestartManagerResponse restartManager(RestartManagerRequest request) {
@@ -1422,13 +1386,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartManagerRequest 请求对象
+     * @param request RestartManagerRequest 请求对象
      * @return SyncInvoker<RestartManagerRequest, RestartManagerResponse>
      */
     public SyncInvoker<RestartManagerRequest, RestartManagerResponse> restartManagerInvoker(
         RestartManagerRequest request) {
-        return new SyncInvoker<RestartManagerRequest, RestartManagerResponse>(request, KafkaMeta.restartManager,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.restartManager, hcClient);
     }
 
     /**
@@ -1438,7 +1401,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendKafkaMessageRequest 请求对象
+     * @param request SendKafkaMessageRequest 请求对象
      * @return SendKafkaMessageResponse
      */
     public SendKafkaMessageResponse sendKafkaMessage(SendKafkaMessageRequest request) {
@@ -1452,13 +1415,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendKafkaMessageRequest 请求对象
+     * @param request SendKafkaMessageRequest 请求对象
      * @return SyncInvoker<SendKafkaMessageRequest, SendKafkaMessageResponse>
      */
     public SyncInvoker<SendKafkaMessageRequest, SendKafkaMessageResponse> sendKafkaMessageInvoker(
         SendKafkaMessageRequest request) {
-        return new SyncInvoker<SendKafkaMessageRequest, SendKafkaMessageResponse>(request, KafkaMeta.sendKafkaMessage,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.sendKafkaMessage, hcClient);
     }
 
     /**
@@ -1468,7 +1430,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackgroundTaskRequest 请求对象
+     * @param request ShowBackgroundTaskRequest 请求对象
      * @return ShowBackgroundTaskResponse
      */
     public ShowBackgroundTaskResponse showBackgroundTask(ShowBackgroundTaskRequest request) {
@@ -1482,13 +1444,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackgroundTaskRequest 请求对象
+     * @param request ShowBackgroundTaskRequest 请求对象
      * @return SyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>
      */
     public SyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTaskInvoker(
         ShowBackgroundTaskRequest request) {
-        return new SyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>(request,
-            KafkaMeta.showBackgroundTask, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showBackgroundTask, hcClient);
     }
 
     /**
@@ -1498,7 +1459,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCesHierarchyRequest 请求对象
+     * @param request ShowCesHierarchyRequest 请求对象
      * @return ShowCesHierarchyResponse
      */
     public ShowCesHierarchyResponse showCesHierarchy(ShowCesHierarchyRequest request) {
@@ -1512,13 +1473,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCesHierarchyRequest 请求对象
+     * @param request ShowCesHierarchyRequest 请求对象
      * @return SyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>
      */
     public SyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchyInvoker(
         ShowCesHierarchyRequest request) {
-        return new SyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>(request, KafkaMeta.showCesHierarchy,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showCesHierarchy, hcClient);
     }
 
     /**
@@ -1528,7 +1488,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterRequest 请求对象
+     * @param request ShowClusterRequest 请求对象
      * @return ShowClusterResponse
      */
     public ShowClusterResponse showCluster(ShowClusterRequest request) {
@@ -1542,11 +1502,11 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterRequest 请求对象
+     * @param request ShowClusterRequest 请求对象
      * @return SyncInvoker<ShowClusterRequest, ShowClusterResponse>
      */
     public SyncInvoker<ShowClusterRequest, ShowClusterResponse> showClusterInvoker(ShowClusterRequest request) {
-        return new SyncInvoker<ShowClusterRequest, ShowClusterResponse>(request, KafkaMeta.showCluster, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showCluster, hcClient);
     }
 
     /**
@@ -1556,7 +1516,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCoordinatorsRequest 请求对象
+     * @param request ShowCoordinatorsRequest 请求对象
      * @return ShowCoordinatorsResponse
      */
     public ShowCoordinatorsResponse showCoordinators(ShowCoordinatorsRequest request) {
@@ -1570,13 +1530,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCoordinatorsRequest 请求对象
+     * @param request ShowCoordinatorsRequest 请求对象
      * @return SyncInvoker<ShowCoordinatorsRequest, ShowCoordinatorsResponse>
      */
     public SyncInvoker<ShowCoordinatorsRequest, ShowCoordinatorsResponse> showCoordinatorsInvoker(
         ShowCoordinatorsRequest request) {
-        return new SyncInvoker<ShowCoordinatorsRequest, ShowCoordinatorsResponse>(request, KafkaMeta.showCoordinators,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showCoordinators, hcClient);
     }
 
     /**
@@ -1586,7 +1545,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowEngineInstanceExtendProductInfoRequest 请求对象
      * @return ShowEngineInstanceExtendProductInfoResponse
      */
     public ShowEngineInstanceExtendProductInfoResponse showEngineInstanceExtendProductInfo(
@@ -1601,13 +1560,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowEngineInstanceExtendProductInfoRequest 请求对象
      * @return SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>
      */
     public SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoInvoker(
         ShowEngineInstanceExtendProductInfoRequest request) {
-        return new SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>(
-            request, KafkaMeta.showEngineInstanceExtendProductInfo, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showEngineInstanceExtendProductInfo, hcClient);
     }
 
     /**
@@ -1617,7 +1575,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGroupsRequest 请求对象
+     * @param request ShowGroupsRequest 请求对象
      * @return ShowGroupsResponse
      */
     public ShowGroupsResponse showGroups(ShowGroupsRequest request) {
@@ -1631,11 +1589,11 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGroupsRequest 请求对象
+     * @param request ShowGroupsRequest 请求对象
      * @return SyncInvoker<ShowGroupsRequest, ShowGroupsResponse>
      */
     public SyncInvoker<ShowGroupsRequest, ShowGroupsResponse> showGroupsInvoker(ShowGroupsRequest request) {
-        return new SyncInvoker<ShowGroupsRequest, ShowGroupsResponse>(request, KafkaMeta.showGroups, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showGroups, hcClient);
     }
 
     /**
@@ -1645,7 +1603,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
      */
     public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
@@ -1659,11 +1617,11 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
-        return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, KafkaMeta.showInstance, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showInstance, hcClient);
     }
 
     /**
@@ -1673,7 +1631,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceConfigsRequest 请求对象
+     * @param request ShowInstanceConfigsRequest 请求对象
      * @return ShowInstanceConfigsResponse
      */
     public ShowInstanceConfigsResponse showInstanceConfigs(ShowInstanceConfigsRequest request) {
@@ -1687,13 +1645,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceConfigsRequest 请求对象
+     * @param request ShowInstanceConfigsRequest 请求对象
      * @return SyncInvoker<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse>
      */
     public SyncInvoker<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse> showInstanceConfigsInvoker(
         ShowInstanceConfigsRequest request) {
-        return new SyncInvoker<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse>(request,
-            KafkaMeta.showInstanceConfigs, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showInstanceConfigs, hcClient);
     }
 
     /**
@@ -1703,7 +1660,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowInstanceExtendProductInfoRequest 请求对象
      * @return ShowInstanceExtendProductInfoResponse
      */
     public ShowInstanceExtendProductInfoResponse showInstanceExtendProductInfo(
@@ -1718,13 +1675,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowInstanceExtendProductInfoRequest 请求对象
      * @return SyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>
      */
     public SyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfoInvoker(
         ShowInstanceExtendProductInfoRequest request) {
-        return new SyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>(request,
-            KafkaMeta.showInstanceExtendProductInfo, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showInstanceExtendProductInfo, hcClient);
     }
 
     /**
@@ -1735,7 +1691,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceMessagesRequest 请求对象
+     * @param request ShowInstanceMessagesRequest 请求对象
      * @return ShowInstanceMessagesResponse
      */
     public ShowInstanceMessagesResponse showInstanceMessages(ShowInstanceMessagesRequest request) {
@@ -1750,13 +1706,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceMessagesRequest 请求对象
+     * @param request ShowInstanceMessagesRequest 请求对象
      * @return SyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse>
      */
     public SyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> showInstanceMessagesInvoker(
         ShowInstanceMessagesRequest request) {
-        return new SyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse>(request,
-            KafkaMeta.showInstanceMessages, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showInstanceMessages, hcClient);
     }
 
     /**
@@ -1766,7 +1721,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceTopicDetailRequest 请求对象
+     * @param request ShowInstanceTopicDetailRequest 请求对象
      * @return ShowInstanceTopicDetailResponse
      */
     public ShowInstanceTopicDetailResponse showInstanceTopicDetail(ShowInstanceTopicDetailRequest request) {
@@ -1780,13 +1735,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceTopicDetailRequest 请求对象
+     * @param request ShowInstanceTopicDetailRequest 请求对象
      * @return SyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse>
      */
     public SyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> showInstanceTopicDetailInvoker(
         ShowInstanceTopicDetailRequest request) {
-        return new SyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse>(request,
-            KafkaMeta.showInstanceTopicDetail, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showInstanceTopicDetail, hcClient);
     }
 
     /**
@@ -1798,7 +1752,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceUsersRequest 请求对象
+     * @param request ShowInstanceUsersRequest 请求对象
      * @return ShowInstanceUsersResponse
      */
     public ShowInstanceUsersResponse showInstanceUsers(ShowInstanceUsersRequest request) {
@@ -1814,13 +1768,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceUsersRequest 请求对象
+     * @param request ShowInstanceUsersRequest 请求对象
      * @return SyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse>
      */
     public SyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse> showInstanceUsersInvoker(
         ShowInstanceUsersRequest request) {
-        return new SyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse>(request,
-            KafkaMeta.showInstanceUsers, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showInstanceUsers, hcClient);
     }
 
     /**
@@ -1830,7 +1783,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaProjectTagsRequest 请求对象
+     * @param request ShowKafkaProjectTagsRequest 请求对象
      * @return ShowKafkaProjectTagsResponse
      */
     public ShowKafkaProjectTagsResponse showKafkaProjectTags(ShowKafkaProjectTagsRequest request) {
@@ -1844,13 +1797,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaProjectTagsRequest 请求对象
+     * @param request ShowKafkaProjectTagsRequest 请求对象
      * @return SyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse>
      */
     public SyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> showKafkaProjectTagsInvoker(
         ShowKafkaProjectTagsRequest request) {
-        return new SyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse>(request,
-            KafkaMeta.showKafkaProjectTags, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showKafkaProjectTags, hcClient);
     }
 
     /**
@@ -1860,7 +1812,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaTagsRequest 请求对象
+     * @param request ShowKafkaTagsRequest 请求对象
      * @return ShowKafkaTagsResponse
      */
     public ShowKafkaTagsResponse showKafkaTags(ShowKafkaTagsRequest request) {
@@ -1874,11 +1826,11 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaTagsRequest 请求对象
+     * @param request ShowKafkaTagsRequest 请求对象
      * @return SyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse>
      */
     public SyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse> showKafkaTagsInvoker(ShowKafkaTagsRequest request) {
-        return new SyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse>(request, KafkaMeta.showKafkaTags, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showKafkaTags, hcClient);
     }
 
     /**
@@ -1888,7 +1840,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaTopicPartitionDiskusageRequest 请求对象
+     * @param request ShowKafkaTopicPartitionDiskusageRequest 请求对象
      * @return ShowKafkaTopicPartitionDiskusageResponse
      */
     public ShowKafkaTopicPartitionDiskusageResponse showKafkaTopicPartitionDiskusage(
@@ -1903,13 +1855,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaTopicPartitionDiskusageRequest 请求对象
+     * @param request ShowKafkaTopicPartitionDiskusageRequest 请求对象
      * @return SyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse>
      */
     public SyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusageInvoker(
         ShowKafkaTopicPartitionDiskusageRequest request) {
-        return new SyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse>(
-            request, KafkaMeta.showKafkaTopicPartitionDiskusage, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showKafkaTopicPartitionDiskusage, hcClient);
     }
 
     /**
@@ -1919,7 +1870,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaUserClientQuotaRequest 请求对象
+     * @param request ShowKafkaUserClientQuotaRequest 请求对象
      * @return ShowKafkaUserClientQuotaResponse
      */
     public ShowKafkaUserClientQuotaResponse showKafkaUserClientQuota(ShowKafkaUserClientQuotaRequest request) {
@@ -1933,13 +1884,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaUserClientQuotaRequest 请求对象
+     * @param request ShowKafkaUserClientQuotaRequest 请求对象
      * @return SyncInvoker<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse>
      */
     public SyncInvoker<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse> showKafkaUserClientQuotaInvoker(
         ShowKafkaUserClientQuotaRequest request) {
-        return new SyncInvoker<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse>(request,
-            KafkaMeta.showKafkaUserClientQuota, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showKafkaUserClientQuota, hcClient);
     }
 
     /**
@@ -1949,7 +1899,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMaintainWindowsRequest 请求对象
+     * @param request ShowMaintainWindowsRequest 请求对象
      * @return ShowMaintainWindowsResponse
      */
     public ShowMaintainWindowsResponse showMaintainWindows(ShowMaintainWindowsRequest request) {
@@ -1963,13 +1913,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMaintainWindowsRequest 请求对象
+     * @param request ShowMaintainWindowsRequest 请求对象
      * @return SyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>
      */
     public SyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindowsInvoker(
         ShowMaintainWindowsRequest request) {
-        return new SyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>(request,
-            KafkaMeta.showMaintainWindows, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showMaintainWindows, hcClient);
     }
 
     /**
@@ -1979,7 +1928,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessagesRequest 请求对象
+     * @param request ShowMessagesRequest 请求对象
      * @return ShowMessagesResponse
      */
     public ShowMessagesResponse showMessages(ShowMessagesRequest request) {
@@ -1993,11 +1942,11 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessagesRequest 请求对象
+     * @param request ShowMessagesRequest 请求对象
      * @return SyncInvoker<ShowMessagesRequest, ShowMessagesResponse>
      */
     public SyncInvoker<ShowMessagesRequest, ShowMessagesResponse> showMessagesInvoker(ShowMessagesRequest request) {
-        return new SyncInvoker<ShowMessagesRequest, ShowMessagesResponse>(request, KafkaMeta.showMessages, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showMessages, hcClient);
     }
 
     /**
@@ -2007,7 +1956,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionBeginningMessageRequest 请求对象
+     * @param request ShowPartitionBeginningMessageRequest 请求对象
      * @return ShowPartitionBeginningMessageResponse
      */
     public ShowPartitionBeginningMessageResponse showPartitionBeginningMessage(
@@ -2022,13 +1971,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionBeginningMessageRequest 请求对象
+     * @param request ShowPartitionBeginningMessageRequest 请求对象
      * @return SyncInvoker<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse>
      */
     public SyncInvoker<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> showPartitionBeginningMessageInvoker(
         ShowPartitionBeginningMessageRequest request) {
-        return new SyncInvoker<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse>(request,
-            KafkaMeta.showPartitionBeginningMessage, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showPartitionBeginningMessage, hcClient);
     }
 
     /**
@@ -2038,7 +1986,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionEndMessageRequest 请求对象
+     * @param request ShowPartitionEndMessageRequest 请求对象
      * @return ShowPartitionEndMessageResponse
      */
     public ShowPartitionEndMessageResponse showPartitionEndMessage(ShowPartitionEndMessageRequest request) {
@@ -2052,13 +2000,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionEndMessageRequest 请求对象
+     * @param request ShowPartitionEndMessageRequest 请求对象
      * @return SyncInvoker<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse>
      */
     public SyncInvoker<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> showPartitionEndMessageInvoker(
         ShowPartitionEndMessageRequest request) {
-        return new SyncInvoker<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse>(request,
-            KafkaMeta.showPartitionEndMessage, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showPartitionEndMessage, hcClient);
     }
 
     /**
@@ -2068,7 +2015,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionMessageRequest 请求对象
+     * @param request ShowPartitionMessageRequest 请求对象
      * @return ShowPartitionMessageResponse
      */
     public ShowPartitionMessageResponse showPartitionMessage(ShowPartitionMessageRequest request) {
@@ -2082,13 +2029,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionMessageRequest 请求对象
+     * @param request ShowPartitionMessageRequest 请求对象
      * @return SyncInvoker<ShowPartitionMessageRequest, ShowPartitionMessageResponse>
      */
     public SyncInvoker<ShowPartitionMessageRequest, ShowPartitionMessageResponse> showPartitionMessageInvoker(
         ShowPartitionMessageRequest request) {
-        return new SyncInvoker<ShowPartitionMessageRequest, ShowPartitionMessageResponse>(request,
-            KafkaMeta.showPartitionMessage, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showPartitionMessage, hcClient);
     }
 
     /**
@@ -2098,7 +2044,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowShrinkCheckResultRequest 请求对象
+     * @param request ShowShrinkCheckResultRequest 请求对象
      * @return ShowShrinkCheckResultResponse
      */
     public ShowShrinkCheckResultResponse showShrinkCheckResult(ShowShrinkCheckResultRequest request) {
@@ -2112,13 +2058,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowShrinkCheckResultRequest 请求对象
+     * @param request ShowShrinkCheckResultRequest 请求对象
      * @return SyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse>
      */
     public SyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> showShrinkCheckResultInvoker(
         ShowShrinkCheckResultRequest request) {
-        return new SyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse>(request,
-            KafkaMeta.showShrinkCheckResult, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showShrinkCheckResult, hcClient);
     }
 
     /**
@@ -2128,7 +2073,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSinkTaskDetailRequest 请求对象
+     * @param request ShowSinkTaskDetailRequest 请求对象
      * @return ShowSinkTaskDetailResponse
      */
     public ShowSinkTaskDetailResponse showSinkTaskDetail(ShowSinkTaskDetailRequest request) {
@@ -2142,13 +2087,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSinkTaskDetailRequest 请求对象
+     * @param request ShowSinkTaskDetailRequest 请求对象
      * @return SyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse>
      */
     public SyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetailInvoker(
         ShowSinkTaskDetailRequest request) {
-        return new SyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse>(request,
-            KafkaMeta.showSinkTaskDetail, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showSinkTaskDetail, hcClient);
     }
 
     /**
@@ -2160,7 +2104,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopicAccessPolicyRequest 请求对象
+     * @param request ShowTopicAccessPolicyRequest 请求对象
      * @return ShowTopicAccessPolicyResponse
      */
     public ShowTopicAccessPolicyResponse showTopicAccessPolicy(ShowTopicAccessPolicyRequest request) {
@@ -2176,13 +2120,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopicAccessPolicyRequest 请求对象
+     * @param request ShowTopicAccessPolicyRequest 请求对象
      * @return SyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse>
      */
     public SyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicyInvoker(
         ShowTopicAccessPolicyRequest request) {
-        return new SyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse>(request,
-            KafkaMeta.showTopicAccessPolicy, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.showTopicAccessPolicy, hcClient);
     }
 
     /**
@@ -2192,7 +2135,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
      */
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
@@ -2206,13 +2149,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
      */
     public SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceInvoker(
         UpdateInstanceRequest request) {
-        return new SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, KafkaMeta.updateInstance,
-            hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.updateInstance, hcClient);
     }
 
     /**
@@ -2222,7 +2164,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceAutoCreateTopicRequest 请求对象
+     * @param request UpdateInstanceAutoCreateTopicRequest 请求对象
      * @return UpdateInstanceAutoCreateTopicResponse
      */
     public UpdateInstanceAutoCreateTopicResponse updateInstanceAutoCreateTopic(
@@ -2237,13 +2179,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceAutoCreateTopicRequest 请求对象
+     * @param request UpdateInstanceAutoCreateTopicRequest 请求对象
      * @return SyncInvoker<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse>
      */
     public SyncInvoker<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> updateInstanceAutoCreateTopicInvoker(
         UpdateInstanceAutoCreateTopicRequest request) {
-        return new SyncInvoker<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse>(request,
-            KafkaMeta.updateInstanceAutoCreateTopic, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.updateInstanceAutoCreateTopic, hcClient);
     }
 
     /**
@@ -2253,7 +2194,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConsumerGroupRequest 请求对象
+     * @param request UpdateInstanceConsumerGroupRequest 请求对象
      * @return UpdateInstanceConsumerGroupResponse
      */
     public UpdateInstanceConsumerGroupResponse updateInstanceConsumerGroup(UpdateInstanceConsumerGroupRequest request) {
@@ -2267,13 +2208,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConsumerGroupRequest 请求对象
+     * @param request UpdateInstanceConsumerGroupRequest 请求对象
      * @return SyncInvoker<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse>
      */
     public SyncInvoker<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse> updateInstanceConsumerGroupInvoker(
         UpdateInstanceConsumerGroupRequest request) {
-        return new SyncInvoker<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse>(request,
-            KafkaMeta.updateInstanceConsumerGroup, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.updateInstanceConsumerGroup, hcClient);
     }
 
     /**
@@ -2283,7 +2223,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceCrossVpcIpRequest 请求对象
+     * @param request UpdateInstanceCrossVpcIpRequest 请求对象
      * @return UpdateInstanceCrossVpcIpResponse
      */
     public UpdateInstanceCrossVpcIpResponse updateInstanceCrossVpcIp(UpdateInstanceCrossVpcIpRequest request) {
@@ -2297,13 +2237,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceCrossVpcIpRequest 请求对象
+     * @param request UpdateInstanceCrossVpcIpRequest 请求对象
      * @return SyncInvoker<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse>
      */
     public SyncInvoker<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> updateInstanceCrossVpcIpInvoker(
         UpdateInstanceCrossVpcIpRequest request) {
-        return new SyncInvoker<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse>(request,
-            KafkaMeta.updateInstanceCrossVpcIp, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.updateInstanceCrossVpcIp, hcClient);
     }
 
     /**
@@ -2313,7 +2252,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceTopicRequest 请求对象
+     * @param request UpdateInstanceTopicRequest 请求对象
      * @return UpdateInstanceTopicResponse
      */
     public UpdateInstanceTopicResponse updateInstanceTopic(UpdateInstanceTopicRequest request) {
@@ -2327,13 +2266,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceTopicRequest 请求对象
+     * @param request UpdateInstanceTopicRequest 请求对象
      * @return SyncInvoker<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse>
      */
     public SyncInvoker<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> updateInstanceTopicInvoker(
         UpdateInstanceTopicRequest request) {
-        return new SyncInvoker<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse>(request,
-            KafkaMeta.updateInstanceTopic, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.updateInstanceTopic, hcClient);
     }
 
     /**
@@ -2343,7 +2281,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceUserRequest 请求对象
+     * @param request UpdateInstanceUserRequest 请求对象
      * @return UpdateInstanceUserResponse
      */
     public UpdateInstanceUserResponse updateInstanceUser(UpdateInstanceUserRequest request) {
@@ -2357,13 +2295,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceUserRequest 请求对象
+     * @param request UpdateInstanceUserRequest 请求对象
      * @return SyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse>
      */
     public SyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse> updateInstanceUserInvoker(
         UpdateInstanceUserRequest request) {
-        return new SyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse>(request,
-            KafkaMeta.updateInstanceUser, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.updateInstanceUser, hcClient);
     }
 
     /**
@@ -2373,7 +2310,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request UpdateKafkaUserClientQuotaTaskRequest 请求对象
      * @return UpdateKafkaUserClientQuotaTaskResponse
      */
     public UpdateKafkaUserClientQuotaTaskResponse updateKafkaUserClientQuotaTask(
@@ -2388,13 +2325,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request UpdateKafkaUserClientQuotaTaskRequest 请求对象
      * @return SyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse>
      */
     public SyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> updateKafkaUserClientQuotaTaskInvoker(
         UpdateKafkaUserClientQuotaTaskRequest request) {
-        return new SyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse>(request,
-            KafkaMeta.updateKafkaUserClientQuotaTask, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.updateKafkaUserClientQuotaTask, hcClient);
     }
 
     /**
@@ -2406,7 +2342,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSinkTaskQuotaRequest 请求对象
+     * @param request UpdateSinkTaskQuotaRequest 请求对象
      * @return UpdateSinkTaskQuotaResponse
      */
     public UpdateSinkTaskQuotaResponse updateSinkTaskQuota(UpdateSinkTaskQuotaRequest request) {
@@ -2422,13 +2358,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSinkTaskQuotaRequest 请求对象
+     * @param request UpdateSinkTaskQuotaRequest 请求对象
      * @return SyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse>
      */
     public SyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> updateSinkTaskQuotaInvoker(
         UpdateSinkTaskQuotaRequest request) {
-        return new SyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse>(request,
-            KafkaMeta.updateSinkTaskQuota, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.updateSinkTaskQuota, hcClient);
     }
 
     /**
@@ -2440,7 +2375,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicAccessPolicyRequest 请求对象
+     * @param request UpdateTopicAccessPolicyRequest 请求对象
      * @return UpdateTopicAccessPolicyResponse
      */
     public UpdateTopicAccessPolicyResponse updateTopicAccessPolicy(UpdateTopicAccessPolicyRequest request) {
@@ -2456,13 +2391,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicAccessPolicyRequest 请求对象
+     * @param request UpdateTopicAccessPolicyRequest 请求对象
      * @return SyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>
      */
     public SyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicyInvoker(
         UpdateTopicAccessPolicyRequest request) {
-        return new SyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>(request,
-            KafkaMeta.updateTopicAccessPolicy, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.updateTopicAccessPolicy, hcClient);
     }
 
     /**
@@ -2472,7 +2406,7 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicReplicaRequest 请求对象
+     * @param request UpdateTopicReplicaRequest 请求对象
      * @return UpdateTopicReplicaResponse
      */
     public UpdateTopicReplicaResponse updateTopicReplica(UpdateTopicReplicaRequest request) {
@@ -2486,13 +2420,12 @@ public class KafkaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicReplicaRequest 请求对象
+     * @param request UpdateTopicReplicaRequest 请求对象
      * @return SyncInvoker<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse>
      */
     public SyncInvoker<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> updateTopicReplicaInvoker(
         UpdateTopicReplicaRequest request) {
-        return new SyncInvoker<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse>(request,
-            KafkaMeta.updateTopicReplica, hcClient);
+        return new SyncInvoker<>(request, KafkaMeta.updateTopicReplica, hcClient);
     }
 
 }

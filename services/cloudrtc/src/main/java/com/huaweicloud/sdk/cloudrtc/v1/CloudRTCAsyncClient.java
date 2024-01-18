@@ -54,7 +54,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcAbnormalEventRequest 请求对象
+     * @param request ListRtcAbnormalEventRequest 请求对象
      * @return CompletableFuture<ListRtcAbnormalEventResponse>
      */
     public CompletableFuture<ListRtcAbnormalEventResponse> listRtcAbnormalEventAsync(
@@ -69,13 +69,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcAbnormalEventRequest 请求对象
+     * @param request ListRtcAbnormalEventRequest 请求对象
      * @return AsyncInvoker<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse>
      */
     public AsyncInvoker<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse> listRtcAbnormalEventAsyncInvoker(
         ListRtcAbnormalEventRequest request) {
-        return new AsyncInvoker<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse>(request,
-            CloudRTCMeta.listRtcAbnormalEvent, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcAbnormalEvent, hcClient);
     }
 
     /**
@@ -85,7 +84,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcEventRequest 请求对象
+     * @param request ListRtcEventRequest 请求对象
      * @return CompletableFuture<ListRtcEventResponse>
      */
     public CompletableFuture<ListRtcEventResponse> listRtcEventAsync(ListRtcEventRequest request) {
@@ -99,13 +98,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcEventRequest 请求对象
+     * @param request ListRtcEventRequest 请求对象
      * @return AsyncInvoker<ListRtcEventRequest, ListRtcEventResponse>
      */
     public AsyncInvoker<ListRtcEventRequest, ListRtcEventResponse> listRtcEventAsyncInvoker(
         ListRtcEventRequest request) {
-        return new AsyncInvoker<ListRtcEventRequest, ListRtcEventResponse>(request, CloudRTCMeta.listRtcEvent,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcEvent, hcClient);
     }
 
     /**
@@ -117,7 +115,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcAbnormalEventDimensionRequest 请求对象
+     * @param request ListRtcAbnormalEventDimensionRequest 请求对象
      * @return CompletableFuture<ListRtcAbnormalEventDimensionResponse>
      */
     public CompletableFuture<ListRtcAbnormalEventDimensionResponse> listRtcAbnormalEventDimensionAsync(
@@ -134,13 +132,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcAbnormalEventDimensionRequest 请求对象
+     * @param request ListRtcAbnormalEventDimensionRequest 请求对象
      * @return AsyncInvoker<ListRtcAbnormalEventDimensionRequest, ListRtcAbnormalEventDimensionResponse>
      */
     public AsyncInvoker<ListRtcAbnormalEventDimensionRequest, ListRtcAbnormalEventDimensionResponse> listRtcAbnormalEventDimensionAsyncInvoker(
         ListRtcAbnormalEventDimensionRequest request) {
-        return new AsyncInvoker<ListRtcAbnormalEventDimensionRequest, ListRtcAbnormalEventDimensionResponse>(request,
-            CloudRTCMeta.listRtcAbnormalEventDimension, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcAbnormalEventDimension, hcClient);
     }
 
     /**
@@ -152,7 +149,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcAbnormalEventsRequest 请求对象
+     * @param request ListRtcAbnormalEventsRequest 请求对象
      * @return CompletableFuture<ListRtcAbnormalEventsResponse>
      */
     public CompletableFuture<ListRtcAbnormalEventsResponse> listRtcAbnormalEventsAsync(
@@ -169,13 +166,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcAbnormalEventsRequest 请求对象
+     * @param request ListRtcAbnormalEventsRequest 请求对象
      * @return AsyncInvoker<ListRtcAbnormalEventsRequest, ListRtcAbnormalEventsResponse>
      */
     public AsyncInvoker<ListRtcAbnormalEventsRequest, ListRtcAbnormalEventsResponse> listRtcAbnormalEventsAsyncInvoker(
         ListRtcAbnormalEventsRequest request) {
-        return new AsyncInvoker<ListRtcAbnormalEventsRequest, ListRtcAbnormalEventsResponse>(request,
-            CloudRTCMeta.listRtcAbnormalEvents, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcAbnormalEvents, hcClient);
     }
 
     /**
@@ -187,7 +183,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcClientQosDetailsRequest 请求对象
+     * @param request ListRtcClientQosDetailsRequest 请求对象
      * @return CompletableFuture<ListRtcClientQosDetailsResponse>
      */
     public CompletableFuture<ListRtcClientQosDetailsResponse> listRtcClientQosDetailsAsync(
@@ -204,13 +200,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcClientQosDetailsRequest 请求对象
+     * @param request ListRtcClientQosDetailsRequest 请求对象
      * @return AsyncInvoker<ListRtcClientQosDetailsRequest, ListRtcClientQosDetailsResponse>
      */
     public AsyncInvoker<ListRtcClientQosDetailsRequest, ListRtcClientQosDetailsResponse> listRtcClientQosDetailsAsyncInvoker(
         ListRtcClientQosDetailsRequest request) {
-        return new AsyncInvoker<ListRtcClientQosDetailsRequest, ListRtcClientQosDetailsResponse>(request,
-            CloudRTCMeta.listRtcClientQosDetails, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcClientQosDetails, hcClient);
     }
 
     /**
@@ -222,7 +217,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcHistoryQualityRequest 请求对象
+     * @param request ListRtcHistoryQualityRequest 请求对象
      * @return CompletableFuture<ListRtcHistoryQualityResponse>
      */
     public CompletableFuture<ListRtcHistoryQualityResponse> listRtcHistoryQualityAsync(
@@ -239,13 +234,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcHistoryQualityRequest 请求对象
+     * @param request ListRtcHistoryQualityRequest 请求对象
      * @return AsyncInvoker<ListRtcHistoryQualityRequest, ListRtcHistoryQualityResponse>
      */
     public AsyncInvoker<ListRtcHistoryQualityRequest, ListRtcHistoryQualityResponse> listRtcHistoryQualityAsyncInvoker(
         ListRtcHistoryQualityRequest request) {
-        return new AsyncInvoker<ListRtcHistoryQualityRequest, ListRtcHistoryQualityResponse>(request,
-            CloudRTCMeta.listRtcHistoryQuality, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcHistoryQuality, hcClient);
     }
 
     /**
@@ -257,7 +251,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcHistoryScaleRequest 请求对象
+     * @param request ListRtcHistoryScaleRequest 请求对象
      * @return CompletableFuture<ListRtcHistoryScaleResponse>
      */
     public CompletableFuture<ListRtcHistoryScaleResponse> listRtcHistoryScaleAsync(ListRtcHistoryScaleRequest request) {
@@ -273,13 +267,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcHistoryScaleRequest 请求对象
+     * @param request ListRtcHistoryScaleRequest 请求对象
      * @return AsyncInvoker<ListRtcHistoryScaleRequest, ListRtcHistoryScaleResponse>
      */
     public AsyncInvoker<ListRtcHistoryScaleRequest, ListRtcHistoryScaleResponse> listRtcHistoryScaleAsyncInvoker(
         ListRtcHistoryScaleRequest request) {
-        return new AsyncInvoker<ListRtcHistoryScaleRequest, ListRtcHistoryScaleResponse>(request,
-            CloudRTCMeta.listRtcHistoryScale, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcHistoryScale, hcClient);
     }
 
     /**
@@ -289,7 +282,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcHistoryUsageRequest 请求对象
+     * @param request ListRtcHistoryUsageRequest 请求对象
      * @return CompletableFuture<ListRtcHistoryUsageResponse>
      */
     public CompletableFuture<ListRtcHistoryUsageResponse> listRtcHistoryUsageAsync(ListRtcHistoryUsageRequest request) {
@@ -303,13 +296,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcHistoryUsageRequest 请求对象
+     * @param request ListRtcHistoryUsageRequest 请求对象
      * @return AsyncInvoker<ListRtcHistoryUsageRequest, ListRtcHistoryUsageResponse>
      */
     public AsyncInvoker<ListRtcHistoryUsageRequest, ListRtcHistoryUsageResponse> listRtcHistoryUsageAsyncInvoker(
         ListRtcHistoryUsageRequest request) {
-        return new AsyncInvoker<ListRtcHistoryUsageRequest, ListRtcHistoryUsageResponse>(request,
-            CloudRTCMeta.listRtcHistoryUsage, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcHistoryUsage, hcClient);
     }
 
     /**
@@ -321,7 +313,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcRealtimeNetworkRequest 请求对象
+     * @param request ListRtcRealtimeNetworkRequest 请求对象
      * @return CompletableFuture<ListRtcRealtimeNetworkResponse>
      */
     public CompletableFuture<ListRtcRealtimeNetworkResponse> listRtcRealtimeNetworkAsync(
@@ -338,13 +330,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcRealtimeNetworkRequest 请求对象
+     * @param request ListRtcRealtimeNetworkRequest 请求对象
      * @return AsyncInvoker<ListRtcRealtimeNetworkRequest, ListRtcRealtimeNetworkResponse>
      */
     public AsyncInvoker<ListRtcRealtimeNetworkRequest, ListRtcRealtimeNetworkResponse> listRtcRealtimeNetworkAsyncInvoker(
         ListRtcRealtimeNetworkRequest request) {
-        return new AsyncInvoker<ListRtcRealtimeNetworkRequest, ListRtcRealtimeNetworkResponse>(request,
-            CloudRTCMeta.listRtcRealtimeNetwork, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcRealtimeNetwork, hcClient);
     }
 
     /**
@@ -356,7 +347,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcRealtimeQualityRequest 请求对象
+     * @param request ListRtcRealtimeQualityRequest 请求对象
      * @return CompletableFuture<ListRtcRealtimeQualityResponse>
      */
     public CompletableFuture<ListRtcRealtimeQualityResponse> listRtcRealtimeQualityAsync(
@@ -373,13 +364,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcRealtimeQualityRequest 请求对象
+     * @param request ListRtcRealtimeQualityRequest 请求对象
      * @return AsyncInvoker<ListRtcRealtimeQualityRequest, ListRtcRealtimeQualityResponse>
      */
     public AsyncInvoker<ListRtcRealtimeQualityRequest, ListRtcRealtimeQualityResponse> listRtcRealtimeQualityAsyncInvoker(
         ListRtcRealtimeQualityRequest request) {
-        return new AsyncInvoker<ListRtcRealtimeQualityRequest, ListRtcRealtimeQualityResponse>(request,
-            CloudRTCMeta.listRtcRealtimeQuality, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcRealtimeQuality, hcClient);
     }
 
     /**
@@ -391,7 +381,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcRealtimeScaleRequest 请求对象
+     * @param request ListRtcRealtimeScaleRequest 请求对象
      * @return CompletableFuture<ListRtcRealtimeScaleResponse>
      */
     public CompletableFuture<ListRtcRealtimeScaleResponse> listRtcRealtimeScaleAsync(
@@ -408,13 +398,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcRealtimeScaleRequest 请求对象
+     * @param request ListRtcRealtimeScaleRequest 请求对象
      * @return AsyncInvoker<ListRtcRealtimeScaleRequest, ListRtcRealtimeScaleResponse>
      */
     public AsyncInvoker<ListRtcRealtimeScaleRequest, ListRtcRealtimeScaleResponse> listRtcRealtimeScaleAsyncInvoker(
         ListRtcRealtimeScaleRequest request) {
-        return new AsyncInvoker<ListRtcRealtimeScaleRequest, ListRtcRealtimeScaleResponse>(request,
-            CloudRTCMeta.listRtcRealtimeScale, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcRealtimeScale, hcClient);
     }
 
     /**
@@ -424,7 +413,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcRealtimeScaleDimensionRequest 请求对象
+     * @param request ListRtcRealtimeScaleDimensionRequest 请求对象
      * @return CompletableFuture<ListRtcRealtimeScaleDimensionResponse>
      */
     public CompletableFuture<ListRtcRealtimeScaleDimensionResponse> listRtcRealtimeScaleDimensionAsync(
@@ -439,13 +428,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcRealtimeScaleDimensionRequest 请求对象
+     * @param request ListRtcRealtimeScaleDimensionRequest 请求对象
      * @return AsyncInvoker<ListRtcRealtimeScaleDimensionRequest, ListRtcRealtimeScaleDimensionResponse>
      */
     public AsyncInvoker<ListRtcRealtimeScaleDimensionRequest, ListRtcRealtimeScaleDimensionResponse> listRtcRealtimeScaleDimensionAsyncInvoker(
         ListRtcRealtimeScaleDimensionRequest request) {
-        return new AsyncInvoker<ListRtcRealtimeScaleDimensionRequest, ListRtcRealtimeScaleDimensionResponse>(request,
-            CloudRTCMeta.listRtcRealtimeScaleDimension, hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcRealtimeScaleDimension, hcClient);
     }
 
     /**
@@ -457,7 +445,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcRoomListRequest 请求对象
+     * @param request ListRtcRoomListRequest 请求对象
      * @return CompletableFuture<ListRtcRoomListResponse>
      */
     public CompletableFuture<ListRtcRoomListResponse> listRtcRoomListAsync(ListRtcRoomListRequest request) {
@@ -473,13 +461,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcRoomListRequest 请求对象
+     * @param request ListRtcRoomListRequest 请求对象
      * @return AsyncInvoker<ListRtcRoomListRequest, ListRtcRoomListResponse>
      */
     public AsyncInvoker<ListRtcRoomListRequest, ListRtcRoomListResponse> listRtcRoomListAsyncInvoker(
         ListRtcRoomListRequest request) {
-        return new AsyncInvoker<ListRtcRoomListRequest, ListRtcRoomListResponse>(request, CloudRTCMeta.listRtcRoomList,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcRoomList, hcClient);
     }
 
     /**
@@ -491,7 +478,7 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcUserListRequest 请求对象
+     * @param request ListRtcUserListRequest 请求对象
      * @return CompletableFuture<ListRtcUserListResponse>
      */
     public CompletableFuture<ListRtcUserListResponse> listRtcUserListAsync(ListRtcUserListRequest request) {
@@ -507,13 +494,12 @@ public class CloudRTCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRtcUserListRequest 请求对象
+     * @param request ListRtcUserListRequest 请求对象
      * @return AsyncInvoker<ListRtcUserListRequest, ListRtcUserListResponse>
      */
     public AsyncInvoker<ListRtcUserListRequest, ListRtcUserListResponse> listRtcUserListAsyncInvoker(
         ListRtcUserListRequest request) {
-        return new AsyncInvoker<ListRtcUserListRequest, ListRtcUserListResponse>(request, CloudRTCMeta.listRtcUserList,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudRTCMeta.listRtcUserList, hcClient);
     }
 
 }

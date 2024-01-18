@@ -138,7 +138,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeploymentNodesRequest 请求对象
+     * @param request AddDeploymentNodesRequest 请求对象
      * @return CompletableFuture<AddDeploymentNodesResponse>
      */
     public CompletableFuture<AddDeploymentNodesResponse> addDeploymentNodesAsync(AddDeploymentNodesRequest request) {
@@ -152,13 +152,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeploymentNodesRequest 请求对象
+     * @param request AddDeploymentNodesRequest 请求对象
      * @return AsyncInvoker<AddDeploymentNodesRequest, AddDeploymentNodesResponse>
      */
     public AsyncInvoker<AddDeploymentNodesRequest, AddDeploymentNodesResponse> addDeploymentNodesAsyncInvoker(
         AddDeploymentNodesRequest request) {
-        return new AsyncInvoker<AddDeploymentNodesRequest, AddDeploymentNodesResponse>(request,
-            HiLensMeta.addDeploymentNodes, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.addDeploymentNodes, hcClient);
     }
 
     /**
@@ -168,7 +167,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateNodeTagsRequest 请求对象
+     * @param request BatchCreateNodeTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateNodeTagsResponse>
      */
     public CompletableFuture<BatchCreateNodeTagsResponse> batchCreateNodeTagsAsync(BatchCreateNodeTagsRequest request) {
@@ -182,13 +181,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateNodeTagsRequest 请求对象
+     * @param request BatchCreateNodeTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateNodeTagsRequest, BatchCreateNodeTagsResponse>
      */
     public AsyncInvoker<BatchCreateNodeTagsRequest, BatchCreateNodeTagsResponse> batchCreateNodeTagsAsyncInvoker(
         BatchCreateNodeTagsRequest request) {
-        return new AsyncInvoker<BatchCreateNodeTagsRequest, BatchCreateNodeTagsResponse>(request,
-            HiLensMeta.batchCreateNodeTags, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.batchCreateNodeTags, hcClient);
     }
 
     /**
@@ -198,7 +196,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfigMapRequest 请求对象
+     * @param request CreateConfigMapRequest 请求对象
      * @return CompletableFuture<CreateConfigMapResponse>
      */
     public CompletableFuture<CreateConfigMapResponse> createConfigMapAsync(CreateConfigMapRequest request) {
@@ -212,13 +210,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfigMapRequest 请求对象
+     * @param request CreateConfigMapRequest 请求对象
      * @return AsyncInvoker<CreateConfigMapRequest, CreateConfigMapResponse>
      */
     public AsyncInvoker<CreateConfigMapRequest, CreateConfigMapResponse> createConfigMapAsyncInvoker(
         CreateConfigMapRequest request) {
-        return new AsyncInvoker<CreateConfigMapRequest, CreateConfigMapResponse>(request, HiLensMeta.createConfigMap,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.createConfigMap, hcClient);
     }
 
     /**
@@ -228,7 +225,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeploymentRequest 请求对象
+     * @param request CreateDeploymentRequest 请求对象
      * @return CompletableFuture<CreateDeploymentResponse>
      */
     public CompletableFuture<CreateDeploymentResponse> createDeploymentAsync(CreateDeploymentRequest request) {
@@ -242,13 +239,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeploymentRequest 请求对象
+     * @param request CreateDeploymentRequest 请求对象
      * @return AsyncInvoker<CreateDeploymentRequest, CreateDeploymentResponse>
      */
     public AsyncInvoker<CreateDeploymentRequest, CreateDeploymentResponse> createDeploymentAsyncInvoker(
         CreateDeploymentRequest request) {
-        return new AsyncInvoker<CreateDeploymentRequest, CreateDeploymentResponse>(request, HiLensMeta.createDeployment,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.createDeployment, hcClient);
     }
 
     /**
@@ -258,7 +254,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNodeRequest 请求对象
+     * @param request CreateNodeRequest 请求对象
      * @return CompletableFuture<CreateNodeResponse>
      */
     public CompletableFuture<CreateNodeResponse> createNodeAsync(CreateNodeRequest request) {
@@ -272,11 +268,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNodeRequest 请求对象
+     * @param request CreateNodeRequest 请求对象
      * @return AsyncInvoker<CreateNodeRequest, CreateNodeResponse>
      */
     public AsyncInvoker<CreateNodeRequest, CreateNodeResponse> createNodeAsyncInvoker(CreateNodeRequest request) {
-        return new AsyncInvoker<CreateNodeRequest, CreateNodeResponse>(request, HiLensMeta.createNode, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.createNode, hcClient);
     }
 
     /**
@@ -286,7 +282,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrderFormRequest 请求对象
+     * @param request CreateOrderFormRequest 请求对象
      * @return CompletableFuture<CreateOrderFormResponse>
      */
     public CompletableFuture<CreateOrderFormResponse> createOrderFormAsync(CreateOrderFormRequest request) {
@@ -300,13 +296,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrderFormRequest 请求对象
+     * @param request CreateOrderFormRequest 请求对象
      * @return AsyncInvoker<CreateOrderFormRequest, CreateOrderFormResponse>
      */
     public AsyncInvoker<CreateOrderFormRequest, CreateOrderFormResponse> createOrderFormAsyncInvoker(
         CreateOrderFormRequest request) {
-        return new AsyncInvoker<CreateOrderFormRequest, CreateOrderFormResponse>(request, HiLensMeta.createOrderForm,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.createOrderForm, hcClient);
     }
 
     /**
@@ -316,7 +311,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagsRequest 请求对象
+     * @param request CreateResourceTagsRequest 请求对象
      * @return CompletableFuture<CreateResourceTagsResponse>
      */
     public CompletableFuture<CreateResourceTagsResponse> createResourceTagsAsync(CreateResourceTagsRequest request) {
@@ -330,13 +325,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagsRequest 请求对象
+     * @param request CreateResourceTagsRequest 请求对象
      * @return AsyncInvoker<CreateResourceTagsRequest, CreateResourceTagsResponse>
      */
     public AsyncInvoker<CreateResourceTagsRequest, CreateResourceTagsResponse> createResourceTagsAsyncInvoker(
         CreateResourceTagsRequest request) {
-        return new AsyncInvoker<CreateResourceTagsRequest, CreateResourceTagsResponse>(request,
-            HiLensMeta.createResourceTags, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.createResourceTags, hcClient);
     }
 
     /**
@@ -346,7 +340,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretRequest 请求对象
+     * @param request CreateSecretRequest 请求对象
      * @return CompletableFuture<CreateSecretResponse>
      */
     public CompletableFuture<CreateSecretResponse> createSecretAsync(CreateSecretRequest request) {
@@ -360,12 +354,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretRequest 请求对象
+     * @param request CreateSecretRequest 请求对象
      * @return AsyncInvoker<CreateSecretRequest, CreateSecretResponse>
      */
     public AsyncInvoker<CreateSecretRequest, CreateSecretResponse> createSecretAsyncInvoker(
         CreateSecretRequest request) {
-        return new AsyncInvoker<CreateSecretRequest, CreateSecretResponse>(request, HiLensMeta.createSecret, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.createSecret, hcClient);
     }
 
     /**
@@ -375,7 +369,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return CompletableFuture<CreateTaskResponse>
      */
     public CompletableFuture<CreateTaskResponse> createTaskAsync(CreateTaskRequest request) {
@@ -389,11 +383,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return AsyncInvoker<CreateTaskRequest, CreateTaskResponse>
      */
     public AsyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskAsyncInvoker(CreateTaskRequest request) {
-        return new AsyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, HiLensMeta.createTask, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.createTask, hcClient);
     }
 
     /**
@@ -403,7 +397,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkSpaceRequest 请求对象
+     * @param request CreateWorkSpaceRequest 请求对象
      * @return CompletableFuture<CreateWorkSpaceResponse>
      */
     public CompletableFuture<CreateWorkSpaceResponse> createWorkSpaceAsync(CreateWorkSpaceRequest request) {
@@ -417,13 +411,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkSpaceRequest 请求对象
+     * @param request CreateWorkSpaceRequest 请求对象
      * @return AsyncInvoker<CreateWorkSpaceRequest, CreateWorkSpaceResponse>
      */
     public AsyncInvoker<CreateWorkSpaceRequest, CreateWorkSpaceResponse> createWorkSpaceAsyncInvoker(
         CreateWorkSpaceRequest request) {
-        return new AsyncInvoker<CreateWorkSpaceRequest, CreateWorkSpaceResponse>(request, HiLensMeta.createWorkSpace,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.createWorkSpace, hcClient);
     }
 
     /**
@@ -433,7 +426,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConfigMapRequest 请求对象
+     * @param request DeleteConfigMapRequest 请求对象
      * @return CompletableFuture<DeleteConfigMapResponse>
      */
     public CompletableFuture<DeleteConfigMapResponse> deleteConfigMapAsync(DeleteConfigMapRequest request) {
@@ -447,13 +440,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConfigMapRequest 请求对象
+     * @param request DeleteConfigMapRequest 请求对象
      * @return AsyncInvoker<DeleteConfigMapRequest, DeleteConfigMapResponse>
      */
     public AsyncInvoker<DeleteConfigMapRequest, DeleteConfigMapResponse> deleteConfigMapAsyncInvoker(
         DeleteConfigMapRequest request) {
-        return new AsyncInvoker<DeleteConfigMapRequest, DeleteConfigMapResponse>(request, HiLensMeta.deleteConfigMap,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.deleteConfigMap, hcClient);
     }
 
     /**
@@ -463,7 +455,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeploymentRequest 请求对象
+     * @param request DeleteDeploymentRequest 请求对象
      * @return CompletableFuture<DeleteDeploymentResponse>
      */
     public CompletableFuture<DeleteDeploymentResponse> deleteDeploymentAsync(DeleteDeploymentRequest request) {
@@ -477,13 +469,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeploymentRequest 请求对象
+     * @param request DeleteDeploymentRequest 请求对象
      * @return AsyncInvoker<DeleteDeploymentRequest, DeleteDeploymentResponse>
      */
     public AsyncInvoker<DeleteDeploymentRequest, DeleteDeploymentResponse> deleteDeploymentAsyncInvoker(
         DeleteDeploymentRequest request) {
-        return new AsyncInvoker<DeleteDeploymentRequest, DeleteDeploymentResponse>(request, HiLensMeta.deleteDeployment,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.deleteDeployment, hcClient);
     }
 
     /**
@@ -493,7 +484,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNodeRequest 请求对象
+     * @param request DeleteNodeRequest 请求对象
      * @return CompletableFuture<DeleteNodeResponse>
      */
     public CompletableFuture<DeleteNodeResponse> deleteNodeAsync(DeleteNodeRequest request) {
@@ -507,11 +498,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNodeRequest 请求对象
+     * @param request DeleteNodeRequest 请求对象
      * @return AsyncInvoker<DeleteNodeRequest, DeleteNodeResponse>
      */
     public AsyncInvoker<DeleteNodeRequest, DeleteNodeResponse> deleteNodeAsyncInvoker(DeleteNodeRequest request) {
-        return new AsyncInvoker<DeleteNodeRequest, DeleteNodeResponse>(request, HiLensMeta.deleteNode, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.deleteNode, hcClient);
     }
 
     /**
@@ -521,7 +512,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePodRequest 请求对象
+     * @param request DeletePodRequest 请求对象
      * @return CompletableFuture<DeletePodResponse>
      */
     public CompletableFuture<DeletePodResponse> deletePodAsync(DeletePodRequest request) {
@@ -535,11 +526,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePodRequest 请求对象
+     * @param request DeletePodRequest 请求对象
      * @return AsyncInvoker<DeletePodRequest, DeletePodResponse>
      */
     public AsyncInvoker<DeletePodRequest, DeletePodResponse> deletePodAsyncInvoker(DeletePodRequest request) {
-        return new AsyncInvoker<DeletePodRequest, DeletePodResponse>(request, HiLensMeta.deletePod, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.deletePod, hcClient);
     }
 
     /**
@@ -549,7 +540,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return CompletableFuture<DeleteResourceTagResponse>
      */
     public CompletableFuture<DeleteResourceTagResponse> deleteResourceTagAsync(DeleteResourceTagRequest request) {
@@ -563,13 +554,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
      */
     public AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTagAsyncInvoker(
         DeleteResourceTagRequest request) {
-        return new AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>(request,
-            HiLensMeta.deleteResourceTag, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.deleteResourceTag, hcClient);
     }
 
     /**
@@ -579,7 +569,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretRequest 请求对象
+     * @param request DeleteSecretRequest 请求对象
      * @return CompletableFuture<DeleteSecretResponse>
      */
     public CompletableFuture<DeleteSecretResponse> deleteSecretAsync(DeleteSecretRequest request) {
@@ -593,12 +583,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretRequest 请求对象
+     * @param request DeleteSecretRequest 请求对象
      * @return AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse>
      */
     public AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse> deleteSecretAsyncInvoker(
         DeleteSecretRequest request) {
-        return new AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse>(request, HiLensMeta.deleteSecret, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.deleteSecret, hcClient);
     }
 
     /**
@@ -608,7 +598,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
      */
     public CompletableFuture<DeleteTaskResponse> deleteTaskAsync(DeleteTaskRequest request) {
@@ -622,11 +612,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
-        return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, HiLensMeta.deleteTask, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.deleteTask, hcClient);
     }
 
     /**
@@ -636,7 +626,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkSpaceRequest 请求对象
+     * @param request DeleteWorkSpaceRequest 请求对象
      * @return CompletableFuture<DeleteWorkSpaceResponse>
      */
     public CompletableFuture<DeleteWorkSpaceResponse> deleteWorkSpaceAsync(DeleteWorkSpaceRequest request) {
@@ -650,13 +640,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkSpaceRequest 请求对象
+     * @param request DeleteWorkSpaceRequest 请求对象
      * @return AsyncInvoker<DeleteWorkSpaceRequest, DeleteWorkSpaceResponse>
      */
     public AsyncInvoker<DeleteWorkSpaceRequest, DeleteWorkSpaceResponse> deleteWorkSpaceAsyncInvoker(
         DeleteWorkSpaceRequest request) {
-        return new AsyncInvoker<DeleteWorkSpaceRequest, DeleteWorkSpaceResponse>(request, HiLensMeta.deleteWorkSpace,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.deleteWorkSpace, hcClient);
     }
 
     /**
@@ -666,7 +655,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param FreezeNodeRequest 请求对象
+     * @param request FreezeNodeRequest 请求对象
      * @return CompletableFuture<FreezeNodeResponse>
      */
     public CompletableFuture<FreezeNodeResponse> freezeNodeAsync(FreezeNodeRequest request) {
@@ -680,11 +669,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param FreezeNodeRequest 请求对象
+     * @param request FreezeNodeRequest 请求对象
      * @return AsyncInvoker<FreezeNodeRequest, FreezeNodeResponse>
      */
     public AsyncInvoker<FreezeNodeRequest, FreezeNodeResponse> freezeNodeAsyncInvoker(FreezeNodeRequest request) {
-        return new AsyncInvoker<FreezeNodeRequest, FreezeNodeResponse>(request, HiLensMeta.freezeNode, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.freezeNode, hcClient);
     }
 
     /**
@@ -694,7 +683,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigMapsRequest 请求对象
+     * @param request ListConfigMapsRequest 请求对象
      * @return CompletableFuture<ListConfigMapsResponse>
      */
     public CompletableFuture<ListConfigMapsResponse> listConfigMapsAsync(ListConfigMapsRequest request) {
@@ -708,13 +697,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigMapsRequest 请求对象
+     * @param request ListConfigMapsRequest 请求对象
      * @return AsyncInvoker<ListConfigMapsRequest, ListConfigMapsResponse>
      */
     public AsyncInvoker<ListConfigMapsRequest, ListConfigMapsResponse> listConfigMapsAsyncInvoker(
         ListConfigMapsRequest request) {
-        return new AsyncInvoker<ListConfigMapsRequest, ListConfigMapsResponse>(request, HiLensMeta.listConfigMaps,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.listConfigMaps, hcClient);
     }
 
     /**
@@ -724,7 +712,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFirmwaresRequest 请求对象
+     * @param request ListFirmwaresRequest 请求对象
      * @return CompletableFuture<ListFirmwaresResponse>
      */
     public CompletableFuture<ListFirmwaresResponse> listFirmwaresAsync(ListFirmwaresRequest request) {
@@ -738,13 +726,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFirmwaresRequest 请求对象
+     * @param request ListFirmwaresRequest 请求对象
      * @return AsyncInvoker<ListFirmwaresRequest, ListFirmwaresResponse>
      */
     public AsyncInvoker<ListFirmwaresRequest, ListFirmwaresResponse> listFirmwaresAsyncInvoker(
         ListFirmwaresRequest request) {
-        return new AsyncInvoker<ListFirmwaresRequest, ListFirmwaresResponse>(request, HiLensMeta.listFirmwares,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.listFirmwares, hcClient);
     }
 
     /**
@@ -754,7 +741,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlatformManagerRequest 请求对象
+     * @param request ListPlatformManagerRequest 请求对象
      * @return CompletableFuture<ListPlatformManagerResponse>
      */
     public CompletableFuture<ListPlatformManagerResponse> listPlatformManagerAsync(ListPlatformManagerRequest request) {
@@ -768,13 +755,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlatformManagerRequest 请求对象
+     * @param request ListPlatformManagerRequest 请求对象
      * @return AsyncInvoker<ListPlatformManagerRequest, ListPlatformManagerResponse>
      */
     public AsyncInvoker<ListPlatformManagerRequest, ListPlatformManagerResponse> listPlatformManagerAsyncInvoker(
         ListPlatformManagerRequest request) {
-        return new AsyncInvoker<ListPlatformManagerRequest, ListPlatformManagerResponse>(request,
-            HiLensMeta.listPlatformManager, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.listPlatformManager, hcClient);
     }
 
     /**
@@ -784,7 +770,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTagsRequest 请求对象
+     * @param request ListResourceTagsRequest 请求对象
      * @return CompletableFuture<ListResourceTagsResponse>
      */
     public CompletableFuture<ListResourceTagsResponse> listResourceTagsAsync(ListResourceTagsRequest request) {
@@ -798,13 +784,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTagsRequest 请求对象
+     * @param request ListResourceTagsRequest 请求对象
      * @return AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
      */
     public AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsAsyncInvoker(
         ListResourceTagsRequest request) {
-        return new AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>(request, HiLensMeta.listResourceTags,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.listResourceTags, hcClient);
     }
 
     /**
@@ -814,7 +799,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretsRequest 请求对象
+     * @param request ListSecretsRequest 请求对象
      * @return CompletableFuture<ListSecretsResponse>
      */
     public CompletableFuture<ListSecretsResponse> listSecretsAsync(ListSecretsRequest request) {
@@ -828,11 +813,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretsRequest 请求对象
+     * @param request ListSecretsRequest 请求对象
      * @return AsyncInvoker<ListSecretsRequest, ListSecretsResponse>
      */
     public AsyncInvoker<ListSecretsRequest, ListSecretsResponse> listSecretsAsyncInvoker(ListSecretsRequest request) {
-        return new AsyncInvoker<ListSecretsRequest, ListSecretsResponse>(request, HiLensMeta.listSecrets, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.listSecrets, hcClient);
     }
 
     /**
@@ -842,7 +827,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksRequest 请求对象
+     * @param request ListTasksRequest 请求对象
      * @return CompletableFuture<ListTasksResponse>
      */
     public CompletableFuture<ListTasksResponse> listTasksAsync(ListTasksRequest request) {
@@ -856,11 +841,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksRequest 请求对象
+     * @param request ListTasksRequest 请求对象
      * @return AsyncInvoker<ListTasksRequest, ListTasksResponse>
      */
     public AsyncInvoker<ListTasksRequest, ListTasksResponse> listTasksAsyncInvoker(ListTasksRequest request) {
-        return new AsyncInvoker<ListTasksRequest, ListTasksResponse>(request, HiLensMeta.listTasks, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.listTasks, hcClient);
     }
 
     /**
@@ -870,7 +855,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkSpacesRequest 请求对象
+     * @param request ListWorkSpacesRequest 请求对象
      * @return CompletableFuture<ListWorkSpacesResponse>
      */
     public CompletableFuture<ListWorkSpacesResponse> listWorkSpacesAsync(ListWorkSpacesRequest request) {
@@ -884,13 +869,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkSpacesRequest 请求对象
+     * @param request ListWorkSpacesRequest 请求对象
      * @return AsyncInvoker<ListWorkSpacesRequest, ListWorkSpacesResponse>
      */
     public AsyncInvoker<ListWorkSpacesRequest, ListWorkSpacesResponse> listWorkSpacesAsyncInvoker(
         ListWorkSpacesRequest request) {
-        return new AsyncInvoker<ListWorkSpacesRequest, ListWorkSpacesResponse>(request, HiLensMeta.listWorkSpaces,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.listWorkSpaces, hcClient);
     }
 
     /**
@@ -900,7 +884,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetDefaultOrderFormRequest 请求对象
+     * @param request SetDefaultOrderFormRequest 请求对象
      * @return CompletableFuture<SetDefaultOrderFormResponse>
      */
     public CompletableFuture<SetDefaultOrderFormResponse> setDefaultOrderFormAsync(SetDefaultOrderFormRequest request) {
@@ -914,13 +898,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetDefaultOrderFormRequest 请求对象
+     * @param request SetDefaultOrderFormRequest 请求对象
      * @return AsyncInvoker<SetDefaultOrderFormRequest, SetDefaultOrderFormResponse>
      */
     public AsyncInvoker<SetDefaultOrderFormRequest, SetDefaultOrderFormResponse> setDefaultOrderFormAsyncInvoker(
         SetDefaultOrderFormRequest request) {
-        return new AsyncInvoker<SetDefaultOrderFormRequest, SetDefaultOrderFormResponse>(request,
-            HiLensMeta.setDefaultOrderForm, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.setDefaultOrderForm, hcClient);
     }
 
     /**
@@ -930,7 +913,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigMapRequest 请求对象
+     * @param request ShowConfigMapRequest 请求对象
      * @return CompletableFuture<ShowConfigMapResponse>
      */
     public CompletableFuture<ShowConfigMapResponse> showConfigMapAsync(ShowConfigMapRequest request) {
@@ -944,13 +927,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigMapRequest 请求对象
+     * @param request ShowConfigMapRequest 请求对象
      * @return AsyncInvoker<ShowConfigMapRequest, ShowConfigMapResponse>
      */
     public AsyncInvoker<ShowConfigMapRequest, ShowConfigMapResponse> showConfigMapAsyncInvoker(
         ShowConfigMapRequest request) {
-        return new AsyncInvoker<ShowConfigMapRequest, ShowConfigMapResponse>(request, HiLensMeta.showConfigMap,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showConfigMap, hcClient);
     }
 
     /**
@@ -960,7 +942,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentRequest 请求对象
+     * @param request ShowDeploymentRequest 请求对象
      * @return CompletableFuture<ShowDeploymentResponse>
      */
     public CompletableFuture<ShowDeploymentResponse> showDeploymentAsync(ShowDeploymentRequest request) {
@@ -974,13 +956,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentRequest 请求对象
+     * @param request ShowDeploymentRequest 请求对象
      * @return AsyncInvoker<ShowDeploymentRequest, ShowDeploymentResponse>
      */
     public AsyncInvoker<ShowDeploymentRequest, ShowDeploymentResponse> showDeploymentAsyncInvoker(
         ShowDeploymentRequest request) {
-        return new AsyncInvoker<ShowDeploymentRequest, ShowDeploymentResponse>(request, HiLensMeta.showDeployment,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showDeployment, hcClient);
     }
 
     /**
@@ -990,7 +971,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentPodsRequest 请求对象
+     * @param request ShowDeploymentPodsRequest 请求对象
      * @return CompletableFuture<ShowDeploymentPodsResponse>
      */
     public CompletableFuture<ShowDeploymentPodsResponse> showDeploymentPodsAsync(ShowDeploymentPodsRequest request) {
@@ -1004,13 +985,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentPodsRequest 请求对象
+     * @param request ShowDeploymentPodsRequest 请求对象
      * @return AsyncInvoker<ShowDeploymentPodsRequest, ShowDeploymentPodsResponse>
      */
     public AsyncInvoker<ShowDeploymentPodsRequest, ShowDeploymentPodsResponse> showDeploymentPodsAsyncInvoker(
         ShowDeploymentPodsRequest request) {
-        return new AsyncInvoker<ShowDeploymentPodsRequest, ShowDeploymentPodsResponse>(request,
-            HiLensMeta.showDeploymentPods, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showDeploymentPods, hcClient);
     }
 
     /**
@@ -1020,7 +1000,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentsRequest 请求对象
+     * @param request ShowDeploymentsRequest 请求对象
      * @return CompletableFuture<ShowDeploymentsResponse>
      */
     public CompletableFuture<ShowDeploymentsResponse> showDeploymentsAsync(ShowDeploymentsRequest request) {
@@ -1034,13 +1014,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentsRequest 请求对象
+     * @param request ShowDeploymentsRequest 请求对象
      * @return AsyncInvoker<ShowDeploymentsRequest, ShowDeploymentsResponse>
      */
     public AsyncInvoker<ShowDeploymentsRequest, ShowDeploymentsResponse> showDeploymentsAsyncInvoker(
         ShowDeploymentsRequest request) {
-        return new AsyncInvoker<ShowDeploymentsRequest, ShowDeploymentsResponse>(request, HiLensMeta.showDeployments,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showDeployments, hcClient);
     }
 
     /**
@@ -1050,7 +1029,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodeRequest 请求对象
+     * @param request ShowNodeRequest 请求对象
      * @return CompletableFuture<ShowNodeResponse>
      */
     public CompletableFuture<ShowNodeResponse> showNodeAsync(ShowNodeRequest request) {
@@ -1064,11 +1043,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodeRequest 请求对象
+     * @param request ShowNodeRequest 请求对象
      * @return AsyncInvoker<ShowNodeRequest, ShowNodeResponse>
      */
     public AsyncInvoker<ShowNodeRequest, ShowNodeResponse> showNodeAsyncInvoker(ShowNodeRequest request) {
-        return new AsyncInvoker<ShowNodeRequest, ShowNodeResponse>(request, HiLensMeta.showNode, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showNode, hcClient);
     }
 
     /**
@@ -1078,7 +1057,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodeActivationRecordsRequest 请求对象
+     * @param request ShowNodeActivationRecordsRequest 请求对象
      * @return CompletableFuture<ShowNodeActivationRecordsResponse>
      */
     public CompletableFuture<ShowNodeActivationRecordsResponse> showNodeActivationRecordsAsync(
@@ -1093,13 +1072,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodeActivationRecordsRequest 请求对象
+     * @param request ShowNodeActivationRecordsRequest 请求对象
      * @return AsyncInvoker<ShowNodeActivationRecordsRequest, ShowNodeActivationRecordsResponse>
      */
     public AsyncInvoker<ShowNodeActivationRecordsRequest, ShowNodeActivationRecordsResponse> showNodeActivationRecordsAsyncInvoker(
         ShowNodeActivationRecordsRequest request) {
-        return new AsyncInvoker<ShowNodeActivationRecordsRequest, ShowNodeActivationRecordsResponse>(request,
-            HiLensMeta.showNodeActivationRecords, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showNodeActivationRecords, hcClient);
     }
 
     /**
@@ -1109,7 +1087,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodesRequest 请求对象
+     * @param request ShowNodesRequest 请求对象
      * @return CompletableFuture<ShowNodesResponse>
      */
     public CompletableFuture<ShowNodesResponse> showNodesAsync(ShowNodesRequest request) {
@@ -1123,11 +1101,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodesRequest 请求对象
+     * @param request ShowNodesRequest 请求对象
      * @return AsyncInvoker<ShowNodesRequest, ShowNodesResponse>
      */
     public AsyncInvoker<ShowNodesRequest, ShowNodesResponse> showNodesAsyncInvoker(ShowNodesRequest request) {
-        return new AsyncInvoker<ShowNodesRequest, ShowNodesResponse>(request, HiLensMeta.showNodes, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showNodes, hcClient);
     }
 
     /**
@@ -1137,7 +1115,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagsRequest 请求对象
+     * @param request ShowResourceTagsRequest 请求对象
      * @return CompletableFuture<ShowResourceTagsResponse>
      */
     public CompletableFuture<ShowResourceTagsResponse> showResourceTagsAsync(ShowResourceTagsRequest request) {
@@ -1151,13 +1129,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagsRequest 请求对象
+     * @param request ShowResourceTagsRequest 请求对象
      * @return AsyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>
      */
     public AsyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTagsAsyncInvoker(
         ShowResourceTagsRequest request) {
-        return new AsyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>(request, HiLensMeta.showResourceTags,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showResourceTags, hcClient);
     }
 
     /**
@@ -1167,7 +1144,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretRequest 请求对象
+     * @param request ShowSecretRequest 请求对象
      * @return CompletableFuture<ShowSecretResponse>
      */
     public CompletableFuture<ShowSecretResponse> showSecretAsync(ShowSecretRequest request) {
@@ -1181,11 +1158,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretRequest 请求对象
+     * @param request ShowSecretRequest 请求对象
      * @return AsyncInvoker<ShowSecretRequest, ShowSecretResponse>
      */
     public AsyncInvoker<ShowSecretRequest, ShowSecretResponse> showSecretAsyncInvoker(ShowSecretRequest request) {
-        return new AsyncInvoker<ShowSecretRequest, ShowSecretResponse>(request, HiLensMeta.showSecret, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showSecret, hcClient);
     }
 
     /**
@@ -1195,7 +1172,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSkillInfoRequest 请求对象
+     * @param request ShowSkillInfoRequest 请求对象
      * @return CompletableFuture<ShowSkillInfoResponse>
      */
     public CompletableFuture<ShowSkillInfoResponse> showSkillInfoAsync(ShowSkillInfoRequest request) {
@@ -1209,13 +1186,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSkillInfoRequest 请求对象
+     * @param request ShowSkillInfoRequest 请求对象
      * @return AsyncInvoker<ShowSkillInfoRequest, ShowSkillInfoResponse>
      */
     public AsyncInvoker<ShowSkillInfoRequest, ShowSkillInfoResponse> showSkillInfoAsyncInvoker(
         ShowSkillInfoRequest request) {
-        return new AsyncInvoker<ShowSkillInfoRequest, ShowSkillInfoResponse>(request, HiLensMeta.showSkillInfo,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showSkillInfo, hcClient);
     }
 
     /**
@@ -1225,7 +1201,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSkillListRequest 请求对象
+     * @param request ShowSkillListRequest 请求对象
      * @return CompletableFuture<ShowSkillListResponse>
      */
     public CompletableFuture<ShowSkillListResponse> showSkillListAsync(ShowSkillListRequest request) {
@@ -1239,13 +1215,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSkillListRequest 请求对象
+     * @param request ShowSkillListRequest 请求对象
      * @return AsyncInvoker<ShowSkillListRequest, ShowSkillListResponse>
      */
     public AsyncInvoker<ShowSkillListRequest, ShowSkillListResponse> showSkillListAsyncInvoker(
         ShowSkillListRequest request) {
-        return new AsyncInvoker<ShowSkillListRequest, ShowSkillListResponse>(request, HiLensMeta.showSkillList,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showSkillList, hcClient);
     }
 
     /**
@@ -1255,7 +1230,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSkillOrderInfoRequest 请求对象
+     * @param request ShowSkillOrderInfoRequest 请求对象
      * @return CompletableFuture<ShowSkillOrderInfoResponse>
      */
     public CompletableFuture<ShowSkillOrderInfoResponse> showSkillOrderInfoAsync(ShowSkillOrderInfoRequest request) {
@@ -1269,13 +1244,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSkillOrderInfoRequest 请求对象
+     * @param request ShowSkillOrderInfoRequest 请求对象
      * @return AsyncInvoker<ShowSkillOrderInfoRequest, ShowSkillOrderInfoResponse>
      */
     public AsyncInvoker<ShowSkillOrderInfoRequest, ShowSkillOrderInfoResponse> showSkillOrderInfoAsyncInvoker(
         ShowSkillOrderInfoRequest request) {
-        return new AsyncInvoker<ShowSkillOrderInfoRequest, ShowSkillOrderInfoResponse>(request,
-            HiLensMeta.showSkillOrderInfo, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showSkillOrderInfo, hcClient);
     }
 
     /**
@@ -1285,7 +1259,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSkillOrderListRequest 请求对象
+     * @param request ShowSkillOrderListRequest 请求对象
      * @return CompletableFuture<ShowSkillOrderListResponse>
      */
     public CompletableFuture<ShowSkillOrderListResponse> showSkillOrderListAsync(ShowSkillOrderListRequest request) {
@@ -1299,13 +1273,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSkillOrderListRequest 请求对象
+     * @param request ShowSkillOrderListRequest 请求对象
      * @return AsyncInvoker<ShowSkillOrderListRequest, ShowSkillOrderListResponse>
      */
     public AsyncInvoker<ShowSkillOrderListRequest, ShowSkillOrderListResponse> showSkillOrderListAsyncInvoker(
         ShowSkillOrderListRequest request) {
-        return new AsyncInvoker<ShowSkillOrderListRequest, ShowSkillOrderListResponse>(request,
-            HiLensMeta.showSkillOrderList, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showSkillOrderList, hcClient);
     }
 
     /**
@@ -1315,7 +1288,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return CompletableFuture<ShowTaskResponse>
      */
     public CompletableFuture<ShowTaskResponse> showTaskAsync(ShowTaskRequest request) {
@@ -1329,11 +1302,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
      */
     public AsyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskAsyncInvoker(ShowTaskRequest request) {
-        return new AsyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, HiLensMeta.showTask, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showTask, hcClient);
     }
 
     /**
@@ -1343,7 +1316,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUpgradeProgressRequest 请求对象
+     * @param request ShowUpgradeProgressRequest 请求对象
      * @return CompletableFuture<ShowUpgradeProgressResponse>
      */
     public CompletableFuture<ShowUpgradeProgressResponse> showUpgradeProgressAsync(ShowUpgradeProgressRequest request) {
@@ -1357,13 +1330,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUpgradeProgressRequest 请求对象
+     * @param request ShowUpgradeProgressRequest 请求对象
      * @return AsyncInvoker<ShowUpgradeProgressRequest, ShowUpgradeProgressResponse>
      */
     public AsyncInvoker<ShowUpgradeProgressRequest, ShowUpgradeProgressResponse> showUpgradeProgressAsyncInvoker(
         ShowUpgradeProgressRequest request) {
-        return new AsyncInvoker<ShowUpgradeProgressRequest, ShowUpgradeProgressResponse>(request,
-            HiLensMeta.showUpgradeProgress, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showUpgradeProgress, hcClient);
     }
 
     /**
@@ -1373,7 +1345,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkSpaceRequest 请求对象
+     * @param request ShowWorkSpaceRequest 请求对象
      * @return CompletableFuture<ShowWorkSpaceResponse>
      */
     public CompletableFuture<ShowWorkSpaceResponse> showWorkSpaceAsync(ShowWorkSpaceRequest request) {
@@ -1387,13 +1359,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkSpaceRequest 请求对象
+     * @param request ShowWorkSpaceRequest 请求对象
      * @return AsyncInvoker<ShowWorkSpaceRequest, ShowWorkSpaceResponse>
      */
     public AsyncInvoker<ShowWorkSpaceRequest, ShowWorkSpaceResponse> showWorkSpaceAsyncInvoker(
         ShowWorkSpaceRequest request) {
-        return new AsyncInvoker<ShowWorkSpaceRequest, ShowWorkSpaceResponse>(request, HiLensMeta.showWorkSpace,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.showWorkSpace, hcClient);
     }
 
     /**
@@ -1403,7 +1374,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAndStopDeploymentRequest 请求对象
+     * @param request StartAndStopDeploymentRequest 请求对象
      * @return CompletableFuture<StartAndStopDeploymentResponse>
      */
     public CompletableFuture<StartAndStopDeploymentResponse> startAndStopDeploymentAsync(
@@ -1418,13 +1389,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAndStopDeploymentRequest 请求对象
+     * @param request StartAndStopDeploymentRequest 请求对象
      * @return AsyncInvoker<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse>
      */
     public AsyncInvoker<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse> startAndStopDeploymentAsyncInvoker(
         StartAndStopDeploymentRequest request) {
-        return new AsyncInvoker<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse>(request,
-            HiLensMeta.startAndStopDeployment, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.startAndStopDeployment, hcClient);
     }
 
     /**
@@ -1434,7 +1404,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAndStopDeploymentPodRequest 请求对象
+     * @param request StartAndStopDeploymentPodRequest 请求对象
      * @return CompletableFuture<StartAndStopDeploymentPodResponse>
      */
     public CompletableFuture<StartAndStopDeploymentPodResponse> startAndStopDeploymentPodAsync(
@@ -1449,13 +1419,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAndStopDeploymentPodRequest 请求对象
+     * @param request StartAndStopDeploymentPodRequest 请求对象
      * @return AsyncInvoker<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse>
      */
     public AsyncInvoker<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse> startAndStopDeploymentPodAsyncInvoker(
         StartAndStopDeploymentPodRequest request) {
-        return new AsyncInvoker<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse>(request,
-            HiLensMeta.startAndStopDeploymentPod, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.startAndStopDeploymentPod, hcClient);
     }
 
     /**
@@ -1465,7 +1434,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchNodeConnectionRequest 请求对象
+     * @param request SwitchNodeConnectionRequest 请求对象
      * @return CompletableFuture<SwitchNodeConnectionResponse>
      */
     public CompletableFuture<SwitchNodeConnectionResponse> switchNodeConnectionAsync(
@@ -1480,13 +1449,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchNodeConnectionRequest 请求对象
+     * @param request SwitchNodeConnectionRequest 请求对象
      * @return AsyncInvoker<SwitchNodeConnectionRequest, SwitchNodeConnectionResponse>
      */
     public AsyncInvoker<SwitchNodeConnectionRequest, SwitchNodeConnectionResponse> switchNodeConnectionAsyncInvoker(
         SwitchNodeConnectionRequest request) {
-        return new AsyncInvoker<SwitchNodeConnectionRequest, SwitchNodeConnectionResponse>(request,
-            HiLensMeta.switchNodeConnection, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.switchNodeConnection, hcClient);
     }
 
     /**
@@ -1496,7 +1464,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnfreezeNodeRequest 请求对象
+     * @param request UnfreezeNodeRequest 请求对象
      * @return CompletableFuture<UnfreezeNodeResponse>
      */
     public CompletableFuture<UnfreezeNodeResponse> unfreezeNodeAsync(UnfreezeNodeRequest request) {
@@ -1510,12 +1478,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnfreezeNodeRequest 请求对象
+     * @param request UnfreezeNodeRequest 请求对象
      * @return AsyncInvoker<UnfreezeNodeRequest, UnfreezeNodeResponse>
      */
     public AsyncInvoker<UnfreezeNodeRequest, UnfreezeNodeResponse> unfreezeNodeAsyncInvoker(
         UnfreezeNodeRequest request) {
-        return new AsyncInvoker<UnfreezeNodeRequest, UnfreezeNodeResponse>(request, HiLensMeta.unfreezeNode, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.unfreezeNode, hcClient);
     }
 
     /**
@@ -1525,7 +1493,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigMapRequest 请求对象
+     * @param request UpdateConfigMapRequest 请求对象
      * @return CompletableFuture<UpdateConfigMapResponse>
      */
     public CompletableFuture<UpdateConfigMapResponse> updateConfigMapAsync(UpdateConfigMapRequest request) {
@@ -1539,13 +1507,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigMapRequest 请求对象
+     * @param request UpdateConfigMapRequest 请求对象
      * @return AsyncInvoker<UpdateConfigMapRequest, UpdateConfigMapResponse>
      */
     public AsyncInvoker<UpdateConfigMapRequest, UpdateConfigMapResponse> updateConfigMapAsyncInvoker(
         UpdateConfigMapRequest request) {
-        return new AsyncInvoker<UpdateConfigMapRequest, UpdateConfigMapResponse>(request, HiLensMeta.updateConfigMap,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.updateConfigMap, hcClient);
     }
 
     /**
@@ -1555,7 +1522,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeploymentRequest 请求对象
+     * @param request UpdateDeploymentRequest 请求对象
      * @return CompletableFuture<UpdateDeploymentResponse>
      */
     public CompletableFuture<UpdateDeploymentResponse> updateDeploymentAsync(UpdateDeploymentRequest request) {
@@ -1569,13 +1536,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeploymentRequest 请求对象
+     * @param request UpdateDeploymentRequest 请求对象
      * @return AsyncInvoker<UpdateDeploymentRequest, UpdateDeploymentResponse>
      */
     public AsyncInvoker<UpdateDeploymentRequest, UpdateDeploymentResponse> updateDeploymentAsyncInvoker(
         UpdateDeploymentRequest request) {
-        return new AsyncInvoker<UpdateDeploymentRequest, UpdateDeploymentResponse>(request, HiLensMeta.updateDeployment,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.updateDeployment, hcClient);
     }
 
     /**
@@ -1585,7 +1551,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeploymentUsingPatchRequest 请求对象
+     * @param request UpdateDeploymentUsingPatchRequest 请求对象
      * @return CompletableFuture<UpdateDeploymentUsingPatchResponse>
      */
     public CompletableFuture<UpdateDeploymentUsingPatchResponse> updateDeploymentUsingPatchAsync(
@@ -1600,13 +1566,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeploymentUsingPatchRequest 请求对象
+     * @param request UpdateDeploymentUsingPatchRequest 请求对象
      * @return AsyncInvoker<UpdateDeploymentUsingPatchRequest, UpdateDeploymentUsingPatchResponse>
      */
     public AsyncInvoker<UpdateDeploymentUsingPatchRequest, UpdateDeploymentUsingPatchResponse> updateDeploymentUsingPatchAsyncInvoker(
         UpdateDeploymentUsingPatchRequest request) {
-        return new AsyncInvoker<UpdateDeploymentUsingPatchRequest, UpdateDeploymentUsingPatchResponse>(request,
-            HiLensMeta.updateDeploymentUsingPatch, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.updateDeploymentUsingPatch, hcClient);
     }
 
     /**
@@ -1616,7 +1581,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodeRequest 请求对象
+     * @param request UpdateNodeRequest 请求对象
      * @return CompletableFuture<UpdateNodeResponse>
      */
     public CompletableFuture<UpdateNodeResponse> updateNodeAsync(UpdateNodeRequest request) {
@@ -1630,11 +1595,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodeRequest 请求对象
+     * @param request UpdateNodeRequest 请求对象
      * @return AsyncInvoker<UpdateNodeRequest, UpdateNodeResponse>
      */
     public AsyncInvoker<UpdateNodeRequest, UpdateNodeResponse> updateNodeAsyncInvoker(UpdateNodeRequest request) {
-        return new AsyncInvoker<UpdateNodeRequest, UpdateNodeResponse>(request, HiLensMeta.updateNode, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.updateNode, hcClient);
     }
 
     /**
@@ -1644,7 +1609,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodeCertRequest 请求对象
+     * @param request UpdateNodeCertRequest 请求对象
      * @return CompletableFuture<UpdateNodeCertResponse>
      */
     public CompletableFuture<UpdateNodeCertResponse> updateNodeCertAsync(UpdateNodeCertRequest request) {
@@ -1658,13 +1623,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodeCertRequest 请求对象
+     * @param request UpdateNodeCertRequest 请求对象
      * @return AsyncInvoker<UpdateNodeCertRequest, UpdateNodeCertResponse>
      */
     public AsyncInvoker<UpdateNodeCertRequest, UpdateNodeCertResponse> updateNodeCertAsyncInvoker(
         UpdateNodeCertRequest request) {
-        return new AsyncInvoker<UpdateNodeCertRequest, UpdateNodeCertResponse>(request, HiLensMeta.updateNodeCert,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.updateNodeCert, hcClient);
     }
 
     /**
@@ -1674,7 +1638,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodeFirmwareRequest 请求对象
+     * @param request UpdateNodeFirmwareRequest 请求对象
      * @return CompletableFuture<UpdateNodeFirmwareResponse>
      */
     public CompletableFuture<UpdateNodeFirmwareResponse> updateNodeFirmwareAsync(UpdateNodeFirmwareRequest request) {
@@ -1688,13 +1652,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodeFirmwareRequest 请求对象
+     * @param request UpdateNodeFirmwareRequest 请求对象
      * @return AsyncInvoker<UpdateNodeFirmwareRequest, UpdateNodeFirmwareResponse>
      */
     public AsyncInvoker<UpdateNodeFirmwareRequest, UpdateNodeFirmwareResponse> updateNodeFirmwareAsyncInvoker(
         UpdateNodeFirmwareRequest request) {
-        return new AsyncInvoker<UpdateNodeFirmwareRequest, UpdateNodeFirmwareResponse>(request,
-            HiLensMeta.updateNodeFirmware, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.updateNodeFirmware, hcClient);
     }
 
     /**
@@ -1704,7 +1667,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretRequest 请求对象
+     * @param request UpdateSecretRequest 请求对象
      * @return CompletableFuture<UpdateSecretResponse>
      */
     public CompletableFuture<UpdateSecretResponse> updateSecretAsync(UpdateSecretRequest request) {
@@ -1718,12 +1681,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretRequest 请求对象
+     * @param request UpdateSecretRequest 请求对象
      * @return AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse>
      */
     public AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse> updateSecretAsyncInvoker(
         UpdateSecretRequest request) {
-        return new AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse>(request, HiLensMeta.updateSecret, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.updateSecret, hcClient);
     }
 
     /**
@@ -1733,7 +1696,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskRequest 请求对象
+     * @param request UpdateTaskRequest 请求对象
      * @return CompletableFuture<UpdateTaskResponse>
      */
     public CompletableFuture<UpdateTaskResponse> updateTaskAsync(UpdateTaskRequest request) {
@@ -1747,11 +1710,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskRequest 请求对象
+     * @param request UpdateTaskRequest 请求对象
      * @return AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
      */
     public AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse> updateTaskAsyncInvoker(UpdateTaskRequest request) {
-        return new AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>(request, HiLensMeta.updateTask, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.updateTask, hcClient);
     }
 
     /**
@@ -1761,7 +1724,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkSpaceRequest 请求对象
+     * @param request UpdateWorkSpaceRequest 请求对象
      * @return CompletableFuture<UpdateWorkSpaceResponse>
      */
     public CompletableFuture<UpdateWorkSpaceResponse> updateWorkSpaceAsync(UpdateWorkSpaceRequest request) {
@@ -1775,13 +1738,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkSpaceRequest 请求对象
+     * @param request UpdateWorkSpaceRequest 请求对象
      * @return AsyncInvoker<UpdateWorkSpaceRequest, UpdateWorkSpaceResponse>
      */
     public AsyncInvoker<UpdateWorkSpaceRequest, UpdateWorkSpaceResponse> updateWorkSpaceAsyncInvoker(
         UpdateWorkSpaceRequest request) {
-        return new AsyncInvoker<UpdateWorkSpaceRequest, UpdateWorkSpaceResponse>(request, HiLensMeta.updateWorkSpace,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.updateWorkSpace, hcClient);
     }
 
 }

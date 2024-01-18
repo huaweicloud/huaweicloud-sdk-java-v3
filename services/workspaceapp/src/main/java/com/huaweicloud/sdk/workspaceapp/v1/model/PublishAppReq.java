@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 发布应用请求
+ * 发布应用请求。
  */
 public class PublishAppReq {
 
@@ -40,7 +40,7 @@ public class PublishAppReq {
     }
 
     /**
-     * 发布应用列表(单次最多20个应用)
+     * 发布应用列表(单次最多20个应用)。
      * @return items
      */
     public List<PublishApp> getItems() {

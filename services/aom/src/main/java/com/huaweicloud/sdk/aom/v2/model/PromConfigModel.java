@@ -92,7 +92,7 @@ public class PromConfigModel {
     }
 
     /**
-     * Prometheus实例关联dashboard的dashboard id。
+     * Prometheus实例关联dashboard的dashboard id（目前未使用）。
      * @return dashboardId
      */
     public String getDashboardId() {

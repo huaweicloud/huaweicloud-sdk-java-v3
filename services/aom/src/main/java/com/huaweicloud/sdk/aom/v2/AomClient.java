@@ -118,7 +118,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddActionRuleRequest 请求对象
+     * @param request AddActionRuleRequest 请求对象
      * @return AddActionRuleResponse
      */
     public AddActionRuleResponse addActionRule(AddActionRuleRequest request) {
@@ -132,11 +132,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddActionRuleRequest 请求对象
+     * @param request AddActionRuleRequest 请求对象
      * @return SyncInvoker<AddActionRuleRequest, AddActionRuleResponse>
      */
     public SyncInvoker<AddActionRuleRequest, AddActionRuleResponse> addActionRuleInvoker(AddActionRuleRequest request) {
-        return new SyncInvoker<AddActionRuleRequest, AddActionRuleResponse>(request, AomMeta.addActionRule, hcClient);
+        return new SyncInvoker<>(request, AomMeta.addActionRule, hcClient);
     }
 
     /**
@@ -146,7 +146,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAlarmRuleRequest 请求对象
+     * @param request AddAlarmRuleRequest 请求对象
      * @return AddAlarmRuleResponse
      */
     public AddAlarmRuleResponse addAlarmRule(AddAlarmRuleRequest request) {
@@ -160,11 +160,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAlarmRuleRequest 请求对象
+     * @param request AddAlarmRuleRequest 请求对象
      * @return SyncInvoker<AddAlarmRuleRequest, AddAlarmRuleResponse>
      */
     public SyncInvoker<AddAlarmRuleRequest, AddAlarmRuleResponse> addAlarmRuleInvoker(AddAlarmRuleRequest request) {
-        return new SyncInvoker<AddAlarmRuleRequest, AddAlarmRuleResponse>(request, AomMeta.addAlarmRule, hcClient);
+        return new SyncInvoker<>(request, AomMeta.addAlarmRule, hcClient);
     }
 
     /**
@@ -174,7 +174,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEvent2alarmRuleRequest 请求对象
+     * @param request AddEvent2alarmRuleRequest 请求对象
      * @return AddEvent2alarmRuleResponse
      */
     public AddEvent2alarmRuleResponse addEvent2alarmRule(AddEvent2alarmRuleRequest request) {
@@ -188,13 +188,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEvent2alarmRuleRequest 请求对象
+     * @param request AddEvent2alarmRuleRequest 请求对象
      * @return SyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse>
      */
     public SyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> addEvent2alarmRuleInvoker(
         AddEvent2alarmRuleRequest request) {
-        return new SyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse>(request,
-            AomMeta.addEvent2alarmRule, hcClient);
+        return new SyncInvoker<>(request, AomMeta.addEvent2alarmRule, hcClient);
     }
 
     /**
@@ -204,7 +203,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMetricDataRequest 请求对象
+     * @param request AddMetricDataRequest 请求对象
      * @return AddMetricDataResponse
      */
     public AddMetricDataResponse addMetricData(AddMetricDataRequest request) {
@@ -218,11 +217,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMetricDataRequest 请求对象
+     * @param request AddMetricDataRequest 请求对象
      * @return SyncInvoker<AddMetricDataRequest, AddMetricDataResponse>
      */
     public SyncInvoker<AddMetricDataRequest, AddMetricDataResponse> addMetricDataInvoker(AddMetricDataRequest request) {
-        return new SyncInvoker<AddMetricDataRequest, AddMetricDataResponse>(request, AomMeta.addMetricData, hcClient);
+        return new SyncInvoker<>(request, AomMeta.addMetricData, hcClient);
     }
 
     /**
@@ -232,7 +231,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMuteRulesRequest 请求对象
+     * @param request AddMuteRulesRequest 请求对象
      * @return AddMuteRulesResponse
      */
     public AddMuteRulesResponse addMuteRules(AddMuteRulesRequest request) {
@@ -246,11 +245,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMuteRulesRequest 请求对象
+     * @param request AddMuteRulesRequest 请求对象
      * @return SyncInvoker<AddMuteRulesRequest, AddMuteRulesResponse>
      */
     public SyncInvoker<AddMuteRulesRequest, AddMuteRulesResponse> addMuteRulesInvoker(AddMuteRulesRequest request) {
-        return new SyncInvoker<AddMuteRulesRequest, AddMuteRulesResponse>(request, AomMeta.addMuteRules, hcClient);
+        return new SyncInvoker<>(request, AomMeta.addMuteRules, hcClient);
     }
 
     /**
@@ -260,7 +259,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddOrUpdateServiceDiscoveryRulesRequest 请求对象
+     * @param request AddOrUpdateServiceDiscoveryRulesRequest 请求对象
      * @return AddOrUpdateServiceDiscoveryRulesResponse
      */
     public AddOrUpdateServiceDiscoveryRulesResponse addOrUpdateServiceDiscoveryRules(
@@ -275,13 +274,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddOrUpdateServiceDiscoveryRulesRequest 请求对象
+     * @param request AddOrUpdateServiceDiscoveryRulesRequest 请求对象
      * @return SyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse>
      */
     public SyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> addOrUpdateServiceDiscoveryRulesInvoker(
         AddOrUpdateServiceDiscoveryRulesRequest request) {
-        return new SyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse>(
-            request, AomMeta.addOrUpdateServiceDiscoveryRules, hcClient);
+        return new SyncInvoker<>(request, AomMeta.addOrUpdateServiceDiscoveryRules, hcClient);
     }
 
     /**
@@ -291,7 +289,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountEventsRequest 请求对象
+     * @param request CountEventsRequest 请求对象
      * @return CountEventsResponse
      */
     public CountEventsResponse countEvents(CountEventsRequest request) {
@@ -305,11 +303,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountEventsRequest 请求对象
+     * @param request CountEventsRequest 请求对象
      * @return SyncInvoker<CountEventsRequest, CountEventsResponse>
      */
     public SyncInvoker<CountEventsRequest, CountEventsResponse> countEventsInvoker(CountEventsRequest request) {
-        return new SyncInvoker<CountEventsRequest, CountEventsResponse>(request, AomMeta.countEvents, hcClient);
+        return new SyncInvoker<>(request, AomMeta.countEvents, hcClient);
     }
 
     /**
@@ -319,7 +317,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteActionRuleRequest 请求对象
+     * @param request DeleteActionRuleRequest 请求对象
      * @return DeleteActionRuleResponse
      */
     public DeleteActionRuleResponse deleteActionRule(DeleteActionRuleRequest request) {
@@ -333,13 +331,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteActionRuleRequest 请求对象
+     * @param request DeleteActionRuleRequest 请求对象
      * @return SyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse>
      */
     public SyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse> deleteActionRuleInvoker(
         DeleteActionRuleRequest request) {
-        return new SyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse>(request, AomMeta.deleteActionRule,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.deleteActionRule, hcClient);
     }
 
     /**
@@ -349,7 +346,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmRuleRequest 请求对象
+     * @param request DeleteAlarmRuleRequest 请求对象
      * @return DeleteAlarmRuleResponse
      */
     public DeleteAlarmRuleResponse deleteAlarmRule(DeleteAlarmRuleRequest request) {
@@ -363,13 +360,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmRuleRequest 请求对象
+     * @param request DeleteAlarmRuleRequest 请求对象
      * @return SyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse>
      */
     public SyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse> deleteAlarmRuleInvoker(
         DeleteAlarmRuleRequest request) {
-        return new SyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse>(request, AomMeta.deleteAlarmRule,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.deleteAlarmRule, hcClient);
     }
 
     /**
@@ -379,7 +375,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmRulesRequest 请求对象
+     * @param request DeleteAlarmRulesRequest 请求对象
      * @return DeleteAlarmRulesResponse
      */
     public DeleteAlarmRulesResponse deleteAlarmRules(DeleteAlarmRulesRequest request) {
@@ -393,13 +389,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmRulesRequest 请求对象
+     * @param request DeleteAlarmRulesRequest 请求对象
      * @return SyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse>
      */
     public SyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> deleteAlarmRulesInvoker(
         DeleteAlarmRulesRequest request) {
-        return new SyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse>(request, AomMeta.deleteAlarmRules,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.deleteAlarmRules, hcClient);
     }
 
     /**
@@ -409,7 +404,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvent2alarmRuleRequest 请求对象
+     * @param request DeleteEvent2alarmRuleRequest 请求对象
      * @return DeleteEvent2alarmRuleResponse
      */
     public DeleteEvent2alarmRuleResponse deleteEvent2alarmRule(DeleteEvent2alarmRuleRequest request) {
@@ -423,13 +418,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvent2alarmRuleRequest 请求对象
+     * @param request DeleteEvent2alarmRuleRequest 请求对象
      * @return SyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse>
      */
     public SyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> deleteEvent2alarmRuleInvoker(
         DeleteEvent2alarmRuleRequest request) {
-        return new SyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse>(request,
-            AomMeta.deleteEvent2alarmRule, hcClient);
+        return new SyncInvoker<>(request, AomMeta.deleteEvent2alarmRule, hcClient);
     }
 
     /**
@@ -439,7 +433,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMuteRulesRequest 请求对象
+     * @param request DeleteMuteRulesRequest 请求对象
      * @return DeleteMuteRulesResponse
      */
     public DeleteMuteRulesResponse deleteMuteRules(DeleteMuteRulesRequest request) {
@@ -453,13 +447,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMuteRulesRequest 请求对象
+     * @param request DeleteMuteRulesRequest 请求对象
      * @return SyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse>
      */
     public SyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse> deleteMuteRulesInvoker(
         DeleteMuteRulesRequest request) {
-        return new SyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse>(request, AomMeta.deleteMuteRules,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.deleteMuteRules, hcClient);
     }
 
     /**
@@ -469,7 +462,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteserviceDiscoveryRulesRequest 请求对象
+     * @param request DeleteserviceDiscoveryRulesRequest 请求对象
      * @return DeleteserviceDiscoveryRulesResponse
      */
     public DeleteserviceDiscoveryRulesResponse deleteserviceDiscoveryRules(DeleteserviceDiscoveryRulesRequest request) {
@@ -483,13 +476,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteserviceDiscoveryRulesRequest 请求对象
+     * @param request DeleteserviceDiscoveryRulesRequest 请求对象
      * @return SyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse>
      */
     public SyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> deleteserviceDiscoveryRulesInvoker(
         DeleteserviceDiscoveryRulesRequest request) {
-        return new SyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse>(request,
-            AomMeta.deleteserviceDiscoveryRules, hcClient);
+        return new SyncInvoker<>(request, AomMeta.deleteserviceDiscoveryRules, hcClient);
     }
 
     /**
@@ -499,7 +491,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListActionRuleRequest 请求对象
+     * @param request ListActionRuleRequest 请求对象
      * @return ListActionRuleResponse
      */
     public ListActionRuleResponse listActionRule(ListActionRuleRequest request) {
@@ -513,13 +505,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListActionRuleRequest 请求对象
+     * @param request ListActionRuleRequest 请求对象
      * @return SyncInvoker<ListActionRuleRequest, ListActionRuleResponse>
      */
     public SyncInvoker<ListActionRuleRequest, ListActionRuleResponse> listActionRuleInvoker(
         ListActionRuleRequest request) {
-        return new SyncInvoker<ListActionRuleRequest, ListActionRuleResponse>(request, AomMeta.listActionRule,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.listActionRule, hcClient);
     }
 
     /**
@@ -529,7 +520,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentsRequest 请求对象
+     * @param request ListAgentsRequest 请求对象
      * @return ListAgentsResponse
      */
     public ListAgentsResponse listAgents(ListAgentsRequest request) {
@@ -543,11 +534,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentsRequest 请求对象
+     * @param request ListAgentsRequest 请求对象
      * @return SyncInvoker<ListAgentsRequest, ListAgentsResponse>
      */
     public SyncInvoker<ListAgentsRequest, ListAgentsResponse> listAgentsInvoker(ListAgentsRequest request) {
-        return new SyncInvoker<ListAgentsRequest, ListAgentsResponse>(request, AomMeta.listAgents, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listAgents, hcClient);
     }
 
     /**
@@ -557,7 +548,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmRuleRequest 请求对象
+     * @param request ListAlarmRuleRequest 请求对象
      * @return ListAlarmRuleResponse
      */
     public ListAlarmRuleResponse listAlarmRule(ListAlarmRuleRequest request) {
@@ -571,11 +562,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmRuleRequest 请求对象
+     * @param request ListAlarmRuleRequest 请求对象
      * @return SyncInvoker<ListAlarmRuleRequest, ListAlarmRuleResponse>
      */
     public SyncInvoker<ListAlarmRuleRequest, ListAlarmRuleResponse> listAlarmRuleInvoker(ListAlarmRuleRequest request) {
-        return new SyncInvoker<ListAlarmRuleRequest, ListAlarmRuleResponse>(request, AomMeta.listAlarmRule, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listAlarmRule, hcClient);
     }
 
     /**
@@ -585,7 +576,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEvent2alarmRuleRequest 请求对象
+     * @param request ListEvent2alarmRuleRequest 请求对象
      * @return ListEvent2alarmRuleResponse
      */
     public ListEvent2alarmRuleResponse listEvent2alarmRule(ListEvent2alarmRuleRequest request) {
@@ -599,13 +590,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEvent2alarmRuleRequest 请求对象
+     * @param request ListEvent2alarmRuleRequest 请求对象
      * @return SyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse>
      */
     public SyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> listEvent2alarmRuleInvoker(
         ListEvent2alarmRuleRequest request) {
-        return new SyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse>(request,
-            AomMeta.listEvent2alarmRule, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listEvent2alarmRule, hcClient);
     }
 
     /**
@@ -615,7 +605,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventsRequest 请求对象
+     * @param request ListEventsRequest 请求对象
      * @return ListEventsResponse
      */
     public ListEventsResponse listEvents(ListEventsRequest request) {
@@ -629,11 +619,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventsRequest 请求对象
+     * @param request ListEventsRequest 请求对象
      * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
      */
     public SyncInvoker<ListEventsRequest, ListEventsResponse> listEventsInvoker(ListEventsRequest request) {
-        return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, AomMeta.listEvents, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listEvents, hcClient);
     }
 
     /**
@@ -643,7 +633,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogItemsRequest 请求对象
+     * @param request ListLogItemsRequest 请求对象
      * @return ListLogItemsResponse
      */
     public ListLogItemsResponse listLogItems(ListLogItemsRequest request) {
@@ -657,11 +647,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogItemsRequest 请求对象
+     * @param request ListLogItemsRequest 请求对象
      * @return SyncInvoker<ListLogItemsRequest, ListLogItemsResponse>
      */
     public SyncInvoker<ListLogItemsRequest, ListLogItemsResponse> listLogItemsInvoker(ListLogItemsRequest request) {
-        return new SyncInvoker<ListLogItemsRequest, ListLogItemsResponse>(request, AomMeta.listLogItems, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listLogItems, hcClient);
     }
 
     /**
@@ -671,7 +661,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetricItemsRequest 请求对象
+     * @param request ListMetricItemsRequest 请求对象
      * @return ListMetricItemsResponse
      */
     public ListMetricItemsResponse listMetricItems(ListMetricItemsRequest request) {
@@ -685,13 +675,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetricItemsRequest 请求对象
+     * @param request ListMetricItemsRequest 请求对象
      * @return SyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse>
      */
     public SyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse> listMetricItemsInvoker(
         ListMetricItemsRequest request) {
-        return new SyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse>(request, AomMeta.listMetricItems,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.listMetricItems, hcClient);
     }
 
     /**
@@ -701,7 +690,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMuteRuleRequest 请求对象
+     * @param request ListMuteRuleRequest 请求对象
      * @return ListMuteRuleResponse
      */
     public ListMuteRuleResponse listMuteRule(ListMuteRuleRequest request) {
@@ -715,11 +704,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMuteRuleRequest 请求对象
+     * @param request ListMuteRuleRequest 请求对象
      * @return SyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse>
      */
     public SyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse> listMuteRuleInvoker(ListMuteRuleRequest request) {
-        return new SyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse>(request, AomMeta.listMuteRule, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listMuteRule, hcClient);
     }
 
     /**
@@ -729,7 +718,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotifiedHistoriesRequest 请求对象
+     * @param request ListNotifiedHistoriesRequest 请求对象
      * @return ListNotifiedHistoriesResponse
      */
     public ListNotifiedHistoriesResponse listNotifiedHistories(ListNotifiedHistoriesRequest request) {
@@ -743,13 +732,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotifiedHistoriesRequest 请求对象
+     * @param request ListNotifiedHistoriesRequest 请求对象
      * @return SyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>
      */
     public SyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> listNotifiedHistoriesInvoker(
         ListNotifiedHistoriesRequest request) {
-        return new SyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>(request,
-            AomMeta.listNotifiedHistories, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listNotifiedHistories, hcClient);
     }
 
     /**
@@ -759,7 +747,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionsRequest 请求对象
+     * @param request ListPermissionsRequest 请求对象
      * @return ListPermissionsResponse
      */
     public ListPermissionsResponse listPermissions(ListPermissionsRequest request) {
@@ -773,13 +761,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionsRequest 请求对象
+     * @param request ListPermissionsRequest 请求对象
      * @return SyncInvoker<ListPermissionsRequest, ListPermissionsResponse>
      */
     public SyncInvoker<ListPermissionsRequest, ListPermissionsResponse> listPermissionsInvoker(
         ListPermissionsRequest request) {
-        return new SyncInvoker<ListPermissionsRequest, ListPermissionsResponse>(request, AomMeta.listPermissions,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.listPermissions, hcClient);
     }
 
     /**
@@ -789,7 +776,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSampleRequest 请求对象
+     * @param request ListSampleRequest 请求对象
      * @return ListSampleResponse
      */
     public ListSampleResponse listSample(ListSampleRequest request) {
@@ -803,11 +790,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSampleRequest 请求对象
+     * @param request ListSampleRequest 请求对象
      * @return SyncInvoker<ListSampleRequest, ListSampleResponse>
      */
     public SyncInvoker<ListSampleRequest, ListSampleResponse> listSampleInvoker(ListSampleRequest request) {
-        return new SyncInvoker<ListSampleRequest, ListSampleResponse>(request, AomMeta.listSample, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listSample, hcClient);
     }
 
     /**
@@ -817,7 +804,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSeriesRequest 请求对象
+     * @param request ListSeriesRequest 请求对象
      * @return ListSeriesResponse
      */
     public ListSeriesResponse listSeries(ListSeriesRequest request) {
@@ -831,11 +818,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSeriesRequest 请求对象
+     * @param request ListSeriesRequest 请求对象
      * @return SyncInvoker<ListSeriesRequest, ListSeriesResponse>
      */
     public SyncInvoker<ListSeriesRequest, ListSeriesResponse> listSeriesInvoker(ListSeriesRequest request) {
-        return new SyncInvoker<ListSeriesRequest, ListSeriesResponse>(request, AomMeta.listSeries, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listSeries, hcClient);
     }
 
     /**
@@ -845,7 +832,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceDiscoveryRulesRequest 请求对象
+     * @param request ListServiceDiscoveryRulesRequest 请求对象
      * @return ListServiceDiscoveryRulesResponse
      */
     public ListServiceDiscoveryRulesResponse listServiceDiscoveryRules(ListServiceDiscoveryRulesRequest request) {
@@ -859,13 +846,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceDiscoveryRulesRequest 请求对象
+     * @param request ListServiceDiscoveryRulesRequest 请求对象
      * @return SyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse>
      */
     public SyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse> listServiceDiscoveryRulesInvoker(
         ListServiceDiscoveryRulesRequest request) {
-        return new SyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse>(request,
-            AomMeta.listServiceDiscoveryRules, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listServiceDiscoveryRules, hcClient);
     }
 
     /**
@@ -875,7 +861,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushEventsRequest 请求对象
+     * @param request PushEventsRequest 请求对象
      * @return PushEventsResponse
      */
     public PushEventsResponse pushEvents(PushEventsRequest request) {
@@ -889,11 +875,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushEventsRequest 请求对象
+     * @param request PushEventsRequest 请求对象
      * @return SyncInvoker<PushEventsRequest, PushEventsResponse>
      */
     public SyncInvoker<PushEventsRequest, PushEventsResponse> pushEventsInvoker(PushEventsRequest request) {
-        return new SyncInvoker<PushEventsRequest, PushEventsResponse>(request, AomMeta.pushEvents, hcClient);
+        return new SyncInvoker<>(request, AomMeta.pushEvents, hcClient);
     }
 
     /**
@@ -903,7 +889,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowActionRuleRequest 请求对象
+     * @param request ShowActionRuleRequest 请求对象
      * @return ShowActionRuleResponse
      */
     public ShowActionRuleResponse showActionRule(ShowActionRuleRequest request) {
@@ -917,13 +903,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowActionRuleRequest 请求对象
+     * @param request ShowActionRuleRequest 请求对象
      * @return SyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse>
      */
     public SyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse> showActionRuleInvoker(
         ShowActionRuleRequest request) {
-        return new SyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse>(request, AomMeta.showActionRule,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.showActionRule, hcClient);
     }
 
     /**
@@ -933,7 +918,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlarmRuleRequest 请求对象
+     * @param request ShowAlarmRuleRequest 请求对象
      * @return ShowAlarmRuleResponse
      */
     public ShowAlarmRuleResponse showAlarmRule(ShowAlarmRuleRequest request) {
@@ -947,11 +932,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlarmRuleRequest 请求对象
+     * @param request ShowAlarmRuleRequest 请求对象
      * @return SyncInvoker<ShowAlarmRuleRequest, ShowAlarmRuleResponse>
      */
     public SyncInvoker<ShowAlarmRuleRequest, ShowAlarmRuleResponse> showAlarmRuleInvoker(ShowAlarmRuleRequest request) {
-        return new SyncInvoker<ShowAlarmRuleRequest, ShowAlarmRuleResponse>(request, AomMeta.showAlarmRule, hcClient);
+        return new SyncInvoker<>(request, AomMeta.showAlarmRule, hcClient);
     }
 
     /**
@@ -961,7 +946,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetricsDataRequest 请求对象
+     * @param request ShowMetricsDataRequest 请求对象
      * @return ShowMetricsDataResponse
      */
     public ShowMetricsDataResponse showMetricsData(ShowMetricsDataRequest request) {
@@ -975,13 +960,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetricsDataRequest 请求对象
+     * @param request ShowMetricsDataRequest 请求对象
      * @return SyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse>
      */
     public SyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse> showMetricsDataInvoker(
         ShowMetricsDataRequest request) {
-        return new SyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse>(request, AomMeta.showMetricsData,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.showMetricsData, hcClient);
     }
 
     /**
@@ -991,7 +975,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateActionRuleRequest 请求对象
+     * @param request UpdateActionRuleRequest 请求对象
      * @return UpdateActionRuleResponse
      */
     public UpdateActionRuleResponse updateActionRule(UpdateActionRuleRequest request) {
@@ -1005,13 +989,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateActionRuleRequest 请求对象
+     * @param request UpdateActionRuleRequest 请求对象
      * @return SyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse>
      */
     public SyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse> updateActionRuleInvoker(
         UpdateActionRuleRequest request) {
-        return new SyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse>(request, AomMeta.updateActionRule,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.updateActionRule, hcClient);
     }
 
     /**
@@ -1021,7 +1004,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmRuleRequest 请求对象
+     * @param request UpdateAlarmRuleRequest 请求对象
      * @return UpdateAlarmRuleResponse
      */
     public UpdateAlarmRuleResponse updateAlarmRule(UpdateAlarmRuleRequest request) {
@@ -1035,13 +1018,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmRuleRequest 请求对象
+     * @param request UpdateAlarmRuleRequest 请求对象
      * @return SyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse>
      */
     public SyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> updateAlarmRuleInvoker(
         UpdateAlarmRuleRequest request) {
-        return new SyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse>(request, AomMeta.updateAlarmRule,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.updateAlarmRule, hcClient);
     }
 
     /**
@@ -1051,7 +1033,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventRuleRequest 请求对象
+     * @param request UpdateEventRuleRequest 请求对象
      * @return UpdateEventRuleResponse
      */
     public UpdateEventRuleResponse updateEventRule(UpdateEventRuleRequest request) {
@@ -1065,13 +1047,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventRuleRequest 请求对象
+     * @param request UpdateEventRuleRequest 请求对象
      * @return SyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse>
      */
     public SyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse> updateEventRuleInvoker(
         UpdateEventRuleRequest request) {
-        return new SyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse>(request, AomMeta.updateEventRule,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.updateEventRule, hcClient);
     }
 
     /**
@@ -1081,7 +1062,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMuteRuleRequest 请求对象
+     * @param request UpdateMuteRuleRequest 请求对象
      * @return UpdateMuteRuleResponse
      */
     public UpdateMuteRuleResponse updateMuteRule(UpdateMuteRuleRequest request) {
@@ -1095,13 +1076,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMuteRuleRequest 请求对象
+     * @param request UpdateMuteRuleRequest 请求对象
      * @return SyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse>
      */
     public SyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse> updateMuteRuleInvoker(
         UpdateMuteRuleRequest request) {
-        return new SyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse>(request, AomMeta.updateMuteRule,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.updateMuteRule, hcClient);
     }
 
     /**
@@ -1111,7 +1091,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePromInstanceRequest 请求对象
+     * @param request CreatePromInstanceRequest 请求对象
      * @return CreatePromInstanceResponse
      */
     public CreatePromInstanceResponse createPromInstance(CreatePromInstanceRequest request) {
@@ -1125,13 +1105,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePromInstanceRequest 请求对象
+     * @param request CreatePromInstanceRequest 请求对象
      * @return SyncInvoker<CreatePromInstanceRequest, CreatePromInstanceResponse>
      */
     public SyncInvoker<CreatePromInstanceRequest, CreatePromInstanceResponse> createPromInstanceInvoker(
         CreatePromInstanceRequest request) {
-        return new SyncInvoker<CreatePromInstanceRequest, CreatePromInstanceResponse>(request,
-            AomMeta.createPromInstance, hcClient);
+        return new SyncInvoker<>(request, AomMeta.createPromInstance, hcClient);
     }
 
     /**
@@ -1141,7 +1120,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordingRuleRequest 请求对象
+     * @param request CreateRecordingRuleRequest 请求对象
      * @return CreateRecordingRuleResponse
      */
     public CreateRecordingRuleResponse createRecordingRule(CreateRecordingRuleRequest request) {
@@ -1155,13 +1134,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordingRuleRequest 请求对象
+     * @param request CreateRecordingRuleRequest 请求对象
      * @return SyncInvoker<CreateRecordingRuleRequest, CreateRecordingRuleResponse>
      */
     public SyncInvoker<CreateRecordingRuleRequest, CreateRecordingRuleResponse> createRecordingRuleInvoker(
         CreateRecordingRuleRequest request) {
-        return new SyncInvoker<CreateRecordingRuleRequest, CreateRecordingRuleResponse>(request,
-            AomMeta.createRecordingRule, hcClient);
+        return new SyncInvoker<>(request, AomMeta.createRecordingRule, hcClient);
     }
 
     /**
@@ -1171,7 +1149,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePromInstanceRequest 请求对象
+     * @param request DeletePromInstanceRequest 请求对象
      * @return DeletePromInstanceResponse
      */
     public DeletePromInstanceResponse deletePromInstance(DeletePromInstanceRequest request) {
@@ -1185,13 +1163,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePromInstanceRequest 请求对象
+     * @param request DeletePromInstanceRequest 请求对象
      * @return SyncInvoker<DeletePromInstanceRequest, DeletePromInstanceResponse>
      */
     public SyncInvoker<DeletePromInstanceRequest, DeletePromInstanceResponse> deletePromInstanceInvoker(
         DeletePromInstanceRequest request) {
-        return new SyncInvoker<DeletePromInstanceRequest, DeletePromInstanceResponse>(request,
-            AomMeta.deletePromInstance, hcClient);
+        return new SyncInvoker<>(request, AomMeta.deletePromInstance, hcClient);
     }
 
     /**
@@ -1201,7 +1178,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccessCodeRequest 请求对象
+     * @param request ListAccessCodeRequest 请求对象
      * @return ListAccessCodeResponse
      */
     public ListAccessCodeResponse listAccessCode(ListAccessCodeRequest request) {
@@ -1215,13 +1192,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccessCodeRequest 请求对象
+     * @param request ListAccessCodeRequest 请求对象
      * @return SyncInvoker<ListAccessCodeRequest, ListAccessCodeResponse>
      */
     public SyncInvoker<ListAccessCodeRequest, ListAccessCodeResponse> listAccessCodeInvoker(
         ListAccessCodeRequest request) {
-        return new SyncInvoker<ListAccessCodeRequest, ListAccessCodeResponse>(request, AomMeta.listAccessCode,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.listAccessCode, hcClient);
     }
 
     /**
@@ -1231,7 +1207,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstantQueryAomPromGetRequest 请求对象
+     * @param request ListInstantQueryAomPromGetRequest 请求对象
      * @return ListInstantQueryAomPromGetResponse
      */
     public ListInstantQueryAomPromGetResponse listInstantQueryAomPromGet(ListInstantQueryAomPromGetRequest request) {
@@ -1245,13 +1221,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstantQueryAomPromGetRequest 请求对象
+     * @param request ListInstantQueryAomPromGetRequest 请求对象
      * @return SyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>
      */
     public SyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> listInstantQueryAomPromGetInvoker(
         ListInstantQueryAomPromGetRequest request) {
-        return new SyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>(request,
-            AomMeta.listInstantQueryAomPromGet, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listInstantQueryAomPromGet, hcClient);
     }
 
     /**
@@ -1261,7 +1236,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstantQueryAomPromPostRequest 请求对象
+     * @param request ListInstantQueryAomPromPostRequest 请求对象
      * @return ListInstantQueryAomPromPostResponse
      */
     public ListInstantQueryAomPromPostResponse listInstantQueryAomPromPost(ListInstantQueryAomPromPostRequest request) {
@@ -1275,13 +1250,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstantQueryAomPromPostRequest 请求对象
+     * @param request ListInstantQueryAomPromPostRequest 请求对象
      * @return SyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse>
      */
     public SyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse> listInstantQueryAomPromPostInvoker(
         ListInstantQueryAomPromPostRequest request) {
-        return new SyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse>(request,
-            AomMeta.listInstantQueryAomPromPost, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listInstantQueryAomPromPost, hcClient);
     }
 
     /**
@@ -1291,7 +1265,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelValuesAomPromGetRequest 请求对象
+     * @param request ListLabelValuesAomPromGetRequest 请求对象
      * @return ListLabelValuesAomPromGetResponse
      */
     public ListLabelValuesAomPromGetResponse listLabelValuesAomPromGet(ListLabelValuesAomPromGetRequest request) {
@@ -1305,13 +1279,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelValuesAomPromGetRequest 请求对象
+     * @param request ListLabelValuesAomPromGetRequest 请求对象
      * @return SyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>
      */
     public SyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse> listLabelValuesAomPromGetInvoker(
         ListLabelValuesAomPromGetRequest request) {
-        return new SyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>(request,
-            AomMeta.listLabelValuesAomPromGet, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listLabelValuesAomPromGet, hcClient);
     }
 
     /**
@@ -1321,7 +1294,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelsAomPromGetRequest 请求对象
+     * @param request ListLabelsAomPromGetRequest 请求对象
      * @return ListLabelsAomPromGetResponse
      */
     public ListLabelsAomPromGetResponse listLabelsAomPromGet(ListLabelsAomPromGetRequest request) {
@@ -1335,13 +1308,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelsAomPromGetRequest 请求对象
+     * @param request ListLabelsAomPromGetRequest 请求对象
      * @return SyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>
      */
     public SyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse> listLabelsAomPromGetInvoker(
         ListLabelsAomPromGetRequest request) {
-        return new SyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>(request,
-            AomMeta.listLabelsAomPromGet, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listLabelsAomPromGet, hcClient);
     }
 
     /**
@@ -1351,7 +1323,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelsAomPromPostRequest 请求对象
+     * @param request ListLabelsAomPromPostRequest 请求对象
      * @return ListLabelsAomPromPostResponse
      */
     public ListLabelsAomPromPostResponse listLabelsAomPromPost(ListLabelsAomPromPostRequest request) {
@@ -1365,13 +1337,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelsAomPromPostRequest 请求对象
+     * @param request ListLabelsAomPromPostRequest 请求对象
      * @return SyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>
      */
     public SyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse> listLabelsAomPromPostInvoker(
         ListLabelsAomPromPostRequest request) {
-        return new SyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>(request,
-            AomMeta.listLabelsAomPromPost, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listLabelsAomPromPost, hcClient);
     }
 
     /**
@@ -1381,7 +1352,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetadataAomPromGetRequest 请求对象
+     * @param request ListMetadataAomPromGetRequest 请求对象
      * @return ListMetadataAomPromGetResponse
      */
     public ListMetadataAomPromGetResponse listMetadataAomPromGet(ListMetadataAomPromGetRequest request) {
@@ -1395,13 +1366,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetadataAomPromGetRequest 请求对象
+     * @param request ListMetadataAomPromGetRequest 请求对象
      * @return SyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>
      */
     public SyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse> listMetadataAomPromGetInvoker(
         ListMetadataAomPromGetRequest request) {
-        return new SyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>(request,
-            AomMeta.listMetadataAomPromGet, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listMetadataAomPromGet, hcClient);
     }
 
     /**
@@ -1411,7 +1381,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPromInstanceRequest 请求对象
+     * @param request ListPromInstanceRequest 请求对象
      * @return ListPromInstanceResponse
      */
     public ListPromInstanceResponse listPromInstance(ListPromInstanceRequest request) {
@@ -1425,13 +1395,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPromInstanceRequest 请求对象
+     * @param request ListPromInstanceRequest 请求对象
      * @return SyncInvoker<ListPromInstanceRequest, ListPromInstanceResponse>
      */
     public SyncInvoker<ListPromInstanceRequest, ListPromInstanceResponse> listPromInstanceInvoker(
         ListPromInstanceRequest request) {
-        return new SyncInvoker<ListPromInstanceRequest, ListPromInstanceResponse>(request, AomMeta.listPromInstance,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.listPromInstance, hcClient);
     }
 
     /**
@@ -1441,7 +1410,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRangeQueryAomPromGetRequest 请求对象
+     * @param request ListRangeQueryAomPromGetRequest 请求对象
      * @return ListRangeQueryAomPromGetResponse
      */
     public ListRangeQueryAomPromGetResponse listRangeQueryAomPromGet(ListRangeQueryAomPromGetRequest request) {
@@ -1455,13 +1424,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRangeQueryAomPromGetRequest 请求对象
+     * @param request ListRangeQueryAomPromGetRequest 请求对象
      * @return SyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>
      */
     public SyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse> listRangeQueryAomPromGetInvoker(
         ListRangeQueryAomPromGetRequest request) {
-        return new SyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>(request,
-            AomMeta.listRangeQueryAomPromGet, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listRangeQueryAomPromGet, hcClient);
     }
 
     /**
@@ -1471,7 +1439,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRangeQueryAomPromPostRequest 请求对象
+     * @param request ListRangeQueryAomPromPostRequest 请求对象
      * @return ListRangeQueryAomPromPostResponse
      */
     public ListRangeQueryAomPromPostResponse listRangeQueryAomPromPost(ListRangeQueryAomPromPostRequest request) {
@@ -1485,13 +1453,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRangeQueryAomPromPostRequest 请求对象
+     * @param request ListRangeQueryAomPromPostRequest 请求对象
      * @return SyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>
      */
     public SyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse> listRangeQueryAomPromPostInvoker(
         ListRangeQueryAomPromPostRequest request) {
-        return new SyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>(request,
-            AomMeta.listRangeQueryAomPromPost, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listRangeQueryAomPromPost, hcClient);
     }
 
 }

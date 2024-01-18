@@ -104,6 +104,11 @@ public class CreateResponseVpnGateway {
     private AttachmentTypeEnum attachmentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_id")
+
+    private String certificateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "er_id")
 
     private String erId;
@@ -238,6 +243,16 @@ public class CreateResponseVpnGateway {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ha_mode")
+
+    private String haMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_template")
+
+    private PolicyTemplate policyTemplate;
+
     public CreateResponseVpnGateway withId(String id) {
         this.id = id;
         return this;
@@ -287,6 +302,23 @@ public class CreateResponseVpnGateway {
 
     public void setAttachmentType(AttachmentTypeEnum attachmentType) {
         this.attachmentType = attachmentType;
+    }
+
+    public CreateResponseVpnGateway withCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+        return this;
+    }
+
+    /**
+     * Get certificateId
+     * @return certificateId
+     */
+    public String getCertificateId() {
+        return certificateId;
+    }
+
+    public void setCertificateId(String certificateId) {
+        this.certificateId = certificateId;
     }
 
     public CreateResponseVpnGateway withErId(String erId) {
@@ -528,6 +560,49 @@ public class CreateResponseVpnGateway {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateResponseVpnGateway withHaMode(String haMode) {
+        this.haMode = haMode;
+        return this;
+    }
+
+    /**
+     * ha模式
+     * @return haMode
+     */
+    public String getHaMode() {
+        return haMode;
+    }
+
+    public void setHaMode(String haMode) {
+        this.haMode = haMode;
+    }
+
+    public CreateResponseVpnGateway withPolicyTemplate(PolicyTemplate policyTemplate) {
+        this.policyTemplate = policyTemplate;
+        return this;
+    }
+
+    public CreateResponseVpnGateway withPolicyTemplate(Consumer<PolicyTemplate> policyTemplateSetter) {
+        if (this.policyTemplate == null) {
+            this.policyTemplate = new PolicyTemplate();
+            policyTemplateSetter.accept(this.policyTemplate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get policyTemplate
+     * @return policyTemplate
+     */
+    public PolicyTemplate getPolicyTemplate() {
+        return policyTemplate;
+    }
+
+    public void setPolicyTemplate(PolicyTemplate policyTemplate) {
+        this.policyTemplate = policyTemplate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -538,7 +613,8 @@ public class CreateResponseVpnGateway {
         }
         CreateResponseVpnGateway that = (CreateResponseVpnGateway) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.attachmentType, that.attachmentType) && Objects.equals(this.erId, that.erId)
+            && Objects.equals(this.attachmentType, that.attachmentType)
+            && Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.erId, that.erId)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.localSubnets, that.localSubnets)
             && Objects.equals(this.connectSubnet, that.connectSubnet)
             && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.accessVpcId, that.accessVpcId)
@@ -546,7 +622,8 @@ public class CreateResponseVpnGateway {
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.connectionNumber, that.connectionNumber)
             && Objects.equals(this.usedConnectionNumber, that.usedConnectionNumber)
             && Objects.equals(this.usedConnectionGroup, that.usedConnectionGroup)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.policyTemplate, that.policyTemplate);
     }
 
     @Override
@@ -554,6 +631,7 @@ public class CreateResponseVpnGateway {
         return Objects.hash(id,
             name,
             attachmentType,
+            certificateId,
             erId,
             vpcId,
             localSubnets,
@@ -566,7 +644,9 @@ public class CreateResponseVpnGateway {
             connectionNumber,
             usedConnectionNumber,
             usedConnectionGroup,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            haMode,
+            policyTemplate);
     }
 
     @Override
@@ -576,6 +656,7 @@ public class CreateResponseVpnGateway {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    attachmentType: ").append(toIndentedString(attachmentType)).append("\n");
+        sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("    erId: ").append(toIndentedString(erId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    localSubnets: ").append(toIndentedString(localSubnets)).append("\n");
@@ -589,6 +670,8 @@ public class CreateResponseVpnGateway {
         sb.append("    usedConnectionNumber: ").append(toIndentedString(usedConnectionNumber)).append("\n");
         sb.append("    usedConnectionGroup: ").append(toIndentedString(usedConnectionGroup)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
+        sb.append("    policyTemplate: ").append(toIndentedString(policyTemplate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

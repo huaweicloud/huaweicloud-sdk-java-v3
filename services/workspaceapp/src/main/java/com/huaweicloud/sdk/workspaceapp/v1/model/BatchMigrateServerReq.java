@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量迁移服务器请求
+ * 批量迁移服务器请求。
  */
 public class BatchMigrateServerReq {
 
@@ -45,7 +45,7 @@ public class BatchMigrateServerReq {
     }
 
     /**
-     * 应用服务器id集合
+     * 应用服务器id集合。
      * @return serverIds
      */
     public List<String> getServerIds() {
@@ -62,7 +62,7 @@ public class BatchMigrateServerReq {
     }
 
     /**
-     * 目标云办公主机id
+     * 目标云办公主机id。
      * @return hostId
      */
     public String getHostId() {

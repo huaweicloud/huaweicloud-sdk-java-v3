@@ -11,49 +11,25 @@ import java.util.Objects;
 public class ListConfigRuleComplianceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "account_id")
+    @JsonProperty(value = "managed_account_id")
 
-    private String accountId;
+    private String managedAccountId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-
-    private String xSecurityToken;
-
-    public ListConfigRuleComplianceRequest withAccountId(String accountId) {
-        this.accountId = accountId;
+    public ListConfigRuleComplianceRequest withManagedAccountId(String managedAccountId) {
+        this.managedAccountId = managedAccountId;
         return this;
     }
 
     /**
-     * 账号ID。
-     * @return accountId
+     * 纳管账号ID。
+     * @return managedAccountId
      */
-    public String getAccountId() {
-        return accountId;
+    public String getManagedAccountId() {
+        return managedAccountId;
     }
 
-    public void setAccountId(String accountId) {
-        this.accountId = accountId;
-    }
-
-    public ListConfigRuleComplianceRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-        return this;
-    }
-
-    /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
-    }
-
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
+    public void setManagedAccountId(String managedAccountId) {
+        this.managedAccountId = managedAccountId;
     }
 
     @Override
@@ -65,21 +41,19 @@ public class ListConfigRuleComplianceRequest {
             return false;
         }
         ListConfigRuleComplianceRequest that = (ListConfigRuleComplianceRequest) obj;
-        return Objects.equals(this.accountId, that.accountId)
-            && Objects.equals(this.xSecurityToken, that.xSecurityToken);
+        return Objects.equals(this.managedAccountId, that.managedAccountId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountId, xSecurityToken);
+        return Objects.hash(managedAccountId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListConfigRuleComplianceRequest {\n");
-        sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
+        sb.append("    managedAccountId: ").append(toIndentedString(managedAccountId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

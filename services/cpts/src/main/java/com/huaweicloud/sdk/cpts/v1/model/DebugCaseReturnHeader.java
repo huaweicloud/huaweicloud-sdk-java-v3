@@ -41,7 +41,7 @@ public class DebugCaseReturnHeader {
     }
 
     /**
-     * Connection
+     * 连接
      * @return connection
      */
     public String getConnection() {
@@ -58,7 +58,7 @@ public class DebugCaseReturnHeader {
     }
 
     /**
-     * Content-Length
+     * 内容长度
      * @return contentLength
      */
     public String getContentLength() {
@@ -75,7 +75,7 @@ public class DebugCaseReturnHeader {
     }
 
     /**
-     * Content-Type
+     * 内容类型
      * @return contentType
      */
     public String getContentType() {
@@ -92,7 +92,7 @@ public class DebugCaseReturnHeader {
     }
 
     /**
-     * Date
+     * 时间
      * @return date
      */
     public String getDate() {
@@ -109,7 +109,7 @@ public class DebugCaseReturnHeader {
     }
 
     /**
-     * Vary
+     * 兼容性保留，当前版本未使用
      * @return vary
      */
     public String getVary() {

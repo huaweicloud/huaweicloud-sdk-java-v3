@@ -186,7 +186,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddAvailableZonesRequest 请求对象
+     * @param request BatchAddAvailableZonesRequest 请求对象
      * @return CompletableFuture<BatchAddAvailableZonesResponse>
      */
     public CompletableFuture<BatchAddAvailableZonesResponse> batchAddAvailableZonesAsync(
@@ -201,13 +201,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddAvailableZonesRequest 请求对象
+     * @param request BatchAddAvailableZonesRequest 请求对象
      * @return AsyncInvoker<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse>
      */
     public AsyncInvoker<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse> batchAddAvailableZonesAsyncInvoker(
         BatchAddAvailableZonesRequest request) {
-        return new AsyncInvoker<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse>(request,
-            ElbMeta.batchAddAvailableZones, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.batchAddAvailableZones, hcClient);
     }
 
     /**
@@ -217,7 +216,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateMembersRequest 请求对象
+     * @param request BatchCreateMembersRequest 请求对象
      * @return CompletableFuture<BatchCreateMembersResponse>
      */
     public CompletableFuture<BatchCreateMembersResponse> batchCreateMembersAsync(BatchCreateMembersRequest request) {
@@ -231,13 +230,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateMembersRequest 请求对象
+     * @param request BatchCreateMembersRequest 请求对象
      * @return AsyncInvoker<BatchCreateMembersRequest, BatchCreateMembersResponse>
      */
     public AsyncInvoker<BatchCreateMembersRequest, BatchCreateMembersResponse> batchCreateMembersAsyncInvoker(
         BatchCreateMembersRequest request) {
-        return new AsyncInvoker<BatchCreateMembersRequest, BatchCreateMembersResponse>(request,
-            ElbMeta.batchCreateMembers, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.batchCreateMembers, hcClient);
     }
 
     /**
@@ -247,7 +245,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMembersRequest 请求对象
+     * @param request BatchDeleteMembersRequest 请求对象
      * @return CompletableFuture<BatchDeleteMembersResponse>
      */
     public CompletableFuture<BatchDeleteMembersResponse> batchDeleteMembersAsync(BatchDeleteMembersRequest request) {
@@ -261,13 +259,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMembersRequest 请求对象
+     * @param request BatchDeleteMembersRequest 请求对象
      * @return AsyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse>
      */
     public AsyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse> batchDeleteMembersAsyncInvoker(
         BatchDeleteMembersRequest request) {
-        return new AsyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse>(request,
-            ElbMeta.batchDeleteMembers, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.batchDeleteMembers, hcClient);
     }
 
     /**
@@ -278,7 +275,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemoveAvailableZonesRequest 请求对象
+     * @param request BatchRemoveAvailableZonesRequest 请求对象
      * @return CompletableFuture<BatchRemoveAvailableZonesResponse>
      */
     public CompletableFuture<BatchRemoveAvailableZonesResponse> batchRemoveAvailableZonesAsync(
@@ -294,13 +291,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemoveAvailableZonesRequest 请求对象
+     * @param request BatchRemoveAvailableZonesRequest 请求对象
      * @return AsyncInvoker<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse>
      */
     public AsyncInvoker<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse> batchRemoveAvailableZonesAsyncInvoker(
         BatchRemoveAvailableZonesRequest request) {
-        return new AsyncInvoker<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse>(request,
-            ElbMeta.batchRemoveAvailableZones, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.batchRemoveAvailableZones, hcClient);
     }
 
     /**
@@ -310,7 +306,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateMembersRequest 请求对象
+     * @param request BatchUpdateMembersRequest 请求对象
      * @return CompletableFuture<BatchUpdateMembersResponse>
      */
     public CompletableFuture<BatchUpdateMembersResponse> batchUpdateMembersAsync(BatchUpdateMembersRequest request) {
@@ -324,13 +320,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateMembersRequest 请求对象
+     * @param request BatchUpdateMembersRequest 请求对象
      * @return AsyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
      */
     public AsyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse> batchUpdateMembersAsyncInvoker(
         BatchUpdateMembersRequest request) {
-        return new AsyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse>(request,
-            ElbMeta.batchUpdateMembers, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.batchUpdateMembers, hcClient);
     }
 
     /**
@@ -340,7 +335,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdatePoliciesPriorityRequest 请求对象
+     * @param request BatchUpdatePoliciesPriorityRequest 请求对象
      * @return CompletableFuture<BatchUpdatePoliciesPriorityResponse>
      */
     public CompletableFuture<BatchUpdatePoliciesPriorityResponse> batchUpdatePoliciesPriorityAsync(
@@ -355,13 +350,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdatePoliciesPriorityRequest 请求对象
+     * @param request BatchUpdatePoliciesPriorityRequest 请求对象
      * @return AsyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse>
      */
     public AsyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse> batchUpdatePoliciesPriorityAsyncInvoker(
         BatchUpdatePoliciesPriorityRequest request) {
-        return new AsyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse>(request,
-            ElbMeta.batchUpdatePoliciesPriority, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.batchUpdatePoliciesPriority, hcClient);
     }
 
     /**
@@ -374,7 +368,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeLoadbalancerChargeModeRequest 请求对象
+     * @param request ChangeLoadbalancerChargeModeRequest 请求对象
      * @return CompletableFuture<ChangeLoadbalancerChargeModeResponse>
      */
     public CompletableFuture<ChangeLoadbalancerChargeModeResponse> changeLoadbalancerChargeModeAsync(
@@ -392,13 +386,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeLoadbalancerChargeModeRequest 请求对象
+     * @param request ChangeLoadbalancerChargeModeRequest 请求对象
      * @return AsyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse>
      */
     public AsyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse> changeLoadbalancerChargeModeAsyncInvoker(
         ChangeLoadbalancerChargeModeRequest request) {
-        return new AsyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse>(request,
-            ElbMeta.changeLoadbalancerChargeMode, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.changeLoadbalancerChargeMode, hcClient);
     }
 
     /**
@@ -408,7 +401,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return CompletableFuture<CreateCertificateResponse>
      */
     public CompletableFuture<CreateCertificateResponse> createCertificateAsync(CreateCertificateRequest request) {
@@ -422,13 +415,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
      */
     public AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateAsyncInvoker(
         CreateCertificateRequest request) {
-        return new AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request, ElbMeta.createCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createCertificate, hcClient);
     }
 
     /**
@@ -438,7 +430,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHealthMonitorRequest 请求对象
+     * @param request CreateHealthMonitorRequest 请求对象
      * @return CompletableFuture<CreateHealthMonitorResponse>
      */
     public CompletableFuture<CreateHealthMonitorResponse> createHealthMonitorAsync(CreateHealthMonitorRequest request) {
@@ -452,13 +444,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHealthMonitorRequest 请求对象
+     * @param request CreateHealthMonitorRequest 请求对象
      * @return AsyncInvoker<CreateHealthMonitorRequest, CreateHealthMonitorResponse>
      */
     public AsyncInvoker<CreateHealthMonitorRequest, CreateHealthMonitorResponse> createHealthMonitorAsyncInvoker(
         CreateHealthMonitorRequest request) {
-        return new AsyncInvoker<CreateHealthMonitorRequest, CreateHealthMonitorResponse>(request,
-            ElbMeta.createHealthMonitor, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createHealthMonitor, hcClient);
     }
 
     /**
@@ -468,7 +459,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateL7PolicyRequest 请求对象
+     * @param request CreateL7PolicyRequest 请求对象
      * @return CompletableFuture<CreateL7PolicyResponse>
      */
     public CompletableFuture<CreateL7PolicyResponse> createL7PolicyAsync(CreateL7PolicyRequest request) {
@@ -482,13 +473,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateL7PolicyRequest 请求对象
+     * @param request CreateL7PolicyRequest 请求对象
      * @return AsyncInvoker<CreateL7PolicyRequest, CreateL7PolicyResponse>
      */
     public AsyncInvoker<CreateL7PolicyRequest, CreateL7PolicyResponse> createL7PolicyAsyncInvoker(
         CreateL7PolicyRequest request) {
-        return new AsyncInvoker<CreateL7PolicyRequest, CreateL7PolicyResponse>(request, ElbMeta.createL7Policy,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createL7Policy, hcClient);
     }
 
     /**
@@ -498,7 +488,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateL7RuleRequest 请求对象
+     * @param request CreateL7RuleRequest 请求对象
      * @return CompletableFuture<CreateL7RuleResponse>
      */
     public CompletableFuture<CreateL7RuleResponse> createL7RuleAsync(CreateL7RuleRequest request) {
@@ -512,12 +502,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateL7RuleRequest 请求对象
+     * @param request CreateL7RuleRequest 请求对象
      * @return AsyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse>
      */
     public AsyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse> createL7RuleAsyncInvoker(
         CreateL7RuleRequest request) {
-        return new AsyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse>(request, ElbMeta.createL7Rule, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createL7Rule, hcClient);
     }
 
     /**
@@ -527,7 +517,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateListenerRequest 请求对象
+     * @param request CreateListenerRequest 请求对象
      * @return CompletableFuture<CreateListenerResponse>
      */
     public CompletableFuture<CreateListenerResponse> createListenerAsync(CreateListenerRequest request) {
@@ -541,13 +531,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateListenerRequest 请求对象
+     * @param request CreateListenerRequest 请求对象
      * @return AsyncInvoker<CreateListenerRequest, CreateListenerResponse>
      */
     public AsyncInvoker<CreateListenerRequest, CreateListenerResponse> createListenerAsyncInvoker(
         CreateListenerRequest request) {
-        return new AsyncInvoker<CreateListenerRequest, CreateListenerResponse>(request, ElbMeta.createListener,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createListener, hcClient);
     }
 
     /**
@@ -572,7 +561,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLoadBalancerRequest 请求对象
+     * @param request CreateLoadBalancerRequest 请求对象
      * @return CompletableFuture<CreateLoadBalancerResponse>
      */
     public CompletableFuture<CreateLoadBalancerResponse> createLoadBalancerAsync(CreateLoadBalancerRequest request) {
@@ -601,13 +590,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLoadBalancerRequest 请求对象
+     * @param request CreateLoadBalancerRequest 请求对象
      * @return AsyncInvoker<CreateLoadBalancerRequest, CreateLoadBalancerResponse>
      */
     public AsyncInvoker<CreateLoadBalancerRequest, CreateLoadBalancerResponse> createLoadBalancerAsyncInvoker(
         CreateLoadBalancerRequest request) {
-        return new AsyncInvoker<CreateLoadBalancerRequest, CreateLoadBalancerResponse>(request,
-            ElbMeta.createLoadBalancer, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createLoadBalancer, hcClient);
     }
 
     /**
@@ -617,7 +605,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogtankRequest 请求对象
+     * @param request CreateLogtankRequest 请求对象
      * @return CompletableFuture<CreateLogtankResponse>
      */
     public CompletableFuture<CreateLogtankResponse> createLogtankAsync(CreateLogtankRequest request) {
@@ -631,12 +619,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogtankRequest 请求对象
+     * @param request CreateLogtankRequest 请求对象
      * @return AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse>
      */
     public AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse> createLogtankAsyncInvoker(
         CreateLogtankRequest request) {
-        return new AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse>(request, ElbMeta.createLogtank, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createLogtank, hcClient);
     }
 
     /**
@@ -646,7 +634,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMasterSlavePoolRequest 请求对象
+     * @param request CreateMasterSlavePoolRequest 请求对象
      * @return CompletableFuture<CreateMasterSlavePoolResponse>
      */
     public CompletableFuture<CreateMasterSlavePoolResponse> createMasterSlavePoolAsync(
@@ -661,13 +649,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMasterSlavePoolRequest 请求对象
+     * @param request CreateMasterSlavePoolRequest 请求对象
      * @return AsyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse>
      */
     public AsyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse> createMasterSlavePoolAsyncInvoker(
         CreateMasterSlavePoolRequest request) {
-        return new AsyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse>(request,
-            ElbMeta.createMasterSlavePool, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createMasterSlavePool, hcClient);
     }
 
     /**
@@ -677,7 +664,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMemberRequest 请求对象
+     * @param request CreateMemberRequest 请求对象
      * @return CompletableFuture<CreateMemberResponse>
      */
     public CompletableFuture<CreateMemberResponse> createMemberAsync(CreateMemberRequest request) {
@@ -691,12 +678,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMemberRequest 请求对象
+     * @param request CreateMemberRequest 请求对象
      * @return AsyncInvoker<CreateMemberRequest, CreateMemberResponse>
      */
     public AsyncInvoker<CreateMemberRequest, CreateMemberResponse> createMemberAsyncInvoker(
         CreateMemberRequest request) {
-        return new AsyncInvoker<CreateMemberRequest, CreateMemberResponse>(request, ElbMeta.createMember, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createMember, hcClient);
     }
 
     /**
@@ -706,7 +693,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePoolRequest 请求对象
+     * @param request CreatePoolRequest 请求对象
      * @return CompletableFuture<CreatePoolResponse>
      */
     public CompletableFuture<CreatePoolResponse> createPoolAsync(CreatePoolRequest request) {
@@ -720,11 +707,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePoolRequest 请求对象
+     * @param request CreatePoolRequest 请求对象
      * @return AsyncInvoker<CreatePoolRequest, CreatePoolResponse>
      */
     public AsyncInvoker<CreatePoolRequest, CreatePoolResponse> createPoolAsyncInvoker(CreatePoolRequest request) {
-        return new AsyncInvoker<CreatePoolRequest, CreatePoolResponse>(request, ElbMeta.createPool, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createPool, hcClient);
     }
 
     /**
@@ -736,7 +723,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityPolicyRequest 请求对象
+     * @param request CreateSecurityPolicyRequest 请求对象
      * @return CompletableFuture<CreateSecurityPolicyResponse>
      */
     public CompletableFuture<CreateSecurityPolicyResponse> createSecurityPolicyAsync(
@@ -753,13 +740,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityPolicyRequest 请求对象
+     * @param request CreateSecurityPolicyRequest 请求对象
      * @return AsyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse>
      */
     public AsyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse> createSecurityPolicyAsyncInvoker(
         CreateSecurityPolicyRequest request) {
-        return new AsyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse>(request,
-            ElbMeta.createSecurityPolicy, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createSecurityPolicy, hcClient);
     }
 
     /**
@@ -769,7 +755,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return CompletableFuture<DeleteCertificateResponse>
      */
     public CompletableFuture<DeleteCertificateResponse> deleteCertificateAsync(DeleteCertificateRequest request) {
@@ -783,13 +769,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
      */
     public AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateAsyncInvoker(
         DeleteCertificateRequest request) {
-        return new AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, ElbMeta.deleteCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteCertificate, hcClient);
     }
 
     /**
@@ -799,7 +784,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHealthMonitorRequest 请求对象
+     * @param request DeleteHealthMonitorRequest 请求对象
      * @return CompletableFuture<DeleteHealthMonitorResponse>
      */
     public CompletableFuture<DeleteHealthMonitorResponse> deleteHealthMonitorAsync(DeleteHealthMonitorRequest request) {
@@ -813,13 +798,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHealthMonitorRequest 请求对象
+     * @param request DeleteHealthMonitorRequest 请求对象
      * @return AsyncInvoker<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse>
      */
     public AsyncInvoker<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse> deleteHealthMonitorAsyncInvoker(
         DeleteHealthMonitorRequest request) {
-        return new AsyncInvoker<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse>(request,
-            ElbMeta.deleteHealthMonitor, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteHealthMonitor, hcClient);
     }
 
     /**
@@ -829,7 +813,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteL7PolicyRequest 请求对象
+     * @param request DeleteL7PolicyRequest 请求对象
      * @return CompletableFuture<DeleteL7PolicyResponse>
      */
     public CompletableFuture<DeleteL7PolicyResponse> deleteL7PolicyAsync(DeleteL7PolicyRequest request) {
@@ -843,13 +827,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteL7PolicyRequest 请求对象
+     * @param request DeleteL7PolicyRequest 请求对象
      * @return AsyncInvoker<DeleteL7PolicyRequest, DeleteL7PolicyResponse>
      */
     public AsyncInvoker<DeleteL7PolicyRequest, DeleteL7PolicyResponse> deleteL7PolicyAsyncInvoker(
         DeleteL7PolicyRequest request) {
-        return new AsyncInvoker<DeleteL7PolicyRequest, DeleteL7PolicyResponse>(request, ElbMeta.deleteL7Policy,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteL7Policy, hcClient);
     }
 
     /**
@@ -859,7 +842,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteL7RuleRequest 请求对象
+     * @param request DeleteL7RuleRequest 请求对象
      * @return CompletableFuture<DeleteL7RuleResponse>
      */
     public CompletableFuture<DeleteL7RuleResponse> deleteL7RuleAsync(DeleteL7RuleRequest request) {
@@ -873,12 +856,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteL7RuleRequest 请求对象
+     * @param request DeleteL7RuleRequest 请求对象
      * @return AsyncInvoker<DeleteL7RuleRequest, DeleteL7RuleResponse>
      */
     public AsyncInvoker<DeleteL7RuleRequest, DeleteL7RuleResponse> deleteL7RuleAsyncInvoker(
         DeleteL7RuleRequest request) {
-        return new AsyncInvoker<DeleteL7RuleRequest, DeleteL7RuleResponse>(request, ElbMeta.deleteL7Rule, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteL7Rule, hcClient);
     }
 
     /**
@@ -888,7 +871,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteListenerRequest 请求对象
+     * @param request DeleteListenerRequest 请求对象
      * @return CompletableFuture<DeleteListenerResponse>
      */
     public CompletableFuture<DeleteListenerResponse> deleteListenerAsync(DeleteListenerRequest request) {
@@ -902,13 +885,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteListenerRequest 请求对象
+     * @param request DeleteListenerRequest 请求对象
      * @return AsyncInvoker<DeleteListenerRequest, DeleteListenerResponse>
      */
     public AsyncInvoker<DeleteListenerRequest, DeleteListenerResponse> deleteListenerAsyncInvoker(
         DeleteListenerRequest request) {
-        return new AsyncInvoker<DeleteListenerRequest, DeleteListenerResponse>(request, ElbMeta.deleteListener,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteListener, hcClient);
     }
 
     /**
@@ -918,7 +900,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteListenerForceRequest 请求对象
+     * @param request DeleteListenerForceRequest 请求对象
      * @return CompletableFuture<DeleteListenerForceResponse>
      */
     public CompletableFuture<DeleteListenerForceResponse> deleteListenerForceAsync(DeleteListenerForceRequest request) {
@@ -932,13 +914,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteListenerForceRequest 请求对象
+     * @param request DeleteListenerForceRequest 请求对象
      * @return AsyncInvoker<DeleteListenerForceRequest, DeleteListenerForceResponse>
      */
     public AsyncInvoker<DeleteListenerForceRequest, DeleteListenerForceResponse> deleteListenerForceAsyncInvoker(
         DeleteListenerForceRequest request) {
-        return new AsyncInvoker<DeleteListenerForceRequest, DeleteListenerForceResponse>(request,
-            ElbMeta.deleteListenerForce, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteListenerForce, hcClient);
     }
 
     /**
@@ -948,7 +929,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLoadBalancerRequest 请求对象
+     * @param request DeleteLoadBalancerRequest 请求对象
      * @return CompletableFuture<DeleteLoadBalancerResponse>
      */
     public CompletableFuture<DeleteLoadBalancerResponse> deleteLoadBalancerAsync(DeleteLoadBalancerRequest request) {
@@ -962,13 +943,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLoadBalancerRequest 请求对象
+     * @param request DeleteLoadBalancerRequest 请求对象
      * @return AsyncInvoker<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>
      */
     public AsyncInvoker<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse> deleteLoadBalancerAsyncInvoker(
         DeleteLoadBalancerRequest request) {
-        return new AsyncInvoker<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>(request,
-            ElbMeta.deleteLoadBalancer, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteLoadBalancer, hcClient);
     }
 
     /**
@@ -978,7 +958,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLoadBalancerForceRequest 请求对象
+     * @param request DeleteLoadBalancerForceRequest 请求对象
      * @return CompletableFuture<DeleteLoadBalancerForceResponse>
      */
     public CompletableFuture<DeleteLoadBalancerForceResponse> deleteLoadBalancerForceAsync(
@@ -993,13 +973,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLoadBalancerForceRequest 请求对象
+     * @param request DeleteLoadBalancerForceRequest 请求对象
      * @return AsyncInvoker<DeleteLoadBalancerForceRequest, DeleteLoadBalancerForceResponse>
      */
     public AsyncInvoker<DeleteLoadBalancerForceRequest, DeleteLoadBalancerForceResponse> deleteLoadBalancerForceAsyncInvoker(
         DeleteLoadBalancerForceRequest request) {
-        return new AsyncInvoker<DeleteLoadBalancerForceRequest, DeleteLoadBalancerForceResponse>(request,
-            ElbMeta.deleteLoadBalancerForce, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteLoadBalancerForce, hcClient);
     }
 
     /**
@@ -1009,7 +988,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogtankRequest 请求对象
+     * @param request DeleteLogtankRequest 请求对象
      * @return CompletableFuture<DeleteLogtankResponse>
      */
     public CompletableFuture<DeleteLogtankResponse> deleteLogtankAsync(DeleteLogtankRequest request) {
@@ -1023,12 +1002,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogtankRequest 请求对象
+     * @param request DeleteLogtankRequest 请求对象
      * @return AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>
      */
     public AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtankAsyncInvoker(
         DeleteLogtankRequest request) {
-        return new AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>(request, ElbMeta.deleteLogtank, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteLogtank, hcClient);
     }
 
     /**
@@ -1038,7 +1017,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMasterSlavePoolRequest 请求对象
+     * @param request DeleteMasterSlavePoolRequest 请求对象
      * @return CompletableFuture<DeleteMasterSlavePoolResponse>
      */
     public CompletableFuture<DeleteMasterSlavePoolResponse> deleteMasterSlavePoolAsync(
@@ -1053,13 +1032,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMasterSlavePoolRequest 请求对象
+     * @param request DeleteMasterSlavePoolRequest 请求对象
      * @return AsyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse>
      */
     public AsyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse> deleteMasterSlavePoolAsyncInvoker(
         DeleteMasterSlavePoolRequest request) {
-        return new AsyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse>(request,
-            ElbMeta.deleteMasterSlavePool, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteMasterSlavePool, hcClient);
     }
 
     /**
@@ -1069,7 +1047,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberRequest 请求对象
+     * @param request DeleteMemberRequest 请求对象
      * @return CompletableFuture<DeleteMemberResponse>
      */
     public CompletableFuture<DeleteMemberResponse> deleteMemberAsync(DeleteMemberRequest request) {
@@ -1083,12 +1061,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberRequest 请求对象
+     * @param request DeleteMemberRequest 请求对象
      * @return AsyncInvoker<DeleteMemberRequest, DeleteMemberResponse>
      */
     public AsyncInvoker<DeleteMemberRequest, DeleteMemberResponse> deleteMemberAsyncInvoker(
         DeleteMemberRequest request) {
-        return new AsyncInvoker<DeleteMemberRequest, DeleteMemberResponse>(request, ElbMeta.deleteMember, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteMember, hcClient);
     }
 
     /**
@@ -1098,7 +1076,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePoolRequest 请求对象
+     * @param request DeletePoolRequest 请求对象
      * @return CompletableFuture<DeletePoolResponse>
      */
     public CompletableFuture<DeletePoolResponse> deletePoolAsync(DeletePoolRequest request) {
@@ -1112,11 +1090,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePoolRequest 请求对象
+     * @param request DeletePoolRequest 请求对象
      * @return AsyncInvoker<DeletePoolRequest, DeletePoolResponse>
      */
     public AsyncInvoker<DeletePoolRequest, DeletePoolResponse> deletePoolAsyncInvoker(DeletePoolRequest request) {
-        return new AsyncInvoker<DeletePoolRequest, DeletePoolResponse>(request, ElbMeta.deletePool, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deletePool, hcClient);
     }
 
     /**
@@ -1126,7 +1104,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityPolicyRequest 请求对象
+     * @param request DeleteSecurityPolicyRequest 请求对象
      * @return CompletableFuture<DeleteSecurityPolicyResponse>
      */
     public CompletableFuture<DeleteSecurityPolicyResponse> deleteSecurityPolicyAsync(
@@ -1141,13 +1119,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityPolicyRequest 请求对象
+     * @param request DeleteSecurityPolicyRequest 请求对象
      * @return AsyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse>
      */
     public AsyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse> deleteSecurityPolicyAsyncInvoker(
         DeleteSecurityPolicyRequest request) {
-        return new AsyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse>(request,
-            ElbMeta.deleteSecurityPolicy, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteSecurityPolicy, hcClient);
     }
 
     /**
@@ -1157,7 +1134,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllMembersRequest 请求对象
+     * @param request ListAllMembersRequest 请求对象
      * @return CompletableFuture<ListAllMembersResponse>
      */
     public CompletableFuture<ListAllMembersResponse> listAllMembersAsync(ListAllMembersRequest request) {
@@ -1171,13 +1148,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllMembersRequest 请求对象
+     * @param request ListAllMembersRequest 请求对象
      * @return AsyncInvoker<ListAllMembersRequest, ListAllMembersResponse>
      */
     public AsyncInvoker<ListAllMembersRequest, ListAllMembersResponse> listAllMembersAsyncInvoker(
         ListAllMembersRequest request) {
-        return new AsyncInvoker<ListAllMembersRequest, ListAllMembersResponse>(request, ElbMeta.listAllMembers,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listAllMembers, hcClient);
     }
 
     /**
@@ -1195,7 +1171,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZonesRequest 请求对象
+     * @param request ListAvailabilityZonesRequest 请求对象
      * @return CompletableFuture<ListAvailabilityZonesResponse>
      */
     public CompletableFuture<ListAvailabilityZonesResponse> listAvailabilityZonesAsync(
@@ -1218,13 +1194,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZonesRequest 请求对象
+     * @param request ListAvailabilityZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>
      */
     public AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZonesAsyncInvoker(
         ListAvailabilityZonesRequest request) {
-        return new AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>(request,
-            ElbMeta.listAvailabilityZones, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listAvailabilityZones, hcClient);
     }
 
     /**
@@ -1234,7 +1209,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return CompletableFuture<ListCertificatesResponse>
      */
     public CompletableFuture<ListCertificatesResponse> listCertificatesAsync(ListCertificatesRequest request) {
@@ -1248,13 +1223,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
      */
     public AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesAsyncInvoker(
         ListCertificatesRequest request) {
-        return new AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request, ElbMeta.listCertificates,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listCertificates, hcClient);
     }
 
     /**
@@ -1264,7 +1238,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
      */
     public CompletableFuture<ListFlavorsResponse> listFlavorsAsync(ListFlavorsRequest request) {
@@ -1278,11 +1252,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
     public AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsAsyncInvoker(ListFlavorsRequest request) {
-        return new AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, ElbMeta.listFlavors, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listFlavors, hcClient);
     }
 
     /**
@@ -1292,7 +1266,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHealthMonitorsRequest 请求对象
+     * @param request ListHealthMonitorsRequest 请求对象
      * @return CompletableFuture<ListHealthMonitorsResponse>
      */
     public CompletableFuture<ListHealthMonitorsResponse> listHealthMonitorsAsync(ListHealthMonitorsRequest request) {
@@ -1306,13 +1280,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHealthMonitorsRequest 请求对象
+     * @param request ListHealthMonitorsRequest 请求对象
      * @return AsyncInvoker<ListHealthMonitorsRequest, ListHealthMonitorsResponse>
      */
     public AsyncInvoker<ListHealthMonitorsRequest, ListHealthMonitorsResponse> listHealthMonitorsAsyncInvoker(
         ListHealthMonitorsRequest request) {
-        return new AsyncInvoker<ListHealthMonitorsRequest, ListHealthMonitorsResponse>(request,
-            ElbMeta.listHealthMonitors, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listHealthMonitors, hcClient);
     }
 
     /**
@@ -1322,7 +1295,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListL7PoliciesRequest 请求对象
+     * @param request ListL7PoliciesRequest 请求对象
      * @return CompletableFuture<ListL7PoliciesResponse>
      */
     public CompletableFuture<ListL7PoliciesResponse> listL7PoliciesAsync(ListL7PoliciesRequest request) {
@@ -1336,13 +1309,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListL7PoliciesRequest 请求对象
+     * @param request ListL7PoliciesRequest 请求对象
      * @return AsyncInvoker<ListL7PoliciesRequest, ListL7PoliciesResponse>
      */
     public AsyncInvoker<ListL7PoliciesRequest, ListL7PoliciesResponse> listL7PoliciesAsyncInvoker(
         ListL7PoliciesRequest request) {
-        return new AsyncInvoker<ListL7PoliciesRequest, ListL7PoliciesResponse>(request, ElbMeta.listL7Policies,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listL7Policies, hcClient);
     }
 
     /**
@@ -1352,7 +1324,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListL7RulesRequest 请求对象
+     * @param request ListL7RulesRequest 请求对象
      * @return CompletableFuture<ListL7RulesResponse>
      */
     public CompletableFuture<ListL7RulesResponse> listL7RulesAsync(ListL7RulesRequest request) {
@@ -1366,11 +1338,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListL7RulesRequest 请求对象
+     * @param request ListL7RulesRequest 请求对象
      * @return AsyncInvoker<ListL7RulesRequest, ListL7RulesResponse>
      */
     public AsyncInvoker<ListL7RulesRequest, ListL7RulesResponse> listL7RulesAsyncInvoker(ListL7RulesRequest request) {
-        return new AsyncInvoker<ListL7RulesRequest, ListL7RulesResponse>(request, ElbMeta.listL7Rules, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listL7Rules, hcClient);
     }
 
     /**
@@ -1380,7 +1352,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListListenersRequest 请求对象
+     * @param request ListListenersRequest 请求对象
      * @return CompletableFuture<ListListenersResponse>
      */
     public CompletableFuture<ListListenersResponse> listListenersAsync(ListListenersRequest request) {
@@ -1394,12 +1366,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListListenersRequest 请求对象
+     * @param request ListListenersRequest 请求对象
      * @return AsyncInvoker<ListListenersRequest, ListListenersResponse>
      */
     public AsyncInvoker<ListListenersRequest, ListListenersResponse> listListenersAsyncInvoker(
         ListListenersRequest request) {
-        return new AsyncInvoker<ListListenersRequest, ListListenersResponse>(request, ElbMeta.listListeners, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listListeners, hcClient);
     }
 
     /**
@@ -1409,7 +1381,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLoadBalancersRequest 请求对象
+     * @param request ListLoadBalancersRequest 请求对象
      * @return CompletableFuture<ListLoadBalancersResponse>
      */
     public CompletableFuture<ListLoadBalancersResponse> listLoadBalancersAsync(ListLoadBalancersRequest request) {
@@ -1423,13 +1395,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLoadBalancersRequest 请求对象
+     * @param request ListLoadBalancersRequest 请求对象
      * @return AsyncInvoker<ListLoadBalancersRequest, ListLoadBalancersResponse>
      */
     public AsyncInvoker<ListLoadBalancersRequest, ListLoadBalancersResponse> listLoadBalancersAsyncInvoker(
         ListLoadBalancersRequest request) {
-        return new AsyncInvoker<ListLoadBalancersRequest, ListLoadBalancersResponse>(request, ElbMeta.listLoadBalancers,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listLoadBalancers, hcClient);
     }
 
     /**
@@ -1439,7 +1410,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogtanksRequest 请求对象
+     * @param request ListLogtanksRequest 请求对象
      * @return CompletableFuture<ListLogtanksResponse>
      */
     public CompletableFuture<ListLogtanksResponse> listLogtanksAsync(ListLogtanksRequest request) {
@@ -1453,12 +1424,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogtanksRequest 请求对象
+     * @param request ListLogtanksRequest 请求对象
      * @return AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse>
      */
     public AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse> listLogtanksAsyncInvoker(
         ListLogtanksRequest request) {
-        return new AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse>(request, ElbMeta.listLogtanks, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listLogtanks, hcClient);
     }
 
     /**
@@ -1468,7 +1439,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMasterSlavePoolsRequest 请求对象
+     * @param request ListMasterSlavePoolsRequest 请求对象
      * @return CompletableFuture<ListMasterSlavePoolsResponse>
      */
     public CompletableFuture<ListMasterSlavePoolsResponse> listMasterSlavePoolsAsync(
@@ -1483,13 +1454,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMasterSlavePoolsRequest 请求对象
+     * @param request ListMasterSlavePoolsRequest 请求对象
      * @return AsyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse>
      */
     public AsyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse> listMasterSlavePoolsAsyncInvoker(
         ListMasterSlavePoolsRequest request) {
-        return new AsyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse>(request,
-            ElbMeta.listMasterSlavePools, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listMasterSlavePools, hcClient);
     }
 
     /**
@@ -1499,7 +1469,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMembersRequest 请求对象
+     * @param request ListMembersRequest 请求对象
      * @return CompletableFuture<ListMembersResponse>
      */
     public CompletableFuture<ListMembersResponse> listMembersAsync(ListMembersRequest request) {
@@ -1513,11 +1483,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMembersRequest 请求对象
+     * @param request ListMembersRequest 请求对象
      * @return AsyncInvoker<ListMembersRequest, ListMembersResponse>
      */
     public AsyncInvoker<ListMembersRequest, ListMembersResponse> listMembersAsyncInvoker(ListMembersRequest request) {
-        return new AsyncInvoker<ListMembersRequest, ListMembersResponse>(request, ElbMeta.listMembers, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listMembers, hcClient);
     }
 
     /**
@@ -1527,7 +1497,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoolsRequest 请求对象
+     * @param request ListPoolsRequest 请求对象
      * @return CompletableFuture<ListPoolsResponse>
      */
     public CompletableFuture<ListPoolsResponse> listPoolsAsync(ListPoolsRequest request) {
@@ -1541,11 +1511,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoolsRequest 请求对象
+     * @param request ListPoolsRequest 请求对象
      * @return AsyncInvoker<ListPoolsRequest, ListPoolsResponse>
      */
     public AsyncInvoker<ListPoolsRequest, ListPoolsResponse> listPoolsAsyncInvoker(ListPoolsRequest request) {
-        return new AsyncInvoker<ListPoolsRequest, ListPoolsResponse>(request, ElbMeta.listPools, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listPools, hcClient);
     }
 
     /**
@@ -1555,7 +1525,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaDetailsRequest 请求对象
+     * @param request ListQuotaDetailsRequest 请求对象
      * @return CompletableFuture<ListQuotaDetailsResponse>
      */
     public CompletableFuture<ListQuotaDetailsResponse> listQuotaDetailsAsync(ListQuotaDetailsRequest request) {
@@ -1569,13 +1539,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaDetailsRequest 请求对象
+     * @param request ListQuotaDetailsRequest 请求对象
      * @return AsyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse>
      */
     public AsyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse> listQuotaDetailsAsyncInvoker(
         ListQuotaDetailsRequest request) {
-        return new AsyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse>(request, ElbMeta.listQuotaDetails,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listQuotaDetails, hcClient);
     }
 
     /**
@@ -1585,7 +1554,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityPoliciesRequest 请求对象
+     * @param request ListSecurityPoliciesRequest 请求对象
      * @return CompletableFuture<ListSecurityPoliciesResponse>
      */
     public CompletableFuture<ListSecurityPoliciesResponse> listSecurityPoliciesAsync(
@@ -1600,13 +1569,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityPoliciesRequest 请求对象
+     * @param request ListSecurityPoliciesRequest 请求对象
      * @return AsyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>
      */
     public AsyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse> listSecurityPoliciesAsyncInvoker(
         ListSecurityPoliciesRequest request) {
-        return new AsyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>(request,
-            ElbMeta.listSecurityPolicies, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listSecurityPolicies, hcClient);
     }
 
     /**
@@ -1618,7 +1586,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSystemSecurityPoliciesRequest 请求对象
+     * @param request ListSystemSecurityPoliciesRequest 请求对象
      * @return CompletableFuture<ListSystemSecurityPoliciesResponse>
      */
     public CompletableFuture<ListSystemSecurityPoliciesResponse> listSystemSecurityPoliciesAsync(
@@ -1635,13 +1603,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSystemSecurityPoliciesRequest 请求对象
+     * @param request ListSystemSecurityPoliciesRequest 请求对象
      * @return AsyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse>
      */
     public AsyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse> listSystemSecurityPoliciesAsyncInvoker(
         ListSystemSecurityPoliciesRequest request) {
-        return new AsyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse>(request,
-            ElbMeta.listSystemSecurityPolicies, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listSystemSecurityPolicies, hcClient);
     }
 
     /**
@@ -1651,7 +1618,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return CompletableFuture<ShowCertificateResponse>
      */
     public CompletableFuture<ShowCertificateResponse> showCertificateAsync(ShowCertificateRequest request) {
@@ -1665,13 +1632,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
      */
     public AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateAsyncInvoker(
         ShowCertificateRequest request) {
-        return new AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse>(request, ElbMeta.showCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showCertificate, hcClient);
     }
 
     /**
@@ -1681,7 +1647,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlavorRequest 请求对象
+     * @param request ShowFlavorRequest 请求对象
      * @return CompletableFuture<ShowFlavorResponse>
      */
     public CompletableFuture<ShowFlavorResponse> showFlavorAsync(ShowFlavorRequest request) {
@@ -1695,11 +1661,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlavorRequest 请求对象
+     * @param request ShowFlavorRequest 请求对象
      * @return AsyncInvoker<ShowFlavorRequest, ShowFlavorResponse>
      */
     public AsyncInvoker<ShowFlavorRequest, ShowFlavorResponse> showFlavorAsyncInvoker(ShowFlavorRequest request) {
-        return new AsyncInvoker<ShowFlavorRequest, ShowFlavorResponse>(request, ElbMeta.showFlavor, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showFlavor, hcClient);
     }
 
     /**
@@ -1709,7 +1675,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHealthMonitorRequest 请求对象
+     * @param request ShowHealthMonitorRequest 请求对象
      * @return CompletableFuture<ShowHealthMonitorResponse>
      */
     public CompletableFuture<ShowHealthMonitorResponse> showHealthMonitorAsync(ShowHealthMonitorRequest request) {
@@ -1723,13 +1689,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHealthMonitorRequest 请求对象
+     * @param request ShowHealthMonitorRequest 请求对象
      * @return AsyncInvoker<ShowHealthMonitorRequest, ShowHealthMonitorResponse>
      */
     public AsyncInvoker<ShowHealthMonitorRequest, ShowHealthMonitorResponse> showHealthMonitorAsyncInvoker(
         ShowHealthMonitorRequest request) {
-        return new AsyncInvoker<ShowHealthMonitorRequest, ShowHealthMonitorResponse>(request, ElbMeta.showHealthMonitor,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showHealthMonitor, hcClient);
     }
 
     /**
@@ -1739,7 +1704,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowL7PolicyRequest 请求对象
+     * @param request ShowL7PolicyRequest 请求对象
      * @return CompletableFuture<ShowL7PolicyResponse>
      */
     public CompletableFuture<ShowL7PolicyResponse> showL7PolicyAsync(ShowL7PolicyRequest request) {
@@ -1753,12 +1718,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowL7PolicyRequest 请求对象
+     * @param request ShowL7PolicyRequest 请求对象
      * @return AsyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse>
      */
     public AsyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse> showL7PolicyAsyncInvoker(
         ShowL7PolicyRequest request) {
-        return new AsyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse>(request, ElbMeta.showL7Policy, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showL7Policy, hcClient);
     }
 
     /**
@@ -1768,7 +1733,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowL7RuleRequest 请求对象
+     * @param request ShowL7RuleRequest 请求对象
      * @return CompletableFuture<ShowL7RuleResponse>
      */
     public CompletableFuture<ShowL7RuleResponse> showL7RuleAsync(ShowL7RuleRequest request) {
@@ -1782,11 +1747,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowL7RuleRequest 请求对象
+     * @param request ShowL7RuleRequest 请求对象
      * @return AsyncInvoker<ShowL7RuleRequest, ShowL7RuleResponse>
      */
     public AsyncInvoker<ShowL7RuleRequest, ShowL7RuleResponse> showL7RuleAsyncInvoker(ShowL7RuleRequest request) {
-        return new AsyncInvoker<ShowL7RuleRequest, ShowL7RuleResponse>(request, ElbMeta.showL7Rule, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showL7Rule, hcClient);
     }
 
     /**
@@ -1796,7 +1761,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowListenerRequest 请求对象
+     * @param request ShowListenerRequest 请求对象
      * @return CompletableFuture<ShowListenerResponse>
      */
     public CompletableFuture<ShowListenerResponse> showListenerAsync(ShowListenerRequest request) {
@@ -1810,12 +1775,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowListenerRequest 请求对象
+     * @param request ShowListenerRequest 请求对象
      * @return AsyncInvoker<ShowListenerRequest, ShowListenerResponse>
      */
     public AsyncInvoker<ShowListenerRequest, ShowListenerResponse> showListenerAsyncInvoker(
         ShowListenerRequest request) {
-        return new AsyncInvoker<ShowListenerRequest, ShowListenerResponse>(request, ElbMeta.showListener, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showListener, hcClient);
     }
 
     /**
@@ -1825,7 +1790,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLoadBalancerRequest 请求对象
+     * @param request ShowLoadBalancerRequest 请求对象
      * @return CompletableFuture<ShowLoadBalancerResponse>
      */
     public CompletableFuture<ShowLoadBalancerResponse> showLoadBalancerAsync(ShowLoadBalancerRequest request) {
@@ -1839,13 +1804,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLoadBalancerRequest 请求对象
+     * @param request ShowLoadBalancerRequest 请求对象
      * @return AsyncInvoker<ShowLoadBalancerRequest, ShowLoadBalancerResponse>
      */
     public AsyncInvoker<ShowLoadBalancerRequest, ShowLoadBalancerResponse> showLoadBalancerAsyncInvoker(
         ShowLoadBalancerRequest request) {
-        return new AsyncInvoker<ShowLoadBalancerRequest, ShowLoadBalancerResponse>(request, ElbMeta.showLoadBalancer,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showLoadBalancer, hcClient);
     }
 
     /**
@@ -1858,7 +1822,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLoadBalancerStatusRequest 请求对象
+     * @param request ShowLoadBalancerStatusRequest 请求对象
      * @return CompletableFuture<ShowLoadBalancerStatusResponse>
      */
     public CompletableFuture<ShowLoadBalancerStatusResponse> showLoadBalancerStatusAsync(
@@ -1876,13 +1840,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLoadBalancerStatusRequest 请求对象
+     * @param request ShowLoadBalancerStatusRequest 请求对象
      * @return AsyncInvoker<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse>
      */
     public AsyncInvoker<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse> showLoadBalancerStatusAsyncInvoker(
         ShowLoadBalancerStatusRequest request) {
-        return new AsyncInvoker<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse>(request,
-            ElbMeta.showLoadBalancerStatus, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showLoadBalancerStatus, hcClient);
     }
 
     /**
@@ -1892,7 +1855,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLogtankRequest 请求对象
+     * @param request ShowLogtankRequest 请求对象
      * @return CompletableFuture<ShowLogtankResponse>
      */
     public CompletableFuture<ShowLogtankResponse> showLogtankAsync(ShowLogtankRequest request) {
@@ -1906,11 +1869,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLogtankRequest 请求对象
+     * @param request ShowLogtankRequest 请求对象
      * @return AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse>
      */
     public AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse> showLogtankAsyncInvoker(ShowLogtankRequest request) {
-        return new AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse>(request, ElbMeta.showLogtank, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showLogtank, hcClient);
     }
 
     /**
@@ -1920,7 +1883,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMasterSlavePoolRequest 请求对象
+     * @param request ShowMasterSlavePoolRequest 请求对象
      * @return CompletableFuture<ShowMasterSlavePoolResponse>
      */
     public CompletableFuture<ShowMasterSlavePoolResponse> showMasterSlavePoolAsync(ShowMasterSlavePoolRequest request) {
@@ -1934,13 +1897,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMasterSlavePoolRequest 请求对象
+     * @param request ShowMasterSlavePoolRequest 请求对象
      * @return AsyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse>
      */
     public AsyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse> showMasterSlavePoolAsyncInvoker(
         ShowMasterSlavePoolRequest request) {
-        return new AsyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse>(request,
-            ElbMeta.showMasterSlavePool, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showMasterSlavePool, hcClient);
     }
 
     /**
@@ -1950,7 +1912,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMemberRequest 请求对象
+     * @param request ShowMemberRequest 请求对象
      * @return CompletableFuture<ShowMemberResponse>
      */
     public CompletableFuture<ShowMemberResponse> showMemberAsync(ShowMemberRequest request) {
@@ -1964,11 +1926,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMemberRequest 请求对象
+     * @param request ShowMemberRequest 请求对象
      * @return AsyncInvoker<ShowMemberRequest, ShowMemberResponse>
      */
     public AsyncInvoker<ShowMemberRequest, ShowMemberResponse> showMemberAsyncInvoker(ShowMemberRequest request) {
-        return new AsyncInvoker<ShowMemberRequest, ShowMemberResponse>(request, ElbMeta.showMember, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showMember, hcClient);
     }
 
     /**
@@ -1978,7 +1940,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPoolRequest 请求对象
+     * @param request ShowPoolRequest 请求对象
      * @return CompletableFuture<ShowPoolResponse>
      */
     public CompletableFuture<ShowPoolResponse> showPoolAsync(ShowPoolRequest request) {
@@ -1992,11 +1954,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPoolRequest 请求对象
+     * @param request ShowPoolRequest 请求对象
      * @return AsyncInvoker<ShowPoolRequest, ShowPoolResponse>
      */
     public AsyncInvoker<ShowPoolRequest, ShowPoolResponse> showPoolAsyncInvoker(ShowPoolRequest request) {
-        return new AsyncInvoker<ShowPoolRequest, ShowPoolResponse>(request, ElbMeta.showPool, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showPool, hcClient);
     }
 
     /**
@@ -2006,7 +1968,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotaRequest 请求对象
+     * @param request ShowQuotaRequest 请求对象
      * @return CompletableFuture<ShowQuotaResponse>
      */
     public CompletableFuture<ShowQuotaResponse> showQuotaAsync(ShowQuotaRequest request) {
@@ -2020,11 +1982,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotaRequest 请求对象
+     * @param request ShowQuotaRequest 请求对象
      * @return AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
      */
     public AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaAsyncInvoker(ShowQuotaRequest request) {
-        return new AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, ElbMeta.showQuota, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showQuota, hcClient);
     }
 
     /**
@@ -2034,7 +1996,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityPolicyRequest 请求对象
+     * @param request ShowSecurityPolicyRequest 请求对象
      * @return CompletableFuture<ShowSecurityPolicyResponse>
      */
     public CompletableFuture<ShowSecurityPolicyResponse> showSecurityPolicyAsync(ShowSecurityPolicyRequest request) {
@@ -2048,13 +2010,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityPolicyRequest 请求对象
+     * @param request ShowSecurityPolicyRequest 请求对象
      * @return AsyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse>
      */
     public AsyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse> showSecurityPolicyAsyncInvoker(
         ShowSecurityPolicyRequest request) {
-        return new AsyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse>(request,
-            ElbMeta.showSecurityPolicy, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showSecurityPolicy, hcClient);
     }
 
     /**
@@ -2064,7 +2025,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateRequest 请求对象
+     * @param request UpdateCertificateRequest 请求对象
      * @return CompletableFuture<UpdateCertificateResponse>
      */
     public CompletableFuture<UpdateCertificateResponse> updateCertificateAsync(UpdateCertificateRequest request) {
@@ -2078,13 +2039,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateRequest 请求对象
+     * @param request UpdateCertificateRequest 请求对象
      * @return AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>
      */
     public AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateAsyncInvoker(
         UpdateCertificateRequest request) {
-        return new AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>(request, ElbMeta.updateCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateCertificate, hcClient);
     }
 
     /**
@@ -2094,7 +2054,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthMonitorRequest 请求对象
+     * @param request UpdateHealthMonitorRequest 请求对象
      * @return CompletableFuture<UpdateHealthMonitorResponse>
      */
     public CompletableFuture<UpdateHealthMonitorResponse> updateHealthMonitorAsync(UpdateHealthMonitorRequest request) {
@@ -2108,13 +2068,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthMonitorRequest 请求对象
+     * @param request UpdateHealthMonitorRequest 请求对象
      * @return AsyncInvoker<UpdateHealthMonitorRequest, UpdateHealthMonitorResponse>
      */
     public AsyncInvoker<UpdateHealthMonitorRequest, UpdateHealthMonitorResponse> updateHealthMonitorAsyncInvoker(
         UpdateHealthMonitorRequest request) {
-        return new AsyncInvoker<UpdateHealthMonitorRequest, UpdateHealthMonitorResponse>(request,
-            ElbMeta.updateHealthMonitor, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateHealthMonitor, hcClient);
     }
 
     /**
@@ -2124,7 +2083,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateL7PolicyRequest 请求对象
+     * @param request UpdateL7PolicyRequest 请求对象
      * @return CompletableFuture<UpdateL7PolicyResponse>
      */
     public CompletableFuture<UpdateL7PolicyResponse> updateL7PolicyAsync(UpdateL7PolicyRequest request) {
@@ -2138,13 +2097,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateL7PolicyRequest 请求对象
+     * @param request UpdateL7PolicyRequest 请求对象
      * @return AsyncInvoker<UpdateL7PolicyRequest, UpdateL7PolicyResponse>
      */
     public AsyncInvoker<UpdateL7PolicyRequest, UpdateL7PolicyResponse> updateL7PolicyAsyncInvoker(
         UpdateL7PolicyRequest request) {
-        return new AsyncInvoker<UpdateL7PolicyRequest, UpdateL7PolicyResponse>(request, ElbMeta.updateL7Policy,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateL7Policy, hcClient);
     }
 
     /**
@@ -2154,7 +2112,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateL7RuleRequest 请求对象
+     * @param request UpdateL7RuleRequest 请求对象
      * @return CompletableFuture<UpdateL7RuleResponse>
      */
     public CompletableFuture<UpdateL7RuleResponse> updateL7RuleAsync(UpdateL7RuleRequest request) {
@@ -2168,12 +2126,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateL7RuleRequest 请求对象
+     * @param request UpdateL7RuleRequest 请求对象
      * @return AsyncInvoker<UpdateL7RuleRequest, UpdateL7RuleResponse>
      */
     public AsyncInvoker<UpdateL7RuleRequest, UpdateL7RuleResponse> updateL7RuleAsyncInvoker(
         UpdateL7RuleRequest request) {
-        return new AsyncInvoker<UpdateL7RuleRequest, UpdateL7RuleResponse>(request, ElbMeta.updateL7Rule, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateL7Rule, hcClient);
     }
 
     /**
@@ -2183,7 +2141,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateListenerRequest 请求对象
+     * @param request UpdateListenerRequest 请求对象
      * @return CompletableFuture<UpdateListenerResponse>
      */
     public CompletableFuture<UpdateListenerResponse> updateListenerAsync(UpdateListenerRequest request) {
@@ -2197,13 +2155,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateListenerRequest 请求对象
+     * @param request UpdateListenerRequest 请求对象
      * @return AsyncInvoker<UpdateListenerRequest, UpdateListenerResponse>
      */
     public AsyncInvoker<UpdateListenerRequest, UpdateListenerResponse> updateListenerAsyncInvoker(
         UpdateListenerRequest request) {
-        return new AsyncInvoker<UpdateListenerRequest, UpdateListenerResponse>(request, ElbMeta.updateListener,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateListener, hcClient);
     }
 
     /**
@@ -2213,7 +2170,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLoadBalancerRequest 请求对象
+     * @param request UpdateLoadBalancerRequest 请求对象
      * @return CompletableFuture<UpdateLoadBalancerResponse>
      */
     public CompletableFuture<UpdateLoadBalancerResponse> updateLoadBalancerAsync(UpdateLoadBalancerRequest request) {
@@ -2227,13 +2184,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLoadBalancerRequest 请求对象
+     * @param request UpdateLoadBalancerRequest 请求对象
      * @return AsyncInvoker<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse>
      */
     public AsyncInvoker<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse> updateLoadBalancerAsyncInvoker(
         UpdateLoadBalancerRequest request) {
-        return new AsyncInvoker<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse>(request,
-            ElbMeta.updateLoadBalancer, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateLoadBalancer, hcClient);
     }
 
     /**
@@ -2243,7 +2199,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogtankRequest 请求对象
+     * @param request UpdateLogtankRequest 请求对象
      * @return CompletableFuture<UpdateLogtankResponse>
      */
     public CompletableFuture<UpdateLogtankResponse> updateLogtankAsync(UpdateLogtankRequest request) {
@@ -2257,12 +2213,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogtankRequest 请求对象
+     * @param request UpdateLogtankRequest 请求对象
      * @return AsyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>
      */
     public AsyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtankAsyncInvoker(
         UpdateLogtankRequest request) {
-        return new AsyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>(request, ElbMeta.updateLogtank, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateLogtank, hcClient);
     }
 
     /**
@@ -2272,7 +2228,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberRequest 请求对象
+     * @param request UpdateMemberRequest 请求对象
      * @return CompletableFuture<UpdateMemberResponse>
      */
     public CompletableFuture<UpdateMemberResponse> updateMemberAsync(UpdateMemberRequest request) {
@@ -2286,12 +2242,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberRequest 请求对象
+     * @param request UpdateMemberRequest 请求对象
      * @return AsyncInvoker<UpdateMemberRequest, UpdateMemberResponse>
      */
     public AsyncInvoker<UpdateMemberRequest, UpdateMemberResponse> updateMemberAsyncInvoker(
         UpdateMemberRequest request) {
-        return new AsyncInvoker<UpdateMemberRequest, UpdateMemberResponse>(request, ElbMeta.updateMember, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateMember, hcClient);
     }
 
     /**
@@ -2301,7 +2257,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePoolRequest 请求对象
+     * @param request UpdatePoolRequest 请求对象
      * @return CompletableFuture<UpdatePoolResponse>
      */
     public CompletableFuture<UpdatePoolResponse> updatePoolAsync(UpdatePoolRequest request) {
@@ -2315,11 +2271,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePoolRequest 请求对象
+     * @param request UpdatePoolRequest 请求对象
      * @return AsyncInvoker<UpdatePoolRequest, UpdatePoolResponse>
      */
     public AsyncInvoker<UpdatePoolRequest, UpdatePoolResponse> updatePoolAsyncInvoker(UpdatePoolRequest request) {
-        return new AsyncInvoker<UpdatePoolRequest, UpdatePoolResponse>(request, ElbMeta.updatePool, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updatePool, hcClient);
     }
 
     /**
@@ -2329,7 +2285,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecurityPolicyRequest 请求对象
+     * @param request UpdateSecurityPolicyRequest 请求对象
      * @return CompletableFuture<UpdateSecurityPolicyResponse>
      */
     public CompletableFuture<UpdateSecurityPolicyResponse> updateSecurityPolicyAsync(
@@ -2344,13 +2300,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecurityPolicyRequest 请求对象
+     * @param request UpdateSecurityPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>
      */
     public AsyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse> updateSecurityPolicyAsyncInvoker(
         UpdateSecurityPolicyRequest request) {
-        return new AsyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>(request,
-            ElbMeta.updateSecurityPolicy, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateSecurityPolicy, hcClient);
     }
 
     /**
@@ -2360,7 +2315,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return CompletableFuture<ListApiVersionsResponse>
      */
     public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
@@ -2374,13 +2329,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(
         ListApiVersionsRequest request) {
-        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, ElbMeta.listApiVersions,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -2390,7 +2344,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteIpListRequest 请求对象
+     * @param request BatchDeleteIpListRequest 请求对象
      * @return CompletableFuture<BatchDeleteIpListResponse>
      */
     public CompletableFuture<BatchDeleteIpListResponse> batchDeleteIpListAsync(BatchDeleteIpListRequest request) {
@@ -2404,13 +2358,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteIpListRequest 请求对象
+     * @param request BatchDeleteIpListRequest 请求对象
      * @return AsyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse>
      */
     public AsyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse> batchDeleteIpListAsyncInvoker(
         BatchDeleteIpListRequest request) {
-        return new AsyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse>(request, ElbMeta.batchDeleteIpList,
-            hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.batchDeleteIpList, hcClient);
     }
 
     /**
@@ -2435,7 +2388,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountPreoccupyIpNumRequest 请求对象
+     * @param request CountPreoccupyIpNumRequest 请求对象
      * @return CompletableFuture<CountPreoccupyIpNumResponse>
      */
     public CompletableFuture<CountPreoccupyIpNumResponse> countPreoccupyIpNumAsync(CountPreoccupyIpNumRequest request) {
@@ -2464,13 +2417,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountPreoccupyIpNumRequest 请求对象
+     * @param request CountPreoccupyIpNumRequest 请求对象
      * @return AsyncInvoker<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse>
      */
     public AsyncInvoker<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse> countPreoccupyIpNumAsyncInvoker(
         CountPreoccupyIpNumRequest request) {
-        return new AsyncInvoker<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse>(request,
-            ElbMeta.countPreoccupyIpNum, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.countPreoccupyIpNum, hcClient);
     }
 
     /**
@@ -2484,7 +2436,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIpGroupRequest 请求对象
+     * @param request CreateIpGroupRequest 请求对象
      * @return CompletableFuture<CreateIpGroupResponse>
      */
     public CompletableFuture<CreateIpGroupResponse> createIpGroupAsync(CreateIpGroupRequest request) {
@@ -2502,12 +2454,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIpGroupRequest 请求对象
+     * @param request CreateIpGroupRequest 请求对象
      * @return AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>
      */
     public AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroupAsyncInvoker(
         CreateIpGroupRequest request) {
-        return new AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>(request, ElbMeta.createIpGroup, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.createIpGroup, hcClient);
     }
 
     /**
@@ -2517,7 +2469,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpGroupRequest 请求对象
+     * @param request DeleteIpGroupRequest 请求对象
      * @return CompletableFuture<DeleteIpGroupResponse>
      */
     public CompletableFuture<DeleteIpGroupResponse> deleteIpGroupAsync(DeleteIpGroupRequest request) {
@@ -2531,12 +2483,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpGroupRequest 请求对象
+     * @param request DeleteIpGroupRequest 请求对象
      * @return AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>
      */
     public AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse> deleteIpGroupAsyncInvoker(
         DeleteIpGroupRequest request) {
-        return new AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>(request, ElbMeta.deleteIpGroup, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.deleteIpGroup, hcClient);
     }
 
     /**
@@ -2546,7 +2498,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIpGroupsRequest 请求对象
+     * @param request ListIpGroupsRequest 请求对象
      * @return CompletableFuture<ListIpGroupsResponse>
      */
     public CompletableFuture<ListIpGroupsResponse> listIpGroupsAsync(ListIpGroupsRequest request) {
@@ -2560,12 +2512,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIpGroupsRequest 请求对象
+     * @param request ListIpGroupsRequest 请求对象
      * @return AsyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>
      */
     public AsyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse> listIpGroupsAsyncInvoker(
         ListIpGroupsRequest request) {
-        return new AsyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>(request, ElbMeta.listIpGroups, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.listIpGroups, hcClient);
     }
 
     /**
@@ -2575,7 +2527,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpGroupRequest 请求对象
+     * @param request ShowIpGroupRequest 请求对象
      * @return CompletableFuture<ShowIpGroupResponse>
      */
     public CompletableFuture<ShowIpGroupResponse> showIpGroupAsync(ShowIpGroupRequest request) {
@@ -2589,11 +2541,11 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpGroupRequest 请求对象
+     * @param request ShowIpGroupRequest 请求对象
      * @return AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>
      */
     public AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroupAsyncInvoker(ShowIpGroupRequest request) {
-        return new AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>(request, ElbMeta.showIpGroup, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.showIpGroup, hcClient);
     }
 
     /**
@@ -2608,7 +2560,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpGroupRequest 请求对象
+     * @param request UpdateIpGroupRequest 请求对象
      * @return CompletableFuture<UpdateIpGroupResponse>
      */
     public CompletableFuture<UpdateIpGroupResponse> updateIpGroupAsync(UpdateIpGroupRequest request) {
@@ -2627,12 +2579,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpGroupRequest 请求对象
+     * @param request UpdateIpGroupRequest 请求对象
      * @return AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>
      */
     public AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroupAsyncInvoker(
         UpdateIpGroupRequest request) {
-        return new AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>(request, ElbMeta.updateIpGroup, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateIpGroup, hcClient);
     }
 
     /**
@@ -2642,7 +2594,7 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpListRequest 请求对象
+     * @param request UpdateIpListRequest 请求对象
      * @return CompletableFuture<UpdateIpListResponse>
      */
     public CompletableFuture<UpdateIpListResponse> updateIpListAsync(UpdateIpListRequest request) {
@@ -2656,12 +2608,12 @@ public class ElbAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpListRequest 请求对象
+     * @param request UpdateIpListRequest 请求对象
      * @return AsyncInvoker<UpdateIpListRequest, UpdateIpListResponse>
      */
     public AsyncInvoker<UpdateIpListRequest, UpdateIpListResponse> updateIpListAsyncInvoker(
         UpdateIpListRequest request) {
-        return new AsyncInvoker<UpdateIpListRequest, UpdateIpListResponse>(request, ElbMeta.updateIpList, hcClient);
+        return new AsyncInvoker<>(request, ElbMeta.updateIpList, hcClient);
     }
 
 }

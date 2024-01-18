@@ -34,6 +34,11 @@ public class RelatedTempRunningData {
     private String tempName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_method_url")
+
+    private List<String> contentMethodUrl = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "related_temp_running_data")
 
     private List<TempRunningData> relatedTempRunningData = null;
@@ -44,7 +49,7 @@ public class RelatedTempRunningData {
     }
 
     /**
-     * task_run_info_id
+     * 运行任务id，即报告id。启动任务（更新任务状态或批量启停任务）接口，会返回运行任务id。
      * minimum: 0
      * maximum: 2147483647
      * @return taskRunInfoId
@@ -63,7 +68,7 @@ public class RelatedTempRunningData {
     }
 
     /**
-     * related_temp_running_id
+     * 运行用例id。对应其他（如报告）接口的运行用例id（case_run_id）。
      * minimum: 0
      * maximum: 2147483647
      * @return relatedTempRunningId
@@ -82,7 +87,7 @@ public class RelatedTempRunningData {
     }
 
     /**
-     * temp_id
+     * 用例id
      * minimum: 0
      * maximum: 2147483647
      * @return tempId
@@ -101,7 +106,7 @@ public class RelatedTempRunningData {
     }
 
     /**
-     * temp_name
+     * 用例名称
      * @return tempName
      */
     public String getTempName() {
@@ -110,6 +115,39 @@ public class RelatedTempRunningData {
 
     public void setTempName(String tempName) {
         this.tempName = tempName;
+    }
+
+    public RelatedTempRunningData withContentMethodUrl(List<String> contentMethodUrl) {
+        this.contentMethodUrl = contentMethodUrl;
+        return this;
+    }
+
+    public RelatedTempRunningData addContentMethodUrlItem(String contentMethodUrlItem) {
+        if (this.contentMethodUrl == null) {
+            this.contentMethodUrl = new ArrayList<>();
+        }
+        this.contentMethodUrl.add(contentMethodUrlItem);
+        return this;
+    }
+
+    public RelatedTempRunningData withContentMethodUrl(Consumer<List<String>> contentMethodUrlSetter) {
+        if (this.contentMethodUrl == null) {
+            this.contentMethodUrl = new ArrayList<>();
+        }
+        contentMethodUrlSetter.accept(this.contentMethodUrl);
+        return this;
+    }
+
+    /**
+     * 请求信息，包括请求名称，方法，url信息
+     * @return contentMethodUrl
+     */
+    public List<String> getContentMethodUrl() {
+        return contentMethodUrl;
+    }
+
+    public void setContentMethodUrl(List<String> contentMethodUrl) {
+        this.contentMethodUrl = contentMethodUrl;
     }
 
     public RelatedTempRunningData withRelatedTempRunningData(List<TempRunningData> relatedTempRunningData) {
@@ -135,7 +173,7 @@ public class RelatedTempRunningData {
     }
 
     /**
-     * related_temp_running_data
+     * 最近一次运行的报告简略信息
      * @return relatedTempRunningData
      */
     public List<TempRunningData> getRelatedTempRunningData() {
@@ -158,12 +196,14 @@ public class RelatedTempRunningData {
         return Objects.equals(this.taskRunInfoId, that.taskRunInfoId)
             && Objects.equals(this.relatedTempRunningId, that.relatedTempRunningId)
             && Objects.equals(this.tempId, that.tempId) && Objects.equals(this.tempName, that.tempName)
+            && Objects.equals(this.contentMethodUrl, that.contentMethodUrl)
             && Objects.equals(this.relatedTempRunningData, that.relatedTempRunningData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskRunInfoId, relatedTempRunningId, tempId, tempName, relatedTempRunningData);
+        return Objects
+            .hash(taskRunInfoId, relatedTempRunningId, tempId, tempName, contentMethodUrl, relatedTempRunningData);
     }
 
     @Override
@@ -174,6 +214,7 @@ public class RelatedTempRunningData {
         sb.append("    relatedTempRunningId: ").append(toIndentedString(relatedTempRunningId)).append("\n");
         sb.append("    tempId: ").append(toIndentedString(tempId)).append("\n");
         sb.append("    tempName: ").append(toIndentedString(tempName)).append("\n");
+        sb.append("    contentMethodUrl: ").append(toIndentedString(contentMethodUrl)).append("\n");
         sb.append("    relatedTempRunningData: ").append(toIndentedString(relatedTempRunningData)).append("\n");
         sb.append("}");
         return sb.toString();

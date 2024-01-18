@@ -35,7 +35,7 @@ public class ListVariablesResponse extends SdkResponse {
     }
 
     /**
-     * code
+     * 响应吗
      * @return code
      */
     public String getCode() {
@@ -52,7 +52,7 @@ public class ListVariablesResponse extends SdkResponse {
     }
 
     /**
-     * message
+     * 响应消息
      * @return message
      */
     public String getMessage() {
@@ -85,7 +85,7 @@ public class ListVariablesResponse extends SdkResponse {
     }
 
     /**
-     * variable_list
+     * 变量列表
      * @return variableList
      */
     public List<VariableDetail> getVariableList() {

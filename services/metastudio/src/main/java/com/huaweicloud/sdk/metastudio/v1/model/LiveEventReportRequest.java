@@ -156,7 +156,7 @@ public class LiveEventReportRequest {
     }
 
     /**
-     * 第三方用户ID。 > *不允许输入中文。
+     * 第三方用户ID。 > * 不允许输入中文。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

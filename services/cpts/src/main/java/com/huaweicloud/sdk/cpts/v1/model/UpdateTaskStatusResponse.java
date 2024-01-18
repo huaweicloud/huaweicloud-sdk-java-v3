@@ -38,7 +38,7 @@ public class UpdateTaskStatusResponse extends SdkResponse {
     }
 
     /**
-     * code
+     * 响应码
      * @return code
      */
     public String getCode() {
@@ -55,7 +55,7 @@ public class UpdateTaskStatusResponse extends SdkResponse {
     }
 
     /**
-     * message
+     * 响应消息
      * @return message
      */
     public String getMessage() {
@@ -72,7 +72,7 @@ public class UpdateTaskStatusResponse extends SdkResponse {
     }
 
     /**
-     * extend
+     * 扩展信息
      * @return extend
      */
     public String getExtend() {

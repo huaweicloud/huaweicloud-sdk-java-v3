@@ -36,7 +36,7 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectExtentionByIdCardImageRequest 请求对象
+     * @param request DetectExtentionByIdCardImageRequest 请求对象
      * @return DetectExtentionByIdCardImageResponse
      */
     public DetectExtentionByIdCardImageResponse detectExtentionByIdCardImage(
@@ -51,13 +51,12 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectExtentionByIdCardImageRequest 请求对象
+     * @param request DetectExtentionByIdCardImageRequest 请求对象
      * @return SyncInvoker<DetectExtentionByIdCardImageRequest, DetectExtentionByIdCardImageResponse>
      */
     public SyncInvoker<DetectExtentionByIdCardImageRequest, DetectExtentionByIdCardImageResponse> detectExtentionByIdCardImageInvoker(
         DetectExtentionByIdCardImageRequest request) {
-        return new SyncInvoker<DetectExtentionByIdCardImageRequest, DetectExtentionByIdCardImageResponse>(request,
-            IvsMeta.detectExtentionByIdCardImage, hcClient);
+        return new SyncInvoker<>(request, IvsMeta.detectExtentionByIdCardImage, hcClient);
     }
 
     /**
@@ -67,7 +66,7 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectExtentionByNameAndIdRequest 请求对象
+     * @param request DetectExtentionByNameAndIdRequest 请求对象
      * @return DetectExtentionByNameAndIdResponse
      */
     public DetectExtentionByNameAndIdResponse detectExtentionByNameAndId(DetectExtentionByNameAndIdRequest request) {
@@ -81,13 +80,12 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectExtentionByNameAndIdRequest 请求对象
+     * @param request DetectExtentionByNameAndIdRequest 请求对象
      * @return SyncInvoker<DetectExtentionByNameAndIdRequest, DetectExtentionByNameAndIdResponse>
      */
     public SyncInvoker<DetectExtentionByNameAndIdRequest, DetectExtentionByNameAndIdResponse> detectExtentionByNameAndIdInvoker(
         DetectExtentionByNameAndIdRequest request) {
-        return new SyncInvoker<DetectExtentionByNameAndIdRequest, DetectExtentionByNameAndIdResponse>(request,
-            IvsMeta.detectExtentionByNameAndId, hcClient);
+        return new SyncInvoker<>(request, IvsMeta.detectExtentionByNameAndId, hcClient);
     }
 
     /**
@@ -97,7 +95,7 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectStandardByIdCardImageRequest 请求对象
+     * @param request DetectStandardByIdCardImageRequest 请求对象
      * @return DetectStandardByIdCardImageResponse
      */
     public DetectStandardByIdCardImageResponse detectStandardByIdCardImage(DetectStandardByIdCardImageRequest request) {
@@ -111,13 +109,12 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectStandardByIdCardImageRequest 请求对象
+     * @param request DetectStandardByIdCardImageRequest 请求对象
      * @return SyncInvoker<DetectStandardByIdCardImageRequest, DetectStandardByIdCardImageResponse>
      */
     public SyncInvoker<DetectStandardByIdCardImageRequest, DetectStandardByIdCardImageResponse> detectStandardByIdCardImageInvoker(
         DetectStandardByIdCardImageRequest request) {
-        return new SyncInvoker<DetectStandardByIdCardImageRequest, DetectStandardByIdCardImageResponse>(request,
-            IvsMeta.detectStandardByIdCardImage, hcClient);
+        return new SyncInvoker<>(request, IvsMeta.detectStandardByIdCardImage, hcClient);
     }
 
     /**
@@ -127,7 +124,7 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectStandardByNameAndIdRequest 请求对象
+     * @param request DetectStandardByNameAndIdRequest 请求对象
      * @return DetectStandardByNameAndIdResponse
      */
     public DetectStandardByNameAndIdResponse detectStandardByNameAndId(DetectStandardByNameAndIdRequest request) {
@@ -141,13 +138,12 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectStandardByNameAndIdRequest 请求对象
+     * @param request DetectStandardByNameAndIdRequest 请求对象
      * @return SyncInvoker<DetectStandardByNameAndIdRequest, DetectStandardByNameAndIdResponse>
      */
     public SyncInvoker<DetectStandardByNameAndIdRequest, DetectStandardByNameAndIdResponse> detectStandardByNameAndIdInvoker(
         DetectStandardByNameAndIdRequest request) {
-        return new SyncInvoker<DetectStandardByNameAndIdRequest, DetectStandardByNameAndIdResponse>(request,
-            IvsMeta.detectStandardByNameAndId, hcClient);
+        return new SyncInvoker<>(request, IvsMeta.detectStandardByNameAndId, hcClient);
     }
 
     /**
@@ -157,7 +153,7 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectStandardByVideoAndIdCardImageRequest 请求对象
+     * @param request DetectStandardByVideoAndIdCardImageRequest 请求对象
      * @return DetectStandardByVideoAndIdCardImageResponse
      */
     public DetectStandardByVideoAndIdCardImageResponse detectStandardByVideoAndIdCardImage(
@@ -172,13 +168,12 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectStandardByVideoAndIdCardImageRequest 请求对象
+     * @param request DetectStandardByVideoAndIdCardImageRequest 请求对象
      * @return SyncInvoker<DetectStandardByVideoAndIdCardImageRequest, DetectStandardByVideoAndIdCardImageResponse>
      */
     public SyncInvoker<DetectStandardByVideoAndIdCardImageRequest, DetectStandardByVideoAndIdCardImageResponse> detectStandardByVideoAndIdCardImageInvoker(
         DetectStandardByVideoAndIdCardImageRequest request) {
-        return new SyncInvoker<DetectStandardByVideoAndIdCardImageRequest, DetectStandardByVideoAndIdCardImageResponse>(
-            request, IvsMeta.detectStandardByVideoAndIdCardImage, hcClient);
+        return new SyncInvoker<>(request, IvsMeta.detectStandardByVideoAndIdCardImage, hcClient);
     }
 
     /**
@@ -188,7 +183,7 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectStandardByVideoAndNameAndIdRequest 请求对象
+     * @param request DetectStandardByVideoAndNameAndIdRequest 请求对象
      * @return DetectStandardByVideoAndNameAndIdResponse
      */
     public DetectStandardByVideoAndNameAndIdResponse detectStandardByVideoAndNameAndId(
@@ -203,13 +198,12 @@ public class IvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectStandardByVideoAndNameAndIdRequest 请求对象
+     * @param request DetectStandardByVideoAndNameAndIdRequest 请求对象
      * @return SyncInvoker<DetectStandardByVideoAndNameAndIdRequest, DetectStandardByVideoAndNameAndIdResponse>
      */
     public SyncInvoker<DetectStandardByVideoAndNameAndIdRequest, DetectStandardByVideoAndNameAndIdResponse> detectStandardByVideoAndNameAndIdInvoker(
         DetectStandardByVideoAndNameAndIdRequest request) {
-        return new SyncInvoker<DetectStandardByVideoAndNameAndIdRequest, DetectStandardByVideoAndNameAndIdResponse>(
-            request, IvsMeta.detectStandardByVideoAndNameAndId, hcClient);
+        return new SyncInvoker<>(request, IvsMeta.detectStandardByVideoAndNameAndId, hcClient);
     }
 
 }

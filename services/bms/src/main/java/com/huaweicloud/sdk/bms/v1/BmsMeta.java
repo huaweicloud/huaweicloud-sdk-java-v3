@@ -87,9 +87,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class BmsMeta {
 
     public static final HttpRequestDef<AddServerNicsRequest, AddServerNicsResponse> addServerNics =
-        genForaddServerNics();
+        genForAddServerNics();
 
-    private static HttpRequestDef<AddServerNicsRequest, AddServerNicsResponse> genForaddServerNics() {
+    private static HttpRequestDef<AddServerNicsRequest, AddServerNicsResponse> genForAddServerNics() {
         // basic
         HttpRequestDef.Builder<AddServerNicsRequest, AddServerNicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddServerNicsRequest.class, AddServerNicsResponse.class)
@@ -102,16 +102,12 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddServerNicsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(AddServerNicsRequest::getServerId, AddServerNicsRequest::setServerId));
         builder.<AddServerNicsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddServerNicsReq.class),
-            f -> f.withMarshaller(AddServerNicsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddServerNicsRequest::getBody, AddServerNicsRequest::setBody));
 
         // response
 
@@ -119,9 +115,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse> attachBaremetalServerVolume =
-        genForattachBaremetalServerVolume();
+        genForAttachBaremetalServerVolume();
 
-    private static HttpRequestDef<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse> genForattachBaremetalServerVolume() {
+    private static HttpRequestDef<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse> genForAttachBaremetalServerVolume() {
         // basic
         HttpRequestDef.Builder<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse> builder =
             HttpRequestDef
@@ -137,16 +133,14 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachBaremetalServerVolumeRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(AttachBaremetalServerVolumeRequest::getServerId,
+                AttachBaremetalServerVolumeRequest::setServerId));
         builder.<AttachVolumeBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachVolumeBody.class),
-            f -> f.withMarshaller(AttachBaremetalServerVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachBaremetalServerVolumeRequest::getBody,
+                AttachBaremetalServerVolumeRequest::setBody));
 
         // response
 
@@ -154,9 +148,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> batchCreateBaremetalServerTags =
-        genForbatchCreateBaremetalServerTags();
+        genForBatchCreateBaremetalServerTags();
 
-    private static HttpRequestDef<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> genForbatchCreateBaremetalServerTags() {
+    private static HttpRequestDef<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> genForBatchCreateBaremetalServerTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> builder =
             HttpRequestDef
@@ -172,16 +166,14 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateBaremetalServerTagsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateBaremetalServerTagsRequest::getServerId,
+                BatchCreateBaremetalServerTagsRequest::setServerId));
         builder.<BatchCreateBaremetalServerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateBaremetalServerTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateBaremetalServerTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateBaremetalServerTagsRequest::getBody,
+                BatchCreateBaremetalServerTagsRequest::setBody));
 
         // response
 
@@ -189,9 +181,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> batchDeleteBaremetalServerTags =
-        genForbatchDeleteBaremetalServerTags();
+        genForBatchDeleteBaremetalServerTags();
 
-    private static HttpRequestDef<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> genForbatchDeleteBaremetalServerTags() {
+    private static HttpRequestDef<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> genForBatchDeleteBaremetalServerTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> builder =
             HttpRequestDef
@@ -207,16 +199,14 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteBaremetalServerTagsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteBaremetalServerTagsRequest::getServerId,
+                BatchDeleteBaremetalServerTagsRequest::setServerId));
         builder.<BatchDeleteBaremetalServerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteBaremetalServerTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteBaremetalServerTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteBaremetalServerTagsRequest::getBody,
+                BatchDeleteBaremetalServerTagsRequest::setBody));
 
         // response
 
@@ -224,9 +214,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse> batchRebootBaremetalServers =
-        genForbatchRebootBaremetalServers();
+        genForBatchRebootBaremetalServers();
 
-    private static HttpRequestDef<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse> genForbatchRebootBaremetalServers() {
+    private static HttpRequestDef<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse> genForBatchRebootBaremetalServers() {
         // basic
         HttpRequestDef.Builder<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse> builder =
             HttpRequestDef
@@ -242,9 +232,8 @@ public class BmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RebootBody.class),
-            f -> f.withMarshaller(BatchRebootBaremetalServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRebootBaremetalServersRequest::getBody,
+                BatchRebootBaremetalServersRequest::setBody));
 
         // response
 
@@ -252,9 +241,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse> batchStartBaremetalServers =
-        genForbatchStartBaremetalServers();
+        genForBatchStartBaremetalServers();
 
-    private static HttpRequestDef<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse> genForbatchStartBaremetalServers() {
+    private static HttpRequestDef<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse> genForBatchStartBaremetalServers() {
         // basic
         HttpRequestDef.Builder<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse> builder =
             HttpRequestDef
@@ -270,9 +259,8 @@ public class BmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OsStartBody.class),
-            f -> f.withMarshaller(BatchStartBaremetalServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStartBaremetalServersRequest::getBody,
+                BatchStartBaremetalServersRequest::setBody));
 
         // response
 
@@ -280,9 +268,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse> batchStopBaremetalServers =
-        genForbatchStopBaremetalServers();
+        genForBatchStopBaremetalServers();
 
-    private static HttpRequestDef<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse> genForbatchStopBaremetalServers() {
+    private static HttpRequestDef<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse> genForBatchStopBaremetalServers() {
         // basic
         HttpRequestDef.Builder<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse> builder =
             HttpRequestDef
@@ -298,9 +286,8 @@ public class BmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OsStopBody.class),
-            f -> f.withMarshaller(BatchStopBaremetalServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStopBaremetalServersRequest::getBody,
+                BatchStopBaremetalServersRequest::setBody));
 
         // response
 
@@ -308,9 +295,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse> changeBaremetalServerName =
-        genForchangeBaremetalServerName();
+        genForChangeBaremetalServerName();
 
-    private static HttpRequestDef<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse> genForchangeBaremetalServerName() {
+    private static HttpRequestDef<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse> genForChangeBaremetalServerName() {
         // basic
         HttpRequestDef.Builder<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse> builder =
             HttpRequestDef
@@ -326,16 +313,14 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeBaremetalServerNameRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ChangeBaremetalServerNameRequest::getServerId,
+                ChangeBaremetalServerNameRequest::setServerId));
         builder.<ChangeBaremetalNameBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeBaremetalNameBody.class),
-            f -> f.withMarshaller(ChangeBaremetalServerNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeBaremetalServerNameRequest::getBody,
+                ChangeBaremetalServerNameRequest::setBody));
 
         // response
 
@@ -343,9 +328,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse> changeBaremetalServerOs =
-        genForchangeBaremetalServerOs();
+        genForChangeBaremetalServerOs();
 
-    private static HttpRequestDef<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse> genForchangeBaremetalServerOs() {
+    private static HttpRequestDef<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse> genForChangeBaremetalServerOs() {
         // basic
         HttpRequestDef.Builder<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ChangeBaremetalServerOsRequest.class, ChangeBaremetalServerOsResponse.class)
@@ -358,16 +343,13 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeBaremetalServerOsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ChangeBaremetalServerOsRequest::getServerId,
+                ChangeBaremetalServerOsRequest::setServerId));
         builder.<OSChangeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OSChangeReq.class),
-            f -> f.withMarshaller(ChangeBaremetalServerOsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeBaremetalServerOsRequest::getBody, ChangeBaremetalServerOsRequest::setBody));
 
         // response
 
@@ -375,9 +357,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<CreateBareMetalServersRequest, CreateBareMetalServersResponse> createBareMetalServers =
-        genForcreateBareMetalServers();
+        genForCreateBareMetalServers();
 
-    private static HttpRequestDef<CreateBareMetalServersRequest, CreateBareMetalServersResponse> genForcreateBareMetalServers() {
+    private static HttpRequestDef<CreateBareMetalServersRequest, CreateBareMetalServersResponse> genForCreateBareMetalServers() {
         // basic
         HttpRequestDef.Builder<CreateBareMetalServersRequest, CreateBareMetalServersResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateBareMetalServersRequest.class, CreateBareMetalServersResponse.class)
@@ -390,9 +372,7 @@ public class BmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateBaremetalServersBody.class),
-            f -> f.withMarshaller(CreateBareMetalServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBareMetalServersRequest::getBody, CreateBareMetalServersRequest::setBody));
 
         // response
 
@@ -400,9 +380,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse> deleteBaremetalServer =
-        genFordeleteBaremetalServer();
+        genForDeleteBaremetalServer();
 
-    private static HttpRequestDef<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse> genFordeleteBaremetalServer() {
+    private static HttpRequestDef<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse> genForDeleteBaremetalServer() {
         // basic
         HttpRequestDef.Builder<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DeleteBaremetalServerRequest.class, DeleteBaremetalServerResponse.class)
@@ -415,9 +395,7 @@ public class BmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteBaremetalBody.class),
-            f -> f.withMarshaller(DeleteBaremetalServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteBaremetalServerRequest::getBody, DeleteBaremetalServerRequest::setBody));
 
         // response
 
@@ -425,9 +403,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<DeleteServerNicsRequest, DeleteServerNicsResponse> deleteServerNics =
-        genFordeleteServerNics();
+        genForDeleteServerNics();
 
-    private static HttpRequestDef<DeleteServerNicsRequest, DeleteServerNicsResponse> genFordeleteServerNics() {
+    private static HttpRequestDef<DeleteServerNicsRequest, DeleteServerNicsResponse> genForDeleteServerNics() {
         // basic
         HttpRequestDef.Builder<DeleteServerNicsRequest, DeleteServerNicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteServerNicsRequest.class, DeleteServerNicsResponse.class)
@@ -440,16 +418,12 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServerNicsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(DeleteServerNicsRequest::getServerId, DeleteServerNicsRequest::setServerId));
         builder.<DeleteServerNicsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteServerNicsReq.class),
-            f -> f.withMarshaller(DeleteServerNicsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteServerNicsRequest::getBody, DeleteServerNicsRequest::setBody));
 
         // response
 
@@ -457,9 +431,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse> deleteWindowsBareMetalServerPassword =
-        genFordeleteWindowsBareMetalServerPassword();
+        genForDeleteWindowsBareMetalServerPassword();
 
-    private static HttpRequestDef<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse> genFordeleteWindowsBareMetalServerPassword() {
+    private static HttpRequestDef<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse> genForDeleteWindowsBareMetalServerPassword() {
         // basic
         HttpRequestDef.Builder<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse> builder =
             HttpRequestDef
@@ -475,9 +449,8 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWindowsBareMetalServerPasswordRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(DeleteWindowsBareMetalServerPasswordRequest::getServerId,
+                DeleteWindowsBareMetalServerPasswordRequest::setServerId));
 
         // response
 
@@ -485,9 +458,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse> detachBaremetalServerVolume =
-        genFordetachBaremetalServerVolume();
+        genForDetachBaremetalServerVolume();
 
-    private static HttpRequestDef<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse> genFordetachBaremetalServerVolume() {
+    private static HttpRequestDef<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse> genForDetachBaremetalServerVolume() {
         // basic
         HttpRequestDef.Builder<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse> builder =
             HttpRequestDef
@@ -503,16 +476,14 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachBaremetalServerVolumeRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(DetachBaremetalServerVolumeRequest::getServerId,
+                DetachBaremetalServerVolumeRequest::setServerId));
         builder.<String>withRequestField("attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachBaremetalServerVolumeRequest::getAttachmentId, (req, v) -> {
-                req.setAttachmentId(v);
-            }));
+            f -> f.withMarshaller(DetachBaremetalServerVolumeRequest::getAttachmentId,
+                DetachBaremetalServerVolumeRequest::setAttachmentId));
 
         // response
 
@@ -520,9 +491,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse> listBareMetalServerDetails =
-        genForlistBareMetalServerDetails();
+        genForListBareMetalServerDetails();
 
-    private static HttpRequestDef<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse> genForlistBareMetalServerDetails() {
+    private static HttpRequestDef<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse> genForListBareMetalServerDetails() {
         // basic
         HttpRequestDef.Builder<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse> builder =
             HttpRequestDef
@@ -538,9 +509,8 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBareMetalServerDetailsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ListBareMetalServerDetailsRequest::getServerId,
+                ListBareMetalServerDetailsRequest::setServerId));
 
         // response
 
@@ -548,9 +518,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ListBareMetalServersRequest, ListBareMetalServersResponse> listBareMetalServers =
-        genForlistBareMetalServers();
+        genForListBareMetalServers();
 
-    private static HttpRequestDef<ListBareMetalServersRequest, ListBareMetalServersResponse> genForlistBareMetalServers() {
+    private static HttpRequestDef<ListBareMetalServersRequest, ListBareMetalServersResponse> genForListBareMetalServers() {
         // basic
         HttpRequestDef.Builder<ListBareMetalServersRequest, ListBareMetalServersResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListBareMetalServersRequest.class, ListBareMetalServersResponse.class)
@@ -563,65 +533,49 @@ public class BmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBareMetalServersRequest::getFlavor, (req, v) -> {
-                req.setFlavor(v);
-            }));
+            f -> f.withMarshaller(ListBareMetalServersRequest::getFlavor, ListBareMetalServersRequest::setFlavor));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBareMetalServersRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListBareMetalServersRequest::getName, ListBareMetalServersRequest::setName));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBareMetalServersRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListBareMetalServersRequest::getStatus, ListBareMetalServersRequest::setStatus));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBareMetalServersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBareMetalServersRequest::getLimit, ListBareMetalServersRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBareMetalServersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBareMetalServersRequest::getOffset, ListBareMetalServersRequest::setOffset));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBareMetalServersRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListBareMetalServersRequest::getTags, ListBareMetalServersRequest::setTags));
         builder.<String>withRequestField("reservation_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBareMetalServersRequest::getReservationId, (req, v) -> {
-                req.setReservationId(v);
-            }));
+            f -> f.withMarshaller(ListBareMetalServersRequest::getReservationId,
+                ListBareMetalServersRequest::setReservationId));
         builder.<String>withRequestField("detail",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBareMetalServersRequest::getDetail, (req, v) -> {
-                req.setDetail(v);
-            }));
+            f -> f.withMarshaller(ListBareMetalServersRequest::getDetail, ListBareMetalServersRequest::setDetail));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBareMetalServersRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListBareMetalServersRequest::getEnterpriseProjectId,
+                ListBareMetalServersRequest::setEnterpriseProjectId));
 
         // response
 
@@ -629,9 +583,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse> listBaremetalFlavorDetailExtends =
-        genForlistBaremetalFlavorDetailExtends();
+        genForListBaremetalFlavorDetailExtends();
 
-    private static HttpRequestDef<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse> genForlistBaremetalFlavorDetailExtends() {
+    private static HttpRequestDef<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse> genForListBaremetalFlavorDetailExtends() {
         // basic
         HttpRequestDef.Builder<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse> builder =
             HttpRequestDef
@@ -647,9 +601,8 @@ public class BmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBaremetalFlavorDetailExtendsRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListBaremetalFlavorDetailExtendsRequest::getAvailabilityZone,
+                ListBaremetalFlavorDetailExtendsRequest::setAvailabilityZone));
 
         // response
 
@@ -657,9 +610,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse> reinstallBaremetalServerOs =
-        genForreinstallBaremetalServerOs();
+        genForReinstallBaremetalServerOs();
 
-    private static HttpRequestDef<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse> genForreinstallBaremetalServerOs() {
+    private static HttpRequestDef<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse> genForReinstallBaremetalServerOs() {
         // basic
         HttpRequestDef.Builder<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse> builder =
             HttpRequestDef
@@ -675,16 +628,14 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ReinstallBaremetalServerOsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ReinstallBaremetalServerOsRequest::getServerId,
+                ReinstallBaremetalServerOsRequest::setServerId));
         builder.<OsReinstallBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OsReinstallBody.class),
-            f -> f.withMarshaller(ReinstallBaremetalServerOsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ReinstallBaremetalServerOsRequest::getBody,
+                ReinstallBaremetalServerOsRequest::setBody));
 
         // response
 
@@ -692,9 +643,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ResetPwdOneClickRequest, ResetPwdOneClickResponse> resetPwdOneClick =
-        genForresetPwdOneClick();
+        genForResetPwdOneClick();
 
-    private static HttpRequestDef<ResetPwdOneClickRequest, ResetPwdOneClickResponse> genForresetPwdOneClick() {
+    private static HttpRequestDef<ResetPwdOneClickRequest, ResetPwdOneClickResponse> genForResetPwdOneClick() {
         // basic
         HttpRequestDef.Builder<ResetPwdOneClickRequest, ResetPwdOneClickResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetPwdOneClickRequest.class, ResetPwdOneClickResponse.class)
@@ -707,16 +658,12 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPwdOneClickRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ResetPwdOneClickRequest::getServerId, ResetPwdOneClickRequest::setServerId));
         builder.<ResetPasswordBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetPasswordBody.class),
-            f -> f.withMarshaller(ResetPwdOneClickRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetPwdOneClickRequest::getBody, ResetPwdOneClickRequest::setBody));
 
         // response
 
@@ -724,9 +671,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse> showBaremetalServerInterfaceAttachments =
-        genForshowBaremetalServerInterfaceAttachments();
+        genForShowBaremetalServerInterfaceAttachments();
 
-    private static HttpRequestDef<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse> genForshowBaremetalServerInterfaceAttachments() {
+    private static HttpRequestDef<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse> genForShowBaremetalServerInterfaceAttachments() {
         // basic
         HttpRequestDef.Builder<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse> builder =
             HttpRequestDef
@@ -742,9 +689,8 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBaremetalServerInterfaceAttachmentsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowBaremetalServerInterfaceAttachmentsRequest::getServerId,
+                ShowBaremetalServerInterfaceAttachmentsRequest::setServerId));
 
         // response
 
@@ -752,9 +698,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> showBaremetalServerTags =
-        genForshowBaremetalServerTags();
+        genForShowBaremetalServerTags();
 
-    private static HttpRequestDef<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> genForshowBaremetalServerTags() {
+    private static HttpRequestDef<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> genForShowBaremetalServerTags() {
         // basic
         HttpRequestDef.Builder<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowBaremetalServerTagsRequest.class, ShowBaremetalServerTagsResponse.class)
@@ -767,9 +713,8 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBaremetalServerTagsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowBaremetalServerTagsRequest::getServerId,
+                ShowBaremetalServerTagsRequest::setServerId));
 
         // response
 
@@ -777,9 +722,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse> showBaremetalServerVolumeInfo =
-        genForshowBaremetalServerVolumeInfo();
+        genForShowBaremetalServerVolumeInfo();
 
-    private static HttpRequestDef<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse> genForshowBaremetalServerVolumeInfo() {
+    private static HttpRequestDef<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse> genForShowBaremetalServerVolumeInfo() {
         // basic
         HttpRequestDef.Builder<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse> builder =
             HttpRequestDef
@@ -795,18 +740,17 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBaremetalServerVolumeInfoRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowBaremetalServerVolumeInfoRequest::getServerId,
+                ShowBaremetalServerVolumeInfoRequest::setServerId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowResetPwdRequest, ShowResetPwdResponse> showResetPwd = genForshowResetPwd();
+    public static final HttpRequestDef<ShowResetPwdRequest, ShowResetPwdResponse> showResetPwd = genForShowResetPwd();
 
-    private static HttpRequestDef<ShowResetPwdRequest, ShowResetPwdResponse> genForshowResetPwd() {
+    private static HttpRequestDef<ShowResetPwdRequest, ShowResetPwdResponse> genForShowResetPwd() {
         // basic
         HttpRequestDef.Builder<ShowResetPwdRequest, ShowResetPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResetPwdRequest.class, ShowResetPwdResponse.class)
@@ -819,9 +763,7 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResetPwdRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowResetPwdRequest::getServerId, ShowResetPwdRequest::setServerId));
 
         // response
 
@@ -829,9 +771,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> showServerRemoteConsole =
-        genForshowServerRemoteConsole();
+        genForShowServerRemoteConsole();
 
-    private static HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> genForshowServerRemoteConsole() {
+    private static HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> genForShowServerRemoteConsole() {
         // basic
         HttpRequestDef.Builder<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowServerRemoteConsoleRequest.class, ShowServerRemoteConsoleResponse.class)
@@ -844,16 +786,13 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getServerId,
+                ShowServerRemoteConsoleRequest::setServerId));
         builder.<ShowServerRemoteConsoleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowServerRemoteConsoleReq.class),
-            f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getBody, ShowServerRemoteConsoleRequest::setBody));
 
         // response
 
@@ -861,9 +800,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ShowTenantQuotaRequest, ShowTenantQuotaResponse> showTenantQuota =
-        genForshowTenantQuota();
+        genForShowTenantQuota();
 
-    private static HttpRequestDef<ShowTenantQuotaRequest, ShowTenantQuotaResponse> genForshowTenantQuota() {
+    private static HttpRequestDef<ShowTenantQuotaRequest, ShowTenantQuotaResponse> genForShowTenantQuota() {
         // basic
         HttpRequestDef.Builder<ShowTenantQuotaRequest, ShowTenantQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTenantQuotaRequest.class, ShowTenantQuotaResponse.class)
@@ -879,9 +818,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse> showWindowsBaremetalServerPwd =
-        genForshowWindowsBaremetalServerPwd();
+        genForShowWindowsBaremetalServerPwd();
 
-    private static HttpRequestDef<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse> genForshowWindowsBaremetalServerPwd() {
+    private static HttpRequestDef<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse> genForShowWindowsBaremetalServerPwd() {
         // basic
         HttpRequestDef.Builder<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse> builder =
             HttpRequestDef
@@ -897,9 +836,8 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWindowsBaremetalServerPwdRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowWindowsBaremetalServerPwdRequest::getServerId,
+                ShowWindowsBaremetalServerPwdRequest::setServerId));
 
         // response
 
@@ -907,9 +845,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse> updateBaremetalServerInterfaceAttachments =
-        genForupdateBaremetalServerInterfaceAttachments();
+        genForUpdateBaremetalServerInterfaceAttachments();
 
-    private static HttpRequestDef<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse> genForupdateBaremetalServerInterfaceAttachments() {
+    private static HttpRequestDef<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse> genForUpdateBaremetalServerInterfaceAttachments() {
         // basic
         HttpRequestDef.Builder<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse> builder =
             HttpRequestDef
@@ -925,23 +863,20 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBaremetalServerInterfaceAttachmentsRequest::getPortId, (req, v) -> {
-                req.setPortId(v);
-            }));
+            f -> f.withMarshaller(UpdateBaremetalServerInterfaceAttachmentsRequest::getPortId,
+                UpdateBaremetalServerInterfaceAttachmentsRequest::setPortId));
         builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBaremetalServerInterfaceAttachmentsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(UpdateBaremetalServerInterfaceAttachmentsRequest::getServerId,
+                UpdateBaremetalServerInterfaceAttachmentsRequest::setServerId));
         builder.<UpdateBaremetalServerInterfaceAttachmentsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBaremetalServerInterfaceAttachmentsReq.class),
-            f -> f.withMarshaller(UpdateBaremetalServerInterfaceAttachmentsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBaremetalServerInterfaceAttachmentsRequest::getBody,
+                UpdateBaremetalServerInterfaceAttachmentsRequest::setBody));
 
         // response
 
@@ -949,9 +884,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse> updateBaremetalServerMetadata =
-        genForupdateBaremetalServerMetadata();
+        genForUpdateBaremetalServerMetadata();
 
-    private static HttpRequestDef<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse> genForupdateBaremetalServerMetadata() {
+    private static HttpRequestDef<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse> genForUpdateBaremetalServerMetadata() {
         // basic
         HttpRequestDef.Builder<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse> builder =
             HttpRequestDef
@@ -967,16 +902,14 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBaremetalServerMetadataRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(UpdateBaremetalServerMetadataRequest::getServerId,
+                UpdateBaremetalServerMetadataRequest::setServerId));
         builder.<UpdateBaremetalServerMetadataReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBaremetalServerMetadataReq.class),
-            f -> f.withMarshaller(UpdateBaremetalServerMetadataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBaremetalServerMetadataRequest::getBody,
+                UpdateBaremetalServerMetadataRequest::setBody));
 
         // response
 
@@ -984,9 +917,9 @@ public class BmsMeta {
     }
 
     public static final HttpRequestDef<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse> showSpecifiedVersion =
-        genForshowSpecifiedVersion();
+        genForShowSpecifiedVersion();
 
-    private static HttpRequestDef<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse> genForshowSpecifiedVersion() {
+    private static HttpRequestDef<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse> genForShowSpecifiedVersion() {
         // basic
         HttpRequestDef.Builder<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSpecifiedVersionRequest.class, ShowSpecifiedVersionResponse.class)
@@ -999,18 +932,17 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSpecifiedVersionRequest::getApiVersion, (req, v) -> {
-                req.setApiVersion(v);
-            }));
+            f -> f.withMarshaller(ShowSpecifiedVersionRequest::getApiVersion,
+                ShowSpecifiedVersionRequest::setApiVersion));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobInfosRequest, ShowJobInfosResponse> showJobInfos = genForshowJobInfos();
+    public static final HttpRequestDef<ShowJobInfosRequest, ShowJobInfosResponse> showJobInfos = genForShowJobInfos();
 
-    private static HttpRequestDef<ShowJobInfosRequest, ShowJobInfosResponse> genForshowJobInfos() {
+    private static HttpRequestDef<ShowJobInfosRequest, ShowJobInfosResponse> genForShowJobInfos() {
         // basic
         HttpRequestDef.Builder<ShowJobInfosRequest, ShowJobInfosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobInfosRequest.class, ShowJobInfosResponse.class)
@@ -1023,9 +955,7 @@ public class BmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInfosRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobInfosRequest::getJobId, ShowJobInfosRequest::setJobId));
 
         // response
 

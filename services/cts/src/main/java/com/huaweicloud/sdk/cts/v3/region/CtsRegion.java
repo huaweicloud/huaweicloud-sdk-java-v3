@@ -7,8 +7,10 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CtsRegion {
 
@@ -79,6 +81,8 @@ public class CtsRegion {
 
     public static final Region ME_EAST_1 = new Region("me-east-1", "https://cts.me-east-1.myhuaweicloud.com");
 
+    public static final Region EU_WEST_0 = new Region("eu-west-0", "https://cts.eu-west-0.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CTS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -108,6 +112,7 @@ public class CtsRegion {
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("tr-west-1", TR_WEST_1);
         map.put("me-east-1", ME_EAST_1);
+        map.put("eu-west-0", EU_WEST_0);
         return Collections.unmodifiableMap(map);
     }
 
@@ -125,6 +130,10 @@ public class CtsRegion {
         if (Objects.nonNull(result)) {
             return result;
         }
-        throw new IllegalArgumentException("Unexpected regionId: " + regionId);
+
+        throw new IllegalArgumentException(String.format(Locale.ROOT,
+            "region id '%s' is not in the following supported regions of service CTS: [%s]",
+            regionId,
+            STATIC_FIELDS.keySet().stream().sorted().collect(Collectors.joining(", "))));
     }
 }

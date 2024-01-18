@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 策略组
+ * 策略组。
  */
 public class PolicyGroup {
 
@@ -60,7 +60,7 @@ public class PolicyGroup {
     }
 
     /**
-     * 策略组的唯一标识
+     * 策略组的唯一标识。
      * @return id
      */
     public String getId() {
@@ -77,7 +77,7 @@ public class PolicyGroup {
     }
 
     /**
-     * 策略组名称
+     * 策略组名称。
      * @return name
      */
     public String getName() {
@@ -94,7 +94,7 @@ public class PolicyGroup {
     }
 
     /**
-     * 优先级
+     * 优先级。
      * @return priority
      */
     public Integer getPriority() {
@@ -111,7 +111,7 @@ public class PolicyGroup {
     }
 
     /**
-     * 服务器组描述
+     * 服务器组描述。
      * @return description
      */
     public String getDescription() {
@@ -187,7 +187,7 @@ public class PolicyGroup {
     }
 
     /**
-     * 策略组创建时间
+     * 策略组创建时间。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -204,7 +204,7 @@ public class PolicyGroup {
     }
 
     /**
-     * 策略组更新时间
+     * 策略组更新时间。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

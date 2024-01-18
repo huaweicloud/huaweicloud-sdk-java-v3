@@ -156,7 +156,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetModelRequest 请求对象
+     * @param request CreateAssetModelRequest 请求对象
      * @return CreateAssetModelResponse
      */
     public CreateAssetModelResponse createAssetModel(CreateAssetModelRequest request) {
@@ -170,13 +170,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetModelRequest 请求对象
+     * @param request CreateAssetModelRequest 请求对象
      * @return SyncInvoker<CreateAssetModelRequest, CreateAssetModelResponse>
      */
     public SyncInvoker<CreateAssetModelRequest, CreateAssetModelResponse> createAssetModelInvoker(
         CreateAssetModelRequest request) {
-        return new SyncInvoker<CreateAssetModelRequest, CreateAssetModelResponse>(request,
-            IoTAnalyticsMeta.createAssetModel, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.createAssetModel, hcClient);
     }
 
     /**
@@ -186,7 +185,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetModelRequest 请求对象
+     * @param request DeleteAssetModelRequest 请求对象
      * @return DeleteAssetModelResponse
      */
     public DeleteAssetModelResponse deleteAssetModel(DeleteAssetModelRequest request) {
@@ -200,13 +199,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetModelRequest 请求对象
+     * @param request DeleteAssetModelRequest 请求对象
      * @return SyncInvoker<DeleteAssetModelRequest, DeleteAssetModelResponse>
      */
     public SyncInvoker<DeleteAssetModelRequest, DeleteAssetModelResponse> deleteAssetModelInvoker(
         DeleteAssetModelRequest request) {
-        return new SyncInvoker<DeleteAssetModelRequest, DeleteAssetModelResponse>(request,
-            IoTAnalyticsMeta.deleteAssetModel, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deleteAssetModel, hcClient);
     }
 
     /**
@@ -216,7 +214,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetModelsRequest 请求对象
+     * @param request ListAssetModelsRequest 请求对象
      * @return ListAssetModelsResponse
      */
     public ListAssetModelsResponse listAssetModels(ListAssetModelsRequest request) {
@@ -230,13 +228,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetModelsRequest 请求对象
+     * @param request ListAssetModelsRequest 请求对象
      * @return SyncInvoker<ListAssetModelsRequest, ListAssetModelsResponse>
      */
     public SyncInvoker<ListAssetModelsRequest, ListAssetModelsResponse> listAssetModelsInvoker(
         ListAssetModelsRequest request) {
-        return new SyncInvoker<ListAssetModelsRequest, ListAssetModelsResponse>(request,
-            IoTAnalyticsMeta.listAssetModels, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listAssetModels, hcClient);
     }
 
     /**
@@ -246,7 +243,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetModelRequest 请求对象
+     * @param request ShowAssetModelRequest 请求对象
      * @return ShowAssetModelResponse
      */
     public ShowAssetModelResponse showAssetModel(ShowAssetModelRequest request) {
@@ -260,13 +257,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetModelRequest 请求对象
+     * @param request ShowAssetModelRequest 请求对象
      * @return SyncInvoker<ShowAssetModelRequest, ShowAssetModelResponse>
      */
     public SyncInvoker<ShowAssetModelRequest, ShowAssetModelResponse> showAssetModelInvoker(
         ShowAssetModelRequest request) {
-        return new SyncInvoker<ShowAssetModelRequest, ShowAssetModelResponse>(request, IoTAnalyticsMeta.showAssetModel,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showAssetModel, hcClient);
     }
 
     /**
@@ -276,7 +272,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetModelRequest 请求对象
+     * @param request UpdateAssetModelRequest 请求对象
      * @return UpdateAssetModelResponse
      */
     public UpdateAssetModelResponse updateAssetModel(UpdateAssetModelRequest request) {
@@ -290,13 +286,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetModelRequest 请求对象
+     * @param request UpdateAssetModelRequest 请求对象
      * @return SyncInvoker<UpdateAssetModelRequest, UpdateAssetModelResponse>
      */
     public SyncInvoker<UpdateAssetModelRequest, UpdateAssetModelResponse> updateAssetModelInvoker(
         UpdateAssetModelRequest request) {
-        return new SyncInvoker<UpdateAssetModelRequest, UpdateAssetModelResponse>(request,
-            IoTAnalyticsMeta.updateAssetModel, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.updateAssetModel, hcClient);
     }
 
     /**
@@ -306,7 +301,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetNewRequest 请求对象
+     * @param request CreateAssetNewRequest 请求对象
      * @return CreateAssetNewResponse
      */
     public CreateAssetNewResponse createAssetNew(CreateAssetNewRequest request) {
@@ -320,13 +315,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetNewRequest 请求对象
+     * @param request CreateAssetNewRequest 请求对象
      * @return SyncInvoker<CreateAssetNewRequest, CreateAssetNewResponse>
      */
     public SyncInvoker<CreateAssetNewRequest, CreateAssetNewResponse> createAssetNewInvoker(
         CreateAssetNewRequest request) {
-        return new SyncInvoker<CreateAssetNewRequest, CreateAssetNewResponse>(request, IoTAnalyticsMeta.createAssetNew,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.createAssetNew, hcClient);
     }
 
     /**
@@ -336,7 +330,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetNewRequest 请求对象
+     * @param request DeleteAssetNewRequest 请求对象
      * @return DeleteAssetNewResponse
      */
     public DeleteAssetNewResponse deleteAssetNew(DeleteAssetNewRequest request) {
@@ -350,13 +344,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetNewRequest 请求对象
+     * @param request DeleteAssetNewRequest 请求对象
      * @return SyncInvoker<DeleteAssetNewRequest, DeleteAssetNewResponse>
      */
     public SyncInvoker<DeleteAssetNewRequest, DeleteAssetNewResponse> deleteAssetNewInvoker(
         DeleteAssetNewRequest request) {
-        return new SyncInvoker<DeleteAssetNewRequest, DeleteAssetNewResponse>(request, IoTAnalyticsMeta.deleteAssetNew,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deleteAssetNew, hcClient);
     }
 
     /**
@@ -366,7 +359,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetsNewRequest 请求对象
+     * @param request ListAssetsNewRequest 请求对象
      * @return ListAssetsNewResponse
      */
     public ListAssetsNewResponse listAssetsNew(ListAssetsNewRequest request) {
@@ -380,12 +373,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetsNewRequest 请求对象
+     * @param request ListAssetsNewRequest 请求对象
      * @return SyncInvoker<ListAssetsNewRequest, ListAssetsNewResponse>
      */
     public SyncInvoker<ListAssetsNewRequest, ListAssetsNewResponse> listAssetsNewInvoker(ListAssetsNewRequest request) {
-        return new SyncInvoker<ListAssetsNewRequest, ListAssetsNewResponse>(request, IoTAnalyticsMeta.listAssetsNew,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listAssetsNew, hcClient);
     }
 
     /**
@@ -395,7 +387,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishRootAssetRequest 请求对象
+     * @param request PublishRootAssetRequest 请求对象
      * @return PublishRootAssetResponse
      */
     public PublishRootAssetResponse publishRootAsset(PublishRootAssetRequest request) {
@@ -409,13 +401,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishRootAssetRequest 请求对象
+     * @param request PublishRootAssetRequest 请求对象
      * @return SyncInvoker<PublishRootAssetRequest, PublishRootAssetResponse>
      */
     public SyncInvoker<PublishRootAssetRequest, PublishRootAssetResponse> publishRootAssetInvoker(
         PublishRootAssetRequest request) {
-        return new SyncInvoker<PublishRootAssetRequest, PublishRootAssetResponse>(request,
-            IoTAnalyticsMeta.publishRootAsset, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.publishRootAsset, hcClient);
     }
 
     /**
@@ -425,7 +416,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetNewRequest 请求对象
+     * @param request ShowAssetNewRequest 请求对象
      * @return ShowAssetNewResponse
      */
     public ShowAssetNewResponse showAssetNew(ShowAssetNewRequest request) {
@@ -439,12 +430,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetNewRequest 请求对象
+     * @param request ShowAssetNewRequest 请求对象
      * @return SyncInvoker<ShowAssetNewRequest, ShowAssetNewResponse>
      */
     public SyncInvoker<ShowAssetNewRequest, ShowAssetNewResponse> showAssetNewInvoker(ShowAssetNewRequest request) {
-        return new SyncInvoker<ShowAssetNewRequest, ShowAssetNewResponse>(request, IoTAnalyticsMeta.showAssetNew,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showAssetNew, hcClient);
     }
 
     /**
@@ -454,7 +444,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetNewRequest 请求对象
+     * @param request UpdateAssetNewRequest 请求对象
      * @return UpdateAssetNewResponse
      */
     public UpdateAssetNewResponse updateAssetNew(UpdateAssetNewRequest request) {
@@ -468,13 +458,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetNewRequest 请求对象
+     * @param request UpdateAssetNewRequest 请求对象
      * @return SyncInvoker<UpdateAssetNewRequest, UpdateAssetNewResponse>
      */
     public SyncInvoker<UpdateAssetNewRequest, UpdateAssetNewResponse> updateAssetNewInvoker(
         UpdateAssetNewRequest request) {
-        return new SyncInvoker<UpdateAssetNewRequest, UpdateAssetNewResponse>(request, IoTAnalyticsMeta.updateAssetNew,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.updateAssetNew, hcClient);
     }
 
     /**
@@ -484,7 +473,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLastPropertyValueRequest 请求对象
+     * @param request ShowLastPropertyValueRequest 请求对象
      * @return ShowLastPropertyValueResponse
      */
     public ShowLastPropertyValueResponse showLastPropertyValue(ShowLastPropertyValueRequest request) {
@@ -498,13 +487,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLastPropertyValueRequest 请求对象
+     * @param request ShowLastPropertyValueRequest 请求对象
      * @return SyncInvoker<ShowLastPropertyValueRequest, ShowLastPropertyValueResponse>
      */
     public SyncInvoker<ShowLastPropertyValueRequest, ShowLastPropertyValueResponse> showLastPropertyValueInvoker(
         ShowLastPropertyValueRequest request) {
-        return new SyncInvoker<ShowLastPropertyValueRequest, ShowLastPropertyValueResponse>(request,
-            IoTAnalyticsMeta.showLastPropertyValue, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showLastPropertyValue, hcClient);
     }
 
     /**
@@ -514,7 +502,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetricValueRequest 请求对象
+     * @param request ShowMetricValueRequest 请求对象
      * @return ShowMetricValueResponse
      */
     public ShowMetricValueResponse showMetricValue(ShowMetricValueRequest request) {
@@ -528,13 +516,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetricValueRequest 请求对象
+     * @param request ShowMetricValueRequest 请求对象
      * @return SyncInvoker<ShowMetricValueRequest, ShowMetricValueResponse>
      */
     public SyncInvoker<ShowMetricValueRequest, ShowMetricValueResponse> showMetricValueInvoker(
         ShowMetricValueRequest request) {
-        return new SyncInvoker<ShowMetricValueRequest, ShowMetricValueResponse>(request,
-            IoTAnalyticsMeta.showMetricValue, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showMetricValue, hcClient);
     }
 
     /**
@@ -544,7 +531,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPropertyRawValueRequest 请求对象
+     * @param request ShowPropertyRawValueRequest 请求对象
      * @return ShowPropertyRawValueResponse
      */
     public ShowPropertyRawValueResponse showPropertyRawValue(ShowPropertyRawValueRequest request) {
@@ -558,13 +545,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPropertyRawValueRequest 请求对象
+     * @param request ShowPropertyRawValueRequest 请求对象
      * @return SyncInvoker<ShowPropertyRawValueRequest, ShowPropertyRawValueResponse>
      */
     public SyncInvoker<ShowPropertyRawValueRequest, ShowPropertyRawValueResponse> showPropertyRawValueInvoker(
         ShowPropertyRawValueRequest request) {
-        return new SyncInvoker<ShowPropertyRawValueRequest, ShowPropertyRawValueResponse>(request,
-            IoTAnalyticsMeta.showPropertyRawValue, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showPropertyRawValue, hcClient);
     }
 
     /**
@@ -574,7 +560,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateComputingResourceRequest 请求对象
+     * @param request CreateComputingResourceRequest 请求对象
      * @return CreateComputingResourceResponse
      */
     public CreateComputingResourceResponse createComputingResource(CreateComputingResourceRequest request) {
@@ -588,13 +574,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateComputingResourceRequest 请求对象
+     * @param request CreateComputingResourceRequest 请求对象
      * @return SyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse>
      */
     public SyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse> createComputingResourceInvoker(
         CreateComputingResourceRequest request) {
-        return new SyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse>(request,
-            IoTAnalyticsMeta.createComputingResource, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.createComputingResource, hcClient);
     }
 
     /**
@@ -604,7 +589,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteComputingResourceRequest 请求对象
+     * @param request DeleteComputingResourceRequest 请求对象
      * @return DeleteComputingResourceResponse
      */
     public DeleteComputingResourceResponse deleteComputingResource(DeleteComputingResourceRequest request) {
@@ -618,13 +603,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteComputingResourceRequest 请求对象
+     * @param request DeleteComputingResourceRequest 请求对象
      * @return SyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse>
      */
     public SyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse> deleteComputingResourceInvoker(
         DeleteComputingResourceRequest request) {
-        return new SyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse>(request,
-            IoTAnalyticsMeta.deleteComputingResource, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deleteComputingResource, hcClient);
     }
 
     /**
@@ -634,7 +618,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListComputingResourcesRequest 请求对象
+     * @param request ListComputingResourcesRequest 请求对象
      * @return ListComputingResourcesResponse
      */
     public ListComputingResourcesResponse listComputingResources(ListComputingResourcesRequest request) {
@@ -648,13 +632,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListComputingResourcesRequest 请求对象
+     * @param request ListComputingResourcesRequest 请求对象
      * @return SyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse>
      */
     public SyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse> listComputingResourcesInvoker(
         ListComputingResourcesRequest request) {
-        return new SyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse>(request,
-            IoTAnalyticsMeta.listComputingResources, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listComputingResources, hcClient);
     }
 
     /**
@@ -664,7 +647,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatasourceRequest 请求对象
+     * @param request CreateDatasourceRequest 请求对象
      * @return CreateDatasourceResponse
      */
     public CreateDatasourceResponse createDatasource(CreateDatasourceRequest request) {
@@ -678,13 +661,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatasourceRequest 请求对象
+     * @param request CreateDatasourceRequest 请求对象
      * @return SyncInvoker<CreateDatasourceRequest, CreateDatasourceResponse>
      */
     public SyncInvoker<CreateDatasourceRequest, CreateDatasourceResponse> createDatasourceInvoker(
         CreateDatasourceRequest request) {
-        return new SyncInvoker<CreateDatasourceRequest, CreateDatasourceResponse>(request,
-            IoTAnalyticsMeta.createDatasource, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.createDatasource, hcClient);
     }
 
     /**
@@ -694,7 +676,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatasourceRequest 请求对象
+     * @param request DeleteDatasourceRequest 请求对象
      * @return DeleteDatasourceResponse
      */
     public DeleteDatasourceResponse deleteDatasource(DeleteDatasourceRequest request) {
@@ -708,13 +690,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatasourceRequest 请求对象
+     * @param request DeleteDatasourceRequest 请求对象
      * @return SyncInvoker<DeleteDatasourceRequest, DeleteDatasourceResponse>
      */
     public SyncInvoker<DeleteDatasourceRequest, DeleteDatasourceResponse> deleteDatasourceInvoker(
         DeleteDatasourceRequest request) {
-        return new SyncInvoker<DeleteDatasourceRequest, DeleteDatasourceResponse>(request,
-            IoTAnalyticsMeta.deleteDatasource, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deleteDatasource, hcClient);
     }
 
     /**
@@ -724,7 +705,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllDataSourceRequest 请求对象
+     * @param request ShowAllDataSourceRequest 请求对象
      * @return ShowAllDataSourceResponse
      */
     public ShowAllDataSourceResponse showAllDataSource(ShowAllDataSourceRequest request) {
@@ -738,13 +719,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllDataSourceRequest 请求对象
+     * @param request ShowAllDataSourceRequest 请求对象
      * @return SyncInvoker<ShowAllDataSourceRequest, ShowAllDataSourceResponse>
      */
     public SyncInvoker<ShowAllDataSourceRequest, ShowAllDataSourceResponse> showAllDataSourceInvoker(
         ShowAllDataSourceRequest request) {
-        return new SyncInvoker<ShowAllDataSourceRequest, ShowAllDataSourceResponse>(request,
-            IoTAnalyticsMeta.showAllDataSource, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showAllDataSource, hcClient);
     }
 
     /**
@@ -754,7 +734,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataSourceRequest 请求对象
+     * @param request ShowDataSourceRequest 请求对象
      * @return ShowDataSourceResponse
      */
     public ShowDataSourceResponse showDataSource(ShowDataSourceRequest request) {
@@ -768,13 +748,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataSourceRequest 请求对象
+     * @param request ShowDataSourceRequest 请求对象
      * @return SyncInvoker<ShowDataSourceRequest, ShowDataSourceResponse>
      */
     public SyncInvoker<ShowDataSourceRequest, ShowDataSourceResponse> showDataSourceInvoker(
         ShowDataSourceRequest request) {
-        return new SyncInvoker<ShowDataSourceRequest, ShowDataSourceResponse>(request, IoTAnalyticsMeta.showDataSource,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showDataSource, hcClient);
     }
 
     /**
@@ -784,7 +763,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataSourceRequest 请求对象
+     * @param request UpdateDataSourceRequest 请求对象
      * @return UpdateDataSourceResponse
      */
     public UpdateDataSourceResponse updateDataSource(UpdateDataSourceRequest request) {
@@ -798,13 +777,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataSourceRequest 请求对象
+     * @param request UpdateDataSourceRequest 请求对象
      * @return SyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse>
      */
     public SyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse> updateDataSourceInvoker(
         UpdateDataSourceRequest request) {
-        return new SyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse>(request,
-            IoTAnalyticsMeta.updateDataSource, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.updateDataSource, hcClient);
     }
 
     /**
@@ -814,7 +792,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGroupRequest 请求对象
+     * @param request CreateGroupRequest 请求对象
      * @return CreateGroupResponse
      */
     public CreateGroupResponse createGroup(CreateGroupRequest request) {
@@ -828,12 +806,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGroupRequest 请求对象
+     * @param request CreateGroupRequest 请求对象
      * @return SyncInvoker<CreateGroupRequest, CreateGroupResponse>
      */
     public SyncInvoker<CreateGroupRequest, CreateGroupResponse> createGroupInvoker(CreateGroupRequest request) {
-        return new SyncInvoker<CreateGroupRequest, CreateGroupResponse>(request, IoTAnalyticsMeta.createGroup,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.createGroup, hcClient);
     }
 
     /**
@@ -843,7 +820,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGroupRequest 请求对象
+     * @param request DeleteGroupRequest 请求对象
      * @return DeleteGroupResponse
      */
     public DeleteGroupResponse deleteGroup(DeleteGroupRequest request) {
@@ -857,12 +834,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGroupRequest 请求对象
+     * @param request DeleteGroupRequest 请求对象
      * @return SyncInvoker<DeleteGroupRequest, DeleteGroupResponse>
      */
     public SyncInvoker<DeleteGroupRequest, DeleteGroupResponse> deleteGroupInvoker(DeleteGroupRequest request) {
-        return new SyncInvoker<DeleteGroupRequest, DeleteGroupResponse>(request, IoTAnalyticsMeta.deleteGroup,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deleteGroup, hcClient);
     }
 
     /**
@@ -872,7 +848,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGroupsRequest 请求对象
+     * @param request ListGroupsRequest 请求对象
      * @return ListGroupsResponse
      */
     public ListGroupsResponse listGroups(ListGroupsRequest request) {
@@ -886,11 +862,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGroupsRequest 请求对象
+     * @param request ListGroupsRequest 请求对象
      * @return SyncInvoker<ListGroupsRequest, ListGroupsResponse>
      */
     public SyncInvoker<ListGroupsRequest, ListGroupsResponse> listGroupsInvoker(ListGroupsRequest request) {
-        return new SyncInvoker<ListGroupsRequest, ListGroupsResponse>(request, IoTAnalyticsMeta.listGroups, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listGroups, hcClient);
     }
 
     /**
@@ -900,7 +876,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGroupRequest 请求对象
+     * @param request UpdateGroupRequest 请求对象
      * @return UpdateGroupResponse
      */
     public UpdateGroupResponse updateGroup(UpdateGroupRequest request) {
@@ -914,12 +890,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGroupRequest 请求对象
+     * @param request UpdateGroupRequest 请求对象
      * @return SyncInvoker<UpdateGroupRequest, UpdateGroupResponse>
      */
     public SyncInvoker<UpdateGroupRequest, UpdateGroupResponse> updateGroupInvoker(UpdateGroupRequest request) {
-        return new SyncInvoker<UpdateGroupRequest, UpdateGroupResponse>(request, IoTAnalyticsMeta.updateGroup,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.updateGroup, hcClient);
     }
 
     /**
@@ -929,7 +904,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataStoreRequest 请求对象
+     * @param request DeleteDataStoreRequest 请求对象
      * @return DeleteDataStoreResponse
      */
     public DeleteDataStoreResponse deleteDataStore(DeleteDataStoreRequest request) {
@@ -943,13 +918,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataStoreRequest 请求对象
+     * @param request DeleteDataStoreRequest 请求对象
      * @return SyncInvoker<DeleteDataStoreRequest, DeleteDataStoreResponse>
      */
     public SyncInvoker<DeleteDataStoreRequest, DeleteDataStoreResponse> deleteDataStoreInvoker(
         DeleteDataStoreRequest request) {
-        return new SyncInvoker<DeleteDataStoreRequest, DeleteDataStoreResponse>(request,
-            IoTAnalyticsMeta.deleteDataStore, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deleteDataStore, hcClient);
     }
 
     /**
@@ -959,7 +933,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataStoresRequest 请求对象
+     * @param request ListDataStoresRequest 请求对象
      * @return ListDataStoresResponse
      */
     public ListDataStoresResponse listDataStores(ListDataStoresRequest request) {
@@ -973,13 +947,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataStoresRequest 请求对象
+     * @param request ListDataStoresRequest 请求对象
      * @return SyncInvoker<ListDataStoresRequest, ListDataStoresResponse>
      */
     public SyncInvoker<ListDataStoresRequest, ListDataStoresResponse> listDataStoresInvoker(
         ListDataStoresRequest request) {
-        return new SyncInvoker<ListDataStoresRequest, ListDataStoresResponse>(request, IoTAnalyticsMeta.listDataStores,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listDataStores, hcClient);
     }
 
     /**
@@ -989,7 +962,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataStoreRequest 请求对象
+     * @param request UpdateDataStoreRequest 请求对象
      * @return UpdateDataStoreResponse
      */
     public UpdateDataStoreResponse updateDataStore(UpdateDataStoreRequest request) {
@@ -1003,13 +976,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataStoreRequest 请求对象
+     * @param request UpdateDataStoreRequest 请求对象
      * @return SyncInvoker<UpdateDataStoreRequest, UpdateDataStoreResponse>
      */
     public SyncInvoker<UpdateDataStoreRequest, UpdateDataStoreResponse> updateDataStoreInvoker(
         UpdateDataStoreRequest request) {
-        return new SyncInvoker<UpdateDataStoreRequest, UpdateDataStoreResponse>(request,
-            IoTAnalyticsMeta.updateDataStore, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.updateDataStore, hcClient);
     }
 
     /**
@@ -1019,7 +991,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryRequest 请求对象
+     * @param request ListHistoryRequest 请求对象
      * @return ListHistoryResponse
      */
     public ListHistoryResponse listHistory(ListHistoryRequest request) {
@@ -1033,12 +1005,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryRequest 请求对象
+     * @param request ListHistoryRequest 请求对象
      * @return SyncInvoker<ListHistoryRequest, ListHistoryResponse>
      */
     public SyncInvoker<ListHistoryRequest, ListHistoryResponse> listHistoryInvoker(ListHistoryRequest request) {
-        return new SyncInvoker<ListHistoryRequest, ListHistoryResponse>(request, IoTAnalyticsMeta.listHistory,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listHistory, hcClient);
     }
 
     /**
@@ -1048,7 +1019,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetricsRequest 请求对象
+     * @param request ListMetricsRequest 请求对象
      * @return ListMetricsResponse
      */
     public ListMetricsResponse listMetrics(ListMetricsRequest request) {
@@ -1062,12 +1033,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetricsRequest 请求对象
+     * @param request ListMetricsRequest 请求对象
      * @return SyncInvoker<ListMetricsRequest, ListMetricsResponse>
      */
     public SyncInvoker<ListMetricsRequest, ListMetricsResponse> listMetricsInvoker(ListMetricsRequest request) {
-        return new SyncInvoker<ListMetricsRequest, ListMetricsResponse>(request, IoTAnalyticsMeta.listMetrics,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listMetrics, hcClient);
     }
 
     /**
@@ -1077,7 +1047,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPropertyValuesRequest 请求对象
+     * @param request ShowPropertyValuesRequest 请求对象
      * @return ShowPropertyValuesResponse
      */
     public ShowPropertyValuesResponse showPropertyValues(ShowPropertyValuesRequest request) {
@@ -1091,13 +1061,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPropertyValuesRequest 请求对象
+     * @param request ShowPropertyValuesRequest 请求对象
      * @return SyncInvoker<ShowPropertyValuesRequest, ShowPropertyValuesResponse>
      */
     public SyncInvoker<ShowPropertyValuesRequest, ShowPropertyValuesResponse> showPropertyValuesInvoker(
         ShowPropertyValuesRequest request) {
-        return new SyncInvoker<ShowPropertyValuesRequest, ShowPropertyValuesResponse>(request,
-            IoTAnalyticsMeta.showPropertyValues, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showPropertyValues, hcClient);
     }
 
     /**
@@ -1107,7 +1076,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagValuesRequest 请求对象
+     * @param request ListTagValuesRequest 请求对象
      * @return ListTagValuesResponse
      */
     public ListTagValuesResponse listTagValues(ListTagValuesRequest request) {
@@ -1121,12 +1090,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagValuesRequest 请求对象
+     * @param request ListTagValuesRequest 请求对象
      * @return SyncInvoker<ListTagValuesRequest, ListTagValuesResponse>
      */
     public SyncInvoker<ListTagValuesRequest, ListTagValuesResponse> listTagValuesInvoker(ListTagValuesRequest request) {
-        return new SyncInvoker<ListTagValuesRequest, ListTagValuesResponse>(request, IoTAnalyticsMeta.listTagValues,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listTagValues, hcClient);
     }
 
     /**
@@ -1136,7 +1104,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportDatasetRequest 请求对象
+     * @param request ExportDatasetRequest 请求对象
      * @return ExportDatasetResponse
      */
     public ExportDatasetResponse exportDataset(ExportDatasetRequest request) {
@@ -1150,12 +1118,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportDatasetRequest 请求对象
+     * @param request ExportDatasetRequest 请求对象
      * @return SyncInvoker<ExportDatasetRequest, ExportDatasetResponse>
      */
     public SyncInvoker<ExportDatasetRequest, ExportDatasetResponse> exportDatasetInvoker(ExportDatasetRequest request) {
-        return new SyncInvoker<ExportDatasetRequest, ExportDatasetResponse>(request, IoTAnalyticsMeta.exportDataset,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.exportDataset, hcClient);
     }
 
     /**
@@ -1165,7 +1132,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportDataRequest 请求对象
+     * @param request ImportDataRequest 请求对象
      * @return ImportDataResponse
      */
     public ImportDataResponse importData(ImportDataRequest request) {
@@ -1179,11 +1146,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportDataRequest 请求对象
+     * @param request ImportDataRequest 请求对象
      * @return SyncInvoker<ImportDataRequest, ImportDataResponse>
      */
     public SyncInvoker<ImportDataRequest, ImportDataResponse> importDataInvoker(ImportDataRequest request) {
-        return new SyncInvoker<ImportDataRequest, ImportDataResponse>(request, IoTAnalyticsMeta.importData, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.importData, hcClient);
     }
 
     /**
@@ -1193,7 +1160,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatasetRequest 请求对象
+     * @param request ShowDatasetRequest 请求对象
      * @return ShowDatasetResponse
      */
     public ShowDatasetResponse showDataset(ShowDatasetRequest request) {
@@ -1207,12 +1174,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatasetRequest 请求对象
+     * @param request ShowDatasetRequest 请求对象
      * @return SyncInvoker<ShowDatasetRequest, ShowDatasetResponse>
      */
     public SyncInvoker<ShowDatasetRequest, ShowDatasetResponse> showDatasetInvoker(ShowDatasetRequest request) {
-        return new SyncInvoker<ShowDatasetRequest, ShowDatasetResponse>(request, IoTAnalyticsMeta.showDataset,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showDataset, hcClient);
     }
 
     /**
@@ -1222,7 +1188,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateSqlRequest 请求对象
+     * @param request ValidateSqlRequest 请求对象
      * @return ValidateSqlResponse
      */
     public ValidateSqlResponse validateSql(ValidateSqlRequest request) {
@@ -1236,12 +1202,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateSqlRequest 请求对象
+     * @param request ValidateSqlRequest 请求对象
      * @return SyncInvoker<ValidateSqlRequest, ValidateSqlResponse>
      */
     public SyncInvoker<ValidateSqlRequest, ValidateSqlResponse> validateSqlInvoker(ValidateSqlRequest request) {
-        return new SyncInvoker<ValidateSqlRequest, ValidateSqlResponse>(request, IoTAnalyticsMeta.validateSql,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.validateSql, hcClient);
     }
 
     /**
@@ -1251,7 +1216,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDevDataRequest 请求对象
+     * @param request AddDevDataRequest 请求对象
      * @return AddDevDataResponse
      */
     public AddDevDataResponse addDevData(AddDevDataRequest request) {
@@ -1265,11 +1230,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDevDataRequest 请求对象
+     * @param request AddDevDataRequest 请求对象
      * @return SyncInvoker<AddDevDataRequest, AddDevDataResponse>
      */
     public SyncInvoker<AddDevDataRequest, AddDevDataResponse> addDevDataInvoker(AddDevDataRequest request) {
-        return new SyncInvoker<AddDevDataRequest, AddDevDataResponse>(request, IoTAnalyticsMeta.addDevData, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.addDevData, hcClient);
     }
 
     /**
@@ -1279,7 +1244,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBatchJobRequest 请求对象
+     * @param request CreateBatchJobRequest 请求对象
      * @return CreateBatchJobResponse
      */
     public CreateBatchJobResponse createBatchJob(CreateBatchJobRequest request) {
@@ -1293,13 +1258,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBatchJobRequest 请求对象
+     * @param request CreateBatchJobRequest 请求对象
      * @return SyncInvoker<CreateBatchJobRequest, CreateBatchJobResponse>
      */
     public SyncInvoker<CreateBatchJobRequest, CreateBatchJobResponse> createBatchJobInvoker(
         CreateBatchJobRequest request) {
-        return new SyncInvoker<CreateBatchJobRequest, CreateBatchJobResponse>(request, IoTAnalyticsMeta.createBatchJob,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.createBatchJob, hcClient);
     }
 
     /**
@@ -1309,7 +1273,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBatchJobRequest 请求对象
+     * @param request DeleteBatchJobRequest 请求对象
      * @return DeleteBatchJobResponse
      */
     public DeleteBatchJobResponse deleteBatchJob(DeleteBatchJobRequest request) {
@@ -1323,13 +1287,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBatchJobRequest 请求对象
+     * @param request DeleteBatchJobRequest 请求对象
      * @return SyncInvoker<DeleteBatchJobRequest, DeleteBatchJobResponse>
      */
     public SyncInvoker<DeleteBatchJobRequest, DeleteBatchJobResponse> deleteBatchJobInvoker(
         DeleteBatchJobRequest request) {
-        return new SyncInvoker<DeleteBatchJobRequest, DeleteBatchJobResponse>(request, IoTAnalyticsMeta.deleteBatchJob,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deleteBatchJob, hcClient);
     }
 
     /**
@@ -1339,7 +1302,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBatchJobsRequest 请求对象
+     * @param request ListBatchJobsRequest 请求对象
      * @return ListBatchJobsResponse
      */
     public ListBatchJobsResponse listBatchJobs(ListBatchJobsRequest request) {
@@ -1353,12 +1316,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBatchJobsRequest 请求对象
+     * @param request ListBatchJobsRequest 请求对象
      * @return SyncInvoker<ListBatchJobsRequest, ListBatchJobsResponse>
      */
     public SyncInvoker<ListBatchJobsRequest, ListBatchJobsResponse> listBatchJobsInvoker(ListBatchJobsRequest request) {
-        return new SyncInvoker<ListBatchJobsRequest, ListBatchJobsResponse>(request, IoTAnalyticsMeta.listBatchJobs,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listBatchJobs, hcClient);
     }
 
     /**
@@ -1368,7 +1330,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBatchJobRequest 请求对象
+     * @param request ShowBatchJobRequest 请求对象
      * @return ShowBatchJobResponse
      */
     public ShowBatchJobResponse showBatchJob(ShowBatchJobRequest request) {
@@ -1382,12 +1344,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBatchJobRequest 请求对象
+     * @param request ShowBatchJobRequest 请求对象
      * @return SyncInvoker<ShowBatchJobRequest, ShowBatchJobResponse>
      */
     public SyncInvoker<ShowBatchJobRequest, ShowBatchJobResponse> showBatchJobInvoker(ShowBatchJobRequest request) {
-        return new SyncInvoker<ShowBatchJobRequest, ShowBatchJobResponse>(request, IoTAnalyticsMeta.showBatchJob,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showBatchJob, hcClient);
     }
 
     /**
@@ -1397,7 +1358,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBatchJobRequest 请求对象
+     * @param request UpdateBatchJobRequest 请求对象
      * @return UpdateBatchJobResponse
      */
     public UpdateBatchJobResponse updateBatchJob(UpdateBatchJobRequest request) {
@@ -1411,13 +1372,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBatchJobRequest 请求对象
+     * @param request UpdateBatchJobRequest 请求对象
      * @return SyncInvoker<UpdateBatchJobRequest, UpdateBatchJobResponse>
      */
     public SyncInvoker<UpdateBatchJobRequest, UpdateBatchJobResponse> updateBatchJobInvoker(
         UpdateBatchJobRequest request) {
-        return new SyncInvoker<UpdateBatchJobRequest, UpdateBatchJobResponse>(request, IoTAnalyticsMeta.updateBatchJob,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.updateBatchJob, hcClient);
     }
 
     /**
@@ -1427,7 +1387,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPipelineJobRequest 请求对象
+     * @param request AddPipelineJobRequest 请求对象
      * @return AddPipelineJobResponse
      */
     public AddPipelineJobResponse addPipelineJob(AddPipelineJobRequest request) {
@@ -1441,13 +1401,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPipelineJobRequest 请求对象
+     * @param request AddPipelineJobRequest 请求对象
      * @return SyncInvoker<AddPipelineJobRequest, AddPipelineJobResponse>
      */
     public SyncInvoker<AddPipelineJobRequest, AddPipelineJobResponse> addPipelineJobInvoker(
         AddPipelineJobRequest request) {
-        return new SyncInvoker<AddPipelineJobRequest, AddPipelineJobResponse>(request, IoTAnalyticsMeta.addPipelineJob,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.addPipelineJob, hcClient);
     }
 
     /**
@@ -1457,7 +1416,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePipelineJobRequest 请求对象
+     * @param request DeletePipelineJobRequest 请求对象
      * @return DeletePipelineJobResponse
      */
     public DeletePipelineJobResponse deletePipelineJob(DeletePipelineJobRequest request) {
@@ -1471,13 +1430,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePipelineJobRequest 请求对象
+     * @param request DeletePipelineJobRequest 请求对象
      * @return SyncInvoker<DeletePipelineJobRequest, DeletePipelineJobResponse>
      */
     public SyncInvoker<DeletePipelineJobRequest, DeletePipelineJobResponse> deletePipelineJobInvoker(
         DeletePipelineJobRequest request) {
-        return new SyncInvoker<DeletePipelineJobRequest, DeletePipelineJobResponse>(request,
-            IoTAnalyticsMeta.deletePipelineJob, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deletePipelineJob, hcClient);
     }
 
     /**
@@ -1487,7 +1445,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelineJobsRequest 请求对象
+     * @param request ListPipelineJobsRequest 请求对象
      * @return ListPipelineJobsResponse
      */
     public ListPipelineJobsResponse listPipelineJobs(ListPipelineJobsRequest request) {
@@ -1501,13 +1459,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelineJobsRequest 请求对象
+     * @param request ListPipelineJobsRequest 请求对象
      * @return SyncInvoker<ListPipelineJobsRequest, ListPipelineJobsResponse>
      */
     public SyncInvoker<ListPipelineJobsRequest, ListPipelineJobsResponse> listPipelineJobsInvoker(
         ListPipelineJobsRequest request) {
-        return new SyncInvoker<ListPipelineJobsRequest, ListPipelineJobsResponse>(request,
-            IoTAnalyticsMeta.listPipelineJobs, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listPipelineJobs, hcClient);
     }
 
     /**
@@ -1517,7 +1474,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineJobRequest 请求对象
+     * @param request ShowPipelineJobRequest 请求对象
      * @return ShowPipelineJobResponse
      */
     public ShowPipelineJobResponse showPipelineJob(ShowPipelineJobRequest request) {
@@ -1531,13 +1488,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineJobRequest 请求对象
+     * @param request ShowPipelineJobRequest 请求对象
      * @return SyncInvoker<ShowPipelineJobRequest, ShowPipelineJobResponse>
      */
     public SyncInvoker<ShowPipelineJobRequest, ShowPipelineJobResponse> showPipelineJobInvoker(
         ShowPipelineJobRequest request) {
-        return new SyncInvoker<ShowPipelineJobRequest, ShowPipelineJobResponse>(request,
-            IoTAnalyticsMeta.showPipelineJob, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showPipelineJob, hcClient);
     }
 
     /**
@@ -1547,7 +1503,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartPipelineJobRequest 请求对象
+     * @param request StartPipelineJobRequest 请求对象
      * @return StartPipelineJobResponse
      */
     public StartPipelineJobResponse startPipelineJob(StartPipelineJobRequest request) {
@@ -1561,13 +1517,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartPipelineJobRequest 请求对象
+     * @param request StartPipelineJobRequest 请求对象
      * @return SyncInvoker<StartPipelineJobRequest, StartPipelineJobResponse>
      */
     public SyncInvoker<StartPipelineJobRequest, StartPipelineJobResponse> startPipelineJobInvoker(
         StartPipelineJobRequest request) {
-        return new SyncInvoker<StartPipelineJobRequest, StartPipelineJobResponse>(request,
-            IoTAnalyticsMeta.startPipelineJob, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.startPipelineJob, hcClient);
     }
 
     /**
@@ -1577,7 +1532,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopPipelineJobRequest 请求对象
+     * @param request StopPipelineJobRequest 请求对象
      * @return StopPipelineJobResponse
      */
     public StopPipelineJobResponse stopPipelineJob(StopPipelineJobRequest request) {
@@ -1591,13 +1546,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopPipelineJobRequest 请求对象
+     * @param request StopPipelineJobRequest 请求对象
      * @return SyncInvoker<StopPipelineJobRequest, StopPipelineJobResponse>
      */
     public SyncInvoker<StopPipelineJobRequest, StopPipelineJobResponse> stopPipelineJobInvoker(
         StopPipelineJobRequest request) {
-        return new SyncInvoker<StopPipelineJobRequest, StopPipelineJobResponse>(request,
-            IoTAnalyticsMeta.stopPipelineJob, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.stopPipelineJob, hcClient);
     }
 
     /**
@@ -1607,7 +1561,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePipelineJobRequest 请求对象
+     * @param request UpdatePipelineJobRequest 请求对象
      * @return UpdatePipelineJobResponse
      */
     public UpdatePipelineJobResponse updatePipelineJob(UpdatePipelineJobRequest request) {
@@ -1621,13 +1575,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePipelineJobRequest 请求对象
+     * @param request UpdatePipelineJobRequest 请求对象
      * @return SyncInvoker<UpdatePipelineJobRequest, UpdatePipelineJobResponse>
      */
     public SyncInvoker<UpdatePipelineJobRequest, UpdatePipelineJobResponse> updatePipelineJobInvoker(
         UpdatePipelineJobRequest request) {
-        return new SyncInvoker<UpdatePipelineJobRequest, UpdatePipelineJobResponse>(request,
-            IoTAnalyticsMeta.updatePipelineJob, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.updatePipelineJob, hcClient);
     }
 
     /**
@@ -1637,7 +1590,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStreamingJobRequest 请求对象
+     * @param request CreateStreamingJobRequest 请求对象
      * @return CreateStreamingJobResponse
      */
     public CreateStreamingJobResponse createStreamingJob(CreateStreamingJobRequest request) {
@@ -1651,13 +1604,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStreamingJobRequest 请求对象
+     * @param request CreateStreamingJobRequest 请求对象
      * @return SyncInvoker<CreateStreamingJobRequest, CreateStreamingJobResponse>
      */
     public SyncInvoker<CreateStreamingJobRequest, CreateStreamingJobResponse> createStreamingJobInvoker(
         CreateStreamingJobRequest request) {
-        return new SyncInvoker<CreateStreamingJobRequest, CreateStreamingJobResponse>(request,
-            IoTAnalyticsMeta.createStreamingJob, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.createStreamingJob, hcClient);
     }
 
     /**
@@ -1667,7 +1619,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStreamingJobByIdRequest 请求对象
+     * @param request DeleteStreamingJobByIdRequest 请求对象
      * @return DeleteStreamingJobByIdResponse
      */
     public DeleteStreamingJobByIdResponse deleteStreamingJobById(DeleteStreamingJobByIdRequest request) {
@@ -1681,13 +1633,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStreamingJobByIdRequest 请求对象
+     * @param request DeleteStreamingJobByIdRequest 请求对象
      * @return SyncInvoker<DeleteStreamingJobByIdRequest, DeleteStreamingJobByIdResponse>
      */
     public SyncInvoker<DeleteStreamingJobByIdRequest, DeleteStreamingJobByIdResponse> deleteStreamingJobByIdInvoker(
         DeleteStreamingJobByIdRequest request) {
-        return new SyncInvoker<DeleteStreamingJobByIdRequest, DeleteStreamingJobByIdResponse>(request,
-            IoTAnalyticsMeta.deleteStreamingJobById, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deleteStreamingJobById, hcClient);
     }
 
     /**
@@ -1697,7 +1648,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobByIdRequest 请求对象
+     * @param request ShowJobByIdRequest 请求对象
      * @return ShowJobByIdResponse
      */
     public ShowJobByIdResponse showJobById(ShowJobByIdRequest request) {
@@ -1711,12 +1662,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobByIdRequest 请求对象
+     * @param request ShowJobByIdRequest 请求对象
      * @return SyncInvoker<ShowJobByIdRequest, ShowJobByIdResponse>
      */
     public SyncInvoker<ShowJobByIdRequest, ShowJobByIdResponse> showJobByIdInvoker(ShowJobByIdRequest request) {
-        return new SyncInvoker<ShowJobByIdRequest, ShowJobByIdResponse>(request, IoTAnalyticsMeta.showJobById,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showJobById, hcClient);
     }
 
     /**
@@ -1726,7 +1676,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobsRequest 请求对象
+     * @param request ShowJobsRequest 请求对象
      * @return ShowJobsResponse
      */
     public ShowJobsResponse showJobs(ShowJobsRequest request) {
@@ -1740,11 +1690,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobsRequest 请求对象
+     * @param request ShowJobsRequest 请求对象
      * @return SyncInvoker<ShowJobsRequest, ShowJobsResponse>
      */
     public SyncInvoker<ShowJobsRequest, ShowJobsResponse> showJobsInvoker(ShowJobsRequest request) {
-        return new SyncInvoker<ShowJobsRequest, ShowJobsResponse>(request, IoTAnalyticsMeta.showJobs, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showJobs, hcClient);
     }
 
     /**
@@ -1754,7 +1704,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStreamingJobRequest 请求对象
+     * @param request UpdateStreamingJobRequest 请求对象
      * @return UpdateStreamingJobResponse
      */
     public UpdateStreamingJobResponse updateStreamingJob(UpdateStreamingJobRequest request) {
@@ -1768,13 +1718,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStreamingJobRequest 请求对象
+     * @param request UpdateStreamingJobRequest 请求对象
      * @return SyncInvoker<UpdateStreamingJobRequest, UpdateStreamingJobResponse>
      */
     public SyncInvoker<UpdateStreamingJobRequest, UpdateStreamingJobResponse> updateStreamingJobInvoker(
         UpdateStreamingJobRequest request) {
-        return new SyncInvoker<UpdateStreamingJobRequest, UpdateStreamingJobResponse>(request,
-            IoTAnalyticsMeta.updateStreamingJob, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.updateStreamingJob, hcClient);
     }
 
     /**
@@ -1784,7 +1733,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartJobRequest 请求对象
+     * @param request StartJobRequest 请求对象
      * @return StartJobResponse
      */
     public StartJobResponse startJob(StartJobRequest request) {
@@ -1798,11 +1747,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartJobRequest 请求对象
+     * @param request StartJobRequest 请求对象
      * @return SyncInvoker<StartJobRequest, StartJobResponse>
      */
     public SyncInvoker<StartJobRequest, StartJobResponse> startJobInvoker(StartJobRequest request) {
-        return new SyncInvoker<StartJobRequest, StartJobResponse>(request, IoTAnalyticsMeta.startJob, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.startJob, hcClient);
     }
 
     /**
@@ -1812,7 +1761,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobRequest 请求对象
+     * @param request StopJobRequest 请求对象
      * @return StopJobResponse
      */
     public StopJobResponse stopJob(StopJobRequest request) {
@@ -1826,11 +1775,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobRequest 请求对象
+     * @param request StopJobRequest 请求对象
      * @return SyncInvoker<StopJobRequest, StopJobResponse>
      */
     public SyncInvoker<StopJobRequest, StopJobResponse> stopJobInvoker(StopJobRequest request) {
-        return new SyncInvoker<StopJobRequest, StopJobResponse>(request, IoTAnalyticsMeta.stopJob, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.stopJob, hcClient);
     }
 
     /**
@@ -1840,7 +1789,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRunRequest 请求对象
+     * @param request CreateRunRequest 请求对象
      * @return CreateRunResponse
      */
     public CreateRunResponse createRun(CreateRunRequest request) {
@@ -1854,11 +1803,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRunRequest 请求对象
+     * @param request CreateRunRequest 请求对象
      * @return SyncInvoker<CreateRunRequest, CreateRunResponse>
      */
     public SyncInvoker<CreateRunRequest, CreateRunResponse> createRunInvoker(CreateRunRequest request) {
-        return new SyncInvoker<CreateRunRequest, CreateRunResponse>(request, IoTAnalyticsMeta.createRun, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.createRun, hcClient);
     }
 
     /**
@@ -1868,7 +1817,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRunRequest 请求对象
+     * @param request DeleteRunRequest 请求对象
      * @return DeleteRunResponse
      */
     public DeleteRunResponse deleteRun(DeleteRunRequest request) {
@@ -1882,11 +1831,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRunRequest 请求对象
+     * @param request DeleteRunRequest 请求对象
      * @return SyncInvoker<DeleteRunRequest, DeleteRunResponse>
      */
     public SyncInvoker<DeleteRunRequest, DeleteRunResponse> deleteRunInvoker(DeleteRunRequest request) {
-        return new SyncInvoker<DeleteRunRequest, DeleteRunResponse>(request, IoTAnalyticsMeta.deleteRun, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deleteRun, hcClient);
     }
 
     /**
@@ -1896,7 +1845,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRunsRequest 请求对象
+     * @param request ListRunsRequest 请求对象
      * @return ListRunsResponse
      */
     public ListRunsResponse listRuns(ListRunsRequest request) {
@@ -1910,11 +1859,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRunsRequest 请求对象
+     * @param request ListRunsRequest 请求对象
      * @return SyncInvoker<ListRunsRequest, ListRunsResponse>
      */
     public SyncInvoker<ListRunsRequest, ListRunsResponse> listRunsInvoker(ListRunsRequest request) {
-        return new SyncInvoker<ListRunsRequest, ListRunsResponse>(request, IoTAnalyticsMeta.listRuns, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listRuns, hcClient);
     }
 
     /**
@@ -1924,7 +1873,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRunRequest 请求对象
+     * @param request ShowRunRequest 请求对象
      * @return ShowRunResponse
      */
     public ShowRunResponse showRun(ShowRunRequest request) {
@@ -1938,11 +1887,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRunRequest 请求对象
+     * @param request ShowRunRequest 请求对象
      * @return SyncInvoker<ShowRunRequest, ShowRunResponse>
      */
     public SyncInvoker<ShowRunRequest, ShowRunResponse> showRunInvoker(ShowRunRequest request) {
-        return new SyncInvoker<ShowRunRequest, ShowRunResponse>(request, IoTAnalyticsMeta.showRun, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showRun, hcClient);
     }
 
     /**
@@ -1952,7 +1901,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTableRequest 请求对象
+     * @param request CreateTableRequest 请求对象
      * @return CreateTableResponse
      */
     public CreateTableResponse createTable(CreateTableRequest request) {
@@ -1966,12 +1915,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTableRequest 请求对象
+     * @param request CreateTableRequest 请求对象
      * @return SyncInvoker<CreateTableRequest, CreateTableResponse>
      */
     public SyncInvoker<CreateTableRequest, CreateTableResponse> createTableInvoker(CreateTableRequest request) {
-        return new SyncInvoker<CreateTableRequest, CreateTableResponse>(request, IoTAnalyticsMeta.createTable,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.createTable, hcClient);
     }
 
     /**
@@ -1981,7 +1929,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTableRequest 请求对象
+     * @param request DeleteTableRequest 请求对象
      * @return DeleteTableResponse
      */
     public DeleteTableResponse deleteTable(DeleteTableRequest request) {
@@ -1995,12 +1943,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTableRequest 请求对象
+     * @param request DeleteTableRequest 请求对象
      * @return SyncInvoker<DeleteTableRequest, DeleteTableResponse>
      */
     public SyncInvoker<DeleteTableRequest, DeleteTableResponse> deleteTableInvoker(DeleteTableRequest request) {
-        return new SyncInvoker<DeleteTableRequest, DeleteTableResponse>(request, IoTAnalyticsMeta.deleteTable,
-            hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.deleteTable, hcClient);
     }
 
     /**
@@ -2010,7 +1957,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTablesRequest 请求对象
+     * @param request ListTablesRequest 请求对象
      * @return ListTablesResponse
      */
     public ListTablesResponse listTables(ListTablesRequest request) {
@@ -2024,11 +1971,11 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTablesRequest 请求对象
+     * @param request ListTablesRequest 请求对象
      * @return SyncInvoker<ListTablesRequest, ListTablesResponse>
      */
     public SyncInvoker<ListTablesRequest, ListTablesResponse> listTablesInvoker(ListTablesRequest request) {
-        return new SyncInvoker<ListTablesRequest, ListTablesResponse>(request, IoTAnalyticsMeta.listTables, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.listTables, hcClient);
     }
 
     /**
@@ -2038,7 +1985,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTablePreviewRequest 请求对象
+     * @param request ShowTablePreviewRequest 请求对象
      * @return ShowTablePreviewResponse
      */
     public ShowTablePreviewResponse showTablePreview(ShowTablePreviewRequest request) {
@@ -2052,13 +1999,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTablePreviewRequest 请求对象
+     * @param request ShowTablePreviewRequest 请求对象
      * @return SyncInvoker<ShowTablePreviewRequest, ShowTablePreviewResponse>
      */
     public SyncInvoker<ShowTablePreviewRequest, ShowTablePreviewResponse> showTablePreviewInvoker(
         ShowTablePreviewRequest request) {
-        return new SyncInvoker<ShowTablePreviewRequest, ShowTablePreviewResponse>(request,
-            IoTAnalyticsMeta.showTablePreview, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showTablePreview, hcClient);
     }
 
     /**
@@ -2068,7 +2014,7 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTableSchemaRequest 请求对象
+     * @param request ShowTableSchemaRequest 请求对象
      * @return ShowTableSchemaResponse
      */
     public ShowTableSchemaResponse showTableSchema(ShowTableSchemaRequest request) {
@@ -2082,13 +2028,12 @@ public class IoTAnalyticsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTableSchemaRequest 请求对象
+     * @param request ShowTableSchemaRequest 请求对象
      * @return SyncInvoker<ShowTableSchemaRequest, ShowTableSchemaResponse>
      */
     public SyncInvoker<ShowTableSchemaRequest, ShowTableSchemaResponse> showTableSchemaInvoker(
         ShowTableSchemaRequest request) {
-        return new SyncInvoker<ShowTableSchemaRequest, ShowTableSchemaResponse>(request,
-            IoTAnalyticsMeta.showTableSchema, hcClient);
+        return new SyncInvoker<>(request, IoTAnalyticsMeta.showTableSchema, hcClient);
     }
 
 }

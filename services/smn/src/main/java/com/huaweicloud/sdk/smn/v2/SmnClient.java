@@ -122,7 +122,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSubscriptionRequest 请求对象
+     * @param request AddSubscriptionRequest 请求对象
      * @return AddSubscriptionResponse
      */
     public AddSubscriptionResponse addSubscription(AddSubscriptionRequest request) {
@@ -136,13 +136,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSubscriptionRequest 请求对象
+     * @param request AddSubscriptionRequest 请求对象
      * @return SyncInvoker<AddSubscriptionRequest, AddSubscriptionResponse>
      */
     public SyncInvoker<AddSubscriptionRequest, AddSubscriptionResponse> addSubscriptionInvoker(
         AddSubscriptionRequest request) {
-        return new SyncInvoker<AddSubscriptionRequest, AddSubscriptionResponse>(request, SmnMeta.addSubscription,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.addSubscription, hcClient);
     }
 
     /**
@@ -152,7 +151,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSubscriptionFromSubscriptionUserRequest 请求对象
+     * @param request AddSubscriptionFromSubscriptionUserRequest 请求对象
      * @return AddSubscriptionFromSubscriptionUserResponse
      */
     public AddSubscriptionFromSubscriptionUserResponse addSubscriptionFromSubscriptionUser(
@@ -167,13 +166,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSubscriptionFromSubscriptionUserRequest 请求对象
+     * @param request AddSubscriptionFromSubscriptionUserRequest 请求对象
      * @return SyncInvoker<AddSubscriptionFromSubscriptionUserRequest, AddSubscriptionFromSubscriptionUserResponse>
      */
     public SyncInvoker<AddSubscriptionFromSubscriptionUserRequest, AddSubscriptionFromSubscriptionUserResponse> addSubscriptionFromSubscriptionUserInvoker(
         AddSubscriptionFromSubscriptionUserRequest request) {
-        return new SyncInvoker<AddSubscriptionFromSubscriptionUserRequest, AddSubscriptionFromSubscriptionUserResponse>(
-            request, SmnMeta.addSubscriptionFromSubscriptionUser, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.addSubscriptionFromSubscriptionUser, hcClient);
     }
 
     /**
@@ -186,7 +184,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteResourceTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteResourceTagsRequest 请求对象
      * @return BatchCreateOrDeleteResourceTagsResponse
      */
     public BatchCreateOrDeleteResourceTagsResponse batchCreateOrDeleteResourceTags(
@@ -204,13 +202,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteResourceTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteResourceTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse>
      */
     public SyncInvoker<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse> batchCreateOrDeleteResourceTagsInvoker(
         BatchCreateOrDeleteResourceTagsRequest request) {
-        return new SyncInvoker<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse>(request,
-            SmnMeta.batchCreateOrDeleteResourceTags, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.batchCreateOrDeleteResourceTags, hcClient);
     }
 
     /**
@@ -220,7 +217,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateSubscriptionsFilterPolicesRequest 请求对象
+     * @param request BatchCreateSubscriptionsFilterPolicesRequest 请求对象
      * @return BatchCreateSubscriptionsFilterPolicesResponse
      */
     public BatchCreateSubscriptionsFilterPolicesResponse batchCreateSubscriptionsFilterPolices(
@@ -235,13 +232,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateSubscriptionsFilterPolicesRequest 请求对象
+     * @param request BatchCreateSubscriptionsFilterPolicesRequest 请求对象
      * @return SyncInvoker<BatchCreateSubscriptionsFilterPolicesRequest, BatchCreateSubscriptionsFilterPolicesResponse>
      */
     public SyncInvoker<BatchCreateSubscriptionsFilterPolicesRequest, BatchCreateSubscriptionsFilterPolicesResponse> batchCreateSubscriptionsFilterPolicesInvoker(
         BatchCreateSubscriptionsFilterPolicesRequest request) {
-        return new SyncInvoker<BatchCreateSubscriptionsFilterPolicesRequest, BatchCreateSubscriptionsFilterPolicesResponse>(
-            request, SmnMeta.batchCreateSubscriptionsFilterPolices, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.batchCreateSubscriptionsFilterPolices, hcClient);
     }
 
     /**
@@ -251,7 +247,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteSubscriptionsFilterPolicesRequest 请求对象
+     * @param request BatchDeleteSubscriptionsFilterPolicesRequest 请求对象
      * @return BatchDeleteSubscriptionsFilterPolicesResponse
      */
     public BatchDeleteSubscriptionsFilterPolicesResponse batchDeleteSubscriptionsFilterPolices(
@@ -266,13 +262,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteSubscriptionsFilterPolicesRequest 请求对象
+     * @param request BatchDeleteSubscriptionsFilterPolicesRequest 请求对象
      * @return SyncInvoker<BatchDeleteSubscriptionsFilterPolicesRequest, BatchDeleteSubscriptionsFilterPolicesResponse>
      */
     public SyncInvoker<BatchDeleteSubscriptionsFilterPolicesRequest, BatchDeleteSubscriptionsFilterPolicesResponse> batchDeleteSubscriptionsFilterPolicesInvoker(
         BatchDeleteSubscriptionsFilterPolicesRequest request) {
-        return new SyncInvoker<BatchDeleteSubscriptionsFilterPolicesRequest, BatchDeleteSubscriptionsFilterPolicesResponse>(
-            request, SmnMeta.batchDeleteSubscriptionsFilterPolices, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.batchDeleteSubscriptionsFilterPolices, hcClient);
     }
 
     /**
@@ -282,7 +277,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateSubscriptionsFilterPolicesRequest 请求对象
+     * @param request BatchUpdateSubscriptionsFilterPolicesRequest 请求对象
      * @return BatchUpdateSubscriptionsFilterPolicesResponse
      */
     public BatchUpdateSubscriptionsFilterPolicesResponse batchUpdateSubscriptionsFilterPolices(
@@ -297,13 +292,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateSubscriptionsFilterPolicesRequest 请求对象
+     * @param request BatchUpdateSubscriptionsFilterPolicesRequest 请求对象
      * @return SyncInvoker<BatchUpdateSubscriptionsFilterPolicesRequest, BatchUpdateSubscriptionsFilterPolicesResponse>
      */
     public SyncInvoker<BatchUpdateSubscriptionsFilterPolicesRequest, BatchUpdateSubscriptionsFilterPolicesResponse> batchUpdateSubscriptionsFilterPolicesInvoker(
         BatchUpdateSubscriptionsFilterPolicesRequest request) {
-        return new SyncInvoker<BatchUpdateSubscriptionsFilterPolicesRequest, BatchUpdateSubscriptionsFilterPolicesResponse>(
-            request, SmnMeta.batchUpdateSubscriptionsFilterPolices, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.batchUpdateSubscriptionsFilterPolices, hcClient);
     }
 
     /**
@@ -313,7 +307,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelSubscriptionRequest 请求对象
+     * @param request CancelSubscriptionRequest 请求对象
      * @return CancelSubscriptionResponse
      */
     public CancelSubscriptionResponse cancelSubscription(CancelSubscriptionRequest request) {
@@ -327,13 +321,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelSubscriptionRequest 请求对象
+     * @param request CancelSubscriptionRequest 请求对象
      * @return SyncInvoker<CancelSubscriptionRequest, CancelSubscriptionResponse>
      */
     public SyncInvoker<CancelSubscriptionRequest, CancelSubscriptionResponse> cancelSubscriptionInvoker(
         CancelSubscriptionRequest request) {
-        return new SyncInvoker<CancelSubscriptionRequest, CancelSubscriptionResponse>(request,
-            SmnMeta.cancelSubscription, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.cancelSubscription, hcClient);
     }
 
     /**
@@ -343,7 +336,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogtankRequest 请求对象
+     * @param request CreateLogtankRequest 请求对象
      * @return CreateLogtankResponse
      */
     public CreateLogtankResponse createLogtank(CreateLogtankRequest request) {
@@ -357,11 +350,11 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogtankRequest 请求对象
+     * @param request CreateLogtankRequest 请求对象
      * @return SyncInvoker<CreateLogtankRequest, CreateLogtankResponse>
      */
     public SyncInvoker<CreateLogtankRequest, CreateLogtankResponse> createLogtankInvoker(CreateLogtankRequest request) {
-        return new SyncInvoker<CreateLogtankRequest, CreateLogtankResponse>(request, SmnMeta.createLogtank, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.createLogtank, hcClient);
     }
 
     /**
@@ -372,7 +365,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMessageTemplateRequest 请求对象
+     * @param request CreateMessageTemplateRequest 请求对象
      * @return CreateMessageTemplateResponse
      */
     public CreateMessageTemplateResponse createMessageTemplate(CreateMessageTemplateRequest request) {
@@ -387,13 +380,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMessageTemplateRequest 请求对象
+     * @param request CreateMessageTemplateRequest 请求对象
      * @return SyncInvoker<CreateMessageTemplateRequest, CreateMessageTemplateResponse>
      */
     public SyncInvoker<CreateMessageTemplateRequest, CreateMessageTemplateResponse> createMessageTemplateInvoker(
         CreateMessageTemplateRequest request) {
-        return new SyncInvoker<CreateMessageTemplateRequest, CreateMessageTemplateResponse>(request,
-            SmnMeta.createMessageTemplate, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.createMessageTemplate, hcClient);
     }
 
     /**
@@ -403,7 +395,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagRequest 请求对象
+     * @param request CreateResourceTagRequest 请求对象
      * @return CreateResourceTagResponse
      */
     public CreateResourceTagResponse createResourceTag(CreateResourceTagRequest request) {
@@ -417,13 +409,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagRequest 请求对象
+     * @param request CreateResourceTagRequest 请求对象
      * @return SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>
      */
     public SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTagInvoker(
         CreateResourceTagRequest request) {
-        return new SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>(request, SmnMeta.createResourceTag,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.createResourceTag, hcClient);
     }
 
     /**
@@ -434,7 +425,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTopicRequest 请求对象
+     * @param request CreateTopicRequest 请求对象
      * @return CreateTopicResponse
      */
     public CreateTopicResponse createTopic(CreateTopicRequest request) {
@@ -449,11 +440,11 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTopicRequest 请求对象
+     * @param request CreateTopicRequest 请求对象
      * @return SyncInvoker<CreateTopicRequest, CreateTopicResponse>
      */
     public SyncInvoker<CreateTopicRequest, CreateTopicResponse> createTopicInvoker(CreateTopicRequest request) {
-        return new SyncInvoker<CreateTopicRequest, CreateTopicResponse>(request, SmnMeta.createTopic, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.createTopic, hcClient);
     }
 
     /**
@@ -463,7 +454,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogtankRequest 请求对象
+     * @param request DeleteLogtankRequest 请求对象
      * @return DeleteLogtankResponse
      */
     public DeleteLogtankResponse deleteLogtank(DeleteLogtankRequest request) {
@@ -477,11 +468,11 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogtankRequest 请求对象
+     * @param request DeleteLogtankRequest 请求对象
      * @return SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>
      */
     public SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtankInvoker(DeleteLogtankRequest request) {
-        return new SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>(request, SmnMeta.deleteLogtank, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.deleteLogtank, hcClient);
     }
 
     /**
@@ -491,7 +482,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMessageTemplateRequest 请求对象
+     * @param request DeleteMessageTemplateRequest 请求对象
      * @return DeleteMessageTemplateResponse
      */
     public DeleteMessageTemplateResponse deleteMessageTemplate(DeleteMessageTemplateRequest request) {
@@ -505,13 +496,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMessageTemplateRequest 请求对象
+     * @param request DeleteMessageTemplateRequest 请求对象
      * @return SyncInvoker<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse>
      */
     public SyncInvoker<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse> deleteMessageTemplateInvoker(
         DeleteMessageTemplateRequest request) {
-        return new SyncInvoker<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse>(request,
-            SmnMeta.deleteMessageTemplate, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.deleteMessageTemplate, hcClient);
     }
 
     /**
@@ -521,7 +511,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return DeleteResourceTagResponse
      */
     public DeleteResourceTagResponse deleteResourceTag(DeleteResourceTagRequest request) {
@@ -535,13 +525,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
      */
     public SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTagInvoker(
         DeleteResourceTagRequest request) {
-        return new SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>(request, SmnMeta.deleteResourceTag,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.deleteResourceTag, hcClient);
     }
 
     /**
@@ -551,7 +540,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTopicRequest 请求对象
+     * @param request DeleteTopicRequest 请求对象
      * @return DeleteTopicResponse
      */
     public DeleteTopicResponse deleteTopic(DeleteTopicRequest request) {
@@ -565,11 +554,11 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTopicRequest 请求对象
+     * @param request DeleteTopicRequest 请求对象
      * @return SyncInvoker<DeleteTopicRequest, DeleteTopicResponse>
      */
     public SyncInvoker<DeleteTopicRequest, DeleteTopicResponse> deleteTopicInvoker(DeleteTopicRequest request) {
-        return new SyncInvoker<DeleteTopicRequest, DeleteTopicResponse>(request, SmnMeta.deleteTopic, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.deleteTopic, hcClient);
     }
 
     /**
@@ -579,7 +568,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTopicAttributeByNameRequest 请求对象
+     * @param request DeleteTopicAttributeByNameRequest 请求对象
      * @return DeleteTopicAttributeByNameResponse
      */
     public DeleteTopicAttributeByNameResponse deleteTopicAttributeByName(DeleteTopicAttributeByNameRequest request) {
@@ -593,13 +582,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTopicAttributeByNameRequest 请求对象
+     * @param request DeleteTopicAttributeByNameRequest 请求对象
      * @return SyncInvoker<DeleteTopicAttributeByNameRequest, DeleteTopicAttributeByNameResponse>
      */
     public SyncInvoker<DeleteTopicAttributeByNameRequest, DeleteTopicAttributeByNameResponse> deleteTopicAttributeByNameInvoker(
         DeleteTopicAttributeByNameRequest request) {
-        return new SyncInvoker<DeleteTopicAttributeByNameRequest, DeleteTopicAttributeByNameResponse>(request,
-            SmnMeta.deleteTopicAttributeByName, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.deleteTopicAttributeByName, hcClient);
     }
 
     /**
@@ -609,7 +597,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTopicAttributesRequest 请求对象
+     * @param request DeleteTopicAttributesRequest 请求对象
      * @return DeleteTopicAttributesResponse
      */
     public DeleteTopicAttributesResponse deleteTopicAttributes(DeleteTopicAttributesRequest request) {
@@ -623,13 +611,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTopicAttributesRequest 请求对象
+     * @param request DeleteTopicAttributesRequest 请求对象
      * @return SyncInvoker<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse>
      */
     public SyncInvoker<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse> deleteTopicAttributesInvoker(
         DeleteTopicAttributesRequest request) {
-        return new SyncInvoker<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse>(request,
-            SmnMeta.deleteTopicAttributes, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.deleteTopicAttributes, hcClient);
     }
 
     /**
@@ -639,7 +626,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogtankRequest 请求对象
+     * @param request ListLogtankRequest 请求对象
      * @return ListLogtankResponse
      */
     public ListLogtankResponse listLogtank(ListLogtankRequest request) {
@@ -653,11 +640,11 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogtankRequest 请求对象
+     * @param request ListLogtankRequest 请求对象
      * @return SyncInvoker<ListLogtankRequest, ListLogtankResponse>
      */
     public SyncInvoker<ListLogtankRequest, ListLogtankResponse> listLogtankInvoker(ListLogtankRequest request) {
-        return new SyncInvoker<ListLogtankRequest, ListLogtankResponse>(request, SmnMeta.listLogtank, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listLogtank, hcClient);
     }
 
     /**
@@ -667,7 +654,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageTemplateDetailsRequest 请求对象
+     * @param request ListMessageTemplateDetailsRequest 请求对象
      * @return ListMessageTemplateDetailsResponse
      */
     public ListMessageTemplateDetailsResponse listMessageTemplateDetails(ListMessageTemplateDetailsRequest request) {
@@ -681,13 +668,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageTemplateDetailsRequest 请求对象
+     * @param request ListMessageTemplateDetailsRequest 请求对象
      * @return SyncInvoker<ListMessageTemplateDetailsRequest, ListMessageTemplateDetailsResponse>
      */
     public SyncInvoker<ListMessageTemplateDetailsRequest, ListMessageTemplateDetailsResponse> listMessageTemplateDetailsInvoker(
         ListMessageTemplateDetailsRequest request) {
-        return new SyncInvoker<ListMessageTemplateDetailsRequest, ListMessageTemplateDetailsResponse>(request,
-            SmnMeta.listMessageTemplateDetails, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listMessageTemplateDetails, hcClient);
     }
 
     /**
@@ -697,7 +683,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageTemplatesRequest 请求对象
+     * @param request ListMessageTemplatesRequest 请求对象
      * @return ListMessageTemplatesResponse
      */
     public ListMessageTemplatesResponse listMessageTemplates(ListMessageTemplatesRequest request) {
@@ -711,13 +697,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageTemplatesRequest 请求对象
+     * @param request ListMessageTemplatesRequest 请求对象
      * @return SyncInvoker<ListMessageTemplatesRequest, ListMessageTemplatesResponse>
      */
     public SyncInvoker<ListMessageTemplatesRequest, ListMessageTemplatesResponse> listMessageTemplatesInvoker(
         ListMessageTemplatesRequest request) {
-        return new SyncInvoker<ListMessageTemplatesRequest, ListMessageTemplatesResponse>(request,
-            SmnMeta.listMessageTemplates, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listMessageTemplates, hcClient);
     }
 
     /**
@@ -727,7 +712,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return ListProjectTagsResponse
      */
     public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
@@ -741,13 +726,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
     public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
         ListProjectTagsRequest request) {
-        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, SmnMeta.listProjectTags,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listProjectTags, hcClient);
     }
 
     /**
@@ -757,7 +741,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return ListResourceInstancesResponse
      */
     public ListResourceInstancesResponse listResourceInstances(ListResourceInstancesRequest request) {
@@ -771,13 +755,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
      */
     public SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesInvoker(
         ListResourceInstancesRequest request) {
-        return new SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
-            SmnMeta.listResourceInstances, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listResourceInstances, hcClient);
     }
 
     /**
@@ -787,7 +770,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTagsRequest 请求对象
+     * @param request ListResourceTagsRequest 请求对象
      * @return ListResourceTagsResponse
      */
     public ListResourceTagsResponse listResourceTags(ListResourceTagsRequest request) {
@@ -801,13 +784,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTagsRequest 请求对象
+     * @param request ListResourceTagsRequest 请求对象
      * @return SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
      */
     public SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsInvoker(
         ListResourceTagsRequest request) {
-        return new SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>(request, SmnMeta.listResourceTags,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listResourceTags, hcClient);
     }
 
     /**
@@ -817,7 +799,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubscriptionsRequest 请求对象
+     * @param request ListSubscriptionsRequest 请求对象
      * @return ListSubscriptionsResponse
      */
     public ListSubscriptionsResponse listSubscriptions(ListSubscriptionsRequest request) {
@@ -831,13 +813,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubscriptionsRequest 请求对象
+     * @param request ListSubscriptionsRequest 请求对象
      * @return SyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>
      */
     public SyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptionsInvoker(
         ListSubscriptionsRequest request) {
-        return new SyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>(request, SmnMeta.listSubscriptions,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listSubscriptions, hcClient);
     }
 
     /**
@@ -847,7 +828,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubscriptionsByTopicRequest 请求对象
+     * @param request ListSubscriptionsByTopicRequest 请求对象
      * @return ListSubscriptionsByTopicResponse
      */
     public ListSubscriptionsByTopicResponse listSubscriptionsByTopic(ListSubscriptionsByTopicRequest request) {
@@ -861,13 +842,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubscriptionsByTopicRequest 请求对象
+     * @param request ListSubscriptionsByTopicRequest 请求对象
      * @return SyncInvoker<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse>
      */
     public SyncInvoker<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> listSubscriptionsByTopicInvoker(
         ListSubscriptionsByTopicRequest request) {
-        return new SyncInvoker<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse>(request,
-            SmnMeta.listSubscriptionsByTopic, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listSubscriptionsByTopic, hcClient);
     }
 
     /**
@@ -877,7 +857,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicAttributesRequest 请求对象
+     * @param request ListTopicAttributesRequest 请求对象
      * @return ListTopicAttributesResponse
      */
     public ListTopicAttributesResponse listTopicAttributes(ListTopicAttributesRequest request) {
@@ -891,13 +871,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicAttributesRequest 请求对象
+     * @param request ListTopicAttributesRequest 请求对象
      * @return SyncInvoker<ListTopicAttributesRequest, ListTopicAttributesResponse>
      */
     public SyncInvoker<ListTopicAttributesRequest, ListTopicAttributesResponse> listTopicAttributesInvoker(
         ListTopicAttributesRequest request) {
-        return new SyncInvoker<ListTopicAttributesRequest, ListTopicAttributesResponse>(request,
-            SmnMeta.listTopicAttributes, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listTopicAttributes, hcClient);
     }
 
     /**
@@ -907,7 +886,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicDetailsRequest 请求对象
+     * @param request ListTopicDetailsRequest 请求对象
      * @return ListTopicDetailsResponse
      */
     public ListTopicDetailsResponse listTopicDetails(ListTopicDetailsRequest request) {
@@ -921,13 +900,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicDetailsRequest 请求对象
+     * @param request ListTopicDetailsRequest 请求对象
      * @return SyncInvoker<ListTopicDetailsRequest, ListTopicDetailsResponse>
      */
     public SyncInvoker<ListTopicDetailsRequest, ListTopicDetailsResponse> listTopicDetailsInvoker(
         ListTopicDetailsRequest request) {
-        return new SyncInvoker<ListTopicDetailsRequest, ListTopicDetailsResponse>(request, SmnMeta.listTopicDetails,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listTopicDetails, hcClient);
     }
 
     /**
@@ -937,7 +915,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicsRequest 请求对象
+     * @param request ListTopicsRequest 请求对象
      * @return ListTopicsResponse
      */
     public ListTopicsResponse listTopics(ListTopicsRequest request) {
@@ -951,11 +929,11 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicsRequest 请求对象
+     * @param request ListTopicsRequest 请求对象
      * @return SyncInvoker<ListTopicsRequest, ListTopicsResponse>
      */
     public SyncInvoker<ListTopicsRequest, ListTopicsResponse> listTopicsInvoker(ListTopicsRequest request) {
-        return new SyncInvoker<ListTopicsRequest, ListTopicsResponse>(request, SmnMeta.listTopics, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listTopics, hcClient);
     }
 
     /**
@@ -965,7 +943,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionRequest 请求对象
+     * @param request ListVersionRequest 请求对象
      * @return ListVersionResponse
      */
     public ListVersionResponse listVersion(ListVersionRequest request) {
@@ -979,11 +957,11 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionRequest 请求对象
+     * @param request ListVersionRequest 请求对象
      * @return SyncInvoker<ListVersionRequest, ListVersionResponse>
      */
     public SyncInvoker<ListVersionRequest, ListVersionResponse> listVersionInvoker(ListVersionRequest request) {
-        return new SyncInvoker<ListVersionRequest, ListVersionResponse>(request, SmnMeta.listVersion, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listVersion, hcClient);
     }
 
     /**
@@ -993,7 +971,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionsRequest 请求对象
+     * @param request ListVersionsRequest 请求对象
      * @return ListVersionsResponse
      */
     public ListVersionsResponse listVersions(ListVersionsRequest request) {
@@ -1007,11 +985,11 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionsRequest 请求对象
+     * @param request ListVersionsRequest 请求对象
      * @return SyncInvoker<ListVersionsRequest, ListVersionsResponse>
      */
     public SyncInvoker<ListVersionsRequest, ListVersionsResponse> listVersionsInvoker(ListVersionsRequest request) {
-        return new SyncInvoker<ListVersionsRequest, ListVersionsResponse>(request, SmnMeta.listVersions, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listVersions, hcClient);
     }
 
     /**
@@ -1021,7 +999,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishHttpDetectRequest 请求对象
+     * @param request PublishHttpDetectRequest 请求对象
      * @return PublishHttpDetectResponse
      */
     public PublishHttpDetectResponse publishHttpDetect(PublishHttpDetectRequest request) {
@@ -1035,13 +1013,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishHttpDetectRequest 请求对象
+     * @param request PublishHttpDetectRequest 请求对象
      * @return SyncInvoker<PublishHttpDetectRequest, PublishHttpDetectResponse>
      */
     public SyncInvoker<PublishHttpDetectRequest, PublishHttpDetectResponse> publishHttpDetectInvoker(
         PublishHttpDetectRequest request) {
-        return new SyncInvoker<PublishHttpDetectRequest, PublishHttpDetectResponse>(request, SmnMeta.publishHttpDetect,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.publishHttpDetect, hcClient);
     }
 
     /**
@@ -1060,7 +1037,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishMessageRequest 请求对象
+     * @param request PublishMessageRequest 请求对象
      * @return PublishMessageResponse
      */
     public PublishMessageResponse publishMessage(PublishMessageRequest request) {
@@ -1083,13 +1060,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishMessageRequest 请求对象
+     * @param request PublishMessageRequest 请求对象
      * @return SyncInvoker<PublishMessageRequest, PublishMessageResponse>
      */
     public SyncInvoker<PublishMessageRequest, PublishMessageResponse> publishMessageInvoker(
         PublishMessageRequest request) {
-        return new SyncInvoker<PublishMessageRequest, PublishMessageResponse>(request, SmnMeta.publishMessage,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.publishMessage, hcClient);
     }
 
     /**
@@ -1099,7 +1075,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHttpDetectResultRequest 请求对象
+     * @param request ShowHttpDetectResultRequest 请求对象
      * @return ShowHttpDetectResultResponse
      */
     public ShowHttpDetectResultResponse showHttpDetectResult(ShowHttpDetectResultRequest request) {
@@ -1113,13 +1089,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHttpDetectResultRequest 请求对象
+     * @param request ShowHttpDetectResultRequest 请求对象
      * @return SyncInvoker<ShowHttpDetectResultRequest, ShowHttpDetectResultResponse>
      */
     public SyncInvoker<ShowHttpDetectResultRequest, ShowHttpDetectResultResponse> showHttpDetectResultInvoker(
         ShowHttpDetectResultRequest request) {
-        return new SyncInvoker<ShowHttpDetectResultRequest, ShowHttpDetectResultResponse>(request,
-            SmnMeta.showHttpDetectResult, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.showHttpDetectResult, hcClient);
     }
 
     /**
@@ -1129,7 +1104,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogtankRequest 请求对象
+     * @param request UpdateLogtankRequest 请求对象
      * @return UpdateLogtankResponse
      */
     public UpdateLogtankResponse updateLogtank(UpdateLogtankRequest request) {
@@ -1143,11 +1118,11 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogtankRequest 请求对象
+     * @param request UpdateLogtankRequest 请求对象
      * @return SyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>
      */
     public SyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtankInvoker(UpdateLogtankRequest request) {
-        return new SyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>(request, SmnMeta.updateLogtank, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.updateLogtank, hcClient);
     }
 
     /**
@@ -1157,7 +1132,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageTemplateRequest 请求对象
+     * @param request UpdateMessageTemplateRequest 请求对象
      * @return UpdateMessageTemplateResponse
      */
     public UpdateMessageTemplateResponse updateMessageTemplate(UpdateMessageTemplateRequest request) {
@@ -1171,13 +1146,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageTemplateRequest 请求对象
+     * @param request UpdateMessageTemplateRequest 请求对象
      * @return SyncInvoker<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse>
      */
     public SyncInvoker<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse> updateMessageTemplateInvoker(
         UpdateMessageTemplateRequest request) {
-        return new SyncInvoker<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse>(request,
-            SmnMeta.updateMessageTemplate, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.updateMessageTemplate, hcClient);
     }
 
     /**
@@ -1187,7 +1161,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionRequest 请求对象
+     * @param request UpdateSubscriptionRequest 请求对象
      * @return UpdateSubscriptionResponse
      */
     public UpdateSubscriptionResponse updateSubscription(UpdateSubscriptionRequest request) {
@@ -1201,13 +1175,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionRequest 请求对象
+     * @param request UpdateSubscriptionRequest 请求对象
      * @return SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>
      */
     public SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse> updateSubscriptionInvoker(
         UpdateSubscriptionRequest request) {
-        return new SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>(request,
-            SmnMeta.updateSubscription, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.updateSubscription, hcClient);
     }
 
     /**
@@ -1217,7 +1190,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicRequest 请求对象
+     * @param request UpdateTopicRequest 请求对象
      * @return UpdateTopicResponse
      */
     public UpdateTopicResponse updateTopic(UpdateTopicRequest request) {
@@ -1231,11 +1204,11 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicRequest 请求对象
+     * @param request UpdateTopicRequest 请求对象
      * @return SyncInvoker<UpdateTopicRequest, UpdateTopicResponse>
      */
     public SyncInvoker<UpdateTopicRequest, UpdateTopicResponse> updateTopicInvoker(UpdateTopicRequest request) {
-        return new SyncInvoker<UpdateTopicRequest, UpdateTopicResponse>(request, SmnMeta.updateTopic, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.updateTopic, hcClient);
     }
 
     /**
@@ -1245,7 +1218,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicAttributeRequest 请求对象
+     * @param request UpdateTopicAttributeRequest 请求对象
      * @return UpdateTopicAttributeResponse
      */
     public UpdateTopicAttributeResponse updateTopicAttribute(UpdateTopicAttributeRequest request) {
@@ -1259,13 +1232,12 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicAttributeRequest 请求对象
+     * @param request UpdateTopicAttributeRequest 请求对象
      * @return SyncInvoker<UpdateTopicAttributeRequest, UpdateTopicAttributeResponse>
      */
     public SyncInvoker<UpdateTopicAttributeRequest, UpdateTopicAttributeResponse> updateTopicAttributeInvoker(
         UpdateTopicAttributeRequest request) {
-        return new SyncInvoker<UpdateTopicAttributeRequest, UpdateTopicAttributeResponse>(request,
-            SmnMeta.updateTopicAttribute, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.updateTopicAttribute, hcClient);
     }
 
     /**
@@ -1275,7 +1247,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApplicationRequest 请求对象
+     * @param request CreateApplicationRequest 请求对象
      * @return CreateApplicationResponse
      */
     @Deprecated
@@ -1290,14 +1262,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApplicationRequest 请求对象
+     * @param request CreateApplicationRequest 请求对象
      * @return SyncInvoker<CreateApplicationRequest, CreateApplicationResponse>
      */
     @Deprecated
     public SyncInvoker<CreateApplicationRequest, CreateApplicationResponse> createApplicationInvoker(
         CreateApplicationRequest request) {
-        return new SyncInvoker<CreateApplicationRequest, CreateApplicationResponse>(request, SmnMeta.createApplication,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.createApplication, hcClient);
     }
 
     /**
@@ -1307,7 +1278,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationRequest 请求对象
+     * @param request DeleteApplicationRequest 请求对象
      * @return DeleteApplicationResponse
      */
     @Deprecated
@@ -1322,14 +1293,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationRequest 请求对象
+     * @param request DeleteApplicationRequest 请求对象
      * @return SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
      */
     @Deprecated
     public SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplicationInvoker(
         DeleteApplicationRequest request) {
-        return new SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>(request, SmnMeta.deleteApplication,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.deleteApplication, hcClient);
     }
 
     /**
@@ -1339,7 +1309,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApplicationAttributesRequest 请求对象
+     * @param request ListApplicationAttributesRequest 请求对象
      * @return ListApplicationAttributesResponse
      */
     @Deprecated
@@ -1354,14 +1324,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApplicationAttributesRequest 请求对象
+     * @param request ListApplicationAttributesRequest 请求对象
      * @return SyncInvoker<ListApplicationAttributesRequest, ListApplicationAttributesResponse>
      */
     @Deprecated
     public SyncInvoker<ListApplicationAttributesRequest, ListApplicationAttributesResponse> listApplicationAttributesInvoker(
         ListApplicationAttributesRequest request) {
-        return new SyncInvoker<ListApplicationAttributesRequest, ListApplicationAttributesResponse>(request,
-            SmnMeta.listApplicationAttributes, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listApplicationAttributes, hcClient);
     }
 
     /**
@@ -1371,7 +1340,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApplicationsRequest 请求对象
+     * @param request ListApplicationsRequest 请求对象
      * @return ListApplicationsResponse
      */
     @Deprecated
@@ -1386,14 +1355,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApplicationsRequest 请求对象
+     * @param request ListApplicationsRequest 请求对象
      * @return SyncInvoker<ListApplicationsRequest, ListApplicationsResponse>
      */
     @Deprecated
     public SyncInvoker<ListApplicationsRequest, ListApplicationsResponse> listApplicationsInvoker(
         ListApplicationsRequest request) {
-        return new SyncInvoker<ListApplicationsRequest, ListApplicationsResponse>(request, SmnMeta.listApplications,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listApplications, hcClient);
     }
 
     /**
@@ -1403,7 +1371,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAppMessageRequest 请求对象
+     * @param request PublishAppMessageRequest 请求对象
      * @return PublishAppMessageResponse
      */
     @Deprecated
@@ -1418,14 +1386,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAppMessageRequest 请求对象
+     * @param request PublishAppMessageRequest 请求对象
      * @return SyncInvoker<PublishAppMessageRequest, PublishAppMessageResponse>
      */
     @Deprecated
     public SyncInvoker<PublishAppMessageRequest, PublishAppMessageResponse> publishAppMessageInvoker(
         PublishAppMessageRequest request) {
-        return new SyncInvoker<PublishAppMessageRequest, PublishAppMessageResponse>(request, SmnMeta.publishAppMessage,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.publishAppMessage, hcClient);
     }
 
     /**
@@ -1435,7 +1402,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApplicationRequest 请求对象
+     * @param request UpdateApplicationRequest 请求对象
      * @return UpdateApplicationResponse
      */
     @Deprecated
@@ -1450,14 +1417,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApplicationRequest 请求对象
+     * @param request UpdateApplicationRequest 请求对象
      * @return SyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse>
      */
     @Deprecated
     public SyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse> updateApplicationInvoker(
         UpdateApplicationRequest request) {
-        return new SyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse>(request, SmnMeta.updateApplication,
-            hcClient);
+        return new SyncInvoker<>(request, SmnMeta.updateApplication, hcClient);
     }
 
     /**
@@ -1467,7 +1433,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApplicationEndpointRequest 请求对象
+     * @param request CreateApplicationEndpointRequest 请求对象
      * @return CreateApplicationEndpointResponse
      */
     @Deprecated
@@ -1482,14 +1448,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApplicationEndpointRequest 请求对象
+     * @param request CreateApplicationEndpointRequest 请求对象
      * @return SyncInvoker<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse>
      */
     @Deprecated
     public SyncInvoker<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse> createApplicationEndpointInvoker(
         CreateApplicationEndpointRequest request) {
-        return new SyncInvoker<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse>(request,
-            SmnMeta.createApplicationEndpoint, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.createApplicationEndpoint, hcClient);
     }
 
     /**
@@ -1499,7 +1464,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationEndpointRequest 请求对象
+     * @param request DeleteApplicationEndpointRequest 请求对象
      * @return DeleteApplicationEndpointResponse
      */
     @Deprecated
@@ -1514,14 +1479,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationEndpointRequest 请求对象
+     * @param request DeleteApplicationEndpointRequest 请求对象
      * @return SyncInvoker<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse>
      */
     @Deprecated
     public SyncInvoker<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse> deleteApplicationEndpointInvoker(
         DeleteApplicationEndpointRequest request) {
-        return new SyncInvoker<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse>(request,
-            SmnMeta.deleteApplicationEndpoint, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.deleteApplicationEndpoint, hcClient);
     }
 
     /**
@@ -1531,7 +1495,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApplicationEndpointAttributesRequest 请求对象
+     * @param request ListApplicationEndpointAttributesRequest 请求对象
      * @return ListApplicationEndpointAttributesResponse
      */
     @Deprecated
@@ -1547,14 +1511,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApplicationEndpointAttributesRequest 请求对象
+     * @param request ListApplicationEndpointAttributesRequest 请求对象
      * @return SyncInvoker<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse>
      */
     @Deprecated
     public SyncInvoker<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse> listApplicationEndpointAttributesInvoker(
         ListApplicationEndpointAttributesRequest request) {
-        return new SyncInvoker<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse>(
-            request, SmnMeta.listApplicationEndpointAttributes, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listApplicationEndpointAttributes, hcClient);
     }
 
     /**
@@ -1564,7 +1527,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApplicationEndpointsRequest 请求对象
+     * @param request ListApplicationEndpointsRequest 请求对象
      * @return ListApplicationEndpointsResponse
      */
     @Deprecated
@@ -1579,14 +1542,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApplicationEndpointsRequest 请求对象
+     * @param request ListApplicationEndpointsRequest 请求对象
      * @return SyncInvoker<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse>
      */
     @Deprecated
     public SyncInvoker<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse> listApplicationEndpointsInvoker(
         ListApplicationEndpointsRequest request) {
-        return new SyncInvoker<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse>(request,
-            SmnMeta.listApplicationEndpoints, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.listApplicationEndpoints, hcClient);
     }
 
     /**
@@ -1596,7 +1558,7 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApplicationEndpointRequest 请求对象
+     * @param request UpdateApplicationEndpointRequest 请求对象
      * @return UpdateApplicationEndpointResponse
      */
     @Deprecated
@@ -1611,14 +1573,13 @@ public class SmnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApplicationEndpointRequest 请求对象
+     * @param request UpdateApplicationEndpointRequest 请求对象
      * @return SyncInvoker<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse>
      */
     @Deprecated
     public SyncInvoker<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse> updateApplicationEndpointInvoker(
         UpdateApplicationEndpointRequest request) {
-        return new SyncInvoker<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse>(request,
-            SmnMeta.updateApplicationEndpoint, hcClient);
+        return new SyncInvoker<>(request, SmnMeta.updateApplicationEndpoint, hcClient);
     }
 
 }

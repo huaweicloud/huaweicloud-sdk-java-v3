@@ -92,7 +92,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagsRequest 请求对象
+     * @param request BatchCreateTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateTagsResponse>
      */
     public CompletableFuture<BatchCreateTagsResponse> batchCreateTagsAsync(BatchCreateTagsRequest request) {
@@ -106,13 +106,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagsRequest 请求对象
+     * @param request BatchCreateTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
      */
     public AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTagsAsyncInvoker(
         BatchCreateTagsRequest request) {
-        return new AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>(request, DisMeta.batchCreateTags,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.batchCreateTags, hcClient);
     }
 
     /**
@@ -122,7 +121,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagsRequest 请求对象
+     * @param request BatchDeleteTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteTagsResponse>
      */
     public CompletableFuture<BatchDeleteTagsResponse> batchDeleteTagsAsync(BatchDeleteTagsRequest request) {
@@ -136,13 +135,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagsRequest 请求对象
+     * @param request BatchDeleteTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
      */
     public AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsAsyncInvoker(
         BatchDeleteTagsRequest request) {
-        return new AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>(request, DisMeta.batchDeleteTags,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.batchDeleteTags, hcClient);
     }
 
     /**
@@ -152,7 +150,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartTransferTaskRequest 请求对象
+     * @param request BatchStartTransferTaskRequest 请求对象
      * @return CompletableFuture<BatchStartTransferTaskResponse>
      */
     public CompletableFuture<BatchStartTransferTaskResponse> batchStartTransferTaskAsync(
@@ -167,13 +165,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartTransferTaskRequest 请求对象
+     * @param request BatchStartTransferTaskRequest 请求对象
      * @return AsyncInvoker<BatchStartTransferTaskRequest, BatchStartTransferTaskResponse>
      */
     public AsyncInvoker<BatchStartTransferTaskRequest, BatchStartTransferTaskResponse> batchStartTransferTaskAsyncInvoker(
         BatchStartTransferTaskRequest request) {
-        return new AsyncInvoker<BatchStartTransferTaskRequest, BatchStartTransferTaskResponse>(request,
-            DisMeta.batchStartTransferTask, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.batchStartTransferTask, hcClient);
     }
 
     /**
@@ -183,7 +180,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopTransferTaskRequest 请求对象
+     * @param request BatchStopTransferTaskRequest 请求对象
      * @return CompletableFuture<BatchStopTransferTaskResponse>
      */
     public CompletableFuture<BatchStopTransferTaskResponse> batchStopTransferTaskAsync(
@@ -198,13 +195,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopTransferTaskRequest 请求对象
+     * @param request BatchStopTransferTaskRequest 请求对象
      * @return AsyncInvoker<BatchStopTransferTaskRequest, BatchStopTransferTaskResponse>
      */
     public AsyncInvoker<BatchStopTransferTaskRequest, BatchStopTransferTaskResponse> batchStopTransferTaskAsyncInvoker(
         BatchStopTransferTaskRequest request) {
-        return new AsyncInvoker<BatchStopTransferTaskRequest, BatchStopTransferTaskResponse>(request,
-            DisMeta.batchStopTransferTask, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.batchStopTransferTask, hcClient);
     }
 
     /**
@@ -214,7 +210,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConsumeRecordsRequest 请求对象
+     * @param request ConsumeRecordsRequest 请求对象
      * @return CompletableFuture<ConsumeRecordsResponse>
      */
     public CompletableFuture<ConsumeRecordsResponse> consumeRecordsAsync(ConsumeRecordsRequest request) {
@@ -228,13 +224,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConsumeRecordsRequest 请求对象
+     * @param request ConsumeRecordsRequest 请求对象
      * @return AsyncInvoker<ConsumeRecordsRequest, ConsumeRecordsResponse>
      */
     public AsyncInvoker<ConsumeRecordsRequest, ConsumeRecordsResponse> consumeRecordsAsyncInvoker(
         ConsumeRecordsRequest request) {
-        return new AsyncInvoker<ConsumeRecordsRequest, ConsumeRecordsResponse>(request, DisMeta.consumeRecords,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.consumeRecords, hcClient);
     }
 
     /**
@@ -244,7 +239,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateObsTransferTaskRequest 请求对象
+     * @param request CreateObsTransferTaskRequest 请求对象
      * @return CompletableFuture<CreateObsTransferTaskResponse>
      */
     public CompletableFuture<CreateObsTransferTaskResponse> createObsTransferTaskAsync(
@@ -259,13 +254,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateObsTransferTaskRequest 请求对象
+     * @param request CreateObsTransferTaskRequest 请求对象
      * @return AsyncInvoker<CreateObsTransferTaskRequest, CreateObsTransferTaskResponse>
      */
     public AsyncInvoker<CreateObsTransferTaskRequest, CreateObsTransferTaskResponse> createObsTransferTaskAsyncInvoker(
         CreateObsTransferTaskRequest request) {
-        return new AsyncInvoker<CreateObsTransferTaskRequest, CreateObsTransferTaskResponse>(request,
-            DisMeta.createObsTransferTask, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.createObsTransferTask, hcClient);
     }
 
     /**
@@ -278,7 +272,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStreamRequest 请求对象
+     * @param request CreateStreamRequest 请求对象
      * @return CompletableFuture<CreateStreamResponse>
      */
     public CompletableFuture<CreateStreamResponse> createStreamAsync(CreateStreamRequest request) {
@@ -295,12 +289,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStreamRequest 请求对象
+     * @param request CreateStreamRequest 请求对象
      * @return AsyncInvoker<CreateStreamRequest, CreateStreamResponse>
      */
     public AsyncInvoker<CreateStreamRequest, CreateStreamResponse> createStreamAsyncInvoker(
         CreateStreamRequest request) {
-        return new AsyncInvoker<CreateStreamRequest, CreateStreamResponse>(request, DisMeta.createStream, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.createStream, hcClient);
     }
 
     /**
@@ -310,7 +304,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return CompletableFuture<CreateTagResponse>
      */
     public CompletableFuture<CreateTagResponse> createTagAsync(CreateTagRequest request) {
@@ -324,11 +318,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
      */
     public AsyncInvoker<CreateTagRequest, CreateTagResponse> createTagAsyncInvoker(CreateTagRequest request) {
-        return new AsyncInvoker<CreateTagRequest, CreateTagResponse>(request, DisMeta.createTag, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.createTag, hcClient);
     }
 
     /**
@@ -338,7 +332,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStreamRequest 请求对象
+     * @param request DeleteStreamRequest 请求对象
      * @return CompletableFuture<DeleteStreamResponse>
      */
     public CompletableFuture<DeleteStreamResponse> deleteStreamAsync(DeleteStreamRequest request) {
@@ -352,12 +346,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStreamRequest 请求对象
+     * @param request DeleteStreamRequest 请求对象
      * @return AsyncInvoker<DeleteStreamRequest, DeleteStreamResponse>
      */
     public AsyncInvoker<DeleteStreamRequest, DeleteStreamResponse> deleteStreamAsyncInvoker(
         DeleteStreamRequest request) {
-        return new AsyncInvoker<DeleteStreamRequest, DeleteStreamResponse>(request, DisMeta.deleteStream, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.deleteStream, hcClient);
     }
 
     /**
@@ -367,7 +361,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return CompletableFuture<DeleteTagResponse>
      */
     public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
@@ -381,11 +375,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
      */
     public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
-        return new AsyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, DisMeta.deleteTag, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.deleteTag, hcClient);
     }
 
     /**
@@ -395,7 +389,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTransferTaskRequest 请求对象
+     * @param request DeleteTransferTaskRequest 请求对象
      * @return CompletableFuture<DeleteTransferTaskResponse>
      */
     public CompletableFuture<DeleteTransferTaskResponse> deleteTransferTaskAsync(DeleteTransferTaskRequest request) {
@@ -409,13 +403,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTransferTaskRequest 请求对象
+     * @param request DeleteTransferTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTransferTaskRequest, DeleteTransferTaskResponse>
      */
     public AsyncInvoker<DeleteTransferTaskRequest, DeleteTransferTaskResponse> deleteTransferTaskAsyncInvoker(
         DeleteTransferTaskRequest request) {
-        return new AsyncInvoker<DeleteTransferTaskRequest, DeleteTransferTaskResponse>(request,
-            DisMeta.deleteTransferTask, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.deleteTransferTask, hcClient);
     }
 
     /**
@@ -425,7 +418,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoliciesRequest 请求对象
+     * @param request ListPoliciesRequest 请求对象
      * @return CompletableFuture<ListPoliciesResponse>
      */
     public CompletableFuture<ListPoliciesResponse> listPoliciesAsync(ListPoliciesRequest request) {
@@ -439,12 +432,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoliciesRequest 请求对象
+     * @param request ListPoliciesRequest 请求对象
      * @return AsyncInvoker<ListPoliciesRequest, ListPoliciesResponse>
      */
     public AsyncInvoker<ListPoliciesRequest, ListPoliciesResponse> listPoliciesAsyncInvoker(
         ListPoliciesRequest request) {
-        return new AsyncInvoker<ListPoliciesRequest, ListPoliciesResponse>(request, DisMeta.listPolicies, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.listPolicies, hcClient);
     }
 
     /**
@@ -454,7 +447,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesByTagsRequest 请求对象
+     * @param request ListResourcesByTagsRequest 请求对象
      * @return CompletableFuture<ListResourcesByTagsResponse>
      */
     public CompletableFuture<ListResourcesByTagsResponse> listResourcesByTagsAsync(ListResourcesByTagsRequest request) {
@@ -468,13 +461,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesByTagsRequest 请求对象
+     * @param request ListResourcesByTagsRequest 请求对象
      * @return AsyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse>
      */
     public AsyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse> listResourcesByTagsAsyncInvoker(
         ListResourcesByTagsRequest request) {
-        return new AsyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse>(request,
-            DisMeta.listResourcesByTags, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.listResourcesByTags, hcClient);
     }
 
     /**
@@ -486,7 +478,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStreamsRequest 请求对象
+     * @param request ListStreamsRequest 请求对象
      * @return CompletableFuture<ListStreamsResponse>
      */
     public CompletableFuture<ListStreamsResponse> listStreamsAsync(ListStreamsRequest request) {
@@ -502,11 +494,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStreamsRequest 请求对象
+     * @param request ListStreamsRequest 请求对象
      * @return AsyncInvoker<ListStreamsRequest, ListStreamsResponse>
      */
     public AsyncInvoker<ListStreamsRequest, ListStreamsResponse> listStreamsAsyncInvoker(ListStreamsRequest request) {
-        return new AsyncInvoker<ListStreamsRequest, ListStreamsResponse>(request, DisMeta.listStreams, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.listStreams, hcClient);
     }
 
     /**
@@ -516,7 +508,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return CompletableFuture<ListTagsResponse>
      */
     public CompletableFuture<ListTagsResponse> listTagsAsync(ListTagsRequest request) {
@@ -530,11 +522,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
      */
     public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
-        return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, DisMeta.listTags, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.listTags, hcClient);
     }
 
     /**
@@ -544,7 +536,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransferTasksRequest 请求对象
+     * @param request ListTransferTasksRequest 请求对象
      * @return CompletableFuture<ListTransferTasksResponse>
      */
     public CompletableFuture<ListTransferTasksResponse> listTransferTasksAsync(ListTransferTasksRequest request) {
@@ -558,13 +550,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransferTasksRequest 请求对象
+     * @param request ListTransferTasksRequest 请求对象
      * @return AsyncInvoker<ListTransferTasksRequest, ListTransferTasksResponse>
      */
     public AsyncInvoker<ListTransferTasksRequest, ListTransferTasksResponse> listTransferTasksAsyncInvoker(
         ListTransferTasksRequest request) {
-        return new AsyncInvoker<ListTransferTasksRequest, ListTransferTasksResponse>(request, DisMeta.listTransferTasks,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.listTransferTasks, hcClient);
     }
 
     /**
@@ -574,7 +565,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendRecordsRequest 请求对象
+     * @param request SendRecordsRequest 请求对象
      * @return CompletableFuture<SendRecordsResponse>
      */
     public CompletableFuture<SendRecordsResponse> sendRecordsAsync(SendRecordsRequest request) {
@@ -588,11 +579,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendRecordsRequest 请求对象
+     * @param request SendRecordsRequest 请求对象
      * @return AsyncInvoker<SendRecordsRequest, SendRecordsResponse>
      */
     public AsyncInvoker<SendRecordsRequest, SendRecordsResponse> sendRecordsAsyncInvoker(SendRecordsRequest request) {
-        return new AsyncInvoker<SendRecordsRequest, SendRecordsResponse>(request, DisMeta.sendRecords, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.sendRecords, hcClient);
     }
 
     /**
@@ -602,7 +593,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCursorRequest 请求对象
+     * @param request ShowCursorRequest 请求对象
      * @return CompletableFuture<ShowCursorResponse>
      */
     public CompletableFuture<ShowCursorResponse> showCursorAsync(ShowCursorRequest request) {
@@ -616,11 +607,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCursorRequest 请求对象
+     * @param request ShowCursorRequest 请求对象
      * @return AsyncInvoker<ShowCursorRequest, ShowCursorResponse>
      */
     public AsyncInvoker<ShowCursorRequest, ShowCursorResponse> showCursorAsyncInvoker(ShowCursorRequest request) {
-        return new AsyncInvoker<ShowCursorRequest, ShowCursorResponse>(request, DisMeta.showCursor, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.showCursor, hcClient);
     }
 
     /**
@@ -630,7 +621,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionMetricsRequest 请求对象
+     * @param request ShowPartitionMetricsRequest 请求对象
      * @return CompletableFuture<ShowPartitionMetricsResponse>
      */
     public CompletableFuture<ShowPartitionMetricsResponse> showPartitionMetricsAsync(
@@ -645,13 +636,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionMetricsRequest 请求对象
+     * @param request ShowPartitionMetricsRequest 请求对象
      * @return AsyncInvoker<ShowPartitionMetricsRequest, ShowPartitionMetricsResponse>
      */
     public AsyncInvoker<ShowPartitionMetricsRequest, ShowPartitionMetricsResponse> showPartitionMetricsAsyncInvoker(
         ShowPartitionMetricsRequest request) {
-        return new AsyncInvoker<ShowPartitionMetricsRequest, ShowPartitionMetricsResponse>(request,
-            DisMeta.showPartitionMetrics, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.showPartitionMetrics, hcClient);
     }
 
     /**
@@ -661,7 +651,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamRequest 请求对象
+     * @param request ShowStreamRequest 请求对象
      * @return CompletableFuture<ShowStreamResponse>
      */
     public CompletableFuture<ShowStreamResponse> showStreamAsync(ShowStreamRequest request) {
@@ -675,11 +665,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamRequest 请求对象
+     * @param request ShowStreamRequest 请求对象
      * @return AsyncInvoker<ShowStreamRequest, ShowStreamResponse>
      */
     public AsyncInvoker<ShowStreamRequest, ShowStreamResponse> showStreamAsyncInvoker(ShowStreamRequest request) {
-        return new AsyncInvoker<ShowStreamRequest, ShowStreamResponse>(request, DisMeta.showStream, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.showStream, hcClient);
     }
 
     /**
@@ -689,7 +679,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamMetricsRequest 请求对象
+     * @param request ShowStreamMetricsRequest 请求对象
      * @return CompletableFuture<ShowStreamMetricsResponse>
      */
     public CompletableFuture<ShowStreamMetricsResponse> showStreamMetricsAsync(ShowStreamMetricsRequest request) {
@@ -703,13 +693,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamMetricsRequest 请求对象
+     * @param request ShowStreamMetricsRequest 请求对象
      * @return AsyncInvoker<ShowStreamMetricsRequest, ShowStreamMetricsResponse>
      */
     public AsyncInvoker<ShowStreamMetricsRequest, ShowStreamMetricsResponse> showStreamMetricsAsyncInvoker(
         ShowStreamMetricsRequest request) {
-        return new AsyncInvoker<ShowStreamMetricsRequest, ShowStreamMetricsResponse>(request, DisMeta.showStreamMetrics,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.showStreamMetrics, hcClient);
     }
 
     /**
@@ -719,7 +708,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamTagsRequest 请求对象
+     * @param request ShowStreamTagsRequest 请求对象
      * @return CompletableFuture<ShowStreamTagsResponse>
      */
     public CompletableFuture<ShowStreamTagsResponse> showStreamTagsAsync(ShowStreamTagsRequest request) {
@@ -733,13 +722,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamTagsRequest 请求对象
+     * @param request ShowStreamTagsRequest 请求对象
      * @return AsyncInvoker<ShowStreamTagsRequest, ShowStreamTagsResponse>
      */
     public AsyncInvoker<ShowStreamTagsRequest, ShowStreamTagsResponse> showStreamTagsAsyncInvoker(
         ShowStreamTagsRequest request) {
-        return new AsyncInvoker<ShowStreamTagsRequest, ShowStreamTagsResponse>(request, DisMeta.showStreamTags,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.showStreamTags, hcClient);
     }
 
     /**
@@ -749,7 +737,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTransferTaskRequest 请求对象
+     * @param request ShowTransferTaskRequest 请求对象
      * @return CompletableFuture<ShowTransferTaskResponse>
      */
     public CompletableFuture<ShowTransferTaskResponse> showTransferTaskAsync(ShowTransferTaskRequest request) {
@@ -763,13 +751,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTransferTaskRequest 请求对象
+     * @param request ShowTransferTaskRequest 请求对象
      * @return AsyncInvoker<ShowTransferTaskRequest, ShowTransferTaskResponse>
      */
     public AsyncInvoker<ShowTransferTaskRequest, ShowTransferTaskResponse> showTransferTaskAsyncInvoker(
         ShowTransferTaskRequest request) {
-        return new AsyncInvoker<ShowTransferTaskRequest, ShowTransferTaskResponse>(request, DisMeta.showTransferTask,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.showTransferTask, hcClient);
     }
 
     /**
@@ -779,7 +766,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePartitionCountRequest 请求对象
+     * @param request UpdatePartitionCountRequest 请求对象
      * @return CompletableFuture<UpdatePartitionCountResponse>
      */
     public CompletableFuture<UpdatePartitionCountResponse> updatePartitionCountAsync(
@@ -794,13 +781,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePartitionCountRequest 请求对象
+     * @param request UpdatePartitionCountRequest 请求对象
      * @return AsyncInvoker<UpdatePartitionCountRequest, UpdatePartitionCountResponse>
      */
     public AsyncInvoker<UpdatePartitionCountRequest, UpdatePartitionCountResponse> updatePartitionCountAsyncInvoker(
         UpdatePartitionCountRequest request) {
-        return new AsyncInvoker<UpdatePartitionCountRequest, UpdatePartitionCountResponse>(request,
-            DisMeta.updatePartitionCount, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.updatePartitionCount, hcClient);
     }
 
     /**
@@ -810,7 +796,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStreamRequest 请求对象
+     * @param request UpdateStreamRequest 请求对象
      * @return CompletableFuture<UpdateStreamResponse>
      */
     public CompletableFuture<UpdateStreamResponse> updateStreamAsync(UpdateStreamRequest request) {
@@ -824,12 +810,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStreamRequest 请求对象
+     * @param request UpdateStreamRequest 请求对象
      * @return AsyncInvoker<UpdateStreamRequest, UpdateStreamResponse>
      */
     public AsyncInvoker<UpdateStreamRequest, UpdateStreamResponse> updateStreamAsyncInvoker(
         UpdateStreamRequest request) {
-        return new AsyncInvoker<UpdateStreamRequest, UpdateStreamResponse>(request, DisMeta.updateStream, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.updateStream, hcClient);
     }
 
     /**
@@ -839,7 +825,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return CompletableFuture<CreateAppResponse>
      */
     public CompletableFuture<CreateAppResponse> createAppAsync(CreateAppRequest request) {
@@ -853,11 +839,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return AsyncInvoker<CreateAppRequest, CreateAppResponse>
      */
     public AsyncInvoker<CreateAppRequest, CreateAppResponse> createAppAsyncInvoker(CreateAppRequest request) {
-        return new AsyncInvoker<CreateAppRequest, CreateAppResponse>(request, DisMeta.createApp, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.createApp, hcClient);
     }
 
     /**
@@ -867,7 +853,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return CompletableFuture<DeleteAppResponse>
      */
     public CompletableFuture<DeleteAppResponse> deleteAppAsync(DeleteAppRequest request) {
@@ -881,11 +867,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return AsyncInvoker<DeleteAppRequest, DeleteAppResponse>
      */
     public AsyncInvoker<DeleteAppRequest, DeleteAppResponse> deleteAppAsyncInvoker(DeleteAppRequest request) {
-        return new AsyncInvoker<DeleteAppRequest, DeleteAppResponse>(request, DisMeta.deleteApp, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.deleteApp, hcClient);
     }
 
     /**
@@ -895,7 +881,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppRequest 请求对象
+     * @param request ListAppRequest 请求对象
      * @return CompletableFuture<ListAppResponse>
      */
     public CompletableFuture<ListAppResponse> listAppAsync(ListAppRequest request) {
@@ -909,11 +895,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppRequest 请求对象
+     * @param request ListAppRequest 请求对象
      * @return AsyncInvoker<ListAppRequest, ListAppResponse>
      */
     public AsyncInvoker<ListAppRequest, ListAppResponse> listAppAsyncInvoker(ListAppRequest request) {
-        return new AsyncInvoker<ListAppRequest, ListAppResponse>(request, DisMeta.listApp, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.listApp, hcClient);
     }
 
     /**
@@ -923,7 +909,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return CompletableFuture<ShowAppResponse>
      */
     public CompletableFuture<ShowAppResponse> showAppAsync(ShowAppRequest request) {
@@ -937,11 +923,11 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return AsyncInvoker<ShowAppRequest, ShowAppResponse>
      */
     public AsyncInvoker<ShowAppRequest, ShowAppResponse> showAppAsyncInvoker(ShowAppRequest request) {
-        return new AsyncInvoker<ShowAppRequest, ShowAppResponse>(request, DisMeta.showApp, hcClient);
+        return new AsyncInvoker<>(request, DisMeta.showApp, hcClient);
     }
 
     /**
@@ -951,7 +937,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConsumerStateRequest 请求对象
+     * @param request ShowConsumerStateRequest 请求对象
      * @return CompletableFuture<ShowConsumerStateResponse>
      */
     public CompletableFuture<ShowConsumerStateResponse> showConsumerStateAsync(ShowConsumerStateRequest request) {
@@ -965,13 +951,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConsumerStateRequest 请求对象
+     * @param request ShowConsumerStateRequest 请求对象
      * @return AsyncInvoker<ShowConsumerStateRequest, ShowConsumerStateResponse>
      */
     public AsyncInvoker<ShowConsumerStateRequest, ShowConsumerStateResponse> showConsumerStateAsyncInvoker(
         ShowConsumerStateRequest request) {
-        return new AsyncInvoker<ShowConsumerStateRequest, ShowConsumerStateResponse>(request, DisMeta.showConsumerState,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.showConsumerState, hcClient);
     }
 
     /**
@@ -981,7 +966,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitCheckpointRequest 请求对象
+     * @param request CommitCheckpointRequest 请求对象
      * @return CompletableFuture<CommitCheckpointResponse>
      */
     public CompletableFuture<CommitCheckpointResponse> commitCheckpointAsync(CommitCheckpointRequest request) {
@@ -995,13 +980,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitCheckpointRequest 请求对象
+     * @param request CommitCheckpointRequest 请求对象
      * @return AsyncInvoker<CommitCheckpointRequest, CommitCheckpointResponse>
      */
     public AsyncInvoker<CommitCheckpointRequest, CommitCheckpointResponse> commitCheckpointAsyncInvoker(
         CommitCheckpointRequest request) {
-        return new AsyncInvoker<CommitCheckpointRequest, CommitCheckpointResponse>(request, DisMeta.commitCheckpoint,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.commitCheckpoint, hcClient);
     }
 
     /**
@@ -1011,7 +995,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCheckpointRequest 请求对象
+     * @param request DeleteCheckpointRequest 请求对象
      * @return CompletableFuture<DeleteCheckpointResponse>
      */
     public CompletableFuture<DeleteCheckpointResponse> deleteCheckpointAsync(DeleteCheckpointRequest request) {
@@ -1025,13 +1009,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCheckpointRequest 请求对象
+     * @param request DeleteCheckpointRequest 请求对象
      * @return AsyncInvoker<DeleteCheckpointRequest, DeleteCheckpointResponse>
      */
     public AsyncInvoker<DeleteCheckpointRequest, DeleteCheckpointResponse> deleteCheckpointAsyncInvoker(
         DeleteCheckpointRequest request) {
-        return new AsyncInvoker<DeleteCheckpointRequest, DeleteCheckpointResponse>(request, DisMeta.deleteCheckpoint,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.deleteCheckpoint, hcClient);
     }
 
     /**
@@ -1041,7 +1024,7 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckpointRequest 请求对象
+     * @param request ShowCheckpointRequest 请求对象
      * @return CompletableFuture<ShowCheckpointResponse>
      */
     public CompletableFuture<ShowCheckpointResponse> showCheckpointAsync(ShowCheckpointRequest request) {
@@ -1055,13 +1038,12 @@ public class DisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckpointRequest 请求对象
+     * @param request ShowCheckpointRequest 请求对象
      * @return AsyncInvoker<ShowCheckpointRequest, ShowCheckpointResponse>
      */
     public AsyncInvoker<ShowCheckpointRequest, ShowCheckpointResponse> showCheckpointAsyncInvoker(
         ShowCheckpointRequest request) {
-        return new AsyncInvoker<ShowCheckpointRequest, ShowCheckpointResponse>(request, DisMeta.showCheckpoint,
-            hcClient);
+        return new AsyncInvoker<>(request, DisMeta.showCheckpoint, hcClient);
     }
 
 }

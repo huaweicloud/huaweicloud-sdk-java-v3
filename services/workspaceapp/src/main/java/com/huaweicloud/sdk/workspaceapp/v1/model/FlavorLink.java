@@ -26,7 +26,7 @@ public class FlavorLink {
     }
 
     /**
-     * 快捷链接标记名称
+     * 快捷链接标记名称。
      * @return rel
      */
     public String getRel() {
@@ -43,7 +43,7 @@ public class FlavorLink {
     }
 
     /**
-     * 对应快捷链接
+     * 对应快捷链接。
      * @return hrel
      */
     public String getHrel() {

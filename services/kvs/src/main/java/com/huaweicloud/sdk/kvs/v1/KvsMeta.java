@@ -29,8 +29,6 @@ import com.huaweicloud.sdk.kvs.v1.model.ScanKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ScanKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.ScanSkeyKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ScanSkeyKvResponse;
-import com.huaweicloud.sdk.kvs.v1.model.TransactGetKvRequest;
-import com.huaweicloud.sdk.kvs.v1.model.TransactGetKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.TransactWriteSkeyKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.TransactWriteSkeyKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.UpdateKvRequest;
@@ -39,9 +37,9 @@ import com.huaweicloud.sdk.kvs.v1.model.UpdateKvResponse;
 @SuppressWarnings("unchecked")
 public class KvsMeta {
 
-    public static final HttpRequestDef<CreateTableRequest, CreateTableResponse> createTable = genForcreateTable();
+    public static final HttpRequestDef<CreateTableRequest, CreateTableResponse> createTable = genForCreateTable();
 
-    private static HttpRequestDef<CreateTableRequest, CreateTableResponse> genForcreateTable() {
+    private static HttpRequestDef<CreateTableRequest, CreateTableResponse> genForCreateTable() {
         // basic
         HttpRequestDef.Builder<CreateTableRequest, CreateTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTableRequest.class, CreateTableResponse.class)
@@ -54,9 +52,7 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTableRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(CreateTableRequest::getStoreName, CreateTableRequest::setStoreName));
 
         // response
 
@@ -64,9 +60,9 @@ public class KvsMeta {
     }
 
     public static final HttpRequestDef<DescribeTableRequest, DescribeTableResponse> describeTable =
-        genFordescribeTable();
+        genForDescribeTable();
 
-    private static HttpRequestDef<DescribeTableRequest, DescribeTableResponse> genFordescribeTable() {
+    private static HttpRequestDef<DescribeTableRequest, DescribeTableResponse> genForDescribeTable() {
         // basic
         HttpRequestDef.Builder<DescribeTableRequest, DescribeTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DescribeTableRequest.class, DescribeTableResponse.class)
@@ -79,18 +75,16 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeTableRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(DescribeTableRequest::getStoreName, DescribeTableRequest::setStoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListStoreRequest, ListStoreResponse> listStore = genForlistStore();
+    public static final HttpRequestDef<ListStoreRequest, ListStoreResponse> listStore = genForListStore();
 
-    private static HttpRequestDef<ListStoreRequest, ListStoreResponse> genForlistStore() {
+    private static HttpRequestDef<ListStoreRequest, ListStoreResponse> genForListStore() {
         // basic
         HttpRequestDef.Builder<ListStoreRequest, ListStoreResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListStoreRequest.class, ListStoreResponse.class)
@@ -105,9 +99,9 @@ public class KvsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTableRequest, ListTableResponse> listTable = genForlistTable();
+    public static final HttpRequestDef<ListTableRequest, ListTableResponse> listTable = genForListTable();
 
-    private static HttpRequestDef<ListTableRequest, ListTableResponse> genForlistTable() {
+    private static HttpRequestDef<ListTableRequest, ListTableResponse> genForListTable() {
         // basic
         HttpRequestDef.Builder<ListTableRequest, ListTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListTableRequest.class, ListTableResponse.class)
@@ -120,18 +114,16 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(ListTableRequest::getStoreName, ListTableRequest::setStoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchGetKvRequest, BatchGetKvResponse> batchGetKv = genForbatchGetKv();
+    public static final HttpRequestDef<BatchGetKvRequest, BatchGetKvResponse> batchGetKv = genForBatchGetKv();
 
-    private static HttpRequestDef<BatchGetKvRequest, BatchGetKvResponse> genForbatchGetKv() {
+    private static HttpRequestDef<BatchGetKvRequest, BatchGetKvResponse> genForBatchGetKv() {
         // basic
         HttpRequestDef.Builder<BatchGetKvRequest, BatchGetKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchGetKvRequest.class, BatchGetKvResponse.class)
@@ -144,18 +136,16 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchGetKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(BatchGetKvRequest::getStoreName, BatchGetKvRequest::setStoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchWriteKvRequest, BatchWriteKvResponse> batchWriteKv = genForbatchWriteKv();
+    public static final HttpRequestDef<BatchWriteKvRequest, BatchWriteKvResponse> batchWriteKv = genForBatchWriteKv();
 
-    private static HttpRequestDef<BatchWriteKvRequest, BatchWriteKvResponse> genForbatchWriteKv() {
+    private static HttpRequestDef<BatchWriteKvRequest, BatchWriteKvResponse> genForBatchWriteKv() {
         // basic
         HttpRequestDef.Builder<BatchWriteKvRequest, BatchWriteKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchWriteKvRequest.class, BatchWriteKvResponse.class)
@@ -168,18 +158,16 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchWriteKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(BatchWriteKvRequest::getStoreName, BatchWriteKvRequest::setStoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteKvRequest, DeleteKvResponse> deleteKv = genFordeleteKv();
+    public static final HttpRequestDef<DeleteKvRequest, DeleteKvResponse> deleteKv = genForDeleteKv();
 
-    private static HttpRequestDef<DeleteKvRequest, DeleteKvResponse> genFordeleteKv() {
+    private static HttpRequestDef<DeleteKvRequest, DeleteKvResponse> genForDeleteKv() {
         // basic
         HttpRequestDef.Builder<DeleteKvRequest, DeleteKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteKvRequest.class, DeleteKvResponse.class)
@@ -192,18 +180,16 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(DeleteKvRequest::getStoreName, DeleteKvRequest::setStoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<GetKvRequest, GetKvResponse> getKv = genForgetKv();
+    public static final HttpRequestDef<GetKvRequest, GetKvResponse> getKv = genForGetKv();
 
-    private static HttpRequestDef<GetKvRequest, GetKvResponse> genForgetKv() {
+    private static HttpRequestDef<GetKvRequest, GetKvResponse> genForGetKv() {
         // basic
         HttpRequestDef.Builder<GetKvRequest, GetKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, GetKvRequest.class, GetKvResponse.class)
@@ -216,18 +202,16 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(GetKvRequest::getStoreName, GetKvRequest::setStoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PutKvRequest, PutKvResponse> putKv = genForputKv();
+    public static final HttpRequestDef<PutKvRequest, PutKvResponse> putKv = genForPutKv();
 
-    private static HttpRequestDef<PutKvRequest, PutKvResponse> genForputKv() {
+    private static HttpRequestDef<PutKvRequest, PutKvResponse> genForPutKv() {
         // basic
         HttpRequestDef.Builder<PutKvRequest, PutKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PutKvRequest.class, PutKvResponse.class)
@@ -240,18 +224,16 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PutKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(PutKvRequest::getStoreName, PutKvRequest::setStoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RenameKvRequest, RenameKvResponse> renameKv = genForrenameKv();
+    public static final HttpRequestDef<RenameKvRequest, RenameKvResponse> renameKv = genForRenameKv();
 
-    private static HttpRequestDef<RenameKvRequest, RenameKvResponse> genForrenameKv() {
+    private static HttpRequestDef<RenameKvRequest, RenameKvResponse> genForRenameKv() {
         // basic
         HttpRequestDef.Builder<RenameKvRequest, RenameKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RenameKvRequest.class, RenameKvResponse.class)
@@ -264,18 +246,16 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RenameKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(RenameKvRequest::getStoreName, RenameKvRequest::setStoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ScanKvRequest, ScanKvResponse> scanKv = genForscanKv();
+    public static final HttpRequestDef<ScanKvRequest, ScanKvResponse> scanKv = genForScanKv();
 
-    private static HttpRequestDef<ScanKvRequest, ScanKvResponse> genForscanKv() {
+    private static HttpRequestDef<ScanKvRequest, ScanKvResponse> genForScanKv() {
         // basic
         HttpRequestDef.Builder<ScanKvRequest, ScanKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ScanKvRequest.class, ScanKvResponse.class)
@@ -288,18 +268,16 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ScanKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(ScanKvRequest::getStoreName, ScanKvRequest::setStoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ScanSkeyKvRequest, ScanSkeyKvResponse> scanSkeyKv = genForscanSkeyKv();
+    public static final HttpRequestDef<ScanSkeyKvRequest, ScanSkeyKvResponse> scanSkeyKv = genForScanSkeyKv();
 
-    private static HttpRequestDef<ScanSkeyKvRequest, ScanSkeyKvResponse> genForscanSkeyKv() {
+    private static HttpRequestDef<ScanSkeyKvRequest, ScanSkeyKvResponse> genForScanSkeyKv() {
         // basic
         HttpRequestDef.Builder<ScanSkeyKvRequest, ScanSkeyKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ScanSkeyKvRequest.class, ScanSkeyKvResponse.class)
@@ -312,34 +290,7 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ScanSkeyKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<TransactGetKvRequest, TransactGetKvResponse> transactGetKv =
-        genFortransactGetKv();
-
-    private static HttpRequestDef<TransactGetKvRequest, TransactGetKvResponse> genFortransactGetKv() {
-        // basic
-        HttpRequestDef.Builder<TransactGetKvRequest, TransactGetKvResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, TransactGetKvRequest.class, TransactGetKvResponse.class)
-                .withName("TransactGetKv")
-                .withUri("/v1/transact-get-kv")
-                .withContentType("application/bson");
-
-        // requests
-        builder.<String>withRequestField("store_name",
-            LocationType.Cname,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(TransactGetKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(ScanSkeyKvRequest::getStoreName, ScanSkeyKvRequest::setStoreName));
 
         // response
 
@@ -347,9 +298,9 @@ public class KvsMeta {
     }
 
     public static final HttpRequestDef<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> transactWriteSkeyKv =
-        genFortransactWriteSkeyKv();
+        genForTransactWriteSkeyKv();
 
-    private static HttpRequestDef<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> genFortransactWriteSkeyKv() {
+    private static HttpRequestDef<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> genForTransactWriteSkeyKv() {
         // basic
         HttpRequestDef.Builder<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, TransactWriteSkeyKvRequest.class, TransactWriteSkeyKvResponse.class)
@@ -362,18 +313,16 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(TransactWriteSkeyKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(TransactWriteSkeyKvRequest::getStoreName, TransactWriteSkeyKvRequest::setStoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateKvRequest, UpdateKvResponse> updateKv = genForupdateKv();
+    public static final HttpRequestDef<UpdateKvRequest, UpdateKvResponse> updateKv = genForUpdateKv();
 
-    private static HttpRequestDef<UpdateKvRequest, UpdateKvResponse> genForupdateKv() {
+    private static HttpRequestDef<UpdateKvRequest, UpdateKvResponse> genForUpdateKv() {
         // basic
         HttpRequestDef.Builder<UpdateKvRequest, UpdateKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateKvRequest.class, UpdateKvResponse.class)
@@ -386,9 +335,7 @@ public class KvsMeta {
             LocationType.Cname,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
+            f -> f.withMarshaller(UpdateKvRequest::getStoreName, UpdateKvRequest::setStoreName));
 
         // response
 

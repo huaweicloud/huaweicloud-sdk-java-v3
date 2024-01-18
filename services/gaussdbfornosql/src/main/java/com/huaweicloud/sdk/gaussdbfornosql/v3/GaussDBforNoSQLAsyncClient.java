@@ -236,7 +236,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyConfigurationRequest 请求对象
+     * @param request ApplyConfigurationRequest 请求对象
      * @return CompletableFuture<ApplyConfigurationResponse>
      */
     public CompletableFuture<ApplyConfigurationResponse> applyConfigurationAsync(ApplyConfigurationRequest request) {
@@ -250,13 +250,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyConfigurationRequest 请求对象
+     * @param request ApplyConfigurationRequest 请求对象
      * @return AsyncInvoker<ApplyConfigurationRequest, ApplyConfigurationResponse>
      */
     public AsyncInvoker<ApplyConfigurationRequest, ApplyConfigurationResponse> applyConfigurationAsyncInvoker(
         ApplyConfigurationRequest request) {
-        return new AsyncInvoker<ApplyConfigurationRequest, ApplyConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.applyConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.applyConfiguration, hcClient);
     }
 
     /**
@@ -266,7 +265,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchTagActionRequest 请求对象
+     * @param request BatchTagActionRequest 请求对象
      * @return CompletableFuture<BatchTagActionResponse>
      */
     public CompletableFuture<BatchTagActionResponse> batchTagActionAsync(BatchTagActionRequest request) {
@@ -280,13 +279,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchTagActionRequest 请求对象
+     * @param request BatchTagActionRequest 请求对象
      * @return AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
      */
     public AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionAsyncInvoker(
         BatchTagActionRequest request) {
-        return new AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse>(request,
-            GaussDBforNoSQLMeta.batchTagAction, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.batchTagAction, hcClient);
     }
 
     /**
@@ -297,7 +295,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDisasterRecoveryOperationRequest 请求对象
+     * @param request CheckDisasterRecoveryOperationRequest 请求对象
      * @return CompletableFuture<CheckDisasterRecoveryOperationResponse>
      */
     public CompletableFuture<CheckDisasterRecoveryOperationResponse> checkDisasterRecoveryOperationAsync(
@@ -313,13 +311,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDisasterRecoveryOperationRequest 请求对象
+     * @param request CheckDisasterRecoveryOperationRequest 请求对象
      * @return AsyncInvoker<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse>
      */
     public AsyncInvoker<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse> checkDisasterRecoveryOperationAsyncInvoker(
         CheckDisasterRecoveryOperationRequest request) {
-        return new AsyncInvoker<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse>(request,
-            GaussDBforNoSQLMeta.checkDisasterRecoveryOperation, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.checkDisasterRecoveryOperation, hcClient);
     }
 
     /**
@@ -329,7 +326,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckWeekPasswordRequest 请求对象
+     * @param request CheckWeekPasswordRequest 请求对象
      * @return CompletableFuture<CheckWeekPasswordResponse>
      */
     public CompletableFuture<CheckWeekPasswordResponse> checkWeekPasswordAsync(CheckWeekPasswordRequest request) {
@@ -343,13 +340,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckWeekPasswordRequest 请求对象
+     * @param request CheckWeekPasswordRequest 请求对象
      * @return AsyncInvoker<CheckWeekPasswordRequest, CheckWeekPasswordResponse>
      */
     public AsyncInvoker<CheckWeekPasswordRequest, CheckWeekPasswordResponse> checkWeekPasswordAsyncInvoker(
         CheckWeekPasswordRequest request) {
-        return new AsyncInvoker<CheckWeekPasswordRequest, CheckWeekPasswordResponse>(request,
-            GaussDBforNoSQLMeta.checkWeekPassword, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.checkWeekPassword, hcClient);
     }
 
     /**
@@ -359,7 +355,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareConfigurationRequest 请求对象
+     * @param request CompareConfigurationRequest 请求对象
      * @return CompletableFuture<CompareConfigurationResponse>
      */
     public CompletableFuture<CompareConfigurationResponse> compareConfigurationAsync(
@@ -374,13 +370,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareConfigurationRequest 请求对象
+     * @param request CompareConfigurationRequest 请求对象
      * @return AsyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse>
      */
     public AsyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse> compareConfigurationAsyncInvoker(
         CompareConfigurationRequest request) {
-        return new AsyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.compareConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.compareConfiguration, hcClient);
     }
 
     /**
@@ -390,7 +385,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyConfigurationRequest 请求对象
+     * @param request CopyConfigurationRequest 请求对象
      * @return CompletableFuture<CopyConfigurationResponse>
      */
     public CompletableFuture<CopyConfigurationResponse> copyConfigurationAsync(CopyConfigurationRequest request) {
@@ -404,13 +399,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyConfigurationRequest 请求对象
+     * @param request CopyConfigurationRequest 请求对象
      * @return AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>
      */
     public AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse> copyConfigurationAsyncInvoker(
         CopyConfigurationRequest request) {
-        return new AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.copyConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.copyConfiguration, hcClient);
     }
 
     /**
@@ -420,7 +414,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackRequest 请求对象
+     * @param request CreateBackRequest 请求对象
      * @return CompletableFuture<CreateBackResponse>
      */
     public CompletableFuture<CreateBackResponse> createBackAsync(CreateBackRequest request) {
@@ -434,12 +428,11 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackRequest 请求对象
+     * @param request CreateBackRequest 请求对象
      * @return AsyncInvoker<CreateBackRequest, CreateBackResponse>
      */
     public AsyncInvoker<CreateBackRequest, CreateBackResponse> createBackAsyncInvoker(CreateBackRequest request) {
-        return new AsyncInvoker<CreateBackRequest, CreateBackResponse>(request, GaussDBforNoSQLMeta.createBack,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.createBack, hcClient);
     }
 
     /**
@@ -449,7 +442,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateColdVolumeRequest 请求对象
+     * @param request CreateColdVolumeRequest 请求对象
      * @return CompletableFuture<CreateColdVolumeResponse>
      */
     public CompletableFuture<CreateColdVolumeResponse> createColdVolumeAsync(CreateColdVolumeRequest request) {
@@ -463,13 +456,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateColdVolumeRequest 请求对象
+     * @param request CreateColdVolumeRequest 请求对象
      * @return AsyncInvoker<CreateColdVolumeRequest, CreateColdVolumeResponse>
      */
     public AsyncInvoker<CreateColdVolumeRequest, CreateColdVolumeResponse> createColdVolumeAsyncInvoker(
         CreateColdVolumeRequest request) {
-        return new AsyncInvoker<CreateColdVolumeRequest, CreateColdVolumeResponse>(request,
-            GaussDBforNoSQLMeta.createColdVolume, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.createColdVolume, hcClient);
     }
 
     /**
@@ -479,7 +471,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfigurationRequest 请求对象
+     * @param request CreateConfigurationRequest 请求对象
      * @return CompletableFuture<CreateConfigurationResponse>
      */
     public CompletableFuture<CreateConfigurationResponse> createConfigurationAsync(CreateConfigurationRequest request) {
@@ -493,13 +485,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfigurationRequest 请求对象
+     * @param request CreateConfigurationRequest 请求对象
      * @return AsyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>
      */
     public AsyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse> createConfigurationAsyncInvoker(
         CreateConfigurationRequest request) {
-        return new AsyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.createConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.createConfiguration, hcClient);
     }
 
     /**
@@ -509,7 +500,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDbUserRequest 请求对象
+     * @param request CreateDbUserRequest 请求对象
      * @return CompletableFuture<CreateDbUserResponse>
      */
     public CompletableFuture<CreateDbUserResponse> createDbUserAsync(CreateDbUserRequest request) {
@@ -523,13 +514,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDbUserRequest 请求对象
+     * @param request CreateDbUserRequest 请求对象
      * @return AsyncInvoker<CreateDbUserRequest, CreateDbUserResponse>
      */
     public AsyncInvoker<CreateDbUserRequest, CreateDbUserResponse> createDbUserAsyncInvoker(
         CreateDbUserRequest request) {
-        return new AsyncInvoker<CreateDbUserRequest, CreateDbUserResponse>(request, GaussDBforNoSQLMeta.createDbUser,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.createDbUser, hcClient);
     }
 
     /**
@@ -539,7 +529,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDisasterRecoveryRequest 请求对象
+     * @param request CreateDisasterRecoveryRequest 请求对象
      * @return CompletableFuture<CreateDisasterRecoveryResponse>
      */
     public CompletableFuture<CreateDisasterRecoveryResponse> createDisasterRecoveryAsync(
@@ -554,13 +544,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDisasterRecoveryRequest 请求对象
+     * @param request CreateDisasterRecoveryRequest 请求对象
      * @return AsyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>
      */
     public AsyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> createDisasterRecoveryAsyncInvoker(
         CreateDisasterRecoveryRequest request) {
-        return new AsyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>(request,
-            GaussDBforNoSQLMeta.createDisasterRecovery, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.createDisasterRecovery, hcClient);
     }
 
     /**
@@ -570,7 +559,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
      */
     public CompletableFuture<CreateInstanceResponse> createInstanceAsync(CreateInstanceRequest request) {
@@ -584,13 +573,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
     public AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceAsyncInvoker(
         CreateInstanceRequest request) {
-        return new AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request,
-            GaussDBforNoSQLMeta.createInstance, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.createInstance, hcClient);
     }
 
     /**
@@ -600,7 +588,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return CompletableFuture<DeleteBackupResponse>
      */
     public CompletableFuture<DeleteBackupResponse> deleteBackupAsync(DeleteBackupRequest request) {
@@ -614,13 +602,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
      */
     public AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse> deleteBackupAsyncInvoker(
         DeleteBackupRequest request) {
-        return new AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>(request, GaussDBforNoSQLMeta.deleteBackup,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteBackup, hcClient);
     }
 
     /**
@@ -630,7 +617,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConfigurationRequest 请求对象
+     * @param request DeleteConfigurationRequest 请求对象
      * @return CompletableFuture<DeleteConfigurationResponse>
      */
     public CompletableFuture<DeleteConfigurationResponse> deleteConfigurationAsync(DeleteConfigurationRequest request) {
@@ -644,13 +631,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConfigurationRequest 请求对象
+     * @param request DeleteConfigurationRequest 请求对象
      * @return AsyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>
      */
     public AsyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfigurationAsyncInvoker(
         DeleteConfigurationRequest request) {
-        return new AsyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.deleteConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteConfiguration, hcClient);
     }
 
     /**
@@ -660,7 +646,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDbUserRequest 请求对象
+     * @param request DeleteDbUserRequest 请求对象
      * @return CompletableFuture<DeleteDbUserResponse>
      */
     public CompletableFuture<DeleteDbUserResponse> deleteDbUserAsync(DeleteDbUserRequest request) {
@@ -674,13 +660,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDbUserRequest 请求对象
+     * @param request DeleteDbUserRequest 请求对象
      * @return AsyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>
      */
     public AsyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUserAsyncInvoker(
         DeleteDbUserRequest request) {
-        return new AsyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>(request, GaussDBforNoSQLMeta.deleteDbUser,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteDbUser, hcClient);
     }
 
     /**
@@ -690,7 +675,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDisasterRecoveryRequest 请求对象
+     * @param request DeleteDisasterRecoveryRequest 请求对象
      * @return CompletableFuture<DeleteDisasterRecoveryResponse>
      */
     public CompletableFuture<DeleteDisasterRecoveryResponse> deleteDisasterRecoveryAsync(
@@ -705,13 +690,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDisasterRecoveryRequest 请求对象
+     * @param request DeleteDisasterRecoveryRequest 请求对象
      * @return AsyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>
      */
     public AsyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecoveryAsyncInvoker(
         DeleteDisasterRecoveryRequest request) {
-        return new AsyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>(request,
-            GaussDBforNoSQLMeta.deleteDisasterRecovery, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteDisasterRecovery, hcClient);
     }
 
     /**
@@ -721,7 +705,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnlargeFailNodeRequest 请求对象
+     * @param request DeleteEnlargeFailNodeRequest 请求对象
      * @return CompletableFuture<DeleteEnlargeFailNodeResponse>
      */
     public CompletableFuture<DeleteEnlargeFailNodeResponse> deleteEnlargeFailNodeAsync(
@@ -736,13 +720,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnlargeFailNodeRequest 请求对象
+     * @param request DeleteEnlargeFailNodeRequest 请求对象
      * @return AsyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse>
      */
     public AsyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> deleteEnlargeFailNodeAsyncInvoker(
         DeleteEnlargeFailNodeRequest request) {
-        return new AsyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse>(request,
-            GaussDBforNoSQLMeta.deleteEnlargeFailNode, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteEnlargeFailNode, hcClient);
     }
 
     /**
@@ -752,7 +735,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
      */
     public CompletableFuture<DeleteInstanceResponse> deleteInstanceAsync(DeleteInstanceRequest request) {
@@ -766,13 +749,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
-        return new AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request,
-            GaussDBforNoSQLMeta.deleteInstance, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -782,7 +764,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstancesSessionRequest 请求对象
+     * @param request DeleteInstancesSessionRequest 请求对象
      * @return CompletableFuture<DeleteInstancesSessionResponse>
      */
     public CompletableFuture<DeleteInstancesSessionResponse> deleteInstancesSessionAsync(
@@ -797,13 +779,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstancesSessionRequest 请求对象
+     * @param request DeleteInstancesSessionRequest 请求对象
      * @return AsyncInvoker<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse>
      */
     public AsyncInvoker<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse> deleteInstancesSessionAsyncInvoker(
         DeleteInstancesSessionRequest request) {
-        return new AsyncInvoker<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse>(request,
-            GaussDBforNoSQLMeta.deleteInstancesSession, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteInstancesSession, hcClient);
     }
 
     /**
@@ -813,7 +794,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLtsConfigsRequest 请求对象
+     * @param request DeleteLtsConfigsRequest 请求对象
      * @return CompletableFuture<DeleteLtsConfigsResponse>
      */
     public CompletableFuture<DeleteLtsConfigsResponse> deleteLtsConfigsAsync(DeleteLtsConfigsRequest request) {
@@ -827,13 +808,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLtsConfigsRequest 请求对象
+     * @param request DeleteLtsConfigsRequest 请求对象
      * @return AsyncInvoker<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse>
      */
     public AsyncInvoker<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse> deleteLtsConfigsAsyncInvoker(
         DeleteLtsConfigsRequest request) {
-        return new AsyncInvoker<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse>(request,
-            GaussDBforNoSQLMeta.deleteLtsConfigs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteLtsConfigs, hcClient);
     }
 
     /**
@@ -843,7 +823,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandInstanceNodeRequest 请求对象
+     * @param request ExpandInstanceNodeRequest 请求对象
      * @return CompletableFuture<ExpandInstanceNodeResponse>
      */
     public CompletableFuture<ExpandInstanceNodeResponse> expandInstanceNodeAsync(ExpandInstanceNodeRequest request) {
@@ -857,13 +837,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandInstanceNodeRequest 请求对象
+     * @param request ExpandInstanceNodeRequest 请求对象
      * @return AsyncInvoker<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse>
      */
     public AsyncInvoker<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse> expandInstanceNodeAsyncInvoker(
         ExpandInstanceNodeRequest request) {
-        return new AsyncInvoker<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse>(request,
-            GaussDBforNoSQLMeta.expandInstanceNode, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.expandInstanceNode, hcClient);
     }
 
     /**
@@ -873,7 +852,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableFlavorInfosRequest 请求对象
+     * @param request ListAvailableFlavorInfosRequest 请求对象
      * @return CompletableFuture<ListAvailableFlavorInfosResponse>
      */
     public CompletableFuture<ListAvailableFlavorInfosResponse> listAvailableFlavorInfosAsync(
@@ -888,13 +867,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableFlavorInfosRequest 请求对象
+     * @param request ListAvailableFlavorInfosRequest 请求对象
      * @return AsyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse>
      */
     public AsyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> listAvailableFlavorInfosAsyncInvoker(
         ListAvailableFlavorInfosRequest request) {
-        return new AsyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse>(request,
-            GaussDBforNoSQLMeta.listAvailableFlavorInfos, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listAvailableFlavorInfos, hcClient);
     }
 
     /**
@@ -904,7 +882,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCassandraSlowLogsRequest 请求对象
+     * @param request ListCassandraSlowLogsRequest 请求对象
      * @return CompletableFuture<ListCassandraSlowLogsResponse>
      */
     public CompletableFuture<ListCassandraSlowLogsResponse> listCassandraSlowLogsAsync(
@@ -919,13 +897,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCassandraSlowLogsRequest 请求对象
+     * @param request ListCassandraSlowLogsRequest 请求对象
      * @return AsyncInvoker<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse>
      */
     public AsyncInvoker<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse> listCassandraSlowLogsAsyncInvoker(
         ListCassandraSlowLogsRequest request) {
-        return new AsyncInvoker<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse>(request,
-            GaussDBforNoSQLMeta.listCassandraSlowLogs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listCassandraSlowLogs, hcClient);
     }
 
     /**
@@ -935,7 +912,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationDatastoresRequest 请求对象
+     * @param request ListConfigurationDatastoresRequest 请求对象
      * @return CompletableFuture<ListConfigurationDatastoresResponse>
      */
     public CompletableFuture<ListConfigurationDatastoresResponse> listConfigurationDatastoresAsync(
@@ -950,13 +927,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationDatastoresRequest 请求对象
+     * @param request ListConfigurationDatastoresRequest 请求对象
      * @return AsyncInvoker<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse>
      */
     public AsyncInvoker<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse> listConfigurationDatastoresAsyncInvoker(
         ListConfigurationDatastoresRequest request) {
-        return new AsyncInvoker<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse>(request,
-            GaussDBforNoSQLMeta.listConfigurationDatastores, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listConfigurationDatastores, hcClient);
     }
 
     /**
@@ -966,7 +942,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationTemplatesRequest 请求对象
+     * @param request ListConfigurationTemplatesRequest 请求对象
      * @return CompletableFuture<ListConfigurationTemplatesResponse>
      */
     public CompletableFuture<ListConfigurationTemplatesResponse> listConfigurationTemplatesAsync(
@@ -981,13 +957,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationTemplatesRequest 请求对象
+     * @param request ListConfigurationTemplatesRequest 请求对象
      * @return AsyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse>
      */
     public AsyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> listConfigurationTemplatesAsyncInvoker(
         ListConfigurationTemplatesRequest request) {
-        return new AsyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse>(request,
-            GaussDBforNoSQLMeta.listConfigurationTemplates, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listConfigurationTemplates, hcClient);
     }
 
     /**
@@ -997,7 +972,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsRequest 请求对象
+     * @param request ListConfigurationsRequest 请求对象
      * @return CompletableFuture<ListConfigurationsResponse>
      */
     public CompletableFuture<ListConfigurationsResponse> listConfigurationsAsync(ListConfigurationsRequest request) {
@@ -1011,13 +986,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsRequest 请求对象
+     * @param request ListConfigurationsRequest 请求对象
      * @return AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
      */
     public AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsAsyncInvoker(
         ListConfigurationsRequest request) {
-        return new AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request,
-            GaussDBforNoSQLMeta.listConfigurations, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listConfigurations, hcClient);
     }
 
     /**
@@ -1027,7 +1001,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatastoresRequest 请求对象
+     * @param request ListDatastoresRequest 请求对象
      * @return CompletableFuture<ListDatastoresResponse>
      */
     public CompletableFuture<ListDatastoresResponse> listDatastoresAsync(ListDatastoresRequest request) {
@@ -1041,13 +1015,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatastoresRequest 请求对象
+     * @param request ListDatastoresRequest 请求对象
      * @return AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
      */
     public AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresAsyncInvoker(
         ListDatastoresRequest request) {
-        return new AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request,
-            GaussDBforNoSQLMeta.listDatastores, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listDatastores, hcClient);
     }
 
     /**
@@ -1057,7 +1030,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDbUsersRequest 请求对象
+     * @param request ListDbUsersRequest 请求对象
      * @return CompletableFuture<ListDbUsersResponse>
      */
     public CompletableFuture<ListDbUsersResponse> listDbUsersAsync(ListDbUsersRequest request) {
@@ -1071,12 +1044,11 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDbUsersRequest 请求对象
+     * @param request ListDbUsersRequest 请求对象
      * @return AsyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
      */
     public AsyncInvoker<ListDbUsersRequest, ListDbUsersResponse> listDbUsersAsyncInvoker(ListDbUsersRequest request) {
-        return new AsyncInvoker<ListDbUsersRequest, ListDbUsersResponse>(request, GaussDBforNoSQLMeta.listDbUsers,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listDbUsers, hcClient);
     }
 
     /**
@@ -1086,7 +1058,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDedicatedResourcesRequest 请求对象
+     * @param request ListDedicatedResourcesRequest 请求对象
      * @return CompletableFuture<ListDedicatedResourcesResponse>
      */
     public CompletableFuture<ListDedicatedResourcesResponse> listDedicatedResourcesAsync(
@@ -1101,13 +1073,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDedicatedResourcesRequest 请求对象
+     * @param request ListDedicatedResourcesRequest 请求对象
      * @return AsyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse>
      */
     public AsyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> listDedicatedResourcesAsyncInvoker(
         ListDedicatedResourcesRequest request) {
-        return new AsyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse>(request,
-            GaussDBforNoSQLMeta.listDedicatedResources, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listDedicatedResources, hcClient);
     }
 
     /**
@@ -1117,7 +1088,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEpsQuotasRequest 请求对象
+     * @param request ListEpsQuotasRequest 请求对象
      * @return CompletableFuture<ListEpsQuotasResponse>
      */
     public CompletableFuture<ListEpsQuotasResponse> listEpsQuotasAsync(ListEpsQuotasRequest request) {
@@ -1131,13 +1102,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEpsQuotasRequest 请求对象
+     * @param request ListEpsQuotasRequest 请求对象
      * @return AsyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse>
      */
     public AsyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse> listEpsQuotasAsyncInvoker(
         ListEpsQuotasRequest request) {
-        return new AsyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse>(request, GaussDBforNoSQLMeta.listEpsQuotas,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listEpsQuotas, hcClient);
     }
 
     /**
@@ -1147,7 +1117,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorInfosRequest 请求对象
+     * @param request ListFlavorInfosRequest 请求对象
      * @return CompletableFuture<ListFlavorInfosResponse>
      */
     public CompletableFuture<ListFlavorInfosResponse> listFlavorInfosAsync(ListFlavorInfosRequest request) {
@@ -1161,13 +1131,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorInfosRequest 请求对象
+     * @param request ListFlavorInfosRequest 请求对象
      * @return AsyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse>
      */
     public AsyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse> listFlavorInfosAsyncInvoker(
         ListFlavorInfosRequest request) {
-        return new AsyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse>(request,
-            GaussDBforNoSQLMeta.listFlavorInfos, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listFlavorInfos, hcClient);
     }
 
     /**
@@ -1177,7 +1146,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
      */
     public CompletableFuture<ListFlavorsResponse> listFlavorsAsync(ListFlavorsRequest request) {
@@ -1191,12 +1160,11 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
     public AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsAsyncInvoker(ListFlavorsRequest request) {
-        return new AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, GaussDBforNoSQLMeta.listFlavors,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listFlavors, hcClient);
     }
 
     /**
@@ -1206,7 +1174,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInfluxdbSlowLogsRequest 请求对象
+     * @param request ListInfluxdbSlowLogsRequest 请求对象
      * @return CompletableFuture<ListInfluxdbSlowLogsResponse>
      */
     public CompletableFuture<ListInfluxdbSlowLogsResponse> listInfluxdbSlowLogsAsync(
@@ -1221,13 +1189,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInfluxdbSlowLogsRequest 请求对象
+     * @param request ListInfluxdbSlowLogsRequest 请求对象
      * @return AsyncInvoker<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse>
      */
     public AsyncInvoker<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse> listInfluxdbSlowLogsAsyncInvoker(
         ListInfluxdbSlowLogsRequest request) {
-        return new AsyncInvoker<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse>(request,
-            GaussDBforNoSQLMeta.listInfluxdbSlowLogs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listInfluxdbSlowLogs, hcClient);
     }
 
     /**
@@ -1237,7 +1204,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceDatabasesRequest 请求对象
+     * @param request ListInstanceDatabasesRequest 请求对象
      * @return CompletableFuture<ListInstanceDatabasesResponse>
      */
     public CompletableFuture<ListInstanceDatabasesResponse> listInstanceDatabasesAsync(
@@ -1252,13 +1219,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceDatabasesRequest 请求对象
+     * @param request ListInstanceDatabasesRequest 请求对象
      * @return AsyncInvoker<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse>
      */
     public AsyncInvoker<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> listInstanceDatabasesAsyncInvoker(
         ListInstanceDatabasesRequest request) {
-        return new AsyncInvoker<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse>(request,
-            GaussDBforNoSQLMeta.listInstanceDatabases, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listInstanceDatabases, hcClient);
     }
 
     /**
@@ -1268,7 +1234,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTagsRequest 请求对象
+     * @param request ListInstanceTagsRequest 请求对象
      * @return CompletableFuture<ListInstanceTagsResponse>
      */
     public CompletableFuture<ListInstanceTagsResponse> listInstanceTagsAsync(ListInstanceTagsRequest request) {
@@ -1282,13 +1248,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTagsRequest 请求对象
+     * @param request ListInstanceTagsRequest 请求对象
      * @return AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
      */
     public AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsAsyncInvoker(
         ListInstanceTagsRequest request) {
-        return new AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request,
-            GaussDBforNoSQLMeta.listInstanceTags, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listInstanceTags, hcClient);
     }
 
     /**
@@ -1298,7 +1263,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
      */
     public CompletableFuture<ListInstancesResponse> listInstancesAsync(ListInstancesRequest request) {
@@ -1312,13 +1277,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
-        return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, GaussDBforNoSQLMeta.listInstances,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listInstances, hcClient);
     }
 
     /**
@@ -1328,7 +1292,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesByResourceTagsRequest 请求对象
+     * @param request ListInstancesByResourceTagsRequest 请求对象
      * @return CompletableFuture<ListInstancesByResourceTagsResponse>
      */
     public CompletableFuture<ListInstancesByResourceTagsResponse> listInstancesByResourceTagsAsync(
@@ -1343,13 +1307,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesByResourceTagsRequest 请求对象
+     * @param request ListInstancesByResourceTagsRequest 请求对象
      * @return AsyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse>
      */
     public AsyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> listInstancesByResourceTagsAsyncInvoker(
         ListInstancesByResourceTagsRequest request) {
-        return new AsyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse>(request,
-            GaussDBforNoSQLMeta.listInstancesByResourceTags, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listInstancesByResourceTags, hcClient);
     }
 
     /**
@@ -1359,7 +1322,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesByTagsRequest 请求对象
+     * @param request ListInstancesByTagsRequest 请求对象
      * @return CompletableFuture<ListInstancesByTagsResponse>
      */
     public CompletableFuture<ListInstancesByTagsResponse> listInstancesByTagsAsync(ListInstancesByTagsRequest request) {
@@ -1373,13 +1336,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesByTagsRequest 请求对象
+     * @param request ListInstancesByTagsRequest 请求对象
      * @return AsyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse>
      */
     public AsyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse> listInstancesByTagsAsyncInvoker(
         ListInstancesByTagsRequest request) {
-        return new AsyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse>(request,
-            GaussDBforNoSQLMeta.listInstancesByTags, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listInstancesByTags, hcClient);
     }
 
     /**
@@ -1389,7 +1351,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesSessionRequest 请求对象
+     * @param request ListInstancesSessionRequest 请求对象
      * @return CompletableFuture<ListInstancesSessionResponse>
      */
     public CompletableFuture<ListInstancesSessionResponse> listInstancesSessionAsync(
@@ -1404,13 +1366,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesSessionRequest 请求对象
+     * @param request ListInstancesSessionRequest 请求对象
      * @return AsyncInvoker<ListInstancesSessionRequest, ListInstancesSessionResponse>
      */
     public AsyncInvoker<ListInstancesSessionRequest, ListInstancesSessionResponse> listInstancesSessionAsyncInvoker(
         ListInstancesSessionRequest request) {
-        return new AsyncInvoker<ListInstancesSessionRequest, ListInstancesSessionResponse>(request,
-            GaussDBforNoSQLMeta.listInstancesSession, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listInstancesSession, hcClient);
     }
 
     /**
@@ -1420,7 +1381,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesSessionStatisticsRequest 请求对象
+     * @param request ListInstancesSessionStatisticsRequest 请求对象
      * @return CompletableFuture<ListInstancesSessionStatisticsResponse>
      */
     public CompletableFuture<ListInstancesSessionStatisticsResponse> listInstancesSessionStatisticsAsync(
@@ -1435,13 +1396,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesSessionStatisticsRequest 请求对象
+     * @param request ListInstancesSessionStatisticsRequest 请求对象
      * @return AsyncInvoker<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse>
      */
     public AsyncInvoker<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse> listInstancesSessionStatisticsAsyncInvoker(
         ListInstancesSessionStatisticsRequest request) {
-        return new AsyncInvoker<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse>(request,
-            GaussDBforNoSQLMeta.listInstancesSessionStatistics, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listInstancesSessionStatistics, hcClient);
     }
 
     /**
@@ -1451,7 +1411,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return CompletableFuture<ListJobsResponse>
      */
     public CompletableFuture<ListJobsResponse> listJobsAsync(ListJobsRequest request) {
@@ -1465,11 +1425,11 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return AsyncInvoker<ListJobsRequest, ListJobsResponse>
      */
     public AsyncInvoker<ListJobsRequest, ListJobsResponse> listJobsAsyncInvoker(ListJobsRequest request) {
-        return new AsyncInvoker<ListJobsRequest, ListJobsResponse>(request, GaussDBforNoSQLMeta.listJobs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listJobs, hcClient);
     }
 
     /**
@@ -1479,7 +1439,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLtsConfigsRequest 请求对象
+     * @param request ListLtsConfigsRequest 请求对象
      * @return CompletableFuture<ListLtsConfigsResponse>
      */
     public CompletableFuture<ListLtsConfigsResponse> listLtsConfigsAsync(ListLtsConfigsRequest request) {
@@ -1493,13 +1453,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLtsConfigsRequest 请求对象
+     * @param request ListLtsConfigsRequest 请求对象
      * @return AsyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse>
      */
     public AsyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse> listLtsConfigsAsyncInvoker(
         ListLtsConfigsRequest request) {
-        return new AsyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse>(request,
-            GaussDBforNoSQLMeta.listLtsConfigs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listLtsConfigs, hcClient);
     }
 
     /**
@@ -1509,7 +1468,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMongodbErrorLogsRequest 请求对象
+     * @param request ListMongodbErrorLogsRequest 请求对象
      * @return CompletableFuture<ListMongodbErrorLogsResponse>
      */
     public CompletableFuture<ListMongodbErrorLogsResponse> listMongodbErrorLogsAsync(
@@ -1524,13 +1483,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMongodbErrorLogsRequest 请求对象
+     * @param request ListMongodbErrorLogsRequest 请求对象
      * @return AsyncInvoker<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse>
      */
     public AsyncInvoker<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse> listMongodbErrorLogsAsyncInvoker(
         ListMongodbErrorLogsRequest request) {
-        return new AsyncInvoker<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse>(request,
-            GaussDBforNoSQLMeta.listMongodbErrorLogs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listMongodbErrorLogs, hcClient);
     }
 
     /**
@@ -1540,7 +1498,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMongodbSlowLogsRequest 请求对象
+     * @param request ListMongodbSlowLogsRequest 请求对象
      * @return CompletableFuture<ListMongodbSlowLogsResponse>
      */
     public CompletableFuture<ListMongodbSlowLogsResponse> listMongodbSlowLogsAsync(ListMongodbSlowLogsRequest request) {
@@ -1554,13 +1512,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMongodbSlowLogsRequest 请求对象
+     * @param request ListMongodbSlowLogsRequest 请求对象
      * @return AsyncInvoker<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse>
      */
     public AsyncInvoker<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse> listMongodbSlowLogsAsyncInvoker(
         ListMongodbSlowLogsRequest request) {
-        return new AsyncInvoker<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse>(request,
-            GaussDBforNoSQLMeta.listMongodbSlowLogs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listMongodbSlowLogs, hcClient);
     }
 
     /**
@@ -1570,7 +1527,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return CompletableFuture<ListProjectTagsResponse>
      */
     public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
@@ -1584,13 +1541,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
     public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
         ListProjectTagsRequest request) {
-        return new AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request,
-            GaussDBforNoSQLMeta.listProjectTags, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listProjectTags, hcClient);
     }
 
     /**
@@ -1600,7 +1556,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecycleInstancesRequest 请求对象
+     * @param request ListRecycleInstancesRequest 请求对象
      * @return CompletableFuture<ListRecycleInstancesResponse>
      */
     public CompletableFuture<ListRecycleInstancesResponse> listRecycleInstancesAsync(
@@ -1615,13 +1571,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecycleInstancesRequest 请求对象
+     * @param request ListRecycleInstancesRequest 请求对象
      * @return AsyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>
      */
     public AsyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstancesAsyncInvoker(
         ListRecycleInstancesRequest request) {
-        return new AsyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>(request,
-            GaussDBforNoSQLMeta.listRecycleInstances, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listRecycleInstances, hcClient);
     }
 
     /**
@@ -1631,7 +1586,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRedisSlowLogsRequest 请求对象
+     * @param request ListRedisSlowLogsRequest 请求对象
      * @return CompletableFuture<ListRedisSlowLogsResponse>
      */
     public CompletableFuture<ListRedisSlowLogsResponse> listRedisSlowLogsAsync(ListRedisSlowLogsRequest request) {
@@ -1645,13 +1600,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRedisSlowLogsRequest 请求对象
+     * @param request ListRedisSlowLogsRequest 请求对象
      * @return AsyncInvoker<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse>
      */
     public AsyncInvoker<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> listRedisSlowLogsAsyncInvoker(
         ListRedisSlowLogsRequest request) {
-        return new AsyncInvoker<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse>(request,
-            GaussDBforNoSQLMeta.listRedisSlowLogs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listRedisSlowLogs, hcClient);
     }
 
     /**
@@ -1661,7 +1615,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreDatabasesRequest 请求对象
+     * @param request ListRestoreDatabasesRequest 请求对象
      * @return CompletableFuture<ListRestoreDatabasesResponse>
      */
     public CompletableFuture<ListRestoreDatabasesResponse> listRestoreDatabasesAsync(
@@ -1676,13 +1630,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreDatabasesRequest 请求对象
+     * @param request ListRestoreDatabasesRequest 请求对象
      * @return AsyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse>
      */
     public AsyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> listRestoreDatabasesAsyncInvoker(
         ListRestoreDatabasesRequest request) {
-        return new AsyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse>(request,
-            GaussDBforNoSQLMeta.listRestoreDatabases, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listRestoreDatabases, hcClient);
     }
 
     /**
@@ -1692,7 +1645,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreTablesRequest 请求对象
+     * @param request ListRestoreTablesRequest 请求对象
      * @return CompletableFuture<ListRestoreTablesResponse>
      */
     public CompletableFuture<ListRestoreTablesResponse> listRestoreTablesAsync(ListRestoreTablesRequest request) {
@@ -1706,13 +1659,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreTablesRequest 请求对象
+     * @param request ListRestoreTablesRequest 请求对象
      * @return AsyncInvoker<ListRestoreTablesRequest, ListRestoreTablesResponse>
      */
     public AsyncInvoker<ListRestoreTablesRequest, ListRestoreTablesResponse> listRestoreTablesAsyncInvoker(
         ListRestoreTablesRequest request) {
-        return new AsyncInvoker<ListRestoreTablesRequest, ListRestoreTablesResponse>(request,
-            GaussDBforNoSQLMeta.listRestoreTables, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listRestoreTables, hcClient);
     }
 
     /**
@@ -1722,7 +1674,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreTimeRequest 请求对象
+     * @param request ListRestoreTimeRequest 请求对象
      * @return CompletableFuture<ListRestoreTimeResponse>
      */
     public CompletableFuture<ListRestoreTimeResponse> listRestoreTimeAsync(ListRestoreTimeRequest request) {
@@ -1736,13 +1688,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreTimeRequest 请求对象
+     * @param request ListRestoreTimeRequest 请求对象
      * @return AsyncInvoker<ListRestoreTimeRequest, ListRestoreTimeResponse>
      */
     public AsyncInvoker<ListRestoreTimeRequest, ListRestoreTimeResponse> listRestoreTimeAsyncInvoker(
         ListRestoreTimeRequest request) {
-        return new AsyncInvoker<ListRestoreTimeRequest, ListRestoreTimeResponse>(request,
-            GaussDBforNoSQLMeta.listRestoreTime, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listRestoreTime, hcClient);
     }
 
     /**
@@ -1752,7 +1703,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSlowLogsRequest 请求对象
+     * @param request ListSlowLogsRequest 请求对象
      * @return CompletableFuture<ListSlowLogsResponse>
      */
     public CompletableFuture<ListSlowLogsResponse> listSlowLogsAsync(ListSlowLogsRequest request) {
@@ -1766,13 +1717,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSlowLogsRequest 请求对象
+     * @param request ListSlowLogsRequest 请求对象
      * @return AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>
      */
     public AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsAsyncInvoker(
         ListSlowLogsRequest request) {
-        return new AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>(request, GaussDBforNoSQLMeta.listSlowLogs,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listSlowLogs, hcClient);
     }
 
     /**
@@ -1782,7 +1732,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyDbUserPrivilegeRequest 请求对象
+     * @param request ModifyDbUserPrivilegeRequest 请求对象
      * @return CompletableFuture<ModifyDbUserPrivilegeResponse>
      */
     public CompletableFuture<ModifyDbUserPrivilegeResponse> modifyDbUserPrivilegeAsync(
@@ -1797,13 +1747,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyDbUserPrivilegeRequest 请求对象
+     * @param request ModifyDbUserPrivilegeRequest 请求对象
      * @return AsyncInvoker<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse>
      */
     public AsyncInvoker<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> modifyDbUserPrivilegeAsyncInvoker(
         ModifyDbUserPrivilegeRequest request) {
-        return new AsyncInvoker<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse>(request,
-            GaussDBforNoSQLMeta.modifyDbUserPrivilege, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.modifyDbUserPrivilege, hcClient);
     }
 
     /**
@@ -1813,7 +1762,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyEpsQuotasRequest 请求对象
+     * @param request ModifyEpsQuotasRequest 请求对象
      * @return CompletableFuture<ModifyEpsQuotasResponse>
      */
     public CompletableFuture<ModifyEpsQuotasResponse> modifyEpsQuotasAsync(ModifyEpsQuotasRequest request) {
@@ -1827,13 +1776,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyEpsQuotasRequest 请求对象
+     * @param request ModifyEpsQuotasRequest 请求对象
      * @return AsyncInvoker<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse>
      */
     public AsyncInvoker<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> modifyEpsQuotasAsyncInvoker(
         ModifyEpsQuotasRequest request) {
-        return new AsyncInvoker<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse>(request,
-            GaussDBforNoSQLMeta.modifyEpsQuotas, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.modifyEpsQuotas, hcClient);
     }
 
     /**
@@ -1843,7 +1791,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyPortRequest 请求对象
+     * @param request ModifyPortRequest 请求对象
      * @return CompletableFuture<ModifyPortResponse>
      */
     public CompletableFuture<ModifyPortResponse> modifyPortAsync(ModifyPortRequest request) {
@@ -1857,12 +1805,11 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyPortRequest 请求对象
+     * @param request ModifyPortRequest 请求对象
      * @return AsyncInvoker<ModifyPortRequest, ModifyPortResponse>
      */
     public AsyncInvoker<ModifyPortRequest, ModifyPortResponse> modifyPortAsyncInvoker(ModifyPortRequest request) {
-        return new AsyncInvoker<ModifyPortRequest, ModifyPortResponse>(request, GaussDBforNoSQLMeta.modifyPort,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.modifyPort, hcClient);
     }
 
     /**
@@ -1872,7 +1819,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyPublicIpRequest 请求对象
+     * @param request ModifyPublicIpRequest 请求对象
      * @return CompletableFuture<ModifyPublicIpResponse>
      */
     public CompletableFuture<ModifyPublicIpResponse> modifyPublicIpAsync(ModifyPublicIpRequest request) {
@@ -1886,13 +1833,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyPublicIpRequest 请求对象
+     * @param request ModifyPublicIpRequest 请求对象
      * @return AsyncInvoker<ModifyPublicIpRequest, ModifyPublicIpResponse>
      */
     public AsyncInvoker<ModifyPublicIpRequest, ModifyPublicIpResponse> modifyPublicIpAsyncInvoker(
         ModifyPublicIpRequest request) {
-        return new AsyncInvoker<ModifyPublicIpRequest, ModifyPublicIpResponse>(request,
-            GaussDBforNoSQLMeta.modifyPublicIp, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.modifyPublicIp, hcClient);
     }
 
     /**
@@ -1902,7 +1848,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyVolumeRequest 请求对象
+     * @param request ModifyVolumeRequest 请求对象
      * @return CompletableFuture<ModifyVolumeResponse>
      */
     public CompletableFuture<ModifyVolumeResponse> modifyVolumeAsync(ModifyVolumeRequest request) {
@@ -1916,13 +1862,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyVolumeRequest 请求对象
+     * @param request ModifyVolumeRequest 请求对象
      * @return AsyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse>
      */
     public AsyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse> modifyVolumeAsyncInvoker(
         ModifyVolumeRequest request) {
-        return new AsyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse>(request, GaussDBforNoSQLMeta.modifyVolume,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.modifyVolume, hcClient);
     }
 
     /**
@@ -1932,7 +1877,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param OfflineNodesRequest 请求对象
+     * @param request OfflineNodesRequest 请求对象
      * @return CompletableFuture<OfflineNodesResponse>
      */
     public CompletableFuture<OfflineNodesResponse> offlineNodesAsync(OfflineNodesRequest request) {
@@ -1946,13 +1891,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param OfflineNodesRequest 请求对象
+     * @param request OfflineNodesRequest 请求对象
      * @return AsyncInvoker<OfflineNodesRequest, OfflineNodesResponse>
      */
     public AsyncInvoker<OfflineNodesRequest, OfflineNodesResponse> offlineNodesAsyncInvoker(
         OfflineNodesRequest request) {
-        return new AsyncInvoker<OfflineNodesRequest, OfflineNodesResponse>(request, GaussDBforNoSQLMeta.offlineNodes,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.offlineNodes, hcClient);
     }
 
     /**
@@ -1964,7 +1908,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseResumeDataSynchronizationRequest 请求对象
+     * @param request PauseResumeDataSynchronizationRequest 请求对象
      * @return CompletableFuture<PauseResumeDataSynchronizationResponse>
      */
     public CompletableFuture<PauseResumeDataSynchronizationResponse> pauseResumeDataSynchronizationAsync(
@@ -1981,13 +1925,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseResumeDataSynchronizationRequest 请求对象
+     * @param request PauseResumeDataSynchronizationRequest 请求对象
      * @return AsyncInvoker<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse>
      */
     public AsyncInvoker<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse> pauseResumeDataSynchronizationAsyncInvoker(
         PauseResumeDataSynchronizationRequest request) {
-        return new AsyncInvoker<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse>(request,
-            GaussDBforNoSQLMeta.pauseResumeDataSynchronization, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.pauseResumeDataSynchronization, hcClient);
     }
 
     /**
@@ -1997,7 +1940,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetDbUserPasswordRequest 请求对象
+     * @param request ResetDbUserPasswordRequest 请求对象
      * @return CompletableFuture<ResetDbUserPasswordResponse>
      */
     public CompletableFuture<ResetDbUserPasswordResponse> resetDbUserPasswordAsync(ResetDbUserPasswordRequest request) {
@@ -2011,13 +1954,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetDbUserPasswordRequest 请求对象
+     * @param request ResetDbUserPasswordRequest 请求对象
      * @return AsyncInvoker<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse>
      */
     public AsyncInvoker<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse> resetDbUserPasswordAsyncInvoker(
         ResetDbUserPasswordRequest request) {
-        return new AsyncInvoker<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse>(request,
-            GaussDBforNoSQLMeta.resetDbUserPassword, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.resetDbUserPassword, hcClient);
     }
 
     /**
@@ -2027,7 +1969,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetParamGroupTemplateRequest 请求对象
+     * @param request ResetParamGroupTemplateRequest 请求对象
      * @return CompletableFuture<ResetParamGroupTemplateResponse>
      */
     public CompletableFuture<ResetParamGroupTemplateResponse> resetParamGroupTemplateAsync(
@@ -2042,13 +1984,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetParamGroupTemplateRequest 请求对象
+     * @param request ResetParamGroupTemplateRequest 请求对象
      * @return AsyncInvoker<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse>
      */
     public AsyncInvoker<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse> resetParamGroupTemplateAsyncInvoker(
         ResetParamGroupTemplateRequest request) {
-        return new AsyncInvoker<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse>(request,
-            GaussDBforNoSQLMeta.resetParamGroupTemplate, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.resetParamGroupTemplate, hcClient);
     }
 
     /**
@@ -2058,7 +1999,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return CompletableFuture<ResetPasswordResponse>
      */
     public CompletableFuture<ResetPasswordResponse> resetPasswordAsync(ResetPasswordRequest request) {
@@ -2072,13 +2013,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
     public AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordAsyncInvoker(
         ResetPasswordRequest request) {
-        return new AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, GaussDBforNoSQLMeta.resetPassword,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.resetPassword, hcClient);
     }
 
     /**
@@ -2088,7 +2028,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeColdVolumeRequest 请求对象
+     * @param request ResizeColdVolumeRequest 请求对象
      * @return CompletableFuture<ResizeColdVolumeResponse>
      */
     public CompletableFuture<ResizeColdVolumeResponse> resizeColdVolumeAsync(ResizeColdVolumeRequest request) {
@@ -2102,13 +2042,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeColdVolumeRequest 请求对象
+     * @param request ResizeColdVolumeRequest 请求对象
      * @return AsyncInvoker<ResizeColdVolumeRequest, ResizeColdVolumeResponse>
      */
     public AsyncInvoker<ResizeColdVolumeRequest, ResizeColdVolumeResponse> resizeColdVolumeAsyncInvoker(
         ResizeColdVolumeRequest request) {
-        return new AsyncInvoker<ResizeColdVolumeRequest, ResizeColdVolumeResponse>(request,
-            GaussDBforNoSQLMeta.resizeColdVolume, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.resizeColdVolume, hcClient);
     }
 
     /**
@@ -2118,7 +2057,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return CompletableFuture<ResizeInstanceResponse>
      */
     public CompletableFuture<ResizeInstanceResponse> resizeInstanceAsync(ResizeInstanceRequest request) {
@@ -2132,13 +2071,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
      */
     public AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceAsyncInvoker(
         ResizeInstanceRequest request) {
-        return new AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request,
-            GaussDBforNoSQLMeta.resizeInstance, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.resizeInstance, hcClient);
     }
 
     /**
@@ -2148,7 +2086,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceVolumeRequest 请求对象
+     * @param request ResizeInstanceVolumeRequest 请求对象
      * @return CompletableFuture<ResizeInstanceVolumeResponse>
      */
     public CompletableFuture<ResizeInstanceVolumeResponse> resizeInstanceVolumeAsync(
@@ -2163,13 +2101,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceVolumeRequest 请求对象
+     * @param request ResizeInstanceVolumeRequest 请求对象
      * @return AsyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse>
      */
     public AsyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> resizeInstanceVolumeAsyncInvoker(
         ResizeInstanceVolumeRequest request) {
-        return new AsyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse>(request,
-            GaussDBforNoSQLMeta.resizeInstanceVolume, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.resizeInstanceVolume, hcClient);
     }
 
     /**
@@ -2179,7 +2116,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartInstanceRequest 请求对象
+     * @param request RestartInstanceRequest 请求对象
      * @return CompletableFuture<RestartInstanceResponse>
      */
     public CompletableFuture<RestartInstanceResponse> restartInstanceAsync(RestartInstanceRequest request) {
@@ -2193,13 +2130,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartInstanceRequest 请求对象
+     * @param request RestartInstanceRequest 请求对象
      * @return AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
      */
     public AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceAsyncInvoker(
         RestartInstanceRequest request) {
-        return new AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse>(request,
-            GaussDBforNoSQLMeta.restartInstance, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.restartInstance, hcClient);
     }
 
     /**
@@ -2209,7 +2145,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreExistingInstanceRequest 请求对象
+     * @param request RestoreExistingInstanceRequest 请求对象
      * @return CompletableFuture<RestoreExistingInstanceResponse>
      */
     public CompletableFuture<RestoreExistingInstanceResponse> restoreExistingInstanceAsync(
@@ -2224,13 +2160,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreExistingInstanceRequest 请求对象
+     * @param request RestoreExistingInstanceRequest 请求对象
      * @return AsyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse>
      */
     public AsyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> restoreExistingInstanceAsyncInvoker(
         RestoreExistingInstanceRequest request) {
-        return new AsyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse>(request,
-            GaussDBforNoSQLMeta.restoreExistingInstance, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.restoreExistingInstance, hcClient);
     }
 
     /**
@@ -2242,7 +2177,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveLtsConfigsRequest 请求对象
+     * @param request SaveLtsConfigsRequest 请求对象
      * @return CompletableFuture<SaveLtsConfigsResponse>
      */
     public CompletableFuture<SaveLtsConfigsResponse> saveLtsConfigsAsync(SaveLtsConfigsRequest request) {
@@ -2258,13 +2193,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveLtsConfigsRequest 请求对象
+     * @param request SaveLtsConfigsRequest 请求对象
      * @return AsyncInvoker<SaveLtsConfigsRequest, SaveLtsConfigsResponse>
      */
     public AsyncInvoker<SaveLtsConfigsRequest, SaveLtsConfigsResponse> saveLtsConfigsAsyncInvoker(
         SaveLtsConfigsRequest request) {
-        return new AsyncInvoker<SaveLtsConfigsRequest, SaveLtsConfigsResponse>(request,
-            GaussDBforNoSQLMeta.saveLtsConfigs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.saveLtsConfigs, hcClient);
     }
 
     /**
@@ -2274,7 +2208,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetAutoEnlargePolicyRequest 请求对象
+     * @param request SetAutoEnlargePolicyRequest 请求对象
      * @return CompletableFuture<SetAutoEnlargePolicyResponse>
      */
     public CompletableFuture<SetAutoEnlargePolicyResponse> setAutoEnlargePolicyAsync(
@@ -2289,13 +2223,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetAutoEnlargePolicyRequest 请求对象
+     * @param request SetAutoEnlargePolicyRequest 请求对象
      * @return AsyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse>
      */
     public AsyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> setAutoEnlargePolicyAsyncInvoker(
         SetAutoEnlargePolicyRequest request) {
-        return new AsyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse>(request,
-            GaussDBforNoSQLMeta.setAutoEnlargePolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.setAutoEnlargePolicy, hcClient);
     }
 
     /**
@@ -2305,7 +2238,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetBackupPolicyRequest 请求对象
+     * @param request SetBackupPolicyRequest 请求对象
      * @return CompletableFuture<SetBackupPolicyResponse>
      */
     public CompletableFuture<SetBackupPolicyResponse> setBackupPolicyAsync(SetBackupPolicyRequest request) {
@@ -2319,13 +2252,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetBackupPolicyRequest 请求对象
+     * @param request SetBackupPolicyRequest 请求对象
      * @return AsyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>
      */
     public AsyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyAsyncInvoker(
         SetBackupPolicyRequest request) {
-        return new AsyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request,
-            GaussDBforNoSQLMeta.setBackupPolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.setBackupPolicy, hcClient);
     }
 
     /**
@@ -2335,7 +2267,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRecyclePolicyRequest 请求对象
+     * @param request SetRecyclePolicyRequest 请求对象
      * @return CompletableFuture<SetRecyclePolicyResponse>
      */
     public CompletableFuture<SetRecyclePolicyResponse> setRecyclePolicyAsync(SetRecyclePolicyRequest request) {
@@ -2349,13 +2281,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRecyclePolicyRequest 请求对象
+     * @param request SetRecyclePolicyRequest 请求对象
      * @return AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>
      */
     public AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicyAsyncInvoker(
         SetRecyclePolicyRequest request) {
-        return new AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>(request,
-            GaussDBforNoSQLMeta.setRecyclePolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.setRecyclePolicy, hcClient);
     }
 
     /**
@@ -2365,7 +2296,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllInstancesBackupsRequest 请求对象
+     * @param request ShowAllInstancesBackupsRequest 请求对象
      * @return CompletableFuture<ShowAllInstancesBackupsResponse>
      */
     public CompletableFuture<ShowAllInstancesBackupsResponse> showAllInstancesBackupsAsync(
@@ -2380,13 +2311,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllInstancesBackupsRequest 请求对象
+     * @param request ShowAllInstancesBackupsRequest 请求对象
      * @return AsyncInvoker<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse>
      */
     public AsyncInvoker<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse> showAllInstancesBackupsAsyncInvoker(
         ShowAllInstancesBackupsRequest request) {
-        return new AsyncInvoker<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse>(request,
-            GaussDBforNoSQLMeta.showAllInstancesBackups, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showAllInstancesBackups, hcClient);
     }
 
     /**
@@ -2396,7 +2326,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllInstancesBackupsNewRequest 请求对象
+     * @param request ShowAllInstancesBackupsNewRequest 请求对象
      * @return CompletableFuture<ShowAllInstancesBackupsNewResponse>
      */
     public CompletableFuture<ShowAllInstancesBackupsNewResponse> showAllInstancesBackupsNewAsync(
@@ -2411,13 +2341,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllInstancesBackupsNewRequest 请求对象
+     * @param request ShowAllInstancesBackupsNewRequest 请求对象
      * @return AsyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse>
      */
     public AsyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse> showAllInstancesBackupsNewAsyncInvoker(
         ShowAllInstancesBackupsNewRequest request) {
-        return new AsyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse>(request,
-            GaussDBforNoSQLMeta.showAllInstancesBackupsNew, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showAllInstancesBackupsNew, hcClient);
     }
 
     /**
@@ -2427,7 +2356,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicableInstancesRequest 请求对象
+     * @param request ShowApplicableInstancesRequest 请求对象
      * @return CompletableFuture<ShowApplicableInstancesResponse>
      */
     public CompletableFuture<ShowApplicableInstancesResponse> showApplicableInstancesAsync(
@@ -2442,13 +2371,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicableInstancesRequest 请求对象
+     * @param request ShowApplicableInstancesRequest 请求对象
      * @return AsyncInvoker<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse>
      */
     public AsyncInvoker<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse> showApplicableInstancesAsyncInvoker(
         ShowApplicableInstancesRequest request) {
-        return new AsyncInvoker<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse>(request,
-            GaussDBforNoSQLMeta.showApplicableInstances, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showApplicableInstances, hcClient);
     }
 
     /**
@@ -2457,7 +2385,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplyHistoryRequest 请求对象
+     * @param request ShowApplyHistoryRequest 请求对象
      * @return CompletableFuture<ShowApplyHistoryResponse>
      */
     public CompletableFuture<ShowApplyHistoryResponse> showApplyHistoryAsync(ShowApplyHistoryRequest request) {
@@ -2470,13 +2398,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplyHistoryRequest 请求对象
+     * @param request ShowApplyHistoryRequest 请求对象
      * @return AsyncInvoker<ShowApplyHistoryRequest, ShowApplyHistoryResponse>
      */
     public AsyncInvoker<ShowApplyHistoryRequest, ShowApplyHistoryResponse> showApplyHistoryAsyncInvoker(
         ShowApplyHistoryRequest request) {
-        return new AsyncInvoker<ShowApplyHistoryRequest, ShowApplyHistoryResponse>(request,
-            GaussDBforNoSQLMeta.showApplyHistory, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showApplyHistory, hcClient);
     }
 
     /**
@@ -2486,7 +2413,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoEnlargePolicyRequest 请求对象
+     * @param request ShowAutoEnlargePolicyRequest 请求对象
      * @return CompletableFuture<ShowAutoEnlargePolicyResponse>
      */
     public CompletableFuture<ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyAsync(
@@ -2501,13 +2428,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoEnlargePolicyRequest 请求对象
+     * @param request ShowAutoEnlargePolicyRequest 请求对象
      * @return AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse>
      */
     public AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyAsyncInvoker(
         ShowAutoEnlargePolicyRequest request) {
-        return new AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse>(request,
-            GaussDBforNoSQLMeta.showAutoEnlargePolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showAutoEnlargePolicy, hcClient);
     }
 
     /**
@@ -2517,7 +2443,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupPolicyRequest 请求对象
+     * @param request ShowBackupPolicyRequest 请求对象
      * @return CompletableFuture<ShowBackupPolicyResponse>
      */
     public CompletableFuture<ShowBackupPolicyResponse> showBackupPolicyAsync(ShowBackupPolicyRequest request) {
@@ -2531,13 +2457,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupPolicyRequest 请求对象
+     * @param request ShowBackupPolicyRequest 请求对象
      * @return AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>
      */
     public AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyAsyncInvoker(
         ShowBackupPolicyRequest request) {
-        return new AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request,
-            GaussDBforNoSQLMeta.showBackupPolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showBackupPolicy, hcClient);
     }
 
     /**
@@ -2547,7 +2472,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigurationDetailRequest 请求对象
+     * @param request ShowConfigurationDetailRequest 请求对象
      * @return CompletableFuture<ShowConfigurationDetailResponse>
      */
     public CompletableFuture<ShowConfigurationDetailResponse> showConfigurationDetailAsync(
@@ -2562,13 +2487,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigurationDetailRequest 请求对象
+     * @param request ShowConfigurationDetailRequest 请求对象
      * @return AsyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse>
      */
     public AsyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> showConfigurationDetailAsyncInvoker(
         ShowConfigurationDetailRequest request) {
-        return new AsyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse>(request,
-            GaussDBforNoSQLMeta.showConfigurationDetail, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showConfigurationDetail, hcClient);
     }
 
     /**
@@ -2578,7 +2502,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowElbIpGroupRequest 请求对象
+     * @param request ShowElbIpGroupRequest 请求对象
      * @return CompletableFuture<ShowElbIpGroupResponse>
      */
     public CompletableFuture<ShowElbIpGroupResponse> showElbIpGroupAsync(ShowElbIpGroupRequest request) {
@@ -2592,13 +2516,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowElbIpGroupRequest 请求对象
+     * @param request ShowElbIpGroupRequest 请求对象
      * @return AsyncInvoker<ShowElbIpGroupRequest, ShowElbIpGroupResponse>
      */
     public AsyncInvoker<ShowElbIpGroupRequest, ShowElbIpGroupResponse> showElbIpGroupAsyncInvoker(
         ShowElbIpGroupRequest request) {
-        return new AsyncInvoker<ShowElbIpGroupRequest, ShowElbIpGroupResponse>(request,
-            GaussDBforNoSQLMeta.showElbIpGroup, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showElbIpGroup, hcClient);
     }
 
     /**
@@ -2608,7 +2531,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowErrorLogRequest 请求对象
+     * @param request ShowErrorLogRequest 请求对象
      * @return CompletableFuture<ShowErrorLogResponse>
      */
     public CompletableFuture<ShowErrorLogResponse> showErrorLogAsync(ShowErrorLogRequest request) {
@@ -2622,13 +2545,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowErrorLogRequest 请求对象
+     * @param request ShowErrorLogRequest 请求对象
      * @return AsyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse>
      */
     public AsyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse> showErrorLogAsyncInvoker(
         ShowErrorLogRequest request) {
-        return new AsyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse>(request, GaussDBforNoSQLMeta.showErrorLog,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showErrorLog, hcClient);
     }
 
     /**
@@ -2638,7 +2560,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHighRiskCommandsRequest 请求对象
+     * @param request ShowHighRiskCommandsRequest 请求对象
      * @return CompletableFuture<ShowHighRiskCommandsResponse>
      */
     public CompletableFuture<ShowHighRiskCommandsResponse> showHighRiskCommandsAsync(
@@ -2653,13 +2575,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHighRiskCommandsRequest 请求对象
+     * @param request ShowHighRiskCommandsRequest 请求对象
      * @return AsyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse>
      */
     public AsyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> showHighRiskCommandsAsyncInvoker(
         ShowHighRiskCommandsRequest request) {
-        return new AsyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse>(request,
-            GaussDBforNoSQLMeta.showHighRiskCommands, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showHighRiskCommands, hcClient);
     }
 
     /**
@@ -2669,7 +2590,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceBiactiveRegionsRequest 请求对象
+     * @param request ShowInstanceBiactiveRegionsRequest 请求对象
      * @return CompletableFuture<ShowInstanceBiactiveRegionsResponse>
      */
     public CompletableFuture<ShowInstanceBiactiveRegionsResponse> showInstanceBiactiveRegionsAsync(
@@ -2684,13 +2605,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceBiactiveRegionsRequest 请求对象
+     * @param request ShowInstanceBiactiveRegionsRequest 请求对象
      * @return AsyncInvoker<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse>
      */
     public AsyncInvoker<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse> showInstanceBiactiveRegionsAsyncInvoker(
         ShowInstanceBiactiveRegionsRequest request) {
-        return new AsyncInvoker<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse>(request,
-            GaussDBforNoSQLMeta.showInstanceBiactiveRegions, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showInstanceBiactiveRegions, hcClient);
     }
 
     /**
@@ -2700,7 +2620,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceConfigurationRequest 请求对象
+     * @param request ShowInstanceConfigurationRequest 请求对象
      * @return CompletableFuture<ShowInstanceConfigurationResponse>
      */
     public CompletableFuture<ShowInstanceConfigurationResponse> showInstanceConfigurationAsync(
@@ -2715,13 +2635,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceConfigurationRequest 请求对象
+     * @param request ShowInstanceConfigurationRequest 请求对象
      * @return AsyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
      */
     public AsyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationAsyncInvoker(
         ShowInstanceConfigurationRequest request) {
-        return new AsyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.showInstanceConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showInstanceConfiguration, hcClient);
     }
 
     /**
@@ -2731,7 +2650,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRoleRequest 请求对象
+     * @param request ShowInstanceRoleRequest 请求对象
      * @return CompletableFuture<ShowInstanceRoleResponse>
      */
     public CompletableFuture<ShowInstanceRoleResponse> showInstanceRoleAsync(ShowInstanceRoleRequest request) {
@@ -2745,13 +2664,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRoleRequest 请求对象
+     * @param request ShowInstanceRoleRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRoleRequest, ShowInstanceRoleResponse>
      */
     public AsyncInvoker<ShowInstanceRoleRequest, ShowInstanceRoleResponse> showInstanceRoleAsyncInvoker(
         ShowInstanceRoleRequest request) {
-        return new AsyncInvoker<ShowInstanceRoleRequest, ShowInstanceRoleResponse>(request,
-            GaussDBforNoSQLMeta.showInstanceRole, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showInstanceRole, hcClient);
     }
 
     /**
@@ -2761,7 +2679,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpNumRequirementRequest 请求对象
+     * @param request ShowIpNumRequirementRequest 请求对象
      * @return CompletableFuture<ShowIpNumRequirementResponse>
      */
     public CompletableFuture<ShowIpNumRequirementResponse> showIpNumRequirementAsync(
@@ -2776,13 +2694,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpNumRequirementRequest 请求对象
+     * @param request ShowIpNumRequirementRequest 请求对象
      * @return AsyncInvoker<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse>
      */
     public AsyncInvoker<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse> showIpNumRequirementAsyncInvoker(
         ShowIpNumRequirementRequest request) {
-        return new AsyncInvoker<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse>(request,
-            GaussDBforNoSQLMeta.showIpNumRequirement, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showIpNumRequirement, hcClient);
     }
 
     /**
@@ -2792,7 +2709,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowModifyHistoryRequest 请求对象
+     * @param request ShowModifyHistoryRequest 请求对象
      * @return CompletableFuture<ShowModifyHistoryResponse>
      */
     public CompletableFuture<ShowModifyHistoryResponse> showModifyHistoryAsync(ShowModifyHistoryRequest request) {
@@ -2806,13 +2723,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowModifyHistoryRequest 请求对象
+     * @param request ShowModifyHistoryRequest 请求对象
      * @return AsyncInvoker<ShowModifyHistoryRequest, ShowModifyHistoryResponse>
      */
     public AsyncInvoker<ShowModifyHistoryRequest, ShowModifyHistoryResponse> showModifyHistoryAsyncInvoker(
         ShowModifyHistoryRequest request) {
-        return new AsyncInvoker<ShowModifyHistoryRequest, ShowModifyHistoryResponse>(request,
-            GaussDBforNoSQLMeta.showModifyHistory, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showModifyHistory, hcClient);
     }
 
     /**
@@ -2822,7 +2738,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPauseResumeStutusRequest 请求对象
+     * @param request ShowPauseResumeStutusRequest 请求对象
      * @return CompletableFuture<ShowPauseResumeStutusResponse>
      */
     public CompletableFuture<ShowPauseResumeStutusResponse> showPauseResumeStutusAsync(
@@ -2837,13 +2753,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPauseResumeStutusRequest 请求对象
+     * @param request ShowPauseResumeStutusRequest 请求对象
      * @return AsyncInvoker<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse>
      */
     public AsyncInvoker<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> showPauseResumeStutusAsyncInvoker(
         ShowPauseResumeStutusRequest request) {
-        return new AsyncInvoker<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse>(request,
-            GaussDBforNoSQLMeta.showPauseResumeStutus, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showPauseResumeStutus, hcClient);
     }
 
     /**
@@ -2853,7 +2768,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return CompletableFuture<ShowQuotasResponse>
      */
     public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
@@ -2867,12 +2782,11 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
      */
     public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
-        return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, GaussDBforNoSQLMeta.showQuotas,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showQuotas, hcClient);
     }
 
     /**
@@ -2882,7 +2796,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecyclePolicyRequest 请求对象
+     * @param request ShowRecyclePolicyRequest 请求对象
      * @return CompletableFuture<ShowRecyclePolicyResponse>
      */
     public CompletableFuture<ShowRecyclePolicyResponse> showRecyclePolicyAsync(ShowRecyclePolicyRequest request) {
@@ -2896,13 +2810,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecyclePolicyRequest 请求对象
+     * @param request ShowRecyclePolicyRequest 请求对象
      * @return AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>
      */
     public AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyAsyncInvoker(
         ShowRecyclePolicyRequest request) {
-        return new AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>(request,
-            GaussDBforNoSQLMeta.showRecyclePolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showRecyclePolicy, hcClient);
     }
 
     /**
@@ -2912,7 +2825,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestorableListRequest 请求对象
+     * @param request ShowRestorableListRequest 请求对象
      * @return CompletableFuture<ShowRestorableListResponse>
      */
     public CompletableFuture<ShowRestorableListResponse> showRestorableListAsync(ShowRestorableListRequest request) {
@@ -2926,13 +2839,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestorableListRequest 请求对象
+     * @param request ShowRestorableListRequest 请求对象
      * @return AsyncInvoker<ShowRestorableListRequest, ShowRestorableListResponse>
      */
     public AsyncInvoker<ShowRestorableListRequest, ShowRestorableListResponse> showRestorableListAsyncInvoker(
         ShowRestorableListRequest request) {
-        return new AsyncInvoker<ShowRestorableListRequest, ShowRestorableListResponse>(request,
-            GaussDBforNoSQLMeta.showRestorableList, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showRestorableList, hcClient);
     }
 
     /**
@@ -2942,7 +2854,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSlowLogDesensitizationRequest 请求对象
+     * @param request ShowSlowLogDesensitizationRequest 请求对象
      * @return CompletableFuture<ShowSlowLogDesensitizationResponse>
      */
     public CompletableFuture<ShowSlowLogDesensitizationResponse> showSlowLogDesensitizationAsync(
@@ -2957,13 +2869,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSlowLogDesensitizationRequest 请求对象
+     * @param request ShowSlowLogDesensitizationRequest 请求对象
      * @return AsyncInvoker<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse>
      */
     public AsyncInvoker<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> showSlowLogDesensitizationAsyncInvoker(
         ShowSlowLogDesensitizationRequest request) {
-        return new AsyncInvoker<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse>(request,
-            GaussDBforNoSQLMeta.showSlowLogDesensitization, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showSlowLogDesensitization, hcClient);
     }
 
     /**
@@ -2973,7 +2884,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShrinkInstanceNodeRequest 请求对象
+     * @param request ShrinkInstanceNodeRequest 请求对象
      * @return CompletableFuture<ShrinkInstanceNodeResponse>
      */
     public CompletableFuture<ShrinkInstanceNodeResponse> shrinkInstanceNodeAsync(ShrinkInstanceNodeRequest request) {
@@ -2987,13 +2898,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShrinkInstanceNodeRequest 请求对象
+     * @param request ShrinkInstanceNodeRequest 请求对象
      * @return AsyncInvoker<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse>
      */
     public AsyncInvoker<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse> shrinkInstanceNodeAsyncInvoker(
         ShrinkInstanceNodeRequest request) {
-        return new AsyncInvoker<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse>(request,
-            GaussDBforNoSQLMeta.shrinkInstanceNode, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.shrinkInstanceNode, hcClient);
     }
 
     /**
@@ -3003,7 +2913,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchIpGroupRequest 请求对象
+     * @param request SwitchIpGroupRequest 请求对象
      * @return CompletableFuture<SwitchIpGroupResponse>
      */
     public CompletableFuture<SwitchIpGroupResponse> switchIpGroupAsync(SwitchIpGroupRequest request) {
@@ -3017,13 +2927,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchIpGroupRequest 请求对象
+     * @param request SwitchIpGroupRequest 请求对象
      * @return AsyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse>
      */
     public AsyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse> switchIpGroupAsyncInvoker(
         SwitchIpGroupRequest request) {
-        return new AsyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse>(request, GaussDBforNoSQLMeta.switchIpGroup,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.switchIpGroup, hcClient);
     }
 
     /**
@@ -3033,7 +2942,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchSlowlogDesensitizationRequest 请求对象
+     * @param request SwitchSlowlogDesensitizationRequest 请求对象
      * @return CompletableFuture<SwitchSlowlogDesensitizationResponse>
      */
     public CompletableFuture<SwitchSlowlogDesensitizationResponse> switchSlowlogDesensitizationAsync(
@@ -3048,13 +2957,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchSlowlogDesensitizationRequest 请求对象
+     * @param request SwitchSlowlogDesensitizationRequest 请求对象
      * @return AsyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse>
      */
     public AsyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> switchSlowlogDesensitizationAsyncInvoker(
         SwitchSlowlogDesensitizationRequest request) {
-        return new AsyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse>(request,
-            GaussDBforNoSQLMeta.switchSlowlogDesensitization, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.switchSlowlogDesensitization, hcClient);
     }
 
     /**
@@ -3064,7 +2972,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchSslRequest 请求对象
+     * @param request SwitchSslRequest 请求对象
      * @return CompletableFuture<SwitchSslResponse>
      */
     public CompletableFuture<SwitchSslResponse> switchSslAsync(SwitchSslRequest request) {
@@ -3078,11 +2986,11 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchSslRequest 请求对象
+     * @param request SwitchSslRequest 请求对象
      * @return AsyncInvoker<SwitchSslRequest, SwitchSslResponse>
      */
     public AsyncInvoker<SwitchSslRequest, SwitchSslResponse> switchSslAsyncInvoker(SwitchSslRequest request) {
-        return new AsyncInvoker<SwitchSslRequest, SwitchSslResponse>(request, GaussDBforNoSQLMeta.switchSsl, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.switchSsl, hcClient);
     }
 
     /**
@@ -3092,7 +3000,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchToMasterRequest 请求对象
+     * @param request SwitchToMasterRequest 请求对象
      * @return CompletableFuture<SwitchToMasterResponse>
      */
     public CompletableFuture<SwitchToMasterResponse> switchToMasterAsync(SwitchToMasterRequest request) {
@@ -3106,13 +3014,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchToMasterRequest 请求对象
+     * @param request SwitchToMasterRequest 请求对象
      * @return AsyncInvoker<SwitchToMasterRequest, SwitchToMasterResponse>
      */
     public AsyncInvoker<SwitchToMasterRequest, SwitchToMasterResponse> switchToMasterAsyncInvoker(
         SwitchToMasterRequest request) {
-        return new AsyncInvoker<SwitchToMasterRequest, SwitchToMasterResponse>(request,
-            GaussDBforNoSQLMeta.switchToMaster, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.switchToMaster, hcClient);
     }
 
     /**
@@ -3122,7 +3029,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchToSlaveRequest 请求对象
+     * @param request SwitchToSlaveRequest 请求对象
      * @return CompletableFuture<SwitchToSlaveResponse>
      */
     public CompletableFuture<SwitchToSlaveResponse> switchToSlaveAsync(SwitchToSlaveRequest request) {
@@ -3136,13 +3043,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchToSlaveRequest 请求对象
+     * @param request SwitchToSlaveRequest 请求对象
      * @return AsyncInvoker<SwitchToSlaveRequest, SwitchToSlaveResponse>
      */
     public AsyncInvoker<SwitchToSlaveRequest, SwitchToSlaveResponse> switchToSlaveAsyncInvoker(
         SwitchToSlaveRequest request) {
-        return new AsyncInvoker<SwitchToSlaveRequest, SwitchToSlaveResponse>(request, GaussDBforNoSQLMeta.switchToSlave,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.switchToSlave, hcClient);
     }
 
     /**
@@ -3152,7 +3058,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClientNetworkRequest 请求对象
+     * @param request UpdateClientNetworkRequest 请求对象
      * @return CompletableFuture<UpdateClientNetworkResponse>
      */
     public CompletableFuture<UpdateClientNetworkResponse> updateClientNetworkAsync(UpdateClientNetworkRequest request) {
@@ -3166,13 +3072,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClientNetworkRequest 请求对象
+     * @param request UpdateClientNetworkRequest 请求对象
      * @return AsyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>
      */
     public AsyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse> updateClientNetworkAsyncInvoker(
         UpdateClientNetworkRequest request) {
-        return new AsyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>(request,
-            GaussDBforNoSQLMeta.updateClientNetwork, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateClientNetwork, hcClient);
     }
 
     /**
@@ -3182,7 +3087,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigurationRequest 请求对象
+     * @param request UpdateConfigurationRequest 请求对象
      * @return CompletableFuture<UpdateConfigurationResponse>
      */
     public CompletableFuture<UpdateConfigurationResponse> updateConfigurationAsync(UpdateConfigurationRequest request) {
@@ -3196,13 +3101,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigurationRequest 请求对象
+     * @param request UpdateConfigurationRequest 请求对象
      * @return AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>
      */
     public AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfigurationAsyncInvoker(
         UpdateConfigurationRequest request) {
-        return new AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.updateConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateConfiguration, hcClient);
     }
 
     /**
@@ -3212,7 +3116,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHighRiskCommandsRequest 请求对象
+     * @param request UpdateHighRiskCommandsRequest 请求对象
      * @return CompletableFuture<UpdateHighRiskCommandsResponse>
      */
     public CompletableFuture<UpdateHighRiskCommandsResponse> updateHighRiskCommandsAsync(
@@ -3227,13 +3131,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHighRiskCommandsRequest 请求对象
+     * @param request UpdateHighRiskCommandsRequest 请求对象
      * @return AsyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse>
      */
     public AsyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> updateHighRiskCommandsAsyncInvoker(
         UpdateHighRiskCommandsRequest request) {
-        return new AsyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse>(request,
-            GaussDBforNoSQLMeta.updateHighRiskCommands, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateHighRiskCommands, hcClient);
     }
 
     /**
@@ -3243,7 +3146,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConfigurationRequest 请求对象
+     * @param request UpdateInstanceConfigurationRequest 请求对象
      * @return CompletableFuture<UpdateInstanceConfigurationResponse>
      */
     public CompletableFuture<UpdateInstanceConfigurationResponse> updateInstanceConfigurationAsync(
@@ -3258,13 +3161,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConfigurationRequest 请求对象
+     * @param request UpdateInstanceConfigurationRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
      */
     public AsyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfigurationAsyncInvoker(
         UpdateInstanceConfigurationRequest request) {
-        return new AsyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.updateInstanceConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateInstanceConfiguration, hcClient);
     }
 
     /**
@@ -3274,7 +3176,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceNameRequest 请求对象
+     * @param request UpdateInstanceNameRequest 请求对象
      * @return CompletableFuture<UpdateInstanceNameResponse>
      */
     public CompletableFuture<UpdateInstanceNameResponse> updateInstanceNameAsync(UpdateInstanceNameRequest request) {
@@ -3288,13 +3190,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceNameRequest 请求对象
+     * @param request UpdateInstanceNameRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>
      */
     public AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceNameAsyncInvoker(
         UpdateInstanceNameRequest request) {
-        return new AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>(request,
-            GaussDBforNoSQLMeta.updateInstanceName, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateInstanceName, hcClient);
     }
 
     /**
@@ -3304,7 +3205,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecurityGroupRequest 请求对象
+     * @param request UpdateSecurityGroupRequest 请求对象
      * @return CompletableFuture<UpdateSecurityGroupResponse>
      */
     public CompletableFuture<UpdateSecurityGroupResponse> updateSecurityGroupAsync(UpdateSecurityGroupRequest request) {
@@ -3318,13 +3219,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecurityGroupRequest 请求对象
+     * @param request UpdateSecurityGroupRequest 请求对象
      * @return AsyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>
      */
     public AsyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroupAsyncInvoker(
         UpdateSecurityGroupRequest request) {
-        return new AsyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>(request,
-            GaussDBforNoSQLMeta.updateSecurityGroup, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateSecurityGroup, hcClient);
     }
 
     /**
@@ -3334,7 +3234,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeDbVersionRequest 请求对象
+     * @param request UpgradeDbVersionRequest 请求对象
      * @return CompletableFuture<UpgradeDbVersionResponse>
      */
     public CompletableFuture<UpgradeDbVersionResponse> upgradeDbVersionAsync(UpgradeDbVersionRequest request) {
@@ -3348,13 +3248,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeDbVersionRequest 请求对象
+     * @param request UpgradeDbVersionRequest 请求对象
      * @return AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>
      */
     public AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse> upgradeDbVersionAsyncInvoker(
         UpgradeDbVersionRequest request) {
-        return new AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>(request,
-            GaussDBforNoSQLMeta.upgradeDbVersion, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.upgradeDbVersion, hcClient);
     }
 
     /**
@@ -3364,7 +3263,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionRequest 请求对象
+     * @param request ListApiVersionRequest 请求对象
      * @return CompletableFuture<ListApiVersionResponse>
      */
     public CompletableFuture<ListApiVersionResponse> listApiVersionAsync(ListApiVersionRequest request) {
@@ -3378,13 +3277,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionRequest 请求对象
+     * @param request ListApiVersionRequest 请求对象
      * @return AsyncInvoker<ListApiVersionRequest, ListApiVersionResponse>
      */
     public AsyncInvoker<ListApiVersionRequest, ListApiVersionResponse> listApiVersionAsyncInvoker(
         ListApiVersionRequest request) {
-        return new AsyncInvoker<ListApiVersionRequest, ListApiVersionResponse>(request,
-            GaussDBforNoSQLMeta.listApiVersion, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listApiVersion, hcClient);
     }
 
     /**
@@ -3394,7 +3292,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return CompletableFuture<ShowApiVersionResponse>
      */
     public CompletableFuture<ShowApiVersionResponse> showApiVersionAsync(ShowApiVersionRequest request) {
@@ -3408,13 +3306,12 @@ public class GaussDBforNoSQLAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
      */
     public AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionAsyncInvoker(
         ShowApiVersionRequest request) {
-        return new AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request,
-            GaussDBforNoSQLMeta.showApiVersion, hcClient);
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showApiVersion, hcClient);
     }
 
 }

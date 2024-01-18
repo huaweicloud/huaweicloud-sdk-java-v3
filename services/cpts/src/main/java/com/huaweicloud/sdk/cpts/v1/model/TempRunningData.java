@@ -70,7 +70,7 @@ public class TempRunningData {
     }
 
     /**
-     * content_method_url
+     * 请求信息，包括请求名称，方法，url信息
      * @return contentMethodUrl
      */
     public List<String> getContentMethodUrl() {
@@ -87,7 +87,7 @@ public class TempRunningData {
     }
 
     /**
-     * crawler_status
+     * 请求运行状态（0：正常返回；1：解析失败； 2：比对失败； 3：响应超时；）
      * @return crawlerStatus
      */
     public Integer getCrawlerStatus() {
@@ -104,7 +104,7 @@ public class TempRunningData {
     }
 
     /**
-     * related_temp_running_id
+     * 运行用例id。对应其他（如报告）接口的运行用例id（case_run_id）。
      * @return relatedTempRunningId
      */
     public Integer getRelatedTempRunningId() {
@@ -121,7 +121,7 @@ public class TempRunningData {
     }
 
     /**
-     * task_run_info_id
+     * 运行任务id，即报告id。启动任务（更新任务状态或批量启停任务）接口，会返回运行任务id。
      * @return taskRunInfoId
      */
     public Integer getTaskRunInfoId() {
@@ -138,7 +138,7 @@ public class TempRunningData {
     }
 
     /**
-     * temp_id
+     * 用例或者事务id
      * @return tempId
      */
     public Integer getTempId() {
@@ -155,7 +155,7 @@ public class TempRunningData {
     }
 
     /**
-     * temp_name
+     * 用例或者事务名称
      * @return tempName
      */
     public String getTempName() {
@@ -172,7 +172,7 @@ public class TempRunningData {
     }
 
     /**
-     * temp_running_status
+     * 运行状态（9：表示等待运行；0：表示运行中；2：表示结束；3：异常中止；4：用户主动终止（完成状态）；5：用户主动终止（终止中状态））
      * @return tempRunningStatus
      */
     public Integer getTempRunningStatus() {

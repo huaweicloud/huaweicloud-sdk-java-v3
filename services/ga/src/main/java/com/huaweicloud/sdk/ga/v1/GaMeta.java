@@ -105,9 +105,9 @@ import com.huaweicloud.sdk.ga.v1.model.UpdateListenerResponse;
 public class GaMeta {
 
     public static final HttpRequestDef<CreateAcceleratorRequest, CreateAcceleratorResponse> createAccelerator =
-        genForcreateAccelerator();
+        genForCreateAccelerator();
 
-    private static HttpRequestDef<CreateAcceleratorRequest, CreateAcceleratorResponse> genForcreateAccelerator() {
+    private static HttpRequestDef<CreateAcceleratorRequest, CreateAcceleratorResponse> genForCreateAccelerator() {
         // basic
         HttpRequestDef.Builder<CreateAcceleratorRequest, CreateAcceleratorResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAcceleratorRequest.class, CreateAcceleratorResponse.class)
@@ -120,9 +120,7 @@ public class GaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAcceleratorRequestBody.class),
-            f -> f.withMarshaller(CreateAcceleratorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAcceleratorRequest::getBody, CreateAcceleratorRequest::setBody));
 
         // response
 
@@ -130,9 +128,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<DeleteAcceleratorRequest, DeleteAcceleratorResponse> deleteAccelerator =
-        genFordeleteAccelerator();
+        genForDeleteAccelerator();
 
-    private static HttpRequestDef<DeleteAcceleratorRequest, DeleteAcceleratorResponse> genFordeleteAccelerator() {
+    private static HttpRequestDef<DeleteAcceleratorRequest, DeleteAcceleratorResponse> genForDeleteAccelerator() {
         // basic
         HttpRequestDef.Builder<DeleteAcceleratorRequest, DeleteAcceleratorResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAcceleratorRequest.class, DeleteAcceleratorResponse.class)
@@ -145,9 +143,8 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAcceleratorRequest::getAcceleratorId, (req, v) -> {
-                req.setAcceleratorId(v);
-            }));
+            f -> f.withMarshaller(DeleteAcceleratorRequest::getAcceleratorId,
+                DeleteAcceleratorRequest::setAcceleratorId));
 
         // response
 
@@ -155,9 +152,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<ListAcceleratorsRequest, ListAcceleratorsResponse> listAccelerators =
-        genForlistAccelerators();
+        genForListAccelerators();
 
-    private static HttpRequestDef<ListAcceleratorsRequest, ListAcceleratorsResponse> genForlistAccelerators() {
+    private static HttpRequestDef<ListAcceleratorsRequest, ListAcceleratorsResponse> genForListAccelerators() {
         // basic
         HttpRequestDef.Builder<ListAcceleratorsRequest, ListAcceleratorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAcceleratorsRequest.class, ListAcceleratorsResponse.class)
@@ -170,51 +167,38 @@ public class GaMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAcceleratorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAcceleratorsRequest::getLimit, ListAcceleratorsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAcceleratorsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAcceleratorsRequest::getMarker, ListAcceleratorsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAcceleratorsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListAcceleratorsRequest::getPageReverse, ListAcceleratorsRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAcceleratorsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListAcceleratorsRequest::getId, ListAcceleratorsRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAcceleratorsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAcceleratorsRequest::getName, ListAcceleratorsRequest::setName));
         builder.<ListAcceleratorsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAcceleratorsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListAcceleratorsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAcceleratorsRequest::getStatus, ListAcceleratorsRequest::setStatus));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAcceleratorsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAcceleratorsRequest::getEnterpriseProjectId,
+                ListAcceleratorsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -222,9 +206,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<ShowAcceleratorRequest, ShowAcceleratorResponse> showAccelerator =
-        genForshowAccelerator();
+        genForShowAccelerator();
 
-    private static HttpRequestDef<ShowAcceleratorRequest, ShowAcceleratorResponse> genForshowAccelerator() {
+    private static HttpRequestDef<ShowAcceleratorRequest, ShowAcceleratorResponse> genForShowAccelerator() {
         // basic
         HttpRequestDef.Builder<ShowAcceleratorRequest, ShowAcceleratorResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAcceleratorRequest.class, ShowAcceleratorResponse.class)
@@ -237,9 +221,7 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAcceleratorRequest::getAcceleratorId, (req, v) -> {
-                req.setAcceleratorId(v);
-            }));
+            f -> f.withMarshaller(ShowAcceleratorRequest::getAcceleratorId, ShowAcceleratorRequest::setAcceleratorId));
 
         // response
 
@@ -247,9 +229,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<UpdateAcceleratorRequest, UpdateAcceleratorResponse> updateAccelerator =
-        genForupdateAccelerator();
+        genForUpdateAccelerator();
 
-    private static HttpRequestDef<UpdateAcceleratorRequest, UpdateAcceleratorResponse> genForupdateAccelerator() {
+    private static HttpRequestDef<UpdateAcceleratorRequest, UpdateAcceleratorResponse> genForUpdateAccelerator() {
         // basic
         HttpRequestDef.Builder<UpdateAcceleratorRequest, UpdateAcceleratorResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAcceleratorRequest.class, UpdateAcceleratorResponse.class)
@@ -262,16 +244,13 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAcceleratorRequest::getAcceleratorId, (req, v) -> {
-                req.setAcceleratorId(v);
-            }));
+            f -> f.withMarshaller(UpdateAcceleratorRequest::getAcceleratorId,
+                UpdateAcceleratorRequest::setAcceleratorId));
         builder.<UpdateAcceleratorRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAcceleratorRequestBody.class),
-            f -> f.withMarshaller(UpdateAcceleratorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAcceleratorRequest::getBody, UpdateAcceleratorRequest::setBody));
 
         // response
 
@@ -279,9 +258,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> createEndpoint =
-        genForcreateEndpoint();
+        genForCreateEndpoint();
 
-    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForcreateEndpoint() {
+    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForCreateEndpoint() {
         // basic
         HttpRequestDef.Builder<CreateEndpointRequest, CreateEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEndpointRequest.class, CreateEndpointResponse.class)
@@ -294,16 +273,13 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEndpointRequest::getEndpointGroupId, (req, v) -> {
-                req.setEndpointGroupId(v);
-            }));
+            f -> f.withMarshaller(CreateEndpointRequest::getEndpointGroupId,
+                CreateEndpointRequest::setEndpointGroupId));
         builder.<CreateEndpointRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEndpointRequestBody.class),
-            f -> f.withMarshaller(CreateEndpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEndpointRequest::getBody, CreateEndpointRequest::setBody));
 
         // response
 
@@ -311,9 +287,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpoint =
-        genFordeleteEndpoint();
+        genForDeleteEndpoint();
 
-    private static HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> genFordeleteEndpoint() {
+    private static HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> genForDeleteEndpoint() {
         // basic
         HttpRequestDef.Builder<DeleteEndpointRequest, DeleteEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEndpointRequest.class, DeleteEndpointResponse.class)
@@ -326,16 +302,13 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEndpointRequest::getEndpointGroupId, (req, v) -> {
-                req.setEndpointGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteEndpointRequest::getEndpointGroupId,
+                DeleteEndpointRequest::setEndpointGroupId));
         builder.<String>withRequestField("endpoint_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEndpointRequest::getEndpointId, (req, v) -> {
-                req.setEndpointId(v);
-            }));
+            f -> f.withMarshaller(DeleteEndpointRequest::getEndpointId, DeleteEndpointRequest::setEndpointId));
 
         // response
 
@@ -343,9 +316,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> listEndpoints =
-        genForlistEndpoints();
+        genForListEndpoints();
 
-    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForlistEndpoints() {
+    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForListEndpoints() {
         // basic
         HttpRequestDef.Builder<ListEndpointsRequest, ListEndpointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEndpointsRequest.class, ListEndpointsResponse.class)
@@ -358,53 +331,41 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getEndpointGroupId, (req, v) -> {
-                req.setEndpointGroupId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getEndpointGroupId, ListEndpointsRequest::setEndpointGroupId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getLimit, ListEndpointsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getMarker, ListEndpointsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getPageReverse, ListEndpointsRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getId, ListEndpointsRequest::setId));
         builder.<ListEndpointsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEndpointsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getStatus, ListEndpointsRequest::setStatus));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEndpointRequest, ShowEndpointResponse> showEndpoint = genForshowEndpoint();
+    public static final HttpRequestDef<ShowEndpointRequest, ShowEndpointResponse> showEndpoint = genForShowEndpoint();
 
-    private static HttpRequestDef<ShowEndpointRequest, ShowEndpointResponse> genForshowEndpoint() {
+    private static HttpRequestDef<ShowEndpointRequest, ShowEndpointResponse> genForShowEndpoint() {
         // basic
         HttpRequestDef.Builder<ShowEndpointRequest, ShowEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEndpointRequest.class, ShowEndpointResponse.class)
@@ -417,16 +378,12 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEndpointRequest::getEndpointGroupId, (req, v) -> {
-                req.setEndpointGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowEndpointRequest::getEndpointGroupId, ShowEndpointRequest::setEndpointGroupId));
         builder.<String>withRequestField("endpoint_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEndpointRequest::getEndpointId, (req, v) -> {
-                req.setEndpointId(v);
-            }));
+            f -> f.withMarshaller(ShowEndpointRequest::getEndpointId, ShowEndpointRequest::setEndpointId));
 
         // response
 
@@ -434,9 +391,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> updateEndpoint =
-        genForupdateEndpoint();
+        genForUpdateEndpoint();
 
-    private static HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> genForupdateEndpoint() {
+    private static HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> genForUpdateEndpoint() {
         // basic
         HttpRequestDef.Builder<UpdateEndpointRequest, UpdateEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEndpointRequest.class, UpdateEndpointResponse.class)
@@ -449,23 +406,18 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointRequest::getEndpointGroupId, (req, v) -> {
-                req.setEndpointGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointRequest::getEndpointGroupId,
+                UpdateEndpointRequest::setEndpointGroupId));
         builder.<String>withRequestField("endpoint_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointRequest::getEndpointId, (req, v) -> {
-                req.setEndpointId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointRequest::getEndpointId, UpdateEndpointRequest::setEndpointId));
         builder.<UpdateEndpointRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEndpointRequestBody.class),
-            f -> f.withMarshaller(UpdateEndpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointRequest::getBody, UpdateEndpointRequest::setBody));
 
         // response
 
@@ -473,9 +425,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<CreateEndpointGroupRequest, CreateEndpointGroupResponse> createEndpointGroup =
-        genForcreateEndpointGroup();
+        genForCreateEndpointGroup();
 
-    private static HttpRequestDef<CreateEndpointGroupRequest, CreateEndpointGroupResponse> genForcreateEndpointGroup() {
+    private static HttpRequestDef<CreateEndpointGroupRequest, CreateEndpointGroupResponse> genForCreateEndpointGroup() {
         // basic
         HttpRequestDef.Builder<CreateEndpointGroupRequest, CreateEndpointGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEndpointGroupRequest.class, CreateEndpointGroupResponse.class)
@@ -488,9 +440,7 @@ public class GaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEndpointGroupRequestBody.class),
-            f -> f.withMarshaller(CreateEndpointGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEndpointGroupRequest::getBody, CreateEndpointGroupRequest::setBody));
 
         // response
 
@@ -498,9 +448,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<DeleteEndpointGroupRequest, DeleteEndpointGroupResponse> deleteEndpointGroup =
-        genFordeleteEndpointGroup();
+        genForDeleteEndpointGroup();
 
-    private static HttpRequestDef<DeleteEndpointGroupRequest, DeleteEndpointGroupResponse> genFordeleteEndpointGroup() {
+    private static HttpRequestDef<DeleteEndpointGroupRequest, DeleteEndpointGroupResponse> genForDeleteEndpointGroup() {
         // basic
         HttpRequestDef.Builder<DeleteEndpointGroupRequest, DeleteEndpointGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEndpointGroupRequest.class, DeleteEndpointGroupResponse.class)
@@ -513,9 +463,8 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEndpointGroupRequest::getEndpointGroupId, (req, v) -> {
-                req.setEndpointGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteEndpointGroupRequest::getEndpointGroupId,
+                DeleteEndpointGroupRequest::setEndpointGroupId));
 
         // response
 
@@ -523,9 +472,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<ListEndpointGroupsRequest, ListEndpointGroupsResponse> listEndpointGroups =
-        genForlistEndpointGroups();
+        genForListEndpointGroups();
 
-    private static HttpRequestDef<ListEndpointGroupsRequest, ListEndpointGroupsResponse> genForlistEndpointGroups() {
+    private static HttpRequestDef<ListEndpointGroupsRequest, ListEndpointGroupsResponse> genForListEndpointGroups() {
         // basic
         HttpRequestDef.Builder<ListEndpointGroupsRequest, ListEndpointGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEndpointGroupsRequest.class, ListEndpointGroupsResponse.class)
@@ -538,51 +487,38 @@ public class GaMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEndpointGroupsRequest::getLimit, ListEndpointGroupsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointGroupsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListEndpointGroupsRequest::getMarker, ListEndpointGroupsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListEndpointGroupsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListEndpointGroupsRequest::getPageReverse,
+                ListEndpointGroupsRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointGroupsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointGroupsRequest::getId, ListEndpointGroupsRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointGroupsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEndpointGroupsRequest::getName, ListEndpointGroupsRequest::setName));
         builder.<ListEndpointGroupsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEndpointGroupsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListEndpointGroupsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListEndpointGroupsRequest::getStatus, ListEndpointGroupsRequest::setStatus));
         builder.<String>withRequestField("listener_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointGroupsRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointGroupsRequest::getListenerId, ListEndpointGroupsRequest::setListenerId));
 
         // response
 
@@ -590,9 +526,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<ShowEndpointGroupRequest, ShowEndpointGroupResponse> showEndpointGroup =
-        genForshowEndpointGroup();
+        genForShowEndpointGroup();
 
-    private static HttpRequestDef<ShowEndpointGroupRequest, ShowEndpointGroupResponse> genForshowEndpointGroup() {
+    private static HttpRequestDef<ShowEndpointGroupRequest, ShowEndpointGroupResponse> genForShowEndpointGroup() {
         // basic
         HttpRequestDef.Builder<ShowEndpointGroupRequest, ShowEndpointGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEndpointGroupRequest.class, ShowEndpointGroupResponse.class)
@@ -605,9 +541,8 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEndpointGroupRequest::getEndpointGroupId, (req, v) -> {
-                req.setEndpointGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowEndpointGroupRequest::getEndpointGroupId,
+                ShowEndpointGroupRequest::setEndpointGroupId));
 
         // response
 
@@ -615,9 +550,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<UpdateEndpointGroupRequest, UpdateEndpointGroupResponse> updateEndpointGroup =
-        genForupdateEndpointGroup();
+        genForUpdateEndpointGroup();
 
-    private static HttpRequestDef<UpdateEndpointGroupRequest, UpdateEndpointGroupResponse> genForupdateEndpointGroup() {
+    private static HttpRequestDef<UpdateEndpointGroupRequest, UpdateEndpointGroupResponse> genForUpdateEndpointGroup() {
         // basic
         HttpRequestDef.Builder<UpdateEndpointGroupRequest, UpdateEndpointGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEndpointGroupRequest.class, UpdateEndpointGroupResponse.class)
@@ -630,16 +565,13 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointGroupRequest::getEndpointGroupId, (req, v) -> {
-                req.setEndpointGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointGroupRequest::getEndpointGroupId,
+                UpdateEndpointGroupRequest::setEndpointGroupId));
         builder.<UpdateEndpointGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEndpointGroupRequestBody.class),
-            f -> f.withMarshaller(UpdateEndpointGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointGroupRequest::getBody, UpdateEndpointGroupRequest::setBody));
 
         // response
 
@@ -647,9 +579,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<CreateHealthCheckRequest, CreateHealthCheckResponse> createHealthCheck =
-        genForcreateHealthCheck();
+        genForCreateHealthCheck();
 
-    private static HttpRequestDef<CreateHealthCheckRequest, CreateHealthCheckResponse> genForcreateHealthCheck() {
+    private static HttpRequestDef<CreateHealthCheckRequest, CreateHealthCheckResponse> genForCreateHealthCheck() {
         // basic
         HttpRequestDef.Builder<CreateHealthCheckRequest, CreateHealthCheckResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateHealthCheckRequest.class, CreateHealthCheckResponse.class)
@@ -662,9 +594,7 @@ public class GaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateHealthCheckRequestBody.class),
-            f -> f.withMarshaller(CreateHealthCheckRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateHealthCheckRequest::getBody, CreateHealthCheckRequest::setBody));
 
         // response
 
@@ -672,9 +602,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<DeleteHealthCheckRequest, DeleteHealthCheckResponse> deleteHealthCheck =
-        genFordeleteHealthCheck();
+        genForDeleteHealthCheck();
 
-    private static HttpRequestDef<DeleteHealthCheckRequest, DeleteHealthCheckResponse> genFordeleteHealthCheck() {
+    private static HttpRequestDef<DeleteHealthCheckRequest, DeleteHealthCheckResponse> genForDeleteHealthCheck() {
         // basic
         HttpRequestDef.Builder<DeleteHealthCheckRequest, DeleteHealthCheckResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteHealthCheckRequest.class, DeleteHealthCheckResponse.class)
@@ -687,9 +617,8 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteHealthCheckRequest::getHealthCheckId, (req, v) -> {
-                req.setHealthCheckId(v);
-            }));
+            f -> f.withMarshaller(DeleteHealthCheckRequest::getHealthCheckId,
+                DeleteHealthCheckRequest::setHealthCheckId));
 
         // response
 
@@ -697,9 +626,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<ListHealthChecksRequest, ListHealthChecksResponse> listHealthChecks =
-        genForlistHealthChecks();
+        genForListHealthChecks();
 
-    private static HttpRequestDef<ListHealthChecksRequest, ListHealthChecksResponse> genForlistHealthChecks() {
+    private static HttpRequestDef<ListHealthChecksRequest, ListHealthChecksResponse> genForListHealthChecks() {
         // basic
         HttpRequestDef.Builder<ListHealthChecksRequest, ListHealthChecksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHealthChecksRequest.class, ListHealthChecksResponse.class)
@@ -712,44 +641,33 @@ public class GaMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHealthChecksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHealthChecksRequest::getLimit, ListHealthChecksRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthChecksRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListHealthChecksRequest::getMarker, ListHealthChecksRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListHealthChecksRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListHealthChecksRequest::getPageReverse, ListHealthChecksRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthChecksRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListHealthChecksRequest::getId, ListHealthChecksRequest::setId));
         builder.<ListHealthChecksRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListHealthChecksRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListHealthChecksRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListHealthChecksRequest::getStatus, ListHealthChecksRequest::setStatus));
         builder.<String>withRequestField("endpoint_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthChecksRequest::getEndpointGroupId, (req, v) -> {
-                req.setEndpointGroupId(v);
-            }));
+            f -> f.withMarshaller(ListHealthChecksRequest::getEndpointGroupId,
+                ListHealthChecksRequest::setEndpointGroupId));
 
         // response
 
@@ -757,9 +675,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<ShowHealthCheckRequest, ShowHealthCheckResponse> showHealthCheck =
-        genForshowHealthCheck();
+        genForShowHealthCheck();
 
-    private static HttpRequestDef<ShowHealthCheckRequest, ShowHealthCheckResponse> genForshowHealthCheck() {
+    private static HttpRequestDef<ShowHealthCheckRequest, ShowHealthCheckResponse> genForShowHealthCheck() {
         // basic
         HttpRequestDef.Builder<ShowHealthCheckRequest, ShowHealthCheckResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHealthCheckRequest.class, ShowHealthCheckResponse.class)
@@ -772,9 +690,7 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHealthCheckRequest::getHealthCheckId, (req, v) -> {
-                req.setHealthCheckId(v);
-            }));
+            f -> f.withMarshaller(ShowHealthCheckRequest::getHealthCheckId, ShowHealthCheckRequest::setHealthCheckId));
 
         // response
 
@@ -782,9 +698,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> updateHealthCheck =
-        genForupdateHealthCheck();
+        genForUpdateHealthCheck();
 
-    private static HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> genForupdateHealthCheck() {
+    private static HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> genForUpdateHealthCheck() {
         // basic
         HttpRequestDef.Builder<UpdateHealthCheckRequest, UpdateHealthCheckResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateHealthCheckRequest.class, UpdateHealthCheckResponse.class)
@@ -797,25 +713,22 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHealthCheckRequest::getHealthCheckId, (req, v) -> {
-                req.setHealthCheckId(v);
-            }));
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getHealthCheckId,
+                UpdateHealthCheckRequest::setHealthCheckId));
         builder.<UpdateHealthCheckRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateHealthCheckRequestBody.class),
-            f -> f.withMarshaller(UpdateHealthCheckRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getBody, UpdateHealthCheckRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddIpGroupIpRequest, AddIpGroupIpResponse> addIpGroupIp = genForaddIpGroupIp();
+    public static final HttpRequestDef<AddIpGroupIpRequest, AddIpGroupIpResponse> addIpGroupIp = genForAddIpGroupIp();
 
-    private static HttpRequestDef<AddIpGroupIpRequest, AddIpGroupIpResponse> genForaddIpGroupIp() {
+    private static HttpRequestDef<AddIpGroupIpRequest, AddIpGroupIpResponse> genForAddIpGroupIp() {
         // basic
         HttpRequestDef.Builder<AddIpGroupIpRequest, AddIpGroupIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddIpGroupIpRequest.class, AddIpGroupIpResponse.class)
@@ -828,16 +741,12 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddIpGroupIpRequest::getIpGroupId, (req, v) -> {
-                req.setIpGroupId(v);
-            }));
+            f -> f.withMarshaller(AddIpGroupIpRequest::getIpGroupId, AddIpGroupIpRequest::setIpGroupId));
         builder.<AddIpGroupIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddIpGroupIpRequestBody.class),
-            f -> f.withMarshaller(AddIpGroupIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddIpGroupIpRequest::getBody, AddIpGroupIpRequest::setBody));
 
         // response
 
@@ -845,9 +754,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<AssociateListenerRequest, AssociateListenerResponse> associateListener =
-        genForassociateListener();
+        genForAssociateListener();
 
-    private static HttpRequestDef<AssociateListenerRequest, AssociateListenerResponse> genForassociateListener() {
+    private static HttpRequestDef<AssociateListenerRequest, AssociateListenerResponse> genForAssociateListener() {
         // basic
         HttpRequestDef.Builder<AssociateListenerRequest, AssociateListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateListenerRequest.class, AssociateListenerResponse.class)
@@ -860,16 +769,12 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateListenerRequest::getIpGroupId, (req, v) -> {
-                req.setIpGroupId(v);
-            }));
+            f -> f.withMarshaller(AssociateListenerRequest::getIpGroupId, AssociateListenerRequest::setIpGroupId));
         builder.<AssociateListenerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociateListenerRequestBody.class),
-            f -> f.withMarshaller(AssociateListenerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateListenerRequest::getBody, AssociateListenerRequest::setBody));
 
         // response
 
@@ -877,9 +782,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroup =
-        genForcreateIpGroup();
+        genForCreateIpGroup();
 
-    private static HttpRequestDef<CreateIpGroupRequest, CreateIpGroupResponse> genForcreateIpGroup() {
+    private static HttpRequestDef<CreateIpGroupRequest, CreateIpGroupResponse> genForCreateIpGroup() {
         // basic
         HttpRequestDef.Builder<CreateIpGroupRequest, CreateIpGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateIpGroupRequest.class, CreateIpGroupResponse.class)
@@ -892,9 +797,7 @@ public class GaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateIpGroupRequestBody.class),
-            f -> f.withMarshaller(CreateIpGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateIpGroupRequest::getBody, CreateIpGroupRequest::setBody));
 
         // response
 
@@ -902,9 +805,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<DeleteIpGroupRequest, DeleteIpGroupResponse> deleteIpGroup =
-        genFordeleteIpGroup();
+        genForDeleteIpGroup();
 
-    private static HttpRequestDef<DeleteIpGroupRequest, DeleteIpGroupResponse> genFordeleteIpGroup() {
+    private static HttpRequestDef<DeleteIpGroupRequest, DeleteIpGroupResponse> genForDeleteIpGroup() {
         // basic
         HttpRequestDef.Builder<DeleteIpGroupRequest, DeleteIpGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteIpGroupRequest.class, DeleteIpGroupResponse.class)
@@ -917,9 +820,7 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteIpGroupRequest::getIpGroupId, (req, v) -> {
-                req.setIpGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteIpGroupRequest::getIpGroupId, DeleteIpGroupRequest::setIpGroupId));
 
         // response
 
@@ -927,9 +828,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<DisassociateListenerRequest, DisassociateListenerResponse> disassociateListener =
-        genFordisassociateListener();
+        genForDisassociateListener();
 
-    private static HttpRequestDef<DisassociateListenerRequest, DisassociateListenerResponse> genFordisassociateListener() {
+    private static HttpRequestDef<DisassociateListenerRequest, DisassociateListenerResponse> genForDisassociateListener() {
         // basic
         HttpRequestDef.Builder<DisassociateListenerRequest, DisassociateListenerResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DisassociateListenerRequest.class, DisassociateListenerResponse.class)
@@ -942,25 +843,22 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateListenerRequest::getIpGroupId, (req, v) -> {
-                req.setIpGroupId(v);
-            }));
+            f -> f.withMarshaller(DisassociateListenerRequest::getIpGroupId,
+                DisassociateListenerRequest::setIpGroupId));
         builder.<DisassociateListenerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DisassociateListenerRequestBody.class),
-            f -> f.withMarshaller(DisassociateListenerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateListenerRequest::getBody, DisassociateListenerRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListIpGroupsRequest, ListIpGroupsResponse> listIpGroups = genForlistIpGroups();
+    public static final HttpRequestDef<ListIpGroupsRequest, ListIpGroupsResponse> listIpGroups = genForListIpGroups();
 
-    private static HttpRequestDef<ListIpGroupsRequest, ListIpGroupsResponse> genForlistIpGroups() {
+    private static HttpRequestDef<ListIpGroupsRequest, ListIpGroupsResponse> genForListIpGroups() {
         // basic
         HttpRequestDef.Builder<ListIpGroupsRequest, ListIpGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListIpGroupsRequest.class, ListIpGroupsResponse.class)
@@ -973,23 +871,17 @@ public class GaMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIpGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListIpGroupsRequest::getLimit, ListIpGroupsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIpGroupsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListIpGroupsRequest::getMarker, ListIpGroupsRequest::setMarker));
         builder.<String>withRequestField("listener_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIpGroupsRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(ListIpGroupsRequest::getListenerId, ListIpGroupsRequest::setListenerId));
 
         // response
 
@@ -997,9 +889,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse> removeIpGroupIp =
-        genForremoveIpGroupIp();
+        genForRemoveIpGroupIp();
 
-    private static HttpRequestDef<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse> genForremoveIpGroupIp() {
+    private static HttpRequestDef<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse> genForRemoveIpGroupIp() {
         // basic
         HttpRequestDef.Builder<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RemoveIpGroupIpRequest.class, RemoveIpGroupIpResponse.class)
@@ -1012,25 +904,21 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveIpGroupIpRequest::getIpGroupId, (req, v) -> {
-                req.setIpGroupId(v);
-            }));
+            f -> f.withMarshaller(RemoveIpGroupIpRequest::getIpGroupId, RemoveIpGroupIpRequest::setIpGroupId));
         builder.<RemoveIpGroupIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemoveIpGroupIpRequestBody.class),
-            f -> f.withMarshaller(RemoveIpGroupIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RemoveIpGroupIpRequest::getBody, RemoveIpGroupIpRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroup = genForshowIpGroup();
+    public static final HttpRequestDef<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroup = genForShowIpGroup();
 
-    private static HttpRequestDef<ShowIpGroupRequest, ShowIpGroupResponse> genForshowIpGroup() {
+    private static HttpRequestDef<ShowIpGroupRequest, ShowIpGroupResponse> genForShowIpGroup() {
         // basic
         HttpRequestDef.Builder<ShowIpGroupRequest, ShowIpGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowIpGroupRequest.class, ShowIpGroupResponse.class)
@@ -1043,9 +931,7 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIpGroupRequest::getIpGroupId, (req, v) -> {
-                req.setIpGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowIpGroupRequest::getIpGroupId, ShowIpGroupRequest::setIpGroupId));
 
         // response
 
@@ -1053,9 +939,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroup =
-        genForupdateIpGroup();
+        genForUpdateIpGroup();
 
-    private static HttpRequestDef<UpdateIpGroupRequest, UpdateIpGroupResponse> genForupdateIpGroup() {
+    private static HttpRequestDef<UpdateIpGroupRequest, UpdateIpGroupResponse> genForUpdateIpGroup() {
         // basic
         HttpRequestDef.Builder<UpdateIpGroupRequest, UpdateIpGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateIpGroupRequest.class, UpdateIpGroupResponse.class)
@@ -1068,16 +954,12 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIpGroupRequest::getIpGroupId, (req, v) -> {
-                req.setIpGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateIpGroupRequest::getIpGroupId, UpdateIpGroupRequest::setIpGroupId));
         builder.<UpdateIpGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateIpGroupRequestBody.class),
-            f -> f.withMarshaller(UpdateIpGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateIpGroupRequest::getBody, UpdateIpGroupRequest::setBody));
 
         // response
 
@@ -1085,9 +967,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<CreateListenerRequest, CreateListenerResponse> createListener =
-        genForcreateListener();
+        genForCreateListener();
 
-    private static HttpRequestDef<CreateListenerRequest, CreateListenerResponse> genForcreateListener() {
+    private static HttpRequestDef<CreateListenerRequest, CreateListenerResponse> genForCreateListener() {
         // basic
         HttpRequestDef.Builder<CreateListenerRequest, CreateListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateListenerRequest.class, CreateListenerResponse.class)
@@ -1100,9 +982,7 @@ public class GaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateListenerRequestBody.class),
-            f -> f.withMarshaller(CreateListenerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateListenerRequest::getBody, CreateListenerRequest::setBody));
 
         // response
 
@@ -1110,9 +990,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<DeleteListenerRequest, DeleteListenerResponse> deleteListener =
-        genFordeleteListener();
+        genForDeleteListener();
 
-    private static HttpRequestDef<DeleteListenerRequest, DeleteListenerResponse> genFordeleteListener() {
+    private static HttpRequestDef<DeleteListenerRequest, DeleteListenerResponse> genForDeleteListener() {
         // basic
         HttpRequestDef.Builder<DeleteListenerRequest, DeleteListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteListenerRequest.class, DeleteListenerResponse.class)
@@ -1125,9 +1005,7 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteListenerRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(DeleteListenerRequest::getListenerId, DeleteListenerRequest::setListenerId));
 
         // response
 
@@ -1135,9 +1013,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<ListListenersRequest, ListListenersResponse> listListeners =
-        genForlistListeners();
+        genForListListeners();
 
-    private static HttpRequestDef<ListListenersRequest, ListListenersResponse> genForlistListeners() {
+    private static HttpRequestDef<ListListenersRequest, ListListenersResponse> genForListListeners() {
         // basic
         HttpRequestDef.Builder<ListListenersRequest, ListListenersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListListenersRequest.class, ListListenersResponse.class)
@@ -1150,60 +1028,46 @@ public class GaMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListListenersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getLimit, ListListenersRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getMarker, ListListenersRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListListenersRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getPageReverse, ListListenersRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getId, ListListenersRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getName, ListListenersRequest::setName));
         builder.<ListListenersRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListListenersRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListListenersRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getStatus, ListListenersRequest::setStatus));
         builder.<String>withRequestField("accelerator_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getAcceleratorId, (req, v) -> {
-                req.setAcceleratorId(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getAcceleratorId, ListListenersRequest::setAcceleratorId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowListenerRequest, ShowListenerResponse> showListener = genForshowListener();
+    public static final HttpRequestDef<ShowListenerRequest, ShowListenerResponse> showListener = genForShowListener();
 
-    private static HttpRequestDef<ShowListenerRequest, ShowListenerResponse> genForshowListener() {
+    private static HttpRequestDef<ShowListenerRequest, ShowListenerResponse> genForShowListener() {
         // basic
         HttpRequestDef.Builder<ShowListenerRequest, ShowListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowListenerRequest.class, ShowListenerResponse.class)
@@ -1216,9 +1080,7 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowListenerRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(ShowListenerRequest::getListenerId, ShowListenerRequest::setListenerId));
 
         // response
 
@@ -1226,9 +1088,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<UpdateListenerRequest, UpdateListenerResponse> updateListener =
-        genForupdateListener();
+        genForUpdateListener();
 
-    private static HttpRequestDef<UpdateListenerRequest, UpdateListenerResponse> genForupdateListener() {
+    private static HttpRequestDef<UpdateListenerRequest, UpdateListenerResponse> genForUpdateListener() {
         // basic
         HttpRequestDef.Builder<UpdateListenerRequest, UpdateListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateListenerRequest.class, UpdateListenerResponse.class)
@@ -1241,25 +1103,21 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateListenerRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(UpdateListenerRequest::getListenerId, UpdateListenerRequest::setListenerId));
         builder.<UpdateListenerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateListenerRequestBody.class),
-            f -> f.withMarshaller(UpdateListenerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateListenerRequest::getBody, UpdateListenerRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRegionsRequest, ListRegionsResponse> listRegions = genForlistRegions();
+    public static final HttpRequestDef<ListRegionsRequest, ListRegionsResponse> listRegions = genForListRegions();
 
-    private static HttpRequestDef<ListRegionsRequest, ListRegionsResponse> genForlistRegions() {
+    private static HttpRequestDef<ListRegionsRequest, ListRegionsResponse> genForListRegions() {
         // basic
         HttpRequestDef.Builder<ListRegionsRequest, ListRegionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRegionsRequest.class, ListRegionsResponse.class)
@@ -1274,9 +1132,9 @@ public class GaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForcreateTags();
+    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForCreateTags();
 
-    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForcreateTags() {
+    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForCreateTags() {
         // basic
         HttpRequestDef.Builder<CreateTagsRequest, CreateTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTagsRequest.class, CreateTagsResponse.class)
@@ -1289,32 +1147,26 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceType.class),
-            f -> f.withMarshaller(CreateTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CreateTagsRequest::getResourceType, CreateTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateTagsRequest::getResourceId, CreateTagsRequest::setResourceId));
         builder.<CreateTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTagsRequestBody.class),
-            f -> f.withMarshaller(CreateTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTagsRequest::getBody, CreateTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTagsRequest, DeleteTagsResponse> deleteTags = genFordeleteTags();
+    public static final HttpRequestDef<DeleteTagsRequest, DeleteTagsResponse> deleteTags = genForDeleteTags();
 
-    private static HttpRequestDef<DeleteTagsRequest, DeleteTagsResponse> genFordeleteTags() {
+    private static HttpRequestDef<DeleteTagsRequest, DeleteTagsResponse> genForDeleteTags() {
         // basic
         HttpRequestDef.Builder<DeleteTagsRequest, DeleteTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagsRequest.class, DeleteTagsResponse.class)
@@ -1327,23 +1179,17 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceType.class),
-            f -> f.withMarshaller(DeleteTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(DeleteTagsRequest::getResourceType, DeleteTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTagsRequest::getResourceId, DeleteTagsRequest::setResourceId));
         builder.<DeleteTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteTagsRequestBody.class),
-            f -> f.withMarshaller(DeleteTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteTagsRequest::getBody, DeleteTagsRequest::setBody));
 
         // response
 
@@ -1351,9 +1197,9 @@ public class GaMeta {
     }
 
     public static final HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTags =
-        genForshowResourceTags();
+        genForShowResourceTags();
 
-    private static HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> genForshowResourceTags() {
+    private static HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> genForShowResourceTags() {
         // basic
         HttpRequestDef.Builder<ShowResourceTagsRequest, ShowResourceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagsRequest.class, ShowResourceTagsResponse.class)
@@ -1366,16 +1212,12 @@ public class GaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceType.class),
-            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceType, ShowResourceTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceId, ShowResourceTagsRequest::setResourceId));
 
         // response
 

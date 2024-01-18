@@ -118,7 +118,7 @@ public class ShowTopUrlRequest {
     }
 
     /**
-     * 服务区域：mainland_china(大陆)，outside_mainland_china(海外)，默认为mainland_china
+     * 服务区域：mainland_china(大陆)，outside_mainland_china(海外)，默认为global(全球)
      * @return serviceArea
      */
     public String getServiceArea() {

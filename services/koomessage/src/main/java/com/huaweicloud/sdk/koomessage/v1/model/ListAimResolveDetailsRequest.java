@@ -212,7 +212,7 @@ public class ListAimResolveDetailsRequest {
     }
 
     /**
-     * 短链创建开始时间。格式为：2019-10-12T07:20:50Z。  > 需同时传入end_time才能生效，单独传begin_time不会作为过滤条件。缺省：查询最近二十四小时数据。 
+     * 短链创建开始时间。格式为：2019-10-12T07:20:50Z。  > 需同时传入end_time才能生效，单独传begin_time不会作为过滤条件。缺省：查询最近二十四小时数据。 > > 仅支持查询最近1年内创建的短链。 
      * @return beginTime
      */
     public String getBeginTime() {

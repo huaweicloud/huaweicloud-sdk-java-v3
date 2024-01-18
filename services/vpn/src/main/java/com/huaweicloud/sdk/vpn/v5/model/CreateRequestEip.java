@@ -26,7 +26,7 @@ public class CreateRequestEip {
     private String type;
 
     /**
-     * 功能说明：按流量计费还是按带宽计费  取值范围：bandwidth，traffic
+     * 功能说明：按流量计费还是按带宽计费  取值范围：  bandwidth：按带宽计费  traffic：按流量计费  95peak_plus：按增强型95计费
      */
     public static final class ChargeModeEnum {
 
@@ -150,7 +150,7 @@ public class CreateRequestEip {
     }
 
     /**
-     * 功能说明：按流量计费还是按带宽计费  取值范围：bandwidth，traffic
+     * 功能说明：按流量计费还是按带宽计费  取值范围：  bandwidth：按带宽计费  traffic：按流量计费  95peak_plus：按增强型95计费
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {

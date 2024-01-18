@@ -168,9 +168,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconResponse;
 public class WorkspaceAppMeta {
 
     public static final HttpRequestDef<ListPublishedAppRequest, ListPublishedAppResponse> listPublishedApp =
-        genForlistPublishedApp();
+        genForListPublishedApp();
 
-    private static HttpRequestDef<ListPublishedAppRequest, ListPublishedAppResponse> genForlistPublishedApp() {
+    private static HttpRequestDef<ListPublishedAppRequest, ListPublishedAppResponse> genForListPublishedApp() {
         // basic
         HttpRequestDef.Builder<ListPublishedAppRequest, ListPublishedAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublishedAppRequest.class, ListPublishedAppResponse.class)
@@ -183,53 +183,41 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublishedAppRequest::getAppGroupId, (req, v) -> {
-                req.setAppGroupId(v);
-            }));
+            f -> f.withMarshaller(ListPublishedAppRequest::getAppGroupId, ListPublishedAppRequest::setAppGroupId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPublishedAppRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPublishedAppRequest::getLimit, ListPublishedAppRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPublishedAppRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPublishedAppRequest::getOffset, ListPublishedAppRequest::setOffset));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublishedAppRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPublishedAppRequest::getName, ListPublishedAppRequest::setName));
         builder.<String>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublishedAppRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListPublishedAppRequest::getState, ListPublishedAppRequest::setState));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublishedAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListPublishedAppRequest::getAppId, ListPublishedAppRequest::setAppId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PublishAppRequest, PublishAppResponse> publishApp = genForpublishApp();
+    public static final HttpRequestDef<PublishAppRequest, PublishAppResponse> publishApp = genForPublishApp();
 
-    private static HttpRequestDef<PublishAppRequest, PublishAppResponse> genForpublishApp() {
+    private static HttpRequestDef<PublishAppRequest, PublishAppResponse> genForPublishApp() {
         // basic
         HttpRequestDef.Builder<PublishAppRequest, PublishAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishAppRequest.class, PublishAppResponse.class)
@@ -242,16 +230,12 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishAppRequest::getAppGroupId, (req, v) -> {
-                req.setAppGroupId(v);
-            }));
+            f -> f.withMarshaller(PublishAppRequest::getAppGroupId, PublishAppRequest::setAppGroupId));
         builder.<PublishAppReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PublishAppReq.class),
-            f -> f.withMarshaller(PublishAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PublishAppRequest::getBody, PublishAppRequest::setBody));
 
         // response
 
@@ -259,9 +243,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ShowPublishableAppRequest, ShowPublishableAppResponse> showPublishableApp =
-        genForshowPublishableApp();
+        genForShowPublishableApp();
 
-    private static HttpRequestDef<ShowPublishableAppRequest, ShowPublishableAppResponse> genForshowPublishableApp() {
+    private static HttpRequestDef<ShowPublishableAppRequest, ShowPublishableAppResponse> genForShowPublishableApp() {
         // basic
         HttpRequestDef.Builder<ShowPublishableAppRequest, ShowPublishableAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPublishableAppRequest.class, ShowPublishableAppResponse.class)
@@ -274,18 +258,16 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublishableAppRequest::getAppGroupId, (req, v) -> {
-                req.setAppGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowPublishableAppRequest::getAppGroupId, ShowPublishableAppRequest::setAppGroupId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UnpublishAppRequest, UnpublishAppResponse> unpublishApp = genForunpublishApp();
+    public static final HttpRequestDef<UnpublishAppRequest, UnpublishAppResponse> unpublishApp = genForUnpublishApp();
 
-    private static HttpRequestDef<UnpublishAppRequest, UnpublishAppResponse> genForunpublishApp() {
+    private static HttpRequestDef<UnpublishAppRequest, UnpublishAppResponse> genForUnpublishApp() {
         // basic
         HttpRequestDef.Builder<UnpublishAppRequest, UnpublishAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UnpublishAppRequest.class, UnpublishAppResponse.class)
@@ -298,25 +280,21 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnpublishAppRequest::getAppGroupId, (req, v) -> {
-                req.setAppGroupId(v);
-            }));
+            f -> f.withMarshaller(UnpublishAppRequest::getAppGroupId, UnpublishAppRequest::setAppGroupId));
         builder.<UnpublishAppReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UnpublishAppReq.class),
-            f -> f.withMarshaller(UnpublishAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UnpublishAppRequest::getBody, UnpublishAppRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForupdateApp();
+    public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForUpdateApp();
 
-    private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForupdateApp() {
+    private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForUpdateApp() {
         // basic
         HttpRequestDef.Builder<UpdateAppRequest, UpdateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateAppRequest.class, UpdateAppResponse.class)
@@ -329,23 +307,17 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppRequest::getAppGroupId, (req, v) -> {
-                req.setAppGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getAppGroupId, UpdateAppRequest::setAppGroupId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getAppId, UpdateAppRequest::setAppId));
         builder.<UpdateAppReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAppReq.class),
-            f -> f.withMarshaller(UpdateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getBody, UpdateAppRequest::setBody));
 
         // response
 
@@ -353,9 +325,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<UploadAppIconRequest, UploadAppIconResponse> uploadAppIcon =
-        genForuploadAppIcon();
+        genForUploadAppIcon();
 
-    private static HttpRequestDef<UploadAppIconRequest, UploadAppIconResponse> genForuploadAppIcon() {
+    private static HttpRequestDef<UploadAppIconRequest, UploadAppIconResponse> genForUploadAppIcon() {
         // basic
         HttpRequestDef.Builder<UploadAppIconRequest, UploadAppIconResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadAppIconRequest.class, UploadAppIconResponse.class)
@@ -368,23 +340,17 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadAppIconRequest::getAppGroupId, (req, v) -> {
-                req.setAppGroupId(v);
-            }));
+            f -> f.withMarshaller(UploadAppIconRequest::getAppGroupId, UploadAppIconRequest::setAppGroupId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadAppIconRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UploadAppIconRequest::getAppId, UploadAppIconRequest::setAppId));
         builder.<UploadAppIconRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadAppIconRequestBody.class),
-            f -> f.withMarshaller(UploadAppIconRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadAppIconRequest::getBody, UploadAppIconRequest::setBody));
 
         // response
 
@@ -392,9 +358,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteAppGroupRequest, BatchDeleteAppGroupResponse> batchDeleteAppGroup =
-        genForbatchDeleteAppGroup();
+        genForBatchDeleteAppGroup();
 
-    private static HttpRequestDef<BatchDeleteAppGroupRequest, BatchDeleteAppGroupResponse> genForbatchDeleteAppGroup() {
+    private static HttpRequestDef<BatchDeleteAppGroupRequest, BatchDeleteAppGroupResponse> genForBatchDeleteAppGroup() {
         // basic
         HttpRequestDef.Builder<BatchDeleteAppGroupRequest, BatchDeleteAppGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteAppGroupRequest.class, BatchDeleteAppGroupResponse.class)
@@ -407,9 +373,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteAppGroupReq.class),
-            f -> f.withMarshaller(BatchDeleteAppGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAppGroupRequest::getBody, BatchDeleteAppGroupRequest::setBody));
 
         // response
 
@@ -417,9 +381,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<CreateAppGroupRequest, CreateAppGroupResponse> createAppGroup =
-        genForcreateAppGroup();
+        genForCreateAppGroup();
 
-    private static HttpRequestDef<CreateAppGroupRequest, CreateAppGroupResponse> genForcreateAppGroup() {
+    private static HttpRequestDef<CreateAppGroupRequest, CreateAppGroupResponse> genForCreateAppGroup() {
         // basic
         HttpRequestDef.Builder<CreateAppGroupRequest, CreateAppGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppGroupRequest.class, CreateAppGroupResponse.class)
@@ -432,18 +396,16 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppGroupReq.class),
-            f -> f.withMarshaller(CreateAppGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppGroupRequest::getBody, CreateAppGroupRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppGroupRequest, ListAppGroupResponse> listAppGroup = genForlistAppGroup();
+    public static final HttpRequestDef<ListAppGroupRequest, ListAppGroupResponse> listAppGroup = genForListAppGroup();
 
-    private static HttpRequestDef<ListAppGroupRequest, ListAppGroupResponse> genForlistAppGroup() {
+    private static HttpRequestDef<ListAppGroupRequest, ListAppGroupResponse> genForListAppGroup() {
         // basic
         HttpRequestDef.Builder<ListAppGroupRequest, ListAppGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppGroupRequest.class, ListAppGroupResponse.class)
@@ -456,51 +418,38 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppGroupRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupRequest::getLimit, ListAppGroupRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppGroupRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupRequest::getOffset, ListAppGroupRequest::setOffset));
         builder.<String>withRequestField("app_server_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppGroupRequest::getAppServerGroupId, (req, v) -> {
-                req.setAppServerGroupId(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupRequest::getAppServerGroupId, ListAppGroupRequest::setAppServerGroupId));
         builder.<String>withRequestField("app_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppGroupRequest::getAppGroupId, (req, v) -> {
-                req.setAppGroupId(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupRequest::getAppGroupId, ListAppGroupRequest::setAppGroupId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppGroupRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupRequest::getName, ListAppGroupRequest::setName));
         builder.<String>withRequestField("authorization_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppGroupRequest::getAuthorizationType, (req, v) -> {
-                req.setAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupRequest::getAuthorizationType,
+                ListAppGroupRequest::setAuthorizationType));
         builder.<String>withRequestField("app_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppGroupRequest::getAppType, (req, v) -> {
-                req.setAppType(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupRequest::getAppType, ListAppGroupRequest::setAppType));
 
         // response
 
@@ -508,9 +457,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<UpdateAppGroupRequest, UpdateAppGroupResponse> updateAppGroup =
-        genForupdateAppGroup();
+        genForUpdateAppGroup();
 
-    private static HttpRequestDef<UpdateAppGroupRequest, UpdateAppGroupResponse> genForupdateAppGroup() {
+    private static HttpRequestDef<UpdateAppGroupRequest, UpdateAppGroupResponse> genForUpdateAppGroup() {
         // basic
         HttpRequestDef.Builder<UpdateAppGroupRequest, UpdateAppGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateAppGroupRequest.class, UpdateAppGroupResponse.class)
@@ -523,25 +472,21 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppGroupRequest::getAppGroupId, (req, v) -> {
-                req.setAppGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppGroupRequest::getAppGroupId, UpdateAppGroupRequest::setAppGroupId));
         builder.<UpdateAppGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAppGroupReq.class),
-            f -> f.withMarshaller(UpdateAppGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppGroupRequest::getBody, UpdateAppGroupRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListProductRequest, ListProductResponse> listProduct = genForlistProduct();
+    public static final HttpRequestDef<ListProductRequest, ListProductResponse> listProduct = genForListProduct();
 
-    private static HttpRequestDef<ListProductRequest, ListProductResponse> genForlistProduct() {
+    private static HttpRequestDef<ListProductRequest, ListProductResponse> genForListProduct() {
         // basic
         HttpRequestDef.Builder<ListProductRequest, ListProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductRequest.class, ListProductResponse.class)
@@ -554,44 +499,32 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ListProductRequest::getProductId, ListProductRequest::setProductId));
         builder.<String>withRequestField("availability_zone",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListProductRequest::getAvailabilityZone, ListProductRequest::setAvailabilityZone));
         builder.<String>withRequestField("os_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductRequest::getOsType, (req, v) -> {
-                req.setOsType(v);
-            }));
+            f -> f.withMarshaller(ListProductRequest::getOsType, ListProductRequest::setOsType));
         builder.<String>withRequestField("charge_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductRequest::getChargeMode, (req, v) -> {
-                req.setChargeMode(v);
-            }));
+            f -> f.withMarshaller(ListProductRequest::getChargeMode, ListProductRequest::setChargeMode));
         builder.<String>withRequestField("architecture",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductRequest::getArchitecture, (req, v) -> {
-                req.setArchitecture(v);
-            }));
+            f -> f.withMarshaller(ListProductRequest::getArchitecture, ListProductRequest::setArchitecture));
         builder.<String>withRequestField("package_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductRequest::getPackageType, (req, v) -> {
-                req.setPackageType(v);
-            }));
+            f -> f.withMarshaller(ListProductRequest::getPackageType, ListProductRequest::setPackageType));
 
         // response
 
@@ -599,9 +532,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListSessionTypeRequest, ListSessionTypeResponse> listSessionType =
-        genForlistSessionType();
+        genForListSessionType();
 
-    private static HttpRequestDef<ListSessionTypeRequest, ListSessionTypeResponse> genForlistSessionType() {
+    private static HttpRequestDef<ListSessionTypeRequest, ListSessionTypeResponse> genForListSessionType() {
         // basic
         HttpRequestDef.Builder<ListSessionTypeRequest, ListSessionTypeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSessionTypeRequest.class, ListSessionTypeResponse.class)
@@ -617,9 +550,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<AddAppGroupAuthorizationRequest, AddAppGroupAuthorizationResponse> addAppGroupAuthorization =
-        genForaddAppGroupAuthorization();
+        genForAddAppGroupAuthorization();
 
-    private static HttpRequestDef<AddAppGroupAuthorizationRequest, AddAppGroupAuthorizationResponse> genForaddAppGroupAuthorization() {
+    private static HttpRequestDef<AddAppGroupAuthorizationRequest, AddAppGroupAuthorizationResponse> genForAddAppGroupAuthorization() {
         // basic
         HttpRequestDef.Builder<AddAppGroupAuthorizationRequest, AddAppGroupAuthorizationResponse> builder =
             HttpRequestDef
@@ -633,16 +566,13 @@ public class WorkspaceAppMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddAppGroupAuthorizationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(AddAppGroupAuthorizationRequest::getXLanguage,
+                AddAppGroupAuthorizationRequest::setXLanguage));
         builder.<AppGroupAuthorizeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppGroupAuthorizeReq.class),
-            f -> f.withMarshaller(AddAppGroupAuthorizationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddAppGroupAuthorizationRequest::getBody, AddAppGroupAuthorizationRequest::setBody));
 
         // response
 
@@ -650,9 +580,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteAppGroupAuthorizationRequest, BatchDeleteAppGroupAuthorizationResponse> batchDeleteAppGroupAuthorization =
-        genForbatchDeleteAppGroupAuthorization();
+        genForBatchDeleteAppGroupAuthorization();
 
-    private static HttpRequestDef<BatchDeleteAppGroupAuthorizationRequest, BatchDeleteAppGroupAuthorizationResponse> genForbatchDeleteAppGroupAuthorization() {
+    private static HttpRequestDef<BatchDeleteAppGroupAuthorizationRequest, BatchDeleteAppGroupAuthorizationResponse> genForBatchDeleteAppGroupAuthorization() {
         // basic
         HttpRequestDef.Builder<BatchDeleteAppGroupAuthorizationRequest, BatchDeleteAppGroupAuthorizationResponse> builder =
             HttpRequestDef
@@ -668,16 +598,14 @@ public class WorkspaceAppMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteAppGroupAuthorizationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAppGroupAuthorizationRequest::getXLanguage,
+                BatchDeleteAppGroupAuthorizationRequest::setXLanguage));
         builder.<AppGroupAuthorizeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppGroupAuthorizeReq.class),
-            f -> f.withMarshaller(BatchDeleteAppGroupAuthorizationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAppGroupAuthorizationRequest::getBody,
+                BatchDeleteAppGroupAuthorizationRequest::setBody));
 
         // response
 
@@ -685,9 +613,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListAppGroupAuthorizationRequest, ListAppGroupAuthorizationResponse> listAppGroupAuthorization =
-        genForlistAppGroupAuthorization();
+        genForListAppGroupAuthorization();
 
-    private static HttpRequestDef<ListAppGroupAuthorizationRequest, ListAppGroupAuthorizationResponse> genForlistAppGroupAuthorization() {
+    private static HttpRequestDef<ListAppGroupAuthorizationRequest, ListAppGroupAuthorizationResponse> genForListAppGroupAuthorization() {
         // basic
         HttpRequestDef.Builder<ListAppGroupAuthorizationRequest, ListAppGroupAuthorizationResponse> builder =
             HttpRequestDef
@@ -703,37 +631,32 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getLimit,
+                ListAppGroupAuthorizationRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getOffset,
+                ListAppGroupAuthorizationRequest::setOffset));
         builder.<String>withRequestField("app_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getAppGroupId, (req, v) -> {
-                req.setAppGroupId(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getAppGroupId,
+                ListAppGroupAuthorizationRequest::setAppGroupId));
         builder.<String>withRequestField("account",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getAccount, (req, v) -> {
-                req.setAccount(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getAccount,
+                ListAppGroupAuthorizationRequest::setAccount));
         builder.<String>withRequestField("account_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
+            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getAccountType,
+                ListAppGroupAuthorizationRequest::setAccountType));
 
         // response
 
@@ -741,9 +664,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse> listAvailabilityZone =
-        genForlistAvailabilityZone();
+        genForListAvailabilityZone();
 
-    private static HttpRequestDef<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse> genForlistAvailabilityZone() {
+    private static HttpRequestDef<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse> genForListAvailabilityZone() {
         // basic
         HttpRequestDef.Builder<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAvailabilityZoneRequest.class, ListAvailabilityZoneResponse.class)
@@ -758,9 +681,9 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
+    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForShowJob();
 
-    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
+    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForShowJob() {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
@@ -773,9 +696,7 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobRequest::getJobId, ShowJobRequest::setJobId));
 
         // response
 
@@ -783,9 +704,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail =
-        genForshowJobDetail();
+        genForShowJobDetail();
 
-    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForshowJobDetail() {
+    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForShowJobDetail() {
         // basic
         HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
@@ -798,9 +719,7 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, ShowJobDetailRequest::setJobId));
 
         // response
 
@@ -808,9 +727,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<CreateOrUpdateStoragePolicyStatementRequest, CreateOrUpdateStoragePolicyStatementResponse> createOrUpdateStoragePolicyStatement =
-        genForcreateOrUpdateStoragePolicyStatement();
+        genForCreateOrUpdateStoragePolicyStatement();
 
-    private static HttpRequestDef<CreateOrUpdateStoragePolicyStatementRequest, CreateOrUpdateStoragePolicyStatementResponse> genForcreateOrUpdateStoragePolicyStatement() {
+    private static HttpRequestDef<CreateOrUpdateStoragePolicyStatementRequest, CreateOrUpdateStoragePolicyStatementResponse> genForCreateOrUpdateStoragePolicyStatement() {
         // basic
         HttpRequestDef.Builder<CreateOrUpdateStoragePolicyStatementRequest, CreateOrUpdateStoragePolicyStatementResponse> builder =
             HttpRequestDef
@@ -826,9 +745,8 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateOrUpdateStoragePolicyStatementReq.class),
-            f -> f.withMarshaller(CreateOrUpdateStoragePolicyStatementRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOrUpdateStoragePolicyStatementRequest::getBody,
+                CreateOrUpdateStoragePolicyStatementRequest::setBody));
 
         // response
 
@@ -836,9 +754,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<CreatePersistentStorageRequest, CreatePersistentStorageResponse> createPersistentStorage =
-        genForcreatePersistentStorage();
+        genForCreatePersistentStorage();
 
-    private static HttpRequestDef<CreatePersistentStorageRequest, CreatePersistentStorageResponse> genForcreatePersistentStorage() {
+    private static HttpRequestDef<CreatePersistentStorageRequest, CreatePersistentStorageResponse> genForCreatePersistentStorage() {
         // basic
         HttpRequestDef.Builder<CreatePersistentStorageRequest, CreatePersistentStorageResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePersistentStorageRequest.class, CreatePersistentStorageResponse.class)
@@ -851,9 +769,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePersistentStorageReq.class),
-            f -> f.withMarshaller(CreatePersistentStorageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePersistentStorageRequest::getBody, CreatePersistentStorageRequest::setBody));
 
         // response
 
@@ -861,9 +777,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<CreateShareFolderRequest, CreateShareFolderResponse> createShareFolder =
-        genForcreateShareFolder();
+        genForCreateShareFolder();
 
-    private static HttpRequestDef<CreateShareFolderRequest, CreateShareFolderResponse> genForcreateShareFolder() {
+    private static HttpRequestDef<CreateShareFolderRequest, CreateShareFolderResponse> genForCreateShareFolder() {
         // basic
         HttpRequestDef.Builder<CreateShareFolderRequest, CreateShareFolderResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateShareFolderRequest.class, CreateShareFolderResponse.class)
@@ -876,16 +792,12 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateShareFolderRequest::getStorageId, (req, v) -> {
-                req.setStorageId(v);
-            }));
+            f -> f.withMarshaller(CreateShareFolderRequest::getStorageId, CreateShareFolderRequest::setStorageId));
         builder.<CreateShareFolderReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateShareFolderReq.class),
-            f -> f.withMarshaller(CreateShareFolderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateShareFolderRequest::getBody, CreateShareFolderRequest::setBody));
 
         // response
 
@@ -893,9 +805,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<DeletePersistentStorageRequest, DeletePersistentStorageResponse> deletePersistentStorage =
-        genFordeletePersistentStorage();
+        genForDeletePersistentStorage();
 
-    private static HttpRequestDef<DeletePersistentStorageRequest, DeletePersistentStorageResponse> genFordeletePersistentStorage() {
+    private static HttpRequestDef<DeletePersistentStorageRequest, DeletePersistentStorageResponse> genForDeletePersistentStorage() {
         // basic
         HttpRequestDef.Builder<DeletePersistentStorageRequest, DeletePersistentStorageResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeletePersistentStorageRequest.class, DeletePersistentStorageResponse.class)
@@ -908,9 +820,8 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePersistentStorageRequest::getStorageId, (req, v) -> {
-                req.setStorageId(v);
-            }));
+            f -> f.withMarshaller(DeletePersistentStorageRequest::getStorageId,
+                DeletePersistentStorageRequest::setStorageId));
 
         // response
 
@@ -918,9 +829,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<DeleteStorageClaimRequest, DeleteStorageClaimResponse> deleteStorageClaim =
-        genFordeleteStorageClaim();
+        genForDeleteStorageClaim();
 
-    private static HttpRequestDef<DeleteStorageClaimRequest, DeleteStorageClaimResponse> genFordeleteStorageClaim() {
+    private static HttpRequestDef<DeleteStorageClaimRequest, DeleteStorageClaimResponse> genForDeleteStorageClaim() {
         // basic
         HttpRequestDef.Builder<DeleteStorageClaimRequest, DeleteStorageClaimResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteStorageClaimRequest.class, DeleteStorageClaimResponse.class)
@@ -933,16 +844,12 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStorageClaimRequest::getStorageId, (req, v) -> {
-                req.setStorageId(v);
-            }));
+            f -> f.withMarshaller(DeleteStorageClaimRequest::getStorageId, DeleteStorageClaimRequest::setStorageId));
         builder.<DeleteStorageClaimReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteStorageClaimReq.class),
-            f -> f.withMarshaller(DeleteStorageClaimRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteStorageClaimRequest::getBody, DeleteStorageClaimRequest::setBody));
 
         // response
 
@@ -950,9 +857,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<DeleteUserStorageAttachmentRequest, DeleteUserStorageAttachmentResponse> deleteUserStorageAttachment =
-        genFordeleteUserStorageAttachment();
+        genForDeleteUserStorageAttachment();
 
-    private static HttpRequestDef<DeleteUserStorageAttachmentRequest, DeleteUserStorageAttachmentResponse> genFordeleteUserStorageAttachment() {
+    private static HttpRequestDef<DeleteUserStorageAttachmentRequest, DeleteUserStorageAttachmentResponse> genForDeleteUserStorageAttachment() {
         // basic
         HttpRequestDef.Builder<DeleteUserStorageAttachmentRequest, DeleteUserStorageAttachmentResponse> builder =
             HttpRequestDef
@@ -968,16 +875,14 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteUserStorageAttachmentRequest::getStorageId, (req, v) -> {
-                req.setStorageId(v);
-            }));
+            f -> f.withMarshaller(DeleteUserStorageAttachmentRequest::getStorageId,
+                DeleteUserStorageAttachmentRequest::setStorageId));
         builder.<DeleteUserStorageAttachmentReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteUserStorageAttachmentReq.class),
-            f -> f.withMarshaller(DeleteUserStorageAttachmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteUserStorageAttachmentRequest::getBody,
+                DeleteUserStorageAttachmentRequest::setBody));
 
         // response
 
@@ -985,9 +890,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListPersistentStorageRequest, ListPersistentStorageResponse> listPersistentStorage =
-        genForlistPersistentStorage();
+        genForListPersistentStorage();
 
-    private static HttpRequestDef<ListPersistentStorageRequest, ListPersistentStorageResponse> genForlistPersistentStorage() {
+    private static HttpRequestDef<ListPersistentStorageRequest, ListPersistentStorageResponse> genForListPersistentStorage() {
         // basic
         HttpRequestDef.Builder<ListPersistentStorageRequest, ListPersistentStorageResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListPersistentStorageRequest.class, ListPersistentStorageResponse.class)
@@ -1000,30 +905,23 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPersistentStorageRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPersistentStorageRequest::getOffset, ListPersistentStorageRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPersistentStorageRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPersistentStorageRequest::getLimit, ListPersistentStorageRequest::setLimit));
         builder.<String>withRequestField("storage_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPersistentStorageRequest::getStorageId, (req, v) -> {
-                req.setStorageId(v);
-            }));
+            f -> f.withMarshaller(ListPersistentStorageRequest::getStorageId,
+                ListPersistentStorageRequest::setStorageId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPersistentStorageRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPersistentStorageRequest::getName, ListPersistentStorageRequest::setName));
 
         // response
 
@@ -1031,9 +929,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListShareFolderRequest, ListShareFolderResponse> listShareFolder =
-        genForlistShareFolder();
+        genForListShareFolder();
 
-    private static HttpRequestDef<ListShareFolderRequest, ListShareFolderResponse> genForlistShareFolder() {
+    private static HttpRequestDef<ListShareFolderRequest, ListShareFolderResponse> genForListShareFolder() {
         // basic
         HttpRequestDef.Builder<ListShareFolderRequest, ListShareFolderResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListShareFolderRequest.class, ListShareFolderResponse.class)
@@ -1046,37 +944,28 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListShareFolderRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListShareFolderRequest::getOffset, ListShareFolderRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListShareFolderRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListShareFolderRequest::getLimit, ListShareFolderRequest::setLimit));
         builder.<String>withRequestField("storage_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareFolderRequest::getStorageId, (req, v) -> {
-                req.setStorageId(v);
-            }));
+            f -> f.withMarshaller(ListShareFolderRequest::getStorageId, ListShareFolderRequest::setStorageId));
         builder.<String>withRequestField("storage_claim_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareFolderRequest::getStorageClaimId, (req, v) -> {
-                req.setStorageClaimId(v);
-            }));
+            f -> f.withMarshaller(ListShareFolderRequest::getStorageClaimId,
+                ListShareFolderRequest::setStorageClaimId));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareFolderRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ListShareFolderRequest::getPath, ListShareFolderRequest::setPath));
 
         // response
 
@@ -1084,9 +973,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListStorageAssignmentRequest, ListStorageAssignmentResponse> listStorageAssignment =
-        genForlistStorageAssignment();
+        genForListStorageAssignment();
 
-    private static HttpRequestDef<ListStorageAssignmentRequest, ListStorageAssignmentResponse> genForlistStorageAssignment() {
+    private static HttpRequestDef<ListStorageAssignmentRequest, ListStorageAssignmentResponse> genForListStorageAssignment() {
         // basic
         HttpRequestDef.Builder<ListStorageAssignmentRequest, ListStorageAssignmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListStorageAssignmentRequest.class, ListStorageAssignmentResponse.class)
@@ -1099,51 +988,41 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStorageAssignmentRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListStorageAssignmentRequest::getOffset, ListStorageAssignmentRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStorageAssignmentRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListStorageAssignmentRequest::getLimit, ListStorageAssignmentRequest::setLimit));
         builder.<String>withRequestField("storage_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStorageAssignmentRequest::getStorageId, (req, v) -> {
-                req.setStorageId(v);
-            }));
+            f -> f.withMarshaller(ListStorageAssignmentRequest::getStorageId,
+                ListStorageAssignmentRequest::setStorageId));
         builder.<String>withRequestField("claim_mode",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStorageAssignmentRequest::getClaimMode, (req, v) -> {
-                req.setClaimMode(v);
-            }));
+            f -> f.withMarshaller(ListStorageAssignmentRequest::getClaimMode,
+                ListStorageAssignmentRequest::setClaimMode));
         builder.<String>withRequestField("storage_claim_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStorageAssignmentRequest::getStorageClaimId, (req, v) -> {
-                req.setStorageClaimId(v);
-            }));
+            f -> f.withMarshaller(ListStorageAssignmentRequest::getStorageClaimId,
+                ListStorageAssignmentRequest::setStorageClaimId));
         builder.<String>withRequestField("attach",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStorageAssignmentRequest::getAttach, (req, v) -> {
-                req.setAttach(v);
-            }));
+            f -> f.withMarshaller(ListStorageAssignmentRequest::getAttach, ListStorageAssignmentRequest::setAttach));
         builder.<String>withRequestField("attach_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStorageAssignmentRequest::getAttachType, (req, v) -> {
-                req.setAttachType(v);
-            }));
+            f -> f.withMarshaller(ListStorageAssignmentRequest::getAttachType,
+                ListStorageAssignmentRequest::setAttachType));
 
         // response
 
@@ -1151,9 +1030,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListStoragePolicyStatementRequest, ListStoragePolicyStatementResponse> listStoragePolicyStatement =
-        genForlistStoragePolicyStatement();
+        genForListStoragePolicyStatement();
 
-    private static HttpRequestDef<ListStoragePolicyStatementRequest, ListStoragePolicyStatementResponse> genForlistStoragePolicyStatement() {
+    private static HttpRequestDef<ListStoragePolicyStatementRequest, ListStoragePolicyStatementResponse> genForListStoragePolicyStatement() {
         // basic
         HttpRequestDef.Builder<ListStoragePolicyStatementRequest, ListStoragePolicyStatementResponse> builder =
             HttpRequestDef
@@ -1169,16 +1048,14 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStoragePolicyStatementRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListStoragePolicyStatementRequest::getOffset,
+                ListStoragePolicyStatementRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStoragePolicyStatementRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListStoragePolicyStatementRequest::getLimit,
+                ListStoragePolicyStatementRequest::setLimit));
 
         // response
 
@@ -1186,9 +1063,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<UpdateShareFolderAssignmentRequest, UpdateShareFolderAssignmentResponse> updateShareFolderAssignment =
-        genForupdateShareFolderAssignment();
+        genForUpdateShareFolderAssignment();
 
-    private static HttpRequestDef<UpdateShareFolderAssignmentRequest, UpdateShareFolderAssignmentResponse> genForupdateShareFolderAssignment() {
+    private static HttpRequestDef<UpdateShareFolderAssignmentRequest, UpdateShareFolderAssignmentResponse> genForUpdateShareFolderAssignment() {
         // basic
         HttpRequestDef.Builder<UpdateShareFolderAssignmentRequest, UpdateShareFolderAssignmentResponse> builder =
             HttpRequestDef
@@ -1204,16 +1081,14 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateShareFolderAssignmentRequest::getStorageId, (req, v) -> {
-                req.setStorageId(v);
-            }));
+            f -> f.withMarshaller(UpdateShareFolderAssignmentRequest::getStorageId,
+                UpdateShareFolderAssignmentRequest::setStorageId));
         builder.<AssignShareFolderReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssignShareFolderReq.class),
-            f -> f.withMarshaller(UpdateShareFolderAssignmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateShareFolderAssignmentRequest::getBody,
+                UpdateShareFolderAssignmentRequest::setBody));
 
         // response
 
@@ -1221,9 +1096,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<UpdateUserFolderAssignmentRequest, UpdateUserFolderAssignmentResponse> updateUserFolderAssignment =
-        genForupdateUserFolderAssignment();
+        genForUpdateUserFolderAssignment();
 
-    private static HttpRequestDef<UpdateUserFolderAssignmentRequest, UpdateUserFolderAssignmentResponse> genForupdateUserFolderAssignment() {
+    private static HttpRequestDef<UpdateUserFolderAssignmentRequest, UpdateUserFolderAssignmentResponse> genForUpdateUserFolderAssignment() {
         // basic
         HttpRequestDef.Builder<UpdateUserFolderAssignmentRequest, UpdateUserFolderAssignmentResponse> builder =
             HttpRequestDef
@@ -1239,16 +1114,14 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserFolderAssignmentRequest::getStorageId, (req, v) -> {
-                req.setStorageId(v);
-            }));
+            f -> f.withMarshaller(UpdateUserFolderAssignmentRequest::getStorageId,
+                UpdateUserFolderAssignmentRequest::setStorageId));
         builder.<AssignUserFolderReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssignUserFolderReq.class),
-            f -> f.withMarshaller(UpdateUserFolderAssignmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateUserFolderAssignmentRequest::getBody,
+                UpdateUserFolderAssignmentRequest::setBody));
 
         // response
 
@@ -1256,9 +1129,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<CreatePolicyGroupRequest, CreatePolicyGroupResponse> createPolicyGroup =
-        genForcreatePolicyGroup();
+        genForCreatePolicyGroup();
 
-    private static HttpRequestDef<CreatePolicyGroupRequest, CreatePolicyGroupResponse> genForcreatePolicyGroup() {
+    private static HttpRequestDef<CreatePolicyGroupRequest, CreatePolicyGroupResponse> genForCreatePolicyGroup() {
         // basic
         HttpRequestDef.Builder<CreatePolicyGroupRequest, CreatePolicyGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePolicyGroupRequest.class, CreatePolicyGroupResponse.class)
@@ -1271,9 +1144,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePolicyGroupReq.class),
-            f -> f.withMarshaller(CreatePolicyGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePolicyGroupRequest::getBody, CreatePolicyGroupRequest::setBody));
 
         // response
 
@@ -1281,9 +1152,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<CreatePolicyTemplateRequest, CreatePolicyTemplateResponse> createPolicyTemplate =
-        genForcreatePolicyTemplate();
+        genForCreatePolicyTemplate();
 
-    private static HttpRequestDef<CreatePolicyTemplateRequest, CreatePolicyTemplateResponse> genForcreatePolicyTemplate() {
+    private static HttpRequestDef<CreatePolicyTemplateRequest, CreatePolicyTemplateResponse> genForCreatePolicyTemplate() {
         // basic
         HttpRequestDef.Builder<CreatePolicyTemplateRequest, CreatePolicyTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePolicyTemplateRequest.class, CreatePolicyTemplateResponse.class)
@@ -1296,9 +1167,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePolicyTemplateReq.class),
-            f -> f.withMarshaller(CreatePolicyTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePolicyTemplateRequest::getBody, CreatePolicyTemplateRequest::setBody));
 
         // response
 
@@ -1306,9 +1175,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<DeletePolicyGroupRequest, DeletePolicyGroupResponse> deletePolicyGroup =
-        genFordeletePolicyGroup();
+        genForDeletePolicyGroup();
 
-    private static HttpRequestDef<DeletePolicyGroupRequest, DeletePolicyGroupResponse> genFordeletePolicyGroup() {
+    private static HttpRequestDef<DeletePolicyGroupRequest, DeletePolicyGroupResponse> genForDeletePolicyGroup() {
         // basic
         HttpRequestDef.Builder<DeletePolicyGroupRequest, DeletePolicyGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePolicyGroupRequest.class, DeletePolicyGroupResponse.class)
@@ -1321,9 +1190,8 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyGroupRequest::getPolicyGroupId, (req, v) -> {
-                req.setPolicyGroupId(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyGroupRequest::getPolicyGroupId,
+                DeletePolicyGroupRequest::setPolicyGroupId));
 
         // response
 
@@ -1331,9 +1199,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<DeletePolicyTemplateRequest, DeletePolicyTemplateResponse> deletePolicyTemplate =
-        genFordeletePolicyTemplate();
+        genForDeletePolicyTemplate();
 
-    private static HttpRequestDef<DeletePolicyTemplateRequest, DeletePolicyTemplateResponse> genFordeletePolicyTemplate() {
+    private static HttpRequestDef<DeletePolicyTemplateRequest, DeletePolicyTemplateResponse> genForDeletePolicyTemplate() {
         // basic
         HttpRequestDef.Builder<DeletePolicyTemplateRequest, DeletePolicyTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeletePolicyTemplateRequest.class, DeletePolicyTemplateResponse.class)
@@ -1346,9 +1214,8 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyTemplateRequest::getPolicyTemplateId, (req, v) -> {
-                req.setPolicyTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyTemplateRequest::getPolicyTemplateId,
+                DeletePolicyTemplateRequest::setPolicyTemplateId));
 
         // response
 
@@ -1356,9 +1223,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListPolicyGroupRequest, ListPolicyGroupResponse> listPolicyGroup =
-        genForlistPolicyGroup();
+        genForListPolicyGroup();
 
-    private static HttpRequestDef<ListPolicyGroupRequest, ListPolicyGroupResponse> genForlistPolicyGroup() {
+    private static HttpRequestDef<ListPolicyGroupRequest, ListPolicyGroupResponse> genForListPolicyGroup() {
         // basic
         HttpRequestDef.Builder<ListPolicyGroupRequest, ListPolicyGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPolicyGroupRequest.class, ListPolicyGroupResponse.class)
@@ -1371,30 +1238,24 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPolicyGroupRequest::getOffset, ListPolicyGroupRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPolicyGroupRequest::getLimit, ListPolicyGroupRequest::setLimit));
         builder.<String>withRequestField("policy_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getPolicyGroupName, (req, v) -> {
-                req.setPolicyGroupName(v);
-            }));
+            f -> f.withMarshaller(ListPolicyGroupRequest::getPolicyGroupName,
+                ListPolicyGroupRequest::setPolicyGroupName));
         builder.<Integer>withRequestField("policy_group_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getPolicyGroupType, (req, v) -> {
-                req.setPolicyGroupType(v);
-            }));
+            f -> f.withMarshaller(ListPolicyGroupRequest::getPolicyGroupType,
+                ListPolicyGroupRequest::setPolicyGroupType));
 
         // response
 
@@ -1402,9 +1263,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListPolicyTemplateRequest, ListPolicyTemplateResponse> listPolicyTemplate =
-        genForlistPolicyTemplate();
+        genForListPolicyTemplate();
 
-    private static HttpRequestDef<ListPolicyTemplateRequest, ListPolicyTemplateResponse> genForlistPolicyTemplate() {
+    private static HttpRequestDef<ListPolicyTemplateRequest, ListPolicyTemplateResponse> genForListPolicyTemplate() {
         // basic
         HttpRequestDef.Builder<ListPolicyTemplateRequest, ListPolicyTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPolicyTemplateRequest.class, ListPolicyTemplateResponse.class)
@@ -1417,23 +1278,18 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyTemplateRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPolicyTemplateRequest::getOffset, ListPolicyTemplateRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyTemplateRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPolicyTemplateRequest::getLimit, ListPolicyTemplateRequest::setLimit));
         builder.<String>withRequestField("policy_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyTemplateRequest::getPolicyGroupName, (req, v) -> {
-                req.setPolicyGroupName(v);
-            }));
+            f -> f.withMarshaller(ListPolicyTemplateRequest::getPolicyGroupName,
+                ListPolicyTemplateRequest::setPolicyGroupName));
 
         // response
 
@@ -1441,9 +1297,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListTargetsOfPolicyGroupRequest, ListTargetsOfPolicyGroupResponse> listTargetsOfPolicyGroup =
-        genForlistTargetsOfPolicyGroup();
+        genForListTargetsOfPolicyGroup();
 
-    private static HttpRequestDef<ListTargetsOfPolicyGroupRequest, ListTargetsOfPolicyGroupResponse> genForlistTargetsOfPolicyGroup() {
+    private static HttpRequestDef<ListTargetsOfPolicyGroupRequest, ListTargetsOfPolicyGroupResponse> genForListTargetsOfPolicyGroup() {
         // basic
         HttpRequestDef.Builder<ListTargetsOfPolicyGroupRequest, ListTargetsOfPolicyGroupResponse> builder =
             HttpRequestDef
@@ -1457,16 +1313,14 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTargetsOfPolicyGroupRequest::getPolicyGroupId, (req, v) -> {
-                req.setPolicyGroupId(v);
-            }));
+            f -> f.withMarshaller(ListTargetsOfPolicyGroupRequest::getPolicyGroupId,
+                ListTargetsOfPolicyGroupRequest::setPolicyGroupId));
         builder.<String>withRequestField("target_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTargetsOfPolicyGroupRequest::getTargetType, (req, v) -> {
-                req.setTargetType(v);
-            }));
+            f -> f.withMarshaller(ListTargetsOfPolicyGroupRequest::getTargetType,
+                ListTargetsOfPolicyGroupRequest::setTargetType));
 
         // response
 
@@ -1474,9 +1328,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ShowOriginalPolicyInfoRequest, ShowOriginalPolicyInfoResponse> showOriginalPolicyInfo =
-        genForshowOriginalPolicyInfo();
+        genForShowOriginalPolicyInfo();
 
-    private static HttpRequestDef<ShowOriginalPolicyInfoRequest, ShowOriginalPolicyInfoResponse> genForshowOriginalPolicyInfo() {
+    private static HttpRequestDef<ShowOriginalPolicyInfoRequest, ShowOriginalPolicyInfoResponse> genForShowOriginalPolicyInfo() {
         // basic
         HttpRequestDef.Builder<ShowOriginalPolicyInfoRequest, ShowOriginalPolicyInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowOriginalPolicyInfoRequest.class, ShowOriginalPolicyInfoResponse.class)
@@ -1492,9 +1346,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<UpdatePolicyGroupRequest, UpdatePolicyGroupResponse> updatePolicyGroup =
-        genForupdatePolicyGroup();
+        genForUpdatePolicyGroup();
 
-    private static HttpRequestDef<UpdatePolicyGroupRequest, UpdatePolicyGroupResponse> genForupdatePolicyGroup() {
+    private static HttpRequestDef<UpdatePolicyGroupRequest, UpdatePolicyGroupResponse> genForUpdatePolicyGroup() {
         // basic
         HttpRequestDef.Builder<UpdatePolicyGroupRequest, UpdatePolicyGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdatePolicyGroupRequest.class, UpdatePolicyGroupResponse.class)
@@ -1507,16 +1361,13 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePolicyGroupRequest::getPolicyGroupId, (req, v) -> {
-                req.setPolicyGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyGroupRequest::getPolicyGroupId,
+                UpdatePolicyGroupRequest::setPolicyGroupId));
         builder.<UpdatePolicyGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePolicyGroupReq.class),
-            f -> f.withMarshaller(UpdatePolicyGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyGroupRequest::getBody, UpdatePolicyGroupRequest::setBody));
 
         // response
 
@@ -1524,9 +1375,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<UpdatePolicyTemplateRequest, UpdatePolicyTemplateResponse> updatePolicyTemplate =
-        genForupdatePolicyTemplate();
+        genForUpdatePolicyTemplate();
 
-    private static HttpRequestDef<UpdatePolicyTemplateRequest, UpdatePolicyTemplateResponse> genForupdatePolicyTemplate() {
+    private static HttpRequestDef<UpdatePolicyTemplateRequest, UpdatePolicyTemplateResponse> genForUpdatePolicyTemplate() {
         // basic
         HttpRequestDef.Builder<UpdatePolicyTemplateRequest, UpdatePolicyTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PATCH, UpdatePolicyTemplateRequest.class, UpdatePolicyTemplateResponse.class)
@@ -1539,25 +1390,22 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePolicyTemplateRequest::getPolicyTemplateId, (req, v) -> {
-                req.setPolicyTemplateId(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyTemplateRequest::getPolicyTemplateId,
+                UpdatePolicyTemplateRequest::setPolicyTemplateId));
         builder.<UpdatePolicyTemplateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePolicyTemplateReq.class),
-            f -> f.withMarshaller(UpdatePolicyTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyTemplateRequest::getBody, UpdatePolicyTemplateRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckQuotaRequest, CheckQuotaResponse> checkQuota = genForcheckQuota();
+    public static final HttpRequestDef<CheckQuotaRequest, CheckQuotaResponse> checkQuota = genForCheckQuota();
 
-    private static HttpRequestDef<CheckQuotaRequest, CheckQuotaResponse> genForcheckQuota() {
+    private static HttpRequestDef<CheckQuotaRequest, CheckQuotaResponse> genForCheckQuota() {
         // basic
         HttpRequestDef.Builder<CheckQuotaRequest, CheckQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckQuotaRequest.class, CheckQuotaResponse.class)
@@ -1570,51 +1418,37 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckQuotaRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(CheckQuotaRequest::getProductId, CheckQuotaRequest::setProductId));
         builder.<Integer>withRequestField("subscription_num",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CheckQuotaRequest::getSubscriptionNum, (req, v) -> {
-                req.setSubscriptionNum(v);
-            }));
+            f -> f.withMarshaller(CheckQuotaRequest::getSubscriptionNum, CheckQuotaRequest::setSubscriptionNum));
         builder.<Integer>withRequestField("disk_size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CheckQuotaRequest::getDiskSize, (req, v) -> {
-                req.setDiskSize(v);
-            }));
+            f -> f.withMarshaller(CheckQuotaRequest::getDiskSize, CheckQuotaRequest::setDiskSize));
         builder.<Integer>withRequestField("disk_num",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CheckQuotaRequest::getDiskNum, (req, v) -> {
-                req.setDiskNum(v);
-            }));
+            f -> f.withMarshaller(CheckQuotaRequest::getDiskNum, CheckQuotaRequest::setDiskNum));
         builder.<Boolean>withRequestField("is_period",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(CheckQuotaRequest::getIsPeriod, (req, v) -> {
-                req.setIsPeriod(v);
-            }));
+            f -> f.withMarshaller(CheckQuotaRequest::getIsPeriod, CheckQuotaRequest::setIsPeriod));
         builder.<String>withRequestField("deh_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckQuotaRequest::getDehId, (req, v) -> {
-                req.setDehId(v);
-            }));
+            f -> f.withMarshaller(CheckQuotaRequest::getDehId, CheckQuotaRequest::setDehId));
         builder.<String>withRequestField("cluster_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckQuotaRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CheckQuotaRequest::getClusterId, CheckQuotaRequest::setClusterId));
 
         // response
 
@@ -1622,9 +1456,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteServerRequest, BatchDeleteServerResponse> batchDeleteServer =
-        genForbatchDeleteServer();
+        genForBatchDeleteServer();
 
-    private static HttpRequestDef<BatchDeleteServerRequest, BatchDeleteServerResponse> genForbatchDeleteServer() {
+    private static HttpRequestDef<BatchDeleteServerRequest, BatchDeleteServerResponse> genForBatchDeleteServer() {
         // basic
         HttpRequestDef.Builder<BatchDeleteServerRequest, BatchDeleteServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteServerRequest.class, BatchDeleteServerResponse.class)
@@ -1637,9 +1471,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteServerReq.class),
-            f -> f.withMarshaller(BatchDeleteServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteServerRequest::getBody, BatchDeleteServerRequest::setBody));
 
         // response
 
@@ -1647,9 +1479,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<BatchMigrateHostsServerRequest, BatchMigrateHostsServerResponse> batchMigrateHostsServer =
-        genForbatchMigrateHostsServer();
+        genForBatchMigrateHostsServer();
 
-    private static HttpRequestDef<BatchMigrateHostsServerRequest, BatchMigrateHostsServerResponse> genForbatchMigrateHostsServer() {
+    private static HttpRequestDef<BatchMigrateHostsServerRequest, BatchMigrateHostsServerResponse> genForBatchMigrateHostsServer() {
         // basic
         HttpRequestDef.Builder<BatchMigrateHostsServerRequest, BatchMigrateHostsServerResponse> builder = HttpRequestDef
             .builder(HttpMethod.PATCH, BatchMigrateHostsServerRequest.class, BatchMigrateHostsServerResponse.class)
@@ -1662,9 +1494,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchMigrateServerReq.class),
-            f -> f.withMarshaller(BatchMigrateHostsServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchMigrateHostsServerRequest::getBody, BatchMigrateHostsServerRequest::setBody));
 
         // response
 
@@ -1672,9 +1502,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<BatchRebootServerRequest, BatchRebootServerResponse> batchRebootServer =
-        genForbatchRebootServer();
+        genForBatchRebootServer();
 
-    private static HttpRequestDef<BatchRebootServerRequest, BatchRebootServerResponse> genForbatchRebootServer() {
+    private static HttpRequestDef<BatchRebootServerRequest, BatchRebootServerResponse> genForBatchRebootServer() {
         // basic
         HttpRequestDef.Builder<BatchRebootServerRequest, BatchRebootServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, BatchRebootServerRequest.class, BatchRebootServerResponse.class)
@@ -1687,9 +1517,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ServerHaltReq.class),
-            f -> f.withMarshaller(BatchRebootServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRebootServerRequest::getBody, BatchRebootServerRequest::setBody));
 
         // response
 
@@ -1697,9 +1525,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<BatchRejoinDomainRequest, BatchRejoinDomainResponse> batchRejoinDomain =
-        genForbatchRejoinDomain();
+        genForBatchRejoinDomain();
 
-    private static HttpRequestDef<BatchRejoinDomainRequest, BatchRejoinDomainResponse> genForbatchRejoinDomain() {
+    private static HttpRequestDef<BatchRejoinDomainRequest, BatchRejoinDomainResponse> genForBatchRejoinDomain() {
         // basic
         HttpRequestDef.Builder<BatchRejoinDomainRequest, BatchRejoinDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, BatchRejoinDomainRequest.class, BatchRejoinDomainResponse.class)
@@ -1712,9 +1540,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchRejoinDomainReq.class),
-            f -> f.withMarshaller(BatchRejoinDomainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRejoinDomainRequest::getBody, BatchRejoinDomainRequest::setBody));
 
         // response
 
@@ -1722,9 +1548,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<BatchStartServerRequest, BatchStartServerResponse> batchStartServer =
-        genForbatchStartServer();
+        genForBatchStartServer();
 
-    private static HttpRequestDef<BatchStartServerRequest, BatchStartServerResponse> genForbatchStartServer() {
+    private static HttpRequestDef<BatchStartServerRequest, BatchStartServerResponse> genForBatchStartServer() {
         // basic
         HttpRequestDef.Builder<BatchStartServerRequest, BatchStartServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, BatchStartServerRequest.class, BatchStartServerResponse.class)
@@ -1737,9 +1563,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchStartServerReq.class),
-            f -> f.withMarshaller(BatchStartServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStartServerRequest::getBody, BatchStartServerRequest::setBody));
 
         // response
 
@@ -1747,9 +1571,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<BatchStopServerRequest, BatchStopServerResponse> batchStopServer =
-        genForbatchStopServer();
+        genForBatchStopServer();
 
-    private static HttpRequestDef<BatchStopServerRequest, BatchStopServerResponse> genForbatchStopServer() {
+    private static HttpRequestDef<BatchStopServerRequest, BatchStopServerResponse> genForBatchStopServer() {
         // basic
         HttpRequestDef.Builder<BatchStopServerRequest, BatchStopServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, BatchStopServerRequest.class, BatchStopServerResponse.class)
@@ -1762,9 +1586,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ServerHaltReq.class),
-            f -> f.withMarshaller(BatchStopServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStopServerRequest::getBody, BatchStopServerRequest::setBody));
 
         // response
 
@@ -1772,9 +1594,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateTsviRequest, BatchUpdateTsviResponse> batchUpdateTsvi =
-        genForbatchUpdateTsvi();
+        genForBatchUpdateTsvi();
 
-    private static HttpRequestDef<BatchUpdateTsviRequest, BatchUpdateTsviResponse> genForbatchUpdateTsvi() {
+    private static HttpRequestDef<BatchUpdateTsviRequest, BatchUpdateTsviResponse> genForBatchUpdateTsvi() {
         // basic
         HttpRequestDef.Builder<BatchUpdateTsviRequest, BatchUpdateTsviResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, BatchUpdateTsviRequest.class, BatchUpdateTsviResponse.class)
@@ -1787,9 +1609,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTsviReq.class),
-            f -> f.withMarshaller(BatchUpdateTsviRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateTsviRequest::getBody, BatchUpdateTsviRequest::setBody));
 
         // response
 
@@ -1797,9 +1617,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ChangeServerImageRequest, ChangeServerImageResponse> changeServerImage =
-        genForchangeServerImage();
+        genForChangeServerImage();
 
-    private static HttpRequestDef<ChangeServerImageRequest, ChangeServerImageResponse> genForchangeServerImage() {
+    private static HttpRequestDef<ChangeServerImageRequest, ChangeServerImageResponse> genForChangeServerImage() {
         // basic
         HttpRequestDef.Builder<ChangeServerImageRequest, ChangeServerImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ChangeServerImageRequest.class, ChangeServerImageResponse.class)
@@ -1812,16 +1632,12 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeServerImageRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ChangeServerImageRequest::getServerId, ChangeServerImageRequest::setServerId));
         builder.<ChangeServerImageReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeServerImageReq.class),
-            f -> f.withMarshaller(ChangeServerImageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeServerImageRequest::getBody, ChangeServerImageRequest::setBody));
 
         // response
 
@@ -1829,9 +1645,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<CreateAppServersRequest, CreateAppServersResponse> createAppServers =
-        genForcreateAppServers();
+        genForCreateAppServers();
 
-    private static HttpRequestDef<CreateAppServersRequest, CreateAppServersResponse> genForcreateAppServers() {
+    private static HttpRequestDef<CreateAppServersRequest, CreateAppServersResponse> genForCreateAppServers() {
         // basic
         HttpRequestDef.Builder<CreateAppServersRequest, CreateAppServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppServersRequest.class, CreateAppServersResponse.class)
@@ -1844,18 +1660,16 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppServerReq.class),
-            f -> f.withMarshaller(CreateAppServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppServersRequest::getBody, CreateAppServersRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListServersRequest, ListServersResponse> listServers = genForlistServers();
+    public static final HttpRequestDef<ListServersRequest, ListServersResponse> listServers = genForListServers();
 
-    private static HttpRequestDef<ListServersRequest, ListServersResponse> genForlistServers() {
+    private static HttpRequestDef<ListServersRequest, ListServersResponse> genForListServers() {
         // basic
         HttpRequestDef.Builder<ListServersRequest, ListServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServersRequest.class, ListServersResponse.class)
@@ -1868,51 +1682,37 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServersRequest::getOffset, ListServersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServersRequest::getLimit, ListServersRequest::setLimit));
         builder.<String>withRequestField("server_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(ListServersRequest::getServerGroupId, ListServersRequest::setServerGroupId));
         builder.<String>withRequestField("server_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersRequest::getServerName, (req, v) -> {
-                req.setServerName(v);
-            }));
+            f -> f.withMarshaller(ListServersRequest::getServerName, ListServersRequest::setServerName));
         builder.<String>withRequestField("server_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ListServersRequest::getServerId, ListServersRequest::setServerId));
         builder.<String>withRequestField("maintain_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersRequest::getMaintainStatus, (req, v) -> {
-                req.setMaintainStatus(v);
-            }));
+            f -> f.withMarshaller(ListServersRequest::getMaintainStatus, ListServersRequest::setMaintainStatus));
         builder.<String>withRequestField("scaling_auto_create",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersRequest::getScalingAutoCreate, (req, v) -> {
-                req.setScalingAutoCreate(v);
-            }));
+            f -> f.withMarshaller(ListServersRequest::getScalingAutoCreate, ListServersRequest::setScalingAutoCreate));
 
         // response
 
@@ -1920,9 +1720,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ReinstallServerRequest, ReinstallServerResponse> reinstallServer =
-        genForreinstallServer();
+        genForReinstallServer();
 
-    private static HttpRequestDef<ReinstallServerRequest, ReinstallServerResponse> genForreinstallServer() {
+    private static HttpRequestDef<ReinstallServerRequest, ReinstallServerResponse> genForReinstallServer() {
         // basic
         HttpRequestDef.Builder<ReinstallServerRequest, ReinstallServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ReinstallServerRequest.class, ReinstallServerResponse.class)
@@ -1935,25 +1735,21 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ReinstallServerRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ReinstallServerRequest::getServerId, ReinstallServerRequest::setServerId));
         builder.<ReinstallServerReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReinstallServerReq.class),
-            f -> f.withMarshaller(ReinstallServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ReinstallServerRequest::getBody, ReinstallServerRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateServerRequest, UpdateServerResponse> updateServer = genForupdateServer();
+    public static final HttpRequestDef<UpdateServerRequest, UpdateServerResponse> updateServer = genForUpdateServer();
 
-    private static HttpRequestDef<UpdateServerRequest, UpdateServerResponse> genForupdateServer() {
+    private static HttpRequestDef<UpdateServerRequest, UpdateServerResponse> genForUpdateServer() {
         // basic
         HttpRequestDef.Builder<UpdateServerRequest, UpdateServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateServerRequest.class, UpdateServerResponse.class)
@@ -1966,16 +1762,12 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServerRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(UpdateServerRequest::getServerId, UpdateServerRequest::setServerId));
         builder.<UpdateServerReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerReq.class),
-            f -> f.withMarshaller(UpdateServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateServerRequest::getBody, UpdateServerRequest::setBody));
 
         // response
 
@@ -1983,9 +1775,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<CreateServerGroupRequest, CreateServerGroupResponse> createServerGroup =
-        genForcreateServerGroup();
+        genForCreateServerGroup();
 
-    private static HttpRequestDef<CreateServerGroupRequest, CreateServerGroupResponse> genForcreateServerGroup() {
+    private static HttpRequestDef<CreateServerGroupRequest, CreateServerGroupResponse> genForCreateServerGroup() {
         // basic
         HttpRequestDef.Builder<CreateServerGroupRequest, CreateServerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateServerGroupRequest.class, CreateServerGroupResponse.class)
@@ -1998,9 +1790,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateServerGroupReq.class),
-            f -> f.withMarshaller(CreateServerGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateServerGroupRequest::getBody, CreateServerGroupRequest::setBody));
 
         // response
 
@@ -2008,9 +1798,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<DeleteServerGroupsRequest, DeleteServerGroupsResponse> deleteServerGroups =
-        genFordeleteServerGroups();
+        genForDeleteServerGroups();
 
-    private static HttpRequestDef<DeleteServerGroupsRequest, DeleteServerGroupsResponse> genFordeleteServerGroups() {
+    private static HttpRequestDef<DeleteServerGroupsRequest, DeleteServerGroupsResponse> genForDeleteServerGroups() {
         // basic
         HttpRequestDef.Builder<DeleteServerGroupsRequest, DeleteServerGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServerGroupsRequest.class, DeleteServerGroupsResponse.class)
@@ -2023,9 +1813,8 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServerGroupsRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteServerGroupsRequest::getServerGroupId,
+                DeleteServerGroupsRequest::setServerGroupId));
 
         // response
 
@@ -2033,9 +1822,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> listServerGroups =
-        genForlistServerGroups();
+        genForListServerGroups();
 
-    private static HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> genForlistServerGroups() {
+    private static HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> genForListServerGroups() {
         // basic
         HttpRequestDef.Builder<ListServerGroupsRequest, ListServerGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServerGroupsRequest.class, ListServerGroupsResponse.class)
@@ -2048,37 +1837,29 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServerGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServerGroupsRequest::getOffset, ListServerGroupsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServerGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServerGroupsRequest::getLimit, ListServerGroupsRequest::setLimit));
         builder.<String>withRequestField("server_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServerGroupsRequest::getServerGroupName, (req, v) -> {
-                req.setServerGroupName(v);
-            }));
+            f -> f.withMarshaller(ListServerGroupsRequest::getServerGroupName,
+                ListServerGroupsRequest::setServerGroupName));
         builder.<String>withRequestField("server_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServerGroupsRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(ListServerGroupsRequest::getServerGroupId,
+                ListServerGroupsRequest::setServerGroupId));
         builder.<String>withRequestField("app_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServerGroupsRequest::getAppType, (req, v) -> {
-                req.setAppType(v);
-            }));
+            f -> f.withMarshaller(ListServerGroupsRequest::getAppType, ListServerGroupsRequest::setAppType));
 
         // response
 
@@ -2086,9 +1867,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<UpdateServerGroupRequest, UpdateServerGroupResponse> updateServerGroup =
-        genForupdateServerGroup();
+        genForUpdateServerGroup();
 
-    private static HttpRequestDef<UpdateServerGroupRequest, UpdateServerGroupResponse> genForupdateServerGroup() {
+    private static HttpRequestDef<UpdateServerGroupRequest, UpdateServerGroupResponse> genForUpdateServerGroup() {
         // basic
         HttpRequestDef.Builder<UpdateServerGroupRequest, UpdateServerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateServerGroupRequest.class, UpdateServerGroupResponse.class)
@@ -2101,16 +1882,13 @@ public class WorkspaceAppMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServerGroupRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateServerGroupRequest::getServerGroupId,
+                UpdateServerGroupRequest::setServerGroupId));
         builder.<UpdateServerGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerGroupReq.class),
-            f -> f.withMarshaller(UpdateServerGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateServerGroupRequest::getBody, UpdateServerGroupRequest::setBody));
 
         // response
 
@@ -2118,9 +1896,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListAppConnectionRequest, ListAppConnectionResponse> listAppConnection =
-        genForlistAppConnection();
+        genForListAppConnection();
 
-    private static HttpRequestDef<ListAppConnectionRequest, ListAppConnectionResponse> genForlistAppConnection() {
+    private static HttpRequestDef<ListAppConnectionRequest, ListAppConnectionResponse> genForListAppConnection() {
         // basic
         HttpRequestDef.Builder<ListAppConnectionRequest, ListAppConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListAppConnectionRequest.class, ListAppConnectionResponse.class)
@@ -2133,23 +1911,17 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppConnectionRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppConnectionRequest::getLimit, ListAppConnectionRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppConnectionRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppConnectionRequest::getOffset, ListAppConnectionRequest::setOffset));
         builder.<ListAppConnectionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListAppConnectionReq.class),
-            f -> f.withMarshaller(ListAppConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAppConnectionRequest::getBody, ListAppConnectionRequest::setBody));
 
         // response
 
@@ -2157,9 +1929,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListSessionByUserNameRequest, ListSessionByUserNameResponse> listSessionByUserName =
-        genForlistSessionByUserName();
+        genForListSessionByUserName();
 
-    private static HttpRequestDef<ListSessionByUserNameRequest, ListSessionByUserNameResponse> genForlistSessionByUserName() {
+    private static HttpRequestDef<ListSessionByUserNameRequest, ListSessionByUserNameResponse> genForListSessionByUserName() {
         // basic
         HttpRequestDef.Builder<ListSessionByUserNameRequest, ListSessionByUserNameResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSessionByUserNameRequest.class, ListSessionByUserNameResponse.class)
@@ -2172,9 +1944,8 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSessionByUserNameRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(ListSessionByUserNameRequest::getUserName,
+                ListSessionByUserNameRequest::setUserName));
 
         // response
 
@@ -2182,9 +1953,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListUserConnectionRequest, ListUserConnectionResponse> listUserConnection =
-        genForlistUserConnection();
+        genForListUserConnection();
 
-    private static HttpRequestDef<ListUserConnectionRequest, ListUserConnectionResponse> genForlistUserConnection() {
+    private static HttpRequestDef<ListUserConnectionRequest, ListUserConnectionResponse> genForListUserConnection() {
         // basic
         HttpRequestDef.Builder<ListUserConnectionRequest, ListUserConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListUserConnectionRequest.class, ListUserConnectionResponse.class)
@@ -2197,23 +1968,17 @@ public class WorkspaceAppMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUserConnectionRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListUserConnectionRequest::getLimit, ListUserConnectionRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUserConnectionRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListUserConnectionRequest::getOffset, ListUserConnectionRequest::setOffset));
         builder.<ListUserConnectionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListUserConnectionReq.class),
-            f -> f.withMarshaller(ListUserConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListUserConnectionRequest::getBody, ListUserConnectionRequest::setBody));
 
         // response
 
@@ -2221,9 +1986,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<LogoffUserSessionRequest, LogoffUserSessionResponse> logoffUserSession =
-        genForlogoffUserSession();
+        genForLogoffUserSession();
 
-    private static HttpRequestDef<LogoffUserSessionRequest, LogoffUserSessionResponse> genForlogoffUserSession() {
+    private static HttpRequestDef<LogoffUserSessionRequest, LogoffUserSessionResponse> genForLogoffUserSession() {
         // basic
         HttpRequestDef.Builder<LogoffUserSessionRequest, LogoffUserSessionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, LogoffUserSessionRequest.class, LogoffUserSessionResponse.class)
@@ -2236,9 +2001,7 @@ public class WorkspaceAppMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LogoffUserSessionReq.class),
-            f -> f.withMarshaller(LogoffUserSessionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(LogoffUserSessionRequest::getBody, LogoffUserSessionRequest::setBody));
 
         // response
 
@@ -2246,9 +2009,9 @@ public class WorkspaceAppMeta {
     }
 
     public static final HttpRequestDef<ListVolumeTypeRequest, ListVolumeTypeResponse> listVolumeType =
-        genForlistVolumeType();
+        genForListVolumeType();
 
-    private static HttpRequestDef<ListVolumeTypeRequest, ListVolumeTypeResponse> genForlistVolumeType() {
+    private static HttpRequestDef<ListVolumeTypeRequest, ListVolumeTypeResponse> genForListVolumeType() {
         // basic
         HttpRequestDef.Builder<ListVolumeTypeRequest, ListVolumeTypeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVolumeTypeRequest.class, ListVolumeTypeResponse.class)

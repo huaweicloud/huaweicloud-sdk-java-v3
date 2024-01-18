@@ -27,17 +27,12 @@ public class ShowLandingZoneConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "organization_structure")
 
-    private List<OrganizationStructureBaseLine> organizationStructure = null;
+    private List<OrganizationStructureBaseLineRsp> organizationStructure = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regions")
 
     private List<RegionConfigurationList> regions = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "identity_store_email")
-
-    private String identityStoreEmail;
 
     public ShowLandingZoneConfigurationResponse withCommonConfiguration(CommonConfiguration commonConfiguration) {
         this.commonConfiguration = commonConfiguration;
@@ -94,13 +89,13 @@ public class ShowLandingZoneConfigurationResponse extends SdkResponse {
     }
 
     public ShowLandingZoneConfigurationResponse withOrganizationStructure(
-        List<OrganizationStructureBaseLine> organizationStructure) {
+        List<OrganizationStructureBaseLineRsp> organizationStructure) {
         this.organizationStructure = organizationStructure;
         return this;
     }
 
     public ShowLandingZoneConfigurationResponse addOrganizationStructureItem(
-        OrganizationStructureBaseLine organizationStructureItem) {
+        OrganizationStructureBaseLineRsp organizationStructureItem) {
         if (this.organizationStructure == null) {
             this.organizationStructure = new ArrayList<>();
         }
@@ -109,7 +104,7 @@ public class ShowLandingZoneConfigurationResponse extends SdkResponse {
     }
 
     public ShowLandingZoneConfigurationResponse withOrganizationStructure(
-        Consumer<List<OrganizationStructureBaseLine>> organizationStructureSetter) {
+        Consumer<List<OrganizationStructureBaseLineRsp>> organizationStructureSetter) {
         if (this.organizationStructure == null) {
             this.organizationStructure = new ArrayList<>();
         }
@@ -121,11 +116,11 @@ public class ShowLandingZoneConfigurationResponse extends SdkResponse {
      * Get organizationStructure
      * @return organizationStructure
      */
-    public List<OrganizationStructureBaseLine> getOrganizationStructure() {
+    public List<OrganizationStructureBaseLineRsp> getOrganizationStructure() {
         return organizationStructure;
     }
 
-    public void setOrganizationStructure(List<OrganizationStructureBaseLine> organizationStructure) {
+    public void setOrganizationStructure(List<OrganizationStructureBaseLineRsp> organizationStructure) {
         this.organizationStructure = organizationStructure;
     }
 
@@ -151,7 +146,7 @@ public class ShowLandingZoneConfigurationResponse extends SdkResponse {
     }
 
     /**
-     * 纳管的区域
+     * 纳管的区域信息。
      * @return regions
      */
     public List<RegionConfigurationList> getRegions() {
@@ -160,23 +155,6 @@ public class ShowLandingZoneConfigurationResponse extends SdkResponse {
 
     public void setRegions(List<RegionConfigurationList> regions) {
         this.regions = regions;
-    }
-
-    public ShowLandingZoneConfigurationResponse withIdentityStoreEmail(String identityStoreEmail) {
-        this.identityStoreEmail = identityStoreEmail;
-        return this;
-    }
-
-    /**
-     * 管理员账号创建Identity Center用户所用邮箱
-     * @return identityStoreEmail
-     */
-    public String getIdentityStoreEmail() {
-        return identityStoreEmail;
-    }
-
-    public void setIdentityStoreEmail(String identityStoreEmail) {
-        this.identityStoreEmail = identityStoreEmail;
     }
 
     @Override
@@ -191,14 +169,12 @@ public class ShowLandingZoneConfigurationResponse extends SdkResponse {
         return Objects.equals(this.commonConfiguration, that.commonConfiguration)
             && Objects.equals(this.loggingConfiguration, that.loggingConfiguration)
             && Objects.equals(this.organizationStructure, that.organizationStructure)
-            && Objects.equals(this.regions, that.regions)
-            && Objects.equals(this.identityStoreEmail, that.identityStoreEmail);
+            && Objects.equals(this.regions, that.regions);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(commonConfiguration, loggingConfiguration, organizationStructure, regions, identityStoreEmail);
+        return Objects.hash(commonConfiguration, loggingConfiguration, organizationStructure, regions);
     }
 
     @Override
@@ -209,7 +185,6 @@ public class ShowLandingZoneConfigurationResponse extends SdkResponse {
         sb.append("    loggingConfiguration: ").append(toIndentedString(loggingConfiguration)).append("\n");
         sb.append("    organizationStructure: ").append(toIndentedString(organizationStructure)).append("\n");
         sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
-        sb.append("    identityStoreEmail: ").append(toIndentedString(identityStoreEmail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

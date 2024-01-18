@@ -54,9 +54,9 @@ import com.huaweicloud.sdk.iotedge.v3.model.UpdateAppInstanceResponse;
 @SuppressWarnings("unchecked")
 public class IoTEdgeMeta {
 
-    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForcreateApp();
+    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForCreateApp();
 
-    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForcreateApp() {
+    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForCreateApp() {
         // basic
         HttpRequestDef.Builder<CreateAppRequest, CreateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppRequest.class, CreateAppResponse.class)
@@ -69,18 +69,16 @@ public class IoTEdgeMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppRequestDTO.class),
-            f -> f.withMarshaller(CreateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getBody, CreateAppRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genFordeleteApp();
+    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genForDeleteApp();
 
-    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genFordeleteApp() {
+    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genForDeleteApp() {
         // basic
         HttpRequestDef.Builder<DeleteAppRequest, DeleteAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppRequest.class, DeleteAppResponse.class)
@@ -93,25 +91,21 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getAppId, DeleteAppRequest::setAppId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAppResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteAppResponse::getBody, DeleteAppResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForlistApps();
+    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForListApps();
 
-    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForlistApps() {
+    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForListApps() {
         // basic
         HttpRequestDef.Builder<ListAppsRequest, ListAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsRequest.class, ListAppsResponse.class)
@@ -124,46 +118,36 @@ public class IoTEdgeMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getAppType, (req, v) -> {
-                req.setAppType(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getAppType, ListAppsRequest::setAppType));
         builder.<String>withRequestField("provider_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getProviderType, (req, v) -> {
-                req.setProviderType(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getProviderType, ListAppsRequest::setProviderType));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getAppId, ListAppsRequest::setAppId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getLimit, ListAppsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getOffset, ListAppsRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForshowApp();
+    public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForShowApp();
 
-    private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForshowApp() {
+    private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForShowApp() {
         // basic
         HttpRequestDef.Builder<ShowAppRequest, ShowAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppRequest.class, ShowAppResponse.class)
@@ -176,9 +160,7 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowAppRequest::getAppId, ShowAppRequest::setAppId));
 
         // response
 
@@ -186,9 +168,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<CreateAppInstanceRequest, CreateAppInstanceResponse> createAppInstance =
-        genForcreateAppInstance();
+        genForCreateAppInstance();
 
-    private static HttpRequestDef<CreateAppInstanceRequest, CreateAppInstanceResponse> genForcreateAppInstance() {
+    private static HttpRequestDef<CreateAppInstanceRequest, CreateAppInstanceResponse> genForCreateAppInstance() {
         // basic
         HttpRequestDef.Builder<CreateAppInstanceRequest, CreateAppInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppInstanceRequest.class, CreateAppInstanceResponse.class)
@@ -201,16 +183,12 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppInstanceRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateAppInstanceRequest::getClusterId, CreateAppInstanceRequest::setClusterId));
         builder.<CreateAppInstanceRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppInstanceRequestDTO.class),
-            f -> f.withMarshaller(CreateAppInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppInstanceRequest::getBody, CreateAppInstanceRequest::setBody));
 
         // response
 
@@ -218,9 +196,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteAppInstanceRequest, DeleteAppInstanceResponse> deleteAppInstance =
-        genFordeleteAppInstance();
+        genForDeleteAppInstance();
 
-    private static HttpRequestDef<DeleteAppInstanceRequest, DeleteAppInstanceResponse> genFordeleteAppInstance() {
+    private static HttpRequestDef<DeleteAppInstanceRequest, DeleteAppInstanceResponse> genForDeleteAppInstance() {
         // basic
         HttpRequestDef.Builder<DeleteAppInstanceRequest, DeleteAppInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppInstanceRequest.class, DeleteAppInstanceResponse.class)
@@ -233,40 +211,33 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppInstanceRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppInstanceRequest::getClusterId, DeleteAppInstanceRequest::setClusterId));
         builder.<String>withRequestField("app_instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppInstanceRequest::getAppInstanceId, (req, v) -> {
-                req.setAppInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppInstanceRequest::getAppInstanceId,
+                DeleteAppInstanceRequest::setAppInstanceId));
         builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppInstanceRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteAppInstanceRequest::getNamespace, DeleteAppInstanceRequest::setNamespace));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAppInstanceResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteAppInstanceResponse::getBody, DeleteAppInstanceResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> listAppInstanceHistory =
-        genForlistAppInstanceHistory();
+        genForListAppInstanceHistory();
 
-    private static HttpRequestDef<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> genForlistAppInstanceHistory() {
+    private static HttpRequestDef<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> genForListAppInstanceHistory() {
         // basic
         HttpRequestDef.Builder<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAppInstanceHistoryRequest.class, ListAppInstanceHistoryResponse.class)
@@ -279,23 +250,20 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppInstanceHistoryRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListAppInstanceHistoryRequest::getClusterId,
+                ListAppInstanceHistoryRequest::setClusterId));
         builder.<String>withRequestField("app_instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppInstanceHistoryRequest::getAppInstanceId, (req, v) -> {
-                req.setAppInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppInstanceHistoryRequest::getAppInstanceId,
+                ListAppInstanceHistoryRequest::setAppInstanceId));
         builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppInstanceHistoryRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListAppInstanceHistoryRequest::getNamespace,
+                ListAppInstanceHistoryRequest::setNamespace));
 
         // response
 
@@ -303,9 +271,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<ListAppInstancesRequest, ListAppInstancesResponse> listAppInstances =
-        genForlistAppInstances();
+        genForListAppInstances();
 
-    private static HttpRequestDef<ListAppInstancesRequest, ListAppInstancesResponse> genForlistAppInstances() {
+    private static HttpRequestDef<ListAppInstancesRequest, ListAppInstancesResponse> genForListAppInstances() {
         // basic
         HttpRequestDef.Builder<ListAppInstancesRequest, ListAppInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppInstancesRequest.class, ListAppInstancesResponse.class)
@@ -318,9 +286,7 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppInstancesRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListAppInstancesRequest::getClusterId, ListAppInstancesRequest::setClusterId));
 
         // response
 
@@ -328,9 +294,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<UpdateAppInstanceRequest, UpdateAppInstanceResponse> updateAppInstance =
-        genForupdateAppInstance();
+        genForUpdateAppInstance();
 
-    private static HttpRequestDef<UpdateAppInstanceRequest, UpdateAppInstanceResponse> genForupdateAppInstance() {
+    private static HttpRequestDef<UpdateAppInstanceRequest, UpdateAppInstanceResponse> genForUpdateAppInstance() {
         // basic
         HttpRequestDef.Builder<UpdateAppInstanceRequest, UpdateAppInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppInstanceRequest.class, UpdateAppInstanceResponse.class)
@@ -343,23 +309,18 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppInstanceRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppInstanceRequest::getClusterId, UpdateAppInstanceRequest::setClusterId));
         builder.<String>withRequestField("app_instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppInstanceRequest::getAppInstanceId, (req, v) -> {
-                req.setAppInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppInstanceRequest::getAppInstanceId,
+                UpdateAppInstanceRequest::setAppInstanceId));
         builder.<UpdateAppInstanceRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAppInstanceRequestDTO.class),
-            f -> f.withMarshaller(UpdateAppInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppInstanceRequest::getBody, UpdateAppInstanceRequest::setBody));
 
         // response
 
@@ -367,9 +328,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<CreateAppVersionRequest, CreateAppVersionResponse> createAppVersion =
-        genForcreateAppVersion();
+        genForCreateAppVersion();
 
-    private static HttpRequestDef<CreateAppVersionRequest, CreateAppVersionResponse> genForcreateAppVersion() {
+    private static HttpRequestDef<CreateAppVersionRequest, CreateAppVersionResponse> genForCreateAppVersion() {
         // basic
         HttpRequestDef.Builder<CreateAppVersionRequest, CreateAppVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppVersionRequest.class, CreateAppVersionResponse.class)
@@ -382,23 +343,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppVersionRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateAppVersionRequest::getAppId, CreateAppVersionRequest::setAppId));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(CreateAppVersionRequest::getVersion, CreateAppVersionRequest::setVersion));
         builder.<CreateAppVersionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppVersionRequestBody.class),
-            f -> f.withMarshaller(CreateAppVersionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppVersionRequest::getBody, CreateAppVersionRequest::setBody));
 
         // response
 
@@ -406,9 +361,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteAppVersionRequest, DeleteAppVersionResponse> deleteAppVersion =
-        genFordeleteAppVersion();
+        genForDeleteAppVersion();
 
-    private static HttpRequestDef<DeleteAppVersionRequest, DeleteAppVersionResponse> genFordeleteAppVersion() {
+    private static HttpRequestDef<DeleteAppVersionRequest, DeleteAppVersionResponse> genForDeleteAppVersion() {
         // basic
         HttpRequestDef.Builder<DeleteAppVersionRequest, DeleteAppVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppVersionRequest.class, DeleteAppVersionResponse.class)
@@ -421,33 +376,27 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppVersionRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppVersionRequest::getAppId, DeleteAppVersionRequest::setAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(DeleteAppVersionRequest::getVersion, DeleteAppVersionRequest::setVersion));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAppVersionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteAppVersionResponse::getBody, DeleteAppVersionResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DownloadAppVersionRequest, DownloadAppVersionResponse> downloadAppVersion =
-        genFordownloadAppVersion();
+        genForDownloadAppVersion();
 
-    private static HttpRequestDef<DownloadAppVersionRequest, DownloadAppVersionResponse> genFordownloadAppVersion() {
+    private static HttpRequestDef<DownloadAppVersionRequest, DownloadAppVersionResponse> genForDownloadAppVersion() {
         // basic
         HttpRequestDef.Builder<DownloadAppVersionRequest, DownloadAppVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadAppVersionRequest.class, DownloadAppVersionResponse.class)
@@ -460,25 +409,21 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadAppVersionRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DownloadAppVersionRequest::getAppId, DownloadAppVersionRequest::setAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadAppVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(DownloadAppVersionRequest::getVersion, DownloadAppVersionRequest::setVersion));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppImageRequest, ListAppImageResponse> listAppImage = genForlistAppImage();
+    public static final HttpRequestDef<ListAppImageRequest, ListAppImageResponse> listAppImage = genForListAppImage();
 
-    private static HttpRequestDef<ListAppImageRequest, ListAppImageResponse> genForlistAppImage() {
+    private static HttpRequestDef<ListAppImageRequest, ListAppImageResponse> genForListAppImage() {
         // basic
         HttpRequestDef.Builder<ListAppImageRequest, ListAppImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppImageRequest.class, ListAppImageResponse.class)
@@ -491,30 +436,22 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppImageRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAppImageRequest::getAppId, ListAppImageRequest::setAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppImageRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ListAppImageRequest::getVersion, ListAppImageRequest::setVersion));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppImageRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppImageRequest::getLimit, ListAppImageRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppImageRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppImageRequest::getOffset, ListAppImageRequest::setOffset));
 
         // response
 
@@ -522,9 +459,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<ListAppVersionsRequest, ListAppVersionsResponse> listAppVersions =
-        genForlistAppVersions();
+        genForListAppVersions();
 
-    private static HttpRequestDef<ListAppVersionsRequest, ListAppVersionsResponse> genForlistAppVersions() {
+    private static HttpRequestDef<ListAppVersionsRequest, ListAppVersionsResponse> genForListAppVersions() {
         // basic
         HttpRequestDef.Builder<ListAppVersionsRequest, ListAppVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppVersionsRequest.class, ListAppVersionsResponse.class)
@@ -537,30 +474,22 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppVersionsRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAppVersionsRequest::getAppId, ListAppVersionsRequest::setAppId));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppVersionsRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ListAppVersionsRequest::getVersion, ListAppVersionsRequest::setVersion));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppVersionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppVersionsRequest::getLimit, ListAppVersionsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppVersionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppVersionsRequest::getOffset, ListAppVersionsRequest::setOffset));
 
         // response
 
@@ -568,9 +497,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<ShowAppVersionRequest, ShowAppVersionResponse> showAppVersion =
-        genForshowAppVersion();
+        genForShowAppVersion();
 
-    private static HttpRequestDef<ShowAppVersionRequest, ShowAppVersionResponse> genForshowAppVersion() {
+    private static HttpRequestDef<ShowAppVersionRequest, ShowAppVersionResponse> genForShowAppVersion() {
         // basic
         HttpRequestDef.Builder<ShowAppVersionRequest, ShowAppVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppVersionRequest.class, ShowAppVersionResponse.class)
@@ -583,16 +512,12 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppVersionRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowAppVersionRequest::getAppId, ShowAppVersionRequest::setAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowAppVersionRequest::getVersion, ShowAppVersionRequest::setVersion));
 
         // response
 
@@ -600,9 +525,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster =
-        genForcreateCluster();
+        genForCreateCluster();
 
-    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForcreateCluster() {
+    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForCreateCluster() {
         // basic
         HttpRequestDef.Builder<CreateClusterRequest, CreateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClusterRequest.class, CreateClusterResponse.class)
@@ -615,9 +540,7 @@ public class IoTEdgeMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateClusterRequestDTO.class),
-            f -> f.withMarshaller(CreateClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateClusterRequest::getBody, CreateClusterRequest::setBody));
 
         // response
 
@@ -625,9 +548,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> createClusterInstallCmd =
-        genForcreateClusterInstallCmd();
+        genForCreateClusterInstallCmd();
 
-    private static HttpRequestDef<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> genForcreateClusterInstallCmd() {
+    private static HttpRequestDef<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> genForCreateClusterInstallCmd() {
         // basic
         HttpRequestDef.Builder<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateClusterInstallCmdRequest.class, CreateClusterInstallCmdResponse.class)
@@ -640,23 +563,18 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateClusterInstallCmdRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateClusterInstallCmdRequest::getClusterId,
+                CreateClusterInstallCmdRequest::setClusterId));
         builder.<String>withRequestField("arch",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateClusterInstallCmdRequest::getArch, (req, v) -> {
-                req.setArch(v);
-            }));
+            f -> f.withMarshaller(CreateClusterInstallCmdRequest::getArch, CreateClusterInstallCmdRequest::setArch));
         builder.<String>withRequestField("os",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateClusterInstallCmdRequest::getOs, (req, v) -> {
-                req.setOs(v);
-            }));
+            f -> f.withMarshaller(CreateClusterInstallCmdRequest::getOs, CreateClusterInstallCmdRequest::setOs));
 
         // response
 
@@ -664,9 +582,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> deleteCluster =
-        genFordeleteCluster();
+        genForDeleteCluster();
 
-    private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genFordeleteCluster() {
+    private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genForDeleteCluster() {
         // basic
         HttpRequestDef.Builder<DeleteClusterRequest, DeleteClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteClusterRequest.class, DeleteClusterResponse.class)
@@ -679,25 +597,21 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getClusterId, DeleteClusterRequest::setClusterId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteClusterResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteClusterResponse::getBody, DeleteClusterResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForlistClusters();
+    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForListClusters();
 
-    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForlistClusters() {
+    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForListClusters() {
         // basic
         HttpRequestDef.Builder<ListClustersRequest, ListClustersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClustersRequest.class, ListClustersResponse.class)
@@ -710,39 +624,31 @@ public class IoTEdgeMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClustersRequest::getClusterName, (req, v) -> {
-                req.setClusterName(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getClusterName, ListClustersRequest::setClusterName));
         builder.<String>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClustersRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getState, ListClustersRequest::setState));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClustersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getLimit, ListClustersRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClustersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getOffset, ListClustersRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowClusterRequest, ShowClusterResponse> showCluster = genForshowCluster();
+    public static final HttpRequestDef<ShowClusterRequest, ShowClusterResponse> showCluster = genForShowCluster();
 
-    private static HttpRequestDef<ShowClusterRequest, ShowClusterResponse> genForshowCluster() {
+    private static HttpRequestDef<ShowClusterRequest, ShowClusterResponse> genForShowCluster() {
         // basic
         HttpRequestDef.Builder<ShowClusterRequest, ShowClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterRequest.class, ShowClusterResponse.class)
@@ -755,9 +661,7 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterRequest::getClusterId, ShowClusterRequest::setClusterId));
 
         // response
 

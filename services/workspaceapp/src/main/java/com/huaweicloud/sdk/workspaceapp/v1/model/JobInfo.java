@@ -132,7 +132,7 @@ public class JobInfo {
     }
 
     /**
-     * 子任务总数
+     * 子任务总数。
      * @return subJobsTotal
      */
     public Integer getSubJobsTotal() {

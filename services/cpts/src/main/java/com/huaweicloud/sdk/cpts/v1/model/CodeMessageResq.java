@@ -26,7 +26,7 @@ public class CodeMessageResq {
     }
 
     /**
-     * code
+     * 响应码
      * @return code
      */
     public String getCode() {
@@ -43,7 +43,7 @@ public class CodeMessageResq {
     }
 
     /**
-     * message
+     * 响应消息
      * @return message
      */
     public String getMessage() {

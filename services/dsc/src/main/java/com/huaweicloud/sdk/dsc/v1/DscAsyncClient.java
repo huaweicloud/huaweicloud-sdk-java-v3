@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleGroupRequest;
 import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleGroupResponse;
 import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleResponse;
+import com.huaweicloud.sdk.dsc.v1.model.DeleteScanJobRequest;
+import com.huaweicloud.sdk.dsc.v1.model.DeleteScanJobResponse;
 import com.huaweicloud.sdk.dsc.v1.model.ListBucketsRequest;
 import com.huaweicloud.sdk.dsc.v1.model.ListBucketsResponse;
 import com.huaweicloud.sdk.dsc.v1.model.ListDbMaskTaskRequest;
@@ -104,7 +106,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddBucketsRequest 请求对象
+     * @param request AddBucketsRequest 请求对象
      * @return CompletableFuture<AddBucketsResponse>
      */
     public CompletableFuture<AddBucketsResponse> addBucketsAsync(AddBucketsRequest request) {
@@ -118,11 +120,11 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddBucketsRequest 请求对象
+     * @param request AddBucketsRequest 请求对象
      * @return AsyncInvoker<AddBucketsRequest, AddBucketsResponse>
      */
     public AsyncInvoker<AddBucketsRequest, AddBucketsResponse> addBucketsAsyncInvoker(AddBucketsRequest request) {
-        return new AsyncInvoker<AddBucketsRequest, AddBucketsResponse>(request, DscMeta.addBuckets, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.addBuckets, hcClient);
     }
 
     /**
@@ -132,7 +134,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddRuleRequest 请求对象
+     * @param request AddRuleRequest 请求对象
      * @return CompletableFuture<AddRuleResponse>
      */
     public CompletableFuture<AddRuleResponse> addRuleAsync(AddRuleRequest request) {
@@ -146,11 +148,11 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddRuleRequest 请求对象
+     * @param request AddRuleRequest 请求对象
      * @return AsyncInvoker<AddRuleRequest, AddRuleResponse>
      */
     public AsyncInvoker<AddRuleRequest, AddRuleResponse> addRuleAsyncInvoker(AddRuleRequest request) {
-        return new AsyncInvoker<AddRuleRequest, AddRuleResponse>(request, DscMeta.addRule, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.addRule, hcClient);
     }
 
     /**
@@ -160,7 +162,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddRuleGroupRequest 请求对象
+     * @param request AddRuleGroupRequest 请求对象
      * @return CompletableFuture<AddRuleGroupResponse>
      */
     public CompletableFuture<AddRuleGroupResponse> addRuleGroupAsync(AddRuleGroupRequest request) {
@@ -174,12 +176,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddRuleGroupRequest 请求对象
+     * @param request AddRuleGroupRequest 请求对象
      * @return AsyncInvoker<AddRuleGroupRequest, AddRuleGroupResponse>
      */
     public AsyncInvoker<AddRuleGroupRequest, AddRuleGroupResponse> addRuleGroupAsyncInvoker(
         AddRuleGroupRequest request) {
-        return new AsyncInvoker<AddRuleGroupRequest, AddRuleGroupResponse>(request, DscMeta.addRuleGroup, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.addRuleGroup, hcClient);
     }
 
     /**
@@ -189,7 +191,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddScanJobRequest 请求对象
+     * @param request AddScanJobRequest 请求对象
      * @return CompletableFuture<AddScanJobResponse>
      */
     public CompletableFuture<AddScanJobResponse> addScanJobAsync(AddScanJobRequest request) {
@@ -203,11 +205,11 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddScanJobRequest 请求对象
+     * @param request AddScanJobRequest 请求对象
      * @return AsyncInvoker<AddScanJobRequest, AddScanJobResponse>
      */
     public AsyncInvoker<AddScanJobRequest, AddScanJobResponse> addScanJobAsyncInvoker(AddScanJobRequest request) {
-        return new AsyncInvoker<AddScanJobRequest, AddScanJobResponse>(request, DscMeta.addScanJob, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.addScanJob, hcClient);
     }
 
     /**
@@ -217,7 +219,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddDataMaskRequest 请求对象
+     * @param request BatchAddDataMaskRequest 请求对象
      * @return CompletableFuture<BatchAddDataMaskResponse>
      */
     public CompletableFuture<BatchAddDataMaskResponse> batchAddDataMaskAsync(BatchAddDataMaskRequest request) {
@@ -231,13 +233,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddDataMaskRequest 请求对象
+     * @param request BatchAddDataMaskRequest 请求对象
      * @return AsyncInvoker<BatchAddDataMaskRequest, BatchAddDataMaskResponse>
      */
     public AsyncInvoker<BatchAddDataMaskRequest, BatchAddDataMaskResponse> batchAddDataMaskAsyncInvoker(
         BatchAddDataMaskRequest request) {
-        return new AsyncInvoker<BatchAddDataMaskRequest, BatchAddDataMaskResponse>(request, DscMeta.batchAddDataMask,
-            hcClient);
+        return new AsyncInvoker<>(request, DscMeta.batchAddDataMask, hcClient);
     }
 
     /**
@@ -247,7 +248,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeDbTemplateOperationRequest 请求对象
+     * @param request ChangeDbTemplateOperationRequest 请求对象
      * @return CompletableFuture<ChangeDbTemplateOperationResponse>
      */
     public CompletableFuture<ChangeDbTemplateOperationResponse> changeDbTemplateOperationAsync(
@@ -262,13 +263,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeDbTemplateOperationRequest 请求对象
+     * @param request ChangeDbTemplateOperationRequest 请求对象
      * @return AsyncInvoker<ChangeDbTemplateOperationRequest, ChangeDbTemplateOperationResponse>
      */
     public AsyncInvoker<ChangeDbTemplateOperationRequest, ChangeDbTemplateOperationResponse> changeDbTemplateOperationAsyncInvoker(
         ChangeDbTemplateOperationRequest request) {
-        return new AsyncInvoker<ChangeDbTemplateOperationRequest, ChangeDbTemplateOperationResponse>(request,
-            DscMeta.changeDbTemplateOperation, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.changeDbTemplateOperation, hcClient);
     }
 
     /**
@@ -278,7 +278,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeRuleRequest 请求对象
+     * @param request ChangeRuleRequest 请求对象
      * @return CompletableFuture<ChangeRuleResponse>
      */
     public CompletableFuture<ChangeRuleResponse> changeRuleAsync(ChangeRuleRequest request) {
@@ -292,11 +292,11 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeRuleRequest 请求对象
+     * @param request ChangeRuleRequest 请求对象
      * @return AsyncInvoker<ChangeRuleRequest, ChangeRuleResponse>
      */
     public AsyncInvoker<ChangeRuleRequest, ChangeRuleResponse> changeRuleAsyncInvoker(ChangeRuleRequest request) {
-        return new AsyncInvoker<ChangeRuleRequest, ChangeRuleResponse>(request, DscMeta.changeRule, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.changeRule, hcClient);
     }
 
     /**
@@ -306,7 +306,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseWaterMarkRequest 请求对象
+     * @param request CreateDatabaseWaterMarkRequest 请求对象
      * @return CompletableFuture<CreateDatabaseWaterMarkResponse>
      */
     public CompletableFuture<CreateDatabaseWaterMarkResponse> createDatabaseWaterMarkAsync(
@@ -321,13 +321,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseWaterMarkRequest 请求对象
+     * @param request CreateDatabaseWaterMarkRequest 请求对象
      * @return AsyncInvoker<CreateDatabaseWaterMarkRequest, CreateDatabaseWaterMarkResponse>
      */
     public AsyncInvoker<CreateDatabaseWaterMarkRequest, CreateDatabaseWaterMarkResponse> createDatabaseWaterMarkAsyncInvoker(
         CreateDatabaseWaterMarkRequest request) {
-        return new AsyncInvoker<CreateDatabaseWaterMarkRequest, CreateDatabaseWaterMarkResponse>(request,
-            DscMeta.createDatabaseWaterMark, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.createDatabaseWaterMark, hcClient);
     }
 
     /**
@@ -337,7 +336,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDocWatermarkRequest 请求对象
+     * @param request CreateDocWatermarkRequest 请求对象
      * @return CompletableFuture<CreateDocWatermarkResponse>
      */
     public CompletableFuture<CreateDocWatermarkResponse> createDocWatermarkAsync(CreateDocWatermarkRequest request) {
@@ -351,13 +350,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDocWatermarkRequest 请求对象
+     * @param request CreateDocWatermarkRequest 请求对象
      * @return AsyncInvoker<CreateDocWatermarkRequest, CreateDocWatermarkResponse>
      */
     public AsyncInvoker<CreateDocWatermarkRequest, CreateDocWatermarkResponse> createDocWatermarkAsyncInvoker(
         CreateDocWatermarkRequest request) {
-        return new AsyncInvoker<CreateDocWatermarkRequest, CreateDocWatermarkResponse>(request,
-            DscMeta.createDocWatermark, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.createDocWatermark, hcClient);
     }
 
     /**
@@ -367,7 +365,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDocWatermarkByAddressRequest 请求对象
+     * @param request CreateDocWatermarkByAddressRequest 请求对象
      * @return CompletableFuture<CreateDocWatermarkByAddressResponse>
      */
     public CompletableFuture<CreateDocWatermarkByAddressResponse> createDocWatermarkByAddressAsync(
@@ -382,13 +380,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDocWatermarkByAddressRequest 请求对象
+     * @param request CreateDocWatermarkByAddressRequest 请求对象
      * @return AsyncInvoker<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse>
      */
     public AsyncInvoker<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse> createDocWatermarkByAddressAsyncInvoker(
         CreateDocWatermarkByAddressRequest request) {
-        return new AsyncInvoker<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse>(request,
-            DscMeta.createDocWatermarkByAddress, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.createDocWatermarkByAddress, hcClient);
     }
 
     /**
@@ -398,7 +395,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageWatermarkRequest 请求对象
+     * @param request CreateImageWatermarkRequest 请求对象
      * @return CompletableFuture<CreateImageWatermarkResponse>
      */
     public CompletableFuture<CreateImageWatermarkResponse> createImageWatermarkAsync(
@@ -413,13 +410,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageWatermarkRequest 请求对象
+     * @param request CreateImageWatermarkRequest 请求对象
      * @return AsyncInvoker<CreateImageWatermarkRequest, CreateImageWatermarkResponse>
      */
     public AsyncInvoker<CreateImageWatermarkRequest, CreateImageWatermarkResponse> createImageWatermarkAsyncInvoker(
         CreateImageWatermarkRequest request) {
-        return new AsyncInvoker<CreateImageWatermarkRequest, CreateImageWatermarkResponse>(request,
-            DscMeta.createImageWatermark, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.createImageWatermark, hcClient);
     }
 
     /**
@@ -429,7 +425,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageWatermarkByAddressRequest 请求对象
+     * @param request CreateImageWatermarkByAddressRequest 请求对象
      * @return CompletableFuture<CreateImageWatermarkByAddressResponse>
      */
     public CompletableFuture<CreateImageWatermarkByAddressResponse> createImageWatermarkByAddressAsync(
@@ -444,13 +440,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageWatermarkByAddressRequest 请求对象
+     * @param request CreateImageWatermarkByAddressRequest 请求对象
      * @return AsyncInvoker<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse>
      */
     public AsyncInvoker<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse> createImageWatermarkByAddressAsyncInvoker(
         CreateImageWatermarkByAddressRequest request) {
-        return new AsyncInvoker<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse>(request,
-            DscMeta.createImageWatermarkByAddress, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.createImageWatermarkByAddress, hcClient);
     }
 
     /**
@@ -460,7 +455,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProductOrderRequest 请求对象
+     * @param request CreateProductOrderRequest 请求对象
      * @return CompletableFuture<CreateProductOrderResponse>
      */
     public CompletableFuture<CreateProductOrderResponse> createProductOrderAsync(CreateProductOrderRequest request) {
@@ -474,13 +469,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProductOrderRequest 请求对象
+     * @param request CreateProductOrderRequest 请求对象
      * @return AsyncInvoker<CreateProductOrderRequest, CreateProductOrderResponse>
      */
     public AsyncInvoker<CreateProductOrderRequest, CreateProductOrderResponse> createProductOrderAsyncInvoker(
         CreateProductOrderRequest request) {
-        return new AsyncInvoker<CreateProductOrderRequest, CreateProductOrderResponse>(request,
-            DscMeta.createProductOrder, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.createProductOrder, hcClient);
     }
 
     /**
@@ -490,7 +484,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBucketRequest 请求对象
+     * @param request DeleteBucketRequest 请求对象
      * @return CompletableFuture<DeleteBucketResponse>
      */
     public CompletableFuture<DeleteBucketResponse> deleteBucketAsync(DeleteBucketRequest request) {
@@ -504,12 +498,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBucketRequest 请求对象
+     * @param request DeleteBucketRequest 请求对象
      * @return AsyncInvoker<DeleteBucketRequest, DeleteBucketResponse>
      */
     public AsyncInvoker<DeleteBucketRequest, DeleteBucketResponse> deleteBucketAsyncInvoker(
         DeleteBucketRequest request) {
-        return new AsyncInvoker<DeleteBucketRequest, DeleteBucketResponse>(request, DscMeta.deleteBucket, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.deleteBucket, hcClient);
     }
 
     /**
@@ -519,7 +513,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleRequest 请求对象
+     * @param request DeleteRuleRequest 请求对象
      * @return CompletableFuture<DeleteRuleResponse>
      */
     public CompletableFuture<DeleteRuleResponse> deleteRuleAsync(DeleteRuleRequest request) {
@@ -533,11 +527,11 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleRequest 请求对象
+     * @param request DeleteRuleRequest 请求对象
      * @return AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse>
      */
     public AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse> deleteRuleAsyncInvoker(DeleteRuleRequest request) {
-        return new AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse>(request, DscMeta.deleteRule, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.deleteRule, hcClient);
     }
 
     /**
@@ -547,7 +541,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleGroupRequest 请求对象
+     * @param request DeleteRuleGroupRequest 请求对象
      * @return CompletableFuture<DeleteRuleGroupResponse>
      */
     public CompletableFuture<DeleteRuleGroupResponse> deleteRuleGroupAsync(DeleteRuleGroupRequest request) {
@@ -561,13 +555,41 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleGroupRequest 请求对象
+     * @param request DeleteRuleGroupRequest 请求对象
      * @return AsyncInvoker<DeleteRuleGroupRequest, DeleteRuleGroupResponse>
      */
     public AsyncInvoker<DeleteRuleGroupRequest, DeleteRuleGroupResponse> deleteRuleGroupAsyncInvoker(
         DeleteRuleGroupRequest request) {
-        return new AsyncInvoker<DeleteRuleGroupRequest, DeleteRuleGroupResponse>(request, DscMeta.deleteRuleGroup,
-            hcClient);
+        return new AsyncInvoker<>(request, DscMeta.deleteRuleGroup, hcClient);
+    }
+
+    /**
+     * 删除扫描任务
+     *
+     * 删除扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScanJobRequest 请求对象
+     * @return CompletableFuture<DeleteScanJobResponse>
+     */
+    public CompletableFuture<DeleteScanJobResponse> deleteScanJobAsync(DeleteScanJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.deleteScanJob);
+    }
+
+    /**
+     * 删除扫描任务
+     *
+     * 删除扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScanJobRequest 请求对象
+     * @return AsyncInvoker<DeleteScanJobRequest, DeleteScanJobResponse>
+     */
+    public AsyncInvoker<DeleteScanJobRequest, DeleteScanJobResponse> deleteScanJobAsyncInvoker(
+        DeleteScanJobRequest request) {
+        return new AsyncInvoker<>(request, DscMeta.deleteScanJob, hcClient);
     }
 
     /**
@@ -577,7 +599,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBucketsRequest 请求对象
+     * @param request ListBucketsRequest 请求对象
      * @return CompletableFuture<ListBucketsResponse>
      */
     public CompletableFuture<ListBucketsResponse> listBucketsAsync(ListBucketsRequest request) {
@@ -591,11 +613,11 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBucketsRequest 请求对象
+     * @param request ListBucketsRequest 请求对象
      * @return AsyncInvoker<ListBucketsRequest, ListBucketsResponse>
      */
     public AsyncInvoker<ListBucketsRequest, ListBucketsResponse> listBucketsAsyncInvoker(ListBucketsRequest request) {
-        return new AsyncInvoker<ListBucketsRequest, ListBucketsResponse>(request, DscMeta.listBuckets, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.listBuckets, hcClient);
     }
 
     /**
@@ -605,7 +627,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDbMaskTaskRequest 请求对象
+     * @param request ListDbMaskTaskRequest 请求对象
      * @return CompletableFuture<ListDbMaskTaskResponse>
      */
     public CompletableFuture<ListDbMaskTaskResponse> listDbMaskTaskAsync(ListDbMaskTaskRequest request) {
@@ -619,13 +641,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDbMaskTaskRequest 请求对象
+     * @param request ListDbMaskTaskRequest 请求对象
      * @return AsyncInvoker<ListDbMaskTaskRequest, ListDbMaskTaskResponse>
      */
     public AsyncInvoker<ListDbMaskTaskRequest, ListDbMaskTaskResponse> listDbMaskTaskAsyncInvoker(
         ListDbMaskTaskRequest request) {
-        return new AsyncInvoker<ListDbMaskTaskRequest, ListDbMaskTaskResponse>(request, DscMeta.listDbMaskTask,
-            hcClient);
+        return new AsyncInvoker<>(request, DscMeta.listDbMaskTask, hcClient);
     }
 
     /**
@@ -635,7 +656,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationBucketsRequest 请求对象
+     * @param request ListRelationBucketsRequest 请求对象
      * @return CompletableFuture<ListRelationBucketsResponse>
      */
     public CompletableFuture<ListRelationBucketsResponse> listRelationBucketsAsync(ListRelationBucketsRequest request) {
@@ -649,13 +670,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationBucketsRequest 请求对象
+     * @param request ListRelationBucketsRequest 请求对象
      * @return AsyncInvoker<ListRelationBucketsRequest, ListRelationBucketsResponse>
      */
     public AsyncInvoker<ListRelationBucketsRequest, ListRelationBucketsResponse> listRelationBucketsAsyncInvoker(
         ListRelationBucketsRequest request) {
-        return new AsyncInvoker<ListRelationBucketsRequest, ListRelationBucketsResponse>(request,
-            DscMeta.listRelationBuckets, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.listRelationBuckets, hcClient);
     }
 
     /**
@@ -665,7 +685,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationColumnRequest 请求对象
+     * @param request ListRelationColumnRequest 请求对象
      * @return CompletableFuture<ListRelationColumnResponse>
      */
     public CompletableFuture<ListRelationColumnResponse> listRelationColumnAsync(ListRelationColumnRequest request) {
@@ -679,13 +699,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationColumnRequest 请求对象
+     * @param request ListRelationColumnRequest 请求对象
      * @return AsyncInvoker<ListRelationColumnRequest, ListRelationColumnResponse>
      */
     public AsyncInvoker<ListRelationColumnRequest, ListRelationColumnResponse> listRelationColumnAsyncInvoker(
         ListRelationColumnRequest request) {
-        return new AsyncInvoker<ListRelationColumnRequest, ListRelationColumnResponse>(request,
-            DscMeta.listRelationColumn, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.listRelationColumn, hcClient);
     }
 
     /**
@@ -695,7 +714,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationDbRequest 请求对象
+     * @param request ListRelationDbRequest 请求对象
      * @return CompletableFuture<ListRelationDbResponse>
      */
     public CompletableFuture<ListRelationDbResponse> listRelationDbAsync(ListRelationDbRequest request) {
@@ -709,13 +728,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationDbRequest 请求对象
+     * @param request ListRelationDbRequest 请求对象
      * @return AsyncInvoker<ListRelationDbRequest, ListRelationDbResponse>
      */
     public AsyncInvoker<ListRelationDbRequest, ListRelationDbResponse> listRelationDbAsyncInvoker(
         ListRelationDbRequest request) {
-        return new AsyncInvoker<ListRelationDbRequest, ListRelationDbResponse>(request, DscMeta.listRelationDb,
-            hcClient);
+        return new AsyncInvoker<>(request, DscMeta.listRelationDb, hcClient);
     }
 
     /**
@@ -725,7 +743,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationFileRequest 请求对象
+     * @param request ListRelationFileRequest 请求对象
      * @return CompletableFuture<ListRelationFileResponse>
      */
     public CompletableFuture<ListRelationFileResponse> listRelationFileAsync(ListRelationFileRequest request) {
@@ -739,13 +757,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationFileRequest 请求对象
+     * @param request ListRelationFileRequest 请求对象
      * @return AsyncInvoker<ListRelationFileRequest, ListRelationFileResponse>
      */
     public AsyncInvoker<ListRelationFileRequest, ListRelationFileResponse> listRelationFileAsyncInvoker(
         ListRelationFileRequest request) {
-        return new AsyncInvoker<ListRelationFileRequest, ListRelationFileResponse>(request, DscMeta.listRelationFile,
-            hcClient);
+        return new AsyncInvoker<>(request, DscMeta.listRelationFile, hcClient);
     }
 
     /**
@@ -755,7 +772,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationTableRequest 请求对象
+     * @param request ListRelationTableRequest 请求对象
      * @return CompletableFuture<ListRelationTableResponse>
      */
     public CompletableFuture<ListRelationTableResponse> listRelationTableAsync(ListRelationTableRequest request) {
@@ -769,13 +786,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationTableRequest 请求对象
+     * @param request ListRelationTableRequest 请求对象
      * @return AsyncInvoker<ListRelationTableRequest, ListRelationTableResponse>
      */
     public AsyncInvoker<ListRelationTableRequest, ListRelationTableResponse> listRelationTableAsyncInvoker(
         ListRelationTableRequest request) {
-        return new AsyncInvoker<ListRelationTableRequest, ListRelationTableResponse>(request, DscMeta.listRelationTable,
-            hcClient);
+        return new AsyncInvoker<>(request, DscMeta.listRelationTable, hcClient);
     }
 
     /**
@@ -785,7 +801,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRuleGroupsRequest 请求对象
+     * @param request ListRuleGroupsRequest 请求对象
      * @return CompletableFuture<ListRuleGroupsResponse>
      */
     public CompletableFuture<ListRuleGroupsResponse> listRuleGroupsAsync(ListRuleGroupsRequest request) {
@@ -799,13 +815,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRuleGroupsRequest 请求对象
+     * @param request ListRuleGroupsRequest 请求对象
      * @return AsyncInvoker<ListRuleGroupsRequest, ListRuleGroupsResponse>
      */
     public AsyncInvoker<ListRuleGroupsRequest, ListRuleGroupsResponse> listRuleGroupsAsyncInvoker(
         ListRuleGroupsRequest request) {
-        return new AsyncInvoker<ListRuleGroupsRequest, ListRuleGroupsResponse>(request, DscMeta.listRuleGroups,
-            hcClient);
+        return new AsyncInvoker<>(request, DscMeta.listRuleGroups, hcClient);
     }
 
     /**
@@ -815,7 +830,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatabaseWaterMarkRequest 请求对象
+     * @param request ShowDatabaseWaterMarkRequest 请求对象
      * @return CompletableFuture<ShowDatabaseWaterMarkResponse>
      */
     public CompletableFuture<ShowDatabaseWaterMarkResponse> showDatabaseWaterMarkAsync(
@@ -830,13 +845,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatabaseWaterMarkRequest 请求对象
+     * @param request ShowDatabaseWaterMarkRequest 请求对象
      * @return AsyncInvoker<ShowDatabaseWaterMarkRequest, ShowDatabaseWaterMarkResponse>
      */
     public AsyncInvoker<ShowDatabaseWaterMarkRequest, ShowDatabaseWaterMarkResponse> showDatabaseWaterMarkAsyncInvoker(
         ShowDatabaseWaterMarkRequest request) {
-        return new AsyncInvoker<ShowDatabaseWaterMarkRequest, ShowDatabaseWaterMarkResponse>(request,
-            DscMeta.showDatabaseWaterMark, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showDatabaseWaterMark, hcClient);
     }
 
     /**
@@ -846,7 +860,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDocWatermarkRequest 请求对象
+     * @param request ShowDocWatermarkRequest 请求对象
      * @return CompletableFuture<ShowDocWatermarkResponse>
      */
     public CompletableFuture<ShowDocWatermarkResponse> showDocWatermarkAsync(ShowDocWatermarkRequest request) {
@@ -860,13 +874,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDocWatermarkRequest 请求对象
+     * @param request ShowDocWatermarkRequest 请求对象
      * @return AsyncInvoker<ShowDocWatermarkRequest, ShowDocWatermarkResponse>
      */
     public AsyncInvoker<ShowDocWatermarkRequest, ShowDocWatermarkResponse> showDocWatermarkAsyncInvoker(
         ShowDocWatermarkRequest request) {
-        return new AsyncInvoker<ShowDocWatermarkRequest, ShowDocWatermarkResponse>(request, DscMeta.showDocWatermark,
-            hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showDocWatermark, hcClient);
     }
 
     /**
@@ -876,7 +889,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDocWatermarkByAddressRequest 请求对象
+     * @param request ShowDocWatermarkByAddressRequest 请求对象
      * @return CompletableFuture<ShowDocWatermarkByAddressResponse>
      */
     public CompletableFuture<ShowDocWatermarkByAddressResponse> showDocWatermarkByAddressAsync(
@@ -891,13 +904,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDocWatermarkByAddressRequest 请求对象
+     * @param request ShowDocWatermarkByAddressRequest 请求对象
      * @return AsyncInvoker<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse>
      */
     public AsyncInvoker<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse> showDocWatermarkByAddressAsyncInvoker(
         ShowDocWatermarkByAddressRequest request) {
-        return new AsyncInvoker<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse>(request,
-            DscMeta.showDocWatermarkByAddress, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showDocWatermarkByAddress, hcClient);
     }
 
     /**
@@ -907,7 +919,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageWatermarkRequest 请求对象
+     * @param request ShowImageWatermarkRequest 请求对象
      * @return CompletableFuture<ShowImageWatermarkResponse>
      */
     public CompletableFuture<ShowImageWatermarkResponse> showImageWatermarkAsync(ShowImageWatermarkRequest request) {
@@ -921,13 +933,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageWatermarkRequest 请求对象
+     * @param request ShowImageWatermarkRequest 请求对象
      * @return AsyncInvoker<ShowImageWatermarkRequest, ShowImageWatermarkResponse>
      */
     public AsyncInvoker<ShowImageWatermarkRequest, ShowImageWatermarkResponse> showImageWatermarkAsyncInvoker(
         ShowImageWatermarkRequest request) {
-        return new AsyncInvoker<ShowImageWatermarkRequest, ShowImageWatermarkResponse>(request,
-            DscMeta.showImageWatermark, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showImageWatermark, hcClient);
     }
 
     /**
@@ -937,7 +948,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageWatermarkByAddressRequest 请求对象
+     * @param request ShowImageWatermarkByAddressRequest 请求对象
      * @return CompletableFuture<ShowImageWatermarkByAddressResponse>
      */
     public CompletableFuture<ShowImageWatermarkByAddressResponse> showImageWatermarkByAddressAsync(
@@ -952,13 +963,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageWatermarkByAddressRequest 请求对象
+     * @param request ShowImageWatermarkByAddressRequest 请求对象
      * @return AsyncInvoker<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse>
      */
     public AsyncInvoker<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse> showImageWatermarkByAddressAsyncInvoker(
         ShowImageWatermarkByAddressRequest request) {
-        return new AsyncInvoker<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse>(request,
-            DscMeta.showImageWatermarkByAddress, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showImageWatermarkByAddress, hcClient);
     }
 
     /**
@@ -968,7 +978,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageWatermarkWithImageRequest 请求对象
+     * @param request ShowImageWatermarkWithImageRequest 请求对象
      * @return CompletableFuture<ShowImageWatermarkWithImageResponse>
      */
     public CompletableFuture<ShowImageWatermarkWithImageResponse> showImageWatermarkWithImageAsync(
@@ -983,13 +993,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageWatermarkWithImageRequest 请求对象
+     * @param request ShowImageWatermarkWithImageRequest 请求对象
      * @return AsyncInvoker<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse>
      */
     public AsyncInvoker<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse> showImageWatermarkWithImageAsyncInvoker(
         ShowImageWatermarkWithImageRequest request) {
-        return new AsyncInvoker<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse>(request,
-            DscMeta.showImageWatermarkWithImage, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showImageWatermarkWithImage, hcClient);
     }
 
     /**
@@ -999,7 +1008,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageWatermarkWithImageByAddressRequest 请求对象
+     * @param request ShowImageWatermarkWithImageByAddressRequest 请求对象
      * @return CompletableFuture<ShowImageWatermarkWithImageByAddressResponse>
      */
     public CompletableFuture<ShowImageWatermarkWithImageByAddressResponse> showImageWatermarkWithImageByAddressAsync(
@@ -1014,13 +1023,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageWatermarkWithImageByAddressRequest 请求对象
+     * @param request ShowImageWatermarkWithImageByAddressRequest 请求对象
      * @return AsyncInvoker<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse>
      */
     public AsyncInvoker<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse> showImageWatermarkWithImageByAddressAsyncInvoker(
         ShowImageWatermarkWithImageByAddressRequest request) {
-        return new AsyncInvoker<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse>(
-            request, DscMeta.showImageWatermarkWithImageByAddress, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showImageWatermarkWithImageByAddress, hcClient);
     }
 
     /**
@@ -1030,7 +1038,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRulesRequest 请求对象
+     * @param request ShowRulesRequest 请求对象
      * @return CompletableFuture<ShowRulesResponse>
      */
     public CompletableFuture<ShowRulesResponse> showRulesAsync(ShowRulesRequest request) {
@@ -1044,11 +1052,11 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRulesRequest 请求对象
+     * @param request ShowRulesRequest 请求对象
      * @return AsyncInvoker<ShowRulesRequest, ShowRulesResponse>
      */
     public AsyncInvoker<ShowRulesRequest, ShowRulesResponse> showRulesAsyncInvoker(ShowRulesRequest request) {
-        return new AsyncInvoker<ShowRulesRequest, ShowRulesResponse>(request, DscMeta.showRules, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showRules, hcClient);
     }
 
     /**
@@ -1058,7 +1066,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScanJobResultsRequest 请求对象
+     * @param request ShowScanJobResultsRequest 请求对象
      * @return CompletableFuture<ShowScanJobResultsResponse>
      */
     public CompletableFuture<ShowScanJobResultsResponse> showScanJobResultsAsync(ShowScanJobResultsRequest request) {
@@ -1072,13 +1080,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScanJobResultsRequest 请求对象
+     * @param request ShowScanJobResultsRequest 请求对象
      * @return AsyncInvoker<ShowScanJobResultsRequest, ShowScanJobResultsResponse>
      */
     public AsyncInvoker<ShowScanJobResultsRequest, ShowScanJobResultsResponse> showScanJobResultsAsyncInvoker(
         ShowScanJobResultsRequest request) {
-        return new AsyncInvoker<ShowScanJobResultsRequest, ShowScanJobResultsResponse>(request,
-            DscMeta.showScanJobResults, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showScanJobResults, hcClient);
     }
 
     /**
@@ -1088,7 +1095,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScanJobsRequest 请求对象
+     * @param request ShowScanJobsRequest 请求对象
      * @return CompletableFuture<ShowScanJobsResponse>
      */
     public CompletableFuture<ShowScanJobsResponse> showScanJobsAsync(ShowScanJobsRequest request) {
@@ -1102,12 +1109,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScanJobsRequest 请求对象
+     * @param request ShowScanJobsRequest 请求对象
      * @return AsyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse>
      */
     public AsyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse> showScanJobsAsyncInvoker(
         ShowScanJobsRequest request) {
-        return new AsyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse>(request, DscMeta.showScanJobs, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showScanJobs, hcClient);
     }
 
     /**
@@ -1117,7 +1124,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpecificationRequest 请求对象
+     * @param request ShowSpecificationRequest 请求对象
      * @return CompletableFuture<ShowSpecificationResponse>
      */
     public CompletableFuture<ShowSpecificationResponse> showSpecificationAsync(ShowSpecificationRequest request) {
@@ -1131,13 +1138,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpecificationRequest 请求对象
+     * @param request ShowSpecificationRequest 请求对象
      * @return AsyncInvoker<ShowSpecificationRequest, ShowSpecificationResponse>
      */
     public AsyncInvoker<ShowSpecificationRequest, ShowSpecificationResponse> showSpecificationAsyncInvoker(
         ShowSpecificationRequest request) {
-        return new AsyncInvoker<ShowSpecificationRequest, ShowSpecificationResponse>(request, DscMeta.showSpecification,
-            hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showSpecification, hcClient);
     }
 
     /**
@@ -1147,7 +1153,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopicsRequest 请求对象
+     * @param request ShowTopicsRequest 请求对象
      * @return CompletableFuture<ShowTopicsResponse>
      */
     public CompletableFuture<ShowTopicsResponse> showTopicsAsync(ShowTopicsRequest request) {
@@ -1161,11 +1167,11 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopicsRequest 请求对象
+     * @param request ShowTopicsRequest 请求对象
      * @return AsyncInvoker<ShowTopicsRequest, ShowTopicsResponse>
      */
     public AsyncInvoker<ShowTopicsRequest, ShowTopicsResponse> showTopicsAsyncInvoker(ShowTopicsRequest request) {
-        return new AsyncInvoker<ShowTopicsRequest, ShowTopicsResponse>(request, DscMeta.showTopics, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showTopics, hcClient);
     }
 
     /**
@@ -1175,7 +1181,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetNameRequest 请求对象
+     * @param request UpdateAssetNameRequest 请求对象
      * @return CompletableFuture<UpdateAssetNameResponse>
      */
     public CompletableFuture<UpdateAssetNameResponse> updateAssetNameAsync(UpdateAssetNameRequest request) {
@@ -1189,13 +1195,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetNameRequest 请求对象
+     * @param request UpdateAssetNameRequest 请求对象
      * @return AsyncInvoker<UpdateAssetNameRequest, UpdateAssetNameResponse>
      */
     public AsyncInvoker<UpdateAssetNameRequest, UpdateAssetNameResponse> updateAssetNameAsyncInvoker(
         UpdateAssetNameRequest request) {
-        return new AsyncInvoker<UpdateAssetNameRequest, UpdateAssetNameResponse>(request, DscMeta.updateAssetName,
-            hcClient);
+        return new AsyncInvoker<>(request, DscMeta.updateAssetName, hcClient);
     }
 
     /**
@@ -1205,7 +1210,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDefaultTopicRequest 请求对象
+     * @param request UpdateDefaultTopicRequest 请求对象
      * @return CompletableFuture<UpdateDefaultTopicResponse>
      */
     public CompletableFuture<UpdateDefaultTopicResponse> updateDefaultTopicAsync(UpdateDefaultTopicRequest request) {
@@ -1219,13 +1224,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDefaultTopicRequest 请求对象
+     * @param request UpdateDefaultTopicRequest 请求对象
      * @return AsyncInvoker<UpdateDefaultTopicRequest, UpdateDefaultTopicResponse>
      */
     public AsyncInvoker<UpdateDefaultTopicRequest, UpdateDefaultTopicResponse> updateDefaultTopicAsyncInvoker(
         UpdateDefaultTopicRequest request) {
-        return new AsyncInvoker<UpdateDefaultTopicRequest, UpdateDefaultTopicResponse>(request,
-            DscMeta.updateDefaultTopic, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.updateDefaultTopic, hcClient);
     }
 
     /**
@@ -1235,7 +1239,7 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOpenApiCalledRecordsRequest 请求对象
+     * @param request ShowOpenApiCalledRecordsRequest 请求对象
      * @return CompletableFuture<ShowOpenApiCalledRecordsResponse>
      */
     public CompletableFuture<ShowOpenApiCalledRecordsResponse> showOpenApiCalledRecordsAsync(
@@ -1250,13 +1254,12 @@ public class DscAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOpenApiCalledRecordsRequest 请求对象
+     * @param request ShowOpenApiCalledRecordsRequest 请求对象
      * @return AsyncInvoker<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse>
      */
     public AsyncInvoker<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> showOpenApiCalledRecordsAsyncInvoker(
         ShowOpenApiCalledRecordsRequest request) {
-        return new AsyncInvoker<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse>(request,
-            DscMeta.showOpenApiCalledRecords, hcClient);
+        return new AsyncInvoker<>(request, DscMeta.showOpenApiCalledRecords, hcClient);
     }
 
 }

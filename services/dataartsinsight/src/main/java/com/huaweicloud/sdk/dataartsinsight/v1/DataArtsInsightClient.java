@@ -40,7 +40,7 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSaveAuthRequest 请求对象
+     * @param request BatchSaveAuthRequest 请求对象
      * @return BatchSaveAuthResponse
      */
     public BatchSaveAuthResponse batchSaveAuth(BatchSaveAuthRequest request) {
@@ -54,12 +54,11 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSaveAuthRequest 请求对象
+     * @param request BatchSaveAuthRequest 请求对象
      * @return SyncInvoker<BatchSaveAuthRequest, BatchSaveAuthResponse>
      */
     public SyncInvoker<BatchSaveAuthRequest, BatchSaveAuthResponse> batchSaveAuthInvoker(BatchSaveAuthRequest request) {
-        return new SyncInvoker<BatchSaveAuthRequest, BatchSaveAuthResponse>(request, DataArtsInsightMeta.batchSaveAuth,
-            hcClient);
+        return new SyncInvoker<>(request, DataArtsInsightMeta.batchSaveAuth, hcClient);
     }
 
     /**
@@ -69,7 +68,7 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkspaceRequest 请求对象
+     * @param request CreateWorkspaceRequest 请求对象
      * @return CreateWorkspaceResponse
      */
     public CreateWorkspaceResponse createWorkspace(CreateWorkspaceRequest request) {
@@ -83,13 +82,12 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkspaceRequest 请求对象
+     * @param request CreateWorkspaceRequest 请求对象
      * @return SyncInvoker<CreateWorkspaceRequest, CreateWorkspaceResponse>
      */
     public SyncInvoker<CreateWorkspaceRequest, CreateWorkspaceResponse> createWorkspaceInvoker(
         CreateWorkspaceRequest request) {
-        return new SyncInvoker<CreateWorkspaceRequest, CreateWorkspaceResponse>(request,
-            DataArtsInsightMeta.createWorkspace, hcClient);
+        return new SyncInvoker<>(request, DataArtsInsightMeta.createWorkspace, hcClient);
     }
 
     /**
@@ -99,7 +97,7 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkspaceRequest 请求对象
+     * @param request DeleteWorkspaceRequest 请求对象
      * @return DeleteWorkspaceResponse
      */
     public DeleteWorkspaceResponse deleteWorkspace(DeleteWorkspaceRequest request) {
@@ -113,13 +111,12 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkspaceRequest 请求对象
+     * @param request DeleteWorkspaceRequest 请求对象
      * @return SyncInvoker<DeleteWorkspaceRequest, DeleteWorkspaceResponse>
      */
     public SyncInvoker<DeleteWorkspaceRequest, DeleteWorkspaceResponse> deleteWorkspaceInvoker(
         DeleteWorkspaceRequest request) {
-        return new SyncInvoker<DeleteWorkspaceRequest, DeleteWorkspaceResponse>(request,
-            DataArtsInsightMeta.deleteWorkspace, hcClient);
+        return new SyncInvoker<>(request, DataArtsInsightMeta.deleteWorkspace, hcClient);
     }
 
     /**
@@ -129,7 +126,7 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuthPropertiesRequest 请求对象
+     * @param request ListAuthPropertiesRequest 请求对象
      * @return ListAuthPropertiesResponse
      */
     public ListAuthPropertiesResponse listAuthProperties(ListAuthPropertiesRequest request) {
@@ -143,13 +140,12 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuthPropertiesRequest 请求对象
+     * @param request ListAuthPropertiesRequest 请求对象
      * @return SyncInvoker<ListAuthPropertiesRequest, ListAuthPropertiesResponse>
      */
     public SyncInvoker<ListAuthPropertiesRequest, ListAuthPropertiesResponse> listAuthPropertiesInvoker(
         ListAuthPropertiesRequest request) {
-        return new SyncInvoker<ListAuthPropertiesRequest, ListAuthPropertiesResponse>(request,
-            DataArtsInsightMeta.listAuthProperties, hcClient);
+        return new SyncInvoker<>(request, DataArtsInsightMeta.listAuthProperties, hcClient);
     }
 
     /**
@@ -159,7 +155,7 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuthedRequest 请求对象
+     * @param request ListAuthedRequest 请求对象
      * @return ListAuthedResponse
      */
     public ListAuthedResponse listAuthed(ListAuthedRequest request) {
@@ -173,12 +169,11 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuthedRequest 请求对象
+     * @param request ListAuthedRequest 请求对象
      * @return SyncInvoker<ListAuthedRequest, ListAuthedResponse>
      */
     public SyncInvoker<ListAuthedRequest, ListAuthedResponse> listAuthedInvoker(ListAuthedRequest request) {
-        return new SyncInvoker<ListAuthedRequest, ListAuthedResponse>(request, DataArtsInsightMeta.listAuthed,
-            hcClient);
+        return new SyncInvoker<>(request, DataArtsInsightMeta.listAuthed, hcClient);
     }
 
     /**
@@ -188,7 +183,7 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkspacesRequest 请求对象
+     * @param request ListWorkspacesRequest 请求对象
      * @return ListWorkspacesResponse
      */
     public ListWorkspacesResponse listWorkspaces(ListWorkspacesRequest request) {
@@ -202,13 +197,12 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkspacesRequest 请求对象
+     * @param request ListWorkspacesRequest 请求对象
      * @return SyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse>
      */
     public SyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspacesInvoker(
         ListWorkspacesRequest request) {
-        return new SyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse>(request,
-            DataArtsInsightMeta.listWorkspaces, hcClient);
+        return new SyncInvoker<>(request, DataArtsInsightMeta.listWorkspaces, hcClient);
     }
 
     /**
@@ -218,7 +212,7 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveOrUpdateAuthPropertiesRequest 请求对象
+     * @param request SaveOrUpdateAuthPropertiesRequest 请求对象
      * @return SaveOrUpdateAuthPropertiesResponse
      */
     public SaveOrUpdateAuthPropertiesResponse saveOrUpdateAuthProperties(SaveOrUpdateAuthPropertiesRequest request) {
@@ -232,13 +226,12 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveOrUpdateAuthPropertiesRequest 请求对象
+     * @param request SaveOrUpdateAuthPropertiesRequest 请求对象
      * @return SyncInvoker<SaveOrUpdateAuthPropertiesRequest, SaveOrUpdateAuthPropertiesResponse>
      */
     public SyncInvoker<SaveOrUpdateAuthPropertiesRequest, SaveOrUpdateAuthPropertiesResponse> saveOrUpdateAuthPropertiesInvoker(
         SaveOrUpdateAuthPropertiesRequest request) {
-        return new SyncInvoker<SaveOrUpdateAuthPropertiesRequest, SaveOrUpdateAuthPropertiesResponse>(request,
-            DataArtsInsightMeta.saveOrUpdateAuthProperties, hcClient);
+        return new SyncInvoker<>(request, DataArtsInsightMeta.saveOrUpdateAuthProperties, hcClient);
     }
 
     /**
@@ -248,7 +241,7 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkspaceRequest 请求对象
+     * @param request UpdateWorkspaceRequest 请求对象
      * @return UpdateWorkspaceResponse
      */
     public UpdateWorkspaceResponse updateWorkspace(UpdateWorkspaceRequest request) {
@@ -262,13 +255,12 @@ public class DataArtsInsightClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkspaceRequest 请求对象
+     * @param request UpdateWorkspaceRequest 请求对象
      * @return SyncInvoker<UpdateWorkspaceRequest, UpdateWorkspaceResponse>
      */
     public SyncInvoker<UpdateWorkspaceRequest, UpdateWorkspaceResponse> updateWorkspaceInvoker(
         UpdateWorkspaceRequest request) {
-        return new SyncInvoker<UpdateWorkspaceRequest, UpdateWorkspaceResponse>(request,
-            DataArtsInsightMeta.updateWorkspace, hcClient);
+        return new SyncInvoker<>(request, DataArtsInsightMeta.updateWorkspace, hcClient);
     }
 
 }

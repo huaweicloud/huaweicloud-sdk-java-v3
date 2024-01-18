@@ -26,7 +26,7 @@ public class ContentHeader {
     }
 
     /**
-     * key
+     * 键
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class ContentHeader {
     }
 
     /**
-     * value
+     * 值
      * @return value
      */
     public String getValue() {

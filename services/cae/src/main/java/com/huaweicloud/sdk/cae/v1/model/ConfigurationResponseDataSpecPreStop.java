@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 生命周期管理组件配置停止前处理。  type为\&quot;lifecycle\&quot;时，返回此参数。 
+ * 生命周期管理组件配置停止前处理。  Configuration.type为\&quot;lifecycle\&quot;时，返回此参数。 
  */
 public class ConfigurationResponseDataSpecPreStop {
 

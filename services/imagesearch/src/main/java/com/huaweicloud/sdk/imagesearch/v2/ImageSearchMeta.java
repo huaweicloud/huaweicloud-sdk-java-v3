@@ -24,9 +24,9 @@ import com.huaweicloud.sdk.imagesearch.v2.model.UpdateParam;
 @SuppressWarnings("unchecked")
 public class ImageSearchMeta {
 
-    public static final HttpRequestDef<RunAddDataRequest, RunAddDataResponse> runAddData = genForrunAddData();
+    public static final HttpRequestDef<RunAddDataRequest, RunAddDataResponse> runAddData = genForRunAddData();
 
-    private static HttpRequestDef<RunAddDataRequest, RunAddDataResponse> genForrunAddData() {
+    private static HttpRequestDef<RunAddDataRequest, RunAddDataResponse> genForRunAddData() {
         // basic
         HttpRequestDef.Builder<RunAddDataRequest, RunAddDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunAddDataRequest.class, RunAddDataResponse.class)
@@ -39,25 +39,21 @@ public class ImageSearchMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunAddDataRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(RunAddDataRequest::getServiceName, RunAddDataRequest::setServiceName));
         builder.<AddDataParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddDataParam.class),
-            f -> f.withMarshaller(RunAddDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunAddDataRequest::getBody, RunAddDataRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunCheckDataRequest, RunCheckDataResponse> runCheckData = genForrunCheckData();
+    public static final HttpRequestDef<RunCheckDataRequest, RunCheckDataResponse> runCheckData = genForRunCheckData();
 
-    private static HttpRequestDef<RunCheckDataRequest, RunCheckDataResponse> genForrunCheckData() {
+    private static HttpRequestDef<RunCheckDataRequest, RunCheckDataResponse> genForRunCheckData() {
         // basic
         HttpRequestDef.Builder<RunCheckDataRequest, RunCheckDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunCheckDataRequest.class, RunCheckDataResponse.class)
@@ -70,16 +66,12 @@ public class ImageSearchMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunCheckDataRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(RunCheckDataRequest::getServiceName, RunCheckDataRequest::setServiceName));
         builder.<CheckParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckParam.class),
-            f -> f.withMarshaller(RunCheckDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunCheckDataRequest::getBody, RunCheckDataRequest::setBody));
 
         // response
 
@@ -87,9 +79,9 @@ public class ImageSearchMeta {
     }
 
     public static final HttpRequestDef<RunDeleteDataRequest, RunDeleteDataResponse> runDeleteData =
-        genForrunDeleteData();
+        genForRunDeleteData();
 
-    private static HttpRequestDef<RunDeleteDataRequest, RunDeleteDataResponse> genForrunDeleteData() {
+    private static HttpRequestDef<RunDeleteDataRequest, RunDeleteDataResponse> genForRunDeleteData() {
         // basic
         HttpRequestDef.Builder<RunDeleteDataRequest, RunDeleteDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunDeleteDataRequest.class, RunDeleteDataResponse.class)
@@ -102,25 +94,21 @@ public class ImageSearchMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunDeleteDataRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(RunDeleteDataRequest::getServiceName, RunDeleteDataRequest::setServiceName));
         builder.<DeleteParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteParam.class),
-            f -> f.withMarshaller(RunDeleteDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunDeleteDataRequest::getBody, RunDeleteDataRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunSearchRequest, RunSearchResponse> runSearch = genForrunSearch();
+    public static final HttpRequestDef<RunSearchRequest, RunSearchResponse> runSearch = genForRunSearch();
 
-    private static HttpRequestDef<RunSearchRequest, RunSearchResponse> genForrunSearch() {
+    private static HttpRequestDef<RunSearchRequest, RunSearchResponse> genForRunSearch() {
         // basic
         HttpRequestDef.Builder<RunSearchRequest, RunSearchResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunSearchRequest.class, RunSearchResponse.class)
@@ -133,16 +121,12 @@ public class ImageSearchMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunSearchRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(RunSearchRequest::getServiceName, RunSearchRequest::setServiceName));
         builder.<SearchParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchParam.class),
-            f -> f.withMarshaller(RunSearchRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunSearchRequest::getBody, RunSearchRequest::setBody));
 
         // response
 
@@ -150,9 +134,9 @@ public class ImageSearchMeta {
     }
 
     public static final HttpRequestDef<RunUpdateDataRequest, RunUpdateDataResponse> runUpdateData =
-        genForrunUpdateData();
+        genForRunUpdateData();
 
-    private static HttpRequestDef<RunUpdateDataRequest, RunUpdateDataResponse> genForrunUpdateData() {
+    private static HttpRequestDef<RunUpdateDataRequest, RunUpdateDataResponse> genForRunUpdateData() {
         // basic
         HttpRequestDef.Builder<RunUpdateDataRequest, RunUpdateDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunUpdateDataRequest.class, RunUpdateDataResponse.class)
@@ -165,16 +149,12 @@ public class ImageSearchMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunUpdateDataRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(RunUpdateDataRequest::getServiceName, RunUpdateDataRequest::setServiceName));
         builder.<UpdateParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateParam.class),
-            f -> f.withMarshaller(RunUpdateDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunUpdateDataRequest::getBody, RunUpdateDataRequest::setBody));
 
         // response
 

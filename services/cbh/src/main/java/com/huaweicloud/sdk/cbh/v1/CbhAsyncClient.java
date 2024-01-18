@@ -62,7 +62,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeInstanceNetworkRequest 请求对象
+     * @param request ChangeInstanceNetworkRequest 请求对象
      * @return CompletableFuture<ChangeInstanceNetworkResponse>
      */
     public CompletableFuture<ChangeInstanceNetworkResponse> changeInstanceNetworkAsync(
@@ -77,13 +77,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeInstanceNetworkRequest 请求对象
+     * @param request ChangeInstanceNetworkRequest 请求对象
      * @return AsyncInvoker<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse>
      */
     public AsyncInvoker<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse> changeInstanceNetworkAsyncInvoker(
         ChangeInstanceNetworkRequest request) {
-        return new AsyncInvoker<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse>(request,
-            CbhMeta.changeInstanceNetwork, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.changeInstanceNetwork, hcClient);
     }
 
     /**
@@ -93,7 +92,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeInstanceOrderRequest 请求对象
+     * @param request ChangeInstanceOrderRequest 请求对象
      * @return CompletableFuture<ChangeInstanceOrderResponse>
      */
     public CompletableFuture<ChangeInstanceOrderResponse> changeInstanceOrderAsync(ChangeInstanceOrderRequest request) {
@@ -107,13 +106,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeInstanceOrderRequest 请求对象
+     * @param request ChangeInstanceOrderRequest 请求对象
      * @return AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>
      */
     public AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrderAsyncInvoker(
         ChangeInstanceOrderRequest request) {
-        return new AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>(request,
-            CbhMeta.changeInstanceOrder, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.changeInstanceOrder, hcClient);
     }
 
     /**
@@ -123,7 +121,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCbhRequest 请求对象
+     * @param request CreateCbhRequest 请求对象
      * @return CompletableFuture<CreateCbhResponse>
      */
     public CompletableFuture<CreateCbhResponse> createCbhAsync(CreateCbhRequest request) {
@@ -137,11 +135,11 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCbhRequest 请求对象
+     * @param request CreateCbhRequest 请求对象
      * @return AsyncInvoker<CreateCbhRequest, CreateCbhResponse>
      */
     public AsyncInvoker<CreateCbhRequest, CreateCbhResponse> createCbhAsyncInvoker(CreateCbhRequest request) {
-        return new AsyncInvoker<CreateCbhRequest, CreateCbhResponse>(request, CbhMeta.createCbh, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.createCbh, hcClient);
     }
 
     /**
@@ -151,7 +149,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceOrderRequest 请求对象
+     * @param request CreateInstanceOrderRequest 请求对象
      * @return CompletableFuture<CreateInstanceOrderResponse>
      */
     public CompletableFuture<CreateInstanceOrderResponse> createInstanceOrderAsync(CreateInstanceOrderRequest request) {
@@ -165,13 +163,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceOrderRequest 请求对象
+     * @param request CreateInstanceOrderRequest 请求对象
      * @return AsyncInvoker<CreateInstanceOrderRequest, CreateInstanceOrderResponse>
      */
     public AsyncInvoker<CreateInstanceOrderRequest, CreateInstanceOrderResponse> createInstanceOrderAsyncInvoker(
         CreateInstanceOrderRequest request) {
-        return new AsyncInvoker<CreateInstanceOrderRequest, CreateInstanceOrderResponse>(request,
-            CbhMeta.createInstanceOrder, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.createInstanceOrder, hcClient);
     }
 
     /**
@@ -181,7 +178,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallCbhEipRequest 请求对象
+     * @param request InstallCbhEipRequest 请求对象
      * @return CompletableFuture<InstallCbhEipResponse>
      */
     public CompletableFuture<InstallCbhEipResponse> installCbhEipAsync(InstallCbhEipRequest request) {
@@ -195,12 +192,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallCbhEipRequest 请求对象
+     * @param request InstallCbhEipRequest 请求对象
      * @return AsyncInvoker<InstallCbhEipRequest, InstallCbhEipResponse>
      */
     public AsyncInvoker<InstallCbhEipRequest, InstallCbhEipResponse> installCbhEipAsyncInvoker(
         InstallCbhEipRequest request) {
-        return new AsyncInvoker<InstallCbhEipRequest, InstallCbhEipResponse>(request, CbhMeta.installCbhEip, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.installCbhEip, hcClient);
     }
 
     /**
@@ -210,7 +207,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCbhInstanceRequest 请求对象
+     * @param request ListCbhInstanceRequest 请求对象
      * @return CompletableFuture<ListCbhInstanceResponse>
      */
     public CompletableFuture<ListCbhInstanceResponse> listCbhInstanceAsync(ListCbhInstanceRequest request) {
@@ -224,13 +221,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCbhInstanceRequest 请求对象
+     * @param request ListCbhInstanceRequest 请求对象
      * @return AsyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse>
      */
     public AsyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse> listCbhInstanceAsyncInvoker(
         ListCbhInstanceRequest request) {
-        return new AsyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse>(request, CbhMeta.listCbhInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.listCbhInstance, hcClient);
     }
 
     /**
@@ -240,7 +236,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaStatusRequest 请求对象
+     * @param request ListQuotaStatusRequest 请求对象
      * @return CompletableFuture<ListQuotaStatusResponse>
      */
     public CompletableFuture<ListQuotaStatusResponse> listQuotaStatusAsync(ListQuotaStatusRequest request) {
@@ -254,13 +250,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaStatusRequest 请求对象
+     * @param request ListQuotaStatusRequest 请求对象
      * @return AsyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse>
      */
     public AsyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse> listQuotaStatusAsyncInvoker(
         ListQuotaStatusRequest request) {
-        return new AsyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse>(request, CbhMeta.listQuotaStatus,
-            hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.listQuotaStatus, hcClient);
     }
 
     /**
@@ -270,7 +265,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetLoginMethodRequest 请求对象
+     * @param request ResetLoginMethodRequest 请求对象
      * @return CompletableFuture<ResetLoginMethodResponse>
      */
     public CompletableFuture<ResetLoginMethodResponse> resetLoginMethodAsync(ResetLoginMethodRequest request) {
@@ -284,13 +279,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetLoginMethodRequest 请求对象
+     * @param request ResetLoginMethodRequest 请求对象
      * @return AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>
      */
     public AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse> resetLoginMethodAsyncInvoker(
         ResetLoginMethodRequest request) {
-        return new AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>(request, CbhMeta.resetLoginMethod,
-            hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.resetLoginMethod, hcClient);
     }
 
     /**
@@ -300,7 +294,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return CompletableFuture<ResetPasswordResponse>
      */
     public CompletableFuture<ResetPasswordResponse> resetPasswordAsync(ResetPasswordRequest request) {
@@ -314,12 +308,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
     public AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordAsyncInvoker(
         ResetPasswordRequest request) {
-        return new AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, CbhMeta.resetPassword, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.resetPassword, hcClient);
     }
 
     /**
@@ -329,7 +323,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartCbhInstanceRequest 请求对象
+     * @param request RestartCbhInstanceRequest 请求对象
      * @return CompletableFuture<RestartCbhInstanceResponse>
      */
     public CompletableFuture<RestartCbhInstanceResponse> restartCbhInstanceAsync(RestartCbhInstanceRequest request) {
@@ -343,13 +337,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartCbhInstanceRequest 请求对象
+     * @param request RestartCbhInstanceRequest 请求对象
      * @return AsyncInvoker<RestartCbhInstanceRequest, RestartCbhInstanceResponse>
      */
     public AsyncInvoker<RestartCbhInstanceRequest, RestartCbhInstanceResponse> restartCbhInstanceAsyncInvoker(
         RestartCbhInstanceRequest request) {
-        return new AsyncInvoker<RestartCbhInstanceRequest, RestartCbhInstanceResponse>(request,
-            CbhMeta.restartCbhInstance, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.restartCbhInstance, hcClient);
     }
 
     /**
@@ -359,7 +352,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQuotaRequest 请求对象
+     * @param request SearchQuotaRequest 请求对象
      * @return CompletableFuture<SearchQuotaResponse>
      */
     public CompletableFuture<SearchQuotaResponse> searchQuotaAsync(SearchQuotaRequest request) {
@@ -373,11 +366,11 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQuotaRequest 请求对象
+     * @param request SearchQuotaRequest 请求对象
      * @return AsyncInvoker<SearchQuotaRequest, SearchQuotaResponse>
      */
     public AsyncInvoker<SearchQuotaRequest, SearchQuotaResponse> searchQuotaAsyncInvoker(SearchQuotaRequest request) {
-        return new AsyncInvoker<SearchQuotaRequest, SearchQuotaResponse>(request, CbhMeta.searchQuota, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.searchQuota, hcClient);
     }
 
     /**
@@ -387,7 +380,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAvailableZoneInfoRequest 请求对象
+     * @param request ShowAvailableZoneInfoRequest 请求对象
      * @return CompletableFuture<ShowAvailableZoneInfoResponse>
      */
     public CompletableFuture<ShowAvailableZoneInfoResponse> showAvailableZoneInfoAsync(
@@ -402,13 +395,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAvailableZoneInfoRequest 请求对象
+     * @param request ShowAvailableZoneInfoRequest 请求对象
      * @return AsyncInvoker<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse>
      */
     public AsyncInvoker<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse> showAvailableZoneInfoAsyncInvoker(
         ShowAvailableZoneInfoRequest request) {
-        return new AsyncInvoker<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse>(request,
-            CbhMeta.showAvailableZoneInfo, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.showAvailableZoneInfo, hcClient);
     }
 
     /**
@@ -418,7 +410,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNetworkConfigurationRequest 请求对象
+     * @param request ShowNetworkConfigurationRequest 请求对象
      * @return CompletableFuture<ShowNetworkConfigurationResponse>
      */
     public CompletableFuture<ShowNetworkConfigurationResponse> showNetworkConfigurationAsync(
@@ -433,13 +425,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNetworkConfigurationRequest 请求对象
+     * @param request ShowNetworkConfigurationRequest 请求对象
      * @return AsyncInvoker<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse>
      */
     public AsyncInvoker<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse> showNetworkConfigurationAsyncInvoker(
         ShowNetworkConfigurationRequest request) {
-        return new AsyncInvoker<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse>(request,
-            CbhMeta.showNetworkConfiguration, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.showNetworkConfiguration, hcClient);
     }
 
     /**
@@ -449,7 +440,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartCbhInstanceRequest 请求对象
+     * @param request StartCbhInstanceRequest 请求对象
      * @return CompletableFuture<StartCbhInstanceResponse>
      */
     public CompletableFuture<StartCbhInstanceResponse> startCbhInstanceAsync(StartCbhInstanceRequest request) {
@@ -463,13 +454,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartCbhInstanceRequest 请求对象
+     * @param request StartCbhInstanceRequest 请求对象
      * @return AsyncInvoker<StartCbhInstanceRequest, StartCbhInstanceResponse>
      */
     public AsyncInvoker<StartCbhInstanceRequest, StartCbhInstanceResponse> startCbhInstanceAsyncInvoker(
         StartCbhInstanceRequest request) {
-        return new AsyncInvoker<StartCbhInstanceRequest, StartCbhInstanceResponse>(request, CbhMeta.startCbhInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.startCbhInstance, hcClient);
     }
 
     /**
@@ -479,7 +469,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopCbhInstanceRequest 请求对象
+     * @param request StopCbhInstanceRequest 请求对象
      * @return CompletableFuture<StopCbhInstanceResponse>
      */
     public CompletableFuture<StopCbhInstanceResponse> stopCbhInstanceAsync(StopCbhInstanceRequest request) {
@@ -493,13 +483,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopCbhInstanceRequest 请求对象
+     * @param request StopCbhInstanceRequest 请求对象
      * @return AsyncInvoker<StopCbhInstanceRequest, StopCbhInstanceResponse>
      */
     public AsyncInvoker<StopCbhInstanceRequest, StopCbhInstanceResponse> stopCbhInstanceAsyncInvoker(
         StopCbhInstanceRequest request) {
-        return new AsyncInvoker<StopCbhInstanceRequest, StopCbhInstanceResponse>(request, CbhMeta.stopCbhInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.stopCbhInstance, hcClient);
     }
 
     /**
@@ -509,7 +498,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallCbhEipRequest 请求对象
+     * @param request UninstallCbhEipRequest 请求对象
      * @return CompletableFuture<UninstallCbhEipResponse>
      */
     public CompletableFuture<UninstallCbhEipResponse> uninstallCbhEipAsync(UninstallCbhEipRequest request) {
@@ -523,13 +512,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallCbhEipRequest 请求对象
+     * @param request UninstallCbhEipRequest 请求对象
      * @return AsyncInvoker<UninstallCbhEipRequest, UninstallCbhEipResponse>
      */
     public AsyncInvoker<UninstallCbhEipRequest, UninstallCbhEipResponse> uninstallCbhEipAsyncInvoker(
         UninstallCbhEipRequest request) {
-        return new AsyncInvoker<UninstallCbhEipRequest, UninstallCbhEipResponse>(request, CbhMeta.uninstallCbhEip,
-            hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.uninstallCbhEip, hcClient);
     }
 
     /**
@@ -539,7 +527,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeCbhInstanceRequest 请求对象
+     * @param request UpgradeCbhInstanceRequest 请求对象
      * @return CompletableFuture<UpgradeCbhInstanceResponse>
      */
     public CompletableFuture<UpgradeCbhInstanceResponse> upgradeCbhInstanceAsync(UpgradeCbhInstanceRequest request) {
@@ -553,13 +541,12 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeCbhInstanceRequest 请求对象
+     * @param request UpgradeCbhInstanceRequest 请求对象
      * @return AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>
      */
     public AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> upgradeCbhInstanceAsyncInvoker(
         UpgradeCbhInstanceRequest request) {
-        return new AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>(request,
-            CbhMeta.upgradeCbhInstance, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.upgradeCbhInstance, hcClient);
     }
 
     /**
@@ -569,7 +556,7 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LoginCbhRequest 请求对象
+     * @param request LoginCbhRequest 请求对象
      * @return CompletableFuture<LoginCbhResponse>
      */
     public CompletableFuture<LoginCbhResponse> loginCbhAsync(LoginCbhRequest request) {
@@ -583,11 +570,11 @@ public class CbhAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LoginCbhRequest 请求对象
+     * @param request LoginCbhRequest 请求对象
      * @return AsyncInvoker<LoginCbhRequest, LoginCbhResponse>
      */
     public AsyncInvoker<LoginCbhRequest, LoginCbhResponse> loginCbhAsyncInvoker(LoginCbhRequest request) {
-        return new AsyncInvoker<LoginCbhRequest, LoginCbhResponse>(request, CbhMeta.loginCbh, hcClient);
+        return new AsyncInvoker<>(request, CbhMeta.loginCbh, hcClient);
     }
 
 }

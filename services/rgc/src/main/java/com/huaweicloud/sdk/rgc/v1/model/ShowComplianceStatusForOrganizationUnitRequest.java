@@ -16,9 +16,9 @@ public class ShowComplianceStatusForOrganizationUnitRequest {
     private String managedOrganizationUnitId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
+    @JsonProperty(value = "control_id")
 
-    private String xSecurityToken;
+    private String controlId;
 
     public ShowComplianceStatusForOrganizationUnitRequest withManagedOrganizationUnitId(
         String managedOrganizationUnitId) {
@@ -27,7 +27,7 @@ public class ShowComplianceStatusForOrganizationUnitRequest {
     }
 
     /**
-     * OU ID。
+     * 注册OU ID。
      * @return managedOrganizationUnitId
      */
     public String getManagedOrganizationUnitId() {
@@ -38,23 +38,21 @@ public class ShowComplianceStatusForOrganizationUnitRequest {
         this.managedOrganizationUnitId = managedOrganizationUnitId;
     }
 
-    public ShowComplianceStatusForOrganizationUnitRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
+    public ShowComplianceStatusForOrganizationUnitRequest withControlId(String controlId) {
+        this.controlId = controlId;
         return this;
     }
 
     /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
+     * 启用的控制策略信息。
+     * @return controlId
      */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
+    public String getControlId() {
+        return controlId;
     }
 
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
+    public void setControlId(String controlId) {
+        this.controlId = controlId;
     }
 
     @Override
@@ -67,12 +65,12 @@ public class ShowComplianceStatusForOrganizationUnitRequest {
         }
         ShowComplianceStatusForOrganizationUnitRequest that = (ShowComplianceStatusForOrganizationUnitRequest) obj;
         return Objects.equals(this.managedOrganizationUnitId, that.managedOrganizationUnitId)
-            && Objects.equals(this.xSecurityToken, that.xSecurityToken);
+            && Objects.equals(this.controlId, that.controlId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(managedOrganizationUnitId, xSecurityToken);
+        return Objects.hash(managedOrganizationUnitId, controlId);
     }
 
     @Override
@@ -80,7 +78,7 @@ public class ShowComplianceStatusForOrganizationUnitRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowComplianceStatusForOrganizationUnitRequest {\n");
         sb.append("    managedOrganizationUnitId: ").append(toIndentedString(managedOrganizationUnitId)).append("\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
+        sb.append("    controlId: ").append(toIndentedString(controlId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

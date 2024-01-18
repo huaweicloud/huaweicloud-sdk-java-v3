@@ -145,7 +145,7 @@ public class ProductInfo {
     }
 
     /**
-     * 产品id
+     * 产品id。
      * @return productId
      */
     public String getProductId() {
@@ -162,7 +162,7 @@ public class ProductInfo {
     }
 
     /**
-     * 规格ID
+     * 规格ID。
      * @return flavorId
      */
     public String getFlavorId() {
@@ -196,7 +196,7 @@ public class ProductInfo {
     }
 
     /**
-     * 产品架构，当前仅支持x86 - x86 - arm
+     * 产品架构，当前仅支持x86。 - x86 - arm
      * @return architecture
      */
     public String getArchitecture() {
@@ -213,7 +213,7 @@ public class ProductInfo {
     }
 
     /**
-     * CPU
+     * CPU。
      * @return cpu
      */
     public String getCpu() {
@@ -230,7 +230,7 @@ public class ProductInfo {
     }
 
     /**
-     * CPU描述
+     * CPU描述。
      * @return cpuDesc
      */
     public String getCpuDesc() {
@@ -247,7 +247,7 @@ public class ProductInfo {
     }
 
     /**
-     * 内存大小，单位兆：MB
+     * 内存大小，单位兆：MB。
      * @return memory
      */
     public String getMemory() {
@@ -264,7 +264,7 @@ public class ProductInfo {
     }
 
     /**
-     * 是否是GPU类型的规格
+     * 是否是GPU类型的规格。
      * @return isGpu
      */
     public Boolean getIsGpu() {
@@ -281,7 +281,7 @@ public class ProductInfo {
     }
 
     /**
-     * 系统盘类型
+     * 系统盘类型。
      * @return systemDiskType
      */
     public String getSystemDiskType() {
@@ -298,7 +298,7 @@ public class ProductInfo {
     }
 
     /**
-     * 系统盘大小
+     * 系统盘大小。
      * @return systemDiskSize
      */
     public String getSystemDiskSize() {
@@ -315,7 +315,7 @@ public class ProductInfo {
     }
 
     /**
-     * GPU描述
+     * GPU描述。
      * @return gpuDesc
      */
     public String getGpuDesc() {
@@ -332,7 +332,7 @@ public class ProductInfo {
     }
 
     /**
-     * 产品描述
+     * 产品描述。
      * @return descriptions
      */
     public String getDescriptions() {
@@ -366,7 +366,7 @@ public class ProductInfo {
     }
 
     /**
-     * 套餐计费是否包含了数据盘
+     * 套餐计费是否包含了数据盘。
      * @return containDataDisk
      */
     public Boolean getContainDataDisk() {
@@ -383,7 +383,7 @@ public class ProductInfo {
     }
 
     /**
-     * 资源类型
+     * 资源类型。
      * @return resourceType
      */
     public String getResourceType() {
@@ -400,7 +400,7 @@ public class ProductInfo {
     }
 
     /**
-     * 云服务类型
+     * 云服务类型。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -417,7 +417,7 @@ public class ProductInfo {
     }
 
     /**
-     * 磁盘产品类型
+     * 磁盘产品类型。
      * @return volumeProductType
      */
     public String getVolumeProductType() {
@@ -434,7 +434,7 @@ public class ProductInfo {
     }
 
     /**
-     * 套餐默认支持的最大会话数
+     * 套餐默认支持的最大会话数。
      * @return sessions
      */
     public Integer getSessions() {
@@ -468,7 +468,7 @@ public class ProductInfo {
     }
 
     /**
-     * 产品套餐在可用区的状态，配套status使用。 > - 此参数是AZ级配置，优选取此参数的值，某个AZ没有在此参数中配置时默认使用status参数的取值。 > - 配置格式“az(xx)”。()内为某个AZ的flavor状态，()内必须要填有状态，不填为无效配置。 > - 例如：套餐在某个region的az0正常商用，az1售罄，az2公测，az3正常商用，其他az显示下线，可配置为： >   - “status”设置为：“abandon”  >   - “cond_operation_az”设置为：“az0(normal), az1(sellout), az2(obt), az3(normal)”  > -  说明：如果flavor在某个AZ下的状态与status配置状态不同，必须配置该参数。
+     * 产品套餐在可用区的状态，配套status使用。 > - 此参数是AZ级配置，优选取此参数的值，某个AZ没有在此参数中配置时默认使用status参数的取值。 > - 配置格式“az(xx)”。()内为某个AZ的flavor状态，()内必须要填有状态，不填为无效配置。 > - 例如：套餐在某个region的az0正常商用，az1售罄，az2公测，az3正常商用，其他az显示下线，可配置为： >   - “status”设置为：“abandon” 。 >   - “cond_operation_az”设置为：“az0(normal), az1(sellout), az2(obt), az3(normal)”。  > -  说明：如果flavor在某个AZ下的状态与status配置状态不同，必须配置该参数。
      * @return condOperationAz
      */
     public String getCondOperationAz() {
@@ -501,7 +501,7 @@ public class ProductInfo {
     }
 
     /**
-     * 专属主机的子产品
+     * 专属主机的子产品。
      * @return subProductList
      */
     public List<String> getSubProductList() {
@@ -534,7 +534,7 @@ public class ProductInfo {
     }
 
     /**
-     * 产品属于专有的domainId
+     * 产品属于专有的domainId。
      * @return domainIds
      */
     public List<String> getDomainIds() {
@@ -551,7 +551,7 @@ public class ProductInfo {
     }
 
     /**
-     * 套餐类型。 - general：表示产品通用套餐。 - dedicated：表示产品专属主机套餐。
+     * 套餐类型： - general：表示产品通用套餐。 - dedicated：表示产品专属主机套餐。
      * @return packageType
      */
     public String getPackageType() {
@@ -568,7 +568,7 @@ public class ProductInfo {
     }
 
     /**
-     * 产品套餐过期时间,产品将在改时间点后逐步下架
+     * 产品套餐过期时间,产品将在改时间点后逐步下架。
      * @return expireTime
      */
     public OffsetDateTime getExpireTime() {
@@ -585,7 +585,7 @@ public class ProductInfo {
     }
 
     /**
-     * 产品套餐支持的GPU类型
+     * 产品套餐支持的GPU类型。
      * @return supportGpuType
      */
     public String getSupportGpuType() {

@@ -108,7 +108,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 应用ID
+     * 应用ID。
      * @return id
      */
     public String getId() {
@@ -125,7 +125,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 应用名称
+     * 应用名称。
      * @return name
      */
     public String getName() {
@@ -142,7 +142,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 应用版本号
+     * 应用版本号。
      * @return version
      */
     public String getVersion() {
@@ -159,7 +159,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 启动命令行参数
+     * 启动命令行参数。
      * @return commandParam
      */
     public String getCommandParam() {
@@ -176,7 +176,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 执行路径
+     * 执行路径。
      * @return executePath
      */
     public String getExecutePath() {
@@ -193,7 +193,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 应用工作目录
+     * 应用工作目录。
      * @return workPath
      */
     public String getWorkPath() {
@@ -210,7 +210,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 应用图标的路径
+     * 应用图标的路径。
      * @return iconPath
      */
     public String getIconPath() {
@@ -227,7 +227,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 应用图标的索引
+     * 应用图标的索引。
      * @return iconIndex
      */
     public Integer getIconIndex() {
@@ -244,7 +244,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 应用描述
+     * 应用描述。
      * @return description
      */
     public String getDescription() {
@@ -261,7 +261,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 应用组标识Id
+     * 应用组标识Id。
      * @return appGroupId
      */
     public String getAppGroupId() {
@@ -295,7 +295,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 所在的租户ID
+     * 所在的租户ID。
      * @return tenantId
      */
     public String getTenantId() {
@@ -312,7 +312,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 发布时间
+     * 发布时间。
      * @return publishAt
      */
     public OffsetDateTime getPublishAt() {
@@ -329,7 +329,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 应用类型 - '1':系统内置应用 - '2':镜像应用 - '3':自定义应用
+     * 应用类型： - '1':系统内置应用 - '2':镜像应用 - '3':自定义应用
      * @return sourceType
      */
     public Integer getSourceType() {
@@ -346,7 +346,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 应用发布者
+     * 应用发布者。
      * @return publisher
      */
     public String getPublisher() {
@@ -363,7 +363,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 图标url
+     * 图标url。
      * @return iconUrl
      */
     public String getIconUrl() {
@@ -380,7 +380,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 是否可发布应用 - true: 可发布 - false: 不可发布
+     * 是否可发布应用： - true: 可发布。 - false: 不可发布。
      * @return publishable
      */
     public Boolean getPublishable() {
@@ -397,7 +397,7 @@ public class UploadAppIconResponse extends SdkResponse {
     }
 
     /**
-     * 是否使用沙箱模式运行，取值为： - false: 表示不以沙箱模式运行 - true: 表示以沙箱模式运行
+     * 是否使用沙箱模式运行，取值为： - false: 表示不以沙箱模式运行。 - true: 表示以沙箱模式运行。
      * @return sandboxEnable
      */
     public Boolean getSandboxEnable() {

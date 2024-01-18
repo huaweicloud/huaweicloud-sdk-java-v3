@@ -44,6 +44,8 @@ import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleGroupRequest;
 import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleGroupResponse;
 import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleResponse;
+import com.huaweicloud.sdk.dsc.v1.model.DeleteScanJobRequest;
+import com.huaweicloud.sdk.dsc.v1.model.DeleteScanJobResponse;
 import com.huaweicloud.sdk.dsc.v1.model.DynamicDataMask;
 import com.huaweicloud.sdk.dsc.v1.model.EmbeddedDatabaseWatermark;
 import com.huaweicloud.sdk.dsc.v1.model.ExtractedDatabaseWatermark;
@@ -109,9 +111,9 @@ import com.huaweicloud.sdk.dsc.v1.model.UpdateDefaultTopicResponse;
 @SuppressWarnings("unchecked")
 public class DscMeta {
 
-    public static final HttpRequestDef<AddBucketsRequest, AddBucketsResponse> addBuckets = genForaddBuckets();
+    public static final HttpRequestDef<AddBucketsRequest, AddBucketsResponse> addBuckets = genForAddBuckets();
 
-    private static HttpRequestDef<AddBucketsRequest, AddBucketsResponse> genForaddBuckets() {
+    private static HttpRequestDef<AddBucketsRequest, AddBucketsResponse> genForAddBuckets() {
         // basic
         HttpRequestDef.Builder<AddBucketsRequest, AddBucketsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddBucketsRequest.class, AddBucketsResponse.class)
@@ -124,25 +126,21 @@ public class DscMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddBucketsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(AddBucketsRequest::getType, AddBucketsRequest::setType));
         builder.<BucketsRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BucketsRequest.class),
-            f -> f.withMarshaller(AddBucketsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddBucketsRequest::getBody, AddBucketsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddRuleRequest, AddRuleResponse> addRule = genForaddRule();
+    public static final HttpRequestDef<AddRuleRequest, AddRuleResponse> addRule = genForAddRule();
 
-    private static HttpRequestDef<AddRuleRequest, AddRuleResponse> genForaddRule() {
+    private static HttpRequestDef<AddRuleRequest, AddRuleResponse> genForAddRule() {
         // basic
         HttpRequestDef.Builder<AddRuleRequest, AddRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddRuleRequest.class, AddRuleResponse.class)
@@ -155,18 +153,16 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RuleRequest.class),
-            f -> f.withMarshaller(AddRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddRuleRequest::getBody, AddRuleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddRuleGroupRequest, AddRuleGroupResponse> addRuleGroup = genForaddRuleGroup();
+    public static final HttpRequestDef<AddRuleGroupRequest, AddRuleGroupResponse> addRuleGroup = genForAddRuleGroup();
 
-    private static HttpRequestDef<AddRuleGroupRequest, AddRuleGroupResponse> genForaddRuleGroup() {
+    private static HttpRequestDef<AddRuleGroupRequest, AddRuleGroupResponse> genForAddRuleGroup() {
         // basic
         HttpRequestDef.Builder<AddRuleGroupRequest, AddRuleGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddRuleGroupRequest.class, AddRuleGroupResponse.class)
@@ -179,18 +175,16 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RuleGroupRequest.class),
-            f -> f.withMarshaller(AddRuleGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddRuleGroupRequest::getBody, AddRuleGroupRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddScanJobRequest, AddScanJobResponse> addScanJob = genForaddScanJob();
+    public static final HttpRequestDef<AddScanJobRequest, AddScanJobResponse> addScanJob = genForAddScanJob();
 
-    private static HttpRequestDef<AddScanJobRequest, AddScanJobResponse> genForaddScanJob() {
+    private static HttpRequestDef<AddScanJobRequest, AddScanJobResponse> genForAddScanJob() {
         // basic
         HttpRequestDef.Builder<AddScanJobRequest, AddScanJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddScanJobRequest.class, AddScanJobResponse.class)
@@ -203,9 +197,7 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ScanJobRequest.class),
-            f -> f.withMarshaller(AddScanJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddScanJobRequest::getBody, AddScanJobRequest::setBody));
 
         // response
 
@@ -213,9 +205,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<BatchAddDataMaskRequest, BatchAddDataMaskResponse> batchAddDataMask =
-        genForbatchAddDataMask();
+        genForBatchAddDataMask();
 
-    private static HttpRequestDef<BatchAddDataMaskRequest, BatchAddDataMaskResponse> genForbatchAddDataMask() {
+    private static HttpRequestDef<BatchAddDataMaskRequest, BatchAddDataMaskResponse> genForBatchAddDataMask() {
         // basic
         HttpRequestDef.Builder<BatchAddDataMaskRequest, BatchAddDataMaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchAddDataMaskRequest.class, BatchAddDataMaskResponse.class)
@@ -228,9 +220,7 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DynamicDataMask.class),
-            f -> f.withMarshaller(BatchAddDataMaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddDataMaskRequest::getBody, BatchAddDataMaskRequest::setBody));
 
         // response
 
@@ -238,9 +228,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ChangeDbTemplateOperationRequest, ChangeDbTemplateOperationResponse> changeDbTemplateOperation =
-        genForchangeDbTemplateOperation();
+        genForChangeDbTemplateOperation();
 
-    private static HttpRequestDef<ChangeDbTemplateOperationRequest, ChangeDbTemplateOperationResponse> genForchangeDbTemplateOperation() {
+    private static HttpRequestDef<ChangeDbTemplateOperationRequest, ChangeDbTemplateOperationResponse> genForChangeDbTemplateOperation() {
         // basic
         HttpRequestDef.Builder<ChangeDbTemplateOperationRequest, ChangeDbTemplateOperationResponse> builder =
             HttpRequestDef
@@ -256,25 +246,23 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeDbTemplateOperationRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ChangeDbTemplateOperationRequest::getTemplateId,
+                ChangeDbTemplateOperationRequest::setTemplateId));
         builder.<MaskSwitchRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MaskSwitchRequest.class),
-            f -> f.withMarshaller(ChangeDbTemplateOperationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeDbTemplateOperationRequest::getBody,
+                ChangeDbTemplateOperationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ChangeRuleRequest, ChangeRuleResponse> changeRule = genForchangeRule();
+    public static final HttpRequestDef<ChangeRuleRequest, ChangeRuleResponse> changeRule = genForChangeRule();
 
-    private static HttpRequestDef<ChangeRuleRequest, ChangeRuleResponse> genForchangeRule() {
+    private static HttpRequestDef<ChangeRuleRequest, ChangeRuleResponse> genForChangeRule() {
         // basic
         HttpRequestDef.Builder<ChangeRuleRequest, ChangeRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeRuleRequest.class, ChangeRuleResponse.class)
@@ -287,9 +275,7 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RuleChangeRequest.class),
-            f -> f.withMarshaller(ChangeRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeRuleRequest::getBody, ChangeRuleRequest::setBody));
 
         // response
 
@@ -297,9 +283,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<CreateDatabaseWaterMarkRequest, CreateDatabaseWaterMarkResponse> createDatabaseWaterMark =
-        genForcreateDatabaseWaterMark();
+        genForCreateDatabaseWaterMark();
 
-    private static HttpRequestDef<CreateDatabaseWaterMarkRequest, CreateDatabaseWaterMarkResponse> genForcreateDatabaseWaterMark() {
+    private static HttpRequestDef<CreateDatabaseWaterMarkRequest, CreateDatabaseWaterMarkResponse> genForCreateDatabaseWaterMark() {
         // basic
         HttpRequestDef.Builder<CreateDatabaseWaterMarkRequest, CreateDatabaseWaterMarkResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateDatabaseWaterMarkRequest.class, CreateDatabaseWaterMarkResponse.class)
@@ -312,9 +298,7 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EmbeddedDatabaseWatermark.class),
-            f -> f.withMarshaller(CreateDatabaseWaterMarkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseWaterMarkRequest::getBody, CreateDatabaseWaterMarkRequest::setBody));
 
         // response
 
@@ -322,9 +306,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<CreateDocWatermarkRequest, CreateDocWatermarkResponse> createDocWatermark =
-        genForcreateDocWatermark();
+        genForCreateDocWatermark();
 
-    private static HttpRequestDef<CreateDocWatermarkRequest, CreateDocWatermarkResponse> genForcreateDocWatermark() {
+    private static HttpRequestDef<CreateDocWatermarkRequest, CreateDocWatermarkResponse> genForCreateDocWatermark() {
         // basic
         HttpRequestDef.Builder<CreateDocWatermarkRequest, CreateDocWatermarkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDocWatermarkRequest.class, CreateDocWatermarkResponse.class)
@@ -337,9 +321,7 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDocWatermarkRequestBody.class),
-            f -> f.withMarshaller(CreateDocWatermarkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDocWatermarkRequest::getBody, CreateDocWatermarkRequest::setBody));
 
         // response
 
@@ -347,9 +329,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse> createDocWatermarkByAddress =
-        genForcreateDocWatermarkByAddress();
+        genForCreateDocWatermarkByAddress();
 
-    private static HttpRequestDef<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse> genForcreateDocWatermarkByAddress() {
+    private static HttpRequestDef<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse> genForCreateDocWatermarkByAddress() {
         // basic
         HttpRequestDef.Builder<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse> builder =
             HttpRequestDef
@@ -365,9 +347,8 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDocWatermarkByAddressRequestBody.class),
-            f -> f.withMarshaller(CreateDocWatermarkByAddressRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDocWatermarkByAddressRequest::getBody,
+                CreateDocWatermarkByAddressRequest::setBody));
 
         // response
 
@@ -375,9 +356,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<CreateImageWatermarkRequest, CreateImageWatermarkResponse> createImageWatermark =
-        genForcreateImageWatermark();
+        genForCreateImageWatermark();
 
-    private static HttpRequestDef<CreateImageWatermarkRequest, CreateImageWatermarkResponse> genForcreateImageWatermark() {
+    private static HttpRequestDef<CreateImageWatermarkRequest, CreateImageWatermarkResponse> genForCreateImageWatermark() {
         // basic
         HttpRequestDef.Builder<CreateImageWatermarkRequest, CreateImageWatermarkResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateImageWatermarkRequest.class, CreateImageWatermarkResponse.class)
@@ -390,9 +371,7 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateImageWatermarkRequestBody.class),
-            f -> f.withMarshaller(CreateImageWatermarkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateImageWatermarkRequest::getBody, CreateImageWatermarkRequest::setBody));
 
         // response
 
@@ -400,9 +379,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse> createImageWatermarkByAddress =
-        genForcreateImageWatermarkByAddress();
+        genForCreateImageWatermarkByAddress();
 
-    private static HttpRequestDef<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse> genForcreateImageWatermarkByAddress() {
+    private static HttpRequestDef<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse> genForCreateImageWatermarkByAddress() {
         // basic
         HttpRequestDef.Builder<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse> builder =
             HttpRequestDef
@@ -418,9 +397,8 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateImageWatermarkByAddressRequestBody.class),
-            f -> f.withMarshaller(CreateImageWatermarkByAddressRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateImageWatermarkByAddressRequest::getBody,
+                CreateImageWatermarkByAddressRequest::setBody));
 
         // response
 
@@ -428,9 +406,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<CreateProductOrderRequest, CreateProductOrderResponse> createProductOrder =
-        genForcreateProductOrder();
+        genForCreateProductOrder();
 
-    private static HttpRequestDef<CreateProductOrderRequest, CreateProductOrderResponse> genForcreateProductOrder() {
+    private static HttpRequestDef<CreateProductOrderRequest, CreateProductOrderResponse> genForCreateProductOrder() {
         // basic
         HttpRequestDef.Builder<CreateProductOrderRequest, CreateProductOrderResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateProductOrderRequest.class, CreateProductOrderResponse.class)
@@ -443,18 +421,16 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PeriodOrderRequest.class),
-            f -> f.withMarshaller(CreateProductOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProductOrderRequest::getBody, CreateProductOrderRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteBucketRequest, DeleteBucketResponse> deleteBucket = genFordeleteBucket();
+    public static final HttpRequestDef<DeleteBucketRequest, DeleteBucketResponse> deleteBucket = genForDeleteBucket();
 
-    private static HttpRequestDef<DeleteBucketRequest, DeleteBucketResponse> genFordeleteBucket() {
+    private static HttpRequestDef<DeleteBucketRequest, DeleteBucketResponse> genForDeleteBucket() {
         // basic
         HttpRequestDef.Builder<DeleteBucketRequest, DeleteBucketResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBucketRequest.class, DeleteBucketResponse.class)
@@ -467,18 +443,16 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBucketRequest::getBucketId, (req, v) -> {
-                req.setBucketId(v);
-            }));
+            f -> f.withMarshaller(DeleteBucketRequest::getBucketId, DeleteBucketRequest::setBucketId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> deleteRule = genFordeleteRule();
+    public static final HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> deleteRule = genForDeleteRule();
 
-    private static HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> genFordeleteRule() {
+    private static HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> genForDeleteRule() {
         // basic
         HttpRequestDef.Builder<DeleteRuleRequest, DeleteRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRuleRequest.class, DeleteRuleResponse.class)
@@ -491,9 +465,7 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteRuleRequest::getRuleId, DeleteRuleRequest::setRuleId));
 
         // response
 
@@ -501,9 +473,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<DeleteRuleGroupRequest, DeleteRuleGroupResponse> deleteRuleGroup =
-        genFordeleteRuleGroup();
+        genForDeleteRuleGroup();
 
-    private static HttpRequestDef<DeleteRuleGroupRequest, DeleteRuleGroupResponse> genFordeleteRuleGroup() {
+    private static HttpRequestDef<DeleteRuleGroupRequest, DeleteRuleGroupResponse> genForDeleteRuleGroup() {
         // basic
         HttpRequestDef.Builder<DeleteRuleGroupRequest, DeleteRuleGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRuleGroupRequest.class, DeleteRuleGroupResponse.class)
@@ -516,18 +488,39 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRuleGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteRuleGroupRequest::getGroupId, DeleteRuleGroupRequest::setGroupId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBucketsRequest, ListBucketsResponse> listBuckets = genForlistBuckets();
+    public static final HttpRequestDef<DeleteScanJobRequest, DeleteScanJobResponse> deleteScanJob =
+        genForDeleteScanJob();
 
-    private static HttpRequestDef<ListBucketsRequest, ListBucketsResponse> genForlistBuckets() {
+    private static HttpRequestDef<DeleteScanJobRequest, DeleteScanJobResponse> genForDeleteScanJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteScanJobRequest, DeleteScanJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteScanJobRequest.class, DeleteScanJobResponse.class)
+                .withName("DeleteScanJob")
+                .withUri("/v1/{project_id}/sdg/scan/job/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScanJobRequest::getJobId, DeleteScanJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBucketsRequest, ListBucketsResponse> listBuckets = genForListBuckets();
+
+    private static HttpRequestDef<ListBucketsRequest, ListBucketsResponse> genForListBuckets() {
         // basic
         HttpRequestDef.Builder<ListBucketsRequest, ListBucketsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBucketsRequest.class, ListBucketsResponse.class)
@@ -540,23 +533,17 @@ public class DscMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListBucketsRequest::getAdded, (req, v) -> {
-                req.setAdded(v);
-            }));
+            f -> f.withMarshaller(ListBucketsRequest::getAdded, ListBucketsRequest::setAdded));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBucketsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBucketsRequest::getOffset, ListBucketsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBucketsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBucketsRequest::getLimit, ListBucketsRequest::setLimit));
 
         // response
 
@@ -564,9 +551,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ListDbMaskTaskRequest, ListDbMaskTaskResponse> listDbMaskTask =
-        genForlistDbMaskTask();
+        genForListDbMaskTask();
 
-    private static HttpRequestDef<ListDbMaskTaskRequest, ListDbMaskTaskResponse> genForlistDbMaskTask() {
+    private static HttpRequestDef<ListDbMaskTaskRequest, ListDbMaskTaskResponse> genForListDbMaskTask() {
         // basic
         HttpRequestDef.Builder<ListDbMaskTaskRequest, ListDbMaskTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDbMaskTaskRequest.class, ListDbMaskTaskResponse.class)
@@ -579,30 +566,22 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbMaskTaskRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ListDbMaskTaskRequest::getTemplateId, ListDbMaskTaskRequest::setTemplateId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbMaskTaskRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListDbMaskTaskRequest::getWorkspaceId, ListDbMaskTaskRequest::setWorkspaceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbMaskTaskRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDbMaskTaskRequest::getOffset, ListDbMaskTaskRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbMaskTaskRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDbMaskTaskRequest::getLimit, ListDbMaskTaskRequest::setLimit));
 
         // response
 
@@ -610,9 +589,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ListRelationBucketsRequest, ListRelationBucketsResponse> listRelationBuckets =
-        genForlistRelationBuckets();
+        genForListRelationBuckets();
 
-    private static HttpRequestDef<ListRelationBucketsRequest, ListRelationBucketsResponse> genForlistRelationBuckets() {
+    private static HttpRequestDef<ListRelationBucketsRequest, ListRelationBucketsResponse> genForListRelationBuckets() {
         // basic
         HttpRequestDef.Builder<ListRelationBucketsRequest, ListRelationBucketsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRelationBucketsRequest.class, ListRelationBucketsResponse.class)
@@ -625,44 +604,33 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationBucketsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListRelationBucketsRequest::getJobId, ListRelationBucketsRequest::setJobId));
         builder.<String>withRequestField("assets_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationBucketsRequest::getAssetsName, (req, v) -> {
-                req.setAssetsName(v);
-            }));
+            f -> f.withMarshaller(ListRelationBucketsRequest::getAssetsName,
+                ListRelationBucketsRequest::setAssetsName));
         builder.<Integer>withRequestField("risk_start",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationBucketsRequest::getRiskStart, (req, v) -> {
-                req.setRiskStart(v);
-            }));
+            f -> f.withMarshaller(ListRelationBucketsRequest::getRiskStart, ListRelationBucketsRequest::setRiskStart));
         builder.<Integer>withRequestField("risk_end",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationBucketsRequest::getRiskEnd, (req, v) -> {
-                req.setRiskEnd(v);
-            }));
+            f -> f.withMarshaller(ListRelationBucketsRequest::getRiskEnd, ListRelationBucketsRequest::setRiskEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationBucketsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRelationBucketsRequest::getOffset, ListRelationBucketsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationBucketsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRelationBucketsRequest::getLimit, ListRelationBucketsRequest::setLimit));
 
         // response
 
@@ -670,9 +638,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ListRelationColumnRequest, ListRelationColumnResponse> listRelationColumn =
-        genForlistRelationColumn();
+        genForListRelationColumn();
 
-    private static HttpRequestDef<ListRelationColumnRequest, ListRelationColumnResponse> genForlistRelationColumn() {
+    private static HttpRequestDef<ListRelationColumnRequest, ListRelationColumnResponse> genForListRelationColumn() {
         // basic
         HttpRequestDef.Builder<ListRelationColumnRequest, ListRelationColumnResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRelationColumnRequest.class, ListRelationColumnResponse.class)
@@ -685,51 +653,37 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationColumnRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListRelationColumnRequest::getJobId, ListRelationColumnRequest::setJobId));
         builder.<String>withRequestField("table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationColumnRequest::getTableId, (req, v) -> {
-                req.setTableId(v);
-            }));
+            f -> f.withMarshaller(ListRelationColumnRequest::getTableId, ListRelationColumnRequest::setTableId));
         builder.<String>withRequestField("assets_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationColumnRequest::getAssetsName, (req, v) -> {
-                req.setAssetsName(v);
-            }));
+            f -> f.withMarshaller(ListRelationColumnRequest::getAssetsName, ListRelationColumnRequest::setAssetsName));
         builder.<Integer>withRequestField("risk_start",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationColumnRequest::getRiskStart, (req, v) -> {
-                req.setRiskStart(v);
-            }));
+            f -> f.withMarshaller(ListRelationColumnRequest::getRiskStart, ListRelationColumnRequest::setRiskStart));
         builder.<Integer>withRequestField("risk_end",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationColumnRequest::getRiskEnd, (req, v) -> {
-                req.setRiskEnd(v);
-            }));
+            f -> f.withMarshaller(ListRelationColumnRequest::getRiskEnd, ListRelationColumnRequest::setRiskEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationColumnRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRelationColumnRequest::getOffset, ListRelationColumnRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationColumnRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRelationColumnRequest::getLimit, ListRelationColumnRequest::setLimit));
 
         // response
 
@@ -737,9 +691,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ListRelationDbRequest, ListRelationDbResponse> listRelationDb =
-        genForlistRelationDb();
+        genForListRelationDb();
 
-    private static HttpRequestDef<ListRelationDbRequest, ListRelationDbResponse> genForlistRelationDb() {
+    private static HttpRequestDef<ListRelationDbRequest, ListRelationDbResponse> genForListRelationDb() {
         // basic
         HttpRequestDef.Builder<ListRelationDbRequest, ListRelationDbResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRelationDbRequest.class, ListRelationDbResponse.class)
@@ -752,44 +706,32 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationDbRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListRelationDbRequest::getJobId, ListRelationDbRequest::setJobId));
         builder.<String>withRequestField("assets_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationDbRequest::getAssetsName, (req, v) -> {
-                req.setAssetsName(v);
-            }));
+            f -> f.withMarshaller(ListRelationDbRequest::getAssetsName, ListRelationDbRequest::setAssetsName));
         builder.<Integer>withRequestField("risk_start",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationDbRequest::getRiskStart, (req, v) -> {
-                req.setRiskStart(v);
-            }));
+            f -> f.withMarshaller(ListRelationDbRequest::getRiskStart, ListRelationDbRequest::setRiskStart));
         builder.<Integer>withRequestField("risk_end",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationDbRequest::getRiskEnd, (req, v) -> {
-                req.setRiskEnd(v);
-            }));
+            f -> f.withMarshaller(ListRelationDbRequest::getRiskEnd, ListRelationDbRequest::setRiskEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationDbRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRelationDbRequest::getOffset, ListRelationDbRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationDbRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRelationDbRequest::getLimit, ListRelationDbRequest::setLimit));
 
         // response
 
@@ -797,9 +739,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ListRelationFileRequest, ListRelationFileResponse> listRelationFile =
-        genForlistRelationFile();
+        genForListRelationFile();
 
-    private static HttpRequestDef<ListRelationFileRequest, ListRelationFileResponse> genForlistRelationFile() {
+    private static HttpRequestDef<ListRelationFileRequest, ListRelationFileResponse> genForListRelationFile() {
         // basic
         HttpRequestDef.Builder<ListRelationFileRequest, ListRelationFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRelationFileRequest.class, ListRelationFileResponse.class)
@@ -812,58 +754,42 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationFileRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListRelationFileRequest::getJobId, ListRelationFileRequest::setJobId));
         builder.<String>withRequestField("bucket_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationFileRequest::getBucketId, (req, v) -> {
-                req.setBucketId(v);
-            }));
+            f -> f.withMarshaller(ListRelationFileRequest::getBucketId, ListRelationFileRequest::setBucketId));
         builder.<String>withRequestField("assets_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationFileRequest::getAssetsName, (req, v) -> {
-                req.setAssetsName(v);
-            }));
+            f -> f.withMarshaller(ListRelationFileRequest::getAssetsName, ListRelationFileRequest::setAssetsName));
         builder.<Integer>withRequestField("risk_start",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationFileRequest::getRiskStart, (req, v) -> {
-                req.setRiskStart(v);
-            }));
+            f -> f.withMarshaller(ListRelationFileRequest::getRiskStart, ListRelationFileRequest::setRiskStart));
         builder.<Integer>withRequestField("risk_end",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationFileRequest::getRiskEnd, (req, v) -> {
-                req.setRiskEnd(v);
-            }));
+            f -> f.withMarshaller(ListRelationFileRequest::getRiskEnd, ListRelationFileRequest::setRiskEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationFileRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRelationFileRequest::getOffset, ListRelationFileRequest::setOffset));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationFileRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListRelationFileRequest::getSize, ListRelationFileRequest::setSize));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationFileRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRelationFileRequest::getLimit, ListRelationFileRequest::setLimit));
 
         // response
 
@@ -871,9 +797,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ListRelationTableRequest, ListRelationTableResponse> listRelationTable =
-        genForlistRelationTable();
+        genForListRelationTable();
 
-    private static HttpRequestDef<ListRelationTableRequest, ListRelationTableResponse> genForlistRelationTable() {
+    private static HttpRequestDef<ListRelationTableRequest, ListRelationTableResponse> genForListRelationTable() {
         // basic
         HttpRequestDef.Builder<ListRelationTableRequest, ListRelationTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRelationTableRequest.class, ListRelationTableResponse.class)
@@ -886,58 +812,42 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationTableRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListRelationTableRequest::getJobId, ListRelationTableRequest::setJobId));
         builder.<String>withRequestField("db_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationTableRequest::getDbId, (req, v) -> {
-                req.setDbId(v);
-            }));
+            f -> f.withMarshaller(ListRelationTableRequest::getDbId, ListRelationTableRequest::setDbId));
         builder.<String>withRequestField("assets_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationTableRequest::getAssetsName, (req, v) -> {
-                req.setAssetsName(v);
-            }));
+            f -> f.withMarshaller(ListRelationTableRequest::getAssetsName, ListRelationTableRequest::setAssetsName));
         builder.<Integer>withRequestField("risk_start",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationTableRequest::getRiskStart, (req, v) -> {
-                req.setRiskStart(v);
-            }));
+            f -> f.withMarshaller(ListRelationTableRequest::getRiskStart, ListRelationTableRequest::setRiskStart));
         builder.<Integer>withRequestField("risk_end",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationTableRequest::getRiskEnd, (req, v) -> {
-                req.setRiskEnd(v);
-            }));
+            f -> f.withMarshaller(ListRelationTableRequest::getRiskEnd, ListRelationTableRequest::setRiskEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationTableRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRelationTableRequest::getOffset, ListRelationTableRequest::setOffset));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationTableRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListRelationTableRequest::getSize, ListRelationTableRequest::setSize));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationTableRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRelationTableRequest::getLimit, ListRelationTableRequest::setLimit));
 
         // response
 
@@ -945,9 +855,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ListRuleGroupsRequest, ListRuleGroupsResponse> listRuleGroups =
-        genForlistRuleGroups();
+        genForListRuleGroups();
 
-    private static HttpRequestDef<ListRuleGroupsRequest, ListRuleGroupsResponse> genForlistRuleGroups() {
+    private static HttpRequestDef<ListRuleGroupsRequest, ListRuleGroupsResponse> genForListRuleGroups() {
         // basic
         HttpRequestDef.Builder<ListRuleGroupsRequest, ListRuleGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRuleGroupsRequest.class, ListRuleGroupsResponse.class)
@@ -960,16 +870,12 @@ public class DscMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRuleGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRuleGroupsRequest::getOffset, ListRuleGroupsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRuleGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRuleGroupsRequest::getLimit, ListRuleGroupsRequest::setLimit));
 
         // response
 
@@ -977,9 +883,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ShowDatabaseWaterMarkRequest, ShowDatabaseWaterMarkResponse> showDatabaseWaterMark =
-        genForshowDatabaseWaterMark();
+        genForShowDatabaseWaterMark();
 
-    private static HttpRequestDef<ShowDatabaseWaterMarkRequest, ShowDatabaseWaterMarkResponse> genForshowDatabaseWaterMark() {
+    private static HttpRequestDef<ShowDatabaseWaterMarkRequest, ShowDatabaseWaterMarkResponse> genForShowDatabaseWaterMark() {
         // basic
         HttpRequestDef.Builder<ShowDatabaseWaterMarkRequest, ShowDatabaseWaterMarkResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowDatabaseWaterMarkRequest.class, ShowDatabaseWaterMarkResponse.class)
@@ -992,9 +898,7 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExtractedDatabaseWatermark.class),
-            f -> f.withMarshaller(ShowDatabaseWaterMarkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowDatabaseWaterMarkRequest::getBody, ShowDatabaseWaterMarkRequest::setBody));
 
         // response
 
@@ -1002,9 +906,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ShowDocWatermarkRequest, ShowDocWatermarkResponse> showDocWatermark =
-        genForshowDocWatermark();
+        genForShowDocWatermark();
 
-    private static HttpRequestDef<ShowDocWatermarkRequest, ShowDocWatermarkResponse> genForshowDocWatermark() {
+    private static HttpRequestDef<ShowDocWatermarkRequest, ShowDocWatermarkResponse> genForShowDocWatermark() {
         // basic
         HttpRequestDef.Builder<ShowDocWatermarkRequest, ShowDocWatermarkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowDocWatermarkRequest.class, ShowDocWatermarkResponse.class)
@@ -1017,9 +921,7 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowDocWatermarkRequestBody.class),
-            f -> f.withMarshaller(ShowDocWatermarkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowDocWatermarkRequest::getBody, ShowDocWatermarkRequest::setBody));
 
         // response
 
@@ -1027,9 +929,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse> showDocWatermarkByAddress =
-        genForshowDocWatermarkByAddress();
+        genForShowDocWatermarkByAddress();
 
-    private static HttpRequestDef<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse> genForshowDocWatermarkByAddress() {
+    private static HttpRequestDef<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse> genForShowDocWatermarkByAddress() {
         // basic
         HttpRequestDef.Builder<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse> builder =
             HttpRequestDef
@@ -1045,9 +947,8 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowDocWatermarkByAddressRequestBody.class),
-            f -> f.withMarshaller(ShowDocWatermarkByAddressRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowDocWatermarkByAddressRequest::getBody,
+                ShowDocWatermarkByAddressRequest::setBody));
 
         // response
 
@@ -1055,9 +956,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ShowImageWatermarkRequest, ShowImageWatermarkResponse> showImageWatermark =
-        genForshowImageWatermark();
+        genForShowImageWatermark();
 
-    private static HttpRequestDef<ShowImageWatermarkRequest, ShowImageWatermarkResponse> genForshowImageWatermark() {
+    private static HttpRequestDef<ShowImageWatermarkRequest, ShowImageWatermarkResponse> genForShowImageWatermark() {
         // basic
         HttpRequestDef.Builder<ShowImageWatermarkRequest, ShowImageWatermarkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowImageWatermarkRequest.class, ShowImageWatermarkResponse.class)
@@ -1070,9 +971,7 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowImageWatermarkRequestBody.class),
-            f -> f.withMarshaller(ShowImageWatermarkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowImageWatermarkRequest::getBody, ShowImageWatermarkRequest::setBody));
 
         // response
 
@@ -1080,9 +979,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse> showImageWatermarkByAddress =
-        genForshowImageWatermarkByAddress();
+        genForShowImageWatermarkByAddress();
 
-    private static HttpRequestDef<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse> genForshowImageWatermarkByAddress() {
+    private static HttpRequestDef<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse> genForShowImageWatermarkByAddress() {
         // basic
         HttpRequestDef.Builder<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse> builder =
             HttpRequestDef
@@ -1098,9 +997,8 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowImageWatermarkByAddressRequestBody.class),
-            f -> f.withMarshaller(ShowImageWatermarkByAddressRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowImageWatermarkByAddressRequest::getBody,
+                ShowImageWatermarkByAddressRequest::setBody));
 
         // response
 
@@ -1108,9 +1006,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse> showImageWatermarkWithImage =
-        genForshowImageWatermarkWithImage();
+        genForShowImageWatermarkWithImage();
 
-    private static HttpRequestDef<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse> genForshowImageWatermarkWithImage() {
+    private static HttpRequestDef<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse> genForShowImageWatermarkWithImage() {
         // basic
         HttpRequestDef.Builder<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse> builder =
             HttpRequestDef
@@ -1126,9 +1024,8 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowImageWatermarkWithImageRequestBody.class),
-            f -> f.withMarshaller(ShowImageWatermarkWithImageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowImageWatermarkWithImageRequest::getBody,
+                ShowImageWatermarkWithImageRequest::setBody));
 
         // response
 
@@ -1136,9 +1033,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse> showImageWatermarkWithImageByAddress =
-        genForshowImageWatermarkWithImageByAddress();
+        genForShowImageWatermarkWithImageByAddress();
 
-    private static HttpRequestDef<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse> genForshowImageWatermarkWithImageByAddress() {
+    private static HttpRequestDef<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse> genForShowImageWatermarkWithImageByAddress() {
         // basic
         HttpRequestDef.Builder<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse> builder =
             HttpRequestDef
@@ -1154,18 +1051,17 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowImageWatermarkWithImageByAddressRequestBody.class),
-            f -> f.withMarshaller(ShowImageWatermarkWithImageByAddressRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowImageWatermarkWithImageByAddressRequest::getBody,
+                ShowImageWatermarkWithImageByAddressRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRulesRequest, ShowRulesResponse> showRules = genForshowRules();
+    public static final HttpRequestDef<ShowRulesRequest, ShowRulesResponse> showRules = genForShowRules();
 
-    private static HttpRequestDef<ShowRulesRequest, ShowRulesResponse> genForshowRules() {
+    private static HttpRequestDef<ShowRulesRequest, ShowRulesResponse> genForShowRules() {
         // basic
         HttpRequestDef.Builder<ShowRulesRequest, ShowRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRulesRequest.class, ShowRulesResponse.class)
@@ -1178,16 +1074,12 @@ public class DscMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRulesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowRulesRequest::getOffset, ShowRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowRulesRequest::getLimit, ShowRulesRequest::setLimit));
 
         // response
 
@@ -1195,9 +1087,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ShowScanJobResultsRequest, ShowScanJobResultsResponse> showScanJobResults =
-        genForshowScanJobResults();
+        genForShowScanJobResults();
 
-    private static HttpRequestDef<ShowScanJobResultsRequest, ShowScanJobResultsResponse> genForshowScanJobResults() {
+    private static HttpRequestDef<ShowScanJobResultsRequest, ShowScanJobResultsResponse> genForShowScanJobResults() {
         // basic
         HttpRequestDef.Builder<ShowScanJobResultsRequest, ShowScanJobResultsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScanJobResultsRequest.class, ShowScanJobResultsResponse.class)
@@ -1210,53 +1102,41 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScanJobResultsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getJobId, ShowScanJobResultsRequest::setJobId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowScanJobResultsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getOffset, ShowScanJobResultsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowScanJobResultsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getLimit, ShowScanJobResultsRequest::setLimit));
         builder.<ShowScanJobResultsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowScanJobResultsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowScanJobResultsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getType, ShowScanJobResultsRequest::setType));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScanJobResultsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getStartTime, ShowScanJobResultsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScanJobResultsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobResultsRequest::getEndTime, ShowScanJobResultsRequest::setEndTime));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowScanJobsRequest, ShowScanJobsResponse> showScanJobs = genForshowScanJobs();
+    public static final HttpRequestDef<ShowScanJobsRequest, ShowScanJobsResponse> showScanJobs = genForShowScanJobs();
 
-    private static HttpRequestDef<ShowScanJobsRequest, ShowScanJobsResponse> genForshowScanJobs() {
+    private static HttpRequestDef<ShowScanJobsRequest, ShowScanJobsResponse> genForShowScanJobs() {
         // basic
         HttpRequestDef.Builder<ShowScanJobsRequest, ShowScanJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScanJobsRequest.class, ShowScanJobsResponse.class)
@@ -1269,37 +1149,27 @@ public class DscMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowScanJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobsRequest::getOffset, ShowScanJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowScanJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobsRequest::getLimit, ShowScanJobsRequest::setLimit));
         builder.<String>withRequestField("content",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScanJobsRequest::getContent, (req, v) -> {
-                req.setContent(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobsRequest::getContent, ShowScanJobsRequest::setContent));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScanJobsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobsRequest::getStartTime, ShowScanJobsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScanJobsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowScanJobsRequest::getEndTime, ShowScanJobsRequest::setEndTime));
 
         // response
 
@@ -1307,9 +1177,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ShowSpecificationRequest, ShowSpecificationResponse> showSpecification =
-        genForshowSpecification();
+        genForShowSpecification();
 
-    private static HttpRequestDef<ShowSpecificationRequest, ShowSpecificationResponse> genForshowSpecification() {
+    private static HttpRequestDef<ShowSpecificationRequest, ShowSpecificationResponse> genForShowSpecification() {
         // basic
         HttpRequestDef.Builder<ShowSpecificationRequest, ShowSpecificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSpecificationRequest.class, ShowSpecificationResponse.class)
@@ -1324,9 +1194,9 @@ public class DscMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTopicsRequest, ShowTopicsResponse> showTopics = genForshowTopics();
+    public static final HttpRequestDef<ShowTopicsRequest, ShowTopicsResponse> showTopics = genForShowTopics();
 
-    private static HttpRequestDef<ShowTopicsRequest, ShowTopicsResponse> genForshowTopics() {
+    private static HttpRequestDef<ShowTopicsRequest, ShowTopicsResponse> genForShowTopics() {
         // basic
         HttpRequestDef.Builder<ShowTopicsRequest, ShowTopicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTopicsRequest.class, ShowTopicsResponse.class)
@@ -1339,16 +1209,12 @@ public class DscMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTopicsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowTopicsRequest::getOffset, ShowTopicsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTopicsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowTopicsRequest::getLimit, ShowTopicsRequest::setLimit));
 
         // response
 
@@ -1356,9 +1222,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<UpdateAssetNameRequest, UpdateAssetNameResponse> updateAssetName =
-        genForupdateAssetName();
+        genForUpdateAssetName();
 
-    private static HttpRequestDef<UpdateAssetNameRequest, UpdateAssetNameResponse> genForupdateAssetName() {
+    private static HttpRequestDef<UpdateAssetNameRequest, UpdateAssetNameResponse> genForUpdateAssetName() {
         // basic
         HttpRequestDef.Builder<UpdateAssetNameRequest, UpdateAssetNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAssetNameRequest.class, UpdateAssetNameResponse.class)
@@ -1371,16 +1237,12 @@ public class DscMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAssetNameRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetNameRequest::getAssetId, UpdateAssetNameRequest::setAssetId));
         builder.<AssetNameRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssetNameRequest.class),
-            f -> f.withMarshaller(UpdateAssetNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetNameRequest::getBody, UpdateAssetNameRequest::setBody));
 
         // response
 
@@ -1388,9 +1250,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<UpdateDefaultTopicRequest, UpdateDefaultTopicResponse> updateDefaultTopic =
-        genForupdateDefaultTopic();
+        genForUpdateDefaultTopic();
 
-    private static HttpRequestDef<UpdateDefaultTopicRequest, UpdateDefaultTopicResponse> genForupdateDefaultTopic() {
+    private static HttpRequestDef<UpdateDefaultTopicRequest, UpdateDefaultTopicResponse> genForUpdateDefaultTopic() {
         // basic
         HttpRequestDef.Builder<UpdateDefaultTopicRequest, UpdateDefaultTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDefaultTopicRequest.class, UpdateDefaultTopicResponse.class)
@@ -1403,9 +1265,7 @@ public class DscMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DefaultTopicRequest.class),
-            f -> f.withMarshaller(UpdateDefaultTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDefaultTopicRequest::getBody, UpdateDefaultTopicRequest::setBody));
 
         // response
 
@@ -1413,9 +1273,9 @@ public class DscMeta {
     }
 
     public static final HttpRequestDef<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> showOpenApiCalledRecords =
-        genForshowOpenApiCalledRecords();
+        genForShowOpenApiCalledRecords();
 
-    private static HttpRequestDef<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> genForshowOpenApiCalledRecords() {
+    private static HttpRequestDef<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> genForShowOpenApiCalledRecords() {
         // basic
         HttpRequestDef.Builder<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse> builder =
             HttpRequestDef
@@ -1429,37 +1289,32 @@ public class DscMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getLimit,
+                ShowOpenApiCalledRecordsRequest::setLimit));
         builder.<String>withRequestField("called_url",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getCalledUrl, (req, v) -> {
-                req.setCalledUrl(v);
-            }));
+            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getCalledUrl,
+                ShowOpenApiCalledRecordsRequest::setCalledUrl));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getStartTime,
+                ShowOpenApiCalledRecordsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getEndTime,
+                ShowOpenApiCalledRecordsRequest::setEndTime));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowOpenApiCalledRecordsRequest::getMarker,
+                ShowOpenApiCalledRecordsRequest::setMarker));
 
         // response
 

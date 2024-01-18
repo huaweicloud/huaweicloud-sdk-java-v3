@@ -34,7 +34,7 @@ public class ImageSearchClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAddDataRequest 请求对象
+     * @param request RunAddDataRequest 请求对象
      * @return RunAddDataResponse
      */
     public RunAddDataResponse runAddData(RunAddDataRequest request) {
@@ -48,11 +48,11 @@ public class ImageSearchClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAddDataRequest 请求对象
+     * @param request RunAddDataRequest 请求对象
      * @return SyncInvoker<RunAddDataRequest, RunAddDataResponse>
      */
     public SyncInvoker<RunAddDataRequest, RunAddDataResponse> runAddDataInvoker(RunAddDataRequest request) {
-        return new SyncInvoker<RunAddDataRequest, RunAddDataResponse>(request, ImageSearchMeta.runAddData, hcClient);
+        return new SyncInvoker<>(request, ImageSearchMeta.runAddData, hcClient);
     }
 
     /**
@@ -62,7 +62,7 @@ public class ImageSearchClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCheckDataRequest 请求对象
+     * @param request RunCheckDataRequest 请求对象
      * @return RunCheckDataResponse
      */
     public RunCheckDataResponse runCheckData(RunCheckDataRequest request) {
@@ -76,12 +76,11 @@ public class ImageSearchClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCheckDataRequest 请求对象
+     * @param request RunCheckDataRequest 请求对象
      * @return SyncInvoker<RunCheckDataRequest, RunCheckDataResponse>
      */
     public SyncInvoker<RunCheckDataRequest, RunCheckDataResponse> runCheckDataInvoker(RunCheckDataRequest request) {
-        return new SyncInvoker<RunCheckDataRequest, RunCheckDataResponse>(request, ImageSearchMeta.runCheckData,
-            hcClient);
+        return new SyncInvoker<>(request, ImageSearchMeta.runCheckData, hcClient);
     }
 
     /**
@@ -91,7 +90,7 @@ public class ImageSearchClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDeleteDataRequest 请求对象
+     * @param request RunDeleteDataRequest 请求对象
      * @return RunDeleteDataResponse
      */
     public RunDeleteDataResponse runDeleteData(RunDeleteDataRequest request) {
@@ -105,12 +104,11 @@ public class ImageSearchClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDeleteDataRequest 请求对象
+     * @param request RunDeleteDataRequest 请求对象
      * @return SyncInvoker<RunDeleteDataRequest, RunDeleteDataResponse>
      */
     public SyncInvoker<RunDeleteDataRequest, RunDeleteDataResponse> runDeleteDataInvoker(RunDeleteDataRequest request) {
-        return new SyncInvoker<RunDeleteDataRequest, RunDeleteDataResponse>(request, ImageSearchMeta.runDeleteData,
-            hcClient);
+        return new SyncInvoker<>(request, ImageSearchMeta.runDeleteData, hcClient);
     }
 
     /**
@@ -120,7 +118,7 @@ public class ImageSearchClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSearchRequest 请求对象
+     * @param request RunSearchRequest 请求对象
      * @return RunSearchResponse
      */
     public RunSearchResponse runSearch(RunSearchRequest request) {
@@ -134,11 +132,11 @@ public class ImageSearchClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSearchRequest 请求对象
+     * @param request RunSearchRequest 请求对象
      * @return SyncInvoker<RunSearchRequest, RunSearchResponse>
      */
     public SyncInvoker<RunSearchRequest, RunSearchResponse> runSearchInvoker(RunSearchRequest request) {
-        return new SyncInvoker<RunSearchRequest, RunSearchResponse>(request, ImageSearchMeta.runSearch, hcClient);
+        return new SyncInvoker<>(request, ImageSearchMeta.runSearch, hcClient);
     }
 
     /**
@@ -148,7 +146,7 @@ public class ImageSearchClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunUpdateDataRequest 请求对象
+     * @param request RunUpdateDataRequest 请求对象
      * @return RunUpdateDataResponse
      */
     public RunUpdateDataResponse runUpdateData(RunUpdateDataRequest request) {
@@ -162,12 +160,11 @@ public class ImageSearchClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunUpdateDataRequest 请求对象
+     * @param request RunUpdateDataRequest 请求对象
      * @return SyncInvoker<RunUpdateDataRequest, RunUpdateDataResponse>
      */
     public SyncInvoker<RunUpdateDataRequest, RunUpdateDataResponse> runUpdateDataInvoker(RunUpdateDataRequest request) {
-        return new SyncInvoker<RunUpdateDataRequest, RunUpdateDataResponse>(request, ImageSearchMeta.runUpdateData,
-            hcClient);
+        return new SyncInvoker<>(request, ImageSearchMeta.runUpdateData, hcClient);
     }
 
 }

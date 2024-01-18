@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 注销会话请求
+ * 注销会话请求。
  */
 public class LogoffUserSessionReq {
 
@@ -65,7 +65,7 @@ public class LogoffUserSessionReq {
     }
 
     /**
-     * 会话信息id列表
+     * 会话信息id列表。
      * @return sessionIds
      */
     public List<String> getSessionIds() {
@@ -82,7 +82,7 @@ public class LogoffUserSessionReq {
     }
 
     /**
-     * 客户端弹框级别，代表给会话发消息时的严重程度（比如info、warning、error级别） 0->info; 1-> warn; 2->serious;
+     * 客户端弹框级别，代表给会话发消息时的严重程度（比如info、warning、error级别） 0->info; 1-> warn; 2->serious。
      * minimum: 0
      * maximum: 4
      * @return messageType
@@ -101,7 +101,7 @@ public class LogoffUserSessionReq {
     }
 
     /**
-     * 客户端弹框内容
+     * 客户端弹框内容。
      * @return message
      */
     public String getMessage() {
@@ -118,7 +118,7 @@ public class LogoffUserSessionReq {
     }
 
     /**
-     * 弹框标题
+     * 弹框标题。
      * @return title
      */
     public String getTitle() {
@@ -135,7 +135,7 @@ public class LogoffUserSessionReq {
     }
 
     /**
-     * 延迟多长时间注销会话
+     * 延迟多长时间注销会话。
      * minimum: 0
      * maximum: 999999
      * @return delayTime
@@ -154,7 +154,7 @@ public class LogoffUserSessionReq {
     }
 
     /**
-     * 事务id，用作客户端日志定位跟踪
+     * 事务id，用作客户端日志定位跟踪。
      * @return transactionId
      */
     public String getTransactionId() {

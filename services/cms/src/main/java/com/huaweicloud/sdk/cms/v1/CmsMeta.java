@@ -28,9 +28,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CmsMeta {
 
     public static final HttpRequestDef<CreateAutoLaunchGroupRequest, CreateAutoLaunchGroupResponse> createAutoLaunchGroup =
-        genForcreateAutoLaunchGroup();
+        genForCreateAutoLaunchGroup();
 
-    private static HttpRequestDef<CreateAutoLaunchGroupRequest, CreateAutoLaunchGroupResponse> genForcreateAutoLaunchGroup() {
+    private static HttpRequestDef<CreateAutoLaunchGroupRequest, CreateAutoLaunchGroupResponse> genForCreateAutoLaunchGroup() {
         // basic
         HttpRequestDef.Builder<CreateAutoLaunchGroupRequest, CreateAutoLaunchGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateAutoLaunchGroupRequest.class, CreateAutoLaunchGroupResponse.class)
@@ -43,9 +43,7 @@ public class CmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AutoLaunchGroupReqV2.class),
-            f -> f.withMarshaller(CreateAutoLaunchGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAutoLaunchGroupRequest::getBody, CreateAutoLaunchGroupRequest::setBody));
 
         // response
 
@@ -53,9 +51,9 @@ public class CmsMeta {
     }
 
     public static final HttpRequestDef<DeleteAutoLaunchGroupRequest, DeleteAutoLaunchGroupResponse> deleteAutoLaunchGroup =
-        genFordeleteAutoLaunchGroup();
+        genForDeleteAutoLaunchGroup();
 
-    private static HttpRequestDef<DeleteAutoLaunchGroupRequest, DeleteAutoLaunchGroupResponse> genFordeleteAutoLaunchGroup() {
+    private static HttpRequestDef<DeleteAutoLaunchGroupRequest, DeleteAutoLaunchGroupResponse> genForDeleteAutoLaunchGroup() {
         // basic
         HttpRequestDef.Builder<DeleteAutoLaunchGroupRequest, DeleteAutoLaunchGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteAutoLaunchGroupRequest.class, DeleteAutoLaunchGroupResponse.class)
@@ -68,16 +66,13 @@ public class CmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAutoLaunchGroupRequest::getAutoLaunchGroupId, (req, v) -> {
-                req.setAutoLaunchGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteAutoLaunchGroupRequest::getAutoLaunchGroupId,
+                DeleteAutoLaunchGroupRequest::setAutoLaunchGroupId));
         builder.<DeleteAutoLaunchGroupReqV2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteAutoLaunchGroupReqV2.class),
-            f -> f.withMarshaller(DeleteAutoLaunchGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteAutoLaunchGroupRequest::getBody, DeleteAutoLaunchGroupRequest::setBody));
 
         // response
 
@@ -85,9 +80,9 @@ public class CmsMeta {
     }
 
     public static final HttpRequestDef<ListAutoLaunchGroupsRequest, ListAutoLaunchGroupsResponse> listAutoLaunchGroups =
-        genForlistAutoLaunchGroups();
+        genForListAutoLaunchGroups();
 
-    private static HttpRequestDef<ListAutoLaunchGroupsRequest, ListAutoLaunchGroupsResponse> genForlistAutoLaunchGroups() {
+    private static HttpRequestDef<ListAutoLaunchGroupsRequest, ListAutoLaunchGroupsResponse> genForListAutoLaunchGroups() {
         // basic
         HttpRequestDef.Builder<ListAutoLaunchGroupsRequest, ListAutoLaunchGroupsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAutoLaunchGroupsRequest.class, ListAutoLaunchGroupsResponse.class)
@@ -100,37 +95,29 @@ public class CmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAutoLaunchGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAutoLaunchGroupsRequest::getLimit, ListAutoLaunchGroupsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAutoLaunchGroupsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAutoLaunchGroupsRequest::getMarker, ListAutoLaunchGroupsRequest::setMarker));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAutoLaunchGroupsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAutoLaunchGroupsRequest::getName, ListAutoLaunchGroupsRequest::setName));
         builder.<String>withRequestField("valid_since",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAutoLaunchGroupsRequest::getValidSince, (req, v) -> {
-                req.setValidSince(v);
-            }));
+            f -> f.withMarshaller(ListAutoLaunchGroupsRequest::getValidSince,
+                ListAutoLaunchGroupsRequest::setValidSince));
         builder.<String>withRequestField("valid_until",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAutoLaunchGroupsRequest::getValidUntil, (req, v) -> {
-                req.setValidUntil(v);
-            }));
+            f -> f.withMarshaller(ListAutoLaunchGroupsRequest::getValidUntil,
+                ListAutoLaunchGroupsRequest::setValidUntil));
 
         // response
 
@@ -138,9 +125,9 @@ public class CmsMeta {
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
-        genForlistInstances();
+        genForListInstances();
 
-    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
@@ -153,23 +140,18 @@ public class CmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getAutoLaunchGroupId, (req, v) -> {
-                req.setAutoLaunchGroupId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getAutoLaunchGroupId,
+                ListInstancesRequest::setAutoLaunchGroupId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getMarker, ListInstancesRequest::setMarker));
 
         // response
 
@@ -177,9 +159,9 @@ public class CmsMeta {
     }
 
     public static final HttpRequestDef<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> listSupplyRecommendation =
-        genForlistSupplyRecommendation();
+        genForListSupplyRecommendation();
 
-    private static HttpRequestDef<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> genForlistSupplyRecommendation() {
+    private static HttpRequestDef<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> genForListSupplyRecommendation() {
         // basic
         HttpRequestDef.Builder<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> builder =
             HttpRequestDef
@@ -193,9 +175,7 @@ public class CmsMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSupplyRecommendationRequestBody.class),
-            f -> f.withMarshaller(ListSupplyRecommendationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListSupplyRecommendationRequest::getBody, ListSupplyRecommendationRequest::setBody));
 
         // response
 
@@ -203,9 +183,9 @@ public class CmsMeta {
     }
 
     public static final HttpRequestDef<ShowAutoLaunchGroupRequest, ShowAutoLaunchGroupResponse> showAutoLaunchGroup =
-        genForshowAutoLaunchGroup();
+        genForShowAutoLaunchGroup();
 
-    private static HttpRequestDef<ShowAutoLaunchGroupRequest, ShowAutoLaunchGroupResponse> genForshowAutoLaunchGroup() {
+    private static HttpRequestDef<ShowAutoLaunchGroupRequest, ShowAutoLaunchGroupResponse> genForShowAutoLaunchGroup() {
         // basic
         HttpRequestDef.Builder<ShowAutoLaunchGroupRequest, ShowAutoLaunchGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAutoLaunchGroupRequest.class, ShowAutoLaunchGroupResponse.class)
@@ -218,9 +198,8 @@ public class CmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAutoLaunchGroupRequest::getAutoLaunchGroupId, (req, v) -> {
-                req.setAutoLaunchGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowAutoLaunchGroupRequest::getAutoLaunchGroupId,
+                ShowAutoLaunchGroupRequest::setAutoLaunchGroupId));
 
         // response
 
@@ -228,9 +207,9 @@ public class CmsMeta {
     }
 
     public static final HttpRequestDef<UpdateAutoLaunchGroupRequest, UpdateAutoLaunchGroupResponse> updateAutoLaunchGroup =
-        genForupdateAutoLaunchGroup();
+        genForUpdateAutoLaunchGroup();
 
-    private static HttpRequestDef<UpdateAutoLaunchGroupRequest, UpdateAutoLaunchGroupResponse> genForupdateAutoLaunchGroup() {
+    private static HttpRequestDef<UpdateAutoLaunchGroupRequest, UpdateAutoLaunchGroupResponse> genForUpdateAutoLaunchGroup() {
         // basic
         HttpRequestDef.Builder<UpdateAutoLaunchGroupRequest, UpdateAutoLaunchGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateAutoLaunchGroupRequest.class, UpdateAutoLaunchGroupResponse.class)
@@ -243,16 +222,13 @@ public class CmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAutoLaunchGroupRequest::getAutoLaunchGroupId, (req, v) -> {
-                req.setAutoLaunchGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateAutoLaunchGroupRequest::getAutoLaunchGroupId,
+                UpdateAutoLaunchGroupRequest::setAutoLaunchGroupId));
         builder.<UpdateAutoLaunchGroupReqV2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateAutoLaunchGroupReqV2.class),
-            f -> f.withMarshaller(UpdateAutoLaunchGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAutoLaunchGroupRequest::getBody, UpdateAutoLaunchGroupRequest::setBody));
 
         // response
 

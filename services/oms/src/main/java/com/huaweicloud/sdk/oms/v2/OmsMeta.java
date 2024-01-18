@@ -94,9 +94,9 @@ import java.util.List;
 public class OmsMeta {
 
     public static final HttpRequestDef<BatchUpdateTasksRequest, BatchUpdateTasksResponse> batchUpdateTasks =
-        genForbatchUpdateTasks();
+        genForBatchUpdateTasks();
 
-    private static HttpRequestDef<BatchUpdateTasksRequest, BatchUpdateTasksResponse> genForbatchUpdateTasks() {
+    private static HttpRequestDef<BatchUpdateTasksRequest, BatchUpdateTasksResponse> genForBatchUpdateTasks() {
         // basic
         HttpRequestDef.Builder<BatchUpdateTasksRequest, BatchUpdateTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchUpdateTasksRequest.class, BatchUpdateTasksResponse.class)
@@ -109,18 +109,16 @@ public class OmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateTasksReq.class),
-            f -> f.withMarshaller(BatchUpdateTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateTasksRequest::getBody, BatchUpdateTasksRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckPrefixRequest, CheckPrefixResponse> checkPrefix = genForcheckPrefix();
+    public static final HttpRequestDef<CheckPrefixRequest, CheckPrefixResponse> checkPrefix = genForCheckPrefix();
 
-    private static HttpRequestDef<CheckPrefixRequest, CheckPrefixResponse> genForcheckPrefix() {
+    private static HttpRequestDef<CheckPrefixRequest, CheckPrefixResponse> genForCheckPrefix() {
         // basic
         HttpRequestDef.Builder<CheckPrefixRequest, CheckPrefixResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckPrefixRequest.class, CheckPrefixResponse.class)
@@ -133,9 +131,7 @@ public class OmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckPrefixReq.class),
-            f -> f.withMarshaller(CheckPrefixRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckPrefixRequest::getBody, CheckPrefixRequest::setBody));
 
         // response
 
@@ -143,9 +139,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<CreateSyncEventsRequest, CreateSyncEventsResponse> createSyncEvents =
-        genForcreateSyncEvents();
+        genForCreateSyncEvents();
 
-    private static HttpRequestDef<CreateSyncEventsRequest, CreateSyncEventsResponse> genForcreateSyncEvents() {
+    private static HttpRequestDef<CreateSyncEventsRequest, CreateSyncEventsResponse> genForCreateSyncEvents() {
         // basic
         HttpRequestDef.Builder<CreateSyncEventsRequest, CreateSyncEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSyncEventsRequest.class, CreateSyncEventsResponse.class)
@@ -158,16 +154,12 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSyncEventsRequest::getSyncTaskId, (req, v) -> {
-                req.setSyncTaskId(v);
-            }));
+            f -> f.withMarshaller(CreateSyncEventsRequest::getSyncTaskId, CreateSyncEventsRequest::setSyncTaskId));
         builder.<SyncObjectReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SyncObjectReq.class),
-            f -> f.withMarshaller(CreateSyncEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSyncEventsRequest::getBody, CreateSyncEventsRequest::setBody));
 
         // response
 
@@ -175,9 +167,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<CreateSyncTaskRequest, CreateSyncTaskResponse> createSyncTask =
-        genForcreateSyncTask();
+        genForCreateSyncTask();
 
-    private static HttpRequestDef<CreateSyncTaskRequest, CreateSyncTaskResponse> genForcreateSyncTask() {
+    private static HttpRequestDef<CreateSyncTaskRequest, CreateSyncTaskResponse> genForCreateSyncTask() {
         // basic
         HttpRequestDef.Builder<CreateSyncTaskRequest, CreateSyncTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSyncTaskRequest.class, CreateSyncTaskResponse.class)
@@ -190,18 +182,16 @@ public class OmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSyncTaskReq.class),
-            f -> f.withMarshaller(CreateSyncTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSyncTaskRequest::getBody, CreateSyncTaskRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForcreateTask();
+    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForCreateTask();
 
-    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForcreateTask() {
+    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForCreateTask() {
         // basic
         HttpRequestDef.Builder<CreateTaskRequest, CreateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskRequest.class, CreateTaskResponse.class)
@@ -214,9 +204,7 @@ public class OmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTaskReq.class),
-            f -> f.withMarshaller(CreateTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getBody, CreateTaskRequest::setBody));
 
         // response
 
@@ -224,9 +212,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<CreateTaskGroupRequest, CreateTaskGroupResponse> createTaskGroup =
-        genForcreateTaskGroup();
+        genForCreateTaskGroup();
 
-    private static HttpRequestDef<CreateTaskGroupRequest, CreateTaskGroupResponse> genForcreateTaskGroup() {
+    private static HttpRequestDef<CreateTaskGroupRequest, CreateTaskGroupResponse> genForCreateTaskGroup() {
         // basic
         HttpRequestDef.Builder<CreateTaskGroupRequest, CreateTaskGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskGroupRequest.class, CreateTaskGroupResponse.class)
@@ -239,9 +227,7 @@ public class OmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTaskGroupReq.class),
-            f -> f.withMarshaller(CreateTaskGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTaskGroupRequest::getBody, CreateTaskGroupRequest::setBody));
 
         // response
 
@@ -249,9 +235,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<DeleteSyncTaskRequest, DeleteSyncTaskResponse> deleteSyncTask =
-        genFordeleteSyncTask();
+        genForDeleteSyncTask();
 
-    private static HttpRequestDef<DeleteSyncTaskRequest, DeleteSyncTaskResponse> genFordeleteSyncTask() {
+    private static HttpRequestDef<DeleteSyncTaskRequest, DeleteSyncTaskResponse> genForDeleteSyncTask() {
         // basic
         HttpRequestDef.Builder<DeleteSyncTaskRequest, DeleteSyncTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSyncTaskRequest.class, DeleteSyncTaskResponse.class)
@@ -264,18 +250,16 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSyncTaskRequest::getSyncTaskId, (req, v) -> {
-                req.setSyncTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteSyncTaskRequest::getSyncTaskId, DeleteSyncTaskRequest::setSyncTaskId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
+    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genForDeleteTask();
 
-    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
+    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genForDeleteTask() {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
@@ -288,9 +272,7 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, DeleteTaskRequest::setTaskId));
 
         // response
 
@@ -298,9 +280,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<DeleteTaskGroupRequest, DeleteTaskGroupResponse> deleteTaskGroup =
-        genFordeleteTaskGroup();
+        genForDeleteTaskGroup();
 
-    private static HttpRequestDef<DeleteTaskGroupRequest, DeleteTaskGroupResponse> genFordeleteTaskGroup() {
+    private static HttpRequestDef<DeleteTaskGroupRequest, DeleteTaskGroupResponse> genForDeleteTaskGroup() {
         // basic
         HttpRequestDef.Builder<DeleteTaskGroupRequest, DeleteTaskGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskGroupRequest.class, DeleteTaskGroupResponse.class)
@@ -313,9 +295,7 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskGroupRequest::getGroupId, DeleteTaskGroupRequest::setGroupId));
 
         // response
 
@@ -323,9 +303,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<ListSyncTaskStatisticRequest, ListSyncTaskStatisticResponse> listSyncTaskStatistic =
-        genForlistSyncTaskStatistic();
+        genForListSyncTaskStatistic();
 
-    private static HttpRequestDef<ListSyncTaskStatisticRequest, ListSyncTaskStatisticResponse> genForlistSyncTaskStatistic() {
+    private static HttpRequestDef<ListSyncTaskStatisticRequest, ListSyncTaskStatisticResponse> genForListSyncTaskStatistic() {
         // basic
         HttpRequestDef.Builder<ListSyncTaskStatisticRequest, ListSyncTaskStatisticResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSyncTaskStatisticRequest.class, ListSyncTaskStatisticResponse.class)
@@ -338,30 +318,25 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSyncTaskStatisticRequest::getSyncTaskId, (req, v) -> {
-                req.setSyncTaskId(v);
-            }));
+            f -> f.withMarshaller(ListSyncTaskStatisticRequest::getSyncTaskId,
+                ListSyncTaskStatisticRequest::setSyncTaskId));
         builder.<ListSyncTaskStatisticRequest.DataTypeEnum>withRequestField("data_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListSyncTaskStatisticRequest.DataTypeEnum.class),
-            f -> f.withMarshaller(ListSyncTaskStatisticRequest::getDataType, (req, v) -> {
-                req.setDataType(v);
-            }));
+            f -> f.withMarshaller(ListSyncTaskStatisticRequest::getDataType,
+                ListSyncTaskStatisticRequest::setDataType));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSyncTaskStatisticRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSyncTaskStatisticRequest::getStartTime,
+                ListSyncTaskStatisticRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSyncTaskStatisticRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSyncTaskStatisticRequest::getEndTime, ListSyncTaskStatisticRequest::setEndTime));
 
         // response
 
@@ -369,9 +344,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<ListSyncTasksRequest, ListSyncTasksResponse> listSyncTasks =
-        genForlistSyncTasks();
+        genForListSyncTasks();
 
-    private static HttpRequestDef<ListSyncTasksRequest, ListSyncTasksResponse> genForlistSyncTasks() {
+    private static HttpRequestDef<ListSyncTasksRequest, ListSyncTasksResponse> genForListSyncTasks() {
         // basic
         HttpRequestDef.Builder<ListSyncTasksRequest, ListSyncTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSyncTasksRequest.class, ListSyncTasksResponse.class)
@@ -384,23 +359,17 @@ public class OmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSyncTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSyncTasksRequest::getLimit, ListSyncTasksRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSyncTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSyncTasksRequest::getOffset, ListSyncTasksRequest::setOffset));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSyncTasksRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListSyncTasksRequest::getStatus, ListSyncTasksRequest::setStatus));
 
         // response
 
@@ -408,9 +377,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<ListTaskGroupRequest, ListTaskGroupResponse> listTaskGroup =
-        genForlistTaskGroup();
+        genForListTaskGroup();
 
-    private static HttpRequestDef<ListTaskGroupRequest, ListTaskGroupResponse> genForlistTaskGroup() {
+    private static HttpRequestDef<ListTaskGroupRequest, ListTaskGroupResponse> genForListTaskGroup() {
         // basic
         HttpRequestDef.Builder<ListTaskGroupRequest, ListTaskGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTaskGroupRequest.class, ListTaskGroupResponse.class)
@@ -423,32 +392,26 @@ public class OmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskGroupRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTaskGroupRequest::getLimit, ListTaskGroupRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskGroupRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTaskGroupRequest::getOffset, ListTaskGroupRequest::setOffset));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskGroupRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListTaskGroupRequest::getStatus, ListTaskGroupRequest::setStatus));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForlistTasks();
+    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForListTasks();
 
-    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForlistTasks() {
+    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForListTasks() {
         // basic
         HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
@@ -461,30 +424,22 @@ public class OmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getGroupId, ListTasksRequest::setGroupId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getLimit, ListTasksRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getOffset, ListTasksRequest::setOffset));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getStatus, ListTasksRequest::setStatus));
 
         // response
 
@@ -492,9 +447,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<RetryTaskGroupRequest, RetryTaskGroupResponse> retryTaskGroup =
-        genForretryTaskGroup();
+        genForRetryTaskGroup();
 
-    private static HttpRequestDef<RetryTaskGroupRequest, RetryTaskGroupResponse> genForretryTaskGroup() {
+    private static HttpRequestDef<RetryTaskGroupRequest, RetryTaskGroupResponse> genForRetryTaskGroup() {
         // basic
         HttpRequestDef.Builder<RetryTaskGroupRequest, RetryTaskGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RetryTaskGroupRequest.class, RetryTaskGroupResponse.class)
@@ -507,16 +462,12 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryTaskGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(RetryTaskGroupRequest::getGroupId, RetryTaskGroupRequest::setGroupId));
         builder.<RetryTaskGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RetryTaskGroupReq.class),
-            f -> f.withMarshaller(RetryTaskGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RetryTaskGroupRequest::getBody, RetryTaskGroupRequest::setBody));
 
         // response
 
@@ -524,9 +475,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<ShowBucketListRequest, ShowBucketListResponse> showBucketList =
-        genForshowBucketList();
+        genForShowBucketList();
 
-    private static HttpRequestDef<ShowBucketListRequest, ShowBucketListResponse> genForshowBucketList() {
+    private static HttpRequestDef<ShowBucketListRequest, ShowBucketListResponse> genForShowBucketList() {
         // basic
         HttpRequestDef.Builder<ShowBucketListRequest, ShowBucketListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowBucketListRequest.class, ShowBucketListResponse.class)
@@ -539,26 +490,23 @@ public class OmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListBucketsReq.class),
-            f -> f.withMarshaller(ShowBucketListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowBucketListRequest::getBody, ShowBucketListRequest::setBody));
 
         // response
         builder.<List<String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowBucketListResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(ShowBucketListResponse::getBody, ShowBucketListResponse::setBody)
+                .withInnerContainerType(String.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowBucketObjectsRequest, ShowBucketObjectsResponse> showBucketObjects =
-        genForshowBucketObjects();
+        genForShowBucketObjects();
 
-    private static HttpRequestDef<ShowBucketObjectsRequest, ShowBucketObjectsResponse> genForshowBucketObjects() {
+    private static HttpRequestDef<ShowBucketObjectsRequest, ShowBucketObjectsResponse> genForShowBucketObjects() {
         // basic
         HttpRequestDef.Builder<ShowBucketObjectsRequest, ShowBucketObjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowBucketObjectsRequest.class, ShowBucketObjectsResponse.class)
@@ -571,9 +519,7 @@ public class OmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowBucketReq.class),
-            f -> f.withMarshaller(ShowBucketObjectsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowBucketObjectsRequest::getBody, ShowBucketObjectsRequest::setBody));
 
         // response
 
@@ -581,9 +527,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<ShowBucketRegionRequest, ShowBucketRegionResponse> showBucketRegion =
-        genForshowBucketRegion();
+        genForShowBucketRegion();
 
-    private static HttpRequestDef<ShowBucketRegionRequest, ShowBucketRegionResponse> genForshowBucketRegion() {
+    private static HttpRequestDef<ShowBucketRegionRequest, ShowBucketRegionResponse> genForShowBucketRegion() {
         // basic
         HttpRequestDef.Builder<ShowBucketRegionRequest, ShowBucketRegionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowBucketRegionRequest.class, ShowBucketRegionResponse.class)
@@ -596,18 +542,16 @@ public class OmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowBucketRegionReq.class),
-            f -> f.withMarshaller(ShowBucketRegionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowBucketRegionRequest::getBody, ShowBucketRegionRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCdnInfoRequest, ShowCdnInfoResponse> showCdnInfo = genForshowCdnInfo();
+    public static final HttpRequestDef<ShowCdnInfoRequest, ShowCdnInfoResponse> showCdnInfo = genForShowCdnInfo();
 
-    private static HttpRequestDef<ShowCdnInfoRequest, ShowCdnInfoResponse> genForshowCdnInfo() {
+    private static HttpRequestDef<ShowCdnInfoRequest, ShowCdnInfoResponse> genForShowCdnInfo() {
         // basic
         HttpRequestDef.Builder<ShowCdnInfoRequest, ShowCdnInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowCdnInfoRequest.class, ShowCdnInfoResponse.class)
@@ -620,9 +564,7 @@ public class OmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowCdnInfoReq.class),
-            f -> f.withMarshaller(ShowCdnInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowCdnInfoRequest::getBody, ShowCdnInfoRequest::setBody));
 
         // response
 
@@ -630,9 +572,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<ShowCloudTypeRequest, ShowCloudTypeResponse> showCloudType =
-        genForshowCloudType();
+        genForShowCloudType();
 
-    private static HttpRequestDef<ShowCloudTypeRequest, ShowCloudTypeResponse> genForshowCloudType() {
+    private static HttpRequestDef<ShowCloudTypeRequest, ShowCloudTypeResponse> genForShowCloudType() {
         // basic
         HttpRequestDef.Builder<ShowCloudTypeRequest, ShowCloudTypeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCloudTypeRequest.class, ShowCloudTypeResponse.class)
@@ -645,26 +587,23 @@ public class OmsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCloudTypeRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowCloudTypeRequest::getType, ShowCloudTypeRequest::setType));
 
         // response
         builder.<List<String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowCloudTypeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(ShowCloudTypeResponse::getBody, ShowCloudTypeResponse::setBody)
+                .withInnerContainerType(String.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowRegionInfoRequest, ShowRegionInfoResponse> showRegionInfo =
-        genForshowRegionInfo();
+        genForShowRegionInfo();
 
-    private static HttpRequestDef<ShowRegionInfoRequest, ShowRegionInfoResponse> genForshowRegionInfo() {
+    private static HttpRequestDef<ShowRegionInfoRequest, ShowRegionInfoResponse> genForShowRegionInfo() {
         // basic
         HttpRequestDef.Builder<ShowRegionInfoRequest, ShowRegionInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRegionInfoRequest.class, ShowRegionInfoResponse.class)
@@ -679,16 +618,15 @@ public class OmsMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowRegionInfoResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ShowRegionInfoResp.class));
+            f -> f.withMarshaller(ShowRegionInfoResponse::getBody, ShowRegionInfoResponse::setBody)
+                .withInnerContainerType(ShowRegionInfoResp.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSyncTaskRequest, ShowSyncTaskResponse> showSyncTask = genForshowSyncTask();
+    public static final HttpRequestDef<ShowSyncTaskRequest, ShowSyncTaskResponse> showSyncTask = genForShowSyncTask();
 
-    private static HttpRequestDef<ShowSyncTaskRequest, ShowSyncTaskResponse> genForshowSyncTask() {
+    private static HttpRequestDef<ShowSyncTaskRequest, ShowSyncTaskResponse> genForShowSyncTask() {
         // basic
         HttpRequestDef.Builder<ShowSyncTaskRequest, ShowSyncTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSyncTaskRequest.class, ShowSyncTaskResponse.class)
@@ -701,25 +639,21 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSyncTaskRequest::getSyncTaskId, (req, v) -> {
-                req.setSyncTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowSyncTaskRequest::getSyncTaskId, ShowSyncTaskRequest::setSyncTaskId));
         builder.<String>withRequestField("query_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSyncTaskRequest::getQueryTime, (req, v) -> {
-                req.setQueryTime(v);
-            }));
+            f -> f.withMarshaller(ShowSyncTaskRequest::getQueryTime, ShowSyncTaskRequest::setQueryTime));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForshowTask();
+    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForShowTask();
 
-    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForshowTask() {
+    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForShowTask() {
         // basic
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
@@ -732,9 +666,7 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getTaskId, ShowTaskRequest::setTaskId));
 
         // response
 
@@ -742,9 +674,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<ShowTaskGroupRequest, ShowTaskGroupResponse> showTaskGroup =
-        genForshowTaskGroup();
+        genForShowTaskGroup();
 
-    private static HttpRequestDef<ShowTaskGroupRequest, ShowTaskGroupResponse> genForshowTaskGroup() {
+    private static HttpRequestDef<ShowTaskGroupRequest, ShowTaskGroupResponse> genForShowTaskGroup() {
         // basic
         HttpRequestDef.Builder<ShowTaskGroupRequest, ShowTaskGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskGroupRequest.class, ShowTaskGroupResponse.class)
@@ -757,9 +689,7 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskGroupRequest::getGroupId, ShowTaskGroupRequest::setGroupId));
 
         // response
 
@@ -767,9 +697,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<StartSyncTaskRequest, StartSyncTaskResponse> startSyncTask =
-        genForstartSyncTask();
+        genForStartSyncTask();
 
-    private static HttpRequestDef<StartSyncTaskRequest, StartSyncTaskResponse> genForstartSyncTask() {
+    private static HttpRequestDef<StartSyncTaskRequest, StartSyncTaskResponse> genForStartSyncTask() {
         // basic
         HttpRequestDef.Builder<StartSyncTaskRequest, StartSyncTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartSyncTaskRequest.class, StartSyncTaskResponse.class)
@@ -782,25 +712,21 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartSyncTaskRequest::getSyncTaskId, (req, v) -> {
-                req.setSyncTaskId(v);
-            }));
+            f -> f.withMarshaller(StartSyncTaskRequest::getSyncTaskId, StartSyncTaskRequest::setSyncTaskId));
         builder.<StartSyncTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartSyncTaskReq.class),
-            f -> f.withMarshaller(StartSyncTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartSyncTaskRequest::getBody, StartSyncTaskRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartTaskRequest, StartTaskResponse> startTask = genForstartTask();
+    public static final HttpRequestDef<StartTaskRequest, StartTaskResponse> startTask = genForStartTask();
 
-    private static HttpRequestDef<StartTaskRequest, StartTaskResponse> genForstartTask() {
+    private static HttpRequestDef<StartTaskRequest, StartTaskResponse> genForStartTask() {
         // basic
         HttpRequestDef.Builder<StartTaskRequest, StartTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartTaskRequest.class, StartTaskResponse.class)
@@ -813,16 +739,12 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(StartTaskRequest::getTaskId, StartTaskRequest::setTaskId));
         builder.<StartTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartTaskReq.class),
-            f -> f.withMarshaller(StartTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartTaskRequest::getBody, StartTaskRequest::setBody));
 
         // response
 
@@ -830,9 +752,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<StartTaskGroupRequest, StartTaskGroupResponse> startTaskGroup =
-        genForstartTaskGroup();
+        genForStartTaskGroup();
 
-    private static HttpRequestDef<StartTaskGroupRequest, StartTaskGroupResponse> genForstartTaskGroup() {
+    private static HttpRequestDef<StartTaskGroupRequest, StartTaskGroupResponse> genForStartTaskGroup() {
         // basic
         HttpRequestDef.Builder<StartTaskGroupRequest, StartTaskGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StartTaskGroupRequest.class, StartTaskGroupResponse.class)
@@ -845,25 +767,21 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartTaskGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(StartTaskGroupRequest::getGroupId, StartTaskGroupRequest::setGroupId));
         builder.<StartTaskGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartTaskGroupReq.class),
-            f -> f.withMarshaller(StartTaskGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartTaskGroupRequest::getBody, StartTaskGroupRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopSyncTaskRequest, StopSyncTaskResponse> stopSyncTask = genForstopSyncTask();
+    public static final HttpRequestDef<StopSyncTaskRequest, StopSyncTaskResponse> stopSyncTask = genForStopSyncTask();
 
-    private static HttpRequestDef<StopSyncTaskRequest, StopSyncTaskResponse> genForstopSyncTask() {
+    private static HttpRequestDef<StopSyncTaskRequest, StopSyncTaskResponse> genForStopSyncTask() {
         // basic
         HttpRequestDef.Builder<StopSyncTaskRequest, StopSyncTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopSyncTaskRequest.class, StopSyncTaskResponse.class)
@@ -876,18 +794,16 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopSyncTaskRequest::getSyncTaskId, (req, v) -> {
-                req.setSyncTaskId(v);
-            }));
+            f -> f.withMarshaller(StopSyncTaskRequest::getSyncTaskId, StopSyncTaskRequest::setSyncTaskId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopTaskRequest, StopTaskResponse> stopTask = genForstopTask();
+    public static final HttpRequestDef<StopTaskRequest, StopTaskResponse> stopTask = genForStopTask();
 
-    private static HttpRequestDef<StopTaskRequest, StopTaskResponse> genForstopTask() {
+    private static HttpRequestDef<StopTaskRequest, StopTaskResponse> genForStopTask() {
         // basic
         HttpRequestDef.Builder<StopTaskRequest, StopTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopTaskRequest.class, StopTaskResponse.class)
@@ -900,9 +816,7 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(StopTaskRequest::getTaskId, StopTaskRequest::setTaskId));
 
         // response
 
@@ -910,9 +824,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<StopTaskGroupRequest, StopTaskGroupResponse> stopTaskGroup =
-        genForstopTaskGroup();
+        genForStopTaskGroup();
 
-    private static HttpRequestDef<StopTaskGroupRequest, StopTaskGroupResponse> genForstopTaskGroup() {
+    private static HttpRequestDef<StopTaskGroupRequest, StopTaskGroupResponse> genForStopTaskGroup() {
         // basic
         HttpRequestDef.Builder<StopTaskGroupRequest, StopTaskGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StopTaskGroupRequest.class, StopTaskGroupResponse.class)
@@ -925,9 +839,7 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopTaskGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(StopTaskGroupRequest::getGroupId, StopTaskGroupRequest::setGroupId));
 
         // response
 
@@ -935,9 +847,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> updateBandwidthPolicy =
-        genForupdateBandwidthPolicy();
+        genForUpdateBandwidthPolicy();
 
-    private static HttpRequestDef<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> genForupdateBandwidthPolicy() {
+    private static HttpRequestDef<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> genForUpdateBandwidthPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateBandwidthPolicyRequest.class, UpdateBandwidthPolicyResponse.class)
@@ -950,16 +862,12 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBandwidthPolicyRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateBandwidthPolicyRequest::getTaskId, UpdateBandwidthPolicyRequest::setTaskId));
         builder.<UpdateBandwidthPolicyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBandwidthPolicyReq.class),
-            f -> f.withMarshaller(UpdateBandwidthPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBandwidthPolicyRequest::getBody, UpdateBandwidthPolicyRequest::setBody));
 
         // response
 
@@ -967,9 +875,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<UpdateTaskGroupRequest, UpdateTaskGroupResponse> updateTaskGroup =
-        genForupdateTaskGroup();
+        genForUpdateTaskGroup();
 
-    private static HttpRequestDef<UpdateTaskGroupRequest, UpdateTaskGroupResponse> genForupdateTaskGroup() {
+    private static HttpRequestDef<UpdateTaskGroupRequest, UpdateTaskGroupResponse> genForUpdateTaskGroup() {
         // basic
         HttpRequestDef.Builder<UpdateTaskGroupRequest, UpdateTaskGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTaskGroupRequest.class, UpdateTaskGroupResponse.class)
@@ -982,16 +890,12 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTaskGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskGroupRequest::getGroupId, UpdateTaskGroupRequest::setGroupId));
         builder.<UpdateBandwidthPolicyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateBandwidthPolicyReq.class),
-            f -> f.withMarshaller(UpdateTaskGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskGroupRequest::getBody, UpdateTaskGroupRequest::setBody));
 
         // response
 
@@ -999,9 +903,9 @@ public class OmsMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForlistApiVersions();
+        genForListApiVersions();
 
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
@@ -1016,9 +920,9 @@ public class OmsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfo = genForshowApiInfo();
+    public static final HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfo = genForShowApiInfo();
 
-    private static HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> genForshowApiInfo() {
+    private static HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> genForShowApiInfo() {
         // basic
         HttpRequestDef.Builder<ShowApiInfoRequest, ShowApiInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiInfoRequest.class, ShowApiInfoResponse.class)
@@ -1031,9 +935,7 @@ public class OmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiInfoRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowApiInfoRequest::getVersion, ShowApiInfoRequest::setVersion));
 
         // response
 

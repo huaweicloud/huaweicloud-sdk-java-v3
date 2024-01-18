@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 操作control请求体。
+ * 操作控制策略的请求体。
  */
 public class ControlOperateReqBody {
 

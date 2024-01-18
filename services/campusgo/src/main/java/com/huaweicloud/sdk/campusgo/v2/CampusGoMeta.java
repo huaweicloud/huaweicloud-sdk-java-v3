@@ -21,9 +21,9 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CampusGoMeta {
 
-    public static final HttpRequestDef<CreateTasksRequest, CreateTasksResponse> createTasks = genForcreateTasks();
+    public static final HttpRequestDef<CreateTasksRequest, CreateTasksResponse> createTasks = genForCreateTasks();
 
-    private static HttpRequestDef<CreateTasksRequest, CreateTasksResponse> genForcreateTasks() {
+    private static HttpRequestDef<CreateTasksRequest, CreateTasksResponse> genForCreateTasks() {
         // basic
         HttpRequestDef.Builder<CreateTasksRequest, CreateTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTasksRequest.class, CreateTasksResponse.class)
@@ -36,32 +36,27 @@ public class CampusGoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTasksRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(CreateTasksRequest::getServiceName, CreateTasksRequest::setServiceName));
         builder.<CreateTasksRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTasksRequestBody.class),
-            f -> f.withMarshaller(CreateTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTasksRequest::getBody, CreateTasksRequest::setBody));
 
         // response
         builder.<List<CreateResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateTasksResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(CreateResponseBody.class));
+            f -> f.withMarshaller(CreateTasksResponse::getBody, CreateTasksResponse::setBody)
+                .withInnerContainerType(CreateResponseBody.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
+    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genForDeleteTask();
 
-    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
+    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genForDeleteTask() {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
@@ -74,16 +69,12 @@ public class CampusGoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getServiceName, DeleteTaskRequest::setServiceName));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, DeleteTaskRequest::setTaskId));
 
         // response
 
@@ -91,9 +82,9 @@ public class CampusGoMeta {
     }
 
     public static final HttpRequestDef<ListTasksDetailsRequest, ListTasksDetailsResponse> listTasksDetails =
-        genForlistTasksDetails();
+        genForListTasksDetails();
 
-    private static HttpRequestDef<ListTasksDetailsRequest, ListTasksDetailsResponse> genForlistTasksDetails() {
+    private static HttpRequestDef<ListTasksDetailsRequest, ListTasksDetailsResponse> genForListTasksDetails() {
         // basic
         HttpRequestDef.Builder<ListTasksDetailsRequest, ListTasksDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTasksDetailsRequest.class, ListTasksDetailsResponse.class)
@@ -106,81 +97,62 @@ public class CampusGoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksDetailsRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(ListTasksDetailsRequest::getServiceName, ListTasksDetailsRequest::setServiceName));
         builder.<String>withRequestField("service_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksDetailsRequest::getServiceVersion, (req, v) -> {
-                req.setServiceVersion(v);
-            }));
+            f -> f.withMarshaller(ListTasksDetailsRequest::getServiceVersion,
+                ListTasksDetailsRequest::setServiceVersion));
         builder.<ListTasksDetailsRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTasksDetailsRequest.StateEnum.class),
-            f -> f.withMarshaller(ListTasksDetailsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListTasksDetailsRequest::getState, ListTasksDetailsRequest::setState));
         builder.<String>withRequestField("name_like",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksDetailsRequest::getNameLike, (req, v) -> {
-                req.setNameLike(v);
-            }));
+            f -> f.withMarshaller(ListTasksDetailsRequest::getNameLike, ListTasksDetailsRequest::setNameLike));
         builder.<String>withRequestField("id_like",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksDetailsRequest::getIdLike, (req, v) -> {
-                req.setIdLike(v);
-            }));
+            f -> f.withMarshaller(ListTasksDetailsRequest::getIdLike, ListTasksDetailsRequest::setIdLike));
         builder.<Long>withRequestField("created_since",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTasksDetailsRequest::getCreatedSince, (req, v) -> {
-                req.setCreatedSince(v);
-            }));
+            f -> f.withMarshaller(ListTasksDetailsRequest::getCreatedSince, ListTasksDetailsRequest::setCreatedSince));
         builder.<Long>withRequestField("created_until",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTasksDetailsRequest::getCreatedUntil, (req, v) -> {
-                req.setCreatedUntil(v);
-            }));
+            f -> f.withMarshaller(ListTasksDetailsRequest::getCreatedUntil, ListTasksDetailsRequest::setCreatedUntil));
         builder.<ListTasksDetailsRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTasksDetailsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ListTasksDetailsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ListTasksDetailsRequest::getOrder, ListTasksDetailsRequest::setOrder));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTasksDetailsRequest::getOffset, ListTasksDetailsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTasksDetailsRequest::getLimit, ListTasksDetailsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForshowTask();
+    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForShowTask();
 
-    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForshowTask() {
+    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForShowTask() {
         // basic
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
@@ -193,16 +165,12 @@ public class CampusGoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getServiceName, ShowTaskRequest::setServiceName));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getTaskId, ShowTaskRequest::setTaskId));
 
         // response
 

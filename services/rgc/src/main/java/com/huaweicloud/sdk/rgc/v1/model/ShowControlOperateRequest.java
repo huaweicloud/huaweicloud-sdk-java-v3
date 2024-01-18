@@ -11,49 +11,25 @@ import java.util.Objects;
 public class ShowControlOperateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
+    @JsonProperty(value = "operation_control_status_id")
 
-    private String xSecurityToken;
+    private String operationControlStatusId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "control_operate_request_id")
-
-    private String controlOperateRequestId;
-
-    public ShowControlOperateRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-        return this;
-    }
-
-    /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
-    }
-
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-    }
-
-    public ShowControlOperateRequest withControlOperateRequestId(String controlOperateRequestId) {
-        this.controlOperateRequestId = controlOperateRequestId;
+    public ShowControlOperateRequest withOperationControlStatusId(String operationControlStatusId) {
+        this.operationControlStatusId = operationControlStatusId;
         return this;
     }
 
     /**
      * 操作控制策略的请求ID。
-     * @return controlOperateRequestId
+     * @return operationControlStatusId
      */
-    public String getControlOperateRequestId() {
-        return controlOperateRequestId;
+    public String getOperationControlStatusId() {
+        return operationControlStatusId;
     }
 
-    public void setControlOperateRequestId(String controlOperateRequestId) {
-        this.controlOperateRequestId = controlOperateRequestId;
+    public void setOperationControlStatusId(String operationControlStatusId) {
+        this.operationControlStatusId = operationControlStatusId;
     }
 
     @Override
@@ -65,21 +41,19 @@ public class ShowControlOperateRequest {
             return false;
         }
         ShowControlOperateRequest that = (ShowControlOperateRequest) obj;
-        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
-            && Objects.equals(this.controlOperateRequestId, that.controlOperateRequestId);
+        return Objects.equals(this.operationControlStatusId, that.operationControlStatusId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xSecurityToken, controlOperateRequestId);
+        return Objects.hash(operationControlStatusId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowControlOperateRequest {\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
-        sb.append("    controlOperateRequestId: ").append(toIndentedString(controlOperateRequestId)).append("\n");
+        sb.append("    operationControlStatusId: ").append(toIndentedString(operationControlStatusId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -271,9 +271,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpgradeDbVersionResponse;
 public class GaussDBforNoSQLMeta {
 
     public static final HttpRequestDef<ApplyConfigurationRequest, ApplyConfigurationResponse> applyConfiguration =
-        genForapplyConfiguration();
+        genForApplyConfiguration();
 
-    private static HttpRequestDef<ApplyConfigurationRequest, ApplyConfigurationResponse> genForapplyConfiguration() {
+    private static HttpRequestDef<ApplyConfigurationRequest, ApplyConfigurationResponse> genForApplyConfiguration() {
         // basic
         HttpRequestDef.Builder<ApplyConfigurationRequest, ApplyConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ApplyConfigurationRequest.class, ApplyConfigurationResponse.class)
@@ -286,16 +286,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ApplyConfigurationRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ApplyConfigurationRequest::getConfigId, ApplyConfigurationRequest::setConfigId));
         builder.<ApplyConfigurationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApplyConfigurationRequestBody.class),
-            f -> f.withMarshaller(ApplyConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ApplyConfigurationRequest::getBody, ApplyConfigurationRequest::setBody));
 
         // response
 
@@ -303,9 +299,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> batchTagAction =
-        genForbatchTagAction();
+        genForBatchTagAction();
 
-    private static HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> genForbatchTagAction() {
+    private static HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> genForBatchTagAction() {
         // basic
         HttpRequestDef.Builder<BatchTagActionRequest, BatchTagActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchTagActionRequest.class, BatchTagActionResponse.class)
@@ -318,16 +314,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchTagActionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchTagActionRequest::getInstanceId, BatchTagActionRequest::setInstanceId));
         builder.<BatchTagActionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchTagActionRequestBody.class),
-            f -> f.withMarshaller(BatchTagActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchTagActionRequest::getBody, BatchTagActionRequest::setBody));
 
         // response
 
@@ -335,9 +327,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse> checkDisasterRecoveryOperation =
-        genForcheckDisasterRecoveryOperation();
+        genForCheckDisasterRecoveryOperation();
 
-    private static HttpRequestDef<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse> genForcheckDisasterRecoveryOperation() {
+    private static HttpRequestDef<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse> genForCheckDisasterRecoveryOperation() {
         // basic
         HttpRequestDef.Builder<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse> builder =
             HttpRequestDef
@@ -353,16 +345,14 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckDisasterRecoveryOperationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckDisasterRecoveryOperationRequest::getInstanceId,
+                CheckDisasterRecoveryOperationRequest::setInstanceId));
         builder.<PrecheckDisasterRecoveryOperationBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PrecheckDisasterRecoveryOperationBody.class),
-            f -> f.withMarshaller(CheckDisasterRecoveryOperationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckDisasterRecoveryOperationRequest::getBody,
+                CheckDisasterRecoveryOperationRequest::setBody));
 
         // response
 
@@ -370,9 +360,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<CheckWeekPasswordRequest, CheckWeekPasswordResponse> checkWeekPassword =
-        genForcheckWeekPassword();
+        genForCheckWeekPassword();
 
-    private static HttpRequestDef<CheckWeekPasswordRequest, CheckWeekPasswordResponse> genForcheckWeekPassword() {
+    private static HttpRequestDef<CheckWeekPasswordRequest, CheckWeekPasswordResponse> genForCheckWeekPassword() {
         // basic
         HttpRequestDef.Builder<CheckWeekPasswordRequest, CheckWeekPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckWeekPasswordRequest.class, CheckWeekPasswordResponse.class)
@@ -385,9 +375,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckWeekPasswordRequestBody.class),
-            f -> f.withMarshaller(CheckWeekPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckWeekPasswordRequest::getBody, CheckWeekPasswordRequest::setBody));
 
         // response
 
@@ -395,9 +383,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<CompareConfigurationRequest, CompareConfigurationResponse> compareConfiguration =
-        genForcompareConfiguration();
+        genForCompareConfiguration();
 
-    private static HttpRequestDef<CompareConfigurationRequest, CompareConfigurationResponse> genForcompareConfiguration() {
+    private static HttpRequestDef<CompareConfigurationRequest, CompareConfigurationResponse> genForCompareConfiguration() {
         // basic
         HttpRequestDef.Builder<CompareConfigurationRequest, CompareConfigurationResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CompareConfigurationRequest.class, CompareConfigurationResponse.class)
@@ -410,9 +398,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CompareConfigurationRequestBody.class),
-            f -> f.withMarshaller(CompareConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CompareConfigurationRequest::getBody, CompareConfigurationRequest::setBody));
 
         // response
 
@@ -420,9 +406,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> copyConfiguration =
-        genForcopyConfiguration();
+        genForCopyConfiguration();
 
-    private static HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> genForcopyConfiguration() {
+    private static HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> genForCopyConfiguration() {
         // basic
         HttpRequestDef.Builder<CopyConfigurationRequest, CopyConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyConfigurationRequest.class, CopyConfigurationResponse.class)
@@ -435,25 +421,21 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyConfigurationRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(CopyConfigurationRequest::getConfigId, CopyConfigurationRequest::setConfigId));
         builder.<CopyConfigurationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CopyConfigurationRequestBody.class),
-            f -> f.withMarshaller(CopyConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CopyConfigurationRequest::getBody, CopyConfigurationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateBackRequest, CreateBackResponse> createBack = genForcreateBack();
+    public static final HttpRequestDef<CreateBackRequest, CreateBackResponse> createBack = genForCreateBack();
 
-    private static HttpRequestDef<CreateBackRequest, CreateBackResponse> genForcreateBack() {
+    private static HttpRequestDef<CreateBackRequest, CreateBackResponse> genForCreateBack() {
         // basic
         HttpRequestDef.Builder<CreateBackRequest, CreateBackResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateBackRequest.class, CreateBackResponse.class)
@@ -466,16 +448,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBackRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateBackRequest::getInstanceId, CreateBackRequest::setInstanceId));
         builder.<NoSqlCreateBackupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NoSqlCreateBackupRequestBody.class),
-            f -> f.withMarshaller(CreateBackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBackRequest::getBody, CreateBackRequest::setBody));
 
         // response
 
@@ -483,9 +461,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<CreateColdVolumeRequest, CreateColdVolumeResponse> createColdVolume =
-        genForcreateColdVolume();
+        genForCreateColdVolume();
 
-    private static HttpRequestDef<CreateColdVolumeRequest, CreateColdVolumeResponse> genForcreateColdVolume() {
+    private static HttpRequestDef<CreateColdVolumeRequest, CreateColdVolumeResponse> genForCreateColdVolume() {
         // basic
         HttpRequestDef.Builder<CreateColdVolumeRequest, CreateColdVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateColdVolumeRequest.class, CreateColdVolumeResponse.class)
@@ -498,16 +476,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateColdVolumeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateColdVolumeRequest::getInstanceId, CreateColdVolumeRequest::setInstanceId));
         builder.<CreateColdVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateColdVolumeRequestBody.class),
-            f -> f.withMarshaller(CreateColdVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateColdVolumeRequest::getBody, CreateColdVolumeRequest::setBody));
 
         // response
 
@@ -515,9 +489,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<CreateConfigurationRequest, CreateConfigurationResponse> createConfiguration =
-        genForcreateConfiguration();
+        genForCreateConfiguration();
 
-    private static HttpRequestDef<CreateConfigurationRequest, CreateConfigurationResponse> genForcreateConfiguration() {
+    private static HttpRequestDef<CreateConfigurationRequest, CreateConfigurationResponse> genForCreateConfiguration() {
         // basic
         HttpRequestDef.Builder<CreateConfigurationRequest, CreateConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConfigurationRequest.class, CreateConfigurationResponse.class)
@@ -530,18 +504,16 @@ public class GaussDBforNoSQLMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateConfigurationRequestBody.class),
-            f -> f.withMarshaller(CreateConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConfigurationRequest::getBody, CreateConfigurationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> createDbUser = genForcreateDbUser();
+    public static final HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> createDbUser = genForCreateDbUser();
 
-    private static HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> genForcreateDbUser() {
+    private static HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> genForCreateDbUser() {
         // basic
         HttpRequestDef.Builder<CreateDbUserRequest, CreateDbUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDbUserRequest.class, CreateDbUserResponse.class)
@@ -554,16 +526,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDbUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDbUserRequest::getInstanceId, CreateDbUserRequest::setInstanceId));
         builder.<RedisCreateDbUserRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RedisCreateDbUserRequest.class),
-            f -> f.withMarshaller(CreateDbUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDbUserRequest::getBody, CreateDbUserRequest::setBody));
 
         // response
 
@@ -571,9 +539,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> createDisasterRecovery =
-        genForcreateDisasterRecovery();
+        genForCreateDisasterRecovery();
 
-    private static HttpRequestDef<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> genForcreateDisasterRecovery() {
+    private static HttpRequestDef<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> genForCreateDisasterRecovery() {
         // basic
         HttpRequestDef.Builder<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateDisasterRecoveryRequest.class, CreateDisasterRecoveryResponse.class)
@@ -586,16 +554,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDisasterRecoveryRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDisasterRecoveryRequest::getInstanceId,
+                CreateDisasterRecoveryRequest::setInstanceId));
         builder.<ConstructDisasterRecoveryBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConstructDisasterRecoveryBody.class),
-            f -> f.withMarshaller(CreateDisasterRecoveryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDisasterRecoveryRequest::getBody, CreateDisasterRecoveryRequest::setBody));
 
         // response
 
@@ -603,9 +568,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
-        genForcreateInstance();
+        genForCreateInstance();
 
-    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForcreateInstance() {
+    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForCreateInstance() {
         // basic
         HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
@@ -618,18 +583,16 @@ public class GaussDBforNoSQLMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceRequestBody.class),
-            f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceRequest::getBody, CreateInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> deleteBackup = genFordeleteBackup();
+    public static final HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> deleteBackup = genForDeleteBackup();
 
-    private static HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> genFordeleteBackup() {
+    private static HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> genForDeleteBackup() {
         // basic
         HttpRequestDef.Builder<DeleteBackupRequest, DeleteBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackupRequest.class, DeleteBackupResponse.class)
@@ -642,9 +605,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackupRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackupRequest::getBackupId, DeleteBackupRequest::setBackupId));
 
         // response
 
@@ -652,9 +613,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfiguration =
-        genFordeleteConfiguration();
+        genForDeleteConfiguration();
 
-    private static HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> genFordeleteConfiguration() {
+    private static HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> genForDeleteConfiguration() {
         // basic
         HttpRequestDef.Builder<DeleteConfigurationRequest, DeleteConfigurationResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteConfigurationRequest.class, DeleteConfigurationResponse.class)
@@ -667,18 +628,16 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConfigurationRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(DeleteConfigurationRequest::getConfigId, DeleteConfigurationRequest::setConfigId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUser = genFordeleteDbUser();
+    public static final HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUser = genForDeleteDbUser();
 
-    private static HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> genFordeleteDbUser() {
+    private static HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> genForDeleteDbUser() {
         // basic
         HttpRequestDef.Builder<DeleteDbUserRequest, DeleteDbUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDbUserRequest.class, DeleteDbUserResponse.class)
@@ -691,16 +650,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDbUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDbUserRequest::getInstanceId, DeleteDbUserRequest::setInstanceId));
         builder.<RedisDeleteDbUserRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RedisDeleteDbUserRequest.class),
-            f -> f.withMarshaller(DeleteDbUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteDbUserRequest::getBody, DeleteDbUserRequest::setBody));
 
         // response
 
@@ -708,9 +663,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecovery =
-        genFordeleteDisasterRecovery();
+        genForDeleteDisasterRecovery();
 
-    private static HttpRequestDef<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> genFordeleteDisasterRecovery() {
+    private static HttpRequestDef<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> genForDeleteDisasterRecovery() {
         // basic
         HttpRequestDef.Builder<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DeleteDisasterRecoveryRequest.class, DeleteDisasterRecoveryResponse.class)
@@ -723,9 +678,8 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDisasterRecoveryRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDisasterRecoveryRequest::getInstanceId,
+                DeleteDisasterRecoveryRequest::setInstanceId));
 
         // response
 
@@ -733,9 +687,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> deleteEnlargeFailNode =
-        genFordeleteEnlargeFailNode();
+        genForDeleteEnlargeFailNode();
 
-    private static HttpRequestDef<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> genFordeleteEnlargeFailNode() {
+    private static HttpRequestDef<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> genForDeleteEnlargeFailNode() {
         // basic
         HttpRequestDef.Builder<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEnlargeFailNodeRequest.class, DeleteEnlargeFailNodeResponse.class)
@@ -748,16 +702,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnlargeFailNodeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnlargeFailNodeRequest::getInstanceId,
+                DeleteEnlargeFailNodeRequest::setInstanceId));
         builder.<DeleteEnlargeFailNodeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteEnlargeFailNodeRequestBody.class),
-            f -> f.withMarshaller(DeleteEnlargeFailNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteEnlargeFailNodeRequest::getBody, DeleteEnlargeFailNodeRequest::setBody));
 
         // response
 
@@ -765,9 +716,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
-        genFordeleteInstance();
+        genForDeleteInstance();
 
-    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genFordeleteInstance() {
+    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genForDeleteInstance() {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
@@ -780,9 +731,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
 
         // response
 
@@ -790,9 +739,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse> deleteInstancesSession =
-        genFordeleteInstancesSession();
+        genForDeleteInstancesSession();
 
-    private static HttpRequestDef<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse> genFordeleteInstancesSession() {
+    private static HttpRequestDef<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse> genForDeleteInstancesSession() {
         // basic
         HttpRequestDef.Builder<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteInstancesSessionRequest.class, DeleteInstancesSessionResponse.class)
@@ -805,16 +754,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstancesSessionRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteInstancesSessionRequest::getNodeId, DeleteInstancesSessionRequest::setNodeId));
         builder.<DeleteInstancesSessionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteInstancesSessionRequestBody.class),
-            f -> f.withMarshaller(DeleteInstancesSessionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteInstancesSessionRequest::getBody, DeleteInstancesSessionRequest::setBody));
 
         // response
 
@@ -822,9 +767,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse> deleteLtsConfigs =
-        genFordeleteLtsConfigs();
+        genForDeleteLtsConfigs();
 
-    private static HttpRequestDef<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse> genFordeleteLtsConfigs() {
+    private static HttpRequestDef<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse> genForDeleteLtsConfigs() {
         // basic
         HttpRequestDef.Builder<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLtsConfigsRequest.class, DeleteLtsConfigsResponse.class)
@@ -837,16 +782,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLtsConfigsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteLtsConfigsRequest::getXLanguage, DeleteLtsConfigsRequest::setXLanguage));
         builder.<DeleteLtsConfigsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteLtsConfigsRequestBody.class),
-            f -> f.withMarshaller(DeleteLtsConfigsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteLtsConfigsRequest::getBody, DeleteLtsConfigsRequest::setBody));
 
         // response
 
@@ -854,9 +795,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse> expandInstanceNode =
-        genForexpandInstanceNode();
+        genForExpandInstanceNode();
 
-    private static HttpRequestDef<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse> genForexpandInstanceNode() {
+    private static HttpRequestDef<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse> genForExpandInstanceNode() {
         // basic
         HttpRequestDef.Builder<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExpandInstanceNodeRequest.class, ExpandInstanceNodeResponse.class)
@@ -869,16 +810,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandInstanceNodeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExpandInstanceNodeRequest::getInstanceId, ExpandInstanceNodeRequest::setInstanceId));
         builder.<ExpandInstanceNodeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExpandInstanceNodeRequestBody.class),
-            f -> f.withMarshaller(ExpandInstanceNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExpandInstanceNodeRequest::getBody, ExpandInstanceNodeRequest::setBody));
 
         // response
 
@@ -886,9 +823,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> listAvailableFlavorInfos =
-        genForlistAvailableFlavorInfos();
+        genForListAvailableFlavorInfos();
 
-    private static HttpRequestDef<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> genForlistAvailableFlavorInfos() {
+    private static HttpRequestDef<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> genForListAvailableFlavorInfos() {
         // basic
         HttpRequestDef.Builder<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> builder =
             HttpRequestDef
@@ -902,23 +839,20 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getInstanceId,
+                ListAvailableFlavorInfosRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getOffset,
+                ListAvailableFlavorInfosRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getLimit,
+                ListAvailableFlavorInfosRequest::setLimit));
 
         // response
 
@@ -926,9 +860,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse> listCassandraSlowLogs =
-        genForlistCassandraSlowLogs();
+        genForListCassandraSlowLogs();
 
-    private static HttpRequestDef<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse> genForlistCassandraSlowLogs() {
+    private static HttpRequestDef<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse> genForListCassandraSlowLogs() {
         // basic
         HttpRequestDef.Builder<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListCassandraSlowLogsRequest.class, ListCassandraSlowLogsResponse.class)
@@ -941,16 +875,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCassandraSlowLogsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListCassandraSlowLogsRequest::getInstanceId,
+                ListCassandraSlowLogsRequest::setInstanceId));
         builder.<ListCassandraSlowLogsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListCassandraSlowLogsRequestBody.class),
-            f -> f.withMarshaller(ListCassandraSlowLogsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListCassandraSlowLogsRequest::getBody, ListCassandraSlowLogsRequest::setBody));
 
         // response
 
@@ -958,9 +889,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse> listConfigurationDatastores =
-        genForlistConfigurationDatastores();
+        genForListConfigurationDatastores();
 
-    private static HttpRequestDef<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse> genForlistConfigurationDatastores() {
+    private static HttpRequestDef<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse> genForListConfigurationDatastores() {
         // basic
         HttpRequestDef.Builder<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse> builder =
             HttpRequestDef
@@ -979,9 +910,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> listConfigurationTemplates =
-        genForlistConfigurationTemplates();
+        genForListConfigurationTemplates();
 
-    private static HttpRequestDef<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> genForlistConfigurationTemplates() {
+    private static HttpRequestDef<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> genForListConfigurationTemplates() {
         // basic
         HttpRequestDef.Builder<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> builder =
             HttpRequestDef
@@ -997,16 +928,14 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigurationTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationTemplatesRequest::getOffset,
+                ListConfigurationTemplatesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigurationTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationTemplatesRequest::getLimit,
+                ListConfigurationTemplatesRequest::setLimit));
 
         // response
 
@@ -1014,9 +943,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurations =
-        genForlistConfigurations();
+        genForListConfigurations();
 
-    private static HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> genForlistConfigurations() {
+    private static HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> genForListConfigurations() {
         // basic
         HttpRequestDef.Builder<ListConfigurationsRequest, ListConfigurationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConfigurationsRequest.class, ListConfigurationsResponse.class)
@@ -1032,9 +961,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListDatastoresRequest, ListDatastoresResponse> listDatastores =
-        genForlistDatastores();
+        genForListDatastores();
 
-    private static HttpRequestDef<ListDatastoresRequest, ListDatastoresResponse> genForlistDatastores() {
+    private static HttpRequestDef<ListDatastoresRequest, ListDatastoresResponse> genForListDatastores() {
         // basic
         HttpRequestDef.Builder<ListDatastoresRequest, ListDatastoresResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatastoresRequest.class, ListDatastoresResponse.class)
@@ -1047,18 +976,16 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatastoresRequest::getDatastoreName, (req, v) -> {
-                req.setDatastoreName(v);
-            }));
+            f -> f.withMarshaller(ListDatastoresRequest::getDatastoreName, ListDatastoresRequest::setDatastoreName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> listDbUsers = genForlistDbUsers();
+    public static final HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> listDbUsers = genForListDbUsers();
 
-    private static HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> genForlistDbUsers() {
+    private static HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> genForListDbUsers() {
         // basic
         HttpRequestDef.Builder<ListDbUsersRequest, ListDbUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDbUsersRequest.class, ListDbUsersResponse.class)
@@ -1071,30 +998,22 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getInstanceId, ListDbUsersRequest::setInstanceId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getName, ListDbUsersRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getOffset, ListDbUsersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getLimit, ListDbUsersRequest::setLimit));
 
         // response
 
@@ -1102,9 +1021,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> listDedicatedResources =
-        genForlistDedicatedResources();
+        genForListDedicatedResources();
 
-    private static HttpRequestDef<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> genForlistDedicatedResources() {
+    private static HttpRequestDef<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> genForListDedicatedResources() {
         // basic
         HttpRequestDef.Builder<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListDedicatedResourcesRequest.class, ListDedicatedResourcesResponse.class)
@@ -1117,16 +1036,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDedicatedResourcesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedResourcesRequest::getOffset, ListDedicatedResourcesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDedicatedResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedResourcesRequest::getLimit, ListDedicatedResourcesRequest::setLimit));
 
         // response
 
@@ -1134,9 +1049,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListEpsQuotasRequest, ListEpsQuotasResponse> listEpsQuotas =
-        genForlistEpsQuotas();
+        genForListEpsQuotas();
 
-    private static HttpRequestDef<ListEpsQuotasRequest, ListEpsQuotasResponse> genForlistEpsQuotas() {
+    private static HttpRequestDef<ListEpsQuotasRequest, ListEpsQuotasResponse> genForListEpsQuotas() {
         // basic
         HttpRequestDef.Builder<ListEpsQuotasRequest, ListEpsQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEpsQuotasRequest.class, ListEpsQuotasResponse.class)
@@ -1149,23 +1064,18 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEpsQuotasRequest::getEnterpriseProjectName, (req, v) -> {
-                req.setEnterpriseProjectName(v);
-            }));
+            f -> f.withMarshaller(ListEpsQuotasRequest::getEnterpriseProjectName,
+                ListEpsQuotasRequest::setEnterpriseProjectName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEpsQuotasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEpsQuotasRequest::getOffset, ListEpsQuotasRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEpsQuotasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEpsQuotasRequest::getLimit, ListEpsQuotasRequest::setLimit));
 
         // response
 
@@ -1173,9 +1083,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListFlavorInfosRequest, ListFlavorInfosResponse> listFlavorInfos =
-        genForlistFlavorInfos();
+        genForListFlavorInfos();
 
-    private static HttpRequestDef<ListFlavorInfosRequest, ListFlavorInfosResponse> genForlistFlavorInfos() {
+    private static HttpRequestDef<ListFlavorInfosRequest, ListFlavorInfosResponse> genForListFlavorInfos() {
         // basic
         HttpRequestDef.Builder<ListFlavorInfosRequest, ListFlavorInfosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorInfosRequest.class, ListFlavorInfosResponse.class)
@@ -1188,32 +1098,26 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorInfosRequest::getEngineName, (req, v) -> {
-                req.setEngineName(v);
-            }));
+            f -> f.withMarshaller(ListFlavorInfosRequest::getEngineName, ListFlavorInfosRequest::setEngineName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorInfosRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFlavorInfosRequest::getOffset, ListFlavorInfosRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorInfosRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFlavorInfosRequest::getLimit, ListFlavorInfosRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
+    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForListFlavors();
 
-    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
+    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForListFlavors() {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
@@ -1226,16 +1130,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getRegion, ListFlavorsRequest::setRegion));
         builder.<String>withRequestField("engine_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getEngineName, (req, v) -> {
-                req.setEngineName(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getEngineName, ListFlavorsRequest::setEngineName));
 
         // response
 
@@ -1243,9 +1143,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse> listInfluxdbSlowLogs =
-        genForlistInfluxdbSlowLogs();
+        genForListInfluxdbSlowLogs();
 
-    private static HttpRequestDef<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse> genForlistInfluxdbSlowLogs() {
+    private static HttpRequestDef<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse> genForListInfluxdbSlowLogs() {
         // basic
         HttpRequestDef.Builder<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListInfluxdbSlowLogsRequest.class, ListInfluxdbSlowLogsResponse.class)
@@ -1258,16 +1158,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInfluxdbSlowLogsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInfluxdbSlowLogsRequest::getInstanceId,
+                ListInfluxdbSlowLogsRequest::setInstanceId));
         builder.<ListInfluxdbSlowLogsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListInfluxdbSlowLogsRequestBody.class),
-            f -> f.withMarshaller(ListInfluxdbSlowLogsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListInfluxdbSlowLogsRequest::getBody, ListInfluxdbSlowLogsRequest::setBody));
 
         // response
 
@@ -1275,9 +1172,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> listInstanceDatabases =
-        genForlistInstanceDatabases();
+        genForListInstanceDatabases();
 
-    private static HttpRequestDef<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> genForlistInstanceDatabases() {
+    private static HttpRequestDef<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> genForListInstanceDatabases() {
         // basic
         HttpRequestDef.Builder<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListInstanceDatabasesRequest.class, ListInstanceDatabasesResponse.class)
@@ -1290,23 +1187,18 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceDatabasesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceDatabasesRequest::getInstanceId,
+                ListInstanceDatabasesRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceDatabasesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstanceDatabasesRequest::getOffset, ListInstanceDatabasesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceDatabasesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstanceDatabasesRequest::getLimit, ListInstanceDatabasesRequest::setLimit));
 
         // response
 
@@ -1314,9 +1206,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
-        genForlistInstanceTags();
+        genForListInstanceTags();
 
-    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForlistInstanceTags() {
+    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForListInstanceTags() {
         // basic
         HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
@@ -1329,9 +1221,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, ListInstanceTagsRequest::setInstanceId));
 
         // response
 
@@ -1339,9 +1229,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
-        genForlistInstances();
+        genForListInstances();
 
-    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
@@ -1354,58 +1244,42 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getId, ListInstancesRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getName, ListInstancesRequest::setName));
         builder.<String>withRequestField("mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getMode, (req, v) -> {
-                req.setMode(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getMode, ListInstancesRequest::setMode));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getDatastoreType, ListInstancesRequest::setDatastoreType));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getVpcId, ListInstancesRequest::setVpcId));
         builder.<String>withRequestField("subnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getSubnetId, (req, v) -> {
-                req.setSubnetId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getSubnetId, ListInstancesRequest::setSubnetId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, ListInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
 
         // response
 
@@ -1413,9 +1287,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> listInstancesByResourceTags =
-        genForlistInstancesByResourceTags();
+        genForListInstancesByResourceTags();
 
-    private static HttpRequestDef<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> genForlistInstancesByResourceTags() {
+    private static HttpRequestDef<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> genForListInstancesByResourceTags() {
         // basic
         HttpRequestDef.Builder<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> builder =
             HttpRequestDef
@@ -1431,9 +1305,8 @@ public class GaussDBforNoSQLMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListInstancesByTagsRequestBody.class),
-            f -> f.withMarshaller(ListInstancesByResourceTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListInstancesByResourceTagsRequest::getBody,
+                ListInstancesByResourceTagsRequest::setBody));
 
         // response
 
@@ -1441,9 +1314,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListInstancesByTagsRequest, ListInstancesByTagsResponse> listInstancesByTags =
-        genForlistInstancesByTags();
+        genForListInstancesByTags();
 
-    private static HttpRequestDef<ListInstancesByTagsRequest, ListInstancesByTagsResponse> genForlistInstancesByTags() {
+    private static HttpRequestDef<ListInstancesByTagsRequest, ListInstancesByTagsResponse> genForListInstancesByTags() {
         // basic
         HttpRequestDef.Builder<ListInstancesByTagsRequest, ListInstancesByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListInstancesByTagsRequest.class, ListInstancesByTagsResponse.class)
@@ -1456,9 +1329,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListInstancesByTagsRequestBody.class),
-            f -> f.withMarshaller(ListInstancesByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListInstancesByTagsRequest::getBody, ListInstancesByTagsRequest::setBody));
 
         // response
 
@@ -1466,9 +1337,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListInstancesSessionRequest, ListInstancesSessionResponse> listInstancesSession =
-        genForlistInstancesSession();
+        genForListInstancesSession();
 
-    private static HttpRequestDef<ListInstancesSessionRequest, ListInstancesSessionResponse> genForlistInstancesSession() {
+    private static HttpRequestDef<ListInstancesSessionRequest, ListInstancesSessionResponse> genForListInstancesSession() {
         // basic
         HttpRequestDef.Builder<ListInstancesSessionRequest, ListInstancesSessionResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListInstancesSessionRequest.class, ListInstancesSessionResponse.class)
@@ -1481,30 +1352,23 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesSessionRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesSessionRequest::getNodeId, ListInstancesSessionRequest::setNodeId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesSessionRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesSessionRequest::getOffset, ListInstancesSessionRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesSessionRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesSessionRequest::getLimit, ListInstancesSessionRequest::setLimit));
         builder.<String>withRequestField("addr_prefix",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesSessionRequest::getAddrPrefix, (req, v) -> {
-                req.setAddrPrefix(v);
-            }));
+            f -> f.withMarshaller(ListInstancesSessionRequest::getAddrPrefix,
+                ListInstancesSessionRequest::setAddrPrefix));
 
         // response
 
@@ -1512,9 +1376,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse> listInstancesSessionStatistics =
-        genForlistInstancesSessionStatistics();
+        genForListInstancesSessionStatistics();
 
-    private static HttpRequestDef<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse> genForlistInstancesSessionStatistics() {
+    private static HttpRequestDef<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse> genForListInstancesSessionStatistics() {
         // basic
         HttpRequestDef.Builder<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse> builder =
             HttpRequestDef
@@ -1530,18 +1394,17 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesSessionStatisticsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesSessionStatisticsRequest::getNodeId,
+                ListInstancesSessionStatisticsRequest::setNodeId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForlistJobs();
+    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForListJobs();
 
-    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForlistJobs() {
+    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForListJobs() {
         // basic
         HttpRequestDef.Builder<ListJobsRequest, ListJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobsRequest.class, ListJobsResponse.class)
@@ -1554,51 +1417,37 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getId, ListJobsRequest::setId));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getStartTime, ListJobsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getEndTime, ListJobsRequest::setEndTime));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getStatus, ListJobsRequest::setStatus));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getName, ListJobsRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getOffset, ListJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getLimit, ListJobsRequest::setLimit));
 
         // response
 
@@ -1606,9 +1455,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListLtsConfigsRequest, ListLtsConfigsResponse> listLtsConfigs =
-        genForlistLtsConfigs();
+        genForListLtsConfigs();
 
-    private static HttpRequestDef<ListLtsConfigsRequest, ListLtsConfigsResponse> genForlistLtsConfigs() {
+    private static HttpRequestDef<ListLtsConfigsRequest, ListLtsConfigsResponse> genForListLtsConfigs() {
         // basic
         HttpRequestDef.Builder<ListLtsConfigsRequest, ListLtsConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLtsConfigsRequest.class, ListLtsConfigsResponse.class)
@@ -1621,44 +1470,33 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLtsConfigsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLtsConfigsRequest::getOffset, ListLtsConfigsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLtsConfigsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLtsConfigsRequest::getLimit, ListLtsConfigsRequest::setLimit));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLtsConfigsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLtsConfigsRequest::getInstanceId, ListLtsConfigsRequest::setInstanceId));
         builder.<String>withRequestField("instance_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLtsConfigsRequest::getInstanceName, (req, v) -> {
-                req.setInstanceName(v);
-            }));
+            f -> f.withMarshaller(ListLtsConfigsRequest::getInstanceName, ListLtsConfigsRequest::setInstanceName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLtsConfigsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListLtsConfigsRequest::getEnterpriseProjectId,
+                ListLtsConfigsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLtsConfigsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListLtsConfigsRequest::getXLanguage, ListLtsConfigsRequest::setXLanguage));
 
         // response
 
@@ -1666,9 +1504,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse> listMongodbErrorLogs =
-        genForlistMongodbErrorLogs();
+        genForListMongodbErrorLogs();
 
-    private static HttpRequestDef<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse> genForlistMongodbErrorLogs() {
+    private static HttpRequestDef<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse> genForListMongodbErrorLogs() {
         // basic
         HttpRequestDef.Builder<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListMongodbErrorLogsRequest.class, ListMongodbErrorLogsResponse.class)
@@ -1681,16 +1519,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMongodbErrorLogsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMongodbErrorLogsRequest::getInstanceId,
+                ListMongodbErrorLogsRequest::setInstanceId));
         builder.<ListMongodbErrorLogsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListMongodbErrorLogsRequestBody.class),
-            f -> f.withMarshaller(ListMongodbErrorLogsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListMongodbErrorLogsRequest::getBody, ListMongodbErrorLogsRequest::setBody));
 
         // response
 
@@ -1698,9 +1533,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse> listMongodbSlowLogs =
-        genForlistMongodbSlowLogs();
+        genForListMongodbSlowLogs();
 
-    private static HttpRequestDef<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse> genForlistMongodbSlowLogs() {
+    private static HttpRequestDef<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse> genForListMongodbSlowLogs() {
         // basic
         HttpRequestDef.Builder<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListMongodbSlowLogsRequest.class, ListMongodbSlowLogsResponse.class)
@@ -1713,16 +1548,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMongodbSlowLogsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMongodbSlowLogsRequest::getInstanceId,
+                ListMongodbSlowLogsRequest::setInstanceId));
         builder.<ListMongodbSlowLogsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListMongodbSlowLogsRequestBody.class),
-            f -> f.withMarshaller(ListMongodbSlowLogsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListMongodbSlowLogsRequest::getBody, ListMongodbSlowLogsRequest::setBody));
 
         // response
 
@@ -1730,9 +1562,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
-        genForlistProjectTags();
+        genForListProjectTags();
 
-    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForListProjectTags() {
         // basic
         HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
@@ -1745,16 +1577,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getOffset, ListProjectTagsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getLimit, ListProjectTagsRequest::setLimit));
 
         // response
 
@@ -1762,9 +1590,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstances =
-        genForlistRecycleInstances();
+        genForListRecycleInstances();
 
-    private static HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> genForlistRecycleInstances() {
+    private static HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> genForListRecycleInstances() {
         // basic
         HttpRequestDef.Builder<ListRecycleInstancesRequest, ListRecycleInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRecycleInstancesRequest.class, ListRecycleInstancesResponse.class)
@@ -1777,23 +1605,18 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecycleInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getOffset, ListRecycleInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecycleInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getLimit, ListRecycleInstancesRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecycleInstancesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getXLanguage,
+                ListRecycleInstancesRequest::setXLanguage));
 
         // response
 
@@ -1801,9 +1624,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> listRedisSlowLogs =
-        genForlistRedisSlowLogs();
+        genForListRedisSlowLogs();
 
-    private static HttpRequestDef<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> genForlistRedisSlowLogs() {
+    private static HttpRequestDef<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> genForListRedisSlowLogs() {
         // basic
         HttpRequestDef.Builder<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListRedisSlowLogsRequest.class, ListRedisSlowLogsResponse.class)
@@ -1816,16 +1639,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRedisSlowLogsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRedisSlowLogsRequest::getInstanceId, ListRedisSlowLogsRequest::setInstanceId));
         builder.<ListRedisSlowLogsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListRedisSlowLogsRequestBody.class),
-            f -> f.withMarshaller(ListRedisSlowLogsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListRedisSlowLogsRequest::getBody, ListRedisSlowLogsRequest::setBody));
 
         // response
 
@@ -1833,9 +1652,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> listRestoreDatabases =
-        genForlistRestoreDatabases();
+        genForListRestoreDatabases();
 
-    private static HttpRequestDef<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> genForlistRestoreDatabases() {
+    private static HttpRequestDef<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> genForListRestoreDatabases() {
         // basic
         HttpRequestDef.Builder<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRestoreDatabasesRequest.class, ListRestoreDatabasesResponse.class)
@@ -1848,23 +1667,18 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreDatabasesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRestoreDatabasesRequest::getInstanceId,
+                ListRestoreDatabasesRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRestoreDatabasesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRestoreDatabasesRequest::getOffset, ListRestoreDatabasesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRestoreDatabasesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRestoreDatabasesRequest::getLimit, ListRestoreDatabasesRequest::setLimit));
 
         // response
 
@@ -1872,9 +1686,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListRestoreTablesRequest, ListRestoreTablesResponse> listRestoreTables =
-        genForlistRestoreTables();
+        genForListRestoreTables();
 
-    private static HttpRequestDef<ListRestoreTablesRequest, ListRestoreTablesResponse> genForlistRestoreTables() {
+    private static HttpRequestDef<ListRestoreTablesRequest, ListRestoreTablesResponse> genForListRestoreTables() {
         // basic
         HttpRequestDef.Builder<ListRestoreTablesRequest, ListRestoreTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRestoreTablesRequest.class, ListRestoreTablesResponse.class)
@@ -1887,30 +1701,23 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreTablesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTablesRequest::getInstanceId, ListRestoreTablesRequest::setInstanceId));
         builder.<String>withRequestField("database_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreTablesRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTablesRequest::getDatabaseName,
+                ListRestoreTablesRequest::setDatabaseName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRestoreTablesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTablesRequest::getOffset, ListRestoreTablesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRestoreTablesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTablesRequest::getLimit, ListRestoreTablesRequest::setLimit));
 
         // response
 
@@ -1918,9 +1725,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListRestoreTimeRequest, ListRestoreTimeResponse> listRestoreTime =
-        genForlistRestoreTime();
+        genForListRestoreTime();
 
-    private static HttpRequestDef<ListRestoreTimeRequest, ListRestoreTimeResponse> genForlistRestoreTime() {
+    private static HttpRequestDef<ListRestoreTimeRequest, ListRestoreTimeResponse> genForListRestoreTime() {
         // basic
         HttpRequestDef.Builder<ListRestoreTimeRequest, ListRestoreTimeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRestoreTimeRequest.class, ListRestoreTimeResponse.class)
@@ -1933,46 +1740,36 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreTimeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTimeRequest::getInstanceId, ListRestoreTimeRequest::setInstanceId));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreTimeRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTimeRequest::getStartTime, ListRestoreTimeRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreTimeRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTimeRequest::getEndTime, ListRestoreTimeRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRestoreTimeRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTimeRequest::getOffset, ListRestoreTimeRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRestoreTimeRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTimeRequest::getLimit, ListRestoreTimeRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogs = genForlistSlowLogs();
+    public static final HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogs = genForListSlowLogs();
 
-    private static HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> genForlistSlowLogs() {
+    private static HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> genForListSlowLogs() {
         // basic
         HttpRequestDef.Builder<ListSlowLogsRequest, ListSlowLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSlowLogsRequest.class, ListSlowLogsResponse.class)
@@ -1985,51 +1782,37 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowLogsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogsRequest::getInstanceId, ListSlowLogsRequest::setInstanceId));
         builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowLogsRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogsRequest::getStartDate, ListSlowLogsRequest::setStartDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowLogsRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogsRequest::getEndDate, ListSlowLogsRequest::setEndDate));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowLogsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogsRequest::getNodeId, ListSlowLogsRequest::setNodeId));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowLogsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogsRequest::getType, ListSlowLogsRequest::setType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSlowLogsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogsRequest::getOffset, ListSlowLogsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSlowLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogsRequest::getLimit, ListSlowLogsRequest::setLimit));
 
         // response
 
@@ -2037,9 +1820,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> modifyDbUserPrivilege =
-        genFormodifyDbUserPrivilege();
+        genForModifyDbUserPrivilege();
 
-    private static HttpRequestDef<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> genFormodifyDbUserPrivilege() {
+    private static HttpRequestDef<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> genForModifyDbUserPrivilege() {
         // basic
         HttpRequestDef.Builder<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, ModifyDbUserPrivilegeRequest.class, ModifyDbUserPrivilegeResponse.class)
@@ -2052,16 +1835,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyDbUserPrivilegeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ModifyDbUserPrivilegeRequest::getInstanceId,
+                ModifyDbUserPrivilegeRequest::setInstanceId));
         builder.<RedisModifyDBUserPrivilegeRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RedisModifyDBUserPrivilegeRequest.class),
-            f -> f.withMarshaller(ModifyDbUserPrivilegeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyDbUserPrivilegeRequest::getBody, ModifyDbUserPrivilegeRequest::setBody));
 
         // response
 
@@ -2069,9 +1849,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> modifyEpsQuotas =
-        genFormodifyEpsQuotas();
+        genForModifyEpsQuotas();
 
-    private static HttpRequestDef<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> genFormodifyEpsQuotas() {
+    private static HttpRequestDef<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> genForModifyEpsQuotas() {
         // basic
         HttpRequestDef.Builder<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyEpsQuotasRequest.class, ModifyEpsQuotasResponse.class)
@@ -2084,18 +1864,16 @@ public class GaussDBforNoSQLMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NoSqlModiflyEpsQuotasRequestBody.class),
-            f -> f.withMarshaller(ModifyEpsQuotasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyEpsQuotasRequest::getBody, ModifyEpsQuotasRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ModifyPortRequest, ModifyPortResponse> modifyPort = genFormodifyPort();
+    public static final HttpRequestDef<ModifyPortRequest, ModifyPortResponse> modifyPort = genForModifyPort();
 
-    private static HttpRequestDef<ModifyPortRequest, ModifyPortResponse> genFormodifyPort() {
+    private static HttpRequestDef<ModifyPortRequest, ModifyPortResponse> genForModifyPort() {
         // basic
         HttpRequestDef.Builder<ModifyPortRequest, ModifyPortResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyPortRequest.class, ModifyPortResponse.class)
@@ -2108,16 +1886,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyPortRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ModifyPortRequest::getInstanceId, ModifyPortRequest::setInstanceId));
         builder.<ModifyPortRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyPortRequestBody.class),
-            f -> f.withMarshaller(ModifyPortRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyPortRequest::getBody, ModifyPortRequest::setBody));
 
         // response
 
@@ -2125,9 +1899,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ModifyPublicIpRequest, ModifyPublicIpResponse> modifyPublicIp =
-        genFormodifyPublicIp();
+        genForModifyPublicIp();
 
-    private static HttpRequestDef<ModifyPublicIpRequest, ModifyPublicIpResponse> genFormodifyPublicIp() {
+    private static HttpRequestDef<ModifyPublicIpRequest, ModifyPublicIpResponse> genForModifyPublicIp() {
         // basic
         HttpRequestDef.Builder<ModifyPublicIpRequest, ModifyPublicIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ModifyPublicIpRequest.class, ModifyPublicIpResponse.class)
@@ -2140,32 +1914,26 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyPublicIpRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ModifyPublicIpRequest::getInstanceId, ModifyPublicIpRequest::setInstanceId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyPublicIpRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ModifyPublicIpRequest::getNodeId, ModifyPublicIpRequest::setNodeId));
         builder.<ModifyPublicIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyPublicIpRequestBody.class),
-            f -> f.withMarshaller(ModifyPublicIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyPublicIpRequest::getBody, ModifyPublicIpRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ModifyVolumeRequest, ModifyVolumeResponse> modifyVolume = genFormodifyVolume();
+    public static final HttpRequestDef<ModifyVolumeRequest, ModifyVolumeResponse> modifyVolume = genForModifyVolume();
 
-    private static HttpRequestDef<ModifyVolumeRequest, ModifyVolumeResponse> genFormodifyVolume() {
+    private static HttpRequestDef<ModifyVolumeRequest, ModifyVolumeResponse> genForModifyVolume() {
         // basic
         HttpRequestDef.Builder<ModifyVolumeRequest, ModifyVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyVolumeRequest.class, ModifyVolumeResponse.class)
@@ -2178,25 +1946,21 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyVolumeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ModifyVolumeRequest::getInstanceId, ModifyVolumeRequest::setInstanceId));
         builder.<ModifyVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyVolumeRequestBody.class),
-            f -> f.withMarshaller(ModifyVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyVolumeRequest::getBody, ModifyVolumeRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<OfflineNodesRequest, OfflineNodesResponse> offlineNodes = genForofflineNodes();
+    public static final HttpRequestDef<OfflineNodesRequest, OfflineNodesResponse> offlineNodes = genForOfflineNodes();
 
-    private static HttpRequestDef<OfflineNodesRequest, OfflineNodesResponse> genForofflineNodes() {
+    private static HttpRequestDef<OfflineNodesRequest, OfflineNodesResponse> genForOfflineNodes() {
         // basic
         HttpRequestDef.Builder<OfflineNodesRequest, OfflineNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, OfflineNodesRequest.class, OfflineNodesResponse.class)
@@ -2209,33 +1973,27 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(OfflineNodesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(OfflineNodesRequest::getInstanceId, OfflineNodesRequest::setInstanceId));
         builder.<OfflineNodesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OfflineNodesRequestBody.class),
-            f -> f.withMarshaller(OfflineNodesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(OfflineNodesRequest::getBody, OfflineNodesRequest::setBody));
 
         // response
         builder.<Object>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             Object.class,
-            f -> f.withMarshaller(OfflineNodesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(OfflineNodesResponse::getBody, OfflineNodesResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse> pauseResumeDataSynchronization =
-        genForpauseResumeDataSynchronization();
+        genForPauseResumeDataSynchronization();
 
-    private static HttpRequestDef<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse> genForpauseResumeDataSynchronization() {
+    private static HttpRequestDef<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse> genForPauseResumeDataSynchronization() {
         // basic
         HttpRequestDef.Builder<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse> builder =
             HttpRequestDef
@@ -2251,16 +2009,14 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PauseResumeDataSynchronizationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(PauseResumeDataSynchronizationRequest::getInstanceId,
+                PauseResumeDataSynchronizationRequest::setInstanceId));
         builder.<ActionBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ActionBody.class),
-            f -> f.withMarshaller(PauseResumeDataSynchronizationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PauseResumeDataSynchronizationRequest::getBody,
+                PauseResumeDataSynchronizationRequest::setBody));
 
         // response
 
@@ -2268,9 +2024,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse> resetDbUserPassword =
-        genForresetDbUserPassword();
+        genForResetDbUserPassword();
 
-    private static HttpRequestDef<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse> genForresetDbUserPassword() {
+    private static HttpRequestDef<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse> genForResetDbUserPassword() {
         // basic
         HttpRequestDef.Builder<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetDbUserPasswordRequest.class, ResetDbUserPasswordResponse.class)
@@ -2283,16 +2039,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetDbUserPasswordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetDbUserPasswordRequest::getInstanceId,
+                ResetDbUserPasswordRequest::setInstanceId));
         builder.<RedisResetDbUserPasswordRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RedisResetDbUserPasswordRequestBody.class),
-            f -> f.withMarshaller(ResetDbUserPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetDbUserPasswordRequest::getBody, ResetDbUserPasswordRequest::setBody));
 
         // response
 
@@ -2300,9 +2053,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse> resetParamGroupTemplate =
-        genForresetParamGroupTemplate();
+        genForResetParamGroupTemplate();
 
-    private static HttpRequestDef<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse> genForresetParamGroupTemplate() {
+    private static HttpRequestDef<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse> genForResetParamGroupTemplate() {
         // basic
         HttpRequestDef.Builder<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ResetParamGroupTemplateRequest.class, ResetParamGroupTemplateResponse.class)
@@ -2315,9 +2068,8 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetParamGroupTemplateRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ResetParamGroupTemplateRequest::getConfigId,
+                ResetParamGroupTemplateRequest::setConfigId));
 
         // response
 
@@ -2325,9 +2077,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
-        genForresetPassword();
+        genForResetPassword();
 
-    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
+    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForResetPassword() {
         // basic
         HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetPasswordRequest.class, ResetPasswordResponse.class)
@@ -2340,16 +2092,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, ResetPasswordRequest::setInstanceId));
         builder.<ResetPasswordRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetPasswordRequestBody.class),
-            f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetPasswordRequest::getBody, ResetPasswordRequest::setBody));
 
         // response
 
@@ -2357,9 +2105,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ResizeColdVolumeRequest, ResizeColdVolumeResponse> resizeColdVolume =
-        genForresizeColdVolume();
+        genForResizeColdVolume();
 
-    private static HttpRequestDef<ResizeColdVolumeRequest, ResizeColdVolumeResponse> genForresizeColdVolume() {
+    private static HttpRequestDef<ResizeColdVolumeRequest, ResizeColdVolumeResponse> genForResizeColdVolume() {
         // basic
         HttpRequestDef.Builder<ResizeColdVolumeRequest, ResizeColdVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResizeColdVolumeRequest.class, ResizeColdVolumeResponse.class)
@@ -2372,16 +2120,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeColdVolumeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeColdVolumeRequest::getInstanceId, ResizeColdVolumeRequest::setInstanceId));
         builder.<ResizeColdVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeColdVolumeRequestBody.class),
-            f -> f.withMarshaller(ResizeColdVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeColdVolumeRequest::getBody, ResizeColdVolumeRequest::setBody));
 
         // response
 
@@ -2389,9 +2133,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
-        genForresizeInstance();
+        genForResizeInstance();
 
-    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
+    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForResizeInstance() {
         // basic
         HttpRequestDef.Builder<ResizeInstanceRequest, ResizeInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResizeInstanceRequest.class, ResizeInstanceResponse.class)
@@ -2404,16 +2148,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, ResizeInstanceRequest::setInstanceId));
         builder.<ResizeInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeInstanceRequestBody.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getBody, ResizeInstanceRequest::setBody));
 
         // response
 
@@ -2421,9 +2161,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> resizeInstanceVolume =
-        genForresizeInstanceVolume();
+        genForResizeInstanceVolume();
 
-    private static HttpRequestDef<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> genForresizeInstanceVolume() {
+    private static HttpRequestDef<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> genForResizeInstanceVolume() {
         // basic
         HttpRequestDef.Builder<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ResizeInstanceVolumeRequest.class, ResizeInstanceVolumeResponse.class)
@@ -2436,16 +2176,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeInstanceVolumeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceVolumeRequest::getInstanceId,
+                ResizeInstanceVolumeRequest::setInstanceId));
         builder.<ResizeInstanceVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeInstanceVolumeRequestBody.class),
-            f -> f.withMarshaller(ResizeInstanceVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceVolumeRequest::getBody, ResizeInstanceVolumeRequest::setBody));
 
         // response
 
@@ -2453,9 +2190,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> restartInstance =
-        genForrestartInstance();
+        genForRestartInstance();
 
-    private static HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> genForrestartInstance() {
+    private static HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> genForRestartInstance() {
         // basic
         HttpRequestDef.Builder<RestartInstanceRequest, RestartInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestartInstanceRequest.class, RestartInstanceResponse.class)
@@ -2468,9 +2205,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, RestartInstanceRequest::setInstanceId));
 
         // response
 
@@ -2478,9 +2213,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> restoreExistingInstance =
-        genForrestoreExistingInstance();
+        genForRestoreExistingInstance();
 
-    private static HttpRequestDef<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> genForrestoreExistingInstance() {
+    private static HttpRequestDef<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> genForRestoreExistingInstance() {
         // basic
         HttpRequestDef.Builder<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RestoreExistingInstanceRequest.class, RestoreExistingInstanceResponse.class)
@@ -2493,16 +2228,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreExistingInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestoreExistingInstanceRequest::getInstanceId,
+                RestoreExistingInstanceRequest::setInstanceId));
         builder.<RestoreRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestoreRequestBody.class),
-            f -> f.withMarshaller(RestoreExistingInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestoreExistingInstanceRequest::getBody, RestoreExistingInstanceRequest::setBody));
 
         // response
 
@@ -2510,9 +2242,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<SaveLtsConfigsRequest, SaveLtsConfigsResponse> saveLtsConfigs =
-        genForsaveLtsConfigs();
+        genForSaveLtsConfigs();
 
-    private static HttpRequestDef<SaveLtsConfigsRequest, SaveLtsConfigsResponse> genForsaveLtsConfigs() {
+    private static HttpRequestDef<SaveLtsConfigsRequest, SaveLtsConfigsResponse> genForSaveLtsConfigs() {
         // basic
         HttpRequestDef.Builder<SaveLtsConfigsRequest, SaveLtsConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SaveLtsConfigsRequest.class, SaveLtsConfigsResponse.class)
@@ -2525,16 +2257,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SaveLtsConfigsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SaveLtsConfigsRequest::getXLanguage, SaveLtsConfigsRequest::setXLanguage));
         builder.<SaveLtsConfigsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SaveLtsConfigsRequestBody.class),
-            f -> f.withMarshaller(SaveLtsConfigsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SaveLtsConfigsRequest::getBody, SaveLtsConfigsRequest::setBody));
 
         // response
 
@@ -2542,9 +2270,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> setAutoEnlargePolicy =
-        genForsetAutoEnlargePolicy();
+        genForSetAutoEnlargePolicy();
 
-    private static HttpRequestDef<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> genForsetAutoEnlargePolicy() {
+    private static HttpRequestDef<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> genForSetAutoEnlargePolicy() {
         // basic
         HttpRequestDef.Builder<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, SetAutoEnlargePolicyRequest.class, SetAutoEnlargePolicyResponse.class)
@@ -2557,9 +2285,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetAutoPolicyRequestBody.class),
-            f -> f.withMarshaller(SetAutoEnlargePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetAutoEnlargePolicyRequest::getBody, SetAutoEnlargePolicyRequest::setBody));
 
         // response
 
@@ -2567,9 +2293,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicy =
-        genForsetBackupPolicy();
+        genForSetBackupPolicy();
 
-    private static HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> genForsetBackupPolicy() {
+    private static HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> genForSetBackupPolicy() {
         // basic
         HttpRequestDef.Builder<SetBackupPolicyRequest, SetBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetBackupPolicyRequest.class, SetBackupPolicyResponse.class)
@@ -2582,16 +2308,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetBackupPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SetBackupPolicyRequest::getInstanceId, SetBackupPolicyRequest::setInstanceId));
         builder.<SetBackupPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetBackupPolicyRequestBody.class),
-            f -> f.withMarshaller(SetBackupPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetBackupPolicyRequest::getBody, SetBackupPolicyRequest::setBody));
 
         // response
 
@@ -2599,9 +2321,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicy =
-        genForsetRecyclePolicy();
+        genForSetRecyclePolicy();
 
-    private static HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> genForsetRecyclePolicy() {
+    private static HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> genForSetRecyclePolicy() {
         // basic
         HttpRequestDef.Builder<SetRecyclePolicyRequest, SetRecyclePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetRecyclePolicyRequest.class, SetRecyclePolicyResponse.class)
@@ -2614,9 +2336,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecyclePolicyRequestBody.class),
-            f -> f.withMarshaller(SetRecyclePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetRecyclePolicyRequest::getBody, SetRecyclePolicyRequest::setBody));
 
         // response
 
@@ -2624,9 +2344,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse> showAllInstancesBackups =
-        genForshowAllInstancesBackups();
+        genForShowAllInstancesBackups();
 
-    private static HttpRequestDef<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse> genForshowAllInstancesBackups() {
+    private static HttpRequestDef<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse> genForShowAllInstancesBackups() {
         // basic
         HttpRequestDef.Builder<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAllInstancesBackupsRequest.class, ShowAllInstancesBackupsResponse.class)
@@ -2639,58 +2359,49 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getOffset,
+                ShowAllInstancesBackupsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getLimit, ShowAllInstancesBackupsRequest::setLimit));
         builder.<ShowAllInstancesBackupsRequest.DatastoreTypeEnum>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAllInstancesBackupsRequest.DatastoreTypeEnum.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getDatastoreType,
+                ShowAllInstancesBackupsRequest::setDatastoreType));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getInstanceId,
+                ShowAllInstancesBackupsRequest::setInstanceId));
         builder.<String>withRequestField("backup_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getBackupId,
+                ShowAllInstancesBackupsRequest::setBackupId));
         builder.<ShowAllInstancesBackupsRequest.BackupTypeEnum>withRequestField("backup_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAllInstancesBackupsRequest.BackupTypeEnum.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getBackupType, (req, v) -> {
-                req.setBackupType(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getBackupType,
+                ShowAllInstancesBackupsRequest::setBackupType));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getBeginTime,
+                ShowAllInstancesBackupsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getEndTime,
+                ShowAllInstancesBackupsRequest::setEndTime));
 
         // response
 
@@ -2698,9 +2409,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse> showAllInstancesBackupsNew =
-        genForshowAllInstancesBackupsNew();
+        genForShowAllInstancesBackupsNew();
 
-    private static HttpRequestDef<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse> genForshowAllInstancesBackupsNew() {
+    private static HttpRequestDef<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse> genForShowAllInstancesBackupsNew() {
         // basic
         HttpRequestDef.Builder<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse> builder =
             HttpRequestDef
@@ -2716,65 +2427,56 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getInstanceId,
+                ShowAllInstancesBackupsNewRequest::setInstanceId));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getDatastoreType,
+                ShowAllInstancesBackupsNewRequest::setDatastoreType));
         builder.<String>withRequestField("backup_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getBackupId,
+                ShowAllInstancesBackupsNewRequest::setBackupId));
         builder.<String>withRequestField("backup_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getBackupType, (req, v) -> {
-                req.setBackupType(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getBackupType,
+                ShowAllInstancesBackupsNewRequest::setBackupType));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getType,
+                ShowAllInstancesBackupsNewRequest::setType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getLimit,
+                ShowAllInstancesBackupsNewRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getOffset,
+                ShowAllInstancesBackupsNewRequest::setOffset));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getBeginTime,
+                ShowAllInstancesBackupsNewRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowAllInstancesBackupsNewRequest::getEndTime,
+                ShowAllInstancesBackupsNewRequest::setEndTime));
 
         // response
 
@@ -2782,9 +2484,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse> showApplicableInstances =
-        genForshowApplicableInstances();
+        genForShowApplicableInstances();
 
-    private static HttpRequestDef<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse> genForshowApplicableInstances() {
+    private static HttpRequestDef<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse> genForShowApplicableInstances() {
         // basic
         HttpRequestDef.Builder<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowApplicableInstancesRequest.class, ShowApplicableInstancesResponse.class)
@@ -2797,23 +2499,19 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplicableInstancesRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ShowApplicableInstancesRequest::getConfigId,
+                ShowApplicableInstancesRequest::setConfigId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowApplicableInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowApplicableInstancesRequest::getOffset,
+                ShowApplicableInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowApplicableInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowApplicableInstancesRequest::getLimit, ShowApplicableInstancesRequest::setLimit));
 
         // response
 
@@ -2821,9 +2519,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowApplyHistoryRequest, ShowApplyHistoryResponse> showApplyHistory =
-        genForshowApplyHistory();
+        genForShowApplyHistory();
 
-    private static HttpRequestDef<ShowApplyHistoryRequest, ShowApplyHistoryResponse> genForshowApplyHistory() {
+    private static HttpRequestDef<ShowApplyHistoryRequest, ShowApplyHistoryResponse> genForShowApplyHistory() {
         // basic
         HttpRequestDef.Builder<ShowApplyHistoryRequest, ShowApplyHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApplyHistoryRequest.class, ShowApplyHistoryResponse.class)
@@ -2836,23 +2534,17 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplyHistoryRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ShowApplyHistoryRequest::getConfigId, ShowApplyHistoryRequest::setConfigId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowApplyHistoryRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowApplyHistoryRequest::getOffset, ShowApplyHistoryRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowApplyHistoryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowApplyHistoryRequest::getLimit, ShowApplyHistoryRequest::setLimit));
 
         // response
 
@@ -2860,9 +2552,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicy =
-        genForshowAutoEnlargePolicy();
+        genForShowAutoEnlargePolicy();
 
-    private static HttpRequestDef<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> genForshowAutoEnlargePolicy() {
+    private static HttpRequestDef<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> genForShowAutoEnlargePolicy() {
         // basic
         HttpRequestDef.Builder<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAutoEnlargePolicyRequest.class, ShowAutoEnlargePolicyResponse.class)
@@ -2875,9 +2567,8 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAutoEnlargePolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAutoEnlargePolicyRequest::getInstanceId,
+                ShowAutoEnlargePolicyRequest::setInstanceId));
 
         // response
 
@@ -2885,9 +2576,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicy =
-        genForshowBackupPolicy();
+        genForShowBackupPolicy();
 
-    private static HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> genForshowBackupPolicy() {
+    private static HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> genForShowBackupPolicy() {
         // basic
         HttpRequestDef.Builder<ShowBackupPolicyRequest, ShowBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackupPolicyRequest.class, ShowBackupPolicyResponse.class)
@@ -2900,9 +2591,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackupPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowBackupPolicyRequest::getInstanceId, ShowBackupPolicyRequest::setInstanceId));
 
         // response
 
@@ -2910,9 +2599,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> showConfigurationDetail =
-        genForshowConfigurationDetail();
+        genForShowConfigurationDetail();
 
-    private static HttpRequestDef<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> genForshowConfigurationDetail() {
+    private static HttpRequestDef<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> genForShowConfigurationDetail() {
         // basic
         HttpRequestDef.Builder<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowConfigurationDetailRequest.class, ShowConfigurationDetailResponse.class)
@@ -2925,9 +2614,8 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigurationDetailRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ShowConfigurationDetailRequest::getConfigId,
+                ShowConfigurationDetailRequest::setConfigId));
 
         // response
 
@@ -2935,9 +2623,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowElbIpGroupRequest, ShowElbIpGroupResponse> showElbIpGroup =
-        genForshowElbIpGroup();
+        genForShowElbIpGroup();
 
-    private static HttpRequestDef<ShowElbIpGroupRequest, ShowElbIpGroupResponse> genForshowElbIpGroup() {
+    private static HttpRequestDef<ShowElbIpGroupRequest, ShowElbIpGroupResponse> genForShowElbIpGroup() {
         // basic
         HttpRequestDef.Builder<ShowElbIpGroupRequest, ShowElbIpGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowElbIpGroupRequest.class, ShowElbIpGroupResponse.class)
@@ -2950,18 +2638,16 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowElbIpGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowElbIpGroupRequest::getInstanceId, ShowElbIpGroupRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowErrorLogRequest, ShowErrorLogResponse> showErrorLog = genForshowErrorLog();
+    public static final HttpRequestDef<ShowErrorLogRequest, ShowErrorLogResponse> showErrorLog = genForShowErrorLog();
 
-    private static HttpRequestDef<ShowErrorLogRequest, ShowErrorLogResponse> genForshowErrorLog() {
+    private static HttpRequestDef<ShowErrorLogRequest, ShowErrorLogResponse> genForShowErrorLog() {
         // basic
         HttpRequestDef.Builder<ShowErrorLogRequest, ShowErrorLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowErrorLogRequest.class, ShowErrorLogResponse.class)
@@ -2974,51 +2660,37 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowErrorLogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowErrorLogRequest::getInstanceId, ShowErrorLogRequest::setInstanceId));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowErrorLogRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowErrorLogRequest::getStartTime, ShowErrorLogRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowErrorLogRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowErrorLogRequest::getEndTime, ShowErrorLogRequest::setEndTime));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowErrorLogRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowErrorLogRequest::getNodeId, ShowErrorLogRequest::setNodeId));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowErrorLogRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowErrorLogRequest::getType, ShowErrorLogRequest::setType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowErrorLogRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowErrorLogRequest::getOffset, ShowErrorLogRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowErrorLogRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowErrorLogRequest::getLimit, ShowErrorLogRequest::setLimit));
 
         // response
 
@@ -3026,9 +2698,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> showHighRiskCommands =
-        genForshowHighRiskCommands();
+        genForShowHighRiskCommands();
 
-    private static HttpRequestDef<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> genForshowHighRiskCommands() {
+    private static HttpRequestDef<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> genForShowHighRiskCommands() {
         // basic
         HttpRequestDef.Builder<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowHighRiskCommandsRequest.class, ShowHighRiskCommandsResponse.class)
@@ -3041,9 +2713,8 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHighRiskCommandsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowHighRiskCommandsRequest::getInstanceId,
+                ShowHighRiskCommandsRequest::setInstanceId));
 
         // response
 
@@ -3051,9 +2722,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse> showInstanceBiactiveRegions =
-        genForshowInstanceBiactiveRegions();
+        genForShowInstanceBiactiveRegions();
 
-    private static HttpRequestDef<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse> genForshowInstanceBiactiveRegions() {
+    private static HttpRequestDef<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse> genForShowInstanceBiactiveRegions() {
         // basic
         HttpRequestDef.Builder<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse> builder =
             HttpRequestDef
@@ -3069,9 +2740,8 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceBiactiveRegionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceBiactiveRegionsRequest::getInstanceId,
+                ShowInstanceBiactiveRegionsRequest::setInstanceId));
 
         // response
 
@@ -3079,9 +2749,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfiguration =
-        genForshowInstanceConfiguration();
+        genForShowInstanceConfiguration();
 
-    private static HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> genForshowInstanceConfiguration() {
+    private static HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> genForShowInstanceConfiguration() {
         // basic
         HttpRequestDef.Builder<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> builder =
             HttpRequestDef
@@ -3097,9 +2767,8 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceConfigurationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceConfigurationRequest::getInstanceId,
+                ShowInstanceConfigurationRequest::setInstanceId));
 
         // response
 
@@ -3107,9 +2776,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceRoleRequest, ShowInstanceRoleResponse> showInstanceRole =
-        genForshowInstanceRole();
+        genForShowInstanceRole();
 
-    private static HttpRequestDef<ShowInstanceRoleRequest, ShowInstanceRoleResponse> genForshowInstanceRole() {
+    private static HttpRequestDef<ShowInstanceRoleRequest, ShowInstanceRoleResponse> genForShowInstanceRole() {
         // basic
         HttpRequestDef.Builder<ShowInstanceRoleRequest, ShowInstanceRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRoleRequest.class, ShowInstanceRoleResponse.class)
@@ -3122,9 +2791,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceRoleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceRoleRequest::getInstanceId, ShowInstanceRoleRequest::setInstanceId));
 
         // response
 
@@ -3132,9 +2799,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse> showIpNumRequirement =
-        genForshowIpNumRequirement();
+        genForShowIpNumRequirement();
 
-    private static HttpRequestDef<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse> genForshowIpNumRequirement() {
+    private static HttpRequestDef<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse> genForShowIpNumRequirement() {
         // basic
         HttpRequestDef.Builder<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowIpNumRequirementRequest.class, ShowIpNumRequirementResponse.class)
@@ -3147,30 +2814,25 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowIpNumRequirementRequest::getNodeNum, (req, v) -> {
-                req.setNodeNum(v);
-            }));
+            f -> f.withMarshaller(ShowIpNumRequirementRequest::getNodeNum, ShowIpNumRequirementRequest::setNodeNum));
         builder.<String>withRequestField("engine_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIpNumRequirementRequest::getEngineName, (req, v) -> {
-                req.setEngineName(v);
-            }));
+            f -> f.withMarshaller(ShowIpNumRequirementRequest::getEngineName,
+                ShowIpNumRequirementRequest::setEngineName));
         builder.<String>withRequestField("instance_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIpNumRequirementRequest::getInstanceMode, (req, v) -> {
-                req.setInstanceMode(v);
-            }));
+            f -> f.withMarshaller(ShowIpNumRequirementRequest::getInstanceMode,
+                ShowIpNumRequirementRequest::setInstanceMode));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIpNumRequirementRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowIpNumRequirementRequest::getInstanceId,
+                ShowIpNumRequirementRequest::setInstanceId));
 
         // response
 
@@ -3178,9 +2840,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowModifyHistoryRequest, ShowModifyHistoryResponse> showModifyHistory =
-        genForshowModifyHistory();
+        genForShowModifyHistory();
 
-    private static HttpRequestDef<ShowModifyHistoryRequest, ShowModifyHistoryResponse> genForshowModifyHistory() {
+    private static HttpRequestDef<ShowModifyHistoryRequest, ShowModifyHistoryResponse> genForShowModifyHistory() {
         // basic
         HttpRequestDef.Builder<ShowModifyHistoryRequest, ShowModifyHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowModifyHistoryRequest.class, ShowModifyHistoryResponse.class)
@@ -3193,23 +2855,17 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowModifyHistoryRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowModifyHistoryRequest::getInstanceId, ShowModifyHistoryRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowModifyHistoryRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowModifyHistoryRequest::getOffset, ShowModifyHistoryRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowModifyHistoryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowModifyHistoryRequest::getLimit, ShowModifyHistoryRequest::setLimit));
 
         // response
 
@@ -3217,9 +2873,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> showPauseResumeStutus =
-        genForshowPauseResumeStutus();
+        genForShowPauseResumeStutus();
 
-    private static HttpRequestDef<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> genForshowPauseResumeStutus() {
+    private static HttpRequestDef<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> genForShowPauseResumeStutus() {
         // basic
         HttpRequestDef.Builder<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPauseResumeStutusRequest.class, ShowPauseResumeStutusResponse.class)
@@ -3232,18 +2888,17 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPauseResumeStutusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowPauseResumeStutusRequest::getInstanceId,
+                ShowPauseResumeStutusRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForShowQuotas();
 
-    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForShowQuotas() {
         // basic
         HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
@@ -3256,16 +2911,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQuotasRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ShowQuotasRequest::getDatastoreType, ShowQuotasRequest::setDatastoreType));
         builder.<String>withRequestField("mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQuotasRequest::getMode, (req, v) -> {
-                req.setMode(v);
-            }));
+            f -> f.withMarshaller(ShowQuotasRequest::getMode, ShowQuotasRequest::setMode));
 
         // response
 
@@ -3273,9 +2924,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicy =
-        genForshowRecyclePolicy();
+        genForShowRecyclePolicy();
 
-    private static HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> genForshowRecyclePolicy() {
+    private static HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> genForShowRecyclePolicy() {
         // basic
         HttpRequestDef.Builder<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecyclePolicyRequest.class, ShowRecyclePolicyResponse.class)
@@ -3288,9 +2939,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecyclePolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowRecyclePolicyRequest::getXLanguage, ShowRecyclePolicyRequest::setXLanguage));
 
         // response
 
@@ -3298,9 +2947,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowRestorableListRequest, ShowRestorableListResponse> showRestorableList =
-        genForshowRestorableList();
+        genForShowRestorableList();
 
-    private static HttpRequestDef<ShowRestorableListRequest, ShowRestorableListResponse> genForshowRestorableList() {
+    private static HttpRequestDef<ShowRestorableListRequest, ShowRestorableListResponse> genForShowRestorableList() {
         // basic
         HttpRequestDef.Builder<ShowRestorableListRequest, ShowRestorableListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRestorableListRequest.class, ShowRestorableListResponse.class)
@@ -3313,23 +2962,17 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRestorableListRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ShowRestorableListRequest::getBackupId, ShowRestorableListRequest::setBackupId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRestorableListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowRestorableListRequest::getOffset, ShowRestorableListRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRestorableListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowRestorableListRequest::getLimit, ShowRestorableListRequest::setLimit));
 
         // response
 
@@ -3337,9 +2980,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> showSlowLogDesensitization =
-        genForshowSlowLogDesensitization();
+        genForShowSlowLogDesensitization();
 
-    private static HttpRequestDef<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> genForshowSlowLogDesensitization() {
+    private static HttpRequestDef<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> genForShowSlowLogDesensitization() {
         // basic
         HttpRequestDef.Builder<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> builder =
             HttpRequestDef
@@ -3355,9 +2998,8 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSlowLogDesensitizationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSlowLogDesensitizationRequest::getInstanceId,
+                ShowSlowLogDesensitizationRequest::setInstanceId));
 
         // response
 
@@ -3365,9 +3007,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse> shrinkInstanceNode =
-        genForshrinkInstanceNode();
+        genForShrinkInstanceNode();
 
-    private static HttpRequestDef<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse> genForshrinkInstanceNode() {
+    private static HttpRequestDef<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse> genForShrinkInstanceNode() {
         // basic
         HttpRequestDef.Builder<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShrinkInstanceNodeRequest.class, ShrinkInstanceNodeResponse.class)
@@ -3380,16 +3022,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShrinkInstanceNodeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShrinkInstanceNodeRequest::getInstanceId, ShrinkInstanceNodeRequest::setInstanceId));
         builder.<ShrinkInstanceNodeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShrinkInstanceNodeRequestBody.class),
-            f -> f.withMarshaller(ShrinkInstanceNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShrinkInstanceNodeRequest::getBody, ShrinkInstanceNodeRequest::setBody));
 
         // response
 
@@ -3397,9 +3035,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<SwitchIpGroupRequest, SwitchIpGroupResponse> switchIpGroup =
-        genForswitchIpGroup();
+        genForSwitchIpGroup();
 
-    private static HttpRequestDef<SwitchIpGroupRequest, SwitchIpGroupResponse> genForswitchIpGroup() {
+    private static HttpRequestDef<SwitchIpGroupRequest, SwitchIpGroupResponse> genForSwitchIpGroup() {
         // basic
         HttpRequestDef.Builder<SwitchIpGroupRequest, SwitchIpGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SwitchIpGroupRequest.class, SwitchIpGroupResponse.class)
@@ -3412,16 +3050,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchIpGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchIpGroupRequest::getInstanceId, SwitchIpGroupRequest::setInstanceId));
         builder.<SwitchIpGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchIpGroupRequestBody.class),
-            f -> f.withMarshaller(SwitchIpGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchIpGroupRequest::getBody, SwitchIpGroupRequest::setBody));
 
         // response
 
@@ -3429,9 +3063,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> switchSlowlogDesensitization =
-        genForswitchSlowlogDesensitization();
+        genForSwitchSlowlogDesensitization();
 
-    private static HttpRequestDef<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> genForswitchSlowlogDesensitization() {
+    private static HttpRequestDef<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> genForSwitchSlowlogDesensitization() {
         // basic
         HttpRequestDef.Builder<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> builder =
             HttpRequestDef
@@ -3447,25 +3081,23 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchSlowlogDesensitizationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchSlowlogDesensitizationRequest::getInstanceId,
+                SwitchSlowlogDesensitizationRequest::setInstanceId));
         builder.<SwitchSlowlogDesensitizationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchSlowlogDesensitizationRequestBody.class),
-            f -> f.withMarshaller(SwitchSlowlogDesensitizationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchSlowlogDesensitizationRequest::getBody,
+                SwitchSlowlogDesensitizationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SwitchSslRequest, SwitchSslResponse> switchSsl = genForswitchSsl();
+    public static final HttpRequestDef<SwitchSslRequest, SwitchSslResponse> switchSsl = genForSwitchSsl();
 
-    private static HttpRequestDef<SwitchSslRequest, SwitchSslResponse> genForswitchSsl() {
+    private static HttpRequestDef<SwitchSslRequest, SwitchSslResponse> genForSwitchSsl() {
         // basic
         HttpRequestDef.Builder<SwitchSslRequest, SwitchSslResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchSslRequest.class, SwitchSslResponse.class)
@@ -3478,16 +3110,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchSslRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchSslRequest::getInstanceId, SwitchSslRequest::setInstanceId));
         builder.<SwitchSslRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchSslRequestBody.class),
-            f -> f.withMarshaller(SwitchSslRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchSslRequest::getBody, SwitchSslRequest::setBody));
 
         // response
 
@@ -3495,9 +3123,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<SwitchToMasterRequest, SwitchToMasterResponse> switchToMaster =
-        genForswitchToMaster();
+        genForSwitchToMaster();
 
-    private static HttpRequestDef<SwitchToMasterRequest, SwitchToMasterResponse> genForswitchToMaster() {
+    private static HttpRequestDef<SwitchToMasterRequest, SwitchToMasterResponse> genForSwitchToMaster() {
         // basic
         HttpRequestDef.Builder<SwitchToMasterRequest, SwitchToMasterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchToMasterRequest.class, SwitchToMasterResponse.class)
@@ -3510,16 +3138,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchToMasterRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchToMasterRequest::getInstanceId, SwitchToMasterRequest::setInstanceId));
         builder.<SwitchToMasterDisasterRecoveryBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SwitchToMasterDisasterRecoveryBody.class),
-            f -> f.withMarshaller(SwitchToMasterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchToMasterRequest::getBody, SwitchToMasterRequest::setBody));
 
         // response
 
@@ -3527,9 +3151,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<SwitchToSlaveRequest, SwitchToSlaveResponse> switchToSlave =
-        genForswitchToSlave();
+        genForSwitchToSlave();
 
-    private static HttpRequestDef<SwitchToSlaveRequest, SwitchToSlaveResponse> genForswitchToSlave() {
+    private static HttpRequestDef<SwitchToSlaveRequest, SwitchToSlaveResponse> genForSwitchToSlave() {
         // basic
         HttpRequestDef.Builder<SwitchToSlaveRequest, SwitchToSlaveResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchToSlaveRequest.class, SwitchToSlaveResponse.class)
@@ -3542,9 +3166,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchToSlaveRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchToSlaveRequest::getInstanceId, SwitchToSlaveRequest::setInstanceId));
 
         // response
 
@@ -3552,9 +3174,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<UpdateClientNetworkRequest, UpdateClientNetworkResponse> updateClientNetwork =
-        genForupdateClientNetwork();
+        genForUpdateClientNetwork();
 
-    private static HttpRequestDef<UpdateClientNetworkRequest, UpdateClientNetworkResponse> genForupdateClientNetwork() {
+    private static HttpRequestDef<UpdateClientNetworkRequest, UpdateClientNetworkResponse> genForUpdateClientNetwork() {
         // basic
         HttpRequestDef.Builder<UpdateClientNetworkRequest, UpdateClientNetworkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateClientNetworkRequest.class, UpdateClientNetworkResponse.class)
@@ -3567,16 +3189,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateClientNetworkRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateClientNetworkRequest::getInstanceId,
+                UpdateClientNetworkRequest::setInstanceId));
         builder.<UpdateClientNetworkRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateClientNetworkRequestBody.class),
-            f -> f.withMarshaller(UpdateClientNetworkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateClientNetworkRequest::getBody, UpdateClientNetworkRequest::setBody));
 
         // response
 
@@ -3584,9 +3203,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfiguration =
-        genForupdateConfiguration();
+        genForUpdateConfiguration();
 
-    private static HttpRequestDef<UpdateConfigurationRequest, UpdateConfigurationResponse> genForupdateConfiguration() {
+    private static HttpRequestDef<UpdateConfigurationRequest, UpdateConfigurationResponse> genForUpdateConfiguration() {
         // basic
         HttpRequestDef.Builder<UpdateConfigurationRequest, UpdateConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateConfigurationRequest.class, UpdateConfigurationResponse.class)
@@ -3599,16 +3218,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConfigurationRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigurationRequest::getConfigId, UpdateConfigurationRequest::setConfigId));
         builder.<UpdateConfigurationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateConfigurationRequestBody.class),
-            f -> f.withMarshaller(UpdateConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigurationRequest::getBody, UpdateConfigurationRequest::setBody));
 
         // response
 
@@ -3616,9 +3231,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> updateHighRiskCommands =
-        genForupdateHighRiskCommands();
+        genForUpdateHighRiskCommands();
 
-    private static HttpRequestDef<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> genForupdateHighRiskCommands() {
+    private static HttpRequestDef<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> genForUpdateHighRiskCommands() {
         // basic
         HttpRequestDef.Builder<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateHighRiskCommandsRequest.class, UpdateHighRiskCommandsResponse.class)
@@ -3631,16 +3246,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHighRiskCommandsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateHighRiskCommandsRequest::getInstanceId,
+                UpdateHighRiskCommandsRequest::setInstanceId));
         builder.<RenameHighRiskCommandsRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RenameHighRiskCommandsRequest.class),
-            f -> f.withMarshaller(UpdateHighRiskCommandsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateHighRiskCommandsRequest::getBody, UpdateHighRiskCommandsRequest::setBody));
 
         // response
 
@@ -3648,9 +3260,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfiguration =
-        genForupdateInstanceConfiguration();
+        genForUpdateInstanceConfiguration();
 
-    private static HttpRequestDef<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> genForupdateInstanceConfiguration() {
+    private static HttpRequestDef<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> genForUpdateInstanceConfiguration() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> builder =
             HttpRequestDef
@@ -3666,16 +3278,14 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getInstanceId,
+                UpdateInstanceConfigurationRequest::setInstanceId));
         builder.<UpdateInstanceConfigurationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceConfigurationRequestBody.class),
-            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getBody,
+                UpdateInstanceConfigurationRequest::setBody));
 
         // response
 
@@ -3683,9 +3293,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceName =
-        genForupdateInstanceName();
+        genForUpdateInstanceName();
 
-    private static HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> genForupdateInstanceName() {
+    private static HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> genForUpdateInstanceName() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceNameRequest, UpdateInstanceNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceNameRequest.class, UpdateInstanceNameResponse.class)
@@ -3698,16 +3308,12 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceNameRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceNameRequest::getInstanceId, UpdateInstanceNameRequest::setInstanceId));
         builder.<UpdateInstanceNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceNameRequestBody.class),
-            f -> f.withMarshaller(UpdateInstanceNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceNameRequest::getBody, UpdateInstanceNameRequest::setBody));
 
         // response
 
@@ -3715,9 +3321,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroup =
-        genForupdateSecurityGroup();
+        genForUpdateSecurityGroup();
 
-    private static HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> genForupdateSecurityGroup() {
+    private static HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> genForUpdateSecurityGroup() {
         // basic
         HttpRequestDef.Builder<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSecurityGroupRequest.class, UpdateSecurityGroupResponse.class)
@@ -3730,16 +3336,13 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityGroupRequest::getInstanceId,
+                UpdateSecurityGroupRequest::setInstanceId));
         builder.<UpdateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecurityGroupRequestBody.class),
-            f -> f.withMarshaller(UpdateSecurityGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityGroupRequest::getBody, UpdateSecurityGroupRequest::setBody));
 
         // response
 
@@ -3747,9 +3350,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<UpgradeDbVersionRequest, UpgradeDbVersionResponse> upgradeDbVersion =
-        genForupgradeDbVersion();
+        genForUpgradeDbVersion();
 
-    private static HttpRequestDef<UpgradeDbVersionRequest, UpgradeDbVersionResponse> genForupgradeDbVersion() {
+    private static HttpRequestDef<UpgradeDbVersionRequest, UpgradeDbVersionResponse> genForUpgradeDbVersion() {
         // basic
         HttpRequestDef.Builder<UpgradeDbVersionRequest, UpgradeDbVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpgradeDbVersionRequest.class, UpgradeDbVersionResponse.class)
@@ -3762,9 +3365,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeDbVersionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpgradeDbVersionRequest::getInstanceId, UpgradeDbVersionRequest::setInstanceId));
 
         // response
 
@@ -3772,9 +3373,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion =
-        genForlistApiVersion();
+        genForListApiVersion();
 
-    private static HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> genForlistApiVersion() {
+    private static HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> genForListApiVersion() {
         // basic
         HttpRequestDef.Builder<ListApiVersionRequest, ListApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionRequest.class, ListApiVersionResponse.class)
@@ -3790,9 +3391,9 @@ public class GaussDBforNoSQLMeta {
     }
 
     public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
-        genForshowApiVersion();
+        genForShowApiVersion();
 
-    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
+    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForShowApiVersion() {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
@@ -3805,9 +3406,7 @@ public class GaussDBforNoSQLMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowApiVersionRequest::getVersion, ShowApiVersionRequest::setVersion));
 
         // response
 

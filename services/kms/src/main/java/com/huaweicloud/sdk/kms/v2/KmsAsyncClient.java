@@ -120,7 +120,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateKmsTagsRequest 请求对象
+     * @param request BatchCreateKmsTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateKmsTagsResponse>
      */
     public CompletableFuture<BatchCreateKmsTagsResponse> batchCreateKmsTagsAsync(BatchCreateKmsTagsRequest request) {
@@ -134,13 +134,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateKmsTagsRequest 请求对象
+     * @param request BatchCreateKmsTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse>
      */
     public AsyncInvoker<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse> batchCreateKmsTagsAsyncInvoker(
         BatchCreateKmsTagsRequest request) {
-        return new AsyncInvoker<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse>(request,
-            KmsMeta.batchCreateKmsTags, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.batchCreateKmsTags, hcClient);
     }
 
     /**
@@ -152,7 +151,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelGrantRequest 请求对象
+     * @param request CancelGrantRequest 请求对象
      * @return CompletableFuture<CancelGrantResponse>
      */
     public CompletableFuture<CancelGrantResponse> cancelGrantAsync(CancelGrantRequest request) {
@@ -168,11 +167,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelGrantRequest 请求对象
+     * @param request CancelGrantRequest 请求对象
      * @return AsyncInvoker<CancelGrantRequest, CancelGrantResponse>
      */
     public AsyncInvoker<CancelGrantRequest, CancelGrantResponse> cancelGrantAsyncInvoker(CancelGrantRequest request) {
-        return new AsyncInvoker<CancelGrantRequest, CancelGrantResponse>(request, KmsMeta.cancelGrant, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.cancelGrant, hcClient);
     }
 
     /**
@@ -183,7 +182,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelKeyDeletionRequest 请求对象
+     * @param request CancelKeyDeletionRequest 请求对象
      * @return CompletableFuture<CancelKeyDeletionResponse>
      */
     public CompletableFuture<CancelKeyDeletionResponse> cancelKeyDeletionAsync(CancelKeyDeletionRequest request) {
@@ -198,13 +197,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelKeyDeletionRequest 请求对象
+     * @param request CancelKeyDeletionRequest 请求对象
      * @return AsyncInvoker<CancelKeyDeletionRequest, CancelKeyDeletionResponse>
      */
     public AsyncInvoker<CancelKeyDeletionRequest, CancelKeyDeletionResponse> cancelKeyDeletionAsyncInvoker(
         CancelKeyDeletionRequest request) {
-        return new AsyncInvoker<CancelKeyDeletionRequest, CancelKeyDeletionResponse>(request, KmsMeta.cancelKeyDeletion,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.cancelKeyDeletion, hcClient);
     }
 
     /**
@@ -221,7 +219,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelSelfGrantRequest 请求对象
+     * @param request CancelSelfGrantRequest 请求对象
      * @return CompletableFuture<CancelSelfGrantResponse>
      */
     public CompletableFuture<CancelSelfGrantResponse> cancelSelfGrantAsync(CancelSelfGrantRequest request) {
@@ -242,13 +240,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelSelfGrantRequest 请求对象
+     * @param request CancelSelfGrantRequest 请求对象
      * @return AsyncInvoker<CancelSelfGrantRequest, CancelSelfGrantResponse>
      */
     public AsyncInvoker<CancelSelfGrantRequest, CancelSelfGrantResponse> cancelSelfGrantAsyncInvoker(
         CancelSelfGrantRequest request) {
-        return new AsyncInvoker<CancelSelfGrantRequest, CancelSelfGrantResponse>(request, KmsMeta.cancelSelfGrant,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.cancelSelfGrant, hcClient);
     }
 
     /**
@@ -258,7 +255,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatakeyRequest 请求对象
+     * @param request CreateDatakeyRequest 请求对象
      * @return CompletableFuture<CreateDatakeyResponse>
      */
     public CompletableFuture<CreateDatakeyResponse> createDatakeyAsync(CreateDatakeyRequest request) {
@@ -272,12 +269,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatakeyRequest 请求对象
+     * @param request CreateDatakeyRequest 请求对象
      * @return AsyncInvoker<CreateDatakeyRequest, CreateDatakeyResponse>
      */
     public AsyncInvoker<CreateDatakeyRequest, CreateDatakeyResponse> createDatakeyAsyncInvoker(
         CreateDatakeyRequest request) {
-        return new AsyncInvoker<CreateDatakeyRequest, CreateDatakeyResponse>(request, KmsMeta.createDatakey, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.createDatakey, hcClient);
     }
 
     /**
@@ -287,7 +284,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatakeyWithoutPlaintextRequest 请求对象
+     * @param request CreateDatakeyWithoutPlaintextRequest 请求对象
      * @return CompletableFuture<CreateDatakeyWithoutPlaintextResponse>
      */
     public CompletableFuture<CreateDatakeyWithoutPlaintextResponse> createDatakeyWithoutPlaintextAsync(
@@ -302,13 +299,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatakeyWithoutPlaintextRequest 请求对象
+     * @param request CreateDatakeyWithoutPlaintextRequest 请求对象
      * @return AsyncInvoker<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse>
      */
     public AsyncInvoker<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse> createDatakeyWithoutPlaintextAsyncInvoker(
         CreateDatakeyWithoutPlaintextRequest request) {
-        return new AsyncInvoker<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse>(request,
-            KmsMeta.createDatakeyWithoutPlaintext, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.createDatakeyWithoutPlaintext, hcClient);
     }
 
     /**
@@ -320,7 +316,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGrantRequest 请求对象
+     * @param request CreateGrantRequest 请求对象
      * @return CompletableFuture<CreateGrantResponse>
      */
     public CompletableFuture<CreateGrantResponse> createGrantAsync(CreateGrantRequest request) {
@@ -336,11 +332,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGrantRequest 请求对象
+     * @param request CreateGrantRequest 请求对象
      * @return AsyncInvoker<CreateGrantRequest, CreateGrantResponse>
      */
     public AsyncInvoker<CreateGrantRequest, CreateGrantResponse> createGrantAsyncInvoker(CreateGrantRequest request) {
-        return new AsyncInvoker<CreateGrantRequest, CreateGrantResponse>(request, KmsMeta.createGrant, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.createGrant, hcClient);
     }
 
     /**
@@ -352,7 +348,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKeyRequest 请求对象
+     * @param request CreateKeyRequest 请求对象
      * @return CompletableFuture<CreateKeyResponse>
      */
     public CompletableFuture<CreateKeyResponse> createKeyAsync(CreateKeyRequest request) {
@@ -368,11 +364,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKeyRequest 请求对象
+     * @param request CreateKeyRequest 请求对象
      * @return AsyncInvoker<CreateKeyRequest, CreateKeyResponse>
      */
     public AsyncInvoker<CreateKeyRequest, CreateKeyResponse> createKeyAsyncInvoker(CreateKeyRequest request) {
-        return new AsyncInvoker<CreateKeyRequest, CreateKeyResponse>(request, KmsMeta.createKey, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.createKey, hcClient);
     }
 
     /**
@@ -382,7 +378,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKeyStoreRequest 请求对象
+     * @param request CreateKeyStoreRequest 请求对象
      * @return CompletableFuture<CreateKeyStoreResponse>
      */
     public CompletableFuture<CreateKeyStoreResponse> createKeyStoreAsync(CreateKeyStoreRequest request) {
@@ -396,13 +392,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKeyStoreRequest 请求对象
+     * @param request CreateKeyStoreRequest 请求对象
      * @return AsyncInvoker<CreateKeyStoreRequest, CreateKeyStoreResponse>
      */
     public AsyncInvoker<CreateKeyStoreRequest, CreateKeyStoreResponse> createKeyStoreAsyncInvoker(
         CreateKeyStoreRequest request) {
-        return new AsyncInvoker<CreateKeyStoreRequest, CreateKeyStoreResponse>(request, KmsMeta.createKeyStore,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.createKeyStore, hcClient);
     }
 
     /**
@@ -412,7 +407,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKmsTagRequest 请求对象
+     * @param request CreateKmsTagRequest 请求对象
      * @return CompletableFuture<CreateKmsTagResponse>
      */
     public CompletableFuture<CreateKmsTagResponse> createKmsTagAsync(CreateKmsTagRequest request) {
@@ -426,12 +421,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKmsTagRequest 请求对象
+     * @param request CreateKmsTagRequest 请求对象
      * @return AsyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse>
      */
     public AsyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse> createKmsTagAsyncInvoker(
         CreateKmsTagRequest request) {
-        return new AsyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse>(request, KmsMeta.createKmsTag, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.createKmsTag, hcClient);
     }
 
     /**
@@ -442,7 +437,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateParametersForImportRequest 请求对象
+     * @param request CreateParametersForImportRequest 请求对象
      * @return CompletableFuture<CreateParametersForImportResponse>
      */
     public CompletableFuture<CreateParametersForImportResponse> createParametersForImportAsync(
@@ -458,13 +453,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateParametersForImportRequest 请求对象
+     * @param request CreateParametersForImportRequest 请求对象
      * @return AsyncInvoker<CreateParametersForImportRequest, CreateParametersForImportResponse>
      */
     public AsyncInvoker<CreateParametersForImportRequest, CreateParametersForImportResponse> createParametersForImportAsyncInvoker(
         CreateParametersForImportRequest request) {
-        return new AsyncInvoker<CreateParametersForImportRequest, CreateParametersForImportResponse>(request,
-            KmsMeta.createParametersForImport, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.createParametersForImport, hcClient);
     }
 
     /**
@@ -475,7 +469,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRandomRequest 请求对象
+     * @param request CreateRandomRequest 请求对象
      * @return CompletableFuture<CreateRandomResponse>
      */
     public CompletableFuture<CreateRandomResponse> createRandomAsync(CreateRandomRequest request) {
@@ -490,12 +484,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRandomRequest 请求对象
+     * @param request CreateRandomRequest 请求对象
      * @return AsyncInvoker<CreateRandomRequest, CreateRandomResponse>
      */
     public AsyncInvoker<CreateRandomRequest, CreateRandomResponse> createRandomAsyncInvoker(
         CreateRandomRequest request) {
-        return new AsyncInvoker<CreateRandomRequest, CreateRandomResponse>(request, KmsMeta.createRandom, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.createRandom, hcClient);
     }
 
     /**
@@ -505,7 +499,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DecryptDataRequest 请求对象
+     * @param request DecryptDataRequest 请求对象
      * @return CompletableFuture<DecryptDataResponse>
      */
     public CompletableFuture<DecryptDataResponse> decryptDataAsync(DecryptDataRequest request) {
@@ -519,11 +513,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DecryptDataRequest 请求对象
+     * @param request DecryptDataRequest 请求对象
      * @return AsyncInvoker<DecryptDataRequest, DecryptDataResponse>
      */
     public AsyncInvoker<DecryptDataRequest, DecryptDataResponse> decryptDataAsyncInvoker(DecryptDataRequest request) {
-        return new AsyncInvoker<DecryptDataRequest, DecryptDataResponse>(request, KmsMeta.decryptData, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.decryptData, hcClient);
     }
 
     /**
@@ -533,7 +527,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DecryptDatakeyRequest 请求对象
+     * @param request DecryptDatakeyRequest 请求对象
      * @return CompletableFuture<DecryptDatakeyResponse>
      */
     public CompletableFuture<DecryptDatakeyResponse> decryptDatakeyAsync(DecryptDatakeyRequest request) {
@@ -547,13 +541,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DecryptDatakeyRequest 请求对象
+     * @param request DecryptDatakeyRequest 请求对象
      * @return AsyncInvoker<DecryptDatakeyRequest, DecryptDatakeyResponse>
      */
     public AsyncInvoker<DecryptDatakeyRequest, DecryptDatakeyResponse> decryptDatakeyAsyncInvoker(
         DecryptDatakeyRequest request) {
-        return new AsyncInvoker<DecryptDatakeyRequest, DecryptDatakeyResponse>(request, KmsMeta.decryptDatakey,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.decryptDatakey, hcClient);
     }
 
     /**
@@ -563,7 +556,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImportedKeyMaterialRequest 请求对象
+     * @param request DeleteImportedKeyMaterialRequest 请求对象
      * @return CompletableFuture<DeleteImportedKeyMaterialResponse>
      */
     public CompletableFuture<DeleteImportedKeyMaterialResponse> deleteImportedKeyMaterialAsync(
@@ -578,13 +571,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImportedKeyMaterialRequest 请求对象
+     * @param request DeleteImportedKeyMaterialRequest 请求对象
      * @return AsyncInvoker<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse>
      */
     public AsyncInvoker<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse> deleteImportedKeyMaterialAsyncInvoker(
         DeleteImportedKeyMaterialRequest request) {
-        return new AsyncInvoker<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse>(request,
-            KmsMeta.deleteImportedKeyMaterial, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.deleteImportedKeyMaterial, hcClient);
     }
 
     /**
@@ -594,7 +586,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKeyRequest 请求对象
+     * @param request DeleteKeyRequest 请求对象
      * @return CompletableFuture<DeleteKeyResponse>
      */
     public CompletableFuture<DeleteKeyResponse> deleteKeyAsync(DeleteKeyRequest request) {
@@ -608,11 +600,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKeyRequest 请求对象
+     * @param request DeleteKeyRequest 请求对象
      * @return AsyncInvoker<DeleteKeyRequest, DeleteKeyResponse>
      */
     public AsyncInvoker<DeleteKeyRequest, DeleteKeyResponse> deleteKeyAsyncInvoker(DeleteKeyRequest request) {
-        return new AsyncInvoker<DeleteKeyRequest, DeleteKeyResponse>(request, KmsMeta.deleteKey, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.deleteKey, hcClient);
     }
 
     /**
@@ -622,7 +614,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKeyStoreRequest 请求对象
+     * @param request DeleteKeyStoreRequest 请求对象
      * @return CompletableFuture<DeleteKeyStoreResponse>
      */
     public CompletableFuture<DeleteKeyStoreResponse> deleteKeyStoreAsync(DeleteKeyStoreRequest request) {
@@ -636,13 +628,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKeyStoreRequest 请求对象
+     * @param request DeleteKeyStoreRequest 请求对象
      * @return AsyncInvoker<DeleteKeyStoreRequest, DeleteKeyStoreResponse>
      */
     public AsyncInvoker<DeleteKeyStoreRequest, DeleteKeyStoreResponse> deleteKeyStoreAsyncInvoker(
         DeleteKeyStoreRequest request) {
-        return new AsyncInvoker<DeleteKeyStoreRequest, DeleteKeyStoreResponse>(request, KmsMeta.deleteKeyStore,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.deleteKeyStore, hcClient);
     }
 
     /**
@@ -652,7 +643,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return CompletableFuture<DeleteTagResponse>
      */
     public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
@@ -666,11 +657,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
      */
     public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
-        return new AsyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, KmsMeta.deleteTag, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.deleteTag, hcClient);
     }
 
     /**
@@ -681,7 +672,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableKeyRequest 请求对象
+     * @param request DisableKeyRequest 请求对象
      * @return CompletableFuture<DisableKeyResponse>
      */
     public CompletableFuture<DisableKeyResponse> disableKeyAsync(DisableKeyRequest request) {
@@ -696,11 +687,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableKeyRequest 请求对象
+     * @param request DisableKeyRequest 请求对象
      * @return AsyncInvoker<DisableKeyRequest, DisableKeyResponse>
      */
     public AsyncInvoker<DisableKeyRequest, DisableKeyResponse> disableKeyAsyncInvoker(DisableKeyRequest request) {
-        return new AsyncInvoker<DisableKeyRequest, DisableKeyResponse>(request, KmsMeta.disableKey, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.disableKey, hcClient);
     }
 
     /**
@@ -710,7 +701,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableKeyRotationRequest 请求对象
+     * @param request DisableKeyRotationRequest 请求对象
      * @return CompletableFuture<DisableKeyRotationResponse>
      */
     public CompletableFuture<DisableKeyRotationResponse> disableKeyRotationAsync(DisableKeyRotationRequest request) {
@@ -724,13 +715,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableKeyRotationRequest 请求对象
+     * @param request DisableKeyRotationRequest 请求对象
      * @return AsyncInvoker<DisableKeyRotationRequest, DisableKeyRotationResponse>
      */
     public AsyncInvoker<DisableKeyRotationRequest, DisableKeyRotationResponse> disableKeyRotationAsyncInvoker(
         DisableKeyRotationRequest request) {
-        return new AsyncInvoker<DisableKeyRotationRequest, DisableKeyRotationResponse>(request,
-            KmsMeta.disableKeyRotation, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.disableKeyRotation, hcClient);
     }
 
     /**
@@ -740,7 +730,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableKeyStoreRequest 请求对象
+     * @param request DisableKeyStoreRequest 请求对象
      * @return CompletableFuture<DisableKeyStoreResponse>
      */
     public CompletableFuture<DisableKeyStoreResponse> disableKeyStoreAsync(DisableKeyStoreRequest request) {
@@ -754,13 +744,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableKeyStoreRequest 请求对象
+     * @param request DisableKeyStoreRequest 请求对象
      * @return AsyncInvoker<DisableKeyStoreRequest, DisableKeyStoreResponse>
      */
     public AsyncInvoker<DisableKeyStoreRequest, DisableKeyStoreResponse> disableKeyStoreAsyncInvoker(
         DisableKeyStoreRequest request) {
-        return new AsyncInvoker<DisableKeyStoreRequest, DisableKeyStoreResponse>(request, KmsMeta.disableKeyStore,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.disableKeyStore, hcClient);
     }
 
     /**
@@ -771,7 +760,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableKeyRequest 请求对象
+     * @param request EnableKeyRequest 请求对象
      * @return CompletableFuture<EnableKeyResponse>
      */
     public CompletableFuture<EnableKeyResponse> enableKeyAsync(EnableKeyRequest request) {
@@ -786,11 +775,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableKeyRequest 请求对象
+     * @param request EnableKeyRequest 请求对象
      * @return AsyncInvoker<EnableKeyRequest, EnableKeyResponse>
      */
     public AsyncInvoker<EnableKeyRequest, EnableKeyResponse> enableKeyAsyncInvoker(EnableKeyRequest request) {
-        return new AsyncInvoker<EnableKeyRequest, EnableKeyResponse>(request, KmsMeta.enableKey, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.enableKey, hcClient);
     }
 
     /**
@@ -803,7 +792,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableKeyRotationRequest 请求对象
+     * @param request EnableKeyRotationRequest 请求对象
      * @return CompletableFuture<EnableKeyRotationResponse>
      */
     public CompletableFuture<EnableKeyRotationResponse> enableKeyRotationAsync(EnableKeyRotationRequest request) {
@@ -820,13 +809,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableKeyRotationRequest 请求对象
+     * @param request EnableKeyRotationRequest 请求对象
      * @return AsyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse>
      */
     public AsyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse> enableKeyRotationAsyncInvoker(
         EnableKeyRotationRequest request) {
-        return new AsyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse>(request, KmsMeta.enableKeyRotation,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.enableKeyRotation, hcClient);
     }
 
     /**
@@ -836,7 +824,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableKeyStoreRequest 请求对象
+     * @param request EnableKeyStoreRequest 请求对象
      * @return CompletableFuture<EnableKeyStoreResponse>
      */
     public CompletableFuture<EnableKeyStoreResponse> enableKeyStoreAsync(EnableKeyStoreRequest request) {
@@ -850,13 +838,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableKeyStoreRequest 请求对象
+     * @param request EnableKeyStoreRequest 请求对象
      * @return AsyncInvoker<EnableKeyStoreRequest, EnableKeyStoreResponse>
      */
     public AsyncInvoker<EnableKeyStoreRequest, EnableKeyStoreResponse> enableKeyStoreAsyncInvoker(
         EnableKeyStoreRequest request) {
-        return new AsyncInvoker<EnableKeyStoreRequest, EnableKeyStoreResponse>(request, KmsMeta.enableKeyStore,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.enableKeyStore, hcClient);
     }
 
     /**
@@ -866,7 +853,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EncryptDataRequest 请求对象
+     * @param request EncryptDataRequest 请求对象
      * @return CompletableFuture<EncryptDataResponse>
      */
     public CompletableFuture<EncryptDataResponse> encryptDataAsync(EncryptDataRequest request) {
@@ -880,11 +867,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EncryptDataRequest 请求对象
+     * @param request EncryptDataRequest 请求对象
      * @return AsyncInvoker<EncryptDataRequest, EncryptDataResponse>
      */
     public AsyncInvoker<EncryptDataRequest, EncryptDataResponse> encryptDataAsyncInvoker(EncryptDataRequest request) {
-        return new AsyncInvoker<EncryptDataRequest, EncryptDataResponse>(request, KmsMeta.encryptData, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.encryptData, hcClient);
     }
 
     /**
@@ -894,7 +881,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EncryptDatakeyRequest 请求对象
+     * @param request EncryptDatakeyRequest 请求对象
      * @return CompletableFuture<EncryptDatakeyResponse>
      */
     public CompletableFuture<EncryptDatakeyResponse> encryptDatakeyAsync(EncryptDatakeyRequest request) {
@@ -908,13 +895,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EncryptDatakeyRequest 请求对象
+     * @param request EncryptDatakeyRequest 请求对象
      * @return AsyncInvoker<EncryptDatakeyRequest, EncryptDatakeyResponse>
      */
     public AsyncInvoker<EncryptDatakeyRequest, EncryptDatakeyResponse> encryptDatakeyAsyncInvoker(
         EncryptDatakeyRequest request) {
-        return new AsyncInvoker<EncryptDatakeyRequest, EncryptDatakeyResponse>(request, KmsMeta.encryptDatakey,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.encryptDatakey, hcClient);
     }
 
     /**
@@ -924,7 +910,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportKeyMaterialRequest 请求对象
+     * @param request ImportKeyMaterialRequest 请求对象
      * @return CompletableFuture<ImportKeyMaterialResponse>
      */
     public CompletableFuture<ImportKeyMaterialResponse> importKeyMaterialAsync(ImportKeyMaterialRequest request) {
@@ -938,13 +924,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportKeyMaterialRequest 请求对象
+     * @param request ImportKeyMaterialRequest 请求对象
      * @return AsyncInvoker<ImportKeyMaterialRequest, ImportKeyMaterialResponse>
      */
     public AsyncInvoker<ImportKeyMaterialRequest, ImportKeyMaterialResponse> importKeyMaterialAsyncInvoker(
         ImportKeyMaterialRequest request) {
-        return new AsyncInvoker<ImportKeyMaterialRequest, ImportKeyMaterialResponse>(request, KmsMeta.importKeyMaterial,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.importKeyMaterial, hcClient);
     }
 
     /**
@@ -954,7 +939,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGrantsRequest 请求对象
+     * @param request ListGrantsRequest 请求对象
      * @return CompletableFuture<ListGrantsResponse>
      */
     public CompletableFuture<ListGrantsResponse> listGrantsAsync(ListGrantsRequest request) {
@@ -968,11 +953,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGrantsRequest 请求对象
+     * @param request ListGrantsRequest 请求对象
      * @return AsyncInvoker<ListGrantsRequest, ListGrantsResponse>
      */
     public AsyncInvoker<ListGrantsRequest, ListGrantsResponse> listGrantsAsyncInvoker(ListGrantsRequest request) {
-        return new AsyncInvoker<ListGrantsRequest, ListGrantsResponse>(request, KmsMeta.listGrants, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.listGrants, hcClient);
     }
 
     /**
@@ -982,7 +967,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeyDetailRequest 请求对象
+     * @param request ListKeyDetailRequest 请求对象
      * @return CompletableFuture<ListKeyDetailResponse>
      */
     public CompletableFuture<ListKeyDetailResponse> listKeyDetailAsync(ListKeyDetailRequest request) {
@@ -996,12 +981,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeyDetailRequest 请求对象
+     * @param request ListKeyDetailRequest 请求对象
      * @return AsyncInvoker<ListKeyDetailRequest, ListKeyDetailResponse>
      */
     public AsyncInvoker<ListKeyDetailRequest, ListKeyDetailResponse> listKeyDetailAsyncInvoker(
         ListKeyDetailRequest request) {
-        return new AsyncInvoker<ListKeyDetailRequest, ListKeyDetailResponse>(request, KmsMeta.listKeyDetail, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.listKeyDetail, hcClient);
     }
 
     /**
@@ -1011,7 +996,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeyStoresRequest 请求对象
+     * @param request ListKeyStoresRequest 请求对象
      * @return CompletableFuture<ListKeyStoresResponse>
      */
     public CompletableFuture<ListKeyStoresResponse> listKeyStoresAsync(ListKeyStoresRequest request) {
@@ -1025,12 +1010,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeyStoresRequest 请求对象
+     * @param request ListKeyStoresRequest 请求对象
      * @return AsyncInvoker<ListKeyStoresRequest, ListKeyStoresResponse>
      */
     public AsyncInvoker<ListKeyStoresRequest, ListKeyStoresResponse> listKeyStoresAsyncInvoker(
         ListKeyStoresRequest request) {
-        return new AsyncInvoker<ListKeyStoresRequest, ListKeyStoresResponse>(request, KmsMeta.listKeyStores, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.listKeyStores, hcClient);
     }
 
     /**
@@ -1040,7 +1025,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeysRequest 请求对象
+     * @param request ListKeysRequest 请求对象
      * @return CompletableFuture<ListKeysResponse>
      */
     public CompletableFuture<ListKeysResponse> listKeysAsync(ListKeysRequest request) {
@@ -1054,11 +1039,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeysRequest 请求对象
+     * @param request ListKeysRequest 请求对象
      * @return AsyncInvoker<ListKeysRequest, ListKeysResponse>
      */
     public AsyncInvoker<ListKeysRequest, ListKeysResponse> listKeysAsyncInvoker(ListKeysRequest request) {
-        return new AsyncInvoker<ListKeysRequest, ListKeysResponse>(request, KmsMeta.listKeys, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.listKeys, hcClient);
     }
 
     /**
@@ -1068,7 +1053,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKmsByTagsRequest 请求对象
+     * @param request ListKmsByTagsRequest 请求对象
      * @return CompletableFuture<ListKmsByTagsResponse>
      */
     public CompletableFuture<ListKmsByTagsResponse> listKmsByTagsAsync(ListKmsByTagsRequest request) {
@@ -1082,12 +1067,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKmsByTagsRequest 请求对象
+     * @param request ListKmsByTagsRequest 请求对象
      * @return AsyncInvoker<ListKmsByTagsRequest, ListKmsByTagsResponse>
      */
     public AsyncInvoker<ListKmsByTagsRequest, ListKmsByTagsResponse> listKmsByTagsAsyncInvoker(
         ListKmsByTagsRequest request) {
-        return new AsyncInvoker<ListKmsByTagsRequest, ListKmsByTagsResponse>(request, KmsMeta.listKmsByTags, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.listKmsByTags, hcClient);
     }
 
     /**
@@ -1097,7 +1082,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKmsTagsRequest 请求对象
+     * @param request ListKmsTagsRequest 请求对象
      * @return CompletableFuture<ListKmsTagsResponse>
      */
     public CompletableFuture<ListKmsTagsResponse> listKmsTagsAsync(ListKmsTagsRequest request) {
@@ -1111,11 +1096,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKmsTagsRequest 请求对象
+     * @param request ListKmsTagsRequest 请求对象
      * @return AsyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse>
      */
     public AsyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse> listKmsTagsAsyncInvoker(ListKmsTagsRequest request) {
-        return new AsyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse>(request, KmsMeta.listKmsTags, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.listKmsTags, hcClient);
     }
 
     /**
@@ -1125,7 +1110,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRetirableGrantsRequest 请求对象
+     * @param request ListRetirableGrantsRequest 请求对象
      * @return CompletableFuture<ListRetirableGrantsResponse>
      */
     public CompletableFuture<ListRetirableGrantsResponse> listRetirableGrantsAsync(ListRetirableGrantsRequest request) {
@@ -1139,13 +1124,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRetirableGrantsRequest 请求对象
+     * @param request ListRetirableGrantsRequest 请求对象
      * @return AsyncInvoker<ListRetirableGrantsRequest, ListRetirableGrantsResponse>
      */
     public AsyncInvoker<ListRetirableGrantsRequest, ListRetirableGrantsResponse> listRetirableGrantsAsyncInvoker(
         ListRetirableGrantsRequest request) {
-        return new AsyncInvoker<ListRetirableGrantsRequest, ListRetirableGrantsResponse>(request,
-            KmsMeta.listRetirableGrants, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.listRetirableGrants, hcClient);
     }
 
     /**
@@ -1155,7 +1139,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKeyRotationStatusRequest 请求对象
+     * @param request ShowKeyRotationStatusRequest 请求对象
      * @return CompletableFuture<ShowKeyRotationStatusResponse>
      */
     public CompletableFuture<ShowKeyRotationStatusResponse> showKeyRotationStatusAsync(
@@ -1170,13 +1154,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKeyRotationStatusRequest 请求对象
+     * @param request ShowKeyRotationStatusRequest 请求对象
      * @return AsyncInvoker<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse>
      */
     public AsyncInvoker<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> showKeyRotationStatusAsyncInvoker(
         ShowKeyRotationStatusRequest request) {
-        return new AsyncInvoker<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse>(request,
-            KmsMeta.showKeyRotationStatus, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.showKeyRotationStatus, hcClient);
     }
 
     /**
@@ -1186,7 +1169,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKeyStoreRequest 请求对象
+     * @param request ShowKeyStoreRequest 请求对象
      * @return CompletableFuture<ShowKeyStoreResponse>
      */
     public CompletableFuture<ShowKeyStoreResponse> showKeyStoreAsync(ShowKeyStoreRequest request) {
@@ -1200,12 +1183,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKeyStoreRequest 请求对象
+     * @param request ShowKeyStoreRequest 请求对象
      * @return AsyncInvoker<ShowKeyStoreRequest, ShowKeyStoreResponse>
      */
     public AsyncInvoker<ShowKeyStoreRequest, ShowKeyStoreResponse> showKeyStoreAsyncInvoker(
         ShowKeyStoreRequest request) {
-        return new AsyncInvoker<ShowKeyStoreRequest, ShowKeyStoreResponse>(request, KmsMeta.showKeyStore, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.showKeyStore, hcClient);
     }
 
     /**
@@ -1215,7 +1198,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKmsTagsRequest 请求对象
+     * @param request ShowKmsTagsRequest 请求对象
      * @return CompletableFuture<ShowKmsTagsResponse>
      */
     public CompletableFuture<ShowKmsTagsResponse> showKmsTagsAsync(ShowKmsTagsRequest request) {
@@ -1229,11 +1212,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKmsTagsRequest 请求对象
+     * @param request ShowKmsTagsRequest 请求对象
      * @return AsyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse>
      */
     public AsyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse> showKmsTagsAsyncInvoker(ShowKmsTagsRequest request) {
-        return new AsyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse>(request, KmsMeta.showKmsTags, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.showKmsTags, hcClient);
     }
 
     /**
@@ -1243,7 +1226,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicKeyRequest 请求对象
+     * @param request ShowPublicKeyRequest 请求对象
      * @return CompletableFuture<ShowPublicKeyResponse>
      */
     public CompletableFuture<ShowPublicKeyResponse> showPublicKeyAsync(ShowPublicKeyRequest request) {
@@ -1257,12 +1240,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicKeyRequest 请求对象
+     * @param request ShowPublicKeyRequest 请求对象
      * @return AsyncInvoker<ShowPublicKeyRequest, ShowPublicKeyResponse>
      */
     public AsyncInvoker<ShowPublicKeyRequest, ShowPublicKeyResponse> showPublicKeyAsyncInvoker(
         ShowPublicKeyRequest request) {
-        return new AsyncInvoker<ShowPublicKeyRequest, ShowPublicKeyResponse>(request, KmsMeta.showPublicKey, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.showPublicKey, hcClient);
     }
 
     /**
@@ -1272,7 +1255,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserInstancesRequest 请求对象
+     * @param request ShowUserInstancesRequest 请求对象
      * @return CompletableFuture<ShowUserInstancesResponse>
      */
     public CompletableFuture<ShowUserInstancesResponse> showUserInstancesAsync(ShowUserInstancesRequest request) {
@@ -1286,13 +1269,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserInstancesRequest 请求对象
+     * @param request ShowUserInstancesRequest 请求对象
      * @return AsyncInvoker<ShowUserInstancesRequest, ShowUserInstancesResponse>
      */
     public AsyncInvoker<ShowUserInstancesRequest, ShowUserInstancesResponse> showUserInstancesAsyncInvoker(
         ShowUserInstancesRequest request) {
-        return new AsyncInvoker<ShowUserInstancesRequest, ShowUserInstancesResponse>(request, KmsMeta.showUserInstances,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.showUserInstances, hcClient);
     }
 
     /**
@@ -1302,7 +1284,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserQuotasRequest 请求对象
+     * @param request ShowUserQuotasRequest 请求对象
      * @return CompletableFuture<ShowUserQuotasResponse>
      */
     public CompletableFuture<ShowUserQuotasResponse> showUserQuotasAsync(ShowUserQuotasRequest request) {
@@ -1316,13 +1298,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserQuotasRequest 请求对象
+     * @param request ShowUserQuotasRequest 请求对象
      * @return AsyncInvoker<ShowUserQuotasRequest, ShowUserQuotasResponse>
      */
     public AsyncInvoker<ShowUserQuotasRequest, ShowUserQuotasResponse> showUserQuotasAsyncInvoker(
         ShowUserQuotasRequest request) {
-        return new AsyncInvoker<ShowUserQuotasRequest, ShowUserQuotasResponse>(request, KmsMeta.showUserQuotas,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.showUserQuotas, hcClient);
     }
 
     /**
@@ -1332,7 +1313,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SignRequest 请求对象
+     * @param request SignRequest 请求对象
      * @return CompletableFuture<SignResponse>
      */
     public CompletableFuture<SignResponse> signAsync(SignRequest request) {
@@ -1346,11 +1327,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SignRequest 请求对象
+     * @param request SignRequest 请求对象
      * @return AsyncInvoker<SignRequest, SignResponse>
      */
     public AsyncInvoker<SignRequest, SignResponse> signAsyncInvoker(SignRequest request) {
-        return new AsyncInvoker<SignRequest, SignResponse>(request, KmsMeta.sign, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.sign, hcClient);
     }
 
     /**
@@ -1363,7 +1344,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeyAliasRequest 请求对象
+     * @param request UpdateKeyAliasRequest 请求对象
      * @return CompletableFuture<UpdateKeyAliasResponse>
      */
     public CompletableFuture<UpdateKeyAliasResponse> updateKeyAliasAsync(UpdateKeyAliasRequest request) {
@@ -1380,13 +1361,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeyAliasRequest 请求对象
+     * @param request UpdateKeyAliasRequest 请求对象
      * @return AsyncInvoker<UpdateKeyAliasRequest, UpdateKeyAliasResponse>
      */
     public AsyncInvoker<UpdateKeyAliasRequest, UpdateKeyAliasResponse> updateKeyAliasAsyncInvoker(
         UpdateKeyAliasRequest request) {
-        return new AsyncInvoker<UpdateKeyAliasRequest, UpdateKeyAliasResponse>(request, KmsMeta.updateKeyAlias,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.updateKeyAlias, hcClient);
     }
 
     /**
@@ -1399,7 +1379,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeyDescriptionRequest 请求对象
+     * @param request UpdateKeyDescriptionRequest 请求对象
      * @return CompletableFuture<UpdateKeyDescriptionResponse>
      */
     public CompletableFuture<UpdateKeyDescriptionResponse> updateKeyDescriptionAsync(
@@ -1417,13 +1397,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeyDescriptionRequest 请求对象
+     * @param request UpdateKeyDescriptionRequest 请求对象
      * @return AsyncInvoker<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse>
      */
     public AsyncInvoker<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> updateKeyDescriptionAsyncInvoker(
         UpdateKeyDescriptionRequest request) {
-        return new AsyncInvoker<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse>(request,
-            KmsMeta.updateKeyDescription, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.updateKeyDescription, hcClient);
     }
 
     /**
@@ -1433,7 +1412,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeyRotationIntervalRequest 请求对象
+     * @param request UpdateKeyRotationIntervalRequest 请求对象
      * @return CompletableFuture<UpdateKeyRotationIntervalResponse>
      */
     public CompletableFuture<UpdateKeyRotationIntervalResponse> updateKeyRotationIntervalAsync(
@@ -1448,13 +1427,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeyRotationIntervalRequest 请求对象
+     * @param request UpdateKeyRotationIntervalRequest 请求对象
      * @return AsyncInvoker<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse>
      */
     public AsyncInvoker<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> updateKeyRotationIntervalAsyncInvoker(
         UpdateKeyRotationIntervalRequest request) {
-        return new AsyncInvoker<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse>(request,
-            KmsMeta.updateKeyRotationInterval, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.updateKeyRotationInterval, hcClient);
     }
 
     /**
@@ -1464,7 +1442,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateSignatureRequest 请求对象
+     * @param request ValidateSignatureRequest 请求对象
      * @return CompletableFuture<ValidateSignatureResponse>
      */
     public CompletableFuture<ValidateSignatureResponse> validateSignatureAsync(ValidateSignatureRequest request) {
@@ -1478,13 +1456,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateSignatureRequest 请求对象
+     * @param request ValidateSignatureRequest 请求对象
      * @return AsyncInvoker<ValidateSignatureRequest, ValidateSignatureResponse>
      */
     public AsyncInvoker<ValidateSignatureRequest, ValidateSignatureResponse> validateSignatureAsyncInvoker(
         ValidateSignatureRequest request) {
-        return new AsyncInvoker<ValidateSignatureRequest, ValidateSignatureResponse>(request, KmsMeta.validateSignature,
-            hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.validateSignature, hcClient);
     }
 
     /**
@@ -1494,7 +1471,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return CompletableFuture<ShowVersionResponse>
      */
     public CompletableFuture<ShowVersionResponse> showVersionAsync(ShowVersionRequest request) {
@@ -1508,11 +1485,11 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return AsyncInvoker<ShowVersionRequest, ShowVersionResponse>
      */
     public AsyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionAsyncInvoker(ShowVersionRequest request) {
-        return new AsyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, KmsMeta.showVersion, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.showVersion, hcClient);
     }
 
     /**
@@ -1522,7 +1499,7 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionsRequest 请求对象
+     * @param request ShowVersionsRequest 请求对象
      * @return CompletableFuture<ShowVersionsResponse>
      */
     public CompletableFuture<ShowVersionsResponse> showVersionsAsync(ShowVersionsRequest request) {
@@ -1536,12 +1513,12 @@ public class KmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionsRequest 请求对象
+     * @param request ShowVersionsRequest 请求对象
      * @return AsyncInvoker<ShowVersionsRequest, ShowVersionsResponse>
      */
     public AsyncInvoker<ShowVersionsRequest, ShowVersionsResponse> showVersionsAsyncInvoker(
         ShowVersionsRequest request) {
-        return new AsyncInvoker<ShowVersionsRequest, ShowVersionsResponse>(request, KmsMeta.showVersions, hcClient);
+        return new AsyncInvoker<>(request, KmsMeta.showVersions, hcClient);
     }
 
 }

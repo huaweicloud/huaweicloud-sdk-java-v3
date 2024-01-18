@@ -46,7 +46,7 @@ public class DriftDetail {
     }
 
     /**
-     * 管理账号ID。
+     * 管理纳管账号ID。
      * @return manageAccountId
      */
     public String getManageAccountId() {
@@ -80,7 +80,7 @@ public class DriftDetail {
     }
 
     /**
-     * 漂移发生的账号ID或OU ID。
+     * 漂移发生的纳管账号ID或注册OU ID。
      * @return driftTargetId
      */
     public String getDriftTargetId() {
@@ -97,7 +97,7 @@ public class DriftDetail {
     }
 
     /**
-     * policyId, accountId, accountId和policyId。
+     * 漂移目标类型，类型有accountId和policyId。
      * @return driftTargetType
      */
     public String getDriftTargetType() {
@@ -131,7 +131,7 @@ public class DriftDetail {
     }
 
     /**
-     * 父OU ID。
+     * 父注册OU ID。
      * @return parentOrganizationUnitId
      */
     public String getParentOrganizationUnitId() {

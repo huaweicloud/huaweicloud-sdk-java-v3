@@ -66,7 +66,7 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
     }
 
     /**
-     * 响应状态码。
+     * 响应状态码（不再使用）。
      * @return responseStatus
      */
     public Integer getResponseStatus() {

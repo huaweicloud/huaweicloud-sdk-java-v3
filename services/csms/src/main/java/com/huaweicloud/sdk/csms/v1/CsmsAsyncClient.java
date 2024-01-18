@@ -84,7 +84,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateOrDeleteTagsResponse>
      */
     public CompletableFuture<BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsAsync(
@@ -99,13 +99,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>
      */
     public AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsAsyncInvoker(
         BatchCreateOrDeleteTagsRequest request) {
-        return new AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>(request,
-            CsmsMeta.batchCreateOrDeleteTags, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.batchCreateOrDeleteTags, hcClient);
     }
 
     /**
@@ -119,7 +118,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretRequest 请求对象
+     * @param request CreateSecretRequest 请求对象
      * @return CompletableFuture<CreateSecretResponse>
      */
     public CompletableFuture<CreateSecretResponse> createSecretAsync(CreateSecretRequest request) {
@@ -137,12 +136,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretRequest 请求对象
+     * @param request CreateSecretRequest 请求对象
      * @return AsyncInvoker<CreateSecretRequest, CreateSecretResponse>
      */
     public AsyncInvoker<CreateSecretRequest, CreateSecretResponse> createSecretAsyncInvoker(
         CreateSecretRequest request) {
-        return new AsyncInvoker<CreateSecretRequest, CreateSecretResponse>(request, CsmsMeta.createSecret, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.createSecret, hcClient);
     }
 
     /**
@@ -152,7 +151,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretEventRequest 请求对象
+     * @param request CreateSecretEventRequest 请求对象
      * @return CompletableFuture<CreateSecretEventResponse>
      */
     public CompletableFuture<CreateSecretEventResponse> createSecretEventAsync(CreateSecretEventRequest request) {
@@ -166,13 +165,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretEventRequest 请求对象
+     * @param request CreateSecretEventRequest 请求对象
      * @return AsyncInvoker<CreateSecretEventRequest, CreateSecretEventResponse>
      */
     public AsyncInvoker<CreateSecretEventRequest, CreateSecretEventResponse> createSecretEventAsyncInvoker(
         CreateSecretEventRequest request) {
-        return new AsyncInvoker<CreateSecretEventRequest, CreateSecretEventResponse>(request,
-            CsmsMeta.createSecretEvent, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.createSecretEvent, hcClient);
     }
 
     /**
@@ -182,7 +180,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretTagRequest 请求对象
+     * @param request CreateSecretTagRequest 请求对象
      * @return CompletableFuture<CreateSecretTagResponse>
      */
     public CompletableFuture<CreateSecretTagResponse> createSecretTagAsync(CreateSecretTagRequest request) {
@@ -196,13 +194,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretTagRequest 请求对象
+     * @param request CreateSecretTagRequest 请求对象
      * @return AsyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse>
      */
     public AsyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse> createSecretTagAsyncInvoker(
         CreateSecretTagRequest request) {
-        return new AsyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse>(request, CsmsMeta.createSecretTag,
-            hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.createSecretTag, hcClient);
     }
 
     /**
@@ -212,7 +209,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretVersionRequest 请求对象
+     * @param request CreateSecretVersionRequest 请求对象
      * @return CompletableFuture<CreateSecretVersionResponse>
      */
     public CompletableFuture<CreateSecretVersionResponse> createSecretVersionAsync(CreateSecretVersionRequest request) {
@@ -226,13 +223,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretVersionRequest 请求对象
+     * @param request CreateSecretVersionRequest 请求对象
      * @return AsyncInvoker<CreateSecretVersionRequest, CreateSecretVersionResponse>
      */
     public AsyncInvoker<CreateSecretVersionRequest, CreateSecretVersionResponse> createSecretVersionAsyncInvoker(
         CreateSecretVersionRequest request) {
-        return new AsyncInvoker<CreateSecretVersionRequest, CreateSecretVersionResponse>(request,
-            CsmsMeta.createSecretVersion, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.createSecretVersion, hcClient);
     }
 
     /**
@@ -242,7 +238,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretRequest 请求对象
+     * @param request DeleteSecretRequest 请求对象
      * @return CompletableFuture<DeleteSecretResponse>
      */
     public CompletableFuture<DeleteSecretResponse> deleteSecretAsync(DeleteSecretRequest request) {
@@ -256,12 +252,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretRequest 请求对象
+     * @param request DeleteSecretRequest 请求对象
      * @return AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse>
      */
     public AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse> deleteSecretAsyncInvoker(
         DeleteSecretRequest request) {
-        return new AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse>(request, CsmsMeta.deleteSecret, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.deleteSecret, hcClient);
     }
 
     /**
@@ -271,7 +267,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretEventRequest 请求对象
+     * @param request DeleteSecretEventRequest 请求对象
      * @return CompletableFuture<DeleteSecretEventResponse>
      */
     public CompletableFuture<DeleteSecretEventResponse> deleteSecretEventAsync(DeleteSecretEventRequest request) {
@@ -285,13 +281,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretEventRequest 请求对象
+     * @param request DeleteSecretEventRequest 请求对象
      * @return AsyncInvoker<DeleteSecretEventRequest, DeleteSecretEventResponse>
      */
     public AsyncInvoker<DeleteSecretEventRequest, DeleteSecretEventResponse> deleteSecretEventAsyncInvoker(
         DeleteSecretEventRequest request) {
-        return new AsyncInvoker<DeleteSecretEventRequest, DeleteSecretEventResponse>(request,
-            CsmsMeta.deleteSecretEvent, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.deleteSecretEvent, hcClient);
     }
 
     /**
@@ -301,7 +296,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretForScheduleRequest 请求对象
+     * @param request DeleteSecretForScheduleRequest 请求对象
      * @return CompletableFuture<DeleteSecretForScheduleResponse>
      */
     public CompletableFuture<DeleteSecretForScheduleResponse> deleteSecretForScheduleAsync(
@@ -316,13 +311,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretForScheduleRequest 请求对象
+     * @param request DeleteSecretForScheduleRequest 请求对象
      * @return AsyncInvoker<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse>
      */
     public AsyncInvoker<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse> deleteSecretForScheduleAsyncInvoker(
         DeleteSecretForScheduleRequest request) {
-        return new AsyncInvoker<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse>(request,
-            CsmsMeta.deleteSecretForSchedule, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.deleteSecretForSchedule, hcClient);
     }
 
     /**
@@ -332,7 +326,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretStageRequest 请求对象
+     * @param request DeleteSecretStageRequest 请求对象
      * @return CompletableFuture<DeleteSecretStageResponse>
      */
     public CompletableFuture<DeleteSecretStageResponse> deleteSecretStageAsync(DeleteSecretStageRequest request) {
@@ -346,13 +340,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretStageRequest 请求对象
+     * @param request DeleteSecretStageRequest 请求对象
      * @return AsyncInvoker<DeleteSecretStageRequest, DeleteSecretStageResponse>
      */
     public AsyncInvoker<DeleteSecretStageRequest, DeleteSecretStageResponse> deleteSecretStageAsyncInvoker(
         DeleteSecretStageRequest request) {
-        return new AsyncInvoker<DeleteSecretStageRequest, DeleteSecretStageResponse>(request,
-            CsmsMeta.deleteSecretStage, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.deleteSecretStage, hcClient);
     }
 
     /**
@@ -362,7 +355,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretTagRequest 请求对象
+     * @param request DeleteSecretTagRequest 请求对象
      * @return CompletableFuture<DeleteSecretTagResponse>
      */
     public CompletableFuture<DeleteSecretTagResponse> deleteSecretTagAsync(DeleteSecretTagRequest request) {
@@ -376,13 +369,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretTagRequest 请求对象
+     * @param request DeleteSecretTagRequest 请求对象
      * @return AsyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse>
      */
     public AsyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse> deleteSecretTagAsyncInvoker(
         DeleteSecretTagRequest request) {
-        return new AsyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse>(request, CsmsMeta.deleteSecretTag,
-            hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.deleteSecretTag, hcClient);
     }
 
     /**
@@ -392,7 +384,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadSecretBlobRequest 请求对象
+     * @param request DownloadSecretBlobRequest 请求对象
      * @return CompletableFuture<DownloadSecretBlobResponse>
      */
     public CompletableFuture<DownloadSecretBlobResponse> downloadSecretBlobAsync(DownloadSecretBlobRequest request) {
@@ -406,13 +398,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadSecretBlobRequest 请求对象
+     * @param request DownloadSecretBlobRequest 请求对象
      * @return AsyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse>
      */
     public AsyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse> downloadSecretBlobAsyncInvoker(
         DownloadSecretBlobRequest request) {
-        return new AsyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse>(request,
-            CsmsMeta.downloadSecretBlob, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.downloadSecretBlob, hcClient);
     }
 
     /**
@@ -422,7 +413,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationRecordsRequest 请求对象
+     * @param request ListNotificationRecordsRequest 请求对象
      * @return CompletableFuture<ListNotificationRecordsResponse>
      */
     public CompletableFuture<ListNotificationRecordsResponse> listNotificationRecordsAsync(
@@ -437,13 +428,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationRecordsRequest 请求对象
+     * @param request ListNotificationRecordsRequest 请求对象
      * @return AsyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse>
      */
     public AsyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse> listNotificationRecordsAsyncInvoker(
         ListNotificationRecordsRequest request) {
-        return new AsyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse>(request,
-            CsmsMeta.listNotificationRecords, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.listNotificationRecords, hcClient);
     }
 
     /**
@@ -453,7 +443,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectSecretsTagsRequest 请求对象
+     * @param request ListProjectSecretsTagsRequest 请求对象
      * @return CompletableFuture<ListProjectSecretsTagsResponse>
      */
     public CompletableFuture<ListProjectSecretsTagsResponse> listProjectSecretsTagsAsync(
@@ -468,13 +458,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectSecretsTagsRequest 请求对象
+     * @param request ListProjectSecretsTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse>
      */
     public AsyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> listProjectSecretsTagsAsyncInvoker(
         ListProjectSecretsTagsRequest request) {
-        return new AsyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse>(request,
-            CsmsMeta.listProjectSecretsTags, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.listProjectSecretsTags, hcClient);
     }
 
     /**
@@ -484,7 +473,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return CompletableFuture<ListResourceInstancesResponse>
      */
     public CompletableFuture<ListResourceInstancesResponse> listResourceInstancesAsync(
@@ -499,13 +488,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
      */
     public AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesAsyncInvoker(
         ListResourceInstancesRequest request) {
-        return new AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
-            CsmsMeta.listResourceInstances, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.listResourceInstances, hcClient);
     }
 
     /**
@@ -515,7 +503,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretEventsRequest 请求对象
+     * @param request ListSecretEventsRequest 请求对象
      * @return CompletableFuture<ListSecretEventsResponse>
      */
     public CompletableFuture<ListSecretEventsResponse> listSecretEventsAsync(ListSecretEventsRequest request) {
@@ -529,13 +517,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretEventsRequest 请求对象
+     * @param request ListSecretEventsRequest 请求对象
      * @return AsyncInvoker<ListSecretEventsRequest, ListSecretEventsResponse>
      */
     public AsyncInvoker<ListSecretEventsRequest, ListSecretEventsResponse> listSecretEventsAsyncInvoker(
         ListSecretEventsRequest request) {
-        return new AsyncInvoker<ListSecretEventsRequest, ListSecretEventsResponse>(request, CsmsMeta.listSecretEvents,
-            hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.listSecretEvents, hcClient);
     }
 
     /**
@@ -545,7 +532,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretTagsRequest 请求对象
+     * @param request ListSecretTagsRequest 请求对象
      * @return CompletableFuture<ListSecretTagsResponse>
      */
     public CompletableFuture<ListSecretTagsResponse> listSecretTagsAsync(ListSecretTagsRequest request) {
@@ -559,13 +546,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretTagsRequest 请求对象
+     * @param request ListSecretTagsRequest 请求对象
      * @return AsyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse>
      */
     public AsyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse> listSecretTagsAsyncInvoker(
         ListSecretTagsRequest request) {
-        return new AsyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse>(request, CsmsMeta.listSecretTags,
-            hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.listSecretTags, hcClient);
     }
 
     /**
@@ -575,7 +561,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretVersionsRequest 请求对象
+     * @param request ListSecretVersionsRequest 请求对象
      * @return CompletableFuture<ListSecretVersionsResponse>
      */
     public CompletableFuture<ListSecretVersionsResponse> listSecretVersionsAsync(ListSecretVersionsRequest request) {
@@ -589,13 +575,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretVersionsRequest 请求对象
+     * @param request ListSecretVersionsRequest 请求对象
      * @return AsyncInvoker<ListSecretVersionsRequest, ListSecretVersionsResponse>
      */
     public AsyncInvoker<ListSecretVersionsRequest, ListSecretVersionsResponse> listSecretVersionsAsyncInvoker(
         ListSecretVersionsRequest request) {
-        return new AsyncInvoker<ListSecretVersionsRequest, ListSecretVersionsResponse>(request,
-            CsmsMeta.listSecretVersions, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.listSecretVersions, hcClient);
     }
 
     /**
@@ -605,7 +590,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretsRequest 请求对象
+     * @param request ListSecretsRequest 请求对象
      * @return CompletableFuture<ListSecretsResponse>
      */
     public CompletableFuture<ListSecretsResponse> listSecretsAsync(ListSecretsRequest request) {
@@ -619,11 +604,11 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretsRequest 请求对象
+     * @param request ListSecretsRequest 请求对象
      * @return AsyncInvoker<ListSecretsRequest, ListSecretsResponse>
      */
     public AsyncInvoker<ListSecretsRequest, ListSecretsResponse> listSecretsAsyncInvoker(ListSecretsRequest request) {
-        return new AsyncInvoker<ListSecretsRequest, ListSecretsResponse>(request, CsmsMeta.listSecrets, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.listSecrets, hcClient);
     }
 
     /**
@@ -633,7 +618,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreSecretRequest 请求对象
+     * @param request RestoreSecretRequest 请求对象
      * @return CompletableFuture<RestoreSecretResponse>
      */
     public CompletableFuture<RestoreSecretResponse> restoreSecretAsync(RestoreSecretRequest request) {
@@ -647,12 +632,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreSecretRequest 请求对象
+     * @param request RestoreSecretRequest 请求对象
      * @return AsyncInvoker<RestoreSecretRequest, RestoreSecretResponse>
      */
     public AsyncInvoker<RestoreSecretRequest, RestoreSecretResponse> restoreSecretAsyncInvoker(
         RestoreSecretRequest request) {
-        return new AsyncInvoker<RestoreSecretRequest, RestoreSecretResponse>(request, CsmsMeta.restoreSecret, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.restoreSecret, hcClient);
     }
 
     /**
@@ -662,7 +647,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RotateSecretRequest 请求对象
+     * @param request RotateSecretRequest 请求对象
      * @return CompletableFuture<RotateSecretResponse>
      */
     public CompletableFuture<RotateSecretResponse> rotateSecretAsync(RotateSecretRequest request) {
@@ -676,12 +661,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RotateSecretRequest 请求对象
+     * @param request RotateSecretRequest 请求对象
      * @return AsyncInvoker<RotateSecretRequest, RotateSecretResponse>
      */
     public AsyncInvoker<RotateSecretRequest, RotateSecretResponse> rotateSecretAsyncInvoker(
         RotateSecretRequest request) {
-        return new AsyncInvoker<RotateSecretRequest, RotateSecretResponse>(request, CsmsMeta.rotateSecret, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.rotateSecret, hcClient);
     }
 
     /**
@@ -691,7 +676,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretRequest 请求对象
+     * @param request ShowSecretRequest 请求对象
      * @return CompletableFuture<ShowSecretResponse>
      */
     public CompletableFuture<ShowSecretResponse> showSecretAsync(ShowSecretRequest request) {
@@ -705,11 +690,11 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretRequest 请求对象
+     * @param request ShowSecretRequest 请求对象
      * @return AsyncInvoker<ShowSecretRequest, ShowSecretResponse>
      */
     public AsyncInvoker<ShowSecretRequest, ShowSecretResponse> showSecretAsyncInvoker(ShowSecretRequest request) {
-        return new AsyncInvoker<ShowSecretRequest, ShowSecretResponse>(request, CsmsMeta.showSecret, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.showSecret, hcClient);
     }
 
     /**
@@ -719,7 +704,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretEventRequest 请求对象
+     * @param request ShowSecretEventRequest 请求对象
      * @return CompletableFuture<ShowSecretEventResponse>
      */
     public CompletableFuture<ShowSecretEventResponse> showSecretEventAsync(ShowSecretEventRequest request) {
@@ -733,13 +718,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretEventRequest 请求对象
+     * @param request ShowSecretEventRequest 请求对象
      * @return AsyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse>
      */
     public AsyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse> showSecretEventAsyncInvoker(
         ShowSecretEventRequest request) {
-        return new AsyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse>(request, CsmsMeta.showSecretEvent,
-            hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.showSecretEvent, hcClient);
     }
 
     /**
@@ -749,7 +733,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretStageRequest 请求对象
+     * @param request ShowSecretStageRequest 请求对象
      * @return CompletableFuture<ShowSecretStageResponse>
      */
     public CompletableFuture<ShowSecretStageResponse> showSecretStageAsync(ShowSecretStageRequest request) {
@@ -763,13 +747,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretStageRequest 请求对象
+     * @param request ShowSecretStageRequest 请求对象
      * @return AsyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse>
      */
     public AsyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse> showSecretStageAsyncInvoker(
         ShowSecretStageRequest request) {
-        return new AsyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse>(request, CsmsMeta.showSecretStage,
-            hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.showSecretStage, hcClient);
     }
 
     /**
@@ -780,7 +763,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretVersionRequest 请求对象
+     * @param request ShowSecretVersionRequest 请求对象
      * @return CompletableFuture<ShowSecretVersionResponse>
      */
     public CompletableFuture<ShowSecretVersionResponse> showSecretVersionAsync(ShowSecretVersionRequest request) {
@@ -795,13 +778,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretVersionRequest 请求对象
+     * @param request ShowSecretVersionRequest 请求对象
      * @return AsyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse>
      */
     public AsyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse> showSecretVersionAsyncInvoker(
         ShowSecretVersionRequest request) {
-        return new AsyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse>(request,
-            CsmsMeta.showSecretVersion, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.showSecretVersion, hcClient);
     }
 
     /**
@@ -811,7 +793,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretRequest 请求对象
+     * @param request UpdateSecretRequest 请求对象
      * @return CompletableFuture<UpdateSecretResponse>
      */
     public CompletableFuture<UpdateSecretResponse> updateSecretAsync(UpdateSecretRequest request) {
@@ -825,12 +807,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretRequest 请求对象
+     * @param request UpdateSecretRequest 请求对象
      * @return AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse>
      */
     public AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse> updateSecretAsyncInvoker(
         UpdateSecretRequest request) {
-        return new AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse>(request, CsmsMeta.updateSecret, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.updateSecret, hcClient);
     }
 
     /**
@@ -840,7 +822,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretEventRequest 请求对象
+     * @param request UpdateSecretEventRequest 请求对象
      * @return CompletableFuture<UpdateSecretEventResponse>
      */
     public CompletableFuture<UpdateSecretEventResponse> updateSecretEventAsync(UpdateSecretEventRequest request) {
@@ -854,13 +836,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretEventRequest 请求对象
+     * @param request UpdateSecretEventRequest 请求对象
      * @return AsyncInvoker<UpdateSecretEventRequest, UpdateSecretEventResponse>
      */
     public AsyncInvoker<UpdateSecretEventRequest, UpdateSecretEventResponse> updateSecretEventAsyncInvoker(
         UpdateSecretEventRequest request) {
-        return new AsyncInvoker<UpdateSecretEventRequest, UpdateSecretEventResponse>(request,
-            CsmsMeta.updateSecretEvent, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.updateSecretEvent, hcClient);
     }
 
     /**
@@ -870,7 +851,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretStageRequest 请求对象
+     * @param request UpdateSecretStageRequest 请求对象
      * @return CompletableFuture<UpdateSecretStageResponse>
      */
     public CompletableFuture<UpdateSecretStageResponse> updateSecretStageAsync(UpdateSecretStageRequest request) {
@@ -884,13 +865,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretStageRequest 请求对象
+     * @param request UpdateSecretStageRequest 请求对象
      * @return AsyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse>
      */
     public AsyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse> updateSecretStageAsyncInvoker(
         UpdateSecretStageRequest request) {
-        return new AsyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse>(request,
-            CsmsMeta.updateSecretStage, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.updateSecretStage, hcClient);
     }
 
     /**
@@ -900,7 +880,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVersionRequest 请求对象
+     * @param request UpdateVersionRequest 请求对象
      * @return CompletableFuture<UpdateVersionResponse>
      */
     public CompletableFuture<UpdateVersionResponse> updateVersionAsync(UpdateVersionRequest request) {
@@ -914,12 +894,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVersionRequest 请求对象
+     * @param request UpdateVersionRequest 请求对象
      * @return AsyncInvoker<UpdateVersionRequest, UpdateVersionResponse>
      */
     public AsyncInvoker<UpdateVersionRequest, UpdateVersionResponse> updateVersionAsyncInvoker(
         UpdateVersionRequest request) {
-        return new AsyncInvoker<UpdateVersionRequest, UpdateVersionResponse>(request, CsmsMeta.updateVersion, hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.updateVersion, hcClient);
     }
 
     /**
@@ -929,7 +909,7 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadSecretBlobRequest 请求对象
+     * @param request UploadSecretBlobRequest 请求对象
      * @return CompletableFuture<UploadSecretBlobResponse>
      */
     public CompletableFuture<UploadSecretBlobResponse> uploadSecretBlobAsync(UploadSecretBlobRequest request) {
@@ -943,13 +923,12 @@ public class CsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadSecretBlobRequest 请求对象
+     * @param request UploadSecretBlobRequest 请求对象
      * @return AsyncInvoker<UploadSecretBlobRequest, UploadSecretBlobResponse>
      */
     public AsyncInvoker<UploadSecretBlobRequest, UploadSecretBlobResponse> uploadSecretBlobAsyncInvoker(
         UploadSecretBlobRequest request) {
-        return new AsyncInvoker<UploadSecretBlobRequest, UploadSecretBlobResponse>(request, CsmsMeta.uploadSecretBlob,
-            hcClient);
+        return new AsyncInvoker<>(request, CsmsMeta.uploadSecretBlob, hcClient);
     }
 
 }

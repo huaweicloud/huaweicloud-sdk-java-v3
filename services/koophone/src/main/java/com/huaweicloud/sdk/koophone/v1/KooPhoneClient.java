@@ -36,7 +36,7 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AsyncInvokeInstanceRequest 请求对象
+     * @param request AsyncInvokeInstanceRequest 请求对象
      * @return AsyncInvokeInstanceResponse
      */
     public AsyncInvokeInstanceResponse asyncInvokeInstance(AsyncInvokeInstanceRequest request) {
@@ -50,13 +50,12 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AsyncInvokeInstanceRequest 请求对象
+     * @param request AsyncInvokeInstanceRequest 请求对象
      * @return SyncInvoker<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse>
      */
     public SyncInvoker<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse> asyncInvokeInstanceInvoker(
         AsyncInvokeInstanceRequest request) {
-        return new SyncInvoker<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse>(request,
-            KooPhoneMeta.asyncInvokeInstance, hcClient);
+        return new SyncInvoker<>(request, KooPhoneMeta.asyncInvokeInstance, hcClient);
     }
 
     /**
@@ -66,7 +65,7 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchResetInstanceRequest 请求对象
+     * @param request BatchResetInstanceRequest 请求对象
      * @return BatchResetInstanceResponse
      */
     public BatchResetInstanceResponse batchResetInstance(BatchResetInstanceRequest request) {
@@ -80,13 +79,12 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchResetInstanceRequest 请求对象
+     * @param request BatchResetInstanceRequest 请求对象
      * @return SyncInvoker<BatchResetInstanceRequest, BatchResetInstanceResponse>
      */
     public SyncInvoker<BatchResetInstanceRequest, BatchResetInstanceResponse> batchResetInstanceInvoker(
         BatchResetInstanceRequest request) {
-        return new SyncInvoker<BatchResetInstanceRequest, BatchResetInstanceResponse>(request,
-            KooPhoneMeta.batchResetInstance, hcClient);
+        return new SyncInvoker<>(request, KooPhoneMeta.batchResetInstance, hcClient);
     }
 
     /**
@@ -96,7 +94,7 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowInstanceRequest 请求对象
+     * @param request BatchShowInstanceRequest 请求对象
      * @return BatchShowInstanceResponse
      */
     public BatchShowInstanceResponse batchShowInstance(BatchShowInstanceRequest request) {
@@ -110,13 +108,12 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowInstanceRequest 请求对象
+     * @param request BatchShowInstanceRequest 请求对象
      * @return SyncInvoker<BatchShowInstanceRequest, BatchShowInstanceResponse>
      */
     public SyncInvoker<BatchShowInstanceRequest, BatchShowInstanceResponse> batchShowInstanceInvoker(
         BatchShowInstanceRequest request) {
-        return new SyncInvoker<BatchShowInstanceRequest, BatchShowInstanceResponse>(request,
-            KooPhoneMeta.batchShowInstance, hcClient);
+        return new SyncInvoker<>(request, KooPhoneMeta.batchShowInstance, hcClient);
     }
 
     /**
@@ -126,7 +123,7 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteJobRequest 请求对象
+     * @param request ExecuteJobRequest 请求对象
      * @return ExecuteJobResponse
      */
     public ExecuteJobResponse executeJob(ExecuteJobRequest request) {
@@ -140,11 +137,11 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteJobRequest 请求对象
+     * @param request ExecuteJobRequest 请求对象
      * @return SyncInvoker<ExecuteJobRequest, ExecuteJobResponse>
      */
     public SyncInvoker<ExecuteJobRequest, ExecuteJobResponse> executeJobInvoker(ExecuteJobRequest request) {
-        return new SyncInvoker<ExecuteJobRequest, ExecuteJobResponse>(request, KooPhoneMeta.executeJob, hcClient);
+        return new SyncInvoker<>(request, KooPhoneMeta.executeJob, hcClient);
     }
 
     /**
@@ -154,7 +151,7 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetVideoRequest 请求对象
+     * @param request SetVideoRequest 请求对象
      * @return SetVideoResponse
      */
     public SetVideoResponse setVideo(SetVideoRequest request) {
@@ -168,11 +165,11 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetVideoRequest 请求对象
+     * @param request SetVideoRequest 请求对象
      * @return SyncInvoker<SetVideoRequest, SetVideoResponse>
      */
     public SyncInvoker<SetVideoRequest, SetVideoResponse> setVideoInvoker(SetVideoRequest request) {
-        return new SyncInvoker<SetVideoRequest, SetVideoResponse>(request, KooPhoneMeta.setVideo, hcClient);
+        return new SyncInvoker<>(request, KooPhoneMeta.setVideo, hcClient);
     }
 
     /**
@@ -182,7 +179,7 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncInvokeInstanceRequest 请求对象
+     * @param request SyncInvokeInstanceRequest 请求对象
      * @return SyncInvokeInstanceResponse
      */
     public SyncInvokeInstanceResponse syncInvokeInstance(SyncInvokeInstanceRequest request) {
@@ -196,13 +193,12 @@ public class KooPhoneClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncInvokeInstanceRequest 请求对象
+     * @param request SyncInvokeInstanceRequest 请求对象
      * @return SyncInvoker<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse>
      */
     public SyncInvoker<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse> syncInvokeInstanceInvoker(
         SyncInvokeInstanceRequest request) {
-        return new SyncInvoker<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse>(request,
-            KooPhoneMeta.syncInvokeInstance, hcClient);
+        return new SyncInvoker<>(request, KooPhoneMeta.syncInvokeInstance, hcClient);
     }
 
 }

@@ -85,7 +85,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateVolumeTagsRequest 请求对象
+     * @param request BatchCreateVolumeTagsRequest 请求对象
      * @return BatchCreateVolumeTagsResponse
      */
     public BatchCreateVolumeTagsResponse batchCreateVolumeTags(BatchCreateVolumeTagsRequest request) {
@@ -102,13 +102,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateVolumeTagsRequest 请求对象
+     * @param request BatchCreateVolumeTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse>
      */
     public SyncInvoker<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse> batchCreateVolumeTagsInvoker(
         BatchCreateVolumeTagsRequest request) {
-        return new SyncInvoker<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse>(request,
-            EvsMeta.batchCreateVolumeTags, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.batchCreateVolumeTags, hcClient);
     }
 
     /**
@@ -118,7 +117,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteVolumeTagsRequest 请求对象
+     * @param request BatchDeleteVolumeTagsRequest 请求对象
      * @return BatchDeleteVolumeTagsResponse
      */
     public BatchDeleteVolumeTagsResponse batchDeleteVolumeTags(BatchDeleteVolumeTagsRequest request) {
@@ -132,13 +131,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteVolumeTagsRequest 请求对象
+     * @param request BatchDeleteVolumeTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse>
      */
     public SyncInvoker<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse> batchDeleteVolumeTagsInvoker(
         BatchDeleteVolumeTagsRequest request) {
-        return new SyncInvoker<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse>(request,
-            EvsMeta.batchDeleteVolumeTags, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.batchDeleteVolumeTags, hcClient);
     }
 
     /**
@@ -148,7 +146,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderAcceptVolumeTransferRequest 请求对象
+     * @param request CinderAcceptVolumeTransferRequest 请求对象
      * @return CinderAcceptVolumeTransferResponse
      */
     public CinderAcceptVolumeTransferResponse cinderAcceptVolumeTransfer(CinderAcceptVolumeTransferRequest request) {
@@ -162,13 +160,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderAcceptVolumeTransferRequest 请求对象
+     * @param request CinderAcceptVolumeTransferRequest 请求对象
      * @return SyncInvoker<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse>
      */
     public SyncInvoker<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse> cinderAcceptVolumeTransferInvoker(
         CinderAcceptVolumeTransferRequest request) {
-        return new SyncInvoker<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse>(request,
-            EvsMeta.cinderAcceptVolumeTransfer, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.cinderAcceptVolumeTransfer, hcClient);
     }
 
     /**
@@ -179,7 +176,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderCreateVolumeTransferRequest 请求对象
+     * @param request CinderCreateVolumeTransferRequest 请求对象
      * @return CinderCreateVolumeTransferResponse
      */
     public CinderCreateVolumeTransferResponse cinderCreateVolumeTransfer(CinderCreateVolumeTransferRequest request) {
@@ -194,13 +191,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderCreateVolumeTransferRequest 请求对象
+     * @param request CinderCreateVolumeTransferRequest 请求对象
      * @return SyncInvoker<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse>
      */
     public SyncInvoker<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse> cinderCreateVolumeTransferInvoker(
         CinderCreateVolumeTransferRequest request) {
-        return new SyncInvoker<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse>(request,
-            EvsMeta.cinderCreateVolumeTransfer, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.cinderCreateVolumeTransfer, hcClient);
     }
 
     /**
@@ -210,7 +206,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderDeleteVolumeTransferRequest 请求对象
+     * @param request CinderDeleteVolumeTransferRequest 请求对象
      * @return CinderDeleteVolumeTransferResponse
      */
     public CinderDeleteVolumeTransferResponse cinderDeleteVolumeTransfer(CinderDeleteVolumeTransferRequest request) {
@@ -224,13 +220,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderDeleteVolumeTransferRequest 请求对象
+     * @param request CinderDeleteVolumeTransferRequest 请求对象
      * @return SyncInvoker<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse>
      */
     public SyncInvoker<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse> cinderDeleteVolumeTransferInvoker(
         CinderDeleteVolumeTransferRequest request) {
-        return new SyncInvoker<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse>(request,
-            EvsMeta.cinderDeleteVolumeTransfer, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.cinderDeleteVolumeTransfer, hcClient);
     }
 
     /**
@@ -240,7 +235,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListAvailabilityZonesRequest 请求对象
+     * @param request CinderListAvailabilityZonesRequest 请求对象
      * @return CinderListAvailabilityZonesResponse
      */
     public CinderListAvailabilityZonesResponse cinderListAvailabilityZones(CinderListAvailabilityZonesRequest request) {
@@ -254,13 +249,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListAvailabilityZonesRequest 请求对象
+     * @param request CinderListAvailabilityZonesRequest 请求对象
      * @return SyncInvoker<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse>
      */
     public SyncInvoker<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> cinderListAvailabilityZonesInvoker(
         CinderListAvailabilityZonesRequest request) {
-        return new SyncInvoker<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse>(request,
-            EvsMeta.cinderListAvailabilityZones, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.cinderListAvailabilityZones, hcClient);
     }
 
     /**
@@ -270,7 +264,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListQuotasRequest 请求对象
+     * @param request CinderListQuotasRequest 请求对象
      * @return CinderListQuotasResponse
      */
     public CinderListQuotasResponse cinderListQuotas(CinderListQuotasRequest request) {
@@ -284,13 +278,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListQuotasRequest 请求对象
+     * @param request CinderListQuotasRequest 请求对象
      * @return SyncInvoker<CinderListQuotasRequest, CinderListQuotasResponse>
      */
     public SyncInvoker<CinderListQuotasRequest, CinderListQuotasResponse> cinderListQuotasInvoker(
         CinderListQuotasRequest request) {
-        return new SyncInvoker<CinderListQuotasRequest, CinderListQuotasResponse>(request, EvsMeta.cinderListQuotas,
-            hcClient);
+        return new SyncInvoker<>(request, EvsMeta.cinderListQuotas, hcClient);
     }
 
     /**
@@ -300,7 +293,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListVolumeTransfersRequest 请求对象
+     * @param request CinderListVolumeTransfersRequest 请求对象
      * @return CinderListVolumeTransfersResponse
      */
     public CinderListVolumeTransfersResponse cinderListVolumeTransfers(CinderListVolumeTransfersRequest request) {
@@ -314,13 +307,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListVolumeTransfersRequest 请求对象
+     * @param request CinderListVolumeTransfersRequest 请求对象
      * @return SyncInvoker<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse>
      */
     public SyncInvoker<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse> cinderListVolumeTransfersInvoker(
         CinderListVolumeTransfersRequest request) {
-        return new SyncInvoker<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse>(request,
-            EvsMeta.cinderListVolumeTransfers, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.cinderListVolumeTransfers, hcClient);
     }
 
     /**
@@ -330,7 +322,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListVolumeTypesRequest 请求对象
+     * @param request CinderListVolumeTypesRequest 请求对象
      * @return CinderListVolumeTypesResponse
      */
     public CinderListVolumeTypesResponse cinderListVolumeTypes(CinderListVolumeTypesRequest request) {
@@ -344,13 +336,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListVolumeTypesRequest 请求对象
+     * @param request CinderListVolumeTypesRequest 请求对象
      * @return SyncInvoker<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse>
      */
     public SyncInvoker<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse> cinderListVolumeTypesInvoker(
         CinderListVolumeTypesRequest request) {
-        return new SyncInvoker<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse>(request,
-            EvsMeta.cinderListVolumeTypes, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.cinderListVolumeTypes, hcClient);
     }
 
     /**
@@ -360,7 +351,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderShowVolumeTransferRequest 请求对象
+     * @param request CinderShowVolumeTransferRequest 请求对象
      * @return CinderShowVolumeTransferResponse
      */
     public CinderShowVolumeTransferResponse cinderShowVolumeTransfer(CinderShowVolumeTransferRequest request) {
@@ -374,13 +365,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderShowVolumeTransferRequest 请求对象
+     * @param request CinderShowVolumeTransferRequest 请求对象
      * @return SyncInvoker<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse>
      */
     public SyncInvoker<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse> cinderShowVolumeTransferInvoker(
         CinderShowVolumeTransferRequest request) {
-        return new SyncInvoker<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse>(request,
-            EvsMeta.cinderShowVolumeTransfer, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.cinderShowVolumeTransfer, hcClient);
     }
 
     /**
@@ -390,7 +380,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSnapshotRequest 请求对象
+     * @param request CreateSnapshotRequest 请求对象
      * @return CreateSnapshotResponse
      */
     public CreateSnapshotResponse createSnapshot(CreateSnapshotRequest request) {
@@ -404,13 +394,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSnapshotRequest 请求对象
+     * @param request CreateSnapshotRequest 请求对象
      * @return SyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>
      */
     public SyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshotInvoker(
         CreateSnapshotRequest request) {
-        return new SyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>(request, EvsMeta.createSnapshot,
-            hcClient);
+        return new SyncInvoker<>(request, EvsMeta.createSnapshot, hcClient);
     }
 
     /**
@@ -425,7 +414,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVolumeRequest 请求对象
+     * @param request CreateVolumeRequest 请求对象
      * @return CreateVolumeResponse
      */
     public CreateVolumeResponse createVolume(CreateVolumeRequest request) {
@@ -444,11 +433,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVolumeRequest 请求对象
+     * @param request CreateVolumeRequest 请求对象
      * @return SyncInvoker<CreateVolumeRequest, CreateVolumeResponse>
      */
     public SyncInvoker<CreateVolumeRequest, CreateVolumeResponse> createVolumeInvoker(CreateVolumeRequest request) {
-        return new SyncInvoker<CreateVolumeRequest, CreateVolumeResponse>(request, EvsMeta.createVolume, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.createVolume, hcClient);
     }
 
     /**
@@ -458,7 +447,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotRequest 请求对象
+     * @param request DeleteSnapshotRequest 请求对象
      * @return DeleteSnapshotResponse
      */
     public DeleteSnapshotResponse deleteSnapshot(DeleteSnapshotRequest request) {
@@ -472,13 +461,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotRequest 请求对象
+     * @param request DeleteSnapshotRequest 请求对象
      * @return SyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse>
      */
     public SyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshotInvoker(
         DeleteSnapshotRequest request) {
-        return new SyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse>(request, EvsMeta.deleteSnapshot,
-            hcClient);
+        return new SyncInvoker<>(request, EvsMeta.deleteSnapshot, hcClient);
     }
 
     /**
@@ -488,7 +476,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVolumeRequest 请求对象
+     * @param request DeleteVolumeRequest 请求对象
      * @return DeleteVolumeResponse
      */
     public DeleteVolumeResponse deleteVolume(DeleteVolumeRequest request) {
@@ -502,11 +490,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVolumeRequest 请求对象
+     * @param request DeleteVolumeRequest 请求对象
      * @return SyncInvoker<DeleteVolumeRequest, DeleteVolumeResponse>
      */
     public SyncInvoker<DeleteVolumeRequest, DeleteVolumeResponse> deleteVolumeInvoker(DeleteVolumeRequest request) {
-        return new SyncInvoker<DeleteVolumeRequest, DeleteVolumeResponse>(request, EvsMeta.deleteVolume, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.deleteVolume, hcClient);
     }
 
     /**
@@ -516,7 +504,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotsRequest 请求对象
+     * @param request ListSnapshotsRequest 请求对象
      * @return ListSnapshotsResponse
      */
     public ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request) {
@@ -530,11 +518,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotsRequest 请求对象
+     * @param request ListSnapshotsRequest 请求对象
      * @return SyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>
      */
     public SyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsInvoker(ListSnapshotsRequest request) {
-        return new SyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>(request, EvsMeta.listSnapshots, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.listSnapshots, hcClient);
     }
 
     /**
@@ -544,7 +532,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumeTagsRequest 请求对象
+     * @param request ListVolumeTagsRequest 请求对象
      * @return ListVolumeTagsResponse
      */
     public ListVolumeTagsResponse listVolumeTags(ListVolumeTagsRequest request) {
@@ -558,13 +546,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumeTagsRequest 请求对象
+     * @param request ListVolumeTagsRequest 请求对象
      * @return SyncInvoker<ListVolumeTagsRequest, ListVolumeTagsResponse>
      */
     public SyncInvoker<ListVolumeTagsRequest, ListVolumeTagsResponse> listVolumeTagsInvoker(
         ListVolumeTagsRequest request) {
-        return new SyncInvoker<ListVolumeTagsRequest, ListVolumeTagsResponse>(request, EvsMeta.listVolumeTags,
-            hcClient);
+        return new SyncInvoker<>(request, EvsMeta.listVolumeTags, hcClient);
     }
 
     /**
@@ -574,7 +561,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumesRequest 请求对象
+     * @param request ListVolumesRequest 请求对象
      * @return ListVolumesResponse
      */
     public ListVolumesResponse listVolumes(ListVolumesRequest request) {
@@ -588,11 +575,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumesRequest 请求对象
+     * @param request ListVolumesRequest 请求对象
      * @return SyncInvoker<ListVolumesRequest, ListVolumesResponse>
      */
     public SyncInvoker<ListVolumesRequest, ListVolumesResponse> listVolumesInvoker(ListVolumesRequest request) {
-        return new SyncInvoker<ListVolumesRequest, ListVolumesResponse>(request, EvsMeta.listVolumes, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.listVolumes, hcClient);
     }
 
     /**
@@ -602,7 +589,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumesByTagsRequest 请求对象
+     * @param request ListVolumesByTagsRequest 请求对象
      * @return ListVolumesByTagsResponse
      */
     public ListVolumesByTagsResponse listVolumesByTags(ListVolumesByTagsRequest request) {
@@ -616,13 +603,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumesByTagsRequest 请求对象
+     * @param request ListVolumesByTagsRequest 请求对象
      * @return SyncInvoker<ListVolumesByTagsRequest, ListVolumesByTagsResponse>
      */
     public SyncInvoker<ListVolumesByTagsRequest, ListVolumesByTagsResponse> listVolumesByTagsInvoker(
         ListVolumesByTagsRequest request) {
-        return new SyncInvoker<ListVolumesByTagsRequest, ListVolumesByTagsResponse>(request, EvsMeta.listVolumesByTags,
-            hcClient);
+        return new SyncInvoker<>(request, EvsMeta.listVolumesByTags, hcClient);
     }
 
     /**
@@ -632,7 +618,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyVolumeQoSRequest 请求对象
+     * @param request ModifyVolumeQoSRequest 请求对象
      * @return ModifyVolumeQoSResponse
      */
     public ModifyVolumeQoSResponse modifyVolumeQoS(ModifyVolumeQoSRequest request) {
@@ -646,13 +632,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyVolumeQoSRequest 请求对象
+     * @param request ModifyVolumeQoSRequest 请求对象
      * @return SyncInvoker<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse>
      */
     public SyncInvoker<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> modifyVolumeQoSInvoker(
         ModifyVolumeQoSRequest request) {
-        return new SyncInvoker<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse>(request, EvsMeta.modifyVolumeQoS,
-            hcClient);
+        return new SyncInvoker<>(request, EvsMeta.modifyVolumeQoS, hcClient);
     }
 
     /**
@@ -667,7 +652,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeVolumeRequest 请求对象
+     * @param request ResizeVolumeRequest 请求对象
      * @return ResizeVolumeResponse
      */
     public ResizeVolumeResponse resizeVolume(ResizeVolumeRequest request) {
@@ -686,11 +671,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeVolumeRequest 请求对象
+     * @param request ResizeVolumeRequest 请求对象
      * @return SyncInvoker<ResizeVolumeRequest, ResizeVolumeResponse>
      */
     public SyncInvoker<ResizeVolumeRequest, ResizeVolumeResponse> resizeVolumeInvoker(ResizeVolumeRequest request) {
-        return new SyncInvoker<ResizeVolumeRequest, ResizeVolumeResponse>(request, EvsMeta.resizeVolume, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.resizeVolume, hcClient);
     }
 
     /**
@@ -700,7 +685,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollbackSnapshotRequest 请求对象
+     * @param request RollbackSnapshotRequest 请求对象
      * @return RollbackSnapshotResponse
      */
     public RollbackSnapshotResponse rollbackSnapshot(RollbackSnapshotRequest request) {
@@ -714,13 +699,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollbackSnapshotRequest 请求对象
+     * @param request RollbackSnapshotRequest 请求对象
      * @return SyncInvoker<RollbackSnapshotRequest, RollbackSnapshotResponse>
      */
     public SyncInvoker<RollbackSnapshotRequest, RollbackSnapshotResponse> rollbackSnapshotInvoker(
         RollbackSnapshotRequest request) {
-        return new SyncInvoker<RollbackSnapshotRequest, RollbackSnapshotResponse>(request, EvsMeta.rollbackSnapshot,
-            hcClient);
+        return new SyncInvoker<>(request, EvsMeta.rollbackSnapshot, hcClient);
     }
 
     /**
@@ -731,7 +715,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return ShowJobResponse
      */
     public ShowJobResponse showJob(ShowJobRequest request) {
@@ -746,11 +730,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public SyncInvoker<ShowJobRequest, ShowJobResponse> showJobInvoker(ShowJobRequest request) {
-        return new SyncInvoker<ShowJobRequest, ShowJobResponse>(request, EvsMeta.showJob, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.showJob, hcClient);
     }
 
     /**
@@ -760,7 +744,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSnapshotRequest 请求对象
+     * @param request ShowSnapshotRequest 请求对象
      * @return ShowSnapshotResponse
      */
     public ShowSnapshotResponse showSnapshot(ShowSnapshotRequest request) {
@@ -774,11 +758,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSnapshotRequest 请求对象
+     * @param request ShowSnapshotRequest 请求对象
      * @return SyncInvoker<ShowSnapshotRequest, ShowSnapshotResponse>
      */
     public SyncInvoker<ShowSnapshotRequest, ShowSnapshotResponse> showSnapshotInvoker(ShowSnapshotRequest request) {
-        return new SyncInvoker<ShowSnapshotRequest, ShowSnapshotResponse>(request, EvsMeta.showSnapshot, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.showSnapshot, hcClient);
     }
 
     /**
@@ -788,7 +772,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeRequest 请求对象
+     * @param request ShowVolumeRequest 请求对象
      * @return ShowVolumeResponse
      */
     public ShowVolumeResponse showVolume(ShowVolumeRequest request) {
@@ -802,11 +786,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeRequest 请求对象
+     * @param request ShowVolumeRequest 请求对象
      * @return SyncInvoker<ShowVolumeRequest, ShowVolumeResponse>
      */
     public SyncInvoker<ShowVolumeRequest, ShowVolumeResponse> showVolumeInvoker(ShowVolumeRequest request) {
-        return new SyncInvoker<ShowVolumeRequest, ShowVolumeResponse>(request, EvsMeta.showVolume, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.showVolume, hcClient);
     }
 
     /**
@@ -816,7 +800,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeTagsRequest 请求对象
+     * @param request ShowVolumeTagsRequest 请求对象
      * @return ShowVolumeTagsResponse
      */
     public ShowVolumeTagsResponse showVolumeTags(ShowVolumeTagsRequest request) {
@@ -830,13 +814,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeTagsRequest 请求对象
+     * @param request ShowVolumeTagsRequest 请求对象
      * @return SyncInvoker<ShowVolumeTagsRequest, ShowVolumeTagsResponse>
      */
     public SyncInvoker<ShowVolumeTagsRequest, ShowVolumeTagsResponse> showVolumeTagsInvoker(
         ShowVolumeTagsRequest request) {
-        return new SyncInvoker<ShowVolumeTagsRequest, ShowVolumeTagsResponse>(request, EvsMeta.showVolumeTags,
-            hcClient);
+        return new SyncInvoker<>(request, EvsMeta.showVolumeTags, hcClient);
     }
 
     /**
@@ -846,7 +829,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSnapshotRequest 请求对象
+     * @param request UpdateSnapshotRequest 请求对象
      * @return UpdateSnapshotResponse
      */
     public UpdateSnapshotResponse updateSnapshot(UpdateSnapshotRequest request) {
@@ -860,13 +843,12 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSnapshotRequest 请求对象
+     * @param request UpdateSnapshotRequest 请求对象
      * @return SyncInvoker<UpdateSnapshotRequest, UpdateSnapshotResponse>
      */
     public SyncInvoker<UpdateSnapshotRequest, UpdateSnapshotResponse> updateSnapshotInvoker(
         UpdateSnapshotRequest request) {
-        return new SyncInvoker<UpdateSnapshotRequest, UpdateSnapshotResponse>(request, EvsMeta.updateSnapshot,
-            hcClient);
+        return new SyncInvoker<>(request, EvsMeta.updateSnapshot, hcClient);
     }
 
     /**
@@ -876,7 +858,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVolumeRequest 请求对象
+     * @param request UpdateVolumeRequest 请求对象
      * @return UpdateVolumeResponse
      */
     public UpdateVolumeResponse updateVolume(UpdateVolumeRequest request) {
@@ -890,11 +872,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVolumeRequest 请求对象
+     * @param request UpdateVolumeRequest 请求对象
      * @return SyncInvoker<UpdateVolumeRequest, UpdateVolumeResponse>
      */
     public SyncInvoker<UpdateVolumeRequest, UpdateVolumeResponse> updateVolumeInvoker(UpdateVolumeRequest request) {
-        return new SyncInvoker<UpdateVolumeRequest, UpdateVolumeResponse>(request, EvsMeta.updateVolume, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.updateVolume, hcClient);
     }
 
     /**
@@ -904,7 +886,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionsRequest 请求对象
+     * @param request ListVersionsRequest 请求对象
      * @return ListVersionsResponse
      */
     public ListVersionsResponse listVersions(ListVersionsRequest request) {
@@ -918,11 +900,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionsRequest 请求对象
+     * @param request ListVersionsRequest 请求对象
      * @return SyncInvoker<ListVersionsRequest, ListVersionsResponse>
      */
     public SyncInvoker<ListVersionsRequest, ListVersionsResponse> listVersionsInvoker(ListVersionsRequest request) {
-        return new SyncInvoker<ListVersionsRequest, ListVersionsResponse>(request, EvsMeta.listVersions, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.listVersions, hcClient);
     }
 
     /**
@@ -932,7 +914,7 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return ShowVersionResponse
      */
     public ShowVersionResponse showVersion(ShowVersionRequest request) {
@@ -946,11 +928,11 @@ public class EvsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return SyncInvoker<ShowVersionRequest, ShowVersionResponse>
      */
     public SyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionInvoker(ShowVersionRequest request) {
-        return new SyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, EvsMeta.showVersion, hcClient);
+        return new SyncInvoker<>(request, EvsMeta.showVersion, hcClient);
     }
 
 }

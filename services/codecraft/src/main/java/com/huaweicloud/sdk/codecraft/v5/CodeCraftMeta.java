@@ -21,9 +21,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CodeCraftMeta {
 
     public static final HttpRequestDef<CreateCompetitionScoreRequest, CreateCompetitionScoreResponse> createCompetitionScore =
-        genForcreateCompetitionScore();
+        genForCreateCompetitionScore();
 
-    private static HttpRequestDef<CreateCompetitionScoreRequest, CreateCompetitionScoreResponse> genForcreateCompetitionScore() {
+    private static HttpRequestDef<CreateCompetitionScoreRequest, CreateCompetitionScoreResponse> genForCreateCompetitionScore() {
         // basic
         HttpRequestDef.Builder<CreateCompetitionScoreRequest, CreateCompetitionScoreResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateCompetitionScoreRequest.class, CreateCompetitionScoreResponse.class)
@@ -36,9 +36,7 @@ public class CodeCraftMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateScoresRequestModel.class),
-            f -> f.withMarshaller(CreateCompetitionScoreRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCompetitionScoreRequest::getBody, CreateCompetitionScoreRequest::setBody));
 
         // response
 
@@ -46,9 +44,9 @@ public class CodeCraftMeta {
     }
 
     public static final HttpRequestDef<ListCompetitionWorksRequest, ListCompetitionWorksResponse> listCompetitionWorks =
-        genForlistCompetitionWorks();
+        genForListCompetitionWorks();
 
-    private static HttpRequestDef<ListCompetitionWorksRequest, ListCompetitionWorksResponse> genForlistCompetitionWorks() {
+    private static HttpRequestDef<ListCompetitionWorksRequest, ListCompetitionWorksResponse> genForListCompetitionWorks() {
         // basic
         HttpRequestDef.Builder<ListCompetitionWorksRequest, ListCompetitionWorksResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCompetitionWorksRequest.class, ListCompetitionWorksResponse.class)
@@ -61,58 +59,43 @@ public class CodeCraftMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCompetitionWorksRequest::getCompetitionId, (req, v) -> {
-                req.setCompetitionId(v);
-            }));
+            f -> f.withMarshaller(ListCompetitionWorksRequest::getCompetitionId,
+                ListCompetitionWorksRequest::setCompetitionId));
         builder.<Integer>withRequestField("stage_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCompetitionWorksRequest::getStageId, (req, v) -> {
-                req.setStageId(v);
-            }));
+            f -> f.withMarshaller(ListCompetitionWorksRequest::getStageId, ListCompetitionWorksRequest::setStageId));
         builder.<String>withRequestField("read_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCompetitionWorksRequest::getReadTime, (req, v) -> {
-                req.setReadTime(v);
-            }));
+            f -> f.withMarshaller(ListCompetitionWorksRequest::getReadTime, ListCompetitionWorksRequest::setReadTime));
         builder.<ListCompetitionWorksRequest.TimeUnitEnum>withRequestField("time_unit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListCompetitionWorksRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(ListCompetitionWorksRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(ListCompetitionWorksRequest::getTimeUnit, ListCompetitionWorksRequest::setTimeUnit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCompetitionWorksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCompetitionWorksRequest::getOffset, ListCompetitionWorksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCompetitionWorksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCompetitionWorksRequest::getLimit, ListCompetitionWorksRequest::setLimit));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCompetitionWorksRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListCompetitionWorksRequest::getSortKey, ListCompetitionWorksRequest::setSortKey));
         builder.<ListCompetitionWorksRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListCompetitionWorksRequest.SortDirEnum.class),
-            f -> f.withMarshaller(ListCompetitionWorksRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListCompetitionWorksRequest::getSortDir, ListCompetitionWorksRequest::setSortDir));
 
         // response
 
@@ -120,9 +103,9 @@ public class CodeCraftMeta {
     }
 
     public static final HttpRequestDef<RegisterCompetitionInfoRequest, RegisterCompetitionInfoResponse> registerCompetitionInfo =
-        genForregisterCompetitionInfo();
+        genForRegisterCompetitionInfo();
 
-    private static HttpRequestDef<RegisterCompetitionInfoRequest, RegisterCompetitionInfoResponse> genForregisterCompetitionInfo() {
+    private static HttpRequestDef<RegisterCompetitionInfoRequest, RegisterCompetitionInfoResponse> genForRegisterCompetitionInfo() {
         // basic
         HttpRequestDef.Builder<RegisterCompetitionInfoRequest, RegisterCompetitionInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RegisterCompetitionInfoRequest.class, RegisterCompetitionInfoResponse.class)
@@ -135,9 +118,7 @@ public class CodeCraftMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RegisterInfoRequestModel.class),
-            f -> f.withMarshaller(RegisterCompetitionInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RegisterCompetitionInfoRequest::getBody, RegisterCompetitionInfoRequest::setBody));
 
         // response
 
@@ -145,9 +126,9 @@ public class CodeCraftMeta {
     }
 
     public static final HttpRequestDef<UpdateCompetitionScoreRequest, UpdateCompetitionScoreResponse> updateCompetitionScore =
-        genForupdateCompetitionScore();
+        genForUpdateCompetitionScore();
 
-    private static HttpRequestDef<UpdateCompetitionScoreRequest, UpdateCompetitionScoreResponse> genForupdateCompetitionScore() {
+    private static HttpRequestDef<UpdateCompetitionScoreRequest, UpdateCompetitionScoreResponse> genForUpdateCompetitionScore() {
         // basic
         HttpRequestDef.Builder<UpdateCompetitionScoreRequest, UpdateCompetitionScoreResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateCompetitionScoreRequest.class, UpdateCompetitionScoreResponse.class)
@@ -160,9 +141,7 @@ public class CodeCraftMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateScoreRequestModel.class),
-            f -> f.withMarshaller(UpdateCompetitionScoreRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCompetitionScoreRequest::getBody, UpdateCompetitionScoreRequest::setBody));
 
         // response
 

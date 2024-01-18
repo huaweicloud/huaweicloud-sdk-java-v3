@@ -28,7 +28,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetWithCustomPropsRequest 请求对象
+     * @param request ShowAdmetWithCustomPropsRequest 请求对象
      * @return CompletableFuture<ShowAdmetWithCustomPropsResponse>
      */
     public CompletableFuture<ShowAdmetWithCustomPropsResponse> showAdmetWithCustomPropsAsync(
@@ -43,13 +43,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetWithCustomPropsRequest 请求对象
+     * @param request ShowAdmetWithCustomPropsRequest 请求对象
      * @return AsyncInvoker<ShowAdmetWithCustomPropsRequest, ShowAdmetWithCustomPropsResponse>
      */
     public AsyncInvoker<ShowAdmetWithCustomPropsRequest, ShowAdmetWithCustomPropsResponse> showAdmetWithCustomPropsAsyncInvoker(
         ShowAdmetWithCustomPropsRequest request) {
-        return new AsyncInvoker<ShowAdmetWithCustomPropsRequest, ShowAdmetWithCustomPropsResponse>(request,
-            EiHealthMeta.showAdmetWithCustomProps, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showAdmetWithCustomProps, hcClient);
     }
 
 }

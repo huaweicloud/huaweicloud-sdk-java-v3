@@ -48,9 +48,9 @@ import java.util.List;
 public class LiveMeta {
 
     public static final HttpRequestDef<ListAreaDetailRequest, ListAreaDetailResponse> listAreaDetail =
-        genForlistAreaDetail();
+        genForListAreaDetail();
 
-    private static HttpRequestDef<ListAreaDetailRequest, ListAreaDetailResponse> genForlistAreaDetail() {
+    private static HttpRequestDef<ListAreaDetailRequest, ListAreaDetailResponse> genForListAreaDetail() {
         // basic
         HttpRequestDef.Builder<ListAreaDetailRequest, ListAreaDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAreaDetailRequest.class, ListAreaDetailResponse.class)
@@ -63,72 +63,52 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAreaDetailRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListAreaDetailRequest::getStartTime, ListAreaDetailRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAreaDetailRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAreaDetailRequest::getEndTime, ListAreaDetailRequest::setEndTime));
         builder.<List<String>>withRequestField("play_domains",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAreaDetailRequest::getPlayDomains, (req, v) -> {
-                req.setPlayDomains(v);
-            }));
+            f -> f.withMarshaller(ListAreaDetailRequest::getPlayDomains, ListAreaDetailRequest::setPlayDomains));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAreaDetailRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListAreaDetailRequest::getApp, ListAreaDetailRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAreaDetailRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListAreaDetailRequest::getStream, ListAreaDetailRequest::setStream));
         builder.<ListAreaDetailRequest.IntervalEnum>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAreaDetailRequest.IntervalEnum.class),
-            f -> f.withMarshaller(ListAreaDetailRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ListAreaDetailRequest::getInterval, ListAreaDetailRequest::setInterval));
         builder.<List<String>>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAreaDetailRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ListAreaDetailRequest::getIsp, ListAreaDetailRequest::setIsp));
         builder.<List<String>>withRequestField("area",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAreaDetailRequest::getArea, (req, v) -> {
-                req.setArea(v);
-            }));
+            f -> f.withMarshaller(ListAreaDetailRequest::getArea, ListAreaDetailRequest::setArea));
         builder.<String>withRequestField("metric",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAreaDetailRequest::getMetric, (req, v) -> {
-                req.setMetric(v);
-            }));
+            f -> f.withMarshaller(ListAreaDetailRequest::getMetric, ListAreaDetailRequest::setMetric));
         builder.<String>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAreaDetailRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListAreaDetailRequest::getProtocol, ListAreaDetailRequest::setProtocol));
 
         // response
 
@@ -141,9 +121,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListBandwidthDetailRequest, ListBandwidthDetailResponse> listBandwidthDetail =
-        genForlistBandwidthDetail();
+        genForListBandwidthDetail();
 
-    private static HttpRequestDef<ListBandwidthDetailRequest, ListBandwidthDetailResponse> genForlistBandwidthDetail() {
+    private static HttpRequestDef<ListBandwidthDetailRequest, ListBandwidthDetailResponse> genForListBandwidthDetail() {
         // basic
         HttpRequestDef.Builder<ListBandwidthDetailRequest, ListBandwidthDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBandwidthDetailRequest.class, ListBandwidthDetailResponse.class)
@@ -156,79 +136,59 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getPlayDomains, (req, v) -> {
-                req.setPlayDomains(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getPlayDomains,
+                ListBandwidthDetailRequest::setPlayDomains));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getApp, ListBandwidthDetailRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getStream, ListBandwidthDetailRequest::setStream));
         builder.<List<String>>withRequestField("country",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getCountry, (req, v) -> {
-                req.setCountry(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getCountry, ListBandwidthDetailRequest::setCountry));
         builder.<List<String>>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getRegion, ListBandwidthDetailRequest::setRegion));
         builder.<List<String>>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getIsp, ListBandwidthDetailRequest::setIsp));
         builder.<ListBandwidthDetailRequest.ProtocolEnum>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBandwidthDetailRequest.ProtocolEnum.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getProtocol, ListBandwidthDetailRequest::setProtocol));
         builder.<ListBandwidthDetailRequest.IntervalEnum>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBandwidthDetailRequest.IntervalEnum.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getInterval, ListBandwidthDetailRequest::setInterval));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getStartTime, ListBandwidthDetailRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getEndTime, ListBandwidthDetailRequest::setEndTime));
         builder.<ListBandwidthDetailRequest.ServiceTypeEnum>withRequestField("service_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBandwidthDetailRequest.ServiceTypeEnum.class),
-            f -> f.withMarshaller(ListBandwidthDetailRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getServiceType,
+                ListBandwidthDetailRequest::setServiceType));
 
         // response
 
@@ -242,9 +202,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse> listDomainBandwidthPeak =
-        genForlistDomainBandwidthPeak();
+        genForListDomainBandwidthPeak();
 
-    private static HttpRequestDef<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse> genForlistDomainBandwidthPeak() {
+    private static HttpRequestDef<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse> genForListDomainBandwidthPeak() {
         // basic
         HttpRequestDef.Builder<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListDomainBandwidthPeakRequest.class, ListDomainBandwidthPeakResponse.class)
@@ -257,65 +217,54 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getPlayDomains, (req, v) -> {
-                req.setPlayDomains(v);
-            }));
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getPlayDomains,
+                ListDomainBandwidthPeakRequest::setPlayDomains));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getApp, ListDomainBandwidthPeakRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getStream,
+                ListDomainBandwidthPeakRequest::setStream));
         builder.<List<String>>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getRegion,
+                ListDomainBandwidthPeakRequest::setRegion));
         builder.<List<String>>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getIsp, ListDomainBandwidthPeakRequest::setIsp));
         builder.<ListDomainBandwidthPeakRequest.ProtocolEnum>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDomainBandwidthPeakRequest.ProtocolEnum.class),
-            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getProtocol,
+                ListDomainBandwidthPeakRequest::setProtocol));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getStartTime,
+                ListDomainBandwidthPeakRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getEndTime,
+                ListDomainBandwidthPeakRequest::setEndTime));
         builder.<ListDomainBandwidthPeakRequest.ServiceTypeEnum>withRequestField("service_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDomainBandwidthPeakRequest.ServiceTypeEnum.class),
-            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getServiceType,
+                ListDomainBandwidthPeakRequest::setServiceType));
 
         // response
 
@@ -329,9 +278,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse> listDomainTrafficDetail =
-        genForlistDomainTrafficDetail();
+        genForListDomainTrafficDetail();
 
-    private static HttpRequestDef<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse> genForlistDomainTrafficDetail() {
+    private static HttpRequestDef<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse> genForListDomainTrafficDetail() {
         // basic
         HttpRequestDef.Builder<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListDomainTrafficDetailRequest.class, ListDomainTrafficDetailResponse.class)
@@ -344,72 +293,60 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getPlayDomains, (req, v) -> {
-                req.setPlayDomains(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getPlayDomains,
+                ListDomainTrafficDetailRequest::setPlayDomains));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getApp, ListDomainTrafficDetailRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getStream,
+                ListDomainTrafficDetailRequest::setStream));
         builder.<List<String>>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getRegion,
+                ListDomainTrafficDetailRequest::setRegion));
         builder.<List<String>>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getIsp, ListDomainTrafficDetailRequest::setIsp));
         builder.<ListDomainTrafficDetailRequest.ProtocolEnum>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDomainTrafficDetailRequest.ProtocolEnum.class),
-            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getProtocol,
+                ListDomainTrafficDetailRequest::setProtocol));
         builder.<Integer>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getInterval,
+                ListDomainTrafficDetailRequest::setInterval));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getStartTime,
+                ListDomainTrafficDetailRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getEndTime,
+                ListDomainTrafficDetailRequest::setEndTime));
         builder.<ListDomainTrafficDetailRequest.ServiceTypeEnum>withRequestField("service_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDomainTrafficDetailRequest.ServiceTypeEnum.class),
-            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getServiceType,
+                ListDomainTrafficDetailRequest::setServiceType));
 
         // response
 
@@ -423,9 +360,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse> listDomainTrafficSummary =
-        genForlistDomainTrafficSummary();
+        genForListDomainTrafficSummary();
 
-    private static HttpRequestDef<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse> genForlistDomainTrafficSummary() {
+    private static HttpRequestDef<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse> genForListDomainTrafficSummary() {
         // basic
         HttpRequestDef.Builder<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse> builder =
             HttpRequestDef
@@ -439,65 +376,54 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getPlayDomains, (req, v) -> {
-                req.setPlayDomains(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getPlayDomains,
+                ListDomainTrafficSummaryRequest::setPlayDomains));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getApp, ListDomainTrafficSummaryRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getStream,
+                ListDomainTrafficSummaryRequest::setStream));
         builder.<List<String>>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getRegion,
+                ListDomainTrafficSummaryRequest::setRegion));
         builder.<List<String>>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getIsp, ListDomainTrafficSummaryRequest::setIsp));
         builder.<ListDomainTrafficSummaryRequest.ProtocolEnum>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDomainTrafficSummaryRequest.ProtocolEnum.class),
-            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getProtocol,
+                ListDomainTrafficSummaryRequest::setProtocol));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getStartTime,
+                ListDomainTrafficSummaryRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getEndTime,
+                ListDomainTrafficSummaryRequest::setEndTime));
         builder.<ListDomainTrafficSummaryRequest.ServiceTypeEnum>withRequestField("service_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDomainTrafficSummaryRequest.ServiceTypeEnum.class),
-            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getServiceType,
+                ListDomainTrafficSummaryRequest::setServiceType));
 
         // response
 
@@ -511,9 +437,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListHistoryStreamsRequest, ListHistoryStreamsResponse> listHistoryStreams =
-        genForlistHistoryStreams();
+        genForListHistoryStreams();
 
-    private static HttpRequestDef<ListHistoryStreamsRequest, ListHistoryStreamsResponse> genForlistHistoryStreams() {
+    private static HttpRequestDef<ListHistoryStreamsRequest, ListHistoryStreamsResponse> genForListHistoryStreams() {
         // basic
         HttpRequestDef.Builder<ListHistoryStreamsRequest, ListHistoryStreamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHistoryStreamsRequest.class, ListHistoryStreamsResponse.class)
@@ -526,51 +452,37 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryStreamsRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ListHistoryStreamsRequest::getDomain, ListHistoryStreamsRequest::setDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryStreamsRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListHistoryStreamsRequest::getApp, ListHistoryStreamsRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryStreamsRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListHistoryStreamsRequest::getStream, ListHistoryStreamsRequest::setStream));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryStreamsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListHistoryStreamsRequest::getStartTime, ListHistoryStreamsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryStreamsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListHistoryStreamsRequest::getEndTime, ListHistoryStreamsRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryStreamsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListHistoryStreamsRequest::getOffset, ListHistoryStreamsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryStreamsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHistoryStreamsRequest::getLimit, ListHistoryStreamsRequest::setLimit));
 
         // response
 
@@ -584,9 +496,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse> listQueryHttpCode =
-        genForlistQueryHttpCode();
+        genForListQueryHttpCode();
 
-    private static HttpRequestDef<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse> genForlistQueryHttpCode() {
+    private static HttpRequestDef<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse> genForListQueryHttpCode() {
         // basic
         HttpRequestDef.Builder<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQueryHttpCodeRequest.class, ListQueryHttpCodeResponse.class)
@@ -599,44 +511,32 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListQueryHttpCodeRequest::getPlayDomains, (req, v) -> {
-                req.setPlayDomains(v);
-            }));
+            f -> f.withMarshaller(ListQueryHttpCodeRequest::getPlayDomains, ListQueryHttpCodeRequest::setPlayDomains));
         builder.<List<String>>withRequestField("code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListQueryHttpCodeRequest::getCode, (req, v) -> {
-                req.setCode(v);
-            }));
+            f -> f.withMarshaller(ListQueryHttpCodeRequest::getCode, ListQueryHttpCodeRequest::setCode));
         builder.<List<String>>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListQueryHttpCodeRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListQueryHttpCodeRequest::getRegion, ListQueryHttpCodeRequest::setRegion));
         builder.<List<String>>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListQueryHttpCodeRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ListQueryHttpCodeRequest::getIsp, ListQueryHttpCodeRequest::setIsp));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryHttpCodeRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListQueryHttpCodeRequest::getStartTime, ListQueryHttpCodeRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryHttpCodeRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListQueryHttpCodeRequest::getEndTime, ListQueryHttpCodeRequest::setEndTime));
 
         // response
 
@@ -649,9 +549,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListRecordDataRequest, ListRecordDataResponse> listRecordData =
-        genForlistRecordData();
+        genForListRecordData();
 
-    private static HttpRequestDef<ListRecordDataRequest, ListRecordDataResponse> genForlistRecordData() {
+    private static HttpRequestDef<ListRecordDataRequest, ListRecordDataResponse> genForListRecordData() {
         // basic
         HttpRequestDef.Builder<ListRecordDataRequest, ListRecordDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRecordDataRequest.class, ListRecordDataResponse.class)
@@ -664,23 +564,17 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordDataRequest::getPublishDomain, (req, v) -> {
-                req.setPublishDomain(v);
-            }));
+            f -> f.withMarshaller(ListRecordDataRequest::getPublishDomain, ListRecordDataRequest::setPublishDomain));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordDataRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRecordDataRequest::getStartTime, ListRecordDataRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordDataRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRecordDataRequest::getEndTime, ListRecordDataRequest::setEndTime));
 
         // response
 
@@ -693,9 +587,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListSnapshotDataRequest, ListSnapshotDataResponse> listSnapshotData =
-        genForlistSnapshotData();
+        genForListSnapshotData();
 
-    private static HttpRequestDef<ListSnapshotDataRequest, ListSnapshotDataResponse> genForlistSnapshotData() {
+    private static HttpRequestDef<ListSnapshotDataRequest, ListSnapshotDataResponse> genForListSnapshotData() {
         // basic
         HttpRequestDef.Builder<ListSnapshotDataRequest, ListSnapshotDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSnapshotDataRequest.class, ListSnapshotDataResponse.class)
@@ -708,23 +602,18 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotDataRequest::getPublishDomain, (req, v) -> {
-                req.setPublishDomain(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotDataRequest::getPublishDomain,
+                ListSnapshotDataRequest::setPublishDomain));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotDataRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotDataRequest::getStartTime, ListSnapshotDataRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotDataRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotDataRequest::getEndTime, ListSnapshotDataRequest::setEndTime));
 
         // response
 
@@ -737,9 +626,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListTranscodeDataRequest, ListTranscodeDataResponse> listTranscodeData =
-        genForlistTranscodeData();
+        genForListTranscodeData();
 
-    private static HttpRequestDef<ListTranscodeDataRequest, ListTranscodeDataResponse> genForlistTranscodeData() {
+    private static HttpRequestDef<ListTranscodeDataRequest, ListTranscodeDataResponse> genForListTranscodeData() {
         // basic
         HttpRequestDef.Builder<ListTranscodeDataRequest, ListTranscodeDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTranscodeDataRequest.class, ListTranscodeDataResponse.class)
@@ -752,30 +641,23 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeDataRequest::getPublishDomain, (req, v) -> {
-                req.setPublishDomain(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeDataRequest::getPublishDomain,
+                ListTranscodeDataRequest::setPublishDomain));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeDataRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeDataRequest::getStream, ListTranscodeDataRequest::setStream));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeDataRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeDataRequest::getStartTime, ListTranscodeDataRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeDataRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeDataRequest::getEndTime, ListTranscodeDataRequest::setEndTime));
 
         // response
 
@@ -788,9 +670,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListUsersOfStreamRequest, ListUsersOfStreamResponse> listUsersOfStream =
-        genForlistUsersOfStream();
+        genForListUsersOfStream();
 
-    private static HttpRequestDef<ListUsersOfStreamRequest, ListUsersOfStreamResponse> genForlistUsersOfStream() {
+    private static HttpRequestDef<ListUsersOfStreamRequest, ListUsersOfStreamResponse> genForListUsersOfStream() {
         // basic
         HttpRequestDef.Builder<ListUsersOfStreamRequest, ListUsersOfStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsersOfStreamRequest.class, ListUsersOfStreamResponse.class)
@@ -803,79 +685,57 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getPlayDomain, (req, v) -> {
-                req.setPlayDomain(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getPlayDomain, ListUsersOfStreamRequest::setPlayDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getApp, ListUsersOfStreamRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getStream, ListUsersOfStreamRequest::setStream));
         builder.<List<String>>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getIsp, ListUsersOfStreamRequest::setIsp));
         builder.<List<String>>withRequestField("country",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getCountry, (req, v) -> {
-                req.setCountry(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getCountry, ListUsersOfStreamRequest::setCountry));
         builder.<List<String>>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getRegion, ListUsersOfStreamRequest::setRegion));
         builder.<ListUsersOfStreamRequest.ProtocolEnum>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListUsersOfStreamRequest.ProtocolEnum.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getProtocol, ListUsersOfStreamRequest::setProtocol));
         builder.<ListUsersOfStreamRequest.IntervalEnum>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListUsersOfStreamRequest.IntervalEnum.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getInterval, ListUsersOfStreamRequest::setInterval));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getStartTime, ListUsersOfStreamRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getEndTime, ListUsersOfStreamRequest::setEndTime));
         builder.<ListUsersOfStreamRequest.ServiceTypeEnum>withRequestField("service_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListUsersOfStreamRequest.ServiceTypeEnum.class),
-            f -> f.withMarshaller(ListUsersOfStreamRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getServiceType, ListUsersOfStreamRequest::setServiceType));
 
         // response
 
@@ -888,9 +748,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ShowStreamCountRequest, ShowStreamCountResponse> showStreamCount =
-        genForshowStreamCount();
+        genForShowStreamCount();
 
-    private static HttpRequestDef<ShowStreamCountRequest, ShowStreamCountResponse> genForshowStreamCount() {
+    private static HttpRequestDef<ShowStreamCountRequest, ShowStreamCountResponse> genForShowStreamCount() {
         // basic
         HttpRequestDef.Builder<ShowStreamCountRequest, ShowStreamCountResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStreamCountRequest.class, ShowStreamCountResponse.class)
@@ -903,23 +763,18 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowStreamCountRequest::getPublishDomains, (req, v) -> {
-                req.setPublishDomains(v);
-            }));
+            f -> f.withMarshaller(ShowStreamCountRequest::getPublishDomains,
+                ShowStreamCountRequest::setPublishDomains));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStreamCountRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowStreamCountRequest::getStartTime, ShowStreamCountRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStreamCountRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowStreamCountRequest::getEndTime, ShowStreamCountRequest::setEndTime));
 
         // response
 
@@ -932,9 +787,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ShowStreamPortraitRequest, ShowStreamPortraitResponse> showStreamPortrait =
-        genForshowStreamPortrait();
+        genForShowStreamPortrait();
 
-    private static HttpRequestDef<ShowStreamPortraitRequest, ShowStreamPortraitResponse> genForshowStreamPortrait() {
+    private static HttpRequestDef<ShowStreamPortraitRequest, ShowStreamPortraitResponse> genForShowStreamPortrait() {
         // basic
         HttpRequestDef.Builder<ShowStreamPortraitRequest, ShowStreamPortraitResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStreamPortraitRequest.class, ShowStreamPortraitResponse.class)
@@ -947,23 +802,17 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStreamPortraitRequest::getPlayDomain, (req, v) -> {
-                req.setPlayDomain(v);
-            }));
+            f -> f.withMarshaller(ShowStreamPortraitRequest::getPlayDomain, ShowStreamPortraitRequest::setPlayDomain));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStreamPortraitRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ShowStreamPortraitRequest::getStream, ShowStreamPortraitRequest::setStream));
         builder.<String>withRequestField("time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStreamPortraitRequest::getTime, (req, v) -> {
-                req.setTime(v);
-            }));
+            f -> f.withMarshaller(ShowStreamPortraitRequest::getTime, ShowStreamPortraitRequest::setTime));
 
         // response
 
@@ -977,9 +826,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ShowUpBandwidthRequest, ShowUpBandwidthResponse> showUpBandwidth =
-        genForshowUpBandwidth();
+        genForShowUpBandwidth();
 
-    private static HttpRequestDef<ShowUpBandwidthRequest, ShowUpBandwidthResponse> genForshowUpBandwidth() {
+    private static HttpRequestDef<ShowUpBandwidthRequest, ShowUpBandwidthResponse> genForShowUpBandwidth() {
         // basic
         HttpRequestDef.Builder<ShowUpBandwidthRequest, ShowUpBandwidthResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUpBandwidthRequest.class, ShowUpBandwidthResponse.class)
@@ -992,65 +841,48 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowUpBandwidthRequest::getPublishDomains, (req, v) -> {
-                req.setPublishDomains(v);
-            }));
+            f -> f.withMarshaller(ShowUpBandwidthRequest::getPublishDomains,
+                ShowUpBandwidthRequest::setPublishDomains));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpBandwidthRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ShowUpBandwidthRequest::getApp, ShowUpBandwidthRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpBandwidthRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ShowUpBandwidthRequest::getStream, ShowUpBandwidthRequest::setStream));
         builder.<List<String>>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowUpBandwidthRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ShowUpBandwidthRequest::getRegion, ShowUpBandwidthRequest::setRegion));
         builder.<List<String>>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowUpBandwidthRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ShowUpBandwidthRequest::getIsp, ShowUpBandwidthRequest::setIsp));
         builder.<ShowUpBandwidthRequest.IntervalEnum>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowUpBandwidthRequest.IntervalEnum.class),
-            f -> f.withMarshaller(ShowUpBandwidthRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ShowUpBandwidthRequest::getInterval, ShowUpBandwidthRequest::setInterval));
         builder.<ShowUpBandwidthRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowUpBandwidthRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowUpBandwidthRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowUpBandwidthRequest::getType, ShowUpBandwidthRequest::setType));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpBandwidthRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowUpBandwidthRequest::getStartTime, ShowUpBandwidthRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpBandwidthRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowUpBandwidthRequest::getEndTime, ShowUpBandwidthRequest::setEndTime));
 
         // response
 
@@ -1063,9 +895,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse> listSingleStreamBitrate =
-        genForlistSingleStreamBitrate();
+        genForListSingleStreamBitrate();
 
-    private static HttpRequestDef<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse> genForlistSingleStreamBitrate() {
+    private static HttpRequestDef<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse> genForListSingleStreamBitrate() {
         // basic
         HttpRequestDef.Builder<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSingleStreamBitrateRequest.class, ListSingleStreamBitrateResponse.class)
@@ -1078,37 +910,31 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getDomain,
+                ListSingleStreamBitrateRequest::setDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getApp, ListSingleStreamBitrateRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getStream,
+                ListSingleStreamBitrateRequest::setStream));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getStartTime,
+                ListSingleStreamBitrateRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getEndTime,
+                ListSingleStreamBitrateRequest::setEndTime));
 
         // response
 
@@ -1122,9 +948,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> listSingleStreamDetail =
-        genForlistSingleStreamDetail();
+        genForListSingleStreamDetail();
 
-    private static HttpRequestDef<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> genForlistSingleStreamDetail() {
+    private static HttpRequestDef<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> genForListSingleStreamDetail() {
         // basic
         HttpRequestDef.Builder<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSingleStreamDetailRequest.class, ListSingleStreamDetailResponse.class)
@@ -1137,37 +963,30 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamDetailRequest::getPublishDomain, (req, v) -> {
-                req.setPublishDomain(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamDetailRequest::getPublishDomain,
+                ListSingleStreamDetailRequest::setPublishDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamDetailRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamDetailRequest::getApp, ListSingleStreamDetailRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamDetailRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamDetailRequest::getStream, ListSingleStreamDetailRequest::setStream));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamDetailRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamDetailRequest::getStartTime,
+                ListSingleStreamDetailRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamDetailRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamDetailRequest::getEndTime,
+                ListSingleStreamDetailRequest::setEndTime));
 
         // response
 
@@ -1181,9 +1000,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> listSingleStreamFramerate =
-        genForlistSingleStreamFramerate();
+        genForListSingleStreamFramerate();
 
-    private static HttpRequestDef<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> genForlistSingleStreamFramerate() {
+    private static HttpRequestDef<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> genForListSingleStreamFramerate() {
         // basic
         HttpRequestDef.Builder<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> builder =
             HttpRequestDef
@@ -1199,37 +1018,31 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamFramerateRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamFramerateRequest::getDomain,
+                ListSingleStreamFramerateRequest::setDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamFramerateRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamFramerateRequest::getApp, ListSingleStreamFramerateRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamFramerateRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamFramerateRequest::getStream,
+                ListSingleStreamFramerateRequest::setStream));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamFramerateRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamFramerateRequest::getStartTime,
+                ListSingleStreamFramerateRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSingleStreamFramerateRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSingleStreamFramerateRequest::getEndTime,
+                ListSingleStreamFramerateRequest::setEndTime));
 
         // response
 
@@ -1243,9 +1056,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListUpStreamDetailRequest, ListUpStreamDetailResponse> listUpStreamDetail =
-        genForlistUpStreamDetail();
+        genForListUpStreamDetail();
 
-    private static HttpRequestDef<ListUpStreamDetailRequest, ListUpStreamDetailResponse> genForlistUpStreamDetail() {
+    private static HttpRequestDef<ListUpStreamDetailRequest, ListUpStreamDetailResponse> genForListUpStreamDetail() {
         // basic
         HttpRequestDef.Builder<ListUpStreamDetailRequest, ListUpStreamDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUpStreamDetailRequest.class, ListUpStreamDetailResponse.class)
@@ -1258,37 +1071,28 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpStreamDetailRequest::getPublishDomain, (req, v) -> {
-                req.setPublishDomain(v);
-            }));
+            f -> f.withMarshaller(ListUpStreamDetailRequest::getPublishDomain,
+                ListUpStreamDetailRequest::setPublishDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpStreamDetailRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListUpStreamDetailRequest::getApp, ListUpStreamDetailRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpStreamDetailRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListUpStreamDetailRequest::getStream, ListUpStreamDetailRequest::setStream));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpStreamDetailRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListUpStreamDetailRequest::getStartTime, ListUpStreamDetailRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpStreamDetailRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListUpStreamDetailRequest::getEndTime, ListUpStreamDetailRequest::setEndTime));
 
         // response
 

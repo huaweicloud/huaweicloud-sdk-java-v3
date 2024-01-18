@@ -76,7 +76,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteRabbitMqTagRequest 请求对象
+     * @param request BatchCreateOrDeleteRabbitMqTagRequest 请求对象
      * @return CompletableFuture<BatchCreateOrDeleteRabbitMqTagResponse>
      */
     public CompletableFuture<BatchCreateOrDeleteRabbitMqTagResponse> batchCreateOrDeleteRabbitMqTagAsync(
@@ -91,13 +91,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteRabbitMqTagRequest 请求对象
+     * @param request BatchCreateOrDeleteRabbitMqTagRequest 请求对象
      * @return AsyncInvoker<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse>
      */
     public AsyncInvoker<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> batchCreateOrDeleteRabbitMqTagAsyncInvoker(
         BatchCreateOrDeleteRabbitMqTagRequest request) {
-        return new AsyncInvoker<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse>(request,
-            RabbitMQMeta.batchCreateOrDeleteRabbitMqTag, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.batchCreateOrDeleteRabbitMqTag, hcClient);
     }
 
     /**
@@ -109,7 +108,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRestartOrDeleteInstancesRequest 请求对象
+     * @param request BatchRestartOrDeleteInstancesRequest 请求对象
      * @return CompletableFuture<BatchRestartOrDeleteInstancesResponse>
      */
     public CompletableFuture<BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstancesAsync(
@@ -126,13 +125,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRestartOrDeleteInstancesRequest 请求对象
+     * @param request BatchRestartOrDeleteInstancesRequest 请求对象
      * @return AsyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse>
      */
     public AsyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstancesAsyncInvoker(
         BatchRestartOrDeleteInstancesRequest request) {
-        return new AsyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse>(request,
-            RabbitMQMeta.batchRestartOrDeleteInstances, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.batchRestartOrDeleteInstances, hcClient);
     }
 
     /**
@@ -142,7 +140,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceRequest 请求对象
+     * @param request CreatePostPaidInstanceRequest 请求对象
      * @return CompletableFuture<CreatePostPaidInstanceResponse>
      */
     public CompletableFuture<CreatePostPaidInstanceResponse> createPostPaidInstanceAsync(
@@ -157,13 +155,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceRequest 请求对象
+     * @param request CreatePostPaidInstanceRequest 请求对象
      * @return AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>
      */
     public AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstanceAsyncInvoker(
         CreatePostPaidInstanceRequest request) {
-        return new AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>(request,
-            RabbitMQMeta.createPostPaidInstance, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.createPostPaidInstance, hcClient);
     }
 
     /**
@@ -173,7 +170,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceByEngineRequest 请求对象
+     * @param request CreatePostPaidInstanceByEngineRequest 请求对象
      * @return CompletableFuture<CreatePostPaidInstanceByEngineResponse>
      */
     public CompletableFuture<CreatePostPaidInstanceByEngineResponse> createPostPaidInstanceByEngineAsync(
@@ -188,13 +185,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceByEngineRequest 请求对象
+     * @param request CreatePostPaidInstanceByEngineRequest 请求对象
      * @return AsyncInvoker<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse>
      */
     public AsyncInvoker<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse> createPostPaidInstanceByEngineAsyncInvoker(
         CreatePostPaidInstanceByEngineRequest request) {
-        return new AsyncInvoker<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse>(request,
-            RabbitMQMeta.createPostPaidInstanceByEngine, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.createPostPaidInstanceByEngine, hcClient);
     }
 
     /**
@@ -204,7 +200,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackgroundTaskRequest 请求对象
+     * @param request DeleteBackgroundTaskRequest 请求对象
      * @return CompletableFuture<DeleteBackgroundTaskResponse>
      */
     public CompletableFuture<DeleteBackgroundTaskResponse> deleteBackgroundTaskAsync(
@@ -219,13 +215,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackgroundTaskRequest 请求对象
+     * @param request DeleteBackgroundTaskRequest 请求对象
      * @return AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>
      */
     public AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTaskAsyncInvoker(
         DeleteBackgroundTaskRequest request) {
-        return new AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>(request,
-            RabbitMQMeta.deleteBackgroundTask, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.deleteBackgroundTask, hcClient);
     }
 
     /**
@@ -235,7 +230,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
      */
     public CompletableFuture<DeleteInstanceResponse> deleteInstanceAsync(DeleteInstanceRequest request) {
@@ -249,13 +244,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
-        return new AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, RabbitMQMeta.deleteInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -265,7 +259,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return CompletableFuture<ListAvailableZonesResponse>
      */
     public CompletableFuture<ListAvailableZonesResponse> listAvailableZonesAsync(ListAvailableZonesRequest request) {
@@ -279,13 +273,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
      */
     public AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesAsyncInvoker(
         ListAvailableZonesRequest request) {
-        return new AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request,
-            RabbitMQMeta.listAvailableZones, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.listAvailableZones, hcClient);
     }
 
     /**
@@ -295,7 +288,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackgroundTasksRequest 请求对象
+     * @param request ListBackgroundTasksRequest 请求对象
      * @return CompletableFuture<ListBackgroundTasksResponse>
      */
     public CompletableFuture<ListBackgroundTasksResponse> listBackgroundTasksAsync(ListBackgroundTasksRequest request) {
@@ -309,13 +302,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackgroundTasksRequest 请求对象
+     * @param request ListBackgroundTasksRequest 请求对象
      * @return AsyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse>
      */
     public AsyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasksAsyncInvoker(
         ListBackgroundTasksRequest request) {
-        return new AsyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse>(request,
-            RabbitMQMeta.listBackgroundTasks, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.listBackgroundTasks, hcClient);
     }
 
     /**
@@ -325,7 +317,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEngineProductsRequest 请求对象
+     * @param request ListEngineProductsRequest 请求对象
      * @return CompletableFuture<ListEngineProductsResponse>
      */
     public CompletableFuture<ListEngineProductsResponse> listEngineProductsAsync(ListEngineProductsRequest request) {
@@ -339,13 +331,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEngineProductsRequest 请求对象
+     * @param request ListEngineProductsRequest 请求对象
      * @return AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>
      */
     public AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProductsAsyncInvoker(
         ListEngineProductsRequest request) {
-        return new AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>(request,
-            RabbitMQMeta.listEngineProducts, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.listEngineProducts, hcClient);
     }
 
     /**
@@ -355,7 +346,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesDetailsRequest 请求对象
+     * @param request ListInstancesDetailsRequest 请求对象
      * @return CompletableFuture<ListInstancesDetailsResponse>
      */
     public CompletableFuture<ListInstancesDetailsResponse> listInstancesDetailsAsync(
@@ -370,13 +361,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesDetailsRequest 请求对象
+     * @param request ListInstancesDetailsRequest 请求对象
      * @return AsyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse>
      */
     public AsyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse> listInstancesDetailsAsyncInvoker(
         ListInstancesDetailsRequest request) {
-        return new AsyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse>(request,
-            RabbitMQMeta.listInstancesDetails, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.listInstancesDetails, hcClient);
     }
 
     /**
@@ -386,7 +376,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return CompletableFuture<ListPluginsResponse>
      */
     public CompletableFuture<ListPluginsResponse> listPluginsAsync(ListPluginsRequest request) {
@@ -400,11 +390,11 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return AsyncInvoker<ListPluginsRequest, ListPluginsResponse>
      */
     public AsyncInvoker<ListPluginsRequest, ListPluginsResponse> listPluginsAsyncInvoker(ListPluginsRequest request) {
-        return new AsyncInvoker<ListPluginsRequest, ListPluginsResponse>(request, RabbitMQMeta.listPlugins, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.listPlugins, hcClient);
     }
 
     /**
@@ -414,7 +404,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return CompletableFuture<ListProductsResponse>
      */
     public CompletableFuture<ListProductsResponse> listProductsAsync(ListProductsRequest request) {
@@ -428,13 +418,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return AsyncInvoker<ListProductsRequest, ListProductsResponse>
      */
     public AsyncInvoker<ListProductsRequest, ListProductsResponse> listProductsAsyncInvoker(
         ListProductsRequest request) {
-        return new AsyncInvoker<ListProductsRequest, ListProductsResponse>(request, RabbitMQMeta.listProducts,
-            hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.listProducts, hcClient);
     }
 
     /**
@@ -444,7 +433,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return CompletableFuture<ResetPasswordResponse>
      */
     public CompletableFuture<ResetPasswordResponse> resetPasswordAsync(ResetPasswordRequest request) {
@@ -458,13 +447,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
     public AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordAsyncInvoker(
         ResetPasswordRequest request) {
-        return new AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, RabbitMQMeta.resetPassword,
-            hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.resetPassword, hcClient);
     }
 
     /**
@@ -476,7 +464,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeEngineInstanceRequest 请求对象
+     * @param request ResizeEngineInstanceRequest 请求对象
      * @return CompletableFuture<ResizeEngineInstanceResponse>
      */
     public CompletableFuture<ResizeEngineInstanceResponse> resizeEngineInstanceAsync(
@@ -493,13 +481,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeEngineInstanceRequest 请求对象
+     * @param request ResizeEngineInstanceRequest 请求对象
      * @return AsyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>
      */
     public AsyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstanceAsyncInvoker(
         ResizeEngineInstanceRequest request) {
-        return new AsyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>(request,
-            RabbitMQMeta.resizeEngineInstance, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.resizeEngineInstance, hcClient);
     }
 
     /**
@@ -511,7 +498,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return CompletableFuture<ResizeInstanceResponse>
      */
     public CompletableFuture<ResizeInstanceResponse> resizeInstanceAsync(ResizeInstanceRequest request) {
@@ -527,13 +514,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
      */
     public AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceAsyncInvoker(
         ResizeInstanceRequest request) {
-        return new AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request, RabbitMQMeta.resizeInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.resizeInstance, hcClient);
     }
 
     /**
@@ -543,7 +529,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackgroundTaskRequest 请求对象
+     * @param request ShowBackgroundTaskRequest 请求对象
      * @return CompletableFuture<ShowBackgroundTaskResponse>
      */
     public CompletableFuture<ShowBackgroundTaskResponse> showBackgroundTaskAsync(ShowBackgroundTaskRequest request) {
@@ -557,13 +543,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackgroundTaskRequest 请求对象
+     * @param request ShowBackgroundTaskRequest 请求对象
      * @return AsyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>
      */
     public AsyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTaskAsyncInvoker(
         ShowBackgroundTaskRequest request) {
-        return new AsyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>(request,
-            RabbitMQMeta.showBackgroundTask, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.showBackgroundTask, hcClient);
     }
 
     /**
@@ -573,7 +558,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCesHierarchyRequest 请求对象
+     * @param request ShowCesHierarchyRequest 请求对象
      * @return CompletableFuture<ShowCesHierarchyResponse>
      */
     public CompletableFuture<ShowCesHierarchyResponse> showCesHierarchyAsync(ShowCesHierarchyRequest request) {
@@ -587,13 +572,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCesHierarchyRequest 请求对象
+     * @param request ShowCesHierarchyRequest 请求对象
      * @return AsyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>
      */
     public AsyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchyAsyncInvoker(
         ShowCesHierarchyRequest request) {
-        return new AsyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>(request,
-            RabbitMQMeta.showCesHierarchy, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.showCesHierarchy, hcClient);
     }
 
     /**
@@ -603,7 +587,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowEngineInstanceExtendProductInfoRequest 请求对象
      * @return CompletableFuture<ShowEngineInstanceExtendProductInfoResponse>
      */
     public CompletableFuture<ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsync(
@@ -618,13 +602,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowEngineInstanceExtendProductInfoRequest 请求对象
      * @return AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>
      */
     public AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsyncInvoker(
         ShowEngineInstanceExtendProductInfoRequest request) {
-        return new AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>(
-            request, RabbitMQMeta.showEngineInstanceExtendProductInfo, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.showEngineInstanceExtendProductInfo, hcClient);
     }
 
     /**
@@ -634,7 +617,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
      */
     public CompletableFuture<ShowInstanceResponse> showInstanceAsync(ShowInstanceRequest request) {
@@ -648,13 +631,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(
         ShowInstanceRequest request) {
-        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, RabbitMQMeta.showInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.showInstance, hcClient);
     }
 
     /**
@@ -666,7 +648,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowInstanceExtendProductInfoRequest 请求对象
      * @return CompletableFuture<ShowInstanceExtendProductInfoResponse>
      */
     public CompletableFuture<ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfoAsync(
@@ -683,13 +665,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowInstanceExtendProductInfoRequest 请求对象
      * @return AsyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>
      */
     public AsyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfoAsyncInvoker(
         ShowInstanceExtendProductInfoRequest request) {
-        return new AsyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>(request,
-            RabbitMQMeta.showInstanceExtendProductInfo, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.showInstanceExtendProductInfo, hcClient);
     }
 
     /**
@@ -699,7 +680,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMaintainWindowsRequest 请求对象
+     * @param request ShowMaintainWindowsRequest 请求对象
      * @return CompletableFuture<ShowMaintainWindowsResponse>
      */
     public CompletableFuture<ShowMaintainWindowsResponse> showMaintainWindowsAsync(ShowMaintainWindowsRequest request) {
@@ -713,13 +694,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMaintainWindowsRequest 请求对象
+     * @param request ShowMaintainWindowsRequest 请求对象
      * @return AsyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>
      */
     public AsyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindowsAsyncInvoker(
         ShowMaintainWindowsRequest request) {
-        return new AsyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>(request,
-            RabbitMQMeta.showMaintainWindows, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.showMaintainWindows, hcClient);
     }
 
     /**
@@ -729,7 +709,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRabbitMqProjectTagsRequest 请求对象
+     * @param request ShowRabbitMqProjectTagsRequest 请求对象
      * @return CompletableFuture<ShowRabbitMqProjectTagsResponse>
      */
     public CompletableFuture<ShowRabbitMqProjectTagsResponse> showRabbitMqProjectTagsAsync(
@@ -744,13 +724,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRabbitMqProjectTagsRequest 请求对象
+     * @param request ShowRabbitMqProjectTagsRequest 请求对象
      * @return AsyncInvoker<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse>
      */
     public AsyncInvoker<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> showRabbitMqProjectTagsAsyncInvoker(
         ShowRabbitMqProjectTagsRequest request) {
-        return new AsyncInvoker<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse>(request,
-            RabbitMQMeta.showRabbitMqProjectTags, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.showRabbitMqProjectTags, hcClient);
     }
 
     /**
@@ -760,7 +739,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRabbitMqTagsRequest 请求对象
+     * @param request ShowRabbitMqTagsRequest 请求对象
      * @return CompletableFuture<ShowRabbitMqTagsResponse>
      */
     public CompletableFuture<ShowRabbitMqTagsResponse> showRabbitMqTagsAsync(ShowRabbitMqTagsRequest request) {
@@ -774,13 +753,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRabbitMqTagsRequest 请求对象
+     * @param request ShowRabbitMqTagsRequest 请求对象
      * @return AsyncInvoker<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse>
      */
     public AsyncInvoker<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> showRabbitMqTagsAsyncInvoker(
         ShowRabbitMqTagsRequest request) {
-        return new AsyncInvoker<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse>(request,
-            RabbitMQMeta.showRabbitMqTags, hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.showRabbitMqTags, hcClient);
     }
 
     /**
@@ -790,7 +768,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return CompletableFuture<UpdateInstanceResponse>
      */
     public CompletableFuture<UpdateInstanceResponse> updateInstanceAsync(UpdateInstanceRequest request) {
@@ -804,13 +782,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
      */
     public AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceAsyncInvoker(
         UpdateInstanceRequest request) {
-        return new AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, RabbitMQMeta.updateInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.updateInstance, hcClient);
     }
 
     /**
@@ -820,7 +797,7 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginsRequest 请求对象
+     * @param request UpdatePluginsRequest 请求对象
      * @return CompletableFuture<UpdatePluginsResponse>
      */
     public CompletableFuture<UpdatePluginsResponse> updatePluginsAsync(UpdatePluginsRequest request) {
@@ -834,13 +811,12 @@ public class RabbitMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginsRequest 请求对象
+     * @param request UpdatePluginsRequest 请求对象
      * @return AsyncInvoker<UpdatePluginsRequest, UpdatePluginsResponse>
      */
     public AsyncInvoker<UpdatePluginsRequest, UpdatePluginsResponse> updatePluginsAsyncInvoker(
         UpdatePluginsRequest request) {
-        return new AsyncInvoker<UpdatePluginsRequest, UpdatePluginsResponse>(request, RabbitMQMeta.updatePlugins,
-            hcClient);
+        return new AsyncInvoker<>(request, RabbitMQMeta.updatePlugins, hcClient);
     }
 
 }

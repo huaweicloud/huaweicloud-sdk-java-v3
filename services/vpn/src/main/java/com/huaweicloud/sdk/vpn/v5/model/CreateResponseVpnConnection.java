@@ -184,6 +184,11 @@ public class CreateResponseVpnConnection {
 
     private String haRole;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<VpnResourceTag> tags = null;
+
     public CreateResponseVpnConnection withId(String id) {
         this.id = id;
         return this;
@@ -540,6 +545,39 @@ public class CreateResponseVpnConnection {
         this.haRole = haRole;
     }
 
+    public CreateResponseVpnConnection withTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateResponseVpnConnection addTagsItem(VpnResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateResponseVpnConnection withTags(Consumer<List<VpnResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<VpnResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -560,7 +598,7 @@ public class CreateResponseVpnConnection {
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.connectionMonitorId, that.connectionMonitorId)
-            && Objects.equals(this.haRole, that.haRole);
+            && Objects.equals(this.haRole, that.haRole) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -582,7 +620,8 @@ public class CreateResponseVpnConnection {
             updatedAt,
             enterpriseProjectId,
             connectionMonitorId,
-            haRole);
+            haRole,
+            tags);
     }
 
     @Override
@@ -607,6 +646,7 @@ public class CreateResponseVpnConnection {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    connectionMonitorId: ").append(toIndentedString(connectionMonitorId)).append("\n");
         sb.append("    haRole: ").append(toIndentedString(haRole)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

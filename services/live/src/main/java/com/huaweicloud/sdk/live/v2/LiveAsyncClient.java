@@ -70,7 +70,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAreaDetailRequest 请求对象
+     * @param request ListAreaDetailRequest 请求对象
      * @return CompletableFuture<ListAreaDetailResponse>
      */
     public CompletableFuture<ListAreaDetailResponse> listAreaDetailAsync(ListAreaDetailRequest request) {
@@ -92,13 +92,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAreaDetailRequest 请求对象
+     * @param request ListAreaDetailRequest 请求对象
      * @return AsyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse>
      */
     public AsyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse> listAreaDetailAsyncInvoker(
         ListAreaDetailRequest request) {
-        return new AsyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse>(request, LiveMeta.listAreaDetail,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listAreaDetail, hcClient);
     }
 
     /**
@@ -114,7 +113,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthDetailRequest 请求对象
+     * @param request ListBandwidthDetailRequest 请求对象
      * @return CompletableFuture<ListBandwidthDetailResponse>
      */
     public CompletableFuture<ListBandwidthDetailResponse> listBandwidthDetailAsync(ListBandwidthDetailRequest request) {
@@ -134,13 +133,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthDetailRequest 请求对象
+     * @param request ListBandwidthDetailRequest 请求对象
      * @return AsyncInvoker<ListBandwidthDetailRequest, ListBandwidthDetailResponse>
      */
     public AsyncInvoker<ListBandwidthDetailRequest, ListBandwidthDetailResponse> listBandwidthDetailAsyncInvoker(
         ListBandwidthDetailRequest request) {
-        return new AsyncInvoker<ListBandwidthDetailRequest, ListBandwidthDetailResponse>(request,
-            LiveMeta.listBandwidthDetail, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listBandwidthDetail, hcClient);
     }
 
     /**
@@ -156,7 +154,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainBandwidthPeakRequest 请求对象
+     * @param request ListDomainBandwidthPeakRequest 请求对象
      * @return CompletableFuture<ListDomainBandwidthPeakResponse>
      */
     public CompletableFuture<ListDomainBandwidthPeakResponse> listDomainBandwidthPeakAsync(
@@ -177,13 +175,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainBandwidthPeakRequest 请求对象
+     * @param request ListDomainBandwidthPeakRequest 请求对象
      * @return AsyncInvoker<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse>
      */
     public AsyncInvoker<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse> listDomainBandwidthPeakAsyncInvoker(
         ListDomainBandwidthPeakRequest request) {
-        return new AsyncInvoker<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse>(request,
-            LiveMeta.listDomainBandwidthPeak, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listDomainBandwidthPeak, hcClient);
     }
 
     /**
@@ -199,7 +196,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTrafficDetailRequest 请求对象
+     * @param request ListDomainTrafficDetailRequest 请求对象
      * @return CompletableFuture<ListDomainTrafficDetailResponse>
      */
     public CompletableFuture<ListDomainTrafficDetailResponse> listDomainTrafficDetailAsync(
@@ -220,13 +217,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTrafficDetailRequest 请求对象
+     * @param request ListDomainTrafficDetailRequest 请求对象
      * @return AsyncInvoker<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse>
      */
     public AsyncInvoker<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse> listDomainTrafficDetailAsyncInvoker(
         ListDomainTrafficDetailRequest request) {
-        return new AsyncInvoker<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse>(request,
-            LiveMeta.listDomainTrafficDetail, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listDomainTrafficDetail, hcClient);
     }
 
     /**
@@ -242,7 +238,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTrafficSummaryRequest 请求对象
+     * @param request ListDomainTrafficSummaryRequest 请求对象
      * @return CompletableFuture<ListDomainTrafficSummaryResponse>
      */
     public CompletableFuture<ListDomainTrafficSummaryResponse> listDomainTrafficSummaryAsync(
@@ -263,13 +259,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTrafficSummaryRequest 请求对象
+     * @param request ListDomainTrafficSummaryRequest 请求对象
      * @return AsyncInvoker<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse>
      */
     public AsyncInvoker<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse> listDomainTrafficSummaryAsyncInvoker(
         ListDomainTrafficSummaryRequest request) {
-        return new AsyncInvoker<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse>(request,
-            LiveMeta.listDomainTrafficSummary, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listDomainTrafficSummary, hcClient);
     }
 
     /**
@@ -283,7 +278,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryStreamsRequest 请求对象
+     * @param request ListHistoryStreamsRequest 请求对象
      * @return CompletableFuture<ListHistoryStreamsResponse>
      */
     public CompletableFuture<ListHistoryStreamsResponse> listHistoryStreamsAsync(ListHistoryStreamsRequest request) {
@@ -301,13 +296,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryStreamsRequest 请求对象
+     * @param request ListHistoryStreamsRequest 请求对象
      * @return AsyncInvoker<ListHistoryStreamsRequest, ListHistoryStreamsResponse>
      */
     public AsyncInvoker<ListHistoryStreamsRequest, ListHistoryStreamsResponse> listHistoryStreamsAsyncInvoker(
         ListHistoryStreamsRequest request) {
-        return new AsyncInvoker<ListHistoryStreamsRequest, ListHistoryStreamsResponse>(request,
-            LiveMeta.listHistoryStreams, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listHistoryStreams, hcClient);
     }
 
     /**
@@ -317,7 +311,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryHttpCodeRequest 请求对象
+     * @param request ListQueryHttpCodeRequest 请求对象
      * @return CompletableFuture<ListQueryHttpCodeResponse>
      */
     public CompletableFuture<ListQueryHttpCodeResponse> listQueryHttpCodeAsync(ListQueryHttpCodeRequest request) {
@@ -331,13 +325,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryHttpCodeRequest 请求对象
+     * @param request ListQueryHttpCodeRequest 请求对象
      * @return AsyncInvoker<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse>
      */
     public AsyncInvoker<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse> listQueryHttpCodeAsyncInvoker(
         ListQueryHttpCodeRequest request) {
-        return new AsyncInvoker<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse>(request,
-            LiveMeta.listQueryHttpCode, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listQueryHttpCode, hcClient);
     }
 
     /**
@@ -347,7 +340,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordDataRequest 请求对象
+     * @param request ListRecordDataRequest 请求对象
      * @return CompletableFuture<ListRecordDataResponse>
      */
     public CompletableFuture<ListRecordDataResponse> listRecordDataAsync(ListRecordDataRequest request) {
@@ -361,13 +354,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordDataRequest 请求对象
+     * @param request ListRecordDataRequest 请求对象
      * @return AsyncInvoker<ListRecordDataRequest, ListRecordDataResponse>
      */
     public AsyncInvoker<ListRecordDataRequest, ListRecordDataResponse> listRecordDataAsyncInvoker(
         ListRecordDataRequest request) {
-        return new AsyncInvoker<ListRecordDataRequest, ListRecordDataResponse>(request, LiveMeta.listRecordData,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listRecordData, hcClient);
     }
 
     /**
@@ -377,7 +369,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotDataRequest 请求对象
+     * @param request ListSnapshotDataRequest 请求对象
      * @return CompletableFuture<ListSnapshotDataResponse>
      */
     public CompletableFuture<ListSnapshotDataResponse> listSnapshotDataAsync(ListSnapshotDataRequest request) {
@@ -391,13 +383,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotDataRequest 请求对象
+     * @param request ListSnapshotDataRequest 请求对象
      * @return AsyncInvoker<ListSnapshotDataRequest, ListSnapshotDataResponse>
      */
     public AsyncInvoker<ListSnapshotDataRequest, ListSnapshotDataResponse> listSnapshotDataAsyncInvoker(
         ListSnapshotDataRequest request) {
-        return new AsyncInvoker<ListSnapshotDataRequest, ListSnapshotDataResponse>(request, LiveMeta.listSnapshotData,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listSnapshotData, hcClient);
     }
 
     /**
@@ -407,7 +398,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTranscodeDataRequest 请求对象
+     * @param request ListTranscodeDataRequest 请求对象
      * @return CompletableFuture<ListTranscodeDataResponse>
      */
     public CompletableFuture<ListTranscodeDataResponse> listTranscodeDataAsync(ListTranscodeDataRequest request) {
@@ -421,13 +412,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTranscodeDataRequest 请求对象
+     * @param request ListTranscodeDataRequest 请求对象
      * @return AsyncInvoker<ListTranscodeDataRequest, ListTranscodeDataResponse>
      */
     public AsyncInvoker<ListTranscodeDataRequest, ListTranscodeDataResponse> listTranscodeDataAsyncInvoker(
         ListTranscodeDataRequest request) {
-        return new AsyncInvoker<ListTranscodeDataRequest, ListTranscodeDataResponse>(request,
-            LiveMeta.listTranscodeData, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listTranscodeData, hcClient);
     }
 
     /**
@@ -437,7 +427,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersOfStreamRequest 请求对象
+     * @param request ListUsersOfStreamRequest 请求对象
      * @return CompletableFuture<ListUsersOfStreamResponse>
      */
     public CompletableFuture<ListUsersOfStreamResponse> listUsersOfStreamAsync(ListUsersOfStreamRequest request) {
@@ -451,13 +441,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersOfStreamRequest 请求对象
+     * @param request ListUsersOfStreamRequest 请求对象
      * @return AsyncInvoker<ListUsersOfStreamRequest, ListUsersOfStreamResponse>
      */
     public AsyncInvoker<ListUsersOfStreamRequest, ListUsersOfStreamResponse> listUsersOfStreamAsyncInvoker(
         ListUsersOfStreamRequest request) {
-        return new AsyncInvoker<ListUsersOfStreamRequest, ListUsersOfStreamResponse>(request,
-            LiveMeta.listUsersOfStream, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listUsersOfStream, hcClient);
     }
 
     /**
@@ -467,7 +456,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamCountRequest 请求对象
+     * @param request ShowStreamCountRequest 请求对象
      * @return CompletableFuture<ShowStreamCountResponse>
      */
     public CompletableFuture<ShowStreamCountResponse> showStreamCountAsync(ShowStreamCountRequest request) {
@@ -481,13 +470,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamCountRequest 请求对象
+     * @param request ShowStreamCountRequest 请求对象
      * @return AsyncInvoker<ShowStreamCountRequest, ShowStreamCountResponse>
      */
     public AsyncInvoker<ShowStreamCountRequest, ShowStreamCountResponse> showStreamCountAsyncInvoker(
         ShowStreamCountRequest request) {
-        return new AsyncInvoker<ShowStreamCountRequest, ShowStreamCountResponse>(request, LiveMeta.showStreamCount,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.showStreamCount, hcClient);
     }
 
     /**
@@ -498,7 +486,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamPortraitRequest 请求对象
+     * @param request ShowStreamPortraitRequest 请求对象
      * @return CompletableFuture<ShowStreamPortraitResponse>
      */
     public CompletableFuture<ShowStreamPortraitResponse> showStreamPortraitAsync(ShowStreamPortraitRequest request) {
@@ -513,13 +501,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamPortraitRequest 请求对象
+     * @param request ShowStreamPortraitRequest 请求对象
      * @return AsyncInvoker<ShowStreamPortraitRequest, ShowStreamPortraitResponse>
      */
     public AsyncInvoker<ShowStreamPortraitRequest, ShowStreamPortraitResponse> showStreamPortraitAsyncInvoker(
         ShowStreamPortraitRequest request) {
-        return new AsyncInvoker<ShowStreamPortraitRequest, ShowStreamPortraitResponse>(request,
-            LiveMeta.showStreamPortrait, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.showStreamPortrait, hcClient);
     }
 
     /**
@@ -529,7 +516,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUpBandwidthRequest 请求对象
+     * @param request ShowUpBandwidthRequest 请求对象
      * @return CompletableFuture<ShowUpBandwidthResponse>
      */
     public CompletableFuture<ShowUpBandwidthResponse> showUpBandwidthAsync(ShowUpBandwidthRequest request) {
@@ -543,13 +530,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUpBandwidthRequest 请求对象
+     * @param request ShowUpBandwidthRequest 请求对象
      * @return AsyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse>
      */
     public AsyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse> showUpBandwidthAsyncInvoker(
         ShowUpBandwidthRequest request) {
-        return new AsyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse>(request, LiveMeta.showUpBandwidth,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.showUpBandwidth, hcClient);
     }
 
     /**
@@ -563,7 +549,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamBitrateRequest 请求对象
+     * @param request ListSingleStreamBitrateRequest 请求对象
      * @return CompletableFuture<ListSingleStreamBitrateResponse>
      */
     public CompletableFuture<ListSingleStreamBitrateResponse> listSingleStreamBitrateAsync(
@@ -582,13 +568,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamBitrateRequest 请求对象
+     * @param request ListSingleStreamBitrateRequest 请求对象
      * @return AsyncInvoker<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse>
      */
     public AsyncInvoker<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse> listSingleStreamBitrateAsyncInvoker(
         ListSingleStreamBitrateRequest request) {
-        return new AsyncInvoker<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse>(request,
-            LiveMeta.listSingleStreamBitrate, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listSingleStreamBitrate, hcClient);
     }
 
     /**
@@ -602,7 +587,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamDetailRequest 请求对象
+     * @param request ListSingleStreamDetailRequest 请求对象
      * @return CompletableFuture<ListSingleStreamDetailResponse>
      */
     public CompletableFuture<ListSingleStreamDetailResponse> listSingleStreamDetailAsync(
@@ -621,13 +606,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamDetailRequest 请求对象
+     * @param request ListSingleStreamDetailRequest 请求对象
      * @return AsyncInvoker<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse>
      */
     public AsyncInvoker<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> listSingleStreamDetailAsyncInvoker(
         ListSingleStreamDetailRequest request) {
-        return new AsyncInvoker<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse>(request,
-            LiveMeta.listSingleStreamDetail, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listSingleStreamDetail, hcClient);
     }
 
     /**
@@ -641,7 +625,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamFramerateRequest 请求对象
+     * @param request ListSingleStreamFramerateRequest 请求对象
      * @return CompletableFuture<ListSingleStreamFramerateResponse>
      */
     public CompletableFuture<ListSingleStreamFramerateResponse> listSingleStreamFramerateAsync(
@@ -660,13 +644,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamFramerateRequest 请求对象
+     * @param request ListSingleStreamFramerateRequest 请求对象
      * @return AsyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse>
      */
     public AsyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> listSingleStreamFramerateAsyncInvoker(
         ListSingleStreamFramerateRequest request) {
-        return new AsyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse>(request,
-            LiveMeta.listSingleStreamFramerate, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listSingleStreamFramerate, hcClient);
     }
 
     /**
@@ -680,7 +663,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpStreamDetailRequest 请求对象
+     * @param request ListUpStreamDetailRequest 请求对象
      * @return CompletableFuture<ListUpStreamDetailResponse>
      */
     public CompletableFuture<ListUpStreamDetailResponse> listUpStreamDetailAsync(ListUpStreamDetailRequest request) {
@@ -698,13 +681,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpStreamDetailRequest 请求对象
+     * @param request ListUpStreamDetailRequest 请求对象
      * @return AsyncInvoker<ListUpStreamDetailRequest, ListUpStreamDetailResponse>
      */
     public AsyncInvoker<ListUpStreamDetailRequest, ListUpStreamDetailResponse> listUpStreamDetailAsyncInvoker(
         ListUpStreamDetailRequest request) {
-        return new AsyncInvoker<ListUpStreamDetailRequest, ListUpStreamDetailResponse>(request,
-            LiveMeta.listUpStreamDetail, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listUpStreamDetail, hcClient);
     }
 
 }

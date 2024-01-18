@@ -100,7 +100,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAcceleratorRequest 请求对象
+     * @param request CreateAcceleratorRequest 请求对象
      * @return CreateAcceleratorResponse
      */
     public CreateAcceleratorResponse createAccelerator(CreateAcceleratorRequest request) {
@@ -114,13 +114,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAcceleratorRequest 请求对象
+     * @param request CreateAcceleratorRequest 请求对象
      * @return SyncInvoker<CreateAcceleratorRequest, CreateAcceleratorResponse>
      */
     public SyncInvoker<CreateAcceleratorRequest, CreateAcceleratorResponse> createAcceleratorInvoker(
         CreateAcceleratorRequest request) {
-        return new SyncInvoker<CreateAcceleratorRequest, CreateAcceleratorResponse>(request, GaMeta.createAccelerator,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.createAccelerator, hcClient);
     }
 
     /**
@@ -130,7 +129,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAcceleratorRequest 请求对象
+     * @param request DeleteAcceleratorRequest 请求对象
      * @return DeleteAcceleratorResponse
      */
     public DeleteAcceleratorResponse deleteAccelerator(DeleteAcceleratorRequest request) {
@@ -144,13 +143,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAcceleratorRequest 请求对象
+     * @param request DeleteAcceleratorRequest 请求对象
      * @return SyncInvoker<DeleteAcceleratorRequest, DeleteAcceleratorResponse>
      */
     public SyncInvoker<DeleteAcceleratorRequest, DeleteAcceleratorResponse> deleteAcceleratorInvoker(
         DeleteAcceleratorRequest request) {
-        return new SyncInvoker<DeleteAcceleratorRequest, DeleteAcceleratorResponse>(request, GaMeta.deleteAccelerator,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.deleteAccelerator, hcClient);
     }
 
     /**
@@ -160,7 +158,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAcceleratorsRequest 请求对象
+     * @param request ListAcceleratorsRequest 请求对象
      * @return ListAcceleratorsResponse
      */
     public ListAcceleratorsResponse listAccelerators(ListAcceleratorsRequest request) {
@@ -174,13 +172,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAcceleratorsRequest 请求对象
+     * @param request ListAcceleratorsRequest 请求对象
      * @return SyncInvoker<ListAcceleratorsRequest, ListAcceleratorsResponse>
      */
     public SyncInvoker<ListAcceleratorsRequest, ListAcceleratorsResponse> listAcceleratorsInvoker(
         ListAcceleratorsRequest request) {
-        return new SyncInvoker<ListAcceleratorsRequest, ListAcceleratorsResponse>(request, GaMeta.listAccelerators,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.listAccelerators, hcClient);
     }
 
     /**
@@ -190,7 +187,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAcceleratorRequest 请求对象
+     * @param request ShowAcceleratorRequest 请求对象
      * @return ShowAcceleratorResponse
      */
     public ShowAcceleratorResponse showAccelerator(ShowAcceleratorRequest request) {
@@ -204,13 +201,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAcceleratorRequest 请求对象
+     * @param request ShowAcceleratorRequest 请求对象
      * @return SyncInvoker<ShowAcceleratorRequest, ShowAcceleratorResponse>
      */
     public SyncInvoker<ShowAcceleratorRequest, ShowAcceleratorResponse> showAcceleratorInvoker(
         ShowAcceleratorRequest request) {
-        return new SyncInvoker<ShowAcceleratorRequest, ShowAcceleratorResponse>(request, GaMeta.showAccelerator,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.showAccelerator, hcClient);
     }
 
     /**
@@ -220,7 +216,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAcceleratorRequest 请求对象
+     * @param request UpdateAcceleratorRequest 请求对象
      * @return UpdateAcceleratorResponse
      */
     public UpdateAcceleratorResponse updateAccelerator(UpdateAcceleratorRequest request) {
@@ -234,13 +230,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAcceleratorRequest 请求对象
+     * @param request UpdateAcceleratorRequest 请求对象
      * @return SyncInvoker<UpdateAcceleratorRequest, UpdateAcceleratorResponse>
      */
     public SyncInvoker<UpdateAcceleratorRequest, UpdateAcceleratorResponse> updateAcceleratorInvoker(
         UpdateAcceleratorRequest request) {
-        return new SyncInvoker<UpdateAcceleratorRequest, UpdateAcceleratorResponse>(request, GaMeta.updateAccelerator,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.updateAccelerator, hcClient);
     }
 
     /**
@@ -250,7 +245,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointRequest 请求对象
+     * @param request CreateEndpointRequest 请求对象
      * @return CreateEndpointResponse
      */
     public CreateEndpointResponse createEndpoint(CreateEndpointRequest request) {
@@ -264,12 +259,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointRequest 请求对象
+     * @param request CreateEndpointRequest 请求对象
      * @return SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
      */
     public SyncInvoker<CreateEndpointRequest, CreateEndpointResponse> createEndpointInvoker(
         CreateEndpointRequest request) {
-        return new SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>(request, GaMeta.createEndpoint, hcClient);
+        return new SyncInvoker<>(request, GaMeta.createEndpoint, hcClient);
     }
 
     /**
@@ -279,7 +274,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointRequest 请求对象
+     * @param request DeleteEndpointRequest 请求对象
      * @return DeleteEndpointResponse
      */
     public DeleteEndpointResponse deleteEndpoint(DeleteEndpointRequest request) {
@@ -293,12 +288,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointRequest 请求对象
+     * @param request DeleteEndpointRequest 请求对象
      * @return SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>
      */
     public SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpointInvoker(
         DeleteEndpointRequest request) {
-        return new SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>(request, GaMeta.deleteEndpoint, hcClient);
+        return new SyncInvoker<>(request, GaMeta.deleteEndpoint, hcClient);
     }
 
     /**
@@ -308,7 +303,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointsRequest 请求对象
+     * @param request ListEndpointsRequest 请求对象
      * @return ListEndpointsResponse
      */
     public ListEndpointsResponse listEndpoints(ListEndpointsRequest request) {
@@ -322,11 +317,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointsRequest 请求对象
+     * @param request ListEndpointsRequest 请求对象
      * @return SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
      */
     public SyncInvoker<ListEndpointsRequest, ListEndpointsResponse> listEndpointsInvoker(ListEndpointsRequest request) {
-        return new SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>(request, GaMeta.listEndpoints, hcClient);
+        return new SyncInvoker<>(request, GaMeta.listEndpoints, hcClient);
     }
 
     /**
@@ -336,7 +331,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEndpointRequest 请求对象
+     * @param request ShowEndpointRequest 请求对象
      * @return ShowEndpointResponse
      */
     public ShowEndpointResponse showEndpoint(ShowEndpointRequest request) {
@@ -350,11 +345,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEndpointRequest 请求对象
+     * @param request ShowEndpointRequest 请求对象
      * @return SyncInvoker<ShowEndpointRequest, ShowEndpointResponse>
      */
     public SyncInvoker<ShowEndpointRequest, ShowEndpointResponse> showEndpointInvoker(ShowEndpointRequest request) {
-        return new SyncInvoker<ShowEndpointRequest, ShowEndpointResponse>(request, GaMeta.showEndpoint, hcClient);
+        return new SyncInvoker<>(request, GaMeta.showEndpoint, hcClient);
     }
 
     /**
@@ -364,7 +359,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointRequest 请求对象
+     * @param request UpdateEndpointRequest 请求对象
      * @return UpdateEndpointResponse
      */
     public UpdateEndpointResponse updateEndpoint(UpdateEndpointRequest request) {
@@ -378,12 +373,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointRequest 请求对象
+     * @param request UpdateEndpointRequest 请求对象
      * @return SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>
      */
     public SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse> updateEndpointInvoker(
         UpdateEndpointRequest request) {
-        return new SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>(request, GaMeta.updateEndpoint, hcClient);
+        return new SyncInvoker<>(request, GaMeta.updateEndpoint, hcClient);
     }
 
     /**
@@ -393,7 +388,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointGroupRequest 请求对象
+     * @param request CreateEndpointGroupRequest 请求对象
      * @return CreateEndpointGroupResponse
      */
     public CreateEndpointGroupResponse createEndpointGroup(CreateEndpointGroupRequest request) {
@@ -407,13 +402,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointGroupRequest 请求对象
+     * @param request CreateEndpointGroupRequest 请求对象
      * @return SyncInvoker<CreateEndpointGroupRequest, CreateEndpointGroupResponse>
      */
     public SyncInvoker<CreateEndpointGroupRequest, CreateEndpointGroupResponse> createEndpointGroupInvoker(
         CreateEndpointGroupRequest request) {
-        return new SyncInvoker<CreateEndpointGroupRequest, CreateEndpointGroupResponse>(request,
-            GaMeta.createEndpointGroup, hcClient);
+        return new SyncInvoker<>(request, GaMeta.createEndpointGroup, hcClient);
     }
 
     /**
@@ -423,7 +417,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointGroupRequest 请求对象
+     * @param request DeleteEndpointGroupRequest 请求对象
      * @return DeleteEndpointGroupResponse
      */
     public DeleteEndpointGroupResponse deleteEndpointGroup(DeleteEndpointGroupRequest request) {
@@ -437,13 +431,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointGroupRequest 请求对象
+     * @param request DeleteEndpointGroupRequest 请求对象
      * @return SyncInvoker<DeleteEndpointGroupRequest, DeleteEndpointGroupResponse>
      */
     public SyncInvoker<DeleteEndpointGroupRequest, DeleteEndpointGroupResponse> deleteEndpointGroupInvoker(
         DeleteEndpointGroupRequest request) {
-        return new SyncInvoker<DeleteEndpointGroupRequest, DeleteEndpointGroupResponse>(request,
-            GaMeta.deleteEndpointGroup, hcClient);
+        return new SyncInvoker<>(request, GaMeta.deleteEndpointGroup, hcClient);
     }
 
     /**
@@ -453,7 +446,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointGroupsRequest 请求对象
+     * @param request ListEndpointGroupsRequest 请求对象
      * @return ListEndpointGroupsResponse
      */
     public ListEndpointGroupsResponse listEndpointGroups(ListEndpointGroupsRequest request) {
@@ -467,13 +460,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointGroupsRequest 请求对象
+     * @param request ListEndpointGroupsRequest 请求对象
      * @return SyncInvoker<ListEndpointGroupsRequest, ListEndpointGroupsResponse>
      */
     public SyncInvoker<ListEndpointGroupsRequest, ListEndpointGroupsResponse> listEndpointGroupsInvoker(
         ListEndpointGroupsRequest request) {
-        return new SyncInvoker<ListEndpointGroupsRequest, ListEndpointGroupsResponse>(request,
-            GaMeta.listEndpointGroups, hcClient);
+        return new SyncInvoker<>(request, GaMeta.listEndpointGroups, hcClient);
     }
 
     /**
@@ -483,7 +475,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEndpointGroupRequest 请求对象
+     * @param request ShowEndpointGroupRequest 请求对象
      * @return ShowEndpointGroupResponse
      */
     public ShowEndpointGroupResponse showEndpointGroup(ShowEndpointGroupRequest request) {
@@ -497,13 +489,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEndpointGroupRequest 请求对象
+     * @param request ShowEndpointGroupRequest 请求对象
      * @return SyncInvoker<ShowEndpointGroupRequest, ShowEndpointGroupResponse>
      */
     public SyncInvoker<ShowEndpointGroupRequest, ShowEndpointGroupResponse> showEndpointGroupInvoker(
         ShowEndpointGroupRequest request) {
-        return new SyncInvoker<ShowEndpointGroupRequest, ShowEndpointGroupResponse>(request, GaMeta.showEndpointGroup,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.showEndpointGroup, hcClient);
     }
 
     /**
@@ -513,7 +504,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointGroupRequest 请求对象
+     * @param request UpdateEndpointGroupRequest 请求对象
      * @return UpdateEndpointGroupResponse
      */
     public UpdateEndpointGroupResponse updateEndpointGroup(UpdateEndpointGroupRequest request) {
@@ -527,13 +518,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointGroupRequest 请求对象
+     * @param request UpdateEndpointGroupRequest 请求对象
      * @return SyncInvoker<UpdateEndpointGroupRequest, UpdateEndpointGroupResponse>
      */
     public SyncInvoker<UpdateEndpointGroupRequest, UpdateEndpointGroupResponse> updateEndpointGroupInvoker(
         UpdateEndpointGroupRequest request) {
-        return new SyncInvoker<UpdateEndpointGroupRequest, UpdateEndpointGroupResponse>(request,
-            GaMeta.updateEndpointGroup, hcClient);
+        return new SyncInvoker<>(request, GaMeta.updateEndpointGroup, hcClient);
     }
 
     /**
@@ -543,7 +533,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHealthCheckRequest 请求对象
+     * @param request CreateHealthCheckRequest 请求对象
      * @return CreateHealthCheckResponse
      */
     public CreateHealthCheckResponse createHealthCheck(CreateHealthCheckRequest request) {
@@ -557,13 +547,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHealthCheckRequest 请求对象
+     * @param request CreateHealthCheckRequest 请求对象
      * @return SyncInvoker<CreateHealthCheckRequest, CreateHealthCheckResponse>
      */
     public SyncInvoker<CreateHealthCheckRequest, CreateHealthCheckResponse> createHealthCheckInvoker(
         CreateHealthCheckRequest request) {
-        return new SyncInvoker<CreateHealthCheckRequest, CreateHealthCheckResponse>(request, GaMeta.createHealthCheck,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.createHealthCheck, hcClient);
     }
 
     /**
@@ -573,7 +562,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHealthCheckRequest 请求对象
+     * @param request DeleteHealthCheckRequest 请求对象
      * @return DeleteHealthCheckResponse
      */
     public DeleteHealthCheckResponse deleteHealthCheck(DeleteHealthCheckRequest request) {
@@ -587,13 +576,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHealthCheckRequest 请求对象
+     * @param request DeleteHealthCheckRequest 请求对象
      * @return SyncInvoker<DeleteHealthCheckRequest, DeleteHealthCheckResponse>
      */
     public SyncInvoker<DeleteHealthCheckRequest, DeleteHealthCheckResponse> deleteHealthCheckInvoker(
         DeleteHealthCheckRequest request) {
-        return new SyncInvoker<DeleteHealthCheckRequest, DeleteHealthCheckResponse>(request, GaMeta.deleteHealthCheck,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.deleteHealthCheck, hcClient);
     }
 
     /**
@@ -603,7 +591,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHealthChecksRequest 请求对象
+     * @param request ListHealthChecksRequest 请求对象
      * @return ListHealthChecksResponse
      */
     public ListHealthChecksResponse listHealthChecks(ListHealthChecksRequest request) {
@@ -617,13 +605,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHealthChecksRequest 请求对象
+     * @param request ListHealthChecksRequest 请求对象
      * @return SyncInvoker<ListHealthChecksRequest, ListHealthChecksResponse>
      */
     public SyncInvoker<ListHealthChecksRequest, ListHealthChecksResponse> listHealthChecksInvoker(
         ListHealthChecksRequest request) {
-        return new SyncInvoker<ListHealthChecksRequest, ListHealthChecksResponse>(request, GaMeta.listHealthChecks,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.listHealthChecks, hcClient);
     }
 
     /**
@@ -633,7 +620,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHealthCheckRequest 请求对象
+     * @param request ShowHealthCheckRequest 请求对象
      * @return ShowHealthCheckResponse
      */
     public ShowHealthCheckResponse showHealthCheck(ShowHealthCheckRequest request) {
@@ -647,13 +634,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHealthCheckRequest 请求对象
+     * @param request ShowHealthCheckRequest 请求对象
      * @return SyncInvoker<ShowHealthCheckRequest, ShowHealthCheckResponse>
      */
     public SyncInvoker<ShowHealthCheckRequest, ShowHealthCheckResponse> showHealthCheckInvoker(
         ShowHealthCheckRequest request) {
-        return new SyncInvoker<ShowHealthCheckRequest, ShowHealthCheckResponse>(request, GaMeta.showHealthCheck,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.showHealthCheck, hcClient);
     }
 
     /**
@@ -663,7 +649,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthCheckRequest 请求对象
+     * @param request UpdateHealthCheckRequest 请求对象
      * @return UpdateHealthCheckResponse
      */
     public UpdateHealthCheckResponse updateHealthCheck(UpdateHealthCheckRequest request) {
@@ -677,13 +663,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthCheckRequest 请求对象
+     * @param request UpdateHealthCheckRequest 请求对象
      * @return SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>
      */
     public SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse> updateHealthCheckInvoker(
         UpdateHealthCheckRequest request) {
-        return new SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>(request, GaMeta.updateHealthCheck,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.updateHealthCheck, hcClient);
     }
 
     /**
@@ -694,7 +679,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddIpGroupIpRequest 请求对象
+     * @param request AddIpGroupIpRequest 请求对象
      * @return AddIpGroupIpResponse
      */
     public AddIpGroupIpResponse addIpGroupIp(AddIpGroupIpRequest request) {
@@ -709,11 +694,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddIpGroupIpRequest 请求对象
+     * @param request AddIpGroupIpRequest 请求对象
      * @return SyncInvoker<AddIpGroupIpRequest, AddIpGroupIpResponse>
      */
     public SyncInvoker<AddIpGroupIpRequest, AddIpGroupIpResponse> addIpGroupIpInvoker(AddIpGroupIpRequest request) {
-        return new SyncInvoker<AddIpGroupIpRequest, AddIpGroupIpResponse>(request, GaMeta.addIpGroupIp, hcClient);
+        return new SyncInvoker<>(request, GaMeta.addIpGroupIp, hcClient);
     }
 
     /**
@@ -724,7 +709,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateListenerRequest 请求对象
+     * @param request AssociateListenerRequest 请求对象
      * @return AssociateListenerResponse
      */
     public AssociateListenerResponse associateListener(AssociateListenerRequest request) {
@@ -739,13 +724,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateListenerRequest 请求对象
+     * @param request AssociateListenerRequest 请求对象
      * @return SyncInvoker<AssociateListenerRequest, AssociateListenerResponse>
      */
     public SyncInvoker<AssociateListenerRequest, AssociateListenerResponse> associateListenerInvoker(
         AssociateListenerRequest request) {
-        return new SyncInvoker<AssociateListenerRequest, AssociateListenerResponse>(request, GaMeta.associateListener,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.associateListener, hcClient);
     }
 
     /**
@@ -756,7 +740,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIpGroupRequest 请求对象
+     * @param request CreateIpGroupRequest 请求对象
      * @return CreateIpGroupResponse
      */
     public CreateIpGroupResponse createIpGroup(CreateIpGroupRequest request) {
@@ -771,11 +755,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIpGroupRequest 请求对象
+     * @param request CreateIpGroupRequest 请求对象
      * @return SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>
      */
     public SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroupInvoker(CreateIpGroupRequest request) {
-        return new SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>(request, GaMeta.createIpGroup, hcClient);
+        return new SyncInvoker<>(request, GaMeta.createIpGroup, hcClient);
     }
 
     /**
@@ -786,7 +770,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpGroupRequest 请求对象
+     * @param request DeleteIpGroupRequest 请求对象
      * @return DeleteIpGroupResponse
      */
     public DeleteIpGroupResponse deleteIpGroup(DeleteIpGroupRequest request) {
@@ -801,11 +785,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpGroupRequest 请求对象
+     * @param request DeleteIpGroupRequest 请求对象
      * @return SyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>
      */
     public SyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse> deleteIpGroupInvoker(DeleteIpGroupRequest request) {
-        return new SyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>(request, GaMeta.deleteIpGroup, hcClient);
+        return new SyncInvoker<>(request, GaMeta.deleteIpGroup, hcClient);
     }
 
     /**
@@ -816,7 +800,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateListenerRequest 请求对象
+     * @param request DisassociateListenerRequest 请求对象
      * @return DisassociateListenerResponse
      */
     public DisassociateListenerResponse disassociateListener(DisassociateListenerRequest request) {
@@ -831,13 +815,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateListenerRequest 请求对象
+     * @param request DisassociateListenerRequest 请求对象
      * @return SyncInvoker<DisassociateListenerRequest, DisassociateListenerResponse>
      */
     public SyncInvoker<DisassociateListenerRequest, DisassociateListenerResponse> disassociateListenerInvoker(
         DisassociateListenerRequest request) {
-        return new SyncInvoker<DisassociateListenerRequest, DisassociateListenerResponse>(request,
-            GaMeta.disassociateListener, hcClient);
+        return new SyncInvoker<>(request, GaMeta.disassociateListener, hcClient);
     }
 
     /**
@@ -847,7 +830,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIpGroupsRequest 请求对象
+     * @param request ListIpGroupsRequest 请求对象
      * @return ListIpGroupsResponse
      */
     public ListIpGroupsResponse listIpGroups(ListIpGroupsRequest request) {
@@ -861,11 +844,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIpGroupsRequest 请求对象
+     * @param request ListIpGroupsRequest 请求对象
      * @return SyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>
      */
     public SyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse> listIpGroupsInvoker(ListIpGroupsRequest request) {
-        return new SyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>(request, GaMeta.listIpGroups, hcClient);
+        return new SyncInvoker<>(request, GaMeta.listIpGroups, hcClient);
     }
 
     /**
@@ -876,7 +859,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveIpGroupIpRequest 请求对象
+     * @param request RemoveIpGroupIpRequest 请求对象
      * @return RemoveIpGroupIpResponse
      */
     public RemoveIpGroupIpResponse removeIpGroupIp(RemoveIpGroupIpRequest request) {
@@ -891,13 +874,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveIpGroupIpRequest 请求对象
+     * @param request RemoveIpGroupIpRequest 请求对象
      * @return SyncInvoker<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse>
      */
     public SyncInvoker<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse> removeIpGroupIpInvoker(
         RemoveIpGroupIpRequest request) {
-        return new SyncInvoker<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse>(request, GaMeta.removeIpGroupIp,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.removeIpGroupIp, hcClient);
     }
 
     /**
@@ -907,7 +889,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpGroupRequest 请求对象
+     * @param request ShowIpGroupRequest 请求对象
      * @return ShowIpGroupResponse
      */
     public ShowIpGroupResponse showIpGroup(ShowIpGroupRequest request) {
@@ -921,11 +903,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpGroupRequest 请求对象
+     * @param request ShowIpGroupRequest 请求对象
      * @return SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>
      */
     public SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroupInvoker(ShowIpGroupRequest request) {
-        return new SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>(request, GaMeta.showIpGroup, hcClient);
+        return new SyncInvoker<>(request, GaMeta.showIpGroup, hcClient);
     }
 
     /**
@@ -935,7 +917,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpGroupRequest 请求对象
+     * @param request UpdateIpGroupRequest 请求对象
      * @return UpdateIpGroupResponse
      */
     public UpdateIpGroupResponse updateIpGroup(UpdateIpGroupRequest request) {
@@ -949,11 +931,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpGroupRequest 请求对象
+     * @param request UpdateIpGroupRequest 请求对象
      * @return SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>
      */
     public SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroupInvoker(UpdateIpGroupRequest request) {
-        return new SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>(request, GaMeta.updateIpGroup, hcClient);
+        return new SyncInvoker<>(request, GaMeta.updateIpGroup, hcClient);
     }
 
     /**
@@ -963,7 +945,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateListenerRequest 请求对象
+     * @param request CreateListenerRequest 请求对象
      * @return CreateListenerResponse
      */
     public CreateListenerResponse createListener(CreateListenerRequest request) {
@@ -977,12 +959,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateListenerRequest 请求对象
+     * @param request CreateListenerRequest 请求对象
      * @return SyncInvoker<CreateListenerRequest, CreateListenerResponse>
      */
     public SyncInvoker<CreateListenerRequest, CreateListenerResponse> createListenerInvoker(
         CreateListenerRequest request) {
-        return new SyncInvoker<CreateListenerRequest, CreateListenerResponse>(request, GaMeta.createListener, hcClient);
+        return new SyncInvoker<>(request, GaMeta.createListener, hcClient);
     }
 
     /**
@@ -992,7 +974,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteListenerRequest 请求对象
+     * @param request DeleteListenerRequest 请求对象
      * @return DeleteListenerResponse
      */
     public DeleteListenerResponse deleteListener(DeleteListenerRequest request) {
@@ -1006,12 +988,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteListenerRequest 请求对象
+     * @param request DeleteListenerRequest 请求对象
      * @return SyncInvoker<DeleteListenerRequest, DeleteListenerResponse>
      */
     public SyncInvoker<DeleteListenerRequest, DeleteListenerResponse> deleteListenerInvoker(
         DeleteListenerRequest request) {
-        return new SyncInvoker<DeleteListenerRequest, DeleteListenerResponse>(request, GaMeta.deleteListener, hcClient);
+        return new SyncInvoker<>(request, GaMeta.deleteListener, hcClient);
     }
 
     /**
@@ -1021,7 +1003,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListListenersRequest 请求对象
+     * @param request ListListenersRequest 请求对象
      * @return ListListenersResponse
      */
     public ListListenersResponse listListeners(ListListenersRequest request) {
@@ -1035,11 +1017,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListListenersRequest 请求对象
+     * @param request ListListenersRequest 请求对象
      * @return SyncInvoker<ListListenersRequest, ListListenersResponse>
      */
     public SyncInvoker<ListListenersRequest, ListListenersResponse> listListenersInvoker(ListListenersRequest request) {
-        return new SyncInvoker<ListListenersRequest, ListListenersResponse>(request, GaMeta.listListeners, hcClient);
+        return new SyncInvoker<>(request, GaMeta.listListeners, hcClient);
     }
 
     /**
@@ -1049,7 +1031,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowListenerRequest 请求对象
+     * @param request ShowListenerRequest 请求对象
      * @return ShowListenerResponse
      */
     public ShowListenerResponse showListener(ShowListenerRequest request) {
@@ -1063,11 +1045,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowListenerRequest 请求对象
+     * @param request ShowListenerRequest 请求对象
      * @return SyncInvoker<ShowListenerRequest, ShowListenerResponse>
      */
     public SyncInvoker<ShowListenerRequest, ShowListenerResponse> showListenerInvoker(ShowListenerRequest request) {
-        return new SyncInvoker<ShowListenerRequest, ShowListenerResponse>(request, GaMeta.showListener, hcClient);
+        return new SyncInvoker<>(request, GaMeta.showListener, hcClient);
     }
 
     /**
@@ -1077,7 +1059,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateListenerRequest 请求对象
+     * @param request UpdateListenerRequest 请求对象
      * @return UpdateListenerResponse
      */
     public UpdateListenerResponse updateListener(UpdateListenerRequest request) {
@@ -1091,12 +1073,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateListenerRequest 请求对象
+     * @param request UpdateListenerRequest 请求对象
      * @return SyncInvoker<UpdateListenerRequest, UpdateListenerResponse>
      */
     public SyncInvoker<UpdateListenerRequest, UpdateListenerResponse> updateListenerInvoker(
         UpdateListenerRequest request) {
-        return new SyncInvoker<UpdateListenerRequest, UpdateListenerResponse>(request, GaMeta.updateListener, hcClient);
+        return new SyncInvoker<>(request, GaMeta.updateListener, hcClient);
     }
 
     /**
@@ -1106,7 +1088,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRegionsRequest 请求对象
+     * @param request ListRegionsRequest 请求对象
      * @return ListRegionsResponse
      */
     public ListRegionsResponse listRegions(ListRegionsRequest request) {
@@ -1120,11 +1102,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRegionsRequest 请求对象
+     * @param request ListRegionsRequest 请求对象
      * @return SyncInvoker<ListRegionsRequest, ListRegionsResponse>
      */
     public SyncInvoker<ListRegionsRequest, ListRegionsResponse> listRegionsInvoker(ListRegionsRequest request) {
-        return new SyncInvoker<ListRegionsRequest, ListRegionsResponse>(request, GaMeta.listRegions, hcClient);
+        return new SyncInvoker<>(request, GaMeta.listRegions, hcClient);
     }
 
     /**
@@ -1134,7 +1116,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagsRequest 请求对象
+     * @param request CreateTagsRequest 请求对象
      * @return CreateTagsResponse
      */
     public CreateTagsResponse createTags(CreateTagsRequest request) {
@@ -1148,11 +1130,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagsRequest 请求对象
+     * @param request CreateTagsRequest 请求对象
      * @return SyncInvoker<CreateTagsRequest, CreateTagsResponse>
      */
     public SyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsInvoker(CreateTagsRequest request) {
-        return new SyncInvoker<CreateTagsRequest, CreateTagsResponse>(request, GaMeta.createTags, hcClient);
+        return new SyncInvoker<>(request, GaMeta.createTags, hcClient);
     }
 
     /**
@@ -1162,7 +1144,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagsRequest 请求对象
+     * @param request DeleteTagsRequest 请求对象
      * @return DeleteTagsResponse
      */
     public DeleteTagsResponse deleteTags(DeleteTagsRequest request) {
@@ -1176,11 +1158,11 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagsRequest 请求对象
+     * @param request DeleteTagsRequest 请求对象
      * @return SyncInvoker<DeleteTagsRequest, DeleteTagsResponse>
      */
     public SyncInvoker<DeleteTagsRequest, DeleteTagsResponse> deleteTagsInvoker(DeleteTagsRequest request) {
-        return new SyncInvoker<DeleteTagsRequest, DeleteTagsResponse>(request, GaMeta.deleteTags, hcClient);
+        return new SyncInvoker<>(request, GaMeta.deleteTags, hcClient);
     }
 
     /**
@@ -1190,7 +1172,7 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagsRequest 请求对象
+     * @param request ShowResourceTagsRequest 请求对象
      * @return ShowResourceTagsResponse
      */
     public ShowResourceTagsResponse showResourceTags(ShowResourceTagsRequest request) {
@@ -1204,13 +1186,12 @@ public class GaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagsRequest 请求对象
+     * @param request ShowResourceTagsRequest 请求对象
      * @return SyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>
      */
     public SyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTagsInvoker(
         ShowResourceTagsRequest request) {
-        return new SyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>(request, GaMeta.showResourceTags,
-            hcClient);
+        return new SyncInvoker<>(request, GaMeta.showResourceTags, hcClient);
     }
 
 }

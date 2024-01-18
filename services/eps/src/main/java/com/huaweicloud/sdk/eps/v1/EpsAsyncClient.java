@@ -50,7 +50,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseProjectRequest 请求对象
+     * @param request CreateEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<CreateEnterpriseProjectResponse>
      */
     public CompletableFuture<CreateEnterpriseProjectResponse> createEnterpriseProjectAsync(
@@ -65,13 +65,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseProjectRequest 请求对象
+     * @param request CreateEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse>
      */
     public AsyncInvoker<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> createEnterpriseProjectAsyncInvoker(
         CreateEnterpriseProjectRequest request) {
-        return new AsyncInvoker<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse>(request,
-            EpsMeta.createEnterpriseProject, hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.createEnterpriseProject, hcClient);
     }
 
     /**
@@ -81,7 +80,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableEnterpriseProjectRequest 请求对象
+     * @param request DisableEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<DisableEnterpriseProjectResponse>
      */
     public CompletableFuture<DisableEnterpriseProjectResponse> disableEnterpriseProjectAsync(
@@ -96,13 +95,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableEnterpriseProjectRequest 请求对象
+     * @param request DisableEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse>
      */
     public AsyncInvoker<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse> disableEnterpriseProjectAsyncInvoker(
         DisableEnterpriseProjectRequest request) {
-        return new AsyncInvoker<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse>(request,
-            EpsMeta.disableEnterpriseProject, hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.disableEnterpriseProject, hcClient);
     }
 
     /**
@@ -112,7 +110,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableEnterpriseProjectRequest 请求对象
+     * @param request EnableEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<EnableEnterpriseProjectResponse>
      */
     public CompletableFuture<EnableEnterpriseProjectResponse> enableEnterpriseProjectAsync(
@@ -127,13 +125,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableEnterpriseProjectRequest 请求对象
+     * @param request EnableEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse>
      */
     public AsyncInvoker<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse> enableEnterpriseProjectAsyncInvoker(
         EnableEnterpriseProjectRequest request) {
-        return new AsyncInvoker<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse>(request,
-            EpsMeta.enableEnterpriseProject, hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.enableEnterpriseProject, hcClient);
     }
 
     /**
@@ -143,7 +140,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return CompletableFuture<ListApiVersionsResponse>
      */
     public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
@@ -157,13 +154,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(
         ListApiVersionsRequest request) {
-        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, EpsMeta.listApiVersions,
-            hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -173,7 +169,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseProjectRequest 请求对象
+     * @param request ListEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ListEnterpriseProjectResponse>
      */
     public CompletableFuture<ListEnterpriseProjectResponse> listEnterpriseProjectAsync(
@@ -188,13 +184,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseProjectRequest 请求对象
+     * @param request ListEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse>
      */
     public AsyncInvoker<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> listEnterpriseProjectAsyncInvoker(
         ListEnterpriseProjectRequest request) {
-        return new AsyncInvoker<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse>(request,
-            EpsMeta.listEnterpriseProject, hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.listEnterpriseProject, hcClient);
     }
 
     /**
@@ -204,7 +199,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProvidersRequest 请求对象
+     * @param request ListProvidersRequest 请求对象
      * @return CompletableFuture<ListProvidersResponse>
      */
     public CompletableFuture<ListProvidersResponse> listProvidersAsync(ListProvidersRequest request) {
@@ -218,12 +213,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProvidersRequest 请求对象
+     * @param request ListProvidersRequest 请求对象
      * @return AsyncInvoker<ListProvidersRequest, ListProvidersResponse>
      */
     public AsyncInvoker<ListProvidersRequest, ListProvidersResponse> listProvidersAsyncInvoker(
         ListProvidersRequest request) {
-        return new AsyncInvoker<ListProvidersRequest, ListProvidersResponse>(request, EpsMeta.listProviders, hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.listProviders, hcClient);
     }
 
     /**
@@ -233,7 +228,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateResourceRequest 请求对象
+     * @param request MigrateResourceRequest 请求对象
      * @return CompletableFuture<MigrateResourceResponse>
      */
     public CompletableFuture<MigrateResourceResponse> migrateResourceAsync(MigrateResourceRequest request) {
@@ -247,13 +242,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateResourceRequest 请求对象
+     * @param request MigrateResourceRequest 请求对象
      * @return AsyncInvoker<MigrateResourceRequest, MigrateResourceResponse>
      */
     public AsyncInvoker<MigrateResourceRequest, MigrateResourceResponse> migrateResourceAsyncInvoker(
         MigrateResourceRequest request) {
-        return new AsyncInvoker<MigrateResourceRequest, MigrateResourceResponse>(request, EpsMeta.migrateResource,
-            hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.migrateResource, hcClient);
     }
 
     /**
@@ -263,7 +257,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return CompletableFuture<ShowApiVersionResponse>
      */
     public CompletableFuture<ShowApiVersionResponse> showApiVersionAsync(ShowApiVersionRequest request) {
@@ -277,13 +271,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
      */
     public AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionAsyncInvoker(
         ShowApiVersionRequest request) {
-        return new AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, EpsMeta.showApiVersion,
-            hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.showApiVersion, hcClient);
     }
 
     /**
@@ -293,7 +286,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnterpriseProjectRequest 请求对象
+     * @param request ShowEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ShowEnterpriseProjectResponse>
      */
     public CompletableFuture<ShowEnterpriseProjectResponse> showEnterpriseProjectAsync(
@@ -308,13 +301,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnterpriseProjectRequest 请求对象
+     * @param request ShowEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse>
      */
     public AsyncInvoker<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> showEnterpriseProjectAsyncInvoker(
         ShowEnterpriseProjectRequest request) {
-        return new AsyncInvoker<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse>(request,
-            EpsMeta.showEnterpriseProject, hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.showEnterpriseProject, hcClient);
     }
 
     /**
@@ -324,7 +316,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnterpriseProjectQuotaRequest 请求对象
+     * @param request ShowEnterpriseProjectQuotaRequest 请求对象
      * @return CompletableFuture<ShowEnterpriseProjectQuotaResponse>
      */
     public CompletableFuture<ShowEnterpriseProjectQuotaResponse> showEnterpriseProjectQuotaAsync(
@@ -339,13 +331,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnterpriseProjectQuotaRequest 请求对象
+     * @param request ShowEnterpriseProjectQuotaRequest 请求对象
      * @return AsyncInvoker<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse>
      */
     public AsyncInvoker<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> showEnterpriseProjectQuotaAsyncInvoker(
         ShowEnterpriseProjectQuotaRequest request) {
-        return new AsyncInvoker<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse>(request,
-            EpsMeta.showEnterpriseProjectQuota, hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.showEnterpriseProjectQuota, hcClient);
     }
 
     /**
@@ -355,7 +346,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceBindEnterpriseProjectRequest 请求对象
+     * @param request ShowResourceBindEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ShowResourceBindEnterpriseProjectResponse>
      */
     public CompletableFuture<ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProjectAsync(
@@ -370,13 +361,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceBindEnterpriseProjectRequest 请求对象
+     * @param request ShowResourceBindEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse>
      */
     public AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProjectAsyncInvoker(
         ShowResourceBindEnterpriseProjectRequest request) {
-        return new AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse>(
-            request, EpsMeta.showResourceBindEnterpriseProject, hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.showResourceBindEnterpriseProject, hcClient);
     }
 
     /**
@@ -386,7 +376,7 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnterpriseProjectRequest 请求对象
+     * @param request UpdateEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<UpdateEnterpriseProjectResponse>
      */
     public CompletableFuture<UpdateEnterpriseProjectResponse> updateEnterpriseProjectAsync(
@@ -401,13 +391,12 @@ public class EpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnterpriseProjectRequest 请求对象
+     * @param request UpdateEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse>
      */
     public AsyncInvoker<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse> updateEnterpriseProjectAsyncInvoker(
         UpdateEnterpriseProjectRequest request) {
-        return new AsyncInvoker<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse>(request,
-            EpsMeta.updateEnterpriseProject, hcClient);
+        return new AsyncInvoker<>(request, EpsMeta.updateEnterpriseProject, hcClient);
     }
 
 }

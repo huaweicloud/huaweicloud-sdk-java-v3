@@ -39,7 +39,7 @@ public class UpdateVariableRequestBody {
     }
 
     /**
-     * id
+     * 变量id
      * minimum: 0
      * maximum: 2147483647
      * @return id
@@ -58,7 +58,7 @@ public class UpdateVariableRequestBody {
     }
 
     /**
-     * name
+     * 变量名称
      * @return name
      */
     public String getName() {
@@ -75,7 +75,7 @@ public class UpdateVariableRequestBody {
     }
 
     /**
-     * variable_type
+     * 变量类型（1：整数；2：枚举；3：文件；5：文本（hcs暂无此类型））
      * minimum: 0
      * maximum: 2147483647
      * @return variableType
@@ -110,7 +110,7 @@ public class UpdateVariableRequestBody {
     }
 
     /**
-     * variable
+     * 变量值
      * @return variable
      */
     public List<Object> getVariable() {

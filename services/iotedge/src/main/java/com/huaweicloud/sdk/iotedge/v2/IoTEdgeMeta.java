@@ -195,9 +195,9 @@ import java.util.List;
 public class IoTEdgeMeta {
 
     public static final HttpRequestDef<CreateEdgeNodeRequest, CreateEdgeNodeResponse> createEdgeNode =
-        genForcreateEdgeNode();
+        genForCreateEdgeNode();
 
-    private static HttpRequestDef<CreateEdgeNodeRequest, CreateEdgeNodeResponse> genForcreateEdgeNode() {
+    private static HttpRequestDef<CreateEdgeNodeRequest, CreateEdgeNodeResponse> genForCreateEdgeNode() {
         // basic
         HttpRequestDef.Builder<CreateEdgeNodeRequest, CreateEdgeNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEdgeNodeRequest.class, CreateEdgeNodeResponse.class)
@@ -210,9 +210,7 @@ public class IoTEdgeMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EdgeNodeCreation.class),
-            f -> f.withMarshaller(CreateEdgeNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeNodeRequest::getBody, CreateEdgeNodeRequest::setBody));
 
         // response
 
@@ -220,9 +218,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<CreateInstallCmdRequest, CreateInstallCmdResponse> createInstallCmd =
-        genForcreateInstallCmd();
+        genForCreateInstallCmd();
 
-    private static HttpRequestDef<CreateInstallCmdRequest, CreateInstallCmdResponse> genForcreateInstallCmd() {
+    private static HttpRequestDef<CreateInstallCmdRequest, CreateInstallCmdResponse> genForCreateInstallCmd() {
         // basic
         HttpRequestDef.Builder<CreateInstallCmdRequest, CreateInstallCmdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstallCmdRequest.class, CreateInstallCmdResponse.class)
@@ -235,23 +233,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInstallCmdRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(CreateInstallCmdRequest::getEdgeNodeId, CreateInstallCmdRequest::setEdgeNodeId));
         builder.<String>withRequestField("arch",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInstallCmdRequest::getArch, (req, v) -> {
-                req.setArch(v);
-            }));
+            f -> f.withMarshaller(CreateInstallCmdRequest::getArch, CreateInstallCmdRequest::setArch));
         builder.<CreateInstallCmdRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateInstallCmdRequestDTO.class),
-            f -> f.withMarshaller(CreateInstallCmdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstallCmdRequest::getBody, CreateInstallCmdRequest::setBody));
 
         // response
 
@@ -259,9 +251,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> deleteEdgeNode =
-        genFordeleteEdgeNode();
+        genForDeleteEdgeNode();
 
-    private static HttpRequestDef<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> genFordeleteEdgeNode() {
+    private static HttpRequestDef<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> genForDeleteEdgeNode() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEdgeNodeRequest.class, DeleteEdgeNodeResponse.class)
@@ -274,33 +266,28 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeNodeRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeNodeRequest::getEdgeNodeId, DeleteEdgeNodeRequest::setEdgeNodeId));
         builder.<Boolean>withRequestField("delete_external_node",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteEdgeNodeRequest::getDeleteExternalNode, (req, v) -> {
-                req.setDeleteExternalNode(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeNodeRequest::getDeleteExternalNode,
+                DeleteEdgeNodeRequest::setDeleteExternalNode));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteEdgeNodeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteEdgeNodeResponse::getBody, DeleteEdgeNodeResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListEdgeNodesRequest, ListEdgeNodesResponse> listEdgeNodes =
-        genForlistEdgeNodes();
+        genForListEdgeNodes();
 
-    private static HttpRequestDef<ListEdgeNodesRequest, ListEdgeNodesResponse> genForlistEdgeNodes() {
+    private static HttpRequestDef<ListEdgeNodesRequest, ListEdgeNodesResponse> genForListEdgeNodes() {
         // basic
         HttpRequestDef.Builder<ListEdgeNodesRequest, ListEdgeNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEdgeNodesRequest.class, ListEdgeNodesResponse.class)
@@ -313,67 +300,51 @@ public class IoTEdgeMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getName, ListEdgeNodesRequest::setName));
         builder.<String>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getState, ListEdgeNodesRequest::setState));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getType, ListEdgeNodesRequest::setType));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getInstanceId, ListEdgeNodesRequest::setInstanceId));
         builder.<String>withRequestField("space_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getSpaceId, (req, v) -> {
-                req.setSpaceId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getSpaceId, ListEdgeNodesRequest::setSpaceId));
         builder.<List<String>>withRequestField("node_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getNodeIds, (req, v) -> {
-                req.setNodeIds(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getNodeIds, ListEdgeNodesRequest::setNodeIds));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getOffset, ListEdgeNodesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getLimit, ListEdgeNodesRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEdgeNodeRequest, ShowEdgeNodeResponse> showEdgeNode = genForshowEdgeNode();
+    public static final HttpRequestDef<ShowEdgeNodeRequest, ShowEdgeNodeResponse> showEdgeNode = genForShowEdgeNode();
 
-    private static HttpRequestDef<ShowEdgeNodeRequest, ShowEdgeNodeResponse> genForshowEdgeNode() {
+    private static HttpRequestDef<ShowEdgeNodeRequest, ShowEdgeNodeResponse> genForShowEdgeNode() {
         // basic
         HttpRequestDef.Builder<ShowEdgeNodeRequest, ShowEdgeNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEdgeNodeRequest.class, ShowEdgeNodeResponse.class)
@@ -386,9 +357,7 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeNodeRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeNodeRequest::getEdgeNodeId, ShowEdgeNodeRequest::setEdgeNodeId));
 
         // response
 
@@ -396,9 +365,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse> executeDeviceControlsRelease =
-        genForexecuteDeviceControlsRelease();
+        genForExecuteDeviceControlsRelease();
 
-    private static HttpRequestDef<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse> genForexecuteDeviceControlsRelease() {
+    private static HttpRequestDef<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse> genForExecuteDeviceControlsRelease() {
         // basic
         HttpRequestDef.Builder<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse> builder =
             HttpRequestDef
@@ -414,23 +383,20 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteDeviceControlsReleaseRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ExecuteDeviceControlsReleaseRequest::getEdgeNodeId,
+                ExecuteDeviceControlsReleaseRequest::setEdgeNodeId));
         builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteDeviceControlsReleaseRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ExecuteDeviceControlsReleaseRequest::getDeviceId,
+                ExecuteDeviceControlsReleaseRequest::setDeviceId));
         builder.<DeviceControlReleaseReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeviceControlReleaseReqDTO.class),
-            f -> f.withMarshaller(ExecuteDeviceControlsReleaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteDeviceControlsReleaseRequest::getBody,
+                ExecuteDeviceControlsReleaseRequest::setBody));
 
         // response
 
@@ -438,9 +404,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> executeDeviceControlsSet =
-        genForexecuteDeviceControlsSet();
+        genForExecuteDeviceControlsSet();
 
-    private static HttpRequestDef<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> genForexecuteDeviceControlsSet() {
+    private static HttpRequestDef<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> genForExecuteDeviceControlsSet() {
         // basic
         HttpRequestDef.Builder<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> builder =
             HttpRequestDef
@@ -454,32 +420,28 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getEdgeNodeId,
+                ExecuteDeviceControlsSetRequest::setEdgeNodeId));
         builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getDeviceId,
+                ExecuteDeviceControlsSetRequest::setDeviceId));
         builder.<DeviceControlSetReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeviceControlSetReqDTO.class),
-            f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getBody, ExecuteDeviceControlsSetRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddDeviceRequest, AddDeviceResponse> addDevice = genForaddDevice();
+    public static final HttpRequestDef<AddDeviceRequest, AddDeviceResponse> addDevice = genForAddDevice();
 
-    private static HttpRequestDef<AddDeviceRequest, AddDeviceResponse> genForaddDevice() {
+    private static HttpRequestDef<AddDeviceRequest, AddDeviceResponse> genForAddDevice() {
         // basic
         HttpRequestDef.Builder<AddDeviceRequest, AddDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDeviceRequest.class, AddDeviceResponse.class)
@@ -492,25 +454,21 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDeviceRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(AddDeviceRequest::getEdgeNodeId, AddDeviceRequest::setEdgeNodeId));
         builder.<AddDeviceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddDeviceRequestBody.class),
-            f -> f.withMarshaller(AddDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddDeviceRequest::getBody, AddDeviceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> deleteDevice = genFordeleteDevice();
+    public static final HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> deleteDevice = genForDeleteDevice();
 
-    private static HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> genFordeleteDevice() {
+    private static HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> genForDeleteDevice() {
         // basic
         HttpRequestDef.Builder<DeleteDeviceRequest, DeleteDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceRequest.class, DeleteDeviceResponse.class)
@@ -523,32 +481,26 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeviceRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceRequest::getEdgeNodeId, DeleteDeviceRequest::setEdgeNodeId));
         builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeviceRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceRequest::getDeviceId, DeleteDeviceRequest::setDeviceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteDeviceResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteDeviceResponse::getBody, DeleteDeviceResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDevicesRequest, ListDevicesResponse> listDevices = genForlistDevices();
+    public static final HttpRequestDef<ListDevicesRequest, ListDevicesResponse> listDevices = genForListDevices();
 
-    private static HttpRequestDef<ListDevicesRequest, ListDevicesResponse> genForlistDevices() {
+    private static HttpRequestDef<ListDevicesRequest, ListDevicesResponse> genForListDevices() {
         // basic
         HttpRequestDef.Builder<ListDevicesRequest, ListDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDevicesRequest.class, ListDevicesResponse.class)
@@ -561,37 +513,27 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getEdgeNodeId, ListDevicesRequest::setEdgeNodeId));
         builder.<String>withRequestField("gateway_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getGatewayId, (req, v) -> {
-                req.setGatewayId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getGatewayId, ListDevicesRequest::setGatewayId));
         builder.<String>withRequestField("device_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getDeviceName, (req, v) -> {
-                req.setDeviceName(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getDeviceName, ListDevicesRequest::setDeviceName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDevicesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getOffset, ListDevicesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDevicesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getLimit, ListDevicesRequest::setLimit));
 
         // response
 
@@ -599,9 +541,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<ShowProductConfigRequest, ShowProductConfigResponse> showProductConfig =
-        genForshowProductConfig();
+        genForShowProductConfig();
 
-    private static HttpRequestDef<ShowProductConfigRequest, ShowProductConfigResponse> genForshowProductConfig() {
+    private static HttpRequestDef<ShowProductConfigRequest, ShowProductConfigResponse> genForShowProductConfig() {
         // basic
         HttpRequestDef.Builder<ShowProductConfigRequest, ShowProductConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProductConfigRequest.class, ShowProductConfigResponse.class)
@@ -614,18 +556,17 @@ public class IoTEdgeMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProductConfigRequest::getProtocolType, (req, v) -> {
-                req.setProtocolType(v);
-            }));
+            f -> f.withMarshaller(ShowProductConfigRequest::getProtocolType,
+                ShowProductConfigRequest::setProtocolType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> updateDevice = genForupdateDevice();
+    public static final HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> updateDevice = genForUpdateDevice();
 
-    private static HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> genForupdateDevice() {
+    private static HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> genForUpdateDevice() {
         // basic
         HttpRequestDef.Builder<UpdateDeviceRequest, UpdateDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceRequest.class, UpdateDeviceResponse.class)
@@ -638,23 +579,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getEdgeNodeId, UpdateDeviceRequest::setEdgeNodeId));
         builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getDeviceId, UpdateDeviceRequest::setDeviceId));
         builder.<UpdateDesireds>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDesireds.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getBody, UpdateDeviceRequest::setBody));
 
         // response
 
@@ -662,9 +597,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse> addAppConfigsTemplates =
-        genForaddAppConfigsTemplates();
+        genForAddAppConfigsTemplates();
 
-    private static HttpRequestDef<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse> genForaddAppConfigsTemplates() {
+    private static HttpRequestDef<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse> genForAddAppConfigsTemplates() {
         // basic
         HttpRequestDef.Builder<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddAppConfigsTemplatesRequest.class, AddAppConfigsTemplatesResponse.class)
@@ -677,9 +612,7 @@ public class IoTEdgeMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppConfigsTemplatesReqDTO.class),
-            f -> f.withMarshaller(AddAppConfigsTemplatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddAppConfigsTemplatesRequest::getBody, AddAppConfigsTemplatesRequest::setBody));
 
         // response
 
@@ -687,9 +620,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse> addGeneralAppConfigsTemplate =
-        genForaddGeneralAppConfigsTemplate();
+        genForAddGeneralAppConfigsTemplate();
 
-    private static HttpRequestDef<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse> genForaddGeneralAppConfigsTemplate() {
+    private static HttpRequestDef<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse> genForAddGeneralAppConfigsTemplate() {
         // basic
         HttpRequestDef.Builder<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse> builder =
             HttpRequestDef
@@ -707,17 +640,16 @@ public class IoTEdgeMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(AddGeneralAppConfigsTemplateResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(AddGeneralAppConfigsTemplateResponse::getBody,
+                AddGeneralAppConfigsTemplateResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse> batchListAppConfigsTemplates =
-        genForbatchListAppConfigsTemplates();
+        genForBatchListAppConfigsTemplates();
 
-    private static HttpRequestDef<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse> genForbatchListAppConfigsTemplates() {
+    private static HttpRequestDef<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse> genForBatchListAppConfigsTemplates() {
         // basic
         HttpRequestDef.Builder<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse> builder =
             HttpRequestDef
@@ -733,16 +665,14 @@ public class IoTEdgeMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListAppConfigsTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchListAppConfigsTemplatesRequest::getOffset,
+                BatchListAppConfigsTemplatesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListAppConfigsTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchListAppConfigsTemplatesRequest::getLimit,
+                BatchListAppConfigsTemplatesRequest::setLimit));
 
         // response
 
@@ -750,9 +680,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse> deleteAppConfigsTemplate =
-        genFordeleteAppConfigsTemplate();
+        genForDeleteAppConfigsTemplate();
 
-    private static HttpRequestDef<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse> genFordeleteAppConfigsTemplate() {
+    private static HttpRequestDef<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse> genForDeleteAppConfigsTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse> builder =
             HttpRequestDef
@@ -768,26 +698,24 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppConfigsTemplateRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppConfigsTemplateRequest::getTplId,
+                DeleteAppConfigsTemplateRequest::setTplId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAppConfigsTemplateResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteAppConfigsTemplateResponse::getBody,
+                DeleteAppConfigsTemplateResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse> showAppConfigsTemplate =
-        genForshowAppConfigsTemplate();
+        genForShowAppConfigsTemplate();
 
-    private static HttpRequestDef<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse> genForshowAppConfigsTemplate() {
+    private static HttpRequestDef<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse> genForShowAppConfigsTemplate() {
         // basic
         HttpRequestDef.Builder<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAppConfigsTemplateRequest.class, ShowAppConfigsTemplateResponse.class)
@@ -800,9 +728,7 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppConfigsTemplateRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(ShowAppConfigsTemplateRequest::getTplId, ShowAppConfigsTemplateRequest::setTplId));
 
         // response
 
@@ -810,9 +736,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse> batchListEdgeApps =
-        genForbatchListEdgeApps();
+        genForBatchListEdgeApps();
 
-    private static HttpRequestDef<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse> genForbatchListEdgeApps() {
+    private static HttpRequestDef<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse> genForBatchListEdgeApps() {
         // basic
         HttpRequestDef.Builder<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchListEdgeAppsRequest.class, BatchListEdgeAppsResponse.class)
@@ -825,37 +751,28 @@ public class IoTEdgeMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListEdgeAppsRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppsRequest::getEdgeAppId, BatchListEdgeAppsRequest::setEdgeAppId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListEdgeAppsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppsRequest::getOffset, BatchListEdgeAppsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListEdgeAppsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppsRequest::getLimit, BatchListEdgeAppsRequest::setLimit));
         builder.<BatchListEdgeAppsRequest.AppTypeEnum>withRequestField("app_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListEdgeAppsRequest.AppTypeEnum.class),
-            f -> f.withMarshaller(BatchListEdgeAppsRequest::getAppType, (req, v) -> {
-                req.setAppType(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppsRequest::getAppType, BatchListEdgeAppsRequest::setAppType));
         builder.<BatchListEdgeAppsRequest.FunctionTypeEnum>withRequestField("function_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListEdgeAppsRequest.FunctionTypeEnum.class),
-            f -> f.withMarshaller(BatchListEdgeAppsRequest::getFunctionType, (req, v) -> {
-                req.setFunctionType(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppsRequest::getFunctionType,
+                BatchListEdgeAppsRequest::setFunctionType));
 
         // response
 
@@ -863,9 +780,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<CreateEdgeAppRequest, CreateEdgeAppResponse> createEdgeApp =
-        genForcreateEdgeApp();
+        genForCreateEdgeApp();
 
-    private static HttpRequestDef<CreateEdgeAppRequest, CreateEdgeAppResponse> genForcreateEdgeApp() {
+    private static HttpRequestDef<CreateEdgeAppRequest, CreateEdgeAppResponse> genForCreateEdgeApp() {
         // basic
         HttpRequestDef.Builder<CreateEdgeAppRequest, CreateEdgeAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEdgeAppRequest.class, CreateEdgeAppResponse.class)
@@ -878,9 +795,7 @@ public class IoTEdgeMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEdgeApplicationRequestDTO.class),
-            f -> f.withMarshaller(CreateEdgeAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeAppRequest::getBody, CreateEdgeAppRequest::setBody));
 
         // response
 
@@ -888,9 +803,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeAppRequest, DeleteEdgeAppResponse> deleteEdgeApp =
-        genFordeleteEdgeApp();
+        genForDeleteEdgeApp();
 
-    private static HttpRequestDef<DeleteEdgeAppRequest, DeleteEdgeAppResponse> genFordeleteEdgeApp() {
+    private static HttpRequestDef<DeleteEdgeAppRequest, DeleteEdgeAppResponse> genForDeleteEdgeApp() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeAppRequest, DeleteEdgeAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEdgeAppRequest.class, DeleteEdgeAppResponse.class)
@@ -903,25 +818,21 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeAppRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeAppRequest::getEdgeAppId, DeleteEdgeAppRequest::setEdgeAppId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteEdgeAppResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteEdgeAppResponse::getBody, DeleteEdgeAppResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEdgeAppRequest, ShowEdgeAppResponse> showEdgeApp = genForshowEdgeApp();
+    public static final HttpRequestDef<ShowEdgeAppRequest, ShowEdgeAppResponse> showEdgeApp = genForShowEdgeApp();
 
-    private static HttpRequestDef<ShowEdgeAppRequest, ShowEdgeAppResponse> genForshowEdgeApp() {
+    private static HttpRequestDef<ShowEdgeAppRequest, ShowEdgeAppResponse> genForShowEdgeApp() {
         // basic
         HttpRequestDef.Builder<ShowEdgeAppRequest, ShowEdgeAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEdgeAppRequest.class, ShowEdgeAppResponse.class)
@@ -934,9 +845,7 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeAppRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeAppRequest::getEdgeAppId, ShowEdgeAppRequest::setEdgeAppId));
 
         // response
 
@@ -944,9 +853,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse> batchListEdgeAppVersions =
-        genForbatchListEdgeAppVersions();
+        genForBatchListEdgeAppVersions();
 
-    private static HttpRequestDef<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse> genForbatchListEdgeAppVersions() {
+    private static HttpRequestDef<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse> genForBatchListEdgeAppVersions() {
         // basic
         HttpRequestDef.Builder<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse> builder =
             HttpRequestDef
@@ -960,51 +869,43 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getEdgeAppId,
+                BatchListEdgeAppVersionsRequest::setEdgeAppId));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getVersion,
+                BatchListEdgeAppVersionsRequest::setVersion));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getOffset,
+                BatchListEdgeAppVersionsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getLimit,
+                BatchListEdgeAppVersionsRequest::setLimit));
         builder.<BatchListEdgeAppVersionsRequest.AiCardTypeEnum>withRequestField("ai_card_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListEdgeAppVersionsRequest.AiCardTypeEnum.class),
-            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getAiCardType, (req, v) -> {
-                req.setAiCardType(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getAiCardType,
+                BatchListEdgeAppVersionsRequest::setAiCardType));
         builder.<BatchListEdgeAppVersionsRequest.ArchEnum>withRequestField("arch",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListEdgeAppVersionsRequest.ArchEnum.class),
-            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getArch, (req, v) -> {
-                req.setArch(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getArch, BatchListEdgeAppVersionsRequest::setArch));
         builder.<BatchListEdgeAppVersionsRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListEdgeAppVersionsRequest.StateEnum.class),
-            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getState,
+                BatchListEdgeAppVersionsRequest::setState));
 
         // response
 
@@ -1012,9 +913,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> createEdgeApplicationVersion =
-        genForcreateEdgeApplicationVersion();
+        genForCreateEdgeApplicationVersion();
 
-    private static HttpRequestDef<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> genForcreateEdgeApplicationVersion() {
+    private static HttpRequestDef<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> genForCreateEdgeApplicationVersion() {
         // basic
         HttpRequestDef.Builder<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> builder =
             HttpRequestDef
@@ -1030,16 +931,14 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEdgeApplicationVersionRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeApplicationVersionRequest::getEdgeAppId,
+                CreateEdgeApplicationVersionRequest::setEdgeAppId));
         builder.<CreateEdgeApplicationVersionDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEdgeApplicationVersionDTO.class),
-            f -> f.withMarshaller(CreateEdgeApplicationVersionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeApplicationVersionRequest::getBody,
+                CreateEdgeApplicationVersionRequest::setBody));
 
         // response
 
@@ -1047,9 +946,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersion =
-        genFordeleteEdgeApplicationVersion();
+        genForDeleteEdgeApplicationVersion();
 
-    private static HttpRequestDef<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> genFordeleteEdgeApplicationVersion() {
+    private static HttpRequestDef<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> genForDeleteEdgeApplicationVersion() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> builder =
             HttpRequestDef
@@ -1065,33 +964,30 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeApplicationVersionRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeApplicationVersionRequest::getEdgeAppId,
+                DeleteEdgeApplicationVersionRequest::setEdgeAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeApplicationVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeApplicationVersionRequest::getVersion,
+                DeleteEdgeApplicationVersionRequest::setVersion));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteEdgeApplicationVersionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteEdgeApplicationVersionResponse::getBody,
+                DeleteEdgeApplicationVersionResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> showEdgeApplicationVersion =
-        genForshowEdgeApplicationVersion();
+        genForShowEdgeApplicationVersion();
 
-    private static HttpRequestDef<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> genForshowEdgeApplicationVersion() {
+    private static HttpRequestDef<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> genForShowEdgeApplicationVersion() {
         // basic
         HttpRequestDef.Builder<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> builder =
             HttpRequestDef
@@ -1107,16 +1003,14 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeApplicationVersionRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeApplicationVersionRequest::getEdgeAppId,
+                ShowEdgeApplicationVersionRequest::setEdgeAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeApplicationVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeApplicationVersionRequest::getVersion,
+                ShowEdgeApplicationVersionRequest::setVersion));
 
         // response
 
@@ -1124,9 +1018,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersion =
-        genForupdateEdgeApplicationVersion();
+        genForUpdateEdgeApplicationVersion();
 
-    private static HttpRequestDef<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> genForupdateEdgeApplicationVersion() {
+    private static HttpRequestDef<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> genForUpdateEdgeApplicationVersion() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> builder =
             HttpRequestDef
@@ -1142,23 +1036,20 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getEdgeAppId,
+                UpdateEdgeApplicationVersionRequest::setEdgeAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getVersion,
+                UpdateEdgeApplicationVersionRequest::setVersion));
         builder.<UpdateEdgeAppVersionDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeAppVersionDTO.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getBody,
+                UpdateEdgeApplicationVersionRequest::setBody));
 
         // response
 
@@ -1166,9 +1057,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionState =
-        genForupdateEdgeApplicationVersionState();
+        genForUpdateEdgeApplicationVersionState();
 
-    private static HttpRequestDef<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> genForupdateEdgeApplicationVersionState() {
+    private static HttpRequestDef<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> genForUpdateEdgeApplicationVersionState() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> builder =
             HttpRequestDef
@@ -1184,23 +1075,20 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getEdgeAppId,
+                UpdateEdgeApplicationVersionStateRequest::setEdgeAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getVersion,
+                UpdateEdgeApplicationVersionStateRequest::setVersion));
         builder.<UpdateEdgeAppVersionStateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeAppVersionStateDTO.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getBody,
+                UpdateEdgeApplicationVersionStateRequest::setBody));
 
         // response
 
@@ -1208,9 +1096,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<BatchListDcDsRequest, BatchListDcDsResponse> batchListDcDs =
-        genForbatchListDcDs();
+        genForBatchListDcDs();
 
-    private static HttpRequestDef<BatchListDcDsRequest, BatchListDcDsResponse> genForbatchListDcDs() {
+    private static HttpRequestDef<BatchListDcDsRequest, BatchListDcDsResponse> genForBatchListDcDs() {
         // basic
         HttpRequestDef.Builder<BatchListDcDsRequest, BatchListDcDsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchListDcDsRequest.class, BatchListDcDsResponse.class)
@@ -1223,39 +1111,31 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcDsRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(BatchListDcDsRequest::getEdgeNodeId, BatchListDcDsRequest::setEdgeNodeId));
         builder.<String>withRequestField("module_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcDsRequest::getModuleId, (req, v) -> {
-                req.setModuleId(v);
-            }));
+            f -> f.withMarshaller(BatchListDcDsRequest::getModuleId, BatchListDcDsRequest::setModuleId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListDcDsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchListDcDsRequest::getOffset, BatchListDcDsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListDcDsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchListDcDsRequest::getLimit, BatchListDcDsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDsRequest, CreateDsResponse> createDs = genForcreateDs();
+    public static final HttpRequestDef<CreateDsRequest, CreateDsResponse> createDs = genForCreateDs();
 
-    private static HttpRequestDef<CreateDsRequest, CreateDsResponse> genForcreateDs() {
+    private static HttpRequestDef<CreateDsRequest, CreateDsResponse> genForCreateDs() {
         // basic
         HttpRequestDef.Builder<CreateDsRequest, CreateDsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDsRequest.class, CreateDsResponse.class)
@@ -1268,25 +1148,21 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDsRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(CreateDsRequest::getEdgeNodeId, CreateDsRequest::setEdgeNodeId));
         builder.<CreateDcDsReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDcDsReqDTO.class),
-            f -> f.withMarshaller(CreateDsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDsRequest::getBody, CreateDsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDcDsRequest, DeleteDcDsResponse> deleteDcDs = genFordeleteDcDs();
+    public static final HttpRequestDef<DeleteDcDsRequest, DeleteDcDsResponse> deleteDcDs = genForDeleteDcDs();
 
-    private static HttpRequestDef<DeleteDcDsRequest, DeleteDcDsResponse> genFordeleteDcDs() {
+    private static HttpRequestDef<DeleteDcDsRequest, DeleteDcDsResponse> genForDeleteDcDs() {
         // basic
         HttpRequestDef.Builder<DeleteDcDsRequest, DeleteDcDsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDcDsRequest.class, DeleteDcDsResponse.class)
@@ -1299,32 +1175,26 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDcDsRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteDcDsRequest::getEdgeNodeId, DeleteDcDsRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDcDsRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(DeleteDcDsRequest::getDsId, DeleteDcDsRequest::setDsId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteDcDsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteDcDsResponse::getBody, DeleteDcDsResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDcDsRequest, ShowDcDsResponse> showDcDs = genForshowDcDs();
+    public static final HttpRequestDef<ShowDcDsRequest, ShowDcDsResponse> showDcDs = genForShowDcDs();
 
-    private static HttpRequestDef<ShowDcDsRequest, ShowDcDsResponse> genForshowDcDs() {
+    private static HttpRequestDef<ShowDcDsRequest, ShowDcDsResponse> genForShowDcDs() {
         // basic
         HttpRequestDef.Builder<ShowDcDsRequest, ShowDcDsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDcDsRequest.class, ShowDcDsResponse.class)
@@ -1337,16 +1207,12 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDcDsRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowDcDsRequest::getEdgeNodeId, ShowDcDsRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDcDsRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(ShowDcDsRequest::getDsId, ShowDcDsRequest::setDsId));
 
         // response
 
@@ -1354,9 +1220,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> synchronizeDcConfigs =
-        genForsynchronizeDcConfigs();
+        genForSynchronizeDcConfigs();
 
-    private static HttpRequestDef<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> genForsynchronizeDcConfigs() {
+    private static HttpRequestDef<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> genForSynchronizeDcConfigs() {
         // basic
         HttpRequestDef.Builder<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SynchronizeDcConfigsRequest.class, SynchronizeDcConfigsResponse.class)
@@ -1369,32 +1235,27 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SynchronizeDcConfigsRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(SynchronizeDcConfigsRequest::getEdgeNodeId,
+                SynchronizeDcConfigsRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SynchronizeDcConfigsRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(SynchronizeDcConfigsRequest::getDsId, SynchronizeDcConfigsRequest::setDsId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(SynchronizeDcConfigsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(SynchronizeDcConfigsResponse::getBody, SynchronizeDcConfigsResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDcDsRequest, UpdateDcDsResponse> updateDcDs = genForupdateDcDs();
+    public static final HttpRequestDef<UpdateDcDsRequest, UpdateDcDsResponse> updateDcDs = genForUpdateDcDs();
 
-    private static HttpRequestDef<UpdateDcDsRequest, UpdateDcDsResponse> genForupdateDcDs() {
+    private static HttpRequestDef<UpdateDcDsRequest, UpdateDcDsResponse> genForUpdateDcDs() {
         // basic
         HttpRequestDef.Builder<UpdateDcDsRequest, UpdateDcDsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDcDsRequest.class, UpdateDcDsResponse.class)
@@ -1407,23 +1268,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDcDsRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateDcDsRequest::getEdgeNodeId, UpdateDcDsRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDcDsRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(UpdateDcDsRequest::getDsId, UpdateDcDsRequest::setDsId));
         builder.<UpdateDcDsReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDcDsReqDTO.class),
-            f -> f.withMarshaller(UpdateDcDsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDcDsRequest::getBody, UpdateDcDsRequest::setBody));
 
         // response
 
@@ -1431,9 +1286,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<BatchListDcDevicesRequest, BatchListDcDevicesResponse> batchListDcDevices =
-        genForbatchListDcDevices();
+        genForBatchListDcDevices();
 
-    private static HttpRequestDef<BatchListDcDevicesRequest, BatchListDcDevicesResponse> genForbatchListDcDevices() {
+    private static HttpRequestDef<BatchListDcDevicesRequest, BatchListDcDevicesResponse> genForBatchListDcDevices() {
         // basic
         HttpRequestDef.Builder<BatchListDcDevicesRequest, BatchListDcDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchListDcDevicesRequest.class, BatchListDcDevicesResponse.class)
@@ -1446,37 +1301,27 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcDevicesRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(BatchListDcDevicesRequest::getEdgeNodeId, BatchListDcDevicesRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcDevicesRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(BatchListDcDevicesRequest::getDsId, BatchListDcDevicesRequest::setDsId));
         builder.<String>withRequestField("device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcDevicesRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(BatchListDcDevicesRequest::getDeviceId, BatchListDcDevicesRequest::setDeviceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListDcDevicesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchListDcDevicesRequest::getOffset, BatchListDcDevicesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListDcDevicesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchListDcDevicesRequest::getLimit, BatchListDcDevicesRequest::setLimit));
 
         // response
 
@@ -1484,9 +1329,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<BatchListDcPointsRequest, BatchListDcPointsResponse> batchListDcPoints =
-        genForbatchListDcPoints();
+        genForBatchListDcPoints();
 
-    private static HttpRequestDef<BatchListDcPointsRequest, BatchListDcPointsResponse> genForbatchListDcPoints() {
+    private static HttpRequestDef<BatchListDcPointsRequest, BatchListDcPointsResponse> genForBatchListDcPoints() {
         // basic
         HttpRequestDef.Builder<BatchListDcPointsRequest, BatchListDcPointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchListDcPointsRequest.class, BatchListDcPointsResponse.class)
@@ -1499,58 +1344,42 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcPointsRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(BatchListDcPointsRequest::getEdgeNodeId, BatchListDcPointsRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcPointsRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(BatchListDcPointsRequest::getDsId, BatchListDcPointsRequest::setDsId));
         builder.<String>withRequestField("point_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcPointsRequest::getPointId, (req, v) -> {
-                req.setPointId(v);
-            }));
+            f -> f.withMarshaller(BatchListDcPointsRequest::getPointId, BatchListDcPointsRequest::setPointId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcPointsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(BatchListDcPointsRequest::getName, BatchListDcPointsRequest::setName));
         builder.<String>withRequestField("property",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcPointsRequest::getProperty, (req, v) -> {
-                req.setProperty(v);
-            }));
+            f -> f.withMarshaller(BatchListDcPointsRequest::getProperty, BatchListDcPointsRequest::setProperty));
         builder.<String>withRequestField("device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListDcPointsRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(BatchListDcPointsRequest::getDeviceId, BatchListDcPointsRequest::setDeviceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListDcPointsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchListDcPointsRequest::getOffset, BatchListDcPointsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListDcPointsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchListDcPointsRequest::getLimit, BatchListDcPointsRequest::setLimit));
 
         // response
 
@@ -1558,9 +1387,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<CreateDcPointRequest, CreateDcPointResponse> createDcPoint =
-        genForcreateDcPoint();
+        genForCreateDcPoint();
 
-    private static HttpRequestDef<CreateDcPointRequest, CreateDcPointResponse> genForcreateDcPoint() {
+    private static HttpRequestDef<CreateDcPointRequest, CreateDcPointResponse> genForCreateDcPoint() {
         // basic
         HttpRequestDef.Builder<CreateDcPointRequest, CreateDcPointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDcPointRequest.class, CreateDcPointResponse.class)
@@ -1573,23 +1402,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDcPointRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(CreateDcPointRequest::getEdgeNodeId, CreateDcPointRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDcPointRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(CreateDcPointRequest::getDsId, CreateDcPointRequest::setDsId));
         builder.<CreateDcPointReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDcPointReqDTO.class),
-            f -> f.withMarshaller(CreateDcPointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDcPointRequest::getBody, CreateDcPointRequest::setBody));
 
         // response
 
@@ -1597,9 +1420,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteDcPointRequest, DeleteDcPointResponse> deleteDcPoint =
-        genFordeleteDcPoint();
+        genForDeleteDcPoint();
 
-    private static HttpRequestDef<DeleteDcPointRequest, DeleteDcPointResponse> genFordeleteDcPoint() {
+    private static HttpRequestDef<DeleteDcPointRequest, DeleteDcPointResponse> genForDeleteDcPoint() {
         // basic
         HttpRequestDef.Builder<DeleteDcPointRequest, DeleteDcPointResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDcPointRequest.class, DeleteDcPointResponse.class)
@@ -1612,53 +1435,41 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDcPointRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteDcPointRequest::getEdgeNodeId, DeleteDcPointRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDcPointRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(DeleteDcPointRequest::getDsId, DeleteDcPointRequest::setDsId));
         builder.<String>withRequestField("point_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDcPointRequest::getPointId, (req, v) -> {
-                req.setPointId(v);
-            }));
+            f -> f.withMarshaller(DeleteDcPointRequest::getPointId, DeleteDcPointRequest::setPointId));
         builder.<String>withRequestField("device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDcPointRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDcPointRequest::getDeviceId, DeleteDcPointRequest::setDeviceId));
         builder.<String>withRequestField("property",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDcPointRequest::getProperty, (req, v) -> {
-                req.setProperty(v);
-            }));
+            f -> f.withMarshaller(DeleteDcPointRequest::getProperty, DeleteDcPointRequest::setProperty));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteDcPointResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteDcPointResponse::getBody, DeleteDcPointResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDcPointRequest, ShowDcPointResponse> showDcPoint = genForshowDcPoint();
+    public static final HttpRequestDef<ShowDcPointRequest, ShowDcPointResponse> showDcPoint = genForShowDcPoint();
 
-    private static HttpRequestDef<ShowDcPointRequest, ShowDcPointResponse> genForshowDcPoint() {
+    private static HttpRequestDef<ShowDcPointRequest, ShowDcPointResponse> genForShowDcPoint() {
         // basic
         HttpRequestDef.Builder<ShowDcPointRequest, ShowDcPointResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDcPointRequest.class, ShowDcPointResponse.class)
@@ -1671,37 +1482,27 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDcPointRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowDcPointRequest::getEdgeNodeId, ShowDcPointRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDcPointRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(ShowDcPointRequest::getDsId, ShowDcPointRequest::setDsId));
         builder.<String>withRequestField("point_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDcPointRequest::getPointId, (req, v) -> {
-                req.setPointId(v);
-            }));
+            f -> f.withMarshaller(ShowDcPointRequest::getPointId, ShowDcPointRequest::setPointId));
         builder.<String>withRequestField("device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDcPointRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ShowDcPointRequest::getDeviceId, ShowDcPointRequest::setDeviceId));
         builder.<String>withRequestField("property",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDcPointRequest::getProperty, (req, v) -> {
-                req.setProperty(v);
-            }));
+            f -> f.withMarshaller(ShowDcPointRequest::getProperty, ShowDcPointRequest::setProperty));
 
         // response
 
@@ -1709,9 +1510,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<UpdateDcPointRequest, UpdateDcPointResponse> updateDcPoint =
-        genForupdateDcPoint();
+        genForUpdateDcPoint();
 
-    private static HttpRequestDef<UpdateDcPointRequest, UpdateDcPointResponse> genForupdateDcPoint() {
+    private static HttpRequestDef<UpdateDcPointRequest, UpdateDcPointResponse> genForUpdateDcPoint() {
         // basic
         HttpRequestDef.Builder<UpdateDcPointRequest, UpdateDcPointResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDcPointRequest.class, UpdateDcPointResponse.class)
@@ -1724,30 +1525,22 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDcPointRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateDcPointRequest::getEdgeNodeId, UpdateDcPointRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDcPointRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(UpdateDcPointRequest::getDsId, UpdateDcPointRequest::setDsId));
         builder.<String>withRequestField("point_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDcPointRequest::getPointId, (req, v) -> {
-                req.setPointId(v);
-            }));
+            f -> f.withMarshaller(UpdateDcPointRequest::getPointId, UpdateDcPointRequest::setPointId));
         builder.<UpdateDcPointReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDcPointReqDTO.class),
-            f -> f.withMarshaller(UpdateDcPointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDcPointRequest::getBody, UpdateDcPointRequest::setBody));
 
         // response
 
@@ -1755,9 +1548,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<CreateExternalEntityRequest, CreateExternalEntityResponse> createExternalEntity =
-        genForcreateExternalEntity();
+        genForCreateExternalEntity();
 
-    private static HttpRequestDef<CreateExternalEntityRequest, CreateExternalEntityResponse> genForcreateExternalEntity() {
+    private static HttpRequestDef<CreateExternalEntityRequest, CreateExternalEntityResponse> genForCreateExternalEntity() {
         // basic
         HttpRequestDef.Builder<CreateExternalEntityRequest, CreateExternalEntityResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateExternalEntityRequest.class, CreateExternalEntityResponse.class)
@@ -1770,16 +1563,13 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateExternalEntityRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(CreateExternalEntityRequest::getEdgeNodeId,
+                CreateExternalEntityRequest::setEdgeNodeId));
         builder.<CreateExternalEntityReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateExternalEntityReqDTO.class),
-            f -> f.withMarshaller(CreateExternalEntityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateExternalEntityRequest::getBody, CreateExternalEntityRequest::setBody));
 
         // response
 
@@ -1787,9 +1577,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteExternalEntityRequest, DeleteExternalEntityResponse> deleteExternalEntity =
-        genFordeleteExternalEntity();
+        genForDeleteExternalEntity();
 
-    private static HttpRequestDef<DeleteExternalEntityRequest, DeleteExternalEntityResponse> genFordeleteExternalEntity() {
+    private static HttpRequestDef<DeleteExternalEntityRequest, DeleteExternalEntityResponse> genForDeleteExternalEntity() {
         // basic
         HttpRequestDef.Builder<DeleteExternalEntityRequest, DeleteExternalEntityResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteExternalEntityRequest.class, DeleteExternalEntityResponse.class)
@@ -1802,33 +1592,29 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteExternalEntityRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteExternalEntityRequest::getEdgeNodeId,
+                DeleteExternalEntityRequest::setEdgeNodeId));
         builder.<String>withRequestField("external_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteExternalEntityRequest::getExternalId, (req, v) -> {
-                req.setExternalId(v);
-            }));
+            f -> f.withMarshaller(DeleteExternalEntityRequest::getExternalId,
+                DeleteExternalEntityRequest::setExternalId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteExternalEntityResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteExternalEntityResponse::getBody, DeleteExternalEntityResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListExternalEntityRequest, ListExternalEntityResponse> listExternalEntity =
-        genForlistExternalEntity();
+        genForListExternalEntity();
 
-    private static HttpRequestDef<ListExternalEntityRequest, ListExternalEntityResponse> genForlistExternalEntity() {
+    private static HttpRequestDef<ListExternalEntityRequest, ListExternalEntityResponse> genForListExternalEntity() {
         // basic
         HttpRequestDef.Builder<ListExternalEntityRequest, ListExternalEntityResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListExternalEntityRequest.class, ListExternalEntityResponse.class)
@@ -1841,23 +1627,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExternalEntityRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ListExternalEntityRequest::getEdgeNodeId, ListExternalEntityRequest::setEdgeNodeId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListExternalEntityRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListExternalEntityRequest::getOffset, ListExternalEntityRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListExternalEntityRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListExternalEntityRequest::getLimit, ListExternalEntityRequest::setLimit));
 
         // response
 
@@ -1865,9 +1645,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<UpdateExternalEntityRequest, UpdateExternalEntityResponse> updateExternalEntity =
-        genForupdateExternalEntity();
+        genForUpdateExternalEntity();
 
-    private static HttpRequestDef<UpdateExternalEntityRequest, UpdateExternalEntityResponse> genForupdateExternalEntity() {
+    private static HttpRequestDef<UpdateExternalEntityRequest, UpdateExternalEntityResponse> genForUpdateExternalEntity() {
         // basic
         HttpRequestDef.Builder<UpdateExternalEntityRequest, UpdateExternalEntityResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateExternalEntityRequest.class, UpdateExternalEntityResponse.class)
@@ -1880,23 +1660,19 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateExternalEntityRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateExternalEntityRequest::getEdgeNodeId,
+                UpdateExternalEntityRequest::setEdgeNodeId));
         builder.<String>withRequestField("external_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateExternalEntityRequest::getExternalId, (req, v) -> {
-                req.setExternalId(v);
-            }));
+            f -> f.withMarshaller(UpdateExternalEntityRequest::getExternalId,
+                UpdateExternalEntityRequest::setExternalId));
         builder.<UpdateExternalEntityReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateExternalEntityReqDTO.class),
-            f -> f.withMarshaller(UpdateExternalEntityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateExternalEntityRequest::getBody, UpdateExternalEntityRequest::setBody));
 
         // response
 
@@ -1904,9 +1680,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<BatchListModulesRequest, BatchListModulesResponse> batchListModules =
-        genForbatchListModules();
+        genForBatchListModules();
 
-    private static HttpRequestDef<BatchListModulesRequest, BatchListModulesResponse> genForbatchListModules() {
+    private static HttpRequestDef<BatchListModulesRequest, BatchListModulesResponse> genForBatchListModules() {
         // basic
         HttpRequestDef.Builder<BatchListModulesRequest, BatchListModulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchListModulesRequest.class, BatchListModulesResponse.class)
@@ -1919,46 +1695,36 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListModulesRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(BatchListModulesRequest::getEdgeNodeId, BatchListModulesRequest::setEdgeNodeId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListModulesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchListModulesRequest::getOffset, BatchListModulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListModulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchListModulesRequest::getLimit, BatchListModulesRequest::setLimit));
         builder.<BatchListModulesRequest.AppTypeEnum>withRequestField("app_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListModulesRequest.AppTypeEnum.class),
-            f -> f.withMarshaller(BatchListModulesRequest::getAppType, (req, v) -> {
-                req.setAppType(v);
-            }));
+            f -> f.withMarshaller(BatchListModulesRequest::getAppType, BatchListModulesRequest::setAppType));
         builder.<BatchListModulesRequest.FunctionTypeEnum>withRequestField("function_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListModulesRequest.FunctionTypeEnum.class),
-            f -> f.withMarshaller(BatchListModulesRequest::getFunctionType, (req, v) -> {
-                req.setFunctionType(v);
-            }));
+            f -> f.withMarshaller(BatchListModulesRequest::getFunctionType, BatchListModulesRequest::setFunctionType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateModuleRequest, CreateModuleResponse> createModule = genForcreateModule();
+    public static final HttpRequestDef<CreateModuleRequest, CreateModuleResponse> createModule = genForCreateModule();
 
-    private static HttpRequestDef<CreateModuleRequest, CreateModuleResponse> genForcreateModule() {
+    private static HttpRequestDef<CreateModuleRequest, CreateModuleResponse> genForCreateModule() {
         // basic
         HttpRequestDef.Builder<CreateModuleRequest, CreateModuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateModuleRequest.class, CreateModuleResponse.class)
@@ -1971,25 +1737,21 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateModuleRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(CreateModuleRequest::getEdgeNodeId, CreateModuleRequest::setEdgeNodeId));
         builder.<CreateEdgeModuleReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEdgeModuleReqDTO.class),
-            f -> f.withMarshaller(CreateModuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateModuleRequest::getBody, CreateModuleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteModuleRequest, DeleteModuleResponse> deleteModule = genFordeleteModule();
+    public static final HttpRequestDef<DeleteModuleRequest, DeleteModuleResponse> deleteModule = genForDeleteModule();
 
-    private static HttpRequestDef<DeleteModuleRequest, DeleteModuleResponse> genFordeleteModule() {
+    private static HttpRequestDef<DeleteModuleRequest, DeleteModuleResponse> genForDeleteModule() {
         // basic
         HttpRequestDef.Builder<DeleteModuleRequest, DeleteModuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteModuleRequest.class, DeleteModuleResponse.class)
@@ -2002,32 +1764,26 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteModuleRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteModuleRequest::getEdgeNodeId, DeleteModuleRequest::setEdgeNodeId));
         builder.<String>withRequestField("module_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteModuleRequest::getModuleId, (req, v) -> {
-                req.setModuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteModuleRequest::getModuleId, DeleteModuleRequest::setModuleId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteModuleResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteModuleResponse::getBody, DeleteModuleResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowModuleRequest, ShowModuleResponse> showModule = genForshowModule();
+    public static final HttpRequestDef<ShowModuleRequest, ShowModuleResponse> showModule = genForShowModule();
 
-    private static HttpRequestDef<ShowModuleRequest, ShowModuleResponse> genForshowModule() {
+    private static HttpRequestDef<ShowModuleRequest, ShowModuleResponse> genForShowModule() {
         // basic
         HttpRequestDef.Builder<ShowModuleRequest, ShowModuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowModuleRequest.class, ShowModuleResponse.class)
@@ -2040,25 +1796,21 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowModuleRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowModuleRequest::getEdgeNodeId, ShowModuleRequest::setEdgeNodeId));
         builder.<String>withRequestField("module_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowModuleRequest::getModuleId, (req, v) -> {
-                req.setModuleId(v);
-            }));
+            f -> f.withMarshaller(ShowModuleRequest::getModuleId, ShowModuleRequest::setModuleId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateModuleRequest, UpdateModuleResponse> updateModule = genForupdateModule();
+    public static final HttpRequestDef<UpdateModuleRequest, UpdateModuleResponse> updateModule = genForUpdateModule();
 
-    private static HttpRequestDef<UpdateModuleRequest, UpdateModuleResponse> genForupdateModule() {
+    private static HttpRequestDef<UpdateModuleRequest, UpdateModuleResponse> genForUpdateModule() {
         // basic
         HttpRequestDef.Builder<UpdateModuleRequest, UpdateModuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateModuleRequest.class, UpdateModuleResponse.class)
@@ -2071,23 +1823,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateModuleRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateModuleRequest::getEdgeNodeId, UpdateModuleRequest::setEdgeNodeId));
         builder.<String>withRequestField("module_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateModuleRequest::getModuleId, (req, v) -> {
-                req.setModuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateModuleRequest::getModuleId, UpdateModuleRequest::setModuleId));
         builder.<UpdateEdgeModuleReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeModuleReqDTO.class),
-            f -> f.withMarshaller(UpdateModuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateModuleRequest::getBody, UpdateModuleRequest::setBody));
 
         // response
 
@@ -2095,9 +1841,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<UpdateModuleStateRequest, UpdateModuleStateResponse> updateModuleState =
-        genForupdateModuleState();
+        genForUpdateModuleState();
 
-    private static HttpRequestDef<UpdateModuleStateRequest, UpdateModuleStateResponse> genForupdateModuleState() {
+    private static HttpRequestDef<UpdateModuleStateRequest, UpdateModuleStateResponse> genForUpdateModuleState() {
         // basic
         HttpRequestDef.Builder<UpdateModuleStateRequest, UpdateModuleStateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateModuleStateRequest.class, UpdateModuleStateResponse.class)
@@ -2110,23 +1856,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateModuleStateRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateModuleStateRequest::getEdgeNodeId, UpdateModuleStateRequest::setEdgeNodeId));
         builder.<String>withRequestField("module_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateModuleStateRequest::getModuleId, (req, v) -> {
-                req.setModuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateModuleStateRequest::getModuleId, UpdateModuleStateRequest::setModuleId));
         builder.<UpdateEdgeModuleStateReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeModuleStateReqDTO.class),
-            f -> f.withMarshaller(UpdateModuleStateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateModuleStateRequest::getBody, UpdateModuleStateRequest::setBody));
 
         // response
 
@@ -2134,9 +1874,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<ShowModuleShadowRequest, ShowModuleShadowResponse> showModuleShadow =
-        genForshowModuleShadow();
+        genForShowModuleShadow();
 
-    private static HttpRequestDef<ShowModuleShadowRequest, ShowModuleShadowResponse> genForshowModuleShadow() {
+    private static HttpRequestDef<ShowModuleShadowRequest, ShowModuleShadowResponse> genForShowModuleShadow() {
         // basic
         HttpRequestDef.Builder<ShowModuleShadowRequest, ShowModuleShadowResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowModuleShadowRequest.class, ShowModuleShadowResponse.class)
@@ -2149,16 +1889,12 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowModuleShadowRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowModuleShadowRequest::getEdgeNodeId, ShowModuleShadowRequest::setEdgeNodeId));
         builder.<String>withRequestField("module_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowModuleShadowRequest::getModuleId, (req, v) -> {
-                req.setModuleId(v);
-            }));
+            f -> f.withMarshaller(ShowModuleShadowRequest::getModuleId, ShowModuleShadowRequest::setModuleId));
 
         // response
 
@@ -2166,9 +1902,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<UpdateModuleShadowRequest, UpdateModuleShadowResponse> updateModuleShadow =
-        genForupdateModuleShadow();
+        genForUpdateModuleShadow();
 
-    private static HttpRequestDef<UpdateModuleShadowRequest, UpdateModuleShadowResponse> genForupdateModuleShadow() {
+    private static HttpRequestDef<UpdateModuleShadowRequest, UpdateModuleShadowResponse> genForUpdateModuleShadow() {
         // basic
         HttpRequestDef.Builder<UpdateModuleShadowRequest, UpdateModuleShadowResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateModuleShadowRequest.class, UpdateModuleShadowResponse.class)
@@ -2181,32 +1917,26 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateModuleShadowRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateModuleShadowRequest::getEdgeNodeId, UpdateModuleShadowRequest::setEdgeNodeId));
         builder.<String>withRequestField("module_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateModuleShadowRequest::getModuleId, (req, v) -> {
-                req.setModuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateModuleShadowRequest::getModuleId, UpdateModuleShadowRequest::setModuleId));
         builder.<UpdateModuleShadowsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateModuleShadowsRequestBody.class),
-            f -> f.withMarshaller(UpdateModuleShadowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateModuleShadowRequest::getBody, UpdateModuleShadowRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRoutesRequest, ListRoutesResponse> listRoutes = genForlistRoutes();
+    public static final HttpRequestDef<ListRoutesRequest, ListRoutesResponse> listRoutes = genForListRoutes();
 
-    private static HttpRequestDef<ListRoutesRequest, ListRoutesResponse> genForlistRoutes() {
+    private static HttpRequestDef<ListRoutesRequest, ListRoutesResponse> genForListRoutes() {
         // basic
         HttpRequestDef.Builder<ListRoutesRequest, ListRoutesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRoutesRequest.class, ListRoutesResponse.class)
@@ -2219,25 +1949,21 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRoutesRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ListRoutesRequest::getEdgeNodeId, ListRoutesRequest::setEdgeNodeId));
         builder.<Boolean>withRequestField("parsed",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListRoutesRequest::getParsed, (req, v) -> {
-                req.setParsed(v);
-            }));
+            f -> f.withMarshaller(ListRoutesRequest::getParsed, ListRoutesRequest::setParsed));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutes = genForupdateRoutes();
+    public static final HttpRequestDef<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutes = genForUpdateRoutes();
 
-    private static HttpRequestDef<UpdateRoutesRequest, UpdateRoutesResponse> genForupdateRoutes() {
+    private static HttpRequestDef<UpdateRoutesRequest, UpdateRoutesResponse> genForUpdateRoutes() {
         // basic
         HttpRequestDef.Builder<UpdateRoutesRequest, UpdateRoutesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRoutesRequest.class, UpdateRoutesResponse.class)
@@ -2250,16 +1976,13 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRoutesRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateRoutesRequest::getEdgeNodeId, UpdateRoutesRequest::setEdgeNodeId));
         builder.<List<CreateRouterReqDTO>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdateRoutesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(CreateRouterReqDTO.class));
+            f -> f.withMarshaller(UpdateRoutesRequest::getBody, UpdateRoutesRequest::setBody)
+                .withInnerContainerType(CreateRouterReqDTO.class));
 
         // response
 
@@ -2267,9 +1990,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> addGeneralOtTemplate =
-        genForaddGeneralOtTemplate();
+        genForAddGeneralOtTemplate();
 
-    private static HttpRequestDef<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> genForaddGeneralOtTemplate() {
+    private static HttpRequestDef<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> genForAddGeneralOtTemplate() {
         // basic
         HttpRequestDef.Builder<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddGeneralOtTemplateRequest.class, AddGeneralOtTemplateResponse.class)
@@ -2284,17 +2007,15 @@ public class IoTEdgeMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(AddGeneralOtTemplateResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(AddGeneralOtTemplateResponse::getBody, AddGeneralOtTemplateResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<AddOtTemplatesRequest, AddOtTemplatesResponse> addOtTemplates =
-        genForaddOtTemplates();
+        genForAddOtTemplates();
 
-    private static HttpRequestDef<AddOtTemplatesRequest, AddOtTemplatesResponse> genForaddOtTemplates() {
+    private static HttpRequestDef<AddOtTemplatesRequest, AddOtTemplatesResponse> genForAddOtTemplates() {
         // basic
         HttpRequestDef.Builder<AddOtTemplatesRequest, AddOtTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddOtTemplatesRequest.class, AddOtTemplatesResponse.class)
@@ -2307,9 +2028,7 @@ public class IoTEdgeMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateOtTemplatesReqDTO.class),
-            f -> f.withMarshaller(AddOtTemplatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddOtTemplatesRequest::getBody, AddOtTemplatesRequest::setBody));
 
         // response
 
@@ -2317,9 +2036,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> batchListOtTemplates =
-        genForbatchListOtTemplates();
+        genForBatchListOtTemplates();
 
-    private static HttpRequestDef<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> genForbatchListOtTemplates() {
+    private static HttpRequestDef<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> genForBatchListOtTemplates() {
         // basic
         HttpRequestDef.Builder<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, BatchListOtTemplatesRequest.class, BatchListOtTemplatesResponse.class)
@@ -2332,16 +2051,12 @@ public class IoTEdgeMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListOtTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchListOtTemplatesRequest::getOffset, BatchListOtTemplatesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchListOtTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchListOtTemplatesRequest::getLimit, BatchListOtTemplatesRequest::setLimit));
 
         // response
 
@@ -2349,9 +2064,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteOtTemplateRequest, DeleteOtTemplateResponse> deleteOtTemplate =
-        genFordeleteOtTemplate();
+        genForDeleteOtTemplate();
 
-    private static HttpRequestDef<DeleteOtTemplateRequest, DeleteOtTemplateResponse> genFordeleteOtTemplate() {
+    private static HttpRequestDef<DeleteOtTemplateRequest, DeleteOtTemplateResponse> genForDeleteOtTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteOtTemplateRequest, DeleteOtTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteOtTemplateRequest.class, DeleteOtTemplateResponse.class)
@@ -2364,26 +2079,22 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteOtTemplateRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(DeleteOtTemplateRequest::getTplId, DeleteOtTemplateRequest::setTplId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteOtTemplateResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteOtTemplateResponse::getBody, DeleteOtTemplateResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowOtTemplateRequest, ShowOtTemplateResponse> showOtTemplate =
-        genForshowOtTemplate();
+        genForShowOtTemplate();
 
-    private static HttpRequestDef<ShowOtTemplateRequest, ShowOtTemplateResponse> genForshowOtTemplate() {
+    private static HttpRequestDef<ShowOtTemplateRequest, ShowOtTemplateResponse> genForShowOtTemplate() {
         // basic
         HttpRequestDef.Builder<ShowOtTemplateRequest, ShowOtTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOtTemplateRequest.class, ShowOtTemplateResponse.class)
@@ -2396,18 +2107,16 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOtTemplateRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(ShowOtTemplateRequest::getTplId, ShowOtTemplateRequest::setTplId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportPointsRequest, ImportPointsResponse> importPoints = genForimportPoints();
+    public static final HttpRequestDef<ImportPointsRequest, ImportPointsResponse> importPoints = genForImportPoints();
 
-    private static HttpRequestDef<ImportPointsRequest, ImportPointsResponse> genForimportPoints() {
+    private static HttpRequestDef<ImportPointsRequest, ImportPointsResponse> genForImportPoints() {
         // basic
         HttpRequestDef.Builder<ImportPointsRequest, ImportPointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportPointsRequest.class, ImportPointsResponse.class)
@@ -2420,47 +2129,37 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportPointsRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ImportPointsRequest::getEdgeNodeId, ImportPointsRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportPointsRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(ImportPointsRequest::getDsId, ImportPointsRequest::setDsId));
         builder.<ImportPointsRequest.UpdateTypeEnum>withRequestField("update_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportPointsRequest.UpdateTypeEnum.class),
-            f -> f.withMarshaller(ImportPointsRequest::getUpdateType, (req, v) -> {
-                req.setUpdateType(v);
-            }));
+            f -> f.withMarshaller(ImportPointsRequest::getUpdateType, ImportPointsRequest::setUpdateType));
         builder.<ImportPointsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportPointsRequestBody.class),
-            f -> f.withMarshaller(ImportPointsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportPointsRequest::getBody, ImportPointsRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ImportPointsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ImportPointsResponse::getBody, ImportPointsResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowPointTemplateRequest, ShowPointTemplateResponse> showPointTemplate =
-        genForshowPointTemplate();
+        genForShowPointTemplate();
 
-    private static HttpRequestDef<ShowPointTemplateRequest, ShowPointTemplateResponse> genForshowPointTemplate() {
+    private static HttpRequestDef<ShowPointTemplateRequest, ShowPointTemplateResponse> genForShowPointTemplate() {
         // basic
         HttpRequestDef.Builder<ShowPointTemplateRequest, ShowPointTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPointTemplateRequest.class, ShowPointTemplateResponse.class)
@@ -2473,25 +2172,21 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPointTemplateRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowPointTemplateRequest::getEdgeNodeId, ShowPointTemplateRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPointTemplateRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(ShowPointTemplateRequest::getDsId, ShowPointTemplateRequest::setDsId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPointsRequest, ShowPointsResponse> showPoints = genForshowPoints();
+    public static final HttpRequestDef<ShowPointsRequest, ShowPointsResponse> showPoints = genForShowPoints();
 
-    private static HttpRequestDef<ShowPointsRequest, ShowPointsResponse> genForshowPoints() {
+    private static HttpRequestDef<ShowPointsRequest, ShowPointsResponse> genForShowPoints() {
         // basic
         HttpRequestDef.Builder<ShowPointsRequest, ShowPointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPointsRequest.class, ShowPointsResponse.class)
@@ -2504,16 +2199,12 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPointsRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowPointsRequest::getEdgeNodeId, ShowPointsRequest::setEdgeNodeId));
         builder.<String>withRequestField("ds_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPointsRequest::getDsId, (req, v) -> {
-                req.setDsId(v);
-            }));
+            f -> f.withMarshaller(ShowPointsRequest::getDsId, ShowPointsRequest::setDsId));
 
         // response
 
@@ -2521,9 +2212,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<CreateScheduleRequest, CreateScheduleResponse> createSchedule =
-        genForcreateSchedule();
+        genForCreateSchedule();
 
-    private static HttpRequestDef<CreateScheduleRequest, CreateScheduleResponse> genForcreateSchedule() {
+    private static HttpRequestDef<CreateScheduleRequest, CreateScheduleResponse> genForCreateSchedule() {
         // basic
         HttpRequestDef.Builder<CreateScheduleRequest, CreateScheduleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScheduleRequest.class, CreateScheduleResponse.class)
@@ -2536,16 +2227,12 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateScheduleRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(CreateScheduleRequest::getEdgeNodeId, CreateScheduleRequest::setEdgeNodeId));
         builder.<CreateScheduleReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateScheduleReqDTO.class),
-            f -> f.withMarshaller(CreateScheduleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateScheduleRequest::getBody, CreateScheduleRequest::setBody));
 
         // response
 
@@ -2553,9 +2240,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteScheduleRequest, DeleteScheduleResponse> deleteSchedule =
-        genFordeleteSchedule();
+        genForDeleteSchedule();
 
-    private static HttpRequestDef<DeleteScheduleRequest, DeleteScheduleResponse> genFordeleteSchedule() {
+    private static HttpRequestDef<DeleteScheduleRequest, DeleteScheduleResponse> genForDeleteSchedule() {
         // basic
         HttpRequestDef.Builder<DeleteScheduleRequest, DeleteScheduleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScheduleRequest.class, DeleteScheduleResponse.class)
@@ -2568,33 +2255,27 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScheduleRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteScheduleRequest::getEdgeNodeId, DeleteScheduleRequest::setEdgeNodeId));
         builder.<String>withRequestField("schedule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScheduleRequest::getScheduleId, (req, v) -> {
-                req.setScheduleId(v);
-            }));
+            f -> f.withMarshaller(DeleteScheduleRequest::getScheduleId, DeleteScheduleRequest::setScheduleId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteScheduleResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteScheduleResponse::getBody, DeleteScheduleResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateScheduleRequest, UpdateScheduleResponse> updateSchedule =
-        genForupdateSchedule();
+        genForUpdateSchedule();
 
-    private static HttpRequestDef<UpdateScheduleRequest, UpdateScheduleResponse> genForupdateSchedule() {
+    private static HttpRequestDef<UpdateScheduleRequest, UpdateScheduleResponse> genForUpdateSchedule() {
         // basic
         HttpRequestDef.Builder<UpdateScheduleRequest, UpdateScheduleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateScheduleRequest.class, UpdateScheduleResponse.class)
@@ -2607,23 +2288,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateScheduleRequest::getEdgeNodeId, (req, v) -> {
-                req.setEdgeNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateScheduleRequest::getEdgeNodeId, UpdateScheduleRequest::setEdgeNodeId));
         builder.<String>withRequestField("schedule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateScheduleRequest::getScheduleId, (req, v) -> {
-                req.setScheduleId(v);
-            }));
+            f -> f.withMarshaller(UpdateScheduleRequest::getScheduleId, UpdateScheduleRequest::setScheduleId));
         builder.<UpdateScheduleReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateScheduleReqDTO.class),
-            f -> f.withMarshaller(UpdateScheduleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateScheduleRequest::getBody, UpdateScheduleRequest::setBody));
 
         // response
 
@@ -2631,9 +2306,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse> batchConfirmConfigsNew =
-        genForbatchConfirmConfigsNew();
+        genForBatchConfirmConfigsNew();
 
-    private static HttpRequestDef<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse> genForbatchConfirmConfigsNew() {
+    private static HttpRequestDef<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse> genForBatchConfirmConfigsNew() {
         // basic
         HttpRequestDef.Builder<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchConfirmConfigsNewRequest.class, BatchConfirmConfigsNewResponse.class)
@@ -2646,23 +2321,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchConfirmConfigsNewRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(BatchConfirmConfigsNewRequest::getNodeId, BatchConfirmConfigsNewRequest::setNodeId));
         builder.<String>withRequestField("ia_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchConfirmConfigsNewRequest::getIaId, (req, v) -> {
-                req.setIaId(v);
-            }));
+            f -> f.withMarshaller(BatchConfirmConfigsNewRequest::getIaId, BatchConfirmConfigsNewRequest::setIaId));
         builder.<ConfirmIaConfigsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfirmIaConfigsRequestBody.class),
-            f -> f.withMarshaller(BatchConfirmConfigsNewRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchConfirmConfigsNewRequest::getBody, BatchConfirmConfigsNewRequest::setBody));
 
         // response
 
@@ -2670,9 +2339,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<BatchImportConfigsRequest, BatchImportConfigsResponse> batchImportConfigs =
-        genForbatchImportConfigs();
+        genForBatchImportConfigs();
 
-    private static HttpRequestDef<BatchImportConfigsRequest, BatchImportConfigsResponse> genForbatchImportConfigs() {
+    private static HttpRequestDef<BatchImportConfigsRequest, BatchImportConfigsResponse> genForBatchImportConfigs() {
         // basic
         HttpRequestDef.Builder<BatchImportConfigsRequest, BatchImportConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchImportConfigsRequest.class, BatchImportConfigsResponse.class)
@@ -2685,23 +2354,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchImportConfigsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(BatchImportConfigsRequest::getNodeId, BatchImportConfigsRequest::setNodeId));
         builder.<String>withRequestField("ia_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchImportConfigsRequest::getIaId, (req, v) -> {
-                req.setIaId(v);
-            }));
+            f -> f.withMarshaller(BatchImportConfigsRequest::getIaId, BatchImportConfigsRequest::setIaId));
         builder.<BatchImportConfigsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchImportConfigsRequestBody.class),
-            f -> f.withMarshaller(BatchImportConfigsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchImportConfigsRequest::getBody, BatchImportConfigsRequest::setBody));
 
         // response
 
@@ -2709,9 +2372,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<DeleteIaConfigRequest, DeleteIaConfigResponse> deleteIaConfig =
-        genFordeleteIaConfig();
+        genForDeleteIaConfig();
 
-    private static HttpRequestDef<DeleteIaConfigRequest, DeleteIaConfigResponse> genFordeleteIaConfig() {
+    private static HttpRequestDef<DeleteIaConfigRequest, DeleteIaConfigResponse> genForDeleteIaConfig() {
         // basic
         HttpRequestDef.Builder<DeleteIaConfigRequest, DeleteIaConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteIaConfigRequest.class, DeleteIaConfigResponse.class)
@@ -2724,40 +2387,32 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteIaConfigRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteIaConfigRequest::getNodeId, DeleteIaConfigRequest::setNodeId));
         builder.<String>withRequestField("ia_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteIaConfigRequest::getIaId, (req, v) -> {
-                req.setIaId(v);
-            }));
+            f -> f.withMarshaller(DeleteIaConfigRequest::getIaId, DeleteIaConfigRequest::setIaId));
         builder.<String>withRequestField("config_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteIaConfigRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(DeleteIaConfigRequest::getConfigId, DeleteIaConfigRequest::setConfigId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteIaConfigResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteIaConfigResponse::getBody, DeleteIaConfigResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListIaConfigsRequest, ListIaConfigsResponse> listIaConfigs =
-        genForlistIaConfigs();
+        genForListIaConfigs();
 
-    private static HttpRequestDef<ListIaConfigsRequest, ListIaConfigsResponse> genForlistIaConfigs() {
+    private static HttpRequestDef<ListIaConfigsRequest, ListIaConfigsResponse> genForListIaConfigs() {
         // basic
         HttpRequestDef.Builder<ListIaConfigsRequest, ListIaConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListIaConfigsRequest.class, ListIaConfigsResponse.class)
@@ -2770,39 +2425,31 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIaConfigsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListIaConfigsRequest::getNodeId, ListIaConfigsRequest::setNodeId));
         builder.<String>withRequestField("ia_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIaConfigsRequest::getIaId, (req, v) -> {
-                req.setIaId(v);
-            }));
+            f -> f.withMarshaller(ListIaConfigsRequest::getIaId, ListIaConfigsRequest::setIaId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIaConfigsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListIaConfigsRequest::getOffset, ListIaConfigsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIaConfigsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListIaConfigsRequest::getLimit, ListIaConfigsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowIaConfigRequest, ShowIaConfigResponse> showIaConfig = genForshowIaConfig();
+    public static final HttpRequestDef<ShowIaConfigRequest, ShowIaConfigResponse> showIaConfig = genForShowIaConfig();
 
-    private static HttpRequestDef<ShowIaConfigRequest, ShowIaConfigResponse> genForshowIaConfig() {
+    private static HttpRequestDef<ShowIaConfigRequest, ShowIaConfigResponse> genForShowIaConfig() {
         // basic
         HttpRequestDef.Builder<ShowIaConfigRequest, ShowIaConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowIaConfigRequest.class, ShowIaConfigResponse.class)
@@ -2815,23 +2462,17 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIaConfigRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowIaConfigRequest::getNodeId, ShowIaConfigRequest::setNodeId));
         builder.<String>withRequestField("ia_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIaConfigRequest::getIaId, (req, v) -> {
-                req.setIaId(v);
-            }));
+            f -> f.withMarshaller(ShowIaConfigRequest::getIaId, ShowIaConfigRequest::setIaId));
         builder.<String>withRequestField("config_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIaConfigRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ShowIaConfigRequest::getConfigId, ShowIaConfigRequest::setConfigId));
 
         // response
 
@@ -2839,9 +2480,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<UpdateIaConfigRequest, UpdateIaConfigResponse> updateIaConfig =
-        genForupdateIaConfig();
+        genForUpdateIaConfig();
 
-    private static HttpRequestDef<UpdateIaConfigRequest, UpdateIaConfigResponse> genForupdateIaConfig() {
+    private static HttpRequestDef<UpdateIaConfigRequest, UpdateIaConfigResponse> genForUpdateIaConfig() {
         // basic
         HttpRequestDef.Builder<UpdateIaConfigRequest, UpdateIaConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateIaConfigRequest.class, UpdateIaConfigResponse.class)
@@ -2854,30 +2495,22 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIaConfigRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateIaConfigRequest::getNodeId, UpdateIaConfigRequest::setNodeId));
         builder.<String>withRequestField("ia_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIaConfigRequest::getIaId, (req, v) -> {
-                req.setIaId(v);
-            }));
+            f -> f.withMarshaller(UpdateIaConfigRequest::getIaId, UpdateIaConfigRequest::setIaId));
         builder.<String>withRequestField("config_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIaConfigRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(UpdateIaConfigRequest::getConfigId, UpdateIaConfigRequest::setConfigId));
         builder.<UpdateIaConfigRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateIaConfigRequestDTO.class),
-            f -> f.withMarshaller(UpdateIaConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateIaConfigRequest::getBody, UpdateIaConfigRequest::setBody));
 
         // response
 
@@ -2885,9 +2518,9 @@ public class IoTEdgeMeta {
     }
 
     public static final HttpRequestDef<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse> batchAssociateNaToNodes =
-        genForbatchAssociateNaToNodes();
+        genForBatchAssociateNaToNodes();
 
-    private static HttpRequestDef<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse> genForbatchAssociateNaToNodes() {
+    private static HttpRequestDef<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse> genForBatchAssociateNaToNodes() {
         // basic
         HttpRequestDef.Builder<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchAssociateNaToNodesRequest.class, BatchAssociateNaToNodesResponse.class)
@@ -2900,32 +2533,27 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateNaToNodesRequest::getNaId, (req, v) -> {
-                req.setNaId(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateNaToNodesRequest::getNaId, BatchAssociateNaToNodesRequest::setNaId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateNaToNodesRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateNaToNodesRequest::getAction,
+                BatchAssociateNaToNodesRequest::setAction));
         builder.<AuthorizeNa2NodesRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AuthorizeNa2NodesRequestDTO.class),
-            f -> f.withMarshaller(BatchAssociateNaToNodesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateNaToNodesRequest::getBody, BatchAssociateNaToNodesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteNaRequest, DeleteNaResponse> deleteNa = genFordeleteNa();
+    public static final HttpRequestDef<DeleteNaRequest, DeleteNaResponse> deleteNa = genForDeleteNa();
 
-    private static HttpRequestDef<DeleteNaRequest, DeleteNaResponse> genFordeleteNa() {
+    private static HttpRequestDef<DeleteNaRequest, DeleteNaResponse> genForDeleteNa() {
         // basic
         HttpRequestDef.Builder<DeleteNaRequest, DeleteNaResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNaRequest.class, DeleteNaResponse.class)
@@ -2938,26 +2566,22 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNaRequest::getNaId, (req, v) -> {
-                req.setNaId(v);
-            }));
+            f -> f.withMarshaller(DeleteNaRequest::getNaId, DeleteNaRequest::setNaId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteNaResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteNaResponse::getBody, DeleteNaResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse> listNaAuthorizedNodes =
-        genForlistNaAuthorizedNodes();
+        genForListNaAuthorizedNodes();
 
-    private static HttpRequestDef<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse> genForlistNaAuthorizedNodes() {
+    private static HttpRequestDef<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse> genForListNaAuthorizedNodes() {
         // basic
         HttpRequestDef.Builder<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListNaAuthorizedNodesRequest.class, ListNaAuthorizedNodesResponse.class)
@@ -2970,32 +2594,26 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNaAuthorizedNodesRequest::getNaId, (req, v) -> {
-                req.setNaId(v);
-            }));
+            f -> f.withMarshaller(ListNaAuthorizedNodesRequest::getNaId, ListNaAuthorizedNodesRequest::setNaId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNaAuthorizedNodesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListNaAuthorizedNodesRequest::getOffset, ListNaAuthorizedNodesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNaAuthorizedNodesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNaAuthorizedNodesRequest::getLimit, ListNaAuthorizedNodesRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNasRequest, ListNasResponse> listNas = genForlistNas();
+    public static final HttpRequestDef<ListNasRequest, ListNasResponse> listNas = genForListNas();
 
-    private static HttpRequestDef<ListNasRequest, ListNasResponse> genForlistNas() {
+    private static HttpRequestDef<ListNasRequest, ListNasResponse> genForListNas() {
         // basic
         HttpRequestDef.Builder<ListNasRequest, ListNasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNasRequest.class, ListNasResponse.class)
@@ -3008,32 +2626,26 @@ public class IoTEdgeMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNasRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListNasRequest::getName, ListNasRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListNasRequest::getOffset, ListNasRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNasRequest::getLimit, ListNasRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNaRequest, ShowNaResponse> showNa = genForshowNa();
+    public static final HttpRequestDef<ShowNaRequest, ShowNaResponse> showNa = genForShowNa();
 
-    private static HttpRequestDef<ShowNaRequest, ShowNaResponse> genForshowNa() {
+    private static HttpRequestDef<ShowNaRequest, ShowNaResponse> genForShowNa() {
         // basic
         HttpRequestDef.Builder<ShowNaRequest, ShowNaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNaRequest.class, ShowNaResponse.class)
@@ -3046,18 +2658,16 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNaRequest::getNaId, (req, v) -> {
-                req.setNaId(v);
-            }));
+            f -> f.withMarshaller(ShowNaRequest::getNaId, ShowNaRequest::setNaId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateNaRequest, UpdateNaResponse> updateNa = genForupdateNa();
+    public static final HttpRequestDef<UpdateNaRequest, UpdateNaResponse> updateNa = genForUpdateNa();
 
-    private static HttpRequestDef<UpdateNaRequest, UpdateNaResponse> genForupdateNa() {
+    private static HttpRequestDef<UpdateNaRequest, UpdateNaResponse> genForUpdateNa() {
         // basic
         HttpRequestDef.Builder<UpdateNaRequest, UpdateNaResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNaRequest.class, UpdateNaResponse.class)
@@ -3070,16 +2680,12 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNaRequest::getNaId, (req, v) -> {
-                req.setNaId(v);
-            }));
+            f -> f.withMarshaller(UpdateNaRequest::getNaId, UpdateNaRequest::setNaId));
         builder.<UpdateNaRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNaRequestDTO.class),
-            f -> f.withMarshaller(UpdateNaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNaRequest::getBody, UpdateNaRequest::setBody));
 
         // response
 

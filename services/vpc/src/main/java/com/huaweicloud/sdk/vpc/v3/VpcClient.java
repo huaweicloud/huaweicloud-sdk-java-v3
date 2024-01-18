@@ -144,7 +144,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSecurityGroupsRequest 请求对象
+     * @param request AddSecurityGroupsRequest 请求对象
      * @return AddSecurityGroupsResponse
      */
     public AddSecurityGroupsResponse addSecurityGroups(AddSecurityGroupsRequest request) {
@@ -158,13 +158,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSecurityGroupsRequest 请求对象
+     * @param request AddSecurityGroupsRequest 请求对象
      * @return SyncInvoker<AddSecurityGroupsRequest, AddSecurityGroupsResponse>
      */
     public SyncInvoker<AddSecurityGroupsRequest, AddSecurityGroupsResponse> addSecurityGroupsInvoker(
         AddSecurityGroupsRequest request) {
-        return new SyncInvoker<AddSecurityGroupsRequest, AddSecurityGroupsResponse>(request, VpcMeta.addSecurityGroups,
-            hcClient);
+        return new SyncInvoker<>(request, VpcMeta.addSecurityGroups, hcClient);
     }
 
     /**
@@ -174,7 +173,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSourcesToTrafficMirrorSessionRequest 请求对象
+     * @param request AddSourcesToTrafficMirrorSessionRequest 请求对象
      * @return AddSourcesToTrafficMirrorSessionResponse
      */
     public AddSourcesToTrafficMirrorSessionResponse addSourcesToTrafficMirrorSession(
@@ -189,13 +188,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSourcesToTrafficMirrorSessionRequest 请求对象
+     * @param request AddSourcesToTrafficMirrorSessionRequest 请求对象
      * @return SyncInvoker<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse>
      */
     public SyncInvoker<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse> addSourcesToTrafficMirrorSessionInvoker(
         AddSourcesToTrafficMirrorSessionRequest request) {
-        return new SyncInvoker<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse>(
-            request, VpcMeta.addSourcesToTrafficMirrorSession, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.addSourcesToTrafficMirrorSession, hcClient);
     }
 
     /**
@@ -205,7 +203,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateSecurityGroupRulesRequest 请求对象
+     * @param request BatchCreateSecurityGroupRulesRequest 请求对象
      * @return BatchCreateSecurityGroupRulesResponse
      */
     public BatchCreateSecurityGroupRulesResponse batchCreateSecurityGroupRules(
@@ -220,13 +218,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateSecurityGroupRulesRequest 请求对象
+     * @param request BatchCreateSecurityGroupRulesRequest 请求对象
      * @return SyncInvoker<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse>
      */
     public SyncInvoker<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse> batchCreateSecurityGroupRulesInvoker(
         BatchCreateSecurityGroupRulesRequest request) {
-        return new SyncInvoker<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse>(request,
-            VpcMeta.batchCreateSecurityGroupRules, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.batchCreateSecurityGroupRules, hcClient);
     }
 
     /**
@@ -236,7 +233,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateSubNetworkInterfaceRequest 请求对象
+     * @param request BatchCreateSubNetworkInterfaceRequest 请求对象
      * @return BatchCreateSubNetworkInterfaceResponse
      */
     public BatchCreateSubNetworkInterfaceResponse batchCreateSubNetworkInterface(
@@ -251,13 +248,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateSubNetworkInterfaceRequest 请求对象
+     * @param request BatchCreateSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse>
      */
     public SyncInvoker<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> batchCreateSubNetworkInterfaceInvoker(
         BatchCreateSubNetworkInterfaceRequest request) {
-        return new SyncInvoker<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse>(request,
-            VpcMeta.batchCreateSubNetworkInterface, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.batchCreateSubNetworkInterface, hcClient);
     }
 
     /**
@@ -267,7 +263,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityGroupRequest 请求对象
+     * @param request CreateSecurityGroupRequest 请求对象
      * @return CreateSecurityGroupResponse
      */
     public CreateSecurityGroupResponse createSecurityGroup(CreateSecurityGroupRequest request) {
@@ -281,13 +277,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityGroupRequest 请求对象
+     * @param request CreateSecurityGroupRequest 请求对象
      * @return SyncInvoker<CreateSecurityGroupRequest, CreateSecurityGroupResponse>
      */
     public SyncInvoker<CreateSecurityGroupRequest, CreateSecurityGroupResponse> createSecurityGroupInvoker(
         CreateSecurityGroupRequest request) {
-        return new SyncInvoker<CreateSecurityGroupRequest, CreateSecurityGroupResponse>(request,
-            VpcMeta.createSecurityGroup, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.createSecurityGroup, hcClient);
     }
 
     /**
@@ -297,7 +292,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityGroupRuleRequest 请求对象
+     * @param request CreateSecurityGroupRuleRequest 请求对象
      * @return CreateSecurityGroupRuleResponse
      */
     public CreateSecurityGroupRuleResponse createSecurityGroupRule(CreateSecurityGroupRuleRequest request) {
@@ -311,13 +306,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityGroupRuleRequest 请求对象
+     * @param request CreateSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse>
      */
     public SyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> createSecurityGroupRuleInvoker(
         CreateSecurityGroupRuleRequest request) {
-        return new SyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse>(request,
-            VpcMeta.createSecurityGroupRule, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.createSecurityGroupRule, hcClient);
     }
 
     /**
@@ -327,7 +321,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubNetworkInterfaceRequest 请求对象
+     * @param request CreateSubNetworkInterfaceRequest 请求对象
      * @return CreateSubNetworkInterfaceResponse
      */
     public CreateSubNetworkInterfaceResponse createSubNetworkInterface(CreateSubNetworkInterfaceRequest request) {
@@ -341,13 +335,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubNetworkInterfaceRequest 请求对象
+     * @param request CreateSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<CreateSubNetworkInterfaceRequest, CreateSubNetworkInterfaceResponse>
      */
     public SyncInvoker<CreateSubNetworkInterfaceRequest, CreateSubNetworkInterfaceResponse> createSubNetworkInterfaceInvoker(
         CreateSubNetworkInterfaceRequest request) {
-        return new SyncInvoker<CreateSubNetworkInterfaceRequest, CreateSubNetworkInterfaceResponse>(request,
-            VpcMeta.createSubNetworkInterface, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.createSubNetworkInterface, hcClient);
     }
 
     /**
@@ -357,7 +350,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficMirrorFilterRequest 请求对象
+     * @param request CreateTrafficMirrorFilterRequest 请求对象
      * @return CreateTrafficMirrorFilterResponse
      */
     public CreateTrafficMirrorFilterResponse createTrafficMirrorFilter(CreateTrafficMirrorFilterRequest request) {
@@ -371,13 +364,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficMirrorFilterRequest 请求对象
+     * @param request CreateTrafficMirrorFilterRequest 请求对象
      * @return SyncInvoker<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse>
      */
     public SyncInvoker<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse> createTrafficMirrorFilterInvoker(
         CreateTrafficMirrorFilterRequest request) {
-        return new SyncInvoker<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse>(request,
-            VpcMeta.createTrafficMirrorFilter, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.createTrafficMirrorFilter, hcClient);
     }
 
     /**
@@ -387,7 +379,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficMirrorFilterRuleRequest 请求对象
+     * @param request CreateTrafficMirrorFilterRuleRequest 请求对象
      * @return CreateTrafficMirrorFilterRuleResponse
      */
     public CreateTrafficMirrorFilterRuleResponse createTrafficMirrorFilterRule(
@@ -402,13 +394,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficMirrorFilterRuleRequest 请求对象
+     * @param request CreateTrafficMirrorFilterRuleRequest 请求对象
      * @return SyncInvoker<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse>
      */
     public SyncInvoker<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse> createTrafficMirrorFilterRuleInvoker(
         CreateTrafficMirrorFilterRuleRequest request) {
-        return new SyncInvoker<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse>(request,
-            VpcMeta.createTrafficMirrorFilterRule, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.createTrafficMirrorFilterRule, hcClient);
     }
 
     /**
@@ -418,7 +409,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficMirrorSessionRequest 请求对象
+     * @param request CreateTrafficMirrorSessionRequest 请求对象
      * @return CreateTrafficMirrorSessionResponse
      */
     public CreateTrafficMirrorSessionResponse createTrafficMirrorSession(CreateTrafficMirrorSessionRequest request) {
@@ -432,13 +423,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficMirrorSessionRequest 请求对象
+     * @param request CreateTrafficMirrorSessionRequest 请求对象
      * @return SyncInvoker<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse>
      */
     public SyncInvoker<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse> createTrafficMirrorSessionInvoker(
         CreateTrafficMirrorSessionRequest request) {
-        return new SyncInvoker<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse>(request,
-            VpcMeta.createTrafficMirrorSession, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.createTrafficMirrorSession, hcClient);
     }
 
     /**
@@ -448,7 +438,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityGroupRequest 请求对象
+     * @param request DeleteSecurityGroupRequest 请求对象
      * @return DeleteSecurityGroupResponse
      */
     public DeleteSecurityGroupResponse deleteSecurityGroup(DeleteSecurityGroupRequest request) {
@@ -462,13 +452,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityGroupRequest 请求对象
+     * @param request DeleteSecurityGroupRequest 请求对象
      * @return SyncInvoker<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>
      */
     public SyncInvoker<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroupInvoker(
         DeleteSecurityGroupRequest request) {
-        return new SyncInvoker<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>(request,
-            VpcMeta.deleteSecurityGroup, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.deleteSecurityGroup, hcClient);
     }
 
     /**
@@ -478,7 +467,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityGroupRuleRequest 请求对象
+     * @param request DeleteSecurityGroupRuleRequest 请求对象
      * @return DeleteSecurityGroupRuleResponse
      */
     public DeleteSecurityGroupRuleResponse deleteSecurityGroupRule(DeleteSecurityGroupRuleRequest request) {
@@ -492,13 +481,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityGroupRuleRequest 请求对象
+     * @param request DeleteSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse>
      */
     public SyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> deleteSecurityGroupRuleInvoker(
         DeleteSecurityGroupRuleRequest request) {
-        return new SyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse>(request,
-            VpcMeta.deleteSecurityGroupRule, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.deleteSecurityGroupRule, hcClient);
     }
 
     /**
@@ -508,7 +496,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubNetworkInterfaceRequest 请求对象
+     * @param request DeleteSubNetworkInterfaceRequest 请求对象
      * @return DeleteSubNetworkInterfaceResponse
      */
     public DeleteSubNetworkInterfaceResponse deleteSubNetworkInterface(DeleteSubNetworkInterfaceRequest request) {
@@ -522,13 +510,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubNetworkInterfaceRequest 请求对象
+     * @param request DeleteSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<DeleteSubNetworkInterfaceRequest, DeleteSubNetworkInterfaceResponse>
      */
     public SyncInvoker<DeleteSubNetworkInterfaceRequest, DeleteSubNetworkInterfaceResponse> deleteSubNetworkInterfaceInvoker(
         DeleteSubNetworkInterfaceRequest request) {
-        return new SyncInvoker<DeleteSubNetworkInterfaceRequest, DeleteSubNetworkInterfaceResponse>(request,
-            VpcMeta.deleteSubNetworkInterface, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.deleteSubNetworkInterface, hcClient);
     }
 
     /**
@@ -538,7 +525,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficMirrorFilterRequest 请求对象
+     * @param request DeleteTrafficMirrorFilterRequest 请求对象
      * @return DeleteTrafficMirrorFilterResponse
      */
     public DeleteTrafficMirrorFilterResponse deleteTrafficMirrorFilter(DeleteTrafficMirrorFilterRequest request) {
@@ -552,13 +539,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficMirrorFilterRequest 请求对象
+     * @param request DeleteTrafficMirrorFilterRequest 请求对象
      * @return SyncInvoker<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse>
      */
     public SyncInvoker<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse> deleteTrafficMirrorFilterInvoker(
         DeleteTrafficMirrorFilterRequest request) {
-        return new SyncInvoker<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse>(request,
-            VpcMeta.deleteTrafficMirrorFilter, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.deleteTrafficMirrorFilter, hcClient);
     }
 
     /**
@@ -568,7 +554,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficMirrorFilterRuleRequest 请求对象
+     * @param request DeleteTrafficMirrorFilterRuleRequest 请求对象
      * @return DeleteTrafficMirrorFilterRuleResponse
      */
     public DeleteTrafficMirrorFilterRuleResponse deleteTrafficMirrorFilterRule(
@@ -583,13 +569,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficMirrorFilterRuleRequest 请求对象
+     * @param request DeleteTrafficMirrorFilterRuleRequest 请求对象
      * @return SyncInvoker<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse>
      */
     public SyncInvoker<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse> deleteTrafficMirrorFilterRuleInvoker(
         DeleteTrafficMirrorFilterRuleRequest request) {
-        return new SyncInvoker<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse>(request,
-            VpcMeta.deleteTrafficMirrorFilterRule, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.deleteTrafficMirrorFilterRule, hcClient);
     }
 
     /**
@@ -599,7 +584,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficMirrorSessionRequest 请求对象
+     * @param request DeleteTrafficMirrorSessionRequest 请求对象
      * @return DeleteTrafficMirrorSessionResponse
      */
     public DeleteTrafficMirrorSessionResponse deleteTrafficMirrorSession(DeleteTrafficMirrorSessionRequest request) {
@@ -613,13 +598,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficMirrorSessionRequest 请求对象
+     * @param request DeleteTrafficMirrorSessionRequest 请求对象
      * @return SyncInvoker<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse>
      */
     public SyncInvoker<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> deleteTrafficMirrorSessionInvoker(
         DeleteTrafficMirrorSessionRequest request) {
-        return new SyncInvoker<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse>(request,
-            VpcMeta.deleteTrafficMirrorSession, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.deleteTrafficMirrorSession, hcClient);
     }
 
     /**
@@ -629,7 +613,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityGroupRulesRequest 请求对象
+     * @param request ListSecurityGroupRulesRequest 请求对象
      * @return ListSecurityGroupRulesResponse
      */
     public ListSecurityGroupRulesResponse listSecurityGroupRules(ListSecurityGroupRulesRequest request) {
@@ -643,13 +627,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityGroupRulesRequest 请求对象
+     * @param request ListSecurityGroupRulesRequest 请求对象
      * @return SyncInvoker<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse>
      */
     public SyncInvoker<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> listSecurityGroupRulesInvoker(
         ListSecurityGroupRulesRequest request) {
-        return new SyncInvoker<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse>(request,
-            VpcMeta.listSecurityGroupRules, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.listSecurityGroupRules, hcClient);
     }
 
     /**
@@ -659,7 +642,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityGroupsRequest 请求对象
+     * @param request ListSecurityGroupsRequest 请求对象
      * @return ListSecurityGroupsResponse
      */
     public ListSecurityGroupsResponse listSecurityGroups(ListSecurityGroupsRequest request) {
@@ -673,13 +656,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityGroupsRequest 请求对象
+     * @param request ListSecurityGroupsRequest 请求对象
      * @return SyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse>
      */
     public SyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse> listSecurityGroupsInvoker(
         ListSecurityGroupsRequest request) {
-        return new SyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse>(request,
-            VpcMeta.listSecurityGroups, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.listSecurityGroups, hcClient);
     }
 
     /**
@@ -689,7 +671,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubNetworkInterfacesRequest 请求对象
+     * @param request ListSubNetworkInterfacesRequest 请求对象
      * @return ListSubNetworkInterfacesResponse
      */
     public ListSubNetworkInterfacesResponse listSubNetworkInterfaces(ListSubNetworkInterfacesRequest request) {
@@ -703,13 +685,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubNetworkInterfacesRequest 请求对象
+     * @param request ListSubNetworkInterfacesRequest 请求对象
      * @return SyncInvoker<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse>
      */
     public SyncInvoker<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse> listSubNetworkInterfacesInvoker(
         ListSubNetworkInterfacesRequest request) {
-        return new SyncInvoker<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse>(request,
-            VpcMeta.listSubNetworkInterfaces, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.listSubNetworkInterfaces, hcClient);
     }
 
     /**
@@ -719,7 +700,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTrafficMirrorFilterRulesRequest 请求对象
+     * @param request ListTrafficMirrorFilterRulesRequest 请求对象
      * @return ListTrafficMirrorFilterRulesResponse
      */
     public ListTrafficMirrorFilterRulesResponse listTrafficMirrorFilterRules(
@@ -734,13 +715,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTrafficMirrorFilterRulesRequest 请求对象
+     * @param request ListTrafficMirrorFilterRulesRequest 请求对象
      * @return SyncInvoker<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse>
      */
     public SyncInvoker<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse> listTrafficMirrorFilterRulesInvoker(
         ListTrafficMirrorFilterRulesRequest request) {
-        return new SyncInvoker<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse>(request,
-            VpcMeta.listTrafficMirrorFilterRules, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.listTrafficMirrorFilterRules, hcClient);
     }
 
     /**
@@ -750,7 +730,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTrafficMirrorFiltersRequest 请求对象
+     * @param request ListTrafficMirrorFiltersRequest 请求对象
      * @return ListTrafficMirrorFiltersResponse
      */
     public ListTrafficMirrorFiltersResponse listTrafficMirrorFilters(ListTrafficMirrorFiltersRequest request) {
@@ -764,13 +744,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTrafficMirrorFiltersRequest 请求对象
+     * @param request ListTrafficMirrorFiltersRequest 请求对象
      * @return SyncInvoker<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse>
      */
     public SyncInvoker<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse> listTrafficMirrorFiltersInvoker(
         ListTrafficMirrorFiltersRequest request) {
-        return new SyncInvoker<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse>(request,
-            VpcMeta.listTrafficMirrorFilters, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.listTrafficMirrorFilters, hcClient);
     }
 
     /**
@@ -780,7 +759,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTrafficMirrorSessionsRequest 请求对象
+     * @param request ListTrafficMirrorSessionsRequest 请求对象
      * @return ListTrafficMirrorSessionsResponse
      */
     public ListTrafficMirrorSessionsResponse listTrafficMirrorSessions(ListTrafficMirrorSessionsRequest request) {
@@ -794,13 +773,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTrafficMirrorSessionsRequest 请求对象
+     * @param request ListTrafficMirrorSessionsRequest 请求对象
      * @return SyncInvoker<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse>
      */
     public SyncInvoker<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse> listTrafficMirrorSessionsInvoker(
         ListTrafficMirrorSessionsRequest request) {
-        return new SyncInvoker<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse>(request,
-            VpcMeta.listTrafficMirrorSessions, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.listTrafficMirrorSessions, hcClient);
     }
 
     /**
@@ -810,7 +788,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateSubNetworkInterfaceRequest 请求对象
+     * @param request MigrateSubNetworkInterfaceRequest 请求对象
      * @return MigrateSubNetworkInterfaceResponse
      */
     public MigrateSubNetworkInterfaceResponse migrateSubNetworkInterface(MigrateSubNetworkInterfaceRequest request) {
@@ -824,13 +802,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateSubNetworkInterfaceRequest 请求对象
+     * @param request MigrateSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse>
      */
     public SyncInvoker<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> migrateSubNetworkInterfaceInvoker(
         MigrateSubNetworkInterfaceRequest request) {
-        return new SyncInvoker<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse>(request,
-            VpcMeta.migrateSubNetworkInterface, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.migrateSubNetworkInterface, hcClient);
     }
 
     /**
@@ -840,7 +817,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveSecurityGroupsRequest 请求对象
+     * @param request RemoveSecurityGroupsRequest 请求对象
      * @return RemoveSecurityGroupsResponse
      */
     public RemoveSecurityGroupsResponse removeSecurityGroups(RemoveSecurityGroupsRequest request) {
@@ -854,13 +831,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveSecurityGroupsRequest 请求对象
+     * @param request RemoveSecurityGroupsRequest 请求对象
      * @return SyncInvoker<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse>
      */
     public SyncInvoker<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse> removeSecurityGroupsInvoker(
         RemoveSecurityGroupsRequest request) {
-        return new SyncInvoker<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse>(request,
-            VpcMeta.removeSecurityGroups, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.removeSecurityGroups, hcClient);
     }
 
     /**
@@ -870,7 +846,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveSourcesFromTrafficMirrorSessionRequest 请求对象
+     * @param request RemoveSourcesFromTrafficMirrorSessionRequest 请求对象
      * @return RemoveSourcesFromTrafficMirrorSessionResponse
      */
     public RemoveSourcesFromTrafficMirrorSessionResponse removeSourcesFromTrafficMirrorSession(
@@ -885,13 +861,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveSourcesFromTrafficMirrorSessionRequest 请求对象
+     * @param request RemoveSourcesFromTrafficMirrorSessionRequest 请求对象
      * @return SyncInvoker<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse>
      */
     public SyncInvoker<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse> removeSourcesFromTrafficMirrorSessionInvoker(
         RemoveSourcesFromTrafficMirrorSessionRequest request) {
-        return new SyncInvoker<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse>(
-            request, VpcMeta.removeSourcesFromTrafficMirrorSession, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.removeSourcesFromTrafficMirrorSession, hcClient);
     }
 
     /**
@@ -901,7 +876,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityGroupRequest 请求对象
+     * @param request ShowSecurityGroupRequest 请求对象
      * @return ShowSecurityGroupResponse
      */
     public ShowSecurityGroupResponse showSecurityGroup(ShowSecurityGroupRequest request) {
@@ -915,13 +890,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityGroupRequest 请求对象
+     * @param request ShowSecurityGroupRequest 请求对象
      * @return SyncInvoker<ShowSecurityGroupRequest, ShowSecurityGroupResponse>
      */
     public SyncInvoker<ShowSecurityGroupRequest, ShowSecurityGroupResponse> showSecurityGroupInvoker(
         ShowSecurityGroupRequest request) {
-        return new SyncInvoker<ShowSecurityGroupRequest, ShowSecurityGroupResponse>(request, VpcMeta.showSecurityGroup,
-            hcClient);
+        return new SyncInvoker<>(request, VpcMeta.showSecurityGroup, hcClient);
     }
 
     /**
@@ -931,7 +905,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityGroupRuleRequest 请求对象
+     * @param request ShowSecurityGroupRuleRequest 请求对象
      * @return ShowSecurityGroupRuleResponse
      */
     public ShowSecurityGroupRuleResponse showSecurityGroupRule(ShowSecurityGroupRuleRequest request) {
@@ -945,13 +919,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityGroupRuleRequest 请求对象
+     * @param request ShowSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse>
      */
     public SyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> showSecurityGroupRuleInvoker(
         ShowSecurityGroupRuleRequest request) {
-        return new SyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse>(request,
-            VpcMeta.showSecurityGroupRule, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.showSecurityGroupRule, hcClient);
     }
 
     /**
@@ -961,7 +934,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubNetworkInterfaceRequest 请求对象
+     * @param request ShowSubNetworkInterfaceRequest 请求对象
      * @return ShowSubNetworkInterfaceResponse
      */
     public ShowSubNetworkInterfaceResponse showSubNetworkInterface(ShowSubNetworkInterfaceRequest request) {
@@ -975,13 +948,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubNetworkInterfaceRequest 请求对象
+     * @param request ShowSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<ShowSubNetworkInterfaceRequest, ShowSubNetworkInterfaceResponse>
      */
     public SyncInvoker<ShowSubNetworkInterfaceRequest, ShowSubNetworkInterfaceResponse> showSubNetworkInterfaceInvoker(
         ShowSubNetworkInterfaceRequest request) {
-        return new SyncInvoker<ShowSubNetworkInterfaceRequest, ShowSubNetworkInterfaceResponse>(request,
-            VpcMeta.showSubNetworkInterface, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.showSubNetworkInterface, hcClient);
     }
 
     /**
@@ -991,7 +963,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubNetworkInterfacesQuantityRequest 请求对象
+     * @param request ShowSubNetworkInterfacesQuantityRequest 请求对象
      * @return ShowSubNetworkInterfacesQuantityResponse
      */
     public ShowSubNetworkInterfacesQuantityResponse showSubNetworkInterfacesQuantity(
@@ -1006,13 +978,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubNetworkInterfacesQuantityRequest 请求对象
+     * @param request ShowSubNetworkInterfacesQuantityRequest 请求对象
      * @return SyncInvoker<ShowSubNetworkInterfacesQuantityRequest, ShowSubNetworkInterfacesQuantityResponse>
      */
     public SyncInvoker<ShowSubNetworkInterfacesQuantityRequest, ShowSubNetworkInterfacesQuantityResponse> showSubNetworkInterfacesQuantityInvoker(
         ShowSubNetworkInterfacesQuantityRequest request) {
-        return new SyncInvoker<ShowSubNetworkInterfacesQuantityRequest, ShowSubNetworkInterfacesQuantityResponse>(
-            request, VpcMeta.showSubNetworkInterfacesQuantity, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.showSubNetworkInterfacesQuantity, hcClient);
     }
 
     /**
@@ -1022,7 +993,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrafficMirrorFilterRequest 请求对象
+     * @param request ShowTrafficMirrorFilterRequest 请求对象
      * @return ShowTrafficMirrorFilterResponse
      */
     public ShowTrafficMirrorFilterResponse showTrafficMirrorFilter(ShowTrafficMirrorFilterRequest request) {
@@ -1036,13 +1007,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrafficMirrorFilterRequest 请求对象
+     * @param request ShowTrafficMirrorFilterRequest 请求对象
      * @return SyncInvoker<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse>
      */
     public SyncInvoker<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse> showTrafficMirrorFilterInvoker(
         ShowTrafficMirrorFilterRequest request) {
-        return new SyncInvoker<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse>(request,
-            VpcMeta.showTrafficMirrorFilter, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.showTrafficMirrorFilter, hcClient);
     }
 
     /**
@@ -1052,7 +1022,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrafficMirrorFilterRuleRequest 请求对象
+     * @param request ShowTrafficMirrorFilterRuleRequest 请求对象
      * @return ShowTrafficMirrorFilterRuleResponse
      */
     public ShowTrafficMirrorFilterRuleResponse showTrafficMirrorFilterRule(ShowTrafficMirrorFilterRuleRequest request) {
@@ -1066,13 +1036,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrafficMirrorFilterRuleRequest 请求对象
+     * @param request ShowTrafficMirrorFilterRuleRequest 请求对象
      * @return SyncInvoker<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse>
      */
     public SyncInvoker<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse> showTrafficMirrorFilterRuleInvoker(
         ShowTrafficMirrorFilterRuleRequest request) {
-        return new SyncInvoker<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse>(request,
-            VpcMeta.showTrafficMirrorFilterRule, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.showTrafficMirrorFilterRule, hcClient);
     }
 
     /**
@@ -1082,7 +1051,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrafficMirrorSessionRequest 请求对象
+     * @param request ShowTrafficMirrorSessionRequest 请求对象
      * @return ShowTrafficMirrorSessionResponse
      */
     public ShowTrafficMirrorSessionResponse showTrafficMirrorSession(ShowTrafficMirrorSessionRequest request) {
@@ -1096,13 +1065,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrafficMirrorSessionRequest 请求对象
+     * @param request ShowTrafficMirrorSessionRequest 请求对象
      * @return SyncInvoker<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse>
      */
     public SyncInvoker<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse> showTrafficMirrorSessionInvoker(
         ShowTrafficMirrorSessionRequest request) {
-        return new SyncInvoker<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse>(request,
-            VpcMeta.showTrafficMirrorSession, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.showTrafficMirrorSession, hcClient);
     }
 
     /**
@@ -1112,7 +1080,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecurityGroupRequest 请求对象
+     * @param request UpdateSecurityGroupRequest 请求对象
      * @return UpdateSecurityGroupResponse
      */
     public UpdateSecurityGroupResponse updateSecurityGroup(UpdateSecurityGroupRequest request) {
@@ -1126,13 +1094,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecurityGroupRequest 请求对象
+     * @param request UpdateSecurityGroupRequest 请求对象
      * @return SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>
      */
     public SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroupInvoker(
         UpdateSecurityGroupRequest request) {
-        return new SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>(request,
-            VpcMeta.updateSecurityGroup, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.updateSecurityGroup, hcClient);
     }
 
     /**
@@ -1142,7 +1109,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubNetworkInterfaceRequest 请求对象
+     * @param request UpdateSubNetworkInterfaceRequest 请求对象
      * @return UpdateSubNetworkInterfaceResponse
      */
     public UpdateSubNetworkInterfaceResponse updateSubNetworkInterface(UpdateSubNetworkInterfaceRequest request) {
@@ -1156,13 +1123,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubNetworkInterfaceRequest 请求对象
+     * @param request UpdateSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse>
      */
     public SyncInvoker<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse> updateSubNetworkInterfaceInvoker(
         UpdateSubNetworkInterfaceRequest request) {
-        return new SyncInvoker<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse>(request,
-            VpcMeta.updateSubNetworkInterface, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.updateSubNetworkInterface, hcClient);
     }
 
     /**
@@ -1172,7 +1138,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficMirrorFilterRequest 请求对象
+     * @param request UpdateTrafficMirrorFilterRequest 请求对象
      * @return UpdateTrafficMirrorFilterResponse
      */
     public UpdateTrafficMirrorFilterResponse updateTrafficMirrorFilter(UpdateTrafficMirrorFilterRequest request) {
@@ -1186,13 +1152,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficMirrorFilterRequest 请求对象
+     * @param request UpdateTrafficMirrorFilterRequest 请求对象
      * @return SyncInvoker<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse>
      */
     public SyncInvoker<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse> updateTrafficMirrorFilterInvoker(
         UpdateTrafficMirrorFilterRequest request) {
-        return new SyncInvoker<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse>(request,
-            VpcMeta.updateTrafficMirrorFilter, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.updateTrafficMirrorFilter, hcClient);
     }
 
     /**
@@ -1202,7 +1167,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficMirrorFilterRuleRequest 请求对象
+     * @param request UpdateTrafficMirrorFilterRuleRequest 请求对象
      * @return UpdateTrafficMirrorFilterRuleResponse
      */
     public UpdateTrafficMirrorFilterRuleResponse updateTrafficMirrorFilterRule(
@@ -1217,13 +1182,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficMirrorFilterRuleRequest 请求对象
+     * @param request UpdateTrafficMirrorFilterRuleRequest 请求对象
      * @return SyncInvoker<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse>
      */
     public SyncInvoker<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse> updateTrafficMirrorFilterRuleInvoker(
         UpdateTrafficMirrorFilterRuleRequest request) {
-        return new SyncInvoker<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse>(request,
-            VpcMeta.updateTrafficMirrorFilterRule, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.updateTrafficMirrorFilterRule, hcClient);
     }
 
     /**
@@ -1233,7 +1197,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficMirrorSessionRequest 请求对象
+     * @param request UpdateTrafficMirrorSessionRequest 请求对象
      * @return UpdateTrafficMirrorSessionResponse
      */
     public UpdateTrafficMirrorSessionResponse updateTrafficMirrorSession(UpdateTrafficMirrorSessionRequest request) {
@@ -1247,13 +1211,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficMirrorSessionRequest 请求对象
+     * @param request UpdateTrafficMirrorSessionRequest 请求对象
      * @return SyncInvoker<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse>
      */
     public SyncInvoker<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse> updateTrafficMirrorSessionInvoker(
         UpdateTrafficMirrorSessionRequest request) {
-        return new SyncInvoker<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse>(request,
-            VpcMeta.updateTrafficMirrorSession, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.updateTrafficMirrorSession, hcClient);
     }
 
     /**
@@ -1263,7 +1226,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFirewallRulesRequest 请求对象
+     * @param request AddFirewallRulesRequest 请求对象
      * @return AddFirewallRulesResponse
      */
     public AddFirewallRulesResponse addFirewallRules(AddFirewallRulesRequest request) {
@@ -1277,13 +1240,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFirewallRulesRequest 请求对象
+     * @param request AddFirewallRulesRequest 请求对象
      * @return SyncInvoker<AddFirewallRulesRequest, AddFirewallRulesResponse>
      */
     public SyncInvoker<AddFirewallRulesRequest, AddFirewallRulesResponse> addFirewallRulesInvoker(
         AddFirewallRulesRequest request) {
-        return new SyncInvoker<AddFirewallRulesRequest, AddFirewallRulesResponse>(request, VpcMeta.addFirewallRules,
-            hcClient);
+        return new SyncInvoker<>(request, VpcMeta.addFirewallRules, hcClient);
     }
 
     /**
@@ -1293,7 +1255,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateSubnetFirewallRequest 请求对象
+     * @param request AssociateSubnetFirewallRequest 请求对象
      * @return AssociateSubnetFirewallResponse
      */
     public AssociateSubnetFirewallResponse associateSubnetFirewall(AssociateSubnetFirewallRequest request) {
@@ -1307,13 +1269,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateSubnetFirewallRequest 请求对象
+     * @param request AssociateSubnetFirewallRequest 请求对象
      * @return SyncInvoker<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse>
      */
     public SyncInvoker<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse> associateSubnetFirewallInvoker(
         AssociateSubnetFirewallRequest request) {
-        return new SyncInvoker<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse>(request,
-            VpcMeta.associateSubnetFirewall, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.associateSubnetFirewall, hcClient);
     }
 
     /**
@@ -1323,7 +1284,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFirewallRequest 请求对象
+     * @param request CreateFirewallRequest 请求对象
      * @return CreateFirewallResponse
      */
     public CreateFirewallResponse createFirewall(CreateFirewallRequest request) {
@@ -1337,13 +1298,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFirewallRequest 请求对象
+     * @param request CreateFirewallRequest 请求对象
      * @return SyncInvoker<CreateFirewallRequest, CreateFirewallResponse>
      */
     public SyncInvoker<CreateFirewallRequest, CreateFirewallResponse> createFirewallInvoker(
         CreateFirewallRequest request) {
-        return new SyncInvoker<CreateFirewallRequest, CreateFirewallResponse>(request, VpcMeta.createFirewall,
-            hcClient);
+        return new SyncInvoker<>(request, VpcMeta.createFirewall, hcClient);
     }
 
     /**
@@ -1353,7 +1313,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFirewallRequest 请求对象
+     * @param request DeleteFirewallRequest 请求对象
      * @return DeleteFirewallResponse
      */
     public DeleteFirewallResponse deleteFirewall(DeleteFirewallRequest request) {
@@ -1367,13 +1327,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFirewallRequest 请求对象
+     * @param request DeleteFirewallRequest 请求对象
      * @return SyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>
      */
     public SyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewallInvoker(
         DeleteFirewallRequest request) {
-        return new SyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>(request, VpcMeta.deleteFirewall,
-            hcClient);
+        return new SyncInvoker<>(request, VpcMeta.deleteFirewall, hcClient);
     }
 
     /**
@@ -1383,7 +1342,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateSubnetFirewallRequest 请求对象
+     * @param request DisassociateSubnetFirewallRequest 请求对象
      * @return DisassociateSubnetFirewallResponse
      */
     public DisassociateSubnetFirewallResponse disassociateSubnetFirewall(DisassociateSubnetFirewallRequest request) {
@@ -1397,13 +1356,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateSubnetFirewallRequest 请求对象
+     * @param request DisassociateSubnetFirewallRequest 请求对象
      * @return SyncInvoker<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse>
      */
     public SyncInvoker<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse> disassociateSubnetFirewallInvoker(
         DisassociateSubnetFirewallRequest request) {
-        return new SyncInvoker<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse>(request,
-            VpcMeta.disassociateSubnetFirewall, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.disassociateSubnetFirewall, hcClient);
     }
 
     /**
@@ -1413,7 +1371,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFirewallRequest 请求对象
+     * @param request ListFirewallRequest 请求对象
      * @return ListFirewallResponse
      */
     public ListFirewallResponse listFirewall(ListFirewallRequest request) {
@@ -1427,11 +1385,11 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFirewallRequest 请求对象
+     * @param request ListFirewallRequest 请求对象
      * @return SyncInvoker<ListFirewallRequest, ListFirewallResponse>
      */
     public SyncInvoker<ListFirewallRequest, ListFirewallResponse> listFirewallInvoker(ListFirewallRequest request) {
-        return new SyncInvoker<ListFirewallRequest, ListFirewallResponse>(request, VpcMeta.listFirewall, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.listFirewall, hcClient);
     }
 
     /**
@@ -1441,7 +1399,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveFirewallRulesRequest 请求对象
+     * @param request RemoveFirewallRulesRequest 请求对象
      * @return RemoveFirewallRulesResponse
      */
     public RemoveFirewallRulesResponse removeFirewallRules(RemoveFirewallRulesRequest request) {
@@ -1455,13 +1413,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveFirewallRulesRequest 请求对象
+     * @param request RemoveFirewallRulesRequest 请求对象
      * @return SyncInvoker<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse>
      */
     public SyncInvoker<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse> removeFirewallRulesInvoker(
         RemoveFirewallRulesRequest request) {
-        return new SyncInvoker<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse>(request,
-            VpcMeta.removeFirewallRules, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.removeFirewallRules, hcClient);
     }
 
     /**
@@ -1471,7 +1428,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFirewallRequest 请求对象
+     * @param request ShowFirewallRequest 请求对象
      * @return ShowFirewallResponse
      */
     public ShowFirewallResponse showFirewall(ShowFirewallRequest request) {
@@ -1485,11 +1442,11 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFirewallRequest 请求对象
+     * @param request ShowFirewallRequest 请求对象
      * @return SyncInvoker<ShowFirewallRequest, ShowFirewallResponse>
      */
     public SyncInvoker<ShowFirewallRequest, ShowFirewallResponse> showFirewallInvoker(ShowFirewallRequest request) {
-        return new SyncInvoker<ShowFirewallRequest, ShowFirewallResponse>(request, VpcMeta.showFirewall, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.showFirewall, hcClient);
     }
 
     /**
@@ -1499,7 +1456,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFirewallRequest 请求对象
+     * @param request UpdateFirewallRequest 请求对象
      * @return UpdateFirewallResponse
      */
     public UpdateFirewallResponse updateFirewall(UpdateFirewallRequest request) {
@@ -1513,13 +1470,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFirewallRequest 请求对象
+     * @param request UpdateFirewallRequest 请求对象
      * @return SyncInvoker<UpdateFirewallRequest, UpdateFirewallResponse>
      */
     public SyncInvoker<UpdateFirewallRequest, UpdateFirewallResponse> updateFirewallInvoker(
         UpdateFirewallRequest request) {
-        return new SyncInvoker<UpdateFirewallRequest, UpdateFirewallResponse>(request, VpcMeta.updateFirewall,
-            hcClient);
+        return new SyncInvoker<>(request, VpcMeta.updateFirewall, hcClient);
     }
 
     /**
@@ -1529,7 +1485,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFirewallRulesRequest 请求对象
+     * @param request UpdateFirewallRulesRequest 请求对象
      * @return UpdateFirewallRulesResponse
      */
     public UpdateFirewallRulesResponse updateFirewallRules(UpdateFirewallRulesRequest request) {
@@ -1543,13 +1499,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFirewallRulesRequest 请求对象
+     * @param request UpdateFirewallRulesRequest 请求对象
      * @return SyncInvoker<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse>
      */
     public SyncInvoker<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse> updateFirewallRulesInvoker(
         UpdateFirewallRulesRequest request) {
-        return new SyncInvoker<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse>(request,
-            VpcMeta.updateFirewallRules, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.updateFirewallRules, hcClient);
     }
 
     /**
@@ -1559,7 +1514,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAddressGroupRequest 请求对象
+     * @param request CreateAddressGroupRequest 请求对象
      * @return CreateAddressGroupResponse
      */
     public CreateAddressGroupResponse createAddressGroup(CreateAddressGroupRequest request) {
@@ -1573,13 +1528,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAddressGroupRequest 请求对象
+     * @param request CreateAddressGroupRequest 请求对象
      * @return SyncInvoker<CreateAddressGroupRequest, CreateAddressGroupResponse>
      */
     public SyncInvoker<CreateAddressGroupRequest, CreateAddressGroupResponse> createAddressGroupInvoker(
         CreateAddressGroupRequest request) {
-        return new SyncInvoker<CreateAddressGroupRequest, CreateAddressGroupResponse>(request,
-            VpcMeta.createAddressGroup, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.createAddressGroup, hcClient);
     }
 
     /**
@@ -1589,7 +1543,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAddressGroupRequest 请求对象
+     * @param request DeleteAddressGroupRequest 请求对象
      * @return DeleteAddressGroupResponse
      */
     public DeleteAddressGroupResponse deleteAddressGroup(DeleteAddressGroupRequest request) {
@@ -1603,13 +1557,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAddressGroupRequest 请求对象
+     * @param request DeleteAddressGroupRequest 请求对象
      * @return SyncInvoker<DeleteAddressGroupRequest, DeleteAddressGroupResponse>
      */
     public SyncInvoker<DeleteAddressGroupRequest, DeleteAddressGroupResponse> deleteAddressGroupInvoker(
         DeleteAddressGroupRequest request) {
-        return new SyncInvoker<DeleteAddressGroupRequest, DeleteAddressGroupResponse>(request,
-            VpcMeta.deleteAddressGroup, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.deleteAddressGroup, hcClient);
     }
 
     /**
@@ -1619,7 +1572,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpAddressGroupForceRequest 请求对象
+     * @param request DeleteIpAddressGroupForceRequest 请求对象
      * @return DeleteIpAddressGroupForceResponse
      */
     public DeleteIpAddressGroupForceResponse deleteIpAddressGroupForce(DeleteIpAddressGroupForceRequest request) {
@@ -1633,13 +1586,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpAddressGroupForceRequest 请求对象
+     * @param request DeleteIpAddressGroupForceRequest 请求对象
      * @return SyncInvoker<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse>
      */
     public SyncInvoker<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse> deleteIpAddressGroupForceInvoker(
         DeleteIpAddressGroupForceRequest request) {
-        return new SyncInvoker<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse>(request,
-            VpcMeta.deleteIpAddressGroupForce, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.deleteIpAddressGroupForce, hcClient);
     }
 
     /**
@@ -1649,7 +1601,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAddressGroupRequest 请求对象
+     * @param request ListAddressGroupRequest 请求对象
      * @return ListAddressGroupResponse
      */
     public ListAddressGroupResponse listAddressGroup(ListAddressGroupRequest request) {
@@ -1663,13 +1615,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAddressGroupRequest 请求对象
+     * @param request ListAddressGroupRequest 请求对象
      * @return SyncInvoker<ListAddressGroupRequest, ListAddressGroupResponse>
      */
     public SyncInvoker<ListAddressGroupRequest, ListAddressGroupResponse> listAddressGroupInvoker(
         ListAddressGroupRequest request) {
-        return new SyncInvoker<ListAddressGroupRequest, ListAddressGroupResponse>(request, VpcMeta.listAddressGroup,
-            hcClient);
+        return new SyncInvoker<>(request, VpcMeta.listAddressGroup, hcClient);
     }
 
     /**
@@ -1679,7 +1630,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAddressGroupRequest 请求对象
+     * @param request ShowAddressGroupRequest 请求对象
      * @return ShowAddressGroupResponse
      */
     public ShowAddressGroupResponse showAddressGroup(ShowAddressGroupRequest request) {
@@ -1693,13 +1644,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAddressGroupRequest 请求对象
+     * @param request ShowAddressGroupRequest 请求对象
      * @return SyncInvoker<ShowAddressGroupRequest, ShowAddressGroupResponse>
      */
     public SyncInvoker<ShowAddressGroupRequest, ShowAddressGroupResponse> showAddressGroupInvoker(
         ShowAddressGroupRequest request) {
-        return new SyncInvoker<ShowAddressGroupRequest, ShowAddressGroupResponse>(request, VpcMeta.showAddressGroup,
-            hcClient);
+        return new SyncInvoker<>(request, VpcMeta.showAddressGroup, hcClient);
     }
 
     /**
@@ -1709,7 +1659,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAddressGroupRequest 请求对象
+     * @param request UpdateAddressGroupRequest 请求对象
      * @return UpdateAddressGroupResponse
      */
     public UpdateAddressGroupResponse updateAddressGroup(UpdateAddressGroupRequest request) {
@@ -1723,13 +1673,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAddressGroupRequest 请求对象
+     * @param request UpdateAddressGroupRequest 请求对象
      * @return SyncInvoker<UpdateAddressGroupRequest, UpdateAddressGroupResponse>
      */
     public SyncInvoker<UpdateAddressGroupRequest, UpdateAddressGroupResponse> updateAddressGroupInvoker(
         UpdateAddressGroupRequest request) {
-        return new SyncInvoker<UpdateAddressGroupRequest, UpdateAddressGroupResponse>(request,
-            VpcMeta.updateAddressGroup, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.updateAddressGroup, hcClient);
     }
 
     /**
@@ -1739,7 +1688,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddVpcExtendCidrRequest 请求对象
+     * @param request AddVpcExtendCidrRequest 请求对象
      * @return AddVpcExtendCidrResponse
      */
     public AddVpcExtendCidrResponse addVpcExtendCidr(AddVpcExtendCidrRequest request) {
@@ -1753,13 +1702,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddVpcExtendCidrRequest 请求对象
+     * @param request AddVpcExtendCidrRequest 请求对象
      * @return SyncInvoker<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse>
      */
     public SyncInvoker<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse> addVpcExtendCidrInvoker(
         AddVpcExtendCidrRequest request) {
-        return new SyncInvoker<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse>(request, VpcMeta.addVpcExtendCidr,
-            hcClient);
+        return new SyncInvoker<>(request, VpcMeta.addVpcExtendCidr, hcClient);
     }
 
     /**
@@ -1769,7 +1717,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcRequest 请求对象
+     * @param request CreateVpcRequest 请求对象
      * @return CreateVpcResponse
      */
     public CreateVpcResponse createVpc(CreateVpcRequest request) {
@@ -1783,11 +1731,11 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcRequest 请求对象
+     * @param request CreateVpcRequest 请求对象
      * @return SyncInvoker<CreateVpcRequest, CreateVpcResponse>
      */
     public SyncInvoker<CreateVpcRequest, CreateVpcResponse> createVpcInvoker(CreateVpcRequest request) {
-        return new SyncInvoker<CreateVpcRequest, CreateVpcResponse>(request, VpcMeta.createVpc, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.createVpc, hcClient);
     }
 
     /**
@@ -1797,7 +1745,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcRequest 请求对象
+     * @param request DeleteVpcRequest 请求对象
      * @return DeleteVpcResponse
      */
     public DeleteVpcResponse deleteVpc(DeleteVpcRequest request) {
@@ -1811,11 +1759,11 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcRequest 请求对象
+     * @param request DeleteVpcRequest 请求对象
      * @return SyncInvoker<DeleteVpcRequest, DeleteVpcResponse>
      */
     public SyncInvoker<DeleteVpcRequest, DeleteVpcResponse> deleteVpcInvoker(DeleteVpcRequest request) {
-        return new SyncInvoker<DeleteVpcRequest, DeleteVpcResponse>(request, VpcMeta.deleteVpc, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.deleteVpc, hcClient);
     }
 
     /**
@@ -1825,7 +1773,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcsRequest 请求对象
+     * @param request ListVpcsRequest 请求对象
      * @return ListVpcsResponse
      */
     public ListVpcsResponse listVpcs(ListVpcsRequest request) {
@@ -1839,11 +1787,11 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcsRequest 请求对象
+     * @param request ListVpcsRequest 请求对象
      * @return SyncInvoker<ListVpcsRequest, ListVpcsResponse>
      */
     public SyncInvoker<ListVpcsRequest, ListVpcsResponse> listVpcsInvoker(ListVpcsRequest request) {
-        return new SyncInvoker<ListVpcsRequest, ListVpcsResponse>(request, VpcMeta.listVpcs, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.listVpcs, hcClient);
     }
 
     /**
@@ -1853,7 +1801,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveVpcExtendCidrRequest 请求对象
+     * @param request RemoveVpcExtendCidrRequest 请求对象
      * @return RemoveVpcExtendCidrResponse
      */
     public RemoveVpcExtendCidrResponse removeVpcExtendCidr(RemoveVpcExtendCidrRequest request) {
@@ -1867,13 +1815,12 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveVpcExtendCidrRequest 请求对象
+     * @param request RemoveVpcExtendCidrRequest 请求对象
      * @return SyncInvoker<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse>
      */
     public SyncInvoker<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse> removeVpcExtendCidrInvoker(
         RemoveVpcExtendCidrRequest request) {
-        return new SyncInvoker<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse>(request,
-            VpcMeta.removeVpcExtendCidr, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.removeVpcExtendCidr, hcClient);
     }
 
     /**
@@ -1883,7 +1830,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVpcRequest 请求对象
+     * @param request ShowVpcRequest 请求对象
      * @return ShowVpcResponse
      */
     public ShowVpcResponse showVpc(ShowVpcRequest request) {
@@ -1897,11 +1844,11 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVpcRequest 请求对象
+     * @param request ShowVpcRequest 请求对象
      * @return SyncInvoker<ShowVpcRequest, ShowVpcResponse>
      */
     public SyncInvoker<ShowVpcRequest, ShowVpcResponse> showVpcInvoker(ShowVpcRequest request) {
-        return new SyncInvoker<ShowVpcRequest, ShowVpcResponse>(request, VpcMeta.showVpc, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.showVpc, hcClient);
     }
 
     /**
@@ -1911,7 +1858,7 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcRequest 请求对象
+     * @param request UpdateVpcRequest 请求对象
      * @return UpdateVpcResponse
      */
     public UpdateVpcResponse updateVpc(UpdateVpcRequest request) {
@@ -1925,11 +1872,11 @@ public class VpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcRequest 请求对象
+     * @param request UpdateVpcRequest 请求对象
      * @return SyncInvoker<UpdateVpcRequest, UpdateVpcResponse>
      */
     public SyncInvoker<UpdateVpcRequest, UpdateVpcResponse> updateVpcInvoker(UpdateVpcRequest request) {
-        return new SyncInvoker<UpdateVpcRequest, UpdateVpcResponse>(request, VpcMeta.updateVpc, hcClient);
+        return new SyncInvoker<>(request, VpcMeta.updateVpc, hcClient);
     }
 
 }

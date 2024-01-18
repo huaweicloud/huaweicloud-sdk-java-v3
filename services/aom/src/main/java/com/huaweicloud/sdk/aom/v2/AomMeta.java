@@ -90,7 +90,7 @@ import com.huaweicloud.sdk.aom.v2.model.ListServiceDiscoveryRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.MetricAPIQueryItemParam;
 import com.huaweicloud.sdk.aom.v2.model.MetricDataItem;
 import com.huaweicloud.sdk.aom.v2.model.MuteRule;
-import com.huaweicloud.sdk.aom.v2.model.PromInstanceEpsModel;
+import com.huaweicloud.sdk.aom.v2.model.PromInstanceRequestModel;
 import com.huaweicloud.sdk.aom.v2.model.PushEventsRequest;
 import com.huaweicloud.sdk.aom.v2.model.PushEventsResponse;
 import com.huaweicloud.sdk.aom.v2.model.QueryBodyParam;
@@ -125,9 +125,9 @@ import java.util.List;
 public class AomMeta {
 
     public static final HttpRequestDef<AddActionRuleRequest, AddActionRuleResponse> addActionRule =
-        genForaddActionRule();
+        genForAddActionRule();
 
-    private static HttpRequestDef<AddActionRuleRequest, AddActionRuleResponse> genForaddActionRule() {
+    private static HttpRequestDef<AddActionRuleRequest, AddActionRuleResponse> genForAddActionRule() {
         // basic
         HttpRequestDef.Builder<AddActionRuleRequest, AddActionRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddActionRuleRequest.class, AddActionRuleResponse.class)
@@ -140,18 +140,16 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ActionRule.class),
-            f -> f.withMarshaller(AddActionRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddActionRuleRequest::getBody, AddActionRuleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddAlarmRuleRequest, AddAlarmRuleResponse> addAlarmRule = genForaddAlarmRule();
+    public static final HttpRequestDef<AddAlarmRuleRequest, AddAlarmRuleResponse> addAlarmRule = genForAddAlarmRule();
 
-    private static HttpRequestDef<AddAlarmRuleRequest, AddAlarmRuleResponse> genForaddAlarmRule() {
+    private static HttpRequestDef<AddAlarmRuleRequest, AddAlarmRuleResponse> genForAddAlarmRule() {
         // basic
         HttpRequestDef.Builder<AddAlarmRuleRequest, AddAlarmRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddAlarmRuleRequest.class, AddAlarmRuleResponse.class)
@@ -164,9 +162,7 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AlarmRuleParam.class),
-            f -> f.withMarshaller(AddAlarmRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddAlarmRuleRequest::getBody, AddAlarmRuleRequest::setBody));
 
         // response
 
@@ -174,9 +170,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> addEvent2alarmRule =
-        genForaddEvent2alarmRule();
+        genForAddEvent2alarmRule();
 
-    private static HttpRequestDef<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> genForaddEvent2alarmRule() {
+    private static HttpRequestDef<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> genForAddEvent2alarmRule() {
         // basic
         HttpRequestDef.Builder<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddEvent2alarmRuleRequest.class, AddEvent2alarmRuleResponse.class)
@@ -189,26 +185,22 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Event2alarmRuleBody.class),
-            f -> f.withMarshaller(AddEvent2alarmRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddEvent2alarmRuleRequest::getBody, AddEvent2alarmRuleRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(AddEvent2alarmRuleResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(AddEvent2alarmRuleResponse::getBody, AddEvent2alarmRuleResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<AddMetricDataRequest, AddMetricDataResponse> addMetricData =
-        genForaddMetricData();
+        genForAddMetricData();
 
-    private static HttpRequestDef<AddMetricDataRequest, AddMetricDataResponse> genForaddMetricData() {
+    private static HttpRequestDef<AddMetricDataRequest, AddMetricDataResponse> genForAddMetricData() {
         // basic
         HttpRequestDef.Builder<AddMetricDataRequest, AddMetricDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddMetricDataRequest.class, AddMetricDataResponse.class)
@@ -221,18 +213,17 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(AddMetricDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(MetricDataItem.class));
+            f -> f.withMarshaller(AddMetricDataRequest::getBody, AddMetricDataRequest::setBody)
+                .withInnerContainerType(MetricDataItem.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddMuteRulesRequest, AddMuteRulesResponse> addMuteRules = genForaddMuteRules();
+    public static final HttpRequestDef<AddMuteRulesRequest, AddMuteRulesResponse> addMuteRules = genForAddMuteRules();
 
-    private static HttpRequestDef<AddMuteRulesRequest, AddMuteRulesResponse> genForaddMuteRules() {
+    private static HttpRequestDef<AddMuteRulesRequest, AddMuteRulesResponse> genForAddMuteRules() {
         // basic
         HttpRequestDef.Builder<AddMuteRulesRequest, AddMuteRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddMuteRulesRequest.class, AddMuteRulesResponse.class)
@@ -245,9 +236,7 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MuteRule.class),
-            f -> f.withMarshaller(AddMuteRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddMuteRulesRequest::getBody, AddMuteRulesRequest::setBody));
 
         // response
 
@@ -255,9 +244,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> addOrUpdateServiceDiscoveryRules =
-        genForaddOrUpdateServiceDiscoveryRules();
+        genForAddOrUpdateServiceDiscoveryRules();
 
-    private static HttpRequestDef<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> genForaddOrUpdateServiceDiscoveryRules() {
+    private static HttpRequestDef<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> genForAddOrUpdateServiceDiscoveryRules() {
         // basic
         HttpRequestDef.Builder<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> builder =
             HttpRequestDef
@@ -273,18 +262,17 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AppRulesBody.class),
-            f -> f.withMarshaller(AddOrUpdateServiceDiscoveryRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddOrUpdateServiceDiscoveryRulesRequest::getBody,
+                AddOrUpdateServiceDiscoveryRulesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CountEventsRequest, CountEventsResponse> countEvents = genForcountEvents();
+    public static final HttpRequestDef<CountEventsRequest, CountEventsResponse> countEvents = genForCountEvents();
 
-    private static HttpRequestDef<CountEventsRequest, CountEventsResponse> genForcountEvents() {
+    private static HttpRequestDef<CountEventsRequest, CountEventsResponse> genForCountEvents() {
         // basic
         HttpRequestDef.Builder<CountEventsRequest, CountEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CountEventsRequest.class, CountEventsResponse.class)
@@ -297,16 +285,12 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CountEventsRequest.TypeEnum.class),
-            f -> f.withMarshaller(CountEventsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(CountEventsRequest::getType, CountEventsRequest::setType));
         builder.<EventQueryParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EventQueryParam.class),
-            f -> f.withMarshaller(CountEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CountEventsRequest::getBody, CountEventsRequest::setBody));
 
         // response
 
@@ -314,9 +298,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<DeleteActionRuleRequest, DeleteActionRuleResponse> deleteActionRule =
-        genFordeleteActionRule();
+        genForDeleteActionRule();
 
-    private static HttpRequestDef<DeleteActionRuleRequest, DeleteActionRuleResponse> genFordeleteActionRule() {
+    private static HttpRequestDef<DeleteActionRuleRequest, DeleteActionRuleResponse> genForDeleteActionRule() {
         // basic
         HttpRequestDef.Builder<DeleteActionRuleRequest, DeleteActionRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteActionRuleRequest.class, DeleteActionRuleResponse.class)
@@ -329,9 +313,8 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteActionRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(DeleteActionRuleRequest::getBody, DeleteActionRuleRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -339,9 +322,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse> deleteAlarmRule =
-        genFordeleteAlarmRule();
+        genForDeleteAlarmRule();
 
-    private static HttpRequestDef<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse> genFordeleteAlarmRule() {
+    private static HttpRequestDef<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse> genForDeleteAlarmRule() {
         // basic
         HttpRequestDef.Builder<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlarmRuleRequest.class, DeleteAlarmRuleResponse.class)
@@ -354,26 +337,22 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAlarmRuleRequest::getAlarmRuleId, (req, v) -> {
-                req.setAlarmRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteAlarmRuleRequest::getAlarmRuleId, DeleteAlarmRuleRequest::setAlarmRuleId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAlarmRuleResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteAlarmRuleResponse::getBody, DeleteAlarmRuleResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> deleteAlarmRules =
-        genFordeleteAlarmRules();
+        genForDeleteAlarmRules();
 
-    private static HttpRequestDef<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> genFordeleteAlarmRules() {
+    private static HttpRequestDef<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> genForDeleteAlarmRules() {
         // basic
         HttpRequestDef.Builder<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteAlarmRulesRequest.class, DeleteAlarmRulesResponse.class)
@@ -386,26 +365,22 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteAlarmRulesBody.class),
-            f -> f.withMarshaller(DeleteAlarmRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteAlarmRulesRequest::getBody, DeleteAlarmRulesRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAlarmRulesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteAlarmRulesResponse::getBody, DeleteAlarmRulesResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> deleteEvent2alarmRule =
-        genFordeleteEvent2alarmRule();
+        genForDeleteEvent2alarmRule();
 
-    private static HttpRequestDef<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> genFordeleteEvent2alarmRule() {
+    private static HttpRequestDef<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> genForDeleteEvent2alarmRule() {
         // basic
         HttpRequestDef.Builder<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEvent2alarmRuleRequest.class, DeleteEvent2alarmRuleResponse.class)
@@ -418,9 +393,8 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteEvent2alarmRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(DeleteEvent2alarmRuleRequest::getBody, DeleteEvent2alarmRuleRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -428,9 +402,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<DeleteMuteRulesRequest, DeleteMuteRulesResponse> deleteMuteRules =
-        genFordeleteMuteRules();
+        genForDeleteMuteRules();
 
-    private static HttpRequestDef<DeleteMuteRulesRequest, DeleteMuteRulesResponse> genFordeleteMuteRules() {
+    private static HttpRequestDef<DeleteMuteRulesRequest, DeleteMuteRulesResponse> genForDeleteMuteRules() {
         // basic
         HttpRequestDef.Builder<DeleteMuteRulesRequest, DeleteMuteRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMuteRulesRequest.class, DeleteMuteRulesResponse.class)
@@ -443,9 +417,8 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteMuteRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(DeleteMuteRuleName.class));
+            f -> f.withMarshaller(DeleteMuteRulesRequest::getBody, DeleteMuteRulesRequest::setBody)
+                .withInnerContainerType(DeleteMuteRuleName.class));
 
         // response
 
@@ -453,9 +426,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> deleteserviceDiscoveryRules =
-        genFordeleteserviceDiscoveryRules();
+        genForDeleteserviceDiscoveryRules();
 
-    private static HttpRequestDef<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> genFordeleteserviceDiscoveryRules() {
+    private static HttpRequestDef<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> genForDeleteserviceDiscoveryRules() {
         // basic
         HttpRequestDef.Builder<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> builder =
             HttpRequestDef
@@ -471,9 +444,8 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteserviceDiscoveryRulesRequest::getAppRulesIds, (req, v) -> {
-                req.setAppRulesIds(v);
-            }));
+            f -> f.withMarshaller(DeleteserviceDiscoveryRulesRequest::getAppRulesIds,
+                DeleteserviceDiscoveryRulesRequest::setAppRulesIds));
 
         // response
 
@@ -481,9 +453,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListActionRuleRequest, ListActionRuleResponse> listActionRule =
-        genForlistActionRule();
+        genForListActionRule();
 
-    private static HttpRequestDef<ListActionRuleRequest, ListActionRuleResponse> genForlistActionRule() {
+    private static HttpRequestDef<ListActionRuleRequest, ListActionRuleResponse> genForListActionRule() {
         // basic
         HttpRequestDef.Builder<ListActionRuleRequest, ListActionRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListActionRuleRequest.class, ListActionRuleResponse.class)
@@ -498,9 +470,9 @@ public class AomMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAgentsRequest, ListAgentsResponse> listAgents = genForlistAgents();
+    public static final HttpRequestDef<ListAgentsRequest, ListAgentsResponse> listAgents = genForListAgents();
 
-    private static HttpRequestDef<ListAgentsRequest, ListAgentsResponse> genForlistAgents() {
+    private static HttpRequestDef<ListAgentsRequest, ListAgentsResponse> genForListAgents() {
         // basic
         HttpRequestDef.Builder<ListAgentsRequest, ListAgentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgentsRequest.class, ListAgentsResponse.class)
@@ -513,33 +485,27 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListAgentsRequest::getClusterId, ListAgentsRequest::setClusterId));
         builder.<String>withRequestField("namespace",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListAgentsRequest::getNamespace, ListAgentsRequest::setNamespace));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListAgentsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ListAgentsResponse::getBody, ListAgentsResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListAlarmRuleRequest, ListAlarmRuleResponse> listAlarmRule =
-        genForlistAlarmRule();
+        genForListAlarmRule();
 
-    private static HttpRequestDef<ListAlarmRuleRequest, ListAlarmRuleResponse> genForlistAlarmRule() {
+    private static HttpRequestDef<ListAlarmRuleRequest, ListAlarmRuleResponse> genForListAlarmRule() {
         // basic
         HttpRequestDef.Builder<ListAlarmRuleRequest, ListAlarmRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAlarmRuleRequest.class, ListAlarmRuleResponse.class)
@@ -552,16 +518,12 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlarmRuleRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAlarmRuleRequest::getOffset, ListAlarmRuleRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAlarmRuleRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAlarmRuleRequest::getLimit, ListAlarmRuleRequest::setLimit));
 
         // response
 
@@ -569,9 +531,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> listEvent2alarmRule =
-        genForlistEvent2alarmRule();
+        genForListEvent2alarmRule();
 
-    private static HttpRequestDef<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> genForlistEvent2alarmRule() {
+    private static HttpRequestDef<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> genForListEvent2alarmRule() {
         // basic
         HttpRequestDef.Builder<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEvent2alarmRuleRequest.class, ListEvent2alarmRuleResponse.class)
@@ -586,16 +548,15 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEvent2alarmRuleResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Event2alarmRuleBody.class));
+            f -> f.withMarshaller(ListEvent2alarmRuleResponse::getBody, ListEvent2alarmRuleResponse::setBody)
+                .withInnerContainerType(Event2alarmRuleBody.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEventsRequest, ListEventsResponse> listEvents = genForlistEvents();
+    public static final HttpRequestDef<ListEventsRequest, ListEventsResponse> listEvents = genForListEvents();
 
-    private static HttpRequestDef<ListEventsRequest, ListEventsResponse> genForlistEvents() {
+    private static HttpRequestDef<ListEventsRequest, ListEventsResponse> genForListEvents() {
         // basic
         HttpRequestDef.Builder<ListEventsRequest, ListEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListEventsRequest.class, ListEventsResponse.class)
@@ -608,25 +569,21 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEventsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListEventsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListEventsRequest::getType, ListEventsRequest::setType));
         builder.<EventQueryParam2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EventQueryParam2.class),
-            f -> f.withMarshaller(ListEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListEventsRequest::getBody, ListEventsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListLogItemsRequest, ListLogItemsResponse> listLogItems = genForlistLogItems();
+    public static final HttpRequestDef<ListLogItemsRequest, ListLogItemsResponse> listLogItems = genForListLogItems();
 
-    private static HttpRequestDef<ListLogItemsRequest, ListLogItemsResponse> genForlistLogItems() {
+    private static HttpRequestDef<ListLogItemsRequest, ListLogItemsResponse> genForListLogItems() {
         // basic
         HttpRequestDef.Builder<ListLogItemsRequest, ListLogItemsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListLogItemsRequest.class, ListLogItemsResponse.class)
@@ -639,16 +596,12 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLogItemsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListLogItemsRequest::getType, ListLogItemsRequest::setType));
         builder.<QueryBodyParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryBodyParam.class),
-            f -> f.withMarshaller(ListLogItemsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListLogItemsRequest::getBody, ListLogItemsRequest::setBody));
 
         // response
 
@@ -656,9 +609,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListMetricItemsRequest, ListMetricItemsResponse> listMetricItems =
-        genForlistMetricItems();
+        genForListMetricItems();
 
-    private static HttpRequestDef<ListMetricItemsRequest, ListMetricItemsResponse> genForlistMetricItems() {
+    private static HttpRequestDef<ListMetricItemsRequest, ListMetricItemsResponse> genForListMetricItems() {
         // basic
         HttpRequestDef.Builder<ListMetricItemsRequest, ListMetricItemsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListMetricItemsRequest.class, ListMetricItemsResponse.class)
@@ -671,39 +624,31 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricItemsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListMetricItemsRequest::getType, ListMetricItemsRequest::setType));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricItemsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMetricItemsRequest::getLimit, ListMetricItemsRequest::setLimit));
         builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricItemsRequest::getStart, (req, v) -> {
-                req.setStart(v);
-            }));
+            f -> f.withMarshaller(ListMetricItemsRequest::getStart, ListMetricItemsRequest::setStart));
         builder.<MetricAPIQueryItemParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MetricAPIQueryItemParam.class),
-            f -> f.withMarshaller(ListMetricItemsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListMetricItemsRequest::getBody, ListMetricItemsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMuteRuleRequest, ListMuteRuleResponse> listMuteRule = genForlistMuteRule();
+    public static final HttpRequestDef<ListMuteRuleRequest, ListMuteRuleResponse> listMuteRule = genForListMuteRule();
 
-    private static HttpRequestDef<ListMuteRuleRequest, ListMuteRuleResponse> genForlistMuteRule() {
+    private static HttpRequestDef<ListMuteRuleRequest, ListMuteRuleResponse> genForListMuteRule() {
         // basic
         HttpRequestDef.Builder<ListMuteRuleRequest, ListMuteRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMuteRuleRequest.class, ListMuteRuleResponse.class)
@@ -718,17 +663,16 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListMuteRuleResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(MuteRule.class));
+            f -> f.withMarshaller(ListMuteRuleResponse::getBody, ListMuteRuleResponse::setBody)
+                .withInnerContainerType(MuteRule.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> listNotifiedHistories =
-        genForlistNotifiedHistories();
+        genForListNotifiedHistories();
 
-    private static HttpRequestDef<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> genForlistNotifiedHistories() {
+    private static HttpRequestDef<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> genForListNotifiedHistories() {
         // basic
         HttpRequestDef.Builder<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListNotifiedHistoriesRequest.class, ListNotifiedHistoriesResponse.class)
@@ -741,9 +685,7 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNotifiedHistoriesRequest::getEventSn, (req, v) -> {
-                req.setEventSn(v);
-            }));
+            f -> f.withMarshaller(ListNotifiedHistoriesRequest::getEventSn, ListNotifiedHistoriesRequest::setEventSn));
 
         // response
 
@@ -751,9 +693,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> listPermissions =
-        genForlistPermissions();
+        genForListPermissions();
 
-    private static HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> genForlistPermissions() {
+    private static HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> genForListPermissions() {
         // basic
         HttpRequestDef.Builder<ListPermissionsRequest, ListPermissionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPermissionsRequest.class, ListPermissionsResponse.class)
@@ -768,16 +710,14 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListPermissionsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ListPermissionsResponse::getBody, ListPermissionsResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSampleRequest, ListSampleResponse> listSample = genForlistSample();
+    public static final HttpRequestDef<ListSampleRequest, ListSampleResponse> listSample = genForListSample();
 
-    private static HttpRequestDef<ListSampleRequest, ListSampleResponse> genForlistSample() {
+    private static HttpRequestDef<ListSampleRequest, ListSampleResponse> genForListSample() {
         // basic
         HttpRequestDef.Builder<ListSampleRequest, ListSampleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListSampleRequest.class, ListSampleResponse.class)
@@ -790,25 +730,21 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSampleRequest::getFillValue, (req, v) -> {
-                req.setFillValue(v);
-            }));
+            f -> f.withMarshaller(ListSampleRequest::getFillValue, ListSampleRequest::setFillValue));
         builder.<QuerySampleParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QuerySampleParam.class),
-            f -> f.withMarshaller(ListSampleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListSampleRequest::getBody, ListSampleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSeriesRequest, ListSeriesResponse> listSeries = genForlistSeries();
+    public static final HttpRequestDef<ListSeriesRequest, ListSeriesResponse> listSeries = genForListSeries();
 
-    private static HttpRequestDef<ListSeriesRequest, ListSeriesResponse> genForlistSeries() {
+    private static HttpRequestDef<ListSeriesRequest, ListSeriesResponse> genForListSeries() {
         // basic
         HttpRequestDef.Builder<ListSeriesRequest, ListSeriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListSeriesRequest.class, ListSeriesResponse.class)
@@ -821,23 +757,17 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSeriesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSeriesRequest::getLimit, ListSeriesRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSeriesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSeriesRequest::getOffset, ListSeriesRequest::setOffset));
         builder.<SeriesAPIQueryItemParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SeriesAPIQueryItemParam.class),
-            f -> f.withMarshaller(ListSeriesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListSeriesRequest::getBody, ListSeriesRequest::setBody));
 
         // response
 
@@ -845,9 +775,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse> listServiceDiscoveryRules =
-        genForlistServiceDiscoveryRules();
+        genForListServiceDiscoveryRules();
 
-    private static HttpRequestDef<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse> genForlistServiceDiscoveryRules() {
+    private static HttpRequestDef<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse> genForListServiceDiscoveryRules() {
         // basic
         HttpRequestDef.Builder<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse> builder =
             HttpRequestDef
@@ -863,18 +793,16 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceDiscoveryRulesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListServiceDiscoveryRulesRequest::getId, ListServiceDiscoveryRulesRequest::setId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PushEventsRequest, PushEventsResponse> pushEvents = genForpushEvents();
+    public static final HttpRequestDef<PushEventsRequest, PushEventsResponse> pushEvents = genForPushEvents();
 
-    private static HttpRequestDef<PushEventsRequest, PushEventsResponse> genForpushEvents() {
+    private static HttpRequestDef<PushEventsRequest, PushEventsResponse> genForPushEvents() {
         // basic
         HttpRequestDef.Builder<PushEventsRequest, PushEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, PushEventsRequest.class, PushEventsResponse.class)
@@ -887,23 +815,18 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PushEventsRequest.ActionEnum.class),
-            f -> f.withMarshaller(PushEventsRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(PushEventsRequest::getAction, PushEventsRequest::setAction));
         builder.<String>withRequestField("x-enterprise-prject-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PushEventsRequest::getXEnterprisePrjectId, (req, v) -> {
-                req.setXEnterprisePrjectId(v);
-            }));
+            f -> f.withMarshaller(PushEventsRequest::getXEnterprisePrjectId,
+                PushEventsRequest::setXEnterprisePrjectId));
         builder.<EventList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EventList.class),
-            f -> f.withMarshaller(PushEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PushEventsRequest::getBody, PushEventsRequest::setBody));
 
         // response
 
@@ -911,9 +834,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ShowActionRuleRequest, ShowActionRuleResponse> showActionRule =
-        genForshowActionRule();
+        genForShowActionRule();
 
-    private static HttpRequestDef<ShowActionRuleRequest, ShowActionRuleResponse> genForshowActionRule() {
+    private static HttpRequestDef<ShowActionRuleRequest, ShowActionRuleResponse> genForShowActionRule() {
         // basic
         HttpRequestDef.Builder<ShowActionRuleRequest, ShowActionRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowActionRuleRequest.class, ShowActionRuleResponse.class)
@@ -926,9 +849,7 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowActionRuleRequest::getRuleName, (req, v) -> {
-                req.setRuleName(v);
-            }));
+            f -> f.withMarshaller(ShowActionRuleRequest::getRuleName, ShowActionRuleRequest::setRuleName));
 
         // response
 
@@ -936,9 +857,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ShowAlarmRuleRequest, ShowAlarmRuleResponse> showAlarmRule =
-        genForshowAlarmRule();
+        genForShowAlarmRule();
 
-    private static HttpRequestDef<ShowAlarmRuleRequest, ShowAlarmRuleResponse> genForshowAlarmRule() {
+    private static HttpRequestDef<ShowAlarmRuleRequest, ShowAlarmRuleResponse> genForShowAlarmRule() {
         // basic
         HttpRequestDef.Builder<ShowAlarmRuleRequest, ShowAlarmRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAlarmRuleRequest.class, ShowAlarmRuleResponse.class)
@@ -951,9 +872,7 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAlarmRuleRequest::getAlarmRuleId, (req, v) -> {
-                req.setAlarmRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowAlarmRuleRequest::getAlarmRuleId, ShowAlarmRuleRequest::setAlarmRuleId));
 
         // response
 
@@ -961,9 +880,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ShowMetricsDataRequest, ShowMetricsDataResponse> showMetricsData =
-        genForshowMetricsData();
+        genForShowMetricsData();
 
-    private static HttpRequestDef<ShowMetricsDataRequest, ShowMetricsDataResponse> genForshowMetricsData() {
+    private static HttpRequestDef<ShowMetricsDataRequest, ShowMetricsDataResponse> genForShowMetricsData() {
         // basic
         HttpRequestDef.Builder<ShowMetricsDataRequest, ShowMetricsDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowMetricsDataRequest.class, ShowMetricsDataResponse.class)
@@ -976,16 +895,12 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowMetricsDataRequest.FillValueEnum.class),
-            f -> f.withMarshaller(ShowMetricsDataRequest::getFillValue, (req, v) -> {
-                req.setFillValue(v);
-            }));
+            f -> f.withMarshaller(ShowMetricsDataRequest::getFillValue, ShowMetricsDataRequest::setFillValue));
         builder.<QueryMetricDataParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryMetricDataParam.class),
-            f -> f.withMarshaller(ShowMetricsDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowMetricsDataRequest::getBody, ShowMetricsDataRequest::setBody));
 
         // response
 
@@ -993,9 +908,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<UpdateActionRuleRequest, UpdateActionRuleResponse> updateActionRule =
-        genForupdateActionRule();
+        genForUpdateActionRule();
 
-    private static HttpRequestDef<UpdateActionRuleRequest, UpdateActionRuleResponse> genForupdateActionRule() {
+    private static HttpRequestDef<UpdateActionRuleRequest, UpdateActionRuleResponse> genForUpdateActionRule() {
         // basic
         HttpRequestDef.Builder<UpdateActionRuleRequest, UpdateActionRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateActionRuleRequest.class, UpdateActionRuleResponse.class)
@@ -1008,9 +923,7 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ActionRule.class),
-            f -> f.withMarshaller(UpdateActionRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateActionRuleRequest::getBody, UpdateActionRuleRequest::setBody));
 
         // response
 
@@ -1018,9 +931,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> updateAlarmRule =
-        genForupdateAlarmRule();
+        genForUpdateAlarmRule();
 
-    private static HttpRequestDef<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> genForupdateAlarmRule() {
+    private static HttpRequestDef<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> genForUpdateAlarmRule() {
         // basic
         HttpRequestDef.Builder<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAlarmRuleRequest.class, UpdateAlarmRuleResponse.class)
@@ -1033,9 +946,7 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAlarmRuleParam.class),
-            f -> f.withMarshaller(UpdateAlarmRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAlarmRuleRequest::getBody, UpdateAlarmRuleRequest::setBody));
 
         // response
 
@@ -1043,9 +954,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<UpdateEventRuleRequest, UpdateEventRuleResponse> updateEventRule =
-        genForupdateEventRule();
+        genForUpdateEventRule();
 
-    private static HttpRequestDef<UpdateEventRuleRequest, UpdateEventRuleResponse> genForupdateEventRule() {
+    private static HttpRequestDef<UpdateEventRuleRequest, UpdateEventRuleResponse> genForUpdateEventRule() {
         // basic
         HttpRequestDef.Builder<UpdateEventRuleRequest, UpdateEventRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEventRuleRequest.class, UpdateEventRuleResponse.class)
@@ -1058,26 +969,22 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Event2alarmRuleBody.class),
-            f -> f.withMarshaller(UpdateEventRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEventRuleRequest::getBody, UpdateEventRuleRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateEventRuleResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateEventRuleResponse::getBody, UpdateEventRuleResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateMuteRuleRequest, UpdateMuteRuleResponse> updateMuteRule =
-        genForupdateMuteRule();
+        genForUpdateMuteRule();
 
-    private static HttpRequestDef<UpdateMuteRuleRequest, UpdateMuteRuleResponse> genForupdateMuteRule() {
+    private static HttpRequestDef<UpdateMuteRuleRequest, UpdateMuteRuleResponse> genForUpdateMuteRule() {
         // basic
         HttpRequestDef.Builder<UpdateMuteRuleRequest, UpdateMuteRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMuteRuleRequest.class, UpdateMuteRuleResponse.class)
@@ -1090,9 +997,7 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MuteRule.class),
-            f -> f.withMarshaller(UpdateMuteRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMuteRuleRequest::getBody, UpdateMuteRuleRequest::setBody));
 
         // response
 
@@ -1100,9 +1005,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<CreatePromInstanceRequest, CreatePromInstanceResponse> createPromInstance =
-        genForcreatePromInstance();
+        genForCreatePromInstance();
 
-    private static HttpRequestDef<CreatePromInstanceRequest, CreatePromInstanceResponse> genForcreatePromInstance() {
+    private static HttpRequestDef<CreatePromInstanceRequest, CreatePromInstanceResponse> genForCreatePromInstance() {
         // basic
         HttpRequestDef.Builder<CreatePromInstanceRequest, CreatePromInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePromInstanceRequest.class, CreatePromInstanceResponse.class)
@@ -1111,13 +1016,11 @@ public class AomMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<PromInstanceEpsModel>withRequestField("body",
+        builder.<PromInstanceRequestModel>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(PromInstanceEpsModel.class),
-            f -> f.withMarshaller(CreatePromInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            TypeCasts.uncheckedConversion(PromInstanceRequestModel.class),
+            f -> f.withMarshaller(CreatePromInstanceRequest::getBody, CreatePromInstanceRequest::setBody));
 
         // response
 
@@ -1125,9 +1028,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<CreateRecordingRuleRequest, CreateRecordingRuleResponse> createRecordingRule =
-        genForcreateRecordingRule();
+        genForCreateRecordingRule();
 
-    private static HttpRequestDef<CreateRecordingRuleRequest, CreateRecordingRuleResponse> genForcreateRecordingRule() {
+    private static HttpRequestDef<CreateRecordingRuleRequest, CreateRecordingRuleResponse> genForCreateRecordingRule() {
         // basic
         HttpRequestDef.Builder<CreateRecordingRuleRequest, CreateRecordingRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRecordingRuleRequest.class, CreateRecordingRuleResponse.class)
@@ -1140,33 +1043,28 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecordingRuleRequest::getPrometheusInstance, (req, v) -> {
-                req.setPrometheusInstance(v);
-            }));
+            f -> f.withMarshaller(CreateRecordingRuleRequest::getPrometheusInstance,
+                CreateRecordingRuleRequest::setPrometheusInstance));
         builder.<RecordingRuleRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecordingRuleRequest.class),
-            f -> f.withMarshaller(CreateRecordingRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRecordingRuleRequest::getBody, CreateRecordingRuleRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateRecordingRuleResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateRecordingRuleResponse::getBody, CreateRecordingRuleResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeletePromInstanceRequest, DeletePromInstanceResponse> deletePromInstance =
-        genFordeletePromInstance();
+        genForDeletePromInstance();
 
-    private static HttpRequestDef<DeletePromInstanceRequest, DeletePromInstanceResponse> genFordeletePromInstance() {
+    private static HttpRequestDef<DeletePromInstanceRequest, DeletePromInstanceResponse> genForDeletePromInstance() {
         // basic
         HttpRequestDef.Builder<DeletePromInstanceRequest, DeletePromInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePromInstanceRequest.class, DeletePromInstanceResponse.class)
@@ -1179,26 +1077,22 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePromInstanceRequest::getPromId, (req, v) -> {
-                req.setPromId(v);
-            }));
+            f -> f.withMarshaller(DeletePromInstanceRequest::getPromId, DeletePromInstanceRequest::setPromId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeletePromInstanceResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeletePromInstanceResponse::getBody, DeletePromInstanceResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListAccessCodeRequest, ListAccessCodeResponse> listAccessCode =
-        genForlistAccessCode();
+        genForListAccessCode();
 
-    private static HttpRequestDef<ListAccessCodeRequest, ListAccessCodeResponse> genForlistAccessCode() {
+    private static HttpRequestDef<ListAccessCodeRequest, ListAccessCodeResponse> genForListAccessCode() {
         // basic
         HttpRequestDef.Builder<ListAccessCodeRequest, ListAccessCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAccessCodeRequest.class, ListAccessCodeResponse.class)
@@ -1214,9 +1108,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> listInstantQueryAomPromGet =
-        genForlistInstantQueryAomPromGet();
+        genForListInstantQueryAomPromGet();
 
-    private static HttpRequestDef<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> genForlistInstantQueryAomPromGet() {
+    private static HttpRequestDef<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> genForListInstantQueryAomPromGet() {
         // basic
         HttpRequestDef.Builder<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> builder =
             HttpRequestDef
@@ -1232,16 +1126,14 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstantQueryAomPromGetRequest::getQuery, (req, v) -> {
-                req.setQuery(v);
-            }));
+            f -> f.withMarshaller(ListInstantQueryAomPromGetRequest::getQuery,
+                ListInstantQueryAomPromGetRequest::setQuery));
         builder.<String>withRequestField("time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstantQueryAomPromGetRequest::getTime, (req, v) -> {
-                req.setTime(v);
-            }));
+            f -> f.withMarshaller(ListInstantQueryAomPromGetRequest::getTime,
+                ListInstantQueryAomPromGetRequest::setTime));
 
         // response
 
@@ -1249,9 +1141,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse> listInstantQueryAomPromPost =
-        genForlistInstantQueryAomPromPost();
+        genForListInstantQueryAomPromPost();
 
-    private static HttpRequestDef<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse> genForlistInstantQueryAomPromPost() {
+    private static HttpRequestDef<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse> genForListInstantQueryAomPromPost() {
         // basic
         HttpRequestDef.Builder<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse> builder =
             HttpRequestDef
@@ -1267,16 +1159,14 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstantQueryAomPromPostRequest::getQuery, (req, v) -> {
-                req.setQuery(v);
-            }));
+            f -> f.withMarshaller(ListInstantQueryAomPromPostRequest::getQuery,
+                ListInstantQueryAomPromPostRequest::setQuery));
         builder.<String>withRequestField("time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstantQueryAomPromPostRequest::getTime, (req, v) -> {
-                req.setTime(v);
-            }));
+            f -> f.withMarshaller(ListInstantQueryAomPromPostRequest::getTime,
+                ListInstantQueryAomPromPostRequest::setTime));
 
         // response
 
@@ -1284,9 +1174,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse> listLabelValuesAomPromGet =
-        genForlistLabelValuesAomPromGet();
+        genForListLabelValuesAomPromGet();
 
-    private static HttpRequestDef<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse> genForlistLabelValuesAomPromGet() {
+    private static HttpRequestDef<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse> genForListLabelValuesAomPromGet() {
         // basic
         HttpRequestDef.Builder<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse> builder =
             HttpRequestDef
@@ -1302,9 +1192,8 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLabelValuesAomPromGetRequest::getLabelName, (req, v) -> {
-                req.setLabelName(v);
-            }));
+            f -> f.withMarshaller(ListLabelValuesAomPromGetRequest::getLabelName,
+                ListLabelValuesAomPromGetRequest::setLabelName));
 
         // response
 
@@ -1312,9 +1201,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse> listLabelsAomPromGet =
-        genForlistLabelsAomPromGet();
+        genForListLabelsAomPromGet();
 
-    private static HttpRequestDef<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse> genForlistLabelsAomPromGet() {
+    private static HttpRequestDef<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse> genForListLabelsAomPromGet() {
         // basic
         HttpRequestDef.Builder<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListLabelsAomPromGetRequest.class, ListLabelsAomPromGetResponse.class)
@@ -1330,9 +1219,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse> listLabelsAomPromPost =
-        genForlistLabelsAomPromPost();
+        genForListLabelsAomPromPost();
 
-    private static HttpRequestDef<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse> genForlistLabelsAomPromPost() {
+    private static HttpRequestDef<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse> genForListLabelsAomPromPost() {
         // basic
         HttpRequestDef.Builder<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListLabelsAomPromPostRequest.class, ListLabelsAomPromPostResponse.class)
@@ -1348,9 +1237,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse> listMetadataAomPromGet =
-        genForlistMetadataAomPromGet();
+        genForListMetadataAomPromGet();
 
-    private static HttpRequestDef<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse> genForlistMetadataAomPromGet() {
+    private static HttpRequestDef<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse> genForListMetadataAomPromGet() {
         // basic
         HttpRequestDef.Builder<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMetadataAomPromGetRequest.class, ListMetadataAomPromGetResponse.class)
@@ -1366,9 +1255,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListPromInstanceRequest, ListPromInstanceResponse> listPromInstance =
-        genForlistPromInstance();
+        genForListPromInstance();
 
-    private static HttpRequestDef<ListPromInstanceRequest, ListPromInstanceResponse> genForlistPromInstance() {
+    private static HttpRequestDef<ListPromInstanceRequest, ListPromInstanceResponse> genForListPromInstance() {
         // basic
         HttpRequestDef.Builder<ListPromInstanceRequest, ListPromInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPromInstanceRequest.class, ListPromInstanceResponse.class)
@@ -1381,30 +1270,23 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPromInstanceRequest::getPromId, (req, v) -> {
-                req.setPromId(v);
-            }));
+            f -> f.withMarshaller(ListPromInstanceRequest::getPromId, ListPromInstanceRequest::setPromId));
         builder.<ListPromInstanceRequest.PromTypeEnum>withRequestField("prom_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPromInstanceRequest.PromTypeEnum.class),
-            f -> f.withMarshaller(ListPromInstanceRequest::getPromType, (req, v) -> {
-                req.setPromType(v);
-            }));
+            f -> f.withMarshaller(ListPromInstanceRequest::getPromType, ListPromInstanceRequest::setPromType));
         builder.<ListPromInstanceRequest.CceClusterEnableEnum>withRequestField("cce_cluster_enable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPromInstanceRequest.CceClusterEnableEnum.class),
-            f -> f.withMarshaller(ListPromInstanceRequest::getCceClusterEnable, (req, v) -> {
-                req.setCceClusterEnable(v);
-            }));
+            f -> f.withMarshaller(ListPromInstanceRequest::getCceClusterEnable,
+                ListPromInstanceRequest::setCceClusterEnable));
         builder.<ListPromInstanceRequest.PromStatusEnum>withRequestField("prom_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPromInstanceRequest.PromStatusEnum.class),
-            f -> f.withMarshaller(ListPromInstanceRequest::getPromStatus, (req, v) -> {
-                req.setPromStatus(v);
-            }));
+            f -> f.withMarshaller(ListPromInstanceRequest::getPromStatus, ListPromInstanceRequest::setPromStatus));
 
         // response
 
@@ -1412,9 +1294,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse> listRangeQueryAomPromGet =
-        genForlistRangeQueryAomPromGet();
+        genForListRangeQueryAomPromGet();
 
-    private static HttpRequestDef<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse> genForlistRangeQueryAomPromGet() {
+    private static HttpRequestDef<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse> genForListRangeQueryAomPromGet() {
         // basic
         HttpRequestDef.Builder<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse> builder =
             HttpRequestDef
@@ -1428,30 +1310,24 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRangeQueryAomPromGetRequest::getQuery, (req, v) -> {
-                req.setQuery(v);
-            }));
+            f -> f.withMarshaller(ListRangeQueryAomPromGetRequest::getQuery,
+                ListRangeQueryAomPromGetRequest::setQuery));
         builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRangeQueryAomPromGetRequest::getStart, (req, v) -> {
-                req.setStart(v);
-            }));
+            f -> f.withMarshaller(ListRangeQueryAomPromGetRequest::getStart,
+                ListRangeQueryAomPromGetRequest::setStart));
         builder.<String>withRequestField("end",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRangeQueryAomPromGetRequest::getEnd, (req, v) -> {
-                req.setEnd(v);
-            }));
+            f -> f.withMarshaller(ListRangeQueryAomPromGetRequest::getEnd, ListRangeQueryAomPromGetRequest::setEnd));
         builder.<String>withRequestField("step",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRangeQueryAomPromGetRequest::getStep, (req, v) -> {
-                req.setStep(v);
-            }));
+            f -> f.withMarshaller(ListRangeQueryAomPromGetRequest::getStep, ListRangeQueryAomPromGetRequest::setStep));
 
         // response
 
@@ -1459,9 +1335,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse> listRangeQueryAomPromPost =
-        genForlistRangeQueryAomPromPost();
+        genForListRangeQueryAomPromPost();
 
-    private static HttpRequestDef<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse> genForlistRangeQueryAomPromPost() {
+    private static HttpRequestDef<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse> genForListRangeQueryAomPromPost() {
         // basic
         HttpRequestDef.Builder<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse> builder =
             HttpRequestDef
@@ -1477,30 +1353,25 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRangeQueryAomPromPostRequest::getQuery, (req, v) -> {
-                req.setQuery(v);
-            }));
+            f -> f.withMarshaller(ListRangeQueryAomPromPostRequest::getQuery,
+                ListRangeQueryAomPromPostRequest::setQuery));
         builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRangeQueryAomPromPostRequest::getStart, (req, v) -> {
-                req.setStart(v);
-            }));
+            f -> f.withMarshaller(ListRangeQueryAomPromPostRequest::getStart,
+                ListRangeQueryAomPromPostRequest::setStart));
         builder.<String>withRequestField("end",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRangeQueryAomPromPostRequest::getEnd, (req, v) -> {
-                req.setEnd(v);
-            }));
+            f -> f.withMarshaller(ListRangeQueryAomPromPostRequest::getEnd, ListRangeQueryAomPromPostRequest::setEnd));
         builder.<String>withRequestField("step",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRangeQueryAomPromPostRequest::getStep, (req, v) -> {
-                req.setStep(v);
-            }));
+            f -> f.withMarshaller(ListRangeQueryAomPromPostRequest::getStep,
+                ListRangeQueryAomPromPostRequest::setStep));
 
         // response
 

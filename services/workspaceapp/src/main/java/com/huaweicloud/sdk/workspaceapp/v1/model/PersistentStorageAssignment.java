@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 存储声明关联作用对象
+ * 存储声明关联作用对象。
  */
 public class PersistentStorageAssignment {
 
@@ -52,7 +52,7 @@ public class PersistentStorageAssignment {
     }
 
     /**
-     * WKS存储目录声明ID
+     * WKS存储目录声明ID。
      * @return storageClaimId
      */
     public String getStorageClaimId() {
@@ -69,7 +69,7 @@ public class PersistentStorageAssignment {
     }
 
     /**
-     * 存储对象路径 注: path是对象在系统中的完整路径 例如系统中存在如下目录结构的数据. SFS-Tmp: └─shares   ├─image   └─video image的路径: shares/image/ video的路径: shares/video/
+     * 存储对象路径。 注: path是对象在系统中的完整路径。 例如系统中存在如下目录结构的数据。 SFS-Tmp: └─shares   ├─image   └─video image的路径: shares/image/ video的路径: shares/video/
      * @return folderPath
      */
     public String getFolderPath() {
@@ -86,7 +86,7 @@ public class PersistentStorageAssignment {
     }
 
     /**
-     * 路径分隔符
+     * 路径分隔符。
      * @return delimiter
      */
     public String getDelimiter() {

@@ -27,7 +27,7 @@ public class MasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNameSpaceListRequest 请求对象
+     * @param request ShowNameSpaceListRequest 请求对象
      * @return CompletableFuture<ShowNameSpaceListResponse>
      */
     public CompletableFuture<ShowNameSpaceListResponse> showNameSpaceListAsync(ShowNameSpaceListRequest request) {
@@ -40,13 +40,12 @@ public class MasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNameSpaceListRequest 请求对象
+     * @param request ShowNameSpaceListRequest 请求对象
      * @return AsyncInvoker<ShowNameSpaceListRequest, ShowNameSpaceListResponse>
      */
     public AsyncInvoker<ShowNameSpaceListRequest, ShowNameSpaceListResponse> showNameSpaceListAsyncInvoker(
         ShowNameSpaceListRequest request) {
-        return new AsyncInvoker<ShowNameSpaceListRequest, ShowNameSpaceListResponse>(request, MasMeta.showNameSpaceList,
-            hcClient);
+        return new AsyncInvoker<>(request, MasMeta.showNameSpaceList, hcClient);
     }
 
 }

@@ -3,6 +3,12 @@ package com.huaweicloud.sdk.vpn.v5;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteResourceTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteResourceTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.CountResourcesByTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.CountResourcesByTagsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateCgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CreateCgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateConnectionMonitorRequest;
@@ -27,6 +33,10 @@ import com.huaweicloud.sdk.vpn.v5.model.ListCgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListCgwsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListResourcesByTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListResourcesByTagsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVgwsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsRequest;
@@ -37,6 +47,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ShowConnectionMonitorRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowConnectionMonitorResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowQuotasInfoRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowQuotasInfoResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ShowResourceTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ShowResourceTagsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionRequest;
@@ -74,7 +86,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionMonitorRequest 请求对象
+     * @param request CreateConnectionMonitorRequest 请求对象
      * @return CompletableFuture<CreateConnectionMonitorResponse>
      */
     public CompletableFuture<CreateConnectionMonitorResponse> createConnectionMonitorAsync(
@@ -89,13 +101,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionMonitorRequest 请求对象
+     * @param request CreateConnectionMonitorRequest 请求对象
      * @return AsyncInvoker<CreateConnectionMonitorRequest, CreateConnectionMonitorResponse>
      */
     public AsyncInvoker<CreateConnectionMonitorRequest, CreateConnectionMonitorResponse> createConnectionMonitorAsyncInvoker(
         CreateConnectionMonitorRequest request) {
-        return new AsyncInvoker<CreateConnectionMonitorRequest, CreateConnectionMonitorResponse>(request,
-            VpnMeta.createConnectionMonitor, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.createConnectionMonitor, hcClient);
     }
 
     /**
@@ -105,7 +116,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectionMonitorRequest 请求对象
+     * @param request DeleteConnectionMonitorRequest 请求对象
      * @return CompletableFuture<DeleteConnectionMonitorResponse>
      */
     public CompletableFuture<DeleteConnectionMonitorResponse> deleteConnectionMonitorAsync(
@@ -120,13 +131,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectionMonitorRequest 请求对象
+     * @param request DeleteConnectionMonitorRequest 请求对象
      * @return AsyncInvoker<DeleteConnectionMonitorRequest, DeleteConnectionMonitorResponse>
      */
     public AsyncInvoker<DeleteConnectionMonitorRequest, DeleteConnectionMonitorResponse> deleteConnectionMonitorAsyncInvoker(
         DeleteConnectionMonitorRequest request) {
-        return new AsyncInvoker<DeleteConnectionMonitorRequest, DeleteConnectionMonitorResponse>(request,
-            VpnMeta.deleteConnectionMonitor, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.deleteConnectionMonitor, hcClient);
     }
 
     /**
@@ -136,7 +146,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectionMonitorsRequest 请求对象
+     * @param request ListConnectionMonitorsRequest 请求对象
      * @return CompletableFuture<ListConnectionMonitorsResponse>
      */
     public CompletableFuture<ListConnectionMonitorsResponse> listConnectionMonitorsAsync(
@@ -151,13 +161,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectionMonitorsRequest 请求对象
+     * @param request ListConnectionMonitorsRequest 请求对象
      * @return AsyncInvoker<ListConnectionMonitorsRequest, ListConnectionMonitorsResponse>
      */
     public AsyncInvoker<ListConnectionMonitorsRequest, ListConnectionMonitorsResponse> listConnectionMonitorsAsyncInvoker(
         ListConnectionMonitorsRequest request) {
-        return new AsyncInvoker<ListConnectionMonitorsRequest, ListConnectionMonitorsResponse>(request,
-            VpnMeta.listConnectionMonitors, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.listConnectionMonitors, hcClient);
     }
 
     /**
@@ -167,7 +176,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectionMonitorRequest 请求对象
+     * @param request ShowConnectionMonitorRequest 请求对象
      * @return CompletableFuture<ShowConnectionMonitorResponse>
      */
     public CompletableFuture<ShowConnectionMonitorResponse> showConnectionMonitorAsync(
@@ -182,13 +191,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectionMonitorRequest 请求对象
+     * @param request ShowConnectionMonitorRequest 请求对象
      * @return AsyncInvoker<ShowConnectionMonitorRequest, ShowConnectionMonitorResponse>
      */
     public AsyncInvoker<ShowConnectionMonitorRequest, ShowConnectionMonitorResponse> showConnectionMonitorAsyncInvoker(
         ShowConnectionMonitorRequest request) {
-        return new AsyncInvoker<ShowConnectionMonitorRequest, ShowConnectionMonitorResponse>(request,
-            VpnMeta.showConnectionMonitor, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.showConnectionMonitor, hcClient);
     }
 
     /**
@@ -198,7 +206,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCgwRequest 请求对象
+     * @param request CreateCgwRequest 请求对象
      * @return CompletableFuture<CreateCgwResponse>
      */
     public CompletableFuture<CreateCgwResponse> createCgwAsync(CreateCgwRequest request) {
@@ -212,11 +220,11 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCgwRequest 请求对象
+     * @param request CreateCgwRequest 请求对象
      * @return AsyncInvoker<CreateCgwRequest, CreateCgwResponse>
      */
     public AsyncInvoker<CreateCgwRequest, CreateCgwResponse> createCgwAsyncInvoker(CreateCgwRequest request) {
-        return new AsyncInvoker<CreateCgwRequest, CreateCgwResponse>(request, VpnMeta.createCgw, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.createCgw, hcClient);
     }
 
     /**
@@ -226,7 +234,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCgwRequest 请求对象
+     * @param request DeleteCgwRequest 请求对象
      * @return CompletableFuture<DeleteCgwResponse>
      */
     public CompletableFuture<DeleteCgwResponse> deleteCgwAsync(DeleteCgwRequest request) {
@@ -240,11 +248,11 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCgwRequest 请求对象
+     * @param request DeleteCgwRequest 请求对象
      * @return AsyncInvoker<DeleteCgwRequest, DeleteCgwResponse>
      */
     public AsyncInvoker<DeleteCgwRequest, DeleteCgwResponse> deleteCgwAsyncInvoker(DeleteCgwRequest request) {
-        return new AsyncInvoker<DeleteCgwRequest, DeleteCgwResponse>(request, VpnMeta.deleteCgw, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.deleteCgw, hcClient);
     }
 
     /**
@@ -254,7 +262,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCgwsRequest 请求对象
+     * @param request ListCgwsRequest 请求对象
      * @return CompletableFuture<ListCgwsResponse>
      */
     public CompletableFuture<ListCgwsResponse> listCgwsAsync(ListCgwsRequest request) {
@@ -268,11 +276,11 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCgwsRequest 请求对象
+     * @param request ListCgwsRequest 请求对象
      * @return AsyncInvoker<ListCgwsRequest, ListCgwsResponse>
      */
     public AsyncInvoker<ListCgwsRequest, ListCgwsResponse> listCgwsAsyncInvoker(ListCgwsRequest request) {
-        return new AsyncInvoker<ListCgwsRequest, ListCgwsResponse>(request, VpnMeta.listCgws, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.listCgws, hcClient);
     }
 
     /**
@@ -282,7 +290,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCgwRequest 请求对象
+     * @param request ShowCgwRequest 请求对象
      * @return CompletableFuture<ShowCgwResponse>
      */
     public CompletableFuture<ShowCgwResponse> showCgwAsync(ShowCgwRequest request) {
@@ -296,11 +304,11 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCgwRequest 请求对象
+     * @param request ShowCgwRequest 请求对象
      * @return AsyncInvoker<ShowCgwRequest, ShowCgwResponse>
      */
     public AsyncInvoker<ShowCgwRequest, ShowCgwResponse> showCgwAsyncInvoker(ShowCgwRequest request) {
-        return new AsyncInvoker<ShowCgwRequest, ShowCgwResponse>(request, VpnMeta.showCgw, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.showCgw, hcClient);
     }
 
     /**
@@ -310,7 +318,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCgwRequest 请求对象
+     * @param request UpdateCgwRequest 请求对象
      * @return CompletableFuture<UpdateCgwResponse>
      */
     public CompletableFuture<UpdateCgwResponse> updateCgwAsync(UpdateCgwRequest request) {
@@ -324,11 +332,188 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCgwRequest 请求对象
+     * @param request UpdateCgwRequest 请求对象
      * @return AsyncInvoker<UpdateCgwRequest, UpdateCgwResponse>
      */
     public AsyncInvoker<UpdateCgwRequest, UpdateCgwResponse> updateCgwAsyncInvoker(UpdateCgwRequest request) {
-        return new AsyncInvoker<UpdateCgwRequest, UpdateCgwResponse>(request, VpnMeta.updateCgw, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.updateCgw, hcClient);
+    }
+
+    /**
+     * 批量添加资源标签
+     *
+     * 为指定实例批量添加标签,标签管理服务需要使用该接口批量管理实例的标签.一个资源上最多有20个标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateResourceTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateResourceTagsResponse>
+     */
+    public CompletableFuture<BatchCreateResourceTagsResponse> batchCreateResourceTagsAsync(
+        BatchCreateResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.batchCreateResourceTags);
+    }
+
+    /**
+     * 批量添加资源标签
+     *
+     * 为指定实例批量添加标签,标签管理服务需要使用该接口批量管理实例的标签.一个资源上最多有20个标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateResourceTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTagsAsyncInvoker(
+        BatchCreateResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.batchCreateResourceTags, hcClient);
+    }
+
+    /**
+     * 批量删除资源标签
+     *
+     * 为指定实例批量删除标签,标签管理服务需要使用该接口批量管理实例的标签.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteResourceTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteResourceTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteResourceTagsResponse> batchDeleteResourceTagsAsync(
+        BatchDeleteResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.batchDeleteResourceTags);
+    }
+
+    /**
+     * 批量删除资源标签
+     *
+     * 为指定实例批量删除标签,标签管理服务需要使用该接口批量管理实例的标签.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteResourceTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> batchDeleteResourceTagsAsyncInvoker(
+        BatchDeleteResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.batchDeleteResourceTags, hcClient);
+    }
+
+    /**
+     * 查询标签下资源实例数量
+     *
+     * 使用标签过滤实例,并查询实例数量,需要各服务提供查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesByTagsRequest 请求对象
+     * @return CompletableFuture<CountResourcesByTagsResponse>
+     */
+    public CompletableFuture<CountResourcesByTagsResponse> countResourcesByTagsAsync(
+        CountResourcesByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.countResourcesByTags);
+    }
+
+    /**
+     * 查询标签下资源实例数量
+     *
+     * 使用标签过滤实例,并查询实例数量,需要各服务提供查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesByTagsRequest 请求对象
+     * @return AsyncInvoker<CountResourcesByTagsRequest, CountResourcesByTagsResponse>
+     */
+    public AsyncInvoker<CountResourcesByTagsRequest, CountResourcesByTagsResponse> countResourcesByTagsAsyncInvoker(
+        CountResourcesByTagsRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.countResourcesByTags, hcClient);
+    }
+
+    /**
+     * 查询项目下标签
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectTagsRequest 请求对象
+     * @return CompletableFuture<ListProjectTagsResponse>
+     */
+    public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.listProjectTags);
+    }
+
+    /**
+     * 查询项目下标签
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectTagsRequest 请求对象
+     * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
+    public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
+        ListProjectTagsRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.listProjectTags, hcClient);
+    }
+
+    /**
+     * 按标签查询资源
+     *
+     * 使用标签过滤实例,并查询实例数量,需要各服务提供查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesByTagsRequest 请求对象
+     * @return CompletableFuture<ListResourcesByTagsResponse>
+     */
+    public CompletableFuture<ListResourcesByTagsResponse> listResourcesByTagsAsync(ListResourcesByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.listResourcesByTags);
+    }
+
+    /**
+     * 按标签查询资源
+     *
+     * 使用标签过滤实例,并查询实例数量,需要各服务提供查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesByTagsRequest 请求对象
+     * @return AsyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse>
+     */
+    public AsyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse> listResourcesByTagsAsyncInvoker(
+        ListResourcesByTagsRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.listResourcesByTags, hcClient);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询指定实例的标签信息,标签管理服务需要使用该接口查询指定实例的全部标签数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResourceTagsRequest 请求对象
+     * @return CompletableFuture<ShowResourceTagsResponse>
+     */
+    public CompletableFuture<ShowResourceTagsResponse> showResourceTagsAsync(ShowResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.showResourceTags);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询指定实例的标签信息,标签管理服务需要使用该接口查询指定实例的全部标签数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResourceTagsRequest 请求对象
+     * @return AsyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>
+     */
+    public AsyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTagsAsyncInvoker(
+        ShowResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.showResourceTags, hcClient);
     }
 
     /**
@@ -338,7 +523,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpnConnectionRequest 请求对象
+     * @param request CreateVpnConnectionRequest 请求对象
      * @return CompletableFuture<CreateVpnConnectionResponse>
      */
     public CompletableFuture<CreateVpnConnectionResponse> createVpnConnectionAsync(CreateVpnConnectionRequest request) {
@@ -352,13 +537,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpnConnectionRequest 请求对象
+     * @param request CreateVpnConnectionRequest 请求对象
      * @return AsyncInvoker<CreateVpnConnectionRequest, CreateVpnConnectionResponse>
      */
     public AsyncInvoker<CreateVpnConnectionRequest, CreateVpnConnectionResponse> createVpnConnectionAsyncInvoker(
         CreateVpnConnectionRequest request) {
-        return new AsyncInvoker<CreateVpnConnectionRequest, CreateVpnConnectionResponse>(request,
-            VpnMeta.createVpnConnection, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.createVpnConnection, hcClient);
     }
 
     /**
@@ -368,7 +552,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpnConnectionRequest 请求对象
+     * @param request DeleteVpnConnectionRequest 请求对象
      * @return CompletableFuture<DeleteVpnConnectionResponse>
      */
     public CompletableFuture<DeleteVpnConnectionResponse> deleteVpnConnectionAsync(DeleteVpnConnectionRequest request) {
@@ -382,13 +566,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpnConnectionRequest 请求对象
+     * @param request DeleteVpnConnectionRequest 请求对象
      * @return AsyncInvoker<DeleteVpnConnectionRequest, DeleteVpnConnectionResponse>
      */
     public AsyncInvoker<DeleteVpnConnectionRequest, DeleteVpnConnectionResponse> deleteVpnConnectionAsyncInvoker(
         DeleteVpnConnectionRequest request) {
-        return new AsyncInvoker<DeleteVpnConnectionRequest, DeleteVpnConnectionResponse>(request,
-            VpnMeta.deleteVpnConnection, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.deleteVpnConnection, hcClient);
     }
 
     /**
@@ -398,7 +581,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpnConnectionsRequest 请求对象
+     * @param request ListVpnConnectionsRequest 请求对象
      * @return CompletableFuture<ListVpnConnectionsResponse>
      */
     public CompletableFuture<ListVpnConnectionsResponse> listVpnConnectionsAsync(ListVpnConnectionsRequest request) {
@@ -412,13 +595,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpnConnectionsRequest 请求对象
+     * @param request ListVpnConnectionsRequest 请求对象
      * @return AsyncInvoker<ListVpnConnectionsRequest, ListVpnConnectionsResponse>
      */
     public AsyncInvoker<ListVpnConnectionsRequest, ListVpnConnectionsResponse> listVpnConnectionsAsyncInvoker(
         ListVpnConnectionsRequest request) {
-        return new AsyncInvoker<ListVpnConnectionsRequest, ListVpnConnectionsResponse>(request,
-            VpnMeta.listVpnConnections, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.listVpnConnections, hcClient);
     }
 
     /**
@@ -428,7 +610,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVpnConnectionRequest 请求对象
+     * @param request ShowVpnConnectionRequest 请求对象
      * @return CompletableFuture<ShowVpnConnectionResponse>
      */
     public CompletableFuture<ShowVpnConnectionResponse> showVpnConnectionAsync(ShowVpnConnectionRequest request) {
@@ -442,13 +624,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVpnConnectionRequest 请求对象
+     * @param request ShowVpnConnectionRequest 请求对象
      * @return AsyncInvoker<ShowVpnConnectionRequest, ShowVpnConnectionResponse>
      */
     public AsyncInvoker<ShowVpnConnectionRequest, ShowVpnConnectionResponse> showVpnConnectionAsyncInvoker(
         ShowVpnConnectionRequest request) {
-        return new AsyncInvoker<ShowVpnConnectionRequest, ShowVpnConnectionResponse>(request, VpnMeta.showVpnConnection,
-            hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.showVpnConnection, hcClient);
     }
 
     /**
@@ -458,7 +639,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpnConnectionRequest 请求对象
+     * @param request UpdateVpnConnectionRequest 请求对象
      * @return CompletableFuture<UpdateVpnConnectionResponse>
      */
     public CompletableFuture<UpdateVpnConnectionResponse> updateVpnConnectionAsync(UpdateVpnConnectionRequest request) {
@@ -472,13 +653,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpnConnectionRequest 请求对象
+     * @param request UpdateVpnConnectionRequest 请求对象
      * @return AsyncInvoker<UpdateVpnConnectionRequest, UpdateVpnConnectionResponse>
      */
     public AsyncInvoker<UpdateVpnConnectionRequest, UpdateVpnConnectionResponse> updateVpnConnectionAsyncInvoker(
         UpdateVpnConnectionRequest request) {
-        return new AsyncInvoker<UpdateVpnConnectionRequest, UpdateVpnConnectionResponse>(request,
-            VpnMeta.updateVpnConnection, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.updateVpnConnection, hcClient);
     }
 
     /**
@@ -488,7 +668,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVgwRequest 请求对象
+     * @param request CreateVgwRequest 请求对象
      * @return CompletableFuture<CreateVgwResponse>
      */
     public CompletableFuture<CreateVgwResponse> createVgwAsync(CreateVgwRequest request) {
@@ -502,11 +682,11 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVgwRequest 请求对象
+     * @param request CreateVgwRequest 请求对象
      * @return AsyncInvoker<CreateVgwRequest, CreateVgwResponse>
      */
     public AsyncInvoker<CreateVgwRequest, CreateVgwResponse> createVgwAsyncInvoker(CreateVgwRequest request) {
-        return new AsyncInvoker<CreateVgwRequest, CreateVgwResponse>(request, VpnMeta.createVgw, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.createVgw, hcClient);
     }
 
     /**
@@ -516,7 +696,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVgwRequest 请求对象
+     * @param request DeleteVgwRequest 请求对象
      * @return CompletableFuture<DeleteVgwResponse>
      */
     public CompletableFuture<DeleteVgwResponse> deleteVgwAsync(DeleteVgwRequest request) {
@@ -530,11 +710,11 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVgwRequest 请求对象
+     * @param request DeleteVgwRequest 请求对象
      * @return AsyncInvoker<DeleteVgwRequest, DeleteVgwResponse>
      */
     public AsyncInvoker<DeleteVgwRequest, DeleteVgwResponse> deleteVgwAsyncInvoker(DeleteVgwRequest request) {
-        return new AsyncInvoker<DeleteVgwRequest, DeleteVgwResponse>(request, VpnMeta.deleteVgw, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.deleteVgw, hcClient);
     }
 
     /**
@@ -544,7 +724,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZonesRequest 请求对象
+     * @param request ListAvailabilityZonesRequest 请求对象
      * @return CompletableFuture<ListAvailabilityZonesResponse>
      */
     public CompletableFuture<ListAvailabilityZonesResponse> listAvailabilityZonesAsync(
@@ -559,13 +739,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZonesRequest 请求对象
+     * @param request ListAvailabilityZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>
      */
     public AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZonesAsyncInvoker(
         ListAvailabilityZonesRequest request) {
-        return new AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>(request,
-            VpnMeta.listAvailabilityZones, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.listAvailabilityZones, hcClient);
     }
 
     /**
@@ -575,7 +754,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVgwsRequest 请求对象
+     * @param request ListVgwsRequest 请求对象
      * @return CompletableFuture<ListVgwsResponse>
      */
     public CompletableFuture<ListVgwsResponse> listVgwsAsync(ListVgwsRequest request) {
@@ -589,11 +768,11 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVgwsRequest 请求对象
+     * @param request ListVgwsRequest 请求对象
      * @return AsyncInvoker<ListVgwsRequest, ListVgwsResponse>
      */
     public AsyncInvoker<ListVgwsRequest, ListVgwsResponse> listVgwsAsyncInvoker(ListVgwsRequest request) {
-        return new AsyncInvoker<ListVgwsRequest, ListVgwsResponse>(request, VpnMeta.listVgws, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.listVgws, hcClient);
     }
 
     /**
@@ -603,7 +782,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVgwRequest 请求对象
+     * @param request ShowVgwRequest 请求对象
      * @return CompletableFuture<ShowVgwResponse>
      */
     public CompletableFuture<ShowVgwResponse> showVgwAsync(ShowVgwRequest request) {
@@ -617,11 +796,11 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVgwRequest 请求对象
+     * @param request ShowVgwRequest 请求对象
      * @return AsyncInvoker<ShowVgwRequest, ShowVgwResponse>
      */
     public AsyncInvoker<ShowVgwRequest, ShowVgwResponse> showVgwAsyncInvoker(ShowVgwRequest request) {
-        return new AsyncInvoker<ShowVgwRequest, ShowVgwResponse>(request, VpnMeta.showVgw, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.showVgw, hcClient);
     }
 
     /**
@@ -631,7 +810,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVgwRequest 请求对象
+     * @param request UpdateVgwRequest 请求对象
      * @return CompletableFuture<UpdateVgwResponse>
      */
     public CompletableFuture<UpdateVgwResponse> updateVgwAsync(UpdateVgwRequest request) {
@@ -645,11 +824,11 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVgwRequest 请求对象
+     * @param request UpdateVgwRequest 请求对象
      * @return AsyncInvoker<UpdateVgwRequest, UpdateVgwResponse>
      */
     public AsyncInvoker<UpdateVgwRequest, UpdateVgwResponse> updateVgwAsyncInvoker(UpdateVgwRequest request) {
-        return new AsyncInvoker<UpdateVgwRequest, UpdateVgwResponse>(request, VpnMeta.updateVgw, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.updateVgw, hcClient);
     }
 
     /**
@@ -659,7 +838,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVgwCertificateRequest 请求对象
+     * @param request CreateVgwCertificateRequest 请求对象
      * @return CompletableFuture<CreateVgwCertificateResponse>
      */
     public CompletableFuture<CreateVgwCertificateResponse> createVgwCertificateAsync(
@@ -674,13 +853,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVgwCertificateRequest 请求对象
+     * @param request CreateVgwCertificateRequest 请求对象
      * @return AsyncInvoker<CreateVgwCertificateRequest, CreateVgwCertificateResponse>
      */
     public AsyncInvoker<CreateVgwCertificateRequest, CreateVgwCertificateResponse> createVgwCertificateAsyncInvoker(
         CreateVgwCertificateRequest request) {
-        return new AsyncInvoker<CreateVgwCertificateRequest, CreateVgwCertificateResponse>(request,
-            VpnMeta.createVgwCertificate, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.createVgwCertificate, hcClient);
     }
 
     /**
@@ -690,7 +868,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVpnGatewayCertificateRequest 请求对象
+     * @param request ShowVpnGatewayCertificateRequest 请求对象
      * @return CompletableFuture<ShowVpnGatewayCertificateResponse>
      */
     public CompletableFuture<ShowVpnGatewayCertificateResponse> showVpnGatewayCertificateAsync(
@@ -705,13 +883,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVpnGatewayCertificateRequest 请求对象
+     * @param request ShowVpnGatewayCertificateRequest 请求对象
      * @return AsyncInvoker<ShowVpnGatewayCertificateRequest, ShowVpnGatewayCertificateResponse>
      */
     public AsyncInvoker<ShowVpnGatewayCertificateRequest, ShowVpnGatewayCertificateResponse> showVpnGatewayCertificateAsyncInvoker(
         ShowVpnGatewayCertificateRequest request) {
-        return new AsyncInvoker<ShowVpnGatewayCertificateRequest, ShowVpnGatewayCertificateResponse>(request,
-            VpnMeta.showVpnGatewayCertificate, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.showVpnGatewayCertificate, hcClient);
     }
 
     /**
@@ -721,7 +898,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVgwCertificateRequest 请求对象
+     * @param request UpdateVgwCertificateRequest 请求对象
      * @return CompletableFuture<UpdateVgwCertificateResponse>
      */
     public CompletableFuture<UpdateVgwCertificateResponse> updateVgwCertificateAsync(
@@ -736,13 +913,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVgwCertificateRequest 请求对象
+     * @param request UpdateVgwCertificateRequest 请求对象
      * @return AsyncInvoker<UpdateVgwCertificateRequest, UpdateVgwCertificateResponse>
      */
     public AsyncInvoker<UpdateVgwCertificateRequest, UpdateVgwCertificateResponse> updateVgwCertificateAsyncInvoker(
         UpdateVgwCertificateRequest request) {
-        return new AsyncInvoker<UpdateVgwCertificateRequest, UpdateVgwCertificateResponse>(request,
-            VpnMeta.updateVgwCertificate, hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.updateVgwCertificate, hcClient);
     }
 
     /**
@@ -752,7 +928,7 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasInfoRequest 请求对象
+     * @param request ShowQuotasInfoRequest 请求对象
      * @return CompletableFuture<ShowQuotasInfoResponse>
      */
     public CompletableFuture<ShowQuotasInfoResponse> showQuotasInfoAsync(ShowQuotasInfoRequest request) {
@@ -766,13 +942,12 @@ public class VpnAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasInfoRequest 请求对象
+     * @param request ShowQuotasInfoRequest 请求对象
      * @return AsyncInvoker<ShowQuotasInfoRequest, ShowQuotasInfoResponse>
      */
     public AsyncInvoker<ShowQuotasInfoRequest, ShowQuotasInfoResponse> showQuotasInfoAsyncInvoker(
         ShowQuotasInfoRequest request) {
-        return new AsyncInvoker<ShowQuotasInfoRequest, ShowQuotasInfoResponse>(request, VpnMeta.showQuotasInfo,
-            hcClient);
+        return new AsyncInvoker<>(request, VpnMeta.showQuotasInfo, hcClient);
     }
 
 }

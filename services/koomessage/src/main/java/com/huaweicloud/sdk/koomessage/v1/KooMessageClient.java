@@ -148,7 +148,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCallBackRequest 请求对象
+     * @param request AddCallBackRequest 请求对象
      * @return AddCallBackResponse
      */
     public AddCallBackResponse addCallBack(AddCallBackRequest request) {
@@ -162,11 +162,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCallBackRequest 请求对象
+     * @param request AddCallBackRequest 请求对象
      * @return SyncInvoker<AddCallBackRequest, AddCallBackResponse>
      */
     public SyncInvoker<AddCallBackRequest, AddCallBackResponse> addCallBackInvoker(AddCallBackRequest request) {
-        return new SyncInvoker<AddCallBackRequest, AddCallBackResponse>(request, KooMessageMeta.addCallBack, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.addCallBack, hcClient);
     }
 
     /**
@@ -176,7 +176,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimCallbacksRequest 请求对象
+     * @param request ListAimCallbacksRequest 请求对象
      * @return ListAimCallbacksResponse
      */
     public ListAimCallbacksResponse listAimCallbacks(ListAimCallbacksRequest request) {
@@ -190,13 +190,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimCallbacksRequest 请求对象
+     * @param request ListAimCallbacksRequest 请求对象
      * @return SyncInvoker<ListAimCallbacksRequest, ListAimCallbacksResponse>
      */
     public SyncInvoker<ListAimCallbacksRequest, ListAimCallbacksResponse> listAimCallbacksInvoker(
         ListAimCallbacksRequest request) {
-        return new SyncInvoker<ListAimCallbacksRequest, ListAimCallbacksResponse>(request,
-            KooMessageMeta.listAimCallbacks, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimCallbacks, hcClient);
     }
 
     /**
@@ -206,7 +205,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckMobileCapabilityRequest 请求对象
+     * @param request CheckMobileCapabilityRequest 请求对象
      * @return CheckMobileCapabilityResponse
      */
     public CheckMobileCapabilityResponse checkMobileCapability(CheckMobileCapabilityRequest request) {
@@ -220,13 +219,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckMobileCapabilityRequest 请求对象
+     * @param request CheckMobileCapabilityRequest 请求对象
      * @return SyncInvoker<CheckMobileCapabilityRequest, CheckMobileCapabilityResponse>
      */
     public SyncInvoker<CheckMobileCapabilityRequest, CheckMobileCapabilityResponse> checkMobileCapabilityInvoker(
         CheckMobileCapabilityRequest request) {
-        return new SyncInvoker<CheckMobileCapabilityRequest, CheckMobileCapabilityResponse>(request,
-            KooMessageMeta.checkMobileCapability, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.checkMobileCapability, hcClient);
     }
 
     /**
@@ -236,7 +234,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResolveTaskRequest 请求对象
+     * @param request CreateResolveTaskRequest 请求对象
      * @return CreateResolveTaskResponse
      */
     public CreateResolveTaskResponse createResolveTask(CreateResolveTaskRequest request) {
@@ -250,13 +248,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResolveTaskRequest 请求对象
+     * @param request CreateResolveTaskRequest 请求对象
      * @return SyncInvoker<CreateResolveTaskRequest, CreateResolveTaskResponse>
      */
     public SyncInvoker<CreateResolveTaskRequest, CreateResolveTaskResponse> createResolveTaskInvoker(
         CreateResolveTaskRequest request) {
-        return new SyncInvoker<CreateResolveTaskRequest, CreateResolveTaskResponse>(request,
-            KooMessageMeta.createResolveTask, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.createResolveTask, hcClient);
     }
 
     /**
@@ -266,7 +263,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimResolveDetailsRequest 请求对象
+     * @param request ListAimResolveDetailsRequest 请求对象
      * @return ListAimResolveDetailsResponse
      */
     public ListAimResolveDetailsResponse listAimResolveDetails(ListAimResolveDetailsRequest request) {
@@ -280,13 +277,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimResolveDetailsRequest 请求对象
+     * @param request ListAimResolveDetailsRequest 请求对象
      * @return SyncInvoker<ListAimResolveDetailsRequest, ListAimResolveDetailsResponse>
      */
     public SyncInvoker<ListAimResolveDetailsRequest, ListAimResolveDetailsResponse> listAimResolveDetailsInvoker(
         ListAimResolveDetailsRequest request) {
-        return new SyncInvoker<ListAimResolveDetailsRequest, ListAimResolveDetailsResponse>(request,
-            KooMessageMeta.listAimResolveDetails, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimResolveDetails, hcClient);
     }
 
     /**
@@ -300,7 +296,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResolveTasksRequest 请求对象
+     * @param request ListResolveTasksRequest 请求对象
      * @return ListResolveTasksResponse
      */
     public ListResolveTasksResponse listResolveTasks(ListResolveTasksRequest request) {
@@ -318,13 +314,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResolveTasksRequest 请求对象
+     * @param request ListResolveTasksRequest 请求对象
      * @return SyncInvoker<ListResolveTasksRequest, ListResolveTasksResponse>
      */
     public SyncInvoker<ListResolveTasksRequest, ListResolveTasksResponse> listResolveTasksInvoker(
         ListResolveTasksRequest request) {
-        return new SyncInvoker<ListResolveTasksRequest, ListResolveTasksResponse>(request,
-            KooMessageMeta.listResolveTasks, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listResolveTasks, hcClient);
     }
 
     /**
@@ -334,7 +329,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMenusRequest 请求对象
+     * @param request ListMenusRequest 请求对象
      * @return ListMenusResponse
      */
     public ListMenusResponse listMenus(ListMenusRequest request) {
@@ -348,11 +343,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMenusRequest 请求对象
+     * @param request ListMenusRequest 请求对象
      * @return SyncInvoker<ListMenusRequest, ListMenusResponse>
      */
     public SyncInvoker<ListMenusRequest, ListMenusResponse> listMenusInvoker(ListMenusRequest request) {
-        return new SyncInvoker<ListMenusRequest, ListMenusResponse>(request, KooMessageMeta.listMenus, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listMenus, hcClient);
     }
 
     /**
@@ -363,7 +358,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMenuRequest 请求对象
+     * @param request UpdateMenuRequest 请求对象
      * @return UpdateMenuResponse
      */
     public UpdateMenuResponse updateMenu(UpdateMenuRequest request) {
@@ -378,11 +373,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMenuRequest 请求对象
+     * @param request UpdateMenuRequest 请求对象
      * @return SyncInvoker<UpdateMenuRequest, UpdateMenuResponse>
      */
     public SyncInvoker<UpdateMenuRequest, UpdateMenuResponse> updateMenuInvoker(UpdateMenuRequest request) {
-        return new SyncInvoker<UpdateMenuRequest, UpdateMenuResponse>(request, KooMessageMeta.updateMenu, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.updateMenu, hcClient);
     }
 
     /**
@@ -392,7 +387,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePortInfoRequest 请求对象
+     * @param request DeletePortInfoRequest 请求对象
      * @return DeletePortInfoResponse
      */
     public DeletePortInfoResponse deletePortInfo(DeletePortInfoRequest request) {
@@ -406,13 +401,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePortInfoRequest 请求对象
+     * @param request DeletePortInfoRequest 请求对象
      * @return SyncInvoker<DeletePortInfoRequest, DeletePortInfoResponse>
      */
     public SyncInvoker<DeletePortInfoRequest, DeletePortInfoResponse> deletePortInfoInvoker(
         DeletePortInfoRequest request) {
-        return new SyncInvoker<DeletePortInfoRequest, DeletePortInfoResponse>(request, KooMessageMeta.deletePortInfo,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.deletePortInfo, hcClient);
     }
 
     /**
@@ -422,7 +416,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortInfosRequest 请求对象
+     * @param request ListPortInfosRequest 请求对象
      * @return ListPortInfosResponse
      */
     public ListPortInfosResponse listPortInfos(ListPortInfosRequest request) {
@@ -436,12 +430,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortInfosRequest 请求对象
+     * @param request ListPortInfosRequest 请求对象
      * @return SyncInvoker<ListPortInfosRequest, ListPortInfosResponse>
      */
     public SyncInvoker<ListPortInfosRequest, ListPortInfosResponse> listPortInfosInvoker(ListPortInfosRequest request) {
-        return new SyncInvoker<ListPortInfosRequest, ListPortInfosResponse>(request, KooMessageMeta.listPortInfos,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listPortInfos, hcClient);
     }
 
     /**
@@ -451,7 +444,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LockPortRequest 请求对象
+     * @param request LockPortRequest 请求对象
      * @return LockPortResponse
      */
     public LockPortResponse lockPort(LockPortRequest request) {
@@ -465,11 +458,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LockPortRequest 请求对象
+     * @param request LockPortRequest 请求对象
      * @return SyncInvoker<LockPortRequest, LockPortResponse>
      */
     public SyncInvoker<LockPortRequest, LockPortResponse> lockPortInvoker(LockPortRequest request) {
-        return new SyncInvoker<LockPortRequest, LockPortResponse>(request, KooMessageMeta.lockPort, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.lockPort, hcClient);
     }
 
     /**
@@ -479,7 +472,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterPortRequest 请求对象
+     * @param request RegisterPortRequest 请求对象
      * @return RegisterPortResponse
      */
     public RegisterPortResponse registerPort(RegisterPortRequest request) {
@@ -493,12 +486,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterPortRequest 请求对象
+     * @param request RegisterPortRequest 请求对象
      * @return SyncInvoker<RegisterPortRequest, RegisterPortResponse>
      */
     public SyncInvoker<RegisterPortRequest, RegisterPortResponse> registerPortInvoker(RegisterPortRequest request) {
-        return new SyncInvoker<RegisterPortRequest, RegisterPortResponse>(request, KooMessageMeta.registerPort,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.registerPort, hcClient);
     }
 
     /**
@@ -508,7 +500,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnlockPortRequest 请求对象
+     * @param request UnlockPortRequest 请求对象
      * @return UnlockPortResponse
      */
     public UnlockPortResponse unlockPort(UnlockPortRequest request) {
@@ -522,11 +514,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnlockPortRequest 请求对象
+     * @param request UnlockPortRequest 请求对象
      * @return SyncInvoker<UnlockPortRequest, UnlockPortResponse>
      */
     public SyncInvoker<UnlockPortRequest, UnlockPortResponse> unlockPortInvoker(UnlockPortRequest request) {
-        return new SyncInvoker<UnlockPortRequest, UnlockPortResponse>(request, KooMessageMeta.unlockPort, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.unlockPort, hcClient);
     }
 
     /**
@@ -537,7 +529,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortalInfosRequest 请求对象
+     * @param request ListPortalInfosRequest 请求对象
      * @return ListPortalInfosResponse
      */
     public ListPortalInfosResponse listPortalInfos(ListPortalInfosRequest request) {
@@ -552,13 +544,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortalInfosRequest 请求对象
+     * @param request ListPortalInfosRequest 请求对象
      * @return SyncInvoker<ListPortalInfosRequest, ListPortalInfosResponse>
      */
     public SyncInvoker<ListPortalInfosRequest, ListPortalInfosResponse> listPortalInfosInvoker(
         ListPortalInfosRequest request) {
-        return new SyncInvoker<ListPortalInfosRequest, ListPortalInfosResponse>(request, KooMessageMeta.listPortalInfos,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listPortalInfos, hcClient);
     }
 
     /**
@@ -569,7 +560,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePortalInfoRequest 请求对象
+     * @param request UpdatePortalInfoRequest 请求对象
      * @return UpdatePortalInfoResponse
      */
     public UpdatePortalInfoResponse updatePortalInfo(UpdatePortalInfoRequest request) {
@@ -584,13 +575,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePortalInfoRequest 请求对象
+     * @param request UpdatePortalInfoRequest 请求对象
      * @return SyncInvoker<UpdatePortalInfoRequest, UpdatePortalInfoResponse>
      */
     public SyncInvoker<UpdatePortalInfoRequest, UpdatePortalInfoResponse> updatePortalInfoInvoker(
         UpdatePortalInfoRequest request) {
-        return new SyncInvoker<UpdatePortalInfoRequest, UpdatePortalInfoResponse>(request,
-            KooMessageMeta.updatePortalInfo, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.updatePortalInfo, hcClient);
     }
 
     /**
@@ -600,7 +590,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param FreezePubRequest 请求对象
+     * @param request FreezePubRequest 请求对象
      * @return FreezePubResponse
      */
     public FreezePubResponse freezePub(FreezePubRequest request) {
@@ -614,11 +604,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param FreezePubRequest 请求对象
+     * @param request FreezePubRequest 请求对象
      * @return SyncInvoker<FreezePubRequest, FreezePubResponse>
      */
     public SyncInvoker<FreezePubRequest, FreezePubResponse> freezePubInvoker(FreezePubRequest request) {
-        return new SyncInvoker<FreezePubRequest, FreezePubResponse>(request, KooMessageMeta.freezePub, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.freezePub, hcClient);
     }
 
     /**
@@ -629,7 +619,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPubInfosRequest 请求对象
+     * @param request ListPubInfosRequest 请求对象
      * @return ListPubInfosResponse
      */
     public ListPubInfosResponse listPubInfos(ListPubInfosRequest request) {
@@ -644,12 +634,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPubInfosRequest 请求对象
+     * @param request ListPubInfosRequest 请求对象
      * @return SyncInvoker<ListPubInfosRequest, ListPubInfosResponse>
      */
     public SyncInvoker<ListPubInfosRequest, ListPubInfosResponse> listPubInfosInvoker(ListPubInfosRequest request) {
-        return new SyncInvoker<ListPubInfosRequest, ListPubInfosResponse>(request, KooMessageMeta.listPubInfos,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listPubInfos, hcClient);
     }
 
     /**
@@ -659,7 +648,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnfreezePubRequest 请求对象
+     * @param request UnfreezePubRequest 请求对象
      * @return UnfreezePubResponse
      */
     public UnfreezePubResponse unfreezePub(UnfreezePubRequest request) {
@@ -673,11 +662,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnfreezePubRequest 请求对象
+     * @param request UnfreezePubRequest 请求对象
      * @return SyncInvoker<UnfreezePubRequest, UnfreezePubResponse>
      */
     public SyncInvoker<UnfreezePubRequest, UnfreezePubResponse> unfreezePubInvoker(UnfreezePubRequest request) {
-        return new SyncInvoker<UnfreezePubRequest, UnfreezePubResponse>(request, KooMessageMeta.unfreezePub, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.unfreezePub, hcClient);
     }
 
     /**
@@ -687,7 +676,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePubInfoRequest 请求对象
+     * @param request UpdatePubInfoRequest 请求对象
      * @return UpdatePubInfoResponse
      */
     public UpdatePubInfoResponse updatePubInfo(UpdatePubInfoRequest request) {
@@ -701,12 +690,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePubInfoRequest 请求对象
+     * @param request UpdatePubInfoRequest 请求对象
      * @return SyncInvoker<UpdatePubInfoRequest, UpdatePubInfoResponse>
      */
     public SyncInvoker<UpdatePubInfoRequest, UpdatePubInfoResponse> updatePubInfoInvoker(UpdatePubInfoRequest request) {
-        return new SyncInvoker<UpdatePubInfoRequest, UpdatePubInfoResponse>(request, KooMessageMeta.updatePubInfo,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.updatePubInfo, hcClient);
     }
 
     /**
@@ -716,7 +704,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePubInfoRequest 请求对象
+     * @param request CreatePubInfoRequest 请求对象
      * @return CreatePubInfoResponse
      */
     public CreatePubInfoResponse createPubInfo(CreatePubInfoRequest request) {
@@ -730,12 +718,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePubInfoRequest 请求对象
+     * @param request CreatePubInfoRequest 请求对象
      * @return SyncInvoker<CreatePubInfoRequest, CreatePubInfoResponse>
      */
     public SyncInvoker<CreatePubInfoRequest, CreatePubInfoResponse> createPubInfoInvoker(CreatePubInfoRequest request) {
-        return new SyncInvoker<CreatePubInfoRequest, CreatePubInfoResponse>(request, KooMessageMeta.createPubInfo,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.createPubInfo, hcClient);
     }
 
     /**
@@ -745,7 +732,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushMenuInfoRequest 请求对象
+     * @param request PushMenuInfoRequest 请求对象
      * @return PushMenuInfoResponse
      */
     public PushMenuInfoResponse pushMenuInfo(PushMenuInfoRequest request) {
@@ -759,12 +746,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushMenuInfoRequest 请求对象
+     * @param request PushMenuInfoRequest 请求对象
      * @return SyncInvoker<PushMenuInfoRequest, PushMenuInfoResponse>
      */
     public SyncInvoker<PushMenuInfoRequest, PushMenuInfoResponse> pushMenuInfoInvoker(PushMenuInfoRequest request) {
-        return new SyncInvoker<PushMenuInfoRequest, PushMenuInfoResponse>(request, KooMessageMeta.pushMenuInfo,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.pushMenuInfo, hcClient);
     }
 
     /**
@@ -774,7 +760,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushPortalInfoRequest 请求对象
+     * @param request PushPortalInfoRequest 请求对象
      * @return PushPortalInfoResponse
      */
     public PushPortalInfoResponse pushPortalInfo(PushPortalInfoRequest request) {
@@ -788,13 +774,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushPortalInfoRequest 请求对象
+     * @param request PushPortalInfoRequest 请求对象
      * @return SyncInvoker<PushPortalInfoRequest, PushPortalInfoResponse>
      */
     public SyncInvoker<PushPortalInfoRequest, PushPortalInfoResponse> pushPortalInfoInvoker(
         PushPortalInfoRequest request) {
-        return new SyncInvoker<PushPortalInfoRequest, PushPortalInfoResponse>(request, KooMessageMeta.pushPortalInfo,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.pushPortalInfo, hcClient);
     }
 
     /**
@@ -804,7 +789,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadMediaRequest 请求对象
+     * @param request UploadMediaRequest 请求对象
      * @return UploadMediaResponse
      */
     public UploadMediaResponse uploadMedia(UploadMediaRequest request) {
@@ -818,11 +803,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadMediaRequest 请求对象
+     * @param request UploadMediaRequest 请求对象
      * @return SyncInvoker<UploadMediaRequest, UploadMediaResponse>
      */
     public SyncInvoker<UploadMediaRequest, UploadMediaResponse> uploadMediaInvoker(UploadMediaRequest request) {
-        return new SyncInvoker<UploadMediaRequest, UploadMediaResponse>(request, KooMessageMeta.uploadMedia, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.uploadMedia, hcClient);
     }
 
     /**
@@ -832,7 +817,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAimSendTaskRequest 请求对象
+     * @param request CreateAimSendTaskRequest 请求对象
      * @return CreateAimSendTaskResponse
      */
     public CreateAimSendTaskResponse createAimSendTask(CreateAimSendTaskRequest request) {
@@ -846,13 +831,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAimSendTaskRequest 请求对象
+     * @param request CreateAimSendTaskRequest 请求对象
      * @return SyncInvoker<CreateAimSendTaskRequest, CreateAimSendTaskResponse>
      */
     public SyncInvoker<CreateAimSendTaskRequest, CreateAimSendTaskResponse> createAimSendTaskInvoker(
         CreateAimSendTaskRequest request) {
-        return new SyncInvoker<CreateAimSendTaskRequest, CreateAimSendTaskResponse>(request,
-            KooMessageMeta.createAimSendTask, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.createAimSendTask, hcClient);
     }
 
     /**
@@ -862,7 +846,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimSendDetailsRequest 请求对象
+     * @param request ListAimSendDetailsRequest 请求对象
      * @return ListAimSendDetailsResponse
      */
     public ListAimSendDetailsResponse listAimSendDetails(ListAimSendDetailsRequest request) {
@@ -876,13 +860,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimSendDetailsRequest 请求对象
+     * @param request ListAimSendDetailsRequest 请求对象
      * @return SyncInvoker<ListAimSendDetailsRequest, ListAimSendDetailsResponse>
      */
     public SyncInvoker<ListAimSendDetailsRequest, ListAimSendDetailsResponse> listAimSendDetailsInvoker(
         ListAimSendDetailsRequest request) {
-        return new SyncInvoker<ListAimSendDetailsRequest, ListAimSendDetailsResponse>(request,
-            KooMessageMeta.listAimSendDetails, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimSendDetails, hcClient);
     }
 
     /**
@@ -892,7 +875,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimSendReportsRequest 请求对象
+     * @param request ListAimSendReportsRequest 请求对象
      * @return ListAimSendReportsResponse
      */
     public ListAimSendReportsResponse listAimSendReports(ListAimSendReportsRequest request) {
@@ -906,13 +889,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimSendReportsRequest 请求对象
+     * @param request ListAimSendReportsRequest 请求对象
      * @return SyncInvoker<ListAimSendReportsRequest, ListAimSendReportsResponse>
      */
     public SyncInvoker<ListAimSendReportsRequest, ListAimSendReportsResponse> listAimSendReportsInvoker(
         ListAimSendReportsRequest request) {
-        return new SyncInvoker<ListAimSendReportsRequest, ListAimSendReportsResponse>(request,
-            KooMessageMeta.listAimSendReports, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimSendReports, hcClient);
     }
 
     /**
@@ -923,7 +905,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimSendTasksRequest 请求对象
+     * @param request ListAimSendTasksRequest 请求对象
      * @return ListAimSendTasksResponse
      */
     public ListAimSendTasksResponse listAimSendTasks(ListAimSendTasksRequest request) {
@@ -938,13 +920,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimSendTasksRequest 请求对象
+     * @param request ListAimSendTasksRequest 请求对象
      * @return SyncInvoker<ListAimSendTasksRequest, ListAimSendTasksResponse>
      */
     public SyncInvoker<ListAimSendTasksRequest, ListAimSendTasksResponse> listAimSendTasksInvoker(
         ListAimSendTasksRequest request) {
-        return new SyncInvoker<ListAimSendTasksRequest, ListAimSendTasksResponse>(request,
-            KooMessageMeta.listAimSendTasks, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimSendTasks, hcClient);
     }
 
     /**
@@ -954,7 +935,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSmsAppRequest 请求对象
+     * @param request CreateSmsAppRequest 请求对象
      * @return CreateSmsAppResponse
      */
     public CreateSmsAppResponse createSmsApp(CreateSmsAppRequest request) {
@@ -968,12 +949,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSmsAppRequest 请求对象
+     * @param request CreateSmsAppRequest 请求对象
      * @return SyncInvoker<CreateSmsAppRequest, CreateSmsAppResponse>
      */
     public SyncInvoker<CreateSmsAppRequest, CreateSmsAppResponse> createSmsAppInvoker(CreateSmsAppRequest request) {
-        return new SyncInvoker<CreateSmsAppRequest, CreateSmsAppResponse>(request, KooMessageMeta.createSmsApp,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.createSmsApp, hcClient);
     }
 
     /**
@@ -983,7 +963,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimMsgAppRequest 请求对象
+     * @param request ListAimMsgAppRequest 请求对象
      * @return ListAimMsgAppResponse
      */
     public ListAimMsgAppResponse listAimMsgApp(ListAimMsgAppRequest request) {
@@ -997,12 +977,11 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimMsgAppRequest 请求对象
+     * @param request ListAimMsgAppRequest 请求对象
      * @return SyncInvoker<ListAimMsgAppRequest, ListAimMsgAppResponse>
      */
     public SyncInvoker<ListAimMsgAppRequest, ListAimMsgAppResponse> listAimMsgAppInvoker(ListAimMsgAppRequest request) {
-        return new SyncInvoker<ListAimMsgAppRequest, ListAimMsgAppResponse>(request, KooMessageMeta.listAimMsgApp,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimMsgApp, hcClient);
     }
 
     /**
@@ -1012,7 +991,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimMsgAppDetailRequest 请求对象
+     * @param request ListAimMsgAppDetailRequest 请求对象
      * @return ListAimMsgAppDetailResponse
      */
     public ListAimMsgAppDetailResponse listAimMsgAppDetail(ListAimMsgAppDetailRequest request) {
@@ -1026,13 +1005,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimMsgAppDetailRequest 请求对象
+     * @param request ListAimMsgAppDetailRequest 请求对象
      * @return SyncInvoker<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse>
      */
     public SyncInvoker<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse> listAimMsgAppDetailInvoker(
         ListAimMsgAppDetailRequest request) {
-        return new SyncInvoker<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse>(request,
-            KooMessageMeta.listAimMsgAppDetail, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimMsgAppDetail, hcClient);
     }
 
     /**
@@ -1042,7 +1020,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAimMsgAppRequest 请求对象
+     * @param request UpdateAimMsgAppRequest 请求对象
      * @return UpdateAimMsgAppResponse
      */
     public UpdateAimMsgAppResponse updateAimMsgApp(UpdateAimMsgAppRequest request) {
@@ -1056,13 +1034,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAimMsgAppRequest 请求对象
+     * @param request UpdateAimMsgAppRequest 请求对象
      * @return SyncInvoker<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse>
      */
     public SyncInvoker<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse> updateAimMsgAppInvoker(
         UpdateAimMsgAppRequest request) {
-        return new SyncInvoker<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse>(request, KooMessageMeta.updateAimMsgApp,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.updateAimMsgApp, hcClient);
     }
 
     /**
@@ -1082,7 +1059,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendAimBatchDifferentMessagesRequest 请求对象
+     * @param request SendAimBatchDifferentMessagesRequest 请求对象
      * @return SendAimBatchDifferentMessagesResponse
      */
     public SendAimBatchDifferentMessagesResponse sendAimBatchDifferentMessages(
@@ -1107,13 +1084,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendAimBatchDifferentMessagesRequest 请求对象
+     * @param request SendAimBatchDifferentMessagesRequest 请求对象
      * @return SyncInvoker<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse>
      */
     public SyncInvoker<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse> sendAimBatchDifferentMessagesInvoker(
         SendAimBatchDifferentMessagesRequest request) {
-        return new SyncInvoker<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse>(request,
-            KooMessageMeta.sendAimBatchDifferentMessages, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.sendAimBatchDifferentMessages, hcClient);
     }
 
     /**
@@ -1133,7 +1109,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendAimBatchMessagesRequest 请求对象
+     * @param request SendAimBatchMessagesRequest 请求对象
      * @return SendAimBatchMessagesResponse
      */
     public SendAimBatchMessagesResponse sendAimBatchMessages(SendAimBatchMessagesRequest request) {
@@ -1157,13 +1133,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendAimBatchMessagesRequest 请求对象
+     * @param request SendAimBatchMessagesRequest 请求对象
      * @return SyncInvoker<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse>
      */
     public SyncInvoker<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse> sendAimBatchMessagesInvoker(
         SendAimBatchMessagesRequest request) {
-        return new SyncInvoker<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse>(request,
-            KooMessageMeta.sendAimBatchMessages, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.sendAimBatchMessages, hcClient);
     }
 
     /**
@@ -1173,7 +1148,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAimMsgSignatureRequest 请求对象
+     * @param request AddAimMsgSignatureRequest 请求对象
      * @return AddAimMsgSignatureResponse
      */
     public AddAimMsgSignatureResponse addAimMsgSignature(AddAimMsgSignatureRequest request) {
@@ -1187,13 +1162,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAimMsgSignatureRequest 请求对象
+     * @param request AddAimMsgSignatureRequest 请求对象
      * @return SyncInvoker<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse>
      */
     public SyncInvoker<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse> addAimMsgSignatureInvoker(
         AddAimMsgSignatureRequest request) {
-        return new SyncInvoker<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse>(request,
-            KooMessageMeta.addAimMsgSignature, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.addAimMsgSignature, hcClient);
     }
 
     /**
@@ -1203,7 +1177,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAimMsgSignatureRequest 请求对象
+     * @param request DeleteAimMsgSignatureRequest 请求对象
      * @return DeleteAimMsgSignatureResponse
      */
     public DeleteAimMsgSignatureResponse deleteAimMsgSignature(DeleteAimMsgSignatureRequest request) {
@@ -1217,13 +1191,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAimMsgSignatureRequest 请求对象
+     * @param request DeleteAimMsgSignatureRequest 请求对象
      * @return SyncInvoker<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse>
      */
     public SyncInvoker<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse> deleteAimMsgSignatureInvoker(
         DeleteAimMsgSignatureRequest request) {
-        return new SyncInvoker<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse>(request,
-            KooMessageMeta.deleteAimMsgSignature, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.deleteAimMsgSignature, hcClient);
     }
 
     /**
@@ -1233,7 +1206,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimMsgSignatureRequest 请求对象
+     * @param request ListAimMsgSignatureRequest 请求对象
      * @return ListAimMsgSignatureResponse
      */
     public ListAimMsgSignatureResponse listAimMsgSignature(ListAimMsgSignatureRequest request) {
@@ -1247,13 +1220,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimMsgSignatureRequest 请求对象
+     * @param request ListAimMsgSignatureRequest 请求对象
      * @return SyncInvoker<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse>
      */
     public SyncInvoker<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse> listAimMsgSignatureInvoker(
         ListAimMsgSignatureRequest request) {
-        return new SyncInvoker<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse>(request,
-            KooMessageMeta.listAimMsgSignature, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimMsgSignature, hcClient);
     }
 
     /**
@@ -1263,7 +1235,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimMsgSignatureDetailRequest 请求对象
+     * @param request ListAimMsgSignatureDetailRequest 请求对象
      * @return ListAimMsgSignatureDetailResponse
      */
     public ListAimMsgSignatureDetailResponse listAimMsgSignatureDetail(ListAimMsgSignatureDetailRequest request) {
@@ -1277,13 +1249,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimMsgSignatureDetailRequest 请求对象
+     * @param request ListAimMsgSignatureDetailRequest 请求对象
      * @return SyncInvoker<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse>
      */
     public SyncInvoker<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse> listAimMsgSignatureDetailInvoker(
         ListAimMsgSignatureDetailRequest request) {
-        return new SyncInvoker<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse>(request,
-            KooMessageMeta.listAimMsgSignatureDetail, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimMsgSignatureDetail, hcClient);
     }
 
     /**
@@ -1293,7 +1264,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAimMsgSignatureFileInfoRequest 请求对象
+     * @param request ShowAimMsgSignatureFileInfoRequest 请求对象
      * @return ShowAimMsgSignatureFileInfoResponse
      */
     public ShowAimMsgSignatureFileInfoResponse showAimMsgSignatureFileInfo(ShowAimMsgSignatureFileInfoRequest request) {
@@ -1307,13 +1278,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAimMsgSignatureFileInfoRequest 请求对象
+     * @param request ShowAimMsgSignatureFileInfoRequest 请求对象
      * @return SyncInvoker<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse>
      */
     public SyncInvoker<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse> showAimMsgSignatureFileInfoInvoker(
         ShowAimMsgSignatureFileInfoRequest request) {
-        return new SyncInvoker<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse>(request,
-            KooMessageMeta.showAimMsgSignatureFileInfo, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.showAimMsgSignatureFileInfo, hcClient);
     }
 
     /**
@@ -1323,7 +1293,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAimMsgSignatureRequest 请求对象
+     * @param request UpdateAimMsgSignatureRequest 请求对象
      * @return UpdateAimMsgSignatureResponse
      */
     public UpdateAimMsgSignatureResponse updateAimMsgSignature(UpdateAimMsgSignatureRequest request) {
@@ -1337,13 +1307,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAimMsgSignatureRequest 请求对象
+     * @param request UpdateAimMsgSignatureRequest 请求对象
      * @return SyncInvoker<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse>
      */
     public SyncInvoker<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse> updateAimMsgSignatureInvoker(
         UpdateAimMsgSignatureRequest request) {
-        return new SyncInvoker<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse>(request,
-            KooMessageMeta.updateAimMsgSignature, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.updateAimMsgSignature, hcClient);
     }
 
     /**
@@ -1353,7 +1322,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadAimMsgSignatureFileRequest 请求对象
+     * @param request UploadAimMsgSignatureFileRequest 请求对象
      * @return UploadAimMsgSignatureFileResponse
      */
     public UploadAimMsgSignatureFileResponse uploadAimMsgSignatureFile(UploadAimMsgSignatureFileRequest request) {
@@ -1367,13 +1336,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadAimMsgSignatureFileRequest 请求对象
+     * @param request UploadAimMsgSignatureFileRequest 请求对象
      * @return SyncInvoker<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse>
      */
     public SyncInvoker<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse> uploadAimMsgSignatureFileInvoker(
         UploadAimMsgSignatureFileRequest request) {
-        return new SyncInvoker<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse>(request,
-            KooMessageMeta.uploadAimMsgSignatureFile, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.uploadAimMsgSignatureFile, hcClient);
     }
 
     /**
@@ -1383,7 +1351,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAimMsgTemplateRequest 请求对象
+     * @param request CreateAimMsgTemplateRequest 请求对象
      * @return CreateAimMsgTemplateResponse
      */
     public CreateAimMsgTemplateResponse createAimMsgTemplate(CreateAimMsgTemplateRequest request) {
@@ -1397,13 +1365,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAimMsgTemplateRequest 请求对象
+     * @param request CreateAimMsgTemplateRequest 请求对象
      * @return SyncInvoker<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse>
      */
     public SyncInvoker<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse> createAimMsgTemplateInvoker(
         CreateAimMsgTemplateRequest request) {
-        return new SyncInvoker<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse>(request,
-            KooMessageMeta.createAimMsgTemplate, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.createAimMsgTemplate, hcClient);
     }
 
     /**
@@ -1413,7 +1380,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAimMsgTemplateRequest 请求对象
+     * @param request DeleteAimMsgTemplateRequest 请求对象
      * @return DeleteAimMsgTemplateResponse
      */
     public DeleteAimMsgTemplateResponse deleteAimMsgTemplate(DeleteAimMsgTemplateRequest request) {
@@ -1427,13 +1394,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAimMsgTemplateRequest 请求对象
+     * @param request DeleteAimMsgTemplateRequest 请求对象
      * @return SyncInvoker<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse>
      */
     public SyncInvoker<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse> deleteAimMsgTemplateInvoker(
         DeleteAimMsgTemplateRequest request) {
-        return new SyncInvoker<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse>(request,
-            KooMessageMeta.deleteAimMsgTemplate, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.deleteAimMsgTemplate, hcClient);
     }
 
     /**
@@ -1443,7 +1409,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimMsgTemplateRequest 请求对象
+     * @param request ListAimMsgTemplateRequest 请求对象
      * @return ListAimMsgTemplateResponse
      */
     public ListAimMsgTemplateResponse listAimMsgTemplate(ListAimMsgTemplateRequest request) {
@@ -1457,13 +1423,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimMsgTemplateRequest 请求对象
+     * @param request ListAimMsgTemplateRequest 请求对象
      * @return SyncInvoker<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse>
      */
     public SyncInvoker<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse> listAimMsgTemplateInvoker(
         ListAimMsgTemplateRequest request) {
-        return new SyncInvoker<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse>(request,
-            KooMessageMeta.listAimMsgTemplate, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimMsgTemplate, hcClient);
     }
 
     /**
@@ -1473,7 +1438,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAimMsgTemplateDetailRequest 请求对象
+     * @param request ShowAimMsgTemplateDetailRequest 请求对象
      * @return ShowAimMsgTemplateDetailResponse
      */
     public ShowAimMsgTemplateDetailResponse showAimMsgTemplateDetail(ShowAimMsgTemplateDetailRequest request) {
@@ -1487,13 +1452,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAimMsgTemplateDetailRequest 请求对象
+     * @param request ShowAimMsgTemplateDetailRequest 请求对象
      * @return SyncInvoker<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse>
      */
     public SyncInvoker<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse> showAimMsgTemplateDetailInvoker(
         ShowAimMsgTemplateDetailRequest request) {
-        return new SyncInvoker<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse>(request,
-            KooMessageMeta.showAimMsgTemplateDetail, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.showAimMsgTemplateDetail, hcClient);
     }
 
     /**
@@ -1503,7 +1467,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAimMsgTemplateVariableRequest 请求对象
+     * @param request ShowAimMsgTemplateVariableRequest 请求对象
      * @return ShowAimMsgTemplateVariableResponse
      */
     public ShowAimMsgTemplateVariableResponse showAimMsgTemplateVariable(ShowAimMsgTemplateVariableRequest request) {
@@ -1517,13 +1481,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAimMsgTemplateVariableRequest 请求对象
+     * @param request ShowAimMsgTemplateVariableRequest 请求对象
      * @return SyncInvoker<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse>
      */
     public SyncInvoker<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse> showAimMsgTemplateVariableInvoker(
         ShowAimMsgTemplateVariableRequest request) {
-        return new SyncInvoker<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse>(request,
-            KooMessageMeta.showAimMsgTemplateVariable, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.showAimMsgTemplateVariable, hcClient);
     }
 
     /**
@@ -1533,7 +1496,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAimMsgTemplateRequest 请求对象
+     * @param request UpdateAimMsgTemplateRequest 请求对象
      * @return UpdateAimMsgTemplateResponse
      */
     public UpdateAimMsgTemplateResponse updateAimMsgTemplate(UpdateAimMsgTemplateRequest request) {
@@ -1547,13 +1510,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAimMsgTemplateRequest 请求对象
+     * @param request UpdateAimMsgTemplateRequest 请求对象
      * @return SyncInvoker<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse>
      */
     public SyncInvoker<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse> updateAimMsgTemplateInvoker(
         UpdateAimMsgTemplateRequest request) {
-        return new SyncInvoker<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse>(request,
-            KooMessageMeta.updateAimMsgTemplate, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.updateAimMsgTemplate, hcClient);
     }
 
     /**
@@ -1565,7 +1527,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAimPersonalTemplateRequest 请求对象
+     * @param request CreateAimPersonalTemplateRequest 请求对象
      * @return CreateAimPersonalTemplateResponse
      */
     public CreateAimPersonalTemplateResponse createAimPersonalTemplate(CreateAimPersonalTemplateRequest request) {
@@ -1581,13 +1543,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAimPersonalTemplateRequest 请求对象
+     * @param request CreateAimPersonalTemplateRequest 请求对象
      * @return SyncInvoker<CreateAimPersonalTemplateRequest, CreateAimPersonalTemplateResponse>
      */
     public SyncInvoker<CreateAimPersonalTemplateRequest, CreateAimPersonalTemplateResponse> createAimPersonalTemplateInvoker(
         CreateAimPersonalTemplateRequest request) {
-        return new SyncInvoker<CreateAimPersonalTemplateRequest, CreateAimPersonalTemplateResponse>(request,
-            KooMessageMeta.createAimPersonalTemplate, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.createAimPersonalTemplate, hcClient);
     }
 
     /**
@@ -1597,7 +1558,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAimPersonalTemplateRequest 请求对象
+     * @param request DeleteAimPersonalTemplateRequest 请求对象
      * @return DeleteAimPersonalTemplateResponse
      */
     public DeleteAimPersonalTemplateResponse deleteAimPersonalTemplate(DeleteAimPersonalTemplateRequest request) {
@@ -1611,13 +1572,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAimPersonalTemplateRequest 请求对象
+     * @param request DeleteAimPersonalTemplateRequest 请求对象
      * @return SyncInvoker<DeleteAimPersonalTemplateRequest, DeleteAimPersonalTemplateResponse>
      */
     public SyncInvoker<DeleteAimPersonalTemplateRequest, DeleteAimPersonalTemplateResponse> deleteAimPersonalTemplateInvoker(
         DeleteAimPersonalTemplateRequest request) {
-        return new SyncInvoker<DeleteAimPersonalTemplateRequest, DeleteAimPersonalTemplateResponse>(request,
-            KooMessageMeta.deleteAimPersonalTemplate, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.deleteAimPersonalTemplate, hcClient);
     }
 
     /**
@@ -1627,7 +1587,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateMaterialRequest 请求对象
+     * @param request DeleteTemplateMaterialRequest 请求对象
      * @return DeleteTemplateMaterialResponse
      */
     public DeleteTemplateMaterialResponse deleteTemplateMaterial(DeleteTemplateMaterialRequest request) {
@@ -1641,13 +1601,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateMaterialRequest 请求对象
+     * @param request DeleteTemplateMaterialRequest 请求对象
      * @return SyncInvoker<DeleteTemplateMaterialRequest, DeleteTemplateMaterialResponse>
      */
     public SyncInvoker<DeleteTemplateMaterialRequest, DeleteTemplateMaterialResponse> deleteTemplateMaterialInvoker(
         DeleteTemplateMaterialRequest request) {
-        return new SyncInvoker<DeleteTemplateMaterialRequest, DeleteTemplateMaterialResponse>(request,
-            KooMessageMeta.deleteTemplateMaterial, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.deleteTemplateMaterial, hcClient);
     }
 
     /**
@@ -1657,7 +1616,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimTemplateMaterialsRequest 请求对象
+     * @param request ListAimTemplateMaterialsRequest 请求对象
      * @return ListAimTemplateMaterialsResponse
      */
     public ListAimTemplateMaterialsResponse listAimTemplateMaterials(ListAimTemplateMaterialsRequest request) {
@@ -1671,13 +1630,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimTemplateMaterialsRequest 请求对象
+     * @param request ListAimTemplateMaterialsRequest 请求对象
      * @return SyncInvoker<ListAimTemplateMaterialsRequest, ListAimTemplateMaterialsResponse>
      */
     public SyncInvoker<ListAimTemplateMaterialsRequest, ListAimTemplateMaterialsResponse> listAimTemplateMaterialsInvoker(
         ListAimTemplateMaterialsRequest request) {
-        return new SyncInvoker<ListAimTemplateMaterialsRequest, ListAimTemplateMaterialsResponse>(request,
-            KooMessageMeta.listAimTemplateMaterials, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimTemplateMaterials, hcClient);
     }
 
     /**
@@ -1687,7 +1645,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimTemplateReportsRequest 请求对象
+     * @param request ListAimTemplateReportsRequest 请求对象
      * @return ListAimTemplateReportsResponse
      */
     public ListAimTemplateReportsResponse listAimTemplateReports(ListAimTemplateReportsRequest request) {
@@ -1701,13 +1659,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimTemplateReportsRequest 请求对象
+     * @param request ListAimTemplateReportsRequest 请求对象
      * @return SyncInvoker<ListAimTemplateReportsRequest, ListAimTemplateReportsResponse>
      */
     public SyncInvoker<ListAimTemplateReportsRequest, ListAimTemplateReportsResponse> listAimTemplateReportsInvoker(
         ListAimTemplateReportsRequest request) {
-        return new SyncInvoker<ListAimTemplateReportsRequest, ListAimTemplateReportsResponse>(request,
-            KooMessageMeta.listAimTemplateReports, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimTemplateReports, hcClient);
     }
 
     /**
@@ -1718,7 +1675,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimTemplatesRequest 请求对象
+     * @param request ListAimTemplatesRequest 请求对象
      * @return ListAimTemplatesResponse
      */
     public ListAimTemplatesResponse listAimTemplates(ListAimTemplatesRequest request) {
@@ -1733,13 +1690,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAimTemplatesRequest 请求对象
+     * @param request ListAimTemplatesRequest 请求对象
      * @return SyncInvoker<ListAimTemplatesRequest, ListAimTemplatesResponse>
      */
     public SyncInvoker<ListAimTemplatesRequest, ListAimTemplatesResponse> listAimTemplatesInvoker(
         ListAimTemplatesRequest request) {
-        return new SyncInvoker<ListAimTemplatesRequest, ListAimTemplatesResponse>(request,
-            KooMessageMeta.listAimTemplates, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listAimTemplates, hcClient);
     }
 
     /**
@@ -1749,7 +1705,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetPrimaryVideoThumbnailRequest 请求对象
+     * @param request SetPrimaryVideoThumbnailRequest 请求对象
      * @return SetPrimaryVideoThumbnailResponse
      */
     public SetPrimaryVideoThumbnailResponse setPrimaryVideoThumbnail(SetPrimaryVideoThumbnailRequest request) {
@@ -1763,13 +1719,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetPrimaryVideoThumbnailRequest 请求对象
+     * @param request SetPrimaryVideoThumbnailRequest 请求对象
      * @return SyncInvoker<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse>
      */
     public SyncInvoker<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse> setPrimaryVideoThumbnailInvoker(
         SetPrimaryVideoThumbnailRequest request) {
-        return new SyncInvoker<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse>(request,
-            KooMessageMeta.setPrimaryVideoThumbnail, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.setPrimaryVideoThumbnail, hcClient);
     }
 
     /**
@@ -1779,7 +1734,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateVideoThumbnailRequest 请求对象
+     * @param request ShowTemplateVideoThumbnailRequest 请求对象
      * @return ShowTemplateVideoThumbnailResponse
      */
     public ShowTemplateVideoThumbnailResponse showTemplateVideoThumbnail(ShowTemplateVideoThumbnailRequest request) {
@@ -1793,13 +1748,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateVideoThumbnailRequest 请求对象
+     * @param request ShowTemplateVideoThumbnailRequest 请求对象
      * @return SyncInvoker<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse>
      */
     public SyncInvoker<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse> showTemplateVideoThumbnailInvoker(
         ShowTemplateVideoThumbnailRequest request) {
-        return new SyncInvoker<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse>(request,
-            KooMessageMeta.showTemplateVideoThumbnail, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.showTemplateVideoThumbnail, hcClient);
     }
 
     /**
@@ -1809,7 +1763,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePersonalTemplateStateRequest 请求对象
+     * @param request UpdatePersonalTemplateStateRequest 请求对象
      * @return UpdatePersonalTemplateStateResponse
      */
     public UpdatePersonalTemplateStateResponse updatePersonalTemplateState(UpdatePersonalTemplateStateRequest request) {
@@ -1823,13 +1777,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePersonalTemplateStateRequest 请求对象
+     * @param request UpdatePersonalTemplateStateRequest 请求对象
      * @return SyncInvoker<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse>
      */
     public SyncInvoker<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse> updatePersonalTemplateStateInvoker(
         UpdatePersonalTemplateStateRequest request) {
-        return new SyncInvoker<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse>(request,
-            KooMessageMeta.updatePersonalTemplateState, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.updatePersonalTemplateState, hcClient);
     }
 
     /**
@@ -1842,7 +1795,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadAimTemplateMaterialRequest 请求对象
+     * @param request UploadAimTemplateMaterialRequest 请求对象
      * @return UploadAimTemplateMaterialResponse
      */
     public UploadAimTemplateMaterialResponse uploadAimTemplateMaterial(UploadAimTemplateMaterialRequest request) {
@@ -1859,13 +1812,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadAimTemplateMaterialRequest 请求对象
+     * @param request UploadAimTemplateMaterialRequest 请求对象
      * @return SyncInvoker<UploadAimTemplateMaterialRequest, UploadAimTemplateMaterialResponse>
      */
     public SyncInvoker<UploadAimTemplateMaterialRequest, UploadAimTemplateMaterialResponse> uploadAimTemplateMaterialInvoker(
         UploadAimTemplateMaterialRequest request) {
-        return new SyncInvoker<UploadAimTemplateMaterialRequest, UploadAimTemplateMaterialResponse>(request,
-            KooMessageMeta.uploadAimTemplateMaterial, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.uploadAimTemplateMaterial, hcClient);
     }
 
     /**
@@ -1875,7 +1827,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddVmsCallBackRequest 请求对象
+     * @param request AddVmsCallBackRequest 请求对象
      * @return AddVmsCallBackResponse
      */
     public AddVmsCallBackResponse addVmsCallBack(AddVmsCallBackRequest request) {
@@ -1889,13 +1841,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddVmsCallBackRequest 请求对象
+     * @param request AddVmsCallBackRequest 请求对象
      * @return SyncInvoker<AddVmsCallBackRequest, AddVmsCallBackResponse>
      */
     public SyncInvoker<AddVmsCallBackRequest, AddVmsCallBackResponse> addVmsCallBackInvoker(
         AddVmsCallBackRequest request) {
-        return new SyncInvoker<AddVmsCallBackRequest, AddVmsCallBackResponse>(request, KooMessageMeta.addVmsCallBack,
-            hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.addVmsCallBack, hcClient);
     }
 
     /**
@@ -1905,7 +1856,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVmsSendTaskRequest 请求对象
+     * @param request CreateVmsSendTaskRequest 请求对象
      * @return CreateVmsSendTaskResponse
      */
     public CreateVmsSendTaskResponse createVmsSendTask(CreateVmsSendTaskRequest request) {
@@ -1919,13 +1870,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVmsSendTaskRequest 请求对象
+     * @param request CreateVmsSendTaskRequest 请求对象
      * @return SyncInvoker<CreateVmsSendTaskRequest, CreateVmsSendTaskResponse>
      */
     public SyncInvoker<CreateVmsSendTaskRequest, CreateVmsSendTaskResponse> createVmsSendTaskInvoker(
         CreateVmsSendTaskRequest request) {
-        return new SyncInvoker<CreateVmsSendTaskRequest, CreateVmsSendTaskResponse>(request,
-            KooMessageMeta.createVmsSendTask, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.createVmsSendTask, hcClient);
     }
 
     /**
@@ -1935,7 +1885,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVmsCallbacksRequest 请求对象
+     * @param request ListVmsCallbacksRequest 请求对象
      * @return ListVmsCallbacksResponse
      */
     public ListVmsCallbacksResponse listVmsCallbacks(ListVmsCallbacksRequest request) {
@@ -1949,13 +1899,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVmsCallbacksRequest 请求对象
+     * @param request ListVmsCallbacksRequest 请求对象
      * @return SyncInvoker<ListVmsCallbacksRequest, ListVmsCallbacksResponse>
      */
     public SyncInvoker<ListVmsCallbacksRequest, ListVmsCallbacksResponse> listVmsCallbacksInvoker(
         ListVmsCallbacksRequest request) {
-        return new SyncInvoker<ListVmsCallbacksRequest, ListVmsCallbacksResponse>(request,
-            KooMessageMeta.listVmsCallbacks, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listVmsCallbacks, hcClient);
     }
 
     /**
@@ -1965,7 +1914,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVmsSendTasksRequest 请求对象
+     * @param request ListVmsSendTasksRequest 请求对象
      * @return ListVmsSendTasksResponse
      */
     public ListVmsSendTasksResponse listVmsSendTasks(ListVmsSendTasksRequest request) {
@@ -1979,13 +1928,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVmsSendTasksRequest 请求对象
+     * @param request ListVmsSendTasksRequest 请求对象
      * @return SyncInvoker<ListVmsSendTasksRequest, ListVmsSendTasksResponse>
      */
     public SyncInvoker<ListVmsSendTasksRequest, ListVmsSendTasksResponse> listVmsSendTasksInvoker(
         ListVmsSendTasksRequest request) {
-        return new SyncInvoker<ListVmsSendTasksRequest, ListVmsSendTasksResponse>(request,
-            KooMessageMeta.listVmsSendTasks, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listVmsSendTasks, hcClient);
     }
 
     /**
@@ -1995,7 +1943,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVmsTemplateRequest 请求对象
+     * @param request CreateVmsTemplateRequest 请求对象
      * @return CreateVmsTemplateResponse
      */
     public CreateVmsTemplateResponse createVmsTemplate(CreateVmsTemplateRequest request) {
@@ -2009,13 +1957,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVmsTemplateRequest 请求对象
+     * @param request CreateVmsTemplateRequest 请求对象
      * @return SyncInvoker<CreateVmsTemplateRequest, CreateVmsTemplateResponse>
      */
     public SyncInvoker<CreateVmsTemplateRequest, CreateVmsTemplateResponse> createVmsTemplateInvoker(
         CreateVmsTemplateRequest request) {
-        return new SyncInvoker<CreateVmsTemplateRequest, CreateVmsTemplateResponse>(request,
-            KooMessageMeta.createVmsTemplate, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.createVmsTemplate, hcClient);
     }
 
     /**
@@ -2026,7 +1973,7 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVmsTemplateStatusRequest 请求对象
+     * @param request ListVmsTemplateStatusRequest 请求对象
      * @return ListVmsTemplateStatusResponse
      */
     public ListVmsTemplateStatusResponse listVmsTemplateStatus(ListVmsTemplateStatusRequest request) {
@@ -2041,13 +1988,12 @@ public class KooMessageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVmsTemplateStatusRequest 请求对象
+     * @param request ListVmsTemplateStatusRequest 请求对象
      * @return SyncInvoker<ListVmsTemplateStatusRequest, ListVmsTemplateStatusResponse>
      */
     public SyncInvoker<ListVmsTemplateStatusRequest, ListVmsTemplateStatusResponse> listVmsTemplateStatusInvoker(
         ListVmsTemplateStatusRequest request) {
-        return new SyncInvoker<ListVmsTemplateStatusRequest, ListVmsTemplateStatusResponse>(request,
-            KooMessageMeta.listVmsTemplateStatus, hcClient);
+        return new SyncInvoker<>(request, KooMessageMeta.listVmsTemplateStatus, hcClient);
     }
 
 }

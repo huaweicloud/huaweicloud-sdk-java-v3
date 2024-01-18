@@ -620,7 +620,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCancelJobRequest 请求对象
+     * @param request BatchCancelJobRequest 请求对象
      * @return CompletableFuture<BatchCancelJobResponse>
      */
     public CompletableFuture<BatchCancelJobResponse> batchCancelJobAsync(BatchCancelJobRequest request) {
@@ -634,13 +634,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCancelJobRequest 请求对象
+     * @param request BatchCancelJobRequest 请求对象
      * @return AsyncInvoker<BatchCancelJobRequest, BatchCancelJobResponse>
      */
     public AsyncInvoker<BatchCancelJobRequest, BatchCancelJobResponse> batchCancelJobAsyncInvoker(
         BatchCancelJobRequest request) {
-        return new AsyncInvoker<BatchCancelJobRequest, BatchCancelJobResponse>(request, EiHealthMeta.batchCancelJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchCancelJob, hcClient);
     }
 
     /**
@@ -650,7 +649,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDataRequest 请求对象
+     * @param request BatchDeleteDataRequest 请求对象
      * @return CompletableFuture<BatchDeleteDataResponse>
      */
     public CompletableFuture<BatchDeleteDataResponse> batchDeleteDataAsync(BatchDeleteDataRequest request) {
@@ -664,13 +663,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDataRequest 请求对象
+     * @param request BatchDeleteDataRequest 请求对象
      * @return AsyncInvoker<BatchDeleteDataRequest, BatchDeleteDataResponse>
      */
     public AsyncInvoker<BatchDeleteDataRequest, BatchDeleteDataResponse> batchDeleteDataAsyncInvoker(
         BatchDeleteDataRequest request) {
-        return new AsyncInvoker<BatchDeleteDataRequest, BatchDeleteDataResponse>(request, EiHealthMeta.batchDeleteData,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchDeleteData, hcClient);
     }
 
     /**
@@ -680,7 +678,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteJobRequest 请求对象
+     * @param request BatchDeleteJobRequest 请求对象
      * @return CompletableFuture<BatchDeleteJobResponse>
      */
     public CompletableFuture<BatchDeleteJobResponse> batchDeleteJobAsync(BatchDeleteJobRequest request) {
@@ -694,13 +692,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteJobRequest 请求对象
+     * @param request BatchDeleteJobRequest 请求对象
      * @return AsyncInvoker<BatchDeleteJobRequest, BatchDeleteJobResponse>
      */
     public AsyncInvoker<BatchDeleteJobRequest, BatchDeleteJobResponse> batchDeleteJobAsyncInvoker(
         BatchDeleteJobRequest request) {
-        return new AsyncInvoker<BatchDeleteJobRequest, BatchDeleteJobResponse>(request, EiHealthMeta.batchDeleteJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchDeleteJob, hcClient);
     }
 
     /**
@@ -710,7 +707,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteLabelRequest 请求对象
+     * @param request BatchDeleteLabelRequest 请求对象
      * @return CompletableFuture<BatchDeleteLabelResponse>
      */
     public CompletableFuture<BatchDeleteLabelResponse> batchDeleteLabelAsync(BatchDeleteLabelRequest request) {
@@ -724,13 +721,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteLabelRequest 请求对象
+     * @param request BatchDeleteLabelRequest 请求对象
      * @return AsyncInvoker<BatchDeleteLabelRequest, BatchDeleteLabelResponse>
      */
     public AsyncInvoker<BatchDeleteLabelRequest, BatchDeleteLabelResponse> batchDeleteLabelAsyncInvoker(
         BatchDeleteLabelRequest request) {
-        return new AsyncInvoker<BatchDeleteLabelRequest, BatchDeleteLabelResponse>(request,
-            EiHealthMeta.batchDeleteLabel, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchDeleteLabel, hcClient);
     }
 
     /**
@@ -740,7 +736,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMemberRequest 请求对象
+     * @param request BatchDeleteMemberRequest 请求对象
      * @return CompletableFuture<BatchDeleteMemberResponse>
      */
     public CompletableFuture<BatchDeleteMemberResponse> batchDeleteMemberAsync(BatchDeleteMemberRequest request) {
@@ -754,13 +750,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMemberRequest 请求对象
+     * @param request BatchDeleteMemberRequest 请求对象
      * @return AsyncInvoker<BatchDeleteMemberRequest, BatchDeleteMemberResponse>
      */
     public AsyncInvoker<BatchDeleteMemberRequest, BatchDeleteMemberResponse> batchDeleteMemberAsyncInvoker(
         BatchDeleteMemberRequest request) {
-        return new AsyncInvoker<BatchDeleteMemberRequest, BatchDeleteMemberResponse>(request,
-            EiHealthMeta.batchDeleteMember, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchDeleteMember, hcClient);
     }
 
     /**
@@ -770,7 +765,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteNoticeRequest 请求对象
+     * @param request BatchDeleteNoticeRequest 请求对象
      * @return CompletableFuture<BatchDeleteNoticeResponse>
      */
     public CompletableFuture<BatchDeleteNoticeResponse> batchDeleteNoticeAsync(BatchDeleteNoticeRequest request) {
@@ -784,13 +779,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteNoticeRequest 请求对象
+     * @param request BatchDeleteNoticeRequest 请求对象
      * @return AsyncInvoker<BatchDeleteNoticeRequest, BatchDeleteNoticeResponse>
      */
     public AsyncInvoker<BatchDeleteNoticeRequest, BatchDeleteNoticeResponse> batchDeleteNoticeAsyncInvoker(
         BatchDeleteNoticeRequest request) {
-        return new AsyncInvoker<BatchDeleteNoticeRequest, BatchDeleteNoticeResponse>(request,
-            EiHealthMeta.batchDeleteNotice, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchDeleteNotice, hcClient);
     }
 
     /**
@@ -800,7 +794,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagRequest 请求对象
+     * @param request BatchDeleteTagRequest 请求对象
      * @return CompletableFuture<BatchDeleteTagResponse>
      */
     public CompletableFuture<BatchDeleteTagResponse> batchDeleteTagAsync(BatchDeleteTagRequest request) {
@@ -814,13 +808,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagRequest 请求对象
+     * @param request BatchDeleteTagRequest 请求对象
      * @return AsyncInvoker<BatchDeleteTagRequest, BatchDeleteTagResponse>
      */
     public AsyncInvoker<BatchDeleteTagRequest, BatchDeleteTagResponse> batchDeleteTagAsyncInvoker(
         BatchDeleteTagRequest request) {
-        return new AsyncInvoker<BatchDeleteTagRequest, BatchDeleteTagResponse>(request, EiHealthMeta.batchDeleteTag,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchDeleteTag, hcClient);
     }
 
     /**
@@ -830,7 +823,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDownloadResourceStatDataRequest 请求对象
+     * @param request BatchDownloadResourceStatDataRequest 请求对象
      * @return CompletableFuture<BatchDownloadResourceStatDataResponse>
      */
     public CompletableFuture<BatchDownloadResourceStatDataResponse> batchDownloadResourceStatDataAsync(
@@ -845,13 +838,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDownloadResourceStatDataRequest 请求对象
+     * @param request BatchDownloadResourceStatDataRequest 请求对象
      * @return AsyncInvoker<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse>
      */
     public AsyncInvoker<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse> batchDownloadResourceStatDataAsyncInvoker(
         BatchDownloadResourceStatDataRequest request) {
-        return new AsyncInvoker<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse>(request,
-            EiHealthMeta.batchDownloadResourceStatData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchDownloadResourceStatData, hcClient);
     }
 
     /**
@@ -861,7 +853,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchImportAppRequest 请求对象
+     * @param request BatchImportAppRequest 请求对象
      * @return CompletableFuture<BatchImportAppResponse>
      */
     public CompletableFuture<BatchImportAppResponse> batchImportAppAsync(BatchImportAppRequest request) {
@@ -875,13 +867,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchImportAppRequest 请求对象
+     * @param request BatchImportAppRequest 请求对象
      * @return AsyncInvoker<BatchImportAppRequest, BatchImportAppResponse>
      */
     public AsyncInvoker<BatchImportAppRequest, BatchImportAppResponse> batchImportAppAsyncInvoker(
         BatchImportAppRequest request) {
-        return new AsyncInvoker<BatchImportAppRequest, BatchImportAppResponse>(request, EiHealthMeta.batchImportApp,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchImportApp, hcClient);
     }
 
     /**
@@ -891,7 +882,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRetryJobRequest 请求对象
+     * @param request BatchRetryJobRequest 请求对象
      * @return CompletableFuture<BatchRetryJobResponse>
      */
     public CompletableFuture<BatchRetryJobResponse> batchRetryJobAsync(BatchRetryJobRequest request) {
@@ -905,13 +896,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRetryJobRequest 请求对象
+     * @param request BatchRetryJobRequest 请求对象
      * @return AsyncInvoker<BatchRetryJobRequest, BatchRetryJobResponse>
      */
     public AsyncInvoker<BatchRetryJobRequest, BatchRetryJobResponse> batchRetryJobAsyncInvoker(
         BatchRetryJobRequest request) {
-        return new AsyncInvoker<BatchRetryJobRequest, BatchRetryJobResponse>(request, EiHealthMeta.batchRetryJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchRetryJob, hcClient);
     }
 
     /**
@@ -921,7 +911,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNodeLabelRequest 请求对象
+     * @param request BatchUpdateNodeLabelRequest 请求对象
      * @return CompletableFuture<BatchUpdateNodeLabelResponse>
      */
     public CompletableFuture<BatchUpdateNodeLabelResponse> batchUpdateNodeLabelAsync(
@@ -936,13 +926,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNodeLabelRequest 请求对象
+     * @param request BatchUpdateNodeLabelRequest 请求对象
      * @return AsyncInvoker<BatchUpdateNodeLabelRequest, BatchUpdateNodeLabelResponse>
      */
     public AsyncInvoker<BatchUpdateNodeLabelRequest, BatchUpdateNodeLabelResponse> batchUpdateNodeLabelAsyncInvoker(
         BatchUpdateNodeLabelRequest request) {
-        return new AsyncInvoker<BatchUpdateNodeLabelRequest, BatchUpdateNodeLabelResponse>(request,
-            EiHealthMeta.batchUpdateNodeLabel, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchUpdateNodeLabel, hcClient);
     }
 
     /**
@@ -952,7 +941,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNoticeRequest 请求对象
+     * @param request BatchUpdateNoticeRequest 请求对象
      * @return CompletableFuture<BatchUpdateNoticeResponse>
      */
     public CompletableFuture<BatchUpdateNoticeResponse> batchUpdateNoticeAsync(BatchUpdateNoticeRequest request) {
@@ -966,13 +955,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNoticeRequest 请求对象
+     * @param request BatchUpdateNoticeRequest 请求对象
      * @return AsyncInvoker<BatchUpdateNoticeRequest, BatchUpdateNoticeResponse>
      */
     public AsyncInvoker<BatchUpdateNoticeRequest, BatchUpdateNoticeResponse> batchUpdateNoticeAsyncInvoker(
         BatchUpdateNoticeRequest request) {
-        return new AsyncInvoker<BatchUpdateNoticeRequest, BatchUpdateNoticeResponse>(request,
-            EiHealthMeta.batchUpdateNotice, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.batchUpdateNotice, hcClient);
     }
 
     /**
@@ -982,7 +970,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelDataJobRequest 请求对象
+     * @param request CancelDataJobRequest 请求对象
      * @return CompletableFuture<CancelDataJobResponse>
      */
     public CompletableFuture<CancelDataJobResponse> cancelDataJobAsync(CancelDataJobRequest request) {
@@ -996,13 +984,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelDataJobRequest 请求对象
+     * @param request CancelDataJobRequest 请求对象
      * @return AsyncInvoker<CancelDataJobRequest, CancelDataJobResponse>
      */
     public AsyncInvoker<CancelDataJobRequest, CancelDataJobResponse> cancelDataJobAsyncInvoker(
         CancelDataJobRequest request) {
-        return new AsyncInvoker<CancelDataJobRequest, CancelDataJobResponse>(request, EiHealthMeta.cancelDataJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.cancelDataJob, hcClient);
     }
 
     /**
@@ -1012,7 +999,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelDrugJobRequest 请求对象
+     * @param request CancelDrugJobRequest 请求对象
      * @return CompletableFuture<CancelDrugJobResponse>
      */
     public CompletableFuture<CancelDrugJobResponse> cancelDrugJobAsync(CancelDrugJobRequest request) {
@@ -1026,13 +1013,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelDrugJobRequest 请求对象
+     * @param request CancelDrugJobRequest 请求对象
      * @return AsyncInvoker<CancelDrugJobRequest, CancelDrugJobResponse>
      */
     public AsyncInvoker<CancelDrugJobRequest, CancelDrugJobResponse> cancelDrugJobAsyncInvoker(
         CancelDrugJobRequest request) {
-        return new AsyncInvoker<CancelDrugJobRequest, CancelDrugJobResponse>(request, EiHealthMeta.cancelDrugJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.cancelDrugJob, hcClient);
     }
 
     /**
@@ -1042,7 +1028,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelJobRequest 请求对象
+     * @param request CancelJobRequest 请求对象
      * @return CompletableFuture<CancelJobResponse>
      */
     public CompletableFuture<CancelJobResponse> cancelJobAsync(CancelJobRequest request) {
@@ -1056,11 +1042,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelJobRequest 请求对象
+     * @param request CancelJobRequest 请求对象
      * @return AsyncInvoker<CancelJobRequest, CancelJobResponse>
      */
     public AsyncInvoker<CancelJobRequest, CancelJobResponse> cancelJobAsyncInvoker(CancelJobRequest request) {
-        return new AsyncInvoker<CancelJobRequest, CancelJobResponse>(request, EiHealthMeta.cancelJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.cancelJob, hcClient);
     }
 
     /**
@@ -1070,7 +1056,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePasswordRequest 请求对象
+     * @param request ChangePasswordRequest 请求对象
      * @return CompletableFuture<ChangePasswordResponse>
      */
     public CompletableFuture<ChangePasswordResponse> changePasswordAsync(ChangePasswordRequest request) {
@@ -1084,13 +1070,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePasswordRequest 请求对象
+     * @param request ChangePasswordRequest 请求对象
      * @return AsyncInvoker<ChangePasswordRequest, ChangePasswordResponse>
      */
     public AsyncInvoker<ChangePasswordRequest, ChangePasswordResponse> changePasswordAsyncInvoker(
         ChangePasswordRequest request) {
-        return new AsyncInvoker<ChangePasswordRequest, ChangePasswordResponse>(request, EiHealthMeta.changePassword,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.changePassword, hcClient);
     }
 
     /**
@@ -1100,7 +1085,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckEmailConnectionRequest 请求对象
+     * @param request CheckEmailConnectionRequest 请求对象
      * @return CompletableFuture<CheckEmailConnectionResponse>
      */
     public CompletableFuture<CheckEmailConnectionResponse> checkEmailConnectionAsync(
@@ -1115,13 +1100,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckEmailConnectionRequest 请求对象
+     * @param request CheckEmailConnectionRequest 请求对象
      * @return AsyncInvoker<CheckEmailConnectionRequest, CheckEmailConnectionResponse>
      */
     public AsyncInvoker<CheckEmailConnectionRequest, CheckEmailConnectionResponse> checkEmailConnectionAsyncInvoker(
         CheckEmailConnectionRequest request) {
-        return new AsyncInvoker<CheckEmailConnectionRequest, CheckEmailConnectionResponse>(request,
-            EiHealthMeta.checkEmailConnection, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.checkEmailConnection, hcClient);
     }
 
     /**
@@ -1131,7 +1115,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTokenVerificationRequest 请求对象
+     * @param request CheckTokenVerificationRequest 请求对象
      * @return CompletableFuture<CheckTokenVerificationResponse>
      */
     public CompletableFuture<CheckTokenVerificationResponse> checkTokenVerificationAsync(
@@ -1146,13 +1130,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTokenVerificationRequest 请求对象
+     * @param request CheckTokenVerificationRequest 请求对象
      * @return AsyncInvoker<CheckTokenVerificationRequest, CheckTokenVerificationResponse>
      */
     public AsyncInvoker<CheckTokenVerificationRequest, CheckTokenVerificationResponse> checkTokenVerificationAsyncInvoker(
         CheckTokenVerificationRequest request) {
-        return new AsyncInvoker<CheckTokenVerificationRequest, CheckTokenVerificationResponse>(request,
-            EiHealthMeta.checkTokenVerification, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.checkTokenVerification, hcClient);
     }
 
     /**
@@ -1162,7 +1145,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyDataRequest 请求对象
+     * @param request CopyDataRequest 请求对象
      * @return CompletableFuture<CopyDataResponse>
      */
     public CompletableFuture<CopyDataResponse> copyDataAsync(CopyDataRequest request) {
@@ -1176,11 +1159,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyDataRequest 请求对象
+     * @param request CopyDataRequest 请求对象
      * @return AsyncInvoker<CopyDataRequest, CopyDataResponse>
      */
     public AsyncInvoker<CopyDataRequest, CopyDataResponse> copyDataAsyncInvoker(CopyDataRequest request) {
-        return new AsyncInvoker<CopyDataRequest, CopyDataResponse>(request, EiHealthMeta.copyData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.copyData, hcClient);
     }
 
     /**
@@ -1190,7 +1173,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAdmetJobRequest 请求对象
+     * @param request CreateAdmetJobRequest 请求对象
      * @return CompletableFuture<CreateAdmetJobResponse>
      */
     public CompletableFuture<CreateAdmetJobResponse> createAdmetJobAsync(CreateAdmetJobRequest request) {
@@ -1204,13 +1187,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAdmetJobRequest 请求对象
+     * @param request CreateAdmetJobRequest 请求对象
      * @return AsyncInvoker<CreateAdmetJobRequest, CreateAdmetJobResponse>
      */
     public AsyncInvoker<CreateAdmetJobRequest, CreateAdmetJobResponse> createAdmetJobAsyncInvoker(
         CreateAdmetJobRequest request) {
-        return new AsyncInvoker<CreateAdmetJobRequest, CreateAdmetJobResponse>(request, EiHealthMeta.createAdmetJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createAdmetJob, hcClient);
     }
 
     /**
@@ -1220,7 +1202,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return CompletableFuture<CreateAppResponse>
      */
     public CompletableFuture<CreateAppResponse> createAppAsync(CreateAppRequest request) {
@@ -1234,11 +1216,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return AsyncInvoker<CreateAppRequest, CreateAppResponse>
      */
     public AsyncInvoker<CreateAppRequest, CreateAppResponse> createAppAsyncInvoker(CreateAppRequest request) {
-        return new AsyncInvoker<CreateAppRequest, CreateAppResponse>(request, EiHealthMeta.createApp, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createApp, hcClient);
     }
 
     /**
@@ -1248,7 +1230,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAutoJobRequest 请求对象
+     * @param request CreateAutoJobRequest 请求对象
      * @return CompletableFuture<CreateAutoJobResponse>
      */
     public CompletableFuture<CreateAutoJobResponse> createAutoJobAsync(CreateAutoJobRequest request) {
@@ -1262,13 +1244,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAutoJobRequest 请求对象
+     * @param request CreateAutoJobRequest 请求对象
      * @return AsyncInvoker<CreateAutoJobRequest, CreateAutoJobResponse>
      */
     public AsyncInvoker<CreateAutoJobRequest, CreateAutoJobResponse> createAutoJobAsyncInvoker(
         CreateAutoJobRequest request) {
-        return new AsyncInvoker<CreateAutoJobRequest, CreateAutoJobResponse>(request, EiHealthMeta.createAutoJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createAutoJob, hcClient);
     }
 
     /**
@@ -1278,7 +1259,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackupRequest 请求对象
+     * @param request CreateBackupRequest 请求对象
      * @return CompletableFuture<CreateBackupResponse>
      */
     public CompletableFuture<CreateBackupResponse> createBackupAsync(CreateBackupRequest request) {
@@ -1292,13 +1273,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackupRequest 请求对象
+     * @param request CreateBackupRequest 请求对象
      * @return AsyncInvoker<CreateBackupRequest, CreateBackupResponse>
      */
     public AsyncInvoker<CreateBackupRequest, CreateBackupResponse> createBackupAsyncInvoker(
         CreateBackupRequest request) {
-        return new AsyncInvoker<CreateBackupRequest, CreateBackupResponse>(request, EiHealthMeta.createBackup,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createBackup, hcClient);
     }
 
     /**
@@ -1308,7 +1288,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCodeRequest 请求对象
+     * @param request CreateCodeRequest 请求对象
      * @return CompletableFuture<CreateCodeResponse>
      */
     public CompletableFuture<CreateCodeResponse> createCodeAsync(CreateCodeRequest request) {
@@ -1322,11 +1302,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCodeRequest 请求对象
+     * @param request CreateCodeRequest 请求对象
      * @return AsyncInvoker<CreateCodeRequest, CreateCodeResponse>
      */
     public AsyncInvoker<CreateCodeRequest, CreateCodeResponse> createCodeAsyncInvoker(CreateCodeRequest request) {
-        return new AsyncInvoker<CreateCodeRequest, CreateCodeResponse>(request, EiHealthMeta.createCode, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createCode, hcClient);
     }
 
     /**
@@ -1336,7 +1316,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateComputingResourceRequest 请求对象
+     * @param request CreateComputingResourceRequest 请求对象
      * @return CompletableFuture<CreateComputingResourceResponse>
      */
     public CompletableFuture<CreateComputingResourceResponse> createComputingResourceAsync(
@@ -1351,13 +1331,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateComputingResourceRequest 请求对象
+     * @param request CreateComputingResourceRequest 请求对象
      * @return AsyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse>
      */
     public AsyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse> createComputingResourceAsyncInvoker(
         CreateComputingResourceRequest request) {
-        return new AsyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse>(request,
-            EiHealthMeta.createComputingResource, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createComputingResource, hcClient);
     }
 
     /**
@@ -1367,7 +1346,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataRequest 请求对象
+     * @param request CreateDataRequest 请求对象
      * @return CompletableFuture<CreateDataResponse>
      */
     public CompletableFuture<CreateDataResponse> createDataAsync(CreateDataRequest request) {
@@ -1381,11 +1360,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataRequest 请求对象
+     * @param request CreateDataRequest 请求对象
      * @return AsyncInvoker<CreateDataRequest, CreateDataResponse>
      */
     public AsyncInvoker<CreateDataRequest, CreateDataResponse> createDataAsyncInvoker(CreateDataRequest request) {
-        return new AsyncInvoker<CreateDataRequest, CreateDataResponse>(request, EiHealthMeta.createData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createData, hcClient);
     }
 
     /**
@@ -1395,7 +1374,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseDataRequest 请求对象
+     * @param request CreateDatabaseDataRequest 请求对象
      * @return CompletableFuture<CreateDatabaseDataResponse>
      */
     public CompletableFuture<CreateDatabaseDataResponse> createDatabaseDataAsync(CreateDatabaseDataRequest request) {
@@ -1409,13 +1388,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseDataRequest 请求对象
+     * @param request CreateDatabaseDataRequest 请求对象
      * @return AsyncInvoker<CreateDatabaseDataRequest, CreateDatabaseDataResponse>
      */
     public AsyncInvoker<CreateDatabaseDataRequest, CreateDatabaseDataResponse> createDatabaseDataAsyncInvoker(
         CreateDatabaseDataRequest request) {
-        return new AsyncInvoker<CreateDatabaseDataRequest, CreateDatabaseDataResponse>(request,
-            EiHealthMeta.createDatabaseData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createDatabaseData, hcClient);
     }
 
     /**
@@ -1425,7 +1403,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseResourceRequest 请求对象
+     * @param request CreateDatabaseResourceRequest 请求对象
      * @return CompletableFuture<CreateDatabaseResourceResponse>
      */
     public CompletableFuture<CreateDatabaseResourceResponse> createDatabaseResourceAsync(
@@ -1440,13 +1418,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseResourceRequest 请求对象
+     * @param request CreateDatabaseResourceRequest 请求对象
      * @return AsyncInvoker<CreateDatabaseResourceRequest, CreateDatabaseResourceResponse>
      */
     public AsyncInvoker<CreateDatabaseResourceRequest, CreateDatabaseResourceResponse> createDatabaseResourceAsyncInvoker(
         CreateDatabaseResourceRequest request) {
-        return new AsyncInvoker<CreateDatabaseResourceRequest, CreateDatabaseResourceResponse>(request,
-            EiHealthMeta.createDatabaseResource, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createDatabaseResource, hcClient);
     }
 
     /**
@@ -1456,7 +1433,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDockingJobRequest 请求对象
+     * @param request CreateDockingJobRequest 请求对象
      * @return CompletableFuture<CreateDockingJobResponse>
      */
     public CompletableFuture<CreateDockingJobResponse> createDockingJobAsync(CreateDockingJobRequest request) {
@@ -1470,13 +1447,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDockingJobRequest 请求对象
+     * @param request CreateDockingJobRequest 请求对象
      * @return AsyncInvoker<CreateDockingJobRequest, CreateDockingJobResponse>
      */
     public AsyncInvoker<CreateDockingJobRequest, CreateDockingJobResponse> createDockingJobAsyncInvoker(
         CreateDockingJobRequest request) {
-        return new AsyncInvoker<CreateDockingJobRequest, CreateDockingJobResponse>(request,
-            EiHealthMeta.createDockingJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createDockingJob, hcClient);
     }
 
     /**
@@ -1486,7 +1462,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugModelRequest 请求对象
+     * @param request CreateDrugModelRequest 请求对象
      * @return CompletableFuture<CreateDrugModelResponse>
      */
     public CompletableFuture<CreateDrugModelResponse> createDrugModelAsync(CreateDrugModelRequest request) {
@@ -1500,13 +1476,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugModelRequest 请求对象
+     * @param request CreateDrugModelRequest 请求对象
      * @return AsyncInvoker<CreateDrugModelRequest, CreateDrugModelResponse>
      */
     public AsyncInvoker<CreateDrugModelRequest, CreateDrugModelResponse> createDrugModelAsyncInvoker(
         CreateDrugModelRequest request) {
-        return new AsyncInvoker<CreateDrugModelRequest, CreateDrugModelResponse>(request, EiHealthMeta.createDrugModel,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createDrugModel, hcClient);
     }
 
     /**
@@ -1516,7 +1491,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFepJobRequest 请求对象
+     * @param request CreateFepJobRequest 请求对象
      * @return CompletableFuture<CreateFepJobResponse>
      */
     public CompletableFuture<CreateFepJobResponse> createFepJobAsync(CreateFepJobRequest request) {
@@ -1530,13 +1505,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFepJobRequest 请求对象
+     * @param request CreateFepJobRequest 请求对象
      * @return AsyncInvoker<CreateFepJobRequest, CreateFepJobResponse>
      */
     public AsyncInvoker<CreateFepJobRequest, CreateFepJobResponse> createFepJobAsyncInvoker(
         CreateFepJobRequest request) {
-        return new AsyncInvoker<CreateFepJobRequest, CreateFepJobResponse>(request, EiHealthMeta.createFepJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createFepJob, hcClient);
     }
 
     /**
@@ -1546,7 +1520,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageRequest 请求对象
+     * @param request CreateImageRequest 请求对象
      * @return CompletableFuture<CreateImageResponse>
      */
     public CompletableFuture<CreateImageResponse> createImageAsync(CreateImageRequest request) {
@@ -1560,11 +1534,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageRequest 请求对象
+     * @param request CreateImageRequest 请求对象
      * @return AsyncInvoker<CreateImageRequest, CreateImageResponse>
      */
     public AsyncInvoker<CreateImageRequest, CreateImageResponse> createImageAsyncInvoker(CreateImageRequest request) {
-        return new AsyncInvoker<CreateImageRequest, CreateImageResponse>(request, EiHealthMeta.createImage, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createImage, hcClient);
     }
 
     /**
@@ -1574,7 +1548,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
      */
     public CompletableFuture<CreateInstanceResponse> createInstanceAsync(CreateInstanceRequest request) {
@@ -1588,13 +1562,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
     public AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceAsyncInvoker(
         CreateInstanceRequest request) {
-        return new AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, EiHealthMeta.createInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createInstance, hcClient);
     }
 
     /**
@@ -1604,7 +1577,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLabelRequest 请求对象
+     * @param request CreateLabelRequest 请求对象
      * @return CompletableFuture<CreateLabelResponse>
      */
     public CompletableFuture<CreateLabelResponse> createLabelAsync(CreateLabelRequest request) {
@@ -1618,11 +1591,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLabelRequest 请求对象
+     * @param request CreateLabelRequest 请求对象
      * @return AsyncInvoker<CreateLabelRequest, CreateLabelResponse>
      */
     public AsyncInvoker<CreateLabelRequest, CreateLabelResponse> createLabelAsyncInvoker(CreateLabelRequest request) {
-        return new AsyncInvoker<CreateLabelRequest, CreateLabelResponse>(request, EiHealthMeta.createLabel, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createLabel, hcClient);
     }
 
     /**
@@ -1632,7 +1605,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLabelPageRequest 请求对象
+     * @param request CreateLabelPageRequest 请求对象
      * @return CompletableFuture<CreateLabelPageResponse>
      */
     public CompletableFuture<CreateLabelPageResponse> createLabelPageAsync(CreateLabelPageRequest request) {
@@ -1646,13 +1619,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLabelPageRequest 请求对象
+     * @param request CreateLabelPageRequest 请求对象
      * @return AsyncInvoker<CreateLabelPageRequest, CreateLabelPageResponse>
      */
     public AsyncInvoker<CreateLabelPageRequest, CreateLabelPageResponse> createLabelPageAsyncInvoker(
         CreateLabelPageRequest request) {
-        return new AsyncInvoker<CreateLabelPageRequest, CreateLabelPageResponse>(request, EiHealthMeta.createLabelPage,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createLabelPage, hcClient);
     }
 
     /**
@@ -1662,7 +1634,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOptmJobRequest 请求对象
+     * @param request CreateOptmJobRequest 请求对象
      * @return CompletableFuture<CreateOptmJobResponse>
      */
     public CompletableFuture<CreateOptmJobResponse> createOptmJobAsync(CreateOptmJobRequest request) {
@@ -1676,13 +1648,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOptmJobRequest 请求对象
+     * @param request CreateOptmJobRequest 请求对象
      * @return AsyncInvoker<CreateOptmJobRequest, CreateOptmJobResponse>
      */
     public AsyncInvoker<CreateOptmJobRequest, CreateOptmJobResponse> createOptmJobAsyncInvoker(
         CreateOptmJobRequest request) {
-        return new AsyncInvoker<CreateOptmJobRequest, CreateOptmJobResponse>(request, EiHealthMeta.createOptmJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createOptmJob, hcClient);
     }
 
     /**
@@ -1692,7 +1663,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePerformanceResourceRequest 请求对象
+     * @param request CreatePerformanceResourceRequest 请求对象
      * @return CompletableFuture<CreatePerformanceResourceResponse>
      */
     public CompletableFuture<CreatePerformanceResourceResponse> createPerformanceResourceAsync(
@@ -1707,13 +1678,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePerformanceResourceRequest 请求对象
+     * @param request CreatePerformanceResourceRequest 请求对象
      * @return AsyncInvoker<CreatePerformanceResourceRequest, CreatePerformanceResourceResponse>
      */
     public AsyncInvoker<CreatePerformanceResourceRequest, CreatePerformanceResourceResponse> createPerformanceResourceAsyncInvoker(
         CreatePerformanceResourceRequest request) {
-        return new AsyncInvoker<CreatePerformanceResourceRequest, CreatePerformanceResourceResponse>(request,
-            EiHealthMeta.createPerformanceResource, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createPerformanceResource, hcClient);
     }
 
     /**
@@ -1723,7 +1693,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePocketDetectionJobRequest 请求对象
+     * @param request CreatePocketDetectionJobRequest 请求对象
      * @return CompletableFuture<CreatePocketDetectionJobResponse>
      */
     public CompletableFuture<CreatePocketDetectionJobResponse> createPocketDetectionJobAsync(
@@ -1738,13 +1708,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePocketDetectionJobRequest 请求对象
+     * @param request CreatePocketDetectionJobRequest 请求对象
      * @return AsyncInvoker<CreatePocketDetectionJobRequest, CreatePocketDetectionJobResponse>
      */
     public AsyncInvoker<CreatePocketDetectionJobRequest, CreatePocketDetectionJobResponse> createPocketDetectionJobAsyncInvoker(
         CreatePocketDetectionJobRequest request) {
-        return new AsyncInvoker<CreatePocketDetectionJobRequest, CreatePocketDetectionJobResponse>(request,
-            EiHealthMeta.createPocketDetectionJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createPocketDetectionJob, hcClient);
     }
 
     /**
@@ -1754,7 +1723,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePocketMolDesignJobRequest 请求对象
+     * @param request CreatePocketMolDesignJobRequest 请求对象
      * @return CompletableFuture<CreatePocketMolDesignJobResponse>
      */
     public CompletableFuture<CreatePocketMolDesignJobResponse> createPocketMolDesignJobAsync(
@@ -1769,13 +1738,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePocketMolDesignJobRequest 请求对象
+     * @param request CreatePocketMolDesignJobRequest 请求对象
      * @return AsyncInvoker<CreatePocketMolDesignJobRequest, CreatePocketMolDesignJobResponse>
      */
     public AsyncInvoker<CreatePocketMolDesignJobRequest, CreatePocketMolDesignJobResponse> createPocketMolDesignJobAsyncInvoker(
         CreatePocketMolDesignJobRequest request) {
-        return new AsyncInvoker<CreatePocketMolDesignJobRequest, CreatePocketMolDesignJobResponse>(request,
-            EiHealthMeta.createPocketMolDesignJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createPocketMolDesignJob, hcClient);
     }
 
     /**
@@ -1785,7 +1753,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectRequest 请求对象
+     * @param request CreateProjectRequest 请求对象
      * @return CompletableFuture<CreateProjectResponse>
      */
     public CompletableFuture<CreateProjectResponse> createProjectAsync(CreateProjectRequest request) {
@@ -1799,13 +1767,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectRequest 请求对象
+     * @param request CreateProjectRequest 请求对象
      * @return AsyncInvoker<CreateProjectRequest, CreateProjectResponse>
      */
     public AsyncInvoker<CreateProjectRequest, CreateProjectResponse> createProjectAsyncInvoker(
         CreateProjectRequest request) {
-        return new AsyncInvoker<CreateProjectRequest, CreateProjectResponse>(request, EiHealthMeta.createProject,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createProject, hcClient);
     }
 
     /**
@@ -1815,7 +1782,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScaleOutPolicyRequest 请求对象
+     * @param request CreateScaleOutPolicyRequest 请求对象
      * @return CompletableFuture<CreateScaleOutPolicyResponse>
      */
     public CompletableFuture<CreateScaleOutPolicyResponse> createScaleOutPolicyAsync(
@@ -1830,13 +1797,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScaleOutPolicyRequest 请求对象
+     * @param request CreateScaleOutPolicyRequest 请求对象
      * @return AsyncInvoker<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse>
      */
     public AsyncInvoker<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse> createScaleOutPolicyAsyncInvoker(
         CreateScaleOutPolicyRequest request) {
-        return new AsyncInvoker<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse>(request,
-            EiHealthMeta.createScaleOutPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createScaleOutPolicy, hcClient);
     }
 
     /**
@@ -1846,7 +1812,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStudyRequest 请求对象
+     * @param request CreateStudyRequest 请求对象
      * @return CompletableFuture<CreateStudyResponse>
      */
     public CompletableFuture<CreateStudyResponse> createStudyAsync(CreateStudyRequest request) {
@@ -1860,11 +1826,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStudyRequest 请求对象
+     * @param request CreateStudyRequest 请求对象
      * @return AsyncInvoker<CreateStudyRequest, CreateStudyResponse>
      */
     public AsyncInvoker<CreateStudyRequest, CreateStudyResponse> createStudyAsyncInvoker(CreateStudyRequest request) {
-        return new AsyncInvoker<CreateStudyRequest, CreateStudyResponse>(request, EiHealthMeta.createStudy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createStudy, hcClient);
     }
 
     /**
@@ -1874,7 +1840,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStudyJobRequest 请求对象
+     * @param request CreateStudyJobRequest 请求对象
      * @return CompletableFuture<CreateStudyJobResponse>
      */
     public CompletableFuture<CreateStudyJobResponse> createStudyJobAsync(CreateStudyJobRequest request) {
@@ -1888,13 +1854,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStudyJobRequest 请求对象
+     * @param request CreateStudyJobRequest 请求对象
      * @return AsyncInvoker<CreateStudyJobRequest, CreateStudyJobResponse>
      */
     public AsyncInvoker<CreateStudyJobRequest, CreateStudyJobResponse> createStudyJobAsyncInvoker(
         CreateStudyJobRequest request) {
-        return new AsyncInvoker<CreateStudyJobRequest, CreateStudyJobResponse>(request, EiHealthMeta.createStudyJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createStudyJob, hcClient);
     }
 
     /**
@@ -1904,7 +1869,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSynthesisJobRequest 请求对象
+     * @param request CreateSynthesisJobRequest 请求对象
      * @return CompletableFuture<CreateSynthesisJobResponse>
      */
     public CompletableFuture<CreateSynthesisJobResponse> createSynthesisJobAsync(CreateSynthesisJobRequest request) {
@@ -1918,13 +1883,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSynthesisJobRequest 请求对象
+     * @param request CreateSynthesisJobRequest 请求对象
      * @return AsyncInvoker<CreateSynthesisJobRequest, CreateSynthesisJobResponse>
      */
     public AsyncInvoker<CreateSynthesisJobRequest, CreateSynthesisJobResponse> createSynthesisJobAsyncInvoker(
         CreateSynthesisJobRequest request) {
-        return new AsyncInvoker<CreateSynthesisJobRequest, CreateSynthesisJobResponse>(request,
-            EiHealthMeta.createSynthesisJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createSynthesisJob, hcClient);
     }
 
     /**
@@ -1934,7 +1898,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateRequest 请求对象
+     * @param request CreateTemplateRequest 请求对象
      * @return CompletableFuture<CreateTemplateResponse>
      */
     public CompletableFuture<CreateTemplateResponse> createTemplateAsync(CreateTemplateRequest request) {
@@ -1948,13 +1912,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateRequest 请求对象
+     * @param request CreateTemplateRequest 请求对象
      * @return AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
      */
     public AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateAsyncInvoker(
         CreateTemplateRequest request) {
-        return new AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>(request, EiHealthMeta.createTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createTemplate, hcClient);
     }
 
     /**
@@ -1964,7 +1927,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUserRequest 请求对象
+     * @param request CreateUserRequest 请求对象
      * @return CompletableFuture<CreateUserResponse>
      */
     public CompletableFuture<CreateUserResponse> createUserAsync(CreateUserRequest request) {
@@ -1978,11 +1941,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUserRequest 请求对象
+     * @param request CreateUserRequest 请求对象
      * @return AsyncInvoker<CreateUserRequest, CreateUserResponse>
      */
     public AsyncInvoker<CreateUserRequest, CreateUserResponse> createUserAsyncInvoker(CreateUserRequest request) {
-        return new AsyncInvoker<CreateUserRequest, CreateUserResponse>(request, EiHealthMeta.createUser, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createUser, hcClient);
     }
 
     /**
@@ -1992,7 +1955,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowRequest 请求对象
+     * @param request CreateWorkflowRequest 请求对象
      * @return CompletableFuture<CreateWorkflowResponse>
      */
     public CompletableFuture<CreateWorkflowResponse> createWorkflowAsync(CreateWorkflowRequest request) {
@@ -2006,13 +1969,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowRequest 请求对象
+     * @param request CreateWorkflowRequest 请求对象
      * @return AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
      */
     public AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowAsyncInvoker(
         CreateWorkflowRequest request) {
-        return new AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request, EiHealthMeta.createWorkflow,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createWorkflow, hcClient);
     }
 
     /**
@@ -2022,7 +1984,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return CompletableFuture<DeleteAppResponse>
      */
     public CompletableFuture<DeleteAppResponse> deleteAppAsync(DeleteAppRequest request) {
@@ -2036,11 +1998,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return AsyncInvoker<DeleteAppRequest, DeleteAppResponse>
      */
     public AsyncInvoker<DeleteAppRequest, DeleteAppResponse> deleteAppAsyncInvoker(DeleteAppRequest request) {
-        return new AsyncInvoker<DeleteAppRequest, DeleteAppResponse>(request, EiHealthMeta.deleteApp, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteApp, hcClient);
     }
 
     /**
@@ -2050,7 +2012,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetVersionRequest 请求对象
+     * @param request DeleteAssetVersionRequest 请求对象
      * @return CompletableFuture<DeleteAssetVersionResponse>
      */
     public CompletableFuture<DeleteAssetVersionResponse> deleteAssetVersionAsync(DeleteAssetVersionRequest request) {
@@ -2064,13 +2026,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetVersionRequest 请求对象
+     * @param request DeleteAssetVersionRequest 请求对象
      * @return AsyncInvoker<DeleteAssetVersionRequest, DeleteAssetVersionResponse>
      */
     public AsyncInvoker<DeleteAssetVersionRequest, DeleteAssetVersionResponse> deleteAssetVersionAsyncInvoker(
         DeleteAssetVersionRequest request) {
-        return new AsyncInvoker<DeleteAssetVersionRequest, DeleteAssetVersionResponse>(request,
-            EiHealthMeta.deleteAssetVersion, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteAssetVersion, hcClient);
     }
 
     /**
@@ -2080,7 +2041,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAutoJobRequest 请求对象
+     * @param request DeleteAutoJobRequest 请求对象
      * @return CompletableFuture<DeleteAutoJobResponse>
      */
     public CompletableFuture<DeleteAutoJobResponse> deleteAutoJobAsync(DeleteAutoJobRequest request) {
@@ -2094,13 +2055,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAutoJobRequest 请求对象
+     * @param request DeleteAutoJobRequest 请求对象
      * @return AsyncInvoker<DeleteAutoJobRequest, DeleteAutoJobResponse>
      */
     public AsyncInvoker<DeleteAutoJobRequest, DeleteAutoJobResponse> deleteAutoJobAsyncInvoker(
         DeleteAutoJobRequest request) {
-        return new AsyncInvoker<DeleteAutoJobRequest, DeleteAutoJobResponse>(request, EiHealthMeta.deleteAutoJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteAutoJob, hcClient);
     }
 
     /**
@@ -2110,7 +2070,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return CompletableFuture<DeleteBackupResponse>
      */
     public CompletableFuture<DeleteBackupResponse> deleteBackupAsync(DeleteBackupRequest request) {
@@ -2124,13 +2084,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
      */
     public AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse> deleteBackupAsyncInvoker(
         DeleteBackupRequest request) {
-        return new AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>(request, EiHealthMeta.deleteBackup,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteBackup, hcClient);
     }
 
     /**
@@ -2140,7 +2099,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteComputingResourceRequest 请求对象
+     * @param request DeleteComputingResourceRequest 请求对象
      * @return CompletableFuture<DeleteComputingResourceResponse>
      */
     public CompletableFuture<DeleteComputingResourceResponse> deleteComputingResourceAsync(
@@ -2155,13 +2114,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteComputingResourceRequest 请求对象
+     * @param request DeleteComputingResourceRequest 请求对象
      * @return AsyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse>
      */
     public AsyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse> deleteComputingResourceAsyncInvoker(
         DeleteComputingResourceRequest request) {
-        return new AsyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse>(request,
-            EiHealthMeta.deleteComputingResource, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteComputingResource, hcClient);
     }
 
     /**
@@ -2171,7 +2129,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataJobRequest 请求对象
+     * @param request DeleteDataJobRequest 请求对象
      * @return CompletableFuture<DeleteDataJobResponse>
      */
     public CompletableFuture<DeleteDataJobResponse> deleteDataJobAsync(DeleteDataJobRequest request) {
@@ -2185,13 +2143,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataJobRequest 请求对象
+     * @param request DeleteDataJobRequest 请求对象
      * @return AsyncInvoker<DeleteDataJobRequest, DeleteDataJobResponse>
      */
     public AsyncInvoker<DeleteDataJobRequest, DeleteDataJobResponse> deleteDataJobAsyncInvoker(
         DeleteDataJobRequest request) {
-        return new AsyncInvoker<DeleteDataJobRequest, DeleteDataJobResponse>(request, EiHealthMeta.deleteDataJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteDataJob, hcClient);
     }
 
     /**
@@ -2201,7 +2158,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseDataRequest 请求对象
+     * @param request DeleteDatabaseDataRequest 请求对象
      * @return CompletableFuture<DeleteDatabaseDataResponse>
      */
     public CompletableFuture<DeleteDatabaseDataResponse> deleteDatabaseDataAsync(DeleteDatabaseDataRequest request) {
@@ -2215,13 +2172,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseDataRequest 请求对象
+     * @param request DeleteDatabaseDataRequest 请求对象
      * @return AsyncInvoker<DeleteDatabaseDataRequest, DeleteDatabaseDataResponse>
      */
     public AsyncInvoker<DeleteDatabaseDataRequest, DeleteDatabaseDataResponse> deleteDatabaseDataAsyncInvoker(
         DeleteDatabaseDataRequest request) {
-        return new AsyncInvoker<DeleteDatabaseDataRequest, DeleteDatabaseDataResponse>(request,
-            EiHealthMeta.deleteDatabaseData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteDatabaseData, hcClient);
     }
 
     /**
@@ -2231,7 +2187,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseResourceRequest 请求对象
+     * @param request DeleteDatabaseResourceRequest 请求对象
      * @return CompletableFuture<DeleteDatabaseResourceResponse>
      */
     public CompletableFuture<DeleteDatabaseResourceResponse> deleteDatabaseResourceAsync(
@@ -2246,13 +2202,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseResourceRequest 请求对象
+     * @param request DeleteDatabaseResourceRequest 请求对象
      * @return AsyncInvoker<DeleteDatabaseResourceRequest, DeleteDatabaseResourceResponse>
      */
     public AsyncInvoker<DeleteDatabaseResourceRequest, DeleteDatabaseResourceResponse> deleteDatabaseResourceAsyncInvoker(
         DeleteDatabaseResourceRequest request) {
-        return new AsyncInvoker<DeleteDatabaseResourceRequest, DeleteDatabaseResourceResponse>(request,
-            EiHealthMeta.deleteDatabaseResource, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteDatabaseResource, hcClient);
     }
 
     /**
@@ -2262,7 +2217,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugJobRequest 请求对象
+     * @param request DeleteDrugJobRequest 请求对象
      * @return CompletableFuture<DeleteDrugJobResponse>
      */
     public CompletableFuture<DeleteDrugJobResponse> deleteDrugJobAsync(DeleteDrugJobRequest request) {
@@ -2276,13 +2231,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugJobRequest 请求对象
+     * @param request DeleteDrugJobRequest 请求对象
      * @return AsyncInvoker<DeleteDrugJobRequest, DeleteDrugJobResponse>
      */
     public AsyncInvoker<DeleteDrugJobRequest, DeleteDrugJobResponse> deleteDrugJobAsyncInvoker(
         DeleteDrugJobRequest request) {
-        return new AsyncInvoker<DeleteDrugJobRequest, DeleteDrugJobResponse>(request, EiHealthMeta.deleteDrugJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteDrugJob, hcClient);
     }
 
     /**
@@ -2292,7 +2246,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugModelRequest 请求对象
+     * @param request DeleteDrugModelRequest 请求对象
      * @return CompletableFuture<DeleteDrugModelResponse>
      */
     public CompletableFuture<DeleteDrugModelResponse> deleteDrugModelAsync(DeleteDrugModelRequest request) {
@@ -2306,13 +2260,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugModelRequest 请求对象
+     * @param request DeleteDrugModelRequest 请求对象
      * @return AsyncInvoker<DeleteDrugModelRequest, DeleteDrugModelResponse>
      */
     public AsyncInvoker<DeleteDrugModelRequest, DeleteDrugModelResponse> deleteDrugModelAsyncInvoker(
         DeleteDrugModelRequest request) {
-        return new AsyncInvoker<DeleteDrugModelRequest, DeleteDrugModelResponse>(request, EiHealthMeta.deleteDrugModel,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteDrugModel, hcClient);
     }
 
     /**
@@ -2322,7 +2275,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageRequest 请求对象
+     * @param request DeleteImageRequest 请求对象
      * @return CompletableFuture<DeleteImageResponse>
      */
     public CompletableFuture<DeleteImageResponse> deleteImageAsync(DeleteImageRequest request) {
@@ -2336,11 +2289,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageRequest 请求对象
+     * @param request DeleteImageRequest 请求对象
      * @return AsyncInvoker<DeleteImageRequest, DeleteImageResponse>
      */
     public AsyncInvoker<DeleteImageRequest, DeleteImageResponse> deleteImageAsyncInvoker(DeleteImageRequest request) {
-        return new AsyncInvoker<DeleteImageRequest, DeleteImageResponse>(request, EiHealthMeta.deleteImage, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteImage, hcClient);
     }
 
     /**
@@ -2350,7 +2303,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
      */
     public CompletableFuture<DeleteInstanceResponse> deleteInstanceAsync(DeleteInstanceRequest request) {
@@ -2364,13 +2317,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
-        return new AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, EiHealthMeta.deleteInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -2380,7 +2332,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobRequest 请求对象
+     * @param request DeleteJobRequest 请求对象
      * @return CompletableFuture<DeleteJobResponse>
      */
     public CompletableFuture<DeleteJobResponse> deleteJobAsync(DeleteJobRequest request) {
@@ -2394,11 +2346,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobRequest 请求对象
+     * @param request DeleteJobRequest 请求对象
      * @return AsyncInvoker<DeleteJobRequest, DeleteJobResponse>
      */
     public AsyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobAsyncInvoker(DeleteJobRequest request) {
-        return new AsyncInvoker<DeleteJobRequest, DeleteJobResponse>(request, EiHealthMeta.deleteJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteJob, hcClient);
     }
 
     /**
@@ -2408,7 +2360,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLabelRequest 请求对象
+     * @param request DeleteLabelRequest 请求对象
      * @return CompletableFuture<DeleteLabelResponse>
      */
     public CompletableFuture<DeleteLabelResponse> deleteLabelAsync(DeleteLabelRequest request) {
@@ -2422,11 +2374,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLabelRequest 请求对象
+     * @param request DeleteLabelRequest 请求对象
      * @return AsyncInvoker<DeleteLabelRequest, DeleteLabelResponse>
      */
     public AsyncInvoker<DeleteLabelRequest, DeleteLabelResponse> deleteLabelAsyncInvoker(DeleteLabelRequest request) {
-        return new AsyncInvoker<DeleteLabelRequest, DeleteLabelResponse>(request, EiHealthMeta.deleteLabel, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteLabel, hcClient);
     }
 
     /**
@@ -2436,7 +2388,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLabelPageRequest 请求对象
+     * @param request DeleteLabelPageRequest 请求对象
      * @return CompletableFuture<DeleteLabelPageResponse>
      */
     public CompletableFuture<DeleteLabelPageResponse> deleteLabelPageAsync(DeleteLabelPageRequest request) {
@@ -2450,13 +2402,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLabelPageRequest 请求对象
+     * @param request DeleteLabelPageRequest 请求对象
      * @return AsyncInvoker<DeleteLabelPageRequest, DeleteLabelPageResponse>
      */
     public AsyncInvoker<DeleteLabelPageRequest, DeleteLabelPageResponse> deleteLabelPageAsyncInvoker(
         DeleteLabelPageRequest request) {
-        return new AsyncInvoker<DeleteLabelPageRequest, DeleteLabelPageResponse>(request, EiHealthMeta.deleteLabelPage,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteLabelPage, hcClient);
     }
 
     /**
@@ -2466,7 +2417,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberRequest 请求对象
+     * @param request DeleteMemberRequest 请求对象
      * @return CompletableFuture<DeleteMemberResponse>
      */
     public CompletableFuture<DeleteMemberResponse> deleteMemberAsync(DeleteMemberRequest request) {
@@ -2480,13 +2431,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberRequest 请求对象
+     * @param request DeleteMemberRequest 请求对象
      * @return AsyncInvoker<DeleteMemberRequest, DeleteMemberResponse>
      */
     public AsyncInvoker<DeleteMemberRequest, DeleteMemberResponse> deleteMemberAsyncInvoker(
         DeleteMemberRequest request) {
-        return new AsyncInvoker<DeleteMemberRequest, DeleteMemberResponse>(request, EiHealthMeta.deleteMember,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteMember, hcClient);
     }
 
     /**
@@ -2496,7 +2446,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMessageEmailConfigRequest 请求对象
+     * @param request DeleteMessageEmailConfigRequest 请求对象
      * @return CompletableFuture<DeleteMessageEmailConfigResponse>
      */
     public CompletableFuture<DeleteMessageEmailConfigResponse> deleteMessageEmailConfigAsync(
@@ -2511,13 +2461,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMessageEmailConfigRequest 请求对象
+     * @param request DeleteMessageEmailConfigRequest 请求对象
      * @return AsyncInvoker<DeleteMessageEmailConfigRequest, DeleteMessageEmailConfigResponse>
      */
     public AsyncInvoker<DeleteMessageEmailConfigRequest, DeleteMessageEmailConfigResponse> deleteMessageEmailConfigAsyncInvoker(
         DeleteMessageEmailConfigRequest request) {
-        return new AsyncInvoker<DeleteMessageEmailConfigRequest, DeleteMessageEmailConfigResponse>(request,
-            EiHealthMeta.deleteMessageEmailConfig, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteMessageEmailConfig, hcClient);
     }
 
     /**
@@ -2527,7 +2476,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePerformanceResourceRequest 请求对象
+     * @param request DeletePerformanceResourceRequest 请求对象
      * @return CompletableFuture<DeletePerformanceResourceResponse>
      */
     public CompletableFuture<DeletePerformanceResourceResponse> deletePerformanceResourceAsync(
@@ -2542,13 +2491,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePerformanceResourceRequest 请求对象
+     * @param request DeletePerformanceResourceRequest 请求对象
      * @return AsyncInvoker<DeletePerformanceResourceRequest, DeletePerformanceResourceResponse>
      */
     public AsyncInvoker<DeletePerformanceResourceRequest, DeletePerformanceResourceResponse> deletePerformanceResourceAsyncInvoker(
         DeletePerformanceResourceRequest request) {
-        return new AsyncInvoker<DeletePerformanceResourceRequest, DeletePerformanceResourceResponse>(request,
-            EiHealthMeta.deletePerformanceResource, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deletePerformanceResource, hcClient);
     }
 
     /**
@@ -2558,7 +2506,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProjectRequest 请求对象
+     * @param request DeleteProjectRequest 请求对象
      * @return CompletableFuture<DeleteProjectResponse>
      */
     public CompletableFuture<DeleteProjectResponse> deleteProjectAsync(DeleteProjectRequest request) {
@@ -2572,13 +2520,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProjectRequest 请求对象
+     * @param request DeleteProjectRequest 请求对象
      * @return AsyncInvoker<DeleteProjectRequest, DeleteProjectResponse>
      */
     public AsyncInvoker<DeleteProjectRequest, DeleteProjectResponse> deleteProjectAsyncInvoker(
         DeleteProjectRequest request) {
-        return new AsyncInvoker<DeleteProjectRequest, DeleteProjectResponse>(request, EiHealthMeta.deleteProject,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteProject, hcClient);
     }
 
     /**
@@ -2588,7 +2535,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScaleOutPolicyRequest 请求对象
+     * @param request DeleteScaleOutPolicyRequest 请求对象
      * @return CompletableFuture<DeleteScaleOutPolicyResponse>
      */
     public CompletableFuture<DeleteScaleOutPolicyResponse> deleteScaleOutPolicyAsync(
@@ -2603,13 +2550,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScaleOutPolicyRequest 请求对象
+     * @param request DeleteScaleOutPolicyRequest 请求对象
      * @return AsyncInvoker<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse>
      */
     public AsyncInvoker<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse> deleteScaleOutPolicyAsyncInvoker(
         DeleteScaleOutPolicyRequest request) {
-        return new AsyncInvoker<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse>(request,
-            EiHealthMeta.deleteScaleOutPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteScaleOutPolicy, hcClient);
     }
 
     /**
@@ -2619,7 +2565,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStarRequest 请求对象
+     * @param request DeleteStarRequest 请求对象
      * @return CompletableFuture<DeleteStarResponse>
      */
     public CompletableFuture<DeleteStarResponse> deleteStarAsync(DeleteStarRequest request) {
@@ -2633,11 +2579,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStarRequest 请求对象
+     * @param request DeleteStarRequest 请求对象
      * @return AsyncInvoker<DeleteStarRequest, DeleteStarResponse>
      */
     public AsyncInvoker<DeleteStarRequest, DeleteStarResponse> deleteStarAsyncInvoker(DeleteStarRequest request) {
-        return new AsyncInvoker<DeleteStarRequest, DeleteStarResponse>(request, EiHealthMeta.deleteStar, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteStar, hcClient);
     }
 
     /**
@@ -2647,7 +2593,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStudyRequest 请求对象
+     * @param request DeleteStudyRequest 请求对象
      * @return CompletableFuture<DeleteStudyResponse>
      */
     public CompletableFuture<DeleteStudyResponse> deleteStudyAsync(DeleteStudyRequest request) {
@@ -2661,11 +2607,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStudyRequest 请求对象
+     * @param request DeleteStudyRequest 请求对象
      * @return AsyncInvoker<DeleteStudyRequest, DeleteStudyResponse>
      */
     public AsyncInvoker<DeleteStudyRequest, DeleteStudyResponse> deleteStudyAsyncInvoker(DeleteStudyRequest request) {
-        return new AsyncInvoker<DeleteStudyRequest, DeleteStudyResponse>(request, EiHealthMeta.deleteStudy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteStudy, hcClient);
     }
 
     /**
@@ -2675,7 +2621,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return CompletableFuture<DeleteTagResponse>
      */
     public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
@@ -2689,11 +2635,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
      */
     public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
-        return new AsyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, EiHealthMeta.deleteTag, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteTag, hcClient);
     }
 
     /**
@@ -2703,7 +2649,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return CompletableFuture<DeleteTemplateResponse>
      */
     public CompletableFuture<DeleteTemplateResponse> deleteTemplateAsync(DeleteTemplateRequest request) {
@@ -2717,13 +2663,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
      */
     public AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateAsyncInvoker(
         DeleteTemplateRequest request) {
-        return new AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>(request, EiHealthMeta.deleteTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteTemplate, hcClient);
     }
 
     /**
@@ -2733,7 +2678,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserRequest 请求对象
+     * @param request DeleteUserRequest 请求对象
      * @return CompletableFuture<DeleteUserResponse>
      */
     public CompletableFuture<DeleteUserResponse> deleteUserAsync(DeleteUserRequest request) {
@@ -2747,11 +2692,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserRequest 请求对象
+     * @param request DeleteUserRequest 请求对象
      * @return AsyncInvoker<DeleteUserRequest, DeleteUserResponse>
      */
     public AsyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserAsyncInvoker(DeleteUserRequest request) {
-        return new AsyncInvoker<DeleteUserRequest, DeleteUserResponse>(request, EiHealthMeta.deleteUser, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteUser, hcClient);
     }
 
     /**
@@ -2761,7 +2706,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkflowRequest 请求对象
+     * @param request DeleteWorkflowRequest 请求对象
      * @return CompletableFuture<DeleteWorkflowResponse>
      */
     public CompletableFuture<DeleteWorkflowResponse> deleteWorkflowAsync(DeleteWorkflowRequest request) {
@@ -2775,13 +2720,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkflowRequest 请求对象
+     * @param request DeleteWorkflowRequest 请求对象
      * @return AsyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse>
      */
     public AsyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse> deleteWorkflowAsyncInvoker(
         DeleteWorkflowRequest request) {
-        return new AsyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse>(request, EiHealthMeta.deleteWorkflow,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteWorkflow, hcClient);
     }
 
     /**
@@ -2791,7 +2735,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataJobLogRequest 请求对象
+     * @param request DownloadDataJobLogRequest 请求对象
      * @return CompletableFuture<DownloadDataJobLogResponse>
      */
     public CompletableFuture<DownloadDataJobLogResponse> downloadDataJobLogAsync(DownloadDataJobLogRequest request) {
@@ -2805,13 +2749,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataJobLogRequest 请求对象
+     * @param request DownloadDataJobLogRequest 请求对象
      * @return AsyncInvoker<DownloadDataJobLogRequest, DownloadDataJobLogResponse>
      */
     public AsyncInvoker<DownloadDataJobLogRequest, DownloadDataJobLogResponse> downloadDataJobLogAsyncInvoker(
         DownloadDataJobLogRequest request) {
-        return new AsyncInvoker<DownloadDataJobLogRequest, DownloadDataJobLogResponse>(request,
-            EiHealthMeta.downloadDataJobLog, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.downloadDataJobLog, hcClient);
     }
 
     /**
@@ -2821,7 +2764,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataTraceRequest 请求对象
+     * @param request DownloadDataTraceRequest 请求对象
      * @return CompletableFuture<DownloadDataTraceResponse>
      */
     public CompletableFuture<DownloadDataTraceResponse> downloadDataTraceAsync(DownloadDataTraceRequest request) {
@@ -2835,13 +2778,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataTraceRequest 请求对象
+     * @param request DownloadDataTraceRequest 请求对象
      * @return AsyncInvoker<DownloadDataTraceRequest, DownloadDataTraceResponse>
      */
     public AsyncInvoker<DownloadDataTraceRequest, DownloadDataTraceResponse> downloadDataTraceAsyncInvoker(
         DownloadDataTraceRequest request) {
-        return new AsyncInvoker<DownloadDataTraceRequest, DownloadDataTraceResponse>(request,
-            EiHealthMeta.downloadDataTrace, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.downloadDataTrace, hcClient);
     }
 
     /**
@@ -2851,7 +2793,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteAssetActionRequest 请求对象
+     * @param request ExecuteAssetActionRequest 请求对象
      * @return CompletableFuture<ExecuteAssetActionResponse>
      */
     public CompletableFuture<ExecuteAssetActionResponse> executeAssetActionAsync(ExecuteAssetActionRequest request) {
@@ -2865,13 +2807,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteAssetActionRequest 请求对象
+     * @param request ExecuteAssetActionRequest 请求对象
      * @return AsyncInvoker<ExecuteAssetActionRequest, ExecuteAssetActionResponse>
      */
     public AsyncInvoker<ExecuteAssetActionRequest, ExecuteAssetActionResponse> executeAssetActionAsyncInvoker(
         ExecuteAssetActionRequest request) {
-        return new AsyncInvoker<ExecuteAssetActionRequest, ExecuteAssetActionResponse>(request,
-            EiHealthMeta.executeAssetAction, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.executeAssetAction, hcClient);
     }
 
     /**
@@ -2881,7 +2822,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteJobRequest 请求对象
+     * @param request ExecuteJobRequest 请求对象
      * @return CompletableFuture<ExecuteJobResponse>
      */
     public CompletableFuture<ExecuteJobResponse> executeJobAsync(ExecuteJobRequest request) {
@@ -2895,11 +2836,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteJobRequest 请求对象
+     * @param request ExecuteJobRequest 请求对象
      * @return AsyncInvoker<ExecuteJobRequest, ExecuteJobResponse>
      */
     public AsyncInvoker<ExecuteJobRequest, ExecuteJobResponse> executeJobAsyncInvoker(ExecuteJobRequest request) {
-        return new AsyncInvoker<ExecuteJobRequest, ExecuteJobResponse>(request, EiHealthMeta.executeJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.executeJob, hcClient);
     }
 
     /**
@@ -2909,7 +2850,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportDataRequest 请求对象
+     * @param request ImportDataRequest 请求对象
      * @return CompletableFuture<ImportDataResponse>
      */
     public CompletableFuture<ImportDataResponse> importDataAsync(ImportDataRequest request) {
@@ -2923,11 +2864,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportDataRequest 请求对象
+     * @param request ImportDataRequest 请求对象
      * @return AsyncInvoker<ImportDataRequest, ImportDataResponse>
      */
     public AsyncInvoker<ImportDataRequest, ImportDataResponse> importDataAsyncInvoker(ImportDataRequest request) {
-        return new AsyncInvoker<ImportDataRequest, ImportDataResponse>(request, EiHealthMeta.importData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.importData, hcClient);
     }
 
     /**
@@ -2937,7 +2878,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportDatabaseDataRequest 请求对象
+     * @param request ImportDatabaseDataRequest 请求对象
      * @return CompletableFuture<ImportDatabaseDataResponse>
      */
     public CompletableFuture<ImportDatabaseDataResponse> importDatabaseDataAsync(ImportDatabaseDataRequest request) {
@@ -2951,13 +2892,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportDatabaseDataRequest 请求对象
+     * @param request ImportDatabaseDataRequest 请求对象
      * @return AsyncInvoker<ImportDatabaseDataRequest, ImportDatabaseDataResponse>
      */
     public AsyncInvoker<ImportDatabaseDataRequest, ImportDatabaseDataResponse> importDatabaseDataAsyncInvoker(
         ImportDatabaseDataRequest request) {
-        return new AsyncInvoker<ImportDatabaseDataRequest, ImportDatabaseDataResponse>(request,
-            EiHealthMeta.importDatabaseData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.importDatabaseData, hcClient);
     }
 
     /**
@@ -2967,7 +2907,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportImageRequest 请求对象
+     * @param request ImportImageRequest 请求对象
      * @return CompletableFuture<ImportImageResponse>
      */
     public CompletableFuture<ImportImageResponse> importImageAsync(ImportImageRequest request) {
@@ -2981,11 +2921,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportImageRequest 请求对象
+     * @param request ImportImageRequest 请求对象
      * @return AsyncInvoker<ImportImageRequest, ImportImageResponse>
      */
     public AsyncInvoker<ImportImageRequest, ImportImageResponse> importImageAsyncInvoker(ImportImageRequest request) {
-        return new AsyncInvoker<ImportImageRequest, ImportImageResponse>(request, EiHealthMeta.importImage, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.importImage, hcClient);
     }
 
     /**
@@ -2995,7 +2935,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportNetworkDataRequest 请求对象
+     * @param request ImportNetworkDataRequest 请求对象
      * @return CompletableFuture<ImportNetworkDataResponse>
      */
     public CompletableFuture<ImportNetworkDataResponse> importNetworkDataAsync(ImportNetworkDataRequest request) {
@@ -3009,13 +2949,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportNetworkDataRequest 请求对象
+     * @param request ImportNetworkDataRequest 请求对象
      * @return AsyncInvoker<ImportNetworkDataRequest, ImportNetworkDataResponse>
      */
     public AsyncInvoker<ImportNetworkDataRequest, ImportNetworkDataResponse> importNetworkDataAsyncInvoker(
         ImportNetworkDataRequest request) {
-        return new AsyncInvoker<ImportNetworkDataRequest, ImportNetworkDataResponse>(request,
-            EiHealthMeta.importNetworkData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.importNetworkData, hcClient);
     }
 
     /**
@@ -3025,7 +2964,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportTemplateRequest 请求对象
+     * @param request ImportTemplateRequest 请求对象
      * @return CompletableFuture<ImportTemplateResponse>
      */
     public CompletableFuture<ImportTemplateResponse> importTemplateAsync(ImportTemplateRequest request) {
@@ -3039,13 +2978,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportTemplateRequest 请求对象
+     * @param request ImportTemplateRequest 请求对象
      * @return AsyncInvoker<ImportTemplateRequest, ImportTemplateResponse>
      */
     public AsyncInvoker<ImportTemplateRequest, ImportTemplateResponse> importTemplateAsyncInvoker(
         ImportTemplateRequest request) {
-        return new AsyncInvoker<ImportTemplateRequest, ImportTemplateResponse>(request, EiHealthMeta.importTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.importTemplate, hcClient);
     }
 
     /**
@@ -3055,7 +2993,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportUserRequest 请求对象
+     * @param request ImportUserRequest 请求对象
      * @return CompletableFuture<ImportUserResponse>
      */
     public CompletableFuture<ImportUserResponse> importUserAsync(ImportUserRequest request) {
@@ -3069,11 +3007,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportUserRequest 请求对象
+     * @param request ImportUserRequest 请求对象
      * @return AsyncInvoker<ImportUserRequest, ImportUserResponse>
      */
     public AsyncInvoker<ImportUserRequest, ImportUserResponse> importUserAsyncInvoker(ImportUserRequest request) {
-        return new AsyncInvoker<ImportUserRequest, ImportUserResponse>(request, EiHealthMeta.importUser, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.importUser, hcClient);
     }
 
     /**
@@ -3083,7 +3021,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportWorkflowRequest 请求对象
+     * @param request ImportWorkflowRequest 请求对象
      * @return CompletableFuture<ImportWorkflowResponse>
      */
     public CompletableFuture<ImportWorkflowResponse> importWorkflowAsync(ImportWorkflowRequest request) {
@@ -3097,13 +3035,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportWorkflowRequest 请求对象
+     * @param request ImportWorkflowRequest 请求对象
      * @return AsyncInvoker<ImportWorkflowRequest, ImportWorkflowResponse>
      */
     public AsyncInvoker<ImportWorkflowRequest, ImportWorkflowResponse> importWorkflowAsyncInvoker(
         ImportWorkflowRequest request) {
-        return new AsyncInvoker<ImportWorkflowRequest, ImportWorkflowResponse>(request, EiHealthMeta.importWorkflow,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.importWorkflow, hcClient);
     }
 
     /**
@@ -3113,7 +3050,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppRequest 请求对象
+     * @param request ListAppRequest 请求对象
      * @return CompletableFuture<ListAppResponse>
      */
     public CompletableFuture<ListAppResponse> listAppAsync(ListAppRequest request) {
@@ -3127,11 +3064,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppRequest 请求对象
+     * @param request ListAppRequest 请求对象
      * @return AsyncInvoker<ListAppRequest, ListAppResponse>
      */
     public AsyncInvoker<ListAppRequest, ListAppResponse> listAppAsyncInvoker(ListAppRequest request) {
-        return new AsyncInvoker<ListAppRequest, ListAppResponse>(request, EiHealthMeta.listApp, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listApp, hcClient);
     }
 
     /**
@@ -3141,7 +3078,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListArchiveConfigsRequest 请求对象
+     * @param request ListArchiveConfigsRequest 请求对象
      * @return CompletableFuture<ListArchiveConfigsResponse>
      */
     public CompletableFuture<ListArchiveConfigsResponse> listArchiveConfigsAsync(ListArchiveConfigsRequest request) {
@@ -3155,13 +3092,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListArchiveConfigsRequest 请求对象
+     * @param request ListArchiveConfigsRequest 请求对象
      * @return AsyncInvoker<ListArchiveConfigsRequest, ListArchiveConfigsResponse>
      */
     public AsyncInvoker<ListArchiveConfigsRequest, ListArchiveConfigsResponse> listArchiveConfigsAsyncInvoker(
         ListArchiveConfigsRequest request) {
-        return new AsyncInvoker<ListArchiveConfigsRequest, ListArchiveConfigsResponse>(request,
-            EiHealthMeta.listArchiveConfigs, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listArchiveConfigs, hcClient);
     }
 
     /**
@@ -3171,7 +3107,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetRequest 请求对象
+     * @param request ListAssetRequest 请求对象
      * @return CompletableFuture<ListAssetResponse>
      */
     public CompletableFuture<ListAssetResponse> listAssetAsync(ListAssetRequest request) {
@@ -3185,11 +3121,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetRequest 请求对象
+     * @param request ListAssetRequest 请求对象
      * @return AsyncInvoker<ListAssetRequest, ListAssetResponse>
      */
     public AsyncInvoker<ListAssetRequest, ListAssetResponse> listAssetAsyncInvoker(ListAssetRequest request) {
-        return new AsyncInvoker<ListAssetRequest, ListAssetResponse>(request, EiHealthMeta.listAsset, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listAsset, hcClient);
     }
 
     /**
@@ -3199,7 +3135,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoJobRequest 请求对象
+     * @param request ListAutoJobRequest 请求对象
      * @return CompletableFuture<ListAutoJobResponse>
      */
     public CompletableFuture<ListAutoJobResponse> listAutoJobAsync(ListAutoJobRequest request) {
@@ -3213,11 +3149,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoJobRequest 请求对象
+     * @param request ListAutoJobRequest 请求对象
      * @return AsyncInvoker<ListAutoJobRequest, ListAutoJobResponse>
      */
     public AsyncInvoker<ListAutoJobRequest, ListAutoJobResponse> listAutoJobAsyncInvoker(ListAutoJobRequest request) {
-        return new AsyncInvoker<ListAutoJobRequest, ListAutoJobResponse>(request, EiHealthMeta.listAutoJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listAutoJob, hcClient);
     }
 
     /**
@@ -3227,7 +3163,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupRequest 请求对象
+     * @param request ListBackupRequest 请求对象
      * @return CompletableFuture<ListBackupResponse>
      */
     public CompletableFuture<ListBackupResponse> listBackupAsync(ListBackupRequest request) {
@@ -3241,11 +3177,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupRequest 请求对象
+     * @param request ListBackupRequest 请求对象
      * @return AsyncInvoker<ListBackupRequest, ListBackupResponse>
      */
     public AsyncInvoker<ListBackupRequest, ListBackupResponse> listBackupAsyncInvoker(ListBackupRequest request) {
-        return new AsyncInvoker<ListBackupRequest, ListBackupResponse>(request, EiHealthMeta.listBackup, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listBackup, hcClient);
     }
 
     /**
@@ -3255,7 +3191,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBucketRequest 请求对象
+     * @param request ListBucketRequest 请求对象
      * @return CompletableFuture<ListBucketResponse>
      */
     public CompletableFuture<ListBucketResponse> listBucketAsync(ListBucketRequest request) {
@@ -3269,11 +3205,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBucketRequest 请求对象
+     * @param request ListBucketRequest 请求对象
      * @return AsyncInvoker<ListBucketRequest, ListBucketResponse>
      */
     public AsyncInvoker<ListBucketRequest, ListBucketResponse> listBucketAsyncInvoker(ListBucketRequest request) {
-        return new AsyncInvoker<ListBucketRequest, ListBucketResponse>(request, EiHealthMeta.listBucket, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listBucket, hcClient);
     }
 
     /**
@@ -3283,7 +3219,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCheckpointRequest 请求对象
+     * @param request ListCheckpointRequest 请求对象
      * @return CompletableFuture<ListCheckpointResponse>
      */
     public CompletableFuture<ListCheckpointResponse> listCheckpointAsync(ListCheckpointRequest request) {
@@ -3297,13 +3233,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCheckpointRequest 请求对象
+     * @param request ListCheckpointRequest 请求对象
      * @return AsyncInvoker<ListCheckpointRequest, ListCheckpointResponse>
      */
     public AsyncInvoker<ListCheckpointRequest, ListCheckpointResponse> listCheckpointAsyncInvoker(
         ListCheckpointRequest request) {
-        return new AsyncInvoker<ListCheckpointRequest, ListCheckpointResponse>(request, EiHealthMeta.listCheckpoint,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listCheckpoint, hcClient);
     }
 
     /**
@@ -3313,7 +3248,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterAllNodeLabelRequest 请求对象
+     * @param request ListClusterAllNodeLabelRequest 请求对象
      * @return CompletableFuture<ListClusterAllNodeLabelResponse>
      */
     public CompletableFuture<ListClusterAllNodeLabelResponse> listClusterAllNodeLabelAsync(
@@ -3328,13 +3263,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterAllNodeLabelRequest 请求对象
+     * @param request ListClusterAllNodeLabelRequest 请求对象
      * @return AsyncInvoker<ListClusterAllNodeLabelRequest, ListClusterAllNodeLabelResponse>
      */
     public AsyncInvoker<ListClusterAllNodeLabelRequest, ListClusterAllNodeLabelResponse> listClusterAllNodeLabelAsyncInvoker(
         ListClusterAllNodeLabelRequest request) {
-        return new AsyncInvoker<ListClusterAllNodeLabelRequest, ListClusterAllNodeLabelResponse>(request,
-            EiHealthMeta.listClusterAllNodeLabel, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listClusterAllNodeLabel, hcClient);
     }
 
     /**
@@ -3344,7 +3278,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListComputingResourceFlavorsRequest 请求对象
+     * @param request ListComputingResourceFlavorsRequest 请求对象
      * @return CompletableFuture<ListComputingResourceFlavorsResponse>
      */
     public CompletableFuture<ListComputingResourceFlavorsResponse> listComputingResourceFlavorsAsync(
@@ -3359,13 +3293,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListComputingResourceFlavorsRequest 请求对象
+     * @param request ListComputingResourceFlavorsRequest 请求对象
      * @return AsyncInvoker<ListComputingResourceFlavorsRequest, ListComputingResourceFlavorsResponse>
      */
     public AsyncInvoker<ListComputingResourceFlavorsRequest, ListComputingResourceFlavorsResponse> listComputingResourceFlavorsAsyncInvoker(
         ListComputingResourceFlavorsRequest request) {
-        return new AsyncInvoker<ListComputingResourceFlavorsRequest, ListComputingResourceFlavorsResponse>(request,
-            EiHealthMeta.listComputingResourceFlavors, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listComputingResourceFlavors, hcClient);
     }
 
     /**
@@ -3375,7 +3308,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListComputingResourcesRequest 请求对象
+     * @param request ListComputingResourcesRequest 请求对象
      * @return CompletableFuture<ListComputingResourcesResponse>
      */
     public CompletableFuture<ListComputingResourcesResponse> listComputingResourcesAsync(
@@ -3390,13 +3323,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListComputingResourcesRequest 请求对象
+     * @param request ListComputingResourcesRequest 请求对象
      * @return AsyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse>
      */
     public AsyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse> listComputingResourcesAsyncInvoker(
         ListComputingResourcesRequest request) {
-        return new AsyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse>(request,
-            EiHealthMeta.listComputingResources, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listComputingResources, hcClient);
     }
 
     /**
@@ -3406,7 +3338,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataRequest 请求对象
+     * @param request ListDataRequest 请求对象
      * @return CompletableFuture<ListDataResponse>
      */
     public CompletableFuture<ListDataResponse> listDataAsync(ListDataRequest request) {
@@ -3420,11 +3352,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataRequest 请求对象
+     * @param request ListDataRequest 请求对象
      * @return AsyncInvoker<ListDataRequest, ListDataResponse>
      */
     public AsyncInvoker<ListDataRequest, ListDataResponse> listDataAsyncInvoker(ListDataRequest request) {
-        return new AsyncInvoker<ListDataRequest, ListDataResponse>(request, EiHealthMeta.listData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listData, hcClient);
     }
 
     /**
@@ -3434,7 +3366,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataJobRequest 请求对象
+     * @param request ListDataJobRequest 请求对象
      * @return CompletableFuture<ListDataJobResponse>
      */
     public CompletableFuture<ListDataJobResponse> listDataJobAsync(ListDataJobRequest request) {
@@ -3448,11 +3380,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataJobRequest 请求对象
+     * @param request ListDataJobRequest 请求对象
      * @return AsyncInvoker<ListDataJobRequest, ListDataJobResponse>
      */
     public AsyncInvoker<ListDataJobRequest, ListDataJobResponse> listDataJobAsyncInvoker(ListDataJobRequest request) {
-        return new AsyncInvoker<ListDataJobRequest, ListDataJobResponse>(request, EiHealthMeta.listDataJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listDataJob, hcClient);
     }
 
     /**
@@ -3462,7 +3394,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseDataRequest 请求对象
+     * @param request ListDatabaseDataRequest 请求对象
      * @return CompletableFuture<ListDatabaseDataResponse>
      */
     public CompletableFuture<ListDatabaseDataResponse> listDatabaseDataAsync(ListDatabaseDataRequest request) {
@@ -3476,13 +3408,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseDataRequest 请求对象
+     * @param request ListDatabaseDataRequest 请求对象
      * @return AsyncInvoker<ListDatabaseDataRequest, ListDatabaseDataResponse>
      */
     public AsyncInvoker<ListDatabaseDataRequest, ListDatabaseDataResponse> listDatabaseDataAsyncInvoker(
         ListDatabaseDataRequest request) {
-        return new AsyncInvoker<ListDatabaseDataRequest, ListDatabaseDataResponse>(request,
-            EiHealthMeta.listDatabaseData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listDatabaseData, hcClient);
     }
 
     /**
@@ -3492,7 +3423,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseResourceRequest 请求对象
+     * @param request ListDatabaseResourceRequest 请求对象
      * @return CompletableFuture<ListDatabaseResourceResponse>
      */
     public CompletableFuture<ListDatabaseResourceResponse> listDatabaseResourceAsync(
@@ -3507,13 +3438,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseResourceRequest 请求对象
+     * @param request ListDatabaseResourceRequest 请求对象
      * @return AsyncInvoker<ListDatabaseResourceRequest, ListDatabaseResourceResponse>
      */
     public AsyncInvoker<ListDatabaseResourceRequest, ListDatabaseResourceResponse> listDatabaseResourceAsyncInvoker(
         ListDatabaseResourceRequest request) {
-        return new AsyncInvoker<ListDatabaseResourceRequest, ListDatabaseResourceResponse>(request,
-            EiHealthMeta.listDatabaseResource, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listDatabaseResource, hcClient);
     }
 
     /**
@@ -3523,7 +3453,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseResourceFlavorRequest 请求对象
+     * @param request ListDatabaseResourceFlavorRequest 请求对象
      * @return CompletableFuture<ListDatabaseResourceFlavorResponse>
      */
     public CompletableFuture<ListDatabaseResourceFlavorResponse> listDatabaseResourceFlavorAsync(
@@ -3538,13 +3468,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseResourceFlavorRequest 请求对象
+     * @param request ListDatabaseResourceFlavorRequest 请求对象
      * @return AsyncInvoker<ListDatabaseResourceFlavorRequest, ListDatabaseResourceFlavorResponse>
      */
     public AsyncInvoker<ListDatabaseResourceFlavorRequest, ListDatabaseResourceFlavorResponse> listDatabaseResourceFlavorAsyncInvoker(
         ListDatabaseResourceFlavorRequest request) {
-        return new AsyncInvoker<ListDatabaseResourceFlavorRequest, ListDatabaseResourceFlavorResponse>(request,
-            EiHealthMeta.listDatabaseResourceFlavor, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listDatabaseResourceFlavor, hcClient);
     }
 
     /**
@@ -3554,7 +3483,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDrugJobRequest 请求对象
+     * @param request ListDrugJobRequest 请求对象
      * @return CompletableFuture<ListDrugJobResponse>
      */
     public CompletableFuture<ListDrugJobResponse> listDrugJobAsync(ListDrugJobRequest request) {
@@ -3568,11 +3497,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDrugJobRequest 请求对象
+     * @param request ListDrugJobRequest 请求对象
      * @return AsyncInvoker<ListDrugJobRequest, ListDrugJobResponse>
      */
     public AsyncInvoker<ListDrugJobRequest, ListDrugJobResponse> listDrugJobAsyncInvoker(ListDrugJobRequest request) {
-        return new AsyncInvoker<ListDrugJobRequest, ListDrugJobResponse>(request, EiHealthMeta.listDrugJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listDrugJob, hcClient);
     }
 
     /**
@@ -3582,7 +3511,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDrugModelRequest 请求对象
+     * @param request ListDrugModelRequest 请求对象
      * @return CompletableFuture<ListDrugModelResponse>
      */
     public CompletableFuture<ListDrugModelResponse> listDrugModelAsync(ListDrugModelRequest request) {
@@ -3596,13 +3525,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDrugModelRequest 请求对象
+     * @param request ListDrugModelRequest 请求对象
      * @return AsyncInvoker<ListDrugModelRequest, ListDrugModelResponse>
      */
     public AsyncInvoker<ListDrugModelRequest, ListDrugModelResponse> listDrugModelAsyncInvoker(
         ListDrugModelRequest request) {
-        return new AsyncInvoker<ListDrugModelRequest, ListDrugModelResponse>(request, EiHealthMeta.listDrugModel,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listDrugModel, hcClient);
     }
 
     /**
@@ -3612,7 +3540,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGlobalWorkflowStatisticRequest 请求对象
+     * @param request ListGlobalWorkflowStatisticRequest 请求对象
      * @return CompletableFuture<ListGlobalWorkflowStatisticResponse>
      */
     public CompletableFuture<ListGlobalWorkflowStatisticResponse> listGlobalWorkflowStatisticAsync(
@@ -3627,13 +3555,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGlobalWorkflowStatisticRequest 请求对象
+     * @param request ListGlobalWorkflowStatisticRequest 请求对象
      * @return AsyncInvoker<ListGlobalWorkflowStatisticRequest, ListGlobalWorkflowStatisticResponse>
      */
     public AsyncInvoker<ListGlobalWorkflowStatisticRequest, ListGlobalWorkflowStatisticResponse> listGlobalWorkflowStatisticAsyncInvoker(
         ListGlobalWorkflowStatisticRequest request) {
-        return new AsyncInvoker<ListGlobalWorkflowStatisticRequest, ListGlobalWorkflowStatisticResponse>(request,
-            EiHealthMeta.listGlobalWorkflowStatistic, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listGlobalWorkflowStatistic, hcClient);
     }
 
     /**
@@ -3643,7 +3570,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamGroupUsersRequest 请求对象
+     * @param request ListIamGroupUsersRequest 请求对象
      * @return CompletableFuture<ListIamGroupUsersResponse>
      */
     public CompletableFuture<ListIamGroupUsersResponse> listIamGroupUsersAsync(ListIamGroupUsersRequest request) {
@@ -3657,13 +3584,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamGroupUsersRequest 请求对象
+     * @param request ListIamGroupUsersRequest 请求对象
      * @return AsyncInvoker<ListIamGroupUsersRequest, ListIamGroupUsersResponse>
      */
     public AsyncInvoker<ListIamGroupUsersRequest, ListIamGroupUsersResponse> listIamGroupUsersAsyncInvoker(
         ListIamGroupUsersRequest request) {
-        return new AsyncInvoker<ListIamGroupUsersRequest, ListIamGroupUsersResponse>(request,
-            EiHealthMeta.listIamGroupUsers, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listIamGroupUsers, hcClient);
     }
 
     /**
@@ -3673,7 +3599,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamGroupsRequest 请求对象
+     * @param request ListIamGroupsRequest 请求对象
      * @return CompletableFuture<ListIamGroupsResponse>
      */
     public CompletableFuture<ListIamGroupsResponse> listIamGroupsAsync(ListIamGroupsRequest request) {
@@ -3687,13 +3613,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamGroupsRequest 请求对象
+     * @param request ListIamGroupsRequest 请求对象
      * @return AsyncInvoker<ListIamGroupsRequest, ListIamGroupsResponse>
      */
     public AsyncInvoker<ListIamGroupsRequest, ListIamGroupsResponse> listIamGroupsAsyncInvoker(
         ListIamGroupsRequest request) {
-        return new AsyncInvoker<ListIamGroupsRequest, ListIamGroupsResponse>(request, EiHealthMeta.listIamGroups,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listIamGroups, hcClient);
     }
 
     /**
@@ -3703,7 +3628,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamUsersRequest 请求对象
+     * @param request ListIamUsersRequest 请求对象
      * @return CompletableFuture<ListIamUsersResponse>
      */
     public CompletableFuture<ListIamUsersResponse> listIamUsersAsync(ListIamUsersRequest request) {
@@ -3717,13 +3642,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamUsersRequest 请求对象
+     * @param request ListIamUsersRequest 请求对象
      * @return AsyncInvoker<ListIamUsersRequest, ListIamUsersResponse>
      */
     public AsyncInvoker<ListIamUsersRequest, ListIamUsersResponse> listIamUsersAsyncInvoker(
         ListIamUsersRequest request) {
-        return new AsyncInvoker<ListIamUsersRequest, ListIamUsersResponse>(request, EiHealthMeta.listIamUsers,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listIamUsers, hcClient);
     }
 
     /**
@@ -3733,7 +3657,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageRequest 请求对象
+     * @param request ListImageRequest 请求对象
      * @return CompletableFuture<ListImageResponse>
      */
     public CompletableFuture<ListImageResponse> listImageAsync(ListImageRequest request) {
@@ -3747,11 +3671,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageRequest 请求对象
+     * @param request ListImageRequest 请求对象
      * @return AsyncInvoker<ListImageRequest, ListImageResponse>
      */
     public AsyncInvoker<ListImageRequest, ListImageResponse> listImageAsyncInvoker(ListImageRequest request) {
-        return new AsyncInvoker<ListImageRequest, ListImageResponse>(request, EiHealthMeta.listImage, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listImage, hcClient);
     }
 
     /**
@@ -3761,7 +3685,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageTagRequest 请求对象
+     * @param request ListImageTagRequest 请求对象
      * @return CompletableFuture<ListImageTagResponse>
      */
     public CompletableFuture<ListImageTagResponse> listImageTagAsync(ListImageTagRequest request) {
@@ -3775,13 +3699,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageTagRequest 请求对象
+     * @param request ListImageTagRequest 请求对象
      * @return AsyncInvoker<ListImageTagRequest, ListImageTagResponse>
      */
     public AsyncInvoker<ListImageTagRequest, ListImageTagResponse> listImageTagAsyncInvoker(
         ListImageTagRequest request) {
-        return new AsyncInvoker<ListImageTagRequest, ListImageTagResponse>(request, EiHealthMeta.listImageTag,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listImageTag, hcClient);
     }
 
     /**
@@ -3791,7 +3714,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceRequest 请求对象
+     * @param request ListInstanceRequest 请求对象
      * @return CompletableFuture<ListInstanceResponse>
      */
     public CompletableFuture<ListInstanceResponse> listInstanceAsync(ListInstanceRequest request) {
@@ -3805,13 +3728,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceRequest 请求对象
+     * @param request ListInstanceRequest 请求对象
      * @return AsyncInvoker<ListInstanceRequest, ListInstanceResponse>
      */
     public AsyncInvoker<ListInstanceRequest, ListInstanceResponse> listInstanceAsyncInvoker(
         ListInstanceRequest request) {
-        return new AsyncInvoker<ListInstanceRequest, ListInstanceResponse>(request, EiHealthMeta.listInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listInstance, hcClient);
     }
 
     /**
@@ -3821,7 +3743,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobRequest 请求对象
+     * @param request ListJobRequest 请求对象
      * @return CompletableFuture<ListJobResponse>
      */
     public CompletableFuture<ListJobResponse> listJobAsync(ListJobRequest request) {
@@ -3835,11 +3757,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobRequest 请求对象
+     * @param request ListJobRequest 请求对象
      * @return AsyncInvoker<ListJobRequest, ListJobResponse>
      */
     public AsyncInvoker<ListJobRequest, ListJobResponse> listJobAsyncInvoker(ListJobRequest request) {
-        return new AsyncInvoker<ListJobRequest, ListJobResponse>(request, EiHealthMeta.listJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listJob, hcClient);
     }
 
     /**
@@ -3849,7 +3771,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelRequest 请求对象
+     * @param request ListLabelRequest 请求对象
      * @return CompletableFuture<ListLabelResponse>
      */
     public CompletableFuture<ListLabelResponse> listLabelAsync(ListLabelRequest request) {
@@ -3863,11 +3785,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelRequest 请求对象
+     * @param request ListLabelRequest 请求对象
      * @return AsyncInvoker<ListLabelRequest, ListLabelResponse>
      */
     public AsyncInvoker<ListLabelRequest, ListLabelResponse> listLabelAsyncInvoker(ListLabelRequest request) {
-        return new AsyncInvoker<ListLabelRequest, ListLabelResponse>(request, EiHealthMeta.listLabel, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listLabel, hcClient);
     }
 
     /**
@@ -3877,7 +3799,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelPageRequest 请求对象
+     * @param request ListLabelPageRequest 请求对象
      * @return CompletableFuture<ListLabelPageResponse>
      */
     public CompletableFuture<ListLabelPageResponse> listLabelPageAsync(ListLabelPageRequest request) {
@@ -3891,13 +3813,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelPageRequest 请求对象
+     * @param request ListLabelPageRequest 请求对象
      * @return AsyncInvoker<ListLabelPageRequest, ListLabelPageResponse>
      */
     public AsyncInvoker<ListLabelPageRequest, ListLabelPageResponse> listLabelPageAsyncInvoker(
         ListLabelPageRequest request) {
-        return new AsyncInvoker<ListLabelPageRequest, ListLabelPageResponse>(request, EiHealthMeta.listLabelPage,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listLabelPage, hcClient);
     }
 
     /**
@@ -3907,7 +3828,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageRequest 请求对象
+     * @param request ListMessageRequest 请求对象
      * @return CompletableFuture<ListMessageResponse>
      */
     public CompletableFuture<ListMessageResponse> listMessageAsync(ListMessageRequest request) {
@@ -3921,11 +3842,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageRequest 请求对象
+     * @param request ListMessageRequest 请求对象
      * @return AsyncInvoker<ListMessageRequest, ListMessageResponse>
      */
     public AsyncInvoker<ListMessageRequest, ListMessageResponse> listMessageAsyncInvoker(ListMessageRequest request) {
-        return new AsyncInvoker<ListMessageRequest, ListMessageResponse>(request, EiHealthMeta.listMessage, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listMessage, hcClient);
     }
 
     /**
@@ -3935,7 +3856,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageStatisticsRequest 请求对象
+     * @param request ListMessageStatisticsRequest 请求对象
      * @return CompletableFuture<ListMessageStatisticsResponse>
      */
     public CompletableFuture<ListMessageStatisticsResponse> listMessageStatisticsAsync(
@@ -3950,13 +3871,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageStatisticsRequest 请求对象
+     * @param request ListMessageStatisticsRequest 请求对象
      * @return AsyncInvoker<ListMessageStatisticsRequest, ListMessageStatisticsResponse>
      */
     public AsyncInvoker<ListMessageStatisticsRequest, ListMessageStatisticsResponse> listMessageStatisticsAsyncInvoker(
         ListMessageStatisticsRequest request) {
-        return new AsyncInvoker<ListMessageStatisticsRequest, ListMessageStatisticsResponse>(request,
-            EiHealthMeta.listMessageStatistics, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listMessageStatistics, hcClient);
     }
 
     /**
@@ -3966,7 +3886,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMfaRequest 请求对象
+     * @param request ListMfaRequest 请求对象
      * @return CompletableFuture<ListMfaResponse>
      */
     public CompletableFuture<ListMfaResponse> listMfaAsync(ListMfaRequest request) {
@@ -3980,11 +3900,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMfaRequest 请求对象
+     * @param request ListMfaRequest 请求对象
      * @return AsyncInvoker<ListMfaRequest, ListMfaResponse>
      */
     public AsyncInvoker<ListMfaRequest, ListMfaResponse> listMfaAsyncInvoker(ListMfaRequest request) {
-        return new AsyncInvoker<ListMfaRequest, ListMfaResponse>(request, EiHealthMeta.listMfa, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listMfa, hcClient);
     }
 
     /**
@@ -3994,7 +3914,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodeLabelRequest 请求对象
+     * @param request ListNodeLabelRequest 请求对象
      * @return CompletableFuture<ListNodeLabelResponse>
      */
     public CompletableFuture<ListNodeLabelResponse> listNodeLabelAsync(ListNodeLabelRequest request) {
@@ -4008,13 +3928,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodeLabelRequest 请求对象
+     * @param request ListNodeLabelRequest 请求对象
      * @return AsyncInvoker<ListNodeLabelRequest, ListNodeLabelResponse>
      */
     public AsyncInvoker<ListNodeLabelRequest, ListNodeLabelResponse> listNodeLabelAsyncInvoker(
         ListNodeLabelRequest request) {
-        return new AsyncInvoker<ListNodeLabelRequest, ListNodeLabelResponse>(request, EiHealthMeta.listNodeLabel,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listNodeLabel, hcClient);
     }
 
     /**
@@ -4024,7 +3943,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodesRequest 请求对象
+     * @param request ListNodesRequest 请求对象
      * @return CompletableFuture<ListNodesResponse>
      */
     public CompletableFuture<ListNodesResponse> listNodesAsync(ListNodesRequest request) {
@@ -4038,11 +3957,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodesRequest 请求对象
+     * @param request ListNodesRequest 请求对象
      * @return AsyncInvoker<ListNodesRequest, ListNodesResponse>
      */
     public AsyncInvoker<ListNodesRequest, ListNodesResponse> listNodesAsyncInvoker(ListNodesRequest request) {
-        return new AsyncInvoker<ListNodesRequest, ListNodesResponse>(request, EiHealthMeta.listNodes, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listNodes, hcClient);
     }
 
     /**
@@ -4052,7 +3971,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNoticeRequest 请求对象
+     * @param request ListNoticeRequest 请求对象
      * @return CompletableFuture<ListNoticeResponse>
      */
     public CompletableFuture<ListNoticeResponse> listNoticeAsync(ListNoticeRequest request) {
@@ -4066,11 +3985,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNoticeRequest 请求对象
+     * @param request ListNoticeRequest 请求对象
      * @return AsyncInvoker<ListNoticeRequest, ListNoticeResponse>
      */
     public AsyncInvoker<ListNoticeRequest, ListNoticeResponse> listNoticeAsyncInvoker(ListNoticeRequest request) {
-        return new AsyncInvoker<ListNoticeRequest, ListNoticeResponse>(request, EiHealthMeta.listNotice, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listNotice, hcClient);
     }
 
     /**
@@ -4080,7 +3999,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPerformanceResourceStatRequest 请求对象
+     * @param request ListPerformanceResourceStatRequest 请求对象
      * @return CompletableFuture<ListPerformanceResourceStatResponse>
      */
     public CompletableFuture<ListPerformanceResourceStatResponse> listPerformanceResourceStatAsync(
@@ -4095,13 +4014,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPerformanceResourceStatRequest 请求对象
+     * @param request ListPerformanceResourceStatRequest 请求对象
      * @return AsyncInvoker<ListPerformanceResourceStatRequest, ListPerformanceResourceStatResponse>
      */
     public AsyncInvoker<ListPerformanceResourceStatRequest, ListPerformanceResourceStatResponse> listPerformanceResourceStatAsyncInvoker(
         ListPerformanceResourceStatRequest request) {
-        return new AsyncInvoker<ListPerformanceResourceStatRequest, ListPerformanceResourceStatResponse>(request,
-            EiHealthMeta.listPerformanceResourceStat, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listPerformanceResourceStat, hcClient);
     }
 
     /**
@@ -4111,7 +4029,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPerformanceResourcesRequest 请求对象
+     * @param request ListPerformanceResourcesRequest 请求对象
      * @return CompletableFuture<ListPerformanceResourcesResponse>
      */
     public CompletableFuture<ListPerformanceResourcesResponse> listPerformanceResourcesAsync(
@@ -4126,13 +4044,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPerformanceResourcesRequest 请求对象
+     * @param request ListPerformanceResourcesRequest 请求对象
      * @return AsyncInvoker<ListPerformanceResourcesRequest, ListPerformanceResourcesResponse>
      */
     public AsyncInvoker<ListPerformanceResourcesRequest, ListPerformanceResourcesResponse> listPerformanceResourcesAsyncInvoker(
         ListPerformanceResourcesRequest request) {
-        return new AsyncInvoker<ListPerformanceResourcesRequest, ListPerformanceResourcesResponse>(request,
-            EiHealthMeta.listPerformanceResources, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listPerformanceResources, hcClient);
     }
 
     /**
@@ -4142,7 +4059,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyEventsRequest 请求对象
+     * @param request ListPolicyEventsRequest 请求对象
      * @return CompletableFuture<ListPolicyEventsResponse>
      */
     public CompletableFuture<ListPolicyEventsResponse> listPolicyEventsAsync(ListPolicyEventsRequest request) {
@@ -4156,13 +4073,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyEventsRequest 请求对象
+     * @param request ListPolicyEventsRequest 请求对象
      * @return AsyncInvoker<ListPolicyEventsRequest, ListPolicyEventsResponse>
      */
     public AsyncInvoker<ListPolicyEventsRequest, ListPolicyEventsResponse> listPolicyEventsAsyncInvoker(
         ListPolicyEventsRequest request) {
-        return new AsyncInvoker<ListPolicyEventsRequest, ListPolicyEventsResponse>(request,
-            EiHealthMeta.listPolicyEvents, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listPolicyEvents, hcClient);
     }
 
     /**
@@ -4172,7 +4088,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPresetLabelRequest 请求对象
+     * @param request ListPresetLabelRequest 请求对象
      * @return CompletableFuture<ListPresetLabelResponse>
      */
     public CompletableFuture<ListPresetLabelResponse> listPresetLabelAsync(ListPresetLabelRequest request) {
@@ -4186,13 +4102,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPresetLabelRequest 请求对象
+     * @param request ListPresetLabelRequest 请求对象
      * @return AsyncInvoker<ListPresetLabelRequest, ListPresetLabelResponse>
      */
     public AsyncInvoker<ListPresetLabelRequest, ListPresetLabelResponse> listPresetLabelAsyncInvoker(
         ListPresetLabelRequest request) {
-        return new AsyncInvoker<ListPresetLabelRequest, ListPresetLabelResponse>(request, EiHealthMeta.listPresetLabel,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listPresetLabel, hcClient);
     }
 
     /**
@@ -4202,7 +4117,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectRequest 请求对象
+     * @param request ListProjectRequest 请求对象
      * @return CompletableFuture<ListProjectResponse>
      */
     public CompletableFuture<ListProjectResponse> listProjectAsync(ListProjectRequest request) {
@@ -4216,11 +4131,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectRequest 请求对象
+     * @param request ListProjectRequest 请求对象
      * @return AsyncInvoker<ListProjectRequest, ListProjectResponse>
      */
     public AsyncInvoker<ListProjectRequest, ListProjectResponse> listProjectAsyncInvoker(ListProjectRequest request) {
-        return new AsyncInvoker<ListProjectRequest, ListProjectResponse>(request, EiHealthMeta.listProject, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listProject, hcClient);
     }
 
     /**
@@ -4230,7 +4145,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPropertyRequest 请求对象
+     * @param request ListPropertyRequest 请求对象
      * @return CompletableFuture<ListPropertyResponse>
      */
     public CompletableFuture<ListPropertyResponse> listPropertyAsync(ListPropertyRequest request) {
@@ -4244,13 +4159,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPropertyRequest 请求对象
+     * @param request ListPropertyRequest 请求对象
      * @return AsyncInvoker<ListPropertyRequest, ListPropertyResponse>
      */
     public AsyncInvoker<ListPropertyRequest, ListPropertyResponse> listPropertyAsyncInvoker(
         ListPropertyRequest request) {
-        return new AsyncInvoker<ListPropertyRequest, ListPropertyResponse>(request, EiHealthMeta.listProperty,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listProperty, hcClient);
     }
 
     /**
@@ -4260,7 +4174,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaRequest 请求对象
+     * @param request ListQuotaRequest 请求对象
      * @return CompletableFuture<ListQuotaResponse>
      */
     public CompletableFuture<ListQuotaResponse> listQuotaAsync(ListQuotaRequest request) {
@@ -4274,11 +4188,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaRequest 请求对象
+     * @param request ListQuotaRequest 请求对象
      * @return AsyncInvoker<ListQuotaRequest, ListQuotaResponse>
      */
     public AsyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaAsyncInvoker(ListQuotaRequest request) {
-        return new AsyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, EiHealthMeta.listQuota, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listQuota, hcClient);
     }
 
     /**
@@ -4288,7 +4202,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScaleOutPolicyRequest 请求对象
+     * @param request ListScaleOutPolicyRequest 请求对象
      * @return CompletableFuture<ListScaleOutPolicyResponse>
      */
     public CompletableFuture<ListScaleOutPolicyResponse> listScaleOutPolicyAsync(ListScaleOutPolicyRequest request) {
@@ -4302,13 +4216,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScaleOutPolicyRequest 请求对象
+     * @param request ListScaleOutPolicyRequest 请求对象
      * @return AsyncInvoker<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse>
      */
     public AsyncInvoker<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse> listScaleOutPolicyAsyncInvoker(
         ListScaleOutPolicyRequest request) {
-        return new AsyncInvoker<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse>(request,
-            EiHealthMeta.listScaleOutPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listScaleOutPolicy, hcClient);
     }
 
     /**
@@ -4318,7 +4231,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingHistoryRequest 请求对象
+     * @param request ListScalingHistoryRequest 请求对象
      * @return CompletableFuture<ListScalingHistoryResponse>
      */
     public CompletableFuture<ListScalingHistoryResponse> listScalingHistoryAsync(ListScalingHistoryRequest request) {
@@ -4332,13 +4245,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingHistoryRequest 请求对象
+     * @param request ListScalingHistoryRequest 请求对象
      * @return AsyncInvoker<ListScalingHistoryRequest, ListScalingHistoryResponse>
      */
     public AsyncInvoker<ListScalingHistoryRequest, ListScalingHistoryResponse> listScalingHistoryAsyncInvoker(
         ListScalingHistoryRequest request) {
-        return new AsyncInvoker<ListScalingHistoryRequest, ListScalingHistoryResponse>(request,
-            EiHealthMeta.listScalingHistory, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listScalingHistory, hcClient);
     }
 
     /**
@@ -4348,7 +4260,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStarRequest 请求对象
+     * @param request ListStarRequest 请求对象
      * @return CompletableFuture<ListStarResponse>
      */
     public CompletableFuture<ListStarResponse> listStarAsync(ListStarRequest request) {
@@ -4362,11 +4274,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStarRequest 请求对象
+     * @param request ListStarRequest 请求对象
      * @return AsyncInvoker<ListStarRequest, ListStarResponse>
      */
     public AsyncInvoker<ListStarRequest, ListStarResponse> listStarAsyncInvoker(ListStarRequest request) {
-        return new AsyncInvoker<ListStarRequest, ListStarResponse>(request, EiHealthMeta.listStar, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listStar, hcClient);
     }
 
     /**
@@ -4376,7 +4288,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStorageResourcesRequest 请求对象
+     * @param request ListStorageResourcesRequest 请求对象
      * @return CompletableFuture<ListStorageResourcesResponse>
      */
     public CompletableFuture<ListStorageResourcesResponse> listStorageResourcesAsync(
@@ -4391,13 +4303,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStorageResourcesRequest 请求对象
+     * @param request ListStorageResourcesRequest 请求对象
      * @return AsyncInvoker<ListStorageResourcesRequest, ListStorageResourcesResponse>
      */
     public AsyncInvoker<ListStorageResourcesRequest, ListStorageResourcesResponse> listStorageResourcesAsyncInvoker(
         ListStorageResourcesRequest request) {
-        return new AsyncInvoker<ListStorageResourcesRequest, ListStorageResourcesResponse>(request,
-            EiHealthMeta.listStorageResources, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listStorageResources, hcClient);
     }
 
     /**
@@ -4407,7 +4318,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStudyRequest 请求对象
+     * @param request ListStudyRequest 请求对象
      * @return CompletableFuture<ListStudyResponse>
      */
     public CompletableFuture<ListStudyResponse> listStudyAsync(ListStudyRequest request) {
@@ -4421,11 +4332,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStudyRequest 请求对象
+     * @param request ListStudyRequest 请求对象
      * @return AsyncInvoker<ListStudyRequest, ListStudyResponse>
      */
     public AsyncInvoker<ListStudyRequest, ListStudyResponse> listStudyAsyncInvoker(ListStudyRequest request) {
-        return new AsyncInvoker<ListStudyRequest, ListStudyResponse>(request, EiHealthMeta.listStudy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listStudy, hcClient);
     }
 
     /**
@@ -4435,7 +4346,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStudyJobRequest 请求对象
+     * @param request ListStudyJobRequest 请求对象
      * @return CompletableFuture<ListStudyJobResponse>
      */
     public CompletableFuture<ListStudyJobResponse> listStudyJobAsync(ListStudyJobRequest request) {
@@ -4449,13 +4360,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStudyJobRequest 请求对象
+     * @param request ListStudyJobRequest 请求对象
      * @return AsyncInvoker<ListStudyJobRequest, ListStudyJobResponse>
      */
     public AsyncInvoker<ListStudyJobRequest, ListStudyJobResponse> listStudyJobAsyncInvoker(
         ListStudyJobRequest request) {
-        return new AsyncInvoker<ListStudyJobRequest, ListStudyJobResponse>(request, EiHealthMeta.listStudyJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listStudyJob, hcClient);
     }
 
     /**
@@ -4465,7 +4375,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateRequest 请求对象
+     * @param request ListTemplateRequest 请求对象
      * @return CompletableFuture<ListTemplateResponse>
      */
     public CompletableFuture<ListTemplateResponse> listTemplateAsync(ListTemplateRequest request) {
@@ -4479,13 +4389,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateRequest 请求对象
+     * @param request ListTemplateRequest 请求对象
      * @return AsyncInvoker<ListTemplateRequest, ListTemplateResponse>
      */
     public AsyncInvoker<ListTemplateRequest, ListTemplateResponse> listTemplateAsyncInvoker(
         ListTemplateRequest request) {
-        return new AsyncInvoker<ListTemplateRequest, ListTemplateResponse>(request, EiHealthMeta.listTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listTemplate, hcClient);
     }
 
     /**
@@ -4495,7 +4404,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserRequest 请求对象
+     * @param request ListUserRequest 请求对象
      * @return CompletableFuture<ListUserResponse>
      */
     public CompletableFuture<ListUserResponse> listUserAsync(ListUserRequest request) {
@@ -4509,11 +4418,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserRequest 请求对象
+     * @param request ListUserRequest 请求对象
      * @return AsyncInvoker<ListUserRequest, ListUserResponse>
      */
     public AsyncInvoker<ListUserRequest, ListUserResponse> listUserAsyncInvoker(ListUserRequest request) {
-        return new AsyncInvoker<ListUserRequest, ListUserResponse>(request, EiHealthMeta.listUser, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listUser, hcClient);
     }
 
     /**
@@ -4523,7 +4432,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVendorRequest 请求对象
+     * @param request ListVendorRequest 请求对象
      * @return CompletableFuture<ListVendorResponse>
      */
     public CompletableFuture<ListVendorResponse> listVendorAsync(ListVendorRequest request) {
@@ -4537,11 +4446,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVendorRequest 请求对象
+     * @param request ListVendorRequest 请求对象
      * @return AsyncInvoker<ListVendorRequest, ListVendorResponse>
      */
     public AsyncInvoker<ListVendorRequest, ListVendorResponse> listVendorAsyncInvoker(ListVendorRequest request) {
-        return new AsyncInvoker<ListVendorRequest, ListVendorResponse>(request, EiHealthMeta.listVendor, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listVendor, hcClient);
     }
 
     /**
@@ -4551,7 +4460,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowRequest 请求对象
+     * @param request ListWorkflowRequest 请求对象
      * @return CompletableFuture<ListWorkflowResponse>
      */
     public CompletableFuture<ListWorkflowResponse> listWorkflowAsync(ListWorkflowRequest request) {
@@ -4565,13 +4474,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowRequest 请求对象
+     * @param request ListWorkflowRequest 请求对象
      * @return AsyncInvoker<ListWorkflowRequest, ListWorkflowResponse>
      */
     public AsyncInvoker<ListWorkflowRequest, ListWorkflowResponse> listWorkflowAsyncInvoker(
         ListWorkflowRequest request) {
-        return new AsyncInvoker<ListWorkflowRequest, ListWorkflowResponse>(request, EiHealthMeta.listWorkflow,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listWorkflow, hcClient);
     }
 
     /**
@@ -4581,7 +4489,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowStatisticRequest 请求对象
+     * @param request ListWorkflowStatisticRequest 请求对象
      * @return CompletableFuture<ListWorkflowStatisticResponse>
      */
     public CompletableFuture<ListWorkflowStatisticResponse> listWorkflowStatisticAsync(
@@ -4596,13 +4504,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowStatisticRequest 请求对象
+     * @param request ListWorkflowStatisticRequest 请求对象
      * @return AsyncInvoker<ListWorkflowStatisticRequest, ListWorkflowStatisticResponse>
      */
     public AsyncInvoker<ListWorkflowStatisticRequest, ListWorkflowStatisticResponse> listWorkflowStatisticAsyncInvoker(
         ListWorkflowStatisticRequest request) {
-        return new AsyncInvoker<ListWorkflowStatisticRequest, ListWorkflowStatisticResponse>(request,
-            EiHealthMeta.listWorkflowStatistic, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listWorkflowStatistic, hcClient);
     }
 
     /**
@@ -4612,7 +4519,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAppRequest 请求对象
+     * @param request PublishAppRequest 请求对象
      * @return CompletableFuture<PublishAppResponse>
      */
     public CompletableFuture<PublishAppResponse> publishAppAsync(PublishAppRequest request) {
@@ -4626,11 +4533,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAppRequest 请求对象
+     * @param request PublishAppRequest 请求对象
      * @return AsyncInvoker<PublishAppRequest, PublishAppResponse>
      */
     public AsyncInvoker<PublishAppRequest, PublishAppResponse> publishAppAsyncInvoker(PublishAppRequest request) {
-        return new AsyncInvoker<PublishAppRequest, PublishAppResponse>(request, EiHealthMeta.publishApp, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.publishApp, hcClient);
     }
 
     /**
@@ -4640,7 +4547,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishDataRequest 请求对象
+     * @param request PublishDataRequest 请求对象
      * @return CompletableFuture<PublishDataResponse>
      */
     public CompletableFuture<PublishDataResponse> publishDataAsync(PublishDataRequest request) {
@@ -4654,11 +4561,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishDataRequest 请求对象
+     * @param request PublishDataRequest 请求对象
      * @return AsyncInvoker<PublishDataRequest, PublishDataResponse>
      */
     public AsyncInvoker<PublishDataRequest, PublishDataResponse> publishDataAsyncInvoker(PublishDataRequest request) {
-        return new AsyncInvoker<PublishDataRequest, PublishDataResponse>(request, EiHealthMeta.publishData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.publishData, hcClient);
     }
 
     /**
@@ -4668,7 +4575,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishImageRequest 请求对象
+     * @param request PublishImageRequest 请求对象
      * @return CompletableFuture<PublishImageResponse>
      */
     public CompletableFuture<PublishImageResponse> publishImageAsync(PublishImageRequest request) {
@@ -4682,13 +4589,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishImageRequest 请求对象
+     * @param request PublishImageRequest 请求对象
      * @return AsyncInvoker<PublishImageRequest, PublishImageResponse>
      */
     public AsyncInvoker<PublishImageRequest, PublishImageResponse> publishImageAsyncInvoker(
         PublishImageRequest request) {
-        return new AsyncInvoker<PublishImageRequest, PublishImageResponse>(request, EiHealthMeta.publishImage,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.publishImage, hcClient);
     }
 
     /**
@@ -4698,7 +4604,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishWorkflowRequest 请求对象
+     * @param request PublishWorkflowRequest 请求对象
      * @return CompletableFuture<PublishWorkflowResponse>
      */
     public CompletableFuture<PublishWorkflowResponse> publishWorkflowAsync(PublishWorkflowRequest request) {
@@ -4712,13 +4618,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishWorkflowRequest 请求对象
+     * @param request PublishWorkflowRequest 请求对象
      * @return AsyncInvoker<PublishWorkflowRequest, PublishWorkflowResponse>
      */
     public AsyncInvoker<PublishWorkflowRequest, PublishWorkflowResponse> publishWorkflowAsyncInvoker(
         PublishWorkflowRequest request) {
-        return new AsyncInvoker<PublishWorkflowRequest, PublishWorkflowResponse>(request, EiHealthMeta.publishWorkflow,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.publishWorkflow, hcClient);
     }
 
     /**
@@ -4728,7 +4633,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param QuoteDataRequest 请求对象
+     * @param request QuoteDataRequest 请求对象
      * @return CompletableFuture<QuoteDataResponse>
      */
     public CompletableFuture<QuoteDataResponse> quoteDataAsync(QuoteDataRequest request) {
@@ -4742,11 +4647,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param QuoteDataRequest 请求对象
+     * @param request QuoteDataRequest 请求对象
      * @return AsyncInvoker<QuoteDataRequest, QuoteDataResponse>
      */
     public AsyncInvoker<QuoteDataRequest, QuoteDataResponse> quoteDataAsyncInvoker(QuoteDataRequest request) {
-        return new AsyncInvoker<QuoteDataRequest, QuoteDataResponse>(request, EiHealthMeta.quoteData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.quoteData, hcClient);
     }
 
     /**
@@ -4756,7 +4661,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param QuoteInstanceRequest 请求对象
+     * @param request QuoteInstanceRequest 请求对象
      * @return CompletableFuture<QuoteInstanceResponse>
      */
     public CompletableFuture<QuoteInstanceResponse> quoteInstanceAsync(QuoteInstanceRequest request) {
@@ -4770,13 +4675,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param QuoteInstanceRequest 请求对象
+     * @param request QuoteInstanceRequest 请求对象
      * @return AsyncInvoker<QuoteInstanceRequest, QuoteInstanceResponse>
      */
     public AsyncInvoker<QuoteInstanceRequest, QuoteInstanceResponse> quoteInstanceAsyncInvoker(
         QuoteInstanceRequest request) {
-        return new AsyncInvoker<QuoteInstanceRequest, QuoteInstanceResponse>(request, EiHealthMeta.quoteInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.quoteInstance, hcClient);
     }
 
     /**
@@ -4786,7 +4690,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RebootNodeRequest 请求对象
+     * @param request RebootNodeRequest 请求对象
      * @return CompletableFuture<RebootNodeResponse>
      */
     public CompletableFuture<RebootNodeResponse> rebootNodeAsync(RebootNodeRequest request) {
@@ -4800,11 +4704,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RebootNodeRequest 请求对象
+     * @param request RebootNodeRequest 请求对象
      * @return AsyncInvoker<RebootNodeRequest, RebootNodeResponse>
      */
     public AsyncInvoker<RebootNodeRequest, RebootNodeResponse> rebootNodeAsyncInvoker(RebootNodeRequest request) {
-        return new AsyncInvoker<RebootNodeRequest, RebootNodeResponse>(request, EiHealthMeta.rebootNode, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.rebootNode, hcClient);
     }
 
     /**
@@ -4814,7 +4718,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreBackupRequest 请求对象
+     * @param request RestoreBackupRequest 请求对象
      * @return CompletableFuture<RestoreBackupResponse>
      */
     public CompletableFuture<RestoreBackupResponse> restoreBackupAsync(RestoreBackupRequest request) {
@@ -4828,13 +4732,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreBackupRequest 请求对象
+     * @param request RestoreBackupRequest 请求对象
      * @return AsyncInvoker<RestoreBackupRequest, RestoreBackupResponse>
      */
     public AsyncInvoker<RestoreBackupRequest, RestoreBackupResponse> restoreBackupAsyncInvoker(
         RestoreBackupRequest request) {
-        return new AsyncInvoker<RestoreBackupRequest, RestoreBackupResponse>(request, EiHealthMeta.restoreBackup,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.restoreBackup, hcClient);
     }
 
     /**
@@ -4844,7 +4747,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryDataJobRequest 请求对象
+     * @param request RetryDataJobRequest 请求对象
      * @return CompletableFuture<RetryDataJobResponse>
      */
     public CompletableFuture<RetryDataJobResponse> retryDataJobAsync(RetryDataJobRequest request) {
@@ -4858,13 +4761,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryDataJobRequest 请求对象
+     * @param request RetryDataJobRequest 请求对象
      * @return AsyncInvoker<RetryDataJobRequest, RetryDataJobResponse>
      */
     public AsyncInvoker<RetryDataJobRequest, RetryDataJobResponse> retryDataJobAsyncInvoker(
         RetryDataJobRequest request) {
-        return new AsyncInvoker<RetryDataJobRequest, RetryDataJobResponse>(request, EiHealthMeta.retryDataJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.retryDataJob, hcClient);
     }
 
     /**
@@ -4874,7 +4776,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryJobRequest 请求对象
+     * @param request RetryJobRequest 请求对象
      * @return CompletableFuture<RetryJobResponse>
      */
     public CompletableFuture<RetryJobResponse> retryJobAsync(RetryJobRequest request) {
@@ -4888,11 +4790,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryJobRequest 请求对象
+     * @param request RetryJobRequest 请求对象
      * @return AsyncInvoker<RetryJobRequest, RetryJobResponse>
      */
     public AsyncInvoker<RetryJobRequest, RetryJobResponse> retryJobAsyncInvoker(RetryJobRequest request) {
-        return new AsyncInvoker<RetryJobRequest, RetryJobResponse>(request, EiHealthMeta.retryJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.retryJob, hcClient);
     }
 
     /**
@@ -4902,7 +4804,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Show3dStructureContentRequest 请求对象
+     * @param request Show3dStructureContentRequest 请求对象
      * @return CompletableFuture<Show3dStructureContentResponse>
      */
     public CompletableFuture<Show3dStructureContentResponse> show3dStructureContentAsync(
@@ -4917,13 +4819,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Show3dStructureContentRequest 请求对象
+     * @param request Show3dStructureContentRequest 请求对象
      * @return AsyncInvoker<Show3dStructureContentRequest, Show3dStructureContentResponse>
      */
     public AsyncInvoker<Show3dStructureContentRequest, Show3dStructureContentResponse> show3dStructureContentAsyncInvoker(
         Show3dStructureContentRequest request) {
-        return new AsyncInvoker<Show3dStructureContentRequest, Show3dStructureContentResponse>(request,
-            EiHealthMeta.show3dStructureContent, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.show3dStructureContent, hcClient);
     }
 
     /**
@@ -4933,7 +4834,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetJobRequest 请求对象
+     * @param request ShowAdmetJobRequest 请求对象
      * @return CompletableFuture<ShowAdmetJobResponse>
      */
     public CompletableFuture<ShowAdmetJobResponse> showAdmetJobAsync(ShowAdmetJobRequest request) {
@@ -4947,13 +4848,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetJobRequest 请求对象
+     * @param request ShowAdmetJobRequest 请求对象
      * @return AsyncInvoker<ShowAdmetJobRequest, ShowAdmetJobResponse>
      */
     public AsyncInvoker<ShowAdmetJobRequest, ShowAdmetJobResponse> showAdmetJobAsyncInvoker(
         ShowAdmetJobRequest request) {
-        return new AsyncInvoker<ShowAdmetJobRequest, ShowAdmetJobResponse>(request, EiHealthMeta.showAdmetJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showAdmetJob, hcClient);
     }
 
     /**
@@ -4963,7 +4863,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return CompletableFuture<ShowAppResponse>
      */
     public CompletableFuture<ShowAppResponse> showAppAsync(ShowAppRequest request) {
@@ -4977,11 +4877,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return AsyncInvoker<ShowAppRequest, ShowAppResponse>
      */
     public AsyncInvoker<ShowAppRequest, ShowAppResponse> showAppAsyncInvoker(ShowAppRequest request) {
-        return new AsyncInvoker<ShowAppRequest, ShowAppResponse>(request, EiHealthMeta.showApp, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showApp, hcClient);
     }
 
     /**
@@ -4991,7 +4891,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetRequest 请求对象
+     * @param request ShowAssetRequest 请求对象
      * @return CompletableFuture<ShowAssetResponse>
      */
     public CompletableFuture<ShowAssetResponse> showAssetAsync(ShowAssetRequest request) {
@@ -5005,11 +4905,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetRequest 请求对象
+     * @param request ShowAssetRequest 请求对象
      * @return AsyncInvoker<ShowAssetRequest, ShowAssetResponse>
      */
     public AsyncInvoker<ShowAssetRequest, ShowAssetResponse> showAssetAsyncInvoker(ShowAssetRequest request) {
-        return new AsyncInvoker<ShowAssetRequest, ShowAssetResponse>(request, EiHealthMeta.showAsset, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showAsset, hcClient);
     }
 
     /**
@@ -5019,7 +4919,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetVersionRequest 请求对象
+     * @param request ShowAssetVersionRequest 请求对象
      * @return CompletableFuture<ShowAssetVersionResponse>
      */
     public CompletableFuture<ShowAssetVersionResponse> showAssetVersionAsync(ShowAssetVersionRequest request) {
@@ -5033,13 +4933,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetVersionRequest 请求对象
+     * @param request ShowAssetVersionRequest 请求对象
      * @return AsyncInvoker<ShowAssetVersionRequest, ShowAssetVersionResponse>
      */
     public AsyncInvoker<ShowAssetVersionRequest, ShowAssetVersionResponse> showAssetVersionAsyncInvoker(
         ShowAssetVersionRequest request) {
-        return new AsyncInvoker<ShowAssetVersionRequest, ShowAssetVersionResponse>(request,
-            EiHealthMeta.showAssetVersion, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showAssetVersion, hcClient);
     }
 
     /**
@@ -5049,7 +4948,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoJobRequest 请求对象
+     * @param request ShowAutoJobRequest 请求对象
      * @return CompletableFuture<ShowAutoJobResponse>
      */
     public CompletableFuture<ShowAutoJobResponse> showAutoJobAsync(ShowAutoJobRequest request) {
@@ -5063,11 +4962,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoJobRequest 请求对象
+     * @param request ShowAutoJobRequest 请求对象
      * @return AsyncInvoker<ShowAutoJobRequest, ShowAutoJobResponse>
      */
     public AsyncInvoker<ShowAutoJobRequest, ShowAutoJobResponse> showAutoJobAsyncInvoker(ShowAutoJobRequest request) {
-        return new AsyncInvoker<ShowAutoJobRequest, ShowAutoJobResponse>(request, EiHealthMeta.showAutoJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showAutoJob, hcClient);
     }
 
     /**
@@ -5077,7 +4976,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupPathRequest 请求对象
+     * @param request ShowBackupPathRequest 请求对象
      * @return CompletableFuture<ShowBackupPathResponse>
      */
     public CompletableFuture<ShowBackupPathResponse> showBackupPathAsync(ShowBackupPathRequest request) {
@@ -5091,13 +4990,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupPathRequest 请求对象
+     * @param request ShowBackupPathRequest 请求对象
      * @return AsyncInvoker<ShowBackupPathRequest, ShowBackupPathResponse>
      */
     public AsyncInvoker<ShowBackupPathRequest, ShowBackupPathResponse> showBackupPathAsyncInvoker(
         ShowBackupPathRequest request) {
-        return new AsyncInvoker<ShowBackupPathRequest, ShowBackupPathResponse>(request, EiHealthMeta.showBackupPath,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showBackupPath, hcClient);
     }
 
     /**
@@ -5107,7 +5005,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBmsDevicesRequest 请求对象
+     * @param request ShowBmsDevicesRequest 请求对象
      * @return CompletableFuture<ShowBmsDevicesResponse>
      */
     public CompletableFuture<ShowBmsDevicesResponse> showBmsDevicesAsync(ShowBmsDevicesRequest request) {
@@ -5121,13 +5019,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBmsDevicesRequest 请求对象
+     * @param request ShowBmsDevicesRequest 请求对象
      * @return AsyncInvoker<ShowBmsDevicesRequest, ShowBmsDevicesResponse>
      */
     public AsyncInvoker<ShowBmsDevicesRequest, ShowBmsDevicesResponse> showBmsDevicesAsyncInvoker(
         ShowBmsDevicesRequest request) {
-        return new AsyncInvoker<ShowBmsDevicesRequest, ShowBmsDevicesResponse>(request, EiHealthMeta.showBmsDevices,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showBmsDevices, hcClient);
     }
 
     /**
@@ -5137,7 +5034,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBucketStorageRequest 请求对象
+     * @param request ShowBucketStorageRequest 请求对象
      * @return CompletableFuture<ShowBucketStorageResponse>
      */
     public CompletableFuture<ShowBucketStorageResponse> showBucketStorageAsync(ShowBucketStorageRequest request) {
@@ -5151,13 +5048,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBucketStorageRequest 请求对象
+     * @param request ShowBucketStorageRequest 请求对象
      * @return AsyncInvoker<ShowBucketStorageRequest, ShowBucketStorageResponse>
      */
     public AsyncInvoker<ShowBucketStorageRequest, ShowBucketStorageResponse> showBucketStorageAsyncInvoker(
         ShowBucketStorageRequest request) {
-        return new AsyncInvoker<ShowBucketStorageRequest, ShowBucketStorageResponse>(request,
-            EiHealthMeta.showBucketStorage, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showBucketStorage, hcClient);
     }
 
     /**
@@ -5167,7 +5063,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataRequest 请求对象
+     * @param request ShowDataRequest 请求对象
      * @return CompletableFuture<ShowDataResponse>
      */
     public CompletableFuture<ShowDataResponse> showDataAsync(ShowDataRequest request) {
@@ -5181,11 +5077,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataRequest 请求对象
+     * @param request ShowDataRequest 请求对象
      * @return AsyncInvoker<ShowDataRequest, ShowDataResponse>
      */
     public AsyncInvoker<ShowDataRequest, ShowDataResponse> showDataAsyncInvoker(ShowDataRequest request) {
-        return new AsyncInvoker<ShowDataRequest, ShowDataResponse>(request, EiHealthMeta.showData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showData, hcClient);
     }
 
     /**
@@ -5195,7 +5091,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataJobRequest 请求对象
+     * @param request ShowDataJobRequest 请求对象
      * @return CompletableFuture<ShowDataJobResponse>
      */
     public CompletableFuture<ShowDataJobResponse> showDataJobAsync(ShowDataJobRequest request) {
@@ -5209,11 +5105,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataJobRequest 请求对象
+     * @param request ShowDataJobRequest 请求对象
      * @return AsyncInvoker<ShowDataJobRequest, ShowDataJobResponse>
      */
     public AsyncInvoker<ShowDataJobRequest, ShowDataJobResponse> showDataJobAsyncInvoker(ShowDataJobRequest request) {
-        return new AsyncInvoker<ShowDataJobRequest, ShowDataJobResponse>(request, EiHealthMeta.showDataJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showDataJob, hcClient);
     }
 
     /**
@@ -5223,7 +5119,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataPolicyRequest 请求对象
+     * @param request ShowDataPolicyRequest 请求对象
      * @return CompletableFuture<ShowDataPolicyResponse>
      */
     public CompletableFuture<ShowDataPolicyResponse> showDataPolicyAsync(ShowDataPolicyRequest request) {
@@ -5237,13 +5133,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataPolicyRequest 请求对象
+     * @param request ShowDataPolicyRequest 请求对象
      * @return AsyncInvoker<ShowDataPolicyRequest, ShowDataPolicyResponse>
      */
     public AsyncInvoker<ShowDataPolicyRequest, ShowDataPolicyResponse> showDataPolicyAsyncInvoker(
         ShowDataPolicyRequest request) {
-        return new AsyncInvoker<ShowDataPolicyRequest, ShowDataPolicyResponse>(request, EiHealthMeta.showDataPolicy,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showDataPolicy, hcClient);
     }
 
     /**
@@ -5253,7 +5148,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDockerLoginRequest 请求对象
+     * @param request ShowDockerLoginRequest 请求对象
      * @return CompletableFuture<ShowDockerLoginResponse>
      */
     public CompletableFuture<ShowDockerLoginResponse> showDockerLoginAsync(ShowDockerLoginRequest request) {
@@ -5267,13 +5162,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDockerLoginRequest 请求对象
+     * @param request ShowDockerLoginRequest 请求对象
      * @return AsyncInvoker<ShowDockerLoginRequest, ShowDockerLoginResponse>
      */
     public AsyncInvoker<ShowDockerLoginRequest, ShowDockerLoginResponse> showDockerLoginAsyncInvoker(
         ShowDockerLoginRequest request) {
-        return new AsyncInvoker<ShowDockerLoginRequest, ShowDockerLoginResponse>(request, EiHealthMeta.showDockerLogin,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showDockerLogin, hcClient);
     }
 
     /**
@@ -5283,7 +5177,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDockingJobRequest 请求对象
+     * @param request ShowDockingJobRequest 请求对象
      * @return CompletableFuture<ShowDockingJobResponse>
      */
     public CompletableFuture<ShowDockingJobResponse> showDockingJobAsync(ShowDockingJobRequest request) {
@@ -5297,13 +5191,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDockingJobRequest 请求对象
+     * @param request ShowDockingJobRequest 请求对象
      * @return AsyncInvoker<ShowDockingJobRequest, ShowDockingJobResponse>
      */
     public AsyncInvoker<ShowDockingJobRequest, ShowDockingJobResponse> showDockingJobAsyncInvoker(
         ShowDockingJobRequest request) {
-        return new AsyncInvoker<ShowDockingJobRequest, ShowDockingJobResponse>(request, EiHealthMeta.showDockingJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showDockingJob, hcClient);
     }
 
     /**
@@ -5313,7 +5206,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvRequest 请求对象
+     * @param request ShowEnvRequest 请求对象
      * @return CompletableFuture<ShowEnvResponse>
      */
     public CompletableFuture<ShowEnvResponse> showEnvAsync(ShowEnvRequest request) {
@@ -5327,11 +5220,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvRequest 请求对象
+     * @param request ShowEnvRequest 请求对象
      * @return AsyncInvoker<ShowEnvRequest, ShowEnvResponse>
      */
     public AsyncInvoker<ShowEnvRequest, ShowEnvResponse> showEnvAsyncInvoker(ShowEnvRequest request) {
-        return new AsyncInvoker<ShowEnvRequest, ShowEnvResponse>(request, EiHealthMeta.showEnv, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showEnv, hcClient);
     }
 
     /**
@@ -5341,7 +5234,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEvsQuotaRequest 请求对象
+     * @param request ShowEvsQuotaRequest 请求对象
      * @return CompletableFuture<ShowEvsQuotaResponse>
      */
     public CompletableFuture<ShowEvsQuotaResponse> showEvsQuotaAsync(ShowEvsQuotaRequest request) {
@@ -5355,13 +5248,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEvsQuotaRequest 请求对象
+     * @param request ShowEvsQuotaRequest 请求对象
      * @return AsyncInvoker<ShowEvsQuotaRequest, ShowEvsQuotaResponse>
      */
     public AsyncInvoker<ShowEvsQuotaRequest, ShowEvsQuotaResponse> showEvsQuotaAsyncInvoker(
         ShowEvsQuotaRequest request) {
-        return new AsyncInvoker<ShowEvsQuotaRequest, ShowEvsQuotaResponse>(request, EiHealthMeta.showEvsQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showEvsQuota, hcClient);
     }
 
     /**
@@ -5371,7 +5263,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtremumInfoRequest 请求对象
+     * @param request ShowExtremumInfoRequest 请求对象
      * @return CompletableFuture<ShowExtremumInfoResponse>
      */
     public CompletableFuture<ShowExtremumInfoResponse> showExtremumInfoAsync(ShowExtremumInfoRequest request) {
@@ -5385,13 +5277,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtremumInfoRequest 请求对象
+     * @param request ShowExtremumInfoRequest 请求对象
      * @return AsyncInvoker<ShowExtremumInfoRequest, ShowExtremumInfoResponse>
      */
     public AsyncInvoker<ShowExtremumInfoRequest, ShowExtremumInfoResponse> showExtremumInfoAsyncInvoker(
         ShowExtremumInfoRequest request) {
-        return new AsyncInvoker<ShowExtremumInfoRequest, ShowExtremumInfoResponse>(request,
-            EiHealthMeta.showExtremumInfo, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showExtremumInfo, hcClient);
     }
 
     /**
@@ -5401,7 +5292,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFepJobRequest 请求对象
+     * @param request ShowFepJobRequest 请求对象
      * @return CompletableFuture<ShowFepJobResponse>
      */
     public CompletableFuture<ShowFepJobResponse> showFepJobAsync(ShowFepJobRequest request) {
@@ -5415,11 +5306,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFepJobRequest 请求对象
+     * @param request ShowFepJobRequest 请求对象
      * @return AsyncInvoker<ShowFepJobRequest, ShowFepJobResponse>
      */
     public AsyncInvoker<ShowFepJobRequest, ShowFepJobResponse> showFepJobAsyncInvoker(ShowFepJobRequest request) {
-        return new AsyncInvoker<ShowFepJobRequest, ShowFepJobResponse>(request, EiHealthMeta.showFepJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showFepJob, hcClient);
     }
 
     /**
@@ -5429,7 +5320,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
      */
     public CompletableFuture<ShowInstanceResponse> showInstanceAsync(ShowInstanceRequest request) {
@@ -5443,13 +5334,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(
         ShowInstanceRequest request) {
-        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, EiHealthMeta.showInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showInstance, hcClient);
     }
 
     /**
@@ -5459,7 +5349,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
      */
     public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
@@ -5473,11 +5363,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
-        return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, EiHealthMeta.showJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showJob, hcClient);
     }
 
     /**
@@ -5487,7 +5377,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobConfigRequest 请求对象
+     * @param request ShowJobConfigRequest 请求对象
      * @return CompletableFuture<ShowJobConfigResponse>
      */
     public CompletableFuture<ShowJobConfigResponse> showJobConfigAsync(ShowJobConfigRequest request) {
@@ -5501,13 +5391,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobConfigRequest 请求对象
+     * @param request ShowJobConfigRequest 请求对象
      * @return AsyncInvoker<ShowJobConfigRequest, ShowJobConfigResponse>
      */
     public AsyncInvoker<ShowJobConfigRequest, ShowJobConfigResponse> showJobConfigAsyncInvoker(
         ShowJobConfigRequest request) {
-        return new AsyncInvoker<ShowJobConfigRequest, ShowJobConfigResponse>(request, EiHealthMeta.showJobConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showJobConfig, hcClient);
     }
 
     /**
@@ -5517,7 +5406,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobEventRequest 请求对象
+     * @param request ShowJobEventRequest 请求对象
      * @return CompletableFuture<ShowJobEventResponse>
      */
     public CompletableFuture<ShowJobEventResponse> showJobEventAsync(ShowJobEventRequest request) {
@@ -5531,13 +5420,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobEventRequest 请求对象
+     * @param request ShowJobEventRequest 请求对象
      * @return AsyncInvoker<ShowJobEventRequest, ShowJobEventResponse>
      */
     public AsyncInvoker<ShowJobEventRequest, ShowJobEventResponse> showJobEventAsyncInvoker(
         ShowJobEventRequest request) {
-        return new AsyncInvoker<ShowJobEventRequest, ShowJobEventResponse>(request, EiHealthMeta.showJobEvent,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showJobEvent, hcClient);
     }
 
     /**
@@ -5547,7 +5435,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobLogRequest 请求对象
+     * @param request ShowJobLogRequest 请求对象
      * @return CompletableFuture<ShowJobLogResponse>
      */
     public CompletableFuture<ShowJobLogResponse> showJobLogAsync(ShowJobLogRequest request) {
@@ -5561,11 +5449,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobLogRequest 请求对象
+     * @param request ShowJobLogRequest 请求对象
      * @return AsyncInvoker<ShowJobLogRequest, ShowJobLogResponse>
      */
     public AsyncInvoker<ShowJobLogRequest, ShowJobLogResponse> showJobLogAsyncInvoker(ShowJobLogRequest request) {
-        return new AsyncInvoker<ShowJobLogRequest, ShowJobLogResponse>(request, EiHealthMeta.showJobLog, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showJobLog, hcClient);
     }
 
     /**
@@ -5575,7 +5463,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLeftQuotaRequest 请求对象
+     * @param request ShowLeftQuotaRequest 请求对象
      * @return CompletableFuture<ShowLeftQuotaResponse>
      */
     public CompletableFuture<ShowLeftQuotaResponse> showLeftQuotaAsync(ShowLeftQuotaRequest request) {
@@ -5589,13 +5477,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLeftQuotaRequest 请求对象
+     * @param request ShowLeftQuotaRequest 请求对象
      * @return AsyncInvoker<ShowLeftQuotaRequest, ShowLeftQuotaResponse>
      */
     public AsyncInvoker<ShowLeftQuotaRequest, ShowLeftQuotaResponse> showLeftQuotaAsyncInvoker(
         ShowLeftQuotaRequest request) {
-        return new AsyncInvoker<ShowLeftQuotaRequest, ShowLeftQuotaResponse>(request, EiHealthMeta.showLeftQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showLeftQuota, hcClient);
     }
 
     /**
@@ -5605,7 +5492,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageClearRuleRequest 请求对象
+     * @param request ShowMessageClearRuleRequest 请求对象
      * @return CompletableFuture<ShowMessageClearRuleResponse>
      */
     public CompletableFuture<ShowMessageClearRuleResponse> showMessageClearRuleAsync(
@@ -5620,13 +5507,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageClearRuleRequest 请求对象
+     * @param request ShowMessageClearRuleRequest 请求对象
      * @return AsyncInvoker<ShowMessageClearRuleRequest, ShowMessageClearRuleResponse>
      */
     public AsyncInvoker<ShowMessageClearRuleRequest, ShowMessageClearRuleResponse> showMessageClearRuleAsyncInvoker(
         ShowMessageClearRuleRequest request) {
-        return new AsyncInvoker<ShowMessageClearRuleRequest, ShowMessageClearRuleResponse>(request,
-            EiHealthMeta.showMessageClearRule, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showMessageClearRule, hcClient);
     }
 
     /**
@@ -5636,7 +5522,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageEmailConfigRequest 请求对象
+     * @param request ShowMessageEmailConfigRequest 请求对象
      * @return CompletableFuture<ShowMessageEmailConfigResponse>
      */
     public CompletableFuture<ShowMessageEmailConfigResponse> showMessageEmailConfigAsync(
@@ -5651,13 +5537,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageEmailConfigRequest 请求对象
+     * @param request ShowMessageEmailConfigRequest 请求对象
      * @return AsyncInvoker<ShowMessageEmailConfigRequest, ShowMessageEmailConfigResponse>
      */
     public AsyncInvoker<ShowMessageEmailConfigRequest, ShowMessageEmailConfigResponse> showMessageEmailConfigAsyncInvoker(
         ShowMessageEmailConfigRequest request) {
-        return new AsyncInvoker<ShowMessageEmailConfigRequest, ShowMessageEmailConfigResponse>(request,
-            EiHealthMeta.showMessageEmailConfig, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showMessageEmailConfig, hcClient);
     }
 
     /**
@@ -5667,7 +5552,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageReceiveConfigRequest 请求对象
+     * @param request ShowMessageReceiveConfigRequest 请求对象
      * @return CompletableFuture<ShowMessageReceiveConfigResponse>
      */
     public CompletableFuture<ShowMessageReceiveConfigResponse> showMessageReceiveConfigAsync(
@@ -5682,13 +5567,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageReceiveConfigRequest 请求对象
+     * @param request ShowMessageReceiveConfigRequest 请求对象
      * @return AsyncInvoker<ShowMessageReceiveConfigRequest, ShowMessageReceiveConfigResponse>
      */
     public AsyncInvoker<ShowMessageReceiveConfigRequest, ShowMessageReceiveConfigResponse> showMessageReceiveConfigAsyncInvoker(
         ShowMessageReceiveConfigRequest request) {
-        return new AsyncInvoker<ShowMessageReceiveConfigRequest, ShowMessageReceiveConfigResponse>(request,
-            EiHealthMeta.showMessageReceiveConfig, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showMessageReceiveConfig, hcClient);
     }
 
     /**
@@ -5698,7 +5582,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOptmJobRequest 请求对象
+     * @param request ShowOptmJobRequest 请求对象
      * @return CompletableFuture<ShowOptmJobResponse>
      */
     public CompletableFuture<ShowOptmJobResponse> showOptmJobAsync(ShowOptmJobRequest request) {
@@ -5712,11 +5596,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOptmJobRequest 请求对象
+     * @param request ShowOptmJobRequest 请求对象
      * @return AsyncInvoker<ShowOptmJobRequest, ShowOptmJobResponse>
      */
     public AsyncInvoker<ShowOptmJobRequest, ShowOptmJobResponse> showOptmJobAsyncInvoker(ShowOptmJobRequest request) {
-        return new AsyncInvoker<ShowOptmJobRequest, ShowOptmJobResponse>(request, EiHealthMeta.showOptmJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showOptmJob, hcClient);
     }
 
     /**
@@ -5726,7 +5610,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPocketDetectionJobRequest 请求对象
+     * @param request ShowPocketDetectionJobRequest 请求对象
      * @return CompletableFuture<ShowPocketDetectionJobResponse>
      */
     public CompletableFuture<ShowPocketDetectionJobResponse> showPocketDetectionJobAsync(
@@ -5741,13 +5625,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPocketDetectionJobRequest 请求对象
+     * @param request ShowPocketDetectionJobRequest 请求对象
      * @return AsyncInvoker<ShowPocketDetectionJobRequest, ShowPocketDetectionJobResponse>
      */
     public AsyncInvoker<ShowPocketDetectionJobRequest, ShowPocketDetectionJobResponse> showPocketDetectionJobAsyncInvoker(
         ShowPocketDetectionJobRequest request) {
-        return new AsyncInvoker<ShowPocketDetectionJobRequest, ShowPocketDetectionJobResponse>(request,
-            EiHealthMeta.showPocketDetectionJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showPocketDetectionJob, hcClient);
     }
 
     /**
@@ -5757,7 +5640,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPocketMolDesignJobRequest 请求对象
+     * @param request ShowPocketMolDesignJobRequest 请求对象
      * @return CompletableFuture<ShowPocketMolDesignJobResponse>
      */
     public CompletableFuture<ShowPocketMolDesignJobResponse> showPocketMolDesignJobAsync(
@@ -5772,13 +5655,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPocketMolDesignJobRequest 请求对象
+     * @param request ShowPocketMolDesignJobRequest 请求对象
      * @return AsyncInvoker<ShowPocketMolDesignJobRequest, ShowPocketMolDesignJobResponse>
      */
     public AsyncInvoker<ShowPocketMolDesignJobRequest, ShowPocketMolDesignJobResponse> showPocketMolDesignJobAsyncInvoker(
         ShowPocketMolDesignJobRequest request) {
-        return new AsyncInvoker<ShowPocketMolDesignJobRequest, ShowPocketMolDesignJobResponse>(request,
-            EiHealthMeta.showPocketMolDesignJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showPocketMolDesignJob, hcClient);
     }
 
     /**
@@ -5788,7 +5670,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectRequest 请求对象
+     * @param request ShowProjectRequest 请求对象
      * @return CompletableFuture<ShowProjectResponse>
      */
     public CompletableFuture<ShowProjectResponse> showProjectAsync(ShowProjectRequest request) {
@@ -5802,11 +5684,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectRequest 请求对象
+     * @param request ShowProjectRequest 请求对象
      * @return AsyncInvoker<ShowProjectRequest, ShowProjectResponse>
      */
     public AsyncInvoker<ShowProjectRequest, ShowProjectResponse> showProjectAsyncInvoker(ShowProjectRequest request) {
-        return new AsyncInvoker<ShowProjectRequest, ShowProjectResponse>(request, EiHealthMeta.showProject, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showProject, hcClient);
     }
 
     /**
@@ -5816,7 +5698,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTraceRequest 请求对象
+     * @param request ShowProjectTraceRequest 请求对象
      * @return CompletableFuture<ShowProjectTraceResponse>
      */
     public CompletableFuture<ShowProjectTraceResponse> showProjectTraceAsync(ShowProjectTraceRequest request) {
@@ -5830,13 +5712,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTraceRequest 请求对象
+     * @param request ShowProjectTraceRequest 请求对象
      * @return AsyncInvoker<ShowProjectTraceRequest, ShowProjectTraceResponse>
      */
     public AsyncInvoker<ShowProjectTraceRequest, ShowProjectTraceResponse> showProjectTraceAsyncInvoker(
         ShowProjectTraceRequest request) {
-        return new AsyncInvoker<ShowProjectTraceRequest, ShowProjectTraceResponse>(request,
-            EiHealthMeta.showProjectTrace, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showProjectTrace, hcClient);
     }
 
     /**
@@ -5846,7 +5727,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTraceDataRequest 请求对象
+     * @param request ShowProjectTraceDataRequest 请求对象
      * @return CompletableFuture<ShowProjectTraceDataResponse>
      */
     public CompletableFuture<ShowProjectTraceDataResponse> showProjectTraceDataAsync(
@@ -5861,13 +5742,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTraceDataRequest 请求对象
+     * @param request ShowProjectTraceDataRequest 请求对象
      * @return AsyncInvoker<ShowProjectTraceDataRequest, ShowProjectTraceDataResponse>
      */
     public AsyncInvoker<ShowProjectTraceDataRequest, ShowProjectTraceDataResponse> showProjectTraceDataAsyncInvoker(
         ShowProjectTraceDataRequest request) {
-        return new AsyncInvoker<ShowProjectTraceDataRequest, ShowProjectTraceDataResponse>(request,
-            EiHealthMeta.showProjectTraceData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showProjectTraceData, hcClient);
     }
 
     /**
@@ -5877,7 +5757,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTrackerRequest 请求对象
+     * @param request ShowProjectTrackerRequest 请求对象
      * @return CompletableFuture<ShowProjectTrackerResponse>
      */
     public CompletableFuture<ShowProjectTrackerResponse> showProjectTrackerAsync(ShowProjectTrackerRequest request) {
@@ -5891,13 +5771,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTrackerRequest 请求对象
+     * @param request ShowProjectTrackerRequest 请求对象
      * @return AsyncInvoker<ShowProjectTrackerRequest, ShowProjectTrackerResponse>
      */
     public AsyncInvoker<ShowProjectTrackerRequest, ShowProjectTrackerResponse> showProjectTrackerAsyncInvoker(
         ShowProjectTrackerRequest request) {
-        return new AsyncInvoker<ShowProjectTrackerRequest, ShowProjectTrackerResponse>(request,
-            EiHealthMeta.showProjectTracker, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showProjectTracker, hcClient);
     }
 
     /**
@@ -5907,7 +5786,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceMetricDataRequest 请求对象
+     * @param request ShowResourceMetricDataRequest 请求对象
      * @return CompletableFuture<ShowResourceMetricDataResponse>
      */
     public CompletableFuture<ShowResourceMetricDataResponse> showResourceMetricDataAsync(
@@ -5922,13 +5801,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceMetricDataRequest 请求对象
+     * @param request ShowResourceMetricDataRequest 请求对象
      * @return AsyncInvoker<ShowResourceMetricDataRequest, ShowResourceMetricDataResponse>
      */
     public AsyncInvoker<ShowResourceMetricDataRequest, ShowResourceMetricDataResponse> showResourceMetricDataAsyncInvoker(
         ShowResourceMetricDataRequest request) {
-        return new AsyncInvoker<ShowResourceMetricDataRequest, ShowResourceMetricDataResponse>(request,
-            EiHealthMeta.showResourceMetricData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showResourceMetricData, hcClient);
     }
 
     /**
@@ -5938,7 +5816,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScaleInPolicyRequest 请求对象
+     * @param request ShowScaleInPolicyRequest 请求对象
      * @return CompletableFuture<ShowScaleInPolicyResponse>
      */
     public CompletableFuture<ShowScaleInPolicyResponse> showScaleInPolicyAsync(ShowScaleInPolicyRequest request) {
@@ -5952,13 +5830,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScaleInPolicyRequest 请求对象
+     * @param request ShowScaleInPolicyRequest 请求对象
      * @return AsyncInvoker<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse>
      */
     public AsyncInvoker<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse> showScaleInPolicyAsyncInvoker(
         ShowScaleInPolicyRequest request) {
-        return new AsyncInvoker<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse>(request,
-            EiHealthMeta.showScaleInPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showScaleInPolicy, hcClient);
     }
 
     /**
@@ -5968,7 +5845,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScaleOutPolicyRequest 请求对象
+     * @param request ShowScaleOutPolicyRequest 请求对象
      * @return CompletableFuture<ShowScaleOutPolicyResponse>
      */
     public CompletableFuture<ShowScaleOutPolicyResponse> showScaleOutPolicyAsync(ShowScaleOutPolicyRequest request) {
@@ -5982,13 +5859,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScaleOutPolicyRequest 请求对象
+     * @param request ShowScaleOutPolicyRequest 请求对象
      * @return AsyncInvoker<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse>
      */
     public AsyncInvoker<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse> showScaleOutPolicyAsyncInvoker(
         ShowScaleOutPolicyRequest request) {
-        return new AsyncInvoker<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse>(request,
-            EiHealthMeta.showScaleOutPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showScaleOutPolicy, hcClient);
     }
 
     /**
@@ -5998,7 +5874,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScheduleRequest 请求对象
+     * @param request ShowScheduleRequest 请求对象
      * @return CompletableFuture<ShowScheduleResponse>
      */
     public CompletableFuture<ShowScheduleResponse> showScheduleAsync(ShowScheduleRequest request) {
@@ -6012,13 +5888,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScheduleRequest 请求对象
+     * @param request ShowScheduleRequest 请求对象
      * @return AsyncInvoker<ShowScheduleRequest, ShowScheduleResponse>
      */
     public AsyncInvoker<ShowScheduleRequest, ShowScheduleResponse> showScheduleAsyncInvoker(
         ShowScheduleRequest request) {
-        return new AsyncInvoker<ShowScheduleRequest, ShowScheduleResponse>(request, EiHealthMeta.showSchedule,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showSchedule, hcClient);
     }
 
     /**
@@ -6028,7 +5903,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSynthesisJobRequest 请求对象
+     * @param request ShowSynthesisJobRequest 请求对象
      * @return CompletableFuture<ShowSynthesisJobResponse>
      */
     public CompletableFuture<ShowSynthesisJobResponse> showSynthesisJobAsync(ShowSynthesisJobRequest request) {
@@ -6042,13 +5917,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSynthesisJobRequest 请求对象
+     * @param request ShowSynthesisJobRequest 请求对象
      * @return AsyncInvoker<ShowSynthesisJobRequest, ShowSynthesisJobResponse>
      */
     public AsyncInvoker<ShowSynthesisJobRequest, ShowSynthesisJobResponse> showSynthesisJobAsyncInvoker(
         ShowSynthesisJobRequest request) {
-        return new AsyncInvoker<ShowSynthesisJobRequest, ShowSynthesisJobResponse>(request,
-            EiHealthMeta.showSynthesisJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showSynthesisJob, hcClient);
     }
 
     /**
@@ -6058,7 +5932,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskEventsRequest 请求对象
+     * @param request ShowTaskEventsRequest 请求对象
      * @return CompletableFuture<ShowTaskEventsResponse>
      */
     public CompletableFuture<ShowTaskEventsResponse> showTaskEventsAsync(ShowTaskEventsRequest request) {
@@ -6072,13 +5946,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskEventsRequest 请求对象
+     * @param request ShowTaskEventsRequest 请求对象
      * @return AsyncInvoker<ShowTaskEventsRequest, ShowTaskEventsResponse>
      */
     public AsyncInvoker<ShowTaskEventsRequest, ShowTaskEventsResponse> showTaskEventsAsyncInvoker(
         ShowTaskEventsRequest request) {
-        return new AsyncInvoker<ShowTaskEventsRequest, ShowTaskEventsResponse>(request, EiHealthMeta.showTaskEvents,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showTaskEvents, hcClient);
     }
 
     /**
@@ -6088,7 +5961,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstanceEventsRequest 请求对象
+     * @param request ShowTaskInstanceEventsRequest 请求对象
      * @return CompletableFuture<ShowTaskInstanceEventsResponse>
      */
     public CompletableFuture<ShowTaskInstanceEventsResponse> showTaskInstanceEventsAsync(
@@ -6103,13 +5976,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstanceEventsRequest 请求对象
+     * @param request ShowTaskInstanceEventsRequest 请求对象
      * @return AsyncInvoker<ShowTaskInstanceEventsRequest, ShowTaskInstanceEventsResponse>
      */
     public AsyncInvoker<ShowTaskInstanceEventsRequest, ShowTaskInstanceEventsResponse> showTaskInstanceEventsAsyncInvoker(
         ShowTaskInstanceEventsRequest request) {
-        return new AsyncInvoker<ShowTaskInstanceEventsRequest, ShowTaskInstanceEventsResponse>(request,
-            EiHealthMeta.showTaskInstanceEvents, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showTaskInstanceEvents, hcClient);
     }
 
     /**
@@ -6119,7 +5991,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstanceMetricDataRequest 请求对象
+     * @param request ShowTaskInstanceMetricDataRequest 请求对象
      * @return CompletableFuture<ShowTaskInstanceMetricDataResponse>
      */
     public CompletableFuture<ShowTaskInstanceMetricDataResponse> showTaskInstanceMetricDataAsync(
@@ -6134,13 +6006,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstanceMetricDataRequest 请求对象
+     * @param request ShowTaskInstanceMetricDataRequest 请求对象
      * @return AsyncInvoker<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse>
      */
     public AsyncInvoker<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse> showTaskInstanceMetricDataAsyncInvoker(
         ShowTaskInstanceMetricDataRequest request) {
-        return new AsyncInvoker<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse>(request,
-            EiHealthMeta.showTaskInstanceMetricData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showTaskInstanceMetricData, hcClient);
     }
 
     /**
@@ -6150,7 +6021,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstancePodRequest 请求对象
+     * @param request ShowTaskInstancePodRequest 请求对象
      * @return CompletableFuture<ShowTaskInstancePodResponse>
      */
     public CompletableFuture<ShowTaskInstancePodResponse> showTaskInstancePodAsync(ShowTaskInstancePodRequest request) {
@@ -6164,13 +6035,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstancePodRequest 请求对象
+     * @param request ShowTaskInstancePodRequest 请求对象
      * @return AsyncInvoker<ShowTaskInstancePodRequest, ShowTaskInstancePodResponse>
      */
     public AsyncInvoker<ShowTaskInstancePodRequest, ShowTaskInstancePodResponse> showTaskInstancePodAsyncInvoker(
         ShowTaskInstancePodRequest request) {
-        return new AsyncInvoker<ShowTaskInstancePodRequest, ShowTaskInstancePodResponse>(request,
-            EiHealthMeta.showTaskInstancePod, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showTaskInstancePod, hcClient);
     }
 
     /**
@@ -6180,7 +6050,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstancesRequest 请求对象
+     * @param request ShowTaskInstancesRequest 请求对象
      * @return CompletableFuture<ShowTaskInstancesResponse>
      */
     public CompletableFuture<ShowTaskInstancesResponse> showTaskInstancesAsync(ShowTaskInstancesRequest request) {
@@ -6194,13 +6064,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstancesRequest 请求对象
+     * @param request ShowTaskInstancesRequest 请求对象
      * @return AsyncInvoker<ShowTaskInstancesRequest, ShowTaskInstancesResponse>
      */
     public AsyncInvoker<ShowTaskInstancesRequest, ShowTaskInstancesResponse> showTaskInstancesAsyncInvoker(
         ShowTaskInstancesRequest request) {
-        return new AsyncInvoker<ShowTaskInstancesRequest, ShowTaskInstancesResponse>(request,
-            EiHealthMeta.showTaskInstances, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showTaskInstances, hcClient);
     }
 
     /**
@@ -6210,7 +6079,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateRequest 请求对象
+     * @param request ShowTemplateRequest 请求对象
      * @return CompletableFuture<ShowTemplateResponse>
      */
     public CompletableFuture<ShowTemplateResponse> showTemplateAsync(ShowTemplateRequest request) {
@@ -6224,13 +6093,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateRequest 请求对象
+     * @param request ShowTemplateRequest 请求对象
      * @return AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse>
      */
     public AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse> showTemplateAsyncInvoker(
         ShowTemplateRequest request) {
-        return new AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse>(request, EiHealthMeta.showTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showTemplate, hcClient);
     }
 
     /**
@@ -6240,7 +6108,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserRequest 请求对象
+     * @param request ShowUserRequest 请求对象
      * @return CompletableFuture<ShowUserResponse>
      */
     public CompletableFuture<ShowUserResponse> showUserAsync(ShowUserRequest request) {
@@ -6254,11 +6122,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserRequest 请求对象
+     * @param request ShowUserRequest 请求对象
      * @return AsyncInvoker<ShowUserRequest, ShowUserResponse>
      */
     public AsyncInvoker<ShowUserRequest, ShowUserResponse> showUserAsyncInvoker(ShowUserRequest request) {
-        return new AsyncInvoker<ShowUserRequest, ShowUserResponse>(request, EiHealthMeta.showUser, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showUser, hcClient);
     }
 
     /**
@@ -6268,7 +6136,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserSettingRequest 请求对象
+     * @param request ShowUserSettingRequest 请求对象
      * @return CompletableFuture<ShowUserSettingResponse>
      */
     public CompletableFuture<ShowUserSettingResponse> showUserSettingAsync(ShowUserSettingRequest request) {
@@ -6282,13 +6150,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserSettingRequest 请求对象
+     * @param request ShowUserSettingRequest 请求对象
      * @return AsyncInvoker<ShowUserSettingRequest, ShowUserSettingResponse>
      */
     public AsyncInvoker<ShowUserSettingRequest, ShowUserSettingResponse> showUserSettingAsyncInvoker(
         ShowUserSettingRequest request) {
-        return new AsyncInvoker<ShowUserSettingRequest, ShowUserSettingResponse>(request, EiHealthMeta.showUserSetting,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showUserSetting, hcClient);
     }
 
     /**
@@ -6298,7 +6165,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVendorRequest 请求对象
+     * @param request ShowVendorRequest 请求对象
      * @return CompletableFuture<ShowVendorResponse>
      */
     public CompletableFuture<ShowVendorResponse> showVendorAsync(ShowVendorRequest request) {
@@ -6312,11 +6179,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVendorRequest 请求对象
+     * @param request ShowVendorRequest 请求对象
      * @return AsyncInvoker<ShowVendorRequest, ShowVendorResponse>
      */
     public AsyncInvoker<ShowVendorRequest, ShowVendorResponse> showVendorAsyncInvoker(ShowVendorRequest request) {
-        return new AsyncInvoker<ShowVendorRequest, ShowVendorResponse>(request, EiHealthMeta.showVendor, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showVendor, hcClient);
     }
 
     /**
@@ -6326,7 +6193,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowRequest 请求对象
+     * @param request ShowWorkflowRequest 请求对象
      * @return CompletableFuture<ShowWorkflowResponse>
      */
     public CompletableFuture<ShowWorkflowResponse> showWorkflowAsync(ShowWorkflowRequest request) {
@@ -6340,13 +6207,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowRequest 请求对象
+     * @param request ShowWorkflowRequest 请求对象
      * @return AsyncInvoker<ShowWorkflowRequest, ShowWorkflowResponse>
      */
     public AsyncInvoker<ShowWorkflowRequest, ShowWorkflowResponse> showWorkflowAsyncInvoker(
         ShowWorkflowRequest request) {
-        return new AsyncInvoker<ShowWorkflowRequest, ShowWorkflowResponse>(request, EiHealthMeta.showWorkflow,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showWorkflow, hcClient);
     }
 
     /**
@@ -6356,7 +6222,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAutoJobRequest 请求对象
+     * @param request StartAutoJobRequest 请求对象
      * @return CompletableFuture<StartAutoJobResponse>
      */
     public CompletableFuture<StartAutoJobResponse> startAutoJobAsync(StartAutoJobRequest request) {
@@ -6370,13 +6236,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAutoJobRequest 请求对象
+     * @param request StartAutoJobRequest 请求对象
      * @return AsyncInvoker<StartAutoJobRequest, StartAutoJobResponse>
      */
     public AsyncInvoker<StartAutoJobRequest, StartAutoJobResponse> startAutoJobAsyncInvoker(
         StartAutoJobRequest request) {
-        return new AsyncInvoker<StartAutoJobRequest, StartAutoJobResponse>(request, EiHealthMeta.startAutoJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.startAutoJob, hcClient);
     }
 
     /**
@@ -6386,7 +6251,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartNodeRequest 请求对象
+     * @param request StartNodeRequest 请求对象
      * @return CompletableFuture<StartNodeResponse>
      */
     public CompletableFuture<StartNodeResponse> startNodeAsync(StartNodeRequest request) {
@@ -6400,11 +6265,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartNodeRequest 请求对象
+     * @param request StartNodeRequest 请求对象
      * @return AsyncInvoker<StartNodeRequest, StartNodeResponse>
      */
     public AsyncInvoker<StartNodeRequest, StartNodeResponse> startNodeAsyncInvoker(StartNodeRequest request) {
-        return new AsyncInvoker<StartNodeRequest, StartNodeResponse>(request, EiHealthMeta.startNode, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.startNode, hcClient);
     }
 
     /**
@@ -6414,7 +6279,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartScaleOutPolicyRequest 请求对象
+     * @param request StartScaleOutPolicyRequest 请求对象
      * @return CompletableFuture<StartScaleOutPolicyResponse>
      */
     public CompletableFuture<StartScaleOutPolicyResponse> startScaleOutPolicyAsync(StartScaleOutPolicyRequest request) {
@@ -6428,13 +6293,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartScaleOutPolicyRequest 请求对象
+     * @param request StartScaleOutPolicyRequest 请求对象
      * @return AsyncInvoker<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse>
      */
     public AsyncInvoker<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse> startScaleOutPolicyAsyncInvoker(
         StartScaleOutPolicyRequest request) {
-        return new AsyncInvoker<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse>(request,
-            EiHealthMeta.startScaleOutPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.startScaleOutPolicy, hcClient);
     }
 
     /**
@@ -6444,7 +6308,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopAutoJobRequest 请求对象
+     * @param request StopAutoJobRequest 请求对象
      * @return CompletableFuture<StopAutoJobResponse>
      */
     public CompletableFuture<StopAutoJobResponse> stopAutoJobAsync(StopAutoJobRequest request) {
@@ -6458,11 +6322,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopAutoJobRequest 请求对象
+     * @param request StopAutoJobRequest 请求对象
      * @return AsyncInvoker<StopAutoJobRequest, StopAutoJobResponse>
      */
     public AsyncInvoker<StopAutoJobRequest, StopAutoJobResponse> stopAutoJobAsyncInvoker(StopAutoJobRequest request) {
-        return new AsyncInvoker<StopAutoJobRequest, StopAutoJobResponse>(request, EiHealthMeta.stopAutoJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.stopAutoJob, hcClient);
     }
 
     /**
@@ -6472,7 +6336,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopNodeRequest 请求对象
+     * @param request StopNodeRequest 请求对象
      * @return CompletableFuture<StopNodeResponse>
      */
     public CompletableFuture<StopNodeResponse> stopNodeAsync(StopNodeRequest request) {
@@ -6486,11 +6350,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopNodeRequest 请求对象
+     * @param request StopNodeRequest 请求对象
      * @return AsyncInvoker<StopNodeRequest, StopNodeResponse>
      */
     public AsyncInvoker<StopNodeRequest, StopNodeResponse> stopNodeAsyncInvoker(StopNodeRequest request) {
-        return new AsyncInvoker<StopNodeRequest, StopNodeResponse>(request, EiHealthMeta.stopNode, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.stopNode, hcClient);
     }
 
     /**
@@ -6500,7 +6364,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopScaleOutPolicyRequest 请求对象
+     * @param request StopScaleOutPolicyRequest 请求对象
      * @return CompletableFuture<StopScaleOutPolicyResponse>
      */
     public CompletableFuture<StopScaleOutPolicyResponse> stopScaleOutPolicyAsync(StopScaleOutPolicyRequest request) {
@@ -6514,13 +6378,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopScaleOutPolicyRequest 请求对象
+     * @param request StopScaleOutPolicyRequest 请求对象
      * @return AsyncInvoker<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse>
      */
     public AsyncInvoker<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse> stopScaleOutPolicyAsyncInvoker(
         StopScaleOutPolicyRequest request) {
-        return new AsyncInvoker<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse>(request,
-            EiHealthMeta.stopScaleOutPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.stopScaleOutPolicy, hcClient);
     }
 
     /**
@@ -6530,7 +6393,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeAppRequest 请求对象
+     * @param request SubscribeAppRequest 请求对象
      * @return CompletableFuture<SubscribeAppResponse>
      */
     public CompletableFuture<SubscribeAppResponse> subscribeAppAsync(SubscribeAppRequest request) {
@@ -6544,13 +6407,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeAppRequest 请求对象
+     * @param request SubscribeAppRequest 请求对象
      * @return AsyncInvoker<SubscribeAppRequest, SubscribeAppResponse>
      */
     public AsyncInvoker<SubscribeAppRequest, SubscribeAppResponse> subscribeAppAsyncInvoker(
         SubscribeAppRequest request) {
-        return new AsyncInvoker<SubscribeAppRequest, SubscribeAppResponse>(request, EiHealthMeta.subscribeApp,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.subscribeApp, hcClient);
     }
 
     /**
@@ -6560,7 +6422,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeDataRequest 请求对象
+     * @param request SubscribeDataRequest 请求对象
      * @return CompletableFuture<SubscribeDataResponse>
      */
     public CompletableFuture<SubscribeDataResponse> subscribeDataAsync(SubscribeDataRequest request) {
@@ -6574,13 +6436,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeDataRequest 请求对象
+     * @param request SubscribeDataRequest 请求对象
      * @return AsyncInvoker<SubscribeDataRequest, SubscribeDataResponse>
      */
     public AsyncInvoker<SubscribeDataRequest, SubscribeDataResponse> subscribeDataAsyncInvoker(
         SubscribeDataRequest request) {
-        return new AsyncInvoker<SubscribeDataRequest, SubscribeDataResponse>(request, EiHealthMeta.subscribeData,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.subscribeData, hcClient);
     }
 
     /**
@@ -6590,7 +6451,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeImageRequest 请求对象
+     * @param request SubscribeImageRequest 请求对象
      * @return CompletableFuture<SubscribeImageResponse>
      */
     public CompletableFuture<SubscribeImageResponse> subscribeImageAsync(SubscribeImageRequest request) {
@@ -6604,13 +6465,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeImageRequest 请求对象
+     * @param request SubscribeImageRequest 请求对象
      * @return AsyncInvoker<SubscribeImageRequest, SubscribeImageResponse>
      */
     public AsyncInvoker<SubscribeImageRequest, SubscribeImageResponse> subscribeImageAsyncInvoker(
         SubscribeImageRequest request) {
-        return new AsyncInvoker<SubscribeImageRequest, SubscribeImageResponse>(request, EiHealthMeta.subscribeImage,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.subscribeImage, hcClient);
     }
 
     /**
@@ -6620,7 +6480,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeWorkflowRequest 请求对象
+     * @param request SubscribeWorkflowRequest 请求对象
      * @return CompletableFuture<SubscribeWorkflowResponse>
      */
     public CompletableFuture<SubscribeWorkflowResponse> subscribeWorkflowAsync(SubscribeWorkflowRequest request) {
@@ -6634,13 +6494,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeWorkflowRequest 请求对象
+     * @param request SubscribeWorkflowRequest 请求对象
      * @return AsyncInvoker<SubscribeWorkflowRequest, SubscribeWorkflowResponse>
      */
     public AsyncInvoker<SubscribeWorkflowRequest, SubscribeWorkflowResponse> subscribeWorkflowAsyncInvoker(
         SubscribeWorkflowRequest request) {
-        return new AsyncInvoker<SubscribeWorkflowRequest, SubscribeWorkflowResponse>(request,
-            EiHealthMeta.subscribeWorkflow, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.subscribeWorkflow, hcClient);
     }
 
     /**
@@ -6650,7 +6509,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TransferProjectRequest 请求对象
+     * @param request TransferProjectRequest 请求对象
      * @return CompletableFuture<TransferProjectResponse>
      */
     public CompletableFuture<TransferProjectResponse> transferProjectAsync(TransferProjectRequest request) {
@@ -6664,13 +6523,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TransferProjectRequest 请求对象
+     * @param request TransferProjectRequest 请求对象
      * @return AsyncInvoker<TransferProjectRequest, TransferProjectResponse>
      */
     public AsyncInvoker<TransferProjectRequest, TransferProjectResponse> transferProjectAsyncInvoker(
         TransferProjectRequest request) {
-        return new AsyncInvoker<TransferProjectRequest, TransferProjectResponse>(request, EiHealthMeta.transferProject,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.transferProject, hcClient);
     }
 
     /**
@@ -6680,7 +6538,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return CompletableFuture<UpdateAppResponse>
      */
     public CompletableFuture<UpdateAppResponse> updateAppAsync(UpdateAppRequest request) {
@@ -6694,11 +6552,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return AsyncInvoker<UpdateAppRequest, UpdateAppResponse>
      */
     public AsyncInvoker<UpdateAppRequest, UpdateAppResponse> updateAppAsyncInvoker(UpdateAppRequest request) {
-        return new AsyncInvoker<UpdateAppRequest, UpdateAppResponse>(request, EiHealthMeta.updateApp, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateApp, hcClient);
     }
 
     /**
@@ -6708,7 +6566,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateArchiveConfigRequest 请求对象
+     * @param request UpdateArchiveConfigRequest 请求对象
      * @return CompletableFuture<UpdateArchiveConfigResponse>
      */
     public CompletableFuture<UpdateArchiveConfigResponse> updateArchiveConfigAsync(UpdateArchiveConfigRequest request) {
@@ -6722,13 +6580,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateArchiveConfigRequest 请求对象
+     * @param request UpdateArchiveConfigRequest 请求对象
      * @return AsyncInvoker<UpdateArchiveConfigRequest, UpdateArchiveConfigResponse>
      */
     public AsyncInvoker<UpdateArchiveConfigRequest, UpdateArchiveConfigResponse> updateArchiveConfigAsyncInvoker(
         UpdateArchiveConfigRequest request) {
-        return new AsyncInvoker<UpdateArchiveConfigRequest, UpdateArchiveConfigResponse>(request,
-            EiHealthMeta.updateArchiveConfig, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateArchiveConfig, hcClient);
     }
 
     /**
@@ -6738,7 +6595,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetVersionRequest 请求对象
+     * @param request UpdateAssetVersionRequest 请求对象
      * @return CompletableFuture<UpdateAssetVersionResponse>
      */
     public CompletableFuture<UpdateAssetVersionResponse> updateAssetVersionAsync(UpdateAssetVersionRequest request) {
@@ -6752,13 +6609,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetVersionRequest 请求对象
+     * @param request UpdateAssetVersionRequest 请求对象
      * @return AsyncInvoker<UpdateAssetVersionRequest, UpdateAssetVersionResponse>
      */
     public AsyncInvoker<UpdateAssetVersionRequest, UpdateAssetVersionResponse> updateAssetVersionAsyncInvoker(
         UpdateAssetVersionRequest request) {
-        return new AsyncInvoker<UpdateAssetVersionRequest, UpdateAssetVersionResponse>(request,
-            EiHealthMeta.updateAssetVersion, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateAssetVersion, hcClient);
     }
 
     /**
@@ -6768,7 +6624,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAutoJobRequest 请求对象
+     * @param request UpdateAutoJobRequest 请求对象
      * @return CompletableFuture<UpdateAutoJobResponse>
      */
     public CompletableFuture<UpdateAutoJobResponse> updateAutoJobAsync(UpdateAutoJobRequest request) {
@@ -6782,13 +6638,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAutoJobRequest 请求对象
+     * @param request UpdateAutoJobRequest 请求对象
      * @return AsyncInvoker<UpdateAutoJobRequest, UpdateAutoJobResponse>
      */
     public AsyncInvoker<UpdateAutoJobRequest, UpdateAutoJobResponse> updateAutoJobAsyncInvoker(
         UpdateAutoJobRequest request) {
-        return new AsyncInvoker<UpdateAutoJobRequest, UpdateAutoJobResponse>(request, EiHealthMeta.updateAutoJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateAutoJob, hcClient);
     }
 
     /**
@@ -6798,7 +6653,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataPathPolicyRequest 请求对象
+     * @param request UpdateDataPathPolicyRequest 请求对象
      * @return CompletableFuture<UpdateDataPathPolicyResponse>
      */
     public CompletableFuture<UpdateDataPathPolicyResponse> updateDataPathPolicyAsync(
@@ -6813,13 +6668,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataPathPolicyRequest 请求对象
+     * @param request UpdateDataPathPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse>
      */
     public AsyncInvoker<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse> updateDataPathPolicyAsyncInvoker(
         UpdateDataPathPolicyRequest request) {
-        return new AsyncInvoker<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse>(request,
-            EiHealthMeta.updateDataPathPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateDataPathPolicy, hcClient);
     }
 
     /**
@@ -6829,7 +6683,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataPolicyRequest 请求对象
+     * @param request UpdateDataPolicyRequest 请求对象
      * @return CompletableFuture<UpdateDataPolicyResponse>
      */
     public CompletableFuture<UpdateDataPolicyResponse> updateDataPolicyAsync(UpdateDataPolicyRequest request) {
@@ -6843,13 +6697,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataPolicyRequest 请求对象
+     * @param request UpdateDataPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateDataPolicyRequest, UpdateDataPolicyResponse>
      */
     public AsyncInvoker<UpdateDataPolicyRequest, UpdateDataPolicyResponse> updateDataPolicyAsyncInvoker(
         UpdateDataPolicyRequest request) {
-        return new AsyncInvoker<UpdateDataPolicyRequest, UpdateDataPolicyResponse>(request,
-            EiHealthMeta.updateDataPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateDataPolicy, hcClient);
     }
 
     /**
@@ -6859,7 +6712,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseDataRequest 请求对象
+     * @param request UpdateDatabaseDataRequest 请求对象
      * @return CompletableFuture<UpdateDatabaseDataResponse>
      */
     public CompletableFuture<UpdateDatabaseDataResponse> updateDatabaseDataAsync(UpdateDatabaseDataRequest request) {
@@ -6873,13 +6726,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseDataRequest 请求对象
+     * @param request UpdateDatabaseDataRequest 请求对象
      * @return AsyncInvoker<UpdateDatabaseDataRequest, UpdateDatabaseDataResponse>
      */
     public AsyncInvoker<UpdateDatabaseDataRequest, UpdateDatabaseDataResponse> updateDatabaseDataAsyncInvoker(
         UpdateDatabaseDataRequest request) {
-        return new AsyncInvoker<UpdateDatabaseDataRequest, UpdateDatabaseDataResponse>(request,
-            EiHealthMeta.updateDatabaseData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateDatabaseData, hcClient);
     }
 
     /**
@@ -6889,7 +6741,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDrugModelRequest 请求对象
+     * @param request UpdateDrugModelRequest 请求对象
      * @return CompletableFuture<UpdateDrugModelResponse>
      */
     public CompletableFuture<UpdateDrugModelResponse> updateDrugModelAsync(UpdateDrugModelRequest request) {
@@ -6903,13 +6755,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDrugModelRequest 请求对象
+     * @param request UpdateDrugModelRequest 请求对象
      * @return AsyncInvoker<UpdateDrugModelRequest, UpdateDrugModelResponse>
      */
     public AsyncInvoker<UpdateDrugModelRequest, UpdateDrugModelResponse> updateDrugModelAsyncInvoker(
         UpdateDrugModelRequest request) {
-        return new AsyncInvoker<UpdateDrugModelRequest, UpdateDrugModelResponse>(request, EiHealthMeta.updateDrugModel,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateDrugModel, hcClient);
     }
 
     /**
@@ -6919,7 +6770,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateImageRequest 请求对象
+     * @param request UpdateImageRequest 请求对象
      * @return CompletableFuture<UpdateImageResponse>
      */
     public CompletableFuture<UpdateImageResponse> updateImageAsync(UpdateImageRequest request) {
@@ -6933,11 +6784,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateImageRequest 请求对象
+     * @param request UpdateImageRequest 请求对象
      * @return AsyncInvoker<UpdateImageRequest, UpdateImageResponse>
      */
     public AsyncInvoker<UpdateImageRequest, UpdateImageResponse> updateImageAsyncInvoker(UpdateImageRequest request) {
-        return new AsyncInvoker<UpdateImageRequest, UpdateImageResponse>(request, EiHealthMeta.updateImage, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateImage, hcClient);
     }
 
     /**
@@ -6947,7 +6798,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInitPasswordRequest 请求对象
+     * @param request UpdateInitPasswordRequest 请求对象
      * @return CompletableFuture<UpdateInitPasswordResponse>
      */
     public CompletableFuture<UpdateInitPasswordResponse> updateInitPasswordAsync(UpdateInitPasswordRequest request) {
@@ -6961,13 +6812,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInitPasswordRequest 请求对象
+     * @param request UpdateInitPasswordRequest 请求对象
      * @return AsyncInvoker<UpdateInitPasswordRequest, UpdateInitPasswordResponse>
      */
     public AsyncInvoker<UpdateInitPasswordRequest, UpdateInitPasswordResponse> updateInitPasswordAsyncInvoker(
         UpdateInitPasswordRequest request) {
-        return new AsyncInvoker<UpdateInitPasswordRequest, UpdateInitPasswordResponse>(request,
-            EiHealthMeta.updateInitPassword, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateInitPassword, hcClient);
     }
 
     /**
@@ -6977,7 +6827,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobRequest 请求对象
+     * @param request UpdateJobRequest 请求对象
      * @return CompletableFuture<UpdateJobResponse>
      */
     public CompletableFuture<UpdateJobResponse> updateJobAsync(UpdateJobRequest request) {
@@ -6991,11 +6841,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobRequest 请求对象
+     * @param request UpdateJobRequest 请求对象
      * @return AsyncInvoker<UpdateJobRequest, UpdateJobResponse>
      */
     public AsyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobAsyncInvoker(UpdateJobRequest request) {
-        return new AsyncInvoker<UpdateJobRequest, UpdateJobResponse>(request, EiHealthMeta.updateJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateJob, hcClient);
     }
 
     /**
@@ -7005,7 +6855,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobConfigRequest 请求对象
+     * @param request UpdateJobConfigRequest 请求对象
      * @return CompletableFuture<UpdateJobConfigResponse>
      */
     public CompletableFuture<UpdateJobConfigResponse> updateJobConfigAsync(UpdateJobConfigRequest request) {
@@ -7019,13 +6869,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobConfigRequest 请求对象
+     * @param request UpdateJobConfigRequest 请求对象
      * @return AsyncInvoker<UpdateJobConfigRequest, UpdateJobConfigResponse>
      */
     public AsyncInvoker<UpdateJobConfigRequest, UpdateJobConfigResponse> updateJobConfigAsyncInvoker(
         UpdateJobConfigRequest request) {
-        return new AsyncInvoker<UpdateJobConfigRequest, UpdateJobConfigResponse>(request, EiHealthMeta.updateJobConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateJobConfig, hcClient);
     }
 
     /**
@@ -7035,7 +6884,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberRequest 请求对象
+     * @param request UpdateMemberRequest 请求对象
      * @return CompletableFuture<UpdateMemberResponse>
      */
     public CompletableFuture<UpdateMemberResponse> updateMemberAsync(UpdateMemberRequest request) {
@@ -7049,13 +6898,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberRequest 请求对象
+     * @param request UpdateMemberRequest 请求对象
      * @return AsyncInvoker<UpdateMemberRequest, UpdateMemberResponse>
      */
     public AsyncInvoker<UpdateMemberRequest, UpdateMemberResponse> updateMemberAsyncInvoker(
         UpdateMemberRequest request) {
-        return new AsyncInvoker<UpdateMemberRequest, UpdateMemberResponse>(request, EiHealthMeta.updateMember,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateMember, hcClient);
     }
 
     /**
@@ -7065,7 +6913,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageClearRuleRequestBodyRequest 请求对象
+     * @param request UpdateMessageClearRuleRequestBodyRequest 请求对象
      * @return CompletableFuture<UpdateMessageClearRuleRequestBodyResponse>
      */
     public CompletableFuture<UpdateMessageClearRuleRequestBodyResponse> updateMessageClearRuleRequestBodyAsync(
@@ -7080,13 +6928,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageClearRuleRequestBodyRequest 请求对象
+     * @param request UpdateMessageClearRuleRequestBodyRequest 请求对象
      * @return AsyncInvoker<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse>
      */
     public AsyncInvoker<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse> updateMessageClearRuleRequestBodyAsyncInvoker(
         UpdateMessageClearRuleRequestBodyRequest request) {
-        return new AsyncInvoker<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse>(
-            request, EiHealthMeta.updateMessageClearRuleRequestBody, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateMessageClearRuleRequestBody, hcClient);
     }
 
     /**
@@ -7096,7 +6943,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageEmailConfigRequest 请求对象
+     * @param request UpdateMessageEmailConfigRequest 请求对象
      * @return CompletableFuture<UpdateMessageEmailConfigResponse>
      */
     public CompletableFuture<UpdateMessageEmailConfigResponse> updateMessageEmailConfigAsync(
@@ -7111,13 +6958,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageEmailConfigRequest 请求对象
+     * @param request UpdateMessageEmailConfigRequest 请求对象
      * @return AsyncInvoker<UpdateMessageEmailConfigRequest, UpdateMessageEmailConfigResponse>
      */
     public AsyncInvoker<UpdateMessageEmailConfigRequest, UpdateMessageEmailConfigResponse> updateMessageEmailConfigAsyncInvoker(
         UpdateMessageEmailConfigRequest request) {
-        return new AsyncInvoker<UpdateMessageEmailConfigRequest, UpdateMessageEmailConfigResponse>(request,
-            EiHealthMeta.updateMessageEmailConfig, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateMessageEmailConfig, hcClient);
     }
 
     /**
@@ -7127,7 +6973,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageReceiveConfigRequest 请求对象
+     * @param request UpdateMessageReceiveConfigRequest 请求对象
      * @return CompletableFuture<UpdateMessageReceiveConfigResponse>
      */
     public CompletableFuture<UpdateMessageReceiveConfigResponse> updateMessageReceiveConfigAsync(
@@ -7142,13 +6988,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageReceiveConfigRequest 请求对象
+     * @param request UpdateMessageReceiveConfigRequest 请求对象
      * @return AsyncInvoker<UpdateMessageReceiveConfigRequest, UpdateMessageReceiveConfigResponse>
      */
     public AsyncInvoker<UpdateMessageReceiveConfigRequest, UpdateMessageReceiveConfigResponse> updateMessageReceiveConfigAsyncInvoker(
         UpdateMessageReceiveConfigRequest request) {
-        return new AsyncInvoker<UpdateMessageReceiveConfigRequest, UpdateMessageReceiveConfigResponse>(request,
-            EiHealthMeta.updateMessageReceiveConfig, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateMessageReceiveConfig, hcClient);
     }
 
     /**
@@ -7158,7 +7003,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePerformanceResourceRequest 请求对象
+     * @param request UpdatePerformanceResourceRequest 请求对象
      * @return CompletableFuture<UpdatePerformanceResourceResponse>
      */
     public CompletableFuture<UpdatePerformanceResourceResponse> updatePerformanceResourceAsync(
@@ -7173,13 +7018,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePerformanceResourceRequest 请求对象
+     * @param request UpdatePerformanceResourceRequest 请求对象
      * @return AsyncInvoker<UpdatePerformanceResourceRequest, UpdatePerformanceResourceResponse>
      */
     public AsyncInvoker<UpdatePerformanceResourceRequest, UpdatePerformanceResourceResponse> updatePerformanceResourceAsyncInvoker(
         UpdatePerformanceResourceRequest request) {
-        return new AsyncInvoker<UpdatePerformanceResourceRequest, UpdatePerformanceResourceResponse>(request,
-            EiHealthMeta.updatePerformanceResource, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updatePerformanceResource, hcClient);
     }
 
     /**
@@ -7189,7 +7033,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectRequest 请求对象
+     * @param request UpdateProjectRequest 请求对象
      * @return CompletableFuture<UpdateProjectResponse>
      */
     public CompletableFuture<UpdateProjectResponse> updateProjectAsync(UpdateProjectRequest request) {
@@ -7203,13 +7047,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectRequest 请求对象
+     * @param request UpdateProjectRequest 请求对象
      * @return AsyncInvoker<UpdateProjectRequest, UpdateProjectResponse>
      */
     public AsyncInvoker<UpdateProjectRequest, UpdateProjectResponse> updateProjectAsyncInvoker(
         UpdateProjectRequest request) {
-        return new AsyncInvoker<UpdateProjectRequest, UpdateProjectResponse>(request, EiHealthMeta.updateProject,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateProject, hcClient);
     }
 
     /**
@@ -7219,7 +7062,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectTrackerRequest 请求对象
+     * @param request UpdateProjectTrackerRequest 请求对象
      * @return CompletableFuture<UpdateProjectTrackerResponse>
      */
     public CompletableFuture<UpdateProjectTrackerResponse> updateProjectTrackerAsync(
@@ -7234,13 +7077,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectTrackerRequest 请求对象
+     * @param request UpdateProjectTrackerRequest 请求对象
      * @return AsyncInvoker<UpdateProjectTrackerRequest, UpdateProjectTrackerResponse>
      */
     public AsyncInvoker<UpdateProjectTrackerRequest, UpdateProjectTrackerResponse> updateProjectTrackerAsyncInvoker(
         UpdateProjectTrackerRequest request) {
-        return new AsyncInvoker<UpdateProjectTrackerRequest, UpdateProjectTrackerResponse>(request,
-            EiHealthMeta.updateProjectTracker, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateProjectTracker, hcClient);
     }
 
     /**
@@ -7250,7 +7092,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScaleInPolicyRequest 请求对象
+     * @param request UpdateScaleInPolicyRequest 请求对象
      * @return CompletableFuture<UpdateScaleInPolicyResponse>
      */
     public CompletableFuture<UpdateScaleInPolicyResponse> updateScaleInPolicyAsync(UpdateScaleInPolicyRequest request) {
@@ -7264,13 +7106,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScaleInPolicyRequest 请求对象
+     * @param request UpdateScaleInPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse>
      */
     public AsyncInvoker<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse> updateScaleInPolicyAsyncInvoker(
         UpdateScaleInPolicyRequest request) {
-        return new AsyncInvoker<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse>(request,
-            EiHealthMeta.updateScaleInPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateScaleInPolicy, hcClient);
     }
 
     /**
@@ -7280,7 +7121,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScaleOutPolicyRequest 请求对象
+     * @param request UpdateScaleOutPolicyRequest 请求对象
      * @return CompletableFuture<UpdateScaleOutPolicyResponse>
      */
     public CompletableFuture<UpdateScaleOutPolicyResponse> updateScaleOutPolicyAsync(
@@ -7295,13 +7136,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScaleOutPolicyRequest 请求对象
+     * @param request UpdateScaleOutPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse>
      */
     public AsyncInvoker<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse> updateScaleOutPolicyAsyncInvoker(
         UpdateScaleOutPolicyRequest request) {
-        return new AsyncInvoker<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse>(request,
-            EiHealthMeta.updateScaleOutPolicy, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateScaleOutPolicy, hcClient);
     }
 
     /**
@@ -7311,7 +7151,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScheduleRequest 请求对象
+     * @param request UpdateScheduleRequest 请求对象
      * @return CompletableFuture<UpdateScheduleResponse>
      */
     public CompletableFuture<UpdateScheduleResponse> updateScheduleAsync(UpdateScheduleRequest request) {
@@ -7325,13 +7165,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScheduleRequest 请求对象
+     * @param request UpdateScheduleRequest 请求对象
      * @return AsyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse>
      */
     public AsyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse> updateScheduleAsyncInvoker(
         UpdateScheduleRequest request) {
-        return new AsyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse>(request, EiHealthMeta.updateSchedule,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateSchedule, hcClient);
     }
 
     /**
@@ -7341,7 +7180,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStarRequest 请求对象
+     * @param request UpdateStarRequest 请求对象
      * @return CompletableFuture<UpdateStarResponse>
      */
     public CompletableFuture<UpdateStarResponse> updateStarAsync(UpdateStarRequest request) {
@@ -7355,11 +7194,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStarRequest 请求对象
+     * @param request UpdateStarRequest 请求对象
      * @return AsyncInvoker<UpdateStarRequest, UpdateStarResponse>
      */
     public AsyncInvoker<UpdateStarRequest, UpdateStarResponse> updateStarAsyncInvoker(UpdateStarRequest request) {
-        return new AsyncInvoker<UpdateStarRequest, UpdateStarResponse>(request, EiHealthMeta.updateStar, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateStar, hcClient);
     }
 
     /**
@@ -7369,7 +7208,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return CompletableFuture<UpdateUserResponse>
      */
     public CompletableFuture<UpdateUserResponse> updateUserAsync(UpdateUserRequest request) {
@@ -7383,11 +7222,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return AsyncInvoker<UpdateUserRequest, UpdateUserResponse>
      */
     public AsyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserAsyncInvoker(UpdateUserRequest request) {
-        return new AsyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, EiHealthMeta.updateUser, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateUser, hcClient);
     }
 
     /**
@@ -7397,7 +7236,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserByDomainRequest 请求对象
+     * @param request UpdateUserByDomainRequest 请求对象
      * @return CompletableFuture<UpdateUserByDomainResponse>
      */
     public CompletableFuture<UpdateUserByDomainResponse> updateUserByDomainAsync(UpdateUserByDomainRequest request) {
@@ -7411,13 +7250,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserByDomainRequest 请求对象
+     * @param request UpdateUserByDomainRequest 请求对象
      * @return AsyncInvoker<UpdateUserByDomainRequest, UpdateUserByDomainResponse>
      */
     public AsyncInvoker<UpdateUserByDomainRequest, UpdateUserByDomainResponse> updateUserByDomainAsyncInvoker(
         UpdateUserByDomainRequest request) {
-        return new AsyncInvoker<UpdateUserByDomainRequest, UpdateUserByDomainResponse>(request,
-            EiHealthMeta.updateUserByDomain, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateUserByDomain, hcClient);
     }
 
     /**
@@ -7427,7 +7265,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRoleRequest 请求对象
+     * @param request UpdateUserRoleRequest 请求对象
      * @return CompletableFuture<UpdateUserRoleResponse>
      */
     public CompletableFuture<UpdateUserRoleResponse> updateUserRoleAsync(UpdateUserRoleRequest request) {
@@ -7441,13 +7279,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRoleRequest 请求对象
+     * @param request UpdateUserRoleRequest 请求对象
      * @return AsyncInvoker<UpdateUserRoleRequest, UpdateUserRoleResponse>
      */
     public AsyncInvoker<UpdateUserRoleRequest, UpdateUserRoleResponse> updateUserRoleAsyncInvoker(
         UpdateUserRoleRequest request) {
-        return new AsyncInvoker<UpdateUserRoleRequest, UpdateUserRoleResponse>(request, EiHealthMeta.updateUserRole,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateUserRole, hcClient);
     }
 
     /**
@@ -7457,7 +7294,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserSettingRequest 请求对象
+     * @param request UpdateUserSettingRequest 请求对象
      * @return CompletableFuture<UpdateUserSettingResponse>
      */
     public CompletableFuture<UpdateUserSettingResponse> updateUserSettingAsync(UpdateUserSettingRequest request) {
@@ -7471,13 +7308,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserSettingRequest 请求对象
+     * @param request UpdateUserSettingRequest 请求对象
      * @return AsyncInvoker<UpdateUserSettingRequest, UpdateUserSettingResponse>
      */
     public AsyncInvoker<UpdateUserSettingRequest, UpdateUserSettingResponse> updateUserSettingAsyncInvoker(
         UpdateUserSettingRequest request) {
-        return new AsyncInvoker<UpdateUserSettingRequest, UpdateUserSettingResponse>(request,
-            EiHealthMeta.updateUserSetting, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateUserSetting, hcClient);
     }
 
     /**
@@ -7487,7 +7323,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVendorRequest 请求对象
+     * @param request UpdateVendorRequest 请求对象
      * @return CompletableFuture<UpdateVendorResponse>
      */
     public CompletableFuture<UpdateVendorResponse> updateVendorAsync(UpdateVendorRequest request) {
@@ -7501,13 +7337,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVendorRequest 请求对象
+     * @param request UpdateVendorRequest 请求对象
      * @return AsyncInvoker<UpdateVendorRequest, UpdateVendorResponse>
      */
     public AsyncInvoker<UpdateVendorRequest, UpdateVendorResponse> updateVendorAsyncInvoker(
         UpdateVendorRequest request) {
-        return new AsyncInvoker<UpdateVendorRequest, UpdateVendorResponse>(request, EiHealthMeta.updateVendor,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateVendor, hcClient);
     }
 
     /**
@@ -7517,7 +7352,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkflowRequest 请求对象
+     * @param request UpdateWorkflowRequest 请求对象
      * @return CompletableFuture<UpdateWorkflowResponse>
      */
     public CompletableFuture<UpdateWorkflowResponse> updateWorkflowAsync(UpdateWorkflowRequest request) {
@@ -7531,13 +7366,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkflowRequest 请求对象
+     * @param request UpdateWorkflowRequest 请求对象
      * @return AsyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse>
      */
     public AsyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse> updateWorkflowAsyncInvoker(
         UpdateWorkflowRequest request) {
-        return new AsyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse>(request, EiHealthMeta.updateWorkflow,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateWorkflow, hcClient);
     }
 
     /**
@@ -7547,7 +7381,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadDataRequest 请求对象
+     * @param request UploadDataRequest 请求对象
      * @return CompletableFuture<UploadDataResponse>
      */
     public CompletableFuture<UploadDataResponse> uploadDataAsync(UploadDataRequest request) {
@@ -7561,11 +7395,11 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadDataRequest 请求对象
+     * @param request UploadDataRequest 请求对象
      * @return AsyncInvoker<UploadDataRequest, UploadDataResponse>
      */
     public AsyncInvoker<UploadDataRequest, UploadDataResponse> uploadDataAsyncInvoker(UploadDataRequest request) {
-        return new AsyncInvoker<UploadDataRequest, UploadDataResponse>(request, EiHealthMeta.uploadData, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.uploadData, hcClient);
     }
 
     /**
@@ -7575,7 +7409,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadTemplateRequest 请求对象
+     * @param request UploadTemplateRequest 请求对象
      * @return CompletableFuture<UploadTemplateResponse>
      */
     public CompletableFuture<UploadTemplateResponse> uploadTemplateAsync(UploadTemplateRequest request) {
@@ -7589,13 +7423,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadTemplateRequest 请求对象
+     * @param request UploadTemplateRequest 请求对象
      * @return AsyncInvoker<UploadTemplateRequest, UploadTemplateResponse>
      */
     public AsyncInvoker<UploadTemplateRequest, UploadTemplateResponse> uploadTemplateAsyncInvoker(
         UploadTemplateRequest request) {
-        return new AsyncInvoker<UploadTemplateRequest, UploadTemplateResponse>(request, EiHealthMeta.uploadTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.uploadTemplate, hcClient);
     }
 
     /**
@@ -7605,7 +7438,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateCodeRequest 请求对象
+     * @param request ValidateCodeRequest 请求对象
      * @return CompletableFuture<ValidateCodeResponse>
      */
     public CompletableFuture<ValidateCodeResponse> validateCodeAsync(ValidateCodeRequest request) {
@@ -7619,13 +7452,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateCodeRequest 请求对象
+     * @param request ValidateCodeRequest 请求对象
      * @return AsyncInvoker<ValidateCodeRequest, ValidateCodeResponse>
      */
     public AsyncInvoker<ValidateCodeRequest, ValidateCodeResponse> validateCodeAsyncInvoker(
         ValidateCodeRequest request) {
-        return new AsyncInvoker<ValidateCodeRequest, ValidateCodeResponse>(request, EiHealthMeta.validateCode,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.validateCode, hcClient);
     }
 
     /**
@@ -7635,7 +7467,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetPropertiesRequest 请求对象
+     * @param request ShowAdmetPropertiesRequest 请求对象
      * @return CompletableFuture<ShowAdmetPropertiesResponse>
      */
     public CompletableFuture<ShowAdmetPropertiesResponse> showAdmetPropertiesAsync(ShowAdmetPropertiesRequest request) {
@@ -7649,13 +7481,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetPropertiesRequest 请求对象
+     * @param request ShowAdmetPropertiesRequest 请求对象
      * @return AsyncInvoker<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse>
      */
     public AsyncInvoker<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse> showAdmetPropertiesAsyncInvoker(
         ShowAdmetPropertiesRequest request) {
-        return new AsyncInvoker<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse>(request,
-            EiHealthMeta.showAdmetProperties, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showAdmetProperties, hcClient);
     }
 
     /**
@@ -7665,7 +7496,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCpiTaskRequest 请求对象
+     * @param request CreateCpiTaskRequest 请求对象
      * @return CompletableFuture<CreateCpiTaskResponse>
      */
     public CompletableFuture<CreateCpiTaskResponse> createCpiTaskAsync(CreateCpiTaskRequest request) {
@@ -7679,13 +7510,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCpiTaskRequest 请求对象
+     * @param request CreateCpiTaskRequest 请求对象
      * @return AsyncInvoker<CreateCpiTaskRequest, CreateCpiTaskResponse>
      */
     public AsyncInvoker<CreateCpiTaskRequest, CreateCpiTaskResponse> createCpiTaskAsyncInvoker(
         CreateCpiTaskRequest request) {
-        return new AsyncInvoker<CreateCpiTaskRequest, CreateCpiTaskResponse>(request, EiHealthMeta.createCpiTask,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createCpiTask, hcClient);
     }
 
     /**
@@ -7695,7 +7525,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCpiTaskResultRequest 请求对象
+     * @param request ShowCpiTaskResultRequest 请求对象
      * @return CompletableFuture<ShowCpiTaskResultResponse>
      */
     public CompletableFuture<ShowCpiTaskResultResponse> showCpiTaskResultAsync(ShowCpiTaskResultRequest request) {
@@ -7709,13 +7539,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCpiTaskResultRequest 请求对象
+     * @param request ShowCpiTaskResultRequest 请求对象
      * @return AsyncInvoker<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse>
      */
     public AsyncInvoker<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse> showCpiTaskResultAsyncInvoker(
         ShowCpiTaskResultRequest request) {
-        return new AsyncInvoker<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse>(request,
-            EiHealthMeta.showCpiTaskResult, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showCpiTaskResult, hcClient);
     }
 
     /**
@@ -7725,7 +7554,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomPropsTaskRequest 请求对象
+     * @param request CreateCustomPropsTaskRequest 请求对象
      * @return CompletableFuture<CreateCustomPropsTaskResponse>
      */
     public CompletableFuture<CreateCustomPropsTaskResponse> createCustomPropsTaskAsync(
@@ -7740,13 +7569,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomPropsTaskRequest 请求对象
+     * @param request CreateCustomPropsTaskRequest 请求对象
      * @return AsyncInvoker<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse>
      */
     public AsyncInvoker<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse> createCustomPropsTaskAsyncInvoker(
         CreateCustomPropsTaskRequest request) {
-        return new AsyncInvoker<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse>(request,
-            EiHealthMeta.createCustomPropsTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createCustomPropsTask, hcClient);
     }
 
     /**
@@ -7756,7 +7584,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomPropsTaskResultRequest 请求对象
+     * @param request ShowCustomPropsTaskResultRequest 请求对象
      * @return CompletableFuture<ShowCustomPropsTaskResultResponse>
      */
     public CompletableFuture<ShowCustomPropsTaskResultResponse> showCustomPropsTaskResultAsync(
@@ -7771,13 +7599,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomPropsTaskResultRequest 请求对象
+     * @param request ShowCustomPropsTaskResultRequest 请求对象
      * @return AsyncInvoker<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse>
      */
     public AsyncInvoker<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse> showCustomPropsTaskResultAsyncInvoker(
         ShowCustomPropsTaskResultRequest request) {
-        return new AsyncInvoker<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse>(request,
-            EiHealthMeta.showCustomPropsTaskResult, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showCustomPropsTaskResult, hcClient);
     }
 
     /**
@@ -7787,7 +7614,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGenerationTaskRequest 请求对象
+     * @param request CreateGenerationTaskRequest 请求对象
      * @return CompletableFuture<CreateGenerationTaskResponse>
      */
     public CompletableFuture<CreateGenerationTaskResponse> createGenerationTaskAsync(
@@ -7802,13 +7629,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGenerationTaskRequest 请求对象
+     * @param request CreateGenerationTaskRequest 请求对象
      * @return AsyncInvoker<CreateGenerationTaskRequest, CreateGenerationTaskResponse>
      */
     public AsyncInvoker<CreateGenerationTaskRequest, CreateGenerationTaskResponse> createGenerationTaskAsyncInvoker(
         CreateGenerationTaskRequest request) {
-        return new AsyncInvoker<CreateGenerationTaskRequest, CreateGenerationTaskResponse>(request,
-            EiHealthMeta.createGenerationTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createGenerationTask, hcClient);
     }
 
     /**
@@ -7818,7 +7644,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGenerationTaskResultRequest 请求对象
+     * @param request ShowGenerationTaskResultRequest 请求对象
      * @return CompletableFuture<ShowGenerationTaskResultResponse>
      */
     public CompletableFuture<ShowGenerationTaskResultResponse> showGenerationTaskResultAsync(
@@ -7833,13 +7659,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGenerationTaskResultRequest 请求对象
+     * @param request ShowGenerationTaskResultRequest 请求对象
      * @return AsyncInvoker<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse>
      */
     public AsyncInvoker<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse> showGenerationTaskResultAsyncInvoker(
         ShowGenerationTaskResultRequest request) {
-        return new AsyncInvoker<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse>(request,
-            EiHealthMeta.showGenerationTaskResult, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showGenerationTaskResult, hcClient);
     }
 
     /**
@@ -7849,7 +7674,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDrugLigandDifferenceRequest 请求对象
+     * @param request CheckDrugLigandDifferenceRequest 请求对象
      * @return CompletableFuture<CheckDrugLigandDifferenceResponse>
      */
     public CompletableFuture<CheckDrugLigandDifferenceResponse> checkDrugLigandDifferenceAsync(
@@ -7864,13 +7689,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDrugLigandDifferenceRequest 请求对象
+     * @param request CheckDrugLigandDifferenceRequest 请求对象
      * @return AsyncInvoker<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse>
      */
     public AsyncInvoker<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse> checkDrugLigandDifferenceAsyncInvoker(
         CheckDrugLigandDifferenceRequest request) {
-        return new AsyncInvoker<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse>(request,
-            EiHealthMeta.checkDrugLigandDifference, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.checkDrugLigandDifference, hcClient);
     }
 
     /**
@@ -7880,7 +7704,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandInteraction2dSvgRequest 请求对象
+     * @param request CreateDrugLigandInteraction2dSvgRequest 请求对象
      * @return CompletableFuture<CreateDrugLigandInteraction2dSvgResponse>
      */
     public CompletableFuture<CreateDrugLigandInteraction2dSvgResponse> createDrugLigandInteraction2dSvgAsync(
@@ -7895,13 +7719,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandInteraction2dSvgRequest 请求对象
+     * @param request CreateDrugLigandInteraction2dSvgRequest 请求对象
      * @return AsyncInvoker<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse>
      */
     public AsyncInvoker<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse> createDrugLigandInteraction2dSvgAsyncInvoker(
         CreateDrugLigandInteraction2dSvgRequest request) {
-        return new AsyncInvoker<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse>(
-            request, EiHealthMeta.createDrugLigandInteraction2dSvg, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createDrugLigandInteraction2dSvg, hcClient);
     }
 
     /**
@@ -7911,7 +7734,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandPreviewTaskRequest 请求对象
+     * @param request CreateDrugLigandPreviewTaskRequest 请求对象
      * @return CompletableFuture<CreateDrugLigandPreviewTaskResponse>
      */
     public CompletableFuture<CreateDrugLigandPreviewTaskResponse> createDrugLigandPreviewTaskAsync(
@@ -7926,13 +7749,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandPreviewTaskRequest 请求对象
+     * @param request CreateDrugLigandPreviewTaskRequest 请求对象
      * @return AsyncInvoker<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse>
      */
     public AsyncInvoker<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse> createDrugLigandPreviewTaskAsyncInvoker(
         CreateDrugLigandPreviewTaskRequest request) {
-        return new AsyncInvoker<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse>(request,
-            EiHealthMeta.createDrugLigandPreviewTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createDrugLigandPreviewTask, hcClient);
     }
 
     /**
@@ -7942,7 +7764,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSdfRequest 请求对象
+     * @param request CreateDrugLigandSdfRequest 请求对象
      * @return CompletableFuture<CreateDrugLigandSdfResponse>
      */
     public CompletableFuture<CreateDrugLigandSdfResponse> createDrugLigandSdfAsync(CreateDrugLigandSdfRequest request) {
@@ -7956,13 +7778,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSdfRequest 请求对象
+     * @param request CreateDrugLigandSdfRequest 请求对象
      * @return AsyncInvoker<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse>
      */
     public AsyncInvoker<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse> createDrugLigandSdfAsyncInvoker(
         CreateDrugLigandSdfRequest request) {
-        return new AsyncInvoker<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse>(request,
-            EiHealthMeta.createDrugLigandSdf, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createDrugLigandSdf, hcClient);
     }
 
     /**
@@ -7972,7 +7793,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request CreateDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return CompletableFuture<CreateDrugLigandSimilarityGraphTaskResponse>
      */
     public CompletableFuture<CreateDrugLigandSimilarityGraphTaskResponse> createDrugLigandSimilarityGraphTaskAsync(
@@ -7987,13 +7808,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request CreateDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return AsyncInvoker<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse>
      */
     public AsyncInvoker<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse> createDrugLigandSimilarityGraphTaskAsyncInvoker(
         CreateDrugLigandSimilarityGraphTaskRequest request) {
-        return new AsyncInvoker<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse>(
-            request, EiHealthMeta.createDrugLigandSimilarityGraphTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createDrugLigandSimilarityGraphTask, hcClient);
     }
 
     /**
@@ -8003,7 +7823,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSvgRequest 请求对象
+     * @param request CreateDrugLigandSvgRequest 请求对象
      * @return CompletableFuture<CreateDrugLigandSvgResponse>
      */
     public CompletableFuture<CreateDrugLigandSvgResponse> createDrugLigandSvgAsync(CreateDrugLigandSvgRequest request) {
@@ -8017,13 +7837,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSvgRequest 请求对象
+     * @param request CreateDrugLigandSvgRequest 请求对象
      * @return AsyncInvoker<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse>
      */
     public AsyncInvoker<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse> createDrugLigandSvgAsyncInvoker(
         CreateDrugLigandSvgRequest request) {
-        return new AsyncInvoker<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse>(request,
-            EiHealthMeta.createDrugLigandSvg, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createDrugLigandSvg, hcClient);
     }
 
     /**
@@ -8033,7 +7852,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugLigandPreviewTaskRequest 请求对象
+     * @param request DeleteDrugLigandPreviewTaskRequest 请求对象
      * @return CompletableFuture<DeleteDrugLigandPreviewTaskResponse>
      */
     public CompletableFuture<DeleteDrugLigandPreviewTaskResponse> deleteDrugLigandPreviewTaskAsync(
@@ -8048,13 +7867,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugLigandPreviewTaskRequest 请求对象
+     * @param request DeleteDrugLigandPreviewTaskRequest 请求对象
      * @return AsyncInvoker<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse>
      */
     public AsyncInvoker<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse> deleteDrugLigandPreviewTaskAsyncInvoker(
         DeleteDrugLigandPreviewTaskRequest request) {
-        return new AsyncInvoker<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse>(request,
-            EiHealthMeta.deleteDrugLigandPreviewTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteDrugLigandPreviewTask, hcClient);
     }
 
     /**
@@ -8064,7 +7882,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request DeleteDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return CompletableFuture<DeleteDrugLigandSimilarityGraphTaskResponse>
      */
     public CompletableFuture<DeleteDrugLigandSimilarityGraphTaskResponse> deleteDrugLigandSimilarityGraphTaskAsync(
@@ -8079,13 +7897,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request DeleteDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return AsyncInvoker<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse>
      */
     public AsyncInvoker<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse> deleteDrugLigandSimilarityGraphTaskAsyncInvoker(
         DeleteDrugLigandSimilarityGraphTaskRequest request) {
-        return new AsyncInvoker<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse>(
-            request, EiHealthMeta.deleteDrugLigandSimilarityGraphTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteDrugLigandSimilarityGraphTask, hcClient);
     }
 
     /**
@@ -8095,7 +7912,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ParseDrugReceptorInfoRequest 请求对象
+     * @param request ParseDrugReceptorInfoRequest 请求对象
      * @return CompletableFuture<ParseDrugReceptorInfoResponse>
      */
     public CompletableFuture<ParseDrugReceptorInfoResponse> parseDrugReceptorInfoAsync(
@@ -8110,13 +7927,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ParseDrugReceptorInfoRequest 请求对象
+     * @param request ParseDrugReceptorInfoRequest 请求对象
      * @return AsyncInvoker<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse>
      */
     public AsyncInvoker<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse> parseDrugReceptorInfoAsyncInvoker(
         ParseDrugReceptorInfoRequest request) {
-        return new AsyncInvoker<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse>(request,
-            EiHealthMeta.parseDrugReceptorInfo, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.parseDrugReceptorInfo, hcClient);
     }
 
     /**
@@ -8126,7 +7942,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeDrugReceptorPocketRequest 请求对象
+     * @param request RecognizeDrugReceptorPocketRequest 请求对象
      * @return CompletableFuture<RecognizeDrugReceptorPocketResponse>
      */
     public CompletableFuture<RecognizeDrugReceptorPocketResponse> recognizeDrugReceptorPocketAsync(
@@ -8141,13 +7957,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeDrugReceptorPocketRequest 请求对象
+     * @param request RecognizeDrugReceptorPocketRequest 请求对象
      * @return AsyncInvoker<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse>
      */
     public AsyncInvoker<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse> recognizeDrugReceptorPocketAsyncInvoker(
         RecognizeDrugReceptorPocketRequest request) {
-        return new AsyncInvoker<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse>(request,
-            EiHealthMeta.recognizeDrugReceptorPocket, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.recognizeDrugReceptorPocket, hcClient);
     }
 
     /**
@@ -8157,7 +7972,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDrugLigandToSmilesConversionRequest 请求对象
+     * @param request RunDrugLigandToSmilesConversionRequest 请求对象
      * @return CompletableFuture<RunDrugLigandToSmilesConversionResponse>
      */
     public CompletableFuture<RunDrugLigandToSmilesConversionResponse> runDrugLigandToSmilesConversionAsync(
@@ -8172,13 +7987,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDrugLigandToSmilesConversionRequest 请求对象
+     * @param request RunDrugLigandToSmilesConversionRequest 请求对象
      * @return AsyncInvoker<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse>
      */
     public AsyncInvoker<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse> runDrugLigandToSmilesConversionAsyncInvoker(
         RunDrugLigandToSmilesConversionRequest request) {
-        return new AsyncInvoker<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse>(
-            request, EiHealthMeta.runDrugLigandToSmilesConversion, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.runDrugLigandToSmilesConversion, hcClient);
     }
 
     /**
@@ -8188,7 +8002,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDrugReceptorPreprocessRequest 请求对象
+     * @param request RunDrugReceptorPreprocessRequest 请求对象
      * @return CompletableFuture<RunDrugReceptorPreprocessResponse>
      */
     public CompletableFuture<RunDrugReceptorPreprocessResponse> runDrugReceptorPreprocessAsync(
@@ -8203,13 +8017,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDrugReceptorPreprocessRequest 请求对象
+     * @param request RunDrugReceptorPreprocessRequest 请求对象
      * @return AsyncInvoker<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse>
      */
     public AsyncInvoker<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse> runDrugReceptorPreprocessAsyncInvoker(
         RunDrugReceptorPreprocessRequest request) {
-        return new AsyncInvoker<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse>(request,
-            EiHealthMeta.runDrugReceptorPreprocess, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.runDrugReceptorPreprocess, hcClient);
     }
 
     /**
@@ -8219,7 +8032,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDrugLigandPreviewTaskRequest 请求对象
+     * @param request ShowDrugLigandPreviewTaskRequest 请求对象
      * @return CompletableFuture<ShowDrugLigandPreviewTaskResponse>
      */
     public CompletableFuture<ShowDrugLigandPreviewTaskResponse> showDrugLigandPreviewTaskAsync(
@@ -8234,13 +8047,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDrugLigandPreviewTaskRequest 请求对象
+     * @param request ShowDrugLigandPreviewTaskRequest 请求对象
      * @return AsyncInvoker<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse>
      */
     public AsyncInvoker<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse> showDrugLigandPreviewTaskAsyncInvoker(
         ShowDrugLigandPreviewTaskRequest request) {
-        return new AsyncInvoker<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse>(request,
-            EiHealthMeta.showDrugLigandPreviewTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showDrugLigandPreviewTask, hcClient);
     }
 
     /**
@@ -8250,7 +8062,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request ShowDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return CompletableFuture<ShowDrugLigandSimilarityGraphTaskResponse>
      */
     public CompletableFuture<ShowDrugLigandSimilarityGraphTaskResponse> showDrugLigandSimilarityGraphTaskAsync(
@@ -8265,13 +8077,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request ShowDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return AsyncInvoker<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse>
      */
     public AsyncInvoker<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse> showDrugLigandSimilarityGraphTaskAsyncInvoker(
         ShowDrugLigandSimilarityGraphTaskRequest request) {
-        return new AsyncInvoker<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse>(
-            request, EiHealthMeta.showDrugLigandSimilarityGraphTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showDrugLigandSimilarityGraphTask, hcClient);
     }
 
     /**
@@ -8281,7 +8092,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataRequest 请求对象
+     * @param request DownloadDataRequest 请求对象
      * @return CompletableFuture<DownloadDataResponse>
      */
     public CompletableFuture<DownloadDataResponse> downloadDataAsync(DownloadDataRequest request) {
@@ -8295,13 +8106,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataRequest 请求对象
+     * @param request DownloadDataRequest 请求对象
      * @return AsyncInvoker<DownloadDataRequest, DownloadDataResponse>
      */
     public AsyncInvoker<DownloadDataRequest, DownloadDataResponse> downloadDataAsyncInvoker(
         DownloadDataRequest request) {
-        return new AsyncInvoker<DownloadDataRequest, DownloadDataResponse>(request, EiHealthMeta.downloadData,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.downloadData, hcClient);
     }
 
     /**
@@ -8311,7 +8121,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOverviewRequest 请求对象
+     * @param request ShowOverviewRequest 请求对象
      * @return CompletableFuture<ShowOverviewResponse>
      */
     public CompletableFuture<ShowOverviewResponse> showOverviewAsync(ShowOverviewRequest request) {
@@ -8325,13 +8135,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOverviewRequest 请求对象
+     * @param request ShowOverviewRequest 请求对象
      * @return AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse>
      */
     public AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse> showOverviewAsyncInvoker(
         ShowOverviewRequest request) {
-        return new AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse>(request, EiHealthMeta.showOverview,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showOverview, hcClient);
     }
 
     /**
@@ -8341,7 +8150,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CleanNextflowCacheRequest 请求对象
+     * @param request CleanNextflowCacheRequest 请求对象
      * @return CompletableFuture<CleanNextflowCacheResponse>
      */
     public CompletableFuture<CleanNextflowCacheResponse> cleanNextflowCacheAsync(CleanNextflowCacheRequest request) {
@@ -8355,13 +8164,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CleanNextflowCacheRequest 请求对象
+     * @param request CleanNextflowCacheRequest 请求对象
      * @return AsyncInvoker<CleanNextflowCacheRequest, CleanNextflowCacheResponse>
      */
     public AsyncInvoker<CleanNextflowCacheRequest, CleanNextflowCacheResponse> cleanNextflowCacheAsyncInvoker(
         CleanNextflowCacheRequest request) {
-        return new AsyncInvoker<CleanNextflowCacheRequest, CleanNextflowCacheResponse>(request,
-            EiHealthMeta.cleanNextflowCache, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.cleanNextflowCache, hcClient);
     }
 
     /**
@@ -8371,7 +8179,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNextflowJobRequest 请求对象
+     * @param request CreateNextflowJobRequest 请求对象
      * @return CompletableFuture<CreateNextflowJobResponse>
      */
     public CompletableFuture<CreateNextflowJobResponse> createNextflowJobAsync(CreateNextflowJobRequest request) {
@@ -8385,13 +8193,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNextflowJobRequest 请求对象
+     * @param request CreateNextflowJobRequest 请求对象
      * @return AsyncInvoker<CreateNextflowJobRequest, CreateNextflowJobResponse>
      */
     public AsyncInvoker<CreateNextflowJobRequest, CreateNextflowJobResponse> createNextflowJobAsyncInvoker(
         CreateNextflowJobRequest request) {
-        return new AsyncInvoker<CreateNextflowJobRequest, CreateNextflowJobResponse>(request,
-            EiHealthMeta.createNextflowJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createNextflowJob, hcClient);
     }
 
     /**
@@ -8401,7 +8208,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNextflowWorkflowRequest 请求对象
+     * @param request CreateNextflowWorkflowRequest 请求对象
      * @return CompletableFuture<CreateNextflowWorkflowResponse>
      */
     public CompletableFuture<CreateNextflowWorkflowResponse> createNextflowWorkflowAsync(
@@ -8416,13 +8223,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNextflowWorkflowRequest 请求对象
+     * @param request CreateNextflowWorkflowRequest 请求对象
      * @return AsyncInvoker<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse>
      */
     public AsyncInvoker<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse> createNextflowWorkflowAsyncInvoker(
         CreateNextflowWorkflowRequest request) {
-        return new AsyncInvoker<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse>(request,
-            EiHealthMeta.createNextflowWorkflow, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createNextflowWorkflow, hcClient);
     }
 
     /**
@@ -8432,7 +8238,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNextflowJobRequest 请求对象
+     * @param request DeleteNextflowJobRequest 请求对象
      * @return CompletableFuture<DeleteNextflowJobResponse>
      */
     public CompletableFuture<DeleteNextflowJobResponse> deleteNextflowJobAsync(DeleteNextflowJobRequest request) {
@@ -8446,13 +8252,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNextflowJobRequest 请求对象
+     * @param request DeleteNextflowJobRequest 请求对象
      * @return AsyncInvoker<DeleteNextflowJobRequest, DeleteNextflowJobResponse>
      */
     public AsyncInvoker<DeleteNextflowJobRequest, DeleteNextflowJobResponse> deleteNextflowJobAsyncInvoker(
         DeleteNextflowJobRequest request) {
-        return new AsyncInvoker<DeleteNextflowJobRequest, DeleteNextflowJobResponse>(request,
-            EiHealthMeta.deleteNextflowJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteNextflowJob, hcClient);
     }
 
     /**
@@ -8462,7 +8267,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNextflowWorkflowRequest 请求对象
+     * @param request DeleteNextflowWorkflowRequest 请求对象
      * @return CompletableFuture<DeleteNextflowWorkflowResponse>
      */
     public CompletableFuture<DeleteNextflowWorkflowResponse> deleteNextflowWorkflowAsync(
@@ -8477,13 +8282,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNextflowWorkflowRequest 请求对象
+     * @param request DeleteNextflowWorkflowRequest 请求对象
      * @return AsyncInvoker<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse>
      */
     public AsyncInvoker<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse> deleteNextflowWorkflowAsyncInvoker(
         DeleteNextflowWorkflowRequest request) {
-        return new AsyncInvoker<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse>(request,
-            EiHealthMeta.deleteNextflowWorkflow, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteNextflowWorkflow, hcClient);
     }
 
     /**
@@ -8493,7 +8297,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallNextflowRequest 请求对象
+     * @param request InstallNextflowRequest 请求对象
      * @return CompletableFuture<InstallNextflowResponse>
      */
     public CompletableFuture<InstallNextflowResponse> installNextflowAsync(InstallNextflowRequest request) {
@@ -8507,13 +8311,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallNextflowRequest 请求对象
+     * @param request InstallNextflowRequest 请求对象
      * @return AsyncInvoker<InstallNextflowRequest, InstallNextflowResponse>
      */
     public AsyncInvoker<InstallNextflowRequest, InstallNextflowResponse> installNextflowAsyncInvoker(
         InstallNextflowRequest request) {
-        return new AsyncInvoker<InstallNextflowRequest, InstallNextflowResponse>(request, EiHealthMeta.installNextflow,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.installNextflow, hcClient);
     }
 
     /**
@@ -8523,7 +8326,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowJobRequest 请求对象
+     * @param request ListNextflowJobRequest 请求对象
      * @return CompletableFuture<ListNextflowJobResponse>
      */
     public CompletableFuture<ListNextflowJobResponse> listNextflowJobAsync(ListNextflowJobRequest request) {
@@ -8537,13 +8340,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowJobRequest 请求对象
+     * @param request ListNextflowJobRequest 请求对象
      * @return AsyncInvoker<ListNextflowJobRequest, ListNextflowJobResponse>
      */
     public AsyncInvoker<ListNextflowJobRequest, ListNextflowJobResponse> listNextflowJobAsyncInvoker(
         ListNextflowJobRequest request) {
-        return new AsyncInvoker<ListNextflowJobRequest, ListNextflowJobResponse>(request, EiHealthMeta.listNextflowJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listNextflowJob, hcClient);
     }
 
     /**
@@ -8553,7 +8355,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowTaskRequest 请求对象
+     * @param request ListNextflowTaskRequest 请求对象
      * @return CompletableFuture<ListNextflowTaskResponse>
      */
     public CompletableFuture<ListNextflowTaskResponse> listNextflowTaskAsync(ListNextflowTaskRequest request) {
@@ -8567,13 +8369,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowTaskRequest 请求对象
+     * @param request ListNextflowTaskRequest 请求对象
      * @return AsyncInvoker<ListNextflowTaskRequest, ListNextflowTaskResponse>
      */
     public AsyncInvoker<ListNextflowTaskRequest, ListNextflowTaskResponse> listNextflowTaskAsyncInvoker(
         ListNextflowTaskRequest request) {
-        return new AsyncInvoker<ListNextflowTaskRequest, ListNextflowTaskResponse>(request,
-            EiHealthMeta.listNextflowTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listNextflowTask, hcClient);
     }
 
     /**
@@ -8583,7 +8384,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowVersionRequest 请求对象
+     * @param request ListNextflowVersionRequest 请求对象
      * @return CompletableFuture<ListNextflowVersionResponse>
      */
     public CompletableFuture<ListNextflowVersionResponse> listNextflowVersionAsync(ListNextflowVersionRequest request) {
@@ -8597,13 +8398,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowVersionRequest 请求对象
+     * @param request ListNextflowVersionRequest 请求对象
      * @return AsyncInvoker<ListNextflowVersionRequest, ListNextflowVersionResponse>
      */
     public AsyncInvoker<ListNextflowVersionRequest, ListNextflowVersionResponse> listNextflowVersionAsyncInvoker(
         ListNextflowVersionRequest request) {
-        return new AsyncInvoker<ListNextflowVersionRequest, ListNextflowVersionResponse>(request,
-            EiHealthMeta.listNextflowVersion, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listNextflowVersion, hcClient);
     }
 
     /**
@@ -8613,7 +8413,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowWorkflowRequest 请求对象
+     * @param request ListNextflowWorkflowRequest 请求对象
      * @return CompletableFuture<ListNextflowWorkflowResponse>
      */
     public CompletableFuture<ListNextflowWorkflowResponse> listNextflowWorkflowAsync(
@@ -8628,13 +8428,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowWorkflowRequest 请求对象
+     * @param request ListNextflowWorkflowRequest 请求对象
      * @return AsyncInvoker<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse>
      */
     public AsyncInvoker<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse> listNextflowWorkflowAsyncInvoker(
         ListNextflowWorkflowRequest request) {
-        return new AsyncInvoker<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse>(request,
-            EiHealthMeta.listNextflowWorkflow, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listNextflowWorkflow, hcClient);
     }
 
     /**
@@ -8644,7 +8443,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryNextflowJobRequest 请求对象
+     * @param request RetryNextflowJobRequest 请求对象
      * @return CompletableFuture<RetryNextflowJobResponse>
      */
     public CompletableFuture<RetryNextflowJobResponse> retryNextflowJobAsync(RetryNextflowJobRequest request) {
@@ -8658,13 +8457,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryNextflowJobRequest 请求对象
+     * @param request RetryNextflowJobRequest 请求对象
      * @return AsyncInvoker<RetryNextflowJobRequest, RetryNextflowJobResponse>
      */
     public AsyncInvoker<RetryNextflowJobRequest, RetryNextflowJobResponse> retryNextflowJobAsyncInvoker(
         RetryNextflowJobRequest request) {
-        return new AsyncInvoker<RetryNextflowJobRequest, RetryNextflowJobResponse>(request,
-            EiHealthMeta.retryNextflowJob, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.retryNextflowJob, hcClient);
     }
 
     /**
@@ -8674,7 +8472,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowRequest 请求对象
+     * @param request ShowNextflowRequest 请求对象
      * @return CompletableFuture<ShowNextflowResponse>
      */
     public CompletableFuture<ShowNextflowResponse> showNextflowAsync(ShowNextflowRequest request) {
@@ -8688,13 +8486,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowRequest 请求对象
+     * @param request ShowNextflowRequest 请求对象
      * @return AsyncInvoker<ShowNextflowRequest, ShowNextflowResponse>
      */
     public AsyncInvoker<ShowNextflowRequest, ShowNextflowResponse> showNextflowAsyncInvoker(
         ShowNextflowRequest request) {
-        return new AsyncInvoker<ShowNextflowRequest, ShowNextflowResponse>(request, EiHealthMeta.showNextflow,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showNextflow, hcClient);
     }
 
     /**
@@ -8704,7 +8501,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobRequest 请求对象
+     * @param request ShowNextflowJobRequest 请求对象
      * @return CompletableFuture<ShowNextflowJobResponse>
      */
     public CompletableFuture<ShowNextflowJobResponse> showNextflowJobAsync(ShowNextflowJobRequest request) {
@@ -8718,13 +8515,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobRequest 请求对象
+     * @param request ShowNextflowJobRequest 请求对象
      * @return AsyncInvoker<ShowNextflowJobRequest, ShowNextflowJobResponse>
      */
     public AsyncInvoker<ShowNextflowJobRequest, ShowNextflowJobResponse> showNextflowJobAsyncInvoker(
         ShowNextflowJobRequest request) {
-        return new AsyncInvoker<ShowNextflowJobRequest, ShowNextflowJobResponse>(request, EiHealthMeta.showNextflowJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showNextflowJob, hcClient);
     }
 
     /**
@@ -8734,7 +8530,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobLogRequest 请求对象
+     * @param request ShowNextflowJobLogRequest 请求对象
      * @return CompletableFuture<ShowNextflowJobLogResponse>
      */
     public CompletableFuture<ShowNextflowJobLogResponse> showNextflowJobLogAsync(ShowNextflowJobLogRequest request) {
@@ -8748,13 +8544,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobLogRequest 请求对象
+     * @param request ShowNextflowJobLogRequest 请求对象
      * @return AsyncInvoker<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse>
      */
     public AsyncInvoker<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse> showNextflowJobLogAsyncInvoker(
         ShowNextflowJobLogRequest request) {
-        return new AsyncInvoker<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse>(request,
-            EiHealthMeta.showNextflowJobLog, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showNextflowJobLog, hcClient);
     }
 
     /**
@@ -8764,7 +8559,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobReportsRequest 请求对象
+     * @param request ShowNextflowJobReportsRequest 请求对象
      * @return CompletableFuture<ShowNextflowJobReportsResponse>
      */
     public CompletableFuture<ShowNextflowJobReportsResponse> showNextflowJobReportsAsync(
@@ -8779,13 +8574,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobReportsRequest 请求对象
+     * @param request ShowNextflowJobReportsRequest 请求对象
      * @return AsyncInvoker<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse>
      */
     public AsyncInvoker<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse> showNextflowJobReportsAsyncInvoker(
         ShowNextflowJobReportsRequest request) {
-        return new AsyncInvoker<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse>(request,
-            EiHealthMeta.showNextflowJobReports, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showNextflowJobReports, hcClient);
     }
 
     /**
@@ -8795,7 +8589,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowTaskDetailRequest 请求对象
+     * @param request ShowNextflowTaskDetailRequest 请求对象
      * @return CompletableFuture<ShowNextflowTaskDetailResponse>
      */
     public CompletableFuture<ShowNextflowTaskDetailResponse> showNextflowTaskDetailAsync(
@@ -8810,13 +8604,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowTaskDetailRequest 请求对象
+     * @param request ShowNextflowTaskDetailRequest 请求对象
      * @return AsyncInvoker<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse>
      */
     public AsyncInvoker<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse> showNextflowTaskDetailAsyncInvoker(
         ShowNextflowTaskDetailRequest request) {
-        return new AsyncInvoker<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse>(request,
-            EiHealthMeta.showNextflowTaskDetail, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showNextflowTaskDetail, hcClient);
     }
 
     /**
@@ -8826,7 +8619,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowTaskLogRequest 请求对象
+     * @param request ShowNextflowTaskLogRequest 请求对象
      * @return CompletableFuture<ShowNextflowTaskLogResponse>
      */
     public CompletableFuture<ShowNextflowTaskLogResponse> showNextflowTaskLogAsync(ShowNextflowTaskLogRequest request) {
@@ -8840,13 +8633,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowTaskLogRequest 请求对象
+     * @param request ShowNextflowTaskLogRequest 请求对象
      * @return AsyncInvoker<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse>
      */
     public AsyncInvoker<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse> showNextflowTaskLogAsyncInvoker(
         ShowNextflowTaskLogRequest request) {
-        return new AsyncInvoker<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse>(request,
-            EiHealthMeta.showNextflowTaskLog, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showNextflowTaskLog, hcClient);
     }
 
     /**
@@ -8856,7 +8648,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowWorkflowRequest 请求对象
+     * @param request ShowNextflowWorkflowRequest 请求对象
      * @return CompletableFuture<ShowNextflowWorkflowResponse>
      */
     public CompletableFuture<ShowNextflowWorkflowResponse> showNextflowWorkflowAsync(
@@ -8871,13 +8663,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowWorkflowRequest 请求对象
+     * @param request ShowNextflowWorkflowRequest 请求对象
      * @return AsyncInvoker<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse>
      */
     public AsyncInvoker<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse> showNextflowWorkflowAsyncInvoker(
         ShowNextflowWorkflowRequest request) {
-        return new AsyncInvoker<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse>(request,
-            EiHealthMeta.showNextflowWorkflow, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showNextflowWorkflow, hcClient);
     }
 
     /**
@@ -8887,7 +8678,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopNextflowJobRequest 请求对象
+     * @param request StopNextflowJobRequest 请求对象
      * @return CompletableFuture<StopNextflowJobResponse>
      */
     public CompletableFuture<StopNextflowJobResponse> stopNextflowJobAsync(StopNextflowJobRequest request) {
@@ -8901,13 +8692,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopNextflowJobRequest 请求对象
+     * @param request StopNextflowJobRequest 请求对象
      * @return AsyncInvoker<StopNextflowJobRequest, StopNextflowJobResponse>
      */
     public AsyncInvoker<StopNextflowJobRequest, StopNextflowJobResponse> stopNextflowJobAsyncInvoker(
         StopNextflowJobRequest request) {
-        return new AsyncInvoker<StopNextflowJobRequest, StopNextflowJobResponse>(request, EiHealthMeta.stopNextflowJob,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.stopNextflowJob, hcClient);
     }
 
     /**
@@ -8917,7 +8707,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallNextflowRequest 请求对象
+     * @param request UninstallNextflowRequest 请求对象
      * @return CompletableFuture<UninstallNextflowResponse>
      */
     public CompletableFuture<UninstallNextflowResponse> uninstallNextflowAsync(UninstallNextflowRequest request) {
@@ -8931,13 +8721,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallNextflowRequest 请求对象
+     * @param request UninstallNextflowRequest 请求对象
      * @return AsyncInvoker<UninstallNextflowRequest, UninstallNextflowResponse>
      */
     public AsyncInvoker<UninstallNextflowRequest, UninstallNextflowResponse> uninstallNextflowAsyncInvoker(
         UninstallNextflowRequest request) {
-        return new AsyncInvoker<UninstallNextflowRequest, UninstallNextflowResponse>(request,
-            EiHealthMeta.uninstallNextflow, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.uninstallNextflow, hcClient);
     }
 
     /**
@@ -8947,7 +8736,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNextflowWorkflowRequest 请求对象
+     * @param request UpdateNextflowWorkflowRequest 请求对象
      * @return CompletableFuture<UpdateNextflowWorkflowResponse>
      */
     public CompletableFuture<UpdateNextflowWorkflowResponse> updateNextflowWorkflowAsync(
@@ -8962,13 +8751,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNextflowWorkflowRequest 请求对象
+     * @param request UpdateNextflowWorkflowRequest 请求对象
      * @return AsyncInvoker<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse>
      */
     public AsyncInvoker<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse> updateNextflowWorkflowAsyncInvoker(
         UpdateNextflowWorkflowRequest request) {
-        return new AsyncInvoker<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse>(request,
-            EiHealthMeta.updateNextflowWorkflow, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateNextflowWorkflow, hcClient);
     }
 
     /**
@@ -8978,7 +8766,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNotebookRequest 请求对象
+     * @param request CreateNotebookRequest 请求对象
      * @return CompletableFuture<CreateNotebookResponse>
      */
     public CompletableFuture<CreateNotebookResponse> createNotebookAsync(CreateNotebookRequest request) {
@@ -8992,13 +8780,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNotebookRequest 请求对象
+     * @param request CreateNotebookRequest 请求对象
      * @return AsyncInvoker<CreateNotebookRequest, CreateNotebookResponse>
      */
     public AsyncInvoker<CreateNotebookRequest, CreateNotebookResponse> createNotebookAsyncInvoker(
         CreateNotebookRequest request) {
-        return new AsyncInvoker<CreateNotebookRequest, CreateNotebookResponse>(request, EiHealthMeta.createNotebook,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createNotebook, hcClient);
     }
 
     /**
@@ -9008,7 +8795,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNotebookRequest 请求对象
+     * @param request DeleteNotebookRequest 请求对象
      * @return CompletableFuture<DeleteNotebookResponse>
      */
     public CompletableFuture<DeleteNotebookResponse> deleteNotebookAsync(DeleteNotebookRequest request) {
@@ -9022,13 +8809,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNotebookRequest 请求对象
+     * @param request DeleteNotebookRequest 请求对象
      * @return AsyncInvoker<DeleteNotebookRequest, DeleteNotebookResponse>
      */
     public AsyncInvoker<DeleteNotebookRequest, DeleteNotebookResponse> deleteNotebookAsyncInvoker(
         DeleteNotebookRequest request) {
-        return new AsyncInvoker<DeleteNotebookRequest, DeleteNotebookResponse>(request, EiHealthMeta.deleteNotebook,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteNotebook, hcClient);
     }
 
     /**
@@ -9038,7 +8824,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotebookRequest 请求对象
+     * @param request ListNotebookRequest 请求对象
      * @return CompletableFuture<ListNotebookResponse>
      */
     public CompletableFuture<ListNotebookResponse> listNotebookAsync(ListNotebookRequest request) {
@@ -9052,13 +8838,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotebookRequest 请求对象
+     * @param request ListNotebookRequest 请求对象
      * @return AsyncInvoker<ListNotebookRequest, ListNotebookResponse>
      */
     public AsyncInvoker<ListNotebookRequest, ListNotebookResponse> listNotebookAsyncInvoker(
         ListNotebookRequest request) {
-        return new AsyncInvoker<ListNotebookRequest, ListNotebookResponse>(request, EiHealthMeta.listNotebook,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listNotebook, hcClient);
     }
 
     /**
@@ -9068,7 +8853,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotebookToolRequest 请求对象
+     * @param request ListNotebookToolRequest 请求对象
      * @return CompletableFuture<ListNotebookToolResponse>
      */
     public CompletableFuture<ListNotebookToolResponse> listNotebookToolAsync(ListNotebookToolRequest request) {
@@ -9082,13 +8867,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotebookToolRequest 请求对象
+     * @param request ListNotebookToolRequest 请求对象
      * @return AsyncInvoker<ListNotebookToolRequest, ListNotebookToolResponse>
      */
     public AsyncInvoker<ListNotebookToolRequest, ListNotebookToolResponse> listNotebookToolAsyncInvoker(
         ListNotebookToolRequest request) {
-        return new AsyncInvoker<ListNotebookToolRequest, ListNotebookToolResponse>(request,
-            EiHealthMeta.listNotebookTool, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listNotebookTool, hcClient);
     }
 
     /**
@@ -9098,7 +8882,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNotebookRequest 请求对象
+     * @param request ShowNotebookRequest 请求对象
      * @return CompletableFuture<ShowNotebookResponse>
      */
     public CompletableFuture<ShowNotebookResponse> showNotebookAsync(ShowNotebookRequest request) {
@@ -9112,13 +8896,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNotebookRequest 请求对象
+     * @param request ShowNotebookRequest 请求对象
      * @return AsyncInvoker<ShowNotebookRequest, ShowNotebookResponse>
      */
     public AsyncInvoker<ShowNotebookRequest, ShowNotebookResponse> showNotebookAsyncInvoker(
         ShowNotebookRequest request) {
-        return new AsyncInvoker<ShowNotebookRequest, ShowNotebookResponse>(request, EiHealthMeta.showNotebook,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showNotebook, hcClient);
     }
 
     /**
@@ -9128,7 +8911,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNotebookTokenRequest 请求对象
+     * @param request ShowNotebookTokenRequest 请求对象
      * @return CompletableFuture<ShowNotebookTokenResponse>
      */
     public CompletableFuture<ShowNotebookTokenResponse> showNotebookTokenAsync(ShowNotebookTokenRequest request) {
@@ -9142,13 +8925,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNotebookTokenRequest 请求对象
+     * @param request ShowNotebookTokenRequest 请求对象
      * @return AsyncInvoker<ShowNotebookTokenRequest, ShowNotebookTokenResponse>
      */
     public AsyncInvoker<ShowNotebookTokenRequest, ShowNotebookTokenResponse> showNotebookTokenAsyncInvoker(
         ShowNotebookTokenRequest request) {
-        return new AsyncInvoker<ShowNotebookTokenRequest, ShowNotebookTokenResponse>(request,
-            EiHealthMeta.showNotebookToken, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showNotebookToken, hcClient);
     }
 
     /**
@@ -9158,7 +8940,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopOrStartNotebookRequest 请求对象
+     * @param request StopOrStartNotebookRequest 请求对象
      * @return CompletableFuture<StopOrStartNotebookResponse>
      */
     public CompletableFuture<StopOrStartNotebookResponse> stopOrStartNotebookAsync(StopOrStartNotebookRequest request) {
@@ -9172,13 +8954,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopOrStartNotebookRequest 请求对象
+     * @param request StopOrStartNotebookRequest 请求对象
      * @return AsyncInvoker<StopOrStartNotebookRequest, StopOrStartNotebookResponse>
      */
     public AsyncInvoker<StopOrStartNotebookRequest, StopOrStartNotebookResponse> stopOrStartNotebookAsyncInvoker(
         StopOrStartNotebookRequest request) {
-        return new AsyncInvoker<StopOrStartNotebookRequest, StopOrStartNotebookResponse>(request,
-            EiHealthMeta.stopOrStartNotebook, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.stopOrStartNotebook, hcClient);
     }
 
     /**
@@ -9188,7 +8969,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotebookRequest 请求对象
+     * @param request UpdateNotebookRequest 请求对象
      * @return CompletableFuture<UpdateNotebookResponse>
      */
     public CompletableFuture<UpdateNotebookResponse> updateNotebookAsync(UpdateNotebookRequest request) {
@@ -9202,13 +8983,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotebookRequest 请求对象
+     * @param request UpdateNotebookRequest 请求对象
      * @return AsyncInvoker<UpdateNotebookRequest, UpdateNotebookResponse>
      */
     public AsyncInvoker<UpdateNotebookRequest, UpdateNotebookResponse> updateNotebookAsyncInvoker(
         UpdateNotebookRequest request) {
-        return new AsyncInvoker<UpdateNotebookRequest, UpdateNotebookResponse>(request, EiHealthMeta.updateNotebook,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.updateNotebook, hcClient);
     }
 
     /**
@@ -9218,7 +8998,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketRequest 请求对象
+     * @param request ListObsBucketRequest 请求对象
      * @return CompletableFuture<ListObsBucketResponse>
      */
     public CompletableFuture<ListObsBucketResponse> listObsBucketAsync(ListObsBucketRequest request) {
@@ -9232,13 +9012,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketRequest 请求对象
+     * @param request ListObsBucketRequest 请求对象
      * @return AsyncInvoker<ListObsBucketRequest, ListObsBucketResponse>
      */
     public AsyncInvoker<ListObsBucketRequest, ListObsBucketResponse> listObsBucketAsyncInvoker(
         ListObsBucketRequest request) {
-        return new AsyncInvoker<ListObsBucketRequest, ListObsBucketResponse>(request, EiHealthMeta.listObsBucket,
-            hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listObsBucket, hcClient);
     }
 
     /**
@@ -9248,7 +9027,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketObjectRequest 请求对象
+     * @param request ListObsBucketObjectRequest 请求对象
      * @return CompletableFuture<ListObsBucketObjectResponse>
      */
     public CompletableFuture<ListObsBucketObjectResponse> listObsBucketObjectAsync(ListObsBucketObjectRequest request) {
@@ -9262,13 +9041,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketObjectRequest 请求对象
+     * @param request ListObsBucketObjectRequest 请求对象
      * @return AsyncInvoker<ListObsBucketObjectRequest, ListObsBucketObjectResponse>
      */
     public AsyncInvoker<ListObsBucketObjectRequest, ListObsBucketObjectResponse> listObsBucketObjectAsyncInvoker(
         ListObsBucketObjectRequest request) {
-        return new AsyncInvoker<ListObsBucketObjectRequest, ListObsBucketObjectResponse>(request,
-            EiHealthMeta.listObsBucketObject, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.listObsBucketObject, hcClient);
     }
 
     /**
@@ -9278,7 +9056,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOptimizationTaskRequest 请求对象
+     * @param request CreateOptimizationTaskRequest 请求对象
      * @return CompletableFuture<CreateOptimizationTaskResponse>
      */
     public CompletableFuture<CreateOptimizationTaskResponse> createOptimizationTaskAsync(
@@ -9293,13 +9071,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOptimizationTaskRequest 请求对象
+     * @param request CreateOptimizationTaskRequest 请求对象
      * @return AsyncInvoker<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse>
      */
     public AsyncInvoker<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse> createOptimizationTaskAsyncInvoker(
         CreateOptimizationTaskRequest request) {
-        return new AsyncInvoker<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse>(request,
-            EiHealthMeta.createOptimizationTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createOptimizationTask, hcClient);
     }
 
     /**
@@ -9309,7 +9086,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOptimizationTaskResultRequest 请求对象
+     * @param request ShowOptimizationTaskResultRequest 请求对象
      * @return CompletableFuture<ShowOptimizationTaskResultResponse>
      */
     public CompletableFuture<ShowOptimizationTaskResultResponse> showOptimizationTaskResultAsync(
@@ -9324,13 +9101,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOptimizationTaskResultRequest 请求对象
+     * @param request ShowOptimizationTaskResultRequest 请求对象
      * @return AsyncInvoker<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse>
      */
     public AsyncInvoker<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse> showOptimizationTaskResultAsyncInvoker(
         ShowOptimizationTaskResultRequest request) {
-        return new AsyncInvoker<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse>(request,
-            EiHealthMeta.showOptimizationTaskResult, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showOptimizationTaskResult, hcClient);
     }
 
     /**
@@ -9340,7 +9116,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSearchTaskRequest 请求对象
+     * @param request CreateSearchTaskRequest 请求对象
      * @return CompletableFuture<CreateSearchTaskResponse>
      */
     public CompletableFuture<CreateSearchTaskResponse> createSearchTaskAsync(CreateSearchTaskRequest request) {
@@ -9354,13 +9130,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSearchTaskRequest 请求对象
+     * @param request CreateSearchTaskRequest 请求对象
      * @return AsyncInvoker<CreateSearchTaskRequest, CreateSearchTaskResponse>
      */
     public AsyncInvoker<CreateSearchTaskRequest, CreateSearchTaskResponse> createSearchTaskAsyncInvoker(
         CreateSearchTaskRequest request) {
-        return new AsyncInvoker<CreateSearchTaskRequest, CreateSearchTaskResponse>(request,
-            EiHealthMeta.createSearchTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createSearchTask, hcClient);
     }
 
     /**
@@ -9370,7 +9145,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSearchTaskResultRequest 请求对象
+     * @param request ShowSearchTaskResultRequest 请求对象
      * @return CompletableFuture<ShowSearchTaskResultResponse>
      */
     public CompletableFuture<ShowSearchTaskResultResponse> showSearchTaskResultAsync(
@@ -9385,13 +9160,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSearchTaskResultRequest 请求对象
+     * @param request ShowSearchTaskResultRequest 请求对象
      * @return AsyncInvoker<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse>
      */
     public AsyncInvoker<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse> showSearchTaskResultAsyncInvoker(
         ShowSearchTaskResultRequest request) {
-        return new AsyncInvoker<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse>(request,
-            EiHealthMeta.showSearchTaskResult, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showSearchTaskResult, hcClient);
     }
 
     /**
@@ -9401,7 +9175,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSynthesisTaskRequest 请求对象
+     * @param request CreateSynthesisTaskRequest 请求对象
      * @return CompletableFuture<CreateSynthesisTaskResponse>
      */
     public CompletableFuture<CreateSynthesisTaskResponse> createSynthesisTaskAsync(CreateSynthesisTaskRequest request) {
@@ -9415,13 +9189,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSynthesisTaskRequest 请求对象
+     * @param request CreateSynthesisTaskRequest 请求对象
      * @return AsyncInvoker<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse>
      */
     public AsyncInvoker<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse> createSynthesisTaskAsyncInvoker(
         CreateSynthesisTaskRequest request) {
-        return new AsyncInvoker<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse>(request,
-            EiHealthMeta.createSynthesisTask, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.createSynthesisTask, hcClient);
     }
 
     /**
@@ -9431,7 +9204,7 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSynthesisTaskResultRequest 请求对象
+     * @param request ShowSynthesisTaskResultRequest 请求对象
      * @return CompletableFuture<ShowSynthesisTaskResultResponse>
      */
     public CompletableFuture<ShowSynthesisTaskResultResponse> showSynthesisTaskResultAsync(
@@ -9446,13 +9219,12 @@ public class EiHealthAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSynthesisTaskResultRequest 请求对象
+     * @param request ShowSynthesisTaskResultRequest 请求对象
      * @return AsyncInvoker<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse>
      */
     public AsyncInvoker<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse> showSynthesisTaskResultAsyncInvoker(
         ShowSynthesisTaskResultRequest request) {
-        return new AsyncInvoker<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse>(request,
-            EiHealthMeta.showSynthesisTaskResult, hcClient);
+        return new AsyncInvoker<>(request, EiHealthMeta.showSynthesisTaskResult, hcClient);
     }
 
 }

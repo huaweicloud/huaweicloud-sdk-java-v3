@@ -63,9 +63,9 @@ import com.huaweicloud.sdk.dbss.v1.model.UpdateAuditSecurityGroupResponse;
 public class DbssMeta {
 
     public static final HttpRequestDef<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse> addRdsNoAgentDatabase =
-        genForaddRdsNoAgentDatabase();
+        genForAddRdsNoAgentDatabase();
 
-    private static HttpRequestDef<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse> genForaddRdsNoAgentDatabase() {
+    private static HttpRequestDef<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse> genForAddRdsNoAgentDatabase() {
         // basic
         HttpRequestDef.Builder<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddRdsNoAgentDatabaseRequest.class, AddRdsNoAgentDatabaseResponse.class)
@@ -78,16 +78,13 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddRdsNoAgentDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddRdsNoAgentDatabaseRequest::getInstanceId,
+                AddRdsNoAgentDatabaseRequest::setInstanceId));
         builder.<RdsNoAgentDbRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RdsNoAgentDbRequest.class),
-            f -> f.withMarshaller(AddRdsNoAgentDatabaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddRdsNoAgentDatabaseRequest::getBody, AddRdsNoAgentDatabaseRequest::setBody));
 
         // response
 
@@ -95,9 +92,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<BatchAddResourceTagRequest, BatchAddResourceTagResponse> batchAddResourceTag =
-        genForbatchAddResourceTag();
+        genForBatchAddResourceTag();
 
-    private static HttpRequestDef<BatchAddResourceTagRequest, BatchAddResourceTagResponse> genForbatchAddResourceTag() {
+    private static HttpRequestDef<BatchAddResourceTagRequest, BatchAddResourceTagResponse> genForBatchAddResourceTag() {
         // basic
         HttpRequestDef.Builder<BatchAddResourceTagRequest, BatchAddResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchAddResourceTagRequest.class, BatchAddResourceTagResponse.class)
@@ -110,40 +107,34 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchAddResourceTagRequest::getResourceType,
+                BatchAddResourceTagRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchAddResourceTagRequest::getResourceId,
+                BatchAddResourceTagRequest::setResourceId));
         builder.<ResourceTagRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceTagRequest.class),
-            f -> f.withMarshaller(BatchAddResourceTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddResourceTagRequest::getBody, BatchAddResourceTagRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(BatchAddResourceTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(BatchAddResourceTagResponse::getBody, BatchAddResourceTagResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTag =
-        genForbatchDeleteResourceTag();
+        genForBatchDeleteResourceTag();
 
-    private static HttpRequestDef<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> genForbatchDeleteResourceTag() {
+    private static HttpRequestDef<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> genForBatchDeleteResourceTag() {
         // basic
         HttpRequestDef.Builder<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, BatchDeleteResourceTagRequest.class, BatchDeleteResourceTagResponse.class)
@@ -156,40 +147,34 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteResourceTagRequest::getResourceType,
+                BatchDeleteResourceTagRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteResourceTagRequest::getResourceId,
+                BatchDeleteResourceTagRequest::setResourceId));
         builder.<ResourceTagRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceTagRequest.class),
-            f -> f.withMarshaller(BatchDeleteResourceTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteResourceTagRequest::getBody, BatchDeleteResourceTagRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(BatchDeleteResourceTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(BatchDeleteResourceTagResponse::getBody, BatchDeleteResourceTagResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> countResourceInstanceByTag =
-        genForcountResourceInstanceByTag();
+        genForCountResourceInstanceByTag();
 
-    private static HttpRequestDef<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> genForcountResourceInstanceByTag() {
+    private static HttpRequestDef<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> genForCountResourceInstanceByTag() {
         // basic
         HttpRequestDef.Builder<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> builder =
             HttpRequestDef
@@ -205,16 +190,14 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountResourceInstanceByTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CountResourceInstanceByTagRequest::getResourceType,
+                CountResourceInstanceByTagRequest::setResourceType));
         builder.<ResourceInstanceTagRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceInstanceTagRequest.class),
-            f -> f.withMarshaller(CountResourceInstanceByTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CountResourceInstanceByTagRequest::getBody,
+                CountResourceInstanceByTagRequest::setBody));
 
         // response
 
@@ -222,9 +205,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse> createInstancesPeriodOrder =
-        genForcreateInstancesPeriodOrder();
+        genForCreateInstancesPeriodOrder();
 
-    private static HttpRequestDef<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse> genForcreateInstancesPeriodOrder() {
+    private static HttpRequestDef<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse> genForCreateInstancesPeriodOrder() {
         // basic
         HttpRequestDef.Builder<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse> builder =
             HttpRequestDef
@@ -240,9 +223,8 @@ public class DbssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstancePeriodRequest.class),
-            f -> f.withMarshaller(CreateInstancesPeriodOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstancesPeriodOrderRequest::getBody,
+                CreateInstancesPeriodOrderRequest::setBody));
 
         // response
 
@@ -250,9 +232,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListAuditDatabasesRequest, ListAuditDatabasesResponse> listAuditDatabases =
-        genForlistAuditDatabases();
+        genForListAuditDatabases();
 
-    private static HttpRequestDef<ListAuditDatabasesRequest, ListAuditDatabasesResponse> genForlistAuditDatabases() {
+    private static HttpRequestDef<ListAuditDatabasesRequest, ListAuditDatabasesResponse> genForListAuditDatabases() {
         // basic
         HttpRequestDef.Builder<ListAuditDatabasesRequest, ListAuditDatabasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuditDatabasesRequest.class, ListAuditDatabasesResponse.class)
@@ -265,30 +247,22 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditDatabasesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAuditDatabasesRequest::getInstanceId, ListAuditDatabasesRequest::setInstanceId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditDatabasesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAuditDatabasesRequest::getStatus, ListAuditDatabasesRequest::setStatus));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditDatabasesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAuditDatabasesRequest::getOffset, ListAuditDatabasesRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditDatabasesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAuditDatabasesRequest::getLimit, ListAuditDatabasesRequest::setLimit));
 
         // response
 
@@ -296,9 +270,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse> listAuditInstanceJobs =
-        genForlistAuditInstanceJobs();
+        genForListAuditInstanceJobs();
 
-    private static HttpRequestDef<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse> genForlistAuditInstanceJobs() {
+    private static HttpRequestDef<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse> genForListAuditInstanceJobs() {
         // basic
         HttpRequestDef.Builder<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAuditInstanceJobsRequest.class, ListAuditInstanceJobsResponse.class)
@@ -311,9 +285,8 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditInstanceJobsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListAuditInstanceJobsRequest::getResourceId,
+                ListAuditInstanceJobsRequest::setResourceId));
 
         // response
 
@@ -321,9 +294,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListAuditInstancesRequest, ListAuditInstancesResponse> listAuditInstances =
-        genForlistAuditInstances();
+        genForListAuditInstances();
 
-    private static HttpRequestDef<ListAuditInstancesRequest, ListAuditInstancesResponse> genForlistAuditInstances() {
+    private static HttpRequestDef<ListAuditInstancesRequest, ListAuditInstancesResponse> genForListAuditInstances() {
         // basic
         HttpRequestDef.Builder<ListAuditInstancesRequest, ListAuditInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuditInstancesRequest.class, ListAuditInstancesResponse.class)
@@ -336,16 +309,12 @@ public class DbssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAuditInstancesRequest::getOffset, ListAuditInstancesRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAuditInstancesRequest::getLimit, ListAuditInstancesRequest::setLimit));
 
         // response
 
@@ -353,9 +322,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse> listAuditOperateLogs =
-        genForlistAuditOperateLogs();
+        genForListAuditOperateLogs();
 
-    private static HttpRequestDef<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse> genForlistAuditOperateLogs() {
+    private static HttpRequestDef<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse> genForListAuditOperateLogs() {
         // basic
         HttpRequestDef.Builder<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListAuditOperateLogsRequest.class, ListAuditOperateLogsResponse.class)
@@ -368,16 +337,13 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditOperateLogsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAuditOperateLogsRequest::getInstanceId,
+                ListAuditOperateLogsRequest::setInstanceId));
         builder.<OperateLogGetRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateLogGetRequest.class),
-            f -> f.withMarshaller(ListAuditOperateLogsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAuditOperateLogsRequest::getBody, ListAuditOperateLogsRequest::setBody));
 
         // response
 
@@ -385,9 +351,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse> listAuditRuleRisks =
-        genForlistAuditRuleRisks();
+        genForListAuditRuleRisks();
 
-    private static HttpRequestDef<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse> genForlistAuditRuleRisks() {
+    private static HttpRequestDef<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse> genForListAuditRuleRisks() {
         // basic
         HttpRequestDef.Builder<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuditRuleRisksRequest.class, ListAuditRuleRisksResponse.class)
@@ -400,23 +366,17 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditRuleRisksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAuditRuleRisksRequest::getInstanceId, ListAuditRuleRisksRequest::setInstanceId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditRuleRisksRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAuditRuleRisksRequest::getName, ListAuditRuleRisksRequest::setName));
         builder.<String>withRequestField("risk_levels",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditRuleRisksRequest::getRiskLevels, (req, v) -> {
-                req.setRiskLevels(v);
-            }));
+            f -> f.withMarshaller(ListAuditRuleRisksRequest::getRiskLevels, ListAuditRuleRisksRequest::setRiskLevels));
 
         // response
 
@@ -424,9 +384,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse> listAuditRuleScopes =
-        genForlistAuditRuleScopes();
+        genForListAuditRuleScopes();
 
-    private static HttpRequestDef<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse> genForlistAuditRuleScopes() {
+    private static HttpRequestDef<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse> genForListAuditRuleScopes() {
         // basic
         HttpRequestDef.Builder<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuditRuleScopesRequest.class, ListAuditRuleScopesResponse.class)
@@ -439,23 +399,18 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditRuleScopesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAuditRuleScopesRequest::getInstanceId,
+                ListAuditRuleScopesRequest::setInstanceId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditRuleScopesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAuditRuleScopesRequest::getOffset, ListAuditRuleScopesRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditRuleScopesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAuditRuleScopesRequest::getLimit, ListAuditRuleScopesRequest::setLimit));
 
         // response
 
@@ -463,9 +418,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse> listAuditSensitiveMasks =
-        genForlistAuditSensitiveMasks();
+        genForListAuditSensitiveMasks();
 
-    private static HttpRequestDef<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse> genForlistAuditSensitiveMasks() {
+    private static HttpRequestDef<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse> genForListAuditSensitiveMasks() {
         // basic
         HttpRequestDef.Builder<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAuditSensitiveMasksRequest.class, ListAuditSensitiveMasksResponse.class)
@@ -478,23 +433,19 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditSensitiveMasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAuditSensitiveMasksRequest::getInstanceId,
+                ListAuditSensitiveMasksRequest::setInstanceId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditSensitiveMasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAuditSensitiveMasksRequest::getOffset,
+                ListAuditSensitiveMasksRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditSensitiveMasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAuditSensitiveMasksRequest::getLimit, ListAuditSensitiveMasksRequest::setLimit));
 
         // response
 
@@ -502,9 +453,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse> listAvailabilityZoneInfos =
-        genForlistAvailabilityZoneInfos();
+        genForListAvailabilityZoneInfos();
 
-    private static HttpRequestDef<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse> genForlistAvailabilityZoneInfos() {
+    private static HttpRequestDef<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse> genForListAvailabilityZoneInfos() {
         // basic
         HttpRequestDef.Builder<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse> builder =
             HttpRequestDef
@@ -523,9 +474,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListEcsSpecificationRequest, ListEcsSpecificationResponse> listEcsSpecification =
-        genForlistEcsSpecification();
+        genForListEcsSpecification();
 
-    private static HttpRequestDef<ListEcsSpecificationRequest, ListEcsSpecificationResponse> genForlistEcsSpecification() {
+    private static HttpRequestDef<ListEcsSpecificationRequest, ListEcsSpecificationResponse> genForListEcsSpecification() {
         // basic
         HttpRequestDef.Builder<ListEcsSpecificationRequest, ListEcsSpecificationResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEcsSpecificationRequest.class, ListEcsSpecificationResponse.class)
@@ -541,9 +492,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> listProjectResourceTags =
-        genForlistProjectResourceTags();
+        genForListProjectResourceTags();
 
-    private static HttpRequestDef<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> genForlistProjectResourceTags() {
+    private static HttpRequestDef<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> genForListProjectResourceTags() {
         // basic
         HttpRequestDef.Builder<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProjectResourceTagsRequest.class, ListProjectResourceTagsResponse.class)
@@ -556,9 +507,8 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListProjectResourceTagsRequest::getResourceType,
+                ListProjectResourceTagsRequest::setResourceType));
 
         // response
 
@@ -566,9 +516,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> listResourceInstanceByTag =
-        genForlistResourceInstanceByTag();
+        genForListResourceInstanceByTag();
 
-    private static HttpRequestDef<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> genForlistResourceInstanceByTag() {
+    private static HttpRequestDef<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> genForListResourceInstanceByTag() {
         // basic
         HttpRequestDef.Builder<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> builder =
             HttpRequestDef
@@ -584,30 +534,26 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceInstanceByTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstanceByTagRequest::getResourceType,
+                ListResourceInstanceByTagRequest::setResourceType));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceInstanceByTagRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstanceByTagRequest::getLimit,
+                ListResourceInstanceByTagRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceInstanceByTagRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstanceByTagRequest::getOffset,
+                ListResourceInstanceByTagRequest::setOffset));
         builder.<ResourceInstanceTagRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceInstanceTagRequest.class),
-            f -> f.withMarshaller(ListResourceInstanceByTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstanceByTagRequest::getBody,
+                ListResourceInstanceByTagRequest::setBody));
 
         // response
 
@@ -615,9 +561,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse> listSqlInjectionRules =
-        genForlistSqlInjectionRules();
+        genForListSqlInjectionRules();
 
-    private static HttpRequestDef<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse> genForlistSqlInjectionRules() {
+    private static HttpRequestDef<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse> genForListSqlInjectionRules() {
         // basic
         HttpRequestDef.Builder<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListSqlInjectionRulesRequest.class, ListSqlInjectionRulesResponse.class)
@@ -630,16 +576,13 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSqlInjectionRulesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSqlInjectionRulesRequest::getInstanceId,
+                ListSqlInjectionRulesRequest::setInstanceId));
         builder.<SqlRuleRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SqlRuleRequest.class),
-            f -> f.withMarshaller(ListSqlInjectionRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListSqlInjectionRulesRequest::getBody, ListSqlInjectionRulesRequest::setBody));
 
         // response
 
@@ -647,9 +590,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ShowAuditQuotaRequest, ShowAuditQuotaResponse> showAuditQuota =
-        genForshowAuditQuota();
+        genForShowAuditQuota();
 
-    private static HttpRequestDef<ShowAuditQuotaRequest, ShowAuditQuotaResponse> genForshowAuditQuota() {
+    private static HttpRequestDef<ShowAuditQuotaRequest, ShowAuditQuotaResponse> genForShowAuditQuota() {
         // basic
         HttpRequestDef.Builder<ShowAuditQuotaRequest, ShowAuditQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuditQuotaRequest.class, ShowAuditQuotaResponse.class)
@@ -665,9 +608,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse> showAuditRuleRisk =
-        genForshowAuditRuleRisk();
+        genForShowAuditRuleRisk();
 
-    private static HttpRequestDef<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse> genForshowAuditRuleRisk() {
+    private static HttpRequestDef<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse> genForShowAuditRuleRisk() {
         // basic
         HttpRequestDef.Builder<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuditRuleRiskRequest.class, ShowAuditRuleRiskResponse.class)
@@ -680,25 +623,21 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditRuleRiskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAuditRuleRiskRequest::getInstanceId, ShowAuditRuleRiskRequest::setInstanceId));
         builder.<String>withRequestField("risk_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditRuleRiskRequest::getRiskId, (req, v) -> {
-                req.setRiskId(v);
-            }));
+            f -> f.withMarshaller(ShowAuditRuleRiskRequest::getRiskId, ShowAuditRuleRiskRequest::setRiskId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SwitchAgentRequest, SwitchAgentResponse> switchAgent = genForswitchAgent();
+    public static final HttpRequestDef<SwitchAgentRequest, SwitchAgentResponse> switchAgent = genForSwitchAgent();
 
-    private static HttpRequestDef<SwitchAgentRequest, SwitchAgentResponse> genForswitchAgent() {
+    private static HttpRequestDef<SwitchAgentRequest, SwitchAgentResponse> genForSwitchAgent() {
         // basic
         HttpRequestDef.Builder<SwitchAgentRequest, SwitchAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchAgentRequest.class, SwitchAgentResponse.class)
@@ -711,16 +650,12 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchAgentRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchAgentRequest::getInstanceId, SwitchAgentRequest::setInstanceId));
         builder.<AgentSwitchRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgentSwitchRequest.class),
-            f -> f.withMarshaller(SwitchAgentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchAgentRequest::getBody, SwitchAgentRequest::setBody));
 
         // response
 
@@ -728,9 +663,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<SwitchRiskRuleRequest, SwitchRiskRuleResponse> switchRiskRule =
-        genForswitchRiskRule();
+        genForSwitchRiskRule();
 
-    private static HttpRequestDef<SwitchRiskRuleRequest, SwitchRiskRuleResponse> genForswitchRiskRule() {
+    private static HttpRequestDef<SwitchRiskRuleRequest, SwitchRiskRuleResponse> genForSwitchRiskRule() {
         // basic
         HttpRequestDef.Builder<SwitchRiskRuleRequest, SwitchRiskRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchRiskRuleRequest.class, SwitchRiskRuleResponse.class)
@@ -743,16 +678,12 @@ public class DbssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchRiskRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchRiskRuleRequest::getInstanceId, SwitchRiskRuleRequest::setInstanceId));
         builder.<BatchSwitchesRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchSwitchesRequest.class),
-            f -> f.withMarshaller(SwitchRiskRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchRiskRuleRequest::getBody, SwitchRiskRuleRequest::setBody));
 
         // response
 
@@ -760,9 +691,9 @@ public class DbssMeta {
     }
 
     public static final HttpRequestDef<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse> updateAuditSecurityGroup =
-        genForupdateAuditSecurityGroup();
+        genForUpdateAuditSecurityGroup();
 
-    private static HttpRequestDef<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse> genForupdateAuditSecurityGroup() {
+    private static HttpRequestDef<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse> genForUpdateAuditSecurityGroup() {
         // basic
         HttpRequestDef.Builder<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse> builder =
             HttpRequestDef
@@ -776,9 +707,7 @@ public class DbssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SecurityGroupRequest.class),
-            f -> f.withMarshaller(UpdateAuditSecurityGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAuditSecurityGroupRequest::getBody, UpdateAuditSecurityGroupRequest::setBody));
 
         // response
 

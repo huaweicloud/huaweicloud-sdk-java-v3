@@ -32,7 +32,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentStatusRequest 请求对象
+     * @param request ListAgentStatusRequest 请求对象
      * @return CompletableFuture<ListAgentStatusResponse>
      */
     public CompletableFuture<ListAgentStatusResponse> listAgentStatusAsync(ListAgentStatusRequest request) {
@@ -46,13 +46,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentStatusRequest 请求对象
+     * @param request ListAgentStatusRequest 请求对象
      * @return AsyncInvoker<ListAgentStatusRequest, ListAgentStatusResponse>
      */
     public AsyncInvoker<ListAgentStatusRequest, ListAgentStatusResponse> listAgentStatusAsyncInvoker(
         ListAgentStatusRequest request) {
-        return new AsyncInvoker<ListAgentStatusRequest, ListAgentStatusResponse>(request, CesMeta.listAgentStatus,
-            hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listAgentStatus, hcClient);
     }
 
     /**
@@ -62,7 +61,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateAgentInvocationsRequest 请求对象
+     * @param request BatchCreateAgentInvocationsRequest 请求对象
      * @return CompletableFuture<BatchCreateAgentInvocationsResponse>
      */
     public CompletableFuture<BatchCreateAgentInvocationsResponse> batchCreateAgentInvocationsAsync(
@@ -77,13 +76,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateAgentInvocationsRequest 请求对象
+     * @param request BatchCreateAgentInvocationsRequest 请求对象
      * @return AsyncInvoker<BatchCreateAgentInvocationsRequest, BatchCreateAgentInvocationsResponse>
      */
     public AsyncInvoker<BatchCreateAgentInvocationsRequest, BatchCreateAgentInvocationsResponse> batchCreateAgentInvocationsAsyncInvoker(
         BatchCreateAgentInvocationsRequest request) {
-        return new AsyncInvoker<BatchCreateAgentInvocationsRequest, BatchCreateAgentInvocationsResponse>(request,
-            CesMeta.batchCreateAgentInvocations, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchCreateAgentInvocations, hcClient);
     }
 
     /**
@@ -93,7 +91,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentInvocationsRequest 请求对象
+     * @param request ListAgentInvocationsRequest 请求对象
      * @return CompletableFuture<ListAgentInvocationsResponse>
      */
     public CompletableFuture<ListAgentInvocationsResponse> listAgentInvocationsAsync(
@@ -108,13 +106,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentInvocationsRequest 请求对象
+     * @param request ListAgentInvocationsRequest 请求对象
      * @return AsyncInvoker<ListAgentInvocationsRequest, ListAgentInvocationsResponse>
      */
     public AsyncInvoker<ListAgentInvocationsRequest, ListAgentInvocationsResponse> listAgentInvocationsAsyncInvoker(
         ListAgentInvocationsRequest request) {
-        return new AsyncInvoker<ListAgentInvocationsRequest, ListAgentInvocationsResponse>(request,
-            CesMeta.listAgentInvocations, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listAgentInvocations, hcClient);
     }
 
 }

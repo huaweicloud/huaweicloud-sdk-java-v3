@@ -21,7 +21,7 @@ public class UpdateTaskStatusResult {
     }
 
     /**
-     * task_run_id
+     * 运行任务id，即报告id
      * minimum: 0
      * maximum: 2147483647
      * @return taskRunId

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建云服务请求
+ * 创建云服务请求。
  */
 public class CreateAppServerReq {
 
@@ -89,7 +89,7 @@ public class CreateAppServerReq {
     }
 
     /**
-     * 创建云服务类型，当前仅支持创建云应用：createApps
+     * 创建云服务类型，当前仅支持创建云应用：createApps。
      * @return type
      */
     public String getType() {
@@ -106,7 +106,7 @@ public class CreateAppServerReq {
     }
 
     /**
-     * 服务器组唯一标识
+     * 服务器组唯一标识。
      * @return serverGroupId
      */
     public String getServerGroupId() {
@@ -140,7 +140,7 @@ public class CreateAppServerReq {
     }
 
     /**
-     * 订购数量
+     * 订购数量。
      * minimum: 1
      * maximum: 100
      * @return subscriptionNum
@@ -295,7 +295,7 @@ public class CreateAppServerReq {
     }
 
     /**
-     * 网卡对应的子网ID
+     * 网卡对应的子网ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -329,7 +329,7 @@ public class CreateAppServerReq {
     }
 
     /**
-     * 是否自动升级hda版本
+     * 是否自动升级hda版本。
      * @return updateAccessAgent
      */
     public Boolean getUpdateAccessAgent() {

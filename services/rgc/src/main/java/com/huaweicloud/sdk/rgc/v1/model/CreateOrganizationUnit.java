@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 纳管的OU的基本信息。
+ * 注册OU的基本信息。
  */
 public class CreateOrganizationUnit {
 
@@ -51,13 +51,18 @@ public class CreateOrganizationUnit {
 
     private OffsetDateTime createdAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "landing_zone_version")
+
+    private String landingZoneVersion;
+
     public CreateOrganizationUnit withManageAccountId(String manageAccountId) {
         this.manageAccountId = manageAccountId;
         return this;
     }
 
     /**
-     * 管理账号ID。
+     * 管理纳管账号ID。
      * @return manageAccountId
      */
     public String getManageAccountId() {
@@ -74,7 +79,7 @@ public class CreateOrganizationUnit {
     }
 
     /**
-     * OU ID。
+     * 注册OU ID。
      * @return organizationUnitId
      */
     public String getOrganizationUnitId() {
@@ -91,7 +96,7 @@ public class CreateOrganizationUnit {
     }
 
     /**
-     * OU名称。
+     * 注册OU名称。
      * @return organizationUnitName
      */
     public String getOrganizationUnitName() {
@@ -108,7 +113,7 @@ public class CreateOrganizationUnit {
     }
 
     /**
-     * OU状态。
+     * 注册OU状态。
      * @return organizationUnitStatus
      */
     public String getOrganizationUnitStatus() {
@@ -142,7 +147,7 @@ public class CreateOrganizationUnit {
     }
 
     /**
-     * 父OU ID。
+     * 父注册OU ID。
      * @return parentOrganizationUnitId
      */
     public String getParentOrganizationUnitId() {
@@ -159,7 +164,7 @@ public class CreateOrganizationUnit {
     }
 
     /**
-     * 父OU名称。
+     * 父注册OU名称。
      * @return parentOrganizationUnitName
      */
     public String getParentOrganizationUnitName() {
@@ -176,7 +181,7 @@ public class CreateOrganizationUnit {
     }
 
     /**
-     * 被创建的时间。
+     * 组织里某个注册OU下的纳管账号被创建的时间。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -185,6 +190,23 @@ public class CreateOrganizationUnit {
 
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public CreateOrganizationUnit withLandingZoneVersion(String landingZoneVersion) {
+        this.landingZoneVersion = landingZoneVersion;
+        return this;
+    }
+
+    /**
+     * Landing Zone版本。
+     * @return landingZoneVersion
+     */
+    public String getLandingZoneVersion() {
+        return landingZoneVersion;
+    }
+
+    public void setLandingZoneVersion(String landingZoneVersion) {
+        this.landingZoneVersion = landingZoneVersion;
     }
 
     @Override
@@ -203,7 +225,8 @@ public class CreateOrganizationUnit {
             && Objects.equals(this.organizationUnitType, that.organizationUnitType)
             && Objects.equals(this.parentOrganizationUnitId, that.parentOrganizationUnitId)
             && Objects.equals(this.parentOrganizationUnitName, that.parentOrganizationUnitName)
-            && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.landingZoneVersion, that.landingZoneVersion);
     }
 
     @Override
@@ -215,7 +238,8 @@ public class CreateOrganizationUnit {
             organizationUnitType,
             parentOrganizationUnitId,
             parentOrganizationUnitName,
-            createdAt);
+            createdAt,
+            landingZoneVersion);
     }
 
     @Override
@@ -230,6 +254,7 @@ public class CreateOrganizationUnit {
         sb.append("    parentOrganizationUnitId: ").append(toIndentedString(parentOrganizationUnitId)).append("\n");
         sb.append("    parentOrganizationUnitName: ").append(toIndentedString(parentOrganizationUnitName)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    landingZoneVersion: ").append(toIndentedString(landingZoneVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

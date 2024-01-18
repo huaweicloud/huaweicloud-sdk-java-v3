@@ -30,7 +30,7 @@ public class ListStorageAssignmentResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count
@@ -65,7 +65,7 @@ public class ListStorageAssignmentResponse extends SdkResponse {
     }
 
     /**
-     * 查询用户存储声明配置
+     * 查询用户存储声明配置。
      * @return items
      */
     public List<PersistentStorageAssignment> getItems() {

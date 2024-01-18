@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 应用连接信息
+ * 应用连接信息。
  */
 public class AppConnectionInfo {
 
@@ -117,7 +117,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 应用连接唯一标识ID
+     * 应用连接唯一标识ID。
      * @return id
      */
     public String getId() {
@@ -134,7 +134,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 应用服务器sid
+     * 应用服务器sid。
      * @return sid
      */
     public String getSid() {
@@ -151,7 +151,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 应用服务器名称
+     * 应用服务器名称。
      * @return machineName
      */
     public String getMachineName() {
@@ -168,7 +168,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 登录用户
+     * 登录用户。
      * @return userName
      */
     public String getUserName() {
@@ -185,7 +185,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 应用组名称
+     * 应用组名称。
      * @return appGroupName
      */
     public String getAppGroupName() {
@@ -202,7 +202,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 应用组ID
+     * 应用组ID。
      * @return appGroupId
      */
     public String getAppGroupId() {
@@ -219,7 +219,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 应用名称
+     * 应用名称。
      * @return appName
      */
     public String getAppName() {
@@ -236,7 +236,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 登录应用时间
+     * 登录应用时间。
      * @return brokeringTime
      */
     public OffsetDateTime getBrokeringTime() {
@@ -253,7 +253,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 连接失败状态码
+     * 连接失败状态码。
      * @return failedCode
      */
     public String getFailedCode() {
@@ -270,7 +270,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 连接失败原因
+     * 连接失败原因。
      * @return connectionFailureReason
      */
     public String getConnectionFailureReason() {
@@ -287,7 +287,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 客户端Mac
+     * 客户端Mac。
      * @return clientMac
      */
     public String getClientMac() {
@@ -304,7 +304,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 客户端名称
+     * 客户端名称。
      * @return clientName
      */
     public String getClientName() {
@@ -321,7 +321,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 客户端ip
+     * 客户端ip。
      * @return clientIp
      */
     public String getClientIp() {
@@ -338,7 +338,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 客户端版本
+     * 客户端版本。
      * @return clientVersion
      */
     public String getClientVersion() {
@@ -355,7 +355,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 客户端操作系统类型
+     * 客户端操作系统类型。
      * @return clientType
      */
     public String getClientType() {
@@ -372,7 +372,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * aps hda版本
+     * aps hda版本。
      * @return agentVersion
      */
     public String getAgentVersion() {
@@ -389,7 +389,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 应用服务器ip
+     * 应用服务器ip。
      * @return vmIp
      */
     public String getVmIp() {
@@ -406,7 +406,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 连接IP
+     * 连接IP。
      * @return wiIp
      */
     public String getWiIp() {
@@ -423,7 +423,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 租户id
+     * 租户id。
      * @return tenantId
      */
     public String getTenantId() {
@@ -440,7 +440,7 @@ public class AppConnectionInfo {
     }
 
     /**
-     * 会话虚拟ip
+     * 会话虚拟ip。
      * @return virtualIp
      */
     public String getVirtualIp() {

@@ -353,9 +353,9 @@ import com.huaweicloud.sdk.iam.v3.model.UpdateUserResponse;
 public class IamMeta {
 
     public static final HttpRequestDef<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse> associateAgencyWithAllProjectsPermission =
-        genForassociateAgencyWithAllProjectsPermission();
+        genForAssociateAgencyWithAllProjectsPermission();
 
-    private static HttpRequestDef<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse> genForassociateAgencyWithAllProjectsPermission() {
+    private static HttpRequestDef<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse> genForAssociateAgencyWithAllProjectsPermission() {
         // basic
         HttpRequestDef.Builder<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse> builder =
             HttpRequestDef
@@ -372,23 +372,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAgencyWithAllProjectsPermissionRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(AssociateAgencyWithAllProjectsPermissionRequest::getAgencyId,
+                AssociateAgencyWithAllProjectsPermissionRequest::setAgencyId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAgencyWithAllProjectsPermissionRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(AssociateAgencyWithAllProjectsPermissionRequest::getDomainId,
+                AssociateAgencyWithAllProjectsPermissionRequest::setDomainId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAgencyWithAllProjectsPermissionRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(AssociateAgencyWithAllProjectsPermissionRequest::getRoleId,
+                AssociateAgencyWithAllProjectsPermissionRequest::setRoleId));
 
         // response
 
@@ -396,9 +393,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse> associateAgencyWithDomainPermission =
-        genForassociateAgencyWithDomainPermission();
+        genForAssociateAgencyWithDomainPermission();
 
-    private static HttpRequestDef<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse> genForassociateAgencyWithDomainPermission() {
+    private static HttpRequestDef<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse> genForAssociateAgencyWithDomainPermission() {
         // basic
         HttpRequestDef.Builder<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse> builder =
             HttpRequestDef
@@ -414,23 +411,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getDomainId,
+                AssociateAgencyWithDomainPermissionRequest::setDomainId));
         builder.<String>withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getAgencyId,
+                AssociateAgencyWithDomainPermissionRequest::setAgencyId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getRoleId,
+                AssociateAgencyWithDomainPermissionRequest::setRoleId));
 
         // response
 
@@ -438,9 +432,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse> associateAgencyWithProjectPermission =
-        genForassociateAgencyWithProjectPermission();
+        genForAssociateAgencyWithProjectPermission();
 
-    private static HttpRequestDef<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse> genForassociateAgencyWithProjectPermission() {
+    private static HttpRequestDef<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse> genForAssociateAgencyWithProjectPermission() {
         // basic
         HttpRequestDef.Builder<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse> builder =
             HttpRequestDef
@@ -456,23 +450,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getProjectId,
+                AssociateAgencyWithProjectPermissionRequest::setProjectId));
         builder.<String>withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getAgencyId,
+                AssociateAgencyWithProjectPermissionRequest::setAgencyId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getRoleId,
+                AssociateAgencyWithProjectPermissionRequest::setRoleId));
 
         // response
 
@@ -480,9 +471,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse> associateRoleToAgencyOnEnterpriseProject =
-        genForassociateRoleToAgencyOnEnterpriseProject();
+        genForAssociateRoleToAgencyOnEnterpriseProject();
 
-    private static HttpRequestDef<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse> genForassociateRoleToAgencyOnEnterpriseProject() {
+    private static HttpRequestDef<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse> genForAssociateRoleToAgencyOnEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -498,26 +489,24 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAgencyEpPolicyAssignmentReqBody.class),
-            f -> f.withMarshaller(AssociateRoleToAgencyOnEnterpriseProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateRoleToAgencyOnEnterpriseProjectRequest::getBody,
+                AssociateRoleToAgencyOnEnterpriseProjectRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(AssociateRoleToAgencyOnEnterpriseProjectResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(AssociateRoleToAgencyOnEnterpriseProjectResponse::getBody,
+                AssociateRoleToAgencyOnEnterpriseProjectResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> associateRoleToGroupOnEnterpriseProject =
-        genForassociateRoleToGroupOnEnterpriseProject();
+        genForAssociateRoleToGroupOnEnterpriseProject();
 
-    private static HttpRequestDef<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> genForassociateRoleToGroupOnEnterpriseProject() {
+    private static HttpRequestDef<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> genForAssociateRoleToGroupOnEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -534,23 +523,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRoleToGroupOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AssociateRoleToGroupOnEnterpriseProjectRequest::getEnterpriseProjectId,
+                AssociateRoleToGroupOnEnterpriseProjectRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRoleToGroupOnEnterpriseProjectRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(AssociateRoleToGroupOnEnterpriseProjectRequest::getGroupId,
+                AssociateRoleToGroupOnEnterpriseProjectRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRoleToGroupOnEnterpriseProjectRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(AssociateRoleToGroupOnEnterpriseProjectRequest::getRoleId,
+                AssociateRoleToGroupOnEnterpriseProjectRequest::setRoleId));
 
         // response
 
@@ -558,9 +544,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse> associateRoleToUserOnEnterpriseProject =
-        genForassociateRoleToUserOnEnterpriseProject();
+        genForAssociateRoleToUserOnEnterpriseProject();
 
-    private static HttpRequestDef<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse> genForassociateRoleToUserOnEnterpriseProject() {
+    private static HttpRequestDef<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse> genForAssociateRoleToUserOnEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -577,23 +563,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRoleToUserOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AssociateRoleToUserOnEnterpriseProjectRequest::getEnterpriseProjectId,
+                AssociateRoleToUserOnEnterpriseProjectRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRoleToUserOnEnterpriseProjectRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(AssociateRoleToUserOnEnterpriseProjectRequest::getUserId,
+                AssociateRoleToUserOnEnterpriseProjectRequest::setUserId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRoleToUserOnEnterpriseProjectRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(AssociateRoleToUserOnEnterpriseProjectRequest::getRoleId,
+                AssociateRoleToUserOnEnterpriseProjectRequest::setRoleId));
 
         // response
 
@@ -601,9 +584,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> checkAllProjectsPermissionForAgency =
-        genForcheckAllProjectsPermissionForAgency();
+        genForCheckAllProjectsPermissionForAgency();
 
-    private static HttpRequestDef<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> genForcheckAllProjectsPermissionForAgency() {
+    private static HttpRequestDef<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> genForCheckAllProjectsPermissionForAgency() {
         // basic
         HttpRequestDef.Builder<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> builder =
             HttpRequestDef
@@ -620,23 +603,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAllProjectsPermissionForAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(CheckAllProjectsPermissionForAgencyRequest::getAgencyId,
+                CheckAllProjectsPermissionForAgencyRequest::setAgencyId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAllProjectsPermissionForAgencyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(CheckAllProjectsPermissionForAgencyRequest::getDomainId,
+                CheckAllProjectsPermissionForAgencyRequest::setDomainId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAllProjectsPermissionForAgencyRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(CheckAllProjectsPermissionForAgencyRequest::getRoleId,
+                CheckAllProjectsPermissionForAgencyRequest::setRoleId));
 
         // response
 
@@ -644,9 +624,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> checkDomainPermissionForAgency =
-        genForcheckDomainPermissionForAgency();
+        genForCheckDomainPermissionForAgency();
 
-    private static HttpRequestDef<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> genForcheckDomainPermissionForAgency() {
+    private static HttpRequestDef<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> genForCheckDomainPermissionForAgency() {
         // basic
         HttpRequestDef.Builder<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> builder =
             HttpRequestDef
@@ -662,23 +642,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getDomainId,
+                CheckDomainPermissionForAgencyRequest::setDomainId));
         builder.<String>withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getAgencyId,
+                CheckDomainPermissionForAgencyRequest::setAgencyId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getRoleId,
+                CheckDomainPermissionForAgencyRequest::setRoleId));
 
         // response
 
@@ -686,9 +663,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse> checkProjectPermissionForAgency =
-        genForcheckProjectPermissionForAgency();
+        genForCheckProjectPermissionForAgency();
 
-    private static HttpRequestDef<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse> genForcheckProjectPermissionForAgency() {
+    private static HttpRequestDef<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse> genForCheckProjectPermissionForAgency() {
         // basic
         HttpRequestDef.Builder<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse> builder =
             HttpRequestDef
@@ -704,32 +681,29 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getProjectId,
+                CheckProjectPermissionForAgencyRequest::setProjectId));
         builder.<String>withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getAgencyId,
+                CheckProjectPermissionForAgencyRequest::setAgencyId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getRoleId,
+                CheckProjectPermissionForAgencyRequest::setRoleId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForcreateAgency();
+    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForCreateAgency();
 
-    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForcreateAgency() {
+    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForCreateAgency() {
         // basic
         HttpRequestDef.Builder<CreateAgencyRequest, CreateAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgencyRequest.class, CreateAgencyResponse.class)
@@ -742,9 +716,7 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAgencyRequestBody.class),
-            f -> f.withMarshaller(CreateAgencyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAgencyRequest::getBody, CreateAgencyRequest::setBody));
 
         // response
 
@@ -752,9 +724,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> createAgencyCustomPolicy =
-        genForcreateAgencyCustomPolicy();
+        genForCreateAgencyCustomPolicy();
 
-    private static HttpRequestDef<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> genForcreateAgencyCustomPolicy() {
+    private static HttpRequestDef<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> genForCreateAgencyCustomPolicy() {
         // basic
         HttpRequestDef.Builder<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> builder =
             HttpRequestDef
@@ -768,9 +740,7 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAgencyCustomPolicyRequestBody.class),
-            f -> f.withMarshaller(CreateAgencyCustomPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAgencyCustomPolicyRequest::getBody, CreateAgencyCustomPolicyRequest::setBody));
 
         // response
 
@@ -778,9 +748,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> createCloudServiceCustomPolicy =
-        genForcreateCloudServiceCustomPolicy();
+        genForCreateCloudServiceCustomPolicy();
 
-    private static HttpRequestDef<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> genForcreateCloudServiceCustomPolicy() {
+    private static HttpRequestDef<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> genForCreateCloudServiceCustomPolicy() {
         // basic
         HttpRequestDef.Builder<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> builder =
             HttpRequestDef
@@ -796,9 +766,8 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCloudServiceCustomPolicyRequestBody.class),
-            f -> f.withMarshaller(CreateCloudServiceCustomPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCloudServiceCustomPolicyRequest::getBody,
+                CreateCloudServiceCustomPolicyRequest::setBody));
 
         // response
 
@@ -806,9 +775,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateLoginTokenRequest, CreateLoginTokenResponse> createLoginToken =
-        genForcreateLoginToken();
+        genForCreateLoginToken();
 
-    private static HttpRequestDef<CreateLoginTokenRequest, CreateLoginTokenResponse> genForcreateLoginToken() {
+    private static HttpRequestDef<CreateLoginTokenRequest, CreateLoginTokenResponse> genForCreateLoginToken() {
         // basic
         HttpRequestDef.Builder<CreateLoginTokenRequest, CreateLoginTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLoginTokenRequest.class, CreateLoginTokenResponse.class)
@@ -821,9 +790,7 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLoginTokenRequestBody.class),
-            f -> f.withMarshaller(CreateLoginTokenRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLoginTokenRequest::getBody, CreateLoginTokenRequest::setBody));
 
         // response
 
@@ -837,9 +804,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateMetadataRequest, CreateMetadataResponse> createMetadata =
-        genForcreateMetadata();
+        genForCreateMetadata();
 
-    private static HttpRequestDef<CreateMetadataRequest, CreateMetadataResponse> genForcreateMetadata() {
+    private static HttpRequestDef<CreateMetadataRequest, CreateMetadataResponse> genForCreateMetadata() {
         // basic
         HttpRequestDef.Builder<CreateMetadataRequest, CreateMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMetadataRequest.class, CreateMetadataResponse.class)
@@ -852,23 +819,17 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMetadataRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(CreateMetadataRequest::getIdpId, CreateMetadataRequest::setIdpId));
         builder.<String>withRequestField("protocol_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMetadataRequest::getProtocolId, (req, v) -> {
-                req.setProtocolId(v);
-            }));
+            f -> f.withMarshaller(CreateMetadataRequest::getProtocolId, CreateMetadataRequest::setProtocolId));
         builder.<CreateMetadataRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMetadataRequestBody.class),
-            f -> f.withMarshaller(CreateMetadataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMetadataRequest::getBody, CreateMetadataRequest::setBody));
 
         // response
 
@@ -876,9 +837,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> createOpenIdConnectConfig =
-        genForcreateOpenIdConnectConfig();
+        genForCreateOpenIdConnectConfig();
 
-    private static HttpRequestDef<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> genForcreateOpenIdConnectConfig() {
+    private static HttpRequestDef<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> genForCreateOpenIdConnectConfig() {
         // basic
         HttpRequestDef.Builder<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> builder =
             HttpRequestDef
@@ -894,16 +855,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateOpenIdConnectConfigRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(CreateOpenIdConnectConfigRequest::getIdpId,
+                CreateOpenIdConnectConfigRequest::setIdpId));
         builder.<CreateOpenIdConnectConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateOpenIdConnectConfigRequestBody.class),
-            f -> f.withMarshaller(CreateOpenIdConnectConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOpenIdConnectConfigRequest::getBody,
+                CreateOpenIdConnectConfigRequest::setBody));
 
         // response
 
@@ -911,9 +870,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> createTokenWithIdToken =
-        genForcreateTokenWithIdToken();
+        genForCreateTokenWithIdToken();
 
-    private static HttpRequestDef<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> genForcreateTokenWithIdToken() {
+    private static HttpRequestDef<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> genForCreateTokenWithIdToken() {
         // basic
         HttpRequestDef.Builder<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateTokenWithIdTokenRequest.class, CreateTokenWithIdTokenResponse.class)
@@ -926,16 +885,12 @@ public class IamMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTokenWithIdTokenRequest::getXIdpId, (req, v) -> {
-                req.setXIdpId(v);
-            }));
+            f -> f.withMarshaller(CreateTokenWithIdTokenRequest::getXIdpId, CreateTokenWithIdTokenRequest::setXIdpId));
         builder.<GetIdTokenRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetIdTokenRequestBody.class),
-            f -> f.withMarshaller(CreateTokenWithIdTokenRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTokenWithIdTokenRequest::getBody, CreateTokenWithIdTokenRequest::setBody));
 
         // response
 
@@ -949,9 +904,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> createUnscopedTokenWithIdToken =
-        genForcreateUnscopedTokenWithIdToken();
+        genForCreateUnscopedTokenWithIdToken();
 
-    private static HttpRequestDef<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> genForcreateUnscopedTokenWithIdToken() {
+    private static HttpRequestDef<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> genForCreateUnscopedTokenWithIdToken() {
         // basic
         HttpRequestDef.Builder<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> builder =
             HttpRequestDef
@@ -967,23 +922,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateUnscopedTokenWithIdTokenRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(CreateUnscopedTokenWithIdTokenRequest::getIdpId,
+                CreateUnscopedTokenWithIdTokenRequest::setIdpId));
         builder.<String>withRequestField("protocol_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateUnscopedTokenWithIdTokenRequest::getProtocolId, (req, v) -> {
-                req.setProtocolId(v);
-            }));
+            f -> f.withMarshaller(CreateUnscopedTokenWithIdTokenRequest::getProtocolId,
+                CreateUnscopedTokenWithIdTokenRequest::setProtocolId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateUnscopedTokenWithIdTokenRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(CreateUnscopedTokenWithIdTokenRequest::getAuthorization,
+                CreateUnscopedTokenWithIdTokenRequest::setAuthorization));
 
         // response
 
@@ -996,9 +948,9 @@ public class IamMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgency = genFordeleteAgency();
+    public static final HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgency = genForDeleteAgency();
 
-    private static HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> genFordeleteAgency() {
+    private static HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> genForDeleteAgency() {
         // basic
         HttpRequestDef.Builder<DeleteAgencyRequest, DeleteAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAgencyRequest.class, DeleteAgencyResponse.class)
@@ -1011,9 +963,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(DeleteAgencyRequest::getAgencyId, DeleteAgencyRequest::setAgencyId));
 
         // response
 
@@ -1021,9 +971,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> deleteCustomPolicy =
-        genFordeleteCustomPolicy();
+        genForDeleteCustomPolicy();
 
-    private static HttpRequestDef<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> genFordeleteCustomPolicy() {
+    private static HttpRequestDef<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> genForDeleteCustomPolicy() {
         // basic
         HttpRequestDef.Builder<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCustomPolicyRequest.class, DeleteCustomPolicyResponse.class)
@@ -1036,9 +986,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCustomPolicyRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(DeleteCustomPolicyRequest::getRoleId, DeleteCustomPolicyRequest::setRoleId));
 
         // response
 
@@ -1046,9 +994,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> deleteDomainGroupInheritedRole =
-        genFordeleteDomainGroupInheritedRole();
+        genForDeleteDomainGroupInheritedRole();
 
-    private static HttpRequestDef<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> genFordeleteDomainGroupInheritedRole() {
+    private static HttpRequestDef<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> genForDeleteDomainGroupInheritedRole() {
         // basic
         HttpRequestDef.Builder<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> builder =
             HttpRequestDef
@@ -1064,23 +1012,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainGroupInheritedRoleRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainGroupInheritedRoleRequest::getDomainId,
+                DeleteDomainGroupInheritedRoleRequest::setDomainId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainGroupInheritedRoleRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainGroupInheritedRoleRequest::getGroupId,
+                DeleteDomainGroupInheritedRoleRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainGroupInheritedRoleRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainGroupInheritedRoleRequest::getRoleId,
+                DeleteDomainGroupInheritedRoleRequest::setRoleId));
 
         // response
 
@@ -1088,9 +1033,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> keystoneAddUserToGroup =
-        genForkeystoneAddUserToGroup();
+        genForKeystoneAddUserToGroup();
 
-    private static HttpRequestDef<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> genForkeystoneAddUserToGroup() {
+    private static HttpRequestDef<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> genForKeystoneAddUserToGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, KeystoneAddUserToGroupRequest.class, KeystoneAddUserToGroupResponse.class)
@@ -1103,16 +1048,13 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneAddUserToGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneAddUserToGroupRequest::getGroupId,
+                KeystoneAddUserToGroupRequest::setGroupId));
         builder.<String>withRequestField("user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneAddUserToGroupRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(KeystoneAddUserToGroupRequest::getUserId, KeystoneAddUserToGroupRequest::setUserId));
 
         // response
 
@@ -1120,9 +1062,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse> keystoneAssociateGroupWithDomainPermission =
-        genForkeystoneAssociateGroupWithDomainPermission();
+        genForKeystoneAssociateGroupWithDomainPermission();
 
-    private static HttpRequestDef<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse> genForkeystoneAssociateGroupWithDomainPermission() {
+    private static HttpRequestDef<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse> genForKeystoneAssociateGroupWithDomainPermission() {
         // basic
         HttpRequestDef.Builder<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse> builder =
             HttpRequestDef
@@ -1138,23 +1080,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getDomainId,
+                KeystoneAssociateGroupWithDomainPermissionRequest::setDomainId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getGroupId,
+                KeystoneAssociateGroupWithDomainPermissionRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getRoleId,
+                KeystoneAssociateGroupWithDomainPermissionRequest::setRoleId));
 
         // response
 
@@ -1162,9 +1101,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse> keystoneAssociateGroupWithProjectPermission =
-        genForkeystoneAssociateGroupWithProjectPermission();
+        genForKeystoneAssociateGroupWithProjectPermission();
 
-    private static HttpRequestDef<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse> genForkeystoneAssociateGroupWithProjectPermission() {
+    private static HttpRequestDef<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse> genForKeystoneAssociateGroupWithProjectPermission() {
         // basic
         HttpRequestDef.Builder<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse> builder =
             HttpRequestDef
@@ -1180,23 +1119,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getProjectId,
+                KeystoneAssociateGroupWithProjectPermissionRequest::setProjectId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getGroupId,
+                KeystoneAssociateGroupWithProjectPermissionRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getRoleId,
+                KeystoneAssociateGroupWithProjectPermissionRequest::setRoleId));
 
         // response
 
@@ -1204,9 +1140,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse> keystoneCheckDomainPermissionForGroup =
-        genForkeystoneCheckDomainPermissionForGroup();
+        genForKeystoneCheckDomainPermissionForGroup();
 
-    private static HttpRequestDef<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse> genForkeystoneCheckDomainPermissionForGroup() {
+    private static HttpRequestDef<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse> genForKeystoneCheckDomainPermissionForGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse> builder =
             HttpRequestDef
@@ -1222,23 +1158,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getDomainId,
+                KeystoneCheckDomainPermissionForGroupRequest::setDomainId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getGroupId,
+                KeystoneCheckDomainPermissionForGroupRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getRoleId,
+                KeystoneCheckDomainPermissionForGroupRequest::setRoleId));
 
         // response
 
@@ -1246,9 +1179,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse> keystoneCheckProjectPermissionForGroup =
-        genForkeystoneCheckProjectPermissionForGroup();
+        genForKeystoneCheckProjectPermissionForGroup();
 
-    private static HttpRequestDef<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse> genForkeystoneCheckProjectPermissionForGroup() {
+    private static HttpRequestDef<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse> genForKeystoneCheckProjectPermissionForGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse> builder =
             HttpRequestDef
@@ -1264,23 +1197,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getProjectId,
+                KeystoneCheckProjectPermissionForGroupRequest::setProjectId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getGroupId,
+                KeystoneCheckProjectPermissionForGroupRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getRoleId,
+                KeystoneCheckProjectPermissionForGroupRequest::setRoleId));
 
         // response
 
@@ -1288,9 +1218,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse> keystoneCheckUserInGroup =
-        genForkeystoneCheckUserInGroup();
+        genForKeystoneCheckUserInGroup();
 
-    private static HttpRequestDef<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse> genForkeystoneCheckUserInGroup() {
+    private static HttpRequestDef<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse> genForKeystoneCheckUserInGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse> builder =
             HttpRequestDef
@@ -1304,16 +1234,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckUserInGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckUserInGroupRequest::getGroupId,
+                KeystoneCheckUserInGroupRequest::setGroupId));
         builder.<String>withRequestField("user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckUserInGroupRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckUserInGroupRequest::getUserId,
+                KeystoneCheckUserInGroupRequest::setUserId));
 
         // response
 
@@ -1321,9 +1249,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> keystoneCheckroleForGroup =
-        genForkeystoneCheckroleForGroup();
+        genForKeystoneCheckroleForGroup();
 
-    private static HttpRequestDef<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> genForkeystoneCheckroleForGroup() {
+    private static HttpRequestDef<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> genForKeystoneCheckroleForGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> builder =
             HttpRequestDef
@@ -1339,23 +1267,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckroleForGroupRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckroleForGroupRequest::getDomainId,
+                KeystoneCheckroleForGroupRequest::setDomainId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckroleForGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckroleForGroupRequest::getGroupId,
+                KeystoneCheckroleForGroupRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCheckroleForGroupRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCheckroleForGroupRequest::getRoleId,
+                KeystoneCheckroleForGroupRequest::setRoleId));
 
         // response
 
@@ -1363,9 +1288,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse> keystoneCreateGroup =
-        genForkeystoneCreateGroup();
+        genForKeystoneCreateGroup();
 
-    private static HttpRequestDef<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse> genForkeystoneCreateGroup() {
+    private static HttpRequestDef<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse> genForKeystoneCreateGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateGroupRequest.class, KeystoneCreateGroupResponse.class)
@@ -1378,9 +1303,7 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneCreateGroupRequestBody.class),
-            f -> f.withMarshaller(KeystoneCreateGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateGroupRequest::getBody, KeystoneCreateGroupRequest::setBody));
 
         // response
 
@@ -1388,9 +1311,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> keystoneCreateIdentityProvider =
-        genForkeystoneCreateIdentityProvider();
+        genForKeystoneCreateIdentityProvider();
 
-    private static HttpRequestDef<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> genForkeystoneCreateIdentityProvider() {
+    private static HttpRequestDef<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> genForKeystoneCreateIdentityProvider() {
         // basic
         HttpRequestDef.Builder<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> builder =
             HttpRequestDef
@@ -1406,16 +1329,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCreateIdentityProviderRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateIdentityProviderRequest::getId,
+                KeystoneCreateIdentityProviderRequest::setId));
         builder.<KeystoneCreateIdentityProviderRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneCreateIdentityProviderRequestBody.class),
-            f -> f.withMarshaller(KeystoneCreateIdentityProviderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateIdentityProviderRequest::getBody,
+                KeystoneCreateIdentityProviderRequest::setBody));
 
         // response
 
@@ -1423,9 +1344,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> keystoneCreateMapping =
-        genForkeystoneCreateMapping();
+        genForKeystoneCreateMapping();
 
-    private static HttpRequestDef<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> genForkeystoneCreateMapping() {
+    private static HttpRequestDef<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> genForKeystoneCreateMapping() {
         // basic
         HttpRequestDef.Builder<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, KeystoneCreateMappingRequest.class, KeystoneCreateMappingResponse.class)
@@ -1438,16 +1359,12 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCreateMappingRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateMappingRequest::getId, KeystoneCreateMappingRequest::setId));
         builder.<KeystoneCreateMappingRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneCreateMappingRequestBody.class),
-            f -> f.withMarshaller(KeystoneCreateMappingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateMappingRequest::getBody, KeystoneCreateMappingRequest::setBody));
 
         // response
 
@@ -1455,9 +1372,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> keystoneCreateProject =
-        genForkeystoneCreateProject();
+        genForKeystoneCreateProject();
 
-    private static HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> genForkeystoneCreateProject() {
+    private static HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> genForKeystoneCreateProject() {
         // basic
         HttpRequestDef.Builder<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, KeystoneCreateProjectRequest.class, KeystoneCreateProjectResponse.class)
@@ -1470,9 +1387,7 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneCreateProjectRequestBody.class),
-            f -> f.withMarshaller(KeystoneCreateProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateProjectRequest::getBody, KeystoneCreateProjectRequest::setBody));
 
         // response
 
@@ -1480,9 +1395,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> keystoneCreateProtocol =
-        genForkeystoneCreateProtocol();
+        genForKeystoneCreateProtocol();
 
-    private static HttpRequestDef<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> genForkeystoneCreateProtocol() {
+    private static HttpRequestDef<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> genForKeystoneCreateProtocol() {
         // basic
         HttpRequestDef.Builder<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, KeystoneCreateProtocolRequest.class, KeystoneCreateProtocolResponse.class)
@@ -1495,23 +1410,18 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCreateProtocolRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateProtocolRequest::getIdpId, KeystoneCreateProtocolRequest::setIdpId));
         builder.<String>withRequestField("protocol_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCreateProtocolRequest::getProtocolId, (req, v) -> {
-                req.setProtocolId(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateProtocolRequest::getProtocolId,
+                KeystoneCreateProtocolRequest::setProtocolId));
         builder.<KeystoneCreateProtocolRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneCreateProtocolRequestBody.class),
-            f -> f.withMarshaller(KeystoneCreateProtocolRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateProtocolRequest::getBody, KeystoneCreateProtocolRequest::setBody));
 
         // response
 
@@ -1519,9 +1429,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> keystoneCreateScopedToken =
-        genForkeystoneCreateScopedToken();
+        genForKeystoneCreateScopedToken();
 
-    private static HttpRequestDef<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> genForkeystoneCreateScopedToken() {
+    private static HttpRequestDef<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> genForKeystoneCreateScopedToken() {
         // basic
         HttpRequestDef.Builder<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> builder =
             HttpRequestDef
@@ -1537,9 +1447,8 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneCreateScopedTokenRequestBody.class),
-            f -> f.withMarshaller(KeystoneCreateScopedTokenRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateScopedTokenRequest::getBody,
+                KeystoneCreateScopedTokenRequest::setBody));
 
         // response
 
@@ -1553,9 +1462,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> keystoneDeleteGroup =
-        genForkeystoneDeleteGroup();
+        genForKeystoneDeleteGroup();
 
-    private static HttpRequestDef<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> genForkeystoneDeleteGroup() {
+    private static HttpRequestDef<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> genForKeystoneDeleteGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, KeystoneDeleteGroupRequest.class, KeystoneDeleteGroupResponse.class)
@@ -1568,9 +1477,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneDeleteGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneDeleteGroupRequest::getGroupId, KeystoneDeleteGroupRequest::setGroupId));
 
         // response
 
@@ -1578,9 +1485,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> keystoneDeleteIdentityProvider =
-        genForkeystoneDeleteIdentityProvider();
+        genForKeystoneDeleteIdentityProvider();
 
-    private static HttpRequestDef<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> genForkeystoneDeleteIdentityProvider() {
+    private static HttpRequestDef<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> genForKeystoneDeleteIdentityProvider() {
         // basic
         HttpRequestDef.Builder<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> builder =
             HttpRequestDef
@@ -1596,9 +1503,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneDeleteIdentityProviderRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(KeystoneDeleteIdentityProviderRequest::getId,
+                KeystoneDeleteIdentityProviderRequest::setId));
 
         // response
 
@@ -1606,9 +1512,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> keystoneDeleteMapping =
-        genForkeystoneDeleteMapping();
+        genForKeystoneDeleteMapping();
 
-    private static HttpRequestDef<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> genForkeystoneDeleteMapping() {
+    private static HttpRequestDef<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> genForKeystoneDeleteMapping() {
         // basic
         HttpRequestDef.Builder<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, KeystoneDeleteMappingRequest.class, KeystoneDeleteMappingResponse.class)
@@ -1621,9 +1527,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneDeleteMappingRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(KeystoneDeleteMappingRequest::getId, KeystoneDeleteMappingRequest::setId));
 
         // response
 
@@ -1631,9 +1535,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> keystoneDeleteProtocol =
-        genForkeystoneDeleteProtocol();
+        genForKeystoneDeleteProtocol();
 
-    private static HttpRequestDef<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> genForkeystoneDeleteProtocol() {
+    private static HttpRequestDef<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> genForKeystoneDeleteProtocol() {
         // basic
         HttpRequestDef.Builder<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, KeystoneDeleteProtocolRequest.class, KeystoneDeleteProtocolResponse.class)
@@ -1646,16 +1550,13 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneDeleteProtocolRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(KeystoneDeleteProtocolRequest::getIdpId, KeystoneDeleteProtocolRequest::setIdpId));
         builder.<String>withRequestField("protocol_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneDeleteProtocolRequest::getProtocolId, (req, v) -> {
-                req.setProtocolId(v);
-            }));
+            f -> f.withMarshaller(KeystoneDeleteProtocolRequest::getProtocolId,
+                KeystoneDeleteProtocolRequest::setProtocolId));
 
         // response
 
@@ -1663,9 +1564,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse> keystoneListAllProjectPermissionsForGroup =
-        genForkeystoneListAllProjectPermissionsForGroup();
+        genForKeystoneListAllProjectPermissionsForGroup();
 
-    private static HttpRequestDef<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse> genForkeystoneListAllProjectPermissionsForGroup() {
+    private static HttpRequestDef<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse> genForKeystoneListAllProjectPermissionsForGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse> builder =
             HttpRequestDef
@@ -1681,16 +1582,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListAllProjectPermissionsForGroupRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListAllProjectPermissionsForGroupRequest::getDomainId,
+                KeystoneListAllProjectPermissionsForGroupRequest::setDomainId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListAllProjectPermissionsForGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListAllProjectPermissionsForGroupRequest::getGroupId,
+                KeystoneListAllProjectPermissionsForGroupRequest::setGroupId));
 
         // response
 
@@ -1698,9 +1597,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> keystoneListAuthDomains =
-        genForkeystoneListAuthDomains();
+        genForKeystoneListAuthDomains();
 
-    private static HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> genForkeystoneListAuthDomains() {
+    private static HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> genForKeystoneListAuthDomains() {
         // basic
         HttpRequestDef.Builder<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneListAuthDomainsRequest.class, KeystoneListAuthDomainsResponse.class)
@@ -1716,9 +1615,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> keystoneListAuthProjects =
-        genForkeystoneListAuthProjects();
+        genForKeystoneListAuthProjects();
 
-    private static HttpRequestDef<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> genForkeystoneListAuthProjects() {
+    private static HttpRequestDef<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> genForKeystoneListAuthProjects() {
         // basic
         HttpRequestDef.Builder<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> builder =
             HttpRequestDef
@@ -1735,9 +1634,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse> keystoneListDomainPermissionsForGroup =
-        genForkeystoneListDomainPermissionsForGroup();
+        genForKeystoneListDomainPermissionsForGroup();
 
-    private static HttpRequestDef<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse> genForkeystoneListDomainPermissionsForGroup() {
+    private static HttpRequestDef<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse> genForKeystoneListDomainPermissionsForGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse> builder =
             HttpRequestDef
@@ -1753,16 +1652,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListDomainPermissionsForGroupRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListDomainPermissionsForGroupRequest::getDomainId,
+                KeystoneListDomainPermissionsForGroupRequest::setDomainId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListDomainPermissionsForGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListDomainPermissionsForGroupRequest::getGroupId,
+                KeystoneListDomainPermissionsForGroupRequest::setGroupId));
 
         // response
 
@@ -1770,9 +1667,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> keystoneListEndpoints =
-        genForkeystoneListEndpoints();
+        genForKeystoneListEndpoints();
 
-    private static HttpRequestDef<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> genForkeystoneListEndpoints() {
+    private static HttpRequestDef<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> genForKeystoneListEndpoints() {
         // basic
         HttpRequestDef.Builder<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneListEndpointsRequest.class, KeystoneListEndpointsResponse.class)
@@ -1785,16 +1682,14 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(KeystoneListEndpointsRequest.InterfaceEnum.class),
-            f -> f.withMarshaller(KeystoneListEndpointsRequest::getInterface, (req, v) -> {
-                req.setInterface(v);
-            }));
+            f -> f.withMarshaller(KeystoneListEndpointsRequest::getInterface,
+                KeystoneListEndpointsRequest::setInterface));
         builder.<String>withRequestField("service_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListEndpointsRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListEndpointsRequest::getServiceId,
+                KeystoneListEndpointsRequest::setServiceId));
 
         // response
 
@@ -1802,9 +1697,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> keystoneListFederationDomains =
-        genForkeystoneListFederationDomains();
+        genForKeystoneListFederationDomains();
 
-    private static HttpRequestDef<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> genForkeystoneListFederationDomains() {
+    private static HttpRequestDef<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> genForKeystoneListFederationDomains() {
         // basic
         HttpRequestDef.Builder<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> builder =
             HttpRequestDef
@@ -1823,9 +1718,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListGroupsRequest, KeystoneListGroupsResponse> keystoneListGroups =
-        genForkeystoneListGroups();
+        genForKeystoneListGroups();
 
-    private static HttpRequestDef<KeystoneListGroupsRequest, KeystoneListGroupsResponse> genForkeystoneListGroups() {
+    private static HttpRequestDef<KeystoneListGroupsRequest, KeystoneListGroupsResponse> genForKeystoneListGroups() {
         // basic
         HttpRequestDef.Builder<KeystoneListGroupsRequest, KeystoneListGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListGroupsRequest.class, KeystoneListGroupsResponse.class)
@@ -1838,16 +1733,12 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListGroupsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListGroupsRequest::getDomainId, KeystoneListGroupsRequest::setDomainId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListGroupsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(KeystoneListGroupsRequest::getName, KeystoneListGroupsRequest::setName));
 
         // response
 
@@ -1855,9 +1746,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> keystoneListIdentityProviders =
-        genForkeystoneListIdentityProviders();
+        genForKeystoneListIdentityProviders();
 
-    private static HttpRequestDef<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> genForkeystoneListIdentityProviders() {
+    private static HttpRequestDef<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> genForKeystoneListIdentityProviders() {
         // basic
         HttpRequestDef.Builder<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> builder =
             HttpRequestDef
@@ -1876,9 +1767,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListMappingsRequest, KeystoneListMappingsResponse> keystoneListMappings =
-        genForkeystoneListMappings();
+        genForKeystoneListMappings();
 
-    private static HttpRequestDef<KeystoneListMappingsRequest, KeystoneListMappingsResponse> genForkeystoneListMappings() {
+    private static HttpRequestDef<KeystoneListMappingsRequest, KeystoneListMappingsResponse> genForKeystoneListMappings() {
         // basic
         HttpRequestDef.Builder<KeystoneListMappingsRequest, KeystoneListMappingsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneListMappingsRequest.class, KeystoneListMappingsResponse.class)
@@ -1894,9 +1785,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse> keystoneListPermissions =
-        genForkeystoneListPermissions();
+        genForKeystoneListPermissions();
 
-    private static HttpRequestDef<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse> genForkeystoneListPermissions() {
+    private static HttpRequestDef<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse> genForKeystoneListPermissions() {
         // basic
         HttpRequestDef.Builder<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneListPermissionsRequest.class, KeystoneListPermissionsResponse.class)
@@ -1909,58 +1800,47 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListPermissionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getName, KeystoneListPermissionsRequest::setName));
         builder.<String>withRequestField("domain_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListPermissionsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getDomainId,
+                KeystoneListPermissionsRequest::setDomainId));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(KeystoneListPermissionsRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getPage, KeystoneListPermissionsRequest::setPage));
         builder.<Integer>withRequestField("per_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(KeystoneListPermissionsRequest::getPerPage, (req, v) -> {
-                req.setPerPage(v);
-            }));
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getPerPage,
+                KeystoneListPermissionsRequest::setPerPage));
         builder.<String>withRequestField("permission_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListPermissionsRequest::getPermissionType, (req, v) -> {
-                req.setPermissionType(v);
-            }));
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getPermissionType,
+                KeystoneListPermissionsRequest::setPermissionType));
         builder.<String>withRequestField("display_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListPermissionsRequest::getDisplayName, (req, v) -> {
-                req.setDisplayName(v);
-            }));
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getDisplayName,
+                KeystoneListPermissionsRequest::setDisplayName));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListPermissionsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getType, KeystoneListPermissionsRequest::setType));
         builder.<String>withRequestField("catalog",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListPermissionsRequest::getCatalog, (req, v) -> {
-                req.setCatalog(v);
-            }));
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getCatalog,
+                KeystoneListPermissionsRequest::setCatalog));
 
         // response
 
@@ -1968,9 +1848,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse> keystoneListProjectPermissionsForGroup =
-        genForkeystoneListProjectPermissionsForGroup();
+        genForKeystoneListProjectPermissionsForGroup();
 
-    private static HttpRequestDef<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse> genForkeystoneListProjectPermissionsForGroup() {
+    private static HttpRequestDef<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse> genForKeystoneListProjectPermissionsForGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse> builder =
             HttpRequestDef
@@ -1986,16 +1866,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListProjectPermissionsForGroupRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProjectPermissionsForGroupRequest::getProjectId,
+                KeystoneListProjectPermissionsForGroupRequest::setProjectId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListProjectPermissionsForGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProjectPermissionsForGroupRequest::getGroupId,
+                KeystoneListProjectPermissionsForGroupRequest::setGroupId));
 
         // response
 
@@ -2003,9 +1881,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse> keystoneListProjects =
-        genForkeystoneListProjects();
+        genForKeystoneListProjects();
 
-    private static HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse> genForkeystoneListProjects() {
+    private static HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse> genForKeystoneListProjects() {
         // basic
         HttpRequestDef.Builder<KeystoneListProjectsRequest, KeystoneListProjectsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneListProjectsRequest.class, KeystoneListProjectsResponse.class)
@@ -2018,51 +1896,37 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListProjectsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getDomainId, KeystoneListProjectsRequest::setDomainId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListProjectsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getName, KeystoneListProjectsRequest::setName));
         builder.<String>withRequestField("parent_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListProjectsRequest::getParentId, (req, v) -> {
-                req.setParentId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getParentId, KeystoneListProjectsRequest::setParentId));
         builder.<Boolean>withRequestField("enabled",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(KeystoneListProjectsRequest::getEnabled, (req, v) -> {
-                req.setEnabled(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getEnabled, KeystoneListProjectsRequest::setEnabled));
         builder.<Boolean>withRequestField("is_domain",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(KeystoneListProjectsRequest::getIsDomain, (req, v) -> {
-                req.setIsDomain(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getIsDomain, KeystoneListProjectsRequest::setIsDomain));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(KeystoneListProjectsRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getPage, KeystoneListProjectsRequest::setPage));
         builder.<Integer>withRequestField("per_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(KeystoneListProjectsRequest::getPerPage, (req, v) -> {
-                req.setPerPage(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getPerPage, KeystoneListProjectsRequest::setPerPage));
 
         // response
 
@@ -2070,9 +1934,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> keystoneListProjectsForUser =
-        genForkeystoneListProjectsForUser();
+        genForKeystoneListProjectsForUser();
 
-    private static HttpRequestDef<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> genForkeystoneListProjectsForUser() {
+    private static HttpRequestDef<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> genForKeystoneListProjectsForUser() {
         // basic
         HttpRequestDef.Builder<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> builder =
             HttpRequestDef
@@ -2088,9 +1952,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListProjectsForUserRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProjectsForUserRequest::getUserId,
+                KeystoneListProjectsForUserRequest::setUserId));
 
         // response
 
@@ -2098,9 +1961,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> keystoneListProtocols =
-        genForkeystoneListProtocols();
+        genForKeystoneListProtocols();
 
-    private static HttpRequestDef<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> genForkeystoneListProtocols() {
+    private static HttpRequestDef<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> genForKeystoneListProtocols() {
         // basic
         HttpRequestDef.Builder<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneListProtocolsRequest.class, KeystoneListProtocolsResponse.class)
@@ -2113,9 +1976,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListProtocolsRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListProtocolsRequest::getIdpId, KeystoneListProtocolsRequest::setIdpId));
 
         // response
 
@@ -2123,9 +1984,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListRegionsRequest, KeystoneListRegionsResponse> keystoneListRegions =
-        genForkeystoneListRegions();
+        genForKeystoneListRegions();
 
-    private static HttpRequestDef<KeystoneListRegionsRequest, KeystoneListRegionsResponse> genForkeystoneListRegions() {
+    private static HttpRequestDef<KeystoneListRegionsRequest, KeystoneListRegionsResponse> genForKeystoneListRegions() {
         // basic
         HttpRequestDef.Builder<KeystoneListRegionsRequest, KeystoneListRegionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListRegionsRequest.class, KeystoneListRegionsResponse.class)
@@ -2141,9 +2002,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListServicesRequest, KeystoneListServicesResponse> keystoneListServices =
-        genForkeystoneListServices();
+        genForKeystoneListServices();
 
-    private static HttpRequestDef<KeystoneListServicesRequest, KeystoneListServicesResponse> genForkeystoneListServices() {
+    private static HttpRequestDef<KeystoneListServicesRequest, KeystoneListServicesResponse> genForKeystoneListServices() {
         // basic
         HttpRequestDef.Builder<KeystoneListServicesRequest, KeystoneListServicesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneListServicesRequest.class, KeystoneListServicesResponse.class)
@@ -2156,9 +2017,7 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListServicesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(KeystoneListServicesRequest::getType, KeystoneListServicesRequest::setType));
 
         // response
 
@@ -2166,9 +2025,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdmin =
-        genForkeystoneListUsersForGroupByAdmin();
+        genForKeystoneListUsersForGroupByAdmin();
 
-    private static HttpRequestDef<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> genForkeystoneListUsersForGroupByAdmin() {
+    private static HttpRequestDef<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> genForKeystoneListUsersForGroupByAdmin() {
         // basic
         HttpRequestDef.Builder<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> builder =
             HttpRequestDef
@@ -2184,9 +2043,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListUsersForGroupByAdminRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListUsersForGroupByAdminRequest::getGroupId,
+                KeystoneListUsersForGroupByAdminRequest::setGroupId));
 
         // response
 
@@ -2194,9 +2052,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListVersionsRequest, KeystoneListVersionsResponse> keystoneListVersions =
-        genForkeystoneListVersions();
+        genForKeystoneListVersions();
 
-    private static HttpRequestDef<KeystoneListVersionsRequest, KeystoneListVersionsResponse> genForkeystoneListVersions() {
+    private static HttpRequestDef<KeystoneListVersionsRequest, KeystoneListVersionsResponse> genForKeystoneListVersions() {
         // basic
         HttpRequestDef.Builder<KeystoneListVersionsRequest, KeystoneListVersionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneListVersionsRequest.class, KeystoneListVersionsResponse.class)
@@ -2212,9 +2070,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse> keystoneRemoveDomainPermissionFromGroup =
-        genForkeystoneRemoveDomainPermissionFromGroup();
+        genForKeystoneRemoveDomainPermissionFromGroup();
 
-    private static HttpRequestDef<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse> genForkeystoneRemoveDomainPermissionFromGroup() {
+    private static HttpRequestDef<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse> genForKeystoneRemoveDomainPermissionFromGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse> builder =
             HttpRequestDef
@@ -2230,23 +2088,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getDomainId,
+                KeystoneRemoveDomainPermissionFromGroupRequest::setDomainId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getGroupId,
+                KeystoneRemoveDomainPermissionFromGroupRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getRoleId,
+                KeystoneRemoveDomainPermissionFromGroupRequest::setRoleId));
 
         // response
 
@@ -2254,9 +2109,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse> keystoneRemoveProjectPermissionFromGroup =
-        genForkeystoneRemoveProjectPermissionFromGroup();
+        genForKeystoneRemoveProjectPermissionFromGroup();
 
-    private static HttpRequestDef<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse> genForkeystoneRemoveProjectPermissionFromGroup() {
+    private static HttpRequestDef<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse> genForKeystoneRemoveProjectPermissionFromGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse> builder =
             HttpRequestDef
@@ -2272,23 +2127,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getProjectId,
+                KeystoneRemoveProjectPermissionFromGroupRequest::setProjectId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getGroupId,
+                KeystoneRemoveProjectPermissionFromGroupRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getRoleId,
+                KeystoneRemoveProjectPermissionFromGroupRequest::setRoleId));
 
         // response
 
@@ -2296,9 +2148,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse> keystoneRemoveUserFromGroup =
-        genForkeystoneRemoveUserFromGroup();
+        genForKeystoneRemoveUserFromGroup();
 
-    private static HttpRequestDef<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse> genForkeystoneRemoveUserFromGroup() {
+    private static HttpRequestDef<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse> genForKeystoneRemoveUserFromGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse> builder =
             HttpRequestDef
@@ -2314,16 +2166,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneRemoveUserFromGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneRemoveUserFromGroupRequest::getGroupId,
+                KeystoneRemoveUserFromGroupRequest::setGroupId));
         builder.<String>withRequestField("user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneRemoveUserFromGroupRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(KeystoneRemoveUserFromGroupRequest::getUserId,
+                KeystoneRemoveUserFromGroupRequest::setUserId));
 
         // response
 
@@ -2331,9 +2181,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> keystoneShowCatalog =
-        genForkeystoneShowCatalog();
+        genForKeystoneShowCatalog();
 
-    private static HttpRequestDef<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> genForkeystoneShowCatalog() {
+    private static HttpRequestDef<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> genForKeystoneShowCatalog() {
         // basic
         HttpRequestDef.Builder<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowCatalogRequest.class, KeystoneShowCatalogResponse.class)
@@ -2349,9 +2199,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> keystoneShowEndpoint =
-        genForkeystoneShowEndpoint();
+        genForKeystoneShowEndpoint();
 
-    private static HttpRequestDef<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> genForkeystoneShowEndpoint() {
+    private static HttpRequestDef<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> genForKeystoneShowEndpoint() {
         // basic
         HttpRequestDef.Builder<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneShowEndpointRequest.class, KeystoneShowEndpointResponse.class)
@@ -2364,9 +2214,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowEndpointRequest::getEndpointId, (req, v) -> {
-                req.setEndpointId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowEndpointRequest::getEndpointId,
+                KeystoneShowEndpointRequest::setEndpointId));
 
         // response
 
@@ -2374,9 +2223,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowGroupRequest, KeystoneShowGroupResponse> keystoneShowGroup =
-        genForkeystoneShowGroup();
+        genForKeystoneShowGroup();
 
-    private static HttpRequestDef<KeystoneShowGroupRequest, KeystoneShowGroupResponse> genForkeystoneShowGroup() {
+    private static HttpRequestDef<KeystoneShowGroupRequest, KeystoneShowGroupResponse> genForKeystoneShowGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneShowGroupRequest, KeystoneShowGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowGroupRequest.class, KeystoneShowGroupResponse.class)
@@ -2389,9 +2238,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowGroupRequest::getGroupId, KeystoneShowGroupRequest::setGroupId));
 
         // response
 
@@ -2399,9 +2246,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> keystoneShowIdentityProvider =
-        genForkeystoneShowIdentityProvider();
+        genForKeystoneShowIdentityProvider();
 
-    private static HttpRequestDef<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> genForkeystoneShowIdentityProvider() {
+    private static HttpRequestDef<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> genForKeystoneShowIdentityProvider() {
         // basic
         HttpRequestDef.Builder<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> builder =
             HttpRequestDef
@@ -2417,9 +2264,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowIdentityProviderRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowIdentityProviderRequest::getId,
+                KeystoneShowIdentityProviderRequest::setId));
 
         // response
 
@@ -2427,9 +2273,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowMappingRequest, KeystoneShowMappingResponse> keystoneShowMapping =
-        genForkeystoneShowMapping();
+        genForKeystoneShowMapping();
 
-    private static HttpRequestDef<KeystoneShowMappingRequest, KeystoneShowMappingResponse> genForkeystoneShowMapping() {
+    private static HttpRequestDef<KeystoneShowMappingRequest, KeystoneShowMappingResponse> genForKeystoneShowMapping() {
         // basic
         HttpRequestDef.Builder<KeystoneShowMappingRequest, KeystoneShowMappingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowMappingRequest.class, KeystoneShowMappingResponse.class)
@@ -2442,9 +2288,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowMappingRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowMappingRequest::getId, KeystoneShowMappingRequest::setId));
 
         // response
 
@@ -2452,9 +2296,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> keystoneShowPermission =
-        genForkeystoneShowPermission();
+        genForKeystoneShowPermission();
 
-    private static HttpRequestDef<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> genForkeystoneShowPermission() {
+    private static HttpRequestDef<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> genForKeystoneShowPermission() {
         // basic
         HttpRequestDef.Builder<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneShowPermissionRequest.class, KeystoneShowPermissionResponse.class)
@@ -2467,9 +2311,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowPermissionRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowPermissionRequest::getRoleId, KeystoneShowPermissionRequest::setRoleId));
 
         // response
 
@@ -2477,9 +2319,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowProjectRequest, KeystoneShowProjectResponse> keystoneShowProject =
-        genForkeystoneShowProject();
+        genForKeystoneShowProject();
 
-    private static HttpRequestDef<KeystoneShowProjectRequest, KeystoneShowProjectResponse> genForkeystoneShowProject() {
+    private static HttpRequestDef<KeystoneShowProjectRequest, KeystoneShowProjectResponse> genForKeystoneShowProject() {
         // basic
         HttpRequestDef.Builder<KeystoneShowProjectRequest, KeystoneShowProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowProjectRequest.class, KeystoneShowProjectResponse.class)
@@ -2492,9 +2334,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowProjectRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowProjectRequest::getProjectId, KeystoneShowProjectRequest::setProjectId));
 
         // response
 
@@ -2502,9 +2342,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> keystoneShowProtocol =
-        genForkeystoneShowProtocol();
+        genForKeystoneShowProtocol();
 
-    private static HttpRequestDef<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> genForkeystoneShowProtocol() {
+    private static HttpRequestDef<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> genForKeystoneShowProtocol() {
         // basic
         HttpRequestDef.Builder<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneShowProtocolRequest.class, KeystoneShowProtocolResponse.class)
@@ -2517,16 +2357,13 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowProtocolRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowProtocolRequest::getIdpId, KeystoneShowProtocolRequest::setIdpId));
         builder.<String>withRequestField("protocol_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowProtocolRequest::getProtocolId, (req, v) -> {
-                req.setProtocolId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowProtocolRequest::getProtocolId,
+                KeystoneShowProtocolRequest::setProtocolId));
 
         // response
 
@@ -2534,9 +2371,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowRegionRequest, KeystoneShowRegionResponse> keystoneShowRegion =
-        genForkeystoneShowRegion();
+        genForKeystoneShowRegion();
 
-    private static HttpRequestDef<KeystoneShowRegionRequest, KeystoneShowRegionResponse> genForkeystoneShowRegion() {
+    private static HttpRequestDef<KeystoneShowRegionRequest, KeystoneShowRegionResponse> genForKeystoneShowRegion() {
         // basic
         HttpRequestDef.Builder<KeystoneShowRegionRequest, KeystoneShowRegionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowRegionRequest.class, KeystoneShowRegionResponse.class)
@@ -2549,9 +2386,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowRegionRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowRegionRequest::getRegionId, KeystoneShowRegionRequest::setRegionId));
 
         // response
 
@@ -2559,9 +2394,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> keystoneShowSecurityCompliance =
-        genForkeystoneShowSecurityCompliance();
+        genForKeystoneShowSecurityCompliance();
 
-    private static HttpRequestDef<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> genForkeystoneShowSecurityCompliance() {
+    private static HttpRequestDef<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> genForKeystoneShowSecurityCompliance() {
         // basic
         HttpRequestDef.Builder<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> builder =
             HttpRequestDef
@@ -2577,9 +2412,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowSecurityComplianceRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowSecurityComplianceRequest::getDomainId,
+                KeystoneShowSecurityComplianceRequest::setDomainId));
 
         // response
 
@@ -2587,9 +2421,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse> keystoneShowSecurityComplianceByOption =
-        genForkeystoneShowSecurityComplianceByOption();
+        genForKeystoneShowSecurityComplianceByOption();
 
-    private static HttpRequestDef<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse> genForkeystoneShowSecurityComplianceByOption() {
+    private static HttpRequestDef<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse> genForKeystoneShowSecurityComplianceByOption() {
         // basic
         HttpRequestDef.Builder<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse> builder =
             HttpRequestDef
@@ -2605,16 +2439,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowSecurityComplianceByOptionRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowSecurityComplianceByOptionRequest::getDomainId,
+                KeystoneShowSecurityComplianceByOptionRequest::setDomainId));
         builder.<KeystoneShowSecurityComplianceByOptionRequest.OptionEnum>withRequestField("option",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneShowSecurityComplianceByOptionRequest.OptionEnum.class),
-            f -> f.withMarshaller(KeystoneShowSecurityComplianceByOptionRequest::getOption, (req, v) -> {
-                req.setOption(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowSecurityComplianceByOptionRequest::getOption,
+                KeystoneShowSecurityComplianceByOptionRequest::setOption));
 
         // response
 
@@ -2622,9 +2454,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowServiceRequest, KeystoneShowServiceResponse> keystoneShowService =
-        genForkeystoneShowService();
+        genForKeystoneShowService();
 
-    private static HttpRequestDef<KeystoneShowServiceRequest, KeystoneShowServiceResponse> genForkeystoneShowService() {
+    private static HttpRequestDef<KeystoneShowServiceRequest, KeystoneShowServiceResponse> genForKeystoneShowService() {
         // basic
         HttpRequestDef.Builder<KeystoneShowServiceRequest, KeystoneShowServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowServiceRequest.class, KeystoneShowServiceResponse.class)
@@ -2637,9 +2469,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowServiceRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowServiceRequest::getServiceId, KeystoneShowServiceRequest::setServiceId));
 
         // response
 
@@ -2647,9 +2477,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowVersionRequest, KeystoneShowVersionResponse> keystoneShowVersion =
-        genForkeystoneShowVersion();
+        genForKeystoneShowVersion();
 
-    private static HttpRequestDef<KeystoneShowVersionRequest, KeystoneShowVersionResponse> genForkeystoneShowVersion() {
+    private static HttpRequestDef<KeystoneShowVersionRequest, KeystoneShowVersionResponse> genForKeystoneShowVersion() {
         // basic
         HttpRequestDef.Builder<KeystoneShowVersionRequest, KeystoneShowVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowVersionRequest.class, KeystoneShowVersionResponse.class)
@@ -2665,9 +2495,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse> keystoneUpdateGroup =
-        genForkeystoneUpdateGroup();
+        genForKeystoneUpdateGroup();
 
-    private static HttpRequestDef<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse> genForkeystoneUpdateGroup() {
+    private static HttpRequestDef<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse> genForKeystoneUpdateGroup() {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.PATCH, KeystoneUpdateGroupRequest.class, KeystoneUpdateGroupResponse.class)
@@ -2680,16 +2510,12 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneUpdateGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateGroupRequest::getGroupId, KeystoneUpdateGroupRequest::setGroupId));
         builder.<KeystoneUpdateGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneUpdateGroupRequestBody.class),
-            f -> f.withMarshaller(KeystoneUpdateGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateGroupRequest::getBody, KeystoneUpdateGroupRequest::setBody));
 
         // response
 
@@ -2697,9 +2523,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> keystoneUpdateIdentityProvider =
-        genForkeystoneUpdateIdentityProvider();
+        genForKeystoneUpdateIdentityProvider();
 
-    private static HttpRequestDef<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> genForkeystoneUpdateIdentityProvider() {
+    private static HttpRequestDef<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> genForKeystoneUpdateIdentityProvider() {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> builder =
             HttpRequestDef
@@ -2715,16 +2541,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneUpdateIdentityProviderRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateIdentityProviderRequest::getId,
+                KeystoneUpdateIdentityProviderRequest::setId));
         builder.<KeystoneUpdateIdentityProviderRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneUpdateIdentityProviderRequestBody.class),
-            f -> f.withMarshaller(KeystoneUpdateIdentityProviderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateIdentityProviderRequest::getBody,
+                KeystoneUpdateIdentityProviderRequest::setBody));
 
         // response
 
@@ -2732,9 +2556,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> keystoneUpdateMapping =
-        genForkeystoneUpdateMapping();
+        genForKeystoneUpdateMapping();
 
-    private static HttpRequestDef<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> genForkeystoneUpdateMapping() {
+    private static HttpRequestDef<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> genForKeystoneUpdateMapping() {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> builder = HttpRequestDef
             .builder(HttpMethod.PATCH, KeystoneUpdateMappingRequest.class, KeystoneUpdateMappingResponse.class)
@@ -2747,16 +2571,12 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneUpdateMappingRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateMappingRequest::getId, KeystoneUpdateMappingRequest::setId));
         builder.<KeystoneUpdateMappingRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneUpdateMappingRequestBody.class),
-            f -> f.withMarshaller(KeystoneUpdateMappingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateMappingRequest::getBody, KeystoneUpdateMappingRequest::setBody));
 
         // response
 
@@ -2764,9 +2584,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> keystoneUpdateProject =
-        genForkeystoneUpdateProject();
+        genForKeystoneUpdateProject();
 
-    private static HttpRequestDef<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> genForkeystoneUpdateProject() {
+    private static HttpRequestDef<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> genForKeystoneUpdateProject() {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.PATCH, KeystoneUpdateProjectRequest.class, KeystoneUpdateProjectResponse.class)
@@ -2779,16 +2599,13 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneUpdateProjectRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateProjectRequest::getProjectId,
+                KeystoneUpdateProjectRequest::setProjectId));
         builder.<KeystoneUpdateProjectRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneUpdateProjectRequestBody.class),
-            f -> f.withMarshaller(KeystoneUpdateProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateProjectRequest::getBody, KeystoneUpdateProjectRequest::setBody));
 
         // response
 
@@ -2796,9 +2613,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> keystoneUpdateProtocol =
-        genForkeystoneUpdateProtocol();
+        genForKeystoneUpdateProtocol();
 
-    private static HttpRequestDef<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> genForkeystoneUpdateProtocol() {
+    private static HttpRequestDef<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> genForKeystoneUpdateProtocol() {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> builder = HttpRequestDef
             .builder(HttpMethod.PATCH, KeystoneUpdateProtocolRequest.class, KeystoneUpdateProtocolResponse.class)
@@ -2811,32 +2628,27 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneUpdateProtocolRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateProtocolRequest::getIdpId, KeystoneUpdateProtocolRequest::setIdpId));
         builder.<String>withRequestField("protocol_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneUpdateProtocolRequest::getProtocolId, (req, v) -> {
-                req.setProtocolId(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateProtocolRequest::getProtocolId,
+                KeystoneUpdateProtocolRequest::setProtocolId));
         builder.<KeystoneUpdateProtocolRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneUpdateProtocolRequestBody.class),
-            f -> f.withMarshaller(KeystoneUpdateProtocolRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateProtocolRequest::getBody, KeystoneUpdateProtocolRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForlistAgencies();
+    public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForListAgencies();
 
-    private static HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> genForlistAgencies() {
+    private static HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> genForListAgencies() {
         // basic
         HttpRequestDef.Builder<ListAgenciesRequest, ListAgenciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgenciesRequest.class, ListAgenciesResponse.class)
@@ -2849,23 +2661,17 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgenciesRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListAgenciesRequest::getDomainId, ListAgenciesRequest::setDomainId));
         builder.<String>withRequestField("trust_domain_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgenciesRequest::getTrustDomainId, (req, v) -> {
-                req.setTrustDomainId(v);
-            }));
+            f -> f.withMarshaller(ListAgenciesRequest::getTrustDomainId, ListAgenciesRequest::setTrustDomainId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgenciesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAgenciesRequest::getName, ListAgenciesRequest::setName));
 
         // response
 
@@ -2873,9 +2679,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> listAllProjectsPermissionsForAgency =
-        genForlistAllProjectsPermissionsForAgency();
+        genForListAllProjectsPermissionsForAgency();
 
-    private static HttpRequestDef<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> genForlistAllProjectsPermissionsForAgency() {
+    private static HttpRequestDef<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> genForListAllProjectsPermissionsForAgency() {
         // basic
         HttpRequestDef.Builder<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> builder =
             HttpRequestDef
@@ -2891,16 +2697,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllProjectsPermissionsForAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(ListAllProjectsPermissionsForAgencyRequest::getAgencyId,
+                ListAllProjectsPermissionsForAgencyRequest::setAgencyId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllProjectsPermissionsForAgencyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListAllProjectsPermissionsForAgencyRequest::getDomainId,
+                ListAllProjectsPermissionsForAgencyRequest::setDomainId));
 
         // response
 
@@ -2908,9 +2712,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListCustomPoliciesRequest, ListCustomPoliciesResponse> listCustomPolicies =
-        genForlistCustomPolicies();
+        genForListCustomPolicies();
 
-    private static HttpRequestDef<ListCustomPoliciesRequest, ListCustomPoliciesResponse> genForlistCustomPolicies() {
+    private static HttpRequestDef<ListCustomPoliciesRequest, ListCustomPoliciesResponse> genForListCustomPolicies() {
         // basic
         HttpRequestDef.Builder<ListCustomPoliciesRequest, ListCustomPoliciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCustomPoliciesRequest.class, ListCustomPoliciesResponse.class)
@@ -2923,16 +2727,12 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomPoliciesRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListCustomPoliciesRequest::getPage, ListCustomPoliciesRequest::setPage));
         builder.<Integer>withRequestField("per_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomPoliciesRequest::getPerPage, (req, v) -> {
-                req.setPerPage(v);
-            }));
+            f -> f.withMarshaller(ListCustomPoliciesRequest::getPerPage, ListCustomPoliciesRequest::setPerPage));
 
         // response
 
@@ -2940,9 +2740,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse> listDomainPermissionsForAgency =
-        genForlistDomainPermissionsForAgency();
+        genForListDomainPermissionsForAgency();
 
-    private static HttpRequestDef<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse> genForlistDomainPermissionsForAgency() {
+    private static HttpRequestDef<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse> genForListDomainPermissionsForAgency() {
         // basic
         HttpRequestDef.Builder<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse> builder =
             HttpRequestDef
@@ -2958,16 +2758,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainPermissionsForAgencyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListDomainPermissionsForAgencyRequest::getDomainId,
+                ListDomainPermissionsForAgencyRequest::setDomainId));
         builder.<String>withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainPermissionsForAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(ListDomainPermissionsForAgencyRequest::getAgencyId,
+                ListDomainPermissionsForAgencyRequest::setAgencyId));
 
         // response
 
@@ -2975,9 +2773,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> listEnterpriseProjectsForGroup =
-        genForlistEnterpriseProjectsForGroup();
+        genForListEnterpriseProjectsForGroup();
 
-    private static HttpRequestDef<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> genForlistEnterpriseProjectsForGroup() {
+    private static HttpRequestDef<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> genForListEnterpriseProjectsForGroup() {
         // basic
         HttpRequestDef.Builder<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> builder =
             HttpRequestDef
@@ -2993,9 +2791,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseProjectsForGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectsForGroupRequest::getGroupId,
+                ListEnterpriseProjectsForGroupRequest::setGroupId));
 
         // response
 
@@ -3003,9 +2800,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> listEnterpriseProjectsForUser =
-        genForlistEnterpriseProjectsForUser();
+        genForListEnterpriseProjectsForUser();
 
-    private static HttpRequestDef<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> genForlistEnterpriseProjectsForUser() {
+    private static HttpRequestDef<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> genForListEnterpriseProjectsForUser() {
         // basic
         HttpRequestDef.Builder<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> builder =
             HttpRequestDef
@@ -3021,9 +2818,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseProjectsForUserRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectsForUserRequest::getUserId,
+                ListEnterpriseProjectsForUserRequest::setUserId));
 
         // response
 
@@ -3031,9 +2827,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> listGroupsForEnterpriseProject =
-        genForlistGroupsForEnterpriseProject();
+        genForListGroupsForEnterpriseProject();
 
-    private static HttpRequestDef<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> genForlistGroupsForEnterpriseProject() {
+    private static HttpRequestDef<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> genForListGroupsForEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -3049,9 +2845,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGroupsForEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListGroupsForEnterpriseProjectRequest::getEnterpriseProjectId,
+                ListGroupsForEnterpriseProjectRequest::setEnterpriseProjectId));
 
         // response
 
@@ -3059,9 +2854,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse> listProjectPermissionsForAgency =
-        genForlistProjectPermissionsForAgency();
+        genForListProjectPermissionsForAgency();
 
-    private static HttpRequestDef<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse> genForlistProjectPermissionsForAgency() {
+    private static HttpRequestDef<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse> genForListProjectPermissionsForAgency() {
         // basic
         HttpRequestDef.Builder<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse> builder =
             HttpRequestDef
@@ -3077,16 +2872,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectPermissionsForAgencyRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListProjectPermissionsForAgencyRequest::getProjectId,
+                ListProjectPermissionsForAgencyRequest::setProjectId));
         builder.<String>withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectPermissionsForAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(ListProjectPermissionsForAgencyRequest::getAgencyId,
+                ListProjectPermissionsForAgencyRequest::setAgencyId));
 
         // response
 
@@ -3094,9 +2887,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> listRolesForGroupOnEnterpriseProject =
-        genForlistRolesForGroupOnEnterpriseProject();
+        genForListRolesForGroupOnEnterpriseProject();
 
-    private static HttpRequestDef<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> genForlistRolesForGroupOnEnterpriseProject() {
+    private static HttpRequestDef<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> genForListRolesForGroupOnEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -3112,16 +2905,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRolesForGroupOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRolesForGroupOnEnterpriseProjectRequest::getEnterpriseProjectId,
+                ListRolesForGroupOnEnterpriseProjectRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRolesForGroupOnEnterpriseProjectRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListRolesForGroupOnEnterpriseProjectRequest::getGroupId,
+                ListRolesForGroupOnEnterpriseProjectRequest::setGroupId));
 
         // response
 
@@ -3129,9 +2920,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> listRolesForUserOnEnterpriseProject =
-        genForlistRolesForUserOnEnterpriseProject();
+        genForListRolesForUserOnEnterpriseProject();
 
-    private static HttpRequestDef<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> genForlistRolesForUserOnEnterpriseProject() {
+    private static HttpRequestDef<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> genForListRolesForUserOnEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -3147,16 +2938,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRolesForUserOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRolesForUserOnEnterpriseProjectRequest::getEnterpriseProjectId,
+                ListRolesForUserOnEnterpriseProjectRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRolesForUserOnEnterpriseProjectRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(ListRolesForUserOnEnterpriseProjectRequest::getUserId,
+                ListRolesForUserOnEnterpriseProjectRequest::setUserId));
 
         // response
 
@@ -3164,9 +2953,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> listUsersForEnterpriseProject =
-        genForlistUsersForEnterpriseProject();
+        genForListUsersForEnterpriseProject();
 
-    private static HttpRequestDef<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> genForlistUsersForEnterpriseProject() {
+    private static HttpRequestDef<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> genForListUsersForEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -3182,9 +2971,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersForEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListUsersForEnterpriseProjectRequest::getEnterpriseProjectId,
+                ListUsersForEnterpriseProjectRequest::setEnterpriseProjectId));
 
         // response
 
@@ -3192,9 +2980,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse> removeAllProjectsPermissionFromAgency =
-        genForremoveAllProjectsPermissionFromAgency();
+        genForRemoveAllProjectsPermissionFromAgency();
 
-    private static HttpRequestDef<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse> genForremoveAllProjectsPermissionFromAgency() {
+    private static HttpRequestDef<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse> genForRemoveAllProjectsPermissionFromAgency() {
         // basic
         HttpRequestDef.Builder<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse> builder =
             HttpRequestDef
@@ -3211,23 +2999,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveAllProjectsPermissionFromAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(RemoveAllProjectsPermissionFromAgencyRequest::getAgencyId,
+                RemoveAllProjectsPermissionFromAgencyRequest::setAgencyId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveAllProjectsPermissionFromAgencyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(RemoveAllProjectsPermissionFromAgencyRequest::getDomainId,
+                RemoveAllProjectsPermissionFromAgencyRequest::setDomainId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveAllProjectsPermissionFromAgencyRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(RemoveAllProjectsPermissionFromAgencyRequest::getRoleId,
+                RemoveAllProjectsPermissionFromAgencyRequest::setRoleId));
 
         // response
 
@@ -3235,9 +3020,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> removeDomainPermissionFromAgency =
-        genForremoveDomainPermissionFromAgency();
+        genForRemoveDomainPermissionFromAgency();
 
-    private static HttpRequestDef<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> genForremoveDomainPermissionFromAgency() {
+    private static HttpRequestDef<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> genForRemoveDomainPermissionFromAgency() {
         // basic
         HttpRequestDef.Builder<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> builder =
             HttpRequestDef
@@ -3253,23 +3038,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getDomainId,
+                RemoveDomainPermissionFromAgencyRequest::setDomainId));
         builder.<String>withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getAgencyId,
+                RemoveDomainPermissionFromAgencyRequest::setAgencyId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getRoleId,
+                RemoveDomainPermissionFromAgencyRequest::setRoleId));
 
         // response
 
@@ -3277,9 +3059,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse> removeProjectPermissionFromAgency =
-        genForremoveProjectPermissionFromAgency();
+        genForRemoveProjectPermissionFromAgency();
 
-    private static HttpRequestDef<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse> genForremoveProjectPermissionFromAgency() {
+    private static HttpRequestDef<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse> genForRemoveProjectPermissionFromAgency() {
         // basic
         HttpRequestDef.Builder<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse> builder =
             HttpRequestDef
@@ -3295,23 +3077,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getProjectId,
+                RemoveProjectPermissionFromAgencyRequest::setProjectId));
         builder.<String>withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getAgencyId,
+                RemoveProjectPermissionFromAgencyRequest::setAgencyId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getRoleId,
+                RemoveProjectPermissionFromAgencyRequest::setRoleId));
 
         // response
 
@@ -3319,9 +3098,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse> revokeRoleFromAgencyOnEnterpriseProject =
-        genForrevokeRoleFromAgencyOnEnterpriseProject();
+        genForRevokeRoleFromAgencyOnEnterpriseProject();
 
-    private static HttpRequestDef<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse> genForrevokeRoleFromAgencyOnEnterpriseProject() {
+    private static HttpRequestDef<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse> genForRevokeRoleFromAgencyOnEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -3337,26 +3116,24 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateOrDelAgencyEpPolicyAssignmentReqBody.class),
-            f -> f.withMarshaller(RevokeRoleFromAgencyOnEnterpriseProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RevokeRoleFromAgencyOnEnterpriseProjectRequest::getBody,
+                RevokeRoleFromAgencyOnEnterpriseProjectRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(RevokeRoleFromAgencyOnEnterpriseProjectResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(RevokeRoleFromAgencyOnEnterpriseProjectResponse::getBody,
+                RevokeRoleFromAgencyOnEnterpriseProjectResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse> revokeRoleFromGroupOnEnterpriseProject =
-        genForrevokeRoleFromGroupOnEnterpriseProject();
+        genForRevokeRoleFromGroupOnEnterpriseProject();
 
-    private static HttpRequestDef<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse> genForrevokeRoleFromGroupOnEnterpriseProject() {
+    private static HttpRequestDef<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse> genForRevokeRoleFromGroupOnEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -3373,23 +3150,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeRoleFromGroupOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(RevokeRoleFromGroupOnEnterpriseProjectRequest::getEnterpriseProjectId,
+                RevokeRoleFromGroupOnEnterpriseProjectRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeRoleFromGroupOnEnterpriseProjectRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(RevokeRoleFromGroupOnEnterpriseProjectRequest::getGroupId,
+                RevokeRoleFromGroupOnEnterpriseProjectRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeRoleFromGroupOnEnterpriseProjectRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(RevokeRoleFromGroupOnEnterpriseProjectRequest::getRoleId,
+                RevokeRoleFromGroupOnEnterpriseProjectRequest::setRoleId));
 
         // response
 
@@ -3397,9 +3171,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse> revokeRoleFromUserOnEnterpriseProject =
-        genForrevokeRoleFromUserOnEnterpriseProject();
+        genForRevokeRoleFromUserOnEnterpriseProject();
 
-    private static HttpRequestDef<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse> genForrevokeRoleFromUserOnEnterpriseProject() {
+    private static HttpRequestDef<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse> genForRevokeRoleFromUserOnEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -3416,32 +3190,29 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeRoleFromUserOnEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(RevokeRoleFromUserOnEnterpriseProjectRequest::getEnterpriseProjectId,
+                RevokeRoleFromUserOnEnterpriseProjectRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeRoleFromUserOnEnterpriseProjectRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(RevokeRoleFromUserOnEnterpriseProjectRequest::getUserId,
+                RevokeRoleFromUserOnEnterpriseProjectRequest::setUserId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeRoleFromUserOnEnterpriseProjectRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(RevokeRoleFromUserOnEnterpriseProjectRequest::getRoleId,
+                RevokeRoleFromUserOnEnterpriseProjectRequest::setRoleId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> showAgency = genForshowAgency();
+    public static final HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> showAgency = genForShowAgency();
 
-    private static HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> genForshowAgency() {
+    private static HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> genForShowAgency() {
         // basic
         HttpRequestDef.Builder<ShowAgencyRequest, ShowAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgencyRequest.class, ShowAgencyResponse.class)
@@ -3454,9 +3225,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(ShowAgencyRequest::getAgencyId, ShowAgencyRequest::setAgencyId));
 
         // response
 
@@ -3464,9 +3233,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowCustomPolicyRequest, ShowCustomPolicyResponse> showCustomPolicy =
-        genForshowCustomPolicy();
+        genForShowCustomPolicy();
 
-    private static HttpRequestDef<ShowCustomPolicyRequest, ShowCustomPolicyResponse> genForshowCustomPolicy() {
+    private static HttpRequestDef<ShowCustomPolicyRequest, ShowCustomPolicyResponse> genForShowCustomPolicy() {
         // basic
         HttpRequestDef.Builder<ShowCustomPolicyRequest, ShowCustomPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCustomPolicyRequest.class, ShowCustomPolicyResponse.class)
@@ -3479,9 +3248,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomPolicyRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(ShowCustomPolicyRequest::getRoleId, ShowCustomPolicyRequest::setRoleId));
 
         // response
 
@@ -3489,9 +3256,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> showDomainApiAclPolicy =
-        genForshowDomainApiAclPolicy();
+        genForShowDomainApiAclPolicy();
 
-    private static HttpRequestDef<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> genForshowDomainApiAclPolicy() {
+    private static HttpRequestDef<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> genForShowDomainApiAclPolicy() {
         // basic
         HttpRequestDef.Builder<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDomainApiAclPolicyRequest.class, ShowDomainApiAclPolicyResponse.class)
@@ -3504,9 +3271,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainApiAclPolicyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainApiAclPolicyRequest::getDomainId,
+                ShowDomainApiAclPolicyRequest::setDomainId));
 
         // response
 
@@ -3514,9 +3280,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> showDomainConsoleAclPolicy =
-        genForshowDomainConsoleAclPolicy();
+        genForShowDomainConsoleAclPolicy();
 
-    private static HttpRequestDef<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> genForshowDomainConsoleAclPolicy() {
+    private static HttpRequestDef<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> genForShowDomainConsoleAclPolicy() {
         // basic
         HttpRequestDef.Builder<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> builder =
             HttpRequestDef
@@ -3532,9 +3298,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainConsoleAclPolicyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainConsoleAclPolicyRequest::getDomainId,
+                ShowDomainConsoleAclPolicyRequest::setDomainId));
 
         // response
 
@@ -3542,9 +3307,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> showDomainLoginPolicy =
-        genForshowDomainLoginPolicy();
+        genForShowDomainLoginPolicy();
 
-    private static HttpRequestDef<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> genForshowDomainLoginPolicy() {
+    private static HttpRequestDef<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> genForShowDomainLoginPolicy() {
         // basic
         HttpRequestDef.Builder<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDomainLoginPolicyRequest.class, ShowDomainLoginPolicyResponse.class)
@@ -3557,9 +3322,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainLoginPolicyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLoginPolicyRequest::getDomainId,
+                ShowDomainLoginPolicyRequest::setDomainId));
 
         // response
 
@@ -3567,9 +3331,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> showDomainPasswordPolicy =
-        genForshowDomainPasswordPolicy();
+        genForShowDomainPasswordPolicy();
 
-    private static HttpRequestDef<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> genForshowDomainPasswordPolicy() {
+    private static HttpRequestDef<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> genForShowDomainPasswordPolicy() {
         // basic
         HttpRequestDef.Builder<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> builder =
             HttpRequestDef
@@ -3583,9 +3347,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainPasswordPolicyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainPasswordPolicyRequest::getDomainId,
+                ShowDomainPasswordPolicyRequest::setDomainId));
 
         // response
 
@@ -3593,9 +3356,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> showDomainProtectPolicy =
-        genForshowDomainProtectPolicy();
+        genForShowDomainProtectPolicy();
 
-    private static HttpRequestDef<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> genForshowDomainProtectPolicy() {
+    private static HttpRequestDef<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> genForShowDomainProtectPolicy() {
         // basic
         HttpRequestDef.Builder<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDomainProtectPolicyRequest.class, ShowDomainProtectPolicyResponse.class)
@@ -3608,9 +3371,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainProtectPolicyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainProtectPolicyRequest::getDomainId,
+                ShowDomainProtectPolicyRequest::setDomainId));
 
         // response
 
@@ -3618,9 +3380,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuota =
-        genForshowDomainQuota();
+        genForShowDomainQuota();
 
-    private static HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> genForshowDomainQuota() {
+    private static HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> genForShowDomainQuota() {
         // basic
         HttpRequestDef.Builder<ShowDomainQuotaRequest, ShowDomainQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainQuotaRequest.class, ShowDomainQuotaResponse.class)
@@ -3633,16 +3395,12 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainQuotaRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainQuotaRequest::getDomainId, ShowDomainQuotaRequest::setDomainId));
         builder.<ShowDomainQuotaRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDomainQuotaRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowDomainQuotaRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowDomainQuotaRequest::getType, ShowDomainQuotaRequest::setType));
 
         // response
 
@@ -3650,9 +3408,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse> showDomainRoleAssignments =
-        genForshowDomainRoleAssignments();
+        genForShowDomainRoleAssignments();
 
-    private static HttpRequestDef<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse> genForshowDomainRoleAssignments() {
+    private static HttpRequestDef<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse> genForShowDomainRoleAssignments() {
         // basic
         HttpRequestDef.Builder<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse> builder =
             HttpRequestDef
@@ -3668,109 +3426,95 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getDomainId,
+                ShowDomainRoleAssignmentsRequest::setDomainId));
         builder.<String>withRequestField("role_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getRoleId,
+                ShowDomainRoleAssignmentsRequest::setRoleId));
         builder.<String>withRequestField("subject",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubject, (req, v) -> {
-                req.setSubject(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubject,
+                ShowDomainRoleAssignmentsRequest::setSubject));
         builder.<String>withRequestField("subject.user_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubjectUserId, (req, v) -> {
-                req.setSubjectUserId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubjectUserId,
+                ShowDomainRoleAssignmentsRequest::setSubjectUserId));
         builder.<String>withRequestField("subject.group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubjectGroupId, (req, v) -> {
-                req.setSubjectGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubjectGroupId,
+                ShowDomainRoleAssignmentsRequest::setSubjectGroupId));
         builder.<String>withRequestField("subject.agency_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubjectAgencyId, (req, v) -> {
-                req.setSubjectAgencyId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getSubjectAgencyId,
+                ShowDomainRoleAssignmentsRequest::setSubjectAgencyId));
         builder.<String>withRequestField("scope",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScope, (req, v) -> {
-                req.setScope(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScope,
+                ShowDomainRoleAssignmentsRequest::setScope));
         builder.<String>withRequestField("scope.project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScopeProjectId, (req, v) -> {
-                req.setScopeProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScopeProjectId,
+                ShowDomainRoleAssignmentsRequest::setScopeProjectId));
         builder.<String>withRequestField("scope.domain_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScopeDomainId, (req, v) -> {
-                req.setScopeDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScopeDomainId,
+                ShowDomainRoleAssignmentsRequest::setScopeDomainId));
         builder.<String>withRequestField("scope.enterprise_projects_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScopeEnterpriseProjectsId, (req, v) -> {
-                req.setScopeEnterpriseProjectsId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getScopeEnterpriseProjectsId,
+                ShowDomainRoleAssignmentsRequest::setScopeEnterpriseProjectsId));
         builder.<Boolean>withRequestField("is_inherited",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getIsInherited, (req, v) -> {
-                req.setIsInherited(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getIsInherited,
+                ShowDomainRoleAssignmentsRequest::setIsInherited));
         builder.<Boolean>withRequestField("include_group",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getIncludeGroup, (req, v) -> {
-                req.setIncludeGroup(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getIncludeGroup,
+                ShowDomainRoleAssignmentsRequest::setIncludeGroup));
         builder.<String>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getPage,
+                ShowDomainRoleAssignmentsRequest::setPage));
         builder.<String>withRequestField("per_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getPerPage, (req, v) -> {
-                req.setPerPage(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getPerPage,
+                ShowDomainRoleAssignmentsRequest::setPerPage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> showMetadata = genForshowMetadata();
+    public static final HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> showMetadata = genForShowMetadata();
 
-    private static HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> genForshowMetadata() {
+    private static HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> genForShowMetadata() {
         // basic
         HttpRequestDef.Builder<ShowMetadataRequest, ShowMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMetadataRequest.class, ShowMetadataResponse.class)
@@ -3783,16 +3527,12 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMetadataRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(ShowMetadataRequest::getIdpId, ShowMetadataRequest::setIdpId));
         builder.<String>withRequestField("protocol_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMetadataRequest::getProtocolId, (req, v) -> {
-                req.setProtocolId(v);
-            }));
+            f -> f.withMarshaller(ShowMetadataRequest::getProtocolId, ShowMetadataRequest::setProtocolId));
 
         // response
 
@@ -3800,9 +3540,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> showOpenIdConnectConfig =
-        genForshowOpenIdConnectConfig();
+        genForShowOpenIdConnectConfig();
 
-    private static HttpRequestDef<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> genForshowOpenIdConnectConfig() {
+    private static HttpRequestDef<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> genForShowOpenIdConnectConfig() {
         // basic
         HttpRequestDef.Builder<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowOpenIdConnectConfigRequest.class, ShowOpenIdConnectConfigResponse.class)
@@ -3815,9 +3555,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOpenIdConnectConfigRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(ShowOpenIdConnectConfigRequest::getIdpId, ShowOpenIdConnectConfigRequest::setIdpId));
 
         // response
 
@@ -3825,9 +3563,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> showProjectDetailsAndStatus =
-        genForshowProjectDetailsAndStatus();
+        genForShowProjectDetailsAndStatus();
 
-    private static HttpRequestDef<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> genForshowProjectDetailsAndStatus() {
+    private static HttpRequestDef<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> genForShowProjectDetailsAndStatus() {
         // basic
         HttpRequestDef.Builder<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> builder =
             HttpRequestDef
@@ -3843,9 +3581,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectDetailsAndStatusRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowProjectDetailsAndStatusRequest::getProjectId,
+                ShowProjectDetailsAndStatusRequest::setProjectId));
 
         // response
 
@@ -3853,9 +3590,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowProjectQuotaRequest, ShowProjectQuotaResponse> showProjectQuota =
-        genForshowProjectQuota();
+        genForShowProjectQuota();
 
-    private static HttpRequestDef<ShowProjectQuotaRequest, ShowProjectQuotaResponse> genForshowProjectQuota() {
+    private static HttpRequestDef<ShowProjectQuotaRequest, ShowProjectQuotaResponse> genForShowProjectQuota() {
         // basic
         HttpRequestDef.Builder<ShowProjectQuotaRequest, ShowProjectQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectQuotaRequest.class, ShowProjectQuotaResponse.class)
@@ -3868,18 +3605,16 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectQuotaRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowProjectQuotaRequest::getProjectId, ShowProjectQuotaRequest::setProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAgencyRequest, UpdateAgencyResponse> updateAgency = genForupdateAgency();
+    public static final HttpRequestDef<UpdateAgencyRequest, UpdateAgencyResponse> updateAgency = genForUpdateAgency();
 
-    private static HttpRequestDef<UpdateAgencyRequest, UpdateAgencyResponse> genForupdateAgency() {
+    private static HttpRequestDef<UpdateAgencyRequest, UpdateAgencyResponse> genForUpdateAgency() {
         // basic
         HttpRequestDef.Builder<UpdateAgencyRequest, UpdateAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAgencyRequest.class, UpdateAgencyResponse.class)
@@ -3892,16 +3627,12 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAgencyRequest::getAgencyId, (req, v) -> {
-                req.setAgencyId(v);
-            }));
+            f -> f.withMarshaller(UpdateAgencyRequest::getAgencyId, UpdateAgencyRequest::setAgencyId));
         builder.<UpdateAgencyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAgencyRequestBody.class),
-            f -> f.withMarshaller(UpdateAgencyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAgencyRequest::getBody, UpdateAgencyRequest::setBody));
 
         // response
 
@@ -3909,9 +3640,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> updateAgencyCustomPolicy =
-        genForupdateAgencyCustomPolicy();
+        genForUpdateAgencyCustomPolicy();
 
-    private static HttpRequestDef<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> genForupdateAgencyCustomPolicy() {
+    private static HttpRequestDef<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> genForUpdateAgencyCustomPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> builder =
             HttpRequestDef
@@ -3927,16 +3658,13 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAgencyCustomPolicyRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(UpdateAgencyCustomPolicyRequest::getRoleId,
+                UpdateAgencyCustomPolicyRequest::setRoleId));
         builder.<UpdateAgencyCustomPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAgencyCustomPolicyRequestBody.class),
-            f -> f.withMarshaller(UpdateAgencyCustomPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAgencyCustomPolicyRequest::getBody, UpdateAgencyCustomPolicyRequest::setBody));
 
         // response
 
@@ -3944,9 +3672,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> updateCloudServiceCustomPolicy =
-        genForupdateCloudServiceCustomPolicy();
+        genForUpdateCloudServiceCustomPolicy();
 
-    private static HttpRequestDef<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> genForupdateCloudServiceCustomPolicy() {
+    private static HttpRequestDef<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> genForUpdateCloudServiceCustomPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> builder =
             HttpRequestDef
@@ -3962,16 +3690,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCloudServiceCustomPolicyRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(UpdateCloudServiceCustomPolicyRequest::getRoleId,
+                UpdateCloudServiceCustomPolicyRequest::setRoleId));
         builder.<UpdateCloudServiceCustomPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCloudServiceCustomPolicyRequestBody.class),
-            f -> f.withMarshaller(UpdateCloudServiceCustomPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCloudServiceCustomPolicyRequest::getBody,
+                UpdateCloudServiceCustomPolicyRequest::setBody));
 
         // response
 
@@ -3979,9 +3705,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> updateDomainApiAclPolicy =
-        genForupdateDomainApiAclPolicy();
+        genForUpdateDomainApiAclPolicy();
 
-    private static HttpRequestDef<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> genForupdateDomainApiAclPolicy() {
+    private static HttpRequestDef<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> genForUpdateDomainApiAclPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> builder =
             HttpRequestDef
@@ -3995,16 +3721,13 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainApiAclPolicyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainApiAclPolicyRequest::getDomainId,
+                UpdateDomainApiAclPolicyRequest::setDomainId));
         builder.<UpdateDomainApiAclPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDomainApiAclPolicyRequestBody.class),
-            f -> f.withMarshaller(UpdateDomainApiAclPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainApiAclPolicyRequest::getBody, UpdateDomainApiAclPolicyRequest::setBody));
 
         // response
 
@@ -4012,9 +3735,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> updateDomainConsoleAclPolicy =
-        genForupdateDomainConsoleAclPolicy();
+        genForUpdateDomainConsoleAclPolicy();
 
-    private static HttpRequestDef<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> genForupdateDomainConsoleAclPolicy() {
+    private static HttpRequestDef<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> genForUpdateDomainConsoleAclPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> builder =
             HttpRequestDef
@@ -4030,16 +3753,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainConsoleAclPolicyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainConsoleAclPolicyRequest::getDomainId,
+                UpdateDomainConsoleAclPolicyRequest::setDomainId));
         builder.<UpdateDomainConsoleAclPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateDomainConsoleAclPolicyRequestBody.class),
-            f -> f.withMarshaller(UpdateDomainConsoleAclPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainConsoleAclPolicyRequest::getBody,
+                UpdateDomainConsoleAclPolicyRequest::setBody));
 
         // response
 
@@ -4047,9 +3768,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> updateDomainGroupInheritRole =
-        genForupdateDomainGroupInheritRole();
+        genForUpdateDomainGroupInheritRole();
 
-    private static HttpRequestDef<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> genForupdateDomainGroupInheritRole() {
+    private static HttpRequestDef<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> genForUpdateDomainGroupInheritRole() {
         // basic
         HttpRequestDef.Builder<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> builder =
             HttpRequestDef
@@ -4065,23 +3786,20 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainGroupInheritRoleRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainGroupInheritRoleRequest::getDomainId,
+                UpdateDomainGroupInheritRoleRequest::setDomainId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainGroupInheritRoleRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainGroupInheritRoleRequest::getGroupId,
+                UpdateDomainGroupInheritRoleRequest::setGroupId));
         builder.<String>withRequestField("role_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainGroupInheritRoleRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainGroupInheritRoleRequest::getRoleId,
+                UpdateDomainGroupInheritRoleRequest::setRoleId));
 
         // response
 
@@ -4089,9 +3807,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> updateDomainLoginPolicy =
-        genForupdateDomainLoginPolicy();
+        genForUpdateDomainLoginPolicy();
 
-    private static HttpRequestDef<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> genForupdateDomainLoginPolicy() {
+    private static HttpRequestDef<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> genForUpdateDomainLoginPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateDomainLoginPolicyRequest.class, UpdateDomainLoginPolicyResponse.class)
@@ -4104,16 +3822,13 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainLoginPolicyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainLoginPolicyRequest::getDomainId,
+                UpdateDomainLoginPolicyRequest::setDomainId));
         builder.<UpdateDomainLoginPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDomainLoginPolicyRequestBody.class),
-            f -> f.withMarshaller(UpdateDomainLoginPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainLoginPolicyRequest::getBody, UpdateDomainLoginPolicyRequest::setBody));
 
         // response
 
@@ -4121,9 +3836,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> updateDomainPasswordPolicy =
-        genForupdateDomainPasswordPolicy();
+        genForUpdateDomainPasswordPolicy();
 
-    private static HttpRequestDef<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> genForupdateDomainPasswordPolicy() {
+    private static HttpRequestDef<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> genForUpdateDomainPasswordPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> builder =
             HttpRequestDef
@@ -4139,16 +3854,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainPasswordPolicyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainPasswordPolicyRequest::getDomainId,
+                UpdateDomainPasswordPolicyRequest::setDomainId));
         builder.<UpdateDomainPasswordPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDomainPasswordPolicyRequestBody.class),
-            f -> f.withMarshaller(UpdateDomainPasswordPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainPasswordPolicyRequest::getBody,
+                UpdateDomainPasswordPolicyRequest::setBody));
 
         // response
 
@@ -4156,9 +3869,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> updateDomainProtectPolicy =
-        genForupdateDomainProtectPolicy();
+        genForUpdateDomainProtectPolicy();
 
-    private static HttpRequestDef<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> genForupdateDomainProtectPolicy() {
+    private static HttpRequestDef<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> genForUpdateDomainProtectPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> builder =
             HttpRequestDef
@@ -4174,16 +3887,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainProtectPolicyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainProtectPolicyRequest::getDomainId,
+                UpdateDomainProtectPolicyRequest::setDomainId));
         builder.<UpdateDomainProtectPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDomainProtectPolicyRequestBody.class),
-            f -> f.withMarshaller(UpdateDomainProtectPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainProtectPolicyRequest::getBody,
+                UpdateDomainProtectPolicyRequest::setBody));
 
         // response
 
@@ -4191,9 +3902,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> updateOpenIdConnectConfig =
-        genForupdateOpenIdConnectConfig();
+        genForUpdateOpenIdConnectConfig();
 
-    private static HttpRequestDef<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> genForupdateOpenIdConnectConfig() {
+    private static HttpRequestDef<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> genForUpdateOpenIdConnectConfig() {
         // basic
         HttpRequestDef.Builder<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> builder =
             HttpRequestDef
@@ -4209,16 +3920,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateOpenIdConnectConfigRequest::getIdpId, (req, v) -> {
-                req.setIdpId(v);
-            }));
+            f -> f.withMarshaller(UpdateOpenIdConnectConfigRequest::getIdpId,
+                UpdateOpenIdConnectConfigRequest::setIdpId));
         builder.<UpdateOpenIdConnectConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateOpenIdConnectConfigRequestBody.class),
-            f -> f.withMarshaller(UpdateOpenIdConnectConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateOpenIdConnectConfigRequest::getBody,
+                UpdateOpenIdConnectConfigRequest::setBody));
 
         // response
 
@@ -4226,9 +3935,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateProjectStatusRequest, UpdateProjectStatusResponse> updateProjectStatus =
-        genForupdateProjectStatus();
+        genForUpdateProjectStatus();
 
-    private static HttpRequestDef<UpdateProjectStatusRequest, UpdateProjectStatusResponse> genForupdateProjectStatus() {
+    private static HttpRequestDef<UpdateProjectStatusRequest, UpdateProjectStatusResponse> genForUpdateProjectStatus() {
         // basic
         HttpRequestDef.Builder<UpdateProjectStatusRequest, UpdateProjectStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProjectStatusRequest.class, UpdateProjectStatusResponse.class)
@@ -4241,16 +3950,12 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProjectStatusRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateProjectStatusRequest::getProjectId, UpdateProjectStatusRequest::setProjectId));
         builder.<UpdateProjectStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProjectStatusRequestBody.class),
-            f -> f.withMarshaller(UpdateProjectStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProjectStatusRequest::getBody, UpdateProjectStatusRequest::setBody));
 
         // response
 
@@ -4258,9 +3963,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> createPermanentAccessKey =
-        genForcreatePermanentAccessKey();
+        genForCreatePermanentAccessKey();
 
-    private static HttpRequestDef<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> genForcreatePermanentAccessKey() {
+    private static HttpRequestDef<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> genForCreatePermanentAccessKey() {
         // basic
         HttpRequestDef.Builder<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> builder =
             HttpRequestDef
@@ -4274,9 +3979,7 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePermanentAccessKeyRequestBody.class),
-            f -> f.withMarshaller(CreatePermanentAccessKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePermanentAccessKeyRequest::getBody, CreatePermanentAccessKeyRequest::setBody));
 
         // response
 
@@ -4284,9 +3987,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse> createTemporaryAccessKeyByAgency =
-        genForcreateTemporaryAccessKeyByAgency();
+        genForCreateTemporaryAccessKeyByAgency();
 
-    private static HttpRequestDef<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse> genForcreateTemporaryAccessKeyByAgency() {
+    private static HttpRequestDef<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse> genForCreateTemporaryAccessKeyByAgency() {
         // basic
         HttpRequestDef.Builder<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse> builder =
             HttpRequestDef
@@ -4302,9 +4005,8 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTemporaryAccessKeyByAgencyRequestBody.class),
-            f -> f.withMarshaller(CreateTemporaryAccessKeyByAgencyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTemporaryAccessKeyByAgencyRequest::getBody,
+                CreateTemporaryAccessKeyByAgencyRequest::setBody));
 
         // response
 
@@ -4312,9 +4014,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse> createTemporaryAccessKeyByToken =
-        genForcreateTemporaryAccessKeyByToken();
+        genForCreateTemporaryAccessKeyByToken();
 
-    private static HttpRequestDef<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse> genForcreateTemporaryAccessKeyByToken() {
+    private static HttpRequestDef<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse> genForCreateTemporaryAccessKeyByToken() {
         // basic
         HttpRequestDef.Builder<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse> builder =
             HttpRequestDef
@@ -4330,9 +4032,8 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTemporaryAccessKeyByTokenRequestBody.class),
-            f -> f.withMarshaller(CreateTemporaryAccessKeyByTokenRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTemporaryAccessKeyByTokenRequest::getBody,
+                CreateTemporaryAccessKeyByTokenRequest::setBody));
 
         // response
 
@@ -4340,9 +4041,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> deletePermanentAccessKey =
-        genFordeletePermanentAccessKey();
+        genForDeletePermanentAccessKey();
 
-    private static HttpRequestDef<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> genFordeletePermanentAccessKey() {
+    private static HttpRequestDef<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> genForDeletePermanentAccessKey() {
         // basic
         HttpRequestDef.Builder<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> builder =
             HttpRequestDef
@@ -4358,9 +4059,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePermanentAccessKeyRequest::getAccessKey, (req, v) -> {
-                req.setAccessKey(v);
-            }));
+            f -> f.withMarshaller(DeletePermanentAccessKeyRequest::getAccessKey,
+                DeletePermanentAccessKeyRequest::setAccessKey));
 
         // response
 
@@ -4368,9 +4068,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> listPermanentAccessKeys =
-        genForlistPermanentAccessKeys();
+        genForListPermanentAccessKeys();
 
-    private static HttpRequestDef<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> genForlistPermanentAccessKeys() {
+    private static HttpRequestDef<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> genForListPermanentAccessKeys() {
         // basic
         HttpRequestDef.Builder<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListPermanentAccessKeysRequest.class, ListPermanentAccessKeysResponse.class)
@@ -4383,9 +4083,8 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermanentAccessKeysRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(ListPermanentAccessKeysRequest::getUserId,
+                ListPermanentAccessKeysRequest::setUserId));
 
         // response
 
@@ -4393,9 +4092,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> showPermanentAccessKey =
-        genForshowPermanentAccessKey();
+        genForShowPermanentAccessKey();
 
-    private static HttpRequestDef<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> genForshowPermanentAccessKey() {
+    private static HttpRequestDef<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> genForShowPermanentAccessKey() {
         // basic
         HttpRequestDef.Builder<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPermanentAccessKeyRequest.class, ShowPermanentAccessKeyResponse.class)
@@ -4408,9 +4107,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPermanentAccessKeyRequest::getAccessKey, (req, v) -> {
-                req.setAccessKey(v);
-            }));
+            f -> f.withMarshaller(ShowPermanentAccessKeyRequest::getAccessKey,
+                ShowPermanentAccessKeyRequest::setAccessKey));
 
         // response
 
@@ -4418,9 +4116,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> updatePermanentAccessKey =
-        genForupdatePermanentAccessKey();
+        genForUpdatePermanentAccessKey();
 
-    private static HttpRequestDef<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> genForupdatePermanentAccessKey() {
+    private static HttpRequestDef<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> genForUpdatePermanentAccessKey() {
         // basic
         HttpRequestDef.Builder<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> builder =
             HttpRequestDef
@@ -4434,16 +4132,13 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePermanentAccessKeyRequest::getAccessKey, (req, v) -> {
-                req.setAccessKey(v);
-            }));
+            f -> f.withMarshaller(UpdatePermanentAccessKeyRequest::getAccessKey,
+                UpdatePermanentAccessKeyRequest::setAccessKey));
         builder.<UpdatePermanentAccessKeyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePermanentAccessKeyRequestBody.class),
-            f -> f.withMarshaller(UpdatePermanentAccessKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePermanentAccessKeyRequest::getBody, UpdatePermanentAccessKeyRequest::setBody));
 
         // response
 
@@ -4451,9 +4146,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateBindingDeviceRequest, CreateBindingDeviceResponse> createBindingDevice =
-        genForcreateBindingDevice();
+        genForCreateBindingDevice();
 
-    private static HttpRequestDef<CreateBindingDeviceRequest, CreateBindingDeviceResponse> genForcreateBindingDevice() {
+    private static HttpRequestDef<CreateBindingDeviceRequest, CreateBindingDeviceResponse> genForCreateBindingDevice() {
         // basic
         HttpRequestDef.Builder<CreateBindingDeviceRequest, CreateBindingDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateBindingDeviceRequest.class, CreateBindingDeviceResponse.class)
@@ -4466,9 +4161,7 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BindMfaDevice.class),
-            f -> f.withMarshaller(CreateBindingDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBindingDeviceRequest::getBody, CreateBindingDeviceRequest::setBody));
 
         // response
 
@@ -4476,9 +4169,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<CreateMfaDeviceRequest, CreateMfaDeviceResponse> createMfaDevice =
-        genForcreateMfaDevice();
+        genForCreateMfaDevice();
 
-    private static HttpRequestDef<CreateMfaDeviceRequest, CreateMfaDeviceResponse> genForcreateMfaDevice() {
+    private static HttpRequestDef<CreateMfaDeviceRequest, CreateMfaDeviceResponse> genForCreateMfaDevice() {
         // basic
         HttpRequestDef.Builder<CreateMfaDeviceRequest, CreateMfaDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMfaDeviceRequest.class, CreateMfaDeviceResponse.class)
@@ -4491,18 +4184,16 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMfaDeviceReq.class),
-            f -> f.withMarshaller(CreateMfaDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMfaDeviceRequest::getBody, CreateMfaDeviceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateUserRequest, CreateUserResponse> createUser = genForcreateUser();
+    public static final HttpRequestDef<CreateUserRequest, CreateUserResponse> createUser = genForCreateUser();
 
-    private static HttpRequestDef<CreateUserRequest, CreateUserResponse> genForcreateUser() {
+    private static HttpRequestDef<CreateUserRequest, CreateUserResponse> genForCreateUser() {
         // basic
         HttpRequestDef.Builder<CreateUserRequest, CreateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateUserRequest.class, CreateUserResponse.class)
@@ -4515,9 +4206,7 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateUserRequestBody.class),
-            f -> f.withMarshaller(CreateUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateUserRequest::getBody, CreateUserRequest::setBody));
 
         // response
 
@@ -4525,9 +4214,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> deleteBindingDevice =
-        genFordeleteBindingDevice();
+        genForDeleteBindingDevice();
 
-    private static HttpRequestDef<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> genFordeleteBindingDevice() {
+    private static HttpRequestDef<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> genForDeleteBindingDevice() {
         // basic
         HttpRequestDef.Builder<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, DeleteBindingDeviceRequest.class, DeleteBindingDeviceResponse.class)
@@ -4540,9 +4229,7 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UnbindMfaDevice.class),
-            f -> f.withMarshaller(DeleteBindingDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteBindingDeviceRequest::getBody, DeleteBindingDeviceRequest::setBody));
 
         // response
 
@@ -4550,9 +4237,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> deleteMfaDevice =
-        genFordeleteMfaDevice();
+        genForDeleteMfaDevice();
 
-    private static HttpRequestDef<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> genFordeleteMfaDevice() {
+    private static HttpRequestDef<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> genForDeleteMfaDevice() {
         // basic
         HttpRequestDef.Builder<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMfaDeviceRequest.class, DeleteMfaDeviceResponse.class)
@@ -4565,16 +4252,12 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMfaDeviceRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(DeleteMfaDeviceRequest::getUserId, DeleteMfaDeviceRequest::setUserId));
         builder.<String>withRequestField("serial_number",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMfaDeviceRequest::getSerialNumber, (req, v) -> {
-                req.setSerialNumber(v);
-            }));
+            f -> f.withMarshaller(DeleteMfaDeviceRequest::getSerialNumber, DeleteMfaDeviceRequest::setSerialNumber));
 
         // response
 
@@ -4582,9 +4265,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCreateUserRequest, KeystoneCreateUserResponse> keystoneCreateUser =
-        genForkeystoneCreateUser();
+        genForKeystoneCreateUser();
 
-    private static HttpRequestDef<KeystoneCreateUserRequest, KeystoneCreateUserResponse> genForkeystoneCreateUser() {
+    private static HttpRequestDef<KeystoneCreateUserRequest, KeystoneCreateUserResponse> genForKeystoneCreateUser() {
         // basic
         HttpRequestDef.Builder<KeystoneCreateUserRequest, KeystoneCreateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateUserRequest.class, KeystoneCreateUserResponse.class)
@@ -4597,9 +4280,7 @@ public class IamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneCreateUserRequestBody.class),
-            f -> f.withMarshaller(KeystoneCreateUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateUserRequest::getBody, KeystoneCreateUserRequest::setBody));
 
         // response
 
@@ -4607,9 +4288,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> keystoneDeleteUser =
-        genForkeystoneDeleteUser();
+        genForKeystoneDeleteUser();
 
-    private static HttpRequestDef<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> genForkeystoneDeleteUser() {
+    private static HttpRequestDef<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> genForKeystoneDeleteUser() {
         // basic
         HttpRequestDef.Builder<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteUserRequest.class, KeystoneDeleteUserResponse.class)
@@ -4622,9 +4303,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneDeleteUserRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(KeystoneDeleteUserRequest::getUserId, KeystoneDeleteUserRequest::setUserId));
 
         // response
 
@@ -4632,9 +4311,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> keystoneListGroupsForUser =
-        genForkeystoneListGroupsForUser();
+        genForKeystoneListGroupsForUser();
 
-    private static HttpRequestDef<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> genForkeystoneListGroupsForUser() {
+    private static HttpRequestDef<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> genForKeystoneListGroupsForUser() {
         // basic
         HttpRequestDef.Builder<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> builder =
             HttpRequestDef
@@ -4650,9 +4329,8 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListGroupsForUserRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListGroupsForUserRequest::getUserId,
+                KeystoneListGroupsForUserRequest::setUserId));
 
         // response
 
@@ -4660,9 +4338,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneListUsersRequest, KeystoneListUsersResponse> keystoneListUsers =
-        genForkeystoneListUsers();
+        genForKeystoneListUsers();
 
-    private static HttpRequestDef<KeystoneListUsersRequest, KeystoneListUsersResponse> genForkeystoneListUsers() {
+    private static HttpRequestDef<KeystoneListUsersRequest, KeystoneListUsersResponse> genForKeystoneListUsers() {
         // basic
         HttpRequestDef.Builder<KeystoneListUsersRequest, KeystoneListUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListUsersRequest.class, KeystoneListUsersResponse.class)
@@ -4675,30 +4353,23 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListUsersRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(KeystoneListUsersRequest::getDomainId, KeystoneListUsersRequest::setDomainId));
         builder.<Boolean>withRequestField("enabled",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(KeystoneListUsersRequest::getEnabled, (req, v) -> {
-                req.setEnabled(v);
-            }));
+            f -> f.withMarshaller(KeystoneListUsersRequest::getEnabled, KeystoneListUsersRequest::setEnabled));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListUsersRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(KeystoneListUsersRequest::getName, KeystoneListUsersRequest::setName));
         builder.<String>withRequestField("password_expires_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListUsersRequest::getPasswordExpiresAt, (req, v) -> {
-                req.setPasswordExpiresAt(v);
-            }));
+            f -> f.withMarshaller(KeystoneListUsersRequest::getPasswordExpiresAt,
+                KeystoneListUsersRequest::setPasswordExpiresAt));
 
         // response
 
@@ -4706,9 +4377,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneShowUserRequest, KeystoneShowUserResponse> keystoneShowUser =
-        genForkeystoneShowUser();
+        genForKeystoneShowUser();
 
-    private static HttpRequestDef<KeystoneShowUserRequest, KeystoneShowUserResponse> genForkeystoneShowUser() {
+    private static HttpRequestDef<KeystoneShowUserRequest, KeystoneShowUserResponse> genForKeystoneShowUser() {
         // basic
         HttpRequestDef.Builder<KeystoneShowUserRequest, KeystoneShowUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowUserRequest.class, KeystoneShowUserResponse.class)
@@ -4721,9 +4392,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneShowUserRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(KeystoneShowUserRequest::getUserId, KeystoneShowUserRequest::setUserId));
 
         // response
 
@@ -4731,9 +4400,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> keystoneUpdateUserByAdmin =
-        genForkeystoneUpdateUserByAdmin();
+        genForKeystoneUpdateUserByAdmin();
 
-    private static HttpRequestDef<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> genForkeystoneUpdateUserByAdmin() {
+    private static HttpRequestDef<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> genForKeystoneUpdateUserByAdmin() {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> builder =
             HttpRequestDef
@@ -4749,16 +4418,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneUpdateUserByAdminRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateUserByAdminRequest::getUserId,
+                KeystoneUpdateUserByAdminRequest::setUserId));
         builder.<KeystoneUpdateUserByAdminRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneUpdateUserByAdminRequestBody.class),
-            f -> f.withMarshaller(KeystoneUpdateUserByAdminRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateUserByAdminRequest::getBody,
+                KeystoneUpdateUserByAdminRequest::setBody));
 
         // response
 
@@ -4766,9 +4433,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> keystoneUpdateUserPassword =
-        genForkeystoneUpdateUserPassword();
+        genForKeystoneUpdateUserPassword();
 
-    private static HttpRequestDef<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> genForkeystoneUpdateUserPassword() {
+    private static HttpRequestDef<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> genForKeystoneUpdateUserPassword() {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> builder =
             HttpRequestDef
@@ -4784,16 +4451,14 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneUpdateUserPasswordRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateUserPasswordRequest::getUserId,
+                KeystoneUpdateUserPasswordRequest::setUserId));
         builder.<KeystoneUpdateUserPasswordRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneUpdateUserPasswordRequestBody.class),
-            f -> f.withMarshaller(KeystoneUpdateUserPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneUpdateUserPasswordRequest::getBody,
+                KeystoneUpdateUserPasswordRequest::setBody));
 
         // response
 
@@ -4801,9 +4466,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> listUserLoginProtects =
-        genForlistUserLoginProtects();
+        genForListUserLoginProtects();
 
-    private static HttpRequestDef<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> genForlistUserLoginProtects() {
+    private static HttpRequestDef<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> genForListUserLoginProtects() {
         // basic
         HttpRequestDef.Builder<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListUserLoginProtectsRequest.class, ListUserLoginProtectsResponse.class)
@@ -4819,9 +4484,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> listUserMfaDevices =
-        genForlistUserMfaDevices();
+        genForListUserMfaDevices();
 
-    private static HttpRequestDef<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> genForlistUserMfaDevices() {
+    private static HttpRequestDef<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> genForListUserMfaDevices() {
         // basic
         HttpRequestDef.Builder<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUserMfaDevicesRequest.class, ListUserMfaDevicesResponse.class)
@@ -4836,9 +4501,9 @@ public class IamMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowUserRequest, ShowUserResponse> showUser = genForshowUser();
+    public static final HttpRequestDef<ShowUserRequest, ShowUserResponse> showUser = genForShowUser();
 
-    private static HttpRequestDef<ShowUserRequest, ShowUserResponse> genForshowUser() {
+    private static HttpRequestDef<ShowUserRequest, ShowUserResponse> genForShowUser() {
         // basic
         HttpRequestDef.Builder<ShowUserRequest, ShowUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserRequest.class, ShowUserResponse.class)
@@ -4851,9 +4516,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUserRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(ShowUserRequest::getUserId, ShowUserRequest::setUserId));
 
         // response
 
@@ -4861,9 +4524,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> showUserLoginProtect =
-        genForshowUserLoginProtect();
+        genForShowUserLoginProtect();
 
-    private static HttpRequestDef<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> genForshowUserLoginProtect() {
+    private static HttpRequestDef<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> genForShowUserLoginProtect() {
         // basic
         HttpRequestDef.Builder<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowUserLoginProtectRequest.class, ShowUserLoginProtectResponse.class)
@@ -4876,9 +4539,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUserLoginProtectRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(ShowUserLoginProtectRequest::getUserId, ShowUserLoginProtectRequest::setUserId));
 
         // response
 
@@ -4886,9 +4547,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> showUserMfaDevice =
-        genForshowUserMfaDevice();
+        genForShowUserMfaDevice();
 
-    private static HttpRequestDef<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> genForshowUserMfaDevice() {
+    private static HttpRequestDef<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> genForShowUserMfaDevice() {
         // basic
         HttpRequestDef.Builder<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserMfaDeviceRequest.class, ShowUserMfaDeviceResponse.class)
@@ -4901,9 +4562,7 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUserMfaDeviceRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(ShowUserMfaDeviceRequest::getUserId, ShowUserMfaDeviceRequest::setUserId));
 
         // response
 
@@ -4911,9 +4570,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateLoginProtectRequest, UpdateLoginProtectResponse> updateLoginProtect =
-        genForupdateLoginProtect();
+        genForUpdateLoginProtect();
 
-    private static HttpRequestDef<UpdateLoginProtectRequest, UpdateLoginProtectResponse> genForupdateLoginProtect() {
+    private static HttpRequestDef<UpdateLoginProtectRequest, UpdateLoginProtectResponse> genForUpdateLoginProtect() {
         // basic
         HttpRequestDef.Builder<UpdateLoginProtectRequest, UpdateLoginProtectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLoginProtectRequest.class, UpdateLoginProtectResponse.class)
@@ -4926,25 +4585,21 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLoginProtectRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(UpdateLoginProtectRequest::getUserId, UpdateLoginProtectRequest::setUserId));
         builder.<UpdateLoginProjectReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLoginProjectReq.class),
-            f -> f.withMarshaller(UpdateLoginProtectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLoginProtectRequest::getBody, UpdateLoginProtectRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForupdateUser();
+    public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForUpdateUser();
 
-    private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForupdateUser() {
+    private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForUpdateUser() {
         // basic
         HttpRequestDef.Builder<UpdateUserRequest, UpdateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateUserRequest.class, UpdateUserResponse.class)
@@ -4957,16 +4612,12 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getUserId, UpdateUserRequest::setUserId));
         builder.<UpdateUserRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateUserRequestBody.class),
-            f -> f.withMarshaller(UpdateUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getBody, UpdateUserRequest::setBody));
 
         // response
 
@@ -4974,9 +4625,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<UpdateUserInformationRequest, UpdateUserInformationResponse> updateUserInformation =
-        genForupdateUserInformation();
+        genForUpdateUserInformation();
 
-    private static HttpRequestDef<UpdateUserInformationRequest, UpdateUserInformationResponse> genForupdateUserInformation() {
+    private static HttpRequestDef<UpdateUserInformationRequest, UpdateUserInformationResponse> genForUpdateUserInformation() {
         // basic
         HttpRequestDef.Builder<UpdateUserInformationRequest, UpdateUserInformationResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateUserInformationRequest.class, UpdateUserInformationResponse.class)
@@ -4989,16 +4640,12 @@ public class IamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserInformationRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(UpdateUserInformationRequest::getUserId, UpdateUserInformationRequest::setUserId));
         builder.<UpdateUserInformationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateUserInformationRequestBody.class),
-            f -> f.withMarshaller(UpdateUserInformationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateUserInformationRequest::getBody, UpdateUserInformationRequest::setBody));
 
         // response
 
@@ -5006,9 +4653,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> keystoneCreateAgencyToken =
-        genForkeystoneCreateAgencyToken();
+        genForKeystoneCreateAgencyToken();
 
-    private static HttpRequestDef<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> genForkeystoneCreateAgencyToken() {
+    private static HttpRequestDef<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> genForKeystoneCreateAgencyToken() {
         // basic
         HttpRequestDef.Builder<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> builder =
             HttpRequestDef
@@ -5024,16 +4671,14 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCreateAgencyTokenRequest::getNocatalog, (req, v) -> {
-                req.setNocatalog(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateAgencyTokenRequest::getNocatalog,
+                KeystoneCreateAgencyTokenRequest::setNocatalog));
         builder.<KeystoneCreateAgencyTokenRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneCreateAgencyTokenRequestBody.class),
-            f -> f.withMarshaller(KeystoneCreateAgencyTokenRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateAgencyTokenRequest::getBody,
+                KeystoneCreateAgencyTokenRequest::setBody));
 
         // response
 
@@ -5047,9 +4692,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> keystoneCreateUserTokenByPassword =
-        genForkeystoneCreateUserTokenByPassword();
+        genForKeystoneCreateUserTokenByPassword();
 
-    private static HttpRequestDef<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> genForkeystoneCreateUserTokenByPassword() {
+    private static HttpRequestDef<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> genForKeystoneCreateUserTokenByPassword() {
         // basic
         HttpRequestDef.Builder<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> builder =
             HttpRequestDef
@@ -5065,16 +4710,14 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordRequest::getNocatalog, (req, v) -> {
-                req.setNocatalog(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordRequest::getNocatalog,
+                KeystoneCreateUserTokenByPasswordRequest::setNocatalog));
         builder.<KeystoneCreateUserTokenByPasswordRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneCreateUserTokenByPasswordRequestBody.class),
-            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordRequest::getBody,
+                KeystoneCreateUserTokenByPasswordRequest::setBody));
 
         // response
 
@@ -5088,9 +4731,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse> keystoneCreateUserTokenByPasswordAndMfa =
-        genForkeystoneCreateUserTokenByPasswordAndMfa();
+        genForKeystoneCreateUserTokenByPasswordAndMfa();
 
-    private static HttpRequestDef<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse> genForkeystoneCreateUserTokenByPasswordAndMfa() {
+    private static HttpRequestDef<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse> genForKeystoneCreateUserTokenByPasswordAndMfa() {
         // basic
         HttpRequestDef.Builder<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse> builder =
             HttpRequestDef
@@ -5106,16 +4749,14 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordAndMfaRequest::getNocatalog, (req, v) -> {
-                req.setNocatalog(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordAndMfaRequest::getNocatalog,
+                KeystoneCreateUserTokenByPasswordAndMfaRequest::setNocatalog));
         builder.<KeystoneCreateUserTokenByPasswordAndMfaRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeystoneCreateUserTokenByPasswordAndMfaRequestBody.class),
-            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordAndMfaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordAndMfaRequest::getBody,
+                KeystoneCreateUserTokenByPasswordAndMfaRequest::setBody));
 
         // response
 
@@ -5129,9 +4770,9 @@ public class IamMeta {
     }
 
     public static final HttpRequestDef<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> keystoneValidateToken =
-        genForkeystoneValidateToken();
+        genForKeystoneValidateToken();
 
-    private static HttpRequestDef<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> genForkeystoneValidateToken() {
+    private static HttpRequestDef<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> genForKeystoneValidateToken() {
         // basic
         HttpRequestDef.Builder<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneValidateTokenRequest.class, KeystoneValidateTokenResponse.class)
@@ -5144,16 +4785,14 @@ public class IamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneValidateTokenRequest::getNocatalog, (req, v) -> {
-                req.setNocatalog(v);
-            }));
+            f -> f.withMarshaller(KeystoneValidateTokenRequest::getNocatalog,
+                KeystoneValidateTokenRequest::setNocatalog));
         builder.<String>withRequestField("X-Subject-Token",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneValidateTokenRequest::getXSubjectToken, (req, v) -> {
-                req.setXSubjectToken(v);
-            }));
+            f -> f.withMarshaller(KeystoneValidateTokenRequest::getXSubjectToken,
+                KeystoneValidateTokenRequest::setXSubjectToken));
 
         // response
 

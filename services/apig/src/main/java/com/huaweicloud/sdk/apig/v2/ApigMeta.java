@@ -467,9 +467,9 @@ import java.util.Map;
 public class ApigMeta {
 
     public static final HttpRequestDef<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse> acceptOrRejectEndpointConnections =
-        genForacceptOrRejectEndpointConnections();
+        genForAcceptOrRejectEndpointConnections();
 
-    private static HttpRequestDef<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse> genForacceptOrRejectEndpointConnections() {
+    private static HttpRequestDef<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse> genForAcceptOrRejectEndpointConnections() {
         // basic
         HttpRequestDef.Builder<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse> builder =
             HttpRequestDef
@@ -485,16 +485,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptOrRejectEndpointConnectionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AcceptOrRejectEndpointConnectionsRequest::getInstanceId,
+                AcceptOrRejectEndpointConnectionsRequest::setInstanceId));
         builder.<ConnectionActionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConnectionActionReq.class),
-            f -> f.withMarshaller(AcceptOrRejectEndpointConnectionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AcceptOrRejectEndpointConnectionsRequest::getBody,
+                AcceptOrRejectEndpointConnectionsRequest::setBody));
 
         // response
 
@@ -507,9 +505,9 @@ public class ApigMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddEipV2Request, AddEipV2Response> addEipV2 = genForaddEipV2();
+    public static final HttpRequestDef<AddEipV2Request, AddEipV2Response> addEipV2 = genForAddEipV2();
 
-    private static HttpRequestDef<AddEipV2Request, AddEipV2Response> genForaddEipV2() {
+    private static HttpRequestDef<AddEipV2Request, AddEipV2Response> genForAddEipV2() {
         // basic
         HttpRequestDef.Builder<AddEipV2Request, AddEipV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AddEipV2Request.class, AddEipV2Response.class)
@@ -522,16 +520,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddEipV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddEipV2Request::getInstanceId, AddEipV2Request::setInstanceId));
         builder.<EipBindReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EipBindReq.class),
-            f -> f.withMarshaller(AddEipV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddEipV2Request::getBody, AddEipV2Request::setBody));
 
         // response
 
@@ -539,9 +533,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse> addEndpointPermissions =
-        genForaddEndpointPermissions();
+        genForAddEndpointPermissions();
 
-    private static HttpRequestDef<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse> genForaddEndpointPermissions() {
+    private static HttpRequestDef<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse> genForAddEndpointPermissions() {
         // basic
         HttpRequestDef.Builder<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddEndpointPermissionsRequest.class, AddEndpointPermissionsResponse.class)
@@ -554,16 +548,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddEndpointPermissionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddEndpointPermissionsRequest::getInstanceId,
+                AddEndpointPermissionsRequest::setInstanceId));
         builder.<EndpointPermissionList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EndpointPermissionList.class),
-            f -> f.withMarshaller(AddEndpointPermissionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddEndpointPermissionsRequest::getBody, AddEndpointPermissionsRequest::setBody));
 
         // response
 
@@ -577,9 +568,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AddEngressEipV2Request, AddEngressEipV2Response> addEngressEipV2 =
-        genForaddEngressEipV2();
+        genForAddEngressEipV2();
 
-    private static HttpRequestDef<AddEngressEipV2Request, AddEngressEipV2Response> genForaddEngressEipV2() {
+    private static HttpRequestDef<AddEngressEipV2Request, AddEngressEipV2Response> genForAddEngressEipV2() {
         // basic
         HttpRequestDef.Builder<AddEngressEipV2Request, AddEngressEipV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddEngressEipV2Request.class, AddEngressEipV2Response.class)
@@ -592,16 +583,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddEngressEipV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddEngressEipV2Request::getInstanceId, AddEngressEipV2Request::setInstanceId));
         builder.<OpenEngressEipReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenEngressEipReq.class),
-            f -> f.withMarshaller(AddEngressEipV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddEngressEipV2Request::getBody, AddEngressEipV2Request::setBody));
 
         // response
 
@@ -609,9 +596,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AddIngressEipV2Request, AddIngressEipV2Response> addIngressEipV2 =
-        genForaddIngressEipV2();
+        genForAddIngressEipV2();
 
-    private static HttpRequestDef<AddIngressEipV2Request, AddIngressEipV2Response> genForaddIngressEipV2() {
+    private static HttpRequestDef<AddIngressEipV2Request, AddIngressEipV2Response> genForAddIngressEipV2() {
         // basic
         HttpRequestDef.Builder<AddIngressEipV2Request, AddIngressEipV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddIngressEipV2Request.class, AddIngressEipV2Response.class)
@@ -624,16 +611,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddIngressEipV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddIngressEipV2Request::getInstanceId, AddIngressEipV2Request::setInstanceId));
         builder.<OpenIngressEipReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenIngressEipReq.class),
-            f -> f.withMarshaller(AddIngressEipV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddIngressEipV2Request::getBody, AddIngressEipV2Request::setBody));
 
         // response
 
@@ -641,9 +624,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> associateAppsForAppQuota =
-        genForassociateAppsForAppQuota();
+        genForAssociateAppsForAppQuota();
 
-    private static HttpRequestDef<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> genForassociateAppsForAppQuota() {
+    private static HttpRequestDef<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> genForAssociateAppsForAppQuota() {
         // basic
         HttpRequestDef.Builder<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> builder =
             HttpRequestDef
@@ -657,23 +640,19 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getInstanceId,
+                AssociateAppsForAppQuotaRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getAppQuotaId,
+                AssociateAppsForAppQuotaRequest::setAppQuotaId));
         builder.<CreateAppQuotaBindingApp>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppQuotaBindingApp.class),
-            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getBody, AssociateAppsForAppQuotaRequest::setBody));
 
         // response
 
@@ -681,9 +660,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AssociateCertificateV2Request, AssociateCertificateV2Response> associateCertificateV2 =
-        genForassociateCertificateV2();
+        genForAssociateCertificateV2();
 
-    private static HttpRequestDef<AssociateCertificateV2Request, AssociateCertificateV2Response> genForassociateCertificateV2() {
+    private static HttpRequestDef<AssociateCertificateV2Request, AssociateCertificateV2Response> genForAssociateCertificateV2() {
         // basic
         HttpRequestDef.Builder<AssociateCertificateV2Request, AssociateCertificateV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, AssociateCertificateV2Request.class, AssociateCertificateV2Response.class)
@@ -697,30 +676,25 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateCertificateV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateCertificateV2Request::getInstanceId,
+                AssociateCertificateV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateCertificateV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(AssociateCertificateV2Request::getGroupId,
+                AssociateCertificateV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateCertificateV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(AssociateCertificateV2Request::getDomainId,
+                AssociateCertificateV2Request::setDomainId));
         builder.<CertForm>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CertForm.class),
-            f -> f.withMarshaller(AssociateCertificateV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateCertificateV2Request::getBody, AssociateCertificateV2Request::setBody));
 
         // response
 
@@ -728,9 +702,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AssociateDomainV2Request, AssociateDomainV2Response> associateDomainV2 =
-        genForassociateDomainV2();
+        genForAssociateDomainV2();
 
-    private static HttpRequestDef<AssociateDomainV2Request, AssociateDomainV2Response> genForassociateDomainV2() {
+    private static HttpRequestDef<AssociateDomainV2Request, AssociateDomainV2Response> genForAssociateDomainV2() {
         // basic
         HttpRequestDef.Builder<AssociateDomainV2Request, AssociateDomainV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateDomainV2Request.class, AssociateDomainV2Response.class)
@@ -743,23 +717,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateDomainV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateDomainV2Request::getInstanceId, AssociateDomainV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateDomainV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(AssociateDomainV2Request::getGroupId, AssociateDomainV2Request::setGroupId));
         builder.<UrlDomainCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UrlDomainCreate.class),
-            f -> f.withMarshaller(AssociateDomainV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateDomainV2Request::getBody, AssociateDomainV2Request::setBody));
 
         // response
 
@@ -767,9 +735,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> associateSignatureKeyV2 =
-        genForassociateSignatureKeyV2();
+        genForAssociateSignatureKeyV2();
 
-    private static HttpRequestDef<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> genForassociateSignatureKeyV2() {
+    private static HttpRequestDef<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> genForAssociateSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, AssociateSignatureKeyV2Request.class, AssociateSignatureKeyV2Response.class)
@@ -782,16 +750,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateSignatureKeyV2Request::getInstanceId,
+                AssociateSignatureKeyV2Request::setInstanceId));
         builder.<SignApiBinding>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SignApiBinding.class),
-            f -> f.withMarshaller(AssociateSignatureKeyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateSignatureKeyV2Request::getBody, AssociateSignatureKeyV2Request::setBody));
 
         // response
 
@@ -799,9 +764,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AttachApiToPluginRequest, AttachApiToPluginResponse> attachApiToPlugin =
-        genForattachApiToPlugin();
+        genForAttachApiToPlugin();
 
-    private static HttpRequestDef<AttachApiToPluginRequest, AttachApiToPluginResponse> genForattachApiToPlugin() {
+    private static HttpRequestDef<AttachApiToPluginRequest, AttachApiToPluginResponse> genForAttachApiToPlugin() {
         // basic
         HttpRequestDef.Builder<AttachApiToPluginRequest, AttachApiToPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AttachApiToPluginRequest.class, AttachApiToPluginResponse.class)
@@ -814,23 +779,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachApiToPluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AttachApiToPluginRequest::getInstanceId, AttachApiToPluginRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachApiToPluginRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(AttachApiToPluginRequest::getPluginId, AttachApiToPluginRequest::setPluginId));
         builder.<PluginOperApiInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PluginOperApiInfo.class),
-            f -> f.withMarshaller(AttachApiToPluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachApiToPluginRequest::getBody, AttachApiToPluginRequest::setBody));
 
         // response
 
@@ -838,9 +797,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AttachPluginToApiRequest, AttachPluginToApiResponse> attachPluginToApi =
-        genForattachPluginToApi();
+        genForAttachPluginToApi();
 
-    private static HttpRequestDef<AttachPluginToApiRequest, AttachPluginToApiResponse> genForattachPluginToApi() {
+    private static HttpRequestDef<AttachPluginToApiRequest, AttachPluginToApiResponse> genForAttachPluginToApi() {
         // basic
         HttpRequestDef.Builder<AttachPluginToApiRequest, AttachPluginToApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AttachPluginToApiRequest.class, AttachPluginToApiResponse.class)
@@ -853,23 +812,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachPluginToApiRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AttachPluginToApiRequest::getInstanceId, AttachPluginToApiRequest::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachPluginToApiRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(AttachPluginToApiRequest::getApiId, AttachPluginToApiRequest::setApiId));
         builder.<ApiOperPluginInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiOperPluginInfo.class),
-            f -> f.withMarshaller(AttachPluginToApiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachPluginToApiRequest::getBody, AttachPluginToApiRequest::setBody));
 
         // response
 
@@ -877,9 +830,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse> batchCreateOrDeleteInstanceTags =
-        genForbatchCreateOrDeleteInstanceTags();
+        genForBatchCreateOrDeleteInstanceTags();
 
-    private static HttpRequestDef<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse> genForbatchCreateOrDeleteInstanceTags() {
+    private static HttpRequestDef<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse> genForBatchCreateOrDeleteInstanceTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse> builder =
             HttpRequestDef
@@ -895,25 +848,23 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteInstanceTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteInstanceTagsRequest::getInstanceId,
+                BatchCreateOrDeleteInstanceTagsRequest::setInstanceId));
         builder.<TmsUpdatePublicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TmsUpdatePublicReq.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteInstanceTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteInstanceTagsRequest::getBody,
+                BatchCreateOrDeleteInstanceTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckAppV2Request, CheckAppV2Response> checkAppV2 = genForcheckAppV2();
+    public static final HttpRequestDef<CheckAppV2Request, CheckAppV2Response> checkAppV2 = genForCheckAppV2();
 
-    private static HttpRequestDef<CheckAppV2Request, CheckAppV2Response> genForcheckAppV2() {
+    private static HttpRequestDef<CheckAppV2Request, CheckAppV2Response> genForCheckAppV2() {
         // basic
         HttpRequestDef.Builder<CheckAppV2Request, CheckAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckAppV2Request.class, CheckAppV2Response.class)
@@ -926,16 +877,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckAppV2Request::getInstanceId, CheckAppV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CheckAppV2Request::getAppId, CheckAppV2Request::setAppId));
 
         // response
 
@@ -943,9 +890,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateAnAppV2Request, CreateAnAppV2Response> createAnAppV2 =
-        genForcreateAnAppV2();
+        genForCreateAnAppV2();
 
-    private static HttpRequestDef<CreateAnAppV2Request, CreateAnAppV2Response> genForcreateAnAppV2() {
+    private static HttpRequestDef<CreateAnAppV2Request, CreateAnAppV2Response> genForCreateAnAppV2() {
         // basic
         HttpRequestDef.Builder<CreateAnAppV2Request, CreateAnAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAnAppV2Request.class, CreateAnAppV2Response.class)
@@ -958,16 +905,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAnAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAnAppV2Request::getInstanceId, CreateAnAppV2Request::setInstanceId));
         builder.<AppCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppCreate.class),
-            f -> f.withMarshaller(CreateAnAppV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAnAppV2Request::getBody, CreateAnAppV2Request::setBody));
 
         // response
 
@@ -975,9 +918,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2 =
-        genForcreateAppCodeAutoV2();
+        genForCreateAppCodeAutoV2();
 
-    private static HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> genForcreateAppCodeAutoV2() {
+    private static HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> genForCreateAppCodeAutoV2() {
         // basic
         HttpRequestDef.Builder<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateAppCodeAutoV2Request.class, CreateAppCodeAutoV2Response.class)
@@ -990,16 +933,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getInstanceId,
+                CreateAppCodeAutoV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getAppId, CreateAppCodeAutoV2Request::setAppId));
 
         // response
 
@@ -1007,9 +947,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2 =
-        genForcreateAppCodeV2();
+        genForCreateAppCodeV2();
 
-    private static HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> genForcreateAppCodeV2() {
+    private static HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> genForCreateAppCodeV2() {
         // basic
         HttpRequestDef.Builder<CreateAppCodeV2Request, CreateAppCodeV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppCodeV2Request.class, CreateAppCodeV2Response.class)
@@ -1022,23 +962,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAppCodeV2Request::getInstanceId, CreateAppCodeV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateAppCodeV2Request::getAppId, CreateAppCodeV2Request::setAppId));
         builder.<AppCodeCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppCodeCreate.class),
-            f -> f.withMarshaller(CreateAppCodeV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppCodeV2Request::getBody, CreateAppCodeV2Request::setBody));
 
         // response
 
@@ -1046,9 +980,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateAppQuotaRequest, CreateAppQuotaResponse> createAppQuota =
-        genForcreateAppQuota();
+        genForCreateAppQuota();
 
-    private static HttpRequestDef<CreateAppQuotaRequest, CreateAppQuotaResponse> genForcreateAppQuota() {
+    private static HttpRequestDef<CreateAppQuotaRequest, CreateAppQuotaResponse> genForCreateAppQuota() {
         // basic
         HttpRequestDef.Builder<CreateAppQuotaRequest, CreateAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppQuotaRequest.class, CreateAppQuotaResponse.class)
@@ -1061,16 +995,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAppQuotaRequest::getInstanceId, CreateAppQuotaRequest::setInstanceId));
         builder.<AppQuotaCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppQuotaCreate.class),
-            f -> f.withMarshaller(CreateAppQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppQuotaRequest::getBody, CreateAppQuotaRequest::setBody));
 
         // response
 
@@ -1078,9 +1008,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2 =
-        genForcreateCustomAuthorizerV2();
+        genForCreateCustomAuthorizerV2();
 
-    private static HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> genForcreateCustomAuthorizerV2() {
+    private static HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> genForCreateCustomAuthorizerV2() {
         // basic
         HttpRequestDef.Builder<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> builder =
             HttpRequestDef
@@ -1094,16 +1024,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getInstanceId,
+                CreateCustomAuthorizerV2Request::setInstanceId));
         builder.<AuthorizerCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AuthorizerCreate.class),
-            f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getBody, CreateCustomAuthorizerV2Request::setBody));
 
         // response
 
@@ -1111,9 +1038,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateEnvironmentV2Request, CreateEnvironmentV2Response> createEnvironmentV2 =
-        genForcreateEnvironmentV2();
+        genForCreateEnvironmentV2();
 
-    private static HttpRequestDef<CreateEnvironmentV2Request, CreateEnvironmentV2Response> genForcreateEnvironmentV2() {
+    private static HttpRequestDef<CreateEnvironmentV2Request, CreateEnvironmentV2Response> genForCreateEnvironmentV2() {
         // basic
         HttpRequestDef.Builder<CreateEnvironmentV2Request, CreateEnvironmentV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEnvironmentV2Request.class, CreateEnvironmentV2Response.class)
@@ -1126,16 +1053,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEnvironmentV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentV2Request::getInstanceId,
+                CreateEnvironmentV2Request::setInstanceId));
         builder.<EnvCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvCreate.class),
-            f -> f.withMarshaller(CreateEnvironmentV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentV2Request::getBody, CreateEnvironmentV2Request::setBody));
 
         // response
 
@@ -1143,9 +1067,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> createEnvironmentVariableV2 =
-        genForcreateEnvironmentVariableV2();
+        genForCreateEnvironmentVariableV2();
 
-    private static HttpRequestDef<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> genForcreateEnvironmentVariableV2() {
+    private static HttpRequestDef<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> genForCreateEnvironmentVariableV2() {
         // basic
         HttpRequestDef.Builder<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> builder =
             HttpRequestDef
@@ -1161,16 +1085,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getInstanceId,
+                CreateEnvironmentVariableV2Request::setInstanceId));
         builder.<EnvVariableCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvVariableCreate.class),
-            f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getBody,
+                CreateEnvironmentVariableV2Request::setBody));
 
         // response
 
@@ -1178,9 +1100,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateFeatureV2Request, CreateFeatureV2Response> createFeatureV2 =
-        genForcreateFeatureV2();
+        genForCreateFeatureV2();
 
-    private static HttpRequestDef<CreateFeatureV2Request, CreateFeatureV2Response> genForcreateFeatureV2() {
+    private static HttpRequestDef<CreateFeatureV2Request, CreateFeatureV2Response> genForCreateFeatureV2() {
         // basic
         HttpRequestDef.Builder<CreateFeatureV2Request, CreateFeatureV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFeatureV2Request.class, CreateFeatureV2Response.class)
@@ -1193,16 +1115,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFeatureV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateFeatureV2Request::getInstanceId, CreateFeatureV2Request::setInstanceId));
         builder.<FeatureToggle>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FeatureToggle.class),
-            f -> f.withMarshaller(CreateFeatureV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFeatureV2Request::getBody, CreateFeatureV2Request::setBody));
 
         // response
 
@@ -1210,9 +1128,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> createGatewayResponseV2 =
-        genForcreateGatewayResponseV2();
+        genForCreateGatewayResponseV2();
 
-    private static HttpRequestDef<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> genForcreateGatewayResponseV2() {
+    private static HttpRequestDef<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> genForCreateGatewayResponseV2() {
         // basic
         HttpRequestDef.Builder<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateGatewayResponseV2Request.class, CreateGatewayResponseV2Response.class)
@@ -1225,23 +1143,19 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGatewayResponseV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateGatewayResponseV2Request::getInstanceId,
+                CreateGatewayResponseV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGatewayResponseV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(CreateGatewayResponseV2Request::getGroupId,
+                CreateGatewayResponseV2Request::setGroupId));
         builder.<ResponsesCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResponsesCreate.class),
-            f -> f.withMarshaller(CreateGatewayResponseV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGatewayResponseV2Request::getBody, CreateGatewayResponseV2Request::setBody));
 
         // response
 
@@ -1249,9 +1163,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceV2Request, CreateInstanceV2Response> createInstanceV2 =
-        genForcreateInstanceV2();
+        genForCreateInstanceV2();
 
-    private static HttpRequestDef<CreateInstanceV2Request, CreateInstanceV2Response> genForcreateInstanceV2() {
+    private static HttpRequestDef<CreateInstanceV2Request, CreateInstanceV2Response> genForCreateInstanceV2() {
         // basic
         HttpRequestDef.Builder<CreateInstanceV2Request, CreateInstanceV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceV2Request.class, CreateInstanceV2Response.class)
@@ -1264,18 +1178,16 @@ public class ApigMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceCreateReq.class),
-            f -> f.withMarshaller(CreateInstanceV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceV2Request::getBody, CreateInstanceV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateOrderRequest, CreateOrderResponse> createOrder = genForcreateOrder();
+    public static final HttpRequestDef<CreateOrderRequest, CreateOrderResponse> createOrder = genForCreateOrder();
 
-    private static HttpRequestDef<CreateOrderRequest, CreateOrderResponse> genForcreateOrder() {
+    private static HttpRequestDef<CreateOrderRequest, CreateOrderResponse> genForCreateOrder() {
         // basic
         HttpRequestDef.Builder<CreateOrderRequest, CreateOrderResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateOrderRequest.class, CreateOrderResponse.class)
@@ -1288,18 +1200,16 @@ public class ApigMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceOrderReq.class),
-            f -> f.withMarshaller(CreateOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOrderRequest::getBody, CreateOrderRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePluginRequest, CreatePluginResponse> createPlugin = genForcreatePlugin();
+    public static final HttpRequestDef<CreatePluginRequest, CreatePluginResponse> createPlugin = genForCreatePlugin();
 
-    private static HttpRequestDef<CreatePluginRequest, CreatePluginResponse> genForcreatePlugin() {
+    private static HttpRequestDef<CreatePluginRequest, CreatePluginResponse> genForCreatePlugin() {
         // basic
         HttpRequestDef.Builder<CreatePluginRequest, CreatePluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePluginRequest.class, CreatePluginResponse.class)
@@ -1312,16 +1222,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreatePluginRequest::getInstanceId, CreatePluginRequest::setInstanceId));
         builder.<PluginCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PluginCreate.class),
-            f -> f.withMarshaller(CreatePluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePluginRequest::getBody, CreatePluginRequest::setBody));
 
         // response
 
@@ -1329,9 +1235,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse> createPostPayResizeOrder =
-        genForcreatePostPayResizeOrder();
+        genForCreatePostPayResizeOrder();
 
-    private static HttpRequestDef<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse> genForcreatePostPayResizeOrder() {
+    private static HttpRequestDef<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse> genForCreatePostPayResizeOrder() {
         // basic
         HttpRequestDef.Builder<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse> builder =
             HttpRequestDef
@@ -1345,16 +1251,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePostPayResizeOrderRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreatePostPayResizeOrderRequest::getInstanceId,
+                CreatePostPayResizeOrderRequest::setInstanceId));
         builder.<ResizeInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeInstanceReq.class),
-            f -> f.withMarshaller(CreatePostPayResizeOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePostPayResizeOrderRequest::getBody, CreatePostPayResizeOrderRequest::setBody));
 
         // response
 
@@ -1362,9 +1265,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreatePrepayResizeRequest, CreatePrepayResizeResponse> createPrepayResize =
-        genForcreatePrepayResize();
+        genForCreatePrepayResize();
 
-    private static HttpRequestDef<CreatePrepayResizeRequest, CreatePrepayResizeResponse> genForcreatePrepayResize() {
+    private static HttpRequestDef<CreatePrepayResizeRequest, CreatePrepayResizeResponse> genForCreatePrepayResize() {
         // basic
         HttpRequestDef.Builder<CreatePrepayResizeRequest, CreatePrepayResizeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePrepayResizeRequest.class, CreatePrepayResizeResponse.class)
@@ -1377,16 +1280,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePrepayResizeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreatePrepayResizeRequest::getInstanceId, CreatePrepayResizeRequest::setInstanceId));
         builder.<InstanceChangeOrderReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceChangeOrderReq.class),
-            f -> f.withMarshaller(CreatePrepayResizeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePrepayResizeRequest::getBody, CreatePrepayResizeRequest::setBody));
 
         // response
 
@@ -1394,9 +1293,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> createRequestThrottlingPolicyV2 =
-        genForcreateRequestThrottlingPolicyV2();
+        genForCreateRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> genForcreateRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> genForCreateRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -1412,16 +1311,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getInstanceId,
+                CreateRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<ThrottleBaseInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleBaseInfo.class),
-            f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getBody,
+                CreateRequestThrottlingPolicyV2Request::setBody));
 
         // response
 
@@ -1429,9 +1326,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> createSignatureKeyV2 =
-        genForcreateSignatureKeyV2();
+        genForCreateSignatureKeyV2();
 
-    private static HttpRequestDef<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> genForcreateSignatureKeyV2() {
+    private static HttpRequestDef<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> genForCreateSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateSignatureKeyV2Request.class, CreateSignatureKeyV2Response.class)
@@ -1444,16 +1341,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateSignatureKeyV2Request::getInstanceId,
+                CreateSignatureKeyV2Request::setInstanceId));
         builder.<BaseSignature>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BaseSignature.class),
-            f -> f.withMarshaller(CreateSignatureKeyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSignatureKeyV2Request::getBody, CreateSignatureKeyV2Request::setBody));
 
         // response
 
@@ -1461,9 +1355,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> createSpecialThrottlingConfigurationV2 =
-        genForcreateSpecialThrottlingConfigurationV2();
+        genForCreateSpecialThrottlingConfigurationV2();
 
-    private static HttpRequestDef<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> genForcreateSpecialThrottlingConfigurationV2() {
+    private static HttpRequestDef<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> genForCreateSpecialThrottlingConfigurationV2() {
         // basic
         HttpRequestDef.Builder<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef
@@ -1479,32 +1373,29 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getInstanceId,
+                CreateSpecialThrottlingConfigurationV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getThrottleId,
+                CreateSpecialThrottlingConfigurationV2Request::setThrottleId));
         builder.<ThrottleSpecialCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleSpecialCreate.class),
-            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getBody,
+                CreateSpecialThrottlingConfigurationV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppAclRequest, DeleteAppAclResponse> deleteAppAcl = genFordeleteAppAcl();
+    public static final HttpRequestDef<DeleteAppAclRequest, DeleteAppAclResponse> deleteAppAcl = genForDeleteAppAcl();
 
-    private static HttpRequestDef<DeleteAppAclRequest, DeleteAppAclResponse> genFordeleteAppAcl() {
+    private static HttpRequestDef<DeleteAppAclRequest, DeleteAppAclResponse> genForDeleteAppAcl() {
         // basic
         HttpRequestDef.Builder<DeleteAppAclRequest, DeleteAppAclResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppAclRequest.class, DeleteAppAclResponse.class)
@@ -1517,16 +1408,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppAclRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppAclRequest::getInstanceId, DeleteAppAclRequest::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppAclRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppAclRequest::getAppId, DeleteAppAclRequest::setAppId));
 
         // response
 
@@ -1534,9 +1421,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2 =
-        genFordeleteAppCodeV2();
+        genForDeleteAppCodeV2();
 
-    private static HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> genFordeleteAppCodeV2() {
+    private static HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> genForDeleteAppCodeV2() {
         // basic
         HttpRequestDef.Builder<DeleteAppCodeV2Request, DeleteAppCodeV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppCodeV2Request.class, DeleteAppCodeV2Response.class)
@@ -1549,23 +1436,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppCodeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getInstanceId, DeleteAppCodeV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppId, DeleteAppCodeV2Request::setAppId));
         builder.<String>withRequestField("app_code_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppCodeId, (req, v) -> {
-                req.setAppCodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppCodeId, DeleteAppCodeV2Request::setAppCodeId));
 
         // response
 
@@ -1573,9 +1454,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteAppQuotaRequest, DeleteAppQuotaResponse> deleteAppQuota =
-        genFordeleteAppQuota();
+        genForDeleteAppQuota();
 
-    private static HttpRequestDef<DeleteAppQuotaRequest, DeleteAppQuotaResponse> genFordeleteAppQuota() {
+    private static HttpRequestDef<DeleteAppQuotaRequest, DeleteAppQuotaResponse> genForDeleteAppQuota() {
         // basic
         HttpRequestDef.Builder<DeleteAppQuotaRequest, DeleteAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppQuotaRequest.class, DeleteAppQuotaResponse.class)
@@ -1588,25 +1469,21 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppQuotaRequest::getInstanceId, DeleteAppQuotaRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppQuotaRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppQuotaRequest::getAppQuotaId, DeleteAppQuotaRequest::setAppQuotaId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppV2Request, DeleteAppV2Response> deleteAppV2 = genFordeleteAppV2();
+    public static final HttpRequestDef<DeleteAppV2Request, DeleteAppV2Response> deleteAppV2 = genForDeleteAppV2();
 
-    private static HttpRequestDef<DeleteAppV2Request, DeleteAppV2Response> genFordeleteAppV2() {
+    private static HttpRequestDef<DeleteAppV2Request, DeleteAppV2Response> genForDeleteAppV2() {
         // basic
         HttpRequestDef.Builder<DeleteAppV2Request, DeleteAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppV2Request.class, DeleteAppV2Response.class)
@@ -1619,16 +1496,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppV2Request::getInstanceId, DeleteAppV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppV2Request::getAppId, DeleteAppV2Request::setAppId));
 
         // response
 
@@ -1636,9 +1509,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> deleteCustomAuthorizerV2 =
-        genFordeleteCustomAuthorizerV2();
+        genForDeleteCustomAuthorizerV2();
 
-    private static HttpRequestDef<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> genFordeleteCustomAuthorizerV2() {
+    private static HttpRequestDef<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> genForDeleteCustomAuthorizerV2() {
         // basic
         HttpRequestDef.Builder<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> builder =
             HttpRequestDef
@@ -1654,16 +1527,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getInstanceId,
+                DeleteCustomAuthorizerV2Request::setInstanceId));
         builder.<String>withRequestField("authorizer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getAuthorizerId, (req, v) -> {
-                req.setAuthorizerId(v);
-            }));
+            f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getAuthorizerId,
+                DeleteCustomAuthorizerV2Request::setAuthorizerId));
 
         // response
 
@@ -1671,9 +1542,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse> deleteEndpointPermissions =
-        genFordeleteEndpointPermissions();
+        genForDeleteEndpointPermissions();
 
-    private static HttpRequestDef<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse> genFordeleteEndpointPermissions() {
+    private static HttpRequestDef<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse> genForDeleteEndpointPermissions() {
         // basic
         HttpRequestDef.Builder<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse> builder =
             HttpRequestDef
@@ -1689,16 +1560,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEndpointPermissionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEndpointPermissionsRequest::getInstanceId,
+                DeleteEndpointPermissionsRequest::setInstanceId));
         builder.<EndpointPermissionList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EndpointPermissionList.class),
-            f -> f.withMarshaller(DeleteEndpointPermissionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteEndpointPermissionsRequest::getBody,
+                DeleteEndpointPermissionsRequest::setBody));
 
         // response
 
@@ -1712,9 +1581,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> deleteEnvironmentV2 =
-        genFordeleteEnvironmentV2();
+        genForDeleteEnvironmentV2();
 
-    private static HttpRequestDef<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> genFordeleteEnvironmentV2() {
+    private static HttpRequestDef<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> genForDeleteEnvironmentV2() {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEnvironmentV2Request.class, DeleteEnvironmentV2Response.class)
@@ -1727,16 +1596,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentV2Request::getInstanceId,
+                DeleteEnvironmentV2Request::setInstanceId));
         builder.<String>withRequestField("env_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentV2Request::getEnvId, DeleteEnvironmentV2Request::setEnvId));
 
         // response
 
@@ -1744,9 +1610,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> deleteEnvironmentVariableV2 =
-        genFordeleteEnvironmentVariableV2();
+        genForDeleteEnvironmentVariableV2();
 
-    private static HttpRequestDef<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> genFordeleteEnvironmentVariableV2() {
+    private static HttpRequestDef<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> genForDeleteEnvironmentVariableV2() {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> builder =
             HttpRequestDef
@@ -1762,16 +1628,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentVariableV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentVariableV2Request::getInstanceId,
+                DeleteEnvironmentVariableV2Request::setInstanceId));
         builder.<String>withRequestField("env_variable_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentVariableV2Request::getEnvVariableId, (req, v) -> {
-                req.setEnvVariableId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentVariableV2Request::getEnvVariableId,
+                DeleteEnvironmentVariableV2Request::setEnvVariableId));
 
         // response
 
@@ -1779,9 +1643,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> deleteGatewayResponseTypeV2 =
-        genFordeleteGatewayResponseTypeV2();
+        genForDeleteGatewayResponseTypeV2();
 
-    private static HttpRequestDef<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> genFordeleteGatewayResponseTypeV2() {
+    private static HttpRequestDef<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> genForDeleteGatewayResponseTypeV2() {
         // basic
         HttpRequestDef.Builder<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> builder =
             HttpRequestDef
@@ -1798,30 +1662,26 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getInstanceId,
+                DeleteGatewayResponseTypeV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getGroupId,
+                DeleteGatewayResponseTypeV2Request::setGroupId));
         builder.<String>withRequestField("response_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getResponseId, (req, v) -> {
-                req.setResponseId(v);
-            }));
+            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getResponseId,
+                DeleteGatewayResponseTypeV2Request::setResponseId));
         builder.<DeleteGatewayResponseTypeV2Request.ResponseTypeEnum>withRequestField("response_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteGatewayResponseTypeV2Request.ResponseTypeEnum.class),
-            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getResponseType, (req, v) -> {
-                req.setResponseType(v);
-            }));
+            f -> f.withMarshaller(DeleteGatewayResponseTypeV2Request::getResponseType,
+                DeleteGatewayResponseTypeV2Request::setResponseType));
 
         // response
 
@@ -1829,9 +1689,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> deleteGatewayResponseV2 =
-        genFordeleteGatewayResponseV2();
+        genForDeleteGatewayResponseV2();
 
-    private static HttpRequestDef<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> genFordeleteGatewayResponseV2() {
+    private static HttpRequestDef<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> genForDeleteGatewayResponseV2() {
         // basic
         HttpRequestDef.Builder<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteGatewayResponseV2Request.class, DeleteGatewayResponseV2Response.class)
@@ -1845,23 +1705,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGatewayResponseV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteGatewayResponseV2Request::getInstanceId,
+                DeleteGatewayResponseV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGatewayResponseV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteGatewayResponseV2Request::getGroupId,
+                DeleteGatewayResponseV2Request::setGroupId));
         builder.<String>withRequestField("response_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGatewayResponseV2Request::getResponseId, (req, v) -> {
-                req.setResponseId(v);
-            }));
+            f -> f.withMarshaller(DeleteGatewayResponseV2Request::getResponseId,
+                DeleteGatewayResponseV2Request::setResponseId));
 
         // response
 
@@ -1869,9 +1726,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteInstancesV2Request, DeleteInstancesV2Response> deleteInstancesV2 =
-        genFordeleteInstancesV2();
+        genForDeleteInstancesV2();
 
-    private static HttpRequestDef<DeleteInstancesV2Request, DeleteInstancesV2Response> genFordeleteInstancesV2() {
+    private static HttpRequestDef<DeleteInstancesV2Request, DeleteInstancesV2Response> genForDeleteInstancesV2() {
         // basic
         HttpRequestDef.Builder<DeleteInstancesV2Request, DeleteInstancesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstancesV2Request.class, DeleteInstancesV2Response.class)
@@ -1884,18 +1741,16 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstancesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteInstancesV2Request::getInstanceId, DeleteInstancesV2Request::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePluginRequest, DeletePluginResponse> deletePlugin = genFordeletePlugin();
+    public static final HttpRequestDef<DeletePluginRequest, DeletePluginResponse> deletePlugin = genForDeletePlugin();
 
-    private static HttpRequestDef<DeletePluginRequest, DeletePluginResponse> genFordeletePlugin() {
+    private static HttpRequestDef<DeletePluginRequest, DeletePluginResponse> genForDeletePlugin() {
         // basic
         HttpRequestDef.Builder<DeletePluginRequest, DeletePluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePluginRequest.class, DeletePluginResponse.class)
@@ -1908,16 +1763,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeletePluginRequest::getInstanceId, DeletePluginRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePluginRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(DeletePluginRequest::getPluginId, DeletePluginRequest::setPluginId));
 
         // response
 
@@ -1925,9 +1776,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> deleteRequestThrottlingPolicyV2 =
-        genFordeleteRequestThrottlingPolicyV2();
+        genForDeleteRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> genFordeleteRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> genForDeleteRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -1943,16 +1794,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRequestThrottlingPolicyV2Request::getInstanceId,
+                DeleteRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(DeleteRequestThrottlingPolicyV2Request::getThrottleId,
+                DeleteRequestThrottlingPolicyV2Request::setThrottleId));
 
         // response
 
@@ -1960,9 +1809,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> deleteSignatureKeyV2 =
-        genFordeleteSignatureKeyV2();
+        genForDeleteSignatureKeyV2();
 
-    private static HttpRequestDef<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> genFordeleteSignatureKeyV2() {
+    private static HttpRequestDef<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> genForDeleteSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteSignatureKeyV2Request.class, DeleteSignatureKeyV2Response.class)
@@ -1975,16 +1824,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSignatureKeyV2Request::getInstanceId,
+                DeleteSignatureKeyV2Request::setInstanceId));
         builder.<String>withRequestField("sign_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSignatureKeyV2Request::getSignId, (req, v) -> {
-                req.setSignId(v);
-            }));
+            f -> f.withMarshaller(DeleteSignatureKeyV2Request::getSignId, DeleteSignatureKeyV2Request::setSignId));
 
         // response
 
@@ -1992,9 +1838,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> deleteSpecialThrottlingConfigurationV2 =
-        genFordeleteSpecialThrottlingConfigurationV2();
+        genForDeleteSpecialThrottlingConfigurationV2();
 
-    private static HttpRequestDef<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> genFordeleteSpecialThrottlingConfigurationV2() {
+    private static HttpRequestDef<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> genForDeleteSpecialThrottlingConfigurationV2() {
         // basic
         HttpRequestDef.Builder<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef
@@ -2011,23 +1857,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getInstanceId,
+                DeleteSpecialThrottlingConfigurationV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getThrottleId,
+                DeleteSpecialThrottlingConfigurationV2Request::setThrottleId));
         builder.<String>withRequestField("strategy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getStrategyId, (req, v) -> {
-                req.setStrategyId(v);
-            }));
+            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getStrategyId,
+                DeleteSpecialThrottlingConfigurationV2Request::setStrategyId));
 
         // response
 
@@ -2035,9 +1878,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DetachApiFromPluginRequest, DetachApiFromPluginResponse> detachApiFromPlugin =
-        genFordetachApiFromPlugin();
+        genForDetachApiFromPlugin();
 
-    private static HttpRequestDef<DetachApiFromPluginRequest, DetachApiFromPluginResponse> genFordetachApiFromPlugin() {
+    private static HttpRequestDef<DetachApiFromPluginRequest, DetachApiFromPluginResponse> genForDetachApiFromPlugin() {
         // basic
         HttpRequestDef.Builder<DetachApiFromPluginRequest, DetachApiFromPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, DetachApiFromPluginRequest.class, DetachApiFromPluginResponse.class)
@@ -2050,23 +1893,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachApiFromPluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getInstanceId,
+                DetachApiFromPluginRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachApiFromPluginRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getPluginId, DetachApiFromPluginRequest::setPluginId));
         builder.<PluginOperApiInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PluginOperApiInfo.class),
-            f -> f.withMarshaller(DetachApiFromPluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getBody, DetachApiFromPluginRequest::setBody));
 
         // response
 
@@ -2074,9 +1912,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DetachPluginFromApiRequest, DetachPluginFromApiResponse> detachPluginFromApi =
-        genFordetachPluginFromApi();
+        genForDetachPluginFromApi();
 
-    private static HttpRequestDef<DetachPluginFromApiRequest, DetachPluginFromApiResponse> genFordetachPluginFromApi() {
+    private static HttpRequestDef<DetachPluginFromApiRequest, DetachPluginFromApiResponse> genForDetachPluginFromApi() {
         // basic
         HttpRequestDef.Builder<DetachPluginFromApiRequest, DetachPluginFromApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, DetachPluginFromApiRequest.class, DetachPluginFromApiResponse.class)
@@ -2089,23 +1927,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachPluginFromApiRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getInstanceId,
+                DetachPluginFromApiRequest::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachPluginFromApiRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getApiId, DetachPluginFromApiRequest::setApiId));
         builder.<ApiOperPluginInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiOperPluginInfo.class),
-            f -> f.withMarshaller(DetachPluginFromApiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getBody, DetachPluginFromApiRequest::setBody));
 
         // response
 
@@ -2113,9 +1946,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithApp =
-        genFordisassociateAppQuotaWithApp();
+        genForDisassociateAppQuotaWithApp();
 
-    private static HttpRequestDef<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> genFordisassociateAppQuotaWithApp() {
+    private static HttpRequestDef<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> genForDisassociateAppQuotaWithApp() {
         // basic
         HttpRequestDef.Builder<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> builder =
             HttpRequestDef
@@ -2131,23 +1964,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getInstanceId,
+                DisassociateAppQuotaWithAppRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getAppQuotaId,
+                DisassociateAppQuotaWithAppRequest::setAppQuotaId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getAppId,
+                DisassociateAppQuotaWithAppRequest::setAppId));
 
         // response
 
@@ -2155,9 +1985,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DisassociateCertificateV2Request, DisassociateCertificateV2Response> disassociateCertificateV2 =
-        genFordisassociateCertificateV2();
+        genForDisassociateCertificateV2();
 
-    private static HttpRequestDef<DisassociateCertificateV2Request, DisassociateCertificateV2Response> genFordisassociateCertificateV2() {
+    private static HttpRequestDef<DisassociateCertificateV2Request, DisassociateCertificateV2Response> genForDisassociateCertificateV2() {
         // basic
         HttpRequestDef.Builder<DisassociateCertificateV2Request, DisassociateCertificateV2Response> builder =
             HttpRequestDef
@@ -2174,30 +2004,26 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateCertificateV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DisassociateCertificateV2Request::getInstanceId,
+                DisassociateCertificateV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateCertificateV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DisassociateCertificateV2Request::getGroupId,
+                DisassociateCertificateV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateCertificateV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DisassociateCertificateV2Request::getDomainId,
+                DisassociateCertificateV2Request::setDomainId));
         builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateCertificateV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(DisassociateCertificateV2Request::getCertificateId,
+                DisassociateCertificateV2Request::setCertificateId));
 
         // response
 
@@ -2205,9 +2031,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DisassociateDomainV2Request, DisassociateDomainV2Response> disassociateDomainV2 =
-        genFordisassociateDomainV2();
+        genForDisassociateDomainV2();
 
-    private static HttpRequestDef<DisassociateDomainV2Request, DisassociateDomainV2Response> genFordisassociateDomainV2() {
+    private static HttpRequestDef<DisassociateDomainV2Request, DisassociateDomainV2Response> genForDisassociateDomainV2() {
         // basic
         HttpRequestDef.Builder<DisassociateDomainV2Request, DisassociateDomainV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DisassociateDomainV2Request.class, DisassociateDomainV2Response.class)
@@ -2220,23 +2046,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateDomainV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DisassociateDomainV2Request::getInstanceId,
+                DisassociateDomainV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateDomainV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DisassociateDomainV2Request::getGroupId, DisassociateDomainV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateDomainV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DisassociateDomainV2Request::getDomainId, DisassociateDomainV2Request::setDomainId));
 
         // response
 
@@ -2244,9 +2065,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> disassociateSignatureKeyV2 =
-        genFordisassociateSignatureKeyV2();
+        genForDisassociateSignatureKeyV2();
 
-    private static HttpRequestDef<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> genFordisassociateSignatureKeyV2() {
+    private static HttpRequestDef<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> genForDisassociateSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> builder =
             HttpRequestDef
@@ -2262,16 +2083,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DisassociateSignatureKeyV2Request::getInstanceId,
+                DisassociateSignatureKeyV2Request::setInstanceId));
         builder.<String>withRequestField("sign_bindings_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateSignatureKeyV2Request::getSignBindingsId, (req, v) -> {
-                req.setSignBindingsId(v);
-            }));
+            f -> f.withMarshaller(DisassociateSignatureKeyV2Request::getSignBindingsId,
+                DisassociateSignatureKeyV2Request::setSignBindingsId));
 
         // response
 
@@ -2279,9 +2098,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ImportMicroserviceRequest, ImportMicroserviceResponse> importMicroservice =
-        genForimportMicroservice();
+        genForImportMicroservice();
 
-    private static HttpRequestDef<ImportMicroserviceRequest, ImportMicroserviceResponse> genForimportMicroservice() {
+    private static HttpRequestDef<ImportMicroserviceRequest, ImportMicroserviceResponse> genForImportMicroservice() {
         // basic
         HttpRequestDef.Builder<ImportMicroserviceRequest, ImportMicroserviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportMicroserviceRequest.class, ImportMicroserviceResponse.class)
@@ -2294,16 +2113,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportMicroserviceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ImportMicroserviceRequest::getInstanceId, ImportMicroserviceRequest::setInstanceId));
         builder.<MicroserviceImportReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MicroserviceImportReq.class),
-            f -> f.withMarshaller(ImportMicroserviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportMicroserviceRequest::getBody, ImportMicroserviceRequest::setBody));
 
         // response
 
@@ -2311,9 +2126,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> listApiAttachablePlugins =
-        genForlistApiAttachablePlugins();
+        genForListApiAttachablePlugins();
 
-    private static HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> genForlistApiAttachablePlugins() {
+    private static HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> genForListApiAttachablePlugins() {
         // basic
         HttpRequestDef.Builder<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> builder =
             HttpRequestDef
@@ -2327,58 +2142,50 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getInstanceId,
+                ListApiAttachablePluginsRequest::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getApiId,
+                ListApiAttachablePluginsRequest::setApiId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getOffset,
+                ListApiAttachablePluginsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getLimit,
+                ListApiAttachablePluginsRequest::setLimit));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getEnvId,
+                ListApiAttachablePluginsRequest::setEnvId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginName,
+                ListApiAttachablePluginsRequest::setPluginName));
         builder.<String>withRequestField("plugin_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginType, (req, v) -> {
-                req.setPluginType(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginType,
+                ListApiAttachablePluginsRequest::setPluginType));
         builder.<String>withRequestField("plugin_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginId,
+                ListApiAttachablePluginsRequest::setPluginId));
 
         // response
 
@@ -2386,9 +2193,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> listApiAttachedPlugins =
-        genForlistApiAttachedPlugins();
+        genForListApiAttachedPlugins();
 
-    private static HttpRequestDef<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> genForlistApiAttachedPlugins() {
+    private static HttpRequestDef<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> genForListApiAttachedPlugins() {
         // basic
         HttpRequestDef.Builder<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListApiAttachedPluginsRequest.class, ListApiAttachedPluginsResponse.class)
@@ -2401,65 +2208,52 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getInstanceId,
+                ListApiAttachedPluginsRequest::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getApiId, ListApiAttachedPluginsRequest::setApiId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getOffset, ListApiAttachedPluginsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getLimit, ListApiAttachedPluginsRequest::setLimit));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvId, ListApiAttachedPluginsRequest::setEnvId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginName,
+                ListApiAttachedPluginsRequest::setPluginName));
         builder.<String>withRequestField("plugin_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginId,
+                ListApiAttachedPluginsRequest::setPluginId));
         builder.<String>withRequestField("env_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvName, (req, v) -> {
-                req.setEnvName(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvName,
+                ListApiAttachedPluginsRequest::setEnvName));
         builder.<String>withRequestField("plugin_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginType, (req, v) -> {
-                req.setPluginType(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginType,
+                ListApiAttachedPluginsRequest::setPluginType));
 
         // response
 
@@ -2467,9 +2261,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response> listApiGroupsQuantitiesV2 =
-        genForlistApiGroupsQuantitiesV2();
+        genForListApiGroupsQuantitiesV2();
 
-    private static HttpRequestDef<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response> genForlistApiGroupsQuantitiesV2() {
+    private static HttpRequestDef<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response> genForListApiGroupsQuantitiesV2() {
         // basic
         HttpRequestDef.Builder<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response> builder =
             HttpRequestDef
@@ -2485,9 +2279,8 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsQuantitiesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsQuantitiesV2Request::getInstanceId,
+                ListApiGroupsQuantitiesV2Request::setInstanceId));
 
         // response
 
@@ -2495,9 +2288,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response> listApiQuantitiesV2 =
-        genForlistApiQuantitiesV2();
+        genForListApiQuantitiesV2();
 
-    private static HttpRequestDef<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response> genForlistApiQuantitiesV2() {
+    private static HttpRequestDef<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response> genForListApiQuantitiesV2() {
         // basic
         HttpRequestDef.Builder<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiQuantitiesV2Request.class, ListApiQuantitiesV2Response.class)
@@ -2510,9 +2303,8 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiQuantitiesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiQuantitiesV2Request::getInstanceId,
+                ListApiQuantitiesV2Request::setInstanceId));
 
         // response
 
@@ -2520,9 +2312,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> listApisBindedToSignatureKeyV2 =
-        genForlistApisBindedToSignatureKeyV2();
+        genForListApisBindedToSignatureKeyV2();
 
-    private static HttpRequestDef<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> genForlistApisBindedToSignatureKeyV2() {
+    private static HttpRequestDef<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> genForListApisBindedToSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> builder =
             HttpRequestDef
@@ -2538,58 +2330,50 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getInstanceId,
+                ListApisBindedToSignatureKeyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getOffset,
+                ListApisBindedToSignatureKeyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getLimit,
+                ListApisBindedToSignatureKeyV2Request::setLimit));
         builder.<String>withRequestField("sign_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getSignId, (req, v) -> {
-                req.setSignId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getSignId,
+                ListApisBindedToSignatureKeyV2Request::setSignId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getEnvId,
+                ListApisBindedToSignatureKeyV2Request::setEnvId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getApiId,
+                ListApisBindedToSignatureKeyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getApiName,
+                ListApisBindedToSignatureKeyV2Request::setApiName));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getGroupId,
+                ListApisBindedToSignatureKeyV2Request::setGroupId));
 
         // response
 
@@ -2597,9 +2381,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> listApisNotBoundWithSignatureKeyV2 =
-        genForlistApisNotBoundWithSignatureKeyV2();
+        genForListApisNotBoundWithSignatureKeyV2();
 
-    private static HttpRequestDef<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> genForlistApisNotBoundWithSignatureKeyV2() {
+    private static HttpRequestDef<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> genForListApisNotBoundWithSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> builder =
             HttpRequestDef
@@ -2615,58 +2399,50 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getInstanceId,
+                ListApisNotBoundWithSignatureKeyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getOffset,
+                ListApisNotBoundWithSignatureKeyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getLimit,
+                ListApisNotBoundWithSignatureKeyV2Request::setLimit));
         builder.<String>withRequestField("sign_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getSignId, (req, v) -> {
-                req.setSignId(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getSignId,
+                ListApisNotBoundWithSignatureKeyV2Request::setSignId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getEnvId,
+                ListApisNotBoundWithSignatureKeyV2Request::setEnvId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getApiId,
+                ListApisNotBoundWithSignatureKeyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getApiName,
+                ListApisNotBoundWithSignatureKeyV2Request::setApiName));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getGroupId,
+                ListApisNotBoundWithSignatureKeyV2Request::setGroupId));
 
         // response
 
@@ -2674,9 +2450,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2 =
-        genForlistAppCodesV2();
+        genForListAppCodesV2();
 
-    private static HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> genForlistAppCodesV2() {
+    private static HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> genForListAppCodesV2() {
         // basic
         HttpRequestDef.Builder<ListAppCodesV2Request, ListAppCodesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppCodesV2Request.class, ListAppCodesV2Response.class)
@@ -2689,30 +2465,22 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppCodesV2Request::getInstanceId, ListAppCodesV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAppCodesV2Request::getAppId, ListAppCodesV2Request::setAppId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppCodesV2Request::getOffset, ListAppCodesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppCodesV2Request::getLimit, ListAppCodesV2Request::setLimit));
 
         // response
 
@@ -2720,9 +2488,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response> listAppQuantitiesV2 =
-        genForlistAppQuantitiesV2();
+        genForListAppQuantitiesV2();
 
-    private static HttpRequestDef<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response> genForlistAppQuantitiesV2() {
+    private static HttpRequestDef<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response> genForListAppQuantitiesV2() {
         // basic
         HttpRequestDef.Builder<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppQuantitiesV2Request.class, ListAppQuantitiesV2Response.class)
@@ -2735,9 +2503,8 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuantitiesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuantitiesV2Request::getInstanceId,
+                ListAppQuantitiesV2Request::setInstanceId));
 
         // response
 
@@ -2745,9 +2512,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> listAppQuotaBindableApps =
-        genForlistAppQuotaBindableApps();
+        genForListAppQuotaBindableApps();
 
-    private static HttpRequestDef<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> genForlistAppQuotaBindableApps() {
+    private static HttpRequestDef<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> genForListAppQuotaBindableApps() {
         // basic
         HttpRequestDef.Builder<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> builder =
             HttpRequestDef
@@ -2761,37 +2528,32 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getInstanceId,
+                ListAppQuotaBindableAppsRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getAppQuotaId,
+                ListAppQuotaBindableAppsRequest::setAppQuotaId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getOffset,
+                ListAppQuotaBindableAppsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getLimit,
+                ListAppQuotaBindableAppsRequest::setLimit));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getAppName,
+                ListAppQuotaBindableAppsRequest::setAppName));
 
         // response
 
@@ -2799,9 +2561,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> listAppQuotaBoundApps =
-        genForlistAppQuotaBoundApps();
+        genForListAppQuotaBoundApps();
 
-    private static HttpRequestDef<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> genForlistAppQuotaBoundApps() {
+    private static HttpRequestDef<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> genForListAppQuotaBoundApps() {
         // basic
         HttpRequestDef.Builder<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAppQuotaBoundAppsRequest.class, ListAppQuotaBoundAppsResponse.class)
@@ -2814,37 +2576,29 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getInstanceId,
+                ListAppQuotaBoundAppsRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getAppQuotaId,
+                ListAppQuotaBoundAppsRequest::setAppQuotaId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getOffset, ListAppQuotaBoundAppsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getLimit, ListAppQuotaBoundAppsRequest::setLimit));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getAppName, ListAppQuotaBoundAppsRequest::setAppName));
 
         // response
 
@@ -2852,9 +2606,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListAppQuotasRequest, ListAppQuotasResponse> listAppQuotas =
-        genForlistAppQuotas();
+        genForListAppQuotas();
 
-    private static HttpRequestDef<ListAppQuotasRequest, ListAppQuotasResponse> genForlistAppQuotas() {
+    private static HttpRequestDef<ListAppQuotasRequest, ListAppQuotasResponse> genForListAppQuotas() {
         // basic
         HttpRequestDef.Builder<ListAppQuotasRequest, ListAppQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppQuotasRequest.class, ListAppQuotasResponse.class)
@@ -2867,39 +2621,31 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotasRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotasRequest::getInstanceId, ListAppQuotasRequest::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppQuotasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotasRequest::getOffset, ListAppQuotasRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppQuotasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotasRequest::getLimit, ListAppQuotasRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotasRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotasRequest::getName, ListAppQuotasRequest::setName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppsV2Request, ListAppsV2Response> listAppsV2 = genForlistAppsV2();
+    public static final HttpRequestDef<ListAppsV2Request, ListAppsV2Response> listAppsV2 = genForListAppsV2();
 
-    private static HttpRequestDef<ListAppsV2Request, ListAppsV2Response> genForlistAppsV2() {
+    private static HttpRequestDef<ListAppsV2Request, ListAppsV2Response> genForListAppsV2() {
         // basic
         HttpRequestDef.Builder<ListAppsV2Request, ListAppsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsV2Request.class, ListAppsV2Response.class)
@@ -2912,65 +2658,47 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getInstanceId, ListAppsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getOffset, ListAppsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getLimit, ListAppsV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getId, ListAppsV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getName, ListAppsV2Request::setName));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsV2Request::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getStatus, ListAppsV2Request::setStatus));
         builder.<String>withRequestField("app_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getAppKey, (req, v) -> {
-                req.setAppKey(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getAppKey, ListAppsV2Request::setAppKey));
         builder.<String>withRequestField("creator",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getCreator, (req, v) -> {
-                req.setCreator(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getCreator, ListAppsV2Request::setCreator));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getPreciseSearch, ListAppsV2Request::setPreciseSearch));
 
         // response
 
@@ -2978,9 +2706,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListAvailableZonesV2Request, ListAvailableZonesV2Response> listAvailableZonesV2 =
-        genForlistAvailableZonesV2();
+        genForListAvailableZonesV2();
 
-    private static HttpRequestDef<ListAvailableZonesV2Request, ListAvailableZonesV2Response> genForlistAvailableZonesV2() {
+    private static HttpRequestDef<ListAvailableZonesV2Request, ListAvailableZonesV2Response> genForListAvailableZonesV2() {
         // basic
         HttpRequestDef.Builder<ListAvailableZonesV2Request, ListAvailableZonesV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAvailableZonesV2Request.class, ListAvailableZonesV2Response.class)
@@ -2996,9 +2724,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> listCustomAuthorizersV2 =
-        genForlistCustomAuthorizersV2();
+        genForListCustomAuthorizersV2();
 
-    private static HttpRequestDef<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> genForlistCustomAuthorizersV2() {
+    private static HttpRequestDef<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> genForListCustomAuthorizersV2() {
         // basic
         HttpRequestDef.Builder<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCustomAuthorizersV2Request.class, ListCustomAuthorizersV2Response.class)
@@ -3011,44 +2739,34 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getInstanceId,
+                ListCustomAuthorizersV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getOffset,
+                ListCustomAuthorizersV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getLimit, ListCustomAuthorizersV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getId, ListCustomAuthorizersV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getName, ListCustomAuthorizersV2Request::setName));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getType, ListCustomAuthorizersV2Request::setType));
 
         // response
 
@@ -3056,9 +2774,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse> listEndpointConnections =
-        genForlistEndpointConnections();
+        genForListEndpointConnections();
 
-    private static HttpRequestDef<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse> genForlistEndpointConnections() {
+    private static HttpRequestDef<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse> genForListEndpointConnections() {
         // basic
         HttpRequestDef.Builder<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEndpointConnectionsRequest.class, ListEndpointConnectionsResponse.class)
@@ -3071,44 +2789,36 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointConnectionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getInstanceId,
+                ListEndpointConnectionsRequest::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEndpointConnectionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getOffset,
+                ListEndpointConnectionsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointConnectionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getLimit, ListEndpointConnectionsRequest::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointConnectionsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getId, ListEndpointConnectionsRequest::setId));
         builder.<Integer>withRequestField("marker_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointConnectionsRequest::getMarkerId, (req, v) -> {
-                req.setMarkerId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getMarkerId,
+                ListEndpointConnectionsRequest::setMarkerId));
         builder.<ListEndpointConnectionsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEndpointConnectionsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListEndpointConnectionsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getStatus,
+                ListEndpointConnectionsRequest::setStatus));
 
         // response
 
@@ -3122,9 +2832,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse> listEndpointPermissions =
-        genForlistEndpointPermissions();
+        genForListEndpointPermissions();
 
-    private static HttpRequestDef<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse> genForlistEndpointPermissions() {
+    private static HttpRequestDef<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse> genForListEndpointPermissions() {
         // basic
         HttpRequestDef.Builder<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEndpointPermissionsRequest.class, ListEndpointPermissionsResponse.class)
@@ -3137,30 +2847,25 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointPermissionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointPermissionsRequest::getInstanceId,
+                ListEndpointPermissionsRequest::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEndpointPermissionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEndpointPermissionsRequest::getOffset,
+                ListEndpointPermissionsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointPermissionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEndpointPermissionsRequest::getLimit, ListEndpointPermissionsRequest::setLimit));
         builder.<String>withRequestField("permission",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointPermissionsRequest::getPermission, (req, v) -> {
-                req.setPermission(v);
-            }));
+            f -> f.withMarshaller(ListEndpointPermissionsRequest::getPermission,
+                ListEndpointPermissionsRequest::setPermission));
 
         // response
 
@@ -3174,9 +2879,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> listEnvironmentVariablesV2 =
-        genForlistEnvironmentVariablesV2();
+        genForListEnvironmentVariablesV2();
 
-    private static HttpRequestDef<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> genForlistEnvironmentVariablesV2() {
+    private static HttpRequestDef<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> genForListEnvironmentVariablesV2() {
         // basic
         HttpRequestDef.Builder<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> builder =
             HttpRequestDef
@@ -3192,51 +2897,44 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getInstanceId,
+                ListEnvironmentVariablesV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getOffset,
+                ListEnvironmentVariablesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getLimit,
+                ListEnvironmentVariablesV2Request::setLimit));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getGroupId,
+                ListEnvironmentVariablesV2Request::setGroupId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getEnvId,
+                ListEnvironmentVariablesV2Request::setEnvId));
         builder.<String>withRequestField("variable_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getVariableName, (req, v) -> {
-                req.setVariableName(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getVariableName,
+                ListEnvironmentVariablesV2Request::setVariableName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getPreciseSearch,
+                ListEnvironmentVariablesV2Request::setPreciseSearch));
 
         // response
 
@@ -3244,9 +2942,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListEnvironmentsV2Request, ListEnvironmentsV2Response> listEnvironmentsV2 =
-        genForlistEnvironmentsV2();
+        genForListEnvironmentsV2();
 
-    private static HttpRequestDef<ListEnvironmentsV2Request, ListEnvironmentsV2Response> genForlistEnvironmentsV2() {
+    private static HttpRequestDef<ListEnvironmentsV2Request, ListEnvironmentsV2Response> genForListEnvironmentsV2() {
         // basic
         HttpRequestDef.Builder<ListEnvironmentsV2Request, ListEnvironmentsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentsV2Request.class, ListEnvironmentsV2Response.class)
@@ -3259,30 +2957,22 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentsV2Request::getInstanceId, ListEnvironmentsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEnvironmentsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentsV2Request::getOffset, ListEnvironmentsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnvironmentsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentsV2Request::getLimit, ListEnvironmentsV2Request::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentsV2Request::getName, ListEnvironmentsV2Request::setName));
 
         // response
 
@@ -3290,9 +2980,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListFeaturesV2Request, ListFeaturesV2Response> listFeaturesV2 =
-        genForlistFeaturesV2();
+        genForListFeaturesV2();
 
-    private static HttpRequestDef<ListFeaturesV2Request, ListFeaturesV2Response> genForlistFeaturesV2() {
+    private static HttpRequestDef<ListFeaturesV2Request, ListFeaturesV2Response> genForListFeaturesV2() {
         // basic
         HttpRequestDef.Builder<ListFeaturesV2Request, ListFeaturesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFeaturesV2Request.class, ListFeaturesV2Response.class)
@@ -3305,23 +2995,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFeaturesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListFeaturesV2Request::getInstanceId, ListFeaturesV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListFeaturesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFeaturesV2Request::getOffset, ListFeaturesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFeaturesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFeaturesV2Request::getLimit, ListFeaturesV2Request::setLimit));
 
         // response
 
@@ -3329,9 +3013,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> listGatewayResponsesV2 =
-        genForlistGatewayResponsesV2();
+        genForListGatewayResponsesV2();
 
-    private static HttpRequestDef<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> genForlistGatewayResponsesV2() {
+    private static HttpRequestDef<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> genForListGatewayResponsesV2() {
         // basic
         HttpRequestDef.Builder<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListGatewayResponsesV2Request.class, ListGatewayResponsesV2Response.class)
@@ -3344,30 +3028,24 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGatewayResponsesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListGatewayResponsesV2Request::getInstanceId,
+                ListGatewayResponsesV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGatewayResponsesV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListGatewayResponsesV2Request::getGroupId,
+                ListGatewayResponsesV2Request::setGroupId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListGatewayResponsesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListGatewayResponsesV2Request::getOffset, ListGatewayResponsesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGatewayResponsesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListGatewayResponsesV2Request::getLimit, ListGatewayResponsesV2Request::setLimit));
 
         // response
 
@@ -3375,9 +3053,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response> listInstanceConfigsV2 =
-        genForlistInstanceConfigsV2();
+        genForListInstanceConfigsV2();
 
-    private static HttpRequestDef<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response> genForlistInstanceConfigsV2() {
+    private static HttpRequestDef<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response> genForListInstanceConfigsV2() {
         // basic
         HttpRequestDef.Builder<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListInstanceConfigsV2Request.class, ListInstanceConfigsV2Response.class)
@@ -3390,16 +3068,12 @@ public class ApigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListInstanceConfigsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConfigsV2Request::getOffset, ListInstanceConfigsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceConfigsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConfigsV2Request::getLimit, ListInstanceConfigsV2Request::setLimit));
 
         // response
 
@@ -3407,9 +3081,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
-        genForlistInstanceTags();
+        genForListInstanceTags();
 
-    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForlistInstanceTags() {
+    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForListInstanceTags() {
         // basic
         HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
@@ -3422,9 +3096,7 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, ListInstanceTagsRequest::setInstanceId));
 
         // response
 
@@ -3432,9 +3104,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListInstancesV2Request, ListInstancesV2Response> listInstancesV2 =
-        genForlistInstancesV2();
+        genForListInstancesV2();
 
-    private static HttpRequestDef<ListInstancesV2Request, ListInstancesV2Response> genForlistInstancesV2() {
+    private static HttpRequestDef<ListInstancesV2Request, ListInstancesV2Response> genForListInstancesV2() {
         // basic
         HttpRequestDef.Builder<ListInstancesV2Request, ListInstancesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesV2Request.class, ListInstancesV2Response.class)
@@ -3447,37 +3119,27 @@ public class ApigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListInstancesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesV2Request::getOffset, ListInstancesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesV2Request::getLimit, ListInstancesV2Request::setLimit));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesV2Request::getInstanceId, ListInstancesV2Request::setInstanceId));
         builder.<String>withRequestField("instance_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesV2Request::getInstanceName, (req, v) -> {
-                req.setInstanceName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesV2Request::getInstanceName, ListInstancesV2Request::setInstanceName));
         builder.<ListInstancesV2Request.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesV2Request.StatusEnum.class),
-            f -> f.withMarshaller(ListInstancesV2Request::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListInstancesV2Request::getStatus, ListInstancesV2Request::setStatus));
 
         // response
 
@@ -3485,9 +3147,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> listLatelyApiStatisticsV2 =
-        genForlistLatelyApiStatisticsV2();
+        genForListLatelyApiStatisticsV2();
 
-    private static HttpRequestDef<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> genForlistLatelyApiStatisticsV2() {
+    private static HttpRequestDef<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> genForListLatelyApiStatisticsV2() {
         // basic
         HttpRequestDef.Builder<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> builder =
             HttpRequestDef
@@ -3503,23 +3165,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getInstanceId,
+                ListLatelyApiStatisticsV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getApiId,
+                ListLatelyApiStatisticsV2Request::setApiId));
         builder.<String>withRequestField("duration",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getDuration, (req, v) -> {
-                req.setDuration(v);
-            }));
+            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getDuration,
+                ListLatelyApiStatisticsV2Request::setDuration));
 
         // response
 
@@ -3527,9 +3186,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> listLatelyGroupStatisticsV2 =
-        genForlistLatelyGroupStatisticsV2();
+        genForListLatelyGroupStatisticsV2();
 
-    private static HttpRequestDef<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> genForlistLatelyGroupStatisticsV2() {
+    private static HttpRequestDef<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> genForListLatelyGroupStatisticsV2() {
         // basic
         HttpRequestDef.Builder<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> builder =
             HttpRequestDef
@@ -3545,16 +3204,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLatelyGroupStatisticsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLatelyGroupStatisticsV2Request::getInstanceId,
+                ListLatelyGroupStatisticsV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLatelyGroupStatisticsV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListLatelyGroupStatisticsV2Request::getGroupId,
+                ListLatelyGroupStatisticsV2Request::setGroupId));
 
         // response
 
@@ -3562,9 +3219,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListMetricDataRequest, ListMetricDataResponse> listMetricData =
-        genForlistMetricData();
+        genForListMetricData();
 
-    private static HttpRequestDef<ListMetricDataRequest, ListMetricDataResponse> genForlistMetricData() {
+    private static HttpRequestDef<ListMetricDataRequest, ListMetricDataResponse> genForListMetricData() {
         // basic
         HttpRequestDef.Builder<ListMetricDataRequest, ListMetricDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMetricDataRequest.class, ListMetricDataResponse.class)
@@ -3577,51 +3234,37 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricDataRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMetricDataRequest::getInstanceId, ListMetricDataRequest::setInstanceId));
         builder.<ListMetricDataRequest.DimEnum>withRequestField("dim",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListMetricDataRequest.DimEnum.class),
-            f -> f.withMarshaller(ListMetricDataRequest::getDim, (req, v) -> {
-                req.setDim(v);
-            }));
+            f -> f.withMarshaller(ListMetricDataRequest::getDim, ListMetricDataRequest::setDim));
         builder.<ListMetricDataRequest.MetricNameEnum>withRequestField("metric_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListMetricDataRequest.MetricNameEnum.class),
-            f -> f.withMarshaller(ListMetricDataRequest::getMetricName, (req, v) -> {
-                req.setMetricName(v);
-            }));
+            f -> f.withMarshaller(ListMetricDataRequest::getMetricName, ListMetricDataRequest::setMetricName));
         builder.<String>withRequestField("from",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricDataRequest::getFrom, (req, v) -> {
-                req.setFrom(v);
-            }));
+            f -> f.withMarshaller(ListMetricDataRequest::getFrom, ListMetricDataRequest::setFrom));
         builder.<String>withRequestField("to",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricDataRequest::getTo, (req, v) -> {
-                req.setTo(v);
-            }));
+            f -> f.withMarshaller(ListMetricDataRequest::getTo, ListMetricDataRequest::setTo));
         builder.<ListMetricDataRequest.PeriodEnum>withRequestField("period",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListMetricDataRequest.PeriodEnum.class),
-            f -> f.withMarshaller(ListMetricDataRequest::getPeriod, (req, v) -> {
-                req.setPeriod(v);
-            }));
+            f -> f.withMarshaller(ListMetricDataRequest::getPeriod, ListMetricDataRequest::setPeriod));
         builder.<ListMetricDataRequest.FilterEnum>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListMetricDataRequest.FilterEnum.class),
-            f -> f.withMarshaller(ListMetricDataRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListMetricDataRequest::getFilter, ListMetricDataRequest::setFilter));
 
         // response
 
@@ -3629,9 +3272,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> listPluginAttachableApis =
-        genForlistPluginAttachableApis();
+        genForListPluginAttachableApis();
 
-    private static HttpRequestDef<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> genForlistPluginAttachableApis() {
+    private static HttpRequestDef<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> genForListPluginAttachableApis() {
         // basic
         HttpRequestDef.Builder<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> builder =
             HttpRequestDef
@@ -3645,72 +3288,62 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getInstanceId,
+                ListPluginAttachableApisRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getPluginId,
+                ListPluginAttachableApisRequest::setPluginId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getOffset,
+                ListPluginAttachableApisRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getLimit,
+                ListPluginAttachableApisRequest::setLimit));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getEnvId,
+                ListPluginAttachableApisRequest::setEnvId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiName,
+                ListPluginAttachableApisRequest::setApiName));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiId,
+                ListPluginAttachableApisRequest::setApiId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getGroupId,
+                ListPluginAttachableApisRequest::setGroupId));
         builder.<String>withRequestField("req_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqMethod, (req, v) -> {
-                req.setReqMethod(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqMethod,
+                ListPluginAttachableApisRequest::setReqMethod));
         builder.<String>withRequestField("req_uri",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqUri, (req, v) -> {
-                req.setReqUri(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqUri,
+                ListPluginAttachableApisRequest::setReqUri));
 
         // response
 
@@ -3718,9 +3351,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> listPluginAttachedApis =
-        genForlistPluginAttachedApis();
+        genForListPluginAttachedApis();
 
-    private static HttpRequestDef<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> genForlistPluginAttachedApis() {
+    private static HttpRequestDef<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> genForListPluginAttachedApis() {
         // basic
         HttpRequestDef.Builder<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListPluginAttachedApisRequest.class, ListPluginAttachedApisResponse.class)
@@ -3733,81 +3366,66 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getInstanceId,
+                ListPluginAttachedApisRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getPluginId,
+                ListPluginAttachedApisRequest::setPluginId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getOffset, ListPluginAttachedApisRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getLimit, ListPluginAttachedApisRequest::setLimit));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getEnvId, ListPluginAttachedApisRequest::setEnvId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiName,
+                ListPluginAttachedApisRequest::setApiName));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiId, ListPluginAttachedApisRequest::setApiId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getGroupId,
+                ListPluginAttachedApisRequest::setGroupId));
         builder.<String>withRequestField("req_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqMethod, (req, v) -> {
-                req.setReqMethod(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqMethod,
+                ListPluginAttachedApisRequest::setReqMethod));
         builder.<String>withRequestField("req_uri",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqUri, (req, v) -> {
-                req.setReqUri(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqUri, ListPluginAttachedApisRequest::setReqUri));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForlistPlugins();
+    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForListPlugins();
 
-    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForlistPlugins() {
+    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForListPlugins() {
         // basic
         HttpRequestDef.Builder<ListPluginsRequest, ListPluginsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPluginsRequest.class, ListPluginsResponse.class)
@@ -3820,58 +3438,42 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getInstanceId, ListPluginsRequest::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPluginsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getOffset, ListPluginsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPluginsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getLimit, ListPluginsRequest::setLimit));
         builder.<String>withRequestField("plugin_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getPluginType, (req, v) -> {
-                req.setPluginType(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getPluginType, ListPluginsRequest::setPluginType));
         builder.<String>withRequestField("plugin_scope",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getPluginScope, (req, v) -> {
-                req.setPluginScope(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getPluginScope, ListPluginsRequest::setPluginScope));
         builder.<String>withRequestField("plugin_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getPluginId, ListPluginsRequest::setPluginId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getPluginName, ListPluginsRequest::setPluginName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getPreciseSearch, ListPluginsRequest::setPreciseSearch));
 
         // response
 
@@ -3879,9 +3481,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListProjectCofigsV2Request, ListProjectCofigsV2Response> listProjectCofigsV2 =
-        genForlistProjectCofigsV2();
+        genForListProjectCofigsV2();
 
-    private static HttpRequestDef<ListProjectCofigsV2Request, ListProjectCofigsV2Response> genForlistProjectCofigsV2() {
+    private static HttpRequestDef<ListProjectCofigsV2Request, ListProjectCofigsV2Response> genForListProjectCofigsV2() {
         // basic
         HttpRequestDef.Builder<ListProjectCofigsV2Request, ListProjectCofigsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectCofigsV2Request.class, ListProjectCofigsV2Response.class)
@@ -3894,23 +3496,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectCofigsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListProjectCofigsV2Request::getInstanceId,
+                ListProjectCofigsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProjectCofigsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProjectCofigsV2Request::getOffset, ListProjectCofigsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectCofigsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProjectCofigsV2Request::getLimit, ListProjectCofigsV2Request::setLimit));
 
         // response
 
@@ -3918,9 +3515,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse> listProjectInstanceTags =
-        genForlistProjectInstanceTags();
+        genForListProjectInstanceTags();
 
-    private static HttpRequestDef<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse> genForlistProjectInstanceTags() {
+    private static HttpRequestDef<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse> genForListProjectInstanceTags() {
         // basic
         HttpRequestDef.Builder<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProjectInstanceTagsRequest.class, ListProjectInstanceTagsResponse.class)
@@ -3936,9 +3533,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> listRequestThrottlingPolicyV2 =
-        genForlistRequestThrottlingPolicyV2();
+        genForListRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> genForlistRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> genForListRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -3954,44 +3551,38 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getInstanceId,
+                ListRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getOffset,
+                ListRequestThrottlingPolicyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getLimit,
+                ListRequestThrottlingPolicyV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getId,
+                ListRequestThrottlingPolicyV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getName,
+                ListRequestThrottlingPolicyV2Request::setName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getPreciseSearch,
+                ListRequestThrottlingPolicyV2Request::setPreciseSearch));
 
         // response
 
@@ -3999,9 +3590,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> listSignatureKeysBindedToApiV2 =
-        genForlistSignatureKeysBindedToApiV2();
+        genForListSignatureKeysBindedToApiV2();
 
-    private static HttpRequestDef<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> genForlistSignatureKeysBindedToApiV2() {
+    private static HttpRequestDef<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> genForListSignatureKeysBindedToApiV2() {
         // basic
         HttpRequestDef.Builder<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> builder =
             HttpRequestDef
@@ -4017,51 +3608,44 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getInstanceId,
+                ListSignatureKeysBindedToApiV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getOffset,
+                ListSignatureKeysBindedToApiV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getLimit,
+                ListSignatureKeysBindedToApiV2Request::setLimit));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getApiId,
+                ListSignatureKeysBindedToApiV2Request::setApiId));
         builder.<String>withRequestField("sign_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getSignId, (req, v) -> {
-                req.setSignId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getSignId,
+                ListSignatureKeysBindedToApiV2Request::setSignId));
         builder.<String>withRequestField("sign_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getSignName, (req, v) -> {
-                req.setSignName(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getSignName,
+                ListSignatureKeysBindedToApiV2Request::setSignName));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getEnvId,
+                ListSignatureKeysBindedToApiV2Request::setEnvId));
 
         // response
 
@@ -4069,9 +3653,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListSignatureKeysV2Request, ListSignatureKeysV2Response> listSignatureKeysV2 =
-        genForlistSignatureKeysV2();
+        genForListSignatureKeysV2();
 
-    private static HttpRequestDef<ListSignatureKeysV2Request, ListSignatureKeysV2Response> genForlistSignatureKeysV2() {
+    private static HttpRequestDef<ListSignatureKeysV2Request, ListSignatureKeysV2Response> genForListSignatureKeysV2() {
         // basic
         HttpRequestDef.Builder<ListSignatureKeysV2Request, ListSignatureKeysV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSignatureKeysV2Request.class, ListSignatureKeysV2Response.class)
@@ -4084,44 +3668,34 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getInstanceId,
+                ListSignatureKeysV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getOffset, ListSignatureKeysV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getLimit, ListSignatureKeysV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getId, ListSignatureKeysV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getName, ListSignatureKeysV2Request::setName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getPreciseSearch,
+                ListSignatureKeysV2Request::setPreciseSearch));
 
         // response
 
@@ -4129,9 +3703,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> listSpecialThrottlingConfigurationsV2 =
-        genForlistSpecialThrottlingConfigurationsV2();
+        genForListSpecialThrottlingConfigurationsV2();
 
-    private static HttpRequestDef<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> genForlistSpecialThrottlingConfigurationsV2() {
+    private static HttpRequestDef<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> genForListSpecialThrottlingConfigurationsV2() {
         // basic
         HttpRequestDef.Builder<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> builder =
             HttpRequestDef
@@ -4147,60 +3721,53 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getInstanceId,
+                ListSpecialThrottlingConfigurationsV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getThrottleId,
+                ListSpecialThrottlingConfigurationsV2Request::setThrottleId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getOffset,
+                ListSpecialThrottlingConfigurationsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getLimit,
+                ListSpecialThrottlingConfigurationsV2Request::setLimit));
         builder.<String>withRequestField("object_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getObjectType, (req, v) -> {
-                req.setObjectType(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getObjectType,
+                ListSpecialThrottlingConfigurationsV2Request::setObjectType));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getAppName,
+                ListSpecialThrottlingConfigurationsV2Request::setAppName));
         builder.<String>withRequestField("user",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getUser, (req, v) -> {
-                req.setUser(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getUser,
+                ListSpecialThrottlingConfigurationsV2Request::setUser));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTagsV2Request, ListTagsV2Response> listTagsV2 = genForlistTagsV2();
+    public static final HttpRequestDef<ListTagsV2Request, ListTagsV2Response> listTagsV2 = genForListTagsV2();
 
-    private static HttpRequestDef<ListTagsV2Request, ListTagsV2Response> genForlistTagsV2() {
+    private static HttpRequestDef<ListTagsV2Request, ListTagsV2Response> genForListTagsV2() {
         // basic
         HttpRequestDef.Builder<ListTagsV2Request, ListTagsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsV2Request.class, ListTagsV2Response.class)
@@ -4213,32 +3780,26 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTagsV2Request::getInstanceId, ListTagsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTagsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTagsV2Request::getOffset, ListTagsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTagsV2Request::getLimit, ListTagsV2Request::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RemoveEipV2Request, RemoveEipV2Response> removeEipV2 = genForremoveEipV2();
+    public static final HttpRequestDef<RemoveEipV2Request, RemoveEipV2Response> removeEipV2 = genForRemoveEipV2();
 
-    private static HttpRequestDef<RemoveEipV2Request, RemoveEipV2Response> genForremoveEipV2() {
+    private static HttpRequestDef<RemoveEipV2Request, RemoveEipV2Response> genForRemoveEipV2() {
         // basic
         HttpRequestDef.Builder<RemoveEipV2Request, RemoveEipV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RemoveEipV2Request.class, RemoveEipV2Response.class)
@@ -4251,9 +3812,7 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveEipV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RemoveEipV2Request::getInstanceId, RemoveEipV2Request::setInstanceId));
 
         // response
 
@@ -4261,9 +3820,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<RemoveEngressEipV2Request, RemoveEngressEipV2Response> removeEngressEipV2 =
-        genForremoveEngressEipV2();
+        genForRemoveEngressEipV2();
 
-    private static HttpRequestDef<RemoveEngressEipV2Request, RemoveEngressEipV2Response> genForremoveEngressEipV2() {
+    private static HttpRequestDef<RemoveEngressEipV2Request, RemoveEngressEipV2Response> genForRemoveEngressEipV2() {
         // basic
         HttpRequestDef.Builder<RemoveEngressEipV2Request, RemoveEngressEipV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RemoveEngressEipV2Request.class, RemoveEngressEipV2Response.class)
@@ -4276,9 +3835,7 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveEngressEipV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RemoveEngressEipV2Request::getInstanceId, RemoveEngressEipV2Request::setInstanceId));
 
         // response
 
@@ -4286,9 +3843,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<RemoveIngressEipV2Request, RemoveIngressEipV2Response> removeIngressEipV2 =
-        genForremoveIngressEipV2();
+        genForRemoveIngressEipV2();
 
-    private static HttpRequestDef<RemoveIngressEipV2Request, RemoveIngressEipV2Response> genForremoveIngressEipV2() {
+    private static HttpRequestDef<RemoveIngressEipV2Request, RemoveIngressEipV2Response> genForRemoveIngressEipV2() {
         // basic
         HttpRequestDef.Builder<RemoveIngressEipV2Request, RemoveIngressEipV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RemoveIngressEipV2Request.class, RemoveIngressEipV2Response.class)
@@ -4301,9 +3858,7 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveIngressEipV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RemoveIngressEipV2Request::getInstanceId, RemoveIngressEipV2Request::setInstanceId));
 
         // response
 
@@ -4311,9 +3866,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ResettingAppSecretV2Request, ResettingAppSecretV2Response> resettingAppSecretV2 =
-        genForresettingAppSecretV2();
+        genForResettingAppSecretV2();
 
-    private static HttpRequestDef<ResettingAppSecretV2Request, ResettingAppSecretV2Response> genForresettingAppSecretV2() {
+    private static HttpRequestDef<ResettingAppSecretV2Request, ResettingAppSecretV2Response> genForResettingAppSecretV2() {
         // basic
         HttpRequestDef.Builder<ResettingAppSecretV2Request, ResettingAppSecretV2Response> builder = HttpRequestDef
             .builder(HttpMethod.PUT, ResettingAppSecretV2Request.class, ResettingAppSecretV2Response.class)
@@ -4326,23 +3881,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResettingAppSecretV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResettingAppSecretV2Request::getInstanceId,
+                ResettingAppSecretV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResettingAppSecretV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ResettingAppSecretV2Request::getAppId, ResettingAppSecretV2Request::setAppId));
         builder.<AppResetCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppResetCreate.class),
-            f -> f.withMarshaller(ResettingAppSecretV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResettingAppSecretV2Request::getBody, ResettingAppSecretV2Request::setBody));
 
         // response
 
@@ -4350,9 +3900,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> showAppBoundAppQuota =
-        genForshowAppBoundAppQuota();
+        genForShowAppBoundAppQuota();
 
-    private static HttpRequestDef<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> genForshowAppBoundAppQuota() {
+    private static HttpRequestDef<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> genForShowAppBoundAppQuota() {
         // basic
         HttpRequestDef.Builder<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAppBoundAppQuotaRequest.class, ShowAppBoundAppQuotaResponse.class)
@@ -4365,25 +3915,22 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppBoundAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAppBoundAppQuotaRequest::getInstanceId,
+                ShowAppBoundAppQuotaRequest::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppBoundAppQuotaRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowAppBoundAppQuotaRequest::getAppId, ShowAppBoundAppQuotaRequest::setAppId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppQuotaRequest, ShowAppQuotaResponse> showAppQuota = genForshowAppQuota();
+    public static final HttpRequestDef<ShowAppQuotaRequest, ShowAppQuotaResponse> showAppQuota = genForShowAppQuota();
 
-    private static HttpRequestDef<ShowAppQuotaRequest, ShowAppQuotaResponse> genForshowAppQuota() {
+    private static HttpRequestDef<ShowAppQuotaRequest, ShowAppQuotaResponse> genForShowAppQuota() {
         // basic
         HttpRequestDef.Builder<ShowAppQuotaRequest, ShowAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppQuotaRequest.class, ShowAppQuotaResponse.class)
@@ -4396,16 +3943,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAppQuotaRequest::getInstanceId, ShowAppQuotaRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppQuotaRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(ShowAppQuotaRequest::getAppQuotaId, ShowAppQuotaRequest::setAppQuotaId));
 
         // response
 
@@ -4413,9 +3956,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> showDetailsOfAppAcl =
-        genForshowDetailsOfAppAcl();
+        genForShowDetailsOfAppAcl();
 
-    private static HttpRequestDef<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> genForshowDetailsOfAppAcl() {
+    private static HttpRequestDef<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> genForShowDetailsOfAppAcl() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppAclRequest.class, ShowDetailsOfAppAclResponse.class)
@@ -4428,16 +3971,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppAclRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppAclRequest::getInstanceId,
+                ShowDetailsOfAppAclRequest::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppAclRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppAclRequest::getAppId, ShowDetailsOfAppAclRequest::setAppId));
 
         // response
 
@@ -4445,9 +3985,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2 =
-        genForshowDetailsOfAppCodeV2();
+        genForShowDetailsOfAppCodeV2();
 
-    private static HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> genForshowDetailsOfAppCodeV2() {
+    private static HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> genForShowDetailsOfAppCodeV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDetailsOfAppCodeV2Request.class, ShowDetailsOfAppCodeV2Response.class)
@@ -4460,23 +4000,19 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getInstanceId,
+                ShowDetailsOfAppCodeV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppId, ShowDetailsOfAppCodeV2Request::setAppId));
         builder.<String>withRequestField("app_code_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppCodeId, (req, v) -> {
-                req.setAppCodeId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppCodeId,
+                ShowDetailsOfAppCodeV2Request::setAppCodeId));
 
         // response
 
@@ -4484,9 +4020,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> showDetailsOfAppV2 =
-        genForshowDetailsOfAppV2();
+        genForShowDetailsOfAppV2();
 
-    private static HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> genForshowDetailsOfAppV2() {
+    private static HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> genForShowDetailsOfAppV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppV2Request.class, ShowDetailsOfAppV2Response.class)
@@ -4499,16 +4035,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getInstanceId, ShowDetailsOfAppV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getAppId, ShowDetailsOfAppV2Request::setAppId));
 
         // response
 
@@ -4516,9 +4048,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2 =
-        genForshowDetailsOfCustomAuthorizersV2();
+        genForShowDetailsOfCustomAuthorizersV2();
 
-    private static HttpRequestDef<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> genForshowDetailsOfCustomAuthorizersV2() {
+    private static HttpRequestDef<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> genForShowDetailsOfCustomAuthorizersV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> builder =
             HttpRequestDef
@@ -4534,16 +4066,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfCustomAuthorizersV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfCustomAuthorizersV2Request::getInstanceId,
+                ShowDetailsOfCustomAuthorizersV2Request::setInstanceId));
         builder.<String>withRequestField("authorizer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfCustomAuthorizersV2Request::getAuthorizerId, (req, v) -> {
-                req.setAuthorizerId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfCustomAuthorizersV2Request::getAuthorizerId,
+                ShowDetailsOfCustomAuthorizersV2Request::setAuthorizerId));
 
         // response
 
@@ -4551,9 +4081,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> showDetailsOfDomainNameCertificateV2 =
-        genForshowDetailsOfDomainNameCertificateV2();
+        genForShowDetailsOfDomainNameCertificateV2();
 
-    private static HttpRequestDef<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> genForshowDetailsOfDomainNameCertificateV2() {
+    private static HttpRequestDef<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> genForShowDetailsOfDomainNameCertificateV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> builder =
             HttpRequestDef
@@ -4570,30 +4100,26 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getInstanceId,
+                ShowDetailsOfDomainNameCertificateV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getGroupId,
+                ShowDetailsOfDomainNameCertificateV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getDomainId,
+                ShowDetailsOfDomainNameCertificateV2Request::setDomainId));
         builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getCertificateId,
+                ShowDetailsOfDomainNameCertificateV2Request::setCertificateId));
 
         // response
 
@@ -4601,9 +4127,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> showDetailsOfEnvironmentVariableV2 =
-        genForshowDetailsOfEnvironmentVariableV2();
+        genForShowDetailsOfEnvironmentVariableV2();
 
-    private static HttpRequestDef<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> genForshowDetailsOfEnvironmentVariableV2() {
+    private static HttpRequestDef<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> genForShowDetailsOfEnvironmentVariableV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> builder =
             HttpRequestDef
@@ -4619,16 +4145,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfEnvironmentVariableV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfEnvironmentVariableV2Request::getInstanceId,
+                ShowDetailsOfEnvironmentVariableV2Request::setInstanceId));
         builder.<String>withRequestField("env_variable_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfEnvironmentVariableV2Request::getEnvVariableId, (req, v) -> {
-                req.setEnvVariableId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfEnvironmentVariableV2Request::getEnvVariableId,
+                ShowDetailsOfEnvironmentVariableV2Request::setEnvVariableId));
 
         // response
 
@@ -4636,9 +4160,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> showDetailsOfGatewayResponseTypeV2 =
-        genForshowDetailsOfGatewayResponseTypeV2();
+        genForShowDetailsOfGatewayResponseTypeV2();
 
-    private static HttpRequestDef<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> genForshowDetailsOfGatewayResponseTypeV2() {
+    private static HttpRequestDef<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> genForShowDetailsOfGatewayResponseTypeV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> builder =
             HttpRequestDef
@@ -4655,47 +4179,44 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getInstanceId,
+                ShowDetailsOfGatewayResponseTypeV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getGroupId,
+                ShowDetailsOfGatewayResponseTypeV2Request::setGroupId));
         builder.<String>withRequestField("response_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getResponseId, (req, v) -> {
-                req.setResponseId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getResponseId,
+                ShowDetailsOfGatewayResponseTypeV2Request::setResponseId));
         builder.<ShowDetailsOfGatewayResponseTypeV2Request.ResponseTypeEnum>withRequestField("response_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowDetailsOfGatewayResponseTypeV2Request.ResponseTypeEnum.class),
-            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getResponseType, (req, v) -> {
-                req.setResponseType(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Request::getResponseType,
+                ShowDetailsOfGatewayResponseTypeV2Request::setResponseType));
 
         // response
         builder.<Map<String, ResponseInfoResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(ShowDetailsOfGatewayResponseTypeV2Response::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ResponseInfoResp.class));
+            f -> f
+                .withMarshaller(ShowDetailsOfGatewayResponseTypeV2Response::getBody,
+                    ShowDetailsOfGatewayResponseTypeV2Response::setBody)
+                .withInnerContainerType(ResponseInfoResp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> showDetailsOfGatewayResponseV2 =
-        genForshowDetailsOfGatewayResponseV2();
+        genForShowDetailsOfGatewayResponseV2();
 
-    private static HttpRequestDef<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> genForshowDetailsOfGatewayResponseV2() {
+    private static HttpRequestDef<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> genForShowDetailsOfGatewayResponseV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> builder =
             HttpRequestDef
@@ -4712,23 +4233,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfGatewayResponseV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseV2Request::getInstanceId,
+                ShowDetailsOfGatewayResponseV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfGatewayResponseV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseV2Request::getGroupId,
+                ShowDetailsOfGatewayResponseV2Request::setGroupId));
         builder.<String>withRequestField("response_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfGatewayResponseV2Request::getResponseId, (req, v) -> {
-                req.setResponseId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfGatewayResponseV2Request::getResponseId,
+                ShowDetailsOfGatewayResponseV2Request::setResponseId));
 
         // response
 
@@ -4736,9 +4254,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> showDetailsOfInstanceProgressV2 =
-        genForshowDetailsOfInstanceProgressV2();
+        genForShowDetailsOfInstanceProgressV2();
 
-    private static HttpRequestDef<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> genForshowDetailsOfInstanceProgressV2() {
+    private static HttpRequestDef<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> genForShowDetailsOfInstanceProgressV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> builder =
             HttpRequestDef
@@ -4754,9 +4272,8 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfInstanceProgressV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfInstanceProgressV2Request::getInstanceId,
+                ShowDetailsOfInstanceProgressV2Request::setInstanceId));
 
         // response
 
@@ -4764,9 +4281,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2 =
-        genForshowDetailsOfInstanceV2();
+        genForShowDetailsOfInstanceV2();
 
-    private static HttpRequestDef<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> genForshowDetailsOfInstanceV2() {
+    private static HttpRequestDef<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> genForShowDetailsOfInstanceV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDetailsOfInstanceV2Request.class, ShowDetailsOfInstanceV2Response.class)
@@ -4779,9 +4296,8 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfInstanceV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfInstanceV2Request::getInstanceId,
+                ShowDetailsOfInstanceV2Request::setInstanceId));
 
         // response
 
@@ -4789,9 +4305,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2 =
-        genForshowDetailsOfRequestThrottlingPolicyV2();
+        genForShowDetailsOfRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> genForshowDetailsOfRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> genForShowDetailsOfRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -4807,25 +4323,23 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getInstanceId,
+                ShowDetailsOfRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getThrottleId,
+                ShowDetailsOfRequestThrottlingPolicyV2Request::setThrottleId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPluginRequest, ShowPluginResponse> showPlugin = genForshowPlugin();
+    public static final HttpRequestDef<ShowPluginRequest, ShowPluginResponse> showPlugin = genForShowPlugin();
 
-    private static HttpRequestDef<ShowPluginRequest, ShowPluginResponse> genForshowPlugin() {
+    private static HttpRequestDef<ShowPluginRequest, ShowPluginResponse> genForShowPlugin() {
         // basic
         HttpRequestDef.Builder<ShowPluginRequest, ShowPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPluginRequest.class, ShowPluginResponse.class)
@@ -4838,16 +4352,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowPluginRequest::getInstanceId, ShowPluginRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPluginRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ShowPluginRequest::getPluginId, ShowPluginRequest::setPluginId));
 
         // response
 
@@ -4855,9 +4365,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2 =
-        genForshowRestrictionOfInstanceV2();
+        genForShowRestrictionOfInstanceV2();
 
-    private static HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> genForshowRestrictionOfInstanceV2() {
+    private static HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> genForShowRestrictionOfInstanceV2() {
         // basic
         HttpRequestDef.Builder<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> builder =
             HttpRequestDef
@@ -4873,18 +4383,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRestrictionOfInstanceV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRestrictionOfInstanceV2Request::getInstanceId,
+                ShowRestrictionOfInstanceV2Request::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAppAclRequest, UpdateAppAclResponse> updateAppAcl = genForupdateAppAcl();
+    public static final HttpRequestDef<UpdateAppAclRequest, UpdateAppAclResponse> updateAppAcl = genForUpdateAppAcl();
 
-    private static HttpRequestDef<UpdateAppAclRequest, UpdateAppAclResponse> genForupdateAppAcl() {
+    private static HttpRequestDef<UpdateAppAclRequest, UpdateAppAclResponse> genForUpdateAppAcl() {
         // basic
         HttpRequestDef.Builder<UpdateAppAclRequest, UpdateAppAclResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppAclRequest.class, UpdateAppAclResponse.class)
@@ -4897,23 +4406,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppAclRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppAclRequest::getInstanceId, UpdateAppAclRequest::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppAclRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppAclRequest::getAppId, UpdateAppAclRequest::setAppId));
         builder.<AppAclCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppAclCreate.class),
-            f -> f.withMarshaller(UpdateAppAclRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppAclRequest::getBody, UpdateAppAclRequest::setBody));
 
         // response
 
@@ -4921,9 +4424,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateAppQuotaRequest, UpdateAppQuotaResponse> updateAppQuota =
-        genForupdateAppQuota();
+        genForUpdateAppQuota();
 
-    private static HttpRequestDef<UpdateAppQuotaRequest, UpdateAppQuotaResponse> genForupdateAppQuota() {
+    private static HttpRequestDef<UpdateAppQuotaRequest, UpdateAppQuotaResponse> genForUpdateAppQuota() {
         // basic
         HttpRequestDef.Builder<UpdateAppQuotaRequest, UpdateAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppQuotaRequest.class, UpdateAppQuotaResponse.class)
@@ -4936,32 +4439,26 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppQuotaRequest::getInstanceId, UpdateAppQuotaRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppQuotaRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppQuotaRequest::getAppQuotaId, UpdateAppQuotaRequest::setAppQuotaId));
         builder.<AppQuotaCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppQuotaCreate.class),
-            f -> f.withMarshaller(UpdateAppQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppQuotaRequest::getBody, UpdateAppQuotaRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAppV2Request, UpdateAppV2Response> updateAppV2 = genForupdateAppV2();
+    public static final HttpRequestDef<UpdateAppV2Request, UpdateAppV2Response> updateAppV2 = genForUpdateAppV2();
 
-    private static HttpRequestDef<UpdateAppV2Request, UpdateAppV2Response> genForupdateAppV2() {
+    private static HttpRequestDef<UpdateAppV2Request, UpdateAppV2Response> genForUpdateAppV2() {
         // basic
         HttpRequestDef.Builder<UpdateAppV2Request, UpdateAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppV2Request.class, UpdateAppV2Response.class)
@@ -4974,23 +4471,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppV2Request::getInstanceId, UpdateAppV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppV2Request::getAppId, UpdateAppV2Request::setAppId));
         builder.<AppCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppCreate.class),
-            f -> f.withMarshaller(UpdateAppV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppV2Request::getBody, UpdateAppV2Request::setBody));
 
         // response
 
@@ -4998,9 +4489,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2 =
-        genForupdateCustomAuthorizerV2();
+        genForUpdateCustomAuthorizerV2();
 
-    private static HttpRequestDef<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> genForupdateCustomAuthorizerV2() {
+    private static HttpRequestDef<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> genForUpdateCustomAuthorizerV2() {
         // basic
         HttpRequestDef.Builder<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> builder =
             HttpRequestDef
@@ -5014,23 +4505,19 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getInstanceId,
+                UpdateCustomAuthorizerV2Request::setInstanceId));
         builder.<String>withRequestField("authorizer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getAuthorizerId, (req, v) -> {
-                req.setAuthorizerId(v);
-            }));
+            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getAuthorizerId,
+                UpdateCustomAuthorizerV2Request::setAuthorizerId));
         builder.<AuthorizerCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AuthorizerCreate.class),
-            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getBody, UpdateCustomAuthorizerV2Request::setBody));
 
         // response
 
@@ -5038,9 +4525,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainV2Request, UpdateDomainV2Response> updateDomainV2 =
-        genForupdateDomainV2();
+        genForUpdateDomainV2();
 
-    private static HttpRequestDef<UpdateDomainV2Request, UpdateDomainV2Response> genForupdateDomainV2() {
+    private static HttpRequestDef<UpdateDomainV2Request, UpdateDomainV2Response> genForUpdateDomainV2() {
         // basic
         HttpRequestDef.Builder<UpdateDomainV2Request, UpdateDomainV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainV2Request.class, UpdateDomainV2Response.class)
@@ -5053,30 +4540,22 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainV2Request::getInstanceId, UpdateDomainV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainV2Request::getGroupId, UpdateDomainV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainV2Request::getDomainId, UpdateDomainV2Request::setDomainId));
         builder.<UrlDomainModify>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UrlDomainModify.class),
-            f -> f.withMarshaller(UpdateDomainV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainV2Request::getBody, UpdateDomainV2Request::setBody));
 
         // response
 
@@ -5084,9 +4563,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateEngressEipV2Request, UpdateEngressEipV2Response> updateEngressEipV2 =
-        genForupdateEngressEipV2();
+        genForUpdateEngressEipV2();
 
-    private static HttpRequestDef<UpdateEngressEipV2Request, UpdateEngressEipV2Response> genForupdateEngressEipV2() {
+    private static HttpRequestDef<UpdateEngressEipV2Request, UpdateEngressEipV2Response> genForUpdateEngressEipV2() {
         // basic
         HttpRequestDef.Builder<UpdateEngressEipV2Request, UpdateEngressEipV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEngressEipV2Request.class, UpdateEngressEipV2Response.class)
@@ -5099,16 +4578,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEngressEipV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEngressEipV2Request::getInstanceId, UpdateEngressEipV2Request::setInstanceId));
         builder.<OpenEngressEipReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenEngressEipReq.class),
-            f -> f.withMarshaller(UpdateEngressEipV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEngressEipV2Request::getBody, UpdateEngressEipV2Request::setBody));
 
         // response
 
@@ -5116,9 +4591,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> updateEnvironmentV2 =
-        genForupdateEnvironmentV2();
+        genForUpdateEnvironmentV2();
 
-    private static HttpRequestDef<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> genForupdateEnvironmentV2() {
+    private static HttpRequestDef<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> genForUpdateEnvironmentV2() {
         // basic
         HttpRequestDef.Builder<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEnvironmentV2Request.class, UpdateEnvironmentV2Response.class)
@@ -5131,23 +4606,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnvironmentV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentV2Request::getInstanceId,
+                UpdateEnvironmentV2Request::setInstanceId));
         builder.<String>withRequestField("env_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnvironmentV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentV2Request::getEnvId, UpdateEnvironmentV2Request::setEnvId));
         builder.<EnvCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvCreate.class),
-            f -> f.withMarshaller(UpdateEnvironmentV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentV2Request::getBody, UpdateEnvironmentV2Request::setBody));
 
         // response
 
@@ -5155,9 +4625,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> updateEnvironmentVariableV2 =
-        genForupdateEnvironmentVariableV2();
+        genForUpdateEnvironmentVariableV2();
 
-    private static HttpRequestDef<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> genForupdateEnvironmentVariableV2() {
+    private static HttpRequestDef<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> genForUpdateEnvironmentVariableV2() {
         // basic
         HttpRequestDef.Builder<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> builder =
             HttpRequestDef
@@ -5173,23 +4643,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getInstanceId,
+                UpdateEnvironmentVariableV2Request::setInstanceId));
         builder.<String>withRequestField("env_variable_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getEnvVariableId, (req, v) -> {
-                req.setEnvVariableId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getEnvVariableId,
+                UpdateEnvironmentVariableV2Request::setEnvVariableId));
         builder.<EnvVariableBase>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvVariableBase.class),
-            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getBody,
+                UpdateEnvironmentVariableV2Request::setBody));
 
         // response
 
@@ -5197,9 +4664,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> updateGatewayResponseTypeV2 =
-        genForupdateGatewayResponseTypeV2();
+        genForUpdateGatewayResponseTypeV2();
 
-    private static HttpRequestDef<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> genForupdateGatewayResponseTypeV2() {
+    private static HttpRequestDef<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> genForUpdateGatewayResponseTypeV2() {
         // basic
         HttpRequestDef.Builder<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> builder =
             HttpRequestDef
@@ -5216,54 +4683,50 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getInstanceId,
+                UpdateGatewayResponseTypeV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getGroupId,
+                UpdateGatewayResponseTypeV2Request::setGroupId));
         builder.<String>withRequestField("response_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getResponseId, (req, v) -> {
-                req.setResponseId(v);
-            }));
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getResponseId,
+                UpdateGatewayResponseTypeV2Request::setResponseId));
         builder.<UpdateGatewayResponseTypeV2Request.ResponseTypeEnum>withRequestField("response_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateGatewayResponseTypeV2Request.ResponseTypeEnum.class),
-            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getResponseType, (req, v) -> {
-                req.setResponseType(v);
-            }));
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getResponseType,
+                UpdateGatewayResponseTypeV2Request::setResponseType));
         builder.<ResponseInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResponseInfo.class),
-            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Request::getBody,
+                UpdateGatewayResponseTypeV2Request::setBody));
 
         // response
         builder.<Map<String, ResponseInfoResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(UpdateGatewayResponseTypeV2Response::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ResponseInfoResp.class));
+            f -> f
+                .withMarshaller(UpdateGatewayResponseTypeV2Response::getBody,
+                    UpdateGatewayResponseTypeV2Response::setBody)
+                .withInnerContainerType(ResponseInfoResp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> updateGatewayResponseV2 =
-        genForupdateGatewayResponseV2();
+        genForUpdateGatewayResponseV2();
 
-    private static HttpRequestDef<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> genForupdateGatewayResponseV2() {
+    private static HttpRequestDef<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> genForUpdateGatewayResponseV2() {
         // basic
         HttpRequestDef.Builder<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateGatewayResponseV2Request.class, UpdateGatewayResponseV2Response.class)
@@ -5277,30 +4740,25 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getInstanceId,
+                UpdateGatewayResponseV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getGroupId,
+                UpdateGatewayResponseV2Request::setGroupId));
         builder.<String>withRequestField("response_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getResponseId, (req, v) -> {
-                req.setResponseId(v);
-            }));
+            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getResponseId,
+                UpdateGatewayResponseV2Request::setResponseId));
         builder.<ResponsesCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResponsesCreate.class),
-            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGatewayResponseV2Request::getBody, UpdateGatewayResponseV2Request::setBody));
 
         // response
 
@@ -5308,9 +4766,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateIngressEipV2Request, UpdateIngressEipV2Response> updateIngressEipV2 =
-        genForupdateIngressEipV2();
+        genForUpdateIngressEipV2();
 
-    private static HttpRequestDef<UpdateIngressEipV2Request, UpdateIngressEipV2Response> genForupdateIngressEipV2() {
+    private static HttpRequestDef<UpdateIngressEipV2Request, UpdateIngressEipV2Response> genForUpdateIngressEipV2() {
         // basic
         HttpRequestDef.Builder<UpdateIngressEipV2Request, UpdateIngressEipV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateIngressEipV2Request.class, UpdateIngressEipV2Response.class)
@@ -5323,16 +4781,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIngressEipV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateIngressEipV2Request::getInstanceId, UpdateIngressEipV2Request::setInstanceId));
         builder.<OpenIngressEipReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenIngressEipReq.class),
-            f -> f.withMarshaller(UpdateIngressEipV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateIngressEipV2Request::getBody, UpdateIngressEipV2Request::setBody));
 
         // response
 
@@ -5340,9 +4794,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceV2Request, UpdateInstanceV2Response> updateInstanceV2 =
-        genForupdateInstanceV2();
+        genForUpdateInstanceV2();
 
-    private static HttpRequestDef<UpdateInstanceV2Request, UpdateInstanceV2Response> genForupdateInstanceV2() {
+    private static HttpRequestDef<UpdateInstanceV2Request, UpdateInstanceV2Response> genForUpdateInstanceV2() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceV2Request, UpdateInstanceV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceV2Request.class, UpdateInstanceV2Response.class)
@@ -5355,25 +4809,21 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceV2Request::getInstanceId, UpdateInstanceV2Request::setInstanceId));
         builder.<InstanceModReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceModReq.class),
-            f -> f.withMarshaller(UpdateInstanceV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceV2Request::getBody, UpdateInstanceV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> updatePlugin = genForupdatePlugin();
+    public static final HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> updatePlugin = genForUpdatePlugin();
 
-    private static HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> genForupdatePlugin() {
+    private static HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> genForUpdatePlugin() {
         // basic
         HttpRequestDef.Builder<UpdatePluginRequest, UpdatePluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePluginRequest.class, UpdatePluginResponse.class)
@@ -5386,23 +4836,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginRequest::getInstanceId, UpdatePluginRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePluginRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginRequest::getPluginId, UpdatePluginRequest::setPluginId));
         builder.<PluginCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PluginCreate.class),
-            f -> f.withMarshaller(UpdatePluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginRequest::getBody, UpdatePluginRequest::setBody));
 
         // response
 
@@ -5410,9 +4854,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> updateRequestThrottlingPolicyV2 =
-        genForupdateRequestThrottlingPolicyV2();
+        genForUpdateRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> genForupdateRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> genForUpdateRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -5428,23 +4872,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getInstanceId,
+                UpdateRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getThrottleId,
+                UpdateRequestThrottlingPolicyV2Request::setThrottleId));
         builder.<ThrottleBaseInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleBaseInfo.class),
-            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getBody,
+                UpdateRequestThrottlingPolicyV2Request::setBody));
 
         // response
 
@@ -5452,9 +4893,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> updateSignatureKeyV2 =
-        genForupdateSignatureKeyV2();
+        genForUpdateSignatureKeyV2();
 
-    private static HttpRequestDef<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> genForupdateSignatureKeyV2() {
+    private static HttpRequestDef<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> genForUpdateSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateSignatureKeyV2Request.class, UpdateSignatureKeyV2Response.class)
@@ -5467,23 +4908,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getInstanceId,
+                UpdateSignatureKeyV2Request::setInstanceId));
         builder.<String>withRequestField("sign_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getSignId, (req, v) -> {
-                req.setSignId(v);
-            }));
+            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getSignId, UpdateSignatureKeyV2Request::setSignId));
         builder.<BaseSignature>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BaseSignature.class),
-            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getBody, UpdateSignatureKeyV2Request::setBody));
 
         // response
 
@@ -5491,9 +4927,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> updateSpecialThrottlingConfigurationV2 =
-        genForupdateSpecialThrottlingConfigurationV2();
+        genForUpdateSpecialThrottlingConfigurationV2();
 
-    private static HttpRequestDef<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> genForupdateSpecialThrottlingConfigurationV2() {
+    private static HttpRequestDef<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> genForUpdateSpecialThrottlingConfigurationV2() {
         // basic
         HttpRequestDef.Builder<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef
@@ -5510,30 +4946,26 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getInstanceId,
+                UpdateSpecialThrottlingConfigurationV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getThrottleId,
+                UpdateSpecialThrottlingConfigurationV2Request::setThrottleId));
         builder.<String>withRequestField("strategy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getStrategyId, (req, v) -> {
-                req.setStrategyId(v);
-            }));
+            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getStrategyId,
+                UpdateSpecialThrottlingConfigurationV2Request::setStrategyId));
         builder.<ThrottleSpecialUpdate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleSpecialUpdate.class),
-            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getBody,
+                UpdateSpecialThrottlingConfigurationV2Request::setBody));
 
         // response
 
@@ -5541,9 +4973,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteAclV2Request, BatchDeleteAclV2Response> batchDeleteAclV2 =
-        genForbatchDeleteAclV2();
+        genForBatchDeleteAclV2();
 
-    private static HttpRequestDef<BatchDeleteAclV2Request, BatchDeleteAclV2Response> genForbatchDeleteAclV2() {
+    private static HttpRequestDef<BatchDeleteAclV2Request, BatchDeleteAclV2Response> genForBatchDeleteAclV2() {
         // basic
         HttpRequestDef.Builder<BatchDeleteAclV2Request, BatchDeleteAclV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchDeleteAclV2Request.class, BatchDeleteAclV2Response.class)
@@ -5556,23 +4988,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteAclV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAclV2Request::getInstanceId, BatchDeleteAclV2Request::setInstanceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteAclV2Request::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAclV2Request::getAction, BatchDeleteAclV2Request::setAction));
         builder.<AclBatchDelete>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AclBatchDelete.class),
-            f -> f.withMarshaller(BatchDeleteAclV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAclV2Request::getBody, BatchDeleteAclV2Request::setBody));
 
         // response
 
@@ -5580,9 +5006,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateAclStrategyV2Request, CreateAclStrategyV2Response> createAclStrategyV2 =
-        genForcreateAclStrategyV2();
+        genForCreateAclStrategyV2();
 
-    private static HttpRequestDef<CreateAclStrategyV2Request, CreateAclStrategyV2Response> genForcreateAclStrategyV2() {
+    private static HttpRequestDef<CreateAclStrategyV2Request, CreateAclStrategyV2Response> genForCreateAclStrategyV2() {
         // basic
         HttpRequestDef.Builder<CreateAclStrategyV2Request, CreateAclStrategyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAclStrategyV2Request.class, CreateAclStrategyV2Response.class)
@@ -5595,25 +5021,22 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAclStrategyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAclStrategyV2Request::getInstanceId,
+                CreateAclStrategyV2Request::setInstanceId));
         builder.<ApiAclCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiAclCreate.class),
-            f -> f.withMarshaller(CreateAclStrategyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAclStrategyV2Request::getBody, CreateAclStrategyV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAclV2Request, DeleteAclV2Response> deleteAclV2 = genFordeleteAclV2();
+    public static final HttpRequestDef<DeleteAclV2Request, DeleteAclV2Response> deleteAclV2 = genForDeleteAclV2();
 
-    private static HttpRequestDef<DeleteAclV2Request, DeleteAclV2Response> genFordeleteAclV2() {
+    private static HttpRequestDef<DeleteAclV2Request, DeleteAclV2Response> genForDeleteAclV2() {
         // basic
         HttpRequestDef.Builder<DeleteAclV2Request, DeleteAclV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAclV2Request.class, DeleteAclV2Response.class)
@@ -5626,16 +5049,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclV2Request::getInstanceId, DeleteAclV2Request::setInstanceId));
         builder.<String>withRequestField("acl_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclV2Request::getAclId, DeleteAclV2Request::setAclId));
 
         // response
 
@@ -5643,9 +5062,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListAclStrategiesV2Request, ListAclStrategiesV2Response> listAclStrategiesV2 =
-        genForlistAclStrategiesV2();
+        genForListAclStrategiesV2();
 
-    private static HttpRequestDef<ListAclStrategiesV2Request, ListAclStrategiesV2Response> genForlistAclStrategiesV2() {
+    private static HttpRequestDef<ListAclStrategiesV2Request, ListAclStrategiesV2Response> genForListAclStrategiesV2() {
         // basic
         HttpRequestDef.Builder<ListAclStrategiesV2Request, ListAclStrategiesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAclStrategiesV2Request.class, ListAclStrategiesV2Response.class)
@@ -5658,58 +5077,45 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getInstanceId,
+                ListAclStrategiesV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getOffset, ListAclStrategiesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getLimit, ListAclStrategiesV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getId, ListAclStrategiesV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getName, ListAclStrategiesV2Request::setName));
         builder.<String>withRequestField("acl_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getAclType, (req, v) -> {
-                req.setAclType(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getAclType, ListAclStrategiesV2Request::setAclType));
         builder.<String>withRequestField("entity_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getEntityType, (req, v) -> {
-                req.setEntityType(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getEntityType,
+                ListAclStrategiesV2Request::setEntityType));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getPreciseSearch,
+                ListAclStrategiesV2Request::setPreciseSearch));
 
         // response
 
@@ -5717,9 +5123,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> showDetailsOfAclPolicyV2 =
-        genForshowDetailsOfAclPolicyV2();
+        genForShowDetailsOfAclPolicyV2();
 
-    private static HttpRequestDef<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> genForshowDetailsOfAclPolicyV2() {
+    private static HttpRequestDef<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> genForShowDetailsOfAclPolicyV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> builder =
             HttpRequestDef
@@ -5733,16 +5139,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAclPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAclPolicyV2Request::getInstanceId,
+                ShowDetailsOfAclPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("acl_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAclPolicyV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAclPolicyV2Request::getAclId,
+                ShowDetailsOfAclPolicyV2Request::setAclId));
 
         // response
 
@@ -5750,9 +5154,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> updateAclStrategyV2 =
-        genForupdateAclStrategyV2();
+        genForUpdateAclStrategyV2();
 
-    private static HttpRequestDef<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> genForupdateAclStrategyV2() {
+    private static HttpRequestDef<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> genForUpdateAclStrategyV2() {
         // basic
         HttpRequestDef.Builder<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAclStrategyV2Request.class, UpdateAclStrategyV2Response.class)
@@ -5765,23 +5169,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclStrategyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclStrategyV2Request::getInstanceId,
+                UpdateAclStrategyV2Request::setInstanceId));
         builder.<String>withRequestField("acl_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclStrategyV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclStrategyV2Request::getAclId, UpdateAclStrategyV2Request::setAclId));
         builder.<ApiAclCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiAclCreate.class),
-            f -> f.withMarshaller(UpdateAclStrategyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAclStrategyV2Request::getBody, UpdateAclStrategyV2Request::setBody));
 
         // response
 
@@ -5789,9 +5188,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> associateRequestThrottlingPolicyV2 =
-        genForassociateRequestThrottlingPolicyV2();
+        genForAssociateRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> genForassociateRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> genForAssociateRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -5807,16 +5206,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateRequestThrottlingPolicyV2Request::getInstanceId,
+                AssociateRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<ThrottleApiBindingCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleApiBindingCreate.class),
-            f -> f.withMarshaller(AssociateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateRequestThrottlingPolicyV2Request::getBody,
+                AssociateRequestThrottlingPolicyV2Request::setBody));
 
         // response
 
@@ -5824,9 +5221,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> batchDisassociateThrottlingPolicyV2 =
-        genForbatchDisassociateThrottlingPolicyV2();
+        genForBatchDisassociateThrottlingPolicyV2();
 
-    private static HttpRequestDef<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> genForbatchDisassociateThrottlingPolicyV2() {
+    private static HttpRequestDef<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> genForBatchDisassociateThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -5842,23 +5239,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getInstanceId,
+                BatchDisassociateThrottlingPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getAction,
+                BatchDisassociateThrottlingPolicyV2Request::setAction));
         builder.<ThrottleBindingBatchDelete>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleBindingBatchDelete.class),
-            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getBody,
+                BatchDisassociateThrottlingPolicyV2Request::setBody));
 
         // response
 
@@ -5866,9 +5260,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> batchPublishOrOfflineApiV2 =
-        genForbatchPublishOrOfflineApiV2();
+        genForBatchPublishOrOfflineApiV2();
 
-    private static HttpRequestDef<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> genForbatchPublishOrOfflineApiV2() {
+    private static HttpRequestDef<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> genForBatchPublishOrOfflineApiV2() {
         // basic
         HttpRequestDef.Builder<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> builder =
             HttpRequestDef
@@ -5884,23 +5278,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getInstanceId,
+                BatchPublishOrOfflineApiV2Request::setInstanceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getAction,
+                BatchPublishOrOfflineApiV2Request::setAction));
         builder.<ApiBatchPublish>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiBatchPublish.class),
-            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getBody,
+                BatchPublishOrOfflineApiV2Request::setBody));
 
         // response
 
@@ -5908,9 +5299,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ChangeApiVersionV2Request, ChangeApiVersionV2Response> changeApiVersionV2 =
-        genForchangeApiVersionV2();
+        genForChangeApiVersionV2();
 
-    private static HttpRequestDef<ChangeApiVersionV2Request, ChangeApiVersionV2Response> genForchangeApiVersionV2() {
+    private static HttpRequestDef<ChangeApiVersionV2Request, ChangeApiVersionV2Response> genForChangeApiVersionV2() {
         // basic
         HttpRequestDef.Builder<ChangeApiVersionV2Request, ChangeApiVersionV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeApiVersionV2Request.class, ChangeApiVersionV2Response.class)
@@ -5923,23 +5314,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeApiVersionV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeApiVersionV2Request::getInstanceId, ChangeApiVersionV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeApiVersionV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ChangeApiVersionV2Request::getApiId, ChangeApiVersionV2Request::setApiId));
         builder.<ApiVersion>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiVersion.class),
-            f -> f.withMarshaller(ChangeApiVersionV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeApiVersionV2Request::getBody, ChangeApiVersionV2Request::setBody));
 
         // response
 
@@ -5947,9 +5332,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CheckApiGroupsV2Request, CheckApiGroupsV2Response> checkApiGroupsV2 =
-        genForcheckApiGroupsV2();
+        genForCheckApiGroupsV2();
 
-    private static HttpRequestDef<CheckApiGroupsV2Request, CheckApiGroupsV2Response> genForcheckApiGroupsV2() {
+    private static HttpRequestDef<CheckApiGroupsV2Request, CheckApiGroupsV2Response> genForCheckApiGroupsV2() {
         // basic
         HttpRequestDef.Builder<CheckApiGroupsV2Request, CheckApiGroupsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckApiGroupsV2Request.class, CheckApiGroupsV2Response.class)
@@ -5962,25 +5347,21 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckApiGroupsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckApiGroupsV2Request::getInstanceId, CheckApiGroupsV2Request::setInstanceId));
         builder.<ApiGroupCheck>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiGroupCheck.class),
-            f -> f.withMarshaller(CheckApiGroupsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckApiGroupsV2Request::getBody, CheckApiGroupsV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckApisV2Request, CheckApisV2Response> checkApisV2 = genForcheckApisV2();
+    public static final HttpRequestDef<CheckApisV2Request, CheckApisV2Response> checkApisV2 = genForCheckApisV2();
 
-    private static HttpRequestDef<CheckApisV2Request, CheckApisV2Response> genForcheckApisV2() {
+    private static HttpRequestDef<CheckApisV2Request, CheckApisV2Response> genForCheckApisV2() {
         // basic
         HttpRequestDef.Builder<CheckApisV2Request, CheckApisV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckApisV2Request.class, CheckApisV2Response.class)
@@ -5993,16 +5374,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckApisV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckApisV2Request::getInstanceId, CheckApisV2Request::setInstanceId));
         builder.<ApiCheckInfoV2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiCheckInfoV2.class),
-            f -> f.withMarshaller(CheckApisV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckApisV2Request::getBody, CheckApisV2Request::setBody));
 
         // response
 
@@ -6010,9 +5387,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateApiGroupV2Request, CreateApiGroupV2Response> createApiGroupV2 =
-        genForcreateApiGroupV2();
+        genForCreateApiGroupV2();
 
-    private static HttpRequestDef<CreateApiGroupV2Request, CreateApiGroupV2Response> genForcreateApiGroupV2() {
+    private static HttpRequestDef<CreateApiGroupV2Request, CreateApiGroupV2Response> genForCreateApiGroupV2() {
         // basic
         HttpRequestDef.Builder<CreateApiGroupV2Request, CreateApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApiGroupV2Request.class, CreateApiGroupV2Response.class)
@@ -6025,25 +5402,21 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApiGroupV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateApiGroupV2Request::getInstanceId, CreateApiGroupV2Request::setInstanceId));
         builder.<ApiGroupCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiGroupCreate.class),
-            f -> f.withMarshaller(CreateApiGroupV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApiGroupV2Request::getBody, CreateApiGroupV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateApiV2Request, CreateApiV2Response> createApiV2 = genForcreateApiV2();
+    public static final HttpRequestDef<CreateApiV2Request, CreateApiV2Response> createApiV2 = genForCreateApiV2();
 
-    private static HttpRequestDef<CreateApiV2Request, CreateApiV2Response> genForcreateApiV2() {
+    private static HttpRequestDef<CreateApiV2Request, CreateApiV2Response> genForCreateApiV2() {
         // basic
         HttpRequestDef.Builder<CreateApiV2Request, CreateApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApiV2Request.class, CreateApiV2Response.class)
@@ -6056,16 +5429,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateApiV2Request::getInstanceId, CreateApiV2Request::setInstanceId));
         builder.<ApiCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiCreate.class),
-            f -> f.withMarshaller(CreateApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApiV2Request::getBody, CreateApiV2Request::setBody));
 
         // response
 
@@ -6073,9 +5442,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> createOrDeletePublishRecordForApiV2 =
-        genForcreateOrDeletePublishRecordForApiV2();
+        genForCreateOrDeletePublishRecordForApiV2();
 
-    private static HttpRequestDef<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> genForcreateOrDeletePublishRecordForApiV2() {
+    private static HttpRequestDef<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> genForCreateOrDeletePublishRecordForApiV2() {
         // basic
         HttpRequestDef.Builder<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> builder =
             HttpRequestDef
@@ -6091,25 +5460,23 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getInstanceId,
+                CreateOrDeletePublishRecordForApiV2Request::setInstanceId));
         builder.<ApiActionInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiActionInfo.class),
-            f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getBody,
+                CreateOrDeletePublishRecordForApiV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DebugApiV2Request, DebugApiV2Response> debugApiV2 = genFordebugApiV2();
+    public static final HttpRequestDef<DebugApiV2Request, DebugApiV2Response> debugApiV2 = genForDebugApiV2();
 
-    private static HttpRequestDef<DebugApiV2Request, DebugApiV2Response> genFordebugApiV2() {
+    private static HttpRequestDef<DebugApiV2Request, DebugApiV2Response> genForDebugApiV2() {
         // basic
         HttpRequestDef.Builder<DebugApiV2Request, DebugApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, DebugApiV2Request.class, DebugApiV2Response.class)
@@ -6122,23 +5489,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DebugApiV2Request::getInstanceId, DebugApiV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(DebugApiV2Request::getApiId, DebugApiV2Request::setApiId));
         builder.<ApiDebugInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiDebugInfo.class),
-            f -> f.withMarshaller(DebugApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DebugApiV2Request::getBody, DebugApiV2Request::setBody));
 
         // response
 
@@ -6146,9 +5507,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> deleteApiByVersionIdV2 =
-        genFordeleteApiByVersionIdV2();
+        genForDeleteApiByVersionIdV2();
 
-    private static HttpRequestDef<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> genFordeleteApiByVersionIdV2() {
+    private static HttpRequestDef<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> genForDeleteApiByVersionIdV2() {
         // basic
         HttpRequestDef.Builder<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteApiByVersionIdV2Request.class, DeleteApiByVersionIdV2Response.class)
@@ -6161,16 +5522,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiByVersionIdV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiByVersionIdV2Request::getInstanceId,
+                DeleteApiByVersionIdV2Request::setInstanceId));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiByVersionIdV2Request::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiByVersionIdV2Request::getVersionId,
+                DeleteApiByVersionIdV2Request::setVersionId));
 
         // response
 
@@ -6178,9 +5537,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteApiGroupV2Request, DeleteApiGroupV2Response> deleteApiGroupV2 =
-        genFordeleteApiGroupV2();
+        genForDeleteApiGroupV2();
 
-    private static HttpRequestDef<DeleteApiGroupV2Request, DeleteApiGroupV2Response> genFordeleteApiGroupV2() {
+    private static HttpRequestDef<DeleteApiGroupV2Request, DeleteApiGroupV2Response> genForDeleteApiGroupV2() {
         // basic
         HttpRequestDef.Builder<DeleteApiGroupV2Request, DeleteApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApiGroupV2Request.class, DeleteApiGroupV2Response.class)
@@ -6193,25 +5552,21 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiGroupV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiGroupV2Request::getInstanceId, DeleteApiGroupV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiGroupV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiGroupV2Request::getGroupId, DeleteApiGroupV2Request::setGroupId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteApiV2Request, DeleteApiV2Response> deleteApiV2 = genFordeleteApiV2();
+    public static final HttpRequestDef<DeleteApiV2Request, DeleteApiV2Response> deleteApiV2 = genForDeleteApiV2();
 
-    private static HttpRequestDef<DeleteApiV2Request, DeleteApiV2Response> genFordeleteApiV2() {
+    private static HttpRequestDef<DeleteApiV2Request, DeleteApiV2Response> genForDeleteApiV2() {
         // basic
         HttpRequestDef.Builder<DeleteApiV2Request, DeleteApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApiV2Request.class, DeleteApiV2Response.class)
@@ -6224,16 +5579,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiV2Request::getInstanceId, DeleteApiV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiV2Request::getApiId, DeleteApiV2Request::setApiId));
 
         // response
 
@@ -6241,9 +5592,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> disassociateRequestThrottlingPolicyV2 =
-        genFordisassociateRequestThrottlingPolicyV2();
+        genForDisassociateRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> genFordisassociateRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> genForDisassociateRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -6259,16 +5610,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DisassociateRequestThrottlingPolicyV2Request::getInstanceId,
+                DisassociateRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_binding_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateRequestThrottlingPolicyV2Request::getThrottleBindingId, (req, v) -> {
-                req.setThrottleBindingId(v);
-            }));
+            f -> f.withMarshaller(DisassociateRequestThrottlingPolicyV2Request::getThrottleBindingId,
+                DisassociateRequestThrottlingPolicyV2Request::setThrottleBindingId));
 
         // response
 
@@ -6276,9 +5625,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApiGroupsV2Request, ListApiGroupsV2Response> listApiGroupsV2 =
-        genForlistApiGroupsV2();
+        genForListApiGroupsV2();
 
-    private static HttpRequestDef<ListApiGroupsV2Request, ListApiGroupsV2Response> genForlistApiGroupsV2() {
+    private static HttpRequestDef<ListApiGroupsV2Request, ListApiGroupsV2Response> genForListApiGroupsV2() {
         // basic
         HttpRequestDef.Builder<ListApiGroupsV2Request, ListApiGroupsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiGroupsV2Request.class, ListApiGroupsV2Response.class)
@@ -6291,44 +5640,32 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getInstanceId, ListApiGroupsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getOffset, ListApiGroupsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getLimit, ListApiGroupsV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getId, ListApiGroupsV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getName, ListApiGroupsV2Request::setName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getPreciseSearch, ListApiGroupsV2Request::setPreciseSearch));
 
         // response
 
@@ -6336,9 +5673,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> listApiRuntimeDefinitionV2 =
-        genForlistApiRuntimeDefinitionV2();
+        genForListApiRuntimeDefinitionV2();
 
-    private static HttpRequestDef<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> genForlistApiRuntimeDefinitionV2() {
+    private static HttpRequestDef<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> genForListApiRuntimeDefinitionV2() {
         // basic
         HttpRequestDef.Builder<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> builder =
             HttpRequestDef
@@ -6354,23 +5691,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getInstanceId,
+                ListApiRuntimeDefinitionV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getApiId,
+                ListApiRuntimeDefinitionV2Request::setApiId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getEnvId,
+                ListApiRuntimeDefinitionV2Request::setEnvId));
 
         // response
 
@@ -6378,9 +5712,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> listApiVersionDetailV2 =
-        genForlistApiVersionDetailV2();
+        genForListApiVersionDetailV2();
 
-    private static HttpRequestDef<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> genForlistApiVersionDetailV2() {
+    private static HttpRequestDef<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> genForListApiVersionDetailV2() {
         // basic
         HttpRequestDef.Builder<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListApiVersionDetailV2Request.class, ListApiVersionDetailV2Response.class)
@@ -6393,16 +5727,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionDetailV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionDetailV2Request::getInstanceId,
+                ListApiVersionDetailV2Request::setInstanceId));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionDetailV2Request::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionDetailV2Request::getVersionId,
+                ListApiVersionDetailV2Request::setVersionId));
 
         // response
 
@@ -6410,9 +5742,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsV2Request, ListApiVersionsV2Response> listApiVersionsV2 =
-        genForlistApiVersionsV2();
+        genForListApiVersionsV2();
 
-    private static HttpRequestDef<ListApiVersionsV2Request, ListApiVersionsV2Response> genForlistApiVersionsV2() {
+    private static HttpRequestDef<ListApiVersionsV2Request, ListApiVersionsV2Response> genForListApiVersionsV2() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsV2Request, ListApiVersionsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsV2Request.class, ListApiVersionsV2Response.class)
@@ -6425,44 +5757,32 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getInstanceId, ListApiVersionsV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getApiId, ListApiVersionsV2Request::setApiId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getOffset, ListApiVersionsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getLimit, ListApiVersionsV2Request::setLimit));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvId, ListApiVersionsV2Request::setEnvId));
         builder.<String>withRequestField("env_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvName, (req, v) -> {
-                req.setEnvName(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvName, ListApiVersionsV2Request::setEnvName));
 
         // response
 
@@ -6470,9 +5790,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> listApisBindedToRequestThrottlingPolicyV2 =
-        genForlistApisBindedToRequestThrottlingPolicyV2();
+        genForListApisBindedToRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> genForlistApisBindedToRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> genForListApisBindedToRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -6488,58 +5808,50 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getInstanceId,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getOffset,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getLimit,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setLimit));
         builder.<String>withRequestField("throttle_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getThrottleId,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setThrottleId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getEnvId,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setEnvId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getGroupId,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setGroupId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiId,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiName,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setApiName));
 
         // response
 
@@ -6547,9 +5859,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> listApisUnbindedToRequestThrottlingPolicyV2 =
-        genForlistApisUnbindedToRequestThrottlingPolicyV2();
+        genForListApisUnbindedToRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> genForlistApisUnbindedToRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> genForListApisUnbindedToRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -6565,67 +5877,59 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getInstanceId,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getOffset,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getLimit,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setLimit));
         builder.<String>withRequestField("throttle_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getThrottleId,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setThrottleId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getEnvId,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setEnvId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getGroupId,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setGroupId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getApiId,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getApiName,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setApiName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApisV2Request, ListApisV2Response> listApisV2 = genForlistApisV2();
+    public static final HttpRequestDef<ListApisV2Request, ListApisV2Response> listApisV2 = genForListApisV2();
 
-    private static HttpRequestDef<ListApisV2Request, ListApisV2Response> genForlistApisV2() {
+    private static HttpRequestDef<ListApisV2Request, ListApisV2Response> genForListApisV2() {
         // basic
         HttpRequestDef.Builder<ListApisV2Request, ListApisV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisV2Request.class, ListApisV2Response.class)
@@ -6638,107 +5942,77 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getInstanceId, ListApisV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getOffset, ListApisV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getLimit, ListApisV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getId, ListApisV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getName, ListApisV2Request::setName));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getGroupId, ListApisV2Request::setGroupId));
         builder.<String>withRequestField("req_protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getReqProtocol, (req, v) -> {
-                req.setReqProtocol(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getReqProtocol, ListApisV2Request::setReqProtocol));
         builder.<String>withRequestField("req_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getReqMethod, (req, v) -> {
-                req.setReqMethod(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getReqMethod, ListApisV2Request::setReqMethod));
         builder.<String>withRequestField("req_uri",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getReqUri, (req, v) -> {
-                req.setReqUri(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getReqUri, ListApisV2Request::setReqUri));
         builder.<String>withRequestField("auth_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getAuthType, (req, v) -> {
-                req.setAuthType(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getAuthType, ListApisV2Request::setAuthType));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getEnvId, ListApisV2Request::setEnvId));
         builder.<Integer>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisV2Request::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getType, ListApisV2Request::setType));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getPreciseSearch, ListApisV2Request::setPreciseSearch));
         builder.<String>withRequestField("vpc_channel_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getVpcChannelName, (req, v) -> {
-                req.setVpcChannelName(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getVpcChannelName, ListApisV2Request::setVpcChannelName));
         builder.<String>withRequestField("return_data_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getReturnDataMode, (req, v) -> {
-                req.setReturnDataMode(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getReturnDataMode, ListApisV2Request::setReturnDataMode));
 
         // response
 
@@ -6746,9 +6020,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> listRequestThrottlingPoliciesBindedToApiV2 =
-        genForlistRequestThrottlingPoliciesBindedToApiV2();
+        genForListRequestThrottlingPoliciesBindedToApiV2();
 
-    private static HttpRequestDef<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> genForlistRequestThrottlingPoliciesBindedToApiV2() {
+    private static HttpRequestDef<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> genForListRequestThrottlingPoliciesBindedToApiV2() {
         // basic
         HttpRequestDef.Builder<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> builder =
             HttpRequestDef
@@ -6764,51 +6038,44 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getInstanceId,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getOffset,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getLimit,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setLimit));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getApiId,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setApiId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getThrottleId,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setThrottleId));
         builder.<String>withRequestField("throttle_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getThrottleName, (req, v) -> {
-                req.setThrottleName(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getThrottleName,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setThrottleName));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getEnvId,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setEnvId));
 
         // response
 
@@ -6816,9 +6083,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> showDetailsOfApiGroupV2 =
-        genForshowDetailsOfApiGroupV2();
+        genForShowDetailsOfApiGroupV2();
 
-    private static HttpRequestDef<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> genForshowDetailsOfApiGroupV2() {
+    private static HttpRequestDef<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> genForShowDetailsOfApiGroupV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDetailsOfApiGroupV2Request.class, ShowDetailsOfApiGroupV2Response.class)
@@ -6831,16 +6098,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfApiGroupV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfApiGroupV2Request::getInstanceId,
+                ShowDetailsOfApiGroupV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfApiGroupV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfApiGroupV2Request::getGroupId,
+                ShowDetailsOfApiGroupV2Request::setGroupId));
 
         // response
 
@@ -6848,9 +6113,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> showDetailsOfApiV2 =
-        genForshowDetailsOfApiV2();
+        genForShowDetailsOfApiV2();
 
-    private static HttpRequestDef<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> genForshowDetailsOfApiV2() {
+    private static HttpRequestDef<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> genForShowDetailsOfApiV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfApiV2Request.class, ShowDetailsOfApiV2Response.class)
@@ -6863,16 +6128,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfApiV2Request::getInstanceId, ShowDetailsOfApiV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfApiV2Request::getApiId, ShowDetailsOfApiV2Request::setApiId));
 
         // response
 
@@ -6880,9 +6141,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateApiGroupV2Request, UpdateApiGroupV2Response> updateApiGroupV2 =
-        genForupdateApiGroupV2();
+        genForUpdateApiGroupV2();
 
-    private static HttpRequestDef<UpdateApiGroupV2Request, UpdateApiGroupV2Response> genForupdateApiGroupV2() {
+    private static HttpRequestDef<UpdateApiGroupV2Request, UpdateApiGroupV2Response> genForUpdateApiGroupV2() {
         // basic
         HttpRequestDef.Builder<UpdateApiGroupV2Request, UpdateApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateApiGroupV2Request.class, UpdateApiGroupV2Response.class)
@@ -6895,32 +6156,26 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateApiGroupV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateApiGroupV2Request::getInstanceId, UpdateApiGroupV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateApiGroupV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateApiGroupV2Request::getGroupId, UpdateApiGroupV2Request::setGroupId));
         builder.<ApiGroupBase>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiGroupBase.class),
-            f -> f.withMarshaller(UpdateApiGroupV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateApiGroupV2Request::getBody, UpdateApiGroupV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateApiV2Request, UpdateApiV2Response> updateApiV2 = genForupdateApiV2();
+    public static final HttpRequestDef<UpdateApiV2Request, UpdateApiV2Response> updateApiV2 = genForUpdateApiV2();
 
-    private static HttpRequestDef<UpdateApiV2Request, UpdateApiV2Response> genForupdateApiV2() {
+    private static HttpRequestDef<UpdateApiV2Request, UpdateApiV2Response> genForUpdateApiV2() {
         // basic
         HttpRequestDef.Builder<UpdateApiV2Request, UpdateApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateApiV2Request.class, UpdateApiV2Response.class)
@@ -6933,23 +6188,17 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateApiV2Request::getInstanceId, UpdateApiV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(UpdateApiV2Request::getApiId, UpdateApiV2Request::setApiId));
         builder.<ApiCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiCreate.class),
-            f -> f.withMarshaller(UpdateApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateApiV2Request::getBody, UpdateApiV2Request::setBody));
 
         // response
 
@@ -6957,9 +6206,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> batchDeleteApiAclBindingV2 =
-        genForbatchDeleteApiAclBindingV2();
+        genForBatchDeleteApiAclBindingV2();
 
-    private static HttpRequestDef<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> genForbatchDeleteApiAclBindingV2() {
+    private static HttpRequestDef<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> genForBatchDeleteApiAclBindingV2() {
         // basic
         HttpRequestDef.Builder<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> builder =
             HttpRequestDef
@@ -6975,23 +6224,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getInstanceId,
+                BatchDeleteApiAclBindingV2Request::setInstanceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getAction,
+                BatchDeleteApiAclBindingV2Request::setAction));
         builder.<AclBindingBatchDelete>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AclBindingBatchDelete.class),
-            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getBody,
+                BatchDeleteApiAclBindingV2Request::setBody));
 
         // response
 
@@ -6999,9 +6245,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> createApiAclBindingV2 =
-        genForcreateApiAclBindingV2();
+        genForCreateApiAclBindingV2();
 
-    private static HttpRequestDef<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> genForcreateApiAclBindingV2() {
+    private static HttpRequestDef<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> genForCreateApiAclBindingV2() {
         // basic
         HttpRequestDef.Builder<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateApiAclBindingV2Request.class, CreateApiAclBindingV2Response.class)
@@ -7014,16 +6260,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApiAclBindingV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateApiAclBindingV2Request::getInstanceId,
+                CreateApiAclBindingV2Request::setInstanceId));
         builder.<AclApiBindingCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AclApiBindingCreate.class),
-            f -> f.withMarshaller(CreateApiAclBindingV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApiAclBindingV2Request::getBody, CreateApiAclBindingV2Request::setBody));
 
         // response
 
@@ -7031,9 +6274,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> deleteApiAclBindingV2 =
-        genFordeleteApiAclBindingV2();
+        genForDeleteApiAclBindingV2();
 
-    private static HttpRequestDef<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> genFordeleteApiAclBindingV2() {
+    private static HttpRequestDef<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> genForDeleteApiAclBindingV2() {
         // basic
         HttpRequestDef.Builder<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteApiAclBindingV2Request.class, DeleteApiAclBindingV2Response.class)
@@ -7046,16 +6289,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiAclBindingV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiAclBindingV2Request::getInstanceId,
+                DeleteApiAclBindingV2Request::setInstanceId));
         builder.<String>withRequestField("acl_bindings_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiAclBindingV2Request::getAclBindingsId, (req, v) -> {
-                req.setAclBindingsId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiAclBindingV2Request::getAclBindingsId,
+                DeleteApiAclBindingV2Request::setAclBindingsId));
 
         // response
 
@@ -7063,9 +6304,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> listAclPolicyBindedToApiV2 =
-        genForlistAclPolicyBindedToApiV2();
+        genForListAclPolicyBindedToApiV2();
 
-    private static HttpRequestDef<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> genForlistAclPolicyBindedToApiV2() {
+    private static HttpRequestDef<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> genForListAclPolicyBindedToApiV2() {
         // basic
         HttpRequestDef.Builder<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> builder =
             HttpRequestDef
@@ -7081,58 +6322,50 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getInstanceId,
+                ListAclPolicyBindedToApiV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getOffset,
+                ListAclPolicyBindedToApiV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getLimit,
+                ListAclPolicyBindedToApiV2Request::setLimit));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getApiId,
+                ListAclPolicyBindedToApiV2Request::setApiId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getEnvId,
+                ListAclPolicyBindedToApiV2Request::setEnvId));
         builder.<String>withRequestField("env_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getEnvName, (req, v) -> {
-                req.setEnvName(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getEnvName,
+                ListAclPolicyBindedToApiV2Request::setEnvName));
         builder.<String>withRequestField("acl_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclId,
+                ListAclPolicyBindedToApiV2Request::setAclId));
         builder.<String>withRequestField("acl_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclName, (req, v) -> {
-                req.setAclName(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclName,
+                ListAclPolicyBindedToApiV2Request::setAclName));
 
         // response
 
@@ -7140,9 +6373,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> listApisBindedToAclPolicyV2 =
-        genForlistApisBindedToAclPolicyV2();
+        genForListApisBindedToAclPolicyV2();
 
-    private static HttpRequestDef<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> genForlistApisBindedToAclPolicyV2() {
+    private static HttpRequestDef<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> genForListApisBindedToAclPolicyV2() {
         // basic
         HttpRequestDef.Builder<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> builder =
             HttpRequestDef
@@ -7158,58 +6391,50 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getInstanceId,
+                ListApisBindedToAclPolicyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getOffset,
+                ListApisBindedToAclPolicyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getLimit,
+                ListApisBindedToAclPolicyV2Request::setLimit));
         builder.<String>withRequestField("acl_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getAclId,
+                ListApisBindedToAclPolicyV2Request::setAclId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getApiId,
+                ListApisBindedToAclPolicyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getApiName,
+                ListApisBindedToAclPolicyV2Request::setApiName));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getEnvId,
+                ListApisBindedToAclPolicyV2Request::setEnvId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getGroupId,
+                ListApisBindedToAclPolicyV2Request::setGroupId));
 
         // response
 
@@ -7217,9 +6442,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> listApisUnbindedToAclPolicyV2 =
-        genForlistApisUnbindedToAclPolicyV2();
+        genForListApisUnbindedToAclPolicyV2();
 
-    private static HttpRequestDef<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> genForlistApisUnbindedToAclPolicyV2() {
+    private static HttpRequestDef<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> genForListApisUnbindedToAclPolicyV2() {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> builder =
             HttpRequestDef
@@ -7235,58 +6460,50 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getInstanceId,
+                ListApisUnbindedToAclPolicyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getOffset,
+                ListApisUnbindedToAclPolicyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getLimit,
+                ListApisUnbindedToAclPolicyV2Request::setLimit));
         builder.<String>withRequestField("acl_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getAclId,
+                ListApisUnbindedToAclPolicyV2Request::setAclId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getApiId,
+                ListApisUnbindedToAclPolicyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getApiName,
+                ListApisUnbindedToAclPolicyV2Request::setApiName));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getEnvId,
+                ListApisUnbindedToAclPolicyV2Request::setEnvId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getGroupId,
+                ListApisUnbindedToAclPolicyV2Request::setGroupId));
 
         // response
 
@@ -7294,9 +6511,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> cancelingAuthorizationV2 =
-        genForcancelingAuthorizationV2();
+        genForCancelingAuthorizationV2();
 
-    private static HttpRequestDef<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> genForcancelingAuthorizationV2() {
+    private static HttpRequestDef<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> genForCancelingAuthorizationV2() {
         // basic
         HttpRequestDef.Builder<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> builder =
             HttpRequestDef
@@ -7312,16 +6529,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelingAuthorizationV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CancelingAuthorizationV2Request::getInstanceId,
+                CancelingAuthorizationV2Request::setInstanceId));
         builder.<String>withRequestField("app_auth_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelingAuthorizationV2Request::getAppAuthId, (req, v) -> {
-                req.setAppAuthId(v);
-            }));
+            f -> f.withMarshaller(CancelingAuthorizationV2Request::getAppAuthId,
+                CancelingAuthorizationV2Request::setAppAuthId));
 
         // response
 
@@ -7329,9 +6544,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> createAuthorizingAppsV2 =
-        genForcreateAuthorizingAppsV2();
+        genForCreateAuthorizingAppsV2();
 
-    private static HttpRequestDef<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> genForcreateAuthorizingAppsV2() {
+    private static HttpRequestDef<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> genForCreateAuthorizingAppsV2() {
         // basic
         HttpRequestDef.Builder<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateAuthorizingAppsV2Request.class, CreateAuthorizingAppsV2Response.class)
@@ -7344,16 +6559,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getInstanceId,
+                CreateAuthorizingAppsV2Request::setInstanceId));
         builder.<ApiAuthCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiAuthCreate.class),
-            f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getBody, CreateAuthorizingAppsV2Request::setBody));
 
         // response
 
@@ -7361,9 +6573,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> listApisBindedToAppV2 =
-        genForlistApisBindedToAppV2();
+        genForListApisBindedToAppV2();
 
-    private static HttpRequestDef<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> genForlistApisBindedToAppV2() {
+    private static HttpRequestDef<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> genForListApisBindedToAppV2() {
         // basic
         HttpRequestDef.Builder<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListApisBindedToAppV2Request.class, ListApisBindedToAppV2Response.class)
@@ -7376,65 +6588,49 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getInstanceId,
+                ListApisBindedToAppV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getOffset, ListApisBindedToAppV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getLimit, ListApisBindedToAppV2Request::setLimit));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getAppId, ListApisBindedToAppV2Request::setAppId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getApiId, ListApisBindedToAppV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getApiName, ListApisBindedToAppV2Request::setApiName));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getGroupId, ListApisBindedToAppV2Request::setGroupId));
         builder.<String>withRequestField("group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getGroupName, (req, v) -> {
-                req.setGroupName(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getGroupName,
+                ListApisBindedToAppV2Request::setGroupName));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getEnvId, ListApisBindedToAppV2Request::setEnvId));
 
         // response
 
@@ -7442,9 +6638,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> listApisUnbindedToAppV2 =
-        genForlistApisUnbindedToAppV2();
+        genForListApisUnbindedToAppV2();
 
-    private static HttpRequestDef<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> genForlistApisUnbindedToAppV2() {
+    private static HttpRequestDef<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> genForListApisUnbindedToAppV2() {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListApisUnbindedToAppV2Request.class, ListApisUnbindedToAppV2Response.class)
@@ -7457,58 +6653,46 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getInstanceId,
+                ListApisUnbindedToAppV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getOffset,
+                ListApisUnbindedToAppV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getLimit, ListApisUnbindedToAppV2Request::setLimit));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getAppId, ListApisUnbindedToAppV2Request::setAppId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getEnvId, ListApisUnbindedToAppV2Request::setEnvId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getGroupId,
+                ListApisUnbindedToAppV2Request::setGroupId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getApiId, ListApisUnbindedToAppV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getApiName,
+                ListApisUnbindedToAppV2Request::setApiName));
 
         // response
 
@@ -7516,9 +6700,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> listAppsBindedToApiV2 =
-        genForlistAppsBindedToApiV2();
+        genForListAppsBindedToApiV2();
 
-    private static HttpRequestDef<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> genForlistAppsBindedToApiV2() {
+    private static HttpRequestDef<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> genForListAppsBindedToApiV2() {
         // basic
         HttpRequestDef.Builder<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAppsBindedToApiV2Request.class, ListAppsBindedToApiV2Response.class)
@@ -7531,51 +6715,38 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getInstanceId,
+                ListAppsBindedToApiV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getOffset, ListAppsBindedToApiV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getLimit, ListAppsBindedToApiV2Request::setLimit));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getApiId, ListAppsBindedToApiV2Request::setApiId));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getAppName, ListAppsBindedToApiV2Request::setAppName));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getAppId, ListAppsBindedToApiV2Request::setAppId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getEnvId, ListAppsBindedToApiV2Request::setEnvId));
 
         // response
 
@@ -7583,9 +6754,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> exportApiDefinitionsV2 =
-        genForexportApiDefinitionsV2();
+        genForExportApiDefinitionsV2();
 
-    private static HttpRequestDef<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> genForexportApiDefinitionsV2() {
+    private static HttpRequestDef<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> genForExportApiDefinitionsV2() {
         // basic
         HttpRequestDef.Builder<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, ExportApiDefinitionsV2Request.class, ExportApiDefinitionsV2Response.class)
@@ -7598,23 +6769,19 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getInstanceId,
+                ExportApiDefinitionsV2Request::setInstanceId));
         builder.<ExportApiDefinitionsV2Request.OasVersionEnum>withRequestField("oas_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportApiDefinitionsV2Request.OasVersionEnum.class),
-            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getOasVersion, (req, v) -> {
-                req.setOasVersion(v);
-            }));
+            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getOasVersion,
+                ExportApiDefinitionsV2Request::setOasVersion));
         builder.<ExportOpenApiReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportOpenApiReq.class),
-            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getBody, ExportApiDefinitionsV2Request::setBody));
 
         // response
 
@@ -7622,9 +6789,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> importApiDefinitionsV2 =
-        genForimportApiDefinitionsV2();
+        genForImportApiDefinitionsV2();
 
-    private static HttpRequestDef<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> genForimportApiDefinitionsV2() {
+    private static HttpRequestDef<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> genForImportApiDefinitionsV2() {
         // basic
         HttpRequestDef.Builder<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, ImportApiDefinitionsV2Request.class, ImportApiDefinitionsV2Response.class)
@@ -7637,16 +6804,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getInstanceId,
+                ImportApiDefinitionsV2Request::setInstanceId));
         builder.<ImportApiDefinitionsV2RequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportApiDefinitionsV2RequestBody.class),
-            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getBody, ImportApiDefinitionsV2Request::setBody));
 
         // response
 
@@ -7654,9 +6818,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> batchAssociateCertsV2 =
-        genForbatchAssociateCertsV2();
+        genForBatchAssociateCertsV2();
 
-    private static HttpRequestDef<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> genForbatchAssociateCertsV2() {
+    private static HttpRequestDef<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> genForBatchAssociateCertsV2() {
         // basic
         HttpRequestDef.Builder<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchAssociateCertsV2Request.class, BatchAssociateCertsV2Response.class)
@@ -7670,30 +6834,24 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateCertsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getInstanceId,
+                BatchAssociateCertsV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateCertsV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getGroupId, BatchAssociateCertsV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateCertsV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getDomainId,
+                BatchAssociateCertsV2Request::setDomainId));
         builder.<AttachOrDetachCertsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachOrDetachCertsReqBody.class),
-            f -> f.withMarshaller(BatchAssociateCertsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getBody, BatchAssociateCertsV2Request::setBody));
 
         // response
 
@@ -7701,9 +6859,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> batchAssociateDomainsV2 =
-        genForbatchAssociateDomainsV2();
+        genForBatchAssociateDomainsV2();
 
-    private static HttpRequestDef<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> genForbatchAssociateDomainsV2() {
+    private static HttpRequestDef<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> genForBatchAssociateDomainsV2() {
         // basic
         HttpRequestDef.Builder<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchAssociateDomainsV2Request.class, BatchAssociateDomainsV2Response.class)
@@ -7716,16 +6874,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getCertificateId,
+                BatchAssociateDomainsV2Request::setCertificateId));
         builder.<AttachOrDetachDomainsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachOrDetachDomainsReqBody.class),
-            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getBody, BatchAssociateDomainsV2Request::setBody));
 
         // response
 
@@ -7733,9 +6888,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> batchDisassociateCertsV2 =
-        genForbatchDisassociateCertsV2();
+        genForBatchDisassociateCertsV2();
 
-    private static HttpRequestDef<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> genForbatchDisassociateCertsV2() {
+    private static HttpRequestDef<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> genForBatchDisassociateCertsV2() {
         // basic
         HttpRequestDef.Builder<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> builder =
             HttpRequestDef
@@ -7750,30 +6905,25 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getInstanceId,
+                BatchDisassociateCertsV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getGroupId,
+                BatchDisassociateCertsV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getDomainId,
+                BatchDisassociateCertsV2Request::setDomainId));
         builder.<AttachOrDetachCertsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachOrDetachCertsReqBody.class),
-            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getBody, BatchDisassociateCertsV2Request::setBody));
 
         // response
 
@@ -7781,9 +6931,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2 =
-        genForbatchDisassociateDomainsV2();
+        genForBatchDisassociateDomainsV2();
 
-    private static HttpRequestDef<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> genForbatchDisassociateDomainsV2() {
+    private static HttpRequestDef<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> genForBatchDisassociateDomainsV2() {
         // basic
         HttpRequestDef.Builder<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> builder =
             HttpRequestDef
@@ -7799,16 +6949,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getCertificateId,
+                BatchDisassociateDomainsV2Request::setCertificateId));
         builder.<AttachOrDetachDomainsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachOrDetachDomainsReqBody.class),
-            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getBody,
+                BatchDisassociateDomainsV2Request::setBody));
 
         // response
 
@@ -7816,9 +6964,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateV2Request, CreateCertificateV2Response> createCertificateV2 =
-        genForcreateCertificateV2();
+        genForCreateCertificateV2();
 
-    private static HttpRequestDef<CreateCertificateV2Request, CreateCertificateV2Response> genForcreateCertificateV2() {
+    private static HttpRequestDef<CreateCertificateV2Request, CreateCertificateV2Response> genForCreateCertificateV2() {
         // basic
         HttpRequestDef.Builder<CreateCertificateV2Request, CreateCertificateV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCertificateV2Request.class, CreateCertificateV2Response.class)
@@ -7831,9 +6979,7 @@ public class ApigMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CertificateForm.class),
-            f -> f.withMarshaller(CreateCertificateV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateV2Request::getBody, CreateCertificateV2Request::setBody));
 
         // response
 
@@ -7841,9 +6987,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteCertificateV2Request, DeleteCertificateV2Response> deleteCertificateV2 =
-        genFordeleteCertificateV2();
+        genForDeleteCertificateV2();
 
-    private static HttpRequestDef<DeleteCertificateV2Request, DeleteCertificateV2Response> genFordeleteCertificateV2() {
+    private static HttpRequestDef<DeleteCertificateV2Request, DeleteCertificateV2Response> genForDeleteCertificateV2() {
         // basic
         HttpRequestDef.Builder<DeleteCertificateV2Request, DeleteCertificateV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteCertificateV2Request.class, DeleteCertificateV2Response.class)
@@ -7856,9 +7002,8 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateV2Request::getCertificateId,
+                DeleteCertificateV2Request::setCertificateId));
 
         // response
 
@@ -7866,9 +7011,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> listAttachedDomainsV2 =
-        genForlistAttachedDomainsV2();
+        genForListAttachedDomainsV2();
 
-    private static HttpRequestDef<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> genForlistAttachedDomainsV2() {
+    private static HttpRequestDef<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> genForListAttachedDomainsV2() {
         // basic
         HttpRequestDef.Builder<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAttachedDomainsV2Request.class, ListAttachedDomainsV2Response.class)
@@ -7881,30 +7026,24 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttachedDomainsV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getCertificateId,
+                ListAttachedDomainsV2Request::setCertificateId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAttachedDomainsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getOffset, ListAttachedDomainsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAttachedDomainsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getLimit, ListAttachedDomainsV2Request::setLimit));
         builder.<String>withRequestField("url_domain",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttachedDomainsV2Request::getUrlDomain, (req, v) -> {
-                req.setUrlDomain(v);
-            }));
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getUrlDomain,
+                ListAttachedDomainsV2Request::setUrlDomain));
 
         // response
 
@@ -7912,9 +7051,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListCertificatesV2Request, ListCertificatesV2Response> listCertificatesV2 =
-        genForlistCertificatesV2();
+        genForListCertificatesV2();
 
-    private static HttpRequestDef<ListCertificatesV2Request, ListCertificatesV2Response> genForlistCertificatesV2() {
+    private static HttpRequestDef<ListCertificatesV2Request, ListCertificatesV2Response> genForListCertificatesV2() {
         // basic
         HttpRequestDef.Builder<ListCertificatesV2Request, ListCertificatesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertificatesV2Request.class, ListCertificatesV2Response.class)
@@ -7927,51 +7066,38 @@ public class ApigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getOffset, ListCertificatesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getLimit, ListCertificatesV2Request::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getName, ListCertificatesV2Request::setName));
         builder.<String>withRequestField("common_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getCommonName, (req, v) -> {
-                req.setCommonName(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getCommonName, ListCertificatesV2Request::setCommonName));
         builder.<String>withRequestField("signature_algorithm",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getSignatureAlgorithm, (req, v) -> {
-                req.setSignatureAlgorithm(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getSignatureAlgorithm,
+                ListCertificatesV2Request::setSignatureAlgorithm));
         builder.<ListCertificatesV2Request.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListCertificatesV2Request.TypeEnum.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getType, ListCertificatesV2Request::setType));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getInstanceId, ListCertificatesV2Request::setInstanceId));
 
         // response
 
@@ -7979,9 +7105,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2 =
-        genForshowDetailsOfCertificateV2();
+        genForShowDetailsOfCertificateV2();
 
-    private static HttpRequestDef<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> genForshowDetailsOfCertificateV2() {
+    private static HttpRequestDef<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> genForShowDetailsOfCertificateV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> builder =
             HttpRequestDef
@@ -7997,9 +7123,8 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfCertificateV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfCertificateV2Request::getCertificateId,
+                ShowDetailsOfCertificateV2Request::setCertificateId));
 
         // response
 
@@ -8007,9 +7132,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateCertificateV2Request, UpdateCertificateV2Response> updateCertificateV2 =
-        genForupdateCertificateV2();
+        genForUpdateCertificateV2();
 
-    private static HttpRequestDef<UpdateCertificateV2Request, UpdateCertificateV2Response> genForupdateCertificateV2() {
+    private static HttpRequestDef<UpdateCertificateV2Request, UpdateCertificateV2Response> genForUpdateCertificateV2() {
         // basic
         HttpRequestDef.Builder<UpdateCertificateV2Request, UpdateCertificateV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCertificateV2Request.class, UpdateCertificateV2Response.class)
@@ -8022,16 +7147,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCertificateV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateV2Request::getCertificateId,
+                UpdateCertificateV2Request::setCertificateId));
         builder.<CertificateForm>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CertificateForm.class),
-            f -> f.withMarshaller(UpdateCertificateV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateV2Request::getBody, UpdateCertificateV2Request::setBody));
 
         // response
 
@@ -8039,9 +7161,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> addingBackendInstancesV2 =
-        genForaddingBackendInstancesV2();
+        genForAddingBackendInstancesV2();
 
-    private static HttpRequestDef<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> genForaddingBackendInstancesV2() {
+    private static HttpRequestDef<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> genForAddingBackendInstancesV2() {
         // basic
         HttpRequestDef.Builder<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> builder =
             HttpRequestDef
@@ -8055,23 +7177,19 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddingBackendInstancesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddingBackendInstancesV2Request::getInstanceId,
+                AddingBackendInstancesV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddingBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(AddingBackendInstancesV2Request::getVpcChannelId,
+                AddingBackendInstancesV2Request::setVpcChannelId));
         builder.<VpcMemberCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcMemberCreate.class),
-            f -> f.withMarshaller(AddingBackendInstancesV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddingBackendInstancesV2Request::getBody, AddingBackendInstancesV2Request::setBody));
 
         // response
 
@@ -8079,9 +7197,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchDisableMembersRequest, BatchDisableMembersResponse> batchDisableMembers =
-        genForbatchDisableMembers();
+        genForBatchDisableMembers();
 
-    private static HttpRequestDef<BatchDisableMembersRequest, BatchDisableMembersResponse> genForbatchDisableMembers() {
+    private static HttpRequestDef<BatchDisableMembersRequest, BatchDisableMembersResponse> genForBatchDisableMembers() {
         // basic
         HttpRequestDef.Builder<BatchDisableMembersRequest, BatchDisableMembersResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDisableMembersRequest.class, BatchDisableMembersResponse.class)
@@ -8095,23 +7213,19 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisableMembersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDisableMembersRequest::getInstanceId,
+                BatchDisableMembersRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisableMembersRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(BatchDisableMembersRequest::getVpcChannelId,
+                BatchDisableMembersRequest::setVpcChannelId));
         builder.<MembersBatchEnableOrDisable>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MembersBatchEnableOrDisable.class),
-            f -> f.withMarshaller(BatchDisableMembersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDisableMembersRequest::getBody, BatchDisableMembersRequest::setBody));
 
         // response
 
@@ -8119,9 +7233,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<BatchEnableMembersRequest, BatchEnableMembersResponse> batchEnableMembers =
-        genForbatchEnableMembers();
+        genForBatchEnableMembers();
 
-    private static HttpRequestDef<BatchEnableMembersRequest, BatchEnableMembersResponse> genForbatchEnableMembers() {
+    private static HttpRequestDef<BatchEnableMembersRequest, BatchEnableMembersResponse> genForBatchEnableMembers() {
         // basic
         HttpRequestDef.Builder<BatchEnableMembersRequest, BatchEnableMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchEnableMembersRequest.class, BatchEnableMembersResponse.class)
@@ -8135,23 +7249,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchEnableMembersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchEnableMembersRequest::getInstanceId, BatchEnableMembersRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchEnableMembersRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(BatchEnableMembersRequest::getVpcChannelId,
+                BatchEnableMembersRequest::setVpcChannelId));
         builder.<MembersBatchEnableOrDisable>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MembersBatchEnableOrDisable.class),
-            f -> f.withMarshaller(BatchEnableMembersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchEnableMembersRequest::getBody, BatchEnableMembersRequest::setBody));
 
         // response
 
@@ -8159,9 +7268,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateMemberGroupRequest, CreateMemberGroupResponse> createMemberGroup =
-        genForcreateMemberGroup();
+        genForCreateMemberGroup();
 
-    private static HttpRequestDef<CreateMemberGroupRequest, CreateMemberGroupResponse> genForcreateMemberGroup() {
+    private static HttpRequestDef<CreateMemberGroupRequest, CreateMemberGroupResponse> genForCreateMemberGroup() {
         // basic
         HttpRequestDef.Builder<CreateMemberGroupRequest, CreateMemberGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMemberGroupRequest.class, CreateMemberGroupResponse.class)
@@ -8174,23 +7283,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMemberGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateMemberGroupRequest::getInstanceId, CreateMemberGroupRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMemberGroupRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(CreateMemberGroupRequest::getVpcChannelId,
+                CreateMemberGroupRequest::setVpcChannelId));
         builder.<MemberGroupCreateBatch>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MemberGroupCreateBatch.class),
-            f -> f.withMarshaller(CreateMemberGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMemberGroupRequest::getBody, CreateMemberGroupRequest::setBody));
 
         // response
 
@@ -8198,9 +7302,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<CreateVpcChannelV2Request, CreateVpcChannelV2Response> createVpcChannelV2 =
-        genForcreateVpcChannelV2();
+        genForCreateVpcChannelV2();
 
-    private static HttpRequestDef<CreateVpcChannelV2Request, CreateVpcChannelV2Response> genForcreateVpcChannelV2() {
+    private static HttpRequestDef<CreateVpcChannelV2Request, CreateVpcChannelV2Response> genForCreateVpcChannelV2() {
         // basic
         HttpRequestDef.Builder<CreateVpcChannelV2Request, CreateVpcChannelV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVpcChannelV2Request.class, CreateVpcChannelV2Response.class)
@@ -8213,16 +7317,12 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVpcChannelV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateVpcChannelV2Request::getInstanceId, CreateVpcChannelV2Request::setInstanceId));
         builder.<VpcCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcCreate.class),
-            f -> f.withMarshaller(CreateVpcChannelV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVpcChannelV2Request::getBody, CreateVpcChannelV2Request::setBody));
 
         // response
 
@@ -8230,9 +7330,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> deleteBackendInstanceV2 =
-        genFordeleteBackendInstanceV2();
+        genForDeleteBackendInstanceV2();
 
-    private static HttpRequestDef<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> genFordeleteBackendInstanceV2() {
+    private static HttpRequestDef<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> genForDeleteBackendInstanceV2() {
         // basic
         HttpRequestDef.Builder<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteBackendInstanceV2Request.class, DeleteBackendInstanceV2Response.class)
@@ -8245,23 +7345,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getInstanceId,
+                DeleteBackendInstanceV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getVpcChannelId,
+                DeleteBackendInstanceV2Request::setVpcChannelId));
         builder.<String>withRequestField("member_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getMemberId,
+                DeleteBackendInstanceV2Request::setMemberId));
 
         // response
 
@@ -8269,9 +7366,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteMemberGroupRequest, DeleteMemberGroupResponse> deleteMemberGroup =
-        genFordeleteMemberGroup();
+        genForDeleteMemberGroup();
 
-    private static HttpRequestDef<DeleteMemberGroupRequest, DeleteMemberGroupResponse> genFordeleteMemberGroup() {
+    private static HttpRequestDef<DeleteMemberGroupRequest, DeleteMemberGroupResponse> genForDeleteMemberGroup() {
         // basic
         HttpRequestDef.Builder<DeleteMemberGroupRequest, DeleteMemberGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteMemberGroupRequest.class, DeleteMemberGroupResponse.class)
@@ -8285,23 +7382,19 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMemberGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getInstanceId, DeleteMemberGroupRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMemberGroupRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getVpcChannelId,
+                DeleteMemberGroupRequest::setVpcChannelId));
         builder.<String>withRequestField("member_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMemberGroupRequest::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getMemberGroupId,
+                DeleteMemberGroupRequest::setMemberGroupId));
 
         // response
 
@@ -8309,9 +7402,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> deleteVpcChannelV2 =
-        genFordeleteVpcChannelV2();
+        genForDeleteVpcChannelV2();
 
-    private static HttpRequestDef<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> genFordeleteVpcChannelV2() {
+    private static HttpRequestDef<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> genForDeleteVpcChannelV2() {
         // basic
         HttpRequestDef.Builder<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcChannelV2Request.class, DeleteVpcChannelV2Response.class)
@@ -8324,16 +7417,13 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVpcChannelV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteVpcChannelV2Request::getInstanceId, DeleteVpcChannelV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVpcChannelV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(DeleteVpcChannelV2Request::getVpcChannelId,
+                DeleteVpcChannelV2Request::setVpcChannelId));
 
         // response
 
@@ -8341,9 +7431,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListBackendInstancesV2Request, ListBackendInstancesV2Response> listBackendInstancesV2 =
-        genForlistBackendInstancesV2();
+        genForListBackendInstancesV2();
 
-    private static HttpRequestDef<ListBackendInstancesV2Request, ListBackendInstancesV2Response> genForlistBackendInstancesV2() {
+    private static HttpRequestDef<ListBackendInstancesV2Request, ListBackendInstancesV2Response> genForListBackendInstancesV2() {
         // basic
         HttpRequestDef.Builder<ListBackendInstancesV2Request, ListBackendInstancesV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListBackendInstancesV2Request.class, ListBackendInstancesV2Response.class)
@@ -8356,58 +7446,47 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getInstanceId,
+                ListBackendInstancesV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getVpcChannelId,
+                ListBackendInstancesV2Request::setVpcChannelId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getOffset, ListBackendInstancesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getLimit, ListBackendInstancesV2Request::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getName, ListBackendInstancesV2Request::setName));
         builder.<String>withRequestField("member_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupName, (req, v) -> {
-                req.setMemberGroupName(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupName,
+                ListBackendInstancesV2Request::setMemberGroupName));
         builder.<String>withRequestField("member_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupId,
+                ListBackendInstancesV2Request::setMemberGroupId));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getPreciseSearch,
+                ListBackendInstancesV2Request::setPreciseSearch));
 
         // response
 
@@ -8415,9 +7494,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListMemberGroupsRequest, ListMemberGroupsResponse> listMemberGroups =
-        genForlistMemberGroups();
+        genForListMemberGroups();
 
-    private static HttpRequestDef<ListMemberGroupsRequest, ListMemberGroupsResponse> genForlistMemberGroups() {
+    private static HttpRequestDef<ListMemberGroupsRequest, ListMemberGroupsResponse> genForListMemberGroups() {
         // basic
         HttpRequestDef.Builder<ListMemberGroupsRequest, ListMemberGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMemberGroupsRequest.class, ListMemberGroupsResponse.class)
@@ -8430,51 +7509,39 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getInstanceId, ListMemberGroupsRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getVpcChannelId, ListMemberGroupsRequest::setVpcChannelId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getOffset, ListMemberGroupsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getLimit, ListMemberGroupsRequest::setLimit));
         builder.<String>withRequestField("dict_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getDictCode, (req, v) -> {
-                req.setDictCode(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getDictCode, ListMemberGroupsRequest::setDictCode));
         builder.<String>withRequestField("member_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getMemberGroupName, (req, v) -> {
-                req.setMemberGroupName(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getMemberGroupName,
+                ListMemberGroupsRequest::setMemberGroupName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getPreciseSearch,
+                ListMemberGroupsRequest::setPreciseSearch));
 
         // response
 
@@ -8482,9 +7549,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ListVpcChannelsV2Request, ListVpcChannelsV2Response> listVpcChannelsV2 =
-        genForlistVpcChannelsV2();
+        genForListVpcChannelsV2();
 
-    private static HttpRequestDef<ListVpcChannelsV2Request, ListVpcChannelsV2Response> genForlistVpcChannelsV2() {
+    private static HttpRequestDef<ListVpcChannelsV2Request, ListVpcChannelsV2Response> genForListVpcChannelsV2() {
         // basic
         HttpRequestDef.Builder<ListVpcChannelsV2Request, ListVpcChannelsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVpcChannelsV2Request.class, ListVpcChannelsV2Response.class)
@@ -8497,79 +7564,60 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getInstanceId, ListVpcChannelsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getOffset, ListVpcChannelsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getLimit, ListVpcChannelsV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getId, ListVpcChannelsV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getName, ListVpcChannelsV2Request::setName));
         builder.<String>withRequestField("dict_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getDictCode, (req, v) -> {
-                req.setDictCode(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getDictCode, ListVpcChannelsV2Request::setDictCode));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getPreciseSearch,
+                ListVpcChannelsV2Request::setPreciseSearch));
         builder.<String>withRequestField("member_host",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberHost, (req, v) -> {
-                req.setMemberHost(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberHost, ListVpcChannelsV2Request::setMemberHost));
         builder.<Integer>withRequestField("member_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberPort, (req, v) -> {
-                req.setMemberPort(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberPort, ListVpcChannelsV2Request::setMemberPort));
         builder.<String>withRequestField("member_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupName, (req, v) -> {
-                req.setMemberGroupName(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupName,
+                ListVpcChannelsV2Request::setMemberGroupName));
         builder.<String>withRequestField("member_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupId,
+                ListVpcChannelsV2Request::setMemberGroupId));
 
         // response
 
@@ -8577,9 +7625,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> showDetailsOfMemberGroup =
-        genForshowDetailsOfMemberGroup();
+        genForShowDetailsOfMemberGroup();
 
-    private static HttpRequestDef<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> genForshowDetailsOfMemberGroup() {
+    private static HttpRequestDef<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> genForShowDetailsOfMemberGroup() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> builder =
             HttpRequestDef
@@ -8594,23 +7642,20 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getInstanceId,
+                ShowDetailsOfMemberGroupRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getVpcChannelId,
+                ShowDetailsOfMemberGroupRequest::setVpcChannelId));
         builder.<String>withRequestField("member_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getMemberGroupId,
+                ShowDetailsOfMemberGroupRequest::setMemberGroupId));
 
         // response
 
@@ -8618,9 +7663,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> showDetailsOfVpcChannelV2 =
-        genForshowDetailsOfVpcChannelV2();
+        genForShowDetailsOfVpcChannelV2();
 
-    private static HttpRequestDef<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> genForshowDetailsOfVpcChannelV2() {
+    private static HttpRequestDef<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> genForShowDetailsOfVpcChannelV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> builder =
             HttpRequestDef
@@ -8636,16 +7681,14 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getInstanceId,
+                ShowDetailsOfVpcChannelV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getVpcChannelId,
+                ShowDetailsOfVpcChannelV2Request::setVpcChannelId));
 
         // response
 
@@ -8653,9 +7696,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> updateBackendInstancesV2 =
-        genForupdateBackendInstancesV2();
+        genForUpdateBackendInstancesV2();
 
-    private static HttpRequestDef<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> genForupdateBackendInstancesV2() {
+    private static HttpRequestDef<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> genForUpdateBackendInstancesV2() {
         // basic
         HttpRequestDef.Builder<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> builder =
             HttpRequestDef
@@ -8669,23 +7712,19 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getInstanceId,
+                UpdateBackendInstancesV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getVpcChannelId,
+                UpdateBackendInstancesV2Request::setVpcChannelId));
         builder.<VpcMemberModify>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcMemberModify.class),
-            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getBody, UpdateBackendInstancesV2Request::setBody));
 
         // response
 
@@ -8693,9 +7732,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> updateHealthCheck =
-        genForupdateHealthCheck();
+        genForUpdateHealthCheck();
 
-    private static HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> genForupdateHealthCheck() {
+    private static HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> genForUpdateHealthCheck() {
         // basic
         HttpRequestDef.Builder<UpdateHealthCheckRequest, UpdateHealthCheckResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateHealthCheckRequest.class, UpdateHealthCheckResponse.class)
@@ -8708,23 +7747,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHealthCheckRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getInstanceId, UpdateHealthCheckRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHealthCheckRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getVpcChannelId,
+                UpdateHealthCheckRequest::setVpcChannelId));
         builder.<VpcHealthConfig>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcHealthConfig.class),
-            f -> f.withMarshaller(UpdateHealthCheckRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getBody, UpdateHealthCheckRequest::setBody));
 
         // response
 
@@ -8732,9 +7766,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateMemberGroupRequest, UpdateMemberGroupResponse> updateMemberGroup =
-        genForupdateMemberGroup();
+        genForUpdateMemberGroup();
 
-    private static HttpRequestDef<UpdateMemberGroupRequest, UpdateMemberGroupResponse> genForupdateMemberGroup() {
+    private static HttpRequestDef<UpdateMemberGroupRequest, UpdateMemberGroupResponse> genForUpdateMemberGroup() {
         // basic
         HttpRequestDef.Builder<UpdateMemberGroupRequest, UpdateMemberGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateMemberGroupRequest.class, UpdateMemberGroupResponse.class)
@@ -8748,30 +7782,24 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getInstanceId, UpdateMemberGroupRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberGroupRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getVpcChannelId,
+                UpdateMemberGroupRequest::setVpcChannelId));
         builder.<String>withRequestField("member_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberGroupRequest::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getMemberGroupId,
+                UpdateMemberGroupRequest::setMemberGroupId));
         builder.<MemberGroupCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MemberGroupCreate.class),
-            f -> f.withMarshaller(UpdateMemberGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getBody, UpdateMemberGroupRequest::setBody));
 
         // response
 
@@ -8779,9 +7807,9 @@ public class ApigMeta {
     }
 
     public static final HttpRequestDef<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> updateVpcChannelV2 =
-        genForupdateVpcChannelV2();
+        genForUpdateVpcChannelV2();
 
-    private static HttpRequestDef<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> genForupdateVpcChannelV2() {
+    private static HttpRequestDef<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> genForUpdateVpcChannelV2() {
         // basic
         HttpRequestDef.Builder<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVpcChannelV2Request.class, UpdateVpcChannelV2Response.class)
@@ -8794,23 +7822,18 @@ public class ApigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVpcChannelV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcChannelV2Request::getInstanceId, UpdateVpcChannelV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVpcChannelV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcChannelV2Request::getVpcChannelId,
+                UpdateVpcChannelV2Request::setVpcChannelId));
         builder.<VpcCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcCreate.class),
-            f -> f.withMarshaller(UpdateVpcChannelV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcChannelV2Request::getBody, UpdateVpcChannelV2Request::setBody));
 
         // response
 

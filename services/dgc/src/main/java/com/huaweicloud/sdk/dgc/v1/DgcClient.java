@@ -105,7 +105,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelScriptRequest 请求对象
+     * @param request CancelScriptRequest 请求对象
      * @return CancelScriptResponse
      */
     public CancelScriptResponse cancelScript(CancelScriptRequest request) {
@@ -118,11 +118,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelScriptRequest 请求对象
+     * @param request CancelScriptRequest 请求对象
      * @return SyncInvoker<CancelScriptRequest, CancelScriptResponse>
      */
     public SyncInvoker<CancelScriptRequest, CancelScriptResponse> cancelScriptInvoker(CancelScriptRequest request) {
-        return new SyncInvoker<CancelScriptRequest, CancelScriptResponse>(request, DgcMeta.cancelScript, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.cancelScript, hcClient);
     }
 
     /**
@@ -131,7 +131,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionRequest 请求对象
+     * @param request CreateConnectionRequest 请求对象
      * @return CreateConnectionResponse
      */
     public CreateConnectionResponse createConnection(CreateConnectionRequest request) {
@@ -144,13 +144,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionRequest 请求对象
+     * @param request CreateConnectionRequest 请求对象
      * @return SyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
      */
     public SyncInvoker<CreateConnectionRequest, CreateConnectionResponse> createConnectionInvoker(
         CreateConnectionRequest request) {
-        return new SyncInvoker<CreateConnectionRequest, CreateConnectionResponse>(request, DgcMeta.createConnection,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.createConnection, hcClient);
     }
 
     /**
@@ -159,7 +158,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateJobRequest 请求对象
+     * @param request CreateJobRequest 请求对象
      * @return CreateJobResponse
      */
     public CreateJobResponse createJob(CreateJobRequest request) {
@@ -172,11 +171,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateJobRequest 请求对象
+     * @param request CreateJobRequest 请求对象
      * @return SyncInvoker<CreateJobRequest, CreateJobResponse>
      */
     public SyncInvoker<CreateJobRequest, CreateJobResponse> createJobInvoker(CreateJobRequest request) {
-        return new SyncInvoker<CreateJobRequest, CreateJobResponse>(request, DgcMeta.createJob, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.createJob, hcClient);
     }
 
     /**
@@ -185,7 +184,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceRequest 请求对象
+     * @param request CreateResourceRequest 请求对象
      * @return CreateResourceResponse
      */
     public CreateResourceResponse createResource(CreateResourceRequest request) {
@@ -198,13 +197,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceRequest 请求对象
+     * @param request CreateResourceRequest 请求对象
      * @return SyncInvoker<CreateResourceRequest, CreateResourceResponse>
      */
     public SyncInvoker<CreateResourceRequest, CreateResourceResponse> createResourceInvoker(
         CreateResourceRequest request) {
-        return new SyncInvoker<CreateResourceRequest, CreateResourceResponse>(request, DgcMeta.createResource,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.createResource, hcClient);
     }
 
     /**
@@ -213,7 +211,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScriptRequest 请求对象
+     * @param request CreateScriptRequest 请求对象
      * @return CreateScriptResponse
      */
     public CreateScriptResponse createScript(CreateScriptRequest request) {
@@ -226,11 +224,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScriptRequest 请求对象
+     * @param request CreateScriptRequest 请求对象
      * @return SyncInvoker<CreateScriptRequest, CreateScriptResponse>
      */
     public SyncInvoker<CreateScriptRequest, CreateScriptResponse> createScriptInvoker(CreateScriptRequest request) {
-        return new SyncInvoker<CreateScriptRequest, CreateScriptResponse>(request, DgcMeta.createScript, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.createScript, hcClient);
     }
 
     /**
@@ -239,7 +237,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSupplementdataRequest 请求对象
+     * @param request CreateSupplementdataRequest 请求对象
      * @return CreateSupplementdataResponse
      */
     public CreateSupplementdataResponse createSupplementdata(CreateSupplementdataRequest request) {
@@ -252,13 +250,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSupplementdataRequest 请求对象
+     * @param request CreateSupplementdataRequest 请求对象
      * @return SyncInvoker<CreateSupplementdataRequest, CreateSupplementdataResponse>
      */
     public SyncInvoker<CreateSupplementdataRequest, CreateSupplementdataResponse> createSupplementdataInvoker(
         CreateSupplementdataRequest request) {
-        return new SyncInvoker<CreateSupplementdataRequest, CreateSupplementdataResponse>(request,
-            DgcMeta.createSupplementdata, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.createSupplementdata, hcClient);
     }
 
     /**
@@ -267,7 +264,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnctionRequest 请求对象
+     * @param request DeleteConnctionRequest 请求对象
      * @return DeleteConnctionResponse
      */
     public DeleteConnctionResponse deleteConnction(DeleteConnctionRequest request) {
@@ -280,13 +277,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnctionRequest 请求对象
+     * @param request DeleteConnctionRequest 请求对象
      * @return SyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse>
      */
     public SyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse> deleteConnctionInvoker(
         DeleteConnctionRequest request) {
-        return new SyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse>(request, DgcMeta.deleteConnction,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.deleteConnction, hcClient);
     }
 
     /**
@@ -295,7 +291,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobRequest 请求对象
+     * @param request DeleteJobRequest 请求对象
      * @return DeleteJobResponse
      */
     public DeleteJobResponse deleteJob(DeleteJobRequest request) {
@@ -308,11 +304,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobRequest 请求对象
+     * @param request DeleteJobRequest 请求对象
      * @return SyncInvoker<DeleteJobRequest, DeleteJobResponse>
      */
     public SyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobInvoker(DeleteJobRequest request) {
-        return new SyncInvoker<DeleteJobRequest, DeleteJobResponse>(request, DgcMeta.deleteJob, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.deleteJob, hcClient);
     }
 
     /**
@@ -321,7 +317,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceRequest 请求对象
+     * @param request DeleteResourceRequest 请求对象
      * @return DeleteResourceResponse
      */
     public DeleteResourceResponse deleteResource(DeleteResourceRequest request) {
@@ -334,13 +330,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceRequest 请求对象
+     * @param request DeleteResourceRequest 请求对象
      * @return SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
      */
     public SyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceInvoker(
         DeleteResourceRequest request) {
-        return new SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, DgcMeta.deleteResource,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.deleteResource, hcClient);
     }
 
     /**
@@ -349,7 +344,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScriptRequest 请求对象
+     * @param request DeleteScriptRequest 请求对象
      * @return DeleteScriptResponse
      */
     public DeleteScriptResponse deleteScript(DeleteScriptRequest request) {
@@ -362,11 +357,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScriptRequest 请求对象
+     * @param request DeleteScriptRequest 请求对象
      * @return SyncInvoker<DeleteScriptRequest, DeleteScriptResponse>
      */
     public SyncInvoker<DeleteScriptRequest, DeleteScriptResponse> deleteScriptInvoker(DeleteScriptRequest request) {
-        return new SyncInvoker<DeleteScriptRequest, DeleteScriptResponse>(request, DgcMeta.deleteScript, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.deleteScript, hcClient);
     }
 
     /**
@@ -375,7 +370,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteScriptRequest 请求对象
+     * @param request ExecuteScriptRequest 请求对象
      * @return ExecuteScriptResponse
      */
     public ExecuteScriptResponse executeScript(ExecuteScriptRequest request) {
@@ -388,11 +383,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteScriptRequest 请求对象
+     * @param request ExecuteScriptRequest 请求对象
      * @return SyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse>
      */
     public SyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse> executeScriptInvoker(ExecuteScriptRequest request) {
-        return new SyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse>(request, DgcMeta.executeScript, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.executeScript, hcClient);
     }
 
     /**
@@ -401,7 +396,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportConnectionsRequest 请求对象
+     * @param request ExportConnectionsRequest 请求对象
      * @return ExportConnectionsResponse
      */
     public ExportConnectionsResponse exportConnections(ExportConnectionsRequest request) {
@@ -414,13 +409,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportConnectionsRequest 请求对象
+     * @param request ExportConnectionsRequest 请求对象
      * @return SyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse>
      */
     public SyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse> exportConnectionsInvoker(
         ExportConnectionsRequest request) {
-        return new SyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse>(request, DgcMeta.exportConnections,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.exportConnections, hcClient);
     }
 
     /**
@@ -429,7 +423,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportJobRequest 请求对象
+     * @param request ExportJobRequest 请求对象
      * @return ExportJobResponse
      */
     public ExportJobResponse exportJob(ExportJobRequest request) {
@@ -442,11 +436,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportJobRequest 请求对象
+     * @param request ExportJobRequest 请求对象
      * @return SyncInvoker<ExportJobRequest, ExportJobResponse>
      */
     public SyncInvoker<ExportJobRequest, ExportJobResponse> exportJobInvoker(ExportJobRequest request) {
-        return new SyncInvoker<ExportJobRequest, ExportJobResponse>(request, DgcMeta.exportJob, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.exportJob, hcClient);
     }
 
     /**
@@ -455,7 +449,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportJobListRequest 请求对象
+     * @param request ExportJobListRequest 请求对象
      * @return ExportJobListResponse
      */
     public ExportJobListResponse exportJobList(ExportJobListRequest request) {
@@ -468,11 +462,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportJobListRequest 请求对象
+     * @param request ExportJobListRequest 请求对象
      * @return SyncInvoker<ExportJobListRequest, ExportJobListResponse>
      */
     public SyncInvoker<ExportJobListRequest, ExportJobListResponse> exportJobListInvoker(ExportJobListRequest request) {
-        return new SyncInvoker<ExportJobListRequest, ExportJobListResponse>(request, DgcMeta.exportJobList, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.exportJobList, hcClient);
     }
 
     /**
@@ -481,7 +475,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportConnectionsRequest 请求对象
+     * @param request ImportConnectionsRequest 请求对象
      * @return ImportConnectionsResponse
      */
     public ImportConnectionsResponse importConnections(ImportConnectionsRequest request) {
@@ -494,13 +488,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportConnectionsRequest 请求对象
+     * @param request ImportConnectionsRequest 请求对象
      * @return SyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse>
      */
     public SyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse> importConnectionsInvoker(
         ImportConnectionsRequest request) {
-        return new SyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse>(request, DgcMeta.importConnections,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.importConnections, hcClient);
     }
 
     /**
@@ -509,7 +502,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportJobRequest 请求对象
+     * @param request ImportJobRequest 请求对象
      * @return ImportJobResponse
      */
     public ImportJobResponse importJob(ImportJobRequest request) {
@@ -522,11 +515,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportJobRequest 请求对象
+     * @param request ImportJobRequest 请求对象
      * @return SyncInvoker<ImportJobRequest, ImportJobResponse>
      */
     public SyncInvoker<ImportJobRequest, ImportJobResponse> importJobInvoker(ImportJobRequest request) {
-        return new SyncInvoker<ImportJobRequest, ImportJobResponse>(request, DgcMeta.importJob, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.importJob, hcClient);
     }
 
     /**
@@ -535,7 +528,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectionsRequest 请求对象
+     * @param request ListConnectionsRequest 请求对象
      * @return ListConnectionsResponse
      */
     public ListConnectionsResponse listConnections(ListConnectionsRequest request) {
@@ -548,13 +541,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectionsRequest 请求对象
+     * @param request ListConnectionsRequest 请求对象
      * @return SyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
      */
     public SyncInvoker<ListConnectionsRequest, ListConnectionsResponse> listConnectionsInvoker(
         ListConnectionsRequest request) {
-        return new SyncInvoker<ListConnectionsRequest, ListConnectionsResponse>(request, DgcMeta.listConnections,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.listConnections, hcClient);
     }
 
     /**
@@ -563,7 +555,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobInstancesRequest 请求对象
+     * @param request ListJobInstancesRequest 请求对象
      * @return ListJobInstancesResponse
      */
     public ListJobInstancesResponse listJobInstances(ListJobInstancesRequest request) {
@@ -576,13 +568,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobInstancesRequest 请求对象
+     * @param request ListJobInstancesRequest 请求对象
      * @return SyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse>
      */
     public SyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse> listJobInstancesInvoker(
         ListJobInstancesRequest request) {
-        return new SyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse>(request, DgcMeta.listJobInstances,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.listJobInstances, hcClient);
     }
 
     /**
@@ -592,7 +583,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return ListJobsResponse
      */
     public ListJobsResponse listJobs(ListJobsRequest request) {
@@ -606,18 +597,18 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return SyncInvoker<ListJobsRequest, ListJobsResponse>
      */
     public SyncInvoker<ListJobsRequest, ListJobsResponse> listJobsInvoker(ListJobsRequest request) {
-        return new SyncInvoker<ListJobsRequest, ListJobsResponse>(request, DgcMeta.listJobs, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.listJobs, hcClient);
     }
 
     /**
      * 查询资源列表
      *
      *
-     * @param ListResourcesRequest 请求对象
+     * @param request ListResourcesRequest 请求对象
      * @return ListResourcesResponse
      */
     public ListResourcesResponse listResources(ListResourcesRequest request) {
@@ -628,11 +619,11 @@ public class DgcClient {
      * 查询资源列表
      *
      *
-     * @param ListResourcesRequest 请求对象
+     * @param request ListResourcesRequest 请求对象
      * @return SyncInvoker<ListResourcesRequest, ListResourcesResponse>
      */
     public SyncInvoker<ListResourcesRequest, ListResourcesResponse> listResourcesInvoker(ListResourcesRequest request) {
-        return new SyncInvoker<ListResourcesRequest, ListResourcesResponse>(request, DgcMeta.listResources, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.listResources, hcClient);
     }
 
     /**
@@ -641,7 +632,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScriptResultsRequest 请求对象
+     * @param request ListScriptResultsRequest 请求对象
      * @return ListScriptResultsResponse
      */
     public ListScriptResultsResponse listScriptResults(ListScriptResultsRequest request) {
@@ -654,13 +645,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScriptResultsRequest 请求对象
+     * @param request ListScriptResultsRequest 请求对象
      * @return SyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse>
      */
     public SyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse> listScriptResultsInvoker(
         ListScriptResultsRequest request) {
-        return new SyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse>(request, DgcMeta.listScriptResults,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.listScriptResults, hcClient);
     }
 
     /**
@@ -669,7 +659,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScriptsRequest 请求对象
+     * @param request ListScriptsRequest 请求对象
      * @return ListScriptsResponse
      */
     public ListScriptsResponse listScripts(ListScriptsRequest request) {
@@ -682,11 +672,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScriptsRequest 请求对象
+     * @param request ListScriptsRequest 请求对象
      * @return SyncInvoker<ListScriptsRequest, ListScriptsResponse>
      */
     public SyncInvoker<ListScriptsRequest, ListScriptsResponse> listScriptsInvoker(ListScriptsRequest request) {
-        return new SyncInvoker<ListScriptsRequest, ListScriptsResponse>(request, DgcMeta.listScripts, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.listScripts, hcClient);
     }
 
     /**
@@ -695,7 +685,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSupplementdataRequest 请求对象
+     * @param request ListSupplementdataRequest 请求对象
      * @return ListSupplementdataResponse
      */
     public ListSupplementdataResponse listSupplementdata(ListSupplementdataRequest request) {
@@ -708,13 +698,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSupplementdataRequest 请求对象
+     * @param request ListSupplementdataRequest 请求对象
      * @return SyncInvoker<ListSupplementdataRequest, ListSupplementdataResponse>
      */
     public SyncInvoker<ListSupplementdataRequest, ListSupplementdataResponse> listSupplementdataInvoker(
         ListSupplementdataRequest request) {
-        return new SyncInvoker<ListSupplementdataRequest, ListSupplementdataResponse>(request,
-            DgcMeta.listSupplementdata, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.listSupplementdata, hcClient);
     }
 
     /**
@@ -723,7 +712,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSystemTasksRequest 请求对象
+     * @param request ListSystemTasksRequest 请求对象
      * @return ListSystemTasksResponse
      */
     public ListSystemTasksResponse listSystemTasks(ListSystemTasksRequest request) {
@@ -736,13 +725,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSystemTasksRequest 请求对象
+     * @param request ListSystemTasksRequest 请求对象
      * @return SyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse>
      */
     public SyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse> listSystemTasksInvoker(
         ListSystemTasksRequest request) {
-        return new SyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse>(request, DgcMeta.listSystemTasks,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.listSystemTasks, hcClient);
     }
 
     /**
@@ -751,7 +739,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreJobInstanceRequest 请求对象
+     * @param request RestoreJobInstanceRequest 请求对象
      * @return RestoreJobInstanceResponse
      */
     public RestoreJobInstanceResponse restoreJobInstance(RestoreJobInstanceRequest request) {
@@ -764,13 +752,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreJobInstanceRequest 请求对象
+     * @param request RestoreJobInstanceRequest 请求对象
      * @return SyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse>
      */
     public SyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse> restoreJobInstanceInvoker(
         RestoreJobInstanceRequest request) {
-        return new SyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse>(request,
-            DgcMeta.restoreJobInstance, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.restoreJobInstance, hcClient);
     }
 
     /**
@@ -779,7 +766,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunOnceRequest 请求对象
+     * @param request RunOnceRequest 请求对象
      * @return RunOnceResponse
      */
     public RunOnceResponse runOnce(RunOnceRequest request) {
@@ -792,11 +779,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunOnceRequest 请求对象
+     * @param request RunOnceRequest 请求对象
      * @return SyncInvoker<RunOnceRequest, RunOnceResponse>
      */
     public SyncInvoker<RunOnceRequest, RunOnceResponse> runOnceInvoker(RunOnceRequest request) {
-        return new SyncInvoker<RunOnceRequest, RunOnceResponse>(request, DgcMeta.runOnce, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.runOnce, hcClient);
     }
 
     /**
@@ -805,7 +792,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectionRequest 请求对象
+     * @param request ShowConnectionRequest 请求对象
      * @return ShowConnectionResponse
      */
     public ShowConnectionResponse showConnection(ShowConnectionRequest request) {
@@ -818,13 +805,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectionRequest 请求对象
+     * @param request ShowConnectionRequest 请求对象
      * @return SyncInvoker<ShowConnectionRequest, ShowConnectionResponse>
      */
     public SyncInvoker<ShowConnectionRequest, ShowConnectionResponse> showConnectionInvoker(
         ShowConnectionRequest request) {
-        return new SyncInvoker<ShowConnectionRequest, ShowConnectionResponse>(request, DgcMeta.showConnection,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.showConnection, hcClient);
     }
 
     /**
@@ -833,7 +819,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFileInfoRequest 请求对象
+     * @param request ShowFileInfoRequest 请求对象
      * @return ShowFileInfoResponse
      */
     public ShowFileInfoResponse showFileInfo(ShowFileInfoRequest request) {
@@ -846,11 +832,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFileInfoRequest 请求对象
+     * @param request ShowFileInfoRequest 请求对象
      * @return SyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse>
      */
     public SyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse> showFileInfoInvoker(ShowFileInfoRequest request) {
-        return new SyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse>(request, DgcMeta.showFileInfo, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.showFileInfo, hcClient);
     }
 
     /**
@@ -859,7 +845,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return ShowJobResponse
      */
     public ShowJobResponse showJob(ShowJobRequest request) {
@@ -872,11 +858,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public SyncInvoker<ShowJobRequest, ShowJobResponse> showJobInvoker(ShowJobRequest request) {
-        return new SyncInvoker<ShowJobRequest, ShowJobResponse>(request, DgcMeta.showJob, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.showJob, hcClient);
     }
 
     /**
@@ -885,7 +871,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInstanceRequest 请求对象
+     * @param request ShowJobInstanceRequest 请求对象
      * @return ShowJobInstanceResponse
      */
     public ShowJobInstanceResponse showJobInstance(ShowJobInstanceRequest request) {
@@ -898,13 +884,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInstanceRequest 请求对象
+     * @param request ShowJobInstanceRequest 请求对象
      * @return SyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse>
      */
     public SyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse> showJobInstanceInvoker(
         ShowJobInstanceRequest request) {
-        return new SyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse>(request, DgcMeta.showJobInstance,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.showJobInstance, hcClient);
     }
 
     /**
@@ -913,7 +898,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobStatusRequest 请求对象
+     * @param request ShowJobStatusRequest 请求对象
      * @return ShowJobStatusResponse
      */
     public ShowJobStatusResponse showJobStatus(ShowJobStatusRequest request) {
@@ -926,11 +911,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobStatusRequest 请求对象
+     * @param request ShowJobStatusRequest 请求对象
      * @return SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>
      */
     public SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatusInvoker(ShowJobStatusRequest request) {
-        return new SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>(request, DgcMeta.showJobStatus, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.showJobStatus, hcClient);
     }
 
     /**
@@ -939,7 +924,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceRequest 请求对象
+     * @param request ShowResourceRequest 请求对象
      * @return ShowResourceResponse
      */
     public ShowResourceResponse showResource(ShowResourceRequest request) {
@@ -952,11 +937,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceRequest 请求对象
+     * @param request ShowResourceRequest 请求对象
      * @return SyncInvoker<ShowResourceRequest, ShowResourceResponse>
      */
     public SyncInvoker<ShowResourceRequest, ShowResourceResponse> showResourceInvoker(ShowResourceRequest request) {
-        return new SyncInvoker<ShowResourceRequest, ShowResourceResponse>(request, DgcMeta.showResource, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.showResource, hcClient);
     }
 
     /**
@@ -965,7 +950,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScriptRequest 请求对象
+     * @param request ShowScriptRequest 请求对象
      * @return ShowScriptResponse
      */
     public ShowScriptResponse showScript(ShowScriptRequest request) {
@@ -978,11 +963,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScriptRequest 请求对象
+     * @param request ShowScriptRequest 请求对象
      * @return SyncInvoker<ShowScriptRequest, ShowScriptResponse>
      */
     public SyncInvoker<ShowScriptRequest, ShowScriptResponse> showScriptInvoker(ShowScriptRequest request) {
-        return new SyncInvoker<ShowScriptRequest, ShowScriptResponse>(request, DgcMeta.showScript, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.showScript, hcClient);
     }
 
     /**
@@ -991,7 +976,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartJobRequest 请求对象
+     * @param request StartJobRequest 请求对象
      * @return StartJobResponse
      */
     public StartJobResponse startJob(StartJobRequest request) {
@@ -1004,11 +989,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartJobRequest 请求对象
+     * @param request StartJobRequest 请求对象
      * @return SyncInvoker<StartJobRequest, StartJobResponse>
      */
     public SyncInvoker<StartJobRequest, StartJobResponse> startJobInvoker(StartJobRequest request) {
-        return new SyncInvoker<StartJobRequest, StartJobResponse>(request, DgcMeta.startJob, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.startJob, hcClient);
     }
 
     /**
@@ -1017,7 +1002,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobRequest 请求对象
+     * @param request StopJobRequest 请求对象
      * @return StopJobResponse
      */
     public StopJobResponse stopJob(StopJobRequest request) {
@@ -1030,11 +1015,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobRequest 请求对象
+     * @param request StopJobRequest 请求对象
      * @return SyncInvoker<StopJobRequest, StopJobResponse>
      */
     public SyncInvoker<StopJobRequest, StopJobResponse> stopJobInvoker(StopJobRequest request) {
-        return new SyncInvoker<StopJobRequest, StopJobResponse>(request, DgcMeta.stopJob, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.stopJob, hcClient);
     }
 
     /**
@@ -1043,7 +1028,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobInstanceRequest 请求对象
+     * @param request StopJobInstanceRequest 请求对象
      * @return StopJobInstanceResponse
      */
     public StopJobInstanceResponse stopJobInstance(StopJobInstanceRequest request) {
@@ -1056,13 +1041,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobInstanceRequest 请求对象
+     * @param request StopJobInstanceRequest 请求对象
      * @return SyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse>
      */
     public SyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse> stopJobInstanceInvoker(
         StopJobInstanceRequest request) {
-        return new SyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse>(request, DgcMeta.stopJobInstance,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.stopJobInstance, hcClient);
     }
 
     /**
@@ -1071,7 +1055,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopSupplementdataRequest 请求对象
+     * @param request StopSupplementdataRequest 请求对象
      * @return StopSupplementdataResponse
      */
     public StopSupplementdataResponse stopSupplementdata(StopSupplementdataRequest request) {
@@ -1084,13 +1068,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopSupplementdataRequest 请求对象
+     * @param request StopSupplementdataRequest 请求对象
      * @return SyncInvoker<StopSupplementdataRequest, StopSupplementdataResponse>
      */
     public SyncInvoker<StopSupplementdataRequest, StopSupplementdataResponse> stopSupplementdataInvoker(
         StopSupplementdataRequest request) {
-        return new SyncInvoker<StopSupplementdataRequest, StopSupplementdataResponse>(request,
-            DgcMeta.stopSupplementdata, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.stopSupplementdata, hcClient);
     }
 
     /**
@@ -1099,7 +1082,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionRequest 请求对象
+     * @param request UpdateConnectionRequest 请求对象
      * @return UpdateConnectionResponse
      */
     public UpdateConnectionResponse updateConnection(UpdateConnectionRequest request) {
@@ -1112,13 +1095,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionRequest 请求对象
+     * @param request UpdateConnectionRequest 请求对象
      * @return SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>
      */
     public SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> updateConnectionInvoker(
         UpdateConnectionRequest request) {
-        return new SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>(request, DgcMeta.updateConnection,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.updateConnection, hcClient);
     }
 
     /**
@@ -1127,7 +1109,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobRequest 请求对象
+     * @param request UpdateJobRequest 请求对象
      * @return UpdateJobResponse
      */
     public UpdateJobResponse updateJob(UpdateJobRequest request) {
@@ -1140,11 +1122,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobRequest 请求对象
+     * @param request UpdateJobRequest 请求对象
      * @return SyncInvoker<UpdateJobRequest, UpdateJobResponse>
      */
     public SyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobInvoker(UpdateJobRequest request) {
-        return new SyncInvoker<UpdateJobRequest, UpdateJobResponse>(request, DgcMeta.updateJob, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.updateJob, hcClient);
     }
 
     /**
@@ -1153,7 +1135,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceRequest 请求对象
+     * @param request UpdateResourceRequest 请求对象
      * @return UpdateResourceResponse
      */
     public UpdateResourceResponse updateResource(UpdateResourceRequest request) {
@@ -1166,13 +1148,12 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceRequest 请求对象
+     * @param request UpdateResourceRequest 请求对象
      * @return SyncInvoker<UpdateResourceRequest, UpdateResourceResponse>
      */
     public SyncInvoker<UpdateResourceRequest, UpdateResourceResponse> updateResourceInvoker(
         UpdateResourceRequest request) {
-        return new SyncInvoker<UpdateResourceRequest, UpdateResourceResponse>(request, DgcMeta.updateResource,
-            hcClient);
+        return new SyncInvoker<>(request, DgcMeta.updateResource, hcClient);
     }
 
     /**
@@ -1181,7 +1162,7 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScriptRequest 请求对象
+     * @param request UpdateScriptRequest 请求对象
      * @return UpdateScriptResponse
      */
     public UpdateScriptResponse updateScript(UpdateScriptRequest request) {
@@ -1194,11 +1175,11 @@ public class DgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScriptRequest 请求对象
+     * @param request UpdateScriptRequest 请求对象
      * @return SyncInvoker<UpdateScriptRequest, UpdateScriptResponse>
      */
     public SyncInvoker<UpdateScriptRequest, UpdateScriptResponse> updateScriptInvoker(UpdateScriptRequest request) {
-        return new SyncInvoker<UpdateScriptRequest, UpdateScriptResponse>(request, DgcMeta.updateScript, hcClient);
+        return new SyncInvoker<>(request, DgcMeta.updateScript, hcClient);
     }
 
 }

@@ -41,7 +41,7 @@ public class ListSessionTypeResponse extends SdkResponse {
     }
 
     /**
-     * 会话列表
+     * 会话列表。
      * @return sessionTypes
      */
     public List<SessionTypeEntity> getSessionTypes() {

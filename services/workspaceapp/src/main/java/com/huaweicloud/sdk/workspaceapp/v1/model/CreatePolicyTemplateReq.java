@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建策略模板的请求
+ * 创建策略模板的请求。
  */
 public class CreatePolicyTemplateReq {
 

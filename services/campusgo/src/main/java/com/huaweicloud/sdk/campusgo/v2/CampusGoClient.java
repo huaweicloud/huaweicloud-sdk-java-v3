@@ -32,7 +32,7 @@ public class CampusGoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTasksRequest 请求对象
+     * @param request CreateTasksRequest 请求对象
      * @return CreateTasksResponse
      */
     public CreateTasksResponse createTasks(CreateTasksRequest request) {
@@ -46,11 +46,11 @@ public class CampusGoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTasksRequest 请求对象
+     * @param request CreateTasksRequest 请求对象
      * @return SyncInvoker<CreateTasksRequest, CreateTasksResponse>
      */
     public SyncInvoker<CreateTasksRequest, CreateTasksResponse> createTasksInvoker(CreateTasksRequest request) {
-        return new SyncInvoker<CreateTasksRequest, CreateTasksResponse>(request, CampusGoMeta.createTasks, hcClient);
+        return new SyncInvoker<>(request, CampusGoMeta.createTasks, hcClient);
     }
 
     /**
@@ -60,7 +60,7 @@ public class CampusGoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return DeleteTaskResponse
      */
     public DeleteTaskResponse deleteTask(DeleteTaskRequest request) {
@@ -74,11 +74,11 @@ public class CampusGoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
-        return new SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, CampusGoMeta.deleteTask, hcClient);
+        return new SyncInvoker<>(request, CampusGoMeta.deleteTask, hcClient);
     }
 
     /**
@@ -88,7 +88,7 @@ public class CampusGoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksDetailsRequest 请求对象
+     * @param request ListTasksDetailsRequest 请求对象
      * @return ListTasksDetailsResponse
      */
     public ListTasksDetailsResponse listTasksDetails(ListTasksDetailsRequest request) {
@@ -102,13 +102,12 @@ public class CampusGoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksDetailsRequest 请求对象
+     * @param request ListTasksDetailsRequest 请求对象
      * @return SyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse>
      */
     public SyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse> listTasksDetailsInvoker(
         ListTasksDetailsRequest request) {
-        return new SyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse>(request,
-            CampusGoMeta.listTasksDetails, hcClient);
+        return new SyncInvoker<>(request, CampusGoMeta.listTasksDetails, hcClient);
     }
 
     /**
@@ -118,7 +117,7 @@ public class CampusGoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return ShowTaskResponse
      */
     public ShowTaskResponse showTask(ShowTaskRequest request) {
@@ -132,11 +131,11 @@ public class CampusGoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return SyncInvoker<ShowTaskRequest, ShowTaskResponse>
      */
     public SyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskInvoker(ShowTaskRequest request) {
-        return new SyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, CampusGoMeta.showTask, hcClient);
+        return new SyncInvoker<>(request, CampusGoMeta.showTask, hcClient);
     }
 
 }

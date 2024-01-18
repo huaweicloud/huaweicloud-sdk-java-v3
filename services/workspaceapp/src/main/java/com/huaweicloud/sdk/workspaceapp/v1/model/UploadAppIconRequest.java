@@ -32,7 +32,7 @@ public class UploadAppIconRequest {
     }
 
     /**
-     * 应用组ID
+     * 应用组ID。
      * @return appGroupId
      */
     public String getAppGroupId() {
@@ -49,7 +49,7 @@ public class UploadAppIconRequest {
     }
 
     /**
-     * 应用ID
+     * 应用ID。
      * @return appId
      */
     public String getAppId() {

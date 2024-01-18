@@ -103,9 +103,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class AadMeta {
 
     public static final HttpRequestDef<ExecuteUnblockIpRequest, ExecuteUnblockIpResponse> executeUnblockIp =
-        genForexecuteUnblockIp();
+        genForExecuteUnblockIp();
 
-    private static HttpRequestDef<ExecuteUnblockIpRequest, ExecuteUnblockIpResponse> genForexecuteUnblockIp() {
+    private static HttpRequestDef<ExecuteUnblockIpRequest, ExecuteUnblockIpResponse> genForExecuteUnblockIp() {
         // basic
         HttpRequestDef.Builder<ExecuteUnblockIpRequest, ExecuteUnblockIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExecuteUnblockIpRequest.class, ExecuteUnblockIpResponse.class)
@@ -118,25 +118,21 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteUnblockIpRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ExecuteUnblockIpRequest::getDomainId, ExecuteUnblockIpRequest::setDomainId));
         builder.<ExecuteUnblockIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExecuteUnblockIpRequestBody.class),
-            f -> f.withMarshaller(ExecuteUnblockIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteUnblockIpRequest::getBody, ExecuteUnblockIpRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBlockIpsRequest, ListBlockIpsResponse> listBlockIps = genForlistBlockIps();
+    public static final HttpRequestDef<ListBlockIpsRequest, ListBlockIpsResponse> listBlockIps = genForListBlockIps();
 
-    private static HttpRequestDef<ListBlockIpsRequest, ListBlockIpsResponse> genForlistBlockIps() {
+    private static HttpRequestDef<ListBlockIpsRequest, ListBlockIpsResponse> genForListBlockIps() {
         // basic
         HttpRequestDef.Builder<ListBlockIpsRequest, ListBlockIpsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBlockIpsRequest.class, ListBlockIpsResponse.class)
@@ -149,9 +145,7 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBlockIpsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListBlockIpsRequest::getDomainId, ListBlockIpsRequest::setDomainId));
 
         // response
 
@@ -159,9 +153,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<ListUnblockQuotaStatisticsRequest, ListUnblockQuotaStatisticsResponse> listUnblockQuotaStatistics =
-        genForlistUnblockQuotaStatistics();
+        genForListUnblockQuotaStatistics();
 
-    private static HttpRequestDef<ListUnblockQuotaStatisticsRequest, ListUnblockQuotaStatisticsResponse> genForlistUnblockQuotaStatistics() {
+    private static HttpRequestDef<ListUnblockQuotaStatisticsRequest, ListUnblockQuotaStatisticsResponse> genForListUnblockQuotaStatistics() {
         // basic
         HttpRequestDef.Builder<ListUnblockQuotaStatisticsRequest, ListUnblockQuotaStatisticsResponse> builder =
             HttpRequestDef
@@ -177,9 +171,8 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUnblockQuotaStatisticsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListUnblockQuotaStatisticsRequest::getDomainId,
+                ListUnblockQuotaStatisticsRequest::setDomainId));
 
         // response
 
@@ -187,9 +180,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<ShowBlockStatisticsRequest, ShowBlockStatisticsResponse> showBlockStatistics =
-        genForshowBlockStatistics();
+        genForShowBlockStatistics();
 
-    private static HttpRequestDef<ShowBlockStatisticsRequest, ShowBlockStatisticsResponse> genForshowBlockStatistics() {
+    private static HttpRequestDef<ShowBlockStatisticsRequest, ShowBlockStatisticsResponse> genForShowBlockStatistics() {
         // basic
         HttpRequestDef.Builder<ShowBlockStatisticsRequest, ShowBlockStatisticsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBlockStatisticsRequest.class, ShowBlockStatisticsResponse.class)
@@ -202,9 +195,7 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBlockStatisticsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowBlockStatisticsRequest::getDomainId, ShowBlockStatisticsRequest::setDomainId));
 
         // response
 
@@ -212,9 +203,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<ShowUnblockRecordRequest, ShowUnblockRecordResponse> showUnblockRecord =
-        genForshowUnblockRecord();
+        genForShowUnblockRecord();
 
-    private static HttpRequestDef<ShowUnblockRecordRequest, ShowUnblockRecordResponse> genForshowUnblockRecord() {
+    private static HttpRequestDef<ShowUnblockRecordRequest, ShowUnblockRecordResponse> genForShowUnblockRecord() {
         // basic
         HttpRequestDef.Builder<ShowUnblockRecordRequest, ShowUnblockRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUnblockRecordRequest.class, ShowUnblockRecordResponse.class)
@@ -227,23 +218,17 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUnblockRecordRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowUnblockRecordRequest::getDomainId, ShowUnblockRecordRequest::setDomainId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowUnblockRecordRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowUnblockRecordRequest::getStartTime, ShowUnblockRecordRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowUnblockRecordRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowUnblockRecordRequest::getEndTime, ShowUnblockRecordRequest::setEndTime));
 
         // response
 
@@ -251,9 +236,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse> addBlackWhiteIpList =
-        genForaddBlackWhiteIpList();
+        genForAddBlackWhiteIpList();
 
-    private static HttpRequestDef<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse> genForaddBlackWhiteIpList() {
+    private static HttpRequestDef<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse> genForAddBlackWhiteIpList() {
         // basic
         HttpRequestDef.Builder<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddBlackWhiteIpListRequest.class, AddBlackWhiteIpListResponse.class)
@@ -266,9 +251,7 @@ public class AadMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BlackWhiteIpListRequest.class),
-            f -> f.withMarshaller(AddBlackWhiteIpListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddBlackWhiteIpListRequest::getBody, AddBlackWhiteIpListRequest::setBody));
 
         // response
 
@@ -276,9 +259,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse> addPolicyBlackAndWhiteIpList =
-        genForaddPolicyBlackAndWhiteIpList();
+        genForAddPolicyBlackAndWhiteIpList();
 
-    private static HttpRequestDef<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse> genForaddPolicyBlackAndWhiteIpList() {
+    private static HttpRequestDef<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse> genForAddPolicyBlackAndWhiteIpList() {
         // basic
         HttpRequestDef.Builder<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse> builder =
             HttpRequestDef
@@ -294,16 +277,14 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddPolicyBlackAndWhiteIpListRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(AddPolicyBlackAndWhiteIpListRequest::getPolicyId,
+                AddPolicyBlackAndWhiteIpListRequest::setPolicyId));
         builder.<BlackWhiteIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BlackWhiteIpRequestBody.class),
-            f -> f.withMarshaller(AddPolicyBlackAndWhiteIpListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddPolicyBlackAndWhiteIpListRequest::getBody,
+                AddPolicyBlackAndWhiteIpListRequest::setBody));
 
         // response
 
@@ -311,9 +292,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<AssociateIpToPolicyRequest, AssociateIpToPolicyResponse> associateIpToPolicy =
-        genForassociateIpToPolicy();
+        genForAssociateIpToPolicy();
 
-    private static HttpRequestDef<AssociateIpToPolicyRequest, AssociateIpToPolicyResponse> genForassociateIpToPolicy() {
+    private static HttpRequestDef<AssociateIpToPolicyRequest, AssociateIpToPolicyResponse> genForAssociateIpToPolicy() {
         // basic
         HttpRequestDef.Builder<AssociateIpToPolicyRequest, AssociateIpToPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateIpToPolicyRequest.class, AssociateIpToPolicyResponse.class)
@@ -326,16 +307,12 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateIpToPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(AssociateIpToPolicyRequest::getPolicyId, AssociateIpToPolicyRequest::setPolicyId));
         builder.<IpBindingBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IpBindingBody.class),
-            f -> f.withMarshaller(AssociateIpToPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateIpToPolicyRequest::getBody, AssociateIpToPolicyRequest::setBody));
 
         // response
 
@@ -343,9 +320,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse> batchCreateInstanceIpRule =
-        genForbatchCreateInstanceIpRule();
+        genForBatchCreateInstanceIpRule();
 
-    private static HttpRequestDef<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse> genForbatchCreateInstanceIpRule() {
+    private static HttpRequestDef<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse> genForBatchCreateInstanceIpRule() {
         // basic
         HttpRequestDef.Builder<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse> builder =
             HttpRequestDef
@@ -361,23 +338,19 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateInstanceIpRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateInstanceIpRuleRequest::getInstanceId,
+                BatchCreateInstanceIpRuleRequest::setInstanceId));
         builder.<String>withRequestField("ip",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateInstanceIpRuleRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(BatchCreateInstanceIpRuleRequest::getIp, BatchCreateInstanceIpRuleRequest::setIp));
         builder.<BatchTransferRuleBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchTransferRuleBody.class),
-            f -> f.withMarshaller(BatchCreateInstanceIpRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateInstanceIpRuleRequest::getBody,
+                BatchCreateInstanceIpRuleRequest::setBody));
 
         // response
 
@@ -385,9 +358,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteInstanceIpRuleRequest, BatchDeleteInstanceIpRuleResponse> batchDeleteInstanceIpRule =
-        genForbatchDeleteInstanceIpRule();
+        genForBatchDeleteInstanceIpRule();
 
-    private static HttpRequestDef<BatchDeleteInstanceIpRuleRequest, BatchDeleteInstanceIpRuleResponse> genForbatchDeleteInstanceIpRule() {
+    private static HttpRequestDef<BatchDeleteInstanceIpRuleRequest, BatchDeleteInstanceIpRuleResponse> genForBatchDeleteInstanceIpRule() {
         // basic
         HttpRequestDef.Builder<BatchDeleteInstanceIpRuleRequest, BatchDeleteInstanceIpRuleResponse> builder =
             HttpRequestDef
@@ -403,23 +376,19 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteInstanceIpRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteInstanceIpRuleRequest::getInstanceId,
+                BatchDeleteInstanceIpRuleRequest::setInstanceId));
         builder.<String>withRequestField("ip",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteInstanceIpRuleRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteInstanceIpRuleRequest::getIp, BatchDeleteInstanceIpRuleRequest::setIp));
         builder.<BatchIdBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchIdBody.class),
-            f -> f.withMarshaller(BatchDeleteInstanceIpRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteInstanceIpRuleRequest::getBody,
+                BatchDeleteInstanceIpRuleRequest::setBody));
 
         // response
 
@@ -427,9 +396,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<CreateAadDomainRequest, CreateAadDomainResponse> createAadDomain =
-        genForcreateAadDomain();
+        genForCreateAadDomain();
 
-    private static HttpRequestDef<CreateAadDomainRequest, CreateAadDomainResponse> genForcreateAadDomain() {
+    private static HttpRequestDef<CreateAadDomainRequest, CreateAadDomainResponse> genForCreateAadDomain() {
         // basic
         HttpRequestDef.Builder<CreateAadDomainRequest, CreateAadDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAadDomainRequest.class, CreateAadDomainResponse.class)
@@ -442,9 +411,7 @@ public class AadMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HostBody.class),
-            f -> f.withMarshaller(CreateAadDomainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAadDomainRequest::getBody, CreateAadDomainRequest::setBody));
 
         // response
 
@@ -452,9 +419,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate =
-        genForcreateCertificate();
+        genForCreateCertificate();
 
-    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForcreateCertificate() {
+    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForCreateCertificate() {
         // basic
         HttpRequestDef.Builder<CreateCertificateRequest, CreateCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCertificateRequest.class, CreateCertificateResponse.class)
@@ -467,18 +434,16 @@ public class AadMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CertificateBody.class),
-            f -> f.withMarshaller(CreateCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateRequest::getBody, CreateCertificateRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForcreatePolicy();
+    public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForCreatePolicy();
 
-    private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForcreatePolicy() {
+    private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForCreatePolicy() {
         // basic
         HttpRequestDef.Builder<CreatePolicyRequest, CreatePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePolicyRequest.class, CreatePolicyResponse.class)
@@ -491,9 +456,7 @@ public class AadMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePolicyRequestBody.class),
-            f -> f.withMarshaller(CreatePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePolicyRequest::getBody, CreatePolicyRequest::setBody));
 
         // response
 
@@ -501,9 +464,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse> deleteAlarmConfig =
-        genFordeleteAlarmConfig();
+        genForDeleteAlarmConfig();
 
-    private static HttpRequestDef<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse> genFordeleteAlarmConfig() {
+    private static HttpRequestDef<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse> genForDeleteAlarmConfig() {
         // basic
         HttpRequestDef.Builder<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlarmConfigRequest.class, DeleteAlarmConfigResponse.class)
@@ -519,9 +482,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse> deleteBlackWhiteIpList =
-        genFordeleteBlackWhiteIpList();
+        genForDeleteBlackWhiteIpList();
 
-    private static HttpRequestDef<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse> genFordeleteBlackWhiteIpList() {
+    private static HttpRequestDef<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse> genForDeleteBlackWhiteIpList() {
         // basic
         HttpRequestDef.Builder<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteBlackWhiteIpListRequest.class, DeleteBlackWhiteIpListResponse.class)
@@ -534,18 +497,16 @@ public class AadMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BlackWhiteIpListRequest.class),
-            f -> f.withMarshaller(DeleteBlackWhiteIpListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteBlackWhiteIpListRequest::getBody, DeleteBlackWhiteIpListRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> deletePolicy = genFordeletePolicy();
+    public static final HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> deletePolicy = genForDeletePolicy();
 
-    private static HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> genFordeletePolicy() {
+    private static HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> genForDeletePolicy() {
         // basic
         HttpRequestDef.Builder<DeletePolicyRequest, DeletePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePolicyRequest.class, DeletePolicyResponse.class)
@@ -558,9 +519,7 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, DeletePolicyRequest::setPolicyId));
 
         // response
 
@@ -568,9 +527,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<DeletePolicyBlackAndWhiteIpListRequest, DeletePolicyBlackAndWhiteIpListResponse> deletePolicyBlackAndWhiteIpList =
-        genFordeletePolicyBlackAndWhiteIpList();
+        genForDeletePolicyBlackAndWhiteIpList();
 
-    private static HttpRequestDef<DeletePolicyBlackAndWhiteIpListRequest, DeletePolicyBlackAndWhiteIpListResponse> genFordeletePolicyBlackAndWhiteIpList() {
+    private static HttpRequestDef<DeletePolicyBlackAndWhiteIpListRequest, DeletePolicyBlackAndWhiteIpListResponse> genForDeletePolicyBlackAndWhiteIpList() {
         // basic
         HttpRequestDef.Builder<DeletePolicyBlackAndWhiteIpListRequest, DeletePolicyBlackAndWhiteIpListResponse> builder =
             HttpRequestDef
@@ -586,16 +545,14 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyBlackAndWhiteIpListRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyBlackAndWhiteIpListRequest::getPolicyId,
+                DeletePolicyBlackAndWhiteIpListRequest::setPolicyId));
         builder.<BlackWhiteIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BlackWhiteIpRequestBody.class),
-            f -> f.withMarshaller(DeletePolicyBlackAndWhiteIpListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyBlackAndWhiteIpListRequest::getBody,
+                DeletePolicyBlackAndWhiteIpListRequest::setBody));
 
         // response
 
@@ -603,9 +560,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse> disassociateIpFromPolicy =
-        genFordisassociateIpFromPolicy();
+        genForDisassociateIpFromPolicy();
 
-    private static HttpRequestDef<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse> genFordisassociateIpFromPolicy() {
+    private static HttpRequestDef<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse> genForDisassociateIpFromPolicy() {
         // basic
         HttpRequestDef.Builder<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse> builder =
             HttpRequestDef
@@ -619,25 +576,22 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateIpFromPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(DisassociateIpFromPolicyRequest::getPolicyId,
+                DisassociateIpFromPolicyRequest::setPolicyId));
         builder.<IpBindingBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IpBindingBody.class),
-            f -> f.withMarshaller(DisassociateIpFromPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateIpFromPolicyRequest::getBody, DisassociateIpFromPolicyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDomainRequest, ListDomainResponse> listDomain = genForlistDomain();
+    public static final HttpRequestDef<ListDomainRequest, ListDomainResponse> listDomain = genForListDomain();
 
-    private static HttpRequestDef<ListDomainRequest, ListDomainResponse> genForlistDomain() {
+    private static HttpRequestDef<ListDomainRequest, ListDomainResponse> genForListDomain() {
         // basic
         HttpRequestDef.Builder<ListDomainRequest, ListDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainRequest.class, ListDomainResponse.class)
@@ -652,9 +606,9 @@ public class AadMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInstanceRequest, ListInstanceResponse> listInstance = genForlistInstance();
+    public static final HttpRequestDef<ListInstanceRequest, ListInstanceResponse> listInstance = genForListInstance();
 
-    private static HttpRequestDef<ListInstanceRequest, ListInstanceResponse> genForlistInstance() {
+    private static HttpRequestDef<ListInstanceRequest, ListInstanceResponse> genForListInstance() {
         // basic
         HttpRequestDef.Builder<ListInstanceRequest, ListInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceRequest.class, ListInstanceResponse.class)
@@ -670,9 +624,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<ListInstanceIdRequest, ListInstanceIdResponse> listInstanceId =
-        genForlistInstanceId();
+        genForListInstanceId();
 
-    private static HttpRequestDef<ListInstanceIdRequest, ListInstanceIdResponse> genForlistInstanceId() {
+    private static HttpRequestDef<ListInstanceIdRequest, ListInstanceIdResponse> genForListInstanceId() {
         // basic
         HttpRequestDef.Builder<ListInstanceIdRequest, ListInstanceIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceIdRequest.class, ListInstanceIdResponse.class)
@@ -685,9 +639,7 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceIdRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceIdRequest::getDomainId, ListInstanceIdRequest::setDomainId));
 
         // response
 
@@ -695,9 +647,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<ListInstanceIpRuleRequest, ListInstanceIpRuleResponse> listInstanceIpRule =
-        genForlistInstanceIpRule();
+        genForListInstanceIpRule();
 
-    private static HttpRequestDef<ListInstanceIpRuleRequest, ListInstanceIpRuleResponse> genForlistInstanceIpRule() {
+    private static HttpRequestDef<ListInstanceIpRuleRequest, ListInstanceIpRuleResponse> genForListInstanceIpRule() {
         // basic
         HttpRequestDef.Builder<ListInstanceIpRuleRequest, ListInstanceIpRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceIpRuleRequest.class, ListInstanceIpRuleResponse.class)
@@ -710,25 +662,21 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceIpRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceIpRuleRequest::getInstanceId, ListInstanceIpRuleRequest::setInstanceId));
         builder.<String>withRequestField("ip",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceIpRuleRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(ListInstanceIpRuleRequest::getIp, ListInstanceIpRuleRequest::setIp));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPackageRequest, ListPackageResponse> listPackage = genForlistPackage();
+    public static final HttpRequestDef<ListPackageRequest, ListPackageResponse> listPackage = genForListPackage();
 
-    private static HttpRequestDef<ListPackageRequest, ListPackageResponse> genForlistPackage() {
+    private static HttpRequestDef<ListPackageRequest, ListPackageResponse> genForListPackage() {
         // basic
         HttpRequestDef.Builder<ListPackageRequest, ListPackageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPackageRequest.class, ListPackageResponse.class)
@@ -743,9 +691,9 @@ public class AadMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPeakRequest, ListPeakResponse> listPeak = genForlistPeak();
+    public static final HttpRequestDef<ListPeakRequest, ListPeakResponse> listPeak = genForListPeak();
 
-    private static HttpRequestDef<ListPeakRequest, ListPeakResponse> genForlistPeak() {
+    private static HttpRequestDef<ListPeakRequest, ListPeakResponse> genForListPeak() {
         // basic
         HttpRequestDef.Builder<ListPeakRequest, ListPeakResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPeakRequest.class, ListPeakResponse.class)
@@ -758,39 +706,31 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPeakRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPeakRequest::getInstanceId, ListPeakRequest::setInstanceId));
         builder.<String>withRequestField("ip",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPeakRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(ListPeakRequest::getIp, ListPeakRequest::setIp));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPeakRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListPeakRequest::getStartTime, ListPeakRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPeakRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListPeakRequest::getEndTime, ListPeakRequest::setEndTime));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPolicyRequest, ListPolicyResponse> listPolicy = genForlistPolicy();
+    public static final HttpRequestDef<ListPolicyRequest, ListPolicyResponse> listPolicy = genForListPolicy();
 
-    private static HttpRequestDef<ListPolicyRequest, ListPolicyResponse> genForlistPolicy() {
+    private static HttpRequestDef<ListPolicyRequest, ListPolicyResponse> genForListPolicy() {
         // basic
         HttpRequestDef.Builder<ListPolicyRequest, ListPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPolicyRequest.class, ListPolicyResponse.class)
@@ -803,23 +743,17 @@ public class AadMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getOffset, ListPolicyRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getLimit, ListPolicyRequest::setLimit));
         builder.<String>withRequestField("policy_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyRequest::getPolicyName, (req, v) -> {
-                req.setPolicyName(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getPolicyName, ListPolicyRequest::setPolicyName));
 
         // response
 
@@ -827,9 +761,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<ListProtectedIpRequest, ListProtectedIpResponse> listProtectedIp =
-        genForlistProtectedIp();
+        genForListProtectedIp();
 
-    private static HttpRequestDef<ListProtectedIpRequest, ListProtectedIpResponse> genForlistProtectedIp() {
+    private static HttpRequestDef<ListProtectedIpRequest, ListProtectedIpResponse> genForListProtectedIp() {
         // basic
         HttpRequestDef.Builder<ListProtectedIpRequest, ListProtectedIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProtectedIpRequest.class, ListProtectedIpResponse.class)
@@ -842,44 +776,32 @@ public class AadMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProtectedIpRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProtectedIpRequest::getOffset, ListProtectedIpRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProtectedIpRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProtectedIpRequest::getLimit, ListProtectedIpRequest::setLimit));
         builder.<String>withRequestField("package_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedIpRequest::getPackageId, (req, v) -> {
-                req.setPackageId(v);
-            }));
+            f -> f.withMarshaller(ListProtectedIpRequest::getPackageId, ListProtectedIpRequest::setPackageId));
         builder.<String>withRequestField("policy_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedIpRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(ListProtectedIpRequest::getPolicyId, ListProtectedIpRequest::setPolicyId));
         builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedIpRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(ListProtectedIpRequest::getIp, ListProtectedIpRequest::setIp));
         builder.<String>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedIpRequest::getTag, (req, v) -> {
-                req.setTag(v);
-            }));
+            f -> f.withMarshaller(ListProtectedIpRequest::getTag, ListProtectedIpRequest::setTag));
 
         // response
 
@@ -887,9 +809,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<ListSourceIpsRequest, ListSourceIpsResponse> listSourceIps =
-        genForlistSourceIps();
+        genForListSourceIps();
 
-    private static HttpRequestDef<ListSourceIpsRequest, ListSourceIpsResponse> genForlistSourceIps() {
+    private static HttpRequestDef<ListSourceIpsRequest, ListSourceIpsResponse> genForListSourceIps() {
         // basic
         HttpRequestDef.Builder<ListSourceIpsRequest, ListSourceIpsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSourceIpsRequest.class, ListSourceIpsResponse.class)
@@ -905,9 +827,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse> listUnboundProtectedIp =
-        genForlistUnboundProtectedIp();
+        genForListUnboundProtectedIp();
 
-    private static HttpRequestDef<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse> genForlistUnboundProtectedIp() {
+    private static HttpRequestDef<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse> genForListUnboundProtectedIp() {
         // basic
         HttpRequestDef.Builder<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListUnboundProtectedIpRequest.class, ListUnboundProtectedIpResponse.class)
@@ -920,23 +842,18 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUnboundProtectedIpRequest::getPackageId, (req, v) -> {
-                req.setPackageId(v);
-            }));
+            f -> f.withMarshaller(ListUnboundProtectedIpRequest::getPackageId,
+                ListUnboundProtectedIpRequest::setPackageId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUnboundProtectedIpRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListUnboundProtectedIpRequest::getOffset, ListUnboundProtectedIpRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUnboundProtectedIpRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListUnboundProtectedIpRequest::getLimit, ListUnboundProtectedIpRequest::setLimit));
 
         // response
 
@@ -944,9 +861,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> modifyDomainWebSwitch =
-        genFormodifyDomainWebSwitch();
+        genForModifyDomainWebSwitch();
 
-    private static HttpRequestDef<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> genFormodifyDomainWebSwitch() {
+    private static HttpRequestDef<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> genForModifyDomainWebSwitch() {
         // basic
         HttpRequestDef.Builder<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ModifyDomainWebSwitchRequest.class, ModifyDomainWebSwitchResponse.class)
@@ -959,9 +876,7 @@ public class AadMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CadDomainSwitchRequest.class),
-            f -> f.withMarshaller(ModifyDomainWebSwitchRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyDomainWebSwitchRequest::getBody, ModifyDomainWebSwitchRequest::setBody));
 
         // response
 
@@ -969,9 +884,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<ShowAlarmConfigRequest, ShowAlarmConfigResponse> showAlarmConfig =
-        genForshowAlarmConfig();
+        genForShowAlarmConfig();
 
-    private static HttpRequestDef<ShowAlarmConfigRequest, ShowAlarmConfigResponse> genForshowAlarmConfig() {
+    private static HttpRequestDef<ShowAlarmConfigRequest, ShowAlarmConfigResponse> genForShowAlarmConfig() {
         // basic
         HttpRequestDef.Builder<ShowAlarmConfigRequest, ShowAlarmConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAlarmConfigRequest.class, ShowAlarmConfigResponse.class)
@@ -986,9 +901,9 @@ public class AadMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> showPolicy = genForshowPolicy();
+    public static final HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> showPolicy = genForShowPolicy();
 
-    private static HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> genForshowPolicy() {
+    private static HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> genForShowPolicy() {
         // basic
         HttpRequestDef.Builder<ShowPolicyRequest, ShowPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPolicyRequest.class, ShowPolicyResponse.class)
@@ -1001,9 +916,7 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(ShowPolicyRequest::getPolicyId, ShowPolicyRequest::setPolicyId));
 
         // response
 
@@ -1011,9 +924,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse> updateAlarmConfig =
-        genForupdateAlarmConfig();
+        genForUpdateAlarmConfig();
 
-    private static HttpRequestDef<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse> genForupdateAlarmConfig() {
+    private static HttpRequestDef<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse> genForUpdateAlarmConfig() {
         // basic
         HttpRequestDef.Builder<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateAlarmConfigRequest.class, UpdateAlarmConfigResponse.class)
@@ -1026,18 +939,16 @@ public class AadMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AlarmBody.class),
-            f -> f.withMarshaller(UpdateAlarmConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAlarmConfigRequest::getBody, UpdateAlarmConfigRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> updateDomain = genForupdateDomain();
+    public static final HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> updateDomain = genForUpdateDomain();
 
-    private static HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> genForupdateDomain() {
+    private static HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> genForUpdateDomain() {
         // basic
         HttpRequestDef.Builder<UpdateDomainRequest, UpdateDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainRequest.class, UpdateDomainResponse.class)
@@ -1050,16 +961,12 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainRequest::getDomainId, UpdateDomainRequest::setDomainId));
         builder.<DomainRealServerInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DomainRealServerInfo.class),
-            f -> f.withMarshaller(UpdateDomainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainRequest::getBody, UpdateDomainRequest::setBody));
 
         // response
 
@@ -1067,9 +974,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse> updateInstanceIpRule =
-        genForupdateInstanceIpRule();
+        genForUpdateInstanceIpRule();
 
-    private static HttpRequestDef<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse> genForupdateInstanceIpRule() {
+    private static HttpRequestDef<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse> genForUpdateInstanceIpRule() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateInstanceIpRuleRequest.class, UpdateInstanceIpRuleResponse.class)
@@ -1082,30 +989,23 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceIpRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceIpRuleRequest::getInstanceId,
+                UpdateInstanceIpRuleRequest::setInstanceId));
         builder.<String>withRequestField("ip",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceIpRuleRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceIpRuleRequest::getIp, UpdateInstanceIpRuleRequest::setIp));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceIpRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceIpRuleRequest::getRuleId, UpdateInstanceIpRuleRequest::setRuleId));
         builder.<TransferRuleBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TransferRuleBody.class),
-            f -> f.withMarshaller(UpdateInstanceIpRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceIpRuleRequest::getBody, UpdateInstanceIpRuleRequest::setBody));
 
         // response
 
@@ -1113,9 +1013,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<UpdatePackageIpRequest, UpdatePackageIpResponse> updatePackageIp =
-        genForupdatePackageIp();
+        genForUpdatePackageIp();
 
-    private static HttpRequestDef<UpdatePackageIpRequest, UpdatePackageIpResponse> genForupdatePackageIp() {
+    private static HttpRequestDef<UpdatePackageIpRequest, UpdatePackageIpResponse> genForUpdatePackageIp() {
         // basic
         HttpRequestDef.Builder<UpdatePackageIpRequest, UpdatePackageIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdatePackageIpRequest.class, UpdatePackageIpResponse.class)
@@ -1128,16 +1028,12 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePackageIpRequest::getPackageId, (req, v) -> {
-                req.setPackageId(v);
-            }));
+            f -> f.withMarshaller(UpdatePackageIpRequest::getPackageId, UpdatePackageIpRequest::setPackageId));
         builder.<UpdatePackageIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePackageIpRequestBody.class),
-            f -> f.withMarshaller(UpdatePackageIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePackageIpRequest::getBody, UpdatePackageIpRequest::setBody));
 
         // response
 
@@ -1145,9 +1041,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<UpdatePackageNameRequest, UpdatePackageNameResponse> updatePackageName =
-        genForupdatePackageName();
+        genForUpdatePackageName();
 
-    private static HttpRequestDef<UpdatePackageNameRequest, UpdatePackageNameResponse> genForupdatePackageName() {
+    private static HttpRequestDef<UpdatePackageNameRequest, UpdatePackageNameResponse> genForUpdatePackageName() {
         // basic
         HttpRequestDef.Builder<UpdatePackageNameRequest, UpdatePackageNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePackageNameRequest.class, UpdatePackageNameResponse.class)
@@ -1160,25 +1056,21 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePackageNameRequest::getPackageId, (req, v) -> {
-                req.setPackageId(v);
-            }));
+            f -> f.withMarshaller(UpdatePackageNameRequest::getPackageId, UpdatePackageNameRequest::setPackageId));
         builder.<UpdatePackageNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePackageNameRequestBody.class),
-            f -> f.withMarshaller(UpdatePackageNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePackageNameRequest::getBody, UpdatePackageNameRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicy = genForupdatePolicy();
+    public static final HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicy = genForUpdatePolicy();
 
-    private static HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> genForupdatePolicy() {
+    private static HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> genForUpdatePolicy() {
         // basic
         HttpRequestDef.Builder<UpdatePolicyRequest, UpdatePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePolicyRequest.class, UpdatePolicyResponse.class)
@@ -1191,16 +1083,12 @@ public class AadMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyRequest::getPolicyId, UpdatePolicyRequest::setPolicyId));
         builder.<UpdatePolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePolicyRequestBody.class),
-            f -> f.withMarshaller(UpdatePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyRequest::getBody, UpdatePolicyRequest::setBody));
 
         // response
 
@@ -1208,9 +1096,9 @@ public class AadMeta {
     }
 
     public static final HttpRequestDef<UpdateTagForProtectedIpRequest, UpdateTagForProtectedIpResponse> updateTagForProtectedIp =
-        genForupdateTagForProtectedIp();
+        genForUpdateTagForProtectedIp();
 
-    private static HttpRequestDef<UpdateTagForProtectedIpRequest, UpdateTagForProtectedIpResponse> genForupdateTagForProtectedIp() {
+    private static HttpRequestDef<UpdateTagForProtectedIpRequest, UpdateTagForProtectedIpResponse> genForUpdateTagForProtectedIp() {
         // basic
         HttpRequestDef.Builder<UpdateTagForProtectedIpRequest, UpdateTagForProtectedIpResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateTagForProtectedIpRequest.class, UpdateTagForProtectedIpResponse.class)
@@ -1223,9 +1111,7 @@ public class AadMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProtectedIpBody.class),
-            f -> f.withMarshaller(UpdateTagForProtectedIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTagForProtectedIpRequest::getBody, UpdateTagForProtectedIpRequest::setBody));
 
         // response
 

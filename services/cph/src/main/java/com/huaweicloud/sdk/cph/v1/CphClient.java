@@ -106,7 +106,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagsRequest 请求对象
+     * @param request BatchCreateTagsRequest 请求对象
      * @return BatchCreateTagsResponse
      */
     public BatchCreateTagsResponse batchCreateTags(BatchCreateTagsRequest request) {
@@ -120,13 +120,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagsRequest 请求对象
+     * @param request BatchCreateTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
      */
     public SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTagsInvoker(
         BatchCreateTagsRequest request) {
-        return new SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>(request, CphMeta.batchCreateTags,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.batchCreateTags, hcClient);
     }
 
     /**
@@ -136,7 +135,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagsRequest 请求对象
+     * @param request BatchDeleteTagsRequest 请求对象
      * @return BatchDeleteTagsResponse
      */
     public BatchDeleteTagsResponse batchDeleteTags(BatchDeleteTagsRequest request) {
@@ -150,13 +149,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagsRequest 请求对象
+     * @param request BatchDeleteTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
      */
     public SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsInvoker(
         BatchDeleteTagsRequest request) {
-        return new SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>(request, CphMeta.batchDeleteTags,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.batchDeleteTags, hcClient);
     }
 
     /**
@@ -166,7 +164,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchExportCloudPhoneDataRequest 请求对象
+     * @param request BatchExportCloudPhoneDataRequest 请求对象
      * @return BatchExportCloudPhoneDataResponse
      */
     public BatchExportCloudPhoneDataResponse batchExportCloudPhoneData(BatchExportCloudPhoneDataRequest request) {
@@ -180,13 +178,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchExportCloudPhoneDataRequest 请求对象
+     * @param request BatchExportCloudPhoneDataRequest 请求对象
      * @return SyncInvoker<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse>
      */
     public SyncInvoker<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse> batchExportCloudPhoneDataInvoker(
         BatchExportCloudPhoneDataRequest request) {
-        return new SyncInvoker<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse>(request,
-            CphMeta.batchExportCloudPhoneData, hcClient);
+        return new SyncInvoker<>(request, CphMeta.batchExportCloudPhoneData, hcClient);
     }
 
     /**
@@ -196,7 +193,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchImportCloudPhoneDataRequest 请求对象
+     * @param request BatchImportCloudPhoneDataRequest 请求对象
      * @return BatchImportCloudPhoneDataResponse
      */
     public BatchImportCloudPhoneDataResponse batchImportCloudPhoneData(BatchImportCloudPhoneDataRequest request) {
@@ -210,13 +207,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchImportCloudPhoneDataRequest 请求对象
+     * @param request BatchImportCloudPhoneDataRequest 请求对象
      * @return SyncInvoker<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse>
      */
     public SyncInvoker<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse> batchImportCloudPhoneDataInvoker(
         BatchImportCloudPhoneDataRequest request) {
-        return new SyncInvoker<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse>(request,
-            CphMeta.batchImportCloudPhoneData, hcClient);
+        return new SyncInvoker<>(request, CphMeta.batchImportCloudPhoneData, hcClient);
     }
 
     /**
@@ -226,7 +222,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeCloudPhoneServerModelRequest 请求对象
+     * @param request ChangeCloudPhoneServerModelRequest 请求对象
      * @return ChangeCloudPhoneServerModelResponse
      */
     public ChangeCloudPhoneServerModelResponse changeCloudPhoneServerModel(ChangeCloudPhoneServerModelRequest request) {
@@ -240,13 +236,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeCloudPhoneServerModelRequest 请求对象
+     * @param request ChangeCloudPhoneServerModelRequest 请求对象
      * @return SyncInvoker<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse>
      */
     public SyncInvoker<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse> changeCloudPhoneServerModelInvoker(
         ChangeCloudPhoneServerModelRequest request) {
-        return new SyncInvoker<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse>(request,
-            CphMeta.changeCloudPhoneServerModel, hcClient);
+        return new SyncInvoker<>(request, CphMeta.changeCloudPhoneServerModel, hcClient);
     }
 
     /**
@@ -260,7 +255,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNet2CloudPhoneServerRequest 请求对象
+     * @param request CreateNet2CloudPhoneServerRequest 请求对象
      * @return CreateNet2CloudPhoneServerResponse
      */
     public CreateNet2CloudPhoneServerResponse createNet2CloudPhoneServer(CreateNet2CloudPhoneServerRequest request) {
@@ -278,13 +273,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNet2CloudPhoneServerRequest 请求对象
+     * @param request CreateNet2CloudPhoneServerRequest 请求对象
      * @return SyncInvoker<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse>
      */
     public SyncInvoker<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse> createNet2CloudPhoneServerInvoker(
         CreateNet2CloudPhoneServerRequest request) {
-        return new SyncInvoker<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse>(request,
-            CphMeta.createNet2CloudPhoneServer, hcClient);
+        return new SyncInvoker<>(request, CphMeta.createNet2CloudPhoneServer, hcClient);
     }
 
     /**
@@ -294,7 +288,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteShareAppsRequest 请求对象
+     * @param request DeleteShareAppsRequest 请求对象
      * @return DeleteShareAppsResponse
      */
     public DeleteShareAppsResponse deleteShareApps(DeleteShareAppsRequest request) {
@@ -308,13 +302,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteShareAppsRequest 请求对象
+     * @param request DeleteShareAppsRequest 请求对象
      * @return SyncInvoker<DeleteShareAppsRequest, DeleteShareAppsResponse>
      */
     public SyncInvoker<DeleteShareAppsRequest, DeleteShareAppsResponse> deleteShareAppsInvoker(
         DeleteShareAppsRequest request) {
-        return new SyncInvoker<DeleteShareAppsRequest, DeleteShareAppsResponse>(request, CphMeta.deleteShareApps,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.deleteShareApps, hcClient);
     }
 
     /**
@@ -324,7 +317,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteShareFilesRequest 请求对象
+     * @param request DeleteShareFilesRequest 请求对象
      * @return DeleteShareFilesResponse
      */
     public DeleteShareFilesResponse deleteShareFiles(DeleteShareFilesRequest request) {
@@ -338,13 +331,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteShareFilesRequest 请求对象
+     * @param request DeleteShareFilesRequest 请求对象
      * @return SyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse>
      */
     public SyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse> deleteShareFilesInvoker(
         DeleteShareFilesRequest request) {
-        return new SyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse>(request, CphMeta.deleteShareFiles,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.deleteShareFiles, hcClient);
     }
 
     /**
@@ -354,7 +346,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportTrafficRequest 请求对象
+     * @param request ImportTrafficRequest 请求对象
      * @return ImportTrafficResponse
      */
     public ImportTrafficResponse importTraffic(ImportTrafficRequest request) {
@@ -368,11 +360,11 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportTrafficRequest 请求对象
+     * @param request ImportTrafficRequest 请求对象
      * @return SyncInvoker<ImportTrafficRequest, ImportTrafficResponse>
      */
     public SyncInvoker<ImportTrafficRequest, ImportTrafficResponse> importTrafficInvoker(ImportTrafficRequest request) {
-        return new SyncInvoker<ImportTrafficRequest, ImportTrafficResponse>(request, CphMeta.importTraffic, hcClient);
+        return new SyncInvoker<>(request, CphMeta.importTraffic, hcClient);
     }
 
     /**
@@ -382,7 +374,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneImagesRequest 请求对象
+     * @param request ListCloudPhoneImagesRequest 请求对象
      * @return ListCloudPhoneImagesResponse
      */
     public ListCloudPhoneImagesResponse listCloudPhoneImages(ListCloudPhoneImagesRequest request) {
@@ -396,13 +388,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneImagesRequest 请求对象
+     * @param request ListCloudPhoneImagesRequest 请求对象
      * @return SyncInvoker<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse>
      */
     public SyncInvoker<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse> listCloudPhoneImagesInvoker(
         ListCloudPhoneImagesRequest request) {
-        return new SyncInvoker<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse>(request,
-            CphMeta.listCloudPhoneImages, hcClient);
+        return new SyncInvoker<>(request, CphMeta.listCloudPhoneImages, hcClient);
     }
 
     /**
@@ -412,7 +403,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneModelsRequest 请求对象
+     * @param request ListCloudPhoneModelsRequest 请求对象
      * @return ListCloudPhoneModelsResponse
      */
     public ListCloudPhoneModelsResponse listCloudPhoneModels(ListCloudPhoneModelsRequest request) {
@@ -426,13 +417,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneModelsRequest 请求对象
+     * @param request ListCloudPhoneModelsRequest 请求对象
      * @return SyncInvoker<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse>
      */
     public SyncInvoker<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse> listCloudPhoneModelsInvoker(
         ListCloudPhoneModelsRequest request) {
-        return new SyncInvoker<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse>(request,
-            CphMeta.listCloudPhoneModels, hcClient);
+        return new SyncInvoker<>(request, CphMeta.listCloudPhoneModels, hcClient);
     }
 
     /**
@@ -442,7 +432,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneServerModelsRequest 请求对象
+     * @param request ListCloudPhoneServerModelsRequest 请求对象
      * @return ListCloudPhoneServerModelsResponse
      */
     public ListCloudPhoneServerModelsResponse listCloudPhoneServerModels(ListCloudPhoneServerModelsRequest request) {
@@ -456,13 +446,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneServerModelsRequest 请求对象
+     * @param request ListCloudPhoneServerModelsRequest 请求对象
      * @return SyncInvoker<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse>
      */
     public SyncInvoker<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse> listCloudPhoneServerModelsInvoker(
         ListCloudPhoneServerModelsRequest request) {
-        return new SyncInvoker<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse>(request,
-            CphMeta.listCloudPhoneServerModels, hcClient);
+        return new SyncInvoker<>(request, CphMeta.listCloudPhoneServerModels, hcClient);
     }
 
     /**
@@ -472,7 +461,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneServersRequest 请求对象
+     * @param request ListCloudPhoneServersRequest 请求对象
      * @return ListCloudPhoneServersResponse
      */
     public ListCloudPhoneServersResponse listCloudPhoneServers(ListCloudPhoneServersRequest request) {
@@ -486,13 +475,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneServersRequest 请求对象
+     * @param request ListCloudPhoneServersRequest 请求对象
      * @return SyncInvoker<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse>
      */
     public SyncInvoker<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse> listCloudPhoneServersInvoker(
         ListCloudPhoneServersRequest request) {
-        return new SyncInvoker<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse>(request,
-            CphMeta.listCloudPhoneServers, hcClient);
+        return new SyncInvoker<>(request, CphMeta.listCloudPhoneServers, hcClient);
     }
 
     /**
@@ -502,7 +490,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhonesRequest 请求对象
+     * @param request ListCloudPhonesRequest 请求对象
      * @return ListCloudPhonesResponse
      */
     public ListCloudPhonesResponse listCloudPhones(ListCloudPhonesRequest request) {
@@ -516,13 +504,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhonesRequest 请求对象
+     * @param request ListCloudPhonesRequest 请求对象
      * @return SyncInvoker<ListCloudPhonesRequest, ListCloudPhonesResponse>
      */
     public SyncInvoker<ListCloudPhonesRequest, ListCloudPhonesResponse> listCloudPhonesInvoker(
         ListCloudPhonesRequest request) {
-        return new SyncInvoker<ListCloudPhonesRequest, ListCloudPhonesResponse>(request, CphMeta.listCloudPhones,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.listCloudPhones, hcClient);
     }
 
     /**
@@ -532,7 +519,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEncodeServersRequest 请求对象
+     * @param request ListEncodeServersRequest 请求对象
      * @return ListEncodeServersResponse
      */
     public ListEncodeServersResponse listEncodeServers(ListEncodeServersRequest request) {
@@ -546,13 +533,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEncodeServersRequest 请求对象
+     * @param request ListEncodeServersRequest 请求对象
      * @return SyncInvoker<ListEncodeServersRequest, ListEncodeServersResponse>
      */
     public SyncInvoker<ListEncodeServersRequest, ListEncodeServersResponse> listEncodeServersInvoker(
         ListEncodeServersRequest request) {
-        return new SyncInvoker<ListEncodeServersRequest, ListEncodeServersResponse>(request, CphMeta.listEncodeServers,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.listEncodeServers, hcClient);
     }
 
     /**
@@ -562,7 +548,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return ListJobsResponse
      */
     public ListJobsResponse listJobs(ListJobsRequest request) {
@@ -576,11 +562,11 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return SyncInvoker<ListJobsRequest, ListJobsResponse>
      */
     public SyncInvoker<ListJobsRequest, ListJobsResponse> listJobsInvoker(ListJobsRequest request) {
-        return new SyncInvoker<ListJobsRequest, ListJobsResponse>(request, CphMeta.listJobs, hcClient);
+        return new SyncInvoker<>(request, CphMeta.listJobs, hcClient);
     }
 
     /**
@@ -590,7 +576,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return ListProjectTagsResponse
      */
     public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
@@ -604,13 +590,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
     public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
         ListProjectTagsRequest request) {
-        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, CphMeta.listProjectTags,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.listProjectTags, hcClient);
     }
 
     /**
@@ -620,7 +605,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return ListResourceInstancesResponse
      */
     public ListResourceInstancesResponse listResourceInstances(ListResourceInstancesRequest request) {
@@ -634,13 +619,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
      */
     public SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesInvoker(
         ListResourceInstancesRequest request) {
-        return new SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
-            CphMeta.listResourceInstances, hcClient);
+        return new SyncInvoker<>(request, CphMeta.listResourceInstances, hcClient);
     }
 
     /**
@@ -650,7 +634,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTagsRequest 请求对象
+     * @param request ListResourceTagsRequest 请求对象
      * @return ListResourceTagsResponse
      */
     public ListResourceTagsResponse listResourceTags(ListResourceTagsRequest request) {
@@ -664,13 +648,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTagsRequest 请求对象
+     * @param request ListResourceTagsRequest 请求对象
      * @return SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
      */
     public SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsInvoker(
         ListResourceTagsRequest request) {
-        return new SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>(request, CphMeta.listResourceTags,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.listResourceTags, hcClient);
     }
 
     /**
@@ -680,7 +663,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListShareFilesRequest 请求对象
+     * @param request ListShareFilesRequest 请求对象
      * @return ListShareFilesResponse
      */
     public ListShareFilesResponse listShareFiles(ListShareFilesRequest request) {
@@ -694,13 +677,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListShareFilesRequest 请求对象
+     * @param request ListShareFilesRequest 请求对象
      * @return SyncInvoker<ListShareFilesRequest, ListShareFilesResponse>
      */
     public SyncInvoker<ListShareFilesRequest, ListShareFilesResponse> listShareFilesInvoker(
         ListShareFilesRequest request) {
-        return new SyncInvoker<ListShareFilesRequest, ListShareFilesResponse>(request, CphMeta.listShareFiles,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.listShareFiles, hcClient);
     }
 
     /**
@@ -710,7 +692,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushShareAppsRequest 请求对象
+     * @param request PushShareAppsRequest 请求对象
      * @return PushShareAppsResponse
      */
     public PushShareAppsResponse pushShareApps(PushShareAppsRequest request) {
@@ -724,11 +706,11 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushShareAppsRequest 请求对象
+     * @param request PushShareAppsRequest 请求对象
      * @return SyncInvoker<PushShareAppsRequest, PushShareAppsResponse>
      */
     public SyncInvoker<PushShareAppsRequest, PushShareAppsResponse> pushShareAppsInvoker(PushShareAppsRequest request) {
-        return new SyncInvoker<PushShareAppsRequest, PushShareAppsResponse>(request, CphMeta.pushShareApps, hcClient);
+        return new SyncInvoker<>(request, CphMeta.pushShareApps, hcClient);
     }
 
     /**
@@ -738,7 +720,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushShareFilesRequest 请求对象
+     * @param request PushShareFilesRequest 请求对象
      * @return PushShareFilesResponse
      */
     public PushShareFilesResponse pushShareFiles(PushShareFilesRequest request) {
@@ -752,13 +734,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushShareFilesRequest 请求对象
+     * @param request PushShareFilesRequest 请求对象
      * @return SyncInvoker<PushShareFilesRequest, PushShareFilesResponse>
      */
     public SyncInvoker<PushShareFilesRequest, PushShareFilesResponse> pushShareFilesInvoker(
         PushShareFilesRequest request) {
-        return new SyncInvoker<PushShareFilesRequest, PushShareFilesResponse>(request, CphMeta.pushShareFiles,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.pushShareFiles, hcClient);
     }
 
     /**
@@ -768,7 +749,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetCloudPhoneRequest 请求对象
+     * @param request ResetCloudPhoneRequest 请求对象
      * @return ResetCloudPhoneResponse
      */
     public ResetCloudPhoneResponse resetCloudPhone(ResetCloudPhoneRequest request) {
@@ -782,13 +763,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetCloudPhoneRequest 请求对象
+     * @param request ResetCloudPhoneRequest 请求对象
      * @return SyncInvoker<ResetCloudPhoneRequest, ResetCloudPhoneResponse>
      */
     public SyncInvoker<ResetCloudPhoneRequest, ResetCloudPhoneResponse> resetCloudPhoneInvoker(
         ResetCloudPhoneRequest request) {
-        return new SyncInvoker<ResetCloudPhoneRequest, ResetCloudPhoneResponse>(request, CphMeta.resetCloudPhone,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.resetCloudPhone, hcClient);
     }
 
     /**
@@ -798,7 +778,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartCloudPhoneRequest 请求对象
+     * @param request RestartCloudPhoneRequest 请求对象
      * @return RestartCloudPhoneResponse
      */
     public RestartCloudPhoneResponse restartCloudPhone(RestartCloudPhoneRequest request) {
@@ -812,13 +792,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartCloudPhoneRequest 请求对象
+     * @param request RestartCloudPhoneRequest 请求对象
      * @return SyncInvoker<RestartCloudPhoneRequest, RestartCloudPhoneResponse>
      */
     public SyncInvoker<RestartCloudPhoneRequest, RestartCloudPhoneResponse> restartCloudPhoneInvoker(
         RestartCloudPhoneRequest request) {
-        return new SyncInvoker<RestartCloudPhoneRequest, RestartCloudPhoneResponse>(request, CphMeta.restartCloudPhone,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.restartCloudPhone, hcClient);
     }
 
     /**
@@ -828,7 +807,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartCloudPhoneServerRequest 请求对象
+     * @param request RestartCloudPhoneServerRequest 请求对象
      * @return RestartCloudPhoneServerResponse
      */
     public RestartCloudPhoneServerResponse restartCloudPhoneServer(RestartCloudPhoneServerRequest request) {
@@ -842,13 +821,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartCloudPhoneServerRequest 请求对象
+     * @param request RestartCloudPhoneServerRequest 请求对象
      * @return SyncInvoker<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse>
      */
     public SyncInvoker<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse> restartCloudPhoneServerInvoker(
         RestartCloudPhoneServerRequest request) {
-        return new SyncInvoker<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse>(request,
-            CphMeta.restartCloudPhoneServer, hcClient);
+        return new SyncInvoker<>(request, CphMeta.restartCloudPhoneServer, hcClient);
     }
 
     /**
@@ -858,7 +836,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartEncodeServerRequest 请求对象
+     * @param request RestartEncodeServerRequest 请求对象
      * @return RestartEncodeServerResponse
      */
     public RestartEncodeServerResponse restartEncodeServer(RestartEncodeServerRequest request) {
@@ -872,13 +850,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartEncodeServerRequest 请求对象
+     * @param request RestartEncodeServerRequest 请求对象
      * @return SyncInvoker<RestartEncodeServerRequest, RestartEncodeServerResponse>
      */
     public SyncInvoker<RestartEncodeServerRequest, RestartEncodeServerResponse> restartEncodeServerInvoker(
         RestartEncodeServerRequest request) {
-        return new SyncInvoker<RestartEncodeServerRequest, RestartEncodeServerResponse>(request,
-            CphMeta.restartEncodeServer, hcClient);
+        return new SyncInvoker<>(request, CphMeta.restartEncodeServer, hcClient);
     }
 
     /**
@@ -888,7 +865,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBandwidthDetailRequest 请求对象
+     * @param request ShowBandwidthDetailRequest 请求对象
      * @return ShowBandwidthDetailResponse
      */
     public ShowBandwidthDetailResponse showBandwidthDetail(ShowBandwidthDetailRequest request) {
@@ -902,13 +879,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBandwidthDetailRequest 请求对象
+     * @param request ShowBandwidthDetailRequest 请求对象
      * @return SyncInvoker<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse>
      */
     public SyncInvoker<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse> showBandwidthDetailInvoker(
         ShowBandwidthDetailRequest request) {
-        return new SyncInvoker<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse>(request,
-            CphMeta.showBandwidthDetail, hcClient);
+        return new SyncInvoker<>(request, CphMeta.showBandwidthDetail, hcClient);
     }
 
     /**
@@ -918,7 +894,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCloudPhoneDetailRequest 请求对象
+     * @param request ShowCloudPhoneDetailRequest 请求对象
      * @return ShowCloudPhoneDetailResponse
      */
     public ShowCloudPhoneDetailResponse showCloudPhoneDetail(ShowCloudPhoneDetailRequest request) {
@@ -932,13 +908,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCloudPhoneDetailRequest 请求对象
+     * @param request ShowCloudPhoneDetailRequest 请求对象
      * @return SyncInvoker<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse>
      */
     public SyncInvoker<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse> showCloudPhoneDetailInvoker(
         ShowCloudPhoneDetailRequest request) {
-        return new SyncInvoker<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse>(request,
-            CphMeta.showCloudPhoneDetail, hcClient);
+        return new SyncInvoker<>(request, CphMeta.showCloudPhoneDetail, hcClient);
     }
 
     /**
@@ -948,7 +923,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCloudPhoneServerDetailRequest 请求对象
+     * @param request ShowCloudPhoneServerDetailRequest 请求对象
      * @return ShowCloudPhoneServerDetailResponse
      */
     public ShowCloudPhoneServerDetailResponse showCloudPhoneServerDetail(ShowCloudPhoneServerDetailRequest request) {
@@ -962,13 +937,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCloudPhoneServerDetailRequest 请求对象
+     * @param request ShowCloudPhoneServerDetailRequest 请求对象
      * @return SyncInvoker<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse>
      */
     public SyncInvoker<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse> showCloudPhoneServerDetailInvoker(
         ShowCloudPhoneServerDetailRequest request) {
-        return new SyncInvoker<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse>(request,
-            CphMeta.showCloudPhoneServerDetail, hcClient);
+        return new SyncInvoker<>(request, CphMeta.showCloudPhoneServerDetail, hcClient);
     }
 
     /**
@@ -978,7 +952,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return ShowJobResponse
      */
     public ShowJobResponse showJob(ShowJobRequest request) {
@@ -992,11 +966,11 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public SyncInvoker<ShowJobRequest, ShowJobResponse> showJobInvoker(ShowJobRequest request) {
-        return new SyncInvoker<ShowJobRequest, ShowJobResponse>(request, CphMeta.showJob, hcClient);
+        return new SyncInvoker<>(request, CphMeta.showJob, hcClient);
     }
 
     /**
@@ -1006,7 +980,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopCloudPhoneRequest 请求对象
+     * @param request StopCloudPhoneRequest 请求对象
      * @return StopCloudPhoneResponse
      */
     public StopCloudPhoneResponse stopCloudPhone(StopCloudPhoneRequest request) {
@@ -1020,13 +994,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopCloudPhoneRequest 请求对象
+     * @param request StopCloudPhoneRequest 请求对象
      * @return SyncInvoker<StopCloudPhoneRequest, StopCloudPhoneResponse>
      */
     public SyncInvoker<StopCloudPhoneRequest, StopCloudPhoneResponse> stopCloudPhoneInvoker(
         StopCloudPhoneRequest request) {
-        return new SyncInvoker<StopCloudPhoneRequest, StopCloudPhoneResponse>(request, CphMeta.stopCloudPhone,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.stopCloudPhone, hcClient);
     }
 
     /**
@@ -1036,7 +1009,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBandwidthRequest 请求对象
+     * @param request UpdateBandwidthRequest 请求对象
      * @return UpdateBandwidthResponse
      */
     public UpdateBandwidthResponse updateBandwidth(UpdateBandwidthRequest request) {
@@ -1050,13 +1023,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBandwidthRequest 请求对象
+     * @param request UpdateBandwidthRequest 请求对象
      * @return SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>
      */
     public SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidthInvoker(
         UpdateBandwidthRequest request) {
-        return new SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>(request, CphMeta.updateBandwidth,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.updateBandwidth, hcClient);
     }
 
     /**
@@ -1066,7 +1038,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCloudPhonePropertyRequest 请求对象
+     * @param request UpdateCloudPhonePropertyRequest 请求对象
      * @return UpdateCloudPhonePropertyResponse
      */
     public UpdateCloudPhonePropertyResponse updateCloudPhoneProperty(UpdateCloudPhonePropertyRequest request) {
@@ -1080,13 +1052,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCloudPhonePropertyRequest 请求对象
+     * @param request UpdateCloudPhonePropertyRequest 请求对象
      * @return SyncInvoker<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse>
      */
     public SyncInvoker<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse> updateCloudPhonePropertyInvoker(
         UpdateCloudPhonePropertyRequest request) {
-        return new SyncInvoker<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse>(request,
-            CphMeta.updateCloudPhoneProperty, hcClient);
+        return new SyncInvoker<>(request, CphMeta.updateCloudPhoneProperty, hcClient);
     }
 
     /**
@@ -1096,7 +1067,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeypairRequest 请求对象
+     * @param request UpdateKeypairRequest 请求对象
      * @return UpdateKeypairResponse
      */
     public UpdateKeypairResponse updateKeypair(UpdateKeypairRequest request) {
@@ -1110,11 +1081,11 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeypairRequest 请求对象
+     * @param request UpdateKeypairRequest 请求对象
      * @return SyncInvoker<UpdateKeypairRequest, UpdateKeypairResponse>
      */
     public SyncInvoker<UpdateKeypairRequest, UpdateKeypairResponse> updateKeypairInvoker(UpdateKeypairRequest request) {
-        return new SyncInvoker<UpdateKeypairRequest, UpdateKeypairResponse>(request, CphMeta.updateKeypair, hcClient);
+        return new SyncInvoker<>(request, CphMeta.updateKeypair, hcClient);
     }
 
     /**
@@ -1124,7 +1095,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePhoneNameRequest 请求对象
+     * @param request UpdatePhoneNameRequest 请求对象
      * @return UpdatePhoneNameResponse
      */
     public UpdatePhoneNameResponse updatePhoneName(UpdatePhoneNameRequest request) {
@@ -1138,13 +1109,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePhoneNameRequest 请求对象
+     * @param request UpdatePhoneNameRequest 请求对象
      * @return SyncInvoker<UpdatePhoneNameRequest, UpdatePhoneNameResponse>
      */
     public SyncInvoker<UpdatePhoneNameRequest, UpdatePhoneNameResponse> updatePhoneNameInvoker(
         UpdatePhoneNameRequest request) {
-        return new SyncInvoker<UpdatePhoneNameRequest, UpdatePhoneNameResponse>(request, CphMeta.updatePhoneName,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.updatePhoneName, hcClient);
     }
 
     /**
@@ -1154,7 +1124,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServerNameRequest 请求对象
+     * @param request UpdateServerNameRequest 请求对象
      * @return UpdateServerNameResponse
      */
     public UpdateServerNameResponse updateServerName(UpdateServerNameRequest request) {
@@ -1168,13 +1138,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServerNameRequest 请求对象
+     * @param request UpdateServerNameRequest 请求对象
      * @return SyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse>
      */
     public SyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse> updateServerNameInvoker(
         UpdateServerNameRequest request) {
-        return new SyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse>(request, CphMeta.updateServerName,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.updateServerName, hcClient);
     }
 
     /**
@@ -1187,7 +1156,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallApkRequest 请求对象
+     * @param request InstallApkRequest 请求对象
      * @return InstallApkResponse
      */
     public InstallApkResponse installApk(InstallApkRequest request) {
@@ -1204,11 +1173,11 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallApkRequest 请求对象
+     * @param request InstallApkRequest 请求对象
      * @return SyncInvoker<InstallApkRequest, InstallApkResponse>
      */
     public SyncInvoker<InstallApkRequest, InstallApkResponse> installApkInvoker(InstallApkRequest request) {
-        return new SyncInvoker<InstallApkRequest, InstallApkResponse>(request, CphMeta.installApk, hcClient);
+        return new SyncInvoker<>(request, CphMeta.installApk, hcClient);
     }
 
     /**
@@ -1221,7 +1190,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushFileRequest 请求对象
+     * @param request PushFileRequest 请求对象
      * @return PushFileResponse
      */
     public PushFileResponse pushFile(PushFileRequest request) {
@@ -1238,11 +1207,11 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushFileRequest 请求对象
+     * @param request PushFileRequest 请求对象
      * @return SyncInvoker<PushFileRequest, PushFileResponse>
      */
     public SyncInvoker<PushFileRequest, PushFileResponse> pushFileInvoker(PushFileRequest request) {
-        return new SyncInvoker<PushFileRequest, PushFileResponse>(request, CphMeta.pushFile, hcClient);
+        return new SyncInvoker<>(request, CphMeta.pushFile, hcClient);
     }
 
     /**
@@ -1253,7 +1222,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunShellCommandRequest 请求对象
+     * @param request RunShellCommandRequest 请求对象
      * @return RunShellCommandResponse
      */
     public RunShellCommandResponse runShellCommand(RunShellCommandRequest request) {
@@ -1268,13 +1237,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunShellCommandRequest 请求对象
+     * @param request RunShellCommandRequest 请求对象
      * @return SyncInvoker<RunShellCommandRequest, RunShellCommandResponse>
      */
     public SyncInvoker<RunShellCommandRequest, RunShellCommandResponse> runShellCommandInvoker(
         RunShellCommandRequest request) {
-        return new SyncInvoker<RunShellCommandRequest, RunShellCommandResponse>(request, CphMeta.runShellCommand,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.runShellCommand, hcClient);
     }
 
     /**
@@ -1284,7 +1252,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSyncCommandRequest 请求对象
+     * @param request RunSyncCommandRequest 请求对象
      * @return RunSyncCommandResponse
      */
     public RunSyncCommandResponse runSyncCommand(RunSyncCommandRequest request) {
@@ -1298,13 +1266,12 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSyncCommandRequest 请求对象
+     * @param request RunSyncCommandRequest 请求对象
      * @return SyncInvoker<RunSyncCommandRequest, RunSyncCommandResponse>
      */
     public SyncInvoker<RunSyncCommandRequest, RunSyncCommandResponse> runSyncCommandInvoker(
         RunSyncCommandRequest request) {
-        return new SyncInvoker<RunSyncCommandRequest, RunSyncCommandResponse>(request, CphMeta.runSyncCommand,
-            hcClient);
+        return new SyncInvoker<>(request, CphMeta.runSyncCommand, hcClient);
     }
 
     /**
@@ -1315,7 +1282,7 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallApkRequest 请求对象
+     * @param request UninstallApkRequest 请求对象
      * @return UninstallApkResponse
      */
     public UninstallApkResponse uninstallApk(UninstallApkRequest request) {
@@ -1330,11 +1297,11 @@ public class CphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallApkRequest 请求对象
+     * @param request UninstallApkRequest 请求对象
      * @return SyncInvoker<UninstallApkRequest, UninstallApkResponse>
      */
     public SyncInvoker<UninstallApkRequest, UninstallApkResponse> uninstallApkInvoker(UninstallApkRequest request) {
-        return new SyncInvoker<UninstallApkRequest, UninstallApkResponse>(request, CphMeta.uninstallApk, hcClient);
+        return new SyncInvoker<>(request, CphMeta.uninstallApk, hcClient);
     }
 
 }

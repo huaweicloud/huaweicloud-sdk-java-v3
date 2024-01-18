@@ -19,9 +19,9 @@ import com.huaweicloud.sdk.devsecurity.v1.model.ShowSecAppTaskStatusResponse;
 public class DevSecurityMeta {
 
     public static final HttpRequestDef<CreateSecAppTaskRequest, CreateSecAppTaskResponse> createSecAppTask =
-        genForcreateSecAppTask();
+        genForCreateSecAppTask();
 
-    private static HttpRequestDef<CreateSecAppTaskRequest, CreateSecAppTaskResponse> genForcreateSecAppTask() {
+    private static HttpRequestDef<CreateSecAppTaskRequest, CreateSecAppTaskResponse> genForCreateSecAppTask() {
         // basic
         HttpRequestDef.Builder<CreateSecAppTaskRequest, CreateSecAppTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecAppTaskRequest.class, CreateSecAppTaskResponse.class)
@@ -34,9 +34,7 @@ public class DevSecurityMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSecAppTaskRequestBody.class),
-            f -> f.withMarshaller(CreateSecAppTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecAppTaskRequest::getBody, CreateSecAppTaskRequest::setBody));
 
         // response
 
@@ -44,9 +42,9 @@ public class DevSecurityMeta {
     }
 
     public static final HttpRequestDef<DeleteSecAppTaskRequest, DeleteSecAppTaskResponse> deleteSecAppTask =
-        genFordeleteSecAppTask();
+        genForDeleteSecAppTask();
 
-    private static HttpRequestDef<DeleteSecAppTaskRequest, DeleteSecAppTaskResponse> genFordeleteSecAppTask() {
+    private static HttpRequestDef<DeleteSecAppTaskRequest, DeleteSecAppTaskResponse> genForDeleteSecAppTask() {
         // basic
         HttpRequestDef.Builder<DeleteSecAppTaskRequest, DeleteSecAppTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecAppTaskRequest.class, DeleteSecAppTaskResponse.class)
@@ -59,9 +57,7 @@ public class DevSecurityMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecAppTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteSecAppTaskRequest::getTaskId, DeleteSecAppTaskRequest::setTaskId));
 
         // response
 
@@ -69,9 +65,9 @@ public class DevSecurityMeta {
     }
 
     public static final HttpRequestDef<ShowSecAppTaskResultRequest, ShowSecAppTaskResultResponse> showSecAppTaskResult =
-        genForshowSecAppTaskResult();
+        genForShowSecAppTaskResult();
 
-    private static HttpRequestDef<ShowSecAppTaskResultRequest, ShowSecAppTaskResultResponse> genForshowSecAppTaskResult() {
+    private static HttpRequestDef<ShowSecAppTaskResultRequest, ShowSecAppTaskResultResponse> genForShowSecAppTaskResult() {
         // basic
         HttpRequestDef.Builder<ShowSecAppTaskResultRequest, ShowSecAppTaskResultResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSecAppTaskResultRequest.class, ShowSecAppTaskResultResponse.class)
@@ -84,9 +80,7 @@ public class DevSecurityMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecAppTaskResultRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowSecAppTaskResultRequest::getTaskId, ShowSecAppTaskResultRequest::setTaskId));
 
         // response
 
@@ -94,9 +88,9 @@ public class DevSecurityMeta {
     }
 
     public static final HttpRequestDef<ShowSecAppTaskStatusRequest, ShowSecAppTaskStatusResponse> showSecAppTaskStatus =
-        genForshowSecAppTaskStatus();
+        genForShowSecAppTaskStatus();
 
-    private static HttpRequestDef<ShowSecAppTaskStatusRequest, ShowSecAppTaskStatusResponse> genForshowSecAppTaskStatus() {
+    private static HttpRequestDef<ShowSecAppTaskStatusRequest, ShowSecAppTaskStatusResponse> genForShowSecAppTaskStatus() {
         // basic
         HttpRequestDef.Builder<ShowSecAppTaskStatusRequest, ShowSecAppTaskStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSecAppTaskStatusRequest.class, ShowSecAppTaskStatusResponse.class)
@@ -109,9 +103,7 @@ public class DevSecurityMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecAppTaskStatusRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowSecAppTaskStatusRequest::getTaskId, ShowSecAppTaskStatusRequest::setTaskId));
 
         // response
 

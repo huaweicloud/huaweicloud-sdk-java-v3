@@ -130,7 +130,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateNatGatewayDnatRulesRequest 请求对象
+     * @param request BatchCreateNatGatewayDnatRulesRequest 请求对象
      * @return BatchCreateNatGatewayDnatRulesResponse
      */
     public BatchCreateNatGatewayDnatRulesResponse batchCreateNatGatewayDnatRules(
@@ -145,13 +145,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateNatGatewayDnatRulesRequest 请求对象
+     * @param request BatchCreateNatGatewayDnatRulesRequest 请求对象
      * @return SyncInvoker<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse>
      */
     public SyncInvoker<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse> batchCreateNatGatewayDnatRulesInvoker(
         BatchCreateNatGatewayDnatRulesRequest request) {
-        return new SyncInvoker<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse>(request,
-            NatMeta.batchCreateNatGatewayDnatRules, hcClient);
+        return new SyncInvoker<>(request, NatMeta.batchCreateNatGatewayDnatRules, hcClient);
     }
 
     /**
@@ -161,7 +160,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNatGatewayDnatRuleRequest 请求对象
+     * @param request CreateNatGatewayDnatRuleRequest 请求对象
      * @return CreateNatGatewayDnatRuleResponse
      */
     public CreateNatGatewayDnatRuleResponse createNatGatewayDnatRule(CreateNatGatewayDnatRuleRequest request) {
@@ -175,13 +174,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNatGatewayDnatRuleRequest 请求对象
+     * @param request CreateNatGatewayDnatRuleRequest 请求对象
      * @return SyncInvoker<CreateNatGatewayDnatRuleRequest, CreateNatGatewayDnatRuleResponse>
      */
     public SyncInvoker<CreateNatGatewayDnatRuleRequest, CreateNatGatewayDnatRuleResponse> createNatGatewayDnatRuleInvoker(
         CreateNatGatewayDnatRuleRequest request) {
-        return new SyncInvoker<CreateNatGatewayDnatRuleRequest, CreateNatGatewayDnatRuleResponse>(request,
-            NatMeta.createNatGatewayDnatRule, hcClient);
+        return new SyncInvoker<>(request, NatMeta.createNatGatewayDnatRule, hcClient);
     }
 
     /**
@@ -191,7 +189,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivateDnatRequest 请求对象
+     * @param request CreatePrivateDnatRequest 请求对象
      * @return CreatePrivateDnatResponse
      */
     public CreatePrivateDnatResponse createPrivateDnat(CreatePrivateDnatRequest request) {
@@ -205,13 +203,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivateDnatRequest 请求对象
+     * @param request CreatePrivateDnatRequest 请求对象
      * @return SyncInvoker<CreatePrivateDnatRequest, CreatePrivateDnatResponse>
      */
     public SyncInvoker<CreatePrivateDnatRequest, CreatePrivateDnatResponse> createPrivateDnatInvoker(
         CreatePrivateDnatRequest request) {
-        return new SyncInvoker<CreatePrivateDnatRequest, CreatePrivateDnatResponse>(request, NatMeta.createPrivateDnat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.createPrivateDnat, hcClient);
     }
 
     /**
@@ -221,7 +218,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNatGatewayDnatRuleRequest 请求对象
+     * @param request DeleteNatGatewayDnatRuleRequest 请求对象
      * @return DeleteNatGatewayDnatRuleResponse
      */
     public DeleteNatGatewayDnatRuleResponse deleteNatGatewayDnatRule(DeleteNatGatewayDnatRuleRequest request) {
@@ -235,13 +232,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNatGatewayDnatRuleRequest 请求对象
+     * @param request DeleteNatGatewayDnatRuleRequest 请求对象
      * @return SyncInvoker<DeleteNatGatewayDnatRuleRequest, DeleteNatGatewayDnatRuleResponse>
      */
     public SyncInvoker<DeleteNatGatewayDnatRuleRequest, DeleteNatGatewayDnatRuleResponse> deleteNatGatewayDnatRuleInvoker(
         DeleteNatGatewayDnatRuleRequest request) {
-        return new SyncInvoker<DeleteNatGatewayDnatRuleRequest, DeleteNatGatewayDnatRuleResponse>(request,
-            NatMeta.deleteNatGatewayDnatRule, hcClient);
+        return new SyncInvoker<>(request, NatMeta.deleteNatGatewayDnatRule, hcClient);
     }
 
     /**
@@ -251,7 +247,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivateDnatRequest 请求对象
+     * @param request DeletePrivateDnatRequest 请求对象
      * @return DeletePrivateDnatResponse
      */
     public DeletePrivateDnatResponse deletePrivateDnat(DeletePrivateDnatRequest request) {
@@ -265,13 +261,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivateDnatRequest 请求对象
+     * @param request DeletePrivateDnatRequest 请求对象
      * @return SyncInvoker<DeletePrivateDnatRequest, DeletePrivateDnatResponse>
      */
     public SyncInvoker<DeletePrivateDnatRequest, DeletePrivateDnatResponse> deletePrivateDnatInvoker(
         DeletePrivateDnatRequest request) {
-        return new SyncInvoker<DeletePrivateDnatRequest, DeletePrivateDnatResponse>(request, NatMeta.deletePrivateDnat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.deletePrivateDnat, hcClient);
     }
 
     /**
@@ -281,7 +276,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNatGatewayDnatRulesRequest 请求对象
+     * @param request ListNatGatewayDnatRulesRequest 请求对象
      * @return ListNatGatewayDnatRulesResponse
      */
     public ListNatGatewayDnatRulesResponse listNatGatewayDnatRules(ListNatGatewayDnatRulesRequest request) {
@@ -295,13 +290,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNatGatewayDnatRulesRequest 请求对象
+     * @param request ListNatGatewayDnatRulesRequest 请求对象
      * @return SyncInvoker<ListNatGatewayDnatRulesRequest, ListNatGatewayDnatRulesResponse>
      */
     public SyncInvoker<ListNatGatewayDnatRulesRequest, ListNatGatewayDnatRulesResponse> listNatGatewayDnatRulesInvoker(
         ListNatGatewayDnatRulesRequest request) {
-        return new SyncInvoker<ListNatGatewayDnatRulesRequest, ListNatGatewayDnatRulesResponse>(request,
-            NatMeta.listNatGatewayDnatRules, hcClient);
+        return new SyncInvoker<>(request, NatMeta.listNatGatewayDnatRules, hcClient);
     }
 
     /**
@@ -311,7 +305,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateDnatsRequest 请求对象
+     * @param request ListPrivateDnatsRequest 请求对象
      * @return ListPrivateDnatsResponse
      */
     public ListPrivateDnatsResponse listPrivateDnats(ListPrivateDnatsRequest request) {
@@ -325,13 +319,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateDnatsRequest 请求对象
+     * @param request ListPrivateDnatsRequest 请求对象
      * @return SyncInvoker<ListPrivateDnatsRequest, ListPrivateDnatsResponse>
      */
     public SyncInvoker<ListPrivateDnatsRequest, ListPrivateDnatsResponse> listPrivateDnatsInvoker(
         ListPrivateDnatsRequest request) {
-        return new SyncInvoker<ListPrivateDnatsRequest, ListPrivateDnatsResponse>(request, NatMeta.listPrivateDnats,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.listPrivateDnats, hcClient);
     }
 
     /**
@@ -341,7 +334,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNatGatewayDnatRuleRequest 请求对象
+     * @param request ShowNatGatewayDnatRuleRequest 请求对象
      * @return ShowNatGatewayDnatRuleResponse
      */
     public ShowNatGatewayDnatRuleResponse showNatGatewayDnatRule(ShowNatGatewayDnatRuleRequest request) {
@@ -355,13 +348,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNatGatewayDnatRuleRequest 请求对象
+     * @param request ShowNatGatewayDnatRuleRequest 请求对象
      * @return SyncInvoker<ShowNatGatewayDnatRuleRequest, ShowNatGatewayDnatRuleResponse>
      */
     public SyncInvoker<ShowNatGatewayDnatRuleRequest, ShowNatGatewayDnatRuleResponse> showNatGatewayDnatRuleInvoker(
         ShowNatGatewayDnatRuleRequest request) {
-        return new SyncInvoker<ShowNatGatewayDnatRuleRequest, ShowNatGatewayDnatRuleResponse>(request,
-            NatMeta.showNatGatewayDnatRule, hcClient);
+        return new SyncInvoker<>(request, NatMeta.showNatGatewayDnatRule, hcClient);
     }
 
     /**
@@ -371,7 +363,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateDnatRequest 请求对象
+     * @param request ShowPrivateDnatRequest 请求对象
      * @return ShowPrivateDnatResponse
      */
     public ShowPrivateDnatResponse showPrivateDnat(ShowPrivateDnatRequest request) {
@@ -385,13 +377,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateDnatRequest 请求对象
+     * @param request ShowPrivateDnatRequest 请求对象
      * @return SyncInvoker<ShowPrivateDnatRequest, ShowPrivateDnatResponse>
      */
     public SyncInvoker<ShowPrivateDnatRequest, ShowPrivateDnatResponse> showPrivateDnatInvoker(
         ShowPrivateDnatRequest request) {
-        return new SyncInvoker<ShowPrivateDnatRequest, ShowPrivateDnatResponse>(request, NatMeta.showPrivateDnat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.showPrivateDnat, hcClient);
     }
 
     /**
@@ -401,7 +392,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNatGatewayDnatRuleRequest 请求对象
+     * @param request UpdateNatGatewayDnatRuleRequest 请求对象
      * @return UpdateNatGatewayDnatRuleResponse
      */
     public UpdateNatGatewayDnatRuleResponse updateNatGatewayDnatRule(UpdateNatGatewayDnatRuleRequest request) {
@@ -415,13 +406,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNatGatewayDnatRuleRequest 请求对象
+     * @param request UpdateNatGatewayDnatRuleRequest 请求对象
      * @return SyncInvoker<UpdateNatGatewayDnatRuleRequest, UpdateNatGatewayDnatRuleResponse>
      */
     public SyncInvoker<UpdateNatGatewayDnatRuleRequest, UpdateNatGatewayDnatRuleResponse> updateNatGatewayDnatRuleInvoker(
         UpdateNatGatewayDnatRuleRequest request) {
-        return new SyncInvoker<UpdateNatGatewayDnatRuleRequest, UpdateNatGatewayDnatRuleResponse>(request,
-            NatMeta.updateNatGatewayDnatRule, hcClient);
+        return new SyncInvoker<>(request, NatMeta.updateNatGatewayDnatRule, hcClient);
     }
 
     /**
@@ -431,7 +421,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrivateDnatRequest 请求对象
+     * @param request UpdatePrivateDnatRequest 请求对象
      * @return UpdatePrivateDnatResponse
      */
     public UpdatePrivateDnatResponse updatePrivateDnat(UpdatePrivateDnatRequest request) {
@@ -445,13 +435,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrivateDnatRequest 请求对象
+     * @param request UpdatePrivateDnatRequest 请求对象
      * @return SyncInvoker<UpdatePrivateDnatRequest, UpdatePrivateDnatResponse>
      */
     public SyncInvoker<UpdatePrivateDnatRequest, UpdatePrivateDnatResponse> updatePrivateDnatInvoker(
         UpdatePrivateDnatRequest request) {
-        return new SyncInvoker<UpdatePrivateDnatRequest, UpdatePrivateDnatResponse>(request, NatMeta.updatePrivateDnat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.updatePrivateDnat, hcClient);
     }
 
     /**
@@ -463,7 +452,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDeleteTransitIpTagsRequest 请求对象
+     * @param request BatchCreateDeleteTransitIpTagsRequest 请求对象
      * @return BatchCreateDeleteTransitIpTagsResponse
      */
     public BatchCreateDeleteTransitIpTagsResponse batchCreateDeleteTransitIpTags(
@@ -480,13 +469,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDeleteTransitIpTagsRequest 请求对象
+     * @param request BatchCreateDeleteTransitIpTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateDeleteTransitIpTagsRequest, BatchCreateDeleteTransitIpTagsResponse>
      */
     public SyncInvoker<BatchCreateDeleteTransitIpTagsRequest, BatchCreateDeleteTransitIpTagsResponse> batchCreateDeleteTransitIpTagsInvoker(
         BatchCreateDeleteTransitIpTagsRequest request) {
-        return new SyncInvoker<BatchCreateDeleteTransitIpTagsRequest, BatchCreateDeleteTransitIpTagsResponse>(request,
-            NatMeta.batchCreateDeleteTransitIpTags, hcClient);
+        return new SyncInvoker<>(request, NatMeta.batchCreateDeleteTransitIpTags, hcClient);
     }
 
     /**
@@ -498,7 +486,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTransitIpTagRequest 请求对象
+     * @param request CreateTransitIpTagRequest 请求对象
      * @return CreateTransitIpTagResponse
      */
     public CreateTransitIpTagResponse createTransitIpTag(CreateTransitIpTagRequest request) {
@@ -514,13 +502,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTransitIpTagRequest 请求对象
+     * @param request CreateTransitIpTagRequest 请求对象
      * @return SyncInvoker<CreateTransitIpTagRequest, CreateTransitIpTagResponse>
      */
     public SyncInvoker<CreateTransitIpTagRequest, CreateTransitIpTagResponse> createTransitIpTagInvoker(
         CreateTransitIpTagRequest request) {
-        return new SyncInvoker<CreateTransitIpTagRequest, CreateTransitIpTagResponse>(request,
-            NatMeta.createTransitIpTag, hcClient);
+        return new SyncInvoker<>(request, NatMeta.createTransitIpTag, hcClient);
     }
 
     /**
@@ -531,7 +518,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTransitIpTagRequest 请求对象
+     * @param request DeleteTransitIpTagRequest 请求对象
      * @return DeleteTransitIpTagResponse
      */
     public DeleteTransitIpTagResponse deleteTransitIpTag(DeleteTransitIpTagRequest request) {
@@ -546,13 +533,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTransitIpTagRequest 请求对象
+     * @param request DeleteTransitIpTagRequest 请求对象
      * @return SyncInvoker<DeleteTransitIpTagRequest, DeleteTransitIpTagResponse>
      */
     public SyncInvoker<DeleteTransitIpTagRequest, DeleteTransitIpTagResponse> deleteTransitIpTagInvoker(
         DeleteTransitIpTagRequest request) {
-        return new SyncInvoker<DeleteTransitIpTagRequest, DeleteTransitIpTagResponse>(request,
-            NatMeta.deleteTransitIpTag, hcClient);
+        return new SyncInvoker<>(request, NatMeta.deleteTransitIpTag, hcClient);
     }
 
     /**
@@ -563,7 +549,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransitIpTagsRequest 请求对象
+     * @param request ListTransitIpTagsRequest 请求对象
      * @return ListTransitIpTagsResponse
      */
     public ListTransitIpTagsResponse listTransitIpTags(ListTransitIpTagsRequest request) {
@@ -578,13 +564,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransitIpTagsRequest 请求对象
+     * @param request ListTransitIpTagsRequest 请求对象
      * @return SyncInvoker<ListTransitIpTagsRequest, ListTransitIpTagsResponse>
      */
     public SyncInvoker<ListTransitIpTagsRequest, ListTransitIpTagsResponse> listTransitIpTagsInvoker(
         ListTransitIpTagsRequest request) {
-        return new SyncInvoker<ListTransitIpTagsRequest, ListTransitIpTagsResponse>(request, NatMeta.listTransitIpTags,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.listTransitIpTags, hcClient);
     }
 
     /**
@@ -595,7 +580,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransitIpsByTagsRequest 请求对象
+     * @param request ListTransitIpsByTagsRequest 请求对象
      * @return ListTransitIpsByTagsResponse
      */
     public ListTransitIpsByTagsResponse listTransitIpsByTags(ListTransitIpsByTagsRequest request) {
@@ -610,13 +595,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransitIpsByTagsRequest 请求对象
+     * @param request ListTransitIpsByTagsRequest 请求对象
      * @return SyncInvoker<ListTransitIpsByTagsRequest, ListTransitIpsByTagsResponse>
      */
     public SyncInvoker<ListTransitIpsByTagsRequest, ListTransitIpsByTagsResponse> listTransitIpsByTagsInvoker(
         ListTransitIpsByTagsRequest request) {
-        return new SyncInvoker<ListTransitIpsByTagsRequest, ListTransitIpsByTagsResponse>(request,
-            NatMeta.listTransitIpsByTags, hcClient);
+        return new SyncInvoker<>(request, NatMeta.listTransitIpsByTags, hcClient);
     }
 
     /**
@@ -627,7 +611,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTransitIpTagsRequest 请求对象
+     * @param request ShowTransitIpTagsRequest 请求对象
      * @return ShowTransitIpTagsResponse
      */
     public ShowTransitIpTagsResponse showTransitIpTags(ShowTransitIpTagsRequest request) {
@@ -642,13 +626,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTransitIpTagsRequest 请求对象
+     * @param request ShowTransitIpTagsRequest 请求对象
      * @return SyncInvoker<ShowTransitIpTagsRequest, ShowTransitIpTagsResponse>
      */
     public SyncInvoker<ShowTransitIpTagsRequest, ShowTransitIpTagsResponse> showTransitIpTagsInvoker(
         ShowTransitIpTagsRequest request) {
-        return new SyncInvoker<ShowTransitIpTagsRequest, ShowTransitIpTagsResponse>(request, NatMeta.showTransitIpTags,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.showTransitIpTags, hcClient);
     }
 
     /**
@@ -660,7 +643,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDeleteNatGatewayTagRequest 请求对象
+     * @param request BatchCreateDeleteNatGatewayTagRequest 请求对象
      * @return BatchCreateDeleteNatGatewayTagResponse
      */
     public BatchCreateDeleteNatGatewayTagResponse batchCreateDeleteNatGatewayTag(
@@ -677,13 +660,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDeleteNatGatewayTagRequest 请求对象
+     * @param request BatchCreateDeleteNatGatewayTagRequest 请求对象
      * @return SyncInvoker<BatchCreateDeleteNatGatewayTagRequest, BatchCreateDeleteNatGatewayTagResponse>
      */
     public SyncInvoker<BatchCreateDeleteNatGatewayTagRequest, BatchCreateDeleteNatGatewayTagResponse> batchCreateDeleteNatGatewayTagInvoker(
         BatchCreateDeleteNatGatewayTagRequest request) {
-        return new SyncInvoker<BatchCreateDeleteNatGatewayTagRequest, BatchCreateDeleteNatGatewayTagResponse>(request,
-            NatMeta.batchCreateDeleteNatGatewayTag, hcClient);
+        return new SyncInvoker<>(request, NatMeta.batchCreateDeleteNatGatewayTag, hcClient);
     }
 
     /**
@@ -695,7 +677,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDeletePrivateNatTagsRequest 请求对象
+     * @param request BatchCreateDeletePrivateNatTagsRequest 请求对象
      * @return BatchCreateDeletePrivateNatTagsResponse
      */
     public BatchCreateDeletePrivateNatTagsResponse batchCreateDeletePrivateNatTags(
@@ -712,13 +694,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDeletePrivateNatTagsRequest 请求对象
+     * @param request BatchCreateDeletePrivateNatTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateDeletePrivateNatTagsRequest, BatchCreateDeletePrivateNatTagsResponse>
      */
     public SyncInvoker<BatchCreateDeletePrivateNatTagsRequest, BatchCreateDeletePrivateNatTagsResponse> batchCreateDeletePrivateNatTagsInvoker(
         BatchCreateDeletePrivateNatTagsRequest request) {
-        return new SyncInvoker<BatchCreateDeletePrivateNatTagsRequest, BatchCreateDeletePrivateNatTagsResponse>(request,
-            NatMeta.batchCreateDeletePrivateNatTags, hcClient);
+        return new SyncInvoker<>(request, NatMeta.batchCreateDeletePrivateNatTags, hcClient);
     }
 
     /**
@@ -728,7 +709,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNatGatewayRequest 请求对象
+     * @param request CreateNatGatewayRequest 请求对象
      * @return CreateNatGatewayResponse
      */
     public CreateNatGatewayResponse createNatGateway(CreateNatGatewayRequest request) {
@@ -742,13 +723,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNatGatewayRequest 请求对象
+     * @param request CreateNatGatewayRequest 请求对象
      * @return SyncInvoker<CreateNatGatewayRequest, CreateNatGatewayResponse>
      */
     public SyncInvoker<CreateNatGatewayRequest, CreateNatGatewayResponse> createNatGatewayInvoker(
         CreateNatGatewayRequest request) {
-        return new SyncInvoker<CreateNatGatewayRequest, CreateNatGatewayResponse>(request, NatMeta.createNatGateway,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.createNatGateway, hcClient);
     }
 
     /**
@@ -758,7 +738,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNatGatewayTagRequest 请求对象
+     * @param request CreateNatGatewayTagRequest 请求对象
      * @return CreateNatGatewayTagResponse
      */
     public CreateNatGatewayTagResponse createNatGatewayTag(CreateNatGatewayTagRequest request) {
@@ -772,13 +752,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNatGatewayTagRequest 请求对象
+     * @param request CreateNatGatewayTagRequest 请求对象
      * @return SyncInvoker<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse>
      */
     public SyncInvoker<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> createNatGatewayTagInvoker(
         CreateNatGatewayTagRequest request) {
-        return new SyncInvoker<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse>(request,
-            NatMeta.createNatGatewayTag, hcClient);
+        return new SyncInvoker<>(request, NatMeta.createNatGatewayTag, hcClient);
     }
 
     /**
@@ -788,7 +767,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivateNatRequest 请求对象
+     * @param request CreatePrivateNatRequest 请求对象
      * @return CreatePrivateNatResponse
      */
     public CreatePrivateNatResponse createPrivateNat(CreatePrivateNatRequest request) {
@@ -802,13 +781,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivateNatRequest 请求对象
+     * @param request CreatePrivateNatRequest 请求对象
      * @return SyncInvoker<CreatePrivateNatRequest, CreatePrivateNatResponse>
      */
     public SyncInvoker<CreatePrivateNatRequest, CreatePrivateNatResponse> createPrivateNatInvoker(
         CreatePrivateNatRequest request) {
-        return new SyncInvoker<CreatePrivateNatRequest, CreatePrivateNatResponse>(request, NatMeta.createPrivateNat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.createPrivateNat, hcClient);
     }
 
     /**
@@ -820,7 +798,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivateNatTagRequest 请求对象
+     * @param request CreatePrivateNatTagRequest 请求对象
      * @return CreatePrivateNatTagResponse
      */
     public CreatePrivateNatTagResponse createPrivateNatTag(CreatePrivateNatTagRequest request) {
@@ -836,13 +814,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivateNatTagRequest 请求对象
+     * @param request CreatePrivateNatTagRequest 请求对象
      * @return SyncInvoker<CreatePrivateNatTagRequest, CreatePrivateNatTagResponse>
      */
     public SyncInvoker<CreatePrivateNatTagRequest, CreatePrivateNatTagResponse> createPrivateNatTagInvoker(
         CreatePrivateNatTagRequest request) {
-        return new SyncInvoker<CreatePrivateNatTagRequest, CreatePrivateNatTagResponse>(request,
-            NatMeta.createPrivateNatTag, hcClient);
+        return new SyncInvoker<>(request, NatMeta.createPrivateNatTag, hcClient);
     }
 
     /**
@@ -852,7 +829,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNatGatewayRequest 请求对象
+     * @param request DeleteNatGatewayRequest 请求对象
      * @return DeleteNatGatewayResponse
      */
     public DeleteNatGatewayResponse deleteNatGateway(DeleteNatGatewayRequest request) {
@@ -866,13 +843,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNatGatewayRequest 请求对象
+     * @param request DeleteNatGatewayRequest 请求对象
      * @return SyncInvoker<DeleteNatGatewayRequest, DeleteNatGatewayResponse>
      */
     public SyncInvoker<DeleteNatGatewayRequest, DeleteNatGatewayResponse> deleteNatGatewayInvoker(
         DeleteNatGatewayRequest request) {
-        return new SyncInvoker<DeleteNatGatewayRequest, DeleteNatGatewayResponse>(request, NatMeta.deleteNatGateway,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.deleteNatGateway, hcClient);
     }
 
     /**
@@ -882,7 +858,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNatGatewayTagRequest 请求对象
+     * @param request DeleteNatGatewayTagRequest 请求对象
      * @return DeleteNatGatewayTagResponse
      */
     public DeleteNatGatewayTagResponse deleteNatGatewayTag(DeleteNatGatewayTagRequest request) {
@@ -896,13 +872,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNatGatewayTagRequest 请求对象
+     * @param request DeleteNatGatewayTagRequest 请求对象
      * @return SyncInvoker<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse>
      */
     public SyncInvoker<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> deleteNatGatewayTagInvoker(
         DeleteNatGatewayTagRequest request) {
-        return new SyncInvoker<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse>(request,
-            NatMeta.deleteNatGatewayTag, hcClient);
+        return new SyncInvoker<>(request, NatMeta.deleteNatGatewayTag, hcClient);
     }
 
     /**
@@ -912,7 +887,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivateNatRequest 请求对象
+     * @param request DeletePrivateNatRequest 请求对象
      * @return DeletePrivateNatResponse
      */
     public DeletePrivateNatResponse deletePrivateNat(DeletePrivateNatRequest request) {
@@ -926,13 +901,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivateNatRequest 请求对象
+     * @param request DeletePrivateNatRequest 请求对象
      * @return SyncInvoker<DeletePrivateNatRequest, DeletePrivateNatResponse>
      */
     public SyncInvoker<DeletePrivateNatRequest, DeletePrivateNatResponse> deletePrivateNatInvoker(
         DeletePrivateNatRequest request) {
-        return new SyncInvoker<DeletePrivateNatRequest, DeletePrivateNatResponse>(request, NatMeta.deletePrivateNat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.deletePrivateNat, hcClient);
     }
 
     /**
@@ -943,7 +917,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivateNatTagRequest 请求对象
+     * @param request DeletePrivateNatTagRequest 请求对象
      * @return DeletePrivateNatTagResponse
      */
     public DeletePrivateNatTagResponse deletePrivateNatTag(DeletePrivateNatTagRequest request) {
@@ -958,13 +932,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivateNatTagRequest 请求对象
+     * @param request DeletePrivateNatTagRequest 请求对象
      * @return SyncInvoker<DeletePrivateNatTagRequest, DeletePrivateNatTagResponse>
      */
     public SyncInvoker<DeletePrivateNatTagRequest, DeletePrivateNatTagResponse> deletePrivateNatTagInvoker(
         DeletePrivateNatTagRequest request) {
-        return new SyncInvoker<DeletePrivateNatTagRequest, DeletePrivateNatTagResponse>(request,
-            NatMeta.deletePrivateNatTag, hcClient);
+        return new SyncInvoker<>(request, NatMeta.deletePrivateNatTag, hcClient);
     }
 
     /**
@@ -976,7 +949,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNatGatewayByTagRequest 请求对象
+     * @param request ListNatGatewayByTagRequest 请求对象
      * @return ListNatGatewayByTagResponse
      */
     public ListNatGatewayByTagResponse listNatGatewayByTag(ListNatGatewayByTagRequest request) {
@@ -992,13 +965,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNatGatewayByTagRequest 请求对象
+     * @param request ListNatGatewayByTagRequest 请求对象
      * @return SyncInvoker<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse>
      */
     public SyncInvoker<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> listNatGatewayByTagInvoker(
         ListNatGatewayByTagRequest request) {
-        return new SyncInvoker<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse>(request,
-            NatMeta.listNatGatewayByTag, hcClient);
+        return new SyncInvoker<>(request, NatMeta.listNatGatewayByTag, hcClient);
     }
 
     /**
@@ -1009,7 +981,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNatGatewayTagRequest 请求对象
+     * @param request ListNatGatewayTagRequest 请求对象
      * @return ListNatGatewayTagResponse
      */
     public ListNatGatewayTagResponse listNatGatewayTag(ListNatGatewayTagRequest request) {
@@ -1024,13 +996,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNatGatewayTagRequest 请求对象
+     * @param request ListNatGatewayTagRequest 请求对象
      * @return SyncInvoker<ListNatGatewayTagRequest, ListNatGatewayTagResponse>
      */
     public SyncInvoker<ListNatGatewayTagRequest, ListNatGatewayTagResponse> listNatGatewayTagInvoker(
         ListNatGatewayTagRequest request) {
-        return new SyncInvoker<ListNatGatewayTagRequest, ListNatGatewayTagResponse>(request, NatMeta.listNatGatewayTag,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.listNatGatewayTag, hcClient);
     }
 
     /**
@@ -1040,7 +1011,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNatGatewaysRequest 请求对象
+     * @param request ListNatGatewaysRequest 请求对象
      * @return ListNatGatewaysResponse
      */
     public ListNatGatewaysResponse listNatGateways(ListNatGatewaysRequest request) {
@@ -1054,13 +1025,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNatGatewaysRequest 请求对象
+     * @param request ListNatGatewaysRequest 请求对象
      * @return SyncInvoker<ListNatGatewaysRequest, ListNatGatewaysResponse>
      */
     public SyncInvoker<ListNatGatewaysRequest, ListNatGatewaysResponse> listNatGatewaysInvoker(
         ListNatGatewaysRequest request) {
-        return new SyncInvoker<ListNatGatewaysRequest, ListNatGatewaysResponse>(request, NatMeta.listNatGateways,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.listNatGateways, hcClient);
     }
 
     /**
@@ -1071,7 +1041,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateNatTagsRequest 请求对象
+     * @param request ListPrivateNatTagsRequest 请求对象
      * @return ListPrivateNatTagsResponse
      */
     public ListPrivateNatTagsResponse listPrivateNatTags(ListPrivateNatTagsRequest request) {
@@ -1086,13 +1056,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateNatTagsRequest 请求对象
+     * @param request ListPrivateNatTagsRequest 请求对象
      * @return SyncInvoker<ListPrivateNatTagsRequest, ListPrivateNatTagsResponse>
      */
     public SyncInvoker<ListPrivateNatTagsRequest, ListPrivateNatTagsResponse> listPrivateNatTagsInvoker(
         ListPrivateNatTagsRequest request) {
-        return new SyncInvoker<ListPrivateNatTagsRequest, ListPrivateNatTagsResponse>(request,
-            NatMeta.listPrivateNatTags, hcClient);
+        return new SyncInvoker<>(request, NatMeta.listPrivateNatTags, hcClient);
     }
 
     /**
@@ -1102,7 +1071,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateNatsRequest 请求对象
+     * @param request ListPrivateNatsRequest 请求对象
      * @return ListPrivateNatsResponse
      */
     public ListPrivateNatsResponse listPrivateNats(ListPrivateNatsRequest request) {
@@ -1116,13 +1085,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateNatsRequest 请求对象
+     * @param request ListPrivateNatsRequest 请求对象
      * @return SyncInvoker<ListPrivateNatsRequest, ListPrivateNatsResponse>
      */
     public SyncInvoker<ListPrivateNatsRequest, ListPrivateNatsResponse> listPrivateNatsInvoker(
         ListPrivateNatsRequest request) {
-        return new SyncInvoker<ListPrivateNatsRequest, ListPrivateNatsResponse>(request, NatMeta.listPrivateNats,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.listPrivateNats, hcClient);
     }
 
     /**
@@ -1133,7 +1101,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateNatsByTagsRequest 请求对象
+     * @param request ListPrivateNatsByTagsRequest 请求对象
      * @return ListPrivateNatsByTagsResponse
      */
     public ListPrivateNatsByTagsResponse listPrivateNatsByTags(ListPrivateNatsByTagsRequest request) {
@@ -1148,13 +1116,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateNatsByTagsRequest 请求对象
+     * @param request ListPrivateNatsByTagsRequest 请求对象
      * @return SyncInvoker<ListPrivateNatsByTagsRequest, ListPrivateNatsByTagsResponse>
      */
     public SyncInvoker<ListPrivateNatsByTagsRequest, ListPrivateNatsByTagsResponse> listPrivateNatsByTagsInvoker(
         ListPrivateNatsByTagsRequest request) {
-        return new SyncInvoker<ListPrivateNatsByTagsRequest, ListPrivateNatsByTagsResponse>(request,
-            NatMeta.listPrivateNatsByTags, hcClient);
+        return new SyncInvoker<>(request, NatMeta.listPrivateNatsByTags, hcClient);
     }
 
     /**
@@ -1164,7 +1131,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNatGatewayRequest 请求对象
+     * @param request ShowNatGatewayRequest 请求对象
      * @return ShowNatGatewayResponse
      */
     public ShowNatGatewayResponse showNatGateway(ShowNatGatewayRequest request) {
@@ -1178,13 +1145,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNatGatewayRequest 请求对象
+     * @param request ShowNatGatewayRequest 请求对象
      * @return SyncInvoker<ShowNatGatewayRequest, ShowNatGatewayResponse>
      */
     public SyncInvoker<ShowNatGatewayRequest, ShowNatGatewayResponse> showNatGatewayInvoker(
         ShowNatGatewayRequest request) {
-        return new SyncInvoker<ShowNatGatewayRequest, ShowNatGatewayResponse>(request, NatMeta.showNatGateway,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.showNatGateway, hcClient);
     }
 
     /**
@@ -1195,7 +1161,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNatGatewayTagRequest 请求对象
+     * @param request ShowNatGatewayTagRequest 请求对象
      * @return ShowNatGatewayTagResponse
      */
     public ShowNatGatewayTagResponse showNatGatewayTag(ShowNatGatewayTagRequest request) {
@@ -1210,13 +1176,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNatGatewayTagRequest 请求对象
+     * @param request ShowNatGatewayTagRequest 请求对象
      * @return SyncInvoker<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse>
      */
     public SyncInvoker<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> showNatGatewayTagInvoker(
         ShowNatGatewayTagRequest request) {
-        return new SyncInvoker<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse>(request, NatMeta.showNatGatewayTag,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.showNatGatewayTag, hcClient);
     }
 
     /**
@@ -1226,7 +1191,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateNatRequest 请求对象
+     * @param request ShowPrivateNatRequest 请求对象
      * @return ShowPrivateNatResponse
      */
     public ShowPrivateNatResponse showPrivateNat(ShowPrivateNatRequest request) {
@@ -1240,13 +1205,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateNatRequest 请求对象
+     * @param request ShowPrivateNatRequest 请求对象
      * @return SyncInvoker<ShowPrivateNatRequest, ShowPrivateNatResponse>
      */
     public SyncInvoker<ShowPrivateNatRequest, ShowPrivateNatResponse> showPrivateNatInvoker(
         ShowPrivateNatRequest request) {
-        return new SyncInvoker<ShowPrivateNatRequest, ShowPrivateNatResponse>(request, NatMeta.showPrivateNat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.showPrivateNat, hcClient);
     }
 
     /**
@@ -1257,7 +1221,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateNatTagsRequest 请求对象
+     * @param request ShowPrivateNatTagsRequest 请求对象
      * @return ShowPrivateNatTagsResponse
      */
     public ShowPrivateNatTagsResponse showPrivateNatTags(ShowPrivateNatTagsRequest request) {
@@ -1272,13 +1236,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateNatTagsRequest 请求对象
+     * @param request ShowPrivateNatTagsRequest 请求对象
      * @return SyncInvoker<ShowPrivateNatTagsRequest, ShowPrivateNatTagsResponse>
      */
     public SyncInvoker<ShowPrivateNatTagsRequest, ShowPrivateNatTagsResponse> showPrivateNatTagsInvoker(
         ShowPrivateNatTagsRequest request) {
-        return new SyncInvoker<ShowPrivateNatTagsRequest, ShowPrivateNatTagsResponse>(request,
-            NatMeta.showPrivateNatTags, hcClient);
+        return new SyncInvoker<>(request, NatMeta.showPrivateNatTags, hcClient);
     }
 
     /**
@@ -1288,7 +1251,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNatGatewayRequest 请求对象
+     * @param request UpdateNatGatewayRequest 请求对象
      * @return UpdateNatGatewayResponse
      */
     public UpdateNatGatewayResponse updateNatGateway(UpdateNatGatewayRequest request) {
@@ -1302,13 +1265,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNatGatewayRequest 请求对象
+     * @param request UpdateNatGatewayRequest 请求对象
      * @return SyncInvoker<UpdateNatGatewayRequest, UpdateNatGatewayResponse>
      */
     public SyncInvoker<UpdateNatGatewayRequest, UpdateNatGatewayResponse> updateNatGatewayInvoker(
         UpdateNatGatewayRequest request) {
-        return new SyncInvoker<UpdateNatGatewayRequest, UpdateNatGatewayResponse>(request, NatMeta.updateNatGateway,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.updateNatGateway, hcClient);
     }
 
     /**
@@ -1318,7 +1280,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrivateNatRequest 请求对象
+     * @param request UpdatePrivateNatRequest 请求对象
      * @return UpdatePrivateNatResponse
      */
     public UpdatePrivateNatResponse updatePrivateNat(UpdatePrivateNatRequest request) {
@@ -1332,13 +1294,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrivateNatRequest 请求对象
+     * @param request UpdatePrivateNatRequest 请求对象
      * @return SyncInvoker<UpdatePrivateNatRequest, UpdatePrivateNatResponse>
      */
     public SyncInvoker<UpdatePrivateNatRequest, UpdatePrivateNatResponse> updatePrivateNatInvoker(
         UpdatePrivateNatRequest request) {
-        return new SyncInvoker<UpdatePrivateNatRequest, UpdatePrivateNatResponse>(request, NatMeta.updatePrivateNat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.updatePrivateNat, hcClient);
     }
 
     /**
@@ -1348,7 +1309,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTransitIpRequest 请求对象
+     * @param request CreateTransitIpRequest 请求对象
      * @return CreateTransitIpResponse
      */
     public CreateTransitIpResponse createTransitIp(CreateTransitIpRequest request) {
@@ -1362,13 +1323,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTransitIpRequest 请求对象
+     * @param request CreateTransitIpRequest 请求对象
      * @return SyncInvoker<CreateTransitIpRequest, CreateTransitIpResponse>
      */
     public SyncInvoker<CreateTransitIpRequest, CreateTransitIpResponse> createTransitIpInvoker(
         CreateTransitIpRequest request) {
-        return new SyncInvoker<CreateTransitIpRequest, CreateTransitIpResponse>(request, NatMeta.createTransitIp,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.createTransitIp, hcClient);
     }
 
     /**
@@ -1378,7 +1338,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTransitIpRequest 请求对象
+     * @param request DeleteTransitIpRequest 请求对象
      * @return DeleteTransitIpResponse
      */
     public DeleteTransitIpResponse deleteTransitIp(DeleteTransitIpRequest request) {
@@ -1392,13 +1352,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTransitIpRequest 请求对象
+     * @param request DeleteTransitIpRequest 请求对象
      * @return SyncInvoker<DeleteTransitIpRequest, DeleteTransitIpResponse>
      */
     public SyncInvoker<DeleteTransitIpRequest, DeleteTransitIpResponse> deleteTransitIpInvoker(
         DeleteTransitIpRequest request) {
-        return new SyncInvoker<DeleteTransitIpRequest, DeleteTransitIpResponse>(request, NatMeta.deleteTransitIp,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.deleteTransitIp, hcClient);
     }
 
     /**
@@ -1408,7 +1367,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransitIpsRequest 请求对象
+     * @param request ListTransitIpsRequest 请求对象
      * @return ListTransitIpsResponse
      */
     public ListTransitIpsResponse listTransitIps(ListTransitIpsRequest request) {
@@ -1422,13 +1381,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransitIpsRequest 请求对象
+     * @param request ListTransitIpsRequest 请求对象
      * @return SyncInvoker<ListTransitIpsRequest, ListTransitIpsResponse>
      */
     public SyncInvoker<ListTransitIpsRequest, ListTransitIpsResponse> listTransitIpsInvoker(
         ListTransitIpsRequest request) {
-        return new SyncInvoker<ListTransitIpsRequest, ListTransitIpsResponse>(request, NatMeta.listTransitIps,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.listTransitIps, hcClient);
     }
 
     /**
@@ -1438,7 +1396,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTransitIpRequest 请求对象
+     * @param request ShowTransitIpRequest 请求对象
      * @return ShowTransitIpResponse
      */
     public ShowTransitIpResponse showTransitIp(ShowTransitIpRequest request) {
@@ -1452,11 +1410,11 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTransitIpRequest 请求对象
+     * @param request ShowTransitIpRequest 请求对象
      * @return SyncInvoker<ShowTransitIpRequest, ShowTransitIpResponse>
      */
     public SyncInvoker<ShowTransitIpRequest, ShowTransitIpResponse> showTransitIpInvoker(ShowTransitIpRequest request) {
-        return new SyncInvoker<ShowTransitIpRequest, ShowTransitIpResponse>(request, NatMeta.showTransitIp, hcClient);
+        return new SyncInvoker<>(request, NatMeta.showTransitIp, hcClient);
     }
 
     /**
@@ -1466,7 +1424,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNatGatewaySnatRuleRequest 请求对象
+     * @param request CreateNatGatewaySnatRuleRequest 请求对象
      * @return CreateNatGatewaySnatRuleResponse
      */
     public CreateNatGatewaySnatRuleResponse createNatGatewaySnatRule(CreateNatGatewaySnatRuleRequest request) {
@@ -1480,13 +1438,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNatGatewaySnatRuleRequest 请求对象
+     * @param request CreateNatGatewaySnatRuleRequest 请求对象
      * @return SyncInvoker<CreateNatGatewaySnatRuleRequest, CreateNatGatewaySnatRuleResponse>
      */
     public SyncInvoker<CreateNatGatewaySnatRuleRequest, CreateNatGatewaySnatRuleResponse> createNatGatewaySnatRuleInvoker(
         CreateNatGatewaySnatRuleRequest request) {
-        return new SyncInvoker<CreateNatGatewaySnatRuleRequest, CreateNatGatewaySnatRuleResponse>(request,
-            NatMeta.createNatGatewaySnatRule, hcClient);
+        return new SyncInvoker<>(request, NatMeta.createNatGatewaySnatRule, hcClient);
     }
 
     /**
@@ -1496,7 +1453,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivateSnatRequest 请求对象
+     * @param request CreatePrivateSnatRequest 请求对象
      * @return CreatePrivateSnatResponse
      */
     public CreatePrivateSnatResponse createPrivateSnat(CreatePrivateSnatRequest request) {
@@ -1510,13 +1467,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivateSnatRequest 请求对象
+     * @param request CreatePrivateSnatRequest 请求对象
      * @return SyncInvoker<CreatePrivateSnatRequest, CreatePrivateSnatResponse>
      */
     public SyncInvoker<CreatePrivateSnatRequest, CreatePrivateSnatResponse> createPrivateSnatInvoker(
         CreatePrivateSnatRequest request) {
-        return new SyncInvoker<CreatePrivateSnatRequest, CreatePrivateSnatResponse>(request, NatMeta.createPrivateSnat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.createPrivateSnat, hcClient);
     }
 
     /**
@@ -1526,7 +1482,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNatGatewaySnatRuleRequest 请求对象
+     * @param request DeleteNatGatewaySnatRuleRequest 请求对象
      * @return DeleteNatGatewaySnatRuleResponse
      */
     public DeleteNatGatewaySnatRuleResponse deleteNatGatewaySnatRule(DeleteNatGatewaySnatRuleRequest request) {
@@ -1540,13 +1496,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNatGatewaySnatRuleRequest 请求对象
+     * @param request DeleteNatGatewaySnatRuleRequest 请求对象
      * @return SyncInvoker<DeleteNatGatewaySnatRuleRequest, DeleteNatGatewaySnatRuleResponse>
      */
     public SyncInvoker<DeleteNatGatewaySnatRuleRequest, DeleteNatGatewaySnatRuleResponse> deleteNatGatewaySnatRuleInvoker(
         DeleteNatGatewaySnatRuleRequest request) {
-        return new SyncInvoker<DeleteNatGatewaySnatRuleRequest, DeleteNatGatewaySnatRuleResponse>(request,
-            NatMeta.deleteNatGatewaySnatRule, hcClient);
+        return new SyncInvoker<>(request, NatMeta.deleteNatGatewaySnatRule, hcClient);
     }
 
     /**
@@ -1556,7 +1511,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivateSnatRequest 请求对象
+     * @param request DeletePrivateSnatRequest 请求对象
      * @return DeletePrivateSnatResponse
      */
     public DeletePrivateSnatResponse deletePrivateSnat(DeletePrivateSnatRequest request) {
@@ -1570,13 +1525,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivateSnatRequest 请求对象
+     * @param request DeletePrivateSnatRequest 请求对象
      * @return SyncInvoker<DeletePrivateSnatRequest, DeletePrivateSnatResponse>
      */
     public SyncInvoker<DeletePrivateSnatRequest, DeletePrivateSnatResponse> deletePrivateSnatInvoker(
         DeletePrivateSnatRequest request) {
-        return new SyncInvoker<DeletePrivateSnatRequest, DeletePrivateSnatResponse>(request, NatMeta.deletePrivateSnat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.deletePrivateSnat, hcClient);
     }
 
     /**
@@ -1586,7 +1540,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNatGatewaySnatRulesRequest 请求对象
+     * @param request ListNatGatewaySnatRulesRequest 请求对象
      * @return ListNatGatewaySnatRulesResponse
      */
     public ListNatGatewaySnatRulesResponse listNatGatewaySnatRules(ListNatGatewaySnatRulesRequest request) {
@@ -1600,13 +1554,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNatGatewaySnatRulesRequest 请求对象
+     * @param request ListNatGatewaySnatRulesRequest 请求对象
      * @return SyncInvoker<ListNatGatewaySnatRulesRequest, ListNatGatewaySnatRulesResponse>
      */
     public SyncInvoker<ListNatGatewaySnatRulesRequest, ListNatGatewaySnatRulesResponse> listNatGatewaySnatRulesInvoker(
         ListNatGatewaySnatRulesRequest request) {
-        return new SyncInvoker<ListNatGatewaySnatRulesRequest, ListNatGatewaySnatRulesResponse>(request,
-            NatMeta.listNatGatewaySnatRules, hcClient);
+        return new SyncInvoker<>(request, NatMeta.listNatGatewaySnatRules, hcClient);
     }
 
     /**
@@ -1616,7 +1569,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateSnatsRequest 请求对象
+     * @param request ListPrivateSnatsRequest 请求对象
      * @return ListPrivateSnatsResponse
      */
     public ListPrivateSnatsResponse listPrivateSnats(ListPrivateSnatsRequest request) {
@@ -1630,13 +1583,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateSnatsRequest 请求对象
+     * @param request ListPrivateSnatsRequest 请求对象
      * @return SyncInvoker<ListPrivateSnatsRequest, ListPrivateSnatsResponse>
      */
     public SyncInvoker<ListPrivateSnatsRequest, ListPrivateSnatsResponse> listPrivateSnatsInvoker(
         ListPrivateSnatsRequest request) {
-        return new SyncInvoker<ListPrivateSnatsRequest, ListPrivateSnatsResponse>(request, NatMeta.listPrivateSnats,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.listPrivateSnats, hcClient);
     }
 
     /**
@@ -1646,7 +1598,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNatGatewaySnatRuleRequest 请求对象
+     * @param request ShowNatGatewaySnatRuleRequest 请求对象
      * @return ShowNatGatewaySnatRuleResponse
      */
     public ShowNatGatewaySnatRuleResponse showNatGatewaySnatRule(ShowNatGatewaySnatRuleRequest request) {
@@ -1660,13 +1612,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNatGatewaySnatRuleRequest 请求对象
+     * @param request ShowNatGatewaySnatRuleRequest 请求对象
      * @return SyncInvoker<ShowNatGatewaySnatRuleRequest, ShowNatGatewaySnatRuleResponse>
      */
     public SyncInvoker<ShowNatGatewaySnatRuleRequest, ShowNatGatewaySnatRuleResponse> showNatGatewaySnatRuleInvoker(
         ShowNatGatewaySnatRuleRequest request) {
-        return new SyncInvoker<ShowNatGatewaySnatRuleRequest, ShowNatGatewaySnatRuleResponse>(request,
-            NatMeta.showNatGatewaySnatRule, hcClient);
+        return new SyncInvoker<>(request, NatMeta.showNatGatewaySnatRule, hcClient);
     }
 
     /**
@@ -1676,7 +1627,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateSnatRequest 请求对象
+     * @param request ShowPrivateSnatRequest 请求对象
      * @return ShowPrivateSnatResponse
      */
     public ShowPrivateSnatResponse showPrivateSnat(ShowPrivateSnatRequest request) {
@@ -1690,13 +1641,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateSnatRequest 请求对象
+     * @param request ShowPrivateSnatRequest 请求对象
      * @return SyncInvoker<ShowPrivateSnatRequest, ShowPrivateSnatResponse>
      */
     public SyncInvoker<ShowPrivateSnatRequest, ShowPrivateSnatResponse> showPrivateSnatInvoker(
         ShowPrivateSnatRequest request) {
-        return new SyncInvoker<ShowPrivateSnatRequest, ShowPrivateSnatResponse>(request, NatMeta.showPrivateSnat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.showPrivateSnat, hcClient);
     }
 
     /**
@@ -1706,7 +1656,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNatGatewaySnatRuleRequest 请求对象
+     * @param request UpdateNatGatewaySnatRuleRequest 请求对象
      * @return UpdateNatGatewaySnatRuleResponse
      */
     public UpdateNatGatewaySnatRuleResponse updateNatGatewaySnatRule(UpdateNatGatewaySnatRuleRequest request) {
@@ -1720,13 +1670,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNatGatewaySnatRuleRequest 请求对象
+     * @param request UpdateNatGatewaySnatRuleRequest 请求对象
      * @return SyncInvoker<UpdateNatGatewaySnatRuleRequest, UpdateNatGatewaySnatRuleResponse>
      */
     public SyncInvoker<UpdateNatGatewaySnatRuleRequest, UpdateNatGatewaySnatRuleResponse> updateNatGatewaySnatRuleInvoker(
         UpdateNatGatewaySnatRuleRequest request) {
-        return new SyncInvoker<UpdateNatGatewaySnatRuleRequest, UpdateNatGatewaySnatRuleResponse>(request,
-            NatMeta.updateNatGatewaySnatRule, hcClient);
+        return new SyncInvoker<>(request, NatMeta.updateNatGatewaySnatRule, hcClient);
     }
 
     /**
@@ -1736,7 +1685,7 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrivateSnatRequest 请求对象
+     * @param request UpdatePrivateSnatRequest 请求对象
      * @return UpdatePrivateSnatResponse
      */
     public UpdatePrivateSnatResponse updatePrivateSnat(UpdatePrivateSnatRequest request) {
@@ -1750,13 +1699,12 @@ public class NatClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrivateSnatRequest 请求对象
+     * @param request UpdatePrivateSnatRequest 请求对象
      * @return SyncInvoker<UpdatePrivateSnatRequest, UpdatePrivateSnatResponse>
      */
     public SyncInvoker<UpdatePrivateSnatRequest, UpdatePrivateSnatResponse> updatePrivateSnatInvoker(
         UpdatePrivateSnatRequest request) {
-        return new SyncInvoker<UpdatePrivateSnatRequest, UpdatePrivateSnatResponse>(request, NatMeta.updatePrivateSnat,
-            hcClient);
+        return new SyncInvoker<>(request, NatMeta.updatePrivateSnat, hcClient);
     }
 
 }

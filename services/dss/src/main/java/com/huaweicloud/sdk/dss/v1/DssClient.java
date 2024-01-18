@@ -32,7 +32,7 @@ public class DssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoolsRequest 请求对象
+     * @param request ListPoolsRequest 请求对象
      * @return ListPoolsResponse
      */
     public ListPoolsResponse listPools(ListPoolsRequest request) {
@@ -46,11 +46,11 @@ public class DssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoolsRequest 请求对象
+     * @param request ListPoolsRequest 请求对象
      * @return SyncInvoker<ListPoolsRequest, ListPoolsResponse>
      */
     public SyncInvoker<ListPoolsRequest, ListPoolsResponse> listPoolsInvoker(ListPoolsRequest request) {
-        return new SyncInvoker<ListPoolsRequest, ListPoolsResponse>(request, DssMeta.listPools, hcClient);
+        return new SyncInvoker<>(request, DssMeta.listPools, hcClient);
     }
 
     /**
@@ -60,7 +60,7 @@ public class DssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionRequest 请求对象
+     * @param request ListVersionRequest 请求对象
      * @return ListVersionResponse
      */
     public ListVersionResponse listVersion(ListVersionRequest request) {
@@ -74,11 +74,11 @@ public class DssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionRequest 请求对象
+     * @param request ListVersionRequest 请求对象
      * @return SyncInvoker<ListVersionRequest, ListVersionResponse>
      */
     public SyncInvoker<ListVersionRequest, ListVersionResponse> listVersionInvoker(ListVersionRequest request) {
-        return new SyncInvoker<ListVersionRequest, ListVersionResponse>(request, DssMeta.listVersion, hcClient);
+        return new SyncInvoker<>(request, DssMeta.listVersion, hcClient);
     }
 
     /**
@@ -88,7 +88,7 @@ public class DssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPoolRequest 请求对象
+     * @param request ShowPoolRequest 请求对象
      * @return ShowPoolResponse
      */
     public ShowPoolResponse showPool(ShowPoolRequest request) {
@@ -102,11 +102,11 @@ public class DssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPoolRequest 请求对象
+     * @param request ShowPoolRequest 请求对象
      * @return SyncInvoker<ShowPoolRequest, ShowPoolResponse>
      */
     public SyncInvoker<ShowPoolRequest, ShowPoolResponse> showPoolInvoker(ShowPoolRequest request) {
-        return new SyncInvoker<ShowPoolRequest, ShowPoolResponse>(request, DssMeta.showPool, hcClient);
+        return new SyncInvoker<>(request, DssMeta.showPool, hcClient);
     }
 
     /**
@@ -116,7 +116,7 @@ public class DssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionsRequest 请求对象
+     * @param request ShowVersionsRequest 请求对象
      * @return ShowVersionsResponse
      */
     public ShowVersionsResponse showVersions(ShowVersionsRequest request) {
@@ -130,11 +130,11 @@ public class DssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionsRequest 请求对象
+     * @param request ShowVersionsRequest 请求对象
      * @return SyncInvoker<ShowVersionsRequest, ShowVersionsResponse>
      */
     public SyncInvoker<ShowVersionsRequest, ShowVersionsResponse> showVersionsInvoker(ShowVersionsRequest request) {
-        return new SyncInvoker<ShowVersionsRequest, ShowVersionsResponse>(request, DssMeta.showVersions, hcClient);
+        return new SyncInvoker<>(request, DssMeta.showVersions, hcClient);
     }
 
 }

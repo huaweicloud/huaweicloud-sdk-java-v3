@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 弹性伸缩策略
+ * 弹性伸缩策略。
  */
 public class ScalingPolicy {
 
@@ -37,7 +37,7 @@ public class ScalingPolicy {
     }
 
     /**
-     * 是否启用策略,默认启用 'true': 启用 'false': 禁用
+     * 是否启用策略,默认启用： 'true': 启用 'false': 禁用
      * @return enable
      */
     public Boolean getEnable() {
@@ -54,7 +54,7 @@ public class ScalingPolicy {
     }
 
     /**
-     * 最大扩容数量
+     * 最大扩容数量。
      * minimum: 1
      * maximum: 100
      * @return maxScalingAmount
@@ -73,7 +73,7 @@ public class ScalingPolicy {
     }
 
     /**
-     * 单次扩容数量
+     * 单次扩容数量。
      * minimum: 1
      * maximum: 10
      * @return singleExpansionCount

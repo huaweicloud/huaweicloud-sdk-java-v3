@@ -17,14 +17,14 @@ public class CreatePromInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prometheus")
 
-    private List<PromInstanceEpsModel> prometheus = null;
+    private List<PromInstanceEpsCreateModel> prometheus = null;
 
-    public CreatePromInstanceResponse withPrometheus(List<PromInstanceEpsModel> prometheus) {
+    public CreatePromInstanceResponse withPrometheus(List<PromInstanceEpsCreateModel> prometheus) {
         this.prometheus = prometheus;
         return this;
     }
 
-    public CreatePromInstanceResponse addPrometheusItem(PromInstanceEpsModel prometheusItem) {
+    public CreatePromInstanceResponse addPrometheusItem(PromInstanceEpsCreateModel prometheusItem) {
         if (this.prometheus == null) {
             this.prometheus = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class CreatePromInstanceResponse extends SdkResponse {
         return this;
     }
 
-    public CreatePromInstanceResponse withPrometheus(Consumer<List<PromInstanceEpsModel>> prometheusSetter) {
+    public CreatePromInstanceResponse withPrometheus(Consumer<List<PromInstanceEpsCreateModel>> prometheusSetter) {
         if (this.prometheus == null) {
             this.prometheus = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class CreatePromInstanceResponse extends SdkResponse {
      * Prometheus实例名称列表。
      * @return prometheus
      */
-    public List<PromInstanceEpsModel> getPrometheus() {
+    public List<PromInstanceEpsCreateModel> getPrometheus() {
         return prometheus;
     }
 
-    public void setPrometheus(List<PromInstanceEpsModel> prometheus) {
+    public void setPrometheus(List<PromInstanceEpsCreateModel> prometheus) {
         this.prometheus = prometheus;
     }
 

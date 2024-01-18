@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.utils.PathUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
@@ -48,6 +50,8 @@ public class ProfileRegionCache {
 
     private static final String REGIONS_FILE_ENV = "HUAWEICLOUD_SDK_REGIONS_FILE";
 
+    private static final Logger logger = LoggerFactory.getLogger(ProfileRegionCache.class);
+
     private static final ProfileRegionCache INSTANCE = createInstance();
 
     protected final Map<String, Region> value;
@@ -69,19 +73,38 @@ public class ProfileRegionCache {
         try {
             File file = new File(regionsFilePath).getCanonicalFile();
             if (!isValidRegionsFile(file)) {
-                throw new SdkException(String.format("invalid regions file path: '%s'", regionsFilePath));
+                String message = String.format("Invalid regions file path: '%s'", regionsFilePath);
+                logger.error(message);
+                throw new SdkException(message);
             }
             Map<String, Region> result = resolveRegions(file.getCanonicalPath());
             return new ProfileRegionCache(Collections.unmodifiableMap(result));
         } catch (IOException e) {
-            throw new SdkException(String.format("failed to resolve file '%s'", regionsFilePath), e);
+            String message = String.format("Failed to resolve file '%s'", regionsFilePath);
+            logger.error(message, e);
+            throw new SdkException(message, e);
         }
     }
 
     @SuppressWarnings("unchecked")
     private static Map<String, Region> resolveRegions(String filepath) {
         Map<String, Region> result = new LinkedHashMap<>();
-        Yaml yaml = new Yaml(new SafeConstructor(new LoaderOptions()));
+        Yaml yaml;
+        try {
+            yaml = new Yaml(new SafeConstructor(new LoaderOptions()));
+        } catch (NoClassDefFoundError | NoSuchMethodError ignore) {
+            try {
+                yaml = Yaml.class.newInstance();
+                logger.warn("Initialize Yaml failed due to version conflict," +
+                        " use default construct to reinitialize." +
+                        " It is recommended that you use org.yaml:snakeyaml v2.0+" +
+                        " for better security and compatibility.");
+            } catch (InstantiationException | IllegalAccessException e) {
+                String message = "Failed to initialize yaml loader.";
+                logger.error(message, e);
+                throw new SdkException(message, e);
+            }
+        }
         Map<?, ?> map;
         try (FileInputStream inputStream = new FileInputStream(filepath)) {
             Object obj = yaml.load(inputStream);
@@ -91,7 +114,9 @@ public class ProfileRegionCache {
                 return result;
             }
         } catch (IOException e) {
-            throw new SdkException(String.format("failed to resolve file '%s'", filepath), e);
+            String message = String.format("Failed to resolve file '%s'", filepath);
+            logger.error(message, e);
+            throw new SdkException(message, e);
         }
 
         Iterator<? extends Map.Entry<?, ?>> iterator = map.entrySet().iterator();
@@ -125,7 +150,9 @@ public class ProfileRegionCache {
                         result.put(next.getKey().toString().toUpperCase(Locale.ROOT) + id, region);
                     }
                 } catch (ClassCastException e) {
-                    throw new SdkException(String.format("failed to resolve file '%s'", filepath), e);
+                    String message = String.format("failed to resolve file '%s'", filepath);
+                    logger.error(message, e);
+                    throw new SdkException(message, e);
                 }
             }
         }

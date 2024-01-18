@@ -70,9 +70,9 @@ public class ListWorkspacesRequest {
     }
 
     /**
-     * 返回条目的起始offset。 取值范围：[0,2147483647] 默认值：0
+     * 返回条目的起始offset。 取值范围：[0,1000] 默认值：0
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 1000
      * @return offset
      */
     public Integer getOffset() {
@@ -89,9 +89,9 @@ public class ListWorkspacesRequest {
     }
 
     /**
-     * 返回条目数。不传该参数时，默认查询前10条信息。 取值范围：[0,2147483647] 默认值：10
+     * 返回条目数。不传该参数时，默认查询前10条信息。 取值范围：[0,1000] 默认值：10
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {

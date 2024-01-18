@@ -94,7 +94,7 @@ public class Contents {
     }
 
     /**
-     * content
+     * 内容
      * @return content
      */
     public List<Content> getContent() {
@@ -130,7 +130,7 @@ public class Contents {
     }
 
     /**
-     * selected_temp_name
+     * 选择的事务或者用例名称
      * @return selectedTempName
      */
     public String getSelectedTempName() {

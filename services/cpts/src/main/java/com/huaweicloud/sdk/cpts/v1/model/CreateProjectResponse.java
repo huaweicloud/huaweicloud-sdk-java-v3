@@ -32,7 +32,7 @@ public class CreateProjectResponse extends SdkResponse {
     }
 
     /**
-     * code
+     * 响应码
      * @return code
      */
     public String getCode() {
@@ -49,7 +49,7 @@ public class CreateProjectResponse extends SdkResponse {
     }
 
     /**
-     * message
+     * 响应消息
      * @return message
      */
     public String getMessage() {
@@ -66,7 +66,7 @@ public class CreateProjectResponse extends SdkResponse {
     }
 
     /**
-     * project_id
+     * 项目ID
      * minimum: 0
      * maximum: 2147483647
      * @return projectId

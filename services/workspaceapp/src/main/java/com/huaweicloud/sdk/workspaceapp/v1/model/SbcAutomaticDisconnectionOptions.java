@@ -32,7 +32,7 @@ public class SbcAutomaticDisconnectionOptions {
     }
 
     /**
-     * 等待时间（分钟）
+     * 等待时间（分钟）。
      * minimum: 3
      * maximum: 86400
      * @return disconnectionWaitingTime

@@ -150,7 +150,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAgentPathRequest 请求对象
+     * @param request AddAgentPathRequest 请求对象
      * @return AddAgentPathResponse
      */
     public AddAgentPathResponse addAgentPath(AddAgentPathRequest request) {
@@ -164,11 +164,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAgentPathRequest 请求对象
+     * @param request AddAgentPathRequest 请求对象
      * @return SyncInvoker<AddAgentPathRequest, AddAgentPathResponse>
      */
     public SyncInvoker<AddAgentPathRequest, AddAgentPathResponse> addAgentPathInvoker(AddAgentPathRequest request) {
-        return new SyncInvoker<AddAgentPathRequest, AddAgentPathResponse>(request, CbrMeta.addAgentPath, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.addAgentPath, hcClient);
     }
 
     /**
@@ -178,7 +178,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMemberRequest 请求对象
+     * @param request AddMemberRequest 请求对象
      * @return AddMemberResponse
      */
     public AddMemberResponse addMember(AddMemberRequest request) {
@@ -192,11 +192,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMemberRequest 请求对象
+     * @param request AddMemberRequest 请求对象
      * @return SyncInvoker<AddMemberRequest, AddMemberResponse>
      */
     public SyncInvoker<AddMemberRequest, AddMemberResponse> addMemberInvoker(AddMemberRequest request) {
-        return new SyncInvoker<AddMemberRequest, AddMemberResponse>(request, CbrMeta.addMember, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.addMember, hcClient);
     }
 
     /**
@@ -206,7 +206,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddVaultResourceRequest 请求对象
+     * @param request AddVaultResourceRequest 请求对象
      * @return AddVaultResourceResponse
      */
     public AddVaultResourceResponse addVaultResource(AddVaultResourceRequest request) {
@@ -220,13 +220,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddVaultResourceRequest 请求对象
+     * @param request AddVaultResourceRequest 请求对象
      * @return SyncInvoker<AddVaultResourceRequest, AddVaultResourceResponse>
      */
     public SyncInvoker<AddVaultResourceRequest, AddVaultResourceResponse> addVaultResourceInvoker(
         AddVaultResourceRequest request) {
-        return new SyncInvoker<AddVaultResourceRequest, AddVaultResourceResponse>(request, CbrMeta.addVaultResource,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.addVaultResource, hcClient);
     }
 
     /**
@@ -236,7 +235,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateVaultPolicyRequest 请求对象
+     * @param request AssociateVaultPolicyRequest 请求对象
      * @return AssociateVaultPolicyResponse
      */
     public AssociateVaultPolicyResponse associateVaultPolicy(AssociateVaultPolicyRequest request) {
@@ -250,13 +249,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateVaultPolicyRequest 请求对象
+     * @param request AssociateVaultPolicyRequest 请求对象
      * @return SyncInvoker<AssociateVaultPolicyRequest, AssociateVaultPolicyResponse>
      */
     public SyncInvoker<AssociateVaultPolicyRequest, AssociateVaultPolicyResponse> associateVaultPolicyInvoker(
         AssociateVaultPolicyRequest request) {
-        return new SyncInvoker<AssociateVaultPolicyRequest, AssociateVaultPolicyResponse>(request,
-            CbrMeta.associateVaultPolicy, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.associateVaultPolicy, hcClient);
     }
 
     /**
@@ -273,7 +271,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateAndDeleteVaultTagsRequest 请求对象
+     * @param request BatchCreateAndDeleteVaultTagsRequest 请求对象
      * @return BatchCreateAndDeleteVaultTagsResponse
      */
     public BatchCreateAndDeleteVaultTagsResponse batchCreateAndDeleteVaultTags(
@@ -295,13 +293,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateAndDeleteVaultTagsRequest 请求对象
+     * @param request BatchCreateAndDeleteVaultTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse>
      */
     public SyncInvoker<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse> batchCreateAndDeleteVaultTagsInvoker(
         BatchCreateAndDeleteVaultTagsRequest request) {
-        return new SyncInvoker<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse>(request,
-            CbrMeta.batchCreateAndDeleteVaultTags, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.batchCreateAndDeleteVaultTags, hcClient);
     }
 
     /**
@@ -311,7 +308,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateVaultRequest 请求对象
+     * @param request BatchUpdateVaultRequest 请求对象
      * @return BatchUpdateVaultResponse
      */
     public BatchUpdateVaultResponse batchUpdateVault(BatchUpdateVaultRequest request) {
@@ -325,13 +322,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateVaultRequest 请求对象
+     * @param request BatchUpdateVaultRequest 请求对象
      * @return SyncInvoker<BatchUpdateVaultRequest, BatchUpdateVaultResponse>
      */
     public SyncInvoker<BatchUpdateVaultRequest, BatchUpdateVaultResponse> batchUpdateVaultInvoker(
         BatchUpdateVaultRequest request) {
-        return new SyncInvoker<BatchUpdateVaultRequest, BatchUpdateVaultResponse>(request, CbrMeta.batchUpdateVault,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.batchUpdateVault, hcClient);
     }
 
     /**
@@ -341,7 +337,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAgentRequest 请求对象
+     * @param request CheckAgentRequest 请求对象
      * @return CheckAgentResponse
      */
     public CheckAgentResponse checkAgent(CheckAgentRequest request) {
@@ -355,11 +351,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAgentRequest 请求对象
+     * @param request CheckAgentRequest 请求对象
      * @return SyncInvoker<CheckAgentRequest, CheckAgentResponse>
      */
     public SyncInvoker<CheckAgentRequest, CheckAgentResponse> checkAgentInvoker(CheckAgentRequest request) {
-        return new SyncInvoker<CheckAgentRequest, CheckAgentResponse>(request, CbrMeta.checkAgent, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.checkAgent, hcClient);
     }
 
     /**
@@ -369,7 +365,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyBackupRequest 请求对象
+     * @param request CopyBackupRequest 请求对象
      * @return CopyBackupResponse
      */
     public CopyBackupResponse copyBackup(CopyBackupRequest request) {
@@ -383,11 +379,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyBackupRequest 请求对象
+     * @param request CopyBackupRequest 请求对象
      * @return SyncInvoker<CopyBackupRequest, CopyBackupResponse>
      */
     public SyncInvoker<CopyBackupRequest, CopyBackupResponse> copyBackupInvoker(CopyBackupRequest request) {
-        return new SyncInvoker<CopyBackupRequest, CopyBackupResponse>(request, CbrMeta.copyBackup, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.copyBackup, hcClient);
     }
 
     /**
@@ -397,7 +393,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyCheckpointRequest 请求对象
+     * @param request CopyCheckpointRequest 请求对象
      * @return CopyCheckpointResponse
      */
     public CopyCheckpointResponse copyCheckpoint(CopyCheckpointRequest request) {
@@ -411,13 +407,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyCheckpointRequest 请求对象
+     * @param request CopyCheckpointRequest 请求对象
      * @return SyncInvoker<CopyCheckpointRequest, CopyCheckpointResponse>
      */
     public SyncInvoker<CopyCheckpointRequest, CopyCheckpointResponse> copyCheckpointInvoker(
         CopyCheckpointRequest request) {
-        return new SyncInvoker<CopyCheckpointRequest, CopyCheckpointResponse>(request, CbrMeta.copyCheckpoint,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.copyCheckpoint, hcClient);
     }
 
     /**
@@ -427,7 +422,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCheckpointRequest 请求对象
+     * @param request CreateCheckpointRequest 请求对象
      * @return CreateCheckpointResponse
      */
     public CreateCheckpointResponse createCheckpoint(CreateCheckpointRequest request) {
@@ -441,13 +436,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCheckpointRequest 请求对象
+     * @param request CreateCheckpointRequest 请求对象
      * @return SyncInvoker<CreateCheckpointRequest, CreateCheckpointResponse>
      */
     public SyncInvoker<CreateCheckpointRequest, CreateCheckpointResponse> createCheckpointInvoker(
         CreateCheckpointRequest request) {
-        return new SyncInvoker<CreateCheckpointRequest, CreateCheckpointResponse>(request, CbrMeta.createCheckpoint,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.createCheckpoint, hcClient);
     }
 
     /**
@@ -457,7 +451,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return CreatePolicyResponse
      */
     public CreatePolicyResponse createPolicy(CreatePolicyRequest request) {
@@ -471,11 +465,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return SyncInvoker<CreatePolicyRequest, CreatePolicyResponse>
      */
     public SyncInvoker<CreatePolicyRequest, CreatePolicyResponse> createPolicyInvoker(CreatePolicyRequest request) {
-        return new SyncInvoker<CreatePolicyRequest, CreatePolicyResponse>(request, CbrMeta.createPolicy, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.createPolicy, hcClient);
     }
 
     /**
@@ -485,7 +479,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidVaultRequest 请求对象
+     * @param request CreatePostPaidVaultRequest 请求对象
      * @return CreatePostPaidVaultResponse
      */
     public CreatePostPaidVaultResponse createPostPaidVault(CreatePostPaidVaultRequest request) {
@@ -499,13 +493,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidVaultRequest 请求对象
+     * @param request CreatePostPaidVaultRequest 请求对象
      * @return SyncInvoker<CreatePostPaidVaultRequest, CreatePostPaidVaultResponse>
      */
     public SyncInvoker<CreatePostPaidVaultRequest, CreatePostPaidVaultResponse> createPostPaidVaultInvoker(
         CreatePostPaidVaultRequest request) {
-        return new SyncInvoker<CreatePostPaidVaultRequest, CreatePostPaidVaultResponse>(request,
-            CbrMeta.createPostPaidVault, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.createPostPaidVault, hcClient);
     }
 
     /**
@@ -515,7 +508,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVaultRequest 请求对象
+     * @param request CreateVaultRequest 请求对象
      * @return CreateVaultResponse
      */
     public CreateVaultResponse createVault(CreateVaultRequest request) {
@@ -529,11 +522,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVaultRequest 请求对象
+     * @param request CreateVaultRequest 请求对象
      * @return SyncInvoker<CreateVaultRequest, CreateVaultResponse>
      */
     public SyncInvoker<CreateVaultRequest, CreateVaultResponse> createVaultInvoker(CreateVaultRequest request) {
-        return new SyncInvoker<CreateVaultRequest, CreateVaultResponse>(request, CbrMeta.createVault, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.createVault, hcClient);
     }
 
     /**
@@ -544,7 +537,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVaultTagsRequest 请求对象
+     * @param request CreateVaultTagsRequest 请求对象
      * @return CreateVaultTagsResponse
      */
     public CreateVaultTagsResponse createVaultTags(CreateVaultTagsRequest request) {
@@ -559,13 +552,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVaultTagsRequest 请求对象
+     * @param request CreateVaultTagsRequest 请求对象
      * @return SyncInvoker<CreateVaultTagsRequest, CreateVaultTagsResponse>
      */
     public SyncInvoker<CreateVaultTagsRequest, CreateVaultTagsResponse> createVaultTagsInvoker(
         CreateVaultTagsRequest request) {
-        return new SyncInvoker<CreateVaultTagsRequest, CreateVaultTagsResponse>(request, CbrMeta.createVaultTags,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.createVaultTags, hcClient);
     }
 
     /**
@@ -575,7 +567,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return DeleteBackupResponse
      */
     public DeleteBackupResponse deleteBackup(DeleteBackupRequest request) {
@@ -589,11 +581,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return SyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
      */
     public SyncInvoker<DeleteBackupRequest, DeleteBackupResponse> deleteBackupInvoker(DeleteBackupRequest request) {
-        return new SyncInvoker<DeleteBackupRequest, DeleteBackupResponse>(request, CbrMeta.deleteBackup, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.deleteBackup, hcClient);
     }
 
     /**
@@ -603,7 +595,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberRequest 请求对象
+     * @param request DeleteMemberRequest 请求对象
      * @return DeleteMemberResponse
      */
     public DeleteMemberResponse deleteMember(DeleteMemberRequest request) {
@@ -617,11 +609,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberRequest 请求对象
+     * @param request DeleteMemberRequest 请求对象
      * @return SyncInvoker<DeleteMemberRequest, DeleteMemberResponse>
      */
     public SyncInvoker<DeleteMemberRequest, DeleteMemberResponse> deleteMemberInvoker(DeleteMemberRequest request) {
-        return new SyncInvoker<DeleteMemberRequest, DeleteMemberResponse>(request, CbrMeta.deleteMember, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.deleteMember, hcClient);
     }
 
     /**
@@ -631,7 +623,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return DeletePolicyResponse
      */
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) {
@@ -645,11 +637,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return SyncInvoker<DeletePolicyRequest, DeletePolicyResponse>
      */
     public SyncInvoker<DeletePolicyRequest, DeletePolicyResponse> deletePolicyInvoker(DeletePolicyRequest request) {
-        return new SyncInvoker<DeletePolicyRequest, DeletePolicyResponse>(request, CbrMeta.deletePolicy, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.deletePolicy, hcClient);
     }
 
     /**
@@ -659,7 +651,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVaultRequest 请求对象
+     * @param request DeleteVaultRequest 请求对象
      * @return DeleteVaultResponse
      */
     public DeleteVaultResponse deleteVault(DeleteVaultRequest request) {
@@ -673,11 +665,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVaultRequest 请求对象
+     * @param request DeleteVaultRequest 请求对象
      * @return SyncInvoker<DeleteVaultRequest, DeleteVaultResponse>
      */
     public SyncInvoker<DeleteVaultRequest, DeleteVaultResponse> deleteVaultInvoker(DeleteVaultRequest request) {
-        return new SyncInvoker<DeleteVaultRequest, DeleteVaultResponse>(request, CbrMeta.deleteVault, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.deleteVault, hcClient);
     }
 
     /**
@@ -687,7 +679,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVaultTagRequest 请求对象
+     * @param request DeleteVaultTagRequest 请求对象
      * @return DeleteVaultTagResponse
      */
     public DeleteVaultTagResponse deleteVaultTag(DeleteVaultTagRequest request) {
@@ -701,13 +693,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVaultTagRequest 请求对象
+     * @param request DeleteVaultTagRequest 请求对象
      * @return SyncInvoker<DeleteVaultTagRequest, DeleteVaultTagResponse>
      */
     public SyncInvoker<DeleteVaultTagRequest, DeleteVaultTagResponse> deleteVaultTagInvoker(
         DeleteVaultTagRequest request) {
-        return new SyncInvoker<DeleteVaultTagRequest, DeleteVaultTagResponse>(request, CbrMeta.deleteVaultTag,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.deleteVaultTag, hcClient);
     }
 
     /**
@@ -717,7 +708,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateVaultPolicyRequest 请求对象
+     * @param request DisassociateVaultPolicyRequest 请求对象
      * @return DisassociateVaultPolicyResponse
      */
     public DisassociateVaultPolicyResponse disassociateVaultPolicy(DisassociateVaultPolicyRequest request) {
@@ -731,13 +722,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateVaultPolicyRequest 请求对象
+     * @param request DisassociateVaultPolicyRequest 请求对象
      * @return SyncInvoker<DisassociateVaultPolicyRequest, DisassociateVaultPolicyResponse>
      */
     public SyncInvoker<DisassociateVaultPolicyRequest, DisassociateVaultPolicyResponse> disassociateVaultPolicyInvoker(
         DisassociateVaultPolicyRequest request) {
-        return new SyncInvoker<DisassociateVaultPolicyRequest, DisassociateVaultPolicyResponse>(request,
-            CbrMeta.disassociateVaultPolicy, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.disassociateVaultPolicy, hcClient);
     }
 
     /**
@@ -747,7 +737,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportBackupRequest 请求对象
+     * @param request ImportBackupRequest 请求对象
      * @return ImportBackupResponse
      */
     public ImportBackupResponse importBackup(ImportBackupRequest request) {
@@ -761,11 +751,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportBackupRequest 请求对象
+     * @param request ImportBackupRequest 请求对象
      * @return SyncInvoker<ImportBackupRequest, ImportBackupResponse>
      */
     public SyncInvoker<ImportBackupRequest, ImportBackupResponse> importBackupInvoker(ImportBackupRequest request) {
-        return new SyncInvoker<ImportBackupRequest, ImportBackupResponse>(request, CbrMeta.importBackup, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.importBackup, hcClient);
     }
 
     /**
@@ -775,7 +765,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportCheckpointRequest 请求对象
+     * @param request ImportCheckpointRequest 请求对象
      * @return ImportCheckpointResponse
      */
     public ImportCheckpointResponse importCheckpoint(ImportCheckpointRequest request) {
@@ -789,13 +779,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportCheckpointRequest 请求对象
+     * @param request ImportCheckpointRequest 请求对象
      * @return SyncInvoker<ImportCheckpointRequest, ImportCheckpointResponse>
      */
     public SyncInvoker<ImportCheckpointRequest, ImportCheckpointResponse> importCheckpointInvoker(
         ImportCheckpointRequest request) {
-        return new SyncInvoker<ImportCheckpointRequest, ImportCheckpointResponse>(request, CbrMeta.importCheckpoint,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.importCheckpoint, hcClient);
     }
 
     /**
@@ -805,7 +794,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentRequest 请求对象
+     * @param request ListAgentRequest 请求对象
      * @return ListAgentResponse
      */
     public ListAgentResponse listAgent(ListAgentRequest request) {
@@ -819,11 +808,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentRequest 请求对象
+     * @param request ListAgentRequest 请求对象
      * @return SyncInvoker<ListAgentRequest, ListAgentResponse>
      */
     public SyncInvoker<ListAgentRequest, ListAgentResponse> listAgentInvoker(ListAgentRequest request) {
-        return new SyncInvoker<ListAgentRequest, ListAgentResponse>(request, CbrMeta.listAgent, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.listAgent, hcClient);
     }
 
     /**
@@ -833,7 +822,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupsRequest 请求对象
+     * @param request ListBackupsRequest 请求对象
      * @return ListBackupsResponse
      */
     public ListBackupsResponse listBackups(ListBackupsRequest request) {
@@ -847,11 +836,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupsRequest 请求对象
+     * @param request ListBackupsRequest 请求对象
      * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse>
      */
     public SyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsInvoker(ListBackupsRequest request) {
-        return new SyncInvoker<ListBackupsRequest, ListBackupsResponse>(request, CbrMeta.listBackups, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.listBackups, hcClient);
     }
 
     /**
@@ -861,7 +850,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainProjectsRequest 请求对象
+     * @param request ListDomainProjectsRequest 请求对象
      * @return ListDomainProjectsResponse
      */
     public ListDomainProjectsResponse listDomainProjects(ListDomainProjectsRequest request) {
@@ -875,13 +864,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainProjectsRequest 请求对象
+     * @param request ListDomainProjectsRequest 请求对象
      * @return SyncInvoker<ListDomainProjectsRequest, ListDomainProjectsResponse>
      */
     public SyncInvoker<ListDomainProjectsRequest, ListDomainProjectsResponse> listDomainProjectsInvoker(
         ListDomainProjectsRequest request) {
-        return new SyncInvoker<ListDomainProjectsRequest, ListDomainProjectsResponse>(request,
-            CbrMeta.listDomainProjects, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.listDomainProjects, hcClient);
     }
 
     /**
@@ -891,7 +879,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExternalVaultRequest 请求对象
+     * @param request ListExternalVaultRequest 请求对象
      * @return ListExternalVaultResponse
      */
     public ListExternalVaultResponse listExternalVault(ListExternalVaultRequest request) {
@@ -905,13 +893,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExternalVaultRequest 请求对象
+     * @param request ListExternalVaultRequest 请求对象
      * @return SyncInvoker<ListExternalVaultRequest, ListExternalVaultResponse>
      */
     public SyncInvoker<ListExternalVaultRequest, ListExternalVaultResponse> listExternalVaultInvoker(
         ListExternalVaultRequest request) {
-        return new SyncInvoker<ListExternalVaultRequest, ListExternalVaultResponse>(request, CbrMeta.listExternalVault,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.listExternalVault, hcClient);
     }
 
     /**
@@ -921,7 +908,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOpLogsRequest 请求对象
+     * @param request ListOpLogsRequest 请求对象
      * @return ListOpLogsResponse
      */
     public ListOpLogsResponse listOpLogs(ListOpLogsRequest request) {
@@ -935,11 +922,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOpLogsRequest 请求对象
+     * @param request ListOpLogsRequest 请求对象
      * @return SyncInvoker<ListOpLogsRequest, ListOpLogsResponse>
      */
     public SyncInvoker<ListOpLogsRequest, ListOpLogsResponse> listOpLogsInvoker(ListOpLogsRequest request) {
-        return new SyncInvoker<ListOpLogsRequest, ListOpLogsResponse>(request, CbrMeta.listOpLogs, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.listOpLogs, hcClient);
     }
 
     /**
@@ -949,7 +936,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoliciesRequest 请求对象
+     * @param request ListPoliciesRequest 请求对象
      * @return ListPoliciesResponse
      */
     public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
@@ -963,11 +950,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoliciesRequest 请求对象
+     * @param request ListPoliciesRequest 请求对象
      * @return SyncInvoker<ListPoliciesRequest, ListPoliciesResponse>
      */
     public SyncInvoker<ListPoliciesRequest, ListPoliciesResponse> listPoliciesInvoker(ListPoliciesRequest request) {
-        return new SyncInvoker<ListPoliciesRequest, ListPoliciesResponse>(request, CbrMeta.listPolicies, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.listPolicies, hcClient);
     }
 
     /**
@@ -977,7 +964,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectsRequest 请求对象
+     * @param request ListProjectsRequest 请求对象
      * @return ListProjectsResponse
      */
     public ListProjectsResponse listProjects(ListProjectsRequest request) {
@@ -991,11 +978,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectsRequest 请求对象
+     * @param request ListProjectsRequest 请求对象
      * @return SyncInvoker<ListProjectsRequest, ListProjectsResponse>
      */
     public SyncInvoker<ListProjectsRequest, ListProjectsResponse> listProjectsInvoker(ListProjectsRequest request) {
-        return new SyncInvoker<ListProjectsRequest, ListProjectsResponse>(request, CbrMeta.listProjects, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.listProjects, hcClient);
     }
 
     /**
@@ -1005,7 +992,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProtectableRequest 请求对象
+     * @param request ListProtectableRequest 请求对象
      * @return ListProtectableResponse
      */
     public ListProtectableResponse listProtectable(ListProtectableRequest request) {
@@ -1019,13 +1006,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProtectableRequest 请求对象
+     * @param request ListProtectableRequest 请求对象
      * @return SyncInvoker<ListProtectableRequest, ListProtectableResponse>
      */
     public SyncInvoker<ListProtectableRequest, ListProtectableResponse> listProtectableInvoker(
         ListProtectableRequest request) {
-        return new SyncInvoker<ListProtectableRequest, ListProtectableResponse>(request, CbrMeta.listProtectable,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.listProtectable, hcClient);
     }
 
     /**
@@ -1035,7 +1021,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVaultRequest 请求对象
+     * @param request ListVaultRequest 请求对象
      * @return ListVaultResponse
      */
     public ListVaultResponse listVault(ListVaultRequest request) {
@@ -1049,11 +1035,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVaultRequest 请求对象
+     * @param request ListVaultRequest 请求对象
      * @return SyncInvoker<ListVaultRequest, ListVaultResponse>
      */
     public SyncInvoker<ListVaultRequest, ListVaultResponse> listVaultInvoker(ListVaultRequest request) {
-        return new SyncInvoker<ListVaultRequest, ListVaultResponse>(request, CbrMeta.listVault, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.listVault, hcClient);
     }
 
     /**
@@ -1063,7 +1049,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateDomainRequest 请求对象
+     * @param request MigrateDomainRequest 请求对象
      * @return MigrateDomainResponse
      */
     public MigrateDomainResponse migrateDomain(MigrateDomainRequest request) {
@@ -1077,11 +1063,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateDomainRequest 请求对象
+     * @param request MigrateDomainRequest 请求对象
      * @return SyncInvoker<MigrateDomainRequest, MigrateDomainResponse>
      */
     public SyncInvoker<MigrateDomainRequest, MigrateDomainResponse> migrateDomainInvoker(MigrateDomainRequest request) {
-        return new SyncInvoker<MigrateDomainRequest, MigrateDomainResponse>(request, CbrMeta.migrateDomain, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.migrateDomain, hcClient);
     }
 
     /**
@@ -1091,7 +1077,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateVaultResourceRequest 请求对象
+     * @param request MigrateVaultResourceRequest 请求对象
      * @return MigrateVaultResourceResponse
      */
     public MigrateVaultResourceResponse migrateVaultResource(MigrateVaultResourceRequest request) {
@@ -1105,13 +1091,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateVaultResourceRequest 请求对象
+     * @param request MigrateVaultResourceRequest 请求对象
      * @return SyncInvoker<MigrateVaultResourceRequest, MigrateVaultResourceResponse>
      */
     public SyncInvoker<MigrateVaultResourceRequest, MigrateVaultResourceResponse> migrateVaultResourceInvoker(
         MigrateVaultResourceRequest request) {
-        return new SyncInvoker<MigrateVaultResourceRequest, MigrateVaultResourceResponse>(request,
-            CbrMeta.migrateVaultResource, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.migrateVaultResource, hcClient);
     }
 
     /**
@@ -1121,7 +1106,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterAgentRequest 请求对象
+     * @param request RegisterAgentRequest 请求对象
      * @return RegisterAgentResponse
      */
     public RegisterAgentResponse registerAgent(RegisterAgentRequest request) {
@@ -1135,11 +1120,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterAgentRequest 请求对象
+     * @param request RegisterAgentRequest 请求对象
      * @return SyncInvoker<RegisterAgentRequest, RegisterAgentResponse>
      */
     public SyncInvoker<RegisterAgentRequest, RegisterAgentResponse> registerAgentInvoker(RegisterAgentRequest request) {
-        return new SyncInvoker<RegisterAgentRequest, RegisterAgentResponse>(request, CbrMeta.registerAgent, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.registerAgent, hcClient);
     }
 
     /**
@@ -1149,7 +1134,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveAgentPathRequest 请求对象
+     * @param request RemoveAgentPathRequest 请求对象
      * @return RemoveAgentPathResponse
      */
     public RemoveAgentPathResponse removeAgentPath(RemoveAgentPathRequest request) {
@@ -1163,13 +1148,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveAgentPathRequest 请求对象
+     * @param request RemoveAgentPathRequest 请求对象
      * @return SyncInvoker<RemoveAgentPathRequest, RemoveAgentPathResponse>
      */
     public SyncInvoker<RemoveAgentPathRequest, RemoveAgentPathResponse> removeAgentPathInvoker(
         RemoveAgentPathRequest request) {
-        return new SyncInvoker<RemoveAgentPathRequest, RemoveAgentPathResponse>(request, CbrMeta.removeAgentPath,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.removeAgentPath, hcClient);
     }
 
     /**
@@ -1179,7 +1163,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveVaultResourceRequest 请求对象
+     * @param request RemoveVaultResourceRequest 请求对象
      * @return RemoveVaultResourceResponse
      */
     public RemoveVaultResourceResponse removeVaultResource(RemoveVaultResourceRequest request) {
@@ -1193,13 +1177,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveVaultResourceRequest 请求对象
+     * @param request RemoveVaultResourceRequest 请求对象
      * @return SyncInvoker<RemoveVaultResourceRequest, RemoveVaultResourceResponse>
      */
     public SyncInvoker<RemoveVaultResourceRequest, RemoveVaultResourceResponse> removeVaultResourceInvoker(
         RemoveVaultResourceRequest request) {
-        return new SyncInvoker<RemoveVaultResourceRequest, RemoveVaultResourceResponse>(request,
-            CbrMeta.removeVaultResource, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.removeVaultResource, hcClient);
     }
 
     /**
@@ -1209,7 +1192,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreBackupRequest 请求对象
+     * @param request RestoreBackupRequest 请求对象
      * @return RestoreBackupResponse
      */
     public RestoreBackupResponse restoreBackup(RestoreBackupRequest request) {
@@ -1223,11 +1206,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreBackupRequest 请求对象
+     * @param request RestoreBackupRequest 请求对象
      * @return SyncInvoker<RestoreBackupRequest, RestoreBackupResponse>
      */
     public SyncInvoker<RestoreBackupRequest, RestoreBackupResponse> restoreBackupInvoker(RestoreBackupRequest request) {
-        return new SyncInvoker<RestoreBackupRequest, RestoreBackupResponse>(request, CbrMeta.restoreBackup, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.restoreBackup, hcClient);
     }
 
     /**
@@ -1237,7 +1220,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetVaultResourceRequest 请求对象
+     * @param request SetVaultResourceRequest 请求对象
      * @return SetVaultResourceResponse
      */
     public SetVaultResourceResponse setVaultResource(SetVaultResourceRequest request) {
@@ -1251,13 +1234,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetVaultResourceRequest 请求对象
+     * @param request SetVaultResourceRequest 请求对象
      * @return SyncInvoker<SetVaultResourceRequest, SetVaultResourceResponse>
      */
     public SyncInvoker<SetVaultResourceRequest, SetVaultResourceResponse> setVaultResourceInvoker(
         SetVaultResourceRequest request) {
-        return new SyncInvoker<SetVaultResourceRequest, SetVaultResourceResponse>(request, CbrMeta.setVaultResource,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.setVaultResource, hcClient);
     }
 
     /**
@@ -1267,7 +1249,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAgentRequest 请求对象
+     * @param request ShowAgentRequest 请求对象
      * @return ShowAgentResponse
      */
     public ShowAgentResponse showAgent(ShowAgentRequest request) {
@@ -1281,11 +1263,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAgentRequest 请求对象
+     * @param request ShowAgentRequest 请求对象
      * @return SyncInvoker<ShowAgentRequest, ShowAgentResponse>
      */
     public SyncInvoker<ShowAgentRequest, ShowAgentResponse> showAgentInvoker(ShowAgentRequest request) {
-        return new SyncInvoker<ShowAgentRequest, ShowAgentResponse>(request, CbrMeta.showAgent, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showAgent, hcClient);
     }
 
     /**
@@ -1295,7 +1277,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupRequest 请求对象
+     * @param request ShowBackupRequest 请求对象
      * @return ShowBackupResponse
      */
     public ShowBackupResponse showBackup(ShowBackupRequest request) {
@@ -1309,11 +1291,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupRequest 请求对象
+     * @param request ShowBackupRequest 请求对象
      * @return SyncInvoker<ShowBackupRequest, ShowBackupResponse>
      */
     public SyncInvoker<ShowBackupRequest, ShowBackupResponse> showBackupInvoker(ShowBackupRequest request) {
-        return new SyncInvoker<ShowBackupRequest, ShowBackupResponse>(request, CbrMeta.showBackup, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showBackup, hcClient);
     }
 
     /**
@@ -1323,7 +1305,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckpointRequest 请求对象
+     * @param request ShowCheckpointRequest 请求对象
      * @return ShowCheckpointResponse
      */
     public ShowCheckpointResponse showCheckpoint(ShowCheckpointRequest request) {
@@ -1337,13 +1319,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckpointRequest 请求对象
+     * @param request ShowCheckpointRequest 请求对象
      * @return SyncInvoker<ShowCheckpointRequest, ShowCheckpointResponse>
      */
     public SyncInvoker<ShowCheckpointRequest, ShowCheckpointResponse> showCheckpointInvoker(
         ShowCheckpointRequest request) {
-        return new SyncInvoker<ShowCheckpointRequest, ShowCheckpointResponse>(request, CbrMeta.showCheckpoint,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showCheckpoint, hcClient);
     }
 
     /**
@@ -1353,7 +1334,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainRequest 请求对象
+     * @param request ShowDomainRequest 请求对象
      * @return ShowDomainResponse
      */
     public ShowDomainResponse showDomain(ShowDomainRequest request) {
@@ -1367,11 +1348,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainRequest 请求对象
+     * @param request ShowDomainRequest 请求对象
      * @return SyncInvoker<ShowDomainRequest, ShowDomainResponse>
      */
     public SyncInvoker<ShowDomainRequest, ShowDomainResponse> showDomainInvoker(ShowDomainRequest request) {
-        return new SyncInvoker<ShowDomainRequest, ShowDomainResponse>(request, CbrMeta.showDomain, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showDomain, hcClient);
     }
 
     /**
@@ -1381,7 +1362,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMemberDetailRequest 请求对象
+     * @param request ShowMemberDetailRequest 请求对象
      * @return ShowMemberDetailResponse
      */
     public ShowMemberDetailResponse showMemberDetail(ShowMemberDetailRequest request) {
@@ -1395,13 +1376,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMemberDetailRequest 请求对象
+     * @param request ShowMemberDetailRequest 请求对象
      * @return SyncInvoker<ShowMemberDetailRequest, ShowMemberDetailResponse>
      */
     public SyncInvoker<ShowMemberDetailRequest, ShowMemberDetailResponse> showMemberDetailInvoker(
         ShowMemberDetailRequest request) {
-        return new SyncInvoker<ShowMemberDetailRequest, ShowMemberDetailResponse>(request, CbrMeta.showMemberDetail,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showMemberDetail, hcClient);
     }
 
     /**
@@ -1411,7 +1391,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMembersDetailRequest 请求对象
+     * @param request ShowMembersDetailRequest 请求对象
      * @return ShowMembersDetailResponse
      */
     public ShowMembersDetailResponse showMembersDetail(ShowMembersDetailRequest request) {
@@ -1425,13 +1405,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMembersDetailRequest 请求对象
+     * @param request ShowMembersDetailRequest 请求对象
      * @return SyncInvoker<ShowMembersDetailRequest, ShowMembersDetailResponse>
      */
     public SyncInvoker<ShowMembersDetailRequest, ShowMembersDetailResponse> showMembersDetailInvoker(
         ShowMembersDetailRequest request) {
-        return new SyncInvoker<ShowMembersDetailRequest, ShowMembersDetailResponse>(request, CbrMeta.showMembersDetail,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showMembersDetail, hcClient);
     }
 
     /**
@@ -1441,7 +1420,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetadataRequest 请求对象
+     * @param request ShowMetadataRequest 请求对象
      * @return ShowMetadataResponse
      */
     public ShowMetadataResponse showMetadata(ShowMetadataRequest request) {
@@ -1455,11 +1434,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetadataRequest 请求对象
+     * @param request ShowMetadataRequest 请求对象
      * @return SyncInvoker<ShowMetadataRequest, ShowMetadataResponse>
      */
     public SyncInvoker<ShowMetadataRequest, ShowMetadataResponse> showMetadataInvoker(ShowMetadataRequest request) {
-        return new SyncInvoker<ShowMetadataRequest, ShowMetadataResponse>(request, CbrMeta.showMetadata, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showMetadata, hcClient);
     }
 
     /**
@@ -1469,7 +1448,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMigrateStatusRequest 请求对象
+     * @param request ShowMigrateStatusRequest 请求对象
      * @return ShowMigrateStatusResponse
      */
     public ShowMigrateStatusResponse showMigrateStatus(ShowMigrateStatusRequest request) {
@@ -1483,13 +1462,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMigrateStatusRequest 请求对象
+     * @param request ShowMigrateStatusRequest 请求对象
      * @return SyncInvoker<ShowMigrateStatusRequest, ShowMigrateStatusResponse>
      */
     public SyncInvoker<ShowMigrateStatusRequest, ShowMigrateStatusResponse> showMigrateStatusInvoker(
         ShowMigrateStatusRequest request) {
-        return new SyncInvoker<ShowMigrateStatusRequest, ShowMigrateStatusResponse>(request, CbrMeta.showMigrateStatus,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showMigrateStatus, hcClient);
     }
 
     /**
@@ -1499,7 +1477,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOpLogRequest 请求对象
+     * @param request ShowOpLogRequest 请求对象
      * @return ShowOpLogResponse
      */
     public ShowOpLogResponse showOpLog(ShowOpLogRequest request) {
@@ -1513,11 +1491,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOpLogRequest 请求对象
+     * @param request ShowOpLogRequest 请求对象
      * @return SyncInvoker<ShowOpLogRequest, ShowOpLogResponse>
      */
     public SyncInvoker<ShowOpLogRequest, ShowOpLogResponse> showOpLogInvoker(ShowOpLogRequest request) {
-        return new SyncInvoker<ShowOpLogRequest, ShowOpLogResponse>(request, CbrMeta.showOpLog, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showOpLog, hcClient);
     }
 
     /**
@@ -1527,7 +1505,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyRequest 请求对象
+     * @param request ShowPolicyRequest 请求对象
      * @return ShowPolicyResponse
      */
     public ShowPolicyResponse showPolicy(ShowPolicyRequest request) {
@@ -1541,11 +1519,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyRequest 请求对象
+     * @param request ShowPolicyRequest 请求对象
      * @return SyncInvoker<ShowPolicyRequest, ShowPolicyResponse>
      */
     public SyncInvoker<ShowPolicyRequest, ShowPolicyResponse> showPolicyInvoker(ShowPolicyRequest request) {
-        return new SyncInvoker<ShowPolicyRequest, ShowPolicyResponse>(request, CbrMeta.showPolicy, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showPolicy, hcClient);
     }
 
     /**
@@ -1555,7 +1533,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProtectableRequest 请求对象
+     * @param request ShowProtectableRequest 请求对象
      * @return ShowProtectableResponse
      */
     public ShowProtectableResponse showProtectable(ShowProtectableRequest request) {
@@ -1569,13 +1547,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProtectableRequest 请求对象
+     * @param request ShowProtectableRequest 请求对象
      * @return SyncInvoker<ShowProtectableRequest, ShowProtectableResponse>
      */
     public SyncInvoker<ShowProtectableRequest, ShowProtectableResponse> showProtectableInvoker(
         ShowProtectableRequest request) {
-        return new SyncInvoker<ShowProtectableRequest, ShowProtectableResponse>(request, CbrMeta.showProtectable,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showProtectable, hcClient);
     }
 
     /**
@@ -1585,7 +1562,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReplicationCapabilitiesRequest 请求对象
+     * @param request ShowReplicationCapabilitiesRequest 请求对象
      * @return ShowReplicationCapabilitiesResponse
      */
     public ShowReplicationCapabilitiesResponse showReplicationCapabilities(ShowReplicationCapabilitiesRequest request) {
@@ -1599,13 +1576,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReplicationCapabilitiesRequest 请求对象
+     * @param request ShowReplicationCapabilitiesRequest 请求对象
      * @return SyncInvoker<ShowReplicationCapabilitiesRequest, ShowReplicationCapabilitiesResponse>
      */
     public SyncInvoker<ShowReplicationCapabilitiesRequest, ShowReplicationCapabilitiesResponse> showReplicationCapabilitiesInvoker(
         ShowReplicationCapabilitiesRequest request) {
-        return new SyncInvoker<ShowReplicationCapabilitiesRequest, ShowReplicationCapabilitiesResponse>(request,
-            CbrMeta.showReplicationCapabilities, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showReplicationCapabilities, hcClient);
     }
 
     /**
@@ -1615,7 +1591,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStorageUsageRequest 请求对象
+     * @param request ShowStorageUsageRequest 请求对象
      * @return ShowStorageUsageResponse
      */
     public ShowStorageUsageResponse showStorageUsage(ShowStorageUsageRequest request) {
@@ -1629,13 +1605,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStorageUsageRequest 请求对象
+     * @param request ShowStorageUsageRequest 请求对象
      * @return SyncInvoker<ShowStorageUsageRequest, ShowStorageUsageResponse>
      */
     public SyncInvoker<ShowStorageUsageRequest, ShowStorageUsageResponse> showStorageUsageInvoker(
         ShowStorageUsageRequest request) {
-        return new SyncInvoker<ShowStorageUsageRequest, ShowStorageUsageResponse>(request, CbrMeta.showStorageUsage,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showStorageUsage, hcClient);
     }
 
     /**
@@ -1645,7 +1620,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSummaryRequest 请求对象
+     * @param request ShowSummaryRequest 请求对象
      * @return ShowSummaryResponse
      */
     public ShowSummaryResponse showSummary(ShowSummaryRequest request) {
@@ -1659,11 +1634,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSummaryRequest 请求对象
+     * @param request ShowSummaryRequest 请求对象
      * @return SyncInvoker<ShowSummaryRequest, ShowSummaryResponse>
      */
     public SyncInvoker<ShowSummaryRequest, ShowSummaryResponse> showSummaryInvoker(ShowSummaryRequest request) {
-        return new SyncInvoker<ShowSummaryRequest, ShowSummaryResponse>(request, CbrMeta.showSummary, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showSummary, hcClient);
     }
 
     /**
@@ -1673,7 +1648,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVaultRequest 请求对象
+     * @param request ShowVaultRequest 请求对象
      * @return ShowVaultResponse
      */
     public ShowVaultResponse showVault(ShowVaultRequest request) {
@@ -1687,11 +1662,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVaultRequest 请求对象
+     * @param request ShowVaultRequest 请求对象
      * @return SyncInvoker<ShowVaultRequest, ShowVaultResponse>
      */
     public SyncInvoker<ShowVaultRequest, ShowVaultResponse> showVaultInvoker(ShowVaultRequest request) {
-        return new SyncInvoker<ShowVaultRequest, ShowVaultResponse>(request, CbrMeta.showVault, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showVault, hcClient);
     }
 
     /**
@@ -1702,7 +1677,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVaultProjectTagRequest 请求对象
+     * @param request ShowVaultProjectTagRequest 请求对象
      * @return ShowVaultProjectTagResponse
      */
     public ShowVaultProjectTagResponse showVaultProjectTag(ShowVaultProjectTagRequest request) {
@@ -1717,13 +1692,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVaultProjectTagRequest 请求对象
+     * @param request ShowVaultProjectTagRequest 请求对象
      * @return SyncInvoker<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse>
      */
     public SyncInvoker<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse> showVaultProjectTagInvoker(
         ShowVaultProjectTagRequest request) {
-        return new SyncInvoker<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse>(request,
-            CbrMeta.showVaultProjectTag, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showVaultProjectTag, hcClient);
     }
 
     /**
@@ -1734,7 +1708,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVaultResourceInstancesRequest 请求对象
+     * @param request ShowVaultResourceInstancesRequest 请求对象
      * @return ShowVaultResourceInstancesResponse
      */
     public ShowVaultResourceInstancesResponse showVaultResourceInstances(ShowVaultResourceInstancesRequest request) {
@@ -1749,13 +1723,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVaultResourceInstancesRequest 请求对象
+     * @param request ShowVaultResourceInstancesRequest 请求对象
      * @return SyncInvoker<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse>
      */
     public SyncInvoker<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse> showVaultResourceInstancesInvoker(
         ShowVaultResourceInstancesRequest request) {
-        return new SyncInvoker<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse>(request,
-            CbrMeta.showVaultResourceInstances, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showVaultResourceInstances, hcClient);
     }
 
     /**
@@ -1766,7 +1739,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVaultTagRequest 请求对象
+     * @param request ShowVaultTagRequest 请求对象
      * @return ShowVaultTagResponse
      */
     public ShowVaultTagResponse showVaultTag(ShowVaultTagRequest request) {
@@ -1781,11 +1754,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVaultTagRequest 请求对象
+     * @param request ShowVaultTagRequest 请求对象
      * @return SyncInvoker<ShowVaultTagRequest, ShowVaultTagResponse>
      */
     public SyncInvoker<ShowVaultTagRequest, ShowVaultTagResponse> showVaultTagInvoker(ShowVaultTagRequest request) {
-        return new SyncInvoker<ShowVaultTagRequest, ShowVaultTagResponse>(request, CbrMeta.showVaultTag, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.showVaultTag, hcClient);
     }
 
     /**
@@ -1795,7 +1768,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnregisterAgentRequest 请求对象
+     * @param request UnregisterAgentRequest 请求对象
      * @return UnregisterAgentResponse
      */
     public UnregisterAgentResponse unregisterAgent(UnregisterAgentRequest request) {
@@ -1809,13 +1782,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnregisterAgentRequest 请求对象
+     * @param request UnregisterAgentRequest 请求对象
      * @return SyncInvoker<UnregisterAgentRequest, UnregisterAgentResponse>
      */
     public SyncInvoker<UnregisterAgentRequest, UnregisterAgentResponse> unregisterAgentInvoker(
         UnregisterAgentRequest request) {
-        return new SyncInvoker<UnregisterAgentRequest, UnregisterAgentResponse>(request, CbrMeta.unregisterAgent,
-            hcClient);
+        return new SyncInvoker<>(request, CbrMeta.unregisterAgent, hcClient);
     }
 
     /**
@@ -1825,7 +1797,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAgentRequest 请求对象
+     * @param request UpdateAgentRequest 请求对象
      * @return UpdateAgentResponse
      */
     public UpdateAgentResponse updateAgent(UpdateAgentRequest request) {
@@ -1839,11 +1811,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAgentRequest 请求对象
+     * @param request UpdateAgentRequest 请求对象
      * @return SyncInvoker<UpdateAgentRequest, UpdateAgentResponse>
      */
     public SyncInvoker<UpdateAgentRequest, UpdateAgentResponse> updateAgentInvoker(UpdateAgentRequest request) {
-        return new SyncInvoker<UpdateAgentRequest, UpdateAgentResponse>(request, CbrMeta.updateAgent, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.updateAgent, hcClient);
     }
 
     /**
@@ -1853,7 +1825,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackupRequest 请求对象
+     * @param request UpdateBackupRequest 请求对象
      * @return UpdateBackupResponse
      */
     public UpdateBackupResponse updateBackup(UpdateBackupRequest request) {
@@ -1867,11 +1839,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackupRequest 请求对象
+     * @param request UpdateBackupRequest 请求对象
      * @return SyncInvoker<UpdateBackupRequest, UpdateBackupResponse>
      */
     public SyncInvoker<UpdateBackupRequest, UpdateBackupResponse> updateBackupInvoker(UpdateBackupRequest request) {
-        return new SyncInvoker<UpdateBackupRequest, UpdateBackupResponse>(request, CbrMeta.updateBackup, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.updateBackup, hcClient);
     }
 
     /**
@@ -1881,7 +1853,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberStatusRequest 请求对象
+     * @param request UpdateMemberStatusRequest 请求对象
      * @return UpdateMemberStatusResponse
      */
     public UpdateMemberStatusResponse updateMemberStatus(UpdateMemberStatusRequest request) {
@@ -1895,13 +1867,12 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberStatusRequest 请求对象
+     * @param request UpdateMemberStatusRequest 请求对象
      * @return SyncInvoker<UpdateMemberStatusRequest, UpdateMemberStatusResponse>
      */
     public SyncInvoker<UpdateMemberStatusRequest, UpdateMemberStatusResponse> updateMemberStatusInvoker(
         UpdateMemberStatusRequest request) {
-        return new SyncInvoker<UpdateMemberStatusRequest, UpdateMemberStatusResponse>(request,
-            CbrMeta.updateMemberStatus, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.updateMemberStatus, hcClient);
     }
 
     /**
@@ -1911,7 +1882,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateOrderRequest 请求对象
+     * @param request UpdateOrderRequest 请求对象
      * @return UpdateOrderResponse
      */
     public UpdateOrderResponse updateOrder(UpdateOrderRequest request) {
@@ -1925,11 +1896,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateOrderRequest 请求对象
+     * @param request UpdateOrderRequest 请求对象
      * @return SyncInvoker<UpdateOrderRequest, UpdateOrderResponse>
      */
     public SyncInvoker<UpdateOrderRequest, UpdateOrderResponse> updateOrderInvoker(UpdateOrderRequest request) {
-        return new SyncInvoker<UpdateOrderRequest, UpdateOrderResponse>(request, CbrMeta.updateOrder, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.updateOrder, hcClient);
     }
 
     /**
@@ -1939,7 +1910,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRequest 请求对象
+     * @param request UpdatePolicyRequest 请求对象
      * @return UpdatePolicyResponse
      */
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) {
@@ -1953,11 +1924,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRequest 请求对象
+     * @param request UpdatePolicyRequest 请求对象
      * @return SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>
      */
     public SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicyInvoker(UpdatePolicyRequest request) {
-        return new SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>(request, CbrMeta.updatePolicy, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.updatePolicy, hcClient);
     }
 
     /**
@@ -1967,7 +1938,7 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVaultRequest 请求对象
+     * @param request UpdateVaultRequest 请求对象
      * @return UpdateVaultResponse
      */
     public UpdateVaultResponse updateVault(UpdateVaultRequest request) {
@@ -1981,11 +1952,11 @@ public class CbrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVaultRequest 请求对象
+     * @param request UpdateVaultRequest 请求对象
      * @return SyncInvoker<UpdateVaultRequest, UpdateVaultResponse>
      */
     public SyncInvoker<UpdateVaultRequest, UpdateVaultResponse> updateVaultInvoker(UpdateVaultRequest request) {
-        return new SyncInvoker<UpdateVaultRequest, UpdateVaultResponse>(request, CbrMeta.updateVault, hcClient);
+        return new SyncInvoker<>(request, CbrMeta.updateVault, hcClient);
     }
 
 }

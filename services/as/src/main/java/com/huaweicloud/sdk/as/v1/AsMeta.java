@@ -165,9 +165,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class AsMeta {
 
     public static final HttpRequestDef<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse> attachCallbackInstanceLifeCycleHook =
-        genForattachCallbackInstanceLifeCycleHook();
+        genForAttachCallbackInstanceLifeCycleHook();
 
-    private static HttpRequestDef<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse> genForattachCallbackInstanceLifeCycleHook() {
+    private static HttpRequestDef<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse> genForAttachCallbackInstanceLifeCycleHook() {
         // basic
         HttpRequestDef.Builder<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse> builder =
             HttpRequestDef
@@ -183,16 +183,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachCallbackInstanceLifeCycleHookRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(AttachCallbackInstanceLifeCycleHookRequest::getScalingGroupId,
+                AttachCallbackInstanceLifeCycleHookRequest::setScalingGroupId));
         builder.<CallbackLifeCycleHookOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CallbackLifeCycleHookOption.class),
-            f -> f.withMarshaller(AttachCallbackInstanceLifeCycleHookRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachCallbackInstanceLifeCycleHookRequest::getBody,
+                AttachCallbackInstanceLifeCycleHookRequest::setBody));
 
         // response
 
@@ -200,9 +198,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse> batchAddScalingInstances =
-        genForbatchAddScalingInstances();
+        genForBatchAddScalingInstances();
 
-    private static HttpRequestDef<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse> genForbatchAddScalingInstances() {
+    private static HttpRequestDef<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse> genForBatchAddScalingInstances() {
         // basic
         HttpRequestDef.Builder<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse> builder =
             HttpRequestDef
@@ -216,16 +214,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddScalingInstancesRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchAddScalingInstancesRequest::getScalingGroupId,
+                BatchAddScalingInstancesRequest::setScalingGroupId));
         builder.<BatchAddInstancesOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAddInstancesOption.class),
-            f -> f.withMarshaller(BatchAddScalingInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddScalingInstancesRequest::getBody, BatchAddScalingInstancesRequest::setBody));
 
         // response
 
@@ -233,9 +228,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteScalingConfigsRequest, BatchDeleteScalingConfigsResponse> batchDeleteScalingConfigs =
-        genForbatchDeleteScalingConfigs();
+        genForBatchDeleteScalingConfigs();
 
-    private static HttpRequestDef<BatchDeleteScalingConfigsRequest, BatchDeleteScalingConfigsResponse> genForbatchDeleteScalingConfigs() {
+    private static HttpRequestDef<BatchDeleteScalingConfigsRequest, BatchDeleteScalingConfigsResponse> genForBatchDeleteScalingConfigs() {
         // basic
         HttpRequestDef.Builder<BatchDeleteScalingConfigsRequest, BatchDeleteScalingConfigsResponse> builder =
             HttpRequestDef
@@ -251,9 +246,8 @@ public class AsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteScalingConfigOption.class),
-            f -> f.withMarshaller(BatchDeleteScalingConfigsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteScalingConfigsRequest::getBody,
+                BatchDeleteScalingConfigsRequest::setBody));
 
         // response
 
@@ -261,9 +255,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse> batchDeleteScalingPolicies =
-        genForbatchDeleteScalingPolicies();
+        genForBatchDeleteScalingPolicies();
 
-    private static HttpRequestDef<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse> genForbatchDeleteScalingPolicies() {
+    private static HttpRequestDef<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse> genForBatchDeleteScalingPolicies() {
         // basic
         HttpRequestDef.Builder<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse> builder =
             HttpRequestDef
@@ -279,9 +273,8 @@ public class AsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteScalingPoliciesOption.class),
-            f -> f.withMarshaller(BatchDeleteScalingPoliciesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteScalingPoliciesRequest::getBody,
+                BatchDeleteScalingPoliciesRequest::setBody));
 
         // response
 
@@ -289,9 +282,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse> batchPauseScalingPolicies =
-        genForbatchPauseScalingPolicies();
+        genForBatchPauseScalingPolicies();
 
-    private static HttpRequestDef<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse> genForbatchPauseScalingPolicies() {
+    private static HttpRequestDef<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse> genForBatchPauseScalingPolicies() {
         // basic
         HttpRequestDef.Builder<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse> builder =
             HttpRequestDef
@@ -307,9 +300,8 @@ public class AsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchPauseScalingPoliciesOption.class),
-            f -> f.withMarshaller(BatchPauseScalingPoliciesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchPauseScalingPoliciesRequest::getBody,
+                BatchPauseScalingPoliciesRequest::setBody));
 
         // response
 
@@ -317,9 +309,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse> batchProtectScalingInstances =
-        genForbatchProtectScalingInstances();
+        genForBatchProtectScalingInstances();
 
-    private static HttpRequestDef<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse> genForbatchProtectScalingInstances() {
+    private static HttpRequestDef<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse> genForBatchProtectScalingInstances() {
         // basic
         HttpRequestDef.Builder<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse> builder =
             HttpRequestDef
@@ -335,16 +327,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchProtectScalingInstancesRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchProtectScalingInstancesRequest::getScalingGroupId,
+                BatchProtectScalingInstancesRequest::setScalingGroupId));
         builder.<BatchProtectInstancesOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchProtectInstancesOption.class),
-            f -> f.withMarshaller(BatchProtectScalingInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchProtectScalingInstancesRequest::getBody,
+                BatchProtectScalingInstancesRequest::setBody));
 
         // response
 
@@ -352,9 +342,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse> batchRemoveScalingInstances =
-        genForbatchRemoveScalingInstances();
+        genForBatchRemoveScalingInstances();
 
-    private static HttpRequestDef<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse> genForbatchRemoveScalingInstances() {
+    private static HttpRequestDef<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse> genForBatchRemoveScalingInstances() {
         // basic
         HttpRequestDef.Builder<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse> builder =
             HttpRequestDef
@@ -370,16 +360,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchRemoveScalingInstancesRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchRemoveScalingInstancesRequest::getScalingGroupId,
+                BatchRemoveScalingInstancesRequest::setScalingGroupId));
         builder.<BatchRemoveInstancesOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchRemoveInstancesOption.class),
-            f -> f.withMarshaller(BatchRemoveScalingInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRemoveScalingInstancesRequest::getBody,
+                BatchRemoveScalingInstancesRequest::setBody));
 
         // response
 
@@ -387,9 +375,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse> batchResumeScalingPolicies =
-        genForbatchResumeScalingPolicies();
+        genForBatchResumeScalingPolicies();
 
-    private static HttpRequestDef<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse> genForbatchResumeScalingPolicies() {
+    private static HttpRequestDef<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse> genForBatchResumeScalingPolicies() {
         // basic
         HttpRequestDef.Builder<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse> builder =
             HttpRequestDef
@@ -405,9 +393,8 @@ public class AsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchResumeScalingPoliciesOption.class),
-            f -> f.withMarshaller(BatchResumeScalingPoliciesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchResumeScalingPoliciesRequest::getBody,
+                BatchResumeScalingPoliciesRequest::setBody));
 
         // response
 
@@ -415,9 +402,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse> batchSetScalingInstancesStandby =
-        genForbatchSetScalingInstancesStandby();
+        genForBatchSetScalingInstancesStandby();
 
-    private static HttpRequestDef<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse> genForbatchSetScalingInstancesStandby() {
+    private static HttpRequestDef<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse> genForBatchSetScalingInstancesStandby() {
         // basic
         HttpRequestDef.Builder<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse> builder =
             HttpRequestDef
@@ -433,16 +420,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchSetScalingInstancesStandbyRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchSetScalingInstancesStandbyRequest::getScalingGroupId,
+                BatchSetScalingInstancesStandbyRequest::setScalingGroupId));
         builder.<BatchEnterStandbyInstancesOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchEnterStandbyInstancesOption.class),
-            f -> f.withMarshaller(BatchSetScalingInstancesStandbyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchSetScalingInstancesStandbyRequest::getBody,
+                BatchSetScalingInstancesStandbyRequest::setBody));
 
         // response
 
@@ -450,9 +435,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse> batchUnprotectScalingInstances =
-        genForbatchUnprotectScalingInstances();
+        genForBatchUnprotectScalingInstances();
 
-    private static HttpRequestDef<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse> genForbatchUnprotectScalingInstances() {
+    private static HttpRequestDef<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse> genForBatchUnprotectScalingInstances() {
         // basic
         HttpRequestDef.Builder<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse> builder =
             HttpRequestDef
@@ -468,16 +453,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUnprotectScalingInstancesRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchUnprotectScalingInstancesRequest::getScalingGroupId,
+                BatchUnprotectScalingInstancesRequest::setScalingGroupId));
         builder.<BatchUnprotectInstancesOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUnprotectInstancesOption.class),
-            f -> f.withMarshaller(BatchUnprotectScalingInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUnprotectScalingInstancesRequest::getBody,
+                BatchUnprotectScalingInstancesRequest::setBody));
 
         // response
 
@@ -485,9 +468,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> batchUnsetScalingInstancesStantby =
-        genForbatchUnsetScalingInstancesStantby();
+        genForBatchUnsetScalingInstancesStantby();
 
-    private static HttpRequestDef<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> genForbatchUnsetScalingInstancesStantby() {
+    private static HttpRequestDef<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> genForBatchUnsetScalingInstancesStantby() {
         // basic
         HttpRequestDef.Builder<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> builder =
             HttpRequestDef
@@ -503,16 +486,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUnsetScalingInstancesStantbyRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchUnsetScalingInstancesStantbyRequest::getScalingGroupId,
+                BatchUnsetScalingInstancesStantbyRequest::setScalingGroupId));
         builder.<BatchExitStandByInstancesOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchExitStandByInstancesOption.class),
-            f -> f.withMarshaller(BatchUnsetScalingInstancesStantbyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUnsetScalingInstancesStantbyRequest::getBody,
+                BatchUnsetScalingInstancesStantbyRequest::setBody));
 
         // response
 
@@ -520,9 +501,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse> createGroupScheduledTask =
-        genForcreateGroupScheduledTask();
+        genForCreateGroupScheduledTask();
 
-    private static HttpRequestDef<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse> genForcreateGroupScheduledTask() {
+    private static HttpRequestDef<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse> genForCreateGroupScheduledTask() {
         // basic
         HttpRequestDef.Builder<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse> builder =
             HttpRequestDef
@@ -536,16 +517,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGroupScheduledTaskRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(CreateGroupScheduledTaskRequest::getScalingGroupId,
+                CreateGroupScheduledTaskRequest::setScalingGroupId));
         builder.<CreateScheduledTaskOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateScheduledTaskOption.class),
-            f -> f.withMarshaller(CreateGroupScheduledTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGroupScheduledTaskRequest::getBody, CreateGroupScheduledTaskRequest::setBody));
 
         // response
 
@@ -553,9 +531,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<CreateLifyCycleHookRequest, CreateLifyCycleHookResponse> createLifyCycleHook =
-        genForcreateLifyCycleHook();
+        genForCreateLifyCycleHook();
 
-    private static HttpRequestDef<CreateLifyCycleHookRequest, CreateLifyCycleHookResponse> genForcreateLifyCycleHook() {
+    private static HttpRequestDef<CreateLifyCycleHookRequest, CreateLifyCycleHookResponse> genForCreateLifyCycleHook() {
         // basic
         HttpRequestDef.Builder<CreateLifyCycleHookRequest, CreateLifyCycleHookResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLifyCycleHookRequest.class, CreateLifyCycleHookResponse.class)
@@ -568,16 +546,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLifyCycleHookRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(CreateLifyCycleHookRequest::getScalingGroupId,
+                CreateLifyCycleHookRequest::setScalingGroupId));
         builder.<CreateLifeCycleHookOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLifeCycleHookOption.class),
-            f -> f.withMarshaller(CreateLifyCycleHookRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLifyCycleHookRequest::getBody, CreateLifyCycleHookRequest::setBody));
 
         // response
 
@@ -585,9 +560,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<CreateScalingConfigRequest, CreateScalingConfigResponse> createScalingConfig =
-        genForcreateScalingConfig();
+        genForCreateScalingConfig();
 
-    private static HttpRequestDef<CreateScalingConfigRequest, CreateScalingConfigResponse> genForcreateScalingConfig() {
+    private static HttpRequestDef<CreateScalingConfigRequest, CreateScalingConfigResponse> genForCreateScalingConfig() {
         // basic
         HttpRequestDef.Builder<CreateScalingConfigRequest, CreateScalingConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScalingConfigRequest.class, CreateScalingConfigResponse.class)
@@ -600,9 +575,7 @@ public class AsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateScalingConfigOption.class),
-            f -> f.withMarshaller(CreateScalingConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateScalingConfigRequest::getBody, CreateScalingConfigRequest::setBody));
 
         // response
 
@@ -610,9 +583,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<CreateScalingGroupRequest, CreateScalingGroupResponse> createScalingGroup =
-        genForcreateScalingGroup();
+        genForCreateScalingGroup();
 
-    private static HttpRequestDef<CreateScalingGroupRequest, CreateScalingGroupResponse> genForcreateScalingGroup() {
+    private static HttpRequestDef<CreateScalingGroupRequest, CreateScalingGroupResponse> genForCreateScalingGroup() {
         // basic
         HttpRequestDef.Builder<CreateScalingGroupRequest, CreateScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScalingGroupRequest.class, CreateScalingGroupResponse.class)
@@ -625,9 +598,7 @@ public class AsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateScalingGroupOption.class),
-            f -> f.withMarshaller(CreateScalingGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateScalingGroupRequest::getBody, CreateScalingGroupRequest::setBody));
 
         // response
 
@@ -635,9 +606,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<CreateScalingNotificationRequest, CreateScalingNotificationResponse> createScalingNotification =
-        genForcreateScalingNotification();
+        genForCreateScalingNotification();
 
-    private static HttpRequestDef<CreateScalingNotificationRequest, CreateScalingNotificationResponse> genForcreateScalingNotification() {
+    private static HttpRequestDef<CreateScalingNotificationRequest, CreateScalingNotificationResponse> genForCreateScalingNotification() {
         // basic
         HttpRequestDef.Builder<CreateScalingNotificationRequest, CreateScalingNotificationResponse> builder =
             HttpRequestDef
@@ -653,16 +624,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateScalingNotificationRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(CreateScalingNotificationRequest::getScalingGroupId,
+                CreateScalingNotificationRequest::setScalingGroupId));
         builder.<CreateNotificationOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNotificationOption.class),
-            f -> f.withMarshaller(CreateScalingNotificationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateScalingNotificationRequest::getBody,
+                CreateScalingNotificationRequest::setBody));
 
         // response
 
@@ -670,9 +639,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<CreateScalingPolicyRequest, CreateScalingPolicyResponse> createScalingPolicy =
-        genForcreateScalingPolicy();
+        genForCreateScalingPolicy();
 
-    private static HttpRequestDef<CreateScalingPolicyRequest, CreateScalingPolicyResponse> genForcreateScalingPolicy() {
+    private static HttpRequestDef<CreateScalingPolicyRequest, CreateScalingPolicyResponse> genForCreateScalingPolicy() {
         // basic
         HttpRequestDef.Builder<CreateScalingPolicyRequest, CreateScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScalingPolicyRequest.class, CreateScalingPolicyResponse.class)
@@ -685,9 +654,7 @@ public class AsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateScalingPolicyOption.class),
-            f -> f.withMarshaller(CreateScalingPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateScalingPolicyRequest::getBody, CreateScalingPolicyRequest::setBody));
 
         // response
 
@@ -695,9 +662,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse> createScalingTagInfo =
-        genForcreateScalingTagInfo();
+        genForCreateScalingTagInfo();
 
-    private static HttpRequestDef<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse> genForcreateScalingTagInfo() {
+    private static HttpRequestDef<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse> genForCreateScalingTagInfo() {
         // basic
         HttpRequestDef.Builder<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateScalingTagInfoRequest.class, CreateScalingTagInfoResponse.class)
@@ -710,23 +677,19 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateScalingTagInfoRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(CreateScalingTagInfoRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CreateScalingTagInfoRequest::getResourceType,
+                CreateScalingTagInfoRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateScalingTagInfoRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateScalingTagInfoRequest::getResourceId,
+                CreateScalingTagInfoRequest::setResourceId));
         builder.<CreateTagsOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTagsOption.class),
-            f -> f.withMarshaller(CreateScalingTagInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateScalingTagInfoRequest::getBody, CreateScalingTagInfoRequest::setBody));
 
         // response
 
@@ -734,9 +697,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse> deleteGroupScheduledTask =
-        genFordeleteGroupScheduledTask();
+        genForDeleteGroupScheduledTask();
 
-    private static HttpRequestDef<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse> genFordeleteGroupScheduledTask() {
+    private static HttpRequestDef<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse> genForDeleteGroupScheduledTask() {
         // basic
         HttpRequestDef.Builder<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse> builder =
             HttpRequestDef
@@ -753,16 +716,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGroupScheduledTaskRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteGroupScheduledTaskRequest::getScalingGroupId,
+                DeleteGroupScheduledTaskRequest::setScalingGroupId));
         builder.<String>withRequestField("scheduled_task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGroupScheduledTaskRequest::getScheduledTaskId, (req, v) -> {
-                req.setScheduledTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteGroupScheduledTaskRequest::getScheduledTaskId,
+                DeleteGroupScheduledTaskRequest::setScheduledTaskId));
 
         // response
 
@@ -770,9 +731,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<DeleteLifecycleHookRequest, DeleteLifecycleHookResponse> deleteLifecycleHook =
-        genFordeleteLifecycleHook();
+        genForDeleteLifecycleHook();
 
-    private static HttpRequestDef<DeleteLifecycleHookRequest, DeleteLifecycleHookResponse> genFordeleteLifecycleHook() {
+    private static HttpRequestDef<DeleteLifecycleHookRequest, DeleteLifecycleHookResponse> genForDeleteLifecycleHook() {
         // basic
         HttpRequestDef.Builder<DeleteLifecycleHookRequest, DeleteLifecycleHookResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteLifecycleHookRequest.class, DeleteLifecycleHookResponse.class)
@@ -785,16 +746,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLifecycleHookRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteLifecycleHookRequest::getScalingGroupId,
+                DeleteLifecycleHookRequest::setScalingGroupId));
         builder.<String>withRequestField("lifecycle_hook_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLifecycleHookRequest::getLifecycleHookName, (req, v) -> {
-                req.setLifecycleHookName(v);
-            }));
+            f -> f.withMarshaller(DeleteLifecycleHookRequest::getLifecycleHookName,
+                DeleteLifecycleHookRequest::setLifecycleHookName));
 
         // response
 
@@ -802,9 +761,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<DeleteScalingConfigRequest, DeleteScalingConfigResponse> deleteScalingConfig =
-        genFordeleteScalingConfig();
+        genForDeleteScalingConfig();
 
-    private static HttpRequestDef<DeleteScalingConfigRequest, DeleteScalingConfigResponse> genFordeleteScalingConfig() {
+    private static HttpRequestDef<DeleteScalingConfigRequest, DeleteScalingConfigResponse> genForDeleteScalingConfig() {
         // basic
         HttpRequestDef.Builder<DeleteScalingConfigRequest, DeleteScalingConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteScalingConfigRequest.class, DeleteScalingConfigResponse.class)
@@ -817,9 +776,8 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScalingConfigRequest::getScalingConfigurationId, (req, v) -> {
-                req.setScalingConfigurationId(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingConfigRequest::getScalingConfigurationId,
+                DeleteScalingConfigRequest::setScalingConfigurationId));
 
         // response
 
@@ -827,9 +785,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<DeleteScalingGroupRequest, DeleteScalingGroupResponse> deleteScalingGroup =
-        genFordeleteScalingGroup();
+        genForDeleteScalingGroup();
 
-    private static HttpRequestDef<DeleteScalingGroupRequest, DeleteScalingGroupResponse> genFordeleteScalingGroup() {
+    private static HttpRequestDef<DeleteScalingGroupRequest, DeleteScalingGroupResponse> genForDeleteScalingGroup() {
         // basic
         HttpRequestDef.Builder<DeleteScalingGroupRequest, DeleteScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScalingGroupRequest.class, DeleteScalingGroupResponse.class)
@@ -842,16 +800,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScalingGroupRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingGroupRequest::getScalingGroupId,
+                DeleteScalingGroupRequest::setScalingGroupId));
         builder.<DeleteScalingGroupRequest.ForceDeleteEnum>withRequestField("force_delete",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteScalingGroupRequest.ForceDeleteEnum.class),
-            f -> f.withMarshaller(DeleteScalingGroupRequest::getForceDelete, (req, v) -> {
-                req.setForceDelete(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingGroupRequest::getForceDelete,
+                DeleteScalingGroupRequest::setForceDelete));
 
         // response
 
@@ -859,9 +815,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<DeleteScalingInstanceRequest, DeleteScalingInstanceResponse> deleteScalingInstance =
-        genFordeleteScalingInstance();
+        genForDeleteScalingInstance();
 
-    private static HttpRequestDef<DeleteScalingInstanceRequest, DeleteScalingInstanceResponse> genFordeleteScalingInstance() {
+    private static HttpRequestDef<DeleteScalingInstanceRequest, DeleteScalingInstanceResponse> genForDeleteScalingInstance() {
         // basic
         HttpRequestDef.Builder<DeleteScalingInstanceRequest, DeleteScalingInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteScalingInstanceRequest.class, DeleteScalingInstanceResponse.class)
@@ -874,16 +830,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScalingInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingInstanceRequest::getInstanceId,
+                DeleteScalingInstanceRequest::setInstanceId));
         builder.<DeleteScalingInstanceRequest.InstanceDeleteEnum>withRequestField("instance_delete",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteScalingInstanceRequest.InstanceDeleteEnum.class),
-            f -> f.withMarshaller(DeleteScalingInstanceRequest::getInstanceDelete, (req, v) -> {
-                req.setInstanceDelete(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingInstanceRequest::getInstanceDelete,
+                DeleteScalingInstanceRequest::setInstanceDelete));
 
         // response
 
@@ -891,9 +845,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<DeleteScalingNotificationRequest, DeleteScalingNotificationResponse> deleteScalingNotification =
-        genFordeleteScalingNotification();
+        genForDeleteScalingNotification();
 
-    private static HttpRequestDef<DeleteScalingNotificationRequest, DeleteScalingNotificationResponse> genFordeleteScalingNotification() {
+    private static HttpRequestDef<DeleteScalingNotificationRequest, DeleteScalingNotificationResponse> genForDeleteScalingNotification() {
         // basic
         HttpRequestDef.Builder<DeleteScalingNotificationRequest, DeleteScalingNotificationResponse> builder =
             HttpRequestDef
@@ -909,16 +863,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScalingNotificationRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingNotificationRequest::getScalingGroupId,
+                DeleteScalingNotificationRequest::setScalingGroupId));
         builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScalingNotificationRequest::getTopicUrn, (req, v) -> {
-                req.setTopicUrn(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingNotificationRequest::getTopicUrn,
+                DeleteScalingNotificationRequest::setTopicUrn));
 
         // response
 
@@ -926,9 +878,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse> deleteScalingPolicy =
-        genFordeleteScalingPolicy();
+        genForDeleteScalingPolicy();
 
-    private static HttpRequestDef<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse> genFordeleteScalingPolicy() {
+    private static HttpRequestDef<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse> genForDeleteScalingPolicy() {
         // basic
         HttpRequestDef.Builder<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteScalingPolicyRequest.class, DeleteScalingPolicyResponse.class)
@@ -941,9 +893,8 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScalingPolicyRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingPolicyRequest::getScalingPolicyId,
+                DeleteScalingPolicyRequest::setScalingPolicyId));
 
         // response
 
@@ -951,9 +902,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse> deleteScalingTagInfo =
-        genFordeleteScalingTagInfo();
+        genForDeleteScalingTagInfo();
 
-    private static HttpRequestDef<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse> genFordeleteScalingTagInfo() {
+    private static HttpRequestDef<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse> genForDeleteScalingTagInfo() {
         // basic
         HttpRequestDef.Builder<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DeleteScalingTagInfoRequest.class, DeleteScalingTagInfoResponse.class)
@@ -966,23 +917,19 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteScalingTagInfoRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(DeleteScalingTagInfoRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingTagInfoRequest::getResourceType,
+                DeleteScalingTagInfoRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScalingTagInfoRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingTagInfoRequest::getResourceId,
+                DeleteScalingTagInfoRequest::setResourceId));
         builder.<DeleteTagsOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteTagsOption.class),
-            f -> f.withMarshaller(DeleteScalingTagInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteScalingTagInfoRequest::getBody, DeleteScalingTagInfoRequest::setBody));
 
         // response
 
@@ -990,9 +937,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse> executeScalingPolicy =
-        genForexecuteScalingPolicy();
+        genForExecuteScalingPolicy();
 
-    private static HttpRequestDef<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse> genForexecuteScalingPolicy() {
+    private static HttpRequestDef<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse> genForExecuteScalingPolicy() {
         // basic
         HttpRequestDef.Builder<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ExecuteScalingPolicyRequest.class, ExecuteScalingPolicyResponse.class)
@@ -1005,16 +952,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteScalingPolicyRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(ExecuteScalingPolicyRequest::getScalingPolicyId,
+                ExecuteScalingPolicyRequest::setScalingPolicyId));
         builder.<ExecuteScalingPolicyOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExecuteScalingPolicyOption.class),
-            f -> f.withMarshaller(ExecuteScalingPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteScalingPolicyRequest::getBody, ExecuteScalingPolicyRequest::setBody));
 
         // response
 
@@ -1022,9 +966,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse> listGroupScheduledTasks =
-        genForlistGroupScheduledTasks();
+        genForListGroupScheduledTasks();
 
-    private static HttpRequestDef<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse> genForlistGroupScheduledTasks() {
+    private static HttpRequestDef<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse> genForListGroupScheduledTasks() {
         // basic
         HttpRequestDef.Builder<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListGroupScheduledTasksRequest.class, ListGroupScheduledTasksResponse.class)
@@ -1037,23 +981,19 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGroupScheduledTasksRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ListGroupScheduledTasksRequest::getScalingGroupId,
+                ListGroupScheduledTasksRequest::setScalingGroupId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGroupScheduledTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListGroupScheduledTasksRequest::getLimit, ListGroupScheduledTasksRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGroupScheduledTasksRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListGroupScheduledTasksRequest::getMarker,
+                ListGroupScheduledTasksRequest::setMarker));
 
         // response
 
@@ -1061,9 +1001,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListHookInstancesRequest, ListHookInstancesResponse> listHookInstances =
-        genForlistHookInstances();
+        genForListHookInstances();
 
-    private static HttpRequestDef<ListHookInstancesRequest, ListHookInstancesResponse> genForlistHookInstances() {
+    private static HttpRequestDef<ListHookInstancesRequest, ListHookInstancesResponse> genForListHookInstances() {
         // basic
         HttpRequestDef.Builder<ListHookInstancesRequest, ListHookInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHookInstancesRequest.class, ListHookInstancesResponse.class)
@@ -1076,16 +1016,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHookInstancesRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ListHookInstancesRequest::getScalingGroupId,
+                ListHookInstancesRequest::setScalingGroupId));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHookInstancesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListHookInstancesRequest::getInstanceId, ListHookInstancesRequest::setInstanceId));
 
         // response
 
@@ -1093,9 +1030,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListLifeCycleHooksRequest, ListLifeCycleHooksResponse> listLifeCycleHooks =
-        genForlistLifeCycleHooks();
+        genForListLifeCycleHooks();
 
-    private static HttpRequestDef<ListLifeCycleHooksRequest, ListLifeCycleHooksResponse> genForlistLifeCycleHooks() {
+    private static HttpRequestDef<ListLifeCycleHooksRequest, ListLifeCycleHooksResponse> genForListLifeCycleHooks() {
         // basic
         HttpRequestDef.Builder<ListLifeCycleHooksRequest, ListLifeCycleHooksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLifeCycleHooksRequest.class, ListLifeCycleHooksResponse.class)
@@ -1108,9 +1045,8 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLifeCycleHooksRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ListLifeCycleHooksRequest::getScalingGroupId,
+                ListLifeCycleHooksRequest::setScalingGroupId));
 
         // response
 
@@ -1118,9 +1054,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstances =
-        genForlistResourceInstances();
+        genForListResourceInstances();
 
-    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForlistResourceInstances() {
+    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForListResourceInstances() {
         // basic
         HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
@@ -1133,16 +1069,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceInstancesRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType,
+                ListResourceInstancesRequest::setResourceType));
         builder.<QueryTagsOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryTagsOption.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, ListResourceInstancesRequest::setBody));
 
         // response
 
@@ -1150,9 +1083,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingActivityLogsRequest, ListScalingActivityLogsResponse> listScalingActivityLogs =
-        genForlistScalingActivityLogs();
+        genForListScalingActivityLogs();
 
-    private static HttpRequestDef<ListScalingActivityLogsRequest, ListScalingActivityLogsResponse> genForlistScalingActivityLogs() {
+    private static HttpRequestDef<ListScalingActivityLogsRequest, ListScalingActivityLogsResponse> genForListScalingActivityLogs() {
         // basic
         HttpRequestDef.Builder<ListScalingActivityLogsRequest, ListScalingActivityLogsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListScalingActivityLogsRequest.class, ListScalingActivityLogsResponse.class)
@@ -1165,37 +1098,31 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingActivityLogsRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityLogsRequest::getScalingGroupId,
+                ListScalingActivityLogsRequest::setScalingGroupId));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingActivityLogsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityLogsRequest::getStartTime,
+                ListScalingActivityLogsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingActivityLogsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityLogsRequest::getEndTime,
+                ListScalingActivityLogsRequest::setEndTime));
         builder.<Integer>withRequestField("start_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingActivityLogsRequest::getStartNumber, (req, v) -> {
-                req.setStartNumber(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityLogsRequest::getStartNumber,
+                ListScalingActivityLogsRequest::setStartNumber));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingActivityLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityLogsRequest::getLimit, ListScalingActivityLogsRequest::setLimit));
 
         // response
 
@@ -1203,9 +1130,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse> listScalingActivityV2Logs =
-        genForlistScalingActivityV2Logs();
+        genForListScalingActivityV2Logs();
 
-    private static HttpRequestDef<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse> genForlistScalingActivityV2Logs() {
+    private static HttpRequestDef<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse> genForListScalingActivityV2Logs() {
         // basic
         HttpRequestDef.Builder<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse> builder =
             HttpRequestDef
@@ -1221,58 +1148,50 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getScalingGroupId,
+                ListScalingActivityV2LogsRequest::setScalingGroupId));
         builder.<String>withRequestField("log_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getLogId, (req, v) -> {
-                req.setLogId(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getLogId,
+                ListScalingActivityV2LogsRequest::setLogId));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getStartTime,
+                ListScalingActivityV2LogsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getEndTime,
+                ListScalingActivityV2LogsRequest::setEndTime));
         builder.<Integer>withRequestField("start_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getStartNumber, (req, v) -> {
-                req.setStartNumber(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getStartNumber,
+                ListScalingActivityV2LogsRequest::setStartNumber));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getLimit,
+                ListScalingActivityV2LogsRequest::setLimit));
         builder.<ListScalingActivityV2LogsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListScalingActivityV2LogsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getType,
+                ListScalingActivityV2LogsRequest::setType));
         builder.<ListScalingActivityV2LogsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListScalingActivityV2LogsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getStatus,
+                ListScalingActivityV2LogsRequest::setStatus));
 
         // response
 
@@ -1280,9 +1199,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingConfigsRequest, ListScalingConfigsResponse> listScalingConfigs =
-        genForlistScalingConfigs();
+        genForListScalingConfigs();
 
-    private static HttpRequestDef<ListScalingConfigsRequest, ListScalingConfigsResponse> genForlistScalingConfigs() {
+    private static HttpRequestDef<ListScalingConfigsRequest, ListScalingConfigsResponse> genForListScalingConfigs() {
         // basic
         HttpRequestDef.Builder<ListScalingConfigsRequest, ListScalingConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingConfigsRequest.class, ListScalingConfigsResponse.class)
@@ -1295,30 +1214,24 @@ public class AsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingConfigsRequest::getScalingConfigurationName, (req, v) -> {
-                req.setScalingConfigurationName(v);
-            }));
+            f -> f.withMarshaller(ListScalingConfigsRequest::getScalingConfigurationName,
+                ListScalingConfigsRequest::setScalingConfigurationName));
         builder.<String>withRequestField("image_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingConfigsRequest::getImageId, (req, v) -> {
-                req.setImageId(v);
-            }));
+            f -> f.withMarshaller(ListScalingConfigsRequest::getImageId, ListScalingConfigsRequest::setImageId));
         builder.<Integer>withRequestField("start_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingConfigsRequest::getStartNumber, (req, v) -> {
-                req.setStartNumber(v);
-            }));
+            f -> f.withMarshaller(ListScalingConfigsRequest::getStartNumber,
+                ListScalingConfigsRequest::setStartNumber));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingConfigsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListScalingConfigsRequest::getLimit, ListScalingConfigsRequest::setLimit));
 
         // response
 
@@ -1326,9 +1239,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingGroupsRequest, ListScalingGroupsResponse> listScalingGroups =
-        genForlistScalingGroups();
+        genForListScalingGroups();
 
-    private static HttpRequestDef<ListScalingGroupsRequest, ListScalingGroupsResponse> genForlistScalingGroups() {
+    private static HttpRequestDef<ListScalingGroupsRequest, ListScalingGroupsResponse> genForListScalingGroups() {
         // basic
         HttpRequestDef.Builder<ListScalingGroupsRequest, ListScalingGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingGroupsRequest.class, ListScalingGroupsResponse.class)
@@ -1341,44 +1254,36 @@ public class AsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingGroupsRequest::getScalingGroupName, (req, v) -> {
-                req.setScalingGroupName(v);
-            }));
+            f -> f.withMarshaller(ListScalingGroupsRequest::getScalingGroupName,
+                ListScalingGroupsRequest::setScalingGroupName));
         builder.<String>withRequestField("scaling_configuration_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingGroupsRequest::getScalingConfigurationId, (req, v) -> {
-                req.setScalingConfigurationId(v);
-            }));
+            f -> f.withMarshaller(ListScalingGroupsRequest::getScalingConfigurationId,
+                ListScalingGroupsRequest::setScalingConfigurationId));
         builder.<ListScalingGroupsRequest.ScalingGroupStatusEnum>withRequestField("scaling_group_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListScalingGroupsRequest.ScalingGroupStatusEnum.class),
-            f -> f.withMarshaller(ListScalingGroupsRequest::getScalingGroupStatus, (req, v) -> {
-                req.setScalingGroupStatus(v);
-            }));
+            f -> f.withMarshaller(ListScalingGroupsRequest::getScalingGroupStatus,
+                ListScalingGroupsRequest::setScalingGroupStatus));
         builder.<Integer>withRequestField("start_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingGroupsRequest::getStartNumber, (req, v) -> {
-                req.setStartNumber(v);
-            }));
+            f -> f.withMarshaller(ListScalingGroupsRequest::getStartNumber, ListScalingGroupsRequest::setStartNumber));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListScalingGroupsRequest::getLimit, ListScalingGroupsRequest::setLimit));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingGroupsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListScalingGroupsRequest::getEnterpriseProjectId,
+                ListScalingGroupsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1386,9 +1291,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingInstancesRequest, ListScalingInstancesResponse> listScalingInstances =
-        genForlistScalingInstances();
+        genForListScalingInstances();
 
-    private static HttpRequestDef<ListScalingInstancesRequest, ListScalingInstancesResponse> genForlistScalingInstances() {
+    private static HttpRequestDef<ListScalingInstancesRequest, ListScalingInstancesResponse> genForListScalingInstances() {
         // basic
         HttpRequestDef.Builder<ListScalingInstancesRequest, ListScalingInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListScalingInstancesRequest.class, ListScalingInstancesResponse.class)
@@ -1401,44 +1306,37 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingInstancesRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ListScalingInstancesRequest::getScalingGroupId,
+                ListScalingInstancesRequest::setScalingGroupId));
         builder.<ListScalingInstancesRequest.LifeCycleStateEnum>withRequestField("life_cycle_state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListScalingInstancesRequest.LifeCycleStateEnum.class),
-            f -> f.withMarshaller(ListScalingInstancesRequest::getLifeCycleState, (req, v) -> {
-                req.setLifeCycleState(v);
-            }));
+            f -> f.withMarshaller(ListScalingInstancesRequest::getLifeCycleState,
+                ListScalingInstancesRequest::setLifeCycleState));
         builder.<ListScalingInstancesRequest.HealthStatusEnum>withRequestField("health_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListScalingInstancesRequest.HealthStatusEnum.class),
-            f -> f.withMarshaller(ListScalingInstancesRequest::getHealthStatus, (req, v) -> {
-                req.setHealthStatus(v);
-            }));
+            f -> f.withMarshaller(ListScalingInstancesRequest::getHealthStatus,
+                ListScalingInstancesRequest::setHealthStatus));
         builder.<ListScalingInstancesRequest.ProtectFromScalingDownEnum>withRequestField("protect_from_scaling_down",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListScalingInstancesRequest.ProtectFromScalingDownEnum.class),
-            f -> f.withMarshaller(ListScalingInstancesRequest::getProtectFromScalingDown, (req, v) -> {
-                req.setProtectFromScalingDown(v);
-            }));
+            f -> f.withMarshaller(ListScalingInstancesRequest::getProtectFromScalingDown,
+                ListScalingInstancesRequest::setProtectFromScalingDown));
         builder.<Integer>withRequestField("start_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingInstancesRequest::getStartNumber, (req, v) -> {
-                req.setStartNumber(v);
-            }));
+            f -> f.withMarshaller(ListScalingInstancesRequest::getStartNumber,
+                ListScalingInstancesRequest::setStartNumber));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListScalingInstancesRequest::getLimit, ListScalingInstancesRequest::setLimit));
 
         // response
 
@@ -1446,9 +1344,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingNotificationsRequest, ListScalingNotificationsResponse> listScalingNotifications =
-        genForlistScalingNotifications();
+        genForListScalingNotifications();
 
-    private static HttpRequestDef<ListScalingNotificationsRequest, ListScalingNotificationsResponse> genForlistScalingNotifications() {
+    private static HttpRequestDef<ListScalingNotificationsRequest, ListScalingNotificationsResponse> genForListScalingNotifications() {
         // basic
         HttpRequestDef.Builder<ListScalingNotificationsRequest, ListScalingNotificationsResponse> builder =
             HttpRequestDef
@@ -1462,9 +1360,8 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingNotificationsRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ListScalingNotificationsRequest::getScalingGroupId,
+                ListScalingNotificationsRequest::setScalingGroupId));
 
         // response
 
@@ -1472,9 +1369,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingPoliciesRequest, ListScalingPoliciesResponse> listScalingPolicies =
-        genForlistScalingPolicies();
+        genForListScalingPolicies();
 
-    private static HttpRequestDef<ListScalingPoliciesRequest, ListScalingPoliciesResponse> genForlistScalingPolicies() {
+    private static HttpRequestDef<ListScalingPoliciesRequest, ListScalingPoliciesResponse> genForListScalingPolicies() {
         // basic
         HttpRequestDef.Builder<ListScalingPoliciesRequest, ListScalingPoliciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingPoliciesRequest.class, ListScalingPoliciesResponse.class)
@@ -1487,44 +1384,37 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingPoliciesRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ListScalingPoliciesRequest::getScalingGroupId,
+                ListScalingPoliciesRequest::setScalingGroupId));
         builder.<String>withRequestField("scaling_policy_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingPoliciesRequest::getScalingPolicyName, (req, v) -> {
-                req.setScalingPolicyName(v);
-            }));
+            f -> f.withMarshaller(ListScalingPoliciesRequest::getScalingPolicyName,
+                ListScalingPoliciesRequest::setScalingPolicyName));
         builder.<ListScalingPoliciesRequest.ScalingPolicyTypeEnum>withRequestField("scaling_policy_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListScalingPoliciesRequest.ScalingPolicyTypeEnum.class),
-            f -> f.withMarshaller(ListScalingPoliciesRequest::getScalingPolicyType, (req, v) -> {
-                req.setScalingPolicyType(v);
-            }));
+            f -> f.withMarshaller(ListScalingPoliciesRequest::getScalingPolicyType,
+                ListScalingPoliciesRequest::setScalingPolicyType));
         builder.<String>withRequestField("scaling_policy_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingPoliciesRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(ListScalingPoliciesRequest::getScalingPolicyId,
+                ListScalingPoliciesRequest::setScalingPolicyId));
         builder.<Integer>withRequestField("start_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingPoliciesRequest::getStartNumber, (req, v) -> {
-                req.setStartNumber(v);
-            }));
+            f -> f.withMarshaller(ListScalingPoliciesRequest::getStartNumber,
+                ListScalingPoliciesRequest::setStartNumber));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingPoliciesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListScalingPoliciesRequest::getLimit, ListScalingPoliciesRequest::setLimit));
 
         // response
 
@@ -1532,9 +1422,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingPolicyExecuteLogsRequest, ListScalingPolicyExecuteLogsResponse> listScalingPolicyExecuteLogs =
-        genForlistScalingPolicyExecuteLogs();
+        genForListScalingPolicyExecuteLogs();
 
-    private static HttpRequestDef<ListScalingPolicyExecuteLogsRequest, ListScalingPolicyExecuteLogsResponse> genForlistScalingPolicyExecuteLogs() {
+    private static HttpRequestDef<ListScalingPolicyExecuteLogsRequest, ListScalingPolicyExecuteLogsResponse> genForListScalingPolicyExecuteLogs() {
         // basic
         HttpRequestDef.Builder<ListScalingPolicyExecuteLogsRequest, ListScalingPolicyExecuteLogsResponse> builder =
             HttpRequestDef
@@ -1550,65 +1440,56 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getScalingPolicyId,
+                ListScalingPolicyExecuteLogsRequest::setScalingPolicyId));
         builder.<String>withRequestField("log_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getLogId, (req, v) -> {
-                req.setLogId(v);
-            }));
+            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getLogId,
+                ListScalingPolicyExecuteLogsRequest::setLogId));
         builder.<ListScalingPolicyExecuteLogsRequest.ScalingResourceTypeEnum>withRequestField("scaling_resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListScalingPolicyExecuteLogsRequest.ScalingResourceTypeEnum.class),
-            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getScalingResourceType, (req, v) -> {
-                req.setScalingResourceType(v);
-            }));
+            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getScalingResourceType,
+                ListScalingPolicyExecuteLogsRequest::setScalingResourceType));
         builder.<String>withRequestField("scaling_resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getScalingResourceId, (req, v) -> {
-                req.setScalingResourceId(v);
-            }));
+            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getScalingResourceId,
+                ListScalingPolicyExecuteLogsRequest::setScalingResourceId));
         builder.<ListScalingPolicyExecuteLogsRequest.ExecuteTypeEnum>withRequestField("execute_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListScalingPolicyExecuteLogsRequest.ExecuteTypeEnum.class),
-            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getExecuteType, (req, v) -> {
-                req.setExecuteType(v);
-            }));
+            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getExecuteType,
+                ListScalingPolicyExecuteLogsRequest::setExecuteType));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getStartTime,
+                ListScalingPolicyExecuteLogsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getEndTime,
+                ListScalingPolicyExecuteLogsRequest::setEndTime));
         builder.<Integer>withRequestField("start_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getStartNumber, (req, v) -> {
-                req.setStartNumber(v);
-            }));
+            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getStartNumber,
+                ListScalingPolicyExecuteLogsRequest::setStartNumber));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getLimit,
+                ListScalingPolicyExecuteLogsRequest::setLimit));
 
         // response
 
@@ -1616,9 +1497,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingTagInfosByResourceIdRequest, ListScalingTagInfosByResourceIdResponse> listScalingTagInfosByResourceId =
-        genForlistScalingTagInfosByResourceId();
+        genForListScalingTagInfosByResourceId();
 
-    private static HttpRequestDef<ListScalingTagInfosByResourceIdRequest, ListScalingTagInfosByResourceIdResponse> genForlistScalingTagInfosByResourceId() {
+    private static HttpRequestDef<ListScalingTagInfosByResourceIdRequest, ListScalingTagInfosByResourceIdResponse> genForListScalingTagInfosByResourceId() {
         // basic
         HttpRequestDef.Builder<ListScalingTagInfosByResourceIdRequest, ListScalingTagInfosByResourceIdResponse> builder =
             HttpRequestDef
@@ -1634,16 +1515,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListScalingTagInfosByResourceIdRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListScalingTagInfosByResourceIdRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListScalingTagInfosByResourceIdRequest::getResourceType,
+                ListScalingTagInfosByResourceIdRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingTagInfosByResourceIdRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListScalingTagInfosByResourceIdRequest::getResourceId,
+                ListScalingTagInfosByResourceIdRequest::setResourceId));
 
         // response
 
@@ -1651,9 +1530,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingTagInfosByTenantIdRequest, ListScalingTagInfosByTenantIdResponse> listScalingTagInfosByTenantId =
-        genForlistScalingTagInfosByTenantId();
+        genForListScalingTagInfosByTenantId();
 
-    private static HttpRequestDef<ListScalingTagInfosByTenantIdRequest, ListScalingTagInfosByTenantIdResponse> genForlistScalingTagInfosByTenantId() {
+    private static HttpRequestDef<ListScalingTagInfosByTenantIdRequest, ListScalingTagInfosByTenantIdResponse> genForListScalingTagInfosByTenantId() {
         // basic
         HttpRequestDef.Builder<ListScalingTagInfosByTenantIdRequest, ListScalingTagInfosByTenantIdResponse> builder =
             HttpRequestDef
@@ -1669,9 +1548,8 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListScalingTagInfosByTenantIdRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListScalingTagInfosByTenantIdRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListScalingTagInfosByTenantIdRequest::getResourceType,
+                ListScalingTagInfosByTenantIdRequest::setResourceType));
 
         // response
 
@@ -1679,9 +1557,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<PauseScalingGroupRequest, PauseScalingGroupResponse> pauseScalingGroup =
-        genForpauseScalingGroup();
+        genForPauseScalingGroup();
 
-    private static HttpRequestDef<PauseScalingGroupRequest, PauseScalingGroupResponse> genForpauseScalingGroup() {
+    private static HttpRequestDef<PauseScalingGroupRequest, PauseScalingGroupResponse> genForPauseScalingGroup() {
         // basic
         HttpRequestDef.Builder<PauseScalingGroupRequest, PauseScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PauseScalingGroupRequest.class, PauseScalingGroupResponse.class)
@@ -1694,16 +1572,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PauseScalingGroupRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(PauseScalingGroupRequest::getScalingGroupId,
+                PauseScalingGroupRequest::setScalingGroupId));
         builder.<PauseScalingGroupOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PauseScalingGroupOption.class),
-            f -> f.withMarshaller(PauseScalingGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PauseScalingGroupRequest::getBody, PauseScalingGroupRequest::setBody));
 
         // response
 
@@ -1711,9 +1586,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<PauseScalingPolicyRequest, PauseScalingPolicyResponse> pauseScalingPolicy =
-        genForpauseScalingPolicy();
+        genForPauseScalingPolicy();
 
-    private static HttpRequestDef<PauseScalingPolicyRequest, PauseScalingPolicyResponse> genForpauseScalingPolicy() {
+    private static HttpRequestDef<PauseScalingPolicyRequest, PauseScalingPolicyResponse> genForPauseScalingPolicy() {
         // basic
         HttpRequestDef.Builder<PauseScalingPolicyRequest, PauseScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PauseScalingPolicyRequest.class, PauseScalingPolicyResponse.class)
@@ -1726,16 +1601,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PauseScalingPolicyRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(PauseScalingPolicyRequest::getScalingPolicyId,
+                PauseScalingPolicyRequest::setScalingPolicyId));
         builder.<PauseScalingPolicyOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PauseScalingPolicyOption.class),
-            f -> f.withMarshaller(PauseScalingPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PauseScalingPolicyRequest::getBody, PauseScalingPolicyRequest::setBody));
 
         // response
 
@@ -1743,9 +1615,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ResumeScalingGroupRequest, ResumeScalingGroupResponse> resumeScalingGroup =
-        genForresumeScalingGroup();
+        genForResumeScalingGroup();
 
-    private static HttpRequestDef<ResumeScalingGroupRequest, ResumeScalingGroupResponse> genForresumeScalingGroup() {
+    private static HttpRequestDef<ResumeScalingGroupRequest, ResumeScalingGroupResponse> genForResumeScalingGroup() {
         // basic
         HttpRequestDef.Builder<ResumeScalingGroupRequest, ResumeScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResumeScalingGroupRequest.class, ResumeScalingGroupResponse.class)
@@ -1758,16 +1630,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResumeScalingGroupRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ResumeScalingGroupRequest::getScalingGroupId,
+                ResumeScalingGroupRequest::setScalingGroupId));
         builder.<ResumeScalingGroupOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResumeScalingGroupOption.class),
-            f -> f.withMarshaller(ResumeScalingGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResumeScalingGroupRequest::getBody, ResumeScalingGroupRequest::setBody));
 
         // response
 
@@ -1775,9 +1644,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse> resumeScalingPolicy =
-        genForresumeScalingPolicy();
+        genForResumeScalingPolicy();
 
-    private static HttpRequestDef<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse> genForresumeScalingPolicy() {
+    private static HttpRequestDef<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse> genForResumeScalingPolicy() {
         // basic
         HttpRequestDef.Builder<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResumeScalingPolicyRequest.class, ResumeScalingPolicyResponse.class)
@@ -1790,16 +1659,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResumeScalingPolicyRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(ResumeScalingPolicyRequest::getScalingPolicyId,
+                ResumeScalingPolicyRequest::setScalingPolicyId));
         builder.<ResumeScalingPolicyOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResumeScalingPolicyOption.class),
-            f -> f.withMarshaller(ResumeScalingPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResumeScalingPolicyRequest::getBody, ResumeScalingPolicyRequest::setBody));
 
         // response
 
@@ -1807,9 +1673,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ShowLifeCycleHookRequest, ShowLifeCycleHookResponse> showLifeCycleHook =
-        genForshowLifeCycleHook();
+        genForShowLifeCycleHook();
 
-    private static HttpRequestDef<ShowLifeCycleHookRequest, ShowLifeCycleHookResponse> genForshowLifeCycleHook() {
+    private static HttpRequestDef<ShowLifeCycleHookRequest, ShowLifeCycleHookResponse> genForShowLifeCycleHook() {
         // basic
         HttpRequestDef.Builder<ShowLifeCycleHookRequest, ShowLifeCycleHookResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLifeCycleHookRequest.class, ShowLifeCycleHookResponse.class)
@@ -1823,16 +1689,14 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLifeCycleHookRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowLifeCycleHookRequest::getScalingGroupId,
+                ShowLifeCycleHookRequest::setScalingGroupId));
         builder.<String>withRequestField("lifecycle_hook_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLifeCycleHookRequest::getLifecycleHookName, (req, v) -> {
-                req.setLifecycleHookName(v);
-            }));
+            f -> f.withMarshaller(ShowLifeCycleHookRequest::getLifecycleHookName,
+                ShowLifeCycleHookRequest::setLifecycleHookName));
 
         // response
 
@@ -1840,9 +1704,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ShowPolicyAndInstanceQuotaRequest, ShowPolicyAndInstanceQuotaResponse> showPolicyAndInstanceQuota =
-        genForshowPolicyAndInstanceQuota();
+        genForShowPolicyAndInstanceQuota();
 
-    private static HttpRequestDef<ShowPolicyAndInstanceQuotaRequest, ShowPolicyAndInstanceQuotaResponse> genForshowPolicyAndInstanceQuota() {
+    private static HttpRequestDef<ShowPolicyAndInstanceQuotaRequest, ShowPolicyAndInstanceQuotaResponse> genForShowPolicyAndInstanceQuota() {
         // basic
         HttpRequestDef.Builder<ShowPolicyAndInstanceQuotaRequest, ShowPolicyAndInstanceQuotaResponse> builder =
             HttpRequestDef
@@ -1858,9 +1722,8 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPolicyAndInstanceQuotaRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowPolicyAndInstanceQuotaRequest::getScalingGroupId,
+                ShowPolicyAndInstanceQuotaRequest::setScalingGroupId));
 
         // response
 
@@ -1868,9 +1731,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ShowResourceQuotaRequest, ShowResourceQuotaResponse> showResourceQuota =
-        genForshowResourceQuota();
+        genForShowResourceQuota();
 
-    private static HttpRequestDef<ShowResourceQuotaRequest, ShowResourceQuotaResponse> genForshowResourceQuota() {
+    private static HttpRequestDef<ShowResourceQuotaRequest, ShowResourceQuotaResponse> genForShowResourceQuota() {
         // basic
         HttpRequestDef.Builder<ShowResourceQuotaRequest, ShowResourceQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceQuotaRequest.class, ShowResourceQuotaResponse.class)
@@ -1886,9 +1749,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ShowScalingConfigRequest, ShowScalingConfigResponse> showScalingConfig =
-        genForshowScalingConfig();
+        genForShowScalingConfig();
 
-    private static HttpRequestDef<ShowScalingConfigRequest, ShowScalingConfigResponse> genForshowScalingConfig() {
+    private static HttpRequestDef<ShowScalingConfigRequest, ShowScalingConfigResponse> genForShowScalingConfig() {
         // basic
         HttpRequestDef.Builder<ShowScalingConfigRequest, ShowScalingConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScalingConfigRequest.class, ShowScalingConfigResponse.class)
@@ -1901,9 +1764,8 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScalingConfigRequest::getScalingConfigurationId, (req, v) -> {
-                req.setScalingConfigurationId(v);
-            }));
+            f -> f.withMarshaller(ShowScalingConfigRequest::getScalingConfigurationId,
+                ShowScalingConfigRequest::setScalingConfigurationId));
 
         // response
 
@@ -1911,9 +1773,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ShowScalingGroupRequest, ShowScalingGroupResponse> showScalingGroup =
-        genForshowScalingGroup();
+        genForShowScalingGroup();
 
-    private static HttpRequestDef<ShowScalingGroupRequest, ShowScalingGroupResponse> genForshowScalingGroup() {
+    private static HttpRequestDef<ShowScalingGroupRequest, ShowScalingGroupResponse> genForShowScalingGroup() {
         // basic
         HttpRequestDef.Builder<ShowScalingGroupRequest, ShowScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScalingGroupRequest.class, ShowScalingGroupResponse.class)
@@ -1926,9 +1788,8 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScalingGroupRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowScalingGroupRequest::getScalingGroupId,
+                ShowScalingGroupRequest::setScalingGroupId));
 
         // response
 
@@ -1936,9 +1797,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ShowScalingPolicyRequest, ShowScalingPolicyResponse> showScalingPolicy =
-        genForshowScalingPolicy();
+        genForShowScalingPolicy();
 
-    private static HttpRequestDef<ShowScalingPolicyRequest, ShowScalingPolicyResponse> genForshowScalingPolicy() {
+    private static HttpRequestDef<ShowScalingPolicyRequest, ShowScalingPolicyResponse> genForShowScalingPolicy() {
         // basic
         HttpRequestDef.Builder<ShowScalingPolicyRequest, ShowScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScalingPolicyRequest.class, ShowScalingPolicyResponse.class)
@@ -1951,9 +1812,8 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScalingPolicyRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(ShowScalingPolicyRequest::getScalingPolicyId,
+                ShowScalingPolicyRequest::setScalingPolicyId));
 
         // response
 
@@ -1961,9 +1821,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse> updateGroupScheduledTask =
-        genForupdateGroupScheduledTask();
+        genForUpdateGroupScheduledTask();
 
-    private static HttpRequestDef<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse> genForupdateGroupScheduledTask() {
+    private static HttpRequestDef<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse> genForUpdateGroupScheduledTask() {
         // basic
         HttpRequestDef.Builder<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse> builder =
             HttpRequestDef
@@ -1978,23 +1838,19 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGroupScheduledTaskRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateGroupScheduledTaskRequest::getScalingGroupId,
+                UpdateGroupScheduledTaskRequest::setScalingGroupId));
         builder.<String>withRequestField("scheduled_task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGroupScheduledTaskRequest::getScheduledTaskId, (req, v) -> {
-                req.setScheduledTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateGroupScheduledTaskRequest::getScheduledTaskId,
+                UpdateGroupScheduledTaskRequest::setScheduledTaskId));
         builder.<UpdateScheduledTaskOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateScheduledTaskOption.class),
-            f -> f.withMarshaller(UpdateGroupScheduledTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGroupScheduledTaskRequest::getBody, UpdateGroupScheduledTaskRequest::setBody));
 
         // response
 
@@ -2002,9 +1858,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<UpdateLifeCycleHookRequest, UpdateLifeCycleHookResponse> updateLifeCycleHook =
-        genForupdateLifeCycleHook();
+        genForUpdateLifeCycleHook();
 
-    private static HttpRequestDef<UpdateLifeCycleHookRequest, UpdateLifeCycleHookResponse> genForupdateLifeCycleHook() {
+    private static HttpRequestDef<UpdateLifeCycleHookRequest, UpdateLifeCycleHookResponse> genForUpdateLifeCycleHook() {
         // basic
         HttpRequestDef.Builder<UpdateLifeCycleHookRequest, UpdateLifeCycleHookResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLifeCycleHookRequest.class, UpdateLifeCycleHookResponse.class)
@@ -2018,23 +1874,19 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLifeCycleHookRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateLifeCycleHookRequest::getScalingGroupId,
+                UpdateLifeCycleHookRequest::setScalingGroupId));
         builder.<String>withRequestField("lifecycle_hook_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLifeCycleHookRequest::getLifecycleHookName, (req, v) -> {
-                req.setLifecycleHookName(v);
-            }));
+            f -> f.withMarshaller(UpdateLifeCycleHookRequest::getLifecycleHookName,
+                UpdateLifeCycleHookRequest::setLifecycleHookName));
         builder.<UpdateLifeCycleHookOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLifeCycleHookOption.class),
-            f -> f.withMarshaller(UpdateLifeCycleHookRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLifeCycleHookRequest::getBody, UpdateLifeCycleHookRequest::setBody));
 
         // response
 
@@ -2042,9 +1894,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<UpdateScalingGroupRequest, UpdateScalingGroupResponse> updateScalingGroup =
-        genForupdateScalingGroup();
+        genForUpdateScalingGroup();
 
-    private static HttpRequestDef<UpdateScalingGroupRequest, UpdateScalingGroupResponse> genForupdateScalingGroup() {
+    private static HttpRequestDef<UpdateScalingGroupRequest, UpdateScalingGroupResponse> genForUpdateScalingGroup() {
         // basic
         HttpRequestDef.Builder<UpdateScalingGroupRequest, UpdateScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateScalingGroupRequest.class, UpdateScalingGroupResponse.class)
@@ -2057,16 +1909,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateScalingGroupRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateScalingGroupRequest::getScalingGroupId,
+                UpdateScalingGroupRequest::setScalingGroupId));
         builder.<UpdateScalingGroupOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateScalingGroupOption.class),
-            f -> f.withMarshaller(UpdateScalingGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateScalingGroupRequest::getBody, UpdateScalingGroupRequest::setBody));
 
         // response
 
@@ -2074,9 +1923,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse> updateScalingPolicy =
-        genForupdateScalingPolicy();
+        genForUpdateScalingPolicy();
 
-    private static HttpRequestDef<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse> genForupdateScalingPolicy() {
+    private static HttpRequestDef<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse> genForUpdateScalingPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateScalingPolicyRequest.class, UpdateScalingPolicyResponse.class)
@@ -2089,16 +1938,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateScalingPolicyRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(UpdateScalingPolicyRequest::getScalingPolicyId,
+                UpdateScalingPolicyRequest::setScalingPolicyId));
         builder.<UpdateScalingPolicyOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateScalingPolicyOption.class),
-            f -> f.withMarshaller(UpdateScalingPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateScalingPolicyRequest::getBody, UpdateScalingPolicyRequest::setBody));
 
         // response
 
@@ -2106,9 +1952,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForlistApiVersions();
+        genForListApiVersions();
 
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
@@ -2124,9 +1970,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
-        genForshowApiVersion();
+        genForShowApiVersion();
 
-    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
+    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForShowApiVersion() {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
@@ -2139,9 +1985,7 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowApiVersionRequest.ApiVersionEnum.class),
-            f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, (req, v) -> {
-                req.setApiVersion(v);
-            }));
+            f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, ShowApiVersionRequest::setApiVersion));
 
         // response
 
@@ -2149,9 +1993,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse> createScalingV2Policy =
-        genForcreateScalingV2Policy();
+        genForCreateScalingV2Policy();
 
-    private static HttpRequestDef<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse> genForcreateScalingV2Policy() {
+    private static HttpRequestDef<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse> genForCreateScalingV2Policy() {
         // basic
         HttpRequestDef.Builder<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateScalingV2PolicyRequest.class, CreateScalingV2PolicyResponse.class)
@@ -2164,9 +2008,7 @@ public class AsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateScalingPolicyV2Option.class),
-            f -> f.withMarshaller(CreateScalingV2PolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateScalingV2PolicyRequest::getBody, CreateScalingV2PolicyRequest::setBody));
 
         // response
 
@@ -2174,9 +2016,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse> listAllScalingV2Policies =
-        genForlistAllScalingV2Policies();
+        genForListAllScalingV2Policies();
 
-    private static HttpRequestDef<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse> genForlistAllScalingV2Policies() {
+    private static HttpRequestDef<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse> genForListAllScalingV2Policies() {
         // basic
         HttpRequestDef.Builder<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse> builder =
             HttpRequestDef
@@ -2190,79 +2032,68 @@ public class AsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingResourceId, (req, v) -> {
-                req.setScalingResourceId(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingResourceId,
+                ListAllScalingV2PoliciesRequest::setScalingResourceId));
         builder.<ListAllScalingV2PoliciesRequest.ScalingResourceTypeEnum>withRequestField("scaling_resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAllScalingV2PoliciesRequest.ScalingResourceTypeEnum.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingResourceType, (req, v) -> {
-                req.setScalingResourceType(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingResourceType,
+                ListAllScalingV2PoliciesRequest::setScalingResourceType));
         builder.<String>withRequestField("scaling_policy_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingPolicyName, (req, v) -> {
-                req.setScalingPolicyName(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingPolicyName,
+                ListAllScalingV2PoliciesRequest::setScalingPolicyName));
         builder.<ListAllScalingV2PoliciesRequest.ScalingPolicyTypeEnum>withRequestField("scaling_policy_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAllScalingV2PoliciesRequest.ScalingPolicyTypeEnum.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingPolicyType, (req, v) -> {
-                req.setScalingPolicyType(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingPolicyType,
+                ListAllScalingV2PoliciesRequest::setScalingPolicyType));
         builder.<String>withRequestField("scaling_policy_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingPolicyId,
+                ListAllScalingV2PoliciesRequest::setScalingPolicyId));
         builder.<Integer>withRequestField("start_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getStartNumber, (req, v) -> {
-                req.setStartNumber(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getStartNumber,
+                ListAllScalingV2PoliciesRequest::setStartNumber));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getLimit,
+                ListAllScalingV2PoliciesRequest::setLimit));
         builder.<ListAllScalingV2PoliciesRequest.SortByEnum>withRequestField("sort_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAllScalingV2PoliciesRequest.SortByEnum.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getSortBy, (req, v) -> {
-                req.setSortBy(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getSortBy,
+                ListAllScalingV2PoliciesRequest::setSortBy));
         builder.<ListAllScalingV2PoliciesRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAllScalingV2PoliciesRequest.OrderEnum.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getOrder,
+                ListAllScalingV2PoliciesRequest::setOrder));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getEnterpriseProjectId,
+                ListAllScalingV2PoliciesRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("alarm_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getAlarmId, (req, v) -> {
-                req.setAlarmId(v);
-            }));
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getAlarmId,
+                ListAllScalingV2PoliciesRequest::setAlarmId));
 
         // response
 
@@ -2270,9 +2101,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse> listScalingV2Policies =
-        genForlistScalingV2Policies();
+        genForListScalingV2Policies();
 
-    private static HttpRequestDef<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse> genForlistScalingV2Policies() {
+    private static HttpRequestDef<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse> genForListScalingV2Policies() {
         // basic
         HttpRequestDef.Builder<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListScalingV2PoliciesRequest.class, ListScalingV2PoliciesResponse.class)
@@ -2285,44 +2116,37 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingResourceId, (req, v) -> {
-                req.setScalingResourceId(v);
-            }));
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingResourceId,
+                ListScalingV2PoliciesRequest::setScalingResourceId));
         builder.<String>withRequestField("scaling_policy_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingPolicyName, (req, v) -> {
-                req.setScalingPolicyName(v);
-            }));
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingPolicyName,
+                ListScalingV2PoliciesRequest::setScalingPolicyName));
         builder.<String>withRequestField("scaling_policy_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingPolicyType, (req, v) -> {
-                req.setScalingPolicyType(v);
-            }));
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingPolicyType,
+                ListScalingV2PoliciesRequest::setScalingPolicyType));
         builder.<String>withRequestField("scaling_policy_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingPolicyId,
+                ListScalingV2PoliciesRequest::setScalingPolicyId));
         builder.<Integer>withRequestField("start_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getStartNumber, (req, v) -> {
-                req.setStartNumber(v);
-            }));
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getStartNumber,
+                ListScalingV2PoliciesRequest::setStartNumber));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getLimit, ListScalingV2PoliciesRequest::setLimit));
 
         // response
 
@@ -2330,9 +2154,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse> showScalingV2Policy =
-        genForshowScalingV2Policy();
+        genForShowScalingV2Policy();
 
-    private static HttpRequestDef<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse> genForshowScalingV2Policy() {
+    private static HttpRequestDef<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse> genForShowScalingV2Policy() {
         // basic
         HttpRequestDef.Builder<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScalingV2PolicyRequest.class, ShowScalingV2PolicyResponse.class)
@@ -2345,9 +2169,8 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScalingV2PolicyRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(ShowScalingV2PolicyRequest::getScalingPolicyId,
+                ShowScalingV2PolicyRequest::setScalingPolicyId));
 
         // response
 
@@ -2355,9 +2178,9 @@ public class AsMeta {
     }
 
     public static final HttpRequestDef<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse> updateScalingV2Policy =
-        genForupdateScalingV2Policy();
+        genForUpdateScalingV2Policy();
 
-    private static HttpRequestDef<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse> genForupdateScalingV2Policy() {
+    private static HttpRequestDef<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse> genForUpdateScalingV2Policy() {
         // basic
         HttpRequestDef.Builder<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateScalingV2PolicyRequest.class, UpdateScalingV2PolicyResponse.class)
@@ -2370,16 +2193,13 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateScalingV2PolicyRequest::getScalingPolicyId, (req, v) -> {
-                req.setScalingPolicyId(v);
-            }));
+            f -> f.withMarshaller(UpdateScalingV2PolicyRequest::getScalingPolicyId,
+                UpdateScalingV2PolicyRequest::setScalingPolicyId));
         builder.<UpdateScalingV2PolicyOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateScalingV2PolicyOption.class),
-            f -> f.withMarshaller(UpdateScalingV2PolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateScalingV2PolicyRequest::getBody, UpdateScalingV2PolicyRequest::setBody));
 
         // response
 

@@ -80,7 +80,7 @@ public class ListProductRequest {
     }
 
     /**
-     * 产品套餐的操作系统类型，当前支持：Windows - Linux - Windows - Other
+     * 产品套餐的操作系统类型，当前支持：Windows。 - Linux - Windows - Other
      * @return osType
      */
     public String getOsType() {
@@ -131,7 +131,7 @@ public class ListProductRequest {
     }
 
     /**
-     * 套餐类型。 - general：表示产品通用套餐。 - dedicated：表示产品专属主机套餐。
+     * 套餐类型： - general：表示产品通用套餐。 - dedicated：表示产品专属主机套餐。
      * @return packageType
      */
     public String getPackageType() {

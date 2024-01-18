@@ -38,7 +38,7 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateXdmApplicationRequest 请求对象
+     * @param request CreateXdmApplicationRequest 请求对象
      * @return CreateXdmApplicationResponse
      */
     public CreateXdmApplicationResponse createXdmApplication(CreateXdmApplicationRequest request) {
@@ -52,13 +52,12 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateXdmApplicationRequest 请求对象
+     * @param request CreateXdmApplicationRequest 请求对象
      * @return SyncInvoker<CreateXdmApplicationRequest, CreateXdmApplicationResponse>
      */
     public SyncInvoker<CreateXdmApplicationRequest, CreateXdmApplicationResponse> createXdmApplicationInvoker(
         CreateXdmApplicationRequest request) {
-        return new SyncInvoker<CreateXdmApplicationRequest, CreateXdmApplicationResponse>(request,
-            IdmeMeta.createXdmApplication, hcClient);
+        return new SyncInvoker<>(request, IdmeMeta.createXdmApplication, hcClient);
     }
 
     /**
@@ -68,7 +67,7 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteXdmApplicationRequest 请求对象
+     * @param request DeleteXdmApplicationRequest 请求对象
      * @return DeleteXdmApplicationResponse
      */
     public DeleteXdmApplicationResponse deleteXdmApplication(DeleteXdmApplicationRequest request) {
@@ -82,13 +81,12 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteXdmApplicationRequest 请求对象
+     * @param request DeleteXdmApplicationRequest 请求对象
      * @return SyncInvoker<DeleteXdmApplicationRequest, DeleteXdmApplicationResponse>
      */
     public SyncInvoker<DeleteXdmApplicationRequest, DeleteXdmApplicationResponse> deleteXdmApplicationInvoker(
         DeleteXdmApplicationRequest request) {
-        return new SyncInvoker<DeleteXdmApplicationRequest, DeleteXdmApplicationResponse>(request,
-            IdmeMeta.deleteXdmApplication, hcClient);
+        return new SyncInvoker<>(request, IdmeMeta.deleteXdmApplication, hcClient);
     }
 
     /**
@@ -98,7 +96,7 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeployApplicationRequest 请求对象
+     * @param request DeployApplicationRequest 请求对象
      * @return DeployApplicationResponse
      */
     public DeployApplicationResponse deployApplication(DeployApplicationRequest request) {
@@ -112,13 +110,12 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeployApplicationRequest 请求对象
+     * @param request DeployApplicationRequest 请求对象
      * @return SyncInvoker<DeployApplicationRequest, DeployApplicationResponse>
      */
     public SyncInvoker<DeployApplicationRequest, DeployApplicationResponse> deployApplicationInvoker(
         DeployApplicationRequest request) {
-        return new SyncInvoker<DeployApplicationRequest, DeployApplicationResponse>(request, IdmeMeta.deployApplication,
-            hcClient);
+        return new SyncInvoker<>(request, IdmeMeta.deployApplication, hcClient);
     }
 
     /**
@@ -128,7 +125,7 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsRequest 请求对象
+     * @param request ListAppsRequest 请求对象
      * @return ListAppsResponse
      */
     public ListAppsResponse listApps(ListAppsRequest request) {
@@ -142,11 +139,11 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsRequest 请求对象
+     * @param request ListAppsRequest 请求对象
      * @return SyncInvoker<ListAppsRequest, ListAppsResponse>
      */
     public SyncInvoker<ListAppsRequest, ListAppsResponse> listAppsInvoker(ListAppsRequest request) {
-        return new SyncInvoker<ListAppsRequest, ListAppsResponse>(request, IdmeMeta.listApps, hcClient);
+        return new SyncInvoker<>(request, IdmeMeta.listApps, hcClient);
     }
 
     /**
@@ -156,7 +153,7 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvsRequest 请求对象
+     * @param request ListEnvsRequest 请求对象
      * @return ListEnvsResponse
      */
     public ListEnvsResponse listEnvs(ListEnvsRequest request) {
@@ -170,11 +167,11 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvsRequest 请求对象
+     * @param request ListEnvsRequest 请求对象
      * @return SyncInvoker<ListEnvsRequest, ListEnvsResponse>
      */
     public SyncInvoker<ListEnvsRequest, ListEnvsResponse> listEnvsInvoker(ListEnvsRequest request) {
-        return new SyncInvoker<ListEnvsRequest, ListEnvsResponse>(request, IdmeMeta.listEnvs, hcClient);
+        return new SyncInvoker<>(request, IdmeMeta.listEnvs, hcClient);
     }
 
     /**
@@ -184,7 +181,7 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyApplicationRequest 请求对象
+     * @param request ModifyApplicationRequest 请求对象
      * @return ModifyApplicationResponse
      */
     public ModifyApplicationResponse modifyApplication(ModifyApplicationRequest request) {
@@ -198,13 +195,12 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyApplicationRequest 请求对象
+     * @param request ModifyApplicationRequest 请求对象
      * @return SyncInvoker<ModifyApplicationRequest, ModifyApplicationResponse>
      */
     public SyncInvoker<ModifyApplicationRequest, ModifyApplicationResponse> modifyApplicationInvoker(
         ModifyApplicationRequest request) {
-        return new SyncInvoker<ModifyApplicationRequest, ModifyApplicationResponse>(request, IdmeMeta.modifyApplication,
-            hcClient);
+        return new SyncInvoker<>(request, IdmeMeta.modifyApplication, hcClient);
     }
 
     /**
@@ -214,7 +210,7 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallRequest 请求对象
+     * @param request UninstallRequest 请求对象
      * @return UninstallResponse
      */
     public UninstallResponse uninstall(UninstallRequest request) {
@@ -228,11 +224,11 @@ public class IdmeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallRequest 请求对象
+     * @param request UninstallRequest 请求对象
      * @return SyncInvoker<UninstallRequest, UninstallResponse>
      */
     public SyncInvoker<UninstallRequest, UninstallResponse> uninstallInvoker(UninstallRequest request) {
-        return new SyncInvoker<UninstallRequest, UninstallResponse>(request, IdmeMeta.uninstall, hcClient);
+        return new SyncInvoker<>(request, IdmeMeta.uninstall, hcClient);
     }
 
 }

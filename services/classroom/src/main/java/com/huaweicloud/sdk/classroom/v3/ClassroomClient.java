@@ -60,7 +60,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyJudgementRequest 请求对象
+     * @param request ApplyJudgementRequest 请求对象
      * @return ApplyJudgementResponse
      */
     public ApplyJudgementResponse applyJudgement(ApplyJudgementRequest request) {
@@ -74,13 +74,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyJudgementRequest 请求对象
+     * @param request ApplyJudgementRequest 请求对象
      * @return SyncInvoker<ApplyJudgementRequest, ApplyJudgementResponse>
      */
     public SyncInvoker<ApplyJudgementRequest, ApplyJudgementResponse> applyJudgementInvoker(
         ApplyJudgementRequest request) {
-        return new SyncInvoker<ApplyJudgementRequest, ApplyJudgementResponse>(request, ClassroomMeta.applyJudgement,
-            hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.applyJudgement, hcClient);
     }
 
     /**
@@ -90,7 +89,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJudgementDetailRequest 请求对象
+     * @param request ShowJudgementDetailRequest 请求对象
      * @return ShowJudgementDetailResponse
      */
     public ShowJudgementDetailResponse showJudgementDetail(ShowJudgementDetailRequest request) {
@@ -104,13 +103,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJudgementDetailRequest 请求对象
+     * @param request ShowJudgementDetailRequest 请求对象
      * @return SyncInvoker<ShowJudgementDetailRequest, ShowJudgementDetailResponse>
      */
     public SyncInvoker<ShowJudgementDetailRequest, ShowJudgementDetailResponse> showJudgementDetailInvoker(
         ShowJudgementDetailRequest request) {
-        return new SyncInvoker<ShowJudgementDetailRequest, ShowJudgementDetailResponse>(request,
-            ClassroomMeta.showJudgementDetail, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.showJudgementDetail, hcClient);
     }
 
     /**
@@ -120,7 +118,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJudgementFileRequest 请求对象
+     * @param request ShowJudgementFileRequest 请求对象
      * @return ShowJudgementFileResponse
      */
     public ShowJudgementFileResponse showJudgementFile(ShowJudgementFileRequest request) {
@@ -134,13 +132,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJudgementFileRequest 请求对象
+     * @param request ShowJudgementFileRequest 请求对象
      * @return SyncInvoker<ShowJudgementFileRequest, ShowJudgementFileResponse>
      */
     public SyncInvoker<ShowJudgementFileRequest, ShowJudgementFileResponse> showJudgementFileInvoker(
         ShowJudgementFileRequest request) {
-        return new SyncInvoker<ShowJudgementFileRequest, ShowJudgementFileResponse>(request,
-            ClassroomMeta.showJudgementFile, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.showJudgementFile, hcClient);
     }
 
     /**
@@ -150,7 +147,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteExerciseRequest 请求对象
+     * @param request ExecuteExerciseRequest 请求对象
      * @return ExecuteExerciseResponse
      */
     public ExecuteExerciseResponse executeExercise(ExecuteExerciseRequest request) {
@@ -164,13 +161,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteExerciseRequest 请求对象
+     * @param request ExecuteExerciseRequest 请求对象
      * @return SyncInvoker<ExecuteExerciseRequest, ExecuteExerciseResponse>
      */
     public SyncInvoker<ExecuteExerciseRequest, ExecuteExerciseResponse> executeExerciseInvoker(
         ExecuteExerciseRequest request) {
-        return new SyncInvoker<ExecuteExerciseRequest, ExecuteExerciseResponse>(request, ClassroomMeta.executeExercise,
-            hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.executeExercise, hcClient);
     }
 
     /**
@@ -180,7 +176,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExercisesRequest 请求对象
+     * @param request ListExercisesRequest 请求对象
      * @return ListExercisesResponse
      */
     public ListExercisesResponse listExercises(ListExercisesRequest request) {
@@ -194,12 +190,11 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExercisesRequest 请求对象
+     * @param request ListExercisesRequest 请求对象
      * @return SyncInvoker<ListExercisesRequest, ListExercisesResponse>
      */
     public SyncInvoker<ListExercisesRequest, ListExercisesResponse> listExercisesInvoker(ListExercisesRequest request) {
-        return new SyncInvoker<ListExercisesRequest, ListExercisesResponse>(request, ClassroomMeta.listExercises,
-            hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.listExercises, hcClient);
     }
 
     /**
@@ -209,7 +204,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPackagesRequest 请求对象
+     * @param request ListPackagesRequest 请求对象
      * @return ListPackagesResponse
      */
     public ListPackagesResponse listPackages(ListPackagesRequest request) {
@@ -223,12 +218,11 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPackagesRequest 请求对象
+     * @param request ListPackagesRequest 请求对象
      * @return SyncInvoker<ListPackagesRequest, ListPackagesResponse>
      */
     public SyncInvoker<ListPackagesRequest, ListPackagesResponse> listPackagesInvoker(ListPackagesRequest request) {
-        return new SyncInvoker<ListPackagesRequest, ListPackagesResponse>(request, ClassroomMeta.listPackages,
-            hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.listPackages, hcClient);
     }
 
     /**
@@ -238,7 +232,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExerciseDetailRequest 请求对象
+     * @param request ShowExerciseDetailRequest 请求对象
      * @return ShowExerciseDetailResponse
      */
     public ShowExerciseDetailResponse showExerciseDetail(ShowExerciseDetailRequest request) {
@@ -252,13 +246,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExerciseDetailRequest 请求对象
+     * @param request ShowExerciseDetailRequest 请求对象
      * @return SyncInvoker<ShowExerciseDetailRequest, ShowExerciseDetailResponse>
      */
     public SyncInvoker<ShowExerciseDetailRequest, ShowExerciseDetailResponse> showExerciseDetailInvoker(
         ShowExerciseDetailRequest request) {
-        return new SyncInvoker<ShowExerciseDetailRequest, ShowExerciseDetailResponse>(request,
-            ClassroomMeta.showExerciseDetail, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.showExerciseDetail, hcClient);
     }
 
     /**
@@ -268,7 +261,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPackageDetailRequest 请求对象
+     * @param request ShowPackageDetailRequest 请求对象
      * @return ShowPackageDetailResponse
      */
     public ShowPackageDetailResponse showPackageDetail(ShowPackageDetailRequest request) {
@@ -282,13 +275,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPackageDetailRequest 请求对象
+     * @param request ShowPackageDetailRequest 请求对象
      * @return SyncInvoker<ShowPackageDetailRequest, ShowPackageDetailResponse>
      */
     public SyncInvoker<ShowPackageDetailRequest, ShowPackageDetailResponse> showPackageDetailInvoker(
         ShowPackageDetailRequest request) {
-        return new SyncInvoker<ShowPackageDetailRequest, ShowPackageDetailResponse>(request,
-            ClassroomMeta.showPackageDetail, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.showPackageDetail, hcClient);
     }
 
     /**
@@ -298,7 +290,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllDifficultsRequest 请求对象
+     * @param request ListAllDifficultsRequest 请求对象
      * @return ListAllDifficultsResponse
      */
     public ListAllDifficultsResponse listAllDifficults(ListAllDifficultsRequest request) {
@@ -312,13 +304,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllDifficultsRequest 请求对象
+     * @param request ListAllDifficultsRequest 请求对象
      * @return SyncInvoker<ListAllDifficultsRequest, ListAllDifficultsResponse>
      */
     public SyncInvoker<ListAllDifficultsRequest, ListAllDifficultsResponse> listAllDifficultsInvoker(
         ListAllDifficultsRequest request) {
-        return new SyncInvoker<ListAllDifficultsRequest, ListAllDifficultsResponse>(request,
-            ClassroomMeta.listAllDifficults, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.listAllDifficults, hcClient);
     }
 
     /**
@@ -328,7 +319,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMyKnowledgePointsRequest 请求对象
+     * @param request ListMyKnowledgePointsRequest 请求对象
      * @return ListMyKnowledgePointsResponse
      */
     public ListMyKnowledgePointsResponse listMyKnowledgePoints(ListMyKnowledgePointsRequest request) {
@@ -342,13 +333,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMyKnowledgePointsRequest 请求对象
+     * @param request ListMyKnowledgePointsRequest 请求对象
      * @return SyncInvoker<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse>
      */
     public SyncInvoker<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse> listMyKnowledgePointsInvoker(
         ListMyKnowledgePointsRequest request) {
-        return new SyncInvoker<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse>(request,
-            ClassroomMeta.listMyKnowledgePoints, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.listMyKnowledgePoints, hcClient);
     }
 
     /**
@@ -358,7 +348,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClassroomMembersRequest 请求对象
+     * @param request ListClassroomMembersRequest 请求对象
      * @return ListClassroomMembersResponse
      */
     public ListClassroomMembersResponse listClassroomMembers(ListClassroomMembersRequest request) {
@@ -372,13 +362,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClassroomMembersRequest 请求对象
+     * @param request ListClassroomMembersRequest 请求对象
      * @return SyncInvoker<ListClassroomMembersRequest, ListClassroomMembersResponse>
      */
     public SyncInvoker<ListClassroomMembersRequest, ListClassroomMembersResponse> listClassroomMembersInvoker(
         ListClassroomMembersRequest request) {
-        return new SyncInvoker<ListClassroomMembersRequest, ListClassroomMembersResponse>(request,
-            ClassroomMeta.listClassroomMembers, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.listClassroomMembers, hcClient);
     }
 
     /**
@@ -388,7 +377,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClassroomsRequest 请求对象
+     * @param request ListClassroomsRequest 请求对象
      * @return ListClassroomsResponse
      */
     public ListClassroomsResponse listClassrooms(ListClassroomsRequest request) {
@@ -402,13 +391,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClassroomsRequest 请求对象
+     * @param request ListClassroomsRequest 请求对象
      * @return SyncInvoker<ListClassroomsRequest, ListClassroomsResponse>
      */
     public SyncInvoker<ListClassroomsRequest, ListClassroomsResponse> listClassroomsInvoker(
         ListClassroomsRequest request) {
-        return new SyncInvoker<ListClassroomsRequest, ListClassroomsResponse>(request, ClassroomMeta.listClassrooms,
-            hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.listClassrooms, hcClient);
     }
 
     /**
@@ -418,7 +406,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClassroomDetailRequest 请求对象
+     * @param request ShowClassroomDetailRequest 请求对象
      * @return ShowClassroomDetailResponse
      */
     public ShowClassroomDetailResponse showClassroomDetail(ShowClassroomDetailRequest request) {
@@ -432,13 +420,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClassroomDetailRequest 请求对象
+     * @param request ShowClassroomDetailRequest 请求对象
      * @return SyncInvoker<ShowClassroomDetailRequest, ShowClassroomDetailResponse>
      */
     public SyncInvoker<ShowClassroomDetailRequest, ShowClassroomDetailResponse> showClassroomDetailInvoker(
         ShowClassroomDetailRequest request) {
-        return new SyncInvoker<ShowClassroomDetailRequest, ShowClassroomDetailResponse>(request,
-            ClassroomMeta.showClassroomDetail, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.showClassroomDetail, hcClient);
     }
 
     /**
@@ -448,7 +435,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClassroomMemberJobsRequest 请求对象
+     * @param request ListClassroomMemberJobsRequest 请求对象
      * @return ListClassroomMemberJobsResponse
      */
     public ListClassroomMemberJobsResponse listClassroomMemberJobs(ListClassroomMemberJobsRequest request) {
@@ -462,13 +449,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClassroomMemberJobsRequest 请求对象
+     * @param request ListClassroomMemberJobsRequest 请求对象
      * @return SyncInvoker<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse>
      */
     public SyncInvoker<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> listClassroomMemberJobsInvoker(
         ListClassroomMemberJobsRequest request) {
-        return new SyncInvoker<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse>(request,
-            ClassroomMeta.listClassroomMemberJobs, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.listClassroomMemberJobs, hcClient);
     }
 
     /**
@@ -478,7 +464,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return ListJobsResponse
      */
     public ListJobsResponse listJobs(ListJobsRequest request) {
@@ -492,11 +478,11 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return SyncInvoker<ListJobsRequest, ListJobsResponse>
      */
     public SyncInvoker<ListJobsRequest, ListJobsResponse> listJobsInvoker(ListJobsRequest request) {
-        return new SyncInvoker<ListJobsRequest, ListJobsResponse>(request, ClassroomMeta.listJobs, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.listJobs, hcClient);
     }
 
     /**
@@ -506,7 +492,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMemberJobRecordsRequest 请求对象
+     * @param request ListMemberJobRecordsRequest 请求对象
      * @return ListMemberJobRecordsResponse
      */
     public ListMemberJobRecordsResponse listMemberJobRecords(ListMemberJobRecordsRequest request) {
@@ -520,13 +506,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMemberJobRecordsRequest 请求对象
+     * @param request ListMemberJobRecordsRequest 请求对象
      * @return SyncInvoker<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse>
      */
     public SyncInvoker<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> listMemberJobRecordsInvoker(
         ListMemberJobRecordsRequest request) {
-        return new SyncInvoker<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse>(request,
-            ClassroomMeta.listMemberJobRecords, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.listMemberJobRecords, hcClient);
     }
 
     /**
@@ -536,7 +521,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobDetailRequest 请求对象
+     * @param request ShowJobDetailRequest 请求对象
      * @return ShowJobDetailResponse
      */
     public ShowJobDetailResponse showJobDetail(ShowJobDetailRequest request) {
@@ -550,12 +535,11 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobDetailRequest 请求对象
+     * @param request ShowJobDetailRequest 请求对象
      * @return SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
      */
     public SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailInvoker(ShowJobDetailRequest request) {
-        return new SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, ClassroomMeta.showJobDetail,
-            hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.showJobDetail, hcClient);
     }
 
     /**
@@ -565,7 +549,7 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobExercisesRequest 请求对象
+     * @param request ShowJobExercisesRequest 请求对象
      * @return ShowJobExercisesResponse
      */
     public ShowJobExercisesResponse showJobExercises(ShowJobExercisesRequest request) {
@@ -579,13 +563,12 @@ public class ClassroomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobExercisesRequest 请求对象
+     * @param request ShowJobExercisesRequest 请求对象
      * @return SyncInvoker<ShowJobExercisesRequest, ShowJobExercisesResponse>
      */
     public SyncInvoker<ShowJobExercisesRequest, ShowJobExercisesResponse> showJobExercisesInvoker(
         ShowJobExercisesRequest request) {
-        return new SyncInvoker<ShowJobExercisesRequest, ShowJobExercisesResponse>(request,
-            ClassroomMeta.showJobExercises, hcClient);
+        return new SyncInvoker<>(request, ClassroomMeta.showJobExercises, hcClient);
     }
 
 }

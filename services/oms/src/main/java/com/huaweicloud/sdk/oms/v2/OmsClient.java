@@ -90,7 +90,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateTasksRequest 请求对象
+     * @param request BatchUpdateTasksRequest 请求对象
      * @return BatchUpdateTasksResponse
      */
     public BatchUpdateTasksResponse batchUpdateTasks(BatchUpdateTasksRequest request) {
@@ -104,13 +104,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateTasksRequest 请求对象
+     * @param request BatchUpdateTasksRequest 请求对象
      * @return SyncInvoker<BatchUpdateTasksRequest, BatchUpdateTasksResponse>
      */
     public SyncInvoker<BatchUpdateTasksRequest, BatchUpdateTasksResponse> batchUpdateTasksInvoker(
         BatchUpdateTasksRequest request) {
-        return new SyncInvoker<BatchUpdateTasksRequest, BatchUpdateTasksResponse>(request, OmsMeta.batchUpdateTasks,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.batchUpdateTasks, hcClient);
     }
 
     /**
@@ -120,7 +119,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckPrefixRequest 请求对象
+     * @param request CheckPrefixRequest 请求对象
      * @return CheckPrefixResponse
      */
     public CheckPrefixResponse checkPrefix(CheckPrefixRequest request) {
@@ -134,11 +133,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckPrefixRequest 请求对象
+     * @param request CheckPrefixRequest 请求对象
      * @return SyncInvoker<CheckPrefixRequest, CheckPrefixResponse>
      */
     public SyncInvoker<CheckPrefixRequest, CheckPrefixResponse> checkPrefixInvoker(CheckPrefixRequest request) {
-        return new SyncInvoker<CheckPrefixRequest, CheckPrefixResponse>(request, OmsMeta.checkPrefix, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.checkPrefix, hcClient);
     }
 
     /**
@@ -148,7 +147,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSyncEventsRequest 请求对象
+     * @param request CreateSyncEventsRequest 请求对象
      * @return CreateSyncEventsResponse
      */
     public CreateSyncEventsResponse createSyncEvents(CreateSyncEventsRequest request) {
@@ -162,13 +161,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSyncEventsRequest 请求对象
+     * @param request CreateSyncEventsRequest 请求对象
      * @return SyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>
      */
     public SyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse> createSyncEventsInvoker(
         CreateSyncEventsRequest request) {
-        return new SyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>(request, OmsMeta.createSyncEvents,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.createSyncEvents, hcClient);
     }
 
     /**
@@ -178,7 +176,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSyncTaskRequest 请求对象
+     * @param request CreateSyncTaskRequest 请求对象
      * @return CreateSyncTaskResponse
      */
     public CreateSyncTaskResponse createSyncTask(CreateSyncTaskRequest request) {
@@ -192,13 +190,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSyncTaskRequest 请求对象
+     * @param request CreateSyncTaskRequest 请求对象
      * @return SyncInvoker<CreateSyncTaskRequest, CreateSyncTaskResponse>
      */
     public SyncInvoker<CreateSyncTaskRequest, CreateSyncTaskResponse> createSyncTaskInvoker(
         CreateSyncTaskRequest request) {
-        return new SyncInvoker<CreateSyncTaskRequest, CreateSyncTaskResponse>(request, OmsMeta.createSyncTask,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.createSyncTask, hcClient);
     }
 
     /**
@@ -208,7 +205,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return CreateTaskResponse
      */
     public CreateTaskResponse createTask(CreateTaskRequest request) {
@@ -222,11 +219,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return SyncInvoker<CreateTaskRequest, CreateTaskResponse>
      */
     public SyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskInvoker(CreateTaskRequest request) {
-        return new SyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, OmsMeta.createTask, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.createTask, hcClient);
     }
 
     /**
@@ -236,7 +233,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskGroupRequest 请求对象
+     * @param request CreateTaskGroupRequest 请求对象
      * @return CreateTaskGroupResponse
      */
     public CreateTaskGroupResponse createTaskGroup(CreateTaskGroupRequest request) {
@@ -250,13 +247,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskGroupRequest 请求对象
+     * @param request CreateTaskGroupRequest 请求对象
      * @return SyncInvoker<CreateTaskGroupRequest, CreateTaskGroupResponse>
      */
     public SyncInvoker<CreateTaskGroupRequest, CreateTaskGroupResponse> createTaskGroupInvoker(
         CreateTaskGroupRequest request) {
-        return new SyncInvoker<CreateTaskGroupRequest, CreateTaskGroupResponse>(request, OmsMeta.createTaskGroup,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.createTaskGroup, hcClient);
     }
 
     /**
@@ -267,7 +263,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSyncTaskRequest 请求对象
+     * @param request DeleteSyncTaskRequest 请求对象
      * @return DeleteSyncTaskResponse
      */
     public DeleteSyncTaskResponse deleteSyncTask(DeleteSyncTaskRequest request) {
@@ -282,13 +278,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSyncTaskRequest 请求对象
+     * @param request DeleteSyncTaskRequest 请求对象
      * @return SyncInvoker<DeleteSyncTaskRequest, DeleteSyncTaskResponse>
      */
     public SyncInvoker<DeleteSyncTaskRequest, DeleteSyncTaskResponse> deleteSyncTaskInvoker(
         DeleteSyncTaskRequest request) {
-        return new SyncInvoker<DeleteSyncTaskRequest, DeleteSyncTaskResponse>(request, OmsMeta.deleteSyncTask,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.deleteSyncTask, hcClient);
     }
 
     /**
@@ -299,7 +294,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return DeleteTaskResponse
      */
     public DeleteTaskResponse deleteTask(DeleteTaskRequest request) {
@@ -314,11 +309,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
-        return new SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, OmsMeta.deleteTask, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.deleteTask, hcClient);
     }
 
     /**
@@ -329,7 +324,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskGroupRequest 请求对象
+     * @param request DeleteTaskGroupRequest 请求对象
      * @return DeleteTaskGroupResponse
      */
     public DeleteTaskGroupResponse deleteTaskGroup(DeleteTaskGroupRequest request) {
@@ -344,13 +339,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskGroupRequest 请求对象
+     * @param request DeleteTaskGroupRequest 请求对象
      * @return SyncInvoker<DeleteTaskGroupRequest, DeleteTaskGroupResponse>
      */
     public SyncInvoker<DeleteTaskGroupRequest, DeleteTaskGroupResponse> deleteTaskGroupInvoker(
         DeleteTaskGroupRequest request) {
-        return new SyncInvoker<DeleteTaskGroupRequest, DeleteTaskGroupResponse>(request, OmsMeta.deleteTaskGroup,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.deleteTaskGroup, hcClient);
     }
 
     /**
@@ -360,7 +354,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSyncTaskStatisticRequest 请求对象
+     * @param request ListSyncTaskStatisticRequest 请求对象
      * @return ListSyncTaskStatisticResponse
      */
     public ListSyncTaskStatisticResponse listSyncTaskStatistic(ListSyncTaskStatisticRequest request) {
@@ -374,13 +368,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSyncTaskStatisticRequest 请求对象
+     * @param request ListSyncTaskStatisticRequest 请求对象
      * @return SyncInvoker<ListSyncTaskStatisticRequest, ListSyncTaskStatisticResponse>
      */
     public SyncInvoker<ListSyncTaskStatisticRequest, ListSyncTaskStatisticResponse> listSyncTaskStatisticInvoker(
         ListSyncTaskStatisticRequest request) {
-        return new SyncInvoker<ListSyncTaskStatisticRequest, ListSyncTaskStatisticResponse>(request,
-            OmsMeta.listSyncTaskStatistic, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.listSyncTaskStatistic, hcClient);
     }
 
     /**
@@ -390,7 +383,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSyncTasksRequest 请求对象
+     * @param request ListSyncTasksRequest 请求对象
      * @return ListSyncTasksResponse
      */
     public ListSyncTasksResponse listSyncTasks(ListSyncTasksRequest request) {
@@ -404,11 +397,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSyncTasksRequest 请求对象
+     * @param request ListSyncTasksRequest 请求对象
      * @return SyncInvoker<ListSyncTasksRequest, ListSyncTasksResponse>
      */
     public SyncInvoker<ListSyncTasksRequest, ListSyncTasksResponse> listSyncTasksInvoker(ListSyncTasksRequest request) {
-        return new SyncInvoker<ListSyncTasksRequest, ListSyncTasksResponse>(request, OmsMeta.listSyncTasks, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.listSyncTasks, hcClient);
     }
 
     /**
@@ -418,7 +411,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskGroupRequest 请求对象
+     * @param request ListTaskGroupRequest 请求对象
      * @return ListTaskGroupResponse
      */
     public ListTaskGroupResponse listTaskGroup(ListTaskGroupRequest request) {
@@ -432,11 +425,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskGroupRequest 请求对象
+     * @param request ListTaskGroupRequest 请求对象
      * @return SyncInvoker<ListTaskGroupRequest, ListTaskGroupResponse>
      */
     public SyncInvoker<ListTaskGroupRequest, ListTaskGroupResponse> listTaskGroupInvoker(ListTaskGroupRequest request) {
-        return new SyncInvoker<ListTaskGroupRequest, ListTaskGroupResponse>(request, OmsMeta.listTaskGroup, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.listTaskGroup, hcClient);
     }
 
     /**
@@ -446,7 +439,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksRequest 请求对象
+     * @param request ListTasksRequest 请求对象
      * @return ListTasksResponse
      */
     public ListTasksResponse listTasks(ListTasksRequest request) {
@@ -460,11 +453,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksRequest 请求对象
+     * @param request ListTasksRequest 请求对象
      * @return SyncInvoker<ListTasksRequest, ListTasksResponse>
      */
     public SyncInvoker<ListTasksRequest, ListTasksResponse> listTasksInvoker(ListTasksRequest request) {
-        return new SyncInvoker<ListTasksRequest, ListTasksResponse>(request, OmsMeta.listTasks, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.listTasks, hcClient);
     }
 
     /**
@@ -474,7 +467,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryTaskGroupRequest 请求对象
+     * @param request RetryTaskGroupRequest 请求对象
      * @return RetryTaskGroupResponse
      */
     public RetryTaskGroupResponse retryTaskGroup(RetryTaskGroupRequest request) {
@@ -488,13 +481,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryTaskGroupRequest 请求对象
+     * @param request RetryTaskGroupRequest 请求对象
      * @return SyncInvoker<RetryTaskGroupRequest, RetryTaskGroupResponse>
      */
     public SyncInvoker<RetryTaskGroupRequest, RetryTaskGroupResponse> retryTaskGroupInvoker(
         RetryTaskGroupRequest request) {
-        return new SyncInvoker<RetryTaskGroupRequest, RetryTaskGroupResponse>(request, OmsMeta.retryTaskGroup,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.retryTaskGroup, hcClient);
     }
 
     /**
@@ -504,7 +496,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBucketListRequest 请求对象
+     * @param request ShowBucketListRequest 请求对象
      * @return ShowBucketListResponse
      */
     public ShowBucketListResponse showBucketList(ShowBucketListRequest request) {
@@ -518,13 +510,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBucketListRequest 请求对象
+     * @param request ShowBucketListRequest 请求对象
      * @return SyncInvoker<ShowBucketListRequest, ShowBucketListResponse>
      */
     public SyncInvoker<ShowBucketListRequest, ShowBucketListResponse> showBucketListInvoker(
         ShowBucketListRequest request) {
-        return new SyncInvoker<ShowBucketListRequest, ShowBucketListResponse>(request, OmsMeta.showBucketList,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.showBucketList, hcClient);
     }
 
     /**
@@ -534,7 +525,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBucketObjectsRequest 请求对象
+     * @param request ShowBucketObjectsRequest 请求对象
      * @return ShowBucketObjectsResponse
      */
     public ShowBucketObjectsResponse showBucketObjects(ShowBucketObjectsRequest request) {
@@ -548,13 +539,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBucketObjectsRequest 请求对象
+     * @param request ShowBucketObjectsRequest 请求对象
      * @return SyncInvoker<ShowBucketObjectsRequest, ShowBucketObjectsResponse>
      */
     public SyncInvoker<ShowBucketObjectsRequest, ShowBucketObjectsResponse> showBucketObjectsInvoker(
         ShowBucketObjectsRequest request) {
-        return new SyncInvoker<ShowBucketObjectsRequest, ShowBucketObjectsResponse>(request, OmsMeta.showBucketObjects,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.showBucketObjects, hcClient);
     }
 
     /**
@@ -564,7 +554,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBucketRegionRequest 请求对象
+     * @param request ShowBucketRegionRequest 请求对象
      * @return ShowBucketRegionResponse
      */
     public ShowBucketRegionResponse showBucketRegion(ShowBucketRegionRequest request) {
@@ -578,13 +568,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBucketRegionRequest 请求对象
+     * @param request ShowBucketRegionRequest 请求对象
      * @return SyncInvoker<ShowBucketRegionRequest, ShowBucketRegionResponse>
      */
     public SyncInvoker<ShowBucketRegionRequest, ShowBucketRegionResponse> showBucketRegionInvoker(
         ShowBucketRegionRequest request) {
-        return new SyncInvoker<ShowBucketRegionRequest, ShowBucketRegionResponse>(request, OmsMeta.showBucketRegion,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.showBucketRegion, hcClient);
     }
 
     /**
@@ -594,7 +583,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCdnInfoRequest 请求对象
+     * @param request ShowCdnInfoRequest 请求对象
      * @return ShowCdnInfoResponse
      */
     public ShowCdnInfoResponse showCdnInfo(ShowCdnInfoRequest request) {
@@ -608,11 +597,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCdnInfoRequest 请求对象
+     * @param request ShowCdnInfoRequest 请求对象
      * @return SyncInvoker<ShowCdnInfoRequest, ShowCdnInfoResponse>
      */
     public SyncInvoker<ShowCdnInfoRequest, ShowCdnInfoResponse> showCdnInfoInvoker(ShowCdnInfoRequest request) {
-        return new SyncInvoker<ShowCdnInfoRequest, ShowCdnInfoResponse>(request, OmsMeta.showCdnInfo, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.showCdnInfo, hcClient);
     }
 
     /**
@@ -622,7 +611,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCloudTypeRequest 请求对象
+     * @param request ShowCloudTypeRequest 请求对象
      * @return ShowCloudTypeResponse
      */
     public ShowCloudTypeResponse showCloudType(ShowCloudTypeRequest request) {
@@ -636,11 +625,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCloudTypeRequest 请求对象
+     * @param request ShowCloudTypeRequest 请求对象
      * @return SyncInvoker<ShowCloudTypeRequest, ShowCloudTypeResponse>
      */
     public SyncInvoker<ShowCloudTypeRequest, ShowCloudTypeResponse> showCloudTypeInvoker(ShowCloudTypeRequest request) {
-        return new SyncInvoker<ShowCloudTypeRequest, ShowCloudTypeResponse>(request, OmsMeta.showCloudType, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.showCloudType, hcClient);
     }
 
     /**
@@ -650,7 +639,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRegionInfoRequest 请求对象
+     * @param request ShowRegionInfoRequest 请求对象
      * @return ShowRegionInfoResponse
      */
     public ShowRegionInfoResponse showRegionInfo(ShowRegionInfoRequest request) {
@@ -664,13 +653,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRegionInfoRequest 请求对象
+     * @param request ShowRegionInfoRequest 请求对象
      * @return SyncInvoker<ShowRegionInfoRequest, ShowRegionInfoResponse>
      */
     public SyncInvoker<ShowRegionInfoRequest, ShowRegionInfoResponse> showRegionInfoInvoker(
         ShowRegionInfoRequest request) {
-        return new SyncInvoker<ShowRegionInfoRequest, ShowRegionInfoResponse>(request, OmsMeta.showRegionInfo,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.showRegionInfo, hcClient);
     }
 
     /**
@@ -680,7 +668,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSyncTaskRequest 请求对象
+     * @param request ShowSyncTaskRequest 请求对象
      * @return ShowSyncTaskResponse
      */
     public ShowSyncTaskResponse showSyncTask(ShowSyncTaskRequest request) {
@@ -694,11 +682,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSyncTaskRequest 请求对象
+     * @param request ShowSyncTaskRequest 请求对象
      * @return SyncInvoker<ShowSyncTaskRequest, ShowSyncTaskResponse>
      */
     public SyncInvoker<ShowSyncTaskRequest, ShowSyncTaskResponse> showSyncTaskInvoker(ShowSyncTaskRequest request) {
-        return new SyncInvoker<ShowSyncTaskRequest, ShowSyncTaskResponse>(request, OmsMeta.showSyncTask, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.showSyncTask, hcClient);
     }
 
     /**
@@ -708,7 +696,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return ShowTaskResponse
      */
     public ShowTaskResponse showTask(ShowTaskRequest request) {
@@ -722,11 +710,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return SyncInvoker<ShowTaskRequest, ShowTaskResponse>
      */
     public SyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskInvoker(ShowTaskRequest request) {
-        return new SyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, OmsMeta.showTask, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.showTask, hcClient);
     }
 
     /**
@@ -736,7 +724,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskGroupRequest 请求对象
+     * @param request ShowTaskGroupRequest 请求对象
      * @return ShowTaskGroupResponse
      */
     public ShowTaskGroupResponse showTaskGroup(ShowTaskGroupRequest request) {
@@ -750,11 +738,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskGroupRequest 请求对象
+     * @param request ShowTaskGroupRequest 请求对象
      * @return SyncInvoker<ShowTaskGroupRequest, ShowTaskGroupResponse>
      */
     public SyncInvoker<ShowTaskGroupRequest, ShowTaskGroupResponse> showTaskGroupInvoker(ShowTaskGroupRequest request) {
-        return new SyncInvoker<ShowTaskGroupRequest, ShowTaskGroupResponse>(request, OmsMeta.showTaskGroup, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.showTaskGroup, hcClient);
     }
 
     /**
@@ -764,7 +752,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartSyncTaskRequest 请求对象
+     * @param request StartSyncTaskRequest 请求对象
      * @return StartSyncTaskResponse
      */
     public StartSyncTaskResponse startSyncTask(StartSyncTaskRequest request) {
@@ -778,11 +766,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartSyncTaskRequest 请求对象
+     * @param request StartSyncTaskRequest 请求对象
      * @return SyncInvoker<StartSyncTaskRequest, StartSyncTaskResponse>
      */
     public SyncInvoker<StartSyncTaskRequest, StartSyncTaskResponse> startSyncTaskInvoker(StartSyncTaskRequest request) {
-        return new SyncInvoker<StartSyncTaskRequest, StartSyncTaskResponse>(request, OmsMeta.startSyncTask, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.startSyncTask, hcClient);
     }
 
     /**
@@ -792,7 +780,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTaskRequest 请求对象
+     * @param request StartTaskRequest 请求对象
      * @return StartTaskResponse
      */
     public StartTaskResponse startTask(StartTaskRequest request) {
@@ -806,11 +794,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTaskRequest 请求对象
+     * @param request StartTaskRequest 请求对象
      * @return SyncInvoker<StartTaskRequest, StartTaskResponse>
      */
     public SyncInvoker<StartTaskRequest, StartTaskResponse> startTaskInvoker(StartTaskRequest request) {
-        return new SyncInvoker<StartTaskRequest, StartTaskResponse>(request, OmsMeta.startTask, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.startTask, hcClient);
     }
 
     /**
@@ -820,7 +808,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTaskGroupRequest 请求对象
+     * @param request StartTaskGroupRequest 请求对象
      * @return StartTaskGroupResponse
      */
     public StartTaskGroupResponse startTaskGroup(StartTaskGroupRequest request) {
@@ -834,13 +822,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTaskGroupRequest 请求对象
+     * @param request StartTaskGroupRequest 请求对象
      * @return SyncInvoker<StartTaskGroupRequest, StartTaskGroupResponse>
      */
     public SyncInvoker<StartTaskGroupRequest, StartTaskGroupResponse> startTaskGroupInvoker(
         StartTaskGroupRequest request) {
-        return new SyncInvoker<StartTaskGroupRequest, StartTaskGroupResponse>(request, OmsMeta.startTaskGroup,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.startTaskGroup, hcClient);
     }
 
     /**
@@ -850,7 +837,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopSyncTaskRequest 请求对象
+     * @param request StopSyncTaskRequest 请求对象
      * @return StopSyncTaskResponse
      */
     public StopSyncTaskResponse stopSyncTask(StopSyncTaskRequest request) {
@@ -864,11 +851,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopSyncTaskRequest 请求对象
+     * @param request StopSyncTaskRequest 请求对象
      * @return SyncInvoker<StopSyncTaskRequest, StopSyncTaskResponse>
      */
     public SyncInvoker<StopSyncTaskRequest, StopSyncTaskResponse> stopSyncTaskInvoker(StopSyncTaskRequest request) {
-        return new SyncInvoker<StopSyncTaskRequest, StopSyncTaskResponse>(request, OmsMeta.stopSyncTask, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.stopSyncTask, hcClient);
     }
 
     /**
@@ -878,7 +865,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskRequest 请求对象
+     * @param request StopTaskRequest 请求对象
      * @return StopTaskResponse
      */
     public StopTaskResponse stopTask(StopTaskRequest request) {
@@ -892,11 +879,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskRequest 请求对象
+     * @param request StopTaskRequest 请求对象
      * @return SyncInvoker<StopTaskRequest, StopTaskResponse>
      */
     public SyncInvoker<StopTaskRequest, StopTaskResponse> stopTaskInvoker(StopTaskRequest request) {
-        return new SyncInvoker<StopTaskRequest, StopTaskResponse>(request, OmsMeta.stopTask, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.stopTask, hcClient);
     }
 
     /**
@@ -906,7 +893,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskGroupRequest 请求对象
+     * @param request StopTaskGroupRequest 请求对象
      * @return StopTaskGroupResponse
      */
     public StopTaskGroupResponse stopTaskGroup(StopTaskGroupRequest request) {
@@ -920,11 +907,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskGroupRequest 请求对象
+     * @param request StopTaskGroupRequest 请求对象
      * @return SyncInvoker<StopTaskGroupRequest, StopTaskGroupResponse>
      */
     public SyncInvoker<StopTaskGroupRequest, StopTaskGroupResponse> stopTaskGroupInvoker(StopTaskGroupRequest request) {
-        return new SyncInvoker<StopTaskGroupRequest, StopTaskGroupResponse>(request, OmsMeta.stopTaskGroup, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.stopTaskGroup, hcClient);
     }
 
     /**
@@ -934,7 +921,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBandwidthPolicyRequest 请求对象
+     * @param request UpdateBandwidthPolicyRequest 请求对象
      * @return UpdateBandwidthPolicyResponse
      */
     public UpdateBandwidthPolicyResponse updateBandwidthPolicy(UpdateBandwidthPolicyRequest request) {
@@ -948,13 +935,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBandwidthPolicyRequest 请求对象
+     * @param request UpdateBandwidthPolicyRequest 请求对象
      * @return SyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse>
      */
     public SyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> updateBandwidthPolicyInvoker(
         UpdateBandwidthPolicyRequest request) {
-        return new SyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse>(request,
-            OmsMeta.updateBandwidthPolicy, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.updateBandwidthPolicy, hcClient);
     }
 
     /**
@@ -964,7 +950,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskGroupRequest 请求对象
+     * @param request UpdateTaskGroupRequest 请求对象
      * @return UpdateTaskGroupResponse
      */
     public UpdateTaskGroupResponse updateTaskGroup(UpdateTaskGroupRequest request) {
@@ -978,13 +964,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskGroupRequest 请求对象
+     * @param request UpdateTaskGroupRequest 请求对象
      * @return SyncInvoker<UpdateTaskGroupRequest, UpdateTaskGroupResponse>
      */
     public SyncInvoker<UpdateTaskGroupRequest, UpdateTaskGroupResponse> updateTaskGroupInvoker(
         UpdateTaskGroupRequest request) {
-        return new SyncInvoker<UpdateTaskGroupRequest, UpdateTaskGroupResponse>(request, OmsMeta.updateTaskGroup,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.updateTaskGroup, hcClient);
     }
 
     /**
@@ -994,7 +979,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
      */
     public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
@@ -1008,13 +993,12 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsInvoker(
         ListApiVersionsRequest request) {
-        return new SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, OmsMeta.listApiVersions,
-            hcClient);
+        return new SyncInvoker<>(request, OmsMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -1024,7 +1008,7 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiInfoRequest 请求对象
+     * @param request ShowApiInfoRequest 请求对象
      * @return ShowApiInfoResponse
      */
     public ShowApiInfoResponse showApiInfo(ShowApiInfoRequest request) {
@@ -1038,11 +1022,11 @@ public class OmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiInfoRequest 请求对象
+     * @param request ShowApiInfoRequest 请求对象
      * @return SyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>
      */
     public SyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfoInvoker(ShowApiInfoRequest request) {
-        return new SyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>(request, OmsMeta.showApiInfo, hcClient);
+        return new SyncInvoker<>(request, OmsMeta.showApiInfo, hcClient);
     }
 
 }

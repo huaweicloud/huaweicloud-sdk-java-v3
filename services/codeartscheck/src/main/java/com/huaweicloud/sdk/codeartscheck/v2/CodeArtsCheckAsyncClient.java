@@ -84,7 +84,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckParametersRequest 请求对象
+     * @param request CheckParametersRequest 请求对象
      * @return CompletableFuture<CheckParametersResponse>
      */
     public CompletableFuture<CheckParametersResponse> checkParametersAsync(CheckParametersRequest request) {
@@ -98,13 +98,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckParametersRequest 请求对象
+     * @param request CheckParametersRequest 请求对象
      * @return AsyncInvoker<CheckParametersRequest, CheckParametersResponse>
      */
     public AsyncInvoker<CheckParametersRequest, CheckParametersResponse> checkParametersAsyncInvoker(
         CheckParametersRequest request) {
-        return new AsyncInvoker<CheckParametersRequest, CheckParametersResponse>(request,
-            CodeArtsCheckMeta.checkParameters, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.checkParameters, hcClient);
     }
 
     /**
@@ -114,7 +113,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRecordRequest 请求对象
+     * @param request CheckRecordRequest 请求对象
      * @return CompletableFuture<CheckRecordResponse>
      */
     public CompletableFuture<CheckRecordResponse> checkRecordAsync(CheckRecordRequest request) {
@@ -128,12 +127,11 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRecordRequest 请求对象
+     * @param request CheckRecordRequest 请求对象
      * @return AsyncInvoker<CheckRecordRequest, CheckRecordResponse>
      */
     public AsyncInvoker<CheckRecordRequest, CheckRecordResponse> checkRecordAsyncInvoker(CheckRecordRequest request) {
-        return new AsyncInvoker<CheckRecordRequest, CheckRecordResponse>(request, CodeArtsCheckMeta.checkRecord,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.checkRecord, hcClient);
     }
 
     /**
@@ -143,7 +141,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRulesetParametersRequest 请求对象
+     * @param request CheckRulesetParametersRequest 请求对象
      * @return CompletableFuture<CheckRulesetParametersResponse>
      */
     public CompletableFuture<CheckRulesetParametersResponse> checkRulesetParametersAsync(
@@ -158,13 +156,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRulesetParametersRequest 请求对象
+     * @param request CheckRulesetParametersRequest 请求对象
      * @return AsyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse>
      */
     public AsyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse> checkRulesetParametersAsyncInvoker(
         CheckRulesetParametersRequest request) {
-        return new AsyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse>(request,
-            CodeArtsCheckMeta.checkRulesetParameters, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.checkRulesetParameters, hcClient);
     }
 
     /**
@@ -174,7 +171,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRulesetRequest 请求对象
+     * @param request CreateRulesetRequest 请求对象
      * @return CompletableFuture<CreateRulesetResponse>
      */
     public CompletableFuture<CreateRulesetResponse> createRulesetAsync(CreateRulesetRequest request) {
@@ -188,13 +185,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRulesetRequest 请求对象
+     * @param request CreateRulesetRequest 请求对象
      * @return AsyncInvoker<CreateRulesetRequest, CreateRulesetResponse>
      */
     public AsyncInvoker<CreateRulesetRequest, CreateRulesetResponse> createRulesetAsyncInvoker(
         CreateRulesetRequest request) {
-        return new AsyncInvoker<CreateRulesetRequest, CreateRulesetResponse>(request, CodeArtsCheckMeta.createRuleset,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.createRuleset, hcClient);
     }
 
     /**
@@ -204,7 +200,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return CompletableFuture<CreateTaskResponse>
      */
     public CompletableFuture<CreateTaskResponse> createTaskAsync(CreateTaskRequest request) {
@@ -218,11 +214,11 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return AsyncInvoker<CreateTaskRequest, CreateTaskResponse>
      */
     public AsyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskAsyncInvoker(CreateTaskRequest request) {
-        return new AsyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, CodeArtsCheckMeta.createTask, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.createTask, hcClient);
     }
 
     /**
@@ -232,7 +228,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRulesetRequest 请求对象
+     * @param request DeleteRulesetRequest 请求对象
      * @return CompletableFuture<DeleteRulesetResponse>
      */
     public CompletableFuture<DeleteRulesetResponse> deleteRulesetAsync(DeleteRulesetRequest request) {
@@ -246,13 +242,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRulesetRequest 请求对象
+     * @param request DeleteRulesetRequest 请求对象
      * @return AsyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse>
      */
     public AsyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse> deleteRulesetAsyncInvoker(
         DeleteRulesetRequest request) {
-        return new AsyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse>(request, CodeArtsCheckMeta.deleteRuleset,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.deleteRuleset, hcClient);
     }
 
     /**
@@ -262,7 +257,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
      */
     public CompletableFuture<DeleteTaskResponse> deleteTaskAsync(DeleteTaskRequest request) {
@@ -276,11 +271,11 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
-        return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, CodeArtsCheckMeta.deleteTask, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.deleteTask, hcClient);
     }
 
     /**
@@ -290,7 +285,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRulesRequest 请求对象
+     * @param request ListRulesRequest 请求对象
      * @return CompletableFuture<ListRulesResponse>
      */
     public CompletableFuture<ListRulesResponse> listRulesAsync(ListRulesRequest request) {
@@ -304,11 +299,11 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRulesRequest 请求对象
+     * @param request ListRulesRequest 请求对象
      * @return AsyncInvoker<ListRulesRequest, ListRulesResponse>
      */
     public AsyncInvoker<ListRulesRequest, ListRulesResponse> listRulesAsyncInvoker(ListRulesRequest request) {
-        return new AsyncInvoker<ListRulesRequest, ListRulesResponse>(request, CodeArtsCheckMeta.listRules, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.listRules, hcClient);
     }
 
     /**
@@ -318,7 +313,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRulesetsRequest 请求对象
+     * @param request ListRulesetsRequest 请求对象
      * @return CompletableFuture<ListRulesetsResponse>
      */
     public CompletableFuture<ListRulesetsResponse> listRulesetsAsync(ListRulesetsRequest request) {
@@ -332,13 +327,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRulesetsRequest 请求对象
+     * @param request ListRulesetsRequest 请求对象
      * @return AsyncInvoker<ListRulesetsRequest, ListRulesetsResponse>
      */
     public AsyncInvoker<ListRulesetsRequest, ListRulesetsResponse> listRulesetsAsyncInvoker(
         ListRulesetsRequest request) {
-        return new AsyncInvoker<ListRulesetsRequest, ListRulesetsResponse>(request, CodeArtsCheckMeta.listRulesets,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.listRulesets, hcClient);
     }
 
     /**
@@ -348,7 +342,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskParameterRequest 请求对象
+     * @param request ListTaskParameterRequest 请求对象
      * @return CompletableFuture<ListTaskParameterResponse>
      */
     public CompletableFuture<ListTaskParameterResponse> listTaskParameterAsync(ListTaskParameterRequest request) {
@@ -362,13 +356,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskParameterRequest 请求对象
+     * @param request ListTaskParameterRequest 请求对象
      * @return AsyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse>
      */
     public AsyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse> listTaskParameterAsyncInvoker(
         ListTaskParameterRequest request) {
-        return new AsyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse>(request,
-            CodeArtsCheckMeta.listTaskParameter, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.listTaskParameter, hcClient);
     }
 
     /**
@@ -378,7 +371,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskRulesetRequest 请求对象
+     * @param request ListTaskRulesetRequest 请求对象
      * @return CompletableFuture<ListTaskRulesetResponse>
      */
     public CompletableFuture<ListTaskRulesetResponse> listTaskRulesetAsync(ListTaskRulesetRequest request) {
@@ -392,13 +385,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskRulesetRequest 请求对象
+     * @param request ListTaskRulesetRequest 请求对象
      * @return AsyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse>
      */
     public AsyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse> listTaskRulesetAsyncInvoker(
         ListTaskRulesetRequest request) {
-        return new AsyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse>(request,
-            CodeArtsCheckMeta.listTaskRuleset, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.listTaskRuleset, hcClient);
     }
 
     /**
@@ -408,7 +400,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateRulesRequest 请求对象
+     * @param request ListTemplateRulesRequest 请求对象
      * @return CompletableFuture<ListTemplateRulesResponse>
      */
     public CompletableFuture<ListTemplateRulesResponse> listTemplateRulesAsync(ListTemplateRulesRequest request) {
@@ -422,13 +414,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateRulesRequest 请求对象
+     * @param request ListTemplateRulesRequest 请求对象
      * @return AsyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse>
      */
     public AsyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse> listTemplateRulesAsyncInvoker(
         ListTemplateRulesRequest request) {
-        return new AsyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse>(request,
-            CodeArtsCheckMeta.listTemplateRules, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.listTemplateRules, hcClient);
     }
 
     /**
@@ -438,7 +429,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTaskRequest 请求对象
+     * @param request RunTaskRequest 请求对象
      * @return CompletableFuture<RunTaskResponse>
      */
     public CompletableFuture<RunTaskResponse> runTaskAsync(RunTaskRequest request) {
@@ -452,11 +443,11 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTaskRequest 请求对象
+     * @param request RunTaskRequest 请求对象
      * @return AsyncInvoker<RunTaskRequest, RunTaskResponse>
      */
     public AsyncInvoker<RunTaskRequest, RunTaskResponse> runTaskAsyncInvoker(RunTaskRequest request) {
-        return new AsyncInvoker<RunTaskRequest, RunTaskResponse>(request, CodeArtsCheckMeta.runTask, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.runTask, hcClient);
     }
 
     /**
@@ -466,7 +457,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetDefaulTemplateRequest 请求对象
+     * @param request SetDefaulTemplateRequest 请求对象
      * @return CompletableFuture<SetDefaulTemplateResponse>
      */
     public CompletableFuture<SetDefaulTemplateResponse> setDefaulTemplateAsync(SetDefaulTemplateRequest request) {
@@ -480,13 +471,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetDefaulTemplateRequest 请求对象
+     * @param request SetDefaulTemplateRequest 请求对象
      * @return AsyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse>
      */
     public AsyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse> setDefaulTemplateAsyncInvoker(
         SetDefaulTemplateRequest request) {
-        return new AsyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse>(request,
-            CodeArtsCheckMeta.setDefaulTemplate, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.setDefaulTemplate, hcClient);
     }
 
     /**
@@ -496,7 +486,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProgressDetailRequest 请求对象
+     * @param request ShowProgressDetailRequest 请求对象
      * @return CompletableFuture<ShowProgressDetailResponse>
      */
     public CompletableFuture<ShowProgressDetailResponse> showProgressDetailAsync(ShowProgressDetailRequest request) {
@@ -510,13 +500,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProgressDetailRequest 请求对象
+     * @param request ShowProgressDetailRequest 请求对象
      * @return AsyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse>
      */
     public AsyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse> showProgressDetailAsyncInvoker(
         ShowProgressDetailRequest request) {
-        return new AsyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse>(request,
-            CodeArtsCheckMeta.showProgressDetail, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.showProgressDetail, hcClient);
     }
 
     /**
@@ -526,7 +515,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskCmetricsRequest 请求对象
+     * @param request ShowTaskCmetricsRequest 请求对象
      * @return CompletableFuture<ShowTaskCmetricsResponse>
      */
     public CompletableFuture<ShowTaskCmetricsResponse> showTaskCmetricsAsync(ShowTaskCmetricsRequest request) {
@@ -540,13 +529,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskCmetricsRequest 请求对象
+     * @param request ShowTaskCmetricsRequest 请求对象
      * @return AsyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse>
      */
     public AsyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse> showTaskCmetricsAsyncInvoker(
         ShowTaskCmetricsRequest request) {
-        return new AsyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse>(request,
-            CodeArtsCheckMeta.showTaskCmetrics, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.showTaskCmetrics, hcClient);
     }
 
     /**
@@ -556,7 +544,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskDefectsRequest 请求对象
+     * @param request ShowTaskDefectsRequest 请求对象
      * @return CompletableFuture<ShowTaskDefectsResponse>
      */
     public CompletableFuture<ShowTaskDefectsResponse> showTaskDefectsAsync(ShowTaskDefectsRequest request) {
@@ -570,13 +558,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskDefectsRequest 请求对象
+     * @param request ShowTaskDefectsRequest 请求对象
      * @return AsyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse>
      */
     public AsyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse> showTaskDefectsAsyncInvoker(
         ShowTaskDefectsRequest request) {
-        return new AsyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse>(request,
-            CodeArtsCheckMeta.showTaskDefects, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.showTaskDefects, hcClient);
     }
 
     /**
@@ -586,7 +573,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskDefectsStatisticRequest 请求对象
+     * @param request ShowTaskDefectsStatisticRequest 请求对象
      * @return CompletableFuture<ShowTaskDefectsStatisticResponse>
      */
     public CompletableFuture<ShowTaskDefectsStatisticResponse> showTaskDefectsStatisticAsync(
@@ -601,13 +588,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskDefectsStatisticRequest 请求对象
+     * @param request ShowTaskDefectsStatisticRequest 请求对象
      * @return AsyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse>
      */
     public AsyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse> showTaskDefectsStatisticAsyncInvoker(
         ShowTaskDefectsStatisticRequest request) {
-        return new AsyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse>(request,
-            CodeArtsCheckMeta.showTaskDefectsStatistic, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.showTaskDefectsStatistic, hcClient);
     }
 
     /**
@@ -617,7 +603,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskDetailRequest 请求对象
+     * @param request ShowTaskDetailRequest 请求对象
      * @return CompletableFuture<ShowTaskDetailResponse>
      */
     public CompletableFuture<ShowTaskDetailResponse> showTaskDetailAsync(ShowTaskDetailRequest request) {
@@ -631,13 +617,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskDetailRequest 请求对象
+     * @param request ShowTaskDetailRequest 请求对象
      * @return AsyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse>
      */
     public AsyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse> showTaskDetailAsyncInvoker(
         ShowTaskDetailRequest request) {
-        return new AsyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse>(request,
-            CodeArtsCheckMeta.showTaskDetail, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.showTaskDetail, hcClient);
     }
 
     /**
@@ -647,7 +632,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskListByProjectIdRequest 请求对象
+     * @param request ShowTaskListByProjectIdRequest 请求对象
      * @return CompletableFuture<ShowTaskListByProjectIdResponse>
      */
     public CompletableFuture<ShowTaskListByProjectIdResponse> showTaskListByProjectIdAsync(
@@ -662,13 +647,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskListByProjectIdRequest 请求对象
+     * @param request ShowTaskListByProjectIdRequest 请求对象
      * @return AsyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse>
      */
     public AsyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse> showTaskListByProjectIdAsyncInvoker(
         ShowTaskListByProjectIdRequest request) {
-        return new AsyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse>(request,
-            CodeArtsCheckMeta.showTaskListByProjectId, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.showTaskListByProjectId, hcClient);
     }
 
     /**
@@ -678,7 +662,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskPathTreeRequest 请求对象
+     * @param request ShowTaskPathTreeRequest 请求对象
      * @return CompletableFuture<ShowTaskPathTreeResponse>
      */
     public CompletableFuture<ShowTaskPathTreeResponse> showTaskPathTreeAsync(ShowTaskPathTreeRequest request) {
@@ -692,13 +676,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskPathTreeRequest 请求对象
+     * @param request ShowTaskPathTreeRequest 请求对象
      * @return AsyncInvoker<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse>
      */
     public AsyncInvoker<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse> showTaskPathTreeAsyncInvoker(
         ShowTaskPathTreeRequest request) {
-        return new AsyncInvoker<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse>(request,
-            CodeArtsCheckMeta.showTaskPathTree, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.showTaskPathTree, hcClient);
     }
 
     /**
@@ -708,7 +691,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskSettingsRequest 请求对象
+     * @param request ShowTaskSettingsRequest 请求对象
      * @return CompletableFuture<ShowTaskSettingsResponse>
      */
     public CompletableFuture<ShowTaskSettingsResponse> showTaskSettingsAsync(ShowTaskSettingsRequest request) {
@@ -722,13 +705,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskSettingsRequest 请求对象
+     * @param request ShowTaskSettingsRequest 请求对象
      * @return AsyncInvoker<ShowTaskSettingsRequest, ShowTaskSettingsResponse>
      */
     public AsyncInvoker<ShowTaskSettingsRequest, ShowTaskSettingsResponse> showTaskSettingsAsyncInvoker(
         ShowTaskSettingsRequest request) {
-        return new AsyncInvoker<ShowTaskSettingsRequest, ShowTaskSettingsResponse>(request,
-            CodeArtsCheckMeta.showTaskSettings, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.showTaskSettings, hcClient);
     }
 
     /**
@@ -738,7 +720,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTasklogRequest 请求对象
+     * @param request ShowTasklogRequest 请求对象
      * @return CompletableFuture<ShowTasklogResponse>
      */
     public CompletableFuture<ShowTasklogResponse> showTasklogAsync(ShowTasklogRequest request) {
@@ -752,12 +734,11 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTasklogRequest 请求对象
+     * @param request ShowTasklogRequest 请求对象
      * @return AsyncInvoker<ShowTasklogRequest, ShowTasklogResponse>
      */
     public AsyncInvoker<ShowTasklogRequest, ShowTasklogResponse> showTasklogAsyncInvoker(ShowTasklogRequest request) {
-        return new AsyncInvoker<ShowTasklogRequest, ShowTasklogResponse>(request, CodeArtsCheckMeta.showTasklog,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.showTasklog, hcClient);
     }
 
     /**
@@ -767,7 +748,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTasksRulesetsRequest 请求对象
+     * @param request ShowTasksRulesetsRequest 请求对象
      * @return CompletableFuture<ShowTasksRulesetsResponse>
      */
     public CompletableFuture<ShowTasksRulesetsResponse> showTasksRulesetsAsync(ShowTasksRulesetsRequest request) {
@@ -781,13 +762,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTasksRulesetsRequest 请求对象
+     * @param request ShowTasksRulesetsRequest 请求对象
      * @return AsyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse>
      */
     public AsyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> showTasksRulesetsAsyncInvoker(
         ShowTasksRulesetsRequest request) {
-        return new AsyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse>(request,
-            CodeArtsCheckMeta.showTasksRulesets, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.showTasksRulesets, hcClient);
     }
 
     /**
@@ -797,7 +777,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskByIdRequest 请求对象
+     * @param request StopTaskByIdRequest 请求对象
      * @return CompletableFuture<StopTaskByIdResponse>
      */
     public CompletableFuture<StopTaskByIdResponse> stopTaskByIdAsync(StopTaskByIdRequest request) {
@@ -811,13 +791,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskByIdRequest 请求对象
+     * @param request StopTaskByIdRequest 请求对象
      * @return AsyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse>
      */
     public AsyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse> stopTaskByIdAsyncInvoker(
         StopTaskByIdRequest request) {
-        return new AsyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse>(request, CodeArtsCheckMeta.stopTaskById,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.stopTaskById, hcClient);
     }
 
     /**
@@ -827,7 +806,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDefectStatusRequest 请求对象
+     * @param request UpdateDefectStatusRequest 请求对象
      * @return CompletableFuture<UpdateDefectStatusResponse>
      */
     public CompletableFuture<UpdateDefectStatusResponse> updateDefectStatusAsync(UpdateDefectStatusRequest request) {
@@ -841,13 +820,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDefectStatusRequest 请求对象
+     * @param request UpdateDefectStatusRequest 请求对象
      * @return AsyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse>
      */
     public AsyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse> updateDefectStatusAsyncInvoker(
         UpdateDefectStatusRequest request) {
-        return new AsyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse>(request,
-            CodeArtsCheckMeta.updateDefectStatus, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.updateDefectStatus, hcClient);
     }
 
     /**
@@ -857,7 +835,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIgnorePathRequest 请求对象
+     * @param request UpdateIgnorePathRequest 请求对象
      * @return CompletableFuture<UpdateIgnorePathResponse>
      */
     public CompletableFuture<UpdateIgnorePathResponse> updateIgnorePathAsync(UpdateIgnorePathRequest request) {
@@ -871,13 +849,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIgnorePathRequest 请求对象
+     * @param request UpdateIgnorePathRequest 请求对象
      * @return AsyncInvoker<UpdateIgnorePathRequest, UpdateIgnorePathResponse>
      */
     public AsyncInvoker<UpdateIgnorePathRequest, UpdateIgnorePathResponse> updateIgnorePathAsyncInvoker(
         UpdateIgnorePathRequest request) {
-        return new AsyncInvoker<UpdateIgnorePathRequest, UpdateIgnorePathResponse>(request,
-            CodeArtsCheckMeta.updateIgnorePath, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.updateIgnorePath, hcClient);
     }
 
     /**
@@ -887,7 +864,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskRulesetRequest 请求对象
+     * @param request UpdateTaskRulesetRequest 请求对象
      * @return CompletableFuture<UpdateTaskRulesetResponse>
      */
     public CompletableFuture<UpdateTaskRulesetResponse> updateTaskRulesetAsync(UpdateTaskRulesetRequest request) {
@@ -901,13 +878,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskRulesetRequest 请求对象
+     * @param request UpdateTaskRulesetRequest 请求对象
      * @return AsyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse>
      */
     public AsyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> updateTaskRulesetAsyncInvoker(
         UpdateTaskRulesetRequest request) {
-        return new AsyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse>(request,
-            CodeArtsCheckMeta.updateTaskRuleset, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.updateTaskRuleset, hcClient);
     }
 
     /**
@@ -917,7 +893,7 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskSettingsRequest 请求对象
+     * @param request UpdateTaskSettingsRequest 请求对象
      * @return CompletableFuture<UpdateTaskSettingsResponse>
      */
     public CompletableFuture<UpdateTaskSettingsResponse> updateTaskSettingsAsync(UpdateTaskSettingsRequest request) {
@@ -931,13 +907,12 @@ public class CodeArtsCheckAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskSettingsRequest 请求对象
+     * @param request UpdateTaskSettingsRequest 请求对象
      * @return AsyncInvoker<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse>
      */
     public AsyncInvoker<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse> updateTaskSettingsAsyncInvoker(
         UpdateTaskSettingsRequest request) {
-        return new AsyncInvoker<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse>(request,
-            CodeArtsCheckMeta.updateTaskSettings, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsCheckMeta.updateTaskSettings, hcClient);
     }
 
 }

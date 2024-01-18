@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 策略模板
+ * 策略模板。
  */
 public class PolicyTemplate {
 
@@ -32,7 +32,7 @@ public class PolicyTemplate {
     }
 
     /**
-     * 策略组名称，名称需要满足如下规则 1. 不能有空格和.开头，可以由中文、数字、英文大小写组成 2. 字符长度范围1-55
+     * 策略组名称，名称需要满足如下规则： 1. 不能有空格和.开头，可以由中文、数字、英文大小写组成。 2. 字符长度范围1-55。
      * @return policyGroupName
      */
     public String getPolicyGroupName() {
@@ -49,7 +49,7 @@ public class PolicyTemplate {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {

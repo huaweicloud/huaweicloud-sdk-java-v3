@@ -40,7 +40,7 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTasksRequest 请求对象
+     * @param request CreateTasksRequest 请求对象
      * @return CompletableFuture<CreateTasksResponse>
      */
     public CompletableFuture<CreateTasksResponse> createTasksAsync(CreateTasksRequest request) {
@@ -54,11 +54,11 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTasksRequest 请求对象
+     * @param request CreateTasksRequest 请求对象
      * @return AsyncInvoker<CreateTasksRequest, CreateTasksResponse>
      */
     public AsyncInvoker<CreateTasksRequest, CreateTasksResponse> createTasksAsyncInvoker(CreateTasksRequest request) {
-        return new AsyncInvoker<CreateTasksRequest, CreateTasksResponse>(request, VasMeta.createTasks, hcClient);
+        return new AsyncInvoker<>(request, VasMeta.createTasks, hcClient);
     }
 
     /**
@@ -68,7 +68,7 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
      */
     public CompletableFuture<DeleteTaskResponse> deleteTaskAsync(DeleteTaskRequest request) {
@@ -82,11 +82,11 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
-        return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, VasMeta.deleteTask, hcClient);
+        return new AsyncInvoker<>(request, VasMeta.deleteTask, hcClient);
     }
 
     /**
@@ -96,7 +96,7 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksDetailsRequest 请求对象
+     * @param request ListTasksDetailsRequest 请求对象
      * @return CompletableFuture<ListTasksDetailsResponse>
      */
     public CompletableFuture<ListTasksDetailsResponse> listTasksDetailsAsync(ListTasksDetailsRequest request) {
@@ -110,13 +110,12 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksDetailsRequest 请求对象
+     * @param request ListTasksDetailsRequest 请求对象
      * @return AsyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse>
      */
     public AsyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse> listTasksDetailsAsyncInvoker(
         ListTasksDetailsRequest request) {
-        return new AsyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse>(request, VasMeta.listTasksDetails,
-            hcClient);
+        return new AsyncInvoker<>(request, VasMeta.listTasksDetails, hcClient);
     }
 
     /**
@@ -126,7 +125,7 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return CompletableFuture<ShowTaskResponse>
      */
     public CompletableFuture<ShowTaskResponse> showTaskAsync(ShowTaskRequest request) {
@@ -140,11 +139,11 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
      */
     public AsyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskAsyncInvoker(ShowTaskRequest request) {
-        return new AsyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, VasMeta.showTask, hcClient);
+        return new AsyncInvoker<>(request, VasMeta.showTask, hcClient);
     }
 
     /**
@@ -154,7 +153,7 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTaskRequest 请求对象
+     * @param request StartTaskRequest 请求对象
      * @return CompletableFuture<StartTaskResponse>
      */
     public CompletableFuture<StartTaskResponse> startTaskAsync(StartTaskRequest request) {
@@ -168,11 +167,11 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTaskRequest 请求对象
+     * @param request StartTaskRequest 请求对象
      * @return AsyncInvoker<StartTaskRequest, StartTaskResponse>
      */
     public AsyncInvoker<StartTaskRequest, StartTaskResponse> startTaskAsyncInvoker(StartTaskRequest request) {
-        return new AsyncInvoker<StartTaskRequest, StartTaskResponse>(request, VasMeta.startTask, hcClient);
+        return new AsyncInvoker<>(request, VasMeta.startTask, hcClient);
     }
 
     /**
@@ -182,7 +181,7 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskRequest 请求对象
+     * @param request StopTaskRequest 请求对象
      * @return CompletableFuture<StopTaskResponse>
      */
     public CompletableFuture<StopTaskResponse> stopTaskAsync(StopTaskRequest request) {
@@ -196,11 +195,11 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskRequest 请求对象
+     * @param request StopTaskRequest 请求对象
      * @return AsyncInvoker<StopTaskRequest, StopTaskResponse>
      */
     public AsyncInvoker<StopTaskRequest, StopTaskResponse> stopTaskAsyncInvoker(StopTaskRequest request) {
-        return new AsyncInvoker<StopTaskRequest, StopTaskResponse>(request, VasMeta.stopTask, hcClient);
+        return new AsyncInvoker<>(request, VasMeta.stopTask, hcClient);
     }
 
     /**
@@ -210,7 +209,7 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskRequest 请求对象
+     * @param request UpdateTaskRequest 请求对象
      * @return CompletableFuture<UpdateTaskResponse>
      */
     public CompletableFuture<UpdateTaskResponse> updateTaskAsync(UpdateTaskRequest request) {
@@ -224,11 +223,11 @@ public class VasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskRequest 请求对象
+     * @param request UpdateTaskRequest 请求对象
      * @return AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
      */
     public AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse> updateTaskAsyncInvoker(UpdateTaskRequest request) {
-        return new AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>(request, VasMeta.updateTask, hcClient);
+        return new AsyncInvoker<>(request, VasMeta.updateTask, hcClient);
     }
 
 }

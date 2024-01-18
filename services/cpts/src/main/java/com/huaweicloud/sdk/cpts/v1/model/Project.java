@@ -51,7 +51,7 @@ public class Project {
     }
 
     /**
-     * create_time
+     * 创建时间
      * @return createTime
      */
     public String getCreateTime() {
@@ -68,7 +68,7 @@ public class Project {
     }
 
     /**
-     * description
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -85,7 +85,7 @@ public class Project {
     }
 
     /**
-     * group
+     * 租户id（domain_id）
      * @return group
      */
     public String getGroup() {
@@ -102,7 +102,7 @@ public class Project {
     }
 
     /**
-     * id
+     * 工程id
      * minimum: 0
      * maximum: 2147483647
      * @return id
@@ -121,7 +121,7 @@ public class Project {
     }
 
     /**
-     * name
+     * 工程名称
      * @return name
      */
     public String getName() {
@@ -138,7 +138,7 @@ public class Project {
     }
 
     /**
-     * source
+     * 来源（0-PerfTest；2-CloudTest）
      * minimum: 0
      * maximum: 2147483647
      * @return source
@@ -157,7 +157,7 @@ public class Project {
     }
 
     /**
-     * update_time
+     * 更新时间
      * @return updateTime
      */
     public String getUpdateTime() {

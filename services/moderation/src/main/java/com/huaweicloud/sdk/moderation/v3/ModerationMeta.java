@@ -41,9 +41,9 @@ import com.huaweicloud.sdk.moderation.v3.model.VideoStreamCreateRequest;
 public class ModerationMeta {
 
     public static final HttpRequestDef<CheckImageModerationRequest, CheckImageModerationResponse> checkImageModeration =
-        genForcheckImageModeration();
+        genForCheckImageModeration();
 
-    private static HttpRequestDef<CheckImageModerationRequest, CheckImageModerationResponse> genForcheckImageModeration() {
+    private static HttpRequestDef<CheckImageModerationRequest, CheckImageModerationResponse> genForCheckImageModeration() {
         // basic
         HttpRequestDef.Builder<CheckImageModerationRequest, CheckImageModerationResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CheckImageModerationRequest.class, CheckImageModerationResponse.class)
@@ -56,9 +56,7 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImageDetectionReq.class),
-            f -> f.withMarshaller(CheckImageModerationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckImageModerationRequest::getBody, CheckImageModerationRequest::setBody));
 
         // response
 
@@ -66,9 +64,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse> runCloseAudioStreamModerationJob =
-        genForrunCloseAudioStreamModerationJob();
+        genForRunCloseAudioStreamModerationJob();
 
-    private static HttpRequestDef<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse> genForrunCloseAudioStreamModerationJob() {
+    private static HttpRequestDef<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse> genForRunCloseAudioStreamModerationJob() {
         // basic
         HttpRequestDef.Builder<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse> builder =
             HttpRequestDef
@@ -84,9 +82,8 @@ public class ModerationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunCloseAudioStreamModerationJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(RunCloseAudioStreamModerationJobRequest::getJobId,
+                RunCloseAudioStreamModerationJobRequest::setJobId));
 
         // response
 
@@ -94,9 +91,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunCloseVideoStreamModerationJobRequest, RunCloseVideoStreamModerationJobResponse> runCloseVideoStreamModerationJob =
-        genForrunCloseVideoStreamModerationJob();
+        genForRunCloseVideoStreamModerationJob();
 
-    private static HttpRequestDef<RunCloseVideoStreamModerationJobRequest, RunCloseVideoStreamModerationJobResponse> genForrunCloseVideoStreamModerationJob() {
+    private static HttpRequestDef<RunCloseVideoStreamModerationJobRequest, RunCloseVideoStreamModerationJobResponse> genForRunCloseVideoStreamModerationJob() {
         // basic
         HttpRequestDef.Builder<RunCloseVideoStreamModerationJobRequest, RunCloseVideoStreamModerationJobResponse> builder =
             HttpRequestDef
@@ -112,9 +109,8 @@ public class ModerationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunCloseVideoStreamModerationJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(RunCloseVideoStreamModerationJobRequest::getJobId,
+                RunCloseVideoStreamModerationJobRequest::setJobId));
 
         // response
 
@@ -122,9 +118,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse> runCreateAudioModerationJob =
-        genForrunCreateAudioModerationJob();
+        genForRunCreateAudioModerationJob();
 
-    private static HttpRequestDef<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse> genForrunCreateAudioModerationJob() {
+    private static HttpRequestDef<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse> genForRunCreateAudioModerationJob() {
         // basic
         HttpRequestDef.Builder<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse> builder =
             HttpRequestDef
@@ -140,9 +136,8 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AudioCreateRequest.class),
-            f -> f.withMarshaller(RunCreateAudioModerationJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunCreateAudioModerationJobRequest::getBody,
+                RunCreateAudioModerationJobRequest::setBody));
 
         // response
 
@@ -150,9 +145,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse> runCreateAudioStreamModerationJob =
-        genForrunCreateAudioStreamModerationJob();
+        genForRunCreateAudioStreamModerationJob();
 
-    private static HttpRequestDef<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse> genForrunCreateAudioStreamModerationJob() {
+    private static HttpRequestDef<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse> genForRunCreateAudioStreamModerationJob() {
         // basic
         HttpRequestDef.Builder<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse> builder =
             HttpRequestDef
@@ -168,9 +163,8 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AudioStreamCreateRequest.class),
-            f -> f.withMarshaller(RunCreateAudioStreamModerationJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunCreateAudioStreamModerationJobRequest::getBody,
+                RunCreateAudioStreamModerationJobRequest::setBody));
 
         // response
 
@@ -178,9 +172,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse> runCreateDocumentModerationJob =
-        genForrunCreateDocumentModerationJob();
+        genForRunCreateDocumentModerationJob();
 
-    private static HttpRequestDef<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse> genForrunCreateDocumentModerationJob() {
+    private static HttpRequestDef<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse> genForRunCreateDocumentModerationJob() {
         // basic
         HttpRequestDef.Builder<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse> builder =
             HttpRequestDef
@@ -196,9 +190,8 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DocumentCreateRequest.class),
-            f -> f.withMarshaller(RunCreateDocumentModerationJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunCreateDocumentModerationJobRequest::getBody,
+                RunCreateDocumentModerationJobRequest::setBody));
 
         // response
 
@@ -206,9 +199,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse> runCreateVideoModerationJob =
-        genForrunCreateVideoModerationJob();
+        genForRunCreateVideoModerationJob();
 
-    private static HttpRequestDef<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse> genForrunCreateVideoModerationJob() {
+    private static HttpRequestDef<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse> genForRunCreateVideoModerationJob() {
         // basic
         HttpRequestDef.Builder<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse> builder =
             HttpRequestDef
@@ -224,9 +217,8 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VideoCreateRequest.class),
-            f -> f.withMarshaller(RunCreateVideoModerationJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunCreateVideoModerationJobRequest::getBody,
+                RunCreateVideoModerationJobRequest::setBody));
 
         // response
 
@@ -234,9 +226,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunCreateVideoStreamModerationJobRequest, RunCreateVideoStreamModerationJobResponse> runCreateVideoStreamModerationJob =
-        genForrunCreateVideoStreamModerationJob();
+        genForRunCreateVideoStreamModerationJob();
 
-    private static HttpRequestDef<RunCreateVideoStreamModerationJobRequest, RunCreateVideoStreamModerationJobResponse> genForrunCreateVideoStreamModerationJob() {
+    private static HttpRequestDef<RunCreateVideoStreamModerationJobRequest, RunCreateVideoStreamModerationJobResponse> genForRunCreateVideoStreamModerationJob() {
         // basic
         HttpRequestDef.Builder<RunCreateVideoStreamModerationJobRequest, RunCreateVideoStreamModerationJobResponse> builder =
             HttpRequestDef
@@ -252,9 +244,8 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VideoStreamCreateRequest.class),
-            f -> f.withMarshaller(RunCreateVideoStreamModerationJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunCreateVideoStreamModerationJobRequest::getBody,
+                RunCreateVideoStreamModerationJobRequest::setBody));
 
         // response
 
@@ -262,9 +253,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse> runQueryAudioModerationJob =
-        genForrunQueryAudioModerationJob();
+        genForRunQueryAudioModerationJob();
 
-    private static HttpRequestDef<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse> genForrunQueryAudioModerationJob() {
+    private static HttpRequestDef<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse> genForRunQueryAudioModerationJob() {
         // basic
         HttpRequestDef.Builder<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse> builder =
             HttpRequestDef
@@ -280,9 +271,8 @@ public class ModerationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunQueryAudioModerationJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(RunQueryAudioModerationJobRequest::getJobId,
+                RunQueryAudioModerationJobRequest::setJobId));
 
         // response
 
@@ -290,9 +280,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse> runQueryDocumentModerationJob =
-        genForrunQueryDocumentModerationJob();
+        genForRunQueryDocumentModerationJob();
 
-    private static HttpRequestDef<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse> genForrunQueryDocumentModerationJob() {
+    private static HttpRequestDef<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse> genForRunQueryDocumentModerationJob() {
         // basic
         HttpRequestDef.Builder<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse> builder =
             HttpRequestDef
@@ -308,9 +298,8 @@ public class ModerationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunQueryDocumentModerationJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(RunQueryDocumentModerationJobRequest::getJobId,
+                RunQueryDocumentModerationJobRequest::setJobId));
 
         // response
 
@@ -318,9 +307,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse> runQueryVideoModerationJob =
-        genForrunQueryVideoModerationJob();
+        genForRunQueryVideoModerationJob();
 
-    private static HttpRequestDef<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse> genForrunQueryVideoModerationJob() {
+    private static HttpRequestDef<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse> genForRunQueryVideoModerationJob() {
         // basic
         HttpRequestDef.Builder<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse> builder =
             HttpRequestDef
@@ -336,9 +325,8 @@ public class ModerationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunQueryVideoModerationJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(RunQueryVideoModerationJobRequest::getJobId,
+                RunQueryVideoModerationJobRequest::setJobId));
 
         // response
 
@@ -346,9 +334,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunTextModerationRequest, RunTextModerationResponse> runTextModeration =
-        genForrunTextModeration();
+        genForRunTextModeration();
 
-    private static HttpRequestDef<RunTextModerationRequest, RunTextModerationResponse> genForrunTextModeration() {
+    private static HttpRequestDef<RunTextModerationRequest, RunTextModerationResponse> genForRunTextModeration() {
         // basic
         HttpRequestDef.Builder<RunTextModerationRequest, RunTextModerationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTextModerationRequest.class, RunTextModerationResponse.class)
@@ -361,9 +349,7 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TextDetectionReq.class),
-            f -> f.withMarshaller(RunTextModerationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunTextModerationRequest::getBody, RunTextModerationRequest::setBody));
 
         // response
 

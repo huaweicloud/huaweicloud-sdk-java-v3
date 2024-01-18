@@ -30,7 +30,7 @@ public class ListServerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count
@@ -65,7 +65,7 @@ public class ListServerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 服务器组列表，返回列表条目数量上限为分页的最大上限值
+     * 服务器组列表，返回列表条目数量上限为分页的最大上限值。
      * @return items
      */
     public List<ServerGroup> getItems() {

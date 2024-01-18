@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 删除个人存储及关联
+ * 删除个人存储及关联。
  */
 public class DeleteUserStorageAttachmentReq {
 
@@ -40,7 +40,7 @@ public class DeleteUserStorageAttachmentReq {
     }
 
     /**
-     * 用户名，请求数量区间 [1, 200]
+     * 用户名，请求数量区间 [1, 200]。
      * @return items
      */
     public List<String> getItems() {

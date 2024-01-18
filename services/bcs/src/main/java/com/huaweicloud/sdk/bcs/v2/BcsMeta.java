@@ -92,9 +92,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class BcsMeta {
 
     public static final HttpRequestDef<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse> batchAddPeersToChannel =
-        genForbatchAddPeersToChannel();
+        genForBatchAddPeersToChannel();
 
-    private static HttpRequestDef<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse> genForbatchAddPeersToChannel() {
+    private static HttpRequestDef<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse> genForBatchAddPeersToChannel() {
         // basic
         HttpRequestDef.Builder<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchAddPeersToChannelRequest.class, BatchAddPeersToChannelResponse.class)
@@ -107,16 +107,13 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddPeersToChannelRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(BatchAddPeersToChannelRequest::getBlockchainId,
+                BatchAddPeersToChannelRequest::setBlockchainId));
         builder.<BatchAddPeersToChannelRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAddPeersToChannelRequestBody.class),
-            f -> f.withMarshaller(BatchAddPeersToChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddPeersToChannelRequest::getBody, BatchAddPeersToChannelRequest::setBody));
 
         // response
 
@@ -124,9 +121,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<BatchCreateChannelsRequest, BatchCreateChannelsResponse> batchCreateChannels =
-        genForbatchCreateChannels();
+        genForBatchCreateChannels();
 
-    private static HttpRequestDef<BatchCreateChannelsRequest, BatchCreateChannelsResponse> genForbatchCreateChannels() {
+    private static HttpRequestDef<BatchCreateChannelsRequest, BatchCreateChannelsResponse> genForBatchCreateChannels() {
         // basic
         HttpRequestDef.Builder<BatchCreateChannelsRequest, BatchCreateChannelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateChannelsRequest.class, BatchCreateChannelsResponse.class)
@@ -139,16 +136,13 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateChannelsRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateChannelsRequest::getBlockchainId,
+                BatchCreateChannelsRequest::setBlockchainId));
         builder.<BatchCreateChannelsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateChannelsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateChannelsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateChannelsRequest::getBody, BatchCreateChannelsRequest::setBody));
 
         // response
 
@@ -156,9 +150,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse> batchInviteMembersToChannel =
-        genForbatchInviteMembersToChannel();
+        genForBatchInviteMembersToChannel();
 
-    private static HttpRequestDef<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse> genForbatchInviteMembersToChannel() {
+    private static HttpRequestDef<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse> genForBatchInviteMembersToChannel() {
         // basic
         HttpRequestDef.Builder<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse> builder =
             HttpRequestDef
@@ -174,9 +168,8 @@ public class BcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchInviteMembersToChannelRequestBody.class),
-            f -> f.withMarshaller(BatchInviteMembersToChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchInviteMembersToChannelRequest::getBody,
+                BatchInviteMembersToChannelRequest::setBody));
 
         // response
 
@@ -184,9 +177,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse> batchRemoveOrgsFromChannel =
-        genForbatchRemoveOrgsFromChannel();
+        genForBatchRemoveOrgsFromChannel();
 
-    private static HttpRequestDef<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse> genForbatchRemoveOrgsFromChannel() {
+    private static HttpRequestDef<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse> genForBatchRemoveOrgsFromChannel() {
         // basic
         HttpRequestDef.Builder<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse> builder =
             HttpRequestDef
@@ -202,23 +195,20 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchRemoveOrgsFromChannelRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(BatchRemoveOrgsFromChannelRequest::getBlockchainId,
+                BatchRemoveOrgsFromChannelRequest::setBlockchainId));
         builder.<String>withRequestField("channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchRemoveOrgsFromChannelRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(BatchRemoveOrgsFromChannelRequest::getChannelId,
+                BatchRemoveOrgsFromChannelRequest::setChannelId));
         builder.<BatchRemoveOrgsFromChannelRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchRemoveOrgsFromChannelRequestBody.class),
-            f -> f.withMarshaller(BatchRemoveOrgsFromChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRemoveOrgsFromChannelRequest::getBody,
+                BatchRemoveOrgsFromChannelRequest::setBody));
 
         // response
 
@@ -226,9 +216,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse> batchRemovePeersFromChannel =
-        genForbatchRemovePeersFromChannel();
+        genForBatchRemovePeersFromChannel();
 
-    private static HttpRequestDef<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse> genForbatchRemovePeersFromChannel() {
+    private static HttpRequestDef<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse> genForBatchRemovePeersFromChannel() {
         // basic
         HttpRequestDef.Builder<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse> builder =
             HttpRequestDef
@@ -244,23 +234,20 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchRemovePeersFromChannelRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(BatchRemovePeersFromChannelRequest::getBlockchainId,
+                BatchRemovePeersFromChannelRequest::setBlockchainId));
         builder.<String>withRequestField("channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchRemovePeersFromChannelRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(BatchRemovePeersFromChannelRequest::getChannelId,
+                BatchRemovePeersFromChannelRequest::setChannelId));
         builder.<BatchRemovePeersFromChannelRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchRemovePeersFromChannelRequestBody.class),
-            f -> f.withMarshaller(BatchRemovePeersFromChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRemovePeersFromChannelRequest::getBody,
+                BatchRemovePeersFromChannelRequest::setBody));
 
         // response
 
@@ -268,9 +255,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> createBlockchainCertByUserName =
-        genForcreateBlockchainCertByUserName();
+        genForCreateBlockchainCertByUserName();
 
-    private static HttpRequestDef<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> genForcreateBlockchainCertByUserName() {
+    private static HttpRequestDef<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> genForCreateBlockchainCertByUserName() {
         // basic
         HttpRequestDef.Builder<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> builder =
             HttpRequestDef
@@ -286,30 +273,26 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getBlockchainId,
+                CreateBlockchainCertByUserNameRequest::setBlockchainId));
         builder.<String>withRequestField("org_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getOrgName, (req, v) -> {
-                req.setOrgName(v);
-            }));
+            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getOrgName,
+                CreateBlockchainCertByUserNameRequest::setOrgName));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getUserName,
+                CreateBlockchainCertByUserNameRequest::setUserName));
         builder.<CreateBlockchainCertByUserNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateBlockchainCertByUserNameRequestBody.class),
-            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBlockchainCertByUserNameRequest::getBody,
+                CreateBlockchainCertByUserNameRequest::setBody));
 
         // response
 
@@ -317,9 +300,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<CreateNewBlockchainRequest, CreateNewBlockchainResponse> createNewBlockchain =
-        genForcreateNewBlockchain();
+        genForCreateNewBlockchain();
 
-    private static HttpRequestDef<CreateNewBlockchainRequest, CreateNewBlockchainResponse> genForcreateNewBlockchain() {
+    private static HttpRequestDef<CreateNewBlockchainRequest, CreateNewBlockchainResponse> genForCreateNewBlockchain() {
         // basic
         HttpRequestDef.Builder<CreateNewBlockchainRequest, CreateNewBlockchainResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNewBlockchainRequest.class, CreateNewBlockchainResponse.class)
@@ -332,9 +315,7 @@ public class BcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRequestBody.class),
-            f -> f.withMarshaller(CreateNewBlockchainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNewBlockchainRequest::getBody, CreateNewBlockchainRequest::setBody));
 
         // response
 
@@ -342,9 +323,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<DeleteBlockchainRequest, DeleteBlockchainResponse> deleteBlockchain =
-        genFordeleteBlockchain();
+        genForDeleteBlockchain();
 
-    private static HttpRequestDef<DeleteBlockchainRequest, DeleteBlockchainResponse> genFordeleteBlockchain() {
+    private static HttpRequestDef<DeleteBlockchainRequest, DeleteBlockchainResponse> genForDeleteBlockchain() {
         // basic
         HttpRequestDef.Builder<DeleteBlockchainRequest, DeleteBlockchainResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBlockchainRequest.class, DeleteBlockchainResponse.class)
@@ -357,51 +338,40 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBlockchainRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(DeleteBlockchainRequest::getBlockchainId, DeleteBlockchainRequest::setBlockchainId));
         builder.<Boolean>withRequestField("is_delete_storage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteStorage, (req, v) -> {
-                req.setIsDeleteStorage(v);
-            }));
+            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteStorage,
+                DeleteBlockchainRequest::setIsDeleteStorage));
         builder.<Boolean>withRequestField("is_delete_obs",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteObs, (req, v) -> {
-                req.setIsDeleteObs(v);
-            }));
+            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteObs, DeleteBlockchainRequest::setIsDeleteObs));
         builder.<Boolean>withRequestField("is_delete_resource",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteResource, (req, v) -> {
-                req.setIsDeleteResource(v);
-            }));
+            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteResource,
+                DeleteBlockchainRequest::setIsDeleteResource));
         builder.<Boolean>withRequestField("is_delete_ief",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteIef, (req, v) -> {
-                req.setIsDeleteIef(v);
-            }));
+            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteIef, DeleteBlockchainRequest::setIsDeleteIef));
         builder.<String>withRequestField("is_delete_lightpeer",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteLightpeer, (req, v) -> {
-                req.setIsDeleteLightpeer(v);
-            }));
+            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteLightpeer,
+                DeleteBlockchainRequest::setIsDeleteLightpeer));
         builder.<String>withRequestField("ief_nodes_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBlockchainRequest::getIefNodesId, (req, v) -> {
-                req.setIefNodesId(v);
-            }));
+            f -> f.withMarshaller(DeleteBlockchainRequest::getIefNodesId, DeleteBlockchainRequest::setIefNodesId));
 
         // response
 
@@ -409,9 +379,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<DeleteChannelRequest, DeleteChannelResponse> deleteChannel =
-        genFordeleteChannel();
+        genForDeleteChannel();
 
-    private static HttpRequestDef<DeleteChannelRequest, DeleteChannelResponse> genFordeleteChannel() {
+    private static HttpRequestDef<DeleteChannelRequest, DeleteChannelResponse> genForDeleteChannel() {
         // basic
         HttpRequestDef.Builder<DeleteChannelRequest, DeleteChannelResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteChannelRequest.class, DeleteChannelResponse.class)
@@ -424,16 +394,12 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteChannelRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(DeleteChannelRequest::getBlockchainId, DeleteChannelRequest::setBlockchainId));
         builder.<String>withRequestField("channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteChannelRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(DeleteChannelRequest::getChannelId, DeleteChannelRequest::setChannelId));
 
         // response
 
@@ -441,9 +407,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<DeleteMemberInviteRequest, DeleteMemberInviteResponse> deleteMemberInvite =
-        genFordeleteMemberInvite();
+        genForDeleteMemberInvite();
 
-    private static HttpRequestDef<DeleteMemberInviteRequest, DeleteMemberInviteResponse> genFordeleteMemberInvite() {
+    private static HttpRequestDef<DeleteMemberInviteRequest, DeleteMemberInviteResponse> genForDeleteMemberInvite() {
         // basic
         HttpRequestDef.Builder<DeleteMemberInviteRequest, DeleteMemberInviteResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMemberInviteRequest.class, DeleteMemberInviteResponse.class)
@@ -456,9 +422,7 @@ public class BcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteMemberInviteRequestBody.class),
-            f -> f.withMarshaller(DeleteMemberInviteRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberInviteRequest::getBody, DeleteMemberInviteRequest::setBody));
 
         // response
 
@@ -466,9 +430,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> downloadBlockchainCert =
-        genFordownloadBlockchainCert();
+        genForDownloadBlockchainCert();
 
-    private static HttpRequestDef<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> genFordownloadBlockchainCert() {
+    private static HttpRequestDef<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> genForDownloadBlockchainCert() {
         // basic
         HttpRequestDef.Builder<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, DownloadBlockchainCertRequest.class, DownloadBlockchainCertResponse.class)
@@ -481,23 +445,20 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadBlockchainCertRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(DownloadBlockchainCertRequest::getBlockchainId,
+                DownloadBlockchainCertRequest::setBlockchainId));
         builder.<String>withRequestField("org_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadBlockchainCertRequest::getOrgName, (req, v) -> {
-                req.setOrgName(v);
-            }));
+            f -> f.withMarshaller(DownloadBlockchainCertRequest::getOrgName,
+                DownloadBlockchainCertRequest::setOrgName));
         builder.<DownloadBlockchainCertRequest.CertTypeEnum>withRequestField("cert_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DownloadBlockchainCertRequest.CertTypeEnum.class),
-            f -> f.withMarshaller(DownloadBlockchainCertRequest::getCertType, (req, v) -> {
-                req.setCertType(v);
-            }));
+            f -> f.withMarshaller(DownloadBlockchainCertRequest::getCertType,
+                DownloadBlockchainCertRequest::setCertType));
 
         // response
 
@@ -505,9 +466,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse> downloadBlockchainSdkConfig =
-        genFordownloadBlockchainSdkConfig();
+        genForDownloadBlockchainSdkConfig();
 
-    private static HttpRequestDef<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse> genFordownloadBlockchainSdkConfig() {
+    private static HttpRequestDef<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse> genForDownloadBlockchainSdkConfig() {
         // basic
         HttpRequestDef.Builder<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse> builder =
             HttpRequestDef
@@ -523,25 +484,23 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadBlockchainSdkConfigRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(DownloadBlockchainSdkConfigRequest::getBlockchainId,
+                DownloadBlockchainSdkConfigRequest::setBlockchainId));
         builder.<CfgRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CfgRequestBody.class),
-            f -> f.withMarshaller(DownloadBlockchainSdkConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DownloadBlockchainSdkConfigRequest::getBody,
+                DownloadBlockchainSdkConfigRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<FreezeCertRequest, FreezeCertResponse> freezeCert = genForfreezeCert();
+    public static final HttpRequestDef<FreezeCertRequest, FreezeCertResponse> freezeCert = genForFreezeCert();
 
-    private static HttpRequestDef<FreezeCertRequest, FreezeCertResponse> genForfreezeCert() {
+    private static HttpRequestDef<FreezeCertRequest, FreezeCertResponse> genForFreezeCert() {
         // basic
         HttpRequestDef.Builder<FreezeCertRequest, FreezeCertResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, FreezeCertRequest.class, FreezeCertResponse.class)
@@ -554,30 +513,22 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(FreezeCertRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(FreezeCertRequest::getUserName, FreezeCertRequest::setUserName));
         builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(FreezeCertRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(FreezeCertRequest::getBlockchainId, FreezeCertRequest::setBlockchainId));
         builder.<String>withRequestField("org_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(FreezeCertRequest::getOrgName, (req, v) -> {
-                req.setOrgName(v);
-            }));
+            f -> f.withMarshaller(FreezeCertRequest::getOrgName, FreezeCertRequest::setOrgName));
         builder.<FreezeCertRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(FreezeCertRequestBody.class),
-            f -> f.withMarshaller(FreezeCertRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(FreezeCertRequest::getBody, FreezeCertRequest::setBody));
 
         // response
 
@@ -585,9 +536,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<HandleNotificationRequest, HandleNotificationResponse> handleNotification =
-        genForhandleNotification();
+        genForHandleNotification();
 
-    private static HttpRequestDef<HandleNotificationRequest, HandleNotificationResponse> genForhandleNotification() {
+    private static HttpRequestDef<HandleNotificationRequest, HandleNotificationResponse> genForHandleNotification() {
         // basic
         HttpRequestDef.Builder<HandleNotificationRequest, HandleNotificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, HandleNotificationRequest.class, HandleNotificationResponse.class)
@@ -600,9 +551,7 @@ public class BcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HandleNotificationRequestBody.class),
-            f -> f.withMarshaller(HandleNotificationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(HandleNotificationRequest::getBody, HandleNotificationRequest::setBody));
 
         // response
 
@@ -610,9 +559,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse> handleUnionMemberQuitList =
-        genForhandleUnionMemberQuitList();
+        genForHandleUnionMemberQuitList();
 
-    private static HttpRequestDef<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse> genForhandleUnionMemberQuitList() {
+    private static HttpRequestDef<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse> genForHandleUnionMemberQuitList() {
         // basic
         HttpRequestDef.Builder<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse> builder =
             HttpRequestDef
@@ -628,9 +577,8 @@ public class BcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QuitUnionFromMemberListRequestBody.class),
-            f -> f.withMarshaller(HandleUnionMemberQuitListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(HandleUnionMemberQuitListRequest::getBody,
+                HandleUnionMemberQuitListRequest::setBody));
 
         // response
 
@@ -638,9 +586,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ListBcsEventsRequest, ListBcsEventsResponse> listBcsEvents =
-        genForlistBcsEvents();
+        genForListBcsEvents();
 
-    private static HttpRequestDef<ListBcsEventsRequest, ListBcsEventsResponse> genForlistBcsEvents() {
+    private static HttpRequestDef<ListBcsEventsRequest, ListBcsEventsResponse> genForListBcsEvents() {
         // basic
         HttpRequestDef.Builder<ListBcsEventsRequest, ListBcsEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListBcsEventsRequest.class, ListBcsEventsResponse.class)
@@ -653,23 +601,17 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBcsEventsRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(ListBcsEventsRequest::getBlockchainId, ListBcsEventsRequest::setBlockchainId));
         builder.<ListBcsEventsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBcsEventsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListBcsEventsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListBcsEventsRequest::getType, ListBcsEventsRequest::setType));
         builder.<ListBcsEventRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListBcsEventRequestBody.class),
-            f -> f.withMarshaller(ListBcsEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListBcsEventsRequest::getBody, ListBcsEventsRequest::setBody));
 
         // response
 
@@ -677,9 +619,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse> listBcsEventsStatistic =
-        genForlistBcsEventsStatistic();
+        genForListBcsEventsStatistic();
 
-    private static HttpRequestDef<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse> genForlistBcsEventsStatistic() {
+    private static HttpRequestDef<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse> genForListBcsEventsStatistic() {
         // basic
         HttpRequestDef.Builder<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListBcsEventsStatisticRequest.class, ListBcsEventsStatisticResponse.class)
@@ -692,23 +634,18 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBcsEventsStatisticRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(ListBcsEventsStatisticRequest::getBlockchainId,
+                ListBcsEventsStatisticRequest::setBlockchainId));
         builder.<ListBcsEventsStatisticRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBcsEventsStatisticRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListBcsEventsStatisticRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListBcsEventsStatisticRequest::getType, ListBcsEventsStatisticRequest::setType));
         builder.<ListBcsEventRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListBcsEventRequestBody.class),
-            f -> f.withMarshaller(ListBcsEventsStatisticRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListBcsEventsStatisticRequest::getBody, ListBcsEventsStatisticRequest::setBody));
 
         // response
 
@@ -716,9 +653,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ListBcsMetricRequest, ListBcsMetricResponse> listBcsMetric =
-        genForlistBcsMetric();
+        genForListBcsMetric();
 
-    private static HttpRequestDef<ListBcsMetricRequest, ListBcsMetricResponse> genForlistBcsMetric() {
+    private static HttpRequestDef<ListBcsMetricRequest, ListBcsMetricResponse> genForListBcsMetric() {
         // basic
         HttpRequestDef.Builder<ListBcsMetricRequest, ListBcsMetricResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListBcsMetricRequest.class, ListBcsMetricResponse.class)
@@ -731,16 +668,12 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBcsMetricRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(ListBcsMetricRequest::getBlockchainId, ListBcsMetricRequest::setBlockchainId));
         builder.<ListBcsMetricRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListBcsMetricRequestBody.class),
-            f -> f.withMarshaller(ListBcsMetricRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListBcsMetricRequest::getBody, ListBcsMetricRequest::setBody));
 
         // response
 
@@ -748,9 +681,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> listBlockchainChannels =
-        genForlistBlockchainChannels();
+        genForListBlockchainChannels();
 
-    private static HttpRequestDef<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> genForlistBlockchainChannels() {
+    private static HttpRequestDef<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> genForListBlockchainChannels() {
         // basic
         HttpRequestDef.Builder<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListBlockchainChannelsRequest.class, ListBlockchainChannelsResponse.class)
@@ -763,9 +696,8 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBlockchainChannelsRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(ListBlockchainChannelsRequest::getBlockchainId,
+                ListBlockchainChannelsRequest::setBlockchainId));
 
         // response
 
@@ -773,9 +705,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ListBlockchainsRequest, ListBlockchainsResponse> listBlockchains =
-        genForlistBlockchains();
+        genForListBlockchains();
 
-    private static HttpRequestDef<ListBlockchainsRequest, ListBlockchainsResponse> genForlistBlockchains() {
+    private static HttpRequestDef<ListBlockchainsRequest, ListBlockchainsResponse> genForListBlockchains() {
         // basic
         HttpRequestDef.Builder<ListBlockchainsRequest, ListBlockchainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBlockchainsRequest.class, ListBlockchainsResponse.class)
@@ -791,9 +723,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ListEntityMetricRequest, ListEntityMetricResponse> listEntityMetric =
-        genForlistEntityMetric();
+        genForListEntityMetric();
 
-    private static HttpRequestDef<ListEntityMetricRequest, ListEntityMetricResponse> genForlistEntityMetric() {
+    private static HttpRequestDef<ListEntityMetricRequest, ListEntityMetricResponse> genForListEntityMetric() {
         // basic
         HttpRequestDef.Builder<ListEntityMetricRequest, ListEntityMetricResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListEntityMetricRequest.class, ListEntityMetricResponse.class)
@@ -806,16 +738,12 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEntityMetricRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(ListEntityMetricRequest::getBlockchainId, ListEntityMetricRequest::setBlockchainId));
         builder.<ListEntityMetricRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListEntityMetricRequestBody.class),
-            f -> f.withMarshaller(ListEntityMetricRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListEntityMetricRequest::getBody, ListEntityMetricRequest::setBody));
 
         // response
 
@@ -823,9 +751,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ListInstanceMetricRequest, ListInstanceMetricResponse> listInstanceMetric =
-        genForlistInstanceMetric();
+        genForListInstanceMetric();
 
-    private static HttpRequestDef<ListInstanceMetricRequest, ListInstanceMetricResponse> genForlistInstanceMetric() {
+    private static HttpRequestDef<ListInstanceMetricRequest, ListInstanceMetricResponse> genForListInstanceMetric() {
         // basic
         HttpRequestDef.Builder<ListInstanceMetricRequest, ListInstanceMetricResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListInstanceMetricRequest.class, ListInstanceMetricResponse.class)
@@ -838,25 +766,22 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceMetricRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceMetricRequest::getBlockchainId,
+                ListInstanceMetricRequest::setBlockchainId));
         builder.<ListInstanceMetricRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListInstanceMetricRequestBody.class),
-            f -> f.withMarshaller(ListInstanceMetricRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListInstanceMetricRequest::getBody, ListInstanceMetricRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMembersRequest, ListMembersResponse> listMembers = genForlistMembers();
+    public static final HttpRequestDef<ListMembersRequest, ListMembersResponse> listMembers = genForListMembers();
 
-    private static HttpRequestDef<ListMembersRequest, ListMembersResponse> genForlistMembers() {
+    private static HttpRequestDef<ListMembersRequest, ListMembersResponse> genForListMembers() {
         // basic
         HttpRequestDef.Builder<ListMembersRequest, ListMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMembersRequest.class, ListMembersResponse.class)
@@ -872,9 +797,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> listNotifications =
-        genForlistNotifications();
+        genForListNotifications();
 
-    private static HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> genForlistNotifications() {
+    private static HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> genForListNotifications() {
         // basic
         HttpRequestDef.Builder<ListNotificationsRequest, ListNotificationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNotificationsRequest.class, ListNotificationsResponse.class)
@@ -889,9 +814,9 @@ public class BcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListOpRecordRequest, ListOpRecordResponse> listOpRecord = genForlistOpRecord();
+    public static final HttpRequestDef<ListOpRecordRequest, ListOpRecordResponse> listOpRecord = genForListOpRecord();
 
-    private static HttpRequestDef<ListOpRecordRequest, ListOpRecordResponse> genForlistOpRecord() {
+    private static HttpRequestDef<ListOpRecordRequest, ListOpRecordResponse> genForListOpRecord() {
         // basic
         HttpRequestDef.Builder<ListOpRecordRequest, ListOpRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOpRecordRequest.class, ListOpRecordResponse.class)
@@ -904,46 +829,36 @@ public class BcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpRecordRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(ListOpRecordRequest::getBlockchainId, ListOpRecordRequest::setBlockchainId));
         builder.<ListOpRecordRequest.OperationStatusEnum>withRequestField("operation_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListOpRecordRequest.OperationStatusEnum.class),
-            f -> f.withMarshaller(ListOpRecordRequest::getOperationStatus, (req, v) -> {
-                req.setOperationStatus(v);
-            }));
+            f -> f.withMarshaller(ListOpRecordRequest::getOperationStatus, ListOpRecordRequest::setOperationStatus));
         builder.<ListOpRecordRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListOpRecordRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListOpRecordRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListOpRecordRequest::getResourceType, ListOpRecordRequest::setResourceType));
         builder.<ListOpRecordRequest.OperationTypeEnum>withRequestField("operation_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListOpRecordRequest.OperationTypeEnum.class),
-            f -> f.withMarshaller(ListOpRecordRequest::getOperationType, (req, v) -> {
-                req.setOperationType(v);
-            }));
+            f -> f.withMarshaller(ListOpRecordRequest::getOperationType, ListOpRecordRequest::setOperationType));
         builder.<String>withRequestField("operation_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpRecordRequest::getOperationId, (req, v) -> {
-                req.setOperationId(v);
-            }));
+            f -> f.withMarshaller(ListOpRecordRequest::getOperationId, ListOpRecordRequest::setOperationId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForListQuotas();
 
-    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForListQuotas() {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
@@ -959,9 +874,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> showBlockchainDetail =
-        genForshowBlockchainDetail();
+        genForShowBlockchainDetail();
 
-    private static HttpRequestDef<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> genForshowBlockchainDetail() {
+    private static HttpRequestDef<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> genForShowBlockchainDetail() {
         // basic
         HttpRequestDef.Builder<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowBlockchainDetailRequest.class, ShowBlockchainDetailResponse.class)
@@ -974,9 +889,8 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBlockchainDetailRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(ShowBlockchainDetailRequest::getBlockchainId,
+                ShowBlockchainDetailRequest::setBlockchainId));
 
         // response
 
@@ -984,9 +898,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse> showBlockchainFlavors =
-        genForshowBlockchainFlavors();
+        genForShowBlockchainFlavors();
 
-    private static HttpRequestDef<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse> genForshowBlockchainFlavors() {
+    private static HttpRequestDef<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse> genForShowBlockchainFlavors() {
         // basic
         HttpRequestDef.Builder<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowBlockchainFlavorsRequest.class, ShowBlockchainFlavorsResponse.class)
@@ -999,16 +913,12 @@ public class BcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBlockchainFlavorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowBlockchainFlavorsRequest::getLimit, ShowBlockchainFlavorsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBlockchainFlavorsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowBlockchainFlavorsRequest::getOffset, ShowBlockchainFlavorsRequest::setOffset));
 
         // response
 
@@ -1016,9 +926,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse> showBlockchainNodes =
-        genForshowBlockchainNodes();
+        genForShowBlockchainNodes();
 
-    private static HttpRequestDef<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse> genForshowBlockchainNodes() {
+    private static HttpRequestDef<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse> genForShowBlockchainNodes() {
         // basic
         HttpRequestDef.Builder<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBlockchainNodesRequest.class, ShowBlockchainNodesResponse.class)
@@ -1031,9 +941,8 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBlockchainNodesRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(ShowBlockchainNodesRequest::getBlockchainId,
+                ShowBlockchainNodesRequest::setBlockchainId));
 
         // response
 
@@ -1041,9 +950,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> showBlockchainStatus =
-        genForshowBlockchainStatus();
+        genForShowBlockchainStatus();
 
-    private static HttpRequestDef<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> genForshowBlockchainStatus() {
+    private static HttpRequestDef<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> genForShowBlockchainStatus() {
         // basic
         HttpRequestDef.Builder<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowBlockchainStatusRequest.class, ShowBlockchainStatusResponse.class)
@@ -1056,18 +965,17 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBlockchainStatusRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(ShowBlockchainStatusRequest::getBlockchainId,
+                ShowBlockchainStatusRequest::setBlockchainId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UnfreezeCertRequest, UnfreezeCertResponse> unfreezeCert = genForunfreezeCert();
+    public static final HttpRequestDef<UnfreezeCertRequest, UnfreezeCertResponse> unfreezeCert = genForUnfreezeCert();
 
-    private static HttpRequestDef<UnfreezeCertRequest, UnfreezeCertResponse> genForunfreezeCert() {
+    private static HttpRequestDef<UnfreezeCertRequest, UnfreezeCertResponse> genForUnfreezeCert() {
         // basic
         HttpRequestDef.Builder<UnfreezeCertRequest, UnfreezeCertResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UnfreezeCertRequest.class, UnfreezeCertResponse.class)
@@ -1080,30 +988,22 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnfreezeCertRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(UnfreezeCertRequest::getUserName, UnfreezeCertRequest::setUserName));
         builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnfreezeCertRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(UnfreezeCertRequest::getBlockchainId, UnfreezeCertRequest::setBlockchainId));
         builder.<String>withRequestField("org_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnfreezeCertRequest::getOrgName, (req, v) -> {
-                req.setOrgName(v);
-            }));
+            f -> f.withMarshaller(UnfreezeCertRequest::getOrgName, UnfreezeCertRequest::setOrgName));
         builder.<UnfreezeCertRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UnfreezeCertRequestBody.class),
-            f -> f.withMarshaller(UnfreezeCertRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UnfreezeCertRequest::getBody, UnfreezeCertRequest::setBody));
 
         // response
 
@@ -1111,9 +1011,9 @@ public class BcsMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
-        genForupdateInstance();
+        genForUpdateInstance();
 
-    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
+    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForUpdateInstance() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
@@ -1126,16 +1026,12 @@ public class BcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getBlockchainId, (req, v) -> {
-                req.setBlockchainId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getBlockchainId, UpdateInstanceRequest::setBlockchainId));
         builder.<UpdateInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceRequestBody.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getBody, UpdateInstanceRequest::setBody));
 
         // response
 

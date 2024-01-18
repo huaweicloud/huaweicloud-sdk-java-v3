@@ -25,7 +25,7 @@ public class UploadAppIconRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 应用图标,png格式,限制大小8KB
+     * 应用图标，png格式，限制大小8KB。
      * @return data
      */
     public FormDataFilePart getData() {

@@ -323,7 +323,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAgencyWithAllProjectsPermissionRequest 请求对象
+     * @param request AssociateAgencyWithAllProjectsPermissionRequest 请求对象
      * @return AssociateAgencyWithAllProjectsPermissionResponse
      */
     public AssociateAgencyWithAllProjectsPermissionResponse associateAgencyWithAllProjectsPermission(
@@ -340,13 +340,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAgencyWithAllProjectsPermissionRequest 请求对象
+     * @param request AssociateAgencyWithAllProjectsPermissionRequest 请求对象
      * @return SyncInvoker<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse>
      */
     public SyncInvoker<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse> associateAgencyWithAllProjectsPermissionInvoker(
         AssociateAgencyWithAllProjectsPermissionRequest request) {
-        return new SyncInvoker<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse>(
-            request, IamMeta.associateAgencyWithAllProjectsPermission, hcClient);
+        return new SyncInvoker<>(request, IamMeta.associateAgencyWithAllProjectsPermission, hcClient);
     }
 
     /**
@@ -358,7 +357,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAgencyWithDomainPermissionRequest 请求对象
+     * @param request AssociateAgencyWithDomainPermissionRequest 请求对象
      * @return AssociateAgencyWithDomainPermissionResponse
      */
     public AssociateAgencyWithDomainPermissionResponse associateAgencyWithDomainPermission(
@@ -375,13 +374,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAgencyWithDomainPermissionRequest 请求对象
+     * @param request AssociateAgencyWithDomainPermissionRequest 请求对象
      * @return SyncInvoker<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse>
      */
     public SyncInvoker<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse> associateAgencyWithDomainPermissionInvoker(
         AssociateAgencyWithDomainPermissionRequest request) {
-        return new SyncInvoker<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse>(
-            request, IamMeta.associateAgencyWithDomainPermission, hcClient);
+        return new SyncInvoker<>(request, IamMeta.associateAgencyWithDomainPermission, hcClient);
     }
 
     /**
@@ -393,7 +391,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAgencyWithProjectPermissionRequest 请求对象
+     * @param request AssociateAgencyWithProjectPermissionRequest 请求对象
      * @return AssociateAgencyWithProjectPermissionResponse
      */
     public AssociateAgencyWithProjectPermissionResponse associateAgencyWithProjectPermission(
@@ -410,13 +408,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAgencyWithProjectPermissionRequest 请求对象
+     * @param request AssociateAgencyWithProjectPermissionRequest 请求对象
      * @return SyncInvoker<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse>
      */
     public SyncInvoker<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse> associateAgencyWithProjectPermissionInvoker(
         AssociateAgencyWithProjectPermissionRequest request) {
-        return new SyncInvoker<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse>(
-            request, IamMeta.associateAgencyWithProjectPermission, hcClient);
+        return new SyncInvoker<>(request, IamMeta.associateAgencyWithProjectPermission, hcClient);
     }
 
     /**
@@ -426,7 +423,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRoleToAgencyOnEnterpriseProjectRequest 请求对象
+     * @param request AssociateRoleToAgencyOnEnterpriseProjectRequest 请求对象
      * @return AssociateRoleToAgencyOnEnterpriseProjectResponse
      */
     public AssociateRoleToAgencyOnEnterpriseProjectResponse associateRoleToAgencyOnEnterpriseProject(
@@ -441,13 +438,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRoleToAgencyOnEnterpriseProjectRequest 请求对象
+     * @param request AssociateRoleToAgencyOnEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse>
      */
     public SyncInvoker<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse> associateRoleToAgencyOnEnterpriseProjectInvoker(
         AssociateRoleToAgencyOnEnterpriseProjectRequest request) {
-        return new SyncInvoker<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse>(
-            request, IamMeta.associateRoleToAgencyOnEnterpriseProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.associateRoleToAgencyOnEnterpriseProject, hcClient);
     }
 
     /**
@@ -459,7 +455,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRoleToGroupOnEnterpriseProjectRequest 请求对象
+     * @param request AssociateRoleToGroupOnEnterpriseProjectRequest 请求对象
      * @return AssociateRoleToGroupOnEnterpriseProjectResponse
      */
     public AssociateRoleToGroupOnEnterpriseProjectResponse associateRoleToGroupOnEnterpriseProject(
@@ -476,13 +472,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRoleToGroupOnEnterpriseProjectRequest 请求对象
+     * @param request AssociateRoleToGroupOnEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse>
      */
     public SyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> associateRoleToGroupOnEnterpriseProjectInvoker(
         AssociateRoleToGroupOnEnterpriseProjectRequest request) {
-        return new SyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse>(
-            request, IamMeta.associateRoleToGroupOnEnterpriseProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.associateRoleToGroupOnEnterpriseProject, hcClient);
     }
 
     /**
@@ -493,7 +488,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRoleToUserOnEnterpriseProjectRequest 请求对象
+     * @param request AssociateRoleToUserOnEnterpriseProjectRequest 请求对象
      * @return AssociateRoleToUserOnEnterpriseProjectResponse
      */
     public AssociateRoleToUserOnEnterpriseProjectResponse associateRoleToUserOnEnterpriseProject(
@@ -509,13 +504,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRoleToUserOnEnterpriseProjectRequest 请求对象
+     * @param request AssociateRoleToUserOnEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse>
      */
     public SyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse> associateRoleToUserOnEnterpriseProjectInvoker(
         AssociateRoleToUserOnEnterpriseProjectRequest request) {
-        return new SyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse>(
-            request, IamMeta.associateRoleToUserOnEnterpriseProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.associateRoleToUserOnEnterpriseProject, hcClient);
     }
 
     /**
@@ -527,7 +521,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAllProjectsPermissionForAgencyRequest 请求对象
+     * @param request CheckAllProjectsPermissionForAgencyRequest 请求对象
      * @return CheckAllProjectsPermissionForAgencyResponse
      */
     public CheckAllProjectsPermissionForAgencyResponse checkAllProjectsPermissionForAgency(
@@ -544,13 +538,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAllProjectsPermissionForAgencyRequest 请求对象
+     * @param request CheckAllProjectsPermissionForAgencyRequest 请求对象
      * @return SyncInvoker<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse>
      */
     public SyncInvoker<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> checkAllProjectsPermissionForAgencyInvoker(
         CheckAllProjectsPermissionForAgencyRequest request) {
-        return new SyncInvoker<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse>(
-            request, IamMeta.checkAllProjectsPermissionForAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.checkAllProjectsPermissionForAgency, hcClient);
     }
 
     /**
@@ -562,7 +555,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDomainPermissionForAgencyRequest 请求对象
+     * @param request CheckDomainPermissionForAgencyRequest 请求对象
      * @return CheckDomainPermissionForAgencyResponse
      */
     public CheckDomainPermissionForAgencyResponse checkDomainPermissionForAgency(
@@ -579,13 +572,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDomainPermissionForAgencyRequest 请求对象
+     * @param request CheckDomainPermissionForAgencyRequest 请求对象
      * @return SyncInvoker<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse>
      */
     public SyncInvoker<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> checkDomainPermissionForAgencyInvoker(
         CheckDomainPermissionForAgencyRequest request) {
-        return new SyncInvoker<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse>(request,
-            IamMeta.checkDomainPermissionForAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.checkDomainPermissionForAgency, hcClient);
     }
 
     /**
@@ -597,7 +589,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckProjectPermissionForAgencyRequest 请求对象
+     * @param request CheckProjectPermissionForAgencyRequest 请求对象
      * @return CheckProjectPermissionForAgencyResponse
      */
     public CheckProjectPermissionForAgencyResponse checkProjectPermissionForAgency(
@@ -614,13 +606,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckProjectPermissionForAgencyRequest 请求对象
+     * @param request CheckProjectPermissionForAgencyRequest 请求对象
      * @return SyncInvoker<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse>
      */
     public SyncInvoker<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse> checkProjectPermissionForAgencyInvoker(
         CheckProjectPermissionForAgencyRequest request) {
-        return new SyncInvoker<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse>(request,
-            IamMeta.checkProjectPermissionForAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.checkProjectPermissionForAgency, hcClient);
     }
 
     /**
@@ -632,7 +623,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgencyRequest 请求对象
+     * @param request CreateAgencyRequest 请求对象
      * @return CreateAgencyResponse
      */
     public CreateAgencyResponse createAgency(CreateAgencyRequest request) {
@@ -648,11 +639,11 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgencyRequest 请求对象
+     * @param request CreateAgencyRequest 请求对象
      * @return SyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
      */
     public SyncInvoker<CreateAgencyRequest, CreateAgencyResponse> createAgencyInvoker(CreateAgencyRequest request) {
-        return new SyncInvoker<CreateAgencyRequest, CreateAgencyResponse>(request, IamMeta.createAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createAgency, hcClient);
     }
 
     /**
@@ -664,7 +655,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgencyCustomPolicyRequest 请求对象
+     * @param request CreateAgencyCustomPolicyRequest 请求对象
      * @return CreateAgencyCustomPolicyResponse
      */
     public CreateAgencyCustomPolicyResponse createAgencyCustomPolicy(CreateAgencyCustomPolicyRequest request) {
@@ -680,13 +671,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgencyCustomPolicyRequest 请求对象
+     * @param request CreateAgencyCustomPolicyRequest 请求对象
      * @return SyncInvoker<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse>
      */
     public SyncInvoker<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> createAgencyCustomPolicyInvoker(
         CreateAgencyCustomPolicyRequest request) {
-        return new SyncInvoker<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse>(request,
-            IamMeta.createAgencyCustomPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createAgencyCustomPolicy, hcClient);
     }
 
     /**
@@ -698,7 +688,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCloudServiceCustomPolicyRequest 请求对象
+     * @param request CreateCloudServiceCustomPolicyRequest 请求对象
      * @return CreateCloudServiceCustomPolicyResponse
      */
     public CreateCloudServiceCustomPolicyResponse createCloudServiceCustomPolicy(
@@ -715,13 +705,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCloudServiceCustomPolicyRequest 请求对象
+     * @param request CreateCloudServiceCustomPolicyRequest 请求对象
      * @return SyncInvoker<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse>
      */
     public SyncInvoker<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> createCloudServiceCustomPolicyInvoker(
         CreateCloudServiceCustomPolicyRequest request) {
-        return new SyncInvoker<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse>(request,
-            IamMeta.createCloudServiceCustomPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createCloudServiceCustomPolicy, hcClient);
     }
 
     /**
@@ -735,7 +724,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLoginTokenRequest 请求对象
+     * @param request CreateLoginTokenRequest 请求对象
      * @return CreateLoginTokenResponse
      */
     public CreateLoginTokenResponse createLoginToken(CreateLoginTokenRequest request) {
@@ -753,13 +742,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLoginTokenRequest 请求对象
+     * @param request CreateLoginTokenRequest 请求对象
      * @return SyncInvoker<CreateLoginTokenRequest, CreateLoginTokenResponse>
      */
     public SyncInvoker<CreateLoginTokenRequest, CreateLoginTokenResponse> createLoginTokenInvoker(
         CreateLoginTokenRequest request) {
-        return new SyncInvoker<CreateLoginTokenRequest, CreateLoginTokenResponse>(request, IamMeta.createLoginToken,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.createLoginToken, hcClient);
     }
 
     /**
@@ -773,7 +761,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMetadataRequest 请求对象
+     * @param request CreateMetadataRequest 请求对象
      * @return CreateMetadataResponse
      */
     public CreateMetadataResponse createMetadata(CreateMetadataRequest request) {
@@ -791,13 +779,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMetadataRequest 请求对象
+     * @param request CreateMetadataRequest 请求对象
      * @return SyncInvoker<CreateMetadataRequest, CreateMetadataResponse>
      */
     public SyncInvoker<CreateMetadataRequest, CreateMetadataResponse> createMetadataInvoker(
         CreateMetadataRequest request) {
-        return new SyncInvoker<CreateMetadataRequest, CreateMetadataResponse>(request, IamMeta.createMetadata,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.createMetadata, hcClient);
     }
 
     /**
@@ -807,7 +794,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOpenIdConnectConfigRequest 请求对象
+     * @param request CreateOpenIdConnectConfigRequest 请求对象
      * @return CreateOpenIdConnectConfigResponse
      */
     public CreateOpenIdConnectConfigResponse createOpenIdConnectConfig(CreateOpenIdConnectConfigRequest request) {
@@ -821,13 +808,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOpenIdConnectConfigRequest 请求对象
+     * @param request CreateOpenIdConnectConfigRequest 请求对象
      * @return SyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse>
      */
     public SyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> createOpenIdConnectConfigInvoker(
         CreateOpenIdConnectConfigRequest request) {
-        return new SyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse>(request,
-            IamMeta.createOpenIdConnectConfig, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createOpenIdConnectConfig, hcClient);
     }
 
     /**
@@ -837,7 +823,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTokenWithIdTokenRequest 请求对象
+     * @param request CreateTokenWithIdTokenRequest 请求对象
      * @return CreateTokenWithIdTokenResponse
      */
     public CreateTokenWithIdTokenResponse createTokenWithIdToken(CreateTokenWithIdTokenRequest request) {
@@ -851,13 +837,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTokenWithIdTokenRequest 请求对象
+     * @param request CreateTokenWithIdTokenRequest 请求对象
      * @return SyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse>
      */
     public SyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> createTokenWithIdTokenInvoker(
         CreateTokenWithIdTokenRequest request) {
-        return new SyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse>(request,
-            IamMeta.createTokenWithIdToken, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createTokenWithIdToken, hcClient);
     }
 
     /**
@@ -867,7 +852,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUnscopedTokenWithIdTokenRequest 请求对象
+     * @param request CreateUnscopedTokenWithIdTokenRequest 请求对象
      * @return CreateUnscopedTokenWithIdTokenResponse
      */
     public CreateUnscopedTokenWithIdTokenResponse createUnscopedTokenWithIdToken(
@@ -882,13 +867,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUnscopedTokenWithIdTokenRequest 请求对象
+     * @param request CreateUnscopedTokenWithIdTokenRequest 请求对象
      * @return SyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse>
      */
     public SyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse> createUnscopedTokenWithIdTokenInvoker(
         CreateUnscopedTokenWithIdTokenRequest request) {
-        return new SyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse>(request,
-            IamMeta.createUnscopedTokenWithIdToken, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createUnscopedTokenWithIdToken, hcClient);
     }
 
     /**
@@ -900,7 +884,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAgencyRequest 请求对象
+     * @param request DeleteAgencyRequest 请求对象
      * @return DeleteAgencyResponse
      */
     public DeleteAgencyResponse deleteAgency(DeleteAgencyRequest request) {
@@ -916,11 +900,11 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAgencyRequest 请求对象
+     * @param request DeleteAgencyRequest 请求对象
      * @return SyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse>
      */
     public SyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgencyInvoker(DeleteAgencyRequest request) {
-        return new SyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse>(request, IamMeta.deleteAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.deleteAgency, hcClient);
     }
 
     /**
@@ -932,7 +916,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomPolicyRequest 请求对象
+     * @param request DeleteCustomPolicyRequest 请求对象
      * @return DeleteCustomPolicyResponse
      */
     public DeleteCustomPolicyResponse deleteCustomPolicy(DeleteCustomPolicyRequest request) {
@@ -948,13 +932,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomPolicyRequest 请求对象
+     * @param request DeleteCustomPolicyRequest 请求对象
      * @return SyncInvoker<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse>
      */
     public SyncInvoker<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> deleteCustomPolicyInvoker(
         DeleteCustomPolicyRequest request) {
-        return new SyncInvoker<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse>(request,
-            IamMeta.deleteCustomPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.deleteCustomPolicy, hcClient);
     }
 
     /**
@@ -966,7 +949,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainGroupInheritedRoleRequest 请求对象
+     * @param request DeleteDomainGroupInheritedRoleRequest 请求对象
      * @return DeleteDomainGroupInheritedRoleResponse
      */
     public DeleteDomainGroupInheritedRoleResponse deleteDomainGroupInheritedRole(
@@ -983,13 +966,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainGroupInheritedRoleRequest 请求对象
+     * @param request DeleteDomainGroupInheritedRoleRequest 请求对象
      * @return SyncInvoker<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse>
      */
     public SyncInvoker<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> deleteDomainGroupInheritedRoleInvoker(
         DeleteDomainGroupInheritedRoleRequest request) {
-        return new SyncInvoker<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse>(request,
-            IamMeta.deleteDomainGroupInheritedRole, hcClient);
+        return new SyncInvoker<>(request, IamMeta.deleteDomainGroupInheritedRole, hcClient);
     }
 
     /**
@@ -1001,7 +983,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneAddUserToGroupRequest 请求对象
+     * @param request KeystoneAddUserToGroupRequest 请求对象
      * @return KeystoneAddUserToGroupResponse
      */
     public KeystoneAddUserToGroupResponse keystoneAddUserToGroup(KeystoneAddUserToGroupRequest request) {
@@ -1017,13 +999,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneAddUserToGroupRequest 请求对象
+     * @param request KeystoneAddUserToGroupRequest 请求对象
      * @return SyncInvoker<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse>
      */
     public SyncInvoker<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> keystoneAddUserToGroupInvoker(
         KeystoneAddUserToGroupRequest request) {
-        return new SyncInvoker<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse>(request,
-            IamMeta.keystoneAddUserToGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneAddUserToGroup, hcClient);
     }
 
     /**
@@ -1035,7 +1016,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneAssociateGroupWithDomainPermissionRequest 请求对象
+     * @param request KeystoneAssociateGroupWithDomainPermissionRequest 请求对象
      * @return KeystoneAssociateGroupWithDomainPermissionResponse
      */
     public KeystoneAssociateGroupWithDomainPermissionResponse keystoneAssociateGroupWithDomainPermission(
@@ -1052,13 +1033,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneAssociateGroupWithDomainPermissionRequest 请求对象
+     * @param request KeystoneAssociateGroupWithDomainPermissionRequest 请求对象
      * @return SyncInvoker<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse>
      */
     public SyncInvoker<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse> keystoneAssociateGroupWithDomainPermissionInvoker(
         KeystoneAssociateGroupWithDomainPermissionRequest request) {
-        return new SyncInvoker<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse>(
-            request, IamMeta.keystoneAssociateGroupWithDomainPermission, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneAssociateGroupWithDomainPermission, hcClient);
     }
 
     /**
@@ -1070,7 +1050,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneAssociateGroupWithProjectPermissionRequest 请求对象
+     * @param request KeystoneAssociateGroupWithProjectPermissionRequest 请求对象
      * @return KeystoneAssociateGroupWithProjectPermissionResponse
      */
     public KeystoneAssociateGroupWithProjectPermissionResponse keystoneAssociateGroupWithProjectPermission(
@@ -1087,13 +1067,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneAssociateGroupWithProjectPermissionRequest 请求对象
+     * @param request KeystoneAssociateGroupWithProjectPermissionRequest 请求对象
      * @return SyncInvoker<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse>
      */
     public SyncInvoker<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse> keystoneAssociateGroupWithProjectPermissionInvoker(
         KeystoneAssociateGroupWithProjectPermissionRequest request) {
-        return new SyncInvoker<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse>(
-            request, IamMeta.keystoneAssociateGroupWithProjectPermission, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneAssociateGroupWithProjectPermission, hcClient);
     }
 
     /**
@@ -1105,7 +1084,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCheckDomainPermissionForGroupRequest 请求对象
+     * @param request KeystoneCheckDomainPermissionForGroupRequest 请求对象
      * @return KeystoneCheckDomainPermissionForGroupResponse
      */
     public KeystoneCheckDomainPermissionForGroupResponse keystoneCheckDomainPermissionForGroup(
@@ -1122,13 +1101,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCheckDomainPermissionForGroupRequest 请求对象
+     * @param request KeystoneCheckDomainPermissionForGroupRequest 请求对象
      * @return SyncInvoker<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse>
      */
     public SyncInvoker<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse> keystoneCheckDomainPermissionForGroupInvoker(
         KeystoneCheckDomainPermissionForGroupRequest request) {
-        return new SyncInvoker<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse>(
-            request, IamMeta.keystoneCheckDomainPermissionForGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCheckDomainPermissionForGroup, hcClient);
     }
 
     /**
@@ -1140,7 +1118,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCheckProjectPermissionForGroupRequest 请求对象
+     * @param request KeystoneCheckProjectPermissionForGroupRequest 请求对象
      * @return KeystoneCheckProjectPermissionForGroupResponse
      */
     public KeystoneCheckProjectPermissionForGroupResponse keystoneCheckProjectPermissionForGroup(
@@ -1157,13 +1135,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCheckProjectPermissionForGroupRequest 请求对象
+     * @param request KeystoneCheckProjectPermissionForGroupRequest 请求对象
      * @return SyncInvoker<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse>
      */
     public SyncInvoker<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse> keystoneCheckProjectPermissionForGroupInvoker(
         KeystoneCheckProjectPermissionForGroupRequest request) {
-        return new SyncInvoker<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse>(
-            request, IamMeta.keystoneCheckProjectPermissionForGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCheckProjectPermissionForGroup, hcClient);
     }
 
     /**
@@ -1175,7 +1152,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCheckUserInGroupRequest 请求对象
+     * @param request KeystoneCheckUserInGroupRequest 请求对象
      * @return KeystoneCheckUserInGroupResponse
      */
     public KeystoneCheckUserInGroupResponse keystoneCheckUserInGroup(KeystoneCheckUserInGroupRequest request) {
@@ -1191,13 +1168,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCheckUserInGroupRequest 请求对象
+     * @param request KeystoneCheckUserInGroupRequest 请求对象
      * @return SyncInvoker<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse>
      */
     public SyncInvoker<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse> keystoneCheckUserInGroupInvoker(
         KeystoneCheckUserInGroupRequest request) {
-        return new SyncInvoker<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse>(request,
-            IamMeta.keystoneCheckUserInGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCheckUserInGroup, hcClient);
     }
 
     /**
@@ -1209,7 +1185,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCheckroleForGroupRequest 请求对象
+     * @param request KeystoneCheckroleForGroupRequest 请求对象
      * @return KeystoneCheckroleForGroupResponse
      */
     public KeystoneCheckroleForGroupResponse keystoneCheckroleForGroup(KeystoneCheckroleForGroupRequest request) {
@@ -1225,13 +1201,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCheckroleForGroupRequest 请求对象
+     * @param request KeystoneCheckroleForGroupRequest 请求对象
      * @return SyncInvoker<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse>
      */
     public SyncInvoker<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> keystoneCheckroleForGroupInvoker(
         KeystoneCheckroleForGroupRequest request) {
-        return new SyncInvoker<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse>(request,
-            IamMeta.keystoneCheckroleForGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCheckroleForGroup, hcClient);
     }
 
     /**
@@ -1243,7 +1218,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateGroupRequest 请求对象
+     * @param request KeystoneCreateGroupRequest 请求对象
      * @return KeystoneCreateGroupResponse
      */
     public KeystoneCreateGroupResponse keystoneCreateGroup(KeystoneCreateGroupRequest request) {
@@ -1259,13 +1234,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateGroupRequest 请求对象
+     * @param request KeystoneCreateGroupRequest 请求对象
      * @return SyncInvoker<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse>
      */
     public SyncInvoker<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse> keystoneCreateGroupInvoker(
         KeystoneCreateGroupRequest request) {
-        return new SyncInvoker<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse>(request,
-            IamMeta.keystoneCreateGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCreateGroup, hcClient);
     }
 
     /**
@@ -1277,7 +1251,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateIdentityProviderRequest 请求对象
+     * @param request KeystoneCreateIdentityProviderRequest 请求对象
      * @return KeystoneCreateIdentityProviderResponse
      */
     public KeystoneCreateIdentityProviderResponse keystoneCreateIdentityProvider(
@@ -1294,13 +1268,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateIdentityProviderRequest 请求对象
+     * @param request KeystoneCreateIdentityProviderRequest 请求对象
      * @return SyncInvoker<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse>
      */
     public SyncInvoker<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> keystoneCreateIdentityProviderInvoker(
         KeystoneCreateIdentityProviderRequest request) {
-        return new SyncInvoker<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse>(request,
-            IamMeta.keystoneCreateIdentityProvider, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCreateIdentityProvider, hcClient);
     }
 
     /**
@@ -1312,7 +1285,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateMappingRequest 请求对象
+     * @param request KeystoneCreateMappingRequest 请求对象
      * @return KeystoneCreateMappingResponse
      */
     public KeystoneCreateMappingResponse keystoneCreateMapping(KeystoneCreateMappingRequest request) {
@@ -1328,13 +1301,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateMappingRequest 请求对象
+     * @param request KeystoneCreateMappingRequest 请求对象
      * @return SyncInvoker<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse>
      */
     public SyncInvoker<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> keystoneCreateMappingInvoker(
         KeystoneCreateMappingRequest request) {
-        return new SyncInvoker<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse>(request,
-            IamMeta.keystoneCreateMapping, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCreateMapping, hcClient);
     }
 
     /**
@@ -1346,7 +1318,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateProjectRequest 请求对象
+     * @param request KeystoneCreateProjectRequest 请求对象
      * @return KeystoneCreateProjectResponse
      */
     public KeystoneCreateProjectResponse keystoneCreateProject(KeystoneCreateProjectRequest request) {
@@ -1362,13 +1334,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateProjectRequest 请求对象
+     * @param request KeystoneCreateProjectRequest 请求对象
      * @return SyncInvoker<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse>
      */
     public SyncInvoker<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> keystoneCreateProjectInvoker(
         KeystoneCreateProjectRequest request) {
-        return new SyncInvoker<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse>(request,
-            IamMeta.keystoneCreateProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCreateProject, hcClient);
     }
 
     /**
@@ -1380,7 +1351,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateProtocolRequest 请求对象
+     * @param request KeystoneCreateProtocolRequest 请求对象
      * @return KeystoneCreateProtocolResponse
      */
     public KeystoneCreateProtocolResponse keystoneCreateProtocol(KeystoneCreateProtocolRequest request) {
@@ -1396,13 +1367,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateProtocolRequest 请求对象
+     * @param request KeystoneCreateProtocolRequest 请求对象
      * @return SyncInvoker<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse>
      */
     public SyncInvoker<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> keystoneCreateProtocolInvoker(
         KeystoneCreateProtocolRequest request) {
-        return new SyncInvoker<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse>(request,
-            IamMeta.keystoneCreateProtocol, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCreateProtocol, hcClient);
     }
 
     /**
@@ -1414,7 +1384,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateScopedTokenRequest 请求对象
+     * @param request KeystoneCreateScopedTokenRequest 请求对象
      * @return KeystoneCreateScopedTokenResponse
      */
     public KeystoneCreateScopedTokenResponse keystoneCreateScopedToken(KeystoneCreateScopedTokenRequest request) {
@@ -1430,13 +1400,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateScopedTokenRequest 请求对象
+     * @param request KeystoneCreateScopedTokenRequest 请求对象
      * @return SyncInvoker<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse>
      */
     public SyncInvoker<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> keystoneCreateScopedTokenInvoker(
         KeystoneCreateScopedTokenRequest request) {
-        return new SyncInvoker<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse>(request,
-            IamMeta.keystoneCreateScopedToken, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCreateScopedToken, hcClient);
     }
 
     /**
@@ -1448,7 +1417,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneDeleteGroupRequest 请求对象
+     * @param request KeystoneDeleteGroupRequest 请求对象
      * @return KeystoneDeleteGroupResponse
      */
     public KeystoneDeleteGroupResponse keystoneDeleteGroup(KeystoneDeleteGroupRequest request) {
@@ -1464,13 +1433,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneDeleteGroupRequest 请求对象
+     * @param request KeystoneDeleteGroupRequest 请求对象
      * @return SyncInvoker<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse>
      */
     public SyncInvoker<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> keystoneDeleteGroupInvoker(
         KeystoneDeleteGroupRequest request) {
-        return new SyncInvoker<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse>(request,
-            IamMeta.keystoneDeleteGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneDeleteGroup, hcClient);
     }
 
     /**
@@ -1482,7 +1450,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneDeleteIdentityProviderRequest 请求对象
+     * @param request KeystoneDeleteIdentityProviderRequest 请求对象
      * @return KeystoneDeleteIdentityProviderResponse
      */
     public KeystoneDeleteIdentityProviderResponse keystoneDeleteIdentityProvider(
@@ -1499,13 +1467,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneDeleteIdentityProviderRequest 请求对象
+     * @param request KeystoneDeleteIdentityProviderRequest 请求对象
      * @return SyncInvoker<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse>
      */
     public SyncInvoker<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> keystoneDeleteIdentityProviderInvoker(
         KeystoneDeleteIdentityProviderRequest request) {
-        return new SyncInvoker<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse>(request,
-            IamMeta.keystoneDeleteIdentityProvider, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneDeleteIdentityProvider, hcClient);
     }
 
     /**
@@ -1517,7 +1484,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneDeleteMappingRequest 请求对象
+     * @param request KeystoneDeleteMappingRequest 请求对象
      * @return KeystoneDeleteMappingResponse
      */
     public KeystoneDeleteMappingResponse keystoneDeleteMapping(KeystoneDeleteMappingRequest request) {
@@ -1533,13 +1500,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneDeleteMappingRequest 请求对象
+     * @param request KeystoneDeleteMappingRequest 请求对象
      * @return SyncInvoker<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse>
      */
     public SyncInvoker<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> keystoneDeleteMappingInvoker(
         KeystoneDeleteMappingRequest request) {
-        return new SyncInvoker<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse>(request,
-            IamMeta.keystoneDeleteMapping, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneDeleteMapping, hcClient);
     }
 
     /**
@@ -1551,7 +1517,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneDeleteProtocolRequest 请求对象
+     * @param request KeystoneDeleteProtocolRequest 请求对象
      * @return KeystoneDeleteProtocolResponse
      */
     public KeystoneDeleteProtocolResponse keystoneDeleteProtocol(KeystoneDeleteProtocolRequest request) {
@@ -1567,13 +1533,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneDeleteProtocolRequest 请求对象
+     * @param request KeystoneDeleteProtocolRequest 请求对象
      * @return SyncInvoker<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse>
      */
     public SyncInvoker<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> keystoneDeleteProtocolInvoker(
         KeystoneDeleteProtocolRequest request) {
-        return new SyncInvoker<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse>(request,
-            IamMeta.keystoneDeleteProtocol, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneDeleteProtocol, hcClient);
     }
 
     /**
@@ -1583,7 +1548,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListAllProjectPermissionsForGroupRequest 请求对象
+     * @param request KeystoneListAllProjectPermissionsForGroupRequest 请求对象
      * @return KeystoneListAllProjectPermissionsForGroupResponse
      */
     public KeystoneListAllProjectPermissionsForGroupResponse keystoneListAllProjectPermissionsForGroup(
@@ -1598,13 +1563,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListAllProjectPermissionsForGroupRequest 请求对象
+     * @param request KeystoneListAllProjectPermissionsForGroupRequest 请求对象
      * @return SyncInvoker<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse>
      */
     public SyncInvoker<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse> keystoneListAllProjectPermissionsForGroupInvoker(
         KeystoneListAllProjectPermissionsForGroupRequest request) {
-        return new SyncInvoker<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse>(
-            request, IamMeta.keystoneListAllProjectPermissionsForGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListAllProjectPermissionsForGroup, hcClient);
     }
 
     /**
@@ -1616,7 +1580,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListAuthDomainsRequest 请求对象
+     * @param request KeystoneListAuthDomainsRequest 请求对象
      * @return KeystoneListAuthDomainsResponse
      */
     public KeystoneListAuthDomainsResponse keystoneListAuthDomains(KeystoneListAuthDomainsRequest request) {
@@ -1632,13 +1596,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListAuthDomainsRequest 请求对象
+     * @param request KeystoneListAuthDomainsRequest 请求对象
      * @return SyncInvoker<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse>
      */
     public SyncInvoker<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> keystoneListAuthDomainsInvoker(
         KeystoneListAuthDomainsRequest request) {
-        return new SyncInvoker<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse>(request,
-            IamMeta.keystoneListAuthDomains, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListAuthDomains, hcClient);
     }
 
     /**
@@ -1650,7 +1613,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListAuthProjectsRequest 请求对象
+     * @param request KeystoneListAuthProjectsRequest 请求对象
      * @return KeystoneListAuthProjectsResponse
      */
     public KeystoneListAuthProjectsResponse keystoneListAuthProjects(KeystoneListAuthProjectsRequest request) {
@@ -1666,13 +1629,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListAuthProjectsRequest 请求对象
+     * @param request KeystoneListAuthProjectsRequest 请求对象
      * @return SyncInvoker<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse>
      */
     public SyncInvoker<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> keystoneListAuthProjectsInvoker(
         KeystoneListAuthProjectsRequest request) {
-        return new SyncInvoker<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse>(request,
-            IamMeta.keystoneListAuthProjects, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListAuthProjects, hcClient);
     }
 
     /**
@@ -1684,7 +1646,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListDomainPermissionsForGroupRequest 请求对象
+     * @param request KeystoneListDomainPermissionsForGroupRequest 请求对象
      * @return KeystoneListDomainPermissionsForGroupResponse
      */
     public KeystoneListDomainPermissionsForGroupResponse keystoneListDomainPermissionsForGroup(
@@ -1701,13 +1663,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListDomainPermissionsForGroupRequest 请求对象
+     * @param request KeystoneListDomainPermissionsForGroupRequest 请求对象
      * @return SyncInvoker<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse>
      */
     public SyncInvoker<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse> keystoneListDomainPermissionsForGroupInvoker(
         KeystoneListDomainPermissionsForGroupRequest request) {
-        return new SyncInvoker<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse>(
-            request, IamMeta.keystoneListDomainPermissionsForGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListDomainPermissionsForGroup, hcClient);
     }
 
     /**
@@ -1719,7 +1680,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListEndpointsRequest 请求对象
+     * @param request KeystoneListEndpointsRequest 请求对象
      * @return KeystoneListEndpointsResponse
      */
     public KeystoneListEndpointsResponse keystoneListEndpoints(KeystoneListEndpointsRequest request) {
@@ -1735,13 +1696,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListEndpointsRequest 请求对象
+     * @param request KeystoneListEndpointsRequest 请求对象
      * @return SyncInvoker<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse>
      */
     public SyncInvoker<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> keystoneListEndpointsInvoker(
         KeystoneListEndpointsRequest request) {
-        return new SyncInvoker<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse>(request,
-            IamMeta.keystoneListEndpoints, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListEndpoints, hcClient);
     }
 
     /**
@@ -1754,7 +1714,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListFederationDomainsRequest 请求对象
+     * @param request KeystoneListFederationDomainsRequest 请求对象
      * @return KeystoneListFederationDomainsResponse
      */
     public KeystoneListFederationDomainsResponse keystoneListFederationDomains(
@@ -1772,13 +1732,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListFederationDomainsRequest 请求对象
+     * @param request KeystoneListFederationDomainsRequest 请求对象
      * @return SyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse>
      */
     public SyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> keystoneListFederationDomainsInvoker(
         KeystoneListFederationDomainsRequest request) {
-        return new SyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse>(request,
-            IamMeta.keystoneListFederationDomains, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListFederationDomains, hcClient);
     }
 
     /**
@@ -1790,7 +1749,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListGroupsRequest 请求对象
+     * @param request KeystoneListGroupsRequest 请求对象
      * @return KeystoneListGroupsResponse
      */
     public KeystoneListGroupsResponse keystoneListGroups(KeystoneListGroupsRequest request) {
@@ -1806,13 +1765,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListGroupsRequest 请求对象
+     * @param request KeystoneListGroupsRequest 请求对象
      * @return SyncInvoker<KeystoneListGroupsRequest, KeystoneListGroupsResponse>
      */
     public SyncInvoker<KeystoneListGroupsRequest, KeystoneListGroupsResponse> keystoneListGroupsInvoker(
         KeystoneListGroupsRequest request) {
-        return new SyncInvoker<KeystoneListGroupsRequest, KeystoneListGroupsResponse>(request,
-            IamMeta.keystoneListGroups, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListGroups, hcClient);
     }
 
     /**
@@ -1824,7 +1782,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListIdentityProvidersRequest 请求对象
+     * @param request KeystoneListIdentityProvidersRequest 请求对象
      * @return KeystoneListIdentityProvidersResponse
      */
     public KeystoneListIdentityProvidersResponse keystoneListIdentityProviders(
@@ -1841,13 +1799,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListIdentityProvidersRequest 请求对象
+     * @param request KeystoneListIdentityProvidersRequest 请求对象
      * @return SyncInvoker<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse>
      */
     public SyncInvoker<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> keystoneListIdentityProvidersInvoker(
         KeystoneListIdentityProvidersRequest request) {
-        return new SyncInvoker<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse>(request,
-            IamMeta.keystoneListIdentityProviders, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListIdentityProviders, hcClient);
     }
 
     /**
@@ -1859,7 +1816,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListMappingsRequest 请求对象
+     * @param request KeystoneListMappingsRequest 请求对象
      * @return KeystoneListMappingsResponse
      */
     public KeystoneListMappingsResponse keystoneListMappings(KeystoneListMappingsRequest request) {
@@ -1875,13 +1832,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListMappingsRequest 请求对象
+     * @param request KeystoneListMappingsRequest 请求对象
      * @return SyncInvoker<KeystoneListMappingsRequest, KeystoneListMappingsResponse>
      */
     public SyncInvoker<KeystoneListMappingsRequest, KeystoneListMappingsResponse> keystoneListMappingsInvoker(
         KeystoneListMappingsRequest request) {
-        return new SyncInvoker<KeystoneListMappingsRequest, KeystoneListMappingsResponse>(request,
-            IamMeta.keystoneListMappings, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListMappings, hcClient);
     }
 
     /**
@@ -1893,7 +1849,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListPermissionsRequest 请求对象
+     * @param request KeystoneListPermissionsRequest 请求对象
      * @return KeystoneListPermissionsResponse
      */
     public KeystoneListPermissionsResponse keystoneListPermissions(KeystoneListPermissionsRequest request) {
@@ -1909,13 +1865,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListPermissionsRequest 请求对象
+     * @param request KeystoneListPermissionsRequest 请求对象
      * @return SyncInvoker<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse>
      */
     public SyncInvoker<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse> keystoneListPermissionsInvoker(
         KeystoneListPermissionsRequest request) {
-        return new SyncInvoker<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse>(request,
-            IamMeta.keystoneListPermissions, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListPermissions, hcClient);
     }
 
     /**
@@ -1927,7 +1882,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListProjectPermissionsForGroupRequest 请求对象
+     * @param request KeystoneListProjectPermissionsForGroupRequest 请求对象
      * @return KeystoneListProjectPermissionsForGroupResponse
      */
     public KeystoneListProjectPermissionsForGroupResponse keystoneListProjectPermissionsForGroup(
@@ -1944,13 +1899,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListProjectPermissionsForGroupRequest 请求对象
+     * @param request KeystoneListProjectPermissionsForGroupRequest 请求对象
      * @return SyncInvoker<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse>
      */
     public SyncInvoker<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse> keystoneListProjectPermissionsForGroupInvoker(
         KeystoneListProjectPermissionsForGroupRequest request) {
-        return new SyncInvoker<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse>(
-            request, IamMeta.keystoneListProjectPermissionsForGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListProjectPermissionsForGroup, hcClient);
     }
 
     /**
@@ -1962,7 +1916,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListProjectsRequest 请求对象
+     * @param request KeystoneListProjectsRequest 请求对象
      * @return KeystoneListProjectsResponse
      */
     public KeystoneListProjectsResponse keystoneListProjects(KeystoneListProjectsRequest request) {
@@ -1978,13 +1932,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListProjectsRequest 请求对象
+     * @param request KeystoneListProjectsRequest 请求对象
      * @return SyncInvoker<KeystoneListProjectsRequest, KeystoneListProjectsResponse>
      */
     public SyncInvoker<KeystoneListProjectsRequest, KeystoneListProjectsResponse> keystoneListProjectsInvoker(
         KeystoneListProjectsRequest request) {
-        return new SyncInvoker<KeystoneListProjectsRequest, KeystoneListProjectsResponse>(request,
-            IamMeta.keystoneListProjects, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListProjects, hcClient);
     }
 
     /**
@@ -1996,7 +1949,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListProjectsForUserRequest 请求对象
+     * @param request KeystoneListProjectsForUserRequest 请求对象
      * @return KeystoneListProjectsForUserResponse
      */
     public KeystoneListProjectsForUserResponse keystoneListProjectsForUser(KeystoneListProjectsForUserRequest request) {
@@ -2012,13 +1965,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListProjectsForUserRequest 请求对象
+     * @param request KeystoneListProjectsForUserRequest 请求对象
      * @return SyncInvoker<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse>
      */
     public SyncInvoker<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> keystoneListProjectsForUserInvoker(
         KeystoneListProjectsForUserRequest request) {
-        return new SyncInvoker<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse>(request,
-            IamMeta.keystoneListProjectsForUser, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListProjectsForUser, hcClient);
     }
 
     /**
@@ -2030,7 +1982,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListProtocolsRequest 请求对象
+     * @param request KeystoneListProtocolsRequest 请求对象
      * @return KeystoneListProtocolsResponse
      */
     public KeystoneListProtocolsResponse keystoneListProtocols(KeystoneListProtocolsRequest request) {
@@ -2046,13 +1998,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListProtocolsRequest 请求对象
+     * @param request KeystoneListProtocolsRequest 请求对象
      * @return SyncInvoker<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse>
      */
     public SyncInvoker<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> keystoneListProtocolsInvoker(
         KeystoneListProtocolsRequest request) {
-        return new SyncInvoker<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse>(request,
-            IamMeta.keystoneListProtocols, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListProtocols, hcClient);
     }
 
     /**
@@ -2064,7 +2015,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListRegionsRequest 请求对象
+     * @param request KeystoneListRegionsRequest 请求对象
      * @return KeystoneListRegionsResponse
      */
     public KeystoneListRegionsResponse keystoneListRegions(KeystoneListRegionsRequest request) {
@@ -2080,13 +2031,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListRegionsRequest 请求对象
+     * @param request KeystoneListRegionsRequest 请求对象
      * @return SyncInvoker<KeystoneListRegionsRequest, KeystoneListRegionsResponse>
      */
     public SyncInvoker<KeystoneListRegionsRequest, KeystoneListRegionsResponse> keystoneListRegionsInvoker(
         KeystoneListRegionsRequest request) {
-        return new SyncInvoker<KeystoneListRegionsRequest, KeystoneListRegionsResponse>(request,
-            IamMeta.keystoneListRegions, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListRegions, hcClient);
     }
 
     /**
@@ -2098,7 +2048,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListServicesRequest 请求对象
+     * @param request KeystoneListServicesRequest 请求对象
      * @return KeystoneListServicesResponse
      */
     public KeystoneListServicesResponse keystoneListServices(KeystoneListServicesRequest request) {
@@ -2114,13 +2064,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListServicesRequest 请求对象
+     * @param request KeystoneListServicesRequest 请求对象
      * @return SyncInvoker<KeystoneListServicesRequest, KeystoneListServicesResponse>
      */
     public SyncInvoker<KeystoneListServicesRequest, KeystoneListServicesResponse> keystoneListServicesInvoker(
         KeystoneListServicesRequest request) {
-        return new SyncInvoker<KeystoneListServicesRequest, KeystoneListServicesResponse>(request,
-            IamMeta.keystoneListServices, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListServices, hcClient);
     }
 
     /**
@@ -2132,7 +2081,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListUsersForGroupByAdminRequest 请求对象
+     * @param request KeystoneListUsersForGroupByAdminRequest 请求对象
      * @return KeystoneListUsersForGroupByAdminResponse
      */
     public KeystoneListUsersForGroupByAdminResponse keystoneListUsersForGroupByAdmin(
@@ -2149,13 +2098,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListUsersForGroupByAdminRequest 请求对象
+     * @param request KeystoneListUsersForGroupByAdminRequest 请求对象
      * @return SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse>
      */
     public SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdminInvoker(
         KeystoneListUsersForGroupByAdminRequest request) {
-        return new SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse>(
-            request, IamMeta.keystoneListUsersForGroupByAdmin, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListUsersForGroupByAdmin, hcClient);
     }
 
     /**
@@ -2167,7 +2115,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListVersionsRequest 请求对象
+     * @param request KeystoneListVersionsRequest 请求对象
      * @return KeystoneListVersionsResponse
      */
     public KeystoneListVersionsResponse keystoneListVersions(KeystoneListVersionsRequest request) {
@@ -2183,13 +2131,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListVersionsRequest 请求对象
+     * @param request KeystoneListVersionsRequest 请求对象
      * @return SyncInvoker<KeystoneListVersionsRequest, KeystoneListVersionsResponse>
      */
     public SyncInvoker<KeystoneListVersionsRequest, KeystoneListVersionsResponse> keystoneListVersionsInvoker(
         KeystoneListVersionsRequest request) {
-        return new SyncInvoker<KeystoneListVersionsRequest, KeystoneListVersionsResponse>(request,
-            IamMeta.keystoneListVersions, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListVersions, hcClient);
     }
 
     /**
@@ -2201,7 +2148,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneRemoveDomainPermissionFromGroupRequest 请求对象
+     * @param request KeystoneRemoveDomainPermissionFromGroupRequest 请求对象
      * @return KeystoneRemoveDomainPermissionFromGroupResponse
      */
     public KeystoneRemoveDomainPermissionFromGroupResponse keystoneRemoveDomainPermissionFromGroup(
@@ -2218,13 +2165,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneRemoveDomainPermissionFromGroupRequest 请求对象
+     * @param request KeystoneRemoveDomainPermissionFromGroupRequest 请求对象
      * @return SyncInvoker<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse>
      */
     public SyncInvoker<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse> keystoneRemoveDomainPermissionFromGroupInvoker(
         KeystoneRemoveDomainPermissionFromGroupRequest request) {
-        return new SyncInvoker<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse>(
-            request, IamMeta.keystoneRemoveDomainPermissionFromGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneRemoveDomainPermissionFromGroup, hcClient);
     }
 
     /**
@@ -2236,7 +2182,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneRemoveProjectPermissionFromGroupRequest 请求对象
+     * @param request KeystoneRemoveProjectPermissionFromGroupRequest 请求对象
      * @return KeystoneRemoveProjectPermissionFromGroupResponse
      */
     public KeystoneRemoveProjectPermissionFromGroupResponse keystoneRemoveProjectPermissionFromGroup(
@@ -2253,13 +2199,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneRemoveProjectPermissionFromGroupRequest 请求对象
+     * @param request KeystoneRemoveProjectPermissionFromGroupRequest 请求对象
      * @return SyncInvoker<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse>
      */
     public SyncInvoker<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse> keystoneRemoveProjectPermissionFromGroupInvoker(
         KeystoneRemoveProjectPermissionFromGroupRequest request) {
-        return new SyncInvoker<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse>(
-            request, IamMeta.keystoneRemoveProjectPermissionFromGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneRemoveProjectPermissionFromGroup, hcClient);
     }
 
     /**
@@ -2271,7 +2216,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneRemoveUserFromGroupRequest 请求对象
+     * @param request KeystoneRemoveUserFromGroupRequest 请求对象
      * @return KeystoneRemoveUserFromGroupResponse
      */
     public KeystoneRemoveUserFromGroupResponse keystoneRemoveUserFromGroup(KeystoneRemoveUserFromGroupRequest request) {
@@ -2287,13 +2232,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneRemoveUserFromGroupRequest 请求对象
+     * @param request KeystoneRemoveUserFromGroupRequest 请求对象
      * @return SyncInvoker<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse>
      */
     public SyncInvoker<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse> keystoneRemoveUserFromGroupInvoker(
         KeystoneRemoveUserFromGroupRequest request) {
-        return new SyncInvoker<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse>(request,
-            IamMeta.keystoneRemoveUserFromGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneRemoveUserFromGroup, hcClient);
     }
 
     /**
@@ -2305,7 +2249,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowCatalogRequest 请求对象
+     * @param request KeystoneShowCatalogRequest 请求对象
      * @return KeystoneShowCatalogResponse
      */
     public KeystoneShowCatalogResponse keystoneShowCatalog(KeystoneShowCatalogRequest request) {
@@ -2321,13 +2265,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowCatalogRequest 请求对象
+     * @param request KeystoneShowCatalogRequest 请求对象
      * @return SyncInvoker<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse>
      */
     public SyncInvoker<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> keystoneShowCatalogInvoker(
         KeystoneShowCatalogRequest request) {
-        return new SyncInvoker<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse>(request,
-            IamMeta.keystoneShowCatalog, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowCatalog, hcClient);
     }
 
     /**
@@ -2339,7 +2282,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowEndpointRequest 请求对象
+     * @param request KeystoneShowEndpointRequest 请求对象
      * @return KeystoneShowEndpointResponse
      */
     public KeystoneShowEndpointResponse keystoneShowEndpoint(KeystoneShowEndpointRequest request) {
@@ -2355,13 +2298,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowEndpointRequest 请求对象
+     * @param request KeystoneShowEndpointRequest 请求对象
      * @return SyncInvoker<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse>
      */
     public SyncInvoker<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> keystoneShowEndpointInvoker(
         KeystoneShowEndpointRequest request) {
-        return new SyncInvoker<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse>(request,
-            IamMeta.keystoneShowEndpoint, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowEndpoint, hcClient);
     }
 
     /**
@@ -2373,7 +2315,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowGroupRequest 请求对象
+     * @param request KeystoneShowGroupRequest 请求对象
      * @return KeystoneShowGroupResponse
      */
     public KeystoneShowGroupResponse keystoneShowGroup(KeystoneShowGroupRequest request) {
@@ -2389,13 +2331,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowGroupRequest 请求对象
+     * @param request KeystoneShowGroupRequest 请求对象
      * @return SyncInvoker<KeystoneShowGroupRequest, KeystoneShowGroupResponse>
      */
     public SyncInvoker<KeystoneShowGroupRequest, KeystoneShowGroupResponse> keystoneShowGroupInvoker(
         KeystoneShowGroupRequest request) {
-        return new SyncInvoker<KeystoneShowGroupRequest, KeystoneShowGroupResponse>(request, IamMeta.keystoneShowGroup,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowGroup, hcClient);
     }
 
     /**
@@ -2407,7 +2348,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowIdentityProviderRequest 请求对象
+     * @param request KeystoneShowIdentityProviderRequest 请求对象
      * @return KeystoneShowIdentityProviderResponse
      */
     public KeystoneShowIdentityProviderResponse keystoneShowIdentityProvider(
@@ -2424,13 +2365,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowIdentityProviderRequest 请求对象
+     * @param request KeystoneShowIdentityProviderRequest 请求对象
      * @return SyncInvoker<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse>
      */
     public SyncInvoker<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> keystoneShowIdentityProviderInvoker(
         KeystoneShowIdentityProviderRequest request) {
-        return new SyncInvoker<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse>(request,
-            IamMeta.keystoneShowIdentityProvider, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowIdentityProvider, hcClient);
     }
 
     /**
@@ -2442,7 +2382,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowMappingRequest 请求对象
+     * @param request KeystoneShowMappingRequest 请求对象
      * @return KeystoneShowMappingResponse
      */
     public KeystoneShowMappingResponse keystoneShowMapping(KeystoneShowMappingRequest request) {
@@ -2458,13 +2398,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowMappingRequest 请求对象
+     * @param request KeystoneShowMappingRequest 请求对象
      * @return SyncInvoker<KeystoneShowMappingRequest, KeystoneShowMappingResponse>
      */
     public SyncInvoker<KeystoneShowMappingRequest, KeystoneShowMappingResponse> keystoneShowMappingInvoker(
         KeystoneShowMappingRequest request) {
-        return new SyncInvoker<KeystoneShowMappingRequest, KeystoneShowMappingResponse>(request,
-            IamMeta.keystoneShowMapping, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowMapping, hcClient);
     }
 
     /**
@@ -2476,7 +2415,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowPermissionRequest 请求对象
+     * @param request KeystoneShowPermissionRequest 请求对象
      * @return KeystoneShowPermissionResponse
      */
     public KeystoneShowPermissionResponse keystoneShowPermission(KeystoneShowPermissionRequest request) {
@@ -2492,13 +2431,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowPermissionRequest 请求对象
+     * @param request KeystoneShowPermissionRequest 请求对象
      * @return SyncInvoker<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse>
      */
     public SyncInvoker<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> keystoneShowPermissionInvoker(
         KeystoneShowPermissionRequest request) {
-        return new SyncInvoker<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse>(request,
-            IamMeta.keystoneShowPermission, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowPermission, hcClient);
     }
 
     /**
@@ -2510,7 +2448,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowProjectRequest 请求对象
+     * @param request KeystoneShowProjectRequest 请求对象
      * @return KeystoneShowProjectResponse
      */
     public KeystoneShowProjectResponse keystoneShowProject(KeystoneShowProjectRequest request) {
@@ -2526,13 +2464,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowProjectRequest 请求对象
+     * @param request KeystoneShowProjectRequest 请求对象
      * @return SyncInvoker<KeystoneShowProjectRequest, KeystoneShowProjectResponse>
      */
     public SyncInvoker<KeystoneShowProjectRequest, KeystoneShowProjectResponse> keystoneShowProjectInvoker(
         KeystoneShowProjectRequest request) {
-        return new SyncInvoker<KeystoneShowProjectRequest, KeystoneShowProjectResponse>(request,
-            IamMeta.keystoneShowProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowProject, hcClient);
     }
 
     /**
@@ -2544,7 +2481,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowProtocolRequest 请求对象
+     * @param request KeystoneShowProtocolRequest 请求对象
      * @return KeystoneShowProtocolResponse
      */
     public KeystoneShowProtocolResponse keystoneShowProtocol(KeystoneShowProtocolRequest request) {
@@ -2560,13 +2497,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowProtocolRequest 请求对象
+     * @param request KeystoneShowProtocolRequest 请求对象
      * @return SyncInvoker<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse>
      */
     public SyncInvoker<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> keystoneShowProtocolInvoker(
         KeystoneShowProtocolRequest request) {
-        return new SyncInvoker<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse>(request,
-            IamMeta.keystoneShowProtocol, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowProtocol, hcClient);
     }
 
     /**
@@ -2578,7 +2514,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowRegionRequest 请求对象
+     * @param request KeystoneShowRegionRequest 请求对象
      * @return KeystoneShowRegionResponse
      */
     public KeystoneShowRegionResponse keystoneShowRegion(KeystoneShowRegionRequest request) {
@@ -2594,13 +2530,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowRegionRequest 请求对象
+     * @param request KeystoneShowRegionRequest 请求对象
      * @return SyncInvoker<KeystoneShowRegionRequest, KeystoneShowRegionResponse>
      */
     public SyncInvoker<KeystoneShowRegionRequest, KeystoneShowRegionResponse> keystoneShowRegionInvoker(
         KeystoneShowRegionRequest request) {
-        return new SyncInvoker<KeystoneShowRegionRequest, KeystoneShowRegionResponse>(request,
-            IamMeta.keystoneShowRegion, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowRegion, hcClient);
     }
 
     /**
@@ -2612,7 +2547,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowSecurityComplianceRequest 请求对象
+     * @param request KeystoneShowSecurityComplianceRequest 请求对象
      * @return KeystoneShowSecurityComplianceResponse
      */
     public KeystoneShowSecurityComplianceResponse keystoneShowSecurityCompliance(
@@ -2629,13 +2564,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowSecurityComplianceRequest 请求对象
+     * @param request KeystoneShowSecurityComplianceRequest 请求对象
      * @return SyncInvoker<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse>
      */
     public SyncInvoker<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> keystoneShowSecurityComplianceInvoker(
         KeystoneShowSecurityComplianceRequest request) {
-        return new SyncInvoker<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse>(request,
-            IamMeta.keystoneShowSecurityCompliance, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowSecurityCompliance, hcClient);
     }
 
     /**
@@ -2647,7 +2581,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowSecurityComplianceByOptionRequest 请求对象
+     * @param request KeystoneShowSecurityComplianceByOptionRequest 请求对象
      * @return KeystoneShowSecurityComplianceByOptionResponse
      */
     public KeystoneShowSecurityComplianceByOptionResponse keystoneShowSecurityComplianceByOption(
@@ -2664,13 +2598,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowSecurityComplianceByOptionRequest 请求对象
+     * @param request KeystoneShowSecurityComplianceByOptionRequest 请求对象
      * @return SyncInvoker<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse>
      */
     public SyncInvoker<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse> keystoneShowSecurityComplianceByOptionInvoker(
         KeystoneShowSecurityComplianceByOptionRequest request) {
-        return new SyncInvoker<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse>(
-            request, IamMeta.keystoneShowSecurityComplianceByOption, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowSecurityComplianceByOption, hcClient);
     }
 
     /**
@@ -2682,7 +2615,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowServiceRequest 请求对象
+     * @param request KeystoneShowServiceRequest 请求对象
      * @return KeystoneShowServiceResponse
      */
     public KeystoneShowServiceResponse keystoneShowService(KeystoneShowServiceRequest request) {
@@ -2698,13 +2631,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowServiceRequest 请求对象
+     * @param request KeystoneShowServiceRequest 请求对象
      * @return SyncInvoker<KeystoneShowServiceRequest, KeystoneShowServiceResponse>
      */
     public SyncInvoker<KeystoneShowServiceRequest, KeystoneShowServiceResponse> keystoneShowServiceInvoker(
         KeystoneShowServiceRequest request) {
-        return new SyncInvoker<KeystoneShowServiceRequest, KeystoneShowServiceResponse>(request,
-            IamMeta.keystoneShowService, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowService, hcClient);
     }
 
     /**
@@ -2716,7 +2648,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowVersionRequest 请求对象
+     * @param request KeystoneShowVersionRequest 请求对象
      * @return KeystoneShowVersionResponse
      */
     public KeystoneShowVersionResponse keystoneShowVersion(KeystoneShowVersionRequest request) {
@@ -2732,13 +2664,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowVersionRequest 请求对象
+     * @param request KeystoneShowVersionRequest 请求对象
      * @return SyncInvoker<KeystoneShowVersionRequest, KeystoneShowVersionResponse>
      */
     public SyncInvoker<KeystoneShowVersionRequest, KeystoneShowVersionResponse> keystoneShowVersionInvoker(
         KeystoneShowVersionRequest request) {
-        return new SyncInvoker<KeystoneShowVersionRequest, KeystoneShowVersionResponse>(request,
-            IamMeta.keystoneShowVersion, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowVersion, hcClient);
     }
 
     /**
@@ -2750,7 +2681,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateGroupRequest 请求对象
+     * @param request KeystoneUpdateGroupRequest 请求对象
      * @return KeystoneUpdateGroupResponse
      */
     public KeystoneUpdateGroupResponse keystoneUpdateGroup(KeystoneUpdateGroupRequest request) {
@@ -2766,13 +2697,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateGroupRequest 请求对象
+     * @param request KeystoneUpdateGroupRequest 请求对象
      * @return SyncInvoker<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse>
      */
     public SyncInvoker<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse> keystoneUpdateGroupInvoker(
         KeystoneUpdateGroupRequest request) {
-        return new SyncInvoker<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse>(request,
-            IamMeta.keystoneUpdateGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneUpdateGroup, hcClient);
     }
 
     /**
@@ -2784,7 +2714,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateIdentityProviderRequest 请求对象
+     * @param request KeystoneUpdateIdentityProviderRequest 请求对象
      * @return KeystoneUpdateIdentityProviderResponse
      */
     public KeystoneUpdateIdentityProviderResponse keystoneUpdateIdentityProvider(
@@ -2801,13 +2731,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateIdentityProviderRequest 请求对象
+     * @param request KeystoneUpdateIdentityProviderRequest 请求对象
      * @return SyncInvoker<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse>
      */
     public SyncInvoker<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> keystoneUpdateIdentityProviderInvoker(
         KeystoneUpdateIdentityProviderRequest request) {
-        return new SyncInvoker<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse>(request,
-            IamMeta.keystoneUpdateIdentityProvider, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneUpdateIdentityProvider, hcClient);
     }
 
     /**
@@ -2819,7 +2748,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateMappingRequest 请求对象
+     * @param request KeystoneUpdateMappingRequest 请求对象
      * @return KeystoneUpdateMappingResponse
      */
     public KeystoneUpdateMappingResponse keystoneUpdateMapping(KeystoneUpdateMappingRequest request) {
@@ -2835,13 +2764,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateMappingRequest 请求对象
+     * @param request KeystoneUpdateMappingRequest 请求对象
      * @return SyncInvoker<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse>
      */
     public SyncInvoker<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> keystoneUpdateMappingInvoker(
         KeystoneUpdateMappingRequest request) {
-        return new SyncInvoker<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse>(request,
-            IamMeta.keystoneUpdateMapping, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneUpdateMapping, hcClient);
     }
 
     /**
@@ -2853,7 +2781,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateProjectRequest 请求对象
+     * @param request KeystoneUpdateProjectRequest 请求对象
      * @return KeystoneUpdateProjectResponse
      */
     public KeystoneUpdateProjectResponse keystoneUpdateProject(KeystoneUpdateProjectRequest request) {
@@ -2869,13 +2797,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateProjectRequest 请求对象
+     * @param request KeystoneUpdateProjectRequest 请求对象
      * @return SyncInvoker<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse>
      */
     public SyncInvoker<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> keystoneUpdateProjectInvoker(
         KeystoneUpdateProjectRequest request) {
-        return new SyncInvoker<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse>(request,
-            IamMeta.keystoneUpdateProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneUpdateProject, hcClient);
     }
 
     /**
@@ -2887,7 +2814,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateProtocolRequest 请求对象
+     * @param request KeystoneUpdateProtocolRequest 请求对象
      * @return KeystoneUpdateProtocolResponse
      */
     public KeystoneUpdateProtocolResponse keystoneUpdateProtocol(KeystoneUpdateProtocolRequest request) {
@@ -2903,13 +2830,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateProtocolRequest 请求对象
+     * @param request KeystoneUpdateProtocolRequest 请求对象
      * @return SyncInvoker<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse>
      */
     public SyncInvoker<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> keystoneUpdateProtocolInvoker(
         KeystoneUpdateProtocolRequest request) {
-        return new SyncInvoker<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse>(request,
-            IamMeta.keystoneUpdateProtocol, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneUpdateProtocol, hcClient);
     }
 
     /**
@@ -2921,7 +2847,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgenciesRequest 请求对象
+     * @param request ListAgenciesRequest 请求对象
      * @return ListAgenciesResponse
      */
     public ListAgenciesResponse listAgencies(ListAgenciesRequest request) {
@@ -2937,11 +2863,11 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgenciesRequest 请求对象
+     * @param request ListAgenciesRequest 请求对象
      * @return SyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
      */
     public SyncInvoker<ListAgenciesRequest, ListAgenciesResponse> listAgenciesInvoker(ListAgenciesRequest request) {
-        return new SyncInvoker<ListAgenciesRequest, ListAgenciesResponse>(request, IamMeta.listAgencies, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listAgencies, hcClient);
     }
 
     /**
@@ -2953,7 +2879,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllProjectsPermissionsForAgencyRequest 请求对象
+     * @param request ListAllProjectsPermissionsForAgencyRequest 请求对象
      * @return ListAllProjectsPermissionsForAgencyResponse
      */
     public ListAllProjectsPermissionsForAgencyResponse listAllProjectsPermissionsForAgency(
@@ -2970,13 +2896,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllProjectsPermissionsForAgencyRequest 请求对象
+     * @param request ListAllProjectsPermissionsForAgencyRequest 请求对象
      * @return SyncInvoker<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse>
      */
     public SyncInvoker<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> listAllProjectsPermissionsForAgencyInvoker(
         ListAllProjectsPermissionsForAgencyRequest request) {
-        return new SyncInvoker<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse>(
-            request, IamMeta.listAllProjectsPermissionsForAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listAllProjectsPermissionsForAgency, hcClient);
     }
 
     /**
@@ -2988,7 +2913,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomPoliciesRequest 请求对象
+     * @param request ListCustomPoliciesRequest 请求对象
      * @return ListCustomPoliciesResponse
      */
     public ListCustomPoliciesResponse listCustomPolicies(ListCustomPoliciesRequest request) {
@@ -3004,13 +2929,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomPoliciesRequest 请求对象
+     * @param request ListCustomPoliciesRequest 请求对象
      * @return SyncInvoker<ListCustomPoliciesRequest, ListCustomPoliciesResponse>
      */
     public SyncInvoker<ListCustomPoliciesRequest, ListCustomPoliciesResponse> listCustomPoliciesInvoker(
         ListCustomPoliciesRequest request) {
-        return new SyncInvoker<ListCustomPoliciesRequest, ListCustomPoliciesResponse>(request,
-            IamMeta.listCustomPolicies, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listCustomPolicies, hcClient);
     }
 
     /**
@@ -3022,7 +2946,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainPermissionsForAgencyRequest 请求对象
+     * @param request ListDomainPermissionsForAgencyRequest 请求对象
      * @return ListDomainPermissionsForAgencyResponse
      */
     public ListDomainPermissionsForAgencyResponse listDomainPermissionsForAgency(
@@ -3039,13 +2963,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainPermissionsForAgencyRequest 请求对象
+     * @param request ListDomainPermissionsForAgencyRequest 请求对象
      * @return SyncInvoker<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse>
      */
     public SyncInvoker<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse> listDomainPermissionsForAgencyInvoker(
         ListDomainPermissionsForAgencyRequest request) {
-        return new SyncInvoker<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse>(request,
-            IamMeta.listDomainPermissionsForAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listDomainPermissionsForAgency, hcClient);
     }
 
     /**
@@ -3057,7 +2980,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseProjectsForGroupRequest 请求对象
+     * @param request ListEnterpriseProjectsForGroupRequest 请求对象
      * @return ListEnterpriseProjectsForGroupResponse
      */
     public ListEnterpriseProjectsForGroupResponse listEnterpriseProjectsForGroup(
@@ -3074,13 +2997,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseProjectsForGroupRequest 请求对象
+     * @param request ListEnterpriseProjectsForGroupRequest 请求对象
      * @return SyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse>
      */
     public SyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse> listEnterpriseProjectsForGroupInvoker(
         ListEnterpriseProjectsForGroupRequest request) {
-        return new SyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse>(request,
-            IamMeta.listEnterpriseProjectsForGroup, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listEnterpriseProjectsForGroup, hcClient);
     }
 
     /**
@@ -3092,7 +3014,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseProjectsForUserRequest 请求对象
+     * @param request ListEnterpriseProjectsForUserRequest 请求对象
      * @return ListEnterpriseProjectsForUserResponse
      */
     public ListEnterpriseProjectsForUserResponse listEnterpriseProjectsForUser(
@@ -3109,13 +3031,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseProjectsForUserRequest 请求对象
+     * @param request ListEnterpriseProjectsForUserRequest 请求对象
      * @return SyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse>
      */
     public SyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse> listEnterpriseProjectsForUserInvoker(
         ListEnterpriseProjectsForUserRequest request) {
-        return new SyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse>(request,
-            IamMeta.listEnterpriseProjectsForUser, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listEnterpriseProjectsForUser, hcClient);
     }
 
     /**
@@ -3127,7 +3048,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGroupsForEnterpriseProjectRequest 请求对象
+     * @param request ListGroupsForEnterpriseProjectRequest 请求对象
      * @return ListGroupsForEnterpriseProjectResponse
      */
     public ListGroupsForEnterpriseProjectResponse listGroupsForEnterpriseProject(
@@ -3144,13 +3065,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGroupsForEnterpriseProjectRequest 请求对象
+     * @param request ListGroupsForEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse>
      */
     public SyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse> listGroupsForEnterpriseProjectInvoker(
         ListGroupsForEnterpriseProjectRequest request) {
-        return new SyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse>(request,
-            IamMeta.listGroupsForEnterpriseProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listGroupsForEnterpriseProject, hcClient);
     }
 
     /**
@@ -3162,7 +3082,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectPermissionsForAgencyRequest 请求对象
+     * @param request ListProjectPermissionsForAgencyRequest 请求对象
      * @return ListProjectPermissionsForAgencyResponse
      */
     public ListProjectPermissionsForAgencyResponse listProjectPermissionsForAgency(
@@ -3179,13 +3099,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectPermissionsForAgencyRequest 请求对象
+     * @param request ListProjectPermissionsForAgencyRequest 请求对象
      * @return SyncInvoker<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse>
      */
     public SyncInvoker<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse> listProjectPermissionsForAgencyInvoker(
         ListProjectPermissionsForAgencyRequest request) {
-        return new SyncInvoker<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse>(request,
-            IamMeta.listProjectPermissionsForAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listProjectPermissionsForAgency, hcClient);
     }
 
     /**
@@ -3197,7 +3116,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRolesForGroupOnEnterpriseProjectRequest 请求对象
+     * @param request ListRolesForGroupOnEnterpriseProjectRequest 请求对象
      * @return ListRolesForGroupOnEnterpriseProjectResponse
      */
     public ListRolesForGroupOnEnterpriseProjectResponse listRolesForGroupOnEnterpriseProject(
@@ -3214,13 +3133,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRolesForGroupOnEnterpriseProjectRequest 请求对象
+     * @param request ListRolesForGroupOnEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse>
      */
     public SyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse> listRolesForGroupOnEnterpriseProjectInvoker(
         ListRolesForGroupOnEnterpriseProjectRequest request) {
-        return new SyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse>(
-            request, IamMeta.listRolesForGroupOnEnterpriseProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listRolesForGroupOnEnterpriseProject, hcClient);
     }
 
     /**
@@ -3231,7 +3149,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRolesForUserOnEnterpriseProjectRequest 请求对象
+     * @param request ListRolesForUserOnEnterpriseProjectRequest 请求对象
      * @return ListRolesForUserOnEnterpriseProjectResponse
      */
     public ListRolesForUserOnEnterpriseProjectResponse listRolesForUserOnEnterpriseProject(
@@ -3247,13 +3165,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRolesForUserOnEnterpriseProjectRequest 请求对象
+     * @param request ListRolesForUserOnEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse>
      */
     public SyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse> listRolesForUserOnEnterpriseProjectInvoker(
         ListRolesForUserOnEnterpriseProjectRequest request) {
-        return new SyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse>(
-            request, IamMeta.listRolesForUserOnEnterpriseProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listRolesForUserOnEnterpriseProject, hcClient);
     }
 
     /**
@@ -3264,7 +3181,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersForEnterpriseProjectRequest 请求对象
+     * @param request ListUsersForEnterpriseProjectRequest 请求对象
      * @return ListUsersForEnterpriseProjectResponse
      */
     public ListUsersForEnterpriseProjectResponse listUsersForEnterpriseProject(
@@ -3280,13 +3197,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersForEnterpriseProjectRequest 请求对象
+     * @param request ListUsersForEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse>
      */
     public SyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse> listUsersForEnterpriseProjectInvoker(
         ListUsersForEnterpriseProjectRequest request) {
-        return new SyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse>(request,
-            IamMeta.listUsersForEnterpriseProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listUsersForEnterpriseProject, hcClient);
     }
 
     /**
@@ -3298,7 +3214,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveAllProjectsPermissionFromAgencyRequest 请求对象
+     * @param request RemoveAllProjectsPermissionFromAgencyRequest 请求对象
      * @return RemoveAllProjectsPermissionFromAgencyResponse
      */
     public RemoveAllProjectsPermissionFromAgencyResponse removeAllProjectsPermissionFromAgency(
@@ -3315,13 +3231,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveAllProjectsPermissionFromAgencyRequest 请求对象
+     * @param request RemoveAllProjectsPermissionFromAgencyRequest 请求对象
      * @return SyncInvoker<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse>
      */
     public SyncInvoker<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse> removeAllProjectsPermissionFromAgencyInvoker(
         RemoveAllProjectsPermissionFromAgencyRequest request) {
-        return new SyncInvoker<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse>(
-            request, IamMeta.removeAllProjectsPermissionFromAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.removeAllProjectsPermissionFromAgency, hcClient);
     }
 
     /**
@@ -3333,7 +3248,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveDomainPermissionFromAgencyRequest 请求对象
+     * @param request RemoveDomainPermissionFromAgencyRequest 请求对象
      * @return RemoveDomainPermissionFromAgencyResponse
      */
     public RemoveDomainPermissionFromAgencyResponse removeDomainPermissionFromAgency(
@@ -3350,13 +3265,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveDomainPermissionFromAgencyRequest 请求对象
+     * @param request RemoveDomainPermissionFromAgencyRequest 请求对象
      * @return SyncInvoker<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse>
      */
     public SyncInvoker<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> removeDomainPermissionFromAgencyInvoker(
         RemoveDomainPermissionFromAgencyRequest request) {
-        return new SyncInvoker<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse>(
-            request, IamMeta.removeDomainPermissionFromAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.removeDomainPermissionFromAgency, hcClient);
     }
 
     /**
@@ -3368,7 +3282,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveProjectPermissionFromAgencyRequest 请求对象
+     * @param request RemoveProjectPermissionFromAgencyRequest 请求对象
      * @return RemoveProjectPermissionFromAgencyResponse
      */
     public RemoveProjectPermissionFromAgencyResponse removeProjectPermissionFromAgency(
@@ -3385,13 +3299,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveProjectPermissionFromAgencyRequest 请求对象
+     * @param request RemoveProjectPermissionFromAgencyRequest 请求对象
      * @return SyncInvoker<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse>
      */
     public SyncInvoker<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse> removeProjectPermissionFromAgencyInvoker(
         RemoveProjectPermissionFromAgencyRequest request) {
-        return new SyncInvoker<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse>(
-            request, IamMeta.removeProjectPermissionFromAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.removeProjectPermissionFromAgency, hcClient);
     }
 
     /**
@@ -3401,7 +3314,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RevokeRoleFromAgencyOnEnterpriseProjectRequest 请求对象
+     * @param request RevokeRoleFromAgencyOnEnterpriseProjectRequest 请求对象
      * @return RevokeRoleFromAgencyOnEnterpriseProjectResponse
      */
     public RevokeRoleFromAgencyOnEnterpriseProjectResponse revokeRoleFromAgencyOnEnterpriseProject(
@@ -3416,13 +3329,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RevokeRoleFromAgencyOnEnterpriseProjectRequest 请求对象
+     * @param request RevokeRoleFromAgencyOnEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse>
      */
     public SyncInvoker<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse> revokeRoleFromAgencyOnEnterpriseProjectInvoker(
         RevokeRoleFromAgencyOnEnterpriseProjectRequest request) {
-        return new SyncInvoker<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse>(
-            request, IamMeta.revokeRoleFromAgencyOnEnterpriseProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.revokeRoleFromAgencyOnEnterpriseProject, hcClient);
     }
 
     /**
@@ -3434,7 +3346,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RevokeRoleFromGroupOnEnterpriseProjectRequest 请求对象
+     * @param request RevokeRoleFromGroupOnEnterpriseProjectRequest 请求对象
      * @return RevokeRoleFromGroupOnEnterpriseProjectResponse
      */
     public RevokeRoleFromGroupOnEnterpriseProjectResponse revokeRoleFromGroupOnEnterpriseProject(
@@ -3451,13 +3363,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RevokeRoleFromGroupOnEnterpriseProjectRequest 请求对象
+     * @param request RevokeRoleFromGroupOnEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse>
      */
     public SyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse> revokeRoleFromGroupOnEnterpriseProjectInvoker(
         RevokeRoleFromGroupOnEnterpriseProjectRequest request) {
-        return new SyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse>(
-            request, IamMeta.revokeRoleFromGroupOnEnterpriseProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.revokeRoleFromGroupOnEnterpriseProject, hcClient);
     }
 
     /**
@@ -3468,7 +3379,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RevokeRoleFromUserOnEnterpriseProjectRequest 请求对象
+     * @param request RevokeRoleFromUserOnEnterpriseProjectRequest 请求对象
      * @return RevokeRoleFromUserOnEnterpriseProjectResponse
      */
     public RevokeRoleFromUserOnEnterpriseProjectResponse revokeRoleFromUserOnEnterpriseProject(
@@ -3484,13 +3395,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RevokeRoleFromUserOnEnterpriseProjectRequest 请求对象
+     * @param request RevokeRoleFromUserOnEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse>
      */
     public SyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse> revokeRoleFromUserOnEnterpriseProjectInvoker(
         RevokeRoleFromUserOnEnterpriseProjectRequest request) {
-        return new SyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse>(
-            request, IamMeta.revokeRoleFromUserOnEnterpriseProject, hcClient);
+        return new SyncInvoker<>(request, IamMeta.revokeRoleFromUserOnEnterpriseProject, hcClient);
     }
 
     /**
@@ -3502,7 +3412,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAgencyRequest 请求对象
+     * @param request ShowAgencyRequest 请求对象
      * @return ShowAgencyResponse
      */
     public ShowAgencyResponse showAgency(ShowAgencyRequest request) {
@@ -3518,11 +3428,11 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAgencyRequest 请求对象
+     * @param request ShowAgencyRequest 请求对象
      * @return SyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
      */
     public SyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyInvoker(ShowAgencyRequest request) {
-        return new SyncInvoker<ShowAgencyRequest, ShowAgencyResponse>(request, IamMeta.showAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showAgency, hcClient);
     }
 
     /**
@@ -3534,7 +3444,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomPolicyRequest 请求对象
+     * @param request ShowCustomPolicyRequest 请求对象
      * @return ShowCustomPolicyResponse
      */
     public ShowCustomPolicyResponse showCustomPolicy(ShowCustomPolicyRequest request) {
@@ -3550,13 +3460,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomPolicyRequest 请求对象
+     * @param request ShowCustomPolicyRequest 请求对象
      * @return SyncInvoker<ShowCustomPolicyRequest, ShowCustomPolicyResponse>
      */
     public SyncInvoker<ShowCustomPolicyRequest, ShowCustomPolicyResponse> showCustomPolicyInvoker(
         ShowCustomPolicyRequest request) {
-        return new SyncInvoker<ShowCustomPolicyRequest, ShowCustomPolicyResponse>(request, IamMeta.showCustomPolicy,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.showCustomPolicy, hcClient);
     }
 
     /**
@@ -3568,7 +3477,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainApiAclPolicyRequest 请求对象
+     * @param request ShowDomainApiAclPolicyRequest 请求对象
      * @return ShowDomainApiAclPolicyResponse
      */
     public ShowDomainApiAclPolicyResponse showDomainApiAclPolicy(ShowDomainApiAclPolicyRequest request) {
@@ -3584,13 +3493,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainApiAclPolicyRequest 请求对象
+     * @param request ShowDomainApiAclPolicyRequest 请求对象
      * @return SyncInvoker<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse>
      */
     public SyncInvoker<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> showDomainApiAclPolicyInvoker(
         ShowDomainApiAclPolicyRequest request) {
-        return new SyncInvoker<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse>(request,
-            IamMeta.showDomainApiAclPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showDomainApiAclPolicy, hcClient);
     }
 
     /**
@@ -3602,7 +3510,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainConsoleAclPolicyRequest 请求对象
+     * @param request ShowDomainConsoleAclPolicyRequest 请求对象
      * @return ShowDomainConsoleAclPolicyResponse
      */
     public ShowDomainConsoleAclPolicyResponse showDomainConsoleAclPolicy(ShowDomainConsoleAclPolicyRequest request) {
@@ -3618,13 +3526,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainConsoleAclPolicyRequest 请求对象
+     * @param request ShowDomainConsoleAclPolicyRequest 请求对象
      * @return SyncInvoker<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse>
      */
     public SyncInvoker<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> showDomainConsoleAclPolicyInvoker(
         ShowDomainConsoleAclPolicyRequest request) {
-        return new SyncInvoker<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse>(request,
-            IamMeta.showDomainConsoleAclPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showDomainConsoleAclPolicy, hcClient);
     }
 
     /**
@@ -3636,7 +3543,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainLoginPolicyRequest 请求对象
+     * @param request ShowDomainLoginPolicyRequest 请求对象
      * @return ShowDomainLoginPolicyResponse
      */
     public ShowDomainLoginPolicyResponse showDomainLoginPolicy(ShowDomainLoginPolicyRequest request) {
@@ -3652,13 +3559,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainLoginPolicyRequest 请求对象
+     * @param request ShowDomainLoginPolicyRequest 请求对象
      * @return SyncInvoker<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse>
      */
     public SyncInvoker<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> showDomainLoginPolicyInvoker(
         ShowDomainLoginPolicyRequest request) {
-        return new SyncInvoker<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse>(request,
-            IamMeta.showDomainLoginPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showDomainLoginPolicy, hcClient);
     }
 
     /**
@@ -3670,7 +3576,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainPasswordPolicyRequest 请求对象
+     * @param request ShowDomainPasswordPolicyRequest 请求对象
      * @return ShowDomainPasswordPolicyResponse
      */
     public ShowDomainPasswordPolicyResponse showDomainPasswordPolicy(ShowDomainPasswordPolicyRequest request) {
@@ -3686,13 +3592,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainPasswordPolicyRequest 请求对象
+     * @param request ShowDomainPasswordPolicyRequest 请求对象
      * @return SyncInvoker<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse>
      */
     public SyncInvoker<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> showDomainPasswordPolicyInvoker(
         ShowDomainPasswordPolicyRequest request) {
-        return new SyncInvoker<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse>(request,
-            IamMeta.showDomainPasswordPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showDomainPasswordPolicy, hcClient);
     }
 
     /**
@@ -3704,7 +3609,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainProtectPolicyRequest 请求对象
+     * @param request ShowDomainProtectPolicyRequest 请求对象
      * @return ShowDomainProtectPolicyResponse
      */
     public ShowDomainProtectPolicyResponse showDomainProtectPolicy(ShowDomainProtectPolicyRequest request) {
@@ -3720,13 +3625,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainProtectPolicyRequest 请求对象
+     * @param request ShowDomainProtectPolicyRequest 请求对象
      * @return SyncInvoker<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse>
      */
     public SyncInvoker<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> showDomainProtectPolicyInvoker(
         ShowDomainProtectPolicyRequest request) {
-        return new SyncInvoker<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse>(request,
-            IamMeta.showDomainProtectPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showDomainProtectPolicy, hcClient);
     }
 
     /**
@@ -3738,7 +3642,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainQuotaRequest 请求对象
+     * @param request ShowDomainQuotaRequest 请求对象
      * @return ShowDomainQuotaResponse
      */
     public ShowDomainQuotaResponse showDomainQuota(ShowDomainQuotaRequest request) {
@@ -3754,13 +3658,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainQuotaRequest 请求对象
+     * @param request ShowDomainQuotaRequest 请求对象
      * @return SyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse>
      */
     public SyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuotaInvoker(
         ShowDomainQuotaRequest request) {
-        return new SyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse>(request, IamMeta.showDomainQuota,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.showDomainQuota, hcClient);
     }
 
     /**
@@ -3771,7 +3674,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainRoleAssignmentsRequest 请求对象
+     * @param request ShowDomainRoleAssignmentsRequest 请求对象
      * @return ShowDomainRoleAssignmentsResponse
      */
     public ShowDomainRoleAssignmentsResponse showDomainRoleAssignments(ShowDomainRoleAssignmentsRequest request) {
@@ -3786,13 +3689,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainRoleAssignmentsRequest 请求对象
+     * @param request ShowDomainRoleAssignmentsRequest 请求对象
      * @return SyncInvoker<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse>
      */
     public SyncInvoker<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse> showDomainRoleAssignmentsInvoker(
         ShowDomainRoleAssignmentsRequest request) {
-        return new SyncInvoker<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse>(request,
-            IamMeta.showDomainRoleAssignments, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showDomainRoleAssignments, hcClient);
     }
 
     /**
@@ -3804,7 +3706,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetadataRequest 请求对象
+     * @param request ShowMetadataRequest 请求对象
      * @return ShowMetadataResponse
      */
     public ShowMetadataResponse showMetadata(ShowMetadataRequest request) {
@@ -3820,11 +3722,11 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetadataRequest 请求对象
+     * @param request ShowMetadataRequest 请求对象
      * @return SyncInvoker<ShowMetadataRequest, ShowMetadataResponse>
      */
     public SyncInvoker<ShowMetadataRequest, ShowMetadataResponse> showMetadataInvoker(ShowMetadataRequest request) {
-        return new SyncInvoker<ShowMetadataRequest, ShowMetadataResponse>(request, IamMeta.showMetadata, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showMetadata, hcClient);
     }
 
     /**
@@ -3834,7 +3736,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOpenIdConnectConfigRequest 请求对象
+     * @param request ShowOpenIdConnectConfigRequest 请求对象
      * @return ShowOpenIdConnectConfigResponse
      */
     public ShowOpenIdConnectConfigResponse showOpenIdConnectConfig(ShowOpenIdConnectConfigRequest request) {
@@ -3848,13 +3750,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOpenIdConnectConfigRequest 请求对象
+     * @param request ShowOpenIdConnectConfigRequest 请求对象
      * @return SyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse>
      */
     public SyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> showOpenIdConnectConfigInvoker(
         ShowOpenIdConnectConfigRequest request) {
-        return new SyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse>(request,
-            IamMeta.showOpenIdConnectConfig, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showOpenIdConnectConfig, hcClient);
     }
 
     /**
@@ -3866,7 +3767,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectDetailsAndStatusRequest 请求对象
+     * @param request ShowProjectDetailsAndStatusRequest 请求对象
      * @return ShowProjectDetailsAndStatusResponse
      */
     public ShowProjectDetailsAndStatusResponse showProjectDetailsAndStatus(ShowProjectDetailsAndStatusRequest request) {
@@ -3882,13 +3783,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectDetailsAndStatusRequest 请求对象
+     * @param request ShowProjectDetailsAndStatusRequest 请求对象
      * @return SyncInvoker<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse>
      */
     public SyncInvoker<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> showProjectDetailsAndStatusInvoker(
         ShowProjectDetailsAndStatusRequest request) {
-        return new SyncInvoker<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse>(request,
-            IamMeta.showProjectDetailsAndStatus, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showProjectDetailsAndStatus, hcClient);
     }
 
     /**
@@ -3900,7 +3800,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectQuotaRequest 请求对象
+     * @param request ShowProjectQuotaRequest 请求对象
      * @return ShowProjectQuotaResponse
      */
     public ShowProjectQuotaResponse showProjectQuota(ShowProjectQuotaRequest request) {
@@ -3916,13 +3816,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectQuotaRequest 请求对象
+     * @param request ShowProjectQuotaRequest 请求对象
      * @return SyncInvoker<ShowProjectQuotaRequest, ShowProjectQuotaResponse>
      */
     public SyncInvoker<ShowProjectQuotaRequest, ShowProjectQuotaResponse> showProjectQuotaInvoker(
         ShowProjectQuotaRequest request) {
-        return new SyncInvoker<ShowProjectQuotaRequest, ShowProjectQuotaResponse>(request, IamMeta.showProjectQuota,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.showProjectQuota, hcClient);
     }
 
     /**
@@ -3934,7 +3833,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAgencyRequest 请求对象
+     * @param request UpdateAgencyRequest 请求对象
      * @return UpdateAgencyResponse
      */
     public UpdateAgencyResponse updateAgency(UpdateAgencyRequest request) {
@@ -3950,11 +3849,11 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAgencyRequest 请求对象
+     * @param request UpdateAgencyRequest 请求对象
      * @return SyncInvoker<UpdateAgencyRequest, UpdateAgencyResponse>
      */
     public SyncInvoker<UpdateAgencyRequest, UpdateAgencyResponse> updateAgencyInvoker(UpdateAgencyRequest request) {
-        return new SyncInvoker<UpdateAgencyRequest, UpdateAgencyResponse>(request, IamMeta.updateAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateAgency, hcClient);
     }
 
     /**
@@ -3966,7 +3865,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAgencyCustomPolicyRequest 请求对象
+     * @param request UpdateAgencyCustomPolicyRequest 请求对象
      * @return UpdateAgencyCustomPolicyResponse
      */
     public UpdateAgencyCustomPolicyResponse updateAgencyCustomPolicy(UpdateAgencyCustomPolicyRequest request) {
@@ -3982,13 +3881,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAgencyCustomPolicyRequest 请求对象
+     * @param request UpdateAgencyCustomPolicyRequest 请求对象
      * @return SyncInvoker<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse>
      */
     public SyncInvoker<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> updateAgencyCustomPolicyInvoker(
         UpdateAgencyCustomPolicyRequest request) {
-        return new SyncInvoker<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse>(request,
-            IamMeta.updateAgencyCustomPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateAgencyCustomPolicy, hcClient);
     }
 
     /**
@@ -4000,7 +3898,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCloudServiceCustomPolicyRequest 请求对象
+     * @param request UpdateCloudServiceCustomPolicyRequest 请求对象
      * @return UpdateCloudServiceCustomPolicyResponse
      */
     public UpdateCloudServiceCustomPolicyResponse updateCloudServiceCustomPolicy(
@@ -4017,13 +3915,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCloudServiceCustomPolicyRequest 请求对象
+     * @param request UpdateCloudServiceCustomPolicyRequest 请求对象
      * @return SyncInvoker<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse>
      */
     public SyncInvoker<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> updateCloudServiceCustomPolicyInvoker(
         UpdateCloudServiceCustomPolicyRequest request) {
-        return new SyncInvoker<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse>(request,
-            IamMeta.updateCloudServiceCustomPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateCloudServiceCustomPolicy, hcClient);
     }
 
     /**
@@ -4035,7 +3932,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainApiAclPolicyRequest 请求对象
+     * @param request UpdateDomainApiAclPolicyRequest 请求对象
      * @return UpdateDomainApiAclPolicyResponse
      */
     public UpdateDomainApiAclPolicyResponse updateDomainApiAclPolicy(UpdateDomainApiAclPolicyRequest request) {
@@ -4051,13 +3948,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainApiAclPolicyRequest 请求对象
+     * @param request UpdateDomainApiAclPolicyRequest 请求对象
      * @return SyncInvoker<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse>
      */
     public SyncInvoker<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> updateDomainApiAclPolicyInvoker(
         UpdateDomainApiAclPolicyRequest request) {
-        return new SyncInvoker<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse>(request,
-            IamMeta.updateDomainApiAclPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateDomainApiAclPolicy, hcClient);
     }
 
     /**
@@ -4069,7 +3965,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainConsoleAclPolicyRequest 请求对象
+     * @param request UpdateDomainConsoleAclPolicyRequest 请求对象
      * @return UpdateDomainConsoleAclPolicyResponse
      */
     public UpdateDomainConsoleAclPolicyResponse updateDomainConsoleAclPolicy(
@@ -4086,13 +3982,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainConsoleAclPolicyRequest 请求对象
+     * @param request UpdateDomainConsoleAclPolicyRequest 请求对象
      * @return SyncInvoker<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse>
      */
     public SyncInvoker<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> updateDomainConsoleAclPolicyInvoker(
         UpdateDomainConsoleAclPolicyRequest request) {
-        return new SyncInvoker<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse>(request,
-            IamMeta.updateDomainConsoleAclPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateDomainConsoleAclPolicy, hcClient);
     }
 
     /**
@@ -4104,7 +3999,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainGroupInheritRoleRequest 请求对象
+     * @param request UpdateDomainGroupInheritRoleRequest 请求对象
      * @return UpdateDomainGroupInheritRoleResponse
      */
     public UpdateDomainGroupInheritRoleResponse updateDomainGroupInheritRole(
@@ -4121,13 +4016,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainGroupInheritRoleRequest 请求对象
+     * @param request UpdateDomainGroupInheritRoleRequest 请求对象
      * @return SyncInvoker<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse>
      */
     public SyncInvoker<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> updateDomainGroupInheritRoleInvoker(
         UpdateDomainGroupInheritRoleRequest request) {
-        return new SyncInvoker<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse>(request,
-            IamMeta.updateDomainGroupInheritRole, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateDomainGroupInheritRole, hcClient);
     }
 
     /**
@@ -4139,7 +4033,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainLoginPolicyRequest 请求对象
+     * @param request UpdateDomainLoginPolicyRequest 请求对象
      * @return UpdateDomainLoginPolicyResponse
      */
     public UpdateDomainLoginPolicyResponse updateDomainLoginPolicy(UpdateDomainLoginPolicyRequest request) {
@@ -4155,13 +4049,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainLoginPolicyRequest 请求对象
+     * @param request UpdateDomainLoginPolicyRequest 请求对象
      * @return SyncInvoker<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse>
      */
     public SyncInvoker<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> updateDomainLoginPolicyInvoker(
         UpdateDomainLoginPolicyRequest request) {
-        return new SyncInvoker<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse>(request,
-            IamMeta.updateDomainLoginPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateDomainLoginPolicy, hcClient);
     }
 
     /**
@@ -4173,7 +4066,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainPasswordPolicyRequest 请求对象
+     * @param request UpdateDomainPasswordPolicyRequest 请求对象
      * @return UpdateDomainPasswordPolicyResponse
      */
     public UpdateDomainPasswordPolicyResponse updateDomainPasswordPolicy(UpdateDomainPasswordPolicyRequest request) {
@@ -4189,13 +4082,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainPasswordPolicyRequest 请求对象
+     * @param request UpdateDomainPasswordPolicyRequest 请求对象
      * @return SyncInvoker<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse>
      */
     public SyncInvoker<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> updateDomainPasswordPolicyInvoker(
         UpdateDomainPasswordPolicyRequest request) {
-        return new SyncInvoker<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse>(request,
-            IamMeta.updateDomainPasswordPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateDomainPasswordPolicy, hcClient);
     }
 
     /**
@@ -4207,7 +4099,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainProtectPolicyRequest 请求对象
+     * @param request UpdateDomainProtectPolicyRequest 请求对象
      * @return UpdateDomainProtectPolicyResponse
      */
     public UpdateDomainProtectPolicyResponse updateDomainProtectPolicy(UpdateDomainProtectPolicyRequest request) {
@@ -4223,13 +4115,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainProtectPolicyRequest 请求对象
+     * @param request UpdateDomainProtectPolicyRequest 请求对象
      * @return SyncInvoker<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse>
      */
     public SyncInvoker<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> updateDomainProtectPolicyInvoker(
         UpdateDomainProtectPolicyRequest request) {
-        return new SyncInvoker<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse>(request,
-            IamMeta.updateDomainProtectPolicy, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateDomainProtectPolicy, hcClient);
     }
 
     /**
@@ -4239,7 +4130,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateOpenIdConnectConfigRequest 请求对象
+     * @param request UpdateOpenIdConnectConfigRequest 请求对象
      * @return UpdateOpenIdConnectConfigResponse
      */
     public UpdateOpenIdConnectConfigResponse updateOpenIdConnectConfig(UpdateOpenIdConnectConfigRequest request) {
@@ -4253,13 +4144,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateOpenIdConnectConfigRequest 请求对象
+     * @param request UpdateOpenIdConnectConfigRequest 请求对象
      * @return SyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse>
      */
     public SyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> updateOpenIdConnectConfigInvoker(
         UpdateOpenIdConnectConfigRequest request) {
-        return new SyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse>(request,
-            IamMeta.updateOpenIdConnectConfig, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateOpenIdConnectConfig, hcClient);
     }
 
     /**
@@ -4271,7 +4161,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectStatusRequest 请求对象
+     * @param request UpdateProjectStatusRequest 请求对象
      * @return UpdateProjectStatusResponse
      */
     public UpdateProjectStatusResponse updateProjectStatus(UpdateProjectStatusRequest request) {
@@ -4287,13 +4177,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectStatusRequest 请求对象
+     * @param request UpdateProjectStatusRequest 请求对象
      * @return SyncInvoker<UpdateProjectStatusRequest, UpdateProjectStatusResponse>
      */
     public SyncInvoker<UpdateProjectStatusRequest, UpdateProjectStatusResponse> updateProjectStatusInvoker(
         UpdateProjectStatusRequest request) {
-        return new SyncInvoker<UpdateProjectStatusRequest, UpdateProjectStatusResponse>(request,
-            IamMeta.updateProjectStatus, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateProjectStatus, hcClient);
     }
 
     /**
@@ -4307,7 +4196,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePermanentAccessKeyRequest 请求对象
+     * @param request CreatePermanentAccessKeyRequest 请求对象
      * @return CreatePermanentAccessKeyResponse
      */
     public CreatePermanentAccessKeyResponse createPermanentAccessKey(CreatePermanentAccessKeyRequest request) {
@@ -4325,13 +4214,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePermanentAccessKeyRequest 请求对象
+     * @param request CreatePermanentAccessKeyRequest 请求对象
      * @return SyncInvoker<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse>
      */
     public SyncInvoker<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> createPermanentAccessKeyInvoker(
         CreatePermanentAccessKeyRequest request) {
-        return new SyncInvoker<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse>(request,
-            IamMeta.createPermanentAccessKey, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createPermanentAccessKey, hcClient);
     }
 
     /**
@@ -4345,7 +4233,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemporaryAccessKeyByAgencyRequest 请求对象
+     * @param request CreateTemporaryAccessKeyByAgencyRequest 请求对象
      * @return CreateTemporaryAccessKeyByAgencyResponse
      */
     public CreateTemporaryAccessKeyByAgencyResponse createTemporaryAccessKeyByAgency(
@@ -4364,13 +4252,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemporaryAccessKeyByAgencyRequest 请求对象
+     * @param request CreateTemporaryAccessKeyByAgencyRequest 请求对象
      * @return SyncInvoker<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse>
      */
     public SyncInvoker<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse> createTemporaryAccessKeyByAgencyInvoker(
         CreateTemporaryAccessKeyByAgencyRequest request) {
-        return new SyncInvoker<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse>(
-            request, IamMeta.createTemporaryAccessKeyByAgency, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createTemporaryAccessKeyByAgency, hcClient);
     }
 
     /**
@@ -4384,7 +4271,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemporaryAccessKeyByTokenRequest 请求对象
+     * @param request CreateTemporaryAccessKeyByTokenRequest 请求对象
      * @return CreateTemporaryAccessKeyByTokenResponse
      */
     public CreateTemporaryAccessKeyByTokenResponse createTemporaryAccessKeyByToken(
@@ -4403,13 +4290,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemporaryAccessKeyByTokenRequest 请求对象
+     * @param request CreateTemporaryAccessKeyByTokenRequest 请求对象
      * @return SyncInvoker<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse>
      */
     public SyncInvoker<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse> createTemporaryAccessKeyByTokenInvoker(
         CreateTemporaryAccessKeyByTokenRequest request) {
-        return new SyncInvoker<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse>(request,
-            IamMeta.createTemporaryAccessKeyByToken, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createTemporaryAccessKeyByToken, hcClient);
     }
 
     /**
@@ -4421,7 +4307,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePermanentAccessKeyRequest 请求对象
+     * @param request DeletePermanentAccessKeyRequest 请求对象
      * @return DeletePermanentAccessKeyResponse
      */
     public DeletePermanentAccessKeyResponse deletePermanentAccessKey(DeletePermanentAccessKeyRequest request) {
@@ -4437,13 +4323,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePermanentAccessKeyRequest 请求对象
+     * @param request DeletePermanentAccessKeyRequest 请求对象
      * @return SyncInvoker<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse>
      */
     public SyncInvoker<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> deletePermanentAccessKeyInvoker(
         DeletePermanentAccessKeyRequest request) {
-        return new SyncInvoker<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse>(request,
-            IamMeta.deletePermanentAccessKey, hcClient);
+        return new SyncInvoker<>(request, IamMeta.deletePermanentAccessKey, hcClient);
     }
 
     /**
@@ -4455,7 +4340,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermanentAccessKeysRequest 请求对象
+     * @param request ListPermanentAccessKeysRequest 请求对象
      * @return ListPermanentAccessKeysResponse
      */
     public ListPermanentAccessKeysResponse listPermanentAccessKeys(ListPermanentAccessKeysRequest request) {
@@ -4471,13 +4356,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermanentAccessKeysRequest 请求对象
+     * @param request ListPermanentAccessKeysRequest 请求对象
      * @return SyncInvoker<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse>
      */
     public SyncInvoker<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> listPermanentAccessKeysInvoker(
         ListPermanentAccessKeysRequest request) {
-        return new SyncInvoker<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse>(request,
-            IamMeta.listPermanentAccessKeys, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listPermanentAccessKeys, hcClient);
     }
 
     /**
@@ -4489,7 +4373,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPermanentAccessKeyRequest 请求对象
+     * @param request ShowPermanentAccessKeyRequest 请求对象
      * @return ShowPermanentAccessKeyResponse
      */
     public ShowPermanentAccessKeyResponse showPermanentAccessKey(ShowPermanentAccessKeyRequest request) {
@@ -4505,13 +4389,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPermanentAccessKeyRequest 请求对象
+     * @param request ShowPermanentAccessKeyRequest 请求对象
      * @return SyncInvoker<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse>
      */
     public SyncInvoker<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> showPermanentAccessKeyInvoker(
         ShowPermanentAccessKeyRequest request) {
-        return new SyncInvoker<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse>(request,
-            IamMeta.showPermanentAccessKey, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showPermanentAccessKey, hcClient);
     }
 
     /**
@@ -4523,7 +4406,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePermanentAccessKeyRequest 请求对象
+     * @param request UpdatePermanentAccessKeyRequest 请求对象
      * @return UpdatePermanentAccessKeyResponse
      */
     public UpdatePermanentAccessKeyResponse updatePermanentAccessKey(UpdatePermanentAccessKeyRequest request) {
@@ -4539,13 +4422,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePermanentAccessKeyRequest 请求对象
+     * @param request UpdatePermanentAccessKeyRequest 请求对象
      * @return SyncInvoker<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse>
      */
     public SyncInvoker<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> updatePermanentAccessKeyInvoker(
         UpdatePermanentAccessKeyRequest request) {
-        return new SyncInvoker<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse>(request,
-            IamMeta.updatePermanentAccessKey, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updatePermanentAccessKey, hcClient);
     }
 
     /**
@@ -4557,7 +4439,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBindingDeviceRequest 请求对象
+     * @param request CreateBindingDeviceRequest 请求对象
      * @return CreateBindingDeviceResponse
      */
     public CreateBindingDeviceResponse createBindingDevice(CreateBindingDeviceRequest request) {
@@ -4573,13 +4455,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBindingDeviceRequest 请求对象
+     * @param request CreateBindingDeviceRequest 请求对象
      * @return SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse>
      */
     public SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse> createBindingDeviceInvoker(
         CreateBindingDeviceRequest request) {
-        return new SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse>(request,
-            IamMeta.createBindingDevice, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createBindingDevice, hcClient);
     }
 
     /**
@@ -4591,7 +4472,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMfaDeviceRequest 请求对象
+     * @param request CreateMfaDeviceRequest 请求对象
      * @return CreateMfaDeviceResponse
      */
     public CreateMfaDeviceResponse createMfaDevice(CreateMfaDeviceRequest request) {
@@ -4607,13 +4488,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMfaDeviceRequest 请求对象
+     * @param request CreateMfaDeviceRequest 请求对象
      * @return SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse>
      */
     public SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse> createMfaDeviceInvoker(
         CreateMfaDeviceRequest request) {
-        return new SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse>(request, IamMeta.createMfaDevice,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.createMfaDevice, hcClient);
     }
 
     /**
@@ -4625,7 +4505,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUserRequest 请求对象
+     * @param request CreateUserRequest 请求对象
      * @return CreateUserResponse
      */
     public CreateUserResponse createUser(CreateUserRequest request) {
@@ -4641,11 +4521,11 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUserRequest 请求对象
+     * @param request CreateUserRequest 请求对象
      * @return SyncInvoker<CreateUserRequest, CreateUserResponse>
      */
     public SyncInvoker<CreateUserRequest, CreateUserResponse> createUserInvoker(CreateUserRequest request) {
-        return new SyncInvoker<CreateUserRequest, CreateUserResponse>(request, IamMeta.createUser, hcClient);
+        return new SyncInvoker<>(request, IamMeta.createUser, hcClient);
     }
 
     /**
@@ -4657,7 +4537,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBindingDeviceRequest 请求对象
+     * @param request DeleteBindingDeviceRequest 请求对象
      * @return DeleteBindingDeviceResponse
      */
     public DeleteBindingDeviceResponse deleteBindingDevice(DeleteBindingDeviceRequest request) {
@@ -4673,13 +4553,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBindingDeviceRequest 请求对象
+     * @param request DeleteBindingDeviceRequest 请求对象
      * @return SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse>
      */
     public SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> deleteBindingDeviceInvoker(
         DeleteBindingDeviceRequest request) {
-        return new SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse>(request,
-            IamMeta.deleteBindingDevice, hcClient);
+        return new SyncInvoker<>(request, IamMeta.deleteBindingDevice, hcClient);
     }
 
     /**
@@ -4691,7 +4570,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMfaDeviceRequest 请求对象
+     * @param request DeleteMfaDeviceRequest 请求对象
      * @return DeleteMfaDeviceResponse
      */
     public DeleteMfaDeviceResponse deleteMfaDevice(DeleteMfaDeviceRequest request) {
@@ -4707,13 +4586,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMfaDeviceRequest 请求对象
+     * @param request DeleteMfaDeviceRequest 请求对象
      * @return SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse>
      */
     public SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> deleteMfaDeviceInvoker(
         DeleteMfaDeviceRequest request) {
-        return new SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse>(request, IamMeta.deleteMfaDevice,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.deleteMfaDevice, hcClient);
     }
 
     /**
@@ -4725,7 +4603,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateUserRequest 请求对象
+     * @param request KeystoneCreateUserRequest 请求对象
      * @return KeystoneCreateUserResponse
      */
     public KeystoneCreateUserResponse keystoneCreateUser(KeystoneCreateUserRequest request) {
@@ -4741,13 +4619,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateUserRequest 请求对象
+     * @param request KeystoneCreateUserRequest 请求对象
      * @return SyncInvoker<KeystoneCreateUserRequest, KeystoneCreateUserResponse>
      */
     public SyncInvoker<KeystoneCreateUserRequest, KeystoneCreateUserResponse> keystoneCreateUserInvoker(
         KeystoneCreateUserRequest request) {
-        return new SyncInvoker<KeystoneCreateUserRequest, KeystoneCreateUserResponse>(request,
-            IamMeta.keystoneCreateUser, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCreateUser, hcClient);
     }
 
     /**
@@ -4759,7 +4636,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneDeleteUserRequest 请求对象
+     * @param request KeystoneDeleteUserRequest 请求对象
      * @return KeystoneDeleteUserResponse
      */
     public KeystoneDeleteUserResponse keystoneDeleteUser(KeystoneDeleteUserRequest request) {
@@ -4775,13 +4652,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneDeleteUserRequest 请求对象
+     * @param request KeystoneDeleteUserRequest 请求对象
      * @return SyncInvoker<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse>
      */
     public SyncInvoker<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> keystoneDeleteUserInvoker(
         KeystoneDeleteUserRequest request) {
-        return new SyncInvoker<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse>(request,
-            IamMeta.keystoneDeleteUser, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneDeleteUser, hcClient);
     }
 
     /**
@@ -4793,7 +4669,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListGroupsForUserRequest 请求对象
+     * @param request KeystoneListGroupsForUserRequest 请求对象
      * @return KeystoneListGroupsForUserResponse
      */
     public KeystoneListGroupsForUserResponse keystoneListGroupsForUser(KeystoneListGroupsForUserRequest request) {
@@ -4809,13 +4685,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListGroupsForUserRequest 请求对象
+     * @param request KeystoneListGroupsForUserRequest 请求对象
      * @return SyncInvoker<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse>
      */
     public SyncInvoker<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> keystoneListGroupsForUserInvoker(
         KeystoneListGroupsForUserRequest request) {
-        return new SyncInvoker<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse>(request,
-            IamMeta.keystoneListGroupsForUser, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListGroupsForUser, hcClient);
     }
 
     /**
@@ -4827,7 +4702,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListUsersRequest 请求对象
+     * @param request KeystoneListUsersRequest 请求对象
      * @return KeystoneListUsersResponse
      */
     public KeystoneListUsersResponse keystoneListUsers(KeystoneListUsersRequest request) {
@@ -4843,13 +4718,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneListUsersRequest 请求对象
+     * @param request KeystoneListUsersRequest 请求对象
      * @return SyncInvoker<KeystoneListUsersRequest, KeystoneListUsersResponse>
      */
     public SyncInvoker<KeystoneListUsersRequest, KeystoneListUsersResponse> keystoneListUsersInvoker(
         KeystoneListUsersRequest request) {
-        return new SyncInvoker<KeystoneListUsersRequest, KeystoneListUsersResponse>(request, IamMeta.keystoneListUsers,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneListUsers, hcClient);
     }
 
     /**
@@ -4861,7 +4735,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowUserRequest 请求对象
+     * @param request KeystoneShowUserRequest 请求对象
      * @return KeystoneShowUserResponse
      */
     public KeystoneShowUserResponse keystoneShowUser(KeystoneShowUserRequest request) {
@@ -4877,13 +4751,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneShowUserRequest 请求对象
+     * @param request KeystoneShowUserRequest 请求对象
      * @return SyncInvoker<KeystoneShowUserRequest, KeystoneShowUserResponse>
      */
     public SyncInvoker<KeystoneShowUserRequest, KeystoneShowUserResponse> keystoneShowUserInvoker(
         KeystoneShowUserRequest request) {
-        return new SyncInvoker<KeystoneShowUserRequest, KeystoneShowUserResponse>(request, IamMeta.keystoneShowUser,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneShowUser, hcClient);
     }
 
     /**
@@ -4895,7 +4768,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateUserByAdminRequest 请求对象
+     * @param request KeystoneUpdateUserByAdminRequest 请求对象
      * @return KeystoneUpdateUserByAdminResponse
      */
     public KeystoneUpdateUserByAdminResponse keystoneUpdateUserByAdmin(KeystoneUpdateUserByAdminRequest request) {
@@ -4911,13 +4784,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateUserByAdminRequest 请求对象
+     * @param request KeystoneUpdateUserByAdminRequest 请求对象
      * @return SyncInvoker<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse>
      */
     public SyncInvoker<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> keystoneUpdateUserByAdminInvoker(
         KeystoneUpdateUserByAdminRequest request) {
-        return new SyncInvoker<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse>(request,
-            IamMeta.keystoneUpdateUserByAdmin, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneUpdateUserByAdmin, hcClient);
     }
 
     /**
@@ -4929,7 +4801,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateUserPasswordRequest 请求对象
+     * @param request KeystoneUpdateUserPasswordRequest 请求对象
      * @return KeystoneUpdateUserPasswordResponse
      */
     public KeystoneUpdateUserPasswordResponse keystoneUpdateUserPassword(KeystoneUpdateUserPasswordRequest request) {
@@ -4945,13 +4817,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneUpdateUserPasswordRequest 请求对象
+     * @param request KeystoneUpdateUserPasswordRequest 请求对象
      * @return SyncInvoker<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse>
      */
     public SyncInvoker<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> keystoneUpdateUserPasswordInvoker(
         KeystoneUpdateUserPasswordRequest request) {
-        return new SyncInvoker<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse>(request,
-            IamMeta.keystoneUpdateUserPassword, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneUpdateUserPassword, hcClient);
     }
 
     /**
@@ -4963,7 +4834,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserLoginProtectsRequest 请求对象
+     * @param request ListUserLoginProtectsRequest 请求对象
      * @return ListUserLoginProtectsResponse
      */
     public ListUserLoginProtectsResponse listUserLoginProtects(ListUserLoginProtectsRequest request) {
@@ -4979,13 +4850,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserLoginProtectsRequest 请求对象
+     * @param request ListUserLoginProtectsRequest 请求对象
      * @return SyncInvoker<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse>
      */
     public SyncInvoker<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> listUserLoginProtectsInvoker(
         ListUserLoginProtectsRequest request) {
-        return new SyncInvoker<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse>(request,
-            IamMeta.listUserLoginProtects, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listUserLoginProtects, hcClient);
     }
 
     /**
@@ -4997,7 +4867,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserMfaDevicesRequest 请求对象
+     * @param request ListUserMfaDevicesRequest 请求对象
      * @return ListUserMfaDevicesResponse
      */
     public ListUserMfaDevicesResponse listUserMfaDevices(ListUserMfaDevicesRequest request) {
@@ -5013,13 +4883,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserMfaDevicesRequest 请求对象
+     * @param request ListUserMfaDevicesRequest 请求对象
      * @return SyncInvoker<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse>
      */
     public SyncInvoker<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> listUserMfaDevicesInvoker(
         ListUserMfaDevicesRequest request) {
-        return new SyncInvoker<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse>(request,
-            IamMeta.listUserMfaDevices, hcClient);
+        return new SyncInvoker<>(request, IamMeta.listUserMfaDevices, hcClient);
     }
 
     /**
@@ -5031,7 +4900,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserRequest 请求对象
+     * @param request ShowUserRequest 请求对象
      * @return ShowUserResponse
      */
     public ShowUserResponse showUser(ShowUserRequest request) {
@@ -5047,11 +4916,11 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserRequest 请求对象
+     * @param request ShowUserRequest 请求对象
      * @return SyncInvoker<ShowUserRequest, ShowUserResponse>
      */
     public SyncInvoker<ShowUserRequest, ShowUserResponse> showUserInvoker(ShowUserRequest request) {
-        return new SyncInvoker<ShowUserRequest, ShowUserResponse>(request, IamMeta.showUser, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showUser, hcClient);
     }
 
     /**
@@ -5063,7 +4932,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserLoginProtectRequest 请求对象
+     * @param request ShowUserLoginProtectRequest 请求对象
      * @return ShowUserLoginProtectResponse
      */
     public ShowUserLoginProtectResponse showUserLoginProtect(ShowUserLoginProtectRequest request) {
@@ -5079,13 +4948,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserLoginProtectRequest 请求对象
+     * @param request ShowUserLoginProtectRequest 请求对象
      * @return SyncInvoker<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse>
      */
     public SyncInvoker<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> showUserLoginProtectInvoker(
         ShowUserLoginProtectRequest request) {
-        return new SyncInvoker<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse>(request,
-            IamMeta.showUserLoginProtect, hcClient);
+        return new SyncInvoker<>(request, IamMeta.showUserLoginProtect, hcClient);
     }
 
     /**
@@ -5097,7 +4965,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserMfaDeviceRequest 请求对象
+     * @param request ShowUserMfaDeviceRequest 请求对象
      * @return ShowUserMfaDeviceResponse
      */
     public ShowUserMfaDeviceResponse showUserMfaDevice(ShowUserMfaDeviceRequest request) {
@@ -5113,13 +4981,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserMfaDeviceRequest 请求对象
+     * @param request ShowUserMfaDeviceRequest 请求对象
      * @return SyncInvoker<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse>
      */
     public SyncInvoker<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> showUserMfaDeviceInvoker(
         ShowUserMfaDeviceRequest request) {
-        return new SyncInvoker<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse>(request, IamMeta.showUserMfaDevice,
-            hcClient);
+        return new SyncInvoker<>(request, IamMeta.showUserMfaDevice, hcClient);
     }
 
     /**
@@ -5131,7 +4998,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLoginProtectRequest 请求对象
+     * @param request UpdateLoginProtectRequest 请求对象
      * @return UpdateLoginProtectResponse
      */
     public UpdateLoginProtectResponse updateLoginProtect(UpdateLoginProtectRequest request) {
@@ -5147,13 +5014,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLoginProtectRequest 请求对象
+     * @param request UpdateLoginProtectRequest 请求对象
      * @return SyncInvoker<UpdateLoginProtectRequest, UpdateLoginProtectResponse>
      */
     public SyncInvoker<UpdateLoginProtectRequest, UpdateLoginProtectResponse> updateLoginProtectInvoker(
         UpdateLoginProtectRequest request) {
-        return new SyncInvoker<UpdateLoginProtectRequest, UpdateLoginProtectResponse>(request,
-            IamMeta.updateLoginProtect, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateLoginProtect, hcClient);
     }
 
     /**
@@ -5165,7 +5031,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return UpdateUserResponse
      */
     public UpdateUserResponse updateUser(UpdateUserRequest request) {
@@ -5181,11 +5047,11 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return SyncInvoker<UpdateUserRequest, UpdateUserResponse>
      */
     public SyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserInvoker(UpdateUserRequest request) {
-        return new SyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, IamMeta.updateUser, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateUser, hcClient);
     }
 
     /**
@@ -5197,7 +5063,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserInformationRequest 请求对象
+     * @param request UpdateUserInformationRequest 请求对象
      * @return UpdateUserInformationResponse
      */
     public UpdateUserInformationResponse updateUserInformation(UpdateUserInformationRequest request) {
@@ -5213,13 +5079,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserInformationRequest 请求对象
+     * @param request UpdateUserInformationRequest 请求对象
      * @return SyncInvoker<UpdateUserInformationRequest, UpdateUserInformationResponse>
      */
     public SyncInvoker<UpdateUserInformationRequest, UpdateUserInformationResponse> updateUserInformationInvoker(
         UpdateUserInformationRequest request) {
-        return new SyncInvoker<UpdateUserInformationRequest, UpdateUserInformationResponse>(request,
-            IamMeta.updateUserInformation, hcClient);
+        return new SyncInvoker<>(request, IamMeta.updateUserInformation, hcClient);
     }
 
     /**
@@ -5237,7 +5102,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateAgencyTokenRequest 请求对象
+     * @param request KeystoneCreateAgencyTokenRequest 请求对象
      * @return KeystoneCreateAgencyTokenResponse
      */
     public KeystoneCreateAgencyTokenResponse keystoneCreateAgencyToken(KeystoneCreateAgencyTokenRequest request) {
@@ -5259,13 +5124,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateAgencyTokenRequest 请求对象
+     * @param request KeystoneCreateAgencyTokenRequest 请求对象
      * @return SyncInvoker<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse>
      */
     public SyncInvoker<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> keystoneCreateAgencyTokenInvoker(
         KeystoneCreateAgencyTokenRequest request) {
-        return new SyncInvoker<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse>(request,
-            IamMeta.keystoneCreateAgencyToken, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCreateAgencyToken, hcClient);
     }
 
     /**
@@ -5282,7 +5146,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateUserTokenByPasswordRequest 请求对象
+     * @param request KeystoneCreateUserTokenByPasswordRequest 请求对象
      * @return KeystoneCreateUserTokenByPasswordResponse
      */
     public KeystoneCreateUserTokenByPasswordResponse keystoneCreateUserTokenByPassword(
@@ -5304,13 +5168,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateUserTokenByPasswordRequest 请求对象
+     * @param request KeystoneCreateUserTokenByPasswordRequest 请求对象
      * @return SyncInvoker<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse>
      */
     public SyncInvoker<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> keystoneCreateUserTokenByPasswordInvoker(
         KeystoneCreateUserTokenByPasswordRequest request) {
-        return new SyncInvoker<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse>(
-            request, IamMeta.keystoneCreateUserTokenByPassword, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCreateUserTokenByPassword, hcClient);
     }
 
     /**
@@ -5327,7 +5190,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateUserTokenByPasswordAndMfaRequest 请求对象
+     * @param request KeystoneCreateUserTokenByPasswordAndMfaRequest 请求对象
      * @return KeystoneCreateUserTokenByPasswordAndMfaResponse
      */
     public KeystoneCreateUserTokenByPasswordAndMfaResponse keystoneCreateUserTokenByPasswordAndMfa(
@@ -5349,13 +5212,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneCreateUserTokenByPasswordAndMfaRequest 请求对象
+     * @param request KeystoneCreateUserTokenByPasswordAndMfaRequest 请求对象
      * @return SyncInvoker<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse>
      */
     public SyncInvoker<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse> keystoneCreateUserTokenByPasswordAndMfaInvoker(
         KeystoneCreateUserTokenByPasswordAndMfaRequest request) {
-        return new SyncInvoker<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse>(
-            request, IamMeta.keystoneCreateUserTokenByPasswordAndMfa, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneCreateUserTokenByPasswordAndMfa, hcClient);
     }
 
     /**
@@ -5367,7 +5229,7 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneValidateTokenRequest 请求对象
+     * @param request KeystoneValidateTokenRequest 请求对象
      * @return KeystoneValidateTokenResponse
      */
     public KeystoneValidateTokenResponse keystoneValidateToken(KeystoneValidateTokenRequest request) {
@@ -5383,13 +5245,12 @@ public class IamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param KeystoneValidateTokenRequest 请求对象
+     * @param request KeystoneValidateTokenRequest 请求对象
      * @return SyncInvoker<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse>
      */
     public SyncInvoker<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> keystoneValidateTokenInvoker(
         KeystoneValidateTokenRequest request) {
-        return new SyncInvoker<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse>(request,
-            IamMeta.keystoneValidateToken, hcClient);
+        return new SyncInvoker<>(request, IamMeta.keystoneValidateToken, hcClient);
     }
 
 }

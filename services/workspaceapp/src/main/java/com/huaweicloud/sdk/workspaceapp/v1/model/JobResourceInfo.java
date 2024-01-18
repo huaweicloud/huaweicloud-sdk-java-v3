@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 具体的资源信息
+ * 具体的资源信息。
  */
 public class JobResourceInfo {
 
@@ -198,7 +198,7 @@ public class JobResourceInfo {
     }
 
     /**
-     * 规格类型，运营上需要呈现和使用的一些规格属性，多个使用K:V格式； 比如带宽的共享/独享(shareable:true/false)，数据盘的系统盘/数据盘类型(root:true/false) 当前针对共享带宽、共享盘使用，必填。
+     * 规格类型，运营上需要呈现和使用的一些规格属性，多个使用K:V格式。 比如带宽的共享/独享(shareable:true/false)，数据盘的系统盘/数据盘类型(root:true/false)。 当前针对共享带宽、共享盘使用，必填。
      * @return specType
      */
     public Map<String, Object> getSpecType() {
@@ -215,7 +215,7 @@ public class JobResourceInfo {
     }
 
     /**
-     * 某些规格属性大小：比如带宽大小、数据盘大小
+     * 某些规格属性大小：比如带宽大小、数据盘大小。
      * @return specSize
      */
     public Double getSpecSize() {
@@ -249,7 +249,7 @@ public class JobResourceInfo {
     }
 
     /**
-     * 处理时间
+     * 处理时间。
      * @return processedTime
      */
     public OffsetDateTime getProcessedTime() {
@@ -266,7 +266,7 @@ public class JobResourceInfo {
     }
 
     /**
-     * 该resourceId是否是主资源（仅开通场景使用，其他场景为空） * `1` - 是 * `0` - 否
+     * 该resourceId是否是主资源（仅开通场景使用，其他场景为空）。 * `1` - 是 * `0` - 否
      * @return isMainResource
      */
     public Integer getIsMainResource() {
@@ -316,7 +316,7 @@ public class JobResourceInfo {
     }
 
     /**
-     * expireTime：到期时间，域名注册服务使用。  UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ（2016-06-28T00:00:00Z）
+     * expireTime：到期时间，域名注册服务使用。  UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ（2016-06-28T00:00:00Z）。
      * @return extendParams
      */
     public String getExtendParams() {
@@ -333,7 +333,7 @@ public class JobResourceInfo {
     }
 
     /**
-     * 仅针对ECS/BMS云服务的“切换操作系统”场景使用： 云主机切换操作系统的资源id会变化场景 填写变更前老的资源Id。资源Id未变化，无此字段
+     * 仅针对ECS/BMS云服务的“切换操作系统”场景使用。 云主机切换操作系统的资源id会变化场景。 填写变更前老的资源Id。资源Id未变化，无此字段。
      * @return oldResourceId
      */
     public String getOldResourceId() {
@@ -350,7 +350,7 @@ public class JobResourceInfo {
     }
 
     /**
-     * 仅针对ECS/BMS云服务的“切换操作系统”场景使用：云主机切换操作系统的云服务类型编码会变化场景， 填写变更前老的云服务类型编码。云服务类型未变化，无此字段。
+     * 仅针对ECS/BMS云服务的“切换操作系统”场景使用：云主机切换操作系统的云服务类型编码会变化场景。 填写变更前老的云服务类型编码。云服务类型未变化，无此字段。
      * @return oldCloudServiceType
      */
     public String getOldCloudServiceType() {
@@ -367,7 +367,7 @@ public class JobResourceInfo {
     }
 
     /**
-     * 仅针对ECS/BMS云服务“切换操作系统”场景使用： 云主机切换操作系统的资源类型编码会变化场景， 填写变更前老的资源类型编码。资源类型未变化，无此字段
+     * 仅针对ECS/BMS云服务“切换操作系统”场景使用。 云主机切换操作系统的资源类型编码会变化场景。 填写变更前老的资源类型编码。资源类型未变化，无此字段。
      * @return oldResourceType
      */
     public String getOldResourceType() {

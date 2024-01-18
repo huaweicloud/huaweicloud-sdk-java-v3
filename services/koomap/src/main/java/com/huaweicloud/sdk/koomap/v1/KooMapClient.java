@@ -93,7 +93,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSpurPointRequest 请求对象
+     * @param request AddSpurPointRequest 请求对象
      * @return AddSpurPointResponse
      */
     public AddSpurPointResponse addSpurPoint(AddSpurPointRequest request) {
@@ -110,11 +110,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSpurPointRequest 请求对象
+     * @param request AddSpurPointRequest 请求对象
      * @return SyncInvoker<AddSpurPointRequest, AddSpurPointResponse>
      */
     public SyncInvoker<AddSpurPointRequest, AddSpurPointResponse> addSpurPointInvoker(AddSpurPointRequest request) {
-        return new SyncInvoker<AddSpurPointRequest, AddSpurPointResponse>(request, KooMapMeta.addSpurPoint, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.addSpurPoint, hcClient);
     }
 
     /**
@@ -124,7 +124,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCommonWorkspaceRequest 请求对象
+     * @param request CreateCommonWorkspaceRequest 请求对象
      * @return CreateCommonWorkspaceResponse
      */
     public CreateCommonWorkspaceResponse createCommonWorkspace(CreateCommonWorkspaceRequest request) {
@@ -138,13 +138,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCommonWorkspaceRequest 请求对象
+     * @param request CreateCommonWorkspaceRequest 请求对象
      * @return SyncInvoker<CreateCommonWorkspaceRequest, CreateCommonWorkspaceResponse>
      */
     public SyncInvoker<CreateCommonWorkspaceRequest, CreateCommonWorkspaceResponse> createCommonWorkspaceInvoker(
         CreateCommonWorkspaceRequest request) {
-        return new SyncInvoker<CreateCommonWorkspaceRequest, CreateCommonWorkspaceResponse>(request,
-            KooMapMeta.createCommonWorkspace, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.createCommonWorkspace, hcClient);
     }
 
     /**
@@ -154,7 +153,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMarkerInfoRequest 请求对象
+     * @param request CreateMarkerInfoRequest 请求对象
      * @return CreateMarkerInfoResponse
      */
     public CreateMarkerInfoResponse createMarkerInfo(CreateMarkerInfoRequest request) {
@@ -168,13 +167,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMarkerInfoRequest 请求对象
+     * @param request CreateMarkerInfoRequest 请求对象
      * @return SyncInvoker<CreateMarkerInfoRequest, CreateMarkerInfoResponse>
      */
     public SyncInvoker<CreateMarkerInfoRequest, CreateMarkerInfoResponse> createMarkerInfoInvoker(
         CreateMarkerInfoRequest request) {
-        return new SyncInvoker<CreateMarkerInfoRequest, CreateMarkerInfoResponse>(request, KooMapMeta.createMarkerInfo,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.createMarkerInfo, hcClient);
     }
 
     /**
@@ -184,7 +182,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateReal3DTaskRequest 请求对象
+     * @param request CreateReal3DTaskRequest 请求对象
      * @return CreateReal3DTaskResponse
      */
     public CreateReal3DTaskResponse createReal3DTask(CreateReal3DTaskRequest request) {
@@ -198,13 +196,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateReal3DTaskRequest 请求对象
+     * @param request CreateReal3DTaskRequest 请求对象
      * @return SyncInvoker<CreateReal3DTaskRequest, CreateReal3DTaskResponse>
      */
     public SyncInvoker<CreateReal3DTaskRequest, CreateReal3DTaskResponse> createReal3DTaskInvoker(
         CreateReal3DTaskRequest request) {
-        return new SyncInvoker<CreateReal3DTaskRequest, CreateReal3DTaskResponse>(request, KooMapMeta.createReal3DTask,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.createReal3DTask, hcClient);
     }
 
     /**
@@ -214,7 +211,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return CreateTaskResponse
      */
     public CreateTaskResponse createTask(CreateTaskRequest request) {
@@ -228,11 +225,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return SyncInvoker<CreateTaskRequest, CreateTaskResponse>
      */
     public SyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskInvoker(CreateTaskRequest request) {
-        return new SyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, KooMapMeta.createTask, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.createTask, hcClient);
     }
 
     /**
@@ -242,7 +239,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCommonWorkspaceRequest 请求对象
+     * @param request DeleteCommonWorkspaceRequest 请求对象
      * @return DeleteCommonWorkspaceResponse
      */
     public DeleteCommonWorkspaceResponse deleteCommonWorkspace(DeleteCommonWorkspaceRequest request) {
@@ -256,13 +253,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCommonWorkspaceRequest 请求对象
+     * @param request DeleteCommonWorkspaceRequest 请求对象
      * @return SyncInvoker<DeleteCommonWorkspaceRequest, DeleteCommonWorkspaceResponse>
      */
     public SyncInvoker<DeleteCommonWorkspaceRequest, DeleteCommonWorkspaceResponse> deleteCommonWorkspaceInvoker(
         DeleteCommonWorkspaceRequest request) {
-        return new SyncInvoker<DeleteCommonWorkspaceRequest, DeleteCommonWorkspaceResponse>(request,
-            KooMapMeta.deleteCommonWorkspace, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.deleteCommonWorkspace, hcClient);
     }
 
     /**
@@ -272,7 +268,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteReal3DProductRequest 请求对象
+     * @param request DeleteReal3DProductRequest 请求对象
      * @return DeleteReal3DProductResponse
      */
     public DeleteReal3DProductResponse deleteReal3DProduct(DeleteReal3DProductRequest request) {
@@ -286,13 +282,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteReal3DProductRequest 请求对象
+     * @param request DeleteReal3DProductRequest 请求对象
      * @return SyncInvoker<DeleteReal3DProductRequest, DeleteReal3DProductResponse>
      */
     public SyncInvoker<DeleteReal3DProductRequest, DeleteReal3DProductResponse> deleteReal3DProductInvoker(
         DeleteReal3DProductRequest request) {
-        return new SyncInvoker<DeleteReal3DProductRequest, DeleteReal3DProductResponse>(request,
-            KooMapMeta.deleteReal3DProduct, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.deleteReal3DProduct, hcClient);
     }
 
     /**
@@ -302,7 +297,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteReal3DTaskRequest 请求对象
+     * @param request DeleteReal3DTaskRequest 请求对象
      * @return DeleteReal3DTaskResponse
      */
     public DeleteReal3DTaskResponse deleteReal3DTask(DeleteReal3DTaskRequest request) {
@@ -316,13 +311,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteReal3DTaskRequest 请求对象
+     * @param request DeleteReal3DTaskRequest 请求对象
      * @return SyncInvoker<DeleteReal3DTaskRequest, DeleteReal3DTaskResponse>
      */
     public SyncInvoker<DeleteReal3DTaskRequest, DeleteReal3DTaskResponse> deleteReal3DTaskInvoker(
         DeleteReal3DTaskRequest request) {
-        return new SyncInvoker<DeleteReal3DTaskRequest, DeleteReal3DTaskResponse>(request, KooMapMeta.deleteReal3DTask,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.deleteReal3DTask, hcClient);
     }
 
     /**
@@ -332,7 +326,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSpurPointRequest 请求对象
+     * @param request DeleteSpurPointRequest 请求对象
      * @return DeleteSpurPointResponse
      */
     public DeleteSpurPointResponse deleteSpurPoint(DeleteSpurPointRequest request) {
@@ -346,13 +340,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSpurPointRequest 请求对象
+     * @param request DeleteSpurPointRequest 请求对象
      * @return SyncInvoker<DeleteSpurPointRequest, DeleteSpurPointResponse>
      */
     public SyncInvoker<DeleteSpurPointRequest, DeleteSpurPointResponse> deleteSpurPointInvoker(
         DeleteSpurPointRequest request) {
-        return new SyncInvoker<DeleteSpurPointRequest, DeleteSpurPointResponse>(request, KooMapMeta.deleteSpurPoint,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.deleteSpurPoint, hcClient);
     }
 
     /**
@@ -362,7 +355,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return DeleteTaskResponse
      */
     public DeleteTaskResponse deleteTask(DeleteTaskRequest request) {
@@ -376,11 +369,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
-        return new SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, KooMapMeta.deleteTask, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.deleteTask, hcClient);
     }
 
     /**
@@ -395,7 +388,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCommonWorkspaceRequest 请求对象
+     * @param request ListCommonWorkspaceRequest 请求对象
      * @return ListCommonWorkspaceResponse
      */
     public ListCommonWorkspaceResponse listCommonWorkspace(ListCommonWorkspaceRequest request) {
@@ -414,13 +407,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCommonWorkspaceRequest 请求对象
+     * @param request ListCommonWorkspaceRequest 请求对象
      * @return SyncInvoker<ListCommonWorkspaceRequest, ListCommonWorkspaceResponse>
      */
     public SyncInvoker<ListCommonWorkspaceRequest, ListCommonWorkspaceResponse> listCommonWorkspaceInvoker(
         ListCommonWorkspaceRequest request) {
-        return new SyncInvoker<ListCommonWorkspaceRequest, ListCommonWorkspaceResponse>(request,
-            KooMapMeta.listCommonWorkspace, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.listCommonWorkspace, hcClient);
     }
 
     /**
@@ -430,7 +422,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFolderRequest 请求对象
+     * @param request ListFolderRequest 请求对象
      * @return ListFolderResponse
      */
     public ListFolderResponse listFolder(ListFolderRequest request) {
@@ -444,11 +436,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFolderRequest 请求对象
+     * @param request ListFolderRequest 请求对象
      * @return SyncInvoker<ListFolderRequest, ListFolderResponse>
      */
     public SyncInvoker<ListFolderRequest, ListFolderResponse> listFolderInvoker(ListFolderRequest request) {
-        return new SyncInvoker<ListFolderRequest, ListFolderResponse>(request, KooMapMeta.listFolder, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.listFolder, hcClient);
     }
 
     /**
@@ -458,7 +450,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageBaseInfoRequest 请求对象
+     * @param request ListImageBaseInfoRequest 请求对象
      * @return ListImageBaseInfoResponse
      */
     public ListImageBaseInfoResponse listImageBaseInfo(ListImageBaseInfoRequest request) {
@@ -472,13 +464,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageBaseInfoRequest 请求对象
+     * @param request ListImageBaseInfoRequest 请求对象
      * @return SyncInvoker<ListImageBaseInfoRequest, ListImageBaseInfoResponse>
      */
     public SyncInvoker<ListImageBaseInfoRequest, ListImageBaseInfoResponse> listImageBaseInfoInvoker(
         ListImageBaseInfoRequest request) {
-        return new SyncInvoker<ListImageBaseInfoRequest, ListImageBaseInfoResponse>(request,
-            KooMapMeta.listImageBaseInfo, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.listImageBaseInfo, hcClient);
     }
 
     /**
@@ -492,7 +483,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReal3DProductsRequest 请求对象
+     * @param request ListReal3DProductsRequest 请求对象
      * @return ListReal3DProductsResponse
      */
     public ListReal3DProductsResponse listReal3DProducts(ListReal3DProductsRequest request) {
@@ -510,13 +501,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReal3DProductsRequest 请求对象
+     * @param request ListReal3DProductsRequest 请求对象
      * @return SyncInvoker<ListReal3DProductsRequest, ListReal3DProductsResponse>
      */
     public SyncInvoker<ListReal3DProductsRequest, ListReal3DProductsResponse> listReal3DProductsInvoker(
         ListReal3DProductsRequest request) {
-        return new SyncInvoker<ListReal3DProductsRequest, ListReal3DProductsResponse>(request,
-            KooMapMeta.listReal3DProducts, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.listReal3DProducts, hcClient);
     }
 
     /**
@@ -526,7 +516,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpurPointsRequest 请求对象
+     * @param request ListSpurPointsRequest 请求对象
      * @return ListSpurPointsResponse
      */
     public ListSpurPointsResponse listSpurPoints(ListSpurPointsRequest request) {
@@ -540,13 +530,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpurPointsRequest 请求对象
+     * @param request ListSpurPointsRequest 请求对象
      * @return SyncInvoker<ListSpurPointsRequest, ListSpurPointsResponse>
      */
     public SyncInvoker<ListSpurPointsRequest, ListSpurPointsResponse> listSpurPointsInvoker(
         ListSpurPointsRequest request) {
-        return new SyncInvoker<ListSpurPointsRequest, ListSpurPointsResponse>(request, KooMapMeta.listSpurPoints,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.listSpurPoints, hcClient);
     }
 
     /**
@@ -556,7 +545,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskInfoRequest 请求对象
+     * @param request ListTaskInfoRequest 请求对象
      * @return ListTaskInfoResponse
      */
     public ListTaskInfoResponse listTaskInfo(ListTaskInfoRequest request) {
@@ -570,11 +559,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskInfoRequest 请求对象
+     * @param request ListTaskInfoRequest 请求对象
      * @return SyncInvoker<ListTaskInfoRequest, ListTaskInfoResponse>
      */
     public SyncInvoker<ListTaskInfoRequest, ListTaskInfoResponse> listTaskInfoInvoker(ListTaskInfoRequest request) {
-        return new SyncInvoker<ListTaskInfoRequest, ListTaskInfoResponse>(request, KooMapMeta.listTaskInfo, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.listTaskInfo, hcClient);
     }
 
     /**
@@ -592,7 +581,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksInWorkspaceRequest 请求对象
+     * @param request ListTasksInWorkspaceRequest 请求对象
      * @return ListTasksInWorkspaceResponse
      */
     public ListTasksInWorkspaceResponse listTasksInWorkspace(ListTasksInWorkspaceRequest request) {
@@ -614,13 +603,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksInWorkspaceRequest 请求对象
+     * @param request ListTasksInWorkspaceRequest 请求对象
      * @return SyncInvoker<ListTasksInWorkspaceRequest, ListTasksInWorkspaceResponse>
      */
     public SyncInvoker<ListTasksInWorkspaceRequest, ListTasksInWorkspaceResponse> listTasksInWorkspaceInvoker(
         ListTasksInWorkspaceRequest request) {
-        return new SyncInvoker<ListTasksInWorkspaceRequest, ListTasksInWorkspaceResponse>(request,
-            KooMapMeta.listTasksInWorkspace, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.listTasksInWorkspace, hcClient);
     }
 
     /**
@@ -632,7 +620,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsageInfoRequest 请求对象
+     * @param request ListUsageInfoRequest 请求对象
      * @return ListUsageInfoResponse
      */
     public ListUsageInfoResponse listUsageInfo(ListUsageInfoRequest request) {
@@ -648,12 +636,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsageInfoRequest 请求对象
+     * @param request ListUsageInfoRequest 请求对象
      * @return SyncInvoker<ListUsageInfoRequest, ListUsageInfoResponse>
      */
     public SyncInvoker<ListUsageInfoRequest, ListUsageInfoResponse> listUsageInfoInvoker(ListUsageInfoRequest request) {
-        return new SyncInvoker<ListUsageInfoRequest, ListUsageInfoResponse>(request, KooMapMeta.listUsageInfo,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.listUsageInfo, hcClient);
     }
 
     /**
@@ -665,7 +652,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReal3DUsageRequest 请求对象
+     * @param request ShowReal3DUsageRequest 请求对象
      * @return ShowReal3DUsageResponse
      */
     public ShowReal3DUsageResponse showReal3DUsage(ShowReal3DUsageRequest request) {
@@ -681,13 +668,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReal3DUsageRequest 请求对象
+     * @param request ShowReal3DUsageRequest 请求对象
      * @return SyncInvoker<ShowReal3DUsageRequest, ShowReal3DUsageResponse>
      */
     public SyncInvoker<ShowReal3DUsageRequest, ShowReal3DUsageResponse> showReal3DUsageInvoker(
         ShowReal3DUsageRequest request) {
-        return new SyncInvoker<ShowReal3DUsageRequest, ShowReal3DUsageResponse>(request, KooMapMeta.showReal3DUsage,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.showReal3DUsage, hcClient);
     }
 
     /**
@@ -697,7 +683,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpurCountRequest 请求对象
+     * @param request ShowSpurCountRequest 请求对象
      * @return ShowSpurCountResponse
      */
     public ShowSpurCountResponse showSpurCount(ShowSpurCountRequest request) {
@@ -711,12 +697,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpurCountRequest 请求对象
+     * @param request ShowSpurCountRequest 请求对象
      * @return SyncInvoker<ShowSpurCountRequest, ShowSpurCountResponse>
      */
     public SyncInvoker<ShowSpurCountRequest, ShowSpurCountResponse> showSpurCountInvoker(ShowSpurCountRequest request) {
-        return new SyncInvoker<ShowSpurCountRequest, ShowSpurCountResponse>(request, KooMapMeta.showSpurCount,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.showSpurCount, hcClient);
     }
 
     /**
@@ -726,7 +711,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskOverviewRequest 请求对象
+     * @param request ShowTaskOverviewRequest 请求对象
      * @return ShowTaskOverviewResponse
      */
     public ShowTaskOverviewResponse showTaskOverview(ShowTaskOverviewRequest request) {
@@ -740,13 +725,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskOverviewRequest 请求对象
+     * @param request ShowTaskOverviewRequest 请求对象
      * @return SyncInvoker<ShowTaskOverviewRequest, ShowTaskOverviewResponse>
      */
     public SyncInvoker<ShowTaskOverviewRequest, ShowTaskOverviewResponse> showTaskOverviewInvoker(
         ShowTaskOverviewRequest request) {
-        return new SyncInvoker<ShowTaskOverviewRequest, ShowTaskOverviewResponse>(request, KooMapMeta.showTaskOverview,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.showTaskOverview, hcClient);
     }
 
     /**
@@ -762,7 +746,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskOverviewInWorkspaceRequest 请求对象
+     * @param request ShowTaskOverviewInWorkspaceRequest 请求对象
      * @return ShowTaskOverviewInWorkspaceResponse
      */
     public ShowTaskOverviewInWorkspaceResponse showTaskOverviewInWorkspace(ShowTaskOverviewInWorkspaceRequest request) {
@@ -782,13 +766,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskOverviewInWorkspaceRequest 请求对象
+     * @param request ShowTaskOverviewInWorkspaceRequest 请求对象
      * @return SyncInvoker<ShowTaskOverviewInWorkspaceRequest, ShowTaskOverviewInWorkspaceResponse>
      */
     public SyncInvoker<ShowTaskOverviewInWorkspaceRequest, ShowTaskOverviewInWorkspaceResponse> showTaskOverviewInWorkspaceInvoker(
         ShowTaskOverviewInWorkspaceRequest request) {
-        return new SyncInvoker<ShowTaskOverviewInWorkspaceRequest, ShowTaskOverviewInWorkspaceResponse>(request,
-            KooMapMeta.showTaskOverviewInWorkspace, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.showTaskOverviewInWorkspace, hcClient);
     }
 
     /**
@@ -798,7 +781,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartNaviRequest 请求对象
+     * @param request StartNaviRequest 请求对象
      * @return StartNaviResponse
      */
     public StartNaviResponse startNavi(StartNaviRequest request) {
@@ -812,11 +795,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartNaviRequest 请求对象
+     * @param request StartNaviRequest 请求对象
      * @return SyncInvoker<StartNaviRequest, StartNaviResponse>
      */
     public SyncInvoker<StartNaviRequest, StartNaviResponse> startNaviInvoker(StartNaviRequest request) {
-        return new SyncInvoker<StartNaviRequest, StartNaviResponse>(request, KooMapMeta.startNavi, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.startNavi, hcClient);
     }
 
     /**
@@ -828,7 +811,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartReal3DTaskRequest 请求对象
+     * @param request StartReal3DTaskRequest 请求对象
      * @return StartReal3DTaskResponse
      */
     public StartReal3DTaskResponse startReal3DTask(StartReal3DTaskRequest request) {
@@ -844,13 +827,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartReal3DTaskRequest 请求对象
+     * @param request StartReal3DTaskRequest 请求对象
      * @return SyncInvoker<StartReal3DTaskRequest, StartReal3DTaskResponse>
      */
     public SyncInvoker<StartReal3DTaskRequest, StartReal3DTaskResponse> startReal3DTaskInvoker(
         StartReal3DTaskRequest request) {
-        return new SyncInvoker<StartReal3DTaskRequest, StartReal3DTaskResponse>(request, KooMapMeta.startReal3DTask,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.startReal3DTask, hcClient);
     }
 
     /**
@@ -860,7 +842,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTaskRequest 请求对象
+     * @param request StartTaskRequest 请求对象
      * @return StartTaskResponse
      */
     public StartTaskResponse startTask(StartTaskRequest request) {
@@ -874,11 +856,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTaskRequest 请求对象
+     * @param request StartTaskRequest 请求对象
      * @return SyncInvoker<StartTaskRequest, StartTaskResponse>
      */
     public SyncInvoker<StartTaskRequest, StartTaskResponse> startTaskInvoker(StartTaskRequest request) {
-        return new SyncInvoker<StartTaskRequest, StartTaskResponse>(request, KooMapMeta.startTask, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.startTask, hcClient);
     }
 
     /**
@@ -888,7 +870,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartVpsRequest 请求对象
+     * @param request StartVpsRequest 请求对象
      * @return StartVpsResponse
      */
     public StartVpsResponse startVps(StartVpsRequest request) {
@@ -902,11 +884,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartVpsRequest 请求对象
+     * @param request StartVpsRequest 请求对象
      * @return SyncInvoker<StartVpsRequest, StartVpsResponse>
      */
     public SyncInvoker<StartVpsRequest, StartVpsResponse> startVpsInvoker(StartVpsRequest request) {
-        return new SyncInvoker<StartVpsRequest, StartVpsResponse>(request, KooMapMeta.startVps, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.startVps, hcClient);
     }
 
     /**
@@ -919,7 +901,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopReal3DTaskRequest 请求对象
+     * @param request StopReal3DTaskRequest 请求对象
      * @return StopReal3DTaskResponse
      */
     public StopReal3DTaskResponse stopReal3DTask(StopReal3DTaskRequest request) {
@@ -936,13 +918,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopReal3DTaskRequest 请求对象
+     * @param request StopReal3DTaskRequest 请求对象
      * @return SyncInvoker<StopReal3DTaskRequest, StopReal3DTaskResponse>
      */
     public SyncInvoker<StopReal3DTaskRequest, StopReal3DTaskResponse> stopReal3DTaskInvoker(
         StopReal3DTaskRequest request) {
-        return new SyncInvoker<StopReal3DTaskRequest, StopReal3DTaskResponse>(request, KooMapMeta.stopReal3DTask,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.stopReal3DTask, hcClient);
     }
 
     /**
@@ -952,7 +933,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskRequest 请求对象
+     * @param request StopTaskRequest 请求对象
      * @return StopTaskResponse
      */
     public StopTaskResponse stopTask(StopTaskRequest request) {
@@ -966,11 +947,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskRequest 请求对象
+     * @param request StopTaskRequest 请求对象
      * @return SyncInvoker<StopTaskRequest, StopTaskResponse>
      */
     public SyncInvoker<StopTaskRequest, StopTaskResponse> stopTaskInvoker(StopTaskRequest request) {
-        return new SyncInvoker<StopTaskRequest, StopTaskResponse>(request, KooMapMeta.stopTask, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.stopTask, hcClient);
     }
 
     /**
@@ -984,7 +965,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCommonWorkspaceRequest 请求对象
+     * @param request UpdateCommonWorkspaceRequest 请求对象
      * @return UpdateCommonWorkspaceResponse
      */
     public UpdateCommonWorkspaceResponse updateCommonWorkspace(UpdateCommonWorkspaceRequest request) {
@@ -1002,13 +983,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCommonWorkspaceRequest 请求对象
+     * @param request UpdateCommonWorkspaceRequest 请求对象
      * @return SyncInvoker<UpdateCommonWorkspaceRequest, UpdateCommonWorkspaceResponse>
      */
     public SyncInvoker<UpdateCommonWorkspaceRequest, UpdateCommonWorkspaceResponse> updateCommonWorkspaceInvoker(
         UpdateCommonWorkspaceRequest request) {
-        return new SyncInvoker<UpdateCommonWorkspaceRequest, UpdateCommonWorkspaceResponse>(request,
-            KooMapMeta.updateCommonWorkspace, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.updateCommonWorkspace, hcClient);
     }
 
     /**
@@ -1023,7 +1003,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateReal3DTaskRequest 请求对象
+     * @param request UpdateReal3DTaskRequest 请求对象
      * @return UpdateReal3DTaskResponse
      */
     public UpdateReal3DTaskResponse updateReal3DTask(UpdateReal3DTaskRequest request) {
@@ -1042,13 +1022,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateReal3DTaskRequest 请求对象
+     * @param request UpdateReal3DTaskRequest 请求对象
      * @return SyncInvoker<UpdateReal3DTaskRequest, UpdateReal3DTaskResponse>
      */
     public SyncInvoker<UpdateReal3DTaskRequest, UpdateReal3DTaskResponse> updateReal3DTaskInvoker(
         UpdateReal3DTaskRequest request) {
-        return new SyncInvoker<UpdateReal3DTaskRequest, UpdateReal3DTaskResponse>(request, KooMapMeta.updateReal3DTask,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.updateReal3DTask, hcClient);
     }
 
     /**
@@ -1060,7 +1039,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateReal3DTaskArchivedStatusRequest 请求对象
+     * @param request UpdateReal3DTaskArchivedStatusRequest 请求对象
      * @return UpdateReal3DTaskArchivedStatusResponse
      */
     public UpdateReal3DTaskArchivedStatusResponse updateReal3DTaskArchivedStatus(
@@ -1077,13 +1056,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateReal3DTaskArchivedStatusRequest 请求对象
+     * @param request UpdateReal3DTaskArchivedStatusRequest 请求对象
      * @return SyncInvoker<UpdateReal3DTaskArchivedStatusRequest, UpdateReal3DTaskArchivedStatusResponse>
      */
     public SyncInvoker<UpdateReal3DTaskArchivedStatusRequest, UpdateReal3DTaskArchivedStatusResponse> updateReal3DTaskArchivedStatusInvoker(
         UpdateReal3DTaskArchivedStatusRequest request) {
-        return new SyncInvoker<UpdateReal3DTaskArchivedStatusRequest, UpdateReal3DTaskArchivedStatusResponse>(request,
-            KooMapMeta.updateReal3DTaskArchivedStatus, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.updateReal3DTaskArchivedStatus, hcClient);
     }
 
     /**
@@ -1093,7 +1071,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskArchivedStatusRequest 请求对象
+     * @param request UpdateTaskArchivedStatusRequest 请求对象
      * @return UpdateTaskArchivedStatusResponse
      */
     public UpdateTaskArchivedStatusResponse updateTaskArchivedStatus(UpdateTaskArchivedStatusRequest request) {
@@ -1107,13 +1085,12 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskArchivedStatusRequest 请求对象
+     * @param request UpdateTaskArchivedStatusRequest 请求对象
      * @return SyncInvoker<UpdateTaskArchivedStatusRequest, UpdateTaskArchivedStatusResponse>
      */
     public SyncInvoker<UpdateTaskArchivedStatusRequest, UpdateTaskArchivedStatusResponse> updateTaskArchivedStatusInvoker(
         UpdateTaskArchivedStatusRequest request) {
-        return new SyncInvoker<UpdateTaskArchivedStatusRequest, UpdateTaskArchivedStatusResponse>(request,
-            KooMapMeta.updateTaskArchivedStatus, hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.updateTaskArchivedStatus, hcClient);
     }
 
     /**
@@ -1123,7 +1100,7 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateImageRequest 请求对象
+     * @param request ValidateImageRequest 请求对象
      * @return ValidateImageResponse
      */
     public ValidateImageResponse validateImage(ValidateImageRequest request) {
@@ -1137,12 +1114,11 @@ public class KooMapClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateImageRequest 请求对象
+     * @param request ValidateImageRequest 请求对象
      * @return SyncInvoker<ValidateImageRequest, ValidateImageResponse>
      */
     public SyncInvoker<ValidateImageRequest, ValidateImageResponse> validateImageInvoker(ValidateImageRequest request) {
-        return new SyncInvoker<ValidateImageRequest, ValidateImageResponse>(request, KooMapMeta.validateImage,
-            hcClient);
+        return new SyncInvoker<>(request, KooMapMeta.validateImage, hcClient);
     }
 
 }

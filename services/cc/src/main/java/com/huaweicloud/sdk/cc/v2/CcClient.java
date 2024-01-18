@@ -36,7 +36,7 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDeleteTagsRequest 请求对象
+     * @param request BatchCreateDeleteTagsRequest 请求对象
      * @return BatchCreateDeleteTagsResponse
      */
     public BatchCreateDeleteTagsResponse batchCreateDeleteTags(BatchCreateDeleteTagsRequest request) {
@@ -50,13 +50,12 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDeleteTagsRequest 请求对象
+     * @param request BatchCreateDeleteTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse>
      */
     public SyncInvoker<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse> batchCreateDeleteTagsInvoker(
         BatchCreateDeleteTagsRequest request) {
-        return new SyncInvoker<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse>(request,
-            CcMeta.batchCreateDeleteTags, hcClient);
+        return new SyncInvoker<>(request, CcMeta.batchCreateDeleteTags, hcClient);
     }
 
     /**
@@ -66,7 +65,7 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return CreateTagResponse
      */
     public CreateTagResponse createTag(CreateTagRequest request) {
@@ -80,11 +79,11 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return SyncInvoker<CreateTagRequest, CreateTagResponse>
      */
     public SyncInvoker<CreateTagRequest, CreateTagResponse> createTagInvoker(CreateTagRequest request) {
-        return new SyncInvoker<CreateTagRequest, CreateTagResponse>(request, CcMeta.createTag, hcClient);
+        return new SyncInvoker<>(request, CcMeta.createTag, hcClient);
     }
 
     /**
@@ -94,7 +93,7 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return DeleteTagResponse
      */
     public DeleteTagResponse deleteTag(DeleteTagRequest request) {
@@ -108,11 +107,11 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return SyncInvoker<DeleteTagRequest, DeleteTagResponse>
      */
     public SyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagInvoker(DeleteTagRequest request) {
-        return new SyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, CcMeta.deleteTag, hcClient);
+        return new SyncInvoker<>(request, CcMeta.deleteTag, hcClient);
     }
 
     /**
@@ -122,7 +121,7 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTagsRequest 请求对象
+     * @param request ListDomainTagsRequest 请求对象
      * @return ListDomainTagsResponse
      */
     public ListDomainTagsResponse listDomainTags(ListDomainTagsRequest request) {
@@ -136,12 +135,12 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTagsRequest 请求对象
+     * @param request ListDomainTagsRequest 请求对象
      * @return SyncInvoker<ListDomainTagsRequest, ListDomainTagsResponse>
      */
     public SyncInvoker<ListDomainTagsRequest, ListDomainTagsResponse> listDomainTagsInvoker(
         ListDomainTagsRequest request) {
-        return new SyncInvoker<ListDomainTagsRequest, ListDomainTagsResponse>(request, CcMeta.listDomainTags, hcClient);
+        return new SyncInvoker<>(request, CcMeta.listDomainTags, hcClient);
     }
 
     /**
@@ -151,7 +150,7 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceByFilterTagRequest 请求对象
+     * @param request ListResourceByFilterTagRequest 请求对象
      * @return ListResourceByFilterTagResponse
      */
     public ListResourceByFilterTagResponse listResourceByFilterTag(ListResourceByFilterTagRequest request) {
@@ -165,13 +164,12 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceByFilterTagRequest 请求对象
+     * @param request ListResourceByFilterTagRequest 请求对象
      * @return SyncInvoker<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse>
      */
     public SyncInvoker<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse> listResourceByFilterTagInvoker(
         ListResourceByFilterTagRequest request) {
-        return new SyncInvoker<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse>(request,
-            CcMeta.listResourceByFilterTag, hcClient);
+        return new SyncInvoker<>(request, CcMeta.listResourceByFilterTag, hcClient);
     }
 
     /**
@@ -181,7 +179,7 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return ListTagsResponse
      */
     public ListTagsResponse listTags(ListTagsRequest request) {
@@ -195,11 +193,11 @@ public class CcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return SyncInvoker<ListTagsRequest, ListTagsResponse>
      */
     public SyncInvoker<ListTagsRequest, ListTagsResponse> listTagsInvoker(ListTagsRequest request) {
-        return new SyncInvoker<ListTagsRequest, ListTagsResponse>(request, CcMeta.listTags, hcClient);
+        return new SyncInvoker<>(request, CcMeta.listTags, hcClient);
     }
 
 }

@@ -62,7 +62,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentsRequest 请求对象
+     * @param request ListAgentsRequest 请求对象
      * @return ListAgentsResponse
      */
     public ListAgentsResponse listAgents(ListAgentsRequest request) {
@@ -76,11 +76,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentsRequest 请求对象
+     * @param request ListAgentsRequest 请求对象
      * @return SyncInvoker<ListAgentsRequest, ListAgentsResponse>
      */
     public SyncInvoker<ListAgentsRequest, ListAgentsResponse> listAgentsInvoker(ListAgentsRequest request) {
-        return new SyncInvoker<ListAgentsRequest, ListAgentsResponse>(request, TicsMeta.listAgents, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.listAgents, hcClient);
     }
 
     /**
@@ -90,7 +90,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditInfoRequest 请求对象
+     * @param request ListAuditInfoRequest 请求对象
      * @return ListAuditInfoResponse
      */
     public ListAuditInfoResponse listAuditInfo(ListAuditInfoRequest request) {
@@ -104,11 +104,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditInfoRequest 请求对象
+     * @param request ListAuditInfoRequest 请求对象
      * @return SyncInvoker<ListAuditInfoRequest, ListAuditInfoResponse>
      */
     public SyncInvoker<ListAuditInfoRequest, ListAuditInfoResponse> listAuditInfoInvoker(ListAuditInfoRequest request) {
-        return new SyncInvoker<ListAuditInfoRequest, ListAuditInfoResponse>(request, TicsMeta.listAuditInfo, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.listAuditInfo, hcClient);
     }
 
     /**
@@ -118,7 +118,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlJobRequest 请求对象
+     * @param request ListFlJobRequest 请求对象
      * @return ListFlJobResponse
      */
     public ListFlJobResponse listFlJob(ListFlJobRequest request) {
@@ -132,11 +132,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlJobRequest 请求对象
+     * @param request ListFlJobRequest 请求对象
      * @return SyncInvoker<ListFlJobRequest, ListFlJobResponse>
      */
     public SyncInvoker<ListFlJobRequest, ListFlJobResponse> listFlJobInvoker(ListFlJobRequest request) {
-        return new SyncInvoker<ListFlJobRequest, ListFlJobResponse>(request, TicsMeta.listFlJob, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.listFlJob, hcClient);
     }
 
     /**
@@ -146,7 +146,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceHistoryRequest 请求对象
+     * @param request ListInstanceHistoryRequest 请求对象
      * @return ListInstanceHistoryResponse
      */
     public ListInstanceHistoryResponse listInstanceHistory(ListInstanceHistoryRequest request) {
@@ -160,13 +160,12 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceHistoryRequest 请求对象
+     * @param request ListInstanceHistoryRequest 请求对象
      * @return SyncInvoker<ListInstanceHistoryRequest, ListInstanceHistoryResponse>
      */
     public SyncInvoker<ListInstanceHistoryRequest, ListInstanceHistoryResponse> listInstanceHistoryInvoker(
         ListInstanceHistoryRequest request) {
-        return new SyncInvoker<ListInstanceHistoryRequest, ListInstanceHistoryResponse>(request,
-            TicsMeta.listInstanceHistory, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.listInstanceHistory, hcClient);
     }
 
     /**
@@ -176,7 +175,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLeagueDatasetsRequest 请求对象
+     * @param request ListLeagueDatasetsRequest 请求对象
      * @return ListLeagueDatasetsResponse
      */
     public ListLeagueDatasetsResponse listLeagueDatasets(ListLeagueDatasetsRequest request) {
@@ -190,13 +189,12 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLeagueDatasetsRequest 请求对象
+     * @param request ListLeagueDatasetsRequest 请求对象
      * @return SyncInvoker<ListLeagueDatasetsRequest, ListLeagueDatasetsResponse>
      */
     public SyncInvoker<ListLeagueDatasetsRequest, ListLeagueDatasetsResponse> listLeagueDatasetsInvoker(
         ListLeagueDatasetsRequest request) {
-        return new SyncInvoker<ListLeagueDatasetsRequest, ListLeagueDatasetsResponse>(request,
-            TicsMeta.listLeagueDatasets, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.listLeagueDatasets, hcClient);
     }
 
     /**
@@ -206,7 +204,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLeaguesRequest 请求对象
+     * @param request ListLeaguesRequest 请求对象
      * @return ListLeaguesResponse
      */
     public ListLeaguesResponse listLeagues(ListLeaguesRequest request) {
@@ -220,11 +218,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLeaguesRequest 请求对象
+     * @param request ListLeaguesRequest 请求对象
      * @return SyncInvoker<ListLeaguesRequest, ListLeaguesResponse>
      */
     public SyncInvoker<ListLeaguesRequest, ListLeaguesResponse> listLeaguesInvoker(ListLeaguesRequest request) {
-        return new SyncInvoker<ListLeaguesRequest, ListLeaguesResponse>(request, TicsMeta.listLeagues, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.listLeagues, hcClient);
     }
 
     /**
@@ -234,7 +232,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodesRequest 请求对象
+     * @param request ListNodesRequest 请求对象
      * @return ListNodesResponse
      */
     public ListNodesResponse listNodes(ListNodesRequest request) {
@@ -248,11 +246,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodesRequest 请求对象
+     * @param request ListNodesRequest 请求对象
      * @return SyncInvoker<ListNodesRequest, ListNodesResponse>
      */
     public SyncInvoker<ListNodesRequest, ListNodesResponse> listNodesInvoker(ListNodesRequest request) {
-        return new SyncInvoker<ListNodesRequest, ListNodesResponse>(request, TicsMeta.listNodes, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.listNodes, hcClient);
     }
 
     /**
@@ -262,7 +260,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNoticesRequest 请求对象
+     * @param request ListNoticesRequest 请求对象
      * @return ListNoticesResponse
      */
     public ListNoticesResponse listNotices(ListNoticesRequest request) {
@@ -276,11 +274,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNoticesRequest 请求对象
+     * @param request ListNoticesRequest 请求对象
      * @return SyncInvoker<ListNoticesRequest, ListNoticesResponse>
      */
     public SyncInvoker<ListNoticesRequest, ListNoticesResponse> listNoticesInvoker(ListNoticesRequest request) {
-        return new SyncInvoker<ListNoticesRequest, ListNoticesResponse>(request, TicsMeta.listNotices, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.listNotices, hcClient);
     }
 
     /**
@@ -290,7 +288,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnersRequest 请求对象
+     * @param request ListPartnersRequest 请求对象
      * @return ListPartnersResponse
      */
     public ListPartnersResponse listPartners(ListPartnersRequest request) {
@@ -304,11 +302,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnersRequest 请求对象
+     * @param request ListPartnersRequest 请求对象
      * @return SyncInvoker<ListPartnersRequest, ListPartnersResponse>
      */
     public SyncInvoker<ListPartnersRequest, ListPartnersResponse> listPartnersInvoker(ListPartnersRequest request) {
-        return new SyncInvoker<ListPartnersRequest, ListPartnersResponse>(request, TicsMeta.listPartners, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.listPartners, hcClient);
     }
 
     /**
@@ -318,7 +316,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlJobRequest 请求对象
+     * @param request ListSqlJobRequest 请求对象
      * @return ListSqlJobResponse
      */
     public ListSqlJobResponse listSqlJob(ListSqlJobRequest request) {
@@ -332,11 +330,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlJobRequest 请求对象
+     * @param request ListSqlJobRequest 请求对象
      * @return SyncInvoker<ListSqlJobRequest, ListSqlJobResponse>
      */
     public SyncInvoker<ListSqlJobRequest, ListSqlJobResponse> listSqlJobInvoker(ListSqlJobRequest request) {
-        return new SyncInvoker<ListSqlJobRequest, ListSqlJobResponse>(request, TicsMeta.listSqlJob, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.listSqlJob, hcClient);
     }
 
     /**
@@ -346,7 +344,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAgentDetailRequest 请求对象
+     * @param request ShowAgentDetailRequest 请求对象
      * @return ShowAgentDetailResponse
      */
     public ShowAgentDetailResponse showAgentDetail(ShowAgentDetailRequest request) {
@@ -360,13 +358,12 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAgentDetailRequest 请求对象
+     * @param request ShowAgentDetailRequest 请求对象
      * @return SyncInvoker<ShowAgentDetailRequest, ShowAgentDetailResponse>
      */
     public SyncInvoker<ShowAgentDetailRequest, ShowAgentDetailResponse> showAgentDetailInvoker(
         ShowAgentDetailRequest request) {
-        return new SyncInvoker<ShowAgentDetailRequest, ShowAgentDetailResponse>(request, TicsMeta.showAgentDetail,
-            hcClient);
+        return new SyncInvoker<>(request, TicsMeta.showAgentDetail, hcClient);
     }
 
     /**
@@ -376,7 +373,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatasetStatisticsRequest 请求对象
+     * @param request ShowDatasetStatisticsRequest 请求对象
      * @return ShowDatasetStatisticsResponse
      */
     public ShowDatasetStatisticsResponse showDatasetStatistics(ShowDatasetStatisticsRequest request) {
@@ -390,13 +387,12 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatasetStatisticsRequest 请求对象
+     * @param request ShowDatasetStatisticsRequest 请求对象
      * @return SyncInvoker<ShowDatasetStatisticsRequest, ShowDatasetStatisticsResponse>
      */
     public SyncInvoker<ShowDatasetStatisticsRequest, ShowDatasetStatisticsResponse> showDatasetStatisticsInvoker(
         ShowDatasetStatisticsRequest request) {
-        return new SyncInvoker<ShowDatasetStatisticsRequest, ShowDatasetStatisticsResponse>(request,
-            TicsMeta.showDatasetStatistics, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.showDatasetStatistics, hcClient);
     }
 
     /**
@@ -406,7 +402,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceReportRequest 请求对象
+     * @param request ShowInstanceReportRequest 请求对象
      * @return ShowInstanceReportResponse
      */
     public ShowInstanceReportResponse showInstanceReport(ShowInstanceReportRequest request) {
@@ -420,13 +416,12 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceReportRequest 请求对象
+     * @param request ShowInstanceReportRequest 请求对象
      * @return SyncInvoker<ShowInstanceReportRequest, ShowInstanceReportResponse>
      */
     public SyncInvoker<ShowInstanceReportRequest, ShowInstanceReportResponse> showInstanceReportInvoker(
         ShowInstanceReportRequest request) {
-        return new SyncInvoker<ShowInstanceReportRequest, ShowInstanceReportResponse>(request,
-            TicsMeta.showInstanceReport, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.showInstanceReport, hcClient);
     }
 
     /**
@@ -436,7 +431,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInstanceDagRequest 请求对象
+     * @param request ShowJobInstanceDagRequest 请求对象
      * @return ShowJobInstanceDagResponse
      */
     public ShowJobInstanceDagResponse showJobInstanceDag(ShowJobInstanceDagRequest request) {
@@ -450,13 +445,12 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInstanceDagRequest 请求对象
+     * @param request ShowJobInstanceDagRequest 请求对象
      * @return SyncInvoker<ShowJobInstanceDagRequest, ShowJobInstanceDagResponse>
      */
     public SyncInvoker<ShowJobInstanceDagRequest, ShowJobInstanceDagResponse> showJobInstanceDagInvoker(
         ShowJobInstanceDagRequest request) {
-        return new SyncInvoker<ShowJobInstanceDagRequest, ShowJobInstanceDagResponse>(request,
-            TicsMeta.showJobInstanceDag, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.showJobInstanceDag, hcClient);
     }
 
     /**
@@ -466,7 +460,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobStatisticsRequest 请求对象
+     * @param request ShowJobStatisticsRequest 请求对象
      * @return ShowJobStatisticsResponse
      */
     public ShowJobStatisticsResponse showJobStatistics(ShowJobStatisticsRequest request) {
@@ -480,13 +474,12 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobStatisticsRequest 请求对象
+     * @param request ShowJobStatisticsRequest 请求对象
      * @return SyncInvoker<ShowJobStatisticsRequest, ShowJobStatisticsResponse>
      */
     public SyncInvoker<ShowJobStatisticsRequest, ShowJobStatisticsResponse> showJobStatisticsInvoker(
         ShowJobStatisticsRequest request) {
-        return new SyncInvoker<ShowJobStatisticsRequest, ShowJobStatisticsResponse>(request, TicsMeta.showJobStatistics,
-            hcClient);
+        return new SyncInvoker<>(request, TicsMeta.showJobStatistics, hcClient);
     }
 
     /**
@@ -496,7 +489,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLeagueRequest 请求对象
+     * @param request ShowLeagueRequest 请求对象
      * @return ShowLeagueResponse
      */
     public ShowLeagueResponse showLeague(ShowLeagueRequest request) {
@@ -510,11 +503,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLeagueRequest 请求对象
+     * @param request ShowLeagueRequest 请求对象
      * @return SyncInvoker<ShowLeagueRequest, ShowLeagueResponse>
      */
     public SyncInvoker<ShowLeagueRequest, ShowLeagueResponse> showLeagueInvoker(ShowLeagueRequest request) {
-        return new SyncInvoker<ShowLeagueRequest, ShowLeagueResponse>(request, TicsMeta.showLeague, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.showLeague, hcClient);
     }
 
     /**
@@ -524,7 +517,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOverviewRequest 请求对象
+     * @param request ShowOverviewRequest 请求对象
      * @return ShowOverviewResponse
      */
     public ShowOverviewResponse showOverview(ShowOverviewRequest request) {
@@ -538,11 +531,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOverviewRequest 请求对象
+     * @param request ShowOverviewRequest 请求对象
      * @return SyncInvoker<ShowOverviewRequest, ShowOverviewResponse>
      */
     public SyncInvoker<ShowOverviewRequest, ShowOverviewResponse> showOverviewInvoker(ShowOverviewRequest request) {
-        return new SyncInvoker<ShowOverviewRequest, ShowOverviewResponse>(request, TicsMeta.showOverview, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.showOverview, hcClient);
     }
 
     /**
@@ -552,7 +545,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartnerStatisticsRequest 请求对象
+     * @param request ShowPartnerStatisticsRequest 请求对象
      * @return ShowPartnerStatisticsResponse
      */
     public ShowPartnerStatisticsResponse showPartnerStatistics(ShowPartnerStatisticsRequest request) {
@@ -566,13 +559,12 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartnerStatisticsRequest 请求对象
+     * @param request ShowPartnerStatisticsRequest 请求对象
      * @return SyncInvoker<ShowPartnerStatisticsRequest, ShowPartnerStatisticsResponse>
      */
     public SyncInvoker<ShowPartnerStatisticsRequest, ShowPartnerStatisticsResponse> showPartnerStatisticsInvoker(
         ShowPartnerStatisticsRequest request) {
-        return new SyncInvoker<ShowPartnerStatisticsRequest, ShowPartnerStatisticsResponse>(request,
-            TicsMeta.showPartnerStatistics, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.showPartnerStatistics, hcClient);
     }
 
     /**
@@ -582,7 +574,7 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLeagueRequest 请求对象
+     * @param request UpdateLeagueRequest 请求对象
      * @return UpdateLeagueResponse
      */
     public UpdateLeagueResponse updateLeague(UpdateLeagueRequest request) {
@@ -596,11 +588,11 @@ public class TicsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLeagueRequest 请求对象
+     * @param request UpdateLeagueRequest 请求对象
      * @return SyncInvoker<UpdateLeagueRequest, UpdateLeagueResponse>
      */
     public SyncInvoker<UpdateLeagueRequest, UpdateLeagueResponse> updateLeagueInvoker(UpdateLeagueRequest request) {
-        return new SyncInvoker<UpdateLeagueRequest, UpdateLeagueResponse>(request, TicsMeta.updateLeague, hcClient);
+        return new SyncInvoker<>(request, TicsMeta.updateLeague, hcClient);
     }
 
 }

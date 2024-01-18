@@ -25,11 +25,6 @@ public class ShowManagedCoreAccountResponse extends SdkResponse {
     private String accountName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "account_email")
-
-    private String accountEmail;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "core_resource_mappings")
 
     private Map<String, String> coreResourceMappings = null;
@@ -40,7 +35,7 @@ public class ShowManagedCoreAccountResponse extends SdkResponse {
     }
 
     /**
-     * 账号ID。
+     * 纳管账号ID。
      * @return accountId
      */
     public String getAccountId() {
@@ -57,7 +52,7 @@ public class ShowManagedCoreAccountResponse extends SdkResponse {
     }
 
     /**
-     * 账号名称。
+     * 纳管账号名称。
      * @return accountName
      */
     public String getAccountName() {
@@ -66,23 +61,6 @@ public class ShowManagedCoreAccountResponse extends SdkResponse {
 
     public void setAccountName(String accountName) {
         this.accountName = accountName;
-    }
-
-    public ShowManagedCoreAccountResponse withAccountEmail(String accountEmail) {
-        this.accountEmail = accountEmail;
-        return this;
-    }
-
-    /**
-     * 账号邮箱。
-     * @return accountEmail
-     */
-    public String getAccountEmail() {
-        return accountEmail;
-    }
-
-    public void setAccountEmail(String accountEmail) {
-        this.accountEmail = accountEmail;
     }
 
     public ShowManagedCoreAccountResponse withCoreResourceMappings(Map<String, String> coreResourceMappings) {
@@ -108,7 +86,7 @@ public class ShowManagedCoreAccountResponse extends SdkResponse {
     }
 
     /**
-     * Get coreResourceMappings
+     * 核心资源映射。
      * @return coreResourceMappings
      */
     public Map<String, String> getCoreResourceMappings() {
@@ -129,13 +107,12 @@ public class ShowManagedCoreAccountResponse extends SdkResponse {
         }
         ShowManagedCoreAccountResponse that = (ShowManagedCoreAccountResponse) obj;
         return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.accountName, that.accountName)
-            && Objects.equals(this.accountEmail, that.accountEmail)
             && Objects.equals(this.coreResourceMappings, that.coreResourceMappings);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountId, accountName, accountEmail, coreResourceMappings);
+        return Objects.hash(accountId, accountName, coreResourceMappings);
     }
 
     @Override
@@ -144,7 +121,6 @@ public class ShowManagedCoreAccountResponse extends SdkResponse {
         sb.append("class ShowManagedCoreAccountResponse {\n");
         sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
-        sb.append("    accountEmail: ").append(toIndentedString(accountEmail)).append("\n");
         sb.append("    coreResourceMappings: ").append(toIndentedString(coreResourceMappings)).append("\n");
         sb.append("}");
         return sb.toString();

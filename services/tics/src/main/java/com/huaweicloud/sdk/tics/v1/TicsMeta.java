@@ -53,9 +53,9 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class TicsMeta {
 
-    public static final HttpRequestDef<ListAgentsRequest, ListAgentsResponse> listAgents = genForlistAgents();
+    public static final HttpRequestDef<ListAgentsRequest, ListAgentsResponse> listAgents = genForListAgents();
 
-    private static HttpRequestDef<ListAgentsRequest, ListAgentsResponse> genForlistAgents() {
+    private static HttpRequestDef<ListAgentsRequest, ListAgentsResponse> genForListAgents() {
         // basic
         HttpRequestDef.Builder<ListAgentsRequest, ListAgentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgentsRequest.class, ListAgentsResponse.class)
@@ -68,30 +68,22 @@ public class TicsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAgentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAgentsRequest::getLimit, ListAgentsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAgentsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAgentsRequest::getOffset, ListAgentsRequest::setOffset));
         builder.<String>withRequestField("agent_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentsRequest::getAgentName, (req, v) -> {
-                req.setAgentName(v);
-            }));
+            f -> f.withMarshaller(ListAgentsRequest::getAgentName, ListAgentsRequest::setAgentName));
         builder.<String>withRequestField("league_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentsRequest::getLeagueName, (req, v) -> {
-                req.setLeagueName(v);
-            }));
+            f -> f.withMarshaller(ListAgentsRequest::getLeagueName, ListAgentsRequest::setLeagueName));
 
         // response
 
@@ -99,9 +91,9 @@ public class TicsMeta {
     }
 
     public static final HttpRequestDef<ListAuditInfoRequest, ListAuditInfoResponse> listAuditInfo =
-        genForlistAuditInfo();
+        genForListAuditInfo();
 
-    private static HttpRequestDef<ListAuditInfoRequest, ListAuditInfoResponse> genForlistAuditInfo() {
+    private static HttpRequestDef<ListAuditInfoRequest, ListAuditInfoResponse> genForListAuditInfo() {
         // basic
         HttpRequestDef.Builder<ListAuditInfoRequest, ListAuditInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuditInfoRequest.class, ListAuditInfoResponse.class)
@@ -114,32 +106,26 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditInfoRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ListAuditInfoRequest::getLeagueId, ListAuditInfoRequest::setLeagueId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAuditInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAuditInfoRequest::getLimit, ListAuditInfoRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAuditInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAuditInfoRequest::getOffset, ListAuditInfoRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFlJobRequest, ListFlJobResponse> listFlJob = genForlistFlJob();
+    public static final HttpRequestDef<ListFlJobRequest, ListFlJobResponse> listFlJob = genForListFlJob();
 
-    private static HttpRequestDef<ListFlJobRequest, ListFlJobResponse> genForlistFlJob() {
+    private static HttpRequestDef<ListFlJobRequest, ListFlJobResponse> genForListFlJob() {
         // basic
         HttpRequestDef.Builder<ListFlJobRequest, ListFlJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlJobRequest.class, ListFlJobResponse.class)
@@ -152,23 +138,17 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlJobRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ListFlJobRequest::getLeagueId, ListFlJobRequest::setLeagueId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlJobRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFlJobRequest::getLimit, ListFlJobRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlJobRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFlJobRequest::getOffset, ListFlJobRequest::setOffset));
 
         // response
 
@@ -176,9 +156,9 @@ public class TicsMeta {
     }
 
     public static final HttpRequestDef<ListInstanceHistoryRequest, ListInstanceHistoryResponse> listInstanceHistory =
-        genForlistInstanceHistory();
+        genForListInstanceHistory();
 
-    private static HttpRequestDef<ListInstanceHistoryRequest, ListInstanceHistoryResponse> genForlistInstanceHistory() {
+    private static HttpRequestDef<ListInstanceHistoryRequest, ListInstanceHistoryResponse> genForListInstanceHistory() {
         // basic
         HttpRequestDef.Builder<ListInstanceHistoryRequest, ListInstanceHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceHistoryRequest.class, ListInstanceHistoryResponse.class)
@@ -191,30 +171,22 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceHistoryRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceHistoryRequest::getLeagueId, ListInstanceHistoryRequest::setLeagueId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceHistoryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstanceHistoryRequest::getLimit, ListInstanceHistoryRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceHistoryRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstanceHistoryRequest::getOffset, ListInstanceHistoryRequest::setOffset));
         builder.<String>withRequestField("job_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceHistoryRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceHistoryRequest::getJobId, ListInstanceHistoryRequest::setJobId));
 
         // response
 
@@ -222,9 +194,9 @@ public class TicsMeta {
     }
 
     public static final HttpRequestDef<ListLeagueDatasetsRequest, ListLeagueDatasetsResponse> listLeagueDatasets =
-        genForlistLeagueDatasets();
+        genForListLeagueDatasets();
 
-    private static HttpRequestDef<ListLeagueDatasetsRequest, ListLeagueDatasetsResponse> genForlistLeagueDatasets() {
+    private static HttpRequestDef<ListLeagueDatasetsRequest, ListLeagueDatasetsResponse> genForListLeagueDatasets() {
         // basic
         HttpRequestDef.Builder<ListLeagueDatasetsRequest, ListLeagueDatasetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLeagueDatasetsRequest.class, ListLeagueDatasetsResponse.class)
@@ -237,46 +209,38 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLeagueDatasetsRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ListLeagueDatasetsRequest::getLeagueId, ListLeagueDatasetsRequest::setLeagueId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLeagueDatasetsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLeagueDatasetsRequest::getOffset, ListLeagueDatasetsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLeagueDatasetsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLeagueDatasetsRequest::getLimit, ListLeagueDatasetsRequest::setLimit));
         builder.<String>withRequestField("dataset_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLeagueDatasetsRequest::getDatasetName, (req, v) -> {
-                req.setDatasetName(v);
-            }));
+            f -> f.withMarshaller(ListLeagueDatasetsRequest::getDatasetName,
+                ListLeagueDatasetsRequest::setDatasetName));
         builder.<String>withRequestField("partner_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLeagueDatasetsRequest::getPartnerName, (req, v) -> {
-                req.setPartnerName(v);
-            }));
+            f -> f.withMarshaller(ListLeagueDatasetsRequest::getPartnerName,
+                ListLeagueDatasetsRequest::setPartnerName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListLeaguesRequest, ListLeaguesResponse> listLeagues = genForlistLeagues();
+    public static final HttpRequestDef<ListLeaguesRequest, ListLeaguesResponse> listLeagues = genForListLeagues();
 
-    private static HttpRequestDef<ListLeaguesRequest, ListLeaguesResponse> genForlistLeagues() {
+    private static HttpRequestDef<ListLeaguesRequest, ListLeaguesResponse> genForListLeagues() {
         // basic
         HttpRequestDef.Builder<ListLeaguesRequest, ListLeaguesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLeaguesRequest.class, ListLeaguesResponse.class)
@@ -289,32 +253,26 @@ public class TicsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLeaguesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLeaguesRequest::getLimit, ListLeaguesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLeaguesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLeaguesRequest::getOffset, ListLeaguesRequest::setOffset));
         builder.<ListLeaguesRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListLeaguesRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListLeaguesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListLeaguesRequest::getType, ListLeaguesRequest::setType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNodesRequest, ListNodesResponse> listNodes = genForlistNodes();
+    public static final HttpRequestDef<ListNodesRequest, ListNodesResponse> listNodes = genForListNodes();
 
-    private static HttpRequestDef<ListNodesRequest, ListNodesResponse> genForlistNodes() {
+    private static HttpRequestDef<ListNodesRequest, ListNodesResponse> genForListNodes() {
         // basic
         HttpRequestDef.Builder<ListNodesRequest, ListNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNodesRequest.class, ListNodesResponse.class)
@@ -327,32 +285,26 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNodesRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ListNodesRequest::getLeagueId, ListNodesRequest::setLeagueId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNodesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListNodesRequest::getOffset, ListNodesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNodesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNodesRequest::getLimit, ListNodesRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNoticesRequest, ListNoticesResponse> listNotices = genForlistNotices();
+    public static final HttpRequestDef<ListNoticesRequest, ListNoticesResponse> listNotices = genForListNotices();
 
-    private static HttpRequestDef<ListNoticesRequest, ListNoticesResponse> genForlistNotices() {
+    private static HttpRequestDef<ListNoticesRequest, ListNoticesResponse> genForListNotices() {
         // basic
         HttpRequestDef.Builder<ListNoticesRequest, ListNoticesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNoticesRequest.class, ListNoticesResponse.class)
@@ -365,25 +317,21 @@ public class TicsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNoticesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNoticesRequest::getLimit, ListNoticesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNoticesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListNoticesRequest::getOffset, ListNoticesRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPartnersRequest, ListPartnersResponse> listPartners = genForlistPartners();
+    public static final HttpRequestDef<ListPartnersRequest, ListPartnersResponse> listPartners = genForListPartners();
 
-    private static HttpRequestDef<ListPartnersRequest, ListPartnersResponse> genForlistPartners() {
+    private static HttpRequestDef<ListPartnersRequest, ListPartnersResponse> genForListPartners() {
         // basic
         HttpRequestDef.Builder<ListPartnersRequest, ListPartnersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPartnersRequest.class, ListPartnersResponse.class)
@@ -396,32 +344,26 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnersRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ListPartnersRequest::getLeagueId, ListPartnersRequest::setLeagueId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartnersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPartnersRequest::getLimit, ListPartnersRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartnersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPartnersRequest::getOffset, ListPartnersRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSqlJobRequest, ListSqlJobResponse> listSqlJob = genForlistSqlJob();
+    public static final HttpRequestDef<ListSqlJobRequest, ListSqlJobResponse> listSqlJob = genForListSqlJob();
 
-    private static HttpRequestDef<ListSqlJobRequest, ListSqlJobResponse> genForlistSqlJob() {
+    private static HttpRequestDef<ListSqlJobRequest, ListSqlJobResponse> genForListSqlJob() {
         // basic
         HttpRequestDef.Builder<ListSqlJobRequest, ListSqlJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSqlJobRequest.class, ListSqlJobResponse.class)
@@ -434,23 +376,17 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSqlJobRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ListSqlJobRequest::getLeagueId, ListSqlJobRequest::setLeagueId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSqlJobRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSqlJobRequest::getLimit, ListSqlJobRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSqlJobRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSqlJobRequest::getOffset, ListSqlJobRequest::setOffset));
 
         // response
 
@@ -458,9 +394,9 @@ public class TicsMeta {
     }
 
     public static final HttpRequestDef<ShowAgentDetailRequest, ShowAgentDetailResponse> showAgentDetail =
-        genForshowAgentDetail();
+        genForShowAgentDetail();
 
-    private static HttpRequestDef<ShowAgentDetailRequest, ShowAgentDetailResponse> genForshowAgentDetail() {
+    private static HttpRequestDef<ShowAgentDetailRequest, ShowAgentDetailResponse> genForShowAgentDetail() {
         // basic
         HttpRequestDef.Builder<ShowAgentDetailRequest, ShowAgentDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgentDetailRequest.class, ShowAgentDetailResponse.class)
@@ -473,9 +409,7 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAgentDetailRequest::getAgentId, (req, v) -> {
-                req.setAgentId(v);
-            }));
+            f -> f.withMarshaller(ShowAgentDetailRequest::getAgentId, ShowAgentDetailRequest::setAgentId));
 
         // response
 
@@ -483,9 +417,9 @@ public class TicsMeta {
     }
 
     public static final HttpRequestDef<ShowDatasetStatisticsRequest, ShowDatasetStatisticsResponse> showDatasetStatistics =
-        genForshowDatasetStatistics();
+        genForShowDatasetStatistics();
 
-    private static HttpRequestDef<ShowDatasetStatisticsRequest, ShowDatasetStatisticsResponse> genForshowDatasetStatistics() {
+    private static HttpRequestDef<ShowDatasetStatisticsRequest, ShowDatasetStatisticsResponse> genForShowDatasetStatistics() {
         // basic
         HttpRequestDef.Builder<ShowDatasetStatisticsRequest, ShowDatasetStatisticsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDatasetStatisticsRequest.class, ShowDatasetStatisticsResponse.class)
@@ -498,40 +432,35 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDatasetStatisticsRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ShowDatasetStatisticsRequest::getLeagueId,
+                ShowDatasetStatisticsRequest::setLeagueId));
         builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDatasetStatisticsRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ShowDatasetStatisticsRequest::getStartDate,
+                ShowDatasetStatisticsRequest::setStartDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDatasetStatisticsRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ShowDatasetStatisticsRequest::getEndDate, ShowDatasetStatisticsRequest::setEndDate));
 
         // response
         builder.<List<LeagueDatasetStatisticsVo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowDatasetStatisticsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(LeagueDatasetStatisticsVo.class));
+            f -> f.withMarshaller(ShowDatasetStatisticsResponse::getBody, ShowDatasetStatisticsResponse::setBody)
+                .withInnerContainerType(LeagueDatasetStatisticsVo.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowInstanceReportRequest, ShowInstanceReportResponse> showInstanceReport =
-        genForshowInstanceReport();
+        genForShowInstanceReport();
 
-    private static HttpRequestDef<ShowInstanceReportRequest, ShowInstanceReportResponse> genForshowInstanceReport() {
+    private static HttpRequestDef<ShowInstanceReportRequest, ShowInstanceReportResponse> genForShowInstanceReport() {
         // basic
         HttpRequestDef.Builder<ShowInstanceReportRequest, ShowInstanceReportResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceReportRequest.class, ShowInstanceReportResponse.class)
@@ -544,16 +473,12 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceReportRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceReportRequest::getInstanceId, ShowInstanceReportRequest::setInstanceId));
         builder.<String>withRequestField("league_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceReportRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceReportRequest::getLeagueId, ShowInstanceReportRequest::setLeagueId));
 
         // response
 
@@ -561,9 +486,9 @@ public class TicsMeta {
     }
 
     public static final HttpRequestDef<ShowJobInstanceDagRequest, ShowJobInstanceDagResponse> showJobInstanceDag =
-        genForshowJobInstanceDag();
+        genForShowJobInstanceDag();
 
-    private static HttpRequestDef<ShowJobInstanceDagRequest, ShowJobInstanceDagResponse> genForshowJobInstanceDag() {
+    private static HttpRequestDef<ShowJobInstanceDagRequest, ShowJobInstanceDagResponse> genForShowJobInstanceDag() {
         // basic
         HttpRequestDef.Builder<ShowJobInstanceDagRequest, ShowJobInstanceDagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobInstanceDagRequest.class, ShowJobInstanceDagResponse.class)
@@ -576,40 +501,33 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInstanceDagRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowJobInstanceDagRequest::getInstanceId, ShowJobInstanceDagRequest::setInstanceId));
         builder.<String>withRequestField("league_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInstanceDagRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ShowJobInstanceDagRequest::getLeagueId, ShowJobInstanceDagRequest::setLeagueId));
         builder.<Integer>withRequestField("round_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowJobInstanceDagRequest::getRoundId, (req, v) -> {
-                req.setRoundId(v);
-            }));
+            f -> f.withMarshaller(ShowJobInstanceDagRequest::getRoundId, ShowJobInstanceDagRequest::setRoundId));
 
         // response
         builder.<List<DeployVo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowJobInstanceDagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(DeployVo.class));
+            f -> f.withMarshaller(ShowJobInstanceDagResponse::getBody, ShowJobInstanceDagResponse::setBody)
+                .withInnerContainerType(DeployVo.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowJobStatisticsRequest, ShowJobStatisticsResponse> showJobStatistics =
-        genForshowJobStatistics();
+        genForShowJobStatistics();
 
-    private static HttpRequestDef<ShowJobStatisticsRequest, ShowJobStatisticsResponse> genForshowJobStatistics() {
+    private static HttpRequestDef<ShowJobStatisticsRequest, ShowJobStatisticsResponse> genForShowJobStatistics() {
         // basic
         HttpRequestDef.Builder<ShowJobStatisticsRequest, ShowJobStatisticsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobStatisticsRequest.class, ShowJobStatisticsResponse.class)
@@ -622,32 +540,26 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobStatisticsRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ShowJobStatisticsRequest::getLeagueId, ShowJobStatisticsRequest::setLeagueId));
         builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobStatisticsRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ShowJobStatisticsRequest::getStartDate, ShowJobStatisticsRequest::setStartDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobStatisticsRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ShowJobStatisticsRequest::getEndDate, ShowJobStatisticsRequest::setEndDate));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowLeagueRequest, ShowLeagueResponse> showLeague = genForshowLeague();
+    public static final HttpRequestDef<ShowLeagueRequest, ShowLeagueResponse> showLeague = genForShowLeague();
 
-    private static HttpRequestDef<ShowLeagueRequest, ShowLeagueResponse> genForshowLeague() {
+    private static HttpRequestDef<ShowLeagueRequest, ShowLeagueResponse> genForShowLeague() {
         // basic
         HttpRequestDef.Builder<ShowLeagueRequest, ShowLeagueResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLeagueRequest.class, ShowLeagueResponse.class)
@@ -660,18 +572,16 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLeagueRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ShowLeagueRequest::getLeagueId, ShowLeagueRequest::setLeagueId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowOverviewRequest, ShowOverviewResponse> showOverview = genForshowOverview();
+    public static final HttpRequestDef<ShowOverviewRequest, ShowOverviewResponse> showOverview = genForShowOverview();
 
-    private static HttpRequestDef<ShowOverviewRequest, ShowOverviewResponse> genForshowOverview() {
+    private static HttpRequestDef<ShowOverviewRequest, ShowOverviewResponse> genForShowOverview() {
         // basic
         HttpRequestDef.Builder<ShowOverviewRequest, ShowOverviewResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOverviewRequest.class, ShowOverviewResponse.class)
@@ -687,9 +597,9 @@ public class TicsMeta {
     }
 
     public static final HttpRequestDef<ShowPartnerStatisticsRequest, ShowPartnerStatisticsResponse> showPartnerStatistics =
-        genForshowPartnerStatistics();
+        genForShowPartnerStatistics();
 
-    private static HttpRequestDef<ShowPartnerStatisticsRequest, ShowPartnerStatisticsResponse> genForshowPartnerStatistics() {
+    private static HttpRequestDef<ShowPartnerStatisticsRequest, ShowPartnerStatisticsResponse> genForShowPartnerStatistics() {
         // basic
         HttpRequestDef.Builder<ShowPartnerStatisticsRequest, ShowPartnerStatisticsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPartnerStatisticsRequest.class, ShowPartnerStatisticsResponse.class)
@@ -702,39 +612,34 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartnerStatisticsRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(ShowPartnerStatisticsRequest::getLeagueId,
+                ShowPartnerStatisticsRequest::setLeagueId));
         builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartnerStatisticsRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ShowPartnerStatisticsRequest::getStartDate,
+                ShowPartnerStatisticsRequest::setStartDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartnerStatisticsRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ShowPartnerStatisticsRequest::getEndDate, ShowPartnerStatisticsRequest::setEndDate));
 
         // response
         builder.<List<LeaguePartnerStatisticsVo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowPartnerStatisticsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(LeaguePartnerStatisticsVo.class));
+            f -> f.withMarshaller(ShowPartnerStatisticsResponse::getBody, ShowPartnerStatisticsResponse::setBody)
+                .withInnerContainerType(LeaguePartnerStatisticsVo.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateLeagueRequest, UpdateLeagueResponse> updateLeague = genForupdateLeague();
+    public static final HttpRequestDef<UpdateLeagueRequest, UpdateLeagueResponse> updateLeague = genForUpdateLeague();
 
-    private static HttpRequestDef<UpdateLeagueRequest, UpdateLeagueResponse> genForupdateLeague() {
+    private static HttpRequestDef<UpdateLeagueRequest, UpdateLeagueResponse> genForUpdateLeague() {
         // basic
         HttpRequestDef.Builder<UpdateLeagueRequest, UpdateLeagueResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLeagueRequest.class, UpdateLeagueResponse.class)
@@ -747,25 +652,19 @@ public class TicsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLeagueRequest::getLeagueId, (req, v) -> {
-                req.setLeagueId(v);
-            }));
+            f -> f.withMarshaller(UpdateLeagueRequest::getLeagueId, UpdateLeagueRequest::setLeagueId));
         builder.<LeagueUpdateVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(LeagueUpdateVo.class),
-            f -> f.withMarshaller(UpdateLeagueRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLeagueRequest::getBody, UpdateLeagueRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateLeagueResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateLeagueResponse::getBody, UpdateLeagueResponse::setBody));
 
         return builder.build();
     }

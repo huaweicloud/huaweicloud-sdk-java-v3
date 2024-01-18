@@ -205,9 +205,9 @@ import java.util.List;
 public class CodeArtsPipelineMeta {
 
     public static final HttpRequestDef<AcceptManualReviewRequest, AcceptManualReviewResponse> acceptManualReview =
-        genForacceptManualReview();
+        genForAcceptManualReview();
 
-    private static HttpRequestDef<AcceptManualReviewRequest, AcceptManualReviewResponse> genForacceptManualReview() {
+    private static HttpRequestDef<AcceptManualReviewRequest, AcceptManualReviewResponse> genForAcceptManualReview() {
         // basic
         HttpRequestDef.Builder<AcceptManualReviewRequest, AcceptManualReviewResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AcceptManualReviewRequest.class, AcceptManualReviewResponse.class)
@@ -221,37 +221,28 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptManualReviewRequest::getJobRunId, (req, v) -> {
-                req.setJobRunId(v);
-            }));
+            f -> f.withMarshaller(AcceptManualReviewRequest::getJobRunId, AcceptManualReviewRequest::setJobRunId));
         builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptManualReviewRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(AcceptManualReviewRequest::getProjectId, AcceptManualReviewRequest::setProjectId));
         builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptManualReviewRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(AcceptManualReviewRequest::getPipelineId, AcceptManualReviewRequest::setPipelineId));
         builder.<String>withRequestField("pipeline_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptManualReviewRequest::getPipelineRunId, (req, v) -> {
-                req.setPipelineRunId(v);
-            }));
+            f -> f.withMarshaller(AcceptManualReviewRequest::getPipelineRunId,
+                AcceptManualReviewRequest::setPipelineRunId));
         builder.<String>withRequestField("step_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptManualReviewRequest::getStepRunId, (req, v) -> {
-                req.setStepRunId(v);
-            }));
+            f -> f.withMarshaller(AcceptManualReviewRequest::getStepRunId, AcceptManualReviewRequest::setStepRunId));
 
         // response
 
@@ -259,9 +250,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<BatchMovePipelineToGroupRequest, BatchMovePipelineToGroupResponse> batchMovePipelineToGroup =
-        genForbatchMovePipelineToGroup();
+        genForBatchMovePipelineToGroup();
 
-    private static HttpRequestDef<BatchMovePipelineToGroupRequest, BatchMovePipelineToGroupResponse> genForbatchMovePipelineToGroup() {
+    private static HttpRequestDef<BatchMovePipelineToGroupRequest, BatchMovePipelineToGroupResponse> genForBatchMovePipelineToGroup() {
         // basic
         HttpRequestDef.Builder<BatchMovePipelineToGroupRequest, BatchMovePipelineToGroupResponse> builder =
             HttpRequestDef
@@ -275,33 +266,29 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchMovePipelineToGroupRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(BatchMovePipelineToGroupRequest::getProjectId,
+                BatchMovePipelineToGroupRequest::setProjectId));
         builder.<PipelineGroupBindDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PipelineGroupBindDTO.class),
-            f -> f.withMarshaller(BatchMovePipelineToGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchMovePipelineToGroupRequest::getBody, BatchMovePipelineToGroupRequest::setBody));
 
         // response
         builder.<List<PipelineMoveToGroupResponseVo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchMovePipelineToGroupResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(PipelineMoveToGroupResponseVo.class));
+            f -> f.withMarshaller(BatchMovePipelineToGroupResponse::getBody, BatchMovePipelineToGroupResponse::setBody)
+                .withInnerContainerType(PipelineMoveToGroupResponseVo.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> batchShowPipelinesLatestStatus =
-        genForbatchShowPipelinesLatestStatus();
+        genForBatchShowPipelinesLatestStatus();
 
-    private static HttpRequestDef<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> genForbatchShowPipelinesLatestStatus() {
+    private static HttpRequestDef<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> genForBatchShowPipelinesLatestStatus() {
         // basic
         HttpRequestDef.Builder<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> builder =
             HttpRequestDef
@@ -317,33 +304,34 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowPipelinesLatestStatusRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(BatchShowPipelinesLatestStatusRequest::getProjectId,
+                BatchShowPipelinesLatestStatusRequest::setProjectId));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchShowPipelinesLatestStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f
+                .withMarshaller(BatchShowPipelinesLatestStatusRequest::getBody,
+                    BatchShowPipelinesLatestStatusRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
         builder.<List<PipelineLatestRun>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchShowPipelinesLatestStatusResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(PipelineLatestRun.class));
+            f -> f
+                .withMarshaller(BatchShowPipelinesLatestStatusResponse::getBody,
+                    BatchShowPipelinesLatestStatusResponse::setBody)
+                .withInnerContainerType(PipelineLatestRun.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> batchShowPipelinesStatus =
-        genForbatchShowPipelinesStatus();
+        genForBatchShowPipelinesStatus();
 
-    private static HttpRequestDef<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> genForbatchShowPipelinesStatus() {
+    private static HttpRequestDef<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> genForBatchShowPipelinesStatus() {
         // basic
         HttpRequestDef.Builder<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> builder =
             HttpRequestDef
@@ -357,26 +345,24 @@ public class CodeArtsPipelineMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowPipelinesStatusRequest::getPipelineIds, (req, v) -> {
-                req.setPipelineIds(v);
-            }));
+            f -> f.withMarshaller(BatchShowPipelinesStatusRequest::getPipelineIds,
+                BatchShowPipelinesStatusRequest::setPipelineIds));
 
         // response
         builder.<List<PipelineExecuteStates>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchShowPipelinesStatusResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(PipelineExecuteStates.class));
+            f -> f.withMarshaller(BatchShowPipelinesStatusResponse::getBody, BatchShowPipelinesStatusResponse::setBody)
+                .withInnerContainerType(PipelineExecuteStates.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateBasicPluginRequest, CreateBasicPluginResponse> createBasicPlugin =
-        genForcreateBasicPlugin();
+        genForCreateBasicPlugin();
 
-    private static HttpRequestDef<CreateBasicPluginRequest, CreateBasicPluginResponse> genForcreateBasicPlugin() {
+    private static HttpRequestDef<CreateBasicPluginRequest, CreateBasicPluginResponse> genForCreateBasicPlugin() {
         // basic
         HttpRequestDef.Builder<CreateBasicPluginRequest, CreateBasicPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateBasicPluginRequest.class, CreateBasicPluginResponse.class)
@@ -389,33 +375,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBasicPluginRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(CreateBasicPluginRequest::getDomainId, CreateBasicPluginRequest::setDomainId));
         builder.<PluginBasicDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PluginBasicDTO.class),
-            f -> f.withMarshaller(CreateBasicPluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBasicPluginRequest::getBody, CreateBasicPluginRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateBasicPluginResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateBasicPluginResponse::getBody, CreateBasicPluginResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse> createPipelineByTemplate =
-        genForcreatePipelineByTemplate();
+        genForCreatePipelineByTemplate();
 
-    private static HttpRequestDef<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse> genForcreatePipelineByTemplate() {
+    private static HttpRequestDef<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse> genForCreatePipelineByTemplate() {
         // basic
         HttpRequestDef.Builder<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse> builder =
             HttpRequestDef
@@ -429,9 +409,7 @@ public class CodeArtsPipelineMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TemplateCddl.class),
-            f -> f.withMarshaller(CreatePipelineByTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineByTemplateRequest::getBody, CreatePipelineByTemplateRequest::setBody));
 
         // response
 
@@ -439,9 +417,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse> createPipelineByTemplateId =
-        genForcreatePipelineByTemplateId();
+        genForCreatePipelineByTemplateId();
 
-    private static HttpRequestDef<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse> genForcreatePipelineByTemplateId() {
+    private static HttpRequestDef<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse> genForCreatePipelineByTemplateId() {
         // basic
         HttpRequestDef.Builder<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse> builder =
             HttpRequestDef
@@ -457,30 +435,26 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getProjectId,
+                CreatePipelineByTemplateIdRequest::setProjectId));
         builder.<String>withRequestField("template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getTemplateId,
+                CreatePipelineByTemplateIdRequest::setTemplateId));
         builder.<String>withRequestField("component_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getComponentId,
+                CreatePipelineByTemplateIdRequest::setComponentId));
         builder.<PipelineByTemplateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PipelineByTemplateDTO.class),
-            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getBody,
+                CreatePipelineByTemplateIdRequest::setBody));
 
         // response
 
@@ -488,9 +462,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<CreatePipelineGroupRequest, CreatePipelineGroupResponse> createPipelineGroup =
-        genForcreatePipelineGroup();
+        genForCreatePipelineGroup();
 
-    private static HttpRequestDef<CreatePipelineGroupRequest, CreatePipelineGroupResponse> genForcreatePipelineGroup() {
+    private static HttpRequestDef<CreatePipelineGroupRequest, CreatePipelineGroupResponse> genForCreatePipelineGroup() {
         // basic
         HttpRequestDef.Builder<CreatePipelineGroupRequest, CreatePipelineGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePipelineGroupRequest.class, CreatePipelineGroupResponse.class)
@@ -503,16 +477,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePipelineGroupRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineGroupRequest::getProjectId, CreatePipelineGroupRequest::setProjectId));
         builder.<PipelineGroupCreateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PipelineGroupCreateDTO.class),
-            f -> f.withMarshaller(CreatePipelineGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineGroupRequest::getBody, CreatePipelineGroupRequest::setBody));
 
         // response
 
@@ -520,9 +490,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<CreatePipelineNewRequest, CreatePipelineNewResponse> createPipelineNew =
-        genForcreatePipelineNew();
+        genForCreatePipelineNew();
 
-    private static HttpRequestDef<CreatePipelineNewRequest, CreatePipelineNewResponse> genForcreatePipelineNew() {
+    private static HttpRequestDef<CreatePipelineNewRequest, CreatePipelineNewResponse> genForCreatePipelineNew() {
         // basic
         HttpRequestDef.Builder<CreatePipelineNewRequest, CreatePipelineNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePipelineNewRequest.class, CreatePipelineNewResponse.class)
@@ -535,23 +505,17 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePipelineNewRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineNewRequest::getProjectId, CreatePipelineNewRequest::setProjectId));
         builder.<String>withRequestField("component_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePipelineNewRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineNewRequest::getComponentId, CreatePipelineNewRequest::setComponentId));
         builder.<PipelineDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PipelineDTO.class),
-            f -> f.withMarshaller(CreatePipelineNewRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineNewRequest::getBody, CreatePipelineNewRequest::setBody));
 
         // response
 
@@ -559,9 +523,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse> createPipelineTemplate =
-        genForcreatePipelineTemplate();
+        genForCreatePipelineTemplate();
 
-    private static HttpRequestDef<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse> genForcreatePipelineTemplate() {
+    private static HttpRequestDef<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse> genForCreatePipelineTemplate() {
         // basic
         HttpRequestDef.Builder<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePipelineTemplateRequest.class, CreatePipelineTemplateResponse.class)
@@ -574,16 +538,13 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePipelineTemplateRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineTemplateRequest::getTenantId,
+                CreatePipelineTemplateRequest::setTenantId));
         builder.<PipelineTemplateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PipelineTemplateDTO.class),
-            f -> f.withMarshaller(CreatePipelineTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePipelineTemplateRequest::getBody, CreatePipelineTemplateRequest::setBody));
 
         // response
 
@@ -591,9 +552,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<CreatePluginDraftRequest, CreatePluginDraftResponse> createPluginDraft =
-        genForcreatePluginDraft();
+        genForCreatePluginDraft();
 
-    private static HttpRequestDef<CreatePluginDraftRequest, CreatePluginDraftResponse> genForcreatePluginDraft() {
+    private static HttpRequestDef<CreatePluginDraftRequest, CreatePluginDraftResponse> genForCreatePluginDraft() {
         // basic
         HttpRequestDef.Builder<CreatePluginDraftRequest, CreatePluginDraftResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePluginDraftRequest.class, CreatePluginDraftResponse.class)
@@ -606,33 +567,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePluginDraftRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(CreatePluginDraftRequest::getDomainId, CreatePluginDraftRequest::setDomainId));
         builder.<PluginDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PluginDTO.class),
-            f -> f.withMarshaller(CreatePluginDraftRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePluginDraftRequest::getBody, CreatePluginDraftRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreatePluginDraftResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreatePluginDraftResponse::getBody, CreatePluginDraftResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreatePluginVersionRequest, CreatePluginVersionResponse> createPluginVersion =
-        genForcreatePluginVersion();
+        genForCreatePluginVersion();
 
-    private static HttpRequestDef<CreatePluginVersionRequest, CreatePluginVersionResponse> genForcreatePluginVersion() {
+    private static HttpRequestDef<CreatePluginVersionRequest, CreatePluginVersionResponse> genForCreatePluginVersion() {
         // basic
         HttpRequestDef.Builder<CreatePluginVersionRequest, CreatePluginVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePluginVersionRequest.class, CreatePluginVersionResponse.class)
@@ -645,33 +600,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePluginVersionRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(CreatePluginVersionRequest::getDomainId, CreatePluginVersionRequest::setDomainId));
         builder.<PluginDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PluginDTO.class),
-            f -> f.withMarshaller(CreatePluginVersionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePluginVersionRequest::getBody, CreatePluginVersionRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreatePluginVersionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreatePluginVersionResponse::getBody, CreatePluginVersionResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreatePublisherRequest, CreatePublisherResponse> createPublisher =
-        genForcreatePublisher();
+        genForCreatePublisher();
 
-    private static HttpRequestDef<CreatePublisherRequest, CreatePublisherResponse> genForcreatePublisher() {
+    private static HttpRequestDef<CreatePublisherRequest, CreatePublisherResponse> genForCreatePublisher() {
         // basic
         HttpRequestDef.Builder<CreatePublisherRequest, CreatePublisherResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePublisherRequest.class, CreatePublisherResponse.class)
@@ -684,32 +633,26 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePublisherRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(CreatePublisherRequest::getDomainId, CreatePublisherRequest::setDomainId));
         builder.<PublisherRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PublisherRequest.class),
-            f -> f.withMarshaller(CreatePublisherRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePublisherRequest::getBody, CreatePublisherRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreatePublisherResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreatePublisherResponse::getBody, CreatePublisherResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRuleRequest, CreateRuleResponse> createRule = genForcreateRule();
+    public static final HttpRequestDef<CreateRuleRequest, CreateRuleResponse> createRule = genForCreateRule();
 
-    private static HttpRequestDef<CreateRuleRequest, CreateRuleResponse> genForcreateRule() {
+    private static HttpRequestDef<CreateRuleRequest, CreateRuleResponse> genForCreateRule() {
         // basic
         HttpRequestDef.Builder<CreateRuleRequest, CreateRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRuleRequest.class, CreateRuleResponse.class)
@@ -722,16 +665,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRuleRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(CreateRuleRequest::getDomainId, CreateRuleRequest::setDomainId));
         builder.<CreateRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRuleReq.class),
-            f -> f.withMarshaller(CreateRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRuleRequest::getBody, CreateRuleRequest::setBody));
 
         // response
 
@@ -739,9 +678,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<CreateStrategyRequest, CreateStrategyResponse> createStrategy =
-        genForcreateStrategy();
+        genForCreateStrategy();
 
-    private static HttpRequestDef<CreateStrategyRequest, CreateStrategyResponse> genForcreateStrategy() {
+    private static HttpRequestDef<CreateStrategyRequest, CreateStrategyResponse> genForCreateStrategy() {
         // basic
         HttpRequestDef.Builder<CreateStrategyRequest, CreateStrategyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStrategyRequest.class, CreateStrategyResponse.class)
@@ -754,16 +693,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(CreateStrategyRequest::getDomainId, CreateStrategyRequest::setDomainId));
         builder.<CreateRuleSetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRuleSetReq.class),
-            f -> f.withMarshaller(CreateStrategyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStrategyRequest::getBody, CreateStrategyRequest::setBody));
 
         // response
 
@@ -771,9 +706,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<DeleteBasicPluginRequest, DeleteBasicPluginResponse> deleteBasicPlugin =
-        genFordeleteBasicPlugin();
+        genForDeleteBasicPlugin();
 
-    private static HttpRequestDef<DeleteBasicPluginRequest, DeleteBasicPluginResponse> genFordeleteBasicPlugin() {
+    private static HttpRequestDef<DeleteBasicPluginRequest, DeleteBasicPluginResponse> genForDeleteBasicPlugin() {
         // basic
         HttpRequestDef.Builder<DeleteBasicPluginRequest, DeleteBasicPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBasicPluginRequest.class, DeleteBasicPluginResponse.class)
@@ -786,33 +721,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBasicPluginRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DeleteBasicPluginRequest::getDomainId, DeleteBasicPluginRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBasicPluginRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(DeleteBasicPluginRequest::getPluginName, DeleteBasicPluginRequest::setPluginName));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteBasicPluginResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteBasicPluginResponse::getBody, DeleteBasicPluginResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeletePipelineRequest, DeletePipelineResponse> deletePipeline =
-        genFordeletePipeline();
+        genForDeletePipeline();
 
-    private static HttpRequestDef<DeletePipelineRequest, DeletePipelineResponse> genFordeletePipeline() {
+    private static HttpRequestDef<DeletePipelineRequest, DeletePipelineResponse> genForDeletePipeline() {
         // basic
         HttpRequestDef.Builder<DeletePipelineRequest, DeletePipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePipelineRequest.class, DeletePipelineResponse.class)
@@ -825,16 +754,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePipelineRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(DeletePipelineRequest::getProjectId, DeletePipelineRequest::setProjectId));
         builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePipelineRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(DeletePipelineRequest::getPipelineId, DeletePipelineRequest::setPipelineId));
 
         // response
 
@@ -842,9 +767,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<DeletePipelineGroupRequest, DeletePipelineGroupResponse> deletePipelineGroup =
-        genFordeletePipelineGroup();
+        genForDeletePipelineGroup();
 
-    private static HttpRequestDef<DeletePipelineGroupRequest, DeletePipelineGroupResponse> genFordeletePipelineGroup() {
+    private static HttpRequestDef<DeletePipelineGroupRequest, DeletePipelineGroupResponse> genForDeletePipelineGroup() {
         // basic
         HttpRequestDef.Builder<DeletePipelineGroupRequest, DeletePipelineGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeletePipelineGroupRequest.class, DeletePipelineGroupResponse.class)
@@ -857,16 +782,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePipelineGroupRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(DeletePipelineGroupRequest::getProjectId, DeletePipelineGroupRequest::setProjectId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePipelineGroupRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeletePipelineGroupRequest::getId, DeletePipelineGroupRequest::setId));
 
         // response
 
@@ -874,9 +795,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<DeletePipelineTemplateRequest, DeletePipelineTemplateResponse> deletePipelineTemplate =
-        genFordeletePipelineTemplate();
+        genForDeletePipelineTemplate();
 
-    private static HttpRequestDef<DeletePipelineTemplateRequest, DeletePipelineTemplateResponse> genFordeletePipelineTemplate() {
+    private static HttpRequestDef<DeletePipelineTemplateRequest, DeletePipelineTemplateResponse> genForDeletePipelineTemplate() {
         // basic
         HttpRequestDef.Builder<DeletePipelineTemplateRequest, DeletePipelineTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeletePipelineTemplateRequest.class, DeletePipelineTemplateResponse.class)
@@ -889,16 +810,14 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePipelineTemplateRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(DeletePipelineTemplateRequest::getTenantId,
+                DeletePipelineTemplateRequest::setTenantId));
         builder.<String>withRequestField("template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePipelineTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeletePipelineTemplateRequest::getTemplateId,
+                DeletePipelineTemplateRequest::setTemplateId));
 
         // response
 
@@ -906,9 +825,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<DeletePluginDraftRequest, DeletePluginDraftResponse> deletePluginDraft =
-        genFordeletePluginDraft();
+        genForDeletePluginDraft();
 
-    private static HttpRequestDef<DeletePluginDraftRequest, DeletePluginDraftResponse> genFordeletePluginDraft() {
+    private static HttpRequestDef<DeletePluginDraftRequest, DeletePluginDraftResponse> genForDeletePluginDraft() {
         // basic
         HttpRequestDef.Builder<DeletePluginDraftRequest, DeletePluginDraftResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePluginDraftRequest.class, DeletePluginDraftResponse.class)
@@ -921,40 +840,32 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePluginDraftRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DeletePluginDraftRequest::getDomainId, DeletePluginDraftRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePluginDraftRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(DeletePluginDraftRequest::getPluginName, DeletePluginDraftRequest::setPluginName));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePluginDraftRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(DeletePluginDraftRequest::getVersion, DeletePluginDraftRequest::setVersion));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeletePluginDraftResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeletePluginDraftResponse::getBody, DeletePluginDraftResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeletePublisherRequest, DeletePublisherResponse> deletePublisher =
-        genFordeletePublisher();
+        genForDeletePublisher();
 
-    private static HttpRequestDef<DeletePublisherRequest, DeletePublisherResponse> genFordeletePublisher() {
+    private static HttpRequestDef<DeletePublisherRequest, DeletePublisherResponse> genForDeletePublisher() {
         // basic
         HttpRequestDef.Builder<DeletePublisherRequest, DeletePublisherResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePublisherRequest.class, DeletePublisherResponse.class)
@@ -967,32 +878,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePublisherRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DeletePublisherRequest::getDomainId, DeletePublisherRequest::setDomainId));
         builder.<String>withRequestField("publisher_unique_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePublisherRequest::getPublisherUniqueId, (req, v) -> {
-                req.setPublisherUniqueId(v);
-            }));
+            f -> f.withMarshaller(DeletePublisherRequest::getPublisherUniqueId,
+                DeletePublisherRequest::setPublisherUniqueId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeletePublisherResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeletePublisherResponse::getBody, DeletePublisherResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> deleteRule = genFordeleteRule();
+    public static final HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> deleteRule = genForDeleteRule();
 
-    private static HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> genFordeleteRule() {
+    private static HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> genForDeleteRule() {
         // basic
         HttpRequestDef.Builder<DeleteRuleRequest, DeleteRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRuleRequest.class, DeleteRuleResponse.class)
@@ -1005,16 +911,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRuleRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DeleteRuleRequest::getDomainId, DeleteRuleRequest::setDomainId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteRuleRequest::getRuleId, DeleteRuleRequest::setRuleId));
 
         // response
 
@@ -1022,9 +924,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<DeleteStrategyRequest, DeleteStrategyResponse> deleteStrategy =
-        genFordeleteStrategy();
+        genForDeleteStrategy();
 
-    private static HttpRequestDef<DeleteStrategyRequest, DeleteStrategyResponse> genFordeleteStrategy() {
+    private static HttpRequestDef<DeleteStrategyRequest, DeleteStrategyResponse> genForDeleteStrategy() {
         // basic
         HttpRequestDef.Builder<DeleteStrategyRequest, DeleteStrategyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteStrategyRequest.class, DeleteStrategyResponse.class)
@@ -1037,16 +939,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStrategyRequest::getRuleSetId, (req, v) -> {
-                req.setRuleSetId(v);
-            }));
+            f -> f.withMarshaller(DeleteStrategyRequest::getRuleSetId, DeleteStrategyRequest::setRuleSetId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DeleteStrategyRequest::getDomainId, DeleteStrategyRequest::setDomainId));
 
         // response
 
@@ -1054,9 +952,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListAvailablePublisherRequest, ListAvailablePublisherResponse> listAvailablePublisher =
-        genForlistAvailablePublisher();
+        genForListAvailablePublisher();
 
-    private static HttpRequestDef<ListAvailablePublisherRequest, ListAvailablePublisherResponse> genForlistAvailablePublisher() {
+    private static HttpRequestDef<ListAvailablePublisherRequest, ListAvailablePublisherResponse> genForListAvailablePublisher() {
         // basic
         HttpRequestDef.Builder<ListAvailablePublisherRequest, ListAvailablePublisherResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAvailablePublisherRequest.class, ListAvailablePublisherResponse.class)
@@ -1069,26 +967,24 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAvailablePublisherRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListAvailablePublisherRequest::getDomainId,
+                ListAvailablePublisherRequest::setDomainId));
 
         // response
         builder.<List<PublisherVO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAvailablePublisherResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(PublisherVO.class));
+            f -> f.withMarshaller(ListAvailablePublisherResponse::getBody, ListAvailablePublisherResponse::setBody)
+                .withInnerContainerType(PublisherVO.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListBasePluginsRequest, ListBasePluginsResponse> listBasePlugins =
-        genForlistBasePlugins();
+        genForListBasePlugins();
 
-    private static HttpRequestDef<ListBasePluginsRequest, ListBasePluginsResponse> genForlistBasePlugins() {
+    private static HttpRequestDef<ListBasePluginsRequest, ListBasePluginsResponse> genForListBasePlugins() {
         // basic
         HttpRequestDef.Builder<ListBasePluginsRequest, ListBasePluginsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBasePluginsRequest.class, ListBasePluginsResponse.class)
@@ -1101,30 +997,22 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBasePluginsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListBasePluginsRequest::getDomainId, ListBasePluginsRequest::setDomainId));
         builder.<String>withRequestField("attribution",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBasePluginsRequest::getAttribution, (req, v) -> {
-                req.setAttribution(v);
-            }));
+            f -> f.withMarshaller(ListBasePluginsRequest::getAttribution, ListBasePluginsRequest::setAttribution));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBasePluginsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBasePluginsRequest::getOffset, ListBasePluginsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBasePluginsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBasePluginsRequest::getLimit, ListBasePluginsRequest::setLimit));
 
         // response
 
@@ -1132,9 +1020,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse> listBasePluginsNewPost =
-        genForlistBasePluginsNewPost();
+        genForListBasePluginsNewPost();
 
-    private static HttpRequestDef<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse> genForlistBasePluginsNewPost() {
+    private static HttpRequestDef<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse> genForListBasePluginsNewPost() {
         // basic
         HttpRequestDef.Builder<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListBasePluginsNewPostRequest.class, ListBasePluginsNewPostResponse.class)
@@ -1147,30 +1035,23 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBasePluginsNewPostRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListBasePluginsNewPostRequest::getDomainId,
+                ListBasePluginsNewPostRequest::setDomainId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBasePluginsNewPostRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBasePluginsNewPostRequest::getOffset, ListBasePluginsNewPostRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBasePluginsNewPostRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBasePluginsNewPostRequest::getLimit, ListBasePluginsNewPostRequest::setLimit));
         builder.<BusinessTypePluginsQueryDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BusinessTypePluginsQueryDTO.class),
-            f -> f.withMarshaller(ListBasePluginsNewPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListBasePluginsNewPostRequest::getBody, ListBasePluginsNewPostRequest::setBody));
 
         // response
 
@@ -1178,9 +1059,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListPLuginVersionRequest, ListPLuginVersionResponse> listPLuginVersion =
-        genForlistPLuginVersion();
+        genForListPLuginVersion();
 
-    private static HttpRequestDef<ListPLuginVersionRequest, ListPLuginVersionResponse> genForlistPLuginVersion() {
+    private static HttpRequestDef<ListPLuginVersionRequest, ListPLuginVersionResponse> genForListPLuginVersion() {
         // basic
         HttpRequestDef.Builder<ListPLuginVersionRequest, ListPLuginVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPLuginVersionRequest.class, ListPLuginVersionResponse.class)
@@ -1193,30 +1074,22 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPLuginVersionRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListPLuginVersionRequest::getDomainId, ListPLuginVersionRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPLuginVersionRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(ListPLuginVersionRequest::getPluginName, ListPLuginVersionRequest::setPluginName));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPLuginVersionRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPLuginVersionRequest::getOffset, ListPLuginVersionRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPLuginVersionRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPLuginVersionRequest::getLimit, ListPLuginVersionRequest::setLimit));
 
         // response
 
@@ -1224,9 +1097,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListPipelineRunsRequest, ListPipelineRunsResponse> listPipelineRuns =
-        genForlistPipelineRuns();
+        genForListPipelineRuns();
 
-    private static HttpRequestDef<ListPipelineRunsRequest, ListPipelineRunsResponse> genForlistPipelineRuns() {
+    private static HttpRequestDef<ListPipelineRunsRequest, ListPipelineRunsResponse> genForListPipelineRuns() {
         // basic
         HttpRequestDef.Builder<ListPipelineRunsRequest, ListPipelineRunsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListPipelineRunsRequest.class, ListPipelineRunsResponse.class)
@@ -1239,23 +1112,17 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineRunsRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPipelineRunsRequest::getProjectId, ListPipelineRunsRequest::setProjectId));
         builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineRunsRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(ListPipelineRunsRequest::getPipelineId, ListPipelineRunsRequest::setPipelineId));
         builder.<ListPipelineRunsQuery>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPipelineRunsQuery.class),
-            f -> f.withMarshaller(ListPipelineRunsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListPipelineRunsRequest::getBody, ListPipelineRunsRequest::setBody));
 
         // response
 
@@ -1263,9 +1130,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> listPipelineSimpleInfo =
-        genForlistPipelineSimpleInfo();
+        genForListPipelineSimpleInfo();
 
-    private static HttpRequestDef<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> genForlistPipelineSimpleInfo() {
+    private static HttpRequestDef<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> genForListPipelineSimpleInfo() {
         // basic
         HttpRequestDef.Builder<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListPipelineSimpleInfoRequest.class, ListPipelineSimpleInfoResponse.class)
@@ -1278,9 +1145,7 @@ public class CodeArtsPipelineMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPipelineSimpleInfoRequestBody.class),
-            f -> f.withMarshaller(ListPipelineSimpleInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListPipelineSimpleInfoRequest::getBody, ListPipelineSimpleInfoRequest::setBody));
 
         // response
 
@@ -1288,9 +1153,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> listPipelineTemplates =
-        genForlistPipelineTemplates();
+        genForListPipelineTemplates();
 
-    private static HttpRequestDef<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> genForlistPipelineTemplates() {
+    private static HttpRequestDef<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> genForListPipelineTemplates() {
         // basic
         HttpRequestDef.Builder<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListPipelineTemplatesRequest.class, ListPipelineTemplatesResponse.class)
@@ -1303,16 +1168,13 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineTemplatesRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(ListPipelineTemplatesRequest::getTenantId,
+                ListPipelineTemplatesRequest::setTenantId));
         builder.<ListPipelineTemplatesQuery>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPipelineTemplatesQuery.class),
-            f -> f.withMarshaller(ListPipelineTemplatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListPipelineTemplatesRequest::getBody, ListPipelineTemplatesRequest::setBody));
 
         // response
 
@@ -1320,9 +1182,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListPipelinesRequest, ListPipelinesResponse> listPipelines =
-        genForlistPipelines();
+        genForListPipelines();
 
-    private static HttpRequestDef<ListPipelinesRequest, ListPipelinesResponse> genForlistPipelines() {
+    private static HttpRequestDef<ListPipelinesRequest, ListPipelinesResponse> genForListPipelines() {
         // basic
         HttpRequestDef.Builder<ListPipelinesRequest, ListPipelinesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListPipelinesRequest.class, ListPipelinesResponse.class)
@@ -1335,16 +1197,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelinesRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPipelinesRequest::getProjectId, ListPipelinesRequest::setProjectId));
         builder.<ListPipelineQuery>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPipelineQuery.class),
-            f -> f.withMarshaller(ListPipelinesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListPipelinesRequest::getBody, ListPipelinesRequest::setBody));
 
         // response
 
@@ -1352,9 +1210,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> listPipleineBuildResult =
-        genForlistPipleineBuildResult();
+        genForListPipleineBuildResult();
 
-    private static HttpRequestDef<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> genForlistPipleineBuildResult() {
+    private static HttpRequestDef<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> genForListPipleineBuildResult() {
         // basic
         HttpRequestDef.Builder<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListPipleineBuildResultRequest.class, ListPipleineBuildResultResponse.class)
@@ -1367,37 +1225,31 @@ public class CodeArtsPipelineMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipleineBuildResultRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getProjectId,
+                ListPipleineBuildResultRequest::setProjectId));
         builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipleineBuildResultRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getStartDate,
+                ListPipleineBuildResultRequest::setStartDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipleineBuildResultRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getEndDate,
+                ListPipleineBuildResultRequest::setEndDate));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPipleineBuildResultRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getOffset,
+                ListPipleineBuildResultRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPipleineBuildResultRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getLimit, ListPipleineBuildResultRequest::setLimit));
 
         // response
 
@@ -1405,9 +1257,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListPluginVersionNumberRequest, ListPluginVersionNumberResponse> listPluginVersionNumber =
-        genForlistPluginVersionNumber();
+        genForListPluginVersionNumber();
 
-    private static HttpRequestDef<ListPluginVersionNumberRequest, ListPluginVersionNumberResponse> genForlistPluginVersionNumber() {
+    private static HttpRequestDef<ListPluginVersionNumberRequest, ListPluginVersionNumberResponse> genForListPluginVersionNumber() {
         // basic
         HttpRequestDef.Builder<ListPluginVersionNumberRequest, ListPluginVersionNumberResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListPluginVersionNumberRequest.class, ListPluginVersionNumberResponse.class)
@@ -1420,39 +1272,34 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginVersionNumberRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListPluginVersionNumberRequest::getDomainId,
+                ListPluginVersionNumberRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginVersionNumberRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(ListPluginVersionNumberRequest::getPluginName,
+                ListPluginVersionNumberRequest::setPluginName));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginVersionNumberRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPluginVersionNumberRequest::getOffset,
+                ListPluginVersionNumberRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginVersionNumberRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPluginVersionNumberRequest::getLimit, ListPluginVersionNumberRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForlistPlugins();
+    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForListPlugins();
 
-    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForlistPlugins() {
+    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForListPlugins() {
         // basic
         HttpRequestDef.Builder<ListPluginsRequest, ListPluginsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListPluginsRequest.class, ListPluginsResponse.class)
@@ -1465,30 +1312,22 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getDomainId, ListPluginsRequest::setDomainId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getOffset, ListPluginsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getLimit, ListPluginsRequest::setLimit));
         builder.<AgentPluginInfoQueryDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AgentPluginInfoQueryDTO.class),
-            f -> f.withMarshaller(ListPluginsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getBody, ListPluginsRequest::setBody));
 
         // response
 
@@ -1496,9 +1335,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListProjectStrategyRequest, ListProjectStrategyResponse> listProjectStrategy =
-        genForlistProjectStrategy();
+        genForListProjectStrategy();
 
-    private static HttpRequestDef<ListProjectStrategyRequest, ListProjectStrategyResponse> genForlistProjectStrategy() {
+    private static HttpRequestDef<ListProjectStrategyRequest, ListProjectStrategyResponse> genForListProjectStrategy() {
         // basic
         HttpRequestDef.Builder<ListProjectStrategyRequest, ListProjectStrategyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectStrategyRequest.class, ListProjectStrategyResponse.class)
@@ -1511,51 +1350,38 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectStrategyRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListProjectStrategyRequest::getProjectId, ListProjectStrategyRequest::setProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectStrategyRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProjectStrategyRequest::getOffset, ListProjectStrategyRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectStrategyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProjectStrategyRequest::getLimit, ListProjectStrategyRequest::setLimit));
         builder.<Boolean>withRequestField("include_tenant_rule_set",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListProjectStrategyRequest::getIncludeTenantRuleSet, (req, v) -> {
-                req.setIncludeTenantRuleSet(v);
-            }));
+            f -> f.withMarshaller(ListProjectStrategyRequest::getIncludeTenantRuleSet,
+                ListProjectStrategyRequest::setIncludeTenantRuleSet));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectStrategyRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListProjectStrategyRequest::getName, ListProjectStrategyRequest::setName));
         builder.<Boolean>withRequestField("is_valid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListProjectStrategyRequest::getIsValid, (req, v) -> {
-                req.setIsValid(v);
-            }));
+            f -> f.withMarshaller(ListProjectStrategyRequest::getIsValid, ListProjectStrategyRequest::setIsValid));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectStrategyRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListProjectStrategyRequest::getType, ListProjectStrategyRequest::setType));
 
         // response
 
@@ -1563,9 +1389,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListPublisherRequest, ListPublisherResponse> listPublisher =
-        genForlistPublisher();
+        genForListPublisher();
 
-    private static HttpRequestDef<ListPublisherRequest, ListPublisherResponse> genForlistPublisher() {
+    private static HttpRequestDef<ListPublisherRequest, ListPublisherResponse> genForListPublisher() {
         // basic
         HttpRequestDef.Builder<ListPublisherRequest, ListPublisherResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublisherRequest.class, ListPublisherResponse.class)
@@ -1578,39 +1404,31 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublisherRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListPublisherRequest::getDomainId, ListPublisherRequest::setDomainId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublisherRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPublisherRequest::getOffset, ListPublisherRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublisherRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPublisherRequest::getLimit, ListPublisherRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublisherRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPublisherRequest::getName, ListPublisherRequest::setName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRuleRequest, ListRuleResponse> listRule = genForlistRule();
+    public static final HttpRequestDef<ListRuleRequest, ListRuleResponse> listRule = genForListRule();
 
-    private static HttpRequestDef<ListRuleRequest, ListRuleResponse> genForlistRule() {
+    private static HttpRequestDef<ListRuleRequest, ListRuleResponse> genForListRule() {
         // basic
         HttpRequestDef.Builder<ListRuleRequest, ListRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRuleRequest.class, ListRuleResponse.class)
@@ -1623,44 +1441,32 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRuleRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListRuleRequest::getDomainId, ListRuleRequest::setDomainId));
         builder.<String>withRequestField("cloud_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRuleRequest::getCloudProjectId, (req, v) -> {
-                req.setCloudProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRuleRequest::getCloudProjectId, ListRuleRequest::setCloudProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRuleRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRuleRequest::getOffset, ListRuleRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRuleRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRuleRequest::getLimit, ListRuleRequest::setLimit));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRuleRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListRuleRequest::getType, ListRuleRequest::setType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRuleRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRuleRequest::getName, ListRuleRequest::setName));
 
         // response
 
@@ -1668,9 +1474,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListStagePluginsRequest, ListStagePluginsResponse> listStagePlugins =
-        genForlistStagePlugins();
+        genForListStagePlugins();
 
-    private static HttpRequestDef<ListStagePluginsRequest, ListStagePluginsResponse> genForlistStagePlugins() {
+    private static HttpRequestDef<ListStagePluginsRequest, ListStagePluginsResponse> genForListStagePlugins() {
         // basic
         HttpRequestDef.Builder<ListStagePluginsRequest, ListStagePluginsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListStagePluginsRequest.class, ListStagePluginsResponse.class)
@@ -1683,25 +1489,21 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStagePluginsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListStagePluginsRequest::getDomainId, ListStagePluginsRequest::setDomainId));
         builder.<StagePluginsQueryDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StagePluginsQueryDTO.class),
-            f -> f.withMarshaller(ListStagePluginsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListStagePluginsRequest::getBody, ListStagePluginsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListStrategyRequest, ListStrategyResponse> listStrategy = genForlistStrategy();
+    public static final HttpRequestDef<ListStrategyRequest, ListStrategyResponse> listStrategy = genForListStrategy();
 
-    private static HttpRequestDef<ListStrategyRequest, ListStrategyResponse> genForlistStrategy() {
+    private static HttpRequestDef<ListStrategyRequest, ListStrategyResponse> genForListStrategy() {
         // basic
         HttpRequestDef.Builder<ListStrategyRequest, ListStrategyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStrategyRequest.class, ListStrategyResponse.class)
@@ -1714,58 +1516,43 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListStrategyRequest::getDomainId, ListStrategyRequest::setDomainId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStrategyRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListStrategyRequest::getOffset, ListStrategyRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStrategyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListStrategyRequest::getLimit, ListStrategyRequest::setLimit));
         builder.<Boolean>withRequestField("include_tenant_rule_set",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListStrategyRequest::getIncludeTenantRuleSet, (req, v) -> {
-                req.setIncludeTenantRuleSet(v);
-            }));
+            f -> f.withMarshaller(ListStrategyRequest::getIncludeTenantRuleSet,
+                ListStrategyRequest::setIncludeTenantRuleSet));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStrategyRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListStrategyRequest::getName, ListStrategyRequest::setName));
         builder.<Boolean>withRequestField("is_valid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListStrategyRequest::getIsValid, (req, v) -> {
-                req.setIsValid(v);
-            }));
+            f -> f.withMarshaller(ListStrategyRequest::getIsValid, ListStrategyRequest::setIsValid));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStrategyRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListStrategyRequest::getType, ListStrategyRequest::setType));
         builder.<String>withRequestField("cloud_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStrategyRequest::getCloudProjectId, (req, v) -> {
-                req.setCloudProjectId(v);
-            }));
+            f -> f.withMarshaller(ListStrategyRequest::getCloudProjectId, ListStrategyRequest::setCloudProjectId));
 
         // response
 
@@ -1773,9 +1560,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates =
-        genForlistTemplates();
+        genForListTemplates();
 
-    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForlistTemplates() {
+    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForListTemplates() {
         // basic
         HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
@@ -1788,51 +1575,37 @@ public class CodeArtsPipelineMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getTemplateType, (req, v) -> {
-                req.setTemplateType(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getTemplateType, ListTemplatesRequest::setTemplateType));
         builder.<String>withRequestField("is_build_in",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getIsBuildIn, (req, v) -> {
-                req.setIsBuildIn(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getIsBuildIn, ListTemplatesRequest::setIsBuildIn));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getOffset, ListTemplatesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getLimit, ListTemplatesRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getName, ListTemplatesRequest::setName));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getSort, ListTemplatesRequest::setSort));
         builder.<String>withRequestField("asc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getAsc, (req, v) -> {
-                req.setAsc(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getAsc, ListTemplatesRequest::setAsc));
 
         // response
 
@@ -1840,9 +1613,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<PublishPluginRequest, PublishPluginResponse> publishPlugin =
-        genForpublishPlugin();
+        genForPublishPlugin();
 
-    private static HttpRequestDef<PublishPluginRequest, PublishPluginResponse> genForpublishPlugin() {
+    private static HttpRequestDef<PublishPluginRequest, PublishPluginResponse> genForPublishPlugin() {
         // basic
         HttpRequestDef.Builder<PublishPluginRequest, PublishPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishPluginRequest.class, PublishPluginResponse.class)
@@ -1855,33 +1628,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishPluginRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(PublishPluginRequest::getDomainId, PublishPluginRequest::setDomainId));
         builder.<PublishPluginDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PublishPluginDTO.class),
-            f -> f.withMarshaller(PublishPluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PublishPluginRequest::getBody, PublishPluginRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(PublishPluginResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(PublishPluginResponse::getBody, PublishPluginResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<PublishPluginBindRequest, PublishPluginBindResponse> publishPluginBind =
-        genForpublishPluginBind();
+        genForPublishPluginBind();
 
-    private static HttpRequestDef<PublishPluginBindRequest, PublishPluginBindResponse> genForpublishPluginBind() {
+    private static HttpRequestDef<PublishPluginBindRequest, PublishPluginBindResponse> genForPublishPluginBind() {
         // basic
         HttpRequestDef.Builder<PublishPluginBindRequest, PublishPluginBindResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishPluginBindRequest.class, PublishPluginBindResponse.class)
@@ -1894,33 +1661,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishPluginBindRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(PublishPluginBindRequest::getDomainId, PublishPluginBindRequest::setDomainId));
         builder.<PublishPluginDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PublishPluginDTO.class),
-            f -> f.withMarshaller(PublishPluginBindRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PublishPluginBindRequest::getBody, PublishPluginBindRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(PublishPluginBindResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(PublishPluginBindResponse::getBody, PublishPluginBindResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<PublishPluginDraftRequest, PublishPluginDraftResponse> publishPluginDraft =
-        genForpublishPluginDraft();
+        genForPublishPluginDraft();
 
-    private static HttpRequestDef<PublishPluginDraftRequest, PublishPluginDraftResponse> genForpublishPluginDraft() {
+    private static HttpRequestDef<PublishPluginDraftRequest, PublishPluginDraftResponse> genForPublishPluginDraft() {
         // basic
         HttpRequestDef.Builder<PublishPluginDraftRequest, PublishPluginDraftResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishPluginDraftRequest.class, PublishPluginDraftResponse.class)
@@ -1933,33 +1694,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishPluginDraftRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(PublishPluginDraftRequest::getDomainId, PublishPluginDraftRequest::setDomainId));
         builder.<PluginPartQueryDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PluginPartQueryDTO.class),
-            f -> f.withMarshaller(PublishPluginDraftRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PublishPluginDraftRequest::getBody, PublishPluginDraftRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(PublishPluginDraftResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(PublishPluginDraftResponse::getBody, PublishPluginDraftResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<RejectManualReviewRequest, RejectManualReviewResponse> rejectManualReview =
-        genForrejectManualReview();
+        genForRejectManualReview();
 
-    private static HttpRequestDef<RejectManualReviewRequest, RejectManualReviewResponse> genForrejectManualReview() {
+    private static HttpRequestDef<RejectManualReviewRequest, RejectManualReviewResponse> genForRejectManualReview() {
         // basic
         HttpRequestDef.Builder<RejectManualReviewRequest, RejectManualReviewResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RejectManualReviewRequest.class, RejectManualReviewResponse.class)
@@ -1973,37 +1728,28 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RejectManualReviewRequest::getJobRunId, (req, v) -> {
-                req.setJobRunId(v);
-            }));
+            f -> f.withMarshaller(RejectManualReviewRequest::getJobRunId, RejectManualReviewRequest::setJobRunId));
         builder.<String>withRequestField("step_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RejectManualReviewRequest::getStepRunId, (req, v) -> {
-                req.setStepRunId(v);
-            }));
+            f -> f.withMarshaller(RejectManualReviewRequest::getStepRunId, RejectManualReviewRequest::setStepRunId));
         builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RejectManualReviewRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(RejectManualReviewRequest::getProjectId, RejectManualReviewRequest::setProjectId));
         builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RejectManualReviewRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(RejectManualReviewRequest::getPipelineId, RejectManualReviewRequest::setPipelineId));
         builder.<String>withRequestField("pipeline_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RejectManualReviewRequest::getPipelineRunId, (req, v) -> {
-                req.setPipelineRunId(v);
-            }));
+            f -> f.withMarshaller(RejectManualReviewRequest::getPipelineRunId,
+                RejectManualReviewRequest::setPipelineRunId));
 
         // response
 
@@ -2011,9 +1757,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<RemovePipelineRequest, RemovePipelineResponse> removePipeline =
-        genForremovePipeline();
+        genForRemovePipeline();
 
-    private static HttpRequestDef<RemovePipelineRequest, RemovePipelineResponse> genForremovePipeline() {
+    private static HttpRequestDef<RemovePipelineRequest, RemovePipelineResponse> genForRemovePipeline() {
         // basic
         HttpRequestDef.Builder<RemovePipelineRequest, RemovePipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RemovePipelineRequest.class, RemovePipelineResponse.class)
@@ -2026,9 +1772,7 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemovePipelineRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(RemovePipelineRequest::getPipelineId, RemovePipelineRequest::setPipelineId));
 
         // response
 
@@ -2036,9 +1780,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<RetryPipelineRunRequest, RetryPipelineRunResponse> retryPipelineRun =
-        genForretryPipelineRun();
+        genForRetryPipelineRun();
 
-    private static HttpRequestDef<RetryPipelineRunRequest, RetryPipelineRunResponse> genForretryPipelineRun() {
+    private static HttpRequestDef<RetryPipelineRunRequest, RetryPipelineRunResponse> genForRetryPipelineRun() {
         // basic
         HttpRequestDef.Builder<RetryPipelineRunRequest, RetryPipelineRunResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RetryPipelineRunRequest.class, RetryPipelineRunResponse.class)
@@ -2051,32 +1795,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryPipelineRunRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(RetryPipelineRunRequest::getProjectId, RetryPipelineRunRequest::setProjectId));
         builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryPipelineRunRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(RetryPipelineRunRequest::getPipelineId, RetryPipelineRunRequest::setPipelineId));
         builder.<String>withRequestField("pipeline_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryPipelineRunRequest::getPipelineRunId, (req, v) -> {
-                req.setPipelineRunId(v);
-            }));
+            f -> f.withMarshaller(RetryPipelineRunRequest::getPipelineRunId,
+                RetryPipelineRunRequest::setPipelineRunId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunPipelineRequest, RunPipelineResponse> runPipeline = genForrunPipeline();
+    public static final HttpRequestDef<RunPipelineRequest, RunPipelineResponse> runPipeline = genForRunPipeline();
 
-    private static HttpRequestDef<RunPipelineRequest, RunPipelineResponse> genForrunPipeline() {
+    private static HttpRequestDef<RunPipelineRequest, RunPipelineResponse> genForRunPipeline() {
         // basic
         HttpRequestDef.Builder<RunPipelineRequest, RunPipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunPipelineRequest.class, RunPipelineResponse.class)
@@ -2089,23 +1828,17 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunPipelineRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(RunPipelineRequest::getProjectId, RunPipelineRequest::setProjectId));
         builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunPipelineRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(RunPipelineRequest::getPipelineId, RunPipelineRequest::setPipelineId));
         builder.<RunPipelineDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RunPipelineDTO.class),
-            f -> f.withMarshaller(RunPipelineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunPipelineRequest::getBody, RunPipelineRequest::setBody));
 
         // response
 
@@ -2113,9 +1846,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowBasicPluginRequest, ShowBasicPluginResponse> showBasicPlugin =
-        genForshowBasicPlugin();
+        genForShowBasicPlugin();
 
-    private static HttpRequestDef<ShowBasicPluginRequest, ShowBasicPluginResponse> genForshowBasicPlugin() {
+    private static HttpRequestDef<ShowBasicPluginRequest, ShowBasicPluginResponse> genForShowBasicPlugin() {
         // basic
         HttpRequestDef.Builder<ShowBasicPluginRequest, ShowBasicPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBasicPluginRequest.class, ShowBasicPluginResponse.class)
@@ -2128,23 +1861,17 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBasicPluginRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowBasicPluginRequest::getDomainId, ShowBasicPluginRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBasicPluginRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(ShowBasicPluginRequest::getPluginName, ShowBasicPluginRequest::setPluginName));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBasicPluginRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowBasicPluginRequest::getVersion, ShowBasicPluginRequest::setVersion));
 
         // response
 
@@ -2152,9 +1879,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceStatusRequest, ShowInstanceStatusResponse> showInstanceStatus =
-        genForshowInstanceStatus();
+        genForShowInstanceStatus();
 
-    private static HttpRequestDef<ShowInstanceStatusRequest, ShowInstanceStatusResponse> genForshowInstanceStatus() {
+    private static HttpRequestDef<ShowInstanceStatusRequest, ShowInstanceStatusResponse> genForShowInstanceStatus() {
         // basic
         HttpRequestDef.Builder<ShowInstanceStatusRequest, ShowInstanceStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceStatusRequest.class, ShowInstanceStatusResponse.class)
@@ -2167,9 +1894,7 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceStatusRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceStatusRequest::getTaskId, ShowInstanceStatusRequest::setTaskId));
 
         // response
 
@@ -2177,9 +1902,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowPipelineDetailRequest, ShowPipelineDetailResponse> showPipelineDetail =
-        genForshowPipelineDetail();
+        genForShowPipelineDetail();
 
-    private static HttpRequestDef<ShowPipelineDetailRequest, ShowPipelineDetailResponse> genForshowPipelineDetail() {
+    private static HttpRequestDef<ShowPipelineDetailRequest, ShowPipelineDetailResponse> genForShowPipelineDetail() {
         // basic
         HttpRequestDef.Builder<ShowPipelineDetailRequest, ShowPipelineDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPipelineDetailRequest.class, ShowPipelineDetailResponse.class)
@@ -2192,16 +1917,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineDetailRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineDetailRequest::getProjectId, ShowPipelineDetailRequest::setProjectId));
         builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineDetailRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineDetailRequest::getPipelineId, ShowPipelineDetailRequest::setPipelineId));
 
         // response
 
@@ -2209,9 +1930,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse> showPipelineGroupTree =
-        genForshowPipelineGroupTree();
+        genForShowPipelineGroupTree();
 
-    private static HttpRequestDef<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse> genForshowPipelineGroupTree() {
+    private static HttpRequestDef<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse> genForShowPipelineGroupTree() {
         // basic
         HttpRequestDef.Builder<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPipelineGroupTreeRequest.class, ShowPipelineGroupTreeResponse.class)
@@ -2224,26 +1945,24 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineGroupTreeRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineGroupTreeRequest::getProjectId,
+                ShowPipelineGroupTreeRequest::setProjectId));
 
         // response
         builder.<List<PipelineGroupVo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowPipelineGroupTreeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(PipelineGroupVo.class));
+            f -> f.withMarshaller(ShowPipelineGroupTreeResponse::getBody, ShowPipelineGroupTreeResponse::setBody)
+                .withInnerContainerType(PipelineGroupVo.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowPipelineLogRequest, ShowPipelineLogResponse> showPipelineLog =
-        genForshowPipelineLog();
+        genForShowPipelineLog();
 
-    private static HttpRequestDef<ShowPipelineLogRequest, ShowPipelineLogResponse> genForshowPipelineLog() {
+    private static HttpRequestDef<ShowPipelineLogRequest, ShowPipelineLogResponse> genForShowPipelineLog() {
         // basic
         HttpRequestDef.Builder<ShowPipelineLogRequest, ShowPipelineLogResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowPipelineLogRequest.class, ShowPipelineLogResponse.class)
@@ -2257,44 +1976,32 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineLogRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineLogRequest::getProjectId, ShowPipelineLogRequest::setProjectId));
         builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineLogRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineLogRequest::getPipelineId, ShowPipelineLogRequest::setPipelineId));
         builder.<String>withRequestField("pipeline_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineLogRequest::getPipelineRunId, (req, v) -> {
-                req.setPipelineRunId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineLogRequest::getPipelineRunId, ShowPipelineLogRequest::setPipelineRunId));
         builder.<String>withRequestField("job_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineLogRequest::getJobRunId, (req, v) -> {
-                req.setJobRunId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineLogRequest::getJobRunId, ShowPipelineLogRequest::setJobRunId));
         builder.<String>withRequestField("step_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineLogRequest::getStepRunId, (req, v) -> {
-                req.setStepRunId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineLogRequest::getStepRunId, ShowPipelineLogRequest::setStepRunId));
         builder.<LogQuery>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LogQuery.class),
-            f -> f.withMarshaller(ShowPipelineLogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineLogRequest::getBody, ShowPipelineLogRequest::setBody));
 
         // response
 
@@ -2302,9 +2009,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse> showPipelineRunDetail =
-        genForshowPipelineRunDetail();
+        genForShowPipelineRunDetail();
 
-    private static HttpRequestDef<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse> genForshowPipelineRunDetail() {
+    private static HttpRequestDef<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse> genForShowPipelineRunDetail() {
         // basic
         HttpRequestDef.Builder<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPipelineRunDetailRequest.class, ShowPipelineRunDetailResponse.class)
@@ -2317,23 +2024,20 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getProjectId,
+                ShowPipelineRunDetailRequest::setProjectId));
         builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getPipelineId,
+                ShowPipelineRunDetailRequest::setPipelineId));
         builder.<String>withRequestField("pipeline_run_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getPipelineRunId, (req, v) -> {
-                req.setPipelineRunId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getPipelineRunId,
+                ShowPipelineRunDetailRequest::setPipelineRunId));
 
         // response
 
@@ -2341,9 +2045,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse> showPipelineTemplateDetail =
-        genForshowPipelineTemplateDetail();
+        genForShowPipelineTemplateDetail();
 
-    private static HttpRequestDef<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse> genForshowPipelineTemplateDetail() {
+    private static HttpRequestDef<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse> genForShowPipelineTemplateDetail() {
         // basic
         HttpRequestDef.Builder<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse> builder =
             HttpRequestDef
@@ -2359,16 +2063,14 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineTemplateDetailRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineTemplateDetailRequest::getTenantId,
+                ShowPipelineTemplateDetailRequest::setTenantId));
         builder.<String>withRequestField("template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineTemplateDetailRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineTemplateDetailRequest::getTemplateId,
+                ShowPipelineTemplateDetailRequest::setTemplateId));
 
         // response
 
@@ -2376,9 +2078,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowPipleineStatusRequest, ShowPipleineStatusResponse> showPipleineStatus =
-        genForshowPipleineStatus();
+        genForShowPipleineStatus();
 
-    private static HttpRequestDef<ShowPipleineStatusRequest, ShowPipleineStatusResponse> genForshowPipleineStatus() {
+    private static HttpRequestDef<ShowPipleineStatusRequest, ShowPipleineStatusResponse> genForShowPipleineStatus() {
         // basic
         HttpRequestDef.Builder<ShowPipleineStatusRequest, ShowPipleineStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPipleineStatusRequest.class, ShowPipleineStatusResponse.class)
@@ -2391,16 +2093,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipleineStatusRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(ShowPipleineStatusRequest::getPipelineId, ShowPipleineStatusRequest::setPipelineId));
         builder.<String>withRequestField("build_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipleineStatusRequest::getBuildId, (req, v) -> {
-                req.setBuildId(v);
-            }));
+            f -> f.withMarshaller(ShowPipleineStatusRequest::getBuildId, ShowPipleineStatusRequest::setBuildId));
 
         // response
 
@@ -2408,9 +2106,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowPluginInputsRequest, ShowPluginInputsResponse> showPluginInputs =
-        genForshowPluginInputs();
+        genForShowPluginInputs();
 
-    private static HttpRequestDef<ShowPluginInputsRequest, ShowPluginInputsResponse> genForshowPluginInputs() {
+    private static HttpRequestDef<ShowPluginInputsRequest, ShowPluginInputsResponse> genForShowPluginInputs() {
         // basic
         HttpRequestDef.Builder<ShowPluginInputsRequest, ShowPluginInputsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowPluginInputsRequest.class, ShowPluginInputsResponse.class)
@@ -2423,33 +2121,29 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPluginInputsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowPluginInputsRequest::getDomainId, ShowPluginInputsRequest::setDomainId));
         builder.<List<PluginPartQueryDTO>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowPluginInputsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(PluginPartQueryDTO.class));
+            f -> f.withMarshaller(ShowPluginInputsRequest::getBody, ShowPluginInputsRequest::setBody)
+                .withInnerContainerType(PluginPartQueryDTO.class));
 
         // response
         builder.<List<PluginPartQueryVOListAgentPluginInputVO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowPluginInputsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(PluginPartQueryVOListAgentPluginInputVO.class));
+            f -> f.withMarshaller(ShowPluginInputsResponse::getBody, ShowPluginInputsResponse::setBody)
+                .withInnerContainerType(PluginPartQueryVOListAgentPluginInputVO.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowPluginMetricsRequest, ShowPluginMetricsResponse> showPluginMetrics =
-        genForshowPluginMetrics();
+        genForShowPluginMetrics();
 
-    private static HttpRequestDef<ShowPluginMetricsRequest, ShowPluginMetricsResponse> genForshowPluginMetrics() {
+    private static HttpRequestDef<ShowPluginMetricsRequest, ShowPluginMetricsResponse> genForShowPluginMetrics() {
         // basic
         HttpRequestDef.Builder<ShowPluginMetricsRequest, ShowPluginMetricsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowPluginMetricsRequest.class, ShowPluginMetricsResponse.class)
@@ -2462,33 +2156,29 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPluginMetricsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowPluginMetricsRequest::getDomainId, ShowPluginMetricsRequest::setDomainId));
         builder.<List<PluginPartQueryDTO>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowPluginMetricsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(PluginPartQueryDTO.class));
+            f -> f.withMarshaller(ShowPluginMetricsRequest::getBody, ShowPluginMetricsRequest::setBody)
+                .withInnerContainerType(PluginPartQueryDTO.class));
 
         // response
         builder.<List<PluginPartQueryVOListAgentPluginOutputVO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowPluginMetricsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(PluginPartQueryVOListAgentPluginOutputVO.class));
+            f -> f.withMarshaller(ShowPluginMetricsResponse::getBody, ShowPluginMetricsResponse::setBody)
+                .withInnerContainerType(PluginPartQueryVOListAgentPluginOutputVO.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowPluginOutputsRequest, ShowPluginOutputsResponse> showPluginOutputs =
-        genForshowPluginOutputs();
+        genForShowPluginOutputs();
 
-    private static HttpRequestDef<ShowPluginOutputsRequest, ShowPluginOutputsResponse> genForshowPluginOutputs() {
+    private static HttpRequestDef<ShowPluginOutputsRequest, ShowPluginOutputsResponse> genForShowPluginOutputs() {
         // basic
         HttpRequestDef.Builder<ShowPluginOutputsRequest, ShowPluginOutputsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowPluginOutputsRequest.class, ShowPluginOutputsResponse.class)
@@ -2501,33 +2191,29 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPluginOutputsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowPluginOutputsRequest::getDomainId, ShowPluginOutputsRequest::setDomainId));
         builder.<List<PluginPartQueryDTO>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowPluginOutputsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(PluginPartQueryDTO.class));
+            f -> f.withMarshaller(ShowPluginOutputsRequest::getBody, ShowPluginOutputsRequest::setBody)
+                .withInnerContainerType(PluginPartQueryDTO.class));
 
         // response
         builder.<List<PluginPartQueryVOListAgentPluginOutputVO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowPluginOutputsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(PluginPartQueryVOListAgentPluginOutputVO.class));
+            f -> f.withMarshaller(ShowPluginOutputsResponse::getBody, ShowPluginOutputsResponse::setBody)
+                .withInnerContainerType(PluginPartQueryVOListAgentPluginOutputVO.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowPluginVersionRequest, ShowPluginVersionResponse> showPluginVersion =
-        genForshowPluginVersion();
+        genForShowPluginVersion();
 
-    private static HttpRequestDef<ShowPluginVersionRequest, ShowPluginVersionResponse> genForshowPluginVersion() {
+    private static HttpRequestDef<ShowPluginVersionRequest, ShowPluginVersionResponse> genForShowPluginVersion() {
         // basic
         HttpRequestDef.Builder<ShowPluginVersionRequest, ShowPluginVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPluginVersionRequest.class, ShowPluginVersionResponse.class)
@@ -2540,23 +2226,17 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPluginVersionRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowPluginVersionRequest::getDomainId, ShowPluginVersionRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPluginVersionRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(ShowPluginVersionRequest::getPluginName, ShowPluginVersionRequest::setPluginName));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPluginVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowPluginVersionRequest::getVersion, ShowPluginVersionRequest::setVersion));
 
         // response
 
@@ -2564,9 +2244,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowProjectStrategyRequest, ShowProjectStrategyResponse> showProjectStrategy =
-        genForshowProjectStrategy();
+        genForShowProjectStrategy();
 
-    private static HttpRequestDef<ShowProjectStrategyRequest, ShowProjectStrategyResponse> genForshowProjectStrategy() {
+    private static HttpRequestDef<ShowProjectStrategyRequest, ShowProjectStrategyResponse> genForShowProjectStrategy() {
         // basic
         HttpRequestDef.Builder<ShowProjectStrategyRequest, ShowProjectStrategyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectStrategyRequest.class, ShowProjectStrategyResponse.class)
@@ -2579,16 +2259,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectStrategyRequest::getRuleSetId, (req, v) -> {
-                req.setRuleSetId(v);
-            }));
+            f -> f.withMarshaller(ShowProjectStrategyRequest::getRuleSetId, ShowProjectStrategyRequest::setRuleSetId));
         builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectStrategyRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowProjectStrategyRequest::getProjectId, ShowProjectStrategyRequest::setProjectId));
 
         // response
 
@@ -2596,9 +2272,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowPublisherRequest, ShowPublisherResponse> showPublisher =
-        genForshowPublisher();
+        genForShowPublisher();
 
-    private static HttpRequestDef<ShowPublisherRequest, ShowPublisherResponse> genForshowPublisher() {
+    private static HttpRequestDef<ShowPublisherRequest, ShowPublisherResponse> genForShowPublisher() {
         // basic
         HttpRequestDef.Builder<ShowPublisherRequest, ShowPublisherResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowPublisherRequest.class, ShowPublisherResponse.class)
@@ -2611,25 +2287,22 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublisherRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowPublisherRequest::getDomainId, ShowPublisherRequest::setDomainId));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowPublisherRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(ShowPublisherRequest::getBody, ShowPublisherRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRuleRequest, ShowRuleResponse> showRule = genForshowRule();
+    public static final HttpRequestDef<ShowRuleRequest, ShowRuleResponse> showRule = genForShowRule();
 
-    private static HttpRequestDef<ShowRuleRequest, ShowRuleResponse> genForshowRule() {
+    private static HttpRequestDef<ShowRuleRequest, ShowRuleResponse> genForShowRule() {
         // basic
         HttpRequestDef.Builder<ShowRuleRequest, ShowRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRuleRequest.class, ShowRuleResponse.class)
@@ -2642,32 +2315,26 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRuleRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowRuleRequest::getDomainId, ShowRuleRequest::setDomainId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowRuleRequest::getRuleId, ShowRuleRequest::setRuleId));
         builder.<String>withRequestField("cloud_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRuleRequest::getCloudProjectId, (req, v) -> {
-                req.setCloudProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowRuleRequest::getCloudProjectId, ShowRuleRequest::setCloudProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowStrategyRequest, ShowStrategyResponse> showStrategy = genForshowStrategy();
+    public static final HttpRequestDef<ShowStrategyRequest, ShowStrategyResponse> showStrategy = genForShowStrategy();
 
-    private static HttpRequestDef<ShowStrategyRequest, ShowStrategyResponse> genForshowStrategy() {
+    private static HttpRequestDef<ShowStrategyRequest, ShowStrategyResponse> genForShowStrategy() {
         // basic
         HttpRequestDef.Builder<ShowStrategyRequest, ShowStrategyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStrategyRequest.class, ShowStrategyResponse.class)
@@ -2680,23 +2347,17 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStrategyRequest::getRuleSetId, (req, v) -> {
-                req.setRuleSetId(v);
-            }));
+            f -> f.withMarshaller(ShowStrategyRequest::getRuleSetId, ShowStrategyRequest::setRuleSetId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowStrategyRequest::getDomainId, ShowStrategyRequest::setDomainId));
         builder.<String>withRequestField("cloud_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStrategyRequest::getCloudProjectId, (req, v) -> {
-                req.setCloudProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowStrategyRequest::getCloudProjectId, ShowStrategyRequest::setCloudProjectId));
 
         // response
 
@@ -2704,9 +2365,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<ShowTemplateDetailRequest, ShowTemplateDetailResponse> showTemplateDetail =
-        genForshowTemplateDetail();
+        genForShowTemplateDetail();
 
-    private static HttpRequestDef<ShowTemplateDetailRequest, ShowTemplateDetailResponse> genForshowTemplateDetail() {
+    private static HttpRequestDef<ShowTemplateDetailRequest, ShowTemplateDetailResponse> genForShowTemplateDetail() {
         // basic
         HttpRequestDef.Builder<ShowTemplateDetailRequest, ShowTemplateDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateDetailRequest.class, ShowTemplateDetailResponse.class)
@@ -2719,23 +2380,18 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateDetailRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateDetailRequest::getTemplateId, ShowTemplateDetailRequest::setTemplateId));
         builder.<String>withRequestField("template_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateDetailRequest::getTemplateType, (req, v) -> {
-                req.setTemplateType(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateDetailRequest::getTemplateType,
+                ShowTemplateDetailRequest::setTemplateType));
         builder.<String>withRequestField("source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateDetailRequest::getSource, (req, v) -> {
-                req.setSource(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateDetailRequest::getSource, ShowTemplateDetailRequest::setSource));
 
         // response
 
@@ -2743,9 +2399,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<StartNewPipelineRequest, StartNewPipelineResponse> startNewPipeline =
-        genForstartNewPipeline();
+        genForStartNewPipeline();
 
-    private static HttpRequestDef<StartNewPipelineRequest, StartNewPipelineResponse> genForstartNewPipeline() {
+    private static HttpRequestDef<StartNewPipelineRequest, StartNewPipelineResponse> genForStartNewPipeline() {
         // basic
         HttpRequestDef.Builder<StartNewPipelineRequest, StartNewPipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartNewPipelineRequest.class, StartNewPipelineResponse.class)
@@ -2758,16 +2414,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartNewPipelineRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(StartNewPipelineRequest::getPipelineId, StartNewPipelineRequest::setPipelineId));
         builder.<StartPipelineParameters>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StartPipelineParameters.class),
-            f -> f.withMarshaller(StartNewPipelineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartNewPipelineRequest::getBody, StartNewPipelineRequest::setBody));
 
         // response
 
@@ -2775,9 +2427,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<StopPipelineNewRequest, StopPipelineNewResponse> stopPipelineNew =
-        genForstopPipelineNew();
+        genForStopPipelineNew();
 
-    private static HttpRequestDef<StopPipelineNewRequest, StopPipelineNewResponse> genForstopPipelineNew() {
+    private static HttpRequestDef<StopPipelineNewRequest, StopPipelineNewResponse> genForStopPipelineNew() {
         // basic
         HttpRequestDef.Builder<StopPipelineNewRequest, StopPipelineNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopPipelineNewRequest.class, StopPipelineNewResponse.class)
@@ -2790,16 +2442,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopPipelineNewRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(StopPipelineNewRequest::getPipelineId, StopPipelineNewRequest::setPipelineId));
         builder.<String>withRequestField("build_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopPipelineNewRequest::getBuildId, (req, v) -> {
-                req.setBuildId(v);
-            }));
+            f -> f.withMarshaller(StopPipelineNewRequest::getBuildId, StopPipelineNewRequest::setBuildId));
 
         // response
 
@@ -2807,9 +2455,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<StopPipelineRunRequest, StopPipelineRunResponse> stopPipelineRun =
-        genForstopPipelineRun();
+        genForStopPipelineRun();
 
-    private static HttpRequestDef<StopPipelineRunRequest, StopPipelineRunResponse> genForstopPipelineRun() {
+    private static HttpRequestDef<StopPipelineRunRequest, StopPipelineRunResponse> genForStopPipelineRun() {
         // basic
         HttpRequestDef.Builder<StopPipelineRunRequest, StopPipelineRunResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopPipelineRunRequest.class, StopPipelineRunResponse.class)
@@ -2822,23 +2470,17 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopPipelineRunRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(StopPipelineRunRequest::getProjectId, StopPipelineRunRequest::setProjectId));
         builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopPipelineRunRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(StopPipelineRunRequest::getPipelineId, StopPipelineRunRequest::setPipelineId));
         builder.<String>withRequestField("pipeline_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopPipelineRunRequest::getPipelineRunId, (req, v) -> {
-                req.setPipelineRunId(v);
-            }));
+            f -> f.withMarshaller(StopPipelineRunRequest::getPipelineRunId, StopPipelineRunRequest::setPipelineRunId));
 
         // response
 
@@ -2846,9 +2488,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<SwitchStrategyRequest, SwitchStrategyResponse> switchStrategy =
-        genForswitchStrategy();
+        genForSwitchStrategy();
 
-    private static HttpRequestDef<SwitchStrategyRequest, SwitchStrategyResponse> genForswitchStrategy() {
+    private static HttpRequestDef<SwitchStrategyRequest, SwitchStrategyResponse> genForSwitchStrategy() {
         // basic
         HttpRequestDef.Builder<SwitchStrategyRequest, SwitchStrategyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SwitchStrategyRequest.class, SwitchStrategyResponse.class)
@@ -2861,23 +2503,17 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchStrategyRequest::getRuleSetId, (req, v) -> {
-                req.setRuleSetId(v);
-            }));
+            f -> f.withMarshaller(SwitchStrategyRequest::getRuleSetId, SwitchStrategyRequest::setRuleSetId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(SwitchStrategyRequest::getDomainId, SwitchStrategyRequest::setDomainId));
         builder.<UpdateRuleSetStatusReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRuleSetStatusReq.class),
-            f -> f.withMarshaller(SwitchStrategyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchStrategyRequest::getBody, SwitchStrategyRequest::setBody));
 
         // response
 
@@ -2885,9 +2521,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<UpdateBasicPluginRequest, UpdateBasicPluginResponse> updateBasicPlugin =
-        genForupdateBasicPlugin();
+        genForUpdateBasicPlugin();
 
-    private static HttpRequestDef<UpdateBasicPluginRequest, UpdateBasicPluginResponse> genForupdateBasicPlugin() {
+    private static HttpRequestDef<UpdateBasicPluginRequest, UpdateBasicPluginResponse> genForUpdateBasicPlugin() {
         // basic
         HttpRequestDef.Builder<UpdateBasicPluginRequest, UpdateBasicPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateBasicPluginRequest.class, UpdateBasicPluginResponse.class)
@@ -2900,33 +2536,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBasicPluginRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateBasicPluginRequest::getDomainId, UpdateBasicPluginRequest::setDomainId));
         builder.<PluginBasicDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PluginBasicDTO.class),
-            f -> f.withMarshaller(UpdateBasicPluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBasicPluginRequest::getBody, UpdateBasicPluginRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateBasicPluginResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateBasicPluginResponse::getBody, UpdateBasicPluginResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse> updatePipelineGroup =
-        genForupdatePipelineGroup();
+        genForUpdatePipelineGroup();
 
-    private static HttpRequestDef<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse> genForupdatePipelineGroup() {
+    private static HttpRequestDef<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse> genForUpdatePipelineGroup() {
         // basic
         HttpRequestDef.Builder<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdatePipelineGroupRequest.class, UpdatePipelineGroupResponse.class)
@@ -2939,16 +2569,12 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePipelineGroupRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdatePipelineGroupRequest::getProjectId, UpdatePipelineGroupRequest::setProjectId));
         builder.<PipelineGroupUpdateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PipelineGroupUpdateDTO.class),
-            f -> f.withMarshaller(UpdatePipelineGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePipelineGroupRequest::getBody, UpdatePipelineGroupRequest::setBody));
 
         // response
 
@@ -2956,9 +2582,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse> updatePipelineTemplate =
-        genForupdatePipelineTemplate();
+        genForUpdatePipelineTemplate();
 
-    private static HttpRequestDef<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse> genForupdatePipelineTemplate() {
+    private static HttpRequestDef<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse> genForUpdatePipelineTemplate() {
         // basic
         HttpRequestDef.Builder<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdatePipelineTemplateRequest.class, UpdatePipelineTemplateResponse.class)
@@ -2971,23 +2597,19 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePipelineTemplateRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(UpdatePipelineTemplateRequest::getTenantId,
+                UpdatePipelineTemplateRequest::setTenantId));
         builder.<String>withRequestField("template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePipelineTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(UpdatePipelineTemplateRequest::getTemplateId,
+                UpdatePipelineTemplateRequest::setTemplateId));
         builder.<PipelineTemplateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PipelineTemplateDTO.class),
-            f -> f.withMarshaller(UpdatePipelineTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePipelineTemplateRequest::getBody, UpdatePipelineTemplateRequest::setBody));
 
         // response
 
@@ -2995,9 +2617,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse> updatePluginBaseInfo =
-        genForupdatePluginBaseInfo();
+        genForUpdatePluginBaseInfo();
 
-    private static HttpRequestDef<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse> genForupdatePluginBaseInfo() {
+    private static HttpRequestDef<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse> genForUpdatePluginBaseInfo() {
         // basic
         HttpRequestDef.Builder<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdatePluginBaseInfoRequest.class, UpdatePluginBaseInfoResponse.class)
@@ -3010,33 +2632,27 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePluginBaseInfoRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginBaseInfoRequest::getDomainId, UpdatePluginBaseInfoRequest::setDomainId));
         builder.<PluginBasicDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PluginBasicDTO.class),
-            f -> f.withMarshaller(UpdatePluginBaseInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginBaseInfoRequest::getBody, UpdatePluginBaseInfoRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdatePluginBaseInfoResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdatePluginBaseInfoResponse::getBody, UpdatePluginBaseInfoResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdatePluginDraftRequest, UpdatePluginDraftResponse> updatePluginDraft =
-        genForupdatePluginDraft();
+        genForUpdatePluginDraft();
 
-    private static HttpRequestDef<UpdatePluginDraftRequest, UpdatePluginDraftResponse> genForupdatePluginDraft() {
+    private static HttpRequestDef<UpdatePluginDraftRequest, UpdatePluginDraftResponse> genForUpdatePluginDraft() {
         // basic
         HttpRequestDef.Builder<UpdatePluginDraftRequest, UpdatePluginDraftResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdatePluginDraftRequest.class, UpdatePluginDraftResponse.class)
@@ -3049,32 +2665,26 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePluginDraftRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginDraftRequest::getDomainId, UpdatePluginDraftRequest::setDomainId));
         builder.<PluginDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PluginDTO.class),
-            f -> f.withMarshaller(UpdatePluginDraftRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginDraftRequest::getBody, UpdatePluginDraftRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdatePluginDraftResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdatePluginDraftResponse::getBody, UpdatePluginDraftResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateRuleRequest, UpdateRuleResponse> updateRule = genForupdateRule();
+    public static final HttpRequestDef<UpdateRuleRequest, UpdateRuleResponse> updateRule = genForUpdateRule();
 
-    private static HttpRequestDef<UpdateRuleRequest, UpdateRuleResponse> genForupdateRule() {
+    private static HttpRequestDef<UpdateRuleRequest, UpdateRuleResponse> genForUpdateRule() {
         // basic
         HttpRequestDef.Builder<UpdateRuleRequest, UpdateRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRuleRequest.class, UpdateRuleResponse.class)
@@ -3087,23 +2697,17 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRuleRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateRuleRequest::getDomainId, UpdateRuleRequest::setDomainId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateRuleRequest::getRuleId, UpdateRuleRequest::setRuleId));
         builder.<UpdateRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRuleReq.class),
-            f -> f.withMarshaller(UpdateRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRuleRequest::getBody, UpdateRuleRequest::setBody));
 
         // response
 
@@ -3111,9 +2715,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<UpdateStrategyRequest, UpdateStrategyResponse> updateStrategy =
-        genForupdateStrategy();
+        genForUpdateStrategy();
 
-    private static HttpRequestDef<UpdateStrategyRequest, UpdateStrategyResponse> genForupdateStrategy() {
+    private static HttpRequestDef<UpdateStrategyRequest, UpdateStrategyResponse> genForUpdateStrategy() {
         // basic
         HttpRequestDef.Builder<UpdateStrategyRequest, UpdateStrategyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateStrategyRequest.class, UpdateStrategyResponse.class)
@@ -3126,23 +2730,17 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStrategyRequest::getRuleSetId, (req, v) -> {
-                req.setRuleSetId(v);
-            }));
+            f -> f.withMarshaller(UpdateStrategyRequest::getRuleSetId, UpdateStrategyRequest::setRuleSetId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStrategyRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateStrategyRequest::getDomainId, UpdateStrategyRequest::setDomainId));
         builder.<UpdateRuleSetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRuleSetReq.class),
-            f -> f.withMarshaller(UpdateStrategyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStrategyRequest::getBody, UpdateStrategyRequest::setBody));
 
         // response
 
@@ -3150,9 +2748,9 @@ public class CodeArtsPipelineMeta {
     }
 
     public static final HttpRequestDef<UploadBasicPluginRequest, UploadBasicPluginResponse> uploadBasicPlugin =
-        genForuploadBasicPlugin();
+        genForUploadBasicPlugin();
 
-    private static HttpRequestDef<UploadBasicPluginRequest, UploadBasicPluginResponse> genForuploadBasicPlugin() {
+    private static HttpRequestDef<UploadBasicPluginRequest, UploadBasicPluginResponse> genForUploadBasicPlugin() {
         // basic
         HttpRequestDef.Builder<UploadBasicPluginRequest, UploadBasicPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadBasicPluginRequest.class, UploadBasicPluginResponse.class)
@@ -3165,47 +2763,38 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadBasicPluginRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UploadBasicPluginRequest::getDomainId, UploadBasicPluginRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadBasicPluginRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(UploadBasicPluginRequest::getPluginName, UploadBasicPluginRequest::setPluginName));
         builder.<String>withRequestField("business_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadBasicPluginRequest::getBusinessType, (req, v) -> {
-                req.setBusinessType(v);
-            }));
+            f -> f.withMarshaller(UploadBasicPluginRequest::getBusinessType,
+                UploadBasicPluginRequest::setBusinessType));
         builder.<UploadBasicPluginRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadBasicPluginRequestBody.class),
-            f -> f.withMarshaller(UploadBasicPluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadBasicPluginRequest::getBody, UploadBasicPluginRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UploadBasicPluginResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UploadBasicPluginResponse::getBody, UploadBasicPluginResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UploadPluginIconRequest, UploadPluginIconResponse> uploadPluginIcon =
-        genForuploadPluginIcon();
+        genForUploadPluginIcon();
 
-    private static HttpRequestDef<UploadPluginIconRequest, UploadPluginIconResponse> genForuploadPluginIcon() {
+    private static HttpRequestDef<UploadPluginIconRequest, UploadPluginIconResponse> genForUploadPluginIcon() {
         // basic
         HttpRequestDef.Builder<UploadPluginIconRequest, UploadPluginIconResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadPluginIconRequest.class, UploadPluginIconResponse.class)
@@ -3218,40 +2807,32 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadPluginIconRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UploadPluginIconRequest::getDomainId, UploadPluginIconRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadPluginIconRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(UploadPluginIconRequest::getPluginName, UploadPluginIconRequest::setPluginName));
         builder.<UploadPluginIconRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadPluginIconRequestBody.class),
-            f -> f.withMarshaller(UploadPluginIconRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadPluginIconRequest::getBody, UploadPluginIconRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UploadPluginIconResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UploadPluginIconResponse::getBody, UploadPluginIconResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UploadPublisherIconRequest, UploadPublisherIconResponse> uploadPublisherIcon =
-        genForuploadPublisherIcon();
+        genForUploadPublisherIcon();
 
-    private static HttpRequestDef<UploadPublisherIconRequest, UploadPublisherIconResponse> genForuploadPublisherIcon() {
+    private static HttpRequestDef<UploadPublisherIconRequest, UploadPublisherIconResponse> genForUploadPublisherIcon() {
         // basic
         HttpRequestDef.Builder<UploadPublisherIconRequest, UploadPublisherIconResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadPublisherIconRequest.class, UploadPublisherIconResponse.class)
@@ -3264,32 +2845,25 @@ public class CodeArtsPipelineMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadPublisherIconRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UploadPublisherIconRequest::getDomainId, UploadPublisherIconRequest::setDomainId));
         builder.<String>withRequestField("publisher_en_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadPublisherIconRequest::getPublisherEnName, (req, v) -> {
-                req.setPublisherEnName(v);
-            }));
+            f -> f.withMarshaller(UploadPublisherIconRequest::getPublisherEnName,
+                UploadPublisherIconRequest::setPublisherEnName));
         builder.<UploadPublisherIconRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadPublisherIconRequestBody.class),
-            f -> f.withMarshaller(UploadPublisherIconRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadPublisherIconRequest::getBody, UploadPublisherIconRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UploadPublisherIconResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UploadPublisherIconResponse::getBody, UploadPublisherIconResponse::setBody));
 
         return builder.build();
     }

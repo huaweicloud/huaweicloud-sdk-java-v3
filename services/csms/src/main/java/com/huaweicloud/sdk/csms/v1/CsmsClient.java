@@ -82,7 +82,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteTagsRequest 请求对象
      * @return BatchCreateOrDeleteTagsResponse
      */
     public BatchCreateOrDeleteTagsResponse batchCreateOrDeleteTags(BatchCreateOrDeleteTagsRequest request) {
@@ -96,13 +96,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>
      */
     public SyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsInvoker(
         BatchCreateOrDeleteTagsRequest request) {
-        return new SyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>(request,
-            CsmsMeta.batchCreateOrDeleteTags, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.batchCreateOrDeleteTags, hcClient);
     }
 
     /**
@@ -116,7 +115,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretRequest 请求对象
+     * @param request CreateSecretRequest 请求对象
      * @return CreateSecretResponse
      */
     public CreateSecretResponse createSecret(CreateSecretRequest request) {
@@ -134,11 +133,11 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretRequest 请求对象
+     * @param request CreateSecretRequest 请求对象
      * @return SyncInvoker<CreateSecretRequest, CreateSecretResponse>
      */
     public SyncInvoker<CreateSecretRequest, CreateSecretResponse> createSecretInvoker(CreateSecretRequest request) {
-        return new SyncInvoker<CreateSecretRequest, CreateSecretResponse>(request, CsmsMeta.createSecret, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.createSecret, hcClient);
     }
 
     /**
@@ -148,7 +147,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretEventRequest 请求对象
+     * @param request CreateSecretEventRequest 请求对象
      * @return CreateSecretEventResponse
      */
     public CreateSecretEventResponse createSecretEvent(CreateSecretEventRequest request) {
@@ -162,13 +161,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretEventRequest 请求对象
+     * @param request CreateSecretEventRequest 请求对象
      * @return SyncInvoker<CreateSecretEventRequest, CreateSecretEventResponse>
      */
     public SyncInvoker<CreateSecretEventRequest, CreateSecretEventResponse> createSecretEventInvoker(
         CreateSecretEventRequest request) {
-        return new SyncInvoker<CreateSecretEventRequest, CreateSecretEventResponse>(request, CsmsMeta.createSecretEvent,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.createSecretEvent, hcClient);
     }
 
     /**
@@ -178,7 +176,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretTagRequest 请求对象
+     * @param request CreateSecretTagRequest 请求对象
      * @return CreateSecretTagResponse
      */
     public CreateSecretTagResponse createSecretTag(CreateSecretTagRequest request) {
@@ -192,13 +190,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretTagRequest 请求对象
+     * @param request CreateSecretTagRequest 请求对象
      * @return SyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse>
      */
     public SyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse> createSecretTagInvoker(
         CreateSecretTagRequest request) {
-        return new SyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse>(request, CsmsMeta.createSecretTag,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.createSecretTag, hcClient);
     }
 
     /**
@@ -208,7 +205,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretVersionRequest 请求对象
+     * @param request CreateSecretVersionRequest 请求对象
      * @return CreateSecretVersionResponse
      */
     public CreateSecretVersionResponse createSecretVersion(CreateSecretVersionRequest request) {
@@ -222,13 +219,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretVersionRequest 请求对象
+     * @param request CreateSecretVersionRequest 请求对象
      * @return SyncInvoker<CreateSecretVersionRequest, CreateSecretVersionResponse>
      */
     public SyncInvoker<CreateSecretVersionRequest, CreateSecretVersionResponse> createSecretVersionInvoker(
         CreateSecretVersionRequest request) {
-        return new SyncInvoker<CreateSecretVersionRequest, CreateSecretVersionResponse>(request,
-            CsmsMeta.createSecretVersion, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.createSecretVersion, hcClient);
     }
 
     /**
@@ -238,7 +234,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretRequest 请求对象
+     * @param request DeleteSecretRequest 请求对象
      * @return DeleteSecretResponse
      */
     public DeleteSecretResponse deleteSecret(DeleteSecretRequest request) {
@@ -252,11 +248,11 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretRequest 请求对象
+     * @param request DeleteSecretRequest 请求对象
      * @return SyncInvoker<DeleteSecretRequest, DeleteSecretResponse>
      */
     public SyncInvoker<DeleteSecretRequest, DeleteSecretResponse> deleteSecretInvoker(DeleteSecretRequest request) {
-        return new SyncInvoker<DeleteSecretRequest, DeleteSecretResponse>(request, CsmsMeta.deleteSecret, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.deleteSecret, hcClient);
     }
 
     /**
@@ -266,7 +262,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretEventRequest 请求对象
+     * @param request DeleteSecretEventRequest 请求对象
      * @return DeleteSecretEventResponse
      */
     public DeleteSecretEventResponse deleteSecretEvent(DeleteSecretEventRequest request) {
@@ -280,13 +276,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretEventRequest 请求对象
+     * @param request DeleteSecretEventRequest 请求对象
      * @return SyncInvoker<DeleteSecretEventRequest, DeleteSecretEventResponse>
      */
     public SyncInvoker<DeleteSecretEventRequest, DeleteSecretEventResponse> deleteSecretEventInvoker(
         DeleteSecretEventRequest request) {
-        return new SyncInvoker<DeleteSecretEventRequest, DeleteSecretEventResponse>(request, CsmsMeta.deleteSecretEvent,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.deleteSecretEvent, hcClient);
     }
 
     /**
@@ -296,7 +291,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretForScheduleRequest 请求对象
+     * @param request DeleteSecretForScheduleRequest 请求对象
      * @return DeleteSecretForScheduleResponse
      */
     public DeleteSecretForScheduleResponse deleteSecretForSchedule(DeleteSecretForScheduleRequest request) {
@@ -310,13 +305,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretForScheduleRequest 请求对象
+     * @param request DeleteSecretForScheduleRequest 请求对象
      * @return SyncInvoker<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse>
      */
     public SyncInvoker<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse> deleteSecretForScheduleInvoker(
         DeleteSecretForScheduleRequest request) {
-        return new SyncInvoker<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse>(request,
-            CsmsMeta.deleteSecretForSchedule, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.deleteSecretForSchedule, hcClient);
     }
 
     /**
@@ -326,7 +320,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretStageRequest 请求对象
+     * @param request DeleteSecretStageRequest 请求对象
      * @return DeleteSecretStageResponse
      */
     public DeleteSecretStageResponse deleteSecretStage(DeleteSecretStageRequest request) {
@@ -340,13 +334,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretStageRequest 请求对象
+     * @param request DeleteSecretStageRequest 请求对象
      * @return SyncInvoker<DeleteSecretStageRequest, DeleteSecretStageResponse>
      */
     public SyncInvoker<DeleteSecretStageRequest, DeleteSecretStageResponse> deleteSecretStageInvoker(
         DeleteSecretStageRequest request) {
-        return new SyncInvoker<DeleteSecretStageRequest, DeleteSecretStageResponse>(request, CsmsMeta.deleteSecretStage,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.deleteSecretStage, hcClient);
     }
 
     /**
@@ -356,7 +349,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretTagRequest 请求对象
+     * @param request DeleteSecretTagRequest 请求对象
      * @return DeleteSecretTagResponse
      */
     public DeleteSecretTagResponse deleteSecretTag(DeleteSecretTagRequest request) {
@@ -370,13 +363,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecretTagRequest 请求对象
+     * @param request DeleteSecretTagRequest 请求对象
      * @return SyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse>
      */
     public SyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse> deleteSecretTagInvoker(
         DeleteSecretTagRequest request) {
-        return new SyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse>(request, CsmsMeta.deleteSecretTag,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.deleteSecretTag, hcClient);
     }
 
     /**
@@ -386,7 +378,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadSecretBlobRequest 请求对象
+     * @param request DownloadSecretBlobRequest 请求对象
      * @return DownloadSecretBlobResponse
      */
     public DownloadSecretBlobResponse downloadSecretBlob(DownloadSecretBlobRequest request) {
@@ -400,13 +392,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadSecretBlobRequest 请求对象
+     * @param request DownloadSecretBlobRequest 请求对象
      * @return SyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse>
      */
     public SyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse> downloadSecretBlobInvoker(
         DownloadSecretBlobRequest request) {
-        return new SyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse>(request,
-            CsmsMeta.downloadSecretBlob, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.downloadSecretBlob, hcClient);
     }
 
     /**
@@ -416,7 +407,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationRecordsRequest 请求对象
+     * @param request ListNotificationRecordsRequest 请求对象
      * @return ListNotificationRecordsResponse
      */
     public ListNotificationRecordsResponse listNotificationRecords(ListNotificationRecordsRequest request) {
@@ -430,13 +421,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationRecordsRequest 请求对象
+     * @param request ListNotificationRecordsRequest 请求对象
      * @return SyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse>
      */
     public SyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse> listNotificationRecordsInvoker(
         ListNotificationRecordsRequest request) {
-        return new SyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse>(request,
-            CsmsMeta.listNotificationRecords, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.listNotificationRecords, hcClient);
     }
 
     /**
@@ -446,7 +436,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectSecretsTagsRequest 请求对象
+     * @param request ListProjectSecretsTagsRequest 请求对象
      * @return ListProjectSecretsTagsResponse
      */
     public ListProjectSecretsTagsResponse listProjectSecretsTags(ListProjectSecretsTagsRequest request) {
@@ -460,13 +450,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectSecretsTagsRequest 请求对象
+     * @param request ListProjectSecretsTagsRequest 请求对象
      * @return SyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse>
      */
     public SyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> listProjectSecretsTagsInvoker(
         ListProjectSecretsTagsRequest request) {
-        return new SyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse>(request,
-            CsmsMeta.listProjectSecretsTags, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.listProjectSecretsTags, hcClient);
     }
 
     /**
@@ -476,7 +465,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return ListResourceInstancesResponse
      */
     public ListResourceInstancesResponse listResourceInstances(ListResourceInstancesRequest request) {
@@ -490,13 +479,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
      */
     public SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesInvoker(
         ListResourceInstancesRequest request) {
-        return new SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
-            CsmsMeta.listResourceInstances, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.listResourceInstances, hcClient);
     }
 
     /**
@@ -506,7 +494,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretEventsRequest 请求对象
+     * @param request ListSecretEventsRequest 请求对象
      * @return ListSecretEventsResponse
      */
     public ListSecretEventsResponse listSecretEvents(ListSecretEventsRequest request) {
@@ -520,13 +508,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretEventsRequest 请求对象
+     * @param request ListSecretEventsRequest 请求对象
      * @return SyncInvoker<ListSecretEventsRequest, ListSecretEventsResponse>
      */
     public SyncInvoker<ListSecretEventsRequest, ListSecretEventsResponse> listSecretEventsInvoker(
         ListSecretEventsRequest request) {
-        return new SyncInvoker<ListSecretEventsRequest, ListSecretEventsResponse>(request, CsmsMeta.listSecretEvents,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.listSecretEvents, hcClient);
     }
 
     /**
@@ -536,7 +523,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretTagsRequest 请求对象
+     * @param request ListSecretTagsRequest 请求对象
      * @return ListSecretTagsResponse
      */
     public ListSecretTagsResponse listSecretTags(ListSecretTagsRequest request) {
@@ -550,13 +537,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretTagsRequest 请求对象
+     * @param request ListSecretTagsRequest 请求对象
      * @return SyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse>
      */
     public SyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse> listSecretTagsInvoker(
         ListSecretTagsRequest request) {
-        return new SyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse>(request, CsmsMeta.listSecretTags,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.listSecretTags, hcClient);
     }
 
     /**
@@ -566,7 +552,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretVersionsRequest 请求对象
+     * @param request ListSecretVersionsRequest 请求对象
      * @return ListSecretVersionsResponse
      */
     public ListSecretVersionsResponse listSecretVersions(ListSecretVersionsRequest request) {
@@ -580,13 +566,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretVersionsRequest 请求对象
+     * @param request ListSecretVersionsRequest 请求对象
      * @return SyncInvoker<ListSecretVersionsRequest, ListSecretVersionsResponse>
      */
     public SyncInvoker<ListSecretVersionsRequest, ListSecretVersionsResponse> listSecretVersionsInvoker(
         ListSecretVersionsRequest request) {
-        return new SyncInvoker<ListSecretVersionsRequest, ListSecretVersionsResponse>(request,
-            CsmsMeta.listSecretVersions, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.listSecretVersions, hcClient);
     }
 
     /**
@@ -596,7 +581,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretsRequest 请求对象
+     * @param request ListSecretsRequest 请求对象
      * @return ListSecretsResponse
      */
     public ListSecretsResponse listSecrets(ListSecretsRequest request) {
@@ -610,11 +595,11 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecretsRequest 请求对象
+     * @param request ListSecretsRequest 请求对象
      * @return SyncInvoker<ListSecretsRequest, ListSecretsResponse>
      */
     public SyncInvoker<ListSecretsRequest, ListSecretsResponse> listSecretsInvoker(ListSecretsRequest request) {
-        return new SyncInvoker<ListSecretsRequest, ListSecretsResponse>(request, CsmsMeta.listSecrets, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.listSecrets, hcClient);
     }
 
     /**
@@ -624,7 +609,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreSecretRequest 请求对象
+     * @param request RestoreSecretRequest 请求对象
      * @return RestoreSecretResponse
      */
     public RestoreSecretResponse restoreSecret(RestoreSecretRequest request) {
@@ -638,11 +623,11 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreSecretRequest 请求对象
+     * @param request RestoreSecretRequest 请求对象
      * @return SyncInvoker<RestoreSecretRequest, RestoreSecretResponse>
      */
     public SyncInvoker<RestoreSecretRequest, RestoreSecretResponse> restoreSecretInvoker(RestoreSecretRequest request) {
-        return new SyncInvoker<RestoreSecretRequest, RestoreSecretResponse>(request, CsmsMeta.restoreSecret, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.restoreSecret, hcClient);
     }
 
     /**
@@ -652,7 +637,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RotateSecretRequest 请求对象
+     * @param request RotateSecretRequest 请求对象
      * @return RotateSecretResponse
      */
     public RotateSecretResponse rotateSecret(RotateSecretRequest request) {
@@ -666,11 +651,11 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RotateSecretRequest 请求对象
+     * @param request RotateSecretRequest 请求对象
      * @return SyncInvoker<RotateSecretRequest, RotateSecretResponse>
      */
     public SyncInvoker<RotateSecretRequest, RotateSecretResponse> rotateSecretInvoker(RotateSecretRequest request) {
-        return new SyncInvoker<RotateSecretRequest, RotateSecretResponse>(request, CsmsMeta.rotateSecret, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.rotateSecret, hcClient);
     }
 
     /**
@@ -680,7 +665,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretRequest 请求对象
+     * @param request ShowSecretRequest 请求对象
      * @return ShowSecretResponse
      */
     public ShowSecretResponse showSecret(ShowSecretRequest request) {
@@ -694,11 +679,11 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretRequest 请求对象
+     * @param request ShowSecretRequest 请求对象
      * @return SyncInvoker<ShowSecretRequest, ShowSecretResponse>
      */
     public SyncInvoker<ShowSecretRequest, ShowSecretResponse> showSecretInvoker(ShowSecretRequest request) {
-        return new SyncInvoker<ShowSecretRequest, ShowSecretResponse>(request, CsmsMeta.showSecret, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.showSecret, hcClient);
     }
 
     /**
@@ -708,7 +693,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretEventRequest 请求对象
+     * @param request ShowSecretEventRequest 请求对象
      * @return ShowSecretEventResponse
      */
     public ShowSecretEventResponse showSecretEvent(ShowSecretEventRequest request) {
@@ -722,13 +707,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretEventRequest 请求对象
+     * @param request ShowSecretEventRequest 请求对象
      * @return SyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse>
      */
     public SyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse> showSecretEventInvoker(
         ShowSecretEventRequest request) {
-        return new SyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse>(request, CsmsMeta.showSecretEvent,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.showSecretEvent, hcClient);
     }
 
     /**
@@ -738,7 +722,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretStageRequest 请求对象
+     * @param request ShowSecretStageRequest 请求对象
      * @return ShowSecretStageResponse
      */
     public ShowSecretStageResponse showSecretStage(ShowSecretStageRequest request) {
@@ -752,13 +736,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretStageRequest 请求对象
+     * @param request ShowSecretStageRequest 请求对象
      * @return SyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse>
      */
     public SyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse> showSecretStageInvoker(
         ShowSecretStageRequest request) {
-        return new SyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse>(request, CsmsMeta.showSecretStage,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.showSecretStage, hcClient);
     }
 
     /**
@@ -769,7 +752,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretVersionRequest 请求对象
+     * @param request ShowSecretVersionRequest 请求对象
      * @return ShowSecretVersionResponse
      */
     public ShowSecretVersionResponse showSecretVersion(ShowSecretVersionRequest request) {
@@ -784,13 +767,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecretVersionRequest 请求对象
+     * @param request ShowSecretVersionRequest 请求对象
      * @return SyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse>
      */
     public SyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse> showSecretVersionInvoker(
         ShowSecretVersionRequest request) {
-        return new SyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse>(request, CsmsMeta.showSecretVersion,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.showSecretVersion, hcClient);
     }
 
     /**
@@ -800,7 +782,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretRequest 请求对象
+     * @param request UpdateSecretRequest 请求对象
      * @return UpdateSecretResponse
      */
     public UpdateSecretResponse updateSecret(UpdateSecretRequest request) {
@@ -814,11 +796,11 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretRequest 请求对象
+     * @param request UpdateSecretRequest 请求对象
      * @return SyncInvoker<UpdateSecretRequest, UpdateSecretResponse>
      */
     public SyncInvoker<UpdateSecretRequest, UpdateSecretResponse> updateSecretInvoker(UpdateSecretRequest request) {
-        return new SyncInvoker<UpdateSecretRequest, UpdateSecretResponse>(request, CsmsMeta.updateSecret, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.updateSecret, hcClient);
     }
 
     /**
@@ -828,7 +810,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretEventRequest 请求对象
+     * @param request UpdateSecretEventRequest 请求对象
      * @return UpdateSecretEventResponse
      */
     public UpdateSecretEventResponse updateSecretEvent(UpdateSecretEventRequest request) {
@@ -842,13 +824,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretEventRequest 请求对象
+     * @param request UpdateSecretEventRequest 请求对象
      * @return SyncInvoker<UpdateSecretEventRequest, UpdateSecretEventResponse>
      */
     public SyncInvoker<UpdateSecretEventRequest, UpdateSecretEventResponse> updateSecretEventInvoker(
         UpdateSecretEventRequest request) {
-        return new SyncInvoker<UpdateSecretEventRequest, UpdateSecretEventResponse>(request, CsmsMeta.updateSecretEvent,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.updateSecretEvent, hcClient);
     }
 
     /**
@@ -858,7 +839,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretStageRequest 请求对象
+     * @param request UpdateSecretStageRequest 请求对象
      * @return UpdateSecretStageResponse
      */
     public UpdateSecretStageResponse updateSecretStage(UpdateSecretStageRequest request) {
@@ -872,13 +853,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecretStageRequest 请求对象
+     * @param request UpdateSecretStageRequest 请求对象
      * @return SyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse>
      */
     public SyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse> updateSecretStageInvoker(
         UpdateSecretStageRequest request) {
-        return new SyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse>(request, CsmsMeta.updateSecretStage,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.updateSecretStage, hcClient);
     }
 
     /**
@@ -888,7 +868,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVersionRequest 请求对象
+     * @param request UpdateVersionRequest 请求对象
      * @return UpdateVersionResponse
      */
     public UpdateVersionResponse updateVersion(UpdateVersionRequest request) {
@@ -902,11 +882,11 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVersionRequest 请求对象
+     * @param request UpdateVersionRequest 请求对象
      * @return SyncInvoker<UpdateVersionRequest, UpdateVersionResponse>
      */
     public SyncInvoker<UpdateVersionRequest, UpdateVersionResponse> updateVersionInvoker(UpdateVersionRequest request) {
-        return new SyncInvoker<UpdateVersionRequest, UpdateVersionResponse>(request, CsmsMeta.updateVersion, hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.updateVersion, hcClient);
     }
 
     /**
@@ -916,7 +896,7 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadSecretBlobRequest 请求对象
+     * @param request UploadSecretBlobRequest 请求对象
      * @return UploadSecretBlobResponse
      */
     public UploadSecretBlobResponse uploadSecretBlob(UploadSecretBlobRequest request) {
@@ -930,13 +910,12 @@ public class CsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadSecretBlobRequest 请求对象
+     * @param request UploadSecretBlobRequest 请求对象
      * @return SyncInvoker<UploadSecretBlobRequest, UploadSecretBlobResponse>
      */
     public SyncInvoker<UploadSecretBlobRequest, UploadSecretBlobResponse> uploadSecretBlobInvoker(
         UploadSecretBlobRequest request) {
-        return new SyncInvoker<UploadSecretBlobRequest, UploadSecretBlobResponse>(request, CsmsMeta.uploadSecretBlob,
-            hcClient);
+        return new SyncInvoker<>(request, CsmsMeta.uploadSecretBlob, hcClient);
     }
 
 }

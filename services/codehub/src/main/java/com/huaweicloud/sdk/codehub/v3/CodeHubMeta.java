@@ -161,9 +161,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class CodeHubMeta {
 
-    public static final HttpRequestDef<CreateCommitRequest, CreateCommitResponse> createCommit = genForcreateCommit();
+    public static final HttpRequestDef<CreateCommitRequest, CreateCommitResponse> createCommit = genForCreateCommit();
 
-    private static HttpRequestDef<CreateCommitRequest, CreateCommitResponse> genForcreateCommit() {
+    private static HttpRequestDef<CreateCommitRequest, CreateCommitResponse> genForCreateCommit() {
         // basic
         HttpRequestDef.Builder<CreateCommitRequest, CreateCommitResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCommitRequest.class, CreateCommitResponse.class)
@@ -176,25 +176,21 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateCommitRequest::getRepoId, (req, v) -> {
-                req.setRepoId(v);
-            }));
+            f -> f.withMarshaller(CreateCommitRequest::getRepoId, CreateCommitRequest::setRepoId));
         builder.<CreateCommitRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCommitRequestBody.class),
-            f -> f.withMarshaller(CreateCommitRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCommitRequest::getBody, CreateCommitRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCommitsRequest, ListCommitsResponse> listCommits = genForlistCommits();
+    public static final HttpRequestDef<ListCommitsRequest, ListCommitsResponse> listCommits = genForListCommits();
 
-    private static HttpRequestDef<ListCommitsRequest, ListCommitsResponse> genForlistCommits() {
+    private static HttpRequestDef<ListCommitsRequest, ListCommitsResponse> genForListCommits() {
         // basic
         HttpRequestDef.Builder<ListCommitsRequest, ListCommitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCommitsRequest.class, ListCommitsResponse.class)
@@ -207,65 +203,47 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommitsRequest::getRepoId, (req, v) -> {
-                req.setRepoId(v);
-            }));
+            f -> f.withMarshaller(ListCommitsRequest::getRepoId, ListCommitsRequest::setRepoId));
         builder.<String>withRequestField("ref_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommitsRequest::getRefName, (req, v) -> {
-                req.setRefName(v);
-            }));
+            f -> f.withMarshaller(ListCommitsRequest::getRefName, ListCommitsRequest::setRefName));
         builder.<String>withRequestField("since",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommitsRequest::getSince, (req, v) -> {
-                req.setSince(v);
-            }));
+            f -> f.withMarshaller(ListCommitsRequest::getSince, ListCommitsRequest::setSince));
         builder.<String>withRequestField("until",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommitsRequest::getUntil, (req, v) -> {
-                req.setUntil(v);
-            }));
+            f -> f.withMarshaller(ListCommitsRequest::getUntil, ListCommitsRequest::setUntil));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommitsRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ListCommitsRequest::getPath, ListCommitsRequest::setPath));
         builder.<Boolean>withRequestField("all",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCommitsRequest::getAll, (req, v) -> {
-                req.setAll(v);
-            }));
+            f -> f.withMarshaller(ListCommitsRequest::getAll, ListCommitsRequest::setAll));
         builder.<Boolean>withRequestField("with_stats",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCommitsRequest::getWithStats, (req, v) -> {
-                req.setWithStats(v);
-            }));
+            f -> f.withMarshaller(ListCommitsRequest::getWithStats, ListCommitsRequest::setWithStats));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommitsRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListCommitsRequest::getPage, ListCommitsRequest::setPage));
         builder.<Integer>withRequestField("per_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommitsRequest::getPerPage, (req, v) -> {
-                req.setPerPage(v);
-            }));
+            f -> f.withMarshaller(ListCommitsRequest::getPerPage, ListCommitsRequest::setPerPage));
 
         // response
 
@@ -273,9 +251,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowDiffCommitRequest, ShowDiffCommitResponse> showDiffCommit =
-        genForshowDiffCommit();
+        genForShowDiffCommit();
 
-    private static HttpRequestDef<ShowDiffCommitRequest, ShowDiffCommitResponse> genForshowDiffCommit() {
+    private static HttpRequestDef<ShowDiffCommitRequest, ShowDiffCommitResponse> genForShowDiffCommit() {
         // basic
         HttpRequestDef.Builder<ShowDiffCommitRequest, ShowDiffCommitResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDiffCommitRequest.class, ShowDiffCommitResponse.class)
@@ -288,16 +266,12 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDiffCommitRequest::getRepoId, (req, v) -> {
-                req.setRepoId(v);
-            }));
+            f -> f.withMarshaller(ShowDiffCommitRequest::getRepoId, ShowDiffCommitRequest::setRepoId));
         builder.<String>withRequestField("sha",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDiffCommitRequest::getSha, (req, v) -> {
-                req.setSha(v);
-            }));
+            f -> f.withMarshaller(ShowDiffCommitRequest::getSha, ShowDiffCommitRequest::setSha));
 
         // response
 
@@ -305,9 +279,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowSingleCommitRequest, ShowSingleCommitResponse> showSingleCommit =
-        genForshowSingleCommit();
+        genForShowSingleCommit();
 
-    private static HttpRequestDef<ShowSingleCommitRequest, ShowSingleCommitResponse> genForshowSingleCommit() {
+    private static HttpRequestDef<ShowSingleCommitRequest, ShowSingleCommitResponse> genForShowSingleCommit() {
         // basic
         HttpRequestDef.Builder<ShowSingleCommitRequest, ShowSingleCommitResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSingleCommitRequest.class, ShowSingleCommitResponse.class)
@@ -320,23 +294,17 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowSingleCommitRequest::getRepoId, (req, v) -> {
-                req.setRepoId(v);
-            }));
+            f -> f.withMarshaller(ShowSingleCommitRequest::getRepoId, ShowSingleCommitRequest::setRepoId));
         builder.<String>withRequestField("sha",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSingleCommitRequest::getSha, (req, v) -> {
-                req.setSha(v);
-            }));
+            f -> f.withMarshaller(ShowSingleCommitRequest::getSha, ShowSingleCommitRequest::setSha));
         builder.<Boolean>withRequestField("stats",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowSingleCommitRequest::getStats, (req, v) -> {
-                req.setStats(v);
-            }));
+            f -> f.withMarshaller(ShowSingleCommitRequest::getStats, ShowSingleCommitRequest::setStats));
 
         // response
 
@@ -344,9 +312,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse> createMergeRequestDiscussion =
-        genForcreateMergeRequestDiscussion();
+        genForCreateMergeRequestDiscussion();
 
-    private static HttpRequestDef<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse> genForcreateMergeRequestDiscussion() {
+    private static HttpRequestDef<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse> genForCreateMergeRequestDiscussion() {
         // basic
         HttpRequestDef.Builder<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse> builder =
             HttpRequestDef
@@ -362,23 +330,20 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateMergeRequestDiscussionRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(CreateMergeRequestDiscussionRequest::getRepositoryId,
+                CreateMergeRequestDiscussionRequest::setRepositoryId));
         builder.<Integer>withRequestField("merge_request_iid",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateMergeRequestDiscussionRequest::getMergeRequestIid, (req, v) -> {
-                req.setMergeRequestIid(v);
-            }));
+            f -> f.withMarshaller(CreateMergeRequestDiscussionRequest::getMergeRequestIid,
+                CreateMergeRequestDiscussionRequest::setMergeRequestIid));
         builder.<CreateMergeRequestDiscussionBodyDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMergeRequestDiscussionBodyDto.class),
-            f -> f.withMarshaller(CreateMergeRequestDiscussionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMergeRequestDiscussionRequest::getBody,
+                CreateMergeRequestDiscussionRequest::setBody));
 
         // response
 
@@ -386,9 +351,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse> createMergeRequestDiscussionNote =
-        genForcreateMergeRequestDiscussionNote();
+        genForCreateMergeRequestDiscussionNote();
 
-    private static HttpRequestDef<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse> genForcreateMergeRequestDiscussionNote() {
+    private static HttpRequestDef<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse> genForCreateMergeRequestDiscussionNote() {
         // basic
         HttpRequestDef.Builder<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse> builder =
             HttpRequestDef
@@ -405,30 +370,26 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getRepositoryId,
+                CreateMergeRequestDiscussionNoteRequest::setRepositoryId));
         builder.<Integer>withRequestField("merge_request_iid",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getMergeRequestIid, (req, v) -> {
-                req.setMergeRequestIid(v);
-            }));
+            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getMergeRequestIid,
+                CreateMergeRequestDiscussionNoteRequest::setMergeRequestIid));
         builder.<String>withRequestField("discussion_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getDiscussionId, (req, v) -> {
-                req.setDiscussionId(v);
-            }));
+            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getDiscussionId,
+                CreateMergeRequestDiscussionNoteRequest::setDiscussionId));
         builder.<CreateMergeRequestDiscussionNoteDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMergeRequestDiscussionNoteDto.class),
-            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getBody,
+                CreateMergeRequestDiscussionNoteRequest::setBody));
 
         // response
 
@@ -436,9 +397,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowReviewSettingRequest, ShowReviewSettingResponse> showReviewSetting =
-        genForshowReviewSetting();
+        genForShowReviewSetting();
 
-    private static HttpRequestDef<ShowReviewSettingRequest, ShowReviewSettingResponse> genForshowReviewSetting() {
+    private static HttpRequestDef<ShowReviewSettingRequest, ShowReviewSettingResponse> genForShowReviewSetting() {
         // basic
         HttpRequestDef.Builder<ShowReviewSettingRequest, ShowReviewSettingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowReviewSettingRequest.class, ShowReviewSettingResponse.class)
@@ -451,9 +412,8 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowReviewSettingRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ShowReviewSettingRequest::getRepositoryId,
+                ShowReviewSettingRequest::setRepositoryId));
 
         // response
 
@@ -461,9 +421,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ListFilesByQueryRequest, ListFilesByQueryResponse> listFilesByQuery =
-        genForlistFilesByQuery();
+        genForListFilesByQuery();
 
-    private static HttpRequestDef<ListFilesByQueryRequest, ListFilesByQueryResponse> genForlistFilesByQuery() {
+    private static HttpRequestDef<ListFilesByQueryRequest, ListFilesByQueryResponse> genForListFilesByQuery() {
         // basic
         HttpRequestDef.Builder<ListFilesByQueryRequest, ListFilesByQueryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFilesByQueryRequest.class, ListFilesByQueryResponse.class)
@@ -476,32 +436,26 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFilesByQueryRequest::getRepoId, (req, v) -> {
-                req.setRepoId(v);
-            }));
+            f -> f.withMarshaller(ListFilesByQueryRequest::getRepoId, ListFilesByQueryRequest::setRepoId));
         builder.<String>withRequestField("file_path",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFilesByQueryRequest::getFilePath, (req, v) -> {
-                req.setFilePath(v);
-            }));
+            f -> f.withMarshaller(ListFilesByQueryRequest::getFilePath, ListFilesByQueryRequest::setFilePath));
         builder.<String>withRequestField("ref",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFilesByQueryRequest::getRef, (req, v) -> {
-                req.setRef(v);
-            }));
+            f -> f.withMarshaller(ListFilesByQueryRequest::getRef, ListFilesByQueryRequest::setRef));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFileRequest, ShowFileResponse> showFile = genForshowFile();
+    public static final HttpRequestDef<ShowFileRequest, ShowFileResponse> showFile = genForShowFile();
 
-    private static HttpRequestDef<ShowFileRequest, ShowFileResponse> genForshowFile() {
+    private static HttpRequestDef<ShowFileRequest, ShowFileResponse> genForShowFile() {
         // basic
         HttpRequestDef.Builder<ShowFileRequest, ShowFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFileRequest.class, ShowFileResponse.class)
@@ -514,23 +468,17 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFileRequest::getRepoId, (req, v) -> {
-                req.setRepoId(v);
-            }));
+            f -> f.withMarshaller(ShowFileRequest::getRepoId, ShowFileRequest::setRepoId));
         builder.<String>withRequestField("file_path",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFileRequest::getFilePath, (req, v) -> {
-                req.setFilePath(v);
-            }));
+            f -> f.withMarshaller(ShowFileRequest::getFilePath, ShowFileRequest::setFilePath));
         builder.<String>withRequestField("ref",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFileRequest::getRef, (req, v) -> {
-                req.setRef(v);
-            }));
+            f -> f.withMarshaller(ShowFileRequest::getRef, ShowFileRequest::setRef));
 
         // response
 
@@ -538,9 +486,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse> getAllRepositoryByProjectId =
-        genForgetAllRepositoryByProjectId();
+        genForGetAllRepositoryByProjectId();
 
-    private static HttpRequestDef<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse> genForgetAllRepositoryByProjectId() {
+    private static HttpRequestDef<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse> genForGetAllRepositoryByProjectId() {
         // basic
         HttpRequestDef.Builder<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse> builder =
             HttpRequestDef
@@ -556,30 +504,26 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetAllRepositoryByProjectIdRequest::getProjectUuid, (req, v) -> {
-                req.setProjectUuid(v);
-            }));
+            f -> f.withMarshaller(GetAllRepositoryByProjectIdRequest::getProjectUuid,
+                GetAllRepositoryByProjectIdRequest::setProjectUuid));
         builder.<Integer>withRequestField("page_index",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(GetAllRepositoryByProjectIdRequest::getPageIndex, (req, v) -> {
-                req.setPageIndex(v);
-            }));
+            f -> f.withMarshaller(GetAllRepositoryByProjectIdRequest::getPageIndex,
+                GetAllRepositoryByProjectIdRequest::setPageIndex));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(GetAllRepositoryByProjectIdRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(GetAllRepositoryByProjectIdRequest::getPageSize,
+                GetAllRepositoryByProjectIdRequest::setPageSize));
         builder.<String>withRequestField("search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetAllRepositoryByProjectIdRequest::getSearch, (req, v) -> {
-                req.setSearch(v);
-            }));
+            f -> f.withMarshaller(GetAllRepositoryByProjectIdRequest::getSearch,
+                GetAllRepositoryByProjectIdRequest::setSearch));
 
         // response
 
@@ -587,9 +531,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<GetProductTemplatesRequest, GetProductTemplatesResponse> getProductTemplates =
-        genForgetProductTemplates();
+        genForGetProductTemplates();
 
-    private static HttpRequestDef<GetProductTemplatesRequest, GetProductTemplatesResponse> genForgetProductTemplates() {
+    private static HttpRequestDef<GetProductTemplatesRequest, GetProductTemplatesResponse> genForGetProductTemplates() {
         // basic
         HttpRequestDef.Builder<GetProductTemplatesRequest, GetProductTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GetProductTemplatesRequest.class, GetProductTemplatesResponse.class)
@@ -602,23 +546,18 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetProductTemplatesRequest::getProjectUuid, (req, v) -> {
-                req.setProjectUuid(v);
-            }));
+            f -> f.withMarshaller(GetProductTemplatesRequest::getProjectUuid,
+                GetProductTemplatesRequest::setProjectUuid));
         builder.<Integer>withRequestField("page_no",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(GetProductTemplatesRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(GetProductTemplatesRequest::getPageNo, GetProductTemplatesRequest::setPageNo));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(GetProductTemplatesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(GetProductTemplatesRequest::getPageSize, GetProductTemplatesRequest::setPageSize));
 
         // response
 
@@ -626,9 +565,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ListProductTwoTemplatesRequest, ListProductTwoTemplatesResponse> listProductTwoTemplates =
-        genForlistProductTwoTemplates();
+        genForListProductTwoTemplates();
 
-    private static HttpRequestDef<ListProductTwoTemplatesRequest, ListProductTwoTemplatesResponse> genForlistProductTwoTemplates() {
+    private static HttpRequestDef<ListProductTwoTemplatesRequest, ListProductTwoTemplatesResponse> genForListProductTwoTemplates() {
         // basic
         HttpRequestDef.Builder<ListProductTwoTemplatesRequest, ListProductTwoTemplatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProductTwoTemplatesRequest.class, ListProductTwoTemplatesResponse.class)
@@ -641,23 +580,20 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductTwoTemplatesRequest::getProjectUuid, (req, v) -> {
-                req.setProjectUuid(v);
-            }));
+            f -> f.withMarshaller(ListProductTwoTemplatesRequest::getProjectUuid,
+                ListProductTwoTemplatesRequest::setProjectUuid));
         builder.<Integer>withRequestField("page_no",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductTwoTemplatesRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(ListProductTwoTemplatesRequest::getPageNo,
+                ListProductTwoTemplatesRequest::setPageNo));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductTwoTemplatesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListProductTwoTemplatesRequest::getPageSize,
+                ListProductTwoTemplatesRequest::setPageSize));
 
         // response
 
@@ -665,9 +601,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowRepositoryNameExistRequest, ShowRepositoryNameExistResponse> showRepositoryNameExist =
-        genForshowRepositoryNameExist();
+        genForShowRepositoryNameExist();
 
-    private static HttpRequestDef<ShowRepositoryNameExistRequest, ShowRepositoryNameExistResponse> genForshowRepositoryNameExist() {
+    private static HttpRequestDef<ShowRepositoryNameExistRequest, ShowRepositoryNameExistResponse> genForShowRepositoryNameExist() {
         // basic
         HttpRequestDef.Builder<ShowRepositoryNameExistRequest, ShowRepositoryNameExistResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowRepositoryNameExistRequest.class, ShowRepositoryNameExistResponse.class)
@@ -680,16 +616,14 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryNameExistRequest::getProjectUuid, (req, v) -> {
-                req.setProjectUuid(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryNameExistRequest::getProjectUuid,
+                ShowRepositoryNameExistRequest::setProjectUuid));
         builder.<String>withRequestField("repository_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryNameExistRequest::getRepositoryName, (req, v) -> {
-                req.setRepositoryName(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryNameExistRequest::getRepositoryName,
+                ShowRepositoryNameExistRequest::setRepositoryName));
 
         // response
 
@@ -697,9 +631,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<AddRepoMembersRequest, AddRepoMembersResponse> addRepoMembers =
-        genForaddRepoMembers();
+        genForAddRepoMembers();
 
-    private static HttpRequestDef<AddRepoMembersRequest, AddRepoMembersResponse> genForaddRepoMembers() {
+    private static HttpRequestDef<AddRepoMembersRequest, AddRepoMembersResponse> genForAddRepoMembers() {
         // basic
         HttpRequestDef.Builder<AddRepoMembersRequest, AddRepoMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddRepoMembersRequest.class, AddRepoMembersResponse.class)
@@ -712,16 +646,12 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddRepoMembersRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(AddRepoMembersRequest::getRepositoryUuid, AddRepoMembersRequest::setRepositoryUuid));
         builder.<CreateRepoMemberRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRepoMemberRequest.class),
-            f -> f.withMarshaller(AddRepoMembersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddRepoMembersRequest::getBody, AddRepoMembersRequest::setBody));
 
         // response
 
@@ -729,9 +659,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<DeleteRepoMemberRequest, DeleteRepoMemberResponse> deleteRepoMember =
-        genFordeleteRepoMember();
+        genForDeleteRepoMember();
 
-    private static HttpRequestDef<DeleteRepoMemberRequest, DeleteRepoMemberResponse> genFordeleteRepoMember() {
+    private static HttpRequestDef<DeleteRepoMemberRequest, DeleteRepoMemberResponse> genForDeleteRepoMember() {
         // basic
         HttpRequestDef.Builder<DeleteRepoMemberRequest, DeleteRepoMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRepoMemberRequest.class, DeleteRepoMemberResponse.class)
@@ -744,16 +674,13 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepoMemberRequest::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(DeleteRepoMemberRequest::getMemberId, DeleteRepoMemberRequest::setMemberId));
         builder.<String>withRequestField("repository_uuid",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepoMemberRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(DeleteRepoMemberRequest::getRepositoryUuid,
+                DeleteRepoMemberRequest::setRepositoryUuid));
 
         // response
 
@@ -761,9 +688,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ListRepoMembersRequest, ListRepoMembersResponse> listRepoMembers =
-        genForlistRepoMembers();
+        genForListRepoMembers();
 
-    private static HttpRequestDef<ListRepoMembersRequest, ListRepoMembersResponse> genForlistRepoMembers() {
+    private static HttpRequestDef<ListRepoMembersRequest, ListRepoMembersResponse> genForListRepoMembers() {
         // basic
         HttpRequestDef.Builder<ListRepoMembersRequest, ListRepoMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRepoMembersRequest.class, ListRepoMembersResponse.class)
@@ -776,39 +703,32 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepoMembersRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ListRepoMembersRequest::getRepositoryUuid,
+                ListRepoMembersRequest::setRepositoryUuid));
         builder.<Integer>withRequestField("page_index",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRepoMembersRequest::getPageIndex, (req, v) -> {
-                req.setPageIndex(v);
-            }));
+            f -> f.withMarshaller(ListRepoMembersRequest::getPageIndex, ListRepoMembersRequest::setPageIndex));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRepoMembersRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListRepoMembersRequest::getPageSize, ListRepoMembersRequest::setPageSize));
         builder.<String>withRequestField("subject",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepoMembersRequest::getSubject, (req, v) -> {
-                req.setSubject(v);
-            }));
+            f -> f.withMarshaller(ListRepoMembersRequest::getSubject, ListRepoMembersRequest::setSubject));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetRepoRoleRequest, SetRepoRoleResponse> setRepoRole = genForsetRepoRole();
+    public static final HttpRequestDef<SetRepoRoleRequest, SetRepoRoleResponse> setRepoRole = genForSetRepoRole();
 
-    private static HttpRequestDef<SetRepoRoleRequest, SetRepoRoleResponse> genForsetRepoRole() {
+    private static HttpRequestDef<SetRepoRoleRequest, SetRepoRoleResponse> genForSetRepoRole() {
         // basic
         HttpRequestDef.Builder<SetRepoRoleRequest, SetRepoRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetRepoRoleRequest.class, SetRepoRoleResponse.class)
@@ -821,32 +741,26 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetRepoRoleRequest::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(SetRepoRoleRequest::getMemberId, SetRepoRoleRequest::setMemberId));
         builder.<String>withRequestField("repository_uuid",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetRepoRoleRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(SetRepoRoleRequest::getRepositoryUuid, SetRepoRoleRequest::setRepositoryUuid));
         builder.<SetRepoRoleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetRepoRoleRequestBody.class),
-            f -> f.withMarshaller(SetRepoRoleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetRepoRoleRequest::getBody, SetRepoRoleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddDeployKeyRequest, AddDeployKeyResponse> addDeployKey = genForaddDeployKey();
+    public static final HttpRequestDef<AddDeployKeyRequest, AddDeployKeyResponse> addDeployKey = genForAddDeployKey();
 
-    private static HttpRequestDef<AddDeployKeyRequest, AddDeployKeyResponse> genForaddDeployKey() {
+    private static HttpRequestDef<AddDeployKeyRequest, AddDeployKeyResponse> genForAddDeployKey() {
         // basic
         HttpRequestDef.Builder<AddDeployKeyRequest, AddDeployKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDeployKeyRequest.class, AddDeployKeyResponse.class)
@@ -859,16 +773,12 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(AddDeployKeyRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(AddDeployKeyRequest::getRepositoryId, AddDeployKeyRequest::setRepositoryId));
         builder.<AddDeployKeyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddDeployKeyRequestBody.class),
-            f -> f.withMarshaller(AddDeployKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddDeployKeyRequest::getBody, AddDeployKeyRequest::setBody));
 
         // response
 
@@ -876,9 +786,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<AddDeployKeyV2Request, AddDeployKeyV2Response> addDeployKeyV2 =
-        genForaddDeployKeyV2();
+        genForAddDeployKeyV2();
 
-    private static HttpRequestDef<AddDeployKeyV2Request, AddDeployKeyV2Response> genForaddDeployKeyV2() {
+    private static HttpRequestDef<AddDeployKeyV2Request, AddDeployKeyV2Response> genForAddDeployKeyV2() {
         // basic
         HttpRequestDef.Builder<AddDeployKeyV2Request, AddDeployKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDeployKeyV2Request.class, AddDeployKeyV2Response.class)
@@ -891,16 +801,12 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(AddDeployKeyV2Request::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(AddDeployKeyV2Request::getRepositoryId, AddDeployKeyV2Request::setRepositoryId));
         builder.<AddDeployKeyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddDeployKeyRequestBody.class),
-            f -> f.withMarshaller(AddDeployKeyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddDeployKeyV2Request::getBody, AddDeployKeyV2Request::setBody));
 
         // response
 
@@ -908,9 +814,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<AddProtectBranchV2Request, AddProtectBranchV2Response> addProtectBranchV2 =
-        genForaddProtectBranchV2();
+        genForAddProtectBranchV2();
 
-    private static HttpRequestDef<AddProtectBranchV2Request, AddProtectBranchV2Response> genForaddProtectBranchV2() {
+    private static HttpRequestDef<AddProtectBranchV2Request, AddProtectBranchV2Response> genForAddProtectBranchV2() {
         // basic
         HttpRequestDef.Builder<AddProtectBranchV2Request, AddProtectBranchV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AddProtectBranchV2Request.class, AddProtectBranchV2Response.class)
@@ -923,32 +829,27 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(AddProtectBranchV2Request::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(AddProtectBranchV2Request::getRepositoryId,
+                AddProtectBranchV2Request::setRepositoryId));
         builder.<String>withRequestField("branch_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddProtectBranchV2Request::getBranchName, (req, v) -> {
-                req.setBranchName(v);
-            }));
+            f -> f.withMarshaller(AddProtectBranchV2Request::getBranchName, AddProtectBranchV2Request::setBranchName));
         builder.<AddProtectRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddProtectRequest.class),
-            f -> f.withMarshaller(AddProtectBranchV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddProtectBranchV2Request::getBody, AddProtectBranchV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddTagV2Request, AddTagV2Response> addTagV2 = genForaddTagV2();
+    public static final HttpRequestDef<AddTagV2Request, AddTagV2Response> addTagV2 = genForAddTagV2();
 
-    private static HttpRequestDef<AddTagV2Request, AddTagV2Response> genForaddTagV2() {
+    private static HttpRequestDef<AddTagV2Request, AddTagV2Response> genForAddTagV2() {
         // basic
         HttpRequestDef.Builder<AddTagV2Request, AddTagV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddTagV2Request.class, AddTagV2Response.class)
@@ -961,16 +862,12 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(AddTagV2Request::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(AddTagV2Request::getRepositoryId, AddTagV2Request::setRepositoryId));
         builder.<AddTagsRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddTagsRequest.class),
-            f -> f.withMarshaller(AddTagV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddTagV2Request::getBody, AddTagV2Request::setBody));
 
         // response
 
@@ -978,9 +875,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<CreateRepositoryRequest, CreateRepositoryResponse> createRepository =
-        genForcreateRepository();
+        genForCreateRepository();
 
-    private static HttpRequestDef<CreateRepositoryRequest, CreateRepositoryResponse> genForcreateRepository() {
+    private static HttpRequestDef<CreateRepositoryRequest, CreateRepositoryResponse> genForCreateRepository() {
         // basic
         HttpRequestDef.Builder<CreateRepositoryRequest, CreateRepositoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRepositoryRequest.class, CreateRepositoryResponse.class)
@@ -993,9 +890,7 @@ public class CodeHubMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRepoRequest.class),
-            f -> f.withMarshaller(CreateRepositoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRepositoryRequest::getBody, CreateRepositoryRequest::setBody));
 
         // response
 
@@ -1003,9 +898,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<DeleteDeployKeyRequest, DeleteDeployKeyResponse> deleteDeployKey =
-        genFordeleteDeployKey();
+        genForDeleteDeployKey();
 
-    private static HttpRequestDef<DeleteDeployKeyRequest, DeleteDeployKeyResponse> genFordeleteDeployKey() {
+    private static HttpRequestDef<DeleteDeployKeyRequest, DeleteDeployKeyResponse> genForDeleteDeployKey() {
         // basic
         HttpRequestDef.Builder<DeleteDeployKeyRequest, DeleteDeployKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeployKeyRequest.class, DeleteDeployKeyResponse.class)
@@ -1018,16 +913,12 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDeployKeyRequest::getKeyId, (req, v) -> {
-                req.setKeyId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeployKeyRequest::getKeyId, DeleteDeployKeyRequest::setKeyId));
         builder.<Integer>withRequestField("repository_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDeployKeyRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeployKeyRequest::getRepositoryId, DeleteDeployKeyRequest::setRepositoryId));
 
         // response
 
@@ -1035,9 +926,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<DeleteDeployKeyV2Request, DeleteDeployKeyV2Response> deleteDeployKeyV2 =
-        genFordeleteDeployKeyV2();
+        genForDeleteDeployKeyV2();
 
-    private static HttpRequestDef<DeleteDeployKeyV2Request, DeleteDeployKeyV2Response> genFordeleteDeployKeyV2() {
+    private static HttpRequestDef<DeleteDeployKeyV2Request, DeleteDeployKeyV2Response> genForDeleteDeployKeyV2() {
         // basic
         HttpRequestDef.Builder<DeleteDeployKeyV2Request, DeleteDeployKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeployKeyV2Request.class, DeleteDeployKeyV2Response.class)
@@ -1050,16 +941,13 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDeployKeyV2Request::getKeyId, (req, v) -> {
-                req.setKeyId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeployKeyV2Request::getKeyId, DeleteDeployKeyV2Request::setKeyId));
         builder.<Integer>withRequestField("repository_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDeployKeyV2Request::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeployKeyV2Request::getRepositoryId,
+                DeleteDeployKeyV2Request::setRepositoryId));
 
         // response
 
@@ -1067,9 +955,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<DeleteRepositoryRequest, DeleteRepositoryResponse> deleteRepository =
-        genFordeleteRepository();
+        genForDeleteRepository();
 
-    private static HttpRequestDef<DeleteRepositoryRequest, DeleteRepositoryResponse> genFordeleteRepository() {
+    private static HttpRequestDef<DeleteRepositoryRequest, DeleteRepositoryResponse> genForDeleteRepository() {
         // basic
         HttpRequestDef.Builder<DeleteRepositoryRequest, DeleteRepositoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRepositoryRequest.class, DeleteRepositoryResponse.class)
@@ -1082,9 +970,8 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepositoryRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(DeleteRepositoryRequest::getRepositoryUuid,
+                DeleteRepositoryRequest::setRepositoryUuid));
 
         // response
 
@@ -1092,9 +979,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse> getRepositoryByProjectId =
-        genForgetRepositoryByProjectId();
+        genForGetRepositoryByProjectId();
 
-    private static HttpRequestDef<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse> genForgetRepositoryByProjectId() {
+    private static HttpRequestDef<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse> genForGetRepositoryByProjectId() {
         // basic
         HttpRequestDef.Builder<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse> builder =
             HttpRequestDef
@@ -1108,18 +995,17 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetRepositoryByProjectIdRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(GetRepositoryByProjectIdRequest::getRepositoryUuid,
+                GetRepositoryByProjectIdRequest::setRepositoryUuid));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<GetTemplatesRequest, GetTemplatesResponse> getTemplates = genForgetTemplates();
+    public static final HttpRequestDef<GetTemplatesRequest, GetTemplatesResponse> getTemplates = genForGetTemplates();
 
-    private static HttpRequestDef<GetTemplatesRequest, GetTemplatesResponse> genForgetTemplates() {
+    private static HttpRequestDef<GetTemplatesRequest, GetTemplatesResponse> genForGetTemplates() {
         // basic
         HttpRequestDef.Builder<GetTemplatesRequest, GetTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GetTemplatesRequest.class, GetTemplatesResponse.class)
@@ -1132,79 +1018,57 @@ public class CodeHubMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getPlatform, (req, v) -> {
-                req.setPlatform(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getPlatform, GetTemplatesRequest::setPlatform));
         builder.<String>withRequestField("language",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getLanguage, (req, v) -> {
-                req.setLanguage(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getLanguage, GetTemplatesRequest::setLanguage));
         builder.<String>withRequestField("pipeline",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getPipeline, (req, v) -> {
-                req.setPipeline(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getPipeline, GetTemplatesRequest::setPipeline));
         builder.<String>withRequestField("entertype",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getEntertype, (req, v) -> {
-                req.setEntertype(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getEntertype, GetTemplatesRequest::setEntertype));
         builder.<String>withRequestField("search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getSearch, (req, v) -> {
-                req.setSearch(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getSearch, GetTemplatesRequest::setSearch));
         builder.<String>withRequestField("dateorder",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getDateorder, (req, v) -> {
-                req.setDateorder(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getDateorder, GetTemplatesRequest::setDateorder));
         builder.<String>withRequestField("usedtimeorder",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getUsedtimeorder, (req, v) -> {
-                req.setUsedtimeorder(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getUsedtimeorder, GetTemplatesRequest::setUsedtimeorder));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getType, GetTemplatesRequest::setType));
         builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getRegion, GetTemplatesRequest::setRegion));
         builder.<Integer>withRequestField("page_no",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getPageNo, GetTemplatesRequest::setPageNo));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(GetTemplatesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(GetTemplatesRequest::getPageSize, GetTemplatesRequest::setPageSize));
 
         // response
 
@@ -1212,9 +1076,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse> listBranchesByRepositoryId =
-        genForlistBranchesByRepositoryId();
+        genForListBranchesByRepositoryId();
 
-    private static HttpRequestDef<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse> genForlistBranchesByRepositoryId() {
+    private static HttpRequestDef<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse> genForListBranchesByRepositoryId() {
         // basic
         HttpRequestDef.Builder<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse> builder =
             HttpRequestDef
@@ -1230,30 +1094,26 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBranchesByRepositoryIdRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ListBranchesByRepositoryIdRequest::getRepositoryId,
+                ListBranchesByRepositoryIdRequest::setRepositoryId));
         builder.<String>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBranchesByRepositoryIdRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListBranchesByRepositoryIdRequest::getPage,
+                ListBranchesByRepositoryIdRequest::setPage));
         builder.<String>withRequestField("per_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBranchesByRepositoryIdRequest::getPerPage, (req, v) -> {
-                req.setPerPage(v);
-            }));
+            f -> f.withMarshaller(ListBranchesByRepositoryIdRequest::getPerPage,
+                ListBranchesByRepositoryIdRequest::setPerPage));
         builder.<String>withRequestField("match",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBranchesByRepositoryIdRequest::getMatch, (req, v) -> {
-                req.setMatch(v);
-            }));
+            f -> f.withMarshaller(ListBranchesByRepositoryIdRequest::getMatch,
+                ListBranchesByRepositoryIdRequest::setMatch));
 
         // response
 
@@ -1261,9 +1121,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ListCommitStatisticsRequest, ListCommitStatisticsResponse> listCommitStatistics =
-        genForlistCommitStatistics();
+        genForListCommitStatistics();
 
-    private static HttpRequestDef<ListCommitStatisticsRequest, ListCommitStatisticsResponse> genForlistCommitStatistics() {
+    private static HttpRequestDef<ListCommitStatisticsRequest, ListCommitStatisticsResponse> genForListCommitStatistics() {
         // basic
         HttpRequestDef.Builder<ListCommitStatisticsRequest, ListCommitStatisticsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCommitStatisticsRequest.class, ListCommitStatisticsResponse.class)
@@ -1276,25 +1136,23 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommitStatisticsRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ListCommitStatisticsRequest::getRepositoryId,
+                ListCommitStatisticsRequest::setRepositoryId));
         builder.<String>withRequestField("branch_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommitStatisticsRequest::getBranchName, (req, v) -> {
-                req.setBranchName(v);
-            }));
+            f -> f.withMarshaller(ListCommitStatisticsRequest::getBranchName,
+                ListCommitStatisticsRequest::setBranchName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFilesRequest, ListFilesResponse> listFiles = genForlistFiles();
+    public static final HttpRequestDef<ListFilesRequest, ListFilesResponse> listFiles = genForListFiles();
 
-    private static HttpRequestDef<ListFilesRequest, ListFilesResponse> genForlistFiles() {
+    private static HttpRequestDef<ListFilesRequest, ListFilesResponse> genForListFiles() {
         // basic
         HttpRequestDef.Builder<ListFilesRequest, ListFilesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFilesRequest.class, ListFilesResponse.class)
@@ -1307,23 +1165,17 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFilesRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ListFilesRequest::getRepositoryUuid, ListFilesRequest::setRepositoryUuid));
         builder.<String>withRequestField("branch_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFilesRequest::getBranchName, (req, v) -> {
-                req.setBranchName(v);
-            }));
+            f -> f.withMarshaller(ListFilesRequest::getBranchName, ListFilesRequest::setBranchName));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFilesRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ListFilesRequest::getPath, ListFilesRequest::setPath));
 
         // response
 
@@ -1331,9 +1183,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ListMergeRequestRequest, ListMergeRequestResponse> listMergeRequest =
-        genForlistMergeRequest();
+        genForListMergeRequest();
 
-    private static HttpRequestDef<ListMergeRequestRequest, ListMergeRequestResponse> genForlistMergeRequest() {
+    private static HttpRequestDef<ListMergeRequestRequest, ListMergeRequestResponse> genForListMergeRequest() {
         // basic
         HttpRequestDef.Builder<ListMergeRequestRequest, ListMergeRequestResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMergeRequestRequest.class, ListMergeRequestResponse.class)
@@ -1346,37 +1198,27 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMergeRequestRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ListMergeRequestRequest::getRepositoryId, ListMergeRequestRequest::setRepositoryId));
         builder.<String>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMergeRequestRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListMergeRequestRequest::getState, ListMergeRequestRequest::setState));
         builder.<String>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMergeRequestRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListMergeRequestRequest::getPage, ListMergeRequestRequest::setPage));
         builder.<String>withRequestField("per_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMergeRequestRequest::getPerPage, (req, v) -> {
-                req.setPerPage(v);
-            }));
+            f -> f.withMarshaller(ListMergeRequestRequest::getPerPage, ListMergeRequestRequest::setPerPage));
         builder.<String>withRequestField("search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMergeRequestRequest::getSearch, (req, v) -> {
-                req.setSearch(v);
-            }));
+            f -> f.withMarshaller(ListMergeRequestRequest::getSearch, ListMergeRequestRequest::setSearch));
 
         // response
 
@@ -1384,9 +1226,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ListRepositoryStatusRequest, ListRepositoryStatusResponse> listRepositoryStatus =
-        genForlistRepositoryStatus();
+        genForListRepositoryStatus();
 
-    private static HttpRequestDef<ListRepositoryStatusRequest, ListRepositoryStatusResponse> genForlistRepositoryStatus() {
+    private static HttpRequestDef<ListRepositoryStatusRequest, ListRepositoryStatusResponse> genForListRepositoryStatus() {
         // basic
         HttpRequestDef.Builder<ListRepositoryStatusRequest, ListRepositoryStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRepositoryStatusRequest.class, ListRepositoryStatusResponse.class)
@@ -1399,18 +1241,17 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryStatusRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ListRepositoryStatusRequest::getRepositoryUuid,
+                ListRepositoryStatusRequest::setRepositoryUuid));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSubfilesRequest, ListSubfilesResponse> listSubfiles = genForlistSubfiles();
+    public static final HttpRequestDef<ListSubfilesRequest, ListSubfilesResponse> listSubfiles = genForListSubfiles();
 
-    private static HttpRequestDef<ListSubfilesRequest, ListSubfilesResponse> genForlistSubfiles() {
+    private static HttpRequestDef<ListSubfilesRequest, ListSubfilesResponse> genForListSubfiles() {
         // basic
         HttpRequestDef.Builder<ListSubfilesRequest, ListSubfilesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubfilesRequest.class, ListSubfilesResponse.class)
@@ -1423,37 +1264,27 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubfilesRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ListSubfilesRequest::getRepositoryUuid, ListSubfilesRequest::setRepositoryUuid));
         builder.<String>withRequestField("branch_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubfilesRequest::getBranchName, (req, v) -> {
-                req.setBranchName(v);
-            }));
+            f -> f.withMarshaller(ListSubfilesRequest::getBranchName, ListSubfilesRequest::setBranchName));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubfilesRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ListSubfilesRequest::getPath, ListSubfilesRequest::setPath));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubfilesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSubfilesRequest::getOffset, ListSubfilesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubfilesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSubfilesRequest::getLimit, ListSubfilesRequest::setLimit));
 
         // response
 
@@ -1461,9 +1292,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ListTemplatesTwoRequest, ListTemplatesTwoResponse> listTemplatesTwo =
-        genForlistTemplatesTwo();
+        genForListTemplatesTwo();
 
-    private static HttpRequestDef<ListTemplatesTwoRequest, ListTemplatesTwoResponse> genForlistTemplatesTwo() {
+    private static HttpRequestDef<ListTemplatesTwoRequest, ListTemplatesTwoResponse> genForListTemplatesTwo() {
         // basic
         HttpRequestDef.Builder<ListTemplatesTwoRequest, ListTemplatesTwoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ListTemplatesTwoRequest.class, ListTemplatesTwoResponse.class)
@@ -1476,16 +1307,13 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesTwoRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesTwoRequest::getRepositoryUuid,
+                ListTemplatesTwoRequest::setRepositoryUuid));
         builder.<RepositoryTemplateVO2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RepositoryTemplateVO2.class),
-            f -> f.withMarshaller(ListTemplatesTwoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesTwoRequest::getBody, ListTemplatesTwoRequest::setBody));
 
         // response
 
@@ -1493,9 +1321,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ListTwoTemplatesRequest, ListTwoTemplatesResponse> listTwoTemplates =
-        genForlistTwoTemplates();
+        genForListTwoTemplates();
 
-    private static HttpRequestDef<ListTwoTemplatesRequest, ListTwoTemplatesResponse> genForlistTwoTemplates() {
+    private static HttpRequestDef<ListTwoTemplatesRequest, ListTwoTemplatesResponse> genForListTwoTemplates() {
         // basic
         HttpRequestDef.Builder<ListTwoTemplatesRequest, ListTwoTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTwoTemplatesRequest.class, ListTwoTemplatesResponse.class)
@@ -1508,79 +1336,58 @@ public class CodeHubMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getPlatform, (req, v) -> {
-                req.setPlatform(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getPlatform, ListTwoTemplatesRequest::setPlatform));
         builder.<String>withRequestField("language",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getLanguage, (req, v) -> {
-                req.setLanguage(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getLanguage, ListTwoTemplatesRequest::setLanguage));
         builder.<String>withRequestField("pipeline",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getPipeline, (req, v) -> {
-                req.setPipeline(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getPipeline, ListTwoTemplatesRequest::setPipeline));
         builder.<String>withRequestField("enter_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getEnterType, (req, v) -> {
-                req.setEnterType(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getEnterType, ListTwoTemplatesRequest::setEnterType));
         builder.<String>withRequestField("search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getSearch, (req, v) -> {
-                req.setSearch(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getSearch, ListTwoTemplatesRequest::setSearch));
         builder.<String>withRequestField("date_order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getDateOrder, (req, v) -> {
-                req.setDateOrder(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getDateOrder, ListTwoTemplatesRequest::setDateOrder));
         builder.<String>withRequestField("used_time_order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getUsedTimeOrder, (req, v) -> {
-                req.setUsedTimeOrder(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getUsedTimeOrder,
+                ListTwoTemplatesRequest::setUsedTimeOrder));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getType, ListTwoTemplatesRequest::setType));
         builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getRegion, ListTwoTemplatesRequest::setRegion));
         builder.<Integer>withRequestField("page_no",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getPageNo, ListTwoTemplatesRequest::setPageNo));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTwoTemplatesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListTwoTemplatesRequest::getPageSize, ListTwoTemplatesRequest::setPageSize));
 
         // response
 
@@ -1588,9 +1395,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShareTemplatesRequest, ShareTemplatesResponse> shareTemplates =
-        genForshareTemplates();
+        genForShareTemplates();
 
-    private static HttpRequestDef<ShareTemplatesRequest, ShareTemplatesResponse> genForshareTemplates() {
+    private static HttpRequestDef<ShareTemplatesRequest, ShareTemplatesResponse> genForShareTemplates() {
         // basic
         HttpRequestDef.Builder<ShareTemplatesRequest, ShareTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ShareTemplatesRequest.class, ShareTemplatesResponse.class)
@@ -1603,16 +1410,12 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShareTemplatesRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ShareTemplatesRequest::getRepositoryUuid, ShareTemplatesRequest::setRepositoryUuid));
         builder.<RepositoryTemplateVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RepositoryTemplateVO.class),
-            f -> f.withMarshaller(ShareTemplatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShareTemplatesRequest::getBody, ShareTemplatesRequest::setBody));
 
         // response
 
@@ -1620,9 +1423,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowBranchesByRepositoryIdRequest, ShowBranchesByRepositoryIdResponse> showBranchesByRepositoryId =
-        genForshowBranchesByRepositoryId();
+        genForShowBranchesByRepositoryId();
 
-    private static HttpRequestDef<ShowBranchesByRepositoryIdRequest, ShowBranchesByRepositoryIdResponse> genForshowBranchesByRepositoryId() {
+    private static HttpRequestDef<ShowBranchesByRepositoryIdRequest, ShowBranchesByRepositoryIdResponse> genForShowBranchesByRepositoryId() {
         // basic
         HttpRequestDef.Builder<ShowBranchesByRepositoryIdRequest, ShowBranchesByRepositoryIdResponse> builder =
             HttpRequestDef
@@ -1638,9 +1441,8 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBranchesByRepositoryIdRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ShowBranchesByRepositoryIdRequest::getRepositoryId,
+                ShowBranchesByRepositoryIdRequest::setRepositoryId));
 
         // response
 
@@ -1648,9 +1450,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowBranchesByTwoRepositoryIdRequest, ShowBranchesByTwoRepositoryIdResponse> showBranchesByTwoRepositoryId =
-        genForshowBranchesByTwoRepositoryId();
+        genForShowBranchesByTwoRepositoryId();
 
-    private static HttpRequestDef<ShowBranchesByTwoRepositoryIdRequest, ShowBranchesByTwoRepositoryIdResponse> genForshowBranchesByTwoRepositoryId() {
+    private static HttpRequestDef<ShowBranchesByTwoRepositoryIdRequest, ShowBranchesByTwoRepositoryIdResponse> genForShowBranchesByTwoRepositoryId() {
         // basic
         HttpRequestDef.Builder<ShowBranchesByTwoRepositoryIdRequest, ShowBranchesByTwoRepositoryIdResponse> builder =
             HttpRequestDef
@@ -1666,9 +1468,8 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBranchesByTwoRepositoryIdRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ShowBranchesByTwoRepositoryIdRequest::getRepositoryId,
+                ShowBranchesByTwoRepositoryIdRequest::setRepositoryId));
 
         // response
 
@@ -1676,9 +1477,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowCommitsByBranchRequest, ShowCommitsByBranchResponse> showCommitsByBranch =
-        genForshowCommitsByBranch();
+        genForShowCommitsByBranch();
 
-    private static HttpRequestDef<ShowCommitsByBranchRequest, ShowCommitsByBranchResponse> genForshowCommitsByBranch() {
+    private static HttpRequestDef<ShowCommitsByBranchRequest, ShowCommitsByBranchResponse> genForShowCommitsByBranch() {
         // basic
         HttpRequestDef.Builder<ShowCommitsByBranchRequest, ShowCommitsByBranchResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCommitsByBranchRequest.class, ShowCommitsByBranchResponse.class)
@@ -1691,37 +1492,28 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommitsByBranchRequest::getGroupName, (req, v) -> {
-                req.setGroupName(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByBranchRequest::getGroupName, ShowCommitsByBranchRequest::setGroupName));
         builder.<String>withRequestField("repository_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommitsByBranchRequest::getRepositoryName, (req, v) -> {
-                req.setRepositoryName(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByBranchRequest::getRepositoryName,
+                ShowCommitsByBranchRequest::setRepositoryName));
         builder.<Integer>withRequestField("page_index",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCommitsByBranchRequest::getPageIndex, (req, v) -> {
-                req.setPageIndex(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByBranchRequest::getPageIndex, ShowCommitsByBranchRequest::setPageIndex));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCommitsByBranchRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByBranchRequest::getPageSize, ShowCommitsByBranchRequest::setPageSize));
         builder.<String>withRequestField("ref_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommitsByBranchRequest::getRefName, (req, v) -> {
-                req.setRefName(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByBranchRequest::getRefName, ShowCommitsByBranchRequest::setRefName));
 
         // response
 
@@ -1729,9 +1521,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowCommitsByRepoIdRequest, ShowCommitsByRepoIdResponse> showCommitsByRepoId =
-        genForshowCommitsByRepoId();
+        genForShowCommitsByRepoId();
 
-    private static HttpRequestDef<ShowCommitsByRepoIdRequest, ShowCommitsByRepoIdResponse> genForshowCommitsByRepoId() {
+    private static HttpRequestDef<ShowCommitsByRepoIdRequest, ShowCommitsByRepoIdResponse> genForShowCommitsByRepoId() {
         // basic
         HttpRequestDef.Builder<ShowCommitsByRepoIdRequest, ShowCommitsByRepoIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCommitsByRepoIdRequest.class, ShowCommitsByRepoIdResponse.class)
@@ -1744,72 +1536,54 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getRepositoryId,
+                ShowCommitsByRepoIdRequest::setRepositoryId));
         builder.<String>withRequestField("author",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getAuthor, (req, v) -> {
-                req.setAuthor(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getAuthor, ShowCommitsByRepoIdRequest::setAuthor));
         builder.<String>withRequestField("begin_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getBeginDate, (req, v) -> {
-                req.setBeginDate(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getBeginDate, ShowCommitsByRepoIdRequest::setBeginDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getEndDate, ShowCommitsByRepoIdRequest::setEndDate));
         builder.<String>withRequestField("message",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getMessage, (req, v) -> {
-                req.setMessage(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getMessage, ShowCommitsByRepoIdRequest::setMessage));
         builder.<Integer>withRequestField("page_index",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getPageIndex, (req, v) -> {
-                req.setPageIndex(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getPageIndex, ShowCommitsByRepoIdRequest::setPageIndex));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getPageSize, ShowCommitsByRepoIdRequest::setPageSize));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getPath, ShowCommitsByRepoIdRequest::setPath));
         builder.<String>withRequestField("ref_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getRefName, (req, v) -> {
-                req.setRefName(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getRefName, ShowCommitsByRepoIdRequest::setRefName));
         builder.<String>withRequestField("stat_format",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getStatFormat, (req, v) -> {
-                req.setStatFormat(v);
-            }));
+            f -> f.withMarshaller(ShowCommitsByRepoIdRequest::getStatFormat,
+                ShowCommitsByRepoIdRequest::setStatFormat));
 
         // response
 
@@ -1817,9 +1591,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowHasPipelineRequest, ShowHasPipelineResponse> showHasPipeline =
-        genForshowHasPipeline();
+        genForShowHasPipeline();
 
-    private static HttpRequestDef<ShowHasPipelineRequest, ShowHasPipelineResponse> genForshowHasPipeline() {
+    private static HttpRequestDef<ShowHasPipelineRequest, ShowHasPipelineResponse> genForShowHasPipeline() {
         // basic
         HttpRequestDef.Builder<ShowHasPipelineRequest, ShowHasPipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ShowHasPipelineRequest.class, ShowHasPipelineResponse.class)
@@ -1832,9 +1606,8 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHasPipelineRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ShowHasPipelineRequest::getRepositoryUuid,
+                ShowHasPipelineRequest::setRepositoryUuid));
 
         // response
 
@@ -1842,9 +1615,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowImageBlobRequest, ShowImageBlobResponse> showImageBlob =
-        genForshowImageBlob();
+        genForShowImageBlob();
 
-    private static HttpRequestDef<ShowImageBlobRequest, ShowImageBlobResponse> genForshowImageBlob() {
+    private static HttpRequestDef<ShowImageBlobRequest, ShowImageBlobResponse> genForShowImageBlob() {
         // basic
         HttpRequestDef.Builder<ShowImageBlobRequest, ShowImageBlobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowImageBlobRequest.class, ShowImageBlobResponse.class)
@@ -1857,32 +1630,26 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowImageBlobRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ShowImageBlobRequest::getRepositoryUuid, ShowImageBlobRequest::setRepositoryUuid));
         builder.<String>withRequestField("branch_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowImageBlobRequest::getBranchName, (req, v) -> {
-                req.setBranchName(v);
-            }));
+            f -> f.withMarshaller(ShowImageBlobRequest::getBranchName, ShowImageBlobRequest::setBranchName));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowImageBlobRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ShowImageBlobRequest::getPath, ShowImageBlobRequest::setPath));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMasterRequest, ShowMasterResponse> showMaster = genForshowMaster();
+    public static final HttpRequestDef<ShowMasterRequest, ShowMasterResponse> showMaster = genForShowMaster();
 
-    private static HttpRequestDef<ShowMasterRequest, ShowMasterResponse> genForshowMaster() {
+    private static HttpRequestDef<ShowMasterRequest, ShowMasterResponse> genForShowMaster() {
         // basic
         HttpRequestDef.Builder<ShowMasterRequest, ShowMasterResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMasterRequest.class, ShowMasterResponse.class)
@@ -1895,9 +1662,7 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMasterRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ShowMasterRequest::getRepositoryUuid, ShowMasterRequest::setRepositoryUuid));
 
         // response
 
@@ -1905,9 +1670,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowMergeRequestRequest, ShowMergeRequestResponse> showMergeRequest =
-        genForshowMergeRequest();
+        genForShowMergeRequest();
 
-    private static HttpRequestDef<ShowMergeRequestRequest, ShowMergeRequestResponse> genForshowMergeRequest() {
+    private static HttpRequestDef<ShowMergeRequestRequest, ShowMergeRequestResponse> genForShowMergeRequest() {
         // basic
         HttpRequestDef.Builder<ShowMergeRequestRequest, ShowMergeRequestResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMergeRequestRequest.class, ShowMergeRequestResponse.class)
@@ -1920,25 +1685,22 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMergeRequestRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ShowMergeRequestRequest::getRepositoryId, ShowMergeRequestRequest::setRepositoryId));
         builder.<Integer>withRequestField("merge_request_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMergeRequestRequest::getMergeRequestId, (req, v) -> {
-                req.setMergeRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowMergeRequestRequest::getMergeRequestId,
+                ShowMergeRequestRequest::setMergeRequestId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRepoIdRequest, ShowRepoIdResponse> showRepoId = genForshowRepoId();
+    public static final HttpRequestDef<ShowRepoIdRequest, ShowRepoIdResponse> showRepoId = genForShowRepoId();
 
-    private static HttpRequestDef<ShowRepoIdRequest, ShowRepoIdResponse> genForshowRepoId() {
+    private static HttpRequestDef<ShowRepoIdRequest, ShowRepoIdResponse> genForShowRepoId() {
         // basic
         HttpRequestDef.Builder<ShowRepoIdRequest, ShowRepoIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRepoIdRequest.class, ShowRepoIdResponse.class)
@@ -1951,16 +1713,12 @@ public class CodeHubMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepoIdRequest::getGroupName, (req, v) -> {
-                req.setGroupName(v);
-            }));
+            f -> f.withMarshaller(ShowRepoIdRequest::getGroupName, ShowRepoIdRequest::setGroupName));
         builder.<String>withRequestField("repository_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepoIdRequest::getRepositoryName, (req, v) -> {
-                req.setRepositoryName(v);
-            }));
+            f -> f.withMarshaller(ShowRepoIdRequest::getRepositoryName, ShowRepoIdRequest::setRepositoryName));
 
         // response
 
@@ -1968,9 +1726,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowRepositoryArchiveRequest, ShowRepositoryArchiveResponse> showRepositoryArchive =
-        genForshowRepositoryArchive();
+        genForShowRepositoryArchive();
 
-    private static HttpRequestDef<ShowRepositoryArchiveRequest, ShowRepositoryArchiveResponse> genForshowRepositoryArchive() {
+    private static HttpRequestDef<ShowRepositoryArchiveRequest, ShowRepositoryArchiveResponse> genForShowRepositoryArchive() {
         // basic
         HttpRequestDef.Builder<ShowRepositoryArchiveRequest, ShowRepositoryArchiveResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowRepositoryArchiveRequest.class, ShowRepositoryArchiveResponse.class)
@@ -1983,23 +1741,18 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryArchiveRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryArchiveRequest::getRepositoryUuid,
+                ShowRepositoryArchiveRequest::setRepositoryUuid));
         builder.<String>withRequestField("sha",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryArchiveRequest::getSha, (req, v) -> {
-                req.setSha(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryArchiveRequest::getSha, ShowRepositoryArchiveRequest::setSha));
         builder.<String>withRequestField("format",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryArchiveRequest::getFormat, (req, v) -> {
-                req.setFormat(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryArchiveRequest::getFormat, ShowRepositoryArchiveRequest::setFormat));
 
         // response
 
@@ -2007,9 +1760,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowRepositoryByUuidRequest, ShowRepositoryByUuidResponse> showRepositoryByUuid =
-        genForshowRepositoryByUuid();
+        genForShowRepositoryByUuid();
 
-    private static HttpRequestDef<ShowRepositoryByUuidRequest, ShowRepositoryByUuidResponse> genForshowRepositoryByUuid() {
+    private static HttpRequestDef<ShowRepositoryByUuidRequest, ShowRepositoryByUuidResponse> genForShowRepositoryByUuid() {
         // basic
         HttpRequestDef.Builder<ShowRepositoryByUuidRequest, ShowRepositoryByUuidResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowRepositoryByUuidRequest.class, ShowRepositoryByUuidResponse.class)
@@ -2022,9 +1775,8 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryByUuidRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryByUuidRequest::getRepositoryUuid,
+                ShowRepositoryByUuidRequest::setRepositoryUuid));
 
         // response
 
@@ -2032,9 +1784,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowRepositoryStatisticsRequest, ShowRepositoryStatisticsResponse> showRepositoryStatistics =
-        genForshowRepositoryStatistics();
+        genForShowRepositoryStatistics();
 
-    private static HttpRequestDef<ShowRepositoryStatisticsRequest, ShowRepositoryStatisticsResponse> genForshowRepositoryStatistics() {
+    private static HttpRequestDef<ShowRepositoryStatisticsRequest, ShowRepositoryStatisticsResponse> genForShowRepositoryStatistics() {
         // basic
         HttpRequestDef.Builder<ShowRepositoryStatisticsRequest, ShowRepositoryStatisticsResponse> builder =
             HttpRequestDef
@@ -2048,16 +1800,13 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRepositoryStatisticsRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryStatisticsRequest::getRepositoryId,
+                ShowRepositoryStatisticsRequest::setRepositoryId));
         builder.<ShowRepositoryStatisticsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowRepositoryStatisticsRequestBody.class),
-            f -> f.withMarshaller(ShowRepositoryStatisticsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryStatisticsRequest::getBody, ShowRepositoryStatisticsRequest::setBody));
 
         // response
 
@@ -2065,9 +1814,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowStatisticCommitRequest, ShowStatisticCommitResponse> showStatisticCommit =
-        genForshowStatisticCommit();
+        genForShowStatisticCommit();
 
-    private static HttpRequestDef<ShowStatisticCommitRequest, ShowStatisticCommitResponse> genForshowStatisticCommit() {
+    private static HttpRequestDef<ShowStatisticCommitRequest, ShowStatisticCommitResponse> genForShowStatisticCommit() {
         // basic
         HttpRequestDef.Builder<ShowStatisticCommitRequest, ShowStatisticCommitResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStatisticCommitRequest.class, ShowStatisticCommitResponse.class)
@@ -2080,30 +1829,23 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowStatisticCommitRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticCommitRequest::getRepositoryId,
+                ShowStatisticCommitRequest::setRepositoryId));
         builder.<String>withRequestField("ref_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStatisticCommitRequest::getRefName, (req, v) -> {
-                req.setRefName(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticCommitRequest::getRefName, ShowStatisticCommitRequest::setRefName));
         builder.<String>withRequestField("begin_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStatisticCommitRequest::getBeginDate, (req, v) -> {
-                req.setBeginDate(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticCommitRequest::getBeginDate, ShowStatisticCommitRequest::setBeginDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStatisticCommitRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticCommitRequest::getEndDate, ShowStatisticCommitRequest::setEndDate));
 
         // response
 
@@ -2111,9 +1853,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response> showStatisticCommitV3 =
-        genForshowStatisticCommitV3();
+        genForShowStatisticCommitV3();
 
-    private static HttpRequestDef<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response> genForshowStatisticCommitV3() {
+    private static HttpRequestDef<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response> genForShowStatisticCommitV3() {
         // basic
         HttpRequestDef.Builder<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowStatisticCommitV3Request.class, ShowStatisticCommitV3Response.class)
@@ -2126,30 +1868,24 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowStatisticCommitV3Request::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticCommitV3Request::getRepositoryId,
+                ShowStatisticCommitV3Request::setRepositoryId));
         builder.<String>withRequestField("ref_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStatisticCommitV3Request::getRefName, (req, v) -> {
-                req.setRefName(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticCommitV3Request::getRefName, ShowStatisticCommitV3Request::setRefName));
         builder.<String>withRequestField("begin_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStatisticCommitV3Request::getBeginDate, (req, v) -> {
-                req.setBeginDate(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticCommitV3Request::getBeginDate,
+                ShowStatisticCommitV3Request::setBeginDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStatisticCommitV3Request::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticCommitV3Request::getEndDate, ShowStatisticCommitV3Request::setEndDate));
 
         // response
 
@@ -2157,9 +1893,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowStatisticalDataRequest, ShowStatisticalDataResponse> showStatisticalData =
-        genForshowStatisticalData();
+        genForShowStatisticalData();
 
-    private static HttpRequestDef<ShowStatisticalDataRequest, ShowStatisticalDataResponse> genForshowStatisticalData() {
+    private static HttpRequestDef<ShowStatisticalDataRequest, ShowStatisticalDataResponse> genForShowStatisticalData() {
         // basic
         HttpRequestDef.Builder<ShowStatisticalDataRequest, ShowStatisticalDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStatisticalDataRequest.class, ShowStatisticalDataResponse.class)
@@ -2172,18 +1908,17 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStatisticalDataRequest::getRepositoryUuid, (req, v) -> {
-                req.setRepositoryUuid(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticalDataRequest::getRepositoryUuid,
+                ShowStatisticalDataRequest::setRepositoryUuid));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddSshKeyRequest, AddSshKeyResponse> addSshKey = genForaddSshKey();
+    public static final HttpRequestDef<AddSshKeyRequest, AddSshKeyResponse> addSshKey = genForAddSshKey();
 
-    private static HttpRequestDef<AddSshKeyRequest, AddSshKeyResponse> genForaddSshKey() {
+    private static HttpRequestDef<AddSshKeyRequest, AddSshKeyResponse> genForAddSshKey() {
         // basic
         HttpRequestDef.Builder<AddSshKeyRequest, AddSshKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddSshKeyRequest.class, AddSshKeyResponse.class)
@@ -2196,18 +1931,16 @@ public class CodeHubMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddSshKeyRequestBody.class),
-            f -> f.withMarshaller(AddSshKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddSshKeyRequest::getBody, AddSshKeyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSShkeyRequest, DeleteSShkeyResponse> deleteSShkey = genFordeleteSShkey();
+    public static final HttpRequestDef<DeleteSShkeyRequest, DeleteSShkeyResponse> deleteSShkey = genForDeleteSShkey();
 
-    private static HttpRequestDef<DeleteSShkeyRequest, DeleteSShkeyResponse> genFordeleteSShkey() {
+    private static HttpRequestDef<DeleteSShkeyRequest, DeleteSShkeyResponse> genForDeleteSShkey() {
         // basic
         HttpRequestDef.Builder<DeleteSShkeyRequest, DeleteSShkeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSShkeyRequest.class, DeleteSShkeyResponse.class)
@@ -2220,18 +1953,16 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSShkeyRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteSShkeyRequest::getId, DeleteSShkeyRequest::setId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSshKeysRequest, ListSshKeysResponse> listSshKeys = genForlistSshKeys();
+    public static final HttpRequestDef<ListSshKeysRequest, ListSshKeysResponse> listSshKeys = genForListSshKeys();
 
-    private static HttpRequestDef<ListSshKeysRequest, ListSshKeysResponse> genForlistSshKeys() {
+    private static HttpRequestDef<ListSshKeysRequest, ListSshKeysResponse> genForListSshKeys() {
         // basic
         HttpRequestDef.Builder<ListSshKeysRequest, ListSshKeysResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSshKeysRequest.class, ListSshKeysResponse.class)
@@ -2247,9 +1978,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowPrivateKeyVerifyRequest, ShowPrivateKeyVerifyResponse> showPrivateKeyVerify =
-        genForshowPrivateKeyVerify();
+        genForShowPrivateKeyVerify();
 
-    private static HttpRequestDef<ShowPrivateKeyVerifyRequest, ShowPrivateKeyVerifyResponse> genForshowPrivateKeyVerify() {
+    private static HttpRequestDef<ShowPrivateKeyVerifyRequest, ShowPrivateKeyVerifyResponse> genForShowPrivateKeyVerify() {
         // basic
         HttpRequestDef.Builder<ShowPrivateKeyVerifyRequest, ShowPrivateKeyVerifyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowPrivateKeyVerifyRequest.class, ShowPrivateKeyVerifyResponse.class)
@@ -2262,9 +1993,7 @@ public class CodeHubMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PrivateKeyVerify.class),
-            f -> f.withMarshaller(ShowPrivateKeyVerifyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowPrivateKeyVerifyRequest::getBody, ShowPrivateKeyVerifyRequest::setBody));
 
         // response
 
@@ -2272,9 +2001,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse> validateHttpsInfo =
-        genForvalidateHttpsInfo();
+        genForValidateHttpsInfo();
 
-    private static HttpRequestDef<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse> genForvalidateHttpsInfo() {
+    private static HttpRequestDef<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse> genForValidateHttpsInfo() {
         // basic
         HttpRequestDef.Builder<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ValidateHttpsInfoRequest.class, ValidateHttpsInfoResponse.class)
@@ -2287,16 +2016,12 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateHttpsInfoRequest::getIamUserUuid, (req, v) -> {
-                req.setIamUserUuid(v);
-            }));
+            f -> f.withMarshaller(ValidateHttpsInfoRequest::getIamUserUuid, ValidateHttpsInfoRequest::setIamUserUuid));
         builder.<PasswordRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PasswordRequest.class),
-            f -> f.withMarshaller(ValidateHttpsInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ValidateHttpsInfoRequest::getBody, ValidateHttpsInfoRequest::setBody));
 
         // response
 
@@ -2304,9 +2029,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ValidateHttpsInfoV2Request, ValidateHttpsInfoV2Response> validateHttpsInfoV2 =
-        genForvalidateHttpsInfoV2();
+        genForValidateHttpsInfoV2();
 
-    private static HttpRequestDef<ValidateHttpsInfoV2Request, ValidateHttpsInfoV2Response> genForvalidateHttpsInfoV2() {
+    private static HttpRequestDef<ValidateHttpsInfoV2Request, ValidateHttpsInfoV2Response> genForValidateHttpsInfoV2() {
         // basic
         HttpRequestDef.Builder<ValidateHttpsInfoV2Request, ValidateHttpsInfoV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, ValidateHttpsInfoV2Request.class, ValidateHttpsInfoV2Response.class)
@@ -2319,16 +2044,13 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateHttpsInfoV2Request::getIamUserUuid, (req, v) -> {
-                req.setIamUserUuid(v);
-            }));
+            f -> f.withMarshaller(ValidateHttpsInfoV2Request::getIamUserUuid,
+                ValidateHttpsInfoV2Request::setIamUserUuid));
         builder.<PasswordRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PasswordRequest.class),
-            f -> f.withMarshaller(ValidateHttpsInfoV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ValidateHttpsInfoV2Request::getBody, ValidateHttpsInfoV2Request::setBody));
 
         // response
 
@@ -2336,9 +2058,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<CreateNewBranchRequest, CreateNewBranchResponse> createNewBranch =
-        genForcreateNewBranch();
+        genForCreateNewBranch();
 
-    private static HttpRequestDef<CreateNewBranchRequest, CreateNewBranchResponse> genForcreateNewBranch() {
+    private static HttpRequestDef<CreateNewBranchRequest, CreateNewBranchResponse> genForCreateNewBranch() {
         // basic
         HttpRequestDef.Builder<CreateNewBranchRequest, CreateNewBranchResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNewBranchRequest.class, CreateNewBranchResponse.class)
@@ -2351,16 +2073,12 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNewBranchRequest::getRepositoryId, (req, v) -> {
-                req.setRepositoryId(v);
-            }));
+            f -> f.withMarshaller(CreateNewBranchRequest::getRepositoryId, CreateNewBranchRequest::setRepositoryId));
         builder.<CreateNewBranchRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNewBranchRequestBody.class),
-            f -> f.withMarshaller(CreateNewBranchRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNewBranchRequest::getBody, CreateNewBranchRequest::setBody));
 
         // response
 
@@ -2368,9 +2086,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<AssociateIssuesRequest, AssociateIssuesResponse> associateIssues =
-        genForassociateIssues();
+        genForAssociateIssues();
 
-    private static HttpRequestDef<AssociateIssuesRequest, AssociateIssuesResponse> genForassociateIssues() {
+    private static HttpRequestDef<AssociateIssuesRequest, AssociateIssuesResponse> genForAssociateIssues() {
         // basic
         HttpRequestDef.Builder<AssociateIssuesRequest, AssociateIssuesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateIssuesRequest.class, AssociateIssuesResponse.class)
@@ -2383,9 +2101,7 @@ public class CodeHubMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociateIssuesRequestBody.class),
-            f -> f.withMarshaller(AssociateIssuesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateIssuesRequest::getBody, AssociateIssuesRequest::setBody));
 
         // response
 
@@ -2393,9 +2109,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<CreateProjectAndRepositoriesRequest, CreateProjectAndRepositoriesResponse> createProjectAndRepositories =
-        genForcreateProjectAndRepositories();
+        genForCreateProjectAndRepositories();
 
-    private static HttpRequestDef<CreateProjectAndRepositoriesRequest, CreateProjectAndRepositoriesResponse> genForcreateProjectAndRepositories() {
+    private static HttpRequestDef<CreateProjectAndRepositoriesRequest, CreateProjectAndRepositoriesResponse> genForCreateProjectAndRepositories() {
         // basic
         HttpRequestDef.Builder<CreateProjectAndRepositoriesRequest, CreateProjectAndRepositoriesResponse> builder =
             HttpRequestDef
@@ -2411,9 +2127,8 @@ public class CodeHubMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateProjectRepoRequest.class),
-            f -> f.withMarshaller(CreateProjectAndRepositoriesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProjectAndRepositoriesRequest::getBody,
+                CreateProjectAndRepositoriesRequest::setBody));
 
         // response
 
@@ -2421,9 +2136,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<CreateProjectAndforkRepositoriesRequest, CreateProjectAndforkRepositoriesResponse> createProjectAndforkRepositories =
-        genForcreateProjectAndforkRepositories();
+        genForCreateProjectAndforkRepositories();
 
-    private static HttpRequestDef<CreateProjectAndforkRepositoriesRequest, CreateProjectAndforkRepositoriesResponse> genForcreateProjectAndforkRepositories() {
+    private static HttpRequestDef<CreateProjectAndforkRepositoriesRequest, CreateProjectAndforkRepositoriesResponse> genForCreateProjectAndforkRepositories() {
         // basic
         HttpRequestDef.Builder<CreateProjectAndforkRepositoriesRequest, CreateProjectAndforkRepositoriesResponse> builder =
             HttpRequestDef
@@ -2439,9 +2154,8 @@ public class CodeHubMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ForkProjectRepoRequest.class),
-            f -> f.withMarshaller(CreateProjectAndforkRepositoriesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProjectAndforkRepositoriesRequest::getBody,
+                CreateProjectAndforkRepositoriesRequest::setBody));
 
         // response
 
@@ -2449,9 +2163,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ListUserAllRepositoriesRequest, ListUserAllRepositoriesResponse> listUserAllRepositories =
-        genForlistUserAllRepositories();
+        genForListUserAllRepositories();
 
-    private static HttpRequestDef<ListUserAllRepositoriesRequest, ListUserAllRepositoriesResponse> genForlistUserAllRepositories() {
+    private static HttpRequestDef<ListUserAllRepositoriesRequest, ListUserAllRepositoriesResponse> genForListUserAllRepositories() {
         // basic
         HttpRequestDef.Builder<ListUserAllRepositoriesRequest, ListUserAllRepositoriesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListUserAllRepositoriesRequest.class, ListUserAllRepositoriesResponse.class)
@@ -2464,23 +2178,20 @@ public class CodeHubMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUserAllRepositoriesRequest::getPageIndex, (req, v) -> {
-                req.setPageIndex(v);
-            }));
+            f -> f.withMarshaller(ListUserAllRepositoriesRequest::getPageIndex,
+                ListUserAllRepositoriesRequest::setPageIndex));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUserAllRepositoriesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListUserAllRepositoriesRequest::getPageSize,
+                ListUserAllRepositoriesRequest::setPageSize));
         builder.<String>withRequestField("search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUserAllRepositoriesRequest::getSearch, (req, v) -> {
-                req.setSearch(v);
-            }));
+            f -> f.withMarshaller(ListUserAllRepositoriesRequest::getSearch,
+                ListUserAllRepositoriesRequest::setSearch));
 
         // response
 
@@ -2488,9 +2199,9 @@ public class CodeHubMeta {
     }
 
     public static final HttpRequestDef<ShowAllRepositoryByTwoProjectIdRequest, ShowAllRepositoryByTwoProjectIdResponse> showAllRepositoryByTwoProjectId =
-        genForshowAllRepositoryByTwoProjectId();
+        genForShowAllRepositoryByTwoProjectId();
 
-    private static HttpRequestDef<ShowAllRepositoryByTwoProjectIdRequest, ShowAllRepositoryByTwoProjectIdResponse> genForshowAllRepositoryByTwoProjectId() {
+    private static HttpRequestDef<ShowAllRepositoryByTwoProjectIdRequest, ShowAllRepositoryByTwoProjectIdResponse> genForShowAllRepositoryByTwoProjectId() {
         // basic
         HttpRequestDef.Builder<ShowAllRepositoryByTwoProjectIdRequest, ShowAllRepositoryByTwoProjectIdResponse> builder =
             HttpRequestDef
@@ -2506,39 +2217,35 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllRepositoryByTwoProjectIdRequest::getProjectUuid, (req, v) -> {
-                req.setProjectUuid(v);
-            }));
+            f -> f.withMarshaller(ShowAllRepositoryByTwoProjectIdRequest::getProjectUuid,
+                ShowAllRepositoryByTwoProjectIdRequest::setProjectUuid));
         builder.<Integer>withRequestField("page_index",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllRepositoryByTwoProjectIdRequest::getPageIndex, (req, v) -> {
-                req.setPageIndex(v);
-            }));
+            f -> f.withMarshaller(ShowAllRepositoryByTwoProjectIdRequest::getPageIndex,
+                ShowAllRepositoryByTwoProjectIdRequest::setPageIndex));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllRepositoryByTwoProjectIdRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowAllRepositoryByTwoProjectIdRequest::getPageSize,
+                ShowAllRepositoryByTwoProjectIdRequest::setPageSize));
         builder.<String>withRequestField("search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllRepositoryByTwoProjectIdRequest::getSearch, (req, v) -> {
-                req.setSearch(v);
-            }));
+            f -> f.withMarshaller(ShowAllRepositoryByTwoProjectIdRequest::getSearch,
+                ShowAllRepositoryByTwoProjectIdRequest::setSearch));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddHooksRequest, AddHooksResponse> addHooks = genForaddHooks();
+    public static final HttpRequestDef<AddHooksRequest, AddHooksResponse> addHooks = genForAddHooks();
 
-    private static HttpRequestDef<AddHooksRequest, AddHooksResponse> genForaddHooks() {
+    private static HttpRequestDef<AddHooksRequest, AddHooksResponse> genForAddHooks() {
         // basic
         HttpRequestDef.Builder<AddHooksRequest, AddHooksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddHooksRequest.class, AddHooksResponse.class)
@@ -2551,32 +2258,26 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddHooksRequest::getGroupName, (req, v) -> {
-                req.setGroupName(v);
-            }));
+            f -> f.withMarshaller(AddHooksRequest::getGroupName, AddHooksRequest::setGroupName));
         builder.<String>withRequestField("repository_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddHooksRequest::getRepositoryName, (req, v) -> {
-                req.setRepositoryName(v);
-            }));
+            f -> f.withMarshaller(AddHooksRequest::getRepositoryName, AddHooksRequest::setRepositoryName));
         builder.<RepositoryHookRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RepositoryHookRequest.class),
-            f -> f.withMarshaller(AddHooksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddHooksRequest::getBody, AddHooksRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteHooksRequest, DeleteHooksResponse> deleteHooks = genFordeleteHooks();
+    public static final HttpRequestDef<DeleteHooksRequest, DeleteHooksResponse> deleteHooks = genForDeleteHooks();
 
-    private static HttpRequestDef<DeleteHooksRequest, DeleteHooksResponse> genFordeleteHooks() {
+    private static HttpRequestDef<DeleteHooksRequest, DeleteHooksResponse> genForDeleteHooks() {
         // basic
         HttpRequestDef.Builder<DeleteHooksRequest, DeleteHooksResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteHooksRequest.class, DeleteHooksResponse.class)
@@ -2589,32 +2290,26 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteHooksRequest::getGroupName, (req, v) -> {
-                req.setGroupName(v);
-            }));
+            f -> f.withMarshaller(DeleteHooksRequest::getGroupName, DeleteHooksRequest::setGroupName));
         builder.<Integer>withRequestField("hook_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteHooksRequest::getHookId, (req, v) -> {
-                req.setHookId(v);
-            }));
+            f -> f.withMarshaller(DeleteHooksRequest::getHookId, DeleteHooksRequest::setHookId));
         builder.<String>withRequestField("repository_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteHooksRequest::getRepositoryName, (req, v) -> {
-                req.setRepositoryName(v);
-            }));
+            f -> f.withMarshaller(DeleteHooksRequest::getRepositoryName, DeleteHooksRequest::setRepositoryName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListHooksRequest, ListHooksResponse> listHooks = genForlistHooks();
+    public static final HttpRequestDef<ListHooksRequest, ListHooksResponse> listHooks = genForListHooks();
 
-    private static HttpRequestDef<ListHooksRequest, ListHooksResponse> genForlistHooks() {
+    private static HttpRequestDef<ListHooksRequest, ListHooksResponse> genForListHooks() {
         // basic
         HttpRequestDef.Builder<ListHooksRequest, ListHooksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHooksRequest.class, ListHooksResponse.class)
@@ -2627,23 +2322,17 @@ public class CodeHubMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHooksRequest::getGroupName, (req, v) -> {
-                req.setGroupName(v);
-            }));
+            f -> f.withMarshaller(ListHooksRequest::getGroupName, ListHooksRequest::setGroupName));
         builder.<String>withRequestField("repository_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHooksRequest::getRepositoryName, (req, v) -> {
-                req.setRepositoryName(v);
-            }));
+            f -> f.withMarshaller(ListHooksRequest::getRepositoryName, ListHooksRequest::setRepositoryName));
         builder.<String>withRequestField("hook_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHooksRequest::getHookId, (req, v) -> {
-                req.setHookId(v);
-            }));
+            f -> f.withMarshaller(ListHooksRequest::getHookId, ListHooksRequest::setHookId));
 
         // response
 

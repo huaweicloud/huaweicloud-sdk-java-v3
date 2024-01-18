@@ -28,7 +28,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventsRequest 请求对象
+     * @param request ListEventsRequest 请求对象
      * @return ListEventsResponse
      */
     public ListEventsResponse listEvents(ListEventsRequest request) {
@@ -42,11 +42,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventsRequest 请求对象
+     * @param request ListEventsRequest 请求对象
      * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
      */
     public SyncInvoker<ListEventsRequest, ListEventsResponse> listEventsInvoker(ListEventsRequest request) {
-        return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, HssMeta.listEvents, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listEvents, hcClient);
     }
 
     /**
@@ -56,7 +56,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostsRequest 请求对象
+     * @param request ListHostsRequest 请求对象
      * @return ListHostsResponse
      */
     public ListHostsResponse listHosts(ListHostsRequest request) {
@@ -70,11 +70,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostsRequest 请求对象
+     * @param request ListHostsRequest 请求对象
      * @return SyncInvoker<ListHostsRequest, ListHostsResponse>
      */
     public SyncInvoker<ListHostsRequest, ListHostsResponse> listHostsInvoker(ListHostsRequest request) {
-        return new SyncInvoker<ListHostsRequest, ListHostsResponse>(request, HssMeta.listHosts, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listHosts, hcClient);
     }
 
 }

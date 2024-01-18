@@ -28,7 +28,7 @@ public class ExpertClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordsCountRequest 请求对象
+     * @param request ListRecordsCountRequest 请求对象
      * @return ListRecordsCountResponse
      */
     public ListRecordsCountResponse listRecordsCount(ListRecordsCountRequest request) {
@@ -42,13 +42,12 @@ public class ExpertClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordsCountRequest 请求对象
+     * @param request ListRecordsCountRequest 请求对象
      * @return SyncInvoker<ListRecordsCountRequest, ListRecordsCountResponse>
      */
     public SyncInvoker<ListRecordsCountRequest, ListRecordsCountResponse> listRecordsCountInvoker(
         ListRecordsCountRequest request) {
-        return new SyncInvoker<ListRecordsCountRequest, ListRecordsCountResponse>(request, ExpertMeta.listRecordsCount,
-            hcClient);
+        return new SyncInvoker<>(request, ExpertMeta.listRecordsCount, hcClient);
     }
 
     /**
@@ -58,7 +57,7 @@ public class ExpertClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersKeyRequest 请求对象
+     * @param request ListUsersKeyRequest 请求对象
      * @return ListUsersKeyResponse
      */
     public ListUsersKeyResponse listUsersKey(ListUsersKeyRequest request) {
@@ -72,11 +71,11 @@ public class ExpertClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersKeyRequest 请求对象
+     * @param request ListUsersKeyRequest 请求对象
      * @return SyncInvoker<ListUsersKeyRequest, ListUsersKeyResponse>
      */
     public SyncInvoker<ListUsersKeyRequest, ListUsersKeyResponse> listUsersKeyInvoker(ListUsersKeyRequest request) {
-        return new SyncInvoker<ListUsersKeyRequest, ListUsersKeyResponse>(request, ExpertMeta.listUsersKey, hcClient);
+        return new SyncInvoker<>(request, ExpertMeta.listUsersKey, hcClient);
     }
 
 }

@@ -192,12 +192,17 @@ public class ScriptInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configuration")
 
-    private String _configuration;
+    private Map<String, Object> _configuration = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owner")
+
+    private String owner;
 
     /**
      * 在开启审批开关后，需要填写该字段。表示创建脚本的目标状态，有三种状态：SAVED、SUBMITTED和PRODUCTION，分别表示脚本创建后是保存态，提交态，生产态。
@@ -404,8 +409,24 @@ public class ScriptInfo {
         this.queueName = queueName;
     }
 
-    public ScriptInfo withConfiguration(String _configuration) {
+    public ScriptInfo withConfiguration(Map<String, Object> _configuration) {
         this._configuration = _configuration;
+        return this;
+    }
+
+    public ScriptInfo putConfigurationItem(String key, Object _configurationItem) {
+        if (this._configuration == null) {
+            this._configuration = new HashMap<>();
+        }
+        this._configuration.put(key, _configurationItem);
+        return this;
+    }
+
+    public ScriptInfo withConfiguration(Consumer<Map<String, Object>> _configurationSetter) {
+        if (this._configuration == null) {
+            this._configuration = new HashMap<>();
+        }
+        _configurationSetter.accept(this._configuration);
         return this;
     }
 
@@ -413,11 +434,11 @@ public class ScriptInfo {
      * 脚本的配置项参数
      * @return _configuration
      */
-    public String getConfiguration() {
+    public Map<String, Object> getConfiguration() {
         return _configuration;
     }
 
-    public void setConfiguration(String _configuration) {
+    public void setConfiguration(Map<String, Object> _configuration) {
         this._configuration = _configuration;
     }
 
@@ -436,6 +457,23 @@ public class ScriptInfo {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ScriptInfo withOwner(String owner) {
+        this.owner = owner;
+        return this;
+    }
+
+    /**
+     * 责任人名称
+     * @return owner
+     */
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public ScriptInfo withTargetStatus(TargetStatusEnum targetStatus) {
@@ -502,7 +540,7 @@ public class ScriptInfo {
             && Objects.equals(this.connectionName, that.connectionName) && Objects.equals(this.database, that.database)
             && Objects.equals(this.queueName, that.queueName)
             && Objects.equals(this._configuration, that._configuration)
-            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.owner, that.owner)
             && Objects.equals(this.targetStatus, that.targetStatus) && Objects.equals(this.approvers, that.approvers);
     }
 
@@ -517,6 +555,7 @@ public class ScriptInfo {
             queueName,
             _configuration,
             description,
+            owner,
             targetStatus,
             approvers);
     }
@@ -534,6 +573,7 @@ public class ScriptInfo {
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    targetStatus: ").append(toIndentedString(targetStatus)).append("\n");
         sb.append("    approvers: ").append(toIndentedString(approvers)).append("\n");
         sb.append("}");

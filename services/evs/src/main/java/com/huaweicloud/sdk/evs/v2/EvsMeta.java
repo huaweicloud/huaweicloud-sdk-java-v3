@@ -80,9 +80,9 @@ import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeResponse;
 public class EvsMeta {
 
     public static final HttpRequestDef<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse> batchCreateVolumeTags =
-        genForbatchCreateVolumeTags();
+        genForBatchCreateVolumeTags();
 
-    private static HttpRequestDef<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse> genForbatchCreateVolumeTags() {
+    private static HttpRequestDef<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse> genForBatchCreateVolumeTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateVolumeTagsRequest.class, BatchCreateVolumeTagsResponse.class)
@@ -95,16 +95,13 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateVolumeTagsRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateVolumeTagsRequest::getVolumeId,
+                BatchCreateVolumeTagsRequest::setVolumeId));
         builder.<BatchCreateVolumeTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateVolumeTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateVolumeTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateVolumeTagsRequest::getBody, BatchCreateVolumeTagsRequest::setBody));
 
         // response
 
@@ -112,9 +109,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse> batchDeleteVolumeTags =
-        genForbatchDeleteVolumeTags();
+        genForBatchDeleteVolumeTags();
 
-    private static HttpRequestDef<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse> genForbatchDeleteVolumeTags() {
+    private static HttpRequestDef<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse> genForBatchDeleteVolumeTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteVolumeTagsRequest.class, BatchDeleteVolumeTagsResponse.class)
@@ -127,16 +124,13 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteVolumeTagsRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteVolumeTagsRequest::getVolumeId,
+                BatchDeleteVolumeTagsRequest::setVolumeId));
         builder.<BatchDeleteVolumeTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteVolumeTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteVolumeTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteVolumeTagsRequest::getBody, BatchDeleteVolumeTagsRequest::setBody));
 
         // response
 
@@ -144,9 +138,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse> cinderAcceptVolumeTransfer =
-        genForcinderAcceptVolumeTransfer();
+        genForCinderAcceptVolumeTransfer();
 
-    private static HttpRequestDef<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse> genForcinderAcceptVolumeTransfer() {
+    private static HttpRequestDef<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse> genForCinderAcceptVolumeTransfer() {
         // basic
         HttpRequestDef.Builder<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse> builder =
             HttpRequestDef
@@ -162,16 +156,14 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CinderAcceptVolumeTransferRequest::getTransferId, (req, v) -> {
-                req.setTransferId(v);
-            }));
+            f -> f.withMarshaller(CinderAcceptVolumeTransferRequest::getTransferId,
+                CinderAcceptVolumeTransferRequest::setTransferId));
         builder.<CinderAcceptVolumeTransferRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CinderAcceptVolumeTransferRequestBody.class),
-            f -> f.withMarshaller(CinderAcceptVolumeTransferRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CinderAcceptVolumeTransferRequest::getBody,
+                CinderAcceptVolumeTransferRequest::setBody));
 
         // response
 
@@ -179,9 +171,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse> cinderCreateVolumeTransfer =
-        genForcinderCreateVolumeTransfer();
+        genForCinderCreateVolumeTransfer();
 
-    private static HttpRequestDef<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse> genForcinderCreateVolumeTransfer() {
+    private static HttpRequestDef<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse> genForCinderCreateVolumeTransfer() {
         // basic
         HttpRequestDef.Builder<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse> builder =
             HttpRequestDef
@@ -197,9 +189,8 @@ public class EvsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CinderCreateVolumeTransferRequestBody.class),
-            f -> f.withMarshaller(CinderCreateVolumeTransferRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CinderCreateVolumeTransferRequest::getBody,
+                CinderCreateVolumeTransferRequest::setBody));
 
         // response
 
@@ -207,9 +198,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse> cinderDeleteVolumeTransfer =
-        genForcinderDeleteVolumeTransfer();
+        genForCinderDeleteVolumeTransfer();
 
-    private static HttpRequestDef<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse> genForcinderDeleteVolumeTransfer() {
+    private static HttpRequestDef<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse> genForCinderDeleteVolumeTransfer() {
         // basic
         HttpRequestDef.Builder<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse> builder =
             HttpRequestDef
@@ -225,9 +216,8 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CinderDeleteVolumeTransferRequest::getTransferId, (req, v) -> {
-                req.setTransferId(v);
-            }));
+            f -> f.withMarshaller(CinderDeleteVolumeTransferRequest::getTransferId,
+                CinderDeleteVolumeTransferRequest::setTransferId));
 
         // response
 
@@ -235,9 +225,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> cinderListAvailabilityZones =
-        genForcinderListAvailabilityZones();
+        genForCinderListAvailabilityZones();
 
-    private static HttpRequestDef<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> genForcinderListAvailabilityZones() {
+    private static HttpRequestDef<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> genForCinderListAvailabilityZones() {
         // basic
         HttpRequestDef.Builder<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> builder =
             HttpRequestDef
@@ -256,9 +246,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<CinderListQuotasRequest, CinderListQuotasResponse> cinderListQuotas =
-        genForcinderListQuotas();
+        genForCinderListQuotas();
 
-    private static HttpRequestDef<CinderListQuotasRequest, CinderListQuotasResponse> genForcinderListQuotas() {
+    private static HttpRequestDef<CinderListQuotasRequest, CinderListQuotasResponse> genForCinderListQuotas() {
         // basic
         HttpRequestDef.Builder<CinderListQuotasRequest, CinderListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CinderListQuotasRequest.class, CinderListQuotasResponse.class)
@@ -271,16 +261,13 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CinderListQuotasRequest::getTargetProjectId, (req, v) -> {
-                req.setTargetProjectId(v);
-            }));
+            f -> f.withMarshaller(CinderListQuotasRequest::getTargetProjectId,
+                CinderListQuotasRequest::setTargetProjectId));
         builder.<CinderListQuotasRequest.UsageEnum>withRequestField("usage",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CinderListQuotasRequest.UsageEnum.class),
-            f -> f.withMarshaller(CinderListQuotasRequest::getUsage, (req, v) -> {
-                req.setUsage(v);
-            }));
+            f -> f.withMarshaller(CinderListQuotasRequest::getUsage, CinderListQuotasRequest::setUsage));
 
         // response
 
@@ -288,9 +275,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse> cinderListVolumeTransfers =
-        genForcinderListVolumeTransfers();
+        genForCinderListVolumeTransfers();
 
-    private static HttpRequestDef<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse> genForcinderListVolumeTransfers() {
+    private static HttpRequestDef<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse> genForCinderListVolumeTransfers() {
         // basic
         HttpRequestDef.Builder<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse> builder =
             HttpRequestDef
@@ -306,16 +293,14 @@ public class EvsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CinderListVolumeTransfersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(CinderListVolumeTransfersRequest::getLimit,
+                CinderListVolumeTransfersRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CinderListVolumeTransfersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(CinderListVolumeTransfersRequest::getOffset,
+                CinderListVolumeTransfersRequest::setOffset));
 
         // response
 
@@ -323,9 +308,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse> cinderListVolumeTypes =
-        genForcinderListVolumeTypes();
+        genForCinderListVolumeTypes();
 
-    private static HttpRequestDef<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse> genForcinderListVolumeTypes() {
+    private static HttpRequestDef<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse> genForCinderListVolumeTypes() {
         // basic
         HttpRequestDef.Builder<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, CinderListVolumeTypesRequest.class, CinderListVolumeTypesResponse.class)
@@ -341,9 +326,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse> cinderShowVolumeTransfer =
-        genForcinderShowVolumeTransfer();
+        genForCinderShowVolumeTransfer();
 
-    private static HttpRequestDef<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse> genForcinderShowVolumeTransfer() {
+    private static HttpRequestDef<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse> genForCinderShowVolumeTransfer() {
         // basic
         HttpRequestDef.Builder<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse> builder =
             HttpRequestDef
@@ -357,9 +342,8 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CinderShowVolumeTransferRequest::getTransferId, (req, v) -> {
-                req.setTransferId(v);
-            }));
+            f -> f.withMarshaller(CinderShowVolumeTransferRequest::getTransferId,
+                CinderShowVolumeTransferRequest::setTransferId));
 
         // response
 
@@ -367,9 +351,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshot =
-        genForcreateSnapshot();
+        genForCreateSnapshot();
 
-    private static HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> genForcreateSnapshot() {
+    private static HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> genForCreateSnapshot() {
         // basic
         HttpRequestDef.Builder<CreateSnapshotRequest, CreateSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSnapshotRequest.class, CreateSnapshotResponse.class)
@@ -382,18 +366,16 @@ public class EvsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSnapshotRequestBody.class),
-            f -> f.withMarshaller(CreateSnapshotRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSnapshotRequest::getBody, CreateSnapshotRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateVolumeRequest, CreateVolumeResponse> createVolume = genForcreateVolume();
+    public static final HttpRequestDef<CreateVolumeRequest, CreateVolumeResponse> createVolume = genForCreateVolume();
 
-    private static HttpRequestDef<CreateVolumeRequest, CreateVolumeResponse> genForcreateVolume() {
+    private static HttpRequestDef<CreateVolumeRequest, CreateVolumeResponse> genForCreateVolume() {
         // basic
         HttpRequestDef.Builder<CreateVolumeRequest, CreateVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVolumeRequest.class, CreateVolumeResponse.class)
@@ -406,9 +388,7 @@ public class EvsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVolumeRequestBody.class),
-            f -> f.withMarshaller(CreateVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVolumeRequest::getBody, CreateVolumeRequest::setBody));
 
         // response
 
@@ -416,9 +396,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshot =
-        genFordeleteSnapshot();
+        genForDeleteSnapshot();
 
-    private static HttpRequestDef<DeleteSnapshotRequest, DeleteSnapshotResponse> genFordeleteSnapshot() {
+    private static HttpRequestDef<DeleteSnapshotRequest, DeleteSnapshotResponse> genForDeleteSnapshot() {
         // basic
         HttpRequestDef.Builder<DeleteSnapshotRequest, DeleteSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSnapshotRequest.class, DeleteSnapshotResponse.class)
@@ -431,18 +411,16 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSnapshotRequest::getSnapshotId, (req, v) -> {
-                req.setSnapshotId(v);
-            }));
+            f -> f.withMarshaller(DeleteSnapshotRequest::getSnapshotId, DeleteSnapshotRequest::setSnapshotId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteVolumeRequest, DeleteVolumeResponse> deleteVolume = genFordeleteVolume();
+    public static final HttpRequestDef<DeleteVolumeRequest, DeleteVolumeResponse> deleteVolume = genForDeleteVolume();
 
-    private static HttpRequestDef<DeleteVolumeRequest, DeleteVolumeResponse> genFordeleteVolume() {
+    private static HttpRequestDef<DeleteVolumeRequest, DeleteVolumeResponse> genForDeleteVolume() {
         // basic
         HttpRequestDef.Builder<DeleteVolumeRequest, DeleteVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVolumeRequest.class, DeleteVolumeResponse.class)
@@ -455,9 +433,7 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVolumeRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(DeleteVolumeRequest::getVolumeId, DeleteVolumeRequest::setVolumeId));
 
         // response
 
@@ -465,9 +441,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshots =
-        genForlistSnapshots();
+        genForListSnapshots();
 
-    private static HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> genForlistSnapshots() {
+    private static HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> genForListSnapshots() {
         // basic
         HttpRequestDef.Builder<ListSnapshotsRequest, ListSnapshotsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSnapshotsRequest.class, ListSnapshotsResponse.class)
@@ -480,79 +456,61 @@ public class EvsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getOffset, ListSnapshotsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getLimit, ListSnapshotsRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getName, ListSnapshotsRequest::setName));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getStatus, ListSnapshotsRequest::setStatus));
         builder.<String>withRequestField("volume_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getVolumeId, ListSnapshotsRequest::setVolumeId));
         builder.<String>withRequestField("availability_zone",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getAvailabilityZone,
+                ListSnapshotsRequest::setAvailabilityZone));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getId, ListSnapshotsRequest::setId));
         builder.<String>withRequestField("dedicated_storage_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getDedicatedStorageName, (req, v) -> {
-                req.setDedicatedStorageName(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getDedicatedStorageName,
+                ListSnapshotsRequest::setDedicatedStorageName));
         builder.<String>withRequestField("dedicated_storage_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getDedicatedStorageId, (req, v) -> {
-                req.setDedicatedStorageId(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getDedicatedStorageId,
+                ListSnapshotsRequest::setDedicatedStorageId));
         builder.<String>withRequestField("service_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getServiceType, ListSnapshotsRequest::setServiceType));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotsRequest::getEnterpriseProjectId,
+                ListSnapshotsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -560,9 +518,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<ListVolumeTagsRequest, ListVolumeTagsResponse> listVolumeTags =
-        genForlistVolumeTags();
+        genForListVolumeTags();
 
-    private static HttpRequestDef<ListVolumeTagsRequest, ListVolumeTagsResponse> genForlistVolumeTags() {
+    private static HttpRequestDef<ListVolumeTagsRequest, ListVolumeTagsResponse> genForListVolumeTags() {
         // basic
         HttpRequestDef.Builder<ListVolumeTagsRequest, ListVolumeTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVolumeTagsRequest.class, ListVolumeTagsResponse.class)
@@ -577,9 +535,9 @@ public class EvsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListVolumesRequest, ListVolumesResponse> listVolumes = genForlistVolumes();
+    public static final HttpRequestDef<ListVolumesRequest, ListVolumesResponse> listVolumes = genForListVolumes();
 
-    private static HttpRequestDef<ListVolumesRequest, ListVolumesResponse> genForlistVolumes() {
+    private static HttpRequestDef<ListVolumesRequest, ListVolumesResponse> genForListVolumes() {
         // basic
         HttpRequestDef.Builder<ListVolumesRequest, ListVolumesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVolumesRequest.class, ListVolumesResponse.class)
@@ -592,128 +550,95 @@ public class EvsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getMarker, ListVolumesRequest::setMarker));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getName, ListVolumesRequest::setName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVolumesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getLimit, ListVolumesRequest::setLimit));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getSortKey, ListVolumesRequest::setSortKey));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVolumesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getOffset, ListVolumesRequest::setOffset));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getSortDir, ListVolumesRequest::setSortDir));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getStatus, ListVolumesRequest::setStatus));
         builder.<String>withRequestField("metadata",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getMetadata, (req, v) -> {
-                req.setMetadata(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getMetadata, ListVolumesRequest::setMetadata));
         builder.<String>withRequestField("availability_zone",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getAvailabilityZone, ListVolumesRequest::setAvailabilityZone));
         builder.<Boolean>withRequestField("multiattach",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListVolumesRequest::getMultiattach, (req, v) -> {
-                req.setMultiattach(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getMultiattach, ListVolumesRequest::setMultiattach));
         builder.<String>withRequestField("service_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getServiceType, ListVolumesRequest::setServiceType));
         builder.<String>withRequestField("dedicated_storage_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getDedicatedStorageId, (req, v) -> {
-                req.setDedicatedStorageId(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getDedicatedStorageId,
+                ListVolumesRequest::setDedicatedStorageId));
         builder.<String>withRequestField("dedicated_storage_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getDedicatedStorageName, (req, v) -> {
-                req.setDedicatedStorageName(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getDedicatedStorageName,
+                ListVolumesRequest::setDedicatedStorageName));
         builder.<String>withRequestField("volume_type_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getVolumeTypeId, (req, v) -> {
-                req.setVolumeTypeId(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getVolumeTypeId, ListVolumesRequest::setVolumeTypeId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getId, ListVolumesRequest::setId));
         builder.<String>withRequestField("ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getIds, (req, v) -> {
-                req.setIds(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getIds, ListVolumesRequest::setIds));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getEnterpriseProjectId,
+                ListVolumesRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("server_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getServerId, ListVolumesRequest::setServerId));
 
         // response
 
@@ -721,9 +646,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<ListVolumesByTagsRequest, ListVolumesByTagsResponse> listVolumesByTags =
-        genForlistVolumesByTags();
+        genForListVolumesByTags();
 
-    private static HttpRequestDef<ListVolumesByTagsRequest, ListVolumesByTagsResponse> genForlistVolumesByTags() {
+    private static HttpRequestDef<ListVolumesByTagsRequest, ListVolumesByTagsResponse> genForListVolumesByTags() {
         // basic
         HttpRequestDef.Builder<ListVolumesByTagsRequest, ListVolumesByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListVolumesByTagsRequest.class, ListVolumesByTagsResponse.class)
@@ -736,9 +661,7 @@ public class EvsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListVolumesByTagsRequestBody.class),
-            f -> f.withMarshaller(ListVolumesByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListVolumesByTagsRequest::getBody, ListVolumesByTagsRequest::setBody));
 
         // response
 
@@ -746,9 +669,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> modifyVolumeQoS =
-        genFormodifyVolumeQoS();
+        genForModifyVolumeQoS();
 
-    private static HttpRequestDef<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> genFormodifyVolumeQoS() {
+    private static HttpRequestDef<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> genForModifyVolumeQoS() {
         // basic
         HttpRequestDef.Builder<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyVolumeQoSRequest.class, ModifyVolumeQoSResponse.class)
@@ -761,25 +684,21 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyVolumeQoSRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(ModifyVolumeQoSRequest::getVolumeId, ModifyVolumeQoSRequest::setVolumeId));
         builder.<ModifyVolumeQoSRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyVolumeQoSRequestBody.class),
-            f -> f.withMarshaller(ModifyVolumeQoSRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyVolumeQoSRequest::getBody, ModifyVolumeQoSRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizeVolumeRequest, ResizeVolumeResponse> resizeVolume = genForresizeVolume();
+    public static final HttpRequestDef<ResizeVolumeRequest, ResizeVolumeResponse> resizeVolume = genForResizeVolume();
 
-    private static HttpRequestDef<ResizeVolumeRequest, ResizeVolumeResponse> genForresizeVolume() {
+    private static HttpRequestDef<ResizeVolumeRequest, ResizeVolumeResponse> genForResizeVolume() {
         // basic
         HttpRequestDef.Builder<ResizeVolumeRequest, ResizeVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeVolumeRequest.class, ResizeVolumeResponse.class)
@@ -792,16 +711,12 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeVolumeRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(ResizeVolumeRequest::getVolumeId, ResizeVolumeRequest::setVolumeId));
         builder.<ResizeVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeVolumeRequestBody.class),
-            f -> f.withMarshaller(ResizeVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeVolumeRequest::getBody, ResizeVolumeRequest::setBody));
 
         // response
 
@@ -809,9 +724,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<RollbackSnapshotRequest, RollbackSnapshotResponse> rollbackSnapshot =
-        genForrollbackSnapshot();
+        genForRollbackSnapshot();
 
-    private static HttpRequestDef<RollbackSnapshotRequest, RollbackSnapshotResponse> genForrollbackSnapshot() {
+    private static HttpRequestDef<RollbackSnapshotRequest, RollbackSnapshotResponse> genForRollbackSnapshot() {
         // basic
         HttpRequestDef.Builder<RollbackSnapshotRequest, RollbackSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RollbackSnapshotRequest.class, RollbackSnapshotResponse.class)
@@ -824,25 +739,21 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RollbackSnapshotRequest::getSnapshotId, (req, v) -> {
-                req.setSnapshotId(v);
-            }));
+            f -> f.withMarshaller(RollbackSnapshotRequest::getSnapshotId, RollbackSnapshotRequest::setSnapshotId));
         builder.<RollbackSnapshotRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RollbackSnapshotRequestBody.class),
-            f -> f.withMarshaller(RollbackSnapshotRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RollbackSnapshotRequest::getBody, RollbackSnapshotRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
+    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForShowJob();
 
-    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
+    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForShowJob() {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
@@ -855,18 +766,16 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobRequest::getJobId, ShowJobRequest::setJobId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSnapshotRequest, ShowSnapshotResponse> showSnapshot = genForshowSnapshot();
+    public static final HttpRequestDef<ShowSnapshotRequest, ShowSnapshotResponse> showSnapshot = genForShowSnapshot();
 
-    private static HttpRequestDef<ShowSnapshotRequest, ShowSnapshotResponse> genForshowSnapshot() {
+    private static HttpRequestDef<ShowSnapshotRequest, ShowSnapshotResponse> genForShowSnapshot() {
         // basic
         HttpRequestDef.Builder<ShowSnapshotRequest, ShowSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSnapshotRequest.class, ShowSnapshotResponse.class)
@@ -879,18 +788,16 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSnapshotRequest::getSnapshotId, (req, v) -> {
-                req.setSnapshotId(v);
-            }));
+            f -> f.withMarshaller(ShowSnapshotRequest::getSnapshotId, ShowSnapshotRequest::setSnapshotId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVolumeRequest, ShowVolumeResponse> showVolume = genForshowVolume();
+    public static final HttpRequestDef<ShowVolumeRequest, ShowVolumeResponse> showVolume = genForShowVolume();
 
-    private static HttpRequestDef<ShowVolumeRequest, ShowVolumeResponse> genForshowVolume() {
+    private static HttpRequestDef<ShowVolumeRequest, ShowVolumeResponse> genForShowVolume() {
         // basic
         HttpRequestDef.Builder<ShowVolumeRequest, ShowVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVolumeRequest.class, ShowVolumeResponse.class)
@@ -903,9 +810,7 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVolumeRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(ShowVolumeRequest::getVolumeId, ShowVolumeRequest::setVolumeId));
 
         // response
 
@@ -913,9 +818,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<ShowVolumeTagsRequest, ShowVolumeTagsResponse> showVolumeTags =
-        genForshowVolumeTags();
+        genForShowVolumeTags();
 
-    private static HttpRequestDef<ShowVolumeTagsRequest, ShowVolumeTagsResponse> genForshowVolumeTags() {
+    private static HttpRequestDef<ShowVolumeTagsRequest, ShowVolumeTagsResponse> genForShowVolumeTags() {
         // basic
         HttpRequestDef.Builder<ShowVolumeTagsRequest, ShowVolumeTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVolumeTagsRequest.class, ShowVolumeTagsResponse.class)
@@ -928,9 +833,7 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVolumeTagsRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(ShowVolumeTagsRequest::getVolumeId, ShowVolumeTagsRequest::setVolumeId));
 
         // response
 
@@ -938,9 +841,9 @@ public class EvsMeta {
     }
 
     public static final HttpRequestDef<UpdateSnapshotRequest, UpdateSnapshotResponse> updateSnapshot =
-        genForupdateSnapshot();
+        genForUpdateSnapshot();
 
-    private static HttpRequestDef<UpdateSnapshotRequest, UpdateSnapshotResponse> genForupdateSnapshot() {
+    private static HttpRequestDef<UpdateSnapshotRequest, UpdateSnapshotResponse> genForUpdateSnapshot() {
         // basic
         HttpRequestDef.Builder<UpdateSnapshotRequest, UpdateSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSnapshotRequest.class, UpdateSnapshotResponse.class)
@@ -953,25 +856,21 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSnapshotRequest::getSnapshotId, (req, v) -> {
-                req.setSnapshotId(v);
-            }));
+            f -> f.withMarshaller(UpdateSnapshotRequest::getSnapshotId, UpdateSnapshotRequest::setSnapshotId));
         builder.<UpdateSnapshotRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSnapshotRequestBody.class),
-            f -> f.withMarshaller(UpdateSnapshotRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSnapshotRequest::getBody, UpdateSnapshotRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateVolumeRequest, UpdateVolumeResponse> updateVolume = genForupdateVolume();
+    public static final HttpRequestDef<UpdateVolumeRequest, UpdateVolumeResponse> updateVolume = genForUpdateVolume();
 
-    private static HttpRequestDef<UpdateVolumeRequest, UpdateVolumeResponse> genForupdateVolume() {
+    private static HttpRequestDef<UpdateVolumeRequest, UpdateVolumeResponse> genForUpdateVolume() {
         // basic
         HttpRequestDef.Builder<UpdateVolumeRequest, UpdateVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVolumeRequest.class, UpdateVolumeResponse.class)
@@ -984,25 +883,21 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVolumeRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(UpdateVolumeRequest::getVolumeId, UpdateVolumeRequest::setVolumeId));
         builder.<UpdateVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateVolumeRequestBody.class),
-            f -> f.withMarshaller(UpdateVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVolumeRequest::getBody, UpdateVolumeRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListVersionsRequest, ListVersionsResponse> listVersions = genForlistVersions();
+    public static final HttpRequestDef<ListVersionsRequest, ListVersionsResponse> listVersions = genForListVersions();
 
-    private static HttpRequestDef<ListVersionsRequest, ListVersionsResponse> genForlistVersions() {
+    private static HttpRequestDef<ListVersionsRequest, ListVersionsResponse> genForListVersions() {
         // basic
         HttpRequestDef.Builder<ListVersionsRequest, ListVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVersionsRequest.class, ListVersionsResponse.class)
@@ -1017,9 +912,9 @@ public class EvsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForshowVersion();
+    public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForShowVersion();
 
-    private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForshowVersion() {
+    private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForShowVersion() {
         // basic
         HttpRequestDef.Builder<ShowVersionRequest, ShowVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionRequest.class, ShowVersionResponse.class)
@@ -1032,9 +927,7 @@ public class EvsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowVersionRequest.VersionEnum.class),
-            f -> f.withMarshaller(ShowVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowVersionRequest::getVersion, ShowVersionRequest::setVersion));
 
         // response
 

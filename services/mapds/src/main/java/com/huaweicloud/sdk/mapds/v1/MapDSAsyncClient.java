@@ -36,7 +36,7 @@ public class MapDSAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCredentialRequest 请求对象
+     * @param request CreateCredentialRequest 请求对象
      * @return CompletableFuture<CreateCredentialResponse>
      */
     public CompletableFuture<CreateCredentialResponse> createCredentialAsync(CreateCredentialRequest request) {
@@ -50,13 +50,12 @@ public class MapDSAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCredentialRequest 请求对象
+     * @param request CreateCredentialRequest 请求对象
      * @return AsyncInvoker<CreateCredentialRequest, CreateCredentialResponse>
      */
     public AsyncInvoker<CreateCredentialRequest, CreateCredentialResponse> createCredentialAsyncInvoker(
         CreateCredentialRequest request) {
-        return new AsyncInvoker<CreateCredentialRequest, CreateCredentialResponse>(request, MapDSMeta.createCredential,
-            hcClient);
+        return new AsyncInvoker<>(request, MapDSMeta.createCredential, hcClient);
     }
 
     /**
@@ -66,7 +65,7 @@ public class MapDSAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSasTokenRequest 请求对象
+     * @param request CreateSasTokenRequest 请求对象
      * @return CompletableFuture<CreateSasTokenResponse>
      */
     public CompletableFuture<CreateSasTokenResponse> createSasTokenAsync(CreateSasTokenRequest request) {
@@ -80,13 +79,12 @@ public class MapDSAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSasTokenRequest 请求对象
+     * @param request CreateSasTokenRequest 请求对象
      * @return AsyncInvoker<CreateSasTokenRequest, CreateSasTokenResponse>
      */
     public AsyncInvoker<CreateSasTokenRequest, CreateSasTokenResponse> createSasTokenAsyncInvoker(
         CreateSasTokenRequest request) {
-        return new AsyncInvoker<CreateSasTokenRequest, CreateSasTokenResponse>(request, MapDSMeta.createSasToken,
-            hcClient);
+        return new AsyncInvoker<>(request, MapDSMeta.createSasToken, hcClient);
     }
 
     /**
@@ -96,7 +94,7 @@ public class MapDSAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCedentialRequest 请求对象
+     * @param request DeleteCedentialRequest 请求对象
      * @return CompletableFuture<DeleteCedentialResponse>
      */
     public CompletableFuture<DeleteCedentialResponse> deleteCedentialAsync(DeleteCedentialRequest request) {
@@ -110,13 +108,12 @@ public class MapDSAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCedentialRequest 请求对象
+     * @param request DeleteCedentialRequest 请求对象
      * @return AsyncInvoker<DeleteCedentialRequest, DeleteCedentialResponse>
      */
     public AsyncInvoker<DeleteCedentialRequest, DeleteCedentialResponse> deleteCedentialAsyncInvoker(
         DeleteCedentialRequest request) {
-        return new AsyncInvoker<DeleteCedentialRequest, DeleteCedentialResponse>(request, MapDSMeta.deleteCedential,
-            hcClient);
+        return new AsyncInvoker<>(request, MapDSMeta.deleteCedential, hcClient);
     }
 
     /**
@@ -126,7 +123,7 @@ public class MapDSAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCredentialRequest 请求对象
+     * @param request ShowCredentialRequest 请求对象
      * @return CompletableFuture<ShowCredentialResponse>
      */
     public CompletableFuture<ShowCredentialResponse> showCredentialAsync(ShowCredentialRequest request) {
@@ -140,13 +137,12 @@ public class MapDSAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCredentialRequest 请求对象
+     * @param request ShowCredentialRequest 请求对象
      * @return AsyncInvoker<ShowCredentialRequest, ShowCredentialResponse>
      */
     public AsyncInvoker<ShowCredentialRequest, ShowCredentialResponse> showCredentialAsyncInvoker(
         ShowCredentialRequest request) {
-        return new AsyncInvoker<ShowCredentialRequest, ShowCredentialResponse>(request, MapDSMeta.showCredential,
-            hcClient);
+        return new AsyncInvoker<>(request, MapDSMeta.showCredential, hcClient);
     }
 
     /**
@@ -156,7 +152,7 @@ public class MapDSAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMapTileRequest 请求对象
+     * @param request ShowMapTileRequest 请求对象
      * @return CompletableFuture<ShowMapTileResponse>
      */
     public CompletableFuture<ShowMapTileResponse> showMapTileAsync(ShowMapTileRequest request) {
@@ -170,11 +166,11 @@ public class MapDSAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMapTileRequest 请求对象
+     * @param request ShowMapTileRequest 请求对象
      * @return AsyncInvoker<ShowMapTileRequest, ShowMapTileResponse>
      */
     public AsyncInvoker<ShowMapTileRequest, ShowMapTileResponse> showMapTileAsyncInvoker(ShowMapTileRequest request) {
-        return new AsyncInvoker<ShowMapTileRequest, ShowMapTileResponse>(request, MapDSMeta.showMapTile, hcClient);
+        return new AsyncInvoker<>(request, MapDSMeta.showMapTile, hcClient);
     }
 
 }

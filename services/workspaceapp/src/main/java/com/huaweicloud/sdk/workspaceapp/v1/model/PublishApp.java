@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 发布应用的结构体
+ * 发布应用的结构体。
  */
 public class PublishApp {
 
@@ -84,7 +84,7 @@ public class PublishApp {
     }
 
     /**
-     * 应用名称,名称需满足如下规则: 1. 名称允许可见字符或空格，不可为全空格 2. 长度1~64个字符
+     * 应用名称,名称需满足如下规则: 1. 名称允许可见字符或空格，不可为全空格。 2. 不允许包含如下字符:^;|~`{}[]<>。 3. 长度1~64个字符。
      * @return name
      */
     public String getName() {
@@ -101,7 +101,7 @@ public class PublishApp {
     }
 
     /**
-     * 应用版本号
+     * 应用版本号。
      * @return version
      */
     public String getVersion() {
@@ -118,7 +118,7 @@ public class PublishApp {
     }
 
     /**
-     * 启动命令行参数
+     * 启动命令行参数。
      * @return commandParam
      */
     public String getCommandParam() {
@@ -135,7 +135,7 @@ public class PublishApp {
     }
 
     /**
-     * > - 图片的默认大小当前限制为8KB，即1024 * 8字节。 > - 如果数据格式为data;image/png;base64,iVBORw0KGgoAAAANS时实际大小约为字段约为：size * 4/3 + 4bytes。
+     * 图标地址，该字段当前未使用。 > - 图片的默认大小当前限制为8KB，即1024 * 8字节。 > - 如果数据格式为data;image/png;base64,iVBORw0KGgoAAAANS时实际大小约为字段约为：size * 4/3 + 4bytes。
      * @return iconUri
      */
     public String getIconUri() {
@@ -152,7 +152,7 @@ public class PublishApp {
     }
 
     /**
-     * 执行路径
+     * 执行路径。
      * @return executePath
      */
     public String getExecutePath() {
@@ -169,7 +169,7 @@ public class PublishApp {
     }
 
     /**
-     * 应用工作目录
+     * 应用工作目录。
      * @return workPath
      */
     public String getWorkPath() {
@@ -186,7 +186,7 @@ public class PublishApp {
     }
 
     /**
-     * 应用图标的路径
+     * 应用图标的路径。
      * @return iconPath
      */
     public String getIconPath() {
@@ -203,7 +203,7 @@ public class PublishApp {
     }
 
     /**
-     * 应用图标的索引
+     * 应用图标的索引。
      * minimum: 0
      * maximum: 2147483647
      * @return iconIndex
@@ -222,7 +222,7 @@ public class PublishApp {
     }
 
     /**
-     * 应用描述
+     * 应用描述。
      * @return description
      */
     public String getDescription() {
@@ -239,7 +239,7 @@ public class PublishApp {
     }
 
     /**
-     * 应用类型 - '1':系统保留不可用 - '2':镜像应用 - '3':自定义应用
+     * 应用类型： - '1':系统保留不可用。 - '2':镜像应用。 - '3':自定义应用。
      * minimum: 1
      * maximum: 3
      * @return sourceType
@@ -258,7 +258,7 @@ public class PublishApp {
     }
 
     /**
-     * 应用发布者
+     * 应用发布者。
      * @return publisher
      */
     public String getPublisher() {
@@ -291,7 +291,7 @@ public class PublishApp {
     }
 
     /**
-     * 镜像ids,最多20个
+     * 镜像ids,最多20个。
      * @return sourceImageIds
      */
     public List<String> getSourceImageIds() {
@@ -308,7 +308,7 @@ public class PublishApp {
     }
 
     /**
-     * 是否使用沙箱模式运行，取值为： - false: 表示不以沙箱模式运行 - true: 表示以沙箱模式运行
+     * 是否使用沙箱模式运行，取值为： - false: 表示不以沙箱模式运行。 - true: 表示以沙箱模式运行。
      * @return sandboxEnable
      */
     public Boolean getSandboxEnable() {

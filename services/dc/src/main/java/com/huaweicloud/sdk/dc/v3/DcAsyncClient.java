@@ -89,7 +89,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHostedDirectConnectRequest 请求对象
+     * @param request CreateHostedDirectConnectRequest 请求对象
      * @return CompletableFuture<CreateHostedDirectConnectResponse>
      */
     public CompletableFuture<CreateHostedDirectConnectResponse> createHostedDirectConnectAsync(
@@ -105,13 +105,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHostedDirectConnectRequest 请求对象
+     * @param request CreateHostedDirectConnectRequest 请求对象
      * @return AsyncInvoker<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse>
      */
     public AsyncInvoker<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse> createHostedDirectConnectAsyncInvoker(
         CreateHostedDirectConnectRequest request) {
-        return new AsyncInvoker<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse>(request,
-            DcMeta.createHostedDirectConnect, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.createHostedDirectConnect, hcClient);
     }
 
     /**
@@ -121,7 +120,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDirectConnectRequest 请求对象
+     * @param request DeleteDirectConnectRequest 请求对象
      * @return CompletableFuture<DeleteDirectConnectResponse>
      */
     public CompletableFuture<DeleteDirectConnectResponse> deleteDirectConnectAsync(DeleteDirectConnectRequest request) {
@@ -135,13 +134,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDirectConnectRequest 请求对象
+     * @param request DeleteDirectConnectRequest 请求对象
      * @return AsyncInvoker<DeleteDirectConnectRequest, DeleteDirectConnectResponse>
      */
     public AsyncInvoker<DeleteDirectConnectRequest, DeleteDirectConnectResponse> deleteDirectConnectAsyncInvoker(
         DeleteDirectConnectRequest request) {
-        return new AsyncInvoker<DeleteDirectConnectRequest, DeleteDirectConnectResponse>(request,
-            DcMeta.deleteDirectConnect, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.deleteDirectConnect, hcClient);
     }
 
     /**
@@ -151,7 +149,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHostedDirectConnectRequest 请求对象
+     * @param request DeleteHostedDirectConnectRequest 请求对象
      * @return CompletableFuture<DeleteHostedDirectConnectResponse>
      */
     public CompletableFuture<DeleteHostedDirectConnectResponse> deleteHostedDirectConnectAsync(
@@ -166,13 +164,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHostedDirectConnectRequest 请求对象
+     * @param request DeleteHostedDirectConnectRequest 请求对象
      * @return AsyncInvoker<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse>
      */
     public AsyncInvoker<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse> deleteHostedDirectConnectAsyncInvoker(
         DeleteHostedDirectConnectRequest request) {
-        return new AsyncInvoker<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse>(request,
-            DcMeta.deleteHostedDirectConnect, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.deleteHostedDirectConnect, hcClient);
     }
 
     /**
@@ -182,7 +179,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDirectConnectsRequest 请求对象
+     * @param request ListDirectConnectsRequest 请求对象
      * @return CompletableFuture<ListDirectConnectsResponse>
      */
     public CompletableFuture<ListDirectConnectsResponse> listDirectConnectsAsync(ListDirectConnectsRequest request) {
@@ -196,13 +193,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDirectConnectsRequest 请求对象
+     * @param request ListDirectConnectsRequest 请求对象
      * @return AsyncInvoker<ListDirectConnectsRequest, ListDirectConnectsResponse>
      */
     public AsyncInvoker<ListDirectConnectsRequest, ListDirectConnectsResponse> listDirectConnectsAsyncInvoker(
         ListDirectConnectsRequest request) {
-        return new AsyncInvoker<ListDirectConnectsRequest, ListDirectConnectsResponse>(request,
-            DcMeta.listDirectConnects, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.listDirectConnects, hcClient);
     }
 
     /**
@@ -212,7 +208,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostedDirectConnectsRequest 请求对象
+     * @param request ListHostedDirectConnectsRequest 请求对象
      * @return CompletableFuture<ListHostedDirectConnectsResponse>
      */
     public CompletableFuture<ListHostedDirectConnectsResponse> listHostedDirectConnectsAsync(
@@ -227,13 +223,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostedDirectConnectsRequest 请求对象
+     * @param request ListHostedDirectConnectsRequest 请求对象
      * @return AsyncInvoker<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse>
      */
     public AsyncInvoker<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse> listHostedDirectConnectsAsyncInvoker(
         ListHostedDirectConnectsRequest request) {
-        return new AsyncInvoker<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse>(request,
-            DcMeta.listHostedDirectConnects, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.listHostedDirectConnects, hcClient);
     }
 
     /**
@@ -243,7 +238,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDirectConnectRequest 请求对象
+     * @param request ShowDirectConnectRequest 请求对象
      * @return CompletableFuture<ShowDirectConnectResponse>
      */
     public CompletableFuture<ShowDirectConnectResponse> showDirectConnectAsync(ShowDirectConnectRequest request) {
@@ -257,13 +252,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDirectConnectRequest 请求对象
+     * @param request ShowDirectConnectRequest 请求对象
      * @return AsyncInvoker<ShowDirectConnectRequest, ShowDirectConnectResponse>
      */
     public AsyncInvoker<ShowDirectConnectRequest, ShowDirectConnectResponse> showDirectConnectAsyncInvoker(
         ShowDirectConnectRequest request) {
-        return new AsyncInvoker<ShowDirectConnectRequest, ShowDirectConnectResponse>(request, DcMeta.showDirectConnect,
-            hcClient);
+        return new AsyncInvoker<>(request, DcMeta.showDirectConnect, hcClient);
     }
 
     /**
@@ -273,7 +267,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHostedDirectConnectRequest 请求对象
+     * @param request ShowHostedDirectConnectRequest 请求对象
      * @return CompletableFuture<ShowHostedDirectConnectResponse>
      */
     public CompletableFuture<ShowHostedDirectConnectResponse> showHostedDirectConnectAsync(
@@ -288,13 +282,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHostedDirectConnectRequest 请求对象
+     * @param request ShowHostedDirectConnectRequest 请求对象
      * @return AsyncInvoker<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse>
      */
     public AsyncInvoker<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse> showHostedDirectConnectAsyncInvoker(
         ShowHostedDirectConnectRequest request) {
-        return new AsyncInvoker<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse>(request,
-            DcMeta.showHostedDirectConnect, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.showHostedDirectConnect, hcClient);
     }
 
     /**
@@ -304,7 +297,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDirectConnectRequest 请求对象
+     * @param request UpdateDirectConnectRequest 请求对象
      * @return CompletableFuture<UpdateDirectConnectResponse>
      */
     public CompletableFuture<UpdateDirectConnectResponse> updateDirectConnectAsync(UpdateDirectConnectRequest request) {
@@ -318,13 +311,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDirectConnectRequest 请求对象
+     * @param request UpdateDirectConnectRequest 请求对象
      * @return AsyncInvoker<UpdateDirectConnectRequest, UpdateDirectConnectResponse>
      */
     public AsyncInvoker<UpdateDirectConnectRequest, UpdateDirectConnectResponse> updateDirectConnectAsyncInvoker(
         UpdateDirectConnectRequest request) {
-        return new AsyncInvoker<UpdateDirectConnectRequest, UpdateDirectConnectResponse>(request,
-            DcMeta.updateDirectConnect, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.updateDirectConnect, hcClient);
     }
 
     /**
@@ -334,7 +326,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHostedDirectConnectRequest 请求对象
+     * @param request UpdateHostedDirectConnectRequest 请求对象
      * @return CompletableFuture<UpdateHostedDirectConnectResponse>
      */
     public CompletableFuture<UpdateHostedDirectConnectResponse> updateHostedDirectConnectAsync(
@@ -349,13 +341,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHostedDirectConnectRequest 请求对象
+     * @param request UpdateHostedDirectConnectRequest 请求对象
      * @return AsyncInvoker<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse>
      */
     public AsyncInvoker<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse> updateHostedDirectConnectAsyncInvoker(
         UpdateHostedDirectConnectRequest request) {
-        return new AsyncInvoker<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse>(request,
-            DcMeta.updateHostedDirectConnect, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.updateHostedDirectConnect, hcClient);
     }
 
     /**
@@ -365,7 +356,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return CompletableFuture<ShowQuotasResponse>
      */
     public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
@@ -379,11 +370,11 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
      */
     public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
-        return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, DcMeta.showQuotas, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.showQuotas, hcClient);
     }
 
     /**
@@ -395,7 +386,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceTagsRequest 请求对象
+     * @param request BatchCreateResourceTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateResourceTagsResponse>
      */
     public CompletableFuture<BatchCreateResourceTagsResponse> batchCreateResourceTagsAsync(
@@ -412,13 +403,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceTagsRequest 请求对象
+     * @param request BatchCreateResourceTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>
      */
     public AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTagsAsyncInvoker(
         BatchCreateResourceTagsRequest request) {
-        return new AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>(request,
-            DcMeta.batchCreateResourceTags, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.batchCreateResourceTags, hcClient);
     }
 
     /**
@@ -430,7 +420,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagRequest 请求对象
+     * @param request CreateResourceTagRequest 请求对象
      * @return CompletableFuture<CreateResourceTagResponse>
      */
     public CompletableFuture<CreateResourceTagResponse> createResourceTagAsync(CreateResourceTagRequest request) {
@@ -446,13 +436,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagRequest 请求对象
+     * @param request CreateResourceTagRequest 请求对象
      * @return AsyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>
      */
     public AsyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTagAsyncInvoker(
         CreateResourceTagRequest request) {
-        return new AsyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>(request, DcMeta.createResourceTag,
-            hcClient);
+        return new AsyncInvoker<>(request, DcMeta.createResourceTag, hcClient);
     }
 
     /**
@@ -462,7 +451,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return CompletableFuture<DeleteResourceTagResponse>
      */
     public CompletableFuture<DeleteResourceTagResponse> deleteResourceTagAsync(DeleteResourceTagRequest request) {
@@ -476,13 +465,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
      */
     public AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTagAsyncInvoker(
         DeleteResourceTagRequest request) {
-        return new AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>(request, DcMeta.deleteResourceTag,
-            hcClient);
+        return new AsyncInvoker<>(request, DcMeta.deleteResourceTag, hcClient);
     }
 
     /**
@@ -493,7 +481,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return CompletableFuture<ListProjectTagsResponse>
      */
     public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
@@ -508,13 +496,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
     public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
         ListProjectTagsRequest request) {
-        return new AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, DcMeta.listProjectTags,
-            hcClient);
+        return new AsyncInvoker<>(request, DcMeta.listProjectTags, hcClient);
     }
 
     /**
@@ -524,7 +511,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagResourceInstancesRequest 请求对象
+     * @param request ListTagResourceInstancesRequest 请求对象
      * @return CompletableFuture<ListTagResourceInstancesResponse>
      */
     public CompletableFuture<ListTagResourceInstancesResponse> listTagResourceInstancesAsync(
@@ -539,13 +526,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagResourceInstancesRequest 请求对象
+     * @param request ListTagResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse>
      */
     public AsyncInvoker<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse> listTagResourceInstancesAsyncInvoker(
         ListTagResourceInstancesRequest request) {
-        return new AsyncInvoker<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse>(request,
-            DcMeta.listTagResourceInstances, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.listTagResourceInstances, hcClient);
     }
 
     /**
@@ -555,7 +541,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagRequest 请求对象
+     * @param request ShowResourceTagRequest 请求对象
      * @return CompletableFuture<ShowResourceTagResponse>
      */
     public CompletableFuture<ShowResourceTagResponse> showResourceTagAsync(ShowResourceTagRequest request) {
@@ -569,13 +555,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagRequest 请求对象
+     * @param request ShowResourceTagRequest 请求对象
      * @return AsyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>
      */
     public AsyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTagAsyncInvoker(
         ShowResourceTagRequest request) {
-        return new AsyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>(request, DcMeta.showResourceTag,
-            hcClient);
+        return new AsyncInvoker<>(request, DcMeta.showResourceTag, hcClient);
     }
 
     /**
@@ -585,7 +570,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVirtualGatewayRequest 请求对象
+     * @param request CreateVirtualGatewayRequest 请求对象
      * @return CompletableFuture<CreateVirtualGatewayResponse>
      */
     public CompletableFuture<CreateVirtualGatewayResponse> createVirtualGatewayAsync(
@@ -600,13 +585,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVirtualGatewayRequest 请求对象
+     * @param request CreateVirtualGatewayRequest 请求对象
      * @return AsyncInvoker<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse>
      */
     public AsyncInvoker<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse> createVirtualGatewayAsyncInvoker(
         CreateVirtualGatewayRequest request) {
-        return new AsyncInvoker<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse>(request,
-            DcMeta.createVirtualGateway, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.createVirtualGateway, hcClient);
     }
 
     /**
@@ -616,7 +600,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVirtualGatewayRequest 请求对象
+     * @param request DeleteVirtualGatewayRequest 请求对象
      * @return CompletableFuture<DeleteVirtualGatewayResponse>
      */
     public CompletableFuture<DeleteVirtualGatewayResponse> deleteVirtualGatewayAsync(
@@ -631,13 +615,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVirtualGatewayRequest 请求对象
+     * @param request DeleteVirtualGatewayRequest 请求对象
      * @return AsyncInvoker<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse>
      */
     public AsyncInvoker<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse> deleteVirtualGatewayAsyncInvoker(
         DeleteVirtualGatewayRequest request) {
-        return new AsyncInvoker<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse>(request,
-            DcMeta.deleteVirtualGateway, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.deleteVirtualGateway, hcClient);
     }
 
     /**
@@ -647,7 +630,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVirtualGatewaysRequest 请求对象
+     * @param request ListVirtualGatewaysRequest 请求对象
      * @return CompletableFuture<ListVirtualGatewaysResponse>
      */
     public CompletableFuture<ListVirtualGatewaysResponse> listVirtualGatewaysAsync(ListVirtualGatewaysRequest request) {
@@ -661,13 +644,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVirtualGatewaysRequest 请求对象
+     * @param request ListVirtualGatewaysRequest 请求对象
      * @return AsyncInvoker<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse>
      */
     public AsyncInvoker<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse> listVirtualGatewaysAsyncInvoker(
         ListVirtualGatewaysRequest request) {
-        return new AsyncInvoker<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse>(request,
-            DcMeta.listVirtualGateways, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.listVirtualGateways, hcClient);
     }
 
     /**
@@ -677,7 +659,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVirtualGatewayRequest 请求对象
+     * @param request ShowVirtualGatewayRequest 请求对象
      * @return CompletableFuture<ShowVirtualGatewayResponse>
      */
     public CompletableFuture<ShowVirtualGatewayResponse> showVirtualGatewayAsync(ShowVirtualGatewayRequest request) {
@@ -691,13 +673,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVirtualGatewayRequest 请求对象
+     * @param request ShowVirtualGatewayRequest 请求对象
      * @return AsyncInvoker<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse>
      */
     public AsyncInvoker<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse> showVirtualGatewayAsyncInvoker(
         ShowVirtualGatewayRequest request) {
-        return new AsyncInvoker<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse>(request,
-            DcMeta.showVirtualGateway, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.showVirtualGateway, hcClient);
     }
 
     /**
@@ -707,7 +688,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVirtualGatewayRequest 请求对象
+     * @param request UpdateVirtualGatewayRequest 请求对象
      * @return CompletableFuture<UpdateVirtualGatewayResponse>
      */
     public CompletableFuture<UpdateVirtualGatewayResponse> updateVirtualGatewayAsync(
@@ -722,13 +703,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVirtualGatewayRequest 请求对象
+     * @param request UpdateVirtualGatewayRequest 请求对象
      * @return AsyncInvoker<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse>
      */
     public AsyncInvoker<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse> updateVirtualGatewayAsyncInvoker(
         UpdateVirtualGatewayRequest request) {
-        return new AsyncInvoker<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse>(request,
-            DcMeta.updateVirtualGateway, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.updateVirtualGateway, hcClient);
     }
 
     /**
@@ -738,7 +718,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVifPeerRequest 请求对象
+     * @param request CreateVifPeerRequest 请求对象
      * @return CompletableFuture<CreateVifPeerResponse>
      */
     public CompletableFuture<CreateVifPeerResponse> createVifPeerAsync(CreateVifPeerRequest request) {
@@ -752,12 +732,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVifPeerRequest 请求对象
+     * @param request CreateVifPeerRequest 请求对象
      * @return AsyncInvoker<CreateVifPeerRequest, CreateVifPeerResponse>
      */
     public AsyncInvoker<CreateVifPeerRequest, CreateVifPeerResponse> createVifPeerAsyncInvoker(
         CreateVifPeerRequest request) {
-        return new AsyncInvoker<CreateVifPeerRequest, CreateVifPeerResponse>(request, DcMeta.createVifPeer, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.createVifPeer, hcClient);
     }
 
     /**
@@ -767,7 +747,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVirtualInterfaceRequest 请求对象
+     * @param request CreateVirtualInterfaceRequest 请求对象
      * @return CompletableFuture<CreateVirtualInterfaceResponse>
      */
     public CompletableFuture<CreateVirtualInterfaceResponse> createVirtualInterfaceAsync(
@@ -782,13 +762,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVirtualInterfaceRequest 请求对象
+     * @param request CreateVirtualInterfaceRequest 请求对象
      * @return AsyncInvoker<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse>
      */
     public AsyncInvoker<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse> createVirtualInterfaceAsyncInvoker(
         CreateVirtualInterfaceRequest request) {
-        return new AsyncInvoker<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse>(request,
-            DcMeta.createVirtualInterface, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.createVirtualInterface, hcClient);
     }
 
     /**
@@ -798,7 +777,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVifPeerRequest 请求对象
+     * @param request DeleteVifPeerRequest 请求对象
      * @return CompletableFuture<DeleteVifPeerResponse>
      */
     public CompletableFuture<DeleteVifPeerResponse> deleteVifPeerAsync(DeleteVifPeerRequest request) {
@@ -812,12 +791,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVifPeerRequest 请求对象
+     * @param request DeleteVifPeerRequest 请求对象
      * @return AsyncInvoker<DeleteVifPeerRequest, DeleteVifPeerResponse>
      */
     public AsyncInvoker<DeleteVifPeerRequest, DeleteVifPeerResponse> deleteVifPeerAsyncInvoker(
         DeleteVifPeerRequest request) {
-        return new AsyncInvoker<DeleteVifPeerRequest, DeleteVifPeerResponse>(request, DcMeta.deleteVifPeer, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.deleteVifPeer, hcClient);
     }
 
     /**
@@ -827,7 +806,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVirtualInterfaceRequest 请求对象
+     * @param request DeleteVirtualInterfaceRequest 请求对象
      * @return CompletableFuture<DeleteVirtualInterfaceResponse>
      */
     public CompletableFuture<DeleteVirtualInterfaceResponse> deleteVirtualInterfaceAsync(
@@ -842,13 +821,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVirtualInterfaceRequest 请求对象
+     * @param request DeleteVirtualInterfaceRequest 请求对象
      * @return AsyncInvoker<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>
      */
     public AsyncInvoker<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse> deleteVirtualInterfaceAsyncInvoker(
         DeleteVirtualInterfaceRequest request) {
-        return new AsyncInvoker<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>(request,
-            DcMeta.deleteVirtualInterface, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.deleteVirtualInterface, hcClient);
     }
 
     /**
@@ -858,7 +836,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSwitchoverTestRecordsRequest 请求对象
+     * @param request ListSwitchoverTestRecordsRequest 请求对象
      * @return CompletableFuture<ListSwitchoverTestRecordsResponse>
      */
     public CompletableFuture<ListSwitchoverTestRecordsResponse> listSwitchoverTestRecordsAsync(
@@ -873,13 +851,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSwitchoverTestRecordsRequest 请求对象
+     * @param request ListSwitchoverTestRecordsRequest 请求对象
      * @return AsyncInvoker<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse>
      */
     public AsyncInvoker<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse> listSwitchoverTestRecordsAsyncInvoker(
         ListSwitchoverTestRecordsRequest request) {
-        return new AsyncInvoker<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse>(request,
-            DcMeta.listSwitchoverTestRecords, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.listSwitchoverTestRecords, hcClient);
     }
 
     /**
@@ -889,7 +866,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVirtualInterfacesRequest 请求对象
+     * @param request ListVirtualInterfacesRequest 请求对象
      * @return CompletableFuture<ListVirtualInterfacesResponse>
      */
     public CompletableFuture<ListVirtualInterfacesResponse> listVirtualInterfacesAsync(
@@ -904,13 +881,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVirtualInterfacesRequest 请求对象
+     * @param request ListVirtualInterfacesRequest 请求对象
      * @return AsyncInvoker<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse>
      */
     public AsyncInvoker<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse> listVirtualInterfacesAsyncInvoker(
         ListVirtualInterfacesRequest request) {
-        return new AsyncInvoker<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse>(request,
-            DcMeta.listVirtualInterfaces, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.listVirtualInterfaces, hcClient);
     }
 
     /**
@@ -920,7 +896,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVirtualInterfaceRequest 请求对象
+     * @param request ShowVirtualInterfaceRequest 请求对象
      * @return CompletableFuture<ShowVirtualInterfaceResponse>
      */
     public CompletableFuture<ShowVirtualInterfaceResponse> showVirtualInterfaceAsync(
@@ -935,13 +911,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVirtualInterfaceRequest 请求对象
+     * @param request ShowVirtualInterfaceRequest 请求对象
      * @return AsyncInvoker<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse>
      */
     public AsyncInvoker<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse> showVirtualInterfaceAsyncInvoker(
         ShowVirtualInterfaceRequest request) {
-        return new AsyncInvoker<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse>(request,
-            DcMeta.showVirtualInterface, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.showVirtualInterface, hcClient);
     }
 
     /**
@@ -951,7 +926,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchoverTestRequest 请求对象
+     * @param request SwitchoverTestRequest 请求对象
      * @return CompletableFuture<SwitchoverTestResponse>
      */
     public CompletableFuture<SwitchoverTestResponse> switchoverTestAsync(SwitchoverTestRequest request) {
@@ -965,13 +940,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchoverTestRequest 请求对象
+     * @param request SwitchoverTestRequest 请求对象
      * @return AsyncInvoker<SwitchoverTestRequest, SwitchoverTestResponse>
      */
     public AsyncInvoker<SwitchoverTestRequest, SwitchoverTestResponse> switchoverTestAsyncInvoker(
         SwitchoverTestRequest request) {
-        return new AsyncInvoker<SwitchoverTestRequest, SwitchoverTestResponse>(request, DcMeta.switchoverTest,
-            hcClient);
+        return new AsyncInvoker<>(request, DcMeta.switchoverTest, hcClient);
     }
 
     /**
@@ -981,7 +955,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVifPeerRequest 请求对象
+     * @param request UpdateVifPeerRequest 请求对象
      * @return CompletableFuture<UpdateVifPeerResponse>
      */
     public CompletableFuture<UpdateVifPeerResponse> updateVifPeerAsync(UpdateVifPeerRequest request) {
@@ -995,12 +969,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVifPeerRequest 请求对象
+     * @param request UpdateVifPeerRequest 请求对象
      * @return AsyncInvoker<UpdateVifPeerRequest, UpdateVifPeerResponse>
      */
     public AsyncInvoker<UpdateVifPeerRequest, UpdateVifPeerResponse> updateVifPeerAsyncInvoker(
         UpdateVifPeerRequest request) {
-        return new AsyncInvoker<UpdateVifPeerRequest, UpdateVifPeerResponse>(request, DcMeta.updateVifPeer, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.updateVifPeer, hcClient);
     }
 
     /**
@@ -1010,7 +984,7 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVirtualInterfaceRequest 请求对象
+     * @param request UpdateVirtualInterfaceRequest 请求对象
      * @return CompletableFuture<UpdateVirtualInterfaceResponse>
      */
     public CompletableFuture<UpdateVirtualInterfaceResponse> updateVirtualInterfaceAsync(
@@ -1025,13 +999,12 @@ public class DcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVirtualInterfaceRequest 请求对象
+     * @param request UpdateVirtualInterfaceRequest 请求对象
      * @return AsyncInvoker<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse>
      */
     public AsyncInvoker<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse> updateVirtualInterfaceAsyncInvoker(
         UpdateVirtualInterfaceRequest request) {
-        return new AsyncInvoker<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse>(request,
-            DcMeta.updateVirtualInterface, hcClient);
+        return new AsyncInvoker<>(request, DcMeta.updateVirtualInterface, hcClient);
     }
 
 }

@@ -83,7 +83,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddServerNicsRequest 请求对象
+     * @param request AddServerNicsRequest 请求对象
      * @return AddServerNicsResponse
      */
     public AddServerNicsResponse addServerNics(AddServerNicsRequest request) {
@@ -96,11 +96,11 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddServerNicsRequest 请求对象
+     * @param request AddServerNicsRequest 请求对象
      * @return SyncInvoker<AddServerNicsRequest, AddServerNicsResponse>
      */
     public SyncInvoker<AddServerNicsRequest, AddServerNicsResponse> addServerNicsInvoker(AddServerNicsRequest request) {
-        return new SyncInvoker<AddServerNicsRequest, AddServerNicsResponse>(request, BmsMeta.addServerNics, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.addServerNics, hcClient);
     }
 
     /**
@@ -110,7 +110,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachBaremetalServerVolumeRequest 请求对象
+     * @param request AttachBaremetalServerVolumeRequest 请求对象
      * @return AttachBaremetalServerVolumeResponse
      */
     public AttachBaremetalServerVolumeResponse attachBaremetalServerVolume(AttachBaremetalServerVolumeRequest request) {
@@ -124,13 +124,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachBaremetalServerVolumeRequest 请求对象
+     * @param request AttachBaremetalServerVolumeRequest 请求对象
      * @return SyncInvoker<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse>
      */
     public SyncInvoker<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse> attachBaremetalServerVolumeInvoker(
         AttachBaremetalServerVolumeRequest request) {
-        return new SyncInvoker<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse>(request,
-            BmsMeta.attachBaremetalServerVolume, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.attachBaremetalServerVolume, hcClient);
     }
 
     /**
@@ -140,7 +139,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateBaremetalServerTagsRequest 请求对象
+     * @param request BatchCreateBaremetalServerTagsRequest 请求对象
      * @return BatchCreateBaremetalServerTagsResponse
      */
     public BatchCreateBaremetalServerTagsResponse batchCreateBaremetalServerTags(
@@ -155,13 +154,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateBaremetalServerTagsRequest 请求对象
+     * @param request BatchCreateBaremetalServerTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse>
      */
     public SyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> batchCreateBaremetalServerTagsInvoker(
         BatchCreateBaremetalServerTagsRequest request) {
-        return new SyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse>(request,
-            BmsMeta.batchCreateBaremetalServerTags, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.batchCreateBaremetalServerTags, hcClient);
     }
 
     /**
@@ -171,7 +169,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteBaremetalServerTagsRequest 请求对象
+     * @param request BatchDeleteBaremetalServerTagsRequest 请求对象
      * @return BatchDeleteBaremetalServerTagsResponse
      */
     public BatchDeleteBaremetalServerTagsResponse batchDeleteBaremetalServerTags(
@@ -186,13 +184,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteBaremetalServerTagsRequest 请求对象
+     * @param request BatchDeleteBaremetalServerTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse>
      */
     public SyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> batchDeleteBaremetalServerTagsInvoker(
         BatchDeleteBaremetalServerTagsRequest request) {
-        return new SyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse>(request,
-            BmsMeta.batchDeleteBaremetalServerTags, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.batchDeleteBaremetalServerTags, hcClient);
     }
 
     /**
@@ -202,7 +199,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRebootBaremetalServersRequest 请求对象
+     * @param request BatchRebootBaremetalServersRequest 请求对象
      * @return BatchRebootBaremetalServersResponse
      */
     public BatchRebootBaremetalServersResponse batchRebootBaremetalServers(BatchRebootBaremetalServersRequest request) {
@@ -216,13 +213,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRebootBaremetalServersRequest 请求对象
+     * @param request BatchRebootBaremetalServersRequest 请求对象
      * @return SyncInvoker<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse>
      */
     public SyncInvoker<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse> batchRebootBaremetalServersInvoker(
         BatchRebootBaremetalServersRequest request) {
-        return new SyncInvoker<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse>(request,
-            BmsMeta.batchRebootBaremetalServers, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.batchRebootBaremetalServers, hcClient);
     }
 
     /**
@@ -232,7 +228,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartBaremetalServersRequest 请求对象
+     * @param request BatchStartBaremetalServersRequest 请求对象
      * @return BatchStartBaremetalServersResponse
      */
     public BatchStartBaremetalServersResponse batchStartBaremetalServers(BatchStartBaremetalServersRequest request) {
@@ -246,13 +242,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartBaremetalServersRequest 请求对象
+     * @param request BatchStartBaremetalServersRequest 请求对象
      * @return SyncInvoker<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse>
      */
     public SyncInvoker<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse> batchStartBaremetalServersInvoker(
         BatchStartBaremetalServersRequest request) {
-        return new SyncInvoker<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse>(request,
-            BmsMeta.batchStartBaremetalServers, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.batchStartBaremetalServers, hcClient);
     }
 
     /**
@@ -262,7 +257,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopBaremetalServersRequest 请求对象
+     * @param request BatchStopBaremetalServersRequest 请求对象
      * @return BatchStopBaremetalServersResponse
      */
     public BatchStopBaremetalServersResponse batchStopBaremetalServers(BatchStopBaremetalServersRequest request) {
@@ -276,13 +271,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopBaremetalServersRequest 请求对象
+     * @param request BatchStopBaremetalServersRequest 请求对象
      * @return SyncInvoker<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse>
      */
     public SyncInvoker<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse> batchStopBaremetalServersInvoker(
         BatchStopBaremetalServersRequest request) {
-        return new SyncInvoker<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse>(request,
-            BmsMeta.batchStopBaremetalServers, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.batchStopBaremetalServers, hcClient);
     }
 
     /**
@@ -292,7 +286,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBaremetalServerNameRequest 请求对象
+     * @param request ChangeBaremetalServerNameRequest 请求对象
      * @return ChangeBaremetalServerNameResponse
      */
     public ChangeBaremetalServerNameResponse changeBaremetalServerName(ChangeBaremetalServerNameRequest request) {
@@ -306,13 +300,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBaremetalServerNameRequest 请求对象
+     * @param request ChangeBaremetalServerNameRequest 请求对象
      * @return SyncInvoker<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse>
      */
     public SyncInvoker<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse> changeBaremetalServerNameInvoker(
         ChangeBaremetalServerNameRequest request) {
-        return new SyncInvoker<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse>(request,
-            BmsMeta.changeBaremetalServerName, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.changeBaremetalServerName, hcClient);
     }
 
     /**
@@ -322,7 +315,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBaremetalServerOsRequest 请求对象
+     * @param request ChangeBaremetalServerOsRequest 请求对象
      * @return ChangeBaremetalServerOsResponse
      */
     public ChangeBaremetalServerOsResponse changeBaremetalServerOs(ChangeBaremetalServerOsRequest request) {
@@ -336,13 +329,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBaremetalServerOsRequest 请求对象
+     * @param request ChangeBaremetalServerOsRequest 请求对象
      * @return SyncInvoker<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse>
      */
     public SyncInvoker<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse> changeBaremetalServerOsInvoker(
         ChangeBaremetalServerOsRequest request) {
-        return new SyncInvoker<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse>(request,
-            BmsMeta.changeBaremetalServerOs, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.changeBaremetalServerOs, hcClient);
     }
 
     /**
@@ -352,7 +344,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBareMetalServersRequest 请求对象
+     * @param request CreateBareMetalServersRequest 请求对象
      * @return CreateBareMetalServersResponse
      */
     public CreateBareMetalServersResponse createBareMetalServers(CreateBareMetalServersRequest request) {
@@ -366,13 +358,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBareMetalServersRequest 请求对象
+     * @param request CreateBareMetalServersRequest 请求对象
      * @return SyncInvoker<CreateBareMetalServersRequest, CreateBareMetalServersResponse>
      */
     public SyncInvoker<CreateBareMetalServersRequest, CreateBareMetalServersResponse> createBareMetalServersInvoker(
         CreateBareMetalServersRequest request) {
-        return new SyncInvoker<CreateBareMetalServersRequest, CreateBareMetalServersResponse>(request,
-            BmsMeta.createBareMetalServers, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.createBareMetalServers, hcClient);
     }
 
     /**
@@ -382,7 +373,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBaremetalServerRequest 请求对象
+     * @param request DeleteBaremetalServerRequest 请求对象
      * @return DeleteBaremetalServerResponse
      */
     public DeleteBaremetalServerResponse deleteBaremetalServer(DeleteBaremetalServerRequest request) {
@@ -396,13 +387,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBaremetalServerRequest 请求对象
+     * @param request DeleteBaremetalServerRequest 请求对象
      * @return SyncInvoker<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse>
      */
     public SyncInvoker<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse> deleteBaremetalServerInvoker(
         DeleteBaremetalServerRequest request) {
-        return new SyncInvoker<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse>(request,
-            BmsMeta.deleteBaremetalServer, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.deleteBaremetalServer, hcClient);
     }
 
     /**
@@ -411,7 +401,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServerNicsRequest 请求对象
+     * @param request DeleteServerNicsRequest 请求对象
      * @return DeleteServerNicsResponse
      */
     public DeleteServerNicsResponse deleteServerNics(DeleteServerNicsRequest request) {
@@ -424,13 +414,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServerNicsRequest 请求对象
+     * @param request DeleteServerNicsRequest 请求对象
      * @return SyncInvoker<DeleteServerNicsRequest, DeleteServerNicsResponse>
      */
     public SyncInvoker<DeleteServerNicsRequest, DeleteServerNicsResponse> deleteServerNicsInvoker(
         DeleteServerNicsRequest request) {
-        return new SyncInvoker<DeleteServerNicsRequest, DeleteServerNicsResponse>(request, BmsMeta.deleteServerNics,
-            hcClient);
+        return new SyncInvoker<>(request, BmsMeta.deleteServerNics, hcClient);
     }
 
     /**
@@ -440,7 +429,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWindowsBareMetalServerPasswordRequest 请求对象
+     * @param request DeleteWindowsBareMetalServerPasswordRequest 请求对象
      * @return DeleteWindowsBareMetalServerPasswordResponse
      */
     public DeleteWindowsBareMetalServerPasswordResponse deleteWindowsBareMetalServerPassword(
@@ -455,13 +444,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWindowsBareMetalServerPasswordRequest 请求对象
+     * @param request DeleteWindowsBareMetalServerPasswordRequest 请求对象
      * @return SyncInvoker<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse>
      */
     public SyncInvoker<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse> deleteWindowsBareMetalServerPasswordInvoker(
         DeleteWindowsBareMetalServerPasswordRequest request) {
-        return new SyncInvoker<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse>(
-            request, BmsMeta.deleteWindowsBareMetalServerPassword, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.deleteWindowsBareMetalServerPassword, hcClient);
     }
 
     /**
@@ -471,7 +459,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachBaremetalServerVolumeRequest 请求对象
+     * @param request DetachBaremetalServerVolumeRequest 请求对象
      * @return DetachBaremetalServerVolumeResponse
      */
     public DetachBaremetalServerVolumeResponse detachBaremetalServerVolume(DetachBaremetalServerVolumeRequest request) {
@@ -485,13 +473,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachBaremetalServerVolumeRequest 请求对象
+     * @param request DetachBaremetalServerVolumeRequest 请求对象
      * @return SyncInvoker<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse>
      */
     public SyncInvoker<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse> detachBaremetalServerVolumeInvoker(
         DetachBaremetalServerVolumeRequest request) {
-        return new SyncInvoker<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse>(request,
-            BmsMeta.detachBaremetalServerVolume, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.detachBaremetalServerVolume, hcClient);
     }
 
     /**
@@ -501,7 +488,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBareMetalServerDetailsRequest 请求对象
+     * @param request ListBareMetalServerDetailsRequest 请求对象
      * @return ListBareMetalServerDetailsResponse
      */
     public ListBareMetalServerDetailsResponse listBareMetalServerDetails(ListBareMetalServerDetailsRequest request) {
@@ -515,13 +502,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBareMetalServerDetailsRequest 请求对象
+     * @param request ListBareMetalServerDetailsRequest 请求对象
      * @return SyncInvoker<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse>
      */
     public SyncInvoker<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse> listBareMetalServerDetailsInvoker(
         ListBareMetalServerDetailsRequest request) {
-        return new SyncInvoker<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse>(request,
-            BmsMeta.listBareMetalServerDetails, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.listBareMetalServerDetails, hcClient);
     }
 
     /**
@@ -531,7 +517,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBareMetalServersRequest 请求对象
+     * @param request ListBareMetalServersRequest 请求对象
      * @return ListBareMetalServersResponse
      */
     public ListBareMetalServersResponse listBareMetalServers(ListBareMetalServersRequest request) {
@@ -545,13 +531,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBareMetalServersRequest 请求对象
+     * @param request ListBareMetalServersRequest 请求对象
      * @return SyncInvoker<ListBareMetalServersRequest, ListBareMetalServersResponse>
      */
     public SyncInvoker<ListBareMetalServersRequest, ListBareMetalServersResponse> listBareMetalServersInvoker(
         ListBareMetalServersRequest request) {
-        return new SyncInvoker<ListBareMetalServersRequest, ListBareMetalServersResponse>(request,
-            BmsMeta.listBareMetalServers, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.listBareMetalServers, hcClient);
     }
 
     /**
@@ -561,7 +546,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBaremetalFlavorDetailExtendsRequest 请求对象
+     * @param request ListBaremetalFlavorDetailExtendsRequest 请求对象
      * @return ListBaremetalFlavorDetailExtendsResponse
      */
     public ListBaremetalFlavorDetailExtendsResponse listBaremetalFlavorDetailExtends(
@@ -576,13 +561,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBaremetalFlavorDetailExtendsRequest 请求对象
+     * @param request ListBaremetalFlavorDetailExtendsRequest 请求对象
      * @return SyncInvoker<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse>
      */
     public SyncInvoker<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse> listBaremetalFlavorDetailExtendsInvoker(
         ListBaremetalFlavorDetailExtendsRequest request) {
-        return new SyncInvoker<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse>(
-            request, BmsMeta.listBaremetalFlavorDetailExtends, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.listBaremetalFlavorDetailExtends, hcClient);
     }
 
     /**
@@ -592,7 +576,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReinstallBaremetalServerOsRequest 请求对象
+     * @param request ReinstallBaremetalServerOsRequest 请求对象
      * @return ReinstallBaremetalServerOsResponse
      */
     public ReinstallBaremetalServerOsResponse reinstallBaremetalServerOs(ReinstallBaremetalServerOsRequest request) {
@@ -606,13 +590,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReinstallBaremetalServerOsRequest 请求对象
+     * @param request ReinstallBaremetalServerOsRequest 请求对象
      * @return SyncInvoker<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse>
      */
     public SyncInvoker<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse> reinstallBaremetalServerOsInvoker(
         ReinstallBaremetalServerOsRequest request) {
-        return new SyncInvoker<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse>(request,
-            BmsMeta.reinstallBaremetalServerOs, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.reinstallBaremetalServerOs, hcClient);
     }
 
     /**
@@ -622,7 +605,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdOneClickRequest 请求对象
+     * @param request ResetPwdOneClickRequest 请求对象
      * @return ResetPwdOneClickResponse
      */
     public ResetPwdOneClickResponse resetPwdOneClick(ResetPwdOneClickRequest request) {
@@ -636,13 +619,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdOneClickRequest 请求对象
+     * @param request ResetPwdOneClickRequest 请求对象
      * @return SyncInvoker<ResetPwdOneClickRequest, ResetPwdOneClickResponse>
      */
     public SyncInvoker<ResetPwdOneClickRequest, ResetPwdOneClickResponse> resetPwdOneClickInvoker(
         ResetPwdOneClickRequest request) {
-        return new SyncInvoker<ResetPwdOneClickRequest, ResetPwdOneClickResponse>(request, BmsMeta.resetPwdOneClick,
-            hcClient);
+        return new SyncInvoker<>(request, BmsMeta.resetPwdOneClick, hcClient);
     }
 
     /**
@@ -652,7 +634,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerInterfaceAttachmentsRequest 请求对象
+     * @param request ShowBaremetalServerInterfaceAttachmentsRequest 请求对象
      * @return ShowBaremetalServerInterfaceAttachmentsResponse
      */
     public ShowBaremetalServerInterfaceAttachmentsResponse showBaremetalServerInterfaceAttachments(
@@ -667,13 +649,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerInterfaceAttachmentsRequest 请求对象
+     * @param request ShowBaremetalServerInterfaceAttachmentsRequest 请求对象
      * @return SyncInvoker<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse>
      */
     public SyncInvoker<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse> showBaremetalServerInterfaceAttachmentsInvoker(
         ShowBaremetalServerInterfaceAttachmentsRequest request) {
-        return new SyncInvoker<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse>(
-            request, BmsMeta.showBaremetalServerInterfaceAttachments, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.showBaremetalServerInterfaceAttachments, hcClient);
     }
 
     /**
@@ -683,7 +664,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerTagsRequest 请求对象
+     * @param request ShowBaremetalServerTagsRequest 请求对象
      * @return ShowBaremetalServerTagsResponse
      */
     public ShowBaremetalServerTagsResponse showBaremetalServerTags(ShowBaremetalServerTagsRequest request) {
@@ -697,13 +678,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerTagsRequest 请求对象
+     * @param request ShowBaremetalServerTagsRequest 请求对象
      * @return SyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse>
      */
     public SyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> showBaremetalServerTagsInvoker(
         ShowBaremetalServerTagsRequest request) {
-        return new SyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse>(request,
-            BmsMeta.showBaremetalServerTags, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.showBaremetalServerTags, hcClient);
     }
 
     /**
@@ -713,7 +693,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerVolumeInfoRequest 请求对象
+     * @param request ShowBaremetalServerVolumeInfoRequest 请求对象
      * @return ShowBaremetalServerVolumeInfoResponse
      */
     public ShowBaremetalServerVolumeInfoResponse showBaremetalServerVolumeInfo(
@@ -728,13 +708,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerVolumeInfoRequest 请求对象
+     * @param request ShowBaremetalServerVolumeInfoRequest 请求对象
      * @return SyncInvoker<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse>
      */
     public SyncInvoker<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse> showBaremetalServerVolumeInfoInvoker(
         ShowBaremetalServerVolumeInfoRequest request) {
-        return new SyncInvoker<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse>(request,
-            BmsMeta.showBaremetalServerVolumeInfo, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.showBaremetalServerVolumeInfo, hcClient);
     }
 
     /**
@@ -744,7 +723,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResetPwdRequest 请求对象
+     * @param request ShowResetPwdRequest 请求对象
      * @return ShowResetPwdResponse
      */
     public ShowResetPwdResponse showResetPwd(ShowResetPwdRequest request) {
@@ -758,11 +737,11 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResetPwdRequest 请求对象
+     * @param request ShowResetPwdRequest 请求对象
      * @return SyncInvoker<ShowResetPwdRequest, ShowResetPwdResponse>
      */
     public SyncInvoker<ShowResetPwdRequest, ShowResetPwdResponse> showResetPwdInvoker(ShowResetPwdRequest request) {
-        return new SyncInvoker<ShowResetPwdRequest, ShowResetPwdResponse>(request, BmsMeta.showResetPwd, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.showResetPwd, hcClient);
     }
 
     /**
@@ -771,7 +750,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowServerRemoteConsoleRequest 请求对象
+     * @param request ShowServerRemoteConsoleRequest 请求对象
      * @return ShowServerRemoteConsoleResponse
      */
     public ShowServerRemoteConsoleResponse showServerRemoteConsole(ShowServerRemoteConsoleRequest request) {
@@ -784,13 +763,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowServerRemoteConsoleRequest 请求对象
+     * @param request ShowServerRemoteConsoleRequest 请求对象
      * @return SyncInvoker<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse>
      */
     public SyncInvoker<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> showServerRemoteConsoleInvoker(
         ShowServerRemoteConsoleRequest request) {
-        return new SyncInvoker<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse>(request,
-            BmsMeta.showServerRemoteConsole, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.showServerRemoteConsole, hcClient);
     }
 
     /**
@@ -800,7 +778,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTenantQuotaRequest 请求对象
+     * @param request ShowTenantQuotaRequest 请求对象
      * @return ShowTenantQuotaResponse
      */
     public ShowTenantQuotaResponse showTenantQuota(ShowTenantQuotaRequest request) {
@@ -814,13 +792,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTenantQuotaRequest 请求对象
+     * @param request ShowTenantQuotaRequest 请求对象
      * @return SyncInvoker<ShowTenantQuotaRequest, ShowTenantQuotaResponse>
      */
     public SyncInvoker<ShowTenantQuotaRequest, ShowTenantQuotaResponse> showTenantQuotaInvoker(
         ShowTenantQuotaRequest request) {
-        return new SyncInvoker<ShowTenantQuotaRequest, ShowTenantQuotaResponse>(request, BmsMeta.showTenantQuota,
-            hcClient);
+        return new SyncInvoker<>(request, BmsMeta.showTenantQuota, hcClient);
     }
 
     /**
@@ -830,7 +807,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWindowsBaremetalServerPwdRequest 请求对象
+     * @param request ShowWindowsBaremetalServerPwdRequest 请求对象
      * @return ShowWindowsBaremetalServerPwdResponse
      */
     public ShowWindowsBaremetalServerPwdResponse showWindowsBaremetalServerPwd(
@@ -845,13 +822,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWindowsBaremetalServerPwdRequest 请求对象
+     * @param request ShowWindowsBaremetalServerPwdRequest 请求对象
      * @return SyncInvoker<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse>
      */
     public SyncInvoker<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse> showWindowsBaremetalServerPwdInvoker(
         ShowWindowsBaremetalServerPwdRequest request) {
-        return new SyncInvoker<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse>(request,
-            BmsMeta.showWindowsBaremetalServerPwd, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.showWindowsBaremetalServerPwd, hcClient);
     }
 
     /**
@@ -860,7 +836,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBaremetalServerInterfaceAttachmentsRequest 请求对象
+     * @param request UpdateBaremetalServerInterfaceAttachmentsRequest 请求对象
      * @return UpdateBaremetalServerInterfaceAttachmentsResponse
      */
     public UpdateBaremetalServerInterfaceAttachmentsResponse updateBaremetalServerInterfaceAttachments(
@@ -874,13 +850,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBaremetalServerInterfaceAttachmentsRequest 请求对象
+     * @param request UpdateBaremetalServerInterfaceAttachmentsRequest 请求对象
      * @return SyncInvoker<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse>
      */
     public SyncInvoker<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse> updateBaremetalServerInterfaceAttachmentsInvoker(
         UpdateBaremetalServerInterfaceAttachmentsRequest request) {
-        return new SyncInvoker<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse>(
-            request, BmsMeta.updateBaremetalServerInterfaceAttachments, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.updateBaremetalServerInterfaceAttachments, hcClient);
     }
 
     /**
@@ -890,7 +865,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBaremetalServerMetadataRequest 请求对象
+     * @param request UpdateBaremetalServerMetadataRequest 请求对象
      * @return UpdateBaremetalServerMetadataResponse
      */
     public UpdateBaremetalServerMetadataResponse updateBaremetalServerMetadata(
@@ -905,13 +880,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBaremetalServerMetadataRequest 请求对象
+     * @param request UpdateBaremetalServerMetadataRequest 请求对象
      * @return SyncInvoker<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse>
      */
     public SyncInvoker<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse> updateBaremetalServerMetadataInvoker(
         UpdateBaremetalServerMetadataRequest request) {
-        return new SyncInvoker<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse>(request,
-            BmsMeta.updateBaremetalServerMetadata, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.updateBaremetalServerMetadata, hcClient);
     }
 
     /**
@@ -921,7 +895,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpecifiedVersionRequest 请求对象
+     * @param request ShowSpecifiedVersionRequest 请求对象
      * @return ShowSpecifiedVersionResponse
      */
     public ShowSpecifiedVersionResponse showSpecifiedVersion(ShowSpecifiedVersionRequest request) {
@@ -935,13 +909,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpecifiedVersionRequest 请求对象
+     * @param request ShowSpecifiedVersionRequest 请求对象
      * @return SyncInvoker<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse>
      */
     public SyncInvoker<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse> showSpecifiedVersionInvoker(
         ShowSpecifiedVersionRequest request) {
-        return new SyncInvoker<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse>(request,
-            BmsMeta.showSpecifiedVersion, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.showSpecifiedVersion, hcClient);
     }
 
     /**
@@ -951,7 +924,7 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInfosRequest 请求对象
+     * @param request ShowJobInfosRequest 请求对象
      * @return ShowJobInfosResponse
      */
     public ShowJobInfosResponse showJobInfos(ShowJobInfosRequest request) {
@@ -965,11 +938,11 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInfosRequest 请求对象
+     * @param request ShowJobInfosRequest 请求对象
      * @return SyncInvoker<ShowJobInfosRequest, ShowJobInfosResponse>
      */
     public SyncInvoker<ShowJobInfosRequest, ShowJobInfosResponse> showJobInfosInvoker(ShowJobInfosRequest request) {
-        return new SyncInvoker<ShowJobInfosRequest, ShowJobInfosResponse>(request, BmsMeta.showJobInfos, hcClient);
+        return new SyncInvoker<>(request, BmsMeta.showJobInfos, hcClient);
     }
 
 }

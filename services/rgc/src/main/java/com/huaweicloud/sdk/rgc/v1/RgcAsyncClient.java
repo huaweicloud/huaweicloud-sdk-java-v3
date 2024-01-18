@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.rgc.v1.model.DisableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DisableControlResponse;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlResponse;
+import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountRequest;
+import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListConfigRuleComplianceRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListConfigRuleComplianceResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListControlViolationsRequest;
@@ -35,6 +37,8 @@ import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedOrganizationalUnitsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedOrganizationalUnitsResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ReRegisterOrganizationalUnitRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ReRegisterOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.RegisterOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.RegisterOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.SetupLandingZoneRequest;
@@ -67,6 +71,8 @@ import com.huaweicloud.sdk.rgc.v1.model.ShowManagedOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowManagedOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowOperationRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowOperationResponse;
+import com.huaweicloud.sdk.rgc.v1.model.UnEnrollAccountRequest;
+import com.huaweicloud.sdk.rgc.v1.model.UnEnrollAccountResponse;
 import com.huaweicloud.sdk.rgc.v1.model.UpdateManagedAccountRequest;
 import com.huaweicloud.sdk.rgc.v1.model.UpdateManagedAccountResponse;
 
@@ -92,7 +98,7 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableControlRequest 请求对象
+     * @param request DisableControlRequest 请求对象
      * @return CompletableFuture<DisableControlResponse>
      */
     public CompletableFuture<DisableControlResponse> disableControlAsync(DisableControlRequest request) {
@@ -106,13 +112,12 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableControlRequest 请求对象
+     * @param request DisableControlRequest 请求对象
      * @return AsyncInvoker<DisableControlRequest, DisableControlResponse>
      */
     public AsyncInvoker<DisableControlRequest, DisableControlResponse> disableControlAsyncInvoker(
         DisableControlRequest request) {
-        return new AsyncInvoker<DisableControlRequest, DisableControlResponse>(request, RgcMeta.disableControl,
-            hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.disableControl, hcClient);
     }
 
     /**
@@ -122,7 +127,7 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableControlRequest 请求对象
+     * @param request EnableControlRequest 请求对象
      * @return CompletableFuture<EnableControlResponse>
      */
     public CompletableFuture<EnableControlResponse> enableControlAsync(EnableControlRequest request) {
@@ -136,22 +141,22 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableControlRequest 请求对象
+     * @param request EnableControlRequest 请求对象
      * @return AsyncInvoker<EnableControlRequest, EnableControlResponse>
      */
     public AsyncInvoker<EnableControlRequest, EnableControlResponse> enableControlAsyncInvoker(
         EnableControlRequest request) {
-        return new AsyncInvoker<EnableControlRequest, EnableControlResponse>(request, RgcMeta.enableControl, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.enableControl, hcClient);
     }
 
     /**
-     * 查询账号的合规性状态
+     * 查询纳管账号的Config规则合规性信息
      *
-     * 查询组织里某个账号下开启的所有控制策略的详细信息。
+     * 查询纳管账号的Config规则合规性信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigRuleComplianceRequest 请求对象
+     * @param request ListConfigRuleComplianceRequest 请求对象
      * @return CompletableFuture<ListConfigRuleComplianceResponse>
      */
     public CompletableFuture<ListConfigRuleComplianceResponse> listConfigRuleComplianceAsync(
@@ -160,29 +165,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询账号的合规性状态
+     * 查询纳管账号的Config规则合规性信息
      *
-     * 查询组织里某个账号下开启的所有控制策略的详细信息。
+     * 查询纳管账号的Config规则合规性信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigRuleComplianceRequest 请求对象
+     * @param request ListConfigRuleComplianceRequest 请求对象
      * @return AsyncInvoker<ListConfigRuleComplianceRequest, ListConfigRuleComplianceResponse>
      */
     public AsyncInvoker<ListConfigRuleComplianceRequest, ListConfigRuleComplianceResponse> listConfigRuleComplianceAsyncInvoker(
         ListConfigRuleComplianceRequest request) {
-        return new AsyncInvoker<ListConfigRuleComplianceRequest, ListConfigRuleComplianceResponse>(request,
-            RgcMeta.listConfigRuleCompliance, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.listConfigRuleCompliance, hcClient);
     }
 
     /**
-     * 查询不合规信息
+     * 列出不合规信息
      *
-     * 查询组织里所有不合规的资源信息。
+     * 列出组织里所有不合规的资源信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlViolationsRequest 请求对象
+     * @param request ListControlViolationsRequest 请求对象
      * @return CompletableFuture<ListControlViolationsResponse>
      */
     public CompletableFuture<ListControlViolationsResponse> listControlViolationsAsync(
@@ -191,29 +195,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询不合规信息
+     * 列出不合规信息
      *
-     * 查询组织里所有不合规的资源信息。
+     * 列出组织里所有不合规的资源信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlViolationsRequest 请求对象
+     * @param request ListControlViolationsRequest 请求对象
      * @return AsyncInvoker<ListControlViolationsRequest, ListControlViolationsResponse>
      */
     public AsyncInvoker<ListControlViolationsRequest, ListControlViolationsResponse> listControlViolationsAsyncInvoker(
         ListControlViolationsRequest request) {
-        return new AsyncInvoker<ListControlViolationsRequest, ListControlViolationsResponse>(request,
-            RgcMeta.listControlViolations, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.listControlViolations, hcClient);
     }
 
     /**
-     * 查询控制策略
+     * 列出控制策略
      *
-     * 查询RGC服务里所有的预置控制策略。
+     * 列出RGC服务里所有的预置控制策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsRequest 请求对象
+     * @param request ListControlsRequest 请求对象
      * @return CompletableFuture<ListControlsResponse>
      */
     public CompletableFuture<ListControlsResponse> listControlsAsync(ListControlsRequest request) {
@@ -221,28 +224,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询控制策略
+     * 列出控制策略
      *
-     * 查询RGC服务里所有的预置控制策略。
+     * 列出RGC服务里所有的预置控制策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsRequest 请求对象
+     * @param request ListControlsRequest 请求对象
      * @return AsyncInvoker<ListControlsRequest, ListControlsResponse>
      */
     public AsyncInvoker<ListControlsRequest, ListControlsResponse> listControlsAsyncInvoker(
         ListControlsRequest request) {
-        return new AsyncInvoker<ListControlsRequest, ListControlsResponse>(request, RgcMeta.listControls, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.listControls, hcClient);
     }
 
     /**
-     * 查询账号下开启的控制策略
+     * 列出纳管账号下开启的控制策略
      *
-     * 查询组织里某个账号开启的所有控制策略信息。
+     * 列出组织里某个纳管账号开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsForAccountRequest 请求对象
+     * @param request ListControlsForAccountRequest 请求对象
      * @return CompletableFuture<ListControlsForAccountResponse>
      */
     public CompletableFuture<ListControlsForAccountResponse> listControlsForAccountAsync(
@@ -251,29 +254,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询账号下开启的控制策略
+     * 列出纳管账号下开启的控制策略
      *
-     * 查询组织里某个账号开启的所有控制策略信息。
+     * 列出组织里某个纳管账号开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsForAccountRequest 请求对象
+     * @param request ListControlsForAccountRequest 请求对象
      * @return AsyncInvoker<ListControlsForAccountRequest, ListControlsForAccountResponse>
      */
     public AsyncInvoker<ListControlsForAccountRequest, ListControlsForAccountResponse> listControlsForAccountAsyncInvoker(
         ListControlsForAccountRequest request) {
-        return new AsyncInvoker<ListControlsForAccountRequest, ListControlsForAccountResponse>(request,
-            RgcMeta.listControlsForAccount, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.listControlsForAccount, hcClient);
     }
 
     /**
-     * 查询OU下开启的控制策略
+     * 列出注册OU下开启的控制策略
      *
-     * 查询组织里某个OU开启的所有控制策略信息。
+     * 列出组织里某个注册OU开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsForOrganizationUnitRequest 请求对象
+     * @param request ListControlsForOrganizationUnitRequest 请求对象
      * @return CompletableFuture<ListControlsForOrganizationUnitResponse>
      */
     public CompletableFuture<ListControlsForOrganizationUnitResponse> listControlsForOrganizationUnitAsync(
@@ -282,29 +284,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询OU下开启的控制策略
+     * 列出注册OU下开启的控制策略
      *
-     * 查询组织里某个OU开启的所有控制策略信息。
+     * 列出组织里某个注册OU开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListControlsForOrganizationUnitRequest 请求对象
+     * @param request ListControlsForOrganizationUnitRequest 请求对象
      * @return AsyncInvoker<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse>
      */
     public AsyncInvoker<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> listControlsForOrganizationUnitAsyncInvoker(
         ListControlsForOrganizationUnitRequest request) {
-        return new AsyncInvoker<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse>(
-            request, RgcMeta.listControlsForOrganizationUnit, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.listControlsForOrganizationUnit, hcClient);
     }
 
     /**
-     * 查询漂移信息
+     * 列出漂移信息
      *
-     * 查询Landing Zone的所有漂移详细信息。
+     * 列出Landing Zone的所有漂移详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDriftDetailsRequest 请求对象
+     * @param request ListDriftDetailsRequest 请求对象
      * @return CompletableFuture<ListDriftDetailsResponse>
      */
     public CompletableFuture<ListDriftDetailsResponse> listDriftDetailsAsync(ListDriftDetailsRequest request) {
@@ -312,29 +313,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询漂移信息
+     * 列出漂移信息
      *
-     * 查询Landing Zone的所有漂移详细信息。
+     * 列出Landing Zone的所有漂移详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDriftDetailsRequest 请求对象
+     * @param request ListDriftDetailsRequest 请求对象
      * @return AsyncInvoker<ListDriftDetailsRequest, ListDriftDetailsResponse>
      */
     public AsyncInvoker<ListDriftDetailsRequest, ListDriftDetailsResponse> listDriftDetailsAsyncInvoker(
         ListDriftDetailsRequest request) {
-        return new AsyncInvoker<ListDriftDetailsRequest, ListDriftDetailsResponse>(request, RgcMeta.listDriftDetails,
-            hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.listDriftDetails, hcClient);
     }
 
     /**
-     * 查询开启的控制策略
+     * 列出开启的控制策略
      *
-     * 查询组织里开启的所有控制策略信息。
+     * 列出组织里开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnabledControlsRequest 请求对象
+     * @param request ListEnabledControlsRequest 请求对象
      * @return CompletableFuture<ListEnabledControlsResponse>
      */
     public CompletableFuture<ListEnabledControlsResponse> listEnabledControlsAsync(ListEnabledControlsRequest request) {
@@ -342,29 +342,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询开启的控制策略
+     * 列出开启的控制策略
      *
-     * 查询组织里开启的所有控制策略信息。
+     * 列出组织里开启的所有控制策略信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnabledControlsRequest 请求对象
+     * @param request ListEnabledControlsRequest 请求对象
      * @return AsyncInvoker<ListEnabledControlsRequest, ListEnabledControlsResponse>
      */
     public AsyncInvoker<ListEnabledControlsRequest, ListEnabledControlsResponse> listEnabledControlsAsyncInvoker(
         ListEnabledControlsRequest request) {
-        return new AsyncInvoker<ListEnabledControlsRequest, ListEnabledControlsResponse>(request,
-            RgcMeta.listEnabledControls, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.listEnabledControls, hcClient);
     }
 
     /**
-     * 查询账号的合规状态
+     * 查询纳管账号的合规状态
      *
-     * 查询组织里某个账号的资源合规状态。
+     * 查询组织里某个纳管账号的资源合规状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComplianceStatusForAccountRequest 请求对象
+     * @param request ShowComplianceStatusForAccountRequest 请求对象
      * @return CompletableFuture<ShowComplianceStatusForAccountResponse>
      */
     public CompletableFuture<ShowComplianceStatusForAccountResponse> showComplianceStatusForAccountAsync(
@@ -373,29 +372,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询账号的合规状态
+     * 查询纳管账号的合规状态
      *
-     * 查询组织里某个账号的资源合规状态。
+     * 查询组织里某个纳管账号的资源合规状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComplianceStatusForAccountRequest 请求对象
+     * @param request ShowComplianceStatusForAccountRequest 请求对象
      * @return AsyncInvoker<ShowComplianceStatusForAccountRequest, ShowComplianceStatusForAccountResponse>
      */
     public AsyncInvoker<ShowComplianceStatusForAccountRequest, ShowComplianceStatusForAccountResponse> showComplianceStatusForAccountAsyncInvoker(
         ShowComplianceStatusForAccountRequest request) {
-        return new AsyncInvoker<ShowComplianceStatusForAccountRequest, ShowComplianceStatusForAccountResponse>(request,
-            RgcMeta.showComplianceStatusForAccount, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showComplianceStatusForAccount, hcClient);
     }
 
     /**
-     * 查询OU的合规状态
+     * 查询注册OU的合规状态
      *
-     * 查询组织里某个OU下所有账号的资源合规状态。
+     * 查询组织里某个注册OU下所有纳管账号的资源合规状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComplianceStatusForOrganizationUnitRequest 请求对象
+     * @param request ShowComplianceStatusForOrganizationUnitRequest 请求对象
      * @return CompletableFuture<ShowComplianceStatusForOrganizationUnitResponse>
      */
     public CompletableFuture<ShowComplianceStatusForOrganizationUnitResponse> showComplianceStatusForOrganizationUnitAsync(
@@ -404,19 +402,18 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询OU的合规状态
+     * 查询注册OU的合规状态
      *
-     * 查询组织里某个OU下所有账号的资源合规状态。
+     * 查询组织里某个注册OU下所有纳管账号的资源合规状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComplianceStatusForOrganizationUnitRequest 请求对象
+     * @param request ShowComplianceStatusForOrganizationUnitRequest 请求对象
      * @return AsyncInvoker<ShowComplianceStatusForOrganizationUnitRequest, ShowComplianceStatusForOrganizationUnitResponse>
      */
     public AsyncInvoker<ShowComplianceStatusForOrganizationUnitRequest, ShowComplianceStatusForOrganizationUnitResponse> showComplianceStatusForOrganizationUnitAsyncInvoker(
         ShowComplianceStatusForOrganizationUnitRequest request) {
-        return new AsyncInvoker<ShowComplianceStatusForOrganizationUnitRequest, ShowComplianceStatusForOrganizationUnitResponse>(
-            request, RgcMeta.showComplianceStatusForOrganizationUnit, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showComplianceStatusForOrganizationUnit, hcClient);
     }
 
     /**
@@ -426,7 +423,7 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlRequest 请求对象
+     * @param request ShowControlRequest 请求对象
      * @return CompletableFuture<ShowControlResponse>
      */
     public CompletableFuture<ShowControlResponse> showControlAsync(ShowControlRequest request) {
@@ -440,11 +437,11 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlRequest 请求对象
+     * @param request ShowControlRequest 请求对象
      * @return AsyncInvoker<ShowControlRequest, ShowControlResponse>
      */
     public AsyncInvoker<ShowControlRequest, ShowControlResponse> showControlAsyncInvoker(ShowControlRequest request) {
-        return new AsyncInvoker<ShowControlRequest, ShowControlResponse>(request, RgcMeta.showControl, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showControl, hcClient);
     }
 
     /**
@@ -454,7 +451,7 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlOperateRequest 请求对象
+     * @param request ShowControlOperateRequest 请求对象
      * @return CompletableFuture<ShowControlOperateResponse>
      */
     public CompletableFuture<ShowControlOperateResponse> showControlOperateAsync(ShowControlOperateRequest request) {
@@ -468,23 +465,22 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlOperateRequest 请求对象
+     * @param request ShowControlOperateRequest 请求对象
      * @return AsyncInvoker<ShowControlOperateRequest, ShowControlOperateResponse>
      */
     public AsyncInvoker<ShowControlOperateRequest, ShowControlOperateResponse> showControlOperateAsyncInvoker(
         ShowControlOperateRequest request) {
-        return new AsyncInvoker<ShowControlOperateRequest, ShowControlOperateResponse>(request,
-            RgcMeta.showControlOperate, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showControlOperate, hcClient);
     }
 
     /**
-     * 查询OU开启的控制策略
+     * 查询注册OU开启的控制策略
      *
-     * 查询组织里某个OU下开启的某个控制策略的详细信息。
+     * 查询组织里某个注册OU下开启的某个控制策略的详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlsForOrganizationUnitRequest 请求对象
+     * @param request ShowControlsForOrganizationUnitRequest 请求对象
      * @return CompletableFuture<ShowControlsForOrganizationUnitResponse>
      */
     public CompletableFuture<ShowControlsForOrganizationUnitResponse> showControlsForOrganizationUnitAsync(
@@ -493,19 +489,18 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询OU开启的控制策略
+     * 查询注册OU开启的控制策略
      *
-     * 查询组织里某个OU下开启的某个控制策略的详细信息。
+     * 查询组织里某个注册OU下开启的某个控制策略的详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowControlsForOrganizationUnitRequest 请求对象
+     * @param request ShowControlsForOrganizationUnitRequest 请求对象
      * @return AsyncInvoker<ShowControlsForOrganizationUnitRequest, ShowControlsForOrganizationUnitResponse>
      */
     public AsyncInvoker<ShowControlsForOrganizationUnitRequest, ShowControlsForOrganizationUnitResponse> showControlsForOrganizationUnitAsyncInvoker(
         ShowControlsForOrganizationUnitRequest request) {
-        return new AsyncInvoker<ShowControlsForOrganizationUnitRequest, ShowControlsForOrganizationUnitResponse>(
-            request, RgcMeta.showControlsForOrganizationUnit, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showControlsForOrganizationUnit, hcClient);
     }
 
     /**
@@ -515,7 +510,7 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckLaunchRequest 请求对象
+     * @param request CheckLaunchRequest 请求对象
      * @return CompletableFuture<CheckLaunchResponse>
      */
     public CompletableFuture<CheckLaunchResponse> checkLaunchAsync(CheckLaunchRequest request) {
@@ -529,11 +524,11 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckLaunchRequest 请求对象
+     * @param request CheckLaunchRequest 请求对象
      * @return AsyncInvoker<CheckLaunchRequest, CheckLaunchResponse>
      */
     public AsyncInvoker<CheckLaunchRequest, CheckLaunchResponse> checkLaunchAsyncInvoker(CheckLaunchRequest request) {
-        return new AsyncInvoker<CheckLaunchRequest, CheckLaunchResponse>(request, RgcMeta.checkLaunch, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.checkLaunch, hcClient);
     }
 
     /**
@@ -543,7 +538,7 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetupLandingZoneRequest 请求对象
+     * @param request SetupLandingZoneRequest 请求对象
      * @return CompletableFuture<SetupLandingZoneResponse>
      */
     public CompletableFuture<SetupLandingZoneResponse> setupLandingZoneAsync(SetupLandingZoneRequest request) {
@@ -557,23 +552,22 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetupLandingZoneRequest 请求对象
+     * @param request SetupLandingZoneRequest 请求对象
      * @return AsyncInvoker<SetupLandingZoneRequest, SetupLandingZoneResponse>
      */
     public AsyncInvoker<SetupLandingZoneRequest, SetupLandingZoneResponse> setupLandingZoneAsyncInvoker(
         SetupLandingZoneRequest request) {
-        return new AsyncInvoker<SetupLandingZoneRequest, SetupLandingZoneResponse>(request, RgcMeta.setupLandingZone,
-            hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.setupLandingZone, hcClient);
     }
 
     /**
-     * 获取Landing Zone可更新状态
+     * 查询Landing Zone可更新状态
      *
-     * 获取Landing Zone当前是否需要升级更新。
+     * 查询Landing Zone当前是否需要升级更新。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAvailableUpdatesRequest 请求对象
+     * @param request ShowAvailableUpdatesRequest 请求对象
      * @return CompletableFuture<ShowAvailableUpdatesResponse>
      */
     public CompletableFuture<ShowAvailableUpdatesResponse> showAvailableUpdatesAsync(
@@ -582,19 +576,18 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 获取Landing Zone可更新状态
+     * 查询Landing Zone可更新状态
      *
-     * 获取Landing Zone当前是否需要升级更新。
+     * 查询Landing Zone当前是否需要升级更新。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAvailableUpdatesRequest 请求对象
+     * @param request ShowAvailableUpdatesRequest 请求对象
      * @return AsyncInvoker<ShowAvailableUpdatesRequest, ShowAvailableUpdatesResponse>
      */
     public AsyncInvoker<ShowAvailableUpdatesRequest, ShowAvailableUpdatesResponse> showAvailableUpdatesAsyncInvoker(
         ShowAvailableUpdatesRequest request) {
-        return new AsyncInvoker<ShowAvailableUpdatesRequest, ShowAvailableUpdatesResponse>(request,
-            RgcMeta.showAvailableUpdates, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showAvailableUpdates, hcClient);
     }
 
     /**
@@ -604,7 +597,7 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHomeRegionRequest 请求对象
+     * @param request ShowHomeRegionRequest 请求对象
      * @return CompletableFuture<ShowHomeRegionResponse>
      */
     public CompletableFuture<ShowHomeRegionResponse> showHomeRegionAsync(ShowHomeRegionRequest request) {
@@ -618,23 +611,22 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHomeRegionRequest 请求对象
+     * @param request ShowHomeRegionRequest 请求对象
      * @return AsyncInvoker<ShowHomeRegionRequest, ShowHomeRegionResponse>
      */
     public AsyncInvoker<ShowHomeRegionRequest, ShowHomeRegionResponse> showHomeRegionAsyncInvoker(
         ShowHomeRegionRequest request) {
-        return new AsyncInvoker<ShowHomeRegionRequest, ShowHomeRegionResponse>(request, RgcMeta.showHomeRegion,
-            hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showHomeRegion, hcClient);
     }
 
     /**
-     * 获取Landing Zone的配置
+     * 查询Landing Zone的配置
      *
-     * 获取当前客户的Landing Zone的所有配置。
+     * 查询当前客户的Landing Zone的所有配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneConfigurationRequest 请求对象
+     * @param request ShowLandingZoneConfigurationRequest 请求对象
      * @return CompletableFuture<ShowLandingZoneConfigurationResponse>
      */
     public CompletableFuture<ShowLandingZoneConfigurationResponse> showLandingZoneConfigurationAsync(
@@ -643,29 +635,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 获取Landing Zone的配置
+     * 查询Landing Zone的配置
      *
-     * 获取当前客户的Landing Zone的所有配置。
+     * 查询当前客户的Landing Zone的所有配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneConfigurationRequest 请求对象
+     * @param request ShowLandingZoneConfigurationRequest 请求对象
      * @return AsyncInvoker<ShowLandingZoneConfigurationRequest, ShowLandingZoneConfigurationResponse>
      */
     public AsyncInvoker<ShowLandingZoneConfigurationRequest, ShowLandingZoneConfigurationResponse> showLandingZoneConfigurationAsyncInvoker(
         ShowLandingZoneConfigurationRequest request) {
-        return new AsyncInvoker<ShowLandingZoneConfigurationRequest, ShowLandingZoneConfigurationResponse>(request,
-            RgcMeta.showLandingZoneConfiguration, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showLandingZoneConfiguration, hcClient);
     }
 
     /**
-     * 获取当前客户的Identity Center用户信息
+     * 查询当前客户的Identity Center用户信息
      *
-     * 获取当前客户的Identity Center用户信息。
+     * 查询当前客户的Identity Center用户信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneIdentityCenterRequest 请求对象
+     * @param request ShowLandingZoneIdentityCenterRequest 请求对象
      * @return CompletableFuture<ShowLandingZoneIdentityCenterResponse>
      */
     public CompletableFuture<ShowLandingZoneIdentityCenterResponse> showLandingZoneIdentityCenterAsync(
@@ -674,19 +665,18 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 获取当前客户的Identity Center用户信息
+     * 查询当前客户的Identity Center用户信息
      *
-     * 获取当前客户的Identity Center用户信息。
+     * 查询当前客户的Identity Center用户信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneIdentityCenterRequest 请求对象
+     * @param request ShowLandingZoneIdentityCenterRequest 请求对象
      * @return AsyncInvoker<ShowLandingZoneIdentityCenterRequest, ShowLandingZoneIdentityCenterResponse>
      */
     public AsyncInvoker<ShowLandingZoneIdentityCenterRequest, ShowLandingZoneIdentityCenterResponse> showLandingZoneIdentityCenterAsyncInvoker(
         ShowLandingZoneIdentityCenterRequest request) {
-        return new AsyncInvoker<ShowLandingZoneIdentityCenterRequest, ShowLandingZoneIdentityCenterResponse>(request,
-            RgcMeta.showLandingZoneIdentityCenter, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showLandingZoneIdentityCenter, hcClient);
     }
 
     /**
@@ -696,7 +686,7 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneStatusRequest 请求对象
+     * @param request ShowLandingZoneStatusRequest 请求对象
      * @return CompletableFuture<ShowLandingZoneStatusResponse>
      */
     public CompletableFuture<ShowLandingZoneStatusResponse> showLandingZoneStatusAsync(
@@ -711,23 +701,22 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLandingZoneStatusRequest 请求对象
+     * @param request ShowLandingZoneStatusRequest 请求对象
      * @return AsyncInvoker<ShowLandingZoneStatusRequest, ShowLandingZoneStatusResponse>
      */
     public AsyncInvoker<ShowLandingZoneStatusRequest, ShowLandingZoneStatusResponse> showLandingZoneStatusAsyncInvoker(
         ShowLandingZoneStatusRequest request) {
-        return new AsyncInvoker<ShowLandingZoneStatusRequest, ShowLandingZoneStatusResponse>(request,
-            RgcMeta.showLandingZoneStatus, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showLandingZoneStatus, hcClient);
     }
 
     /**
      * 创建账号
      *
-     * 在组织里的某个OU下创建账号。
+     * 在组织里的某个注册OU下创建账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccountRequest 请求对象
+     * @param request CreateAccountRequest 请求对象
      * @return CompletableFuture<CreateAccountResponse>
      */
     public CompletableFuture<CreateAccountResponse> createAccountAsync(CreateAccountRequest request) {
@@ -737,26 +726,26 @@ public class RgcAsyncClient {
     /**
      * 创建账号
      *
-     * 在组织里的某个OU下创建账号。
+     * 在组织里的某个注册OU下创建账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccountRequest 请求对象
+     * @param request CreateAccountRequest 请求对象
      * @return AsyncInvoker<CreateAccountRequest, CreateAccountResponse>
      */
     public AsyncInvoker<CreateAccountRequest, CreateAccountResponse> createAccountAsyncInvoker(
         CreateAccountRequest request) {
-        return new AsyncInvoker<CreateAccountRequest, CreateAccountResponse>(request, RgcMeta.createAccount, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.createAccount, hcClient);
     }
 
     /**
-     * 删除注册的OU
+     * 删除注册OU
      *
-     * 在组织里删除已注册的OU。
+     * 在组织里删除已注册OU。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteManagedOrganizationalUnitsRequest 请求对象
+     * @param request DeleteManagedOrganizationalUnitsRequest 请求对象
      * @return CompletableFuture<DeleteManagedOrganizationalUnitsResponse>
      */
     public CompletableFuture<DeleteManagedOrganizationalUnitsResponse> deleteManagedOrganizationalUnitsAsync(
@@ -765,29 +754,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 删除注册的OU
+     * 删除注册OU
      *
-     * 在组织里删除已注册的OU。
+     * 在组织里删除已注册OU。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteManagedOrganizationalUnitsRequest 请求对象
+     * @param request DeleteManagedOrganizationalUnitsRequest 请求对象
      * @return AsyncInvoker<DeleteManagedOrganizationalUnitsRequest, DeleteManagedOrganizationalUnitsResponse>
      */
     public AsyncInvoker<DeleteManagedOrganizationalUnitsRequest, DeleteManagedOrganizationalUnitsResponse> deleteManagedOrganizationalUnitsAsyncInvoker(
         DeleteManagedOrganizationalUnitsRequest request) {
-        return new AsyncInvoker<DeleteManagedOrganizationalUnitsRequest, DeleteManagedOrganizationalUnitsResponse>(
-            request, RgcMeta.deleteManagedOrganizationalUnits, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.deleteManagedOrganizationalUnits, hcClient);
     }
 
     /**
-     * 去注册OU
+     * 取消注册OU
      *
      * 将组织里的某个OU从RGC服务里取消注册。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeregisterOrganizationalUnitRequest 请求对象
+     * @param request DeregisterOrganizationalUnitRequest 请求对象
      * @return CompletableFuture<DeregisterOrganizationalUnitResponse>
      */
     public CompletableFuture<DeregisterOrganizationalUnitResponse> deregisterOrganizationalUnitAsync(
@@ -796,29 +784,57 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 去注册OU
+     * 取消注册OU
      *
      * 将组织里的某个OU从RGC服务里取消注册。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeregisterOrganizationalUnitRequest 请求对象
+     * @param request DeregisterOrganizationalUnitRequest 请求对象
      * @return AsyncInvoker<DeregisterOrganizationalUnitRequest, DeregisterOrganizationalUnitResponse>
      */
     public AsyncInvoker<DeregisterOrganizationalUnitRequest, DeregisterOrganizationalUnitResponse> deregisterOrganizationalUnitAsyncInvoker(
         DeregisterOrganizationalUnitRequest request) {
-        return new AsyncInvoker<DeregisterOrganizationalUnitRequest, DeregisterOrganizationalUnitResponse>(request,
-            RgcMeta.deregisterOrganizationalUnit, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.deregisterOrganizationalUnit, hcClient);
     }
 
     /**
-     * 查询注册的账号信息
+     * 纳管账号
      *
-     * 查询组织里所有注册的账号信息。
+     * 将组织里的某个账号纳管到RGC服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedAccountsRequest 请求对象
+     * @param request EnrollAccountRequest 请求对象
+     * @return CompletableFuture<EnrollAccountResponse>
+     */
+    public CompletableFuture<EnrollAccountResponse> enrollAccountAsync(EnrollAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, RgcMeta.enrollAccount);
+    }
+
+    /**
+     * 纳管账号
+     *
+     * 将组织里的某个账号纳管到RGC服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnrollAccountRequest 请求对象
+     * @return AsyncInvoker<EnrollAccountRequest, EnrollAccountResponse>
+     */
+    public AsyncInvoker<EnrollAccountRequest, EnrollAccountResponse> enrollAccountAsyncInvoker(
+        EnrollAccountRequest request) {
+        return new AsyncInvoker<>(request, RgcMeta.enrollAccount, hcClient);
+    }
+
+    /**
+     * 列举控制策略生效的纳管账号信息
+     *
+     * 列举控制策略生效的纳管账号信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListManagedAccountsRequest 请求对象
      * @return CompletableFuture<ListManagedAccountsResponse>
      */
     public CompletableFuture<ListManagedAccountsResponse> listManagedAccountsAsync(ListManagedAccountsRequest request) {
@@ -826,29 +842,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询注册的账号信息
+     * 列举控制策略生效的纳管账号信息
      *
-     * 查询组织里所有注册的账号信息。
+     * 列举控制策略生效的纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedAccountsRequest 请求对象
+     * @param request ListManagedAccountsRequest 请求对象
      * @return AsyncInvoker<ListManagedAccountsRequest, ListManagedAccountsResponse>
      */
     public AsyncInvoker<ListManagedAccountsRequest, ListManagedAccountsResponse> listManagedAccountsAsyncInvoker(
         ListManagedAccountsRequest request) {
-        return new AsyncInvoker<ListManagedAccountsRequest, ListManagedAccountsResponse>(request,
-            RgcMeta.listManagedAccounts, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.listManagedAccounts, hcClient);
     }
 
     /**
-     * 查询纳管OU下的账号信息
+     * 列出注册OU下的纳管账号信息
      *
-     * 查询组织里某个注册OU下的所有账号信息。
+     * 列出组织里某个注册OU下的所有纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedAccountsForParentRequest 请求对象
+     * @param request ListManagedAccountsForParentRequest 请求对象
      * @return CompletableFuture<ListManagedAccountsForParentResponse>
      */
     public CompletableFuture<ListManagedAccountsForParentResponse> listManagedAccountsForParentAsync(
@@ -857,29 +872,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询纳管OU下的账号信息
+     * 列出注册OU下的纳管账号信息
      *
-     * 查询组织里某个注册OU下的所有账号信息。
+     * 列出组织里某个注册OU下的所有纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedAccountsForParentRequest 请求对象
+     * @param request ListManagedAccountsForParentRequest 请求对象
      * @return AsyncInvoker<ListManagedAccountsForParentRequest, ListManagedAccountsForParentResponse>
      */
     public AsyncInvoker<ListManagedAccountsForParentRequest, ListManagedAccountsForParentResponse> listManagedAccountsForParentAsyncInvoker(
         ListManagedAccountsForParentRequest request) {
-        return new AsyncInvoker<ListManagedAccountsForParentRequest, ListManagedAccountsForParentResponse>(request,
-            RgcMeta.listManagedAccountsForParent, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.listManagedAccountsForParent, hcClient);
     }
 
     /**
-     * 查询纳管的OU信息
+     * 列举控制策略生效的注册OU信息
      *
-     * 查询组织里所有通过RGC服务注册的OU信息。
+     * 列举控制策略生效的注册OU信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedOrganizationalUnitsRequest 请求对象
+     * @param request ListManagedOrganizationalUnitsRequest 请求对象
      * @return CompletableFuture<ListManagedOrganizationalUnitsResponse>
      */
     public CompletableFuture<ListManagedOrganizationalUnitsResponse> listManagedOrganizationalUnitsAsync(
@@ -888,19 +902,48 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询纳管的OU信息
+     * 列举控制策略生效的注册OU信息
      *
-     * 查询组织里所有通过RGC服务注册的OU信息。
+     * 列举控制策略生效的注册OU信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedOrganizationalUnitsRequest 请求对象
+     * @param request ListManagedOrganizationalUnitsRequest 请求对象
      * @return AsyncInvoker<ListManagedOrganizationalUnitsRequest, ListManagedOrganizationalUnitsResponse>
      */
     public AsyncInvoker<ListManagedOrganizationalUnitsRequest, ListManagedOrganizationalUnitsResponse> listManagedOrganizationalUnitsAsyncInvoker(
         ListManagedOrganizationalUnitsRequest request) {
-        return new AsyncInvoker<ListManagedOrganizationalUnitsRequest, ListManagedOrganizationalUnitsResponse>(request,
-            RgcMeta.listManagedOrganizationalUnits, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.listManagedOrganizationalUnits, hcClient);
+    }
+
+    /**
+     * 重新注册OU
+     *
+     * 重新注册组织里的某个OU到RGC服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ReRegisterOrganizationalUnitRequest 请求对象
+     * @return CompletableFuture<ReRegisterOrganizationalUnitResponse>
+     */
+    public CompletableFuture<ReRegisterOrganizationalUnitResponse> reRegisterOrganizationalUnitAsync(
+        ReRegisterOrganizationalUnitRequest request) {
+        return hcClient.asyncInvokeHttp(request, RgcMeta.reRegisterOrganizationalUnit);
+    }
+
+    /**
+     * 重新注册OU
+     *
+     * 重新注册组织里的某个OU到RGC服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ReRegisterOrganizationalUnitRequest 请求对象
+     * @return AsyncInvoker<ReRegisterOrganizationalUnitRequest, ReRegisterOrganizationalUnitResponse>
+     */
+    public AsyncInvoker<ReRegisterOrganizationalUnitRequest, ReRegisterOrganizationalUnitResponse> reRegisterOrganizationalUnitAsyncInvoker(
+        ReRegisterOrganizationalUnitRequest request) {
+        return new AsyncInvoker<>(request, RgcMeta.reRegisterOrganizationalUnit, hcClient);
     }
 
     /**
@@ -910,7 +953,7 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterOrganizationalUnitRequest 请求对象
+     * @param request RegisterOrganizationalUnitRequest 请求对象
      * @return CompletableFuture<RegisterOrganizationalUnitResponse>
      */
     public CompletableFuture<RegisterOrganizationalUnitResponse> registerOrganizationalUnitAsync(
@@ -925,23 +968,22 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterOrganizationalUnitRequest 请求对象
+     * @param request RegisterOrganizationalUnitRequest 请求对象
      * @return AsyncInvoker<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse>
      */
     public AsyncInvoker<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse> registerOrganizationalUnitAsyncInvoker(
         RegisterOrganizationalUnitRequest request) {
-        return new AsyncInvoker<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse>(request,
-            RgcMeta.registerOrganizationalUnit, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.registerOrganizationalUnit, hcClient);
     }
 
     /**
-     * 查询注册的账号信息
+     * 查询纳管账号信息
      *
-     * 查询组织里某个注册的账号信息。
+     * 查询组织里某个纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedAccountRequest 请求对象
+     * @param request ShowManagedAccountRequest 请求对象
      * @return CompletableFuture<ShowManagedAccountResponse>
      */
     public CompletableFuture<ShowManagedAccountResponse> showManagedAccountAsync(ShowManagedAccountRequest request) {
@@ -949,29 +991,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询注册的账号信息
+     * 查询纳管账号信息
      *
-     * 查询组织里某个注册的账号信息。
+     * 查询组织里某个纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedAccountRequest 请求对象
+     * @param request ShowManagedAccountRequest 请求对象
      * @return AsyncInvoker<ShowManagedAccountRequest, ShowManagedAccountResponse>
      */
     public AsyncInvoker<ShowManagedAccountRequest, ShowManagedAccountResponse> showManagedAccountAsyncInvoker(
         ShowManagedAccountRequest request) {
-        return new AsyncInvoker<ShowManagedAccountRequest, ShowManagedAccountResponse>(request,
-            RgcMeta.showManagedAccount, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showManagedAccount, hcClient);
     }
 
     /**
-     * 查询核心账号
+     * 列出核心纳管账号
      *
-     * 查询组织里的所有核心账号信息。
+     * 列出组织里的所有核心纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedCoreAccountRequest 请求对象
+     * @param request ShowManagedCoreAccountRequest 请求对象
      * @return CompletableFuture<ShowManagedCoreAccountResponse>
      */
     public CompletableFuture<ShowManagedCoreAccountResponse> showManagedCoreAccountAsync(
@@ -980,29 +1021,28 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询核心账号
+     * 列出核心纳管账号
      *
-     * 查询组织里的所有核心账号信息。
+     * 列出组织里的所有核心纳管账号信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedCoreAccountRequest 请求对象
+     * @param request ShowManagedCoreAccountRequest 请求对象
      * @return AsyncInvoker<ShowManagedCoreAccountRequest, ShowManagedCoreAccountResponse>
      */
     public AsyncInvoker<ShowManagedCoreAccountRequest, ShowManagedCoreAccountResponse> showManagedCoreAccountAsyncInvoker(
         ShowManagedCoreAccountRequest request) {
-        return new AsyncInvoker<ShowManagedCoreAccountRequest, ShowManagedCoreAccountResponse>(request,
-            RgcMeta.showManagedCoreAccount, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showManagedCoreAccount, hcClient);
     }
 
     /**
-     * 查询纳管的OU信息
+     * 查询已注册OU信息
      *
-     * 查询在RGC服务里注册的OU信息。
+     * 查询在RGC服务里的注册OU信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedOrganizationalUnitRequest 请求对象
+     * @param request ShowManagedOrganizationalUnitRequest 请求对象
      * @return CompletableFuture<ShowManagedOrganizationalUnitResponse>
      */
     public CompletableFuture<ShowManagedOrganizationalUnitResponse> showManagedOrganizationalUnitAsync(
@@ -1011,19 +1051,18 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 查询纳管的OU信息
+     * 查询已注册OU信息
      *
-     * 查询在RGC服务里注册的OU信息。
+     * 查询在RGC服务里的注册OU信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowManagedOrganizationalUnitRequest 请求对象
+     * @param request ShowManagedOrganizationalUnitRequest 请求对象
      * @return AsyncInvoker<ShowManagedOrganizationalUnitRequest, ShowManagedOrganizationalUnitResponse>
      */
     public AsyncInvoker<ShowManagedOrganizationalUnitRequest, ShowManagedOrganizationalUnitResponse> showManagedOrganizationalUnitAsyncInvoker(
         ShowManagedOrganizationalUnitRequest request) {
-        return new AsyncInvoker<ShowManagedOrganizationalUnitRequest, ShowManagedOrganizationalUnitResponse>(request,
-            RgcMeta.showManagedOrganizationalUnit, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showManagedOrganizationalUnit, hcClient);
     }
 
     /**
@@ -1033,7 +1072,7 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOperationRequest 请求对象
+     * @param request ShowOperationRequest 请求对象
      * @return CompletableFuture<ShowOperationResponse>
      */
     public CompletableFuture<ShowOperationResponse> showOperationAsync(ShowOperationRequest request) {
@@ -1047,22 +1086,51 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOperationRequest 请求对象
+     * @param request ShowOperationRequest 请求对象
      * @return AsyncInvoker<ShowOperationRequest, ShowOperationResponse>
      */
     public AsyncInvoker<ShowOperationRequest, ShowOperationResponse> showOperationAsyncInvoker(
         ShowOperationRequest request) {
-        return new AsyncInvoker<ShowOperationRequest, ShowOperationResponse>(request, RgcMeta.showOperation, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.showOperation, hcClient);
     }
 
     /**
-     * 更新注册的账号
+     * 取消纳管账号
      *
-     * 更新组织里某个已在RGC服务注册的账号。
+     * 将组织里的某个账号从RGC服务里取消纳管。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateManagedAccountRequest 请求对象
+     * @param request UnEnrollAccountRequest 请求对象
+     * @return CompletableFuture<UnEnrollAccountResponse>
+     */
+    public CompletableFuture<UnEnrollAccountResponse> unEnrollAccountAsync(UnEnrollAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, RgcMeta.unEnrollAccount);
+    }
+
+    /**
+     * 取消纳管账号
+     *
+     * 将组织里的某个账号从RGC服务里取消纳管。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnEnrollAccountRequest 请求对象
+     * @return AsyncInvoker<UnEnrollAccountRequest, UnEnrollAccountResponse>
+     */
+    public AsyncInvoker<UnEnrollAccountRequest, UnEnrollAccountResponse> unEnrollAccountAsyncInvoker(
+        UnEnrollAccountRequest request) {
+        return new AsyncInvoker<>(request, RgcMeta.unEnrollAccount, hcClient);
+    }
+
+    /**
+     * 更新纳管账号
+     *
+     * 更新组织里某个已在RGC服务的纳管账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateManagedAccountRequest 请求对象
      * @return CompletableFuture<UpdateManagedAccountResponse>
      */
     public CompletableFuture<UpdateManagedAccountResponse> updateManagedAccountAsync(
@@ -1071,19 +1139,18 @@ public class RgcAsyncClient {
     }
 
     /**
-     * 更新注册的账号
+     * 更新纳管账号
      *
-     * 更新组织里某个已在RGC服务注册的账号。
+     * 更新组织里某个已在RGC服务的纳管账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateManagedAccountRequest 请求对象
+     * @param request UpdateManagedAccountRequest 请求对象
      * @return AsyncInvoker<UpdateManagedAccountRequest, UpdateManagedAccountResponse>
      */
     public AsyncInvoker<UpdateManagedAccountRequest, UpdateManagedAccountResponse> updateManagedAccountAsyncInvoker(
         UpdateManagedAccountRequest request) {
-        return new AsyncInvoker<UpdateManagedAccountRequest, UpdateManagedAccountResponse>(request,
-            RgcMeta.updateManagedAccount, hcClient);
+        return new AsyncInvoker<>(request, RgcMeta.updateManagedAccount, hcClient);
     }
 
 }

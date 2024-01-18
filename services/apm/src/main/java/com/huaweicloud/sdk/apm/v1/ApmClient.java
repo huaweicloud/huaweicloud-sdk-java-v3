@@ -104,7 +104,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAkSkRequest 请求对象
+     * @param request CreateAkSkRequest 请求对象
      * @return CreateAkSkResponse
      */
     public CreateAkSkResponse createAkSk(CreateAkSkRequest request) {
@@ -118,11 +118,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAkSkRequest 请求对象
+     * @param request CreateAkSkRequest 请求对象
      * @return SyncInvoker<CreateAkSkRequest, CreateAkSkResponse>
      */
     public SyncInvoker<CreateAkSkRequest, CreateAkSkResponse> createAkSkInvoker(CreateAkSkRequest request) {
-        return new SyncInvoker<CreateAkSkRequest, CreateAkSkResponse>(request, ApmMeta.createAkSk, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.createAkSk, hcClient);
     }
 
     /**
@@ -132,7 +132,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAkSkRequest 请求对象
+     * @param request DeleteAkSkRequest 请求对象
      * @return DeleteAkSkResponse
      */
     public DeleteAkSkResponse deleteAkSk(DeleteAkSkRequest request) {
@@ -146,11 +146,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAkSkRequest 请求对象
+     * @param request DeleteAkSkRequest 请求对象
      * @return SyncInvoker<DeleteAkSkRequest, DeleteAkSkResponse>
      */
     public SyncInvoker<DeleteAkSkRequest, DeleteAkSkResponse> deleteAkSkInvoker(DeleteAkSkRequest request) {
-        return new SyncInvoker<DeleteAkSkRequest, DeleteAkSkResponse>(request, ApmMeta.deleteAkSk, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.deleteAkSk, hcClient);
     }
 
     /**
@@ -160,7 +160,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAkSksRequest 请求对象
+     * @param request ShowAkSksRequest 请求对象
      * @return ShowAkSksResponse
      */
     public ShowAkSksResponse showAkSks(ShowAkSksRequest request) {
@@ -174,11 +174,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAkSksRequest 请求对象
+     * @param request ShowAkSksRequest 请求对象
      * @return SyncInvoker<ShowAkSksRequest, ShowAkSksResponse>
      */
     public SyncInvoker<ShowAkSksRequest, ShowAkSksResponse> showAkSksInvoker(ShowAkSksRequest request) {
-        return new SyncInvoker<ShowAkSksRequest, ShowAkSksResponse>(request, ApmMeta.showAkSks, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showAkSks, hcClient);
     }
 
     /**
@@ -188,7 +188,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmDataRequest 请求对象
+     * @param request ListAlarmDataRequest 请求对象
      * @return ListAlarmDataResponse
      */
     public ListAlarmDataResponse listAlarmData(ListAlarmDataRequest request) {
@@ -202,11 +202,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmDataRequest 请求对象
+     * @param request ListAlarmDataRequest 请求对象
      * @return SyncInvoker<ListAlarmDataRequest, ListAlarmDataResponse>
      */
     public SyncInvoker<ListAlarmDataRequest, ListAlarmDataResponse> listAlarmDataInvoker(ListAlarmDataRequest request) {
-        return new SyncInvoker<ListAlarmDataRequest, ListAlarmDataResponse>(request, ApmMeta.listAlarmData, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listAlarmData, hcClient);
     }
 
     /**
@@ -216,7 +216,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmNotifyRequest 请求对象
+     * @param request ListAlarmNotifyRequest 请求对象
      * @return ListAlarmNotifyResponse
      */
     public ListAlarmNotifyResponse listAlarmNotify(ListAlarmNotifyRequest request) {
@@ -230,13 +230,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmNotifyRequest 请求对象
+     * @param request ListAlarmNotifyRequest 请求对象
      * @return SyncInvoker<ListAlarmNotifyRequest, ListAlarmNotifyResponse>
      */
     public SyncInvoker<ListAlarmNotifyRequest, ListAlarmNotifyResponse> listAlarmNotifyInvoker(
         ListAlarmNotifyRequest request) {
-        return new SyncInvoker<ListAlarmNotifyRequest, ListAlarmNotifyResponse>(request, ApmMeta.listAlarmNotify,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listAlarmNotify, hcClient);
     }
 
     /**
@@ -246,7 +245,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeAgentStatusRequest 请求对象
+     * @param request ChangeAgentStatusRequest 请求对象
      * @return ChangeAgentStatusResponse
      */
     public ChangeAgentStatusResponse changeAgentStatus(ChangeAgentStatusRequest request) {
@@ -260,13 +259,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeAgentStatusRequest 请求对象
+     * @param request ChangeAgentStatusRequest 请求对象
      * @return SyncInvoker<ChangeAgentStatusRequest, ChangeAgentStatusResponse>
      */
     public SyncInvoker<ChangeAgentStatusRequest, ChangeAgentStatusResponse> changeAgentStatusInvoker(
         ChangeAgentStatusRequest request) {
-        return new SyncInvoker<ChangeAgentStatusRequest, ChangeAgentStatusResponse>(request, ApmMeta.changeAgentStatus,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.changeAgentStatus, hcClient);
     }
 
     /**
@@ -276,7 +274,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAgentRequest 请求对象
+     * @param request DeleteAgentRequest 请求对象
      * @return DeleteAgentResponse
      */
     public DeleteAgentResponse deleteAgent(DeleteAgentRequest request) {
@@ -290,11 +288,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAgentRequest 请求对象
+     * @param request DeleteAgentRequest 请求对象
      * @return SyncInvoker<DeleteAgentRequest, DeleteAgentResponse>
      */
     public SyncInvoker<DeleteAgentRequest, DeleteAgentResponse> deleteAgentInvoker(DeleteAgentRequest request) {
-        return new SyncInvoker<DeleteAgentRequest, DeleteAgentResponse>(request, ApmMeta.deleteAgent, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.deleteAgent, hcClient);
     }
 
     /**
@@ -304,7 +302,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAkSkRequest 请求对象
+     * @param request ListAkSkRequest 请求对象
      * @return ListAkSkResponse
      */
     public ListAkSkResponse listAkSk(ListAkSkRequest request) {
@@ -318,11 +316,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAkSkRequest 请求对象
+     * @param request ListAkSkRequest 请求对象
      * @return SyncInvoker<ListAkSkRequest, ListAkSkResponse>
      */
     public SyncInvoker<ListAkSkRequest, ListAkSkResponse> listAkSkInvoker(ListAkSkRequest request) {
-        return new SyncInvoker<ListAkSkRequest, ListAkSkResponse>(request, ApmMeta.listAkSk, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listAkSk, hcClient);
     }
 
     /**
@@ -332,7 +330,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBusinessRequest 请求对象
+     * @param request ListBusinessRequest 请求对象
      * @return ListBusinessResponse
      */
     public ListBusinessResponse listBusiness(ListBusinessRequest request) {
@@ -346,11 +344,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBusinessRequest 请求对象
+     * @param request ListBusinessRequest 请求对象
      * @return SyncInvoker<ListBusinessRequest, ListBusinessResponse>
      */
     public SyncInvoker<ListBusinessRequest, ListBusinessResponse> listBusinessInvoker(ListBusinessRequest request) {
-        return new SyncInvoker<ListBusinessRequest, ListBusinessResponse>(request, ApmMeta.listBusiness, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listBusiness, hcClient);
     }
 
     /**
@@ -360,7 +358,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvMonitorItemRequest 请求对象
+     * @param request ListEnvMonitorItemRequest 请求对象
      * @return ListEnvMonitorItemResponse
      */
     public ListEnvMonitorItemResponse listEnvMonitorItem(ListEnvMonitorItemRequest request) {
@@ -374,13 +372,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvMonitorItemRequest 请求对象
+     * @param request ListEnvMonitorItemRequest 请求对象
      * @return SyncInvoker<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse>
      */
     public SyncInvoker<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse> listEnvMonitorItemInvoker(
         ListEnvMonitorItemRequest request) {
-        return new SyncInvoker<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse>(request,
-            ApmMeta.listEnvMonitorItem, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listEnvMonitorItem, hcClient);
     }
 
     /**
@@ -390,7 +387,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveMonitorItemConfigRequest 请求对象
+     * @param request SaveMonitorItemConfigRequest 请求对象
      * @return SaveMonitorItemConfigResponse
      */
     public SaveMonitorItemConfigResponse saveMonitorItemConfig(SaveMonitorItemConfigRequest request) {
@@ -404,13 +401,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveMonitorItemConfigRequest 请求对象
+     * @param request SaveMonitorItemConfigRequest 请求对象
      * @return SyncInvoker<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse>
      */
     public SyncInvoker<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse> saveMonitorItemConfigInvoker(
         SaveMonitorItemConfigRequest request) {
-        return new SyncInvoker<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse>(request,
-            ApmMeta.saveMonitorItemConfig, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.saveMonitorItemConfig, hcClient);
     }
 
     /**
@@ -420,7 +416,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchAgentRequest 请求对象
+     * @param request SearchAgentRequest 请求对象
      * @return SearchAgentResponse
      */
     public SearchAgentResponse searchAgent(SearchAgentRequest request) {
@@ -434,11 +430,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchAgentRequest 请求对象
+     * @param request SearchAgentRequest 请求对象
      * @return SyncInvoker<SearchAgentRequest, SearchAgentResponse>
      */
     public SyncInvoker<SearchAgentRequest, SearchAgentResponse> searchAgentInvoker(SearchAgentRequest request) {
-        return new SyncInvoker<SearchAgentRequest, SearchAgentResponse>(request, ApmMeta.searchAgent, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.searchAgent, hcClient);
     }
 
     /**
@@ -448,7 +444,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchApplicationRequest 请求对象
+     * @param request SearchApplicationRequest 请求对象
      * @return SearchApplicationResponse
      */
     public SearchApplicationResponse searchApplication(SearchApplicationRequest request) {
@@ -462,13 +458,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchApplicationRequest 请求对象
+     * @param request SearchApplicationRequest 请求对象
      * @return SyncInvoker<SearchApplicationRequest, SearchApplicationResponse>
      */
     public SyncInvoker<SearchApplicationRequest, SearchApplicationResponse> searchApplicationInvoker(
         SearchApplicationRequest request) {
-        return new SyncInvoker<SearchApplicationRequest, SearchApplicationResponse>(request, ApmMeta.searchApplication,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.searchApplication, hcClient);
     }
 
     /**
@@ -478,7 +473,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMasterAddressRequest 请求对象
+     * @param request ShowMasterAddressRequest 请求对象
      * @return ShowMasterAddressResponse
      */
     public ShowMasterAddressResponse showMasterAddress(ShowMasterAddressRequest request) {
@@ -492,13 +487,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMasterAddressRequest 请求对象
+     * @param request ShowMasterAddressRequest 请求对象
      * @return SyncInvoker<ShowMasterAddressRequest, ShowMasterAddressResponse>
      */
     public SyncInvoker<ShowMasterAddressRequest, ShowMasterAddressResponse> showMasterAddressInvoker(
         ShowMasterAddressRequest request) {
-        return new SyncInvoker<ShowMasterAddressRequest, ShowMasterAddressResponse>(request, ApmMeta.showMasterAddress,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showMasterAddress, hcClient);
     }
 
     /**
@@ -508,7 +502,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return DeleteAppResponse
      */
     public DeleteAppResponse deleteApp(DeleteAppRequest request) {
@@ -522,11 +516,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return SyncInvoker<DeleteAppRequest, DeleteAppResponse>
      */
     public SyncInvoker<DeleteAppRequest, DeleteAppResponse> deleteAppInvoker(DeleteAppRequest request) {
-        return new SyncInvoker<DeleteAppRequest, DeleteAppResponse>(request, ApmMeta.deleteApp, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.deleteApp, hcClient);
     }
 
     /**
@@ -536,7 +530,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppEnvsRequest 请求对象
+     * @param request ListAppEnvsRequest 请求对象
      * @return ListAppEnvsResponse
      */
     public ListAppEnvsResponse listAppEnvs(ListAppEnvsRequest request) {
@@ -550,11 +544,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppEnvsRequest 请求对象
+     * @param request ListAppEnvsRequest 请求对象
      * @return SyncInvoker<ListAppEnvsRequest, ListAppEnvsResponse>
      */
     public SyncInvoker<ListAppEnvsRequest, ListAppEnvsResponse> listAppEnvsInvoker(ListAppEnvsRequest request) {
-        return new SyncInvoker<ListAppEnvsRequest, ListAppEnvsResponse>(request, ApmMeta.listAppEnvs, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listAppEnvs, hcClient);
     }
 
     /**
@@ -564,7 +558,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsRequest 请求对象
+     * @param request ListAppsRequest 请求对象
      * @return ListAppsResponse
      */
     public ListAppsResponse listApps(ListAppsRequest request) {
@@ -578,11 +572,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsRequest 请求对象
+     * @param request ListAppsRequest 请求对象
      * @return SyncInvoker<ListAppsRequest, ListAppsResponse>
      */
     public SyncInvoker<ListAppsRequest, ListAppsResponse> listAppsInvoker(ListAppsRequest request) {
-        return new SyncInvoker<ListAppsRequest, ListAppsResponse>(request, ApmMeta.listApps, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listApps, hcClient);
     }
 
     /**
@@ -592,7 +586,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvTagsRequest 请求对象
+     * @param request ListEnvTagsRequest 请求对象
      * @return ListEnvTagsResponse
      */
     public ListEnvTagsResponse listEnvTags(ListEnvTagsRequest request) {
@@ -606,11 +600,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvTagsRequest 请求对象
+     * @param request ListEnvTagsRequest 请求对象
      * @return SyncInvoker<ListEnvTagsRequest, ListEnvTagsResponse>
      */
     public SyncInvoker<ListEnvTagsRequest, ListEnvTagsResponse> listEnvTagsInvoker(ListEnvTagsRequest request) {
-        return new SyncInvoker<ListEnvTagsRequest, ListEnvTagsResponse>(request, ApmMeta.listEnvTags, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listEnvTags, hcClient);
     }
 
     /**
@@ -620,7 +614,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBusinessDetailRequest 请求对象
+     * @param request ShowBusinessDetailRequest 请求对象
      * @return ShowBusinessDetailResponse
      */
     public ShowBusinessDetailResponse showBusinessDetail(ShowBusinessDetailRequest request) {
@@ -634,13 +628,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBusinessDetailRequest 请求对象
+     * @param request ShowBusinessDetailRequest 请求对象
      * @return SyncInvoker<ShowBusinessDetailRequest, ShowBusinessDetailResponse>
      */
     public SyncInvoker<ShowBusinessDetailRequest, ShowBusinessDetailResponse> showBusinessDetailInvoker(
         ShowBusinessDetailRequest request) {
-        return new SyncInvoker<ShowBusinessDetailRequest, ShowBusinessDetailResponse>(request,
-            ApmMeta.showBusinessDetail, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showBusinessDetail, hcClient);
     }
 
     /**
@@ -650,7 +643,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubBusinessDetailRequest 请求对象
+     * @param request ShowSubBusinessDetailRequest 请求对象
      * @return ShowSubBusinessDetailResponse
      */
     public ShowSubBusinessDetailResponse showSubBusinessDetail(ShowSubBusinessDetailRequest request) {
@@ -664,13 +657,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubBusinessDetailRequest 请求对象
+     * @param request ShowSubBusinessDetailRequest 请求对象
      * @return SyncInvoker<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse>
      */
     public SyncInvoker<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse> showSubBusinessDetailInvoker(
         ShowSubBusinessDetailRequest request) {
-        return new SyncInvoker<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse>(request,
-            ApmMeta.showSubBusinessDetail, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showSubBusinessDetail, hcClient);
     }
 
     /**
@@ -680,7 +672,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopologyTreeRequest 请求对象
+     * @param request ShowTopologyTreeRequest 请求对象
      * @return ShowTopologyTreeResponse
      */
     public ShowTopologyTreeResponse showTopologyTree(ShowTopologyTreeRequest request) {
@@ -694,13 +686,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopologyTreeRequest 请求对象
+     * @param request ShowTopologyTreeRequest 请求对象
      * @return SyncInvoker<ShowTopologyTreeRequest, ShowTopologyTreeResponse>
      */
     public SyncInvoker<ShowTopologyTreeRequest, ShowTopologyTreeResponse> showTopologyTreeInvoker(
         ShowTopologyTreeRequest request) {
-        return new SyncInvoker<ShowTopologyTreeRequest, ShowTopologyTreeResponse>(request, ApmMeta.showTopologyTree,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showTopologyTree, hcClient);
     }
 
     /**
@@ -710,7 +701,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOpenRegionRequest 请求对象
+     * @param request ListOpenRegionRequest 请求对象
      * @return ListOpenRegionResponse
      */
     public ListOpenRegionResponse listOpenRegion(ListOpenRegionRequest request) {
@@ -724,13 +715,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOpenRegionRequest 请求对象
+     * @param request ListOpenRegionRequest 请求对象
      * @return SyncInvoker<ListOpenRegionRequest, ListOpenRegionResponse>
      */
     public SyncInvoker<ListOpenRegionRequest, ListOpenRegionResponse> listOpenRegionInvoker(
         ListOpenRegionRequest request) {
-        return new SyncInvoker<ListOpenRegionRequest, ListOpenRegionResponse>(request, ApmMeta.listOpenRegion,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listOpenRegion, hcClient);
     }
 
     /**
@@ -740,7 +730,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSupportedRegionRequest 请求对象
+     * @param request ListSupportedRegionRequest 请求对象
      * @return ListSupportedRegionResponse
      */
     public ListSupportedRegionResponse listSupportedRegion(ListSupportedRegionRequest request) {
@@ -754,13 +744,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSupportedRegionRequest 请求对象
+     * @param request ListSupportedRegionRequest 请求对象
      * @return SyncInvoker<ListSupportedRegionRequest, ListSupportedRegionResponse>
      */
     public SyncInvoker<ListSupportedRegionRequest, ListSupportedRegionResponse> listSupportedRegionInvoker(
         ListSupportedRegionRequest request) {
-        return new SyncInvoker<ListSupportedRegionRequest, ListSupportedRegionResponse>(request,
-            ApmMeta.listSupportedRegion, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listSupportedRegion, hcClient);
     }
 
     /**
@@ -770,7 +759,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchBusinessTopologyRequest 请求对象
+     * @param request SearchBusinessTopologyRequest 请求对象
      * @return SearchBusinessTopologyResponse
      */
     public SearchBusinessTopologyResponse searchBusinessTopology(SearchBusinessTopologyRequest request) {
@@ -784,13 +773,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchBusinessTopologyRequest 请求对象
+     * @param request SearchBusinessTopologyRequest 请求对象
      * @return SyncInvoker<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse>
      */
     public SyncInvoker<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse> searchBusinessTopologyInvoker(
         SearchBusinessTopologyRequest request) {
-        return new SyncInvoker<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse>(request,
-            ApmMeta.searchBusinessTopology, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.searchBusinessTopology, hcClient);
     }
 
     /**
@@ -800,7 +788,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchEnvTopologyRequest 请求对象
+     * @param request SearchEnvTopologyRequest 请求对象
      * @return SearchEnvTopologyResponse
      */
     public SearchEnvTopologyResponse searchEnvTopology(SearchEnvTopologyRequest request) {
@@ -814,13 +802,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchEnvTopologyRequest 请求对象
+     * @param request SearchEnvTopologyRequest 请求对象
      * @return SyncInvoker<SearchEnvTopologyRequest, SearchEnvTopologyResponse>
      */
     public SyncInvoker<SearchEnvTopologyRequest, SearchEnvTopologyResponse> searchEnvTopologyInvoker(
         SearchEnvTopologyRequest request) {
-        return new SyncInvoker<SearchEnvTopologyRequest, SearchEnvTopologyResponse>(request, ApmMeta.searchEnvTopology,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.searchEnvTopology, hcClient);
     }
 
     /**
@@ -830,7 +817,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBusinessEnvRequest 请求对象
+     * @param request ListBusinessEnvRequest 请求对象
      * @return ListBusinessEnvResponse
      */
     public ListBusinessEnvResponse listBusinessEnv(ListBusinessEnvRequest request) {
@@ -844,13 +831,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBusinessEnvRequest 请求对象
+     * @param request ListBusinessEnvRequest 请求对象
      * @return SyncInvoker<ListBusinessEnvRequest, ListBusinessEnvResponse>
      */
     public SyncInvoker<ListBusinessEnvRequest, ListBusinessEnvResponse> listBusinessEnvInvoker(
         ListBusinessEnvRequest request) {
-        return new SyncInvoker<ListBusinessEnvRequest, ListBusinessEnvResponse>(request, ApmMeta.listBusinessEnv,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listBusinessEnv, hcClient);
     }
 
     /**
@@ -860,7 +846,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchTransactionRequest 请求对象
+     * @param request SearchTransactionRequest 请求对象
      * @return SearchTransactionResponse
      */
     public SearchTransactionResponse searchTransaction(SearchTransactionRequest request) {
@@ -874,13 +860,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchTransactionRequest 请求对象
+     * @param request SearchTransactionRequest 请求对象
      * @return SyncInvoker<SearchTransactionRequest, SearchTransactionResponse>
      */
     public SyncInvoker<SearchTransactionRequest, SearchTransactionResponse> searchTransactionInvoker(
         SearchTransactionRequest request) {
-        return new SyncInvoker<SearchTransactionRequest, SearchTransactionResponse>(request, ApmMeta.searchTransaction,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.searchTransaction, hcClient);
     }
 
     /**
@@ -890,7 +875,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchTransactionConfigRequest 请求对象
+     * @param request SearchTransactionConfigRequest 请求对象
      * @return SearchTransactionConfigResponse
      */
     public SearchTransactionConfigResponse searchTransactionConfig(SearchTransactionConfigRequest request) {
@@ -904,13 +889,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchTransactionConfigRequest 请求对象
+     * @param request SearchTransactionConfigRequest 请求对象
      * @return SyncInvoker<SearchTransactionConfigRequest, SearchTransactionConfigResponse>
      */
     public SyncInvoker<SearchTransactionConfigRequest, SearchTransactionConfigResponse> searchTransactionConfigInvoker(
         SearchTransactionConfigRequest request) {
-        return new SyncInvoker<SearchTransactionConfigRequest, SearchTransactionConfigResponse>(request,
-            ApmMeta.searchTransactionConfig, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.searchTransactionConfig, hcClient);
     }
 
     /**
@@ -920,7 +904,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTransactionDetailRequest 请求对象
+     * @param request ShowTransactionDetailRequest 请求对象
      * @return ShowTransactionDetailResponse
      */
     public ShowTransactionDetailResponse showTransactionDetail(ShowTransactionDetailRequest request) {
@@ -934,13 +918,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTransactionDetailRequest 请求对象
+     * @param request ShowTransactionDetailRequest 请求对象
      * @return SyncInvoker<ShowTransactionDetailRequest, ShowTransactionDetailResponse>
      */
     public SyncInvoker<ShowTransactionDetailRequest, ShowTransactionDetailResponse> showTransactionDetailInvoker(
         ShowTransactionDetailRequest request) {
-        return new SyncInvoker<ShowTransactionDetailRequest, ShowTransactionDetailResponse>(request,
-            ApmMeta.showTransactionDetail, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showTransactionDetail, hcClient);
     }
 
     /**
@@ -950,7 +933,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvInstancesRequest 请求对象
+     * @param request ListEnvInstancesRequest 请求对象
      * @return ListEnvInstancesResponse
      */
     public ListEnvInstancesResponse listEnvInstances(ListEnvInstancesRequest request) {
@@ -964,13 +947,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvInstancesRequest 请求对象
+     * @param request ListEnvInstancesRequest 请求对象
      * @return SyncInvoker<ListEnvInstancesRequest, ListEnvInstancesResponse>
      */
     public SyncInvoker<ListEnvInstancesRequest, ListEnvInstancesResponse> listEnvInstancesInvoker(
         ListEnvInstancesRequest request) {
-        return new SyncInvoker<ListEnvInstancesRequest, ListEnvInstancesResponse>(request, ApmMeta.listEnvInstances,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.listEnvInstances, hcClient);
     }
 
     /**
@@ -980,7 +962,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClobDetailRequest 请求对象
+     * @param request ShowClobDetailRequest 请求对象
      * @return ShowClobDetailResponse
      */
     public ShowClobDetailResponse showClobDetail(ShowClobDetailRequest request) {
@@ -994,13 +976,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClobDetailRequest 请求对象
+     * @param request ShowClobDetailRequest 请求对象
      * @return SyncInvoker<ShowClobDetailRequest, ShowClobDetailResponse>
      */
     public SyncInvoker<ShowClobDetailRequest, ShowClobDetailResponse> showClobDetailInvoker(
         ShowClobDetailRequest request) {
-        return new SyncInvoker<ShowClobDetailRequest, ShowClobDetailResponse>(request, ApmMeta.showClobDetail,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showClobDetail, hcClient);
     }
 
     /**
@@ -1010,7 +991,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvMonitorItemsRequest 请求对象
+     * @param request ShowEnvMonitorItemsRequest 请求对象
      * @return ShowEnvMonitorItemsResponse
      */
     public ShowEnvMonitorItemsResponse showEnvMonitorItems(ShowEnvMonitorItemsRequest request) {
@@ -1024,13 +1005,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvMonitorItemsRequest 请求对象
+     * @param request ShowEnvMonitorItemsRequest 请求对象
      * @return SyncInvoker<ShowEnvMonitorItemsRequest, ShowEnvMonitorItemsResponse>
      */
     public SyncInvoker<ShowEnvMonitorItemsRequest, ShowEnvMonitorItemsResponse> showEnvMonitorItemsInvoker(
         ShowEnvMonitorItemsRequest request) {
-        return new SyncInvoker<ShowEnvMonitorItemsRequest, ShowEnvMonitorItemsResponse>(request,
-            ApmMeta.showEnvMonitorItems, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showEnvMonitorItems, hcClient);
     }
 
     /**
@@ -1040,7 +1020,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventDetailRequest 请求对象
+     * @param request ShowEventDetailRequest 请求对象
      * @return ShowEventDetailResponse
      */
     public ShowEventDetailResponse showEventDetail(ShowEventDetailRequest request) {
@@ -1054,13 +1034,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventDetailRequest 请求对象
+     * @param request ShowEventDetailRequest 请求对象
      * @return SyncInvoker<ShowEventDetailRequest, ShowEventDetailResponse>
      */
     public SyncInvoker<ShowEventDetailRequest, ShowEventDetailResponse> showEventDetailInvoker(
         ShowEventDetailRequest request) {
-        return new SyncInvoker<ShowEventDetailRequest, ShowEventDetailResponse>(request, ApmMeta.showEventDetail,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showEventDetail, hcClient);
     }
 
     /**
@@ -1070,7 +1049,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMonitorItemViewConfigRequest 请求对象
+     * @param request ShowMonitorItemViewConfigRequest 请求对象
      * @return ShowMonitorItemViewConfigResponse
      */
     public ShowMonitorItemViewConfigResponse showMonitorItemViewConfig(ShowMonitorItemViewConfigRequest request) {
@@ -1084,13 +1063,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMonitorItemViewConfigRequest 请求对象
+     * @param request ShowMonitorItemViewConfigRequest 请求对象
      * @return SyncInvoker<ShowMonitorItemViewConfigRequest, ShowMonitorItemViewConfigResponse>
      */
     public SyncInvoker<ShowMonitorItemViewConfigRequest, ShowMonitorItemViewConfigResponse> showMonitorItemViewConfigInvoker(
         ShowMonitorItemViewConfigRequest request) {
-        return new SyncInvoker<ShowMonitorItemViewConfigRequest, ShowMonitorItemViewConfigResponse>(request,
-            ApmMeta.showMonitorItemViewConfig, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showMonitorItemViewConfig, hcClient);
     }
 
     /**
@@ -1100,7 +1078,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRawTableRequest 请求对象
+     * @param request ShowRawTableRequest 请求对象
      * @return ShowRawTableResponse
      */
     public ShowRawTableResponse showRawTable(ShowRawTableRequest request) {
@@ -1114,11 +1092,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRawTableRequest 请求对象
+     * @param request ShowRawTableRequest 请求对象
      * @return SyncInvoker<ShowRawTableRequest, ShowRawTableResponse>
      */
     public SyncInvoker<ShowRawTableRequest, ShowRawTableResponse> showRawTableInvoker(ShowRawTableRequest request) {
-        return new SyncInvoker<ShowRawTableRequest, ShowRawTableResponse>(request, ApmMeta.showRawTable, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showRawTable, hcClient);
     }
 
     /**
@@ -1128,7 +1106,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpanSearchRequest 请求对象
+     * @param request ShowSpanSearchRequest 请求对象
      * @return ShowSpanSearchResponse
      */
     public ShowSpanSearchResponse showSpanSearch(ShowSpanSearchRequest request) {
@@ -1142,13 +1120,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpanSearchRequest 请求对象
+     * @param request ShowSpanSearchRequest 请求对象
      * @return SyncInvoker<ShowSpanSearchRequest, ShowSpanSearchResponse>
      */
     public SyncInvoker<ShowSpanSearchRequest, ShowSpanSearchResponse> showSpanSearchInvoker(
         ShowSpanSearchRequest request) {
-        return new SyncInvoker<ShowSpanSearchRequest, ShowSpanSearchResponse>(request, ApmMeta.showSpanSearch,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showSpanSearch, hcClient);
     }
 
     /**
@@ -1158,7 +1135,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSumTableRequest 请求对象
+     * @param request ShowSumTableRequest 请求对象
      * @return ShowSumTableResponse
      */
     public ShowSumTableResponse showSumTable(ShowSumTableRequest request) {
@@ -1172,11 +1149,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSumTableRequest 请求对象
+     * @param request ShowSumTableRequest 请求对象
      * @return SyncInvoker<ShowSumTableRequest, ShowSumTableResponse>
      */
     public SyncInvoker<ShowSumTableRequest, ShowSumTableResponse> showSumTableInvoker(ShowSumTableRequest request) {
-        return new SyncInvoker<ShowSumTableRequest, ShowSumTableResponse>(request, ApmMeta.showSumTable, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showSumTable, hcClient);
     }
 
     /**
@@ -1186,7 +1163,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopologyRequest 请求对象
+     * @param request ShowTopologyRequest 请求对象
      * @return ShowTopologyResponse
      */
     public ShowTopologyResponse showTopology(ShowTopologyRequest request) {
@@ -1200,11 +1177,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopologyRequest 请求对象
+     * @param request ShowTopologyRequest 请求对象
      * @return SyncInvoker<ShowTopologyRequest, ShowTopologyResponse>
      */
     public SyncInvoker<ShowTopologyRequest, ShowTopologyResponse> showTopologyInvoker(ShowTopologyRequest request) {
-        return new SyncInvoker<ShowTopologyRequest, ShowTopologyResponse>(request, ApmMeta.showTopology, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showTopology, hcClient);
     }
 
     /**
@@ -1214,7 +1191,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTraceEventsRequest 请求对象
+     * @param request ShowTraceEventsRequest 请求对象
      * @return ShowTraceEventsResponse
      */
     public ShowTraceEventsResponse showTraceEvents(ShowTraceEventsRequest request) {
@@ -1228,13 +1205,12 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTraceEventsRequest 请求对象
+     * @param request ShowTraceEventsRequest 请求对象
      * @return SyncInvoker<ShowTraceEventsRequest, ShowTraceEventsResponse>
      */
     public SyncInvoker<ShowTraceEventsRequest, ShowTraceEventsResponse> showTraceEventsInvoker(
         ShowTraceEventsRequest request) {
-        return new SyncInvoker<ShowTraceEventsRequest, ShowTraceEventsResponse>(request, ApmMeta.showTraceEvents,
-            hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showTraceEvents, hcClient);
     }
 
     /**
@@ -1244,7 +1220,7 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrendRequest 请求对象
+     * @param request ShowTrendRequest 请求对象
      * @return ShowTrendResponse
      */
     public ShowTrendResponse showTrend(ShowTrendRequest request) {
@@ -1258,11 +1234,11 @@ public class ApmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrendRequest 请求对象
+     * @param request ShowTrendRequest 请求对象
      * @return SyncInvoker<ShowTrendRequest, ShowTrendResponse>
      */
     public SyncInvoker<ShowTrendRequest, ShowTrendResponse> showTrendInvoker(ShowTrendRequest request) {
-        return new SyncInvoker<ShowTrendRequest, ShowTrendResponse>(request, ApmMeta.showTrend, hcClient);
+        return new SyncInvoker<>(request, ApmMeta.showTrend, hcClient);
     }
 
 }

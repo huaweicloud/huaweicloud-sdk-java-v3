@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 创建账号、纳管OU、纳管账号状态信息。
+ * 创建账号、纳管注册OU、纳管账号状态信息。
  */
 public class OrganizationalPercentageDetail {
 
@@ -43,7 +43,7 @@ public class OrganizationalPercentageDetail {
     }
 
     /**
-     * 进度完成状态。
+     * 创建账号、注册OU、纳管账号的进度完成状态。
      * @return percentageStatus
      */
     public String getPercentageStatus() {

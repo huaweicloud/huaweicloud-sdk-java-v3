@@ -77,9 +77,9 @@ import com.huaweicloud.sdk.ram.v1.model.UpdateResourceShareResponse;
 public class RamMeta {
 
     public static final HttpRequestDef<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResponse> associateResourceSharePermission =
-        genForassociateResourceSharePermission();
+        genForAssociateResourceSharePermission();
 
-    private static HttpRequestDef<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResponse> genForassociateResourceSharePermission() {
+    private static HttpRequestDef<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResponse> genForAssociateResourceSharePermission() {
         // basic
         HttpRequestDef.Builder<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResponse> builder =
             HttpRequestDef
@@ -95,16 +95,14 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateResourceSharePermissionRequest::getResourceShareId, (req, v) -> {
-                req.setResourceShareId(v);
-            }));
+            f -> f.withMarshaller(AssociateResourceSharePermissionRequest::getResourceShareId,
+                AssociateResourceSharePermissionRequest::setResourceShareId));
         builder.<AssociatePermissionReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociatePermissionReqBody.class),
-            f -> f.withMarshaller(AssociateResourceSharePermissionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateResourceSharePermissionRequest::getBody,
+                AssociateResourceSharePermissionRequest::setBody));
 
         // response
 
@@ -112,9 +110,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResponse> disassociateResourceSharePermission =
-        genFordisassociateResourceSharePermission();
+        genForDisassociateResourceSharePermission();
 
-    private static HttpRequestDef<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResponse> genFordisassociateResourceSharePermission() {
+    private static HttpRequestDef<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResponse> genForDisassociateResourceSharePermission() {
         // basic
         HttpRequestDef.Builder<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResponse> builder =
             HttpRequestDef
@@ -130,16 +128,14 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateResourceSharePermissionRequest::getResourceShareId, (req, v) -> {
-                req.setResourceShareId(v);
-            }));
+            f -> f.withMarshaller(DisassociateResourceSharePermissionRequest::getResourceShareId,
+                DisassociateResourceSharePermissionRequest::setResourceShareId));
         builder.<DisassociatePermissionReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DisassociatePermissionReqBody.class),
-            f -> f.withMarshaller(DisassociateResourceSharePermissionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateResourceSharePermissionRequest::getBody,
+                DisassociateResourceSharePermissionRequest::setBody));
 
         // response
 
@@ -147,9 +143,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse> listResourceSharePermissions =
-        genForlistResourceSharePermissions();
+        genForListResourceSharePermissions();
 
-    private static HttpRequestDef<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse> genForlistResourceSharePermissions() {
+    private static HttpRequestDef<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse> genForListResourceSharePermissions() {
         // basic
         HttpRequestDef.Builder<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse> builder =
             HttpRequestDef
@@ -165,39 +161,35 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceSharePermissionsRequest::getResourceShareId, (req, v) -> {
-                req.setResourceShareId(v);
-            }));
+            f -> f.withMarshaller(ListResourceSharePermissionsRequest::getResourceShareId,
+                ListResourceSharePermissionsRequest::setResourceShareId));
         builder.<String>withRequestField("permission_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceSharePermissionsRequest::getPermissionName, (req, v) -> {
-                req.setPermissionName(v);
-            }));
+            f -> f.withMarshaller(ListResourceSharePermissionsRequest::getPermissionName,
+                ListResourceSharePermissionsRequest::setPermissionName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceSharePermissionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResourceSharePermissionsRequest::getLimit,
+                ListResourceSharePermissionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceSharePermissionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListResourceSharePermissionsRequest::getMarker,
+                ListResourceSharePermissionsRequest::setMarker));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQuotaRequest, ListQuotaResponse> listQuota = genForlistQuota();
+    public static final HttpRequestDef<ListQuotaRequest, ListQuotaResponse> listQuota = genForListQuota();
 
-    private static HttpRequestDef<ListQuotaRequest, ListQuotaResponse> genForlistQuota() {
+    private static HttpRequestDef<ListQuotaRequest, ListQuotaResponse> genForListQuota() {
         // basic
         HttpRequestDef.Builder<ListQuotaRequest, ListQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotaRequest.class, ListQuotaResponse.class)
@@ -213,9 +205,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypes =
-        genForlistResourceTypes();
+        genForListResourceTypes();
 
-    private static HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> genForlistResourceTypes() {
+    private static HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> genForListResourceTypes() {
         // basic
         HttpRequestDef.Builder<ListResourceTypesRequest, ListResourceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceTypesRequest.class, ListResourceTypesResponse.class)
@@ -228,16 +220,12 @@ public class RamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceTypesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResourceTypesRequest::getLimit, ListResourceTypesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceTypesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListResourceTypesRequest::getMarker, ListResourceTypesRequest::setMarker));
 
         // response
 
@@ -245,9 +233,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<DisableOrganizationShareRequest, DisableOrganizationShareResponse> disableOrganizationShare =
-        genFordisableOrganizationShare();
+        genForDisableOrganizationShare();
 
-    private static HttpRequestDef<DisableOrganizationShareRequest, DisableOrganizationShareResponse> genFordisableOrganizationShare() {
+    private static HttpRequestDef<DisableOrganizationShareRequest, DisableOrganizationShareResponse> genForDisableOrganizationShare() {
         // basic
         HttpRequestDef.Builder<DisableOrganizationShareRequest, DisableOrganizationShareResponse> builder =
             HttpRequestDef
@@ -264,9 +252,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<EnableOrganizationShareRequest, EnableOrganizationShareResponse> enableOrganizationShare =
-        genForenableOrganizationShare();
+        genForEnableOrganizationShare();
 
-    private static HttpRequestDef<EnableOrganizationShareRequest, EnableOrganizationShareResponse> genForenableOrganizationShare() {
+    private static HttpRequestDef<EnableOrganizationShareRequest, EnableOrganizationShareResponse> genForEnableOrganizationShare() {
         // basic
         HttpRequestDef.Builder<EnableOrganizationShareRequest, EnableOrganizationShareResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, EnableOrganizationShareRequest.class, EnableOrganizationShareResponse.class)
@@ -282,9 +270,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<ShowOrganizationShareRequest, ShowOrganizationShareResponse> showOrganizationShare =
-        genForshowOrganizationShare();
+        genForShowOrganizationShare();
 
-    private static HttpRequestDef<ShowOrganizationShareRequest, ShowOrganizationShareResponse> genForshowOrganizationShare() {
+    private static HttpRequestDef<ShowOrganizationShareRequest, ShowOrganizationShareResponse> genForShowOrganizationShare() {
         // basic
         HttpRequestDef.Builder<ShowOrganizationShareRequest, ShowOrganizationShareResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowOrganizationShareRequest.class, ShowOrganizationShareResponse.class)
@@ -300,9 +288,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> listPermissions =
-        genForlistPermissions();
+        genForListPermissions();
 
-    private static HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> genForlistPermissions() {
+    private static HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> genForListPermissions() {
         // basic
         HttpRequestDef.Builder<ListPermissionsRequest, ListPermissionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPermissionsRequest.class, ListPermissionsResponse.class)
@@ -315,23 +303,17 @@ public class RamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPermissionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPermissionsRequest::getLimit, ListPermissionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPermissionsRequest::getMarker, ListPermissionsRequest::setMarker));
         builder.<String>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListPermissionsRequest::getResourceType, ListPermissionsRequest::setResourceType));
 
         // response
 
@@ -339,9 +321,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<ShowPermissionRequest, ShowPermissionResponse> showPermission =
-        genForshowPermission();
+        genForShowPermission();
 
-    private static HttpRequestDef<ShowPermissionRequest, ShowPermissionResponse> genForshowPermission() {
+    private static HttpRequestDef<ShowPermissionRequest, ShowPermissionResponse> genForShowPermission() {
         // basic
         HttpRequestDef.Builder<ShowPermissionRequest, ShowPermissionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPermissionRequest.class, ShowPermissionResponse.class)
@@ -354,9 +336,7 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPermissionRequest::getPermissionId, (req, v) -> {
-                req.setPermissionId(v);
-            }));
+            f -> f.withMarshaller(ShowPermissionRequest::getPermissionId, ShowPermissionRequest::setPermissionId));
 
         // response
 
@@ -364,9 +344,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse> searchSharedPrincipals =
-        genForsearchSharedPrincipals();
+        genForSearchSharedPrincipals();
 
-    private static HttpRequestDef<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse> genForsearchSharedPrincipals() {
+    private static HttpRequestDef<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse> genForSearchSharedPrincipals() {
         // basic
         HttpRequestDef.Builder<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SearchSharedPrincipalsRequest.class, SearchSharedPrincipalsResponse.class)
@@ -379,9 +359,7 @@ public class RamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchSharedPrincipalsReqBody.class),
-            f -> f.withMarshaller(SearchSharedPrincipalsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchSharedPrincipalsRequest::getBody, SearchSharedPrincipalsRequest::setBody));
 
         // response
 
@@ -389,9 +367,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<SearchSharedResourcesRequest, SearchSharedResourcesResponse> searchSharedResources =
-        genForsearchSharedResources();
+        genForSearchSharedResources();
 
-    private static HttpRequestDef<SearchSharedResourcesRequest, SearchSharedResourcesResponse> genForsearchSharedResources() {
+    private static HttpRequestDef<SearchSharedResourcesRequest, SearchSharedResourcesResponse> genForSearchSharedResources() {
         // basic
         HttpRequestDef.Builder<SearchSharedResourcesRequest, SearchSharedResourcesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SearchSharedResourcesRequest.class, SearchSharedResourcesResponse.class)
@@ -404,9 +382,7 @@ public class RamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchSharedResourcesReqBody.class),
-            f -> f.withMarshaller(SearchSharedResourcesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchSharedResourcesRequest::getBody, SearchSharedResourcesRequest::setBody));
 
         // response
 
@@ -414,9 +390,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<CreateResourceShareRequest, CreateResourceShareResponse> createResourceShare =
-        genForcreateResourceShare();
+        genForCreateResourceShare();
 
-    private static HttpRequestDef<CreateResourceShareRequest, CreateResourceShareResponse> genForcreateResourceShare() {
+    private static HttpRequestDef<CreateResourceShareRequest, CreateResourceShareResponse> genForCreateResourceShare() {
         // basic
         HttpRequestDef.Builder<CreateResourceShareRequest, CreateResourceShareResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResourceShareRequest.class, CreateResourceShareResponse.class)
@@ -429,9 +405,7 @@ public class RamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResourceShareReqBody.class),
-            f -> f.withMarshaller(CreateResourceShareRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResourceShareRequest::getBody, CreateResourceShareRequest::setBody));
 
         // response
 
@@ -439,9 +413,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<DeleteResourceShareRequest, DeleteResourceShareResponse> deleteResourceShare =
-        genFordeleteResourceShare();
+        genForDeleteResourceShare();
 
-    private static HttpRequestDef<DeleteResourceShareRequest, DeleteResourceShareResponse> genFordeleteResourceShare() {
+    private static HttpRequestDef<DeleteResourceShareRequest, DeleteResourceShareResponse> genForDeleteResourceShare() {
         // basic
         HttpRequestDef.Builder<DeleteResourceShareRequest, DeleteResourceShareResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteResourceShareRequest.class, DeleteResourceShareResponse.class)
@@ -454,9 +428,8 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceShareRequest::getResourceShareId, (req, v) -> {
-                req.setResourceShareId(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceShareRequest::getResourceShareId,
+                DeleteResourceShareRequest::setResourceShareId));
 
         // response
 
@@ -464,9 +437,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<SearchResourceSharesRequest, SearchResourceSharesResponse> searchResourceShares =
-        genForsearchResourceShares();
+        genForSearchResourceShares();
 
-    private static HttpRequestDef<SearchResourceSharesRequest, SearchResourceSharesResponse> genForsearchResourceShares() {
+    private static HttpRequestDef<SearchResourceSharesRequest, SearchResourceSharesResponse> genForSearchResourceShares() {
         // basic
         HttpRequestDef.Builder<SearchResourceSharesRequest, SearchResourceSharesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SearchResourceSharesRequest.class, SearchResourceSharesResponse.class)
@@ -479,9 +452,7 @@ public class RamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchResourceSharesReqBody.class),
-            f -> f.withMarshaller(SearchResourceSharesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchResourceSharesRequest::getBody, SearchResourceSharesRequest::setBody));
 
         // response
 
@@ -489,9 +460,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<UpdateResourceShareRequest, UpdateResourceShareResponse> updateResourceShare =
-        genForupdateResourceShare();
+        genForUpdateResourceShare();
 
-    private static HttpRequestDef<UpdateResourceShareRequest, UpdateResourceShareResponse> genForupdateResourceShare() {
+    private static HttpRequestDef<UpdateResourceShareRequest, UpdateResourceShareResponse> genForUpdateResourceShare() {
         // basic
         HttpRequestDef.Builder<UpdateResourceShareRequest, UpdateResourceShareResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateResourceShareRequest.class, UpdateResourceShareResponse.class)
@@ -504,16 +475,13 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResourceShareRequest::getResourceShareId, (req, v) -> {
-                req.setResourceShareId(v);
-            }));
+            f -> f.withMarshaller(UpdateResourceShareRequest::getResourceShareId,
+                UpdateResourceShareRequest::setResourceShareId));
         builder.<UpdateResourceShareReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResourceShareReqBody.class),
-            f -> f.withMarshaller(UpdateResourceShareRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResourceShareRequest::getBody, UpdateResourceShareRequest::setBody));
 
         // response
 
@@ -521,9 +489,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<AssociateResourceShareRequest, AssociateResourceShareResponse> associateResourceShare =
-        genForassociateResourceShare();
+        genForAssociateResourceShare();
 
-    private static HttpRequestDef<AssociateResourceShareRequest, AssociateResourceShareResponse> genForassociateResourceShare() {
+    private static HttpRequestDef<AssociateResourceShareRequest, AssociateResourceShareResponse> genForAssociateResourceShare() {
         // basic
         HttpRequestDef.Builder<AssociateResourceShareRequest, AssociateResourceShareResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AssociateResourceShareRequest.class, AssociateResourceShareResponse.class)
@@ -536,16 +504,13 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateResourceShareRequest::getResourceShareId, (req, v) -> {
-                req.setResourceShareId(v);
-            }));
+            f -> f.withMarshaller(AssociateResourceShareRequest::getResourceShareId,
+                AssociateResourceShareRequest::setResourceShareId));
         builder.<ResourceShareAssociationReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceShareAssociationReqBody.class),
-            f -> f.withMarshaller(AssociateResourceShareRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateResourceShareRequest::getBody, AssociateResourceShareRequest::setBody));
 
         // response
 
@@ -553,9 +518,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<DisassociateResourceShareRequest, DisassociateResourceShareResponse> disassociateResourceShare =
-        genFordisassociateResourceShare();
+        genForDisassociateResourceShare();
 
-    private static HttpRequestDef<DisassociateResourceShareRequest, DisassociateResourceShareResponse> genFordisassociateResourceShare() {
+    private static HttpRequestDef<DisassociateResourceShareRequest, DisassociateResourceShareResponse> genForDisassociateResourceShare() {
         // basic
         HttpRequestDef.Builder<DisassociateResourceShareRequest, DisassociateResourceShareResponse> builder =
             HttpRequestDef
@@ -571,16 +536,14 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateResourceShareRequest::getResourceShareId, (req, v) -> {
-                req.setResourceShareId(v);
-            }));
+            f -> f.withMarshaller(DisassociateResourceShareRequest::getResourceShareId,
+                DisassociateResourceShareRequest::setResourceShareId));
         builder.<ResourceShareAssociationReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceShareAssociationReqBody.class),
-            f -> f.withMarshaller(DisassociateResourceShareRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateResourceShareRequest::getBody,
+                DisassociateResourceShareRequest::setBody));
 
         // response
 
@@ -588,9 +551,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<SearchResourceShareAssociationsRequest, SearchResourceShareAssociationsResponse> searchResourceShareAssociations =
-        genForsearchResourceShareAssociations();
+        genForSearchResourceShareAssociations();
 
-    private static HttpRequestDef<SearchResourceShareAssociationsRequest, SearchResourceShareAssociationsResponse> genForsearchResourceShareAssociations() {
+    private static HttpRequestDef<SearchResourceShareAssociationsRequest, SearchResourceShareAssociationsResponse> genForSearchResourceShareAssociations() {
         // basic
         HttpRequestDef.Builder<SearchResourceShareAssociationsRequest, SearchResourceShareAssociationsResponse> builder =
             HttpRequestDef
@@ -606,9 +569,8 @@ public class RamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchResourceShareAssociationsReqBody.class),
-            f -> f.withMarshaller(SearchResourceShareAssociationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchResourceShareAssociationsRequest::getBody,
+                SearchResourceShareAssociationsRequest::setBody));
 
         // response
 
@@ -616,9 +578,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResponse> acceptResourceShareInvitation =
-        genForacceptResourceShareInvitation();
+        genForAcceptResourceShareInvitation();
 
-    private static HttpRequestDef<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResponse> genForacceptResourceShareInvitation() {
+    private static HttpRequestDef<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResponse> genForAcceptResourceShareInvitation() {
         // basic
         HttpRequestDef.Builder<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResponse> builder =
             HttpRequestDef
@@ -634,9 +596,8 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptResourceShareInvitationRequest::getResourceShareInvitationId, (req, v) -> {
-                req.setResourceShareInvitationId(v);
-            }));
+            f -> f.withMarshaller(AcceptResourceShareInvitationRequest::getResourceShareInvitationId,
+                AcceptResourceShareInvitationRequest::setResourceShareInvitationId));
 
         // response
 
@@ -644,9 +605,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResponse> rejectResourceShareInvitation =
-        genForrejectResourceShareInvitation();
+        genForRejectResourceShareInvitation();
 
-    private static HttpRequestDef<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResponse> genForrejectResourceShareInvitation() {
+    private static HttpRequestDef<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResponse> genForRejectResourceShareInvitation() {
         // basic
         HttpRequestDef.Builder<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResponse> builder =
             HttpRequestDef
@@ -662,9 +623,8 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RejectResourceShareInvitationRequest::getResourceShareInvitationId, (req, v) -> {
-                req.setResourceShareInvitationId(v);
-            }));
+            f -> f.withMarshaller(RejectResourceShareInvitationRequest::getResourceShareInvitationId,
+                RejectResourceShareInvitationRequest::setResourceShareInvitationId));
 
         // response
 
@@ -672,9 +632,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<SearchResourceShareInvitationRequest, SearchResourceShareInvitationResponse> searchResourceShareInvitation =
-        genForsearchResourceShareInvitation();
+        genForSearchResourceShareInvitation();
 
-    private static HttpRequestDef<SearchResourceShareInvitationRequest, SearchResourceShareInvitationResponse> genForsearchResourceShareInvitation() {
+    private static HttpRequestDef<SearchResourceShareInvitationRequest, SearchResourceShareInvitationResponse> genForSearchResourceShareInvitation() {
         // basic
         HttpRequestDef.Builder<SearchResourceShareInvitationRequest, SearchResourceShareInvitationResponse> builder =
             HttpRequestDef
@@ -690,9 +650,8 @@ public class RamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchResourceShareInvitationReqBody.class),
-            f -> f.withMarshaller(SearchResourceShareInvitationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchResourceShareInvitationRequest::getBody,
+                SearchResourceShareInvitationRequest::setBody));
 
         // response
 
@@ -700,9 +659,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> batchCreateResourceShareTags =
-        genForbatchCreateResourceShareTags();
+        genForBatchCreateResourceShareTags();
 
-    private static HttpRequestDef<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> genForbatchCreateResourceShareTags() {
+    private static HttpRequestDef<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> genForBatchCreateResourceShareTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> builder =
             HttpRequestDef
@@ -718,16 +677,14 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateResourceShareTagsRequest::getResourceShareId, (req, v) -> {
-                req.setResourceShareId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceShareTagsRequest::getResourceShareId,
+                BatchCreateResourceShareTagsRequest::setResourceShareId));
         builder.<TagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagResourceReqBody.class),
-            f -> f.withMarshaller(BatchCreateResourceShareTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceShareTagsRequest::getBody,
+                BatchCreateResourceShareTagsRequest::setBody));
 
         // response
 
@@ -735,9 +692,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> batchDeleteResourceShareTags =
-        genForbatchDeleteResourceShareTags();
+        genForBatchDeleteResourceShareTags();
 
-    private static HttpRequestDef<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> genForbatchDeleteResourceShareTags() {
+    private static HttpRequestDef<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> genForBatchDeleteResourceShareTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> builder =
             HttpRequestDef
@@ -753,16 +710,14 @@ public class RamMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteResourceShareTagsRequest::getResourceShareId, (req, v) -> {
-                req.setResourceShareId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteResourceShareTagsRequest::getResourceShareId,
+                BatchDeleteResourceShareTagsRequest::setResourceShareId));
         builder.<UntagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UntagResourceReqBody.class),
-            f -> f.withMarshaller(BatchDeleteResourceShareTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteResourceShareTagsRequest::getBody,
+                BatchDeleteResourceShareTagsRequest::setBody));
 
         // response
 
@@ -770,9 +725,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<ListResourceShareTagsRequest, ListResourceShareTagsResponse> listResourceShareTags =
-        genForlistResourceShareTags();
+        genForListResourceShareTags();
 
-    private static HttpRequestDef<ListResourceShareTagsRequest, ListResourceShareTagsResponse> genForlistResourceShareTags() {
+    private static HttpRequestDef<ListResourceShareTagsRequest, ListResourceShareTagsResponse> genForListResourceShareTags() {
         // basic
         HttpRequestDef.Builder<ListResourceShareTagsRequest, ListResourceShareTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListResourceShareTagsRequest.class, ListResourceShareTagsResponse.class)
@@ -785,16 +740,12 @@ public class RamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceShareTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResourceShareTagsRequest::getLimit, ListResourceShareTagsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceShareTagsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListResourceShareTagsRequest::getMarker, ListResourceShareTagsRequest::setMarker));
 
         // response
 
@@ -802,9 +753,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse> listResourceSharesByTags =
-        genForlistResourceSharesByTags();
+        genForListResourceSharesByTags();
 
-    private static HttpRequestDef<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse> genForlistResourceSharesByTags() {
+    private static HttpRequestDef<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse> genForListResourceSharesByTags() {
         // basic
         HttpRequestDef.Builder<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse> builder =
             HttpRequestDef
@@ -818,23 +769,19 @@ public class RamMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceSharesByTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResourceSharesByTagsRequest::getLimit,
+                ListResourceSharesByTagsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceSharesByTagsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListResourceSharesByTagsRequest::getOffset,
+                ListResourceSharesByTagsRequest::setOffset));
         builder.<ResourceSharesByTagsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceSharesByTagsReqBody.class),
-            f -> f.withMarshaller(ListResourceSharesByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceSharesByTagsRequest::getBody, ListResourceSharesByTagsRequest::setBody));
 
         // response
 
@@ -842,9 +789,9 @@ public class RamMeta {
     }
 
     public static final HttpRequestDef<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse> searchResourceShareCountByTags =
-        genForsearchResourceShareCountByTags();
+        genForSearchResourceShareCountByTags();
 
-    private static HttpRequestDef<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse> genForsearchResourceShareCountByTags() {
+    private static HttpRequestDef<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse> genForSearchResourceShareCountByTags() {
         // basic
         HttpRequestDef.Builder<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse> builder =
             HttpRequestDef
@@ -860,9 +807,8 @@ public class RamMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceSharesByTagsReqBody.class),
-            f -> f.withMarshaller(SearchResourceShareCountByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchResourceShareCountByTagsRequest::getBody,
+                SearchResourceShareCountByTagsRequest::setBody));
 
         // response
 

@@ -153,7 +153,7 @@ public class ExtMsg {
     }
 
     /**
-     * 第三方服务名，长度范围为1-50个字符。 > action_type=OPEN_QUICK必填，其他不填。 
+     * 第三方服务名，长度范围为1-50个字符。 > action_type=OPEN_QUICK或OPEN_APP必填，其他不填。 
      * @return thirdServiceName
      */
     public String getThirdServiceName() {

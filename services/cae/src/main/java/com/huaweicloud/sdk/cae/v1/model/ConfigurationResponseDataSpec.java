@@ -79,7 +79,7 @@ public class ConfigurationResponseDataSpec {
     private List<AccessConfigurationDataItems> items = null;
 
     /**
-     * 伸缩策略配置策略类型。  type为\"scaling\"时，返回此参数。 
+     * 伸缩策略配置策略类型。  Configuration.type为\"scaling\"时，返回此参数。 
      */
     public static final class ScaleStrategyEnum {
 
@@ -290,7 +290,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * RDS数据库实例ID。  type为\"rds\"时，返回此参数。 
+     * RDS数据库实例ID。  Configuration.type为\"rds\"时，返回此参数。 
      * @return rdsId
      */
     public String getRdsId() {
@@ -307,7 +307,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * RDS数据库名称。  type为\"rds\"时，返回此参数。 
+     * RDS数据库名称。  Configuration.type为\"rds\"时，返回此参数。 
      * @return rdsDbName
      */
     public String getRdsDbName() {
@@ -324,7 +324,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * RDS数据库地址。  type为\"rds\"时，返回此参数。 
+     * RDS数据库地址。  Configuration.type为\"rds\"时，返回此参数。 
      * @return rdsAddress
      */
     public String getRdsAddress() {
@@ -341,7 +341,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * RDS数据库用户名称。  type为\"rds\"时，返回此参数。 
+     * RDS数据库用户名称。  Configuration.type为\"rds\"时，返回此参数。 
      * @return rdsUsername
      */
     public String getRdsUsername() {
@@ -358,7 +358,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * RDS数据库密码。  type为\"rds\"时，返回此参数。 
+     * RDS数据库密码。  Configuration.type为\"rds\"时，返回此参数。 
      * @return rdsPassword
      */
     public String getRdsPassword() {
@@ -375,7 +375,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * RDS数据库端口。  type为\"rds\"时，返回此参数。 
+     * RDS数据库端口。  Configuration.type为\"rds\"时，返回此参数。 
      * @return rdsPort
      */
     public String getRdsPort() {
@@ -392,7 +392,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * CSE配置中心地址。  type为\"cse\"时，返回此参数。 
+     * CSE配置中心地址。  Configuration.type为\"cse\"时，返回此参数。 
      * @return configCenterAddr
      */
     public String getConfigCenterAddr() {
@@ -409,7 +409,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * CSE服务注册发现地址。  type为\"cse\"时，返回此参数。 
+     * CSE服务注册发现地址。  Configuration.type为\"cse\"时，返回此参数。 
      * @return serviceCenterAddr
      */
     public String getServiceCenterAddr() {
@@ -426,7 +426,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * CSE引擎ID。  type为\"cse\"时，返回此参数。 
+     * CSE引擎ID。  Configuration.type为\"cse\"时，返回此参数。 
      * @return cseId
      */
     public String getCseId() {
@@ -509,7 +509,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 访问方式配置列表。  type为\"access\"时，返回此参数。 
+     * 访问方式配置列表。  Configuration.type为\"access\"时，返回此参数。 
      * @return items
      */
     public List<AccessConfigurationDataItems> getItems() {
@@ -526,7 +526,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 伸缩策略配置策略类型。  type为\"scaling\"时，返回此参数。 
+     * 伸缩策略配置策略类型。  Configuration.type为\"scaling\"时，返回此参数。 
      * @return scaleStrategy
      */
     public ScaleStrategyEnum getScaleStrategy() {
@@ -543,7 +543,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 伸缩策略配置最大伸缩个数。  type为\"scaling\"时，返回此参数。 
+     * 伸缩策略配置最大伸缩个数。  Configuration.type为\"scaling\"时，返回此参数。 
      * @return maxReplicaCount
      */
     public Integer getMaxReplicaCount() {
@@ -560,7 +560,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 伸缩策略配置最小伸缩个数。  type为\"scaling\"时，返回此参数。 
+     * 伸缩策略配置最小伸缩个数。  Configuration.type为\"scaling\"时，返回此参数。 
      * @return minReplicaCount
      */
     public Integer getMinReplicaCount() {
@@ -619,7 +619,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 伸缩策略配置触发器列表。  type为\"scaling\"时，返回此参数。 
+     * 伸缩策略配置触发器列表。  Configuration.type为\"scaling\"时，返回此参数。 
      * @return triggers
      */
     public List<ScaleConfigurationDataTrigger> getTriggers() {
@@ -652,7 +652,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 云存储配置列表。  type为\"volume\"时，返回此参数。 
+     * 云存储配置列表。  Configuration.type为\"volume\"时，返回此参数。 
      * @return volumes
      */
     public List<VolumeConfigurationDataVolume> getVolumes() {
@@ -819,7 +819,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 自定义日志路径数组。  type为\"log\"时，返回此参数。 
+     * 自定义日志路径数组。  Configuration.type为\"log\"时，返回此参数。 
      * @return logPaths
      */
     public List<String> getLogPaths() {
@@ -836,7 +836,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 探针注入方式。  type为\"apm2\"时，返回此参数。 
+     * 探针注入方式。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return instrumentation
      */
     public String getInstrumentation() {
@@ -853,7 +853,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * apm2应用。  type为\"apm2\"时，返回此参数。 
+     * apm2应用。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return apmApplication
      */
     public String getApmApplication() {
@@ -870,7 +870,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 监控系统类别，包括apm2和opentelemetry。  type为\"apm2\"时，返回此参数。 
+     * 监控系统类别，包括apm2和opentelemetry。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return type
      */
     public String getType() {
@@ -887,7 +887,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * apm2组件。  type为\"apm2\"时，返回此参数。 
+     * apm2组件。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return appName
      */
     public String getAppName() {
@@ -904,7 +904,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * apm2实例。  type为\"apm2\"时，返回此参数。 
+     * apm2实例。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return instanceName
      */
     public String getInstanceName() {
@@ -921,7 +921,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * apm2环境。  type为\"apm2\"时，返回此参数。 
+     * apm2环境。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return envName
      */
     public String getEnvName() {
@@ -938,7 +938,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 探针镜像更新策略，已废弃，迁移到监控系统。  - Always，重启自动升级：每次都尝试重新下载镜像。 - IfNotPresent，手动升级: 如果本地有该镜像，则继续使用本地镜像，不下载镜像。  type为\"apm2\"时，返回此参数。 
+     * 探针镜像更新策略，已废弃，迁移到监控系统。  - Always，重启自动升级：每次都尝试重新下载镜像。 - IfNotPresent，手动升级: 如果本地有该镜像，则继续使用本地镜像，不下载镜像。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return imagePullPolicy
      */
     public String getImagePullPolicy() {
@@ -955,7 +955,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 增强型探针/opentelemetry探针版本，已废弃，迁移到监控系统。  type为\"apm2\"时，返回此参数。 
+     * 增强型探针/opentelemetry探针版本，已废弃，迁移到监控系统。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return version
      */
     public String getVersion() {
@@ -972,7 +972,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * apm2访问密钥Key，已废弃，迁移到监控系统。  type为\"apm2\"时，返回此参数。 
+     * apm2访问密钥Key，已废弃，迁移到监控系统。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return accessKey
      */
     public String getAccessKey() {
@@ -989,7 +989,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * apm2访问密钥value，已废弃，迁移到监控系统。  type为\"apm2\"时，返回此参数。 
+     * apm2访问密钥value，已废弃，迁移到监控系统。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return accessValue
      */
     public String getAccessValue() {
@@ -1006,7 +1006,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * apm2应用，同apm_application，已废弃。  type为\"apm2\"时，返回此参数。 
+     * apm2应用，同apm_application，已废弃。  Configuration.type为\"apm2\"时，返回此参数。 
      * @return business
      */
     public String getBusiness() {
@@ -1023,7 +1023,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 自定义监控指标配置采集路径。  type为\"customMetric\"时，返回此参数。 
+     * 自定义监控指标配置采集路径。  Configuration.type为\"customMetric\"时，返回此参数。 
      * @return path
      */
     public String getPath() {
@@ -1040,7 +1040,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 自定义监控指标配置采集端口。  type为\"customMetric\"时，返回此参数。 
+     * 自定义监控指标配置采集端口。  Configuration.type为\"customMetric\"时，返回此参数。 
      * @return port
      */
     public String getPort() {
@@ -1073,7 +1073,7 @@ public class ConfigurationResponseDataSpec {
     }
 
     /**
-     * 自定义监控指标配置指标名称。  type为\"customMetric\"时，返回此参数。 
+     * 自定义监控指标配置指标名称。  Configuration.type为\"customMetric\"时，返回此参数。 
      * @return metrics
      */
     public List<String> getMetrics() {

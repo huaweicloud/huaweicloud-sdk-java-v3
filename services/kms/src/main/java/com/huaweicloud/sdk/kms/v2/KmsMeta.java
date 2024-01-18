@@ -129,9 +129,9 @@ import com.huaweicloud.sdk.kms.v2.model.VerifyRequestBody;
 public class KmsMeta {
 
     public static final HttpRequestDef<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse> batchCreateKmsTags =
-        genForbatchCreateKmsTags();
+        genForBatchCreateKmsTags();
 
-    private static HttpRequestDef<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse> genForbatchCreateKmsTags() {
+    private static HttpRequestDef<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse> genForBatchCreateKmsTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateKmsTagsRequest.class, BatchCreateKmsTagsResponse.class)
@@ -144,25 +144,21 @@ public class KmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateKmsTagsRequest::getKeyId, (req, v) -> {
-                req.setKeyId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateKmsTagsRequest::getKeyId, BatchCreateKmsTagsRequest::setKeyId));
         builder.<BatchCreateKmsTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateKmsTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateKmsTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateKmsTagsRequest::getBody, BatchCreateKmsTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CancelGrantRequest, CancelGrantResponse> cancelGrant = genForcancelGrant();
+    public static final HttpRequestDef<CancelGrantRequest, CancelGrantResponse> cancelGrant = genForCancelGrant();
 
-    private static HttpRequestDef<CancelGrantRequest, CancelGrantResponse> genForcancelGrant() {
+    private static HttpRequestDef<CancelGrantRequest, CancelGrantResponse> genForCancelGrant() {
         // basic
         HttpRequestDef.Builder<CancelGrantRequest, CancelGrantResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CancelGrantRequest.class, CancelGrantResponse.class)
@@ -175,9 +171,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RevokeGrantRequestBody.class),
-            f -> f.withMarshaller(CancelGrantRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CancelGrantRequest::getBody, CancelGrantRequest::setBody));
 
         // response
 
@@ -185,9 +179,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<CancelKeyDeletionRequest, CancelKeyDeletionResponse> cancelKeyDeletion =
-        genForcancelKeyDeletion();
+        genForCancelKeyDeletion();
 
-    private static HttpRequestDef<CancelKeyDeletionRequest, CancelKeyDeletionResponse> genForcancelKeyDeletion() {
+    private static HttpRequestDef<CancelKeyDeletionRequest, CancelKeyDeletionResponse> genForCancelKeyDeletion() {
         // basic
         HttpRequestDef.Builder<CancelKeyDeletionRequest, CancelKeyDeletionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CancelKeyDeletionRequest.class, CancelKeyDeletionResponse.class)
@@ -200,9 +194,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
-            f -> f.withMarshaller(CancelKeyDeletionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CancelKeyDeletionRequest::getBody, CancelKeyDeletionRequest::setBody));
 
         // response
 
@@ -210,9 +202,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<CancelSelfGrantRequest, CancelSelfGrantResponse> cancelSelfGrant =
-        genForcancelSelfGrant();
+        genForCancelSelfGrant();
 
-    private static HttpRequestDef<CancelSelfGrantRequest, CancelSelfGrantResponse> genForcancelSelfGrant() {
+    private static HttpRequestDef<CancelSelfGrantRequest, CancelSelfGrantResponse> genForCancelSelfGrant() {
         // basic
         HttpRequestDef.Builder<CancelSelfGrantRequest, CancelSelfGrantResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CancelSelfGrantRequest.class, CancelSelfGrantResponse.class)
@@ -225,9 +217,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RevokeGrantRequestBody.class),
-            f -> f.withMarshaller(CancelSelfGrantRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CancelSelfGrantRequest::getBody, CancelSelfGrantRequest::setBody));
 
         // response
 
@@ -235,9 +225,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<CreateDatakeyRequest, CreateDatakeyResponse> createDatakey =
-        genForcreateDatakey();
+        genForCreateDatakey();
 
-    private static HttpRequestDef<CreateDatakeyRequest, CreateDatakeyResponse> genForcreateDatakey() {
+    private static HttpRequestDef<CreateDatakeyRequest, CreateDatakeyResponse> genForCreateDatakey() {
         // basic
         HttpRequestDef.Builder<CreateDatakeyRequest, CreateDatakeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDatakeyRequest.class, CreateDatakeyResponse.class)
@@ -250,9 +240,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDatakeyRequestBody.class),
-            f -> f.withMarshaller(CreateDatakeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDatakeyRequest::getBody, CreateDatakeyRequest::setBody));
 
         // response
 
@@ -260,9 +248,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse> createDatakeyWithoutPlaintext =
-        genForcreateDatakeyWithoutPlaintext();
+        genForCreateDatakeyWithoutPlaintext();
 
-    private static HttpRequestDef<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse> genForcreateDatakeyWithoutPlaintext() {
+    private static HttpRequestDef<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse> genForCreateDatakeyWithoutPlaintext() {
         // basic
         HttpRequestDef.Builder<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse> builder =
             HttpRequestDef
@@ -278,18 +266,17 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDatakeyRequestBody.class),
-            f -> f.withMarshaller(CreateDatakeyWithoutPlaintextRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDatakeyWithoutPlaintextRequest::getBody,
+                CreateDatakeyWithoutPlaintextRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateGrantRequest, CreateGrantResponse> createGrant = genForcreateGrant();
+    public static final HttpRequestDef<CreateGrantRequest, CreateGrantResponse> createGrant = genForCreateGrant();
 
-    private static HttpRequestDef<CreateGrantRequest, CreateGrantResponse> genForcreateGrant() {
+    private static HttpRequestDef<CreateGrantRequest, CreateGrantResponse> genForCreateGrant() {
         // basic
         HttpRequestDef.Builder<CreateGrantRequest, CreateGrantResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateGrantRequest.class, CreateGrantResponse.class)
@@ -302,18 +289,16 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateGrantRequestBody.class),
-            f -> f.withMarshaller(CreateGrantRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGrantRequest::getBody, CreateGrantRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateKeyRequest, CreateKeyResponse> createKey = genForcreateKey();
+    public static final HttpRequestDef<CreateKeyRequest, CreateKeyResponse> createKey = genForCreateKey();
 
-    private static HttpRequestDef<CreateKeyRequest, CreateKeyResponse> genForcreateKey() {
+    private static HttpRequestDef<CreateKeyRequest, CreateKeyResponse> genForCreateKey() {
         // basic
         HttpRequestDef.Builder<CreateKeyRequest, CreateKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateKeyRequest.class, CreateKeyResponse.class)
@@ -326,9 +311,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateKeyRequestBody.class),
-            f -> f.withMarshaller(CreateKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateKeyRequest::getBody, CreateKeyRequest::setBody));
 
         // response
 
@@ -336,9 +319,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<CreateKeyStoreRequest, CreateKeyStoreResponse> createKeyStore =
-        genForcreateKeyStore();
+        genForCreateKeyStore();
 
-    private static HttpRequestDef<CreateKeyStoreRequest, CreateKeyStoreResponse> genForcreateKeyStore() {
+    private static HttpRequestDef<CreateKeyStoreRequest, CreateKeyStoreResponse> genForCreateKeyStore() {
         // basic
         HttpRequestDef.Builder<CreateKeyStoreRequest, CreateKeyStoreResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateKeyStoreRequest.class, CreateKeyStoreResponse.class)
@@ -351,18 +334,16 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateKeyStoreRequestBody.class),
-            f -> f.withMarshaller(CreateKeyStoreRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateKeyStoreRequest::getBody, CreateKeyStoreRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateKmsTagRequest, CreateKmsTagResponse> createKmsTag = genForcreateKmsTag();
+    public static final HttpRequestDef<CreateKmsTagRequest, CreateKmsTagResponse> createKmsTag = genForCreateKmsTag();
 
-    private static HttpRequestDef<CreateKmsTagRequest, CreateKmsTagResponse> genForcreateKmsTag() {
+    private static HttpRequestDef<CreateKmsTagRequest, CreateKmsTagResponse> genForCreateKmsTag() {
         // basic
         HttpRequestDef.Builder<CreateKmsTagRequest, CreateKmsTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateKmsTagRequest.class, CreateKmsTagResponse.class)
@@ -375,16 +356,12 @@ public class KmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateKmsTagRequest::getKeyId, (req, v) -> {
-                req.setKeyId(v);
-            }));
+            f -> f.withMarshaller(CreateKmsTagRequest::getKeyId, CreateKmsTagRequest::setKeyId));
         builder.<CreateKmsTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateKmsTagRequestBody.class),
-            f -> f.withMarshaller(CreateKmsTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateKmsTagRequest::getBody, CreateKmsTagRequest::setBody));
 
         // response
 
@@ -392,9 +369,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<CreateParametersForImportRequest, CreateParametersForImportResponse> createParametersForImport =
-        genForcreateParametersForImport();
+        genForCreateParametersForImport();
 
-    private static HttpRequestDef<CreateParametersForImportRequest, CreateParametersForImportResponse> genForcreateParametersForImport() {
+    private static HttpRequestDef<CreateParametersForImportRequest, CreateParametersForImportResponse> genForCreateParametersForImport() {
         // basic
         HttpRequestDef.Builder<CreateParametersForImportRequest, CreateParametersForImportResponse> builder =
             HttpRequestDef
@@ -410,18 +387,17 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetParametersForImportRequestBody.class),
-            f -> f.withMarshaller(CreateParametersForImportRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateParametersForImportRequest::getBody,
+                CreateParametersForImportRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRandomRequest, CreateRandomResponse> createRandom = genForcreateRandom();
+    public static final HttpRequestDef<CreateRandomRequest, CreateRandomResponse> createRandom = genForCreateRandom();
 
-    private static HttpRequestDef<CreateRandomRequest, CreateRandomResponse> genForcreateRandom() {
+    private static HttpRequestDef<CreateRandomRequest, CreateRandomResponse> genForCreateRandom() {
         // basic
         HttpRequestDef.Builder<CreateRandomRequest, CreateRandomResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRandomRequest.class, CreateRandomResponse.class)
@@ -434,18 +410,16 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GenRandomRequestBody.class),
-            f -> f.withMarshaller(CreateRandomRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRandomRequest::getBody, CreateRandomRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DecryptDataRequest, DecryptDataResponse> decryptData = genFordecryptData();
+    public static final HttpRequestDef<DecryptDataRequest, DecryptDataResponse> decryptData = genForDecryptData();
 
-    private static HttpRequestDef<DecryptDataRequest, DecryptDataResponse> genFordecryptData() {
+    private static HttpRequestDef<DecryptDataRequest, DecryptDataResponse> genForDecryptData() {
         // basic
         HttpRequestDef.Builder<DecryptDataRequest, DecryptDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DecryptDataRequest.class, DecryptDataResponse.class)
@@ -458,9 +432,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DecryptDataRequestBody.class),
-            f -> f.withMarshaller(DecryptDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DecryptDataRequest::getBody, DecryptDataRequest::setBody));
 
         // response
 
@@ -468,9 +440,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<DecryptDatakeyRequest, DecryptDatakeyResponse> decryptDatakey =
-        genFordecryptDatakey();
+        genForDecryptDatakey();
 
-    private static HttpRequestDef<DecryptDatakeyRequest, DecryptDatakeyResponse> genFordecryptDatakey() {
+    private static HttpRequestDef<DecryptDatakeyRequest, DecryptDatakeyResponse> genForDecryptDatakey() {
         // basic
         HttpRequestDef.Builder<DecryptDatakeyRequest, DecryptDatakeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DecryptDatakeyRequest.class, DecryptDatakeyResponse.class)
@@ -483,9 +455,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DecryptDatakeyRequestBody.class),
-            f -> f.withMarshaller(DecryptDatakeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DecryptDatakeyRequest::getBody, DecryptDatakeyRequest::setBody));
 
         // response
 
@@ -493,9 +463,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse> deleteImportedKeyMaterial =
-        genFordeleteImportedKeyMaterial();
+        genForDeleteImportedKeyMaterial();
 
-    private static HttpRequestDef<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse> genFordeleteImportedKeyMaterial() {
+    private static HttpRequestDef<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse> genForDeleteImportedKeyMaterial() {
         // basic
         HttpRequestDef.Builder<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse> builder =
             HttpRequestDef
@@ -511,18 +481,17 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
-            f -> f.withMarshaller(DeleteImportedKeyMaterialRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteImportedKeyMaterialRequest::getBody,
+                DeleteImportedKeyMaterialRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteKeyRequest, DeleteKeyResponse> deleteKey = genFordeleteKey();
+    public static final HttpRequestDef<DeleteKeyRequest, DeleteKeyResponse> deleteKey = genForDeleteKey();
 
-    private static HttpRequestDef<DeleteKeyRequest, DeleteKeyResponse> genFordeleteKey() {
+    private static HttpRequestDef<DeleteKeyRequest, DeleteKeyResponse> genForDeleteKey() {
         // basic
         HttpRequestDef.Builder<DeleteKeyRequest, DeleteKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteKeyRequest.class, DeleteKeyResponse.class)
@@ -535,9 +504,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ScheduleKeyDeletionRequestBody.class),
-            f -> f.withMarshaller(DeleteKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteKeyRequest::getBody, DeleteKeyRequest::setBody));
 
         // response
 
@@ -545,9 +512,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<DeleteKeyStoreRequest, DeleteKeyStoreResponse> deleteKeyStore =
-        genFordeleteKeyStore();
+        genForDeleteKeyStore();
 
-    private static HttpRequestDef<DeleteKeyStoreRequest, DeleteKeyStoreResponse> genFordeleteKeyStore() {
+    private static HttpRequestDef<DeleteKeyStoreRequest, DeleteKeyStoreResponse> genForDeleteKeyStore() {
         // basic
         HttpRequestDef.Builder<DeleteKeyStoreRequest, DeleteKeyStoreResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteKeyStoreRequest.class, DeleteKeyStoreResponse.class)
@@ -560,18 +527,16 @@ public class KmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteKeyStoreRequest::getKeystoreId, (req, v) -> {
-                req.setKeystoreId(v);
-            }));
+            f -> f.withMarshaller(DeleteKeyStoreRequest::getKeystoreId, DeleteKeyStoreRequest::setKeystoreId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genFordeleteTag();
+    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genForDeleteTag();
 
-    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genFordeleteTag() {
+    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genForDeleteTag() {
         // basic
         HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
@@ -584,25 +549,21 @@ public class KmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getKeyId, (req, v) -> {
-                req.setKeyId(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getKeyId, DeleteTagRequest::setKeyId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getKey, DeleteTagRequest::setKey));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DisableKeyRequest, DisableKeyResponse> disableKey = genFordisableKey();
+    public static final HttpRequestDef<DisableKeyRequest, DisableKeyResponse> disableKey = genForDisableKey();
 
-    private static HttpRequestDef<DisableKeyRequest, DisableKeyResponse> genFordisableKey() {
+    private static HttpRequestDef<DisableKeyRequest, DisableKeyResponse> genForDisableKey() {
         // basic
         HttpRequestDef.Builder<DisableKeyRequest, DisableKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableKeyRequest.class, DisableKeyResponse.class)
@@ -615,9 +576,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
-            f -> f.withMarshaller(DisableKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisableKeyRequest::getBody, DisableKeyRequest::setBody));
 
         // response
 
@@ -625,9 +584,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<DisableKeyRotationRequest, DisableKeyRotationResponse> disableKeyRotation =
-        genFordisableKeyRotation();
+        genForDisableKeyRotation();
 
-    private static HttpRequestDef<DisableKeyRotationRequest, DisableKeyRotationResponse> genFordisableKeyRotation() {
+    private static HttpRequestDef<DisableKeyRotationRequest, DisableKeyRotationResponse> genForDisableKeyRotation() {
         // basic
         HttpRequestDef.Builder<DisableKeyRotationRequest, DisableKeyRotationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableKeyRotationRequest.class, DisableKeyRotationResponse.class)
@@ -640,9 +599,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
-            f -> f.withMarshaller(DisableKeyRotationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisableKeyRotationRequest::getBody, DisableKeyRotationRequest::setBody));
 
         // response
 
@@ -650,9 +607,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<DisableKeyStoreRequest, DisableKeyStoreResponse> disableKeyStore =
-        genFordisableKeyStore();
+        genForDisableKeyStore();
 
-    private static HttpRequestDef<DisableKeyStoreRequest, DisableKeyStoreResponse> genFordisableKeyStore() {
+    private static HttpRequestDef<DisableKeyStoreRequest, DisableKeyStoreResponse> genForDisableKeyStore() {
         // basic
         HttpRequestDef.Builder<DisableKeyStoreRequest, DisableKeyStoreResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableKeyStoreRequest.class, DisableKeyStoreResponse.class)
@@ -665,18 +622,16 @@ public class KmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableKeyStoreRequest::getKeystoreId, (req, v) -> {
-                req.setKeystoreId(v);
-            }));
+            f -> f.withMarshaller(DisableKeyStoreRequest::getKeystoreId, DisableKeyStoreRequest::setKeystoreId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<EnableKeyRequest, EnableKeyResponse> enableKey = genForenableKey();
+    public static final HttpRequestDef<EnableKeyRequest, EnableKeyResponse> enableKey = genForEnableKey();
 
-    private static HttpRequestDef<EnableKeyRequest, EnableKeyResponse> genForenableKey() {
+    private static HttpRequestDef<EnableKeyRequest, EnableKeyResponse> genForEnableKey() {
         // basic
         HttpRequestDef.Builder<EnableKeyRequest, EnableKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableKeyRequest.class, EnableKeyResponse.class)
@@ -689,9 +644,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
-            f -> f.withMarshaller(EnableKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EnableKeyRequest::getBody, EnableKeyRequest::setBody));
 
         // response
 
@@ -699,9 +652,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<EnableKeyRotationRequest, EnableKeyRotationResponse> enableKeyRotation =
-        genForenableKeyRotation();
+        genForEnableKeyRotation();
 
-    private static HttpRequestDef<EnableKeyRotationRequest, EnableKeyRotationResponse> genForenableKeyRotation() {
+    private static HttpRequestDef<EnableKeyRotationRequest, EnableKeyRotationResponse> genForEnableKeyRotation() {
         // basic
         HttpRequestDef.Builder<EnableKeyRotationRequest, EnableKeyRotationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableKeyRotationRequest.class, EnableKeyRotationResponse.class)
@@ -714,9 +667,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
-            f -> f.withMarshaller(EnableKeyRotationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EnableKeyRotationRequest::getBody, EnableKeyRotationRequest::setBody));
 
         // response
 
@@ -724,9 +675,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<EnableKeyStoreRequest, EnableKeyStoreResponse> enableKeyStore =
-        genForenableKeyStore();
+        genForEnableKeyStore();
 
-    private static HttpRequestDef<EnableKeyStoreRequest, EnableKeyStoreResponse> genForenableKeyStore() {
+    private static HttpRequestDef<EnableKeyStoreRequest, EnableKeyStoreResponse> genForEnableKeyStore() {
         // basic
         HttpRequestDef.Builder<EnableKeyStoreRequest, EnableKeyStoreResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableKeyStoreRequest.class, EnableKeyStoreResponse.class)
@@ -739,18 +690,16 @@ public class KmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableKeyStoreRequest::getKeystoreId, (req, v) -> {
-                req.setKeystoreId(v);
-            }));
+            f -> f.withMarshaller(EnableKeyStoreRequest::getKeystoreId, EnableKeyStoreRequest::setKeystoreId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<EncryptDataRequest, EncryptDataResponse> encryptData = genForencryptData();
+    public static final HttpRequestDef<EncryptDataRequest, EncryptDataResponse> encryptData = genForEncryptData();
 
-    private static HttpRequestDef<EncryptDataRequest, EncryptDataResponse> genForencryptData() {
+    private static HttpRequestDef<EncryptDataRequest, EncryptDataResponse> genForEncryptData() {
         // basic
         HttpRequestDef.Builder<EncryptDataRequest, EncryptDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EncryptDataRequest.class, EncryptDataResponse.class)
@@ -763,9 +712,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EncryptDataRequestBody.class),
-            f -> f.withMarshaller(EncryptDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EncryptDataRequest::getBody, EncryptDataRequest::setBody));
 
         // response
 
@@ -773,9 +720,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<EncryptDatakeyRequest, EncryptDatakeyResponse> encryptDatakey =
-        genForencryptDatakey();
+        genForEncryptDatakey();
 
-    private static HttpRequestDef<EncryptDatakeyRequest, EncryptDatakeyResponse> genForencryptDatakey() {
+    private static HttpRequestDef<EncryptDatakeyRequest, EncryptDatakeyResponse> genForEncryptDatakey() {
         // basic
         HttpRequestDef.Builder<EncryptDatakeyRequest, EncryptDatakeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EncryptDatakeyRequest.class, EncryptDatakeyResponse.class)
@@ -788,9 +735,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EncryptDatakeyRequestBody.class),
-            f -> f.withMarshaller(EncryptDatakeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EncryptDatakeyRequest::getBody, EncryptDatakeyRequest::setBody));
 
         // response
 
@@ -798,9 +743,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<ImportKeyMaterialRequest, ImportKeyMaterialResponse> importKeyMaterial =
-        genForimportKeyMaterial();
+        genForImportKeyMaterial();
 
-    private static HttpRequestDef<ImportKeyMaterialRequest, ImportKeyMaterialResponse> genForimportKeyMaterial() {
+    private static HttpRequestDef<ImportKeyMaterialRequest, ImportKeyMaterialResponse> genForImportKeyMaterial() {
         // basic
         HttpRequestDef.Builder<ImportKeyMaterialRequest, ImportKeyMaterialResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportKeyMaterialRequest.class, ImportKeyMaterialResponse.class)
@@ -813,18 +758,16 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportKeyMaterialRequestBody.class),
-            f -> f.withMarshaller(ImportKeyMaterialRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportKeyMaterialRequest::getBody, ImportKeyMaterialRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListGrantsRequest, ListGrantsResponse> listGrants = genForlistGrants();
+    public static final HttpRequestDef<ListGrantsRequest, ListGrantsResponse> listGrants = genForListGrants();
 
-    private static HttpRequestDef<ListGrantsRequest, ListGrantsResponse> genForlistGrants() {
+    private static HttpRequestDef<ListGrantsRequest, ListGrantsResponse> genForListGrants() {
         // basic
         HttpRequestDef.Builder<ListGrantsRequest, ListGrantsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListGrantsRequest.class, ListGrantsResponse.class)
@@ -837,9 +780,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListGrantsRequestBody.class),
-            f -> f.withMarshaller(ListGrantsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListGrantsRequest::getBody, ListGrantsRequest::setBody));
 
         // response
 
@@ -847,9 +788,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<ListKeyDetailRequest, ListKeyDetailResponse> listKeyDetail =
-        genForlistKeyDetail();
+        genForListKeyDetail();
 
-    private static HttpRequestDef<ListKeyDetailRequest, ListKeyDetailResponse> genForlistKeyDetail() {
+    private static HttpRequestDef<ListKeyDetailRequest, ListKeyDetailResponse> genForListKeyDetail() {
         // basic
         HttpRequestDef.Builder<ListKeyDetailRequest, ListKeyDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListKeyDetailRequest.class, ListKeyDetailResponse.class)
@@ -862,9 +803,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
-            f -> f.withMarshaller(ListKeyDetailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListKeyDetailRequest::getBody, ListKeyDetailRequest::setBody));
 
         // response
 
@@ -872,9 +811,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<ListKeyStoresRequest, ListKeyStoresResponse> listKeyStores =
-        genForlistKeyStores();
+        genForListKeyStores();
 
-    private static HttpRequestDef<ListKeyStoresRequest, ListKeyStoresResponse> genForlistKeyStores() {
+    private static HttpRequestDef<ListKeyStoresRequest, ListKeyStoresResponse> genForListKeyStores() {
         // basic
         HttpRequestDef.Builder<ListKeyStoresRequest, ListKeyStoresResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListKeyStoresRequest.class, ListKeyStoresResponse.class)
@@ -887,25 +826,21 @@ public class KmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListKeyStoresRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListKeyStoresRequest::getLimit, ListKeyStoresRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListKeyStoresRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListKeyStoresRequest::getOffset, ListKeyStoresRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListKeysRequest, ListKeysResponse> listKeys = genForlistKeys();
+    public static final HttpRequestDef<ListKeysRequest, ListKeysResponse> listKeys = genForListKeys();
 
-    private static HttpRequestDef<ListKeysRequest, ListKeysResponse> genForlistKeys() {
+    private static HttpRequestDef<ListKeysRequest, ListKeysResponse> genForListKeys() {
         // basic
         HttpRequestDef.Builder<ListKeysRequest, ListKeysResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListKeysRequest.class, ListKeysResponse.class)
@@ -918,9 +853,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListKeysRequestBody.class),
-            f -> f.withMarshaller(ListKeysRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListKeysRequest::getBody, ListKeysRequest::setBody));
 
         // response
 
@@ -928,9 +861,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<ListKmsByTagsRequest, ListKmsByTagsResponse> listKmsByTags =
-        genForlistKmsByTags();
+        genForListKmsByTags();
 
-    private static HttpRequestDef<ListKmsByTagsRequest, ListKmsByTagsResponse> genForlistKmsByTags() {
+    private static HttpRequestDef<ListKmsByTagsRequest, ListKmsByTagsResponse> genForListKmsByTags() {
         // basic
         HttpRequestDef.Builder<ListKmsByTagsRequest, ListKmsByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListKmsByTagsRequest.class, ListKmsByTagsResponse.class)
@@ -943,25 +876,22 @@ public class KmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListKmsByTagsRequest::getResourceInstances, (req, v) -> {
-                req.setResourceInstances(v);
-            }));
+            f -> f.withMarshaller(ListKmsByTagsRequest::getResourceInstances,
+                ListKmsByTagsRequest::setResourceInstances));
         builder.<ListKmsByTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListKmsByTagsRequestBody.class),
-            f -> f.withMarshaller(ListKmsByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListKmsByTagsRequest::getBody, ListKmsByTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListKmsTagsRequest, ListKmsTagsResponse> listKmsTags = genForlistKmsTags();
+    public static final HttpRequestDef<ListKmsTagsRequest, ListKmsTagsResponse> listKmsTags = genForListKmsTags();
 
-    private static HttpRequestDef<ListKmsTagsRequest, ListKmsTagsResponse> genForlistKmsTags() {
+    private static HttpRequestDef<ListKmsTagsRequest, ListKmsTagsResponse> genForListKmsTags() {
         // basic
         HttpRequestDef.Builder<ListKmsTagsRequest, ListKmsTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListKmsTagsRequest.class, ListKmsTagsResponse.class)
@@ -977,9 +907,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<ListRetirableGrantsRequest, ListRetirableGrantsResponse> listRetirableGrants =
-        genForlistRetirableGrants();
+        genForListRetirableGrants();
 
-    private static HttpRequestDef<ListRetirableGrantsRequest, ListRetirableGrantsResponse> genForlistRetirableGrants() {
+    private static HttpRequestDef<ListRetirableGrantsRequest, ListRetirableGrantsResponse> genForListRetirableGrants() {
         // basic
         HttpRequestDef.Builder<ListRetirableGrantsRequest, ListRetirableGrantsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListRetirableGrantsRequest.class, ListRetirableGrantsResponse.class)
@@ -992,9 +922,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListRetirableGrantsRequestBody.class),
-            f -> f.withMarshaller(ListRetirableGrantsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListRetirableGrantsRequest::getBody, ListRetirableGrantsRequest::setBody));
 
         // response
 
@@ -1002,9 +930,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> showKeyRotationStatus =
-        genForshowKeyRotationStatus();
+        genForShowKeyRotationStatus();
 
-    private static HttpRequestDef<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> genForshowKeyRotationStatus() {
+    private static HttpRequestDef<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> genForShowKeyRotationStatus() {
         // basic
         HttpRequestDef.Builder<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowKeyRotationStatusRequest.class, ShowKeyRotationStatusResponse.class)
@@ -1017,18 +945,16 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
-            f -> f.withMarshaller(ShowKeyRotationStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowKeyRotationStatusRequest::getBody, ShowKeyRotationStatusRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowKeyStoreRequest, ShowKeyStoreResponse> showKeyStore = genForshowKeyStore();
+    public static final HttpRequestDef<ShowKeyStoreRequest, ShowKeyStoreResponse> showKeyStore = genForShowKeyStore();
 
-    private static HttpRequestDef<ShowKeyStoreRequest, ShowKeyStoreResponse> genForshowKeyStore() {
+    private static HttpRequestDef<ShowKeyStoreRequest, ShowKeyStoreResponse> genForShowKeyStore() {
         // basic
         HttpRequestDef.Builder<ShowKeyStoreRequest, ShowKeyStoreResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowKeyStoreRequest.class, ShowKeyStoreResponse.class)
@@ -1041,18 +967,16 @@ public class KmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowKeyStoreRequest::getKeystoreId, (req, v) -> {
-                req.setKeystoreId(v);
-            }));
+            f -> f.withMarshaller(ShowKeyStoreRequest::getKeystoreId, ShowKeyStoreRequest::setKeystoreId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowKmsTagsRequest, ShowKmsTagsResponse> showKmsTags = genForshowKmsTags();
+    public static final HttpRequestDef<ShowKmsTagsRequest, ShowKmsTagsResponse> showKmsTags = genForShowKmsTags();
 
-    private static HttpRequestDef<ShowKmsTagsRequest, ShowKmsTagsResponse> genForshowKmsTags() {
+    private static HttpRequestDef<ShowKmsTagsRequest, ShowKmsTagsResponse> genForShowKmsTags() {
         // basic
         HttpRequestDef.Builder<ShowKmsTagsRequest, ShowKmsTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowKmsTagsRequest.class, ShowKmsTagsResponse.class)
@@ -1065,9 +989,7 @@ public class KmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowKmsTagsRequest::getKeyId, (req, v) -> {
-                req.setKeyId(v);
-            }));
+            f -> f.withMarshaller(ShowKmsTagsRequest::getKeyId, ShowKmsTagsRequest::setKeyId));
 
         // response
 
@@ -1075,9 +997,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<ShowPublicKeyRequest, ShowPublicKeyResponse> showPublicKey =
-        genForshowPublicKey();
+        genForShowPublicKey();
 
-    private static HttpRequestDef<ShowPublicKeyRequest, ShowPublicKeyResponse> genForshowPublicKey() {
+    private static HttpRequestDef<ShowPublicKeyRequest, ShowPublicKeyResponse> genForShowPublicKey() {
         // basic
         HttpRequestDef.Builder<ShowPublicKeyRequest, ShowPublicKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowPublicKeyRequest.class, ShowPublicKeyResponse.class)
@@ -1090,9 +1012,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
-            f -> f.withMarshaller(ShowPublicKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowPublicKeyRequest::getBody, ShowPublicKeyRequest::setBody));
 
         // response
 
@@ -1100,9 +1020,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<ShowUserInstancesRequest, ShowUserInstancesResponse> showUserInstances =
-        genForshowUserInstances();
+        genForShowUserInstances();
 
-    private static HttpRequestDef<ShowUserInstancesRequest, ShowUserInstancesResponse> genForshowUserInstances() {
+    private static HttpRequestDef<ShowUserInstancesRequest, ShowUserInstancesResponse> genForShowUserInstances() {
         // basic
         HttpRequestDef.Builder<ShowUserInstancesRequest, ShowUserInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserInstancesRequest.class, ShowUserInstancesResponse.class)
@@ -1118,9 +1038,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<ShowUserQuotasRequest, ShowUserQuotasResponse> showUserQuotas =
-        genForshowUserQuotas();
+        genForShowUserQuotas();
 
-    private static HttpRequestDef<ShowUserQuotasRequest, ShowUserQuotasResponse> genForshowUserQuotas() {
+    private static HttpRequestDef<ShowUserQuotasRequest, ShowUserQuotasResponse> genForShowUserQuotas() {
         // basic
         HttpRequestDef.Builder<ShowUserQuotasRequest, ShowUserQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserQuotasRequest.class, ShowUserQuotasResponse.class)
@@ -1135,9 +1055,9 @@ public class KmsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<SignRequest, SignResponse> sign = genForsign();
+    public static final HttpRequestDef<SignRequest, SignResponse> sign = genForSign();
 
-    private static HttpRequestDef<SignRequest, SignResponse> genForsign() {
+    private static HttpRequestDef<SignRequest, SignResponse> genForSign() {
         // basic
         HttpRequestDef.Builder<SignRequest, SignResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SignRequest.class, SignResponse.class)
@@ -1150,9 +1070,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SignRequestBody.class),
-            f -> f.withMarshaller(SignRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SignRequest::getBody, SignRequest::setBody));
 
         // response
 
@@ -1160,9 +1078,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<UpdateKeyAliasRequest, UpdateKeyAliasResponse> updateKeyAlias =
-        genForupdateKeyAlias();
+        genForUpdateKeyAlias();
 
-    private static HttpRequestDef<UpdateKeyAliasRequest, UpdateKeyAliasResponse> genForupdateKeyAlias() {
+    private static HttpRequestDef<UpdateKeyAliasRequest, UpdateKeyAliasResponse> genForUpdateKeyAlias() {
         // basic
         HttpRequestDef.Builder<UpdateKeyAliasRequest, UpdateKeyAliasResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateKeyAliasRequest.class, UpdateKeyAliasResponse.class)
@@ -1175,9 +1093,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateKeyAliasRequestBody.class),
-            f -> f.withMarshaller(UpdateKeyAliasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateKeyAliasRequest::getBody, UpdateKeyAliasRequest::setBody));
 
         // response
 
@@ -1185,9 +1101,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> updateKeyDescription =
-        genForupdateKeyDescription();
+        genForUpdateKeyDescription();
 
-    private static HttpRequestDef<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> genForupdateKeyDescription() {
+    private static HttpRequestDef<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> genForUpdateKeyDescription() {
         // basic
         HttpRequestDef.Builder<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateKeyDescriptionRequest.class, UpdateKeyDescriptionResponse.class)
@@ -1200,9 +1116,7 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateKeyDescriptionRequestBody.class),
-            f -> f.withMarshaller(UpdateKeyDescriptionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateKeyDescriptionRequest::getBody, UpdateKeyDescriptionRequest::setBody));
 
         // response
 
@@ -1210,9 +1124,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> updateKeyRotationInterval =
-        genForupdateKeyRotationInterval();
+        genForUpdateKeyRotationInterval();
 
-    private static HttpRequestDef<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> genForupdateKeyRotationInterval() {
+    private static HttpRequestDef<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> genForUpdateKeyRotationInterval() {
         // basic
         HttpRequestDef.Builder<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> builder =
             HttpRequestDef
@@ -1228,9 +1142,8 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateKeyRotationIntervalRequestBody.class),
-            f -> f.withMarshaller(UpdateKeyRotationIntervalRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateKeyRotationIntervalRequest::getBody,
+                UpdateKeyRotationIntervalRequest::setBody));
 
         // response
 
@@ -1238,9 +1151,9 @@ public class KmsMeta {
     }
 
     public static final HttpRequestDef<ValidateSignatureRequest, ValidateSignatureResponse> validateSignature =
-        genForvalidateSignature();
+        genForValidateSignature();
 
-    private static HttpRequestDef<ValidateSignatureRequest, ValidateSignatureResponse> genForvalidateSignature() {
+    private static HttpRequestDef<ValidateSignatureRequest, ValidateSignatureResponse> genForValidateSignature() {
         // basic
         HttpRequestDef.Builder<ValidateSignatureRequest, ValidateSignatureResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ValidateSignatureRequest.class, ValidateSignatureResponse.class)
@@ -1253,18 +1166,16 @@ public class KmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VerifyRequestBody.class),
-            f -> f.withMarshaller(ValidateSignatureRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ValidateSignatureRequest::getBody, ValidateSignatureRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForshowVersion();
+    public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForShowVersion();
 
-    private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForshowVersion() {
+    private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForShowVersion() {
         // basic
         HttpRequestDef.Builder<ShowVersionRequest, ShowVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionRequest.class, ShowVersionResponse.class)
@@ -1277,18 +1188,16 @@ public class KmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVersionRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(ShowVersionRequest::getVersionId, ShowVersionRequest::setVersionId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVersionsRequest, ShowVersionsResponse> showVersions = genForshowVersions();
+    public static final HttpRequestDef<ShowVersionsRequest, ShowVersionsResponse> showVersions = genForShowVersions();
 
-    private static HttpRequestDef<ShowVersionsRequest, ShowVersionsResponse> genForshowVersions() {
+    private static HttpRequestDef<ShowVersionsRequest, ShowVersionsResponse> genForShowVersions() {
         // basic
         HttpRequestDef.Builder<ShowVersionsRequest, ShowVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionsRequest.class, ShowVersionsResponse.class)

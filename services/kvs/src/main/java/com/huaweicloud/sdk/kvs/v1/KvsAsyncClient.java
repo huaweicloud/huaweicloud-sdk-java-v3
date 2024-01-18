@@ -27,8 +27,6 @@ import com.huaweicloud.sdk.kvs.v1.model.ScanKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ScanKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.ScanSkeyKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ScanSkeyKvResponse;
-import com.huaweicloud.sdk.kvs.v1.model.TransactGetKvRequest;
-import com.huaweicloud.sdk.kvs.v1.model.TransactGetKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.TransactWriteSkeyKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.TransactWriteSkeyKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.UpdateKvRequest;
@@ -64,7 +62,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTableRequest 请求对象
+     * @param request CreateTableRequest 请求对象
      * @return CompletableFuture<CreateTableResponse>
      */
     public CompletableFuture<CreateTableResponse> createTableAsync(CreateTableRequest request) {
@@ -78,11 +76,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTableRequest 请求对象
+     * @param request CreateTableRequest 请求对象
      * @return AsyncInvoker<CreateTableRequest, CreateTableResponse>
      */
     public AsyncInvoker<CreateTableRequest, CreateTableResponse> createTableAsyncInvoker(CreateTableRequest request) {
-        return new AsyncInvoker<CreateTableRequest, CreateTableResponse>(request, KvsMeta.createTable, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.createTable, hcClient);
     }
 
     /**
@@ -92,7 +90,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribeTableRequest 请求对象
+     * @param request DescribeTableRequest 请求对象
      * @return CompletableFuture<DescribeTableResponse>
      */
     public CompletableFuture<DescribeTableResponse> describeTableAsync(DescribeTableRequest request) {
@@ -106,12 +104,12 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribeTableRequest 请求对象
+     * @param request DescribeTableRequest 请求对象
      * @return AsyncInvoker<DescribeTableRequest, DescribeTableResponse>
      */
     public AsyncInvoker<DescribeTableRequest, DescribeTableResponse> describeTableAsyncInvoker(
         DescribeTableRequest request) {
-        return new AsyncInvoker<DescribeTableRequest, DescribeTableResponse>(request, KvsMeta.describeTable, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.describeTable, hcClient);
     }
 
     /**
@@ -120,7 +118,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoreRequest 请求对象
+     * @param request ListStoreRequest 请求对象
      * @return CompletableFuture<ListStoreResponse>
      */
     public CompletableFuture<ListStoreResponse> listStoreAsync(ListStoreRequest request) {
@@ -133,11 +131,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoreRequest 请求对象
+     * @param request ListStoreRequest 请求对象
      * @return AsyncInvoker<ListStoreRequest, ListStoreResponse>
      */
     public AsyncInvoker<ListStoreRequest, ListStoreResponse> listStoreAsyncInvoker(ListStoreRequest request) {
-        return new AsyncInvoker<ListStoreRequest, ListStoreResponse>(request, KvsMeta.listStore, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.listStore, hcClient);
     }
 
     /**
@@ -147,7 +145,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTableRequest 请求对象
+     * @param request ListTableRequest 请求对象
      * @return CompletableFuture<ListTableResponse>
      */
     public CompletableFuture<ListTableResponse> listTableAsync(ListTableRequest request) {
@@ -161,11 +159,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTableRequest 请求对象
+     * @param request ListTableRequest 请求对象
      * @return AsyncInvoker<ListTableRequest, ListTableResponse>
      */
     public AsyncInvoker<ListTableRequest, ListTableResponse> listTableAsyncInvoker(ListTableRequest request) {
-        return new AsyncInvoker<ListTableRequest, ListTableResponse>(request, KvsMeta.listTable, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.listTable, hcClient);
     }
 
     /**
@@ -175,7 +173,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchGetKvRequest 请求对象
+     * @param request BatchGetKvRequest 请求对象
      * @return CompletableFuture<BatchGetKvResponse>
      */
     public CompletableFuture<BatchGetKvResponse> batchGetKvAsync(BatchGetKvRequest request) {
@@ -189,11 +187,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchGetKvRequest 请求对象
+     * @param request BatchGetKvRequest 请求对象
      * @return AsyncInvoker<BatchGetKvRequest, BatchGetKvResponse>
      */
     public AsyncInvoker<BatchGetKvRequest, BatchGetKvResponse> batchGetKvAsyncInvoker(BatchGetKvRequest request) {
-        return new AsyncInvoker<BatchGetKvRequest, BatchGetKvResponse>(request, KvsMeta.batchGetKv, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.batchGetKv, hcClient);
     }
 
     /**
@@ -203,7 +201,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchWriteKvRequest 请求对象
+     * @param request BatchWriteKvRequest 请求对象
      * @return CompletableFuture<BatchWriteKvResponse>
      */
     public CompletableFuture<BatchWriteKvResponse> batchWriteKvAsync(BatchWriteKvRequest request) {
@@ -217,12 +215,12 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchWriteKvRequest 请求对象
+     * @param request BatchWriteKvRequest 请求对象
      * @return AsyncInvoker<BatchWriteKvRequest, BatchWriteKvResponse>
      */
     public AsyncInvoker<BatchWriteKvRequest, BatchWriteKvResponse> batchWriteKvAsyncInvoker(
         BatchWriteKvRequest request) {
-        return new AsyncInvoker<BatchWriteKvRequest, BatchWriteKvResponse>(request, KvsMeta.batchWriteKv, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.batchWriteKv, hcClient);
     }
 
     /**
@@ -232,7 +230,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKvRequest 请求对象
+     * @param request DeleteKvRequest 请求对象
      * @return CompletableFuture<DeleteKvResponse>
      */
     public CompletableFuture<DeleteKvResponse> deleteKvAsync(DeleteKvRequest request) {
@@ -246,11 +244,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKvRequest 请求对象
+     * @param request DeleteKvRequest 请求对象
      * @return AsyncInvoker<DeleteKvRequest, DeleteKvResponse>
      */
     public AsyncInvoker<DeleteKvRequest, DeleteKvResponse> deleteKvAsyncInvoker(DeleteKvRequest request) {
-        return new AsyncInvoker<DeleteKvRequest, DeleteKvResponse>(request, KvsMeta.deleteKv, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.deleteKv, hcClient);
     }
 
     /**
@@ -260,7 +258,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetKvRequest 请求对象
+     * @param request GetKvRequest 请求对象
      * @return CompletableFuture<GetKvResponse>
      */
     public CompletableFuture<GetKvResponse> getKvAsync(GetKvRequest request) {
@@ -274,11 +272,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetKvRequest 请求对象
+     * @param request GetKvRequest 请求对象
      * @return AsyncInvoker<GetKvRequest, GetKvResponse>
      */
     public AsyncInvoker<GetKvRequest, GetKvResponse> getKvAsyncInvoker(GetKvRequest request) {
-        return new AsyncInvoker<GetKvRequest, GetKvResponse>(request, KvsMeta.getKv, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.getKv, hcClient);
     }
 
     /**
@@ -288,7 +286,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutKvRequest 请求对象
+     * @param request PutKvRequest 请求对象
      * @return CompletableFuture<PutKvResponse>
      */
     public CompletableFuture<PutKvResponse> putKvAsync(PutKvRequest request) {
@@ -302,11 +300,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutKvRequest 请求对象
+     * @param request PutKvRequest 请求对象
      * @return AsyncInvoker<PutKvRequest, PutKvResponse>
      */
     public AsyncInvoker<PutKvRequest, PutKvResponse> putKvAsyncInvoker(PutKvRequest request) {
-        return new AsyncInvoker<PutKvRequest, PutKvResponse>(request, KvsMeta.putKv, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.putKv, hcClient);
     }
 
     /**
@@ -318,7 +316,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenameKvRequest 请求对象
+     * @param request RenameKvRequest 请求对象
      * @return CompletableFuture<RenameKvResponse>
      */
     public CompletableFuture<RenameKvResponse> renameKvAsync(RenameKvRequest request) {
@@ -334,11 +332,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenameKvRequest 请求对象
+     * @param request RenameKvRequest 请求对象
      * @return AsyncInvoker<RenameKvRequest, RenameKvResponse>
      */
     public AsyncInvoker<RenameKvRequest, RenameKvResponse> renameKvAsyncInvoker(RenameKvRequest request) {
-        return new AsyncInvoker<RenameKvRequest, RenameKvResponse>(request, KvsMeta.renameKv, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.renameKv, hcClient);
     }
 
     /**
@@ -348,7 +346,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ScanKvRequest 请求对象
+     * @param request ScanKvRequest 请求对象
      * @return CompletableFuture<ScanKvResponse>
      */
     public CompletableFuture<ScanKvResponse> scanKvAsync(ScanKvRequest request) {
@@ -362,11 +360,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ScanKvRequest 请求对象
+     * @param request ScanKvRequest 请求对象
      * @return AsyncInvoker<ScanKvRequest, ScanKvResponse>
      */
     public AsyncInvoker<ScanKvRequest, ScanKvResponse> scanKvAsyncInvoker(ScanKvRequest request) {
-        return new AsyncInvoker<ScanKvRequest, ScanKvResponse>(request, KvsMeta.scanKv, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.scanKv, hcClient);
     }
 
     /**
@@ -376,7 +374,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ScanSkeyKvRequest 请求对象
+     * @param request ScanSkeyKvRequest 请求对象
      * @return CompletableFuture<ScanSkeyKvResponse>
      */
     public CompletableFuture<ScanSkeyKvResponse> scanSkeyKvAsync(ScanSkeyKvRequest request) {
@@ -390,40 +388,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ScanSkeyKvRequest 请求对象
+     * @param request ScanSkeyKvRequest 请求对象
      * @return AsyncInvoker<ScanSkeyKvRequest, ScanSkeyKvResponse>
      */
     public AsyncInvoker<ScanSkeyKvRequest, ScanSkeyKvResponse> scanSkeyKvAsyncInvoker(ScanSkeyKvRequest request) {
-        return new AsyncInvoker<ScanSkeyKvRequest, ScanSkeyKvResponse>(request, KvsMeta.scanSkeyKv, hcClient);
-    }
-
-    /**
-     * 事务读请求
-     *
-     * 事务读请求，其中可以携带1或多个table的不同kv的读操作
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param TransactGetKvRequest 请求对象
-     * @return CompletableFuture<TransactGetKvResponse>
-     */
-    public CompletableFuture<TransactGetKvResponse> transactGetKvAsync(TransactGetKvRequest request) {
-        return hcClient.asyncInvokeHttp(request, KvsMeta.transactGetKv);
-    }
-
-    /**
-     * 事务读请求
-     *
-     * 事务读请求，其中可以携带1或多个table的不同kv的读操作
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param TransactGetKvRequest 请求对象
-     * @return AsyncInvoker<TransactGetKvRequest, TransactGetKvResponse>
-     */
-    public AsyncInvoker<TransactGetKvRequest, TransactGetKvResponse> transactGetKvAsyncInvoker(
-        TransactGetKvRequest request) {
-        return new AsyncInvoker<TransactGetKvRequest, TransactGetKvResponse>(request, KvsMeta.transactGetKv, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.scanSkeyKv, hcClient);
     }
 
     /**
@@ -433,7 +402,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TransactWriteSkeyKvRequest 请求对象
+     * @param request TransactWriteSkeyKvRequest 请求对象
      * @return CompletableFuture<TransactWriteSkeyKvResponse>
      */
     public CompletableFuture<TransactWriteSkeyKvResponse> transactWriteSkeyKvAsync(TransactWriteSkeyKvRequest request) {
@@ -447,13 +416,12 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TransactWriteSkeyKvRequest 请求对象
+     * @param request TransactWriteSkeyKvRequest 请求对象
      * @return AsyncInvoker<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse>
      */
     public AsyncInvoker<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> transactWriteSkeyKvAsyncInvoker(
         TransactWriteSkeyKvRequest request) {
-        return new AsyncInvoker<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse>(request,
-            KvsMeta.transactWriteSkeyKv, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.transactWriteSkeyKv, hcClient);
     }
 
     /**
@@ -463,7 +431,7 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKvRequest 请求对象
+     * @param request UpdateKvRequest 请求对象
      * @return CompletableFuture<UpdateKvResponse>
      */
     public CompletableFuture<UpdateKvResponse> updateKvAsync(UpdateKvRequest request) {
@@ -477,11 +445,11 @@ public class KvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKvRequest 请求对象
+     * @param request UpdateKvRequest 请求对象
      * @return AsyncInvoker<UpdateKvRequest, UpdateKvResponse>
      */
     public AsyncInvoker<UpdateKvRequest, UpdateKvResponse> updateKvAsyncInvoker(UpdateKvRequest request) {
-        return new AsyncInvoker<UpdateKvRequest, UpdateKvResponse>(request, KvsMeta.updateKv, hcClient);
+        return new AsyncInvoker<>(request, KvsMeta.updateKv, hcClient);
     }
 
 }

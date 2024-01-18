@@ -176,7 +176,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeNodeRequest 请求对象
+     * @param request CreateEdgeNodeRequest 请求对象
      * @return CreateEdgeNodeResponse
      */
     public CreateEdgeNodeResponse createEdgeNode(CreateEdgeNodeRequest request) {
@@ -190,13 +190,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeNodeRequest 请求对象
+     * @param request CreateEdgeNodeRequest 请求对象
      * @return SyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse>
      */
     public SyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse> createEdgeNodeInvoker(
         CreateEdgeNodeRequest request) {
-        return new SyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse>(request, IoTEdgeMeta.createEdgeNode,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.createEdgeNode, hcClient);
     }
 
     /**
@@ -206,7 +205,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstallCmdRequest 请求对象
+     * @param request CreateInstallCmdRequest 请求对象
      * @return CreateInstallCmdResponse
      */
     public CreateInstallCmdResponse createInstallCmd(CreateInstallCmdRequest request) {
@@ -220,13 +219,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstallCmdRequest 请求对象
+     * @param request CreateInstallCmdRequest 请求对象
      * @return SyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>
      */
     public SyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse> createInstallCmdInvoker(
         CreateInstallCmdRequest request) {
-        return new SyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>(request, IoTEdgeMeta.createInstallCmd,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.createInstallCmd, hcClient);
     }
 
     /**
@@ -236,7 +234,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeNodeRequest 请求对象
+     * @param request DeleteEdgeNodeRequest 请求对象
      * @return DeleteEdgeNodeResponse
      */
     public DeleteEdgeNodeResponse deleteEdgeNode(DeleteEdgeNodeRequest request) {
@@ -250,13 +248,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeNodeRequest 请求对象
+     * @param request DeleteEdgeNodeRequest 请求对象
      * @return SyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse>
      */
     public SyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> deleteEdgeNodeInvoker(
         DeleteEdgeNodeRequest request) {
-        return new SyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse>(request, IoTEdgeMeta.deleteEdgeNode,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteEdgeNode, hcClient);
     }
 
     /**
@@ -266,7 +263,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeNodesRequest 请求对象
+     * @param request ListEdgeNodesRequest 请求对象
      * @return ListEdgeNodesResponse
      */
     public ListEdgeNodesResponse listEdgeNodes(ListEdgeNodesRequest request) {
@@ -280,12 +277,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeNodesRequest 请求对象
+     * @param request ListEdgeNodesRequest 请求对象
      * @return SyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse>
      */
     public SyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse> listEdgeNodesInvoker(ListEdgeNodesRequest request) {
-        return new SyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse>(request, IoTEdgeMeta.listEdgeNodes,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.listEdgeNodes, hcClient);
     }
 
     /**
@@ -295,7 +291,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeNodeRequest 请求对象
+     * @param request ShowEdgeNodeRequest 请求对象
      * @return ShowEdgeNodeResponse
      */
     public ShowEdgeNodeResponse showEdgeNode(ShowEdgeNodeRequest request) {
@@ -309,11 +305,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeNodeRequest 请求对象
+     * @param request ShowEdgeNodeRequest 请求对象
      * @return SyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse>
      */
     public SyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse> showEdgeNodeInvoker(ShowEdgeNodeRequest request) {
-        return new SyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse>(request, IoTEdgeMeta.showEdgeNode, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showEdgeNode, hcClient);
     }
 
     /**
@@ -323,7 +319,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeviceControlsReleaseRequest 请求对象
+     * @param request ExecuteDeviceControlsReleaseRequest 请求对象
      * @return ExecuteDeviceControlsReleaseResponse
      */
     public ExecuteDeviceControlsReleaseResponse executeDeviceControlsRelease(
@@ -338,13 +334,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeviceControlsReleaseRequest 请求对象
+     * @param request ExecuteDeviceControlsReleaseRequest 请求对象
      * @return SyncInvoker<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse>
      */
     public SyncInvoker<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse> executeDeviceControlsReleaseInvoker(
         ExecuteDeviceControlsReleaseRequest request) {
-        return new SyncInvoker<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse>(request,
-            IoTEdgeMeta.executeDeviceControlsRelease, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.executeDeviceControlsRelease, hcClient);
     }
 
     /**
@@ -354,7 +349,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeviceControlsSetRequest 请求对象
+     * @param request ExecuteDeviceControlsSetRequest 请求对象
      * @return ExecuteDeviceControlsSetResponse
      */
     public ExecuteDeviceControlsSetResponse executeDeviceControlsSet(ExecuteDeviceControlsSetRequest request) {
@@ -368,13 +363,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeviceControlsSetRequest 请求对象
+     * @param request ExecuteDeviceControlsSetRequest 请求对象
      * @return SyncInvoker<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse>
      */
     public SyncInvoker<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> executeDeviceControlsSetInvoker(
         ExecuteDeviceControlsSetRequest request) {
-        return new SyncInvoker<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse>(request,
-            IoTEdgeMeta.executeDeviceControlsSet, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.executeDeviceControlsSet, hcClient);
     }
 
     /**
@@ -384,7 +378,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeviceRequest 请求对象
+     * @param request AddDeviceRequest 请求对象
      * @return AddDeviceResponse
      */
     public AddDeviceResponse addDevice(AddDeviceRequest request) {
@@ -398,11 +392,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeviceRequest 请求对象
+     * @param request AddDeviceRequest 请求对象
      * @return SyncInvoker<AddDeviceRequest, AddDeviceResponse>
      */
     public SyncInvoker<AddDeviceRequest, AddDeviceResponse> addDeviceInvoker(AddDeviceRequest request) {
-        return new SyncInvoker<AddDeviceRequest, AddDeviceResponse>(request, IoTEdgeMeta.addDevice, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.addDevice, hcClient);
     }
 
     /**
@@ -412,7 +406,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceRequest 请求对象
+     * @param request DeleteDeviceRequest 请求对象
      * @return DeleteDeviceResponse
      */
     public DeleteDeviceResponse deleteDevice(DeleteDeviceRequest request) {
@@ -426,11 +420,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceRequest 请求对象
+     * @param request DeleteDeviceRequest 请求对象
      * @return SyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>
      */
     public SyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse> deleteDeviceInvoker(DeleteDeviceRequest request) {
-        return new SyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>(request, IoTEdgeMeta.deleteDevice, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteDevice, hcClient);
     }
 
     /**
@@ -440,7 +434,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesRequest 请求对象
+     * @param request ListDevicesRequest 请求对象
      * @return ListDevicesResponse
      */
     public ListDevicesResponse listDevices(ListDevicesRequest request) {
@@ -454,11 +448,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesRequest 请求对象
+     * @param request ListDevicesRequest 请求对象
      * @return SyncInvoker<ListDevicesRequest, ListDevicesResponse>
      */
     public SyncInvoker<ListDevicesRequest, ListDevicesResponse> listDevicesInvoker(ListDevicesRequest request) {
-        return new SyncInvoker<ListDevicesRequest, ListDevicesResponse>(request, IoTEdgeMeta.listDevices, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.listDevices, hcClient);
     }
 
     /**
@@ -468,7 +462,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProductConfigRequest 请求对象
+     * @param request ShowProductConfigRequest 请求对象
      * @return ShowProductConfigResponse
      */
     public ShowProductConfigResponse showProductConfig(ShowProductConfigRequest request) {
@@ -482,13 +476,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProductConfigRequest 请求对象
+     * @param request ShowProductConfigRequest 请求对象
      * @return SyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse>
      */
     public SyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse> showProductConfigInvoker(
         ShowProductConfigRequest request) {
-        return new SyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse>(request,
-            IoTEdgeMeta.showProductConfig, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showProductConfig, hcClient);
     }
 
     /**
@@ -498,7 +491,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceRequest 请求对象
+     * @param request UpdateDeviceRequest 请求对象
      * @return UpdateDeviceResponse
      */
     public UpdateDeviceResponse updateDevice(UpdateDeviceRequest request) {
@@ -512,11 +505,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceRequest 请求对象
+     * @param request UpdateDeviceRequest 请求对象
      * @return SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
      */
     public SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse> updateDeviceInvoker(UpdateDeviceRequest request) {
-        return new SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>(request, IoTEdgeMeta.updateDevice, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateDevice, hcClient);
     }
 
     /**
@@ -526,7 +519,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAppConfigsTemplatesRequest 请求对象
+     * @param request AddAppConfigsTemplatesRequest 请求对象
      * @return AddAppConfigsTemplatesResponse
      */
     public AddAppConfigsTemplatesResponse addAppConfigsTemplates(AddAppConfigsTemplatesRequest request) {
@@ -540,13 +533,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAppConfigsTemplatesRequest 请求对象
+     * @param request AddAppConfigsTemplatesRequest 请求对象
      * @return SyncInvoker<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse>
      */
     public SyncInvoker<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse> addAppConfigsTemplatesInvoker(
         AddAppConfigsTemplatesRequest request) {
-        return new SyncInvoker<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse>(request,
-            IoTEdgeMeta.addAppConfigsTemplates, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.addAppConfigsTemplates, hcClient);
     }
 
     /**
@@ -556,7 +548,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddGeneralAppConfigsTemplateRequest 请求对象
+     * @param request AddGeneralAppConfigsTemplateRequest 请求对象
      * @return AddGeneralAppConfigsTemplateResponse
      */
     public AddGeneralAppConfigsTemplateResponse addGeneralAppConfigsTemplate(
@@ -571,13 +563,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddGeneralAppConfigsTemplateRequest 请求对象
+     * @param request AddGeneralAppConfigsTemplateRequest 请求对象
      * @return SyncInvoker<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse>
      */
     public SyncInvoker<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse> addGeneralAppConfigsTemplateInvoker(
         AddGeneralAppConfigsTemplateRequest request) {
-        return new SyncInvoker<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse>(request,
-            IoTEdgeMeta.addGeneralAppConfigsTemplate, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.addGeneralAppConfigsTemplate, hcClient);
     }
 
     /**
@@ -587,7 +578,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListAppConfigsTemplatesRequest 请求对象
+     * @param request BatchListAppConfigsTemplatesRequest 请求对象
      * @return BatchListAppConfigsTemplatesResponse
      */
     public BatchListAppConfigsTemplatesResponse batchListAppConfigsTemplates(
@@ -602,13 +593,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListAppConfigsTemplatesRequest 请求对象
+     * @param request BatchListAppConfigsTemplatesRequest 请求对象
      * @return SyncInvoker<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse>
      */
     public SyncInvoker<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse> batchListAppConfigsTemplatesInvoker(
         BatchListAppConfigsTemplatesRequest request) {
-        return new SyncInvoker<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse>(request,
-            IoTEdgeMeta.batchListAppConfigsTemplates, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchListAppConfigsTemplates, hcClient);
     }
 
     /**
@@ -618,7 +608,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppConfigsTemplateRequest 请求对象
+     * @param request DeleteAppConfigsTemplateRequest 请求对象
      * @return DeleteAppConfigsTemplateResponse
      */
     public DeleteAppConfigsTemplateResponse deleteAppConfigsTemplate(DeleteAppConfigsTemplateRequest request) {
@@ -632,13 +622,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppConfigsTemplateRequest 请求对象
+     * @param request DeleteAppConfigsTemplateRequest 请求对象
      * @return SyncInvoker<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse>
      */
     public SyncInvoker<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse> deleteAppConfigsTemplateInvoker(
         DeleteAppConfigsTemplateRequest request) {
-        return new SyncInvoker<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse>(request,
-            IoTEdgeMeta.deleteAppConfigsTemplate, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteAppConfigsTemplate, hcClient);
     }
 
     /**
@@ -648,7 +637,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppConfigsTemplateRequest 请求对象
+     * @param request ShowAppConfigsTemplateRequest 请求对象
      * @return ShowAppConfigsTemplateResponse
      */
     public ShowAppConfigsTemplateResponse showAppConfigsTemplate(ShowAppConfigsTemplateRequest request) {
@@ -662,13 +651,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppConfigsTemplateRequest 请求对象
+     * @param request ShowAppConfigsTemplateRequest 请求对象
      * @return SyncInvoker<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse>
      */
     public SyncInvoker<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse> showAppConfigsTemplateInvoker(
         ShowAppConfigsTemplateRequest request) {
-        return new SyncInvoker<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse>(request,
-            IoTEdgeMeta.showAppConfigsTemplate, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showAppConfigsTemplate, hcClient);
     }
 
     /**
@@ -678,7 +666,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListEdgeAppsRequest 请求对象
+     * @param request BatchListEdgeAppsRequest 请求对象
      * @return BatchListEdgeAppsResponse
      */
     public BatchListEdgeAppsResponse batchListEdgeApps(BatchListEdgeAppsRequest request) {
@@ -692,13 +680,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListEdgeAppsRequest 请求对象
+     * @param request BatchListEdgeAppsRequest 请求对象
      * @return SyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse>
      */
     public SyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse> batchListEdgeAppsInvoker(
         BatchListEdgeAppsRequest request) {
-        return new SyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse>(request,
-            IoTEdgeMeta.batchListEdgeApps, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchListEdgeApps, hcClient);
     }
 
     /**
@@ -708,7 +695,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeAppRequest 请求对象
+     * @param request CreateEdgeAppRequest 请求对象
      * @return CreateEdgeAppResponse
      */
     public CreateEdgeAppResponse createEdgeApp(CreateEdgeAppRequest request) {
@@ -722,12 +709,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeAppRequest 请求对象
+     * @param request CreateEdgeAppRequest 请求对象
      * @return SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>
      */
     public SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse> createEdgeAppInvoker(CreateEdgeAppRequest request) {
-        return new SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>(request, IoTEdgeMeta.createEdgeApp,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.createEdgeApp, hcClient);
     }
 
     /**
@@ -737,7 +723,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeAppRequest 请求对象
+     * @param request DeleteEdgeAppRequest 请求对象
      * @return DeleteEdgeAppResponse
      */
     public DeleteEdgeAppResponse deleteEdgeApp(DeleteEdgeAppRequest request) {
@@ -751,12 +737,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeAppRequest 请求对象
+     * @param request DeleteEdgeAppRequest 请求对象
      * @return SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>
      */
     public SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse> deleteEdgeAppInvoker(DeleteEdgeAppRequest request) {
-        return new SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>(request, IoTEdgeMeta.deleteEdgeApp,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteEdgeApp, hcClient);
     }
 
     /**
@@ -766,7 +751,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeAppRequest 请求对象
+     * @param request ShowEdgeAppRequest 请求对象
      * @return ShowEdgeAppResponse
      */
     public ShowEdgeAppResponse showEdgeApp(ShowEdgeAppRequest request) {
@@ -780,11 +765,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeAppRequest 请求对象
+     * @param request ShowEdgeAppRequest 请求对象
      * @return SyncInvoker<ShowEdgeAppRequest, ShowEdgeAppResponse>
      */
     public SyncInvoker<ShowEdgeAppRequest, ShowEdgeAppResponse> showEdgeAppInvoker(ShowEdgeAppRequest request) {
-        return new SyncInvoker<ShowEdgeAppRequest, ShowEdgeAppResponse>(request, IoTEdgeMeta.showEdgeApp, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showEdgeApp, hcClient);
     }
 
     /**
@@ -794,7 +779,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListEdgeAppVersionsRequest 请求对象
+     * @param request BatchListEdgeAppVersionsRequest 请求对象
      * @return BatchListEdgeAppVersionsResponse
      */
     public BatchListEdgeAppVersionsResponse batchListEdgeAppVersions(BatchListEdgeAppVersionsRequest request) {
@@ -808,13 +793,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListEdgeAppVersionsRequest 请求对象
+     * @param request BatchListEdgeAppVersionsRequest 请求对象
      * @return SyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse>
      */
     public SyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse> batchListEdgeAppVersionsInvoker(
         BatchListEdgeAppVersionsRequest request) {
-        return new SyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse>(request,
-            IoTEdgeMeta.batchListEdgeAppVersions, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchListEdgeAppVersions, hcClient);
     }
 
     /**
@@ -824,7 +808,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeApplicationVersionRequest 请求对象
+     * @param request CreateEdgeApplicationVersionRequest 请求对象
      * @return CreateEdgeApplicationVersionResponse
      */
     public CreateEdgeApplicationVersionResponse createEdgeApplicationVersion(
@@ -839,13 +823,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeApplicationVersionRequest 请求对象
+     * @param request CreateEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>
      */
     public SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> createEdgeApplicationVersionInvoker(
         CreateEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>(request,
-            IoTEdgeMeta.createEdgeApplicationVersion, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.createEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -855,7 +838,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeApplicationVersionRequest 请求对象
+     * @param request DeleteEdgeApplicationVersionRequest 请求对象
      * @return DeleteEdgeApplicationVersionResponse
      */
     public DeleteEdgeApplicationVersionResponse deleteEdgeApplicationVersion(
@@ -870,13 +853,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeApplicationVersionRequest 请求对象
+     * @param request DeleteEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>
      */
     public SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersionInvoker(
         DeleteEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>(request,
-            IoTEdgeMeta.deleteEdgeApplicationVersion, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -886,7 +868,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeApplicationVersionRequest 请求对象
+     * @param request ShowEdgeApplicationVersionRequest 请求对象
      * @return ShowEdgeApplicationVersionResponse
      */
     public ShowEdgeApplicationVersionResponse showEdgeApplicationVersion(ShowEdgeApplicationVersionRequest request) {
@@ -900,13 +882,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeApplicationVersionRequest 请求对象
+     * @param request ShowEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>
      */
     public SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> showEdgeApplicationVersionInvoker(
         ShowEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>(request,
-            IoTEdgeMeta.showEdgeApplicationVersion, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -916,7 +897,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionRequest 请求对象
      * @return UpdateEdgeApplicationVersionResponse
      */
     public UpdateEdgeApplicationVersionResponse updateEdgeApplicationVersion(
@@ -931,13 +912,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>
      */
     public SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersionInvoker(
         UpdateEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>(request,
-            IoTEdgeMeta.updateEdgeApplicationVersion, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -947,7 +927,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionStateRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return UpdateEdgeApplicationVersionStateResponse
      */
     public UpdateEdgeApplicationVersionStateResponse updateEdgeApplicationVersionState(
@@ -962,13 +942,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionStateRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>
      */
     public SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionStateInvoker(
         UpdateEdgeApplicationVersionStateRequest request) {
-        return new SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>(
-            request, IoTEdgeMeta.updateEdgeApplicationVersionState, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateEdgeApplicationVersionState, hcClient);
     }
 
     /**
@@ -978,7 +957,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListDcDsRequest 请求对象
+     * @param request BatchListDcDsRequest 请求对象
      * @return BatchListDcDsResponse
      */
     public BatchListDcDsResponse batchListDcDs(BatchListDcDsRequest request) {
@@ -992,12 +971,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListDcDsRequest 请求对象
+     * @param request BatchListDcDsRequest 请求对象
      * @return SyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse>
      */
     public SyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse> batchListDcDsInvoker(BatchListDcDsRequest request) {
-        return new SyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse>(request, IoTEdgeMeta.batchListDcDs,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchListDcDs, hcClient);
     }
 
     /**
@@ -1007,7 +985,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDsRequest 请求对象
+     * @param request CreateDsRequest 请求对象
      * @return CreateDsResponse
      */
     public CreateDsResponse createDs(CreateDsRequest request) {
@@ -1021,11 +999,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDsRequest 请求对象
+     * @param request CreateDsRequest 请求对象
      * @return SyncInvoker<CreateDsRequest, CreateDsResponse>
      */
     public SyncInvoker<CreateDsRequest, CreateDsResponse> createDsInvoker(CreateDsRequest request) {
-        return new SyncInvoker<CreateDsRequest, CreateDsResponse>(request, IoTEdgeMeta.createDs, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.createDs, hcClient);
     }
 
     /**
@@ -1035,7 +1013,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDcDsRequest 请求对象
+     * @param request DeleteDcDsRequest 请求对象
      * @return DeleteDcDsResponse
      */
     public DeleteDcDsResponse deleteDcDs(DeleteDcDsRequest request) {
@@ -1049,11 +1027,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDcDsRequest 请求对象
+     * @param request DeleteDcDsRequest 请求对象
      * @return SyncInvoker<DeleteDcDsRequest, DeleteDcDsResponse>
      */
     public SyncInvoker<DeleteDcDsRequest, DeleteDcDsResponse> deleteDcDsInvoker(DeleteDcDsRequest request) {
-        return new SyncInvoker<DeleteDcDsRequest, DeleteDcDsResponse>(request, IoTEdgeMeta.deleteDcDs, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteDcDs, hcClient);
     }
 
     /**
@@ -1063,7 +1041,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDcDsRequest 请求对象
+     * @param request ShowDcDsRequest 请求对象
      * @return ShowDcDsResponse
      */
     public ShowDcDsResponse showDcDs(ShowDcDsRequest request) {
@@ -1077,11 +1055,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDcDsRequest 请求对象
+     * @param request ShowDcDsRequest 请求对象
      * @return SyncInvoker<ShowDcDsRequest, ShowDcDsResponse>
      */
     public SyncInvoker<ShowDcDsRequest, ShowDcDsResponse> showDcDsInvoker(ShowDcDsRequest request) {
-        return new SyncInvoker<ShowDcDsRequest, ShowDcDsResponse>(request, IoTEdgeMeta.showDcDs, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showDcDs, hcClient);
     }
 
     /**
@@ -1091,7 +1069,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SynchronizeDcConfigsRequest 请求对象
+     * @param request SynchronizeDcConfigsRequest 请求对象
      * @return SynchronizeDcConfigsResponse
      */
     public SynchronizeDcConfigsResponse synchronizeDcConfigs(SynchronizeDcConfigsRequest request) {
@@ -1105,13 +1083,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SynchronizeDcConfigsRequest 请求对象
+     * @param request SynchronizeDcConfigsRequest 请求对象
      * @return SyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse>
      */
     public SyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> synchronizeDcConfigsInvoker(
         SynchronizeDcConfigsRequest request) {
-        return new SyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse>(request,
-            IoTEdgeMeta.synchronizeDcConfigs, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.synchronizeDcConfigs, hcClient);
     }
 
     /**
@@ -1121,7 +1098,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDcDsRequest 请求对象
+     * @param request UpdateDcDsRequest 请求对象
      * @return UpdateDcDsResponse
      */
     public UpdateDcDsResponse updateDcDs(UpdateDcDsRequest request) {
@@ -1135,11 +1112,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDcDsRequest 请求对象
+     * @param request UpdateDcDsRequest 请求对象
      * @return SyncInvoker<UpdateDcDsRequest, UpdateDcDsResponse>
      */
     public SyncInvoker<UpdateDcDsRequest, UpdateDcDsResponse> updateDcDsInvoker(UpdateDcDsRequest request) {
-        return new SyncInvoker<UpdateDcDsRequest, UpdateDcDsResponse>(request, IoTEdgeMeta.updateDcDs, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateDcDs, hcClient);
     }
 
     /**
@@ -1149,7 +1126,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListDcDevicesRequest 请求对象
+     * @param request BatchListDcDevicesRequest 请求对象
      * @return BatchListDcDevicesResponse
      */
     public BatchListDcDevicesResponse batchListDcDevices(BatchListDcDevicesRequest request) {
@@ -1163,13 +1140,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListDcDevicesRequest 请求对象
+     * @param request BatchListDcDevicesRequest 请求对象
      * @return SyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse>
      */
     public SyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse> batchListDcDevicesInvoker(
         BatchListDcDevicesRequest request) {
-        return new SyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse>(request,
-            IoTEdgeMeta.batchListDcDevices, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchListDcDevices, hcClient);
     }
 
     /**
@@ -1179,7 +1155,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListDcPointsRequest 请求对象
+     * @param request BatchListDcPointsRequest 请求对象
      * @return BatchListDcPointsResponse
      */
     public BatchListDcPointsResponse batchListDcPoints(BatchListDcPointsRequest request) {
@@ -1193,13 +1169,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListDcPointsRequest 请求对象
+     * @param request BatchListDcPointsRequest 请求对象
      * @return SyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse>
      */
     public SyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse> batchListDcPointsInvoker(
         BatchListDcPointsRequest request) {
-        return new SyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse>(request,
-            IoTEdgeMeta.batchListDcPoints, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchListDcPoints, hcClient);
     }
 
     /**
@@ -1209,7 +1184,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDcPointRequest 请求对象
+     * @param request CreateDcPointRequest 请求对象
      * @return CreateDcPointResponse
      */
     public CreateDcPointResponse createDcPoint(CreateDcPointRequest request) {
@@ -1223,12 +1198,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDcPointRequest 请求对象
+     * @param request CreateDcPointRequest 请求对象
      * @return SyncInvoker<CreateDcPointRequest, CreateDcPointResponse>
      */
     public SyncInvoker<CreateDcPointRequest, CreateDcPointResponse> createDcPointInvoker(CreateDcPointRequest request) {
-        return new SyncInvoker<CreateDcPointRequest, CreateDcPointResponse>(request, IoTEdgeMeta.createDcPoint,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.createDcPoint, hcClient);
     }
 
     /**
@@ -1238,7 +1212,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDcPointRequest 请求对象
+     * @param request DeleteDcPointRequest 请求对象
      * @return DeleteDcPointResponse
      */
     public DeleteDcPointResponse deleteDcPoint(DeleteDcPointRequest request) {
@@ -1252,12 +1226,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDcPointRequest 请求对象
+     * @param request DeleteDcPointRequest 请求对象
      * @return SyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse>
      */
     public SyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse> deleteDcPointInvoker(DeleteDcPointRequest request) {
-        return new SyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse>(request, IoTEdgeMeta.deleteDcPoint,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteDcPoint, hcClient);
     }
 
     /**
@@ -1267,7 +1240,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDcPointRequest 请求对象
+     * @param request ShowDcPointRequest 请求对象
      * @return ShowDcPointResponse
      */
     public ShowDcPointResponse showDcPoint(ShowDcPointRequest request) {
@@ -1281,11 +1254,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDcPointRequest 请求对象
+     * @param request ShowDcPointRequest 请求对象
      * @return SyncInvoker<ShowDcPointRequest, ShowDcPointResponse>
      */
     public SyncInvoker<ShowDcPointRequest, ShowDcPointResponse> showDcPointInvoker(ShowDcPointRequest request) {
-        return new SyncInvoker<ShowDcPointRequest, ShowDcPointResponse>(request, IoTEdgeMeta.showDcPoint, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showDcPoint, hcClient);
     }
 
     /**
@@ -1295,7 +1268,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDcPointRequest 请求对象
+     * @param request UpdateDcPointRequest 请求对象
      * @return UpdateDcPointResponse
      */
     public UpdateDcPointResponse updateDcPoint(UpdateDcPointRequest request) {
@@ -1309,12 +1282,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDcPointRequest 请求对象
+     * @param request UpdateDcPointRequest 请求对象
      * @return SyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse>
      */
     public SyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse> updateDcPointInvoker(UpdateDcPointRequest request) {
-        return new SyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse>(request, IoTEdgeMeta.updateDcPoint,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateDcPoint, hcClient);
     }
 
     /**
@@ -1324,7 +1296,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExternalEntityRequest 请求对象
+     * @param request CreateExternalEntityRequest 请求对象
      * @return CreateExternalEntityResponse
      */
     public CreateExternalEntityResponse createExternalEntity(CreateExternalEntityRequest request) {
@@ -1338,13 +1310,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExternalEntityRequest 请求对象
+     * @param request CreateExternalEntityRequest 请求对象
      * @return SyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse>
      */
     public SyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse> createExternalEntityInvoker(
         CreateExternalEntityRequest request) {
-        return new SyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse>(request,
-            IoTEdgeMeta.createExternalEntity, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.createExternalEntity, hcClient);
     }
 
     /**
@@ -1354,7 +1325,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteExternalEntityRequest 请求对象
+     * @param request DeleteExternalEntityRequest 请求对象
      * @return DeleteExternalEntityResponse
      */
     public DeleteExternalEntityResponse deleteExternalEntity(DeleteExternalEntityRequest request) {
@@ -1368,13 +1339,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteExternalEntityRequest 请求对象
+     * @param request DeleteExternalEntityRequest 请求对象
      * @return SyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse>
      */
     public SyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse> deleteExternalEntityInvoker(
         DeleteExternalEntityRequest request) {
-        return new SyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse>(request,
-            IoTEdgeMeta.deleteExternalEntity, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteExternalEntity, hcClient);
     }
 
     /**
@@ -1384,7 +1354,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExternalEntityRequest 请求对象
+     * @param request ListExternalEntityRequest 请求对象
      * @return ListExternalEntityResponse
      */
     public ListExternalEntityResponse listExternalEntity(ListExternalEntityRequest request) {
@@ -1398,13 +1368,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExternalEntityRequest 请求对象
+     * @param request ListExternalEntityRequest 请求对象
      * @return SyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse>
      */
     public SyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse> listExternalEntityInvoker(
         ListExternalEntityRequest request) {
-        return new SyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse>(request,
-            IoTEdgeMeta.listExternalEntity, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.listExternalEntity, hcClient);
     }
 
     /**
@@ -1414,7 +1383,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateExternalEntityRequest 请求对象
+     * @param request UpdateExternalEntityRequest 请求对象
      * @return UpdateExternalEntityResponse
      */
     public UpdateExternalEntityResponse updateExternalEntity(UpdateExternalEntityRequest request) {
@@ -1428,13 +1397,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateExternalEntityRequest 请求对象
+     * @param request UpdateExternalEntityRequest 请求对象
      * @return SyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse>
      */
     public SyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse> updateExternalEntityInvoker(
         UpdateExternalEntityRequest request) {
-        return new SyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse>(request,
-            IoTEdgeMeta.updateExternalEntity, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateExternalEntity, hcClient);
     }
 
     /**
@@ -1444,7 +1412,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListModulesRequest 请求对象
+     * @param request BatchListModulesRequest 请求对象
      * @return BatchListModulesResponse
      */
     public BatchListModulesResponse batchListModules(BatchListModulesRequest request) {
@@ -1458,13 +1426,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListModulesRequest 请求对象
+     * @param request BatchListModulesRequest 请求对象
      * @return SyncInvoker<BatchListModulesRequest, BatchListModulesResponse>
      */
     public SyncInvoker<BatchListModulesRequest, BatchListModulesResponse> batchListModulesInvoker(
         BatchListModulesRequest request) {
-        return new SyncInvoker<BatchListModulesRequest, BatchListModulesResponse>(request, IoTEdgeMeta.batchListModules,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchListModules, hcClient);
     }
 
     /**
@@ -1474,7 +1441,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateModuleRequest 请求对象
+     * @param request CreateModuleRequest 请求对象
      * @return CreateModuleResponse
      */
     public CreateModuleResponse createModule(CreateModuleRequest request) {
@@ -1488,11 +1455,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateModuleRequest 请求对象
+     * @param request CreateModuleRequest 请求对象
      * @return SyncInvoker<CreateModuleRequest, CreateModuleResponse>
      */
     public SyncInvoker<CreateModuleRequest, CreateModuleResponse> createModuleInvoker(CreateModuleRequest request) {
-        return new SyncInvoker<CreateModuleRequest, CreateModuleResponse>(request, IoTEdgeMeta.createModule, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.createModule, hcClient);
     }
 
     /**
@@ -1502,7 +1469,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteModuleRequest 请求对象
+     * @param request DeleteModuleRequest 请求对象
      * @return DeleteModuleResponse
      */
     public DeleteModuleResponse deleteModule(DeleteModuleRequest request) {
@@ -1516,11 +1483,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteModuleRequest 请求对象
+     * @param request DeleteModuleRequest 请求对象
      * @return SyncInvoker<DeleteModuleRequest, DeleteModuleResponse>
      */
     public SyncInvoker<DeleteModuleRequest, DeleteModuleResponse> deleteModuleInvoker(DeleteModuleRequest request) {
-        return new SyncInvoker<DeleteModuleRequest, DeleteModuleResponse>(request, IoTEdgeMeta.deleteModule, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteModule, hcClient);
     }
 
     /**
@@ -1530,7 +1497,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowModuleRequest 请求对象
+     * @param request ShowModuleRequest 请求对象
      * @return ShowModuleResponse
      */
     public ShowModuleResponse showModule(ShowModuleRequest request) {
@@ -1544,11 +1511,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowModuleRequest 请求对象
+     * @param request ShowModuleRequest 请求对象
      * @return SyncInvoker<ShowModuleRequest, ShowModuleResponse>
      */
     public SyncInvoker<ShowModuleRequest, ShowModuleResponse> showModuleInvoker(ShowModuleRequest request) {
-        return new SyncInvoker<ShowModuleRequest, ShowModuleResponse>(request, IoTEdgeMeta.showModule, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showModule, hcClient);
     }
 
     /**
@@ -1558,7 +1525,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateModuleRequest 请求对象
+     * @param request UpdateModuleRequest 请求对象
      * @return UpdateModuleResponse
      */
     public UpdateModuleResponse updateModule(UpdateModuleRequest request) {
@@ -1572,11 +1539,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateModuleRequest 请求对象
+     * @param request UpdateModuleRequest 请求对象
      * @return SyncInvoker<UpdateModuleRequest, UpdateModuleResponse>
      */
     public SyncInvoker<UpdateModuleRequest, UpdateModuleResponse> updateModuleInvoker(UpdateModuleRequest request) {
-        return new SyncInvoker<UpdateModuleRequest, UpdateModuleResponse>(request, IoTEdgeMeta.updateModule, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateModule, hcClient);
     }
 
     /**
@@ -1586,7 +1553,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateModuleStateRequest 请求对象
+     * @param request UpdateModuleStateRequest 请求对象
      * @return UpdateModuleStateResponse
      */
     public UpdateModuleStateResponse updateModuleState(UpdateModuleStateRequest request) {
@@ -1600,13 +1567,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateModuleStateRequest 请求对象
+     * @param request UpdateModuleStateRequest 请求对象
      * @return SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>
      */
     public SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse> updateModuleStateInvoker(
         UpdateModuleStateRequest request) {
-        return new SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>(request,
-            IoTEdgeMeta.updateModuleState, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateModuleState, hcClient);
     }
 
     /**
@@ -1616,7 +1582,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowModuleShadowRequest 请求对象
+     * @param request ShowModuleShadowRequest 请求对象
      * @return ShowModuleShadowResponse
      */
     public ShowModuleShadowResponse showModuleShadow(ShowModuleShadowRequest request) {
@@ -1630,13 +1596,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowModuleShadowRequest 请求对象
+     * @param request ShowModuleShadowRequest 请求对象
      * @return SyncInvoker<ShowModuleShadowRequest, ShowModuleShadowResponse>
      */
     public SyncInvoker<ShowModuleShadowRequest, ShowModuleShadowResponse> showModuleShadowInvoker(
         ShowModuleShadowRequest request) {
-        return new SyncInvoker<ShowModuleShadowRequest, ShowModuleShadowResponse>(request, IoTEdgeMeta.showModuleShadow,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showModuleShadow, hcClient);
     }
 
     /**
@@ -1646,7 +1611,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateModuleShadowRequest 请求对象
+     * @param request UpdateModuleShadowRequest 请求对象
      * @return UpdateModuleShadowResponse
      */
     public UpdateModuleShadowResponse updateModuleShadow(UpdateModuleShadowRequest request) {
@@ -1660,13 +1625,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateModuleShadowRequest 请求对象
+     * @param request UpdateModuleShadowRequest 请求对象
      * @return SyncInvoker<UpdateModuleShadowRequest, UpdateModuleShadowResponse>
      */
     public SyncInvoker<UpdateModuleShadowRequest, UpdateModuleShadowResponse> updateModuleShadowInvoker(
         UpdateModuleShadowRequest request) {
-        return new SyncInvoker<UpdateModuleShadowRequest, UpdateModuleShadowResponse>(request,
-            IoTEdgeMeta.updateModuleShadow, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateModuleShadow, hcClient);
     }
 
     /**
@@ -1676,7 +1640,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRoutesRequest 请求对象
+     * @param request ListRoutesRequest 请求对象
      * @return ListRoutesResponse
      */
     public ListRoutesResponse listRoutes(ListRoutesRequest request) {
@@ -1690,11 +1654,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRoutesRequest 请求对象
+     * @param request ListRoutesRequest 请求对象
      * @return SyncInvoker<ListRoutesRequest, ListRoutesResponse>
      */
     public SyncInvoker<ListRoutesRequest, ListRoutesResponse> listRoutesInvoker(ListRoutesRequest request) {
-        return new SyncInvoker<ListRoutesRequest, ListRoutesResponse>(request, IoTEdgeMeta.listRoutes, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.listRoutes, hcClient);
     }
 
     /**
@@ -1704,7 +1668,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoutesRequest 请求对象
+     * @param request UpdateRoutesRequest 请求对象
      * @return UpdateRoutesResponse
      */
     public UpdateRoutesResponse updateRoutes(UpdateRoutesRequest request) {
@@ -1718,11 +1682,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoutesRequest 请求对象
+     * @param request UpdateRoutesRequest 请求对象
      * @return SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>
      */
     public SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutesInvoker(UpdateRoutesRequest request) {
-        return new SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>(request, IoTEdgeMeta.updateRoutes, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateRoutes, hcClient);
     }
 
     /**
@@ -1732,7 +1696,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddGeneralOtTemplateRequest 请求对象
+     * @param request AddGeneralOtTemplateRequest 请求对象
      * @return AddGeneralOtTemplateResponse
      */
     public AddGeneralOtTemplateResponse addGeneralOtTemplate(AddGeneralOtTemplateRequest request) {
@@ -1746,13 +1710,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddGeneralOtTemplateRequest 请求对象
+     * @param request AddGeneralOtTemplateRequest 请求对象
      * @return SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>
      */
     public SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> addGeneralOtTemplateInvoker(
         AddGeneralOtTemplateRequest request) {
-        return new SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>(request,
-            IoTEdgeMeta.addGeneralOtTemplate, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.addGeneralOtTemplate, hcClient);
     }
 
     /**
@@ -1762,7 +1725,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddOtTemplatesRequest 请求对象
+     * @param request AddOtTemplatesRequest 请求对象
      * @return AddOtTemplatesResponse
      */
     public AddOtTemplatesResponse addOtTemplates(AddOtTemplatesRequest request) {
@@ -1776,13 +1739,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddOtTemplatesRequest 请求对象
+     * @param request AddOtTemplatesRequest 请求对象
      * @return SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>
      */
     public SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse> addOtTemplatesInvoker(
         AddOtTemplatesRequest request) {
-        return new SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>(request, IoTEdgeMeta.addOtTemplates,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.addOtTemplates, hcClient);
     }
 
     /**
@@ -1792,7 +1754,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListOtTemplatesRequest 请求对象
+     * @param request BatchListOtTemplatesRequest 请求对象
      * @return BatchListOtTemplatesResponse
      */
     public BatchListOtTemplatesResponse batchListOtTemplates(BatchListOtTemplatesRequest request) {
@@ -1806,13 +1768,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListOtTemplatesRequest 请求对象
+     * @param request BatchListOtTemplatesRequest 请求对象
      * @return SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>
      */
     public SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> batchListOtTemplatesInvoker(
         BatchListOtTemplatesRequest request) {
-        return new SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>(request,
-            IoTEdgeMeta.batchListOtTemplates, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchListOtTemplates, hcClient);
     }
 
     /**
@@ -1822,7 +1783,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOtTemplateRequest 请求对象
+     * @param request DeleteOtTemplateRequest 请求对象
      * @return DeleteOtTemplateResponse
      */
     public DeleteOtTemplateResponse deleteOtTemplate(DeleteOtTemplateRequest request) {
@@ -1836,13 +1797,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOtTemplateRequest 请求对象
+     * @param request DeleteOtTemplateRequest 请求对象
      * @return SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>
      */
     public SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse> deleteOtTemplateInvoker(
         DeleteOtTemplateRequest request) {
-        return new SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>(request, IoTEdgeMeta.deleteOtTemplate,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteOtTemplate, hcClient);
     }
 
     /**
@@ -1852,7 +1812,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOtTemplateRequest 请求对象
+     * @param request ShowOtTemplateRequest 请求对象
      * @return ShowOtTemplateResponse
      */
     public ShowOtTemplateResponse showOtTemplate(ShowOtTemplateRequest request) {
@@ -1866,13 +1826,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOtTemplateRequest 请求对象
+     * @param request ShowOtTemplateRequest 请求对象
      * @return SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>
      */
     public SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse> showOtTemplateInvoker(
         ShowOtTemplateRequest request) {
-        return new SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>(request, IoTEdgeMeta.showOtTemplate,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showOtTemplate, hcClient);
     }
 
     /**
@@ -1882,7 +1841,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportPointsRequest 请求对象
+     * @param request ImportPointsRequest 请求对象
      * @return ImportPointsResponse
      */
     public ImportPointsResponse importPoints(ImportPointsRequest request) {
@@ -1896,11 +1855,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportPointsRequest 请求对象
+     * @param request ImportPointsRequest 请求对象
      * @return SyncInvoker<ImportPointsRequest, ImportPointsResponse>
      */
     public SyncInvoker<ImportPointsRequest, ImportPointsResponse> importPointsInvoker(ImportPointsRequest request) {
-        return new SyncInvoker<ImportPointsRequest, ImportPointsResponse>(request, IoTEdgeMeta.importPoints, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.importPoints, hcClient);
     }
 
     /**
@@ -1910,7 +1869,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPointTemplateRequest 请求对象
+     * @param request ShowPointTemplateRequest 请求对象
      * @return ShowPointTemplateResponse
      */
     public ShowPointTemplateResponse showPointTemplate(ShowPointTemplateRequest request) {
@@ -1924,13 +1883,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPointTemplateRequest 请求对象
+     * @param request ShowPointTemplateRequest 请求对象
      * @return SyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse>
      */
     public SyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse> showPointTemplateInvoker(
         ShowPointTemplateRequest request) {
-        return new SyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse>(request,
-            IoTEdgeMeta.showPointTemplate, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showPointTemplate, hcClient);
     }
 
     /**
@@ -1940,7 +1898,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPointsRequest 请求对象
+     * @param request ShowPointsRequest 请求对象
      * @return ShowPointsResponse
      */
     public ShowPointsResponse showPoints(ShowPointsRequest request) {
@@ -1954,11 +1912,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPointsRequest 请求对象
+     * @param request ShowPointsRequest 请求对象
      * @return SyncInvoker<ShowPointsRequest, ShowPointsResponse>
      */
     public SyncInvoker<ShowPointsRequest, ShowPointsResponse> showPointsInvoker(ShowPointsRequest request) {
-        return new SyncInvoker<ShowPointsRequest, ShowPointsResponse>(request, IoTEdgeMeta.showPoints, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showPoints, hcClient);
     }
 
     /**
@@ -1968,7 +1926,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScheduleRequest 请求对象
+     * @param request CreateScheduleRequest 请求对象
      * @return CreateScheduleResponse
      */
     public CreateScheduleResponse createSchedule(CreateScheduleRequest request) {
@@ -1982,13 +1940,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScheduleRequest 请求对象
+     * @param request CreateScheduleRequest 请求对象
      * @return SyncInvoker<CreateScheduleRequest, CreateScheduleResponse>
      */
     public SyncInvoker<CreateScheduleRequest, CreateScheduleResponse> createScheduleInvoker(
         CreateScheduleRequest request) {
-        return new SyncInvoker<CreateScheduleRequest, CreateScheduleResponse>(request, IoTEdgeMeta.createSchedule,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.createSchedule, hcClient);
     }
 
     /**
@@ -1998,7 +1955,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScheduleRequest 请求对象
+     * @param request DeleteScheduleRequest 请求对象
      * @return DeleteScheduleResponse
      */
     public DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request) {
@@ -2012,13 +1969,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScheduleRequest 请求对象
+     * @param request DeleteScheduleRequest 请求对象
      * @return SyncInvoker<DeleteScheduleRequest, DeleteScheduleResponse>
      */
     public SyncInvoker<DeleteScheduleRequest, DeleteScheduleResponse> deleteScheduleInvoker(
         DeleteScheduleRequest request) {
-        return new SyncInvoker<DeleteScheduleRequest, DeleteScheduleResponse>(request, IoTEdgeMeta.deleteSchedule,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteSchedule, hcClient);
     }
 
     /**
@@ -2028,7 +1984,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScheduleRequest 请求对象
+     * @param request UpdateScheduleRequest 请求对象
      * @return UpdateScheduleResponse
      */
     public UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request) {
@@ -2042,13 +1998,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScheduleRequest 请求对象
+     * @param request UpdateScheduleRequest 请求对象
      * @return SyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse>
      */
     public SyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse> updateScheduleInvoker(
         UpdateScheduleRequest request) {
-        return new SyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse>(request, IoTEdgeMeta.updateSchedule,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateSchedule, hcClient);
     }
 
     /**
@@ -2058,7 +2013,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchConfirmConfigsNewRequest 请求对象
+     * @param request BatchConfirmConfigsNewRequest 请求对象
      * @return BatchConfirmConfigsNewResponse
      */
     public BatchConfirmConfigsNewResponse batchConfirmConfigsNew(BatchConfirmConfigsNewRequest request) {
@@ -2072,13 +2027,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchConfirmConfigsNewRequest 请求对象
+     * @param request BatchConfirmConfigsNewRequest 请求对象
      * @return SyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse>
      */
     public SyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse> batchConfirmConfigsNewInvoker(
         BatchConfirmConfigsNewRequest request) {
-        return new SyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse>(request,
-            IoTEdgeMeta.batchConfirmConfigsNew, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchConfirmConfigsNew, hcClient);
     }
 
     /**
@@ -2088,7 +2042,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchImportConfigsRequest 请求对象
+     * @param request BatchImportConfigsRequest 请求对象
      * @return BatchImportConfigsResponse
      */
     public BatchImportConfigsResponse batchImportConfigs(BatchImportConfigsRequest request) {
@@ -2102,13 +2056,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchImportConfigsRequest 请求对象
+     * @param request BatchImportConfigsRequest 请求对象
      * @return SyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse>
      */
     public SyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse> batchImportConfigsInvoker(
         BatchImportConfigsRequest request) {
-        return new SyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse>(request,
-            IoTEdgeMeta.batchImportConfigs, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchImportConfigs, hcClient);
     }
 
     /**
@@ -2118,7 +2071,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIaConfigRequest 请求对象
+     * @param request DeleteIaConfigRequest 请求对象
      * @return DeleteIaConfigResponse
      */
     public DeleteIaConfigResponse deleteIaConfig(DeleteIaConfigRequest request) {
@@ -2132,13 +2085,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIaConfigRequest 请求对象
+     * @param request DeleteIaConfigRequest 请求对象
      * @return SyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse>
      */
     public SyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse> deleteIaConfigInvoker(
         DeleteIaConfigRequest request) {
-        return new SyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse>(request, IoTEdgeMeta.deleteIaConfig,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteIaConfig, hcClient);
     }
 
     /**
@@ -2148,7 +2100,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIaConfigsRequest 请求对象
+     * @param request ListIaConfigsRequest 请求对象
      * @return ListIaConfigsResponse
      */
     public ListIaConfigsResponse listIaConfigs(ListIaConfigsRequest request) {
@@ -2162,12 +2114,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIaConfigsRequest 请求对象
+     * @param request ListIaConfigsRequest 请求对象
      * @return SyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse>
      */
     public SyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse> listIaConfigsInvoker(ListIaConfigsRequest request) {
-        return new SyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse>(request, IoTEdgeMeta.listIaConfigs,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.listIaConfigs, hcClient);
     }
 
     /**
@@ -2177,7 +2128,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIaConfigRequest 请求对象
+     * @param request ShowIaConfigRequest 请求对象
      * @return ShowIaConfigResponse
      */
     public ShowIaConfigResponse showIaConfig(ShowIaConfigRequest request) {
@@ -2191,11 +2142,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIaConfigRequest 请求对象
+     * @param request ShowIaConfigRequest 请求对象
      * @return SyncInvoker<ShowIaConfigRequest, ShowIaConfigResponse>
      */
     public SyncInvoker<ShowIaConfigRequest, ShowIaConfigResponse> showIaConfigInvoker(ShowIaConfigRequest request) {
-        return new SyncInvoker<ShowIaConfigRequest, ShowIaConfigResponse>(request, IoTEdgeMeta.showIaConfig, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showIaConfig, hcClient);
     }
 
     /**
@@ -2205,7 +2156,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIaConfigRequest 请求对象
+     * @param request UpdateIaConfigRequest 请求对象
      * @return UpdateIaConfigResponse
      */
     public UpdateIaConfigResponse updateIaConfig(UpdateIaConfigRequest request) {
@@ -2219,13 +2170,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIaConfigRequest 请求对象
+     * @param request UpdateIaConfigRequest 请求对象
      * @return SyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse>
      */
     public SyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse> updateIaConfigInvoker(
         UpdateIaConfigRequest request) {
-        return new SyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse>(request, IoTEdgeMeta.updateIaConfig,
-            hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateIaConfig, hcClient);
     }
 
     /**
@@ -2236,7 +2186,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateNaToNodesRequest 请求对象
+     * @param request BatchAssociateNaToNodesRequest 请求对象
      * @return BatchAssociateNaToNodesResponse
      */
     public BatchAssociateNaToNodesResponse batchAssociateNaToNodes(BatchAssociateNaToNodesRequest request) {
@@ -2251,13 +2201,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateNaToNodesRequest 请求对象
+     * @param request BatchAssociateNaToNodesRequest 请求对象
      * @return SyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse>
      */
     public SyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse> batchAssociateNaToNodesInvoker(
         BatchAssociateNaToNodesRequest request) {
-        return new SyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse>(request,
-            IoTEdgeMeta.batchAssociateNaToNodes, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchAssociateNaToNodes, hcClient);
     }
 
     /**
@@ -2267,7 +2216,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNaRequest 请求对象
+     * @param request DeleteNaRequest 请求对象
      * @return DeleteNaResponse
      */
     public DeleteNaResponse deleteNa(DeleteNaRequest request) {
@@ -2281,11 +2230,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNaRequest 请求对象
+     * @param request DeleteNaRequest 请求对象
      * @return SyncInvoker<DeleteNaRequest, DeleteNaResponse>
      */
     public SyncInvoker<DeleteNaRequest, DeleteNaResponse> deleteNaInvoker(DeleteNaRequest request) {
-        return new SyncInvoker<DeleteNaRequest, DeleteNaResponse>(request, IoTEdgeMeta.deleteNa, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteNa, hcClient);
     }
 
     /**
@@ -2295,7 +2244,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNaAuthorizedNodesRequest 请求对象
+     * @param request ListNaAuthorizedNodesRequest 请求对象
      * @return ListNaAuthorizedNodesResponse
      */
     public ListNaAuthorizedNodesResponse listNaAuthorizedNodes(ListNaAuthorizedNodesRequest request) {
@@ -2309,13 +2258,12 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNaAuthorizedNodesRequest 请求对象
+     * @param request ListNaAuthorizedNodesRequest 请求对象
      * @return SyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse>
      */
     public SyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse> listNaAuthorizedNodesInvoker(
         ListNaAuthorizedNodesRequest request) {
-        return new SyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse>(request,
-            IoTEdgeMeta.listNaAuthorizedNodes, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.listNaAuthorizedNodes, hcClient);
     }
 
     /**
@@ -2325,7 +2273,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNasRequest 请求对象
+     * @param request ListNasRequest 请求对象
      * @return ListNasResponse
      */
     public ListNasResponse listNas(ListNasRequest request) {
@@ -2339,11 +2287,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNasRequest 请求对象
+     * @param request ListNasRequest 请求对象
      * @return SyncInvoker<ListNasRequest, ListNasResponse>
      */
     public SyncInvoker<ListNasRequest, ListNasResponse> listNasInvoker(ListNasRequest request) {
-        return new SyncInvoker<ListNasRequest, ListNasResponse>(request, IoTEdgeMeta.listNas, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.listNas, hcClient);
     }
 
     /**
@@ -2353,7 +2301,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNaRequest 请求对象
+     * @param request ShowNaRequest 请求对象
      * @return ShowNaResponse
      */
     public ShowNaResponse showNa(ShowNaRequest request) {
@@ -2367,11 +2315,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNaRequest 请求对象
+     * @param request ShowNaRequest 请求对象
      * @return SyncInvoker<ShowNaRequest, ShowNaResponse>
      */
     public SyncInvoker<ShowNaRequest, ShowNaResponse> showNaInvoker(ShowNaRequest request) {
-        return new SyncInvoker<ShowNaRequest, ShowNaResponse>(request, IoTEdgeMeta.showNa, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.showNa, hcClient);
     }
 
     /**
@@ -2381,7 +2329,7 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNaRequest 请求对象
+     * @param request UpdateNaRequest 请求对象
      * @return UpdateNaResponse
      */
     public UpdateNaResponse updateNa(UpdateNaRequest request) {
@@ -2395,11 +2343,11 @@ public class IoTEdgeClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNaRequest 请求对象
+     * @param request UpdateNaRequest 请求对象
      * @return SyncInvoker<UpdateNaRequest, UpdateNaResponse>
      */
     public SyncInvoker<UpdateNaRequest, UpdateNaResponse> updateNaInvoker(UpdateNaRequest request) {
-        return new SyncInvoker<UpdateNaRequest, UpdateNaResponse>(request, IoTEdgeMeta.updateNa, hcClient);
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateNa, hcClient);
     }
 
 }

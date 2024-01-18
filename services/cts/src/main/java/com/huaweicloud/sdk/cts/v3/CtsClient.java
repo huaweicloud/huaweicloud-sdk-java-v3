@@ -56,7 +56,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceTagsRequest 请求对象
+     * @param request BatchCreateResourceTagsRequest 请求对象
      * @return BatchCreateResourceTagsResponse
      */
     public BatchCreateResourceTagsResponse batchCreateResourceTags(BatchCreateResourceTagsRequest request) {
@@ -70,13 +70,12 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceTagsRequest 请求对象
+     * @param request BatchCreateResourceTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>
      */
     public SyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTagsInvoker(
         BatchCreateResourceTagsRequest request) {
-        return new SyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>(request,
-            CtsMeta.batchCreateResourceTags, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.batchCreateResourceTags, hcClient);
     }
 
     /**
@@ -86,7 +85,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceTagsRequest 请求对象
+     * @param request BatchDeleteResourceTagsRequest 请求对象
      * @return BatchDeleteResourceTagsResponse
      */
     public BatchDeleteResourceTagsResponse batchDeleteResourceTags(BatchDeleteResourceTagsRequest request) {
@@ -100,13 +99,12 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceTagsRequest 请求对象
+     * @param request BatchDeleteResourceTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse>
      */
     public SyncInvoker<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> batchDeleteResourceTagsInvoker(
         BatchDeleteResourceTagsRequest request) {
-        return new SyncInvoker<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse>(request,
-            CtsMeta.batchDeleteResourceTags, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.batchDeleteResourceTags, hcClient);
     }
 
     /**
@@ -116,7 +114,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckObsBucketsRequest 请求对象
+     * @param request CheckObsBucketsRequest 请求对象
      * @return CheckObsBucketsResponse
      */
     public CheckObsBucketsResponse checkObsBuckets(CheckObsBucketsRequest request) {
@@ -130,13 +128,12 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckObsBucketsRequest 请求对象
+     * @param request CheckObsBucketsRequest 请求对象
      * @return SyncInvoker<CheckObsBucketsRequest, CheckObsBucketsResponse>
      */
     public SyncInvoker<CheckObsBucketsRequest, CheckObsBucketsResponse> checkObsBucketsInvoker(
         CheckObsBucketsRequest request) {
-        return new SyncInvoker<CheckObsBucketsRequest, CheckObsBucketsResponse>(request, CtsMeta.checkObsBuckets,
-            hcClient);
+        return new SyncInvoker<>(request, CtsMeta.checkObsBuckets, hcClient);
     }
 
     /**
@@ -146,7 +143,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNotificationRequest 请求对象
+     * @param request CreateNotificationRequest 请求对象
      * @return CreateNotificationResponse
      */
     public CreateNotificationResponse createNotification(CreateNotificationRequest request) {
@@ -160,13 +157,12 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNotificationRequest 请求对象
+     * @param request CreateNotificationRequest 请求对象
      * @return SyncInvoker<CreateNotificationRequest, CreateNotificationResponse>
      */
     public SyncInvoker<CreateNotificationRequest, CreateNotificationResponse> createNotificationInvoker(
         CreateNotificationRequest request) {
-        return new SyncInvoker<CreateNotificationRequest, CreateNotificationResponse>(request,
-            CtsMeta.createNotification, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.createNotification, hcClient);
     }
 
     /**
@@ -177,7 +173,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrackerRequest 请求对象
+     * @param request CreateTrackerRequest 请求对象
      * @return CreateTrackerResponse
      */
     public CreateTrackerResponse createTracker(CreateTrackerRequest request) {
@@ -192,11 +188,11 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrackerRequest 请求对象
+     * @param request CreateTrackerRequest 请求对象
      * @return SyncInvoker<CreateTrackerRequest, CreateTrackerResponse>
      */
     public SyncInvoker<CreateTrackerRequest, CreateTrackerResponse> createTrackerInvoker(CreateTrackerRequest request) {
-        return new SyncInvoker<CreateTrackerRequest, CreateTrackerResponse>(request, CtsMeta.createTracker, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.createTracker, hcClient);
     }
 
     /**
@@ -206,7 +202,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNotificationRequest 请求对象
+     * @param request DeleteNotificationRequest 请求对象
      * @return DeleteNotificationResponse
      */
     public DeleteNotificationResponse deleteNotification(DeleteNotificationRequest request) {
@@ -220,13 +216,12 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNotificationRequest 请求对象
+     * @param request DeleteNotificationRequest 请求对象
      * @return SyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse>
      */
     public SyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse> deleteNotificationInvoker(
         DeleteNotificationRequest request) {
-        return new SyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse>(request,
-            CtsMeta.deleteNotification, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.deleteNotification, hcClient);
     }
 
     /**
@@ -236,7 +231,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrackerRequest 请求对象
+     * @param request DeleteTrackerRequest 请求对象
      * @return DeleteTrackerResponse
      */
     public DeleteTrackerResponse deleteTracker(DeleteTrackerRequest request) {
@@ -250,11 +245,11 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrackerRequest 请求对象
+     * @param request DeleteTrackerRequest 请求对象
      * @return SyncInvoker<DeleteTrackerRequest, DeleteTrackerResponse>
      */
     public SyncInvoker<DeleteTrackerRequest, DeleteTrackerResponse> deleteTrackerInvoker(DeleteTrackerRequest request) {
-        return new SyncInvoker<DeleteTrackerRequest, DeleteTrackerResponse>(request, CtsMeta.deleteTracker, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.deleteTracker, hcClient);
     }
 
     /**
@@ -264,7 +259,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationsRequest 请求对象
+     * @param request ListNotificationsRequest 请求对象
      * @return ListNotificationsResponse
      */
     public ListNotificationsResponse listNotifications(ListNotificationsRequest request) {
@@ -278,13 +273,12 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationsRequest 请求对象
+     * @param request ListNotificationsRequest 请求对象
      * @return SyncInvoker<ListNotificationsRequest, ListNotificationsResponse>
      */
     public SyncInvoker<ListNotificationsRequest, ListNotificationsResponse> listNotificationsInvoker(
         ListNotificationsRequest request) {
-        return new SyncInvoker<ListNotificationsRequest, ListNotificationsResponse>(request, CtsMeta.listNotifications,
-            hcClient);
+        return new SyncInvoker<>(request, CtsMeta.listNotifications, hcClient);
     }
 
     /**
@@ -294,7 +288,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOperationsRequest 请求对象
+     * @param request ListOperationsRequest 请求对象
      * @return ListOperationsResponse
      */
     public ListOperationsResponse listOperations(ListOperationsRequest request) {
@@ -308,13 +302,12 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOperationsRequest 请求对象
+     * @param request ListOperationsRequest 请求对象
      * @return SyncInvoker<ListOperationsRequest, ListOperationsResponse>
      */
     public SyncInvoker<ListOperationsRequest, ListOperationsResponse> listOperationsInvoker(
         ListOperationsRequest request) {
-        return new SyncInvoker<ListOperationsRequest, ListOperationsResponse>(request, CtsMeta.listOperations,
-            hcClient);
+        return new SyncInvoker<>(request, CtsMeta.listOperations, hcClient);
     }
 
     /**
@@ -324,7 +317,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return ListQuotasResponse
      */
     public ListQuotasResponse listQuotas(ListQuotasRequest request) {
@@ -338,11 +331,11 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
-        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, CtsMeta.listQuotas, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.listQuotas, hcClient);
     }
 
     /**
@@ -352,7 +345,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTraceResourcesRequest 请求对象
+     * @param request ListTraceResourcesRequest 请求对象
      * @return ListTraceResourcesResponse
      */
     public ListTraceResourcesResponse listTraceResources(ListTraceResourcesRequest request) {
@@ -366,13 +359,12 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTraceResourcesRequest 请求对象
+     * @param request ListTraceResourcesRequest 请求对象
      * @return SyncInvoker<ListTraceResourcesRequest, ListTraceResourcesResponse>
      */
     public SyncInvoker<ListTraceResourcesRequest, ListTraceResourcesResponse> listTraceResourcesInvoker(
         ListTraceResourcesRequest request) {
-        return new SyncInvoker<ListTraceResourcesRequest, ListTraceResourcesResponse>(request,
-            CtsMeta.listTraceResources, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.listTraceResources, hcClient);
     }
 
     /**
@@ -382,7 +374,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTracesRequest 请求对象
+     * @param request ListTracesRequest 请求对象
      * @return ListTracesResponse
      */
     public ListTracesResponse listTraces(ListTracesRequest request) {
@@ -396,11 +388,11 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTracesRequest 请求对象
+     * @param request ListTracesRequest 请求对象
      * @return SyncInvoker<ListTracesRequest, ListTracesResponse>
      */
     public SyncInvoker<ListTracesRequest, ListTracesResponse> listTracesInvoker(ListTracesRequest request) {
-        return new SyncInvoker<ListTracesRequest, ListTracesResponse>(request, CtsMeta.listTraces, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.listTraces, hcClient);
     }
 
     /**
@@ -410,7 +402,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTrackersRequest 请求对象
+     * @param request ListTrackersRequest 请求对象
      * @return ListTrackersResponse
      */
     public ListTrackersResponse listTrackers(ListTrackersRequest request) {
@@ -424,11 +416,11 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTrackersRequest 请求对象
+     * @param request ListTrackersRequest 请求对象
      * @return SyncInvoker<ListTrackersRequest, ListTrackersResponse>
      */
     public SyncInvoker<ListTrackersRequest, ListTrackersResponse> listTrackersInvoker(ListTrackersRequest request) {
-        return new SyncInvoker<ListTrackersRequest, ListTrackersResponse>(request, CtsMeta.listTrackers, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.listTrackers, hcClient);
     }
 
     /**
@@ -438,7 +430,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserResourcesRequest 请求对象
+     * @param request ListUserResourcesRequest 请求对象
      * @return ListUserResourcesResponse
      */
     public ListUserResourcesResponse listUserResources(ListUserResourcesRequest request) {
@@ -452,13 +444,12 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserResourcesRequest 请求对象
+     * @param request ListUserResourcesRequest 请求对象
      * @return SyncInvoker<ListUserResourcesRequest, ListUserResourcesResponse>
      */
     public SyncInvoker<ListUserResourcesRequest, ListUserResourcesResponse> listUserResourcesInvoker(
         ListUserResourcesRequest request) {
-        return new SyncInvoker<ListUserResourcesRequest, ListUserResourcesResponse>(request, CtsMeta.listUserResources,
-            hcClient);
+        return new SyncInvoker<>(request, CtsMeta.listUserResources, hcClient);
     }
 
     /**
@@ -468,7 +459,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotificationRequest 请求对象
+     * @param request UpdateNotificationRequest 请求对象
      * @return UpdateNotificationResponse
      */
     public UpdateNotificationResponse updateNotification(UpdateNotificationRequest request) {
@@ -482,13 +473,12 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotificationRequest 请求对象
+     * @param request UpdateNotificationRequest 请求对象
      * @return SyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse>
      */
     public SyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse> updateNotificationInvoker(
         UpdateNotificationRequest request) {
-        return new SyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse>(request,
-            CtsMeta.updateNotification, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.updateNotification, hcClient);
     }
 
     /**
@@ -498,7 +488,7 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrackerRequest 请求对象
+     * @param request UpdateTrackerRequest 请求对象
      * @return UpdateTrackerResponse
      */
     public UpdateTrackerResponse updateTracker(UpdateTrackerRequest request) {
@@ -512,11 +502,11 @@ public class CtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrackerRequest 请求对象
+     * @param request UpdateTrackerRequest 请求对象
      * @return SyncInvoker<UpdateTrackerRequest, UpdateTrackerResponse>
      */
     public SyncInvoker<UpdateTrackerRequest, UpdateTrackerResponse> updateTrackerInvoker(UpdateTrackerRequest request) {
-        return new SyncInvoker<UpdateTrackerRequest, UpdateTrackerResponse>(request, CtsMeta.updateTracker, hcClient);
+        return new SyncInvoker<>(request, CtsMeta.updateTracker, hcClient);
     }
 
 }

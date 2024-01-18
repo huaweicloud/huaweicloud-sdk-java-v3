@@ -21,7 +21,7 @@ public class CreateVariableResultJson {
     }
 
     /**
-     * variable_id
+     * 变量id
      * minimum: 0
      * maximum: 2147483647
      * @return variableId

@@ -82,7 +82,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationReleaseRepositoriesRequest 请求对象
+     * @param request ShowApplicationReleaseRepositoriesRequest 请求对象
      * @return ShowApplicationReleaseRepositoriesResponse
      */
     public ShowApplicationReleaseRepositoriesResponse showApplicationReleaseRepositories(
@@ -97,13 +97,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationReleaseRepositoriesRequest 请求对象
+     * @param request ShowApplicationReleaseRepositoriesRequest 请求对象
      * @return SyncInvoker<ShowApplicationReleaseRepositoriesRequest, ShowApplicationReleaseRepositoriesResponse>
      */
     public SyncInvoker<ShowApplicationReleaseRepositoriesRequest, ShowApplicationReleaseRepositoriesResponse> showApplicationReleaseRepositoriesInvoker(
         ShowApplicationReleaseRepositoriesRequest request) {
-        return new SyncInvoker<ShowApplicationReleaseRepositoriesRequest, ShowApplicationReleaseRepositoriesResponse>(
-            request, DevStarMeta.showApplicationReleaseRepositories, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showApplicationReleaseRepositories, hcClient);
     }
 
     /**
@@ -113,7 +112,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationResDeleteStatusRequest 请求对象
+     * @param request ShowApplicationResDeleteStatusRequest 请求对象
      * @return ShowApplicationResDeleteStatusResponse
      */
     public ShowApplicationResDeleteStatusResponse showApplicationResDeleteStatus(
@@ -128,13 +127,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationResDeleteStatusRequest 请求对象
+     * @param request ShowApplicationResDeleteStatusRequest 请求对象
      * @return SyncInvoker<ShowApplicationResDeleteStatusRequest, ShowApplicationResDeleteStatusResponse>
      */
     public SyncInvoker<ShowApplicationResDeleteStatusRequest, ShowApplicationResDeleteStatusResponse> showApplicationResDeleteStatusInvoker(
         ShowApplicationResDeleteStatusRequest request) {
-        return new SyncInvoker<ShowApplicationResDeleteStatusRequest, ShowApplicationResDeleteStatusResponse>(request,
-            DevStarMeta.showApplicationResDeleteStatus, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showApplicationResDeleteStatus, hcClient);
     }
 
     /**
@@ -144,7 +142,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationDependentResourcesRequest 请求对象
+     * @param request ShowApplicationDependentResourcesRequest 请求对象
      * @return ShowApplicationDependentResourcesResponse
      */
     public ShowApplicationDependentResourcesResponse showApplicationDependentResources(
@@ -159,13 +157,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationDependentResourcesRequest 请求对象
+     * @param request ShowApplicationDependentResourcesRequest 请求对象
      * @return SyncInvoker<ShowApplicationDependentResourcesRequest, ShowApplicationDependentResourcesResponse>
      */
     public SyncInvoker<ShowApplicationDependentResourcesRequest, ShowApplicationDependentResourcesResponse> showApplicationDependentResourcesInvoker(
         ShowApplicationDependentResourcesRequest request) {
-        return new SyncInvoker<ShowApplicationDependentResourcesRequest, ShowApplicationDependentResourcesResponse>(
-            request, DevStarMeta.showApplicationDependentResources, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showApplicationDependentResources, hcClient);
     }
 
     /**
@@ -175,7 +172,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationV3Request 请求对象
+     * @param request ShowApplicationV3Request 请求对象
      * @return ShowApplicationV3Response
      */
     public ShowApplicationV3Response showApplicationV3(ShowApplicationV3Request request) {
@@ -189,13 +186,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationV3Request 请求对象
+     * @param request ShowApplicationV3Request 请求对象
      * @return SyncInvoker<ShowApplicationV3Request, ShowApplicationV3Response>
      */
     public SyncInvoker<ShowApplicationV3Request, ShowApplicationV3Response> showApplicationV3Invoker(
         ShowApplicationV3Request request) {
-        return new SyncInvoker<ShowApplicationV3Request, ShowApplicationV3Response>(request,
-            DevStarMeta.showApplicationV3, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showApplicationV3, hcClient);
     }
 
     /**
@@ -207,7 +203,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApplicationRequest 请求对象
+     * @param request UpdateApplicationRequest 请求对象
      * @return UpdateApplicationResponse
      */
     public UpdateApplicationResponse updateApplication(UpdateApplicationRequest request) {
@@ -223,13 +219,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApplicationRequest 请求对象
+     * @param request UpdateApplicationRequest 请求对象
      * @return SyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse>
      */
     public SyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse> updateApplicationInvoker(
         UpdateApplicationRequest request) {
-        return new SyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse>(request,
-            DevStarMeta.updateApplication, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.updateApplication, hcClient);
     }
 
     /**
@@ -239,7 +234,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationV4Request 请求对象
+     * @param request DeleteApplicationV4Request 请求对象
      * @return DeleteApplicationV4Response
      */
     public DeleteApplicationV4Response deleteApplicationV4(DeleteApplicationV4Request request) {
@@ -253,13 +248,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationV4Request 请求对象
+     * @param request DeleteApplicationV4Request 请求对象
      * @return SyncInvoker<DeleteApplicationV4Request, DeleteApplicationV4Response>
      */
     public SyncInvoker<DeleteApplicationV4Request, DeleteApplicationV4Response> deleteApplicationV4Invoker(
         DeleteApplicationV4Request request) {
-        return new SyncInvoker<DeleteApplicationV4Request, DeleteApplicationV4Response>(request,
-            DevStarMeta.deleteApplicationV4, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.deleteApplicationV4, hcClient);
     }
 
     /**
@@ -270,7 +264,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApplicationsV6Request 请求对象
+     * @param request ListApplicationsV6Request 请求对象
      * @return ListApplicationsV6Response
      */
     public ListApplicationsV6Response listApplicationsV6(ListApplicationsV6Request request) {
@@ -285,13 +279,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApplicationsV6Request 请求对象
+     * @param request ListApplicationsV6Request 请求对象
      * @return SyncInvoker<ListApplicationsV6Request, ListApplicationsV6Response>
      */
     public SyncInvoker<ListApplicationsV6Request, ListApplicationsV6Response> listApplicationsV6Invoker(
         ListApplicationsV6Request request) {
-        return new SyncInvoker<ListApplicationsV6Request, ListApplicationsV6Response>(request,
-            DevStarMeta.listApplicationsV6, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.listApplicationsV6, hcClient);
     }
 
     /**
@@ -301,7 +294,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadApplicationCodeRequest 请求对象
+     * @param request DownloadApplicationCodeRequest 请求对象
      * @return DownloadApplicationCodeResponse
      */
     public DownloadApplicationCodeResponse downloadApplicationCode(DownloadApplicationCodeRequest request) {
@@ -315,13 +308,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadApplicationCodeRequest 请求对象
+     * @param request DownloadApplicationCodeRequest 请求对象
      * @return SyncInvoker<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse>
      */
     public SyncInvoker<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse> downloadApplicationCodeInvoker(
         DownloadApplicationCodeRequest request) {
-        return new SyncInvoker<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse>(request,
-            DevStarMeta.downloadApplicationCode, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.downloadApplicationCode, hcClient);
     }
 
     /**
@@ -331,7 +323,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmDeploymentJobRequest 请求对象
+     * @param request ConfirmDeploymentJobRequest 请求对象
      * @return ConfirmDeploymentJobResponse
      */
     public ConfirmDeploymentJobResponse confirmDeploymentJob(ConfirmDeploymentJobRequest request) {
@@ -345,13 +337,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmDeploymentJobRequest 请求对象
+     * @param request ConfirmDeploymentJobRequest 请求对象
      * @return SyncInvoker<ConfirmDeploymentJobRequest, ConfirmDeploymentJobResponse>
      */
     public SyncInvoker<ConfirmDeploymentJobRequest, ConfirmDeploymentJobResponse> confirmDeploymentJobInvoker(
         ConfirmDeploymentJobRequest request) {
-        return new SyncInvoker<ConfirmDeploymentJobRequest, ConfirmDeploymentJobResponse>(request,
-            DevStarMeta.confirmDeploymentJob, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.confirmDeploymentJob, hcClient);
     }
 
     /**
@@ -364,7 +355,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeploymentJobsRequest 请求对象
+     * @param request CreateDeploymentJobsRequest 请求对象
      * @return CreateDeploymentJobsResponse
      */
     public CreateDeploymentJobsResponse createDeploymentJobs(CreateDeploymentJobsRequest request) {
@@ -381,13 +372,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeploymentJobsRequest 请求对象
+     * @param request CreateDeploymentJobsRequest 请求对象
      * @return SyncInvoker<CreateDeploymentJobsRequest, CreateDeploymentJobsResponse>
      */
     public SyncInvoker<CreateDeploymentJobsRequest, CreateDeploymentJobsResponse> createDeploymentJobsInvoker(
         CreateDeploymentJobsRequest request) {
-        return new SyncInvoker<CreateDeploymentJobsRequest, CreateDeploymentJobsResponse>(request,
-            DevStarMeta.createDeploymentJobs, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.createDeploymentJobs, hcClient);
     }
 
     /**
@@ -397,7 +387,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentJobsRequest 请求对象
+     * @param request ShowDeploymentJobsRequest 请求对象
      * @return ShowDeploymentJobsResponse
      */
     public ShowDeploymentJobsResponse showDeploymentJobs(ShowDeploymentJobsRequest request) {
@@ -411,13 +401,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentJobsRequest 请求对象
+     * @param request ShowDeploymentJobsRequest 请求对象
      * @return SyncInvoker<ShowDeploymentJobsRequest, ShowDeploymentJobsResponse>
      */
     public SyncInvoker<ShowDeploymentJobsRequest, ShowDeploymentJobsResponse> showDeploymentJobsInvoker(
         ShowDeploymentJobsRequest request) {
-        return new SyncInvoker<ShowDeploymentJobsRequest, ShowDeploymentJobsResponse>(request,
-            DevStarMeta.showDeploymentJobs, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showDeploymentJobs, hcClient);
     }
 
     /**
@@ -435,7 +424,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCodehubTemplateJobRequest 请求对象
+     * @param request RunCodehubTemplateJobRequest 请求对象
      * @return RunCodehubTemplateJobResponse
      */
     public RunCodehubTemplateJobResponse runCodehubTemplateJob(RunCodehubTemplateJobRequest request) {
@@ -457,13 +446,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCodehubTemplateJobRequest 请求对象
+     * @param request RunCodehubTemplateJobRequest 请求对象
      * @return SyncInvoker<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse>
      */
     public SyncInvoker<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse> runCodehubTemplateJobInvoker(
         RunCodehubTemplateJobRequest request) {
-        return new SyncInvoker<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse>(request,
-            DevStarMeta.runCodehubTemplateJob, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.runCodehubTemplateJob, hcClient);
     }
 
     /**
@@ -481,7 +469,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDevstarTemplateJobRequest 请求对象
+     * @param request RunDevstarTemplateJobRequest 请求对象
      * @return RunDevstarTemplateJobResponse
      */
     public RunDevstarTemplateJobResponse runDevstarTemplateJob(RunDevstarTemplateJobRequest request) {
@@ -503,13 +491,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDevstarTemplateJobRequest 请求对象
+     * @param request RunDevstarTemplateJobRequest 请求对象
      * @return SyncInvoker<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse>
      */
     public SyncInvoker<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse> runDevstarTemplateJobInvoker(
         RunDevstarTemplateJobRequest request) {
-        return new SyncInvoker<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse>(request,
-            DevStarMeta.runDevstarTemplateJob, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.runDevstarTemplateJob, hcClient);
     }
 
     /**
@@ -528,7 +515,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobDetailRequest 请求对象
+     * @param request ShowJobDetailRequest 请求对象
      * @return ShowJobDetailResponse
      */
     public ShowJobDetailResponse showJobDetail(ShowJobDetailRequest request) {
@@ -551,12 +538,11 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobDetailRequest 请求对象
+     * @param request ShowJobDetailRequest 请求对象
      * @return SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
      */
     public SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailInvoker(ShowJobDetailRequest request) {
-        return new SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, DevStarMeta.showJobDetail,
-            hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showJobDetail, hcClient);
     }
 
     /**
@@ -566,7 +552,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelineTemplatesRequest 请求对象
+     * @param request ListPipelineTemplatesRequest 请求对象
      * @return ListPipelineTemplatesResponse
      */
     public ListPipelineTemplatesResponse listPipelineTemplates(ListPipelineTemplatesRequest request) {
@@ -580,13 +566,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelineTemplatesRequest 请求对象
+     * @param request ListPipelineTemplatesRequest 请求对象
      * @return SyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse>
      */
     public SyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> listPipelineTemplatesInvoker(
         ListPipelineTemplatesRequest request) {
-        return new SyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse>(request,
-            DevStarMeta.listPipelineTemplates, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.listPipelineTemplates, hcClient);
     }
 
     /**
@@ -596,7 +581,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineLastStatusV2Request 请求对象
+     * @param request ShowPipelineLastStatusV2Request 请求对象
      * @return ShowPipelineLastStatusV2Response
      */
     public ShowPipelineLastStatusV2Response showPipelineLastStatusV2(ShowPipelineLastStatusV2Request request) {
@@ -610,13 +595,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineLastStatusV2Request 请求对象
+     * @param request ShowPipelineLastStatusV2Request 请求对象
      * @return SyncInvoker<ShowPipelineLastStatusV2Request, ShowPipelineLastStatusV2Response>
      */
     public SyncInvoker<ShowPipelineLastStatusV2Request, ShowPipelineLastStatusV2Response> showPipelineLastStatusV2Invoker(
         ShowPipelineLastStatusV2Request request) {
-        return new SyncInvoker<ShowPipelineLastStatusV2Request, ShowPipelineLastStatusV2Response>(request,
-            DevStarMeta.showPipelineLastStatusV2, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showPipelineLastStatusV2, hcClient);
     }
 
     /**
@@ -626,7 +610,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartPipelineRequest 请求对象
+     * @param request StartPipelineRequest 请求对象
      * @return StartPipelineResponse
      */
     public StartPipelineResponse startPipeline(StartPipelineRequest request) {
@@ -640,12 +624,11 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartPipelineRequest 请求对象
+     * @param request StartPipelineRequest 请求对象
      * @return SyncInvoker<StartPipelineRequest, StartPipelineResponse>
      */
     public SyncInvoker<StartPipelineRequest, StartPipelineResponse> startPipelineInvoker(StartPipelineRequest request) {
-        return new SyncInvoker<StartPipelineRequest, StartPipelineResponse>(request, DevStarMeta.startPipeline,
-            hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.startPipeline, hcClient);
     }
 
     /**
@@ -656,7 +639,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectsV4Request 请求对象
+     * @param request ListProjectsV4Request 请求对象
      * @return ListProjectsV4Response
      */
     public ListProjectsV4Response listProjectsV4(ListProjectsV4Request request) {
@@ -671,13 +654,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectsV4Request 请求对象
+     * @param request ListProjectsV4Request 请求对象
      * @return SyncInvoker<ListProjectsV4Request, ListProjectsV4Response>
      */
     public SyncInvoker<ListProjectsV4Request, ListProjectsV4Response> listProjectsV4Invoker(
         ListProjectsV4Request request) {
-        return new SyncInvoker<ListProjectsV4Request, ListProjectsV4Response>(request, DevStarMeta.listProjectsV4,
-            hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.listProjectsV4, hcClient);
     }
 
     /**
@@ -691,7 +673,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRepositoryDuplicateNameRequest 请求对象
+     * @param request CheckRepositoryDuplicateNameRequest 请求对象
      * @return CheckRepositoryDuplicateNameResponse
      */
     public CheckRepositoryDuplicateNameResponse checkRepositoryDuplicateName(
@@ -710,13 +692,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRepositoryDuplicateNameRequest 请求对象
+     * @param request CheckRepositoryDuplicateNameRequest 请求对象
      * @return SyncInvoker<CheckRepositoryDuplicateNameRequest, CheckRepositoryDuplicateNameResponse>
      */
     public SyncInvoker<CheckRepositoryDuplicateNameRequest, CheckRepositoryDuplicateNameResponse> checkRepositoryDuplicateNameInvoker(
         CheckRepositoryDuplicateNameRequest request) {
-        return new SyncInvoker<CheckRepositoryDuplicateNameRequest, CheckRepositoryDuplicateNameResponse>(request,
-            DevStarMeta.checkRepositoryDuplicateName, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.checkRepositoryDuplicateName, hcClient);
     }
 
     /**
@@ -728,7 +709,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryByCloudIdeRequest 请求对象
+     * @param request ShowRepositoryByCloudIdeRequest 请求对象
      * @return ShowRepositoryByCloudIdeResponse
      */
     public ShowRepositoryByCloudIdeResponse showRepositoryByCloudIde(ShowRepositoryByCloudIdeRequest request) {
@@ -744,13 +725,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryByCloudIdeRequest 请求对象
+     * @param request ShowRepositoryByCloudIdeRequest 请求对象
      * @return SyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse>
      */
     public SyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse> showRepositoryByCloudIdeInvoker(
         ShowRepositoryByCloudIdeRequest request) {
-        return new SyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse>(request,
-            DevStarMeta.showRepositoryByCloudIde, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showRepositoryByCloudIde, hcClient);
     }
 
     /**
@@ -760,7 +740,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryStatisticalDataV2Request 请求对象
+     * @param request ShowRepositoryStatisticalDataV2Request 请求对象
      * @return ShowRepositoryStatisticalDataV2Response
      */
     public ShowRepositoryStatisticalDataV2Response showRepositoryStatisticalDataV2(
@@ -775,13 +755,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryStatisticalDataV2Request 请求对象
+     * @param request ShowRepositoryStatisticalDataV2Request 请求对象
      * @return SyncInvoker<ShowRepositoryStatisticalDataV2Request, ShowRepositoryStatisticalDataV2Response>
      */
     public SyncInvoker<ShowRepositoryStatisticalDataV2Request, ShowRepositoryStatisticalDataV2Response> showRepositoryStatisticalDataV2Invoker(
         ShowRepositoryStatisticalDataV2Request request) {
-        return new SyncInvoker<ShowRepositoryStatisticalDataV2Request, ShowRepositoryStatisticalDataV2Response>(request,
-            DevStarMeta.showRepositoryStatisticalDataV2, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showRepositoryStatisticalDataV2, hcClient);
     }
 
     /**
@@ -791,7 +770,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateFileRequest 请求对象
+     * @param request ShowTemplateFileRequest 请求对象
      * @return ShowTemplateFileResponse
      */
     public ShowTemplateFileResponse showTemplateFile(ShowTemplateFileRequest request) {
@@ -805,13 +784,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateFileRequest 请求对象
+     * @param request ShowTemplateFileRequest 请求对象
      * @return SyncInvoker<ShowTemplateFileRequest, ShowTemplateFileResponse>
      */
     public SyncInvoker<ShowTemplateFileRequest, ShowTemplateFileResponse> showTemplateFileInvoker(
         ShowTemplateFileRequest request) {
-        return new SyncInvoker<ShowTemplateFileRequest, ShowTemplateFileResponse>(request, DevStarMeta.showTemplateFile,
-            hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showTemplateFile, hcClient);
     }
 
     /**
@@ -821,7 +799,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateViewHistoriesRequest 请求对象
+     * @param request CreateTemplateViewHistoriesRequest 请求对象
      * @return CreateTemplateViewHistoriesResponse
      */
     public CreateTemplateViewHistoriesResponse createTemplateViewHistories(CreateTemplateViewHistoriesRequest request) {
@@ -835,13 +813,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateViewHistoriesRequest 请求对象
+     * @param request CreateTemplateViewHistoriesRequest 请求对象
      * @return SyncInvoker<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse>
      */
     public SyncInvoker<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse> createTemplateViewHistoriesInvoker(
         CreateTemplateViewHistoriesRequest request) {
-        return new SyncInvoker<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse>(request,
-            DevStarMeta.createTemplateViewHistories, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.createTemplateViewHistories, hcClient);
     }
 
     /**
@@ -851,7 +828,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublishedTemplatesRequest 请求对象
+     * @param request ListPublishedTemplatesRequest 请求对象
      * @return ListPublishedTemplatesResponse
      */
     @Deprecated
@@ -866,14 +843,13 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublishedTemplatesRequest 请求对象
+     * @param request ListPublishedTemplatesRequest 请求对象
      * @return SyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse>
      */
     @Deprecated
     public SyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse> listPublishedTemplatesInvoker(
         ListPublishedTemplatesRequest request) {
-        return new SyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse>(request,
-            DevStarMeta.listPublishedTemplates, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.listPublishedTemplates, hcClient);
     }
 
     /**
@@ -883,7 +859,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateViewHistoriesRequest 请求对象
+     * @param request ListTemplateViewHistoriesRequest 请求对象
      * @return ListTemplateViewHistoriesResponse
      */
     public ListTemplateViewHistoriesResponse listTemplateViewHistories(ListTemplateViewHistoriesRequest request) {
@@ -897,13 +873,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateViewHistoriesRequest 请求对象
+     * @param request ListTemplateViewHistoriesRequest 请求对象
      * @return SyncInvoker<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse>
      */
     public SyncInvoker<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse> listTemplateViewHistoriesInvoker(
         ListTemplateViewHistoriesRequest request) {
-        return new SyncInvoker<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse>(request,
-            DevStarMeta.listTemplateViewHistories, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.listTemplateViewHistories, hcClient);
     }
 
     /**
@@ -913,7 +888,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesRequest 请求对象
+     * @param request ListTemplatesRequest 请求对象
      * @return ListTemplatesResponse
      */
     public ListTemplatesResponse listTemplates(ListTemplatesRequest request) {
@@ -927,12 +902,11 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesRequest 请求对象
+     * @param request ListTemplatesRequest 请求对象
      * @return SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
      */
     public SyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesInvoker(ListTemplatesRequest request) {
-        return new SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, DevStarMeta.listTemplates,
-            hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.listTemplates, hcClient);
     }
 
     /**
@@ -942,7 +916,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesV2Request 请求对象
+     * @param request ListTemplatesV2Request 请求对象
      * @return ListTemplatesV2Response
      */
     @Deprecated
@@ -957,14 +931,13 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesV2Request 请求对象
+     * @param request ListTemplatesV2Request 请求对象
      * @return SyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response>
      */
     @Deprecated
     public SyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response> listTemplatesV2Invoker(
         ListTemplatesV2Request request) {
-        return new SyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response>(request, DevStarMeta.listTemplatesV2,
-            hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.listTemplatesV2, hcClient);
     }
 
     /**
@@ -974,7 +947,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateV3Request 请求对象
+     * @param request ShowTemplateV3Request 请求对象
      * @return ShowTemplateV3Response
      */
     public ShowTemplateV3Response showTemplateV3(ShowTemplateV3Request request) {
@@ -988,13 +961,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateV3Request 请求对象
+     * @param request ShowTemplateV3Request 请求对象
      * @return SyncInvoker<ShowTemplateV3Request, ShowTemplateV3Response>
      */
     public SyncInvoker<ShowTemplateV3Request, ShowTemplateV3Response> showTemplateV3Invoker(
         ShowTemplateV3Request request) {
-        return new SyncInvoker<ShowTemplateV3Request, ShowTemplateV3Response>(request, DevStarMeta.showTemplateV3,
-            hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showTemplateV3, hcClient);
     }
 
     /**
@@ -1004,7 +976,7 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateDetailRequest 请求对象
+     * @param request ShowTemplateDetailRequest 请求对象
      * @return ShowTemplateDetailResponse
      */
     public ShowTemplateDetailResponse showTemplateDetail(ShowTemplateDetailRequest request) {
@@ -1018,13 +990,12 @@ public class DevStarClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateDetailRequest 请求对象
+     * @param request ShowTemplateDetailRequest 请求对象
      * @return SyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse>
      */
     public SyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse> showTemplateDetailInvoker(
         ShowTemplateDetailRequest request) {
-        return new SyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse>(request,
-            DevStarMeta.showTemplateDetail, hcClient);
+        return new SyncInvoker<>(request, DevStarMeta.showTemplateDetail, hcClient);
     }
 
 }

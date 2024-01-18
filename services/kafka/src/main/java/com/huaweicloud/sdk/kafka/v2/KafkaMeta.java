@@ -197,9 +197,9 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateUserReq;
 public class KafkaMeta {
 
     public static final HttpRequestDef<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> batchCreateOrDeleteKafkaTag =
-        genForbatchCreateOrDeleteKafkaTag();
+        genForBatchCreateOrDeleteKafkaTag();
 
-    private static HttpRequestDef<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> genForbatchCreateOrDeleteKafkaTag() {
+    private static HttpRequestDef<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> genForBatchCreateOrDeleteKafkaTag() {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> builder =
             HttpRequestDef
@@ -215,16 +215,14 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteKafkaTagRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteKafkaTagRequest::getInstanceId,
+                BatchCreateOrDeleteKafkaTagRequest::setInstanceId));
         builder.<BatchCreateOrDeleteTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagReq.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteKafkaTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteKafkaTagRequest::getBody,
+                BatchCreateOrDeleteKafkaTagRequest::setBody));
 
         // response
 
@@ -232,9 +230,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteGroupRequest, BatchDeleteGroupResponse> batchDeleteGroup =
-        genForbatchDeleteGroup();
+        genForBatchDeleteGroup();
 
-    private static HttpRequestDef<BatchDeleteGroupRequest, BatchDeleteGroupResponse> genForbatchDeleteGroup() {
+    private static HttpRequestDef<BatchDeleteGroupRequest, BatchDeleteGroupResponse> genForBatchDeleteGroup() {
         // basic
         HttpRequestDef.Builder<BatchDeleteGroupRequest, BatchDeleteGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteGroupRequest.class, BatchDeleteGroupResponse.class)
@@ -247,16 +245,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteGroupRequest::getInstanceId, BatchDeleteGroupRequest::setInstanceId));
         builder.<BatchDeleteGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteGroupReq.class),
-            f -> f.withMarshaller(BatchDeleteGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteGroupRequest::getBody, BatchDeleteGroupRequest::setBody));
 
         // response
 
@@ -264,9 +258,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> batchDeleteInstanceTopic =
-        genForbatchDeleteInstanceTopic();
+        genForBatchDeleteInstanceTopic();
 
-    private static HttpRequestDef<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> genForbatchDeleteInstanceTopic() {
+    private static HttpRequestDef<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> genForBatchDeleteInstanceTopic() {
         // basic
         HttpRequestDef.Builder<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> builder =
             HttpRequestDef
@@ -280,16 +274,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteInstanceTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteInstanceTopicRequest::getInstanceId,
+                BatchDeleteInstanceTopicRequest::setInstanceId));
         builder.<BatchDeleteInstanceTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteInstanceTopicReq.class),
-            f -> f.withMarshaller(BatchDeleteInstanceTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteInstanceTopicRequest::getBody, BatchDeleteInstanceTopicRequest::setBody));
 
         // response
 
@@ -297,9 +288,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> batchDeleteInstanceUsers =
-        genForbatchDeleteInstanceUsers();
+        genForBatchDeleteInstanceUsers();
 
-    private static HttpRequestDef<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> genForbatchDeleteInstanceUsers() {
+    private static HttpRequestDef<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> genForBatchDeleteInstanceUsers() {
         // basic
         HttpRequestDef.Builder<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> builder =
             HttpRequestDef
@@ -313,16 +304,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteInstanceUsersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteInstanceUsersRequest::getInstanceId,
+                BatchDeleteInstanceUsersRequest::setInstanceId));
         builder.<BatchDeleteInstanceUsersReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteInstanceUsersReq.class),
-            f -> f.withMarshaller(BatchDeleteInstanceUsersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteInstanceUsersRequest::getBody, BatchDeleteInstanceUsersRequest::setBody));
 
         // response
 
@@ -330,9 +318,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstances =
-        genForbatchRestartOrDeleteInstances();
+        genForBatchRestartOrDeleteInstances();
 
-    private static HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> genForbatchRestartOrDeleteInstances() {
+    private static HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> genForBatchRestartOrDeleteInstances() {
         // basic
         HttpRequestDef.Builder<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> builder =
             HttpRequestDef
@@ -348,9 +336,8 @@ public class KafkaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchRestartOrDeleteInstanceReq.class),
-            f -> f.withMarshaller(BatchRestartOrDeleteInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRestartOrDeleteInstancesRequest::getBody,
+                BatchRestartOrDeleteInstancesRequest::setBody));
 
         // response
 
@@ -358,9 +345,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CloseKafkaManagerRequest, CloseKafkaManagerResponse> closeKafkaManager =
-        genForcloseKafkaManager();
+        genForCloseKafkaManager();
 
-    private static HttpRequestDef<CloseKafkaManagerRequest, CloseKafkaManagerResponse> genForcloseKafkaManager() {
+    private static HttpRequestDef<CloseKafkaManagerRequest, CloseKafkaManagerResponse> genForCloseKafkaManager() {
         // basic
         HttpRequestDef.Builder<CloseKafkaManagerRequest, CloseKafkaManagerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CloseKafkaManagerRequest.class, CloseKafkaManagerResponse.class)
@@ -373,9 +360,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CloseKafkaManagerRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CloseKafkaManagerRequest::getInstanceId, CloseKafkaManagerRequest::setInstanceId));
 
         // response
 
@@ -383,9 +368,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> createConnector =
-        genForcreateConnector();
+        genForCreateConnector();
 
-    private static HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> genForcreateConnector() {
+    private static HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> genForCreateConnector() {
         // basic
         HttpRequestDef.Builder<CreateConnectorRequest, CreateConnectorResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConnectorRequest.class, CreateConnectorResponse.class)
@@ -398,16 +383,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConnectorRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateConnectorRequest::getInstanceId, CreateConnectorRequest::setInstanceId));
         builder.<CreateConnectorReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateConnectorReq.class),
-            f -> f.withMarshaller(CreateConnectorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConnectorRequest::getBody, CreateConnectorRequest::setBody));
 
         // response
 
@@ -415,9 +396,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> createDeleteConnectorOrder =
-        genForcreateDeleteConnectorOrder();
+        genForCreateDeleteConnectorOrder();
 
-    private static HttpRequestDef<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> genForcreateDeleteConnectorOrder() {
+    private static HttpRequestDef<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> genForCreateDeleteConnectorOrder() {
         // basic
         HttpRequestDef.Builder<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> builder =
             HttpRequestDef
@@ -433,16 +414,14 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDeleteConnectorOrderRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDeleteConnectorOrderRequest::getInstanceId,
+                CreateDeleteConnectorOrderRequest::setInstanceId));
         builder.<ConnectorOrderRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ConnectorOrderRequestBody.class),
-            f -> f.withMarshaller(CreateDeleteConnectorOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDeleteConnectorOrderRequest::getBody,
+                CreateDeleteConnectorOrderRequest::setBody));
 
         // response
 
@@ -450,9 +429,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> createInstanceByEngine =
-        genForcreateInstanceByEngine();
+        genForCreateInstanceByEngine();
 
-    private static HttpRequestDef<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> genForcreateInstanceByEngine() {
+    private static HttpRequestDef<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> genForCreateInstanceByEngine() {
         // basic
         HttpRequestDef.Builder<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateInstanceByEngineRequest.class, CreateInstanceByEngineResponse.class)
@@ -465,16 +444,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceByEngineRequest.EngineEnum.class),
-            f -> f.withMarshaller(CreateInstanceByEngineRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceByEngineRequest::getEngine, CreateInstanceByEngineRequest::setEngine));
         builder.<CreateInstanceByEngineReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceByEngineReq.class),
-            f -> f.withMarshaller(CreateInstanceByEngineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceByEngineRequest::getBody, CreateInstanceByEngineRequest::setBody));
 
         // response
 
@@ -482,9 +457,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceTopicRequest, CreateInstanceTopicResponse> createInstanceTopic =
-        genForcreateInstanceTopic();
+        genForCreateInstanceTopic();
 
-    private static HttpRequestDef<CreateInstanceTopicRequest, CreateInstanceTopicResponse> genForcreateInstanceTopic() {
+    private static HttpRequestDef<CreateInstanceTopicRequest, CreateInstanceTopicResponse> genForCreateInstanceTopic() {
         // basic
         HttpRequestDef.Builder<CreateInstanceTopicRequest, CreateInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceTopicRequest.class, CreateInstanceTopicResponse.class)
@@ -497,16 +472,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInstanceTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceTopicRequest::getInstanceId,
+                CreateInstanceTopicRequest::setInstanceId));
         builder.<CreateInstanceTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceTopicReq.class),
-            f -> f.withMarshaller(CreateInstanceTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceTopicRequest::getBody, CreateInstanceTopicRequest::setBody));
 
         // response
 
@@ -514,9 +486,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceUserRequest, CreateInstanceUserResponse> createInstanceUser =
-        genForcreateInstanceUser();
+        genForCreateInstanceUser();
 
-    private static HttpRequestDef<CreateInstanceUserRequest, CreateInstanceUserResponse> genForcreateInstanceUser() {
+    private static HttpRequestDef<CreateInstanceUserRequest, CreateInstanceUserResponse> genForCreateInstanceUser() {
         // basic
         HttpRequestDef.Builder<CreateInstanceUserRequest, CreateInstanceUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceUserRequest.class, CreateInstanceUserResponse.class)
@@ -529,16 +501,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInstanceUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceUserRequest::getInstanceId, CreateInstanceUserRequest::setInstanceId));
         builder.<CreateInstanceUserReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceUserReq.class),
-            f -> f.withMarshaller(CreateInstanceUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceUserRequest::getBody, CreateInstanceUserRequest::setBody));
 
         // response
 
@@ -546,9 +514,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse> createKafkaConsumerGroup =
-        genForcreateKafkaConsumerGroup();
+        genForCreateKafkaConsumerGroup();
 
-    private static HttpRequestDef<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse> genForcreateKafkaConsumerGroup() {
+    private static HttpRequestDef<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse> genForCreateKafkaConsumerGroup() {
         // basic
         HttpRequestDef.Builder<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse> builder =
             HttpRequestDef
@@ -562,33 +530,29 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateKafkaConsumerGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateKafkaConsumerGroupRequest::getInstanceId,
+                CreateKafkaConsumerGroupRequest::setInstanceId));
         builder.<CreateGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateGroupReq.class),
-            f -> f.withMarshaller(CreateKafkaConsumerGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateKafkaConsumerGroupRequest::getBody, CreateKafkaConsumerGroupRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateKafkaConsumerGroupResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateKafkaConsumerGroupResponse::getBody,
+                CreateKafkaConsumerGroupResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse> createKafkaUserClientQuotaTask =
-        genForcreateKafkaUserClientQuotaTask();
+        genForCreateKafkaUserClientQuotaTask();
 
-    private static HttpRequestDef<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse> genForcreateKafkaUserClientQuotaTask() {
+    private static HttpRequestDef<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse> genForCreateKafkaUserClientQuotaTask() {
         // basic
         HttpRequestDef.Builder<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse> builder =
             HttpRequestDef
@@ -604,16 +568,14 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateKafkaUserClientQuotaTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateKafkaUserClientQuotaTaskRequest::getInstanceId,
+                CreateKafkaUserClientQuotaTaskRequest::setInstanceId));
         builder.<CreateKafkaUserClientQuotaTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateKafkaUserClientQuotaTaskReq.class),
-            f -> f.withMarshaller(CreateKafkaUserClientQuotaTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateKafkaUserClientQuotaTaskRequest::getBody,
+                CreateKafkaUserClientQuotaTaskRequest::setBody));
 
         // response
 
@@ -621,9 +583,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstance =
-        genForcreatePostPaidInstance();
+        genForCreatePostPaidInstance();
 
-    private static HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> genForcreatePostPaidInstance() {
+    private static HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> genForCreatePostPaidInstance() {
         // basic
         HttpRequestDef.Builder<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePostPaidInstanceRequest.class, CreatePostPaidInstanceResponse.class)
@@ -636,9 +598,7 @@ public class KafkaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePostPaidInstanceReq.class),
-            f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, CreatePostPaidInstanceRequest::setBody));
 
         // response
 
@@ -646,9 +606,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> createReassignmentTask =
-        genForcreateReassignmentTask();
+        genForCreateReassignmentTask();
 
-    private static HttpRequestDef<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> genForcreateReassignmentTask() {
+    private static HttpRequestDef<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> genForCreateReassignmentTask() {
         // basic
         HttpRequestDef.Builder<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateReassignmentTaskRequest.class, CreateReassignmentTaskResponse.class)
@@ -661,16 +621,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateReassignmentTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateReassignmentTaskRequest::getInstanceId,
+                CreateReassignmentTaskRequest::setInstanceId));
         builder.<PartitionReassignRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PartitionReassignRequest.class),
-            f -> f.withMarshaller(CreateReassignmentTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateReassignmentTaskRequest::getBody, CreateReassignmentTaskRequest::setBody));
 
         // response
 
@@ -678,9 +635,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CreateShrinkageJobRequest, CreateShrinkageJobResponse> createShrinkageJob =
-        genForcreateShrinkageJob();
+        genForCreateShrinkageJob();
 
-    private static HttpRequestDef<CreateShrinkageJobRequest, CreateShrinkageJobResponse> genForcreateShrinkageJob() {
+    private static HttpRequestDef<CreateShrinkageJobRequest, CreateShrinkageJobResponse> genForCreateShrinkageJob() {
         // basic
         HttpRequestDef.Builder<CreateShrinkageJobRequest, CreateShrinkageJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateShrinkageJobRequest.class, CreateShrinkageJobResponse.class)
@@ -693,23 +650,17 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateShrinkageJobRequest.EngineEnum.class),
-            f -> f.withMarshaller(CreateShrinkageJobRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(CreateShrinkageJobRequest::getEngine, CreateShrinkageJobRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateShrinkageJobRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateShrinkageJobRequest::getInstanceId, CreateShrinkageJobRequest::setInstanceId));
         builder.<CreateShrinkageJobRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateShrinkageJobRequestBody.class),
-            f -> f.withMarshaller(CreateShrinkageJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateShrinkageJobRequest::getBody, CreateShrinkageJobRequest::setBody));
 
         // response
 
@@ -717,9 +668,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<CreateSinkTaskRequest, CreateSinkTaskResponse> createSinkTask =
-        genForcreateSinkTask();
+        genForCreateSinkTask();
 
-    private static HttpRequestDef<CreateSinkTaskRequest, CreateSinkTaskResponse> genForcreateSinkTask() {
+    private static HttpRequestDef<CreateSinkTaskRequest, CreateSinkTaskResponse> genForCreateSinkTask() {
         // basic
         HttpRequestDef.Builder<CreateSinkTaskRequest, CreateSinkTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSinkTaskRequest.class, CreateSinkTaskResponse.class)
@@ -732,16 +683,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSinkTaskRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(CreateSinkTaskRequest::getConnectorId, CreateSinkTaskRequest::setConnectorId));
         builder.<CreateSinkTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSinkTaskReq.class),
-            f -> f.withMarshaller(CreateSinkTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSinkTaskRequest::getBody, CreateSinkTaskRequest::setBody));
 
         // response
 
@@ -749,9 +696,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask =
-        genFordeleteBackgroundTask();
+        genForDeleteBackgroundTask();
 
-    private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genFordeleteBackgroundTask() {
+    private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genForDeleteBackgroundTask() {
         // basic
         HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
@@ -764,16 +711,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getInstanceId,
+                DeleteBackgroundTaskRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, DeleteBackgroundTaskRequest::setTaskId));
 
         // response
 
@@ -781,9 +725,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<DeleteConnectorRequest, DeleteConnectorResponse> deleteConnector =
-        genFordeleteConnector();
+        genForDeleteConnector();
 
-    private static HttpRequestDef<DeleteConnectorRequest, DeleteConnectorResponse> genFordeleteConnector() {
+    private static HttpRequestDef<DeleteConnectorRequest, DeleteConnectorResponse> genForDeleteConnector() {
         // basic
         HttpRequestDef.Builder<DeleteConnectorRequest, DeleteConnectorResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteConnectorRequest.class, DeleteConnectorResponse.class)
@@ -796,9 +740,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnectorRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteConnectorRequest::getInstanceId, DeleteConnectorRequest::setInstanceId));
 
         // response
 
@@ -806,9 +748,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
-        genFordeleteInstance();
+        genForDeleteInstance();
 
-    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genFordeleteInstance() {
+    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genForDeleteInstance() {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
@@ -821,9 +763,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
 
         // response
 
@@ -831,9 +771,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> deleteKafkaUserClientQuotaTask =
-        genFordeleteKafkaUserClientQuotaTask();
+        genForDeleteKafkaUserClientQuotaTask();
 
-    private static HttpRequestDef<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> genFordeleteKafkaUserClientQuotaTask() {
+    private static HttpRequestDef<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> genForDeleteKafkaUserClientQuotaTask() {
         // basic
         HttpRequestDef.Builder<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> builder =
             HttpRequestDef
@@ -849,16 +789,14 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteKafkaUserClientQuotaTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteKafkaUserClientQuotaTaskRequest::getInstanceId,
+                DeleteKafkaUserClientQuotaTaskRequest::setInstanceId));
         builder.<DeleteKafkaUserClientQuotaTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteKafkaUserClientQuotaTaskReq.class),
-            f -> f.withMarshaller(DeleteKafkaUserClientQuotaTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteKafkaUserClientQuotaTaskRequest::getBody,
+                DeleteKafkaUserClientQuotaTaskRequest::setBody));
 
         // response
 
@@ -866,9 +804,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<DeleteSinkTaskRequest, DeleteSinkTaskResponse> deleteSinkTask =
-        genFordeleteSinkTask();
+        genForDeleteSinkTask();
 
-    private static HttpRequestDef<DeleteSinkTaskRequest, DeleteSinkTaskResponse> genFordeleteSinkTask() {
+    private static HttpRequestDef<DeleteSinkTaskRequest, DeleteSinkTaskResponse> genForDeleteSinkTask() {
         // basic
         HttpRequestDef.Builder<DeleteSinkTaskRequest, DeleteSinkTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSinkTaskRequest.class, DeleteSinkTaskResponse.class)
@@ -881,16 +819,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSinkTaskRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(DeleteSinkTaskRequest::getConnectorId, DeleteSinkTaskRequest::setConnectorId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSinkTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteSinkTaskRequest::getTaskId, DeleteSinkTaskRequest::setTaskId));
 
         // response
 
@@ -898,9 +832,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones =
-        genForlistAvailableZones();
+        genForListAvailableZones();
 
-    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForlistAvailableZones() {
+    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForListAvailableZones() {
         // basic
         HttpRequestDef.Builder<ListAvailableZonesRequest, ListAvailableZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAvailableZonesRequest.class, ListAvailableZonesResponse.class)
@@ -916,9 +850,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasks =
-        genForlistBackgroundTasks();
+        genForListBackgroundTasks();
 
-    private static HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> genForlistBackgroundTasks() {
+    private static HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> genForListBackgroundTasks() {
         // basic
         HttpRequestDef.Builder<ListBackgroundTasksRequest, ListBackgroundTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackgroundTasksRequest.class, ListBackgroundTasksResponse.class)
@@ -931,37 +865,28 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId,
+                ListBackgroundTasksRequest::setInstanceId));
         builder.<Integer>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, (req, v) -> {
-                req.setStart(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, ListBackgroundTasksRequest::setStart));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getLimit, ListBackgroundTasksRequest::setLimit));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getBeginTime, ListBackgroundTasksRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getEndTime, ListBackgroundTasksRequest::setEndTime));
 
         // response
 
@@ -969,9 +894,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProducts =
-        genForlistEngineProducts();
+        genForListEngineProducts();
 
-    private static HttpRequestDef<ListEngineProductsRequest, ListEngineProductsResponse> genForlistEngineProducts() {
+    private static HttpRequestDef<ListEngineProductsRequest, ListEngineProductsResponse> genForListEngineProducts() {
         // basic
         HttpRequestDef.Builder<ListEngineProductsRequest, ListEngineProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEngineProductsRequest.class, ListEngineProductsResponse.class)
@@ -984,16 +909,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListEngineProductsRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListEngineProductsRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListEngineProductsRequest::getEngine, ListEngineProductsRequest::setEngine));
         builder.<String>withRequestField("product_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEngineProductsRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ListEngineProductsRequest::getProductId, ListEngineProductsRequest::setProductId));
 
         // response
 
@@ -1001,9 +922,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> listInstanceConsumerGroups =
-        genForlistInstanceConsumerGroups();
+        genForListInstanceConsumerGroups();
 
-    private static HttpRequestDef<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> genForlistInstanceConsumerGroups() {
+    private static HttpRequestDef<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> genForListInstanceConsumerGroups() {
         // basic
         HttpRequestDef.Builder<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> builder =
             HttpRequestDef
@@ -1019,30 +940,26 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getInstanceId,
+                ListInstanceConsumerGroupsRequest::setInstanceId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getOffset,
+                ListInstanceConsumerGroupsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getLimit,
+                ListInstanceConsumerGroupsRequest::setLimit));
         builder.<String>withRequestField("group",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getGroup,
+                ListInstanceConsumerGroupsRequest::setGroup));
 
         // response
 
@@ -1050,9 +967,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ListInstanceTopicsRequest, ListInstanceTopicsResponse> listInstanceTopics =
-        genForlistInstanceTopics();
+        genForListInstanceTopics();
 
-    private static HttpRequestDef<ListInstanceTopicsRequest, ListInstanceTopicsResponse> genForlistInstanceTopics() {
+    private static HttpRequestDef<ListInstanceTopicsRequest, ListInstanceTopicsResponse> genForListInstanceTopics() {
         // basic
         HttpRequestDef.Builder<ListInstanceTopicsRequest, ListInstanceTopicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceTopicsRequest.class, ListInstanceTopicsResponse.class)
@@ -1065,23 +982,17 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTopicsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTopicsRequest::getInstanceId, ListInstanceTopicsRequest::setInstanceId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTopicsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTopicsRequest::getOffset, ListInstanceTopicsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTopicsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTopicsRequest::getLimit, ListInstanceTopicsRequest::setLimit));
 
         // response
 
@@ -1089,9 +1000,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
-        genForlistInstances();
+        genForListInstances();
 
-    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
@@ -1104,74 +1015,57 @@ public class KafkaMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getEngine, ListInstancesRequest::setEngine));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getName, ListInstancesRequest::setName));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getInstanceId, ListInstancesRequest::setInstanceId));
         builder.<ListInstancesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getStatus, ListInstancesRequest::setStatus));
         builder.<ListInstancesRequest.IncludeFailureEnum>withRequestField("include_failure",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.IncludeFailureEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getIncludeFailure, (req, v) -> {
-                req.setIncludeFailure(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getIncludeFailure, ListInstancesRequest::setIncludeFailure));
         builder.<ListInstancesRequest.ExactMatchNameEnum>withRequestField("exact_match_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.ExactMatchNameEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getExactMatchName, (req, v) -> {
-                req.setExactMatchName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getExactMatchName, ListInstancesRequest::setExactMatchName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getEnterpriseProjectId,
+                ListInstancesRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, ListInstancesRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForlistProducts();
+    public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForListProducts();
 
-    private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForlistProducts() {
+    private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForListProducts() {
         // basic
         HttpRequestDef.Builder<ListProductsRequest, ListProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductsRequest.class, ListProductsResponse.class)
@@ -1184,9 +1078,7 @@ public class KafkaMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListProductsRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListProductsRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getEngine, ListProductsRequest::setEngine));
 
         // response
 
@@ -1194,9 +1086,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ListSinkTasksRequest, ListSinkTasksResponse> listSinkTasks =
-        genForlistSinkTasks();
+        genForListSinkTasks();
 
-    private static HttpRequestDef<ListSinkTasksRequest, ListSinkTasksResponse> genForlistSinkTasks() {
+    private static HttpRequestDef<ListSinkTasksRequest, ListSinkTasksResponse> genForListSinkTasks() {
         // basic
         HttpRequestDef.Builder<ListSinkTasksRequest, ListSinkTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSinkTasksRequest.class, ListSinkTasksResponse.class)
@@ -1209,9 +1101,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSinkTasksRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(ListSinkTasksRequest::getConnectorId, ListSinkTasksRequest::setConnectorId));
 
         // response
 
@@ -1219,9 +1109,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ListTopicPartitionsRequest, ListTopicPartitionsResponse> listTopicPartitions =
-        genForlistTopicPartitions();
+        genForListTopicPartitions();
 
-    private static HttpRequestDef<ListTopicPartitionsRequest, ListTopicPartitionsResponse> genForlistTopicPartitions() {
+    private static HttpRequestDef<ListTopicPartitionsRequest, ListTopicPartitionsResponse> genForListTopicPartitions() {
         // basic
         HttpRequestDef.Builder<ListTopicPartitionsRequest, ListTopicPartitionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTopicPartitionsRequest.class, ListTopicPartitionsResponse.class)
@@ -1234,30 +1124,23 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopicPartitionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTopicPartitionsRequest::getInstanceId,
+                ListTopicPartitionsRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopicPartitionsRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ListTopicPartitionsRequest::getTopic, ListTopicPartitionsRequest::setTopic));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopicPartitionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTopicPartitionsRequest::getOffset, ListTopicPartitionsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopicPartitionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTopicPartitionsRequest::getLimit, ListTopicPartitionsRequest::setLimit));
 
         // response
 
@@ -1265,9 +1148,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ListTopicProducersRequest, ListTopicProducersResponse> listTopicProducers =
-        genForlistTopicProducers();
+        genForListTopicProducers();
 
-    private static HttpRequestDef<ListTopicProducersRequest, ListTopicProducersResponse> genForlistTopicProducers() {
+    private static HttpRequestDef<ListTopicProducersRequest, ListTopicProducersResponse> genForListTopicProducers() {
         // basic
         HttpRequestDef.Builder<ListTopicProducersRequest, ListTopicProducersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTopicProducersRequest.class, ListTopicProducersResponse.class)
@@ -1280,30 +1163,22 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopicProducersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTopicProducersRequest::getInstanceId, ListTopicProducersRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopicProducersRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ListTopicProducersRequest::getTopic, ListTopicProducersRequest::setTopic));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopicProducersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTopicProducersRequest::getOffset, ListTopicProducersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopicProducersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTopicProducersRequest::getLimit, ListTopicProducersRequest::setLimit));
 
         // response
 
@@ -1311,9 +1186,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> modifyInstanceConfigs =
-        genFormodifyInstanceConfigs();
+        genForModifyInstanceConfigs();
 
-    private static HttpRequestDef<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> genFormodifyInstanceConfigs() {
+    private static HttpRequestDef<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> genForModifyInstanceConfigs() {
         // basic
         HttpRequestDef.Builder<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, ModifyInstanceConfigsRequest.class, ModifyInstanceConfigsResponse.class)
@@ -1326,16 +1201,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyInstanceConfigsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ModifyInstanceConfigsRequest::getInstanceId,
+                ModifyInstanceConfigsRequest::setInstanceId));
         builder.<ModifyInstanceConfigsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyInstanceConfigsReq.class),
-            f -> f.withMarshaller(ModifyInstanceConfigsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyInstanceConfigsRequest::getBody, ModifyInstanceConfigsRequest::setBody));
 
         // response
 
@@ -1343,9 +1215,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ResetManagerPasswordRequest, ResetManagerPasswordResponse> resetManagerPassword =
-        genForresetManagerPassword();
+        genForResetManagerPassword();
 
-    private static HttpRequestDef<ResetManagerPasswordRequest, ResetManagerPasswordResponse> genForresetManagerPassword() {
+    private static HttpRequestDef<ResetManagerPasswordRequest, ResetManagerPasswordResponse> genForResetManagerPassword() {
         // basic
         HttpRequestDef.Builder<ResetManagerPasswordRequest, ResetManagerPasswordResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, ResetManagerPasswordRequest.class, ResetManagerPasswordResponse.class)
@@ -1358,16 +1230,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetManagerPasswordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetManagerPasswordRequest::getInstanceId,
+                ResetManagerPasswordRequest::setInstanceId));
         builder.<ResetManagerPasswordReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetManagerPasswordReq.class),
-            f -> f.withMarshaller(ResetManagerPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetManagerPasswordRequest::getBody, ResetManagerPasswordRequest::setBody));
 
         // response
 
@@ -1375,9 +1244,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ResetMessageOffsetRequest, ResetMessageOffsetResponse> resetMessageOffset =
-        genForresetMessageOffset();
+        genForResetMessageOffset();
 
-    private static HttpRequestDef<ResetMessageOffsetRequest, ResetMessageOffsetResponse> genForresetMessageOffset() {
+    private static HttpRequestDef<ResetMessageOffsetRequest, ResetMessageOffsetResponse> genForResetMessageOffset() {
         // basic
         HttpRequestDef.Builder<ResetMessageOffsetRequest, ResetMessageOffsetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetMessageOffsetRequest.class, ResetMessageOffsetResponse.class)
@@ -1390,23 +1259,17 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetMessageOffsetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetMessageOffsetRequest::getInstanceId, ResetMessageOffsetRequest::setInstanceId));
         builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetMessageOffsetRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(ResetMessageOffsetRequest::getGroup, ResetMessageOffsetRequest::setGroup));
         builder.<ResetMessageOffsetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetMessageOffsetReq.class),
-            f -> f.withMarshaller(ResetMessageOffsetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetMessageOffsetRequest::getBody, ResetMessageOffsetRequest::setBody));
 
         // response
 
@@ -1414,9 +1277,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse> resetMessageOffsetWithEngine =
-        genForresetMessageOffsetWithEngine();
+        genForResetMessageOffsetWithEngine();
 
-    private static HttpRequestDef<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse> genForresetMessageOffsetWithEngine() {
+    private static HttpRequestDef<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse> genForResetMessageOffsetWithEngine() {
         // basic
         HttpRequestDef.Builder<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse> builder =
             HttpRequestDef
@@ -1432,23 +1295,20 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetMessageOffsetWithEngineRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetMessageOffsetWithEngineRequest::getInstanceId,
+                ResetMessageOffsetWithEngineRequest::setInstanceId));
         builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetMessageOffsetWithEngineRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(ResetMessageOffsetWithEngineRequest::getGroup,
+                ResetMessageOffsetWithEngineRequest::setGroup));
         builder.<ResetMessageOffsetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetMessageOffsetReq.class),
-            f -> f.withMarshaller(ResetMessageOffsetWithEngineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetMessageOffsetWithEngineRequest::getBody,
+                ResetMessageOffsetWithEngineRequest::setBody));
 
         // response
 
@@ -1456,9 +1316,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
-        genForresetPassword();
+        genForResetPassword();
 
-    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
+    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForResetPassword() {
         // basic
         HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetPasswordRequest.class, ResetPasswordResponse.class)
@@ -1471,16 +1331,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, ResetPasswordRequest::setInstanceId));
         builder.<ResetPasswordReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetPasswordReq.class),
-            f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetPasswordRequest::getBody, ResetPasswordRequest::setBody));
 
         // response
 
@@ -1488,9 +1344,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ResetUserPasswrodRequest, ResetUserPasswrodResponse> resetUserPasswrod =
-        genForresetUserPasswrod();
+        genForResetUserPasswrod();
 
-    private static HttpRequestDef<ResetUserPasswrodRequest, ResetUserPasswrodResponse> genForresetUserPasswrod() {
+    private static HttpRequestDef<ResetUserPasswrodRequest, ResetUserPasswrodResponse> genForResetUserPasswrod() {
         // basic
         HttpRequestDef.Builder<ResetUserPasswrodRequest, ResetUserPasswrodResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetUserPasswrodRequest.class, ResetUserPasswrodResponse.class)
@@ -1503,23 +1359,17 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetUserPasswrodRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetUserPasswrodRequest::getInstanceId, ResetUserPasswrodRequest::setInstanceId));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetUserPasswrodRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(ResetUserPasswrodRequest::getUserName, ResetUserPasswrodRequest::setUserName));
         builder.<ResetUserPasswrodReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetUserPasswrodReq.class),
-            f -> f.withMarshaller(ResetUserPasswrodRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetUserPasswrodRequest::getBody, ResetUserPasswrodRequest::setBody));
 
         // response
 
@@ -1527,9 +1377,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstance =
-        genForresizeEngineInstance();
+        genForResizeEngineInstance();
 
-    private static HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> genForresizeEngineInstance() {
+    private static HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> genForResizeEngineInstance() {
         // basic
         HttpRequestDef.Builder<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ResizeEngineInstanceRequest.class, ResizeEngineInstanceResponse.class)
@@ -1542,23 +1392,18 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeEngineInstanceRequest.EngineEnum.class),
-            f -> f.withMarshaller(ResizeEngineInstanceRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getEngine, ResizeEngineInstanceRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeEngineInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getInstanceId,
+                ResizeEngineInstanceRequest::setInstanceId));
         builder.<ResizeEngineInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeEngineInstanceReq.class),
-            f -> f.withMarshaller(ResizeEngineInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getBody, ResizeEngineInstanceRequest::setBody));
 
         // response
 
@@ -1566,9 +1411,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
-        genForresizeInstance();
+        genForResizeInstance();
 
-    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
+    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForResizeInstance() {
         // basic
         HttpRequestDef.Builder<ResizeInstanceRequest, ResizeInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeInstanceRequest.class, ResizeInstanceResponse.class)
@@ -1581,16 +1426,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, ResizeInstanceRequest::setInstanceId));
         builder.<ResizeInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeInstanceReq.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getBody, ResizeInstanceRequest::setBody));
 
         // response
 
@@ -1598,9 +1439,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<RestartManagerRequest, RestartManagerResponse> restartManager =
-        genForrestartManager();
+        genForRestartManager();
 
-    private static HttpRequestDef<RestartManagerRequest, RestartManagerResponse> genForrestartManager() {
+    private static HttpRequestDef<RestartManagerRequest, RestartManagerResponse> genForRestartManager() {
         // basic
         HttpRequestDef.Builder<RestartManagerRequest, RestartManagerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RestartManagerRequest.class, RestartManagerResponse.class)
@@ -1613,9 +1454,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartManagerRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestartManagerRequest::getInstanceId, RestartManagerRequest::setInstanceId));
 
         // response
 
@@ -1623,9 +1462,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<SendKafkaMessageRequest, SendKafkaMessageResponse> sendKafkaMessage =
-        genForsendKafkaMessage();
+        genForSendKafkaMessage();
 
-    private static HttpRequestDef<SendKafkaMessageRequest, SendKafkaMessageResponse> genForsendKafkaMessage() {
+    private static HttpRequestDef<SendKafkaMessageRequest, SendKafkaMessageResponse> genForSendKafkaMessage() {
         // basic
         HttpRequestDef.Builder<SendKafkaMessageRequest, SendKafkaMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendKafkaMessageRequest.class, SendKafkaMessageResponse.class)
@@ -1638,23 +1477,17 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendKafkaMessageRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SendKafkaMessageRequest::getInstanceId, SendKafkaMessageRequest::setInstanceId));
         builder.<String>withRequestField("action_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendKafkaMessageRequest::getActionId, (req, v) -> {
-                req.setActionId(v);
-            }));
+            f -> f.withMarshaller(SendKafkaMessageRequest::getActionId, SendKafkaMessageRequest::setActionId));
         builder.<SendKafkaMessageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SendKafkaMessageRequestBody.class),
-            f -> f.withMarshaller(SendKafkaMessageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendKafkaMessageRequest::getBody, SendKafkaMessageRequest::setBody));
 
         // response
 
@@ -1662,9 +1495,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTask =
-        genForshowBackgroundTask();
+        genForShowBackgroundTask();
 
-    private static HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> genForshowBackgroundTask() {
+    private static HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> genForShowBackgroundTask() {
         // basic
         HttpRequestDef.Builder<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackgroundTaskRequest.class, ShowBackgroundTaskResponse.class)
@@ -1677,16 +1510,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackgroundTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowBackgroundTaskRequest::getInstanceId, ShowBackgroundTaskRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackgroundTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowBackgroundTaskRequest::getTaskId, ShowBackgroundTaskRequest::setTaskId));
 
         // response
 
@@ -1694,9 +1523,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchy =
-        genForshowCesHierarchy();
+        genForShowCesHierarchy();
 
-    private static HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> genForshowCesHierarchy() {
+    private static HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> genForShowCesHierarchy() {
         // basic
         HttpRequestDef.Builder<ShowCesHierarchyRequest, ShowCesHierarchyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCesHierarchyRequest.class, ShowCesHierarchyResponse.class)
@@ -1709,18 +1538,16 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCesHierarchyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowCesHierarchyRequest::getInstanceId, ShowCesHierarchyRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowClusterRequest, ShowClusterResponse> showCluster = genForshowCluster();
+    public static final HttpRequestDef<ShowClusterRequest, ShowClusterResponse> showCluster = genForShowCluster();
 
-    private static HttpRequestDef<ShowClusterRequest, ShowClusterResponse> genForshowCluster() {
+    private static HttpRequestDef<ShowClusterRequest, ShowClusterResponse> genForShowCluster() {
         // basic
         HttpRequestDef.Builder<ShowClusterRequest, ShowClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterRequest.class, ShowClusterResponse.class)
@@ -1733,9 +1560,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterRequest::getInstanceId, ShowClusterRequest::setInstanceId));
 
         // response
 
@@ -1743,9 +1568,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowCoordinatorsRequest, ShowCoordinatorsResponse> showCoordinators =
-        genForshowCoordinators();
+        genForShowCoordinators();
 
-    private static HttpRequestDef<ShowCoordinatorsRequest, ShowCoordinatorsResponse> genForshowCoordinators() {
+    private static HttpRequestDef<ShowCoordinatorsRequest, ShowCoordinatorsResponse> genForShowCoordinators() {
         // basic
         HttpRequestDef.Builder<ShowCoordinatorsRequest, ShowCoordinatorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCoordinatorsRequest.class, ShowCoordinatorsResponse.class)
@@ -1758,9 +1583,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCoordinatorsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowCoordinatorsRequest::getInstanceId, ShowCoordinatorsRequest::setInstanceId));
 
         // response
 
@@ -1768,9 +1591,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfo =
-        genForshowEngineInstanceExtendProductInfo();
+        genForShowEngineInstanceExtendProductInfo();
 
-    private static HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> genForshowEngineInstanceExtendProductInfo() {
+    private static HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> genForShowEngineInstanceExtendProductInfo() {
         // basic
         HttpRequestDef.Builder<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> builder =
             HttpRequestDef
@@ -1786,32 +1609,29 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.EngineEnum.class),
-            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getEngine,
+                ShowEngineInstanceExtendProductInfoRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getInstanceId,
+                ShowEngineInstanceExtendProductInfoRequest::setInstanceId));
         builder.<ShowEngineInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getType,
+                ShowEngineInstanceExtendProductInfoRequest::setType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowGroupsRequest, ShowGroupsResponse> showGroups = genForshowGroups();
+    public static final HttpRequestDef<ShowGroupsRequest, ShowGroupsResponse> showGroups = genForShowGroups();
 
-    private static HttpRequestDef<ShowGroupsRequest, ShowGroupsResponse> genForshowGroups() {
+    private static HttpRequestDef<ShowGroupsRequest, ShowGroupsResponse> genForShowGroups() {
         // basic
         HttpRequestDef.Builder<ShowGroupsRequest, ShowGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowGroupsRequest.class, ShowGroupsResponse.class)
@@ -1824,25 +1644,21 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGroupsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowGroupsRequest::getInstanceId, ShowGroupsRequest::setInstanceId));
         builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGroupsRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(ShowGroupsRequest::getGroup, ShowGroupsRequest::setGroup));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForshowInstance();
+    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForShowInstance();
 
-    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForshowInstance() {
+    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForShowInstance() {
         // basic
         HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
@@ -1855,9 +1671,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, ShowInstanceRequest::setInstanceId));
 
         // response
 
@@ -1865,9 +1679,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse> showInstanceConfigs =
-        genForshowInstanceConfigs();
+        genForShowInstanceConfigs();
 
-    private static HttpRequestDef<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse> genForshowInstanceConfigs() {
+    private static HttpRequestDef<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse> genForShowInstanceConfigs() {
         // basic
         HttpRequestDef.Builder<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceConfigsRequest.class, ShowInstanceConfigsResponse.class)
@@ -1880,9 +1694,8 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceConfigsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceConfigsRequest::getInstanceId,
+                ShowInstanceConfigsRequest::setInstanceId));
 
         // response
 
@@ -1890,9 +1703,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfo =
-        genForshowInstanceExtendProductInfo();
+        genForShowInstanceExtendProductInfo();
 
-    private static HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> genForshowInstanceExtendProductInfo() {
+    private static HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> genForShowInstanceExtendProductInfo() {
         // basic
         HttpRequestDef.Builder<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> builder =
             HttpRequestDef
@@ -1908,23 +1721,20 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getInstanceId,
+                ShowInstanceExtendProductInfoRequest::setInstanceId));
         builder.<ShowInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowInstanceExtendProductInfoRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getType,
+                ShowInstanceExtendProductInfoRequest::setType));
         builder.<ShowInstanceExtendProductInfoRequest.EngineEnum>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowInstanceExtendProductInfoRequest.EngineEnum.class),
-            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine,
+                ShowInstanceExtendProductInfoRequest::setEngine));
 
         // response
 
@@ -1932,9 +1742,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> showInstanceMessages =
-        genForshowInstanceMessages();
+        genForShowInstanceMessages();
 
-    private static HttpRequestDef<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> genForshowInstanceMessages() {
+    private static HttpRequestDef<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> genForShowInstanceMessages() {
         // basic
         HttpRequestDef.Builder<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowInstanceMessagesRequest.class, ShowInstanceMessagesResponse.class)
@@ -1947,79 +1757,61 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getInstanceId,
+                ShowInstanceMessagesRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getTopic, ShowInstanceMessagesRequest::setTopic));
         builder.<Boolean>withRequestField("asc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getAsc, (req, v) -> {
-                req.setAsc(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getAsc, ShowInstanceMessagesRequest::setAsc));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getStartTime,
+                ShowInstanceMessagesRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getEndTime, ShowInstanceMessagesRequest::setEndTime));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getLimit, ShowInstanceMessagesRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getOffset, ShowInstanceMessagesRequest::setOffset));
         builder.<Boolean>withRequestField("download",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getDownload, (req, v) -> {
-                req.setDownload(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getDownload, ShowInstanceMessagesRequest::setDownload));
         builder.<String>withRequestField("message_offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getMessageOffset, (req, v) -> {
-                req.setMessageOffset(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getMessageOffset,
+                ShowInstanceMessagesRequest::setMessageOffset));
         builder.<String>withRequestField("partition",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getPartition, (req, v) -> {
-                req.setPartition(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getPartition,
+                ShowInstanceMessagesRequest::setPartition));
         builder.<String>withRequestField("keyword",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMessagesRequest::getKeyword, (req, v) -> {
-                req.setKeyword(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getKeyword, ShowInstanceMessagesRequest::setKeyword));
 
         // response
 
@@ -2027,9 +1819,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> showInstanceTopicDetail =
-        genForshowInstanceTopicDetail();
+        genForShowInstanceTopicDetail();
 
-    private static HttpRequestDef<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> genForshowInstanceTopicDetail() {
+    private static HttpRequestDef<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> genForShowInstanceTopicDetail() {
         // basic
         HttpRequestDef.Builder<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowInstanceTopicDetailRequest.class, ShowInstanceTopicDetailResponse.class)
@@ -2042,16 +1834,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceTopicDetailRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceTopicDetailRequest::getInstanceId,
+                ShowInstanceTopicDetailRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceTopicDetailRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceTopicDetailRequest::getTopic, ShowInstanceTopicDetailRequest::setTopic));
 
         // response
 
@@ -2059,9 +1848,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceUsersRequest, ShowInstanceUsersResponse> showInstanceUsers =
-        genForshowInstanceUsers();
+        genForShowInstanceUsers();
 
-    private static HttpRequestDef<ShowInstanceUsersRequest, ShowInstanceUsersResponse> genForshowInstanceUsers() {
+    private static HttpRequestDef<ShowInstanceUsersRequest, ShowInstanceUsersResponse> genForShowInstanceUsers() {
         // basic
         HttpRequestDef.Builder<ShowInstanceUsersRequest, ShowInstanceUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceUsersRequest.class, ShowInstanceUsersResponse.class)
@@ -2074,9 +1863,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceUsersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceUsersRequest::getInstanceId, ShowInstanceUsersRequest::setInstanceId));
 
         // response
 
@@ -2084,9 +1871,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> showKafkaProjectTags =
-        genForshowKafkaProjectTags();
+        genForShowKafkaProjectTags();
 
-    private static HttpRequestDef<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> genForshowKafkaProjectTags() {
+    private static HttpRequestDef<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> genForShowKafkaProjectTags() {
         // basic
         HttpRequestDef.Builder<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowKafkaProjectTagsRequest.class, ShowKafkaProjectTagsResponse.class)
@@ -2102,9 +1889,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowKafkaTagsRequest, ShowKafkaTagsResponse> showKafkaTags =
-        genForshowKafkaTags();
+        genForShowKafkaTags();
 
-    private static HttpRequestDef<ShowKafkaTagsRequest, ShowKafkaTagsResponse> genForshowKafkaTags() {
+    private static HttpRequestDef<ShowKafkaTagsRequest, ShowKafkaTagsResponse> genForShowKafkaTags() {
         // basic
         HttpRequestDef.Builder<ShowKafkaTagsRequest, ShowKafkaTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowKafkaTagsRequest.class, ShowKafkaTagsResponse.class)
@@ -2117,9 +1904,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowKafkaTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowKafkaTagsRequest::getInstanceId, ShowKafkaTagsRequest::setInstanceId));
 
         // response
 
@@ -2127,9 +1912,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusage =
-        genForshowKafkaTopicPartitionDiskusage();
+        genForShowKafkaTopicPartitionDiskusage();
 
-    private static HttpRequestDef<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> genForshowKafkaTopicPartitionDiskusage() {
+    private static HttpRequestDef<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> genForShowKafkaTopicPartitionDiskusage() {
         // basic
         HttpRequestDef.Builder<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> builder =
             HttpRequestDef
@@ -2145,30 +1930,26 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getInstanceId,
+                ShowKafkaTopicPartitionDiskusageRequest::setInstanceId));
         builder.<String>withRequestField("minSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getMinSize, (req, v) -> {
-                req.setMinSize(v);
-            }));
+            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getMinSize,
+                ShowKafkaTopicPartitionDiskusageRequest::setMinSize));
         builder.<String>withRequestField("top",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getTop, (req, v) -> {
-                req.setTop(v);
-            }));
+            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getTop,
+                ShowKafkaTopicPartitionDiskusageRequest::setTop));
         builder.<String>withRequestField("percentage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getPercentage, (req, v) -> {
-                req.setPercentage(v);
-            }));
+            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getPercentage,
+                ShowKafkaTopicPartitionDiskusageRequest::setPercentage));
 
         // response
 
@@ -2176,9 +1957,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse> showKafkaUserClientQuota =
-        genForshowKafkaUserClientQuota();
+        genForShowKafkaUserClientQuota();
 
-    private static HttpRequestDef<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse> genForshowKafkaUserClientQuota() {
+    private static HttpRequestDef<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse> genForShowKafkaUserClientQuota() {
         // basic
         HttpRequestDef.Builder<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse> builder =
             HttpRequestDef
@@ -2192,23 +1973,20 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowKafkaUserClientQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowKafkaUserClientQuotaRequest::getInstanceId,
+                ShowKafkaUserClientQuotaRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowKafkaUserClientQuotaRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowKafkaUserClientQuotaRequest::getOffset,
+                ShowKafkaUserClientQuotaRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowKafkaUserClientQuotaRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowKafkaUserClientQuotaRequest::getLimit,
+                ShowKafkaUserClientQuotaRequest::setLimit));
 
         // response
 
@@ -2216,9 +1994,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindows =
-        genForshowMaintainWindows();
+        genForShowMaintainWindows();
 
-    private static HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> genForshowMaintainWindows() {
+    private static HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> genForShowMaintainWindows() {
         // basic
         HttpRequestDef.Builder<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMaintainWindowsRequest.class, ShowMaintainWindowsResponse.class)
@@ -2233,9 +2011,9 @@ public class KafkaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMessagesRequest, ShowMessagesResponse> showMessages = genForshowMessages();
+    public static final HttpRequestDef<ShowMessagesRequest, ShowMessagesResponse> showMessages = genForShowMessages();
 
-    private static HttpRequestDef<ShowMessagesRequest, ShowMessagesResponse> genForshowMessages() {
+    private static HttpRequestDef<ShowMessagesRequest, ShowMessagesResponse> genForShowMessages() {
         // basic
         HttpRequestDef.Builder<ShowMessagesRequest, ShowMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMessagesRequest.class, ShowMessagesResponse.class)
@@ -2248,51 +2026,37 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMessagesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowMessagesRequest::getInstanceId, ShowMessagesRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMessagesRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ShowMessagesRequest::getTopic, ShowMessagesRequest::setTopic));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMessagesRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowMessagesRequest::getStartTime, ShowMessagesRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMessagesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowMessagesRequest::getEndTime, ShowMessagesRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMessagesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowMessagesRequest::getLimit, ShowMessagesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMessagesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowMessagesRequest::getOffset, ShowMessagesRequest::setOffset));
         builder.<String>withRequestField("partition",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMessagesRequest::getPartition, (req, v) -> {
-                req.setPartition(v);
-            }));
+            f -> f.withMarshaller(ShowMessagesRequest::getPartition, ShowMessagesRequest::setPartition));
 
         // response
 
@@ -2300,9 +2064,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> showPartitionBeginningMessage =
-        genForshowPartitionBeginningMessage();
+        genForShowPartitionBeginningMessage();
 
-    private static HttpRequestDef<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> genForshowPartitionBeginningMessage() {
+    private static HttpRequestDef<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> genForShowPartitionBeginningMessage() {
         // basic
         HttpRequestDef.Builder<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> builder =
             HttpRequestDef
@@ -2319,23 +2083,20 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionBeginningMessageRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionBeginningMessageRequest::getInstanceId,
+                ShowPartitionBeginningMessageRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionBeginningMessageRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionBeginningMessageRequest::getTopic,
+                ShowPartitionBeginningMessageRequest::setTopic));
         builder.<Integer>withRequestField("partition",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPartitionBeginningMessageRequest::getPartition, (req, v) -> {
-                req.setPartition(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionBeginningMessageRequest::getPartition,
+                ShowPartitionBeginningMessageRequest::setPartition));
 
         // response
 
@@ -2343,9 +2104,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> showPartitionEndMessage =
-        genForshowPartitionEndMessage();
+        genForShowPartitionEndMessage();
 
-    private static HttpRequestDef<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> genForshowPartitionEndMessage() {
+    private static HttpRequestDef<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> genForShowPartitionEndMessage() {
         // basic
         HttpRequestDef.Builder<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPartitionEndMessageRequest.class, ShowPartitionEndMessageResponse.class)
@@ -2359,23 +2120,19 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionEndMessageRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionEndMessageRequest::getInstanceId,
+                ShowPartitionEndMessageRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionEndMessageRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionEndMessageRequest::getTopic, ShowPartitionEndMessageRequest::setTopic));
         builder.<Integer>withRequestField("partition",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPartitionEndMessageRequest::getPartition, (req, v) -> {
-                req.setPartition(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionEndMessageRequest::getPartition,
+                ShowPartitionEndMessageRequest::setPartition));
 
         // response
 
@@ -2383,9 +2140,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowPartitionMessageRequest, ShowPartitionMessageResponse> showPartitionMessage =
-        genForshowPartitionMessage();
+        genForShowPartitionMessage();
 
-    private static HttpRequestDef<ShowPartitionMessageRequest, ShowPartitionMessageResponse> genForshowPartitionMessage() {
+    private static HttpRequestDef<ShowPartitionMessageRequest, ShowPartitionMessageResponse> genForShowPartitionMessage() {
         // basic
         HttpRequestDef.Builder<ShowPartitionMessageRequest, ShowPartitionMessageResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPartitionMessageRequest.class, ShowPartitionMessageResponse.class)
@@ -2399,30 +2156,25 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionMessageRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionMessageRequest::getInstanceId,
+                ShowPartitionMessageRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionMessageRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionMessageRequest::getTopic, ShowPartitionMessageRequest::setTopic));
         builder.<Integer>withRequestField("partition",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPartitionMessageRequest::getPartition, (req, v) -> {
-                req.setPartition(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionMessageRequest::getPartition,
+                ShowPartitionMessageRequest::setPartition));
         builder.<String>withRequestField("message_offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionMessageRequest::getMessageOffset, (req, v) -> {
-                req.setMessageOffset(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionMessageRequest::getMessageOffset,
+                ShowPartitionMessageRequest::setMessageOffset));
 
         // response
 
@@ -2430,9 +2182,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> showShrinkCheckResult =
-        genForshowShrinkCheckResult();
+        genForShowShrinkCheckResult();
 
-    private static HttpRequestDef<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> genForshowShrinkCheckResult() {
+    private static HttpRequestDef<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> genForShowShrinkCheckResult() {
         // basic
         HttpRequestDef.Builder<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowShrinkCheckResultRequest.class, ShowShrinkCheckResultResponse.class)
@@ -2445,23 +2197,18 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowShrinkCheckResultRequest.EngineEnum.class),
-            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getEngine, ShowShrinkCheckResultRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getInstanceId,
+                ShowShrinkCheckResultRequest::setInstanceId));
         builder.<ShowShrinkCheckRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowShrinkCheckRequestBody.class),
-            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getBody, ShowShrinkCheckResultRequest::setBody));
 
         // response
 
@@ -2469,9 +2216,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetail =
-        genForshowSinkTaskDetail();
+        genForShowSinkTaskDetail();
 
-    private static HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> genForshowSinkTaskDetail() {
+    private static HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> genForShowSinkTaskDetail() {
         // basic
         HttpRequestDef.Builder<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSinkTaskDetailRequest.class, ShowSinkTaskDetailResponse.class)
@@ -2484,23 +2231,18 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSinkTaskDetailRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(ShowSinkTaskDetailRequest::getConnectorId,
+                ShowSinkTaskDetailRequest::setConnectorId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSinkTaskDetailRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowSinkTaskDetailRequest::getTaskId, ShowSinkTaskDetailRequest::setTaskId));
         builder.<ShowSinkTaskDetailRequest.TopicInfoEnum>withRequestField("topic-info",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSinkTaskDetailRequest.TopicInfoEnum.class),
-            f -> f.withMarshaller(ShowSinkTaskDetailRequest::getTopicInfo, (req, v) -> {
-                req.setTopicInfo(v);
-            }));
+            f -> f.withMarshaller(ShowSinkTaskDetailRequest::getTopicInfo, ShowSinkTaskDetailRequest::setTopicInfo));
 
         // response
 
@@ -2508,9 +2250,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicy =
-        genForshowTopicAccessPolicy();
+        genForShowTopicAccessPolicy();
 
-    private static HttpRequestDef<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> genForshowTopicAccessPolicy() {
+    private static HttpRequestDef<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> genForShowTopicAccessPolicy() {
         // basic
         HttpRequestDef.Builder<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowTopicAccessPolicyRequest.class, ShowTopicAccessPolicyResponse.class)
@@ -2523,16 +2265,14 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTopicAccessPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowTopicAccessPolicyRequest::getInstanceId,
+                ShowTopicAccessPolicyRequest::setInstanceId));
         builder.<String>withRequestField("topic_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTopicAccessPolicyRequest::getTopicName, (req, v) -> {
-                req.setTopicName(v);
-            }));
+            f -> f.withMarshaller(ShowTopicAccessPolicyRequest::getTopicName,
+                ShowTopicAccessPolicyRequest::setTopicName));
 
         // response
 
@@ -2540,9 +2280,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
-        genForupdateInstance();
+        genForUpdateInstance();
 
-    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
+    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForUpdateInstance() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
@@ -2555,16 +2295,12 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, UpdateInstanceRequest::setInstanceId));
         builder.<UpdateInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceReq.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getBody, UpdateInstanceRequest::setBody));
 
         // response
 
@@ -2572,9 +2308,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> updateInstanceAutoCreateTopic =
-        genForupdateInstanceAutoCreateTopic();
+        genForUpdateInstanceAutoCreateTopic();
 
-    private static HttpRequestDef<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> genForupdateInstanceAutoCreateTopic() {
+    private static HttpRequestDef<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> genForUpdateInstanceAutoCreateTopic() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> builder =
             HttpRequestDef
@@ -2590,16 +2326,14 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceAutoCreateTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceAutoCreateTopicRequest::getInstanceId,
+                UpdateInstanceAutoCreateTopicRequest::setInstanceId));
         builder.<UpdateInstanceAutoCreateTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceAutoCreateTopicReq.class),
-            f -> f.withMarshaller(UpdateInstanceAutoCreateTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceAutoCreateTopicRequest::getBody,
+                UpdateInstanceAutoCreateTopicRequest::setBody));
 
         // response
 
@@ -2607,9 +2341,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse> updateInstanceConsumerGroup =
-        genForupdateInstanceConsumerGroup();
+        genForUpdateInstanceConsumerGroup();
 
-    private static HttpRequestDef<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse> genForupdateInstanceConsumerGroup() {
+    private static HttpRequestDef<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse> genForUpdateInstanceConsumerGroup() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse> builder =
             HttpRequestDef
@@ -2625,30 +2359,26 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getEngine,
+                UpdateInstanceConsumerGroupRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getInstanceId,
+                UpdateInstanceConsumerGroupRequest::setInstanceId));
         builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getGroup,
+                UpdateInstanceConsumerGroupRequest::setGroup));
         builder.<CreateGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateGroupReq.class),
-            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getBody,
+                UpdateInstanceConsumerGroupRequest::setBody));
 
         // response
 
@@ -2656,9 +2386,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> updateInstanceCrossVpcIp =
-        genForupdateInstanceCrossVpcIp();
+        genForUpdateInstanceCrossVpcIp();
 
-    private static HttpRequestDef<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> genForupdateInstanceCrossVpcIp() {
+    private static HttpRequestDef<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> genForUpdateInstanceCrossVpcIp() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> builder =
             HttpRequestDef
@@ -2672,16 +2402,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceCrossVpcIpRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceCrossVpcIpRequest::getInstanceId,
+                UpdateInstanceCrossVpcIpRequest::setInstanceId));
         builder.<UpdateInstanceCrossVpcIpReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceCrossVpcIpReq.class),
-            f -> f.withMarshaller(UpdateInstanceCrossVpcIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceCrossVpcIpRequest::getBody, UpdateInstanceCrossVpcIpRequest::setBody));
 
         // response
 
@@ -2689,9 +2416,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> updateInstanceTopic =
-        genForupdateInstanceTopic();
+        genForUpdateInstanceTopic();
 
-    private static HttpRequestDef<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> genForupdateInstanceTopic() {
+    private static HttpRequestDef<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> genForUpdateInstanceTopic() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceTopicRequest.class, UpdateInstanceTopicResponse.class)
@@ -2704,16 +2431,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceTopicRequest::getInstanceId,
+                UpdateInstanceTopicRequest::setInstanceId));
         builder.<UpdateInstanceTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceTopicReq.class),
-            f -> f.withMarshaller(UpdateInstanceTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceTopicRequest::getBody, UpdateInstanceTopicRequest::setBody));
 
         // response
 
@@ -2721,9 +2445,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceUserRequest, UpdateInstanceUserResponse> updateInstanceUser =
-        genForupdateInstanceUser();
+        genForUpdateInstanceUser();
 
-    private static HttpRequestDef<UpdateInstanceUserRequest, UpdateInstanceUserResponse> genForupdateInstanceUser() {
+    private static HttpRequestDef<UpdateInstanceUserRequest, UpdateInstanceUserResponse> genForUpdateInstanceUser() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceUserRequest, UpdateInstanceUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceUserRequest.class, UpdateInstanceUserResponse.class)
@@ -2736,30 +2460,22 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceUserRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceUserRequest::getEngine, UpdateInstanceUserRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceUserRequest::getInstanceId, UpdateInstanceUserRequest::setInstanceId));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceUserRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceUserRequest::getUserName, UpdateInstanceUserRequest::setUserName));
         builder.<UpdateUserReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateUserReq.class),
-            f -> f.withMarshaller(UpdateInstanceUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceUserRequest::getBody, UpdateInstanceUserRequest::setBody));
 
         // response
 
@@ -2767,9 +2483,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> updateKafkaUserClientQuotaTask =
-        genForupdateKafkaUserClientQuotaTask();
+        genForUpdateKafkaUserClientQuotaTask();
 
-    private static HttpRequestDef<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> genForupdateKafkaUserClientQuotaTask() {
+    private static HttpRequestDef<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> genForUpdateKafkaUserClientQuotaTask() {
         // basic
         HttpRequestDef.Builder<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> builder =
             HttpRequestDef
@@ -2785,16 +2501,14 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateKafkaUserClientQuotaTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateKafkaUserClientQuotaTaskRequest::getInstanceId,
+                UpdateKafkaUserClientQuotaTaskRequest::setInstanceId));
         builder.<UpdateKafkaUserClientQuotaTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateKafkaUserClientQuotaTaskReq.class),
-            f -> f.withMarshaller(UpdateKafkaUserClientQuotaTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateKafkaUserClientQuotaTaskRequest::getBody,
+                UpdateKafkaUserClientQuotaTaskRequest::setBody));
 
         // response
 
@@ -2802,9 +2516,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> updateSinkTaskQuota =
-        genForupdateSinkTaskQuota();
+        genForUpdateSinkTaskQuota();
 
-    private static HttpRequestDef<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> genForupdateSinkTaskQuota() {
+    private static HttpRequestDef<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> genForUpdateSinkTaskQuota() {
         // basic
         HttpRequestDef.Builder<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSinkTaskQuotaRequest.class, UpdateSinkTaskQuotaResponse.class)
@@ -2817,16 +2531,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSinkTaskQuotaRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(UpdateSinkTaskQuotaRequest::getConnectorId,
+                UpdateSinkTaskQuotaRequest::setConnectorId));
         builder.<UpdateSinkTaskQuotaReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSinkTaskQuotaReq.class),
-            f -> f.withMarshaller(UpdateSinkTaskQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSinkTaskQuotaRequest::getBody, UpdateSinkTaskQuotaRequest::setBody));
 
         // response
 
@@ -2834,9 +2545,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicy =
-        genForupdateTopicAccessPolicy();
+        genForUpdateTopicAccessPolicy();
 
-    private static HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> genForupdateTopicAccessPolicy() {
+    private static HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> genForUpdateTopicAccessPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateTopicAccessPolicyRequest.class, UpdateTopicAccessPolicyResponse.class)
@@ -2849,16 +2560,13 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getInstanceId,
+                UpdateTopicAccessPolicyRequest::setInstanceId));
         builder.<UpdateTopicAccessPolicyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTopicAccessPolicyReq.class),
-            f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getBody, UpdateTopicAccessPolicyRequest::setBody));
 
         // response
 
@@ -2866,9 +2574,9 @@ public class KafkaMeta {
     }
 
     public static final HttpRequestDef<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> updateTopicReplica =
-        genForupdateTopicReplica();
+        genForUpdateTopicReplica();
 
-    private static HttpRequestDef<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> genForupdateTopicReplica() {
+    private static HttpRequestDef<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> genForUpdateTopicReplica() {
         // basic
         HttpRequestDef.Builder<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateTopicReplicaRequest.class, UpdateTopicReplicaResponse.class)
@@ -2881,23 +2589,17 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTopicReplicaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateTopicReplicaRequest::getInstanceId, UpdateTopicReplicaRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTopicReplicaRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(UpdateTopicReplicaRequest::getTopic, UpdateTopicReplicaRequest::setTopic));
         builder.<ResetReplicaReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetReplicaReq.class),
-            f -> f.withMarshaller(UpdateTopicReplicaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTopicReplicaRequest::getBody, UpdateTopicReplicaRequest::setBody));
 
         // response
 

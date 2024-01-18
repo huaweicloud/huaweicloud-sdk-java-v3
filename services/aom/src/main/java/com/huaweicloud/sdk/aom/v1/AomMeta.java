@@ -47,9 +47,9 @@ import java.util.List;
 public class AomMeta {
 
     public static final HttpRequestDef<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> createFastExecuteScript =
-        genForcreateFastExecuteScript();
+        genForCreateFastExecuteScript();
 
-    private static HttpRequestDef<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> genForcreateFastExecuteScript() {
+    private static HttpRequestDef<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> genForCreateFastExecuteScript() {
         // basic
         HttpRequestDef.Builder<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateFastExecuteScriptRequest.class, CreateFastExecuteScriptResponse.class)
@@ -62,9 +62,7 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HISFastScript.class),
-            f -> f.withMarshaller(CreateFastExecuteScriptRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFastExecuteScriptRequest::getBody, CreateFastExecuteScriptRequest::setBody));
 
         // response
 
@@ -72,9 +70,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflow =
-        genForcreateWorkflow();
+        genForCreateWorkflow();
 
-    private static HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> genForcreateWorkflow() {
+    private static HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> genForCreateWorkflow() {
         // basic
         HttpRequestDef.Builder<CreateWorkflowRequest, CreateWorkflowResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateWorkflowRequest.class, CreateWorkflowResponse.class)
@@ -87,9 +85,7 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WorkflowRequestBody.class),
-            f -> f.withMarshaller(CreateWorkflowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateWorkflowRequest::getBody, CreateWorkflowRequest::setBody));
 
         // response
 
@@ -97,9 +93,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ExecuteWorkflowRequest, ExecuteWorkflowResponse> executeWorkflow =
-        genForexecuteWorkflow();
+        genForExecuteWorkflow();
 
-    private static HttpRequestDef<ExecuteWorkflowRequest, ExecuteWorkflowResponse> genForexecuteWorkflow() {
+    private static HttpRequestDef<ExecuteWorkflowRequest, ExecuteWorkflowResponse> genForExecuteWorkflow() {
         // basic
         HttpRequestDef.Builder<ExecuteWorkflowRequest, ExecuteWorkflowResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExecuteWorkflowRequest.class, ExecuteWorkflowResponse.class)
@@ -112,9 +108,7 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteWorkflowRequest::getWorkflowId, (req, v) -> {
-                req.setWorkflowId(v);
-            }));
+            f -> f.withMarshaller(ExecuteWorkflowRequest::getWorkflowId, ExecuteWorkflowRequest::setWorkflowId));
 
         // response
 
@@ -122,9 +116,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListAllJobByNameRequest, ListAllJobByNameResponse> listAllJobByName =
-        genForlistAllJobByName();
+        genForListAllJobByName();
 
-    private static HttpRequestDef<ListAllJobByNameRequest, ListAllJobByNameResponse> genForlistAllJobByName() {
+    private static HttpRequestDef<ListAllJobByNameRequest, ListAllJobByNameResponse> genForListAllJobByName() {
         // basic
         HttpRequestDef.Builder<ListAllJobByNameRequest, ListAllJobByNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListAllJobByNameRequest.class, ListAllJobByNameResponse.class)
@@ -137,9 +131,7 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchJobsRequestBody.class),
-            f -> f.withMarshaller(ListAllJobByNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAllJobByNameRequest::getBody, ListAllJobByNameRequest::setBody));
 
         // response
 
@@ -147,9 +139,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListAllScriptByNameRequest, ListAllScriptByNameResponse> listAllScriptByName =
-        genForlistAllScriptByName();
+        genForListAllScriptByName();
 
-    private static HttpRequestDef<ListAllScriptByNameRequest, ListAllScriptByNameResponse> genForlistAllScriptByName() {
+    private static HttpRequestDef<ListAllScriptByNameRequest, ListAllScriptByNameResponse> genForListAllScriptByName() {
         // basic
         HttpRequestDef.Builder<ListAllScriptByNameRequest, ListAllScriptByNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListAllScriptByNameRequest.class, ListAllScriptByNameResponse.class)
@@ -162,9 +154,7 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchScriptsRequestBody.class),
-            f -> f.withMarshaller(ListAllScriptByNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAllScriptByNameRequest::getBody, ListAllScriptByNameRequest::setBody));
 
         // response
 
@@ -172,9 +162,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse> listAllVersionByVersionId =
-        genForlistAllVersionByVersionId();
+        genForListAllVersionByVersionId();
 
-    private static HttpRequestDef<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse> genForlistAllVersionByVersionId() {
+    private static HttpRequestDef<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse> genForListAllVersionByVersionId() {
         // basic
         HttpRequestDef.Builder<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse> builder =
             HttpRequestDef
@@ -190,9 +180,8 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchScriptsRequestBody.class),
-            f -> f.withMarshaller(ListAllVersionByVersionIdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAllVersionByVersionIdRequest::getBody,
+                ListAllVersionByVersionIdRequest::setBody));
 
         // response
 
@@ -200,9 +189,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse> listTemplateByJobId =
-        genForlistTemplateByJobId();
+        genForListTemplateByJobId();
 
-    private static HttpRequestDef<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse> genForlistTemplateByJobId() {
+    private static HttpRequestDef<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse> genForListTemplateByJobId() {
         // basic
         HttpRequestDef.Builder<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListTemplateByJobIdRequest.class, ListTemplateByJobIdResponse.class)
@@ -215,25 +204,21 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateByJobIdRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListTemplateByJobIdRequest::getJobId, ListTemplateByJobIdRequest::setJobId));
         builder.<ListTemplateByJobIdRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTemplateByJobIdRequestBody.class),
-            f -> f.withMarshaller(ListTemplateByJobIdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListTemplateByJobIdRequest::getBody, ListTemplateByJobIdRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListWorkflowRequest, ListWorkflowResponse> listWorkflow = genForlistWorkflow();
+    public static final HttpRequestDef<ListWorkflowRequest, ListWorkflowResponse> listWorkflow = genForListWorkflow();
 
-    private static HttpRequestDef<ListWorkflowRequest, ListWorkflowResponse> genForlistWorkflow() {
+    private static HttpRequestDef<ListWorkflowRequest, ListWorkflowResponse> genForListWorkflow() {
         // basic
         HttpRequestDef.Builder<ListWorkflowRequest, ListWorkflowResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListWorkflowRequest.class, ListWorkflowResponse.class)
@@ -246,9 +231,7 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WorkflowQueryParam.class),
-            f -> f.withMarshaller(ListWorkflowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowRequest::getBody, ListWorkflowRequest::setBody));
 
         // response
 
@@ -256,9 +239,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutions =
-        genForlistWorkflowExecutions();
+        genForListWorkflowExecutions();
 
-    private static HttpRequestDef<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> genForlistWorkflowExecutions() {
+    private static HttpRequestDef<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> genForListWorkflowExecutions() {
         // basic
         HttpRequestDef.Builder<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListWorkflowExecutionsRequest.class, ListWorkflowExecutionsResponse.class)
@@ -271,33 +254,30 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getWorkflowId, (req, v) -> {
-                req.setWorkflowId(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getWorkflowId,
+                ListWorkflowExecutionsRequest::setWorkflowId));
         builder.<String>withRequestField("x_enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getXEnterpriseProjectId, (req, v) -> {
-                req.setXEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getXEnterpriseProjectId,
+                ListWorkflowExecutionsRequest::setXEnterpriseProjectId));
 
         // response
         builder.<List<WorkflowExecutionBrief>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListWorkflowExecutionsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(WorkflowExecutionBrief.class));
+            f -> f.withMarshaller(ListWorkflowExecutionsResponse::getBody, ListWorkflowExecutionsResponse::setBody)
+                .withInnerContainerType(WorkflowExecutionBrief.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<SearchTemplateByIdRequest, SearchTemplateByIdResponse> searchTemplateById =
-        genForsearchTemplateById();
+        genForSearchTemplateById();
 
-    private static HttpRequestDef<SearchTemplateByIdRequest, SearchTemplateByIdResponse> genForsearchTemplateById() {
+    private static HttpRequestDef<SearchTemplateByIdRequest, SearchTemplateByIdResponse> genForSearchTemplateById() {
         // basic
         HttpRequestDef.Builder<SearchTemplateByIdRequest, SearchTemplateByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchTemplateByIdRequest.class, SearchTemplateByIdResponse.class)
@@ -310,16 +290,12 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchTemplateByIdRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(SearchTemplateByIdRequest::getTemplateId, SearchTemplateByIdRequest::setTemplateId));
         builder.<String>withRequestField("share_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchTemplateByIdRequest::getShareType, (req, v) -> {
-                req.setShareType(v);
-            }));
+            f -> f.withMarshaller(SearchTemplateByIdRequest::getShareType, SearchTemplateByIdRequest::setShareType));
 
         // response
 
@@ -327,9 +303,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse> searchWorkflowExecutionDetail =
-        genForsearchWorkflowExecutionDetail();
+        genForSearchWorkflowExecutionDetail();
 
-    private static HttpRequestDef<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse> genForsearchWorkflowExecutionDetail() {
+    private static HttpRequestDef<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse> genForSearchWorkflowExecutionDetail() {
         // basic
         HttpRequestDef.Builder<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse> builder =
             HttpRequestDef
@@ -345,16 +321,14 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchWorkflowExecutionDetailRequest::getWorkflowId, (req, v) -> {
-                req.setWorkflowId(v);
-            }));
+            f -> f.withMarshaller(SearchWorkflowExecutionDetailRequest::getWorkflowId,
+                SearchWorkflowExecutionDetailRequest::setWorkflowId));
         builder.<String>withRequestField("execution_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchWorkflowExecutionDetailRequest::getExecutionId, (req, v) -> {
-                req.setExecutionId(v);
-            }));
+            f -> f.withMarshaller(SearchWorkflowExecutionDetailRequest::getExecutionId,
+                SearchWorkflowExecutionDetailRequest::setExecutionId));
 
         // response
 
@@ -362,9 +336,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse> startPausingWorkflowExecutions =
-        genForstartPausingWorkflowExecutions();
+        genForStartPausingWorkflowExecutions();
 
-    private static HttpRequestDef<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse> genForstartPausingWorkflowExecutions() {
+    private static HttpRequestDef<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse> genForStartPausingWorkflowExecutions() {
         // basic
         HttpRequestDef.Builder<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse> builder =
             HttpRequestDef
@@ -380,30 +354,26 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartPausingWorkflowExecutionsRequest::getWorkflowId, (req, v) -> {
-                req.setWorkflowId(v);
-            }));
+            f -> f.withMarshaller(StartPausingWorkflowExecutionsRequest::getWorkflowId,
+                StartPausingWorkflowExecutionsRequest::setWorkflowId));
         builder.<String>withRequestField("execution_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartPausingWorkflowExecutionsRequest::getExecutionId, (req, v) -> {
-                req.setExecutionId(v);
-            }));
+            f -> f.withMarshaller(StartPausingWorkflowExecutionsRequest::getExecutionId,
+                StartPausingWorkflowExecutionsRequest::setExecutionId));
         builder.<StartPausingWorkflowExecutionsRequest.ActionEnum>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartPausingWorkflowExecutionsRequest.ActionEnum.class),
-            f -> f.withMarshaller(StartPausingWorkflowExecutionsRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(StartPausingWorkflowExecutionsRequest::getAction,
+                StartPausingWorkflowExecutionsRequest::setAction));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartPausingWorkflowExecutionsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(StartPausingWorkflowExecutionsRequest::getNodeId,
+                StartPausingWorkflowExecutionsRequest::setNodeId));
 
         // response
 
@@ -411,9 +381,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<StopExecutionRequest, StopExecutionResponse> stopExecution =
-        genForstopExecution();
+        genForStopExecution();
 
-    private static HttpRequestDef<StopExecutionRequest, StopExecutionResponse> genForstopExecution() {
+    private static HttpRequestDef<StopExecutionRequest, StopExecutionResponse> genForStopExecution() {
         // basic
         HttpRequestDef.Builder<StopExecutionRequest, StopExecutionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopExecutionRequest.class, StopExecutionResponse.class)
@@ -426,33 +396,27 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopExecutionRequest::getWorkflowId, (req, v) -> {
-                req.setWorkflowId(v);
-            }));
+            f -> f.withMarshaller(StopExecutionRequest::getWorkflowId, StopExecutionRequest::setWorkflowId));
         builder.<String>withRequestField("execution_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopExecutionRequest::getExecutionId, (req, v) -> {
-                req.setExecutionId(v);
-            }));
+            f -> f.withMarshaller(StopExecutionRequest::getExecutionId, StopExecutionRequest::setExecutionId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(StopExecutionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(StopExecutionResponse::getBody, StopExecutionResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse> updateWorkflowTriggerStatus =
-        genForupdateWorkflowTriggerStatus();
+        genForUpdateWorkflowTriggerStatus();
 
-    private static HttpRequestDef<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse> genForupdateWorkflowTriggerStatus() {
+    private static HttpRequestDef<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse> genForUpdateWorkflowTriggerStatus() {
         // basic
         HttpRequestDef.Builder<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse> builder =
             HttpRequestDef
@@ -468,25 +432,22 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWorkflowTriggerStatusRequest::getWorkflowId, (req, v) -> {
-                req.setWorkflowId(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkflowTriggerStatusRequest::getWorkflowId,
+                UpdateWorkflowTriggerStatusRequest::setWorkflowId));
         builder.<UpdateWorkflowTriggerStatusRequest.ActionEnum>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateWorkflowTriggerStatusRequest.ActionEnum.class),
-            f -> f.withMarshaller(UpdateWorkflowTriggerStatusRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkflowTriggerStatusRequest::getAction,
+                UpdateWorkflowTriggerStatusRequest::setAction));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateWorkflowTriggerStatusResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateWorkflowTriggerStatusResponse::getBody,
+                UpdateWorkflowTriggerStatusResponse::setBody));
 
         return builder.build();
     }

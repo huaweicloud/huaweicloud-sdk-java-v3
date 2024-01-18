@@ -40,7 +40,7 @@ public class DebugCaseResponse extends SdkResponse {
     }
 
     /**
-     * code
+     * 响应码
      * @return code
      */
     public String getCode() {
@@ -57,7 +57,7 @@ public class DebugCaseResponse extends SdkResponse {
     }
 
     /**
-     * message
+     * 响应消息
      * @return message
      */
     public String getMessage() {
@@ -74,7 +74,7 @@ public class DebugCaseResponse extends SdkResponse {
     }
 
     /**
-     * extend
+     * 扩展信息
      * @return extend
      */
     public String getExtend() {
@@ -107,7 +107,7 @@ public class DebugCaseResponse extends SdkResponse {
     }
 
     /**
-     * result
+     * 结果
      * @return result
      */
     public List<DebugCaseResult> getResult() {

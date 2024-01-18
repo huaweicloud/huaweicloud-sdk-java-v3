@@ -40,7 +40,7 @@ public class ShowTaskSetResponse extends SdkResponse {
     }
 
     /**
-     * code
+     * 响应码
      * @return code
      */
     public String getCode() {
@@ -73,7 +73,7 @@ public class ShowTaskSetResponse extends SdkResponse {
     }
 
     /**
-     * extend
+     * 扩展信息
      * @return extend
      */
     public List<String> getExtend() {
@@ -90,7 +90,7 @@ public class ShowTaskSetResponse extends SdkResponse {
     }
 
     /**
-     * message
+     * 响应消息
      * @return message
      */
     public String getMessage() {

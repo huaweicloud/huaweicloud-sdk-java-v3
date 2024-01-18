@@ -15,18 +15,13 @@ public class DeregisterOrganizationalUnitRequest {
 
     private String managedOrganizationUnitId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-
-    private String xSecurityToken;
-
     public DeregisterOrganizationalUnitRequest withManagedOrganizationUnitId(String managedOrganizationUnitId) {
         this.managedOrganizationUnitId = managedOrganizationUnitId;
         return this;
     }
 
     /**
-     * OU ID。
+     * 注册OU ID。
      * @return managedOrganizationUnitId
      */
     public String getManagedOrganizationUnitId() {
@@ -35,25 +30,6 @@ public class DeregisterOrganizationalUnitRequest {
 
     public void setManagedOrganizationUnitId(String managedOrganizationUnitId) {
         this.managedOrganizationUnitId = managedOrganizationUnitId;
-    }
-
-    public DeregisterOrganizationalUnitRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-        return this;
-    }
-
-    /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
-    }
-
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
     }
 
     @Override
@@ -65,13 +41,12 @@ public class DeregisterOrganizationalUnitRequest {
             return false;
         }
         DeregisterOrganizationalUnitRequest that = (DeregisterOrganizationalUnitRequest) obj;
-        return Objects.equals(this.managedOrganizationUnitId, that.managedOrganizationUnitId)
-            && Objects.equals(this.xSecurityToken, that.xSecurityToken);
+        return Objects.equals(this.managedOrganizationUnitId, that.managedOrganizationUnitId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(managedOrganizationUnitId, xSecurityToken);
+        return Objects.hash(managedOrganizationUnitId);
     }
 
     @Override
@@ -79,7 +54,6 @@ public class DeregisterOrganizationalUnitRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeregisterOrganizationalUnitRequest {\n");
         sb.append("    managedOrganizationUnitId: ").append(toIndentedString(managedOrganizationUnitId)).append("\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("}");
         return sb.toString();
     }

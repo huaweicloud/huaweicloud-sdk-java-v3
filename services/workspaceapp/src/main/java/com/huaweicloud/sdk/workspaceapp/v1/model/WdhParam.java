@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * wdh参数
+ * wdh参数。
  */
 public class WdhParam {
 
@@ -26,7 +26,7 @@ public class WdhParam {
     }
 
     /**
-     * 云办公主机id
+     * 云办公主机id。
      * @return dedicatedHostId
      */
     public String getDedicatedHostId() {
@@ -43,7 +43,7 @@ public class WdhParam {
     }
 
     /**
-     * 专属主机类型，目前只支持dedicated - dedicated：专属型 - shared： 共享型
+     * 专属主机类型，目前只支持dedicated。 - dedicated：专属型 - shared： 共享型
      * @return tenancy
      */
     public String getTenancy() {

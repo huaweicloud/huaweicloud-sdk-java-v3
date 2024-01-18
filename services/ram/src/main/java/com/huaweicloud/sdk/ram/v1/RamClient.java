@@ -78,7 +78,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateResourceSharePermissionRequest 请求对象
+     * @param request AssociateResourceSharePermissionRequest 请求对象
      * @return AssociateResourceSharePermissionResponse
      */
     public AssociateResourceSharePermissionResponse associateResourceSharePermission(
@@ -93,13 +93,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateResourceSharePermissionRequest 请求对象
+     * @param request AssociateResourceSharePermissionRequest 请求对象
      * @return SyncInvoker<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResponse>
      */
     public SyncInvoker<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResponse> associateResourceSharePermissionInvoker(
         AssociateResourceSharePermissionRequest request) {
-        return new SyncInvoker<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResponse>(
-            request, RamMeta.associateResourceSharePermission, hcClient);
+        return new SyncInvoker<>(request, RamMeta.associateResourceSharePermission, hcClient);
     }
 
     /**
@@ -109,7 +108,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateResourceSharePermissionRequest 请求对象
+     * @param request DisassociateResourceSharePermissionRequest 请求对象
      * @return DisassociateResourceSharePermissionResponse
      */
     public DisassociateResourceSharePermissionResponse disassociateResourceSharePermission(
@@ -124,13 +123,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateResourceSharePermissionRequest 请求对象
+     * @param request DisassociateResourceSharePermissionRequest 请求对象
      * @return SyncInvoker<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResponse>
      */
     public SyncInvoker<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResponse> disassociateResourceSharePermissionInvoker(
         DisassociateResourceSharePermissionRequest request) {
-        return new SyncInvoker<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResponse>(
-            request, RamMeta.disassociateResourceSharePermission, hcClient);
+        return new SyncInvoker<>(request, RamMeta.disassociateResourceSharePermission, hcClient);
     }
 
     /**
@@ -140,7 +138,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceSharePermissionsRequest 请求对象
+     * @param request ListResourceSharePermissionsRequest 请求对象
      * @return ListResourceSharePermissionsResponse
      */
     public ListResourceSharePermissionsResponse listResourceSharePermissions(
@@ -155,13 +153,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceSharePermissionsRequest 请求对象
+     * @param request ListResourceSharePermissionsRequest 请求对象
      * @return SyncInvoker<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse>
      */
     public SyncInvoker<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse> listResourceSharePermissionsInvoker(
         ListResourceSharePermissionsRequest request) {
-        return new SyncInvoker<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse>(request,
-            RamMeta.listResourceSharePermissions, hcClient);
+        return new SyncInvoker<>(request, RamMeta.listResourceSharePermissions, hcClient);
     }
 
     /**
@@ -171,7 +168,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaRequest 请求对象
+     * @param request ListQuotaRequest 请求对象
      * @return ListQuotaResponse
      */
     public ListQuotaResponse listQuota(ListQuotaRequest request) {
@@ -185,11 +182,11 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaRequest 请求对象
+     * @param request ListQuotaRequest 请求对象
      * @return SyncInvoker<ListQuotaRequest, ListQuotaResponse>
      */
     public SyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaInvoker(ListQuotaRequest request) {
-        return new SyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, RamMeta.listQuota, hcClient);
+        return new SyncInvoker<>(request, RamMeta.listQuota, hcClient);
     }
 
     /**
@@ -199,7 +196,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTypesRequest 请求对象
+     * @param request ListResourceTypesRequest 请求对象
      * @return ListResourceTypesResponse
      */
     public ListResourceTypesResponse listResourceTypes(ListResourceTypesRequest request) {
@@ -213,13 +210,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTypesRequest 请求对象
+     * @param request ListResourceTypesRequest 请求对象
      * @return SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>
      */
     public SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypesInvoker(
         ListResourceTypesRequest request) {
-        return new SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>(request, RamMeta.listResourceTypes,
-            hcClient);
+        return new SyncInvoker<>(request, RamMeta.listResourceTypes, hcClient);
     }
 
     /**
@@ -229,7 +225,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableOrganizationShareRequest 请求对象
+     * @param request DisableOrganizationShareRequest 请求对象
      * @return DisableOrganizationShareResponse
      */
     public DisableOrganizationShareResponse disableOrganizationShare(DisableOrganizationShareRequest request) {
@@ -243,13 +239,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableOrganizationShareRequest 请求对象
+     * @param request DisableOrganizationShareRequest 请求对象
      * @return SyncInvoker<DisableOrganizationShareRequest, DisableOrganizationShareResponse>
      */
     public SyncInvoker<DisableOrganizationShareRequest, DisableOrganizationShareResponse> disableOrganizationShareInvoker(
         DisableOrganizationShareRequest request) {
-        return new SyncInvoker<DisableOrganizationShareRequest, DisableOrganizationShareResponse>(request,
-            RamMeta.disableOrganizationShare, hcClient);
+        return new SyncInvoker<>(request, RamMeta.disableOrganizationShare, hcClient);
     }
 
     /**
@@ -259,7 +254,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableOrganizationShareRequest 请求对象
+     * @param request EnableOrganizationShareRequest 请求对象
      * @return EnableOrganizationShareResponse
      */
     public EnableOrganizationShareResponse enableOrganizationShare(EnableOrganizationShareRequest request) {
@@ -273,13 +268,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableOrganizationShareRequest 请求对象
+     * @param request EnableOrganizationShareRequest 请求对象
      * @return SyncInvoker<EnableOrganizationShareRequest, EnableOrganizationShareResponse>
      */
     public SyncInvoker<EnableOrganizationShareRequest, EnableOrganizationShareResponse> enableOrganizationShareInvoker(
         EnableOrganizationShareRequest request) {
-        return new SyncInvoker<EnableOrganizationShareRequest, EnableOrganizationShareResponse>(request,
-            RamMeta.enableOrganizationShare, hcClient);
+        return new SyncInvoker<>(request, RamMeta.enableOrganizationShare, hcClient);
     }
 
     /**
@@ -289,7 +283,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationShareRequest 请求对象
+     * @param request ShowOrganizationShareRequest 请求对象
      * @return ShowOrganizationShareResponse
      */
     public ShowOrganizationShareResponse showOrganizationShare(ShowOrganizationShareRequest request) {
@@ -303,13 +297,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationShareRequest 请求对象
+     * @param request ShowOrganizationShareRequest 请求对象
      * @return SyncInvoker<ShowOrganizationShareRequest, ShowOrganizationShareResponse>
      */
     public SyncInvoker<ShowOrganizationShareRequest, ShowOrganizationShareResponse> showOrganizationShareInvoker(
         ShowOrganizationShareRequest request) {
-        return new SyncInvoker<ShowOrganizationShareRequest, ShowOrganizationShareResponse>(request,
-            RamMeta.showOrganizationShare, hcClient);
+        return new SyncInvoker<>(request, RamMeta.showOrganizationShare, hcClient);
     }
 
     /**
@@ -319,7 +312,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionsRequest 请求对象
+     * @param request ListPermissionsRequest 请求对象
      * @return ListPermissionsResponse
      */
     public ListPermissionsResponse listPermissions(ListPermissionsRequest request) {
@@ -333,13 +326,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionsRequest 请求对象
+     * @param request ListPermissionsRequest 请求对象
      * @return SyncInvoker<ListPermissionsRequest, ListPermissionsResponse>
      */
     public SyncInvoker<ListPermissionsRequest, ListPermissionsResponse> listPermissionsInvoker(
         ListPermissionsRequest request) {
-        return new SyncInvoker<ListPermissionsRequest, ListPermissionsResponse>(request, RamMeta.listPermissions,
-            hcClient);
+        return new SyncInvoker<>(request, RamMeta.listPermissions, hcClient);
     }
 
     /**
@@ -349,7 +341,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPermissionRequest 请求对象
+     * @param request ShowPermissionRequest 请求对象
      * @return ShowPermissionResponse
      */
     public ShowPermissionResponse showPermission(ShowPermissionRequest request) {
@@ -363,13 +355,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPermissionRequest 请求对象
+     * @param request ShowPermissionRequest 请求对象
      * @return SyncInvoker<ShowPermissionRequest, ShowPermissionResponse>
      */
     public SyncInvoker<ShowPermissionRequest, ShowPermissionResponse> showPermissionInvoker(
         ShowPermissionRequest request) {
-        return new SyncInvoker<ShowPermissionRequest, ShowPermissionResponse>(request, RamMeta.showPermission,
-            hcClient);
+        return new SyncInvoker<>(request, RamMeta.showPermission, hcClient);
     }
 
     /**
@@ -379,7 +370,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchSharedPrincipalsRequest 请求对象
+     * @param request SearchSharedPrincipalsRequest 请求对象
      * @return SearchSharedPrincipalsResponse
      */
     public SearchSharedPrincipalsResponse searchSharedPrincipals(SearchSharedPrincipalsRequest request) {
@@ -393,13 +384,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchSharedPrincipalsRequest 请求对象
+     * @param request SearchSharedPrincipalsRequest 请求对象
      * @return SyncInvoker<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse>
      */
     public SyncInvoker<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse> searchSharedPrincipalsInvoker(
         SearchSharedPrincipalsRequest request) {
-        return new SyncInvoker<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse>(request,
-            RamMeta.searchSharedPrincipals, hcClient);
+        return new SyncInvoker<>(request, RamMeta.searchSharedPrincipals, hcClient);
     }
 
     /**
@@ -409,7 +399,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchSharedResourcesRequest 请求对象
+     * @param request SearchSharedResourcesRequest 请求对象
      * @return SearchSharedResourcesResponse
      */
     public SearchSharedResourcesResponse searchSharedResources(SearchSharedResourcesRequest request) {
@@ -423,13 +413,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchSharedResourcesRequest 请求对象
+     * @param request SearchSharedResourcesRequest 请求对象
      * @return SyncInvoker<SearchSharedResourcesRequest, SearchSharedResourcesResponse>
      */
     public SyncInvoker<SearchSharedResourcesRequest, SearchSharedResourcesResponse> searchSharedResourcesInvoker(
         SearchSharedResourcesRequest request) {
-        return new SyncInvoker<SearchSharedResourcesRequest, SearchSharedResourcesResponse>(request,
-            RamMeta.searchSharedResources, hcClient);
+        return new SyncInvoker<>(request, RamMeta.searchSharedResources, hcClient);
     }
 
     /**
@@ -439,7 +428,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceShareRequest 请求对象
+     * @param request CreateResourceShareRequest 请求对象
      * @return CreateResourceShareResponse
      */
     public CreateResourceShareResponse createResourceShare(CreateResourceShareRequest request) {
@@ -453,13 +442,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceShareRequest 请求对象
+     * @param request CreateResourceShareRequest 请求对象
      * @return SyncInvoker<CreateResourceShareRequest, CreateResourceShareResponse>
      */
     public SyncInvoker<CreateResourceShareRequest, CreateResourceShareResponse> createResourceShareInvoker(
         CreateResourceShareRequest request) {
-        return new SyncInvoker<CreateResourceShareRequest, CreateResourceShareResponse>(request,
-            RamMeta.createResourceShare, hcClient);
+        return new SyncInvoker<>(request, RamMeta.createResourceShare, hcClient);
     }
 
     /**
@@ -469,7 +457,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceShareRequest 请求对象
+     * @param request DeleteResourceShareRequest 请求对象
      * @return DeleteResourceShareResponse
      */
     public DeleteResourceShareResponse deleteResourceShare(DeleteResourceShareRequest request) {
@@ -483,13 +471,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceShareRequest 请求对象
+     * @param request DeleteResourceShareRequest 请求对象
      * @return SyncInvoker<DeleteResourceShareRequest, DeleteResourceShareResponse>
      */
     public SyncInvoker<DeleteResourceShareRequest, DeleteResourceShareResponse> deleteResourceShareInvoker(
         DeleteResourceShareRequest request) {
-        return new SyncInvoker<DeleteResourceShareRequest, DeleteResourceShareResponse>(request,
-            RamMeta.deleteResourceShare, hcClient);
+        return new SyncInvoker<>(request, RamMeta.deleteResourceShare, hcClient);
     }
 
     /**
@@ -499,7 +486,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceSharesRequest 请求对象
+     * @param request SearchResourceSharesRequest 请求对象
      * @return SearchResourceSharesResponse
      */
     public SearchResourceSharesResponse searchResourceShares(SearchResourceSharesRequest request) {
@@ -513,13 +500,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceSharesRequest 请求对象
+     * @param request SearchResourceSharesRequest 请求对象
      * @return SyncInvoker<SearchResourceSharesRequest, SearchResourceSharesResponse>
      */
     public SyncInvoker<SearchResourceSharesRequest, SearchResourceSharesResponse> searchResourceSharesInvoker(
         SearchResourceSharesRequest request) {
-        return new SyncInvoker<SearchResourceSharesRequest, SearchResourceSharesResponse>(request,
-            RamMeta.searchResourceShares, hcClient);
+        return new SyncInvoker<>(request, RamMeta.searchResourceShares, hcClient);
     }
 
     /**
@@ -529,7 +515,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceShareRequest 请求对象
+     * @param request UpdateResourceShareRequest 请求对象
      * @return UpdateResourceShareResponse
      */
     public UpdateResourceShareResponse updateResourceShare(UpdateResourceShareRequest request) {
@@ -543,13 +529,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceShareRequest 请求对象
+     * @param request UpdateResourceShareRequest 请求对象
      * @return SyncInvoker<UpdateResourceShareRequest, UpdateResourceShareResponse>
      */
     public SyncInvoker<UpdateResourceShareRequest, UpdateResourceShareResponse> updateResourceShareInvoker(
         UpdateResourceShareRequest request) {
-        return new SyncInvoker<UpdateResourceShareRequest, UpdateResourceShareResponse>(request,
-            RamMeta.updateResourceShare, hcClient);
+        return new SyncInvoker<>(request, RamMeta.updateResourceShare, hcClient);
     }
 
     /**
@@ -559,7 +544,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateResourceShareRequest 请求对象
+     * @param request AssociateResourceShareRequest 请求对象
      * @return AssociateResourceShareResponse
      */
     public AssociateResourceShareResponse associateResourceShare(AssociateResourceShareRequest request) {
@@ -573,13 +558,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateResourceShareRequest 请求对象
+     * @param request AssociateResourceShareRequest 请求对象
      * @return SyncInvoker<AssociateResourceShareRequest, AssociateResourceShareResponse>
      */
     public SyncInvoker<AssociateResourceShareRequest, AssociateResourceShareResponse> associateResourceShareInvoker(
         AssociateResourceShareRequest request) {
-        return new SyncInvoker<AssociateResourceShareRequest, AssociateResourceShareResponse>(request,
-            RamMeta.associateResourceShare, hcClient);
+        return new SyncInvoker<>(request, RamMeta.associateResourceShare, hcClient);
     }
 
     /**
@@ -589,7 +573,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateResourceShareRequest 请求对象
+     * @param request DisassociateResourceShareRequest 请求对象
      * @return DisassociateResourceShareResponse
      */
     public DisassociateResourceShareResponse disassociateResourceShare(DisassociateResourceShareRequest request) {
@@ -603,13 +587,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateResourceShareRequest 请求对象
+     * @param request DisassociateResourceShareRequest 请求对象
      * @return SyncInvoker<DisassociateResourceShareRequest, DisassociateResourceShareResponse>
      */
     public SyncInvoker<DisassociateResourceShareRequest, DisassociateResourceShareResponse> disassociateResourceShareInvoker(
         DisassociateResourceShareRequest request) {
-        return new SyncInvoker<DisassociateResourceShareRequest, DisassociateResourceShareResponse>(request,
-            RamMeta.disassociateResourceShare, hcClient);
+        return new SyncInvoker<>(request, RamMeta.disassociateResourceShare, hcClient);
     }
 
     /**
@@ -619,7 +602,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareAssociationsRequest 请求对象
+     * @param request SearchResourceShareAssociationsRequest 请求对象
      * @return SearchResourceShareAssociationsResponse
      */
     public SearchResourceShareAssociationsResponse searchResourceShareAssociations(
@@ -634,13 +617,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareAssociationsRequest 请求对象
+     * @param request SearchResourceShareAssociationsRequest 请求对象
      * @return SyncInvoker<SearchResourceShareAssociationsRequest, SearchResourceShareAssociationsResponse>
      */
     public SyncInvoker<SearchResourceShareAssociationsRequest, SearchResourceShareAssociationsResponse> searchResourceShareAssociationsInvoker(
         SearchResourceShareAssociationsRequest request) {
-        return new SyncInvoker<SearchResourceShareAssociationsRequest, SearchResourceShareAssociationsResponse>(request,
-            RamMeta.searchResourceShareAssociations, hcClient);
+        return new SyncInvoker<>(request, RamMeta.searchResourceShareAssociations, hcClient);
     }
 
     /**
@@ -650,7 +632,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptResourceShareInvitationRequest 请求对象
+     * @param request AcceptResourceShareInvitationRequest 请求对象
      * @return AcceptResourceShareInvitationResponse
      */
     public AcceptResourceShareInvitationResponse acceptResourceShareInvitation(
@@ -665,13 +647,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptResourceShareInvitationRequest 请求对象
+     * @param request AcceptResourceShareInvitationRequest 请求对象
      * @return SyncInvoker<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResponse>
      */
     public SyncInvoker<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResponse> acceptResourceShareInvitationInvoker(
         AcceptResourceShareInvitationRequest request) {
-        return new SyncInvoker<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResponse>(request,
-            RamMeta.acceptResourceShareInvitation, hcClient);
+        return new SyncInvoker<>(request, RamMeta.acceptResourceShareInvitation, hcClient);
     }
 
     /**
@@ -681,7 +662,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RejectResourceShareInvitationRequest 请求对象
+     * @param request RejectResourceShareInvitationRequest 请求对象
      * @return RejectResourceShareInvitationResponse
      */
     public RejectResourceShareInvitationResponse rejectResourceShareInvitation(
@@ -696,13 +677,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RejectResourceShareInvitationRequest 请求对象
+     * @param request RejectResourceShareInvitationRequest 请求对象
      * @return SyncInvoker<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResponse>
      */
     public SyncInvoker<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResponse> rejectResourceShareInvitationInvoker(
         RejectResourceShareInvitationRequest request) {
-        return new SyncInvoker<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResponse>(request,
-            RamMeta.rejectResourceShareInvitation, hcClient);
+        return new SyncInvoker<>(request, RamMeta.rejectResourceShareInvitation, hcClient);
     }
 
     /**
@@ -712,7 +692,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareInvitationRequest 请求对象
+     * @param request SearchResourceShareInvitationRequest 请求对象
      * @return SearchResourceShareInvitationResponse
      */
     public SearchResourceShareInvitationResponse searchResourceShareInvitation(
@@ -727,13 +707,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareInvitationRequest 请求对象
+     * @param request SearchResourceShareInvitationRequest 请求对象
      * @return SyncInvoker<SearchResourceShareInvitationRequest, SearchResourceShareInvitationResponse>
      */
     public SyncInvoker<SearchResourceShareInvitationRequest, SearchResourceShareInvitationResponse> searchResourceShareInvitationInvoker(
         SearchResourceShareInvitationRequest request) {
-        return new SyncInvoker<SearchResourceShareInvitationRequest, SearchResourceShareInvitationResponse>(request,
-            RamMeta.searchResourceShareInvitation, hcClient);
+        return new SyncInvoker<>(request, RamMeta.searchResourceShareInvitation, hcClient);
     }
 
     /**
@@ -743,7 +722,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceShareTagsRequest 请求对象
+     * @param request BatchCreateResourceShareTagsRequest 请求对象
      * @return BatchCreateResourceShareTagsResponse
      */
     public BatchCreateResourceShareTagsResponse batchCreateResourceShareTags(
@@ -758,13 +737,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceShareTagsRequest 请求对象
+     * @param request BatchCreateResourceShareTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse>
      */
     public SyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> batchCreateResourceShareTagsInvoker(
         BatchCreateResourceShareTagsRequest request) {
-        return new SyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse>(request,
-            RamMeta.batchCreateResourceShareTags, hcClient);
+        return new SyncInvoker<>(request, RamMeta.batchCreateResourceShareTags, hcClient);
     }
 
     /**
@@ -774,7 +752,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceShareTagsRequest 请求对象
+     * @param request BatchDeleteResourceShareTagsRequest 请求对象
      * @return BatchDeleteResourceShareTagsResponse
      */
     public BatchDeleteResourceShareTagsResponse batchDeleteResourceShareTags(
@@ -789,13 +767,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceShareTagsRequest 请求对象
+     * @param request BatchDeleteResourceShareTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse>
      */
     public SyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> batchDeleteResourceShareTagsInvoker(
         BatchDeleteResourceShareTagsRequest request) {
-        return new SyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse>(request,
-            RamMeta.batchDeleteResourceShareTags, hcClient);
+        return new SyncInvoker<>(request, RamMeta.batchDeleteResourceShareTags, hcClient);
     }
 
     /**
@@ -805,7 +782,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceShareTagsRequest 请求对象
+     * @param request ListResourceShareTagsRequest 请求对象
      * @return ListResourceShareTagsResponse
      */
     public ListResourceShareTagsResponse listResourceShareTags(ListResourceShareTagsRequest request) {
@@ -819,13 +796,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceShareTagsRequest 请求对象
+     * @param request ListResourceShareTagsRequest 请求对象
      * @return SyncInvoker<ListResourceShareTagsRequest, ListResourceShareTagsResponse>
      */
     public SyncInvoker<ListResourceShareTagsRequest, ListResourceShareTagsResponse> listResourceShareTagsInvoker(
         ListResourceShareTagsRequest request) {
-        return new SyncInvoker<ListResourceShareTagsRequest, ListResourceShareTagsResponse>(request,
-            RamMeta.listResourceShareTags, hcClient);
+        return new SyncInvoker<>(request, RamMeta.listResourceShareTags, hcClient);
     }
 
     /**
@@ -835,7 +811,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceSharesByTagsRequest 请求对象
+     * @param request ListResourceSharesByTagsRequest 请求对象
      * @return ListResourceSharesByTagsResponse
      */
     public ListResourceSharesByTagsResponse listResourceSharesByTags(ListResourceSharesByTagsRequest request) {
@@ -849,13 +825,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceSharesByTagsRequest 请求对象
+     * @param request ListResourceSharesByTagsRequest 请求对象
      * @return SyncInvoker<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse>
      */
     public SyncInvoker<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse> listResourceSharesByTagsInvoker(
         ListResourceSharesByTagsRequest request) {
-        return new SyncInvoker<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse>(request,
-            RamMeta.listResourceSharesByTags, hcClient);
+        return new SyncInvoker<>(request, RamMeta.listResourceSharesByTags, hcClient);
     }
 
     /**
@@ -865,7 +840,7 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareCountByTagsRequest 请求对象
+     * @param request SearchResourceShareCountByTagsRequest 请求对象
      * @return SearchResourceShareCountByTagsResponse
      */
     public SearchResourceShareCountByTagsResponse searchResourceShareCountByTags(
@@ -880,13 +855,12 @@ public class RamClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareCountByTagsRequest 请求对象
+     * @param request SearchResourceShareCountByTagsRequest 请求对象
      * @return SyncInvoker<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse>
      */
     public SyncInvoker<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse> searchResourceShareCountByTagsInvoker(
         SearchResourceShareCountByTagsRequest request) {
-        return new SyncInvoker<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse>(request,
-            RamMeta.searchResourceShareCountByTags, hcClient);
+        return new SyncInvoker<>(request, RamMeta.searchResourceShareCountByTags, hcClient);
     }
 
 }

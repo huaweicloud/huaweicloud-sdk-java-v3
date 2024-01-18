@@ -43,7 +43,7 @@ public class RegionManagedList {
     }
 
     /**
-     * available or unavailable。
+     * 区域的状态，取值为可用或者不可用。
      * @return regionStatus
      */
     public String getRegionStatus() {

@@ -39,9 +39,9 @@ import com.huaweicloud.sdk.eps.v1.model.UpdateEnterpriseProjectResponse;
 public class EpsMeta {
 
     public static final HttpRequestDef<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> createEnterpriseProject =
-        genForcreateEnterpriseProject();
+        genForCreateEnterpriseProject();
 
-    private static HttpRequestDef<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> genForcreateEnterpriseProject() {
+    private static HttpRequestDef<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> genForCreateEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateEnterpriseProjectRequest.class, CreateEnterpriseProjectResponse.class)
@@ -54,9 +54,7 @@ public class EpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnterpriseProject.class),
-            f -> f.withMarshaller(CreateEnterpriseProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEnterpriseProjectRequest::getBody, CreateEnterpriseProjectRequest::setBody));
 
         // response
 
@@ -64,9 +62,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse> disableEnterpriseProject =
-        genFordisableEnterpriseProject();
+        genForDisableEnterpriseProject();
 
-    private static HttpRequestDef<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse> genFordisableEnterpriseProject() {
+    private static HttpRequestDef<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse> genForDisableEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -80,16 +78,13 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DisableEnterpriseProjectRequest::getEnterpriseProjectId,
+                DisableEnterpriseProjectRequest::setEnterpriseProjectId));
         builder.<DisableAction>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DisableAction.class),
-            f -> f.withMarshaller(DisableEnterpriseProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisableEnterpriseProjectRequest::getBody, DisableEnterpriseProjectRequest::setBody));
 
         // response
 
@@ -97,9 +92,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse> enableEnterpriseProject =
-        genForenableEnterpriseProject();
+        genForEnableEnterpriseProject();
 
-    private static HttpRequestDef<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse> genForenableEnterpriseProject() {
+    private static HttpRequestDef<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse> genForEnableEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, EnableEnterpriseProjectRequest.class, EnableEnterpriseProjectResponse.class)
@@ -112,16 +107,13 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(EnableEnterpriseProjectRequest::getEnterpriseProjectId,
+                EnableEnterpriseProjectRequest::setEnterpriseProjectId));
         builder.<EnableAction>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnableAction.class),
-            f -> f.withMarshaller(EnableEnterpriseProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EnableEnterpriseProjectRequest::getBody, EnableEnterpriseProjectRequest::setBody));
 
         // response
 
@@ -129,9 +121,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForlistApiVersions();
+        genForListApiVersions();
 
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
@@ -147,9 +139,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> listEnterpriseProject =
-        genForlistEnterpriseProject();
+        genForListEnterpriseProject();
 
-    private static HttpRequestDef<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> genForlistEnterpriseProject() {
+    private static HttpRequestDef<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> genForListEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEnterpriseProjectRequest.class, ListEnterpriseProjectResponse.class)
@@ -162,51 +154,37 @@ public class EpsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseProjectRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getId, ListEnterpriseProjectRequest::setId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseProjectRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getLimit, ListEnterpriseProjectRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseProjectRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getName, ListEnterpriseProjectRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseProjectRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getOffset, ListEnterpriseProjectRequest::setOffset));
         builder.<ListEnterpriseProjectRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEnterpriseProjectRequest.SortDirEnum.class),
-            f -> f.withMarshaller(ListEnterpriseProjectRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getSortDir, ListEnterpriseProjectRequest::setSortDir));
         builder.<ListEnterpriseProjectRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEnterpriseProjectRequest.SortKeyEnum.class),
-            f -> f.withMarshaller(ListEnterpriseProjectRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getSortKey, ListEnterpriseProjectRequest::setSortKey));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseProjectRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getStatus, ListEnterpriseProjectRequest::setStatus));
 
         // response
 
@@ -214,9 +192,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<ListProvidersRequest, ListProvidersResponse> listProviders =
-        genForlistProviders();
+        genForListProviders();
 
-    private static HttpRequestDef<ListProvidersRequest, ListProvidersResponse> genForlistProviders() {
+    private static HttpRequestDef<ListProvidersRequest, ListProvidersResponse> genForListProviders() {
         // basic
         HttpRequestDef.Builder<ListProvidersRequest, ListProvidersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProvidersRequest.class, ListProvidersResponse.class)
@@ -229,30 +207,22 @@ public class EpsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProvidersRequest.LocaleEnum.class),
-            f -> f.withMarshaller(ListProvidersRequest::getLocale, (req, v) -> {
-                req.setLocale(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getLocale, ListProvidersRequest::setLocale));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProvidersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getLimit, ListProvidersRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProvidersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getOffset, ListProvidersRequest::setOffset));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProvidersRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getProvider, ListProvidersRequest::setProvider));
 
         // response
 
@@ -260,9 +230,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<MigrateResourceRequest, MigrateResourceResponse> migrateResource =
-        genFormigrateResource();
+        genForMigrateResource();
 
-    private static HttpRequestDef<MigrateResourceRequest, MigrateResourceResponse> genFormigrateResource() {
+    private static HttpRequestDef<MigrateResourceRequest, MigrateResourceResponse> genForMigrateResource() {
         // basic
         HttpRequestDef.Builder<MigrateResourceRequest, MigrateResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, MigrateResourceRequest.class, MigrateResourceResponse.class)
@@ -275,16 +245,13 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MigrateResourceRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(MigrateResourceRequest::getEnterpriseProjectId,
+                MigrateResourceRequest::setEnterpriseProjectId));
         builder.<MigrateResource>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MigrateResource.class),
-            f -> f.withMarshaller(MigrateResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MigrateResourceRequest::getBody, MigrateResourceRequest::setBody));
 
         // response
 
@@ -292,9 +259,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
-        genForshowApiVersion();
+        genForShowApiVersion();
 
-    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
+    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForShowApiVersion() {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
@@ -307,9 +274,7 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, (req, v) -> {
-                req.setApiVersion(v);
-            }));
+            f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, ShowApiVersionRequest::setApiVersion));
 
         // response
 
@@ -317,9 +282,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> showEnterpriseProject =
-        genForshowEnterpriseProject();
+        genForShowEnterpriseProject();
 
-    private static HttpRequestDef<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> genForshowEnterpriseProject() {
+    private static HttpRequestDef<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> genForShowEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEnterpriseProjectRequest.class, ShowEnterpriseProjectResponse.class)
@@ -332,9 +297,8 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getEnterpriseProjectId,
+                ShowEnterpriseProjectRequest::setEnterpriseProjectId));
 
         // response
 
@@ -342,9 +306,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> showEnterpriseProjectQuota =
-        genForshowEnterpriseProjectQuota();
+        genForShowEnterpriseProjectQuota();
 
-    private static HttpRequestDef<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> genForshowEnterpriseProjectQuota() {
+    private static HttpRequestDef<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> genForShowEnterpriseProjectQuota() {
         // basic
         HttpRequestDef.Builder<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> builder =
             HttpRequestDef
@@ -363,9 +327,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProject =
-        genForshowResourceBindEnterpriseProject();
+        genForShowResourceBindEnterpriseProject();
 
-    private static HttpRequestDef<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> genForshowResourceBindEnterpriseProject() {
+    private static HttpRequestDef<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> genForShowResourceBindEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> builder =
             HttpRequestDef
@@ -381,16 +345,14 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceBindEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceBindEnterpriseProjectRequest::getEnterpriseProjectId,
+                ShowResourceBindEnterpriseProjectRequest::setEnterpriseProjectId));
         builder.<ResqEpResouce>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResqEpResouce.class),
-            f -> f.withMarshaller(ShowResourceBindEnterpriseProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowResourceBindEnterpriseProjectRequest::getBody,
+                ShowResourceBindEnterpriseProjectRequest::setBody));
 
         // response
 
@@ -398,9 +360,9 @@ public class EpsMeta {
     }
 
     public static final HttpRequestDef<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse> updateEnterpriseProject =
-        genForupdateEnterpriseProject();
+        genForUpdateEnterpriseProject();
 
-    private static HttpRequestDef<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse> genForupdateEnterpriseProject() {
+    private static HttpRequestDef<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse> genForUpdateEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEnterpriseProjectRequest.class, UpdateEnterpriseProjectResponse.class)
@@ -413,16 +375,13 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnterpriseProjectRequest::getEnterpriseProjectId,
+                UpdateEnterpriseProjectRequest::setEnterpriseProjectId));
         builder.<EnterpriseProject>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnterpriseProject.class),
-            f -> f.withMarshaller(UpdateEnterpriseProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEnterpriseProjectRequest::getBody, UpdateEnterpriseProjectRequest::setBody));
 
         // response
 

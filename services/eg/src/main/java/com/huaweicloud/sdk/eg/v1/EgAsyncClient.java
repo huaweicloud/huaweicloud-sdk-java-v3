@@ -130,7 +130,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckPutEventsRequest 请求对象
+     * @param request CheckPutEventsRequest 请求对象
      * @return CompletableFuture<CheckPutEventsResponse>
      */
     public CompletableFuture<CheckPutEventsResponse> checkPutEventsAsync(CheckPutEventsRequest request) {
@@ -144,13 +144,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckPutEventsRequest 请求对象
+     * @param request CheckPutEventsRequest 请求对象
      * @return AsyncInvoker<CheckPutEventsRequest, CheckPutEventsResponse>
      */
     public AsyncInvoker<CheckPutEventsRequest, CheckPutEventsResponse> checkPutEventsAsyncInvoker(
         CheckPutEventsRequest request) {
-        return new AsyncInvoker<CheckPutEventsRequest, CheckPutEventsResponse>(request, EgMeta.checkPutEvents,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.checkPutEvents, hcClient);
     }
 
     /**
@@ -160,7 +159,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgenciesRequest 请求对象
+     * @param request CreateAgenciesRequest 请求对象
      * @return CompletableFuture<CreateAgenciesResponse>
      */
     public CompletableFuture<CreateAgenciesResponse> createAgenciesAsync(CreateAgenciesRequest request) {
@@ -174,13 +173,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgenciesRequest 请求对象
+     * @param request CreateAgenciesRequest 请求对象
      * @return AsyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse>
      */
     public AsyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse> createAgenciesAsyncInvoker(
         CreateAgenciesRequest request) {
-        return new AsyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse>(request, EgMeta.createAgencies,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.createAgencies, hcClient);
     }
 
     /**
@@ -190,7 +188,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateChannelRequest 请求对象
+     * @param request CreateChannelRequest 请求对象
      * @return CompletableFuture<CreateChannelResponse>
      */
     public CompletableFuture<CreateChannelResponse> createChannelAsync(CreateChannelRequest request) {
@@ -204,12 +202,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateChannelRequest 请求对象
+     * @param request CreateChannelRequest 请求对象
      * @return AsyncInvoker<CreateChannelRequest, CreateChannelResponse>
      */
     public AsyncInvoker<CreateChannelRequest, CreateChannelResponse> createChannelAsyncInvoker(
         CreateChannelRequest request) {
-        return new AsyncInvoker<CreateChannelRequest, CreateChannelResponse>(request, EgMeta.createChannel, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.createChannel, hcClient);
     }
 
     /**
@@ -219,7 +217,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionRequest 请求对象
+     * @param request CreateConnectionRequest 请求对象
      * @return CompletableFuture<CreateConnectionResponse>
      */
     public CompletableFuture<CreateConnectionResponse> createConnectionAsync(CreateConnectionRequest request) {
@@ -233,13 +231,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionRequest 请求对象
+     * @param request CreateConnectionRequest 请求对象
      * @return AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
      */
     public AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse> createConnectionAsyncInvoker(
         CreateConnectionRequest request) {
-        return new AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse>(request, EgMeta.createConnection,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.createConnection, hcClient);
     }
 
     /**
@@ -249,7 +246,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointRequest 请求对象
+     * @param request CreateEndpointRequest 请求对象
      * @return CompletableFuture<CreateEndpointResponse>
      */
     public CompletableFuture<CreateEndpointResponse> createEndpointAsync(CreateEndpointRequest request) {
@@ -263,13 +260,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointRequest 请求对象
+     * @param request CreateEndpointRequest 请求对象
      * @return AsyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
      */
     public AsyncInvoker<CreateEndpointRequest, CreateEndpointResponse> createEndpointAsyncInvoker(
         CreateEndpointRequest request) {
-        return new AsyncInvoker<CreateEndpointRequest, CreateEndpointResponse>(request, EgMeta.createEndpoint,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.createEndpoint, hcClient);
     }
 
     /**
@@ -279,7 +275,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventSourceRequest 请求对象
+     * @param request CreateEventSourceRequest 请求对象
      * @return CompletableFuture<CreateEventSourceResponse>
      */
     public CompletableFuture<CreateEventSourceResponse> createEventSourceAsync(CreateEventSourceRequest request) {
@@ -293,13 +289,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventSourceRequest 请求对象
+     * @param request CreateEventSourceRequest 请求对象
      * @return AsyncInvoker<CreateEventSourceRequest, CreateEventSourceResponse>
      */
     public AsyncInvoker<CreateEventSourceRequest, CreateEventSourceResponse> createEventSourceAsyncInvoker(
         CreateEventSourceRequest request) {
-        return new AsyncInvoker<CreateEventSourceRequest, CreateEventSourceResponse>(request, EgMeta.createEventSource,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.createEventSource, hcClient);
     }
 
     /**
@@ -309,7 +304,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventStreamingRequest 请求对象
+     * @param request CreateEventStreamingRequest 请求对象
      * @return CompletableFuture<CreateEventStreamingResponse>
      */
     public CompletableFuture<CreateEventStreamingResponse> createEventStreamingAsync(
@@ -324,13 +319,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventStreamingRequest 请求对象
+     * @param request CreateEventStreamingRequest 请求对象
      * @return AsyncInvoker<CreateEventStreamingRequest, CreateEventStreamingResponse>
      */
     public AsyncInvoker<CreateEventStreamingRequest, CreateEventStreamingResponse> createEventStreamingAsyncInvoker(
         CreateEventStreamingRequest request) {
-        return new AsyncInvoker<CreateEventStreamingRequest, CreateEventStreamingResponse>(request,
-            EgMeta.createEventStreaming, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.createEventStreaming, hcClient);
     }
 
     /**
@@ -340,7 +334,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubscriptionRequest 请求对象
+     * @param request CreateSubscriptionRequest 请求对象
      * @return CompletableFuture<CreateSubscriptionResponse>
      */
     public CompletableFuture<CreateSubscriptionResponse> createSubscriptionAsync(CreateSubscriptionRequest request) {
@@ -354,13 +348,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubscriptionRequest 请求对象
+     * @param request CreateSubscriptionRequest 请求对象
      * @return AsyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse>
      */
     public AsyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse> createSubscriptionAsyncInvoker(
         CreateSubscriptionRequest request) {
-        return new AsyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse>(request,
-            EgMeta.createSubscription, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.createSubscription, hcClient);
     }
 
     /**
@@ -370,7 +363,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubscriptionTargetRequest 请求对象
+     * @param request CreateSubscriptionTargetRequest 请求对象
      * @return CompletableFuture<CreateSubscriptionTargetResponse>
      */
     public CompletableFuture<CreateSubscriptionTargetResponse> createSubscriptionTargetAsync(
@@ -385,13 +378,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubscriptionTargetRequest 请求对象
+     * @param request CreateSubscriptionTargetRequest 请求对象
      * @return AsyncInvoker<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse>
      */
     public AsyncInvoker<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse> createSubscriptionTargetAsyncInvoker(
         CreateSubscriptionTargetRequest request) {
-        return new AsyncInvoker<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse>(request,
-            EgMeta.createSubscriptionTarget, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.createSubscriptionTarget, hcClient);
     }
 
     /**
@@ -401,7 +393,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteChannelRequest 请求对象
+     * @param request DeleteChannelRequest 请求对象
      * @return CompletableFuture<DeleteChannelResponse>
      */
     public CompletableFuture<DeleteChannelResponse> deleteChannelAsync(DeleteChannelRequest request) {
@@ -415,12 +407,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteChannelRequest 请求对象
+     * @param request DeleteChannelRequest 请求对象
      * @return AsyncInvoker<DeleteChannelRequest, DeleteChannelResponse>
      */
     public AsyncInvoker<DeleteChannelRequest, DeleteChannelResponse> deleteChannelAsyncInvoker(
         DeleteChannelRequest request) {
-        return new AsyncInvoker<DeleteChannelRequest, DeleteChannelResponse>(request, EgMeta.deleteChannel, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.deleteChannel, hcClient);
     }
 
     /**
@@ -430,7 +422,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectionRequest 请求对象
+     * @param request DeleteConnectionRequest 请求对象
      * @return CompletableFuture<DeleteConnectionResponse>
      */
     public CompletableFuture<DeleteConnectionResponse> deleteConnectionAsync(DeleteConnectionRequest request) {
@@ -444,13 +436,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectionRequest 请求对象
+     * @param request DeleteConnectionRequest 请求对象
      * @return AsyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse>
      */
     public AsyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse> deleteConnectionAsyncInvoker(
         DeleteConnectionRequest request) {
-        return new AsyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse>(request, EgMeta.deleteConnection,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.deleteConnection, hcClient);
     }
 
     /**
@@ -460,7 +451,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointRequest 请求对象
+     * @param request DeleteEndpointRequest 请求对象
      * @return CompletableFuture<DeleteEndpointResponse>
      */
     public CompletableFuture<DeleteEndpointResponse> deleteEndpointAsync(DeleteEndpointRequest request) {
@@ -474,13 +465,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointRequest 请求对象
+     * @param request DeleteEndpointRequest 请求对象
      * @return AsyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>
      */
     public AsyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpointAsyncInvoker(
         DeleteEndpointRequest request) {
-        return new AsyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>(request, EgMeta.deleteEndpoint,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.deleteEndpoint, hcClient);
     }
 
     /**
@@ -490,7 +480,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventSourceRequest 请求对象
+     * @param request DeleteEventSourceRequest 请求对象
      * @return CompletableFuture<DeleteEventSourceResponse>
      */
     public CompletableFuture<DeleteEventSourceResponse> deleteEventSourceAsync(DeleteEventSourceRequest request) {
@@ -504,13 +494,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventSourceRequest 请求对象
+     * @param request DeleteEventSourceRequest 请求对象
      * @return AsyncInvoker<DeleteEventSourceRequest, DeleteEventSourceResponse>
      */
     public AsyncInvoker<DeleteEventSourceRequest, DeleteEventSourceResponse> deleteEventSourceAsyncInvoker(
         DeleteEventSourceRequest request) {
-        return new AsyncInvoker<DeleteEventSourceRequest, DeleteEventSourceResponse>(request, EgMeta.deleteEventSource,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.deleteEventSource, hcClient);
     }
 
     /**
@@ -520,7 +509,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventStreamingRequest 请求对象
+     * @param request DeleteEventStreamingRequest 请求对象
      * @return CompletableFuture<DeleteEventStreamingResponse>
      */
     public CompletableFuture<DeleteEventStreamingResponse> deleteEventStreamingAsync(
@@ -535,13 +524,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventStreamingRequest 请求对象
+     * @param request DeleteEventStreamingRequest 请求对象
      * @return AsyncInvoker<DeleteEventStreamingRequest, DeleteEventStreamingResponse>
      */
     public AsyncInvoker<DeleteEventStreamingRequest, DeleteEventStreamingResponse> deleteEventStreamingAsyncInvoker(
         DeleteEventStreamingRequest request) {
-        return new AsyncInvoker<DeleteEventStreamingRequest, DeleteEventStreamingResponse>(request,
-            EgMeta.deleteEventStreaming, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.deleteEventStreaming, hcClient);
     }
 
     /**
@@ -551,7 +539,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubscriptionRequest 请求对象
+     * @param request DeleteSubscriptionRequest 请求对象
      * @return CompletableFuture<DeleteSubscriptionResponse>
      */
     public CompletableFuture<DeleteSubscriptionResponse> deleteSubscriptionAsync(DeleteSubscriptionRequest request) {
@@ -565,13 +553,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubscriptionRequest 请求对象
+     * @param request DeleteSubscriptionRequest 请求对象
      * @return AsyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse>
      */
     public AsyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse> deleteSubscriptionAsyncInvoker(
         DeleteSubscriptionRequest request) {
-        return new AsyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse>(request,
-            EgMeta.deleteSubscription, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.deleteSubscription, hcClient);
     }
 
     /**
@@ -581,7 +568,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubscriptionTargetRequest 请求对象
+     * @param request DeleteSubscriptionTargetRequest 请求对象
      * @return CompletableFuture<DeleteSubscriptionTargetResponse>
      */
     public CompletableFuture<DeleteSubscriptionTargetResponse> deleteSubscriptionTargetAsync(
@@ -596,13 +583,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubscriptionTargetRequest 请求对象
+     * @param request DeleteSubscriptionTargetRequest 请求对象
      * @return AsyncInvoker<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse>
      */
     public AsyncInvoker<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse> deleteSubscriptionTargetAsyncInvoker(
         DeleteSubscriptionTargetRequest request) {
-        return new AsyncInvoker<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse>(request,
-            EgMeta.deleteSubscriptionTarget, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.deleteSubscriptionTarget, hcClient);
     }
 
     /**
@@ -612,7 +598,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgenciesRequest 请求对象
+     * @param request ListAgenciesRequest 请求对象
      * @return CompletableFuture<ListAgenciesResponse>
      */
     public CompletableFuture<ListAgenciesResponse> listAgenciesAsync(ListAgenciesRequest request) {
@@ -626,12 +612,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgenciesRequest 请求对象
+     * @param request ListAgenciesRequest 请求对象
      * @return AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
      */
     public AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse> listAgenciesAsyncInvoker(
         ListAgenciesRequest request) {
-        return new AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse>(request, EgMeta.listAgencies, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listAgencies, hcClient);
     }
 
     /**
@@ -641,7 +627,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListChannelsRequest 请求对象
+     * @param request ListChannelsRequest 请求对象
      * @return CompletableFuture<ListChannelsResponse>
      */
     public CompletableFuture<ListChannelsResponse> listChannelsAsync(ListChannelsRequest request) {
@@ -655,12 +641,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListChannelsRequest 请求对象
+     * @param request ListChannelsRequest 请求对象
      * @return AsyncInvoker<ListChannelsRequest, ListChannelsResponse>
      */
     public AsyncInvoker<ListChannelsRequest, ListChannelsResponse> listChannelsAsyncInvoker(
         ListChannelsRequest request) {
-        return new AsyncInvoker<ListChannelsRequest, ListChannelsResponse>(request, EgMeta.listChannels, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listChannels, hcClient);
     }
 
     /**
@@ -670,7 +656,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectionsRequest 请求对象
+     * @param request ListConnectionsRequest 请求对象
      * @return CompletableFuture<ListConnectionsResponse>
      */
     public CompletableFuture<ListConnectionsResponse> listConnectionsAsync(ListConnectionsRequest request) {
@@ -684,13 +670,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectionsRequest 请求对象
+     * @param request ListConnectionsRequest 请求对象
      * @return AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
      */
     public AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse> listConnectionsAsyncInvoker(
         ListConnectionsRequest request) {
-        return new AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse>(request, EgMeta.listConnections,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listConnections, hcClient);
     }
 
     /**
@@ -700,7 +685,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointsRequest 请求对象
+     * @param request ListEndpointsRequest 请求对象
      * @return CompletableFuture<ListEndpointsResponse>
      */
     public CompletableFuture<ListEndpointsResponse> listEndpointsAsync(ListEndpointsRequest request) {
@@ -714,12 +699,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointsRequest 请求对象
+     * @param request ListEndpointsRequest 请求对象
      * @return AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
      */
     public AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse> listEndpointsAsyncInvoker(
         ListEndpointsRequest request) {
-        return new AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse>(request, EgMeta.listEndpoints, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listEndpoints, hcClient);
     }
 
     /**
@@ -729,7 +714,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventSourcesRequest 请求对象
+     * @param request ListEventSourcesRequest 请求对象
      * @return CompletableFuture<ListEventSourcesResponse>
      */
     public CompletableFuture<ListEventSourcesResponse> listEventSourcesAsync(ListEventSourcesRequest request) {
@@ -743,13 +728,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventSourcesRequest 请求对象
+     * @param request ListEventSourcesRequest 请求对象
      * @return AsyncInvoker<ListEventSourcesRequest, ListEventSourcesResponse>
      */
     public AsyncInvoker<ListEventSourcesRequest, ListEventSourcesResponse> listEventSourcesAsyncInvoker(
         ListEventSourcesRequest request) {
-        return new AsyncInvoker<ListEventSourcesRequest, ListEventSourcesResponse>(request, EgMeta.listEventSources,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listEventSources, hcClient);
     }
 
     /**
@@ -759,7 +743,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventStreamingRequest 请求对象
+     * @param request ListEventStreamingRequest 请求对象
      * @return CompletableFuture<ListEventStreamingResponse>
      */
     public CompletableFuture<ListEventStreamingResponse> listEventStreamingAsync(ListEventStreamingRequest request) {
@@ -773,13 +757,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventStreamingRequest 请求对象
+     * @param request ListEventStreamingRequest 请求对象
      * @return AsyncInvoker<ListEventStreamingRequest, ListEventStreamingResponse>
      */
     public AsyncInvoker<ListEventStreamingRequest, ListEventStreamingResponse> listEventStreamingAsyncInvoker(
         ListEventStreamingRequest request) {
-        return new AsyncInvoker<ListEventStreamingRequest, ListEventStreamingResponse>(request,
-            EgMeta.listEventStreaming, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listEventStreaming, hcClient);
     }
 
     /**
@@ -789,7 +772,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventTargetRequest 请求对象
+     * @param request ListEventTargetRequest 请求对象
      * @return CompletableFuture<ListEventTargetResponse>
      */
     public CompletableFuture<ListEventTargetResponse> listEventTargetAsync(ListEventTargetRequest request) {
@@ -803,13 +786,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventTargetRequest 请求对象
+     * @param request ListEventTargetRequest 请求对象
      * @return AsyncInvoker<ListEventTargetRequest, ListEventTargetResponse>
      */
     public AsyncInvoker<ListEventTargetRequest, ListEventTargetResponse> listEventTargetAsyncInvoker(
         ListEventTargetRequest request) {
-        return new AsyncInvoker<ListEventTargetRequest, ListEventTargetResponse>(request, EgMeta.listEventTarget,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listEventTarget, hcClient);
     }
 
     /**
@@ -819,7 +801,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPubMetricsRequest 请求对象
+     * @param request ListPubMetricsRequest 请求对象
      * @return CompletableFuture<ListPubMetricsResponse>
      */
     public CompletableFuture<ListPubMetricsResponse> listPubMetricsAsync(ListPubMetricsRequest request) {
@@ -833,13 +815,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPubMetricsRequest 请求对象
+     * @param request ListPubMetricsRequest 请求对象
      * @return AsyncInvoker<ListPubMetricsRequest, ListPubMetricsResponse>
      */
     public AsyncInvoker<ListPubMetricsRequest, ListPubMetricsResponse> listPubMetricsAsyncInvoker(
         ListPubMetricsRequest request) {
-        return new AsyncInvoker<ListPubMetricsRequest, ListPubMetricsResponse>(request, EgMeta.listPubMetrics,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listPubMetrics, hcClient);
     }
 
     /**
@@ -849,7 +830,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return CompletableFuture<ListQuotasResponse>
      */
     public CompletableFuture<ListQuotasResponse> listQuotasAsync(ListQuotasRequest request) {
@@ -863,11 +844,11 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
-        return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, EgMeta.listQuotas, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listQuotas, hcClient);
     }
 
     /**
@@ -877,7 +858,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubMetricsRequest 请求对象
+     * @param request ListSubMetricsRequest 请求对象
      * @return CompletableFuture<ListSubMetricsResponse>
      */
     public CompletableFuture<ListSubMetricsResponse> listSubMetricsAsync(ListSubMetricsRequest request) {
@@ -891,13 +872,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubMetricsRequest 请求对象
+     * @param request ListSubMetricsRequest 请求对象
      * @return AsyncInvoker<ListSubMetricsRequest, ListSubMetricsResponse>
      */
     public AsyncInvoker<ListSubMetricsRequest, ListSubMetricsResponse> listSubMetricsAsyncInvoker(
         ListSubMetricsRequest request) {
-        return new AsyncInvoker<ListSubMetricsRequest, ListSubMetricsResponse>(request, EgMeta.listSubMetrics,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listSubMetrics, hcClient);
     }
 
     /**
@@ -907,7 +887,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubscriptionsRequest 请求对象
+     * @param request ListSubscriptionsRequest 请求对象
      * @return CompletableFuture<ListSubscriptionsResponse>
      */
     public CompletableFuture<ListSubscriptionsResponse> listSubscriptionsAsync(ListSubscriptionsRequest request) {
@@ -921,13 +901,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubscriptionsRequest 请求对象
+     * @param request ListSubscriptionsRequest 请求对象
      * @return AsyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>
      */
     public AsyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptionsAsyncInvoker(
         ListSubscriptionsRequest request) {
-        return new AsyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>(request, EgMeta.listSubscriptions,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listSubscriptions, hcClient);
     }
 
     /**
@@ -937,7 +916,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTracedEventsRequest 请求对象
+     * @param request ListTracedEventsRequest 请求对象
      * @return CompletableFuture<ListTracedEventsResponse>
      */
     public CompletableFuture<ListTracedEventsResponse> listTracedEventsAsync(ListTracedEventsRequest request) {
@@ -951,13 +930,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTracedEventsRequest 请求对象
+     * @param request ListTracedEventsRequest 请求对象
      * @return AsyncInvoker<ListTracedEventsRequest, ListTracedEventsResponse>
      */
     public AsyncInvoker<ListTracedEventsRequest, ListTracedEventsResponse> listTracedEventsAsyncInvoker(
         ListTracedEventsRequest request) {
-        return new AsyncInvoker<ListTracedEventsRequest, ListTracedEventsResponse>(request, EgMeta.listTracedEvents,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listTracedEvents, hcClient);
     }
 
     /**
@@ -967,7 +945,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTriggersRequest 请求对象
+     * @param request ListTriggersRequest 请求对象
      * @return CompletableFuture<ListTriggersResponse>
      */
     public CompletableFuture<ListTriggersResponse> listTriggersAsync(ListTriggersRequest request) {
@@ -981,12 +959,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTriggersRequest 请求对象
+     * @param request ListTriggersRequest 请求对象
      * @return AsyncInvoker<ListTriggersRequest, ListTriggersResponse>
      */
     public AsyncInvoker<ListTriggersRequest, ListTriggersResponse> listTriggersAsyncInvoker(
         ListTriggersRequest request) {
-        return new AsyncInvoker<ListTriggersRequest, ListTriggersResponse>(request, EgMeta.listTriggers, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listTriggers, hcClient);
     }
 
     /**
@@ -996,7 +974,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowTriggersRequest 请求对象
+     * @param request ListWorkflowTriggersRequest 请求对象
      * @return CompletableFuture<ListWorkflowTriggersResponse>
      */
     public CompletableFuture<ListWorkflowTriggersResponse> listWorkflowTriggersAsync(
@@ -1011,13 +989,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowTriggersRequest 请求对象
+     * @param request ListWorkflowTriggersRequest 请求对象
      * @return AsyncInvoker<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse>
      */
     public AsyncInvoker<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> listWorkflowTriggersAsyncInvoker(
         ListWorkflowTriggersRequest request) {
-        return new AsyncInvoker<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse>(request,
-            EgMeta.listWorkflowTriggers, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listWorkflowTriggers, hcClient);
     }
 
     /**
@@ -1027,7 +1004,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param OperateSubscriptionRequest 请求对象
+     * @param request OperateSubscriptionRequest 请求对象
      * @return CompletableFuture<OperateSubscriptionResponse>
      */
     public CompletableFuture<OperateSubscriptionResponse> operateSubscriptionAsync(OperateSubscriptionRequest request) {
@@ -1041,13 +1018,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param OperateSubscriptionRequest 请求对象
+     * @param request OperateSubscriptionRequest 请求对象
      * @return AsyncInvoker<OperateSubscriptionRequest, OperateSubscriptionResponse>
      */
     public AsyncInvoker<OperateSubscriptionRequest, OperateSubscriptionResponse> operateSubscriptionAsyncInvoker(
         OperateSubscriptionRequest request) {
-        return new AsyncInvoker<OperateSubscriptionRequest, OperateSubscriptionResponse>(request,
-            EgMeta.operateSubscription, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.operateSubscription, hcClient);
     }
 
     /**
@@ -1057,7 +1033,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutEventsRequest 请求对象
+     * @param request PutEventsRequest 请求对象
      * @return CompletableFuture<PutEventsResponse>
      */
     public CompletableFuture<PutEventsResponse> putEventsAsync(PutEventsRequest request) {
@@ -1071,11 +1047,11 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutEventsRequest 请求对象
+     * @param request PutEventsRequest 请求对象
      * @return AsyncInvoker<PutEventsRequest, PutEventsResponse>
      */
     public AsyncInvoker<PutEventsRequest, PutEventsResponse> putEventsAsyncInvoker(PutEventsRequest request) {
-        return new AsyncInvoker<PutEventsRequest, PutEventsResponse>(request, EgMeta.putEvents, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.putEvents, hcClient);
     }
 
     /**
@@ -1085,7 +1061,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutOfficialEventsRequest 请求对象
+     * @param request PutOfficialEventsRequest 请求对象
      * @return CompletableFuture<PutOfficialEventsResponse>
      */
     public CompletableFuture<PutOfficialEventsResponse> putOfficialEventsAsync(PutOfficialEventsRequest request) {
@@ -1099,13 +1075,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutOfficialEventsRequest 请求对象
+     * @param request PutOfficialEventsRequest 请求对象
      * @return AsyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>
      */
     public AsyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse> putOfficialEventsAsyncInvoker(
         PutOfficialEventsRequest request) {
-        return new AsyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>(request, EgMeta.putOfficialEvents,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.putOfficialEvents, hcClient);
     }
 
     /**
@@ -1115,7 +1090,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeEventStreamingRequest 请求对象
+     * @param request ResumeEventStreamingRequest 请求对象
      * @return CompletableFuture<ResumeEventStreamingResponse>
      */
     public CompletableFuture<ResumeEventStreamingResponse> resumeEventStreamingAsync(
@@ -1130,13 +1105,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeEventStreamingRequest 请求对象
+     * @param request ResumeEventStreamingRequest 请求对象
      * @return AsyncInvoker<ResumeEventStreamingRequest, ResumeEventStreamingResponse>
      */
     public AsyncInvoker<ResumeEventStreamingRequest, ResumeEventStreamingResponse> resumeEventStreamingAsyncInvoker(
         ResumeEventStreamingRequest request) {
-        return new AsyncInvoker<ResumeEventStreamingRequest, ResumeEventStreamingResponse>(request,
-            EgMeta.resumeEventStreaming, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.resumeEventStreaming, hcClient);
     }
 
     /**
@@ -1146,7 +1120,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfChannelRequest 请求对象
+     * @param request ShowDetailOfChannelRequest 请求对象
      * @return CompletableFuture<ShowDetailOfChannelResponse>
      */
     public CompletableFuture<ShowDetailOfChannelResponse> showDetailOfChannelAsync(ShowDetailOfChannelRequest request) {
@@ -1160,13 +1134,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfChannelRequest 请求对象
+     * @param request ShowDetailOfChannelRequest 请求对象
      * @return AsyncInvoker<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse>
      */
     public AsyncInvoker<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse> showDetailOfChannelAsyncInvoker(
         ShowDetailOfChannelRequest request) {
-        return new AsyncInvoker<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse>(request,
-            EgMeta.showDetailOfChannel, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.showDetailOfChannel, hcClient);
     }
 
     /**
@@ -1176,7 +1149,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfConnectionRequest 请求对象
+     * @param request ShowDetailOfConnectionRequest 请求对象
      * @return CompletableFuture<ShowDetailOfConnectionResponse>
      */
     public CompletableFuture<ShowDetailOfConnectionResponse> showDetailOfConnectionAsync(
@@ -1191,13 +1164,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfConnectionRequest 请求对象
+     * @param request ShowDetailOfConnectionRequest 请求对象
      * @return AsyncInvoker<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse>
      */
     public AsyncInvoker<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse> showDetailOfConnectionAsyncInvoker(
         ShowDetailOfConnectionRequest request) {
-        return new AsyncInvoker<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse>(request,
-            EgMeta.showDetailOfConnection, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.showDetailOfConnection, hcClient);
     }
 
     /**
@@ -1207,7 +1179,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventRequest 请求对象
+     * @param request ShowDetailOfEventRequest 请求对象
      * @return CompletableFuture<ShowDetailOfEventResponse>
      */
     public CompletableFuture<ShowDetailOfEventResponse> showDetailOfEventAsync(ShowDetailOfEventRequest request) {
@@ -1221,13 +1193,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventRequest 请求对象
+     * @param request ShowDetailOfEventRequest 请求对象
      * @return AsyncInvoker<ShowDetailOfEventRequest, ShowDetailOfEventResponse>
      */
     public AsyncInvoker<ShowDetailOfEventRequest, ShowDetailOfEventResponse> showDetailOfEventAsyncInvoker(
         ShowDetailOfEventRequest request) {
-        return new AsyncInvoker<ShowDetailOfEventRequest, ShowDetailOfEventResponse>(request, EgMeta.showDetailOfEvent,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.showDetailOfEvent, hcClient);
     }
 
     /**
@@ -1237,7 +1208,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventSourceRequest 请求对象
+     * @param request ShowDetailOfEventSourceRequest 请求对象
      * @return CompletableFuture<ShowDetailOfEventSourceResponse>
      */
     public CompletableFuture<ShowDetailOfEventSourceResponse> showDetailOfEventSourceAsync(
@@ -1252,13 +1223,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventSourceRequest 请求对象
+     * @param request ShowDetailOfEventSourceRequest 请求对象
      * @return AsyncInvoker<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse>
      */
     public AsyncInvoker<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse> showDetailOfEventSourceAsyncInvoker(
         ShowDetailOfEventSourceRequest request) {
-        return new AsyncInvoker<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse>(request,
-            EgMeta.showDetailOfEventSource, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.showDetailOfEventSource, hcClient);
     }
 
     /**
@@ -1268,7 +1238,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventTraceRequest 请求对象
+     * @param request ShowDetailOfEventTraceRequest 请求对象
      * @return CompletableFuture<ShowDetailOfEventTraceResponse>
      */
     public CompletableFuture<ShowDetailOfEventTraceResponse> showDetailOfEventTraceAsync(
@@ -1283,13 +1253,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventTraceRequest 请求对象
+     * @param request ShowDetailOfEventTraceRequest 请求对象
      * @return AsyncInvoker<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse>
      */
     public AsyncInvoker<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse> showDetailOfEventTraceAsyncInvoker(
         ShowDetailOfEventTraceRequest request) {
-        return new AsyncInvoker<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse>(request,
-            EgMeta.showDetailOfEventTrace, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.showDetailOfEventTrace, hcClient);
     }
 
     /**
@@ -1299,7 +1268,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfSubscriptionRequest 请求对象
+     * @param request ShowDetailOfSubscriptionRequest 请求对象
      * @return CompletableFuture<ShowDetailOfSubscriptionResponse>
      */
     public CompletableFuture<ShowDetailOfSubscriptionResponse> showDetailOfSubscriptionAsync(
@@ -1314,13 +1283,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfSubscriptionRequest 请求对象
+     * @param request ShowDetailOfSubscriptionRequest 请求对象
      * @return AsyncInvoker<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse>
      */
     public AsyncInvoker<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse> showDetailOfSubscriptionAsyncInvoker(
         ShowDetailOfSubscriptionRequest request) {
-        return new AsyncInvoker<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse>(request,
-            EgMeta.showDetailOfSubscription, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.showDetailOfSubscription, hcClient);
     }
 
     /**
@@ -1330,7 +1298,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfSubscriptionTargetRequest 请求对象
+     * @param request ShowDetailOfSubscriptionTargetRequest 请求对象
      * @return CompletableFuture<ShowDetailOfSubscriptionTargetResponse>
      */
     public CompletableFuture<ShowDetailOfSubscriptionTargetResponse> showDetailOfSubscriptionTargetAsync(
@@ -1345,13 +1313,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfSubscriptionTargetRequest 请求对象
+     * @param request ShowDetailOfSubscriptionTargetRequest 请求对象
      * @return AsyncInvoker<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse>
      */
     public AsyncInvoker<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse> showDetailOfSubscriptionTargetAsyncInvoker(
         ShowDetailOfSubscriptionTargetRequest request) {
-        return new AsyncInvoker<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse>(request,
-            EgMeta.showDetailOfSubscriptionTarget, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.showDetailOfSubscriptionTarget, hcClient);
     }
 
     /**
@@ -1361,7 +1328,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventStreamingRequest 请求对象
+     * @param request ShowEventStreamingRequest 请求对象
      * @return CompletableFuture<ShowEventStreamingResponse>
      */
     public CompletableFuture<ShowEventStreamingResponse> showEventStreamingAsync(ShowEventStreamingRequest request) {
@@ -1375,13 +1342,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventStreamingRequest 请求对象
+     * @param request ShowEventStreamingRequest 请求对象
      * @return AsyncInvoker<ShowEventStreamingRequest, ShowEventStreamingResponse>
      */
     public AsyncInvoker<ShowEventStreamingRequest, ShowEventStreamingResponse> showEventStreamingAsyncInvoker(
         ShowEventStreamingRequest request) {
-        return new AsyncInvoker<ShowEventStreamingRequest, ShowEventStreamingResponse>(request,
-            EgMeta.showEventStreaming, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.showEventStreaming, hcClient);
     }
 
     /**
@@ -1391,7 +1357,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateChannelRequest 请求对象
+     * @param request UpdateChannelRequest 请求对象
      * @return CompletableFuture<UpdateChannelResponse>
      */
     public CompletableFuture<UpdateChannelResponse> updateChannelAsync(UpdateChannelRequest request) {
@@ -1405,12 +1371,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateChannelRequest 请求对象
+     * @param request UpdateChannelRequest 请求对象
      * @return AsyncInvoker<UpdateChannelRequest, UpdateChannelResponse>
      */
     public AsyncInvoker<UpdateChannelRequest, UpdateChannelResponse> updateChannelAsyncInvoker(
         UpdateChannelRequest request) {
-        return new AsyncInvoker<UpdateChannelRequest, UpdateChannelResponse>(request, EgMeta.updateChannel, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.updateChannel, hcClient);
     }
 
     /**
@@ -1420,7 +1386,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionRequest 请求对象
+     * @param request UpdateConnectionRequest 请求对象
      * @return CompletableFuture<UpdateConnectionResponse>
      */
     public CompletableFuture<UpdateConnectionResponse> updateConnectionAsync(UpdateConnectionRequest request) {
@@ -1434,13 +1400,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionRequest 请求对象
+     * @param request UpdateConnectionRequest 请求对象
      * @return AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>
      */
     public AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> updateConnectionAsyncInvoker(
         UpdateConnectionRequest request) {
-        return new AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>(request, EgMeta.updateConnection,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.updateConnection, hcClient);
     }
 
     /**
@@ -1450,7 +1415,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointRequest 请求对象
+     * @param request UpdateEndpointRequest 请求对象
      * @return CompletableFuture<UpdateEndpointResponse>
      */
     public CompletableFuture<UpdateEndpointResponse> updateEndpointAsync(UpdateEndpointRequest request) {
@@ -1464,13 +1429,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointRequest 请求对象
+     * @param request UpdateEndpointRequest 请求对象
      * @return AsyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>
      */
     public AsyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse> updateEndpointAsyncInvoker(
         UpdateEndpointRequest request) {
-        return new AsyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>(request, EgMeta.updateEndpoint,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.updateEndpoint, hcClient);
     }
 
     /**
@@ -1480,7 +1444,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventSourceRequest 请求对象
+     * @param request UpdateEventSourceRequest 请求对象
      * @return CompletableFuture<UpdateEventSourceResponse>
      */
     public CompletableFuture<UpdateEventSourceResponse> updateEventSourceAsync(UpdateEventSourceRequest request) {
@@ -1494,13 +1458,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventSourceRequest 请求对象
+     * @param request UpdateEventSourceRequest 请求对象
      * @return AsyncInvoker<UpdateEventSourceRequest, UpdateEventSourceResponse>
      */
     public AsyncInvoker<UpdateEventSourceRequest, UpdateEventSourceResponse> updateEventSourceAsyncInvoker(
         UpdateEventSourceRequest request) {
-        return new AsyncInvoker<UpdateEventSourceRequest, UpdateEventSourceResponse>(request, EgMeta.updateEventSource,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.updateEventSource, hcClient);
     }
 
     /**
@@ -1510,7 +1473,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventStreamingRequest 请求对象
+     * @param request UpdateEventStreamingRequest 请求对象
      * @return CompletableFuture<UpdateEventStreamingResponse>
      */
     public CompletableFuture<UpdateEventStreamingResponse> updateEventStreamingAsync(
@@ -1525,13 +1488,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventStreamingRequest 请求对象
+     * @param request UpdateEventStreamingRequest 请求对象
      * @return AsyncInvoker<UpdateEventStreamingRequest, UpdateEventStreamingResponse>
      */
     public AsyncInvoker<UpdateEventStreamingRequest, UpdateEventStreamingResponse> updateEventStreamingAsyncInvoker(
         UpdateEventStreamingRequest request) {
-        return new AsyncInvoker<UpdateEventStreamingRequest, UpdateEventStreamingResponse>(request,
-            EgMeta.updateEventStreaming, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.updateEventStreaming, hcClient);
     }
 
     /**
@@ -1541,7 +1503,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionRequest 请求对象
+     * @param request UpdateSubscriptionRequest 请求对象
      * @return CompletableFuture<UpdateSubscriptionResponse>
      */
     public CompletableFuture<UpdateSubscriptionResponse> updateSubscriptionAsync(UpdateSubscriptionRequest request) {
@@ -1555,13 +1517,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionRequest 请求对象
+     * @param request UpdateSubscriptionRequest 请求对象
      * @return AsyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>
      */
     public AsyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse> updateSubscriptionAsyncInvoker(
         UpdateSubscriptionRequest request) {
-        return new AsyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>(request,
-            EgMeta.updateSubscription, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.updateSubscription, hcClient);
     }
 
     /**
@@ -1571,7 +1532,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionSourceRequest 请求对象
+     * @param request UpdateSubscriptionSourceRequest 请求对象
      * @return CompletableFuture<UpdateSubscriptionSourceResponse>
      */
     public CompletableFuture<UpdateSubscriptionSourceResponse> updateSubscriptionSourceAsync(
@@ -1586,13 +1547,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionSourceRequest 请求对象
+     * @param request UpdateSubscriptionSourceRequest 请求对象
      * @return AsyncInvoker<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse>
      */
     public AsyncInvoker<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse> updateSubscriptionSourceAsyncInvoker(
         UpdateSubscriptionSourceRequest request) {
-        return new AsyncInvoker<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse>(request,
-            EgMeta.updateSubscriptionSource, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.updateSubscriptionSource, hcClient);
     }
 
     /**
@@ -1602,7 +1562,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionTargetRequest 请求对象
+     * @param request UpdateSubscriptionTargetRequest 请求对象
      * @return CompletableFuture<UpdateSubscriptionTargetResponse>
      */
     public CompletableFuture<UpdateSubscriptionTargetResponse> updateSubscriptionTargetAsync(
@@ -1617,13 +1577,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionTargetRequest 请求对象
+     * @param request UpdateSubscriptionTargetRequest 请求对象
      * @return AsyncInvoker<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse>
      */
     public AsyncInvoker<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse> updateSubscriptionTargetAsyncInvoker(
         UpdateSubscriptionTargetRequest request) {
-        return new AsyncInvoker<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse>(request,
-            EgMeta.updateSubscriptionTarget, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.updateSubscriptionTarget, hcClient);
     }
 
     /**
@@ -1633,7 +1592,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return CompletableFuture<ListApiVersionsResponse>
      */
     public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
@@ -1647,13 +1606,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(
         ListApiVersionsRequest request) {
-        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, EgMeta.listApiVersions,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -1663,7 +1621,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketsRequest 请求对象
+     * @param request ListObsBucketsRequest 请求对象
      * @return CompletableFuture<ListObsBucketsResponse>
      */
     public CompletableFuture<ListObsBucketsResponse> listObsBucketsAsync(ListObsBucketsRequest request) {
@@ -1677,13 +1635,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketsRequest 请求对象
+     * @param request ListObsBucketsRequest 请求对象
      * @return AsyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>
      */
     public AsyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse> listObsBucketsAsyncInvoker(
         ListObsBucketsRequest request) {
-        return new AsyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>(request, EgMeta.listObsBuckets,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.listObsBuckets, hcClient);
     }
 
 }

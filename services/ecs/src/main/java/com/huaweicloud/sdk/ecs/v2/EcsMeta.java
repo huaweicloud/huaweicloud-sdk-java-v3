@@ -193,9 +193,9 @@ import com.huaweicloud.sdk.ecs.v2.model.UpdateServerResponse;
 public class EcsMeta {
 
     public static final HttpRequestDef<AddServerGroupMemberRequest, AddServerGroupMemberResponse> addServerGroupMember =
-        genForaddServerGroupMember();
+        genForAddServerGroupMember();
 
-    private static HttpRequestDef<AddServerGroupMemberRequest, AddServerGroupMemberResponse> genForaddServerGroupMember() {
+    private static HttpRequestDef<AddServerGroupMemberRequest, AddServerGroupMemberResponse> genForAddServerGroupMember() {
         // basic
         HttpRequestDef.Builder<AddServerGroupMemberRequest, AddServerGroupMemberResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddServerGroupMemberRequest.class, AddServerGroupMemberResponse.class)
@@ -208,16 +208,13 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddServerGroupMemberRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(AddServerGroupMemberRequest::getServerGroupId,
+                AddServerGroupMemberRequest::setServerGroupId));
         builder.<AddServerGroupMemberRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddServerGroupMemberRequestBody.class),
-            f -> f.withMarshaller(AddServerGroupMemberRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddServerGroupMemberRequest::getBody, AddServerGroupMemberRequest::setBody));
 
         // response
 
@@ -225,9 +222,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> associateServerVirtualIp =
-        genForassociateServerVirtualIp();
+        genForAssociateServerVirtualIp();
 
-    private static HttpRequestDef<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> genForassociateServerVirtualIp() {
+    private static HttpRequestDef<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> genForAssociateServerVirtualIp() {
         // basic
         HttpRequestDef.Builder<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> builder =
             HttpRequestDef
@@ -241,16 +238,13 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateServerVirtualIpRequest::getNicId, (req, v) -> {
-                req.setNicId(v);
-            }));
+            f -> f.withMarshaller(AssociateServerVirtualIpRequest::getNicId,
+                AssociateServerVirtualIpRequest::setNicId));
         builder.<AssociateServerVirtualIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociateServerVirtualIpRequestBody.class),
-            f -> f.withMarshaller(AssociateServerVirtualIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateServerVirtualIpRequest::getBody, AssociateServerVirtualIpRequest::setBody));
 
         // response
 
@@ -258,9 +252,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<AttachServerVolumeRequest, AttachServerVolumeResponse> attachServerVolume =
-        genForattachServerVolume();
+        genForAttachServerVolume();
 
-    private static HttpRequestDef<AttachServerVolumeRequest, AttachServerVolumeResponse> genForattachServerVolume() {
+    private static HttpRequestDef<AttachServerVolumeRequest, AttachServerVolumeResponse> genForAttachServerVolume() {
         // basic
         HttpRequestDef.Builder<AttachServerVolumeRequest, AttachServerVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AttachServerVolumeRequest.class, AttachServerVolumeResponse.class)
@@ -273,16 +267,12 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachServerVolumeRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(AttachServerVolumeRequest::getServerId, AttachServerVolumeRequest::setServerId));
         builder.<AttachServerVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachServerVolumeRequestBody.class),
-            f -> f.withMarshaller(AttachServerVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachServerVolumeRequest::getBody, AttachServerVolumeRequest::setBody));
 
         // response
 
@@ -290,9 +280,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<BatchAddServerNicsRequest, BatchAddServerNicsResponse> batchAddServerNics =
-        genForbatchAddServerNics();
+        genForBatchAddServerNics();
 
-    private static HttpRequestDef<BatchAddServerNicsRequest, BatchAddServerNicsResponse> genForbatchAddServerNics() {
+    private static HttpRequestDef<BatchAddServerNicsRequest, BatchAddServerNicsResponse> genForBatchAddServerNics() {
         // basic
         HttpRequestDef.Builder<BatchAddServerNicsRequest, BatchAddServerNicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchAddServerNicsRequest.class, BatchAddServerNicsResponse.class)
@@ -305,16 +295,12 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddServerNicsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(BatchAddServerNicsRequest::getServerId, BatchAddServerNicsRequest::setServerId));
         builder.<BatchAddServerNicsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAddServerNicsRequestBody.class),
-            f -> f.withMarshaller(BatchAddServerNicsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddServerNicsRequest::getBody, BatchAddServerNicsRequest::setBody));
 
         // response
 
@@ -322,9 +308,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> batchAttachSharableVolumes =
-        genForbatchAttachSharableVolumes();
+        genForBatchAttachSharableVolumes();
 
-    private static HttpRequestDef<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> genForbatchAttachSharableVolumes() {
+    private static HttpRequestDef<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> genForBatchAttachSharableVolumes() {
         // basic
         HttpRequestDef.Builder<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse> builder =
             HttpRequestDef
@@ -340,16 +326,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAttachSharableVolumesRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(BatchAttachSharableVolumesRequest::getVolumeId,
+                BatchAttachSharableVolumesRequest::setVolumeId));
         builder.<BatchAttachSharableVolumesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAttachSharableVolumesRequestBody.class),
-            f -> f.withMarshaller(BatchAttachSharableVolumesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAttachSharableVolumesRequest::getBody,
+                BatchAttachSharableVolumesRequest::setBody));
 
         // response
 
@@ -357,9 +341,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> batchCreateServerTags =
-        genForbatchCreateServerTags();
+        genForBatchCreateServerTags();
 
-    private static HttpRequestDef<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> genForbatchCreateServerTags() {
+    private static HttpRequestDef<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> genForBatchCreateServerTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateServerTagsRequest.class, BatchCreateServerTagsResponse.class)
@@ -372,16 +356,13 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateServerTagsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateServerTagsRequest::getServerId,
+                BatchCreateServerTagsRequest::setServerId));
         builder.<BatchCreateServerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateServerTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateServerTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateServerTagsRequest::getBody, BatchCreateServerTagsRequest::setBody));
 
         // response
 
@@ -389,9 +370,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse> batchDeleteServerNics =
-        genForbatchDeleteServerNics();
+        genForBatchDeleteServerNics();
 
-    private static HttpRequestDef<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse> genForbatchDeleteServerNics() {
+    private static HttpRequestDef<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse> genForBatchDeleteServerNics() {
         // basic
         HttpRequestDef.Builder<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteServerNicsRequest.class, BatchDeleteServerNicsResponse.class)
@@ -404,16 +385,13 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteServerNicsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteServerNicsRequest::getServerId,
+                BatchDeleteServerNicsRequest::setServerId));
         builder.<BatchDeleteServerNicsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteServerNicsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteServerNicsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteServerNicsRequest::getBody, BatchDeleteServerNicsRequest::setBody));
 
         // response
 
@@ -421,9 +399,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse> batchDeleteServerTags =
-        genForbatchDeleteServerTags();
+        genForBatchDeleteServerTags();
 
-    private static HttpRequestDef<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse> genForbatchDeleteServerTags() {
+    private static HttpRequestDef<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse> genForBatchDeleteServerTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteServerTagsRequest.class, BatchDeleteServerTagsResponse.class)
@@ -436,16 +414,13 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteServerTagsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteServerTagsRequest::getServerId,
+                BatchDeleteServerTagsRequest::setServerId));
         builder.<BatchDeleteServerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteServerTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteServerTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteServerTagsRequest::getBody, BatchDeleteServerTagsRequest::setBody));
 
         // response
 
@@ -453,9 +428,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<BatchRebootServersRequest, BatchRebootServersResponse> batchRebootServers =
-        genForbatchRebootServers();
+        genForBatchRebootServers();
 
-    private static HttpRequestDef<BatchRebootServersRequest, BatchRebootServersResponse> genForbatchRebootServers() {
+    private static HttpRequestDef<BatchRebootServersRequest, BatchRebootServersResponse> genForBatchRebootServers() {
         // basic
         HttpRequestDef.Builder<BatchRebootServersRequest, BatchRebootServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchRebootServersRequest.class, BatchRebootServersResponse.class)
@@ -468,9 +443,7 @@ public class EcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchRebootServersRequestBody.class),
-            f -> f.withMarshaller(BatchRebootServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRebootServersRequest::getBody, BatchRebootServersRequest::setBody));
 
         // response
 
@@ -478,9 +451,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> batchResetServersPassword =
-        genForbatchResetServersPassword();
+        genForBatchResetServersPassword();
 
-    private static HttpRequestDef<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> genForbatchResetServersPassword() {
+    private static HttpRequestDef<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> genForBatchResetServersPassword() {
         // basic
         HttpRequestDef.Builder<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> builder =
             HttpRequestDef
@@ -496,9 +469,8 @@ public class EcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchResetServersPasswordRequestBody.class),
-            f -> f.withMarshaller(BatchResetServersPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchResetServersPasswordRequest::getBody,
+                BatchResetServersPasswordRequest::setBody));
 
         // response
 
@@ -506,9 +478,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<BatchStartServersRequest, BatchStartServersResponse> batchStartServers =
-        genForbatchStartServers();
+        genForBatchStartServers();
 
-    private static HttpRequestDef<BatchStartServersRequest, BatchStartServersResponse> genForbatchStartServers() {
+    private static HttpRequestDef<BatchStartServersRequest, BatchStartServersResponse> genForBatchStartServers() {
         // basic
         HttpRequestDef.Builder<BatchStartServersRequest, BatchStartServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStartServersRequest.class, BatchStartServersResponse.class)
@@ -521,9 +493,7 @@ public class EcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchStartServersRequestBody.class),
-            f -> f.withMarshaller(BatchStartServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStartServersRequest::getBody, BatchStartServersRequest::setBody));
 
         // response
 
@@ -531,9 +501,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<BatchStopServersRequest, BatchStopServersResponse> batchStopServers =
-        genForbatchStopServers();
+        genForBatchStopServers();
 
-    private static HttpRequestDef<BatchStopServersRequest, BatchStopServersResponse> genForbatchStopServers() {
+    private static HttpRequestDef<BatchStopServersRequest, BatchStopServersResponse> genForBatchStopServers() {
         // basic
         HttpRequestDef.Builder<BatchStopServersRequest, BatchStopServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStopServersRequest.class, BatchStopServersResponse.class)
@@ -546,9 +516,7 @@ public class EcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchStopServersRequestBody.class),
-            f -> f.withMarshaller(BatchStopServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStopServersRequest::getBody, BatchStopServersRequest::setBody));
 
         // response
 
@@ -556,9 +524,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> batchUpdateServersName =
-        genForbatchUpdateServersName();
+        genForBatchUpdateServersName();
 
-    private static HttpRequestDef<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> genForbatchUpdateServersName() {
+    private static HttpRequestDef<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> genForBatchUpdateServersName() {
         // basic
         HttpRequestDef.Builder<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, BatchUpdateServersNameRequest.class, BatchUpdateServersNameResponse.class)
@@ -571,9 +539,7 @@ public class EcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateServersNameRequestBody.class),
-            f -> f.withMarshaller(BatchUpdateServersNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateServersNameRequest::getBody, BatchUpdateServersNameRequest::setBody));
 
         // response
 
@@ -581,9 +547,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse> changeServerChargeMode =
-        genForchangeServerChargeMode();
+        genForChangeServerChargeMode();
 
-    private static HttpRequestDef<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse> genForchangeServerChargeMode() {
+    private static HttpRequestDef<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse> genForChangeServerChargeMode() {
         // basic
         HttpRequestDef.Builder<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ChangeServerChargeModeRequest.class, ChangeServerChargeModeResponse.class)
@@ -596,9 +562,7 @@ public class EcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeServerChargeModeRequestBody.class),
-            f -> f.withMarshaller(ChangeServerChargeModeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeServerChargeModeRequest::getBody, ChangeServerChargeModeRequest::setBody));
 
         // response
 
@@ -606,9 +570,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> changeServerOsWithCloudInit =
-        genForchangeServerOsWithCloudInit();
+        genForChangeServerOsWithCloudInit();
 
-    private static HttpRequestDef<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> genForchangeServerOsWithCloudInit() {
+    private static HttpRequestDef<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> genForChangeServerOsWithCloudInit() {
         // basic
         HttpRequestDef.Builder<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> builder =
             HttpRequestDef
@@ -624,16 +588,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeServerOsWithCloudInitRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ChangeServerOsWithCloudInitRequest::getServerId,
+                ChangeServerOsWithCloudInitRequest::setServerId));
         builder.<ChangeServerOsWithCloudInitRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeServerOsWithCloudInitRequestBody.class),
-            f -> f.withMarshaller(ChangeServerOsWithCloudInitRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeServerOsWithCloudInitRequest::getBody,
+                ChangeServerOsWithCloudInitRequest::setBody));
 
         // response
 
@@ -641,9 +603,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> changeServerOsWithoutCloudInit =
-        genForchangeServerOsWithoutCloudInit();
+        genForChangeServerOsWithoutCloudInit();
 
-    private static HttpRequestDef<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> genForchangeServerOsWithoutCloudInit() {
+    private static HttpRequestDef<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> genForChangeServerOsWithoutCloudInit() {
         // basic
         HttpRequestDef.Builder<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> builder =
             HttpRequestDef
@@ -659,16 +621,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeServerOsWithoutCloudInitRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ChangeServerOsWithoutCloudInitRequest::getServerId,
+                ChangeServerOsWithoutCloudInitRequest::setServerId));
         builder.<ChangeServerOsWithoutCloudInitRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeServerOsWithoutCloudInitRequestBody.class),
-            f -> f.withMarshaller(ChangeServerOsWithoutCloudInitRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeServerOsWithoutCloudInitRequest::getBody,
+                ChangeServerOsWithoutCloudInitRequest::setBody));
 
         // response
 
@@ -676,9 +636,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<CreatePostPaidServersRequest, CreatePostPaidServersResponse> createPostPaidServers =
-        genForcreatePostPaidServers();
+        genForCreatePostPaidServers();
 
-    private static HttpRequestDef<CreatePostPaidServersRequest, CreatePostPaidServersResponse> genForcreatePostPaidServers() {
+    private static HttpRequestDef<CreatePostPaidServersRequest, CreatePostPaidServersResponse> genForCreatePostPaidServers() {
         // basic
         HttpRequestDef.Builder<CreatePostPaidServersRequest, CreatePostPaidServersResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePostPaidServersRequest.class, CreatePostPaidServersResponse.class)
@@ -691,16 +651,13 @@ public class EcsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePostPaidServersRequest::getXClientToken, (req, v) -> {
-                req.setXClientToken(v);
-            }));
+            f -> f.withMarshaller(CreatePostPaidServersRequest::getXClientToken,
+                CreatePostPaidServersRequest::setXClientToken));
         builder.<CreatePostPaidServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePostPaidServersRequestBody.class),
-            f -> f.withMarshaller(CreatePostPaidServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePostPaidServersRequest::getBody, CreatePostPaidServersRequest::setBody));
 
         // response
 
@@ -708,9 +665,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<CreateServerGroupRequest, CreateServerGroupResponse> createServerGroup =
-        genForcreateServerGroup();
+        genForCreateServerGroup();
 
-    private static HttpRequestDef<CreateServerGroupRequest, CreateServerGroupResponse> genForcreateServerGroup() {
+    private static HttpRequestDef<CreateServerGroupRequest, CreateServerGroupResponse> genForCreateServerGroup() {
         // basic
         HttpRequestDef.Builder<CreateServerGroupRequest, CreateServerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateServerGroupRequest.class, CreateServerGroupResponse.class)
@@ -723,9 +680,7 @@ public class EcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateServerGroupRequestBody.class),
-            f -> f.withMarshaller(CreateServerGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateServerGroupRequest::getBody, CreateServerGroupRequest::setBody));
 
         // response
 
@@ -733,9 +688,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<CreateServersRequest, CreateServersResponse> createServers =
-        genForcreateServers();
+        genForCreateServers();
 
-    private static HttpRequestDef<CreateServersRequest, CreateServersResponse> genForcreateServers() {
+    private static HttpRequestDef<CreateServersRequest, CreateServersResponse> genForCreateServers() {
         // basic
         HttpRequestDef.Builder<CreateServersRequest, CreateServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateServersRequest.class, CreateServersResponse.class)
@@ -748,16 +703,12 @@ public class EcsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateServersRequest::getXClientToken, (req, v) -> {
-                req.setXClientToken(v);
-            }));
+            f -> f.withMarshaller(CreateServersRequest::getXClientToken, CreateServersRequest::setXClientToken));
         builder.<CreateServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateServersRequestBody.class),
-            f -> f.withMarshaller(CreateServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateServersRequest::getBody, CreateServersRequest::setBody));
 
         // response
 
@@ -765,9 +716,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<DeleteServerGroupRequest, DeleteServerGroupResponse> deleteServerGroup =
-        genFordeleteServerGroup();
+        genForDeleteServerGroup();
 
-    private static HttpRequestDef<DeleteServerGroupRequest, DeleteServerGroupResponse> genFordeleteServerGroup() {
+    private static HttpRequestDef<DeleteServerGroupRequest, DeleteServerGroupResponse> genForDeleteServerGroup() {
         // basic
         HttpRequestDef.Builder<DeleteServerGroupRequest, DeleteServerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServerGroupRequest.class, DeleteServerGroupResponse.class)
@@ -780,9 +731,8 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServerGroupRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteServerGroupRequest::getServerGroupId,
+                DeleteServerGroupRequest::setServerGroupId));
 
         // response
 
@@ -790,9 +740,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse> deleteServerGroupMember =
-        genFordeleteServerGroupMember();
+        genForDeleteServerGroupMember();
 
-    private static HttpRequestDef<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse> genFordeleteServerGroupMember() {
+    private static HttpRequestDef<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse> genForDeleteServerGroupMember() {
         // basic
         HttpRequestDef.Builder<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DeleteServerGroupMemberRequest.class, DeleteServerGroupMemberResponse.class)
@@ -805,16 +755,13 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServerGroupMemberRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteServerGroupMemberRequest::getServerGroupId,
+                DeleteServerGroupMemberRequest::setServerGroupId));
         builder.<DeleteServerGroupMemberRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteServerGroupMemberRequestBody.class),
-            f -> f.withMarshaller(DeleteServerGroupMemberRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteServerGroupMemberRequest::getBody, DeleteServerGroupMemberRequest::setBody));
 
         // response
 
@@ -822,9 +769,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<DeleteServerMetadataRequest, DeleteServerMetadataResponse> deleteServerMetadata =
-        genFordeleteServerMetadata();
+        genForDeleteServerMetadata();
 
-    private static HttpRequestDef<DeleteServerMetadataRequest, DeleteServerMetadataResponse> genFordeleteServerMetadata() {
+    private static HttpRequestDef<DeleteServerMetadataRequest, DeleteServerMetadataResponse> genForDeleteServerMetadata() {
         // basic
         HttpRequestDef.Builder<DeleteServerMetadataRequest, DeleteServerMetadataResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteServerMetadataRequest.class, DeleteServerMetadataResponse.class)
@@ -837,16 +784,12 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServerMetadataRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteServerMetadataRequest::getKey, DeleteServerMetadataRequest::setKey));
         builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServerMetadataRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(DeleteServerMetadataRequest::getServerId, DeleteServerMetadataRequest::setServerId));
 
         // response
 
@@ -854,9 +797,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<DeleteServerPasswordRequest, DeleteServerPasswordResponse> deleteServerPassword =
-        genFordeleteServerPassword();
+        genForDeleteServerPassword();
 
-    private static HttpRequestDef<DeleteServerPasswordRequest, DeleteServerPasswordResponse> genFordeleteServerPassword() {
+    private static HttpRequestDef<DeleteServerPasswordRequest, DeleteServerPasswordResponse> genForDeleteServerPassword() {
         // basic
         HttpRequestDef.Builder<DeleteServerPasswordRequest, DeleteServerPasswordResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteServerPasswordRequest.class, DeleteServerPasswordResponse.class)
@@ -869,9 +812,7 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServerPasswordRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(DeleteServerPasswordRequest::getServerId, DeleteServerPasswordRequest::setServerId));
 
         // response
 
@@ -879,9 +820,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<DeleteServersRequest, DeleteServersResponse> deleteServers =
-        genFordeleteServers();
+        genForDeleteServers();
 
-    private static HttpRequestDef<DeleteServersRequest, DeleteServersResponse> genFordeleteServers() {
+    private static HttpRequestDef<DeleteServersRequest, DeleteServersResponse> genForDeleteServers() {
         // basic
         HttpRequestDef.Builder<DeleteServersRequest, DeleteServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteServersRequest.class, DeleteServersResponse.class)
@@ -894,9 +835,7 @@ public class EcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteServersRequestBody.class),
-            f -> f.withMarshaller(DeleteServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteServersRequest::getBody, DeleteServersRequest::setBody));
 
         // response
 
@@ -904,9 +843,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<DetachServerVolumeRequest, DetachServerVolumeResponse> detachServerVolume =
-        genFordetachServerVolume();
+        genForDetachServerVolume();
 
-    private static HttpRequestDef<DetachServerVolumeRequest, DetachServerVolumeResponse> genFordetachServerVolume() {
+    private static HttpRequestDef<DetachServerVolumeRequest, DetachServerVolumeResponse> genForDetachServerVolume() {
         // basic
         HttpRequestDef.Builder<DetachServerVolumeRequest, DetachServerVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DetachServerVolumeRequest.class, DetachServerVolumeResponse.class)
@@ -919,23 +858,17 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachServerVolumeRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(DetachServerVolumeRequest::getServerId, DetachServerVolumeRequest::setServerId));
         builder.<String>withRequestField("volume_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachServerVolumeRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(DetachServerVolumeRequest::getVolumeId, DetachServerVolumeRequest::setVolumeId));
         builder.<DetachServerVolumeRequest.DeleteFlagEnum>withRequestField("delete_flag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DetachServerVolumeRequest.DeleteFlagEnum.class),
-            f -> f.withMarshaller(DetachServerVolumeRequest::getDeleteFlag, (req, v) -> {
-                req.setDeleteFlag(v);
-            }));
+            f -> f.withMarshaller(DetachServerVolumeRequest::getDeleteFlag, DetachServerVolumeRequest::setDeleteFlag));
 
         // response
 
@@ -943,9 +876,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> disassociateServerVirtualIp =
-        genFordisassociateServerVirtualIp();
+        genForDisassociateServerVirtualIp();
 
-    private static HttpRequestDef<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> genFordisassociateServerVirtualIp() {
+    private static HttpRequestDef<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> genForDisassociateServerVirtualIp() {
         // basic
         HttpRequestDef.Builder<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> builder =
             HttpRequestDef
@@ -961,16 +894,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateServerVirtualIpRequest::getNicId, (req, v) -> {
-                req.setNicId(v);
-            }));
+            f -> f.withMarshaller(DisassociateServerVirtualIpRequest::getNicId,
+                DisassociateServerVirtualIpRequest::setNicId));
         builder.<DisassociateServerVirtualIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DisassociateServerVirtualIpRequestBody.class),
-            f -> f.withMarshaller(DisassociateServerVirtualIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateServerVirtualIpRequest::getBody,
+                DisassociateServerVirtualIpRequest::setBody));
 
         // response
 
@@ -978,9 +909,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse> listFlavorSellPolicies =
-        genForlistFlavorSellPolicies();
+        genForListFlavorSellPolicies();
 
-    private static HttpRequestDef<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse> genForlistFlavorSellPolicies() {
+    private static HttpRequestDef<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse> genForListFlavorSellPolicies() {
         // basic
         HttpRequestDef.Builder<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListFlavorSellPoliciesRequest.class, ListFlavorSellPoliciesResponse.class)
@@ -993,88 +924,75 @@ public class EcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getFlavorId, (req, v) -> {
-                req.setFlavorId(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getFlavorId,
+                ListFlavorSellPoliciesRequest::setFlavorId));
         builder.<ListFlavorSellPoliciesRequest.SellStatusEnum>withRequestField("sell_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFlavorSellPoliciesRequest.SellStatusEnum.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getSellStatus, (req, v) -> {
-                req.setSellStatus(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getSellStatus,
+                ListFlavorSellPoliciesRequest::setSellStatus));
         builder.<ListFlavorSellPoliciesRequest.SellModeEnum>withRequestField("sell_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFlavorSellPoliciesRequest.SellModeEnum.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getSellMode, (req, v) -> {
-                req.setSellMode(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getSellMode,
+                ListFlavorSellPoliciesRequest::setSellMode));
         builder.<String>withRequestField("availability_zone_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getAvailabilityZoneId, (req, v) -> {
-                req.setAvailabilityZoneId(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getAvailabilityZoneId,
+                ListFlavorSellPoliciesRequest::setAvailabilityZoneId));
         builder.<Integer>withRequestField("longest_spot_duration_hours_gt",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLongestSpotDurationHoursGt, (req, v) -> {
-                req.setLongestSpotDurationHoursGt(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLongestSpotDurationHoursGt,
+                ListFlavorSellPoliciesRequest::setLongestSpotDurationHoursGt));
         builder.<Integer>withRequestField("largest_spot_duration_count_gt",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLargestSpotDurationCountGt, (req, v) -> {
-                req.setLargestSpotDurationCountGt(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLargestSpotDurationCountGt,
+                ListFlavorSellPoliciesRequest::setLargestSpotDurationCountGt));
         builder.<Integer>withRequestField("longest_spot_duration_hours",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLongestSpotDurationHours, (req, v) -> {
-                req.setLongestSpotDurationHours(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLongestSpotDurationHours,
+                ListFlavorSellPoliciesRequest::setLongestSpotDurationHours));
         builder.<Integer>withRequestField("largest_spot_duration_count",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLargestSpotDurationCount, (req, v) -> {
-                req.setLargestSpotDurationCount(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLargestSpotDurationCount,
+                ListFlavorSellPoliciesRequest::setLargestSpotDurationCount));
         builder.<ListFlavorSellPoliciesRequest.InterruptionPolicyEnum>withRequestField("interruption_policy",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFlavorSellPoliciesRequest.InterruptionPolicyEnum.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getInterruptionPolicy, (req, v) -> {
-                req.setInterruptionPolicy(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getInterruptionPolicy,
+                ListFlavorSellPoliciesRequest::setInterruptionPolicy));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLimit, ListFlavorSellPoliciesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getMarker, ListFlavorSellPoliciesRequest::setMarker));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
+    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForListFlavors();
 
-    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
+    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForListFlavors() {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
@@ -1087,9 +1005,7 @@ public class EcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getAvailabilityZone, ListFlavorsRequest::setAvailabilityZone));
 
         // response
 
@@ -1097,9 +1013,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ListResizeFlavorsRequest, ListResizeFlavorsResponse> listResizeFlavors =
-        genForlistResizeFlavors();
+        genForListResizeFlavors();
 
-    private static HttpRequestDef<ListResizeFlavorsRequest, ListResizeFlavorsResponse> genForlistResizeFlavors() {
+    private static HttpRequestDef<ListResizeFlavorsRequest, ListResizeFlavorsResponse> genForListResizeFlavors() {
         // basic
         HttpRequestDef.Builder<ListResizeFlavorsRequest, ListResizeFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResizeFlavorsRequest.class, ListResizeFlavorsResponse.class)
@@ -1112,51 +1028,40 @@ public class EcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResizeFlavorsRequest::getInstanceUuid, (req, v) -> {
-                req.setInstanceUuid(v);
-            }));
+            f -> f.withMarshaller(ListResizeFlavorsRequest::getInstanceUuid,
+                ListResizeFlavorsRequest::setInstanceUuid));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResizeFlavorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResizeFlavorsRequest::getLimit, ListResizeFlavorsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResizeFlavorsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListResizeFlavorsRequest::getMarker, ListResizeFlavorsRequest::setMarker));
         builder.<ListResizeFlavorsRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListResizeFlavorsRequest.SortDirEnum.class),
-            f -> f.withMarshaller(ListResizeFlavorsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListResizeFlavorsRequest::getSortDir, ListResizeFlavorsRequest::setSortDir));
         builder.<ListResizeFlavorsRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListResizeFlavorsRequest.SortKeyEnum.class),
-            f -> f.withMarshaller(ListResizeFlavorsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListResizeFlavorsRequest::getSortKey, ListResizeFlavorsRequest::setSortKey));
         builder.<String>withRequestField("source_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResizeFlavorsRequest::getSourceFlavorId, (req, v) -> {
-                req.setSourceFlavorId(v);
-            }));
+            f -> f.withMarshaller(ListResizeFlavorsRequest::getSourceFlavorId,
+                ListResizeFlavorsRequest::setSourceFlavorId));
         builder.<String>withRequestField("source_flavor_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResizeFlavorsRequest::getSourceFlavorName, (req, v) -> {
-                req.setSourceFlavorName(v);
-            }));
+            f -> f.withMarshaller(ListResizeFlavorsRequest::getSourceFlavorName,
+                ListResizeFlavorsRequest::setSourceFlavorName));
 
         // response
 
@@ -1164,9 +1069,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> listServerBlockDevices =
-        genForlistServerBlockDevices();
+        genForListServerBlockDevices();
 
-    private static HttpRequestDef<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> genForlistServerBlockDevices() {
+    private static HttpRequestDef<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> genForListServerBlockDevices() {
         // basic
         HttpRequestDef.Builder<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListServerBlockDevicesRequest.class, ListServerBlockDevicesResponse.class)
@@ -1179,9 +1084,8 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServerBlockDevicesRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ListServerBlockDevicesRequest::getServerId,
+                ListServerBlockDevicesRequest::setServerId));
 
         // response
 
@@ -1189,9 +1093,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> listServerGroups =
-        genForlistServerGroups();
+        genForListServerGroups();
 
-    private static HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> genForlistServerGroups() {
+    private static HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> genForListServerGroups() {
         // basic
         HttpRequestDef.Builder<ListServerGroupsRequest, ListServerGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServerGroupsRequest.class, ListServerGroupsResponse.class)
@@ -1204,16 +1108,12 @@ public class EcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServerGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServerGroupsRequest::getLimit, ListServerGroupsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServerGroupsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListServerGroupsRequest::getMarker, ListServerGroupsRequest::setMarker));
 
         // response
 
@@ -1221,9 +1121,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ListServerInterfacesRequest, ListServerInterfacesResponse> listServerInterfaces =
-        genForlistServerInterfaces();
+        genForListServerInterfaces();
 
-    private static HttpRequestDef<ListServerInterfacesRequest, ListServerInterfacesResponse> genForlistServerInterfaces() {
+    private static HttpRequestDef<ListServerInterfacesRequest, ListServerInterfacesResponse> genForListServerInterfaces() {
         // basic
         HttpRequestDef.Builder<ListServerInterfacesRequest, ListServerInterfacesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListServerInterfacesRequest.class, ListServerInterfacesResponse.class)
@@ -1236,9 +1136,7 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServerInterfacesRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ListServerInterfacesRequest::getServerId, ListServerInterfacesRequest::setServerId));
 
         // response
 
@@ -1246,9 +1144,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ListServerTagsRequest, ListServerTagsResponse> listServerTags =
-        genForlistServerTags();
+        genForListServerTags();
 
-    private static HttpRequestDef<ListServerTagsRequest, ListServerTagsResponse> genForlistServerTags() {
+    private static HttpRequestDef<ListServerTagsRequest, ListServerTagsResponse> genForListServerTags() {
         // basic
         HttpRequestDef.Builder<ListServerTagsRequest, ListServerTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServerTagsRequest.class, ListServerTagsResponse.class)
@@ -1264,9 +1162,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ListServersByTagRequest, ListServersByTagResponse> listServersByTag =
-        genForlistServersByTag();
+        genForListServersByTag();
 
-    private static HttpRequestDef<ListServersByTagRequest, ListServersByTagResponse> genForlistServersByTag() {
+    private static HttpRequestDef<ListServersByTagRequest, ListServersByTagResponse> genForListServersByTag() {
         // basic
         HttpRequestDef.Builder<ListServersByTagRequest, ListServersByTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListServersByTagRequest.class, ListServersByTagResponse.class)
@@ -1279,9 +1177,7 @@ public class EcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListServersByTagRequestBody.class),
-            f -> f.withMarshaller(ListServersByTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListServersByTagRequest::getBody, ListServersByTagRequest::setBody));
 
         // response
 
@@ -1289,9 +1185,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ListServersDetailsRequest, ListServersDetailsResponse> listServersDetails =
-        genForlistServersDetails();
+        genForListServersDetails();
 
-    private static HttpRequestDef<ListServersDetailsRequest, ListServersDetailsResponse> genForlistServersDetails() {
+    private static HttpRequestDef<ListServersDetailsRequest, ListServersDetailsResponse> genForListServersDetails() {
         // basic
         HttpRequestDef.Builder<ListServersDetailsRequest, ListServersDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServersDetailsRequest.class, ListServersDetailsResponse.class)
@@ -1304,86 +1200,64 @@ public class EcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getEnterpriseProjectId,
+                ListServersDetailsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("flavor",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getFlavor, (req, v) -> {
-                req.setFlavor(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getFlavor, ListServersDetailsRequest::setFlavor));
         builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getIp, ListServersDetailsRequest::setIp));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getLimit, ListServersDetailsRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getName, ListServersDetailsRequest::setName));
         builder.<String>withRequestField("not-tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getNotTags, (req, v) -> {
-                req.setNotTags(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getNotTags, ListServersDetailsRequest::setNotTags));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getOffset, ListServersDetailsRequest::setOffset));
         builder.<String>withRequestField("reservation_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getReservationId, (req, v) -> {
-                req.setReservationId(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getReservationId,
+                ListServersDetailsRequest::setReservationId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getStatus, ListServersDetailsRequest::setStatus));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getTags, ListServersDetailsRequest::setTags));
         builder.<String>withRequestField("ip_eq",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getIpEq, (req, v) -> {
-                req.setIpEq(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getIpEq, ListServersDetailsRequest::setIpEq));
         builder.<String>withRequestField("server_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDetailsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ListServersDetailsRequest::getServerId, ListServersDetailsRequest::setServerId));
 
         // response
 
@@ -1391,9 +1265,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<MigrateServerRequest, MigrateServerResponse> migrateServer =
-        genFormigrateServer();
+        genForMigrateServer();
 
-    private static HttpRequestDef<MigrateServerRequest, MigrateServerResponse> genFormigrateServer() {
+    private static HttpRequestDef<MigrateServerRequest, MigrateServerResponse> genForMigrateServer() {
         // basic
         HttpRequestDef.Builder<MigrateServerRequest, MigrateServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, MigrateServerRequest.class, MigrateServerResponse.class)
@@ -1406,16 +1280,12 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MigrateServerRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(MigrateServerRequest::getServerId, MigrateServerRequest::setServerId));
         builder.<MigrateServerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MigrateServerRequestBody.class),
-            f -> f.withMarshaller(MigrateServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MigrateServerRequest::getBody, MigrateServerRequest::setBody));
 
         // response
 
@@ -1423,9 +1293,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> novaAssociateSecurityGroup =
-        genFornovaAssociateSecurityGroup();
+        genForNovaAssociateSecurityGroup();
 
-    private static HttpRequestDef<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> genFornovaAssociateSecurityGroup() {
+    private static HttpRequestDef<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> genForNovaAssociateSecurityGroup() {
         // basic
         HttpRequestDef.Builder<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> builder =
             HttpRequestDef
@@ -1441,16 +1311,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaAssociateSecurityGroupRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(NovaAssociateSecurityGroupRequest::getServerId,
+                NovaAssociateSecurityGroupRequest::setServerId));
         builder.<NovaAssociateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NovaAssociateSecurityGroupRequestBody.class),
-            f -> f.withMarshaller(NovaAssociateSecurityGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(NovaAssociateSecurityGroupRequest::getBody,
+                NovaAssociateSecurityGroupRequest::setBody));
 
         // response
 
@@ -1458,9 +1326,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse> novaAttachInterface =
-        genFornovaAttachInterface();
+        genForNovaAttachInterface();
 
-    private static HttpRequestDef<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse> genFornovaAttachInterface() {
+    private static HttpRequestDef<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse> genForNovaAttachInterface() {
         // basic
         HttpRequestDef.Builder<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, NovaAttachInterfaceRequest.class, NovaAttachInterfaceResponse.class)
@@ -1473,16 +1341,12 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaAttachInterfaceRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(NovaAttachInterfaceRequest::getServerId, NovaAttachInterfaceRequest::setServerId));
         builder.<NovaAttachInterfaceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NovaAttachInterfaceRequestBody.class),
-            f -> f.withMarshaller(NovaAttachInterfaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(NovaAttachInterfaceRequest::getBody, NovaAttachInterfaceRequest::setBody));
 
         // response
 
@@ -1490,9 +1354,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaCreateKeypairRequest, NovaCreateKeypairResponse> novaCreateKeypair =
-        genFornovaCreateKeypair();
+        genForNovaCreateKeypair();
 
-    private static HttpRequestDef<NovaCreateKeypairRequest, NovaCreateKeypairResponse> genFornovaCreateKeypair() {
+    private static HttpRequestDef<NovaCreateKeypairRequest, NovaCreateKeypairResponse> genForNovaCreateKeypair() {
         // basic
         HttpRequestDef.Builder<NovaCreateKeypairRequest, NovaCreateKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, NovaCreateKeypairRequest.class, NovaCreateKeypairResponse.class)
@@ -1505,16 +1369,13 @@ public class EcsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaCreateKeypairRequest::getOpenStackAPIVersion, (req, v) -> {
-                req.setOpenStackAPIVersion(v);
-            }));
+            f -> f.withMarshaller(NovaCreateKeypairRequest::getOpenStackAPIVersion,
+                NovaCreateKeypairRequest::setOpenStackAPIVersion));
         builder.<NovaCreateKeypairRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NovaCreateKeypairRequestBody.class),
-            f -> f.withMarshaller(NovaCreateKeypairRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(NovaCreateKeypairRequest::getBody, NovaCreateKeypairRequest::setBody));
 
         // response
 
@@ -1522,9 +1383,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaCreateServersRequest, NovaCreateServersResponse> novaCreateServers =
-        genFornovaCreateServers();
+        genForNovaCreateServers();
 
-    private static HttpRequestDef<NovaCreateServersRequest, NovaCreateServersResponse> genFornovaCreateServers() {
+    private static HttpRequestDef<NovaCreateServersRequest, NovaCreateServersResponse> genForNovaCreateServers() {
         // basic
         HttpRequestDef.Builder<NovaCreateServersRequest, NovaCreateServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, NovaCreateServersRequest.class, NovaCreateServersResponse.class)
@@ -1537,16 +1398,13 @@ public class EcsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaCreateServersRequest::getOpenStackAPIVersion, (req, v) -> {
-                req.setOpenStackAPIVersion(v);
-            }));
+            f -> f.withMarshaller(NovaCreateServersRequest::getOpenStackAPIVersion,
+                NovaCreateServersRequest::setOpenStackAPIVersion));
         builder.<NovaCreateServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NovaCreateServersRequestBody.class),
-            f -> f.withMarshaller(NovaCreateServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(NovaCreateServersRequest::getBody, NovaCreateServersRequest::setBody));
 
         // response
 
@@ -1554,9 +1412,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> novaDeleteKeypair =
-        genFornovaDeleteKeypair();
+        genForNovaDeleteKeypair();
 
-    private static HttpRequestDef<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> genFornovaDeleteKeypair() {
+    private static HttpRequestDef<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> genForNovaDeleteKeypair() {
         // basic
         HttpRequestDef.Builder<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, NovaDeleteKeypairRequest.class, NovaDeleteKeypairResponse.class)
@@ -1569,9 +1427,7 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaDeleteKeypairRequest::getKeypairName, (req, v) -> {
-                req.setKeypairName(v);
-            }));
+            f -> f.withMarshaller(NovaDeleteKeypairRequest::getKeypairName, NovaDeleteKeypairRequest::setKeypairName));
 
         // response
 
@@ -1579,9 +1435,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaDeleteServerRequest, NovaDeleteServerResponse> novaDeleteServer =
-        genFornovaDeleteServer();
+        genForNovaDeleteServer();
 
-    private static HttpRequestDef<NovaDeleteServerRequest, NovaDeleteServerResponse> genFornovaDeleteServer() {
+    private static HttpRequestDef<NovaDeleteServerRequest, NovaDeleteServerResponse> genForNovaDeleteServer() {
         // basic
         HttpRequestDef.Builder<NovaDeleteServerRequest, NovaDeleteServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, NovaDeleteServerRequest.class, NovaDeleteServerResponse.class)
@@ -1594,9 +1450,7 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaDeleteServerRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(NovaDeleteServerRequest::getServerId, NovaDeleteServerRequest::setServerId));
 
         // response
 
@@ -1604,9 +1458,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> novaDisassociateSecurityGroup =
-        genFornovaDisassociateSecurityGroup();
+        genForNovaDisassociateSecurityGroup();
 
-    private static HttpRequestDef<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> genFornovaDisassociateSecurityGroup() {
+    private static HttpRequestDef<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> genForNovaDisassociateSecurityGroup() {
         // basic
         HttpRequestDef.Builder<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> builder =
             HttpRequestDef
@@ -1622,16 +1476,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaDisassociateSecurityGroupRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(NovaDisassociateSecurityGroupRequest::getServerId,
+                NovaDisassociateSecurityGroupRequest::setServerId));
         builder.<NovaDisassociateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NovaDisassociateSecurityGroupRequestBody.class),
-            f -> f.withMarshaller(NovaDisassociateSecurityGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(NovaDisassociateSecurityGroupRequest::getBody,
+                NovaDisassociateSecurityGroupRequest::setBody));
 
         // response
 
@@ -1639,9 +1491,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> novaListAvailabilityZones =
-        genFornovaListAvailabilityZones();
+        genForNovaListAvailabilityZones();
 
-    private static HttpRequestDef<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> genFornovaListAvailabilityZones() {
+    private static HttpRequestDef<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> genForNovaListAvailabilityZones() {
         // basic
         HttpRequestDef.Builder<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> builder =
             HttpRequestDef
@@ -1660,9 +1512,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaListKeypairsRequest, NovaListKeypairsResponse> novaListKeypairs =
-        genFornovaListKeypairs();
+        genForNovaListKeypairs();
 
-    private static HttpRequestDef<NovaListKeypairsRequest, NovaListKeypairsResponse> genFornovaListKeypairs() {
+    private static HttpRequestDef<NovaListKeypairsRequest, NovaListKeypairsResponse> genForNovaListKeypairs() {
         // basic
         HttpRequestDef.Builder<NovaListKeypairsRequest, NovaListKeypairsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaListKeypairsRequest.class, NovaListKeypairsResponse.class)
@@ -1675,23 +1527,18 @@ public class EcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(NovaListKeypairsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(NovaListKeypairsRequest::getLimit, NovaListKeypairsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListKeypairsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(NovaListKeypairsRequest::getMarker, NovaListKeypairsRequest::setMarker));
         builder.<String>withRequestField("OpenStack-API-Version",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListKeypairsRequest::getOpenStackAPIVersion, (req, v) -> {
-                req.setOpenStackAPIVersion(v);
-            }));
+            f -> f.withMarshaller(NovaListKeypairsRequest::getOpenStackAPIVersion,
+                NovaListKeypairsRequest::setOpenStackAPIVersion));
 
         // response
 
@@ -1699,9 +1546,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> novaListServerSecurityGroups =
-        genFornovaListServerSecurityGroups();
+        genForNovaListServerSecurityGroups();
 
-    private static HttpRequestDef<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> genFornovaListServerSecurityGroups() {
+    private static HttpRequestDef<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> genForNovaListServerSecurityGroups() {
         // basic
         HttpRequestDef.Builder<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> builder =
             HttpRequestDef
@@ -1717,9 +1564,8 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServerSecurityGroupsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(NovaListServerSecurityGroupsRequest::getServerId,
+                NovaListServerSecurityGroupsRequest::setServerId));
 
         // response
 
@@ -1727,9 +1573,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaListServersDetailsRequest, NovaListServersDetailsResponse> novaListServersDetails =
-        genFornovaListServersDetails();
+        genForNovaListServersDetails();
 
-    private static HttpRequestDef<NovaListServersDetailsRequest, NovaListServersDetailsResponse> genFornovaListServersDetails() {
+    private static HttpRequestDef<NovaListServersDetailsRequest, NovaListServersDetailsResponse> genForNovaListServersDetails() {
         // basic
         HttpRequestDef.Builder<NovaListServersDetailsRequest, NovaListServersDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, NovaListServersDetailsRequest.class, NovaListServersDetailsResponse.class)
@@ -1742,93 +1588,72 @@ public class EcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getChangesSince, (req, v) -> {
-                req.setChangesSince(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getChangesSince,
+                NovaListServersDetailsRequest::setChangesSince));
         builder.<String>withRequestField("flavor",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getFlavor, (req, v) -> {
-                req.setFlavor(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getFlavor, NovaListServersDetailsRequest::setFlavor));
         builder.<String>withRequestField("image",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getImage, (req, v) -> {
-                req.setImage(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getImage, NovaListServersDetailsRequest::setImage));
         builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getIp, NovaListServersDetailsRequest::setIp));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getLimit, NovaListServersDetailsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getMarker, NovaListServersDetailsRequest::setMarker));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getName, NovaListServersDetailsRequest::setName));
         builder.<String>withRequestField("not-tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getNotTags, (req, v) -> {
-                req.setNotTags(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getNotTags,
+                NovaListServersDetailsRequest::setNotTags));
         builder.<String>withRequestField("reservation_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getReservationId, (req, v) -> {
-                req.setReservationId(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getReservationId,
+                NovaListServersDetailsRequest::setReservationId));
         builder.<NovaListServersDetailsRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(NovaListServersDetailsRequest.SortKeyEnum.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getSortKey,
+                NovaListServersDetailsRequest::setSortKey));
         builder.<NovaListServersDetailsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(NovaListServersDetailsRequest.StatusEnum.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getStatus, NovaListServersDetailsRequest::setStatus));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getTags, NovaListServersDetailsRequest::setTags));
         builder.<String>withRequestField("OpenStack-API-Version",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaListServersDetailsRequest::getOpenStackAPIVersion, (req, v) -> {
-                req.setOpenStackAPIVersion(v);
-            }));
+            f -> f.withMarshaller(NovaListServersDetailsRequest::getOpenStackAPIVersion,
+                NovaListServersDetailsRequest::setOpenStackAPIVersion));
 
         // response
 
@@ -1836,9 +1661,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaShowKeypairRequest, NovaShowKeypairResponse> novaShowKeypair =
-        genFornovaShowKeypair();
+        genForNovaShowKeypair();
 
-    private static HttpRequestDef<NovaShowKeypairRequest, NovaShowKeypairResponse> genFornovaShowKeypair() {
+    private static HttpRequestDef<NovaShowKeypairRequest, NovaShowKeypairResponse> genForNovaShowKeypair() {
         // basic
         HttpRequestDef.Builder<NovaShowKeypairRequest, NovaShowKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaShowKeypairRequest.class, NovaShowKeypairResponse.class)
@@ -1851,16 +1676,13 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaShowKeypairRequest::getKeypairName, (req, v) -> {
-                req.setKeypairName(v);
-            }));
+            f -> f.withMarshaller(NovaShowKeypairRequest::getKeypairName, NovaShowKeypairRequest::setKeypairName));
         builder.<String>withRequestField("OpenStack-API-Version",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaShowKeypairRequest::getOpenStackAPIVersion, (req, v) -> {
-                req.setOpenStackAPIVersion(v);
-            }));
+            f -> f.withMarshaller(NovaShowKeypairRequest::getOpenStackAPIVersion,
+                NovaShowKeypairRequest::setOpenStackAPIVersion));
 
         // response
 
@@ -1868,9 +1690,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaShowServerRequest, NovaShowServerResponse> novaShowServer =
-        genFornovaShowServer();
+        genForNovaShowServer();
 
-    private static HttpRequestDef<NovaShowServerRequest, NovaShowServerResponse> genFornovaShowServer() {
+    private static HttpRequestDef<NovaShowServerRequest, NovaShowServerResponse> genForNovaShowServer() {
         // basic
         HttpRequestDef.Builder<NovaShowServerRequest, NovaShowServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaShowServerRequest.class, NovaShowServerResponse.class)
@@ -1883,16 +1705,13 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaShowServerRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(NovaShowServerRequest::getServerId, NovaShowServerRequest::setServerId));
         builder.<String>withRequestField("OpenStack-API-Version",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaShowServerRequest::getOpenStackAPIVersion, (req, v) -> {
-                req.setOpenStackAPIVersion(v);
-            }));
+            f -> f.withMarshaller(NovaShowServerRequest::getOpenStackAPIVersion,
+                NovaShowServerRequest::setOpenStackAPIVersion));
 
         // response
 
@@ -1900,9 +1719,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> novaShowServerInterface =
-        genFornovaShowServerInterface();
+        genForNovaShowServerInterface();
 
-    private static HttpRequestDef<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> genFornovaShowServerInterface() {
+    private static HttpRequestDef<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> genForNovaShowServerInterface() {
         // basic
         HttpRequestDef.Builder<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, NovaShowServerInterfaceRequest.class, NovaShowServerInterfaceResponse.class)
@@ -1915,16 +1734,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaShowServerInterfaceRequest::getPortId, (req, v) -> {
-                req.setPortId(v);
-            }));
+            f -> f.withMarshaller(NovaShowServerInterfaceRequest::getPortId,
+                NovaShowServerInterfaceRequest::setPortId));
         builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NovaShowServerInterfaceRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(NovaShowServerInterfaceRequest::getServerId,
+                NovaShowServerInterfaceRequest::setServerId));
 
         // response
 
@@ -1932,9 +1749,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> registerServerAutoRecovery =
-        genForregisterServerAutoRecovery();
+        genForRegisterServerAutoRecovery();
 
-    private static HttpRequestDef<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> genForregisterServerAutoRecovery() {
+    private static HttpRequestDef<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> genForRegisterServerAutoRecovery() {
         // basic
         HttpRequestDef.Builder<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> builder =
             HttpRequestDef
@@ -1950,16 +1767,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RegisterServerAutoRecoveryRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(RegisterServerAutoRecoveryRequest::getServerId,
+                RegisterServerAutoRecoveryRequest::setServerId));
         builder.<RegisterServerAutoRecoveryRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RegisterServerAutoRecoveryRequestBody.class),
-            f -> f.withMarshaller(RegisterServerAutoRecoveryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RegisterServerAutoRecoveryRequest::getBody,
+                RegisterServerAutoRecoveryRequest::setBody));
 
         // response
 
@@ -1967,9 +1782,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<RegisterServerMonitorRequest, RegisterServerMonitorResponse> registerServerMonitor =
-        genForregisterServerMonitor();
+        genForRegisterServerMonitor();
 
-    private static HttpRequestDef<RegisterServerMonitorRequest, RegisterServerMonitorResponse> genForregisterServerMonitor() {
+    private static HttpRequestDef<RegisterServerMonitorRequest, RegisterServerMonitorResponse> genForRegisterServerMonitor() {
         // basic
         HttpRequestDef.Builder<RegisterServerMonitorRequest, RegisterServerMonitorResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RegisterServerMonitorRequest.class, RegisterServerMonitorResponse.class)
@@ -1982,16 +1797,13 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RegisterServerMonitorRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(RegisterServerMonitorRequest::getServerId,
+                RegisterServerMonitorRequest::setServerId));
         builder.<RegisterServerMonitorRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RegisterServerMonitorRequestBody.class),
-            f -> f.withMarshaller(RegisterServerMonitorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RegisterServerMonitorRequest::getBody, RegisterServerMonitorRequest::setBody));
 
         // response
 
@@ -1999,9 +1811,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> reinstallServerWithCloudInit =
-        genForreinstallServerWithCloudInit();
+        genForReinstallServerWithCloudInit();
 
-    private static HttpRequestDef<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> genForreinstallServerWithCloudInit() {
+    private static HttpRequestDef<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> genForReinstallServerWithCloudInit() {
         // basic
         HttpRequestDef.Builder<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> builder =
             HttpRequestDef
@@ -2017,16 +1829,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ReinstallServerWithCloudInitRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ReinstallServerWithCloudInitRequest::getServerId,
+                ReinstallServerWithCloudInitRequest::setServerId));
         builder.<ReinstallServerWithCloudInitRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReinstallServerWithCloudInitRequestBody.class),
-            f -> f.withMarshaller(ReinstallServerWithCloudInitRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ReinstallServerWithCloudInitRequest::getBody,
+                ReinstallServerWithCloudInitRequest::setBody));
 
         // response
 
@@ -2034,9 +1844,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> reinstallServerWithoutCloudInit =
-        genForreinstallServerWithoutCloudInit();
+        genForReinstallServerWithoutCloudInit();
 
-    private static HttpRequestDef<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> genForreinstallServerWithoutCloudInit() {
+    private static HttpRequestDef<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> genForReinstallServerWithoutCloudInit() {
         // basic
         HttpRequestDef.Builder<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse> builder =
             HttpRequestDef
@@ -2052,16 +1862,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ReinstallServerWithoutCloudInitRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ReinstallServerWithoutCloudInitRequest::getServerId,
+                ReinstallServerWithoutCloudInitRequest::setServerId));
         builder.<ReinstallServerWithoutCloudInitRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReinstallServerWithoutCloudInitRequestBody.class),
-            f -> f.withMarshaller(ReinstallServerWithoutCloudInitRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ReinstallServerWithoutCloudInitRequest::getBody,
+                ReinstallServerWithoutCloudInitRequest::setBody));
 
         // response
 
@@ -2069,9 +1877,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ResetServerPasswordRequest, ResetServerPasswordResponse> resetServerPassword =
-        genForresetServerPassword();
+        genForResetServerPassword();
 
-    private static HttpRequestDef<ResetServerPasswordRequest, ResetServerPasswordResponse> genForresetServerPassword() {
+    private static HttpRequestDef<ResetServerPasswordRequest, ResetServerPasswordResponse> genForResetServerPassword() {
         // basic
         HttpRequestDef.Builder<ResetServerPasswordRequest, ResetServerPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetServerPasswordRequest.class, ResetServerPasswordResponse.class)
@@ -2084,16 +1892,12 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetServerPasswordRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ResetServerPasswordRequest::getServerId, ResetServerPasswordRequest::setServerId));
         builder.<ResetServerPasswordRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetServerPasswordRequestBody.class),
-            f -> f.withMarshaller(ResetServerPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetServerPasswordRequest::getBody, ResetServerPasswordRequest::setBody));
 
         // response
 
@@ -2101,9 +1905,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ResizePostPaidServerRequest, ResizePostPaidServerResponse> resizePostPaidServer =
-        genForresizePostPaidServer();
+        genForResizePostPaidServer();
 
-    private static HttpRequestDef<ResizePostPaidServerRequest, ResizePostPaidServerResponse> genForresizePostPaidServer() {
+    private static HttpRequestDef<ResizePostPaidServerRequest, ResizePostPaidServerResponse> genForResizePostPaidServer() {
         // basic
         HttpRequestDef.Builder<ResizePostPaidServerRequest, ResizePostPaidServerResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ResizePostPaidServerRequest.class, ResizePostPaidServerResponse.class)
@@ -2116,25 +1920,21 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizePostPaidServerRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ResizePostPaidServerRequest::getServerId, ResizePostPaidServerRequest::setServerId));
         builder.<ResizePostPaidServerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizePostPaidServerRequestBody.class),
-            f -> f.withMarshaller(ResizePostPaidServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizePostPaidServerRequest::getBody, ResizePostPaidServerRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizeServerRequest, ResizeServerResponse> resizeServer = genForresizeServer();
+    public static final HttpRequestDef<ResizeServerRequest, ResizeServerResponse> resizeServer = genForResizeServer();
 
-    private static HttpRequestDef<ResizeServerRequest, ResizeServerResponse> genForresizeServer() {
+    private static HttpRequestDef<ResizeServerRequest, ResizeServerResponse> genForResizeServer() {
         // basic
         HttpRequestDef.Builder<ResizeServerRequest, ResizeServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeServerRequest.class, ResizeServerResponse.class)
@@ -2147,16 +1947,12 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeServerRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ResizeServerRequest::getServerId, ResizeServerRequest::setServerId));
         builder.<ResizeServerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeServerRequestBody.class),
-            f -> f.withMarshaller(ResizeServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeServerRequest::getBody, ResizeServerRequest::setBody));
 
         // response
 
@@ -2164,9 +1960,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> showResetPasswordFlag =
-        genForshowResetPasswordFlag();
+        genForShowResetPasswordFlag();
 
-    private static HttpRequestDef<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> genForshowResetPasswordFlag() {
+    private static HttpRequestDef<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> genForShowResetPasswordFlag() {
         // basic
         HttpRequestDef.Builder<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowResetPasswordFlagRequest.class, ShowResetPasswordFlagResponse.class)
@@ -2179,18 +1975,17 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResetPasswordFlagRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowResetPasswordFlagRequest::getServerId,
+                ShowResetPasswordFlagRequest::setServerId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowServerRequest, ShowServerResponse> showServer = genForshowServer();
+    public static final HttpRequestDef<ShowServerRequest, ShowServerResponse> showServer = genForShowServer();
 
-    private static HttpRequestDef<ShowServerRequest, ShowServerResponse> genForshowServer() {
+    private static HttpRequestDef<ShowServerRequest, ShowServerResponse> genForShowServer() {
         // basic
         HttpRequestDef.Builder<ShowServerRequest, ShowServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerRequest.class, ShowServerResponse.class)
@@ -2203,9 +1998,7 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowServerRequest::getServerId, ShowServerRequest::setServerId));
 
         // response
 
@@ -2213,9 +2006,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> showServerAutoRecovery =
-        genForshowServerAutoRecovery();
+        genForShowServerAutoRecovery();
 
-    private static HttpRequestDef<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> genForshowServerAutoRecovery() {
+    private static HttpRequestDef<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> genForShowServerAutoRecovery() {
         // basic
         HttpRequestDef.Builder<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowServerAutoRecoveryRequest.class, ShowServerAutoRecoveryResponse.class)
@@ -2228,9 +2021,8 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerAutoRecoveryRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowServerAutoRecoveryRequest::getServerId,
+                ShowServerAutoRecoveryRequest::setServerId));
 
         // response
 
@@ -2238,9 +2030,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> showServerBlockDevice =
-        genForshowServerBlockDevice();
+        genForShowServerBlockDevice();
 
-    private static HttpRequestDef<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> genForshowServerBlockDevice() {
+    private static HttpRequestDef<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> genForShowServerBlockDevice() {
         // basic
         HttpRequestDef.Builder<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowServerBlockDeviceRequest.class, ShowServerBlockDeviceResponse.class)
@@ -2253,16 +2045,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerBlockDeviceRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowServerBlockDeviceRequest::getServerId,
+                ShowServerBlockDeviceRequest::setServerId));
         builder.<String>withRequestField("volume_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerBlockDeviceRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(ShowServerBlockDeviceRequest::getVolumeId,
+                ShowServerBlockDeviceRequest::setVolumeId));
 
         // response
 
@@ -2270,9 +2060,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> showServerGroup =
-        genForshowServerGroup();
+        genForShowServerGroup();
 
-    private static HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> genForshowServerGroup() {
+    private static HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> genForShowServerGroup() {
         // basic
         HttpRequestDef.Builder<ShowServerGroupRequest, ShowServerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerGroupRequest.class, ShowServerGroupResponse.class)
@@ -2285,9 +2075,7 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerGroupRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowServerGroupRequest::getServerGroupId, ShowServerGroupRequest::setServerGroupId));
 
         // response
 
@@ -2295,9 +2083,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ShowServerLimitsRequest, ShowServerLimitsResponse> showServerLimits =
-        genForshowServerLimits();
+        genForShowServerLimits();
 
-    private static HttpRequestDef<ShowServerLimitsRequest, ShowServerLimitsResponse> genForshowServerLimits() {
+    private static HttpRequestDef<ShowServerLimitsRequest, ShowServerLimitsResponse> genForShowServerLimits() {
         // basic
         HttpRequestDef.Builder<ShowServerLimitsRequest, ShowServerLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerLimitsRequest.class, ShowServerLimitsResponse.class)
@@ -2313,9 +2101,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ShowServerPasswordRequest, ShowServerPasswordResponse> showServerPassword =
-        genForshowServerPassword();
+        genForShowServerPassword();
 
-    private static HttpRequestDef<ShowServerPasswordRequest, ShowServerPasswordResponse> genForshowServerPassword() {
+    private static HttpRequestDef<ShowServerPasswordRequest, ShowServerPasswordResponse> genForShowServerPassword() {
         // basic
         HttpRequestDef.Builder<ShowServerPasswordRequest, ShowServerPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerPasswordRequest.class, ShowServerPasswordResponse.class)
@@ -2328,9 +2116,7 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerPasswordRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowServerPasswordRequest::getServerId, ShowServerPasswordRequest::setServerId));
 
         // response
 
@@ -2338,9 +2124,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> showServerRemoteConsole =
-        genForshowServerRemoteConsole();
+        genForShowServerRemoteConsole();
 
-    private static HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> genForshowServerRemoteConsole() {
+    private static HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> genForShowServerRemoteConsole() {
         // basic
         HttpRequestDef.Builder<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowServerRemoteConsoleRequest.class, ShowServerRemoteConsoleResponse.class)
@@ -2353,16 +2139,13 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getServerId,
+                ShowServerRemoteConsoleRequest::setServerId));
         builder.<ShowServerRemoteConsoleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowServerRemoteConsoleRequestBody.class),
-            f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getBody, ShowServerRemoteConsoleRequest::setBody));
 
         // response
 
@@ -2370,9 +2153,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<ShowServerTagsRequest, ShowServerTagsResponse> showServerTags =
-        genForshowServerTags();
+        genForShowServerTags();
 
-    private static HttpRequestDef<ShowServerTagsRequest, ShowServerTagsResponse> genForshowServerTags() {
+    private static HttpRequestDef<ShowServerTagsRequest, ShowServerTagsResponse> genForShowServerTags() {
         // basic
         HttpRequestDef.Builder<ShowServerTagsRequest, ShowServerTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerTagsRequest.class, ShowServerTagsResponse.class)
@@ -2385,18 +2168,16 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerTagsRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowServerTagsRequest::getServerId, ShowServerTagsRequest::setServerId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateServerRequest, UpdateServerResponse> updateServer = genForupdateServer();
+    public static final HttpRequestDef<UpdateServerRequest, UpdateServerResponse> updateServer = genForUpdateServer();
 
-    private static HttpRequestDef<UpdateServerRequest, UpdateServerResponse> genForupdateServer() {
+    private static HttpRequestDef<UpdateServerRequest, UpdateServerResponse> genForUpdateServer() {
         // basic
         HttpRequestDef.Builder<UpdateServerRequest, UpdateServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateServerRequest.class, UpdateServerResponse.class)
@@ -2409,16 +2190,12 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServerRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(UpdateServerRequest::getServerId, UpdateServerRequest::setServerId));
         builder.<UpdateServerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerRequestBody.class),
-            f -> f.withMarshaller(UpdateServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateServerRequest::getBody, UpdateServerRequest::setBody));
 
         // response
 
@@ -2426,9 +2203,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> updateServerAutoTerminateTime =
-        genForupdateServerAutoTerminateTime();
+        genForUpdateServerAutoTerminateTime();
 
-    private static HttpRequestDef<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> genForupdateServerAutoTerminateTime() {
+    private static HttpRequestDef<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> genForUpdateServerAutoTerminateTime() {
         // basic
         HttpRequestDef.Builder<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> builder =
             HttpRequestDef
@@ -2444,16 +2221,14 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServerAutoTerminateTimeRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(UpdateServerAutoTerminateTimeRequest::getServerId,
+                UpdateServerAutoTerminateTimeRequest::setServerId));
         builder.<UpdateServerAutoTerminateTimeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerAutoTerminateTimeRequestBody.class),
-            f -> f.withMarshaller(UpdateServerAutoTerminateTimeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateServerAutoTerminateTimeRequest::getBody,
+                UpdateServerAutoTerminateTimeRequest::setBody));
 
         // response
 
@@ -2461,9 +2236,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse> updateServerBlockDevice =
-        genForupdateServerBlockDevice();
+        genForUpdateServerBlockDevice();
 
-    private static HttpRequestDef<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse> genForupdateServerBlockDevice() {
+    private static HttpRequestDef<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse> genForUpdateServerBlockDevice() {
         // basic
         HttpRequestDef.Builder<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateServerBlockDeviceRequest.class, UpdateServerBlockDeviceResponse.class)
@@ -2476,23 +2251,19 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServerBlockDeviceRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(UpdateServerBlockDeviceRequest::getServerId,
+                UpdateServerBlockDeviceRequest::setServerId));
         builder.<String>withRequestField("volume_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServerBlockDeviceRequest::getVolumeId, (req, v) -> {
-                req.setVolumeId(v);
-            }));
+            f -> f.withMarshaller(UpdateServerBlockDeviceRequest::getVolumeId,
+                UpdateServerBlockDeviceRequest::setVolumeId));
         builder.<UpdateServerBlockDeviceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerBlockDeviceReq.class),
-            f -> f.withMarshaller(UpdateServerBlockDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateServerBlockDeviceRequest::getBody, UpdateServerBlockDeviceRequest::setBody));
 
         // response
 
@@ -2500,9 +2271,9 @@ public class EcsMeta {
     }
 
     public static final HttpRequestDef<UpdateServerMetadataRequest, UpdateServerMetadataResponse> updateServerMetadata =
-        genForupdateServerMetadata();
+        genForUpdateServerMetadata();
 
-    private static HttpRequestDef<UpdateServerMetadataRequest, UpdateServerMetadataResponse> genForupdateServerMetadata() {
+    private static HttpRequestDef<UpdateServerMetadataRequest, UpdateServerMetadataResponse> genForUpdateServerMetadata() {
         // basic
         HttpRequestDef.Builder<UpdateServerMetadataRequest, UpdateServerMetadataResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateServerMetadataRequest.class, UpdateServerMetadataResponse.class)
@@ -2515,25 +2286,21 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServerMetadataRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(UpdateServerMetadataRequest::getServerId, UpdateServerMetadataRequest::setServerId));
         builder.<UpdateServerMetadataRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerMetadataRequestBody.class),
-            f -> f.withMarshaller(UpdateServerMetadataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateServerMetadataRequest::getBody, UpdateServerMetadataRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
+    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForShowJob();
 
-    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
+    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForShowJob() {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
@@ -2546,9 +2313,7 @@ public class EcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobRequest::getJobId, ShowJobRequest::setJobId));
 
         // response
 

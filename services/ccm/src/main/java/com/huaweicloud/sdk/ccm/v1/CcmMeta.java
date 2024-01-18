@@ -107,9 +107,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CcmMeta {
 
     public static final HttpRequestDef<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse> batchCreateCaTags =
-        genForbatchCreateCaTags();
+        genForBatchCreateCaTags();
 
-    private static HttpRequestDef<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse> genForbatchCreateCaTags() {
+    private static HttpRequestDef<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse> genForBatchCreateCaTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateCaTagsRequest.class, BatchCreateCaTagsResponse.class)
@@ -122,16 +122,12 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateCaTagsRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateCaTagsRequest::getCaId, BatchCreateCaTagsRequest::setCaId));
         builder.<BatchOperateTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchOperateTagRequestBody.class),
-            f -> f.withMarshaller(BatchCreateCaTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateCaTagsRequest::getBody, BatchCreateCaTagsRequest::setBody));
 
         // response
 
@@ -139,9 +135,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse> batchCreateCertTags =
-        genForbatchCreateCertTags();
+        genForBatchCreateCertTags();
 
-    private static HttpRequestDef<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse> genForbatchCreateCertTags() {
+    private static HttpRequestDef<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse> genForBatchCreateCertTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateCertTagsRequest.class, BatchCreateCertTagsResponse.class)
@@ -154,16 +150,13 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateCertTagsRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateCertTagsRequest::getCertificateId,
+                BatchCreateCertTagsRequest::setCertificateId));
         builder.<BatchOperateTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchOperateTagRequestBody.class),
-            f -> f.withMarshaller(BatchCreateCertTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateCertTagsRequest::getBody, BatchCreateCertTagsRequest::setBody));
 
         // response
 
@@ -171,9 +164,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse> batchDeleteCaTags =
-        genForbatchDeleteCaTags();
+        genForBatchDeleteCaTags();
 
-    private static HttpRequestDef<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse> genForbatchDeleteCaTags() {
+    private static HttpRequestDef<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse> genForBatchDeleteCaTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteCaTagsRequest.class, BatchDeleteCaTagsResponse.class)
@@ -186,16 +179,12 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteCaTagsRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteCaTagsRequest::getCaId, BatchDeleteCaTagsRequest::setCaId));
         builder.<BatchOperateTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchOperateTagRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteCaTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteCaTagsRequest::getBody, BatchDeleteCaTagsRequest::setBody));
 
         // response
 
@@ -203,9 +192,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse> batchDeleteCertTags =
-        genForbatchDeleteCertTags();
+        genForBatchDeleteCertTags();
 
-    private static HttpRequestDef<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse> genForbatchDeleteCertTags() {
+    private static HttpRequestDef<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse> genForBatchDeleteCertTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, BatchDeleteCertTagsRequest.class, BatchDeleteCertTagsResponse.class)
@@ -218,16 +207,13 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteCertTagsRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteCertTagsRequest::getCertificateId,
+                BatchDeleteCertTagsRequest::setCertificateId));
         builder.<BatchOperateTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchOperateTagRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteCertTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteCertTagsRequest::getBody, BatchDeleteCertTagsRequest::setBody));
 
         // response
 
@@ -235,9 +221,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse> countCaResourceInstances =
-        genForcountCaResourceInstances();
+        genForCountCaResourceInstances();
 
-    private static HttpRequestDef<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse> genForcountCaResourceInstances() {
+    private static HttpRequestDef<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse> genForCountCaResourceInstances() {
         // basic
         HttpRequestDef.Builder<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse> builder =
             HttpRequestDef
@@ -251,9 +237,7 @@ public class CcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
-            f -> f.withMarshaller(CountCaResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CountCaResourceInstancesRequest::getBody, CountCaResourceInstancesRequest::setBody));
 
         // response
 
@@ -261,9 +245,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse> countCertResourceInstances =
-        genForcountCertResourceInstances();
+        genForCountCertResourceInstances();
 
-    private static HttpRequestDef<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse> genForcountCertResourceInstances() {
+    private static HttpRequestDef<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse> genForCountCertResourceInstances() {
         // basic
         HttpRequestDef.Builder<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse> builder =
             HttpRequestDef
@@ -279,18 +263,17 @@ public class CcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
-            f -> f.withMarshaller(CountCertResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CountCertResourceInstancesRequest::getBody,
+                CountCertResourceInstancesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateCaTagRequest, CreateCaTagResponse> createCaTag = genForcreateCaTag();
+    public static final HttpRequestDef<CreateCaTagRequest, CreateCaTagResponse> createCaTag = genForCreateCaTag();
 
-    private static HttpRequestDef<CreateCaTagRequest, CreateCaTagResponse> genForcreateCaTag() {
+    private static HttpRequestDef<CreateCaTagRequest, CreateCaTagResponse> genForCreateCaTag() {
         // basic
         HttpRequestDef.Builder<CreateCaTagRequest, CreateCaTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCaTagRequest.class, CreateCaTagResponse.class)
@@ -303,16 +286,12 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCaTagRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(CreateCaTagRequest::getCaId, CreateCaTagRequest::setCaId));
         builder.<ResourceTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceTagRequestBody.class),
-            f -> f.withMarshaller(CreateCaTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCaTagRequest::getBody, CreateCaTagRequest::setBody));
 
         // response
 
@@ -320,9 +299,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<CreateCertTagRequest, CreateCertTagResponse> createCertTag =
-        genForcreateCertTag();
+        genForCreateCertTag();
 
-    private static HttpRequestDef<CreateCertTagRequest, CreateCertTagResponse> genForcreateCertTag() {
+    private static HttpRequestDef<CreateCertTagRequest, CreateCertTagResponse> genForCreateCertTag() {
         // basic
         HttpRequestDef.Builder<CreateCertTagRequest, CreateCertTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCertTagRequest.class, CreateCertTagResponse.class)
@@ -335,16 +314,12 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCertTagRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(CreateCertTagRequest::getCertificateId, CreateCertTagRequest::setCertificateId));
         builder.<ResourceTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceTagRequestBody.class),
-            f -> f.withMarshaller(CreateCertTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertTagRequest::getBody, CreateCertTagRequest::setBody));
 
         // response
 
@@ -352,9 +327,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate =
-        genForcreateCertificate();
+        genForCreateCertificate();
 
-    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForcreateCertificate() {
+    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForCreateCertificate() {
         // basic
         HttpRequestDef.Builder<CreateCertificateRequest, CreateCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCertificateRequest.class, CreateCertificateResponse.class)
@@ -367,9 +342,7 @@ public class CcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCertificateRequestBody.class),
-            f -> f.withMarshaller(CreateCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateRequest::getBody, CreateCertificateRequest::setBody));
 
         // response
 
@@ -377,9 +350,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateAuthorityObsAgencyRequest, CreateCertificateAuthorityObsAgencyResponse> createCertificateAuthorityObsAgency =
-        genForcreateCertificateAuthorityObsAgency();
+        genForCreateCertificateAuthorityObsAgency();
 
-    private static HttpRequestDef<CreateCertificateAuthorityObsAgencyRequest, CreateCertificateAuthorityObsAgencyResponse> genForcreateCertificateAuthorityObsAgency() {
+    private static HttpRequestDef<CreateCertificateAuthorityObsAgencyRequest, CreateCertificateAuthorityObsAgencyResponse> genForCreateCertificateAuthorityObsAgency() {
         // basic
         HttpRequestDef.Builder<CreateCertificateAuthorityObsAgencyRequest, CreateCertificateAuthorityObsAgencyResponse> builder =
             HttpRequestDef
@@ -398,9 +371,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateAuthorityOrderRequest, CreateCertificateAuthorityOrderResponse> createCertificateAuthorityOrder =
-        genForcreateCertificateAuthorityOrder();
+        genForCreateCertificateAuthorityOrder();
 
-    private static HttpRequestDef<CreateCertificateAuthorityOrderRequest, CreateCertificateAuthorityOrderResponse> genForcreateCertificateAuthorityOrder() {
+    private static HttpRequestDef<CreateCertificateAuthorityOrderRequest, CreateCertificateAuthorityOrderResponse> genForCreateCertificateAuthorityOrder() {
         // basic
         HttpRequestDef.Builder<CreateCertificateAuthorityOrderRequest, CreateCertificateAuthorityOrderResponse> builder =
             HttpRequestDef
@@ -416,9 +389,8 @@ public class CcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCertificateAuthorityOrderRequestBody.class),
-            f -> f.withMarshaller(CreateCertificateAuthorityOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateAuthorityOrderRequest::getBody,
+                CreateCertificateAuthorityOrderRequest::setBody));
 
         // response
 
@@ -426,9 +398,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateByCsrRequest, CreateCertificateByCsrResponse> createCertificateByCsr =
-        genForcreateCertificateByCsr();
+        genForCreateCertificateByCsr();
 
-    private static HttpRequestDef<CreateCertificateByCsrRequest, CreateCertificateByCsrResponse> genForcreateCertificateByCsr() {
+    private static HttpRequestDef<CreateCertificateByCsrRequest, CreateCertificateByCsrResponse> genForCreateCertificateByCsr() {
         // basic
         HttpRequestDef.Builder<CreateCertificateByCsrRequest, CreateCertificateByCsrResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateCertificateByCsrRequest.class, CreateCertificateByCsrResponse.class)
@@ -441,9 +413,7 @@ public class CcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCertificateByCsrRequestBody.class),
-            f -> f.withMarshaller(CreateCertificateByCsrRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateByCsrRequest::getBody, CreateCertificateByCsrRequest::setBody));
 
         // response
 
@@ -451,9 +421,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate =
-        genFordeleteCertificate();
+        genForDeleteCertificate();
 
-    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genFordeleteCertificate() {
+    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genForDeleteCertificate() {
         // basic
         HttpRequestDef.Builder<DeleteCertificateRequest, DeleteCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCertificateRequest.class, DeleteCertificateResponse.class)
@@ -466,9 +436,8 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId,
+                DeleteCertificateRequest::setCertificateId));
 
         // response
 
@@ -476,9 +445,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<DisableCertificateAuthorityCrlRequest, DisableCertificateAuthorityCrlResponse> disableCertificateAuthorityCrl =
-        genFordisableCertificateAuthorityCrl();
+        genForDisableCertificateAuthorityCrl();
 
-    private static HttpRequestDef<DisableCertificateAuthorityCrlRequest, DisableCertificateAuthorityCrlResponse> genFordisableCertificateAuthorityCrl() {
+    private static HttpRequestDef<DisableCertificateAuthorityCrlRequest, DisableCertificateAuthorityCrlResponse> genForDisableCertificateAuthorityCrl() {
         // basic
         HttpRequestDef.Builder<DisableCertificateAuthorityCrlRequest, DisableCertificateAuthorityCrlResponse> builder =
             HttpRequestDef
@@ -494,9 +463,8 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableCertificateAuthorityCrlRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(DisableCertificateAuthorityCrlRequest::getCaId,
+                DisableCertificateAuthorityCrlRequest::setCaId));
 
         // response
 
@@ -504,9 +472,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<EnableCertificateAuthorityCrlRequest, EnableCertificateAuthorityCrlResponse> enableCertificateAuthorityCrl =
-        genForenableCertificateAuthorityCrl();
+        genForEnableCertificateAuthorityCrl();
 
-    private static HttpRequestDef<EnableCertificateAuthorityCrlRequest, EnableCertificateAuthorityCrlResponse> genForenableCertificateAuthorityCrl() {
+    private static HttpRequestDef<EnableCertificateAuthorityCrlRequest, EnableCertificateAuthorityCrlResponse> genForEnableCertificateAuthorityCrl() {
         // basic
         HttpRequestDef.Builder<EnableCertificateAuthorityCrlRequest, EnableCertificateAuthorityCrlResponse> builder =
             HttpRequestDef
@@ -522,16 +490,14 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableCertificateAuthorityCrlRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(EnableCertificateAuthorityCrlRequest::getCaId,
+                EnableCertificateAuthorityCrlRequest::setCaId));
         builder.<EnableCertificateAuthorityCrlRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnableCertificateAuthorityCrlRequestBody.class),
-            f -> f.withMarshaller(EnableCertificateAuthorityCrlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EnableCertificateAuthorityCrlRequest::getBody,
+                EnableCertificateAuthorityCrlRequest::setBody));
 
         // response
 
@@ -539,9 +505,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ExportCertificateRequest, ExportCertificateResponse> exportCertificate =
-        genForexportCertificate();
+        genForExportCertificate();
 
-    private static HttpRequestDef<ExportCertificateRequest, ExportCertificateResponse> genForexportCertificate() {
+    private static HttpRequestDef<ExportCertificateRequest, ExportCertificateResponse> genForExportCertificate() {
         // basic
         HttpRequestDef.Builder<ExportCertificateRequest, ExportCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportCertificateRequest.class, ExportCertificateResponse.class)
@@ -554,16 +520,13 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ExportCertificateRequest::getCertificateId,
+                ExportCertificateRequest::setCertificateId));
         builder.<ExportCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportCertificateRequestBody.class),
-            f -> f.withMarshaller(ExportCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExportCertificateRequest::getBody, ExportCertificateRequest::setBody));
 
         // response
 
@@ -571,9 +534,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse> listCaResourceInstances =
-        genForlistCaResourceInstances();
+        genForListCaResourceInstances();
 
-    private static HttpRequestDef<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse> genForlistCaResourceInstances() {
+    private static HttpRequestDef<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse> genForListCaResourceInstances() {
         // basic
         HttpRequestDef.Builder<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListCaResourceInstancesRequest.class, ListCaResourceInstancesResponse.class)
@@ -586,18 +549,16 @@ public class CcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
-            f -> f.withMarshaller(ListCaResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListCaResourceInstancesRequest::getBody, ListCaResourceInstancesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCaTagsRequest, ListCaTagsResponse> listCaTags = genForlistCaTags();
+    public static final HttpRequestDef<ListCaTagsRequest, ListCaTagsResponse> listCaTags = genForListCaTags();
 
-    private static HttpRequestDef<ListCaTagsRequest, ListCaTagsResponse> genForlistCaTags() {
+    private static HttpRequestDef<ListCaTagsRequest, ListCaTagsResponse> genForListCaTags() {
         // basic
         HttpRequestDef.Builder<ListCaTagsRequest, ListCaTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaTagsRequest.class, ListCaTagsResponse.class)
@@ -610,9 +571,7 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaTagsRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(ListCaTagsRequest::getCaId, ListCaTagsRequest::setCaId));
 
         // response
 
@@ -620,9 +579,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse> listCertResourceInstances =
-        genForlistCertResourceInstances();
+        genForListCertResourceInstances();
 
-    private static HttpRequestDef<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse> genForlistCertResourceInstances() {
+    private static HttpRequestDef<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse> genForListCertResourceInstances() {
         // basic
         HttpRequestDef.Builder<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse> builder =
             HttpRequestDef
@@ -638,18 +597,17 @@ public class CcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
-            f -> f.withMarshaller(ListCertResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListCertResourceInstancesRequest::getBody,
+                ListCertResourceInstancesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCertTagsRequest, ListCertTagsResponse> listCertTags = genForlistCertTags();
+    public static final HttpRequestDef<ListCertTagsRequest, ListCertTagsResponse> listCertTags = genForListCertTags();
 
-    private static HttpRequestDef<ListCertTagsRequest, ListCertTagsResponse> genForlistCertTags() {
+    private static HttpRequestDef<ListCertTagsRequest, ListCertTagsResponse> genForListCertTags() {
         // basic
         HttpRequestDef.Builder<ListCertTagsRequest, ListCertTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertTagsRequest.class, ListCertTagsResponse.class)
@@ -662,9 +620,7 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertTagsRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ListCertTagsRequest::getCertificateId, ListCertTagsRequest::setCertificateId));
 
         // response
 
@@ -672,9 +628,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ListCertificateRequest, ListCertificateResponse> listCertificate =
-        genForlistCertificate();
+        genForListCertificate();
 
-    private static HttpRequestDef<ListCertificateRequest, ListCertificateResponse> genForlistCertificate() {
+    private static HttpRequestDef<ListCertificateRequest, ListCertificateResponse> genForListCertificate() {
         // basic
         HttpRequestDef.Builder<ListCertificateRequest, ListCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertificateRequest.class, ListCertificateResponse.class)
@@ -687,44 +643,32 @@ public class CcmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificateRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCertificateRequest::getLimit, ListCertificateRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificateRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCertificateRequest::getName, ListCertificateRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificateRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCertificateRequest::getOffset, ListCertificateRequest::setOffset));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificateRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCertificateRequest::getStatus, ListCertificateRequest::setStatus));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificateRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListCertificateRequest::getSortKey, ListCertificateRequest::setSortKey));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificateRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListCertificateRequest::getSortDir, ListCertificateRequest::setSortDir));
 
         // response
 
@@ -732,9 +676,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ListCertificateAuthorityObsBucketRequest, ListCertificateAuthorityObsBucketResponse> listCertificateAuthorityObsBucket =
-        genForlistCertificateAuthorityObsBucket();
+        genForListCertificateAuthorityObsBucket();
 
-    private static HttpRequestDef<ListCertificateAuthorityObsBucketRequest, ListCertificateAuthorityObsBucketResponse> genForlistCertificateAuthorityObsBucket() {
+    private static HttpRequestDef<ListCertificateAuthorityObsBucketRequest, ListCertificateAuthorityObsBucketResponse> genForListCertificateAuthorityObsBucket() {
         // basic
         HttpRequestDef.Builder<ListCertificateAuthorityObsBucketRequest, ListCertificateAuthorityObsBucketResponse> builder =
             HttpRequestDef
@@ -753,9 +697,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ListDomainCaTagsRequest, ListDomainCaTagsResponse> listDomainCaTags =
-        genForlistDomainCaTags();
+        genForListDomainCaTags();
 
-    private static HttpRequestDef<ListDomainCaTagsRequest, ListDomainCaTagsResponse> genForlistDomainCaTags() {
+    private static HttpRequestDef<ListDomainCaTagsRequest, ListDomainCaTagsResponse> genForListDomainCaTags() {
         // basic
         HttpRequestDef.Builder<ListDomainCaTagsRequest, ListDomainCaTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainCaTagsRequest.class, ListDomainCaTagsResponse.class)
@@ -771,9 +715,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ListDomainCertTagsRequest, ListDomainCertTagsResponse> listDomainCertTags =
-        genForlistDomainCertTags();
+        genForListDomainCertTags();
 
-    private static HttpRequestDef<ListDomainCertTagsRequest, ListDomainCertTagsResponse> genForlistDomainCertTags() {
+    private static HttpRequestDef<ListDomainCertTagsRequest, ListDomainCertTagsResponse> genForListDomainCertTags() {
         // basic
         HttpRequestDef.Builder<ListDomainCertTagsRequest, ListDomainCertTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainCertTagsRequest.class, ListDomainCertTagsResponse.class)
@@ -789,9 +733,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ParseCertificateSigningRequestRequest, ParseCertificateSigningRequestResponse> parseCertificateSigningRequest =
-        genForparseCertificateSigningRequest();
+        genForParseCertificateSigningRequest();
 
-    private static HttpRequestDef<ParseCertificateSigningRequestRequest, ParseCertificateSigningRequestResponse> genForparseCertificateSigningRequest() {
+    private static HttpRequestDef<ParseCertificateSigningRequestRequest, ParseCertificateSigningRequestResponse> genForParseCertificateSigningRequest() {
         // basic
         HttpRequestDef.Builder<ParseCertificateSigningRequestRequest, ParseCertificateSigningRequestResponse> builder =
             HttpRequestDef
@@ -807,9 +751,8 @@ public class CcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ParseCertificateSigningRequestRequestBody.class),
-            f -> f.withMarshaller(ParseCertificateSigningRequestRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ParseCertificateSigningRequestRequest::getBody,
+                ParseCertificateSigningRequestRequest::setBody));
 
         // response
 
@@ -817,9 +760,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<RevokeCertificateRequest, RevokeCertificateResponse> revokeCertificate =
-        genForrevokeCertificate();
+        genForRevokeCertificate();
 
-    private static HttpRequestDef<RevokeCertificateRequest, RevokeCertificateResponse> genForrevokeCertificate() {
+    private static HttpRequestDef<RevokeCertificateRequest, RevokeCertificateResponse> genForRevokeCertificate() {
         // basic
         HttpRequestDef.Builder<RevokeCertificateRequest, RevokeCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RevokeCertificateRequest.class, RevokeCertificateResponse.class)
@@ -832,16 +775,13 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(RevokeCertificateRequest::getCertificateId,
+                RevokeCertificateRequest::setCertificateId));
         builder.<RevokeCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RevokeCertificateRequestBody.class),
-            f -> f.withMarshaller(RevokeCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RevokeCertificateRequest::getBody, RevokeCertificateRequest::setBody));
 
         // response
 
@@ -849,9 +789,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate =
-        genForshowCertificate();
+        genForShowCertificate();
 
-    private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForshowCertificate() {
+    private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForShowCertificate() {
         // basic
         HttpRequestDef.Builder<ShowCertificateRequest, ShowCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCertificateRequest.class, ShowCertificateResponse.class)
@@ -864,9 +804,7 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, ShowCertificateRequest::setCertificateId));
 
         // response
 
@@ -874,9 +812,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ShowCertificateAuthorityObsAgencyRequest, ShowCertificateAuthorityObsAgencyResponse> showCertificateAuthorityObsAgency =
-        genForshowCertificateAuthorityObsAgency();
+        genForShowCertificateAuthorityObsAgency();
 
-    private static HttpRequestDef<ShowCertificateAuthorityObsAgencyRequest, ShowCertificateAuthorityObsAgencyResponse> genForshowCertificateAuthorityObsAgency() {
+    private static HttpRequestDef<ShowCertificateAuthorityObsAgencyRequest, ShowCertificateAuthorityObsAgencyResponse> genForShowCertificateAuthorityObsAgency() {
         // basic
         HttpRequestDef.Builder<ShowCertificateAuthorityObsAgencyRequest, ShowCertificateAuthorityObsAgencyResponse> builder =
             HttpRequestDef
@@ -895,9 +833,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ShowCertificateQuotaRequest, ShowCertificateQuotaResponse> showCertificateQuota =
-        genForshowCertificateQuota();
+        genForShowCertificateQuota();
 
-    private static HttpRequestDef<ShowCertificateQuotaRequest, ShowCertificateQuotaResponse> genForshowCertificateQuota() {
+    private static HttpRequestDef<ShowCertificateQuotaRequest, ShowCertificateQuotaResponse> genForShowCertificateQuota() {
         // basic
         HttpRequestDef.Builder<ShowCertificateQuotaRequest, ShowCertificateQuotaResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowCertificateQuotaRequest.class, ShowCertificateQuotaResponse.class)
@@ -913,9 +851,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateAuthorityRequest, CreateCertificateAuthorityResponse> createCertificateAuthority =
-        genForcreateCertificateAuthority();
+        genForCreateCertificateAuthority();
 
-    private static HttpRequestDef<CreateCertificateAuthorityRequest, CreateCertificateAuthorityResponse> genForcreateCertificateAuthority() {
+    private static HttpRequestDef<CreateCertificateAuthorityRequest, CreateCertificateAuthorityResponse> genForCreateCertificateAuthority() {
         // basic
         HttpRequestDef.Builder<CreateCertificateAuthorityRequest, CreateCertificateAuthorityResponse> builder =
             HttpRequestDef
@@ -931,9 +869,8 @@ public class CcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCertificateAuthorityRequestBody.class),
-            f -> f.withMarshaller(CreateCertificateAuthorityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateAuthorityRequest::getBody,
+                CreateCertificateAuthorityRequest::setBody));
 
         // response
 
@@ -941,9 +878,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<DeleteCertificateAuthorityRequest, DeleteCertificateAuthorityResponse> deleteCertificateAuthority =
-        genFordeleteCertificateAuthority();
+        genForDeleteCertificateAuthority();
 
-    private static HttpRequestDef<DeleteCertificateAuthorityRequest, DeleteCertificateAuthorityResponse> genFordeleteCertificateAuthority() {
+    private static HttpRequestDef<DeleteCertificateAuthorityRequest, DeleteCertificateAuthorityResponse> genForDeleteCertificateAuthority() {
         // basic
         HttpRequestDef.Builder<DeleteCertificateAuthorityRequest, DeleteCertificateAuthorityResponse> builder =
             HttpRequestDef
@@ -959,16 +896,14 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateAuthorityRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateAuthorityRequest::getCaId,
+                DeleteCertificateAuthorityRequest::setCaId));
         builder.<String>withRequestField("pending_days",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateAuthorityRequest::getPendingDays, (req, v) -> {
-                req.setPendingDays(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateAuthorityRequest::getPendingDays,
+                DeleteCertificateAuthorityRequest::setPendingDays));
 
         // response
 
@@ -976,9 +911,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<DisableCertificateAuthorityRequest, DisableCertificateAuthorityResponse> disableCertificateAuthority =
-        genFordisableCertificateAuthority();
+        genForDisableCertificateAuthority();
 
-    private static HttpRequestDef<DisableCertificateAuthorityRequest, DisableCertificateAuthorityResponse> genFordisableCertificateAuthority() {
+    private static HttpRequestDef<DisableCertificateAuthorityRequest, DisableCertificateAuthorityResponse> genForDisableCertificateAuthority() {
         // basic
         HttpRequestDef.Builder<DisableCertificateAuthorityRequest, DisableCertificateAuthorityResponse> builder =
             HttpRequestDef
@@ -994,9 +929,8 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableCertificateAuthorityRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(DisableCertificateAuthorityRequest::getCaId,
+                DisableCertificateAuthorityRequest::setCaId));
 
         // response
 
@@ -1004,9 +938,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<EnableCertificateAuthorityRequest, EnableCertificateAuthorityResponse> enableCertificateAuthority =
-        genForenableCertificateAuthority();
+        genForEnableCertificateAuthority();
 
-    private static HttpRequestDef<EnableCertificateAuthorityRequest, EnableCertificateAuthorityResponse> genForenableCertificateAuthority() {
+    private static HttpRequestDef<EnableCertificateAuthorityRequest, EnableCertificateAuthorityResponse> genForEnableCertificateAuthority() {
         // basic
         HttpRequestDef.Builder<EnableCertificateAuthorityRequest, EnableCertificateAuthorityResponse> builder =
             HttpRequestDef
@@ -1022,9 +956,8 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableCertificateAuthorityRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(EnableCertificateAuthorityRequest::getCaId,
+                EnableCertificateAuthorityRequest::setCaId));
 
         // response
 
@@ -1032,9 +965,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ExportCertificateAuthorityCertificateRequest, ExportCertificateAuthorityCertificateResponse> exportCertificateAuthorityCertificate =
-        genForexportCertificateAuthorityCertificate();
+        genForExportCertificateAuthorityCertificate();
 
-    private static HttpRequestDef<ExportCertificateAuthorityCertificateRequest, ExportCertificateAuthorityCertificateResponse> genForexportCertificateAuthorityCertificate() {
+    private static HttpRequestDef<ExportCertificateAuthorityCertificateRequest, ExportCertificateAuthorityCertificateResponse> genForExportCertificateAuthorityCertificate() {
         // basic
         HttpRequestDef.Builder<ExportCertificateAuthorityCertificateRequest, ExportCertificateAuthorityCertificateResponse> builder =
             HttpRequestDef
@@ -1050,9 +983,8 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportCertificateAuthorityCertificateRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(ExportCertificateAuthorityCertificateRequest::getCaId,
+                ExportCertificateAuthorityCertificateRequest::setCaId));
 
         // response
 
@@ -1060,9 +992,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ExportCertificateAuthorityCsrRequest, ExportCertificateAuthorityCsrResponse> exportCertificateAuthorityCsr =
-        genForexportCertificateAuthorityCsr();
+        genForExportCertificateAuthorityCsr();
 
-    private static HttpRequestDef<ExportCertificateAuthorityCsrRequest, ExportCertificateAuthorityCsrResponse> genForexportCertificateAuthorityCsr() {
+    private static HttpRequestDef<ExportCertificateAuthorityCsrRequest, ExportCertificateAuthorityCsrResponse> genForExportCertificateAuthorityCsr() {
         // basic
         HttpRequestDef.Builder<ExportCertificateAuthorityCsrRequest, ExportCertificateAuthorityCsrResponse> builder =
             HttpRequestDef
@@ -1078,9 +1010,8 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportCertificateAuthorityCsrRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(ExportCertificateAuthorityCsrRequest::getCaId,
+                ExportCertificateAuthorityCsrRequest::setCaId));
 
         // response
 
@@ -1088,9 +1019,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ImportCertificateAuthorityCertificateRequest, ImportCertificateAuthorityCertificateResponse> importCertificateAuthorityCertificate =
-        genForimportCertificateAuthorityCertificate();
+        genForImportCertificateAuthorityCertificate();
 
-    private static HttpRequestDef<ImportCertificateAuthorityCertificateRequest, ImportCertificateAuthorityCertificateResponse> genForimportCertificateAuthorityCertificate() {
+    private static HttpRequestDef<ImportCertificateAuthorityCertificateRequest, ImportCertificateAuthorityCertificateResponse> genForImportCertificateAuthorityCertificate() {
         // basic
         HttpRequestDef.Builder<ImportCertificateAuthorityCertificateRequest, ImportCertificateAuthorityCertificateResponse> builder =
             HttpRequestDef
@@ -1106,16 +1037,14 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportCertificateAuthorityCertificateRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(ImportCertificateAuthorityCertificateRequest::getCaId,
+                ImportCertificateAuthorityCertificateRequest::setCaId));
         builder.<ImportCertificateAuthorityCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportCertificateAuthorityCertificateRequestBody.class),
-            f -> f.withMarshaller(ImportCertificateAuthorityCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportCertificateAuthorityCertificateRequest::getBody,
+                ImportCertificateAuthorityCertificateRequest::setBody));
 
         // response
 
@@ -1123,9 +1052,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<IssueCertificateAuthorityCertificateRequest, IssueCertificateAuthorityCertificateResponse> issueCertificateAuthorityCertificate =
-        genForissueCertificateAuthorityCertificate();
+        genForIssueCertificateAuthorityCertificate();
 
-    private static HttpRequestDef<IssueCertificateAuthorityCertificateRequest, IssueCertificateAuthorityCertificateResponse> genForissueCertificateAuthorityCertificate() {
+    private static HttpRequestDef<IssueCertificateAuthorityCertificateRequest, IssueCertificateAuthorityCertificateResponse> genForIssueCertificateAuthorityCertificate() {
         // basic
         HttpRequestDef.Builder<IssueCertificateAuthorityCertificateRequest, IssueCertificateAuthorityCertificateResponse> builder =
             HttpRequestDef
@@ -1141,16 +1070,14 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(IssueCertificateAuthorityCertificateRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(IssueCertificateAuthorityCertificateRequest::getCaId,
+                IssueCertificateAuthorityCertificateRequest::setCaId));
         builder.<IssueCertificateAuthorityCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IssueCertificateAuthorityCertificateRequestBody.class),
-            f -> f.withMarshaller(IssueCertificateAuthorityCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(IssueCertificateAuthorityCertificateRequest::getBody,
+                IssueCertificateAuthorityCertificateRequest::setBody));
 
         // response
 
@@ -1158,9 +1085,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ListCertificateAuthorityRequest, ListCertificateAuthorityResponse> listCertificateAuthority =
-        genForlistCertificateAuthority();
+        genForListCertificateAuthority();
 
-    private static HttpRequestDef<ListCertificateAuthorityRequest, ListCertificateAuthorityResponse> genForlistCertificateAuthority() {
+    private static HttpRequestDef<ListCertificateAuthorityRequest, ListCertificateAuthorityResponse> genForListCertificateAuthority() {
         // basic
         HttpRequestDef.Builder<ListCertificateAuthorityRequest, ListCertificateAuthorityResponse> builder =
             HttpRequestDef
@@ -1174,51 +1101,42 @@ public class CcmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificateAuthorityRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCertificateAuthorityRequest::getLimit,
+                ListCertificateAuthorityRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificateAuthorityRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCertificateAuthorityRequest::getName, ListCertificateAuthorityRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificateAuthorityRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCertificateAuthorityRequest::getOffset,
+                ListCertificateAuthorityRequest::setOffset));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificateAuthorityRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCertificateAuthorityRequest::getStatus,
+                ListCertificateAuthorityRequest::setStatus));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificateAuthorityRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListCertificateAuthorityRequest::getType, ListCertificateAuthorityRequest::setType));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificateAuthorityRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListCertificateAuthorityRequest::getSortKey,
+                ListCertificateAuthorityRequest::setSortKey));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificateAuthorityRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListCertificateAuthorityRequest::getSortDir,
+                ListCertificateAuthorityRequest::setSortDir));
 
         // response
 
@@ -1226,9 +1144,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<RestoreCertificateAuthorityRequest, RestoreCertificateAuthorityResponse> restoreCertificateAuthority =
-        genForrestoreCertificateAuthority();
+        genForRestoreCertificateAuthority();
 
-    private static HttpRequestDef<RestoreCertificateAuthorityRequest, RestoreCertificateAuthorityResponse> genForrestoreCertificateAuthority() {
+    private static HttpRequestDef<RestoreCertificateAuthorityRequest, RestoreCertificateAuthorityResponse> genForRestoreCertificateAuthority() {
         // basic
         HttpRequestDef.Builder<RestoreCertificateAuthorityRequest, RestoreCertificateAuthorityResponse> builder =
             HttpRequestDef
@@ -1244,9 +1162,8 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreCertificateAuthorityRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(RestoreCertificateAuthorityRequest::getCaId,
+                RestoreCertificateAuthorityRequest::setCaId));
 
         // response
 
@@ -1254,9 +1171,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<RevokeCertificateAuthorityRequest, RevokeCertificateAuthorityResponse> revokeCertificateAuthority =
-        genForrevokeCertificateAuthority();
+        genForRevokeCertificateAuthority();
 
-    private static HttpRequestDef<RevokeCertificateAuthorityRequest, RevokeCertificateAuthorityResponse> genForrevokeCertificateAuthority() {
+    private static HttpRequestDef<RevokeCertificateAuthorityRequest, RevokeCertificateAuthorityResponse> genForRevokeCertificateAuthority() {
         // basic
         HttpRequestDef.Builder<RevokeCertificateAuthorityRequest, RevokeCertificateAuthorityResponse> builder =
             HttpRequestDef
@@ -1272,16 +1189,14 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeCertificateAuthorityRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(RevokeCertificateAuthorityRequest::getCaId,
+                RevokeCertificateAuthorityRequest::setCaId));
         builder.<RevokeCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RevokeCertificateRequestBody.class),
-            f -> f.withMarshaller(RevokeCertificateAuthorityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RevokeCertificateAuthorityRequest::getBody,
+                RevokeCertificateAuthorityRequest::setBody));
 
         // response
 
@@ -1289,9 +1204,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ShowCertificateAuthorityRequest, ShowCertificateAuthorityResponse> showCertificateAuthority =
-        genForshowCertificateAuthority();
+        genForShowCertificateAuthority();
 
-    private static HttpRequestDef<ShowCertificateAuthorityRequest, ShowCertificateAuthorityResponse> genForshowCertificateAuthority() {
+    private static HttpRequestDef<ShowCertificateAuthorityRequest, ShowCertificateAuthorityResponse> genForShowCertificateAuthority() {
         // basic
         HttpRequestDef.Builder<ShowCertificateAuthorityRequest, ShowCertificateAuthorityResponse> builder =
             HttpRequestDef
@@ -1305,9 +1220,7 @@ public class CcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertificateAuthorityRequest::getCaId, (req, v) -> {
-                req.setCaId(v);
-            }));
+            f -> f.withMarshaller(ShowCertificateAuthorityRequest::getCaId, ShowCertificateAuthorityRequest::setCaId));
 
         // response
 
@@ -1315,9 +1228,9 @@ public class CcmMeta {
     }
 
     public static final HttpRequestDef<ShowCertificateAuthorityQuotaRequest, ShowCertificateAuthorityQuotaResponse> showCertificateAuthorityQuota =
-        genForshowCertificateAuthorityQuota();
+        genForShowCertificateAuthorityQuota();
 
-    private static HttpRequestDef<ShowCertificateAuthorityQuotaRequest, ShowCertificateAuthorityQuotaResponse> genForshowCertificateAuthorityQuota() {
+    private static HttpRequestDef<ShowCertificateAuthorityQuotaRequest, ShowCertificateAuthorityQuotaResponse> genForShowCertificateAuthorityQuota() {
         // basic
         HttpRequestDef.Builder<ShowCertificateAuthorityQuotaRequest, ShowCertificateAuthorityQuotaResponse> builder =
             HttpRequestDef

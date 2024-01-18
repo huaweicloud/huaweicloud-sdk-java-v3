@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 配额-资源类型 * GPU_INSTANCES：GPU资源实例数，单位个 * INSTANCES：普通实例数，单位个 * VOLUME_GIGABYTES：磁盘总容量，单位GB * VOLUMES：磁盘数量，单位个 * CORES：CPU数量，单位个 * MEMORY：内存容量，单位MB
+ * 配额-资源类型： * GPU_INSTANCES：GPU资源实例数，单位个。 * INSTANCES：普通实例数，单位个。 * VOLUME_GIGABYTES：磁盘总容量，单位GB。 * VOLUMES：磁盘数量，单位个。 * CORES：CPU数量，单位个。 * MEMORY：内存容量，单位MB。
  */
 public class QuotaResourceTypeEnum {
 

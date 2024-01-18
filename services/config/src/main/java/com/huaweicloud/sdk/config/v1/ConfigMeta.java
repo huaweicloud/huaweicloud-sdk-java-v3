@@ -197,9 +197,9 @@ import java.util.Map;
 public class ConfigMeta {
 
     public static final HttpRequestDef<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse> createAggregationAuthorization =
-        genForcreateAggregationAuthorization();
+        genForCreateAggregationAuthorization();
 
-    private static HttpRequestDef<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse> genForcreateAggregationAuthorization() {
+    private static HttpRequestDef<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse> genForCreateAggregationAuthorization() {
         // basic
         HttpRequestDef.Builder<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse> builder =
             HttpRequestDef
@@ -215,9 +215,8 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AggregationAuthorizationRequest.class),
-            f -> f.withMarshaller(CreateAggregationAuthorizationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAggregationAuthorizationRequest::getBody,
+                CreateAggregationAuthorizationRequest::setBody));
 
         // response
 
@@ -225,9 +224,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse> createConfigurationAggregator =
-        genForcreateConfigurationAggregator();
+        genForCreateConfigurationAggregator();
 
-    private static HttpRequestDef<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse> genForcreateConfigurationAggregator() {
+    private static HttpRequestDef<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse> genForCreateConfigurationAggregator() {
         // basic
         HttpRequestDef.Builder<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse> builder =
             HttpRequestDef
@@ -243,9 +242,8 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ConfigurationAggregatorRequest.class),
-            f -> f.withMarshaller(CreateConfigurationAggregatorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConfigurationAggregatorRequest::getBody,
+                CreateConfigurationAggregatorRequest::setBody));
 
         // response
 
@@ -253,9 +251,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse> deleteAggregationAuthorization =
-        genFordeleteAggregationAuthorization();
+        genForDeleteAggregationAuthorization();
 
-    private static HttpRequestDef<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse> genFordeleteAggregationAuthorization() {
+    private static HttpRequestDef<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse> genForDeleteAggregationAuthorization() {
         // basic
         HttpRequestDef.Builder<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse> builder =
             HttpRequestDef
@@ -272,9 +270,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAggregationAuthorizationRequest::getAuthorizedAccountId, (req, v) -> {
-                req.setAuthorizedAccountId(v);
-            }));
+            f -> f.withMarshaller(DeleteAggregationAuthorizationRequest::getAuthorizedAccountId,
+                DeleteAggregationAuthorizationRequest::setAuthorizedAccountId));
 
         // response
 
@@ -282,9 +279,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse> deleteConfigurationAggregator =
-        genFordeleteConfigurationAggregator();
+        genForDeleteConfigurationAggregator();
 
-    private static HttpRequestDef<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse> genFordeleteConfigurationAggregator() {
+    private static HttpRequestDef<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse> genForDeleteConfigurationAggregator() {
         // basic
         HttpRequestDef.Builder<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse> builder =
             HttpRequestDef
@@ -300,9 +297,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConfigurationAggregatorRequest::getAggregatorId, (req, v) -> {
-                req.setAggregatorId(v);
-            }));
+            f -> f.withMarshaller(DeleteConfigurationAggregatorRequest::getAggregatorId,
+                DeleteConfigurationAggregatorRequest::setAggregatorId));
 
         // response
 
@@ -310,9 +306,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse> deletePendingAggregationRequest =
-        genFordeletePendingAggregationRequest();
+        genForDeletePendingAggregationRequest();
 
-    private static HttpRequestDef<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse> genFordeletePendingAggregationRequest() {
+    private static HttpRequestDef<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse> genForDeletePendingAggregationRequest() {
         // basic
         HttpRequestDef.Builder<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse> builder =
             HttpRequestDef
@@ -329,9 +325,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePendingAggregationRequestRequest::getRequesterAccountId, (req, v) -> {
-                req.setRequesterAccountId(v);
-            }));
+            f -> f.withMarshaller(DeletePendingAggregationRequestRequest::getRequesterAccountId,
+                DeletePendingAggregationRequestRequest::setRequesterAccountId));
 
         // response
 
@@ -339,9 +334,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse> listAggregateComplianceByPolicyAssignment =
-        genForlistAggregateComplianceByPolicyAssignment();
+        genForListAggregateComplianceByPolicyAssignment();
 
-    private static HttpRequestDef<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse> genForlistAggregateComplianceByPolicyAssignment() {
+    private static HttpRequestDef<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse> genForListAggregateComplianceByPolicyAssignment() {
         // basic
         HttpRequestDef.Builder<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse> builder =
             HttpRequestDef
@@ -358,23 +353,20 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAggregateComplianceByPolicyAssignmentRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAggregateComplianceByPolicyAssignmentRequest::getLimit,
+                ListAggregateComplianceByPolicyAssignmentRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregateComplianceByPolicyAssignmentRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAggregateComplianceByPolicyAssignmentRequest::getMarker,
+                ListAggregateComplianceByPolicyAssignmentRequest::setMarker));
         builder.<AggregatePolicyAssignmentsRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AggregatePolicyAssignmentsRequest.class),
-            f -> f.withMarshaller(ListAggregateComplianceByPolicyAssignmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAggregateComplianceByPolicyAssignmentRequest::getBody,
+                ListAggregateComplianceByPolicyAssignmentRequest::setBody));
 
         // response
 
@@ -382,9 +374,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse> listAggregateDiscoveredResources =
-        genForlistAggregateDiscoveredResources();
+        genForListAggregateDiscoveredResources();
 
-    private static HttpRequestDef<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse> genForlistAggregateDiscoveredResources() {
+    private static HttpRequestDef<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse> genForListAggregateDiscoveredResources() {
         // basic
         HttpRequestDef.Builder<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse> builder =
             HttpRequestDef
@@ -401,23 +393,20 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAggregateDiscoveredResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAggregateDiscoveredResourcesRequest::getLimit,
+                ListAggregateDiscoveredResourcesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregateDiscoveredResourcesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAggregateDiscoveredResourcesRequest::getMarker,
+                ListAggregateDiscoveredResourcesRequest::setMarker));
         builder.<AggregateDiscoveredResourcesRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AggregateDiscoveredResourcesRequest.class),
-            f -> f.withMarshaller(ListAggregateDiscoveredResourcesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAggregateDiscoveredResourcesRequest::getBody,
+                ListAggregateDiscoveredResourcesRequest::setBody));
 
         // response
 
@@ -425,9 +414,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse> listAggregationAuthorizations =
-        genForlistAggregationAuthorizations();
+        genForListAggregationAuthorizations();
 
-    private static HttpRequestDef<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse> genForlistAggregationAuthorizations() {
+    private static HttpRequestDef<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse> genForListAggregationAuthorizations() {
         // basic
         HttpRequestDef.Builder<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse> builder =
             HttpRequestDef
@@ -443,23 +432,20 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregationAuthorizationsRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(ListAggregationAuthorizationsRequest::getAccountId,
+                ListAggregationAuthorizationsRequest::setAccountId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAggregationAuthorizationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAggregationAuthorizationsRequest::getLimit,
+                ListAggregationAuthorizationsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAggregationAuthorizationsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAggregationAuthorizationsRequest::getMarker,
+                ListAggregationAuthorizationsRequest::setMarker));
 
         // response
 
@@ -467,9 +453,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse> listConfigurationAggregators =
-        genForlistConfigurationAggregators();
+        genForListConfigurationAggregators();
 
-    private static HttpRequestDef<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse> genForlistConfigurationAggregators() {
+    private static HttpRequestDef<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse> genForListConfigurationAggregators() {
         // basic
         HttpRequestDef.Builder<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse> builder =
             HttpRequestDef
@@ -485,23 +471,20 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigurationAggregatorsRequest::getAggregatorName, (req, v) -> {
-                req.setAggregatorName(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationAggregatorsRequest::getAggregatorName,
+                ListConfigurationAggregatorsRequest::setAggregatorName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigurationAggregatorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationAggregatorsRequest::getLimit,
+                ListConfigurationAggregatorsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigurationAggregatorsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationAggregatorsRequest::getMarker,
+                ListConfigurationAggregatorsRequest::setMarker));
 
         // response
 
@@ -509,9 +492,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse> listPendingAggregationRequests =
-        genForlistPendingAggregationRequests();
+        genForListPendingAggregationRequests();
 
-    private static HttpRequestDef<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse> genForlistPendingAggregationRequests() {
+    private static HttpRequestDef<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse> genForListPendingAggregationRequests() {
         // basic
         HttpRequestDef.Builder<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse> builder =
             HttpRequestDef
@@ -527,23 +510,20 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPendingAggregationRequestsRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(ListPendingAggregationRequestsRequest::getAccountId,
+                ListPendingAggregationRequestsRequest::setAccountId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPendingAggregationRequestsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPendingAggregationRequestsRequest::getLimit,
+                ListPendingAggregationRequestsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPendingAggregationRequestsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPendingAggregationRequestsRequest::getMarker,
+                ListPendingAggregationRequestsRequest::setMarker));
 
         // response
 
@@ -551,9 +531,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse> runAggregateResourceQuery =
-        genForrunAggregateResourceQuery();
+        genForRunAggregateResourceQuery();
 
-    private static HttpRequestDef<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse> genForrunAggregateResourceQuery() {
+    private static HttpRequestDef<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse> genForRunAggregateResourceQuery() {
         // basic
         HttpRequestDef.Builder<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse> builder =
             HttpRequestDef
@@ -569,16 +549,14 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunAggregateResourceQueryRequest::getAggregatorId, (req, v) -> {
-                req.setAggregatorId(v);
-            }));
+            f -> f.withMarshaller(RunAggregateResourceQueryRequest::getAggregatorId,
+                RunAggregateResourceQueryRequest::setAggregatorId));
         builder.<QueryRunRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(QueryRunRequestBody.class),
-            f -> f.withMarshaller(RunAggregateResourceQueryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunAggregateResourceQueryRequest::getBody,
+                RunAggregateResourceQueryRequest::setBody));
 
         // response
 
@@ -586,9 +564,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse> showAggregateComplianceDetailsByPolicyAssignment =
-        genForshowAggregateComplianceDetailsByPolicyAssignment();
+        genForShowAggregateComplianceDetailsByPolicyAssignment();
 
-    private static HttpRequestDef<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse> genForshowAggregateComplianceDetailsByPolicyAssignment() {
+    private static HttpRequestDef<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse> genForShowAggregateComplianceDetailsByPolicyAssignment() {
         // basic
         HttpRequestDef.Builder<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse> builder =
             HttpRequestDef
@@ -605,23 +583,20 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAggregateComplianceDetailsByPolicyAssignmentRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowAggregateComplianceDetailsByPolicyAssignmentRequest::getLimit,
+                ShowAggregateComplianceDetailsByPolicyAssignmentRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAggregateComplianceDetailsByPolicyAssignmentRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowAggregateComplianceDetailsByPolicyAssignmentRequest::getMarker,
+                ShowAggregateComplianceDetailsByPolicyAssignmentRequest::setMarker));
         builder.<AggregateComplianceDetailRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AggregateComplianceDetailRequest.class),
-            f -> f.withMarshaller(ShowAggregateComplianceDetailsByPolicyAssignmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowAggregateComplianceDetailsByPolicyAssignmentRequest::getBody,
+                ShowAggregateComplianceDetailsByPolicyAssignmentRequest::setBody));
 
         // response
 
@@ -629,9 +604,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse> showAggregateDiscoveredResourceCounts =
-        genForshowAggregateDiscoveredResourceCounts();
+        genForShowAggregateDiscoveredResourceCounts();
 
-    private static HttpRequestDef<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse> genForshowAggregateDiscoveredResourceCounts() {
+    private static HttpRequestDef<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse> genForShowAggregateDiscoveredResourceCounts() {
         // basic
         HttpRequestDef.Builder<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse> builder =
             HttpRequestDef
@@ -648,9 +623,8 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AggregateDiscoveredResourceCountsRequest.class),
-            f -> f.withMarshaller(ShowAggregateDiscoveredResourceCountsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowAggregateDiscoveredResourceCountsRequest::getBody,
+                ShowAggregateDiscoveredResourceCountsRequest::setBody));
 
         // response
 
@@ -658,9 +632,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse> showAggregatePolicyAssignmentDetail =
-        genForshowAggregatePolicyAssignmentDetail();
+        genForShowAggregatePolicyAssignmentDetail();
 
-    private static HttpRequestDef<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse> genForshowAggregatePolicyAssignmentDetail() {
+    private static HttpRequestDef<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse> genForShowAggregatePolicyAssignmentDetail() {
         // basic
         HttpRequestDef.Builder<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse> builder =
             HttpRequestDef
@@ -676,9 +650,8 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AggregatePolicyAssignmentDetailRequest.class),
-            f -> f.withMarshaller(ShowAggregatePolicyAssignmentDetailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowAggregatePolicyAssignmentDetailRequest::getBody,
+                ShowAggregatePolicyAssignmentDetailRequest::setBody));
 
         // response
 
@@ -686,9 +659,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse> showAggregatePolicyStateComplianceSummary =
-        genForshowAggregatePolicyStateComplianceSummary();
+        genForShowAggregatePolicyStateComplianceSummary();
 
-    private static HttpRequestDef<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse> genForshowAggregatePolicyStateComplianceSummary() {
+    private static HttpRequestDef<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse> genForShowAggregatePolicyStateComplianceSummary() {
         // basic
         HttpRequestDef.Builder<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse> builder =
             HttpRequestDef
@@ -705,9 +678,8 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AggregatePolicyStatesRequest.class),
-            f -> f.withMarshaller(ShowAggregatePolicyStateComplianceSummaryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowAggregatePolicyStateComplianceSummaryRequest::getBody,
+                ShowAggregatePolicyStateComplianceSummaryRequest::setBody));
 
         // response
 
@@ -715,9 +687,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse> showAggregateResourceConfig =
-        genForshowAggregateResourceConfig();
+        genForShowAggregateResourceConfig();
 
-    private static HttpRequestDef<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse> genForshowAggregateResourceConfig() {
+    private static HttpRequestDef<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse> genForShowAggregateResourceConfig() {
         // basic
         HttpRequestDef.Builder<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse> builder =
             HttpRequestDef
@@ -733,9 +705,8 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AggregateResourceConfigRequest.class),
-            f -> f.withMarshaller(ShowAggregateResourceConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowAggregateResourceConfigRequest::getBody,
+                ShowAggregateResourceConfigRequest::setBody));
 
         // response
 
@@ -743,9 +714,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse> showConfigurationAggregator =
-        genForshowConfigurationAggregator();
+        genForShowConfigurationAggregator();
 
-    private static HttpRequestDef<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse> genForshowConfigurationAggregator() {
+    private static HttpRequestDef<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse> genForShowConfigurationAggregator() {
         // basic
         HttpRequestDef.Builder<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse> builder =
             HttpRequestDef
@@ -761,9 +732,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigurationAggregatorRequest::getAggregatorId, (req, v) -> {
-                req.setAggregatorId(v);
-            }));
+            f -> f.withMarshaller(ShowConfigurationAggregatorRequest::getAggregatorId,
+                ShowConfigurationAggregatorRequest::setAggregatorId));
 
         // response
 
@@ -771,9 +741,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse> showConfigurationAggregatorSourcesStatus =
-        genForshowConfigurationAggregatorSourcesStatus();
+        genForShowConfigurationAggregatorSourcesStatus();
 
-    private static HttpRequestDef<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse> genForshowConfigurationAggregatorSourcesStatus() {
+    private static HttpRequestDef<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse> genForShowConfigurationAggregatorSourcesStatus() {
         // basic
         HttpRequestDef.Builder<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse> builder =
             HttpRequestDef
@@ -790,30 +760,26 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getAggregatorId, (req, v) -> {
-                req.setAggregatorId(v);
-            }));
+            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getAggregatorId,
+                ShowConfigurationAggregatorSourcesStatusRequest::setAggregatorId));
         builder.<ShowConfigurationAggregatorSourcesStatusRequest.UpdateStatusEnum>withRequestField("update_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowConfigurationAggregatorSourcesStatusRequest.UpdateStatusEnum.class),
-            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getUpdateStatus, (req, v) -> {
-                req.setUpdateStatus(v);
-            }));
+            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getUpdateStatus,
+                ShowConfigurationAggregatorSourcesStatusRequest::setUpdateStatus));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getLimit,
+                ShowConfigurationAggregatorSourcesStatusRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getMarker,
+                ShowConfigurationAggregatorSourcesStatusRequest::setMarker));
 
         // response
 
@@ -821,9 +787,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse> updateConfigurationAggregator =
-        genForupdateConfigurationAggregator();
+        genForUpdateConfigurationAggregator();
 
-    private static HttpRequestDef<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse> genForupdateConfigurationAggregator() {
+    private static HttpRequestDef<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse> genForUpdateConfigurationAggregator() {
         // basic
         HttpRequestDef.Builder<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse> builder =
             HttpRequestDef
@@ -839,16 +805,14 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConfigurationAggregatorRequest::getAggregatorId, (req, v) -> {
-                req.setAggregatorId(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigurationAggregatorRequest::getAggregatorId,
+                UpdateConfigurationAggregatorRequest::setAggregatorId));
         builder.<ConfigurationAggregatorRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ConfigurationAggregatorRequest.class),
-            f -> f.withMarshaller(UpdateConfigurationAggregatorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigurationAggregatorRequest::getBody,
+                UpdateConfigurationAggregatorRequest::setBody));
 
         // response
 
@@ -856,9 +820,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<CollectConformancePackComplianceSummaryRequest, CollectConformancePackComplianceSummaryResponse> collectConformancePackComplianceSummary =
-        genForcollectConformancePackComplianceSummary();
+        genForCollectConformancePackComplianceSummary();
 
-    private static HttpRequestDef<CollectConformancePackComplianceSummaryRequest, CollectConformancePackComplianceSummaryResponse> genForcollectConformancePackComplianceSummary() {
+    private static HttpRequestDef<CollectConformancePackComplianceSummaryRequest, CollectConformancePackComplianceSummaryResponse> genForCollectConformancePackComplianceSummary() {
         // basic
         HttpRequestDef.Builder<CollectConformancePackComplianceSummaryRequest, CollectConformancePackComplianceSummaryResponse> builder =
             HttpRequestDef
@@ -874,23 +838,20 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CollectConformancePackComplianceSummaryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(CollectConformancePackComplianceSummaryRequest::getLimit,
+                CollectConformancePackComplianceSummaryRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CollectConformancePackComplianceSummaryRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(CollectConformancePackComplianceSummaryRequest::getMarker,
+                CollectConformancePackComplianceSummaryRequest::setMarker));
         builder.<String>withRequestField("conformance_pack_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CollectConformancePackComplianceSummaryRequest::getConformancePackName, (req, v) -> {
-                req.setConformancePackName(v);
-            }));
+            f -> f.withMarshaller(CollectConformancePackComplianceSummaryRequest::getConformancePackName,
+                CollectConformancePackComplianceSummaryRequest::setConformancePackName));
 
         // response
 
@@ -898,9 +859,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<CreateConformancePackRequest, CreateConformancePackResponse> createConformancePack =
-        genForcreateConformancePack();
+        genForCreateConformancePack();
 
-    private static HttpRequestDef<CreateConformancePackRequest, CreateConformancePackResponse> genForcreateConformancePack() {
+    private static HttpRequestDef<CreateConformancePackRequest, CreateConformancePackResponse> genForCreateConformancePack() {
         // basic
         HttpRequestDef.Builder<CreateConformancePackRequest, CreateConformancePackResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateConformancePackRequest.class, CreateConformancePackResponse.class)
@@ -913,9 +874,7 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConformancePackRequestBody.class),
-            f -> f.withMarshaller(CreateConformancePackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConformancePackRequest::getBody, CreateConformancePackRequest::setBody));
 
         // response
 
@@ -923,9 +882,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<CreateOrganizationConformancePackRequest, CreateOrganizationConformancePackResponse> createOrganizationConformancePack =
-        genForcreateOrganizationConformancePack();
+        genForCreateOrganizationConformancePack();
 
-    private static HttpRequestDef<CreateOrganizationConformancePackRequest, CreateOrganizationConformancePackResponse> genForcreateOrganizationConformancePack() {
+    private static HttpRequestDef<CreateOrganizationConformancePackRequest, CreateOrganizationConformancePackResponse> genForCreateOrganizationConformancePack() {
         // basic
         HttpRequestDef.Builder<CreateOrganizationConformancePackRequest, CreateOrganizationConformancePackResponse> builder =
             HttpRequestDef
@@ -941,16 +900,14 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateOrganizationConformancePackRequest::getOrganizationId, (req, v) -> {
-                req.setOrganizationId(v);
-            }));
+            f -> f.withMarshaller(CreateOrganizationConformancePackRequest::getOrganizationId,
+                CreateOrganizationConformancePackRequest::setOrganizationId));
         builder.<OrgConformancePackRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OrgConformancePackRequestBody.class),
-            f -> f.withMarshaller(CreateOrganizationConformancePackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOrganizationConformancePackRequest::getBody,
+                CreateOrganizationConformancePackRequest::setBody));
 
         // response
 
@@ -958,9 +915,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<DeleteConformancePackRequest, DeleteConformancePackResponse> deleteConformancePack =
-        genFordeleteConformancePack();
+        genForDeleteConformancePack();
 
-    private static HttpRequestDef<DeleteConformancePackRequest, DeleteConformancePackResponse> genFordeleteConformancePack() {
+    private static HttpRequestDef<DeleteConformancePackRequest, DeleteConformancePackResponse> genForDeleteConformancePack() {
         // basic
         HttpRequestDef.Builder<DeleteConformancePackRequest, DeleteConformancePackResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteConformancePackRequest.class, DeleteConformancePackResponse.class)
@@ -973,9 +930,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConformancePackRequest::getConformancePackId, (req, v) -> {
-                req.setConformancePackId(v);
-            }));
+            f -> f.withMarshaller(DeleteConformancePackRequest::getConformancePackId,
+                DeleteConformancePackRequest::setConformancePackId));
 
         // response
 
@@ -983,9 +939,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<DeleteOrganizationConformancePackRequest, DeleteOrganizationConformancePackResponse> deleteOrganizationConformancePack =
-        genFordeleteOrganizationConformancePack();
+        genForDeleteOrganizationConformancePack();
 
-    private static HttpRequestDef<DeleteOrganizationConformancePackRequest, DeleteOrganizationConformancePackResponse> genFordeleteOrganizationConformancePack() {
+    private static HttpRequestDef<DeleteOrganizationConformancePackRequest, DeleteOrganizationConformancePackResponse> genForDeleteOrganizationConformancePack() {
         // basic
         HttpRequestDef.Builder<DeleteOrganizationConformancePackRequest, DeleteOrganizationConformancePackResponse> builder =
             HttpRequestDef
@@ -1001,16 +957,14 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteOrganizationConformancePackRequest::getOrganizationId, (req, v) -> {
-                req.setOrganizationId(v);
-            }));
+            f -> f.withMarshaller(DeleteOrganizationConformancePackRequest::getOrganizationId,
+                DeleteOrganizationConformancePackRequest::setOrganizationId));
         builder.<String>withRequestField("conformance_pack_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteOrganizationConformancePackRequest::getConformancePackId, (req, v) -> {
-                req.setConformancePackId(v);
-            }));
+            f -> f.withMarshaller(DeleteOrganizationConformancePackRequest::getConformancePackId,
+                DeleteOrganizationConformancePackRequest::setConformancePackId));
 
         // response
 
@@ -1018,9 +972,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListBuiltInConformancePackTemplatesRequest, ListBuiltInConformancePackTemplatesResponse> listBuiltInConformancePackTemplates =
-        genForlistBuiltInConformancePackTemplates();
+        genForListBuiltInConformancePackTemplates();
 
-    private static HttpRequestDef<ListBuiltInConformancePackTemplatesRequest, ListBuiltInConformancePackTemplatesResponse> genForlistBuiltInConformancePackTemplates() {
+    private static HttpRequestDef<ListBuiltInConformancePackTemplatesRequest, ListBuiltInConformancePackTemplatesResponse> genForListBuiltInConformancePackTemplates() {
         // basic
         HttpRequestDef.Builder<ListBuiltInConformancePackTemplatesRequest, ListBuiltInConformancePackTemplatesResponse> builder =
             HttpRequestDef
@@ -1036,30 +990,26 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getLimit,
+                ListBuiltInConformancePackTemplatesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getMarker,
+                ListBuiltInConformancePackTemplatesRequest::setMarker));
         builder.<String>withRequestField("template_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getTemplateKey, (req, v) -> {
-                req.setTemplateKey(v);
-            }));
+            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getTemplateKey,
+                ListBuiltInConformancePackTemplatesRequest::setTemplateKey));
         builder.<ListBuiltInConformancePackTemplatesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBuiltInConformancePackTemplatesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getXLanguage,
+                ListBuiltInConformancePackTemplatesRequest::setXLanguage));
 
         // response
 
@@ -1067,9 +1017,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListConformancePackComplianceByPackIdRequest, ListConformancePackComplianceByPackIdResponse> listConformancePackComplianceByPackId =
-        genForlistConformancePackComplianceByPackId();
+        genForListConformancePackComplianceByPackId();
 
-    private static HttpRequestDef<ListConformancePackComplianceByPackIdRequest, ListConformancePackComplianceByPackIdResponse> genForlistConformancePackComplianceByPackId() {
+    private static HttpRequestDef<ListConformancePackComplianceByPackIdRequest, ListConformancePackComplianceByPackIdResponse> genForListConformancePackComplianceByPackId() {
         // basic
         HttpRequestDef.Builder<ListConformancePackComplianceByPackIdRequest, ListConformancePackComplianceByPackIdResponse> builder =
             HttpRequestDef
@@ -1085,30 +1035,26 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getConformancePackId, (req, v) -> {
-                req.setConformancePackId(v);
-            }));
+            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getConformancePackId,
+                ListConformancePackComplianceByPackIdRequest::setConformancePackId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getLimit,
+                ListConformancePackComplianceByPackIdRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getMarker,
+                ListConformancePackComplianceByPackIdRequest::setMarker));
         builder.<String>withRequestField("policy_assignment_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getPolicyAssignmentName, (req, v) -> {
-                req.setPolicyAssignmentName(v);
-            }));
+            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getPolicyAssignmentName,
+                ListConformancePackComplianceByPackIdRequest::setPolicyAssignmentName));
 
         // response
 
@@ -1116,9 +1062,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListConformancePackComplianceDetailsByPackIdRequest, ListConformancePackComplianceDetailsByPackIdResponse> listConformancePackComplianceDetailsByPackId =
-        genForlistConformancePackComplianceDetailsByPackId();
+        genForListConformancePackComplianceDetailsByPackId();
 
-    private static HttpRequestDef<ListConformancePackComplianceDetailsByPackIdRequest, ListConformancePackComplianceDetailsByPackIdResponse> genForlistConformancePackComplianceDetailsByPackId() {
+    private static HttpRequestDef<ListConformancePackComplianceDetailsByPackIdRequest, ListConformancePackComplianceDetailsByPackIdResponse> genForListConformancePackComplianceDetailsByPackId() {
         // basic
         HttpRequestDef.Builder<ListConformancePackComplianceDetailsByPackIdRequest, ListConformancePackComplianceDetailsByPackIdResponse> builder =
             HttpRequestDef
@@ -1136,31 +1082,25 @@ public class ConfigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConformancePackComplianceDetailsByPackIdRequest::getConformancePackId,
-                (req, v) -> {
-                    req.setConformancePackId(v);
-                }));
+                ListConformancePackComplianceDetailsByPackIdRequest::setConformancePackId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConformancePackComplianceDetailsByPackIdRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConformancePackComplianceDetailsByPackIdRequest::getLimit,
+                ListConformancePackComplianceDetailsByPackIdRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConformancePackComplianceDetailsByPackIdRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListConformancePackComplianceDetailsByPackIdRequest::getMarker,
+                ListConformancePackComplianceDetailsByPackIdRequest::setMarker));
         builder.<String>withRequestField("policy_assignment_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConformancePackComplianceDetailsByPackIdRequest::getPolicyAssignmentName,
-                (req, v) -> {
-                    req.setPolicyAssignmentName(v);
-                }));
+                ListConformancePackComplianceDetailsByPackIdRequest::setPolicyAssignmentName));
 
         // response
 
@@ -1168,9 +1108,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResponse> listConformancePackComplianceScores =
-        genForlistConformancePackComplianceScores();
+        genForListConformancePackComplianceScores();
 
-    private static HttpRequestDef<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResponse> genForlistConformancePackComplianceScores() {
+    private static HttpRequestDef<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResponse> genForListConformancePackComplianceScores() {
         // basic
         HttpRequestDef.Builder<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResponse> builder =
             HttpRequestDef
@@ -1186,23 +1126,20 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConformancePackComplianceScoresRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConformancePackComplianceScoresRequest::getLimit,
+                ListConformancePackComplianceScoresRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConformancePackComplianceScoresRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListConformancePackComplianceScoresRequest::getMarker,
+                ListConformancePackComplianceScoresRequest::setMarker));
         builder.<String>withRequestField("conformance_pack_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConformancePackComplianceScoresRequest::getConformancePackName, (req, v) -> {
-                req.setConformancePackName(v);
-            }));
+            f -> f.withMarshaller(ListConformancePackComplianceScoresRequest::getConformancePackName,
+                ListConformancePackComplianceScoresRequest::setConformancePackName));
 
         // response
 
@@ -1210,9 +1147,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListConformancePacksRequest, ListConformancePacksResponse> listConformancePacks =
-        genForlistConformancePacks();
+        genForListConformancePacks();
 
-    private static HttpRequestDef<ListConformancePacksRequest, ListConformancePacksResponse> genForlistConformancePacks() {
+    private static HttpRequestDef<ListConformancePacksRequest, ListConformancePacksResponse> genForListConformancePacks() {
         // basic
         HttpRequestDef.Builder<ListConformancePacksRequest, ListConformancePacksResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListConformancePacksRequest.class, ListConformancePacksResponse.class)
@@ -1225,23 +1162,18 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConformancePacksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConformancePacksRequest::getLimit, ListConformancePacksRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConformancePacksRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListConformancePacksRequest::getMarker, ListConformancePacksRequest::setMarker));
         builder.<String>withRequestField("conformance_pack_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConformancePacksRequest::getConformancePackName, (req, v) -> {
-                req.setConformancePackName(v);
-            }));
+            f -> f.withMarshaller(ListConformancePacksRequest::getConformancePackName,
+                ListConformancePacksRequest::setConformancePackName));
 
         // response
 
@@ -1249,9 +1181,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListOrganizationConformancePackStatusesRequest, ListOrganizationConformancePackStatusesResponse> listOrganizationConformancePackStatuses =
-        genForlistOrganizationConformancePackStatuses();
+        genForListOrganizationConformancePackStatuses();
 
-    private static HttpRequestDef<ListOrganizationConformancePackStatusesRequest, ListOrganizationConformancePackStatusesResponse> genForlistOrganizationConformancePackStatuses() {
+    private static HttpRequestDef<ListOrganizationConformancePackStatusesRequest, ListOrganizationConformancePackStatusesResponse> genForListOrganizationConformancePackStatuses() {
         // basic
         HttpRequestDef.Builder<ListOrganizationConformancePackStatusesRequest, ListOrganizationConformancePackStatusesResponse> builder =
             HttpRequestDef
@@ -1267,30 +1199,26 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationConformancePackStatusesRequest::getOrganizationId, (req, v) -> {
-                req.setOrganizationId(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationConformancePackStatusesRequest::getOrganizationId,
+                ListOrganizationConformancePackStatusesRequest::setOrganizationId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOrganizationConformancePackStatusesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationConformancePackStatusesRequest::getLimit,
+                ListOrganizationConformancePackStatusesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationConformancePackStatusesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationConformancePackStatusesRequest::getMarker,
+                ListOrganizationConformancePackStatusesRequest::setMarker));
         builder.<String>withRequestField("conformance_pack_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationConformancePackStatusesRequest::getConformancePackName, (req, v) -> {
-                req.setConformancePackName(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationConformancePackStatusesRequest::getConformancePackName,
+                ListOrganizationConformancePackStatusesRequest::setConformancePackName));
 
         // response
 
@@ -1298,9 +1226,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListOrganizationConformancePacksRequest, ListOrganizationConformancePacksResponse> listOrganizationConformancePacks =
-        genForlistOrganizationConformancePacks();
+        genForListOrganizationConformancePacks();
 
-    private static HttpRequestDef<ListOrganizationConformancePacksRequest, ListOrganizationConformancePacksResponse> genForlistOrganizationConformancePacks() {
+    private static HttpRequestDef<ListOrganizationConformancePacksRequest, ListOrganizationConformancePacksResponse> genForListOrganizationConformancePacks() {
         // basic
         HttpRequestDef.Builder<ListOrganizationConformancePacksRequest, ListOrganizationConformancePacksResponse> builder =
             HttpRequestDef
@@ -1316,30 +1244,26 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationConformancePacksRequest::getOrganizationId, (req, v) -> {
-                req.setOrganizationId(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationConformancePacksRequest::getOrganizationId,
+                ListOrganizationConformancePacksRequest::setOrganizationId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOrganizationConformancePacksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationConformancePacksRequest::getLimit,
+                ListOrganizationConformancePacksRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationConformancePacksRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationConformancePacksRequest::getMarker,
+                ListOrganizationConformancePacksRequest::setMarker));
         builder.<String>withRequestField("conformance_pack_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationConformancePacksRequest::getConformancePackName, (req, v) -> {
-                req.setConformancePackName(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationConformancePacksRequest::getConformancePackName,
+                ListOrganizationConformancePacksRequest::setConformancePackName));
 
         // response
 
@@ -1347,9 +1271,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowBuiltInConformancePackTemplateRequest, ShowBuiltInConformancePackTemplateResponse> showBuiltInConformancePackTemplate =
-        genForshowBuiltInConformancePackTemplate();
+        genForShowBuiltInConformancePackTemplate();
 
-    private static HttpRequestDef<ShowBuiltInConformancePackTemplateRequest, ShowBuiltInConformancePackTemplateResponse> genForshowBuiltInConformancePackTemplate() {
+    private static HttpRequestDef<ShowBuiltInConformancePackTemplateRequest, ShowBuiltInConformancePackTemplateResponse> genForShowBuiltInConformancePackTemplate() {
         // basic
         HttpRequestDef.Builder<ShowBuiltInConformancePackTemplateRequest, ShowBuiltInConformancePackTemplateResponse> builder =
             HttpRequestDef
@@ -1365,16 +1289,14 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBuiltInConformancePackTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowBuiltInConformancePackTemplateRequest::getTemplateId,
+                ShowBuiltInConformancePackTemplateRequest::setTemplateId));
         builder.<ShowBuiltInConformancePackTemplateRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowBuiltInConformancePackTemplateRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowBuiltInConformancePackTemplateRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowBuiltInConformancePackTemplateRequest::getXLanguage,
+                ShowBuiltInConformancePackTemplateRequest::setXLanguage));
 
         // response
 
@@ -1382,9 +1304,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowConformancePackRequest, ShowConformancePackResponse> showConformancePack =
-        genForshowConformancePack();
+        genForShowConformancePack();
 
-    private static HttpRequestDef<ShowConformancePackRequest, ShowConformancePackResponse> genForshowConformancePack() {
+    private static HttpRequestDef<ShowConformancePackRequest, ShowConformancePackResponse> genForShowConformancePack() {
         // basic
         HttpRequestDef.Builder<ShowConformancePackRequest, ShowConformancePackResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConformancePackRequest.class, ShowConformancePackResponse.class)
@@ -1397,9 +1319,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConformancePackRequest::getConformancePackId, (req, v) -> {
-                req.setConformancePackId(v);
-            }));
+            f -> f.withMarshaller(ShowConformancePackRequest::getConformancePackId,
+                ShowConformancePackRequest::setConformancePackId));
 
         // response
 
@@ -1407,9 +1328,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowOrganizationConformancePackRequest, ShowOrganizationConformancePackResponse> showOrganizationConformancePack =
-        genForshowOrganizationConformancePack();
+        genForShowOrganizationConformancePack();
 
-    private static HttpRequestDef<ShowOrganizationConformancePackRequest, ShowOrganizationConformancePackResponse> genForshowOrganizationConformancePack() {
+    private static HttpRequestDef<ShowOrganizationConformancePackRequest, ShowOrganizationConformancePackResponse> genForShowOrganizationConformancePack() {
         // basic
         HttpRequestDef.Builder<ShowOrganizationConformancePackRequest, ShowOrganizationConformancePackResponse> builder =
             HttpRequestDef
@@ -1425,16 +1346,14 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOrganizationConformancePackRequest::getOrganizationId, (req, v) -> {
-                req.setOrganizationId(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationConformancePackRequest::getOrganizationId,
+                ShowOrganizationConformancePackRequest::setOrganizationId));
         builder.<String>withRequestField("conformance_pack_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOrganizationConformancePackRequest::getConformancePackId, (req, v) -> {
-                req.setConformancePackId(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationConformancePackRequest::getConformancePackId,
+                ShowOrganizationConformancePackRequest::setConformancePackId));
 
         // response
 
@@ -1442,9 +1361,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowOrganizationConformancePackDetailedStatusesRequest, ShowOrganizationConformancePackDetailedStatusesResponse> showOrganizationConformancePackDetailedStatuses =
-        genForshowOrganizationConformancePackDetailedStatuses();
+        genForShowOrganizationConformancePackDetailedStatuses();
 
-    private static HttpRequestDef<ShowOrganizationConformancePackDetailedStatusesRequest, ShowOrganizationConformancePackDetailedStatusesResponse> genForshowOrganizationConformancePackDetailedStatuses() {
+    private static HttpRequestDef<ShowOrganizationConformancePackDetailedStatusesRequest, ShowOrganizationConformancePackDetailedStatusesResponse> genForShowOrganizationConformancePackDetailedStatuses() {
         // basic
         HttpRequestDef.Builder<ShowOrganizationConformancePackDetailedStatusesRequest, ShowOrganizationConformancePackDetailedStatusesResponse> builder =
             HttpRequestDef
@@ -1461,38 +1380,31 @@ public class ConfigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getOrganizationId,
-                (req, v) -> {
-                    req.setOrganizationId(v);
-                }));
+                ShowOrganizationConformancePackDetailedStatusesRequest::setOrganizationId));
         builder.<String>withRequestField("conformance_pack_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getConformancePackName,
-                (req, v) -> {
-                    req.setConformancePackName(v);
-                }));
+                ShowOrganizationConformancePackDetailedStatusesRequest::setConformancePackName));
         builder.<ShowOrganizationConformancePackDetailedStatusesRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowOrganizationConformancePackDetailedStatusesRequest.StateEnum.class),
-            f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getState,
+                ShowOrganizationConformancePackDetailedStatusesRequest::setState));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getLimit,
+                ShowOrganizationConformancePackDetailedStatusesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getMarker,
+                ShowOrganizationConformancePackDetailedStatusesRequest::setMarker));
 
         // response
 
@@ -1500,9 +1412,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowResourceHistoryRequest, ShowResourceHistoryResponse> showResourceHistory =
-        genForshowResourceHistory();
+        genForShowResourceHistory();
 
-    private static HttpRequestDef<ShowResourceHistoryRequest, ShowResourceHistoryResponse> genForshowResourceHistory() {
+    private static HttpRequestDef<ShowResourceHistoryRequest, ShowResourceHistoryResponse> genForShowResourceHistory() {
         // basic
         HttpRequestDef.Builder<ShowResourceHistoryRequest, ShowResourceHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceHistoryRequest.class, ShowResourceHistoryResponse.class)
@@ -1515,44 +1427,35 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceHistoryRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceHistoryRequest::getResourceId,
+                ShowResourceHistoryRequest::setResourceId));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceHistoryRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowResourceHistoryRequest::getMarker, ShowResourceHistoryRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResourceHistoryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowResourceHistoryRequest::getLimit, ShowResourceHistoryRequest::setLimit));
         builder.<Long>withRequestField("earlier_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowResourceHistoryRequest::getEarlierTime, (req, v) -> {
-                req.setEarlierTime(v);
-            }));
+            f -> f.withMarshaller(ShowResourceHistoryRequest::getEarlierTime,
+                ShowResourceHistoryRequest::setEarlierTime));
         builder.<Long>withRequestField("later_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowResourceHistoryRequest::getLaterTime, (req, v) -> {
-                req.setLaterTime(v);
-            }));
+            f -> f.withMarshaller(ShowResourceHistoryRequest::getLaterTime, ShowResourceHistoryRequest::setLaterTime));
         builder.<ShowResourceHistoryRequest.ChronologicalOrderEnum>withRequestField("chronological_order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowResourceHistoryRequest.ChronologicalOrderEnum.class),
-            f -> f.withMarshaller(ShowResourceHistoryRequest::getChronologicalOrder, (req, v) -> {
-                req.setChronologicalOrder(v);
-            }));
+            f -> f.withMarshaller(ShowResourceHistoryRequest::getChronologicalOrder,
+                ShowResourceHistoryRequest::setChronologicalOrder));
 
         // response
 
@@ -1560,9 +1463,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse> createOrganizationPolicyAssignment =
-        genForcreateOrganizationPolicyAssignment();
+        genForCreateOrganizationPolicyAssignment();
 
-    private static HttpRequestDef<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse> genForcreateOrganizationPolicyAssignment() {
+    private static HttpRequestDef<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse> genForCreateOrganizationPolicyAssignment() {
         // basic
         HttpRequestDef.Builder<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse> builder =
             HttpRequestDef
@@ -1578,16 +1481,14 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateOrganizationPolicyAssignmentRequest::getOrganizationId, (req, v) -> {
-                req.setOrganizationId(v);
-            }));
+            f -> f.withMarshaller(CreateOrganizationPolicyAssignmentRequest::getOrganizationId,
+                CreateOrganizationPolicyAssignmentRequest::setOrganizationId));
         builder.<OrganizationPolicyAssignmentRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OrganizationPolicyAssignmentRequest.class),
-            f -> f.withMarshaller(CreateOrganizationPolicyAssignmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOrganizationPolicyAssignmentRequest::getBody,
+                CreateOrganizationPolicyAssignmentRequest::setBody));
 
         // response
 
@@ -1595,9 +1496,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse> createPolicyAssignments =
-        genForcreatePolicyAssignments();
+        genForCreatePolicyAssignments();
 
-    private static HttpRequestDef<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse> genForcreatePolicyAssignments() {
+    private static HttpRequestDef<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse> genForCreatePolicyAssignments() {
         // basic
         HttpRequestDef.Builder<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, CreatePolicyAssignmentsRequest.class, CreatePolicyAssignmentsResponse.class)
@@ -1610,9 +1511,7 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PolicyAssignmentRequestBody.class),
-            f -> f.withMarshaller(CreatePolicyAssignmentsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePolicyAssignmentsRequest::getBody, CreatePolicyAssignmentsRequest::setBody));
 
         // response
 
@@ -1620,9 +1519,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse> deleteOrganizationPolicyAssignment =
-        genFordeleteOrganizationPolicyAssignment();
+        genForDeleteOrganizationPolicyAssignment();
 
-    private static HttpRequestDef<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse> genFordeleteOrganizationPolicyAssignment() {
+    private static HttpRequestDef<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse> genForDeleteOrganizationPolicyAssignment() {
         // basic
         HttpRequestDef.Builder<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse> builder =
             HttpRequestDef
@@ -1639,17 +1538,14 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteOrganizationPolicyAssignmentRequest::getOrganizationId, (req, v) -> {
-                req.setOrganizationId(v);
-            }));
+            f -> f.withMarshaller(DeleteOrganizationPolicyAssignmentRequest::getOrganizationId,
+                DeleteOrganizationPolicyAssignmentRequest::setOrganizationId));
         builder.<String>withRequestField("organization_policy_assignment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteOrganizationPolicyAssignmentRequest::getOrganizationPolicyAssignmentId,
-                (req, v) -> {
-                    req.setOrganizationPolicyAssignmentId(v);
-                }));
+                DeleteOrganizationPolicyAssignmentRequest::setOrganizationPolicyAssignmentId));
 
         // response
 
@@ -1657,9 +1553,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<DeletePolicyAssignmentRequest, DeletePolicyAssignmentResponse> deletePolicyAssignment =
-        genFordeletePolicyAssignment();
+        genForDeletePolicyAssignment();
 
-    private static HttpRequestDef<DeletePolicyAssignmentRequest, DeletePolicyAssignmentResponse> genFordeletePolicyAssignment() {
+    private static HttpRequestDef<DeletePolicyAssignmentRequest, DeletePolicyAssignmentResponse> genForDeletePolicyAssignment() {
         // basic
         HttpRequestDef.Builder<DeletePolicyAssignmentRequest, DeletePolicyAssignmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeletePolicyAssignmentRequest.class, DeletePolicyAssignmentResponse.class)
@@ -1672,9 +1568,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyAssignmentRequest::getPolicyAssignmentId, (req, v) -> {
-                req.setPolicyAssignmentId(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyAssignmentRequest::getPolicyAssignmentId,
+                DeletePolicyAssignmentRequest::setPolicyAssignmentId));
 
         // response
 
@@ -1682,9 +1577,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<DisablePolicyAssignmentRequest, DisablePolicyAssignmentResponse> disablePolicyAssignment =
-        genFordisablePolicyAssignment();
+        genForDisablePolicyAssignment();
 
-    private static HttpRequestDef<DisablePolicyAssignmentRequest, DisablePolicyAssignmentResponse> genFordisablePolicyAssignment() {
+    private static HttpRequestDef<DisablePolicyAssignmentRequest, DisablePolicyAssignmentResponse> genForDisablePolicyAssignment() {
         // basic
         HttpRequestDef.Builder<DisablePolicyAssignmentRequest, DisablePolicyAssignmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DisablePolicyAssignmentRequest.class, DisablePolicyAssignmentResponse.class)
@@ -1697,9 +1592,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisablePolicyAssignmentRequest::getPolicyAssignmentId, (req, v) -> {
-                req.setPolicyAssignmentId(v);
-            }));
+            f -> f.withMarshaller(DisablePolicyAssignmentRequest::getPolicyAssignmentId,
+                DisablePolicyAssignmentRequest::setPolicyAssignmentId));
 
         // response
 
@@ -1707,9 +1601,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<EnablePolicyAssignmentRequest, EnablePolicyAssignmentResponse> enablePolicyAssignment =
-        genForenablePolicyAssignment();
+        genForEnablePolicyAssignment();
 
-    private static HttpRequestDef<EnablePolicyAssignmentRequest, EnablePolicyAssignmentResponse> genForenablePolicyAssignment() {
+    private static HttpRequestDef<EnablePolicyAssignmentRequest, EnablePolicyAssignmentResponse> genForEnablePolicyAssignment() {
         // basic
         HttpRequestDef.Builder<EnablePolicyAssignmentRequest, EnablePolicyAssignmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, EnablePolicyAssignmentRequest.class, EnablePolicyAssignmentResponse.class)
@@ -1722,9 +1616,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnablePolicyAssignmentRequest::getPolicyAssignmentId, (req, v) -> {
-                req.setPolicyAssignmentId(v);
-            }));
+            f -> f.withMarshaller(EnablePolicyAssignmentRequest::getPolicyAssignmentId,
+                EnablePolicyAssignmentRequest::setPolicyAssignmentId));
 
         // response
 
@@ -1732,9 +1625,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListBuiltInPolicyDefinitionsRequest, ListBuiltInPolicyDefinitionsResponse> listBuiltInPolicyDefinitions =
-        genForlistBuiltInPolicyDefinitions();
+        genForListBuiltInPolicyDefinitions();
 
-    private static HttpRequestDef<ListBuiltInPolicyDefinitionsRequest, ListBuiltInPolicyDefinitionsResponse> genForlistBuiltInPolicyDefinitions() {
+    private static HttpRequestDef<ListBuiltInPolicyDefinitionsRequest, ListBuiltInPolicyDefinitionsResponse> genForListBuiltInPolicyDefinitions() {
         // basic
         HttpRequestDef.Builder<ListBuiltInPolicyDefinitionsRequest, ListBuiltInPolicyDefinitionsResponse> builder =
             HttpRequestDef
@@ -1750,9 +1643,8 @@ public class ConfigMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBuiltInPolicyDefinitionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListBuiltInPolicyDefinitionsRequest::getXLanguage,
+                ListBuiltInPolicyDefinitionsRequest::setXLanguage));
 
         // response
 
@@ -1760,9 +1652,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse> listOrganizationPolicyAssignments =
-        genForlistOrganizationPolicyAssignments();
+        genForListOrganizationPolicyAssignments();
 
-    private static HttpRequestDef<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse> genForlistOrganizationPolicyAssignments() {
+    private static HttpRequestDef<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse> genForListOrganizationPolicyAssignments() {
         // basic
         HttpRequestDef.Builder<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse> builder =
             HttpRequestDef
@@ -1778,31 +1670,26 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getOrganizationId, (req, v) -> {
-                req.setOrganizationId(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getOrganizationId,
+                ListOrganizationPolicyAssignmentsRequest::setOrganizationId));
         builder.<String>withRequestField("organization_policy_assignment_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getOrganizationPolicyAssignmentName,
-                (req, v) -> {
-                    req.setOrganizationPolicyAssignmentName(v);
-                }));
+                ListOrganizationPolicyAssignmentsRequest::setOrganizationPolicyAssignmentName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getLimit,
+                ListOrganizationPolicyAssignmentsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getMarker,
+                ListOrganizationPolicyAssignmentsRequest::setMarker));
 
         // response
 
@@ -1810,9 +1697,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListPolicyAssignmentsRequest, ListPolicyAssignmentsResponse> listPolicyAssignments =
-        genForlistPolicyAssignments();
+        genForListPolicyAssignments();
 
-    private static HttpRequestDef<ListPolicyAssignmentsRequest, ListPolicyAssignmentsResponse> genForlistPolicyAssignments() {
+    private static HttpRequestDef<ListPolicyAssignmentsRequest, ListPolicyAssignmentsResponse> genForListPolicyAssignments() {
         // basic
         HttpRequestDef.Builder<ListPolicyAssignmentsRequest, ListPolicyAssignmentsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListPolicyAssignmentsRequest.class, ListPolicyAssignmentsResponse.class)
@@ -1828,9 +1715,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListPolicyStatesByAssignmentIdRequest, ListPolicyStatesByAssignmentIdResponse> listPolicyStatesByAssignmentId =
-        genForlistPolicyStatesByAssignmentId();
+        genForListPolicyStatesByAssignmentId();
 
-    private static HttpRequestDef<ListPolicyStatesByAssignmentIdRequest, ListPolicyStatesByAssignmentIdResponse> genForlistPolicyStatesByAssignmentId() {
+    private static HttpRequestDef<ListPolicyStatesByAssignmentIdRequest, ListPolicyStatesByAssignmentIdResponse> genForListPolicyStatesByAssignmentId() {
         // basic
         HttpRequestDef.Builder<ListPolicyStatesByAssignmentIdRequest, ListPolicyStatesByAssignmentIdResponse> builder =
             HttpRequestDef
@@ -1847,44 +1734,38 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getPolicyAssignmentId, (req, v) -> {
-                req.setPolicyAssignmentId(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getPolicyAssignmentId,
+                ListPolicyStatesByAssignmentIdRequest::setPolicyAssignmentId));
         builder.<String>withRequestField("compliance_state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getComplianceState, (req, v) -> {
-                req.setComplianceState(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getComplianceState,
+                ListPolicyStatesByAssignmentIdRequest::setComplianceState));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getResourceId,
+                ListPolicyStatesByAssignmentIdRequest::setResourceId));
         builder.<String>withRequestField("resource_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getResourceName, (req, v) -> {
-                req.setResourceName(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getResourceName,
+                ListPolicyStatesByAssignmentIdRequest::setResourceName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getLimit,
+                ListPolicyStatesByAssignmentIdRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getMarker,
+                ListPolicyStatesByAssignmentIdRequest::setMarker));
 
         // response
 
@@ -1892,9 +1773,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListPolicyStatesByDomainIdRequest, ListPolicyStatesByDomainIdResponse> listPolicyStatesByDomainId =
-        genForlistPolicyStatesByDomainId();
+        genForListPolicyStatesByDomainId();
 
-    private static HttpRequestDef<ListPolicyStatesByDomainIdRequest, ListPolicyStatesByDomainIdResponse> genForlistPolicyStatesByDomainId() {
+    private static HttpRequestDef<ListPolicyStatesByDomainIdRequest, ListPolicyStatesByDomainIdResponse> genForListPolicyStatesByDomainId() {
         // basic
         HttpRequestDef.Builder<ListPolicyStatesByDomainIdRequest, ListPolicyStatesByDomainIdResponse> builder =
             HttpRequestDef
@@ -1910,37 +1791,32 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getComplianceState, (req, v) -> {
-                req.setComplianceState(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getComplianceState,
+                ListPolicyStatesByDomainIdRequest::setComplianceState));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getResourceId,
+                ListPolicyStatesByDomainIdRequest::setResourceId));
         builder.<String>withRequestField("resource_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getResourceName, (req, v) -> {
-                req.setResourceName(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getResourceName,
+                ListPolicyStatesByDomainIdRequest::setResourceName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getLimit,
+                ListPolicyStatesByDomainIdRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getMarker,
+                ListPolicyStatesByDomainIdRequest::setMarker));
 
         // response
 
@@ -1948,9 +1824,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListPolicyStatesByResourceIdRequest, ListPolicyStatesByResourceIdResponse> listPolicyStatesByResourceId =
-        genForlistPolicyStatesByResourceId();
+        genForListPolicyStatesByResourceId();
 
-    private static HttpRequestDef<ListPolicyStatesByResourceIdRequest, ListPolicyStatesByResourceIdResponse> genForlistPolicyStatesByResourceId() {
+    private static HttpRequestDef<ListPolicyStatesByResourceIdRequest, ListPolicyStatesByResourceIdResponse> genForListPolicyStatesByResourceId() {
         // basic
         HttpRequestDef.Builder<ListPolicyStatesByResourceIdRequest, ListPolicyStatesByResourceIdResponse> builder =
             HttpRequestDef
@@ -1966,30 +1842,26 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getResourceId,
+                ListPolicyStatesByResourceIdRequest::setResourceId));
         builder.<String>withRequestField("compliance_state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getComplianceState, (req, v) -> {
-                req.setComplianceState(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getComplianceState,
+                ListPolicyStatesByResourceIdRequest::setComplianceState));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getLimit,
+                ListPolicyStatesByResourceIdRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getMarker,
+                ListPolicyStatesByResourceIdRequest::setMarker));
 
         // response
 
@@ -1997,9 +1869,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse> runEvaluationByPolicyAssignmentId =
-        genForrunEvaluationByPolicyAssignmentId();
+        genForRunEvaluationByPolicyAssignmentId();
 
-    private static HttpRequestDef<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse> genForrunEvaluationByPolicyAssignmentId() {
+    private static HttpRequestDef<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse> genForRunEvaluationByPolicyAssignmentId() {
         // basic
         HttpRequestDef.Builder<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse> builder =
             HttpRequestDef
@@ -2016,9 +1888,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunEvaluationByPolicyAssignmentIdRequest::getPolicyAssignmentId, (req, v) -> {
-                req.setPolicyAssignmentId(v);
-            }));
+            f -> f.withMarshaller(RunEvaluationByPolicyAssignmentIdRequest::getPolicyAssignmentId,
+                RunEvaluationByPolicyAssignmentIdRequest::setPolicyAssignmentId));
 
         // response
 
@@ -2026,9 +1897,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowBuiltInPolicyDefinitionRequest, ShowBuiltInPolicyDefinitionResponse> showBuiltInPolicyDefinition =
-        genForshowBuiltInPolicyDefinition();
+        genForShowBuiltInPolicyDefinition();
 
-    private static HttpRequestDef<ShowBuiltInPolicyDefinitionRequest, ShowBuiltInPolicyDefinitionResponse> genForshowBuiltInPolicyDefinition() {
+    private static HttpRequestDef<ShowBuiltInPolicyDefinitionRequest, ShowBuiltInPolicyDefinitionResponse> genForShowBuiltInPolicyDefinition() {
         // basic
         HttpRequestDef.Builder<ShowBuiltInPolicyDefinitionRequest, ShowBuiltInPolicyDefinitionResponse> builder =
             HttpRequestDef
@@ -2044,16 +1915,14 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBuiltInPolicyDefinitionRequest::getPolicyDefinitionId, (req, v) -> {
-                req.setPolicyDefinitionId(v);
-            }));
+            f -> f.withMarshaller(ShowBuiltInPolicyDefinitionRequest::getPolicyDefinitionId,
+                ShowBuiltInPolicyDefinitionRequest::setPolicyDefinitionId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBuiltInPolicyDefinitionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowBuiltInPolicyDefinitionRequest::getXLanguage,
+                ShowBuiltInPolicyDefinitionRequest::setXLanguage));
 
         // response
 
@@ -2061,9 +1930,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowEvaluationStateByAssignmentIdRequest, ShowEvaluationStateByAssignmentIdResponse> showEvaluationStateByAssignmentId =
-        genForshowEvaluationStateByAssignmentId();
+        genForShowEvaluationStateByAssignmentId();
 
-    private static HttpRequestDef<ShowEvaluationStateByAssignmentIdRequest, ShowEvaluationStateByAssignmentIdResponse> genForshowEvaluationStateByAssignmentId() {
+    private static HttpRequestDef<ShowEvaluationStateByAssignmentIdRequest, ShowEvaluationStateByAssignmentIdResponse> genForShowEvaluationStateByAssignmentId() {
         // basic
         HttpRequestDef.Builder<ShowEvaluationStateByAssignmentIdRequest, ShowEvaluationStateByAssignmentIdResponse> builder =
             HttpRequestDef
@@ -2080,9 +1949,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEvaluationStateByAssignmentIdRequest::getPolicyAssignmentId, (req, v) -> {
-                req.setPolicyAssignmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEvaluationStateByAssignmentIdRequest::getPolicyAssignmentId,
+                ShowEvaluationStateByAssignmentIdRequest::setPolicyAssignmentId));
 
         // response
 
@@ -2090,9 +1958,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse> showOrganizationPolicyAssignment =
-        genForshowOrganizationPolicyAssignment();
+        genForShowOrganizationPolicyAssignment();
 
-    private static HttpRequestDef<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse> genForshowOrganizationPolicyAssignment() {
+    private static HttpRequestDef<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse> genForShowOrganizationPolicyAssignment() {
         // basic
         HttpRequestDef.Builder<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse> builder =
             HttpRequestDef
@@ -2109,17 +1977,14 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentRequest::getOrganizationId, (req, v) -> {
-                req.setOrganizationId(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentRequest::getOrganizationId,
+                ShowOrganizationPolicyAssignmentRequest::setOrganizationId));
         builder.<String>withRequestField("organization_policy_assignment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOrganizationPolicyAssignmentRequest::getOrganizationPolicyAssignmentId,
-                (req, v) -> {
-                    req.setOrganizationPolicyAssignmentId(v);
-                }));
+                ShowOrganizationPolicyAssignmentRequest::setOrganizationPolicyAssignmentId));
 
         // response
 
@@ -2127,9 +1992,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse> showOrganizationPolicyAssignmentDetailedStatus =
-        genForshowOrganizationPolicyAssignmentDetailedStatus();
+        genForShowOrganizationPolicyAssignmentDetailedStatus();
 
-    private static HttpRequestDef<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse> genForshowOrganizationPolicyAssignmentDetailedStatus() {
+    private static HttpRequestDef<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse> genForShowOrganizationPolicyAssignmentDetailedStatus() {
         // basic
         HttpRequestDef.Builder<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse> builder =
             HttpRequestDef
@@ -2146,39 +2011,32 @@ public class ConfigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getOrganizationId,
-                (req, v) -> {
-                    req.setOrganizationId(v);
-                }));
+                ShowOrganizationPolicyAssignmentDetailedStatusRequest::setOrganizationId));
         builder.<String>withRequestField("organization_policy_assignment_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(
                 ShowOrganizationPolicyAssignmentDetailedStatusRequest::getOrganizationPolicyAssignmentName,
-                (req, v) -> {
-                    req.setOrganizationPolicyAssignmentName(v);
-                }));
+                ShowOrganizationPolicyAssignmentDetailedStatusRequest::setOrganizationPolicyAssignmentName));
         builder.<ShowOrganizationPolicyAssignmentDetailedStatusRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowOrganizationPolicyAssignmentDetailedStatusRequest.StatusEnum.class),
-            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getStatus,
+                ShowOrganizationPolicyAssignmentDetailedStatusRequest::setStatus));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getLimit,
+                ShowOrganizationPolicyAssignmentDetailedStatusRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getMarker,
+                ShowOrganizationPolicyAssignmentDetailedStatusRequest::setMarker));
 
         // response
 
@@ -2186,9 +2044,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse> showOrganizationPolicyAssignmentStatuses =
-        genForshowOrganizationPolicyAssignmentStatuses();
+        genForShowOrganizationPolicyAssignmentStatuses();
 
-    private static HttpRequestDef<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse> genForshowOrganizationPolicyAssignmentStatuses() {
+    private static HttpRequestDef<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse> genForShowOrganizationPolicyAssignmentStatuses() {
         // basic
         HttpRequestDef.Builder<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse> builder =
             HttpRequestDef
@@ -2204,31 +2062,26 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getOrganizationId, (req, v) -> {
-                req.setOrganizationId(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getOrganizationId,
+                ShowOrganizationPolicyAssignmentStatusesRequest::setOrganizationId));
         builder.<String>withRequestField("organization_policy_assignment_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getOrganizationPolicyAssignmentName,
-                (req, v) -> {
-                    req.setOrganizationPolicyAssignmentName(v);
-                }));
+                ShowOrganizationPolicyAssignmentStatusesRequest::setOrganizationPolicyAssignmentName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getLimit,
+                ShowOrganizationPolicyAssignmentStatusesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getMarker,
+                ShowOrganizationPolicyAssignmentStatusesRequest::setMarker));
 
         // response
 
@@ -2236,9 +2089,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse> showPolicyAssignment =
-        genForshowPolicyAssignment();
+        genForShowPolicyAssignment();
 
-    private static HttpRequestDef<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse> genForshowPolicyAssignment() {
+    private static HttpRequestDef<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse> genForShowPolicyAssignment() {
         // basic
         HttpRequestDef.Builder<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPolicyAssignmentRequest.class, ShowPolicyAssignmentResponse.class)
@@ -2251,9 +2104,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPolicyAssignmentRequest::getPolicyAssignmentId, (req, v) -> {
-                req.setPolicyAssignmentId(v);
-            }));
+            f -> f.withMarshaller(ShowPolicyAssignmentRequest::getPolicyAssignmentId,
+                ShowPolicyAssignmentRequest::setPolicyAssignmentId));
 
         // response
 
@@ -2261,9 +2113,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<UpdatePolicyAssignmentRequest, UpdatePolicyAssignmentResponse> updatePolicyAssignment =
-        genForupdatePolicyAssignment();
+        genForUpdatePolicyAssignment();
 
-    private static HttpRequestDef<UpdatePolicyAssignmentRequest, UpdatePolicyAssignmentResponse> genForupdatePolicyAssignment() {
+    private static HttpRequestDef<UpdatePolicyAssignmentRequest, UpdatePolicyAssignmentResponse> genForUpdatePolicyAssignment() {
         // basic
         HttpRequestDef.Builder<UpdatePolicyAssignmentRequest, UpdatePolicyAssignmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdatePolicyAssignmentRequest.class, UpdatePolicyAssignmentResponse.class)
@@ -2276,16 +2128,13 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePolicyAssignmentRequest::getPolicyAssignmentId, (req, v) -> {
-                req.setPolicyAssignmentId(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyAssignmentRequest::getPolicyAssignmentId,
+                UpdatePolicyAssignmentRequest::setPolicyAssignmentId));
         builder.<PolicyAssignmentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PolicyAssignmentRequestBody.class),
-            f -> f.withMarshaller(UpdatePolicyAssignmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyAssignmentRequest::getBody, UpdatePolicyAssignmentRequest::setBody));
 
         // response
 
@@ -2293,9 +2142,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<UpdatePolicyStateRequest, UpdatePolicyStateResponse> updatePolicyState =
-        genForupdatePolicyState();
+        genForUpdatePolicyState();
 
-    private static HttpRequestDef<UpdatePolicyStateRequest, UpdatePolicyStateResponse> genForupdatePolicyState() {
+    private static HttpRequestDef<UpdatePolicyStateRequest, UpdatePolicyStateResponse> genForUpdatePolicyState() {
         // basic
         HttpRequestDef.Builder<UpdatePolicyStateRequest, UpdatePolicyStateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePolicyStateRequest.class, UpdatePolicyStateResponse.class)
@@ -2308,9 +2157,7 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PolicyStateRequestBody.class),
-            f -> f.withMarshaller(UpdatePolicyStateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyStateRequest::getBody, UpdatePolicyStateRequest::setBody));
 
         // response
 
@@ -2318,9 +2165,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<CreateStoredQueryRequest, CreateStoredQueryResponse> createStoredQuery =
-        genForcreateStoredQuery();
+        genForCreateStoredQuery();
 
-    private static HttpRequestDef<CreateStoredQueryRequest, CreateStoredQueryResponse> genForcreateStoredQuery() {
+    private static HttpRequestDef<CreateStoredQueryRequest, CreateStoredQueryResponse> genForCreateStoredQuery() {
         // basic
         HttpRequestDef.Builder<CreateStoredQueryRequest, CreateStoredQueryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStoredQueryRequest.class, CreateStoredQueryResponse.class)
@@ -2333,9 +2180,7 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StoredQueryRequestBody.class),
-            f -> f.withMarshaller(CreateStoredQueryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStoredQueryRequest::getBody, CreateStoredQueryRequest::setBody));
 
         // response
 
@@ -2343,9 +2188,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<DeleteStoredQueryRequest, DeleteStoredQueryResponse> deleteStoredQuery =
-        genFordeleteStoredQuery();
+        genForDeleteStoredQuery();
 
-    private static HttpRequestDef<DeleteStoredQueryRequest, DeleteStoredQueryResponse> genFordeleteStoredQuery() {
+    private static HttpRequestDef<DeleteStoredQueryRequest, DeleteStoredQueryResponse> genForDeleteStoredQuery() {
         // basic
         HttpRequestDef.Builder<DeleteStoredQueryRequest, DeleteStoredQueryResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteStoredQueryRequest.class, DeleteStoredQueryResponse.class)
@@ -2358,18 +2203,16 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStoredQueryRequest::getQueryId, (req, v) -> {
-                req.setQueryId(v);
-            }));
+            f -> f.withMarshaller(DeleteStoredQueryRequest::getQueryId, DeleteStoredQueryRequest::setQueryId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSchemasRequest, ListSchemasResponse> listSchemas = genForlistSchemas();
+    public static final HttpRequestDef<ListSchemasRequest, ListSchemasResponse> listSchemas = genForListSchemas();
 
-    private static HttpRequestDef<ListSchemasRequest, ListSchemasResponse> genForlistSchemas() {
+    private static HttpRequestDef<ListSchemasRequest, ListSchemasResponse> genForListSchemas() {
         // basic
         HttpRequestDef.Builder<ListSchemasRequest, ListSchemasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSchemasRequest.class, ListSchemasResponse.class)
@@ -2382,16 +2225,12 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSchemasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSchemasRequest::getLimit, ListSchemasRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSchemasRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListSchemasRequest::getMarker, ListSchemasRequest::setMarker));
 
         // response
 
@@ -2399,9 +2238,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListStoredQueriesRequest, ListStoredQueriesResponse> listStoredQueries =
-        genForlistStoredQueries();
+        genForListStoredQueries();
 
-    private static HttpRequestDef<ListStoredQueriesRequest, ListStoredQueriesResponse> genForlistStoredQueries() {
+    private static HttpRequestDef<ListStoredQueriesRequest, ListStoredQueriesResponse> genForListStoredQueries() {
         // basic
         HttpRequestDef.Builder<ListStoredQueriesRequest, ListStoredQueriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStoredQueriesRequest.class, ListStoredQueriesResponse.class)
@@ -2414,32 +2253,26 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStoredQueriesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListStoredQueriesRequest::getLimit, ListStoredQueriesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStoredQueriesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListStoredQueriesRequest::getMarker, ListStoredQueriesRequest::setMarker));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStoredQueriesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListStoredQueriesRequest::getName, ListStoredQueriesRequest::setName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunQueryRequest, RunQueryResponse> runQuery = genForrunQuery();
+    public static final HttpRequestDef<RunQueryRequest, RunQueryResponse> runQuery = genForRunQuery();
 
-    private static HttpRequestDef<RunQueryRequest, RunQueryResponse> genForrunQuery() {
+    private static HttpRequestDef<RunQueryRequest, RunQueryResponse> genForRunQuery() {
         // basic
         HttpRequestDef.Builder<RunQueryRequest, RunQueryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunQueryRequest.class, RunQueryResponse.class)
@@ -2452,9 +2285,7 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryRunRequestBody.class),
-            f -> f.withMarshaller(RunQueryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunQueryRequest::getBody, RunQueryRequest::setBody));
 
         // response
 
@@ -2462,9 +2293,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowStoredQueryRequest, ShowStoredQueryResponse> showStoredQuery =
-        genForshowStoredQuery();
+        genForShowStoredQuery();
 
-    private static HttpRequestDef<ShowStoredQueryRequest, ShowStoredQueryResponse> genForshowStoredQuery() {
+    private static HttpRequestDef<ShowStoredQueryRequest, ShowStoredQueryResponse> genForShowStoredQuery() {
         // basic
         HttpRequestDef.Builder<ShowStoredQueryRequest, ShowStoredQueryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStoredQueryRequest.class, ShowStoredQueryResponse.class)
@@ -2477,9 +2308,7 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStoredQueryRequest::getQueryId, (req, v) -> {
-                req.setQueryId(v);
-            }));
+            f -> f.withMarshaller(ShowStoredQueryRequest::getQueryId, ShowStoredQueryRequest::setQueryId));
 
         // response
 
@@ -2487,9 +2316,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<UpdateStoredQueryRequest, UpdateStoredQueryResponse> updateStoredQuery =
-        genForupdateStoredQuery();
+        genForUpdateStoredQuery();
 
-    private static HttpRequestDef<UpdateStoredQueryRequest, UpdateStoredQueryResponse> genForupdateStoredQuery() {
+    private static HttpRequestDef<UpdateStoredQueryRequest, UpdateStoredQueryResponse> genForUpdateStoredQuery() {
         // basic
         HttpRequestDef.Builder<UpdateStoredQueryRequest, UpdateStoredQueryResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateStoredQueryRequest.class, UpdateStoredQueryResponse.class)
@@ -2502,25 +2331,21 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStoredQueryRequest::getQueryId, (req, v) -> {
-                req.setQueryId(v);
-            }));
+            f -> f.withMarshaller(UpdateStoredQueryRequest::getQueryId, UpdateStoredQueryRequest::setQueryId));
         builder.<StoredQueryRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StoredQueryRequestBody.class),
-            f -> f.withMarshaller(UpdateStoredQueryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStoredQueryRequest::getBody, UpdateStoredQueryRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRegionsRequest, ListRegionsResponse> listRegions = genForlistRegions();
+    public static final HttpRequestDef<ListRegionsRequest, ListRegionsResponse> listRegions = genForListRegions();
 
-    private static HttpRequestDef<ListRegionsRequest, ListRegionsResponse> genForlistRegions() {
+    private static HttpRequestDef<ListRegionsRequest, ListRegionsResponse> genForListRegions() {
         // basic
         HttpRequestDef.Builder<ListRegionsRequest, ListRegionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRegionsRequest.class, ListRegionsResponse.class)
@@ -2533,9 +2358,7 @@ public class ConfigMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRegionsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListRegionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListRegionsRequest::getXLanguage, ListRegionsRequest::setXLanguage));
 
         // response
 
@@ -2543,9 +2366,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowResourceRelationsRequest, ShowResourceRelationsResponse> showResourceRelations =
-        genForshowResourceRelations();
+        genForShowResourceRelations();
 
-    private static HttpRequestDef<ShowResourceRelationsRequest, ShowResourceRelationsResponse> genForshowResourceRelations() {
+    private static HttpRequestDef<ShowResourceRelationsRequest, ShowResourceRelationsResponse> genForShowResourceRelations() {
         // basic
         HttpRequestDef.Builder<ShowResourceRelationsRequest, ShowResourceRelationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowResourceRelationsRequest.class, ShowResourceRelationsResponse.class)
@@ -2558,30 +2381,24 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceRelationsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceRelationsRequest::getResourceId,
+                ShowResourceRelationsRequest::setResourceId));
         builder.<ShowResourceRelationsRequest.DirectionEnum>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowResourceRelationsRequest.DirectionEnum.class),
-            f -> f.withMarshaller(ShowResourceRelationsRequest::getDirection, (req, v) -> {
-                req.setDirection(v);
-            }));
+            f -> f.withMarshaller(ShowResourceRelationsRequest::getDirection,
+                ShowResourceRelationsRequest::setDirection));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResourceRelationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowResourceRelationsRequest::getLimit, ShowResourceRelationsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceRelationsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowResourceRelationsRequest::getMarker, ShowResourceRelationsRequest::setMarker));
 
         // response
 
@@ -2589,9 +2406,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse> showResourceRelationsDetail =
-        genForshowResourceRelationsDetail();
+        genForShowResourceRelationsDetail();
 
-    private static HttpRequestDef<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse> genForshowResourceRelationsDetail() {
+    private static HttpRequestDef<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse> genForShowResourceRelationsDetail() {
         // basic
         HttpRequestDef.Builder<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse> builder =
             HttpRequestDef
@@ -2607,30 +2424,26 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getResourceId,
+                ShowResourceRelationsDetailRequest::setResourceId));
         builder.<ShowResourceRelationsDetailRequest.DirectionEnum>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowResourceRelationsDetailRequest.DirectionEnum.class),
-            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getDirection, (req, v) -> {
-                req.setDirection(v);
-            }));
+            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getDirection,
+                ShowResourceRelationsDetailRequest::setDirection));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getLimit,
+                ShowResourceRelationsDetailRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getMarker,
+                ShowResourceRelationsDetailRequest::setMarker));
 
         // response
 
@@ -2638,9 +2451,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse> collectAllResourcesSummary =
-        genForcollectAllResourcesSummary();
+        genForCollectAllResourcesSummary();
 
-    private static HttpRequestDef<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse> genForcollectAllResourcesSummary() {
+    private static HttpRequestDef<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse> genForCollectAllResourcesSummary() {
         // basic
         HttpRequestDef.Builder<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse> builder =
             HttpRequestDef
@@ -2656,61 +2469,56 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getName,
+                CollectAllResourcesSummaryRequest::setName));
         builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getType,
+                CollectAllResourcesSummaryRequest::setType));
         builder.<List<String>>withRequestField("region_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getRegionId,
+                CollectAllResourcesSummaryRequest::setRegionId));
         builder.<List<String>>withRequestField("ep_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getEpId, (req, v) -> {
-                req.setEpId(v);
-            }));
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getEpId,
+                CollectAllResourcesSummaryRequest::setEpId));
         builder.<List<String>>withRequestField("project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getProjectId,
+                CollectAllResourcesSummaryRequest::setProjectId));
         builder.<List<String>>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getTags,
+                CollectAllResourcesSummaryRequest::setTags));
 
         // response
         builder.<List<ResourceSummaryResponseItem>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectAllResourcesSummaryResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ResourceSummaryResponseItem.class));
+            f -> f
+                .withMarshaller(CollectAllResourcesSummaryResponse::getBody,
+                    CollectAllResourcesSummaryResponse::setBody)
+                .withInnerContainerType(ResourceSummaryResponseItem.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CollectTrackedResourcesSummaryRequest, CollectTrackedResourcesSummaryResponse> collectTrackedResourcesSummary =
-        genForcollectTrackedResourcesSummary();
+        genForCollectTrackedResourcesSummary();
 
-    private static HttpRequestDef<CollectTrackedResourcesSummaryRequest, CollectTrackedResourcesSummaryResponse> genForcollectTrackedResourcesSummary() {
+    private static HttpRequestDef<CollectTrackedResourcesSummaryRequest, CollectTrackedResourcesSummaryResponse> genForCollectTrackedResourcesSummary() {
         // basic
         HttpRequestDef.Builder<CollectTrackedResourcesSummaryRequest, CollectTrackedResourcesSummaryResponse> builder =
             HttpRequestDef
@@ -2726,61 +2534,56 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getName,
+                CollectTrackedResourcesSummaryRequest::setName));
         builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getType,
+                CollectTrackedResourcesSummaryRequest::setType));
         builder.<List<String>>withRequestField("region_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getRegionId,
+                CollectTrackedResourcesSummaryRequest::setRegionId));
         builder.<List<String>>withRequestField("ep_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getEpId, (req, v) -> {
-                req.setEpId(v);
-            }));
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getEpId,
+                CollectTrackedResourcesSummaryRequest::setEpId));
         builder.<List<String>>withRequestField("project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getProjectId,
+                CollectTrackedResourcesSummaryRequest::setProjectId));
         builder.<List<String>>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getTags,
+                CollectTrackedResourcesSummaryRequest::setTags));
 
         // response
         builder.<List<ResourceSummaryResponseItem>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectTrackedResourcesSummaryResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ResourceSummaryResponseItem.class));
+            f -> f
+                .withMarshaller(CollectTrackedResourcesSummaryResponse::getBody,
+                    CollectTrackedResourcesSummaryResponse::setBody)
+                .withInnerContainerType(ResourceSummaryResponseItem.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CountAllResourcesRequest, CountAllResourcesResponse> countAllResources =
-        genForcountAllResources();
+        genForCountAllResources();
 
-    private static HttpRequestDef<CountAllResourcesRequest, CountAllResourcesResponse> genForcountAllResources() {
+    private static HttpRequestDef<CountAllResourcesRequest, CountAllResourcesResponse> genForCountAllResources() {
         // basic
         HttpRequestDef.Builder<CountAllResourcesRequest, CountAllResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CountAllResourcesRequest.class, CountAllResourcesResponse.class)
@@ -2793,51 +2596,37 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountAllResourcesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(CountAllResourcesRequest::getId, CountAllResourcesRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountAllResourcesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(CountAllResourcesRequest::getName, CountAllResourcesRequest::setName));
         builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CountAllResourcesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(CountAllResourcesRequest::getType, CountAllResourcesRequest::setType));
         builder.<List<String>>withRequestField("region_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CountAllResourcesRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(CountAllResourcesRequest::getRegionId, CountAllResourcesRequest::setRegionId));
         builder.<List<String>>withRequestField("ep_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CountAllResourcesRequest::getEpId, (req, v) -> {
-                req.setEpId(v);
-            }));
+            f -> f.withMarshaller(CountAllResourcesRequest::getEpId, CountAllResourcesRequest::setEpId));
         builder.<List<String>>withRequestField("project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CountAllResourcesRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(CountAllResourcesRequest::getProjectId, CountAllResourcesRequest::setProjectId));
         builder.<List<String>>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CountAllResourcesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(CountAllResourcesRequest::getTags, CountAllResourcesRequest::setTags));
 
         // response
 
@@ -2845,9 +2634,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<CountTrackedResourcesRequest, CountTrackedResourcesResponse> countTrackedResources =
-        genForcountTrackedResources();
+        genForCountTrackedResources();
 
-    private static HttpRequestDef<CountTrackedResourcesRequest, CountTrackedResourcesResponse> genForcountTrackedResources() {
+    private static HttpRequestDef<CountTrackedResourcesRequest, CountTrackedResourcesResponse> genForCountTrackedResources() {
         // basic
         HttpRequestDef.Builder<CountTrackedResourcesRequest, CountTrackedResourcesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, CountTrackedResourcesRequest.class, CountTrackedResourcesResponse.class)
@@ -2860,51 +2649,39 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountTrackedResourcesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getId, CountTrackedResourcesRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountTrackedResourcesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getName, CountTrackedResourcesRequest::setName));
         builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CountTrackedResourcesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getType, CountTrackedResourcesRequest::setType));
         builder.<List<String>>withRequestField("region_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CountTrackedResourcesRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getRegionId,
+                CountTrackedResourcesRequest::setRegionId));
         builder.<List<String>>withRequestField("ep_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CountTrackedResourcesRequest::getEpId, (req, v) -> {
-                req.setEpId(v);
-            }));
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getEpId, CountTrackedResourcesRequest::setEpId));
         builder.<List<String>>withRequestField("project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CountTrackedResourcesRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getProjectId,
+                CountTrackedResourcesRequest::setProjectId));
         builder.<List<String>>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CountTrackedResourcesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getTags, CountTrackedResourcesRequest::setTags));
 
         // response
 
@@ -2912,9 +2689,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListAllResourcesRequest, ListAllResourcesResponse> listAllResources =
-        genForlistAllResources();
+        genForListAllResources();
 
-    private static HttpRequestDef<ListAllResourcesRequest, ListAllResourcesResponse> genForlistAllResources() {
+    private static HttpRequestDef<ListAllResourcesRequest, ListAllResourcesResponse> genForListAllResources() {
         // basic
         HttpRequestDef.Builder<ListAllResourcesRequest, ListAllResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllResourcesRequest.class, ListAllResourcesResponse.class)
@@ -2927,67 +2704,51 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllResourcesRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ListAllResourcesRequest::getRegionId, ListAllResourcesRequest::setRegionId));
         builder.<String>withRequestField("ep_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllResourcesRequest::getEpId, (req, v) -> {
-                req.setEpId(v);
-            }));
+            f -> f.withMarshaller(ListAllResourcesRequest::getEpId, ListAllResourcesRequest::setEpId));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllResourcesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListAllResourcesRequest::getType, ListAllResourcesRequest::setType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAllResourcesRequest::getLimit, ListAllResourcesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllResourcesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAllResourcesRequest::getMarker, ListAllResourcesRequest::setMarker));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllResourcesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListAllResourcesRequest::getId, ListAllResourcesRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllResourcesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAllResourcesRequest::getName, ListAllResourcesRequest::setName));
         builder.<List<String>>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAllResourcesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListAllResourcesRequest::getTags, ListAllResourcesRequest::setTags));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> listAllTags = genForlistAllTags();
+    public static final HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> listAllTags = genForListAllTags();
 
-    private static HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> genForlistAllTags() {
+    private static HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> genForListAllTags() {
         // basic
         HttpRequestDef.Builder<ListAllTagsRequest, ListAllTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllTagsRequest.class, ListAllTagsResponse.class)
@@ -3000,23 +2761,17 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTagsRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(ListAllTagsRequest::getKey, ListAllTagsRequest::setKey));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTagsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAllTagsRequest::getMarker, ListAllTagsRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAllTagsRequest::getLimit, ListAllTagsRequest::setLimit));
 
         // response
 
@@ -3024,9 +2779,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListProvidersRequest, ListProvidersResponse> listProviders =
-        genForlistProviders();
+        genForListProviders();
 
-    private static HttpRequestDef<ListProvidersRequest, ListProvidersResponse> genForlistProviders() {
+    private static HttpRequestDef<ListProvidersRequest, ListProvidersResponse> genForListProviders() {
         // basic
         HttpRequestDef.Builder<ListProvidersRequest, ListProvidersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProvidersRequest.class, ListProvidersResponse.class)
@@ -3039,30 +2794,22 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProvidersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getOffset, ListProvidersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProvidersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getLimit, ListProvidersRequest::setLimit));
         builder.<ListProvidersRequest.TrackEnum>withRequestField("track",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProvidersRequest.TrackEnum.class),
-            f -> f.withMarshaller(ListProvidersRequest::getTrack, (req, v) -> {
-                req.setTrack(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getTrack, ListProvidersRequest::setTrack));
         builder.<ListProvidersRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProvidersRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListProvidersRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getXLanguage, ListProvidersRequest::setXLanguage));
 
         // response
 
@@ -3070,9 +2817,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListResourcesRequest, ListResourcesResponse> listResources =
-        genForlistResources();
+        genForListResources();
 
-    private static HttpRequestDef<ListResourcesRequest, ListResourcesResponse> genForlistResources() {
+    private static HttpRequestDef<ListResourcesRequest, ListResourcesResponse> genForListResources() {
         // basic
         HttpRequestDef.Builder<ListResourcesRequest, ListResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourcesRequest.class, ListResourcesResponse.class)
@@ -3085,51 +2832,37 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourcesRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(ListResourcesRequest::getProvider, ListResourcesRequest::setProvider));
         builder.<String>withRequestField("type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourcesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListResourcesRequest::getType, ListResourcesRequest::setType));
         builder.<String>withRequestField("region_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourcesRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ListResourcesRequest::getRegionId, ListResourcesRequest::setRegionId));
         builder.<String>withRequestField("ep_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourcesRequest::getEpId, (req, v) -> {
-                req.setEpId(v);
-            }));
+            f -> f.withMarshaller(ListResourcesRequest::getEpId, ListResourcesRequest::setEpId));
         builder.<Map<String, List<String>>>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(ListResourcesRequest::getTag, (req, v) -> {
-                req.setTag(v);
-            }));
+            f -> f.withMarshaller(ListResourcesRequest::getTag, ListResourcesRequest::setTag));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResourcesRequest::getLimit, ListResourcesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourcesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListResourcesRequest::getMarker, ListResourcesRequest::setMarker));
 
         // response
 
@@ -3137,9 +2870,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListTrackedResourceTagsRequest, ListTrackedResourceTagsResponse> listTrackedResourceTags =
-        genForlistTrackedResourceTags();
+        genForListTrackedResourceTags();
 
-    private static HttpRequestDef<ListTrackedResourceTagsRequest, ListTrackedResourceTagsResponse> genForlistTrackedResourceTags() {
+    private static HttpRequestDef<ListTrackedResourceTagsRequest, ListTrackedResourceTagsResponse> genForListTrackedResourceTags() {
         // basic
         HttpRequestDef.Builder<ListTrackedResourceTagsRequest, ListTrackedResourceTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTrackedResourceTagsRequest.class, ListTrackedResourceTagsResponse.class)
@@ -3152,23 +2885,18 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrackedResourceTagsRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourceTagsRequest::getKey, ListTrackedResourceTagsRequest::setKey));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrackedResourceTagsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourceTagsRequest::getMarker,
+                ListTrackedResourceTagsRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTrackedResourceTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourceTagsRequest::getLimit, ListTrackedResourceTagsRequest::setLimit));
 
         // response
 
@@ -3176,9 +2904,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ListTrackedResourcesRequest, ListTrackedResourcesResponse> listTrackedResources =
-        genForlistTrackedResources();
+        genForListTrackedResources();
 
-    private static HttpRequestDef<ListTrackedResourcesRequest, ListTrackedResourcesResponse> genForlistTrackedResources() {
+    private static HttpRequestDef<ListTrackedResourcesRequest, ListTrackedResourcesResponse> genForListTrackedResources() {
         // basic
         HttpRequestDef.Builder<ListTrackedResourcesRequest, ListTrackedResourcesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTrackedResourcesRequest.class, ListTrackedResourcesResponse.class)
@@ -3191,58 +2919,42 @@ public class ConfigMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrackedResourcesRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getRegionId, ListTrackedResourcesRequest::setRegionId));
         builder.<String>withRequestField("ep_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrackedResourcesRequest::getEpId, (req, v) -> {
-                req.setEpId(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getEpId, ListTrackedResourcesRequest::setEpId));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrackedResourcesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getType, ListTrackedResourcesRequest::setType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTrackedResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getLimit, ListTrackedResourcesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrackedResourcesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getMarker, ListTrackedResourcesRequest::setMarker));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrackedResourcesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getId, ListTrackedResourcesRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrackedResourcesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getName, ListTrackedResourcesRequest::setName));
         builder.<List<String>>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTrackedResourcesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getTags, ListTrackedResourcesRequest::setTags));
 
         // response
 
@@ -3250,9 +2962,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowResourceByIdRequest, ShowResourceByIdResponse> showResourceById =
-        genForshowResourceById();
+        genForShowResourceById();
 
-    private static HttpRequestDef<ShowResourceByIdRequest, ShowResourceByIdResponse> genForshowResourceById() {
+    private static HttpRequestDef<ShowResourceByIdRequest, ShowResourceByIdResponse> genForShowResourceById() {
         // basic
         HttpRequestDef.Builder<ShowResourceByIdRequest, ShowResourceByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceByIdRequest.class, ShowResourceByIdResponse.class)
@@ -3266,23 +2978,17 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceByIdRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(ShowResourceByIdRequest::getProvider, ShowResourceByIdRequest::setProvider));
         builder.<String>withRequestField("type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceByIdRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowResourceByIdRequest::getType, ShowResourceByIdRequest::setType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceByIdRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceByIdRequest::getResourceId, ShowResourceByIdRequest::setResourceId));
 
         // response
 
@@ -3290,9 +2996,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowResourceDetailRequest, ShowResourceDetailResponse> showResourceDetail =
-        genForshowResourceDetail();
+        genForShowResourceDetail();
 
-    private static HttpRequestDef<ShowResourceDetailRequest, ShowResourceDetailResponse> genForshowResourceDetail() {
+    private static HttpRequestDef<ShowResourceDetailRequest, ShowResourceDetailResponse> genForShowResourceDetail() {
         // basic
         HttpRequestDef.Builder<ShowResourceDetailRequest, ShowResourceDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceDetailRequest.class, ShowResourceDetailResponse.class)
@@ -3305,9 +3011,7 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceDetailRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceDetailRequest::getResourceId, ShowResourceDetailRequest::setResourceId));
 
         // response
 
@@ -3315,9 +3019,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse> showTrackedResourceDetail =
-        genForshowTrackedResourceDetail();
+        genForShowTrackedResourceDetail();
 
-    private static HttpRequestDef<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse> genForshowTrackedResourceDetail() {
+    private static HttpRequestDef<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse> genForShowTrackedResourceDetail() {
         // basic
         HttpRequestDef.Builder<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse> builder =
             HttpRequestDef
@@ -3333,9 +3037,8 @@ public class ConfigMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTrackedResourceDetailRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowTrackedResourceDetailRequest::getResourceId,
+                ShowTrackedResourceDetailRequest::setResourceId));
 
         // response
 
@@ -3343,9 +3046,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<CreateTrackerConfigRequest, CreateTrackerConfigResponse> createTrackerConfig =
-        genForcreateTrackerConfig();
+        genForCreateTrackerConfig();
 
-    private static HttpRequestDef<CreateTrackerConfigRequest, CreateTrackerConfigResponse> genForcreateTrackerConfig() {
+    private static HttpRequestDef<CreateTrackerConfigRequest, CreateTrackerConfigResponse> genForCreateTrackerConfig() {
         // basic
         HttpRequestDef.Builder<CreateTrackerConfigRequest, CreateTrackerConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateTrackerConfigRequest.class, CreateTrackerConfigResponse.class)
@@ -3358,9 +3061,7 @@ public class ConfigMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(TrackerConfigBody.class),
-            f -> f.withMarshaller(CreateTrackerConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTrackerConfigRequest::getBody, CreateTrackerConfigRequest::setBody));
 
         // response
 
@@ -3368,9 +3069,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<DeleteTrackerConfigRequest, DeleteTrackerConfigResponse> deleteTrackerConfig =
-        genFordeleteTrackerConfig();
+        genForDeleteTrackerConfig();
 
-    private static HttpRequestDef<DeleteTrackerConfigRequest, DeleteTrackerConfigResponse> genFordeleteTrackerConfig() {
+    private static HttpRequestDef<DeleteTrackerConfigRequest, DeleteTrackerConfigResponse> genForDeleteTrackerConfig() {
         // basic
         HttpRequestDef.Builder<DeleteTrackerConfigRequest, DeleteTrackerConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteTrackerConfigRequest.class, DeleteTrackerConfigResponse.class)
@@ -3386,9 +3087,9 @@ public class ConfigMeta {
     }
 
     public static final HttpRequestDef<ShowTrackerConfigRequest, ShowTrackerConfigResponse> showTrackerConfig =
-        genForshowTrackerConfig();
+        genForShowTrackerConfig();
 
-    private static HttpRequestDef<ShowTrackerConfigRequest, ShowTrackerConfigResponse> genForshowTrackerConfig() {
+    private static HttpRequestDef<ShowTrackerConfigRequest, ShowTrackerConfigResponse> genForShowTrackerConfig() {
         // basic
         HttpRequestDef.Builder<ShowTrackerConfigRequest, ShowTrackerConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTrackerConfigRequest.class, ShowTrackerConfigResponse.class)

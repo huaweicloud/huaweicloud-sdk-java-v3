@@ -69,9 +69,9 @@ import com.huaweicloud.sdk.servicestage.v3.model.UpdateComponentActionResponse;
 public class ServiceStageMeta {
 
     public static final HttpRequestDef<CreateApplicationRequest, CreateApplicationResponse> createApplication =
-        genForcreateApplication();
+        genForCreateApplication();
 
-    private static HttpRequestDef<CreateApplicationRequest, CreateApplicationResponse> genForcreateApplication() {
+    private static HttpRequestDef<CreateApplicationRequest, CreateApplicationResponse> genForCreateApplication() {
         // basic
         HttpRequestDef.Builder<CreateApplicationRequest, CreateApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApplicationRequest.class, CreateApplicationResponse.class)
@@ -84,9 +84,7 @@ public class ServiceStageMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ApplicationCreate.class),
-            f -> f.withMarshaller(CreateApplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApplicationRequest::getBody, CreateApplicationRequest::setBody));
 
         // response
 
@@ -94,9 +92,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplication =
-        genFordeleteApplication();
+        genForDeleteApplication();
 
-    private static HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> genFordeleteApplication() {
+    private static HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> genForDeleteApplication() {
         // basic
         HttpRequestDef.Builder<DeleteApplicationRequest, DeleteApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApplicationRequest.class, DeleteApplicationResponse.class)
@@ -109,9 +107,8 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApplicationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(DeleteApplicationRequest::getApplicationId,
+                DeleteApplicationRequest::setApplicationId));
 
         // response
 
@@ -119,9 +116,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<DeleteApplicationConfigurationRequest, DeleteApplicationConfigurationResponse> deleteApplicationConfiguration =
-        genFordeleteApplicationConfiguration();
+        genForDeleteApplicationConfiguration();
 
-    private static HttpRequestDef<DeleteApplicationConfigurationRequest, DeleteApplicationConfigurationResponse> genFordeleteApplicationConfiguration() {
+    private static HttpRequestDef<DeleteApplicationConfigurationRequest, DeleteApplicationConfigurationResponse> genForDeleteApplicationConfiguration() {
         // basic
         HttpRequestDef.Builder<DeleteApplicationConfigurationRequest, DeleteApplicationConfigurationResponse> builder =
             HttpRequestDef
@@ -137,16 +134,14 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApplicationConfigurationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(DeleteApplicationConfigurationRequest::getApplicationId,
+                DeleteApplicationConfigurationRequest::setApplicationId));
         builder.<String>withRequestField("environment_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApplicationConfigurationRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(DeleteApplicationConfigurationRequest::getEnvironmentId,
+                DeleteApplicationConfigurationRequest::setEnvironmentId));
 
         // response
 
@@ -154,9 +149,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ModifyApplicationRequest, ModifyApplicationResponse> modifyApplication =
-        genFormodifyApplication();
+        genForModifyApplication();
 
-    private static HttpRequestDef<ModifyApplicationRequest, ModifyApplicationResponse> genFormodifyApplication() {
+    private static HttpRequestDef<ModifyApplicationRequest, ModifyApplicationResponse> genForModifyApplication() {
         // basic
         HttpRequestDef.Builder<ModifyApplicationRequest, ModifyApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyApplicationRequest.class, ModifyApplicationResponse.class)
@@ -169,16 +164,13 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyApplicationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ModifyApplicationRequest::getApplicationId,
+                ModifyApplicationRequest::setApplicationId));
         builder.<ApplicationModify>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ApplicationModify.class),
-            f -> f.withMarshaller(ModifyApplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyApplicationRequest::getBody, ModifyApplicationRequest::setBody));
 
         // response
 
@@ -186,9 +178,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ModifyApplicationConfigurationRequest, ModifyApplicationConfigurationResponse> modifyApplicationConfiguration =
-        genFormodifyApplicationConfiguration();
+        genForModifyApplicationConfiguration();
 
-    private static HttpRequestDef<ModifyApplicationConfigurationRequest, ModifyApplicationConfigurationResponse> genFormodifyApplicationConfiguration() {
+    private static HttpRequestDef<ModifyApplicationConfigurationRequest, ModifyApplicationConfigurationResponse> genForModifyApplicationConfiguration() {
         // basic
         HttpRequestDef.Builder<ModifyApplicationConfigurationRequest, ModifyApplicationConfigurationResponse> builder =
             HttpRequestDef
@@ -204,16 +196,14 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyApplicationConfigurationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ModifyApplicationConfigurationRequest::getApplicationId,
+                ModifyApplicationConfigurationRequest::setApplicationId));
         builder.<ApplicationConfigModify>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ApplicationConfigModify.class),
-            f -> f.withMarshaller(ModifyApplicationConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyApplicationConfigurationRequest::getBody,
+                ModifyApplicationConfigurationRequest::setBody));
 
         // response
 
@@ -221,9 +211,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowApplicationConfigurationRequest, ShowApplicationConfigurationResponse> showApplicationConfiguration =
-        genForshowApplicationConfiguration();
+        genForShowApplicationConfiguration();
 
-    private static HttpRequestDef<ShowApplicationConfigurationRequest, ShowApplicationConfigurationResponse> genForshowApplicationConfiguration() {
+    private static HttpRequestDef<ShowApplicationConfigurationRequest, ShowApplicationConfigurationResponse> genForShowApplicationConfiguration() {
         // basic
         HttpRequestDef.Builder<ShowApplicationConfigurationRequest, ShowApplicationConfigurationResponse> builder =
             HttpRequestDef
@@ -239,16 +229,14 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplicationConfigurationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ShowApplicationConfigurationRequest::getApplicationId,
+                ShowApplicationConfigurationRequest::setApplicationId));
         builder.<String>withRequestField("environment_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplicationConfigurationRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(ShowApplicationConfigurationRequest::getEnvironmentId,
+                ShowApplicationConfigurationRequest::setEnvironmentId));
 
         // response
 
@@ -256,9 +244,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowApplicationInfoRequest, ShowApplicationInfoResponse> showApplicationInfo =
-        genForshowApplicationInfo();
+        genForShowApplicationInfo();
 
-    private static HttpRequestDef<ShowApplicationInfoRequest, ShowApplicationInfoResponse> genForshowApplicationInfo() {
+    private static HttpRequestDef<ShowApplicationInfoRequest, ShowApplicationInfoResponse> genForShowApplicationInfo() {
         // basic
         HttpRequestDef.Builder<ShowApplicationInfoRequest, ShowApplicationInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApplicationInfoRequest.class, ShowApplicationInfoResponse.class)
@@ -271,9 +259,8 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplicationInfoRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ShowApplicationInfoRequest::getApplicationId,
+                ShowApplicationInfoRequest::setApplicationId));
 
         // response
 
@@ -281,9 +268,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowApplicationsRequest, ShowApplicationsResponse> showApplications =
-        genForshowApplications();
+        genForShowApplications();
 
-    private static HttpRequestDef<ShowApplicationsRequest, ShowApplicationsResponse> genForshowApplications() {
+    private static HttpRequestDef<ShowApplicationsRequest, ShowApplicationsResponse> genForShowApplications() {
         // basic
         HttpRequestDef.Builder<ShowApplicationsRequest, ShowApplicationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApplicationsRequest.class, ShowApplicationsResponse.class)
@@ -296,30 +283,22 @@ public class ServiceStageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowApplicationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowApplicationsRequest::getLimit, ShowApplicationsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowApplicationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowApplicationsRequest::getOffset, ShowApplicationsRequest::setOffset));
         builder.<String>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplicationsRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ShowApplicationsRequest::getOrderBy, ShowApplicationsRequest::setOrderBy));
         builder.<ShowApplicationsRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApplicationsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ShowApplicationsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ShowApplicationsRequest::getOrder, ShowApplicationsRequest::setOrder));
 
         // response
 
@@ -327,9 +306,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<CreateComponentRequest, CreateComponentResponse> createComponent =
-        genForcreateComponent();
+        genForCreateComponent();
 
-    private static HttpRequestDef<CreateComponentRequest, CreateComponentResponse> genForcreateComponent() {
+    private static HttpRequestDef<CreateComponentRequest, CreateComponentResponse> genForCreateComponent() {
         // basic
         HttpRequestDef.Builder<CreateComponentRequest, CreateComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateComponentRequest.class, CreateComponentResponse.class)
@@ -342,16 +321,12 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(CreateComponentRequest::getApplicationId, CreateComponentRequest::setApplicationId));
         builder.<ComponentCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ComponentCreate.class),
-            f -> f.withMarshaller(CreateComponentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateComponentRequest::getBody, CreateComponentRequest::setBody));
 
         // response
 
@@ -359,9 +334,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> deleteComponent =
-        genFordeleteComponent();
+        genForDeleteComponent();
 
-    private static HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> genFordeleteComponent() {
+    private static HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> genForDeleteComponent() {
         // basic
         HttpRequestDef.Builder<DeleteComponentRequest, DeleteComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteComponentRequest.class, DeleteComponentResponse.class)
@@ -374,16 +349,12 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentRequest::getApplicationId, DeleteComponentRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentRequest::getComponentId, DeleteComponentRequest::setComponentId));
 
         // response
 
@@ -391,9 +362,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ModifyComponentRequest, ModifyComponentResponse> modifyComponent =
-        genFormodifyComponent();
+        genForModifyComponent();
 
-    private static HttpRequestDef<ModifyComponentRequest, ModifyComponentResponse> genFormodifyComponent() {
+    private static HttpRequestDef<ModifyComponentRequest, ModifyComponentResponse> genForModifyComponent() {
         // basic
         HttpRequestDef.Builder<ModifyComponentRequest, ModifyComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyComponentRequest.class, ModifyComponentResponse.class)
@@ -406,23 +377,17 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyComponentRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ModifyComponentRequest::getApplicationId, ModifyComponentRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyComponentRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ModifyComponentRequest::getComponentId, ModifyComponentRequest::setComponentId));
         builder.<ComponentModify>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ComponentModify.class),
-            f -> f.withMarshaller(ModifyComponentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyComponentRequest::getBody, ModifyComponentRequest::setBody));
 
         // response
 
@@ -430,9 +395,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowComponentInfoRequest, ShowComponentInfoResponse> showComponentInfo =
-        genForshowComponentInfo();
+        genForShowComponentInfo();
 
-    private static HttpRequestDef<ShowComponentInfoRequest, ShowComponentInfoResponse> genForshowComponentInfo() {
+    private static HttpRequestDef<ShowComponentInfoRequest, ShowComponentInfoResponse> genForShowComponentInfo() {
         // basic
         HttpRequestDef.Builder<ShowComponentInfoRequest, ShowComponentInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowComponentInfoRequest.class, ShowComponentInfoResponse.class)
@@ -445,23 +410,19 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentInfoRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ShowComponentInfoRequest::getComponentId, ShowComponentInfoRequest::setComponentId));
         builder.<String>withRequestField("application_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentInfoRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ShowComponentInfoRequest::getApplicationId,
+                ShowComponentInfoRequest::setApplicationId));
         builder.<String>withRequestField("expect_fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentInfoRequest::getExpectFields, (req, v) -> {
-                req.setExpectFields(v);
-            }));
+            f -> f.withMarshaller(ShowComponentInfoRequest::getExpectFields,
+                ShowComponentInfoRequest::setExpectFields));
 
         // response
 
@@ -469,9 +430,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowComponentRecordsRequest, ShowComponentRecordsResponse> showComponentRecords =
-        genForshowComponentRecords();
+        genForShowComponentRecords();
 
-    private static HttpRequestDef<ShowComponentRecordsRequest, ShowComponentRecordsResponse> genForshowComponentRecords() {
+    private static HttpRequestDef<ShowComponentRecordsRequest, ShowComponentRecordsResponse> genForShowComponentRecords() {
         // basic
         HttpRequestDef.Builder<ShowComponentRecordsRequest, ShowComponentRecordsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowComponentRecordsRequest.class, ShowComponentRecordsResponse.class)
@@ -484,44 +445,34 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentRecordsRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRecordsRequest::getComponentId,
+                ShowComponentRecordsRequest::setComponentId));
         builder.<String>withRequestField("application_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentRecordsRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRecordsRequest::getApplicationId,
+                ShowComponentRecordsRequest::setApplicationId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowComponentRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRecordsRequest::getLimit, ShowComponentRecordsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowComponentRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRecordsRequest::getOffset, ShowComponentRecordsRequest::setOffset));
         builder.<String>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentRecordsRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRecordsRequest::getOrderBy, ShowComponentRecordsRequest::setOrderBy));
         builder.<ShowComponentRecordsRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowComponentRecordsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ShowComponentRecordsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRecordsRequest::getOrder, ShowComponentRecordsRequest::setOrder));
 
         // response
 
@@ -529,9 +480,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowComponentsRequest, ShowComponentsResponse> showComponents =
-        genForshowComponents();
+        genForShowComponents();
 
-    private static HttpRequestDef<ShowComponentsRequest, ShowComponentsResponse> genForshowComponents() {
+    private static HttpRequestDef<ShowComponentsRequest, ShowComponentsResponse> genForShowComponents() {
         // basic
         HttpRequestDef.Builder<ShowComponentsRequest, ShowComponentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowComponentsRequest.class, ShowComponentsResponse.class)
@@ -544,44 +495,33 @@ public class ServiceStageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowComponentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsRequest::getLimit, ShowComponentsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowComponentsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsRequest::getOffset, ShowComponentsRequest::setOffset));
         builder.<String>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentsRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsRequest::getOrderBy, ShowComponentsRequest::setOrderBy));
         builder.<ShowComponentsRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowComponentsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ShowComponentsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsRequest::getOrder, ShowComponentsRequest::setOrder));
         builder.<String>withRequestField("application_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentsRequest::getApplicationName, (req, v) -> {
-                req.setApplicationName(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsRequest::getApplicationName,
+                ShowComponentsRequest::setApplicationName));
         builder.<String>withRequestField("component_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentsRequest::getComponentName, (req, v) -> {
-                req.setComponentName(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsRequest::getComponentName, ShowComponentsRequest::setComponentName));
 
         // response
 
@@ -589,9 +529,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowComponentsInApplicationRequest, ShowComponentsInApplicationResponse> showComponentsInApplication =
-        genForshowComponentsInApplication();
+        genForShowComponentsInApplication();
 
-    private static HttpRequestDef<ShowComponentsInApplicationRequest, ShowComponentsInApplicationResponse> genForshowComponentsInApplication() {
+    private static HttpRequestDef<ShowComponentsInApplicationRequest, ShowComponentsInApplicationResponse> genForShowComponentsInApplication() {
         // basic
         HttpRequestDef.Builder<ShowComponentsInApplicationRequest, ShowComponentsInApplicationResponse> builder =
             HttpRequestDef
@@ -607,37 +547,32 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentsInApplicationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsInApplicationRequest::getApplicationId,
+                ShowComponentsInApplicationRequest::setApplicationId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowComponentsInApplicationRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsInApplicationRequest::getLimit,
+                ShowComponentsInApplicationRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowComponentsInApplicationRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsInApplicationRequest::getOffset,
+                ShowComponentsInApplicationRequest::setOffset));
         builder.<String>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentsInApplicationRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsInApplicationRequest::getOrderBy,
+                ShowComponentsInApplicationRequest::setOrderBy));
         builder.<ShowComponentsInApplicationRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowComponentsInApplicationRequest.OrderEnum.class),
-            f -> f.withMarshaller(ShowComponentsInApplicationRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ShowComponentsInApplicationRequest::getOrder,
+                ShowComponentsInApplicationRequest::setOrder));
 
         // response
 
@@ -645,9 +580,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<UpdateComponentActionRequest, UpdateComponentActionResponse> updateComponentAction =
-        genForupdateComponentAction();
+        genForUpdateComponentAction();
 
-    private static HttpRequestDef<UpdateComponentActionRequest, UpdateComponentActionResponse> genForupdateComponentAction() {
+    private static HttpRequestDef<UpdateComponentActionRequest, UpdateComponentActionResponse> genForUpdateComponentAction() {
         // basic
         HttpRequestDef.Builder<UpdateComponentActionRequest, UpdateComponentActionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateComponentActionRequest.class, UpdateComponentActionResponse.class)
@@ -660,23 +595,19 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateComponentActionRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(UpdateComponentActionRequest::getApplicationId,
+                UpdateComponentActionRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateComponentActionRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(UpdateComponentActionRequest::getComponentId,
+                UpdateComponentActionRequest::setComponentId));
         builder.<ComponentAction>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ComponentAction.class),
-            f -> f.withMarshaller(UpdateComponentActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateComponentActionRequest::getBody, UpdateComponentActionRequest::setBody));
 
         // response
 
@@ -684,9 +615,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> createEnvironment =
-        genForcreateEnvironment();
+        genForCreateEnvironment();
 
-    private static HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> genForcreateEnvironment() {
+    private static HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> genForCreateEnvironment() {
         // basic
         HttpRequestDef.Builder<CreateEnvironmentRequest, CreateEnvironmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEnvironmentRequest.class, CreateEnvironmentResponse.class)
@@ -699,9 +630,7 @@ public class ServiceStageMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EnvironmentCreate.class),
-            f -> f.withMarshaller(CreateEnvironmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentRequest::getBody, CreateEnvironmentRequest::setBody));
 
         // response
 
@@ -709,9 +638,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<DeleteEnvironmentRequest, DeleteEnvironmentResponse> deleteEnvironment =
-        genFordeleteEnvironment();
+        genForDeleteEnvironment();
 
-    private static HttpRequestDef<DeleteEnvironmentRequest, DeleteEnvironmentResponse> genFordeleteEnvironment() {
+    private static HttpRequestDef<DeleteEnvironmentRequest, DeleteEnvironmentResponse> genForDeleteEnvironment() {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentRequest, DeleteEnvironmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvironmentRequest.class, DeleteEnvironmentResponse.class)
@@ -724,9 +653,8 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentRequest::getEnvironmentId,
+                DeleteEnvironmentRequest::setEnvironmentId));
 
         // response
 
@@ -734,9 +662,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ModifyEnvironmentRequest, ModifyEnvironmentResponse> modifyEnvironment =
-        genFormodifyEnvironment();
+        genForModifyEnvironment();
 
-    private static HttpRequestDef<ModifyEnvironmentRequest, ModifyEnvironmentResponse> genFormodifyEnvironment() {
+    private static HttpRequestDef<ModifyEnvironmentRequest, ModifyEnvironmentResponse> genForModifyEnvironment() {
         // basic
         HttpRequestDef.Builder<ModifyEnvironmentRequest, ModifyEnvironmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyEnvironmentRequest.class, ModifyEnvironmentResponse.class)
@@ -749,16 +677,13 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyEnvironmentRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(ModifyEnvironmentRequest::getEnvironmentId,
+                ModifyEnvironmentRequest::setEnvironmentId));
         builder.<EnvironmentModify>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EnvironmentModify.class),
-            f -> f.withMarshaller(ModifyEnvironmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyEnvironmentRequest::getBody, ModifyEnvironmentRequest::setBody));
 
         // response
 
@@ -766,9 +691,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> modifyResourceInEnvironment =
-        genFormodifyResourceInEnvironment();
+        genForModifyResourceInEnvironment();
 
-    private static HttpRequestDef<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> genFormodifyResourceInEnvironment() {
+    private static HttpRequestDef<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> genForModifyResourceInEnvironment() {
         // basic
         HttpRequestDef.Builder<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> builder =
             HttpRequestDef
@@ -784,16 +709,14 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyResourceInEnvironmentRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(ModifyResourceInEnvironmentRequest::getEnvironmentId,
+                ModifyResourceInEnvironmentRequest::setEnvironmentId));
         builder.<EnvironmentResourceModify>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EnvironmentResourceModify.class),
-            f -> f.withMarshaller(ModifyResourceInEnvironmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyResourceInEnvironmentRequest::getBody,
+                ModifyResourceInEnvironmentRequest::setBody));
 
         // response
 
@@ -801,9 +724,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowEnvironmentInfoRequest, ShowEnvironmentInfoResponse> showEnvironmentInfo =
-        genForshowEnvironmentInfo();
+        genForShowEnvironmentInfo();
 
-    private static HttpRequestDef<ShowEnvironmentInfoRequest, ShowEnvironmentInfoResponse> genForshowEnvironmentInfo() {
+    private static HttpRequestDef<ShowEnvironmentInfoRequest, ShowEnvironmentInfoResponse> genForShowEnvironmentInfo() {
         // basic
         HttpRequestDef.Builder<ShowEnvironmentInfoRequest, ShowEnvironmentInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEnvironmentInfoRequest.class, ShowEnvironmentInfoResponse.class)
@@ -816,9 +739,8 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnvironmentInfoRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEnvironmentInfoRequest::getEnvironmentId,
+                ShowEnvironmentInfoRequest::setEnvironmentId));
 
         // response
 
@@ -826,9 +748,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowEnvironmentResourcesRequest, ShowEnvironmentResourcesResponse> showEnvironmentResources =
-        genForshowEnvironmentResources();
+        genForShowEnvironmentResources();
 
-    private static HttpRequestDef<ShowEnvironmentResourcesRequest, ShowEnvironmentResourcesResponse> genForshowEnvironmentResources() {
+    private static HttpRequestDef<ShowEnvironmentResourcesRequest, ShowEnvironmentResourcesResponse> genForShowEnvironmentResources() {
         // basic
         HttpRequestDef.Builder<ShowEnvironmentResourcesRequest, ShowEnvironmentResourcesResponse> builder =
             HttpRequestDef
@@ -842,9 +764,8 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnvironmentResourcesRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEnvironmentResourcesRequest::getEnvironmentId,
+                ShowEnvironmentResourcesRequest::setEnvironmentId));
 
         // response
 
@@ -852,9 +773,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowEnvironmentsRequest, ShowEnvironmentsResponse> showEnvironments =
-        genForshowEnvironments();
+        genForShowEnvironments();
 
-    private static HttpRequestDef<ShowEnvironmentsRequest, ShowEnvironmentsResponse> genForshowEnvironments() {
+    private static HttpRequestDef<ShowEnvironmentsRequest, ShowEnvironmentsResponse> genForShowEnvironments() {
         // basic
         HttpRequestDef.Builder<ShowEnvironmentsRequest, ShowEnvironmentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEnvironmentsRequest.class, ShowEnvironmentsResponse.class)
@@ -867,60 +788,48 @@ public class ServiceStageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowEnvironmentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowEnvironmentsRequest::getLimit, ShowEnvironmentsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowEnvironmentsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowEnvironmentsRequest::getOffset, ShowEnvironmentsRequest::setOffset));
         builder.<String>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnvironmentsRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ShowEnvironmentsRequest::getOrderBy, ShowEnvironmentsRequest::setOrderBy));
         builder.<ShowEnvironmentsRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowEnvironmentsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ShowEnvironmentsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ShowEnvironmentsRequest::getOrder, ShowEnvironmentsRequest::setOrder));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnvironmentsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowEnvironmentsRequest::getName, ShowEnvironmentsRequest::setName));
         builder.<String>withRequestField("environment_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnvironmentsRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEnvironmentsRequest::getEnvironmentId,
+                ShowEnvironmentsRequest::setEnvironmentId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnvironmentsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowEnvironmentsRequest::getEnterpriseProjectId,
+                ShowEnvironmentsRequest::setEnterpriseProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfo = genForshowJobInfo();
+    public static final HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfo = genForShowJobInfo();
 
-    private static HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> genForshowJobInfo() {
+    private static HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> genForShowJobInfo() {
         // basic
         HttpRequestDef.Builder<ShowJobInfoRequest, ShowJobInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobInfoRequest.class, ShowJobInfoResponse.class)
@@ -933,37 +842,27 @@ public class ServiceStageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInfoRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobInfoRequest::getJobId, ShowJobInfoRequest::setJobId));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowJobInfoRequest::getInstanceId, ShowJobInfoRequest::setInstanceId));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowJobInfoRequest::getLimit, ShowJobInfoRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowJobInfoRequest::getOffset, ShowJobInfoRequest::setOffset));
         builder.<String>withRequestField("desc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInfoRequest::getDesc, (req, v) -> {
-                req.setDesc(v);
-            }));
+            f -> f.withMarshaller(ShowJobInfoRequest::getDesc, ShowJobInfoRequest::setDesc));
 
         // response
 
@@ -971,9 +870,9 @@ public class ServiceStageMeta {
     }
 
     public static final HttpRequestDef<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> showRuntimeStacks =
-        genForshowRuntimeStacks();
+        genForShowRuntimeStacks();
 
-    private static HttpRequestDef<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> genForshowRuntimeStacks() {
+    private static HttpRequestDef<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> genForShowRuntimeStacks() {
         // basic
         HttpRequestDef.Builder<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRuntimeStacksRequest.class, ShowRuntimeStacksResponse.class)

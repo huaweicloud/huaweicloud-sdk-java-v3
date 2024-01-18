@@ -80,9 +80,9 @@ import com.huaweicloud.sdk.csms.v1.model.UploadSecretBlobResponse;
 public class CsmsMeta {
 
     public static final HttpRequestDef<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTags =
-        genForbatchCreateOrDeleteTags();
+        genForBatchCreateOrDeleteTags();
 
-    private static HttpRequestDef<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> genForbatchCreateOrDeleteTags() {
+    private static HttpRequestDef<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> genForBatchCreateOrDeleteTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateOrDeleteTagsRequest.class, BatchCreateOrDeleteTagsResponse.class)
@@ -95,25 +95,22 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getSecretId,
+                BatchCreateOrDeleteTagsRequest::setSecretId));
         builder.<BatchCreateOrDeleteTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getBody, BatchCreateOrDeleteTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForcreateSecret();
+    public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForCreateSecret();
 
-    private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForcreateSecret() {
+    private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForCreateSecret() {
         // basic
         HttpRequestDef.Builder<CreateSecretRequest, CreateSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecretRequest.class, CreateSecretResponse.class)
@@ -126,9 +123,7 @@ public class CsmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSecretRequestBody.class),
-            f -> f.withMarshaller(CreateSecretRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecretRequest::getBody, CreateSecretRequest::setBody));
 
         // response
 
@@ -136,9 +131,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<CreateSecretEventRequest, CreateSecretEventResponse> createSecretEvent =
-        genForcreateSecretEvent();
+        genForCreateSecretEvent();
 
-    private static HttpRequestDef<CreateSecretEventRequest, CreateSecretEventResponse> genForcreateSecretEvent() {
+    private static HttpRequestDef<CreateSecretEventRequest, CreateSecretEventResponse> genForCreateSecretEvent() {
         // basic
         HttpRequestDef.Builder<CreateSecretEventRequest, CreateSecretEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecretEventRequest.class, CreateSecretEventResponse.class)
@@ -151,9 +146,7 @@ public class CsmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSecretEventRequestBody.class),
-            f -> f.withMarshaller(CreateSecretEventRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecretEventRequest::getBody, CreateSecretEventRequest::setBody));
 
         // response
 
@@ -161,9 +154,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<CreateSecretTagRequest, CreateSecretTagResponse> createSecretTag =
-        genForcreateSecretTag();
+        genForCreateSecretTag();
 
-    private static HttpRequestDef<CreateSecretTagRequest, CreateSecretTagResponse> genForcreateSecretTag() {
+    private static HttpRequestDef<CreateSecretTagRequest, CreateSecretTagResponse> genForCreateSecretTag() {
         // basic
         HttpRequestDef.Builder<CreateSecretTagRequest, CreateSecretTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecretTagRequest.class, CreateSecretTagResponse.class)
@@ -176,16 +169,12 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecretTagRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
+            f -> f.withMarshaller(CreateSecretTagRequest::getSecretId, CreateSecretTagRequest::setSecretId));
         builder.<CreateSecretTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSecretTagRequestBody.class),
-            f -> f.withMarshaller(CreateSecretTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecretTagRequest::getBody, CreateSecretTagRequest::setBody));
 
         // response
 
@@ -193,9 +182,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<CreateSecretVersionRequest, CreateSecretVersionResponse> createSecretVersion =
-        genForcreateSecretVersion();
+        genForCreateSecretVersion();
 
-    private static HttpRequestDef<CreateSecretVersionRequest, CreateSecretVersionResponse> genForcreateSecretVersion() {
+    private static HttpRequestDef<CreateSecretVersionRequest, CreateSecretVersionResponse> genForCreateSecretVersion() {
         // basic
         HttpRequestDef.Builder<CreateSecretVersionRequest, CreateSecretVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecretVersionRequest.class, CreateSecretVersionResponse.class)
@@ -208,25 +197,22 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecretVersionRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(CreateSecretVersionRequest::getSecretName,
+                CreateSecretVersionRequest::setSecretName));
         builder.<CreateSecretVersionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSecretVersionRequestBody.class),
-            f -> f.withMarshaller(CreateSecretVersionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecretVersionRequest::getBody, CreateSecretVersionRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> deleteSecret = genFordeleteSecret();
+    public static final HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> deleteSecret = genForDeleteSecret();
 
-    private static HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> genFordeleteSecret() {
+    private static HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> genForDeleteSecret() {
         // basic
         HttpRequestDef.Builder<DeleteSecretRequest, DeleteSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretRequest.class, DeleteSecretResponse.class)
@@ -239,9 +225,7 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretRequest::getSecretName, DeleteSecretRequest::setSecretName));
 
         // response
 
@@ -249,9 +233,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<DeleteSecretEventRequest, DeleteSecretEventResponse> deleteSecretEvent =
-        genFordeleteSecretEvent();
+        genForDeleteSecretEvent();
 
-    private static HttpRequestDef<DeleteSecretEventRequest, DeleteSecretEventResponse> genFordeleteSecretEvent() {
+    private static HttpRequestDef<DeleteSecretEventRequest, DeleteSecretEventResponse> genForDeleteSecretEvent() {
         // basic
         HttpRequestDef.Builder<DeleteSecretEventRequest, DeleteSecretEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretEventRequest.class, DeleteSecretEventResponse.class)
@@ -264,9 +248,7 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretEventRequest::getEventName, (req, v) -> {
-                req.setEventName(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretEventRequest::getEventName, DeleteSecretEventRequest::setEventName));
 
         // response
 
@@ -274,9 +256,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse> deleteSecretForSchedule =
-        genFordeleteSecretForSchedule();
+        genForDeleteSecretForSchedule();
 
-    private static HttpRequestDef<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse> genFordeleteSecretForSchedule() {
+    private static HttpRequestDef<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse> genForDeleteSecretForSchedule() {
         // basic
         HttpRequestDef.Builder<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DeleteSecretForScheduleRequest.class, DeleteSecretForScheduleResponse.class)
@@ -289,16 +271,13 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretForScheduleRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretForScheduleRequest::getSecretName,
+                DeleteSecretForScheduleRequest::setSecretName));
         builder.<DeleteSecretForScheduleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteSecretForScheduleRequestBody.class),
-            f -> f.withMarshaller(DeleteSecretForScheduleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretForScheduleRequest::getBody, DeleteSecretForScheduleRequest::setBody));
 
         // response
 
@@ -306,9 +285,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<DeleteSecretStageRequest, DeleteSecretStageResponse> deleteSecretStage =
-        genFordeleteSecretStage();
+        genForDeleteSecretStage();
 
-    private static HttpRequestDef<DeleteSecretStageRequest, DeleteSecretStageResponse> genFordeleteSecretStage() {
+    private static HttpRequestDef<DeleteSecretStageRequest, DeleteSecretStageResponse> genForDeleteSecretStage() {
         // basic
         HttpRequestDef.Builder<DeleteSecretStageRequest, DeleteSecretStageResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretStageRequest.class, DeleteSecretStageResponse.class)
@@ -321,16 +300,12 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretStageRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretStageRequest::getSecretName, DeleteSecretStageRequest::setSecretName));
         builder.<String>withRequestField("stage_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretStageRequest::getStageName, (req, v) -> {
-                req.setStageName(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretStageRequest::getStageName, DeleteSecretStageRequest::setStageName));
 
         // response
 
@@ -338,9 +313,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<DeleteSecretTagRequest, DeleteSecretTagResponse> deleteSecretTag =
-        genFordeleteSecretTag();
+        genForDeleteSecretTag();
 
-    private static HttpRequestDef<DeleteSecretTagRequest, DeleteSecretTagResponse> genFordeleteSecretTag() {
+    private static HttpRequestDef<DeleteSecretTagRequest, DeleteSecretTagResponse> genForDeleteSecretTag() {
         // basic
         HttpRequestDef.Builder<DeleteSecretTagRequest, DeleteSecretTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretTagRequest.class, DeleteSecretTagResponse.class)
@@ -353,16 +328,12 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretTagRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretTagRequest::getSecretId, DeleteSecretTagRequest::setSecretId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretTagRequest::getKey, DeleteSecretTagRequest::setKey));
 
         // response
 
@@ -370,9 +341,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<DownloadSecretBlobRequest, DownloadSecretBlobResponse> downloadSecretBlob =
-        genFordownloadSecretBlob();
+        genForDownloadSecretBlob();
 
-    private static HttpRequestDef<DownloadSecretBlobRequest, DownloadSecretBlobResponse> genFordownloadSecretBlob() {
+    private static HttpRequestDef<DownloadSecretBlobRequest, DownloadSecretBlobResponse> genForDownloadSecretBlob() {
         // basic
         HttpRequestDef.Builder<DownloadSecretBlobRequest, DownloadSecretBlobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DownloadSecretBlobRequest.class, DownloadSecretBlobResponse.class)
@@ -385,9 +356,7 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadSecretBlobRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(DownloadSecretBlobRequest::getSecretName, DownloadSecretBlobRequest::setSecretName));
 
         // response
 
@@ -395,9 +364,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<ListNotificationRecordsRequest, ListNotificationRecordsResponse> listNotificationRecords =
-        genForlistNotificationRecords();
+        genForListNotificationRecords();
 
-    private static HttpRequestDef<ListNotificationRecordsRequest, ListNotificationRecordsResponse> genForlistNotificationRecords() {
+    private static HttpRequestDef<ListNotificationRecordsRequest, ListNotificationRecordsResponse> genForListNotificationRecords() {
         // basic
         HttpRequestDef.Builder<ListNotificationRecordsRequest, ListNotificationRecordsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListNotificationRecordsRequest.class, ListNotificationRecordsResponse.class)
@@ -410,16 +379,13 @@ public class CsmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNotificationRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNotificationRecordsRequest::getLimit, ListNotificationRecordsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNotificationRecordsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListNotificationRecordsRequest::getMarker,
+                ListNotificationRecordsRequest::setMarker));
 
         // response
 
@@ -427,9 +393,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> listProjectSecretsTags =
-        genForlistProjectSecretsTags();
+        genForListProjectSecretsTags();
 
-    private static HttpRequestDef<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> genForlistProjectSecretsTags() {
+    private static HttpRequestDef<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> genForListProjectSecretsTags() {
         // basic
         HttpRequestDef.Builder<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProjectSecretsTagsRequest.class, ListProjectSecretsTagsResponse.class)
@@ -445,9 +411,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstances =
-        genForlistResourceInstances();
+        genForListResourceInstances();
 
-    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForlistResourceInstances() {
+    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForListResourceInstances() {
         // basic
         HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
@@ -460,16 +426,13 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceInstances, (req, v) -> {
-                req.setResourceInstances(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceInstances,
+                ListResourceInstancesRequest::setResourceInstances));
         builder.<ListResourceInstancesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, ListResourceInstancesRequest::setBody));
 
         // response
 
@@ -477,9 +440,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<ListSecretEventsRequest, ListSecretEventsResponse> listSecretEvents =
-        genForlistSecretEvents();
+        genForListSecretEvents();
 
-    private static HttpRequestDef<ListSecretEventsRequest, ListSecretEventsResponse> genForlistSecretEvents() {
+    private static HttpRequestDef<ListSecretEventsRequest, ListSecretEventsResponse> genForListSecretEvents() {
         // basic
         HttpRequestDef.Builder<ListSecretEventsRequest, ListSecretEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecretEventsRequest.class, ListSecretEventsResponse.class)
@@ -492,16 +455,12 @@ public class CsmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretEventsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecretEventsRequest::getLimit, ListSecretEventsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretEventsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListSecretEventsRequest::getMarker, ListSecretEventsRequest::setMarker));
 
         // response
 
@@ -509,9 +468,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<ListSecretTagsRequest, ListSecretTagsResponse> listSecretTags =
-        genForlistSecretTags();
+        genForListSecretTags();
 
-    private static HttpRequestDef<ListSecretTagsRequest, ListSecretTagsResponse> genForlistSecretTags() {
+    private static HttpRequestDef<ListSecretTagsRequest, ListSecretTagsResponse> genForListSecretTags() {
         // basic
         HttpRequestDef.Builder<ListSecretTagsRequest, ListSecretTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecretTagsRequest.class, ListSecretTagsResponse.class)
@@ -524,9 +483,7 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretTagsRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
+            f -> f.withMarshaller(ListSecretTagsRequest::getSecretId, ListSecretTagsRequest::setSecretId));
 
         // response
 
@@ -534,9 +491,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<ListSecretVersionsRequest, ListSecretVersionsResponse> listSecretVersions =
-        genForlistSecretVersions();
+        genForListSecretVersions();
 
-    private static HttpRequestDef<ListSecretVersionsRequest, ListSecretVersionsResponse> genForlistSecretVersions() {
+    private static HttpRequestDef<ListSecretVersionsRequest, ListSecretVersionsResponse> genForListSecretVersions() {
         // basic
         HttpRequestDef.Builder<ListSecretVersionsRequest, ListSecretVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecretVersionsRequest.class, ListSecretVersionsResponse.class)
@@ -549,32 +506,26 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretVersionsRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(ListSecretVersionsRequest::getSecretName, ListSecretVersionsRequest::setSecretName));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretVersionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListSecretVersionsRequest::getMarker, ListSecretVersionsRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecretVersionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecretVersionsRequest::getLimit, ListSecretVersionsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSecretsRequest, ListSecretsResponse> listSecrets = genForlistSecrets();
+    public static final HttpRequestDef<ListSecretsRequest, ListSecretsResponse> listSecrets = genForListSecrets();
 
-    private static HttpRequestDef<ListSecretsRequest, ListSecretsResponse> genForlistSecrets() {
+    private static HttpRequestDef<ListSecretsRequest, ListSecretsResponse> genForListSecrets() {
         // basic
         HttpRequestDef.Builder<ListSecretsRequest, ListSecretsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecretsRequest.class, ListSecretsResponse.class)
@@ -587,23 +538,17 @@ public class CsmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getLimit, ListSecretsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getMarker, ListSecretsRequest::setMarker));
         builder.<String>withRequestField("event_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getEventName, (req, v) -> {
-                req.setEventName(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getEventName, ListSecretsRequest::setEventName));
 
         // response
 
@@ -611,9 +556,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<RestoreSecretRequest, RestoreSecretResponse> restoreSecret =
-        genForrestoreSecret();
+        genForRestoreSecret();
 
-    private static HttpRequestDef<RestoreSecretRequest, RestoreSecretResponse> genForrestoreSecret() {
+    private static HttpRequestDef<RestoreSecretRequest, RestoreSecretResponse> genForRestoreSecret() {
         // basic
         HttpRequestDef.Builder<RestoreSecretRequest, RestoreSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreSecretRequest.class, RestoreSecretResponse.class)
@@ -626,18 +571,16 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreSecretRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(RestoreSecretRequest::getSecretName, RestoreSecretRequest::setSecretName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RotateSecretRequest, RotateSecretResponse> rotateSecret = genForrotateSecret();
+    public static final HttpRequestDef<RotateSecretRequest, RotateSecretResponse> rotateSecret = genForRotateSecret();
 
-    private static HttpRequestDef<RotateSecretRequest, RotateSecretResponse> genForrotateSecret() {
+    private static HttpRequestDef<RotateSecretRequest, RotateSecretResponse> genForRotateSecret() {
         // basic
         HttpRequestDef.Builder<RotateSecretRequest, RotateSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RotateSecretRequest.class, RotateSecretResponse.class)
@@ -650,18 +593,16 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RotateSecretRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(RotateSecretRequest::getSecretName, RotateSecretRequest::setSecretName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSecretRequest, ShowSecretResponse> showSecret = genForshowSecret();
+    public static final HttpRequestDef<ShowSecretRequest, ShowSecretResponse> showSecret = genForShowSecret();
 
-    private static HttpRequestDef<ShowSecretRequest, ShowSecretResponse> genForshowSecret() {
+    private static HttpRequestDef<ShowSecretRequest, ShowSecretResponse> genForShowSecret() {
         // basic
         HttpRequestDef.Builder<ShowSecretRequest, ShowSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecretRequest.class, ShowSecretResponse.class)
@@ -674,9 +615,7 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecretRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(ShowSecretRequest::getSecretName, ShowSecretRequest::setSecretName));
 
         // response
 
@@ -684,9 +623,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<ShowSecretEventRequest, ShowSecretEventResponse> showSecretEvent =
-        genForshowSecretEvent();
+        genForShowSecretEvent();
 
-    private static HttpRequestDef<ShowSecretEventRequest, ShowSecretEventResponse> genForshowSecretEvent() {
+    private static HttpRequestDef<ShowSecretEventRequest, ShowSecretEventResponse> genForShowSecretEvent() {
         // basic
         HttpRequestDef.Builder<ShowSecretEventRequest, ShowSecretEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecretEventRequest.class, ShowSecretEventResponse.class)
@@ -699,9 +638,7 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecretEventRequest::getEventName, (req, v) -> {
-                req.setEventName(v);
-            }));
+            f -> f.withMarshaller(ShowSecretEventRequest::getEventName, ShowSecretEventRequest::setEventName));
 
         // response
 
@@ -709,9 +646,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<ShowSecretStageRequest, ShowSecretStageResponse> showSecretStage =
-        genForshowSecretStage();
+        genForShowSecretStage();
 
-    private static HttpRequestDef<ShowSecretStageRequest, ShowSecretStageResponse> genForshowSecretStage() {
+    private static HttpRequestDef<ShowSecretStageRequest, ShowSecretStageResponse> genForShowSecretStage() {
         // basic
         HttpRequestDef.Builder<ShowSecretStageRequest, ShowSecretStageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecretStageRequest.class, ShowSecretStageResponse.class)
@@ -724,16 +661,12 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecretStageRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(ShowSecretStageRequest::getSecretName, ShowSecretStageRequest::setSecretName));
         builder.<String>withRequestField("stage_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecretStageRequest::getStageName, (req, v) -> {
-                req.setStageName(v);
-            }));
+            f -> f.withMarshaller(ShowSecretStageRequest::getStageName, ShowSecretStageRequest::setStageName));
 
         // response
 
@@ -741,9 +674,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<ShowSecretVersionRequest, ShowSecretVersionResponse> showSecretVersion =
-        genForshowSecretVersion();
+        genForShowSecretVersion();
 
-    private static HttpRequestDef<ShowSecretVersionRequest, ShowSecretVersionResponse> genForshowSecretVersion() {
+    private static HttpRequestDef<ShowSecretVersionRequest, ShowSecretVersionResponse> genForShowSecretVersion() {
         // basic
         HttpRequestDef.Builder<ShowSecretVersionRequest, ShowSecretVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecretVersionRequest.class, ShowSecretVersionResponse.class)
@@ -756,25 +689,21 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecretVersionRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(ShowSecretVersionRequest::getSecretName, ShowSecretVersionRequest::setSecretName));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecretVersionRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(ShowSecretVersionRequest::getVersionId, ShowSecretVersionRequest::setVersionId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> updateSecret = genForupdateSecret();
+    public static final HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> updateSecret = genForUpdateSecret();
 
-    private static HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> genForupdateSecret() {
+    private static HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> genForUpdateSecret() {
         // basic
         HttpRequestDef.Builder<UpdateSecretRequest, UpdateSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSecretRequest.class, UpdateSecretResponse.class)
@@ -787,16 +716,12 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecretRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretRequest::getSecretName, UpdateSecretRequest::setSecretName));
         builder.<UpdateSecretRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecretRequestBody.class),
-            f -> f.withMarshaller(UpdateSecretRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretRequest::getBody, UpdateSecretRequest::setBody));
 
         // response
 
@@ -804,9 +729,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<UpdateSecretEventRequest, UpdateSecretEventResponse> updateSecretEvent =
-        genForupdateSecretEvent();
+        genForUpdateSecretEvent();
 
-    private static HttpRequestDef<UpdateSecretEventRequest, UpdateSecretEventResponse> genForupdateSecretEvent() {
+    private static HttpRequestDef<UpdateSecretEventRequest, UpdateSecretEventResponse> genForUpdateSecretEvent() {
         // basic
         HttpRequestDef.Builder<UpdateSecretEventRequest, UpdateSecretEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSecretEventRequest.class, UpdateSecretEventResponse.class)
@@ -819,16 +744,12 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecretEventRequest::getEventName, (req, v) -> {
-                req.setEventName(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretEventRequest::getEventName, UpdateSecretEventRequest::setEventName));
         builder.<UpdateSecretEventRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecretEventRequestBody.class),
-            f -> f.withMarshaller(UpdateSecretEventRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretEventRequest::getBody, UpdateSecretEventRequest::setBody));
 
         // response
 
@@ -836,9 +757,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<UpdateSecretStageRequest, UpdateSecretStageResponse> updateSecretStage =
-        genForupdateSecretStage();
+        genForUpdateSecretStage();
 
-    private static HttpRequestDef<UpdateSecretStageRequest, UpdateSecretStageResponse> genForupdateSecretStage() {
+    private static HttpRequestDef<UpdateSecretStageRequest, UpdateSecretStageResponse> genForUpdateSecretStage() {
         // basic
         HttpRequestDef.Builder<UpdateSecretStageRequest, UpdateSecretStageResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSecretStageRequest.class, UpdateSecretStageResponse.class)
@@ -851,23 +772,17 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecretStageRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretStageRequest::getSecretName, UpdateSecretStageRequest::setSecretName));
         builder.<String>withRequestField("stage_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecretStageRequest::getStageName, (req, v) -> {
-                req.setStageName(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretStageRequest::getStageName, UpdateSecretStageRequest::setStageName));
         builder.<UpdateSecretStageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecretStageRequestBody.class),
-            f -> f.withMarshaller(UpdateSecretStageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretStageRequest::getBody, UpdateSecretStageRequest::setBody));
 
         // response
 
@@ -875,9 +790,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<UpdateVersionRequest, UpdateVersionResponse> updateVersion =
-        genForupdateVersion();
+        genForUpdateVersion();
 
-    private static HttpRequestDef<UpdateVersionRequest, UpdateVersionResponse> genForupdateVersion() {
+    private static HttpRequestDef<UpdateVersionRequest, UpdateVersionResponse> genForUpdateVersion() {
         // basic
         HttpRequestDef.Builder<UpdateVersionRequest, UpdateVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVersionRequest.class, UpdateVersionResponse.class)
@@ -890,23 +805,17 @@ public class CsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVersionRequest::getSecretName, (req, v) -> {
-                req.setSecretName(v);
-            }));
+            f -> f.withMarshaller(UpdateVersionRequest::getSecretName, UpdateVersionRequest::setSecretName));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVersionRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(UpdateVersionRequest::getVersionId, UpdateVersionRequest::setVersionId));
         builder.<UpdateVersionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateVersionRequestBody.class),
-            f -> f.withMarshaller(UpdateVersionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVersionRequest::getBody, UpdateVersionRequest::setBody));
 
         // response
 
@@ -914,9 +823,9 @@ public class CsmsMeta {
     }
 
     public static final HttpRequestDef<UploadSecretBlobRequest, UploadSecretBlobResponse> uploadSecretBlob =
-        genForuploadSecretBlob();
+        genForUploadSecretBlob();
 
-    private static HttpRequestDef<UploadSecretBlobRequest, UploadSecretBlobResponse> genForuploadSecretBlob() {
+    private static HttpRequestDef<UploadSecretBlobRequest, UploadSecretBlobResponse> genForUploadSecretBlob() {
         // basic
         HttpRequestDef.Builder<UploadSecretBlobRequest, UploadSecretBlobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadSecretBlobRequest.class, UploadSecretBlobResponse.class)
@@ -929,9 +838,7 @@ public class CsmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadSecretBlobRequestBody.class),
-            f -> f.withMarshaller(UploadSecretBlobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadSecretBlobRequest::getBody, UploadSecretBlobRequest::setBody));
 
         // response
 

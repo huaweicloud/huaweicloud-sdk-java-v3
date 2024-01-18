@@ -41,7 +41,7 @@ public class ListServerGroupsRequest {
     }
 
     /**
-     * 查询的偏移量
+     * 查询的偏移量。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -60,7 +60,7 @@ public class ListServerGroupsRequest {
     }
 
     /**
-     * 查询的数量，值区间[1-100]
+     * 查询的数量，值区间[1-100]。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -79,7 +79,7 @@ public class ListServerGroupsRequest {
     }
 
     /**
-     * 服务器组名称
+     * 服务器组名称。
      * @return serverGroupName
      */
     public String getServerGroupName() {
@@ -96,7 +96,7 @@ public class ListServerGroupsRequest {
     }
 
     /**
-     * 服务器组唯一标识
+     * 服务器组唯一标识。
      * @return serverGroupId
      */
     public String getServerGroupId() {
@@ -113,7 +113,7 @@ public class ListServerGroupsRequest {
     }
 
     /**
-     * 应用组类型(SESSION_DESKTOP_APP、COMMON_APP)
+     * 应用组类型： * `SESSION_DESKTOP_APP` - 会话桌面app * `COMMON_APP` - 普通app
      * @return appType
      */
     public String getAppType() {

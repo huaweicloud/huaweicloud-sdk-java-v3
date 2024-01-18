@@ -162,9 +162,9 @@ import java.util.List;
 public class MpcMeta {
 
     public static final HttpRequestDef<CreateAnimatedGraphicsTaskRequest, CreateAnimatedGraphicsTaskResponse> createAnimatedGraphicsTask =
-        genForcreateAnimatedGraphicsTask();
+        genForCreateAnimatedGraphicsTask();
 
-    private static HttpRequestDef<CreateAnimatedGraphicsTaskRequest, CreateAnimatedGraphicsTaskResponse> genForcreateAnimatedGraphicsTask() {
+    private static HttpRequestDef<CreateAnimatedGraphicsTaskRequest, CreateAnimatedGraphicsTaskResponse> genForCreateAnimatedGraphicsTask() {
         // basic
         HttpRequestDef.Builder<CreateAnimatedGraphicsTaskRequest, CreateAnimatedGraphicsTaskResponse> builder =
             HttpRequestDef
@@ -180,9 +180,8 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAnimatedGraphicsTaskReq.class),
-            f -> f.withMarshaller(CreateAnimatedGraphicsTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAnimatedGraphicsTaskRequest::getBody,
+                CreateAnimatedGraphicsTaskRequest::setBody));
 
         // response
 
@@ -190,9 +189,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteAnimatedGraphicsTaskRequest, DeleteAnimatedGraphicsTaskResponse> deleteAnimatedGraphicsTask =
-        genFordeleteAnimatedGraphicsTask();
+        genForDeleteAnimatedGraphicsTask();
 
-    private static HttpRequestDef<DeleteAnimatedGraphicsTaskRequest, DeleteAnimatedGraphicsTaskResponse> genFordeleteAnimatedGraphicsTask() {
+    private static HttpRequestDef<DeleteAnimatedGraphicsTaskRequest, DeleteAnimatedGraphicsTaskResponse> genForDeleteAnimatedGraphicsTask() {
         // basic
         HttpRequestDef.Builder<DeleteAnimatedGraphicsTaskRequest, DeleteAnimatedGraphicsTaskResponse> builder =
             HttpRequestDef
@@ -208,9 +207,8 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAnimatedGraphicsTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteAnimatedGraphicsTaskRequest::getTaskId,
+                DeleteAnimatedGraphicsTaskRequest::setTaskId));
 
         // response
 
@@ -218,9 +216,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListAnimatedGraphicsTaskRequest, ListAnimatedGraphicsTaskResponse> listAnimatedGraphicsTask =
-        genForlistAnimatedGraphicsTask();
+        genForListAnimatedGraphicsTask();
 
-    private static HttpRequestDef<ListAnimatedGraphicsTaskRequest, ListAnimatedGraphicsTaskResponse> genForlistAnimatedGraphicsTask() {
+    private static HttpRequestDef<ListAnimatedGraphicsTaskRequest, ListAnimatedGraphicsTaskResponse> genForListAnimatedGraphicsTask() {
         // basic
         HttpRequestDef.Builder<ListAnimatedGraphicsTaskRequest, ListAnimatedGraphicsTaskResponse> builder =
             HttpRequestDef
@@ -234,51 +232,42 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getTaskId,
+                ListAnimatedGraphicsTaskRequest::setTaskId));
         builder.<ListAnimatedGraphicsTaskRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAnimatedGraphicsTaskRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getStatus,
+                ListAnimatedGraphicsTaskRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getStartTime,
+                ListAnimatedGraphicsTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getEndTime,
+                ListAnimatedGraphicsTaskRequest::setEndTime));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getPage, ListAnimatedGraphicsTaskRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getSize, ListAnimatedGraphicsTaskRequest::setSize));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getXLanguage,
+                ListAnimatedGraphicsTaskRequest::setXLanguage));
 
         // response
 
@@ -286,9 +275,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse> createAgenciesTask =
-        genForcreateAgenciesTask();
+        genForCreateAgenciesTask();
 
-    private static HttpRequestDef<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse> genForcreateAgenciesTask() {
+    private static HttpRequestDef<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse> genForCreateAgenciesTask() {
         // basic
         HttpRequestDef.Builder<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgenciesTaskRequest.class, CreateAgenciesTaskResponse.class)
@@ -301,9 +290,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgenciesTaskReq.class),
-            f -> f.withMarshaller(CreateAgenciesTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAgenciesTaskRequest::getBody, CreateAgenciesTaskRequest::setBody));
 
         // response
 
@@ -311,9 +298,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListAllBucketsRequest, ListAllBucketsResponse> listAllBuckets =
-        genForlistAllBuckets();
+        genForListAllBuckets();
 
-    private static HttpRequestDef<ListAllBucketsRequest, ListAllBucketsResponse> genForlistAllBuckets() {
+    private static HttpRequestDef<ListAllBucketsRequest, ListAllBucketsResponse> genForListAllBuckets() {
         // basic
         HttpRequestDef.Builder<ListAllBucketsRequest, ListAllBucketsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllBucketsRequest.class, ListAllBucketsResponse.class)
@@ -329,9 +316,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListAllObsObjListRequest, ListAllObsObjListResponse> listAllObsObjList =
-        genForlistAllObsObjList();
+        genForListAllObsObjList();
 
-    private static HttpRequestDef<ListAllObsObjListRequest, ListAllObsObjListResponse> genForlistAllObsObjList() {
+    private static HttpRequestDef<ListAllObsObjListRequest, ListAllObsObjListResponse> genForListAllObsObjList() {
         // basic
         HttpRequestDef.Builder<ListAllObsObjListRequest, ListAllObsObjListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllObsObjListRequest.class, ListAllObsObjListResponse.class)
@@ -344,23 +331,17 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllObsObjListRequest::getBucket, (req, v) -> {
-                req.setBucket(v);
-            }));
+            f -> f.withMarshaller(ListAllObsObjListRequest::getBucket, ListAllObsObjListRequest::setBucket));
         builder.<String>withRequestField("prefix",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllObsObjListRequest::getPrefix, (req, v) -> {
-                req.setPrefix(v);
-            }));
+            f -> f.withMarshaller(ListAllObsObjListRequest::getPrefix, ListAllObsObjListRequest::setPrefix));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllObsObjListRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListAllObsObjListRequest::getType, ListAllObsObjListRequest::setType));
 
         // response
 
@@ -368,9 +349,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListNotifyEventRequest, ListNotifyEventResponse> listNotifyEvent =
-        genForlistNotifyEvent();
+        genForListNotifyEvent();
 
-    private static HttpRequestDef<ListNotifyEventRequest, ListNotifyEventResponse> genForlistNotifyEvent() {
+    private static HttpRequestDef<ListNotifyEventRequest, ListNotifyEventResponse> genForListNotifyEvent() {
         // basic
         HttpRequestDef.Builder<ListNotifyEventRequest, ListNotifyEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNotifyEventRequest.class, ListNotifyEventResponse.class)
@@ -386,9 +367,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse> listNotifySmnTopicConfig =
-        genForlistNotifySmnTopicConfig();
+        genForListNotifySmnTopicConfig();
 
-    private static HttpRequestDef<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse> genForlistNotifySmnTopicConfig() {
+    private static HttpRequestDef<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse> genForListNotifySmnTopicConfig() {
         // basic
         HttpRequestDef.Builder<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse> builder =
             HttpRequestDef
@@ -405,9 +386,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse> notifySmnTopicConfig =
-        genFornotifySmnTopicConfig();
+        genForNotifySmnTopicConfig();
 
-    private static HttpRequestDef<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse> genFornotifySmnTopicConfig() {
+    private static HttpRequestDef<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse> genForNotifySmnTopicConfig() {
         // basic
         HttpRequestDef.Builder<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, NotifySmnTopicConfigRequest.class, NotifySmnTopicConfigResponse.class)
@@ -420,9 +401,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(NotificationConfigReq.class),
-            f -> f.withMarshaller(NotifySmnTopicConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(NotifySmnTopicConfigRequest::getBody, NotifySmnTopicConfigRequest::setBody));
 
         // response
 
@@ -430,9 +409,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse> showAgenciesTask =
-        genForshowAgenciesTask();
+        genForShowAgenciesTask();
 
-    private static HttpRequestDef<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse> genForshowAgenciesTask() {
+    private static HttpRequestDef<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse> genForShowAgenciesTask() {
         // basic
         HttpRequestDef.Builder<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgenciesTaskRequest.class, ShowAgenciesTaskResponse.class)
@@ -448,9 +427,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> updateBucketAuthorized =
-        genForupdateBucketAuthorized();
+        genForUpdateBucketAuthorized();
 
-    private static HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> genForupdateBucketAuthorized() {
+    private static HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> genForUpdateBucketAuthorized() {
         // basic
         HttpRequestDef.Builder<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateBucketAuthorizedRequest.class, UpdateBucketAuthorizedResponse.class)
@@ -463,9 +442,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BucketAuthorizedReq.class),
-            f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getBody, UpdateBucketAuthorizedRequest::setBody));
 
         // response
 
@@ -473,9 +450,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateEditingJobRequest, CreateEditingJobResponse> createEditingJob =
-        genForcreateEditingJob();
+        genForCreateEditingJob();
 
-    private static HttpRequestDef<CreateEditingJobRequest, CreateEditingJobResponse> genForcreateEditingJob() {
+    private static HttpRequestDef<CreateEditingJobRequest, CreateEditingJobResponse> genForCreateEditingJob() {
         // basic
         HttpRequestDef.Builder<CreateEditingJobRequest, CreateEditingJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEditingJobRequest.class, CreateEditingJobResponse.class)
@@ -488,9 +465,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEditingJobReq.class),
-            f -> f.withMarshaller(CreateEditingJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEditingJobRequest::getBody, CreateEditingJobRequest::setBody));
 
         // response
 
@@ -498,9 +473,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteEditingJobRequest, DeleteEditingJobResponse> deleteEditingJob =
-        genFordeleteEditingJob();
+        genForDeleteEditingJob();
 
-    private static HttpRequestDef<DeleteEditingJobRequest, DeleteEditingJobResponse> genFordeleteEditingJob() {
+    private static HttpRequestDef<DeleteEditingJobRequest, DeleteEditingJobResponse> genForDeleteEditingJob() {
         // basic
         HttpRequestDef.Builder<DeleteEditingJobRequest, DeleteEditingJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEditingJobRequest.class, DeleteEditingJobResponse.class)
@@ -513,9 +488,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEditingJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteEditingJobRequest::getJobId, DeleteEditingJobRequest::setJobId));
 
         // response
 
@@ -523,9 +496,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListEditingJobRequest, ListEditingJobResponse> listEditingJob =
-        genForlistEditingJob();
+        genForListEditingJob();
 
-    private static HttpRequestDef<ListEditingJobRequest, ListEditingJobResponse> genForlistEditingJob() {
+    private static HttpRequestDef<ListEditingJobRequest, ListEditingJobResponse> genForListEditingJob() {
         // basic
         HttpRequestDef.Builder<ListEditingJobRequest, ListEditingJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEditingJobRequest.class, ListEditingJobResponse.class)
@@ -538,51 +511,37 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEditingJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListEditingJobRequest::getJobId, ListEditingJobRequest::setJobId));
         builder.<ListEditingJobRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEditingJobRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListEditingJobRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListEditingJobRequest::getStatus, ListEditingJobRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEditingJobRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListEditingJobRequest::getStartTime, ListEditingJobRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEditingJobRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListEditingJobRequest::getEndTime, ListEditingJobRequest::setEndTime));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEditingJobRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListEditingJobRequest::getPage, ListEditingJobRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEditingJobRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListEditingJobRequest::getSize, ListEditingJobRequest::setSize));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEditingJobRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListEditingJobRequest::getXLanguage, ListEditingJobRequest::setXLanguage));
 
         // response
 
@@ -590,9 +549,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateEncryptTaskRequest, CreateEncryptTaskResponse> createEncryptTask =
-        genForcreateEncryptTask();
+        genForCreateEncryptTask();
 
-    private static HttpRequestDef<CreateEncryptTaskRequest, CreateEncryptTaskResponse> genForcreateEncryptTask() {
+    private static HttpRequestDef<CreateEncryptTaskRequest, CreateEncryptTaskResponse> genForCreateEncryptTask() {
         // basic
         HttpRequestDef.Builder<CreateEncryptTaskRequest, CreateEncryptTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEncryptTaskRequest.class, CreateEncryptTaskResponse.class)
@@ -605,9 +564,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEncryptReq.class),
-            f -> f.withMarshaller(CreateEncryptTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEncryptTaskRequest::getBody, CreateEncryptTaskRequest::setBody));
 
         // response
 
@@ -615,9 +572,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse> deleteEncryptTask =
-        genFordeleteEncryptTask();
+        genForDeleteEncryptTask();
 
-    private static HttpRequestDef<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse> genFordeleteEncryptTask() {
+    private static HttpRequestDef<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse> genForDeleteEncryptTask() {
         // basic
         HttpRequestDef.Builder<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEncryptTaskRequest.class, DeleteEncryptTaskResponse.class)
@@ -630,9 +587,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEncryptTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteEncryptTaskRequest::getTaskId, DeleteEncryptTaskRequest::setTaskId));
 
         // response
 
@@ -640,9 +595,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListEncryptTaskRequest, ListEncryptTaskResponse> listEncryptTask =
-        genForlistEncryptTask();
+        genForListEncryptTask();
 
-    private static HttpRequestDef<ListEncryptTaskRequest, ListEncryptTaskResponse> genForlistEncryptTask() {
+    private static HttpRequestDef<ListEncryptTaskRequest, ListEncryptTaskResponse> genForListEncryptTask() {
         // basic
         HttpRequestDef.Builder<ListEncryptTaskRequest, ListEncryptTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEncryptTaskRequest.class, ListEncryptTaskResponse.class)
@@ -655,44 +610,32 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListEncryptTaskRequest::getTaskId, ListEncryptTaskRequest::setTaskId));
         builder.<ListEncryptTaskRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEncryptTaskRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListEncryptTaskRequest::getStatus, ListEncryptTaskRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListEncryptTaskRequest::getStartTime, ListEncryptTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListEncryptTaskRequest::getEndTime, ListEncryptTaskRequest::setEndTime));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListEncryptTaskRequest::getPage, ListEncryptTaskRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListEncryptTaskRequest::getSize, ListEncryptTaskRequest::setSize));
 
         // response
 
@@ -700,9 +643,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateExtractTaskRequest, CreateExtractTaskResponse> createExtractTask =
-        genForcreateExtractTask();
+        genForCreateExtractTask();
 
-    private static HttpRequestDef<CreateExtractTaskRequest, CreateExtractTaskResponse> genForcreateExtractTask() {
+    private static HttpRequestDef<CreateExtractTaskRequest, CreateExtractTaskResponse> genForCreateExtractTask() {
         // basic
         HttpRequestDef.Builder<CreateExtractTaskRequest, CreateExtractTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateExtractTaskRequest.class, CreateExtractTaskResponse.class)
@@ -715,9 +658,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateExtractTaskReq.class),
-            f -> f.withMarshaller(CreateExtractTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateExtractTaskRequest::getBody, CreateExtractTaskRequest::setBody));
 
         // response
 
@@ -725,9 +666,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteExtractTaskRequest, DeleteExtractTaskResponse> deleteExtractTask =
-        genFordeleteExtractTask();
+        genForDeleteExtractTask();
 
-    private static HttpRequestDef<DeleteExtractTaskRequest, DeleteExtractTaskResponse> genFordeleteExtractTask() {
+    private static HttpRequestDef<DeleteExtractTaskRequest, DeleteExtractTaskResponse> genForDeleteExtractTask() {
         // basic
         HttpRequestDef.Builder<DeleteExtractTaskRequest, DeleteExtractTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteExtractTaskRequest.class, DeleteExtractTaskResponse.class)
@@ -740,9 +681,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteExtractTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteExtractTaskRequest::getTaskId, DeleteExtractTaskRequest::setTaskId));
 
         // response
 
@@ -750,9 +689,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListExtractTaskRequest, ListExtractTaskResponse> listExtractTask =
-        genForlistExtractTask();
+        genForListExtractTask();
 
-    private static HttpRequestDef<ListExtractTaskRequest, ListExtractTaskResponse> genForlistExtractTask() {
+    private static HttpRequestDef<ListExtractTaskRequest, ListExtractTaskResponse> genForListExtractTask() {
         // basic
         HttpRequestDef.Builder<ListExtractTaskRequest, ListExtractTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListExtractTaskRequest.class, ListExtractTaskResponse.class)
@@ -765,51 +704,37 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListExtractTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListExtractTaskRequest::getTaskId, ListExtractTaskRequest::setTaskId));
         builder.<ListExtractTaskRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListExtractTaskRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListExtractTaskRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListExtractTaskRequest::getStatus, ListExtractTaskRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExtractTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListExtractTaskRequest::getStartTime, ListExtractTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExtractTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListExtractTaskRequest::getEndTime, ListExtractTaskRequest::setEndTime));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListExtractTaskRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListExtractTaskRequest::getPage, ListExtractTaskRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListExtractTaskRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListExtractTaskRequest::getSize, ListExtractTaskRequest::setSize));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExtractTaskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListExtractTaskRequest::getXLanguage, ListExtractTaskRequest::setXLanguage));
 
         // response
 
@@ -817,9 +742,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateMbTasksReportRequest, CreateMbTasksReportResponse> createMbTasksReport =
-        genForcreateMbTasksReport();
+        genForCreateMbTasksReport();
 
-    private static HttpRequestDef<CreateMbTasksReportRequest, CreateMbTasksReportResponse> genForcreateMbTasksReport() {
+    private static HttpRequestDef<CreateMbTasksReportRequest, CreateMbTasksReportResponse> genForCreateMbTasksReport() {
         // basic
         HttpRequestDef.Builder<CreateMbTasksReportRequest, CreateMbTasksReportResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateMbTasksReportRequest.class, CreateMbTasksReportResponse.class)
@@ -832,9 +757,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MbTasksReportReq.class),
-            f -> f.withMarshaller(CreateMbTasksReportRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMbTasksReportRequest::getBody, CreateMbTasksReportRequest::setBody));
 
         // response
 
@@ -842,9 +765,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse> createMergeChannelsTask =
-        genForcreateMergeChannelsTask();
+        genForCreateMergeChannelsTask();
 
-    private static HttpRequestDef<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse> genForcreateMergeChannelsTask() {
+    private static HttpRequestDef<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse> genForCreateMergeChannelsTask() {
         // basic
         HttpRequestDef.Builder<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateMergeChannelsTaskRequest.class, CreateMergeChannelsTaskResponse.class)
@@ -857,9 +780,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMergeChannelsReq.class),
-            f -> f.withMarshaller(CreateMergeChannelsTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMergeChannelsTaskRequest::getBody, CreateMergeChannelsTaskRequest::setBody));
 
         // response
 
@@ -867,9 +788,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse> createResetTracksTask =
-        genForcreateResetTracksTask();
+        genForCreateResetTracksTask();
 
-    private static HttpRequestDef<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse> genForcreateResetTracksTask() {
+    private static HttpRequestDef<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse> genForCreateResetTracksTask() {
         // basic
         HttpRequestDef.Builder<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateResetTracksTaskRequest.class, CreateResetTracksTaskResponse.class)
@@ -882,9 +803,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResetTracksReq.class),
-            f -> f.withMarshaller(CreateResetTracksTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResetTracksTaskRequest::getBody, CreateResetTracksTaskRequest::setBody));
 
         // response
 
@@ -892,9 +811,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse> deleteMergeChannelsTask =
-        genFordeleteMergeChannelsTask();
+        genForDeleteMergeChannelsTask();
 
-    private static HttpRequestDef<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse> genFordeleteMergeChannelsTask() {
+    private static HttpRequestDef<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse> genForDeleteMergeChannelsTask() {
         // basic
         HttpRequestDef.Builder<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteMergeChannelsTaskRequest.class, DeleteMergeChannelsTaskResponse.class)
@@ -907,9 +826,8 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMergeChannelsTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteMergeChannelsTaskRequest::getTaskId,
+                DeleteMergeChannelsTaskRequest::setTaskId));
 
         // response
 
@@ -917,9 +835,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse> deleteResetTracksTask =
-        genFordeleteResetTracksTask();
+        genForDeleteResetTracksTask();
 
-    private static HttpRequestDef<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse> genFordeleteResetTracksTask() {
+    private static HttpRequestDef<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse> genForDeleteResetTracksTask() {
         // basic
         HttpRequestDef.Builder<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteResetTracksTaskRequest.class, DeleteResetTracksTaskResponse.class)
@@ -932,9 +850,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResetTracksTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteResetTracksTaskRequest::getTaskId, DeleteResetTracksTaskRequest::setTaskId));
 
         // response
 
@@ -942,9 +858,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse> listMergeChannelsTask =
-        genForlistMergeChannelsTask();
+        genForListMergeChannelsTask();
 
-    private static HttpRequestDef<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse> genForlistMergeChannelsTask() {
+    private static HttpRequestDef<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse> genForListMergeChannelsTask() {
         // basic
         HttpRequestDef.Builder<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMergeChannelsTaskRequest.class, ListMergeChannelsTaskResponse.class)
@@ -957,44 +873,33 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getTaskId, ListMergeChannelsTaskRequest::setTaskId));
         builder.<ListMergeChannelsTaskRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListMergeChannelsTaskRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getStatus, ListMergeChannelsTaskRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getStartTime,
+                ListMergeChannelsTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getEndTime, ListMergeChannelsTaskRequest::setEndTime));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getPage, ListMergeChannelsTaskRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getSize, ListMergeChannelsTaskRequest::setSize));
 
         // response
 
@@ -1002,9 +907,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListResetTracksTaskRequest, ListResetTracksTaskResponse> listResetTracksTask =
-        genForlistResetTracksTask();
+        genForListResetTracksTask();
 
-    private static HttpRequestDef<ListResetTracksTaskRequest, ListResetTracksTaskResponse> genForlistResetTracksTask() {
+    private static HttpRequestDef<ListResetTracksTaskRequest, ListResetTracksTaskResponse> genForListResetTracksTask() {
         // basic
         HttpRequestDef.Builder<ListResetTracksTaskRequest, ListResetTracksTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResetTracksTaskRequest.class, ListResetTracksTaskResponse.class)
@@ -1017,44 +922,32 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListResetTracksTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getTaskId, ListResetTracksTaskRequest::setTaskId));
         builder.<ListResetTracksTaskRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListResetTracksTaskRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListResetTracksTaskRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getStatus, ListResetTracksTaskRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResetTracksTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getStartTime, ListResetTracksTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResetTracksTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getEndTime, ListResetTracksTaskRequest::setEndTime));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResetTracksTaskRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getPage, ListResetTracksTaskRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResetTracksTaskRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getSize, ListResetTracksTaskRequest::setSize));
 
         // response
 
@@ -1062,9 +955,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse> createMediaProcessTask =
-        genForcreateMediaProcessTask();
+        genForCreateMediaProcessTask();
 
-    private static HttpRequestDef<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse> genForcreateMediaProcessTask() {
+    private static HttpRequestDef<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse> genForCreateMediaProcessTask() {
         // basic
         HttpRequestDef.Builder<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateMediaProcessTaskRequest.class, CreateMediaProcessTaskResponse.class)
@@ -1077,9 +970,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMediaProcessReq.class),
-            f -> f.withMarshaller(CreateMediaProcessTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMediaProcessTaskRequest::getBody, CreateMediaProcessTaskRequest::setBody));
 
         // response
 
@@ -1087,9 +978,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse> deleteMediaProcessTask =
-        genFordeleteMediaProcessTask();
+        genForDeleteMediaProcessTask();
 
-    private static HttpRequestDef<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse> genFordeleteMediaProcessTask() {
+    private static HttpRequestDef<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse> genForDeleteMediaProcessTask() {
         // basic
         HttpRequestDef.Builder<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteMediaProcessTaskRequest.class, DeleteMediaProcessTaskResponse.class)
@@ -1102,9 +993,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMediaProcessTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteMediaProcessTaskRequest::getTaskId, DeleteMediaProcessTaskRequest::setTaskId));
 
         // response
 
@@ -1112,9 +1001,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse> listMediaProcessTask =
-        genForlistMediaProcessTask();
+        genForListMediaProcessTask();
 
-    private static HttpRequestDef<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse> genForlistMediaProcessTask() {
+    private static HttpRequestDef<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse> genForListMediaProcessTask() {
         // basic
         HttpRequestDef.Builder<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMediaProcessTaskRequest.class, ListMediaProcessTaskResponse.class)
@@ -1127,44 +1016,33 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListMediaProcessTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getTaskId, ListMediaProcessTaskRequest::setTaskId));
         builder.<ListMediaProcessTaskRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListMediaProcessTaskRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListMediaProcessTaskRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getStatus, ListMediaProcessTaskRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMediaProcessTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getStartTime,
+                ListMediaProcessTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMediaProcessTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getEndTime, ListMediaProcessTaskRequest::setEndTime));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMediaProcessTaskRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getPage, ListMediaProcessTaskRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMediaProcessTaskRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getSize, ListMediaProcessTaskRequest::setSize));
 
         // response
 
@@ -1172,9 +1050,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateMpeCallBackRequest, CreateMpeCallBackResponse> createMpeCallBack =
-        genForcreateMpeCallBack();
+        genForCreateMpeCallBack();
 
-    private static HttpRequestDef<CreateMpeCallBackRequest, CreateMpeCallBackResponse> genForcreateMpeCallBack() {
+    private static HttpRequestDef<CreateMpeCallBackRequest, CreateMpeCallBackResponse> genForCreateMpeCallBack() {
         // basic
         HttpRequestDef.Builder<CreateMpeCallBackRequest, CreateMpeCallBackResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMpeCallBackRequest.class, CreateMpeCallBackResponse.class)
@@ -1187,9 +1065,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MpeCallBackReq.class),
-            f -> f.withMarshaller(CreateMpeCallBackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMpeCallBackRequest::getBody, CreateMpeCallBackRequest::setBody));
 
         // response
 
@@ -1197,9 +1073,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse> createQualityEnhanceTemplate =
-        genForcreateQualityEnhanceTemplate();
+        genForCreateQualityEnhanceTemplate();
 
-    private static HttpRequestDef<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse> genForcreateQualityEnhanceTemplate() {
+    private static HttpRequestDef<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse> genForCreateQualityEnhanceTemplate() {
         // basic
         HttpRequestDef.Builder<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse> builder =
             HttpRequestDef
@@ -1215,9 +1091,8 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(QualityEnhanceTemplate.class),
-            f -> f.withMarshaller(CreateQualityEnhanceTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateQualityEnhanceTemplateRequest::getBody,
+                CreateQualityEnhanceTemplateRequest::setBody));
 
         // response
 
@@ -1225,9 +1100,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse> deleteQualityEnhanceTemplate =
-        genFordeleteQualityEnhanceTemplate();
+        genForDeleteQualityEnhanceTemplate();
 
-    private static HttpRequestDef<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse> genFordeleteQualityEnhanceTemplate() {
+    private static HttpRequestDef<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse> genForDeleteQualityEnhanceTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse> builder =
             HttpRequestDef
@@ -1243,9 +1118,8 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteQualityEnhanceTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeleteQualityEnhanceTemplateRequest::getTemplateId,
+                DeleteQualityEnhanceTemplateRequest::setTemplateId));
 
         // response
 
@@ -1253,9 +1127,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse> listQualityEnhanceDefaultTemplate =
-        genForlistQualityEnhanceDefaultTemplate();
+        genForListQualityEnhanceDefaultTemplate();
 
-    private static HttpRequestDef<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse> genForlistQualityEnhanceDefaultTemplate() {
+    private static HttpRequestDef<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse> genForListQualityEnhanceDefaultTemplate() {
         // basic
         HttpRequestDef.Builder<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse> builder =
             HttpRequestDef
@@ -1274,9 +1148,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse> updateQualityEnhanceTemplate =
-        genForupdateQualityEnhanceTemplate();
+        genForUpdateQualityEnhanceTemplate();
 
-    private static HttpRequestDef<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse> genForupdateQualityEnhanceTemplate() {
+    private static HttpRequestDef<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse> genForUpdateQualityEnhanceTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse> builder =
             HttpRequestDef
@@ -1292,9 +1166,8 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateQualityEnhanceTemplateReq.class),
-            f -> f.withMarshaller(UpdateQualityEnhanceTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateQualityEnhanceTemplateRequest::getBody,
+                UpdateQualityEnhanceTemplateRequest::setBody));
 
         // response
 
@@ -1302,9 +1175,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListTranscodeDetailRequest, ListTranscodeDetailResponse> listTranscodeDetail =
-        genForlistTranscodeDetail();
+        genForListTranscodeDetail();
 
-    private static HttpRequestDef<ListTranscodeDetailRequest, ListTranscodeDetailResponse> genForlistTranscodeDetail() {
+    private static HttpRequestDef<ListTranscodeDetailRequest, ListTranscodeDetailResponse> genForListTranscodeDetail() {
         // basic
         HttpRequestDef.Builder<ListTranscodeDetailRequest, ListTranscodeDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTranscodeDetailRequest.class, ListTranscodeDetailResponse.class)
@@ -1317,9 +1190,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTranscodeDetailRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeDetailRequest::getTaskId, ListTranscodeDetailRequest::setTaskId));
 
         // response
 
@@ -1327,9 +1198,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CancelRemuxTaskRequest, CancelRemuxTaskResponse> cancelRemuxTask =
-        genForcancelRemuxTask();
+        genForCancelRemuxTask();
 
-    private static HttpRequestDef<CancelRemuxTaskRequest, CancelRemuxTaskResponse> genForcancelRemuxTask() {
+    private static HttpRequestDef<CancelRemuxTaskRequest, CancelRemuxTaskResponse> genForCancelRemuxTask() {
         // basic
         HttpRequestDef.Builder<CancelRemuxTaskRequest, CancelRemuxTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelRemuxTaskRequest.class, CancelRemuxTaskResponse.class)
@@ -1342,9 +1213,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelRemuxTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(CancelRemuxTaskRequest::getTaskId, CancelRemuxTaskRequest::setTaskId));
 
         // response
 
@@ -1352,9 +1221,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateRemuxTaskRequest, CreateRemuxTaskResponse> createRemuxTask =
-        genForcreateRemuxTask();
+        genForCreateRemuxTask();
 
-    private static HttpRequestDef<CreateRemuxTaskRequest, CreateRemuxTaskResponse> genForcreateRemuxTask() {
+    private static HttpRequestDef<CreateRemuxTaskRequest, CreateRemuxTaskResponse> genForCreateRemuxTask() {
         // basic
         HttpRequestDef.Builder<CreateRemuxTaskRequest, CreateRemuxTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRemuxTaskRequest.class, CreateRemuxTaskResponse.class)
@@ -1367,9 +1236,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRemuxTaskReq.class),
-            f -> f.withMarshaller(CreateRemuxTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRemuxTaskRequest::getBody, CreateRemuxTaskRequest::setBody));
 
         // response
 
@@ -1377,9 +1244,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateRetryRemuxTaskRequest, CreateRetryRemuxTaskResponse> createRetryRemuxTask =
-        genForcreateRetryRemuxTask();
+        genForCreateRetryRemuxTask();
 
-    private static HttpRequestDef<CreateRetryRemuxTaskRequest, CreateRetryRemuxTaskResponse> genForcreateRetryRemuxTask() {
+    private static HttpRequestDef<CreateRetryRemuxTaskRequest, CreateRetryRemuxTaskResponse> genForCreateRetryRemuxTask() {
         // basic
         HttpRequestDef.Builder<CreateRetryRemuxTaskRequest, CreateRetryRemuxTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, CreateRetryRemuxTaskRequest.class, CreateRetryRemuxTaskResponse.class)
@@ -1392,9 +1259,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemuxRetryReq.class),
-            f -> f.withMarshaller(CreateRetryRemuxTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRetryRemuxTaskRequest::getBody, CreateRetryRemuxTaskRequest::setBody));
 
         // response
 
@@ -1402,9 +1267,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteRemuxTaskRequest, DeleteRemuxTaskResponse> deleteRemuxTask =
-        genFordeleteRemuxTask();
+        genForDeleteRemuxTask();
 
-    private static HttpRequestDef<DeleteRemuxTaskRequest, DeleteRemuxTaskResponse> genFordeleteRemuxTask() {
+    private static HttpRequestDef<DeleteRemuxTaskRequest, DeleteRemuxTaskResponse> genForDeleteRemuxTask() {
         // basic
         HttpRequestDef.Builder<DeleteRemuxTaskRequest, DeleteRemuxTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRemuxTaskRequest.class, DeleteRemuxTaskResponse.class)
@@ -1417,9 +1282,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRemuxTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteRemuxTaskRequest::getTaskId, DeleteRemuxTaskRequest::setTaskId));
 
         // response
 
@@ -1427,9 +1290,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListRemuxTaskRequest, ListRemuxTaskResponse> listRemuxTask =
-        genForlistRemuxTask();
+        genForListRemuxTask();
 
-    private static HttpRequestDef<ListRemuxTaskRequest, ListRemuxTaskResponse> genForlistRemuxTask() {
+    private static HttpRequestDef<ListRemuxTaskRequest, ListRemuxTaskResponse> genForListRemuxTask() {
         // basic
         HttpRequestDef.Builder<ListRemuxTaskRequest, ListRemuxTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRemuxTaskRequest.class, ListRemuxTaskResponse.class)
@@ -1442,58 +1305,42 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRemuxTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListRemuxTaskRequest::getTaskId, ListRemuxTaskRequest::setTaskId));
         builder.<ListRemuxTaskRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRemuxTaskRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListRemuxTaskRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListRemuxTaskRequest::getStatus, ListRemuxTaskRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRemuxTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRemuxTaskRequest::getStartTime, ListRemuxTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRemuxTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRemuxTaskRequest::getEndTime, ListRemuxTaskRequest::setEndTime));
         builder.<String>withRequestField("input_bucket",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRemuxTaskRequest::getInputBucket, (req, v) -> {
-                req.setInputBucket(v);
-            }));
+            f -> f.withMarshaller(ListRemuxTaskRequest::getInputBucket, ListRemuxTaskRequest::setInputBucket));
         builder.<String>withRequestField("input_object",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRemuxTaskRequest::getInputObject, (req, v) -> {
-                req.setInputObject(v);
-            }));
+            f -> f.withMarshaller(ListRemuxTaskRequest::getInputObject, ListRemuxTaskRequest::setInputObject));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRemuxTaskRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListRemuxTaskRequest::getPage, ListRemuxTaskRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRemuxTaskRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListRemuxTaskRequest::getSize, ListRemuxTaskRequest::setSize));
 
         // response
 
@@ -1501,9 +1348,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateTemplateGroupRequest, CreateTemplateGroupResponse> createTemplateGroup =
-        genForcreateTemplateGroup();
+        genForCreateTemplateGroup();
 
-    private static HttpRequestDef<CreateTemplateGroupRequest, CreateTemplateGroupResponse> genForcreateTemplateGroup() {
+    private static HttpRequestDef<CreateTemplateGroupRequest, CreateTemplateGroupResponse> genForCreateTemplateGroup() {
         // basic
         HttpRequestDef.Builder<CreateTemplateGroupRequest, CreateTemplateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTemplateGroupRequest.class, CreateTemplateGroupResponse.class)
@@ -1516,9 +1363,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TransTemplateGroup.class),
-            f -> f.withMarshaller(CreateTemplateGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTemplateGroupRequest::getBody, CreateTemplateGroupRequest::setBody));
 
         // response
 
@@ -1526,9 +1371,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> deleteTemplateGroup =
-        genFordeleteTemplateGroup();
+        genForDeleteTemplateGroup();
 
-    private static HttpRequestDef<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> genFordeleteTemplateGroup() {
+    private static HttpRequestDef<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> genForDeleteTemplateGroup() {
         // basic
         HttpRequestDef.Builder<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteTemplateGroupRequest.class, DeleteTemplateGroupResponse.class)
@@ -1541,9 +1386,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateGroupRequest::getGroupId, DeleteTemplateGroupRequest::setGroupId));
 
         // response
 
@@ -1551,9 +1394,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListTemplateGroupRequest, ListTemplateGroupResponse> listTemplateGroup =
-        genForlistTemplateGroup();
+        genForListTemplateGroup();
 
-    private static HttpRequestDef<ListTemplateGroupRequest, ListTemplateGroupResponse> genForlistTemplateGroup() {
+    private static HttpRequestDef<ListTemplateGroupRequest, ListTemplateGroupResponse> genForListTemplateGroup() {
         // basic
         HttpRequestDef.Builder<ListTemplateGroupRequest, ListTemplateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplateGroupRequest.class, ListTemplateGroupResponse.class)
@@ -1566,30 +1409,22 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTemplateGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupRequest::getGroupId, ListTemplateGroupRequest::setGroupId));
         builder.<List<String>>withRequestField("group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTemplateGroupRequest::getGroupName, (req, v) -> {
-                req.setGroupName(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupRequest::getGroupName, ListTemplateGroupRequest::setGroupName));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplateGroupRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupRequest::getPage, ListTemplateGroupRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplateGroupRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupRequest::getSize, ListTemplateGroupRequest::setSize));
 
         // response
 
@@ -1597,9 +1432,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> updateTemplateGroup =
-        genForupdateTemplateGroup();
+        genForUpdateTemplateGroup();
 
-    private static HttpRequestDef<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> genForupdateTemplateGroup() {
+    private static HttpRequestDef<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> genForUpdateTemplateGroup() {
         // basic
         HttpRequestDef.Builder<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTemplateGroupRequest.class, UpdateTemplateGroupResponse.class)
@@ -1612,9 +1447,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyTransTemplateGroup.class),
-            f -> f.withMarshaller(UpdateTemplateGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateGroupRequest::getBody, UpdateTemplateGroupRequest::setBody));
 
         // response
 
@@ -1622,9 +1455,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse> showTenantAccessInfo =
-        genForshowTenantAccessInfo();
+        genForShowTenantAccessInfo();
 
-    private static HttpRequestDef<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse> genForshowTenantAccessInfo() {
+    private static HttpRequestDef<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse> genForShowTenantAccessInfo() {
         // basic
         HttpRequestDef.Builder<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowTenantAccessInfoRequest.class, ShowTenantAccessInfoResponse.class)
@@ -1637,9 +1470,8 @@ public class MpcMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTenantAccessInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowTenantAccessInfoRequest::getXLanguage,
+                ShowTenantAccessInfoRequest::setXLanguage));
 
         // response
 
@@ -1647,9 +1479,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse> updateTenantAccessInfo =
-        genForupdateTenantAccessInfo();
+        genForUpdateTenantAccessInfo();
 
-    private static HttpRequestDef<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse> genForupdateTenantAccessInfo() {
+    private static HttpRequestDef<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse> genForUpdateTenantAccessInfo() {
         // basic
         HttpRequestDef.Builder<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateTenantAccessInfoRequest.class, UpdateTenantAccessInfoResponse.class)
@@ -1662,16 +1494,13 @@ public class MpcMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTenantAccessInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateTenantAccessInfoRequest::getXLanguage,
+                UpdateTenantAccessInfoRequest::setXLanguage));
         builder.<UpdateTenantAccessInfoReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateTenantAccessInfoReq.class),
-            f -> f.withMarshaller(UpdateTenantAccessInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTenantAccessInfoRequest::getBody, UpdateTenantAccessInfoRequest::setBody));
 
         // response
 
@@ -1679,9 +1508,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateThumbnailsTaskRequest, CreateThumbnailsTaskResponse> createThumbnailsTask =
-        genForcreateThumbnailsTask();
+        genForCreateThumbnailsTask();
 
-    private static HttpRequestDef<CreateThumbnailsTaskRequest, CreateThumbnailsTaskResponse> genForcreateThumbnailsTask() {
+    private static HttpRequestDef<CreateThumbnailsTaskRequest, CreateThumbnailsTaskResponse> genForCreateThumbnailsTask() {
         // basic
         HttpRequestDef.Builder<CreateThumbnailsTaskRequest, CreateThumbnailsTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateThumbnailsTaskRequest.class, CreateThumbnailsTaskResponse.class)
@@ -1694,9 +1523,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateThumbReq.class),
-            f -> f.withMarshaller(CreateThumbnailsTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateThumbnailsTaskRequest::getBody, CreateThumbnailsTaskRequest::setBody));
 
         // response
 
@@ -1704,9 +1531,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteThumbnailsTaskRequest, DeleteThumbnailsTaskResponse> deleteThumbnailsTask =
-        genFordeleteThumbnailsTask();
+        genForDeleteThumbnailsTask();
 
-    private static HttpRequestDef<DeleteThumbnailsTaskRequest, DeleteThumbnailsTaskResponse> genFordeleteThumbnailsTask() {
+    private static HttpRequestDef<DeleteThumbnailsTaskRequest, DeleteThumbnailsTaskResponse> genForDeleteThumbnailsTask() {
         // basic
         HttpRequestDef.Builder<DeleteThumbnailsTaskRequest, DeleteThumbnailsTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteThumbnailsTaskRequest.class, DeleteThumbnailsTaskResponse.class)
@@ -1719,9 +1546,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteThumbnailsTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteThumbnailsTaskRequest::getTaskId, DeleteThumbnailsTaskRequest::setTaskId));
 
         // response
 
@@ -1729,9 +1554,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListThumbnailsTaskRequest, ListThumbnailsTaskResponse> listThumbnailsTask =
-        genForlistThumbnailsTask();
+        genForListThumbnailsTask();
 
-    private static HttpRequestDef<ListThumbnailsTaskRequest, ListThumbnailsTaskResponse> genForlistThumbnailsTask() {
+    private static HttpRequestDef<ListThumbnailsTaskRequest, ListThumbnailsTaskResponse> genForListThumbnailsTask() {
         // basic
         HttpRequestDef.Builder<ListThumbnailsTaskRequest, ListThumbnailsTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListThumbnailsTaskRequest.class, ListThumbnailsTaskResponse.class)
@@ -1744,51 +1569,37 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListThumbnailsTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListThumbnailsTaskRequest::getTaskId, ListThumbnailsTaskRequest::setTaskId));
         builder.<ListThumbnailsTaskRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListThumbnailsTaskRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListThumbnailsTaskRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListThumbnailsTaskRequest::getStatus, ListThumbnailsTaskRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListThumbnailsTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListThumbnailsTaskRequest::getStartTime, ListThumbnailsTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListThumbnailsTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListThumbnailsTaskRequest::getEndTime, ListThumbnailsTaskRequest::setEndTime));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListThumbnailsTaskRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListThumbnailsTaskRequest::getPage, ListThumbnailsTaskRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListThumbnailsTaskRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListThumbnailsTaskRequest::getSize, ListThumbnailsTaskRequest::setSize));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListThumbnailsTaskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListThumbnailsTaskRequest::getXLanguage, ListThumbnailsTaskRequest::setXLanguage));
 
         // response
 
@@ -1796,9 +1607,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateTranscodingTaskRequest, CreateTranscodingTaskResponse> createTranscodingTask =
-        genForcreateTranscodingTask();
+        genForCreateTranscodingTask();
 
-    private static HttpRequestDef<CreateTranscodingTaskRequest, CreateTranscodingTaskResponse> genForcreateTranscodingTask() {
+    private static HttpRequestDef<CreateTranscodingTaskRequest, CreateTranscodingTaskResponse> genForCreateTranscodingTask() {
         // basic
         HttpRequestDef.Builder<CreateTranscodingTaskRequest, CreateTranscodingTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateTranscodingTaskRequest.class, CreateTranscodingTaskResponse.class)
@@ -1811,9 +1622,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateTranscodingReq.class),
-            f -> f.withMarshaller(CreateTranscodingTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTranscodingTaskRequest::getBody, CreateTranscodingTaskRequest::setBody));
 
         // response
 
@@ -1821,9 +1630,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteTranscodingTaskRequest, DeleteTranscodingTaskResponse> deleteTranscodingTask =
-        genFordeleteTranscodingTask();
+        genForDeleteTranscodingTask();
 
-    private static HttpRequestDef<DeleteTranscodingTaskRequest, DeleteTranscodingTaskResponse> genFordeleteTranscodingTask() {
+    private static HttpRequestDef<DeleteTranscodingTaskRequest, DeleteTranscodingTaskResponse> genForDeleteTranscodingTask() {
         // basic
         HttpRequestDef.Builder<DeleteTranscodingTaskRequest, DeleteTranscodingTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteTranscodingTaskRequest.class, DeleteTranscodingTaskResponse.class)
@@ -1836,9 +1645,7 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteTranscodingTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteTranscodingTaskRequest::getTaskId, DeleteTranscodingTaskRequest::setTaskId));
 
         // response
 
@@ -1846,9 +1653,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse> deleteTranscodingTaskByConsole =
-        genFordeleteTranscodingTaskByConsole();
+        genForDeleteTranscodingTaskByConsole();
 
-    private static HttpRequestDef<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse> genFordeleteTranscodingTaskByConsole() {
+    private static HttpRequestDef<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse> genForDeleteTranscodingTaskByConsole() {
         // basic
         HttpRequestDef.Builder<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse> builder =
             HttpRequestDef
@@ -1864,9 +1671,8 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteTranscodingTaskByConsoleRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteTranscodingTaskByConsoleRequest::getTaskId,
+                DeleteTranscodingTaskByConsoleRequest::setTaskId));
 
         // response
 
@@ -1874,9 +1680,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListStatSummaryRequest, ListStatSummaryResponse> listStatSummary =
-        genForlistStatSummary();
+        genForListStatSummary();
 
-    private static HttpRequestDef<ListStatSummaryRequest, ListStatSummaryResponse> genForlistStatSummary() {
+    private static HttpRequestDef<ListStatSummaryRequest, ListStatSummaryResponse> genForListStatSummary() {
         // basic
         HttpRequestDef.Builder<ListStatSummaryRequest, ListStatSummaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStatSummaryRequest.class, ListStatSummaryResponse.class)
@@ -1889,23 +1695,17 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStatSummaryRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListStatSummaryRequest::getStartTime, ListStatSummaryRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStatSummaryRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListStatSummaryRequest::getEndTime, ListStatSummaryRequest::setEndTime));
         builder.<String>withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStatSummaryRequest::getStatType, (req, v) -> {
-                req.setStatType(v);
-            }));
+            f -> f.withMarshaller(ListStatSummaryRequest::getStatType, ListStatSummaryRequest::setStatType));
 
         // response
 
@@ -1913,9 +1713,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListTranscodingTaskRequest, ListTranscodingTaskResponse> listTranscodingTask =
-        genForlistTranscodingTask();
+        genForListTranscodingTask();
 
-    private static HttpRequestDef<ListTranscodingTaskRequest, ListTranscodingTaskResponse> genForlistTranscodingTask() {
+    private static HttpRequestDef<ListTranscodingTaskRequest, ListTranscodingTaskResponse> genForListTranscodingTask() {
         // basic
         HttpRequestDef.Builder<ListTranscodingTaskRequest, ListTranscodingTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTranscodingTaskRequest.class, ListTranscodingTaskResponse.class)
@@ -1928,51 +1728,37 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTranscodingTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListTranscodingTaskRequest::getTaskId, ListTranscodingTaskRequest::setTaskId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodingTaskRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListTranscodingTaskRequest::getStatus, ListTranscodingTaskRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodingTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListTranscodingTaskRequest::getStartTime, ListTranscodingTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodingTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListTranscodingTaskRequest::getEndTime, ListTranscodingTaskRequest::setEndTime));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTranscodingTaskRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListTranscodingTaskRequest::getPage, ListTranscodingTaskRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTranscodingTaskRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListTranscodingTaskRequest::getSize, ListTranscodingTaskRequest::setSize));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodingTaskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListTranscodingTaskRequest::getXLanguage, ListTranscodingTaskRequest::setXLanguage));
 
         // response
 
@@ -1980,9 +1766,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateTransTemplateRequest, CreateTransTemplateResponse> createTransTemplate =
-        genForcreateTransTemplate();
+        genForCreateTransTemplate();
 
-    private static HttpRequestDef<CreateTransTemplateRequest, CreateTransTemplateResponse> genForcreateTransTemplate() {
+    private static HttpRequestDef<CreateTransTemplateRequest, CreateTransTemplateResponse> genForCreateTransTemplate() {
         // basic
         HttpRequestDef.Builder<CreateTransTemplateRequest, CreateTransTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTransTemplateRequest.class, CreateTransTemplateResponse.class)
@@ -1995,9 +1781,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(TransTemplate.class),
-            f -> f.withMarshaller(CreateTransTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTransTemplateRequest::getBody, CreateTransTemplateRequest::setBody));
 
         // response
 
@@ -2005,9 +1789,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate =
-        genFordeleteTemplate();
+        genForDeleteTemplate();
 
-    private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genFordeleteTemplate() {
+    private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genForDeleteTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteTemplateRequest, DeleteTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateRequest.class, DeleteTemplateResponse.class)
@@ -2020,18 +1804,16 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateId, DeleteTemplateRequest::setTemplateId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTemplateRequest, ListTemplateResponse> listTemplate = genForlistTemplate();
+    public static final HttpRequestDef<ListTemplateRequest, ListTemplateResponse> listTemplate = genForListTemplate();
 
-    private static HttpRequestDef<ListTemplateRequest, ListTemplateResponse> genForlistTemplate() {
+    private static HttpRequestDef<ListTemplateRequest, ListTemplateResponse> genForListTemplate() {
         // basic
         HttpRequestDef.Builder<ListTemplateRequest, ListTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplateRequest.class, ListTemplateResponse.class)
@@ -2044,23 +1826,17 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ListTemplateRequest::getTemplateId, ListTemplateRequest::setTemplateId));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplateRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListTemplateRequest::getPage, ListTemplateRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplateRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListTemplateRequest::getSize, ListTemplateRequest::setSize));
 
         // response
 
@@ -2068,9 +1844,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<UpdateTransTemplateRequest, UpdateTransTemplateResponse> updateTransTemplate =
-        genForupdateTransTemplate();
+        genForUpdateTransTemplate();
 
-    private static HttpRequestDef<UpdateTransTemplateRequest, UpdateTransTemplateResponse> genForupdateTransTemplate() {
+    private static HttpRequestDef<UpdateTransTemplateRequest, UpdateTransTemplateResponse> genForUpdateTransTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateTransTemplateRequest, UpdateTransTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTransTemplateRequest.class, UpdateTransTemplateResponse.class)
@@ -2083,9 +1859,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ModifyTransTemplateReq.class),
-            f -> f.withMarshaller(UpdateTransTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTransTemplateRequest::getBody, UpdateTransTemplateRequest::setBody));
 
         // response
 
@@ -2093,9 +1867,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> createWatermarkTemplate =
-        genForcreateWatermarkTemplate();
+        genForCreateWatermarkTemplate();
 
-    private static HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> genForcreateWatermarkTemplate() {
+    private static HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> genForCreateWatermarkTemplate() {
         // basic
         HttpRequestDef.Builder<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateWatermarkTemplateRequest.class, CreateWatermarkTemplateResponse.class)
@@ -2108,9 +1882,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(WatermarkTemplate.class),
-            f -> f.withMarshaller(CreateWatermarkTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateWatermarkTemplateRequest::getBody, CreateWatermarkTemplateRequest::setBody));
 
         // response
 
@@ -2118,9 +1890,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> deleteWatermarkTemplate =
-        genFordeleteWatermarkTemplate();
+        genForDeleteWatermarkTemplate();
 
-    private static HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> genFordeleteWatermarkTemplate() {
+    private static HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> genForDeleteWatermarkTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteWatermarkTemplateRequest.class, DeleteWatermarkTemplateResponse.class)
@@ -2133,9 +1905,8 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getTemplateId,
+                DeleteWatermarkTemplateRequest::setTemplateId));
 
         // response
 
@@ -2143,9 +1914,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> listWatermarkTemplate =
-        genForlistWatermarkTemplate();
+        genForListWatermarkTemplate();
 
-    private static HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> genForlistWatermarkTemplate() {
+    private static HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> genForListWatermarkTemplate() {
         // basic
         HttpRequestDef.Builder<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListWatermarkTemplateRequest.class, ListWatermarkTemplateResponse.class)
@@ -2158,23 +1929,18 @@ public class MpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListWatermarkTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getTemplateId,
+                ListWatermarkTemplateRequest::setTemplateId));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWatermarkTemplateRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getPage, ListWatermarkTemplateRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWatermarkTemplateRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getSize, ListWatermarkTemplateRequest::setSize));
 
         // response
 
@@ -2182,9 +1948,9 @@ public class MpcMeta {
     }
 
     public static final HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> updateWatermarkTemplate =
-        genForupdateWatermarkTemplate();
+        genForUpdateWatermarkTemplate();
 
-    private static HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> genForupdateWatermarkTemplate() {
+    private static HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> genForUpdateWatermarkTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateWatermarkTemplateRequest.class, UpdateWatermarkTemplateResponse.class)
@@ -2197,9 +1963,7 @@ public class MpcMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(WatermarkTemplate.class),
-            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getBody, UpdateWatermarkTemplateRequest::setBody));
 
         // response
 

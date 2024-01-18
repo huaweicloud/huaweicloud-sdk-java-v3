@@ -144,11 +144,11 @@ public class WorkspaceAppClient {
     /**
      * 查询已发布应用
      *
-     * 查询已发布的应用
+     * 查询已发布的应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublishedAppRequest 请求对象
+     * @param request ListPublishedAppRequest 请求对象
      * @return ListPublishedAppResponse
      */
     public ListPublishedAppResponse listPublishedApp(ListPublishedAppRequest request) {
@@ -158,27 +158,26 @@ public class WorkspaceAppClient {
     /**
      * 查询已发布应用
      *
-     * 查询已发布的应用
+     * 查询已发布的应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublishedAppRequest 请求对象
+     * @param request ListPublishedAppRequest 请求对象
      * @return SyncInvoker<ListPublishedAppRequest, ListPublishedAppResponse>
      */
     public SyncInvoker<ListPublishedAppRequest, ListPublishedAppResponse> listPublishedAppInvoker(
         ListPublishedAppRequest request) {
-        return new SyncInvoker<ListPublishedAppRequest, ListPublishedAppResponse>(request,
-            WorkspaceAppMeta.listPublishedApp, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listPublishedApp, hcClient);
     }
 
     /**
      * 发布应用
      *
-     * 批量发布应用,不允许发布同名的应用。
+     * 批量发布应用，不允许发布同名的应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAppRequest 请求对象
+     * @param request PublishAppRequest 请求对象
      * @return PublishAppResponse
      */
     public PublishAppResponse publishApp(PublishAppRequest request) {
@@ -188,25 +187,25 @@ public class WorkspaceAppClient {
     /**
      * 发布应用
      *
-     * 批量发布应用,不允许发布同名的应用。
+     * 批量发布应用，不允许发布同名的应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAppRequest 请求对象
+     * @param request PublishAppRequest 请求对象
      * @return SyncInvoker<PublishAppRequest, PublishAppResponse>
      */
     public SyncInvoker<PublishAppRequest, PublishAppResponse> publishAppInvoker(PublishAppRequest request) {
-        return new SyncInvoker<PublishAppRequest, PublishAppResponse>(request, WorkspaceAppMeta.publishApp, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.publishApp, hcClient);
     }
 
     /**
      * 可发布应用列表
      *
-     * 查询应用组下可发布的应用
+     * 查询应用组下可发布的应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublishableAppRequest 请求对象
+     * @param request ShowPublishableAppRequest 请求对象
      * @return ShowPublishableAppResponse
      */
     public ShowPublishableAppResponse showPublishableApp(ShowPublishableAppRequest request) {
@@ -216,28 +215,27 @@ public class WorkspaceAppClient {
     /**
      * 可发布应用列表
      *
-     * 查询应用组下可发布的应用
+     * 查询应用组下可发布的应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublishableAppRequest 请求对象
+     * @param request ShowPublishableAppRequest 请求对象
      * @return SyncInvoker<ShowPublishableAppRequest, ShowPublishableAppResponse>
      */
     public SyncInvoker<ShowPublishableAppRequest, ShowPublishableAppResponse> showPublishableAppInvoker(
         ShowPublishableAppRequest request) {
-        return new SyncInvoker<ShowPublishableAppRequest, ShowPublishableAppResponse>(request,
-            WorkspaceAppMeta.showPublishableApp, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.showPublishableApp, hcClient);
     }
 
     /**
      * 批量取消应用发布
      *
      * 批量取消应用发布。
-     * &gt; - 批量取消应用组下已经发布的应用，应用对应的授权会一起删除，重复执行会按照成功处理(响应200)
+     * &gt; - 批量取消应用组下已经发布的应用，应用对应的授权会一起删除，重复执行会按照成功处理(响应200)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnpublishAppRequest 请求对象
+     * @param request UnpublishAppRequest 请求对象
      * @return UnpublishAppResponse
      */
     public UnpublishAppResponse unpublishApp(UnpublishAppRequest request) {
@@ -248,26 +246,25 @@ public class WorkspaceAppClient {
      * 批量取消应用发布
      *
      * 批量取消应用发布。
-     * &gt; - 批量取消应用组下已经发布的应用，应用对应的授权会一起删除，重复执行会按照成功处理(响应200)
+     * &gt; - 批量取消应用组下已经发布的应用，应用对应的授权会一起删除，重复执行会按照成功处理(响应200)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnpublishAppRequest 请求对象
+     * @param request UnpublishAppRequest 请求对象
      * @return SyncInvoker<UnpublishAppRequest, UnpublishAppResponse>
      */
     public SyncInvoker<UnpublishAppRequest, UnpublishAppResponse> unpublishAppInvoker(UnpublishAppRequest request) {
-        return new SyncInvoker<UnpublishAppRequest, UnpublishAppResponse>(request, WorkspaceAppMeta.unpublishApp,
-            hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.unpublishApp, hcClient);
     }
 
     /**
      * 修改应用信息
      *
-     * 编辑修改应用信息
+     * 编辑修改应用信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return UpdateAppResponse
      */
     public UpdateAppResponse updateApp(UpdateAppRequest request) {
@@ -277,25 +274,25 @@ public class WorkspaceAppClient {
     /**
      * 修改应用信息
      *
-     * 编辑修改应用信息
+     * 编辑修改应用信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return SyncInvoker<UpdateAppRequest, UpdateAppResponse>
      */
     public SyncInvoker<UpdateAppRequest, UpdateAppResponse> updateAppInvoker(UpdateAppRequest request) {
-        return new SyncInvoker<UpdateAppRequest, UpdateAppResponse>(request, WorkspaceAppMeta.updateApp, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.updateApp, hcClient);
     }
 
     /**
      * 修改自定义应用图标
      *
-     * 修改自定义应用图标
+     * 修改自定义应用图标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadAppIconRequest 请求对象
+     * @param request UploadAppIconRequest 请求对象
      * @return UploadAppIconResponse
      */
     public UploadAppIconResponse uploadAppIcon(UploadAppIconRequest request) {
@@ -305,26 +302,25 @@ public class WorkspaceAppClient {
     /**
      * 修改自定义应用图标
      *
-     * 修改自定义应用图标
+     * 修改自定义应用图标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadAppIconRequest 请求对象
+     * @param request UploadAppIconRequest 请求对象
      * @return SyncInvoker<UploadAppIconRequest, UploadAppIconResponse>
      */
     public SyncInvoker<UploadAppIconRequest, UploadAppIconResponse> uploadAppIconInvoker(UploadAppIconRequest request) {
-        return new SyncInvoker<UploadAppIconRequest, UploadAppIconResponse>(request, WorkspaceAppMeta.uploadAppIcon,
-            hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.uploadAppIcon, hcClient);
     }
 
     /**
      * 批量删除应用组
      *
-     * 批量删除应用组,重复执行会按照成功处理(响应200)
+     * 批量删除应用组,重复执行会按照成功处理(响应200)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAppGroupRequest 请求对象
+     * @param request BatchDeleteAppGroupRequest 请求对象
      * @return BatchDeleteAppGroupResponse
      */
     public BatchDeleteAppGroupResponse batchDeleteAppGroup(BatchDeleteAppGroupRequest request) {
@@ -334,17 +330,16 @@ public class WorkspaceAppClient {
     /**
      * 批量删除应用组
      *
-     * 批量删除应用组,重复执行会按照成功处理(响应200)
+     * 批量删除应用组,重复执行会按照成功处理(响应200)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAppGroupRequest 请求对象
+     * @param request BatchDeleteAppGroupRequest 请求对象
      * @return SyncInvoker<BatchDeleteAppGroupRequest, BatchDeleteAppGroupResponse>
      */
     public SyncInvoker<BatchDeleteAppGroupRequest, BatchDeleteAppGroupResponse> batchDeleteAppGroupInvoker(
         BatchDeleteAppGroupRequest request) {
-        return new SyncInvoker<BatchDeleteAppGroupRequest, BatchDeleteAppGroupResponse>(request,
-            WorkspaceAppMeta.batchDeleteAppGroup, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.batchDeleteAppGroup, hcClient);
     }
 
     /**
@@ -355,7 +350,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppGroupRequest 请求对象
+     * @param request CreateAppGroupRequest 请求对象
      * @return CreateAppGroupResponse
      */
     public CreateAppGroupResponse createAppGroup(CreateAppGroupRequest request) {
@@ -370,13 +365,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppGroupRequest 请求对象
+     * @param request CreateAppGroupRequest 请求对象
      * @return SyncInvoker<CreateAppGroupRequest, CreateAppGroupResponse>
      */
     public SyncInvoker<CreateAppGroupRequest, CreateAppGroupResponse> createAppGroupInvoker(
         CreateAppGroupRequest request) {
-        return new SyncInvoker<CreateAppGroupRequest, CreateAppGroupResponse>(request, WorkspaceAppMeta.createAppGroup,
-            hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.createAppGroup, hcClient);
     }
 
     /**
@@ -386,7 +380,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppGroupRequest 请求对象
+     * @param request ListAppGroupRequest 请求对象
      * @return ListAppGroupResponse
      */
     public ListAppGroupResponse listAppGroup(ListAppGroupRequest request) {
@@ -400,22 +394,21 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppGroupRequest 请求对象
+     * @param request ListAppGroupRequest 请求对象
      * @return SyncInvoker<ListAppGroupRequest, ListAppGroupResponse>
      */
     public SyncInvoker<ListAppGroupRequest, ListAppGroupResponse> listAppGroupInvoker(ListAppGroupRequest request) {
-        return new SyncInvoker<ListAppGroupRequest, ListAppGroupResponse>(request, WorkspaceAppMeta.listAppGroup,
-            hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listAppGroup, hcClient);
     }
 
     /**
      * 修改应用组
      *
-     * 修改应用组
+     * 修改应用组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppGroupRequest 请求对象
+     * @param request UpdateAppGroupRequest 请求对象
      * @return UpdateAppGroupResponse
      */
     public UpdateAppGroupResponse updateAppGroup(UpdateAppGroupRequest request) {
@@ -425,17 +418,16 @@ public class WorkspaceAppClient {
     /**
      * 修改应用组
      *
-     * 修改应用组
+     * 修改应用组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppGroupRequest 请求对象
+     * @param request UpdateAppGroupRequest 请求对象
      * @return SyncInvoker<UpdateAppGroupRequest, UpdateAppGroupResponse>
      */
     public SyncInvoker<UpdateAppGroupRequest, UpdateAppGroupResponse> updateAppGroupInvoker(
         UpdateAppGroupRequest request) {
-        return new SyncInvoker<UpdateAppGroupRequest, UpdateAppGroupResponse>(request, WorkspaceAppMeta.updateAppGroup,
-            hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.updateAppGroup, hcClient);
     }
 
     /**
@@ -445,7 +437,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductRequest 请求对象
+     * @param request ListProductRequest 请求对象
      * @return ListProductResponse
      */
     public ListProductResponse listProduct(ListProductRequest request) {
@@ -459,22 +451,21 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductRequest 请求对象
+     * @param request ListProductRequest 请求对象
      * @return SyncInvoker<ListProductRequest, ListProductResponse>
      */
     public SyncInvoker<ListProductRequest, ListProductResponse> listProductInvoker(ListProductRequest request) {
-        return new SyncInvoker<ListProductRequest, ListProductResponse>(request, WorkspaceAppMeta.listProduct,
-            hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listProduct, hcClient);
     }
 
     /**
      * 查询会话套餐列表
      *
-     * 该接口用于查询会话套餐列表
+     * 该接口用于查询会话套餐列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSessionTypeRequest 请求对象
+     * @param request ListSessionTypeRequest 请求对象
      * @return ListSessionTypeResponse
      */
     public ListSessionTypeResponse listSessionType(ListSessionTypeRequest request) {
@@ -484,17 +475,16 @@ public class WorkspaceAppClient {
     /**
      * 查询会话套餐列表
      *
-     * 该接口用于查询会话套餐列表
+     * 该接口用于查询会话套餐列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSessionTypeRequest 请求对象
+     * @param request ListSessionTypeRequest 请求对象
      * @return SyncInvoker<ListSessionTypeRequest, ListSessionTypeResponse>
      */
     public SyncInvoker<ListSessionTypeRequest, ListSessionTypeResponse> listSessionTypeInvoker(
         ListSessionTypeRequest request) {
-        return new SyncInvoker<ListSessionTypeRequest, ListSessionTypeResponse>(request,
-            WorkspaceAppMeta.listSessionType, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listSessionType, hcClient);
     }
 
     /**
@@ -504,7 +494,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAppGroupAuthorizationRequest 请求对象
+     * @param request AddAppGroupAuthorizationRequest 请求对象
      * @return AddAppGroupAuthorizationResponse
      */
     public AddAppGroupAuthorizationResponse addAppGroupAuthorization(AddAppGroupAuthorizationRequest request) {
@@ -518,13 +508,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAppGroupAuthorizationRequest 请求对象
+     * @param request AddAppGroupAuthorizationRequest 请求对象
      * @return SyncInvoker<AddAppGroupAuthorizationRequest, AddAppGroupAuthorizationResponse>
      */
     public SyncInvoker<AddAppGroupAuthorizationRequest, AddAppGroupAuthorizationResponse> addAppGroupAuthorizationInvoker(
         AddAppGroupAuthorizationRequest request) {
-        return new SyncInvoker<AddAppGroupAuthorizationRequest, AddAppGroupAuthorizationResponse>(request,
-            WorkspaceAppMeta.addAppGroupAuthorization, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.addAppGroupAuthorization, hcClient);
     }
 
     /**
@@ -534,7 +523,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAppGroupAuthorizationRequest 请求对象
+     * @param request BatchDeleteAppGroupAuthorizationRequest 请求对象
      * @return BatchDeleteAppGroupAuthorizationResponse
      */
     public BatchDeleteAppGroupAuthorizationResponse batchDeleteAppGroupAuthorization(
@@ -549,13 +538,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAppGroupAuthorizationRequest 请求对象
+     * @param request BatchDeleteAppGroupAuthorizationRequest 请求对象
      * @return SyncInvoker<BatchDeleteAppGroupAuthorizationRequest, BatchDeleteAppGroupAuthorizationResponse>
      */
     public SyncInvoker<BatchDeleteAppGroupAuthorizationRequest, BatchDeleteAppGroupAuthorizationResponse> batchDeleteAppGroupAuthorizationInvoker(
         BatchDeleteAppGroupAuthorizationRequest request) {
-        return new SyncInvoker<BatchDeleteAppGroupAuthorizationRequest, BatchDeleteAppGroupAuthorizationResponse>(
-            request, WorkspaceAppMeta.batchDeleteAppGroupAuthorization, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.batchDeleteAppGroupAuthorization, hcClient);
     }
 
     /**
@@ -565,7 +553,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppGroupAuthorizationRequest 请求对象
+     * @param request ListAppGroupAuthorizationRequest 请求对象
      * @return ListAppGroupAuthorizationResponse
      */
     public ListAppGroupAuthorizationResponse listAppGroupAuthorization(ListAppGroupAuthorizationRequest request) {
@@ -579,13 +567,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppGroupAuthorizationRequest 请求对象
+     * @param request ListAppGroupAuthorizationRequest 请求对象
      * @return SyncInvoker<ListAppGroupAuthorizationRequest, ListAppGroupAuthorizationResponse>
      */
     public SyncInvoker<ListAppGroupAuthorizationRequest, ListAppGroupAuthorizationResponse> listAppGroupAuthorizationInvoker(
         ListAppGroupAuthorizationRequest request) {
-        return new SyncInvoker<ListAppGroupAuthorizationRequest, ListAppGroupAuthorizationResponse>(request,
-            WorkspaceAppMeta.listAppGroupAuthorization, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listAppGroupAuthorization, hcClient);
     }
 
     /**
@@ -595,7 +582,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZoneRequest 请求对象
+     * @param request ListAvailabilityZoneRequest 请求对象
      * @return ListAvailabilityZoneResponse
      */
     public ListAvailabilityZoneResponse listAvailabilityZone(ListAvailabilityZoneRequest request) {
@@ -609,25 +596,24 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZoneRequest 请求对象
+     * @param request ListAvailabilityZoneRequest 请求对象
      * @return SyncInvoker<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse>
      */
     public SyncInvoker<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse> listAvailabilityZoneInvoker(
         ListAvailabilityZoneRequest request) {
-        return new SyncInvoker<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse>(request,
-            WorkspaceAppMeta.listAvailabilityZone, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listAvailabilityZone, hcClient);
     }
 
     /**
      * 查询任务的执行状态
      *
-     * 查询Job的执行状态，即将下线。
+     * 查询Job的执行状态。
      * 
      * 对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return ShowJobResponse
      */
     public ShowJobResponse showJob(ShowJobRequest request) {
@@ -637,17 +623,17 @@ public class WorkspaceAppClient {
     /**
      * 查询任务的执行状态
      *
-     * 查询Job的执行状态，即将下线。
+     * 查询Job的执行状态。
      * 
      * 对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public SyncInvoker<ShowJobRequest, ShowJobResponse> showJobInvoker(ShowJobRequest request) {
-        return new SyncInvoker<ShowJobRequest, ShowJobResponse>(request, WorkspaceAppMeta.showJob, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.showJob, hcClient);
     }
 
     /**
@@ -655,11 +641,11 @@ public class WorkspaceAppClient {
      *
      * 查询Job的执行状态。
      * 
-     * 对于创建云服务器、删除云服务器、重装服务器等异步API，下发命令后会返回job_id，通过job_id可以查询任务的执行状态。
+     * 对于创建云服务器、删除云服务器、重建镜像等异步API，下发命令后会返回job_id，通过job_id可以查询任务的执行状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobDetailRequest 请求对象
+     * @param request ShowJobDetailRequest 请求对象
      * @return ShowJobDetailResponse
      */
     public ShowJobDetailResponse showJobDetail(ShowJobDetailRequest request) {
@@ -671,26 +657,25 @@ public class WorkspaceAppClient {
      *
      * 查询Job的执行状态。
      * 
-     * 对于创建云服务器、删除云服务器、重装服务器等异步API，下发命令后会返回job_id，通过job_id可以查询任务的执行状态。
+     * 对于创建云服务器、删除云服务器、重建镜像等异步API，下发命令后会返回job_id，通过job_id可以查询任务的执行状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobDetailRequest 请求对象
+     * @param request ShowJobDetailRequest 请求对象
      * @return SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
      */
     public SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailInvoker(ShowJobDetailRequest request) {
-        return new SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, WorkspaceAppMeta.showJobDetail,
-            hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.showJobDetail, hcClient);
     }
 
     /**
      * 新增或更新存储目录访问权限自定义策略
      *
-     * 新增或更新存储目录访问权限自定义策略(已存在自定义策略时会对已有策略更新)
+     * 新增或更新存储目录访问权限自定义策略(已存在自定义策略时会对已有策略更新)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrUpdateStoragePolicyStatementRequest 请求对象
+     * @param request CreateOrUpdateStoragePolicyStatementRequest 请求对象
      * @return CreateOrUpdateStoragePolicyStatementResponse
      */
     public CreateOrUpdateStoragePolicyStatementResponse createOrUpdateStoragePolicyStatement(
@@ -701,17 +686,16 @@ public class WorkspaceAppClient {
     /**
      * 新增或更新存储目录访问权限自定义策略
      *
-     * 新增或更新存储目录访问权限自定义策略(已存在自定义策略时会对已有策略更新)
+     * 新增或更新存储目录访问权限自定义策略(已存在自定义策略时会对已有策略更新)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrUpdateStoragePolicyStatementRequest 请求对象
+     * @param request CreateOrUpdateStoragePolicyStatementRequest 请求对象
      * @return SyncInvoker<CreateOrUpdateStoragePolicyStatementRequest, CreateOrUpdateStoragePolicyStatementResponse>
      */
     public SyncInvoker<CreateOrUpdateStoragePolicyStatementRequest, CreateOrUpdateStoragePolicyStatementResponse> createOrUpdateStoragePolicyStatementInvoker(
         CreateOrUpdateStoragePolicyStatementRequest request) {
-        return new SyncInvoker<CreateOrUpdateStoragePolicyStatementRequest, CreateOrUpdateStoragePolicyStatementResponse>(
-            request, WorkspaceAppMeta.createOrUpdateStoragePolicyStatement, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.createOrUpdateStoragePolicyStatement, hcClient);
     }
 
     /**
@@ -721,7 +705,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePersistentStorageRequest 请求对象
+     * @param request CreatePersistentStorageRequest 请求对象
      * @return CreatePersistentStorageResponse
      */
     public CreatePersistentStorageResponse createPersistentStorage(CreatePersistentStorageRequest request) {
@@ -735,13 +719,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePersistentStorageRequest 请求对象
+     * @param request CreatePersistentStorageRequest 请求对象
      * @return SyncInvoker<CreatePersistentStorageRequest, CreatePersistentStorageResponse>
      */
     public SyncInvoker<CreatePersistentStorageRequest, CreatePersistentStorageResponse> createPersistentStorageInvoker(
         CreatePersistentStorageRequest request) {
-        return new SyncInvoker<CreatePersistentStorageRequest, CreatePersistentStorageResponse>(request,
-            WorkspaceAppMeta.createPersistentStorage, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.createPersistentStorage, hcClient);
     }
 
     /**
@@ -751,7 +734,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateShareFolderRequest 请求对象
+     * @param request CreateShareFolderRequest 请求对象
      * @return CreateShareFolderResponse
      */
     public CreateShareFolderResponse createShareFolder(CreateShareFolderRequest request) {
@@ -765,13 +748,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateShareFolderRequest 请求对象
+     * @param request CreateShareFolderRequest 请求对象
      * @return SyncInvoker<CreateShareFolderRequest, CreateShareFolderResponse>
      */
     public SyncInvoker<CreateShareFolderRequest, CreateShareFolderResponse> createShareFolderInvoker(
         CreateShareFolderRequest request) {
-        return new SyncInvoker<CreateShareFolderRequest, CreateShareFolderResponse>(request,
-            WorkspaceAppMeta.createShareFolder, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.createShareFolder, hcClient);
     }
 
     /**
@@ -781,7 +763,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePersistentStorageRequest 请求对象
+     * @param request DeletePersistentStorageRequest 请求对象
      * @return DeletePersistentStorageResponse
      */
     public DeletePersistentStorageResponse deletePersistentStorage(DeletePersistentStorageRequest request) {
@@ -795,13 +777,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePersistentStorageRequest 请求对象
+     * @param request DeletePersistentStorageRequest 请求对象
      * @return SyncInvoker<DeletePersistentStorageRequest, DeletePersistentStorageResponse>
      */
     public SyncInvoker<DeletePersistentStorageRequest, DeletePersistentStorageResponse> deletePersistentStorageInvoker(
         DeletePersistentStorageRequest request) {
-        return new SyncInvoker<DeletePersistentStorageRequest, DeletePersistentStorageResponse>(request,
-            WorkspaceAppMeta.deletePersistentStorage, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.deletePersistentStorage, hcClient);
     }
 
     /**
@@ -812,7 +793,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStorageClaimRequest 请求对象
+     * @param request DeleteStorageClaimRequest 请求对象
      * @return DeleteStorageClaimResponse
      */
     public DeleteStorageClaimResponse deleteStorageClaim(DeleteStorageClaimRequest request) {
@@ -827,13 +808,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStorageClaimRequest 请求对象
+     * @param request DeleteStorageClaimRequest 请求对象
      * @return SyncInvoker<DeleteStorageClaimRequest, DeleteStorageClaimResponse>
      */
     public SyncInvoker<DeleteStorageClaimRequest, DeleteStorageClaimResponse> deleteStorageClaimInvoker(
         DeleteStorageClaimRequest request) {
-        return new SyncInvoker<DeleteStorageClaimRequest, DeleteStorageClaimResponse>(request,
-            WorkspaceAppMeta.deleteStorageClaim, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.deleteStorageClaim, hcClient);
     }
 
     /**
@@ -843,7 +823,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserStorageAttachmentRequest 请求对象
+     * @param request DeleteUserStorageAttachmentRequest 请求对象
      * @return DeleteUserStorageAttachmentResponse
      */
     public DeleteUserStorageAttachmentResponse deleteUserStorageAttachment(DeleteUserStorageAttachmentRequest request) {
@@ -857,23 +837,22 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserStorageAttachmentRequest 请求对象
+     * @param request DeleteUserStorageAttachmentRequest 请求对象
      * @return SyncInvoker<DeleteUserStorageAttachmentRequest, DeleteUserStorageAttachmentResponse>
      */
     public SyncInvoker<DeleteUserStorageAttachmentRequest, DeleteUserStorageAttachmentResponse> deleteUserStorageAttachmentInvoker(
         DeleteUserStorageAttachmentRequest request) {
-        return new SyncInvoker<DeleteUserStorageAttachmentRequest, DeleteUserStorageAttachmentResponse>(request,
-            WorkspaceAppMeta.deleteUserStorageAttachment, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.deleteUserStorageAttachment, hcClient);
     }
 
     /**
      * 查询WKS存储
      *
-     * 查询WKS存储
+     * 查询WKS存储。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPersistentStorageRequest 请求对象
+     * @param request ListPersistentStorageRequest 请求对象
      * @return ListPersistentStorageResponse
      */
     public ListPersistentStorageResponse listPersistentStorage(ListPersistentStorageRequest request) {
@@ -883,17 +862,16 @@ public class WorkspaceAppClient {
     /**
      * 查询WKS存储
      *
-     * 查询WKS存储
+     * 查询WKS存储。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPersistentStorageRequest 请求对象
+     * @param request ListPersistentStorageRequest 请求对象
      * @return SyncInvoker<ListPersistentStorageRequest, ListPersistentStorageResponse>
      */
     public SyncInvoker<ListPersistentStorageRequest, ListPersistentStorageResponse> listPersistentStorageInvoker(
         ListPersistentStorageRequest request) {
-        return new SyncInvoker<ListPersistentStorageRequest, ListPersistentStorageResponse>(request,
-            WorkspaceAppMeta.listPersistentStorage, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listPersistentStorage, hcClient);
     }
 
     /**
@@ -903,7 +881,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListShareFolderRequest 请求对象
+     * @param request ListShareFolderRequest 请求对象
      * @return ListShareFolderResponse
      */
     public ListShareFolderResponse listShareFolder(ListShareFolderRequest request) {
@@ -917,23 +895,22 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListShareFolderRequest 请求对象
+     * @param request ListShareFolderRequest 请求对象
      * @return SyncInvoker<ListShareFolderRequest, ListShareFolderResponse>
      */
     public SyncInvoker<ListShareFolderRequest, ListShareFolderResponse> listShareFolderInvoker(
         ListShareFolderRequest request) {
-        return new SyncInvoker<ListShareFolderRequest, ListShareFolderResponse>(request,
-            WorkspaceAppMeta.listShareFolder, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listShareFolder, hcClient);
     }
 
     /**
      * 查询个人存储目录
      *
-     * 查询个人存储目录
+     * 查询个人存储目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStorageAssignmentRequest 请求对象
+     * @param request ListStorageAssignmentRequest 请求对象
      * @return ListStorageAssignmentResponse
      */
     public ListStorageAssignmentResponse listStorageAssignment(ListStorageAssignmentRequest request) {
@@ -943,27 +920,26 @@ public class WorkspaceAppClient {
     /**
      * 查询个人存储目录
      *
-     * 查询个人存储目录
+     * 查询个人存储目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStorageAssignmentRequest 请求对象
+     * @param request ListStorageAssignmentRequest 请求对象
      * @return SyncInvoker<ListStorageAssignmentRequest, ListStorageAssignmentResponse>
      */
     public SyncInvoker<ListStorageAssignmentRequest, ListStorageAssignmentResponse> listStorageAssignmentInvoker(
         ListStorageAssignmentRequest request) {
-        return new SyncInvoker<ListStorageAssignmentRequest, ListStorageAssignmentResponse>(request,
-            WorkspaceAppMeta.listStorageAssignment, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listStorageAssignment, hcClient);
     }
 
     /**
      * 查询存储目录访问权限策略
      *
-     * 查询存储目录访问权限策略
+     * 查询存储目录访问权限策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoragePolicyStatementRequest 请求对象
+     * @param request ListStoragePolicyStatementRequest 请求对象
      * @return ListStoragePolicyStatementResponse
      */
     public ListStoragePolicyStatementResponse listStoragePolicyStatement(ListStoragePolicyStatementRequest request) {
@@ -973,27 +949,26 @@ public class WorkspaceAppClient {
     /**
      * 查询存储目录访问权限策略
      *
-     * 查询存储目录访问权限策略
+     * 查询存储目录访问权限策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoragePolicyStatementRequest 请求对象
+     * @param request ListStoragePolicyStatementRequest 请求对象
      * @return SyncInvoker<ListStoragePolicyStatementRequest, ListStoragePolicyStatementResponse>
      */
     public SyncInvoker<ListStoragePolicyStatementRequest, ListStoragePolicyStatementResponse> listStoragePolicyStatementInvoker(
         ListStoragePolicyStatementRequest request) {
-        return new SyncInvoker<ListStoragePolicyStatementRequest, ListStoragePolicyStatementResponse>(request,
-            WorkspaceAppMeta.listStoragePolicyStatement, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listStoragePolicyStatement, hcClient);
     }
 
     /**
      * 修改共享目录成员
      *
-     * 批量添加或者移除共享目录成员
+     * 批量添加或者移除共享目录成员。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateShareFolderAssignmentRequest 请求对象
+     * @param request UpdateShareFolderAssignmentRequest 请求对象
      * @return UpdateShareFolderAssignmentResponse
      */
     public UpdateShareFolderAssignmentResponse updateShareFolderAssignment(UpdateShareFolderAssignmentRequest request) {
@@ -1003,27 +978,26 @@ public class WorkspaceAppClient {
     /**
      * 修改共享目录成员
      *
-     * 批量添加或者移除共享目录成员
+     * 批量添加或者移除共享目录成员。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateShareFolderAssignmentRequest 请求对象
+     * @param request UpdateShareFolderAssignmentRequest 请求对象
      * @return SyncInvoker<UpdateShareFolderAssignmentRequest, UpdateShareFolderAssignmentResponse>
      */
     public SyncInvoker<UpdateShareFolderAssignmentRequest, UpdateShareFolderAssignmentResponse> updateShareFolderAssignmentInvoker(
         UpdateShareFolderAssignmentRequest request) {
-        return new SyncInvoker<UpdateShareFolderAssignmentRequest, UpdateShareFolderAssignmentResponse>(request,
-            WorkspaceAppMeta.updateShareFolderAssignment, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.updateShareFolderAssignment, hcClient);
     }
 
     /**
      * 创建个人存储目录
      *
-     * 创建个人存储目录,已存在对应目录时,仅更新策略不会重复创建目录
+     * 创建个人存储目录，已存在对应目录时，仅更新策略不会重复创建目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserFolderAssignmentRequest 请求对象
+     * @param request UpdateUserFolderAssignmentRequest 请求对象
      * @return UpdateUserFolderAssignmentResponse
      */
     public UpdateUserFolderAssignmentResponse updateUserFolderAssignment(UpdateUserFolderAssignmentRequest request) {
@@ -1033,17 +1007,16 @@ public class WorkspaceAppClient {
     /**
      * 创建个人存储目录
      *
-     * 创建个人存储目录,已存在对应目录时,仅更新策略不会重复创建目录
+     * 创建个人存储目录，已存在对应目录时，仅更新策略不会重复创建目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserFolderAssignmentRequest 请求对象
+     * @param request UpdateUserFolderAssignmentRequest 请求对象
      * @return SyncInvoker<UpdateUserFolderAssignmentRequest, UpdateUserFolderAssignmentResponse>
      */
     public SyncInvoker<UpdateUserFolderAssignmentRequest, UpdateUserFolderAssignmentResponse> updateUserFolderAssignmentInvoker(
         UpdateUserFolderAssignmentRequest request) {
-        return new SyncInvoker<UpdateUserFolderAssignmentRequest, UpdateUserFolderAssignmentResponse>(request,
-            WorkspaceAppMeta.updateUserFolderAssignment, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.updateUserFolderAssignment, hcClient);
     }
 
     /**
@@ -1053,7 +1026,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyGroupRequest 请求对象
+     * @param request CreatePolicyGroupRequest 请求对象
      * @return CreatePolicyGroupResponse
      */
     public CreatePolicyGroupResponse createPolicyGroup(CreatePolicyGroupRequest request) {
@@ -1067,13 +1040,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyGroupRequest 请求对象
+     * @param request CreatePolicyGroupRequest 请求对象
      * @return SyncInvoker<CreatePolicyGroupRequest, CreatePolicyGroupResponse>
      */
     public SyncInvoker<CreatePolicyGroupRequest, CreatePolicyGroupResponse> createPolicyGroupInvoker(
         CreatePolicyGroupRequest request) {
-        return new SyncInvoker<CreatePolicyGroupRequest, CreatePolicyGroupResponse>(request,
-            WorkspaceAppMeta.createPolicyGroup, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.createPolicyGroup, hcClient);
     }
 
     /**
@@ -1083,7 +1055,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyTemplateRequest 请求对象
+     * @param request CreatePolicyTemplateRequest 请求对象
      * @return CreatePolicyTemplateResponse
      */
     public CreatePolicyTemplateResponse createPolicyTemplate(CreatePolicyTemplateRequest request) {
@@ -1097,23 +1069,22 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyTemplateRequest 请求对象
+     * @param request CreatePolicyTemplateRequest 请求对象
      * @return SyncInvoker<CreatePolicyTemplateRequest, CreatePolicyTemplateResponse>
      */
     public SyncInvoker<CreatePolicyTemplateRequest, CreatePolicyTemplateResponse> createPolicyTemplateInvoker(
         CreatePolicyTemplateRequest request) {
-        return new SyncInvoker<CreatePolicyTemplateRequest, CreatePolicyTemplateResponse>(request,
-            WorkspaceAppMeta.createPolicyTemplate, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.createPolicyTemplate, hcClient);
     }
 
     /**
      * 删除策略组
      *
-     * 删除指定策略组，包含策略组对应的策略信息以及应用对象信息
+     * 删除指定策略组，包含策略组对应的策略信息以及应用对象信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyGroupRequest 请求对象
+     * @param request DeletePolicyGroupRequest 请求对象
      * @return DeletePolicyGroupResponse
      */
     public DeletePolicyGroupResponse deletePolicyGroup(DeletePolicyGroupRequest request) {
@@ -1123,27 +1094,26 @@ public class WorkspaceAppClient {
     /**
      * 删除策略组
      *
-     * 删除指定策略组，包含策略组对应的策略信息以及应用对象信息
+     * 删除指定策略组，包含策略组对应的策略信息以及应用对象信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyGroupRequest 请求对象
+     * @param request DeletePolicyGroupRequest 请求对象
      * @return SyncInvoker<DeletePolicyGroupRequest, DeletePolicyGroupResponse>
      */
     public SyncInvoker<DeletePolicyGroupRequest, DeletePolicyGroupResponse> deletePolicyGroupInvoker(
         DeletePolicyGroupRequest request) {
-        return new SyncInvoker<DeletePolicyGroupRequest, DeletePolicyGroupResponse>(request,
-            WorkspaceAppMeta.deletePolicyGroup, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.deletePolicyGroup, hcClient);
     }
 
     /**
      * 删除策略模板
      *
-     * 删除指定策略模板，包含策略模板对应的策略信息以及应用对象信息
+     * 删除指定策略模板，包含策略模板对应的策略信息以及应用对象信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyTemplateRequest 请求对象
+     * @param request DeletePolicyTemplateRequest 请求对象
      * @return DeletePolicyTemplateResponse
      */
     public DeletePolicyTemplateResponse deletePolicyTemplate(DeletePolicyTemplateRequest request) {
@@ -1153,17 +1123,16 @@ public class WorkspaceAppClient {
     /**
      * 删除策略模板
      *
-     * 删除指定策略模板，包含策略模板对应的策略信息以及应用对象信息
+     * 删除指定策略模板，包含策略模板对应的策略信息以及应用对象信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyTemplateRequest 请求对象
+     * @param request DeletePolicyTemplateRequest 请求对象
      * @return SyncInvoker<DeletePolicyTemplateRequest, DeletePolicyTemplateResponse>
      */
     public SyncInvoker<DeletePolicyTemplateRequest, DeletePolicyTemplateResponse> deletePolicyTemplateInvoker(
         DeletePolicyTemplateRequest request) {
-        return new SyncInvoker<DeletePolicyTemplateRequest, DeletePolicyTemplateResponse>(request,
-            WorkspaceAppMeta.deletePolicyTemplate, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.deletePolicyTemplate, hcClient);
     }
 
     /**
@@ -1173,7 +1142,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyGroupRequest 请求对象
+     * @param request ListPolicyGroupRequest 请求对象
      * @return ListPolicyGroupResponse
      */
     public ListPolicyGroupResponse listPolicyGroup(ListPolicyGroupRequest request) {
@@ -1187,13 +1156,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyGroupRequest 请求对象
+     * @param request ListPolicyGroupRequest 请求对象
      * @return SyncInvoker<ListPolicyGroupRequest, ListPolicyGroupResponse>
      */
     public SyncInvoker<ListPolicyGroupRequest, ListPolicyGroupResponse> listPolicyGroupInvoker(
         ListPolicyGroupRequest request) {
-        return new SyncInvoker<ListPolicyGroupRequest, ListPolicyGroupResponse>(request,
-            WorkspaceAppMeta.listPolicyGroup, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listPolicyGroup, hcClient);
     }
 
     /**
@@ -1203,7 +1171,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyTemplateRequest 请求对象
+     * @param request ListPolicyTemplateRequest 请求对象
      * @return ListPolicyTemplateResponse
      */
     public ListPolicyTemplateResponse listPolicyTemplate(ListPolicyTemplateRequest request) {
@@ -1217,13 +1185,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyTemplateRequest 请求对象
+     * @param request ListPolicyTemplateRequest 请求对象
      * @return SyncInvoker<ListPolicyTemplateRequest, ListPolicyTemplateResponse>
      */
     public SyncInvoker<ListPolicyTemplateRequest, ListPolicyTemplateResponse> listPolicyTemplateInvoker(
         ListPolicyTemplateRequest request) {
-        return new SyncInvoker<ListPolicyTemplateRequest, ListPolicyTemplateResponse>(request,
-            WorkspaceAppMeta.listPolicyTemplate, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listPolicyTemplate, hcClient);
     }
 
     /**
@@ -1233,7 +1200,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTargetsOfPolicyGroupRequest 请求对象
+     * @param request ListTargetsOfPolicyGroupRequest 请求对象
      * @return ListTargetsOfPolicyGroupResponse
      */
     public ListTargetsOfPolicyGroupResponse listTargetsOfPolicyGroup(ListTargetsOfPolicyGroupRequest request) {
@@ -1247,13 +1214,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTargetsOfPolicyGroupRequest 请求对象
+     * @param request ListTargetsOfPolicyGroupRequest 请求对象
      * @return SyncInvoker<ListTargetsOfPolicyGroupRequest, ListTargetsOfPolicyGroupResponse>
      */
     public SyncInvoker<ListTargetsOfPolicyGroupRequest, ListTargetsOfPolicyGroupResponse> listTargetsOfPolicyGroupInvoker(
         ListTargetsOfPolicyGroupRequest request) {
-        return new SyncInvoker<ListTargetsOfPolicyGroupRequest, ListTargetsOfPolicyGroupResponse>(request,
-            WorkspaceAppMeta.listTargetsOfPolicyGroup, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listTargetsOfPolicyGroup, hcClient);
     }
 
     /**
@@ -1263,7 +1229,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOriginalPolicyInfoRequest 请求对象
+     * @param request ShowOriginalPolicyInfoRequest 请求对象
      * @return ShowOriginalPolicyInfoResponse
      */
     public ShowOriginalPolicyInfoResponse showOriginalPolicyInfo(ShowOriginalPolicyInfoRequest request) {
@@ -1277,23 +1243,22 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOriginalPolicyInfoRequest 请求对象
+     * @param request ShowOriginalPolicyInfoRequest 请求对象
      * @return SyncInvoker<ShowOriginalPolicyInfoRequest, ShowOriginalPolicyInfoResponse>
      */
     public SyncInvoker<ShowOriginalPolicyInfoRequest, ShowOriginalPolicyInfoResponse> showOriginalPolicyInfoInvoker(
         ShowOriginalPolicyInfoRequest request) {
-        return new SyncInvoker<ShowOriginalPolicyInfoRequest, ShowOriginalPolicyInfoResponse>(request,
-            WorkspaceAppMeta.showOriginalPolicyInfo, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.showOriginalPolicyInfo, hcClient);
     }
 
     /**
      * 修改策略组
      *
-     * 修改指定策略组的信息
+     * 修改指定策略组的信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyGroupRequest 请求对象
+     * @param request UpdatePolicyGroupRequest 请求对象
      * @return UpdatePolicyGroupResponse
      */
     public UpdatePolicyGroupResponse updatePolicyGroup(UpdatePolicyGroupRequest request) {
@@ -1303,27 +1268,26 @@ public class WorkspaceAppClient {
     /**
      * 修改策略组
      *
-     * 修改指定策略组的信息
+     * 修改指定策略组的信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyGroupRequest 请求对象
+     * @param request UpdatePolicyGroupRequest 请求对象
      * @return SyncInvoker<UpdatePolicyGroupRequest, UpdatePolicyGroupResponse>
      */
     public SyncInvoker<UpdatePolicyGroupRequest, UpdatePolicyGroupResponse> updatePolicyGroupInvoker(
         UpdatePolicyGroupRequest request) {
-        return new SyncInvoker<UpdatePolicyGroupRequest, UpdatePolicyGroupResponse>(request,
-            WorkspaceAppMeta.updatePolicyGroup, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.updatePolicyGroup, hcClient);
     }
 
     /**
      * 修改策略模板
      *
-     * 修改指定策略模板的信息
+     * 修改指定策略模板的信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyTemplateRequest 请求对象
+     * @param request UpdatePolicyTemplateRequest 请求对象
      * @return UpdatePolicyTemplateResponse
      */
     public UpdatePolicyTemplateResponse updatePolicyTemplate(UpdatePolicyTemplateRequest request) {
@@ -1333,17 +1297,16 @@ public class WorkspaceAppClient {
     /**
      * 修改策略模板
      *
-     * 修改指定策略模板的信息
+     * 修改指定策略模板的信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyTemplateRequest 请求对象
+     * @param request UpdatePolicyTemplateRequest 请求对象
      * @return SyncInvoker<UpdatePolicyTemplateRequest, UpdatePolicyTemplateResponse>
      */
     public SyncInvoker<UpdatePolicyTemplateRequest, UpdatePolicyTemplateResponse> updatePolicyTemplateInvoker(
         UpdatePolicyTemplateRequest request) {
-        return new SyncInvoker<UpdatePolicyTemplateRequest, UpdatePolicyTemplateResponse>(request,
-            WorkspaceAppMeta.updatePolicyTemplate, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.updatePolicyTemplate, hcClient);
     }
 
     /**
@@ -1353,7 +1316,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckQuotaRequest 请求对象
+     * @param request CheckQuotaRequest 请求对象
      * @return CheckQuotaResponse
      */
     public CheckQuotaResponse checkQuota(CheckQuotaRequest request) {
@@ -1367,22 +1330,22 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckQuotaRequest 请求对象
+     * @param request CheckQuotaRequest 请求对象
      * @return SyncInvoker<CheckQuotaRequest, CheckQuotaResponse>
      */
     public SyncInvoker<CheckQuotaRequest, CheckQuotaResponse> checkQuotaInvoker(CheckQuotaRequest request) {
-        return new SyncInvoker<CheckQuotaRequest, CheckQuotaResponse>(request, WorkspaceAppMeta.checkQuota, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.checkQuota, hcClient);
     }
 
     /**
      * 批量删除服务器
      *
-     * 批量删除服务器
+     * 批量删除服务器。
      * &gt; - 仅支持删除按需订购的服务器，包周期订购的服务器需要到Console界面进行退订，订单退订成功后服务器将会自动删除。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteServerRequest 请求对象
+     * @param request BatchDeleteServerRequest 请求对象
      * @return BatchDeleteServerResponse
      */
     public BatchDeleteServerResponse batchDeleteServer(BatchDeleteServerRequest request) {
@@ -1392,28 +1355,27 @@ public class WorkspaceAppClient {
     /**
      * 批量删除服务器
      *
-     * 批量删除服务器
+     * 批量删除服务器。
      * &gt; - 仅支持删除按需订购的服务器，包周期订购的服务器需要到Console界面进行退订，订单退订成功后服务器将会自动删除。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteServerRequest 请求对象
+     * @param request BatchDeleteServerRequest 请求对象
      * @return SyncInvoker<BatchDeleteServerRequest, BatchDeleteServerResponse>
      */
     public SyncInvoker<BatchDeleteServerRequest, BatchDeleteServerResponse> batchDeleteServerInvoker(
         BatchDeleteServerRequest request) {
-        return new SyncInvoker<BatchDeleteServerRequest, BatchDeleteServerResponse>(request,
-            WorkspaceAppMeta.batchDeleteServer, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.batchDeleteServer, hcClient);
     }
 
     /**
      * 迁移云办公主机下面的服务器到目标云办公主机
      *
-     * 迁移云办公主机下面的服务器到目标云办公主机
+     * 迁移云办公主机下面的服务器到目标云办公主机。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchMigrateHostsServerRequest 请求对象
+     * @param request BatchMigrateHostsServerRequest 请求对象
      * @return BatchMigrateHostsServerResponse
      */
     public BatchMigrateHostsServerResponse batchMigrateHostsServer(BatchMigrateHostsServerRequest request) {
@@ -1423,27 +1385,26 @@ public class WorkspaceAppClient {
     /**
      * 迁移云办公主机下面的服务器到目标云办公主机
      *
-     * 迁移云办公主机下面的服务器到目标云办公主机
+     * 迁移云办公主机下面的服务器到目标云办公主机。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchMigrateHostsServerRequest 请求对象
+     * @param request BatchMigrateHostsServerRequest 请求对象
      * @return SyncInvoker<BatchMigrateHostsServerRequest, BatchMigrateHostsServerResponse>
      */
     public SyncInvoker<BatchMigrateHostsServerRequest, BatchMigrateHostsServerResponse> batchMigrateHostsServerInvoker(
         BatchMigrateHostsServerRequest request) {
-        return new SyncInvoker<BatchMigrateHostsServerRequest, BatchMigrateHostsServerResponse>(request,
-            WorkspaceAppMeta.batchMigrateHostsServer, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.batchMigrateHostsServer, hcClient);
     }
 
     /**
      * 重启服务器
      *
-     * 重启服务器
+     * 重启服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRebootServerRequest 请求对象
+     * @param request BatchRebootServerRequest 请求对象
      * @return BatchRebootServerResponse
      */
     public BatchRebootServerResponse batchRebootServer(BatchRebootServerRequest request) {
@@ -1453,17 +1414,16 @@ public class WorkspaceAppClient {
     /**
      * 重启服务器
      *
-     * 重启服务器
+     * 重启服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRebootServerRequest 请求对象
+     * @param request BatchRebootServerRequest 请求对象
      * @return SyncInvoker<BatchRebootServerRequest, BatchRebootServerResponse>
      */
     public SyncInvoker<BatchRebootServerRequest, BatchRebootServerResponse> batchRebootServerInvoker(
         BatchRebootServerRequest request) {
-        return new SyncInvoker<BatchRebootServerRequest, BatchRebootServerResponse>(request,
-            WorkspaceAppMeta.batchRebootServer, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.batchRebootServer, hcClient);
     }
 
     /**
@@ -1473,7 +1433,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRejoinDomainRequest 请求对象
+     * @param request BatchRejoinDomainRequest 请求对象
      * @return BatchRejoinDomainResponse
      */
     public BatchRejoinDomainResponse batchRejoinDomain(BatchRejoinDomainRequest request) {
@@ -1487,23 +1447,22 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRejoinDomainRequest 请求对象
+     * @param request BatchRejoinDomainRequest 请求对象
      * @return SyncInvoker<BatchRejoinDomainRequest, BatchRejoinDomainResponse>
      */
     public SyncInvoker<BatchRejoinDomainRequest, BatchRejoinDomainResponse> batchRejoinDomainInvoker(
         BatchRejoinDomainRequest request) {
-        return new SyncInvoker<BatchRejoinDomainRequest, BatchRejoinDomainResponse>(request,
-            WorkspaceAppMeta.batchRejoinDomain, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.batchRejoinDomain, hcClient);
     }
 
     /**
      * 启动服务器
      *
-     * 启动服务器
+     * 启动服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartServerRequest 请求对象
+     * @param request BatchStartServerRequest 请求对象
      * @return BatchStartServerResponse
      */
     public BatchStartServerResponse batchStartServer(BatchStartServerRequest request) {
@@ -1513,27 +1472,26 @@ public class WorkspaceAppClient {
     /**
      * 启动服务器
      *
-     * 启动服务器
+     * 启动服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartServerRequest 请求对象
+     * @param request BatchStartServerRequest 请求对象
      * @return SyncInvoker<BatchStartServerRequest, BatchStartServerResponse>
      */
     public SyncInvoker<BatchStartServerRequest, BatchStartServerResponse> batchStartServerInvoker(
         BatchStartServerRequest request) {
-        return new SyncInvoker<BatchStartServerRequest, BatchStartServerResponse>(request,
-            WorkspaceAppMeta.batchStartServer, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.batchStartServer, hcClient);
     }
 
     /**
      * 关闭服务器
      *
-     * 关闭服务器
+     * 关闭服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopServerRequest 请求对象
+     * @param request BatchStopServerRequest 请求对象
      * @return BatchStopServerResponse
      */
     public BatchStopServerResponse batchStopServer(BatchStopServerRequest request) {
@@ -1543,17 +1501,16 @@ public class WorkspaceAppClient {
     /**
      * 关闭服务器
      *
-     * 关闭服务器
+     * 关闭服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopServerRequest 请求对象
+     * @param request BatchStopServerRequest 请求对象
      * @return SyncInvoker<BatchStopServerRequest, BatchStopServerResponse>
      */
     public SyncInvoker<BatchStopServerRequest, BatchStopServerResponse> batchStopServerInvoker(
         BatchStopServerRequest request) {
-        return new SyncInvoker<BatchStopServerRequest, BatchStopServerResponse>(request,
-            WorkspaceAppMeta.batchStopServer, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.batchStopServer, hcClient);
     }
 
     /**
@@ -1563,7 +1520,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateTsviRequest 请求对象
+     * @param request BatchUpdateTsviRequest 请求对象
      * @return BatchUpdateTsviResponse
      */
     public BatchUpdateTsviResponse batchUpdateTsvi(BatchUpdateTsviRequest request) {
@@ -1577,24 +1534,23 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateTsviRequest 请求对象
+     * @param request BatchUpdateTsviRequest 请求对象
      * @return SyncInvoker<BatchUpdateTsviRequest, BatchUpdateTsviResponse>
      */
     public SyncInvoker<BatchUpdateTsviRequest, BatchUpdateTsviResponse> batchUpdateTsviInvoker(
         BatchUpdateTsviRequest request) {
-        return new SyncInvoker<BatchUpdateTsviRequest, BatchUpdateTsviResponse>(request,
-            WorkspaceAppMeta.batchUpdateTsvi, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.batchUpdateTsvi, hcClient);
     }
 
     /**
      * 修改服务器的镜像
      *
-     * 修改服务器的镜像
+     * 修改服务器的镜像。
      * &gt; - 服务器的镜像和服务器组的镜像不一样时，支持服务器的镜像切换为服务器组的镜像，并且仅允许同等镜像进行切换，例如：同操作系统，免费镜像切换，同源同价的付费镜像切换。如果服务器组的镜像和服务器的镜像为非同等镜像，建议您直接购买新的服务器，删除或者退订老的服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeServerImageRequest 请求对象
+     * @param request ChangeServerImageRequest 请求对象
      * @return ChangeServerImageResponse
      */
     public ChangeServerImageResponse changeServerImage(ChangeServerImageRequest request) {
@@ -1604,28 +1560,27 @@ public class WorkspaceAppClient {
     /**
      * 修改服务器的镜像
      *
-     * 修改服务器的镜像
+     * 修改服务器的镜像。
      * &gt; - 服务器的镜像和服务器组的镜像不一样时，支持服务器的镜像切换为服务器组的镜像，并且仅允许同等镜像进行切换，例如：同操作系统，免费镜像切换，同源同价的付费镜像切换。如果服务器组的镜像和服务器的镜像为非同等镜像，建议您直接购买新的服务器，删除或者退订老的服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeServerImageRequest 请求对象
+     * @param request ChangeServerImageRequest 请求对象
      * @return SyncInvoker<ChangeServerImageRequest, ChangeServerImageResponse>
      */
     public SyncInvoker<ChangeServerImageRequest, ChangeServerImageResponse> changeServerImageInvoker(
         ChangeServerImageRequest request) {
-        return new SyncInvoker<ChangeServerImageRequest, ChangeServerImageResponse>(request,
-            WorkspaceAppMeta.changeServerImage, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.changeServerImage, hcClient);
     }
 
     /**
      * 创建云服务器
      *
-     * 创建云服务器接口
+     * 创建云服务器接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppServersRequest 请求对象
+     * @param request CreateAppServersRequest 请求对象
      * @return CreateAppServersResponse
      */
     public CreateAppServersResponse createAppServers(CreateAppServersRequest request) {
@@ -1635,27 +1590,26 @@ public class WorkspaceAppClient {
     /**
      * 创建云服务器
      *
-     * 创建云服务器接口
+     * 创建云服务器接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppServersRequest 请求对象
+     * @param request CreateAppServersRequest 请求对象
      * @return SyncInvoker<CreateAppServersRequest, CreateAppServersResponse>
      */
     public SyncInvoker<CreateAppServersRequest, CreateAppServersResponse> createAppServersInvoker(
         CreateAppServersRequest request) {
-        return new SyncInvoker<CreateAppServersRequest, CreateAppServersResponse>(request,
-            WorkspaceAppMeta.createAppServers, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.createAppServers, hcClient);
     }
 
     /**
      * 查询服务器列表
      *
-     * 查询服务器列表
+     * 查询服务器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServersRequest 请求对象
+     * @param request ListServersRequest 请求对象
      * @return ListServersResponse
      */
     public ListServersResponse listServers(ListServersRequest request) {
@@ -1665,16 +1619,15 @@ public class WorkspaceAppClient {
     /**
      * 查询服务器列表
      *
-     * 查询服务器列表
+     * 查询服务器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServersRequest 请求对象
+     * @param request ListServersRequest 请求对象
      * @return SyncInvoker<ListServersRequest, ListServersResponse>
      */
     public SyncInvoker<ListServersRequest, ListServersResponse> listServersInvoker(ListServersRequest request) {
-        return new SyncInvoker<ListServersRequest, ListServersResponse>(request, WorkspaceAppMeta.listServers,
-            hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listServers, hcClient);
     }
 
     /**
@@ -1685,7 +1638,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReinstallServerRequest 请求对象
+     * @param request ReinstallServerRequest 请求对象
      * @return ReinstallServerResponse
      */
     public ReinstallServerResponse reinstallServer(ReinstallServerRequest request) {
@@ -1700,13 +1653,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReinstallServerRequest 请求对象
+     * @param request ReinstallServerRequest 请求对象
      * @return SyncInvoker<ReinstallServerRequest, ReinstallServerResponse>
      */
     public SyncInvoker<ReinstallServerRequest, ReinstallServerResponse> reinstallServerInvoker(
         ReinstallServerRequest request) {
-        return new SyncInvoker<ReinstallServerRequest, ReinstallServerResponse>(request,
-            WorkspaceAppMeta.reinstallServer, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.reinstallServer, hcClient);
     }
 
     /**
@@ -1717,7 +1669,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServerRequest 请求对象
+     * @param request UpdateServerRequest 请求对象
      * @return UpdateServerResponse
      */
     public UpdateServerResponse updateServer(UpdateServerRequest request) {
@@ -1732,12 +1684,11 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServerRequest 请求对象
+     * @param request UpdateServerRequest 请求对象
      * @return SyncInvoker<UpdateServerRequest, UpdateServerResponse>
      */
     public SyncInvoker<UpdateServerRequest, UpdateServerResponse> updateServerInvoker(UpdateServerRequest request) {
-        return new SyncInvoker<UpdateServerRequest, UpdateServerResponse>(request, WorkspaceAppMeta.updateServer,
-            hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.updateServer, hcClient);
     }
 
     /**
@@ -1748,7 +1699,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateServerGroupRequest 请求对象
+     * @param request CreateServerGroupRequest 请求对象
      * @return CreateServerGroupResponse
      */
     public CreateServerGroupResponse createServerGroup(CreateServerGroupRequest request) {
@@ -1763,13 +1714,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateServerGroupRequest 请求对象
+     * @param request CreateServerGroupRequest 请求对象
      * @return SyncInvoker<CreateServerGroupRequest, CreateServerGroupResponse>
      */
     public SyncInvoker<CreateServerGroupRequest, CreateServerGroupResponse> createServerGroupInvoker(
         CreateServerGroupRequest request) {
-        return new SyncInvoker<CreateServerGroupRequest, CreateServerGroupResponse>(request,
-            WorkspaceAppMeta.createServerGroup, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.createServerGroup, hcClient);
     }
 
     /**
@@ -1780,7 +1730,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServerGroupsRequest 请求对象
+     * @param request DeleteServerGroupsRequest 请求对象
      * @return DeleteServerGroupsResponse
      */
     public DeleteServerGroupsResponse deleteServerGroups(DeleteServerGroupsRequest request) {
@@ -1795,23 +1745,22 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServerGroupsRequest 请求对象
+     * @param request DeleteServerGroupsRequest 请求对象
      * @return SyncInvoker<DeleteServerGroupsRequest, DeleteServerGroupsResponse>
      */
     public SyncInvoker<DeleteServerGroupsRequest, DeleteServerGroupsResponse> deleteServerGroupsInvoker(
         DeleteServerGroupsRequest request) {
-        return new SyncInvoker<DeleteServerGroupsRequest, DeleteServerGroupsResponse>(request,
-            WorkspaceAppMeta.deleteServerGroups, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.deleteServerGroups, hcClient);
     }
 
     /**
      * 查询服务器组列表
      *
-     * 查询服务器组列表
+     * 查询服务器组列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServerGroupsRequest 请求对象
+     * @param request ListServerGroupsRequest 请求对象
      * @return ListServerGroupsResponse
      */
     public ListServerGroupsResponse listServerGroups(ListServerGroupsRequest request) {
@@ -1821,17 +1770,16 @@ public class WorkspaceAppClient {
     /**
      * 查询服务器组列表
      *
-     * 查询服务器组列表
+     * 查询服务器组列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServerGroupsRequest 请求对象
+     * @param request ListServerGroupsRequest 请求对象
      * @return SyncInvoker<ListServerGroupsRequest, ListServerGroupsResponse>
      */
     public SyncInvoker<ListServerGroupsRequest, ListServerGroupsResponse> listServerGroupsInvoker(
         ListServerGroupsRequest request) {
-        return new SyncInvoker<ListServerGroupsRequest, ListServerGroupsResponse>(request,
-            WorkspaceAppMeta.listServerGroups, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listServerGroups, hcClient);
     }
 
     /**
@@ -1842,7 +1790,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServerGroupRequest 请求对象
+     * @param request UpdateServerGroupRequest 请求对象
      * @return UpdateServerGroupResponse
      */
     public UpdateServerGroupResponse updateServerGroup(UpdateServerGroupRequest request) {
@@ -1857,23 +1805,22 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServerGroupRequest 请求对象
+     * @param request UpdateServerGroupRequest 请求对象
      * @return SyncInvoker<UpdateServerGroupRequest, UpdateServerGroupResponse>
      */
     public SyncInvoker<UpdateServerGroupRequest, UpdateServerGroupResponse> updateServerGroupInvoker(
         UpdateServerGroupRequest request) {
-        return new SyncInvoker<UpdateServerGroupRequest, UpdateServerGroupResponse>(request,
-            WorkspaceAppMeta.updateServerGroup, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.updateServerGroup, hcClient);
     }
 
     /**
      * 查询应用使用记录
      *
-     * 查询应用使用记录
+     * 查询应用使用记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppConnectionRequest 请求对象
+     * @param request ListAppConnectionRequest 请求对象
      * @return ListAppConnectionResponse
      */
     public ListAppConnectionResponse listAppConnection(ListAppConnectionRequest request) {
@@ -1883,27 +1830,26 @@ public class WorkspaceAppClient {
     /**
      * 查询应用使用记录
      *
-     * 查询应用使用记录
+     * 查询应用使用记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppConnectionRequest 请求对象
+     * @param request ListAppConnectionRequest 请求对象
      * @return SyncInvoker<ListAppConnectionRequest, ListAppConnectionResponse>
      */
     public SyncInvoker<ListAppConnectionRequest, ListAppConnectionResponse> listAppConnectionInvoker(
         ListAppConnectionRequest request) {
-        return new SyncInvoker<ListAppConnectionRequest, ListAppConnectionResponse>(request,
-            WorkspaceAppMeta.listAppConnection, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listAppConnection, hcClient);
     }
 
     /**
      * 根据用户名查询当前会话
      *
-     * 根据用户名查询当前会话
+     * 根据用户名查询当前会话。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSessionByUserNameRequest 请求对象
+     * @param request ListSessionByUserNameRequest 请求对象
      * @return ListSessionByUserNameResponse
      */
     public ListSessionByUserNameResponse listSessionByUserName(ListSessionByUserNameRequest request) {
@@ -1913,27 +1859,26 @@ public class WorkspaceAppClient {
     /**
      * 根据用户名查询当前会话
      *
-     * 根据用户名查询当前会话
+     * 根据用户名查询当前会话。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSessionByUserNameRequest 请求对象
+     * @param request ListSessionByUserNameRequest 请求对象
      * @return SyncInvoker<ListSessionByUserNameRequest, ListSessionByUserNameResponse>
      */
     public SyncInvoker<ListSessionByUserNameRequest, ListSessionByUserNameResponse> listSessionByUserNameInvoker(
         ListSessionByUserNameRequest request) {
-        return new SyncInvoker<ListSessionByUserNameRequest, ListSessionByUserNameResponse>(request,
-            WorkspaceAppMeta.listSessionByUserName, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listSessionByUserName, hcClient);
     }
 
     /**
      * 查询用户登录记录
      *
-     * 查询用户登录记录
+     * 查询用户登录记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserConnectionRequest 请求对象
+     * @param request ListUserConnectionRequest 请求对象
      * @return ListUserConnectionResponse
      */
     public ListUserConnectionResponse listUserConnection(ListUserConnectionRequest request) {
@@ -1943,27 +1888,26 @@ public class WorkspaceAppClient {
     /**
      * 查询用户登录记录
      *
-     * 查询用户登录记录
+     * 查询用户登录记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserConnectionRequest 请求对象
+     * @param request ListUserConnectionRequest 请求对象
      * @return SyncInvoker<ListUserConnectionRequest, ListUserConnectionResponse>
      */
     public SyncInvoker<ListUserConnectionRequest, ListUserConnectionResponse> listUserConnectionInvoker(
         ListUserConnectionRequest request) {
-        return new SyncInvoker<ListUserConnectionRequest, ListUserConnectionResponse>(request,
-            WorkspaceAppMeta.listUserConnection, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listUserConnection, hcClient);
     }
 
     /**
      * 用户会话注销
      *
-     * 用户会话注销
+     * 用户会话注销。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LogoffUserSessionRequest 请求对象
+     * @param request LogoffUserSessionRequest 请求对象
      * @return LogoffUserSessionResponse
      */
     public LogoffUserSessionResponse logoffUserSession(LogoffUserSessionRequest request) {
@@ -1973,17 +1917,16 @@ public class WorkspaceAppClient {
     /**
      * 用户会话注销
      *
-     * 用户会话注销
+     * 用户会话注销。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LogoffUserSessionRequest 请求对象
+     * @param request LogoffUserSessionRequest 请求对象
      * @return SyncInvoker<LogoffUserSessionRequest, LogoffUserSessionResponse>
      */
     public SyncInvoker<LogoffUserSessionRequest, LogoffUserSessionResponse> logoffUserSessionInvoker(
         LogoffUserSessionRequest request) {
-        return new SyncInvoker<LogoffUserSessionRequest, LogoffUserSessionResponse>(request,
-            WorkspaceAppMeta.logoffUserSession, hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.logoffUserSession, hcClient);
     }
 
     /**
@@ -1993,7 +1936,7 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumeTypeRequest 请求对象
+     * @param request ListVolumeTypeRequest 请求对象
      * @return ListVolumeTypeResponse
      */
     public ListVolumeTypeResponse listVolumeType(ListVolumeTypeRequest request) {
@@ -2007,13 +1950,12 @@ public class WorkspaceAppClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumeTypeRequest 请求对象
+     * @param request ListVolumeTypeRequest 请求对象
      * @return SyncInvoker<ListVolumeTypeRequest, ListVolumeTypeResponse>
      */
     public SyncInvoker<ListVolumeTypeRequest, ListVolumeTypeResponse> listVolumeTypeInvoker(
         ListVolumeTypeRequest request) {
-        return new SyncInvoker<ListVolumeTypeRequest, ListVolumeTypeResponse>(request, WorkspaceAppMeta.listVolumeType,
-            hcClient);
+        return new SyncInvoker<>(request, WorkspaceAppMeta.listVolumeType, hcClient);
     }
 
 }

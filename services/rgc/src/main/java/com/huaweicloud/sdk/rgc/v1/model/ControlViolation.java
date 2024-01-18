@@ -71,7 +71,7 @@ public class ControlViolation {
     }
 
     /**
-     * id。
+     * 控制策略纳管账号ID。
      * @return accountId
      */
     public String getAccountId() {
@@ -88,7 +88,7 @@ public class ControlViolation {
     }
 
     /**
-     * name。
+     * 控制策略纳管账号名称。
      * @return accountName
      */
     public String getAccountName() {
@@ -105,7 +105,7 @@ public class ControlViolation {
     }
 
     /**
-     * description。
+     * 控制策略显示名称。
      * @return displayName
      */
     public String getDisplayName() {
@@ -156,7 +156,7 @@ public class ControlViolation {
     }
 
     /**
-     * 父OU ID。
+     * 父注册OU ID。
      * @return parentOrganizationUnitId
      */
     public String getParentOrganizationUnitId() {
@@ -173,7 +173,7 @@ public class ControlViolation {
     }
 
     /**
-     * 父OU名称。
+     * 父注册OU名称。
      * @return parentOrganizationUnitName
      */
     public String getParentOrganizationUnitName() {
@@ -190,7 +190,7 @@ public class ControlViolation {
     }
 
     /**
-     * region。
+     * 区域名称。
      * @return region
      */
     public String getRegion() {
@@ -207,7 +207,7 @@ public class ControlViolation {
     }
 
     /**
-     * 不合规资源。
+     * 控制策略不合规资源。
      * @return resource
      */
     public String getResource() {
@@ -224,7 +224,7 @@ public class ControlViolation {
     }
 
     /**
-     * 不合规资源类型。
+     * 控制策略不合规资源类型。
      * @return resourceType
      */
     public String getResourceType() {

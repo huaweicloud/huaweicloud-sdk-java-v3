@@ -28,9 +28,9 @@ import com.huaweicloud.sdk.image.v2.model.RunRecaptureDetectResponse;
 public class ImageMeta {
 
     public static final HttpRequestDef<RunCelebrityRecognitionRequest, RunCelebrityRecognitionResponse> runCelebrityRecognition =
-        genForrunCelebrityRecognition();
+        genForRunCelebrityRecognition();
 
-    private static HttpRequestDef<RunCelebrityRecognitionRequest, RunCelebrityRecognitionResponse> genForrunCelebrityRecognition() {
+    private static HttpRequestDef<RunCelebrityRecognitionRequest, RunCelebrityRecognitionResponse> genForRunCelebrityRecognition() {
         // basic
         HttpRequestDef.Builder<RunCelebrityRecognitionRequest, RunCelebrityRecognitionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RunCelebrityRecognitionRequest.class, RunCelebrityRecognitionResponse.class)
@@ -43,9 +43,7 @@ public class ImageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CelebrityRecognitionReq.class),
-            f -> f.withMarshaller(RunCelebrityRecognitionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunCelebrityRecognitionRequest::getBody, RunCelebrityRecognitionRequest::setBody));
 
         // response
 
@@ -53,9 +51,9 @@ public class ImageMeta {
     }
 
     public static final HttpRequestDef<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse> runImageMainObjectDetection =
-        genForrunImageMainObjectDetection();
+        genForRunImageMainObjectDetection();
 
-    private static HttpRequestDef<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse> genForrunImageMainObjectDetection() {
+    private static HttpRequestDef<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse> genForRunImageMainObjectDetection() {
         // basic
         HttpRequestDef.Builder<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse> builder =
             HttpRequestDef
@@ -71,9 +69,8 @@ public class ImageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImageMainObjectDetectionReq.class),
-            f -> f.withMarshaller(RunImageMainObjectDetectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunImageMainObjectDetectionRequest::getBody,
+                RunImageMainObjectDetectionRequest::setBody));
 
         // response
 
@@ -81,9 +78,9 @@ public class ImageMeta {
     }
 
     public static final HttpRequestDef<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse> runImageMediaTagging =
-        genForrunImageMediaTagging();
+        genForRunImageMediaTagging();
 
-    private static HttpRequestDef<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse> genForrunImageMediaTagging() {
+    private static HttpRequestDef<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse> genForRunImageMediaTagging() {
         // basic
         HttpRequestDef.Builder<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RunImageMediaTaggingRequest.class, RunImageMediaTaggingResponse.class)
@@ -96,9 +93,7 @@ public class ImageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImageMediaTaggingReq.class),
-            f -> f.withMarshaller(RunImageMediaTaggingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunImageMediaTaggingRequest::getBody, RunImageMediaTaggingRequest::setBody));
 
         // response
 
@@ -106,9 +101,9 @@ public class ImageMeta {
     }
 
     public static final HttpRequestDef<RunImageMediaTaggingDetRequest, RunImageMediaTaggingDetResponse> runImageMediaTaggingDet =
-        genForrunImageMediaTaggingDet();
+        genForRunImageMediaTaggingDet();
 
-    private static HttpRequestDef<RunImageMediaTaggingDetRequest, RunImageMediaTaggingDetResponse> genForrunImageMediaTaggingDet() {
+    private static HttpRequestDef<RunImageMediaTaggingDetRequest, RunImageMediaTaggingDetResponse> genForRunImageMediaTaggingDet() {
         // basic
         HttpRequestDef.Builder<RunImageMediaTaggingDetRequest, RunImageMediaTaggingDetResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RunImageMediaTaggingDetRequest.class, RunImageMediaTaggingDetResponse.class)
@@ -121,9 +116,7 @@ public class ImageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImageMediaTaggingDetReq.class),
-            f -> f.withMarshaller(RunImageMediaTaggingDetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunImageMediaTaggingDetRequest::getBody, RunImageMediaTaggingDetRequest::setBody));
 
         // response
 
@@ -131,9 +124,9 @@ public class ImageMeta {
     }
 
     public static final HttpRequestDef<RunImageTaggingRequest, RunImageTaggingResponse> runImageTagging =
-        genForrunImageTagging();
+        genForRunImageTagging();
 
-    private static HttpRequestDef<RunImageTaggingRequest, RunImageTaggingResponse> genForrunImageTagging() {
+    private static HttpRequestDef<RunImageTaggingRequest, RunImageTaggingResponse> genForRunImageTagging() {
         // basic
         HttpRequestDef.Builder<RunImageTaggingRequest, RunImageTaggingResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunImageTaggingRequest.class, RunImageTaggingResponse.class)
@@ -146,9 +139,7 @@ public class ImageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImageTaggingReq.class),
-            f -> f.withMarshaller(RunImageTaggingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunImageTaggingRequest::getBody, RunImageTaggingRequest::setBody));
 
         // response
 
@@ -156,9 +147,9 @@ public class ImageMeta {
     }
 
     public static final HttpRequestDef<RunRecaptureDetectRequest, RunRecaptureDetectResponse> runRecaptureDetect =
-        genForrunRecaptureDetect();
+        genForRunRecaptureDetect();
 
-    private static HttpRequestDef<RunRecaptureDetectRequest, RunRecaptureDetectResponse> genForrunRecaptureDetect() {
+    private static HttpRequestDef<RunRecaptureDetectRequest, RunRecaptureDetectResponse> genForRunRecaptureDetect() {
         // basic
         HttpRequestDef.Builder<RunRecaptureDetectRequest, RunRecaptureDetectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunRecaptureDetectRequest.class, RunRecaptureDetectResponse.class)
@@ -171,9 +162,7 @@ public class ImageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecaptureDetectReq.class),
-            f -> f.withMarshaller(RunRecaptureDetectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunRecaptureDetectRequest::getBody, RunRecaptureDetectRequest::setBody));
 
         // response
 

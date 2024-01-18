@@ -24,9 +24,9 @@ import com.huaweicloud.sdk.css.v2.model.StopAutoCreateSnapshotsResponse;
 public class CssMeta {
 
     public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster =
-        genForcreateCluster();
+        genForCreateCluster();
 
-    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForcreateCluster() {
+    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForCreateCluster() {
         // basic
         HttpRequestDef.Builder<CreateClusterRequest, CreateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClusterRequest.class, CreateClusterResponse.class)
@@ -39,9 +39,7 @@ public class CssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateClusterReq.class),
-            f -> f.withMarshaller(CreateClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateClusterRequest::getBody, CreateClusterRequest::setBody));
 
         // response
 
@@ -49,9 +47,9 @@ public class CssMeta {
     }
 
     public static final HttpRequestDef<RestartClusterRequest, RestartClusterResponse> restartCluster =
-        genForrestartCluster();
+        genForRestartCluster();
 
-    private static HttpRequestDef<RestartClusterRequest, RestartClusterResponse> genForrestartCluster() {
+    private static HttpRequestDef<RestartClusterRequest, RestartClusterResponse> genForRestartCluster() {
         // basic
         HttpRequestDef.Builder<RestartClusterRequest, RestartClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestartClusterRequest.class, RestartClusterResponse.class)
@@ -64,16 +62,12 @@ public class CssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(RestartClusterRequest::getClusterId, RestartClusterRequest::setClusterId));
         builder.<RestartClusterReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestartClusterReq.class),
-            f -> f.withMarshaller(RestartClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestartClusterRequest::getBody, RestartClusterRequest::setBody));
 
         // response
 
@@ -81,9 +75,9 @@ public class CssMeta {
     }
 
     public static final HttpRequestDef<RollingRestartRequest, RollingRestartResponse> rollingRestart =
-        genForrollingRestart();
+        genForRollingRestart();
 
-    private static HttpRequestDef<RollingRestartRequest, RollingRestartResponse> genForrollingRestart() {
+    private static HttpRequestDef<RollingRestartRequest, RollingRestartResponse> genForRollingRestart() {
         // basic
         HttpRequestDef.Builder<RollingRestartRequest, RollingRestartResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RollingRestartRequest.class, RollingRestartResponse.class)
@@ -96,16 +90,12 @@ public class CssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RollingRestartRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(RollingRestartRequest::getClusterId, RollingRestartRequest::setClusterId));
         builder.<RollingRestartReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RollingRestartReq.class),
-            f -> f.withMarshaller(RollingRestartRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RollingRestartRequest::getBody, RollingRestartRequest::setBody));
 
         // response
 
@@ -113,9 +103,9 @@ public class CssMeta {
     }
 
     public static final HttpRequestDef<StartAutoCreateSnapshotsRequest, StartAutoCreateSnapshotsResponse> startAutoCreateSnapshots =
-        genForstartAutoCreateSnapshots();
+        genForStartAutoCreateSnapshots();
 
-    private static HttpRequestDef<StartAutoCreateSnapshotsRequest, StartAutoCreateSnapshotsResponse> genForstartAutoCreateSnapshots() {
+    private static HttpRequestDef<StartAutoCreateSnapshotsRequest, StartAutoCreateSnapshotsResponse> genForStartAutoCreateSnapshots() {
         // basic
         HttpRequestDef.Builder<StartAutoCreateSnapshotsRequest, StartAutoCreateSnapshotsResponse> builder =
             HttpRequestDef
@@ -129,16 +119,13 @@ public class CssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartAutoCreateSnapshotsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(StartAutoCreateSnapshotsRequest::getClusterId,
+                StartAutoCreateSnapshotsRequest::setClusterId));
         builder.<StartAutoCreateSnapshotsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartAutoCreateSnapshotsReq.class),
-            f -> f.withMarshaller(StartAutoCreateSnapshotsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartAutoCreateSnapshotsRequest::getBody, StartAutoCreateSnapshotsRequest::setBody));
 
         // response
 
@@ -146,9 +133,9 @@ public class CssMeta {
     }
 
     public static final HttpRequestDef<StopAutoCreateSnapshotsRequest, StopAutoCreateSnapshotsResponse> stopAutoCreateSnapshots =
-        genForstopAutoCreateSnapshots();
+        genForStopAutoCreateSnapshots();
 
-    private static HttpRequestDef<StopAutoCreateSnapshotsRequest, StopAutoCreateSnapshotsResponse> genForstopAutoCreateSnapshots() {
+    private static HttpRequestDef<StopAutoCreateSnapshotsRequest, StopAutoCreateSnapshotsResponse> genForStopAutoCreateSnapshots() {
         // basic
         HttpRequestDef.Builder<StopAutoCreateSnapshotsRequest, StopAutoCreateSnapshotsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, StopAutoCreateSnapshotsRequest.class, StopAutoCreateSnapshotsResponse.class)
@@ -161,9 +148,8 @@ public class CssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopAutoCreateSnapshotsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(StopAutoCreateSnapshotsRequest::getClusterId,
+                StopAutoCreateSnapshotsRequest::setClusterId));
 
         // response
 

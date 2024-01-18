@@ -225,9 +225,9 @@ import java.util.List;
 public class LtsMeta {
 
     public static final HttpRequestDef<CreateAccessConfigRequest, CreateAccessConfigResponse> createAccessConfig =
-        genForcreateAccessConfig();
+        genForCreateAccessConfig();
 
-    private static HttpRequestDef<CreateAccessConfigRequest, CreateAccessConfigResponse> genForcreateAccessConfig() {
+    private static HttpRequestDef<CreateAccessConfigRequest, CreateAccessConfigResponse> genForCreateAccessConfig() {
         // basic
         HttpRequestDef.Builder<CreateAccessConfigRequest, CreateAccessConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAccessConfigRequest.class, CreateAccessConfigResponse.class)
@@ -240,9 +240,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAccessConfigRequestBody.class),
-            f -> f.withMarshaller(CreateAccessConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAccessConfigRequest::getBody, CreateAccessConfigRequest::setBody));
 
         // response
 
@@ -250,9 +248,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateAgencyAccessRequest, CreateAgencyAccessResponse> createAgencyAccess =
-        genForcreateAgencyAccess();
+        genForCreateAgencyAccess();
 
-    private static HttpRequestDef<CreateAgencyAccessRequest, CreateAgencyAccessResponse> genForcreateAgencyAccess() {
+    private static HttpRequestDef<CreateAgencyAccessRequest, CreateAgencyAccessResponse> genForCreateAgencyAccess() {
         // basic
         HttpRequestDef.Builder<CreateAgencyAccessRequest, CreateAgencyAccessResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgencyAccessRequest.class, CreateAgencyAccessResponse.class)
@@ -265,26 +263,23 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PreviewAgencyLogAccessReqListBody.class),
-            f -> f.withMarshaller(CreateAgencyAccessRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAgencyAccessRequest::getBody, CreateAgencyAccessRequest::setBody));
 
         // response
         builder.<List<LTSAccessConfigInfoRespon200>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateAgencyAccessResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(LTSAccessConfigInfoRespon200.class));
+            f -> f.withMarshaller(CreateAgencyAccessResponse::getBody, CreateAgencyAccessResponse::setBody)
+                .withInnerContainerType(LTSAccessConfigInfoRespon200.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateDashBoardRequest, CreateDashBoardResponse> createDashBoard =
-        genForcreateDashBoard();
+        genForCreateDashBoard();
 
-    private static HttpRequestDef<CreateDashBoardRequest, CreateDashBoardResponse> genForcreateDashBoard() {
+    private static HttpRequestDef<CreateDashBoardRequest, CreateDashBoardResponse> genForCreateDashBoard() {
         // basic
         HttpRequestDef.Builder<CreateDashBoardRequest, CreateDashBoardResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDashBoardRequest.class, CreateDashBoardResponse.class)
@@ -297,9 +292,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateDashBoardReqBody.class),
-            f -> f.withMarshaller(CreateDashBoardRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDashBoardRequest::getBody, CreateDashBoardRequest::setBody));
 
         // response
 
@@ -307,9 +300,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateDashboardGroupRequest, CreateDashboardGroupResponse> createDashboardGroup =
-        genForcreateDashboardGroup();
+        genForCreateDashboardGroup();
 
-    private static HttpRequestDef<CreateDashboardGroupRequest, CreateDashboardGroupResponse> genForcreateDashboardGroup() {
+    private static HttpRequestDef<CreateDashboardGroupRequest, CreateDashboardGroupResponse> genForCreateDashboardGroup() {
         // basic
         HttpRequestDef.Builder<CreateDashboardGroupRequest, CreateDashboardGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateDashboardGroupRequest.class, CreateDashboardGroupResponse.class)
@@ -322,9 +315,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDashboardGroupReq.class),
-            f -> f.withMarshaller(CreateDashboardGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDashboardGroupRequest::getBody, CreateDashboardGroupRequest::setBody));
 
         // response
 
@@ -332,9 +323,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateHostGroupRequest, CreateHostGroupResponse> createHostGroup =
-        genForcreateHostGroup();
+        genForCreateHostGroup();
 
-    private static HttpRequestDef<CreateHostGroupRequest, CreateHostGroupResponse> genForcreateHostGroup() {
+    private static HttpRequestDef<CreateHostGroupRequest, CreateHostGroupResponse> genForCreateHostGroup() {
         // basic
         HttpRequestDef.Builder<CreateHostGroupRequest, CreateHostGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateHostGroupRequest.class, CreateHostGroupResponse.class)
@@ -347,9 +338,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateHostGroupRequestBody.class),
-            f -> f.withMarshaller(CreateHostGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateHostGroupRequest::getBody, CreateHostGroupRequest::setBody));
 
         // response
 
@@ -357,9 +346,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateKeywordsAlarmRuleRequest, CreateKeywordsAlarmRuleResponse> createKeywordsAlarmRule =
-        genForcreateKeywordsAlarmRule();
+        genForCreateKeywordsAlarmRule();
 
-    private static HttpRequestDef<CreateKeywordsAlarmRuleRequest, CreateKeywordsAlarmRuleResponse> genForcreateKeywordsAlarmRule() {
+    private static HttpRequestDef<CreateKeywordsAlarmRuleRequest, CreateKeywordsAlarmRuleResponse> genForCreateKeywordsAlarmRule() {
         // basic
         HttpRequestDef.Builder<CreateKeywordsAlarmRuleRequest, CreateKeywordsAlarmRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateKeywordsAlarmRuleRequest.class, CreateKeywordsAlarmRuleResponse.class)
@@ -372,9 +361,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateKeywordsAlarmRuleRequestBody.class),
-            f -> f.withMarshaller(CreateKeywordsAlarmRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateKeywordsAlarmRuleRequest::getBody, CreateKeywordsAlarmRuleRequest::setBody));
 
         // response
 
@@ -382,9 +369,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateLogDumpObsRequest, CreateLogDumpObsResponse> createLogDumpObs =
-        genForcreateLogDumpObs();
+        genForCreateLogDumpObs();
 
-    private static HttpRequestDef<CreateLogDumpObsRequest, CreateLogDumpObsResponse> genForcreateLogDumpObs() {
+    private static HttpRequestDef<CreateLogDumpObsRequest, CreateLogDumpObsResponse> genForCreateLogDumpObs() {
         // basic
         HttpRequestDef.Builder<CreateLogDumpObsRequest, CreateLogDumpObsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLogDumpObsRequest.class, CreateLogDumpObsResponse.class)
@@ -397,9 +384,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLogDumpObsRequestBody.class),
-            f -> f.withMarshaller(CreateLogDumpObsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLogDumpObsRequest::getBody, CreateLogDumpObsRequest::setBody));
 
         // response
 
@@ -407,9 +392,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateLogGroupRequest, CreateLogGroupResponse> createLogGroup =
-        genForcreateLogGroup();
+        genForCreateLogGroup();
 
-    private static HttpRequestDef<CreateLogGroupRequest, CreateLogGroupResponse> genForcreateLogGroup() {
+    private static HttpRequestDef<CreateLogGroupRequest, CreateLogGroupResponse> genForCreateLogGroup() {
         // basic
         HttpRequestDef.Builder<CreateLogGroupRequest, CreateLogGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLogGroupRequest.class, CreateLogGroupResponse.class)
@@ -422,9 +407,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLogGroupParams.class),
-            f -> f.withMarshaller(CreateLogGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLogGroupRequest::getBody, CreateLogGroupRequest::setBody));
 
         // response
 
@@ -432,9 +415,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateLogStreamRequest, CreateLogStreamResponse> createLogStream =
-        genForcreateLogStream();
+        genForCreateLogStream();
 
-    private static HttpRequestDef<CreateLogStreamRequest, CreateLogStreamResponse> genForcreateLogStream() {
+    private static HttpRequestDef<CreateLogStreamRequest, CreateLogStreamResponse> genForCreateLogStream() {
         // basic
         HttpRequestDef.Builder<CreateLogStreamRequest, CreateLogStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLogStreamRequest.class, CreateLogStreamResponse.class)
@@ -447,16 +430,12 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLogStreamRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(CreateLogStreamRequest::getLogGroupId, CreateLogStreamRequest::setLogGroupId));
         builder.<CreateLogStreamParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLogStreamParams.class),
-            f -> f.withMarshaller(CreateLogStreamRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLogStreamRequest::getBody, CreateLogStreamRequest::setBody));
 
         // response
 
@@ -464,9 +443,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse> createLogStreamIndex =
-        genForcreateLogStreamIndex();
+        genForCreateLogStreamIndex();
 
-    private static HttpRequestDef<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse> genForcreateLogStreamIndex() {
+    private static HttpRequestDef<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse> genForCreateLogStreamIndex() {
         // basic
         HttpRequestDef.Builder<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateLogStreamIndexRequest.class, CreateLogStreamIndexResponse.class)
@@ -479,23 +458,17 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLogStreamIndexRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(CreateLogStreamIndexRequest::getGroupId, CreateLogStreamIndexRequest::setGroupId));
         builder.<String>withRequestField("stream_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLogStreamIndexRequest::getStreamId, (req, v) -> {
-                req.setStreamId(v);
-            }));
+            f -> f.withMarshaller(CreateLogStreamIndexRequest::getStreamId, CreateLogStreamIndexRequest::setStreamId));
         builder.<LTSIndexConfigInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LTSIndexConfigInfo.class),
-            f -> f.withMarshaller(CreateLogStreamIndexRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLogStreamIndexRequest::getBody, CreateLogStreamIndexRequest::setBody));
 
         // response
 
@@ -503,9 +476,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> createNotificationTemplate =
-        genForcreateNotificationTemplate();
+        genForCreateNotificationTemplate();
 
-    private static HttpRequestDef<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> genForcreateNotificationTemplate() {
+    private static HttpRequestDef<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> genForCreateNotificationTemplate() {
         // basic
         HttpRequestDef.Builder<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> builder =
             HttpRequestDef
@@ -521,16 +494,14 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNotificationTemplateRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(CreateNotificationTemplateRequest::getDomainId,
+                CreateNotificationTemplateRequest::setDomainId));
         builder.<CreateNotificationTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNotificationTemplateRequestBody.class),
-            f -> f.withMarshaller(CreateNotificationTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNotificationTemplateRequest::getBody,
+                CreateNotificationTemplateRequest::setBody));
 
         // response
 
@@ -538,9 +509,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse> createSearchCriterias =
-        genForcreateSearchCriterias();
+        genForCreateSearchCriterias();
 
-    private static HttpRequestDef<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse> genForcreateSearchCriterias() {
+    private static HttpRequestDef<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse> genForCreateSearchCriterias() {
         // basic
         HttpRequestDef.Builder<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateSearchCriteriasRequest.class, CreateSearchCriteriasResponse.class)
@@ -553,23 +524,17 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSearchCriteriasRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(CreateSearchCriteriasRequest::getGroupId, CreateSearchCriteriasRequest::setGroupId));
         builder.<String>withRequestField("topic_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSearchCriteriasRequest::getTopicId, (req, v) -> {
-                req.setTopicId(v);
-            }));
+            f -> f.withMarshaller(CreateSearchCriteriasRequest::getTopicId, CreateSearchCriteriasRequest::setTopicId));
         builder.<CreateSearchCriteriasBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateSearchCriteriasBody.class),
-            f -> f.withMarshaller(CreateSearchCriteriasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSearchCriteriasRequest::getBody, CreateSearchCriteriasRequest::setBody));
 
         // response
 
@@ -577,9 +542,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateStructConfigRequest, CreateStructConfigResponse> createStructConfig =
-        genForcreateStructConfig();
+        genForCreateStructConfig();
 
-    private static HttpRequestDef<CreateStructConfigRequest, CreateStructConfigResponse> genForcreateStructConfig() {
+    private static HttpRequestDef<CreateStructConfigRequest, CreateStructConfigResponse> genForCreateStructConfig() {
         // basic
         HttpRequestDef.Builder<CreateStructConfigRequest, CreateStructConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStructConfigRequest.class, CreateStructConfigResponse.class)
@@ -592,26 +557,22 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StructConfig.class),
-            f -> f.withMarshaller(CreateStructConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStructConfigRequest::getBody, CreateStructConfigRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateStructConfigResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateStructConfigResponse::getBody, CreateStructConfigResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateStructTemplateRequest, CreateStructTemplateResponse> createStructTemplate =
-        genForcreateStructTemplate();
+        genForCreateStructTemplate();
 
-    private static HttpRequestDef<CreateStructTemplateRequest, CreateStructTemplateResponse> genForcreateStructTemplate() {
+    private static HttpRequestDef<CreateStructTemplateRequest, CreateStructTemplateResponse> genForCreateStructTemplate() {
         // basic
         HttpRequestDef.Builder<CreateStructTemplateRequest, CreateStructTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateStructTemplateRequest.class, CreateStructTemplateResponse.class)
@@ -624,25 +585,21 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LtsStructTemplateInfo.class),
-            f -> f.withMarshaller(CreateStructTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStructTemplateRequest::getBody, CreateStructTemplateRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateStructTemplateResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateStructTemplateResponse::getBody, CreateStructTemplateResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForcreateTags();
+    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForCreateTags();
 
-    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForcreateTags() {
+    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForCreateTags() {
         // basic
         HttpRequestDef.Builder<CreateTagsRequest, CreateTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTagsRequest.class, CreateTagsResponse.class)
@@ -655,23 +612,17 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CreateTagsRequest::getResourceType, CreateTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateTagsRequest::getResourceId, CreateTagsRequest::setResourceId));
         builder.<CreateTagsReqbody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateTagsReqbody.class),
-            f -> f.withMarshaller(CreateTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTagsRequest::getBody, CreateTagsRequest::setBody));
 
         // response
 
@@ -679,9 +630,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateTransferRequest, CreateTransferResponse> createTransfer =
-        genForcreateTransfer();
+        genForCreateTransfer();
 
-    private static HttpRequestDef<CreateTransferRequest, CreateTransferResponse> genForcreateTransfer() {
+    private static HttpRequestDef<CreateTransferRequest, CreateTransferResponse> genForCreateTransfer() {
         // basic
         HttpRequestDef.Builder<CreateTransferRequest, CreateTransferResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTransferRequest.class, CreateTransferResponse.class)
@@ -694,9 +645,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTransferRequestBody.class),
-            f -> f.withMarshaller(CreateTransferRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTransferRequest::getBody, CreateTransferRequest::setBody));
 
         // response
 
@@ -704,9 +653,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreatefavoriteRequest, CreatefavoriteResponse> createfavorite =
-        genForcreatefavorite();
+        genForCreatefavorite();
 
-    private static HttpRequestDef<CreatefavoriteRequest, CreatefavoriteResponse> genForcreatefavorite() {
+    private static HttpRequestDef<CreatefavoriteRequest, CreatefavoriteResponse> genForCreatefavorite() {
         // basic
         HttpRequestDef.Builder<CreatefavoriteRequest, CreatefavoriteResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatefavoriteRequest.class, CreatefavoriteResponse.class)
@@ -719,9 +668,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreatefavoriteReqbody.class),
-            f -> f.withMarshaller(CreatefavoriteRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatefavoriteRequest::getBody, CreatefavoriteRequest::setBody));
 
         // response
 
@@ -729,9 +676,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DeleteAccessConfigRequest, DeleteAccessConfigResponse> deleteAccessConfig =
-        genFordeleteAccessConfig();
+        genForDeleteAccessConfig();
 
-    private static HttpRequestDef<DeleteAccessConfigRequest, DeleteAccessConfigResponse> genFordeleteAccessConfig() {
+    private static HttpRequestDef<DeleteAccessConfigRequest, DeleteAccessConfigResponse> genForDeleteAccessConfig() {
         // basic
         HttpRequestDef.Builder<DeleteAccessConfigRequest, DeleteAccessConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAccessConfigRequest.class, DeleteAccessConfigResponse.class)
@@ -744,9 +691,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteAccessConfigRequestBody.class),
-            f -> f.withMarshaller(DeleteAccessConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteAccessConfigRequest::getBody, DeleteAccessConfigRequest::setBody));
 
         // response
 
@@ -754,9 +699,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse> deleteActiveAlarms =
-        genFordeleteActiveAlarms();
+        genForDeleteActiveAlarms();
 
-    private static HttpRequestDef<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse> genFordeleteActiveAlarms() {
+    private static HttpRequestDef<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse> genForDeleteActiveAlarms() {
         // basic
         HttpRequestDef.Builder<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteActiveAlarmsRequest.class, DeleteActiveAlarmsResponse.class)
@@ -769,16 +714,12 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteActiveAlarmsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DeleteActiveAlarmsRequest::getDomainId, DeleteActiveAlarmsRequest::setDomainId));
         builder.<DeleteActiveAlarmsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteActiveAlarmsRequestBody.class),
-            f -> f.withMarshaller(DeleteActiveAlarmsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteActiveAlarmsRequest::getBody, DeleteActiveAlarmsRequest::setBody));
 
         // response
 
@@ -786,9 +727,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DeleteDashboardRequest, DeleteDashboardResponse> deleteDashboard =
-        genFordeleteDashboard();
+        genForDeleteDashboard();
 
-    private static HttpRequestDef<DeleteDashboardRequest, DeleteDashboardResponse> genFordeleteDashboard() {
+    private static HttpRequestDef<DeleteDashboardRequest, DeleteDashboardResponse> genForDeleteDashboard() {
         // basic
         HttpRequestDef.Builder<DeleteDashboardRequest, DeleteDashboardResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDashboardRequest.class, DeleteDashboardResponse.class)
@@ -801,16 +742,13 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDashboardRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteDashboardRequest::getId, DeleteDashboardRequest::setId));
         builder.<Boolean>withRequestField("is_delete_charts",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteDashboardRequest::getIsDeleteCharts, (req, v) -> {
-                req.setIsDeleteCharts(v);
-            }));
+            f -> f.withMarshaller(DeleteDashboardRequest::getIsDeleteCharts,
+                DeleteDashboardRequest::setIsDeleteCharts));
 
         // response
 
@@ -818,9 +756,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DeleteHostGroupRequest, DeleteHostGroupResponse> deleteHostGroup =
-        genFordeleteHostGroup();
+        genForDeleteHostGroup();
 
-    private static HttpRequestDef<DeleteHostGroupRequest, DeleteHostGroupResponse> genFordeleteHostGroup() {
+    private static HttpRequestDef<DeleteHostGroupRequest, DeleteHostGroupResponse> genForDeleteHostGroup() {
         // basic
         HttpRequestDef.Builder<DeleteHostGroupRequest, DeleteHostGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteHostGroupRequest.class, DeleteHostGroupResponse.class)
@@ -833,9 +771,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteHostGroupRequestBody.class),
-            f -> f.withMarshaller(DeleteHostGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteHostGroupRequest::getBody, DeleteHostGroupRequest::setBody));
 
         // response
 
@@ -843,9 +779,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DeleteKeywordsAlarmRuleRequest, DeleteKeywordsAlarmRuleResponse> deleteKeywordsAlarmRule =
-        genFordeleteKeywordsAlarmRule();
+        genForDeleteKeywordsAlarmRule();
 
-    private static HttpRequestDef<DeleteKeywordsAlarmRuleRequest, DeleteKeywordsAlarmRuleResponse> genFordeleteKeywordsAlarmRule() {
+    private static HttpRequestDef<DeleteKeywordsAlarmRuleRequest, DeleteKeywordsAlarmRuleResponse> genForDeleteKeywordsAlarmRule() {
         // basic
         HttpRequestDef.Builder<DeleteKeywordsAlarmRuleRequest, DeleteKeywordsAlarmRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteKeywordsAlarmRuleRequest.class, DeleteKeywordsAlarmRuleResponse.class)
@@ -858,9 +794,8 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteKeywordsAlarmRuleRequest::getKeywordsAlarmRuleId, (req, v) -> {
-                req.setKeywordsAlarmRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteKeywordsAlarmRuleRequest::getKeywordsAlarmRuleId,
+                DeleteKeywordsAlarmRuleRequest::setKeywordsAlarmRuleId));
 
         // response
 
@@ -868,9 +803,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DeleteLogGroupRequest, DeleteLogGroupResponse> deleteLogGroup =
-        genFordeleteLogGroup();
+        genForDeleteLogGroup();
 
-    private static HttpRequestDef<DeleteLogGroupRequest, DeleteLogGroupResponse> genFordeleteLogGroup() {
+    private static HttpRequestDef<DeleteLogGroupRequest, DeleteLogGroupResponse> genForDeleteLogGroup() {
         // basic
         HttpRequestDef.Builder<DeleteLogGroupRequest, DeleteLogGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLogGroupRequest.class, DeleteLogGroupResponse.class)
@@ -883,26 +818,22 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLogGroupRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteLogGroupRequest::getLogGroupId, DeleteLogGroupRequest::setLogGroupId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteLogGroupResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteLogGroupResponse::getBody, DeleteLogGroupResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteLogStreamRequest, DeleteLogStreamResponse> deleteLogStream =
-        genFordeleteLogStream();
+        genForDeleteLogStream();
 
-    private static HttpRequestDef<DeleteLogStreamRequest, DeleteLogStreamResponse> genFordeleteLogStream() {
+    private static HttpRequestDef<DeleteLogStreamRequest, DeleteLogStreamResponse> genForDeleteLogStream() {
         // basic
         HttpRequestDef.Builder<DeleteLogStreamRequest, DeleteLogStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLogStreamRequest.class, DeleteLogStreamResponse.class)
@@ -915,33 +846,27 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLogStreamRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteLogStreamRequest::getLogGroupId, DeleteLogStreamRequest::setLogGroupId));
         builder.<String>withRequestField("log_stream_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLogStreamRequest::getLogStreamId, (req, v) -> {
-                req.setLogStreamId(v);
-            }));
+            f -> f.withMarshaller(DeleteLogStreamRequest::getLogStreamId, DeleteLogStreamRequest::setLogStreamId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteLogStreamResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteLogStreamResponse::getBody, DeleteLogStreamResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> deleteNotificationTemplate =
-        genFordeleteNotificationTemplate();
+        genForDeleteNotificationTemplate();
 
-    private static HttpRequestDef<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> genFordeleteNotificationTemplate() {
+    private static HttpRequestDef<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> genForDeleteNotificationTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> builder =
             HttpRequestDef
@@ -957,16 +882,14 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNotificationTemplateRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DeleteNotificationTemplateRequest::getDomainId,
+                DeleteNotificationTemplateRequest::setDomainId));
         builder.<DeleteNotificationTemplateBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteNotificationTemplateBody.class),
-            f -> f.withMarshaller(DeleteNotificationTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteNotificationTemplateRequest::getBody,
+                DeleteNotificationTemplateRequest::setBody));
 
         // response
 
@@ -974,9 +897,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse> deleteSearchCriterias =
-        genFordeleteSearchCriterias();
+        genForDeleteSearchCriterias();
 
-    private static HttpRequestDef<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse> genFordeleteSearchCriterias() {
+    private static HttpRequestDef<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse> genForDeleteSearchCriterias() {
         // basic
         HttpRequestDef.Builder<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteSearchCriteriasRequest.class, DeleteSearchCriteriasResponse.class)
@@ -989,23 +912,17 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSearchCriteriasRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteSearchCriteriasRequest::getGroupId, DeleteSearchCriteriasRequest::setGroupId));
         builder.<String>withRequestField("topic_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSearchCriteriasRequest::getTopicId, (req, v) -> {
-                req.setTopicId(v);
-            }));
+            f -> f.withMarshaller(DeleteSearchCriteriasRequest::getTopicId, DeleteSearchCriteriasRequest::setTopicId));
         builder.<DeleteSearchCriterias>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteSearchCriterias.class),
-            f -> f.withMarshaller(DeleteSearchCriteriasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteSearchCriteriasRequest::getBody, DeleteSearchCriteriasRequest::setBody));
 
         // response
 
@@ -1013,9 +930,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DeleteStructTemplateRequest, DeleteStructTemplateResponse> deleteStructTemplate =
-        genFordeleteStructTemplate();
+        genForDeleteStructTemplate();
 
-    private static HttpRequestDef<DeleteStructTemplateRequest, DeleteStructTemplateResponse> genFordeleteStructTemplate() {
+    private static HttpRequestDef<DeleteStructTemplateRequest, DeleteStructTemplateResponse> genForDeleteStructTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteStructTemplateRequest, DeleteStructTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteStructTemplateRequest.class, DeleteStructTemplateResponse.class)
@@ -1028,26 +945,22 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteStructTemplateReqBody.class),
-            f -> f.withMarshaller(DeleteStructTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteStructTemplateRequest::getBody, DeleteStructTemplateRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteStructTemplateResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteStructTemplateResponse::getBody, DeleteStructTemplateResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteTransferRequest, DeleteTransferResponse> deleteTransfer =
-        genFordeleteTransfer();
+        genForDeleteTransfer();
 
-    private static HttpRequestDef<DeleteTransferRequest, DeleteTransferResponse> genFordeleteTransfer() {
+    private static HttpRequestDef<DeleteTransferRequest, DeleteTransferResponse> genForDeleteTransfer() {
         // basic
         HttpRequestDef.Builder<DeleteTransferRequest, DeleteTransferResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTransferRequest.class, DeleteTransferResponse.class)
@@ -1060,9 +973,7 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTransferRequest::getLogTransferId, (req, v) -> {
-                req.setLogTransferId(v);
-            }));
+            f -> f.withMarshaller(DeleteTransferRequest::getLogTransferId, DeleteTransferRequest::setLogTransferId));
 
         // response
 
@@ -1070,9 +981,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DeletefavoriteRequest, DeletefavoriteResponse> deletefavorite =
-        genFordeletefavorite();
+        genForDeletefavorite();
 
-    private static HttpRequestDef<DeletefavoriteRequest, DeletefavoriteResponse> genFordeletefavorite() {
+    private static HttpRequestDef<DeletefavoriteRequest, DeletefavoriteResponse> genForDeletefavorite() {
         // basic
         HttpRequestDef.Builder<DeletefavoriteRequest, DeletefavoriteResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletefavoriteRequest.class, DeletefavoriteResponse.class)
@@ -1085,9 +996,7 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletefavoriteRequest::getFavResId, (req, v) -> {
-                req.setFavResId(v);
-            }));
+            f -> f.withMarshaller(DeletefavoriteRequest::getFavResId, DeletefavoriteRequest::setFavResId));
 
         // response
 
@@ -1095,9 +1004,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DisableLogCollectionRequest, DisableLogCollectionResponse> disableLogCollection =
-        genFordisableLogCollection();
+        genForDisableLogCollection();
 
-    private static HttpRequestDef<DisableLogCollectionRequest, DisableLogCollectionResponse> genFordisableLogCollection() {
+    private static HttpRequestDef<DisableLogCollectionRequest, DisableLogCollectionResponse> genForDisableLogCollection() {
         // basic
         HttpRequestDef.Builder<DisableLogCollectionRequest, DisableLogCollectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DisableLogCollectionRequest.class, DisableLogCollectionResponse.class)
@@ -1113,9 +1022,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<EnableLogCollectionRequest, EnableLogCollectionResponse> enableLogCollection =
-        genForenableLogCollection();
+        genForEnableLogCollection();
 
-    private static HttpRequestDef<EnableLogCollectionRequest, EnableLogCollectionResponse> genForenableLogCollection() {
+    private static HttpRequestDef<EnableLogCollectionRequest, EnableLogCollectionResponse> genForEnableLogCollection() {
         // basic
         HttpRequestDef.Builder<EnableLogCollectionRequest, EnableLogCollectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableLogCollectionRequest.class, EnableLogCollectionResponse.class)
@@ -1131,9 +1040,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListAccessConfigRequest, ListAccessConfigResponse> listAccessConfig =
-        genForlistAccessConfig();
+        genForListAccessConfig();
 
-    private static HttpRequestDef<ListAccessConfigRequest, ListAccessConfigResponse> genForlistAccessConfig() {
+    private static HttpRequestDef<ListAccessConfigRequest, ListAccessConfigResponse> genForListAccessConfig() {
         // basic
         HttpRequestDef.Builder<ListAccessConfigRequest, ListAccessConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListAccessConfigRequest.class, ListAccessConfigResponse.class)
@@ -1146,9 +1055,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetAccessConfigListRequestBody.class),
-            f -> f.withMarshaller(ListAccessConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAccessConfigRequest::getBody, ListAccessConfigRequest::setBody));
 
         // response
 
@@ -1156,9 +1063,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListActiveOrHistoryAlarmsRequest, ListActiveOrHistoryAlarmsResponse> listActiveOrHistoryAlarms =
-        genForlistActiveOrHistoryAlarms();
+        genForListActiveOrHistoryAlarms();
 
-    private static HttpRequestDef<ListActiveOrHistoryAlarmsRequest, ListActiveOrHistoryAlarmsResponse> genForlistActiveOrHistoryAlarms() {
+    private static HttpRequestDef<ListActiveOrHistoryAlarmsRequest, ListActiveOrHistoryAlarmsResponse> genForListActiveOrHistoryAlarms() {
         // basic
         HttpRequestDef.Builder<ListActiveOrHistoryAlarmsRequest, ListActiveOrHistoryAlarmsResponse> builder =
             HttpRequestDef
@@ -1174,37 +1081,32 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListActiveOrHistoryAlarmsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListActiveOrHistoryAlarmsRequest::getDomainId,
+                ListActiveOrHistoryAlarmsRequest::setDomainId));
         builder.<ListActiveOrHistoryAlarmsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListActiveOrHistoryAlarmsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListActiveOrHistoryAlarmsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListActiveOrHistoryAlarmsRequest::getType,
+                ListActiveOrHistoryAlarmsRequest::setType));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListActiveOrHistoryAlarmsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListActiveOrHistoryAlarmsRequest::getMarker,
+                ListActiveOrHistoryAlarmsRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListActiveOrHistoryAlarmsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListActiveOrHistoryAlarmsRequest::getLimit,
+                ListActiveOrHistoryAlarmsRequest::setLimit));
         builder.<ListActiveOrHistoryAlarmsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListActiveOrHistoryAlarmsRequestBody.class),
-            f -> f.withMarshaller(ListActiveOrHistoryAlarmsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListActiveOrHistoryAlarmsRequest::getBody,
+                ListActiveOrHistoryAlarmsRequest::setBody));
 
         // response
 
@@ -1212,9 +1114,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse> listBreifStructTemplate =
-        genForlistBreifStructTemplate();
+        genForListBreifStructTemplate();
 
-    private static HttpRequestDef<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse> genForlistBreifStructTemplate() {
+    private static HttpRequestDef<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse> genForListBreifStructTemplate() {
         // basic
         HttpRequestDef.Builder<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListBreifStructTemplateRequest.class, ListBreifStructTemplateResponse.class)
@@ -1229,9 +1131,9 @@ public class LtsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListChartsRequest, ListChartsResponse> listCharts = genForlistCharts();
+    public static final HttpRequestDef<ListChartsRequest, ListChartsResponse> listCharts = genForListCharts();
 
-    private static HttpRequestDef<ListChartsRequest, ListChartsResponse> genForlistCharts() {
+    private static HttpRequestDef<ListChartsRequest, ListChartsResponse> genForListCharts() {
         // basic
         HttpRequestDef.Builder<ListChartsRequest, ListChartsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListChartsRequest.class, ListChartsResponse.class)
@@ -1244,30 +1146,22 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListChartsRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(ListChartsRequest::getLogGroupId, ListChartsRequest::setLogGroupId));
         builder.<String>withRequestField("log_stream_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListChartsRequest::getLogStreamId, (req, v) -> {
-                req.setLogStreamId(v);
-            }));
+            f -> f.withMarshaller(ListChartsRequest::getLogStreamId, ListChartsRequest::setLogStreamId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListChartsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListChartsRequest::getOffset, ListChartsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListChartsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListChartsRequest::getLimit, ListChartsRequest::setLimit));
 
         // response
 
@@ -1275,9 +1169,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListCriteriasRequest, ListCriteriasResponse> listCriterias =
-        genForlistCriterias();
+        genForListCriterias();
 
-    private static HttpRequestDef<ListCriteriasRequest, ListCriteriasResponse> genForlistCriterias() {
+    private static HttpRequestDef<ListCriteriasRequest, ListCriteriasResponse> genForListCriterias() {
         // basic
         HttpRequestDef.Builder<ListCriteriasRequest, ListCriteriasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCriteriasRequest.class, ListCriteriasResponse.class)
@@ -1290,23 +1184,17 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCriteriasRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListCriteriasRequest::getGroupId, ListCriteriasRequest::setGroupId));
         builder.<String>withRequestField("topic_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCriteriasRequest::getTopicId, (req, v) -> {
-                req.setTopicId(v);
-            }));
+            f -> f.withMarshaller(ListCriteriasRequest::getTopicId, ListCriteriasRequest::setTopicId));
         builder.<String>withRequestField("search_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCriteriasRequest::getSearchType, (req, v) -> {
-                req.setSearchType(v);
-            }));
+            f -> f.withMarshaller(ListCriteriasRequest::getSearchType, ListCriteriasRequest::setSearchType));
 
         // response
 
@@ -1314,9 +1202,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListHistorySqlRequest, ListHistorySqlResponse> listHistorySql =
-        genForlistHistorySql();
+        genForListHistorySql();
 
-    private static HttpRequestDef<ListHistorySqlRequest, ListHistorySqlResponse> genForlistHistorySql() {
+    private static HttpRequestDef<ListHistorySqlRequest, ListHistorySqlResponse> genForListHistorySql() {
         // basic
         HttpRequestDef.Builder<ListHistorySqlRequest, ListHistorySqlResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHistorySqlRequest.class, ListHistorySqlResponse.class)
@@ -1329,25 +1217,21 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistorySqlRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(ListHistorySqlRequest::getLogGroupId, ListHistorySqlRequest::setLogGroupId));
         builder.<String>withRequestField("log_stream_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistorySqlRequest::getLogStreamId, (req, v) -> {
-                req.setLogStreamId(v);
-            }));
+            f -> f.withMarshaller(ListHistorySqlRequest::getLogStreamId, ListHistorySqlRequest::setLogStreamId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListHostRequest, ListHostResponse> listHost = genForlistHost();
+    public static final HttpRequestDef<ListHostRequest, ListHostResponse> listHost = genForListHost();
 
-    private static HttpRequestDef<ListHostRequest, ListHostResponse> genForlistHost() {
+    private static HttpRequestDef<ListHostRequest, ListHostResponse> genForListHost() {
         // basic
         HttpRequestDef.Builder<ListHostRequest, ListHostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListHostRequest.class, ListHostResponse.class)
@@ -1360,9 +1244,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetHostListRequestBody.class),
-            f -> f.withMarshaller(ListHostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListHostRequest::getBody, ListHostRequest::setBody));
 
         // response
 
@@ -1370,9 +1252,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListHostGroupRequest, ListHostGroupResponse> listHostGroup =
-        genForlistHostGroup();
+        genForListHostGroup();
 
-    private static HttpRequestDef<ListHostGroupRequest, ListHostGroupResponse> genForlistHostGroup() {
+    private static HttpRequestDef<ListHostGroupRequest, ListHostGroupResponse> genForListHostGroup() {
         // basic
         HttpRequestDef.Builder<ListHostGroupRequest, ListHostGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListHostGroupRequest.class, ListHostGroupResponse.class)
@@ -1385,9 +1267,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetHostGroupListRequestBody.class),
-            f -> f.withMarshaller(ListHostGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListHostGroupRequest::getBody, ListHostGroupRequest::setBody));
 
         // response
 
@@ -1395,9 +1275,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse> listKeywordsAlarmRules =
-        genForlistKeywordsAlarmRules();
+        genForListKeywordsAlarmRules();
 
-    private static HttpRequestDef<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse> genForlistKeywordsAlarmRules() {
+    private static HttpRequestDef<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse> genForListKeywordsAlarmRules() {
         // basic
         HttpRequestDef.Builder<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListKeywordsAlarmRulesRequest.class, ListKeywordsAlarmRulesResponse.class)
@@ -1413,9 +1293,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListLogGroupsRequest, ListLogGroupsResponse> listLogGroups =
-        genForlistLogGroups();
+        genForListLogGroups();
 
-    private static HttpRequestDef<ListLogGroupsRequest, ListLogGroupsResponse> genForlistLogGroups() {
+    private static HttpRequestDef<ListLogGroupsRequest, ListLogGroupsResponse> genForListLogGroups() {
         // basic
         HttpRequestDef.Builder<ListLogGroupsRequest, ListLogGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLogGroupsRequest.class, ListLogGroupsResponse.class)
@@ -1431,9 +1311,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListLogHistogramRequest, ListLogHistogramResponse> listLogHistogram =
-        genForlistLogHistogram();
+        genForListLogHistogram();
 
-    private static HttpRequestDef<ListLogHistogramRequest, ListLogHistogramResponse> genForlistLogHistogram() {
+    private static HttpRequestDef<ListLogHistogramRequest, ListLogHistogramResponse> genForListLogHistogram() {
         // basic
         HttpRequestDef.Builder<ListLogHistogramRequest, ListLogHistogramResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListLogHistogramRequest.class, ListLogHistogramResponse.class)
@@ -1446,9 +1326,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryLogKeyWordCountRequestBody.class),
-            f -> f.withMarshaller(ListLogHistogramRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListLogHistogramRequest::getBody, ListLogHistogramRequest::setBody));
 
         // response
 
@@ -1456,9 +1334,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListLogStreamRequest, ListLogStreamResponse> listLogStream =
-        genForlistLogStream();
+        genForListLogStream();
 
-    private static HttpRequestDef<ListLogStreamRequest, ListLogStreamResponse> genForlistLogStream() {
+    private static HttpRequestDef<ListLogStreamRequest, ListLogStreamResponse> genForListLogStream() {
         // basic
         HttpRequestDef.Builder<ListLogStreamRequest, ListLogStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLogStreamRequest.class, ListLogStreamResponse.class)
@@ -1471,9 +1349,7 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLogStreamRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(ListLogStreamRequest::getLogGroupId, ListLogStreamRequest::setLogGroupId));
 
         // response
 
@@ -1481,9 +1357,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListLogStreamsRequest, ListLogStreamsResponse> listLogStreams =
-        genForlistLogStreams();
+        genForListLogStreams();
 
-    private static HttpRequestDef<ListLogStreamsRequest, ListLogStreamsResponse> genForlistLogStreams() {
+    private static HttpRequestDef<ListLogStreamsRequest, ListLogStreamsResponse> genForListLogStreams() {
         // basic
         HttpRequestDef.Builder<ListLogStreamsRequest, ListLogStreamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLogStreamsRequest.class, ListLogStreamsResponse.class)
@@ -1496,39 +1372,31 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLogStreamsRequest::getLogGroupName, (req, v) -> {
-                req.setLogGroupName(v);
-            }));
+            f -> f.withMarshaller(ListLogStreamsRequest::getLogGroupName, ListLogStreamsRequest::setLogGroupName));
         builder.<String>withRequestField("log_stream_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLogStreamsRequest::getLogStreamName, (req, v) -> {
-                req.setLogStreamName(v);
-            }));
+            f -> f.withMarshaller(ListLogStreamsRequest::getLogStreamName, ListLogStreamsRequest::setLogStreamName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLogStreamsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLogStreamsRequest::getOffset, ListLogStreamsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLogStreamsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLogStreamsRequest::getLimit, ListLogStreamsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListLogsRequest, ListLogsResponse> listLogs = genForlistLogs();
+    public static final HttpRequestDef<ListLogsRequest, ListLogsResponse> listLogs = genForListLogs();
 
-    private static HttpRequestDef<ListLogsRequest, ListLogsResponse> genForlistLogs() {
+    private static HttpRequestDef<ListLogsRequest, ListLogsResponse> genForListLogs() {
         // basic
         HttpRequestDef.Builder<ListLogsRequest, ListLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListLogsRequest.class, ListLogsResponse.class)
@@ -1541,23 +1409,17 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLogsRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(ListLogsRequest::getLogGroupId, ListLogsRequest::setLogGroupId));
         builder.<String>withRequestField("log_stream_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLogsRequest::getLogStreamId, (req, v) -> {
-                req.setLogStreamId(v);
-            }));
+            f -> f.withMarshaller(ListLogsRequest::getLogStreamId, ListLogsRequest::setLogStreamId));
         builder.<QueryLtsLogParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryLtsLogParams.class),
-            f -> f.withMarshaller(ListLogsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListLogsRequest::getBody, ListLogsRequest::setBody));
 
         // response
 
@@ -1565,9 +1427,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListNotificationTemplateRequest, ListNotificationTemplateResponse> listNotificationTemplate =
-        genForlistNotificationTemplate();
+        genForListNotificationTemplate();
 
-    private static HttpRequestDef<ListNotificationTemplateRequest, ListNotificationTemplateResponse> genForlistNotificationTemplate() {
+    private static HttpRequestDef<ListNotificationTemplateRequest, ListNotificationTemplateResponse> genForListNotificationTemplate() {
         // basic
         HttpRequestDef.Builder<ListNotificationTemplateRequest, ListNotificationTemplateResponse> builder =
             HttpRequestDef
@@ -1581,16 +1443,13 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNotificationTemplateRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListNotificationTemplateRequest::getDomainId,
+                ListNotificationTemplateRequest::setDomainId));
         builder.<PreviewTemplateBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PreviewTemplateBody.class),
-            f -> f.withMarshaller(ListNotificationTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListNotificationTemplateRequest::getBody, ListNotificationTemplateRequest::setBody));
 
         // response
 
@@ -1598,9 +1457,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> listNotificationTemplates =
-        genForlistNotificationTemplates();
+        genForListNotificationTemplates();
 
-    private static HttpRequestDef<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> genForlistNotificationTemplates() {
+    private static HttpRequestDef<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> genForListNotificationTemplates() {
         // basic
         HttpRequestDef.Builder<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> builder =
             HttpRequestDef
@@ -1616,23 +1475,20 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNotificationTemplatesRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListNotificationTemplatesRequest::getDomainId,
+                ListNotificationTemplatesRequest::setDomainId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNotificationTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListNotificationTemplatesRequest::getOffset,
+                ListNotificationTemplatesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNotificationTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNotificationTemplatesRequest::getLimit,
+                ListNotificationTemplatesRequest::setLimit));
 
         // response
 
@@ -1640,9 +1496,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListNotificationTopicsRequest, ListNotificationTopicsResponse> listNotificationTopics =
-        genForlistNotificationTopics();
+        genForListNotificationTopics();
 
-    private static HttpRequestDef<ListNotificationTopicsRequest, ListNotificationTopicsResponse> genForlistNotificationTopics() {
+    private static HttpRequestDef<ListNotificationTopicsRequest, ListNotificationTopicsResponse> genForListNotificationTopics() {
         // basic
         HttpRequestDef.Builder<ListNotificationTopicsRequest, ListNotificationTopicsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListNotificationTopicsRequest.class, ListNotificationTopicsResponse.class)
@@ -1655,16 +1511,12 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNotificationTopicsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListNotificationTopicsRequest::getOffset, ListNotificationTopicsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNotificationTopicsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNotificationTopicsRequest::getLimit, ListNotificationTopicsRequest::setLimit));
 
         // response
 
@@ -1672,9 +1524,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse> listQueryAllSearchCriterias =
-        genForlistQueryAllSearchCriterias();
+        genForListQueryAllSearchCriterias();
 
-    private static HttpRequestDef<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse> genForlistQueryAllSearchCriterias() {
+    private static HttpRequestDef<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse> genForListQueryAllSearchCriterias() {
         // basic
         HttpRequestDef.Builder<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse> builder =
             HttpRequestDef
@@ -1690,9 +1542,8 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryAllSearchCriteriasRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListQueryAllSearchCriteriasRequest::getGroupId,
+                ListQueryAllSearchCriteriasRequest::setGroupId));
 
         // response
 
@@ -1700,9 +1551,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> listQueryStructuredLogs =
-        genForlistQueryStructuredLogs();
+        genForListQueryStructuredLogs();
 
-    private static HttpRequestDef<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> genForlistQueryStructuredLogs() {
+    private static HttpRequestDef<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> genForListQueryStructuredLogs() {
         // basic
         HttpRequestDef.Builder<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListQueryStructuredLogsRequest.class, ListQueryStructuredLogsResponse.class)
@@ -1715,23 +1566,19 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryStructuredLogsRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(ListQueryStructuredLogsRequest::getLogGroupId,
+                ListQueryStructuredLogsRequest::setLogGroupId));
         builder.<String>withRequestField("log_stream_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryStructuredLogsRequest::getLogStreamId, (req, v) -> {
-                req.setLogStreamId(v);
-            }));
+            f -> f.withMarshaller(ListQueryStructuredLogsRequest::getLogStreamId,
+                ListQueryStructuredLogsRequest::setLogStreamId));
         builder.<QueryLtsStructLogParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryLtsStructLogParams.class),
-            f -> f.withMarshaller(ListQueryStructuredLogsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListQueryStructuredLogsRequest::getBody, ListQueryStructuredLogsRequest::setBody));
 
         // response
 
@@ -1739,9 +1586,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListStructTemplateRequest, ListStructTemplateResponse> listStructTemplate =
-        genForlistStructTemplate();
+        genForListStructTemplate();
 
-    private static HttpRequestDef<ListStructTemplateRequest, ListStructTemplateResponse> genForlistStructTemplate() {
+    private static HttpRequestDef<ListStructTemplateRequest, ListStructTemplateResponse> genForListStructTemplate() {
         // basic
         HttpRequestDef.Builder<ListStructTemplateRequest, ListStructTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStructTemplateRequest.class, ListStructTemplateResponse.class)
@@ -1754,9 +1601,7 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStructTemplateRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListStructTemplateRequest::getId, ListStructTemplateRequest::setId));
 
         // response
 
@@ -1764,9 +1609,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> listStructuredLogsWithTimeRange =
-        genForlistStructuredLogsWithTimeRange();
+        genForListStructuredLogsWithTimeRange();
 
-    private static HttpRequestDef<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> genForlistStructuredLogsWithTimeRange() {
+    private static HttpRequestDef<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> genForListStructuredLogsWithTimeRange() {
         // basic
         HttpRequestDef.Builder<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> builder =
             HttpRequestDef
@@ -1782,33 +1627,30 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStructuredLogsWithTimeRangeRequest::getLogStreamId, (req, v) -> {
-                req.setLogStreamId(v);
-            }));
+            f -> f.withMarshaller(ListStructuredLogsWithTimeRangeRequest::getLogStreamId,
+                ListStructuredLogsWithTimeRangeRequest::setLogStreamId));
         builder.<QueryLtsStructLogParamsNew>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryLtsStructLogParamsNew.class),
-            f -> f.withMarshaller(ListStructuredLogsWithTimeRangeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListStructuredLogsWithTimeRangeRequest::getBody,
+                ListStructuredLogsWithTimeRangeRequest::setBody));
 
         // response
         builder.<Object>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             Object.class,
-            f -> f.withMarshaller(ListStructuredLogsWithTimeRangeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ListStructuredLogsWithTimeRangeResponse::getBody,
+                ListStructuredLogsWithTimeRangeResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse> listTimeLineTrafficStatistics =
-        genForlistTimeLineTrafficStatistics();
+        genForListTimeLineTrafficStatistics();
 
-    private static HttpRequestDef<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse> genForlistTimeLineTrafficStatistics() {
+    private static HttpRequestDef<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse> genForListTimeLineTrafficStatistics() {
         // basic
         HttpRequestDef.Builder<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse> builder =
             HttpRequestDef
@@ -1824,16 +1666,14 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTimeLineTrafficStatisticsRequest::getTimezone, (req, v) -> {
-                req.setTimezone(v);
-            }));
+            f -> f.withMarshaller(ListTimeLineTrafficStatisticsRequest::getTimezone,
+                ListTimeLineTrafficStatisticsRequest::setTimezone));
         builder.<TimelineTrafficStatisticsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TimelineTrafficStatisticsRequestBody.class),
-            f -> f.withMarshaller(ListTimeLineTrafficStatisticsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListTimeLineTrafficStatisticsRequest::getBody,
+                ListTimeLineTrafficStatisticsRequest::setBody));
 
         // response
 
@@ -1841,9 +1681,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse> listTopnTrafficStatistics =
-        genForlistTopnTrafficStatistics();
+        genForListTopnTrafficStatistics();
 
-    private static HttpRequestDef<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse> genForlistTopnTrafficStatistics() {
+    private static HttpRequestDef<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse> genForListTopnTrafficStatistics() {
         // basic
         HttpRequestDef.Builder<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse> builder =
             HttpRequestDef
@@ -1859,9 +1699,8 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TopnRequstBody.class),
-            f -> f.withMarshaller(ListTopnTrafficStatisticsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListTopnTrafficStatisticsRequest::getBody,
+                ListTopnTrafficStatisticsRequest::setBody));
 
         // response
 
@@ -1869,9 +1708,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListTransfersRequest, ListTransfersResponse> listTransfers =
-        genForlistTransfers();
+        genForListTransfers();
 
-    private static HttpRequestDef<ListTransfersRequest, ListTransfersResponse> genForlistTransfers() {
+    private static HttpRequestDef<ListTransfersRequest, ListTransfersResponse> genForListTransfers() {
         // basic
         HttpRequestDef.Builder<ListTransfersRequest, ListTransfersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTransfersRequest.class, ListTransfersResponse.class)
@@ -1884,37 +1723,27 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTransfersRequest.LogTransferTypeEnum.class),
-            f -> f.withMarshaller(ListTransfersRequest::getLogTransferType, (req, v) -> {
-                req.setLogTransferType(v);
-            }));
+            f -> f.withMarshaller(ListTransfersRequest::getLogTransferType, ListTransfersRequest::setLogTransferType));
         builder.<String>withRequestField("log_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTransfersRequest::getLogGroupName, (req, v) -> {
-                req.setLogGroupName(v);
-            }));
+            f -> f.withMarshaller(ListTransfersRequest::getLogGroupName, ListTransfersRequest::setLogGroupName));
         builder.<String>withRequestField("log_stream_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTransfersRequest::getLogStreamName, (req, v) -> {
-                req.setLogStreamName(v);
-            }));
+            f -> f.withMarshaller(ListTransfersRequest::getLogStreamName, ListTransfersRequest::setLogStreamName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTransfersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTransfersRequest::getOffset, ListTransfersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTransfersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTransfersRequest::getLimit, ListTransfersRequest::setLimit));
 
         // response
 
@@ -1922,9 +1751,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse> registerDmsKafkaInstance =
-        genForregisterDmsKafkaInstance();
+        genForRegisterDmsKafkaInstance();
 
-    private static HttpRequestDef<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse> genForregisterDmsKafkaInstance() {
+    private static HttpRequestDef<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse> genForRegisterDmsKafkaInstance() {
         // basic
         HttpRequestDef.Builder<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse> builder =
             HttpRequestDef
@@ -1938,9 +1767,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RegisterDmsKafkaInstanceRequestBody.class),
-            f -> f.withMarshaller(RegisterDmsKafkaInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RegisterDmsKafkaInstanceRequest::getBody, RegisterDmsKafkaInstanceRequest::setBody));
 
         // response
 
@@ -1948,9 +1775,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ShowAdminConfigRequest, ShowAdminConfigResponse> showAdminConfig =
-        genForshowAdminConfig();
+        genForShowAdminConfig();
 
-    private static HttpRequestDef<ShowAdminConfigRequest, ShowAdminConfigResponse> genForshowAdminConfig() {
+    private static HttpRequestDef<ShowAdminConfigRequest, ShowAdminConfigResponse> genForShowAdminConfig() {
         // basic
         HttpRequestDef.Builder<ShowAdminConfigRequest, ShowAdminConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAdminConfigRequest.class, ShowAdminConfigResponse.class)
@@ -1966,9 +1793,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse> showLogConvergeConfig =
-        genForshowLogConvergeConfig();
+        genForShowLogConvergeConfig();
 
-    private static HttpRequestDef<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse> genForshowLogConvergeConfig() {
+    private static HttpRequestDef<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse> genForShowLogConvergeConfig() {
         // basic
         HttpRequestDef.Builder<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowLogConvergeConfigRequest.class, ShowLogConvergeConfigResponse.class)
@@ -1981,9 +1808,8 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLogConvergeConfigRequest::getMemberAccountId, (req, v) -> {
-                req.setMemberAccountId(v);
-            }));
+            f -> f.withMarshaller(ShowLogConvergeConfigRequest::getMemberAccountId,
+                ShowLogConvergeConfigRequest::setMemberAccountId));
 
         // response
 
@@ -1991,9 +1817,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse> showMemberGroupAndStream =
-        genForshowMemberGroupAndStream();
+        genForShowMemberGroupAndStream();
 
-    private static HttpRequestDef<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse> genForshowMemberGroupAndStream() {
+    private static HttpRequestDef<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse> genForShowMemberGroupAndStream() {
         // basic
         HttpRequestDef.Builder<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse> builder =
             HttpRequestDef
@@ -2007,9 +1833,8 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMemberGroupAndStreamRequest::getMemberAccountId, (req, v) -> {
-                req.setMemberAccountId(v);
-            }));
+            f -> f.withMarshaller(ShowMemberGroupAndStreamRequest::getMemberAccountId,
+                ShowMemberGroupAndStreamRequest::setMemberAccountId));
 
         // response
 
@@ -2017,9 +1842,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> showNotificationTemplate =
-        genForshowNotificationTemplate();
+        genForShowNotificationTemplate();
 
-    private static HttpRequestDef<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> genForshowNotificationTemplate() {
+    private static HttpRequestDef<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> genForShowNotificationTemplate() {
         // basic
         HttpRequestDef.Builder<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> builder =
             HttpRequestDef
@@ -2033,16 +1858,14 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNotificationTemplateRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowNotificationTemplateRequest::getDomainId,
+                ShowNotificationTemplateRequest::setDomainId));
         builder.<String>withRequestField("template_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNotificationTemplateRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(ShowNotificationTemplateRequest::getTemplateName,
+                ShowNotificationTemplateRequest::setTemplateName));
 
         // response
 
@@ -2050,9 +1873,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ShowStructTemplateRequest, ShowStructTemplateResponse> showStructTemplate =
-        genForshowStructTemplate();
+        genForShowStructTemplate();
 
-    private static HttpRequestDef<ShowStructTemplateRequest, ShowStructTemplateResponse> genForshowStructTemplate() {
+    private static HttpRequestDef<ShowStructTemplateRequest, ShowStructTemplateResponse> genForShowStructTemplate() {
         // basic
         HttpRequestDef.Builder<ShowStructTemplateRequest, ShowStructTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStructTemplateRequest.class, ShowStructTemplateResponse.class)
@@ -2065,16 +1888,13 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStructTemplateRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowStructTemplateRequest::getLogGroupId, ShowStructTemplateRequest::setLogGroupId));
         builder.<String>withRequestField("logStreamId",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStructTemplateRequest::getLogStreamId, (req, v) -> {
-                req.setLogStreamId(v);
-            }));
+            f -> f.withMarshaller(ShowStructTemplateRequest::getLogStreamId,
+                ShowStructTemplateRequest::setLogStreamId));
 
         // response
 
@@ -2082,9 +1902,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<UpdateAccessConfigRequest, UpdateAccessConfigResponse> updateAccessConfig =
-        genForupdateAccessConfig();
+        genForUpdateAccessConfig();
 
-    private static HttpRequestDef<UpdateAccessConfigRequest, UpdateAccessConfigResponse> genForupdateAccessConfig() {
+    private static HttpRequestDef<UpdateAccessConfigRequest, UpdateAccessConfigResponse> genForUpdateAccessConfig() {
         // basic
         HttpRequestDef.Builder<UpdateAccessConfigRequest, UpdateAccessConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAccessConfigRequest.class, UpdateAccessConfigResponse.class)
@@ -2097,9 +1917,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAccessConfigRequestBody.class),
-            f -> f.withMarshaller(UpdateAccessConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAccessConfigRequest::getBody, UpdateAccessConfigRequest::setBody));
 
         // response
 
@@ -2107,9 +1925,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<UpdateHostGroupRequest, UpdateHostGroupResponse> updateHostGroup =
-        genForupdateHostGroup();
+        genForUpdateHostGroup();
 
-    private static HttpRequestDef<UpdateHostGroupRequest, UpdateHostGroupResponse> genForupdateHostGroup() {
+    private static HttpRequestDef<UpdateHostGroupRequest, UpdateHostGroupResponse> genForUpdateHostGroup() {
         // basic
         HttpRequestDef.Builder<UpdateHostGroupRequest, UpdateHostGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateHostGroupRequest.class, UpdateHostGroupResponse.class)
@@ -2122,9 +1940,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateHostGroupRequestBody.class),
-            f -> f.withMarshaller(UpdateHostGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateHostGroupRequest::getBody, UpdateHostGroupRequest::setBody));
 
         // response
 
@@ -2132,9 +1948,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<UpdateKeywordsAlarmRuleRequest, UpdateKeywordsAlarmRuleResponse> updateKeywordsAlarmRule =
-        genForupdateKeywordsAlarmRule();
+        genForUpdateKeywordsAlarmRule();
 
-    private static HttpRequestDef<UpdateKeywordsAlarmRuleRequest, UpdateKeywordsAlarmRuleResponse> genForupdateKeywordsAlarmRule() {
+    private static HttpRequestDef<UpdateKeywordsAlarmRuleRequest, UpdateKeywordsAlarmRuleResponse> genForUpdateKeywordsAlarmRule() {
         // basic
         HttpRequestDef.Builder<UpdateKeywordsAlarmRuleRequest, UpdateKeywordsAlarmRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateKeywordsAlarmRuleRequest.class, UpdateKeywordsAlarmRuleResponse.class)
@@ -2147,9 +1963,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateKeywordsAlarmRuleRequestBody.class),
-            f -> f.withMarshaller(UpdateKeywordsAlarmRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateKeywordsAlarmRuleRequest::getBody, UpdateKeywordsAlarmRuleRequest::setBody));
 
         // response
 
@@ -2157,9 +1971,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse> updateLogConvergeConfig =
-        genForupdateLogConvergeConfig();
+        genForUpdateLogConvergeConfig();
 
-    private static HttpRequestDef<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse> genForupdateLogConvergeConfig() {
+    private static HttpRequestDef<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse> genForUpdateLogConvergeConfig() {
         // basic
         HttpRequestDef.Builder<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateLogConvergeConfigRequest.class, UpdateLogConvergeConfigResponse.class)
@@ -2172,9 +1986,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatelogConvergeConfig.class),
-            f -> f.withMarshaller(UpdateLogConvergeConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLogConvergeConfigRequest::getBody, UpdateLogConvergeConfigRequest::setBody));
 
         // response
 
@@ -2182,9 +1994,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<UpdateLogGroupRequest, UpdateLogGroupResponse> updateLogGroup =
-        genForupdateLogGroup();
+        genForUpdateLogGroup();
 
-    private static HttpRequestDef<UpdateLogGroupRequest, UpdateLogGroupResponse> genForupdateLogGroup() {
+    private static HttpRequestDef<UpdateLogGroupRequest, UpdateLogGroupResponse> genForUpdateLogGroup() {
         // basic
         HttpRequestDef.Builder<UpdateLogGroupRequest, UpdateLogGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateLogGroupRequest.class, UpdateLogGroupResponse.class)
@@ -2197,16 +2009,12 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLogGroupRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateLogGroupRequest::getLogGroupId, UpdateLogGroupRequest::setLogGroupId));
         builder.<UpdateLogGroupParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLogGroupParams.class),
-            f -> f.withMarshaller(UpdateLogGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLogGroupRequest::getBody, UpdateLogGroupRequest::setBody));
 
         // response
 
@@ -2214,9 +2022,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<UpdateLogStreamRequest, UpdateLogStreamResponse> updateLogStream =
-        genForupdateLogStream();
+        genForUpdateLogStream();
 
-    private static HttpRequestDef<UpdateLogStreamRequest, UpdateLogStreamResponse> genForupdateLogStream() {
+    private static HttpRequestDef<UpdateLogStreamRequest, UpdateLogStreamResponse> genForUpdateLogStream() {
         // basic
         HttpRequestDef.Builder<UpdateLogStreamRequest, UpdateLogStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLogStreamRequest.class, UpdateLogStreamResponse.class)
@@ -2229,23 +2037,17 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLogStreamRequest::getLogGroupId, (req, v) -> {
-                req.setLogGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateLogStreamRequest::getLogGroupId, UpdateLogStreamRequest::setLogGroupId));
         builder.<String>withRequestField("log_stream_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLogStreamRequest::getLogStreamId, (req, v) -> {
-                req.setLogStreamId(v);
-            }));
+            f -> f.withMarshaller(UpdateLogStreamRequest::getLogStreamId, UpdateLogStreamRequest::setLogStreamId));
         builder.<UpdateLogStreamParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLogStreamParams.class),
-            f -> f.withMarshaller(UpdateLogStreamRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLogStreamRequest::getBody, UpdateLogStreamRequest::setBody));
 
         // response
 
@@ -2253,9 +2055,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> updateNotificationTemplate =
-        genForupdateNotificationTemplate();
+        genForUpdateNotificationTemplate();
 
-    private static HttpRequestDef<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> genForupdateNotificationTemplate() {
+    private static HttpRequestDef<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> genForUpdateNotificationTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> builder =
             HttpRequestDef
@@ -2271,16 +2073,14 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNotificationTemplateRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateNotificationTemplateRequest::getDomainId,
+                UpdateNotificationTemplateRequest::setDomainId));
         builder.<CreateNotificationTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNotificationTemplateRequestBody.class),
-            f -> f.withMarshaller(UpdateNotificationTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNotificationTemplateRequest::getBody,
+                UpdateNotificationTemplateRequest::setBody));
 
         // response
 
@@ -2288,9 +2088,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<UpdateStructConfigRequest, UpdateStructConfigResponse> updateStructConfig =
-        genForupdateStructConfig();
+        genForUpdateStructConfig();
 
-    private static HttpRequestDef<UpdateStructConfigRequest, UpdateStructConfigResponse> genForupdateStructConfig() {
+    private static HttpRequestDef<UpdateStructConfigRequest, UpdateStructConfigResponse> genForUpdateStructConfig() {
         // basic
         HttpRequestDef.Builder<UpdateStructConfigRequest, UpdateStructConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateStructConfigRequest.class, UpdateStructConfigResponse.class)
@@ -2303,26 +2103,22 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StructConfig.class),
-            f -> f.withMarshaller(UpdateStructConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStructConfigRequest::getBody, UpdateStructConfigRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateStructConfigResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateStructConfigResponse::getBody, UpdateStructConfigResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateStructTemplateRequest, UpdateStructTemplateResponse> updateStructTemplate =
-        genForupdateStructTemplate();
+        genForUpdateStructTemplate();
 
-    private static HttpRequestDef<UpdateStructTemplateRequest, UpdateStructTemplateResponse> genForupdateStructTemplate() {
+    private static HttpRequestDef<UpdateStructTemplateRequest, UpdateStructTemplateResponse> genForUpdateStructTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateStructTemplateRequest, UpdateStructTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateStructTemplateRequest.class, UpdateStructTemplateResponse.class)
@@ -2335,25 +2131,21 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LtsStructTemplateInfo.class),
-            f -> f.withMarshaller(UpdateStructTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStructTemplateRequest::getBody, UpdateStructTemplateRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateStructTemplateResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateStructTemplateResponse::getBody, UpdateStructTemplateResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateSwitchRequest, UpdateSwitchResponse> updateSwitch = genForupdateSwitch();
+    public static final HttpRequestDef<UpdateSwitchRequest, UpdateSwitchResponse> updateSwitch = genForUpdateSwitch();
 
-    private static HttpRequestDef<UpdateSwitchRequest, UpdateSwitchResponse> genForupdateSwitch() {
+    private static HttpRequestDef<UpdateSwitchRequest, UpdateSwitchResponse> genForUpdateSwitch() {
         // basic
         HttpRequestDef.Builder<UpdateSwitchRequest, UpdateSwitchResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSwitchRequest.class, UpdateSwitchResponse.class)
@@ -2366,9 +2158,8 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSwitchRequest::getLogConvergeSwitch, (req, v) -> {
-                req.setLogConvergeSwitch(v);
-            }));
+            f -> f.withMarshaller(UpdateSwitchRequest::getLogConvergeSwitch,
+                UpdateSwitchRequest::setLogConvergeSwitch));
 
         // response
 
@@ -2376,9 +2167,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<UpdateTransferRequest, UpdateTransferResponse> updateTransfer =
-        genForupdateTransfer();
+        genForUpdateTransfer();
 
-    private static HttpRequestDef<UpdateTransferRequest, UpdateTransferResponse> genForupdateTransfer() {
+    private static HttpRequestDef<UpdateTransferRequest, UpdateTransferResponse> genForUpdateTransfer() {
         // basic
         HttpRequestDef.Builder<UpdateTransferRequest, UpdateTransferResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTransferRequest.class, UpdateTransferResponse.class)
@@ -2391,9 +2182,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTransferRequestBody.class),
-            f -> f.withMarshaller(UpdateTransferRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTransferRequest::getBody, UpdateTransferRequest::setBody));
 
         // response
 
@@ -2401,9 +2190,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse> createAomMappingRules =
-        genForcreateAomMappingRules();
+        genForCreateAomMappingRules();
 
-    private static HttpRequestDef<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse> genForcreateAomMappingRules() {
+    private static HttpRequestDef<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse> genForCreateAomMappingRules() {
         // basic
         HttpRequestDef.Builder<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateAomMappingRulesRequest.class, CreateAomMappingRulesResponse.class)
@@ -2416,33 +2205,28 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(CreateAomMappingRulesRequest::getIsBatch, (req, v) -> {
-                req.setIsBatch(v);
-            }));
+            f -> f.withMarshaller(CreateAomMappingRulesRequest::getIsBatch, CreateAomMappingRulesRequest::setIsBatch));
         builder.<AomMappingRequestInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AomMappingRequestInfo.class),
-            f -> f.withMarshaller(CreateAomMappingRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAomMappingRulesRequest::getBody, CreateAomMappingRulesRequest::setBody));
 
         // response
         builder.<List<AomMappingRuleResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateAomMappingRulesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(AomMappingRuleResp.class));
+            f -> f.withMarshaller(CreateAomMappingRulesResponse::getBody, CreateAomMappingRulesResponse::setBody)
+                .withInnerContainerType(AomMappingRuleResp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteAomMappingRulesRequest, DeleteAomMappingRulesResponse> deleteAomMappingRules =
-        genFordeleteAomMappingRules();
+        genForDeleteAomMappingRules();
 
-    private static HttpRequestDef<DeleteAomMappingRulesRequest, DeleteAomMappingRulesResponse> genFordeleteAomMappingRules() {
+    private static HttpRequestDef<DeleteAomMappingRulesRequest, DeleteAomMappingRulesResponse> genForDeleteAomMappingRules() {
         // basic
         HttpRequestDef.Builder<DeleteAomMappingRulesRequest, DeleteAomMappingRulesResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteAomMappingRulesRequest.class, DeleteAomMappingRulesResponse.class)
@@ -2455,26 +2239,23 @@ public class LtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAomMappingRulesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteAomMappingRulesRequest::getId, DeleteAomMappingRulesRequest::setId));
 
         // response
         builder.<List<String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteAomMappingRulesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(DeleteAomMappingRulesResponse::getBody, DeleteAomMappingRulesResponse::setBody)
+                .withInnerContainerType(String.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse> showAomMappingRule =
-        genForshowAomMappingRule();
+        genForShowAomMappingRule();
 
-    private static HttpRequestDef<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse> genForshowAomMappingRule() {
+    private static HttpRequestDef<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse> genForShowAomMappingRule() {
         // basic
         HttpRequestDef.Builder<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAomMappingRuleRequest.class, ShowAomMappingRuleResponse.class)
@@ -2487,26 +2268,23 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAomMappingRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowAomMappingRuleRequest::getRuleId, ShowAomMappingRuleRequest::setRuleId));
 
         // response
         builder.<List<AomMappingRuleResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAomMappingRuleResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(AomMappingRuleResp.class));
+            f -> f.withMarshaller(ShowAomMappingRuleResponse::getBody, ShowAomMappingRuleResponse::setBody)
+                .withInnerContainerType(AomMappingRuleResp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse> showAomMappingRules =
-        genForshowAomMappingRules();
+        genForShowAomMappingRules();
 
-    private static HttpRequestDef<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse> genForshowAomMappingRules() {
+    private static HttpRequestDef<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse> genForShowAomMappingRules() {
         // basic
         HttpRequestDef.Builder<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAomMappingRulesRequest.class, ShowAomMappingRulesResponse.class)
@@ -2521,17 +2299,16 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAomMappingRulesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(AomMappingRuleResp.class));
+            f -> f.withMarshaller(ShowAomMappingRulesResponse::getBody, ShowAomMappingRulesResponse::setBody)
+                .withInnerContainerType(AomMappingRuleResp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse> updateAomMappingRules =
-        genForupdateAomMappingRules();
+        genForUpdateAomMappingRules();
 
-    private static HttpRequestDef<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse> genForupdateAomMappingRules() {
+    private static HttpRequestDef<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse> genForUpdateAomMappingRules() {
         // basic
         HttpRequestDef.Builder<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateAomMappingRulesRequest.class, UpdateAomMappingRulesResponse.class)
@@ -2544,9 +2321,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAomMappingRequest.class),
-            f -> f.withMarshaller(UpdateAomMappingRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAomMappingRulesRequest::getBody, UpdateAomMappingRulesRequest::setBody));
 
         // response
 
@@ -2554,9 +2329,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<CreateSqlAlarmRuleRequest, CreateSqlAlarmRuleResponse> createSqlAlarmRule =
-        genForcreateSqlAlarmRule();
+        genForCreateSqlAlarmRule();
 
-    private static HttpRequestDef<CreateSqlAlarmRuleRequest, CreateSqlAlarmRuleResponse> genForcreateSqlAlarmRule() {
+    private static HttpRequestDef<CreateSqlAlarmRuleRequest, CreateSqlAlarmRuleResponse> genForCreateSqlAlarmRule() {
         // basic
         HttpRequestDef.Builder<CreateSqlAlarmRuleRequest, CreateSqlAlarmRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSqlAlarmRuleRequest.class, CreateSqlAlarmRuleResponse.class)
@@ -2569,9 +2344,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSqlAlarmRuleRequestBody.class),
-            f -> f.withMarshaller(CreateSqlAlarmRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSqlAlarmRuleRequest::getBody, CreateSqlAlarmRuleRequest::setBody));
 
         // response
 
@@ -2579,9 +2352,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<DeleteSqlAlarmRuleRequest, DeleteSqlAlarmRuleResponse> deleteSqlAlarmRule =
-        genFordeleteSqlAlarmRule();
+        genForDeleteSqlAlarmRule();
 
-    private static HttpRequestDef<DeleteSqlAlarmRuleRequest, DeleteSqlAlarmRuleResponse> genFordeleteSqlAlarmRule() {
+    private static HttpRequestDef<DeleteSqlAlarmRuleRequest, DeleteSqlAlarmRuleResponse> genForDeleteSqlAlarmRule() {
         // basic
         HttpRequestDef.Builder<DeleteSqlAlarmRuleRequest, DeleteSqlAlarmRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSqlAlarmRuleRequest.class, DeleteSqlAlarmRuleResponse.class)
@@ -2594,9 +2367,8 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSqlAlarmRuleRequest::getSqlAlarmRuleId, (req, v) -> {
-                req.setSqlAlarmRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteSqlAlarmRuleRequest::getSqlAlarmRuleId,
+                DeleteSqlAlarmRuleRequest::setSqlAlarmRuleId));
 
         // response
 
@@ -2604,9 +2376,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse> listSqlAlarmRules =
-        genForlistSqlAlarmRules();
+        genForListSqlAlarmRules();
 
-    private static HttpRequestDef<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse> genForlistSqlAlarmRules() {
+    private static HttpRequestDef<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse> genForListSqlAlarmRules() {
         // basic
         HttpRequestDef.Builder<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSqlAlarmRulesRequest.class, ListSqlAlarmRulesResponse.class)
@@ -2622,9 +2394,9 @@ public class LtsMeta {
     }
 
     public static final HttpRequestDef<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> updateAlarmRuleStatus =
-        genForupdateAlarmRuleStatus();
+        genForUpdateAlarmRuleStatus();
 
-    private static HttpRequestDef<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> genForupdateAlarmRuleStatus() {
+    private static HttpRequestDef<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> genForUpdateAlarmRuleStatus() {
         // basic
         HttpRequestDef.Builder<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateAlarmRuleStatusRequest.class, UpdateAlarmRuleStatusResponse.class)
@@ -2637,26 +2409,22 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ChangeAlarmRuleStatus.class),
-            f -> f.withMarshaller(UpdateAlarmRuleStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAlarmRuleStatusRequest::getBody, UpdateAlarmRuleStatusRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateAlarmRuleStatusResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateAlarmRuleStatusResponse::getBody, UpdateAlarmRuleStatusResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateSqlAlarmRuleRequest, UpdateSqlAlarmRuleResponse> updateSqlAlarmRule =
-        genForupdateSqlAlarmRule();
+        genForUpdateSqlAlarmRule();
 
-    private static HttpRequestDef<UpdateSqlAlarmRuleRequest, UpdateSqlAlarmRuleResponse> genForupdateSqlAlarmRule() {
+    private static HttpRequestDef<UpdateSqlAlarmRuleRequest, UpdateSqlAlarmRuleResponse> genForUpdateSqlAlarmRule() {
         // basic
         HttpRequestDef.Builder<UpdateSqlAlarmRuleRequest, UpdateSqlAlarmRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSqlAlarmRuleRequest.class, UpdateSqlAlarmRuleResponse.class)
@@ -2669,9 +2437,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSqlAlarmRuleRequestBody.class),
-            f -> f.withMarshaller(UpdateSqlAlarmRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSqlAlarmRuleRequest::getBody, UpdateSqlAlarmRuleRequest::setBody));
 
         // response
 

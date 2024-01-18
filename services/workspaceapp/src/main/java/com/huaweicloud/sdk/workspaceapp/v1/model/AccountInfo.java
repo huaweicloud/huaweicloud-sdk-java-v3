@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 用户详细信息
+ * 用户详细信息。
  */
 public class AccountInfo {
 
@@ -51,7 +51,7 @@ public class AccountInfo {
     }
 
     /**
-     * 用户ID(或用户组ID)，根据 account_type 参数决定值类型 对于用户组类型，必须传入用户组ID `USER` - 用户ID `USER_GROUP` - 用户组ID
+     * 用户ID(或用户组ID)，根据 account_type 参数决定值类型。 对于用户组类型，必须传入用户组ID。 `USER` - 用户ID。 `USER_GROUP` - 用户组ID。
      * @return id
      */
     public String getId() {
@@ -68,7 +68,7 @@ public class AccountInfo {
     }
 
     /**
-     * 用户名(或用户组名)，根据 account_type 参数决定值类型 `USER` - 用户名 `USER_GROUP` - 用户组名
+     * 用户名(或用户组名)，根据 account_type 参数决定值类型。 `USER` - 用户名。 `USER_GROUP` - 用户组名。
      * @return account
      */
     public String getAccount() {
@@ -102,7 +102,7 @@ public class AccountInfo {
     }
 
     /**
-     * 域名城
+     * 域名城。
      * @return domain
      */
     public String getDomain() {
@@ -119,7 +119,7 @@ public class AccountInfo {
     }
 
     /**
-     * 邮箱
+     * 邮箱。
      * @return email
      */
     public String getEmail() {
@@ -136,7 +136,7 @@ public class AccountInfo {
     }
 
     /**
-     * 手机
+     * 手机。
      * @return telephoneNumber
      */
     public String getTelephoneNumber() {

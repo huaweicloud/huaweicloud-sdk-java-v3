@@ -68,7 +68,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSecSubscriptionRequest 请求对象
+     * @param request ListEdgeSecSubscriptionRequest 请求对象
      * @return ListEdgeSecSubscriptionResponse
      */
     public ListEdgeSecSubscriptionResponse listEdgeSecSubscription(ListEdgeSecSubscriptionRequest request) {
@@ -82,13 +82,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSecSubscriptionRequest 请求对象
+     * @param request ListEdgeSecSubscriptionRequest 请求对象
      * @return SyncInvoker<ListEdgeSecSubscriptionRequest, ListEdgeSecSubscriptionResponse>
      */
     public SyncInvoker<ListEdgeSecSubscriptionRequest, ListEdgeSecSubscriptionResponse> listEdgeSecSubscriptionInvoker(
         ListEdgeSecSubscriptionRequest request) {
-        return new SyncInvoker<ListEdgeSecSubscriptionRequest, ListEdgeSecSubscriptionResponse>(request,
-            EdgeSecMeta.listEdgeSecSubscription, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.listEdgeSecSubscription, hcClient);
     }
 
     /**
@@ -98,7 +97,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeDDoSDomainsRequest 请求对象
+     * @param request CreateEdgeDDoSDomainsRequest 请求对象
      * @return CreateEdgeDDoSDomainsResponse
      */
     public CreateEdgeDDoSDomainsResponse createEdgeDDoSDomains(CreateEdgeDDoSDomainsRequest request) {
@@ -112,13 +111,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeDDoSDomainsRequest 请求对象
+     * @param request CreateEdgeDDoSDomainsRequest 请求对象
      * @return SyncInvoker<CreateEdgeDDoSDomainsRequest, CreateEdgeDDoSDomainsResponse>
      */
     public SyncInvoker<CreateEdgeDDoSDomainsRequest, CreateEdgeDDoSDomainsResponse> createEdgeDDoSDomainsInvoker(
         CreateEdgeDDoSDomainsRequest request) {
-        return new SyncInvoker<CreateEdgeDDoSDomainsRequest, CreateEdgeDDoSDomainsResponse>(request,
-            EdgeSecMeta.createEdgeDDoSDomains, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.createEdgeDDoSDomains, hcClient);
     }
 
     /**
@@ -128,7 +126,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeDDoSDomainsRequest 请求对象
+     * @param request DeleteEdgeDDoSDomainsRequest 请求对象
      * @return DeleteEdgeDDoSDomainsResponse
      */
     public DeleteEdgeDDoSDomainsResponse deleteEdgeDDoSDomains(DeleteEdgeDDoSDomainsRequest request) {
@@ -142,13 +140,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeDDoSDomainsRequest 请求对象
+     * @param request DeleteEdgeDDoSDomainsRequest 请求对象
      * @return SyncInvoker<DeleteEdgeDDoSDomainsRequest, DeleteEdgeDDoSDomainsResponse>
      */
     public SyncInvoker<DeleteEdgeDDoSDomainsRequest, DeleteEdgeDDoSDomainsResponse> deleteEdgeDDoSDomainsInvoker(
         DeleteEdgeDDoSDomainsRequest request) {
-        return new SyncInvoker<DeleteEdgeDDoSDomainsRequest, DeleteEdgeDDoSDomainsResponse>(request,
-            EdgeSecMeta.deleteEdgeDDoSDomains, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.deleteEdgeDDoSDomains, hcClient);
     }
 
     /**
@@ -158,7 +155,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeDDoSDomainsRequest 请求对象
+     * @param request ListEdgeDDoSDomainsRequest 请求对象
      * @return ListEdgeDDoSDomainsResponse
      */
     public ListEdgeDDoSDomainsResponse listEdgeDDoSDomains(ListEdgeDDoSDomainsRequest request) {
@@ -172,13 +169,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeDDoSDomainsRequest 请求对象
+     * @param request ListEdgeDDoSDomainsRequest 请求对象
      * @return SyncInvoker<ListEdgeDDoSDomainsRequest, ListEdgeDDoSDomainsResponse>
      */
     public SyncInvoker<ListEdgeDDoSDomainsRequest, ListEdgeDDoSDomainsResponse> listEdgeDDoSDomainsInvoker(
         ListEdgeDDoSDomainsRequest request) {
-        return new SyncInvoker<ListEdgeDDoSDomainsRequest, ListEdgeDDoSDomainsResponse>(request,
-            EdgeSecMeta.listEdgeDDoSDomains, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.listEdgeDDoSDomains, hcClient);
     }
 
     /**
@@ -188,7 +184,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticsEventRequest 请求对象
+     * @param request ShowStatisticsEventRequest 请求对象
      * @return ShowStatisticsEventResponse
      */
     public ShowStatisticsEventResponse showStatisticsEvent(ShowStatisticsEventRequest request) {
@@ -202,13 +198,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticsEventRequest 请求对象
+     * @param request ShowStatisticsEventRequest 请求对象
      * @return SyncInvoker<ShowStatisticsEventRequest, ShowStatisticsEventResponse>
      */
     public SyncInvoker<ShowStatisticsEventRequest, ShowStatisticsEventResponse> showStatisticsEventInvoker(
         ShowStatisticsEventRequest request) {
-        return new SyncInvoker<ShowStatisticsEventRequest, ShowStatisticsEventResponse>(request,
-            EdgeSecMeta.showStatisticsEvent, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.showStatisticsEvent, hcClient);
     }
 
     /**
@@ -218,7 +213,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticsTrafficRequest 请求对象
+     * @param request ShowStatisticsTrafficRequest 请求对象
      * @return ShowStatisticsTrafficResponse
      */
     public ShowStatisticsTrafficResponse showStatisticsTraffic(ShowStatisticsTrafficRequest request) {
@@ -232,13 +227,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticsTrafficRequest 请求对象
+     * @param request ShowStatisticsTrafficRequest 请求对象
      * @return SyncInvoker<ShowStatisticsTrafficRequest, ShowStatisticsTrafficResponse>
      */
     public SyncInvoker<ShowStatisticsTrafficRequest, ShowStatisticsTrafficResponse> showStatisticsTrafficInvoker(
         ShowStatisticsTrafficRequest request) {
-        return new SyncInvoker<ShowStatisticsTrafficRequest, ShowStatisticsTrafficResponse>(request,
-            EdgeSecMeta.showStatisticsTraffic, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.showStatisticsTraffic, hcClient);
     }
 
     /**
@@ -248,7 +242,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeDDoSDomainsRequest 请求对象
+     * @param request UpdateEdgeDDoSDomainsRequest 请求对象
      * @return UpdateEdgeDDoSDomainsResponse
      */
     public UpdateEdgeDDoSDomainsResponse updateEdgeDDoSDomains(UpdateEdgeDDoSDomainsRequest request) {
@@ -262,13 +256,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeDDoSDomainsRequest 请求对象
+     * @param request UpdateEdgeDDoSDomainsRequest 请求对象
      * @return SyncInvoker<UpdateEdgeDDoSDomainsRequest, UpdateEdgeDDoSDomainsResponse>
      */
     public SyncInvoker<UpdateEdgeDDoSDomainsRequest, UpdateEdgeDDoSDomainsResponse> updateEdgeDDoSDomainsInvoker(
         UpdateEdgeDDoSDomainsRequest request) {
-        return new SyncInvoker<UpdateEdgeDDoSDomainsRequest, UpdateEdgeDDoSDomainsResponse>(request,
-            EdgeSecMeta.updateEdgeDDoSDomains, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.updateEdgeDDoSDomains, hcClient);
     }
 
     /**
@@ -278,7 +271,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyWafPolicyRequest 请求对象
+     * @param request ApplyWafPolicyRequest 请求对象
      * @return ApplyWafPolicyResponse
      */
     public ApplyWafPolicyResponse applyWafPolicy(ApplyWafPolicyRequest request) {
@@ -292,13 +285,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyWafPolicyRequest 请求对象
+     * @param request ApplyWafPolicyRequest 请求对象
      * @return SyncInvoker<ApplyWafPolicyRequest, ApplyWafPolicyResponse>
      */
     public SyncInvoker<ApplyWafPolicyRequest, ApplyWafPolicyResponse> applyWafPolicyInvoker(
         ApplyWafPolicyRequest request) {
-        return new SyncInvoker<ApplyWafPolicyRequest, ApplyWafPolicyResponse>(request, EdgeSecMeta.applyWafPolicy,
-            hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.applyWafPolicy, hcClient);
     }
 
     /**
@@ -308,7 +300,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return CreateCertificateResponse
      */
     public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
@@ -322,13 +314,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
      */
     public SyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateInvoker(
         CreateCertificateRequest request) {
-        return new SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request,
-            EdgeSecMeta.createCertificate, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.createCertificate, hcClient);
     }
 
     /**
@@ -338,7 +329,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeWafDomainsRequest 请求对象
+     * @param request CreateEdgeWafDomainsRequest 请求对象
      * @return CreateEdgeWafDomainsResponse
      */
     public CreateEdgeWafDomainsResponse createEdgeWafDomains(CreateEdgeWafDomainsRequest request) {
@@ -352,13 +343,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeWafDomainsRequest 请求对象
+     * @param request CreateEdgeWafDomainsRequest 请求对象
      * @return SyncInvoker<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse>
      */
     public SyncInvoker<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse> createEdgeWafDomainsInvoker(
         CreateEdgeWafDomainsRequest request) {
-        return new SyncInvoker<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse>(request,
-            EdgeSecMeta.createEdgeWafDomains, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.createEdgeWafDomains, hcClient);
     }
 
     /**
@@ -368,7 +358,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return CreatePolicyResponse
      */
     public CreatePolicyResponse createPolicy(CreatePolicyRequest request) {
@@ -382,11 +372,11 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return SyncInvoker<CreatePolicyRequest, CreatePolicyResponse>
      */
     public SyncInvoker<CreatePolicyRequest, CreatePolicyResponse> createPolicyInvoker(CreatePolicyRequest request) {
-        return new SyncInvoker<CreatePolicyRequest, CreatePolicyResponse>(request, EdgeSecMeta.createPolicy, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.createPolicy, hcClient);
     }
 
     /**
@@ -396,7 +386,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return DeleteCertificateResponse
      */
     public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
@@ -410,13 +400,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
      */
     public SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateInvoker(
         DeleteCertificateRequest request) {
-        return new SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request,
-            EdgeSecMeta.deleteCertificate, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.deleteCertificate, hcClient);
     }
 
     /**
@@ -426,7 +415,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeWafDomainsRequest 请求对象
+     * @param request DeleteEdgeWafDomainsRequest 请求对象
      * @return DeleteEdgeWafDomainsResponse
      */
     public DeleteEdgeWafDomainsResponse deleteEdgeWafDomains(DeleteEdgeWafDomainsRequest request) {
@@ -440,13 +429,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeWafDomainsRequest 请求对象
+     * @param request DeleteEdgeWafDomainsRequest 请求对象
      * @return SyncInvoker<DeleteEdgeWafDomainsRequest, DeleteEdgeWafDomainsResponse>
      */
     public SyncInvoker<DeleteEdgeWafDomainsRequest, DeleteEdgeWafDomainsResponse> deleteEdgeWafDomainsInvoker(
         DeleteEdgeWafDomainsRequest request) {
-        return new SyncInvoker<DeleteEdgeWafDomainsRequest, DeleteEdgeWafDomainsResponse>(request,
-            EdgeSecMeta.deleteEdgeWafDomains, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.deleteEdgeWafDomains, hcClient);
     }
 
     /**
@@ -456,7 +444,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return DeletePolicyResponse
      */
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) {
@@ -470,11 +458,11 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return SyncInvoker<DeletePolicyRequest, DeletePolicyResponse>
      */
     public SyncInvoker<DeletePolicyRequest, DeletePolicyResponse> deletePolicyInvoker(DeletePolicyRequest request) {
-        return new SyncInvoker<DeletePolicyRequest, DeletePolicyResponse>(request, EdgeSecMeta.deletePolicy, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.deletePolicy, hcClient);
     }
 
     /**
@@ -484,7 +472,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCdnDomainsRequest 请求对象
+     * @param request ListCdnDomainsRequest 请求对象
      * @return ListCdnDomainsResponse
      */
     public ListCdnDomainsResponse listCdnDomains(ListCdnDomainsRequest request) {
@@ -498,13 +486,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCdnDomainsRequest 请求对象
+     * @param request ListCdnDomainsRequest 请求对象
      * @return SyncInvoker<ListCdnDomainsRequest, ListCdnDomainsResponse>
      */
     public SyncInvoker<ListCdnDomainsRequest, ListCdnDomainsResponse> listCdnDomainsInvoker(
         ListCdnDomainsRequest request) {
-        return new SyncInvoker<ListCdnDomainsRequest, ListCdnDomainsResponse>(request, EdgeSecMeta.listCdnDomains,
-            hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.listCdnDomains, hcClient);
     }
 
     /**
@@ -514,7 +501,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return ListCertificatesResponse
      */
     public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
@@ -528,13 +515,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
      */
     public SyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesInvoker(
         ListCertificatesRequest request) {
-        return new SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request, EdgeSecMeta.listCertificates,
-            hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.listCertificates, hcClient);
     }
 
     /**
@@ -544,7 +530,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeWafDomainsRequest 请求对象
+     * @param request ListEdgeWafDomainsRequest 请求对象
      * @return ListEdgeWafDomainsResponse
      */
     public ListEdgeWafDomainsResponse listEdgeWafDomains(ListEdgeWafDomainsRequest request) {
@@ -558,13 +544,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeWafDomainsRequest 请求对象
+     * @param request ListEdgeWafDomainsRequest 请求对象
      * @return SyncInvoker<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse>
      */
     public SyncInvoker<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse> listEdgeWafDomainsInvoker(
         ListEdgeWafDomainsRequest request) {
-        return new SyncInvoker<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse>(request,
-            EdgeSecMeta.listEdgeWafDomains, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.listEdgeWafDomains, hcClient);
     }
 
     /**
@@ -574,7 +559,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyRequest 请求对象
+     * @param request ListPolicyRequest 请求对象
      * @return ListPolicyResponse
      */
     public ListPolicyResponse listPolicy(ListPolicyRequest request) {
@@ -588,11 +573,11 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyRequest 请求对象
+     * @param request ListPolicyRequest 请求对象
      * @return SyncInvoker<ListPolicyRequest, ListPolicyResponse>
      */
     public SyncInvoker<ListPolicyRequest, ListPolicyResponse> listPolicyInvoker(ListPolicyRequest request) {
-        return new SyncInvoker<ListPolicyRequest, ListPolicyResponse>(request, EdgeSecMeta.listPolicy, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.listPolicy, hcClient);
     }
 
     /**
@@ -602,7 +587,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return ShowCertificateResponse
      */
     public ShowCertificateResponse showCertificate(ShowCertificateRequest request) {
@@ -616,13 +601,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
      */
     public SyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateInvoker(
         ShowCertificateRequest request) {
-        return new SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>(request, EdgeSecMeta.showCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.showCertificate, hcClient);
     }
 
     /**
@@ -632,7 +616,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeWafDomainsRequest 请求对象
+     * @param request ShowEdgeWafDomainsRequest 请求对象
      * @return ShowEdgeWafDomainsResponse
      */
     public ShowEdgeWafDomainsResponse showEdgeWafDomains(ShowEdgeWafDomainsRequest request) {
@@ -646,13 +630,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeWafDomainsRequest 请求对象
+     * @param request ShowEdgeWafDomainsRequest 请求对象
      * @return SyncInvoker<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse>
      */
     public SyncInvoker<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse> showEdgeWafDomainsInvoker(
         ShowEdgeWafDomainsRequest request) {
-        return new SyncInvoker<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse>(request,
-            EdgeSecMeta.showEdgeWafDomains, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.showEdgeWafDomains, hcClient);
     }
 
     /**
@@ -662,7 +645,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateRequest 请求对象
+     * @param request UpdateCertificateRequest 请求对象
      * @return UpdateCertificateResponse
      */
     public UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request) {
@@ -676,13 +659,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateRequest 请求对象
+     * @param request UpdateCertificateRequest 请求对象
      * @return SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>
      */
     public SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateInvoker(
         UpdateCertificateRequest request) {
-        return new SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>(request,
-            EdgeSecMeta.updateCertificate, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.updateCertificate, hcClient);
     }
 
     /**
@@ -692,7 +674,7 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeWafDomainsRequest 请求对象
+     * @param request UpdateEdgeWafDomainsRequest 请求对象
      * @return UpdateEdgeWafDomainsResponse
      */
     public UpdateEdgeWafDomainsResponse updateEdgeWafDomains(UpdateEdgeWafDomainsRequest request) {
@@ -706,13 +688,12 @@ public class EdgeSecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeWafDomainsRequest 请求对象
+     * @param request UpdateEdgeWafDomainsRequest 请求对象
      * @return SyncInvoker<UpdateEdgeWafDomainsRequest, UpdateEdgeWafDomainsResponse>
      */
     public SyncInvoker<UpdateEdgeWafDomainsRequest, UpdateEdgeWafDomainsResponse> updateEdgeWafDomainsInvoker(
         UpdateEdgeWafDomainsRequest request) {
-        return new SyncInvoker<UpdateEdgeWafDomainsRequest, UpdateEdgeWafDomainsResponse>(request,
-            EdgeSecMeta.updateEdgeWafDomains, hcClient);
+        return new SyncInvoker<>(request, EdgeSecMeta.updateEdgeWafDomains, hcClient);
     }
 
 }

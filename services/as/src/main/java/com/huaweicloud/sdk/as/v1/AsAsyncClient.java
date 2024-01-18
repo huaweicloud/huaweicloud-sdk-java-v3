@@ -150,7 +150,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachCallbackInstanceLifeCycleHookRequest 请求对象
+     * @param request AttachCallbackInstanceLifeCycleHookRequest 请求对象
      * @return CompletableFuture<AttachCallbackInstanceLifeCycleHookResponse>
      */
     public CompletableFuture<AttachCallbackInstanceLifeCycleHookResponse> attachCallbackInstanceLifeCycleHookAsync(
@@ -165,13 +165,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachCallbackInstanceLifeCycleHookRequest 请求对象
+     * @param request AttachCallbackInstanceLifeCycleHookRequest 请求对象
      * @return AsyncInvoker<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse>
      */
     public AsyncInvoker<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse> attachCallbackInstanceLifeCycleHookAsyncInvoker(
         AttachCallbackInstanceLifeCycleHookRequest request) {
-        return new AsyncInvoker<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse>(
-            request, AsMeta.attachCallbackInstanceLifeCycleHook, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.attachCallbackInstanceLifeCycleHook, hcClient);
     }
 
     /**
@@ -181,7 +180,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddScalingInstancesRequest 请求对象
+     * @param request BatchAddScalingInstancesRequest 请求对象
      * @return CompletableFuture<BatchAddScalingInstancesResponse>
      */
     public CompletableFuture<BatchAddScalingInstancesResponse> batchAddScalingInstancesAsync(
@@ -196,13 +195,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddScalingInstancesRequest 请求对象
+     * @param request BatchAddScalingInstancesRequest 请求对象
      * @return AsyncInvoker<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse>
      */
     public AsyncInvoker<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse> batchAddScalingInstancesAsyncInvoker(
         BatchAddScalingInstancesRequest request) {
-        return new AsyncInvoker<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse>(request,
-            AsMeta.batchAddScalingInstances, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.batchAddScalingInstances, hcClient);
     }
 
     /**
@@ -212,7 +210,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteScalingConfigsRequest 请求对象
+     * @param request BatchDeleteScalingConfigsRequest 请求对象
      * @return CompletableFuture<BatchDeleteScalingConfigsResponse>
      */
     public CompletableFuture<BatchDeleteScalingConfigsResponse> batchDeleteScalingConfigsAsync(
@@ -227,13 +225,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteScalingConfigsRequest 请求对象
+     * @param request BatchDeleteScalingConfigsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteScalingConfigsRequest, BatchDeleteScalingConfigsResponse>
      */
     public AsyncInvoker<BatchDeleteScalingConfigsRequest, BatchDeleteScalingConfigsResponse> batchDeleteScalingConfigsAsyncInvoker(
         BatchDeleteScalingConfigsRequest request) {
-        return new AsyncInvoker<BatchDeleteScalingConfigsRequest, BatchDeleteScalingConfigsResponse>(request,
-            AsMeta.batchDeleteScalingConfigs, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.batchDeleteScalingConfigs, hcClient);
     }
 
     /**
@@ -243,7 +240,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteScalingPoliciesRequest 请求对象
+     * @param request BatchDeleteScalingPoliciesRequest 请求对象
      * @return CompletableFuture<BatchDeleteScalingPoliciesResponse>
      */
     public CompletableFuture<BatchDeleteScalingPoliciesResponse> batchDeleteScalingPoliciesAsync(
@@ -258,13 +255,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteScalingPoliciesRequest 请求对象
+     * @param request BatchDeleteScalingPoliciesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse>
      */
     public AsyncInvoker<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse> batchDeleteScalingPoliciesAsyncInvoker(
         BatchDeleteScalingPoliciesRequest request) {
-        return new AsyncInvoker<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse>(request,
-            AsMeta.batchDeleteScalingPolicies, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.batchDeleteScalingPolicies, hcClient);
     }
 
     /**
@@ -274,7 +270,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPauseScalingPoliciesRequest 请求对象
+     * @param request BatchPauseScalingPoliciesRequest 请求对象
      * @return CompletableFuture<BatchPauseScalingPoliciesResponse>
      */
     public CompletableFuture<BatchPauseScalingPoliciesResponse> batchPauseScalingPoliciesAsync(
@@ -289,13 +285,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPauseScalingPoliciesRequest 请求对象
+     * @param request BatchPauseScalingPoliciesRequest 请求对象
      * @return AsyncInvoker<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse>
      */
     public AsyncInvoker<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse> batchPauseScalingPoliciesAsyncInvoker(
         BatchPauseScalingPoliciesRequest request) {
-        return new AsyncInvoker<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse>(request,
-            AsMeta.batchPauseScalingPolicies, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.batchPauseScalingPolicies, hcClient);
     }
 
     /**
@@ -305,7 +300,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchProtectScalingInstancesRequest 请求对象
+     * @param request BatchProtectScalingInstancesRequest 请求对象
      * @return CompletableFuture<BatchProtectScalingInstancesResponse>
      */
     public CompletableFuture<BatchProtectScalingInstancesResponse> batchProtectScalingInstancesAsync(
@@ -320,13 +315,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchProtectScalingInstancesRequest 请求对象
+     * @param request BatchProtectScalingInstancesRequest 请求对象
      * @return AsyncInvoker<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse>
      */
     public AsyncInvoker<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse> batchProtectScalingInstancesAsyncInvoker(
         BatchProtectScalingInstancesRequest request) {
-        return new AsyncInvoker<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse>(request,
-            AsMeta.batchProtectScalingInstances, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.batchProtectScalingInstances, hcClient);
     }
 
     /**
@@ -336,7 +330,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemoveScalingInstancesRequest 请求对象
+     * @param request BatchRemoveScalingInstancesRequest 请求对象
      * @return CompletableFuture<BatchRemoveScalingInstancesResponse>
      */
     public CompletableFuture<BatchRemoveScalingInstancesResponse> batchRemoveScalingInstancesAsync(
@@ -351,13 +345,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemoveScalingInstancesRequest 请求对象
+     * @param request BatchRemoveScalingInstancesRequest 请求对象
      * @return AsyncInvoker<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse>
      */
     public AsyncInvoker<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse> batchRemoveScalingInstancesAsyncInvoker(
         BatchRemoveScalingInstancesRequest request) {
-        return new AsyncInvoker<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse>(request,
-            AsMeta.batchRemoveScalingInstances, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.batchRemoveScalingInstances, hcClient);
     }
 
     /**
@@ -367,7 +360,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchResumeScalingPoliciesRequest 请求对象
+     * @param request BatchResumeScalingPoliciesRequest 请求对象
      * @return CompletableFuture<BatchResumeScalingPoliciesResponse>
      */
     public CompletableFuture<BatchResumeScalingPoliciesResponse> batchResumeScalingPoliciesAsync(
@@ -382,13 +375,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchResumeScalingPoliciesRequest 请求对象
+     * @param request BatchResumeScalingPoliciesRequest 请求对象
      * @return AsyncInvoker<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse>
      */
     public AsyncInvoker<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse> batchResumeScalingPoliciesAsyncInvoker(
         BatchResumeScalingPoliciesRequest request) {
-        return new AsyncInvoker<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse>(request,
-            AsMeta.batchResumeScalingPolicies, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.batchResumeScalingPolicies, hcClient);
     }
 
     /**
@@ -398,7 +390,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSetScalingInstancesStandbyRequest 请求对象
+     * @param request BatchSetScalingInstancesStandbyRequest 请求对象
      * @return CompletableFuture<BatchSetScalingInstancesStandbyResponse>
      */
     public CompletableFuture<BatchSetScalingInstancesStandbyResponse> batchSetScalingInstancesStandbyAsync(
@@ -413,13 +405,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSetScalingInstancesStandbyRequest 请求对象
+     * @param request BatchSetScalingInstancesStandbyRequest 请求对象
      * @return AsyncInvoker<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse>
      */
     public AsyncInvoker<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse> batchSetScalingInstancesStandbyAsyncInvoker(
         BatchSetScalingInstancesStandbyRequest request) {
-        return new AsyncInvoker<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse>(
-            request, AsMeta.batchSetScalingInstancesStandby, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.batchSetScalingInstancesStandby, hcClient);
     }
 
     /**
@@ -429,7 +420,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUnprotectScalingInstancesRequest 请求对象
+     * @param request BatchUnprotectScalingInstancesRequest 请求对象
      * @return CompletableFuture<BatchUnprotectScalingInstancesResponse>
      */
     public CompletableFuture<BatchUnprotectScalingInstancesResponse> batchUnprotectScalingInstancesAsync(
@@ -444,13 +435,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUnprotectScalingInstancesRequest 请求对象
+     * @param request BatchUnprotectScalingInstancesRequest 请求对象
      * @return AsyncInvoker<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse>
      */
     public AsyncInvoker<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse> batchUnprotectScalingInstancesAsyncInvoker(
         BatchUnprotectScalingInstancesRequest request) {
-        return new AsyncInvoker<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse>(request,
-            AsMeta.batchUnprotectScalingInstances, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.batchUnprotectScalingInstances, hcClient);
     }
 
     /**
@@ -460,7 +450,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUnsetScalingInstancesStantbyRequest 请求对象
+     * @param request BatchUnsetScalingInstancesStantbyRequest 请求对象
      * @return CompletableFuture<BatchUnsetScalingInstancesStantbyResponse>
      */
     public CompletableFuture<BatchUnsetScalingInstancesStantbyResponse> batchUnsetScalingInstancesStantbyAsync(
@@ -475,13 +465,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUnsetScalingInstancesStantbyRequest 请求对象
+     * @param request BatchUnsetScalingInstancesStantbyRequest 请求对象
      * @return AsyncInvoker<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse>
      */
     public AsyncInvoker<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> batchUnsetScalingInstancesStantbyAsyncInvoker(
         BatchUnsetScalingInstancesStantbyRequest request) {
-        return new AsyncInvoker<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse>(
-            request, AsMeta.batchUnsetScalingInstancesStantby, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.batchUnsetScalingInstancesStantby, hcClient);
     }
 
     /**
@@ -491,7 +480,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGroupScheduledTaskRequest 请求对象
+     * @param request CreateGroupScheduledTaskRequest 请求对象
      * @return CompletableFuture<CreateGroupScheduledTaskResponse>
      */
     public CompletableFuture<CreateGroupScheduledTaskResponse> createGroupScheduledTaskAsync(
@@ -506,13 +495,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGroupScheduledTaskRequest 请求对象
+     * @param request CreateGroupScheduledTaskRequest 请求对象
      * @return AsyncInvoker<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse>
      */
     public AsyncInvoker<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse> createGroupScheduledTaskAsyncInvoker(
         CreateGroupScheduledTaskRequest request) {
-        return new AsyncInvoker<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse>(request,
-            AsMeta.createGroupScheduledTask, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.createGroupScheduledTask, hcClient);
     }
 
     /**
@@ -522,7 +510,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLifyCycleHookRequest 请求对象
+     * @param request CreateLifyCycleHookRequest 请求对象
      * @return CompletableFuture<CreateLifyCycleHookResponse>
      */
     public CompletableFuture<CreateLifyCycleHookResponse> createLifyCycleHookAsync(CreateLifyCycleHookRequest request) {
@@ -536,13 +524,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLifyCycleHookRequest 请求对象
+     * @param request CreateLifyCycleHookRequest 请求对象
      * @return AsyncInvoker<CreateLifyCycleHookRequest, CreateLifyCycleHookResponse>
      */
     public AsyncInvoker<CreateLifyCycleHookRequest, CreateLifyCycleHookResponse> createLifyCycleHookAsyncInvoker(
         CreateLifyCycleHookRequest request) {
-        return new AsyncInvoker<CreateLifyCycleHookRequest, CreateLifyCycleHookResponse>(request,
-            AsMeta.createLifyCycleHook, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.createLifyCycleHook, hcClient);
     }
 
     /**
@@ -552,7 +539,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingConfigRequest 请求对象
+     * @param request CreateScalingConfigRequest 请求对象
      * @return CompletableFuture<CreateScalingConfigResponse>
      */
     public CompletableFuture<CreateScalingConfigResponse> createScalingConfigAsync(CreateScalingConfigRequest request) {
@@ -566,13 +553,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingConfigRequest 请求对象
+     * @param request CreateScalingConfigRequest 请求对象
      * @return AsyncInvoker<CreateScalingConfigRequest, CreateScalingConfigResponse>
      */
     public AsyncInvoker<CreateScalingConfigRequest, CreateScalingConfigResponse> createScalingConfigAsyncInvoker(
         CreateScalingConfigRequest request) {
-        return new AsyncInvoker<CreateScalingConfigRequest, CreateScalingConfigResponse>(request,
-            AsMeta.createScalingConfig, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.createScalingConfig, hcClient);
     }
 
     /**
@@ -582,7 +568,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingGroupRequest 请求对象
+     * @param request CreateScalingGroupRequest 请求对象
      * @return CompletableFuture<CreateScalingGroupResponse>
      */
     public CompletableFuture<CreateScalingGroupResponse> createScalingGroupAsync(CreateScalingGroupRequest request) {
@@ -596,13 +582,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingGroupRequest 请求对象
+     * @param request CreateScalingGroupRequest 请求对象
      * @return AsyncInvoker<CreateScalingGroupRequest, CreateScalingGroupResponse>
      */
     public AsyncInvoker<CreateScalingGroupRequest, CreateScalingGroupResponse> createScalingGroupAsyncInvoker(
         CreateScalingGroupRequest request) {
-        return new AsyncInvoker<CreateScalingGroupRequest, CreateScalingGroupResponse>(request,
-            AsMeta.createScalingGroup, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.createScalingGroup, hcClient);
     }
 
     /**
@@ -612,7 +597,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingNotificationRequest 请求对象
+     * @param request CreateScalingNotificationRequest 请求对象
      * @return CompletableFuture<CreateScalingNotificationResponse>
      */
     public CompletableFuture<CreateScalingNotificationResponse> createScalingNotificationAsync(
@@ -627,13 +612,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingNotificationRequest 请求对象
+     * @param request CreateScalingNotificationRequest 请求对象
      * @return AsyncInvoker<CreateScalingNotificationRequest, CreateScalingNotificationResponse>
      */
     public AsyncInvoker<CreateScalingNotificationRequest, CreateScalingNotificationResponse> createScalingNotificationAsyncInvoker(
         CreateScalingNotificationRequest request) {
-        return new AsyncInvoker<CreateScalingNotificationRequest, CreateScalingNotificationResponse>(request,
-            AsMeta.createScalingNotification, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.createScalingNotification, hcClient);
     }
 
     /**
@@ -643,7 +627,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingPolicyRequest 请求对象
+     * @param request CreateScalingPolicyRequest 请求对象
      * @return CompletableFuture<CreateScalingPolicyResponse>
      */
     public CompletableFuture<CreateScalingPolicyResponse> createScalingPolicyAsync(CreateScalingPolicyRequest request) {
@@ -657,13 +641,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingPolicyRequest 请求对象
+     * @param request CreateScalingPolicyRequest 请求对象
      * @return AsyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse>
      */
     public AsyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse> createScalingPolicyAsyncInvoker(
         CreateScalingPolicyRequest request) {
-        return new AsyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse>(request,
-            AsMeta.createScalingPolicy, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.createScalingPolicy, hcClient);
     }
 
     /**
@@ -673,7 +656,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingTagInfoRequest 请求对象
+     * @param request CreateScalingTagInfoRequest 请求对象
      * @return CompletableFuture<CreateScalingTagInfoResponse>
      */
     public CompletableFuture<CreateScalingTagInfoResponse> createScalingTagInfoAsync(
@@ -688,13 +671,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingTagInfoRequest 请求对象
+     * @param request CreateScalingTagInfoRequest 请求对象
      * @return AsyncInvoker<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse>
      */
     public AsyncInvoker<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse> createScalingTagInfoAsyncInvoker(
         CreateScalingTagInfoRequest request) {
-        return new AsyncInvoker<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse>(request,
-            AsMeta.createScalingTagInfo, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.createScalingTagInfo, hcClient);
     }
 
     /**
@@ -704,7 +686,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGroupScheduledTaskRequest 请求对象
+     * @param request DeleteGroupScheduledTaskRequest 请求对象
      * @return CompletableFuture<DeleteGroupScheduledTaskResponse>
      */
     public CompletableFuture<DeleteGroupScheduledTaskResponse> deleteGroupScheduledTaskAsync(
@@ -719,13 +701,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGroupScheduledTaskRequest 请求对象
+     * @param request DeleteGroupScheduledTaskRequest 请求对象
      * @return AsyncInvoker<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse>
      */
     public AsyncInvoker<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse> deleteGroupScheduledTaskAsyncInvoker(
         DeleteGroupScheduledTaskRequest request) {
-        return new AsyncInvoker<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse>(request,
-            AsMeta.deleteGroupScheduledTask, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.deleteGroupScheduledTask, hcClient);
     }
 
     /**
@@ -735,7 +716,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLifecycleHookRequest 请求对象
+     * @param request DeleteLifecycleHookRequest 请求对象
      * @return CompletableFuture<DeleteLifecycleHookResponse>
      */
     public CompletableFuture<DeleteLifecycleHookResponse> deleteLifecycleHookAsync(DeleteLifecycleHookRequest request) {
@@ -749,13 +730,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLifecycleHookRequest 请求对象
+     * @param request DeleteLifecycleHookRequest 请求对象
      * @return AsyncInvoker<DeleteLifecycleHookRequest, DeleteLifecycleHookResponse>
      */
     public AsyncInvoker<DeleteLifecycleHookRequest, DeleteLifecycleHookResponse> deleteLifecycleHookAsyncInvoker(
         DeleteLifecycleHookRequest request) {
-        return new AsyncInvoker<DeleteLifecycleHookRequest, DeleteLifecycleHookResponse>(request,
-            AsMeta.deleteLifecycleHook, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.deleteLifecycleHook, hcClient);
     }
 
     /**
@@ -765,7 +745,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingConfigRequest 请求对象
+     * @param request DeleteScalingConfigRequest 请求对象
      * @return CompletableFuture<DeleteScalingConfigResponse>
      */
     public CompletableFuture<DeleteScalingConfigResponse> deleteScalingConfigAsync(DeleteScalingConfigRequest request) {
@@ -779,13 +759,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingConfigRequest 请求对象
+     * @param request DeleteScalingConfigRequest 请求对象
      * @return AsyncInvoker<DeleteScalingConfigRequest, DeleteScalingConfigResponse>
      */
     public AsyncInvoker<DeleteScalingConfigRequest, DeleteScalingConfigResponse> deleteScalingConfigAsyncInvoker(
         DeleteScalingConfigRequest request) {
-        return new AsyncInvoker<DeleteScalingConfigRequest, DeleteScalingConfigResponse>(request,
-            AsMeta.deleteScalingConfig, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.deleteScalingConfig, hcClient);
     }
 
     /**
@@ -795,7 +774,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingGroupRequest 请求对象
+     * @param request DeleteScalingGroupRequest 请求对象
      * @return CompletableFuture<DeleteScalingGroupResponse>
      */
     public CompletableFuture<DeleteScalingGroupResponse> deleteScalingGroupAsync(DeleteScalingGroupRequest request) {
@@ -809,13 +788,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingGroupRequest 请求对象
+     * @param request DeleteScalingGroupRequest 请求对象
      * @return AsyncInvoker<DeleteScalingGroupRequest, DeleteScalingGroupResponse>
      */
     public AsyncInvoker<DeleteScalingGroupRequest, DeleteScalingGroupResponse> deleteScalingGroupAsyncInvoker(
         DeleteScalingGroupRequest request) {
-        return new AsyncInvoker<DeleteScalingGroupRequest, DeleteScalingGroupResponse>(request,
-            AsMeta.deleteScalingGroup, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.deleteScalingGroup, hcClient);
     }
 
     /**
@@ -825,7 +803,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingInstanceRequest 请求对象
+     * @param request DeleteScalingInstanceRequest 请求对象
      * @return CompletableFuture<DeleteScalingInstanceResponse>
      */
     public CompletableFuture<DeleteScalingInstanceResponse> deleteScalingInstanceAsync(
@@ -840,13 +818,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingInstanceRequest 请求对象
+     * @param request DeleteScalingInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteScalingInstanceRequest, DeleteScalingInstanceResponse>
      */
     public AsyncInvoker<DeleteScalingInstanceRequest, DeleteScalingInstanceResponse> deleteScalingInstanceAsyncInvoker(
         DeleteScalingInstanceRequest request) {
-        return new AsyncInvoker<DeleteScalingInstanceRequest, DeleteScalingInstanceResponse>(request,
-            AsMeta.deleteScalingInstance, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.deleteScalingInstance, hcClient);
     }
 
     /**
@@ -856,7 +833,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingNotificationRequest 请求对象
+     * @param request DeleteScalingNotificationRequest 请求对象
      * @return CompletableFuture<DeleteScalingNotificationResponse>
      */
     public CompletableFuture<DeleteScalingNotificationResponse> deleteScalingNotificationAsync(
@@ -871,13 +848,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingNotificationRequest 请求对象
+     * @param request DeleteScalingNotificationRequest 请求对象
      * @return AsyncInvoker<DeleteScalingNotificationRequest, DeleteScalingNotificationResponse>
      */
     public AsyncInvoker<DeleteScalingNotificationRequest, DeleteScalingNotificationResponse> deleteScalingNotificationAsyncInvoker(
         DeleteScalingNotificationRequest request) {
-        return new AsyncInvoker<DeleteScalingNotificationRequest, DeleteScalingNotificationResponse>(request,
-            AsMeta.deleteScalingNotification, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.deleteScalingNotification, hcClient);
     }
 
     /**
@@ -887,7 +863,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingPolicyRequest 请求对象
+     * @param request DeleteScalingPolicyRequest 请求对象
      * @return CompletableFuture<DeleteScalingPolicyResponse>
      */
     public CompletableFuture<DeleteScalingPolicyResponse> deleteScalingPolicyAsync(DeleteScalingPolicyRequest request) {
@@ -901,13 +877,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingPolicyRequest 请求对象
+     * @param request DeleteScalingPolicyRequest 请求对象
      * @return AsyncInvoker<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse>
      */
     public AsyncInvoker<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse> deleteScalingPolicyAsyncInvoker(
         DeleteScalingPolicyRequest request) {
-        return new AsyncInvoker<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse>(request,
-            AsMeta.deleteScalingPolicy, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.deleteScalingPolicy, hcClient);
     }
 
     /**
@@ -917,7 +892,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingTagInfoRequest 请求对象
+     * @param request DeleteScalingTagInfoRequest 请求对象
      * @return CompletableFuture<DeleteScalingTagInfoResponse>
      */
     public CompletableFuture<DeleteScalingTagInfoResponse> deleteScalingTagInfoAsync(
@@ -932,13 +907,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScalingTagInfoRequest 请求对象
+     * @param request DeleteScalingTagInfoRequest 请求对象
      * @return AsyncInvoker<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse>
      */
     public AsyncInvoker<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse> deleteScalingTagInfoAsyncInvoker(
         DeleteScalingTagInfoRequest request) {
-        return new AsyncInvoker<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse>(request,
-            AsMeta.deleteScalingTagInfo, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.deleteScalingTagInfo, hcClient);
     }
 
     /**
@@ -948,7 +922,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteScalingPolicyRequest 请求对象
+     * @param request ExecuteScalingPolicyRequest 请求对象
      * @return CompletableFuture<ExecuteScalingPolicyResponse>
      */
     public CompletableFuture<ExecuteScalingPolicyResponse> executeScalingPolicyAsync(
@@ -963,13 +937,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteScalingPolicyRequest 请求对象
+     * @param request ExecuteScalingPolicyRequest 请求对象
      * @return AsyncInvoker<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse>
      */
     public AsyncInvoker<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse> executeScalingPolicyAsyncInvoker(
         ExecuteScalingPolicyRequest request) {
-        return new AsyncInvoker<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse>(request,
-            AsMeta.executeScalingPolicy, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.executeScalingPolicy, hcClient);
     }
 
     /**
@@ -979,7 +952,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGroupScheduledTasksRequest 请求对象
+     * @param request ListGroupScheduledTasksRequest 请求对象
      * @return CompletableFuture<ListGroupScheduledTasksResponse>
      */
     public CompletableFuture<ListGroupScheduledTasksResponse> listGroupScheduledTasksAsync(
@@ -994,13 +967,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGroupScheduledTasksRequest 请求对象
+     * @param request ListGroupScheduledTasksRequest 请求对象
      * @return AsyncInvoker<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse>
      */
     public AsyncInvoker<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse> listGroupScheduledTasksAsyncInvoker(
         ListGroupScheduledTasksRequest request) {
-        return new AsyncInvoker<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse>(request,
-            AsMeta.listGroupScheduledTasks, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listGroupScheduledTasks, hcClient);
     }
 
     /**
@@ -1010,7 +982,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHookInstancesRequest 请求对象
+     * @param request ListHookInstancesRequest 请求对象
      * @return CompletableFuture<ListHookInstancesResponse>
      */
     public CompletableFuture<ListHookInstancesResponse> listHookInstancesAsync(ListHookInstancesRequest request) {
@@ -1024,13 +996,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHookInstancesRequest 请求对象
+     * @param request ListHookInstancesRequest 请求对象
      * @return AsyncInvoker<ListHookInstancesRequest, ListHookInstancesResponse>
      */
     public AsyncInvoker<ListHookInstancesRequest, ListHookInstancesResponse> listHookInstancesAsyncInvoker(
         ListHookInstancesRequest request) {
-        return new AsyncInvoker<ListHookInstancesRequest, ListHookInstancesResponse>(request, AsMeta.listHookInstances,
-            hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listHookInstances, hcClient);
     }
 
     /**
@@ -1040,7 +1011,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLifeCycleHooksRequest 请求对象
+     * @param request ListLifeCycleHooksRequest 请求对象
      * @return CompletableFuture<ListLifeCycleHooksResponse>
      */
     public CompletableFuture<ListLifeCycleHooksResponse> listLifeCycleHooksAsync(ListLifeCycleHooksRequest request) {
@@ -1054,13 +1025,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLifeCycleHooksRequest 请求对象
+     * @param request ListLifeCycleHooksRequest 请求对象
      * @return AsyncInvoker<ListLifeCycleHooksRequest, ListLifeCycleHooksResponse>
      */
     public AsyncInvoker<ListLifeCycleHooksRequest, ListLifeCycleHooksResponse> listLifeCycleHooksAsyncInvoker(
         ListLifeCycleHooksRequest request) {
-        return new AsyncInvoker<ListLifeCycleHooksRequest, ListLifeCycleHooksResponse>(request,
-            AsMeta.listLifeCycleHooks, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listLifeCycleHooks, hcClient);
     }
 
     /**
@@ -1070,7 +1040,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return CompletableFuture<ListResourceInstancesResponse>
      */
     public CompletableFuture<ListResourceInstancesResponse> listResourceInstancesAsync(
@@ -1085,13 +1055,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
      */
     public AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesAsyncInvoker(
         ListResourceInstancesRequest request) {
-        return new AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
-            AsMeta.listResourceInstances, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listResourceInstances, hcClient);
     }
 
     /**
@@ -1101,7 +1070,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingActivityLogsRequest 请求对象
+     * @param request ListScalingActivityLogsRequest 请求对象
      * @return CompletableFuture<ListScalingActivityLogsResponse>
      */
     public CompletableFuture<ListScalingActivityLogsResponse> listScalingActivityLogsAsync(
@@ -1116,13 +1085,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingActivityLogsRequest 请求对象
+     * @param request ListScalingActivityLogsRequest 请求对象
      * @return AsyncInvoker<ListScalingActivityLogsRequest, ListScalingActivityLogsResponse>
      */
     public AsyncInvoker<ListScalingActivityLogsRequest, ListScalingActivityLogsResponse> listScalingActivityLogsAsyncInvoker(
         ListScalingActivityLogsRequest request) {
-        return new AsyncInvoker<ListScalingActivityLogsRequest, ListScalingActivityLogsResponse>(request,
-            AsMeta.listScalingActivityLogs, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingActivityLogs, hcClient);
     }
 
     /**
@@ -1132,7 +1100,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingActivityV2LogsRequest 请求对象
+     * @param request ListScalingActivityV2LogsRequest 请求对象
      * @return CompletableFuture<ListScalingActivityV2LogsResponse>
      */
     public CompletableFuture<ListScalingActivityV2LogsResponse> listScalingActivityV2LogsAsync(
@@ -1147,13 +1115,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingActivityV2LogsRequest 请求对象
+     * @param request ListScalingActivityV2LogsRequest 请求对象
      * @return AsyncInvoker<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse>
      */
     public AsyncInvoker<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse> listScalingActivityV2LogsAsyncInvoker(
         ListScalingActivityV2LogsRequest request) {
-        return new AsyncInvoker<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse>(request,
-            AsMeta.listScalingActivityV2Logs, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingActivityV2Logs, hcClient);
     }
 
     /**
@@ -1163,7 +1130,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingConfigsRequest 请求对象
+     * @param request ListScalingConfigsRequest 请求对象
      * @return CompletableFuture<ListScalingConfigsResponse>
      */
     public CompletableFuture<ListScalingConfigsResponse> listScalingConfigsAsync(ListScalingConfigsRequest request) {
@@ -1177,13 +1144,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingConfigsRequest 请求对象
+     * @param request ListScalingConfigsRequest 请求对象
      * @return AsyncInvoker<ListScalingConfigsRequest, ListScalingConfigsResponse>
      */
     public AsyncInvoker<ListScalingConfigsRequest, ListScalingConfigsResponse> listScalingConfigsAsyncInvoker(
         ListScalingConfigsRequest request) {
-        return new AsyncInvoker<ListScalingConfigsRequest, ListScalingConfigsResponse>(request,
-            AsMeta.listScalingConfigs, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingConfigs, hcClient);
     }
 
     /**
@@ -1193,7 +1159,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingGroupsRequest 请求对象
+     * @param request ListScalingGroupsRequest 请求对象
      * @return CompletableFuture<ListScalingGroupsResponse>
      */
     public CompletableFuture<ListScalingGroupsResponse> listScalingGroupsAsync(ListScalingGroupsRequest request) {
@@ -1207,13 +1173,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingGroupsRequest 请求对象
+     * @param request ListScalingGroupsRequest 请求对象
      * @return AsyncInvoker<ListScalingGroupsRequest, ListScalingGroupsResponse>
      */
     public AsyncInvoker<ListScalingGroupsRequest, ListScalingGroupsResponse> listScalingGroupsAsyncInvoker(
         ListScalingGroupsRequest request) {
-        return new AsyncInvoker<ListScalingGroupsRequest, ListScalingGroupsResponse>(request, AsMeta.listScalingGroups,
-            hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingGroups, hcClient);
     }
 
     /**
@@ -1223,7 +1188,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingInstancesRequest 请求对象
+     * @param request ListScalingInstancesRequest 请求对象
      * @return CompletableFuture<ListScalingInstancesResponse>
      */
     public CompletableFuture<ListScalingInstancesResponse> listScalingInstancesAsync(
@@ -1238,13 +1203,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingInstancesRequest 请求对象
+     * @param request ListScalingInstancesRequest 请求对象
      * @return AsyncInvoker<ListScalingInstancesRequest, ListScalingInstancesResponse>
      */
     public AsyncInvoker<ListScalingInstancesRequest, ListScalingInstancesResponse> listScalingInstancesAsyncInvoker(
         ListScalingInstancesRequest request) {
-        return new AsyncInvoker<ListScalingInstancesRequest, ListScalingInstancesResponse>(request,
-            AsMeta.listScalingInstances, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingInstances, hcClient);
     }
 
     /**
@@ -1254,7 +1218,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingNotificationsRequest 请求对象
+     * @param request ListScalingNotificationsRequest 请求对象
      * @return CompletableFuture<ListScalingNotificationsResponse>
      */
     public CompletableFuture<ListScalingNotificationsResponse> listScalingNotificationsAsync(
@@ -1269,13 +1233,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingNotificationsRequest 请求对象
+     * @param request ListScalingNotificationsRequest 请求对象
      * @return AsyncInvoker<ListScalingNotificationsRequest, ListScalingNotificationsResponse>
      */
     public AsyncInvoker<ListScalingNotificationsRequest, ListScalingNotificationsResponse> listScalingNotificationsAsyncInvoker(
         ListScalingNotificationsRequest request) {
-        return new AsyncInvoker<ListScalingNotificationsRequest, ListScalingNotificationsResponse>(request,
-            AsMeta.listScalingNotifications, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingNotifications, hcClient);
     }
 
     /**
@@ -1285,7 +1248,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingPoliciesRequest 请求对象
+     * @param request ListScalingPoliciesRequest 请求对象
      * @return CompletableFuture<ListScalingPoliciesResponse>
      */
     public CompletableFuture<ListScalingPoliciesResponse> listScalingPoliciesAsync(ListScalingPoliciesRequest request) {
@@ -1299,13 +1262,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingPoliciesRequest 请求对象
+     * @param request ListScalingPoliciesRequest 请求对象
      * @return AsyncInvoker<ListScalingPoliciesRequest, ListScalingPoliciesResponse>
      */
     public AsyncInvoker<ListScalingPoliciesRequest, ListScalingPoliciesResponse> listScalingPoliciesAsyncInvoker(
         ListScalingPoliciesRequest request) {
-        return new AsyncInvoker<ListScalingPoliciesRequest, ListScalingPoliciesResponse>(request,
-            AsMeta.listScalingPolicies, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingPolicies, hcClient);
     }
 
     /**
@@ -1315,7 +1277,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingPolicyExecuteLogsRequest 请求对象
+     * @param request ListScalingPolicyExecuteLogsRequest 请求对象
      * @return CompletableFuture<ListScalingPolicyExecuteLogsResponse>
      */
     public CompletableFuture<ListScalingPolicyExecuteLogsResponse> listScalingPolicyExecuteLogsAsync(
@@ -1330,13 +1292,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingPolicyExecuteLogsRequest 请求对象
+     * @param request ListScalingPolicyExecuteLogsRequest 请求对象
      * @return AsyncInvoker<ListScalingPolicyExecuteLogsRequest, ListScalingPolicyExecuteLogsResponse>
      */
     public AsyncInvoker<ListScalingPolicyExecuteLogsRequest, ListScalingPolicyExecuteLogsResponse> listScalingPolicyExecuteLogsAsyncInvoker(
         ListScalingPolicyExecuteLogsRequest request) {
-        return new AsyncInvoker<ListScalingPolicyExecuteLogsRequest, ListScalingPolicyExecuteLogsResponse>(request,
-            AsMeta.listScalingPolicyExecuteLogs, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingPolicyExecuteLogs, hcClient);
     }
 
     /**
@@ -1346,7 +1307,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingTagInfosByResourceIdRequest 请求对象
+     * @param request ListScalingTagInfosByResourceIdRequest 请求对象
      * @return CompletableFuture<ListScalingTagInfosByResourceIdResponse>
      */
     public CompletableFuture<ListScalingTagInfosByResourceIdResponse> listScalingTagInfosByResourceIdAsync(
@@ -1361,13 +1322,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingTagInfosByResourceIdRequest 请求对象
+     * @param request ListScalingTagInfosByResourceIdRequest 请求对象
      * @return AsyncInvoker<ListScalingTagInfosByResourceIdRequest, ListScalingTagInfosByResourceIdResponse>
      */
     public AsyncInvoker<ListScalingTagInfosByResourceIdRequest, ListScalingTagInfosByResourceIdResponse> listScalingTagInfosByResourceIdAsyncInvoker(
         ListScalingTagInfosByResourceIdRequest request) {
-        return new AsyncInvoker<ListScalingTagInfosByResourceIdRequest, ListScalingTagInfosByResourceIdResponse>(
-            request, AsMeta.listScalingTagInfosByResourceId, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingTagInfosByResourceId, hcClient);
     }
 
     /**
@@ -1377,7 +1337,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingTagInfosByTenantIdRequest 请求对象
+     * @param request ListScalingTagInfosByTenantIdRequest 请求对象
      * @return CompletableFuture<ListScalingTagInfosByTenantIdResponse>
      */
     public CompletableFuture<ListScalingTagInfosByTenantIdResponse> listScalingTagInfosByTenantIdAsync(
@@ -1392,13 +1352,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingTagInfosByTenantIdRequest 请求对象
+     * @param request ListScalingTagInfosByTenantIdRequest 请求对象
      * @return AsyncInvoker<ListScalingTagInfosByTenantIdRequest, ListScalingTagInfosByTenantIdResponse>
      */
     public AsyncInvoker<ListScalingTagInfosByTenantIdRequest, ListScalingTagInfosByTenantIdResponse> listScalingTagInfosByTenantIdAsyncInvoker(
         ListScalingTagInfosByTenantIdRequest request) {
-        return new AsyncInvoker<ListScalingTagInfosByTenantIdRequest, ListScalingTagInfosByTenantIdResponse>(request,
-            AsMeta.listScalingTagInfosByTenantId, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingTagInfosByTenantId, hcClient);
     }
 
     /**
@@ -1408,7 +1367,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseScalingGroupRequest 请求对象
+     * @param request PauseScalingGroupRequest 请求对象
      * @return CompletableFuture<PauseScalingGroupResponse>
      */
     public CompletableFuture<PauseScalingGroupResponse> pauseScalingGroupAsync(PauseScalingGroupRequest request) {
@@ -1422,13 +1381,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseScalingGroupRequest 请求对象
+     * @param request PauseScalingGroupRequest 请求对象
      * @return AsyncInvoker<PauseScalingGroupRequest, PauseScalingGroupResponse>
      */
     public AsyncInvoker<PauseScalingGroupRequest, PauseScalingGroupResponse> pauseScalingGroupAsyncInvoker(
         PauseScalingGroupRequest request) {
-        return new AsyncInvoker<PauseScalingGroupRequest, PauseScalingGroupResponse>(request, AsMeta.pauseScalingGroup,
-            hcClient);
+        return new AsyncInvoker<>(request, AsMeta.pauseScalingGroup, hcClient);
     }
 
     /**
@@ -1438,7 +1396,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseScalingPolicyRequest 请求对象
+     * @param request PauseScalingPolicyRequest 请求对象
      * @return CompletableFuture<PauseScalingPolicyResponse>
      */
     public CompletableFuture<PauseScalingPolicyResponse> pauseScalingPolicyAsync(PauseScalingPolicyRequest request) {
@@ -1452,13 +1410,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseScalingPolicyRequest 请求对象
+     * @param request PauseScalingPolicyRequest 请求对象
      * @return AsyncInvoker<PauseScalingPolicyRequest, PauseScalingPolicyResponse>
      */
     public AsyncInvoker<PauseScalingPolicyRequest, PauseScalingPolicyResponse> pauseScalingPolicyAsyncInvoker(
         PauseScalingPolicyRequest request) {
-        return new AsyncInvoker<PauseScalingPolicyRequest, PauseScalingPolicyResponse>(request,
-            AsMeta.pauseScalingPolicy, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.pauseScalingPolicy, hcClient);
     }
 
     /**
@@ -1468,7 +1425,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeScalingGroupRequest 请求对象
+     * @param request ResumeScalingGroupRequest 请求对象
      * @return CompletableFuture<ResumeScalingGroupResponse>
      */
     public CompletableFuture<ResumeScalingGroupResponse> resumeScalingGroupAsync(ResumeScalingGroupRequest request) {
@@ -1482,13 +1439,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeScalingGroupRequest 请求对象
+     * @param request ResumeScalingGroupRequest 请求对象
      * @return AsyncInvoker<ResumeScalingGroupRequest, ResumeScalingGroupResponse>
      */
     public AsyncInvoker<ResumeScalingGroupRequest, ResumeScalingGroupResponse> resumeScalingGroupAsyncInvoker(
         ResumeScalingGroupRequest request) {
-        return new AsyncInvoker<ResumeScalingGroupRequest, ResumeScalingGroupResponse>(request,
-            AsMeta.resumeScalingGroup, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.resumeScalingGroup, hcClient);
     }
 
     /**
@@ -1498,7 +1454,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeScalingPolicyRequest 请求对象
+     * @param request ResumeScalingPolicyRequest 请求对象
      * @return CompletableFuture<ResumeScalingPolicyResponse>
      */
     public CompletableFuture<ResumeScalingPolicyResponse> resumeScalingPolicyAsync(ResumeScalingPolicyRequest request) {
@@ -1512,13 +1468,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeScalingPolicyRequest 请求对象
+     * @param request ResumeScalingPolicyRequest 请求对象
      * @return AsyncInvoker<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse>
      */
     public AsyncInvoker<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse> resumeScalingPolicyAsyncInvoker(
         ResumeScalingPolicyRequest request) {
-        return new AsyncInvoker<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse>(request,
-            AsMeta.resumeScalingPolicy, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.resumeScalingPolicy, hcClient);
     }
 
     /**
@@ -1528,7 +1483,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLifeCycleHookRequest 请求对象
+     * @param request ShowLifeCycleHookRequest 请求对象
      * @return CompletableFuture<ShowLifeCycleHookResponse>
      */
     public CompletableFuture<ShowLifeCycleHookResponse> showLifeCycleHookAsync(ShowLifeCycleHookRequest request) {
@@ -1542,13 +1497,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLifeCycleHookRequest 请求对象
+     * @param request ShowLifeCycleHookRequest 请求对象
      * @return AsyncInvoker<ShowLifeCycleHookRequest, ShowLifeCycleHookResponse>
      */
     public AsyncInvoker<ShowLifeCycleHookRequest, ShowLifeCycleHookResponse> showLifeCycleHookAsyncInvoker(
         ShowLifeCycleHookRequest request) {
-        return new AsyncInvoker<ShowLifeCycleHookRequest, ShowLifeCycleHookResponse>(request, AsMeta.showLifeCycleHook,
-            hcClient);
+        return new AsyncInvoker<>(request, AsMeta.showLifeCycleHook, hcClient);
     }
 
     /**
@@ -1558,7 +1512,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyAndInstanceQuotaRequest 请求对象
+     * @param request ShowPolicyAndInstanceQuotaRequest 请求对象
      * @return CompletableFuture<ShowPolicyAndInstanceQuotaResponse>
      */
     public CompletableFuture<ShowPolicyAndInstanceQuotaResponse> showPolicyAndInstanceQuotaAsync(
@@ -1573,13 +1527,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyAndInstanceQuotaRequest 请求对象
+     * @param request ShowPolicyAndInstanceQuotaRequest 请求对象
      * @return AsyncInvoker<ShowPolicyAndInstanceQuotaRequest, ShowPolicyAndInstanceQuotaResponse>
      */
     public AsyncInvoker<ShowPolicyAndInstanceQuotaRequest, ShowPolicyAndInstanceQuotaResponse> showPolicyAndInstanceQuotaAsyncInvoker(
         ShowPolicyAndInstanceQuotaRequest request) {
-        return new AsyncInvoker<ShowPolicyAndInstanceQuotaRequest, ShowPolicyAndInstanceQuotaResponse>(request,
-            AsMeta.showPolicyAndInstanceQuota, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.showPolicyAndInstanceQuota, hcClient);
     }
 
     /**
@@ -1589,7 +1542,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceQuotaRequest 请求对象
+     * @param request ShowResourceQuotaRequest 请求对象
      * @return CompletableFuture<ShowResourceQuotaResponse>
      */
     public CompletableFuture<ShowResourceQuotaResponse> showResourceQuotaAsync(ShowResourceQuotaRequest request) {
@@ -1603,13 +1556,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceQuotaRequest 请求对象
+     * @param request ShowResourceQuotaRequest 请求对象
      * @return AsyncInvoker<ShowResourceQuotaRequest, ShowResourceQuotaResponse>
      */
     public AsyncInvoker<ShowResourceQuotaRequest, ShowResourceQuotaResponse> showResourceQuotaAsyncInvoker(
         ShowResourceQuotaRequest request) {
-        return new AsyncInvoker<ShowResourceQuotaRequest, ShowResourceQuotaResponse>(request, AsMeta.showResourceQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, AsMeta.showResourceQuota, hcClient);
     }
 
     /**
@@ -1619,7 +1571,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScalingConfigRequest 请求对象
+     * @param request ShowScalingConfigRequest 请求对象
      * @return CompletableFuture<ShowScalingConfigResponse>
      */
     public CompletableFuture<ShowScalingConfigResponse> showScalingConfigAsync(ShowScalingConfigRequest request) {
@@ -1633,13 +1585,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScalingConfigRequest 请求对象
+     * @param request ShowScalingConfigRequest 请求对象
      * @return AsyncInvoker<ShowScalingConfigRequest, ShowScalingConfigResponse>
      */
     public AsyncInvoker<ShowScalingConfigRequest, ShowScalingConfigResponse> showScalingConfigAsyncInvoker(
         ShowScalingConfigRequest request) {
-        return new AsyncInvoker<ShowScalingConfigRequest, ShowScalingConfigResponse>(request, AsMeta.showScalingConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, AsMeta.showScalingConfig, hcClient);
     }
 
     /**
@@ -1649,7 +1600,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScalingGroupRequest 请求对象
+     * @param request ShowScalingGroupRequest 请求对象
      * @return CompletableFuture<ShowScalingGroupResponse>
      */
     public CompletableFuture<ShowScalingGroupResponse> showScalingGroupAsync(ShowScalingGroupRequest request) {
@@ -1663,13 +1614,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScalingGroupRequest 请求对象
+     * @param request ShowScalingGroupRequest 请求对象
      * @return AsyncInvoker<ShowScalingGroupRequest, ShowScalingGroupResponse>
      */
     public AsyncInvoker<ShowScalingGroupRequest, ShowScalingGroupResponse> showScalingGroupAsyncInvoker(
         ShowScalingGroupRequest request) {
-        return new AsyncInvoker<ShowScalingGroupRequest, ShowScalingGroupResponse>(request, AsMeta.showScalingGroup,
-            hcClient);
+        return new AsyncInvoker<>(request, AsMeta.showScalingGroup, hcClient);
     }
 
     /**
@@ -1679,7 +1629,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScalingPolicyRequest 请求对象
+     * @param request ShowScalingPolicyRequest 请求对象
      * @return CompletableFuture<ShowScalingPolicyResponse>
      */
     public CompletableFuture<ShowScalingPolicyResponse> showScalingPolicyAsync(ShowScalingPolicyRequest request) {
@@ -1693,13 +1643,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScalingPolicyRequest 请求对象
+     * @param request ShowScalingPolicyRequest 请求对象
      * @return AsyncInvoker<ShowScalingPolicyRequest, ShowScalingPolicyResponse>
      */
     public AsyncInvoker<ShowScalingPolicyRequest, ShowScalingPolicyResponse> showScalingPolicyAsyncInvoker(
         ShowScalingPolicyRequest request) {
-        return new AsyncInvoker<ShowScalingPolicyRequest, ShowScalingPolicyResponse>(request, AsMeta.showScalingPolicy,
-            hcClient);
+        return new AsyncInvoker<>(request, AsMeta.showScalingPolicy, hcClient);
     }
 
     /**
@@ -1709,7 +1658,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGroupScheduledTaskRequest 请求对象
+     * @param request UpdateGroupScheduledTaskRequest 请求对象
      * @return CompletableFuture<UpdateGroupScheduledTaskResponse>
      */
     public CompletableFuture<UpdateGroupScheduledTaskResponse> updateGroupScheduledTaskAsync(
@@ -1724,13 +1673,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGroupScheduledTaskRequest 请求对象
+     * @param request UpdateGroupScheduledTaskRequest 请求对象
      * @return AsyncInvoker<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse>
      */
     public AsyncInvoker<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse> updateGroupScheduledTaskAsyncInvoker(
         UpdateGroupScheduledTaskRequest request) {
-        return new AsyncInvoker<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse>(request,
-            AsMeta.updateGroupScheduledTask, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.updateGroupScheduledTask, hcClient);
     }
 
     /**
@@ -1740,7 +1688,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLifeCycleHookRequest 请求对象
+     * @param request UpdateLifeCycleHookRequest 请求对象
      * @return CompletableFuture<UpdateLifeCycleHookResponse>
      */
     public CompletableFuture<UpdateLifeCycleHookResponse> updateLifeCycleHookAsync(UpdateLifeCycleHookRequest request) {
@@ -1754,13 +1702,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLifeCycleHookRequest 请求对象
+     * @param request UpdateLifeCycleHookRequest 请求对象
      * @return AsyncInvoker<UpdateLifeCycleHookRequest, UpdateLifeCycleHookResponse>
      */
     public AsyncInvoker<UpdateLifeCycleHookRequest, UpdateLifeCycleHookResponse> updateLifeCycleHookAsyncInvoker(
         UpdateLifeCycleHookRequest request) {
-        return new AsyncInvoker<UpdateLifeCycleHookRequest, UpdateLifeCycleHookResponse>(request,
-            AsMeta.updateLifeCycleHook, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.updateLifeCycleHook, hcClient);
     }
 
     /**
@@ -1770,7 +1717,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScalingGroupRequest 请求对象
+     * @param request UpdateScalingGroupRequest 请求对象
      * @return CompletableFuture<UpdateScalingGroupResponse>
      */
     public CompletableFuture<UpdateScalingGroupResponse> updateScalingGroupAsync(UpdateScalingGroupRequest request) {
@@ -1784,13 +1731,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScalingGroupRequest 请求对象
+     * @param request UpdateScalingGroupRequest 请求对象
      * @return AsyncInvoker<UpdateScalingGroupRequest, UpdateScalingGroupResponse>
      */
     public AsyncInvoker<UpdateScalingGroupRequest, UpdateScalingGroupResponse> updateScalingGroupAsyncInvoker(
         UpdateScalingGroupRequest request) {
-        return new AsyncInvoker<UpdateScalingGroupRequest, UpdateScalingGroupResponse>(request,
-            AsMeta.updateScalingGroup, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.updateScalingGroup, hcClient);
     }
 
     /**
@@ -1800,7 +1746,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScalingPolicyRequest 请求对象
+     * @param request UpdateScalingPolicyRequest 请求对象
      * @return CompletableFuture<UpdateScalingPolicyResponse>
      */
     public CompletableFuture<UpdateScalingPolicyResponse> updateScalingPolicyAsync(UpdateScalingPolicyRequest request) {
@@ -1814,13 +1760,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScalingPolicyRequest 请求对象
+     * @param request UpdateScalingPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse>
      */
     public AsyncInvoker<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse> updateScalingPolicyAsyncInvoker(
         UpdateScalingPolicyRequest request) {
-        return new AsyncInvoker<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse>(request,
-            AsMeta.updateScalingPolicy, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.updateScalingPolicy, hcClient);
     }
 
     /**
@@ -1830,7 +1775,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return CompletableFuture<ListApiVersionsResponse>
      */
     public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
@@ -1844,13 +1789,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(
         ListApiVersionsRequest request) {
-        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, AsMeta.listApiVersions,
-            hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -1860,7 +1804,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return CompletableFuture<ShowApiVersionResponse>
      */
     public CompletableFuture<ShowApiVersionResponse> showApiVersionAsync(ShowApiVersionRequest request) {
@@ -1874,13 +1818,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
      */
     public AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionAsyncInvoker(
         ShowApiVersionRequest request) {
-        return new AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, AsMeta.showApiVersion,
-            hcClient);
+        return new AsyncInvoker<>(request, AsMeta.showApiVersion, hcClient);
     }
 
     /**
@@ -1890,7 +1833,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingV2PolicyRequest 请求对象
+     * @param request CreateScalingV2PolicyRequest 请求对象
      * @return CompletableFuture<CreateScalingV2PolicyResponse>
      */
     public CompletableFuture<CreateScalingV2PolicyResponse> createScalingV2PolicyAsync(
@@ -1905,13 +1848,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingV2PolicyRequest 请求对象
+     * @param request CreateScalingV2PolicyRequest 请求对象
      * @return AsyncInvoker<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse>
      */
     public AsyncInvoker<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse> createScalingV2PolicyAsyncInvoker(
         CreateScalingV2PolicyRequest request) {
-        return new AsyncInvoker<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse>(request,
-            AsMeta.createScalingV2Policy, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.createScalingV2Policy, hcClient);
     }
 
     /**
@@ -1921,7 +1863,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllScalingV2PoliciesRequest 请求对象
+     * @param request ListAllScalingV2PoliciesRequest 请求对象
      * @return CompletableFuture<ListAllScalingV2PoliciesResponse>
      */
     public CompletableFuture<ListAllScalingV2PoliciesResponse> listAllScalingV2PoliciesAsync(
@@ -1936,13 +1878,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllScalingV2PoliciesRequest 请求对象
+     * @param request ListAllScalingV2PoliciesRequest 请求对象
      * @return AsyncInvoker<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse>
      */
     public AsyncInvoker<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse> listAllScalingV2PoliciesAsyncInvoker(
         ListAllScalingV2PoliciesRequest request) {
-        return new AsyncInvoker<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse>(request,
-            AsMeta.listAllScalingV2Policies, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listAllScalingV2Policies, hcClient);
     }
 
     /**
@@ -1952,7 +1893,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingV2PoliciesRequest 请求对象
+     * @param request ListScalingV2PoliciesRequest 请求对象
      * @return CompletableFuture<ListScalingV2PoliciesResponse>
      */
     public CompletableFuture<ListScalingV2PoliciesResponse> listScalingV2PoliciesAsync(
@@ -1967,13 +1908,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingV2PoliciesRequest 请求对象
+     * @param request ListScalingV2PoliciesRequest 请求对象
      * @return AsyncInvoker<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse>
      */
     public AsyncInvoker<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse> listScalingV2PoliciesAsyncInvoker(
         ListScalingV2PoliciesRequest request) {
-        return new AsyncInvoker<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse>(request,
-            AsMeta.listScalingV2Policies, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.listScalingV2Policies, hcClient);
     }
 
     /**
@@ -1983,7 +1923,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScalingV2PolicyRequest 请求对象
+     * @param request ShowScalingV2PolicyRequest 请求对象
      * @return CompletableFuture<ShowScalingV2PolicyResponse>
      */
     public CompletableFuture<ShowScalingV2PolicyResponse> showScalingV2PolicyAsync(ShowScalingV2PolicyRequest request) {
@@ -1997,13 +1937,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScalingV2PolicyRequest 请求对象
+     * @param request ShowScalingV2PolicyRequest 请求对象
      * @return AsyncInvoker<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse>
      */
     public AsyncInvoker<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse> showScalingV2PolicyAsyncInvoker(
         ShowScalingV2PolicyRequest request) {
-        return new AsyncInvoker<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse>(request,
-            AsMeta.showScalingV2Policy, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.showScalingV2Policy, hcClient);
     }
 
     /**
@@ -2013,7 +1952,7 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScalingV2PolicyRequest 请求对象
+     * @param request UpdateScalingV2PolicyRequest 请求对象
      * @return CompletableFuture<UpdateScalingV2PolicyResponse>
      */
     public CompletableFuture<UpdateScalingV2PolicyResponse> updateScalingV2PolicyAsync(
@@ -2028,13 +1967,12 @@ public class AsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScalingV2PolicyRequest 请求对象
+     * @param request UpdateScalingV2PolicyRequest 请求对象
      * @return AsyncInvoker<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse>
      */
     public AsyncInvoker<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse> updateScalingV2PolicyAsyncInvoker(
         UpdateScalingV2PolicyRequest request) {
-        return new AsyncInvoker<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse>(request,
-            AsMeta.updateScalingV2Policy, hcClient);
+        return new AsyncInvoker<>(request, AsMeta.updateScalingV2Policy, hcClient);
     }
 
 }

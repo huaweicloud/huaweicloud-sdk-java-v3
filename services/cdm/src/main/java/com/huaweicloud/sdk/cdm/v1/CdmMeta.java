@@ -7,6 +7,7 @@ import com.huaweicloud.sdk.cdm.v1.model.CdmDeleteClusterReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmRandomCreateAndStartJobJsonReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmRestartClusterReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmStartClusterReq;
+import com.huaweicloud.sdk.cdm.v1.model.CdmStartJobReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmStopClusterReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmUpdateJobJsonReq;
 import com.huaweicloud.sdk.cdm.v1.model.CreateAndStartRandomClusterJobRequest;
@@ -59,9 +60,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CdmMeta {
 
     public static final HttpRequestDef<CreateAndStartRandomClusterJobRequest, CreateAndStartRandomClusterJobResponse> createAndStartRandomClusterJob =
-        genForcreateAndStartRandomClusterJob();
+        genForCreateAndStartRandomClusterJob();
 
-    private static HttpRequestDef<CreateAndStartRandomClusterJobRequest, CreateAndStartRandomClusterJobResponse> genForcreateAndStartRandomClusterJob() {
+    private static HttpRequestDef<CreateAndStartRandomClusterJobRequest, CreateAndStartRandomClusterJobResponse> genForCreateAndStartRandomClusterJob() {
         // basic
         HttpRequestDef.Builder<CreateAndStartRandomClusterJobRequest, CreateAndStartRandomClusterJobResponse> builder =
             HttpRequestDef
@@ -77,16 +78,14 @@ public class CdmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAndStartRandomClusterJobRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateAndStartRandomClusterJobRequest::getXLanguage,
+                CreateAndStartRandomClusterJobRequest::setXLanguage));
         builder.<CdmRandomCreateAndStartJobJsonReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CdmRandomCreateAndStartJobJsonReq.class),
-            f -> f.withMarshaller(CreateAndStartRandomClusterJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAndStartRandomClusterJobRequest::getBody,
+                CreateAndStartRandomClusterJobRequest::setBody));
 
         // response
 
@@ -94,9 +93,9 @@ public class CdmMeta {
     }
 
     public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster =
-        genForcreateCluster();
+        genForCreateCluster();
 
-    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForcreateCluster() {
+    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForCreateCluster() {
         // basic
         HttpRequestDef.Builder<CreateClusterRequest, CreateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClusterRequest.class, CreateClusterResponse.class)
@@ -109,25 +108,21 @@ public class CdmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateClusterRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateClusterRequest::getXLanguage, CreateClusterRequest::setXLanguage));
         builder.<CdmCreateClusterReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CdmCreateClusterReq.class),
-            f -> f.withMarshaller(CreateClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateClusterRequest::getBody, CreateClusterRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateJobRequest, CreateJobResponse> createJob = genForcreateJob();
+    public static final HttpRequestDef<CreateJobRequest, CreateJobResponse> createJob = genForCreateJob();
 
-    private static HttpRequestDef<CreateJobRequest, CreateJobResponse> genForcreateJob() {
+    private static HttpRequestDef<CreateJobRequest, CreateJobResponse> genForCreateJob() {
         // basic
         HttpRequestDef.Builder<CreateJobRequest, CreateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateJobRequest.class, CreateJobResponse.class)
@@ -140,25 +135,21 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateJobRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateJobRequest::getClusterId, CreateJobRequest::setClusterId));
         builder.<CdmCreateJobJsonReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CdmCreateJobJsonReq.class),
-            f -> f.withMarshaller(CreateJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateJobRequest::getBody, CreateJobRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateLinkRequest, CreateLinkResponse> createLink = genForcreateLink();
+    public static final HttpRequestDef<CreateLinkRequest, CreateLinkResponse> createLink = genForCreateLink();
 
-    private static HttpRequestDef<CreateLinkRequest, CreateLinkResponse> genForcreateLink() {
+    private static HttpRequestDef<CreateLinkRequest, CreateLinkResponse> genForCreateLink() {
         // basic
         HttpRequestDef.Builder<CreateLinkRequest, CreateLinkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLinkRequest.class, CreateLinkResponse.class)
@@ -171,23 +162,17 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLinkRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateLinkRequest::getClusterId, CreateLinkRequest::setClusterId));
         builder.<String>withRequestField("validate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLinkRequest::getValidate, (req, v) -> {
-                req.setValidate(v);
-            }));
+            f -> f.withMarshaller(CreateLinkRequest::getValidate, CreateLinkRequest::setValidate));
         builder.<CdmCreateAndUpdateLinkReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CdmCreateAndUpdateLinkReq.class),
-            f -> f.withMarshaller(CreateLinkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLinkRequest::getBody, CreateLinkRequest::setBody));
 
         // response
 
@@ -195,9 +180,9 @@ public class CdmMeta {
     }
 
     public static final HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> deleteCluster =
-        genFordeleteCluster();
+        genForDeleteCluster();
 
-    private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genFordeleteCluster() {
+    private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genForDeleteCluster() {
         // basic
         HttpRequestDef.Builder<DeleteClusterRequest, DeleteClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteClusterRequest.class, DeleteClusterResponse.class)
@@ -210,25 +195,21 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getClusterId, DeleteClusterRequest::setClusterId));
         builder.<CdmDeleteClusterReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CdmDeleteClusterReq.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getBody, DeleteClusterRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genFordeleteJob();
+    public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genForDeleteJob();
 
-    private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genFordeleteJob() {
+    private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genForDeleteJob() {
         // basic
         HttpRequestDef.Builder<DeleteJobRequest, DeleteJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobRequest.class, DeleteJobResponse.class)
@@ -241,25 +222,21 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteJobRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteJobRequest::getClusterId, DeleteJobRequest::setClusterId));
         builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(DeleteJobRequest::getJobName, DeleteJobRequest::setJobName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteLinkRequest, DeleteLinkResponse> deleteLink = genFordeleteLink();
+    public static final HttpRequestDef<DeleteLinkRequest, DeleteLinkResponse> deleteLink = genForDeleteLink();
 
-    private static HttpRequestDef<DeleteLinkRequest, DeleteLinkResponse> genFordeleteLink() {
+    private static HttpRequestDef<DeleteLinkRequest, DeleteLinkResponse> genForDeleteLink() {
         // basic
         HttpRequestDef.Builder<DeleteLinkRequest, DeleteLinkResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLinkRequest.class, DeleteLinkResponse.class)
@@ -272,25 +249,21 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLinkRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteLinkRequest::getClusterId, DeleteLinkRequest::setClusterId));
         builder.<String>withRequestField("link_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLinkRequest::getLinkName, (req, v) -> {
-                req.setLinkName(v);
-            }));
+            f -> f.withMarshaller(DeleteLinkRequest::getLinkName, DeleteLinkRequest::setLinkName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForlistClusters();
+    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForListClusters();
 
-    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForlistClusters() {
+    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForListClusters() {
         // basic
         HttpRequestDef.Builder<ListClustersRequest, ListClustersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClustersRequest.class, ListClustersResponse.class)
@@ -306,9 +279,9 @@ public class CdmMeta {
     }
 
     public static final HttpRequestDef<RestartClusterRequest, RestartClusterResponse> restartCluster =
-        genForrestartCluster();
+        genForRestartCluster();
 
-    private static HttpRequestDef<RestartClusterRequest, RestartClusterResponse> genForrestartCluster() {
+    private static HttpRequestDef<RestartClusterRequest, RestartClusterResponse> genForRestartCluster() {
         // basic
         HttpRequestDef.Builder<RestartClusterRequest, RestartClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestartClusterRequest.class, RestartClusterResponse.class)
@@ -321,16 +294,12 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(RestartClusterRequest::getClusterId, RestartClusterRequest::setClusterId));
         builder.<CdmRestartClusterReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CdmRestartClusterReq.class),
-            f -> f.withMarshaller(RestartClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestartClusterRequest::getBody, RestartClusterRequest::setBody));
 
         // response
 
@@ -338,9 +307,9 @@ public class CdmMeta {
     }
 
     public static final HttpRequestDef<ShowClusterDetailRequest, ShowClusterDetailResponse> showClusterDetail =
-        genForshowClusterDetail();
+        genForShowClusterDetail();
 
-    private static HttpRequestDef<ShowClusterDetailRequest, ShowClusterDetailResponse> genForshowClusterDetail() {
+    private static HttpRequestDef<ShowClusterDetailRequest, ShowClusterDetailResponse> genForShowClusterDetail() {
         // basic
         HttpRequestDef.Builder<ShowClusterDetailRequest, ShowClusterDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterDetailRequest.class, ShowClusterDetailResponse.class)
@@ -353,9 +322,7 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterDetailRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterDetailRequest::getClusterId, ShowClusterDetailRequest::setClusterId));
 
         // response
 
@@ -363,9 +330,9 @@ public class CdmMeta {
     }
 
     public static final HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatus =
-        genForshowJobStatus();
+        genForShowJobStatus();
 
-    private static HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> genForshowJobStatus() {
+    private static HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> genForShowJobStatus() {
         // basic
         HttpRequestDef.Builder<ShowJobStatusRequest, ShowJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobStatusRequest.class, ShowJobStatusResponse.class)
@@ -378,25 +345,21 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobStatusRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowJobStatusRequest::getClusterId, ShowJobStatusRequest::setClusterId));
         builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobStatusRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ShowJobStatusRequest::getJobName, ShowJobStatusRequest::setJobName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobsRequest, ShowJobsResponse> showJobs = genForshowJobs();
+    public static final HttpRequestDef<ShowJobsRequest, ShowJobsResponse> showJobs = genForShowJobs();
 
-    private static HttpRequestDef<ShowJobsRequest, ShowJobsResponse> genForshowJobs() {
+    private static HttpRequestDef<ShowJobsRequest, ShowJobsResponse> genForShowJobs() {
         // basic
         HttpRequestDef.Builder<ShowJobsRequest, ShowJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobsRequest.class, ShowJobsResponse.class)
@@ -409,53 +372,41 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowJobsRequest::getClusterId, ShowJobsRequest::setClusterId));
         builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobsRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ShowJobsRequest::getJobName, ShowJobsRequest::setJobName));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ShowJobsRequest::getFilter, ShowJobsRequest::setFilter));
         builder.<Integer>withRequestField("page_no",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowJobsRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(ShowJobsRequest::getPageNo, ShowJobsRequest::setPageNo));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowJobsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowJobsRequest::getPageSize, ShowJobsRequest::setPageSize));
         builder.<ShowJobsRequest.JobTypeEnum>withRequestField("jobType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowJobsRequest.JobTypeEnum.class),
-            f -> f.withMarshaller(ShowJobsRequest::getJobType, (req, v) -> {
-                req.setJobType(v);
-            }));
+            f -> f.withMarshaller(ShowJobsRequest::getJobType, ShowJobsRequest::setJobType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowLinkRequest, ShowLinkResponse> showLink = genForshowLink();
+    public static final HttpRequestDef<ShowLinkRequest, ShowLinkResponse> showLink = genForShowLink();
 
-    private static HttpRequestDef<ShowLinkRequest, ShowLinkResponse> genForshowLink() {
+    private static HttpRequestDef<ShowLinkRequest, ShowLinkResponse> genForShowLink() {
         // basic
         HttpRequestDef.Builder<ShowLinkRequest, ShowLinkResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLinkRequest.class, ShowLinkResponse.class)
@@ -468,16 +419,12 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLinkRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowLinkRequest::getClusterId, ShowLinkRequest::setClusterId));
         builder.<String>withRequestField("link_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLinkRequest::getLinkName, (req, v) -> {
-                req.setLinkName(v);
-            }));
+            f -> f.withMarshaller(ShowLinkRequest::getLinkName, ShowLinkRequest::setLinkName));
 
         // response
 
@@ -485,9 +432,9 @@ public class CdmMeta {
     }
 
     public static final HttpRequestDef<ShowSubmissionsRequest, ShowSubmissionsResponse> showSubmissions =
-        genForshowSubmissions();
+        genForShowSubmissions();
 
-    private static HttpRequestDef<ShowSubmissionsRequest, ShowSubmissionsResponse> genForshowSubmissions() {
+    private static HttpRequestDef<ShowSubmissionsRequest, ShowSubmissionsResponse> genForShowSubmissions() {
         // basic
         HttpRequestDef.Builder<ShowSubmissionsRequest, ShowSubmissionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSubmissionsRequest.class, ShowSubmissionsResponse.class)
@@ -500,25 +447,21 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSubmissionsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowSubmissionsRequest::getClusterId, ShowSubmissionsRequest::setClusterId));
         builder.<String>withRequestField("jname",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSubmissionsRequest::getJname, (req, v) -> {
-                req.setJname(v);
-            }));
+            f -> f.withMarshaller(ShowSubmissionsRequest::getJname, ShowSubmissionsRequest::setJname));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartClusterRequest, StartClusterResponse> startCluster = genForstartCluster();
+    public static final HttpRequestDef<StartClusterRequest, StartClusterResponse> startCluster = genForStartCluster();
 
-    private static HttpRequestDef<StartClusterRequest, StartClusterResponse> genForstartCluster() {
+    private static HttpRequestDef<StartClusterRequest, StartClusterResponse> genForStartCluster() {
         // basic
         HttpRequestDef.Builder<StartClusterRequest, StartClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartClusterRequest.class, StartClusterResponse.class)
@@ -531,56 +474,53 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(StartClusterRequest::getClusterId, StartClusterRequest::setClusterId));
         builder.<CdmStartClusterReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CdmStartClusterReq.class),
-            f -> f.withMarshaller(StartClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartClusterRequest::getBody, StartClusterRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartJobRequest, StartJobResponse> startJob = genForstartJob();
+    public static final HttpRequestDef<StartJobRequest, StartJobResponse> startJob = genForStartJob();
 
-    private static HttpRequestDef<StartJobRequest, StartJobResponse> genForstartJob() {
+    private static HttpRequestDef<StartJobRequest, StartJobResponse> genForStartJob() {
         // basic
         HttpRequestDef.Builder<StartJobRequest, StartJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StartJobRequest.class, StartJobResponse.class)
                 .withName("StartJob")
                 .withUri("/v1.1/{project_id}/clusters/{cluster_id}/cdm/job/{job_name}/start")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartJobRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(StartJobRequest::getClusterId, StartJobRequest::setClusterId));
         builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(StartJobRequest::getJobName, StartJobRequest::setJobName));
+        builder.<CdmStartJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CdmStartJobReq.class),
+            f -> f.withMarshaller(StartJobRequest::getBody, StartJobRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopClusterRequest, StopClusterResponse> stopCluster = genForstopCluster();
+    public static final HttpRequestDef<StopClusterRequest, StopClusterResponse> stopCluster = genForStopCluster();
 
-    private static HttpRequestDef<StopClusterRequest, StopClusterResponse> genForstopCluster() {
+    private static HttpRequestDef<StopClusterRequest, StopClusterResponse> genForStopCluster() {
         // basic
         HttpRequestDef.Builder<StopClusterRequest, StopClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopClusterRequest.class, StopClusterResponse.class)
@@ -593,25 +533,21 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(StopClusterRequest::getClusterId, StopClusterRequest::setClusterId));
         builder.<CdmStopClusterReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CdmStopClusterReq.class),
-            f -> f.withMarshaller(StopClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StopClusterRequest::getBody, StopClusterRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopJobRequest, StopJobResponse> stopJob = genForstopJob();
+    public static final HttpRequestDef<StopJobRequest, StopJobResponse> stopJob = genForStopJob();
 
-    private static HttpRequestDef<StopJobRequest, StopJobResponse> genForstopJob() {
+    private static HttpRequestDef<StopJobRequest, StopJobResponse> genForStopJob() {
         // basic
         HttpRequestDef.Builder<StopJobRequest, StopJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StopJobRequest.class, StopJobResponse.class)
@@ -624,25 +560,21 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopJobRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(StopJobRequest::getClusterId, StopJobRequest::setClusterId));
         builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(StopJobRequest::getJobName, StopJobRequest::setJobName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateJobRequest, UpdateJobResponse> updateJob = genForupdateJob();
+    public static final HttpRequestDef<UpdateJobRequest, UpdateJobResponse> updateJob = genForUpdateJob();
 
-    private static HttpRequestDef<UpdateJobRequest, UpdateJobResponse> genForupdateJob() {
+    private static HttpRequestDef<UpdateJobRequest, UpdateJobResponse> genForUpdateJob() {
         // basic
         HttpRequestDef.Builder<UpdateJobRequest, UpdateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateJobRequest.class, UpdateJobResponse.class)
@@ -655,32 +587,26 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateJobRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateJobRequest::getClusterId, UpdateJobRequest::setClusterId));
         builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(UpdateJobRequest::getJobName, UpdateJobRequest::setJobName));
         builder.<CdmUpdateJobJsonReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CdmUpdateJobJsonReq.class),
-            f -> f.withMarshaller(UpdateJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateJobRequest::getBody, UpdateJobRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateLinkRequest, UpdateLinkResponse> updateLink = genForupdateLink();
+    public static final HttpRequestDef<UpdateLinkRequest, UpdateLinkResponse> updateLink = genForUpdateLink();
 
-    private static HttpRequestDef<UpdateLinkRequest, UpdateLinkResponse> genForupdateLink() {
+    private static HttpRequestDef<UpdateLinkRequest, UpdateLinkResponse> genForUpdateLink() {
         // basic
         HttpRequestDef.Builder<UpdateLinkRequest, UpdateLinkResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLinkRequest.class, UpdateLinkResponse.class)
@@ -693,23 +619,17 @@ public class CdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLinkRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateLinkRequest::getClusterId, UpdateLinkRequest::setClusterId));
         builder.<String>withRequestField("link_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLinkRequest::getLinkName, (req, v) -> {
-                req.setLinkName(v);
-            }));
+            f -> f.withMarshaller(UpdateLinkRequest::getLinkName, UpdateLinkRequest::setLinkName));
         builder.<CdmCreateAndUpdateLinkReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CdmCreateAndUpdateLinkReq.class),
-            f -> f.withMarshaller(UpdateLinkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLinkRequest::getBody, UpdateLinkRequest::setBody));
 
         // response
 

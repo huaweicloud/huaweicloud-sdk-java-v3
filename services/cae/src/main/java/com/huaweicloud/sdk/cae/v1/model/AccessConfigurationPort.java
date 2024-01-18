@@ -207,9 +207,9 @@ public class AccessConfigurationPort {
     private PolicyEnum policy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "path")
+    @JsonProperty(value = "paths")
 
-    private List<AccessConfigurationHttpPath> path = null;
+    private List<AccessConfigurationHttpPath> paths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elb_id")
@@ -318,37 +318,37 @@ public class AccessConfigurationPort {
         this.policy = policy;
     }
 
-    public AccessConfigurationPort withPath(List<AccessConfigurationHttpPath> path) {
-        this.path = path;
+    public AccessConfigurationPort withPaths(List<AccessConfigurationHttpPath> paths) {
+        this.paths = paths;
         return this;
     }
 
-    public AccessConfigurationPort addPathItem(AccessConfigurationHttpPath pathItem) {
-        if (this.path == null) {
-            this.path = new ArrayList<>();
+    public AccessConfigurationPort addPathsItem(AccessConfigurationHttpPath pathsItem) {
+        if (this.paths == null) {
+            this.paths = new ArrayList<>();
         }
-        this.path.add(pathItem);
+        this.paths.add(pathsItem);
         return this;
     }
 
-    public AccessConfigurationPort withPath(Consumer<List<AccessConfigurationHttpPath>> pathSetter) {
-        if (this.path == null) {
-            this.path = new ArrayList<>();
+    public AccessConfigurationPort withPaths(Consumer<List<AccessConfigurationHttpPath>> pathsSetter) {
+        if (this.paths == null) {
+            this.paths = new ArrayList<>();
         }
-        pathSetter.accept(this.path);
+        pathsSetter.accept(this.paths);
         return this;
     }
 
     /**
-     * Get path
-     * @return path
+     * Get paths
+     * @return paths
      */
-    public List<AccessConfigurationHttpPath> getPath() {
-        return path;
+    public List<AccessConfigurationHttpPath> getPaths() {
+        return paths;
     }
 
-    public void setPath(List<AccessConfigurationHttpPath> path) {
-        this.path = path;
+    public void setPaths(List<AccessConfigurationHttpPath> paths) {
+        this.paths = paths;
     }
 
     public AccessConfigurationPort withElbId(String elbId) {
@@ -381,12 +381,12 @@ public class AccessConfigurationPort {
             && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.defaultCertificate, that.defaultCertificate)
             && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.policy, that.policy)
-            && Objects.equals(this.path, that.path) && Objects.equals(this.elbId, that.elbId);
+            && Objects.equals(this.paths, that.paths) && Objects.equals(this.elbId, that.elbId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetPort, port, protocol, defaultCertificate, certificate, policy, path, elbId);
+        return Objects.hash(targetPort, port, protocol, defaultCertificate, certificate, policy, paths, elbId);
     }
 
     @Override
@@ -399,7 +399,7 @@ public class AccessConfigurationPort {
         sb.append("    defaultCertificate: ").append(toIndentedString(defaultCertificate)).append("\n");
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
-        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    paths: ").append(toIndentedString(paths)).append("\n");
         sb.append("    elbId: ").append(toIndentedString(elbId)).append("\n");
         sb.append("}");
         return sb.toString();

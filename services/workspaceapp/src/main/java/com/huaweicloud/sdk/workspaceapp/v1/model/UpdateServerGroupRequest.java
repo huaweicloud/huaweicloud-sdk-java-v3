@@ -27,7 +27,7 @@ public class UpdateServerGroupRequest {
     }
 
     /**
-     * 服务器组唯一标识
+     * 服务器组唯一标识。
      * @return serverGroupId
      */
     public String getServerGroupId() {

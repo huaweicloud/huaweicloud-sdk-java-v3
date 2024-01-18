@@ -41,7 +41,7 @@ public class ListAppGroupAuthorizationRequest {
     }
 
     /**
-     * 单次查询的大小[1-100]
+     * 单次查询的大小[1-100]。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -60,7 +60,7 @@ public class ListAppGroupAuthorizationRequest {
     }
 
     /**
-     * 查询的偏移量
+     * 查询的偏移量。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -79,7 +79,7 @@ public class ListAppGroupAuthorizationRequest {
     }
 
     /**
-     * 应用组ID
+     * 应用组ID。
      * @return appGroupId
      */
     public String getAppGroupId() {
@@ -113,7 +113,7 @@ public class ListAppGroupAuthorizationRequest {
     }
 
     /**
-     * 应用授权的用户(组)类型 * 'USER' - 用户 * 'USER_GROUP' - 用户组
+     * 应用授权的用户(组)类型： * 'USER' - 用户 * 'USER_GROUP' - 用户组
      * @return accountType
      */
     public String getAccountType() {

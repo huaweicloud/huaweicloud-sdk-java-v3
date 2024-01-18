@@ -105,6 +105,11 @@ public class UpdateResponseVpnGateway {
     private AttachmentTypeEnum attachmentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_id")
+
+    private String certificateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "er_id")
 
     private String erId;
@@ -210,11 +215,6 @@ public class UpdateResponseVpnGateway {
     private String accessSubnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "access_private_ips")
-
-    private List<String> accessPrivateIps = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_private_ip_1")
 
     private String accessPrivateIp1;
@@ -265,16 +265,6 @@ public class UpdateResponseVpnGateway {
     private String haMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "master_eip")
-
-    private ResponseEip masterEip;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "slave_eip")
-
-    private ResponseEip slaveEip;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip1")
 
     private ResponseEip eip1;
@@ -293,6 +283,11 @@ public class UpdateResponseVpnGateway {
     @JsonProperty(value = "updated_at")
 
     private OffsetDateTime updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_template")
+
+    private PolicyTemplate policyTemplate;
 
     public UpdateResponseVpnGateway withId(String id) {
         this.id = id;
@@ -343,6 +338,23 @@ public class UpdateResponseVpnGateway {
 
     public void setAttachmentType(AttachmentTypeEnum attachmentType) {
         this.attachmentType = attachmentType;
+    }
+
+    public UpdateResponseVpnGateway withCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+        return this;
+    }
+
+    /**
+     * Get certificateId
+     * @return certificateId
+     */
+    public String getCertificateId() {
+        return certificateId;
+    }
+
+    public void setCertificateId(String certificateId) {
+        this.certificateId = certificateId;
     }
 
     public UpdateResponseVpnGateway withErId(String erId) {
@@ -480,46 +492,13 @@ public class UpdateResponseVpnGateway {
         this.accessSubnetId = accessSubnetId;
     }
 
-    public UpdateResponseVpnGateway withAccessPrivateIps(List<String> accessPrivateIps) {
-        this.accessPrivateIps = accessPrivateIps;
-        return this;
-    }
-
-    public UpdateResponseVpnGateway addAccessPrivateIpsItem(String accessPrivateIpsItem) {
-        if (this.accessPrivateIps == null) {
-            this.accessPrivateIps = new ArrayList<>();
-        }
-        this.accessPrivateIps.add(accessPrivateIpsItem);
-        return this;
-    }
-
-    public UpdateResponseVpnGateway withAccessPrivateIps(Consumer<List<String>> accessPrivateIpsSetter) {
-        if (this.accessPrivateIps == null) {
-            this.accessPrivateIps = new ArrayList<>();
-        }
-        accessPrivateIpsSetter.accept(this.accessPrivateIps);
-        return this;
-    }
-
-    /**
-     * VPN网关北向接入私网IP列表，当VPN网关的北向类型是私网(private)时有值
-     * @return accessPrivateIps
-     */
-    public List<String> getAccessPrivateIps() {
-        return accessPrivateIps;
-    }
-
-    public void setAccessPrivateIps(List<String> accessPrivateIps) {
-        this.accessPrivateIps = accessPrivateIps;
-    }
-
     public UpdateResponseVpnGateway withAccessPrivateIp1(String accessPrivateIp1) {
         this.accessPrivateIp1 = accessPrivateIp1;
         return this;
     }
 
     /**
-     * VPN网关北向接入私网IP列表，当VPN网关的北向类型是私网(private)时有值,主备模式代表主worker的私网IP
+     * VPN网关北向接入私网IP，当VPN网关的北向类型是私网(private)时有值,主备模式代表主worker的私网IP
      * @return accessPrivateIp1
      */
     public String getAccessPrivateIp1() {
@@ -536,7 +515,7 @@ public class UpdateResponseVpnGateway {
     }
 
     /**
-     * VPN网关北向接入私网IP列表，当VPN网关的北向类型是私网(private)时有值,主备模式代表备worker的私网IP
+     * VPN网关北向接入私网IP，当VPN网关的北向类型是私网(private)时有值,主备模式代表备worker的私网IP
      * @return accessPrivateIp2
      */
     public String getAccessPrivateIp2() {
@@ -701,58 +680,6 @@ public class UpdateResponseVpnGateway {
         this.haMode = haMode;
     }
 
-    public UpdateResponseVpnGateway withMasterEip(ResponseEip masterEip) {
-        this.masterEip = masterEip;
-        return this;
-    }
-
-    public UpdateResponseVpnGateway withMasterEip(Consumer<ResponseEip> masterEipSetter) {
-        if (this.masterEip == null) {
-            this.masterEip = new ResponseEip();
-            masterEipSetter.accept(this.masterEip);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get masterEip
-     * @return masterEip
-     */
-    public ResponseEip getMasterEip() {
-        return masterEip;
-    }
-
-    public void setMasterEip(ResponseEip masterEip) {
-        this.masterEip = masterEip;
-    }
-
-    public UpdateResponseVpnGateway withSlaveEip(ResponseEip slaveEip) {
-        this.slaveEip = slaveEip;
-        return this;
-    }
-
-    public UpdateResponseVpnGateway withSlaveEip(Consumer<ResponseEip> slaveEipSetter) {
-        if (this.slaveEip == null) {
-            this.slaveEip = new ResponseEip();
-            slaveEipSetter.accept(this.slaveEip);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get slaveEip
-     * @return slaveEip
-     */
-    public ResponseEip getSlaveEip() {
-        return slaveEip;
-    }
-
-    public void setSlaveEip(ResponseEip slaveEip) {
-        this.slaveEip = slaveEip;
-    }
-
     public UpdateResponseVpnGateway withEip1(ResponseEip eip1) {
         this.eip1 = eip1;
         return this;
@@ -839,6 +766,32 @@ public class UpdateResponseVpnGateway {
         this.updatedAt = updatedAt;
     }
 
+    public UpdateResponseVpnGateway withPolicyTemplate(PolicyTemplate policyTemplate) {
+        this.policyTemplate = policyTemplate;
+        return this;
+    }
+
+    public UpdateResponseVpnGateway withPolicyTemplate(Consumer<PolicyTemplate> policyTemplateSetter) {
+        if (this.policyTemplate == null) {
+            this.policyTemplate = new PolicyTemplate();
+            policyTemplateSetter.accept(this.policyTemplate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get policyTemplate
+     * @return policyTemplate
+     */
+    public PolicyTemplate getPolicyTemplate() {
+        return policyTemplate;
+    }
+
+    public void setPolicyTemplate(PolicyTemplate policyTemplate) {
+        this.policyTemplate = policyTemplate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -849,12 +802,12 @@ public class UpdateResponseVpnGateway {
         }
         UpdateResponseVpnGateway that = (UpdateResponseVpnGateway) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.attachmentType, that.attachmentType) && Objects.equals(this.erId, that.erId)
+            && Objects.equals(this.attachmentType, that.attachmentType)
+            && Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.erId, that.erId)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.localSubnets, that.localSubnets)
             && Objects.equals(this.connectSubnet, that.connectSubnet)
             && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.accessVpcId, that.accessVpcId)
             && Objects.equals(this.accessSubnetId, that.accessSubnetId)
-            && Objects.equals(this.accessPrivateIps, that.accessPrivateIps)
             && Objects.equals(this.accessPrivateIp1, that.accessPrivateIp1)
             && Objects.equals(this.accessPrivateIp2, that.accessPrivateIp2) && Objects.equals(this.bgpAsn, that.bgpAsn)
             && Objects.equals(this.flavor, that.flavor)
@@ -863,10 +816,10 @@ public class UpdateResponseVpnGateway {
             && Objects.equals(this.usedConnectionNumber, that.usedConnectionNumber)
             && Objects.equals(this.usedConnectionGroup, that.usedConnectionGroup)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.masterEip, that.masterEip)
-            && Objects.equals(this.slaveEip, that.slaveEip) && Objects.equals(this.eip1, that.eip1)
+            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.eip1, that.eip1)
             && Objects.equals(this.eip2, that.eip2) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.policyTemplate, that.policyTemplate);
     }
 
     @Override
@@ -874,6 +827,7 @@ public class UpdateResponseVpnGateway {
         return Objects.hash(id,
             name,
             attachmentType,
+            certificateId,
             erId,
             vpcId,
             localSubnets,
@@ -881,7 +835,6 @@ public class UpdateResponseVpnGateway {
             networkType,
             accessVpcId,
             accessSubnetId,
-            accessPrivateIps,
             accessPrivateIp1,
             accessPrivateIp2,
             bgpAsn,
@@ -892,12 +845,11 @@ public class UpdateResponseVpnGateway {
             usedConnectionGroup,
             enterpriseProjectId,
             haMode,
-            masterEip,
-            slaveEip,
             eip1,
             eip2,
             createdAt,
-            updatedAt);
+            updatedAt,
+            policyTemplate);
     }
 
     @Override
@@ -907,6 +859,7 @@ public class UpdateResponseVpnGateway {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    attachmentType: ").append(toIndentedString(attachmentType)).append("\n");
+        sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("    erId: ").append(toIndentedString(erId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    localSubnets: ").append(toIndentedString(localSubnets)).append("\n");
@@ -914,7 +867,6 @@ public class UpdateResponseVpnGateway {
         sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
         sb.append("    accessVpcId: ").append(toIndentedString(accessVpcId)).append("\n");
         sb.append("    accessSubnetId: ").append(toIndentedString(accessSubnetId)).append("\n");
-        sb.append("    accessPrivateIps: ").append(toIndentedString(accessPrivateIps)).append("\n");
         sb.append("    accessPrivateIp1: ").append(toIndentedString(accessPrivateIp1)).append("\n");
         sb.append("    accessPrivateIp2: ").append(toIndentedString(accessPrivateIp2)).append("\n");
         sb.append("    bgpAsn: ").append(toIndentedString(bgpAsn)).append("\n");
@@ -925,12 +877,11 @@ public class UpdateResponseVpnGateway {
         sb.append("    usedConnectionGroup: ").append(toIndentedString(usedConnectionGroup)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
-        sb.append("    masterEip: ").append(toIndentedString(masterEip)).append("\n");
-        sb.append("    slaveEip: ").append(toIndentedString(slaveEip)).append("\n");
         sb.append("    eip1: ").append(toIndentedString(eip1)).append("\n");
         sb.append("    eip2: ").append(toIndentedString(eip2)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    policyTemplate: ").append(toIndentedString(policyTemplate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachEipRequest 请求对象
+     * @param request AttachEipRequest 请求对象
      * @return CompletableFuture<AttachEipResponse>
      */
     public CompletableFuture<AttachEipResponse> attachEipAsync(AttachEipRequest request) {
@@ -94,11 +94,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachEipRequest 请求对象
+     * @param request AttachEipRequest 请求对象
      * @return AsyncInvoker<AttachEipRequest, AttachEipResponse>
      */
     public AsyncInvoker<AttachEipRequest, AttachEipResponse> attachEipAsyncInvoker(AttachEipRequest request) {
-        return new AsyncInvoker<AttachEipRequest, AttachEipResponse>(request, GesMeta.attachEip, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.attachEip, hcClient);
     }
 
     /**
@@ -108,7 +108,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ClearGraphRequest 请求对象
+     * @param request ClearGraphRequest 请求对象
      * @return CompletableFuture<ClearGraphResponse>
      */
     public CompletableFuture<ClearGraphResponse> clearGraphAsync(ClearGraphRequest request) {
@@ -122,11 +122,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ClearGraphRequest 请求对象
+     * @param request ClearGraphRequest 请求对象
      * @return AsyncInvoker<ClearGraphRequest, ClearGraphResponse>
      */
     public AsyncInvoker<ClearGraphRequest, ClearGraphResponse> clearGraphAsyncInvoker(ClearGraphRequest request) {
-        return new AsyncInvoker<ClearGraphRequest, ClearGraphResponse>(request, GesMeta.clearGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.clearGraph, hcClient);
     }
 
     /**
@@ -136,7 +136,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackupRequest 请求对象
+     * @param request CreateBackupRequest 请求对象
      * @return CompletableFuture<CreateBackupResponse>
      */
     public CompletableFuture<CreateBackupResponse> createBackupAsync(CreateBackupRequest request) {
@@ -150,12 +150,12 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackupRequest 请求对象
+     * @param request CreateBackupRequest 请求对象
      * @return AsyncInvoker<CreateBackupRequest, CreateBackupResponse>
      */
     public AsyncInvoker<CreateBackupRequest, CreateBackupResponse> createBackupAsyncInvoker(
         CreateBackupRequest request) {
-        return new AsyncInvoker<CreateBackupRequest, CreateBackupResponse>(request, GesMeta.createBackup, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.createBackup, hcClient);
     }
 
     /**
@@ -165,7 +165,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGraphRequest 请求对象
+     * @param request CreateGraphRequest 请求对象
      * @return CompletableFuture<CreateGraphResponse>
      */
     public CompletableFuture<CreateGraphResponse> createGraphAsync(CreateGraphRequest request) {
@@ -179,11 +179,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGraphRequest 请求对象
+     * @param request CreateGraphRequest 请求对象
      * @return AsyncInvoker<CreateGraphRequest, CreateGraphResponse>
      */
     public AsyncInvoker<CreateGraphRequest, CreateGraphResponse> createGraphAsyncInvoker(CreateGraphRequest request) {
-        return new AsyncInvoker<CreateGraphRequest, CreateGraphResponse>(request, GesMeta.createGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.createGraph, hcClient);
     }
 
     /**
@@ -193,7 +193,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMetadataRequest 请求对象
+     * @param request CreateMetadataRequest 请求对象
      * @return CompletableFuture<CreateMetadataResponse>
      */
     public CompletableFuture<CreateMetadataResponse> createMetadataAsync(CreateMetadataRequest request) {
@@ -207,13 +207,12 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMetadataRequest 请求对象
+     * @param request CreateMetadataRequest 请求对象
      * @return AsyncInvoker<CreateMetadataRequest, CreateMetadataResponse>
      */
     public AsyncInvoker<CreateMetadataRequest, CreateMetadataResponse> createMetadataAsyncInvoker(
         CreateMetadataRequest request) {
-        return new AsyncInvoker<CreateMetadataRequest, CreateMetadataResponse>(request, GesMeta.createMetadata,
-            hcClient);
+        return new AsyncInvoker<>(request, GesMeta.createMetadata, hcClient);
     }
 
     /**
@@ -223,7 +222,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return CompletableFuture<DeleteBackupResponse>
      */
     public CompletableFuture<DeleteBackupResponse> deleteBackupAsync(DeleteBackupRequest request) {
@@ -237,12 +236,12 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
      */
     public AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse> deleteBackupAsyncInvoker(
         DeleteBackupRequest request) {
-        return new AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>(request, GesMeta.deleteBackup, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.deleteBackup, hcClient);
     }
 
     /**
@@ -252,7 +251,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGraphRequest 请求对象
+     * @param request DeleteGraphRequest 请求对象
      * @return CompletableFuture<DeleteGraphResponse>
      */
     public CompletableFuture<DeleteGraphResponse> deleteGraphAsync(DeleteGraphRequest request) {
@@ -266,11 +265,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGraphRequest 请求对象
+     * @param request DeleteGraphRequest 请求对象
      * @return AsyncInvoker<DeleteGraphRequest, DeleteGraphResponse>
      */
     public AsyncInvoker<DeleteGraphRequest, DeleteGraphResponse> deleteGraphAsyncInvoker(DeleteGraphRequest request) {
-        return new AsyncInvoker<DeleteGraphRequest, DeleteGraphResponse>(request, GesMeta.deleteGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.deleteGraph, hcClient);
     }
 
     /**
@@ -280,7 +279,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMetadataRequest 请求对象
+     * @param request DeleteMetadataRequest 请求对象
      * @return CompletableFuture<DeleteMetadataResponse>
      */
     public CompletableFuture<DeleteMetadataResponse> deleteMetadataAsync(DeleteMetadataRequest request) {
@@ -294,13 +293,12 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMetadataRequest 请求对象
+     * @param request DeleteMetadataRequest 请求对象
      * @return AsyncInvoker<DeleteMetadataRequest, DeleteMetadataResponse>
      */
     public AsyncInvoker<DeleteMetadataRequest, DeleteMetadataResponse> deleteMetadataAsyncInvoker(
         DeleteMetadataRequest request) {
-        return new AsyncInvoker<DeleteMetadataRequest, DeleteMetadataResponse>(request, GesMeta.deleteMetadata,
-            hcClient);
+        return new AsyncInvoker<>(request, GesMeta.deleteMetadata, hcClient);
     }
 
     /**
@@ -310,7 +308,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachEipRequest 请求对象
+     * @param request DetachEipRequest 请求对象
      * @return CompletableFuture<DetachEipResponse>
      */
     public CompletableFuture<DetachEipResponse> detachEipAsync(DetachEipRequest request) {
@@ -324,11 +322,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachEipRequest 请求对象
+     * @param request DetachEipRequest 请求对象
      * @return AsyncInvoker<DetachEipRequest, DetachEipResponse>
      */
     public AsyncInvoker<DetachEipRequest, DetachEipResponse> detachEipAsyncInvoker(DetachEipRequest request) {
-        return new AsyncInvoker<DetachEipRequest, DetachEipResponse>(request, GesMeta.detachEip, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.detachEip, hcClient);
     }
 
     /**
@@ -339,7 +337,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandGraphRequest 请求对象
+     * @param request ExpandGraphRequest 请求对象
      * @return CompletableFuture<ExpandGraphResponse>
      */
     public CompletableFuture<ExpandGraphResponse> expandGraphAsync(ExpandGraphRequest request) {
@@ -354,11 +352,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandGraphRequest 请求对象
+     * @param request ExpandGraphRequest 请求对象
      * @return AsyncInvoker<ExpandGraphRequest, ExpandGraphResponse>
      */
     public AsyncInvoker<ExpandGraphRequest, ExpandGraphResponse> expandGraphAsyncInvoker(ExpandGraphRequest request) {
-        return new AsyncInvoker<ExpandGraphRequest, ExpandGraphResponse>(request, GesMeta.expandGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.expandGraph, hcClient);
     }
 
     /**
@@ -368,7 +366,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportGraphRequest 请求对象
+     * @param request ExportGraphRequest 请求对象
      * @return CompletableFuture<ExportGraphResponse>
      */
     public CompletableFuture<ExportGraphResponse> exportGraphAsync(ExportGraphRequest request) {
@@ -382,11 +380,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportGraphRequest 请求对象
+     * @param request ExportGraphRequest 请求对象
      * @return AsyncInvoker<ExportGraphRequest, ExportGraphResponse>
      */
     public AsyncInvoker<ExportGraphRequest, ExportGraphResponse> exportGraphAsyncInvoker(ExportGraphRequest request) {
-        return new AsyncInvoker<ExportGraphRequest, ExportGraphResponse>(request, GesMeta.exportGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.exportGraph, hcClient);
     }
 
     /**
@@ -396,7 +394,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportGraphRequest 请求对象
+     * @param request ImportGraphRequest 请求对象
      * @return CompletableFuture<ImportGraphResponse>
      */
     public CompletableFuture<ImportGraphResponse> importGraphAsync(ImportGraphRequest request) {
@@ -410,11 +408,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportGraphRequest 请求对象
+     * @param request ImportGraphRequest 请求对象
      * @return AsyncInvoker<ImportGraphRequest, ImportGraphResponse>
      */
     public AsyncInvoker<ImportGraphRequest, ImportGraphResponse> importGraphAsyncInvoker(ImportGraphRequest request) {
-        return new AsyncInvoker<ImportGraphRequest, ImportGraphResponse>(request, GesMeta.importGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.importGraph, hcClient);
     }
 
     /**
@@ -424,7 +422,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupsRequest 请求对象
+     * @param request ListBackupsRequest 请求对象
      * @return CompletableFuture<ListBackupsResponse>
      */
     public CompletableFuture<ListBackupsResponse> listBackupsAsync(ListBackupsRequest request) {
@@ -438,11 +436,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupsRequest 请求对象
+     * @param request ListBackupsRequest 请求对象
      * @return AsyncInvoker<ListBackupsRequest, ListBackupsResponse>
      */
     public AsyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsAsyncInvoker(ListBackupsRequest request) {
-        return new AsyncInvoker<ListBackupsRequest, ListBackupsResponse>(request, GesMeta.listBackups, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.listBackups, hcClient);
     }
 
     /**
@@ -452,7 +450,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGraphBackupsRequest 请求对象
+     * @param request ListGraphBackupsRequest 请求对象
      * @return CompletableFuture<ListGraphBackupsResponse>
      */
     public CompletableFuture<ListGraphBackupsResponse> listGraphBackupsAsync(ListGraphBackupsRequest request) {
@@ -466,13 +464,12 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGraphBackupsRequest 请求对象
+     * @param request ListGraphBackupsRequest 请求对象
      * @return AsyncInvoker<ListGraphBackupsRequest, ListGraphBackupsResponse>
      */
     public AsyncInvoker<ListGraphBackupsRequest, ListGraphBackupsResponse> listGraphBackupsAsyncInvoker(
         ListGraphBackupsRequest request) {
-        return new AsyncInvoker<ListGraphBackupsRequest, ListGraphBackupsResponse>(request, GesMeta.listGraphBackups,
-            hcClient);
+        return new AsyncInvoker<>(request, GesMeta.listGraphBackups, hcClient);
     }
 
     /**
@@ -482,7 +479,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGraphMetadatasRequest 请求对象
+     * @param request ListGraphMetadatasRequest 请求对象
      * @return CompletableFuture<ListGraphMetadatasResponse>
      */
     public CompletableFuture<ListGraphMetadatasResponse> listGraphMetadatasAsync(ListGraphMetadatasRequest request) {
@@ -496,13 +493,12 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGraphMetadatasRequest 请求对象
+     * @param request ListGraphMetadatasRequest 请求对象
      * @return AsyncInvoker<ListGraphMetadatasRequest, ListGraphMetadatasResponse>
      */
     public AsyncInvoker<ListGraphMetadatasRequest, ListGraphMetadatasResponse> listGraphMetadatasAsyncInvoker(
         ListGraphMetadatasRequest request) {
-        return new AsyncInvoker<ListGraphMetadatasRequest, ListGraphMetadatasResponse>(request,
-            GesMeta.listGraphMetadatas, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.listGraphMetadatas, hcClient);
     }
 
     /**
@@ -512,7 +508,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGraphsRequest 请求对象
+     * @param request ListGraphsRequest 请求对象
      * @return CompletableFuture<ListGraphsResponse>
      */
     public CompletableFuture<ListGraphsResponse> listGraphsAsync(ListGraphsRequest request) {
@@ -526,11 +522,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGraphsRequest 请求对象
+     * @param request ListGraphsRequest 请求对象
      * @return AsyncInvoker<ListGraphsRequest, ListGraphsResponse>
      */
     public AsyncInvoker<ListGraphsRequest, ListGraphsResponse> listGraphsAsyncInvoker(ListGraphsRequest request) {
-        return new AsyncInvoker<ListGraphsRequest, ListGraphsResponse>(request, GesMeta.listGraphs, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.listGraphs, hcClient);
     }
 
     /**
@@ -540,7 +536,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return CompletableFuture<ListJobsResponse>
      */
     public CompletableFuture<ListJobsResponse> listJobsAsync(ListJobsRequest request) {
@@ -554,11 +550,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return AsyncInvoker<ListJobsRequest, ListJobsResponse>
      */
     public AsyncInvoker<ListJobsRequest, ListJobsResponse> listJobsAsyncInvoker(ListJobsRequest request) {
-        return new AsyncInvoker<ListJobsRequest, ListJobsResponse>(request, GesMeta.listJobs, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.listJobs, hcClient);
     }
 
     /**
@@ -568,7 +564,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetadatasRequest 请求对象
+     * @param request ListMetadatasRequest 请求对象
      * @return CompletableFuture<ListMetadatasResponse>
      */
     public CompletableFuture<ListMetadatasResponse> listMetadatasAsync(ListMetadatasRequest request) {
@@ -582,12 +578,12 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetadatasRequest 请求对象
+     * @param request ListMetadatasRequest 请求对象
      * @return AsyncInvoker<ListMetadatasRequest, ListMetadatasResponse>
      */
     public AsyncInvoker<ListMetadatasRequest, ListMetadatasResponse> listMetadatasAsyncInvoker(
         ListMetadatasRequest request) {
-        return new AsyncInvoker<ListMetadatasRequest, ListMetadatasResponse>(request, GesMeta.listMetadatas, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.listMetadatas, hcClient);
     }
 
     /**
@@ -597,7 +593,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return CompletableFuture<ListQuotasResponse>
      */
     public CompletableFuture<ListQuotasResponse> listQuotasAsync(ListQuotasRequest request) {
@@ -611,11 +607,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
-        return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, GesMeta.listQuotas, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.listQuotas, hcClient);
     }
 
     /**
@@ -625,7 +621,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeGraphRequest 请求对象
+     * @param request ResizeGraphRequest 请求对象
      * @return CompletableFuture<ResizeGraphResponse>
      */
     public CompletableFuture<ResizeGraphResponse> resizeGraphAsync(ResizeGraphRequest request) {
@@ -639,11 +635,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeGraphRequest 请求对象
+     * @param request ResizeGraphRequest 请求对象
      * @return AsyncInvoker<ResizeGraphRequest, ResizeGraphResponse>
      */
     public AsyncInvoker<ResizeGraphRequest, ResizeGraphResponse> resizeGraphAsyncInvoker(ResizeGraphRequest request) {
-        return new AsyncInvoker<ResizeGraphRequest, ResizeGraphResponse>(request, GesMeta.resizeGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.resizeGraph, hcClient);
     }
 
     /**
@@ -653,7 +649,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartGraphRequest 请求对象
+     * @param request RestartGraphRequest 请求对象
      * @return CompletableFuture<RestartGraphResponse>
      */
     public CompletableFuture<RestartGraphResponse> restartGraphAsync(RestartGraphRequest request) {
@@ -667,12 +663,12 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartGraphRequest 请求对象
+     * @param request RestartGraphRequest 请求对象
      * @return AsyncInvoker<RestartGraphRequest, RestartGraphResponse>
      */
     public AsyncInvoker<RestartGraphRequest, RestartGraphResponse> restartGraphAsyncInvoker(
         RestartGraphRequest request) {
-        return new AsyncInvoker<RestartGraphRequest, RestartGraphResponse>(request, GesMeta.restartGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.restartGraph, hcClient);
     }
 
     /**
@@ -682,7 +678,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGraphRequest 请求对象
+     * @param request ShowGraphRequest 请求对象
      * @return CompletableFuture<ShowGraphResponse>
      */
     public CompletableFuture<ShowGraphResponse> showGraphAsync(ShowGraphRequest request) {
@@ -696,11 +692,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGraphRequest 请求对象
+     * @param request ShowGraphRequest 请求对象
      * @return AsyncInvoker<ShowGraphRequest, ShowGraphResponse>
      */
     public AsyncInvoker<ShowGraphRequest, ShowGraphResponse> showGraphAsyncInvoker(ShowGraphRequest request) {
-        return new AsyncInvoker<ShowGraphRequest, ShowGraphResponse>(request, GesMeta.showGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.showGraph, hcClient);
     }
 
     /**
@@ -710,7 +706,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
      */
     public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
@@ -724,11 +720,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
-        return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, GesMeta.showJob, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.showJob, hcClient);
     }
 
     /**
@@ -738,7 +734,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartGraphRequest 请求对象
+     * @param request StartGraphRequest 请求对象
      * @return CompletableFuture<StartGraphResponse>
      */
     public CompletableFuture<StartGraphResponse> startGraphAsync(StartGraphRequest request) {
@@ -752,11 +748,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartGraphRequest 请求对象
+     * @param request StartGraphRequest 请求对象
      * @return AsyncInvoker<StartGraphRequest, StartGraphResponse>
      */
     public AsyncInvoker<StartGraphRequest, StartGraphResponse> startGraphAsyncInvoker(StartGraphRequest request) {
-        return new AsyncInvoker<StartGraphRequest, StartGraphResponse>(request, GesMeta.startGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.startGraph, hcClient);
     }
 
     /**
@@ -767,7 +763,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopGraphRequest 请求对象
+     * @param request StopGraphRequest 请求对象
      * @return CompletableFuture<StopGraphResponse>
      */
     public CompletableFuture<StopGraphResponse> stopGraphAsync(StopGraphRequest request) {
@@ -782,11 +778,11 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopGraphRequest 请求对象
+     * @param request StopGraphRequest 请求对象
      * @return AsyncInvoker<StopGraphRequest, StopGraphResponse>
      */
     public AsyncInvoker<StopGraphRequest, StopGraphResponse> stopGraphAsyncInvoker(StopGraphRequest request) {
-        return new AsyncInvoker<StopGraphRequest, StopGraphResponse>(request, GesMeta.stopGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.stopGraph, hcClient);
     }
 
     /**
@@ -796,7 +792,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeGraphRequest 请求对象
+     * @param request UpgradeGraphRequest 请求对象
      * @return CompletableFuture<UpgradeGraphResponse>
      */
     public CompletableFuture<UpgradeGraphResponse> upgradeGraphAsync(UpgradeGraphRequest request) {
@@ -810,12 +806,12 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeGraphRequest 请求对象
+     * @param request UpgradeGraphRequest 请求对象
      * @return AsyncInvoker<UpgradeGraphRequest, UpgradeGraphResponse>
      */
     public AsyncInvoker<UpgradeGraphRequest, UpgradeGraphResponse> upgradeGraphAsyncInvoker(
         UpgradeGraphRequest request) {
-        return new AsyncInvoker<UpgradeGraphRequest, UpgradeGraphResponse>(request, GesMeta.upgradeGraph, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.upgradeGraph, hcClient);
     }
 
     /**
@@ -825,7 +821,7 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFromObsRequest 请求对象
+     * @param request UploadFromObsRequest 请求对象
      * @return CompletableFuture<UploadFromObsResponse>
      */
     public CompletableFuture<UploadFromObsResponse> uploadFromObsAsync(UploadFromObsRequest request) {
@@ -839,12 +835,12 @@ public class GesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFromObsRequest 请求对象
+     * @param request UploadFromObsRequest 请求对象
      * @return AsyncInvoker<UploadFromObsRequest, UploadFromObsResponse>
      */
     public AsyncInvoker<UploadFromObsRequest, UploadFromObsResponse> uploadFromObsAsyncInvoker(
         UploadFromObsRequest request) {
-        return new AsyncInvoker<UploadFromObsRequest, UploadFromObsResponse>(request, GesMeta.uploadFromObs, hcClient);
+        return new AsyncInvoker<>(request, GesMeta.uploadFromObs, hcClient);
     }
 
 }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量删除服务器请求
+ * 批量删除服务器请求。
  */
 public class BatchDeleteServerReq {
 

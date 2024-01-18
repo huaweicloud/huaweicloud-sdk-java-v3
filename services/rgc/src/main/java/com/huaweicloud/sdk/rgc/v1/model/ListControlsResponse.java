@@ -46,7 +46,7 @@ public class ListControlsResponse extends SdkResponse {
     }
 
     /**
-     * 纳管的OU。
+     * 控制策略信息。
      * @return controls
      */
     public List<Control> getControls() {

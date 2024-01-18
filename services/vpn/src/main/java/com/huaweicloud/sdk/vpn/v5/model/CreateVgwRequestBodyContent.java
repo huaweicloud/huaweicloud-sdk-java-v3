@@ -143,6 +143,16 @@ public class CreateVgwRequestBodyContent {
          */
         public static final FlavorEnum PROFESSIONAL2 = new FlavorEnum("Professional2");
 
+        /**
+         * Enum PROFESSIONAL1_NONFIXEDIP for value: "Professional1-NonFixedIP"
+         */
+        public static final FlavorEnum PROFESSIONAL1_NONFIXEDIP = new FlavorEnum("Professional1-NonFixedIP");
+
+        /**
+         * Enum PROFESSIONAL2_NONFIXEDIP for value: "Professional2-NonFixedIP"
+         */
+        public static final FlavorEnum PROFESSIONAL2_NONFIXEDIP = new FlavorEnum("Professional2-NonFixedIP");
+
         private static final Map<String, FlavorEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FlavorEnum> createStaticFields() {
@@ -150,6 +160,8 @@ public class CreateVgwRequestBodyContent {
             map.put("Basic", BASIC);
             map.put("Professional1", PROFESSIONAL1);
             map.put("Professional2", PROFESSIONAL2);
+            map.put("Professional1-NonFixedIP", PROFESSIONAL1_NONFIXEDIP);
+            map.put("Professional2-NonFixedIP", PROFESSIONAL2_NONFIXEDIP);
             return Collections.unmodifiableMap(map);
         }
 
@@ -215,16 +227,6 @@ public class CreateVgwRequestBodyContent {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "master_eip")
-
-    private CreateRequestEip masterEip;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "slave_eip")
-
-    private CreateRequestEip slaveEip;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip1")
 
     private CreateRequestEip eip1;
@@ -233,6 +235,16 @@ public class CreateVgwRequestBodyContent {
     @JsonProperty(value = "eip2")
 
     private CreateRequestEip eip2;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_private_ip_1")
+
+    private String accessPrivateIp1;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_private_ip_2")
+
+    private String accessPrivateIp2;
 
     /**
      * VPN网关北向类型，默认为公网(public)
@@ -393,6 +405,11 @@ public class CreateVgwRequestBodyContent {
     @JsonProperty(value = "ha_mode")
 
     private HaModeEnum haMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<VpnResourceTag> tags = null;
 
     public CreateVgwRequestBodyContent withName(String name) {
         this.name = name;
@@ -598,58 +615,6 @@ public class CreateVgwRequestBodyContent {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public CreateVgwRequestBodyContent withMasterEip(CreateRequestEip masterEip) {
-        this.masterEip = masterEip;
-        return this;
-    }
-
-    public CreateVgwRequestBodyContent withMasterEip(Consumer<CreateRequestEip> masterEipSetter) {
-        if (this.masterEip == null) {
-            this.masterEip = new CreateRequestEip();
-            masterEipSetter.accept(this.masterEip);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get masterEip
-     * @return masterEip
-     */
-    public CreateRequestEip getMasterEip() {
-        return masterEip;
-    }
-
-    public void setMasterEip(CreateRequestEip masterEip) {
-        this.masterEip = masterEip;
-    }
-
-    public CreateVgwRequestBodyContent withSlaveEip(CreateRequestEip slaveEip) {
-        this.slaveEip = slaveEip;
-        return this;
-    }
-
-    public CreateVgwRequestBodyContent withSlaveEip(Consumer<CreateRequestEip> slaveEipSetter) {
-        if (this.slaveEip == null) {
-            this.slaveEip = new CreateRequestEip();
-            slaveEipSetter.accept(this.slaveEip);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get slaveEip
-     * @return slaveEip
-     */
-    public CreateRequestEip getSlaveEip() {
-        return slaveEip;
-    }
-
-    public void setSlaveEip(CreateRequestEip slaveEip) {
-        this.slaveEip = slaveEip;
-    }
-
     public CreateVgwRequestBodyContent withEip1(CreateRequestEip eip1) {
         this.eip1 = eip1;
         return this;
@@ -700,6 +665,40 @@ public class CreateVgwRequestBodyContent {
 
     public void setEip2(CreateRequestEip eip2) {
         this.eip2 = eip2;
+    }
+
+    public CreateVgwRequestBodyContent withAccessPrivateIp1(String accessPrivateIp1) {
+        this.accessPrivateIp1 = accessPrivateIp1;
+        return this;
+    }
+
+    /**
+     * VPN网关北向接入私网IP，当VPN网关的北向类型是私网(private)时有值,主备模式代表主worker的私网IP
+     * @return accessPrivateIp1
+     */
+    public String getAccessPrivateIp1() {
+        return accessPrivateIp1;
+    }
+
+    public void setAccessPrivateIp1(String accessPrivateIp1) {
+        this.accessPrivateIp1 = accessPrivateIp1;
+    }
+
+    public CreateVgwRequestBodyContent withAccessPrivateIp2(String accessPrivateIp2) {
+        this.accessPrivateIp2 = accessPrivateIp2;
+        return this;
+    }
+
+    /**
+     * VPN网关北向接入私网IP，当VPN网关的北向类型是私网(private)时有值,主备模式代表备worker的私网IP
+     * @return accessPrivateIp2
+     */
+    public String getAccessPrivateIp2() {
+        return accessPrivateIp2;
+    }
+
+    public void setAccessPrivateIp2(String accessPrivateIp2) {
+        this.accessPrivateIp2 = accessPrivateIp2;
     }
 
     public CreateVgwRequestBodyContent withNetworkType(NetworkTypeEnum networkType) {
@@ -770,6 +769,39 @@ public class CreateVgwRequestBodyContent {
         this.haMode = haMode;
     }
 
+    public CreateVgwRequestBodyContent withTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateVgwRequestBodyContent addTagsItem(VpnResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateVgwRequestBodyContent withTags(Consumer<List<VpnResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<VpnResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -786,10 +818,12 @@ public class CreateVgwRequestBodyContent {
             && Objects.equals(this.flavor, that.flavor)
             && Objects.equals(this.availabilityZoneIds, that.availabilityZoneIds)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.masterEip, that.masterEip) && Objects.equals(this.slaveEip, that.slaveEip)
             && Objects.equals(this.eip1, that.eip1) && Objects.equals(this.eip2, that.eip2)
+            && Objects.equals(this.accessPrivateIp1, that.accessPrivateIp1)
+            && Objects.equals(this.accessPrivateIp2, that.accessPrivateIp2)
             && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.accessVpcId, that.accessVpcId)
-            && Objects.equals(this.accessSubnetId, that.accessSubnetId) && Objects.equals(this.haMode, that.haMode);
+            && Objects.equals(this.accessSubnetId, that.accessSubnetId) && Objects.equals(this.haMode, that.haMode)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -804,14 +838,15 @@ public class CreateVgwRequestBodyContent {
             flavor,
             availabilityZoneIds,
             enterpriseProjectId,
-            masterEip,
-            slaveEip,
             eip1,
             eip2,
+            accessPrivateIp1,
+            accessPrivateIp2,
             networkType,
             accessVpcId,
             accessSubnetId,
-            haMode);
+            haMode,
+            tags);
     }
 
     @Override
@@ -828,14 +863,15 @@ public class CreateVgwRequestBodyContent {
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    availabilityZoneIds: ").append(toIndentedString(availabilityZoneIds)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    masterEip: ").append(toIndentedString(masterEip)).append("\n");
-        sb.append("    slaveEip: ").append(toIndentedString(slaveEip)).append("\n");
         sb.append("    eip1: ").append(toIndentedString(eip1)).append("\n");
         sb.append("    eip2: ").append(toIndentedString(eip2)).append("\n");
+        sb.append("    accessPrivateIp1: ").append(toIndentedString(accessPrivateIp1)).append("\n");
+        sb.append("    accessPrivateIp2: ").append(toIndentedString(accessPrivateIp2)).append("\n");
         sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
         sb.append("    accessVpcId: ").append(toIndentedString(accessVpcId)).append("\n");
         sb.append("    accessSubnetId: ").append(toIndentedString(accessSubnetId)).append("\n");
         sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

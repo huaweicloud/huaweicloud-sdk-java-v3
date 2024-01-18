@@ -140,7 +140,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelAssetTranscodeTaskRequest 请求对象
+     * @param request CancelAssetTranscodeTaskRequest 请求对象
      * @return CompletableFuture<CancelAssetTranscodeTaskResponse>
      */
     public CompletableFuture<CancelAssetTranscodeTaskResponse> cancelAssetTranscodeTaskAsync(
@@ -155,13 +155,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelAssetTranscodeTaskRequest 请求对象
+     * @param request CancelAssetTranscodeTaskRequest 请求对象
      * @return AsyncInvoker<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse>
      */
     public AsyncInvoker<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse> cancelAssetTranscodeTaskAsyncInvoker(
         CancelAssetTranscodeTaskRequest request) {
-        return new AsyncInvoker<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse>(request,
-            VodMeta.cancelAssetTranscodeTask, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.cancelAssetTranscodeTask, hcClient);
     }
 
     /**
@@ -171,7 +170,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelExtractAudioTaskRequest 请求对象
+     * @param request CancelExtractAudioTaskRequest 请求对象
      * @return CompletableFuture<CancelExtractAudioTaskResponse>
      */
     public CompletableFuture<CancelExtractAudioTaskResponse> cancelExtractAudioTaskAsync(
@@ -186,13 +185,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelExtractAudioTaskRequest 请求对象
+     * @param request CancelExtractAudioTaskRequest 请求对象
      * @return AsyncInvoker<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse>
      */
     public AsyncInvoker<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse> cancelExtractAudioTaskAsyncInvoker(
         CancelExtractAudioTaskRequest request) {
-        return new AsyncInvoker<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse>(request,
-            VodMeta.cancelExtractAudioTask, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.cancelExtractAudioTask, hcClient);
     }
 
     /**
@@ -202,7 +200,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckMd5DuplicationRequest 请求对象
+     * @param request CheckMd5DuplicationRequest 请求对象
      * @return CompletableFuture<CheckMd5DuplicationResponse>
      */
     public CompletableFuture<CheckMd5DuplicationResponse> checkMd5DuplicationAsync(CheckMd5DuplicationRequest request) {
@@ -216,13 +214,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckMd5DuplicationRequest 请求对象
+     * @param request CheckMd5DuplicationRequest 请求对象
      * @return AsyncInvoker<CheckMd5DuplicationRequest, CheckMd5DuplicationResponse>
      */
     public AsyncInvoker<CheckMd5DuplicationRequest, CheckMd5DuplicationResponse> checkMd5DuplicationAsyncInvoker(
         CheckMd5DuplicationRequest request) {
-        return new AsyncInvoker<CheckMd5DuplicationRequest, CheckMd5DuplicationResponse>(request,
-            VodMeta.checkMd5Duplication, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.checkMd5Duplication, hcClient);
     }
 
     /**
@@ -232,7 +229,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmAssetUploadRequest 请求对象
+     * @param request ConfirmAssetUploadRequest 请求对象
      * @return CompletableFuture<ConfirmAssetUploadResponse>
      */
     public CompletableFuture<ConfirmAssetUploadResponse> confirmAssetUploadAsync(ConfirmAssetUploadRequest request) {
@@ -246,13 +243,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmAssetUploadRequest 请求对象
+     * @param request ConfirmAssetUploadRequest 请求对象
      * @return AsyncInvoker<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse>
      */
     public AsyncInvoker<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse> confirmAssetUploadAsyncInvoker(
         ConfirmAssetUploadRequest request) {
-        return new AsyncInvoker<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse>(request,
-            VodMeta.confirmAssetUpload, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.confirmAssetUpload, hcClient);
     }
 
     /**
@@ -262,7 +258,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmImageUploadRequest 请求对象
+     * @param request ConfirmImageUploadRequest 请求对象
      * @return CompletableFuture<ConfirmImageUploadResponse>
      */
     public CompletableFuture<ConfirmImageUploadResponse> confirmImageUploadAsync(ConfirmImageUploadRequest request) {
@@ -276,13 +272,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmImageUploadRequest 请求对象
+     * @param request ConfirmImageUploadRequest 请求对象
      * @return AsyncInvoker<ConfirmImageUploadRequest, ConfirmImageUploadResponse>
      */
     public AsyncInvoker<ConfirmImageUploadRequest, ConfirmImageUploadResponse> confirmImageUploadAsyncInvoker(
         ConfirmImageUploadRequest request) {
-        return new AsyncInvoker<ConfirmImageUploadRequest, ConfirmImageUploadResponse>(request,
-            VodMeta.confirmImageUpload, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.confirmImageUpload, hcClient);
     }
 
     /**
@@ -296,7 +291,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetByFileUploadRequest 请求对象
+     * @param request CreateAssetByFileUploadRequest 请求对象
      * @return CompletableFuture<CreateAssetByFileUploadResponse>
      */
     public CompletableFuture<CreateAssetByFileUploadResponse> createAssetByFileUploadAsync(
@@ -315,13 +310,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetByFileUploadRequest 请求对象
+     * @param request CreateAssetByFileUploadRequest 请求对象
      * @return AsyncInvoker<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse>
      */
     public AsyncInvoker<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse> createAssetByFileUploadAsyncInvoker(
         CreateAssetByFileUploadRequest request) {
-        return new AsyncInvoker<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse>(request,
-            VodMeta.createAssetByFileUpload, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createAssetByFileUpload, hcClient);
     }
 
     /**
@@ -331,7 +325,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetCategoryRequest 请求对象
+     * @param request CreateAssetCategoryRequest 请求对象
      * @return CompletableFuture<CreateAssetCategoryResponse>
      */
     public CompletableFuture<CreateAssetCategoryResponse> createAssetCategoryAsync(CreateAssetCategoryRequest request) {
@@ -345,13 +339,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetCategoryRequest 请求对象
+     * @param request CreateAssetCategoryRequest 请求对象
      * @return AsyncInvoker<CreateAssetCategoryRequest, CreateAssetCategoryResponse>
      */
     public AsyncInvoker<CreateAssetCategoryRequest, CreateAssetCategoryResponse> createAssetCategoryAsyncInvoker(
         CreateAssetCategoryRequest request) {
-        return new AsyncInvoker<CreateAssetCategoryRequest, CreateAssetCategoryResponse>(request,
-            VodMeta.createAssetCategory, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createAssetCategory, hcClient);
     }
 
     /**
@@ -361,7 +354,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetProcessTaskRequest 请求对象
+     * @param request CreateAssetProcessTaskRequest 请求对象
      * @return CompletableFuture<CreateAssetProcessTaskResponse>
      */
     public CompletableFuture<CreateAssetProcessTaskResponse> createAssetProcessTaskAsync(
@@ -376,13 +369,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetProcessTaskRequest 请求对象
+     * @param request CreateAssetProcessTaskRequest 请求对象
      * @return AsyncInvoker<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse>
      */
     public AsyncInvoker<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse> createAssetProcessTaskAsyncInvoker(
         CreateAssetProcessTaskRequest request) {
-        return new AsyncInvoker<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse>(request,
-            VodMeta.createAssetProcessTask, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createAssetProcessTask, hcClient);
     }
 
     /**
@@ -392,7 +384,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetReviewTaskRequest 请求对象
+     * @param request CreateAssetReviewTaskRequest 请求对象
      * @return CompletableFuture<CreateAssetReviewTaskResponse>
      */
     public CompletableFuture<CreateAssetReviewTaskResponse> createAssetReviewTaskAsync(
@@ -407,13 +399,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAssetReviewTaskRequest 请求对象
+     * @param request CreateAssetReviewTaskRequest 请求对象
      * @return AsyncInvoker<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse>
      */
     public AsyncInvoker<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse> createAssetReviewTaskAsyncInvoker(
         CreateAssetReviewTaskRequest request) {
-        return new AsyncInvoker<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse>(request,
-            VodMeta.createAssetReviewTask, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createAssetReviewTask, hcClient);
     }
 
     /**
@@ -423,7 +414,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExtractAudioTaskRequest 请求对象
+     * @param request CreateExtractAudioTaskRequest 请求对象
      * @return CompletableFuture<CreateExtractAudioTaskResponse>
      */
     public CompletableFuture<CreateExtractAudioTaskResponse> createExtractAudioTaskAsync(
@@ -438,13 +429,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExtractAudioTaskRequest 请求对象
+     * @param request CreateExtractAudioTaskRequest 请求对象
      * @return AsyncInvoker<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse>
      */
     public AsyncInvoker<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> createExtractAudioTaskAsyncInvoker(
         CreateExtractAudioTaskRequest request) {
-        return new AsyncInvoker<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse>(request,
-            VodMeta.createExtractAudioTask, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createExtractAudioTask, hcClient);
     }
 
     /**
@@ -454,7 +444,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePreheatingAssetRequest 请求对象
+     * @param request CreatePreheatingAssetRequest 请求对象
      * @return CompletableFuture<CreatePreheatingAssetResponse>
      */
     public CompletableFuture<CreatePreheatingAssetResponse> createPreheatingAssetAsync(
@@ -469,13 +459,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePreheatingAssetRequest 请求对象
+     * @param request CreatePreheatingAssetRequest 请求对象
      * @return AsyncInvoker<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse>
      */
     public AsyncInvoker<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> createPreheatingAssetAsyncInvoker(
         CreatePreheatingAssetRequest request) {
-        return new AsyncInvoker<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse>(request,
-            VodMeta.createPreheatingAsset, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createPreheatingAsset, hcClient);
     }
 
     /**
@@ -487,7 +476,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTakeOverTaskRequest 请求对象
+     * @param request CreateTakeOverTaskRequest 请求对象
      * @return CompletableFuture<CreateTakeOverTaskResponse>
      */
     public CompletableFuture<CreateTakeOverTaskResponse> createTakeOverTaskAsync(CreateTakeOverTaskRequest request) {
@@ -503,13 +492,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTakeOverTaskRequest 请求对象
+     * @param request CreateTakeOverTaskRequest 请求对象
      * @return AsyncInvoker<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse>
      */
     public AsyncInvoker<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> createTakeOverTaskAsyncInvoker(
         CreateTakeOverTaskRequest request) {
-        return new AsyncInvoker<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse>(request,
-            VodMeta.createTakeOverTask, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createTakeOverTask, hcClient);
     }
 
     /**
@@ -519,7 +507,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateGroupRequest 请求对象
+     * @param request CreateTemplateGroupRequest 请求对象
      * @return CompletableFuture<CreateTemplateGroupResponse>
      */
     public CompletableFuture<CreateTemplateGroupResponse> createTemplateGroupAsync(CreateTemplateGroupRequest request) {
@@ -533,13 +521,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateGroupRequest 请求对象
+     * @param request CreateTemplateGroupRequest 请求对象
      * @return AsyncInvoker<CreateTemplateGroupRequest, CreateTemplateGroupResponse>
      */
     public AsyncInvoker<CreateTemplateGroupRequest, CreateTemplateGroupResponse> createTemplateGroupAsyncInvoker(
         CreateTemplateGroupRequest request) {
-        return new AsyncInvoker<CreateTemplateGroupRequest, CreateTemplateGroupResponse>(request,
-            VodMeta.createTemplateGroup, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createTemplateGroup, hcClient);
     }
 
     /**
@@ -549,7 +536,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateGroupCollectionRequest 请求对象
+     * @param request CreateTemplateGroupCollectionRequest 请求对象
      * @return CompletableFuture<CreateTemplateGroupCollectionResponse>
      */
     public CompletableFuture<CreateTemplateGroupCollectionResponse> createTemplateGroupCollectionAsync(
@@ -564,13 +551,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateGroupCollectionRequest 请求对象
+     * @param request CreateTemplateGroupCollectionRequest 请求对象
      * @return AsyncInvoker<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse>
      */
     public AsyncInvoker<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse> createTemplateGroupCollectionAsyncInvoker(
         CreateTemplateGroupCollectionRequest request) {
-        return new AsyncInvoker<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse>(request,
-            VodMeta.createTemplateGroupCollection, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createTemplateGroupCollection, hcClient);
     }
 
     /**
@@ -580,7 +566,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTranscodeTemplateRequest 请求对象
+     * @param request CreateTranscodeTemplateRequest 请求对象
      * @return CompletableFuture<CreateTranscodeTemplateResponse>
      */
     public CompletableFuture<CreateTranscodeTemplateResponse> createTranscodeTemplateAsync(
@@ -595,13 +581,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTranscodeTemplateRequest 请求对象
+     * @param request CreateTranscodeTemplateRequest 请求对象
      * @return AsyncInvoker<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse>
      */
     public AsyncInvoker<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse> createTranscodeTemplateAsyncInvoker(
         CreateTranscodeTemplateRequest request) {
-        return new AsyncInvoker<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse>(request,
-            VodMeta.createTranscodeTemplate, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createTranscodeTemplate, hcClient);
     }
 
     /**
@@ -611,7 +596,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWatermarkTemplateRequest 请求对象
+     * @param request CreateWatermarkTemplateRequest 请求对象
      * @return CompletableFuture<CreateWatermarkTemplateResponse>
      */
     public CompletableFuture<CreateWatermarkTemplateResponse> createWatermarkTemplateAsync(
@@ -626,13 +611,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWatermarkTemplateRequest 请求对象
+     * @param request CreateWatermarkTemplateRequest 请求对象
      * @return AsyncInvoker<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse>
      */
     public AsyncInvoker<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> createWatermarkTemplateAsyncInvoker(
         CreateWatermarkTemplateRequest request) {
-        return new AsyncInvoker<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse>(request,
-            VodMeta.createWatermarkTemplate, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.createWatermarkTemplate, hcClient);
     }
 
     /**
@@ -642,7 +626,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetCategoryRequest 请求对象
+     * @param request DeleteAssetCategoryRequest 请求对象
      * @return CompletableFuture<DeleteAssetCategoryResponse>
      */
     public CompletableFuture<DeleteAssetCategoryResponse> deleteAssetCategoryAsync(DeleteAssetCategoryRequest request) {
@@ -656,13 +640,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetCategoryRequest 请求对象
+     * @param request DeleteAssetCategoryRequest 请求对象
      * @return AsyncInvoker<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse>
      */
     public AsyncInvoker<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse> deleteAssetCategoryAsyncInvoker(
         DeleteAssetCategoryRequest request) {
-        return new AsyncInvoker<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse>(request,
-            VodMeta.deleteAssetCategory, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.deleteAssetCategory, hcClient);
     }
 
     /**
@@ -672,7 +655,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetsRequest 请求对象
+     * @param request DeleteAssetsRequest 请求对象
      * @return CompletableFuture<DeleteAssetsResponse>
      */
     public CompletableFuture<DeleteAssetsResponse> deleteAssetsAsync(DeleteAssetsRequest request) {
@@ -686,12 +669,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetsRequest 请求对象
+     * @param request DeleteAssetsRequest 请求对象
      * @return AsyncInvoker<DeleteAssetsRequest, DeleteAssetsResponse>
      */
     public AsyncInvoker<DeleteAssetsRequest, DeleteAssetsResponse> deleteAssetsAsyncInvoker(
         DeleteAssetsRequest request) {
-        return new AsyncInvoker<DeleteAssetsRequest, DeleteAssetsResponse>(request, VodMeta.deleteAssets, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.deleteAssets, hcClient);
     }
 
     /**
@@ -701,7 +684,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateGroupRequest 请求对象
+     * @param request DeleteTemplateGroupRequest 请求对象
      * @return CompletableFuture<DeleteTemplateGroupResponse>
      */
     public CompletableFuture<DeleteTemplateGroupResponse> deleteTemplateGroupAsync(DeleteTemplateGroupRequest request) {
@@ -715,13 +698,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateGroupRequest 请求对象
+     * @param request DeleteTemplateGroupRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse>
      */
     public AsyncInvoker<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> deleteTemplateGroupAsyncInvoker(
         DeleteTemplateGroupRequest request) {
-        return new AsyncInvoker<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse>(request,
-            VodMeta.deleteTemplateGroup, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.deleteTemplateGroup, hcClient);
     }
 
     /**
@@ -731,7 +713,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateGroupCollectionRequest 请求对象
+     * @param request DeleteTemplateGroupCollectionRequest 请求对象
      * @return CompletableFuture<DeleteTemplateGroupCollectionResponse>
      */
     public CompletableFuture<DeleteTemplateGroupCollectionResponse> deleteTemplateGroupCollectionAsync(
@@ -746,13 +728,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateGroupCollectionRequest 请求对象
+     * @param request DeleteTemplateGroupCollectionRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse>
      */
     public AsyncInvoker<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse> deleteTemplateGroupCollectionAsyncInvoker(
         DeleteTemplateGroupCollectionRequest request) {
-        return new AsyncInvoker<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse>(request,
-            VodMeta.deleteTemplateGroupCollection, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.deleteTemplateGroupCollection, hcClient);
     }
 
     /**
@@ -762,7 +743,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTranscodeTemplateRequest 请求对象
+     * @param request DeleteTranscodeTemplateRequest 请求对象
      * @return CompletableFuture<DeleteTranscodeTemplateResponse>
      */
     public CompletableFuture<DeleteTranscodeTemplateResponse> deleteTranscodeTemplateAsync(
@@ -777,13 +758,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTranscodeTemplateRequest 请求对象
+     * @param request DeleteTranscodeTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse>
      */
     public AsyncInvoker<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse> deleteTranscodeTemplateAsyncInvoker(
         DeleteTranscodeTemplateRequest request) {
-        return new AsyncInvoker<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse>(request,
-            VodMeta.deleteTranscodeTemplate, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.deleteTranscodeTemplate, hcClient);
     }
 
     /**
@@ -793,7 +773,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWatermarkTemplateRequest 请求对象
+     * @param request DeleteWatermarkTemplateRequest 请求对象
      * @return CompletableFuture<DeleteWatermarkTemplateResponse>
      */
     public CompletableFuture<DeleteWatermarkTemplateResponse> deleteWatermarkTemplateAsync(
@@ -808,13 +788,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWatermarkTemplateRequest 请求对象
+     * @param request DeleteWatermarkTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse>
      */
     public AsyncInvoker<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> deleteWatermarkTemplateAsyncInvoker(
         DeleteWatermarkTemplateRequest request) {
-        return new AsyncInvoker<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse>(request,
-            VodMeta.deleteWatermarkTemplate, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.deleteWatermarkTemplate, hcClient);
     }
 
     /**
@@ -824,7 +803,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetCategoryRequest 请求对象
+     * @param request ListAssetCategoryRequest 请求对象
      * @return CompletableFuture<ListAssetCategoryResponse>
      */
     public CompletableFuture<ListAssetCategoryResponse> listAssetCategoryAsync(ListAssetCategoryRequest request) {
@@ -838,13 +817,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetCategoryRequest 请求对象
+     * @param request ListAssetCategoryRequest 请求对象
      * @return AsyncInvoker<ListAssetCategoryRequest, ListAssetCategoryResponse>
      */
     public AsyncInvoker<ListAssetCategoryRequest, ListAssetCategoryResponse> listAssetCategoryAsyncInvoker(
         ListAssetCategoryRequest request) {
-        return new AsyncInvoker<ListAssetCategoryRequest, ListAssetCategoryResponse>(request, VodMeta.listAssetCategory,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.listAssetCategory, hcClient);
     }
 
     /**
@@ -858,7 +836,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetDailySummaryLogRequest 请求对象
+     * @param request ListAssetDailySummaryLogRequest 请求对象
      * @return CompletableFuture<ListAssetDailySummaryLogResponse>
      */
     public CompletableFuture<ListAssetDailySummaryLogResponse> listAssetDailySummaryLogAsync(
@@ -877,13 +855,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetDailySummaryLogRequest 请求对象
+     * @param request ListAssetDailySummaryLogRequest 请求对象
      * @return AsyncInvoker<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse>
      */
     public AsyncInvoker<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> listAssetDailySummaryLogAsyncInvoker(
         ListAssetDailySummaryLogRequest request) {
-        return new AsyncInvoker<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse>(request,
-            VodMeta.listAssetDailySummaryLog, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.listAssetDailySummaryLog, hcClient);
     }
 
     /**
@@ -893,7 +870,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetListRequest 请求对象
+     * @param request ListAssetListRequest 请求对象
      * @return CompletableFuture<ListAssetListResponse>
      */
     public CompletableFuture<ListAssetListResponse> listAssetListAsync(ListAssetListRequest request) {
@@ -907,12 +884,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetListRequest 请求对象
+     * @param request ListAssetListRequest 请求对象
      * @return AsyncInvoker<ListAssetListRequest, ListAssetListResponse>
      */
     public AsyncInvoker<ListAssetListRequest, ListAssetListResponse> listAssetListAsyncInvoker(
         ListAssetListRequest request) {
-        return new AsyncInvoker<ListAssetListRequest, ListAssetListResponse>(request, VodMeta.listAssetList, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.listAssetList, hcClient);
     }
 
     /**
@@ -922,7 +899,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainLogsRequest 请求对象
+     * @param request ListDomainLogsRequest 请求对象
      * @return CompletableFuture<ListDomainLogsResponse>
      */
     public CompletableFuture<ListDomainLogsResponse> listDomainLogsAsync(ListDomainLogsRequest request) {
@@ -936,13 +913,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainLogsRequest 请求对象
+     * @param request ListDomainLogsRequest 请求对象
      * @return AsyncInvoker<ListDomainLogsRequest, ListDomainLogsResponse>
      */
     public AsyncInvoker<ListDomainLogsRequest, ListDomainLogsResponse> listDomainLogsAsyncInvoker(
         ListDomainLogsRequest request) {
-        return new AsyncInvoker<ListDomainLogsRequest, ListDomainLogsResponse>(request, VodMeta.listDomainLogs,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.listDomainLogs, hcClient);
     }
 
     /**
@@ -952,7 +928,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateGroupRequest 请求对象
+     * @param request ListTemplateGroupRequest 请求对象
      * @return CompletableFuture<ListTemplateGroupResponse>
      */
     public CompletableFuture<ListTemplateGroupResponse> listTemplateGroupAsync(ListTemplateGroupRequest request) {
@@ -966,13 +942,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateGroupRequest 请求对象
+     * @param request ListTemplateGroupRequest 请求对象
      * @return AsyncInvoker<ListTemplateGroupRequest, ListTemplateGroupResponse>
      */
     public AsyncInvoker<ListTemplateGroupRequest, ListTemplateGroupResponse> listTemplateGroupAsyncInvoker(
         ListTemplateGroupRequest request) {
-        return new AsyncInvoker<ListTemplateGroupRequest, ListTemplateGroupResponse>(request, VodMeta.listTemplateGroup,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.listTemplateGroup, hcClient);
     }
 
     /**
@@ -982,7 +957,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateGroupCollectionRequest 请求对象
+     * @param request ListTemplateGroupCollectionRequest 请求对象
      * @return CompletableFuture<ListTemplateGroupCollectionResponse>
      */
     public CompletableFuture<ListTemplateGroupCollectionResponse> listTemplateGroupCollectionAsync(
@@ -997,13 +972,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateGroupCollectionRequest 请求对象
+     * @param request ListTemplateGroupCollectionRequest 请求对象
      * @return AsyncInvoker<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse>
      */
     public AsyncInvoker<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse> listTemplateGroupCollectionAsyncInvoker(
         ListTemplateGroupCollectionRequest request) {
-        return new AsyncInvoker<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse>(request,
-            VodMeta.listTemplateGroupCollection, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.listTemplateGroupCollection, hcClient);
     }
 
     /**
@@ -1013,7 +987,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopStatisticsRequest 请求对象
+     * @param request ListTopStatisticsRequest 请求对象
      * @return CompletableFuture<ListTopStatisticsResponse>
      */
     public CompletableFuture<ListTopStatisticsResponse> listTopStatisticsAsync(ListTopStatisticsRequest request) {
@@ -1027,13 +1001,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopStatisticsRequest 请求对象
+     * @param request ListTopStatisticsRequest 请求对象
      * @return AsyncInvoker<ListTopStatisticsRequest, ListTopStatisticsResponse>
      */
     public AsyncInvoker<ListTopStatisticsRequest, ListTopStatisticsResponse> listTopStatisticsAsyncInvoker(
         ListTopStatisticsRequest request) {
-        return new AsyncInvoker<ListTopStatisticsRequest, ListTopStatisticsResponse>(request, VodMeta.listTopStatistics,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.listTopStatistics, hcClient);
     }
 
     /**
@@ -1043,7 +1016,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTranscodeTemplateRequest 请求对象
+     * @param request ListTranscodeTemplateRequest 请求对象
      * @return CompletableFuture<ListTranscodeTemplateResponse>
      */
     public CompletableFuture<ListTranscodeTemplateResponse> listTranscodeTemplateAsync(
@@ -1058,13 +1031,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTranscodeTemplateRequest 请求对象
+     * @param request ListTranscodeTemplateRequest 请求对象
      * @return AsyncInvoker<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse>
      */
     public AsyncInvoker<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse> listTranscodeTemplateAsyncInvoker(
         ListTranscodeTemplateRequest request) {
-        return new AsyncInvoker<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse>(request,
-            VodMeta.listTranscodeTemplate, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.listTranscodeTemplate, hcClient);
     }
 
     /**
@@ -1074,7 +1046,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWatermarkTemplateRequest 请求对象
+     * @param request ListWatermarkTemplateRequest 请求对象
      * @return CompletableFuture<ListWatermarkTemplateResponse>
      */
     public CompletableFuture<ListWatermarkTemplateResponse> listWatermarkTemplateAsync(
@@ -1089,13 +1061,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWatermarkTemplateRequest 请求对象
+     * @param request ListWatermarkTemplateRequest 请求对象
      * @return AsyncInvoker<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse>
      */
     public AsyncInvoker<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> listWatermarkTemplateAsyncInvoker(
         ListWatermarkTemplateRequest request) {
-        return new AsyncInvoker<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse>(request,
-            VodMeta.listWatermarkTemplate, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.listWatermarkTemplate, hcClient);
     }
 
     /**
@@ -1105,7 +1076,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAssetFromObsRequest 请求对象
+     * @param request PublishAssetFromObsRequest 请求对象
      * @return CompletableFuture<PublishAssetFromObsResponse>
      */
     public CompletableFuture<PublishAssetFromObsResponse> publishAssetFromObsAsync(PublishAssetFromObsRequest request) {
@@ -1119,13 +1090,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAssetFromObsRequest 请求对象
+     * @param request PublishAssetFromObsRequest 请求对象
      * @return AsyncInvoker<PublishAssetFromObsRequest, PublishAssetFromObsResponse>
      */
     public AsyncInvoker<PublishAssetFromObsRequest, PublishAssetFromObsResponse> publishAssetFromObsAsyncInvoker(
         PublishAssetFromObsRequest request) {
-        return new AsyncInvoker<PublishAssetFromObsRequest, PublishAssetFromObsResponse>(request,
-            VodMeta.publishAssetFromObs, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.publishAssetFromObs, hcClient);
     }
 
     /**
@@ -1135,7 +1105,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAssetsRequest 请求对象
+     * @param request PublishAssetsRequest 请求对象
      * @return CompletableFuture<PublishAssetsResponse>
      */
     public CompletableFuture<PublishAssetsResponse> publishAssetsAsync(PublishAssetsRequest request) {
@@ -1149,12 +1119,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAssetsRequest 请求对象
+     * @param request PublishAssetsRequest 请求对象
      * @return AsyncInvoker<PublishAssetsRequest, PublishAssetsResponse>
      */
     public AsyncInvoker<PublishAssetsRequest, PublishAssetsResponse> publishAssetsAsyncInvoker(
         PublishAssetsRequest request) {
-        return new AsyncInvoker<PublishAssetsRequest, PublishAssetsResponse>(request, VodMeta.publishAssets, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.publishAssets, hcClient);
     }
 
     /**
@@ -1164,7 +1134,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetCipherRequest 请求对象
+     * @param request ShowAssetCipherRequest 请求对象
      * @return CompletableFuture<ShowAssetCipherResponse>
      */
     public CompletableFuture<ShowAssetCipherResponse> showAssetCipherAsync(ShowAssetCipherRequest request) {
@@ -1178,13 +1148,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetCipherRequest 请求对象
+     * @param request ShowAssetCipherRequest 请求对象
      * @return AsyncInvoker<ShowAssetCipherRequest, ShowAssetCipherResponse>
      */
     public AsyncInvoker<ShowAssetCipherRequest, ShowAssetCipherResponse> showAssetCipherAsyncInvoker(
         ShowAssetCipherRequest request) {
-        return new AsyncInvoker<ShowAssetCipherRequest, ShowAssetCipherResponse>(request, VodMeta.showAssetCipher,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.showAssetCipher, hcClient);
     }
 
     /**
@@ -1194,7 +1163,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetDetailRequest 请求对象
+     * @param request ShowAssetDetailRequest 请求对象
      * @return CompletableFuture<ShowAssetDetailResponse>
      */
     public CompletableFuture<ShowAssetDetailResponse> showAssetDetailAsync(ShowAssetDetailRequest request) {
@@ -1208,13 +1177,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetDetailRequest 请求对象
+     * @param request ShowAssetDetailRequest 请求对象
      * @return AsyncInvoker<ShowAssetDetailRequest, ShowAssetDetailResponse>
      */
     public AsyncInvoker<ShowAssetDetailRequest, ShowAssetDetailResponse> showAssetDetailAsyncInvoker(
         ShowAssetDetailRequest request) {
-        return new AsyncInvoker<ShowAssetDetailRequest, ShowAssetDetailResponse>(request, VodMeta.showAssetDetail,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.showAssetDetail, hcClient);
     }
 
     /**
@@ -1224,7 +1192,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetMetaRequest 请求对象
+     * @param request ShowAssetMetaRequest 请求对象
      * @return CompletableFuture<ShowAssetMetaResponse>
      */
     public CompletableFuture<ShowAssetMetaResponse> showAssetMetaAsync(ShowAssetMetaRequest request) {
@@ -1238,12 +1206,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetMetaRequest 请求对象
+     * @param request ShowAssetMetaRequest 请求对象
      * @return AsyncInvoker<ShowAssetMetaRequest, ShowAssetMetaResponse>
      */
     public AsyncInvoker<ShowAssetMetaRequest, ShowAssetMetaResponse> showAssetMetaAsyncInvoker(
         ShowAssetMetaRequest request) {
-        return new AsyncInvoker<ShowAssetMetaRequest, ShowAssetMetaResponse>(request, VodMeta.showAssetMeta, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.showAssetMeta, hcClient);
     }
 
     /**
@@ -1259,7 +1227,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetTempAuthorityRequest 请求对象
+     * @param request ShowAssetTempAuthorityRequest 请求对象
      * @return CompletableFuture<ShowAssetTempAuthorityResponse>
      */
     public CompletableFuture<ShowAssetTempAuthorityResponse> showAssetTempAuthorityAsync(
@@ -1280,13 +1248,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetTempAuthorityRequest 请求对象
+     * @param request ShowAssetTempAuthorityRequest 请求对象
      * @return AsyncInvoker<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse>
      */
     public AsyncInvoker<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse> showAssetTempAuthorityAsyncInvoker(
         ShowAssetTempAuthorityRequest request) {
-        return new AsyncInvoker<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse>(request,
-            VodMeta.showAssetTempAuthority, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.showAssetTempAuthority, hcClient);
     }
 
     /**
@@ -1296,7 +1263,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCdnStatisticsRequest 请求对象
+     * @param request ShowCdnStatisticsRequest 请求对象
      * @return CompletableFuture<ShowCdnStatisticsResponse>
      */
     public CompletableFuture<ShowCdnStatisticsResponse> showCdnStatisticsAsync(ShowCdnStatisticsRequest request) {
@@ -1310,13 +1277,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCdnStatisticsRequest 请求对象
+     * @param request ShowCdnStatisticsRequest 请求对象
      * @return AsyncInvoker<ShowCdnStatisticsRequest, ShowCdnStatisticsResponse>
      */
     public AsyncInvoker<ShowCdnStatisticsRequest, ShowCdnStatisticsResponse> showCdnStatisticsAsyncInvoker(
         ShowCdnStatisticsRequest request) {
-        return new AsyncInvoker<ShowCdnStatisticsRequest, ShowCdnStatisticsResponse>(request, VodMeta.showCdnStatistics,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.showCdnStatistics, hcClient);
     }
 
     /**
@@ -1326,7 +1292,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPreheatingAssetRequest 请求对象
+     * @param request ShowPreheatingAssetRequest 请求对象
      * @return CompletableFuture<ShowPreheatingAssetResponse>
      */
     public CompletableFuture<ShowPreheatingAssetResponse> showPreheatingAssetAsync(ShowPreheatingAssetRequest request) {
@@ -1340,13 +1306,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPreheatingAssetRequest 请求对象
+     * @param request ShowPreheatingAssetRequest 请求对象
      * @return AsyncInvoker<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse>
      */
     public AsyncInvoker<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> showPreheatingAssetAsyncInvoker(
         ShowPreheatingAssetRequest request) {
-        return new AsyncInvoker<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse>(request,
-            VodMeta.showPreheatingAsset, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.showPreheatingAsset, hcClient);
     }
 
     /**
@@ -1356,7 +1321,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVodStatisticsRequest 请求对象
+     * @param request ShowVodStatisticsRequest 请求对象
      * @return CompletableFuture<ShowVodStatisticsResponse>
      */
     public CompletableFuture<ShowVodStatisticsResponse> showVodStatisticsAsync(ShowVodStatisticsRequest request) {
@@ -1370,13 +1335,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVodStatisticsRequest 请求对象
+     * @param request ShowVodStatisticsRequest 请求对象
      * @return AsyncInvoker<ShowVodStatisticsRequest, ShowVodStatisticsResponse>
      */
     public AsyncInvoker<ShowVodStatisticsRequest, ShowVodStatisticsResponse> showVodStatisticsAsyncInvoker(
         ShowVodStatisticsRequest request) {
-        return new AsyncInvoker<ShowVodStatisticsRequest, ShowVodStatisticsResponse>(request, VodMeta.showVodStatistics,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.showVodStatistics, hcClient);
     }
 
     /**
@@ -1386,7 +1350,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnpublishAssetsRequest 请求对象
+     * @param request UnpublishAssetsRequest 请求对象
      * @return CompletableFuture<UnpublishAssetsResponse>
      */
     public CompletableFuture<UnpublishAssetsResponse> unpublishAssetsAsync(UnpublishAssetsRequest request) {
@@ -1400,13 +1364,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnpublishAssetsRequest 请求对象
+     * @param request UnpublishAssetsRequest 请求对象
      * @return AsyncInvoker<UnpublishAssetsRequest, UnpublishAssetsResponse>
      */
     public AsyncInvoker<UnpublishAssetsRequest, UnpublishAssetsResponse> unpublishAssetsAsyncInvoker(
         UnpublishAssetsRequest request) {
-        return new AsyncInvoker<UnpublishAssetsRequest, UnpublishAssetsResponse>(request, VodMeta.unpublishAssets,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.unpublishAssets, hcClient);
     }
 
     /**
@@ -1422,7 +1385,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetRequest 请求对象
+     * @param request UpdateAssetRequest 请求对象
      * @return CompletableFuture<UpdateAssetResponse>
      */
     public CompletableFuture<UpdateAssetResponse> updateAssetAsync(UpdateAssetRequest request) {
@@ -1442,11 +1405,11 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetRequest 请求对象
+     * @param request UpdateAssetRequest 请求对象
      * @return AsyncInvoker<UpdateAssetRequest, UpdateAssetResponse>
      */
     public AsyncInvoker<UpdateAssetRequest, UpdateAssetResponse> updateAssetAsyncInvoker(UpdateAssetRequest request) {
-        return new AsyncInvoker<UpdateAssetRequest, UpdateAssetResponse>(request, VodMeta.updateAsset, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.updateAsset, hcClient);
     }
 
     /**
@@ -1456,7 +1419,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetCategoryRequest 请求对象
+     * @param request UpdateAssetCategoryRequest 请求对象
      * @return CompletableFuture<UpdateAssetCategoryResponse>
      */
     public CompletableFuture<UpdateAssetCategoryResponse> updateAssetCategoryAsync(UpdateAssetCategoryRequest request) {
@@ -1470,13 +1433,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetCategoryRequest 请求对象
+     * @param request UpdateAssetCategoryRequest 请求对象
      * @return AsyncInvoker<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse>
      */
     public AsyncInvoker<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse> updateAssetCategoryAsyncInvoker(
         UpdateAssetCategoryRequest request) {
-        return new AsyncInvoker<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse>(request,
-            VodMeta.updateAssetCategory, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.updateAssetCategory, hcClient);
     }
 
     /**
@@ -1486,7 +1448,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetMetaRequest 请求对象
+     * @param request UpdateAssetMetaRequest 请求对象
      * @return CompletableFuture<UpdateAssetMetaResponse>
      */
     public CompletableFuture<UpdateAssetMetaResponse> updateAssetMetaAsync(UpdateAssetMetaRequest request) {
@@ -1500,13 +1462,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetMetaRequest 请求对象
+     * @param request UpdateAssetMetaRequest 请求对象
      * @return AsyncInvoker<UpdateAssetMetaRequest, UpdateAssetMetaResponse>
      */
     public AsyncInvoker<UpdateAssetMetaRequest, UpdateAssetMetaResponse> updateAssetMetaAsyncInvoker(
         UpdateAssetMetaRequest request) {
-        return new AsyncInvoker<UpdateAssetMetaRequest, UpdateAssetMetaResponse>(request, VodMeta.updateAssetMeta,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.updateAssetMeta, hcClient);
     }
 
     /**
@@ -1516,7 +1477,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBucketAuthorizedRequest 请求对象
+     * @param request UpdateBucketAuthorizedRequest 请求对象
      * @return CompletableFuture<UpdateBucketAuthorizedResponse>
      */
     public CompletableFuture<UpdateBucketAuthorizedResponse> updateBucketAuthorizedAsync(
@@ -1531,13 +1492,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBucketAuthorizedRequest 请求对象
+     * @param request UpdateBucketAuthorizedRequest 请求对象
      * @return AsyncInvoker<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse>
      */
     public AsyncInvoker<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> updateBucketAuthorizedAsyncInvoker(
         UpdateBucketAuthorizedRequest request) {
-        return new AsyncInvoker<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse>(request,
-            VodMeta.updateBucketAuthorized, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.updateBucketAuthorized, hcClient);
     }
 
     /**
@@ -1547,7 +1507,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCoverByThumbnailRequest 请求对象
+     * @param request UpdateCoverByThumbnailRequest 请求对象
      * @return CompletableFuture<UpdateCoverByThumbnailResponse>
      */
     public CompletableFuture<UpdateCoverByThumbnailResponse> updateCoverByThumbnailAsync(
@@ -1562,13 +1522,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCoverByThumbnailRequest 请求对象
+     * @param request UpdateCoverByThumbnailRequest 请求对象
      * @return AsyncInvoker<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse>
      */
     public AsyncInvoker<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> updateCoverByThumbnailAsyncInvoker(
         UpdateCoverByThumbnailRequest request) {
-        return new AsyncInvoker<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse>(request,
-            VodMeta.updateCoverByThumbnail, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.updateCoverByThumbnail, hcClient);
     }
 
     /**
@@ -1578,7 +1537,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateGroupRequest 请求对象
+     * @param request UpdateTemplateGroupRequest 请求对象
      * @return CompletableFuture<UpdateTemplateGroupResponse>
      */
     public CompletableFuture<UpdateTemplateGroupResponse> updateTemplateGroupAsync(UpdateTemplateGroupRequest request) {
@@ -1592,13 +1551,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateGroupRequest 请求对象
+     * @param request UpdateTemplateGroupRequest 请求对象
      * @return AsyncInvoker<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse>
      */
     public AsyncInvoker<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> updateTemplateGroupAsyncInvoker(
         UpdateTemplateGroupRequest request) {
-        return new AsyncInvoker<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse>(request,
-            VodMeta.updateTemplateGroup, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.updateTemplateGroup, hcClient);
     }
 
     /**
@@ -1608,7 +1566,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateGroupCollectionRequest 请求对象
+     * @param request UpdateTemplateGroupCollectionRequest 请求对象
      * @return CompletableFuture<UpdateTemplateGroupCollectionResponse>
      */
     public CompletableFuture<UpdateTemplateGroupCollectionResponse> updateTemplateGroupCollectionAsync(
@@ -1623,13 +1581,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateGroupCollectionRequest 请求对象
+     * @param request UpdateTemplateGroupCollectionRequest 请求对象
      * @return AsyncInvoker<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse>
      */
     public AsyncInvoker<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse> updateTemplateGroupCollectionAsyncInvoker(
         UpdateTemplateGroupCollectionRequest request) {
-        return new AsyncInvoker<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse>(request,
-            VodMeta.updateTemplateGroupCollection, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.updateTemplateGroupCollection, hcClient);
     }
 
     /**
@@ -1639,7 +1596,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTranscodeTemplateRequest 请求对象
+     * @param request UpdateTranscodeTemplateRequest 请求对象
      * @return CompletableFuture<UpdateTranscodeTemplateResponse>
      */
     public CompletableFuture<UpdateTranscodeTemplateResponse> updateTranscodeTemplateAsync(
@@ -1654,13 +1611,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTranscodeTemplateRequest 请求对象
+     * @param request UpdateTranscodeTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse>
      */
     public AsyncInvoker<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse> updateTranscodeTemplateAsyncInvoker(
         UpdateTranscodeTemplateRequest request) {
-        return new AsyncInvoker<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse>(request,
-            VodMeta.updateTranscodeTemplate, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.updateTranscodeTemplate, hcClient);
     }
 
     /**
@@ -1670,7 +1626,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWatermarkTemplateRequest 请求对象
+     * @param request UpdateWatermarkTemplateRequest 请求对象
      * @return CompletableFuture<UpdateWatermarkTemplateResponse>
      */
     public CompletableFuture<UpdateWatermarkTemplateResponse> updateWatermarkTemplateAsync(
@@ -1685,13 +1641,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWatermarkTemplateRequest 请求对象
+     * @param request UpdateWatermarkTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse>
      */
     public AsyncInvoker<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> updateWatermarkTemplateAsyncInvoker(
         UpdateWatermarkTemplateRequest request) {
-        return new AsyncInvoker<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse>(request,
-            VodMeta.updateWatermarkTemplate, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.updateWatermarkTemplate, hcClient);
     }
 
     /**
@@ -1701,7 +1656,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadMetaDataByUrlRequest 请求对象
+     * @param request UploadMetaDataByUrlRequest 请求对象
      * @return CompletableFuture<UploadMetaDataByUrlResponse>
      */
     public CompletableFuture<UploadMetaDataByUrlResponse> uploadMetaDataByUrlAsync(UploadMetaDataByUrlRequest request) {
@@ -1715,13 +1670,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadMetaDataByUrlRequest 请求对象
+     * @param request UploadMetaDataByUrlRequest 请求对象
      * @return AsyncInvoker<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse>
      */
     public AsyncInvoker<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse> uploadMetaDataByUrlAsyncInvoker(
         UploadMetaDataByUrlRequest request) {
-        return new AsyncInvoker<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse>(request,
-            VodMeta.uploadMetaDataByUrl, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.uploadMetaDataByUrl, hcClient);
     }
 
     /**
@@ -1731,7 +1685,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTakeOverTaskRequest 请求对象
+     * @param request ListTakeOverTaskRequest 请求对象
      * @return CompletableFuture<ListTakeOverTaskResponse>
      */
     public CompletableFuture<ListTakeOverTaskResponse> listTakeOverTaskAsync(ListTakeOverTaskRequest request) {
@@ -1745,13 +1699,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTakeOverTaskRequest 请求对象
+     * @param request ListTakeOverTaskRequest 请求对象
      * @return AsyncInvoker<ListTakeOverTaskRequest, ListTakeOverTaskResponse>
      */
     public AsyncInvoker<ListTakeOverTaskRequest, ListTakeOverTaskResponse> listTakeOverTaskAsyncInvoker(
         ListTakeOverTaskRequest request) {
-        return new AsyncInvoker<ListTakeOverTaskRequest, ListTakeOverTaskResponse>(request, VodMeta.listTakeOverTask,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.listTakeOverTask, hcClient);
     }
 
     /**
@@ -1761,7 +1714,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTakeOverAssetDetailsRequest 请求对象
+     * @param request ShowTakeOverAssetDetailsRequest 请求对象
      * @return CompletableFuture<ShowTakeOverAssetDetailsResponse>
      */
     public CompletableFuture<ShowTakeOverAssetDetailsResponse> showTakeOverAssetDetailsAsync(
@@ -1776,13 +1729,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTakeOverAssetDetailsRequest 请求对象
+     * @param request ShowTakeOverAssetDetailsRequest 请求对象
      * @return AsyncInvoker<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse>
      */
     public AsyncInvoker<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse> showTakeOverAssetDetailsAsyncInvoker(
         ShowTakeOverAssetDetailsRequest request) {
-        return new AsyncInvoker<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse>(request,
-            VodMeta.showTakeOverAssetDetails, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.showTakeOverAssetDetails, hcClient);
     }
 
     /**
@@ -1792,7 +1744,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTakeOverTaskDetailsRequest 请求对象
+     * @param request ShowTakeOverTaskDetailsRequest 请求对象
      * @return CompletableFuture<ShowTakeOverTaskDetailsResponse>
      */
     public CompletableFuture<ShowTakeOverTaskDetailsResponse> showTakeOverTaskDetailsAsync(
@@ -1807,13 +1759,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTakeOverTaskDetailsRequest 请求对象
+     * @param request ShowTakeOverTaskDetailsRequest 请求对象
      * @return AsyncInvoker<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse>
      */
     public AsyncInvoker<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> showTakeOverTaskDetailsAsyncInvoker(
         ShowTakeOverTaskDetailsRequest request) {
-        return new AsyncInvoker<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse>(request,
-            VodMeta.showTakeOverTaskDetails, hcClient);
+        return new AsyncInvoker<>(request, VodMeta.showTakeOverTaskDetails, hcClient);
     }
 
     /**
@@ -1827,7 +1778,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVodRetrievalRequest 请求对象
+     * @param request ShowVodRetrievalRequest 请求对象
      * @return CompletableFuture<ShowVodRetrievalResponse>
      */
     public CompletableFuture<ShowVodRetrievalResponse> showVodRetrievalAsync(ShowVodRetrievalRequest request) {
@@ -1845,13 +1796,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVodRetrievalRequest 请求对象
+     * @param request ShowVodRetrievalRequest 请求对象
      * @return AsyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse>
      */
     public AsyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse> showVodRetrievalAsyncInvoker(
         ShowVodRetrievalRequest request) {
-        return new AsyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse>(request, VodMeta.showVodRetrieval,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.showVodRetrieval, hcClient);
     }
 
     /**
@@ -1861,7 +1811,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifySubtitleRequest 请求对象
+     * @param request ModifySubtitleRequest 请求对象
      * @return CompletableFuture<ModifySubtitleResponse>
      */
     public CompletableFuture<ModifySubtitleResponse> modifySubtitleAsync(ModifySubtitleRequest request) {
@@ -1875,13 +1825,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifySubtitleRequest 请求对象
+     * @param request ModifySubtitleRequest 请求对象
      * @return AsyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse>
      */
     public AsyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitleAsyncInvoker(
         ModifySubtitleRequest request) {
-        return new AsyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse>(request, VodMeta.modifySubtitle,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.modifySubtitle, hcClient);
     }
 
     /**
@@ -1892,7 +1841,7 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStorageModeRequest 请求对象
+     * @param request UpdateStorageModeRequest 请求对象
      * @return CompletableFuture<UpdateStorageModeResponse>
      */
     public CompletableFuture<UpdateStorageModeResponse> updateStorageModeAsync(UpdateStorageModeRequest request) {
@@ -1907,13 +1856,12 @@ public class VodAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStorageModeRequest 请求对象
+     * @param request UpdateStorageModeRequest 请求对象
      * @return AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse>
      */
     public AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse> updateStorageModeAsyncInvoker(
         UpdateStorageModeRequest request) {
-        return new AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse>(request, VodMeta.updateStorageMode,
-            hcClient);
+        return new AsyncInvoker<>(request, VodMeta.updateStorageMode, hcClient);
     }
 
 }

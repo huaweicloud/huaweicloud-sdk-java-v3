@@ -64,7 +64,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAndStartRandomClusterJobRequest 请求对象
+     * @param request CreateAndStartRandomClusterJobRequest 请求对象
      * @return CreateAndStartRandomClusterJobResponse
      */
     public CreateAndStartRandomClusterJobResponse createAndStartRandomClusterJob(
@@ -79,13 +79,12 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAndStartRandomClusterJobRequest 请求对象
+     * @param request CreateAndStartRandomClusterJobRequest 请求对象
      * @return SyncInvoker<CreateAndStartRandomClusterJobRequest, CreateAndStartRandomClusterJobResponse>
      */
     public SyncInvoker<CreateAndStartRandomClusterJobRequest, CreateAndStartRandomClusterJobResponse> createAndStartRandomClusterJobInvoker(
         CreateAndStartRandomClusterJobRequest request) {
-        return new SyncInvoker<CreateAndStartRandomClusterJobRequest, CreateAndStartRandomClusterJobResponse>(request,
-            CdmMeta.createAndStartRandomClusterJob, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.createAndStartRandomClusterJob, hcClient);
     }
 
     /**
@@ -95,7 +94,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return CreateClusterResponse
      */
     public CreateClusterResponse createCluster(CreateClusterRequest request) {
@@ -109,11 +108,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return SyncInvoker<CreateClusterRequest, CreateClusterResponse>
      */
     public SyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterInvoker(CreateClusterRequest request) {
-        return new SyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, CdmMeta.createCluster, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.createCluster, hcClient);
     }
 
     /**
@@ -123,7 +122,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateJobRequest 请求对象
+     * @param request CreateJobRequest 请求对象
      * @return CreateJobResponse
      */
     public CreateJobResponse createJob(CreateJobRequest request) {
@@ -137,11 +136,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateJobRequest 请求对象
+     * @param request CreateJobRequest 请求对象
      * @return SyncInvoker<CreateJobRequest, CreateJobResponse>
      */
     public SyncInvoker<CreateJobRequest, CreateJobResponse> createJobInvoker(CreateJobRequest request) {
-        return new SyncInvoker<CreateJobRequest, CreateJobResponse>(request, CdmMeta.createJob, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.createJob, hcClient);
     }
 
     /**
@@ -151,7 +150,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLinkRequest 请求对象
+     * @param request CreateLinkRequest 请求对象
      * @return CreateLinkResponse
      */
     public CreateLinkResponse createLink(CreateLinkRequest request) {
@@ -165,11 +164,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLinkRequest 请求对象
+     * @param request CreateLinkRequest 请求对象
      * @return SyncInvoker<CreateLinkRequest, CreateLinkResponse>
      */
     public SyncInvoker<CreateLinkRequest, CreateLinkResponse> createLinkInvoker(CreateLinkRequest request) {
-        return new SyncInvoker<CreateLinkRequest, CreateLinkResponse>(request, CdmMeta.createLink, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.createLink, hcClient);
     }
 
     /**
@@ -179,7 +178,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterRequest 请求对象
+     * @param request DeleteClusterRequest 请求对象
      * @return DeleteClusterResponse
      */
     public DeleteClusterResponse deleteCluster(DeleteClusterRequest request) {
@@ -193,11 +192,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterRequest 请求对象
+     * @param request DeleteClusterRequest 请求对象
      * @return SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
      */
     public SyncInvoker<DeleteClusterRequest, DeleteClusterResponse> deleteClusterInvoker(DeleteClusterRequest request) {
-        return new SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>(request, CdmMeta.deleteCluster, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.deleteCluster, hcClient);
     }
 
     /**
@@ -207,7 +206,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobRequest 请求对象
+     * @param request DeleteJobRequest 请求对象
      * @return DeleteJobResponse
      */
     public DeleteJobResponse deleteJob(DeleteJobRequest request) {
@@ -221,11 +220,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobRequest 请求对象
+     * @param request DeleteJobRequest 请求对象
      * @return SyncInvoker<DeleteJobRequest, DeleteJobResponse>
      */
     public SyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobInvoker(DeleteJobRequest request) {
-        return new SyncInvoker<DeleteJobRequest, DeleteJobResponse>(request, CdmMeta.deleteJob, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.deleteJob, hcClient);
     }
 
     /**
@@ -235,7 +234,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLinkRequest 请求对象
+     * @param request DeleteLinkRequest 请求对象
      * @return DeleteLinkResponse
      */
     public DeleteLinkResponse deleteLink(DeleteLinkRequest request) {
@@ -249,11 +248,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLinkRequest 请求对象
+     * @param request DeleteLinkRequest 请求对象
      * @return SyncInvoker<DeleteLinkRequest, DeleteLinkResponse>
      */
     public SyncInvoker<DeleteLinkRequest, DeleteLinkResponse> deleteLinkInvoker(DeleteLinkRequest request) {
-        return new SyncInvoker<DeleteLinkRequest, DeleteLinkResponse>(request, CdmMeta.deleteLink, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.deleteLink, hcClient);
     }
 
     /**
@@ -263,7 +262,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersRequest 请求对象
+     * @param request ListClustersRequest 请求对象
      * @return ListClustersResponse
      */
     public ListClustersResponse listClusters(ListClustersRequest request) {
@@ -277,11 +276,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersRequest 请求对象
+     * @param request ListClustersRequest 请求对象
      * @return SyncInvoker<ListClustersRequest, ListClustersResponse>
      */
     public SyncInvoker<ListClustersRequest, ListClustersResponse> listClustersInvoker(ListClustersRequest request) {
-        return new SyncInvoker<ListClustersRequest, ListClustersResponse>(request, CdmMeta.listClusters, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.listClusters, hcClient);
     }
 
     /**
@@ -291,7 +290,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartClusterRequest 请求对象
+     * @param request RestartClusterRequest 请求对象
      * @return RestartClusterResponse
      */
     public RestartClusterResponse restartCluster(RestartClusterRequest request) {
@@ -305,13 +304,12 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartClusterRequest 请求对象
+     * @param request RestartClusterRequest 请求对象
      * @return SyncInvoker<RestartClusterRequest, RestartClusterResponse>
      */
     public SyncInvoker<RestartClusterRequest, RestartClusterResponse> restartClusterInvoker(
         RestartClusterRequest request) {
-        return new SyncInvoker<RestartClusterRequest, RestartClusterResponse>(request, CdmMeta.restartCluster,
-            hcClient);
+        return new SyncInvoker<>(request, CdmMeta.restartCluster, hcClient);
     }
 
     /**
@@ -321,7 +319,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterDetailRequest 请求对象
+     * @param request ShowClusterDetailRequest 请求对象
      * @return ShowClusterDetailResponse
      */
     public ShowClusterDetailResponse showClusterDetail(ShowClusterDetailRequest request) {
@@ -335,13 +333,12 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterDetailRequest 请求对象
+     * @param request ShowClusterDetailRequest 请求对象
      * @return SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse>
      */
     public SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse> showClusterDetailInvoker(
         ShowClusterDetailRequest request) {
-        return new SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse>(request, CdmMeta.showClusterDetail,
-            hcClient);
+        return new SyncInvoker<>(request, CdmMeta.showClusterDetail, hcClient);
     }
 
     /**
@@ -351,7 +348,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobStatusRequest 请求对象
+     * @param request ShowJobStatusRequest 请求对象
      * @return ShowJobStatusResponse
      */
     public ShowJobStatusResponse showJobStatus(ShowJobStatusRequest request) {
@@ -365,11 +362,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobStatusRequest 请求对象
+     * @param request ShowJobStatusRequest 请求对象
      * @return SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>
      */
     public SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatusInvoker(ShowJobStatusRequest request) {
-        return new SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>(request, CdmMeta.showJobStatus, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.showJobStatus, hcClient);
     }
 
     /**
@@ -379,7 +376,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobsRequest 请求对象
+     * @param request ShowJobsRequest 请求对象
      * @return ShowJobsResponse
      */
     public ShowJobsResponse showJobs(ShowJobsRequest request) {
@@ -393,11 +390,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobsRequest 请求对象
+     * @param request ShowJobsRequest 请求对象
      * @return SyncInvoker<ShowJobsRequest, ShowJobsResponse>
      */
     public SyncInvoker<ShowJobsRequest, ShowJobsResponse> showJobsInvoker(ShowJobsRequest request) {
-        return new SyncInvoker<ShowJobsRequest, ShowJobsResponse>(request, CdmMeta.showJobs, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.showJobs, hcClient);
     }
 
     /**
@@ -407,7 +404,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLinkRequest 请求对象
+     * @param request ShowLinkRequest 请求对象
      * @return ShowLinkResponse
      */
     public ShowLinkResponse showLink(ShowLinkRequest request) {
@@ -421,11 +418,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLinkRequest 请求对象
+     * @param request ShowLinkRequest 请求对象
      * @return SyncInvoker<ShowLinkRequest, ShowLinkResponse>
      */
     public SyncInvoker<ShowLinkRequest, ShowLinkResponse> showLinkInvoker(ShowLinkRequest request) {
-        return new SyncInvoker<ShowLinkRequest, ShowLinkResponse>(request, CdmMeta.showLink, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.showLink, hcClient);
     }
 
     /**
@@ -435,7 +432,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubmissionsRequest 请求对象
+     * @param request ShowSubmissionsRequest 请求对象
      * @return ShowSubmissionsResponse
      */
     public ShowSubmissionsResponse showSubmissions(ShowSubmissionsRequest request) {
@@ -449,13 +446,12 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubmissionsRequest 请求对象
+     * @param request ShowSubmissionsRequest 请求对象
      * @return SyncInvoker<ShowSubmissionsRequest, ShowSubmissionsResponse>
      */
     public SyncInvoker<ShowSubmissionsRequest, ShowSubmissionsResponse> showSubmissionsInvoker(
         ShowSubmissionsRequest request) {
-        return new SyncInvoker<ShowSubmissionsRequest, ShowSubmissionsResponse>(request, CdmMeta.showSubmissions,
-            hcClient);
+        return new SyncInvoker<>(request, CdmMeta.showSubmissions, hcClient);
     }
 
     /**
@@ -465,7 +461,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartClusterRequest 请求对象
+     * @param request StartClusterRequest 请求对象
      * @return StartClusterResponse
      */
     public StartClusterResponse startCluster(StartClusterRequest request) {
@@ -479,11 +475,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartClusterRequest 请求对象
+     * @param request StartClusterRequest 请求对象
      * @return SyncInvoker<StartClusterRequest, StartClusterResponse>
      */
     public SyncInvoker<StartClusterRequest, StartClusterResponse> startClusterInvoker(StartClusterRequest request) {
-        return new SyncInvoker<StartClusterRequest, StartClusterResponse>(request, CdmMeta.startCluster, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.startCluster, hcClient);
     }
 
     /**
@@ -493,7 +489,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartJobRequest 请求对象
+     * @param request StartJobRequest 请求对象
      * @return StartJobResponse
      */
     public StartJobResponse startJob(StartJobRequest request) {
@@ -507,11 +503,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartJobRequest 请求对象
+     * @param request StartJobRequest 请求对象
      * @return SyncInvoker<StartJobRequest, StartJobResponse>
      */
     public SyncInvoker<StartJobRequest, StartJobResponse> startJobInvoker(StartJobRequest request) {
-        return new SyncInvoker<StartJobRequest, StartJobResponse>(request, CdmMeta.startJob, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.startJob, hcClient);
     }
 
     /**
@@ -521,7 +517,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopClusterRequest 请求对象
+     * @param request StopClusterRequest 请求对象
      * @return StopClusterResponse
      */
     public StopClusterResponse stopCluster(StopClusterRequest request) {
@@ -535,11 +531,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopClusterRequest 请求对象
+     * @param request StopClusterRequest 请求对象
      * @return SyncInvoker<StopClusterRequest, StopClusterResponse>
      */
     public SyncInvoker<StopClusterRequest, StopClusterResponse> stopClusterInvoker(StopClusterRequest request) {
-        return new SyncInvoker<StopClusterRequest, StopClusterResponse>(request, CdmMeta.stopCluster, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.stopCluster, hcClient);
     }
 
     /**
@@ -549,7 +545,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobRequest 请求对象
+     * @param request StopJobRequest 请求对象
      * @return StopJobResponse
      */
     public StopJobResponse stopJob(StopJobRequest request) {
@@ -563,11 +559,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobRequest 请求对象
+     * @param request StopJobRequest 请求对象
      * @return SyncInvoker<StopJobRequest, StopJobResponse>
      */
     public SyncInvoker<StopJobRequest, StopJobResponse> stopJobInvoker(StopJobRequest request) {
-        return new SyncInvoker<StopJobRequest, StopJobResponse>(request, CdmMeta.stopJob, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.stopJob, hcClient);
     }
 
     /**
@@ -577,7 +573,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobRequest 请求对象
+     * @param request UpdateJobRequest 请求对象
      * @return UpdateJobResponse
      */
     public UpdateJobResponse updateJob(UpdateJobRequest request) {
@@ -591,11 +587,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobRequest 请求对象
+     * @param request UpdateJobRequest 请求对象
      * @return SyncInvoker<UpdateJobRequest, UpdateJobResponse>
      */
     public SyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobInvoker(UpdateJobRequest request) {
-        return new SyncInvoker<UpdateJobRequest, UpdateJobResponse>(request, CdmMeta.updateJob, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.updateJob, hcClient);
     }
 
     /**
@@ -605,7 +601,7 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLinkRequest 请求对象
+     * @param request UpdateLinkRequest 请求对象
      * @return UpdateLinkResponse
      */
     public UpdateLinkResponse updateLink(UpdateLinkRequest request) {
@@ -619,11 +615,11 @@ public class CdmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLinkRequest 请求对象
+     * @param request UpdateLinkRequest 请求对象
      * @return SyncInvoker<UpdateLinkRequest, UpdateLinkResponse>
      */
     public SyncInvoker<UpdateLinkRequest, UpdateLinkResponse> updateLinkInvoker(UpdateLinkRequest request) {
-        return new SyncInvoker<UpdateLinkRequest, UpdateLinkResponse>(request, CdmMeta.updateLink, hcClient);
+        return new SyncInvoker<>(request, CdmMeta.updateLink, hcClient);
     }
 
 }

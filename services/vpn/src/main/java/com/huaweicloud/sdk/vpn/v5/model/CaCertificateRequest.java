@@ -11,9 +11,31 @@ import java.util.Objects;
 public class CaCertificateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
 
     private String content;
+
+    public CaCertificateRequest withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 使用已有证书ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public CaCertificateRequest withContent(String content) {
         this.content = content;
@@ -41,18 +63,19 @@ public class CaCertificateRequest {
             return false;
         }
         CaCertificateRequest that = (CaCertificateRequest) obj;
-        return Objects.equals(this.content, that.content);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.content, that.content);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(content);
+        return Objects.hash(id, content);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CaCertificateRequest {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("}");
         return sb.toString();

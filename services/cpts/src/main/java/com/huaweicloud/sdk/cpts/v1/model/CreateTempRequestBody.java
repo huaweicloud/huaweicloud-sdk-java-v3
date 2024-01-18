@@ -44,7 +44,7 @@ public class CreateTempRequestBody {
     }
 
     /**
-     * project_id
+     * 所属工程id
      * minimum: 0
      * maximum: 2147483647
      * @return projectId
@@ -63,7 +63,7 @@ public class CreateTempRequestBody {
     }
 
     /**
-     * temp_type
+     * 事务类型
      * minimum: 0
      * maximum: 2147483647
      * @return tempType
@@ -82,7 +82,7 @@ public class CreateTempRequestBody {
     }
 
     /**
-     * name
+     * 事务名称
      * @return name
      */
     public String getName() {
@@ -99,7 +99,7 @@ public class CreateTempRequestBody {
     }
 
     /**
-     * description
+     * 描述信息
      * @return description
      */
     public String getDescription() {
@@ -132,7 +132,7 @@ public class CreateTempRequestBody {
     }
 
     /**
-     * contents
+     * 事务脚本信息
      * @return contents
      */
     public List<Object> getContents() {

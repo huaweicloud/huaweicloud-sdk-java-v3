@@ -249,9 +249,9 @@ import java.util.List;
 public class LakeFormationMeta {
 
     public static final HttpRequestDef<ApplyForAccessRequest, ApplyForAccessResponse> applyForAccess =
-        genForapplyForAccess();
+        genForApplyForAccess();
 
-    private static HttpRequestDef<ApplyForAccessRequest, ApplyForAccessResponse> genForapplyForAccess() {
+    private static HttpRequestDef<ApplyForAccessRequest, ApplyForAccessResponse> genForApplyForAccess() {
         // basic
         HttpRequestDef.Builder<ApplyForAccessRequest, ApplyForAccessResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ApplyForAccessRequest.class, ApplyForAccessResponse.class)
@@ -264,16 +264,13 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ApplyForAccessRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ApplyForAccessRequest::getInstanceId, ApplyForAccessRequest::setInstanceId));
         builder.<List<AccessRequestInfo>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ApplyForAccessRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(AccessRequestInfo.class));
+            f -> f.withMarshaller(ApplyForAccessRequest::getBody, ApplyForAccessRequest::setBody)
+                .withInnerContainerType(AccessRequestInfo.class));
 
         // response
 
@@ -281,9 +278,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<BatchAuthorizeInterfaceRequest, BatchAuthorizeInterfaceResponse> batchAuthorizeInterface =
-        genForbatchAuthorizeInterface();
+        genForBatchAuthorizeInterface();
 
-    private static HttpRequestDef<BatchAuthorizeInterfaceRequest, BatchAuthorizeInterfaceResponse> genForbatchAuthorizeInterface() {
+    private static HttpRequestDef<BatchAuthorizeInterfaceRequest, BatchAuthorizeInterfaceResponse> genForBatchAuthorizeInterface() {
         // basic
         HttpRequestDef.Builder<BatchAuthorizeInterfaceRequest, BatchAuthorizeInterfaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchAuthorizeInterfaceRequest.class, BatchAuthorizeInterfaceResponse.class)
@@ -296,16 +293,13 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAuthorizeInterfaceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchAuthorizeInterfaceRequest::getInstanceId,
+                BatchAuthorizeInterfaceRequest::setInstanceId));
         builder.<AccessPolicyInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AccessPolicyInput.class),
-            f -> f.withMarshaller(BatchAuthorizeInterfaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAuthorizeInterfaceRequest::getBody, BatchAuthorizeInterfaceRequest::setBody));
 
         // response
 
@@ -313,9 +307,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<BatchCancelAuthorizationInterfaceRequest, BatchCancelAuthorizationInterfaceResponse> batchCancelAuthorizationInterface =
-        genForbatchCancelAuthorizationInterface();
+        genForBatchCancelAuthorizationInterface();
 
-    private static HttpRequestDef<BatchCancelAuthorizationInterfaceRequest, BatchCancelAuthorizationInterfaceResponse> genForbatchCancelAuthorizationInterface() {
+    private static HttpRequestDef<BatchCancelAuthorizationInterfaceRequest, BatchCancelAuthorizationInterfaceResponse> genForBatchCancelAuthorizationInterface() {
         // basic
         HttpRequestDef.Builder<BatchCancelAuthorizationInterfaceRequest, BatchCancelAuthorizationInterfaceResponse> builder =
             HttpRequestDef
@@ -331,16 +325,14 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCancelAuthorizationInterfaceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchCancelAuthorizationInterfaceRequest::getInstanceId,
+                BatchCancelAuthorizationInterfaceRequest::setInstanceId));
         builder.<AccessPolicyInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AccessPolicyInput.class),
-            f -> f.withMarshaller(BatchCancelAuthorizationInterfaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCancelAuthorizationInterfaceRequest::getBody,
+                BatchCancelAuthorizationInterfaceRequest::setBody));
 
         // response
 
@@ -348,9 +340,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<BatchCheckPermissionRequest, BatchCheckPermissionResponse> batchCheckPermission =
-        genForbatchCheckPermission();
+        genForBatchCheckPermission();
 
-    private static HttpRequestDef<BatchCheckPermissionRequest, BatchCheckPermissionResponse> genForbatchCheckPermission() {
+    private static HttpRequestDef<BatchCheckPermissionRequest, BatchCheckPermissionResponse> genForBatchCheckPermission() {
         // basic
         HttpRequestDef.Builder<BatchCheckPermissionRequest, BatchCheckPermissionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCheckPermissionRequest.class, BatchCheckPermissionResponse.class)
@@ -363,33 +355,29 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCheckPermissionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchCheckPermissionRequest::getInstanceId,
+                BatchCheckPermissionRequest::setInstanceId));
         builder.<CheckPermissionInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckPermissionInput.class),
-            f -> f.withMarshaller(BatchCheckPermissionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCheckPermissionRequest::getBody, BatchCheckPermissionRequest::setBody));
 
         // response
         builder.<List<CheckPermissionResult>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchCheckPermissionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(CheckPermissionResult.class));
+            f -> f.withMarshaller(BatchCheckPermissionResponse::getBody, BatchCheckPermissionResponse::setBody)
+                .withInnerContainerType(CheckPermissionResult.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateAccessClientRequest, CreateAccessClientResponse> createAccessClient =
-        genForcreateAccessClient();
+        genForCreateAccessClient();
 
-    private static HttpRequestDef<CreateAccessClientRequest, CreateAccessClientResponse> genForcreateAccessClient() {
+    private static HttpRequestDef<CreateAccessClientRequest, CreateAccessClientResponse> genForCreateAccessClient() {
         // basic
         HttpRequestDef.Builder<CreateAccessClientRequest, CreateAccessClientResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAccessClientRequest.class, CreateAccessClientResponse.class)
@@ -402,16 +390,12 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAccessClientRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAccessClientRequest::getInstanceId, CreateAccessClientRequest::setInstanceId));
         builder.<AccessClientRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AccessClientRequestBody.class),
-            f -> f.withMarshaller(CreateAccessClientRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAccessClientRequest::getBody, CreateAccessClientRequest::setBody));
 
         // response
 
@@ -419,9 +403,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<DeleteAccessClientRequest, DeleteAccessClientResponse> deleteAccessClient =
-        genFordeleteAccessClient();
+        genForDeleteAccessClient();
 
-    private static HttpRequestDef<DeleteAccessClientRequest, DeleteAccessClientResponse> genFordeleteAccessClient() {
+    private static HttpRequestDef<DeleteAccessClientRequest, DeleteAccessClientResponse> genForDeleteAccessClient() {
         // basic
         HttpRequestDef.Builder<DeleteAccessClientRequest, DeleteAccessClientResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAccessClientRequest.class, DeleteAccessClientResponse.class)
@@ -434,16 +418,12 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAccessClientRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAccessClientRequest::getInstanceId, DeleteAccessClientRequest::setInstanceId));
         builder.<String>withRequestField("client_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAccessClientRequest::getClientId, (req, v) -> {
-                req.setClientId(v);
-            }));
+            f -> f.withMarshaller(DeleteAccessClientRequest::getClientId, DeleteAccessClientRequest::setClientId));
 
         // response
 
@@ -451,9 +431,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListAccessClientInfosRequest, ListAccessClientInfosResponse> listAccessClientInfos =
-        genForlistAccessClientInfos();
+        genForListAccessClientInfos();
 
-    private static HttpRequestDef<ListAccessClientInfosRequest, ListAccessClientInfosResponse> genForlistAccessClientInfos() {
+    private static HttpRequestDef<ListAccessClientInfosRequest, ListAccessClientInfosResponse> genForListAccessClientInfos() {
         // basic
         HttpRequestDef.Builder<ListAccessClientInfosRequest, ListAccessClientInfosResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAccessClientInfosRequest.class, ListAccessClientInfosResponse.class)
@@ -466,37 +446,28 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessClientInfosRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAccessClientInfosRequest::getInstanceId,
+                ListAccessClientInfosRequest::setInstanceId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessClientInfosRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListAccessClientInfosRequest::getId, ListAccessClientInfosRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessClientInfosRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAccessClientInfosRequest::getName, ListAccessClientInfosRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccessClientInfosRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAccessClientInfosRequest::getOffset, ListAccessClientInfosRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccessClientInfosRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAccessClientInfosRequest::getLimit, ListAccessClientInfosRequest::setLimit));
 
         // response
 
@@ -504,9 +475,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListAccessInfosRequest, ListAccessInfosResponse> listAccessInfos =
-        genForlistAccessInfos();
+        genForListAccessInfos();
 
-    private static HttpRequestDef<ListAccessInfosRequest, ListAccessInfosResponse> genForlistAccessInfos() {
+    private static HttpRequestDef<ListAccessInfosRequest, ListAccessInfosResponse> genForListAccessInfos() {
         // basic
         HttpRequestDef.Builder<ListAccessInfosRequest, ListAccessInfosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAccessInfosRequest.class, ListAccessInfosResponse.class)
@@ -519,23 +490,17 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessInfosRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAccessInfosRequest::getInstanceId, ListAccessInfosRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccessInfosRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAccessInfosRequest::getOffset, ListAccessInfosRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccessInfosRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAccessInfosRequest::getLimit, ListAccessInfosRequest::setLimit));
 
         // response
 
@@ -543,9 +508,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListInterfacesRequest, ListInterfacesResponse> listInterfaces =
-        genForlistInterfaces();
+        genForListInterfaces();
 
-    private static HttpRequestDef<ListInterfacesRequest, ListInterfacesResponse> genForlistInterfaces() {
+    private static HttpRequestDef<ListInterfacesRequest, ListInterfacesResponse> genForListInterfaces() {
         // basic
         HttpRequestDef.Builder<ListInterfacesRequest, ListInterfacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInterfacesRequest.class, ListInterfacesResponse.class)
@@ -558,74 +523,57 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInterfacesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInterfacesRequest::getInstanceId, ListInterfacesRequest::setInstanceId));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInterfacesRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListInterfacesRequest::getFilter, ListInterfacesRequest::setFilter));
         builder.<String>withRequestField("resource_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInterfacesRequest::getResourceName, (req, v) -> {
-                req.setResourceName(v);
-            }));
+            f -> f.withMarshaller(ListInterfacesRequest::getResourceName, ListInterfacesRequest::setResourceName));
         builder.<ListInterfacesRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInterfacesRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListInterfacesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListInterfacesRequest::getResourceType, ListInterfacesRequest::setResourceType));
         builder.<ListInterfacesRequest.PrincipalSourceEnum>withRequestField("principal_source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInterfacesRequest.PrincipalSourceEnum.class),
-            f -> f.withMarshaller(ListInterfacesRequest::getPrincipalSource, (req, v) -> {
-                req.setPrincipalSource(v);
-            }));
+            f -> f.withMarshaller(ListInterfacesRequest::getPrincipalSource,
+                ListInterfacesRequest::setPrincipalSource));
         builder.<ListInterfacesRequest.PrincipalTypeEnum>withRequestField("principal_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInterfacesRequest.PrincipalTypeEnum.class),
-            f -> f.withMarshaller(ListInterfacesRequest::getPrincipalType, (req, v) -> {
-                req.setPrincipalType(v);
-            }));
+            f -> f.withMarshaller(ListInterfacesRequest::getPrincipalType, ListInterfacesRequest::setPrincipalType));
         builder.<String>withRequestField("principal_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInterfacesRequest::getPrincipalName, (req, v) -> {
-                req.setPrincipalName(v);
-            }));
+            f -> f.withMarshaller(ListInterfacesRequest::getPrincipalName, ListInterfacesRequest::setPrincipalName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInterfacesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInterfacesRequest::getLimit, ListInterfacesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInterfacesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListInterfacesRequest::getMarker, ListInterfacesRequest::setMarker));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPolicyRequest, ListPolicyResponse> listPolicy = genForlistPolicy();
+    public static final HttpRequestDef<ListPolicyRequest, ListPolicyResponse> listPolicy = genForListPolicy();
 
-    private static HttpRequestDef<ListPolicyRequest, ListPolicyResponse> genForlistPolicy() {
+    private static HttpRequestDef<ListPolicyRequest, ListPolicyResponse> genForListPolicy() {
         // basic
         HttpRequestDef.Builder<ListPolicyRequest, ListPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPolicyRequest.class, ListPolicyResponse.class)
@@ -638,30 +586,22 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getInstanceId, ListPolicyRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getLimit, ListPolicyRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getMarker, ListPolicyRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPolicyRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getReversePage, ListPolicyRequest::setReversePage));
 
         // response
 
@@ -669,9 +609,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ShowAccessClientRequest, ShowAccessClientResponse> showAccessClient =
-        genForshowAccessClient();
+        genForShowAccessClient();
 
-    private static HttpRequestDef<ShowAccessClientRequest, ShowAccessClientResponse> genForshowAccessClient() {
+    private static HttpRequestDef<ShowAccessClientRequest, ShowAccessClientResponse> genForShowAccessClient() {
         // basic
         HttpRequestDef.Builder<ShowAccessClientRequest, ShowAccessClientResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAccessClientRequest.class, ShowAccessClientResponse.class)
@@ -684,16 +624,12 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccessClientRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAccessClientRequest::getInstanceId, ShowAccessClientRequest::setInstanceId));
         builder.<String>withRequestField("client_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccessClientRequest::getClientId, (req, v) -> {
-                req.setClientId(v);
-            }));
+            f -> f.withMarshaller(ShowAccessClientRequest::getClientId, ShowAccessClientRequest::setClientId));
 
         // response
 
@@ -701,9 +637,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ShowSyncPolicyRequest, ShowSyncPolicyResponse> showSyncPolicy =
-        genForshowSyncPolicy();
+        genForShowSyncPolicy();
 
-    private static HttpRequestDef<ShowSyncPolicyRequest, ShowSyncPolicyResponse> genForshowSyncPolicy() {
+    private static HttpRequestDef<ShowSyncPolicyRequest, ShowSyncPolicyResponse> genForShowSyncPolicy() {
         // basic
         HttpRequestDef.Builder<ShowSyncPolicyRequest, ShowSyncPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSyncPolicyRequest.class, ShowSyncPolicyResponse.class)
@@ -716,30 +652,25 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSyncPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSyncPolicyRequest::getInstanceId, ShowSyncPolicyRequest::setInstanceId));
         builder.<Long>withRequestField("last_known_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowSyncPolicyRequest::getLastKnownVersion, (req, v) -> {
-                req.setLastKnownVersion(v);
-            }));
+            f -> f.withMarshaller(ShowSyncPolicyRequest::getLastKnownVersion,
+                ShowSyncPolicyRequest::setLastKnownVersion));
         builder.<Boolean>withRequestField("supports_policy_deltas",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowSyncPolicyRequest::getSupportsPolicyDeltas, (req, v) -> {
-                req.setSupportsPolicyDeltas(v);
-            }));
+            f -> f.withMarshaller(ShowSyncPolicyRequest::getSupportsPolicyDeltas,
+                ShowSyncPolicyRequest::setSupportsPolicyDeltas));
         builder.<Boolean>withRequestField("is_return_policy_data",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowSyncPolicyRequest::getIsReturnPolicyData, (req, v) -> {
-                req.setIsReturnPolicyData(v);
-            }));
+            f -> f.withMarshaller(ShowSyncPolicyRequest::getIsReturnPolicyData,
+                ShowSyncPolicyRequest::setIsReturnPolicyData));
 
         // response
 
@@ -747,9 +678,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<UpdateAccessClientRequest, UpdateAccessClientResponse> updateAccessClient =
-        genForupdateAccessClient();
+        genForUpdateAccessClient();
 
-    private static HttpRequestDef<UpdateAccessClientRequest, UpdateAccessClientResponse> genForupdateAccessClient() {
+    private static HttpRequestDef<UpdateAccessClientRequest, UpdateAccessClientResponse> genForUpdateAccessClient() {
         // basic
         HttpRequestDef.Builder<UpdateAccessClientRequest, UpdateAccessClientResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAccessClientRequest.class, UpdateAccessClientResponse.class)
@@ -762,32 +693,26 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAccessClientRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAccessClientRequest::getInstanceId, UpdateAccessClientRequest::setInstanceId));
         builder.<String>withRequestField("client_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAccessClientRequest::getClientId, (req, v) -> {
-                req.setClientId(v);
-            }));
+            f -> f.withMarshaller(UpdateAccessClientRequest::getClientId, UpdateAccessClientRequest::setClientId));
         builder.<UpdateAccessClientRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAccessClientRequestBody.class),
-            f -> f.withMarshaller(UpdateAccessClientRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAccessClientRequest::getBody, UpdateAccessClientRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForcreateAgency();
+    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForCreateAgency();
 
-    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForcreateAgency() {
+    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForCreateAgency() {
         // basic
         HttpRequestDef.Builder<CreateAgencyRequest, CreateAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgencyRequest.class, CreateAgencyResponse.class)
@@ -800,18 +725,16 @@ public class LakeFormationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgencyRequestBody.class),
-            f -> f.withMarshaller(CreateAgencyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAgencyRequest::getBody, CreateAgencyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgency = genFordeleteAgency();
+    public static final HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgency = genForDeleteAgency();
 
-    private static HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> genFordeleteAgency() {
+    private static HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> genForDeleteAgency() {
         // basic
         HttpRequestDef.Builder<DeleteAgencyRequest, DeleteAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAgencyRequest.class, DeleteAgencyResponse.class)
@@ -824,9 +747,7 @@ public class LakeFormationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgencyRequestBody.class),
-            f -> f.withMarshaller(DeleteAgencyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteAgencyRequest::getBody, DeleteAgencyRequest::setBody));
 
         // response
 
@@ -838,9 +759,9 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> showAgency = genForshowAgency();
+    public static final HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> showAgency = genForShowAgency();
 
-    private static HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> genForshowAgency() {
+    private static HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> genForShowAgency() {
         // basic
         HttpRequestDef.Builder<ShowAgencyRequest, ShowAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgencyRequest.class, ShowAgencyResponse.class)
@@ -853,9 +774,7 @@ public class LakeFormationMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowAgencyRequest.AgencyTypeEnum.class),
-            f -> f.withMarshaller(ShowAgencyRequest::getAgencyType, (req, v) -> {
-                req.setAgencyType(v);
-            }));
+            f -> f.withMarshaller(ShowAgencyRequest::getAgencyType, ShowAgencyRequest::setAgencyType));
 
         // response
 
@@ -863,9 +782,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<CreateCatalogRequest, CreateCatalogResponse> createCatalog =
-        genForcreateCatalog();
+        genForCreateCatalog();
 
-    private static HttpRequestDef<CreateCatalogRequest, CreateCatalogResponse> genForcreateCatalog() {
+    private static HttpRequestDef<CreateCatalogRequest, CreateCatalogResponse> genForCreateCatalog() {
         // basic
         HttpRequestDef.Builder<CreateCatalogRequest, CreateCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCatalogRequest.class, CreateCatalogResponse.class)
@@ -878,16 +797,12 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCatalogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateCatalogRequest::getInstanceId, CreateCatalogRequest::setInstanceId));
         builder.<CatalogInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogInput.class),
-            f -> f.withMarshaller(CreateCatalogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCatalogRequest::getBody, CreateCatalogRequest::setBody));
 
         // response
 
@@ -895,9 +810,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<DeleteCatalogRequest, DeleteCatalogResponse> deleteCatalog =
-        genFordeleteCatalog();
+        genForDeleteCatalog();
 
-    private static HttpRequestDef<DeleteCatalogRequest, DeleteCatalogResponse> genFordeleteCatalog() {
+    private static HttpRequestDef<DeleteCatalogRequest, DeleteCatalogResponse> genForDeleteCatalog() {
         // basic
         HttpRequestDef.Builder<DeleteCatalogRequest, DeleteCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCatalogRequest.class, DeleteCatalogResponse.class)
@@ -910,25 +825,21 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCatalogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteCatalogRequest::getInstanceId, DeleteCatalogRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCatalogRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(DeleteCatalogRequest::getCatalogName, DeleteCatalogRequest::setCatalogName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCatalogsRequest, ListCatalogsResponse> listCatalogs = genForlistCatalogs();
+    public static final HttpRequestDef<ListCatalogsRequest, ListCatalogsResponse> listCatalogs = genForListCatalogs();
 
-    private static HttpRequestDef<ListCatalogsRequest, ListCatalogsResponse> genForlistCatalogs() {
+    private static HttpRequestDef<ListCatalogsRequest, ListCatalogsResponse> genForListCatalogs() {
         // basic
         HttpRequestDef.Builder<ListCatalogsRequest, ListCatalogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCatalogsRequest.class, ListCatalogsResponse.class)
@@ -941,25 +852,22 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCatalogsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListCatalogsRequest::getInstanceId, ListCatalogsRequest::setInstanceId));
 
         // response
         builder.<List<Catalog>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCatalogsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Catalog.class));
+            f -> f.withMarshaller(ListCatalogsResponse::getBody, ListCatalogsResponse::setBody)
+                .withInnerContainerType(Catalog.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCatalogRequest, ShowCatalogResponse> showCatalog = genForshowCatalog();
+    public static final HttpRequestDef<ShowCatalogRequest, ShowCatalogResponse> showCatalog = genForShowCatalog();
 
-    private static HttpRequestDef<ShowCatalogRequest, ShowCatalogResponse> genForshowCatalog() {
+    private static HttpRequestDef<ShowCatalogRequest, ShowCatalogResponse> genForShowCatalog() {
         // basic
         HttpRequestDef.Builder<ShowCatalogRequest, ShowCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCatalogRequest.class, ShowCatalogResponse.class)
@@ -972,16 +880,12 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCatalogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowCatalogRequest::getInstanceId, ShowCatalogRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCatalogRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ShowCatalogRequest::getCatalogName, ShowCatalogRequest::setCatalogName));
 
         // response
 
@@ -989,9 +893,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<UpdateCatalogRequest, UpdateCatalogResponse> updateCatalog =
-        genForupdateCatalog();
+        genForUpdateCatalog();
 
-    private static HttpRequestDef<UpdateCatalogRequest, UpdateCatalogResponse> genForupdateCatalog() {
+    private static HttpRequestDef<UpdateCatalogRequest, UpdateCatalogResponse> genForUpdateCatalog() {
         // basic
         HttpRequestDef.Builder<UpdateCatalogRequest, UpdateCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCatalogRequest.class, UpdateCatalogResponse.class)
@@ -1004,32 +908,26 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCatalogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateCatalogRequest::getInstanceId, UpdateCatalogRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCatalogRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(UpdateCatalogRequest::getCatalogName, UpdateCatalogRequest::setCatalogName));
         builder.<CatalogInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogInput.class),
-            f -> f.withMarshaller(UpdateCatalogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCatalogRequest::getBody, UpdateCatalogRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListConfigsRequest, ListConfigsResponse> listConfigs = genForlistConfigs();
+    public static final HttpRequestDef<ListConfigsRequest, ListConfigsResponse> listConfigs = genForListConfigs();
 
-    private static HttpRequestDef<ListConfigsRequest, ListConfigsResponse> genForlistConfigs() {
+    private static HttpRequestDef<ListConfigsRequest, ListConfigsResponse> genForListConfigs() {
         // basic
         HttpRequestDef.Builder<ListConfigsRequest, ListConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConfigsRequest.class, ListConfigsResponse.class)
@@ -1042,23 +940,17 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListConfigsRequest::getInstanceId, ListConfigsRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConfigsRequest::getLimit, ListConfigsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListConfigsRequest::getMarker, ListConfigsRequest::setMarker));
 
         // response
 
@@ -1066,9 +958,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> showCredential =
-        genForshowCredential();
+        genForShowCredential();
 
-    private static HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> genForshowCredential() {
+    private static HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> genForShowCredential() {
         // basic
         HttpRequestDef.Builder<ShowCredentialRequest, ShowCredentialResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowCredentialRequest.class, ShowCredentialResponse.class)
@@ -1081,16 +973,12 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCredentialRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowCredentialRequest::getInstanceId, ShowCredentialRequest::setInstanceId));
         builder.<IdentityInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdentityInput.class),
-            f -> f.withMarshaller(ShowCredentialRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowCredentialRequest::getBody, ShowCredentialRequest::setBody));
 
         // response
 
@@ -1098,9 +986,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> createDatabase =
-        genForcreateDatabase();
+        genForCreateDatabase();
 
-    private static HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> genForcreateDatabase() {
+    private static HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> genForCreateDatabase() {
         // basic
         HttpRequestDef.Builder<CreateDatabaseRequest, CreateDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDatabaseRequest.class, CreateDatabaseResponse.class)
@@ -1113,23 +1001,17 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseRequest::getInstanceId, CreateDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDatabaseRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseRequest::getCatalogName, CreateDatabaseRequest::setCatalogName));
         builder.<DatabaseInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DatabaseInput.class),
-            f -> f.withMarshaller(CreateDatabaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseRequest::getBody, CreateDatabaseRequest::setBody));
 
         // response
 
@@ -1137,9 +1019,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabase =
-        genFordeleteDatabase();
+        genForDeleteDatabase();
 
-    private static HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> genFordeleteDatabase() {
+    private static HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> genForDeleteDatabase() {
         // basic
         HttpRequestDef.Builder<DeleteDatabaseRequest, DeleteDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabaseRequest.class, DeleteDatabaseResponse.class)
@@ -1152,37 +1034,27 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getInstanceId, DeleteDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getCatalogName, DeleteDatabaseRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getDatabaseName, DeleteDatabaseRequest::setDatabaseName));
         builder.<Boolean>withRequestField("delete_data",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getDeleteData, (req, v) -> {
-                req.setDeleteData(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getDeleteData, DeleteDatabaseRequest::setDeleteData));
         builder.<Boolean>withRequestField("cascade",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getCascade, (req, v) -> {
-                req.setCascade(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getCascade, DeleteDatabaseRequest::setCascade));
 
         // response
 
@@ -1190,9 +1062,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListDatabaseNamesRequest, ListDatabaseNamesResponse> listDatabaseNames =
-        genForlistDatabaseNames();
+        genForListDatabaseNames();
 
-    private static HttpRequestDef<ListDatabaseNamesRequest, ListDatabaseNamesResponse> genForlistDatabaseNames() {
+    private static HttpRequestDef<ListDatabaseNamesRequest, ListDatabaseNamesResponse> genForListDatabaseNames() {
         // basic
         HttpRequestDef.Builder<ListDatabaseNamesRequest, ListDatabaseNamesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatabaseNamesRequest.class, ListDatabaseNamesResponse.class)
@@ -1205,40 +1077,34 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabaseNamesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDatabaseNamesRequest::getInstanceId, ListDatabaseNamesRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabaseNamesRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListDatabaseNamesRequest::getCatalogName, ListDatabaseNamesRequest::setCatalogName));
         builder.<String>withRequestField("database_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabaseNamesRequest::getDatabasePattern, (req, v) -> {
-                req.setDatabasePattern(v);
-            }));
+            f -> f.withMarshaller(ListDatabaseNamesRequest::getDatabasePattern,
+                ListDatabaseNamesRequest::setDatabasePattern));
 
         // response
         builder.<List<String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDatabaseNamesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(ListDatabaseNamesResponse::getBody, ListDatabaseNamesResponse::setBody)
+                .withInnerContainerType(String.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> listDatabases =
-        genForlistDatabases();
+        genForListDatabases();
 
-    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForlistDatabases() {
+    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForListDatabases() {
         // basic
         HttpRequestDef.Builder<ListDatabasesRequest, ListDatabasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatabasesRequest.class, ListDatabasesResponse.class)
@@ -1251,53 +1117,42 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getInstanceId, ListDatabasesRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getCatalogName, ListDatabasesRequest::setCatalogName));
         builder.<String>withRequestField("database_name_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getDatabaseNamePattern, (req, v) -> {
-                req.setDatabaseNamePattern(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getDatabaseNamePattern,
+                ListDatabasesRequest::setDatabaseNamePattern));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getLimit, ListDatabasesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getMarker, ListDatabasesRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getReversePage, ListDatabasesRequest::setReversePage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDatabaseRequest, ShowDatabaseResponse> showDatabase = genForshowDatabase();
+    public static final HttpRequestDef<ShowDatabaseRequest, ShowDatabaseResponse> showDatabase = genForShowDatabase();
 
-    private static HttpRequestDef<ShowDatabaseRequest, ShowDatabaseResponse> genForshowDatabase() {
+    private static HttpRequestDef<ShowDatabaseRequest, ShowDatabaseResponse> genForShowDatabase() {
         // basic
         HttpRequestDef.Builder<ShowDatabaseRequest, ShowDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDatabaseRequest.class, ShowDatabaseResponse.class)
@@ -1310,23 +1165,17 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDatabaseRequest::getInstanceId, ShowDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDatabaseRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ShowDatabaseRequest::getCatalogName, ShowDatabaseRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDatabaseRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ShowDatabaseRequest::getDatabaseName, ShowDatabaseRequest::setDatabaseName));
 
         // response
 
@@ -1334,9 +1183,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<UpdateDatabaseRequest, UpdateDatabaseResponse> updateDatabase =
-        genForupdateDatabase();
+        genForUpdateDatabase();
 
-    private static HttpRequestDef<UpdateDatabaseRequest, UpdateDatabaseResponse> genForupdateDatabase() {
+    private static HttpRequestDef<UpdateDatabaseRequest, UpdateDatabaseResponse> genForUpdateDatabase() {
         // basic
         HttpRequestDef.Builder<UpdateDatabaseRequest, UpdateDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDatabaseRequest.class, UpdateDatabaseResponse.class)
@@ -1349,30 +1198,22 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDatabaseRequest::getInstanceId, UpdateDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDatabaseRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(UpdateDatabaseRequest::getCatalogName, UpdateDatabaseRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDatabaseRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(UpdateDatabaseRequest::getDatabaseName, UpdateDatabaseRequest::setDatabaseName));
         builder.<DatabaseInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DatabaseInput.class),
-            f -> f.withMarshaller(UpdateDatabaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDatabaseRequest::getBody, UpdateDatabaseRequest::setBody));
 
         // response
 
@@ -1380,9 +1221,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<CreateFunctionRequest, CreateFunctionResponse> createFunction =
-        genForcreateFunction();
+        genForCreateFunction();
 
-    private static HttpRequestDef<CreateFunctionRequest, CreateFunctionResponse> genForcreateFunction() {
+    private static HttpRequestDef<CreateFunctionRequest, CreateFunctionResponse> genForCreateFunction() {
         // basic
         HttpRequestDef.Builder<CreateFunctionRequest, CreateFunctionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateFunctionRequest.class, CreateFunctionResponse.class)
@@ -1396,30 +1237,22 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFunctionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateFunctionRequest::getInstanceId, CreateFunctionRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFunctionRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(CreateFunctionRequest::getCatalogName, CreateFunctionRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFunctionRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(CreateFunctionRequest::getDatabaseName, CreateFunctionRequest::setDatabaseName));
         builder.<FunctionInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FunctionInput.class),
-            f -> f.withMarshaller(CreateFunctionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFunctionRequest::getBody, CreateFunctionRequest::setBody));
 
         // response
 
@@ -1427,9 +1260,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<DeleteFunctionRequest, DeleteFunctionResponse> deleteFunction =
-        genFordeleteFunction();
+        genForDeleteFunction();
 
-    private static HttpRequestDef<DeleteFunctionRequest, DeleteFunctionResponse> genFordeleteFunction() {
+    private static HttpRequestDef<DeleteFunctionRequest, DeleteFunctionResponse> genForDeleteFunction() {
         // basic
         HttpRequestDef.Builder<DeleteFunctionRequest, DeleteFunctionResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteFunctionRequest.class, DeleteFunctionResponse.class)
@@ -1443,30 +1276,22 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFunctionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteFunctionRequest::getInstanceId, DeleteFunctionRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFunctionRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(DeleteFunctionRequest::getCatalogName, DeleteFunctionRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFunctionRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(DeleteFunctionRequest::getDatabaseName, DeleteFunctionRequest::setDatabaseName));
         builder.<String>withRequestField("function_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFunctionRequest::getFunctionName, (req, v) -> {
-                req.setFunctionName(v);
-            }));
+            f -> f.withMarshaller(DeleteFunctionRequest::getFunctionName, DeleteFunctionRequest::setFunctionName));
 
         // response
 
@@ -1474,9 +1299,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListAllFunctionsRequest, ListAllFunctionsResponse> listAllFunctions =
-        genForlistAllFunctions();
+        genForListAllFunctions();
 
-    private static HttpRequestDef<ListAllFunctionsRequest, ListAllFunctionsResponse> genForlistAllFunctions() {
+    private static HttpRequestDef<ListAllFunctionsRequest, ListAllFunctionsResponse> genForListAllFunctions() {
         // basic
         HttpRequestDef.Builder<ListAllFunctionsRequest, ListAllFunctionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllFunctionsRequest.class, ListAllFunctionsResponse.class)
@@ -1489,37 +1314,27 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllFunctionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAllFunctionsRequest::getInstanceId, ListAllFunctionsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllFunctionsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListAllFunctionsRequest::getCatalogName, ListAllFunctionsRequest::setCatalogName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllFunctionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAllFunctionsRequest::getLimit, ListAllFunctionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllFunctionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAllFunctionsRequest::getMarker, ListAllFunctionsRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAllFunctionsRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListAllFunctionsRequest::getReversePage, ListAllFunctionsRequest::setReversePage));
 
         // response
 
@@ -1527,9 +1342,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListFunctionNamesRequest, ListFunctionNamesResponse> listFunctionNames =
-        genForlistFunctionNames();
+        genForListFunctionNames();
 
-    private static HttpRequestDef<ListFunctionNamesRequest, ListFunctionNamesResponse> genForlistFunctionNames() {
+    private static HttpRequestDef<ListFunctionNamesRequest, ListFunctionNamesResponse> genForListFunctionNames() {
         // basic
         HttpRequestDef.Builder<ListFunctionNamesRequest, ListFunctionNamesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListFunctionNamesRequest.class, ListFunctionNamesResponse.class)
@@ -1543,39 +1358,32 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionNamesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListFunctionNamesRequest::getInstanceId, ListFunctionNamesRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionNamesRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListFunctionNamesRequest::getCatalogName, ListFunctionNamesRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionNamesRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListFunctionNamesRequest::getDatabaseName,
+                ListFunctionNamesRequest::setDatabaseName));
         builder.<String>withRequestField("function_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionNamesRequest::getFunctionPattern, (req, v) -> {
-                req.setFunctionPattern(v);
-            }));
+            f -> f.withMarshaller(ListFunctionNamesRequest::getFunctionPattern,
+                ListFunctionNamesRequest::setFunctionPattern));
 
         // response
         builder.<List<String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListFunctionNamesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(ListFunctionNamesResponse::getBody, ListFunctionNamesResponse::setBody)
+                .withInnerContainerType(String.class));
 
         builder.<String>withResponseField("X-request-id",
             LocationType.Header,
@@ -1586,9 +1394,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListFunctionsRequest, ListFunctionsResponse> listFunctions =
-        genForlistFunctions();
+        genForListFunctions();
 
-    private static HttpRequestDef<ListFunctionsRequest, ListFunctionsResponse> genForlistFunctions() {
+    private static HttpRequestDef<ListFunctionsRequest, ListFunctionsResponse> genForListFunctions() {
         // basic
         HttpRequestDef.Builder<ListFunctionsRequest, ListFunctionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListFunctionsRequest.class, ListFunctionsResponse.class)
@@ -1602,60 +1410,47 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListFunctionsRequest::getInstanceId, ListFunctionsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListFunctionsRequest::getCatalogName, ListFunctionsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListFunctionsRequest::getDatabaseName, ListFunctionsRequest::setDatabaseName));
         builder.<String>withRequestField("function_name_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionsRequest::getFunctionNamePattern, (req, v) -> {
-                req.setFunctionNamePattern(v);
-            }));
+            f -> f.withMarshaller(ListFunctionsRequest::getFunctionNamePattern,
+                ListFunctionsRequest::setFunctionNamePattern));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFunctionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFunctionsRequest::getLimit, ListFunctionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListFunctionsRequest::getMarker, ListFunctionsRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListFunctionsRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListFunctionsRequest::getReversePage, ListFunctionsRequest::setReversePage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFunctionRequest, ShowFunctionResponse> showFunction = genForshowFunction();
+    public static final HttpRequestDef<ShowFunctionRequest, ShowFunctionResponse> showFunction = genForShowFunction();
 
-    private static HttpRequestDef<ShowFunctionRequest, ShowFunctionResponse> genForshowFunction() {
+    private static HttpRequestDef<ShowFunctionRequest, ShowFunctionResponse> genForShowFunction() {
         // basic
         HttpRequestDef.Builder<ShowFunctionRequest, ShowFunctionResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowFunctionRequest.class, ShowFunctionResponse.class)
@@ -1669,30 +1464,22 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFunctionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowFunctionRequest::getInstanceId, ShowFunctionRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFunctionRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ShowFunctionRequest::getCatalogName, ShowFunctionRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFunctionRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ShowFunctionRequest::getDatabaseName, ShowFunctionRequest::setDatabaseName));
         builder.<String>withRequestField("function_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFunctionRequest::getFunctionName, (req, v) -> {
-                req.setFunctionName(v);
-            }));
+            f -> f.withMarshaller(ShowFunctionRequest::getFunctionName, ShowFunctionRequest::setFunctionName));
 
         // response
 
@@ -1700,9 +1487,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<UpdateFunctionRequest, UpdateFunctionResponse> updateFunction =
-        genForupdateFunction();
+        genForUpdateFunction();
 
-    private static HttpRequestDef<UpdateFunctionRequest, UpdateFunctionResponse> genForupdateFunction() {
+    private static HttpRequestDef<UpdateFunctionRequest, UpdateFunctionResponse> genForUpdateFunction() {
         // basic
         HttpRequestDef.Builder<UpdateFunctionRequest, UpdateFunctionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateFunctionRequest.class, UpdateFunctionResponse.class)
@@ -1716,37 +1503,27 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFunctionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateFunctionRequest::getInstanceId, UpdateFunctionRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFunctionRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(UpdateFunctionRequest::getCatalogName, UpdateFunctionRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFunctionRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(UpdateFunctionRequest::getDatabaseName, UpdateFunctionRequest::setDatabaseName));
         builder.<String>withRequestField("function_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFunctionRequest::getFunctionName, (req, v) -> {
-                req.setFunctionName(v);
-            }));
+            f -> f.withMarshaller(UpdateFunctionRequest::getFunctionName, UpdateFunctionRequest::setFunctionName));
         builder.<FunctionInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FunctionInput.class),
-            f -> f.withMarshaller(UpdateFunctionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateFunctionRequest::getBody, UpdateFunctionRequest::setBody));
 
         // response
 
@@ -1754,9 +1531,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<AuthorizeAccessServiceRequest, AuthorizeAccessServiceResponse> authorizeAccessService =
-        genForauthorizeAccessService();
+        genForAuthorizeAccessService();
 
-    private static HttpRequestDef<AuthorizeAccessServiceRequest, AuthorizeAccessServiceResponse> genForauthorizeAccessService() {
+    private static HttpRequestDef<AuthorizeAccessServiceRequest, AuthorizeAccessServiceResponse> genForAuthorizeAccessService() {
         // basic
         HttpRequestDef.Builder<AuthorizeAccessServiceRequest, AuthorizeAccessServiceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AuthorizeAccessServiceRequest.class, AuthorizeAccessServiceResponse.class)
@@ -1769,9 +1546,7 @@ public class LakeFormationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GrantAccessServiceRequestBody.class),
-            f -> f.withMarshaller(AuthorizeAccessServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AuthorizeAccessServiceRequest::getBody, AuthorizeAccessServiceRequest::setBody));
 
         // response
 
@@ -1785,9 +1560,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<CreateAgreementRequest, CreateAgreementResponse> createAgreement =
-        genForcreateAgreement();
+        genForCreateAgreement();
 
-    private static HttpRequestDef<CreateAgreementRequest, CreateAgreementResponse> genForcreateAgreement() {
+    private static HttpRequestDef<CreateAgreementRequest, CreateAgreementResponse> genForCreateAgreement() {
         // basic
         HttpRequestDef.Builder<CreateAgreementRequest, CreateAgreementResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgreementRequest.class, CreateAgreementResponse.class)
@@ -1800,9 +1575,7 @@ public class LakeFormationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TenantAgreementBody.class),
-            f -> f.withMarshaller(CreateAgreementRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAgreementRequest::getBody, CreateAgreementRequest::setBody));
 
         // response
 
@@ -1815,9 +1588,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<DeleteAgreementRequest, DeleteAgreementResponse> deleteAgreement =
-        genFordeleteAgreement();
+        genForDeleteAgreement();
 
-    private static HttpRequestDef<DeleteAgreementRequest, DeleteAgreementResponse> genFordeleteAgreement() {
+    private static HttpRequestDef<DeleteAgreementRequest, DeleteAgreementResponse> genForDeleteAgreement() {
         // basic
         HttpRequestDef.Builder<DeleteAgreementRequest, DeleteAgreementResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAgreementRequest.class, DeleteAgreementResponse.class)
@@ -1838,9 +1611,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ShowAccessServiceRequest, ShowAccessServiceResponse> showAccessService =
-        genForshowAccessService();
+        genForShowAccessService();
 
-    private static HttpRequestDef<ShowAccessServiceRequest, ShowAccessServiceResponse> genForshowAccessService() {
+    private static HttpRequestDef<ShowAccessServiceRequest, ShowAccessServiceResponse> genForShowAccessService() {
         // basic
         HttpRequestDef.Builder<ShowAccessServiceRequest, ShowAccessServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAccessServiceRequest.class, ShowAccessServiceResponse.class)
@@ -1861,9 +1634,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ShowAgreementRequest, ShowAgreementResponse> showAgreement =
-        genForshowAgreement();
+        genForShowAgreement();
 
-    private static HttpRequestDef<ShowAgreementRequest, ShowAgreementResponse> genForshowAgreement() {
+    private static HttpRequestDef<ShowAgreementRequest, ShowAgreementResponse> genForShowAgreement() {
         // basic
         HttpRequestDef.Builder<ShowAgreementRequest, ShowAgreementResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgreementRequest.class, ShowAgreementResponse.class)
@@ -1884,9 +1657,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ShowAgreementRuleRequest, ShowAgreementRuleResponse> showAgreementRule =
-        genForshowAgreementRule();
+        genForShowAgreementRule();
 
-    private static HttpRequestDef<ShowAgreementRuleRequest, ShowAgreementRuleResponse> genForshowAgreementRule() {
+    private static HttpRequestDef<ShowAgreementRuleRequest, ShowAgreementRuleResponse> genForShowAgreementRule() {
         // basic
         HttpRequestDef.Builder<ShowAgreementRuleRequest, ShowAgreementRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgreementRuleRequest.class, ShowAgreementRuleResponse.class)
@@ -1906,9 +1679,9 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CountMetaObjRequest, CountMetaObjResponse> countMetaObj = genForcountMetaObj();
+    public static final HttpRequestDef<CountMetaObjRequest, CountMetaObjResponse> countMetaObj = genForCountMetaObj();
 
-    private static HttpRequestDef<CountMetaObjRequest, CountMetaObjResponse> genForcountMetaObj() {
+    private static HttpRequestDef<CountMetaObjRequest, CountMetaObjResponse> genForCountMetaObj() {
         // basic
         HttpRequestDef.Builder<CountMetaObjRequest, CountMetaObjResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CountMetaObjRequest.class, CountMetaObjResponse.class)
@@ -1921,9 +1694,7 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountMetaObjRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CountMetaObjRequest::getInstanceId, CountMetaObjRequest::setInstanceId));
 
         // response
 
@@ -1931,9 +1702,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse> createLakeFormationInstance =
-        genForcreateLakeFormationInstance();
+        genForCreateLakeFormationInstance();
 
-    private static HttpRequestDef<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse> genForcreateLakeFormationInstance() {
+    private static HttpRequestDef<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse> genForCreateLakeFormationInstance() {
         // basic
         HttpRequestDef.Builder<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse> builder =
             HttpRequestDef
@@ -1949,9 +1720,8 @@ public class LakeFormationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceRequestBody.class),
-            f -> f.withMarshaller(CreateLakeFormationInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLakeFormationInstanceRequest::getBody,
+                CreateLakeFormationInstanceRequest::setBody));
 
         // response
 
@@ -1965,9 +1735,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<DeleteLakeFormationInstanceRequest, DeleteLakeFormationInstanceResponse> deleteLakeFormationInstance =
-        genFordeleteLakeFormationInstance();
+        genForDeleteLakeFormationInstance();
 
-    private static HttpRequestDef<DeleteLakeFormationInstanceRequest, DeleteLakeFormationInstanceResponse> genFordeleteLakeFormationInstance() {
+    private static HttpRequestDef<DeleteLakeFormationInstanceRequest, DeleteLakeFormationInstanceResponse> genForDeleteLakeFormationInstance() {
         // basic
         HttpRequestDef.Builder<DeleteLakeFormationInstanceRequest, DeleteLakeFormationInstanceResponse> builder =
             HttpRequestDef
@@ -1983,16 +1753,14 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLakeFormationInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteLakeFormationInstanceRequest::getInstanceId,
+                DeleteLakeFormationInstanceRequest::setInstanceId));
         builder.<Boolean>withRequestField("to_recycle_bin",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteLakeFormationInstanceRequest::getToRecycleBin, (req, v) -> {
-                req.setToRecycleBin(v);
-            }));
+            f -> f.withMarshaller(DeleteLakeFormationInstanceRequest::getToRecycleBin,
+                DeleteLakeFormationInstanceRequest::setToRecycleBin));
 
         // response
 
@@ -2006,9 +1774,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListLakeFormationInstancesRequest, ListLakeFormationInstancesResponse> listLakeFormationInstances =
-        genForlistLakeFormationInstances();
+        genForListLakeFormationInstances();
 
-    private static HttpRequestDef<ListLakeFormationInstancesRequest, ListLakeFormationInstancesResponse> genForlistLakeFormationInstances() {
+    private static HttpRequestDef<ListLakeFormationInstancesRequest, ListLakeFormationInstancesResponse> genForListLakeFormationInstances() {
         // basic
         HttpRequestDef.Builder<ListLakeFormationInstancesRequest, ListLakeFormationInstancesResponse> builder =
             HttpRequestDef
@@ -2024,44 +1792,38 @@ public class LakeFormationMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getInRecycleBin, (req, v) -> {
-                req.setInRecycleBin(v);
-            }));
+            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getInRecycleBin,
+                ListLakeFormationInstancesRequest::setInRecycleBin));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getOffset,
+                ListLakeFormationInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getLimit,
+                ListLakeFormationInstancesRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getName,
+                ListLakeFormationInstancesRequest::setName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getEnterpriseProjectId,
+                ListLakeFormationInstancesRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListLakeFormationInstancesRequest::getTags,
+                ListLakeFormationInstancesRequest::setTags));
 
         // response
 
@@ -2075,9 +1837,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<MoveLakeFormationInstanceOutRecycleBinRequest, MoveLakeFormationInstanceOutRecycleBinResponse> moveLakeFormationInstanceOutRecycleBin =
-        genFormoveLakeFormationInstanceOutRecycleBin();
+        genForMoveLakeFormationInstanceOutRecycleBin();
 
-    private static HttpRequestDef<MoveLakeFormationInstanceOutRecycleBinRequest, MoveLakeFormationInstanceOutRecycleBinResponse> genFormoveLakeFormationInstanceOutRecycleBin() {
+    private static HttpRequestDef<MoveLakeFormationInstanceOutRecycleBinRequest, MoveLakeFormationInstanceOutRecycleBinResponse> genForMoveLakeFormationInstanceOutRecycleBin() {
         // basic
         HttpRequestDef.Builder<MoveLakeFormationInstanceOutRecycleBinRequest, MoveLakeFormationInstanceOutRecycleBinResponse> builder =
             HttpRequestDef
@@ -2093,9 +1855,8 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MoveLakeFormationInstanceOutRecycleBinRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(MoveLakeFormationInstanceOutRecycleBinRequest::getInstanceId,
+                MoveLakeFormationInstanceOutRecycleBinRequest::setInstanceId));
 
         // response
 
@@ -2109,9 +1870,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ShowLakeFormationInstanceRequest, ShowLakeFormationInstanceResponse> showLakeFormationInstance =
-        genForshowLakeFormationInstance();
+        genForShowLakeFormationInstance();
 
-    private static HttpRequestDef<ShowLakeFormationInstanceRequest, ShowLakeFormationInstanceResponse> genForshowLakeFormationInstance() {
+    private static HttpRequestDef<ShowLakeFormationInstanceRequest, ShowLakeFormationInstanceResponse> genForShowLakeFormationInstance() {
         // basic
         HttpRequestDef.Builder<ShowLakeFormationInstanceRequest, ShowLakeFormationInstanceResponse> builder =
             HttpRequestDef
@@ -2127,9 +1888,8 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLakeFormationInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowLakeFormationInstanceRequest::getInstanceId,
+                ShowLakeFormationInstanceRequest::setInstanceId));
 
         // response
 
@@ -2143,9 +1903,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<UpdateLakeFormationInstanceRequest, UpdateLakeFormationInstanceResponse> updateLakeFormationInstance =
-        genForupdateLakeFormationInstance();
+        genForUpdateLakeFormationInstance();
 
-    private static HttpRequestDef<UpdateLakeFormationInstanceRequest, UpdateLakeFormationInstanceResponse> genForupdateLakeFormationInstance() {
+    private static HttpRequestDef<UpdateLakeFormationInstanceRequest, UpdateLakeFormationInstanceResponse> genForUpdateLakeFormationInstance() {
         // basic
         HttpRequestDef.Builder<UpdateLakeFormationInstanceRequest, UpdateLakeFormationInstanceResponse> builder =
             HttpRequestDef
@@ -2161,16 +1921,14 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLakeFormationInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateLakeFormationInstanceRequest::getInstanceId,
+                UpdateLakeFormationInstanceRequest::setInstanceId));
         builder.<UpdateLakeFormationInstance>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLakeFormationInstance.class),
-            f -> f.withMarshaller(UpdateLakeFormationInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLakeFormationInstanceRequest::getBody,
+                UpdateLakeFormationInstanceRequest::setBody));
 
         // response
 
@@ -2178,9 +1936,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<UpdateLakeFormationInstanceDefaultRequest, UpdateLakeFormationInstanceDefaultResponse> updateLakeFormationInstanceDefault =
-        genForupdateLakeFormationInstanceDefault();
+        genForUpdateLakeFormationInstanceDefault();
 
-    private static HttpRequestDef<UpdateLakeFormationInstanceDefaultRequest, UpdateLakeFormationInstanceDefaultResponse> genForupdateLakeFormationInstanceDefault() {
+    private static HttpRequestDef<UpdateLakeFormationInstanceDefaultRequest, UpdateLakeFormationInstanceDefaultResponse> genForUpdateLakeFormationInstanceDefault() {
         // basic
         HttpRequestDef.Builder<UpdateLakeFormationInstanceDefaultRequest, UpdateLakeFormationInstanceDefaultResponse> builder =
             HttpRequestDef
@@ -2196,9 +1954,8 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLakeFormationInstanceDefaultRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateLakeFormationInstanceDefaultRequest::getInstanceId,
+                UpdateLakeFormationInstanceDefaultRequest::setInstanceId));
 
         // response
 
@@ -2212,9 +1969,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<UpdateLakeFormationInstanceScaleRequest, UpdateLakeFormationInstanceScaleResponse> updateLakeFormationInstanceScale =
-        genForupdateLakeFormationInstanceScale();
+        genForUpdateLakeFormationInstanceScale();
 
-    private static HttpRequestDef<UpdateLakeFormationInstanceScaleRequest, UpdateLakeFormationInstanceScaleResponse> genForupdateLakeFormationInstanceScale() {
+    private static HttpRequestDef<UpdateLakeFormationInstanceScaleRequest, UpdateLakeFormationInstanceScaleResponse> genForUpdateLakeFormationInstanceScale() {
         // basic
         HttpRequestDef.Builder<UpdateLakeFormationInstanceScaleRequest, UpdateLakeFormationInstanceScaleResponse> builder =
             HttpRequestDef
@@ -2230,16 +1987,14 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLakeFormationInstanceScaleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateLakeFormationInstanceScaleRequest::getInstanceId,
+                UpdateLakeFormationInstanceScaleRequest::setInstanceId));
         builder.<UpdateLakeFormationInstanceScale>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLakeFormationInstanceScale.class),
-            f -> f.withMarshaller(UpdateLakeFormationInstanceScaleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLakeFormationInstanceScaleRequest::getBody,
+                UpdateLakeFormationInstanceScaleRequest::setBody));
 
         // response
 
@@ -2253,9 +2008,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> listObsBuckets =
-        genForlistObsBuckets();
+        genForListObsBuckets();
 
-    private static HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> genForlistObsBuckets() {
+    private static HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> genForListObsBuckets() {
         // basic
         HttpRequestDef.Builder<ListObsBucketsRequest, ListObsBucketsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListObsBucketsRequest.class, ListObsBucketsResponse.class)
@@ -2268,16 +2023,12 @@ public class LakeFormationMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListObsBucketsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListObsBucketsRequest::getOffset, ListObsBucketsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListObsBucketsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListObsBucketsRequest::getLimit, ListObsBucketsRequest::setLimit));
 
         // response
 
@@ -2290,9 +2041,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListObsObjectRequest, ListObsObjectResponse> listObsObject =
-        genForlistObsObject();
+        genForListObsObject();
 
-    private static HttpRequestDef<ListObsObjectRequest, ListObsObjectResponse> genForlistObsObject() {
+    private static HttpRequestDef<ListObsObjectRequest, ListObsObjectResponse> genForListObsObject() {
         // basic
         HttpRequestDef.Builder<ListObsObjectRequest, ListObsObjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListObsObjectRequest.class, ListObsObjectResponse.class)
@@ -2305,30 +2056,22 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListObsObjectRequest::getBucketName, (req, v) -> {
-                req.setBucketName(v);
-            }));
+            f -> f.withMarshaller(ListObsObjectRequest::getBucketName, ListObsObjectRequest::setBucketName));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListObsObjectRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListObsObjectRequest::getMarker, ListObsObjectRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListObsObjectRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListObsObjectRequest::getLimit, ListObsObjectRequest::setLimit));
         builder.<String>withRequestField("prefix",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListObsObjectRequest::getPrefix, (req, v) -> {
-                req.setPrefix(v);
-            }));
+            f -> f.withMarshaller(ListObsObjectRequest::getPrefix, ListObsObjectRequest::setPrefix));
 
         // response
 
@@ -2336,9 +2079,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<AddPartitionsRequest, AddPartitionsResponse> addPartitions =
-        genForaddPartitions();
+        genForAddPartitions();
 
-    private static HttpRequestDef<AddPartitionsRequest, AddPartitionsResponse> genForaddPartitions() {
+    private static HttpRequestDef<AddPartitionsRequest, AddPartitionsResponse> genForAddPartitions() {
         // basic
         HttpRequestDef.Builder<AddPartitionsRequest, AddPartitionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddPartitionsRequest.class, AddPartitionsResponse.class)
@@ -2352,54 +2095,43 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddPartitionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddPartitionsRequest::getInstanceId, AddPartitionsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddPartitionsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(AddPartitionsRequest::getCatalogName, AddPartitionsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddPartitionsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(AddPartitionsRequest::getDatabaseName, AddPartitionsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddPartitionsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(AddPartitionsRequest::getTableName, AddPartitionsRequest::setTableName));
         builder.<AddPartitionInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddPartitionInput.class),
-            f -> f.withMarshaller(AddPartitionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddPartitionsRequest::getBody, AddPartitionsRequest::setBody));
 
         // response
         builder.<List<Partition>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(AddPartitionsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Partition.class));
+            f -> f.withMarshaller(AddPartitionsResponse::getBody, AddPartitionsResponse::setBody)
+                .withInnerContainerType(Partition.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<BatchDeletePartitionRequest, BatchDeletePartitionResponse> batchDeletePartition =
-        genForbatchDeletePartition();
+        genForBatchDeletePartition();
 
-    private static HttpRequestDef<BatchDeletePartitionRequest, BatchDeletePartitionResponse> genForbatchDeletePartition() {
+    private static HttpRequestDef<BatchDeletePartitionRequest, BatchDeletePartitionResponse> genForBatchDeletePartition() {
         // basic
         HttpRequestDef.Builder<BatchDeletePartitionRequest, BatchDeletePartitionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeletePartitionRequest.class, BatchDeletePartitionResponse.class)
@@ -2413,54 +2145,47 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePartitionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePartitionRequest::getInstanceId,
+                BatchDeletePartitionRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePartitionRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePartitionRequest::getCatalogName,
+                BatchDeletePartitionRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePartitionRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePartitionRequest::getDatabaseName,
+                BatchDeletePartitionRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePartitionRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePartitionRequest::getTableName,
+                BatchDeletePartitionRequest::setTableName));
         builder.<DropPartitionsInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DropPartitionsInput.class),
-            f -> f.withMarshaller(BatchDeletePartitionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePartitionRequest::getBody, BatchDeletePartitionRequest::setBody));
 
         // response
         builder.<List<Partition>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchDeletePartitionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Partition.class));
+            f -> f.withMarshaller(BatchDeletePartitionResponse::getBody, BatchDeletePartitionResponse::setBody)
+                .withInnerContainerType(Partition.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<BatchDeletePartitionedStatisticsRequest, BatchDeletePartitionedStatisticsResponse> batchDeletePartitionedStatistics =
-        genForbatchDeletePartitionedStatistics();
+        genForBatchDeletePartitionedStatistics();
 
-    private static HttpRequestDef<BatchDeletePartitionedStatisticsRequest, BatchDeletePartitionedStatisticsResponse> genForbatchDeletePartitionedStatistics() {
+    private static HttpRequestDef<BatchDeletePartitionedStatisticsRequest, BatchDeletePartitionedStatisticsResponse> genForBatchDeletePartitionedStatistics() {
         // basic
         HttpRequestDef.Builder<BatchDeletePartitionedStatisticsRequest, BatchDeletePartitionedStatisticsResponse> builder =
             HttpRequestDef
@@ -2477,37 +2202,32 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePartitionedStatisticsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePartitionedStatisticsRequest::getInstanceId,
+                BatchDeletePartitionedStatisticsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePartitionedStatisticsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePartitionedStatisticsRequest::getCatalogName,
+                BatchDeletePartitionedStatisticsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePartitionedStatisticsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePartitionedStatisticsRequest::getDatabaseName,
+                BatchDeletePartitionedStatisticsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePartitionedStatisticsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePartitionedStatisticsRequest::getTableName,
+                BatchDeletePartitionedStatisticsRequest::setTableName));
         builder.<TruncatePartitionInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TruncatePartitionInput.class),
-            f -> f.withMarshaller(BatchDeletePartitionedStatisticsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePartitionedStatisticsRequest::getBody,
+                BatchDeletePartitionedStatisticsRequest::setBody));
 
         // response
 
@@ -2515,9 +2235,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<BatchListPartitionByValuesRequest, BatchListPartitionByValuesResponse> batchListPartitionByValues =
-        genForbatchListPartitionByValues();
+        genForBatchListPartitionByValues();
 
-    private static HttpRequestDef<BatchListPartitionByValuesRequest, BatchListPartitionByValuesResponse> genForbatchListPartitionByValues() {
+    private static HttpRequestDef<BatchListPartitionByValuesRequest, BatchListPartitionByValuesResponse> genForBatchListPartitionByValues() {
         // basic
         HttpRequestDef.Builder<BatchListPartitionByValuesRequest, BatchListPartitionByValuesResponse> builder =
             HttpRequestDef
@@ -2534,54 +2254,50 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListPartitionByValuesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchListPartitionByValuesRequest::getInstanceId,
+                BatchListPartitionByValuesRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListPartitionByValuesRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(BatchListPartitionByValuesRequest::getCatalogName,
+                BatchListPartitionByValuesRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListPartitionByValuesRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(BatchListPartitionByValuesRequest::getDatabaseName,
+                BatchListPartitionByValuesRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchListPartitionByValuesRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(BatchListPartitionByValuesRequest::getTableName,
+                BatchListPartitionByValuesRequest::setTableName));
         builder.<GetPartitionsByValuesInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetPartitionsByValuesInput.class),
-            f -> f.withMarshaller(BatchListPartitionByValuesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchListPartitionByValuesRequest::getBody,
+                BatchListPartitionByValuesRequest::setBody));
 
         // response
         builder.<List<Partition>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchListPartitionByValuesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Partition.class));
+            f -> f
+                .withMarshaller(BatchListPartitionByValuesResponse::getBody,
+                    BatchListPartitionByValuesResponse::setBody)
+                .withInnerContainerType(Partition.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<BatchUpdatePartitionRequest, BatchUpdatePartitionResponse> batchUpdatePartition =
-        genForbatchUpdatePartition();
+        genForBatchUpdatePartition();
 
-    private static HttpRequestDef<BatchUpdatePartitionRequest, BatchUpdatePartitionResponse> genForbatchUpdatePartition() {
+    private static HttpRequestDef<BatchUpdatePartitionRequest, BatchUpdatePartitionResponse> genForBatchUpdatePartition() {
         // basic
         HttpRequestDef.Builder<BatchUpdatePartitionRequest, BatchUpdatePartitionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchUpdatePartitionRequest.class, BatchUpdatePartitionResponse.class)
@@ -2595,54 +2311,47 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdatePartitionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchUpdatePartitionRequest::getInstanceId,
+                BatchUpdatePartitionRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdatePartitionRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(BatchUpdatePartitionRequest::getCatalogName,
+                BatchUpdatePartitionRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdatePartitionRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(BatchUpdatePartitionRequest::getDatabaseName,
+                BatchUpdatePartitionRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdatePartitionRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(BatchUpdatePartitionRequest::getTableName,
+                BatchUpdatePartitionRequest::setTableName));
         builder.<AlterPartitionsInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AlterPartitionsInput.class),
-            f -> f.withMarshaller(BatchUpdatePartitionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdatePartitionRequest::getBody, BatchUpdatePartitionRequest::setBody));
 
         // response
         builder.<List<Partition>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchUpdatePartitionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Partition.class));
+            f -> f.withMarshaller(BatchUpdatePartitionResponse::getBody, BatchUpdatePartitionResponse::setBody)
+                .withInnerContainerType(Partition.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListPartitionNamesRequest, ListPartitionNamesResponse> listPartitionNames =
-        genForlistPartitionNames();
+        genForListPartitionNames();
 
-    private static HttpRequestDef<ListPartitionNamesRequest, ListPartitionNamesResponse> genForlistPartitionNames() {
+    private static HttpRequestDef<ListPartitionNamesRequest, ListPartitionNamesResponse> genForListPartitionNames() {
         // basic
         HttpRequestDef.Builder<ListPartitionNamesRequest, ListPartitionNamesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListPartitionNamesRequest.class, ListPartitionNamesResponse.class)
@@ -2656,58 +2365,45 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionNamesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesRequest::getInstanceId, ListPartitionNamesRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionNamesRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesRequest::getCatalogName,
+                ListPartitionNamesRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionNamesRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesRequest::getDatabaseName,
+                ListPartitionNamesRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionNamesRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesRequest::getTableName, ListPartitionNamesRequest::setTableName));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionNamesRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesRequest::getFilter, ListPartitionNamesRequest::setFilter));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartitionNamesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesRequest::getLimit, ListPartitionNamesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionNamesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesRequest::getMarker, ListPartitionNamesRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPartitionNamesRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesRequest::getReversePage,
+                ListPartitionNamesRequest::setReversePage));
 
         // response
 
@@ -2715,9 +2411,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListPartitionNamesWithoutLimitRequest, ListPartitionNamesWithoutLimitResponse> listPartitionNamesWithoutLimit =
-        genForlistPartitionNamesWithoutLimit();
+        genForListPartitionNamesWithoutLimit();
 
-    private static HttpRequestDef<ListPartitionNamesWithoutLimitRequest, ListPartitionNamesWithoutLimitResponse> genForlistPartitionNamesWithoutLimit() {
+    private static HttpRequestDef<ListPartitionNamesWithoutLimitRequest, ListPartitionNamesWithoutLimitResponse> genForListPartitionNamesWithoutLimit() {
         // basic
         HttpRequestDef.Builder<ListPartitionNamesWithoutLimitRequest, ListPartitionNamesWithoutLimitResponse> builder =
             HttpRequestDef
@@ -2734,54 +2430,50 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getInstanceId,
+                ListPartitionNamesWithoutLimitRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getCatalogName,
+                ListPartitionNamesWithoutLimitRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getDatabaseName,
+                ListPartitionNamesWithoutLimitRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getTableName,
+                ListPartitionNamesWithoutLimitRequest::setTableName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getLimit,
+                ListPartitionNamesWithoutLimitRequest::setLimit));
 
         // response
         builder.<List<String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPartitionNamesWithoutLimitResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
+            f -> f
+                .withMarshaller(ListPartitionNamesWithoutLimitResponse::getBody,
+                    ListPartitionNamesWithoutLimitResponse::setBody)
+                .withInnerContainerType(String.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> listPartitions =
-        genForlistPartitions();
+        genForListPartitions();
 
-    private static HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> genForlistPartitions() {
+    private static HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> genForListPartitions() {
         // basic
         HttpRequestDef.Builder<ListPartitionsRequest, ListPartitionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListPartitionsRequest.class, ListPartitionsResponse.class)
@@ -2795,65 +2487,48 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPartitionsRequest::getInstanceId, ListPartitionsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListPartitionsRequest::getCatalogName, ListPartitionsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListPartitionsRequest::getDatabaseName, ListPartitionsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ListPartitionsRequest::getTableName, ListPartitionsRequest::setTableName));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListPartitionsRequest::getFilter, ListPartitionsRequest::setFilter));
         builder.<List<String>>withRequestField("partition_values",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPartitionsRequest::getPartitionValues, (req, v) -> {
-                req.setPartitionValues(v);
-            }));
+            f -> f.withMarshaller(ListPartitionsRequest::getPartitionValues,
+                ListPartitionsRequest::setPartitionValues));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartitionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPartitionsRequest::getLimit, ListPartitionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPartitionsRequest::getMarker, ListPartitionsRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPartitionsRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListPartitionsRequest::getReversePage, ListPartitionsRequest::setReversePage));
 
         // response
 
@@ -2861,9 +2536,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<BatchShowPartitionColumnStatisticsRequest, BatchShowPartitionColumnStatisticsResponse> batchShowPartitionColumnStatistics =
-        genForbatchShowPartitionColumnStatistics();
+        genForBatchShowPartitionColumnStatistics();
 
-    private static HttpRequestDef<BatchShowPartitionColumnStatisticsRequest, BatchShowPartitionColumnStatisticsResponse> genForbatchShowPartitionColumnStatistics() {
+    private static HttpRequestDef<BatchShowPartitionColumnStatisticsRequest, BatchShowPartitionColumnStatisticsResponse> genForBatchShowPartitionColumnStatistics() {
         // basic
         HttpRequestDef.Builder<BatchShowPartitionColumnStatisticsRequest, BatchShowPartitionColumnStatisticsResponse> builder =
             HttpRequestDef
@@ -2880,37 +2555,32 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowPartitionColumnStatisticsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchShowPartitionColumnStatisticsRequest::getInstanceId,
+                BatchShowPartitionColumnStatisticsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowPartitionColumnStatisticsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(BatchShowPartitionColumnStatisticsRequest::getCatalogName,
+                BatchShowPartitionColumnStatisticsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowPartitionColumnStatisticsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(BatchShowPartitionColumnStatisticsRequest::getDatabaseName,
+                BatchShowPartitionColumnStatisticsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowPartitionColumnStatisticsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(BatchShowPartitionColumnStatisticsRequest::getTableName,
+                BatchShowPartitionColumnStatisticsRequest::setTableName));
         builder.<GetPartitionColumnStatisticsInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetPartitionColumnStatisticsInput.class),
-            f -> f.withMarshaller(BatchShowPartitionColumnStatisticsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchShowPartitionColumnStatisticsRequest::getBody,
+                BatchShowPartitionColumnStatisticsRequest::setBody));
 
         // response
 
@@ -2918,9 +2588,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<DeletePartitionColumnStatisticsRequest, DeletePartitionColumnStatisticsResponse> deletePartitionColumnStatistics =
-        genFordeletePartitionColumnStatistics();
+        genForDeletePartitionColumnStatistics();
 
-    private static HttpRequestDef<DeletePartitionColumnStatisticsRequest, DeletePartitionColumnStatisticsResponse> genFordeletePartitionColumnStatistics() {
+    private static HttpRequestDef<DeletePartitionColumnStatisticsRequest, DeletePartitionColumnStatisticsResponse> genForDeletePartitionColumnStatistics() {
         // basic
         HttpRequestDef.Builder<DeletePartitionColumnStatisticsRequest, DeletePartitionColumnStatisticsResponse> builder =
             HttpRequestDef
@@ -2937,44 +2607,38 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getInstanceId,
+                DeletePartitionColumnStatisticsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getCatalogName,
+                DeletePartitionColumnStatisticsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getDatabaseName,
+                DeletePartitionColumnStatisticsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getTableName,
+                DeletePartitionColumnStatisticsRequest::setTableName));
         builder.<List<String>>withRequestField("partition_values",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getPartitionValues, (req, v) -> {
-                req.setPartitionValues(v);
-            }));
+            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getPartitionValues,
+                DeletePartitionColumnStatisticsRequest::setPartitionValues));
         builder.<String>withRequestField("column_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getColumnName, (req, v) -> {
-                req.setColumnName(v);
-            }));
+            f -> f.withMarshaller(DeletePartitionColumnStatisticsRequest::getColumnName,
+                DeletePartitionColumnStatisticsRequest::setColumnName));
 
         // response
 
@@ -2982,9 +2646,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<SetPartitionColumnStatisticsRequest, SetPartitionColumnStatisticsResponse> setPartitionColumnStatistics =
-        genForsetPartitionColumnStatistics();
+        genForSetPartitionColumnStatistics();
 
-    private static HttpRequestDef<SetPartitionColumnStatisticsRequest, SetPartitionColumnStatisticsResponse> genForsetPartitionColumnStatistics() {
+    private static HttpRequestDef<SetPartitionColumnStatisticsRequest, SetPartitionColumnStatisticsResponse> genForSetPartitionColumnStatistics() {
         // basic
         HttpRequestDef.Builder<SetPartitionColumnStatisticsRequest, SetPartitionColumnStatisticsResponse> builder =
             HttpRequestDef
@@ -3001,46 +2665,41 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetPartitionColumnStatisticsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SetPartitionColumnStatisticsRequest::getInstanceId,
+                SetPartitionColumnStatisticsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetPartitionColumnStatisticsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(SetPartitionColumnStatisticsRequest::getCatalogName,
+                SetPartitionColumnStatisticsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetPartitionColumnStatisticsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(SetPartitionColumnStatisticsRequest::getDatabaseName,
+                SetPartitionColumnStatisticsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetPartitionColumnStatisticsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(SetPartitionColumnStatisticsRequest::getTableName,
+                SetPartitionColumnStatisticsRequest::setTableName));
         builder.<SetPartitionColumnStatisticsInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetPartitionColumnStatisticsInput.class),
-            f -> f.withMarshaller(SetPartitionColumnStatisticsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetPartitionColumnStatisticsRequest::getBody,
+                SetPartitionColumnStatisticsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForListQuotas();
 
-    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForListQuotas() {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
@@ -3055,9 +2714,7 @@ public class LakeFormationMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             Object.class,
-            f -> f.withMarshaller(ListQuotasResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ListQuotasResponse::getBody, ListQuotasResponse::setBody));
 
         builder.<String>withResponseField("X-request-id",
             LocationType.Header,
@@ -3068,9 +2725,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<AssociatePrincipalsRequest, AssociatePrincipalsResponse> associatePrincipals =
-        genForassociatePrincipals();
+        genForAssociatePrincipals();
 
-    private static HttpRequestDef<AssociatePrincipalsRequest, AssociatePrincipalsResponse> genForassociatePrincipals() {
+    private static HttpRequestDef<AssociatePrincipalsRequest, AssociatePrincipalsResponse> genForAssociatePrincipals() {
         // basic
         HttpRequestDef.Builder<AssociatePrincipalsRequest, AssociatePrincipalsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociatePrincipalsRequest.class, AssociatePrincipalsResponse.class)
@@ -3083,32 +2740,28 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociatePrincipalsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociatePrincipalsRequest::getInstanceId,
+                AssociatePrincipalsRequest::setInstanceId));
         builder.<String>withRequestField("role_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociatePrincipalsRequest::getRoleName, (req, v) -> {
-                req.setRoleName(v);
-            }));
+            f -> f.withMarshaller(AssociatePrincipalsRequest::getRoleName, AssociatePrincipalsRequest::setRoleName));
         builder.<List<Principal>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(AssociatePrincipalsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(Principal.class));
+            f -> f.withMarshaller(AssociatePrincipalsRequest::getBody, AssociatePrincipalsRequest::setBody)
+                .withInnerContainerType(Principal.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRoleRequest, CreateRoleResponse> createRole = genForcreateRole();
+    public static final HttpRequestDef<CreateRoleRequest, CreateRoleResponse> createRole = genForCreateRole();
 
-    private static HttpRequestDef<CreateRoleRequest, CreateRoleResponse> genForcreateRole() {
+    private static HttpRequestDef<CreateRoleRequest, CreateRoleResponse> genForCreateRole() {
         // basic
         HttpRequestDef.Builder<CreateRoleRequest, CreateRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRoleRequest.class, CreateRoleResponse.class)
@@ -3121,25 +2774,21 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRoleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRoleRequest::getInstanceId, CreateRoleRequest::setInstanceId));
         builder.<RoleInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RoleInput.class),
-            f -> f.withMarshaller(CreateRoleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRoleRequest::getBody, CreateRoleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRoleRequest, DeleteRoleResponse> deleteRole = genFordeleteRole();
+    public static final HttpRequestDef<DeleteRoleRequest, DeleteRoleResponse> deleteRole = genForDeleteRole();
 
-    private static HttpRequestDef<DeleteRoleRequest, DeleteRoleResponse> genFordeleteRole() {
+    private static HttpRequestDef<DeleteRoleRequest, DeleteRoleResponse> genForDeleteRole() {
         // basic
         HttpRequestDef.Builder<DeleteRoleRequest, DeleteRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRoleRequest.class, DeleteRoleResponse.class)
@@ -3152,16 +2801,12 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRoleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRoleRequest::getInstanceId, DeleteRoleRequest::setInstanceId));
         builder.<String>withRequestField("role_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRoleRequest::getRoleName, (req, v) -> {
-                req.setRoleName(v);
-            }));
+            f -> f.withMarshaller(DeleteRoleRequest::getRoleName, DeleteRoleRequest::setRoleName));
 
         // response
 
@@ -3169,9 +2814,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListPrincipalsRequest, ListPrincipalsResponse> listPrincipals =
-        genForlistPrincipals();
+        genForListPrincipals();
 
-    private static HttpRequestDef<ListPrincipalsRequest, ListPrincipalsResponse> genForlistPrincipals() {
+    private static HttpRequestDef<ListPrincipalsRequest, ListPrincipalsResponse> genForListPrincipals() {
         // basic
         HttpRequestDef.Builder<ListPrincipalsRequest, ListPrincipalsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrincipalsRequest.class, ListPrincipalsResponse.class)
@@ -3184,44 +2829,33 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrincipalsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPrincipalsRequest::getInstanceId, ListPrincipalsRequest::setInstanceId));
         builder.<String>withRequestField("role_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrincipalsRequest::getRoleName, (req, v) -> {
-                req.setRoleName(v);
-            }));
+            f -> f.withMarshaller(ListPrincipalsRequest::getRoleName, ListPrincipalsRequest::setRoleName));
         builder.<String>withRequestField("principal_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrincipalsRequest::getPrincipalPattern, (req, v) -> {
-                req.setPrincipalPattern(v);
-            }));
+            f -> f.withMarshaller(ListPrincipalsRequest::getPrincipalPattern,
+                ListPrincipalsRequest::setPrincipalPattern));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrincipalsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPrincipalsRequest::getLimit, ListPrincipalsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrincipalsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPrincipalsRequest::getMarker, ListPrincipalsRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPrincipalsRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListPrincipalsRequest::getReversePage, ListPrincipalsRequest::setReversePage));
 
         // response
 
@@ -3229,9 +2863,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListRoleNamesRequest, ListRoleNamesResponse> listRoleNames =
-        genForlistRoleNames();
+        genForListRoleNames();
 
-    private static HttpRequestDef<ListRoleNamesRequest, ListRoleNamesResponse> genForlistRoleNames() {
+    private static HttpRequestDef<ListRoleNamesRequest, ListRoleNamesResponse> genForListRoleNames() {
         // basic
         HttpRequestDef.Builder<ListRoleNamesRequest, ListRoleNamesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRoleNamesRequest.class, ListRoleNamesResponse.class)
@@ -3244,25 +2878,22 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRoleNamesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRoleNamesRequest::getInstanceId, ListRoleNamesRequest::setInstanceId));
 
         // response
         builder.<List<String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRoleNamesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(ListRoleNamesResponse::getBody, ListRoleNamesResponse::setBody)
+                .withInnerContainerType(String.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRolesRequest, ListRolesResponse> listRoles = genForlistRoles();
+    public static final HttpRequestDef<ListRolesRequest, ListRolesResponse> listRoles = genForListRoles();
 
-    private static HttpRequestDef<ListRolesRequest, ListRolesResponse> genForlistRoles() {
+    private static HttpRequestDef<ListRolesRequest, ListRolesResponse> genForListRoles() {
         // basic
         HttpRequestDef.Builder<ListRolesRequest, ListRolesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRolesRequest.class, ListRolesResponse.class)
@@ -3275,37 +2906,27 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRolesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRolesRequest::getInstanceId, ListRolesRequest::setInstanceId));
         builder.<String>withRequestField("role_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRolesRequest::getRolePattern, (req, v) -> {
-                req.setRolePattern(v);
-            }));
+            f -> f.withMarshaller(ListRolesRequest::getRolePattern, ListRolesRequest::setRolePattern));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRolesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRolesRequest::getLimit, ListRolesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRolesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListRolesRequest::getMarker, ListRolesRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListRolesRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListRolesRequest::getReversePage, ListRolesRequest::setReversePage));
 
         // response
 
@@ -3313,9 +2934,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<RevokePrincipalsRequest, RevokePrincipalsResponse> revokePrincipals =
-        genForrevokePrincipals();
+        genForRevokePrincipals();
 
-    private static HttpRequestDef<RevokePrincipalsRequest, RevokePrincipalsResponse> genForrevokePrincipals() {
+    private static HttpRequestDef<RevokePrincipalsRequest, RevokePrincipalsResponse> genForRevokePrincipals() {
         // basic
         HttpRequestDef.Builder<RevokePrincipalsRequest, RevokePrincipalsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RevokePrincipalsRequest.class, RevokePrincipalsResponse.class)
@@ -3328,32 +2949,27 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokePrincipalsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RevokePrincipalsRequest::getInstanceId, RevokePrincipalsRequest::setInstanceId));
         builder.<String>withRequestField("role_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokePrincipalsRequest::getRoleName, (req, v) -> {
-                req.setRoleName(v);
-            }));
+            f -> f.withMarshaller(RevokePrincipalsRequest::getRoleName, RevokePrincipalsRequest::setRoleName));
         builder.<List<Principal>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(RevokePrincipalsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(Principal.class));
+            f -> f.withMarshaller(RevokePrincipalsRequest::getBody, RevokePrincipalsRequest::setBody)
+                .withInnerContainerType(Principal.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRoleRequest, ShowRoleResponse> showRole = genForshowRole();
+    public static final HttpRequestDef<ShowRoleRequest, ShowRoleResponse> showRole = genForShowRole();
 
-    private static HttpRequestDef<ShowRoleRequest, ShowRoleResponse> genForshowRole() {
+    private static HttpRequestDef<ShowRoleRequest, ShowRoleResponse> genForShowRole() {
         // basic
         HttpRequestDef.Builder<ShowRoleRequest, ShowRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRoleRequest.class, ShowRoleResponse.class)
@@ -3366,16 +2982,12 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRoleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRoleRequest::getInstanceId, ShowRoleRequest::setInstanceId));
         builder.<String>withRequestField("role_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRoleRequest::getRoleName, (req, v) -> {
-                req.setRoleName(v);
-            }));
+            f -> f.withMarshaller(ShowRoleRequest::getRoleName, ShowRoleRequest::setRoleName));
 
         // response
 
@@ -3383,9 +2995,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<UpdatePrincipalsRequest, UpdatePrincipalsResponse> updatePrincipals =
-        genForupdatePrincipals();
+        genForUpdatePrincipals();
 
-    private static HttpRequestDef<UpdatePrincipalsRequest, UpdatePrincipalsResponse> genForupdatePrincipals() {
+    private static HttpRequestDef<UpdatePrincipalsRequest, UpdatePrincipalsResponse> genForUpdatePrincipals() {
         // basic
         HttpRequestDef.Builder<UpdatePrincipalsRequest, UpdatePrincipalsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePrincipalsRequest.class, UpdatePrincipalsResponse.class)
@@ -3398,39 +3010,33 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePrincipalsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdatePrincipalsRequest::getInstanceId, UpdatePrincipalsRequest::setInstanceId));
         builder.<String>withRequestField("role_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePrincipalsRequest::getRoleName, (req, v) -> {
-                req.setRoleName(v);
-            }));
+            f -> f.withMarshaller(UpdatePrincipalsRequest::getRoleName, UpdatePrincipalsRequest::setRoleName));
         builder.<List<Principal>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdatePrincipalsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(Principal.class));
+            f -> f.withMarshaller(UpdatePrincipalsRequest::getBody, UpdatePrincipalsRequest::setBody)
+                .withInnerContainerType(Principal.class));
 
         // response
         builder.<List<Principal>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdatePrincipalsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Principal.class));
+            f -> f.withMarshaller(UpdatePrincipalsResponse::getBody, UpdatePrincipalsResponse::setBody)
+                .withInnerContainerType(Principal.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateRoleRequest, UpdateRoleResponse> updateRole = genForupdateRole();
+    public static final HttpRequestDef<UpdateRoleRequest, UpdateRoleResponse> updateRole = genForUpdateRole();
 
-    private static HttpRequestDef<UpdateRoleRequest, UpdateRoleResponse> genForupdateRole() {
+    private static HttpRequestDef<UpdateRoleRequest, UpdateRoleResponse> genForUpdateRole() {
         // basic
         HttpRequestDef.Builder<UpdateRoleRequest, UpdateRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRoleRequest.class, UpdateRoleResponse.class)
@@ -3443,32 +3049,26 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRoleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRoleRequest::getInstanceId, UpdateRoleRequest::setInstanceId));
         builder.<String>withRequestField("role_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRoleRequest::getRoleName, (req, v) -> {
-                req.setRoleName(v);
-            }));
+            f -> f.withMarshaller(UpdateRoleRequest::getRoleName, UpdateRoleRequest::setRoleName));
         builder.<AlterRoleInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AlterRoleInput.class),
-            f -> f.withMarshaller(UpdateRoleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRoleRequest::getBody, UpdateRoleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSpecsRequest, ListSpecsResponse> listSpecs = genForlistSpecs();
+    public static final HttpRequestDef<ListSpecsRequest, ListSpecsResponse> listSpecs = genForListSpecs();
 
-    private static HttpRequestDef<ListSpecsRequest, ListSpecsResponse> genForlistSpecs() {
+    private static HttpRequestDef<ListSpecsRequest, ListSpecsResponse> genForListSpecs() {
         // basic
         HttpRequestDef.Builder<ListSpecsRequest, ListSpecsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSpecsRequest.class, ListSpecsResponse.class)
@@ -3481,32 +3081,26 @@ public class LakeFormationMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecsRequest::getSpecCode, (req, v) -> {
-                req.setSpecCode(v);
-            }));
+            f -> f.withMarshaller(ListSpecsRequest::getSpecCode, ListSpecsRequest::setSpecCode));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSpecsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSpecsRequest::getOffset, ListSpecsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSpecsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSpecsRequest::getLimit, ListSpecsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTableRequest, CreateTableResponse> createTable = genForcreateTable();
+    public static final HttpRequestDef<CreateTableRequest, CreateTableResponse> createTable = genForCreateTable();
 
-    private static HttpRequestDef<CreateTableRequest, CreateTableResponse> genForcreateTable() {
+    private static HttpRequestDef<CreateTableRequest, CreateTableResponse> genForCreateTable() {
         // basic
         HttpRequestDef.Builder<CreateTableRequest, CreateTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTableRequest.class, CreateTableResponse.class)
@@ -3520,30 +3114,22 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTableRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateTableRequest::getInstanceId, CreateTableRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTableRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(CreateTableRequest::getCatalogName, CreateTableRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTableRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(CreateTableRequest::getDatabaseName, CreateTableRequest::setDatabaseName));
         builder.<TableInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TableInput.class),
-            f -> f.withMarshaller(CreateTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTableRequest::getBody, CreateTableRequest::setBody));
 
         // response
 
@@ -3551,9 +3137,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<DeleteAllTablesRequest, DeleteAllTablesResponse> deleteAllTables =
-        genFordeleteAllTables();
+        genForDeleteAllTables();
 
-    private static HttpRequestDef<DeleteAllTablesRequest, DeleteAllTablesResponse> genFordeleteAllTables() {
+    private static HttpRequestDef<DeleteAllTablesRequest, DeleteAllTablesResponse> genForDeleteAllTables() {
         // basic
         HttpRequestDef.Builder<DeleteAllTablesRequest, DeleteAllTablesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DeleteAllTablesRequest.class, DeleteAllTablesResponse.class)
@@ -3567,39 +3153,31 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAllTablesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAllTablesRequest::getInstanceId, DeleteAllTablesRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAllTablesRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(DeleteAllTablesRequest::getCatalogName, DeleteAllTablesRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAllTablesRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(DeleteAllTablesRequest::getDatabaseName, DeleteAllTablesRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAllTablesRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(DeleteAllTablesRequest::getTableName, DeleteAllTablesRequest::setTableName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTableRequest, DeleteTableResponse> deleteTable = genFordeleteTable();
+    public static final HttpRequestDef<DeleteTableRequest, DeleteTableResponse> deleteTable = genForDeleteTable();
 
-    private static HttpRequestDef<DeleteTableRequest, DeleteTableResponse> genFordeleteTable() {
+    private static HttpRequestDef<DeleteTableRequest, DeleteTableResponse> genForDeleteTable() {
         // basic
         HttpRequestDef.Builder<DeleteTableRequest, DeleteTableResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteTableRequest.class, DeleteTableResponse.class)
@@ -3613,37 +3191,27 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTableRequest::getInstanceId, DeleteTableRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(DeleteTableRequest::getCatalogName, DeleteTableRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(DeleteTableRequest::getDatabaseName, DeleteTableRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(DeleteTableRequest::getTableName, DeleteTableRequest::setTableName));
         builder.<Boolean>withRequestField("delete_data",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteTableRequest::getDeleteData, (req, v) -> {
-                req.setDeleteData(v);
-            }));
+            f -> f.withMarshaller(DeleteTableRequest::getDeleteData, DeleteTableRequest::setDeleteData));
 
         // response
 
@@ -3651,9 +3219,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListTableMetaRequest, ListTableMetaResponse> listTableMeta =
-        genForlistTableMeta();
+        genForListTableMeta();
 
-    private static HttpRequestDef<ListTableMetaRequest, ListTableMetaResponse> genForlistTableMeta() {
+    private static HttpRequestDef<ListTableMetaRequest, ListTableMetaResponse> genForListTableMeta() {
         // basic
         HttpRequestDef.Builder<ListTableMetaRequest, ListTableMetaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTableMetaRequest.class, ListTableMetaResponse.class)
@@ -3666,58 +3234,44 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableMetaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTableMetaRequest::getInstanceId, ListTableMetaRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableMetaRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListTableMetaRequest::getCatalogName, ListTableMetaRequest::setCatalogName));
         builder.<String>withRequestField("database_name_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableMetaRequest::getDatabaseNamePattern, (req, v) -> {
-                req.setDatabaseNamePattern(v);
-            }));
+            f -> f.withMarshaller(ListTableMetaRequest::getDatabaseNamePattern,
+                ListTableMetaRequest::setDatabaseNamePattern));
         builder.<String>withRequestField("table_name_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableMetaRequest::getTableNamePattern, (req, v) -> {
-                req.setTableNamePattern(v);
-            }));
+            f -> f.withMarshaller(ListTableMetaRequest::getTableNamePattern,
+                ListTableMetaRequest::setTableNamePattern));
         builder.<List<ListTableMetaRequest.TableTypesEnum>>withRequestField("table_types",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTableMetaRequest::getTableTypes, (req, v) -> {
-                req.setTableTypes(v);
-            }));
+            f -> f.withMarshaller(ListTableMetaRequest::getTableTypes, ListTableMetaRequest::setTableTypes));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTableMetaRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTableMetaRequest::getLimit, ListTableMetaRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableMetaRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTableMetaRequest::getMarker, ListTableMetaRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListTableMetaRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListTableMetaRequest::getReversePage, ListTableMetaRequest::setReversePage));
 
         // response
 
@@ -3725,9 +3279,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListTableNamesRequest, ListTableNamesResponse> listTableNames =
-        genForlistTableNames();
+        genForListTableNames();
 
-    private static HttpRequestDef<ListTableNamesRequest, ListTableNamesResponse> genForlistTableNames() {
+    private static HttpRequestDef<ListTableNamesRequest, ListTableNamesResponse> genForListTableNames() {
         // basic
         HttpRequestDef.Builder<ListTableNamesRequest, ListTableNamesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTableNamesRequest.class, ListTableNamesResponse.class)
@@ -3741,53 +3295,42 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableNamesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTableNamesRequest::getInstanceId, ListTableNamesRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableNamesRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListTableNamesRequest::getCatalogName, ListTableNamesRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableNamesRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListTableNamesRequest::getDatabaseName, ListTableNamesRequest::setDatabaseName));
         builder.<String>withRequestField("table_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableNamesRequest::getTablePattern, (req, v) -> {
-                req.setTablePattern(v);
-            }));
+            f -> f.withMarshaller(ListTableNamesRequest::getTablePattern, ListTableNamesRequest::setTablePattern));
         builder.<String>withRequestField("table_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableNamesRequest::getTableType, (req, v) -> {
-                req.setTableType(v);
-            }));
+            f -> f.withMarshaller(ListTableNamesRequest::getTableType, ListTableNamesRequest::setTableType));
 
         // response
         builder.<List<String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTableNamesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(ListTableNamesResponse::getBody, ListTableNamesResponse::setBody)
+                .withInnerContainerType(String.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTablesRequest, ListTablesResponse> listTables = genForlistTables();
+    public static final HttpRequestDef<ListTablesRequest, ListTablesResponse> listTables = genForListTables();
 
-    private static HttpRequestDef<ListTablesRequest, ListTablesResponse> genForlistTables() {
+    private static HttpRequestDef<ListTablesRequest, ListTablesResponse> genForListTables() {
         // basic
         HttpRequestDef.Builder<ListTablesRequest, ListTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTablesRequest.class, ListTablesResponse.class)
@@ -3801,65 +3344,47 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getInstanceId, ListTablesRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getCatalogName, ListTablesRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getDatabaseName, ListTablesRequest::setDatabaseName));
         builder.<String>withRequestField("table_name_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getTableNamePattern, (req, v) -> {
-                req.setTableNamePattern(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getTableNamePattern, ListTablesRequest::setTableNamePattern));
         builder.<ListTablesRequest.TableTypeEnum>withRequestField("table_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTablesRequest.TableTypeEnum.class),
-            f -> f.withMarshaller(ListTablesRequest::getTableType, (req, v) -> {
-                req.setTableType(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getTableType, ListTablesRequest::setTableType));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getFilter, ListTablesRequest::setFilter));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTablesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getLimit, ListTablesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getMarker, ListTablesRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListTablesRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getReversePage, ListTablesRequest::setReversePage));
 
         // response
 
@@ -3867,9 +3392,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListTablesByNameRequest, ListTablesByNameResponse> listTablesByName =
-        genForlistTablesByName();
+        genForListTablesByName();
 
-    private static HttpRequestDef<ListTablesByNameRequest, ListTablesByNameResponse> genForlistTablesByName() {
+    private static HttpRequestDef<ListTablesByNameRequest, ListTablesByNameResponse> genForListTablesByName() {
         // basic
         HttpRequestDef.Builder<ListTablesByNameRequest, ListTablesByNameResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListTablesByNameRequest.class, ListTablesByNameResponse.class)
@@ -3883,46 +3408,37 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesByNameRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTablesByNameRequest::getInstanceId, ListTablesByNameRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesByNameRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListTablesByNameRequest::getCatalogName, ListTablesByNameRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesByNameRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListTablesByNameRequest::getDatabaseName, ListTablesByNameRequest::setDatabaseName));
         builder.<ListTableByNameInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTableByNameInput.class),
-            f -> f.withMarshaller(ListTablesByNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListTablesByNameRequest::getBody, ListTablesByNameRequest::setBody));
 
         // response
         builder.<List<Table>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTablesByNameResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Table.class));
+            f -> f.withMarshaller(ListTablesByNameResponse::getBody, ListTablesByNameResponse::setBody)
+                .withInnerContainerType(Table.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTableRequest, ShowTableResponse> showTable = genForshowTable();
+    public static final HttpRequestDef<ShowTableRequest, ShowTableResponse> showTable = genForShowTable();
 
-    private static HttpRequestDef<ShowTableRequest, ShowTableResponse> genForshowTable() {
+    private static HttpRequestDef<ShowTableRequest, ShowTableResponse> genForShowTable() {
         // basic
         HttpRequestDef.Builder<ShowTableRequest, ShowTableResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowTableRequest.class, ShowTableResponse.class)
@@ -3936,39 +3452,31 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTableRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowTableRequest::getInstanceId, ShowTableRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTableRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ShowTableRequest::getCatalogName, ShowTableRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTableRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ShowTableRequest::getDatabaseName, ShowTableRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTableRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ShowTableRequest::getTableName, ShowTableRequest::setTableName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTableRequest, UpdateTableResponse> updateTable = genForupdateTable();
+    public static final HttpRequestDef<UpdateTableRequest, UpdateTableResponse> updateTable = genForUpdateTable();
 
-    private static HttpRequestDef<UpdateTableRequest, UpdateTableResponse> genForupdateTable() {
+    private static HttpRequestDef<UpdateTableRequest, UpdateTableResponse> genForUpdateTable() {
         // basic
         HttpRequestDef.Builder<UpdateTableRequest, UpdateTableResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateTableRequest.class, UpdateTableResponse.class)
@@ -3982,37 +3490,27 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTableRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateTableRequest::getInstanceId, UpdateTableRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTableRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(UpdateTableRequest::getCatalogName, UpdateTableRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTableRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(UpdateTableRequest::getDatabaseName, UpdateTableRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTableRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(UpdateTableRequest::getTableName, UpdateTableRequest::setTableName));
         builder.<AlterTableInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AlterTableInput.class),
-            f -> f.withMarshaller(UpdateTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTableRequest::getBody, UpdateTableRequest::setBody));
 
         // response
 
@@ -4020,9 +3518,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<DeleteTableColumnStatisticsRequest, DeleteTableColumnStatisticsResponse> deleteTableColumnStatistics =
-        genFordeleteTableColumnStatistics();
+        genForDeleteTableColumnStatistics();
 
-    private static HttpRequestDef<DeleteTableColumnStatisticsRequest, DeleteTableColumnStatisticsResponse> genFordeleteTableColumnStatistics() {
+    private static HttpRequestDef<DeleteTableColumnStatisticsRequest, DeleteTableColumnStatisticsResponse> genForDeleteTableColumnStatistics() {
         // basic
         HttpRequestDef.Builder<DeleteTableColumnStatisticsRequest, DeleteTableColumnStatisticsResponse> builder =
             HttpRequestDef
@@ -4039,37 +3537,32 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableColumnStatisticsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTableColumnStatisticsRequest::getInstanceId,
+                DeleteTableColumnStatisticsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableColumnStatisticsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(DeleteTableColumnStatisticsRequest::getCatalogName,
+                DeleteTableColumnStatisticsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableColumnStatisticsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(DeleteTableColumnStatisticsRequest::getDatabaseName,
+                DeleteTableColumnStatisticsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableColumnStatisticsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(DeleteTableColumnStatisticsRequest::getTableName,
+                DeleteTableColumnStatisticsRequest::setTableName));
         builder.<String>withRequestField("column_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableColumnStatisticsRequest::getColumnName, (req, v) -> {
-                req.setColumnName(v);
-            }));
+            f -> f.withMarshaller(DeleteTableColumnStatisticsRequest::getColumnName,
+                DeleteTableColumnStatisticsRequest::setColumnName));
 
         // response
 
@@ -4077,9 +3570,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListTableColumnStatisticsRequest, ListTableColumnStatisticsResponse> listTableColumnStatistics =
-        genForlistTableColumnStatistics();
+        genForListTableColumnStatistics();
 
-    private static HttpRequestDef<ListTableColumnStatisticsRequest, ListTableColumnStatisticsResponse> genForlistTableColumnStatistics() {
+    private static HttpRequestDef<ListTableColumnStatisticsRequest, ListTableColumnStatisticsResponse> genForListTableColumnStatistics() {
         // basic
         HttpRequestDef.Builder<ListTableColumnStatisticsRequest, ListTableColumnStatisticsResponse> builder =
             HttpRequestDef
@@ -4096,54 +3589,49 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableColumnStatisticsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTableColumnStatisticsRequest::getInstanceId,
+                ListTableColumnStatisticsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableColumnStatisticsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListTableColumnStatisticsRequest::getCatalogName,
+                ListTableColumnStatisticsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableColumnStatisticsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListTableColumnStatisticsRequest::getDatabaseName,
+                ListTableColumnStatisticsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTableColumnStatisticsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ListTableColumnStatisticsRequest::getTableName,
+                ListTableColumnStatisticsRequest::setTableName));
         builder.<GetTableColumnStatisticsInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetTableColumnStatisticsInput.class),
-            f -> f.withMarshaller(ListTableColumnStatisticsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListTableColumnStatisticsRequest::getBody,
+                ListTableColumnStatisticsRequest::setBody));
 
         // response
         builder.<List<ColumnStatisticsObj>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTableColumnStatisticsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ColumnStatisticsObj.class));
+            f -> f
+                .withMarshaller(ListTableColumnStatisticsResponse::getBody, ListTableColumnStatisticsResponse::setBody)
+                .withInnerContainerType(ColumnStatisticsObj.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<SetTableColumnStatisticsRequest, SetTableColumnStatisticsResponse> setTableColumnStatistics =
-        genForsetTableColumnStatistics();
+        genForSetTableColumnStatistics();
 
-    private static HttpRequestDef<SetTableColumnStatisticsRequest, SetTableColumnStatisticsResponse> genForsetTableColumnStatistics() {
+    private static HttpRequestDef<SetTableColumnStatisticsRequest, SetTableColumnStatisticsResponse> genForSetTableColumnStatistics() {
         // basic
         HttpRequestDef.Builder<SetTableColumnStatisticsRequest, SetTableColumnStatisticsResponse> builder =
             HttpRequestDef
@@ -4158,37 +3646,31 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetTableColumnStatisticsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SetTableColumnStatisticsRequest::getInstanceId,
+                SetTableColumnStatisticsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetTableColumnStatisticsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(SetTableColumnStatisticsRequest::getCatalogName,
+                SetTableColumnStatisticsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetTableColumnStatisticsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(SetTableColumnStatisticsRequest::getDatabaseName,
+                SetTableColumnStatisticsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetTableColumnStatisticsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(SetTableColumnStatisticsRequest::getTableName,
+                SetTableColumnStatisticsRequest::setTableName));
         builder.<MergeTableColumnStatisticInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MergeTableColumnStatisticInput.class),
-            f -> f.withMarshaller(SetTableColumnStatisticsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetTableColumnStatisticsRequest::getBody, SetTableColumnStatisticsRequest::setBody));
 
         // response
 
@@ -4196,9 +3678,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<BatchCreateConstraintRequest, BatchCreateConstraintResponse> batchCreateConstraint =
-        genForbatchCreateConstraint();
+        genForBatchCreateConstraint();
 
-    private static HttpRequestDef<BatchCreateConstraintRequest, BatchCreateConstraintResponse> genForbatchCreateConstraint() {
+    private static HttpRequestDef<BatchCreateConstraintRequest, BatchCreateConstraintResponse> genForBatchCreateConstraint() {
         // basic
         HttpRequestDef.Builder<BatchCreateConstraintRequest, BatchCreateConstraintResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateConstraintRequest.class, BatchCreateConstraintResponse.class)
@@ -4212,37 +3694,31 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateConstraintRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateConstraintRequest::getInstanceId,
+                BatchCreateConstraintRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateConstraintRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(BatchCreateConstraintRequest::getCatalogName,
+                BatchCreateConstraintRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateConstraintRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(BatchCreateConstraintRequest::getDatabaseName,
+                BatchCreateConstraintRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateConstraintRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(BatchCreateConstraintRequest::getTableName,
+                BatchCreateConstraintRequest::setTableName));
         builder.<TableConstraintsInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TableConstraintsInput.class),
-            f -> f.withMarshaller(BatchCreateConstraintRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateConstraintRequest::getBody, BatchCreateConstraintRequest::setBody));
 
         // response
 
@@ -4250,9 +3726,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<DeleteConstraintRequest, DeleteConstraintResponse> deleteConstraint =
-        genFordeleteConstraint();
+        genForDeleteConstraint();
 
-    private static HttpRequestDef<DeleteConstraintRequest, DeleteConstraintResponse> genFordeleteConstraint() {
+    private static HttpRequestDef<DeleteConstraintRequest, DeleteConstraintResponse> genForDeleteConstraint() {
         // basic
         HttpRequestDef.Builder<DeleteConstraintRequest, DeleteConstraintResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteConstraintRequest.class, DeleteConstraintResponse.class)
@@ -4266,37 +3742,28 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConstraintRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteConstraintRequest::getInstanceId, DeleteConstraintRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConstraintRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(DeleteConstraintRequest::getCatalogName, DeleteConstraintRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConstraintRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(DeleteConstraintRequest::getDatabaseName, DeleteConstraintRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConstraintRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(DeleteConstraintRequest::getTableName, DeleteConstraintRequest::setTableName));
         builder.<String>withRequestField("constraint_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConstraintRequest::getConstraintName, (req, v) -> {
-                req.setConstraintName(v);
-            }));
+            f -> f.withMarshaller(DeleteConstraintRequest::getConstraintName,
+                DeleteConstraintRequest::setConstraintName));
 
         // response
 
@@ -4304,9 +3771,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListConstraintsRequest, ListConstraintsResponse> listConstraints =
-        genForlistConstraints();
+        genForListConstraints();
 
-    private static HttpRequestDef<ListConstraintsRequest, ListConstraintsResponse> genForlistConstraints() {
+    private static HttpRequestDef<ListConstraintsRequest, ListConstraintsResponse> genForListConstraints() {
         // basic
         HttpRequestDef.Builder<ListConstraintsRequest, ListConstraintsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListConstraintsRequest.class, ListConstraintsResponse.class)
@@ -4320,51 +3787,37 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConstraintsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListConstraintsRequest::getInstanceId, ListConstraintsRequest::setInstanceId));
         builder.<String>withRequestField("catalog_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConstraintsRequest::getCatalogName, (req, v) -> {
-                req.setCatalogName(v);
-            }));
+            f -> f.withMarshaller(ListConstraintsRequest::getCatalogName, ListConstraintsRequest::setCatalogName));
         builder.<String>withRequestField("database_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConstraintsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ListConstraintsRequest::getDatabaseName, ListConstraintsRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConstraintsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ListConstraintsRequest::getTableName, ListConstraintsRequest::setTableName));
         builder.<ListConstraintsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListConstraintsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListConstraintsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListConstraintsRequest::getType, ListConstraintsRequest::setType));
         builder.<String>withRequestField("parent_db",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConstraintsRequest::getParentDb, (req, v) -> {
-                req.setParentDb(v);
-            }));
+            f -> f.withMarshaller(ListConstraintsRequest::getParentDb, ListConstraintsRequest::setParentDb));
         builder.<String>withRequestField("parent_tbl",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConstraintsRequest::getParentTbl, (req, v) -> {
-                req.setParentTbl(v);
-            }));
+            f -> f.withMarshaller(ListConstraintsRequest::getParentTbl, ListConstraintsRequest::setParentTbl));
 
         // response
 
@@ -4372,9 +3825,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse> batchUpdateLakeFormationInstanceTags =
-        genForbatchUpdateLakeFormationInstanceTags();
+        genForBatchUpdateLakeFormationInstanceTags();
 
-    private static HttpRequestDef<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse> genForbatchUpdateLakeFormationInstanceTags() {
+    private static HttpRequestDef<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse> genForBatchUpdateLakeFormationInstanceTags() {
         // basic
         HttpRequestDef.Builder<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse> builder =
             HttpRequestDef
@@ -4390,16 +3843,14 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateLakeFormationInstanceTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateLakeFormationInstanceTagsRequest::getInstanceId,
+                BatchUpdateLakeFormationInstanceTagsRequest::setInstanceId));
         builder.<BatchUpdateTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchUpdateTagsRequestBody.class),
-            f -> f.withMarshaller(BatchUpdateLakeFormationInstanceTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateLakeFormationInstanceTagsRequest::getBody,
+                BatchUpdateLakeFormationInstanceTagsRequest::setBody));
 
         // response
 
@@ -4407,9 +3858,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse> listLakeFormationInstanceTags =
-        genForlistLakeFormationInstanceTags();
+        genForListLakeFormationInstanceTags();
 
-    private static HttpRequestDef<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse> genForlistLakeFormationInstanceTags() {
+    private static HttpRequestDef<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse> genForListLakeFormationInstanceTags() {
         // basic
         HttpRequestDef.Builder<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse> builder =
             HttpRequestDef
@@ -4425,9 +3876,8 @@ public class LakeFormationMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListLakeFormationInstanceTagsRequest::getUsePredefineTags, (req, v) -> {
-                req.setUsePredefineTags(v);
-            }));
+            f -> f.withMarshaller(ListLakeFormationInstanceTagsRequest::getUsePredefineTags,
+                ListLakeFormationInstanceTagsRequest::setUsePredefineTags));
 
         // response
 
@@ -4441,9 +3891,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<AssociateRolesRequest, AssociateRolesResponse> associateRoles =
-        genForassociateRoles();
+        genForAssociateRoles();
 
-    private static HttpRequestDef<AssociateRolesRequest, AssociateRolesResponse> genForassociateRoles() {
+    private static HttpRequestDef<AssociateRolesRequest, AssociateRolesResponse> genForAssociateRoles() {
         // basic
         HttpRequestDef.Builder<AssociateRolesRequest, AssociateRolesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateRolesRequest.class, AssociateRolesResponse.class)
@@ -4456,23 +3906,18 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRolesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateRolesRequest::getInstanceId, AssociateRolesRequest::setInstanceId));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRolesRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(AssociateRolesRequest::getUserName, AssociateRolesRequest::setUserName));
         builder.<List<RoleInfoInput>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(AssociateRolesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(RoleInfoInput.class));
+            f -> f.withMarshaller(AssociateRolesRequest::getBody, AssociateRolesRequest::setBody)
+                .withInnerContainerType(RoleInfoInput.class));
 
         // response
 
@@ -4480,9 +3925,9 @@ public class LakeFormationMeta {
     }
 
     public static final HttpRequestDef<ListUserRolesRequest, ListUserRolesResponse> listUserRoles =
-        genForlistUserRoles();
+        genForListUserRoles();
 
-    private static HttpRequestDef<ListUserRolesRequest, ListUserRolesResponse> genForlistUserRoles() {
+    private static HttpRequestDef<ListUserRolesRequest, ListUserRolesResponse> genForListUserRoles() {
         // basic
         HttpRequestDef.Builder<ListUserRolesRequest, ListUserRolesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUserRolesRequest.class, ListUserRolesResponse.class)
@@ -4495,53 +3940,41 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUserRolesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListUserRolesRequest::getInstanceId, ListUserRolesRequest::setInstanceId));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUserRolesRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(ListUserRolesRequest::getUserName, ListUserRolesRequest::setUserName));
         builder.<String>withRequestField("role_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUserRolesRequest::getRolePattern, (req, v) -> {
-                req.setRolePattern(v);
-            }));
+            f -> f.withMarshaller(ListUserRolesRequest::getRolePattern, ListUserRolesRequest::setRolePattern));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUserRolesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListUserRolesRequest::getLimit, ListUserRolesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUserRolesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListUserRolesRequest::getMarker, ListUserRolesRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListUserRolesRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListUserRolesRequest::getReversePage, ListUserRolesRequest::setReversePage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForlistUsers();
+    public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForListUsers();
 
-    private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForlistUsers() {
+    private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForListUsers() {
         // basic
         HttpRequestDef.Builder<ListUsersRequest, ListUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsersRequest.class, ListUsersResponse.class)
@@ -4554,53 +3987,41 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getInstanceId, ListUsersRequest::setInstanceId));
         builder.<String>withRequestField("user_source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersRequest::getUserSource, (req, v) -> {
-                req.setUserSource(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getUserSource, ListUsersRequest::setUserSource));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getLimit, ListUsersRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getMarker, ListUsersRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListUsersRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getReversePage, ListUsersRequest::setReversePage));
         builder.<String>withRequestField("user_name_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersRequest::getUserNamePattern, (req, v) -> {
-                req.setUserNamePattern(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getUserNamePattern, ListUsersRequest::setUserNamePattern));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RevokeRolesRequest, RevokeRolesResponse> revokeRoles = genForrevokeRoles();
+    public static final HttpRequestDef<RevokeRolesRequest, RevokeRolesResponse> revokeRoles = genForRevokeRoles();
 
-    private static HttpRequestDef<RevokeRolesRequest, RevokeRolesResponse> genForrevokeRoles() {
+    private static HttpRequestDef<RevokeRolesRequest, RevokeRolesResponse> genForRevokeRoles() {
         // basic
         HttpRequestDef.Builder<RevokeRolesRequest, RevokeRolesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RevokeRolesRequest.class, RevokeRolesResponse.class)
@@ -4613,32 +4034,27 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeRolesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RevokeRolesRequest::getInstanceId, RevokeRolesRequest::setInstanceId));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeRolesRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(RevokeRolesRequest::getUserName, RevokeRolesRequest::setUserName));
         builder.<List<RoleInfoInput>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(RevokeRolesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(RoleInfoInput.class));
+            f -> f.withMarshaller(RevokeRolesRequest::getBody, RevokeRolesRequest::setBody)
+                .withInnerContainerType(RoleInfoInput.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateRolesRequest, UpdateRolesResponse> updateRoles = genForupdateRoles();
+    public static final HttpRequestDef<UpdateRolesRequest, UpdateRolesResponse> updateRoles = genForUpdateRoles();
 
-    private static HttpRequestDef<UpdateRolesRequest, UpdateRolesResponse> genForupdateRoles() {
+    private static HttpRequestDef<UpdateRolesRequest, UpdateRolesResponse> genForUpdateRoles() {
         // basic
         HttpRequestDef.Builder<UpdateRolesRequest, UpdateRolesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRolesRequest.class, UpdateRolesResponse.class)
@@ -4651,40 +4067,34 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRolesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRolesRequest::getInstanceId, UpdateRolesRequest::setInstanceId));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRolesRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(UpdateRolesRequest::getUserName, UpdateRolesRequest::setUserName));
         builder.<List<RoleInfoInput>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdateRolesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(RoleInfoInput.class));
+            f -> f.withMarshaller(UpdateRolesRequest::getBody, UpdateRolesRequest::setBody)
+                .withInnerContainerType(RoleInfoInput.class));
 
         // response
         builder.<List<Role>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdateRolesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Role.class));
+            f -> f.withMarshaller(UpdateRolesResponse::getBody, UpdateRolesResponse::setBody)
+                .withInnerContainerType(Role.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListGroupsForDomainRequest, ListGroupsForDomainResponse> listGroupsForDomain =
-        genForlistGroupsForDomain();
+        genForListGroupsForDomain();
 
-    private static HttpRequestDef<ListGroupsForDomainRequest, ListGroupsForDomainResponse> genForlistGroupsForDomain() {
+    private static HttpRequestDef<ListGroupsForDomainRequest, ListGroupsForDomainResponse> genForListGroupsForDomain() {
         // basic
         HttpRequestDef.Builder<ListGroupsForDomainRequest, ListGroupsForDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListGroupsForDomainRequest.class, ListGroupsForDomainResponse.class)
@@ -4697,37 +4107,30 @@ public class LakeFormationMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGroupsForDomainRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListGroupsForDomainRequest::getInstanceId,
+                ListGroupsForDomainRequest::setInstanceId));
         builder.<ListGroupsForDomainRequest.GroupSourceEnum>withRequestField("group_source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListGroupsForDomainRequest.GroupSourceEnum.class),
-            f -> f.withMarshaller(ListGroupsForDomainRequest::getGroupSource, (req, v) -> {
-                req.setGroupSource(v);
-            }));
+            f -> f.withMarshaller(ListGroupsForDomainRequest::getGroupSource,
+                ListGroupsForDomainRequest::setGroupSource));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGroupsForDomainRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListGroupsForDomainRequest::getLimit, ListGroupsForDomainRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGroupsForDomainRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListGroupsForDomainRequest::getMarker, ListGroupsForDomainRequest::setMarker));
         builder.<Boolean>withRequestField("reverse_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListGroupsForDomainRequest::getReversePage, (req, v) -> {
-                req.setReversePage(v);
-            }));
+            f -> f.withMarshaller(ListGroupsForDomainRequest::getReversePage,
+                ListGroupsForDomainRequest::setReversePage));
 
         // response
 

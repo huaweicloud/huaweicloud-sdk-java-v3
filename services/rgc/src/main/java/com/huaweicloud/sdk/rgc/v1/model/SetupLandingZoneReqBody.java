@@ -64,7 +64,7 @@ public class SetupLandingZoneReqBody {
     }
 
     /**
-     * 管理员账号创建Identity Center用户所用邮箱。
+     * 管理员纳管账号创建Identity Center用户所用邮箱。
      * @return identityStoreEmail
      */
     public String getIdentityStoreEmail() {
@@ -132,7 +132,7 @@ public class SetupLandingZoneReqBody {
     }
 
     /**
-     * 当前账号纳管的区域。
+     * 当前纳管账号纳管的区域。
      * @return regionConfigurationList
      */
     public List<RegionConfigurationList> getRegionConfigurationList() {
@@ -168,7 +168,7 @@ public class SetupLandingZoneReqBody {
     }
 
     /**
-     * 基础环境的账号体系。
+     * 基础环境的纳管账号体系。
      * @return organizationStructure
      */
     public List<OrganizationStructureBaseLine> getOrganizationStructure() {

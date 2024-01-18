@@ -114,7 +114,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionEvaluationRequest 请求对象
+     * @param request AddExtensionEvaluationRequest 请求对象
      * @return CompletableFuture<AddExtensionEvaluationResponse>
      */
     public CompletableFuture<AddExtensionEvaluationResponse> addExtensionEvaluationAsync(
@@ -129,13 +129,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionEvaluationRequest 请求对象
+     * @param request AddExtensionEvaluationRequest 请求对象
      * @return AsyncInvoker<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse>
      */
     public AsyncInvoker<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse> addExtensionEvaluationAsyncInvoker(
         AddExtensionEvaluationRequest request) {
-        return new AsyncInvoker<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse>(request,
-            CloudIDEMeta.addExtensionEvaluation, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.addExtensionEvaluation, hcClient);
     }
 
     /**
@@ -145,7 +144,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionEvaluationReplyRequest 请求对象
+     * @param request AddExtensionEvaluationReplyRequest 请求对象
      * @return CompletableFuture<AddExtensionEvaluationReplyResponse>
      */
     public CompletableFuture<AddExtensionEvaluationReplyResponse> addExtensionEvaluationReplyAsync(
@@ -160,13 +159,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionEvaluationReplyRequest 请求对象
+     * @param request AddExtensionEvaluationReplyRequest 请求对象
      * @return AsyncInvoker<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse>
      */
     public AsyncInvoker<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse> addExtensionEvaluationReplyAsyncInvoker(
         AddExtensionEvaluationReplyRequest request) {
-        return new AsyncInvoker<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse>(request,
-            CloudIDEMeta.addExtensionEvaluationReply, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.addExtensionEvaluationReply, hcClient);
     }
 
     /**
@@ -176,7 +174,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionStarRequest 请求对象
+     * @param request AddExtensionStarRequest 请求对象
      * @return CompletableFuture<AddExtensionStarResponse>
      */
     public CompletableFuture<AddExtensionStarResponse> addExtensionStarAsync(AddExtensionStarRequest request) {
@@ -190,13 +188,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionStarRequest 请求对象
+     * @param request AddExtensionStarRequest 请求对象
      * @return AsyncInvoker<AddExtensionStarRequest, AddExtensionStarResponse>
      */
     public AsyncInvoker<AddExtensionStarRequest, AddExtensionStarResponse> addExtensionStarAsyncInvoker(
         AddExtensionStarRequest request) {
-        return new AsyncInvoker<AddExtensionStarRequest, AddExtensionStarResponse>(request,
-            CloudIDEMeta.addExtensionStar, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.addExtensionStar, hcClient);
     }
 
     /**
@@ -206,7 +203,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckMaliciousExtensionEvaluationRequest 请求对象
+     * @param request CheckMaliciousExtensionEvaluationRequest 请求对象
      * @return CompletableFuture<CheckMaliciousExtensionEvaluationResponse>
      */
     public CompletableFuture<CheckMaliciousExtensionEvaluationResponse> checkMaliciousExtensionEvaluationAsync(
@@ -221,13 +218,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckMaliciousExtensionEvaluationRequest 请求对象
+     * @param request CheckMaliciousExtensionEvaluationRequest 请求对象
      * @return AsyncInvoker<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse>
      */
     public AsyncInvoker<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse> checkMaliciousExtensionEvaluationAsyncInvoker(
         CheckMaliciousExtensionEvaluationRequest request) {
-        return new AsyncInvoker<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse>(
-            request, CloudIDEMeta.checkMaliciousExtensionEvaluation, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.checkMaliciousExtensionEvaluation, hcClient);
     }
 
     /**
@@ -237,7 +233,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExtensionAuthorizationRequest 请求对象
+     * @param request CreateExtensionAuthorizationRequest 请求对象
      * @return CompletableFuture<CreateExtensionAuthorizationResponse>
      */
     public CompletableFuture<CreateExtensionAuthorizationResponse> createExtensionAuthorizationAsync(
@@ -252,13 +248,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExtensionAuthorizationRequest 请求对象
+     * @param request CreateExtensionAuthorizationRequest 请求对象
      * @return AsyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse>
      */
     public AsyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> createExtensionAuthorizationAsyncInvoker(
         CreateExtensionAuthorizationRequest request) {
-        return new AsyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse>(request,
-            CloudIDEMeta.createExtensionAuthorization, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.createExtensionAuthorization, hcClient);
     }
 
     /**
@@ -268,7 +263,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvaluationRequest 请求对象
+     * @param request DeleteEvaluationRequest 请求对象
      * @return CompletableFuture<DeleteEvaluationResponse>
      */
     public CompletableFuture<DeleteEvaluationResponse> deleteEvaluationAsync(DeleteEvaluationRequest request) {
@@ -282,13 +277,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvaluationRequest 请求对象
+     * @param request DeleteEvaluationRequest 请求对象
      * @return AsyncInvoker<DeleteEvaluationRequest, DeleteEvaluationResponse>
      */
     public AsyncInvoker<DeleteEvaluationRequest, DeleteEvaluationResponse> deleteEvaluationAsyncInvoker(
         DeleteEvaluationRequest request) {
-        return new AsyncInvoker<DeleteEvaluationRequest, DeleteEvaluationResponse>(request,
-            CloudIDEMeta.deleteEvaluation, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.deleteEvaluation, hcClient);
     }
 
     /**
@@ -298,7 +292,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvaluationReplyRequest 请求对象
+     * @param request DeleteEvaluationReplyRequest 请求对象
      * @return CompletableFuture<DeleteEvaluationReplyResponse>
      */
     public CompletableFuture<DeleteEvaluationReplyResponse> deleteEvaluationReplyAsync(
@@ -313,13 +307,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvaluationReplyRequest 请求对象
+     * @param request DeleteEvaluationReplyRequest 请求对象
      * @return AsyncInvoker<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse>
      */
     public AsyncInvoker<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse> deleteEvaluationReplyAsyncInvoker(
         DeleteEvaluationReplyRequest request) {
-        return new AsyncInvoker<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse>(request,
-            CloudIDEMeta.deleteEvaluationReply, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.deleteEvaluationReply, hcClient);
     }
 
     /**
@@ -329,7 +322,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExtensionsRequest 请求对象
+     * @param request ListExtensionsRequest 请求对象
      * @return CompletableFuture<ListExtensionsResponse>
      */
     public CompletableFuture<ListExtensionsResponse> listExtensionsAsync(ListExtensionsRequest request) {
@@ -343,13 +336,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExtensionsRequest 请求对象
+     * @param request ListExtensionsRequest 请求对象
      * @return AsyncInvoker<ListExtensionsRequest, ListExtensionsResponse>
      */
     public AsyncInvoker<ListExtensionsRequest, ListExtensionsResponse> listExtensionsAsyncInvoker(
         ListExtensionsRequest request) {
-        return new AsyncInvoker<ListExtensionsRequest, ListExtensionsResponse>(request, CloudIDEMeta.listExtensions,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.listExtensions, hcClient);
     }
 
     /**
@@ -359,7 +351,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTemplatesRequest 请求对象
+     * @param request ListProjectTemplatesRequest 请求对象
      * @return CompletableFuture<ListProjectTemplatesResponse>
      */
     public CompletableFuture<ListProjectTemplatesResponse> listProjectTemplatesAsync(
@@ -374,13 +366,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTemplatesRequest 请求对象
+     * @param request ListProjectTemplatesRequest 请求对象
      * @return AsyncInvoker<ListProjectTemplatesRequest, ListProjectTemplatesResponse>
      */
     public AsyncInvoker<ListProjectTemplatesRequest, ListProjectTemplatesResponse> listProjectTemplatesAsyncInvoker(
         ListProjectTemplatesRequest request) {
-        return new AsyncInvoker<ListProjectTemplatesRequest, ListProjectTemplatesResponse>(request,
-            CloudIDEMeta.listProjectTemplates, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.listProjectTemplates, hcClient);
     }
 
     /**
@@ -390,7 +381,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublisherRequest 请求对象
+     * @param request ListPublisherRequest 请求对象
      * @return CompletableFuture<ListPublisherResponse>
      */
     public CompletableFuture<ListPublisherResponse> listPublisherAsync(ListPublisherRequest request) {
@@ -404,13 +395,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublisherRequest 请求对象
+     * @param request ListPublisherRequest 请求对象
      * @return AsyncInvoker<ListPublisherRequest, ListPublisherResponse>
      */
     public AsyncInvoker<ListPublisherRequest, ListPublisherResponse> listPublisherAsyncInvoker(
         ListPublisherRequest request) {
-        return new AsyncInvoker<ListPublisherRequest, ListPublisherResponse>(request, CloudIDEMeta.listPublisher,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.listPublisher, hcClient);
     }
 
     /**
@@ -420,7 +410,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStacksRequest 请求对象
+     * @param request ListStacksRequest 请求对象
      * @return CompletableFuture<ListStacksResponse>
      */
     public CompletableFuture<ListStacksResponse> listStacksAsync(ListStacksRequest request) {
@@ -434,11 +424,11 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStacksRequest 请求对象
+     * @param request ListStacksRequest 请求对象
      * @return AsyncInvoker<ListStacksRequest, ListStacksResponse>
      */
     public AsyncInvoker<ListStacksRequest, ListStacksResponse> listStacksAsyncInvoker(ListStacksRequest request) {
-        return new AsyncInvoker<ListStacksRequest, ListStacksResponse>(request, CloudIDEMeta.listStacks, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.listStacks, hcClient);
     }
 
     /**
@@ -448,7 +438,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishExtensionRequest 请求对象
+     * @param request PublishExtensionRequest 请求对象
      * @return CompletableFuture<PublishExtensionResponse>
      */
     public CompletableFuture<PublishExtensionResponse> publishExtensionAsync(PublishExtensionRequest request) {
@@ -462,13 +452,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishExtensionRequest 请求对象
+     * @param request PublishExtensionRequest 请求对象
      * @return AsyncInvoker<PublishExtensionRequest, PublishExtensionResponse>
      */
     public AsyncInvoker<PublishExtensionRequest, PublishExtensionResponse> publishExtensionAsyncInvoker(
         PublishExtensionRequest request) {
-        return new AsyncInvoker<PublishExtensionRequest, PublishExtensionResponse>(request,
-            CloudIDEMeta.publishExtension, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.publishExtension, hcClient);
     }
 
     /**
@@ -478,7 +467,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAccountStatusRequest 请求对象
+     * @param request ShowAccountStatusRequest 请求对象
      * @return CompletableFuture<ShowAccountStatusResponse>
      */
     public CompletableFuture<ShowAccountStatusResponse> showAccountStatusAsync(ShowAccountStatusRequest request) {
@@ -492,13 +481,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAccountStatusRequest 请求对象
+     * @param request ShowAccountStatusRequest 请求对象
      * @return AsyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse>
      */
     public AsyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse> showAccountStatusAsyncInvoker(
         ShowAccountStatusRequest request) {
-        return new AsyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse>(request,
-            CloudIDEMeta.showAccountStatus, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showAccountStatus, hcClient);
     }
 
     /**
@@ -508,7 +496,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCategoryListRequest 请求对象
+     * @param request ShowCategoryListRequest 请求对象
      * @return CompletableFuture<ShowCategoryListResponse>
      */
     public CompletableFuture<ShowCategoryListResponse> showCategoryListAsync(ShowCategoryListRequest request) {
@@ -522,13 +510,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCategoryListRequest 请求对象
+     * @param request ShowCategoryListRequest 请求对象
      * @return AsyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse>
      */
     public AsyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse> showCategoryListAsyncInvoker(
         ShowCategoryListRequest request) {
-        return new AsyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse>(request,
-            CloudIDEMeta.showCategoryList, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showCategoryList, hcClient);
     }
 
     /**
@@ -538,7 +525,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionAuthorizationRequest 请求对象
+     * @param request ShowExtensionAuthorizationRequest 请求对象
      * @return CompletableFuture<ShowExtensionAuthorizationResponse>
      */
     public CompletableFuture<ShowExtensionAuthorizationResponse> showExtensionAuthorizationAsync(
@@ -553,13 +540,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionAuthorizationRequest 请求对象
+     * @param request ShowExtensionAuthorizationRequest 请求对象
      * @return AsyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse>
      */
     public AsyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> showExtensionAuthorizationAsyncInvoker(
         ShowExtensionAuthorizationRequest request) {
-        return new AsyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse>(request,
-            CloudIDEMeta.showExtensionAuthorization, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showExtensionAuthorization, hcClient);
     }
 
     /**
@@ -569,7 +555,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionDetailRequest 请求对象
+     * @param request ShowExtensionDetailRequest 请求对象
      * @return CompletableFuture<ShowExtensionDetailResponse>
      */
     public CompletableFuture<ShowExtensionDetailResponse> showExtensionDetailAsync(ShowExtensionDetailRequest request) {
@@ -583,13 +569,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionDetailRequest 请求对象
+     * @param request ShowExtensionDetailRequest 请求对象
      * @return AsyncInvoker<ShowExtensionDetailRequest, ShowExtensionDetailResponse>
      */
     public AsyncInvoker<ShowExtensionDetailRequest, ShowExtensionDetailResponse> showExtensionDetailAsyncInvoker(
         ShowExtensionDetailRequest request) {
-        return new AsyncInvoker<ShowExtensionDetailRequest, ShowExtensionDetailResponse>(request,
-            CloudIDEMeta.showExtensionDetail, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showExtensionDetail, hcClient);
     }
 
     /**
@@ -599,7 +584,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionEvaluationRequest 请求对象
+     * @param request ShowExtensionEvaluationRequest 请求对象
      * @return CompletableFuture<ShowExtensionEvaluationResponse>
      */
     public CompletableFuture<ShowExtensionEvaluationResponse> showExtensionEvaluationAsync(
@@ -614,13 +599,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionEvaluationRequest 请求对象
+     * @param request ShowExtensionEvaluationRequest 请求对象
      * @return AsyncInvoker<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse>
      */
     public AsyncInvoker<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse> showExtensionEvaluationAsyncInvoker(
         ShowExtensionEvaluationRequest request) {
-        return new AsyncInvoker<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse>(request,
-            CloudIDEMeta.showExtensionEvaluation, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showExtensionEvaluation, hcClient);
     }
 
     /**
@@ -630,7 +614,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionEvaluationStarRequest 请求对象
+     * @param request ShowExtensionEvaluationStarRequest 请求对象
      * @return CompletableFuture<ShowExtensionEvaluationStarResponse>
      */
     public CompletableFuture<ShowExtensionEvaluationStarResponse> showExtensionEvaluationStarAsync(
@@ -645,13 +629,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionEvaluationStarRequest 请求对象
+     * @param request ShowExtensionEvaluationStarRequest 请求对象
      * @return AsyncInvoker<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse>
      */
     public AsyncInvoker<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse> showExtensionEvaluationStarAsyncInvoker(
         ShowExtensionEvaluationStarRequest request) {
-        return new AsyncInvoker<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse>(request,
-            CloudIDEMeta.showExtensionEvaluationStar, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showExtensionEvaluationStar, hcClient);
     }
 
     /**
@@ -661,7 +644,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionTestingResultRequest 请求对象
+     * @param request ShowExtensionTestingResultRequest 请求对象
      * @return CompletableFuture<ShowExtensionTestingResultResponse>
      */
     public CompletableFuture<ShowExtensionTestingResultResponse> showExtensionTestingResultAsync(
@@ -676,13 +659,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionTestingResultRequest 请求对象
+     * @param request ShowExtensionTestingResultRequest 请求对象
      * @return AsyncInvoker<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse>
      */
     public AsyncInvoker<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse> showExtensionTestingResultAsyncInvoker(
         ShowExtensionTestingResultRequest request) {
-        return new AsyncInvoker<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse>(request,
-            CloudIDEMeta.showExtensionTestingResult, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showExtensionTestingResult, hcClient);
     }
 
     /**
@@ -692,7 +674,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPriceRequest 请求对象
+     * @param request ShowPriceRequest 请求对象
      * @return CompletableFuture<ShowPriceResponse>
      */
     public CompletableFuture<ShowPriceResponse> showPriceAsync(ShowPriceRequest request) {
@@ -706,11 +688,11 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPriceRequest 请求对象
+     * @param request ShowPriceRequest 请求对象
      * @return AsyncInvoker<ShowPriceRequest, ShowPriceResponse>
      */
     public AsyncInvoker<ShowPriceRequest, ShowPriceResponse> showPriceAsyncInvoker(ShowPriceRequest request) {
-        return new AsyncInvoker<ShowPriceRequest, ShowPriceResponse>(request, CloudIDEMeta.showPrice, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showPrice, hcClient);
     }
 
     /**
@@ -720,7 +702,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadExtensionFileRequest 请求对象
+     * @param request UploadExtensionFileRequest 请求对象
      * @return CompletableFuture<UploadExtensionFileResponse>
      */
     public CompletableFuture<UploadExtensionFileResponse> uploadExtensionFileAsync(UploadExtensionFileRequest request) {
@@ -734,13 +716,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadExtensionFileRequest 请求对象
+     * @param request UploadExtensionFileRequest 请求对象
      * @return AsyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse>
      */
     public AsyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse> uploadExtensionFileAsyncInvoker(
         UploadExtensionFileRequest request) {
-        return new AsyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse>(request,
-            CloudIDEMeta.uploadExtensionFile, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.uploadExtensionFile, hcClient);
     }
 
     /**
@@ -750,7 +731,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFilePublisherRequest 请求对象
+     * @param request UploadFilePublisherRequest 请求对象
      * @return CompletableFuture<UploadFilePublisherResponse>
      */
     public CompletableFuture<UploadFilePublisherResponse> uploadFilePublisherAsync(UploadFilePublisherRequest request) {
@@ -764,13 +745,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFilePublisherRequest 请求对象
+     * @param request UploadFilePublisherRequest 请求对象
      * @return AsyncInvoker<UploadFilePublisherRequest, UploadFilePublisherResponse>
      */
     public AsyncInvoker<UploadFilePublisherRequest, UploadFilePublisherResponse> uploadFilePublisherAsyncInvoker(
         UploadFilePublisherRequest request) {
-        return new AsyncInvoker<UploadFilePublisherRequest, UploadFilePublisherResponse>(request,
-            CloudIDEMeta.uploadFilePublisher, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.uploadFilePublisher, hcClient);
     }
 
     /**
@@ -780,7 +760,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAcceptanceRequest 请求对象
+     * @param request CreateAcceptanceRequest 请求对象
      * @return CompletableFuture<CreateAcceptanceResponse>
      */
     public CompletableFuture<CreateAcceptanceResponse> createAcceptanceAsync(CreateAcceptanceRequest request) {
@@ -794,13 +774,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAcceptanceRequest 请求对象
+     * @param request CreateAcceptanceRequest 请求对象
      * @return AsyncInvoker<CreateAcceptanceRequest, CreateAcceptanceResponse>
      */
     public AsyncInvoker<CreateAcceptanceRequest, CreateAcceptanceResponse> createAcceptanceAsyncInvoker(
         CreateAcceptanceRequest request) {
-        return new AsyncInvoker<CreateAcceptanceRequest, CreateAcceptanceResponse>(request,
-            CloudIDEMeta.createAcceptance, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.createAcceptance, hcClient);
     }
 
     /**
@@ -810,7 +789,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApplyRequest 请求对象
+     * @param request CreateApplyRequest 请求对象
      * @return CompletableFuture<CreateApplyResponse>
      */
     public CompletableFuture<CreateApplyResponse> createApplyAsync(CreateApplyRequest request) {
@@ -824,11 +803,11 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApplyRequest 请求对象
+     * @param request CreateApplyRequest 请求对象
      * @return AsyncInvoker<CreateApplyRequest, CreateApplyResponse>
      */
     public AsyncInvoker<CreateApplyRequest, CreateApplyResponse> createApplyAsyncInvoker(CreateApplyRequest request) {
-        return new AsyncInvoker<CreateApplyRequest, CreateApplyResponse>(request, CloudIDEMeta.createApply, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.createApply, hcClient);
     }
 
     /**
@@ -838,7 +817,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventRequest 请求对象
+     * @param request CreateEventRequest 请求对象
      * @return CompletableFuture<CreateEventResponse>
      */
     public CompletableFuture<CreateEventResponse> createEventAsync(CreateEventRequest request) {
@@ -852,11 +831,11 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventRequest 请求对象
+     * @param request CreateEventRequest 请求对象
      * @return AsyncInvoker<CreateEventRequest, CreateEventResponse>
      */
     public AsyncInvoker<CreateEventRequest, CreateEventResponse> createEventAsyncInvoker(CreateEventRequest request) {
-        return new AsyncInvoker<CreateEventRequest, CreateEventResponse>(request, CloudIDEMeta.createEvent, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.createEvent, hcClient);
     }
 
     /**
@@ -866,7 +845,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLoginRequest 请求对象
+     * @param request CreateLoginRequest 请求对象
      * @return CompletableFuture<CreateLoginResponse>
      */
     public CompletableFuture<CreateLoginResponse> createLoginAsync(CreateLoginRequest request) {
@@ -880,11 +859,11 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLoginRequest 请求对象
+     * @param request CreateLoginRequest 请求对象
      * @return AsyncInvoker<CreateLoginRequest, CreateLoginResponse>
      */
     public AsyncInvoker<CreateLoginRequest, CreateLoginResponse> createLoginAsyncInvoker(CreateLoginRequest request) {
-        return new AsyncInvoker<CreateLoginRequest, CreateLoginResponse>(request, CloudIDEMeta.createLogin, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.createLogin, hcClient);
     }
 
     /**
@@ -901,7 +880,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestRequest 请求对象
+     * @param request CreateRequestRequest 请求对象
      * @return CompletableFuture<CreateRequestResponse>
      */
     public CompletableFuture<CreateRequestResponse> createRequestAsync(CreateRequestRequest request) {
@@ -922,13 +901,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestRequest 请求对象
+     * @param request CreateRequestRequest 请求对象
      * @return AsyncInvoker<CreateRequestRequest, CreateRequestResponse>
      */
     public AsyncInvoker<CreateRequestRequest, CreateRequestResponse> createRequestAsyncInvoker(
         CreateRequestRequest request) {
-        return new AsyncInvoker<CreateRequestRequest, CreateRequestResponse>(request, CloudIDEMeta.createRequest,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.createRequest, hcClient);
     }
 
     /**
@@ -938,7 +916,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResultRequest 请求对象
+     * @param request ShowResultRequest 请求对象
      * @return CompletableFuture<ShowResultResponse>
      */
     public CompletableFuture<ShowResultResponse> showResultAsync(ShowResultRequest request) {
@@ -952,11 +930,11 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResultRequest 请求对象
+     * @param request ShowResultRequest 请求对象
      * @return AsyncInvoker<ShowResultRequest, ShowResultResponse>
      */
     public AsyncInvoker<ShowResultRequest, ShowResultResponse> showResultAsyncInvoker(ShowResultRequest request) {
-        return new AsyncInvoker<ShowResultRequest, ShowResultResponse>(request, CloudIDEMeta.showResult, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showResult, hcClient);
     }
 
     /**
@@ -968,7 +946,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartChatRequest 请求对象
+     * @param request StartChatRequest 请求对象
      * @return CompletableFuture<StartChatResponse>
      */
     public CompletableFuture<StartChatResponse> startChatAsync(StartChatRequest request) {
@@ -984,11 +962,11 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartChatRequest 请求对象
+     * @param request StartChatRequest 请求对象
      * @return AsyncInvoker<StartChatRequest, StartChatResponse>
      */
     public AsyncInvoker<StartChatRequest, StartChatResponse> startChatAsyncInvoker(StartChatRequest request) {
-        return new AsyncInvoker<StartChatRequest, StartChatResponse>(request, CloudIDEMeta.startChat, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.startChat, hcClient);
     }
 
     /**
@@ -1000,7 +978,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncChatRequest 请求对象
+     * @param request SyncChatRequest 请求对象
      * @return CompletableFuture<SyncChatResponse>
      */
     public CompletableFuture<SyncChatResponse> syncChatAsync(SyncChatRequest request) {
@@ -1016,11 +994,11 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncChatRequest 请求对象
+     * @param request SyncChatRequest 请求对象
      * @return AsyncInvoker<SyncChatRequest, SyncChatResponse>
      */
     public AsyncInvoker<SyncChatRequest, SyncChatResponse> syncChatAsyncInvoker(SyncChatRequest request) {
-        return new AsyncInvoker<SyncChatRequest, SyncChatResponse>(request, CloudIDEMeta.syncChat, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.syncChat, hcClient);
     }
 
     /**
@@ -1030,7 +1008,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncGetChatResultRequest 请求对象
+     * @param request SyncGetChatResultRequest 请求对象
      * @return CompletableFuture<SyncGetChatResultResponse>
      */
     public CompletableFuture<SyncGetChatResultResponse> syncGetChatResultAsync(SyncGetChatResultRequest request) {
@@ -1044,13 +1022,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncGetChatResultRequest 请求对象
+     * @param request SyncGetChatResultRequest 请求对象
      * @return AsyncInvoker<SyncGetChatResultRequest, SyncGetChatResultResponse>
      */
     public AsyncInvoker<SyncGetChatResultRequest, SyncGetChatResultResponse> syncGetChatResultAsyncInvoker(
         SyncGetChatResultRequest request) {
-        return new AsyncInvoker<SyncGetChatResultRequest, SyncGetChatResultResponse>(request,
-            CloudIDEMeta.syncGetChatResult, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.syncGetChatResult, hcClient);
     }
 
     /**
@@ -1060,7 +1037,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckInstanceAccessRequest 请求对象
+     * @param request CheckInstanceAccessRequest 请求对象
      * @return CompletableFuture<CheckInstanceAccessResponse>
      */
     public CompletableFuture<CheckInstanceAccessResponse> checkInstanceAccessAsync(CheckInstanceAccessRequest request) {
@@ -1074,13 +1051,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckInstanceAccessRequest 请求对象
+     * @param request CheckInstanceAccessRequest 请求对象
      * @return AsyncInvoker<CheckInstanceAccessRequest, CheckInstanceAccessResponse>
      */
     public AsyncInvoker<CheckInstanceAccessRequest, CheckInstanceAccessResponse> checkInstanceAccessAsyncInvoker(
         CheckInstanceAccessRequest request) {
-        return new AsyncInvoker<CheckInstanceAccessRequest, CheckInstanceAccessResponse>(request,
-            CloudIDEMeta.checkInstanceAccess, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.checkInstanceAccess, hcClient);
     }
 
     /**
@@ -1090,7 +1066,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckNameRequest 请求对象
+     * @param request CheckNameRequest 请求对象
      * @return CompletableFuture<CheckNameResponse>
      */
     public CompletableFuture<CheckNameResponse> checkNameAsync(CheckNameRequest request) {
@@ -1104,11 +1080,11 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckNameRequest 请求对象
+     * @param request CheckNameRequest 请求对象
      * @return AsyncInvoker<CheckNameRequest, CheckNameResponse>
      */
     public AsyncInvoker<CheckNameRequest, CheckNameResponse> checkNameAsyncInvoker(CheckNameRequest request) {
-        return new AsyncInvoker<CheckNameRequest, CheckNameResponse>(request, CloudIDEMeta.checkName, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.checkName, hcClient);
     }
 
     /**
@@ -1118,7 +1094,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
      */
     public CompletableFuture<CreateInstanceResponse> createInstanceAsync(CreateInstanceRequest request) {
@@ -1132,13 +1108,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
     public AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceAsyncInvoker(
         CreateInstanceRequest request) {
-        return new AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, CloudIDEMeta.createInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.createInstance, hcClient);
     }
 
     /**
@@ -1148,7 +1123,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceBy3rdRequest 请求对象
+     * @param request CreateInstanceBy3rdRequest 请求对象
      * @return CompletableFuture<CreateInstanceBy3rdResponse>
      */
     public CompletableFuture<CreateInstanceBy3rdResponse> createInstanceBy3rdAsync(CreateInstanceBy3rdRequest request) {
@@ -1162,13 +1137,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceBy3rdRequest 请求对象
+     * @param request CreateInstanceBy3rdRequest 请求对象
      * @return AsyncInvoker<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse>
      */
     public AsyncInvoker<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse> createInstanceBy3rdAsyncInvoker(
         CreateInstanceBy3rdRequest request) {
-        return new AsyncInvoker<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse>(request,
-            CloudIDEMeta.createInstanceBy3rd, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.createInstanceBy3rd, hcClient);
     }
 
     /**
@@ -1178,7 +1152,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
      */
     public CompletableFuture<DeleteInstanceResponse> deleteInstanceAsync(DeleteInstanceRequest request) {
@@ -1192,13 +1166,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
-        return new AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, CloudIDEMeta.deleteInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -1208,7 +1181,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
      */
     public CompletableFuture<ListInstancesResponse> listInstancesAsync(ListInstancesRequest request) {
@@ -1222,13 +1195,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
-        return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, CloudIDEMeta.listInstances,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.listInstances, hcClient);
     }
 
     /**
@@ -1238,7 +1210,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrgInstancesRequest 请求对象
+     * @param request ListOrgInstancesRequest 请求对象
      * @return CompletableFuture<ListOrgInstancesResponse>
      */
     public CompletableFuture<ListOrgInstancesResponse> listOrgInstancesAsync(ListOrgInstancesRequest request) {
@@ -1252,13 +1224,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrgInstancesRequest 请求对象
+     * @param request ListOrgInstancesRequest 请求对象
      * @return AsyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse>
      */
     public AsyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse> listOrgInstancesAsyncInvoker(
         ListOrgInstancesRequest request) {
-        return new AsyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse>(request,
-            CloudIDEMeta.listOrgInstances, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.listOrgInstances, hcClient);
     }
 
     /**
@@ -1268,7 +1239,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
      */
     public CompletableFuture<ShowInstanceResponse> showInstanceAsync(ShowInstanceRequest request) {
@@ -1282,13 +1253,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(
         ShowInstanceRequest request) {
-        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, CloudIDEMeta.showInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showInstance, hcClient);
     }
 
     /**
@@ -1298,7 +1268,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceStatusInfoRequest 请求对象
+     * @param request ShowInstanceStatusInfoRequest 请求对象
      * @return CompletableFuture<ShowInstanceStatusInfoResponse>
      */
     public CompletableFuture<ShowInstanceStatusInfoResponse> showInstanceStatusInfoAsync(
@@ -1313,13 +1283,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceStatusInfoRequest 请求对象
+     * @param request ShowInstanceStatusInfoRequest 请求对象
      * @return AsyncInvoker<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse>
      */
     public AsyncInvoker<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse> showInstanceStatusInfoAsyncInvoker(
         ShowInstanceStatusInfoRequest request) {
-        return new AsyncInvoker<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse>(request,
-            CloudIDEMeta.showInstanceStatusInfo, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.showInstanceStatusInfo, hcClient);
     }
 
     /**
@@ -1329,7 +1298,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartInstanceRequest 请求对象
+     * @param request StartInstanceRequest 请求对象
      * @return CompletableFuture<StartInstanceResponse>
      */
     public CompletableFuture<StartInstanceResponse> startInstanceAsync(StartInstanceRequest request) {
@@ -1343,13 +1312,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartInstanceRequest 请求对象
+     * @param request StartInstanceRequest 请求对象
      * @return AsyncInvoker<StartInstanceRequest, StartInstanceResponse>
      */
     public AsyncInvoker<StartInstanceRequest, StartInstanceResponse> startInstanceAsyncInvoker(
         StartInstanceRequest request) {
-        return new AsyncInvoker<StartInstanceRequest, StartInstanceResponse>(request, CloudIDEMeta.startInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.startInstance, hcClient);
     }
 
     /**
@@ -1359,7 +1327,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopInstanceRequest 请求对象
+     * @param request StopInstanceRequest 请求对象
      * @return CompletableFuture<StopInstanceResponse>
      */
     public CompletableFuture<StopInstanceResponse> stopInstanceAsync(StopInstanceRequest request) {
@@ -1373,13 +1341,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopInstanceRequest 请求对象
+     * @param request StopInstanceRequest 请求对象
      * @return AsyncInvoker<StopInstanceRequest, StopInstanceResponse>
      */
     public AsyncInvoker<StopInstanceRequest, StopInstanceResponse> stopInstanceAsyncInvoker(
         StopInstanceRequest request) {
-        return new AsyncInvoker<StopInstanceRequest, StopInstanceResponse>(request, CloudIDEMeta.stopInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.stopInstance, hcClient);
     }
 
     /**
@@ -1389,7 +1356,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return CompletableFuture<UpdateInstanceResponse>
      */
     public CompletableFuture<UpdateInstanceResponse> updateInstanceAsync(UpdateInstanceRequest request) {
@@ -1403,13 +1370,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
      */
     public AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceAsyncInvoker(
         UpdateInstanceRequest request) {
-        return new AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, CloudIDEMeta.updateInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.updateInstance, hcClient);
     }
 
     /**
@@ -1419,7 +1385,7 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceActivityRequest 请求对象
+     * @param request UpdateInstanceActivityRequest 请求对象
      * @return CompletableFuture<UpdateInstanceActivityResponse>
      */
     public CompletableFuture<UpdateInstanceActivityResponse> updateInstanceActivityAsync(
@@ -1434,13 +1400,12 @@ public class CloudIDEAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceActivityRequest 请求对象
+     * @param request UpdateInstanceActivityRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse>
      */
     public AsyncInvoker<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> updateInstanceActivityAsyncInvoker(
         UpdateInstanceActivityRequest request) {
-        return new AsyncInvoker<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse>(request,
-            CloudIDEMeta.updateInstanceActivity, hcClient);
+        return new AsyncInvoker<>(request, CloudIDEMeta.updateInstanceActivity, hcClient);
     }
 
 }

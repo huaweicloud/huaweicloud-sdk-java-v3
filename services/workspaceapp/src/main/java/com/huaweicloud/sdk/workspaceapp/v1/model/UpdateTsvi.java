@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 服务器更新虚拟会话IP配置请求
+ * 服务器更新虚拟会话IP配置请求。
  */
 public class UpdateTsvi {
 
@@ -26,7 +26,7 @@ public class UpdateTsvi {
     }
 
     /**
-     * 服务器ID
+     * 服务器ID。
      * @return id
      */
     public String getId() {

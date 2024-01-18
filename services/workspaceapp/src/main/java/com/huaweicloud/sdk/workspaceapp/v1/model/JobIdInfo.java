@@ -21,7 +21,7 @@ public class JobIdInfo {
     }
 
     /**
-     * 任务ID
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {

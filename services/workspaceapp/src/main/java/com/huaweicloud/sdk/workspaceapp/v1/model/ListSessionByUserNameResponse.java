@@ -41,7 +41,7 @@ public class ListSessionByUserNameResponse extends SdkResponse {
     }
 
     /**
-     * 会话信息列表
+     * 会话信息列表。
      * @return sessionInfoList
      */
     public List<AppSession> getSessionInfoList() {

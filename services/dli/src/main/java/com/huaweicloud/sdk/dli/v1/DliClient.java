@@ -290,7 +290,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateQueueToElasticResourcePoolRequest 请求对象
+     * @param request AssociateQueueToElasticResourcePoolRequest 请求对象
      * @return AssociateQueueToElasticResourcePoolResponse
      */
     public AssociateQueueToElasticResourcePoolResponse associateQueueToElasticResourcePool(
@@ -305,13 +305,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateQueueToElasticResourcePoolRequest 请求对象
+     * @param request AssociateQueueToElasticResourcePoolRequest 请求对象
      * @return SyncInvoker<AssociateQueueToElasticResourcePoolRequest, AssociateQueueToElasticResourcePoolResponse>
      */
     public SyncInvoker<AssociateQueueToElasticResourcePoolRequest, AssociateQueueToElasticResourcePoolResponse> associateQueueToElasticResourcePoolInvoker(
         AssociateQueueToElasticResourcePoolRequest request) {
-        return new SyncInvoker<AssociateQueueToElasticResourcePoolRequest, AssociateQueueToElasticResourcePoolResponse>(
-            request, DliMeta.associateQueueToElasticResourcePool, hcClient);
+        return new SyncInvoker<>(request, DliMeta.associateQueueToElasticResourcePool, hcClient);
     }
 
     /**
@@ -321,7 +320,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateQueueToEnhancedConnectionRequest 请求对象
+     * @param request AssociateQueueToEnhancedConnectionRequest 请求对象
      * @return AssociateQueueToEnhancedConnectionResponse
      */
     public AssociateQueueToEnhancedConnectionResponse associateQueueToEnhancedConnection(
@@ -336,13 +335,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateQueueToEnhancedConnectionRequest 请求对象
+     * @param request AssociateQueueToEnhancedConnectionRequest 请求对象
      * @return SyncInvoker<AssociateQueueToEnhancedConnectionRequest, AssociateQueueToEnhancedConnectionResponse>
      */
     public SyncInvoker<AssociateQueueToEnhancedConnectionRequest, AssociateQueueToEnhancedConnectionResponse> associateQueueToEnhancedConnectionInvoker(
         AssociateQueueToEnhancedConnectionRequest request) {
-        return new SyncInvoker<AssociateQueueToEnhancedConnectionRequest, AssociateQueueToEnhancedConnectionResponse>(
-            request, DliMeta.associateQueueToEnhancedConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.associateQueueToEnhancedConnection, hcClient);
     }
 
     /**
@@ -352,7 +350,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteQueuePlansRequest 请求对象
+     * @param request BatchDeleteQueuePlansRequest 请求对象
      * @return BatchDeleteQueuePlansResponse
      */
     @Deprecated
@@ -367,14 +365,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteQueuePlansRequest 请求对象
+     * @param request BatchDeleteQueuePlansRequest 请求对象
      * @return SyncInvoker<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse>
      */
     @Deprecated
     public SyncInvoker<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse> batchDeleteQueuePlansInvoker(
         BatchDeleteQueuePlansRequest request) {
-        return new SyncInvoker<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse>(request,
-            DliMeta.batchDeleteQueuePlans, hcClient);
+        return new SyncInvoker<>(request, DliMeta.batchDeleteQueuePlans, hcClient);
     }
 
     /**
@@ -386,7 +383,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeAuthorizationRequest 请求对象
+     * @param request ChangeAuthorizationRequest 请求对象
      * @return ChangeAuthorizationResponse
      */
     @Deprecated
@@ -403,14 +400,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeAuthorizationRequest 请求对象
+     * @param request ChangeAuthorizationRequest 请求对象
      * @return SyncInvoker<ChangeAuthorizationRequest, ChangeAuthorizationResponse>
      */
     @Deprecated
     public SyncInvoker<ChangeAuthorizationRequest, ChangeAuthorizationResponse> changeAuthorizationInvoker(
         ChangeAuthorizationRequest request) {
-        return new SyncInvoker<ChangeAuthorizationRequest, ChangeAuthorizationResponse>(request,
-            DliMeta.changeAuthorization, hcClient);
+        return new SyncInvoker<>(request, DliMeta.changeAuthorization, hcClient);
     }
 
     /**
@@ -420,7 +416,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeQueuePlanRequest 请求对象
+     * @param request ChangeQueuePlanRequest 请求对象
      * @return ChangeQueuePlanResponse
      */
     @Deprecated
@@ -435,14 +431,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeQueuePlanRequest 请求对象
+     * @param request ChangeQueuePlanRequest 请求对象
      * @return SyncInvoker<ChangeQueuePlanRequest, ChangeQueuePlanResponse>
      */
     @Deprecated
     public SyncInvoker<ChangeQueuePlanRequest, ChangeQueuePlanResponse> changeQueuePlanInvoker(
         ChangeQueuePlanRequest request) {
-        return new SyncInvoker<ChangeQueuePlanRequest, ChangeQueuePlanResponse>(request, DliMeta.changeQueuePlan,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.changeQueuePlan, hcClient);
     }
 
     /**
@@ -452,7 +447,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAuthInfoRequest 请求对象
+     * @param request CreateAuthInfoRequest 请求对象
      * @return CreateAuthInfoResponse
      */
     @Deprecated
@@ -467,14 +462,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAuthInfoRequest 请求对象
+     * @param request CreateAuthInfoRequest 请求对象
      * @return SyncInvoker<CreateAuthInfoRequest, CreateAuthInfoResponse>
      */
     @Deprecated
     public SyncInvoker<CreateAuthInfoRequest, CreateAuthInfoResponse> createAuthInfoInvoker(
         CreateAuthInfoRequest request) {
-        return new SyncInvoker<CreateAuthInfoRequest, CreateAuthInfoResponse>(request, DliMeta.createAuthInfo,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.createAuthInfo, hcClient);
     }
 
     /**
@@ -484,7 +478,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectivityTaskRequest 请求对象
+     * @param request CreateConnectivityTaskRequest 请求对象
      * @return CreateConnectivityTaskResponse
      */
     public CreateConnectivityTaskResponse createConnectivityTask(CreateConnectivityTaskRequest request) {
@@ -498,13 +492,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectivityTaskRequest 请求对象
+     * @param request CreateConnectivityTaskRequest 请求对象
      * @return SyncInvoker<CreateConnectivityTaskRequest, CreateConnectivityTaskResponse>
      */
     public SyncInvoker<CreateConnectivityTaskRequest, CreateConnectivityTaskResponse> createConnectivityTaskInvoker(
         CreateConnectivityTaskRequest request) {
-        return new SyncInvoker<CreateConnectivityTaskRequest, CreateConnectivityTaskResponse>(request,
-            DliMeta.createConnectivityTask, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createConnectivityTask, hcClient);
     }
 
     /**
@@ -517,7 +510,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatasourceConnectionRequest 请求对象
+     * @param request CreateDatasourceConnectionRequest 请求对象
      * @return CreateDatasourceConnectionResponse
      */
     @Deprecated
@@ -535,14 +528,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatasourceConnectionRequest 请求对象
+     * @param request CreateDatasourceConnectionRequest 请求对象
      * @return SyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse>
      */
     @Deprecated
     public SyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse> createDatasourceConnectionInvoker(
         CreateDatasourceConnectionRequest request) {
-        return new SyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse>(request,
-            DliMeta.createDatasourceConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createDatasourceConnection, hcClient);
     }
 
     /**
@@ -552,7 +544,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDliAgencyRequest 请求对象
+     * @param request CreateDliAgencyRequest 请求对象
      * @return CreateDliAgencyResponse
      */
     @Deprecated
@@ -567,14 +559,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDliAgencyRequest 请求对象
+     * @param request CreateDliAgencyRequest 请求对象
      * @return SyncInvoker<CreateDliAgencyRequest, CreateDliAgencyResponse>
      */
     @Deprecated
     public SyncInvoker<CreateDliAgencyRequest, CreateDliAgencyResponse> createDliAgencyInvoker(
         CreateDliAgencyRequest request) {
-        return new SyncInvoker<CreateDliAgencyRequest, CreateDliAgencyResponse>(request, DliMeta.createDliAgency,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.createDliAgency, hcClient);
     }
 
     /**
@@ -584,7 +575,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateElasticResourcePoolRequest 请求对象
+     * @param request CreateElasticResourcePoolRequest 请求对象
      * @return CreateElasticResourcePoolResponse
      */
     public CreateElasticResourcePoolResponse createElasticResourcePool(CreateElasticResourcePoolRequest request) {
@@ -598,13 +589,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateElasticResourcePoolRequest 请求对象
+     * @param request CreateElasticResourcePoolRequest 请求对象
      * @return SyncInvoker<CreateElasticResourcePoolRequest, CreateElasticResourcePoolResponse>
      */
     public SyncInvoker<CreateElasticResourcePoolRequest, CreateElasticResourcePoolResponse> createElasticResourcePoolInvoker(
         CreateElasticResourcePoolRequest request) {
-        return new SyncInvoker<CreateElasticResourcePoolRequest, CreateElasticResourcePoolResponse>(request,
-            DliMeta.createElasticResourcePool, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createElasticResourcePool, hcClient);
     }
 
     /**
@@ -614,7 +604,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnhancedConnectionRequest 请求对象
+     * @param request CreateEnhancedConnectionRequest 请求对象
      * @return CreateEnhancedConnectionResponse
      */
     public CreateEnhancedConnectionResponse createEnhancedConnection(CreateEnhancedConnectionRequest request) {
@@ -628,13 +618,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnhancedConnectionRequest 请求对象
+     * @param request CreateEnhancedConnectionRequest 请求对象
      * @return SyncInvoker<CreateEnhancedConnectionRequest, CreateEnhancedConnectionResponse>
      */
     public SyncInvoker<CreateEnhancedConnectionRequest, CreateEnhancedConnectionResponse> createEnhancedConnectionInvoker(
         CreateEnhancedConnectionRequest request) {
-        return new SyncInvoker<CreateEnhancedConnectionRequest, CreateEnhancedConnectionResponse>(request,
-            DliMeta.createEnhancedConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createEnhancedConnection, hcClient);
     }
 
     /**
@@ -644,7 +633,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnhancedConnectionRoutesRequest 请求对象
+     * @param request CreateEnhancedConnectionRoutesRequest 请求对象
      * @return CreateEnhancedConnectionRoutesResponse
      */
     @Deprecated
@@ -660,14 +649,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnhancedConnectionRoutesRequest 请求对象
+     * @param request CreateEnhancedConnectionRoutesRequest 请求对象
      * @return SyncInvoker<CreateEnhancedConnectionRoutesRequest, CreateEnhancedConnectionRoutesResponse>
      */
     @Deprecated
     public SyncInvoker<CreateEnhancedConnectionRoutesRequest, CreateEnhancedConnectionRoutesResponse> createEnhancedConnectionRoutesInvoker(
         CreateEnhancedConnectionRoutesRequest request) {
-        return new SyncInvoker<CreateEnhancedConnectionRoutesRequest, CreateEnhancedConnectionRoutesResponse>(request,
-            DliMeta.createEnhancedConnectionRoutes, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createEnhancedConnectionRoutes, hcClient);
     }
 
     /**
@@ -677,7 +665,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGlobalVariableRequest 请求对象
+     * @param request CreateGlobalVariableRequest 请求对象
      * @return CreateGlobalVariableResponse
      */
     public CreateGlobalVariableResponse createGlobalVariable(CreateGlobalVariableRequest request) {
@@ -691,13 +679,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGlobalVariableRequest 请求对象
+     * @param request CreateGlobalVariableRequest 请求对象
      * @return SyncInvoker<CreateGlobalVariableRequest, CreateGlobalVariableResponse>
      */
     public SyncInvoker<CreateGlobalVariableRequest, CreateGlobalVariableResponse> createGlobalVariableInvoker(
         CreateGlobalVariableRequest request) {
-        return new SyncInvoker<CreateGlobalVariableRequest, CreateGlobalVariableResponse>(request,
-            DliMeta.createGlobalVariable, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createGlobalVariable, hcClient);
     }
 
     /**
@@ -707,7 +694,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateJobAuthInfoRequest 请求对象
+     * @param request CreateJobAuthInfoRequest 请求对象
      * @return CreateJobAuthInfoResponse
      */
     public CreateJobAuthInfoResponse createJobAuthInfo(CreateJobAuthInfoRequest request) {
@@ -721,13 +708,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateJobAuthInfoRequest 请求对象
+     * @param request CreateJobAuthInfoRequest 请求对象
      * @return SyncInvoker<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse>
      */
     public SyncInvoker<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse> createJobAuthInfoInvoker(
         CreateJobAuthInfoRequest request) {
-        return new SyncInvoker<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse>(request, DliMeta.createJobAuthInfo,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.createJobAuthInfo, hcClient);
     }
 
     /**
@@ -737,7 +723,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQueueRequest 请求对象
+     * @param request CreateQueueRequest 请求对象
      * @return CreateQueueResponse
      */
     public CreateQueueResponse createQueue(CreateQueueRequest request) {
@@ -751,11 +737,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQueueRequest 请求对象
+     * @param request CreateQueueRequest 请求对象
      * @return SyncInvoker<CreateQueueRequest, CreateQueueResponse>
      */
     public SyncInvoker<CreateQueueRequest, CreateQueueResponse> createQueueInvoker(CreateQueueRequest request) {
-        return new SyncInvoker<CreateQueueRequest, CreateQueueResponse>(request, DliMeta.createQueue, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createQueue, hcClient);
     }
 
     /**
@@ -765,7 +751,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQueuePlanRequest 请求对象
+     * @param request CreateQueuePlanRequest 请求对象
      * @return CreateQueuePlanResponse
      */
     @Deprecated
@@ -780,14 +766,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQueuePlanRequest 请求对象
+     * @param request CreateQueuePlanRequest 请求对象
      * @return SyncInvoker<CreateQueuePlanRequest, CreateQueuePlanResponse>
      */
     @Deprecated
     public SyncInvoker<CreateQueuePlanRequest, CreateQueuePlanResponse> createQueuePlanInvoker(
         CreateQueuePlanRequest request) {
-        return new SyncInvoker<CreateQueuePlanRequest, CreateQueuePlanResponse>(request, DliMeta.createQueuePlan,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.createQueuePlan, hcClient);
     }
 
     /**
@@ -797,7 +782,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQueuePropertyRequest 请求对象
+     * @param request CreateQueuePropertyRequest 请求对象
      * @return CreateQueuePropertyResponse
      */
     public CreateQueuePropertyResponse createQueueProperty(CreateQueuePropertyRequest request) {
@@ -811,13 +796,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQueuePropertyRequest 请求对象
+     * @param request CreateQueuePropertyRequest 请求对象
      * @return SyncInvoker<CreateQueuePropertyRequest, CreateQueuePropertyResponse>
      */
     public SyncInvoker<CreateQueuePropertyRequest, CreateQueuePropertyResponse> createQueuePropertyInvoker(
         CreateQueuePropertyRequest request) {
-        return new SyncInvoker<CreateQueuePropertyRequest, CreateQueuePropertyResponse>(request,
-            DliMeta.createQueueProperty, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createQueueProperty, hcClient);
     }
 
     /**
@@ -827,7 +811,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRouteToEnhancedConnectionRequest 请求对象
+     * @param request CreateRouteToEnhancedConnectionRequest 请求对象
      * @return CreateRouteToEnhancedConnectionResponse
      */
     public CreateRouteToEnhancedConnectionResponse createRouteToEnhancedConnection(
@@ -842,13 +826,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRouteToEnhancedConnectionRequest 请求对象
+     * @param request CreateRouteToEnhancedConnectionRequest 请求对象
      * @return SyncInvoker<CreateRouteToEnhancedConnectionRequest, CreateRouteToEnhancedConnectionResponse>
      */
     public SyncInvoker<CreateRouteToEnhancedConnectionRequest, CreateRouteToEnhancedConnectionResponse> createRouteToEnhancedConnectionInvoker(
         CreateRouteToEnhancedConnectionRequest request) {
-        return new SyncInvoker<CreateRouteToEnhancedConnectionRequest, CreateRouteToEnhancedConnectionResponse>(request,
-            DliMeta.createRouteToEnhancedConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createRouteToEnhancedConnection, hcClient);
     }
 
     /**
@@ -858,7 +841,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAuthInfoRequest 请求对象
+     * @param request DeleteAuthInfoRequest 请求对象
      * @return DeleteAuthInfoResponse
      */
     @Deprecated
@@ -873,14 +856,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAuthInfoRequest 请求对象
+     * @param request DeleteAuthInfoRequest 请求对象
      * @return SyncInvoker<DeleteAuthInfoRequest, DeleteAuthInfoResponse>
      */
     @Deprecated
     public SyncInvoker<DeleteAuthInfoRequest, DeleteAuthInfoResponse> deleteAuthInfoInvoker(
         DeleteAuthInfoRequest request) {
-        return new SyncInvoker<DeleteAuthInfoRequest, DeleteAuthInfoResponse>(request, DliMeta.deleteAuthInfo,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteAuthInfo, hcClient);
     }
 
     /**
@@ -892,7 +874,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatasourceConnectionRequest 请求对象
+     * @param request DeleteDatasourceConnectionRequest 请求对象
      * @return DeleteDatasourceConnectionResponse
      */
     @Deprecated
@@ -909,14 +891,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatasourceConnectionRequest 请求对象
+     * @param request DeleteDatasourceConnectionRequest 请求对象
      * @return SyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse>
      */
     @Deprecated
     public SyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse> deleteDatasourceConnectionInvoker(
         DeleteDatasourceConnectionRequest request) {
-        return new SyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse>(request,
-            DliMeta.deleteDatasourceConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteDatasourceConnection, hcClient);
     }
 
     /**
@@ -926,7 +907,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteElasticResourcePoolRequest 请求对象
+     * @param request DeleteElasticResourcePoolRequest 请求对象
      * @return DeleteElasticResourcePoolResponse
      */
     public DeleteElasticResourcePoolResponse deleteElasticResourcePool(DeleteElasticResourcePoolRequest request) {
@@ -940,13 +921,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteElasticResourcePoolRequest 请求对象
+     * @param request DeleteElasticResourcePoolRequest 请求对象
      * @return SyncInvoker<DeleteElasticResourcePoolRequest, DeleteElasticResourcePoolResponse>
      */
     public SyncInvoker<DeleteElasticResourcePoolRequest, DeleteElasticResourcePoolResponse> deleteElasticResourcePoolInvoker(
         DeleteElasticResourcePoolRequest request) {
-        return new SyncInvoker<DeleteElasticResourcePoolRequest, DeleteElasticResourcePoolResponse>(request,
-            DliMeta.deleteElasticResourcePool, hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteElasticResourcePool, hcClient);
     }
 
     /**
@@ -956,7 +936,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnhancedConnectionRequest 请求对象
+     * @param request DeleteEnhancedConnectionRequest 请求对象
      * @return DeleteEnhancedConnectionResponse
      */
     public DeleteEnhancedConnectionResponse deleteEnhancedConnection(DeleteEnhancedConnectionRequest request) {
@@ -970,13 +950,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnhancedConnectionRequest 请求对象
+     * @param request DeleteEnhancedConnectionRequest 请求对象
      * @return SyncInvoker<DeleteEnhancedConnectionRequest, DeleteEnhancedConnectionResponse>
      */
     public SyncInvoker<DeleteEnhancedConnectionRequest, DeleteEnhancedConnectionResponse> deleteEnhancedConnectionInvoker(
         DeleteEnhancedConnectionRequest request) {
-        return new SyncInvoker<DeleteEnhancedConnectionRequest, DeleteEnhancedConnectionResponse>(request,
-            DliMeta.deleteEnhancedConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteEnhancedConnection, hcClient);
     }
 
     /**
@@ -986,7 +965,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnhancedConnectionRoutesRequest 请求对象
+     * @param request DeleteEnhancedConnectionRoutesRequest 请求对象
      * @return DeleteEnhancedConnectionRoutesResponse
      */
     @Deprecated
@@ -1002,14 +981,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnhancedConnectionRoutesRequest 请求对象
+     * @param request DeleteEnhancedConnectionRoutesRequest 请求对象
      * @return SyncInvoker<DeleteEnhancedConnectionRoutesRequest, DeleteEnhancedConnectionRoutesResponse>
      */
     @Deprecated
     public SyncInvoker<DeleteEnhancedConnectionRoutesRequest, DeleteEnhancedConnectionRoutesResponse> deleteEnhancedConnectionRoutesInvoker(
         DeleteEnhancedConnectionRoutesRequest request) {
-        return new SyncInvoker<DeleteEnhancedConnectionRoutesRequest, DeleteEnhancedConnectionRoutesResponse>(request,
-            DliMeta.deleteEnhancedConnectionRoutes, hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteEnhancedConnectionRoutes, hcClient);
     }
 
     /**
@@ -1019,7 +997,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGlobalVariableRequest 请求对象
+     * @param request DeleteGlobalVariableRequest 请求对象
      * @return DeleteGlobalVariableResponse
      */
     public DeleteGlobalVariableResponse deleteGlobalVariable(DeleteGlobalVariableRequest request) {
@@ -1033,13 +1011,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGlobalVariableRequest 请求对象
+     * @param request DeleteGlobalVariableRequest 请求对象
      * @return SyncInvoker<DeleteGlobalVariableRequest, DeleteGlobalVariableResponse>
      */
     public SyncInvoker<DeleteGlobalVariableRequest, DeleteGlobalVariableResponse> deleteGlobalVariableInvoker(
         DeleteGlobalVariableRequest request) {
-        return new SyncInvoker<DeleteGlobalVariableRequest, DeleteGlobalVariableResponse>(request,
-            DliMeta.deleteGlobalVariable, hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteGlobalVariable, hcClient);
     }
 
     /**
@@ -1049,7 +1026,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobAuthInfoRequest 请求对象
+     * @param request DeleteJobAuthInfoRequest 请求对象
      * @return DeleteJobAuthInfoResponse
      */
     public DeleteJobAuthInfoResponse deleteJobAuthInfo(DeleteJobAuthInfoRequest request) {
@@ -1063,13 +1040,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobAuthInfoRequest 请求对象
+     * @param request DeleteJobAuthInfoRequest 请求对象
      * @return SyncInvoker<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse>
      */
     public SyncInvoker<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse> deleteJobAuthInfoInvoker(
         DeleteJobAuthInfoRequest request) {
-        return new SyncInvoker<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse>(request, DliMeta.deleteJobAuthInfo,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteJobAuthInfo, hcClient);
     }
 
     /**
@@ -1081,7 +1057,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQueueRequest 请求对象
+     * @param request DeleteQueueRequest 请求对象
      * @return DeleteQueueResponse
      */
     public DeleteQueueResponse deleteQueue(DeleteQueueRequest request) {
@@ -1097,11 +1073,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQueueRequest 请求对象
+     * @param request DeleteQueueRequest 请求对象
      * @return SyncInvoker<DeleteQueueRequest, DeleteQueueResponse>
      */
     public SyncInvoker<DeleteQueueRequest, DeleteQueueResponse> deleteQueueInvoker(DeleteQueueRequest request) {
-        return new SyncInvoker<DeleteQueueRequest, DeleteQueueResponse>(request, DliMeta.deleteQueue, hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteQueue, hcClient);
     }
 
     /**
@@ -1111,7 +1087,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQueuePlanRequest 请求对象
+     * @param request DeleteQueuePlanRequest 请求对象
      * @return DeleteQueuePlanResponse
      */
     @Deprecated
@@ -1126,14 +1102,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQueuePlanRequest 请求对象
+     * @param request DeleteQueuePlanRequest 请求对象
      * @return SyncInvoker<DeleteQueuePlanRequest, DeleteQueuePlanResponse>
      */
     @Deprecated
     public SyncInvoker<DeleteQueuePlanRequest, DeleteQueuePlanResponse> deleteQueuePlanInvoker(
         DeleteQueuePlanRequest request) {
-        return new SyncInvoker<DeleteQueuePlanRequest, DeleteQueuePlanResponse>(request, DliMeta.deleteQueuePlan,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteQueuePlan, hcClient);
     }
 
     /**
@@ -1143,7 +1118,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQueuePropertyRequest 请求对象
+     * @param request DeleteQueuePropertyRequest 请求对象
      * @return DeleteQueuePropertyResponse
      */
     public DeleteQueuePropertyResponse deleteQueueProperty(DeleteQueuePropertyRequest request) {
@@ -1157,13 +1132,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQueuePropertyRequest 请求对象
+     * @param request DeleteQueuePropertyRequest 请求对象
      * @return SyncInvoker<DeleteQueuePropertyRequest, DeleteQueuePropertyResponse>
      */
     public SyncInvoker<DeleteQueuePropertyRequest, DeleteQueuePropertyResponse> deleteQueuePropertyInvoker(
         DeleteQueuePropertyRequest request) {
-        return new SyncInvoker<DeleteQueuePropertyRequest, DeleteQueuePropertyResponse>(request,
-            DliMeta.deleteQueueProperty, hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteQueueProperty, hcClient);
     }
 
     /**
@@ -1173,7 +1147,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceRequest 请求对象
+     * @param request DeleteResourceRequest 请求对象
      * @return DeleteResourceResponse
      */
     @Deprecated
@@ -1188,14 +1162,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceRequest 请求对象
+     * @param request DeleteResourceRequest 请求对象
      * @return SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
      */
     @Deprecated
     public SyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceInvoker(
         DeleteResourceRequest request) {
-        return new SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, DliMeta.deleteResource,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteResource, hcClient);
     }
 
     /**
@@ -1205,7 +1178,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRouteFromEnhancedConnectionRequest 请求对象
+     * @param request DeleteRouteFromEnhancedConnectionRequest 请求对象
      * @return DeleteRouteFromEnhancedConnectionResponse
      */
     public DeleteRouteFromEnhancedConnectionResponse deleteRouteFromEnhancedConnection(
@@ -1220,13 +1193,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRouteFromEnhancedConnectionRequest 请求对象
+     * @param request DeleteRouteFromEnhancedConnectionRequest 请求对象
      * @return SyncInvoker<DeleteRouteFromEnhancedConnectionRequest, DeleteRouteFromEnhancedConnectionResponse>
      */
     public SyncInvoker<DeleteRouteFromEnhancedConnectionRequest, DeleteRouteFromEnhancedConnectionResponse> deleteRouteFromEnhancedConnectionInvoker(
         DeleteRouteFromEnhancedConnectionRequest request) {
-        return new SyncInvoker<DeleteRouteFromEnhancedConnectionRequest, DeleteRouteFromEnhancedConnectionResponse>(
-            request, DliMeta.deleteRouteFromEnhancedConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteRouteFromEnhancedConnection, hcClient);
     }
 
     /**
@@ -1236,7 +1208,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateQueueFromEnhancedConnectionRequest 请求对象
+     * @param request DisassociateQueueFromEnhancedConnectionRequest 请求对象
      * @return DisassociateQueueFromEnhancedConnectionResponse
      */
     public DisassociateQueueFromEnhancedConnectionResponse disassociateQueueFromEnhancedConnection(
@@ -1251,13 +1223,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateQueueFromEnhancedConnectionRequest 请求对象
+     * @param request DisassociateQueueFromEnhancedConnectionRequest 请求对象
      * @return SyncInvoker<DisassociateQueueFromEnhancedConnectionRequest, DisassociateQueueFromEnhancedConnectionResponse>
      */
     public SyncInvoker<DisassociateQueueFromEnhancedConnectionRequest, DisassociateQueueFromEnhancedConnectionResponse> disassociateQueueFromEnhancedConnectionInvoker(
         DisassociateQueueFromEnhancedConnectionRequest request) {
-        return new SyncInvoker<DisassociateQueueFromEnhancedConnectionRequest, DisassociateQueueFromEnhancedConnectionResponse>(
-            request, DliMeta.disassociateQueueFromEnhancedConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.disassociateQueueFromEnhancedConnection, hcClient);
     }
 
     /**
@@ -1267,7 +1238,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuthInfoRequest 请求对象
+     * @param request ListAuthInfoRequest 请求对象
      * @return ListAuthInfoResponse
      */
     @Deprecated
@@ -1282,12 +1253,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuthInfoRequest 请求对象
+     * @param request ListAuthInfoRequest 请求对象
      * @return SyncInvoker<ListAuthInfoRequest, ListAuthInfoResponse>
      */
     @Deprecated
     public SyncInvoker<ListAuthInfoRequest, ListAuthInfoResponse> listAuthInfoInvoker(ListAuthInfoRequest request) {
-        return new SyncInvoker<ListAuthInfoRequest, ListAuthInfoResponse>(request, DliMeta.listAuthInfo, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listAuthInfo, hcClient);
     }
 
     /**
@@ -1297,7 +1268,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuthorizationPrivilegesRequest 请求对象
+     * @param request ListAuthorizationPrivilegesRequest 请求对象
      * @return ListAuthorizationPrivilegesResponse
      */
     public ListAuthorizationPrivilegesResponse listAuthorizationPrivileges(ListAuthorizationPrivilegesRequest request) {
@@ -1311,13 +1282,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuthorizationPrivilegesRequest 请求对象
+     * @param request ListAuthorizationPrivilegesRequest 请求对象
      * @return SyncInvoker<ListAuthorizationPrivilegesRequest, ListAuthorizationPrivilegesResponse>
      */
     public SyncInvoker<ListAuthorizationPrivilegesRequest, ListAuthorizationPrivilegesResponse> listAuthorizationPrivilegesInvoker(
         ListAuthorizationPrivilegesRequest request) {
-        return new SyncInvoker<ListAuthorizationPrivilegesRequest, ListAuthorizationPrivilegesResponse>(request,
-            DliMeta.listAuthorizationPrivileges, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listAuthorizationPrivileges, hcClient);
     }
 
     /**
@@ -1327,7 +1297,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseUsersRequest 请求对象
+     * @param request ListDatabaseUsersRequest 请求对象
      * @return ListDatabaseUsersResponse
      */
     @Deprecated
@@ -1342,14 +1312,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseUsersRequest 请求对象
+     * @param request ListDatabaseUsersRequest 请求对象
      * @return SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>
      */
     @Deprecated
     public SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsersInvoker(
         ListDatabaseUsersRequest request) {
-        return new SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>(request, DliMeta.listDatabaseUsers,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.listDatabaseUsers, hcClient);
     }
 
     /**
@@ -1359,7 +1328,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatasourceConnectionsRequest 请求对象
+     * @param request ListDatasourceConnectionsRequest 请求对象
      * @return ListDatasourceConnectionsResponse
      */
     @Deprecated
@@ -1374,14 +1343,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatasourceConnectionsRequest 请求对象
+     * @param request ListDatasourceConnectionsRequest 请求对象
      * @return SyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse>
      */
     @Deprecated
     public SyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse> listDatasourceConnectionsInvoker(
         ListDatasourceConnectionsRequest request) {
-        return new SyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse>(request,
-            DliMeta.listDatasourceConnections, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listDatasourceConnections, hcClient);
     }
 
     /**
@@ -1391,7 +1359,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListElasticResourcePoolQueuesRequest 请求对象
+     * @param request ListElasticResourcePoolQueuesRequest 请求对象
      * @return ListElasticResourcePoolQueuesResponse
      */
     public ListElasticResourcePoolQueuesResponse listElasticResourcePoolQueues(
@@ -1406,13 +1374,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListElasticResourcePoolQueuesRequest 请求对象
+     * @param request ListElasticResourcePoolQueuesRequest 请求对象
      * @return SyncInvoker<ListElasticResourcePoolQueuesRequest, ListElasticResourcePoolQueuesResponse>
      */
     public SyncInvoker<ListElasticResourcePoolQueuesRequest, ListElasticResourcePoolQueuesResponse> listElasticResourcePoolQueuesInvoker(
         ListElasticResourcePoolQueuesRequest request) {
-        return new SyncInvoker<ListElasticResourcePoolQueuesRequest, ListElasticResourcePoolQueuesResponse>(request,
-            DliMeta.listElasticResourcePoolQueues, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listElasticResourcePoolQueues, hcClient);
     }
 
     /**
@@ -1422,7 +1389,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListElasticResourcePoolScaleRecordsRequest 请求对象
+     * @param request ListElasticResourcePoolScaleRecordsRequest 请求对象
      * @return ListElasticResourcePoolScaleRecordsResponse
      */
     public ListElasticResourcePoolScaleRecordsResponse listElasticResourcePoolScaleRecords(
@@ -1437,13 +1404,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListElasticResourcePoolScaleRecordsRequest 请求对象
+     * @param request ListElasticResourcePoolScaleRecordsRequest 请求对象
      * @return SyncInvoker<ListElasticResourcePoolScaleRecordsRequest, ListElasticResourcePoolScaleRecordsResponse>
      */
     public SyncInvoker<ListElasticResourcePoolScaleRecordsRequest, ListElasticResourcePoolScaleRecordsResponse> listElasticResourcePoolScaleRecordsInvoker(
         ListElasticResourcePoolScaleRecordsRequest request) {
-        return new SyncInvoker<ListElasticResourcePoolScaleRecordsRequest, ListElasticResourcePoolScaleRecordsResponse>(
-            request, DliMeta.listElasticResourcePoolScaleRecords, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listElasticResourcePoolScaleRecords, hcClient);
     }
 
     /**
@@ -1453,7 +1419,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListElasticResourcePoolsRequest 请求对象
+     * @param request ListElasticResourcePoolsRequest 请求对象
      * @return ListElasticResourcePoolsResponse
      */
     public ListElasticResourcePoolsResponse listElasticResourcePools(ListElasticResourcePoolsRequest request) {
@@ -1467,13 +1433,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListElasticResourcePoolsRequest 请求对象
+     * @param request ListElasticResourcePoolsRequest 请求对象
      * @return SyncInvoker<ListElasticResourcePoolsRequest, ListElasticResourcePoolsResponse>
      */
     public SyncInvoker<ListElasticResourcePoolsRequest, ListElasticResourcePoolsResponse> listElasticResourcePoolsInvoker(
         ListElasticResourcePoolsRequest request) {
-        return new SyncInvoker<ListElasticResourcePoolsRequest, ListElasticResourcePoolsResponse>(request,
-            DliMeta.listElasticResourcePools, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listElasticResourcePools, hcClient);
     }
 
     /**
@@ -1483,7 +1448,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnhancedConnectionsRequest 请求对象
+     * @param request ListEnhancedConnectionsRequest 请求对象
      * @return ListEnhancedConnectionsResponse
      */
     public ListEnhancedConnectionsResponse listEnhancedConnections(ListEnhancedConnectionsRequest request) {
@@ -1497,13 +1462,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnhancedConnectionsRequest 请求对象
+     * @param request ListEnhancedConnectionsRequest 请求对象
      * @return SyncInvoker<ListEnhancedConnectionsRequest, ListEnhancedConnectionsResponse>
      */
     public SyncInvoker<ListEnhancedConnectionsRequest, ListEnhancedConnectionsResponse> listEnhancedConnectionsInvoker(
         ListEnhancedConnectionsRequest request) {
-        return new SyncInvoker<ListEnhancedConnectionsRequest, ListEnhancedConnectionsResponse>(request,
-            DliMeta.listEnhancedConnections, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listEnhancedConnections, hcClient);
     }
 
     /**
@@ -1513,7 +1477,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGlobalVariablesRequest 请求对象
+     * @param request ListGlobalVariablesRequest 请求对象
      * @return ListGlobalVariablesResponse
      */
     public ListGlobalVariablesResponse listGlobalVariables(ListGlobalVariablesRequest request) {
@@ -1527,13 +1491,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGlobalVariablesRequest 请求对象
+     * @param request ListGlobalVariablesRequest 请求对象
      * @return SyncInvoker<ListGlobalVariablesRequest, ListGlobalVariablesResponse>
      */
     public SyncInvoker<ListGlobalVariablesRequest, ListGlobalVariablesResponse> listGlobalVariablesInvoker(
         ListGlobalVariablesRequest request) {
-        return new SyncInvoker<ListGlobalVariablesRequest, ListGlobalVariablesResponse>(request,
-            DliMeta.listGlobalVariables, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listGlobalVariables, hcClient);
     }
 
     /**
@@ -1543,7 +1506,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobAuthInfosRequest 请求对象
+     * @param request ListJobAuthInfosRequest 请求对象
      * @return ListJobAuthInfosResponse
      */
     public ListJobAuthInfosResponse listJobAuthInfos(ListJobAuthInfosRequest request) {
@@ -1557,13 +1520,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobAuthInfosRequest 请求对象
+     * @param request ListJobAuthInfosRequest 请求对象
      * @return SyncInvoker<ListJobAuthInfosRequest, ListJobAuthInfosResponse>
      */
     public SyncInvoker<ListJobAuthInfosRequest, ListJobAuthInfosResponse> listJobAuthInfosInvoker(
         ListJobAuthInfosRequest request) {
-        return new SyncInvoker<ListJobAuthInfosRequest, ListJobAuthInfosResponse>(request, DliMeta.listJobAuthInfos,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.listJobAuthInfos, hcClient);
     }
 
     /**
@@ -1573,7 +1535,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueuePlansRequest 请求对象
+     * @param request ListQueuePlansRequest 请求对象
      * @return ListQueuePlansResponse
      */
     @Deprecated
@@ -1588,14 +1550,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueuePlansRequest 请求对象
+     * @param request ListQueuePlansRequest 请求对象
      * @return SyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse>
      */
     @Deprecated
     public SyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse> listQueuePlansInvoker(
         ListQueuePlansRequest request) {
-        return new SyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse>(request, DliMeta.listQueuePlans,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.listQueuePlans, hcClient);
     }
 
     /**
@@ -1605,7 +1566,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueuePropertiesRequest 请求对象
+     * @param request ListQueuePropertiesRequest 请求对象
      * @return ListQueuePropertiesResponse
      */
     public ListQueuePropertiesResponse listQueueProperties(ListQueuePropertiesRequest request) {
@@ -1619,13 +1580,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueuePropertiesRequest 请求对象
+     * @param request ListQueuePropertiesRequest 请求对象
      * @return SyncInvoker<ListQueuePropertiesRequest, ListQueuePropertiesResponse>
      */
     public SyncInvoker<ListQueuePropertiesRequest, ListQueuePropertiesResponse> listQueuePropertiesInvoker(
         ListQueuePropertiesRequest request) {
-        return new SyncInvoker<ListQueuePropertiesRequest, ListQueuePropertiesResponse>(request,
-            DliMeta.listQueueProperties, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listQueueProperties, hcClient);
     }
 
     /**
@@ -1635,7 +1595,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueueUsersRequest 请求对象
+     * @param request ListQueueUsersRequest 请求对象
      * @return ListQueueUsersResponse
      */
     @Deprecated
@@ -1650,14 +1610,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueueUsersRequest 请求对象
+     * @param request ListQueueUsersRequest 请求对象
      * @return SyncInvoker<ListQueueUsersRequest, ListQueueUsersResponse>
      */
     @Deprecated
     public SyncInvoker<ListQueueUsersRequest, ListQueueUsersResponse> listQueueUsersInvoker(
         ListQueueUsersRequest request) {
-        return new SyncInvoker<ListQueueUsersRequest, ListQueueUsersResponse>(request, DliMeta.listQueueUsers,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.listQueueUsers, hcClient);
     }
 
     /**
@@ -1667,7 +1626,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueuesRequest 请求对象
+     * @param request ListQueuesRequest 请求对象
      * @return ListQueuesResponse
      */
     public ListQueuesResponse listQueues(ListQueuesRequest request) {
@@ -1681,11 +1640,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueuesRequest 请求对象
+     * @param request ListQueuesRequest 请求对象
      * @return SyncInvoker<ListQueuesRequest, ListQueuesResponse>
      */
     public SyncInvoker<ListQueuesRequest, ListQueuesResponse> listQueuesInvoker(ListQueuesRequest request) {
-        return new SyncInvoker<ListQueuesRequest, ListQueuesResponse>(request, DliMeta.listQueues, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listQueues, hcClient);
     }
 
     /**
@@ -1695,7 +1654,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesRequest 请求对象
+     * @param request ListResourcesRequest 请求对象
      * @return ListResourcesResponse
      */
     @Deprecated
@@ -1710,12 +1669,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesRequest 请求对象
+     * @param request ListResourcesRequest 请求对象
      * @return SyncInvoker<ListResourcesRequest, ListResourcesResponse>
      */
     @Deprecated
     public SyncInvoker<ListResourcesRequest, ListResourcesResponse> listResourcesInvoker(ListResourcesRequest request) {
-        return new SyncInvoker<ListResourcesRequest, ListResourcesResponse>(request, DliMeta.listResources, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listResources, hcClient);
     }
 
     /**
@@ -1725,7 +1684,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTablePrivilegesRequest 请求对象
+     * @param request ListTablePrivilegesRequest 请求对象
      * @return ListTablePrivilegesResponse
      */
     @Deprecated
@@ -1740,14 +1699,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTablePrivilegesRequest 请求对象
+     * @param request ListTablePrivilegesRequest 请求对象
      * @return SyncInvoker<ListTablePrivilegesRequest, ListTablePrivilegesResponse>
      */
     @Deprecated
     public SyncInvoker<ListTablePrivilegesRequest, ListTablePrivilegesResponse> listTablePrivilegesInvoker(
         ListTablePrivilegesRequest request) {
-        return new SyncInvoker<ListTablePrivilegesRequest, ListTablePrivilegesResponse>(request,
-            DliMeta.listTablePrivileges, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listTablePrivileges, hcClient);
     }
 
     /**
@@ -1757,7 +1715,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTableUsersRequest 请求对象
+     * @param request ListTableUsersRequest 请求对象
      * @return ListTableUsersResponse
      */
     @Deprecated
@@ -1772,14 +1730,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTableUsersRequest 请求对象
+     * @param request ListTableUsersRequest 请求对象
      * @return SyncInvoker<ListTableUsersRequest, ListTableUsersResponse>
      */
     @Deprecated
     public SyncInvoker<ListTableUsersRequest, ListTableUsersResponse> listTableUsersInvoker(
         ListTableUsersRequest request) {
-        return new SyncInvoker<ListTableUsersRequest, ListTableUsersResponse>(request, DliMeta.listTableUsers,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.listTableUsers, hcClient);
     }
 
     /**
@@ -1789,7 +1746,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterAuthorizedQueueRequest 请求对象
+     * @param request RegisterAuthorizedQueueRequest 请求对象
      * @return RegisterAuthorizedQueueResponse
      */
     @Deprecated
@@ -1804,14 +1761,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterAuthorizedQueueRequest 请求对象
+     * @param request RegisterAuthorizedQueueRequest 请求对象
      * @return SyncInvoker<RegisterAuthorizedQueueRequest, RegisterAuthorizedQueueResponse>
      */
     @Deprecated
     public SyncInvoker<RegisterAuthorizedQueueRequest, RegisterAuthorizedQueueResponse> registerAuthorizedQueueInvoker(
         RegisterAuthorizedQueueRequest request) {
-        return new SyncInvoker<RegisterAuthorizedQueueRequest, RegisterAuthorizedQueueResponse>(request,
-            DliMeta.registerAuthorizedQueue, hcClient);
+        return new SyncInvoker<>(request, DliMeta.registerAuthorizedQueue, hcClient);
     }
 
     /**
@@ -1821,7 +1777,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAuthorizationActionRequest 请求对象
+     * @param request RunAuthorizationActionRequest 请求对象
      * @return RunAuthorizationActionResponse
      */
     public RunAuthorizationActionResponse runAuthorizationAction(RunAuthorizationActionRequest request) {
@@ -1835,13 +1791,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAuthorizationActionRequest 请求对象
+     * @param request RunAuthorizationActionRequest 请求对象
      * @return SyncInvoker<RunAuthorizationActionRequest, RunAuthorizationActionResponse>
      */
     public SyncInvoker<RunAuthorizationActionRequest, RunAuthorizationActionResponse> runAuthorizationActionInvoker(
         RunAuthorizationActionRequest request) {
-        return new SyncInvoker<RunAuthorizationActionRequest, RunAuthorizationActionResponse>(request,
-            DliMeta.runAuthorizationAction, hcClient);
+        return new SyncInvoker<>(request, DliMeta.runAuthorizationAction, hcClient);
     }
 
     /**
@@ -1851,7 +1806,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunQueueActionRequest 请求对象
+     * @param request RunQueueActionRequest 请求对象
      * @return RunQueueActionResponse
      */
     public RunQueueActionResponse runQueueAction(RunQueueActionRequest request) {
@@ -1865,13 +1820,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunQueueActionRequest 请求对象
+     * @param request RunQueueActionRequest 请求对象
      * @return SyncInvoker<RunQueueActionRequest, RunQueueActionResponse>
      */
     public SyncInvoker<RunQueueActionRequest, RunQueueActionResponse> runQueueActionInvoker(
         RunQueueActionRequest request) {
-        return new SyncInvoker<RunQueueActionRequest, RunQueueActionResponse>(request, DliMeta.runQueueAction,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.runQueueAction, hcClient);
     }
 
     /**
@@ -1881,7 +1835,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectivityTaskRequest 请求对象
+     * @param request ShowConnectivityTaskRequest 请求对象
      * @return ShowConnectivityTaskResponse
      */
     public ShowConnectivityTaskResponse showConnectivityTask(ShowConnectivityTaskRequest request) {
@@ -1895,13 +1849,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectivityTaskRequest 请求对象
+     * @param request ShowConnectivityTaskRequest 请求对象
      * @return SyncInvoker<ShowConnectivityTaskRequest, ShowConnectivityTaskResponse>
      */
     public SyncInvoker<ShowConnectivityTaskRequest, ShowConnectivityTaskResponse> showConnectivityTaskInvoker(
         ShowConnectivityTaskRequest request) {
-        return new SyncInvoker<ShowConnectivityTaskRequest, ShowConnectivityTaskResponse>(request,
-            DliMeta.showConnectivityTask, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showConnectivityTask, hcClient);
     }
 
     /**
@@ -1911,7 +1864,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatasourceConnectionRequest 请求对象
+     * @param request ShowDatasourceConnectionRequest 请求对象
      * @return ShowDatasourceConnectionResponse
      */
     @Deprecated
@@ -1926,14 +1879,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatasourceConnectionRequest 请求对象
+     * @param request ShowDatasourceConnectionRequest 请求对象
      * @return SyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse>
      */
     @Deprecated
     public SyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse> showDatasourceConnectionInvoker(
         ShowDatasourceConnectionRequest request) {
-        return new SyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse>(request,
-            DliMeta.showDatasourceConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showDatasourceConnection, hcClient);
     }
 
     /**
@@ -1943,7 +1895,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDliAgencyRequest 请求对象
+     * @param request ShowDliAgencyRequest 请求对象
      * @return ShowDliAgencyResponse
      */
     @Deprecated
@@ -1958,12 +1910,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDliAgencyRequest 请求对象
+     * @param request ShowDliAgencyRequest 请求对象
      * @return SyncInvoker<ShowDliAgencyRequest, ShowDliAgencyResponse>
      */
     @Deprecated
     public SyncInvoker<ShowDliAgencyRequest, ShowDliAgencyResponse> showDliAgencyInvoker(ShowDliAgencyRequest request) {
-        return new SyncInvoker<ShowDliAgencyRequest, ShowDliAgencyResponse>(request, DliMeta.showDliAgency, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showDliAgency, hcClient);
     }
 
     /**
@@ -1973,7 +1925,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnhancedConnectionRequest 请求对象
+     * @param request ShowEnhancedConnectionRequest 请求对象
      * @return ShowEnhancedConnectionResponse
      */
     public ShowEnhancedConnectionResponse showEnhancedConnection(ShowEnhancedConnectionRequest request) {
@@ -1987,13 +1939,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnhancedConnectionRequest 请求对象
+     * @param request ShowEnhancedConnectionRequest 请求对象
      * @return SyncInvoker<ShowEnhancedConnectionRequest, ShowEnhancedConnectionResponse>
      */
     public SyncInvoker<ShowEnhancedConnectionRequest, ShowEnhancedConnectionResponse> showEnhancedConnectionInvoker(
         ShowEnhancedConnectionRequest request) {
-        return new SyncInvoker<ShowEnhancedConnectionRequest, ShowEnhancedConnectionResponse>(request,
-            DliMeta.showEnhancedConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showEnhancedConnection, hcClient);
     }
 
     /**
@@ -2003,7 +1954,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnhancedConnectionPrivilegeRequest 请求对象
+     * @param request ShowEnhancedConnectionPrivilegeRequest 请求对象
      * @return ShowEnhancedConnectionPrivilegeResponse
      */
     public ShowEnhancedConnectionPrivilegeResponse showEnhancedConnectionPrivilege(
@@ -2018,13 +1969,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnhancedConnectionPrivilegeRequest 请求对象
+     * @param request ShowEnhancedConnectionPrivilegeRequest 请求对象
      * @return SyncInvoker<ShowEnhancedConnectionPrivilegeRequest, ShowEnhancedConnectionPrivilegeResponse>
      */
     public SyncInvoker<ShowEnhancedConnectionPrivilegeRequest, ShowEnhancedConnectionPrivilegeResponse> showEnhancedConnectionPrivilegeInvoker(
         ShowEnhancedConnectionPrivilegeRequest request) {
-        return new SyncInvoker<ShowEnhancedConnectionPrivilegeRequest, ShowEnhancedConnectionPrivilegeResponse>(request,
-            DliMeta.showEnhancedConnectionPrivilege, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showEnhancedConnectionPrivilege, hcClient);
     }
 
     /**
@@ -2034,7 +1984,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQueueRequest 请求对象
+     * @param request ShowQueueRequest 请求对象
      * @return ShowQueueResponse
      */
     public ShowQueueResponse showQueue(ShowQueueRequest request) {
@@ -2048,11 +1998,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQueueRequest 请求对象
+     * @param request ShowQueueRequest 请求对象
      * @return SyncInvoker<ShowQueueRequest, ShowQueueResponse>
      */
     public SyncInvoker<ShowQueueRequest, ShowQueueResponse> showQueueInvoker(ShowQueueRequest request) {
-        return new SyncInvoker<ShowQueueRequest, ShowQueueResponse>(request, DliMeta.showQueue, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showQueue, hcClient);
     }
 
     /**
@@ -2062,7 +2012,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotaRequest 请求对象
+     * @param request ShowQuotaRequest 请求对象
      * @return ShowQuotaResponse
      */
     public ShowQuotaResponse showQuota(ShowQuotaRequest request) {
@@ -2076,11 +2026,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotaRequest 请求对象
+     * @param request ShowQuotaRequest 请求对象
      * @return SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
      */
     public SyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaInvoker(ShowQuotaRequest request) {
-        return new SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, DliMeta.showQuota, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showQuota, hcClient);
     }
 
     /**
@@ -2090,7 +2040,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceInfoRequest 请求对象
+     * @param request ShowResourceInfoRequest 请求对象
      * @return ShowResourceInfoResponse
      */
     @Deprecated
@@ -2105,14 +2055,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceInfoRequest 请求对象
+     * @param request ShowResourceInfoRequest 请求对象
      * @return SyncInvoker<ShowResourceInfoRequest, ShowResourceInfoResponse>
      */
     @Deprecated
     public SyncInvoker<ShowResourceInfoRequest, ShowResourceInfoResponse> showResourceInfoInvoker(
         ShowResourceInfoRequest request) {
-        return new SyncInvoker<ShowResourceInfoRequest, ShowResourceInfoResponse>(request, DliMeta.showResourceInfo,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.showResourceInfo, hcClient);
     }
 
     /**
@@ -2122,7 +2071,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAuthInfoRequest 请求对象
+     * @param request UpdateAuthInfoRequest 请求对象
      * @return UpdateAuthInfoResponse
      */
     @Deprecated
@@ -2137,14 +2086,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAuthInfoRequest 请求对象
+     * @param request UpdateAuthInfoRequest 请求对象
      * @return SyncInvoker<UpdateAuthInfoRequest, UpdateAuthInfoResponse>
      */
     @Deprecated
     public SyncInvoker<UpdateAuthInfoRequest, UpdateAuthInfoResponse> updateAuthInfoInvoker(
         UpdateAuthInfoRequest request) {
-        return new SyncInvoker<UpdateAuthInfoRequest, UpdateAuthInfoResponse>(request, DliMeta.updateAuthInfo,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateAuthInfo, hcClient);
     }
 
     /**
@@ -2154,7 +2102,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateElasticResourcePoolRequest 请求对象
+     * @param request UpdateElasticResourcePoolRequest 请求对象
      * @return UpdateElasticResourcePoolResponse
      */
     public UpdateElasticResourcePoolResponse updateElasticResourcePool(UpdateElasticResourcePoolRequest request) {
@@ -2168,13 +2116,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateElasticResourcePoolRequest 请求对象
+     * @param request UpdateElasticResourcePoolRequest 请求对象
      * @return SyncInvoker<UpdateElasticResourcePoolRequest, UpdateElasticResourcePoolResponse>
      */
     public SyncInvoker<UpdateElasticResourcePoolRequest, UpdateElasticResourcePoolResponse> updateElasticResourcePoolInvoker(
         UpdateElasticResourcePoolRequest request) {
-        return new SyncInvoker<UpdateElasticResourcePoolRequest, UpdateElasticResourcePoolResponse>(request,
-            DliMeta.updateElasticResourcePool, hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateElasticResourcePool, hcClient);
     }
 
     /**
@@ -2184,7 +2131,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateElasticResourcePoolQueueRequest 请求对象
+     * @param request UpdateElasticResourcePoolQueueRequest 请求对象
      * @return UpdateElasticResourcePoolQueueResponse
      */
     public UpdateElasticResourcePoolQueueResponse updateElasticResourcePoolQueue(
@@ -2199,13 +2146,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateElasticResourcePoolQueueRequest 请求对象
+     * @param request UpdateElasticResourcePoolQueueRequest 请求对象
      * @return SyncInvoker<UpdateElasticResourcePoolQueueRequest, UpdateElasticResourcePoolQueueResponse>
      */
     public SyncInvoker<UpdateElasticResourcePoolQueueRequest, UpdateElasticResourcePoolQueueResponse> updateElasticResourcePoolQueueInvoker(
         UpdateElasticResourcePoolQueueRequest request) {
-        return new SyncInvoker<UpdateElasticResourcePoolQueueRequest, UpdateElasticResourcePoolQueueResponse>(request,
-            DliMeta.updateElasticResourcePoolQueue, hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateElasticResourcePoolQueue, hcClient);
     }
 
     /**
@@ -2215,7 +2161,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnhancedConnectionRequest 请求对象
+     * @param request UpdateEnhancedConnectionRequest 请求对象
      * @return UpdateEnhancedConnectionResponse
      */
     public UpdateEnhancedConnectionResponse updateEnhancedConnection(UpdateEnhancedConnectionRequest request) {
@@ -2229,13 +2175,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnhancedConnectionRequest 请求对象
+     * @param request UpdateEnhancedConnectionRequest 请求对象
      * @return SyncInvoker<UpdateEnhancedConnectionRequest, UpdateEnhancedConnectionResponse>
      */
     public SyncInvoker<UpdateEnhancedConnectionRequest, UpdateEnhancedConnectionResponse> updateEnhancedConnectionInvoker(
         UpdateEnhancedConnectionRequest request) {
-        return new SyncInvoker<UpdateEnhancedConnectionRequest, UpdateEnhancedConnectionResponse>(request,
-            DliMeta.updateEnhancedConnection, hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateEnhancedConnection, hcClient);
     }
 
     /**
@@ -2245,7 +2190,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGlobalVariableRequest 请求对象
+     * @param request UpdateGlobalVariableRequest 请求对象
      * @return UpdateGlobalVariableResponse
      */
     public UpdateGlobalVariableResponse updateGlobalVariable(UpdateGlobalVariableRequest request) {
@@ -2259,13 +2204,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGlobalVariableRequest 请求对象
+     * @param request UpdateGlobalVariableRequest 请求对象
      * @return SyncInvoker<UpdateGlobalVariableRequest, UpdateGlobalVariableResponse>
      */
     public SyncInvoker<UpdateGlobalVariableRequest, UpdateGlobalVariableResponse> updateGlobalVariableInvoker(
         UpdateGlobalVariableRequest request) {
-        return new SyncInvoker<UpdateGlobalVariableRequest, UpdateGlobalVariableResponse>(request,
-            DliMeta.updateGlobalVariable, hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateGlobalVariable, hcClient);
     }
 
     /**
@@ -2275,7 +2219,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGroupOrResourceOwnerRequest 请求对象
+     * @param request UpdateGroupOrResourceOwnerRequest 请求对象
      * @return UpdateGroupOrResourceOwnerResponse
      */
     @Deprecated
@@ -2290,14 +2234,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGroupOrResourceOwnerRequest 请求对象
+     * @param request UpdateGroupOrResourceOwnerRequest 请求对象
      * @return SyncInvoker<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse>
      */
     @Deprecated
     public SyncInvoker<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse> updateGroupOrResourceOwnerInvoker(
         UpdateGroupOrResourceOwnerRequest request) {
-        return new SyncInvoker<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse>(request,
-            DliMeta.updateGroupOrResourceOwner, hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateGroupOrResourceOwner, hcClient);
     }
 
     /**
@@ -2307,7 +2250,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobAuthInfoRequest 请求对象
+     * @param request UpdateJobAuthInfoRequest 请求对象
      * @return UpdateJobAuthInfoResponse
      */
     public UpdateJobAuthInfoResponse updateJobAuthInfo(UpdateJobAuthInfoRequest request) {
@@ -2321,13 +2264,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobAuthInfoRequest 请求对象
+     * @param request UpdateJobAuthInfoRequest 请求对象
      * @return SyncInvoker<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse>
      */
     public SyncInvoker<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse> updateJobAuthInfoInvoker(
         UpdateJobAuthInfoRequest request) {
-        return new SyncInvoker<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse>(request, DliMeta.updateJobAuthInfo,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateJobAuthInfo, hcClient);
     }
 
     /**
@@ -2339,7 +2281,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateQueueCidrRequest 请求对象
+     * @param request UpdateQueueCidrRequest 请求对象
      * @return UpdateQueueCidrResponse
      */
     @Deprecated
@@ -2356,14 +2298,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateQueueCidrRequest 请求对象
+     * @param request UpdateQueueCidrRequest 请求对象
      * @return SyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse>
      */
     @Deprecated
     public SyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse> updateQueueCidrInvoker(
         UpdateQueueCidrRequest request) {
-        return new SyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse>(request, DliMeta.updateQueueCidr,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateQueueCidr, hcClient);
     }
 
     /**
@@ -2373,7 +2314,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateQueuePropertyRequest 请求对象
+     * @param request UpdateQueuePropertyRequest 请求对象
      * @return UpdateQueuePropertyResponse
      */
     public UpdateQueuePropertyResponse updateQueueProperty(UpdateQueuePropertyRequest request) {
@@ -2387,13 +2328,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateQueuePropertyRequest 请求对象
+     * @param request UpdateQueuePropertyRequest 请求对象
      * @return SyncInvoker<UpdateQueuePropertyRequest, UpdateQueuePropertyResponse>
      */
     public SyncInvoker<UpdateQueuePropertyRequest, UpdateQueuePropertyResponse> updateQueuePropertyInvoker(
         UpdateQueuePropertyRequest request) {
-        return new SyncInvoker<UpdateQueuePropertyRequest, UpdateQueuePropertyResponse>(request,
-            DliMeta.updateQueueProperty, hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateQueueProperty, hcClient);
     }
 
     /**
@@ -2404,7 +2344,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFilesRequest 请求对象
+     * @param request UploadFilesRequest 请求对象
      * @return UploadFilesResponse
      */
     @Deprecated
@@ -2420,12 +2360,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFilesRequest 请求对象
+     * @param request UploadFilesRequest 请求对象
      * @return SyncInvoker<UploadFilesRequest, UploadFilesResponse>
      */
     @Deprecated
     public SyncInvoker<UploadFilesRequest, UploadFilesResponse> uploadFilesInvoker(UploadFilesRequest request) {
-        return new SyncInvoker<UploadFilesRequest, UploadFilesResponse>(request, DliMeta.uploadFiles, hcClient);
+        return new SyncInvoker<>(request, DliMeta.uploadFiles, hcClient);
     }
 
     /**
@@ -2436,7 +2376,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadJarsRequest 请求对象
+     * @param request UploadJarsRequest 请求对象
      * @return UploadJarsResponse
      */
     @Deprecated
@@ -2452,12 +2392,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadJarsRequest 请求对象
+     * @param request UploadJarsRequest 请求对象
      * @return SyncInvoker<UploadJarsRequest, UploadJarsResponse>
      */
     @Deprecated
     public SyncInvoker<UploadJarsRequest, UploadJarsResponse> uploadJarsInvoker(UploadJarsRequest request) {
-        return new SyncInvoker<UploadJarsRequest, UploadJarsResponse>(request, DliMeta.uploadJars, hcClient);
+        return new SyncInvoker<>(request, DliMeta.uploadJars, hcClient);
     }
 
     /**
@@ -2468,7 +2408,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadPythonFilesRequest 请求对象
+     * @param request UploadPythonFilesRequest 请求对象
      * @return UploadPythonFilesResponse
      */
     @Deprecated
@@ -2484,14 +2424,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadPythonFilesRequest 请求对象
+     * @param request UploadPythonFilesRequest 请求对象
      * @return SyncInvoker<UploadPythonFilesRequest, UploadPythonFilesResponse>
      */
     @Deprecated
     public SyncInvoker<UploadPythonFilesRequest, UploadPythonFilesResponse> uploadPythonFilesInvoker(
         UploadPythonFilesRequest request) {
-        return new SyncInvoker<UploadPythonFilesRequest, UploadPythonFilesResponse>(request, DliMeta.uploadPythonFiles,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.uploadPythonFiles, hcClient);
     }
 
     /**
@@ -2501,7 +2440,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadResourcesRequest 请求对象
+     * @param request UploadResourcesRequest 请求对象
      * @return UploadResourcesResponse
      */
     @Deprecated
@@ -2516,14 +2455,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadResourcesRequest 请求对象
+     * @param request UploadResourcesRequest 请求对象
      * @return SyncInvoker<UploadResourcesRequest, UploadResourcesResponse>
      */
     @Deprecated
     public SyncInvoker<UploadResourcesRequest, UploadResourcesResponse> uploadResourcesInvoker(
         UploadResourcesRequest request) {
-        return new SyncInvoker<UploadResourcesRequest, UploadResourcesResponse>(request, DliMeta.uploadResources,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.uploadResources, hcClient);
     }
 
     /**
@@ -2533,7 +2471,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteFlinkJobsRequest 请求对象
+     * @param request BatchDeleteFlinkJobsRequest 请求对象
      * @return BatchDeleteFlinkJobsResponse
      */
     public BatchDeleteFlinkJobsResponse batchDeleteFlinkJobs(BatchDeleteFlinkJobsRequest request) {
@@ -2547,13 +2485,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteFlinkJobsRequest 请求对象
+     * @param request BatchDeleteFlinkJobsRequest 请求对象
      * @return SyncInvoker<BatchDeleteFlinkJobsRequest, BatchDeleteFlinkJobsResponse>
      */
     public SyncInvoker<BatchDeleteFlinkJobsRequest, BatchDeleteFlinkJobsResponse> batchDeleteFlinkJobsInvoker(
         BatchDeleteFlinkJobsRequest request) {
-        return new SyncInvoker<BatchDeleteFlinkJobsRequest, BatchDeleteFlinkJobsResponse>(request,
-            DliMeta.batchDeleteFlinkJobs, hcClient);
+        return new SyncInvoker<>(request, DliMeta.batchDeleteFlinkJobs, hcClient);
     }
 
     /**
@@ -2563,7 +2500,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRunFlinkJobsRequest 请求对象
+     * @param request BatchRunFlinkJobsRequest 请求对象
      * @return BatchRunFlinkJobsResponse
      */
     public BatchRunFlinkJobsResponse batchRunFlinkJobs(BatchRunFlinkJobsRequest request) {
@@ -2577,13 +2514,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRunFlinkJobsRequest 请求对象
+     * @param request BatchRunFlinkJobsRequest 请求对象
      * @return SyncInvoker<BatchRunFlinkJobsRequest, BatchRunFlinkJobsResponse>
      */
     public SyncInvoker<BatchRunFlinkJobsRequest, BatchRunFlinkJobsResponse> batchRunFlinkJobsInvoker(
         BatchRunFlinkJobsRequest request) {
-        return new SyncInvoker<BatchRunFlinkJobsRequest, BatchRunFlinkJobsResponse>(request, DliMeta.batchRunFlinkJobs,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.batchRunFlinkJobs, hcClient);
     }
 
     /**
@@ -2593,7 +2529,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeFlinkJobStatusReportRequest 请求对象
+     * @param request ChangeFlinkJobStatusReportRequest 请求对象
      * @return ChangeFlinkJobStatusReportResponse
      */
     @Deprecated
@@ -2608,14 +2544,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeFlinkJobStatusReportRequest 请求对象
+     * @param request ChangeFlinkJobStatusReportRequest 请求对象
      * @return SyncInvoker<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse>
      */
     @Deprecated
     public SyncInvoker<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse> changeFlinkJobStatusReportInvoker(
         ChangeFlinkJobStatusReportRequest request) {
-        return new SyncInvoker<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse>(request,
-            DliMeta.changeFlinkJobStatusReport, hcClient);
+        return new SyncInvoker<>(request, DliMeta.changeFlinkJobStatusReport, hcClient);
     }
 
     /**
@@ -2625,7 +2560,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlinkJarJobRequest 请求对象
+     * @param request CreateFlinkJarJobRequest 请求对象
      * @return CreateFlinkJarJobResponse
      */
     public CreateFlinkJarJobResponse createFlinkJarJob(CreateFlinkJarJobRequest request) {
@@ -2639,13 +2574,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlinkJarJobRequest 请求对象
+     * @param request CreateFlinkJarJobRequest 请求对象
      * @return SyncInvoker<CreateFlinkJarJobRequest, CreateFlinkJarJobResponse>
      */
     public SyncInvoker<CreateFlinkJarJobRequest, CreateFlinkJarJobResponse> createFlinkJarJobInvoker(
         CreateFlinkJarJobRequest request) {
-        return new SyncInvoker<CreateFlinkJarJobRequest, CreateFlinkJarJobResponse>(request, DliMeta.createFlinkJarJob,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.createFlinkJarJob, hcClient);
     }
 
     /**
@@ -2655,7 +2589,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlinkSqlJobRequest 请求对象
+     * @param request CreateFlinkSqlJobRequest 请求对象
      * @return CreateFlinkSqlJobResponse
      */
     public CreateFlinkSqlJobResponse createFlinkSqlJob(CreateFlinkSqlJobRequest request) {
@@ -2669,13 +2603,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlinkSqlJobRequest 请求对象
+     * @param request CreateFlinkSqlJobRequest 请求对象
      * @return SyncInvoker<CreateFlinkSqlJobRequest, CreateFlinkSqlJobResponse>
      */
     public SyncInvoker<CreateFlinkSqlJobRequest, CreateFlinkSqlJobResponse> createFlinkSqlJobInvoker(
         CreateFlinkSqlJobRequest request) {
-        return new SyncInvoker<CreateFlinkSqlJobRequest, CreateFlinkSqlJobResponse>(request, DliMeta.createFlinkSqlJob,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.createFlinkSqlJob, hcClient);
     }
 
     /**
@@ -2685,7 +2618,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlinkSqlJobGraphRequest 请求对象
+     * @param request CreateFlinkSqlJobGraphRequest 请求对象
      * @return CreateFlinkSqlJobGraphResponse
      */
     public CreateFlinkSqlJobGraphResponse createFlinkSqlJobGraph(CreateFlinkSqlJobGraphRequest request) {
@@ -2699,13 +2632,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlinkSqlJobGraphRequest 请求对象
+     * @param request CreateFlinkSqlJobGraphRequest 请求对象
      * @return SyncInvoker<CreateFlinkSqlJobGraphRequest, CreateFlinkSqlJobGraphResponse>
      */
     public SyncInvoker<CreateFlinkSqlJobGraphRequest, CreateFlinkSqlJobGraphResponse> createFlinkSqlJobGraphInvoker(
         CreateFlinkSqlJobGraphRequest request) {
-        return new SyncInvoker<CreateFlinkSqlJobGraphRequest, CreateFlinkSqlJobGraphResponse>(request,
-            DliMeta.createFlinkSqlJobGraph, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createFlinkSqlJobGraph, hcClient);
     }
 
     /**
@@ -2715,7 +2647,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlinkSqlJobTemplateRequest 请求对象
+     * @param request CreateFlinkSqlJobTemplateRequest 请求对象
      * @return CreateFlinkSqlJobTemplateResponse
      */
     public CreateFlinkSqlJobTemplateResponse createFlinkSqlJobTemplate(CreateFlinkSqlJobTemplateRequest request) {
@@ -2729,13 +2661,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlinkSqlJobTemplateRequest 请求对象
+     * @param request CreateFlinkSqlJobTemplateRequest 请求对象
      * @return SyncInvoker<CreateFlinkSqlJobTemplateRequest, CreateFlinkSqlJobTemplateResponse>
      */
     public SyncInvoker<CreateFlinkSqlJobTemplateRequest, CreateFlinkSqlJobTemplateResponse> createFlinkSqlJobTemplateInvoker(
         CreateFlinkSqlJobTemplateRequest request) {
-        return new SyncInvoker<CreateFlinkSqlJobTemplateRequest, CreateFlinkSqlJobTemplateResponse>(request,
-            DliMeta.createFlinkSqlJobTemplate, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createFlinkSqlJobTemplate, hcClient);
     }
 
     /**
@@ -2745,7 +2676,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIefMessageChannelRequest 请求对象
+     * @param request CreateIefMessageChannelRequest 请求对象
      * @return CreateIefMessageChannelResponse
      */
     @Deprecated
@@ -2760,14 +2691,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIefMessageChannelRequest 请求对象
+     * @param request CreateIefMessageChannelRequest 请求对象
      * @return SyncInvoker<CreateIefMessageChannelRequest, CreateIefMessageChannelResponse>
      */
     @Deprecated
     public SyncInvoker<CreateIefMessageChannelRequest, CreateIefMessageChannelResponse> createIefMessageChannelInvoker(
         CreateIefMessageChannelRequest request) {
-        return new SyncInvoker<CreateIefMessageChannelRequest, CreateIefMessageChannelResponse>(request,
-            DliMeta.createIefMessageChannel, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createIefMessageChannel, hcClient);
     }
 
     /**
@@ -2777,7 +2707,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIefSystemEventsRequest 请求对象
+     * @param request CreateIefSystemEventsRequest 请求对象
      * @return CreateIefSystemEventsResponse
      */
     @Deprecated
@@ -2792,14 +2722,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIefSystemEventsRequest 请求对象
+     * @param request CreateIefSystemEventsRequest 请求对象
      * @return SyncInvoker<CreateIefSystemEventsRequest, CreateIefSystemEventsResponse>
      */
     @Deprecated
     public SyncInvoker<CreateIefSystemEventsRequest, CreateIefSystemEventsResponse> createIefSystemEventsInvoker(
         CreateIefSystemEventsRequest request) {
-        return new SyncInvoker<CreateIefSystemEventsRequest, CreateIefSystemEventsResponse>(request,
-            DliMeta.createIefSystemEvents, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createIefSystemEvents, hcClient);
     }
 
     /**
@@ -2809,7 +2738,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFlinkJobRequest 请求对象
+     * @param request DeleteFlinkJobRequest 请求对象
      * @return DeleteFlinkJobResponse
      */
     public DeleteFlinkJobResponse deleteFlinkJob(DeleteFlinkJobRequest request) {
@@ -2823,13 +2752,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFlinkJobRequest 请求对象
+     * @param request DeleteFlinkJobRequest 请求对象
      * @return SyncInvoker<DeleteFlinkJobRequest, DeleteFlinkJobResponse>
      */
     public SyncInvoker<DeleteFlinkJobRequest, DeleteFlinkJobResponse> deleteFlinkJobInvoker(
         DeleteFlinkJobRequest request) {
-        return new SyncInvoker<DeleteFlinkJobRequest, DeleteFlinkJobResponse>(request, DliMeta.deleteFlinkJob,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteFlinkJob, hcClient);
     }
 
     /**
@@ -2839,7 +2767,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFlinkSqlJobTemplateRequest 请求对象
+     * @param request DeleteFlinkSqlJobTemplateRequest 请求对象
      * @return DeleteFlinkSqlJobTemplateResponse
      */
     public DeleteFlinkSqlJobTemplateResponse deleteFlinkSqlJobTemplate(DeleteFlinkSqlJobTemplateRequest request) {
@@ -2853,13 +2781,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFlinkSqlJobTemplateRequest 请求对象
+     * @param request DeleteFlinkSqlJobTemplateRequest 请求对象
      * @return SyncInvoker<DeleteFlinkSqlJobTemplateRequest, DeleteFlinkSqlJobTemplateResponse>
      */
     public SyncInvoker<DeleteFlinkSqlJobTemplateRequest, DeleteFlinkSqlJobTemplateResponse> deleteFlinkSqlJobTemplateInvoker(
         DeleteFlinkSqlJobTemplateRequest request) {
-        return new SyncInvoker<DeleteFlinkSqlJobTemplateRequest, DeleteFlinkSqlJobTemplateResponse>(request,
-            DliMeta.deleteFlinkSqlJobTemplate, hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteFlinkSqlJobTemplate, hcClient);
     }
 
     /**
@@ -2869,7 +2796,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportFlinkJobsRequest 请求对象
+     * @param request ExportFlinkJobsRequest 请求对象
      * @return ExportFlinkJobsResponse
      */
     public ExportFlinkJobsResponse exportFlinkJobs(ExportFlinkJobsRequest request) {
@@ -2883,13 +2810,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportFlinkJobsRequest 请求对象
+     * @param request ExportFlinkJobsRequest 请求对象
      * @return SyncInvoker<ExportFlinkJobsRequest, ExportFlinkJobsResponse>
      */
     public SyncInvoker<ExportFlinkJobsRequest, ExportFlinkJobsResponse> exportFlinkJobsInvoker(
         ExportFlinkJobsRequest request) {
-        return new SyncInvoker<ExportFlinkJobsRequest, ExportFlinkJobsResponse>(request, DliMeta.exportFlinkJobs,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.exportFlinkJobs, hcClient);
     }
 
     /**
@@ -2899,7 +2825,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportFlinkJobsRequest 请求对象
+     * @param request ImportFlinkJobsRequest 请求对象
      * @return ImportFlinkJobsResponse
      */
     public ImportFlinkJobsResponse importFlinkJobs(ImportFlinkJobsRequest request) {
@@ -2913,13 +2839,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportFlinkJobsRequest 请求对象
+     * @param request ImportFlinkJobsRequest 请求对象
      * @return SyncInvoker<ImportFlinkJobsRequest, ImportFlinkJobsResponse>
      */
     public SyncInvoker<ImportFlinkJobsRequest, ImportFlinkJobsResponse> importFlinkJobsInvoker(
         ImportFlinkJobsRequest request) {
-        return new SyncInvoker<ImportFlinkJobsRequest, ImportFlinkJobsResponse>(request, DliMeta.importFlinkJobs,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.importFlinkJobs, hcClient);
     }
 
     /**
@@ -2929,7 +2854,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlinkJobsRequest 请求对象
+     * @param request ListFlinkJobsRequest 请求对象
      * @return ListFlinkJobsResponse
      */
     public ListFlinkJobsResponse listFlinkJobs(ListFlinkJobsRequest request) {
@@ -2943,11 +2868,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlinkJobsRequest 请求对象
+     * @param request ListFlinkJobsRequest 请求对象
      * @return SyncInvoker<ListFlinkJobsRequest, ListFlinkJobsResponse>
      */
     public SyncInvoker<ListFlinkJobsRequest, ListFlinkJobsResponse> listFlinkJobsInvoker(ListFlinkJobsRequest request) {
-        return new SyncInvoker<ListFlinkJobsRequest, ListFlinkJobsResponse>(request, DliMeta.listFlinkJobs, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listFlinkJobs, hcClient);
     }
 
     /**
@@ -2957,7 +2882,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlinkSqlJobTemplatesRequest 请求对象
+     * @param request ListFlinkSqlJobTemplatesRequest 请求对象
      * @return ListFlinkSqlJobTemplatesResponse
      */
     public ListFlinkSqlJobTemplatesResponse listFlinkSqlJobTemplates(ListFlinkSqlJobTemplatesRequest request) {
@@ -2971,13 +2896,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlinkSqlJobTemplatesRequest 请求对象
+     * @param request ListFlinkSqlJobTemplatesRequest 请求对象
      * @return SyncInvoker<ListFlinkSqlJobTemplatesRequest, ListFlinkSqlJobTemplatesResponse>
      */
     public SyncInvoker<ListFlinkSqlJobTemplatesRequest, ListFlinkSqlJobTemplatesResponse> listFlinkSqlJobTemplatesInvoker(
         ListFlinkSqlJobTemplatesRequest request) {
-        return new SyncInvoker<ListFlinkSqlJobTemplatesRequest, ListFlinkSqlJobTemplatesResponse>(request,
-            DliMeta.listFlinkSqlJobTemplates, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listFlinkSqlJobTemplates, hcClient);
     }
 
     /**
@@ -2987,7 +2911,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterBucketRequest 请求对象
+     * @param request RegisterBucketRequest 请求对象
      * @return RegisterBucketResponse
      */
     @Deprecated
@@ -3002,14 +2926,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterBucketRequest 请求对象
+     * @param request RegisterBucketRequest 请求对象
      * @return SyncInvoker<RegisterBucketRequest, RegisterBucketResponse>
      */
     @Deprecated
     public SyncInvoker<RegisterBucketRequest, RegisterBucketResponse> registerBucketInvoker(
         RegisterBucketRequest request) {
-        return new SyncInvoker<RegisterBucketRequest, RegisterBucketResponse>(request, DliMeta.registerBucket,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.registerBucket, hcClient);
     }
 
     /**
@@ -3019,7 +2942,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunIefJobActionCallBackRequest 请求对象
+     * @param request RunIefJobActionCallBackRequest 请求对象
      * @return RunIefJobActionCallBackResponse
      */
     @Deprecated
@@ -3034,14 +2957,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunIefJobActionCallBackRequest 请求对象
+     * @param request RunIefJobActionCallBackRequest 请求对象
      * @return SyncInvoker<RunIefJobActionCallBackRequest, RunIefJobActionCallBackResponse>
      */
     @Deprecated
     public SyncInvoker<RunIefJobActionCallBackRequest, RunIefJobActionCallBackResponse> runIefJobActionCallBackInvoker(
         RunIefJobActionCallBackRequest request) {
-        return new SyncInvoker<RunIefJobActionCallBackRequest, RunIefJobActionCallBackResponse>(request,
-            DliMeta.runIefJobActionCallBack, hcClient);
+        return new SyncInvoker<>(request, DliMeta.runIefJobActionCallBack, hcClient);
     }
 
     /**
@@ -3051,7 +2973,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlinkJobRequest 请求对象
+     * @param request ShowFlinkJobRequest 请求对象
      * @return ShowFlinkJobResponse
      */
     public ShowFlinkJobResponse showFlinkJob(ShowFlinkJobRequest request) {
@@ -3065,11 +2987,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlinkJobRequest 请求对象
+     * @param request ShowFlinkJobRequest 请求对象
      * @return SyncInvoker<ShowFlinkJobRequest, ShowFlinkJobResponse>
      */
     public SyncInvoker<ShowFlinkJobRequest, ShowFlinkJobResponse> showFlinkJobInvoker(ShowFlinkJobRequest request) {
-        return new SyncInvoker<ShowFlinkJobRequest, ShowFlinkJobResponse>(request, DliMeta.showFlinkJob, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showFlinkJob, hcClient);
     }
 
     /**
@@ -3079,7 +3001,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlinkJobExecutionGraphRequest 请求对象
+     * @param request ShowFlinkJobExecutionGraphRequest 请求对象
      * @return ShowFlinkJobExecutionGraphResponse
      */
     public ShowFlinkJobExecutionGraphResponse showFlinkJobExecutionGraph(ShowFlinkJobExecutionGraphRequest request) {
@@ -3093,13 +3015,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlinkJobExecutionGraphRequest 请求对象
+     * @param request ShowFlinkJobExecutionGraphRequest 请求对象
      * @return SyncInvoker<ShowFlinkJobExecutionGraphRequest, ShowFlinkJobExecutionGraphResponse>
      */
     public SyncInvoker<ShowFlinkJobExecutionGraphRequest, ShowFlinkJobExecutionGraphResponse> showFlinkJobExecutionGraphInvoker(
         ShowFlinkJobExecutionGraphRequest request) {
-        return new SyncInvoker<ShowFlinkJobExecutionGraphRequest, ShowFlinkJobExecutionGraphResponse>(request,
-            DliMeta.showFlinkJobExecutionGraph, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showFlinkJobExecutionGraph, hcClient);
     }
 
     /**
@@ -3109,7 +3030,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlinkMetricRequest 请求对象
+     * @param request ShowFlinkMetricRequest 请求对象
      * @return ShowFlinkMetricResponse
      */
     @Deprecated
@@ -3124,14 +3045,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlinkMetricRequest 请求对象
+     * @param request ShowFlinkMetricRequest 请求对象
      * @return SyncInvoker<ShowFlinkMetricRequest, ShowFlinkMetricResponse>
      */
     @Deprecated
     public SyncInvoker<ShowFlinkMetricRequest, ShowFlinkMetricResponse> showFlinkMetricInvoker(
         ShowFlinkMetricRequest request) {
-        return new SyncInvoker<ShowFlinkMetricRequest, ShowFlinkMetricResponse>(request, DliMeta.showFlinkMetric,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.showFlinkMetric, hcClient);
     }
 
     /**
@@ -3141,7 +3061,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopFlinkJobsRequest 请求对象
+     * @param request StopFlinkJobsRequest 请求对象
      * @return StopFlinkJobsResponse
      */
     public StopFlinkJobsResponse stopFlinkJobs(StopFlinkJobsRequest request) {
@@ -3155,11 +3075,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopFlinkJobsRequest 请求对象
+     * @param request StopFlinkJobsRequest 请求对象
      * @return SyncInvoker<StopFlinkJobsRequest, StopFlinkJobsResponse>
      */
     public SyncInvoker<StopFlinkJobsRequest, StopFlinkJobsResponse> stopFlinkJobsInvoker(StopFlinkJobsRequest request) {
-        return new SyncInvoker<StopFlinkJobsRequest, StopFlinkJobsResponse>(request, DliMeta.stopFlinkJobs, hcClient);
+        return new SyncInvoker<>(request, DliMeta.stopFlinkJobs, hcClient);
     }
 
     /**
@@ -3169,7 +3089,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlinkJarJobRequest 请求对象
+     * @param request UpdateFlinkJarJobRequest 请求对象
      * @return UpdateFlinkJarJobResponse
      */
     public UpdateFlinkJarJobResponse updateFlinkJarJob(UpdateFlinkJarJobRequest request) {
@@ -3183,13 +3103,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlinkJarJobRequest 请求对象
+     * @param request UpdateFlinkJarJobRequest 请求对象
      * @return SyncInvoker<UpdateFlinkJarJobRequest, UpdateFlinkJarJobResponse>
      */
     public SyncInvoker<UpdateFlinkJarJobRequest, UpdateFlinkJarJobResponse> updateFlinkJarJobInvoker(
         UpdateFlinkJarJobRequest request) {
-        return new SyncInvoker<UpdateFlinkJarJobRequest, UpdateFlinkJarJobResponse>(request, DliMeta.updateFlinkJarJob,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateFlinkJarJob, hcClient);
     }
 
     /**
@@ -3199,7 +3118,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlinkSqlJobRequest 请求对象
+     * @param request UpdateFlinkSqlJobRequest 请求对象
      * @return UpdateFlinkSqlJobResponse
      */
     public UpdateFlinkSqlJobResponse updateFlinkSqlJob(UpdateFlinkSqlJobRequest request) {
@@ -3213,13 +3132,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlinkSqlJobRequest 请求对象
+     * @param request UpdateFlinkSqlJobRequest 请求对象
      * @return SyncInvoker<UpdateFlinkSqlJobRequest, UpdateFlinkSqlJobResponse>
      */
     public SyncInvoker<UpdateFlinkSqlJobRequest, UpdateFlinkSqlJobResponse> updateFlinkSqlJobInvoker(
         UpdateFlinkSqlJobRequest request) {
-        return new SyncInvoker<UpdateFlinkSqlJobRequest, UpdateFlinkSqlJobResponse>(request, DliMeta.updateFlinkSqlJob,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateFlinkSqlJob, hcClient);
     }
 
     /**
@@ -3229,7 +3147,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlinkSqlJobTemplateRequest 请求对象
+     * @param request UpdateFlinkSqlJobTemplateRequest 请求对象
      * @return UpdateFlinkSqlJobTemplateResponse
      */
     public UpdateFlinkSqlJobTemplateResponse updateFlinkSqlJobTemplate(UpdateFlinkSqlJobTemplateRequest request) {
@@ -3243,13 +3161,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlinkSqlJobTemplateRequest 请求对象
+     * @param request UpdateFlinkSqlJobTemplateRequest 请求对象
      * @return SyncInvoker<UpdateFlinkSqlJobTemplateRequest, UpdateFlinkSqlJobTemplateResponse>
      */
     public SyncInvoker<UpdateFlinkSqlJobTemplateRequest, UpdateFlinkSqlJobTemplateResponse> updateFlinkSqlJobTemplateInvoker(
         UpdateFlinkSqlJobTemplateRequest request) {
-        return new SyncInvoker<UpdateFlinkSqlJobTemplateRequest, UpdateFlinkSqlJobTemplateResponse>(request,
-            DliMeta.updateFlinkSqlJobTemplate, hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateFlinkSqlJobTemplate, hcClient);
     }
 
     /**
@@ -3259,7 +3176,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelSparkJobRequest 请求对象
+     * @param request CancelSparkJobRequest 请求对象
      * @return CancelSparkJobResponse
      */
     public CancelSparkJobResponse cancelSparkJob(CancelSparkJobRequest request) {
@@ -3273,13 +3190,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelSparkJobRequest 请求对象
+     * @param request CancelSparkJobRequest 请求对象
      * @return SyncInvoker<CancelSparkJobRequest, CancelSparkJobResponse>
      */
     public SyncInvoker<CancelSparkJobRequest, CancelSparkJobResponse> cancelSparkJobInvoker(
         CancelSparkJobRequest request) {
-        return new SyncInvoker<CancelSparkJobRequest, CancelSparkJobResponse>(request, DliMeta.cancelSparkJob,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.cancelSparkJob, hcClient);
     }
 
     /**
@@ -3289,7 +3205,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSparkJobRequest 请求对象
+     * @param request CreateSparkJobRequest 请求对象
      * @return CreateSparkJobResponse
      */
     public CreateSparkJobResponse createSparkJob(CreateSparkJobRequest request) {
@@ -3303,13 +3219,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSparkJobRequest 请求对象
+     * @param request CreateSparkJobRequest 请求对象
      * @return SyncInvoker<CreateSparkJobRequest, CreateSparkJobResponse>
      */
     public SyncInvoker<CreateSparkJobRequest, CreateSparkJobResponse> createSparkJobInvoker(
         CreateSparkJobRequest request) {
-        return new SyncInvoker<CreateSparkJobRequest, CreateSparkJobResponse>(request, DliMeta.createSparkJob,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.createSparkJob, hcClient);
     }
 
     /**
@@ -3319,7 +3234,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSparkJobTemplateRequest 请求对象
+     * @param request CreateSparkJobTemplateRequest 请求对象
      * @return CreateSparkJobTemplateResponse
      */
     public CreateSparkJobTemplateResponse createSparkJobTemplate(CreateSparkJobTemplateRequest request) {
@@ -3333,13 +3248,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSparkJobTemplateRequest 请求对象
+     * @param request CreateSparkJobTemplateRequest 请求对象
      * @return SyncInvoker<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse>
      */
     public SyncInvoker<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> createSparkJobTemplateInvoker(
         CreateSparkJobTemplateRequest request) {
-        return new SyncInvoker<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse>(request,
-            DliMeta.createSparkJobTemplate, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createSparkJobTemplate, hcClient);
     }
 
     /**
@@ -3349,7 +3263,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSparkJobTemplatesRequest 请求对象
+     * @param request ListSparkJobTemplatesRequest 请求对象
      * @return ListSparkJobTemplatesResponse
      */
     public ListSparkJobTemplatesResponse listSparkJobTemplates(ListSparkJobTemplatesRequest request) {
@@ -3363,13 +3277,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSparkJobTemplatesRequest 请求对象
+     * @param request ListSparkJobTemplatesRequest 请求对象
      * @return SyncInvoker<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse>
      */
     public SyncInvoker<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> listSparkJobTemplatesInvoker(
         ListSparkJobTemplatesRequest request) {
-        return new SyncInvoker<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse>(request,
-            DliMeta.listSparkJobTemplates, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listSparkJobTemplates, hcClient);
     }
 
     /**
@@ -3379,7 +3292,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSparkJobsRequest 请求对象
+     * @param request ListSparkJobsRequest 请求对象
      * @return ListSparkJobsResponse
      */
     public ListSparkJobsResponse listSparkJobs(ListSparkJobsRequest request) {
@@ -3393,11 +3306,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSparkJobsRequest 请求对象
+     * @param request ListSparkJobsRequest 请求对象
      * @return SyncInvoker<ListSparkJobsRequest, ListSparkJobsResponse>
      */
     public SyncInvoker<ListSparkJobsRequest, ListSparkJobsResponse> listSparkJobsInvoker(ListSparkJobsRequest request) {
-        return new SyncInvoker<ListSparkJobsRequest, ListSparkJobsResponse>(request, DliMeta.listSparkJobs, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listSparkJobs, hcClient);
     }
 
     /**
@@ -3407,7 +3320,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBatchLogRequest 请求对象
+     * @param request ShowBatchLogRequest 请求对象
      * @return ShowBatchLogResponse
      */
     @Deprecated
@@ -3422,12 +3335,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBatchLogRequest 请求对象
+     * @param request ShowBatchLogRequest 请求对象
      * @return SyncInvoker<ShowBatchLogRequest, ShowBatchLogResponse>
      */
     @Deprecated
     public SyncInvoker<ShowBatchLogRequest, ShowBatchLogResponse> showBatchLogInvoker(ShowBatchLogRequest request) {
-        return new SyncInvoker<ShowBatchLogRequest, ShowBatchLogResponse>(request, DliMeta.showBatchLog, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showBatchLog, hcClient);
     }
 
     /**
@@ -3437,7 +3350,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSparkJobRequest 请求对象
+     * @param request ShowSparkJobRequest 请求对象
      * @return ShowSparkJobResponse
      */
     public ShowSparkJobResponse showSparkJob(ShowSparkJobRequest request) {
@@ -3451,11 +3364,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSparkJobRequest 请求对象
+     * @param request ShowSparkJobRequest 请求对象
      * @return SyncInvoker<ShowSparkJobRequest, ShowSparkJobResponse>
      */
     public SyncInvoker<ShowSparkJobRequest, ShowSparkJobResponse> showSparkJobInvoker(ShowSparkJobRequest request) {
-        return new SyncInvoker<ShowSparkJobRequest, ShowSparkJobResponse>(request, DliMeta.showSparkJob, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showSparkJob, hcClient);
     }
 
     /**
@@ -3465,7 +3378,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSparkJobStatusRequest 请求对象
+     * @param request ShowSparkJobStatusRequest 请求对象
      * @return ShowSparkJobStatusResponse
      */
     public ShowSparkJobStatusResponse showSparkJobStatus(ShowSparkJobStatusRequest request) {
@@ -3479,13 +3392,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSparkJobStatusRequest 请求对象
+     * @param request ShowSparkJobStatusRequest 请求对象
      * @return SyncInvoker<ShowSparkJobStatusRequest, ShowSparkJobStatusResponse>
      */
     public SyncInvoker<ShowSparkJobStatusRequest, ShowSparkJobStatusResponse> showSparkJobStatusInvoker(
         ShowSparkJobStatusRequest request) {
-        return new SyncInvoker<ShowSparkJobStatusRequest, ShowSparkJobStatusResponse>(request,
-            DliMeta.showSparkJobStatus, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showSparkJobStatus, hcClient);
     }
 
     /**
@@ -3495,7 +3407,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSparkJobTemplateRequest 请求对象
+     * @param request ShowSparkJobTemplateRequest 请求对象
      * @return ShowSparkJobTemplateResponse
      */
     public ShowSparkJobTemplateResponse showSparkJobTemplate(ShowSparkJobTemplateRequest request) {
@@ -3509,13 +3421,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSparkJobTemplateRequest 请求对象
+     * @param request ShowSparkJobTemplateRequest 请求对象
      * @return SyncInvoker<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse>
      */
     public SyncInvoker<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> showSparkJobTemplateInvoker(
         ShowSparkJobTemplateRequest request) {
-        return new SyncInvoker<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse>(request,
-            DliMeta.showSparkJobTemplate, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showSparkJobTemplate, hcClient);
     }
 
     /**
@@ -3525,7 +3436,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSparkJobTemplateRequest 请求对象
+     * @param request UpdateSparkJobTemplateRequest 请求对象
      * @return UpdateSparkJobTemplateResponse
      */
     public UpdateSparkJobTemplateResponse updateSparkJobTemplate(UpdateSparkJobTemplateRequest request) {
@@ -3539,13 +3450,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSparkJobTemplateRequest 请求对象
+     * @param request UpdateSparkJobTemplateRequest 请求对象
      * @return SyncInvoker<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse>
      */
     public SyncInvoker<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> updateSparkJobTemplateInvoker(
         UpdateSparkJobTemplateRequest request) {
-        return new SyncInvoker<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse>(request,
-            DliMeta.updateSparkJobTemplate, hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateSparkJobTemplate, hcClient);
     }
 
     /**
@@ -3555,7 +3465,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteSqlJobTemplatesRequest 请求对象
+     * @param request BatchDeleteSqlJobTemplatesRequest 请求对象
      * @return BatchDeleteSqlJobTemplatesResponse
      */
     public BatchDeleteSqlJobTemplatesResponse batchDeleteSqlJobTemplates(BatchDeleteSqlJobTemplatesRequest request) {
@@ -3569,13 +3479,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteSqlJobTemplatesRequest 请求对象
+     * @param request BatchDeleteSqlJobTemplatesRequest 请求对象
      * @return SyncInvoker<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse>
      */
     public SyncInvoker<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> batchDeleteSqlJobTemplatesInvoker(
         BatchDeleteSqlJobTemplatesRequest request) {
-        return new SyncInvoker<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse>(request,
-            DliMeta.batchDeleteSqlJobTemplates, hcClient);
+        return new SyncInvoker<>(request, DliMeta.batchDeleteSqlJobTemplates, hcClient);
     }
 
     /**
@@ -3585,7 +3494,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelSqlJobRequest 请求对象
+     * @param request CancelSqlJobRequest 请求对象
      * @return CancelSqlJobResponse
      */
     public CancelSqlJobResponse cancelSqlJob(CancelSqlJobRequest request) {
@@ -3599,11 +3508,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelSqlJobRequest 请求对象
+     * @param request CancelSqlJobRequest 请求对象
      * @return SyncInvoker<CancelSqlJobRequest, CancelSqlJobResponse>
      */
     public SyncInvoker<CancelSqlJobRequest, CancelSqlJobResponse> cancelSqlJobInvoker(CancelSqlJobRequest request) {
-        return new SyncInvoker<CancelSqlJobRequest, CancelSqlJobResponse>(request, DliMeta.cancelSqlJob, hcClient);
+        return new SyncInvoker<>(request, DliMeta.cancelSqlJob, hcClient);
     }
 
     /**
@@ -3613,7 +3522,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckSqlRequest 请求对象
+     * @param request CheckSqlRequest 请求对象
      * @return CheckSqlResponse
      */
     public CheckSqlResponse checkSql(CheckSqlRequest request) {
@@ -3627,11 +3536,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckSqlRequest 请求对象
+     * @param request CheckSqlRequest 请求对象
      * @return SyncInvoker<CheckSqlRequest, CheckSqlResponse>
      */
     public SyncInvoker<CheckSqlRequest, CheckSqlResponse> checkSqlInvoker(CheckSqlRequest request) {
-        return new SyncInvoker<CheckSqlRequest, CheckSqlResponse>(request, DliMeta.checkSql, hcClient);
+        return new SyncInvoker<>(request, DliMeta.checkSql, hcClient);
     }
 
     /**
@@ -3641,7 +3550,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseRequest 请求对象
+     * @param request CreateDatabaseRequest 请求对象
      * @return CreateDatabaseResponse
      */
     @Deprecated
@@ -3656,14 +3565,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseRequest 请求对象
+     * @param request CreateDatabaseRequest 请求对象
      * @return SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>
      */
     @Deprecated
     public SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseInvoker(
         CreateDatabaseRequest request) {
-        return new SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>(request, DliMeta.createDatabase,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.createDatabase, hcClient);
     }
 
     /**
@@ -3675,7 +3583,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSqlJobRequest 请求对象
+     * @param request CreateSqlJobRequest 请求对象
      * @return CreateSqlJobResponse
      */
     public CreateSqlJobResponse createSqlJob(CreateSqlJobRequest request) {
@@ -3691,11 +3599,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSqlJobRequest 请求对象
+     * @param request CreateSqlJobRequest 请求对象
      * @return SyncInvoker<CreateSqlJobRequest, CreateSqlJobResponse>
      */
     public SyncInvoker<CreateSqlJobRequest, CreateSqlJobResponse> createSqlJobInvoker(CreateSqlJobRequest request) {
-        return new SyncInvoker<CreateSqlJobRequest, CreateSqlJobResponse>(request, DliMeta.createSqlJob, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createSqlJob, hcClient);
     }
 
     /**
@@ -3705,7 +3613,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSqlJobTemplateRequest 请求对象
+     * @param request CreateSqlJobTemplateRequest 请求对象
      * @return CreateSqlJobTemplateResponse
      */
     public CreateSqlJobTemplateResponse createSqlJobTemplate(CreateSqlJobTemplateRequest request) {
@@ -3719,13 +3627,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSqlJobTemplateRequest 请求对象
+     * @param request CreateSqlJobTemplateRequest 请求对象
      * @return SyncInvoker<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse>
      */
     public SyncInvoker<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> createSqlJobTemplateInvoker(
         CreateSqlJobTemplateRequest request) {
-        return new SyncInvoker<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse>(request,
-            DliMeta.createSqlJobTemplate, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createSqlJobTemplate, hcClient);
     }
 
     /**
@@ -3735,7 +3642,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTableRequest 请求对象
+     * @param request CreateTableRequest 请求对象
      * @return CreateTableResponse
      */
     @Deprecated
@@ -3750,12 +3657,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTableRequest 请求对象
+     * @param request CreateTableRequest 请求对象
      * @return SyncInvoker<CreateTableRequest, CreateTableResponse>
      */
     @Deprecated
     public SyncInvoker<CreateTableRequest, CreateTableResponse> createTableInvoker(CreateTableRequest request) {
-        return new SyncInvoker<CreateTableRequest, CreateTableResponse>(request, DliMeta.createTable, hcClient);
+        return new SyncInvoker<>(request, DliMeta.createTable, hcClient);
     }
 
     /**
@@ -3765,7 +3672,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseRequest 请求对象
+     * @param request DeleteDatabaseRequest 请求对象
      * @return DeleteDatabaseResponse
      */
     @Deprecated
@@ -3780,14 +3687,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseRequest 请求对象
+     * @param request DeleteDatabaseRequest 请求对象
      * @return SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>
      */
     @Deprecated
     public SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabaseInvoker(
         DeleteDatabaseRequest request) {
-        return new SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>(request, DliMeta.deleteDatabase,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteDatabase, hcClient);
     }
 
     /**
@@ -3797,7 +3703,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTableRequest 请求对象
+     * @param request DeleteTableRequest 请求对象
      * @return DeleteTableResponse
      */
     @Deprecated
@@ -3812,12 +3718,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTableRequest 请求对象
+     * @param request DeleteTableRequest 请求对象
      * @return SyncInvoker<DeleteTableRequest, DeleteTableResponse>
      */
     @Deprecated
     public SyncInvoker<DeleteTableRequest, DeleteTableResponse> deleteTableInvoker(DeleteTableRequest request) {
-        return new SyncInvoker<DeleteTableRequest, DeleteTableResponse>(request, DliMeta.deleteTable, hcClient);
+        return new SyncInvoker<>(request, DliMeta.deleteTable, hcClient);
     }
 
     /**
@@ -3827,7 +3733,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportSqlJobResultRequest 请求对象
+     * @param request ExportSqlJobResultRequest 请求对象
      * @return ExportSqlJobResultResponse
      */
     @Deprecated
@@ -3842,14 +3748,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportSqlJobResultRequest 请求对象
+     * @param request ExportSqlJobResultRequest 请求对象
      * @return SyncInvoker<ExportSqlJobResultRequest, ExportSqlJobResultResponse>
      */
     @Deprecated
     public SyncInvoker<ExportSqlJobResultRequest, ExportSqlJobResultResponse> exportSqlJobResultInvoker(
         ExportSqlJobResultRequest request) {
-        return new SyncInvoker<ExportSqlJobResultRequest, ExportSqlJobResultResponse>(request,
-            DliMeta.exportSqlJobResult, hcClient);
+        return new SyncInvoker<>(request, DliMeta.exportSqlJobResult, hcClient);
     }
 
     /**
@@ -3859,7 +3764,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportTableRequest 请求对象
+     * @param request ExportTableRequest 请求对象
      * @return ExportTableResponse
      */
     @Deprecated
@@ -3874,12 +3779,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportTableRequest 请求对象
+     * @param request ExportTableRequest 请求对象
      * @return SyncInvoker<ExportTableRequest, ExportTableResponse>
      */
     @Deprecated
     public SyncInvoker<ExportTableRequest, ExportTableResponse> exportTableInvoker(ExportTableRequest request) {
-        return new SyncInvoker<ExportTableRequest, ExportTableResponse>(request, DliMeta.exportTable, hcClient);
+        return new SyncInvoker<>(request, DliMeta.exportTable, hcClient);
     }
 
     /**
@@ -3889,7 +3794,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportTableRequest 请求对象
+     * @param request ImportTableRequest 请求对象
      * @return ImportTableResponse
      */
     @Deprecated
@@ -3904,12 +3809,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportTableRequest 请求对象
+     * @param request ImportTableRequest 请求对象
      * @return SyncInvoker<ImportTableRequest, ImportTableResponse>
      */
     @Deprecated
     public SyncInvoker<ImportTableRequest, ImportTableResponse> importTableInvoker(ImportTableRequest request) {
-        return new SyncInvoker<ImportTableRequest, ImportTableResponse>(request, DliMeta.importTable, hcClient);
+        return new SyncInvoker<>(request, DliMeta.importTable, hcClient);
     }
 
     /**
@@ -3919,7 +3824,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllTablesRequest 请求对象
+     * @param request ListAllTablesRequest 请求对象
      * @return ListAllTablesResponse
      */
     @Deprecated
@@ -3934,12 +3839,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllTablesRequest 请求对象
+     * @param request ListAllTablesRequest 请求对象
      * @return SyncInvoker<ListAllTablesRequest, ListAllTablesResponse>
      */
     @Deprecated
     public SyncInvoker<ListAllTablesRequest, ListAllTablesResponse> listAllTablesInvoker(ListAllTablesRequest request) {
-        return new SyncInvoker<ListAllTablesRequest, ListAllTablesResponse>(request, DliMeta.listAllTables, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listAllTables, hcClient);
     }
 
     /**
@@ -3949,7 +3854,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabasesRequest 请求对象
+     * @param request ListDatabasesRequest 请求对象
      * @return ListDatabasesResponse
      */
     @Deprecated
@@ -3964,12 +3869,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabasesRequest 请求对象
+     * @param request ListDatabasesRequest 请求对象
      * @return SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
      */
     @Deprecated
     public SyncInvoker<ListDatabasesRequest, ListDatabasesResponse> listDatabasesInvoker(ListDatabasesRequest request) {
-        return new SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>(request, DliMeta.listDatabases, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listDatabases, hcClient);
     }
 
     /**
@@ -3979,7 +3884,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlJobTemplatesRequest 请求对象
+     * @param request ListSqlJobTemplatesRequest 请求对象
      * @return ListSqlJobTemplatesResponse
      */
     public ListSqlJobTemplatesResponse listSqlJobTemplates(ListSqlJobTemplatesRequest request) {
@@ -3993,13 +3898,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlJobTemplatesRequest 请求对象
+     * @param request ListSqlJobTemplatesRequest 请求对象
      * @return SyncInvoker<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse>
      */
     public SyncInvoker<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> listSqlJobTemplatesInvoker(
         ListSqlJobTemplatesRequest request) {
-        return new SyncInvoker<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse>(request,
-            DliMeta.listSqlJobTemplates, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listSqlJobTemplates, hcClient);
     }
 
     /**
@@ -4009,7 +3913,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlJobsRequest 请求对象
+     * @param request ListSqlJobsRequest 请求对象
      * @return ListSqlJobsResponse
      */
     public ListSqlJobsResponse listSqlJobs(ListSqlJobsRequest request) {
@@ -4023,11 +3927,11 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlJobsRequest 请求对象
+     * @param request ListSqlJobsRequest 请求对象
      * @return SyncInvoker<ListSqlJobsRequest, ListSqlJobsResponse>
      */
     public SyncInvoker<ListSqlJobsRequest, ListSqlJobsResponse> listSqlJobsInvoker(ListSqlJobsRequest request) {
-        return new SyncInvoker<ListSqlJobsRequest, ListSqlJobsResponse>(request, DliMeta.listSqlJobs, hcClient);
+        return new SyncInvoker<>(request, DliMeta.listSqlJobs, hcClient);
     }
 
     /**
@@ -4038,7 +3942,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PreviewSqlJobResultRequest 请求对象
+     * @param request PreviewSqlJobResultRequest 请求对象
      * @return PreviewSqlJobResultResponse
      */
     public PreviewSqlJobResultResponse previewSqlJobResult(PreviewSqlJobResultRequest request) {
@@ -4053,13 +3957,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PreviewSqlJobResultRequest 请求对象
+     * @param request PreviewSqlJobResultRequest 请求对象
      * @return SyncInvoker<PreviewSqlJobResultRequest, PreviewSqlJobResultResponse>
      */
     public SyncInvoker<PreviewSqlJobResultRequest, PreviewSqlJobResultResponse> previewSqlJobResultInvoker(
         PreviewSqlJobResultRequest request) {
-        return new SyncInvoker<PreviewSqlJobResultRequest, PreviewSqlJobResultResponse>(request,
-            DliMeta.previewSqlJobResult, hcClient);
+        return new SyncInvoker<>(request, DliMeta.previewSqlJobResult, hcClient);
     }
 
     /**
@@ -4069,7 +3972,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDescribeTableRequest 请求对象
+     * @param request ShowDescribeTableRequest 请求对象
      * @return ShowDescribeTableResponse
      */
     @Deprecated
@@ -4084,14 +3987,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDescribeTableRequest 请求对象
+     * @param request ShowDescribeTableRequest 请求对象
      * @return SyncInvoker<ShowDescribeTableRequest, ShowDescribeTableResponse>
      */
     @Deprecated
     public SyncInvoker<ShowDescribeTableRequest, ShowDescribeTableResponse> showDescribeTableInvoker(
         ShowDescribeTableRequest request) {
-        return new SyncInvoker<ShowDescribeTableRequest, ShowDescribeTableResponse>(request, DliMeta.showDescribeTable,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.showDescribeTable, hcClient);
     }
 
     /**
@@ -4100,7 +4002,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionsRequest 请求对象
+     * @param request ShowPartitionsRequest 请求对象
      * @return ShowPartitionsResponse
      */
     @Deprecated
@@ -4114,14 +4016,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionsRequest 请求对象
+     * @param request ShowPartitionsRequest 请求对象
      * @return SyncInvoker<ShowPartitionsRequest, ShowPartitionsResponse>
      */
     @Deprecated
     public SyncInvoker<ShowPartitionsRequest, ShowPartitionsResponse> showPartitionsInvoker(
         ShowPartitionsRequest request) {
-        return new SyncInvoker<ShowPartitionsRequest, ShowPartitionsResponse>(request, DliMeta.showPartitions,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.showPartitions, hcClient);
     }
 
     /**
@@ -4131,7 +4032,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlJobDetailRequest 请求对象
+     * @param request ShowSqlJobDetailRequest 请求对象
      * @return ShowSqlJobDetailResponse
      */
     public ShowSqlJobDetailResponse showSqlJobDetail(ShowSqlJobDetailRequest request) {
@@ -4145,13 +4046,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlJobDetailRequest 请求对象
+     * @param request ShowSqlJobDetailRequest 请求对象
      * @return SyncInvoker<ShowSqlJobDetailRequest, ShowSqlJobDetailResponse>
      */
     public SyncInvoker<ShowSqlJobDetailRequest, ShowSqlJobDetailResponse> showSqlJobDetailInvoker(
         ShowSqlJobDetailRequest request) {
-        return new SyncInvoker<ShowSqlJobDetailRequest, ShowSqlJobDetailResponse>(request, DliMeta.showSqlJobDetail,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.showSqlJobDetail, hcClient);
     }
 
     /**
@@ -4161,7 +4061,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlJobProgressRequest 请求对象
+     * @param request ShowSqlJobProgressRequest 请求对象
      * @return ShowSqlJobProgressResponse
      */
     public ShowSqlJobProgressResponse showSqlJobProgress(ShowSqlJobProgressRequest request) {
@@ -4175,13 +4075,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlJobProgressRequest 请求对象
+     * @param request ShowSqlJobProgressRequest 请求对象
      * @return SyncInvoker<ShowSqlJobProgressRequest, ShowSqlJobProgressResponse>
      */
     public SyncInvoker<ShowSqlJobProgressRequest, ShowSqlJobProgressResponse> showSqlJobProgressInvoker(
         ShowSqlJobProgressRequest request) {
-        return new SyncInvoker<ShowSqlJobProgressRequest, ShowSqlJobProgressResponse>(request,
-            DliMeta.showSqlJobProgress, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showSqlJobProgress, hcClient);
     }
 
     /**
@@ -4191,7 +4090,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlJobStatusRequest 请求对象
+     * @param request ShowSqlJobStatusRequest 请求对象
      * @return ShowSqlJobStatusResponse
      */
     public ShowSqlJobStatusResponse showSqlJobStatus(ShowSqlJobStatusRequest request) {
@@ -4205,13 +4104,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlJobStatusRequest 请求对象
+     * @param request ShowSqlJobStatusRequest 请求对象
      * @return SyncInvoker<ShowSqlJobStatusRequest, ShowSqlJobStatusResponse>
      */
     public SyncInvoker<ShowSqlJobStatusRequest, ShowSqlJobStatusResponse> showSqlJobStatusInvoker(
         ShowSqlJobStatusRequest request) {
-        return new SyncInvoker<ShowSqlJobStatusRequest, ShowSqlJobStatusResponse>(request, DliMeta.showSqlJobStatus,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.showSqlJobStatus, hcClient);
     }
 
     /**
@@ -4221,7 +4119,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlSampleTemplatesRequest 请求对象
+     * @param request ShowSqlSampleTemplatesRequest 请求对象
      * @return ShowSqlSampleTemplatesResponse
      */
     @Deprecated
@@ -4236,14 +4134,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlSampleTemplatesRequest 请求对象
+     * @param request ShowSqlSampleTemplatesRequest 请求对象
      * @return SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse>
      */
     @Deprecated
     public SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> showSqlSampleTemplatesInvoker(
         ShowSqlSampleTemplatesRequest request) {
-        return new SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse>(request,
-            DliMeta.showSqlSampleTemplates, hcClient);
+        return new SyncInvoker<>(request, DliMeta.showSqlSampleTemplates, hcClient);
     }
 
     /**
@@ -4253,7 +4150,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTableContentRequest 请求对象
+     * @param request ShowTableContentRequest 请求对象
      * @return ShowTableContentResponse
      */
     @Deprecated
@@ -4268,14 +4165,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTableContentRequest 请求对象
+     * @param request ShowTableContentRequest 请求对象
      * @return SyncInvoker<ShowTableContentRequest, ShowTableContentResponse>
      */
     @Deprecated
     public SyncInvoker<ShowTableContentRequest, ShowTableContentResponse> showTableContentInvoker(
         ShowTableContentRequest request) {
-        return new SyncInvoker<ShowTableContentRequest, ShowTableContentResponse>(request, DliMeta.showTableContent,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.showTableContent, hcClient);
     }
 
     /**
@@ -4285,7 +4181,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseOwnerRequest 请求对象
+     * @param request UpdateDatabaseOwnerRequest 请求对象
      * @return UpdateDatabaseOwnerResponse
      */
     @Deprecated
@@ -4300,14 +4196,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseOwnerRequest 请求对象
+     * @param request UpdateDatabaseOwnerRequest 请求对象
      * @return SyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse>
      */
     @Deprecated
     public SyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse> updateDatabaseOwnerInvoker(
         UpdateDatabaseOwnerRequest request) {
-        return new SyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse>(request,
-            DliMeta.updateDatabaseOwner, hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateDatabaseOwner, hcClient);
     }
 
     /**
@@ -4317,7 +4212,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSqlJobTemplateRequest 请求对象
+     * @param request UpdateSqlJobTemplateRequest 请求对象
      * @return UpdateSqlJobTemplateResponse
      */
     public UpdateSqlJobTemplateResponse updateSqlJobTemplate(UpdateSqlJobTemplateRequest request) {
@@ -4331,13 +4226,12 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSqlJobTemplateRequest 请求对象
+     * @param request UpdateSqlJobTemplateRequest 请求对象
      * @return SyncInvoker<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse>
      */
     public SyncInvoker<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> updateSqlJobTemplateInvoker(
         UpdateSqlJobTemplateRequest request) {
-        return new SyncInvoker<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse>(request,
-            DliMeta.updateSqlJobTemplate, hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateSqlJobTemplate, hcClient);
     }
 
     /**
@@ -4347,7 +4241,7 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTableOwnerRequest 请求对象
+     * @param request UpdateTableOwnerRequest 请求对象
      * @return UpdateTableOwnerResponse
      */
     @Deprecated
@@ -4362,14 +4256,13 @@ public class DliClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTableOwnerRequest 请求对象
+     * @param request UpdateTableOwnerRequest 请求对象
      * @return SyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse>
      */
     @Deprecated
     public SyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse> updateTableOwnerInvoker(
         UpdateTableOwnerRequest request) {
-        return new SyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse>(request, DliMeta.updateTableOwner,
-            hcClient);
+        return new SyncInvoker<>(request, DliMeta.updateTableOwner, hcClient);
     }
 
 }

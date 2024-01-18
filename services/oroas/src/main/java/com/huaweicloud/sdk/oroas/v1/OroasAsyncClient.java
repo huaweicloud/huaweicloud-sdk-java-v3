@@ -34,7 +34,7 @@ public class OroasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return CompletableFuture<CreateTaskResponse>
      */
     public CompletableFuture<CreateTaskResponse> createTaskAsync(CreateTaskRequest request) {
@@ -48,11 +48,11 @@ public class OroasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return AsyncInvoker<CreateTaskRequest, CreateTaskResponse>
      */
     public AsyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskAsyncInvoker(CreateTaskRequest request) {
-        return new AsyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, OroasMeta.createTask, hcClient);
+        return new AsyncInvoker<>(request, OroasMeta.createTask, hcClient);
     }
 
     /**
@@ -62,7 +62,7 @@ public class OroasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
      */
     public CompletableFuture<DeleteTaskResponse> deleteTaskAsync(DeleteTaskRequest request) {
@@ -76,11 +76,11 @@ public class OroasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
-        return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, OroasMeta.deleteTask, hcClient);
+        return new AsyncInvoker<>(request, OroasMeta.deleteTask, hcClient);
     }
 
     /**
@@ -90,7 +90,7 @@ public class OroasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskRequest 请求对象
+     * @param request ListTaskRequest 请求对象
      * @return CompletableFuture<ListTaskResponse>
      */
     public CompletableFuture<ListTaskResponse> listTaskAsync(ListTaskRequest request) {
@@ -104,11 +104,11 @@ public class OroasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskRequest 请求对象
+     * @param request ListTaskRequest 请求对象
      * @return AsyncInvoker<ListTaskRequest, ListTaskResponse>
      */
     public AsyncInvoker<ListTaskRequest, ListTaskResponse> listTaskAsyncInvoker(ListTaskRequest request) {
-        return new AsyncInvoker<ListTaskRequest, ListTaskResponse>(request, OroasMeta.listTask, hcClient);
+        return new AsyncInvoker<>(request, OroasMeta.listTask, hcClient);
     }
 
     /**
@@ -118,7 +118,7 @@ public class OroasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return CompletableFuture<ShowTaskResponse>
      */
     public CompletableFuture<ShowTaskResponse> showTaskAsync(ShowTaskRequest request) {
@@ -132,11 +132,11 @@ public class OroasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
      */
     public AsyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskAsyncInvoker(ShowTaskRequest request) {
-        return new AsyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, OroasMeta.showTask, hcClient);
+        return new AsyncInvoker<>(request, OroasMeta.showTask, hcClient);
     }
 
 }

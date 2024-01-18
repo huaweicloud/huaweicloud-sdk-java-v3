@@ -36,9 +36,9 @@ import com.huaweicloud.sdk.sis.v1.model.UpdateVocabularyResponse;
 public class SisMeta {
 
     public static final HttpRequestDef<CollectTranscriberJobRequest, CollectTranscriberJobResponse> collectTranscriberJob =
-        genForcollectTranscriberJob();
+        genForCollectTranscriberJob();
 
-    private static HttpRequestDef<CollectTranscriberJobRequest, CollectTranscriberJobResponse> genForcollectTranscriberJob() {
+    private static HttpRequestDef<CollectTranscriberJobRequest, CollectTranscriberJobResponse> genForCollectTranscriberJob() {
         // basic
         HttpRequestDef.Builder<CollectTranscriberJobRequest, CollectTranscriberJobResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, CollectTranscriberJobRequest.class, CollectTranscriberJobResponse.class)
@@ -51,9 +51,7 @@ public class SisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CollectTranscriberJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(CollectTranscriberJobRequest::getJobId, CollectTranscriberJobRequest::setJobId));
 
         // response
 
@@ -61,9 +59,9 @@ public class SisMeta {
     }
 
     public static final HttpRequestDef<CreateVocabularyRequest, CreateVocabularyResponse> createVocabulary =
-        genForcreateVocabulary();
+        genForCreateVocabulary();
 
-    private static HttpRequestDef<CreateVocabularyRequest, CreateVocabularyResponse> genForcreateVocabulary() {
+    private static HttpRequestDef<CreateVocabularyRequest, CreateVocabularyResponse> genForCreateVocabulary() {
         // basic
         HttpRequestDef.Builder<CreateVocabularyRequest, CreateVocabularyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVocabularyRequest.class, CreateVocabularyResponse.class)
@@ -76,9 +74,7 @@ public class SisMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostCreateVocabReq.class),
-            f -> f.withMarshaller(CreateVocabularyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVocabularyRequest::getBody, CreateVocabularyRequest::setBody));
 
         // response
 
@@ -86,9 +82,9 @@ public class SisMeta {
     }
 
     public static final HttpRequestDef<DeleteVocabularyRequest, DeleteVocabularyResponse> deleteVocabulary =
-        genFordeleteVocabulary();
+        genForDeleteVocabulary();
 
-    private static HttpRequestDef<DeleteVocabularyRequest, DeleteVocabularyResponse> genFordeleteVocabulary() {
+    private static HttpRequestDef<DeleteVocabularyRequest, DeleteVocabularyResponse> genForDeleteVocabulary() {
         // basic
         HttpRequestDef.Builder<DeleteVocabularyRequest, DeleteVocabularyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVocabularyRequest.class, DeleteVocabularyResponse.class)
@@ -101,9 +97,7 @@ public class SisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVocabularyRequest::getVocabularyId, (req, v) -> {
-                req.setVocabularyId(v);
-            }));
+            f -> f.withMarshaller(DeleteVocabularyRequest::getVocabularyId, DeleteVocabularyRequest::setVocabularyId));
 
         // response
 
@@ -111,9 +105,9 @@ public class SisMeta {
     }
 
     public static final HttpRequestDef<PushTranscriberJobsRequest, PushTranscriberJobsResponse> pushTranscriberJobs =
-        genForpushTranscriberJobs();
+        genForPushTranscriberJobs();
 
-    private static HttpRequestDef<PushTranscriberJobsRequest, PushTranscriberJobsResponse> genForpushTranscriberJobs() {
+    private static HttpRequestDef<PushTranscriberJobsRequest, PushTranscriberJobsResponse> genForPushTranscriberJobs() {
         // basic
         HttpRequestDef.Builder<PushTranscriberJobsRequest, PushTranscriberJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PushTranscriberJobsRequest.class, PushTranscriberJobsResponse.class)
@@ -126,16 +120,13 @@ public class SisMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PushTranscriberJobsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(PushTranscriberJobsRequest::getEnterpriseProjectId,
+                PushTranscriberJobsRequest::setEnterpriseProjectId));
         builder.<PostTranscriberJobs>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PostTranscriberJobs.class),
-            f -> f.withMarshaller(PushTranscriberJobsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PushTranscriberJobsRequest::getBody, PushTranscriberJobsRequest::setBody));
 
         // response
 
@@ -143,9 +134,9 @@ public class SisMeta {
     }
 
     public static final HttpRequestDef<RecognizeFlashAsrRequest, RecognizeFlashAsrResponse> recognizeFlashAsr =
-        genForrecognizeFlashAsr();
+        genForRecognizeFlashAsr();
 
-    private static HttpRequestDef<RecognizeFlashAsrRequest, RecognizeFlashAsrResponse> genForrecognizeFlashAsr() {
+    private static HttpRequestDef<RecognizeFlashAsrRequest, RecognizeFlashAsrResponse> genForRecognizeFlashAsr() {
         // basic
         HttpRequestDef.Builder<RecognizeFlashAsrRequest, RecognizeFlashAsrResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RecognizeFlashAsrRequest.class, RecognizeFlashAsrResponse.class)
@@ -158,65 +149,52 @@ public class SisMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecognizeFlashAsrRequest.PropertyEnum.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getProperty, (req, v) -> {
-                req.setProperty(v);
-            }));
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getProperty, RecognizeFlashAsrRequest::setProperty));
         builder.<RecognizeFlashAsrRequest.AudioFormatEnum>withRequestField("audio_format",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecognizeFlashAsrRequest.AudioFormatEnum.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getAudioFormat, (req, v) -> {
-                req.setAudioFormat(v);
-            }));
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getAudioFormat, RecognizeFlashAsrRequest::setAudioFormat));
         builder.<String>withRequestField("obs_bucket_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getObsBucketName, (req, v) -> {
-                req.setObsBucketName(v);
-            }));
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getObsBucketName,
+                RecognizeFlashAsrRequest::setObsBucketName));
         builder.<String>withRequestField("obs_object_key",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getObsObjectKey, (req, v) -> {
-                req.setObsObjectKey(v);
-            }));
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getObsObjectKey,
+                RecognizeFlashAsrRequest::setObsObjectKey));
         builder.<RecognizeFlashAsrRequest.AddPuncEnum>withRequestField("add_punc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RecognizeFlashAsrRequest.AddPuncEnum.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getAddPunc, (req, v) -> {
-                req.setAddPunc(v);
-            }));
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getAddPunc, RecognizeFlashAsrRequest::setAddPunc));
         builder.<RecognizeFlashAsrRequest.DigitNormEnum>withRequestField("digit_norm",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RecognizeFlashAsrRequest.DigitNormEnum.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getDigitNorm, (req, v) -> {
-                req.setDigitNorm(v);
-            }));
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getDigitNorm, RecognizeFlashAsrRequest::setDigitNorm));
         builder.<RecognizeFlashAsrRequest.NeedWordInfoEnum>withRequestField("need_word_info",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RecognizeFlashAsrRequest.NeedWordInfoEnum.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getNeedWordInfo, (req, v) -> {
-                req.setNeedWordInfo(v);
-            }));
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getNeedWordInfo,
+                RecognizeFlashAsrRequest::setNeedWordInfo));
         builder.<String>withRequestField("vocabulary_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getVocabularyId, (req, v) -> {
-                req.setVocabularyId(v);
-            }));
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getVocabularyId,
+                RecognizeFlashAsrRequest::setVocabularyId));
         builder.<RecognizeFlashAsrRequest.FirstChannelOnlyEnum>withRequestField("first_channel_only",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RecognizeFlashAsrRequest.FirstChannelOnlyEnum.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getFirstChannelOnly, (req, v) -> {
-                req.setFirstChannelOnly(v);
-            }));
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getFirstChannelOnly,
+                RecognizeFlashAsrRequest::setFirstChannelOnly));
 
         // response
 
@@ -224,9 +202,9 @@ public class SisMeta {
     }
 
     public static final HttpRequestDef<RecognizeShortAudioRequest, RecognizeShortAudioResponse> recognizeShortAudio =
-        genForrecognizeShortAudio();
+        genForRecognizeShortAudio();
 
-    private static HttpRequestDef<RecognizeShortAudioRequest, RecognizeShortAudioResponse> genForrecognizeShortAudio() {
+    private static HttpRequestDef<RecognizeShortAudioRequest, RecognizeShortAudioResponse> genForRecognizeShortAudio() {
         // basic
         HttpRequestDef.Builder<RecognizeShortAudioRequest, RecognizeShortAudioResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RecognizeShortAudioRequest.class, RecognizeShortAudioResponse.class)
@@ -239,18 +217,16 @@ public class SisMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostShortAudioReq.class),
-            f -> f.withMarshaller(RecognizeShortAudioRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RecognizeShortAudioRequest::getBody, RecognizeShortAudioRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunTtsRequest, RunTtsResponse> runTts = genForrunTts();
+    public static final HttpRequestDef<RunTtsRequest, RunTtsResponse> runTts = genForRunTts();
 
-    private static HttpRequestDef<RunTtsRequest, RunTtsResponse> genForrunTts() {
+    private static HttpRequestDef<RunTtsRequest, RunTtsResponse> genForRunTts() {
         // basic
         HttpRequestDef.Builder<RunTtsRequest, RunTtsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTtsRequest.class, RunTtsResponse.class)
@@ -263,9 +239,7 @@ public class SisMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostCustomTTSReq.class),
-            f -> f.withMarshaller(RunTtsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunTtsRequest::getBody, RunTtsRequest::setBody));
 
         // response
 
@@ -273,9 +247,9 @@ public class SisMeta {
     }
 
     public static final HttpRequestDef<ShowVocabulariesRequest, ShowVocabulariesResponse> showVocabularies =
-        genForshowVocabularies();
+        genForShowVocabularies();
 
-    private static HttpRequestDef<ShowVocabulariesRequest, ShowVocabulariesResponse> genForshowVocabularies() {
+    private static HttpRequestDef<ShowVocabulariesRequest, ShowVocabulariesResponse> genForShowVocabularies() {
         // basic
         HttpRequestDef.Builder<ShowVocabulariesRequest, ShowVocabulariesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVocabulariesRequest.class, ShowVocabulariesResponse.class)
@@ -288,23 +262,17 @@ public class SisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowVocabulariesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowVocabulariesRequest::getOffset, ShowVocabulariesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowVocabulariesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowVocabulariesRequest::getLimit, ShowVocabulariesRequest::setLimit));
         builder.<ShowVocabulariesParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowVocabulariesParams.class),
-            f -> f.withMarshaller(ShowVocabulariesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowVocabulariesRequest::getBody, ShowVocabulariesRequest::setBody));
 
         // response
 
@@ -312,9 +280,9 @@ public class SisMeta {
     }
 
     public static final HttpRequestDef<ShowVocabularyRequest, ShowVocabularyResponse> showVocabulary =
-        genForshowVocabulary();
+        genForShowVocabulary();
 
-    private static HttpRequestDef<ShowVocabularyRequest, ShowVocabularyResponse> genForshowVocabulary() {
+    private static HttpRequestDef<ShowVocabularyRequest, ShowVocabularyResponse> genForShowVocabulary() {
         // basic
         HttpRequestDef.Builder<ShowVocabularyRequest, ShowVocabularyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVocabularyRequest.class, ShowVocabularyResponse.class)
@@ -327,9 +295,7 @@ public class SisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVocabularyRequest::getVocabularyId, (req, v) -> {
-                req.setVocabularyId(v);
-            }));
+            f -> f.withMarshaller(ShowVocabularyRequest::getVocabularyId, ShowVocabularyRequest::setVocabularyId));
 
         // response
 
@@ -337,9 +303,9 @@ public class SisMeta {
     }
 
     public static final HttpRequestDef<UpdateVocabularyRequest, UpdateVocabularyResponse> updateVocabulary =
-        genForupdateVocabulary();
+        genForUpdateVocabulary();
 
-    private static HttpRequestDef<UpdateVocabularyRequest, UpdateVocabularyResponse> genForupdateVocabulary() {
+    private static HttpRequestDef<UpdateVocabularyRequest, UpdateVocabularyResponse> genForUpdateVocabulary() {
         // basic
         HttpRequestDef.Builder<UpdateVocabularyRequest, UpdateVocabularyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVocabularyRequest.class, UpdateVocabularyResponse.class)
@@ -352,16 +318,12 @@ public class SisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVocabularyRequest::getVocabularyId, (req, v) -> {
-                req.setVocabularyId(v);
-            }));
+            f -> f.withMarshaller(UpdateVocabularyRequest::getVocabularyId, UpdateVocabularyRequest::setVocabularyId));
         builder.<PutUpdateVocabReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PutUpdateVocabReq.class),
-            f -> f.withMarshaller(UpdateVocabularyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVocabularyRequest::getBody, UpdateVocabularyRequest::setBody));
 
         // response
 

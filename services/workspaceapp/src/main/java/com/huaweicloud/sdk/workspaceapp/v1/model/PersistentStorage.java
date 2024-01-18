@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * WKS存储
+ * WKS存储。
  */
 public class PersistentStorage {
 
@@ -48,7 +48,7 @@ public class PersistentStorage {
     }
 
     /**
-     * WKS存储ID
+     * WKS存储ID。
      * @return id
      */
     public String getId() {
@@ -65,7 +65,7 @@ public class PersistentStorage {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -108,7 +108,7 @@ public class PersistentStorage {
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -125,7 +125,7 @@ public class PersistentStorage {
     }
 
     /**
-     * 个人目录声明数量
+     * 个人目录声明数量。
      * @return userClaimCount
      */
     public Integer getUserClaimCount() {
@@ -142,7 +142,7 @@ public class PersistentStorage {
     }
 
     /**
-     * 共享目录声明数量
+     * 共享目录声明数量。
      * @return shareClaimCount
      */
     public Integer getShareClaimCount() {

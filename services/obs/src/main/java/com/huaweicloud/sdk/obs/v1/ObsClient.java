@@ -85,7 +85,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyObjectRequest 请求对象
+     * @param request CopyObjectRequest 请求对象
      * @return CopyObjectResponse
      */
     public CopyObjectResponse copyObject(CopyObjectRequest request) {
@@ -124,11 +124,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyObjectRequest 请求对象
+     * @param request CopyObjectRequest 请求对象
      * @return SyncInvoker<CopyObjectRequest, CopyObjectResponse>
      */
     public SyncInvoker<CopyObjectRequest, CopyObjectResponse> copyObjectInvoker(CopyObjectRequest request) {
-        return new SyncInvoker<CopyObjectRequest, CopyObjectResponse>(request, ObsMeta.copyObject, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.copyObject, hcClient);
     }
 
     /**
@@ -153,7 +153,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBucketRequest 请求对象
+     * @param request CreateBucketRequest 请求对象
      * @return CreateBucketResponse
      */
     public CreateBucketResponse createBucket(CreateBucketRequest request) {
@@ -182,11 +182,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBucketRequest 请求对象
+     * @param request CreateBucketRequest 请求对象
      * @return SyncInvoker<CreateBucketRequest, CreateBucketResponse>
      */
     public SyncInvoker<CreateBucketRequest, CreateBucketResponse> createBucketInvoker(CreateBucketRequest request) {
-        return new SyncInvoker<CreateBucketRequest, CreateBucketResponse>(request, ObsMeta.createBucket, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.createBucket, hcClient);
     }
 
     /**
@@ -198,7 +198,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBucketRequest 请求对象
+     * @param request DeleteBucketRequest 请求对象
      * @return DeleteBucketResponse
      */
     public DeleteBucketResponse deleteBucket(DeleteBucketRequest request) {
@@ -214,11 +214,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBucketRequest 请求对象
+     * @param request DeleteBucketRequest 请求对象
      * @return SyncInvoker<DeleteBucketRequest, DeleteBucketResponse>
      */
     public SyncInvoker<DeleteBucketRequest, DeleteBucketResponse> deleteBucketInvoker(DeleteBucketRequest request) {
-        return new SyncInvoker<DeleteBucketRequest, DeleteBucketResponse>(request, ObsMeta.deleteBucket, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.deleteBucket, hcClient);
     }
 
     /**
@@ -230,7 +230,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBucketCustomdomainRequest 请求对象
+     * @param request DeleteBucketCustomdomainRequest 请求对象
      * @return DeleteBucketCustomdomainResponse
      */
     public DeleteBucketCustomdomainResponse deleteBucketCustomdomain(DeleteBucketCustomdomainRequest request) {
@@ -246,13 +246,12 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBucketCustomdomainRequest 请求对象
+     * @param request DeleteBucketCustomdomainRequest 请求对象
      * @return SyncInvoker<DeleteBucketCustomdomainRequest, DeleteBucketCustomdomainResponse>
      */
     public SyncInvoker<DeleteBucketCustomdomainRequest, DeleteBucketCustomdomainResponse> deleteBucketCustomdomainInvoker(
         DeleteBucketCustomdomainRequest request) {
-        return new SyncInvoker<DeleteBucketCustomdomainRequest, DeleteBucketCustomdomainResponse>(request,
-            ObsMeta.deleteBucketCustomdomain, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.deleteBucketCustomdomain, hcClient);
     }
 
     /**
@@ -267,7 +266,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteObjectRequest 请求对象
+     * @param request DeleteObjectRequest 请求对象
      * @return DeleteObjectResponse
      */
     public DeleteObjectResponse deleteObject(DeleteObjectRequest request) {
@@ -286,11 +285,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteObjectRequest 请求对象
+     * @param request DeleteObjectRequest 请求对象
      * @return SyncInvoker<DeleteObjectRequest, DeleteObjectResponse>
      */
     public SyncInvoker<DeleteObjectRequest, DeleteObjectResponse> deleteObjectInvoker(DeleteObjectRequest request) {
-        return new SyncInvoker<DeleteObjectRequest, DeleteObjectResponse>(request, ObsMeta.deleteObject, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.deleteObject, hcClient);
     }
 
     /**
@@ -304,7 +303,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteObjectsRequest 请求对象
+     * @param request DeleteObjectsRequest 请求对象
      * @return DeleteObjectsResponse
      */
     public DeleteObjectsResponse deleteObjects(DeleteObjectsRequest request) {
@@ -322,11 +321,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteObjectsRequest 请求对象
+     * @param request DeleteObjectsRequest 请求对象
      * @return SyncInvoker<DeleteObjectsRequest, DeleteObjectsResponse>
      */
     public SyncInvoker<DeleteObjectsRequest, DeleteObjectsResponse> deleteObjectsInvoker(DeleteObjectsRequest request) {
-        return new SyncInvoker<DeleteObjectsRequest, DeleteObjectsResponse>(request, ObsMeta.deleteObjects, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.deleteObjects, hcClient);
     }
 
     /**
@@ -336,7 +335,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetBucketAclRequest 请求对象
+     * @param request GetBucketAclRequest 请求对象
      * @return GetBucketAclResponse
      */
     public GetBucketAclResponse getBucketAcl(GetBucketAclRequest request) {
@@ -350,11 +349,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetBucketAclRequest 请求对象
+     * @param request GetBucketAclRequest 请求对象
      * @return SyncInvoker<GetBucketAclRequest, GetBucketAclResponse>
      */
     public SyncInvoker<GetBucketAclRequest, GetBucketAclResponse> getBucketAclInvoker(GetBucketAclRequest request) {
-        return new SyncInvoker<GetBucketAclRequest, GetBucketAclResponse>(request, ObsMeta.getBucketAcl, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.getBucketAcl, hcClient);
     }
 
     /**
@@ -368,7 +367,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetBucketCustomdomainRequest 请求对象
+     * @param request GetBucketCustomdomainRequest 请求对象
      * @return GetBucketCustomdomainResponse
      */
     public GetBucketCustomdomainResponse getBucketCustomdomain(GetBucketCustomdomainRequest request) {
@@ -386,13 +385,12 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetBucketCustomdomainRequest 请求对象
+     * @param request GetBucketCustomdomainRequest 请求对象
      * @return SyncInvoker<GetBucketCustomdomainRequest, GetBucketCustomdomainResponse>
      */
     public SyncInvoker<GetBucketCustomdomainRequest, GetBucketCustomdomainResponse> getBucketCustomdomainInvoker(
         GetBucketCustomdomainRequest request) {
-        return new SyncInvoker<GetBucketCustomdomainRequest, GetBucketCustomdomainResponse>(request,
-            ObsMeta.getBucketCustomdomain, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.getBucketCustomdomain, hcClient);
     }
 
     /**
@@ -402,7 +400,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetBucketMetadataRequest 请求对象
+     * @param request GetBucketMetadataRequest 请求对象
      * @return GetBucketMetadataResponse
      */
     public GetBucketMetadataResponse getBucketMetadata(GetBucketMetadataRequest request) {
@@ -416,13 +414,12 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetBucketMetadataRequest 请求对象
+     * @param request GetBucketMetadataRequest 请求对象
      * @return SyncInvoker<GetBucketMetadataRequest, GetBucketMetadataResponse>
      */
     public SyncInvoker<GetBucketMetadataRequest, GetBucketMetadataResponse> getBucketMetadataInvoker(
         GetBucketMetadataRequest request) {
-        return new SyncInvoker<GetBucketMetadataRequest, GetBucketMetadataResponse>(request, ObsMeta.getBucketMetadata,
-            hcClient);
+        return new SyncInvoker<>(request, ObsMeta.getBucketMetadata, hcClient);
     }
 
     /**
@@ -434,7 +431,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetBucketNotificationRequest 请求对象
+     * @param request GetBucketNotificationRequest 请求对象
      * @return GetBucketNotificationResponse
      */
     public GetBucketNotificationResponse getBucketNotification(GetBucketNotificationRequest request) {
@@ -450,13 +447,12 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetBucketNotificationRequest 请求对象
+     * @param request GetBucketNotificationRequest 请求对象
      * @return SyncInvoker<GetBucketNotificationRequest, GetBucketNotificationResponse>
      */
     public SyncInvoker<GetBucketNotificationRequest, GetBucketNotificationResponse> getBucketNotificationInvoker(
         GetBucketNotificationRequest request) {
-        return new SyncInvoker<GetBucketNotificationRequest, GetBucketNotificationResponse>(request,
-            ObsMeta.getBucketNotification, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.getBucketNotification, hcClient);
     }
 
     /**
@@ -475,7 +471,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetObjectRequest 请求对象
+     * @param request GetObjectRequest 请求对象
      * @return GetObjectResponse
      */
     public GetObjectResponse getObject(GetObjectRequest request) {
@@ -498,11 +494,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetObjectRequest 请求对象
+     * @param request GetObjectRequest 请求对象
      * @return SyncInvoker<GetObjectRequest, GetObjectResponse>
      */
     public SyncInvoker<GetObjectRequest, GetObjectResponse> getObjectInvoker(GetObjectRequest request) {
-        return new SyncInvoker<GetObjectRequest, GetObjectResponse>(request, ObsMeta.getObject, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.getObject, hcClient);
     }
 
     /**
@@ -516,7 +512,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetObjectMetadataRequest 请求对象
+     * @param request GetObjectMetadataRequest 请求对象
      * @return GetObjectMetadataResponse
      */
     public GetObjectMetadataResponse getObjectMetadata(GetObjectMetadataRequest request) {
@@ -534,13 +530,12 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetObjectMetadataRequest 请求对象
+     * @param request GetObjectMetadataRequest 请求对象
      * @return SyncInvoker<GetObjectMetadataRequest, GetObjectMetadataResponse>
      */
     public SyncInvoker<GetObjectMetadataRequest, GetObjectMetadataResponse> getObjectMetadataInvoker(
         GetObjectMetadataRequest request) {
-        return new SyncInvoker<GetObjectMetadataRequest, GetObjectMetadataResponse>(request, ObsMeta.getObjectMetadata,
-            hcClient);
+        return new SyncInvoker<>(request, ObsMeta.getObjectMetadata, hcClient);
     }
 
     /**
@@ -550,7 +545,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBucketsRequest 请求对象
+     * @param request ListBucketsRequest 请求对象
      * @return ListBucketsResponse
      */
     public ListBucketsResponse listBuckets(ListBucketsRequest request) {
@@ -564,11 +559,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBucketsRequest 请求对象
+     * @param request ListBucketsRequest 请求对象
      * @return SyncInvoker<ListBucketsRequest, ListBucketsResponse>
      */
     public SyncInvoker<ListBucketsRequest, ListBucketsResponse> listBucketsInvoker(ListBucketsRequest request) {
-        return new SyncInvoker<ListBucketsRequest, ListBucketsResponse>(request, ObsMeta.listBuckets, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.listBuckets, hcClient);
     }
 
     /**
@@ -580,7 +575,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObjectsRequest 请求对象
+     * @param request ListObjectsRequest 请求对象
      * @return ListObjectsResponse
      */
     public ListObjectsResponse listObjects(ListObjectsRequest request) {
@@ -596,11 +591,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObjectsRequest 请求对象
+     * @param request ListObjectsRequest 请求对象
      * @return SyncInvoker<ListObjectsRequest, ListObjectsResponse>
      */
     public SyncInvoker<ListObjectsRequest, ListObjectsResponse> listObjectsInvoker(ListObjectsRequest request) {
-        return new SyncInvoker<ListObjectsRequest, ListObjectsResponse>(request, ObsMeta.listObjects, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.listObjects, hcClient);
     }
 
     /**
@@ -622,7 +617,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutObjectRequest 请求对象
+     * @param request PutObjectRequest 请求对象
      * @return PutObjectResponse
      */
     public PutObjectResponse putObject(PutObjectRequest request) {
@@ -648,11 +643,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutObjectRequest 请求对象
+     * @param request PutObjectRequest 请求对象
      * @return SyncInvoker<PutObjectRequest, PutObjectResponse>
      */
     public SyncInvoker<PutObjectRequest, PutObjectResponse> putObjectInvoker(PutObjectRequest request) {
-        return new SyncInvoker<PutObjectRequest, PutObjectResponse>(request, ObsMeta.putObject, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.putObject, hcClient);
     }
 
     /**
@@ -666,7 +661,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetBucketAclRequest 请求对象
+     * @param request SetBucketAclRequest 请求对象
      * @return SetBucketAclResponse
      */
     public SetBucketAclResponse setBucketAcl(SetBucketAclRequest request) {
@@ -684,11 +679,11 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetBucketAclRequest 请求对象
+     * @param request SetBucketAclRequest 请求对象
      * @return SyncInvoker<SetBucketAclRequest, SetBucketAclResponse>
      */
     public SyncInvoker<SetBucketAclRequest, SetBucketAclResponse> setBucketAclInvoker(SetBucketAclRequest request) {
-        return new SyncInvoker<SetBucketAclRequest, SetBucketAclResponse>(request, ObsMeta.setBucketAcl, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.setBucketAcl, hcClient);
     }
 
     /**
@@ -700,7 +695,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetBucketCustomedomainRequest 请求对象
+     * @param request SetBucketCustomedomainRequest 请求对象
      * @return SetBucketCustomedomainResponse
      */
     public SetBucketCustomedomainResponse setBucketCustomedomain(SetBucketCustomedomainRequest request) {
@@ -716,13 +711,12 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetBucketCustomedomainRequest 请求对象
+     * @param request SetBucketCustomedomainRequest 请求对象
      * @return SyncInvoker<SetBucketCustomedomainRequest, SetBucketCustomedomainResponse>
      */
     public SyncInvoker<SetBucketCustomedomainRequest, SetBucketCustomedomainResponse> setBucketCustomedomainInvoker(
         SetBucketCustomedomainRequest request) {
-        return new SyncInvoker<SetBucketCustomedomainRequest, SetBucketCustomedomainResponse>(request,
-            ObsMeta.setBucketCustomedomain, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.setBucketCustomedomain, hcClient);
     }
 
     /**
@@ -741,7 +735,7 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetBucketNotificationRequest 请求对象
+     * @param request SetBucketNotificationRequest 请求对象
      * @return SetBucketNotificationResponse
      */
     public SetBucketNotificationResponse setBucketNotification(SetBucketNotificationRequest request) {
@@ -764,13 +758,12 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetBucketNotificationRequest 请求对象
+     * @param request SetBucketNotificationRequest 请求对象
      * @return SyncInvoker<SetBucketNotificationRequest, SetBucketNotificationResponse>
      */
     public SyncInvoker<SetBucketNotificationRequest, SetBucketNotificationResponse> setBucketNotificationInvoker(
         SetBucketNotificationRequest request) {
-        return new SyncInvoker<SetBucketNotificationRequest, SetBucketNotificationResponse>(request,
-            ObsMeta.setBucketNotification, hcClient);
+        return new SyncInvoker<>(request, ObsMeta.setBucketNotification, hcClient);
     }
 
 }

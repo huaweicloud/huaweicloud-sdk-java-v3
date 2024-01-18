@@ -260,6 +260,11 @@ public class SmartLiveRoomBaseInfo {
          */
         public static final LastJobStatusEnum CANCELED = new LastJobStatusEnum("CANCELED");
 
+        /**
+         * Enum BLOCKED for value: "BLOCKED"
+         */
+        public static final LastJobStatusEnum BLOCKED = new LastJobStatusEnum("BLOCKED");
+
         private static final Map<String, LastJobStatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LastJobStatusEnum> createStaticFields() {
@@ -269,6 +274,7 @@ public class SmartLiveRoomBaseInfo {
             map.put("SUCCEED", SUCCEED);
             map.put("FAILED", FAILED);
             map.put("CANCELED", CANCELED);
+            map.put("BLOCKED", BLOCKED);
             return Collections.unmodifiableMap(map);
         }
 

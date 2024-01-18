@@ -35,9 +35,9 @@ import com.huaweicloud.sdk.eds.v1.model.UserReq;
 public class EdsMeta {
 
     public static final HttpRequestDef<CancelContractRequest, CancelContractResponse> cancelContract =
-        genForcancelContract();
+        genForCancelContract();
 
-    private static HttpRequestDef<CancelContractRequest, CancelContractResponse> genForcancelContract() {
+    private static HttpRequestDef<CancelContractRequest, CancelContractResponse> genForCancelContract() {
         // basic
         HttpRequestDef.Builder<CancelContractRequest, CancelContractResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelContractRequest.class, CancelContractResponse.class)
@@ -51,23 +51,17 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelContractRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CancelContractRequest::getInstanceId, CancelContractRequest::setInstanceId));
         builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelContractRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(CancelContractRequest::getConnectorId, CancelContractRequest::setConnectorId));
         builder.<String>withRequestField("contract_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelContractRequest::getContractId, (req, v) -> {
-                req.setContractId(v);
-            }));
+            f -> f.withMarshaller(CancelContractRequest::getContractId, CancelContractRequest::setContractId));
 
         // response
 
@@ -75,9 +69,9 @@ public class EdsMeta {
     }
 
     public static final HttpRequestDef<CommitContractRequest, CommitContractResponse> commitContract =
-        genForcommitContract();
+        genForCommitContract();
 
-    private static HttpRequestDef<CommitContractRequest, CommitContractResponse> genForcommitContract() {
+    private static HttpRequestDef<CommitContractRequest, CommitContractResponse> genForCommitContract() {
         // basic
         HttpRequestDef.Builder<CommitContractRequest, CommitContractResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CommitContractRequest.class, CommitContractResponse.class)
@@ -90,23 +84,17 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CommitContractRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CommitContractRequest::getInstanceId, CommitContractRequest::setInstanceId));
         builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CommitContractRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(CommitContractRequest::getConnectorId, CommitContractRequest::setConnectorId));
         builder.<ContractReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ContractReq.class),
-            f -> f.withMarshaller(CommitContractRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CommitContractRequest::getBody, CommitContractRequest::setBody));
 
         // response
 
@@ -114,9 +102,9 @@ public class EdsMeta {
     }
 
     public static final HttpRequestDef<ListConnectorsByInstanceMangerRequest, ListConnectorsByInstanceMangerResponse> listConnectorsByInstanceManger =
-        genForlistConnectorsByInstanceManger();
+        genForListConnectorsByInstanceManger();
 
-    private static HttpRequestDef<ListConnectorsByInstanceMangerRequest, ListConnectorsByInstanceMangerResponse> genForlistConnectorsByInstanceManger() {
+    private static HttpRequestDef<ListConnectorsByInstanceMangerRequest, ListConnectorsByInstanceMangerResponse> genForListConnectorsByInstanceManger() {
         // basic
         HttpRequestDef.Builder<ListConnectorsByInstanceMangerRequest, ListConnectorsByInstanceMangerResponse> builder =
             HttpRequestDef
@@ -132,23 +120,20 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConnectorsByInstanceMangerRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListConnectorsByInstanceMangerRequest::getInstanceId,
+                ListConnectorsByInstanceMangerRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConnectorsByInstanceMangerRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConnectorsByInstanceMangerRequest::getOffset,
+                ListConnectorsByInstanceMangerRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConnectorsByInstanceMangerRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConnectorsByInstanceMangerRequest::getLimit,
+                ListConnectorsByInstanceMangerRequest::setLimit));
 
         // response
 
@@ -156,9 +141,9 @@ public class EdsMeta {
     }
 
     public static final HttpRequestDef<ListConnectorsByInstanceUserRequest, ListConnectorsByInstanceUserResponse> listConnectorsByInstanceUser =
-        genForlistConnectorsByInstanceUser();
+        genForListConnectorsByInstanceUser();
 
-    private static HttpRequestDef<ListConnectorsByInstanceUserRequest, ListConnectorsByInstanceUserResponse> genForlistConnectorsByInstanceUser() {
+    private static HttpRequestDef<ListConnectorsByInstanceUserRequest, ListConnectorsByInstanceUserResponse> genForListConnectorsByInstanceUser() {
         // basic
         HttpRequestDef.Builder<ListConnectorsByInstanceUserRequest, ListConnectorsByInstanceUserResponse> builder =
             HttpRequestDef
@@ -174,32 +159,29 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConnectorsByInstanceUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListConnectorsByInstanceUserRequest::getInstanceId,
+                ListConnectorsByInstanceUserRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConnectorsByInstanceUserRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConnectorsByInstanceUserRequest::getOffset,
+                ListConnectorsByInstanceUserRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConnectorsByInstanceUserRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConnectorsByInstanceUserRequest::getLimit,
+                ListConnectorsByInstanceUserRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLog = genForshowAuditLog();
+    public static final HttpRequestDef<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLog = genForShowAuditLog();
 
-    private static HttpRequestDef<ShowAuditLogRequest, ShowAuditLogResponse> genForshowAuditLog() {
+    private static HttpRequestDef<ShowAuditLogRequest, ShowAuditLogResponse> genForShowAuditLog() {
         // basic
         HttpRequestDef.Builder<ShowAuditLogRequest, ShowAuditLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuditLogRequest.class, ShowAuditLogResponse.class)
@@ -212,65 +194,48 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getInstanceId, ShowAuditLogRequest::setInstanceId));
         builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getConnectorId, ShowAuditLogRequest::setConnectorId));
         builder.<String>withRequestField("connector_keywords",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getConnectorKeywords, (req, v) -> {
-                req.setConnectorKeywords(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getConnectorKeywords,
+                ShowAuditLogRequest::setConnectorKeywords));
         builder.<String>withRequestField("user_keywords",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getUserKeywords, (req, v) -> {
-                req.setUserKeywords(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getUserKeywords, ShowAuditLogRequest::setUserKeywords));
         builder.<ShowAuditLogRequest.ActionEnum>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAuditLogRequest.ActionEnum.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getAction, ShowAuditLogRequest::setAction));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getStartTime, ShowAuditLogRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getEndTime, ShowAuditLogRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getOffset, ShowAuditLogRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getLimit, ShowAuditLogRequest::setLimit));
 
         // response
 
@@ -278,9 +243,9 @@ public class EdsMeta {
     }
 
     public static final HttpRequestDef<ShowConnectorRequest, ShowConnectorResponse> showConnector =
-        genForshowConnector();
+        genForShowConnector();
 
-    private static HttpRequestDef<ShowConnectorRequest, ShowConnectorResponse> genForshowConnector() {
+    private static HttpRequestDef<ShowConnectorRequest, ShowConnectorResponse> genForShowConnector() {
         // basic
         HttpRequestDef.Builder<ShowConnectorRequest, ShowConnectorResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConnectorRequest.class, ShowConnectorResponse.class)
@@ -293,25 +258,21 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectorRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowConnectorRequest::getInstanceId, ShowConnectorRequest::setInstanceId));
         builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectorRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(ShowConnectorRequest::getConnectorId, ShowConnectorRequest::setConnectorId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowContractRequest, ShowContractResponse> showContract = genForshowContract();
+    public static final HttpRequestDef<ShowContractRequest, ShowContractResponse> showContract = genForShowContract();
 
-    private static HttpRequestDef<ShowContractRequest, ShowContractResponse> genForshowContract() {
+    private static HttpRequestDef<ShowContractRequest, ShowContractResponse> genForShowContract() {
         // basic
         HttpRequestDef.Builder<ShowContractRequest, ShowContractResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowContractRequest.class, ShowContractResponse.class)
@@ -325,32 +286,26 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowContractRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowContractRequest::getInstanceId, ShowContractRequest::setInstanceId));
         builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowContractRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(ShowContractRequest::getConnectorId, ShowContractRequest::setConnectorId));
         builder.<String>withRequestField("contract_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowContractRequest::getContractId, (req, v) -> {
-                req.setContractId(v);
-            }));
+            f -> f.withMarshaller(ShowContractRequest::getContractId, ShowContractRequest::setContractId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListOffersRequest, ListOffersResponse> listOffers = genForlistOffers();
+    public static final HttpRequestDef<ListOffersRequest, ListOffersResponse> listOffers = genForListOffers();
 
-    private static HttpRequestDef<ListOffersRequest, ListOffersResponse> genForlistOffers() {
+    private static HttpRequestDef<ListOffersRequest, ListOffersResponse> genForListOffers() {
         // basic
         HttpRequestDef.Builder<ListOffersRequest, ListOffersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListOffersRequest.class, ListOffersResponse.class)
@@ -363,32 +318,26 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOffersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListOffersRequest::getInstanceId, ListOffersRequest::setInstanceId));
         builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOffersRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(ListOffersRequest::getConnectorId, ListOffersRequest::setConnectorId));
         builder.<OfferPage>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OfferPage.class),
-            f -> f.withMarshaller(ListOffersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListOffersRequest::getBody, ListOffersRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowOfferRequest, ShowOfferResponse> showOffer = genForshowOffer();
+    public static final HttpRequestDef<ShowOfferRequest, ShowOfferResponse> showOffer = genForShowOffer();
 
-    private static HttpRequestDef<ShowOfferRequest, ShowOfferResponse> genForshowOffer() {
+    private static HttpRequestDef<ShowOfferRequest, ShowOfferResponse> genForShowOffer() {
         // basic
         HttpRequestDef.Builder<ShowOfferRequest, ShowOfferResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOfferRequest.class, ShowOfferResponse.class)
@@ -401,23 +350,17 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOfferRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowOfferRequest::getInstanceId, ShowOfferRequest::setInstanceId));
         builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOfferRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(ShowOfferRequest::getConnectorId, ShowOfferRequest::setConnectorId));
         builder.<String>withRequestField("offer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOfferRequest::getOfferId, (req, v) -> {
-                req.setOfferId(v);
-            }));
+            f -> f.withMarshaller(ShowOfferRequest::getOfferId, ShowOfferRequest::setOfferId));
 
         // response
 
@@ -425,9 +368,9 @@ public class EdsMeta {
     }
 
     public static final HttpRequestDef<AddConnectorUserRequest, AddConnectorUserResponse> addConnectorUser =
-        genForaddConnectorUser();
+        genForAddConnectorUser();
 
-    private static HttpRequestDef<AddConnectorUserRequest, AddConnectorUserResponse> genForaddConnectorUser() {
+    private static HttpRequestDef<AddConnectorUserRequest, AddConnectorUserResponse> genForAddConnectorUser() {
         // basic
         HttpRequestDef.Builder<AddConnectorUserRequest, AddConnectorUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddConnectorUserRequest.class, AddConnectorUserResponse.class)
@@ -440,23 +383,17 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddConnectorUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddConnectorUserRequest::getInstanceId, AddConnectorUserRequest::setInstanceId));
         builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddConnectorUserRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(AddConnectorUserRequest::getConnectorId, AddConnectorUserRequest::setConnectorId));
         builder.<UserReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UserReq.class),
-            f -> f.withMarshaller(AddConnectorUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddConnectorUserRequest::getBody, AddConnectorUserRequest::setBody));
 
         // response
 
@@ -464,9 +401,9 @@ public class EdsMeta {
     }
 
     public static final HttpRequestDef<DeleteConnectorUserRequest, DeleteConnectorUserResponse> deleteConnectorUser =
-        genFordeleteConnectorUser();
+        genForDeleteConnectorUser();
 
-    private static HttpRequestDef<DeleteConnectorUserRequest, DeleteConnectorUserResponse> genFordeleteConnectorUser() {
+    private static HttpRequestDef<DeleteConnectorUserRequest, DeleteConnectorUserResponse> genForDeleteConnectorUser() {
         // basic
         HttpRequestDef.Builder<DeleteConnectorUserRequest, DeleteConnectorUserResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteConnectorUserRequest.class, DeleteConnectorUserResponse.class)
@@ -479,23 +416,19 @@ public class EdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnectorUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteConnectorUserRequest::getInstanceId,
+                DeleteConnectorUserRequest::setInstanceId));
         builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnectorUserRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(DeleteConnectorUserRequest::getConnectorId,
+                DeleteConnectorUserRequest::setConnectorId));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnectorUserRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(DeleteConnectorUserRequest::getUserName, DeleteConnectorUserRequest::setUserName));
 
         // response
 

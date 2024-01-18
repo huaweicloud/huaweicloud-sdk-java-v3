@@ -455,9 +455,9 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public class MeetingMeta {
 
-    public static final HttpRequestDef<AddCorpRequest, AddCorpResponse> addCorp = genForaddCorp();
+    public static final HttpRequestDef<AddCorpRequest, AddCorpResponse> addCorp = genForAddCorp();
 
-    private static HttpRequestDef<AddCorpRequest, AddCorpResponse> genForaddCorp() {
+    private static HttpRequestDef<AddCorpRequest, AddCorpResponse> genForAddCorp() {
         // basic
         HttpRequestDef.Builder<AddCorpRequest, AddCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddCorpRequest.class, AddCorpResponse.class)
@@ -470,32 +470,26 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddCorpRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AddCorpRequest::getXRequestId, AddCorpRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddCorpRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AddCorpRequest::getAcceptLanguage, AddCorpRequest::setAcceptLanguage));
         builder.<AddCorpDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddCorpDTO.class),
-            f -> f.withMarshaller(AddCorpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddCorpRequest::getBody, AddCorpRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddCorpAdminRequest, AddCorpAdminResponse> addCorpAdmin = genForaddCorpAdmin();
+    public static final HttpRequestDef<AddCorpAdminRequest, AddCorpAdminResponse> addCorpAdmin = genForAddCorpAdmin();
 
-    private static HttpRequestDef<AddCorpAdminRequest, AddCorpAdminResponse> genForaddCorpAdmin() {
+    private static HttpRequestDef<AddCorpAdminRequest, AddCorpAdminResponse> genForAddCorpAdmin() {
         // basic
         HttpRequestDef.Builder<AddCorpAdminRequest, AddCorpAdminResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddCorpAdminRequest.class, AddCorpAdminResponse.class)
@@ -508,30 +502,22 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(AddCorpAdminRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
+            f -> f.withMarshaller(AddCorpAdminRequest::getAccountType, AddCorpAdminRequest::setAccountType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddCorpAdminRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AddCorpAdminRequest::getXRequestId, AddCorpAdminRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddCorpAdminRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AddCorpAdminRequest::getAcceptLanguage, AddCorpAdminRequest::setAcceptLanguage));
         builder.<CorpAdminDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CorpAdminDTO.class),
-            f -> f.withMarshaller(AddCorpAdminRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddCorpAdminRequest::getBody, AddCorpAdminRequest::setBody));
 
         // response
 
@@ -539,9 +525,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<AddDepartmentRequest, AddDepartmentResponse> addDepartment =
-        genForaddDepartment();
+        genForAddDepartment();
 
-    private static HttpRequestDef<AddDepartmentRequest, AddDepartmentResponse> genForaddDepartment() {
+    private static HttpRequestDef<AddDepartmentRequest, AddDepartmentResponse> genForAddDepartment() {
         // basic
         HttpRequestDef.Builder<AddDepartmentRequest, AddDepartmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDepartmentRequest.class, AddDepartmentResponse.class)
@@ -554,32 +540,26 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDepartmentRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AddDepartmentRequest::getXRequestId, AddDepartmentRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDepartmentRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AddDepartmentRequest::getAcceptLanguage, AddDepartmentRequest::setAcceptLanguage));
         builder.<DeptDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeptDTO.class),
-            f -> f.withMarshaller(AddDepartmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddDepartmentRequest::getBody, AddDepartmentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddDeviceRequest, AddDeviceResponse> addDevice = genForaddDevice();
+    public static final HttpRequestDef<AddDeviceRequest, AddDeviceResponse> addDevice = genForAddDevice();
 
-    private static HttpRequestDef<AddDeviceRequest, AddDeviceResponse> genForaddDevice() {
+    private static HttpRequestDef<AddDeviceRequest, AddDeviceResponse> genForAddDevice() {
         // basic
         HttpRequestDef.Builder<AddDeviceRequest, AddDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDeviceRequest.class, AddDeviceResponse.class)
@@ -592,32 +572,26 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDeviceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AddDeviceRequest::getXRequestId, AddDeviceRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDeviceRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AddDeviceRequest::getAcceptLanguage, AddDeviceRequest::setAcceptLanguage));
         builder.<AddDeviceDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddDeviceDTO.class),
-            f -> f.withMarshaller(AddDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddDeviceRequest::getBody, AddDeviceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddMaterialRequest, AddMaterialResponse> addMaterial = genForaddMaterial();
+    public static final HttpRequestDef<AddMaterialRequest, AddMaterialResponse> addMaterial = genForAddMaterial();
 
-    private static HttpRequestDef<AddMaterialRequest, AddMaterialResponse> genForaddMaterial() {
+    private static HttpRequestDef<AddMaterialRequest, AddMaterialResponse> genForAddMaterial() {
         // basic
         HttpRequestDef.Builder<AddMaterialRequest, AddMaterialResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddMaterialRequest.class, AddMaterialResponse.class)
@@ -630,32 +604,26 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddMaterialRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AddMaterialRequest::getXRequestId, AddMaterialRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddMaterialRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AddMaterialRequest::getAcceptLanguage, AddMaterialRequest::setAcceptLanguage));
         builder.<AddMaterialRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddMaterialRequestBody.class),
-            f -> f.withMarshaller(AddMaterialRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddMaterialRequest::getBody, AddMaterialRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddProgramRequest, AddProgramResponse> addProgram = genForaddProgram();
+    public static final HttpRequestDef<AddProgramRequest, AddProgramResponse> addProgram = genForAddProgram();
 
-    private static HttpRequestDef<AddProgramRequest, AddProgramResponse> genForaddProgram() {
+    private static HttpRequestDef<AddProgramRequest, AddProgramResponse> genForAddProgram() {
         // basic
         HttpRequestDef.Builder<AddProgramRequest, AddProgramResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddProgramRequest.class, AddProgramResponse.class)
@@ -668,23 +636,17 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddProgramRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AddProgramRequest::getXRequestId, AddProgramRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddProgramRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AddProgramRequest::getAcceptLanguage, AddProgramRequest::setAcceptLanguage));
         builder.<CreateProgramRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateProgramRequestDTO.class),
-            f -> f.withMarshaller(AddProgramRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddProgramRequest::getBody, AddProgramRequest::setBody));
 
         // response
 
@@ -692,9 +654,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<AddPublicationRequest, AddPublicationResponse> addPublication =
-        genForaddPublication();
+        genForAddPublication();
 
-    private static HttpRequestDef<AddPublicationRequest, AddPublicationResponse> genForaddPublication() {
+    private static HttpRequestDef<AddPublicationRequest, AddPublicationResponse> genForAddPublication() {
         // basic
         HttpRequestDef.Builder<AddPublicationRequest, AddPublicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddPublicationRequest.class, AddPublicationResponse.class)
@@ -707,32 +669,26 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddPublicationRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AddPublicationRequest::getXRequestId, AddPublicationRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddPublicationRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AddPublicationRequest::getAcceptLanguage, AddPublicationRequest::setAcceptLanguage));
         builder.<CreatePublicationRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePublicationRequestDTO.class),
-            f -> f.withMarshaller(AddPublicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddPublicationRequest::getBody, AddPublicationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddResourceRequest, AddResourceResponse> addResource = genForaddResource();
+    public static final HttpRequestDef<AddResourceRequest, AddResourceResponse> addResource = genForAddResource();
 
-    private static HttpRequestDef<AddResourceRequest, AddResourceResponse> genForaddResource() {
+    private static HttpRequestDef<AddResourceRequest, AddResourceResponse> genForAddResource() {
         // basic
         HttpRequestDef.Builder<AddResourceRequest, AddResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddResourceRequest.class, AddResourceResponse.class)
@@ -745,30 +701,23 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddResourceRequest::getCorpId, (req, v) -> {
-                req.setCorpId(v);
-            }));
+            f -> f.withMarshaller(AddResourceRequest::getCorpId, AddResourceRequest::setCorpId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddResourceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AddResourceRequest::getXRequestId, AddResourceRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddResourceRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AddResourceRequest::getAcceptLanguage, AddResourceRequest::setAcceptLanguage));
         builder.<List<ResourceDTO>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(AddResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(ResourceDTO.class));
+            f -> f.withMarshaller(AddResourceRequest::getBody, AddResourceRequest::setBody)
+                .withInnerContainerType(ResourceDTO.class));
 
         // response
 
@@ -776,9 +725,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse> addToPersonalSpace =
-        genForaddToPersonalSpace();
+        genForAddToPersonalSpace();
 
-    private static HttpRequestDef<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse> genForaddToPersonalSpace() {
+    private static HttpRequestDef<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse> genForAddToPersonalSpace() {
         // basic
         HttpRequestDef.Builder<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddToPersonalSpaceRequest.class, AddToPersonalSpaceResponse.class)
@@ -791,32 +740,28 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddToPersonalSpaceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AddToPersonalSpaceRequest::getXRequestId, AddToPersonalSpaceRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddToPersonalSpaceRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AddToPersonalSpaceRequest::getAcceptLanguage,
+                AddToPersonalSpaceRequest::setAcceptLanguage));
         builder.<Map<String, String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(AddToPersonalSpaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(AddToPersonalSpaceRequest::getBody, AddToPersonalSpaceRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddUserRequest, AddUserResponse> addUser = genForaddUser();
+    public static final HttpRequestDef<AddUserRequest, AddUserResponse> addUser = genForAddUser();
 
-    private static HttpRequestDef<AddUserRequest, AddUserResponse> genForaddUser() {
+    private static HttpRequestDef<AddUserRequest, AddUserResponse> genForAddUser() {
         // basic
         HttpRequestDef.Builder<AddUserRequest, AddUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddUserRequest.class, AddUserResponse.class)
@@ -829,23 +774,17 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddUserRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AddUserRequest::getXRequestId, AddUserRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddUserRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AddUserRequest::getAcceptLanguage, AddUserRequest::setAcceptLanguage));
         builder.<AddUserDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddUserDTO.class),
-            f -> f.withMarshaller(AddUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddUserRequest::getBody, AddUserRequest::setBody));
 
         // response
 
@@ -853,9 +792,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<AllowClientRecordRequest, AllowClientRecordResponse> allowClientRecord =
-        genForallowClientRecord();
+        genForAllowClientRecord();
 
-    private static HttpRequestDef<AllowClientRecordRequest, AllowClientRecordResponse> genForallowClientRecord() {
+    private static HttpRequestDef<AllowClientRecordRequest, AllowClientRecordResponse> genForAllowClientRecord() {
         // basic
         HttpRequestDef.Builder<AllowClientRecordRequest, AllowClientRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AllowClientRecordRequest.class, AllowClientRecordResponse.class)
@@ -868,30 +807,25 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AllowClientRecordRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(AllowClientRecordRequest::getConferenceID,
+                AllowClientRecordRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AllowClientRecordRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(AllowClientRecordRequest::getParticipantID,
+                AllowClientRecordRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AllowClientRecordRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(AllowClientRecordRequest::getXConferenceAuthorization,
+                AllowClientRecordRequest::setXConferenceAuthorization));
         builder.<RestAllowClientRecordReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestAllowClientRecordReqBody.class),
-            f -> f.withMarshaller(AllowClientRecordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AllowClientRecordRequest::getBody, AllowClientRecordRequest::setBody));
 
         // response
 
@@ -899,9 +833,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse> allowGuestUnmute =
-        genForallowGuestUnmute();
+        genForAllowGuestUnmute();
 
-    private static HttpRequestDef<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse> genForallowGuestUnmute() {
+    private static HttpRequestDef<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse> genForAllowGuestUnmute() {
         // basic
         HttpRequestDef.Builder<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AllowGuestUnmuteRequest.class, AllowGuestUnmuteResponse.class)
@@ -914,23 +848,18 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AllowGuestUnmuteRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(AllowGuestUnmuteRequest::getConferenceID, AllowGuestUnmuteRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AllowGuestUnmuteRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(AllowGuestUnmuteRequest::getXConferenceAuthorization,
+                AllowGuestUnmuteRequest::setXConferenceAuthorization));
         builder.<RestAllowUnMuteReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestAllowUnMuteReqBody.class),
-            f -> f.withMarshaller(AllowGuestUnmuteRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AllowGuestUnmuteRequest::getBody, AllowGuestUnmuteRequest::setBody));
 
         // response
 
@@ -938,9 +867,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse> allowWaitingParticipant =
-        genForallowWaitingParticipant();
+        genForAllowWaitingParticipant();
 
-    private static HttpRequestDef<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse> genForallowWaitingParticipant() {
+    private static HttpRequestDef<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse> genForAllowWaitingParticipant() {
         // basic
         HttpRequestDef.Builder<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, AllowWaitingParticipantRequest.class, AllowWaitingParticipantResponse.class)
@@ -953,32 +882,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AllowWaitingParticipantRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(AllowWaitingParticipantRequest::getConferenceID,
+                AllowWaitingParticipantRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AllowWaitingParticipantRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(AllowWaitingParticipantRequest::getXConferenceAuthorization,
+                AllowWaitingParticipantRequest::setXConferenceAuthorization));
         builder.<RestAllowWaitingParticipantReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestAllowWaitingParticipantReqBody.class),
-            f -> f.withMarshaller(AllowWaitingParticipantRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AllowWaitingParticipantRequest::getBody, AllowWaitingParticipantRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AssociateVmrRequest, AssociateVmrResponse> associateVmr = genForassociateVmr();
+    public static final HttpRequestDef<AssociateVmrRequest, AssociateVmrResponse> associateVmr = genForAssociateVmr();
 
-    private static HttpRequestDef<AssociateVmrRequest, AssociateVmrResponse> genForassociateVmr() {
+    private static HttpRequestDef<AssociateVmrRequest, AssociateVmrResponse> genForAssociateVmr() {
         // basic
         HttpRequestDef.Builder<AssociateVmrRequest, AssociateVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateVmrRequest.class, AssociateVmrResponse.class)
@@ -991,37 +916,28 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateVmrRequest::getAccount, (req, v) -> {
-                req.setAccount(v);
-            }));
+            f -> f.withMarshaller(AssociateVmrRequest::getAccount, AssociateVmrRequest::setAccount));
         builder.<Integer>withRequestField("accountType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(AssociateVmrRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
+            f -> f.withMarshaller(AssociateVmrRequest::getAccountType, AssociateVmrRequest::setAccountType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateVmrRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AssociateVmrRequest::getXRequestId, AssociateVmrRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateVmrRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(AssociateVmrRequest::getAcceptLanguage, AssociateVmrRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(AssociateVmrRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(AssociateVmrRequest::getBody, AssociateVmrRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -1029,9 +945,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse> batchDeleteCorpAdmins =
-        genForbatchDeleteCorpAdmins();
+        genForBatchDeleteCorpAdmins();
 
-    private static HttpRequestDef<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse> genForbatchDeleteCorpAdmins() {
+    private static HttpRequestDef<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse> genForBatchDeleteCorpAdmins() {
         // basic
         HttpRequestDef.Builder<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteCorpAdminsRequest.class, BatchDeleteCorpAdminsResponse.class)
@@ -1044,30 +960,26 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchDeleteCorpAdminsRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteCorpAdminsRequest::getAccountType,
+                BatchDeleteCorpAdminsRequest::setAccountType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteCorpAdminsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteCorpAdminsRequest::getXRequestId,
+                BatchDeleteCorpAdminsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteCorpAdminsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteCorpAdminsRequest::getAcceptLanguage,
+                BatchDeleteCorpAdminsRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchDeleteCorpAdminsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(BatchDeleteCorpAdminsRequest::getBody, BatchDeleteCorpAdminsRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -1075,9 +987,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> batchDeleteDevices =
-        genForbatchDeleteDevices();
+        genForBatchDeleteDevices();
 
-    private static HttpRequestDef<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> genForbatchDeleteDevices() {
+    private static HttpRequestDef<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> genForBatchDeleteDevices() {
         // basic
         HttpRequestDef.Builder<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteDevicesRequest.class, BatchDeleteDevicesResponse.class)
@@ -1090,23 +1002,19 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteDevicesRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteDevicesRequest::getXRequestId, BatchDeleteDevicesRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteDevicesRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteDevicesRequest::getAcceptLanguage,
+                BatchDeleteDevicesRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchDeleteDevicesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(BatchDeleteDevicesRequest::getBody, BatchDeleteDevicesRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -1114,9 +1022,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> batchDeleteMaterials =
-        genForbatchDeleteMaterials();
+        genForBatchDeleteMaterials();
 
-    private static HttpRequestDef<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> genForbatchDeleteMaterials() {
+    private static HttpRequestDef<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> genForBatchDeleteMaterials() {
         // basic
         HttpRequestDef.Builder<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteMaterialsRequest.class, BatchDeleteMaterialsResponse.class)
@@ -1129,23 +1037,20 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteMaterialsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteMaterialsRequest::getXRequestId,
+                BatchDeleteMaterialsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteMaterialsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteMaterialsRequest::getAcceptLanguage,
+                BatchDeleteMaterialsRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchDeleteMaterialsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(BatchDeleteMaterialsRequest::getBody, BatchDeleteMaterialsRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -1153,9 +1058,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> batchDeletePrograms =
-        genForbatchDeletePrograms();
+        genForBatchDeletePrograms();
 
-    private static HttpRequestDef<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> genForbatchDeletePrograms() {
+    private static HttpRequestDef<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> genForBatchDeletePrograms() {
         // basic
         HttpRequestDef.Builder<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteProgramsRequest.class, BatchDeleteProgramsResponse.class)
@@ -1168,23 +1073,20 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteProgramsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteProgramsRequest::getXRequestId,
+                BatchDeleteProgramsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteProgramsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteProgramsRequest::getAcceptLanguage,
+                BatchDeleteProgramsRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchDeleteProgramsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(BatchDeleteProgramsRequest::getBody, BatchDeleteProgramsRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -1192,9 +1094,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> batchDeletePublications =
-        genForbatchDeletePublications();
+        genForBatchDeletePublications();
 
-    private static HttpRequestDef<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> genForbatchDeletePublications() {
+    private static HttpRequestDef<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> genForBatchDeletePublications() {
         // basic
         HttpRequestDef.Builder<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeletePublicationsRequest.class, BatchDeletePublicationsResponse.class)
@@ -1207,23 +1109,20 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePublicationsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePublicationsRequest::getXRequestId,
+                BatchDeletePublicationsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePublicationsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePublicationsRequest::getAcceptLanguage,
+                BatchDeletePublicationsRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchDeletePublicationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(BatchDeletePublicationsRequest::getBody, BatchDeletePublicationsRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -1231,9 +1130,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteUsersRequest, BatchDeleteUsersResponse> batchDeleteUsers =
-        genForbatchDeleteUsers();
+        genForBatchDeleteUsers();
 
-    private static HttpRequestDef<BatchDeleteUsersRequest, BatchDeleteUsersResponse> genForbatchDeleteUsers() {
+    private static HttpRequestDef<BatchDeleteUsersRequest, BatchDeleteUsersResponse> genForBatchDeleteUsers() {
         // basic
         HttpRequestDef.Builder<BatchDeleteUsersRequest, BatchDeleteUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteUsersRequest.class, BatchDeleteUsersResponse.class)
@@ -1246,39 +1145,33 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchDeleteUsersRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteUsersRequest::getAccountType, BatchDeleteUsersRequest::setAccountType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteUsersRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteUsersRequest::getXRequestId, BatchDeleteUsersRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteUsersRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteUsersRequest::getAcceptLanguage,
+                BatchDeleteUsersRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchDeleteUsersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(BatchDeleteUsersRequest::getBody, BatchDeleteUsersRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchHandRequest, BatchHandResponse> batchHand = genForbatchHand();
+    public static final HttpRequestDef<BatchHandRequest, BatchHandResponse> batchHand = genForBatchHand();
 
-    private static HttpRequestDef<BatchHandRequest, BatchHandResponse> genForbatchHand() {
+    private static HttpRequestDef<BatchHandRequest, BatchHandResponse> genForBatchHand() {
         // basic
         HttpRequestDef.Builder<BatchHandRequest, BatchHandResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchHandRequest.class, BatchHandResponse.class)
@@ -1291,23 +1184,18 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchHandRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(BatchHandRequest::getConferenceID, BatchHandRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchHandRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(BatchHandRequest::getXConferenceAuthorization,
+                BatchHandRequest::setXConferenceAuthorization));
         builder.<RestBatchHandsUpReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestBatchHandsUpReqBody.class),
-            f -> f.withMarshaller(BatchHandRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchHandRequest::getBody, BatchHandRequest::setBody));
 
         // response
 
@@ -1315,9 +1203,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse> batchShowUserDetails =
-        genForbatchShowUserDetails();
+        genForBatchShowUserDetails();
 
-    private static HttpRequestDef<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse> genForbatchShowUserDetails() {
+    private static HttpRequestDef<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse> genForBatchShowUserDetails() {
         // basic
         HttpRequestDef.Builder<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchShowUserDetailsRequest.class, BatchShowUserDetailsResponse.class)
@@ -1330,47 +1218,41 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowUserDetailsRequest::getIdType, (req, v) -> {
-                req.setIdType(v);
-            }));
+            f -> f.withMarshaller(BatchShowUserDetailsRequest::getIdType, BatchShowUserDetailsRequest::setIdType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowUserDetailsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchShowUserDetailsRequest::getXRequestId,
+                BatchShowUserDetailsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowUserDetailsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchShowUserDetailsRequest::getAcceptLanguage,
+                BatchShowUserDetailsRequest::setAcceptLanguage));
         builder.<List<ShowUserRequestDTO>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchShowUserDetailsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(ShowUserRequestDTO.class));
+            f -> f.withMarshaller(BatchShowUserDetailsRequest::getBody, BatchShowUserDetailsRequest::setBody)
+                .withInnerContainerType(ShowUserRequestDTO.class));
 
         // response
         builder.<List<UserDTO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchShowUserDetailsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(UserDTO.class));
+            f -> f.withMarshaller(BatchShowUserDetailsResponse::getBody, BatchShowUserDetailsResponse::setBody)
+                .withInnerContainerType(UserDTO.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse> batchUpdateDevicesStatus =
-        genForbatchUpdateDevicesStatus();
+        genForBatchUpdateDevicesStatus();
 
-    private static HttpRequestDef<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse> genForbatchUpdateDevicesStatus() {
+    private static HttpRequestDef<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse> genForBatchUpdateDevicesStatus() {
         // basic
         HttpRequestDef.Builder<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse> builder =
             HttpRequestDef
@@ -1384,30 +1266,26 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateDevicesStatusRequest.ValueEnum.class),
-            f -> f.withMarshaller(BatchUpdateDevicesStatusRequest::getValue, (req, v) -> {
-                req.setValue(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateDevicesStatusRequest::getValue,
+                BatchUpdateDevicesStatusRequest::setValue));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateDevicesStatusRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateDevicesStatusRequest::getXRequestId,
+                BatchUpdateDevicesStatusRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateDevicesStatusRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateDevicesStatusRequest::getAcceptLanguage,
+                BatchUpdateDevicesStatusRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchUpdateDevicesStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(BatchUpdateDevicesStatusRequest::getBody, BatchUpdateDevicesStatusRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -1415,9 +1293,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse> batchUpdateUserStatus =
-        genForbatchUpdateUserStatus();
+        genForBatchUpdateUserStatus();
 
-    private static HttpRequestDef<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse> genForbatchUpdateUserStatus() {
+    private static HttpRequestDef<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse> genForBatchUpdateUserStatus() {
         // basic
         HttpRequestDef.Builder<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, BatchUpdateUserStatusRequest.class, BatchUpdateUserStatusResponse.class)
@@ -1430,37 +1308,31 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateUserStatusRequest.ValueEnum.class),
-            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getValue, (req, v) -> {
-                req.setValue(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getValue, BatchUpdateUserStatusRequest::setValue));
         builder.<Integer>withRequestField("accountType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getAccountType,
+                BatchUpdateUserStatusRequest::setAccountType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getXRequestId,
+                BatchUpdateUserStatusRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getAcceptLanguage,
+                BatchUpdateUserStatusRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getBody, BatchUpdateUserStatusRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -1468,9 +1340,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<BroadcastParticipantRequest, BroadcastParticipantResponse> broadcastParticipant =
-        genForbroadcastParticipant();
+        genForBroadcastParticipant();
 
-    private static HttpRequestDef<BroadcastParticipantRequest, BroadcastParticipantResponse> genForbroadcastParticipant() {
+    private static HttpRequestDef<BroadcastParticipantRequest, BroadcastParticipantResponse> genForBroadcastParticipant() {
         // basic
         HttpRequestDef.Builder<BroadcastParticipantRequest, BroadcastParticipantResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, BroadcastParticipantRequest.class, BroadcastParticipantResponse.class)
@@ -1483,23 +1355,20 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BroadcastParticipantRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(BroadcastParticipantRequest::getConferenceID,
+                BroadcastParticipantRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BroadcastParticipantRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(BroadcastParticipantRequest::getParticipantID,
+                BroadcastParticipantRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BroadcastParticipantRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(BroadcastParticipantRequest::getXConferenceAuthorization,
+                BroadcastParticipantRequest::setXConferenceAuthorization));
 
         // response
 
@@ -1507,9 +1376,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CancelBroadcastRequest, CancelBroadcastResponse> cancelBroadcast =
-        genForcancelBroadcast();
+        genForCancelBroadcast();
 
-    private static HttpRequestDef<CancelBroadcastRequest, CancelBroadcastResponse> genForcancelBroadcast() {
+    private static HttpRequestDef<CancelBroadcastRequest, CancelBroadcastResponse> genForCancelBroadcast() {
         // basic
         HttpRequestDef.Builder<CancelBroadcastRequest, CancelBroadcastResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CancelBroadcastRequest.class, CancelBroadcastResponse.class)
@@ -1522,16 +1391,13 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelBroadcastRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(CancelBroadcastRequest::getConferenceID, CancelBroadcastRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelBroadcastRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(CancelBroadcastRequest::getXConferenceAuthorization,
+                CancelBroadcastRequest::setXConferenceAuthorization));
 
         // response
 
@@ -1539,9 +1405,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CancelMeetingRequest, CancelMeetingResponse> cancelMeeting =
-        genForcancelMeeting();
+        genForCancelMeeting();
 
-    private static HttpRequestDef<CancelMeetingRequest, CancelMeetingResponse> genForcancelMeeting() {
+    private static HttpRequestDef<CancelMeetingRequest, CancelMeetingResponse> genForCancelMeeting() {
         // basic
         HttpRequestDef.Builder<CancelMeetingRequest, CancelMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelMeetingRequest.class, CancelMeetingResponse.class)
@@ -1554,37 +1420,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(CancelMeetingRequest::getConferenceID, CancelMeetingRequest::setConferenceID));
         builder.<String>withRequestField("userUUID",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(CancelMeetingRequest::getUserUUID, CancelMeetingRequest::setUserUUID));
         builder.<Integer>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CancelMeetingRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(CancelMeetingRequest::getType, CancelMeetingRequest::setType));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(CancelMeetingRequest::getXAuthorizationType,
+                CancelMeetingRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(CancelMeetingRequest::getXSiteId, CancelMeetingRequest::setXSiteId));
 
         // response
 
@@ -1592,9 +1449,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> cancelRecurringMeeting =
-        genForcancelRecurringMeeting();
+        genForCancelRecurringMeeting();
 
-    private static HttpRequestDef<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> genForcancelRecurringMeeting() {
+    private static HttpRequestDef<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> genForCancelRecurringMeeting() {
         // basic
         HttpRequestDef.Builder<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, CancelRecurringMeetingRequest.class, CancelRecurringMeetingResponse.class)
@@ -1607,37 +1464,31 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelRecurringMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringMeetingRequest::getUserUUID,
+                CancelRecurringMeetingRequest::setUserUUID));
         builder.<String>withRequestField("conferenceID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelRecurringMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringMeetingRequest::getConferenceID,
+                CancelRecurringMeetingRequest::setConferenceID));
         builder.<Integer>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CancelRecurringMeetingRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringMeetingRequest::getType, CancelRecurringMeetingRequest::setType));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelRecurringMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringMeetingRequest::getXAuthorizationType,
+                CancelRecurringMeetingRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelRecurringMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringMeetingRequest::getXSiteId,
+                CancelRecurringMeetingRequest::setXSiteId));
 
         // response
 
@@ -1645,9 +1496,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> cancelRecurringSubMeeting =
-        genForcancelRecurringSubMeeting();
+        genForCancelRecurringSubMeeting();
 
-    private static HttpRequestDef<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> genForcancelRecurringSubMeeting() {
+    private static HttpRequestDef<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> genForCancelRecurringSubMeeting() {
         // basic
         HttpRequestDef.Builder<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> builder =
             HttpRequestDef
@@ -1663,44 +1514,38 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getUserUUID,
+                CancelRecurringSubMeetingRequest::setUserUUID));
         builder.<String>withRequestField("conferenceID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getConferenceID,
+                CancelRecurringSubMeetingRequest::setConferenceID));
         builder.<Integer>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getType,
+                CancelRecurringSubMeetingRequest::setType));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getXAuthorizationType,
+                CancelRecurringSubMeetingRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getXSiteId,
+                CancelRecurringSubMeetingRequest::setXSiteId));
         builder.<RestCancelSingleRecordCycleConfListReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestCancelSingleRecordCycleConfListReqBody.class),
-            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getBody,
+                CancelRecurringSubMeetingRequest::setBody));
 
         // response
 
@@ -1708,9 +1553,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse> checkSlideVerifyCode =
-        genForcheckSlideVerifyCode();
+        genForCheckSlideVerifyCode();
 
-    private static HttpRequestDef<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse> genForcheckSlideVerifyCode() {
+    private static HttpRequestDef<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse> genForCheckSlideVerifyCode() {
         // basic
         HttpRequestDef.Builder<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, CheckSlideVerifyCodeRequest.class, CheckSlideVerifyCodeResponse.class)
@@ -1723,32 +1568,28 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckSlideVerifyCodeRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(CheckSlideVerifyCodeRequest::getXRequestID,
+                CheckSlideVerifyCodeRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckSlideVerifyCodeRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(CheckSlideVerifyCodeRequest::getAcceptLanguage,
+                CheckSlideVerifyCodeRequest::setAcceptLanguage));
         builder.<SlideVerifyCodeCheckDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SlideVerifyCodeCheckDTO.class),
-            f -> f.withMarshaller(CheckSlideVerifyCodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckSlideVerifyCodeRequest::getBody, CheckSlideVerifyCodeRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckTokenRequest, CheckTokenResponse> checkToken = genForcheckToken();
+    public static final HttpRequestDef<CheckTokenRequest, CheckTokenResponse> checkToken = genForCheckToken();
 
-    private static HttpRequestDef<CheckTokenRequest, CheckTokenResponse> genForcheckToken() {
+    private static HttpRequestDef<CheckTokenRequest, CheckTokenResponse> genForCheckToken() {
         // basic
         HttpRequestDef.Builder<CheckTokenRequest, CheckTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckTokenRequest.class, CheckTokenResponse.class)
@@ -1761,23 +1602,17 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckTokenRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(CheckTokenRequest::getXRequestID, CheckTokenRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckTokenRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(CheckTokenRequest::getAcceptLanguage, CheckTokenRequest::setAcceptLanguage));
         builder.<ValidateTokenReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ValidateTokenReqDTO.class),
-            f -> f.withMarshaller(CheckTokenRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckTokenRequest::getBody, CheckTokenRequest::setBody));
 
         // response
 
@@ -1785,9 +1620,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse> checkVeriCodeForUpdateUserInfo =
-        genForcheckVeriCodeForUpdateUserInfo();
+        genForCheckVeriCodeForUpdateUserInfo();
 
-    private static HttpRequestDef<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse> genForcheckVeriCodeForUpdateUserInfo() {
+    private static HttpRequestDef<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse> genForCheckVeriCodeForUpdateUserInfo() {
         // basic
         HttpRequestDef.Builder<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse> builder =
             HttpRequestDef
@@ -1803,23 +1638,20 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckVeriCodeForUpdateUserInfoRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(CheckVeriCodeForUpdateUserInfoRequest::getXRequestId,
+                CheckVeriCodeForUpdateUserInfoRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckVeriCodeForUpdateUserInfoRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(CheckVeriCodeForUpdateUserInfoRequest::getAcceptLanguage,
+                CheckVeriCodeForUpdateUserInfoRequest::setAcceptLanguage));
         builder.<VerificationCodeDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VerificationCodeDTO.class),
-            f -> f.withMarshaller(CheckVeriCodeForUpdateUserInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckVeriCodeForUpdateUserInfoRequest::getBody,
+                CheckVeriCodeForUpdateUserInfoRequest::setBody));
 
         // response
 
@@ -1827,9 +1659,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CheckVerifyCodeRequest, CheckVerifyCodeResponse> checkVerifyCode =
-        genForcheckVerifyCode();
+        genForCheckVerifyCode();
 
-    private static HttpRequestDef<CheckVerifyCodeRequest, CheckVerifyCodeResponse> genForcheckVerifyCode() {
+    private static HttpRequestDef<CheckVerifyCodeRequest, CheckVerifyCodeResponse> genForCheckVerifyCode() {
         // basic
         HttpRequestDef.Builder<CheckVerifyCodeRequest, CheckVerifyCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CheckVerifyCodeRequest.class, CheckVerifyCodeResponse.class)
@@ -1842,23 +1674,18 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckVerifyCodeRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(CheckVerifyCodeRequest::getXRequestID, CheckVerifyCodeRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckVerifyCodeRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(CheckVerifyCodeRequest::getAcceptLanguage,
+                CheckVerifyCodeRequest::setAcceptLanguage));
         builder.<VerifyCodeCheckDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VerifyCodeCheckDTO.class),
-            f -> f.withMarshaller(CheckVerifyCodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckVerifyCodeRequest::getBody, CheckVerifyCodeRequest::setBody));
 
         // response
 
@@ -1866,9 +1693,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse> createAnonymousAuthRandom =
-        genForcreateAnonymousAuthRandom();
+        genForCreateAnonymousAuthRandom();
 
-    private static HttpRequestDef<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse> genForcreateAnonymousAuthRandom() {
+    private static HttpRequestDef<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse> genForCreateAnonymousAuthRandom() {
         // basic
         HttpRequestDef.Builder<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse> builder =
             HttpRequestDef
@@ -1884,16 +1711,14 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAnonymousAuthRandomRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(CreateAnonymousAuthRandomRequest::getConferenceID,
+                CreateAnonymousAuthRandomRequest::setConferenceID));
         builder.<String>withRequestField("X-Password",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAnonymousAuthRandomRequest::getXPassword, (req, v) -> {
-                req.setXPassword(v);
-            }));
+            f -> f.withMarshaller(CreateAnonymousAuthRandomRequest::getXPassword,
+                CreateAnonymousAuthRandomRequest::setXPassword));
 
         // response
 
@@ -1901,9 +1726,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CreateConfTokenRequest, CreateConfTokenResponse> createConfToken =
-        genForcreateConfToken();
+        genForCreateConfToken();
 
-    private static HttpRequestDef<CreateConfTokenRequest, CreateConfTokenResponse> genForcreateConfToken() {
+    private static HttpRequestDef<CreateConfTokenRequest, CreateConfTokenResponse> genForCreateConfToken() {
         // basic
         HttpRequestDef.Builder<CreateConfTokenRequest, CreateConfTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CreateConfTokenRequest.class, CreateConfTokenResponse.class)
@@ -1916,37 +1741,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConfTokenRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(CreateConfTokenRequest::getConferenceID, CreateConfTokenRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConfTokenRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(CreateConfTokenRequest::getXConferenceAuthorization,
+                CreateConfTokenRequest::setXConferenceAuthorization));
         builder.<String>withRequestField("X-Password",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConfTokenRequest::getXPassword, (req, v) -> {
-                req.setXPassword(v);
-            }));
+            f -> f.withMarshaller(CreateConfTokenRequest::getXPassword, CreateConfTokenRequest::setXPassword));
         builder.<Integer>withRequestField("X-Login-Type",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateConfTokenRequest::getXLoginType, (req, v) -> {
-                req.setXLoginType(v);
-            }));
+            f -> f.withMarshaller(CreateConfTokenRequest::getXLoginType, CreateConfTokenRequest::setXLoginType));
         builder.<String>withRequestField("X-Nonce",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConfTokenRequest::getXNonce, (req, v) -> {
-                req.setXNonce(v);
-            }));
+            f -> f.withMarshaller(CreateConfTokenRequest::getXNonce, CreateConfTokenRequest::setXNonce));
 
         // response
 
@@ -1954,9 +1770,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CreateMeetingRequest, CreateMeetingResponse> createMeeting =
-        genForcreateMeeting();
+        genForCreateMeeting();
 
-    private static HttpRequestDef<CreateMeetingRequest, CreateMeetingResponse> genForcreateMeeting() {
+    private static HttpRequestDef<CreateMeetingRequest, CreateMeetingResponse> genForCreateMeeting() {
         // basic
         HttpRequestDef.Builder<CreateMeetingRequest, CreateMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMeetingRequest.class, CreateMeetingResponse.class)
@@ -1969,47 +1785,39 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(CreateMeetingRequest::getUserUUID, CreateMeetingRequest::setUserUUID));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(CreateMeetingRequest::getXAuthorizationType,
+                CreateMeetingRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(CreateMeetingRequest::getXSiteId, CreateMeetingRequest::setXSiteId));
         builder.<RestScheduleConfDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestScheduleConfDTO.class),
-            f -> f.withMarshaller(CreateMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMeetingRequest::getBody, CreateMeetingRequest::setBody));
 
         // response
         builder.<List<ConferenceInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateMeetingResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ConferenceInfo.class));
+            f -> f.withMarshaller(CreateMeetingResponse::getBody, CreateMeetingResponse::setBody)
+                .withInnerContainerType(ConferenceInfo.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse> createPortalRefNonce =
-        genForcreatePortalRefNonce();
+        genForCreatePortalRefNonce();
 
-    private static HttpRequestDef<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse> genForcreatePortalRefNonce() {
+    private static HttpRequestDef<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse> genForCreatePortalRefNonce() {
         // basic
         HttpRequestDef.Builder<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePortalRefNonceRequest.class, CreatePortalRefNonceResponse.class)
@@ -2022,16 +1830,14 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePortalRefNonceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(CreatePortalRefNonceRequest::getXRequestId,
+                CreatePortalRefNonceRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePortalRefNonceRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(CreatePortalRefNonceRequest::getAcceptLanguage,
+                CreatePortalRefNonceRequest::setAcceptLanguage));
 
         // response
 
@@ -2039,9 +1845,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> createRecurringMeeting =
-        genForcreateRecurringMeeting();
+        genForCreateRecurringMeeting();
 
-    private static HttpRequestDef<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> genForcreateRecurringMeeting() {
+    private static HttpRequestDef<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> genForCreateRecurringMeeting() {
         // basic
         HttpRequestDef.Builder<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateRecurringMeetingRequest.class, CreateRecurringMeetingResponse.class)
@@ -2054,47 +1860,41 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecurringMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(CreateRecurringMeetingRequest::getUserUUID,
+                CreateRecurringMeetingRequest::setUserUUID));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecurringMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(CreateRecurringMeetingRequest::getXAuthorizationType,
+                CreateRecurringMeetingRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecurringMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(CreateRecurringMeetingRequest::getXSiteId,
+                CreateRecurringMeetingRequest::setXSiteId));
         builder.<RestScheduleConfDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestScheduleConfDTO.class),
-            f -> f.withMarshaller(CreateRecurringMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRecurringMeetingRequest::getBody, CreateRecurringMeetingRequest::setBody));
 
         // response
         builder.<List<ConferenceInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateRecurringMeetingResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ConferenceInfo.class));
+            f -> f.withMarshaller(CreateRecurringMeetingResponse::getBody, CreateRecurringMeetingResponse::setBody)
+                .withInnerContainerType(ConferenceInfo.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> createVisionActiveCode =
-        genForcreateVisionActiveCode();
+        genForCreateVisionActiveCode();
 
-    private static HttpRequestDef<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> genForcreateVisionActiveCode() {
+    private static HttpRequestDef<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> genForCreateVisionActiveCode() {
         // basic
         HttpRequestDef.Builder<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateVisionActiveCodeRequest.class, CreateVisionActiveCodeResponse.class)
@@ -2107,23 +1907,19 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVisionActiveCodeRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(CreateVisionActiveCodeRequest::getXRequestId,
+                CreateVisionActiveCodeRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVisionActiveCodeRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateVisionActiveCodeRequest::getAcceptLanguage,
+                CreateVisionActiveCodeRequest::setAcceptLanguage));
         builder.<VisionActiveCodeDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VisionActiveCodeDTO.class),
-            f -> f.withMarshaller(CreateVisionActiveCodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVisionActiveCodeRequest::getBody, CreateVisionActiveCodeRequest::setBody));
 
         // response
 
@@ -2131,9 +1927,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse> createWebSocketToken =
-        genForcreateWebSocketToken();
+        genForCreateWebSocketToken();
 
-    private static HttpRequestDef<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse> genForcreateWebSocketToken() {
+    private static HttpRequestDef<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse> genForCreateWebSocketToken() {
         // basic
         HttpRequestDef.Builder<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, CreateWebSocketTokenRequest.class, CreateWebSocketTokenResponse.class)
@@ -2146,16 +1942,14 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateWebSocketTokenRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(CreateWebSocketTokenRequest::getConferenceID,
+                CreateWebSocketTokenRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateWebSocketTokenRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(CreateWebSocketTokenRequest::getXConferenceAuthorization,
+                CreateWebSocketTokenRequest::setXConferenceAuthorization));
 
         // response
 
@@ -2163,9 +1957,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<CreateWebinarRequest, CreateWebinarResponse> createWebinar =
-        genForcreateWebinar();
+        genForCreateWebinar();
 
-    private static HttpRequestDef<CreateWebinarRequest, CreateWebinarResponse> genForcreateWebinar() {
+    private static HttpRequestDef<CreateWebinarRequest, CreateWebinarResponse> genForCreateWebinar() {
         // basic
         HttpRequestDef.Builder<CreateWebinarRequest, CreateWebinarResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateWebinarRequest.class, CreateWebinarResponse.class)
@@ -2178,23 +1972,17 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateWebinarRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(CreateWebinarRequest::getXRequestId, CreateWebinarRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateWebinarRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateWebinarRequest::getAcceptLanguage, CreateWebinarRequest::setAcceptLanguage));
         builder.<OpenScheduleConfReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenScheduleConfReq.class),
-            f -> f.withMarshaller(CreateWebinarRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateWebinarRequest::getBody, CreateWebinarRequest::setBody));
 
         // response
 
@@ -2202,9 +1990,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<DeleteAttendeesRequest, DeleteAttendeesResponse> deleteAttendees =
-        genFordeleteAttendees();
+        genForDeleteAttendees();
 
-    private static HttpRequestDef<DeleteAttendeesRequest, DeleteAttendeesResponse> genFordeleteAttendees() {
+    private static HttpRequestDef<DeleteAttendeesRequest, DeleteAttendeesResponse> genForDeleteAttendees() {
         // basic
         HttpRequestDef.Builder<DeleteAttendeesRequest, DeleteAttendeesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteAttendeesRequest.class, DeleteAttendeesResponse.class)
@@ -2217,32 +2005,27 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAttendeesRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(DeleteAttendeesRequest::getConferenceID, DeleteAttendeesRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAttendeesRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(DeleteAttendeesRequest::getXConferenceAuthorization,
+                DeleteAttendeesRequest::setXConferenceAuthorization));
         builder.<RestBulkDelAttendReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestBulkDelAttendReqBody.class),
-            f -> f.withMarshaller(DeleteAttendeesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteAttendeesRequest::getBody, DeleteAttendeesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteCorpRequest, DeleteCorpResponse> deleteCorp = genFordeleteCorp();
+    public static final HttpRequestDef<DeleteCorpRequest, DeleteCorpResponse> deleteCorp = genForDeleteCorp();
 
-    private static HttpRequestDef<DeleteCorpRequest, DeleteCorpResponse> genFordeleteCorp() {
+    private static HttpRequestDef<DeleteCorpRequest, DeleteCorpResponse> genForDeleteCorp() {
         // basic
         HttpRequestDef.Builder<DeleteCorpRequest, DeleteCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCorpRequest.class, DeleteCorpResponse.class)
@@ -2255,23 +2038,17 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCorpRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteCorpRequest::getId, DeleteCorpRequest::setId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCorpRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteCorpRequest::getXRequestId, DeleteCorpRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCorpRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteCorpRequest::getAcceptLanguage, DeleteCorpRequest::setAcceptLanguage));
 
         // response
 
@@ -2279,9 +2056,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<DeleteCorpVmrRequest, DeleteCorpVmrResponse> deleteCorpVmr =
-        genFordeleteCorpVmr();
+        genForDeleteCorpVmr();
 
-    private static HttpRequestDef<DeleteCorpVmrRequest, DeleteCorpVmrResponse> genFordeleteCorpVmr() {
+    private static HttpRequestDef<DeleteCorpVmrRequest, DeleteCorpVmrResponse> genForDeleteCorpVmr() {
         // basic
         HttpRequestDef.Builder<DeleteCorpVmrRequest, DeleteCorpVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteCorpVmrRequest.class, DeleteCorpVmrResponse.class)
@@ -2294,23 +2071,18 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCorpVmrRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteCorpVmrRequest::getXRequestId, DeleteCorpVmrRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCorpVmrRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteCorpVmrRequest::getAcceptLanguage, DeleteCorpVmrRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteCorpVmrRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(DeleteCorpVmrRequest::getBody, DeleteCorpVmrRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -2318,9 +2090,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<DeleteDepartmentRequest, DeleteDepartmentResponse> deleteDepartment =
-        genFordeleteDepartment();
+        genForDeleteDepartment();
 
-    private static HttpRequestDef<DeleteDepartmentRequest, DeleteDepartmentResponse> genFordeleteDepartment() {
+    private static HttpRequestDef<DeleteDepartmentRequest, DeleteDepartmentResponse> genForDeleteDepartment() {
         // basic
         HttpRequestDef.Builder<DeleteDepartmentRequest, DeleteDepartmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDepartmentRequest.class, DeleteDepartmentResponse.class)
@@ -2333,32 +2105,27 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDepartmentRequest::getDeptCode, (req, v) -> {
-                req.setDeptCode(v);
-            }));
+            f -> f.withMarshaller(DeleteDepartmentRequest::getDeptCode, DeleteDepartmentRequest::setDeptCode));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDepartmentRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteDepartmentRequest::getXRequestId, DeleteDepartmentRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDepartmentRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteDepartmentRequest::getAcceptLanguage,
+                DeleteDepartmentRequest::setAcceptLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteLayoutRequest, DeleteLayoutResponse> deleteLayout = genFordeleteLayout();
+    public static final HttpRequestDef<DeleteLayoutRequest, DeleteLayoutResponse> deleteLayout = genForDeleteLayout();
 
-    private static HttpRequestDef<DeleteLayoutRequest, DeleteLayoutResponse> genFordeleteLayout() {
+    private static HttpRequestDef<DeleteLayoutRequest, DeleteLayoutResponse> genForDeleteLayout() {
         // basic
         HttpRequestDef.Builder<DeleteLayoutRequest, DeleteLayoutResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLayoutRequest.class, DeleteLayoutResponse.class)
@@ -2371,23 +2138,18 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLayoutRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(DeleteLayoutRequest::getConferenceID, DeleteLayoutRequest::setConferenceID));
         builder.<String>withRequestField("uuID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLayoutRequest::getUuID, (req, v) -> {
-                req.setUuID(v);
-            }));
+            f -> f.withMarshaller(DeleteLayoutRequest::getUuID, DeleteLayoutRequest::setUuID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLayoutRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(DeleteLayoutRequest::getXConferenceAuthorization,
+                DeleteLayoutRequest::setXConferenceAuthorization));
 
         // response
 
@@ -2395,9 +2157,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<DeleteRecordingsRequest, DeleteRecordingsResponse> deleteRecordings =
-        genFordeleteRecordings();
+        genForDeleteRecordings();
 
-    private static HttpRequestDef<DeleteRecordingsRequest, DeleteRecordingsResponse> genFordeleteRecordings() {
+    private static HttpRequestDef<DeleteRecordingsRequest, DeleteRecordingsResponse> genForDeleteRecordings() {
         // basic
         HttpRequestDef.Builder<DeleteRecordingsRequest, DeleteRecordingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordingsRequest.class, DeleteRecordingsResponse.class)
@@ -2410,30 +2172,23 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordingsRequest::getConfUUIDs, (req, v) -> {
-                req.setConfUUIDs(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordingsRequest::getConfUUIDs, DeleteRecordingsRequest::setConfUUIDs));
         builder.<String>withRequestField("userUUID",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordingsRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordingsRequest::getUserUUID, DeleteRecordingsRequest::setUserUUID));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordingsRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordingsRequest::getXAuthorizationType,
+                DeleteRecordingsRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordingsRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordingsRequest::getXSiteId, DeleteRecordingsRequest::setXSiteId));
 
         // response
 
@@ -2441,9 +2196,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> deleteResource =
-        genFordeleteResource();
+        genForDeleteResource();
 
-    private static HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> genFordeleteResource() {
+    private static HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> genForDeleteResource() {
         // basic
         HttpRequestDef.Builder<DeleteResourceRequest, DeleteResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteResourceRequest.class, DeleteResourceResponse.class)
@@ -2456,39 +2211,32 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceRequest::getCorpId, (req, v) -> {
-                req.setCorpId(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceRequest::getCorpId, DeleteResourceRequest::setCorpId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceRequest::getXRequestId, DeleteResourceRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceRequest::getAcceptLanguage, DeleteResourceRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(DeleteResourceRequest::getBody, DeleteResourceRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTokenRequest, DeleteTokenResponse> deleteToken = genFordeleteToken();
+    public static final HttpRequestDef<DeleteTokenRequest, DeleteTokenResponse> deleteToken = genForDeleteToken();
 
-    private static HttpRequestDef<DeleteTokenRequest, DeleteTokenResponse> genFordeleteToken() {
+    private static HttpRequestDef<DeleteTokenRequest, DeleteTokenResponse> genForDeleteToken() {
         // basic
         HttpRequestDef.Builder<DeleteTokenRequest, DeleteTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTokenRequest.class, DeleteTokenResponse.class)
@@ -2501,16 +2249,12 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTokenRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(DeleteTokenRequest::getXRequestID, DeleteTokenRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTokenRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteTokenRequest::getAcceptLanguage, DeleteTokenRequest::setAcceptLanguage));
 
         // response
 
@@ -2518,9 +2262,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> deleteVisionActiveCode =
-        genFordeleteVisionActiveCode();
+        genForDeleteVisionActiveCode();
 
-    private static HttpRequestDef<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> genFordeleteVisionActiveCode() {
+    private static HttpRequestDef<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> genForDeleteVisionActiveCode() {
         // basic
         HttpRequestDef.Builder<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteVisionActiveCodeRequest.class, DeleteVisionActiveCodeResponse.class)
@@ -2533,23 +2277,20 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVisionActiveCodeRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteVisionActiveCodeRequest::getXRequestId,
+                DeleteVisionActiveCodeRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVisionActiveCodeRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteVisionActiveCodeRequest::getAcceptLanguage,
+                DeleteVisionActiveCodeRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteVisionActiveCodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(DeleteVisionActiveCodeRequest::getBody, DeleteVisionActiveCodeRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -2557,9 +2298,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> deleteWebHookConfig =
-        genFordeleteWebHookConfig();
+        genForDeleteWebHookConfig();
 
-    private static HttpRequestDef<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> genFordeleteWebHookConfig() {
+    private static HttpRequestDef<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> genForDeleteWebHookConfig() {
         // basic
         HttpRequestDef.Builder<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteWebHookConfigRequest.class, DeleteWebHookConfigResponse.class)
@@ -2572,9 +2313,7 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWebHookConfigRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteWebHookConfigRequest::getId, DeleteWebHookConfigRequest::setId));
 
         // response
 
@@ -2582,9 +2321,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<DeleteWebinarRequest, DeleteWebinarResponse> deleteWebinar =
-        genFordeleteWebinar();
+        genForDeleteWebinar();
 
-    private static HttpRequestDef<DeleteWebinarRequest, DeleteWebinarResponse> genFordeleteWebinar() {
+    private static HttpRequestDef<DeleteWebinarRequest, DeleteWebinarResponse> genForDeleteWebinar() {
         // basic
         HttpRequestDef.Builder<DeleteWebinarRequest, DeleteWebinarResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteWebinarRequest.class, DeleteWebinarResponse.class)
@@ -2597,23 +2336,17 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWebinarRequest::getConferenceId, (req, v) -> {
-                req.setConferenceId(v);
-            }));
+            f -> f.withMarshaller(DeleteWebinarRequest::getConferenceId, DeleteWebinarRequest::setConferenceId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWebinarRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteWebinarRequest::getXRequestId, DeleteWebinarRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWebinarRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteWebinarRequest::getAcceptLanguage, DeleteWebinarRequest::setAcceptLanguage));
 
         // response
 
@@ -2621,9 +2354,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<DisassociateVmrRequest, DisassociateVmrResponse> disassociateVmr =
-        genFordisassociateVmr();
+        genForDisassociateVmr();
 
-    private static HttpRequestDef<DisassociateVmrRequest, DisassociateVmrResponse> genFordisassociateVmr() {
+    private static HttpRequestDef<DisassociateVmrRequest, DisassociateVmrResponse> genForDisassociateVmr() {
         // basic
         HttpRequestDef.Builder<DisassociateVmrRequest, DisassociateVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisassociateVmrRequest.class, DisassociateVmrResponse.class)
@@ -2636,46 +2369,38 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateVmrRequest::getAccount, (req, v) -> {
-                req.setAccount(v);
-            }));
+            f -> f.withMarshaller(DisassociateVmrRequest::getAccount, DisassociateVmrRequest::setAccount));
         builder.<Integer>withRequestField("accountType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DisassociateVmrRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
+            f -> f.withMarshaller(DisassociateVmrRequest::getAccountType, DisassociateVmrRequest::setAccountType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateVmrRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(DisassociateVmrRequest::getXRequestId, DisassociateVmrRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateVmrRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(DisassociateVmrRequest::getAcceptLanguage,
+                DisassociateVmrRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DisassociateVmrRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(DisassociateVmrRequest::getBody, DisassociateVmrRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<HandRequest, HandResponse> hand = genForhand();
+    public static final HttpRequestDef<HandRequest, HandResponse> hand = genForHand();
 
-    private static HttpRequestDef<HandRequest, HandResponse> genForhand() {
+    private static HttpRequestDef<HandRequest, HandResponse> genForHand() {
         // basic
         HttpRequestDef.Builder<HandRequest, HandResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, HandRequest.class, HandResponse.class)
@@ -2688,39 +2413,31 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(HandRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(HandRequest::getConferenceID, HandRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(HandRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(HandRequest::getParticipantID, HandRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(HandRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(HandRequest::getXConferenceAuthorization, HandRequest::setXConferenceAuthorization));
         builder.<RestHandsUpReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestHandsUpReqBody.class),
-            f -> f.withMarshaller(HandRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(HandRequest::getBody, HandRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<HangUpRequest, HangUpResponse> hangUp = genForhangUp();
+    public static final HttpRequestDef<HangUpRequest, HangUpResponse> hangUp = genForHangUp();
 
-    private static HttpRequestDef<HangUpRequest, HangUpResponse> genForhangUp() {
+    private static HttpRequestDef<HangUpRequest, HangUpResponse> genForHangUp() {
         // basic
         HttpRequestDef.Builder<HangUpRequest, HangUpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, HangUpRequest.class, HangUpResponse.class)
@@ -2733,23 +2450,18 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(HangUpRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(HangUpRequest::getConferenceID, HangUpRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(HangUpRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(HangUpRequest::getXConferenceAuthorization,
+                HangUpRequest::setXConferenceAuthorization));
         builder.<RestBulkHangUpReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestBulkHangUpReqBody.class),
-            f -> f.withMarshaller(HangUpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(HangUpRequest::getBody, HangUpRequest::setBody));
 
         // response
 
@@ -2757,9 +2469,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<InviteOperateVideoRequest, InviteOperateVideoResponse> inviteOperateVideo =
-        genForinviteOperateVideo();
+        genForInviteOperateVideo();
 
-    private static HttpRequestDef<InviteOperateVideoRequest, InviteOperateVideoResponse> genForinviteOperateVideo() {
+    private static HttpRequestDef<InviteOperateVideoRequest, InviteOperateVideoResponse> genForInviteOperateVideo() {
         // basic
         HttpRequestDef.Builder<InviteOperateVideoRequest, InviteOperateVideoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, InviteOperateVideoRequest.class, InviteOperateVideoResponse.class)
@@ -2772,30 +2484,25 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteOperateVideoRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(InviteOperateVideoRequest::getConferenceID,
+                InviteOperateVideoRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteOperateVideoRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(InviteOperateVideoRequest::getParticipantID,
+                InviteOperateVideoRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteOperateVideoRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(InviteOperateVideoRequest::getXConferenceAuthorization,
+                InviteOperateVideoRequest::setXConferenceAuthorization));
         builder.<RestVideoBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestVideoBody.class),
-            f -> f.withMarshaller(InviteOperateVideoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InviteOperateVideoRequest::getBody, InviteOperateVideoRequest::setBody));
 
         // response
 
@@ -2803,9 +2510,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<InviteParticipantRequest, InviteParticipantResponse> inviteParticipant =
-        genForinviteParticipant();
+        genForInviteParticipant();
 
-    private static HttpRequestDef<InviteParticipantRequest, InviteParticipantResponse> genForinviteParticipant() {
+    private static HttpRequestDef<InviteParticipantRequest, InviteParticipantResponse> genForInviteParticipant() {
         // basic
         HttpRequestDef.Builder<InviteParticipantRequest, InviteParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, InviteParticipantRequest.class, InviteParticipantResponse.class)
@@ -2818,32 +2525,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteParticipantRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(InviteParticipantRequest::getConferenceID,
+                InviteParticipantRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteParticipantRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(InviteParticipantRequest::getXConferenceAuthorization,
+                InviteParticipantRequest::setXConferenceAuthorization));
         builder.<RestInviteReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestInviteReqBody.class),
-            f -> f.withMarshaller(InviteParticipantRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InviteParticipantRequest::getBody, InviteParticipantRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<InviteShareRequest, InviteShareResponse> inviteShare = genForinviteShare();
+    public static final HttpRequestDef<InviteShareRequest, InviteShareResponse> inviteShare = genForInviteShare();
 
-    private static HttpRequestDef<InviteShareRequest, InviteShareResponse> genForinviteShare() {
+    private static HttpRequestDef<InviteShareRequest, InviteShareResponse> genForInviteShare() {
         // basic
         HttpRequestDef.Builder<InviteShareRequest, InviteShareResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, InviteShareRequest.class, InviteShareResponse.class)
@@ -2856,39 +2559,32 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteShareRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(InviteShareRequest::getConferenceID, InviteShareRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteShareRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(InviteShareRequest::getParticipantID, InviteShareRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteShareRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(InviteShareRequest::getXConferenceAuthorization,
+                InviteShareRequest::setXConferenceAuthorization));
         builder.<InviteShareDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InviteShareDTO.class),
-            f -> f.withMarshaller(InviteShareRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InviteShareRequest::getBody, InviteShareRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<InviteUserRequest, InviteUserResponse> inviteUser = genForinviteUser();
+    public static final HttpRequestDef<InviteUserRequest, InviteUserResponse> inviteUser = genForInviteUser();
 
-    private static HttpRequestDef<InviteUserRequest, InviteUserResponse> genForinviteUser() {
+    private static HttpRequestDef<InviteUserRequest, InviteUserResponse> genForInviteUser() {
         // basic
         HttpRequestDef.Builder<InviteUserRequest, InviteUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, InviteUserRequest.class, InviteUserResponse.class)
@@ -2901,23 +2597,17 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteUserRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(InviteUserRequest::getXRequestId, InviteUserRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteUserRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(InviteUserRequest::getAcceptLanguage, InviteUserRequest::setAcceptLanguage));
         builder.<AddUserRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddUserRequestBody.class),
-            f -> f.withMarshaller(InviteUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InviteUserRequest::getBody, InviteUserRequest::setBody));
 
         // response
 
@@ -2925,9 +2615,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<InviteWithPwdRequest, InviteWithPwdResponse> inviteWithPwd =
-        genForinviteWithPwd();
+        genForInviteWithPwd();
 
-    private static HttpRequestDef<InviteWithPwdRequest, InviteWithPwdResponse> genForinviteWithPwd() {
+    private static HttpRequestDef<InviteWithPwdRequest, InviteWithPwdResponse> genForInviteWithPwd() {
         // basic
         HttpRequestDef.Builder<InviteWithPwdRequest, InviteWithPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, InviteWithPwdRequest.class, InviteWithPwdResponse.class)
@@ -2940,16 +2630,12 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InviteWithPwdRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(InviteWithPwdRequest::getConferenceID, InviteWithPwdRequest::setConferenceID));
         builder.<RestInviteWithPwdReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestInviteWithPwdReqBody.class),
-            f -> f.withMarshaller(InviteWithPwdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InviteWithPwdRequest::getBody, InviteWithPwdRequest::setBody));
 
         // response
 
@@ -2957,9 +2643,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> listHistoryWebinars =
-        genForlistHistoryWebinars();
+        genForListHistoryWebinars();
 
-    private static HttpRequestDef<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> genForlistHistoryWebinars() {
+    private static HttpRequestDef<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> genForListHistoryWebinars() {
         // basic
         HttpRequestDef.Builder<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHistoryWebinarsRequest.class, ListHistoryWebinarsResponse.class)
@@ -2972,58 +2658,44 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryWebinarsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getOffset, ListHistoryWebinarsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryWebinarsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getLimit, ListHistoryWebinarsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryWebinarsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getSearchKey, ListHistoryWebinarsRequest::setSearchKey));
         builder.<String>withRequestField("sortType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryWebinarsRequest::getSortType, (req, v) -> {
-                req.setSortType(v);
-            }));
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getSortType, ListHistoryWebinarsRequest::setSortType));
         builder.<String>withRequestField("startTime",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryWebinarsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getStartTime, ListHistoryWebinarsRequest::setStartTime));
         builder.<String>withRequestField("endTime",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryWebinarsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getEndTime, ListHistoryWebinarsRequest::setEndTime));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryWebinarsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getXRequestId,
+                ListHistoryWebinarsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryWebinarsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getAcceptLanguage,
+                ListHistoryWebinarsRequest::setAcceptLanguage));
 
         // response
 
@@ -3031,9 +2703,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> listOngoingWebinars =
-        genForlistOngoingWebinars();
+        genForListOngoingWebinars();
 
-    private static HttpRequestDef<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> genForlistOngoingWebinars() {
+    private static HttpRequestDef<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> genForListOngoingWebinars() {
         // basic
         HttpRequestDef.Builder<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOngoingWebinarsRequest.class, ListOngoingWebinarsResponse.class)
@@ -3046,44 +2718,34 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOngoingWebinarsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getOffset, ListOngoingWebinarsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOngoingWebinarsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getLimit, ListOngoingWebinarsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOngoingWebinarsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getSearchKey, ListOngoingWebinarsRequest::setSearchKey));
         builder.<String>withRequestField("sortType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOngoingWebinarsRequest::getSortType, (req, v) -> {
-                req.setSortType(v);
-            }));
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getSortType, ListOngoingWebinarsRequest::setSortType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOngoingWebinarsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getXRequestId,
+                ListOngoingWebinarsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOngoingWebinarsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getAcceptLanguage,
+                ListOngoingWebinarsRequest::setAcceptLanguage));
 
         // response
 
@@ -3091,9 +2753,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse> listUpComingWebinars =
-        genForlistUpComingWebinars();
+        genForListUpComingWebinars();
 
-    private static HttpRequestDef<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse> genForlistUpComingWebinars() {
+    private static HttpRequestDef<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse> genForListUpComingWebinars() {
         // basic
         HttpRequestDef.Builder<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListUpComingWebinarsRequest.class, ListUpComingWebinarsResponse.class)
@@ -3106,53 +2768,44 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUpComingWebinarsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getOffset, ListUpComingWebinarsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUpComingWebinarsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getLimit, ListUpComingWebinarsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpComingWebinarsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getSearchKey,
+                ListUpComingWebinarsRequest::setSearchKey));
         builder.<String>withRequestField("sortType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpComingWebinarsRequest::getSortType, (req, v) -> {
-                req.setSortType(v);
-            }));
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getSortType, ListUpComingWebinarsRequest::setSortType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpComingWebinarsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getXRequestId,
+                ListUpComingWebinarsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpComingWebinarsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getAcceptLanguage,
+                ListUpComingWebinarsRequest::setAcceptLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<LiveRequest, LiveResponse> live = genForlive();
+    public static final HttpRequestDef<LiveRequest, LiveResponse> live = genForLive();
 
-    private static HttpRequestDef<LiveRequest, LiveResponse> genForlive() {
+    private static HttpRequestDef<LiveRequest, LiveResponse> genForLive() {
         // basic
         HttpRequestDef.Builder<LiveRequest, LiveResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, LiveRequest.class, LiveResponse.class)
@@ -3165,32 +2818,26 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(LiveRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(LiveRequest::getConferenceID, LiveRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(LiveRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(LiveRequest::getXConferenceAuthorization, LiveRequest::setXConferenceAuthorization));
         builder.<RestSetLiveReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestSetLiveReqBody.class),
-            f -> f.withMarshaller(LiveRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(LiveRequest::getBody, LiveRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<LockMeetingRequest, LockMeetingResponse> lockMeeting = genForlockMeeting();
+    public static final HttpRequestDef<LockMeetingRequest, LockMeetingResponse> lockMeeting = genForLockMeeting();
 
-    private static HttpRequestDef<LockMeetingRequest, LockMeetingResponse> genForlockMeeting() {
+    private static HttpRequestDef<LockMeetingRequest, LockMeetingResponse> genForLockMeeting() {
         // basic
         HttpRequestDef.Builder<LockMeetingRequest, LockMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, LockMeetingRequest.class, LockMeetingResponse.class)
@@ -3203,32 +2850,27 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(LockMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(LockMeetingRequest::getConferenceID, LockMeetingRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(LockMeetingRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(LockMeetingRequest::getXConferenceAuthorization,
+                LockMeetingRequest::setXConferenceAuthorization));
         builder.<RestLockReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestLockReqBody.class),
-            f -> f.withMarshaller(LockMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(LockMeetingRequest::getBody, LockMeetingRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<LockViewRequest, LockViewResponse> lockView = genForlockView();
+    public static final HttpRequestDef<LockViewRequest, LockViewResponse> lockView = genForLockView();
 
-    private static HttpRequestDef<LockViewRequest, LockViewResponse> genForlockView() {
+    private static HttpRequestDef<LockViewRequest, LockViewResponse> genForLockView() {
         // basic
         HttpRequestDef.Builder<LockViewRequest, LockViewResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, LockViewRequest.class, LockViewResponse.class)
@@ -3241,30 +2883,23 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(LockViewRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(LockViewRequest::getConferenceID, LockViewRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(LockViewRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(LockViewRequest::getParticipantID, LockViewRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(LockViewRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(LockViewRequest::getXConferenceAuthorization,
+                LockViewRequest::setXConferenceAuthorization));
         builder.<RestLockSiteViewReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestLockSiteViewReqBody.class),
-            f -> f.withMarshaller(LockViewRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(LockViewRequest::getBody, LockViewRequest::setBody));
 
         // response
 
@@ -3272,9 +2907,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse> moveToWaitingRoom =
-        genFormoveToWaitingRoom();
+        genForMoveToWaitingRoom();
 
-    private static HttpRequestDef<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse> genFormoveToWaitingRoom() {
+    private static HttpRequestDef<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse> genForMoveToWaitingRoom() {
         // basic
         HttpRequestDef.Builder<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, MoveToWaitingRoomRequest.class, MoveToWaitingRoomResponse.class)
@@ -3287,32 +2922,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MoveToWaitingRoomRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(MoveToWaitingRoomRequest::getConferenceID,
+                MoveToWaitingRoomRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MoveToWaitingRoomRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(MoveToWaitingRoomRequest::getXConferenceAuthorization,
+                MoveToWaitingRoomRequest::setXConferenceAuthorization));
         builder.<RestMoveToWaitingRoomReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestMoveToWaitingRoomReqBody.class),
-            f -> f.withMarshaller(MoveToWaitingRoomRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MoveToWaitingRoomRequest::getBody, MoveToWaitingRoomRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<MuteMeetingRequest, MuteMeetingResponse> muteMeeting = genFormuteMeeting();
+    public static final HttpRequestDef<MuteMeetingRequest, MuteMeetingResponse> muteMeeting = genForMuteMeeting();
 
-    private static HttpRequestDef<MuteMeetingRequest, MuteMeetingResponse> genFormuteMeeting() {
+    private static HttpRequestDef<MuteMeetingRequest, MuteMeetingResponse> genForMuteMeeting() {
         // basic
         HttpRequestDef.Builder<MuteMeetingRequest, MuteMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, MuteMeetingRequest.class, MuteMeetingResponse.class)
@@ -3325,23 +2956,18 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MuteMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(MuteMeetingRequest::getConferenceID, MuteMeetingRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MuteMeetingRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(MuteMeetingRequest::getXConferenceAuthorization,
+                MuteMeetingRequest::setXConferenceAuthorization));
         builder.<RestMuteReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestMuteReqBody.class),
-            f -> f.withMarshaller(MuteMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MuteMeetingRequest::getBody, MuteMeetingRequest::setBody));
 
         // response
 
@@ -3349,9 +2975,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<MuteParticipantRequest, MuteParticipantResponse> muteParticipant =
-        genFormuteParticipant();
+        genForMuteParticipant();
 
-    private static HttpRequestDef<MuteParticipantRequest, MuteParticipantResponse> genFormuteParticipant() {
+    private static HttpRequestDef<MuteParticipantRequest, MuteParticipantResponse> genForMuteParticipant() {
         // basic
         HttpRequestDef.Builder<MuteParticipantRequest, MuteParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, MuteParticipantRequest.class, MuteParticipantResponse.class)
@@ -3364,30 +2990,23 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MuteParticipantRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(MuteParticipantRequest::getConferenceID, MuteParticipantRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MuteParticipantRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(MuteParticipantRequest::getParticipantID, MuteParticipantRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MuteParticipantRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(MuteParticipantRequest::getXConferenceAuthorization,
+                MuteParticipantRequest::setXConferenceAuthorization));
         builder.<RestMuteParticipantReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestMuteParticipantReqBody.class),
-            f -> f.withMarshaller(MuteParticipantRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MuteParticipantRequest::getBody, MuteParticipantRequest::setBody));
 
         // response
 
@@ -3395,9 +3014,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ProlongMeetingRequest, ProlongMeetingResponse> prolongMeeting =
-        genForprolongMeeting();
+        genForProlongMeeting();
 
-    private static HttpRequestDef<ProlongMeetingRequest, ProlongMeetingResponse> genForprolongMeeting() {
+    private static HttpRequestDef<ProlongMeetingRequest, ProlongMeetingResponse> genForProlongMeeting() {
         // basic
         HttpRequestDef.Builder<ProlongMeetingRequest, ProlongMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ProlongMeetingRequest.class, ProlongMeetingResponse.class)
@@ -3410,32 +3029,27 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ProlongMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(ProlongMeetingRequest::getConferenceID, ProlongMeetingRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ProlongMeetingRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(ProlongMeetingRequest::getXConferenceAuthorization,
+                ProlongMeetingRequest::setXConferenceAuthorization));
         builder.<RestProlongDurReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestProlongDurReqBody.class),
-            f -> f.withMarshaller(ProlongMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ProlongMeetingRequest::getBody, ProlongMeetingRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecordRequest, RecordResponse> record = genForrecord();
+    public static final HttpRequestDef<RecordRequest, RecordResponse> record = genForRecord();
 
-    private static HttpRequestDef<RecordRequest, RecordResponse> genForrecord() {
+    private static HttpRequestDef<RecordRequest, RecordResponse> genForRecord() {
         // basic
         HttpRequestDef.Builder<RecordRequest, RecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RecordRequest.class, RecordResponse.class)
@@ -3448,23 +3062,18 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RecordRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(RecordRequest::getConferenceID, RecordRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RecordRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(RecordRequest::getXConferenceAuthorization,
+                RecordRequest::setXConferenceAuthorization));
         builder.<RestSetRecordReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestSetRecordReqBody.class),
-            f -> f.withMarshaller(RecordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RecordRequest::getBody, RecordRequest::setBody));
 
         // response
 
@@ -3472,9 +3081,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<RenameParticipantRequest, RenameParticipantResponse> renameParticipant =
-        genForrenameParticipant();
+        genForRenameParticipant();
 
-    private static HttpRequestDef<RenameParticipantRequest, RenameParticipantResponse> genForrenameParticipant() {
+    private static HttpRequestDef<RenameParticipantRequest, RenameParticipantResponse> genForRenameParticipant() {
         // basic
         HttpRequestDef.Builder<RenameParticipantRequest, RenameParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RenameParticipantRequest.class, RenameParticipantResponse.class)
@@ -3487,23 +3096,19 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RenameParticipantRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(RenameParticipantRequest::getConferenceID,
+                RenameParticipantRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RenameParticipantRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(RenameParticipantRequest::getXConferenceAuthorization,
+                RenameParticipantRequest::setXConferenceAuthorization));
         builder.<RestRenamePartReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestRenamePartReqBody.class),
-            f -> f.withMarshaller(RenameParticipantRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RenameParticipantRequest::getBody, RenameParticipantRequest::setBody));
 
         // response
 
@@ -3511,9 +3116,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ResetActivecodeRequest, ResetActivecodeResponse> resetActivecode =
-        genForresetActivecode();
+        genForResetActivecode();
 
-    private static HttpRequestDef<ResetActivecodeRequest, ResetActivecodeResponse> genForresetActivecode() {
+    private static HttpRequestDef<ResetActivecodeRequest, ResetActivecodeResponse> genForResetActivecode() {
         // basic
         HttpRequestDef.Builder<ResetActivecodeRequest, ResetActivecodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetActivecodeRequest.class, ResetActivecodeResponse.class)
@@ -3526,39 +3131,32 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetActivecodeRequest::getSn, (req, v) -> {
-                req.setSn(v);
-            }));
+            f -> f.withMarshaller(ResetActivecodeRequest::getSn, ResetActivecodeRequest::setSn));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetActivecodeRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ResetActivecodeRequest::getXRequestId, ResetActivecodeRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetActivecodeRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ResetActivecodeRequest::getAcceptLanguage,
+                ResetActivecodeRequest::setAcceptLanguage));
         builder.<ActiveDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ActiveDTO.class),
-            f -> f.withMarshaller(ResetActivecodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetActivecodeRequest::getBody, ResetActivecodeRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetPwdRequest, ResetPwdResponse> resetPwd = genForresetPwd();
+    public static final HttpRequestDef<ResetPwdRequest, ResetPwdResponse> resetPwd = genForResetPwd();
 
-    private static HttpRequestDef<ResetPwdRequest, ResetPwdResponse> genForresetPwd() {
+    private static HttpRequestDef<ResetPwdRequest, ResetPwdResponse> genForResetPwd() {
         // basic
         HttpRequestDef.Builder<ResetPwdRequest, ResetPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetPwdRequest.class, ResetPwdResponse.class)
@@ -3571,23 +3169,17 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPwdRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(ResetPwdRequest::getXRequestID, ResetPwdRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPwdRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ResetPwdRequest::getAcceptLanguage, ResetPwdRequest::setAcceptLanguage));
         builder.<ResetPwdReqDTOV1>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetPwdReqDTOV1.class),
-            f -> f.withMarshaller(ResetPwdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetPwdRequest::getBody, ResetPwdRequest::setBody));
 
         // response
 
@@ -3595,9 +3187,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ResetPwdByAdminRequest, ResetPwdByAdminResponse> resetPwdByAdmin =
-        genForresetPwdByAdmin();
+        genForResetPwdByAdmin();
 
-    private static HttpRequestDef<ResetPwdByAdminRequest, ResetPwdByAdminResponse> genForresetPwdByAdmin() {
+    private static HttpRequestDef<ResetPwdByAdminRequest, ResetPwdByAdminResponse> genForResetPwdByAdmin() {
         // basic
         HttpRequestDef.Builder<ResetPwdByAdminRequest, ResetPwdByAdminResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetPwdByAdminRequest.class, ResetPwdByAdminResponse.class)
@@ -3610,23 +3202,18 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPwdByAdminRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(ResetPwdByAdminRequest::getXRequestID, ResetPwdByAdminRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPwdByAdminRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ResetPwdByAdminRequest::getAcceptLanguage,
+                ResetPwdByAdminRequest::setAcceptLanguage));
         builder.<AdminResetPwdReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AdminResetPwdReqDTO.class),
-            f -> f.withMarshaller(ResetPwdByAdminRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetPwdByAdminRequest::getBody, ResetPwdByAdminRequest::setBody));
 
         // response
 
@@ -3634,9 +3221,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> resetVisionActiveCode =
-        genForresetVisionActiveCode();
+        genForResetVisionActiveCode();
 
-    private static HttpRequestDef<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> genForresetVisionActiveCode() {
+    private static HttpRequestDef<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> genForResetVisionActiveCode() {
         // basic
         HttpRequestDef.Builder<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, ResetVisionActiveCodeRequest.class, ResetVisionActiveCodeResponse.class)
@@ -3649,30 +3236,24 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getAccount, (req, v) -> {
-                req.setAccount(v);
-            }));
+            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getAccount, ResetVisionActiveCodeRequest::setAccount));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getXRequestId,
+                ResetVisionActiveCodeRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getAcceptLanguage,
+                ResetVisionActiveCodeRequest::setAcceptLanguage));
         builder.<ActiveDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ActiveDTO.class),
-            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getBody, ResetVisionActiveCodeRequest::setBody));
 
         // response
 
@@ -3680,9 +3261,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse> resumeSimultaneousInterpretation =
-        genForresumeSimultaneousInterpretation();
+        genForResumeSimultaneousInterpretation();
 
-    private static HttpRequestDef<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse> genForresumeSimultaneousInterpretation() {
+    private static HttpRequestDef<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse> genForResumeSimultaneousInterpretation() {
         // basic
         HttpRequestDef.Builder<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse> builder =
             HttpRequestDef
@@ -3698,23 +3279,20 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResumeSimultaneousInterpretationRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(ResumeSimultaneousInterpretationRequest::getConferenceID,
+                ResumeSimultaneousInterpretationRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResumeSimultaneousInterpretationRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(ResumeSimultaneousInterpretationRequest::getXConferenceAuthorization,
+                ResumeSimultaneousInterpretationRequest::setXConferenceAuthorization));
         builder.<RestSimultaneousInterpretationBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestSimultaneousInterpretationBody.class),
-            f -> f.withMarshaller(ResumeSimultaneousInterpretationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResumeSimultaneousInterpretationRequest::getBody,
+                ResumeSimultaneousInterpretationRequest::setBody));
 
         // response
 
@@ -3722,9 +3300,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<RollcallParticipantRequest, RollcallParticipantResponse> rollcallParticipant =
-        genForrollcallParticipant();
+        genForRollcallParticipant();
 
-    private static HttpRequestDef<RollcallParticipantRequest, RollcallParticipantResponse> genForrollcallParticipant() {
+    private static HttpRequestDef<RollcallParticipantRequest, RollcallParticipantResponse> genForRollcallParticipant() {
         // basic
         HttpRequestDef.Builder<RollcallParticipantRequest, RollcallParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RollcallParticipantRequest.class, RollcallParticipantResponse.class)
@@ -3737,32 +3315,29 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RollcallParticipantRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(RollcallParticipantRequest::getConferenceID,
+                RollcallParticipantRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RollcallParticipantRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(RollcallParticipantRequest::getParticipantID,
+                RollcallParticipantRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RollcallParticipantRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(RollcallParticipantRequest::getXConferenceAuthorization,
+                RollcallParticipantRequest::setXConferenceAuthorization));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SaveLayoutRequest, SaveLayoutResponse> saveLayout = genForsaveLayout();
+    public static final HttpRequestDef<SaveLayoutRequest, SaveLayoutResponse> saveLayout = genForSaveLayout();
 
-    private static HttpRequestDef<SaveLayoutRequest, SaveLayoutResponse> genForsaveLayout() {
+    private static HttpRequestDef<SaveLayoutRequest, SaveLayoutResponse> genForSaveLayout() {
         // basic
         HttpRequestDef.Builder<SaveLayoutRequest, SaveLayoutResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SaveLayoutRequest.class, SaveLayoutResponse.class)
@@ -3775,23 +3350,18 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SaveLayoutRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(SaveLayoutRequest::getConferenceID, SaveLayoutRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SaveLayoutRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(SaveLayoutRequest::getXConferenceAuthorization,
+                SaveLayoutRequest::setXConferenceAuthorization));
         builder.<RestPicLayoutBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestPicLayoutBody.class),
-            f -> f.withMarshaller(SaveLayoutRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SaveLayoutRequest::getBody, SaveLayoutRequest::setBody));
 
         // response
 
@@ -3799,9 +3369,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse> searchAttendanceRecordsOfHisMeeting =
-        genForsearchAttendanceRecordsOfHisMeeting();
+        genForSearchAttendanceRecordsOfHisMeeting();
 
-    private static HttpRequestDef<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse> genForsearchAttendanceRecordsOfHisMeeting() {
+    private static HttpRequestDef<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse> genForSearchAttendanceRecordsOfHisMeeting() {
         // basic
         HttpRequestDef.Builder<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse> builder =
             HttpRequestDef
@@ -3817,67 +3387,59 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getConfUUID, (req, v) -> {
-                req.setConfUUID(v);
-            }));
+            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getConfUUID,
+                SearchAttendanceRecordsOfHisMeetingRequest::setConfUUID));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getOffset,
+                SearchAttendanceRecordsOfHisMeetingRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getLimit,
+                SearchAttendanceRecordsOfHisMeetingRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getSearchKey,
+                SearchAttendanceRecordsOfHisMeetingRequest::setSearchKey));
         builder.<String>withRequestField("userUUID",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getUserUUID,
+                SearchAttendanceRecordsOfHisMeetingRequest::setUserUUID));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getXAuthorizationType,
+                SearchAttendanceRecordsOfHisMeetingRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getXSiteId,
+                SearchAttendanceRecordsOfHisMeetingRequest::setXSiteId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchAttendanceRecordsOfHisMeetingRequest::getAcceptLanguage,
+                SearchAttendanceRecordsOfHisMeetingRequest::setAcceptLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SearchCorpRequest, SearchCorpResponse> searchCorp = genForsearchCorp();
+    public static final HttpRequestDef<SearchCorpRequest, SearchCorpResponse> searchCorp = genForSearchCorp();
 
-    private static HttpRequestDef<SearchCorpRequest, SearchCorpResponse> genForsearchCorp() {
+    private static HttpRequestDef<SearchCorpRequest, SearchCorpResponse> genForSearchCorp() {
         // basic
         HttpRequestDef.Builder<SearchCorpRequest, SearchCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpRequest.class, SearchCorpResponse.class)
@@ -3890,37 +3452,27 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCorpRequest::getOffset, SearchCorpRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCorpRequest::getLimit, SearchCorpRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchCorpRequest::getSearchKey, SearchCorpRequest::setSearchKey));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchCorpRequest::getXRequestId, SearchCorpRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchCorpRequest::getAcceptLanguage, SearchCorpRequest::setAcceptLanguage));
 
         // response
 
@@ -3928,9 +3480,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchCorpAdminsRequest, SearchCorpAdminsResponse> searchCorpAdmins =
-        genForsearchCorpAdmins();
+        genForSearchCorpAdmins();
 
-    private static HttpRequestDef<SearchCorpAdminsRequest, SearchCorpAdminsResponse> genForsearchCorpAdmins() {
+    private static HttpRequestDef<SearchCorpAdminsRequest, SearchCorpAdminsResponse> genForSearchCorpAdmins() {
         // basic
         HttpRequestDef.Builder<SearchCorpAdminsRequest, SearchCorpAdminsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpAdminsRequest.class, SearchCorpAdminsResponse.class)
@@ -3943,37 +3495,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpAdminsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCorpAdminsRequest::getOffset, SearchCorpAdminsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpAdminsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCorpAdminsRequest::getLimit, SearchCorpAdminsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpAdminsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchCorpAdminsRequest::getSearchKey, SearchCorpAdminsRequest::setSearchKey));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpAdminsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchCorpAdminsRequest::getXRequestId, SearchCorpAdminsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpAdminsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchCorpAdminsRequest::getAcceptLanguage,
+                SearchCorpAdminsRequest::setAcceptLanguage));
 
         // response
 
@@ -3981,9 +3524,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchCorpDirRequest, SearchCorpDirResponse> searchCorpDir =
-        genForsearchCorpDir();
+        genForSearchCorpDir();
 
-    private static HttpRequestDef<SearchCorpDirRequest, SearchCorpDirResponse> genForsearchCorpDir() {
+    private static HttpRequestDef<SearchCorpDirRequest, SearchCorpDirResponse> genForSearchCorpDir() {
         // basic
         HttpRequestDef.Builder<SearchCorpDirRequest, SearchCorpDirResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpDirRequest.class, SearchCorpDirResponse.class)
@@ -3996,58 +3539,42 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpDirRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCorpDirRequest::getOffset, SearchCorpDirRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpDirRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCorpDirRequest::getLimit, SearchCorpDirRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpDirRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchCorpDirRequest::getSearchKey, SearchCorpDirRequest::setSearchKey));
         builder.<String>withRequestField("deptCode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpDirRequest::getDeptCode, (req, v) -> {
-                req.setDeptCode(v);
-            }));
+            f -> f.withMarshaller(SearchCorpDirRequest::getDeptCode, SearchCorpDirRequest::setDeptCode));
         builder.<Boolean>withRequestField("querySubDept",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchCorpDirRequest::getQuerySubDept, (req, v) -> {
-                req.setQuerySubDept(v);
-            }));
+            f -> f.withMarshaller(SearchCorpDirRequest::getQuerySubDept, SearchCorpDirRequest::setQuerySubDept));
         builder.<String>withRequestField("searchScope",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpDirRequest::getSearchScope, (req, v) -> {
-                req.setSearchScope(v);
-            }));
+            f -> f.withMarshaller(SearchCorpDirRequest::getSearchScope, SearchCorpDirRequest::setSearchScope));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpDirRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchCorpDirRequest::getXRequestId, SearchCorpDirRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpDirRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchCorpDirRequest::getAcceptLanguage, SearchCorpDirRequest::setAcceptLanguage));
 
         // response
 
@@ -4055,9 +3582,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse> searchCorpExternalDir =
-        genForsearchCorpExternalDir();
+        genForSearchCorpExternalDir();
 
-    private static HttpRequestDef<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse> genForsearchCorpExternalDir() {
+    private static HttpRequestDef<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse> genForSearchCorpExternalDir() {
         // basic
         HttpRequestDef.Builder<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchCorpExternalDirRequest.class, SearchCorpExternalDirResponse.class)
@@ -4070,44 +3597,36 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpExternalDirRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCorpExternalDirRequest::getOffset, SearchCorpExternalDirRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpExternalDirRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCorpExternalDirRequest::getLimit, SearchCorpExternalDirRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpExternalDirRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchCorpExternalDirRequest::getSearchKey,
+                SearchCorpExternalDirRequest::setSearchKey));
         builder.<String>withRequestField("searchScope",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpExternalDirRequest::getSearchScope, (req, v) -> {
-                req.setSearchScope(v);
-            }));
+            f -> f.withMarshaller(SearchCorpExternalDirRequest::getSearchScope,
+                SearchCorpExternalDirRequest::setSearchScope));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpExternalDirRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchCorpExternalDirRequest::getXRequestId,
+                SearchCorpExternalDirRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpExternalDirRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchCorpExternalDirRequest::getAcceptLanguage,
+                SearchCorpExternalDirRequest::setAcceptLanguage));
 
         // response
 
@@ -4115,9 +3634,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchCorpResourcesRequest, SearchCorpResourcesResponse> searchCorpResources =
-        genForsearchCorpResources();
+        genForSearchCorpResources();
 
-    private static HttpRequestDef<SearchCorpResourcesRequest, SearchCorpResourcesResponse> genForsearchCorpResources() {
+    private static HttpRequestDef<SearchCorpResourcesRequest, SearchCorpResourcesResponse> genForSearchCorpResources() {
         // basic
         HttpRequestDef.Builder<SearchCorpResourcesRequest, SearchCorpResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpResourcesRequest.class, SearchCorpResourcesResponse.class)
@@ -4130,86 +3649,66 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getOffset, SearchCorpResourcesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getLimit, SearchCorpResourcesRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getSearchKey, SearchCorpResourcesRequest::setSearchKey));
         builder.<Long>withRequestField("startExpireDate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getStartExpireDate, (req, v) -> {
-                req.setStartExpireDate(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getStartExpireDate,
+                SearchCorpResourcesRequest::setStartExpireDate));
         builder.<Long>withRequestField("endExpireDate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getEndExpireDate, (req, v) -> {
-                req.setEndExpireDate(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getEndExpireDate,
+                SearchCorpResourcesRequest::setEndExpireDate));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getType, SearchCorpResourcesRequest::setType));
         builder.<Integer>withRequestField("vmrMode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getVmrMode, (req, v) -> {
-                req.setVmrMode(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getVmrMode, SearchCorpResourcesRequest::setVmrMode));
         builder.<String>withRequestField("typeId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getTypeId, (req, v) -> {
-                req.setTypeId(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getTypeId, SearchCorpResourcesRequest::setTypeId));
         builder.<String>withRequestField("orderId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getOrderId, SearchCorpResourcesRequest::setOrderId));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getStatus, SearchCorpResourcesRequest::setStatus));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getXRequestId,
+                SearchCorpResourcesRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpResourcesRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getAcceptLanguage,
+                SearchCorpResourcesRequest::setAcceptLanguage));
 
         // response
 
@@ -4217,9 +3716,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchCorpVmrRequest, SearchCorpVmrResponse> searchCorpVmr =
-        genForsearchCorpVmr();
+        genForSearchCorpVmr();
 
-    private static HttpRequestDef<SearchCorpVmrRequest, SearchCorpVmrResponse> genForsearchCorpVmr() {
+    private static HttpRequestDef<SearchCorpVmrRequest, SearchCorpVmrResponse> genForSearchCorpVmr() {
         // basic
         HttpRequestDef.Builder<SearchCorpVmrRequest, SearchCorpVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpVmrRequest.class, SearchCorpVmrResponse.class)
@@ -4232,51 +3731,37 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpVmrRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCorpVmrRequest::getOffset, SearchCorpVmrRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpVmrRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCorpVmrRequest::getLimit, SearchCorpVmrRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpVmrRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchCorpVmrRequest::getSearchKey, SearchCorpVmrRequest::setSearchKey));
         builder.<Integer>withRequestField("vmrMode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpVmrRequest::getVmrMode, (req, v) -> {
-                req.setVmrMode(v);
-            }));
+            f -> f.withMarshaller(SearchCorpVmrRequest::getVmrMode, SearchCorpVmrRequest::setVmrMode));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCorpVmrRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(SearchCorpVmrRequest::getStatus, SearchCorpVmrRequest::setStatus));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpVmrRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchCorpVmrRequest::getXRequestId, SearchCorpVmrRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCorpVmrRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchCorpVmrRequest::getAcceptLanguage, SearchCorpVmrRequest::setAcceptLanguage));
 
         // response
 
@@ -4284,9 +3769,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse> searchCtlRecordsOfHisMeeting =
-        genForsearchCtlRecordsOfHisMeeting();
+        genForSearchCtlRecordsOfHisMeeting();
 
-    private static HttpRequestDef<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse> genForsearchCtlRecordsOfHisMeeting() {
+    private static HttpRequestDef<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse> genForSearchCtlRecordsOfHisMeeting() {
         // basic
         HttpRequestDef.Builder<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse> builder =
             HttpRequestDef
@@ -4302,51 +3787,44 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getConfUUID, (req, v) -> {
-                req.setConfUUID(v);
-            }));
+            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getConfUUID,
+                SearchCtlRecordsOfHisMeetingRequest::setConfUUID));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getOffset,
+                SearchCtlRecordsOfHisMeetingRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getLimit,
+                SearchCtlRecordsOfHisMeetingRequest::setLimit));
         builder.<String>withRequestField("userUUID",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getUserUUID,
+                SearchCtlRecordsOfHisMeetingRequest::setUserUUID));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getXAuthorizationType,
+                SearchCtlRecordsOfHisMeetingRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getXSiteId,
+                SearchCtlRecordsOfHisMeetingRequest::setXSiteId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchCtlRecordsOfHisMeetingRequest::getAcceptLanguage,
+                SearchCtlRecordsOfHisMeetingRequest::setAcceptLanguage));
 
         // response
 
@@ -4354,9 +3832,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse> searchDepartmentByName =
-        genForsearchDepartmentByName();
+        genForSearchDepartmentByName();
 
-    private static HttpRequestDef<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse> genForsearchDepartmentByName() {
+    private static HttpRequestDef<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse> genForSearchDepartmentByName() {
         // basic
         HttpRequestDef.Builder<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchDepartmentByNameRequest.class, SearchDepartmentByNameResponse.class)
@@ -4369,40 +3847,36 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDepartmentByNameRequest::getDeptName, (req, v) -> {
-                req.setDeptName(v);
-            }));
+            f -> f.withMarshaller(SearchDepartmentByNameRequest::getDeptName,
+                SearchDepartmentByNameRequest::setDeptName));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDepartmentByNameRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchDepartmentByNameRequest::getXRequestId,
+                SearchDepartmentByNameRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDepartmentByNameRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchDepartmentByNameRequest::getAcceptLanguage,
+                SearchDepartmentByNameRequest::setAcceptLanguage));
 
         // response
         builder.<List<QueryDeptResultDTO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(SearchDepartmentByNameResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(QueryDeptResultDTO.class));
+            f -> f.withMarshaller(SearchDepartmentByNameResponse::getBody, SearchDepartmentByNameResponse::setBody)
+                .withInnerContainerType(QueryDeptResultDTO.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<SearchDevicesRequest, SearchDevicesResponse> searchDevices =
-        genForsearchDevices();
+        genForSearchDevices();
 
-    private static HttpRequestDef<SearchDevicesRequest, SearchDevicesResponse> genForsearchDevices() {
+    private static HttpRequestDef<SearchDevicesRequest, SearchDevicesResponse> genForSearchDevices() {
         // basic
         HttpRequestDef.Builder<SearchDevicesRequest, SearchDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchDevicesRequest.class, SearchDevicesResponse.class)
@@ -4415,58 +3889,42 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchDevicesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchDevicesRequest::getOffset, SearchDevicesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchDevicesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchDevicesRequest::getLimit, SearchDevicesRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDevicesRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchDevicesRequest::getSearchKey, SearchDevicesRequest::setSearchKey));
         builder.<String>withRequestField("model",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDevicesRequest::getModel, (req, v) -> {
-                req.setModel(v);
-            }));
+            f -> f.withMarshaller(SearchDevicesRequest::getModel, SearchDevicesRequest::setModel));
         builder.<String>withRequestField("deptCode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDevicesRequest::getDeptCode, (req, v) -> {
-                req.setDeptCode(v);
-            }));
+            f -> f.withMarshaller(SearchDevicesRequest::getDeptCode, SearchDevicesRequest::setDeptCode));
         builder.<Boolean>withRequestField("enableSubDept",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchDevicesRequest::getEnableSubDept, (req, v) -> {
-                req.setEnableSubDept(v);
-            }));
+            f -> f.withMarshaller(SearchDevicesRequest::getEnableSubDept, SearchDevicesRequest::setEnableSubDept));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDevicesRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchDevicesRequest::getXRequestId, SearchDevicesRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchDevicesRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchDevicesRequest::getAcceptLanguage, SearchDevicesRequest::setAcceptLanguage));
 
         // response
 
@@ -4474,9 +3932,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchHisMeetingsRequest, SearchHisMeetingsResponse> searchHisMeetings =
-        genForsearchHisMeetings();
+        genForSearchHisMeetings();
 
-    private static HttpRequestDef<SearchHisMeetingsRequest, SearchHisMeetingsResponse> genForsearchHisMeetings() {
+    private static HttpRequestDef<SearchHisMeetingsRequest, SearchHisMeetingsResponse> genForSearchHisMeetings() {
         // basic
         HttpRequestDef.Builder<SearchHisMeetingsRequest, SearchHisMeetingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchHisMeetingsRequest.class, SearchHisMeetingsResponse.class)
@@ -4489,72 +3947,53 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchHisMeetingsRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(SearchHisMeetingsRequest::getUserUUID, SearchHisMeetingsRequest::setUserUUID));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchHisMeetingsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchHisMeetingsRequest::getOffset, SearchHisMeetingsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchHisMeetingsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchHisMeetingsRequest::getLimit, SearchHisMeetingsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchHisMeetingsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchHisMeetingsRequest::getSearchKey, SearchHisMeetingsRequest::setSearchKey));
         builder.<Boolean>withRequestField("queryAll",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchHisMeetingsRequest::getQueryAll, (req, v) -> {
-                req.setQueryAll(v);
-            }));
+            f -> f.withMarshaller(SearchHisMeetingsRequest::getQueryAll, SearchHisMeetingsRequest::setQueryAll));
         builder.<Long>withRequestField("startDate",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchHisMeetingsRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(SearchHisMeetingsRequest::getStartDate, SearchHisMeetingsRequest::setStartDate));
         builder.<Long>withRequestField("endDate",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchHisMeetingsRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(SearchHisMeetingsRequest::getEndDate, SearchHisMeetingsRequest::setEndDate));
         builder.<String>withRequestField("sortType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchHisMeetingsRequest::getSortType, (req, v) -> {
-                req.setSortType(v);
-            }));
+            f -> f.withMarshaller(SearchHisMeetingsRequest::getSortType, SearchHisMeetingsRequest::setSortType));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchHisMeetingsRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(SearchHisMeetingsRequest::getXAuthorizationType,
+                SearchHisMeetingsRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchHisMeetingsRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(SearchHisMeetingsRequest::getXSiteId, SearchHisMeetingsRequest::setXSiteId));
 
         // response
 
@@ -4562,9 +4001,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchMaterialsRequest, SearchMaterialsResponse> searchMaterials =
-        genForsearchMaterials();
+        genForSearchMaterials();
 
-    private static HttpRequestDef<SearchMaterialsRequest, SearchMaterialsResponse> genForsearchMaterials() {
+    private static HttpRequestDef<SearchMaterialsRequest, SearchMaterialsResponse> genForSearchMaterials() {
         // basic
         HttpRequestDef.Builder<SearchMaterialsRequest, SearchMaterialsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMaterialsRequest.class, SearchMaterialsResponse.class)
@@ -4577,37 +4016,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchMaterialsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchMaterialsRequest::getOffset, SearchMaterialsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchMaterialsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchMaterialsRequest::getLimit, SearchMaterialsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMaterialsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchMaterialsRequest::getSearchKey, SearchMaterialsRequest::setSearchKey));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMaterialsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchMaterialsRequest::getXRequestId, SearchMaterialsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMaterialsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchMaterialsRequest::getAcceptLanguage,
+                SearchMaterialsRequest::setAcceptLanguage));
 
         // response
 
@@ -4615,9 +4045,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchMeetingFileListRequest, SearchMeetingFileListResponse> searchMeetingFileList =
-        genForsearchMeetingFileList();
+        genForSearchMeetingFileList();
 
-    private static HttpRequestDef<SearchMeetingFileListRequest, SearchMeetingFileListResponse> genForsearchMeetingFileList() {
+    private static HttpRequestDef<SearchMeetingFileListRequest, SearchMeetingFileListResponse> genForSearchMeetingFileList() {
         // basic
         HttpRequestDef.Builder<SearchMeetingFileListRequest, SearchMeetingFileListResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchMeetingFileListRequest.class, SearchMeetingFileListResponse.class)
@@ -4630,37 +4060,30 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchMeetingFileListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingFileListRequest::getOffset, SearchMeetingFileListRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchMeetingFileListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingFileListRequest::getLimit, SearchMeetingFileListRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMeetingFileListRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingFileListRequest::getSearchKey,
+                SearchMeetingFileListRequest::setSearchKey));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMeetingFileListRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingFileListRequest::getXRequestId,
+                SearchMeetingFileListRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMeetingFileListRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingFileListRequest::getAcceptLanguage,
+                SearchMeetingFileListRequest::setAcceptLanguage));
 
         // response
 
@@ -4668,9 +4091,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchMeetingsRequest, SearchMeetingsResponse> searchMeetings =
-        genForsearchMeetings();
+        genForSearchMeetings();
 
-    private static HttpRequestDef<SearchMeetingsRequest, SearchMeetingsResponse> genForsearchMeetings() {
+    private static HttpRequestDef<SearchMeetingsRequest, SearchMeetingsResponse> genForSearchMeetings() {
         // basic
         HttpRequestDef.Builder<SearchMeetingsRequest, SearchMeetingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMeetingsRequest.class, SearchMeetingsResponse.class)
@@ -4683,65 +4106,48 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMeetingsRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingsRequest::getUserUUID, SearchMeetingsRequest::setUserUUID));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchMeetingsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingsRequest::getOffset, SearchMeetingsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchMeetingsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingsRequest::getLimit, SearchMeetingsRequest::setLimit));
         builder.<Boolean>withRequestField("queryAll",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchMeetingsRequest::getQueryAll, (req, v) -> {
-                req.setQueryAll(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingsRequest::getQueryAll, SearchMeetingsRequest::setQueryAll));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMeetingsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingsRequest::getSearchKey, SearchMeetingsRequest::setSearchKey));
         builder.<String>withRequestField("queryConfMode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMeetingsRequest::getQueryConfMode, (req, v) -> {
-                req.setQueryConfMode(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingsRequest::getQueryConfMode, SearchMeetingsRequest::setQueryConfMode));
         builder.<String>withRequestField("sortType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMeetingsRequest::getSortType, (req, v) -> {
-                req.setSortType(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingsRequest::getSortType, SearchMeetingsRequest::setSortType));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMeetingsRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingsRequest::getXAuthorizationType,
+                SearchMeetingsRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMeetingsRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(SearchMeetingsRequest::getXSiteId, SearchMeetingsRequest::setXSiteId));
 
         // response
 
@@ -4749,9 +4155,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchMemberVmrRequest, SearchMemberVmrResponse> searchMemberVmr =
-        genForsearchMemberVmr();
+        genForSearchMemberVmr();
 
-    private static HttpRequestDef<SearchMemberVmrRequest, SearchMemberVmrResponse> genForsearchMemberVmr() {
+    private static HttpRequestDef<SearchMemberVmrRequest, SearchMemberVmrResponse> genForSearchMemberVmr() {
         // basic
         HttpRequestDef.Builder<SearchMemberVmrRequest, SearchMemberVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMemberVmrRequest.class, SearchMemberVmrResponse.class)
@@ -4764,44 +4170,33 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchMemberVmrRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchMemberVmrRequest::getOffset, SearchMemberVmrRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchMemberVmrRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchMemberVmrRequest::getLimit, SearchMemberVmrRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMemberVmrRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchMemberVmrRequest::getSearchKey, SearchMemberVmrRequest::setSearchKey));
         builder.<Boolean>withRequestField("specialVmr",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchMemberVmrRequest::getSpecialVmr, (req, v) -> {
-                req.setSpecialVmr(v);
-            }));
+            f -> f.withMarshaller(SearchMemberVmrRequest::getSpecialVmr, SearchMemberVmrRequest::setSpecialVmr));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMemberVmrRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchMemberVmrRequest::getXRequestId, SearchMemberVmrRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchMemberVmrRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchMemberVmrRequest::getAcceptLanguage,
+                SearchMemberVmrRequest::setAcceptLanguage));
 
         // response
 
@@ -4809,9 +4204,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> searchOnlineMeetings =
-        genForsearchOnlineMeetings();
+        genForSearchOnlineMeetings();
 
-    private static HttpRequestDef<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> genForsearchOnlineMeetings() {
+    private static HttpRequestDef<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> genForSearchOnlineMeetings() {
         // basic
         HttpRequestDef.Builder<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchOnlineMeetingsRequest.class, SearchOnlineMeetingsResponse.class)
@@ -4824,51 +4219,39 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getUserUUID, SearchOnlineMeetingsRequest::setUserUUID));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getOffset, SearchOnlineMeetingsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getLimit, SearchOnlineMeetingsRequest::setLimit));
         builder.<Boolean>withRequestField("queryAll",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getQueryAll, (req, v) -> {
-                req.setQueryAll(v);
-            }));
+            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getQueryAll, SearchOnlineMeetingsRequest::setQueryAll));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getSearchKey,
+                SearchOnlineMeetingsRequest::setSearchKey));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getXAuthorizationType,
+                SearchOnlineMeetingsRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(SearchOnlineMeetingsRequest::getXSiteId, SearchOnlineMeetingsRequest::setXSiteId));
 
         // response
 
@@ -4876,9 +4259,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchProgramsRequest, SearchProgramsResponse> searchPrograms =
-        genForsearchPrograms();
+        genForSearchPrograms();
 
-    private static HttpRequestDef<SearchProgramsRequest, SearchProgramsResponse> genForsearchPrograms() {
+    private static HttpRequestDef<SearchProgramsRequest, SearchProgramsResponse> genForSearchPrograms() {
         // basic
         HttpRequestDef.Builder<SearchProgramsRequest, SearchProgramsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchProgramsRequest.class, SearchProgramsResponse.class)
@@ -4891,37 +4274,27 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchProgramsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchProgramsRequest::getOffset, SearchProgramsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchProgramsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchProgramsRequest::getLimit, SearchProgramsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchProgramsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchProgramsRequest::getSearchKey, SearchProgramsRequest::setSearchKey));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchProgramsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchProgramsRequest::getXRequestId, SearchProgramsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchProgramsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchProgramsRequest::getAcceptLanguage, SearchProgramsRequest::setAcceptLanguage));
 
         // response
 
@@ -4929,9 +4302,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchPublicationsRequest, SearchPublicationsResponse> searchPublications =
-        genForsearchPublications();
+        genForSearchPublications();
 
-    private static HttpRequestDef<SearchPublicationsRequest, SearchPublicationsResponse> genForsearchPublications() {
+    private static HttpRequestDef<SearchPublicationsRequest, SearchPublicationsResponse> genForSearchPublications() {
         // basic
         HttpRequestDef.Builder<SearchPublicationsRequest, SearchPublicationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchPublicationsRequest.class, SearchPublicationsResponse.class)
@@ -4944,37 +4317,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchPublicationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchPublicationsRequest::getOffset, SearchPublicationsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchPublicationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchPublicationsRequest::getLimit, SearchPublicationsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchPublicationsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchPublicationsRequest::getSearchKey, SearchPublicationsRequest::setSearchKey));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchPublicationsRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchPublicationsRequest::getXRequestId, SearchPublicationsRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchPublicationsRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchPublicationsRequest::getAcceptLanguage,
+                SearchPublicationsRequest::setAcceptLanguage));
 
         // response
 
@@ -4982,9 +4346,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchRecordingsRequest, SearchRecordingsResponse> searchRecordings =
-        genForsearchRecordings();
+        genForSearchRecordings();
 
-    private static HttpRequestDef<SearchRecordingsRequest, SearchRecordingsResponse> genForsearchRecordings() {
+    private static HttpRequestDef<SearchRecordingsRequest, SearchRecordingsResponse> genForSearchRecordings() {
         // basic
         HttpRequestDef.Builder<SearchRecordingsRequest, SearchRecordingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchRecordingsRequest.class, SearchRecordingsResponse.class)
@@ -4997,72 +4361,53 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchRecordingsRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(SearchRecordingsRequest::getUserUUID, SearchRecordingsRequest::setUserUUID));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchRecordingsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchRecordingsRequest::getOffset, SearchRecordingsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchRecordingsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchRecordingsRequest::getLimit, SearchRecordingsRequest::setLimit));
         builder.<Boolean>withRequestField("queryAll",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchRecordingsRequest::getQueryAll, (req, v) -> {
-                req.setQueryAll(v);
-            }));
+            f -> f.withMarshaller(SearchRecordingsRequest::getQueryAll, SearchRecordingsRequest::setQueryAll));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchRecordingsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchRecordingsRequest::getSearchKey, SearchRecordingsRequest::setSearchKey));
         builder.<Long>withRequestField("startDate",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchRecordingsRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(SearchRecordingsRequest::getStartDate, SearchRecordingsRequest::setStartDate));
         builder.<Long>withRequestField("endDate",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchRecordingsRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(SearchRecordingsRequest::getEndDate, SearchRecordingsRequest::setEndDate));
         builder.<String>withRequestField("sortType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchRecordingsRequest::getSortType, (req, v) -> {
-                req.setSortType(v);
-            }));
+            f -> f.withMarshaller(SearchRecordingsRequest::getSortType, SearchRecordingsRequest::setSortType));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchRecordingsRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(SearchRecordingsRequest::getXAuthorizationType,
+                SearchRecordingsRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchRecordingsRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(SearchRecordingsRequest::getXSiteId, SearchRecordingsRequest::setXSiteId));
 
         // response
 
@@ -5070,9 +4415,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchResourceRequest, SearchResourceResponse> searchResource =
-        genForsearchResource();
+        genForSearchResource();
 
-    private static HttpRequestDef<SearchResourceRequest, SearchResourceResponse> genForsearchResource() {
+    private static HttpRequestDef<SearchResourceRequest, SearchResourceResponse> genForSearchResource() {
         // basic
         HttpRequestDef.Builder<SearchResourceRequest, SearchResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchResourceRequest.class, SearchResourceResponse.class)
@@ -5085,79 +4430,58 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceRequest::getCorpId, (req, v) -> {
-                req.setCorpId(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getCorpId, SearchResourceRequest::setCorpId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchResourceRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getOffset, SearchResourceRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchResourceRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getLimit, SearchResourceRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getSearchKey, SearchResourceRequest::setSearchKey));
         builder.<Long>withRequestField("startExpireDate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchResourceRequest::getStartExpireDate, (req, v) -> {
-                req.setStartExpireDate(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getStartExpireDate,
+                SearchResourceRequest::setStartExpireDate));
         builder.<Long>withRequestField("endExpireDate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchResourceRequest::getEndExpireDate, (req, v) -> {
-                req.setEndExpireDate(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getEndExpireDate, SearchResourceRequest::setEndExpireDate));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getType, SearchResourceRequest::setType));
         builder.<String>withRequestField("typeId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceRequest::getTypeId, (req, v) -> {
-                req.setTypeId(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getTypeId, SearchResourceRequest::setTypeId));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchResourceRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getStatus, SearchResourceRequest::setStatus));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getXRequestId, SearchResourceRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchResourceRequest::getAcceptLanguage, SearchResourceRequest::setAcceptLanguage));
 
         // response
 
@@ -5165,9 +4489,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse> searchResourceOpRecord =
-        genForsearchResourceOpRecord();
+        genForSearchResourceOpRecord();
 
-    private static HttpRequestDef<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse> genForsearchResourceOpRecord() {
+    private static HttpRequestDef<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse> genForSearchResourceOpRecord() {
         // basic
         HttpRequestDef.Builder<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchResourceOpRecordRequest.class, SearchResourceOpRecordResponse.class)
@@ -5180,102 +4504,84 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getCorpId, (req, v) -> {
-                req.setCorpId(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getCorpId, SearchResourceOpRecordRequest::setCorpId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getOffset, SearchResourceOpRecordRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getLimit, SearchResourceOpRecordRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getSearchKey,
+                SearchResourceOpRecordRequest::setSearchKey));
         builder.<Long>withRequestField("startExpireDate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getStartExpireDate, (req, v) -> {
-                req.setStartExpireDate(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getStartExpireDate,
+                SearchResourceOpRecordRequest::setStartExpireDate));
         builder.<Long>withRequestField("endExpireDate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getEndExpireDate, (req, v) -> {
-                req.setEndExpireDate(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getEndExpireDate,
+                SearchResourceOpRecordRequest::setEndExpireDate));
         builder.<Long>withRequestField("startOperateDate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getStartOperateDate, (req, v) -> {
-                req.setStartOperateDate(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getStartOperateDate,
+                SearchResourceOpRecordRequest::setStartOperateDate));
         builder.<Long>withRequestField("endOperateDate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getEndOperateDate, (req, v) -> {
-                req.setEndOperateDate(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getEndOperateDate,
+                SearchResourceOpRecordRequest::setEndOperateDate));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getType, SearchResourceOpRecordRequest::setType));
         builder.<String>withRequestField("typeId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getTypeId, (req, v) -> {
-                req.setTypeId(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getTypeId, SearchResourceOpRecordRequest::setTypeId));
         builder.<Integer>withRequestField("operateType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getOperateType, (req, v) -> {
-                req.setOperateType(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getOperateType,
+                SearchResourceOpRecordRequest::setOperateType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getXRequestId,
+                SearchResourceOpRecordRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchResourceOpRecordRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchResourceOpRecordRequest::getAcceptLanguage,
+                SearchResourceOpRecordRequest::setAcceptLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SearchUsersRequest, SearchUsersResponse> searchUsers = genForsearchUsers();
+    public static final HttpRequestDef<SearchUsersRequest, SearchUsersResponse> searchUsers = genForSearchUsers();
 
-    private static HttpRequestDef<SearchUsersRequest, SearchUsersResponse> genForsearchUsers() {
+    private static HttpRequestDef<SearchUsersRequest, SearchUsersResponse> genForSearchUsers() {
         // basic
         HttpRequestDef.Builder<SearchUsersRequest, SearchUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchUsersRequest.class, SearchUsersResponse.class)
@@ -5288,100 +4594,72 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchUsersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getOffset, SearchUsersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchUsersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getLimit, SearchUsersRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchUsersRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getSearchKey, SearchUsersRequest::setSearchKey));
         builder.<String>withRequestField("sortField",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchUsersRequest::getSortField, (req, v) -> {
-                req.setSortField(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getSortField, SearchUsersRequest::setSortField));
         builder.<Boolean>withRequestField("isAsc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchUsersRequest::getIsAsc, (req, v) -> {
-                req.setIsAsc(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getIsAsc, SearchUsersRequest::setIsAsc));
         builder.<String>withRequestField("deptCode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchUsersRequest::getDeptCode, (req, v) -> {
-                req.setDeptCode(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getDeptCode, SearchUsersRequest::setDeptCode));
         builder.<Boolean>withRequestField("enableSubDept",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchUsersRequest::getEnableSubDept, (req, v) -> {
-                req.setEnableSubDept(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getEnableSubDept, SearchUsersRequest::setEnableSubDept));
         builder.<SearchUsersRequest.AdminTypeEnum>withRequestField("adminType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchUsersRequest.AdminTypeEnum.class),
-            f -> f.withMarshaller(SearchUsersRequest::getAdminType, (req, v) -> {
-                req.setAdminType(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getAdminType, SearchUsersRequest::setAdminType));
         builder.<Boolean>withRequestField("enableRoom",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchUsersRequest::getEnableRoom, (req, v) -> {
-                req.setEnableRoom(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getEnableRoom, SearchUsersRequest::setEnableRoom));
         builder.<List<Integer>>withRequestField("userType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(SearchUsersRequest::getUserType, (req, v) -> {
-                req.setUserType(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getUserType, SearchUsersRequest::setUserType));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchUsersRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getStatus, SearchUsersRequest::setStatus));
         builder.<Boolean>withRequestField("containsUnActive",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(SearchUsersRequest::getContainsUnActive, (req, v) -> {
-                req.setContainsUnActive(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getContainsUnActive, SearchUsersRequest::setContainsUnActive));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchUsersRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getXRequestId, SearchUsersRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchUsersRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchUsersRequest::getAcceptLanguage, SearchUsersRequest::setAcceptLanguage));
 
         // response
 
@@ -5389,9 +4667,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> searchVisionActiveCode =
-        genForsearchVisionActiveCode();
+        genForSearchVisionActiveCode();
 
-    private static HttpRequestDef<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> genForsearchVisionActiveCode() {
+    private static HttpRequestDef<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> genForSearchVisionActiveCode() {
         // basic
         HttpRequestDef.Builder<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchVisionActiveCodeRequest.class, SearchVisionActiveCodeResponse.class)
@@ -5404,44 +4682,36 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getOffset, SearchVisionActiveCodeRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getLimit, SearchVisionActiveCodeRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getSearchKey,
+                SearchVisionActiveCodeRequest::setSearchKey));
         builder.<String>withRequestField("devType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getDevType, (req, v) -> {
-                req.setDevType(v);
-            }));
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getDevType,
+                SearchVisionActiveCodeRequest::setDevType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getXRequestId,
+                SearchVisionActiveCodeRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getAcceptLanguage,
+                SearchVisionActiveCodeRequest::setAcceptLanguage));
 
         // response
 
@@ -5449,9 +4719,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse> sendSlideVerifyCode =
-        genForsendSlideVerifyCode();
+        genForSendSlideVerifyCode();
 
-    private static HttpRequestDef<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse> genForsendSlideVerifyCode() {
+    private static HttpRequestDef<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse> genForSendSlideVerifyCode() {
         // basic
         HttpRequestDef.Builder<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendSlideVerifyCodeRequest.class, SendSlideVerifyCodeResponse.class)
@@ -5464,23 +4734,19 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendSlideVerifyCodeRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(SendSlideVerifyCodeRequest::getXRequestID,
+                SendSlideVerifyCodeRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendSlideVerifyCodeRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SendSlideVerifyCodeRequest::getAcceptLanguage,
+                SendSlideVerifyCodeRequest::setAcceptLanguage));
         builder.<SlideVerifyCodeSendDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SlideVerifyCodeSendDTO.class),
-            f -> f.withMarshaller(SendSlideVerifyCodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendSlideVerifyCodeRequest::getBody, SendSlideVerifyCodeRequest::setBody));
 
         // response
 
@@ -5488,9 +4754,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse> sendVeriCodeForChangePwd =
-        genForsendVeriCodeForChangePwd();
+        genForSendVeriCodeForChangePwd();
 
-    private static HttpRequestDef<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse> genForsendVeriCodeForChangePwd() {
+    private static HttpRequestDef<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse> genForSendVeriCodeForChangePwd() {
         // basic
         HttpRequestDef.Builder<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse> builder =
             HttpRequestDef
@@ -5504,23 +4770,19 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendVeriCodeForChangePwdRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(SendVeriCodeForChangePwdRequest::getXRequestID,
+                SendVeriCodeForChangePwdRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendVeriCodeForChangePwdRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SendVeriCodeForChangePwdRequest::getAcceptLanguage,
+                SendVeriCodeForChangePwdRequest::setAcceptLanguage));
         builder.<VerifyCodeSendDTOV1>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VerifyCodeSendDTOV1.class),
-            f -> f.withMarshaller(SendVeriCodeForChangePwdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendVeriCodeForChangePwdRequest::getBody, SendVeriCodeForChangePwdRequest::setBody));
 
         // response
 
@@ -5528,9 +4790,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse> sendVeriCodeForUpdateUserInfo =
-        genForsendVeriCodeForUpdateUserInfo();
+        genForSendVeriCodeForUpdateUserInfo();
 
-    private static HttpRequestDef<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse> genForsendVeriCodeForUpdateUserInfo() {
+    private static HttpRequestDef<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse> genForSendVeriCodeForUpdateUserInfo() {
         // basic
         HttpRequestDef.Builder<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse> builder =
             HttpRequestDef
@@ -5546,23 +4808,20 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendVeriCodeForUpdateUserInfoRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SendVeriCodeForUpdateUserInfoRequest::getXRequestId,
+                SendVeriCodeForUpdateUserInfoRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendVeriCodeForUpdateUserInfoRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SendVeriCodeForUpdateUserInfoRequest::getAcceptLanguage,
+                SendVeriCodeForUpdateUserInfoRequest::setAcceptLanguage));
         builder.<VerificationCodeDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VerificationCodeDTO.class),
-            f -> f.withMarshaller(SendVeriCodeForUpdateUserInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendVeriCodeForUpdateUserInfoRequest::getBody,
+                SendVeriCodeForUpdateUserInfoRequest::setBody));
 
         // response
 
@@ -5570,9 +4829,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse> setAttendeeLanChannel =
-        genForsetAttendeeLanChannel();
+        genForSetAttendeeLanChannel();
 
-    private static HttpRequestDef<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse> genForsetAttendeeLanChannel() {
+    private static HttpRequestDef<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse> genForSetAttendeeLanChannel() {
         // basic
         HttpRequestDef.Builder<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, SetAttendeeLanChannelRequest.class, SetAttendeeLanChannelResponse.class)
@@ -5585,32 +4844,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetAttendeeLanChannelRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(SetAttendeeLanChannelRequest::getConferenceID,
+                SetAttendeeLanChannelRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetAttendeeLanChannelRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(SetAttendeeLanChannelRequest::getXConferenceAuthorization,
+                SetAttendeeLanChannelRequest::setXConferenceAuthorization));
         builder.<RestSetAttendeeLanChannelBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestSetAttendeeLanChannelBody.class),
-            f -> f.withMarshaller(SetAttendeeLanChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetAttendeeLanChannelRequest::getBody, SetAttendeeLanChannelRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetCohostRequest, SetCohostResponse> setCohost = genForsetCohost();
+    public static final HttpRequestDef<SetCohostRequest, SetCohostResponse> setCohost = genForSetCohost();
 
-    private static HttpRequestDef<SetCohostRequest, SetCohostResponse> genForsetCohost() {
+    private static HttpRequestDef<SetCohostRequest, SetCohostResponse> genForSetCohost() {
         // basic
         HttpRequestDef.Builder<SetCohostRequest, SetCohostResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetCohostRequest.class, SetCohostResponse.class)
@@ -5623,30 +4878,23 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetCohostRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(SetCohostRequest::getConferenceID, SetCohostRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetCohostRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(SetCohostRequest::getParticipantID, SetCohostRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetCohostRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(SetCohostRequest::getXConferenceAuthorization,
+                SetCohostRequest::setXConferenceAuthorization));
         builder.<RestSetCohostBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestSetCohostBody.class),
-            f -> f.withMarshaller(SetCohostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetCohostRequest::getBody, SetCohostRequest::setBody));
 
         // response
 
@@ -5654,9 +4902,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> setCustomMultiPicture =
-        genForsetCustomMultiPicture();
+        genForSetCustomMultiPicture();
 
-    private static HttpRequestDef<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> genForsetCustomMultiPicture() {
+    private static HttpRequestDef<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> genForSetCustomMultiPicture() {
         // basic
         HttpRequestDef.Builder<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, SetCustomMultiPictureRequest.class, SetCustomMultiPictureResponse.class)
@@ -5669,32 +4917,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetCustomMultiPictureRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(SetCustomMultiPictureRequest::getConferenceID,
+                SetCustomMultiPictureRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetCustomMultiPictureRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(SetCustomMultiPictureRequest::getXConferenceAuthorization,
+                SetCustomMultiPictureRequest::setXConferenceAuthorization));
         builder.<RestCustomMultiPictureBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RestCustomMultiPictureBody.class),
-            f -> f.withMarshaller(SetCustomMultiPictureRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetCustomMultiPictureRequest::getBody, SetCustomMultiPictureRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetHostViewRequest, SetHostViewResponse> setHostView = genForsetHostView();
+    public static final HttpRequestDef<SetHostViewRequest, SetHostViewResponse> setHostView = genForSetHostView();
 
-    private static HttpRequestDef<SetHostViewRequest, SetHostViewResponse> genForsetHostView() {
+    private static HttpRequestDef<SetHostViewRequest, SetHostViewResponse> genForSetHostView() {
         // basic
         HttpRequestDef.Builder<SetHostViewRequest, SetHostViewResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetHostViewRequest.class, SetHostViewResponse.class)
@@ -5707,23 +4951,18 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetHostViewRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(SetHostViewRequest::getConferenceID, SetHostViewRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetHostViewRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(SetHostViewRequest::getXConferenceAuthorization,
+                SetHostViewRequest::setXConferenceAuthorization));
         builder.<RestChairViewReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestChairViewReqBody.class),
-            f -> f.withMarshaller(SetHostViewRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetHostViewRequest::getBody, SetHostViewRequest::setBody));
 
         // response
 
@@ -5731,9 +4970,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SetInterpreterGroupRequest, SetInterpreterGroupResponse> setInterpreterGroup =
-        genForsetInterpreterGroup();
+        genForSetInterpreterGroup();
 
-    private static HttpRequestDef<SetInterpreterGroupRequest, SetInterpreterGroupResponse> genForsetInterpreterGroup() {
+    private static HttpRequestDef<SetInterpreterGroupRequest, SetInterpreterGroupResponse> genForSetInterpreterGroup() {
         // basic
         HttpRequestDef.Builder<SetInterpreterGroupRequest, SetInterpreterGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetInterpreterGroupRequest.class, SetInterpreterGroupResponse.class)
@@ -5746,23 +4985,19 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetInterpreterGroupRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(SetInterpreterGroupRequest::getConferenceID,
+                SetInterpreterGroupRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetInterpreterGroupRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(SetInterpreterGroupRequest::getXConferenceAuthorization,
+                SetInterpreterGroupRequest::setXConferenceAuthorization));
         builder.<RestSetInterpreterGroupBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestSetInterpreterGroupBody.class),
-            f -> f.withMarshaller(SetInterpreterGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetInterpreterGroupRequest::getBody, SetInterpreterGroupRequest::setBody));
 
         // response
 
@@ -5770,9 +5005,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SetMultiPictureRequest, SetMultiPictureResponse> setMultiPicture =
-        genForsetMultiPicture();
+        genForSetMultiPicture();
 
-    private static HttpRequestDef<SetMultiPictureRequest, SetMultiPictureResponse> genForsetMultiPicture() {
+    private static HttpRequestDef<SetMultiPictureRequest, SetMultiPictureResponse> genForSetMultiPicture() {
         // basic
         HttpRequestDef.Builder<SetMultiPictureRequest, SetMultiPictureResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetMultiPictureRequest.class, SetMultiPictureResponse.class)
@@ -5785,23 +5020,18 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetMultiPictureRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(SetMultiPictureRequest::getConferenceID, SetMultiPictureRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetMultiPictureRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(SetMultiPictureRequest::getXConferenceAuthorization,
+                SetMultiPictureRequest::setXConferenceAuthorization));
         builder.<RestMixedPictureBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestMixedPictureBody.class),
-            f -> f.withMarshaller(SetMultiPictureRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetMultiPictureRequest::getBody, SetMultiPictureRequest::setBody));
 
         // response
 
@@ -5809,9 +5039,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SetParticipantViewRequest, SetParticipantViewResponse> setParticipantView =
-        genForsetParticipantView();
+        genForSetParticipantView();
 
-    private static HttpRequestDef<SetParticipantViewRequest, SetParticipantViewResponse> genForsetParticipantView() {
+    private static HttpRequestDef<SetParticipantViewRequest, SetParticipantViewResponse> genForSetParticipantView() {
         // basic
         HttpRequestDef.Builder<SetParticipantViewRequest, SetParticipantViewResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetParticipantViewRequest.class, SetParticipantViewResponse.class)
@@ -5824,39 +5054,34 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetParticipantViewRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(SetParticipantViewRequest::getConferenceID,
+                SetParticipantViewRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetParticipantViewRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(SetParticipantViewRequest::getParticipantID,
+                SetParticipantViewRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetParticipantViewRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(SetParticipantViewRequest::getXConferenceAuthorization,
+                SetParticipantViewRequest::setXConferenceAuthorization));
         builder.<RestParticipantViewReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestParticipantViewReqBody.class),
-            f -> f.withMarshaller(SetParticipantViewRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetParticipantViewRequest::getBody, SetParticipantViewRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetRoleRequest, SetRoleResponse> setRole = genForsetRole();
+    public static final HttpRequestDef<SetRoleRequest, SetRoleResponse> setRole = genForSetRole();
 
-    private static HttpRequestDef<SetRoleRequest, SetRoleResponse> genForsetRole() {
+    private static HttpRequestDef<SetRoleRequest, SetRoleResponse> genForSetRole() {
         // basic
         HttpRequestDef.Builder<SetRoleRequest, SetRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetRoleRequest.class, SetRoleResponse.class)
@@ -5869,39 +5094,32 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetRoleRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(SetRoleRequest::getConferenceID, SetRoleRequest::setConferenceID));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetRoleRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(SetRoleRequest::getParticipantID, SetRoleRequest::setParticipantID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetRoleRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(SetRoleRequest::getXConferenceAuthorization,
+                SetRoleRequest::setXConferenceAuthorization));
         builder.<RestChairTokenReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestChairTokenReqBody.class),
-            f -> f.withMarshaller(SetRoleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetRoleRequest::getBody, SetRoleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetSsoConfigRequest, SetSsoConfigResponse> setSsoConfig = genForsetSsoConfig();
+    public static final HttpRequestDef<SetSsoConfigRequest, SetSsoConfigResponse> setSsoConfig = genForSetSsoConfig();
 
-    private static HttpRequestDef<SetSsoConfigRequest, SetSsoConfigResponse> genForsetSsoConfig() {
+    private static HttpRequestDef<SetSsoConfigRequest, SetSsoConfigResponse> genForSetSsoConfig() {
         // basic
         HttpRequestDef.Builder<SetSsoConfigRequest, SetSsoConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SetSsoConfigRequest.class, SetSsoConfigResponse.class)
@@ -5914,23 +5132,17 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetSsoConfigRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SetSsoConfigRequest::getXRequestId, SetSsoConfigRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetSsoConfigRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(SetSsoConfigRequest::getAcceptLanguage, SetSsoConfigRequest::setAcceptLanguage));
         builder.<AuthorizeConfigInfoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AuthorizeConfigInfoRequestBody.class),
-            f -> f.withMarshaller(SetSsoConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetSsoConfigRequest::getBody, SetSsoConfigRequest::setBody));
 
         // response
 
@@ -5938,9 +5150,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SetWebHookConfigRequest, SetWebHookConfigResponse> setWebHookConfig =
-        genForsetWebHookConfig();
+        genForSetWebHookConfig();
 
-    private static HttpRequestDef<SetWebHookConfigRequest, SetWebHookConfigResponse> genForsetWebHookConfig() {
+    private static HttpRequestDef<SetWebHookConfigRequest, SetWebHookConfigResponse> genForSetWebHookConfig() {
         // basic
         HttpRequestDef.Builder<SetWebHookConfigRequest, SetWebHookConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SetWebHookConfigRequest.class, SetWebHookConfigResponse.class)
@@ -5953,18 +5165,16 @@ public class MeetingMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WebHookConfigRequest.class),
-            f -> f.withMarshaller(SetWebHookConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetWebHookConfigRequest::getBody, SetWebHookConfigRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowConfOrgRequest, ShowConfOrgResponse> showConfOrg = genForshowConfOrg();
+    public static final HttpRequestDef<ShowConfOrgRequest, ShowConfOrgResponse> showConfOrg = genForShowConfOrg();
 
-    private static HttpRequestDef<ShowConfOrgRequest, ShowConfOrgResponse> genForshowConfOrg() {
+    private static HttpRequestDef<ShowConfOrgRequest, ShowConfOrgResponse> genForShowConfOrg() {
         // basic
         HttpRequestDef.Builder<ShowConfOrgRequest, ShowConfOrgResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConfOrgRequest.class, ShowConfOrgResponse.class)
@@ -5977,18 +5187,16 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfOrgRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(ShowConfOrgRequest::getConferenceID, ShowConfOrgRequest::setConferenceID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCorpRequest, ShowCorpResponse> showCorp = genForshowCorp();
+    public static final HttpRequestDef<ShowCorpRequest, ShowCorpResponse> showCorp = genForShowCorp();
 
-    private static HttpRequestDef<ShowCorpRequest, ShowCorpResponse> genForshowCorp() {
+    private static HttpRequestDef<ShowCorpRequest, ShowCorpResponse> genForShowCorp() {
         // basic
         HttpRequestDef.Builder<ShowCorpRequest, ShowCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpRequest.class, ShowCorpResponse.class)
@@ -6001,23 +5209,17 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCorpRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowCorpRequest::getId, ShowCorpRequest::setId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCorpRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowCorpRequest::getXRequestId, ShowCorpRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCorpRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCorpRequest::getAcceptLanguage, ShowCorpRequest::setAcceptLanguage));
 
         // response
 
@@ -6025,9 +5227,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowCorpAdminRequest, ShowCorpAdminResponse> showCorpAdmin =
-        genForshowCorpAdmin();
+        genForShowCorpAdmin();
 
-    private static HttpRequestDef<ShowCorpAdminRequest, ShowCorpAdminResponse> genForshowCorpAdmin() {
+    private static HttpRequestDef<ShowCorpAdminRequest, ShowCorpAdminResponse> genForShowCorpAdmin() {
         // basic
         HttpRequestDef.Builder<ShowCorpAdminRequest, ShowCorpAdminResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpAdminRequest.class, ShowCorpAdminResponse.class)
@@ -6040,30 +5242,22 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCorpAdminRequest::getAccount, (req, v) -> {
-                req.setAccount(v);
-            }));
+            f -> f.withMarshaller(ShowCorpAdminRequest::getAccount, ShowCorpAdminRequest::setAccount));
         builder.<Integer>withRequestField("accountType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCorpAdminRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
+            f -> f.withMarshaller(ShowCorpAdminRequest::getAccountType, ShowCorpAdminRequest::setAccountType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCorpAdminRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowCorpAdminRequest::getXRequestId, ShowCorpAdminRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCorpAdminRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCorpAdminRequest::getAcceptLanguage, ShowCorpAdminRequest::setAcceptLanguage));
 
         // response
 
@@ -6071,9 +5265,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse> showCorpBasicInfo =
-        genForshowCorpBasicInfo();
+        genForShowCorpBasicInfo();
 
-    private static HttpRequestDef<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse> genForshowCorpBasicInfo() {
+    private static HttpRequestDef<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse> genForShowCorpBasicInfo() {
         // basic
         HttpRequestDef.Builder<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpBasicInfoRequest.class, ShowCorpBasicInfoResponse.class)
@@ -6086,16 +5280,13 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCorpBasicInfoRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowCorpBasicInfoRequest::getXRequestId, ShowCorpBasicInfoRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCorpBasicInfoRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCorpBasicInfoRequest::getAcceptLanguage,
+                ShowCorpBasicInfoRequest::setAcceptLanguage));
 
         // response
 
@@ -6103,9 +5294,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowCorpResourceRequest, ShowCorpResourceResponse> showCorpResource =
-        genForshowCorpResource();
+        genForShowCorpResource();
 
-    private static HttpRequestDef<ShowCorpResourceRequest, ShowCorpResourceResponse> genForshowCorpResource() {
+    private static HttpRequestDef<ShowCorpResourceRequest, ShowCorpResourceResponse> genForShowCorpResource() {
         // basic
         HttpRequestDef.Builder<ShowCorpResourceRequest, ShowCorpResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpResourceRequest.class, ShowCorpResourceResponse.class)
@@ -6118,16 +5309,13 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCorpResourceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowCorpResourceRequest::getXRequestId, ShowCorpResourceRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCorpResourceRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCorpResourceRequest::getAcceptLanguage,
+                ShowCorpResourceRequest::setAcceptLanguage));
 
         // response
 
@@ -6135,9 +5323,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowDepartmentRequest, ShowDepartmentResponse> showDepartment =
-        genForshowDepartment();
+        genForShowDepartment();
 
-    private static HttpRequestDef<ShowDepartmentRequest, ShowDepartmentResponse> genForshowDepartment() {
+    private static HttpRequestDef<ShowDepartmentRequest, ShowDepartmentResponse> genForShowDepartment() {
         // basic
         HttpRequestDef.Builder<ShowDepartmentRequest, ShowDepartmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDepartmentRequest.class, ShowDepartmentResponse.class)
@@ -6150,23 +5338,17 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDepartmentRequest::getDeptCode, (req, v) -> {
-                req.setDeptCode(v);
-            }));
+            f -> f.withMarshaller(ShowDepartmentRequest::getDeptCode, ShowDepartmentRequest::setDeptCode));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDepartmentRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowDepartmentRequest::getXRequestId, ShowDepartmentRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDepartmentRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDepartmentRequest::getAcceptLanguage, ShowDepartmentRequest::setAcceptLanguage));
 
         // response
 
@@ -6174,9 +5356,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse> showDeptAndChildDept =
-        genForshowDeptAndChildDept();
+        genForShowDeptAndChildDept();
 
-    private static HttpRequestDef<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse> genForshowDeptAndChildDept() {
+    private static HttpRequestDef<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse> genForShowDeptAndChildDept() {
         // basic
         HttpRequestDef.Builder<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDeptAndChildDeptRequest.class, ShowDeptAndChildDeptResponse.class)
@@ -6189,23 +5371,19 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeptAndChildDeptRequest::getDeptCode, (req, v) -> {
-                req.setDeptCode(v);
-            }));
+            f -> f.withMarshaller(ShowDeptAndChildDeptRequest::getDeptCode, ShowDeptAndChildDeptRequest::setDeptCode));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeptAndChildDeptRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowDeptAndChildDeptRequest::getXRequestId,
+                ShowDeptAndChildDeptRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeptAndChildDeptRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDeptAndChildDeptRequest::getAcceptLanguage,
+                ShowDeptAndChildDeptRequest::setAcceptLanguage));
 
         // response
 
@@ -6213,9 +5391,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowDeviceDetailRequest, ShowDeviceDetailResponse> showDeviceDetail =
-        genForshowDeviceDetail();
+        genForShowDeviceDetail();
 
-    private static HttpRequestDef<ShowDeviceDetailRequest, ShowDeviceDetailResponse> genForshowDeviceDetail() {
+    private static HttpRequestDef<ShowDeviceDetailRequest, ShowDeviceDetailResponse> genForShowDeviceDetail() {
         // basic
         HttpRequestDef.Builder<ShowDeviceDetailRequest, ShowDeviceDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceDetailRequest.class, ShowDeviceDetailResponse.class)
@@ -6228,23 +5406,18 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceDetailRequest::getSn, (req, v) -> {
-                req.setSn(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceDetailRequest::getSn, ShowDeviceDetailRequest::setSn));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceDetailRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceDetailRequest::getXRequestId, ShowDeviceDetailRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceDetailRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceDetailRequest::getAcceptLanguage,
+                ShowDeviceDetailRequest::setAcceptLanguage));
 
         // response
 
@@ -6252,9 +5425,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowDeviceStatusRequest, ShowDeviceStatusResponse> showDeviceStatus =
-        genForshowDeviceStatus();
+        genForShowDeviceStatus();
 
-    private static HttpRequestDef<ShowDeviceStatusRequest, ShowDeviceStatusResponse> genForshowDeviceStatus() {
+    private static HttpRequestDef<ShowDeviceStatusRequest, ShowDeviceStatusResponse> genForShowDeviceStatus() {
         // basic
         HttpRequestDef.Builder<ShowDeviceStatusRequest, ShowDeviceStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowDeviceStatusRequest.class, ShowDeviceStatusResponse.class)
@@ -6267,40 +5440,35 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceStatusRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceStatusRequest::getXRequestID, ShowDeviceStatusRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceStatusRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceStatusRequest::getAcceptLanguage,
+                ShowDeviceStatusRequest::setAcceptLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowDeviceStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(ShowDeviceStatusRequest::getBody, ShowDeviceStatusRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
         builder.<List<UserStatusDTO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowDeviceStatusResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(UserStatusDTO.class));
+            f -> f.withMarshaller(ShowDeviceStatusResponse::getBody, ShowDeviceStatusResponse::setBody)
+                .withInnerContainerType(UserStatusDTO.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowDeviceTypesRequest, ShowDeviceTypesResponse> showDeviceTypes =
-        genForshowDeviceTypes();
+        genForShowDeviceTypes();
 
-    private static HttpRequestDef<ShowDeviceTypesRequest, ShowDeviceTypesResponse> genForshowDeviceTypes() {
+    private static HttpRequestDef<ShowDeviceTypesRequest, ShowDeviceTypesResponse> genForShowDeviceTypes() {
         // basic
         HttpRequestDef.Builder<ShowDeviceTypesRequest, ShowDeviceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceTypesRequest.class, ShowDeviceTypesResponse.class)
@@ -6313,33 +5481,29 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceTypesRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceTypesRequest::getXRequestId, ShowDeviceTypesRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceTypesRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceTypesRequest::getAcceptLanguage,
+                ShowDeviceTypesRequest::setAcceptLanguage));
 
         // response
         builder.<List<QueryDeviceTypeResultDTO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowDeviceTypesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(QueryDeviceTypeResultDTO.class));
+            f -> f.withMarshaller(ShowDeviceTypesResponse::getBody, ShowDeviceTypesResponse::setBody)
+                .withInnerContainerType(QueryDeviceTypeResultDTO.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse> showHisMeetingDetail =
-        genForshowHisMeetingDetail();
+        genForShowHisMeetingDetail();
 
-    private static HttpRequestDef<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse> genForshowHisMeetingDetail() {
+    private static HttpRequestDef<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse> genForShowHisMeetingDetail() {
         // basic
         HttpRequestDef.Builder<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowHisMeetingDetailRequest.class, ShowHisMeetingDetailResponse.class)
@@ -6352,74 +5516,59 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getConfUUID, (req, v) -> {
-                req.setConfUUID(v);
-            }));
+            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getConfUUID, ShowHisMeetingDetailRequest::setConfUUID));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getOffset, ShowHisMeetingDetailRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getLimit, ShowHisMeetingDetailRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getSearchKey,
+                ShowHisMeetingDetailRequest::setSearchKey));
         builder.<String>withRequestField("userUUID",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getUserUUID, ShowHisMeetingDetailRequest::setUserUUID));
         builder.<Integer>withRequestField("X-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getXType, (req, v) -> {
-                req.setXType(v);
-            }));
+            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getXType, ShowHisMeetingDetailRequest::setXType));
         builder.<Integer>withRequestField("X-Query-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getXQueryType, (req, v) -> {
-                req.setXQueryType(v);
-            }));
+            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getXQueryType,
+                ShowHisMeetingDetailRequest::setXQueryType));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getXAuthorizationType,
+                ShowHisMeetingDetailRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(ShowHisMeetingDetailRequest::getXSiteId, ShowHisMeetingDetailRequest::setXSiteId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowLayoutRequest, ShowLayoutResponse> showLayout = genForshowLayout();
+    public static final HttpRequestDef<ShowLayoutRequest, ShowLayoutResponse> showLayout = genForShowLayout();
 
-    private static HttpRequestDef<ShowLayoutRequest, ShowLayoutResponse> genForshowLayout() {
+    private static HttpRequestDef<ShowLayoutRequest, ShowLayoutResponse> genForShowLayout() {
         // basic
         HttpRequestDef.Builder<ShowLayoutRequest, ShowLayoutResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLayoutRequest.class, ShowLayoutResponse.class)
@@ -6432,16 +5581,13 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLayoutRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(ShowLayoutRequest::getConferenceID, ShowLayoutRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLayoutRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(ShowLayoutRequest::getXConferenceAuthorization,
+                ShowLayoutRequest::setXConferenceAuthorization));
 
         // response
 
@@ -6449,9 +5595,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowMeetingDetailRequest, ShowMeetingDetailResponse> showMeetingDetail =
-        genForshowMeetingDetail();
+        genForShowMeetingDetail();
 
-    private static HttpRequestDef<ShowMeetingDetailRequest, ShowMeetingDetailResponse> genForshowMeetingDetail() {
+    private static HttpRequestDef<ShowMeetingDetailRequest, ShowMeetingDetailResponse> genForShowMeetingDetail() {
         // basic
         HttpRequestDef.Builder<ShowMeetingDetailRequest, ShowMeetingDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMeetingDetailRequest.class, ShowMeetingDetailResponse.class)
@@ -6464,65 +5610,49 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingDetailRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingDetailRequest::getConferenceID,
+                ShowMeetingDetailRequest::setConferenceID));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMeetingDetailRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingDetailRequest::getOffset, ShowMeetingDetailRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMeetingDetailRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingDetailRequest::getLimit, ShowMeetingDetailRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingDetailRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingDetailRequest::getSearchKey, ShowMeetingDetailRequest::setSearchKey));
         builder.<String>withRequestField("userUUID",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingDetailRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingDetailRequest::getUserUUID, ShowMeetingDetailRequest::setUserUUID));
         builder.<String>withRequestField("X-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingDetailRequest::getXType, (req, v) -> {
-                req.setXType(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingDetailRequest::getXType, ShowMeetingDetailRequest::setXType));
         builder.<String>withRequestField("X-Query-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingDetailRequest::getXQueryType, (req, v) -> {
-                req.setXQueryType(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingDetailRequest::getXQueryType, ShowMeetingDetailRequest::setXQueryType));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingDetailRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingDetailRequest::getXAuthorizationType,
+                ShowMeetingDetailRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingDetailRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingDetailRequest::getXSiteId, ShowMeetingDetailRequest::setXSiteId));
 
         // response
 
@@ -6530,9 +5660,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowMeetingFileRequest, ShowMeetingFileResponse> showMeetingFile =
-        genForshowMeetingFile();
+        genForShowMeetingFile();
 
-    private static HttpRequestDef<ShowMeetingFileRequest, ShowMeetingFileResponse> genForshowMeetingFile() {
+    private static HttpRequestDef<ShowMeetingFileRequest, ShowMeetingFileResponse> genForShowMeetingFile() {
         // basic
         HttpRequestDef.Builder<ShowMeetingFileRequest, ShowMeetingFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMeetingFileRequest.class, ShowMeetingFileResponse.class)
@@ -6545,23 +5675,18 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingFileRequest::getFileCode, (req, v) -> {
-                req.setFileCode(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingFileRequest::getFileCode, ShowMeetingFileRequest::setFileCode));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingFileRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingFileRequest::getXRequestId, ShowMeetingFileRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingFileRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingFileRequest::getAcceptLanguage,
+                ShowMeetingFileRequest::setAcceptLanguage));
 
         // response
 
@@ -6569,9 +5694,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowMeetingFileListRequest, ShowMeetingFileListResponse> showMeetingFileList =
-        genForshowMeetingFileList();
+        genForShowMeetingFileList();
 
-    private static HttpRequestDef<ShowMeetingFileListRequest, ShowMeetingFileListResponse> genForshowMeetingFileList() {
+    private static HttpRequestDef<ShowMeetingFileListRequest, ShowMeetingFileListResponse> genForShowMeetingFileList() {
         // basic
         HttpRequestDef.Builder<ShowMeetingFileListRequest, ShowMeetingFileListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowMeetingFileListRequest.class, ShowMeetingFileListResponse.class)
@@ -6584,32 +5709,29 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingFileListRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingFileListRequest::getXRequestId,
+                ShowMeetingFileListRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeetingFileListRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowMeetingFileListRequest::getAcceptLanguage,
+                ShowMeetingFileListRequest::setAcceptLanguage));
         builder.<Map<String, String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(ShowMeetingFileListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(ShowMeetingFileListRequest::getBody, ShowMeetingFileListRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMyInfoRequest, ShowMyInfoResponse> showMyInfo = genForshowMyInfo();
+    public static final HttpRequestDef<ShowMyInfoRequest, ShowMyInfoResponse> showMyInfo = genForShowMyInfo();
 
-    private static HttpRequestDef<ShowMyInfoRequest, ShowMyInfoResponse> genForshowMyInfo() {
+    private static HttpRequestDef<ShowMyInfoRequest, ShowMyInfoResponse> genForShowMyInfo() {
         // basic
         HttpRequestDef.Builder<ShowMyInfoRequest, ShowMyInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMyInfoRequest.class, ShowMyInfoResponse.class)
@@ -6622,16 +5744,12 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMyInfoRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowMyInfoRequest::getXRequestId, ShowMyInfoRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMyInfoRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowMyInfoRequest::getAcceptLanguage, ShowMyInfoRequest::setAcceptLanguage));
 
         // response
 
@@ -6639,9 +5757,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse> showOnlineMeetingDetail =
-        genForshowOnlineMeetingDetail();
+        genForShowOnlineMeetingDetail();
 
-    private static HttpRequestDef<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse> genForshowOnlineMeetingDetail() {
+    private static HttpRequestDef<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse> genForShowOnlineMeetingDetail() {
         // basic
         HttpRequestDef.Builder<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowOnlineMeetingDetailRequest.class, ShowOnlineMeetingDetailResponse.class)
@@ -6654,74 +5772,63 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getConferenceID,
+                ShowOnlineMeetingDetailRequest::setConferenceID));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getOffset,
+                ShowOnlineMeetingDetailRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getLimit, ShowOnlineMeetingDetailRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getSearchKey,
+                ShowOnlineMeetingDetailRequest::setSearchKey));
         builder.<String>withRequestField("userUUID",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getUserUUID,
+                ShowOnlineMeetingDetailRequest::setUserUUID));
         builder.<String>withRequestField("X-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getXType, (req, v) -> {
-                req.setXType(v);
-            }));
+            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getXType, ShowOnlineMeetingDetailRequest::setXType));
         builder.<String>withRequestField("X-Query-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getXQueryType, (req, v) -> {
-                req.setXQueryType(v);
-            }));
+            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getXQueryType,
+                ShowOnlineMeetingDetailRequest::setXQueryType));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getXAuthorizationType,
+                ShowOnlineMeetingDetailRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(ShowOnlineMeetingDetailRequest::getXSiteId,
+                ShowOnlineMeetingDetailRequest::setXSiteId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowOrgResRequest, ShowOrgResResponse> showOrgRes = genForshowOrgRes();
+    public static final HttpRequestDef<ShowOrgResRequest, ShowOrgResResponse> showOrgRes = genForShowOrgRes();
 
-    private static HttpRequestDef<ShowOrgResRequest, ShowOrgResResponse> genForshowOrgRes() {
+    private static HttpRequestDef<ShowOrgResRequest, ShowOrgResResponse> genForShowOrgRes() {
         // basic
         HttpRequestDef.Builder<ShowOrgResRequest, ShowOrgResResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOrgResRequest.class, ShowOrgResResponse.class)
@@ -6736,9 +5843,9 @@ public class MeetingMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProgramRequest, ShowProgramResponse> showProgram = genForshowProgram();
+    public static final HttpRequestDef<ShowProgramRequest, ShowProgramResponse> showProgram = genForShowProgram();
 
-    private static HttpRequestDef<ShowProgramRequest, ShowProgramResponse> genForshowProgram() {
+    private static HttpRequestDef<ShowProgramRequest, ShowProgramResponse> genForShowProgram() {
         // basic
         HttpRequestDef.Builder<ShowProgramRequest, ShowProgramResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProgramRequest.class, ShowProgramResponse.class)
@@ -6751,23 +5858,17 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProgramRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowProgramRequest::getId, ShowProgramRequest::setId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProgramRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowProgramRequest::getXRequestId, ShowProgramRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProgramRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowProgramRequest::getAcceptLanguage, ShowProgramRequest::setAcceptLanguage));
 
         // response
 
@@ -6775,9 +5876,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowPublicationRequest, ShowPublicationResponse> showPublication =
-        genForshowPublication();
+        genForShowPublication();
 
-    private static HttpRequestDef<ShowPublicationRequest, ShowPublicationResponse> genForshowPublication() {
+    private static HttpRequestDef<ShowPublicationRequest, ShowPublicationResponse> genForShowPublication() {
         // basic
         HttpRequestDef.Builder<ShowPublicationRequest, ShowPublicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPublicationRequest.class, ShowPublicationResponse.class)
@@ -6790,23 +5891,18 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicationRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowPublicationRequest::getId, ShowPublicationRequest::setId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicationRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowPublicationRequest::getXRequestId, ShowPublicationRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicationRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowPublicationRequest::getAcceptLanguage,
+                ShowPublicationRequest::setAcceptLanguage));
 
         // response
 
@@ -6814,9 +5910,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse> showRealTimeInfoOfMeeting =
-        genForshowRealTimeInfoOfMeeting();
+        genForShowRealTimeInfoOfMeeting();
 
-    private static HttpRequestDef<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse> genForshowRealTimeInfoOfMeeting() {
+    private static HttpRequestDef<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse> genForShowRealTimeInfoOfMeeting() {
         // basic
         HttpRequestDef.Builder<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse> builder =
             HttpRequestDef
@@ -6832,16 +5928,14 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRealTimeInfoOfMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(ShowRealTimeInfoOfMeetingRequest::getConferenceID,
+                ShowRealTimeInfoOfMeetingRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRealTimeInfoOfMeetingRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(ShowRealTimeInfoOfMeetingRequest::getXConferenceAuthorization,
+                ShowRealTimeInfoOfMeetingRequest::setXConferenceAuthorization));
 
         // response
 
@@ -6849,9 +5943,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowRecordingDetailRequest, ShowRecordingDetailResponse> showRecordingDetail =
-        genForshowRecordingDetail();
+        genForShowRecordingDetail();
 
-    private static HttpRequestDef<ShowRecordingDetailRequest, ShowRecordingDetailResponse> genForshowRecordingDetail() {
+    private static HttpRequestDef<ShowRecordingDetailRequest, ShowRecordingDetailResponse> genForShowRecordingDetail() {
         // basic
         HttpRequestDef.Builder<ShowRecordingDetailRequest, ShowRecordingDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecordingDetailRequest.class, ShowRecordingDetailResponse.class)
@@ -6864,30 +5958,23 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordingDetailRequest::getConfUUID, (req, v) -> {
-                req.setConfUUID(v);
-            }));
+            f -> f.withMarshaller(ShowRecordingDetailRequest::getConfUUID, ShowRecordingDetailRequest::setConfUUID));
         builder.<String>withRequestField("userUUID",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordingDetailRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(ShowRecordingDetailRequest::getUserUUID, ShowRecordingDetailRequest::setUserUUID));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordingDetailRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(ShowRecordingDetailRequest::getXAuthorizationType,
+                ShowRecordingDetailRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordingDetailRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordingDetailRequest::getXSiteId, ShowRecordingDetailRequest::setXSiteId));
 
         // response
 
@@ -6895,9 +5982,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse> showRecordingFileDownloadUrls =
-        genForshowRecordingFileDownloadUrls();
+        genForShowRecordingFileDownloadUrls();
 
-    private static HttpRequestDef<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse> genForshowRecordingFileDownloadUrls() {
+    private static HttpRequestDef<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse> genForShowRecordingFileDownloadUrls() {
         // basic
         HttpRequestDef.Builder<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse> builder =
             HttpRequestDef
@@ -6913,37 +6000,32 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getConfUUID, (req, v) -> {
-                req.setConfUUID(v);
-            }));
+            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getConfUUID,
+                ShowRecordingFileDownloadUrlsRequest::setConfUUID));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getOffset,
+                ShowRecordingFileDownloadUrlsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getLimit,
+                ShowRecordingFileDownloadUrlsRequest::setLimit));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getXAuthorizationType,
+                ShowRecordingFileDownloadUrlsRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getXSiteId,
+                ShowRecordingFileDownloadUrlsRequest::setXSiteId));
 
         // response
 
@@ -6951,9 +6033,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse> showRegionInfoOfMeeting =
-        genForshowRegionInfoOfMeeting();
+        genForShowRegionInfoOfMeeting();
 
-    private static HttpRequestDef<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse> genForshowRegionInfoOfMeeting() {
+    private static HttpRequestDef<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse> genForShowRegionInfoOfMeeting() {
         // basic
         HttpRequestDef.Builder<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowRegionInfoOfMeetingRequest.class, ShowRegionInfoOfMeetingResponse.class)
@@ -6966,9 +6048,8 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRegionInfoOfMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(ShowRegionInfoOfMeetingRequest::getConferenceID,
+                ShowRegionInfoOfMeetingRequest::setConferenceID));
 
         // response
 
@@ -6976,9 +6057,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowRoomSettingRequest, ShowRoomSettingResponse> showRoomSetting =
-        genForshowRoomSetting();
+        genForShowRoomSetting();
 
-    private static HttpRequestDef<ShowRoomSettingRequest, ShowRoomSettingResponse> genForshowRoomSetting() {
+    private static HttpRequestDef<ShowRoomSettingRequest, ShowRoomSettingResponse> genForShowRoomSetting() {
         // basic
         HttpRequestDef.Builder<ShowRoomSettingRequest, ShowRoomSettingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRoomSettingRequest.class, ShowRoomSettingResponse.class)
@@ -6991,32 +6072,27 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRoomSettingRequest::getConferenceId, (req, v) -> {
-                req.setConferenceId(v);
-            }));
+            f -> f.withMarshaller(ShowRoomSettingRequest::getConferenceId, ShowRoomSettingRequest::setConferenceId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRoomSettingRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowRoomSettingRequest::getXRequestId, ShowRoomSettingRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRoomSettingRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowRoomSettingRequest::getAcceptLanguage,
+                ShowRoomSettingRequest::setAcceptLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSpResRequest, ShowSpResResponse> showSpRes = genForshowSpRes();
+    public static final HttpRequestDef<ShowSpResRequest, ShowSpResResponse> showSpRes = genForShowSpRes();
 
-    private static HttpRequestDef<ShowSpResRequest, ShowSpResResponse> genForshowSpRes() {
+    private static HttpRequestDef<ShowSpResRequest, ShowSpResResponse> genForShowSpRes() {
         // basic
         HttpRequestDef.Builder<ShowSpResRequest, ShowSpResResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSpResRequest.class, ShowSpResResponse.class)
@@ -7032,9 +6108,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowSpResourceRequest, ShowSpResourceResponse> showSpResource =
-        genForshowSpResource();
+        genForShowSpResource();
 
-    private static HttpRequestDef<ShowSpResourceRequest, ShowSpResourceResponse> genForshowSpResource() {
+    private static HttpRequestDef<ShowSpResourceRequest, ShowSpResourceResponse> genForShowSpResource() {
         // basic
         HttpRequestDef.Builder<ShowSpResourceRequest, ShowSpResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSpResourceRequest.class, ShowSpResourceResponse.class)
@@ -7047,23 +6123,17 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowSpResourceRequest::getQueryGroup, (req, v) -> {
-                req.setQueryGroup(v);
-            }));
+            f -> f.withMarshaller(ShowSpResourceRequest::getQueryGroup, ShowSpResourceRequest::setQueryGroup));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSpResourceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowSpResourceRequest::getXRequestId, ShowSpResourceRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSpResourceRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSpResourceRequest::getAcceptLanguage, ShowSpResourceRequest::setAcceptLanguage));
 
         // response
 
@@ -7071,9 +6141,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowSsoConfigRequest, ShowSsoConfigResponse> showSsoConfig =
-        genForshowSsoConfig();
+        genForShowSsoConfig();
 
-    private static HttpRequestDef<ShowSsoConfigRequest, ShowSsoConfigResponse> genForshowSsoConfig() {
+    private static HttpRequestDef<ShowSsoConfigRequest, ShowSsoConfigResponse> genForShowSsoConfig() {
         // basic
         HttpRequestDef.Builder<ShowSsoConfigRequest, ShowSsoConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSsoConfigRequest.class, ShowSsoConfigResponse.class)
@@ -7086,16 +6156,12 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSsoConfigRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowSsoConfigRequest::getXRequestId, ShowSsoConfigRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSsoConfigRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSsoConfigRequest::getAcceptLanguage, ShowSsoConfigRequest::setAcceptLanguage));
 
         // response
 
@@ -7103,9 +6169,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowUserDetailRequest, ShowUserDetailResponse> showUserDetail =
-        genForshowUserDetail();
+        genForShowUserDetail();
 
-    private static HttpRequestDef<ShowUserDetailRequest, ShowUserDetailResponse> genForshowUserDetail() {
+    private static HttpRequestDef<ShowUserDetailRequest, ShowUserDetailResponse> genForShowUserDetail() {
         // basic
         HttpRequestDef.Builder<ShowUserDetailRequest, ShowUserDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserDetailRequest.class, ShowUserDetailResponse.class)
@@ -7118,30 +6184,22 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUserDetailRequest::getAccount, (req, v) -> {
-                req.setAccount(v);
-            }));
+            f -> f.withMarshaller(ShowUserDetailRequest::getAccount, ShowUserDetailRequest::setAccount));
         builder.<Integer>withRequestField("accountType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowUserDetailRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
+            f -> f.withMarshaller(ShowUserDetailRequest::getAccountType, ShowUserDetailRequest::setAccountType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUserDetailRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowUserDetailRequest::getXRequestId, ShowUserDetailRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUserDetailRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowUserDetailRequest::getAcceptLanguage, ShowUserDetailRequest::setAcceptLanguage));
 
         // response
 
@@ -7149,9 +6207,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowWebHookConfigRequest, ShowWebHookConfigResponse> showWebHookConfig =
-        genForshowWebHookConfig();
+        genForShowWebHookConfig();
 
-    private static HttpRequestDef<ShowWebHookConfigRequest, ShowWebHookConfigResponse> genForshowWebHookConfig() {
+    private static HttpRequestDef<ShowWebHookConfigRequest, ShowWebHookConfigResponse> genForShowWebHookConfig() {
         // basic
         HttpRequestDef.Builder<ShowWebHookConfigRequest, ShowWebHookConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowWebHookConfigRequest.class, ShowWebHookConfigResponse.class)
@@ -7164,25 +6222,21 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWebHookConfigRequest::getCorpId, (req, v) -> {
-                req.setCorpId(v);
-            }));
+            f -> f.withMarshaller(ShowWebHookConfigRequest::getCorpId, ShowWebHookConfigRequest::setCorpId));
         builder.<String>withRequestField("spId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWebHookConfigRequest::getSpId, (req, v) -> {
-                req.setSpId(v);
-            }));
+            f -> f.withMarshaller(ShowWebHookConfigRequest::getSpId, ShowWebHookConfigRequest::setSpId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowWebinarRequest, ShowWebinarResponse> showWebinar = genForshowWebinar();
+    public static final HttpRequestDef<ShowWebinarRequest, ShowWebinarResponse> showWebinar = genForShowWebinar();
 
-    private static HttpRequestDef<ShowWebinarRequest, ShowWebinarResponse> genForshowWebinar() {
+    private static HttpRequestDef<ShowWebinarRequest, ShowWebinarResponse> genForShowWebinar() {
         // basic
         HttpRequestDef.Builder<ShowWebinarRequest, ShowWebinarResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowWebinarRequest.class, ShowWebinarResponse.class)
@@ -7195,32 +6249,26 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWebinarRequest::getConferenceId, (req, v) -> {
-                req.setConferenceId(v);
-            }));
+            f -> f.withMarshaller(ShowWebinarRequest::getConferenceId, ShowWebinarRequest::setConferenceId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWebinarRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowWebinarRequest::getXRequestId, ShowWebinarRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWebinarRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowWebinarRequest::getAcceptLanguage, ShowWebinarRequest::setAcceptLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartMeetingRequest, StartMeetingResponse> startMeeting = genForstartMeeting();
+    public static final HttpRequestDef<StartMeetingRequest, StartMeetingResponse> startMeeting = genForStartMeeting();
 
-    private static HttpRequestDef<StartMeetingRequest, StartMeetingResponse> genForstartMeeting() {
+    private static HttpRequestDef<StartMeetingRequest, StartMeetingResponse> genForStartMeeting() {
         // basic
         HttpRequestDef.Builder<StartMeetingRequest, StartMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartMeetingRequest.class, StartMeetingResponse.class)
@@ -7233,18 +6281,16 @@ public class MeetingMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartRequest.class),
-            f -> f.withMarshaller(StartMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartMeetingRequest::getBody, StartMeetingRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopMeetingRequest, StopMeetingResponse> stopMeeting = genForstopMeeting();
+    public static final HttpRequestDef<StopMeetingRequest, StopMeetingResponse> stopMeeting = genForStopMeeting();
 
-    private static HttpRequestDef<StopMeetingRequest, StopMeetingResponse> genForstopMeeting() {
+    private static HttpRequestDef<StopMeetingRequest, StopMeetingResponse> genForStopMeeting() {
         // basic
         HttpRequestDef.Builder<StopMeetingRequest, StopMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StopMeetingRequest.class, StopMeetingResponse.class)
@@ -7257,25 +6303,22 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(StopMeetingRequest::getConferenceID, StopMeetingRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopMeetingRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(StopMeetingRequest::getXConferenceAuthorization,
+                StopMeetingRequest::setXConferenceAuthorization));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SwitchModeRequest, SwitchModeResponse> switchMode = genForswitchMode();
+    public static final HttpRequestDef<SwitchModeRequest, SwitchModeResponse> switchMode = genForSwitchMode();
 
-    private static HttpRequestDef<SwitchModeRequest, SwitchModeResponse> genForswitchMode() {
+    private static HttpRequestDef<SwitchModeRequest, SwitchModeResponse> genForSwitchMode() {
         // basic
         HttpRequestDef.Builder<SwitchModeRequest, SwitchModeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SwitchModeRequest.class, SwitchModeResponse.class)
@@ -7288,23 +6331,18 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchModeRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(SwitchModeRequest::getConferenceID, SwitchModeRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchModeRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(SwitchModeRequest::getXConferenceAuthorization,
+                SwitchModeRequest::setXConferenceAuthorization));
         builder.<RestSwitchModeReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestSwitchModeReqBody.class),
-            f -> f.withMarshaller(SwitchModeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchModeRequest::getBody, SwitchModeRequest::setBody));
 
         // response
 
@@ -7312,9 +6350,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateContactRequest, UpdateContactResponse> updateContact =
-        genForupdateContact();
+        genForUpdateContact();
 
-    private static HttpRequestDef<UpdateContactRequest, UpdateContactResponse> genForupdateContact() {
+    private static HttpRequestDef<UpdateContactRequest, UpdateContactResponse> genForUpdateContact() {
         // basic
         HttpRequestDef.Builder<UpdateContactRequest, UpdateContactResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateContactRequest.class, UpdateContactResponse.class)
@@ -7327,32 +6365,26 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateContactRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateContactRequest::getXRequestId, UpdateContactRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateContactRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateContactRequest::getAcceptLanguage, UpdateContactRequest::setAcceptLanguage));
         builder.<VerificationCodeDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VerificationCodeDTO.class),
-            f -> f.withMarshaller(UpdateContactRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateContactRequest::getBody, UpdateContactRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateCorpRequest, UpdateCorpResponse> updateCorp = genForupdateCorp();
+    public static final HttpRequestDef<UpdateCorpRequest, UpdateCorpResponse> updateCorp = genForUpdateCorp();
 
-    private static HttpRequestDef<UpdateCorpRequest, UpdateCorpResponse> genForupdateCorp() {
+    private static HttpRequestDef<UpdateCorpRequest, UpdateCorpResponse> genForUpdateCorp() {
         // basic
         HttpRequestDef.Builder<UpdateCorpRequest, UpdateCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCorpRequest.class, UpdateCorpResponse.class)
@@ -7365,30 +6397,22 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCorpRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateCorpRequest::getId, UpdateCorpRequest::setId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCorpRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateCorpRequest::getXRequestId, UpdateCorpRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCorpRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateCorpRequest::getAcceptLanguage, UpdateCorpRequest::setAcceptLanguage));
         builder.<ModCorpDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModCorpDTO.class),
-            f -> f.withMarshaller(UpdateCorpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCorpRequest::getBody, UpdateCorpRequest::setBody));
 
         // response
 
@@ -7396,9 +6420,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse> updateCorpBasicInfo =
-        genForupdateCorpBasicInfo();
+        genForUpdateCorpBasicInfo();
 
-    private static HttpRequestDef<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse> genForupdateCorpBasicInfo() {
+    private static HttpRequestDef<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse> genForUpdateCorpBasicInfo() {
         // basic
         HttpRequestDef.Builder<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCorpBasicInfoRequest.class, UpdateCorpBasicInfoResponse.class)
@@ -7411,23 +6435,19 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCorpBasicInfoRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateCorpBasicInfoRequest::getXRequestId,
+                UpdateCorpBasicInfoRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCorpBasicInfoRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateCorpBasicInfoRequest::getAcceptLanguage,
+                UpdateCorpBasicInfoRequest::setAcceptLanguage));
         builder.<ModCorpBasicInfoDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModCorpBasicInfoDTO.class),
-            f -> f.withMarshaller(UpdateCorpBasicInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCorpBasicInfoRequest::getBody, UpdateCorpBasicInfoRequest::setBody));
 
         // response
 
@@ -7435,9 +6455,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateDepartmentRequest, UpdateDepartmentResponse> updateDepartment =
-        genForupdateDepartment();
+        genForUpdateDepartment();
 
-    private static HttpRequestDef<UpdateDepartmentRequest, UpdateDepartmentResponse> genForupdateDepartment() {
+    private static HttpRequestDef<UpdateDepartmentRequest, UpdateDepartmentResponse> genForUpdateDepartment() {
         // basic
         HttpRequestDef.Builder<UpdateDepartmentRequest, UpdateDepartmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDepartmentRequest.class, UpdateDepartmentResponse.class)
@@ -7450,39 +6470,32 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDepartmentRequest::getDeptCode, (req, v) -> {
-                req.setDeptCode(v);
-            }));
+            f -> f.withMarshaller(UpdateDepartmentRequest::getDeptCode, UpdateDepartmentRequest::setDeptCode));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDepartmentRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateDepartmentRequest::getXRequestId, UpdateDepartmentRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDepartmentRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateDepartmentRequest::getAcceptLanguage,
+                UpdateDepartmentRequest::setAcceptLanguage));
         builder.<ModDeptDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModDeptDTO.class),
-            f -> f.withMarshaller(UpdateDepartmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDepartmentRequest::getBody, UpdateDepartmentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> updateDevice = genForupdateDevice();
+    public static final HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> updateDevice = genForUpdateDevice();
 
-    private static HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> genForupdateDevice() {
+    private static HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> genForUpdateDevice() {
         // basic
         HttpRequestDef.Builder<UpdateDeviceRequest, UpdateDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceRequest.class, UpdateDeviceResponse.class)
@@ -7495,30 +6508,22 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getSn, (req, v) -> {
-                req.setSn(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getSn, UpdateDeviceRequest::setSn));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getXRequestId, UpdateDeviceRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getAcceptLanguage, UpdateDeviceRequest::setAcceptLanguage));
         builder.<ModDeviceDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModDeviceDTO.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getBody, UpdateDeviceRequest::setBody));
 
         // response
 
@@ -7526,9 +6531,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateMaterialRequest, UpdateMaterialResponse> updateMaterial =
-        genForupdateMaterial();
+        genForUpdateMaterial();
 
-    private static HttpRequestDef<UpdateMaterialRequest, UpdateMaterialResponse> genForupdateMaterial() {
+    private static HttpRequestDef<UpdateMaterialRequest, UpdateMaterialResponse> genForUpdateMaterial() {
         // basic
         HttpRequestDef.Builder<UpdateMaterialRequest, UpdateMaterialResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMaterialRequest.class, UpdateMaterialResponse.class)
@@ -7541,30 +6546,22 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMaterialRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateMaterialRequest::getId, UpdateMaterialRequest::setId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMaterialRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateMaterialRequest::getXRequestId, UpdateMaterialRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMaterialRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateMaterialRequest::getAcceptLanguage, UpdateMaterialRequest::setAcceptLanguage));
         builder.<UpdateMaterialRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateMaterialRequestDTO.class),
-            f -> f.withMarshaller(UpdateMaterialRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMaterialRequest::getBody, UpdateMaterialRequest::setBody));
 
         // response
 
@@ -7572,9 +6569,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateMeetingRequest, UpdateMeetingResponse> updateMeeting =
-        genForupdateMeeting();
+        genForUpdateMeeting();
 
-    private static HttpRequestDef<UpdateMeetingRequest, UpdateMeetingResponse> genForupdateMeeting() {
+    private static HttpRequestDef<UpdateMeetingRequest, UpdateMeetingResponse> genForUpdateMeeting() {
         // basic
         HttpRequestDef.Builder<UpdateMeetingRequest, UpdateMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMeetingRequest.class, UpdateMeetingResponse.class)
@@ -7587,54 +6584,44 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(UpdateMeetingRequest::getConferenceID, UpdateMeetingRequest::setConferenceID));
         builder.<String>withRequestField("userUUID",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(UpdateMeetingRequest::getUserUUID, UpdateMeetingRequest::setUserUUID));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(UpdateMeetingRequest::getXAuthorizationType,
+                UpdateMeetingRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(UpdateMeetingRequest::getXSiteId, UpdateMeetingRequest::setXSiteId));
         builder.<RestScheduleConfDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestScheduleConfDTO.class),
-            f -> f.withMarshaller(UpdateMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMeetingRequest::getBody, UpdateMeetingRequest::setBody));
 
         // response
         builder.<List<ConferenceInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdateMeetingResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ConferenceInfo.class));
+            f -> f.withMarshaller(UpdateMeetingResponse::getBody, UpdateMeetingResponse::setBody)
+                .withInnerContainerType(ConferenceInfo.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateMemberVmrRequest, UpdateMemberVmrResponse> updateMemberVmr =
-        genForupdateMemberVmr();
+        genForUpdateMemberVmr();
 
-    private static HttpRequestDef<UpdateMemberVmrRequest, UpdateMemberVmrResponse> genForupdateMemberVmr() {
+    private static HttpRequestDef<UpdateMemberVmrRequest, UpdateMemberVmrResponse> genForUpdateMemberVmr() {
         // basic
         HttpRequestDef.Builder<UpdateMemberVmrRequest, UpdateMemberVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMemberVmrRequest.class, UpdateMemberVmrResponse.class)
@@ -7647,39 +6634,32 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberVmrRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberVmrRequest::getId, UpdateMemberVmrRequest::setId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberVmrRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberVmrRequest::getXRequestId, UpdateMemberVmrRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberVmrRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberVmrRequest::getAcceptLanguage,
+                UpdateMemberVmrRequest::setAcceptLanguage));
         builder.<ModVmrDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModVmrDTO.class),
-            f -> f.withMarshaller(UpdateMemberVmrRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberVmrRequest::getBody, UpdateMemberVmrRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateMyInfoRequest, UpdateMyInfoResponse> updateMyInfo = genForupdateMyInfo();
+    public static final HttpRequestDef<UpdateMyInfoRequest, UpdateMyInfoResponse> updateMyInfo = genForUpdateMyInfo();
 
-    private static HttpRequestDef<UpdateMyInfoRequest, UpdateMyInfoResponse> genForupdateMyInfo() {
+    private static HttpRequestDef<UpdateMyInfoRequest, UpdateMyInfoResponse> genForUpdateMyInfo() {
         // basic
         HttpRequestDef.Builder<UpdateMyInfoRequest, UpdateMyInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMyInfoRequest.class, UpdateMyInfoResponse.class)
@@ -7692,23 +6672,17 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMyInfoRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateMyInfoRequest::getXRequestId, UpdateMyInfoRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMyInfoRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateMyInfoRequest::getAcceptLanguage, UpdateMyInfoRequest::setAcceptLanguage));
         builder.<ModMemberDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModMemberDTO.class),
-            f -> f.withMarshaller(UpdateMyInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMyInfoRequest::getBody, UpdateMyInfoRequest::setBody));
 
         // response
 
@@ -7716,9 +6690,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateProgramRequest, UpdateProgramResponse> updateProgram =
-        genForupdateProgram();
+        genForUpdateProgram();
 
-    private static HttpRequestDef<UpdateProgramRequest, UpdateProgramResponse> genForupdateProgram() {
+    private static HttpRequestDef<UpdateProgramRequest, UpdateProgramResponse> genForUpdateProgram() {
         // basic
         HttpRequestDef.Builder<UpdateProgramRequest, UpdateProgramResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProgramRequest.class, UpdateProgramResponse.class)
@@ -7731,30 +6705,22 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProgramRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateProgramRequest::getId, UpdateProgramRequest::setId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProgramRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateProgramRequest::getXRequestId, UpdateProgramRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProgramRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateProgramRequest::getAcceptLanguage, UpdateProgramRequest::setAcceptLanguage));
         builder.<UpdateProgramRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProgramRequestDTO.class),
-            f -> f.withMarshaller(UpdateProgramRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProgramRequest::getBody, UpdateProgramRequest::setBody));
 
         // response
 
@@ -7762,9 +6728,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdatePublicationRequest, UpdatePublicationResponse> updatePublication =
-        genForupdatePublication();
+        genForUpdatePublication();
 
-    private static HttpRequestDef<UpdatePublicationRequest, UpdatePublicationResponse> genForupdatePublication() {
+    private static HttpRequestDef<UpdatePublicationRequest, UpdatePublicationResponse> genForUpdatePublication() {
         // basic
         HttpRequestDef.Builder<UpdatePublicationRequest, UpdatePublicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePublicationRequest.class, UpdatePublicationResponse.class)
@@ -7777,39 +6743,32 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePublicationRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdatePublicationRequest::getId, UpdatePublicationRequest::setId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePublicationRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdatePublicationRequest::getXRequestId, UpdatePublicationRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePublicationRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdatePublicationRequest::getAcceptLanguage,
+                UpdatePublicationRequest::setAcceptLanguage));
         builder.<UpdatePublicationRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePublicationRequestDTO.class),
-            f -> f.withMarshaller(UpdatePublicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePublicationRequest::getBody, UpdatePublicationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePwdRequest, UpdatePwdResponse> updatePwd = genForupdatePwd();
+    public static final HttpRequestDef<UpdatePwdRequest, UpdatePwdResponse> updatePwd = genForUpdatePwd();
 
-    private static HttpRequestDef<UpdatePwdRequest, UpdatePwdResponse> genForupdatePwd() {
+    private static HttpRequestDef<UpdatePwdRequest, UpdatePwdResponse> genForUpdatePwd() {
         // basic
         HttpRequestDef.Builder<UpdatePwdRequest, UpdatePwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePwdRequest.class, UpdatePwdResponse.class)
@@ -7822,23 +6781,17 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePwdRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(UpdatePwdRequest::getXRequestID, UpdatePwdRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePwdRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdatePwdRequest::getAcceptLanguage, UpdatePwdRequest::setAcceptLanguage));
         builder.<ModPwdReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModPwdReqDTO.class),
-            f -> f.withMarshaller(UpdatePwdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePwdRequest::getBody, UpdatePwdRequest::setBody));
 
         // response
 
@@ -7846,9 +6799,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> updateRecurringMeeting =
-        genForupdateRecurringMeeting();
+        genForUpdateRecurringMeeting();
 
-    private static HttpRequestDef<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> genForupdateRecurringMeeting() {
+    private static HttpRequestDef<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> genForUpdateRecurringMeeting() {
         // basic
         HttpRequestDef.Builder<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateRecurringMeetingRequest.class, UpdateRecurringMeetingResponse.class)
@@ -7861,54 +6814,47 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getUserUUID,
+                UpdateRecurringMeetingRequest::setUserUUID));
         builder.<String>withRequestField("conferenceID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getConferenceID,
+                UpdateRecurringMeetingRequest::setConferenceID));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getXAuthorizationType,
+                UpdateRecurringMeetingRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getXSiteId,
+                UpdateRecurringMeetingRequest::setXSiteId));
         builder.<RestScheduleConfDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestScheduleConfDTO.class),
-            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRecurringMeetingRequest::getBody, UpdateRecurringMeetingRequest::setBody));
 
         // response
         builder.<List<ConferenceInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdateRecurringMeetingResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ConferenceInfo.class));
+            f -> f.withMarshaller(UpdateRecurringMeetingResponse::getBody, UpdateRecurringMeetingResponse::setBody)
+                .withInnerContainerType(ConferenceInfo.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> updateRecurringSubMeeting =
-        genForupdateRecurringSubMeeting();
+        genForUpdateRecurringSubMeeting();
 
-    private static HttpRequestDef<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> genForupdateRecurringSubMeeting() {
+    private static HttpRequestDef<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> genForUpdateRecurringSubMeeting() {
         // basic
         HttpRequestDef.Builder<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> builder =
             HttpRequestDef
@@ -7924,37 +6870,32 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            }));
+            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getUserUUID,
+                UpdateRecurringSubMeetingRequest::setUserUUID));
         builder.<String>withRequestField("conferenceID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getConferenceID,
+                UpdateRecurringSubMeetingRequest::setConferenceID));
         builder.<String>withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            }));
+            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getXAuthorizationType,
+                UpdateRecurringSubMeetingRequest::setXAuthorizationType));
         builder.<String>withRequestField("X-Site-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getXSiteId,
+                UpdateRecurringSubMeetingRequest::setXSiteId));
         builder.<RestScheduleCycleConfDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestScheduleCycleConfDTO.class),
-            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRecurringSubMeetingRequest::getBody,
+                UpdateRecurringSubMeetingRequest::setBody));
 
         // response
 
@@ -7962,9 +6903,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> updateResource =
-        genForupdateResource();
+        genForUpdateResource();
 
-    private static HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> genForupdateResource() {
+    private static HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> genForUpdateResource() {
         // basic
         HttpRequestDef.Builder<UpdateResourceRequest, UpdateResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateResourceRequest.class, UpdateResourceResponse.class)
@@ -7977,30 +6918,23 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResourceRequest::getCorpId, (req, v) -> {
-                req.setCorpId(v);
-            }));
+            f -> f.withMarshaller(UpdateResourceRequest::getCorpId, UpdateResourceRequest::setCorpId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResourceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateResourceRequest::getXRequestId, UpdateResourceRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResourceRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateResourceRequest::getAcceptLanguage, UpdateResourceRequest::setAcceptLanguage));
         builder.<List<ModResourceDTO>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdateResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(ModResourceDTO.class));
+            f -> f.withMarshaller(UpdateResourceRequest::getBody, UpdateResourceRequest::setBody)
+                .withInnerContainerType(ModResourceDTO.class));
 
         // response
 
@@ -8008,9 +6942,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateRoomSettingRequest, UpdateRoomSettingResponse> updateRoomSetting =
-        genForupdateRoomSetting();
+        genForUpdateRoomSetting();
 
-    private static HttpRequestDef<UpdateRoomSettingRequest, UpdateRoomSettingResponse> genForupdateRoomSetting() {
+    private static HttpRequestDef<UpdateRoomSettingRequest, UpdateRoomSettingResponse> genForUpdateRoomSetting() {
         // basic
         HttpRequestDef.Builder<UpdateRoomSettingRequest, UpdateRoomSettingResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateRoomSettingRequest.class, UpdateRoomSettingResponse.class)
@@ -8023,30 +6957,24 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRoomSettingRequest::getConferenceId, (req, v) -> {
-                req.setConferenceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRoomSettingRequest::getConferenceId,
+                UpdateRoomSettingRequest::setConferenceId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRoomSettingRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateRoomSettingRequest::getXRequestId, UpdateRoomSettingRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRoomSettingRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateRoomSettingRequest::getAcceptLanguage,
+                UpdateRoomSettingRequest::setAcceptLanguage));
         builder.<OpenRoomSettingReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OpenRoomSettingReq.class),
-            f -> f.withMarshaller(UpdateRoomSettingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRoomSettingRequest::getBody, UpdateRoomSettingRequest::setBody));
 
         // response
 
@@ -8054,9 +6982,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> updateStartedConfConfig =
-        genForupdateStartedConfConfig();
+        genForUpdateStartedConfConfig();
 
-    private static HttpRequestDef<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> genForupdateStartedConfConfig() {
+    private static HttpRequestDef<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> genForUpdateStartedConfConfig() {
         // basic
         HttpRequestDef.Builder<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateStartedConfConfigRequest.class, UpdateStartedConfConfigResponse.class)
@@ -8069,32 +6997,28 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStartedConfConfigRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            }));
+            f -> f.withMarshaller(UpdateStartedConfConfigRequest::getConferenceID,
+                UpdateStartedConfConfigRequest::setConferenceID));
         builder.<String>withRequestField("X-Conference-Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStartedConfConfigRequest::getXConferenceAuthorization, (req, v) -> {
-                req.setXConferenceAuthorization(v);
-            }));
+            f -> f.withMarshaller(UpdateStartedConfConfigRequest::getXConferenceAuthorization,
+                UpdateStartedConfConfigRequest::setXConferenceAuthorization));
         builder.<UpdateStartedConfigReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateStartedConfigReqBody.class),
-            f -> f.withMarshaller(UpdateStartedConfConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStartedConfConfigRequest::getBody, UpdateStartedConfConfigRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTokenRequest, UpdateTokenResponse> updateToken = genForupdateToken();
+    public static final HttpRequestDef<UpdateTokenRequest, UpdateTokenResponse> updateToken = genForUpdateToken();
 
-    private static HttpRequestDef<UpdateTokenRequest, UpdateTokenResponse> genForupdateToken() {
+    private static HttpRequestDef<UpdateTokenRequest, UpdateTokenResponse> genForUpdateToken() {
         // basic
         HttpRequestDef.Builder<UpdateTokenRequest, UpdateTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTokenRequest.class, UpdateTokenResponse.class)
@@ -8107,25 +7031,21 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTokenRequest::getXRequestID, (req, v) -> {
-                req.setXRequestID(v);
-            }));
+            f -> f.withMarshaller(UpdateTokenRequest::getXRequestID, UpdateTokenRequest::setXRequestID));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTokenRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateTokenRequest::getAcceptLanguage, UpdateTokenRequest::setAcceptLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForupdateUser();
+    public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForUpdateUser();
 
-    private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForupdateUser() {
+    private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForUpdateUser() {
         // basic
         HttpRequestDef.Builder<UpdateUserRequest, UpdateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateUserRequest.class, UpdateUserResponse.class)
@@ -8138,37 +7058,27 @@ public class MeetingMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserRequest::getAccount, (req, v) -> {
-                req.setAccount(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getAccount, UpdateUserRequest::setAccount));
         builder.<Integer>withRequestField("accountType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateUserRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getAccountType, UpdateUserRequest::setAccountType));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getXRequestId, UpdateUserRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getAcceptLanguage, UpdateUserRequest::setAcceptLanguage));
         builder.<ModUserDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModUserDTO.class),
-            f -> f.withMarshaller(UpdateUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getBody, UpdateUserRequest::setBody));
 
         // response
 
@@ -8176,9 +7086,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> updateWebHookConfigStatus =
-        genForupdateWebHookConfigStatus();
+        genForUpdateWebHookConfigStatus();
 
-    private static HttpRequestDef<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> genForupdateWebHookConfigStatus() {
+    private static HttpRequestDef<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> genForUpdateWebHookConfigStatus() {
         // basic
         HttpRequestDef.Builder<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> builder =
             HttpRequestDef
@@ -8194,16 +7104,13 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWebHookConfigStatusRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateWebHookConfigStatusRequest::getId, UpdateWebHookConfigStatusRequest::setId));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateWebHookConfigStatusRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(UpdateWebHookConfigStatusRequest::getStatus,
+                UpdateWebHookConfigStatusRequest::setStatus));
 
         // response
 
@@ -8211,9 +7118,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<UpdateWebinarRequest, UpdateWebinarResponse> updateWebinar =
-        genForupdateWebinar();
+        genForUpdateWebinar();
 
-    private static HttpRequestDef<UpdateWebinarRequest, UpdateWebinarResponse> genForupdateWebinar() {
+    private static HttpRequestDef<UpdateWebinarRequest, UpdateWebinarResponse> genForUpdateWebinar() {
         // basic
         HttpRequestDef.Builder<UpdateWebinarRequest, UpdateWebinarResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateWebinarRequest.class, UpdateWebinarResponse.class)
@@ -8226,32 +7133,26 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWebinarRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateWebinarRequest::getXRequestId, UpdateWebinarRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWebinarRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateWebinarRequest::getAcceptLanguage, UpdateWebinarRequest::setAcceptLanguage));
         builder.<OpenEditConfReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenEditConfReq.class),
-            f -> f.withMarshaller(UpdateWebinarRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateWebinarRequest::getBody, UpdateWebinarRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UploadFileRequest, UploadFileResponse> uploadFile = genForuploadFile();
+    public static final HttpRequestDef<UploadFileRequest, UploadFileResponse> uploadFile = genForUploadFile();
 
-    private static HttpRequestDef<UploadFileRequest, UploadFileResponse> genForuploadFile() {
+    private static HttpRequestDef<UploadFileRequest, UploadFileResponse> genForUploadFile() {
         // basic
         HttpRequestDef.Builder<UploadFileRequest, UploadFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UploadFileRequest.class, UploadFileResponse.class)
@@ -8264,23 +7165,17 @@ public class MeetingMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadFileRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(UploadFileRequest::getXRequestId, UploadFileRequest::setXRequestId));
         builder.<String>withRequestField("Accept-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadFileRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            }));
+            f -> f.withMarshaller(UploadFileRequest::getAcceptLanguage, UploadFileRequest::setAcceptLanguage));
         builder.<UploadFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadFileRequestBody.class),
-            f -> f.withMarshaller(UploadFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadFileRequest::getBody, UploadFileRequest::setBody));
 
         // response
 
@@ -8288,9 +7183,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> searchQosHistoryMeetings =
-        genForsearchQosHistoryMeetings();
+        genForSearchQosHistoryMeetings();
 
-    private static HttpRequestDef<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> genForsearchQosHistoryMeetings() {
+    private static HttpRequestDef<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> genForSearchQosHistoryMeetings() {
         // basic
         HttpRequestDef.Builder<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> builder =
             HttpRequestDef
@@ -8304,37 +7199,32 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getStartDate,
+                SearchQosHistoryMeetingsRequest::setStartDate));
         builder.<Long>withRequestField("endDate",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getEndDate,
+                SearchQosHistoryMeetingsRequest::setEndDate));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getOffset,
+                SearchQosHistoryMeetingsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getLimit,
+                SearchQosHistoryMeetingsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getSearchKey,
+                SearchQosHistoryMeetingsRequest::setSearchKey));
 
         // response
 
@@ -8342,9 +7232,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> searchQosOnlineMeetings =
-        genForsearchQosOnlineMeetings();
+        genForSearchQosOnlineMeetings();
 
-    private static HttpRequestDef<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> genForsearchQosOnlineMeetings() {
+    private static HttpRequestDef<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> genForSearchQosOnlineMeetings() {
         // basic
         HttpRequestDef.Builder<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchQosOnlineMeetingsRequest.class, SearchQosOnlineMeetingsResponse.class)
@@ -8357,23 +7247,19 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchQosOnlineMeetingsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchQosOnlineMeetingsRequest::getOffset,
+                SearchQosOnlineMeetingsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchQosOnlineMeetingsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchQosOnlineMeetingsRequest::getLimit, SearchQosOnlineMeetingsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchQosOnlineMeetingsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchQosOnlineMeetingsRequest::getSearchKey,
+                SearchQosOnlineMeetingsRequest::setSearchKey));
 
         // response
 
@@ -8381,9 +7267,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> searchQosParticipantDetail =
-        genForsearchQosParticipantDetail();
+        genForSearchQosParticipantDetail();
 
-    private static HttpRequestDef<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> genForsearchQosParticipantDetail() {
+    private static HttpRequestDef<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> genForSearchQosParticipantDetail() {
         // basic
         HttpRequestDef.Builder<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> builder =
             HttpRequestDef
@@ -8399,30 +7285,26 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getConfUUID, (req, v) -> {
-                req.setConfUUID(v);
-            }));
+            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getConfUUID,
+                SearchQosParticipantDetailRequest::setConfUUID));
         builder.<SearchQosParticipantDetailRequest.ConfTypeEnum>withRequestField("confType",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchQosParticipantDetailRequest.ConfTypeEnum.class),
-            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getConfType, (req, v) -> {
-                req.setConfType(v);
-            }));
+            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getConfType,
+                SearchQosParticipantDetailRequest::setConfType));
         builder.<String>withRequestField("participantID",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getParticipantID, (req, v) -> {
-                req.setParticipantID(v);
-            }));
+            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getParticipantID,
+                SearchQosParticipantDetailRequest::setParticipantID));
         builder.<SearchQosParticipantDetailRequest.QosTypeEnum>withRequestField("qosType",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchQosParticipantDetailRequest.QosTypeEnum.class),
-            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getQosType, (req, v) -> {
-                req.setQosType(v);
-            }));
+            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getQosType,
+                SearchQosParticipantDetailRequest::setQosType));
 
         // response
 
@@ -8430,9 +7312,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchQosParticipantsRequest, SearchQosParticipantsResponse> searchQosParticipants =
-        genForsearchQosParticipants();
+        genForSearchQosParticipants();
 
-    private static HttpRequestDef<SearchQosParticipantsRequest, SearchQosParticipantsResponse> genForsearchQosParticipants() {
+    private static HttpRequestDef<SearchQosParticipantsRequest, SearchQosParticipantsResponse> genForSearchQosParticipants() {
         // basic
         HttpRequestDef.Builder<SearchQosParticipantsRequest, SearchQosParticipantsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchQosParticipantsRequest.class, SearchQosParticipantsResponse.class)
@@ -8445,37 +7327,30 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchQosParticipantsRequest::getConfUUID, (req, v) -> {
-                req.setConfUUID(v);
-            }));
+            f -> f.withMarshaller(SearchQosParticipantsRequest::getConfUUID,
+                SearchQosParticipantsRequest::setConfUUID));
         builder.<SearchQosParticipantsRequest.ConfTypeEnum>withRequestField("confType",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchQosParticipantsRequest.ConfTypeEnum.class),
-            f -> f.withMarshaller(SearchQosParticipantsRequest::getConfType, (req, v) -> {
-                req.setConfType(v);
-            }));
+            f -> f.withMarshaller(SearchQosParticipantsRequest::getConfType,
+                SearchQosParticipantsRequest::setConfType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchQosParticipantsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchQosParticipantsRequest::getOffset, SearchQosParticipantsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchQosParticipantsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchQosParticipantsRequest::getLimit, SearchQosParticipantsRequest::setLimit));
         builder.<String>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchQosParticipantsRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(SearchQosParticipantsRequest::getSearchKey,
+                SearchQosParticipantsRequest::setSearchKey));
 
         // response
 
@@ -8483,9 +7358,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SetQosThresholdRequest, SetQosThresholdResponse> setQosThreshold =
-        genForsetQosThreshold();
+        genForSetQosThreshold();
 
-    private static HttpRequestDef<SetQosThresholdRequest, SetQosThresholdResponse> genForsetQosThreshold() {
+    private static HttpRequestDef<SetQosThresholdRequest, SetQosThresholdResponse> genForSetQosThreshold() {
         // basic
         HttpRequestDef.Builder<SetQosThresholdRequest, SetQosThresholdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SetQosThresholdRequest.class, SetQosThresholdResponse.class)
@@ -8498,16 +7373,12 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetQosThresholdRequest.ThresholdTypeEnum.class),
-            f -> f.withMarshaller(SetQosThresholdRequest::getThresholdType, (req, v) -> {
-                req.setThresholdType(v);
-            }));
+            f -> f.withMarshaller(SetQosThresholdRequest::getThresholdType, SetQosThresholdRequest::setThresholdType));
         builder.<SetQosThresholdReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetQosThresholdReq.class),
-            f -> f.withMarshaller(SetQosThresholdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetQosThresholdRequest::getBody, SetQosThresholdRequest::setBody));
 
         // response
 
@@ -8515,9 +7386,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<ShowQosThresholdRequest, ShowQosThresholdResponse> showQosThreshold =
-        genForshowQosThreshold();
+        genForShowQosThreshold();
 
-    private static HttpRequestDef<ShowQosThresholdRequest, ShowQosThresholdResponse> genForshowQosThreshold() {
+    private static HttpRequestDef<ShowQosThresholdRequest, ShowQosThresholdResponse> genForShowQosThreshold() {
         // basic
         HttpRequestDef.Builder<ShowQosThresholdRequest, ShowQosThresholdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQosThresholdRequest.class, ShowQosThresholdResponse.class)
@@ -8530,9 +7401,8 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowQosThresholdRequest.ThresholdTypeEnum.class),
-            f -> f.withMarshaller(ShowQosThresholdRequest::getThresholdType, (req, v) -> {
-                req.setThresholdType(v);
-            }));
+            f -> f.withMarshaller(ShowQosThresholdRequest::getThresholdType,
+                ShowQosThresholdRequest::setThresholdType));
 
         // response
 
@@ -8540,9 +7410,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> searchStatisticConferenceInfo =
-        genForsearchStatisticConferenceInfo();
+        genForSearchStatisticConferenceInfo();
 
-    private static HttpRequestDef<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> genForsearchStatisticConferenceInfo() {
+    private static HttpRequestDef<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> genForSearchStatisticConferenceInfo() {
         // basic
         HttpRequestDef.Builder<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> builder =
             HttpRequestDef
@@ -8558,44 +7428,38 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getOffset,
+                SearchStatisticConferenceInfoRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getLimit,
+                SearchStatisticConferenceInfoRequest::setLimit));
         builder.<SearchStatisticConferenceInfoRequest.TimeUnitEnum>withRequestField("timeUnit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchStatisticConferenceInfoRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getTimeUnit,
+                SearchStatisticConferenceInfoRequest::setTimeUnit));
         builder.<String>withRequestField("startTime",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getStartTime,
+                SearchStatisticConferenceInfoRequest::setStartTime));
         builder.<String>withRequestField("endTime",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getEndTime,
+                SearchStatisticConferenceInfoRequest::setEndTime));
         builder.<SearchStatisticConferenceInfoRequest.CategoryEnum>withRequestField("category",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchStatisticConferenceInfoRequest.CategoryEnum.class),
-            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceInfoRequest::getCategory,
+                SearchStatisticConferenceInfoRequest::setCategory));
 
         // response
 
@@ -8603,9 +7467,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> searchStatisticConferenceParticipant =
-        genForsearchStatisticConferenceParticipant();
+        genForSearchStatisticConferenceParticipant();
 
-    private static HttpRequestDef<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> genForsearchStatisticConferenceParticipant() {
+    private static HttpRequestDef<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> genForSearchStatisticConferenceParticipant() {
         // basic
         HttpRequestDef.Builder<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> builder =
             HttpRequestDef
@@ -8621,44 +7485,38 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getOffset,
+                SearchStatisticConferenceParticipantRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getLimit,
+                SearchStatisticConferenceParticipantRequest::setLimit));
         builder.<SearchStatisticConferenceParticipantRequest.TimeUnitEnum>withRequestField("timeUnit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchStatisticConferenceParticipantRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getTimeUnit,
+                SearchStatisticConferenceParticipantRequest::setTimeUnit));
         builder.<String>withRequestField("startTime",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getStartTime,
+                SearchStatisticConferenceParticipantRequest::setStartTime));
         builder.<String>withRequestField("endTime",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getEndTime,
+                SearchStatisticConferenceParticipantRequest::setEndTime));
         builder.<SearchStatisticConferenceParticipantRequest.CategoryEnum>withRequestField("category",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchStatisticConferenceParticipantRequest.CategoryEnum.class),
-            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticConferenceParticipantRequest::getCategory,
+                SearchStatisticConferenceParticipantRequest::setCategory));
 
         // response
 
@@ -8666,9 +7524,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> searchStatisticResourceInfo =
-        genForsearchStatisticResourceInfo();
+        genForSearchStatisticResourceInfo();
 
-    private static HttpRequestDef<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> genForsearchStatisticResourceInfo() {
+    private static HttpRequestDef<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> genForSearchStatisticResourceInfo() {
         // basic
         HttpRequestDef.Builder<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> builder =
             HttpRequestDef
@@ -8684,44 +7542,38 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getOffset,
+                SearchStatisticResourceInfoRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getLimit,
+                SearchStatisticResourceInfoRequest::setLimit));
         builder.<SearchStatisticResourceInfoRequest.TimeUnitEnum>withRequestField("timeUnit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchStatisticResourceInfoRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getTimeUnit,
+                SearchStatisticResourceInfoRequest::setTimeUnit));
         builder.<String>withRequestField("startTime",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getStartTime,
+                SearchStatisticResourceInfoRequest::setStartTime));
         builder.<String>withRequestField("endTime",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getEndTime,
+                SearchStatisticResourceInfoRequest::setEndTime));
         builder.<SearchStatisticResourceInfoRequest.CategoryEnum>withRequestField("category",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchStatisticResourceInfoRequest.CategoryEnum.class),
-            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticResourceInfoRequest::getCategory,
+                SearchStatisticResourceInfoRequest::setCategory));
 
         // response
 
@@ -8729,9 +7581,9 @@ public class MeetingMeta {
     }
 
     public static final HttpRequestDef<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> searchStatisticUserInfo =
-        genForsearchStatisticUserInfo();
+        genForSearchStatisticUserInfo();
 
-    private static HttpRequestDef<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> genForsearchStatisticUserInfo() {
+    private static HttpRequestDef<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> genForSearchStatisticUserInfo() {
         // basic
         HttpRequestDef.Builder<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, SearchStatisticUserInfoRequest.class, SearchStatisticUserInfoResponse.class)
@@ -8744,44 +7596,37 @@ public class MeetingMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getOffset,
+                SearchStatisticUserInfoRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getLimit, SearchStatisticUserInfoRequest::setLimit));
         builder.<SearchStatisticUserInfoRequest.TimeUnitEnum>withRequestField("timeUnit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchStatisticUserInfoRequest.TimeUnitEnum.class),
-            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getTimeUnit, (req, v) -> {
-                req.setTimeUnit(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getTimeUnit,
+                SearchStatisticUserInfoRequest::setTimeUnit));
         builder.<String>withRequestField("startTime",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getStartTime,
+                SearchStatisticUserInfoRequest::setStartTime));
         builder.<String>withRequestField("endTime",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getEndTime,
+                SearchStatisticUserInfoRequest::setEndTime));
         builder.<SearchStatisticUserInfoRequest.CategoryEnum>withRequestField("category",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchStatisticUserInfoRequest.CategoryEnum.class),
-            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(SearchStatisticUserInfoRequest::getCategory,
+                SearchStatisticUserInfoRequest::setCategory));
 
         // response
 

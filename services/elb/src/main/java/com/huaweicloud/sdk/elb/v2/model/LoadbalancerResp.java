@@ -283,9 +283,94 @@ public class LoadbalancerResp {
     private String chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "billing_info")
+
+    private String billingInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen_scene")
 
     private String frozenScene;
+
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     */
+    public static final class ProtectionStatusEnum {
+
+        /**
+         * Enum NONPROTECTION for value: "nonProtection"
+         */
+        public static final ProtectionStatusEnum NONPROTECTION = new ProtectionStatusEnum("nonProtection");
+
+        /**
+         * Enum CONSOLEPROTECTION for value: "consoleProtection"
+         */
+        public static final ProtectionStatusEnum CONSOLEPROTECTION = new ProtectionStatusEnum("consoleProtection");
+
+        private static final Map<String, ProtectionStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtectionStatusEnum> createStaticFields() {
+            Map<String, ProtectionStatusEnum> map = new HashMap<>();
+            map.put("nonProtection", NONPROTECTION);
+            map.put("consoleProtection", CONSOLEPROTECTION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtectionStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtectionStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectionStatusEnum(value));
+        }
+
+        public static ProtectionStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtectionStatusEnum) {
+                return this.value.equals(((ProtectionStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_status")
+
+    private ProtectionStatusEnum protectionStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_reason")
+
+    private String protectionReason;
 
     public LoadbalancerResp withId(String id) {
         this.id = id;
@@ -680,7 +765,7 @@ public class LoadbalancerResp {
     }
 
     /**
-     * 收费模式。取值：  flavor：按规格计费 lcu：按使用量计费 说明：不影响弹性扩缩容实例、包周期实例的计费方式
+     * 收费模式。取值：  flavor：按规格计费 lcu：按使用量计费 说明：弹性扩缩容实例该字段无效，按lcu收费；包周期实例该字段无效，预付费收费。
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -689,6 +774,23 @@ public class LoadbalancerResp {
 
     public void setChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
+    }
+
+    public LoadbalancerResp withBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
+        return this;
+    }
+
+    /**
+     * 资源账单信息，取值：     - 空：按需计费。     - 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id。
+     * @return billingInfo
+     */
+    public String getBillingInfo() {
+        return billingInfo;
+    }
+
+    public void setBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
     }
 
     public LoadbalancerResp withFrozenScene(String frozenScene) {
@@ -706,6 +808,40 @@ public class LoadbalancerResp {
 
     public void setFrozenScene(String frozenScene) {
         this.frozenScene = frozenScene;
+    }
+
+    public LoadbalancerResp withProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+        return this;
+    }
+
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     * @return protectionStatus
+     */
+    public ProtectionStatusEnum getProtectionStatus() {
+        return protectionStatus;
+    }
+
+    public void setProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+    }
+
+    public LoadbalancerResp withProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
+        return this;
+    }
+
+    /**
+     * 设置保护的原因 >仅当protection_status为consoleProtection时有效。
+     * @return protectionReason
+     */
+    public String getProtectionReason() {
+        return protectionReason;
+    }
+
+    public void setProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
     }
 
     @Override
@@ -729,7 +865,9 @@ public class LoadbalancerResp {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.publicips, that.publicips) && Objects.equals(this.chargeMode, that.chargeMode)
-            && Objects.equals(this.frozenScene, that.frozenScene);
+            && Objects.equals(this.billingInfo, that.billingInfo) && Objects.equals(this.frozenScene, that.frozenScene)
+            && Objects.equals(this.protectionStatus, that.protectionStatus)
+            && Objects.equals(this.protectionReason, that.protectionReason);
     }
 
     @Override
@@ -754,7 +892,10 @@ public class LoadbalancerResp {
             tags,
             publicips,
             chargeMode,
-            frozenScene);
+            billingInfo,
+            frozenScene,
+            protectionStatus,
+            protectionReason);
     }
 
     @Override
@@ -781,7 +922,10 @@ public class LoadbalancerResp {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    publicips: ").append(toIndentedString(publicips)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    frozenScene: ").append(toIndentedString(frozenScene)).append("\n");
+        sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
+        sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

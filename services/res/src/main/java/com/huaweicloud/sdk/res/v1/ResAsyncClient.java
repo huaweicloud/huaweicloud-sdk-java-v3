@@ -92,7 +92,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResDatasourceRequest 请求对象
+     * @param request CreateResDatasourceRequest 请求对象
      * @return CompletableFuture<CreateResDatasourceResponse>
      */
     public CompletableFuture<CreateResDatasourceResponse> createResDatasourceAsync(CreateResDatasourceRequest request) {
@@ -106,13 +106,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResDatasourceRequest 请求对象
+     * @param request CreateResDatasourceRequest 请求对象
      * @return AsyncInvoker<CreateResDatasourceRequest, CreateResDatasourceResponse>
      */
     public AsyncInvoker<CreateResDatasourceRequest, CreateResDatasourceResponse> createResDatasourceAsyncInvoker(
         CreateResDatasourceRequest request) {
-        return new AsyncInvoker<CreateResDatasourceRequest, CreateResDatasourceResponse>(request,
-            ResMeta.createResDatasource, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.createResDatasource, hcClient);
     }
 
     /**
@@ -122,7 +121,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResIntelligentSceneRequest 请求对象
+     * @param request CreateResIntelligentSceneRequest 请求对象
      * @return CompletableFuture<CreateResIntelligentSceneResponse>
      */
     public CompletableFuture<CreateResIntelligentSceneResponse> createResIntelligentSceneAsync(
@@ -137,13 +136,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResIntelligentSceneRequest 请求对象
+     * @param request CreateResIntelligentSceneRequest 请求对象
      * @return AsyncInvoker<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse>
      */
     public AsyncInvoker<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse> createResIntelligentSceneAsyncInvoker(
         CreateResIntelligentSceneRequest request) {
-        return new AsyncInvoker<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse>(request,
-            ResMeta.createResIntelligentScene, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.createResIntelligentScene, hcClient);
     }
 
     /**
@@ -153,7 +151,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResJobRequest 请求对象
+     * @param request CreateResJobRequest 请求对象
      * @return CompletableFuture<CreateResJobResponse>
      */
     public CompletableFuture<CreateResJobResponse> createResJobAsync(CreateResJobRequest request) {
@@ -167,12 +165,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResJobRequest 请求对象
+     * @param request CreateResJobRequest 请求对象
      * @return AsyncInvoker<CreateResJobRequest, CreateResJobResponse>
      */
     public AsyncInvoker<CreateResJobRequest, CreateResJobResponse> createResJobAsyncInvoker(
         CreateResJobRequest request) {
-        return new AsyncInvoker<CreateResJobRequest, CreateResJobResponse>(request, ResMeta.createResJob, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.createResJob, hcClient);
     }
 
     /**
@@ -182,7 +180,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResJobsRequest 请求对象
+     * @param request CreateResJobsRequest 请求对象
      * @return CompletableFuture<CreateResJobsResponse>
      */
     public CompletableFuture<CreateResJobsResponse> createResJobsAsync(CreateResJobsRequest request) {
@@ -196,12 +194,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResJobsRequest 请求对象
+     * @param request CreateResJobsRequest 请求对象
      * @return AsyncInvoker<CreateResJobsRequest, CreateResJobsResponse>
      */
     public AsyncInvoker<CreateResJobsRequest, CreateResJobsResponse> createResJobsAsyncInvoker(
         CreateResJobsRequest request) {
-        return new AsyncInvoker<CreateResJobsRequest, CreateResJobsResponse>(request, ResMeta.createResJobs, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.createResJobs, hcClient);
     }
 
     /**
@@ -211,7 +209,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResOnlineInstanceRequest 请求对象
+     * @param request CreateResOnlineInstanceRequest 请求对象
      * @return CompletableFuture<CreateResOnlineInstanceResponse>
      */
     public CompletableFuture<CreateResOnlineInstanceResponse> createResOnlineInstanceAsync(
@@ -226,13 +224,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResOnlineInstanceRequest 请求对象
+     * @param request CreateResOnlineInstanceRequest 请求对象
      * @return AsyncInvoker<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse>
      */
     public AsyncInvoker<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse> createResOnlineInstanceAsyncInvoker(
         CreateResOnlineInstanceRequest request) {
-        return new AsyncInvoker<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse>(request,
-            ResMeta.createResOnlineInstance, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.createResOnlineInstance, hcClient);
     }
 
     /**
@@ -242,7 +239,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResSceneRequest 请求对象
+     * @param request CreateResSceneRequest 请求对象
      * @return CompletableFuture<CreateResSceneResponse>
      */
     public CompletableFuture<CreateResSceneResponse> createResSceneAsync(CreateResSceneRequest request) {
@@ -256,13 +253,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResSceneRequest 请求对象
+     * @param request CreateResSceneRequest 请求对象
      * @return AsyncInvoker<CreateResSceneRequest, CreateResSceneResponse>
      */
     public AsyncInvoker<CreateResSceneRequest, CreateResSceneResponse> createResSceneAsyncInvoker(
         CreateResSceneRequest request) {
-        return new AsyncInvoker<CreateResSceneRequest, CreateResSceneResponse>(request, ResMeta.createResScene,
-            hcClient);
+        return new AsyncInvoker<>(request, ResMeta.createResScene, hcClient);
     }
 
     /**
@@ -272,7 +268,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResWorkspaceRequest 请求对象
+     * @param request CreateResWorkspaceRequest 请求对象
      * @return CompletableFuture<CreateResWorkspaceResponse>
      */
     public CompletableFuture<CreateResWorkspaceResponse> createResWorkspaceAsync(CreateResWorkspaceRequest request) {
@@ -286,13 +282,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResWorkspaceRequest 请求对象
+     * @param request CreateResWorkspaceRequest 请求对象
      * @return AsyncInvoker<CreateResWorkspaceRequest, CreateResWorkspaceResponse>
      */
     public AsyncInvoker<CreateResWorkspaceRequest, CreateResWorkspaceResponse> createResWorkspaceAsyncInvoker(
         CreateResWorkspaceRequest request) {
-        return new AsyncInvoker<CreateResWorkspaceRequest, CreateResWorkspaceResponse>(request,
-            ResMeta.createResWorkspace, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.createResWorkspace, hcClient);
     }
 
     /**
@@ -302,7 +297,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResDatasourceRequest 请求对象
+     * @param request DeleteResDatasourceRequest 请求对象
      * @return CompletableFuture<DeleteResDatasourceResponse>
      */
     public CompletableFuture<DeleteResDatasourceResponse> deleteResDatasourceAsync(DeleteResDatasourceRequest request) {
@@ -316,13 +311,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResDatasourceRequest 请求对象
+     * @param request DeleteResDatasourceRequest 请求对象
      * @return AsyncInvoker<DeleteResDatasourceRequest, DeleteResDatasourceResponse>
      */
     public AsyncInvoker<DeleteResDatasourceRequest, DeleteResDatasourceResponse> deleteResDatasourceAsyncInvoker(
         DeleteResDatasourceRequest request) {
-        return new AsyncInvoker<DeleteResDatasourceRequest, DeleteResDatasourceResponse>(request,
-            ResMeta.deleteResDatasource, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.deleteResDatasource, hcClient);
     }
 
     /**
@@ -332,7 +326,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResJobRequest 请求对象
+     * @param request DeleteResJobRequest 请求对象
      * @return CompletableFuture<DeleteResJobResponse>
      */
     public CompletableFuture<DeleteResJobResponse> deleteResJobAsync(DeleteResJobRequest request) {
@@ -346,12 +340,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResJobRequest 请求对象
+     * @param request DeleteResJobRequest 请求对象
      * @return AsyncInvoker<DeleteResJobRequest, DeleteResJobResponse>
      */
     public AsyncInvoker<DeleteResJobRequest, DeleteResJobResponse> deleteResJobAsyncInvoker(
         DeleteResJobRequest request) {
-        return new AsyncInvoker<DeleteResJobRequest, DeleteResJobResponse>(request, ResMeta.deleteResJob, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.deleteResJob, hcClient);
     }
 
     /**
@@ -361,7 +355,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResOnlineInstanceRequest 请求对象
+     * @param request DeleteResOnlineInstanceRequest 请求对象
      * @return CompletableFuture<DeleteResOnlineInstanceResponse>
      */
     public CompletableFuture<DeleteResOnlineInstanceResponse> deleteResOnlineInstanceAsync(
@@ -376,13 +370,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResOnlineInstanceRequest 请求对象
+     * @param request DeleteResOnlineInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse>
      */
     public AsyncInvoker<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse> deleteResOnlineInstanceAsyncInvoker(
         DeleteResOnlineInstanceRequest request) {
-        return new AsyncInvoker<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse>(request,
-            ResMeta.deleteResOnlineInstance, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.deleteResOnlineInstance, hcClient);
     }
 
     /**
@@ -392,7 +385,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResSceneRequest 请求对象
+     * @param request DeleteResSceneRequest 请求对象
      * @return CompletableFuture<DeleteResSceneResponse>
      */
     public CompletableFuture<DeleteResSceneResponse> deleteResSceneAsync(DeleteResSceneRequest request) {
@@ -406,13 +399,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResSceneRequest 请求对象
+     * @param request DeleteResSceneRequest 请求对象
      * @return AsyncInvoker<DeleteResSceneRequest, DeleteResSceneResponse>
      */
     public AsyncInvoker<DeleteResSceneRequest, DeleteResSceneResponse> deleteResSceneAsyncInvoker(
         DeleteResSceneRequest request) {
-        return new AsyncInvoker<DeleteResSceneRequest, DeleteResSceneResponse>(request, ResMeta.deleteResScene,
-            hcClient);
+        return new AsyncInvoker<>(request, ResMeta.deleteResScene, hcClient);
     }
 
     /**
@@ -422,7 +414,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResWorkspaceRequest 请求对象
+     * @param request DeleteResWorkspaceRequest 请求对象
      * @return CompletableFuture<DeleteResWorkspaceResponse>
      */
     public CompletableFuture<DeleteResWorkspaceResponse> deleteResWorkspaceAsync(DeleteResWorkspaceRequest request) {
@@ -436,13 +428,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResWorkspaceRequest 请求对象
+     * @param request DeleteResWorkspaceRequest 请求对象
      * @return AsyncInvoker<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse>
      */
     public AsyncInvoker<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse> deleteResWorkspaceAsyncInvoker(
         DeleteResWorkspaceRequest request) {
-        return new AsyncInvoker<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse>(request,
-            ResMeta.deleteResWorkspace, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.deleteResWorkspace, hcClient);
     }
 
     /**
@@ -452,7 +443,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResDatasourcesRequest 请求对象
+     * @param request ListResDatasourcesRequest 请求对象
      * @return CompletableFuture<ListResDatasourcesResponse>
      */
     public CompletableFuture<ListResDatasourcesResponse> listResDatasourcesAsync(ListResDatasourcesRequest request) {
@@ -466,13 +457,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResDatasourcesRequest 请求对象
+     * @param request ListResDatasourcesRequest 请求对象
      * @return AsyncInvoker<ListResDatasourcesRequest, ListResDatasourcesResponse>
      */
     public AsyncInvoker<ListResDatasourcesRequest, ListResDatasourcesResponse> listResDatasourcesAsyncInvoker(
         ListResDatasourcesRequest request) {
-        return new AsyncInvoker<ListResDatasourcesRequest, ListResDatasourcesResponse>(request,
-            ResMeta.listResDatasources, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.listResDatasources, hcClient);
     }
 
     /**
@@ -482,7 +472,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResEnterprisesRequest 请求对象
+     * @param request ListResEnterprisesRequest 请求对象
      * @return CompletableFuture<ListResEnterprisesResponse>
      */
     public CompletableFuture<ListResEnterprisesResponse> listResEnterprisesAsync(ListResEnterprisesRequest request) {
@@ -496,13 +486,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResEnterprisesRequest 请求对象
+     * @param request ListResEnterprisesRequest 请求对象
      * @return AsyncInvoker<ListResEnterprisesRequest, ListResEnterprisesResponse>
      */
     public AsyncInvoker<ListResEnterprisesRequest, ListResEnterprisesResponse> listResEnterprisesAsyncInvoker(
         ListResEnterprisesRequest request) {
-        return new AsyncInvoker<ListResEnterprisesRequest, ListResEnterprisesResponse>(request,
-            ResMeta.listResEnterprises, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.listResEnterprises, hcClient);
     }
 
     /**
@@ -512,7 +501,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResOnlineServiceDetailsRequest 请求对象
+     * @param request ListResOnlineServiceDetailsRequest 请求对象
      * @return CompletableFuture<ListResOnlineServiceDetailsResponse>
      */
     public CompletableFuture<ListResOnlineServiceDetailsResponse> listResOnlineServiceDetailsAsync(
@@ -527,13 +516,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResOnlineServiceDetailsRequest 请求对象
+     * @param request ListResOnlineServiceDetailsRequest 请求对象
      * @return AsyncInvoker<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse>
      */
     public AsyncInvoker<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse> listResOnlineServiceDetailsAsyncInvoker(
         ListResOnlineServiceDetailsRequest request) {
-        return new AsyncInvoker<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse>(request,
-            ResMeta.listResOnlineServiceDetails, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.listResOnlineServiceDetails, hcClient);
     }
 
     /**
@@ -543,7 +531,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResResourceSpecRequest 请求对象
+     * @param request ListResResourceSpecRequest 请求对象
      * @return CompletableFuture<ListResResourceSpecResponse>
      */
     public CompletableFuture<ListResResourceSpecResponse> listResResourceSpecAsync(ListResResourceSpecRequest request) {
@@ -557,13 +545,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResResourceSpecRequest 请求对象
+     * @param request ListResResourceSpecRequest 请求对象
      * @return AsyncInvoker<ListResResourceSpecRequest, ListResResourceSpecResponse>
      */
     public AsyncInvoker<ListResResourceSpecRequest, ListResResourceSpecResponse> listResResourceSpecAsyncInvoker(
         ListResResourceSpecRequest request) {
-        return new AsyncInvoker<ListResResourceSpecRequest, ListResResourceSpecResponse>(request,
-            ResMeta.listResResourceSpec, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.listResResourceSpec, hcClient);
     }
 
     /**
@@ -573,7 +560,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResScenesRequest 请求对象
+     * @param request ListResScenesRequest 请求对象
      * @return CompletableFuture<ListResScenesResponse>
      */
     public CompletableFuture<ListResScenesResponse> listResScenesAsync(ListResScenesRequest request) {
@@ -587,12 +574,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResScenesRequest 请求对象
+     * @param request ListResScenesRequest 请求对象
      * @return AsyncInvoker<ListResScenesRequest, ListResScenesResponse>
      */
     public AsyncInvoker<ListResScenesRequest, ListResScenesResponse> listResScenesAsyncInvoker(
         ListResScenesRequest request) {
-        return new AsyncInvoker<ListResScenesRequest, ListResScenesResponse>(request, ResMeta.listResScenes, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.listResScenes, hcClient);
     }
 
     /**
@@ -602,7 +589,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResWorkspacesRequest 请求对象
+     * @param request ListResWorkspacesRequest 请求对象
      * @return CompletableFuture<ListResWorkspacesResponse>
      */
     public CompletableFuture<ListResWorkspacesResponse> listResWorkspacesAsync(ListResWorkspacesRequest request) {
@@ -616,13 +603,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResWorkspacesRequest 请求对象
+     * @param request ListResWorkspacesRequest 请求对象
      * @return AsyncInvoker<ListResWorkspacesRequest, ListResWorkspacesResponse>
      */
     public AsyncInvoker<ListResWorkspacesRequest, ListResWorkspacesResponse> listResWorkspacesAsyncInvoker(
         ListResWorkspacesRequest request) {
-        return new AsyncInvoker<ListResWorkspacesRequest, ListResWorkspacesResponse>(request, ResMeta.listResWorkspaces,
-            hcClient);
+        return new AsyncInvoker<>(request, ResMeta.listResWorkspaces, hcClient);
     }
 
     /**
@@ -632,7 +618,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResDatasourceRequest 请求对象
+     * @param request ShowResDatasourceRequest 请求对象
      * @return CompletableFuture<ShowResDatasourceResponse>
      */
     public CompletableFuture<ShowResDatasourceResponse> showResDatasourceAsync(ShowResDatasourceRequest request) {
@@ -646,13 +632,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResDatasourceRequest 请求对象
+     * @param request ShowResDatasourceRequest 请求对象
      * @return AsyncInvoker<ShowResDatasourceRequest, ShowResDatasourceResponse>
      */
     public AsyncInvoker<ShowResDatasourceRequest, ShowResDatasourceResponse> showResDatasourceAsyncInvoker(
         ShowResDatasourceRequest request) {
-        return new AsyncInvoker<ShowResDatasourceRequest, ShowResDatasourceResponse>(request, ResMeta.showResDatasource,
-            hcClient);
+        return new AsyncInvoker<>(request, ResMeta.showResDatasource, hcClient);
     }
 
     /**
@@ -662,7 +647,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResDatasourceWorkDetailRequest 请求对象
+     * @param request ShowResDatasourceWorkDetailRequest 请求对象
      * @return CompletableFuture<ShowResDatasourceWorkDetailResponse>
      */
     public CompletableFuture<ShowResDatasourceWorkDetailResponse> showResDatasourceWorkDetailAsync(
@@ -677,13 +662,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResDatasourceWorkDetailRequest 请求对象
+     * @param request ShowResDatasourceWorkDetailRequest 请求对象
      * @return AsyncInvoker<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse>
      */
     public AsyncInvoker<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse> showResDatasourceWorkDetailAsyncInvoker(
         ShowResDatasourceWorkDetailRequest request) {
-        return new AsyncInvoker<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse>(request,
-            ResMeta.showResDatasourceWorkDetail, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.showResDatasourceWorkDetail, hcClient);
     }
 
     /**
@@ -693,7 +677,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResJobRequest 请求对象
+     * @param request ShowResJobRequest 请求对象
      * @return CompletableFuture<ShowResJobResponse>
      */
     public CompletableFuture<ShowResJobResponse> showResJobAsync(ShowResJobRequest request) {
@@ -707,11 +691,11 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResJobRequest 请求对象
+     * @param request ShowResJobRequest 请求对象
      * @return AsyncInvoker<ShowResJobRequest, ShowResJobResponse>
      */
     public AsyncInvoker<ShowResJobRequest, ShowResJobResponse> showResJobAsyncInvoker(ShowResJobRequest request) {
-        return new AsyncInvoker<ShowResJobRequest, ShowResJobResponse>(request, ResMeta.showResJob, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.showResJob, hcClient);
     }
 
     /**
@@ -721,7 +705,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResRecallSetRequest 请求对象
+     * @param request ShowResRecallSetRequest 请求对象
      * @return CompletableFuture<ShowResRecallSetResponse>
      */
     public CompletableFuture<ShowResRecallSetResponse> showResRecallSetAsync(ShowResRecallSetRequest request) {
@@ -735,13 +719,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResRecallSetRequest 请求对象
+     * @param request ShowResRecallSetRequest 请求对象
      * @return AsyncInvoker<ShowResRecallSetRequest, ShowResRecallSetResponse>
      */
     public AsyncInvoker<ShowResRecallSetRequest, ShowResRecallSetResponse> showResRecallSetAsyncInvoker(
         ShowResRecallSetRequest request) {
-        return new AsyncInvoker<ShowResRecallSetRequest, ShowResRecallSetResponse>(request, ResMeta.showResRecallSet,
-            hcClient);
+        return new AsyncInvoker<>(request, ResMeta.showResRecallSet, hcClient);
     }
 
     /**
@@ -751,7 +734,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResSceneRequest 请求对象
+     * @param request ShowResSceneRequest 请求对象
      * @return CompletableFuture<ShowResSceneResponse>
      */
     public CompletableFuture<ShowResSceneResponse> showResSceneAsync(ShowResSceneRequest request) {
@@ -765,12 +748,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResSceneRequest 请求对象
+     * @param request ShowResSceneRequest 请求对象
      * @return AsyncInvoker<ShowResSceneRequest, ShowResSceneResponse>
      */
     public AsyncInvoker<ShowResSceneRequest, ShowResSceneResponse> showResSceneAsyncInvoker(
         ShowResSceneRequest request) {
-        return new AsyncInvoker<ShowResSceneRequest, ShowResSceneResponse>(request, ResMeta.showResScene, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.showResScene, hcClient);
     }
 
     /**
@@ -780,7 +763,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResWrokspaceRequest 请求对象
+     * @param request ShowResWrokspaceRequest 请求对象
      * @return CompletableFuture<ShowResWrokspaceResponse>
      */
     public CompletableFuture<ShowResWrokspaceResponse> showResWrokspaceAsync(ShowResWrokspaceRequest request) {
@@ -794,13 +777,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResWrokspaceRequest 请求对象
+     * @param request ShowResWrokspaceRequest 请求对象
      * @return AsyncInvoker<ShowResWrokspaceRequest, ShowResWrokspaceResponse>
      */
     public AsyncInvoker<ShowResWrokspaceRequest, ShowResWrokspaceResponse> showResWrokspaceAsyncInvoker(
         ShowResWrokspaceRequest request) {
-        return new AsyncInvoker<ShowResWrokspaceRequest, ShowResWrokspaceResponse>(request, ResMeta.showResWrokspace,
-            hcClient);
+        return new AsyncInvoker<>(request, ResMeta.showResWrokspace, hcClient);
     }
 
     /**
@@ -810,7 +792,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartResJobRequest 请求对象
+     * @param request StartResJobRequest 请求对象
      * @return CompletableFuture<StartResJobResponse>
      */
     public CompletableFuture<StartResJobResponse> startResJobAsync(StartResJobRequest request) {
@@ -824,11 +806,11 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartResJobRequest 请求对象
+     * @param request StartResJobRequest 请求对象
      * @return AsyncInvoker<StartResJobRequest, StartResJobResponse>
      */
     public AsyncInvoker<StartResJobRequest, StartResJobResponse> startResJobAsyncInvoker(StartResJobRequest request) {
-        return new AsyncInvoker<StartResJobRequest, StartResJobResponse>(request, ResMeta.startResJob, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.startResJob, hcClient);
     }
 
     /**
@@ -838,7 +820,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartResSceneJobsRequest 请求对象
+     * @param request StartResSceneJobsRequest 请求对象
      * @return CompletableFuture<StartResSceneJobsResponse>
      */
     public CompletableFuture<StartResSceneJobsResponse> startResSceneJobsAsync(StartResSceneJobsRequest request) {
@@ -852,13 +834,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartResSceneJobsRequest 请求对象
+     * @param request StartResSceneJobsRequest 请求对象
      * @return AsyncInvoker<StartResSceneJobsRequest, StartResSceneJobsResponse>
      */
     public AsyncInvoker<StartResSceneJobsRequest, StartResSceneJobsResponse> startResSceneJobsAsyncInvoker(
         StartResSceneJobsRequest request) {
-        return new AsyncInvoker<StartResSceneJobsRequest, StartResSceneJobsResponse>(request, ResMeta.startResSceneJobs,
-            hcClient);
+        return new AsyncInvoker<>(request, ResMeta.startResSceneJobs, hcClient);
     }
 
     /**
@@ -868,7 +849,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResDatasourceRequest 请求对象
+     * @param request UpdateResDatasourceRequest 请求对象
      * @return CompletableFuture<UpdateResDatasourceResponse>
      */
     public CompletableFuture<UpdateResDatasourceResponse> updateResDatasourceAsync(UpdateResDatasourceRequest request) {
@@ -882,13 +863,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResDatasourceRequest 请求对象
+     * @param request UpdateResDatasourceRequest 请求对象
      * @return AsyncInvoker<UpdateResDatasourceRequest, UpdateResDatasourceResponse>
      */
     public AsyncInvoker<UpdateResDatasourceRequest, UpdateResDatasourceResponse> updateResDatasourceAsyncInvoker(
         UpdateResDatasourceRequest request) {
-        return new AsyncInvoker<UpdateResDatasourceRequest, UpdateResDatasourceResponse>(request,
-            ResMeta.updateResDatasource, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.updateResDatasource, hcClient);
     }
 
     /**
@@ -898,7 +878,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResDatastructRequest 请求对象
+     * @param request UpdateResDatastructRequest 请求对象
      * @return CompletableFuture<UpdateResDatastructResponse>
      */
     public CompletableFuture<UpdateResDatastructResponse> updateResDatastructAsync(UpdateResDatastructRequest request) {
@@ -912,13 +892,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResDatastructRequest 请求对象
+     * @param request UpdateResDatastructRequest 请求对象
      * @return AsyncInvoker<UpdateResDatastructRequest, UpdateResDatastructResponse>
      */
     public AsyncInvoker<UpdateResDatastructRequest, UpdateResDatastructResponse> updateResDatastructAsyncInvoker(
         UpdateResDatastructRequest request) {
-        return new AsyncInvoker<UpdateResDatastructRequest, UpdateResDatastructResponse>(request,
-            ResMeta.updateResDatastruct, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.updateResDatastruct, hcClient);
     }
 
     /**
@@ -928,7 +907,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResIntelligentSceneRequest 请求对象
+     * @param request UpdateResIntelligentSceneRequest 请求对象
      * @return CompletableFuture<UpdateResIntelligentSceneResponse>
      */
     public CompletableFuture<UpdateResIntelligentSceneResponse> updateResIntelligentSceneAsync(
@@ -943,13 +922,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResIntelligentSceneRequest 请求对象
+     * @param request UpdateResIntelligentSceneRequest 请求对象
      * @return AsyncInvoker<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse>
      */
     public AsyncInvoker<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse> updateResIntelligentSceneAsyncInvoker(
         UpdateResIntelligentSceneRequest request) {
-        return new AsyncInvoker<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse>(request,
-            ResMeta.updateResIntelligentScene, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.updateResIntelligentScene, hcClient);
     }
 
     /**
@@ -959,7 +937,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResJobRequest 请求对象
+     * @param request UpdateResJobRequest 请求对象
      * @return CompletableFuture<UpdateResJobResponse>
      */
     public CompletableFuture<UpdateResJobResponse> updateResJobAsync(UpdateResJobRequest request) {
@@ -973,12 +951,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResJobRequest 请求对象
+     * @param request UpdateResJobRequest 请求对象
      * @return AsyncInvoker<UpdateResJobRequest, UpdateResJobResponse>
      */
     public AsyncInvoker<UpdateResJobRequest, UpdateResJobResponse> updateResJobAsyncInvoker(
         UpdateResJobRequest request) {
-        return new AsyncInvoker<UpdateResJobRequest, UpdateResJobResponse>(request, ResMeta.updateResJob, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.updateResJob, hcClient);
     }
 
     /**
@@ -988,7 +966,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResOnlineInstanceRequest 请求对象
+     * @param request UpdateResOnlineInstanceRequest 请求对象
      * @return CompletableFuture<UpdateResOnlineInstanceResponse>
      */
     public CompletableFuture<UpdateResOnlineInstanceResponse> updateResOnlineInstanceAsync(
@@ -1003,13 +981,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResOnlineInstanceRequest 请求对象
+     * @param request UpdateResOnlineInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse>
      */
     public AsyncInvoker<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse> updateResOnlineInstanceAsyncInvoker(
         UpdateResOnlineInstanceRequest request) {
-        return new AsyncInvoker<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse>(request,
-            ResMeta.updateResOnlineInstance, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.updateResOnlineInstance, hcClient);
     }
 
     /**
@@ -1019,7 +996,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResSceneRequest 请求对象
+     * @param request UpdateResSceneRequest 请求对象
      * @return CompletableFuture<UpdateResSceneResponse>
      */
     public CompletableFuture<UpdateResSceneResponse> updateResSceneAsync(UpdateResSceneRequest request) {
@@ -1033,13 +1010,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResSceneRequest 请求对象
+     * @param request UpdateResSceneRequest 请求对象
      * @return AsyncInvoker<UpdateResSceneRequest, UpdateResSceneResponse>
      */
     public AsyncInvoker<UpdateResSceneRequest, UpdateResSceneResponse> updateResSceneAsyncInvoker(
         UpdateResSceneRequest request) {
-        return new AsyncInvoker<UpdateResSceneRequest, UpdateResSceneResponse>(request, ResMeta.updateResScene,
-            hcClient);
+        return new AsyncInvoker<>(request, ResMeta.updateResScene, hcClient);
     }
 
     /**
@@ -1049,7 +1025,7 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResWorkspaceRequest 请求对象
+     * @param request UpdateResWorkspaceRequest 请求对象
      * @return CompletableFuture<UpdateResWorkspaceResponse>
      */
     public CompletableFuture<UpdateResWorkspaceResponse> updateResWorkspaceAsync(UpdateResWorkspaceRequest request) {
@@ -1063,13 +1039,12 @@ public class ResAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResWorkspaceRequest 请求对象
+     * @param request UpdateResWorkspaceRequest 请求对象
      * @return AsyncInvoker<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse>
      */
     public AsyncInvoker<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse> updateResWorkspaceAsyncInvoker(
         UpdateResWorkspaceRequest request) {
-        return new AsyncInvoker<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse>(request,
-            ResMeta.updateResWorkspace, hcClient);
+        return new AsyncInvoker<>(request, ResMeta.updateResWorkspace, hcClient);
     }
 
 }

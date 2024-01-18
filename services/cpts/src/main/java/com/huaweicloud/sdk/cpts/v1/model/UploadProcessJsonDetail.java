@@ -36,7 +36,7 @@ public class UploadProcessJsonDetail {
     }
 
     /**
-     * id
+     * 导入进度Id
      * minimum: 0
      * maximum: 2147483647
      * @return id
@@ -55,7 +55,7 @@ public class UploadProcessJsonDetail {
     }
 
     /**
-     * name
+     * 工程名称
      * @return name
      */
     public String getName() {
@@ -72,7 +72,7 @@ public class UploadProcessJsonDetail {
     }
 
     /**
-     * status
+     * 导入状态（0：导入中；1：成功；2：失败）
      * minimum: 0
      * maximum: 2147483647
      * @return status
@@ -91,7 +91,7 @@ public class UploadProcessJsonDetail {
     }
 
     /**
-     * cause
+     * 失败原因
      * @return cause
      */
     public String getCause() {

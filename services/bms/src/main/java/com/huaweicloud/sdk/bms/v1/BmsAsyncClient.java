@@ -85,7 +85,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddServerNicsRequest 请求对象
+     * @param request AddServerNicsRequest 请求对象
      * @return CompletableFuture<AddServerNicsResponse>
      */
     public CompletableFuture<AddServerNicsResponse> addServerNicsAsync(AddServerNicsRequest request) {
@@ -98,12 +98,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddServerNicsRequest 请求对象
+     * @param request AddServerNicsRequest 请求对象
      * @return AsyncInvoker<AddServerNicsRequest, AddServerNicsResponse>
      */
     public AsyncInvoker<AddServerNicsRequest, AddServerNicsResponse> addServerNicsAsyncInvoker(
         AddServerNicsRequest request) {
-        return new AsyncInvoker<AddServerNicsRequest, AddServerNicsResponse>(request, BmsMeta.addServerNics, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.addServerNics, hcClient);
     }
 
     /**
@@ -113,7 +113,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachBaremetalServerVolumeRequest 请求对象
+     * @param request AttachBaremetalServerVolumeRequest 请求对象
      * @return CompletableFuture<AttachBaremetalServerVolumeResponse>
      */
     public CompletableFuture<AttachBaremetalServerVolumeResponse> attachBaremetalServerVolumeAsync(
@@ -128,13 +128,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachBaremetalServerVolumeRequest 请求对象
+     * @param request AttachBaremetalServerVolumeRequest 请求对象
      * @return AsyncInvoker<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse>
      */
     public AsyncInvoker<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse> attachBaremetalServerVolumeAsyncInvoker(
         AttachBaremetalServerVolumeRequest request) {
-        return new AsyncInvoker<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse>(request,
-            BmsMeta.attachBaremetalServerVolume, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.attachBaremetalServerVolume, hcClient);
     }
 
     /**
@@ -144,7 +143,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateBaremetalServerTagsRequest 请求对象
+     * @param request BatchCreateBaremetalServerTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateBaremetalServerTagsResponse>
      */
     public CompletableFuture<BatchCreateBaremetalServerTagsResponse> batchCreateBaremetalServerTagsAsync(
@@ -159,13 +158,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateBaremetalServerTagsRequest 请求对象
+     * @param request BatchCreateBaremetalServerTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse>
      */
     public AsyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> batchCreateBaremetalServerTagsAsyncInvoker(
         BatchCreateBaremetalServerTagsRequest request) {
-        return new AsyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse>(request,
-            BmsMeta.batchCreateBaremetalServerTags, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.batchCreateBaremetalServerTags, hcClient);
     }
 
     /**
@@ -175,7 +173,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteBaremetalServerTagsRequest 请求对象
+     * @param request BatchDeleteBaremetalServerTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteBaremetalServerTagsResponse>
      */
     public CompletableFuture<BatchDeleteBaremetalServerTagsResponse> batchDeleteBaremetalServerTagsAsync(
@@ -190,13 +188,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteBaremetalServerTagsRequest 请求对象
+     * @param request BatchDeleteBaremetalServerTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse>
      */
     public AsyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> batchDeleteBaremetalServerTagsAsyncInvoker(
         BatchDeleteBaremetalServerTagsRequest request) {
-        return new AsyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse>(request,
-            BmsMeta.batchDeleteBaremetalServerTags, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.batchDeleteBaremetalServerTags, hcClient);
     }
 
     /**
@@ -206,7 +203,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRebootBaremetalServersRequest 请求对象
+     * @param request BatchRebootBaremetalServersRequest 请求对象
      * @return CompletableFuture<BatchRebootBaremetalServersResponse>
      */
     public CompletableFuture<BatchRebootBaremetalServersResponse> batchRebootBaremetalServersAsync(
@@ -221,13 +218,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRebootBaremetalServersRequest 请求对象
+     * @param request BatchRebootBaremetalServersRequest 请求对象
      * @return AsyncInvoker<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse>
      */
     public AsyncInvoker<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse> batchRebootBaremetalServersAsyncInvoker(
         BatchRebootBaremetalServersRequest request) {
-        return new AsyncInvoker<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse>(request,
-            BmsMeta.batchRebootBaremetalServers, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.batchRebootBaremetalServers, hcClient);
     }
 
     /**
@@ -237,7 +233,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartBaremetalServersRequest 请求对象
+     * @param request BatchStartBaremetalServersRequest 请求对象
      * @return CompletableFuture<BatchStartBaremetalServersResponse>
      */
     public CompletableFuture<BatchStartBaremetalServersResponse> batchStartBaremetalServersAsync(
@@ -252,13 +248,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartBaremetalServersRequest 请求对象
+     * @param request BatchStartBaremetalServersRequest 请求对象
      * @return AsyncInvoker<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse>
      */
     public AsyncInvoker<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse> batchStartBaremetalServersAsyncInvoker(
         BatchStartBaremetalServersRequest request) {
-        return new AsyncInvoker<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse>(request,
-            BmsMeta.batchStartBaremetalServers, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.batchStartBaremetalServers, hcClient);
     }
 
     /**
@@ -268,7 +263,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopBaremetalServersRequest 请求对象
+     * @param request BatchStopBaremetalServersRequest 请求对象
      * @return CompletableFuture<BatchStopBaremetalServersResponse>
      */
     public CompletableFuture<BatchStopBaremetalServersResponse> batchStopBaremetalServersAsync(
@@ -283,13 +278,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopBaremetalServersRequest 请求对象
+     * @param request BatchStopBaremetalServersRequest 请求对象
      * @return AsyncInvoker<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse>
      */
     public AsyncInvoker<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse> batchStopBaremetalServersAsyncInvoker(
         BatchStopBaremetalServersRequest request) {
-        return new AsyncInvoker<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse>(request,
-            BmsMeta.batchStopBaremetalServers, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.batchStopBaremetalServers, hcClient);
     }
 
     /**
@@ -299,7 +293,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBaremetalServerNameRequest 请求对象
+     * @param request ChangeBaremetalServerNameRequest 请求对象
      * @return CompletableFuture<ChangeBaremetalServerNameResponse>
      */
     public CompletableFuture<ChangeBaremetalServerNameResponse> changeBaremetalServerNameAsync(
@@ -314,13 +308,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBaremetalServerNameRequest 请求对象
+     * @param request ChangeBaremetalServerNameRequest 请求对象
      * @return AsyncInvoker<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse>
      */
     public AsyncInvoker<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse> changeBaremetalServerNameAsyncInvoker(
         ChangeBaremetalServerNameRequest request) {
-        return new AsyncInvoker<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse>(request,
-            BmsMeta.changeBaremetalServerName, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.changeBaremetalServerName, hcClient);
     }
 
     /**
@@ -330,7 +323,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBaremetalServerOsRequest 请求对象
+     * @param request ChangeBaremetalServerOsRequest 请求对象
      * @return CompletableFuture<ChangeBaremetalServerOsResponse>
      */
     public CompletableFuture<ChangeBaremetalServerOsResponse> changeBaremetalServerOsAsync(
@@ -345,13 +338,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBaremetalServerOsRequest 请求对象
+     * @param request ChangeBaremetalServerOsRequest 请求对象
      * @return AsyncInvoker<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse>
      */
     public AsyncInvoker<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse> changeBaremetalServerOsAsyncInvoker(
         ChangeBaremetalServerOsRequest request) {
-        return new AsyncInvoker<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse>(request,
-            BmsMeta.changeBaremetalServerOs, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.changeBaremetalServerOs, hcClient);
     }
 
     /**
@@ -361,7 +353,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBareMetalServersRequest 请求对象
+     * @param request CreateBareMetalServersRequest 请求对象
      * @return CompletableFuture<CreateBareMetalServersResponse>
      */
     public CompletableFuture<CreateBareMetalServersResponse> createBareMetalServersAsync(
@@ -376,13 +368,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBareMetalServersRequest 请求对象
+     * @param request CreateBareMetalServersRequest 请求对象
      * @return AsyncInvoker<CreateBareMetalServersRequest, CreateBareMetalServersResponse>
      */
     public AsyncInvoker<CreateBareMetalServersRequest, CreateBareMetalServersResponse> createBareMetalServersAsyncInvoker(
         CreateBareMetalServersRequest request) {
-        return new AsyncInvoker<CreateBareMetalServersRequest, CreateBareMetalServersResponse>(request,
-            BmsMeta.createBareMetalServers, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.createBareMetalServers, hcClient);
     }
 
     /**
@@ -392,7 +383,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBaremetalServerRequest 请求对象
+     * @param request DeleteBaremetalServerRequest 请求对象
      * @return CompletableFuture<DeleteBaremetalServerResponse>
      */
     public CompletableFuture<DeleteBaremetalServerResponse> deleteBaremetalServerAsync(
@@ -407,13 +398,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBaremetalServerRequest 请求对象
+     * @param request DeleteBaremetalServerRequest 请求对象
      * @return AsyncInvoker<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse>
      */
     public AsyncInvoker<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse> deleteBaremetalServerAsyncInvoker(
         DeleteBaremetalServerRequest request) {
-        return new AsyncInvoker<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse>(request,
-            BmsMeta.deleteBaremetalServer, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.deleteBaremetalServer, hcClient);
     }
 
     /**
@@ -422,7 +412,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServerNicsRequest 请求对象
+     * @param request DeleteServerNicsRequest 请求对象
      * @return CompletableFuture<DeleteServerNicsResponse>
      */
     public CompletableFuture<DeleteServerNicsResponse> deleteServerNicsAsync(DeleteServerNicsRequest request) {
@@ -435,13 +425,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServerNicsRequest 请求对象
+     * @param request DeleteServerNicsRequest 请求对象
      * @return AsyncInvoker<DeleteServerNicsRequest, DeleteServerNicsResponse>
      */
     public AsyncInvoker<DeleteServerNicsRequest, DeleteServerNicsResponse> deleteServerNicsAsyncInvoker(
         DeleteServerNicsRequest request) {
-        return new AsyncInvoker<DeleteServerNicsRequest, DeleteServerNicsResponse>(request, BmsMeta.deleteServerNics,
-            hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.deleteServerNics, hcClient);
     }
 
     /**
@@ -451,7 +440,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWindowsBareMetalServerPasswordRequest 请求对象
+     * @param request DeleteWindowsBareMetalServerPasswordRequest 请求对象
      * @return CompletableFuture<DeleteWindowsBareMetalServerPasswordResponse>
      */
     public CompletableFuture<DeleteWindowsBareMetalServerPasswordResponse> deleteWindowsBareMetalServerPasswordAsync(
@@ -466,13 +455,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWindowsBareMetalServerPasswordRequest 请求对象
+     * @param request DeleteWindowsBareMetalServerPasswordRequest 请求对象
      * @return AsyncInvoker<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse>
      */
     public AsyncInvoker<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse> deleteWindowsBareMetalServerPasswordAsyncInvoker(
         DeleteWindowsBareMetalServerPasswordRequest request) {
-        return new AsyncInvoker<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse>(
-            request, BmsMeta.deleteWindowsBareMetalServerPassword, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.deleteWindowsBareMetalServerPassword, hcClient);
     }
 
     /**
@@ -482,7 +470,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachBaremetalServerVolumeRequest 请求对象
+     * @param request DetachBaremetalServerVolumeRequest 请求对象
      * @return CompletableFuture<DetachBaremetalServerVolumeResponse>
      */
     public CompletableFuture<DetachBaremetalServerVolumeResponse> detachBaremetalServerVolumeAsync(
@@ -497,13 +485,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachBaremetalServerVolumeRequest 请求对象
+     * @param request DetachBaremetalServerVolumeRequest 请求对象
      * @return AsyncInvoker<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse>
      */
     public AsyncInvoker<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse> detachBaremetalServerVolumeAsyncInvoker(
         DetachBaremetalServerVolumeRequest request) {
-        return new AsyncInvoker<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse>(request,
-            BmsMeta.detachBaremetalServerVolume, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.detachBaremetalServerVolume, hcClient);
     }
 
     /**
@@ -513,7 +500,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBareMetalServerDetailsRequest 请求对象
+     * @param request ListBareMetalServerDetailsRequest 请求对象
      * @return CompletableFuture<ListBareMetalServerDetailsResponse>
      */
     public CompletableFuture<ListBareMetalServerDetailsResponse> listBareMetalServerDetailsAsync(
@@ -528,13 +515,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBareMetalServerDetailsRequest 请求对象
+     * @param request ListBareMetalServerDetailsRequest 请求对象
      * @return AsyncInvoker<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse>
      */
     public AsyncInvoker<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse> listBareMetalServerDetailsAsyncInvoker(
         ListBareMetalServerDetailsRequest request) {
-        return new AsyncInvoker<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse>(request,
-            BmsMeta.listBareMetalServerDetails, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.listBareMetalServerDetails, hcClient);
     }
 
     /**
@@ -544,7 +530,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBareMetalServersRequest 请求对象
+     * @param request ListBareMetalServersRequest 请求对象
      * @return CompletableFuture<ListBareMetalServersResponse>
      */
     public CompletableFuture<ListBareMetalServersResponse> listBareMetalServersAsync(
@@ -559,13 +545,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBareMetalServersRequest 请求对象
+     * @param request ListBareMetalServersRequest 请求对象
      * @return AsyncInvoker<ListBareMetalServersRequest, ListBareMetalServersResponse>
      */
     public AsyncInvoker<ListBareMetalServersRequest, ListBareMetalServersResponse> listBareMetalServersAsyncInvoker(
         ListBareMetalServersRequest request) {
-        return new AsyncInvoker<ListBareMetalServersRequest, ListBareMetalServersResponse>(request,
-            BmsMeta.listBareMetalServers, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.listBareMetalServers, hcClient);
     }
 
     /**
@@ -575,7 +560,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBaremetalFlavorDetailExtendsRequest 请求对象
+     * @param request ListBaremetalFlavorDetailExtendsRequest 请求对象
      * @return CompletableFuture<ListBaremetalFlavorDetailExtendsResponse>
      */
     public CompletableFuture<ListBaremetalFlavorDetailExtendsResponse> listBaremetalFlavorDetailExtendsAsync(
@@ -590,13 +575,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBaremetalFlavorDetailExtendsRequest 请求对象
+     * @param request ListBaremetalFlavorDetailExtendsRequest 请求对象
      * @return AsyncInvoker<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse>
      */
     public AsyncInvoker<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse> listBaremetalFlavorDetailExtendsAsyncInvoker(
         ListBaremetalFlavorDetailExtendsRequest request) {
-        return new AsyncInvoker<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse>(
-            request, BmsMeta.listBaremetalFlavorDetailExtends, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.listBaremetalFlavorDetailExtends, hcClient);
     }
 
     /**
@@ -606,7 +590,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReinstallBaremetalServerOsRequest 请求对象
+     * @param request ReinstallBaremetalServerOsRequest 请求对象
      * @return CompletableFuture<ReinstallBaremetalServerOsResponse>
      */
     public CompletableFuture<ReinstallBaremetalServerOsResponse> reinstallBaremetalServerOsAsync(
@@ -621,13 +605,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReinstallBaremetalServerOsRequest 请求对象
+     * @param request ReinstallBaremetalServerOsRequest 请求对象
      * @return AsyncInvoker<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse>
      */
     public AsyncInvoker<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse> reinstallBaremetalServerOsAsyncInvoker(
         ReinstallBaremetalServerOsRequest request) {
-        return new AsyncInvoker<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse>(request,
-            BmsMeta.reinstallBaremetalServerOs, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.reinstallBaremetalServerOs, hcClient);
     }
 
     /**
@@ -637,7 +620,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdOneClickRequest 请求对象
+     * @param request ResetPwdOneClickRequest 请求对象
      * @return CompletableFuture<ResetPwdOneClickResponse>
      */
     public CompletableFuture<ResetPwdOneClickResponse> resetPwdOneClickAsync(ResetPwdOneClickRequest request) {
@@ -651,13 +634,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdOneClickRequest 请求对象
+     * @param request ResetPwdOneClickRequest 请求对象
      * @return AsyncInvoker<ResetPwdOneClickRequest, ResetPwdOneClickResponse>
      */
     public AsyncInvoker<ResetPwdOneClickRequest, ResetPwdOneClickResponse> resetPwdOneClickAsyncInvoker(
         ResetPwdOneClickRequest request) {
-        return new AsyncInvoker<ResetPwdOneClickRequest, ResetPwdOneClickResponse>(request, BmsMeta.resetPwdOneClick,
-            hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.resetPwdOneClick, hcClient);
     }
 
     /**
@@ -667,7 +649,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerInterfaceAttachmentsRequest 请求对象
+     * @param request ShowBaremetalServerInterfaceAttachmentsRequest 请求对象
      * @return CompletableFuture<ShowBaremetalServerInterfaceAttachmentsResponse>
      */
     public CompletableFuture<ShowBaremetalServerInterfaceAttachmentsResponse> showBaremetalServerInterfaceAttachmentsAsync(
@@ -682,13 +664,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerInterfaceAttachmentsRequest 请求对象
+     * @param request ShowBaremetalServerInterfaceAttachmentsRequest 请求对象
      * @return AsyncInvoker<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse>
      */
     public AsyncInvoker<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse> showBaremetalServerInterfaceAttachmentsAsyncInvoker(
         ShowBaremetalServerInterfaceAttachmentsRequest request) {
-        return new AsyncInvoker<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse>(
-            request, BmsMeta.showBaremetalServerInterfaceAttachments, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.showBaremetalServerInterfaceAttachments, hcClient);
     }
 
     /**
@@ -698,7 +679,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerTagsRequest 请求对象
+     * @param request ShowBaremetalServerTagsRequest 请求对象
      * @return CompletableFuture<ShowBaremetalServerTagsResponse>
      */
     public CompletableFuture<ShowBaremetalServerTagsResponse> showBaremetalServerTagsAsync(
@@ -713,13 +694,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerTagsRequest 请求对象
+     * @param request ShowBaremetalServerTagsRequest 请求对象
      * @return AsyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse>
      */
     public AsyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> showBaremetalServerTagsAsyncInvoker(
         ShowBaremetalServerTagsRequest request) {
-        return new AsyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse>(request,
-            BmsMeta.showBaremetalServerTags, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.showBaremetalServerTags, hcClient);
     }
 
     /**
@@ -729,7 +709,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerVolumeInfoRequest 请求对象
+     * @param request ShowBaremetalServerVolumeInfoRequest 请求对象
      * @return CompletableFuture<ShowBaremetalServerVolumeInfoResponse>
      */
     public CompletableFuture<ShowBaremetalServerVolumeInfoResponse> showBaremetalServerVolumeInfoAsync(
@@ -744,13 +724,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBaremetalServerVolumeInfoRequest 请求对象
+     * @param request ShowBaremetalServerVolumeInfoRequest 请求对象
      * @return AsyncInvoker<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse>
      */
     public AsyncInvoker<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse> showBaremetalServerVolumeInfoAsyncInvoker(
         ShowBaremetalServerVolumeInfoRequest request) {
-        return new AsyncInvoker<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse>(request,
-            BmsMeta.showBaremetalServerVolumeInfo, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.showBaremetalServerVolumeInfo, hcClient);
     }
 
     /**
@@ -760,7 +739,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResetPwdRequest 请求对象
+     * @param request ShowResetPwdRequest 请求对象
      * @return CompletableFuture<ShowResetPwdResponse>
      */
     public CompletableFuture<ShowResetPwdResponse> showResetPwdAsync(ShowResetPwdRequest request) {
@@ -774,12 +753,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResetPwdRequest 请求对象
+     * @param request ShowResetPwdRequest 请求对象
      * @return AsyncInvoker<ShowResetPwdRequest, ShowResetPwdResponse>
      */
     public AsyncInvoker<ShowResetPwdRequest, ShowResetPwdResponse> showResetPwdAsyncInvoker(
         ShowResetPwdRequest request) {
-        return new AsyncInvoker<ShowResetPwdRequest, ShowResetPwdResponse>(request, BmsMeta.showResetPwd, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.showResetPwd, hcClient);
     }
 
     /**
@@ -788,7 +767,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowServerRemoteConsoleRequest 请求对象
+     * @param request ShowServerRemoteConsoleRequest 请求对象
      * @return CompletableFuture<ShowServerRemoteConsoleResponse>
      */
     public CompletableFuture<ShowServerRemoteConsoleResponse> showServerRemoteConsoleAsync(
@@ -802,13 +781,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowServerRemoteConsoleRequest 请求对象
+     * @param request ShowServerRemoteConsoleRequest 请求对象
      * @return AsyncInvoker<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse>
      */
     public AsyncInvoker<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> showServerRemoteConsoleAsyncInvoker(
         ShowServerRemoteConsoleRequest request) {
-        return new AsyncInvoker<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse>(request,
-            BmsMeta.showServerRemoteConsole, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.showServerRemoteConsole, hcClient);
     }
 
     /**
@@ -818,7 +796,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTenantQuotaRequest 请求对象
+     * @param request ShowTenantQuotaRequest 请求对象
      * @return CompletableFuture<ShowTenantQuotaResponse>
      */
     public CompletableFuture<ShowTenantQuotaResponse> showTenantQuotaAsync(ShowTenantQuotaRequest request) {
@@ -832,13 +810,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTenantQuotaRequest 请求对象
+     * @param request ShowTenantQuotaRequest 请求对象
      * @return AsyncInvoker<ShowTenantQuotaRequest, ShowTenantQuotaResponse>
      */
     public AsyncInvoker<ShowTenantQuotaRequest, ShowTenantQuotaResponse> showTenantQuotaAsyncInvoker(
         ShowTenantQuotaRequest request) {
-        return new AsyncInvoker<ShowTenantQuotaRequest, ShowTenantQuotaResponse>(request, BmsMeta.showTenantQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.showTenantQuota, hcClient);
     }
 
     /**
@@ -848,7 +825,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWindowsBaremetalServerPwdRequest 请求对象
+     * @param request ShowWindowsBaremetalServerPwdRequest 请求对象
      * @return CompletableFuture<ShowWindowsBaremetalServerPwdResponse>
      */
     public CompletableFuture<ShowWindowsBaremetalServerPwdResponse> showWindowsBaremetalServerPwdAsync(
@@ -863,13 +840,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWindowsBaremetalServerPwdRequest 请求对象
+     * @param request ShowWindowsBaremetalServerPwdRequest 请求对象
      * @return AsyncInvoker<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse>
      */
     public AsyncInvoker<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse> showWindowsBaremetalServerPwdAsyncInvoker(
         ShowWindowsBaremetalServerPwdRequest request) {
-        return new AsyncInvoker<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse>(request,
-            BmsMeta.showWindowsBaremetalServerPwd, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.showWindowsBaremetalServerPwd, hcClient);
     }
 
     /**
@@ -878,7 +854,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBaremetalServerInterfaceAttachmentsRequest 请求对象
+     * @param request UpdateBaremetalServerInterfaceAttachmentsRequest 请求对象
      * @return CompletableFuture<UpdateBaremetalServerInterfaceAttachmentsResponse>
      */
     public CompletableFuture<UpdateBaremetalServerInterfaceAttachmentsResponse> updateBaremetalServerInterfaceAttachmentsAsync(
@@ -892,13 +868,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBaremetalServerInterfaceAttachmentsRequest 请求对象
+     * @param request UpdateBaremetalServerInterfaceAttachmentsRequest 请求对象
      * @return AsyncInvoker<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse>
      */
     public AsyncInvoker<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse> updateBaremetalServerInterfaceAttachmentsAsyncInvoker(
         UpdateBaremetalServerInterfaceAttachmentsRequest request) {
-        return new AsyncInvoker<UpdateBaremetalServerInterfaceAttachmentsRequest, UpdateBaremetalServerInterfaceAttachmentsResponse>(
-            request, BmsMeta.updateBaremetalServerInterfaceAttachments, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.updateBaremetalServerInterfaceAttachments, hcClient);
     }
 
     /**
@@ -908,7 +883,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBaremetalServerMetadataRequest 请求对象
+     * @param request UpdateBaremetalServerMetadataRequest 请求对象
      * @return CompletableFuture<UpdateBaremetalServerMetadataResponse>
      */
     public CompletableFuture<UpdateBaremetalServerMetadataResponse> updateBaremetalServerMetadataAsync(
@@ -923,13 +898,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBaremetalServerMetadataRequest 请求对象
+     * @param request UpdateBaremetalServerMetadataRequest 请求对象
      * @return AsyncInvoker<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse>
      */
     public AsyncInvoker<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse> updateBaremetalServerMetadataAsyncInvoker(
         UpdateBaremetalServerMetadataRequest request) {
-        return new AsyncInvoker<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse>(request,
-            BmsMeta.updateBaremetalServerMetadata, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.updateBaremetalServerMetadata, hcClient);
     }
 
     /**
@@ -939,7 +913,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpecifiedVersionRequest 请求对象
+     * @param request ShowSpecifiedVersionRequest 请求对象
      * @return CompletableFuture<ShowSpecifiedVersionResponse>
      */
     public CompletableFuture<ShowSpecifiedVersionResponse> showSpecifiedVersionAsync(
@@ -954,13 +928,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpecifiedVersionRequest 请求对象
+     * @param request ShowSpecifiedVersionRequest 请求对象
      * @return AsyncInvoker<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse>
      */
     public AsyncInvoker<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse> showSpecifiedVersionAsyncInvoker(
         ShowSpecifiedVersionRequest request) {
-        return new AsyncInvoker<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse>(request,
-            BmsMeta.showSpecifiedVersion, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.showSpecifiedVersion, hcClient);
     }
 
     /**
@@ -970,7 +943,7 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInfosRequest 请求对象
+     * @param request ShowJobInfosRequest 请求对象
      * @return CompletableFuture<ShowJobInfosResponse>
      */
     public CompletableFuture<ShowJobInfosResponse> showJobInfosAsync(ShowJobInfosRequest request) {
@@ -984,12 +957,12 @@ public class BmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInfosRequest 请求对象
+     * @param request ShowJobInfosRequest 请求对象
      * @return AsyncInvoker<ShowJobInfosRequest, ShowJobInfosResponse>
      */
     public AsyncInvoker<ShowJobInfosRequest, ShowJobInfosResponse> showJobInfosAsyncInvoker(
         ShowJobInfosRequest request) {
-        return new AsyncInvoker<ShowJobInfosRequest, ShowJobInfosResponse>(request, BmsMeta.showJobInfos, hcClient);
+        return new AsyncInvoker<>(request, BmsMeta.showJobInfos, hcClient);
     }
 
 }

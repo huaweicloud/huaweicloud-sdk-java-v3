@@ -22,7 +22,7 @@ public class UpdatePolicyGroupResponse extends SdkResponse {
     }
 
     /**
-     * 被修改策略主键
+     * 被修改策略主键。
      * @return id
      */
     public String getId() {

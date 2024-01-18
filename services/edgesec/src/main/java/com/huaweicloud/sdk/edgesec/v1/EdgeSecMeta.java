@@ -62,9 +62,9 @@ import com.huaweicloud.sdk.edgesec.v1.model.UpdateEdgeWafDomainsResponse;
 public class EdgeSecMeta {
 
     public static final HttpRequestDef<ListEdgeSecSubscriptionRequest, ListEdgeSecSubscriptionResponse> listEdgeSecSubscription =
-        genForlistEdgeSecSubscription();
+        genForListEdgeSecSubscription();
 
-    private static HttpRequestDef<ListEdgeSecSubscriptionRequest, ListEdgeSecSubscriptionResponse> genForlistEdgeSecSubscription() {
+    private static HttpRequestDef<ListEdgeSecSubscriptionRequest, ListEdgeSecSubscriptionResponse> genForListEdgeSecSubscription() {
         // basic
         HttpRequestDef.Builder<ListEdgeSecSubscriptionRequest, ListEdgeSecSubscriptionResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEdgeSecSubscriptionRequest.class, ListEdgeSecSubscriptionResponse.class)
@@ -77,9 +77,8 @@ public class EdgeSecMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeSecSubscriptionRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSecSubscriptionRequest::getEnterpriseProjectId,
+                ListEdgeSecSubscriptionRequest::setEnterpriseProjectId));
 
         // response
 
@@ -87,9 +86,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<CreateEdgeDDoSDomainsRequest, CreateEdgeDDoSDomainsResponse> createEdgeDDoSDomains =
-        genForcreateEdgeDDoSDomains();
+        genForCreateEdgeDDoSDomains();
 
-    private static HttpRequestDef<CreateEdgeDDoSDomainsRequest, CreateEdgeDDoSDomainsResponse> genForcreateEdgeDDoSDomains() {
+    private static HttpRequestDef<CreateEdgeDDoSDomainsRequest, CreateEdgeDDoSDomainsResponse> genForCreateEdgeDDoSDomains() {
         // basic
         HttpRequestDef.Builder<CreateEdgeDDoSDomainsRequest, CreateEdgeDDoSDomainsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateEdgeDDoSDomainsRequest.class, CreateEdgeDDoSDomainsResponse.class)
@@ -102,9 +101,7 @@ public class EdgeSecMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEdgeDDoSDomainsRequestBody.class),
-            f -> f.withMarshaller(CreateEdgeDDoSDomainsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeDDoSDomainsRequest::getBody, CreateEdgeDDoSDomainsRequest::setBody));
 
         // response
 
@@ -112,9 +109,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeDDoSDomainsRequest, DeleteEdgeDDoSDomainsResponse> deleteEdgeDDoSDomains =
-        genFordeleteEdgeDDoSDomains();
+        genForDeleteEdgeDDoSDomains();
 
-    private static HttpRequestDef<DeleteEdgeDDoSDomainsRequest, DeleteEdgeDDoSDomainsResponse> genFordeleteEdgeDDoSDomains() {
+    private static HttpRequestDef<DeleteEdgeDDoSDomainsRequest, DeleteEdgeDDoSDomainsResponse> genForDeleteEdgeDDoSDomains() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeDDoSDomainsRequest, DeleteEdgeDDoSDomainsResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEdgeDDoSDomainsRequest.class, DeleteEdgeDDoSDomainsResponse.class)
@@ -127,16 +124,14 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeDDoSDomainsRequest::getDomainid, (req, v) -> {
-                req.setDomainid(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeDDoSDomainsRequest::getDomainid,
+                DeleteEdgeDDoSDomainsRequest::setDomainid));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeDDoSDomainsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeDDoSDomainsRequest::getEnterpriseProjectId,
+                DeleteEdgeDDoSDomainsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -144,9 +139,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<ListEdgeDDoSDomainsRequest, ListEdgeDDoSDomainsResponse> listEdgeDDoSDomains =
-        genForlistEdgeDDoSDomains();
+        genForListEdgeDDoSDomains();
 
-    private static HttpRequestDef<ListEdgeDDoSDomainsRequest, ListEdgeDDoSDomainsResponse> genForlistEdgeDDoSDomains() {
+    private static HttpRequestDef<ListEdgeDDoSDomainsRequest, ListEdgeDDoSDomainsResponse> genForListEdgeDDoSDomains() {
         // basic
         HttpRequestDef.Builder<ListEdgeDDoSDomainsRequest, ListEdgeDDoSDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEdgeDDoSDomainsRequest.class, ListEdgeDDoSDomainsResponse.class)
@@ -159,30 +154,24 @@ public class EdgeSecMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeDDoSDomainsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListEdgeDDoSDomainsRequest::getDomainName,
+                ListEdgeDDoSDomainsRequest::setDomainName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeDDoSDomainsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeDDoSDomainsRequest::getEnterpriseProjectId,
+                ListEdgeDDoSDomainsRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeDDoSDomainsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEdgeDDoSDomainsRequest::getOffset, ListEdgeDDoSDomainsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeDDoSDomainsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEdgeDDoSDomainsRequest::getLimit, ListEdgeDDoSDomainsRequest::setLimit));
 
         // response
 
@@ -190,9 +179,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<ShowStatisticsEventRequest, ShowStatisticsEventResponse> showStatisticsEvent =
-        genForshowStatisticsEvent();
+        genForShowStatisticsEvent();
 
-    private static HttpRequestDef<ShowStatisticsEventRequest, ShowStatisticsEventResponse> genForshowStatisticsEvent() {
+    private static HttpRequestDef<ShowStatisticsEventRequest, ShowStatisticsEventResponse> genForShowStatisticsEvent() {
         // basic
         HttpRequestDef.Builder<ShowStatisticsEventRequest, ShowStatisticsEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStatisticsEventRequest.class, ShowStatisticsEventResponse.class)
@@ -205,30 +194,23 @@ public class EdgeSecMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowStatisticsEventRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticsEventRequest::getStartTime, ShowStatisticsEventRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowStatisticsEventRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticsEventRequest::getEndTime, ShowStatisticsEventRequest::setEndTime));
         builder.<ShowStatisticsEventRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowStatisticsEventRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowStatisticsEventRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticsEventRequest::getType, ShowStatisticsEventRequest::setType));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStatisticsEventRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticsEventRequest::getEnterpriseProjectId,
+                ShowStatisticsEventRequest::setEnterpriseProjectId));
 
         // response
 
@@ -236,9 +218,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<ShowStatisticsTrafficRequest, ShowStatisticsTrafficResponse> showStatisticsTraffic =
-        genForshowStatisticsTraffic();
+        genForShowStatisticsTraffic();
 
-    private static HttpRequestDef<ShowStatisticsTrafficRequest, ShowStatisticsTrafficResponse> genForshowStatisticsTraffic() {
+    private static HttpRequestDef<ShowStatisticsTrafficRequest, ShowStatisticsTrafficResponse> genForShowStatisticsTraffic() {
         // basic
         HttpRequestDef.Builder<ShowStatisticsTrafficRequest, ShowStatisticsTrafficResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowStatisticsTrafficRequest.class, ShowStatisticsTrafficResponse.class)
@@ -251,30 +233,24 @@ public class EdgeSecMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowStatisticsTrafficRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticsTrafficRequest::getStartTime,
+                ShowStatisticsTrafficRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowStatisticsTrafficRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticsTrafficRequest::getEndTime, ShowStatisticsTrafficRequest::setEndTime));
         builder.<ShowStatisticsTrafficRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowStatisticsTrafficRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowStatisticsTrafficRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticsTrafficRequest::getType, ShowStatisticsTrafficRequest::setType));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStatisticsTrafficRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowStatisticsTrafficRequest::getEnterpriseProjectId,
+                ShowStatisticsTrafficRequest::setEnterpriseProjectId));
 
         // response
 
@@ -282,9 +258,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeDDoSDomainsRequest, UpdateEdgeDDoSDomainsResponse> updateEdgeDDoSDomains =
-        genForupdateEdgeDDoSDomains();
+        genForUpdateEdgeDDoSDomains();
 
-    private static HttpRequestDef<UpdateEdgeDDoSDomainsRequest, UpdateEdgeDDoSDomainsResponse> genForupdateEdgeDDoSDomains() {
+    private static HttpRequestDef<UpdateEdgeDDoSDomainsRequest, UpdateEdgeDDoSDomainsResponse> genForUpdateEdgeDDoSDomains() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeDDoSDomainsRequest, UpdateEdgeDDoSDomainsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEdgeDDoSDomainsRequest.class, UpdateEdgeDDoSDomainsResponse.class)
@@ -297,16 +273,13 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeDDoSDomainsRequest::getDomainid, (req, v) -> {
-                req.setDomainid(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeDDoSDomainsRequest::getDomainid,
+                UpdateEdgeDDoSDomainsRequest::setDomainid));
         builder.<UpdateEdgeDDoSDomainsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeDDoSDomainsRequestBody.class),
-            f -> f.withMarshaller(UpdateEdgeDDoSDomainsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeDDoSDomainsRequest::getBody, UpdateEdgeDDoSDomainsRequest::setBody));
 
         // response
 
@@ -314,9 +287,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<ApplyWafPolicyRequest, ApplyWafPolicyResponse> applyWafPolicy =
-        genForapplyWafPolicy();
+        genForApplyWafPolicy();
 
-    private static HttpRequestDef<ApplyWafPolicyRequest, ApplyWafPolicyResponse> genForapplyWafPolicy() {
+    private static HttpRequestDef<ApplyWafPolicyRequest, ApplyWafPolicyResponse> genForApplyWafPolicy() {
         // basic
         HttpRequestDef.Builder<ApplyWafPolicyRequest, ApplyWafPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ApplyWafPolicyRequest.class, ApplyWafPolicyResponse.class)
@@ -329,16 +302,12 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ApplyWafPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(ApplyWafPolicyRequest::getPolicyId, ApplyWafPolicyRequest::setPolicyId));
         builder.<ApplyWafPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApplyWafPolicyRequestBody.class),
-            f -> f.withMarshaller(ApplyWafPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ApplyWafPolicyRequest::getBody, ApplyWafPolicyRequest::setBody));
 
         // response
 
@@ -346,9 +315,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate =
-        genForcreateCertificate();
+        genForCreateCertificate();
 
-    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForcreateCertificate() {
+    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForCreateCertificate() {
         // basic
         HttpRequestDef.Builder<CreateCertificateRequest, CreateCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCertificateRequest.class, CreateCertificateResponse.class)
@@ -361,23 +330,18 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCertificateRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateRequest::getProjectId, CreateCertificateRequest::setProjectId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCertificateRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateRequest::getEnterpriseProjectId,
+                CreateCertificateRequest::setEnterpriseProjectId));
         builder.<CreateCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCertificateRequestBody.class),
-            f -> f.withMarshaller(CreateCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateRequest::getBody, CreateCertificateRequest::setBody));
 
         // response
 
@@ -385,9 +349,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse> createEdgeWafDomains =
-        genForcreateEdgeWafDomains();
+        genForCreateEdgeWafDomains();
 
-    private static HttpRequestDef<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse> genForcreateEdgeWafDomains() {
+    private static HttpRequestDef<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse> genForCreateEdgeWafDomains() {
         // basic
         HttpRequestDef.Builder<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateEdgeWafDomainsRequest.class, CreateEdgeWafDomainsResponse.class)
@@ -400,18 +364,16 @@ public class EdgeSecMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEdgeWafDomainsRequestBody.class),
-            f -> f.withMarshaller(CreateEdgeWafDomainsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeWafDomainsRequest::getBody, CreateEdgeWafDomainsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForcreatePolicy();
+    public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForCreatePolicy();
 
-    private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForcreatePolicy() {
+    private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForCreatePolicy() {
         // basic
         HttpRequestDef.Builder<CreatePolicyRequest, CreatePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePolicyRequest.class, CreatePolicyResponse.class)
@@ -424,23 +386,18 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePolicyRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(CreatePolicyRequest::getProjectId, CreatePolicyRequest::setProjectId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePolicyRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(CreatePolicyRequest::getEnterpriseProjectId,
+                CreatePolicyRequest::setEnterpriseProjectId));
         builder.<CreatePolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePolicyRequestBody.class),
-            f -> f.withMarshaller(CreatePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePolicyRequest::getBody, CreatePolicyRequest::setBody));
 
         // response
 
@@ -448,9 +405,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate =
-        genFordeleteCertificate();
+        genForDeleteCertificate();
 
-    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genFordeleteCertificate() {
+    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genForDeleteCertificate() {
         // basic
         HttpRequestDef.Builder<DeleteCertificateRequest, DeleteCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCertificateRequest.class, DeleteCertificateResponse.class)
@@ -463,23 +420,19 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateRequest::getProjectId, DeleteCertificateRequest::setProjectId));
         builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId,
+                DeleteCertificateRequest::setCertificateId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateRequest::getEnterpriseProjectId,
+                DeleteCertificateRequest::setEnterpriseProjectId));
 
         // response
 
@@ -487,9 +440,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeWafDomainsRequest, DeleteEdgeWafDomainsResponse> deleteEdgeWafDomains =
-        genFordeleteEdgeWafDomains();
+        genForDeleteEdgeWafDomains();
 
-    private static HttpRequestDef<DeleteEdgeWafDomainsRequest, DeleteEdgeWafDomainsResponse> genFordeleteEdgeWafDomains() {
+    private static HttpRequestDef<DeleteEdgeWafDomainsRequest, DeleteEdgeWafDomainsResponse> genForDeleteEdgeWafDomains() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeWafDomainsRequest, DeleteEdgeWafDomainsResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEdgeWafDomainsRequest.class, DeleteEdgeWafDomainsResponse.class)
@@ -502,25 +455,22 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeWafDomainsRequest::getDomainid, (req, v) -> {
-                req.setDomainid(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeWafDomainsRequest::getDomainid, DeleteEdgeWafDomainsRequest::setDomainid));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeWafDomainsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeWafDomainsRequest::getEnterpriseProjectId,
+                DeleteEdgeWafDomainsRequest::setEnterpriseProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> deletePolicy = genFordeletePolicy();
+    public static final HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> deletePolicy = genForDeletePolicy();
 
-    private static HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> genFordeletePolicy() {
+    private static HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> genForDeletePolicy() {
         // basic
         HttpRequestDef.Builder<DeletePolicyRequest, DeletePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePolicyRequest.class, DeletePolicyResponse.class)
@@ -533,23 +483,18 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyRequest::getProjectId, DeletePolicyRequest::setProjectId));
         builder.<String>withRequestField("policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, DeletePolicyRequest::setPolicyId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyRequest::getEnterpriseProjectId,
+                DeletePolicyRequest::setEnterpriseProjectId));
 
         // response
 
@@ -557,9 +502,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<ListCdnDomainsRequest, ListCdnDomainsResponse> listCdnDomains =
-        genForlistCdnDomains();
+        genForListCdnDomains();
 
-    private static HttpRequestDef<ListCdnDomainsRequest, ListCdnDomainsResponse> genForlistCdnDomains() {
+    private static HttpRequestDef<ListCdnDomainsRequest, ListCdnDomainsResponse> genForListCdnDomains() {
         // basic
         HttpRequestDef.Builder<ListCdnDomainsRequest, ListCdnDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCdnDomainsRequest.class, ListCdnDomainsResponse.class)
@@ -572,30 +517,23 @@ public class EdgeSecMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCdnDomainsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCdnDomainsRequest::getOffset, ListCdnDomainsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCdnDomainsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCdnDomainsRequest::getLimit, ListCdnDomainsRequest::setLimit));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCdnDomainsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListCdnDomainsRequest::getDomainName, ListCdnDomainsRequest::setDomainName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCdnDomainsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListCdnDomainsRequest::getEnterpriseProjectId,
+                ListCdnDomainsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -603,9 +541,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates =
-        genForlistCertificates();
+        genForListCertificates();
 
-    private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForlistCertificates() {
+    private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForListCertificates() {
         // basic
         HttpRequestDef.Builder<ListCertificatesRequest, ListCertificatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertificatesRequest.class, ListCertificatesResponse.class)
@@ -618,51 +556,38 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getProjectId, ListCertificatesRequest::setProjectId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getEnterpriseProjectId,
+                ListCertificatesRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getPage, ListCertificatesRequest::setPage));
         builder.<Integer>withRequestField("pagesize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getPagesize, (req, v) -> {
-                req.setPagesize(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getPagesize, ListCertificatesRequest::setPagesize));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getName, ListCertificatesRequest::setName));
         builder.<Boolean>withRequestField("host",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getHost, (req, v) -> {
-                req.setHost(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getHost, ListCertificatesRequest::setHost));
         builder.<Integer>withRequestField("exp_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getExpStatus, (req, v) -> {
-                req.setExpStatus(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getExpStatus, ListCertificatesRequest::setExpStatus));
 
         // response
 
@@ -670,9 +595,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse> listEdgeWafDomains =
-        genForlistEdgeWafDomains();
+        genForListEdgeWafDomains();
 
-    private static HttpRequestDef<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse> genForlistEdgeWafDomains() {
+    private static HttpRequestDef<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse> genForListEdgeWafDomains() {
         // basic
         HttpRequestDef.Builder<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEdgeWafDomainsRequest.class, ListEdgeWafDomainsResponse.class)
@@ -685,46 +610,37 @@ public class EdgeSecMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeWafDomainsRequest::getPageNum, (req, v) -> {
-                req.setPageNum(v);
-            }));
+            f -> f.withMarshaller(ListEdgeWafDomainsRequest::getPageNum, ListEdgeWafDomainsRequest::setPageNum));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeWafDomainsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListEdgeWafDomainsRequest::getPageSize, ListEdgeWafDomainsRequest::setPageSize));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeWafDomainsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListEdgeWafDomainsRequest::getDomainName, ListEdgeWafDomainsRequest::setDomainName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeWafDomainsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeWafDomainsRequest::getEnterpriseProjectId,
+                ListEdgeWafDomainsRequest::setEnterpriseProjectId));
         builder.<ListEdgeWafDomainsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEdgeWafDomainsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListEdgeWafDomainsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListEdgeWafDomainsRequest::getType, ListEdgeWafDomainsRequest::setType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPolicyRequest, ListPolicyResponse> listPolicy = genForlistPolicy();
+    public static final HttpRequestDef<ListPolicyRequest, ListPolicyResponse> listPolicy = genForListPolicy();
 
-    private static HttpRequestDef<ListPolicyRequest, ListPolicyResponse> genForlistPolicy() {
+    private static HttpRequestDef<ListPolicyRequest, ListPolicyResponse> genForListPolicy() {
         // basic
         HttpRequestDef.Builder<ListPolicyRequest, ListPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPolicyRequest.class, ListPolicyResponse.class)
@@ -737,37 +653,28 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getProjectId, ListPolicyRequest::setProjectId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getEnterpriseProjectId,
+                ListPolicyRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getPage, ListPolicyRequest::setPage));
         builder.<Integer>withRequestField("pagesize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyRequest::getPagesize, (req, v) -> {
-                req.setPagesize(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getPagesize, ListPolicyRequest::setPagesize));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPolicyRequest::getName, ListPolicyRequest::setName));
 
         // response
 
@@ -775,9 +682,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate =
-        genForshowCertificate();
+        genForShowCertificate();
 
-    private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForshowCertificate() {
+    private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForShowCertificate() {
         // basic
         HttpRequestDef.Builder<ShowCertificateRequest, ShowCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCertificateRequest.class, ShowCertificateResponse.class)
@@ -790,23 +697,18 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertificateRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowCertificateRequest::getProjectId, ShowCertificateRequest::setProjectId));
         builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, ShowCertificateRequest::setCertificateId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertificateRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowCertificateRequest::getEnterpriseProjectId,
+                ShowCertificateRequest::setEnterpriseProjectId));
 
         // response
 
@@ -814,9 +716,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse> showEdgeWafDomains =
-        genForshowEdgeWafDomains();
+        genForShowEdgeWafDomains();
 
-    private static HttpRequestDef<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse> genForshowEdgeWafDomains() {
+    private static HttpRequestDef<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse> genForShowEdgeWafDomains() {
         // basic
         HttpRequestDef.Builder<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEdgeWafDomainsRequest.class, ShowEdgeWafDomainsResponse.class)
@@ -829,16 +731,13 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeWafDomainsRequest::getDomainid, (req, v) -> {
-                req.setDomainid(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeWafDomainsRequest::getDomainid, ShowEdgeWafDomainsRequest::setDomainid));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeWafDomainsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeWafDomainsRequest::getEnterpriseProjectId,
+                ShowEdgeWafDomainsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -846,9 +745,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificate =
-        genForupdateCertificate();
+        genForUpdateCertificate();
 
-    private static HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> genForupdateCertificate() {
+    private static HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> genForUpdateCertificate() {
         // basic
         HttpRequestDef.Builder<UpdateCertificateRequest, UpdateCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCertificateRequest.class, UpdateCertificateResponse.class)
@@ -861,30 +760,24 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCertificateRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateRequest::getProjectId, UpdateCertificateRequest::setProjectId));
         builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateRequest::getCertificateId,
+                UpdateCertificateRequest::setCertificateId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCertificateRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateRequest::getEnterpriseProjectId,
+                UpdateCertificateRequest::setEnterpriseProjectId));
         builder.<UpdateCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateCertificateRequestBody.class),
-            f -> f.withMarshaller(UpdateCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateRequest::getBody, UpdateCertificateRequest::setBody));
 
         // response
 
@@ -892,9 +785,9 @@ public class EdgeSecMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeWafDomainsRequest, UpdateEdgeWafDomainsResponse> updateEdgeWafDomains =
-        genForupdateEdgeWafDomains();
+        genForUpdateEdgeWafDomains();
 
-    private static HttpRequestDef<UpdateEdgeWafDomainsRequest, UpdateEdgeWafDomainsResponse> genForupdateEdgeWafDomains() {
+    private static HttpRequestDef<UpdateEdgeWafDomainsRequest, UpdateEdgeWafDomainsResponse> genForUpdateEdgeWafDomains() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeWafDomainsRequest, UpdateEdgeWafDomainsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEdgeWafDomainsRequest.class, UpdateEdgeWafDomainsResponse.class)
@@ -907,16 +800,12 @@ public class EdgeSecMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeWafDomainsRequest::getDomainid, (req, v) -> {
-                req.setDomainid(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeWafDomainsRequest::getDomainid, UpdateEdgeWafDomainsRequest::setDomainid));
         builder.<UpdateEdgeWafDomainsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeWafDomainsRequestBody.class),
-            f -> f.withMarshaller(UpdateEdgeWafDomainsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeWafDomainsRequest::getBody, UpdateEdgeWafDomainsRequest::setBody));
 
         // response
 

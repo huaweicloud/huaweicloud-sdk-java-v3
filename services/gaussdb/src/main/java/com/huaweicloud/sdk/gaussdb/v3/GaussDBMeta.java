@@ -317,9 +317,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseRes
 public class GaussDBMeta {
 
     public static final HttpRequestDef<AddDatabasePermissionRequest, AddDatabasePermissionResponse> addDatabasePermission =
-        genForaddDatabasePermission();
+        genForAddDatabasePermission();
 
-    private static HttpRequestDef<AddDatabasePermissionRequest, AddDatabasePermissionResponse> genForaddDatabasePermission() {
+    private static HttpRequestDef<AddDatabasePermissionRequest, AddDatabasePermissionResponse> genForAddDatabasePermission() {
         // basic
         HttpRequestDef.Builder<AddDatabasePermissionRequest, AddDatabasePermissionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddDatabasePermissionRequest.class, AddDatabasePermissionResponse.class)
@@ -332,23 +332,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDatabasePermissionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddDatabasePermissionRequest::getInstanceId,
+                AddDatabasePermissionRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDatabasePermissionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(AddDatabasePermissionRequest::getXLanguage,
+                AddDatabasePermissionRequest::setXLanguage));
         builder.<GrantDatabasePermissionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GrantDatabasePermissionRequestBody.class),
-            f -> f.withMarshaller(AddDatabasePermissionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddDatabasePermissionRequest::getBody, AddDatabasePermissionRequest::setBody));
 
         // response
 
@@ -356,9 +352,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> batchTagAction =
-        genForbatchTagAction();
+        genForBatchTagAction();
 
-    private static HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> genForbatchTagAction() {
+    private static HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> genForBatchTagAction() {
         // basic
         HttpRequestDef.Builder<BatchTagActionRequest, BatchTagActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchTagActionRequest.class, BatchTagActionResponse.class)
@@ -371,23 +367,17 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchTagActionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchTagActionRequest::getInstanceId, BatchTagActionRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchTagActionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchTagActionRequest::getXLanguage, BatchTagActionRequest::setXLanguage));
         builder.<BatchOperateInstanceTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchOperateInstanceTagRequestBody.class),
-            f -> f.withMarshaller(BatchTagActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchTagActionRequest::getBody, BatchTagActionRequest::setBody));
 
         // response
 
@@ -395,9 +385,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse> cancelGaussMySqlInstanceEip =
-        genForcancelGaussMySqlInstanceEip();
+        genForCancelGaussMySqlInstanceEip();
 
-    private static HttpRequestDef<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse> genForcancelGaussMySqlInstanceEip() {
+    private static HttpRequestDef<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse> genForCancelGaussMySqlInstanceEip() {
         // basic
         HttpRequestDef.Builder<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse> builder =
             HttpRequestDef
@@ -413,16 +403,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelGaussMySqlInstanceEipRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CancelGaussMySqlInstanceEipRequest::getInstanceId,
+                CancelGaussMySqlInstanceEipRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelGaussMySqlInstanceEipRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CancelGaussMySqlInstanceEipRequest::getXLanguage,
+                CancelGaussMySqlInstanceEipRequest::setXLanguage));
 
         // response
 
@@ -430,9 +418,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CancelScheduleTaskRequest, CancelScheduleTaskResponse> cancelScheduleTask =
-        genForcancelScheduleTask();
+        genForCancelScheduleTask();
 
-    private static HttpRequestDef<CancelScheduleTaskRequest, CancelScheduleTaskResponse> genForcancelScheduleTask() {
+    private static HttpRequestDef<CancelScheduleTaskRequest, CancelScheduleTaskResponse> genForCancelScheduleTask() {
         // basic
         HttpRequestDef.Builder<CancelScheduleTaskRequest, CancelScheduleTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelScheduleTaskRequest.class, CancelScheduleTaskResponse.class)
@@ -445,16 +433,12 @@ public class GaussDBMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelScheduleTaskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CancelScheduleTaskRequest::getXLanguage, CancelScheduleTaskRequest::setXLanguage));
         builder.<CancelScheduleTask>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CancelScheduleTask.class),
-            f -> f.withMarshaller(CancelScheduleTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CancelScheduleTaskRequest::getBody, CancelScheduleTaskRequest::setBody));
 
         // response
 
@@ -462,9 +446,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse> changeGaussMySqlInstanceSpecification =
-        genForchangeGaussMySqlInstanceSpecification();
+        genForChangeGaussMySqlInstanceSpecification();
 
-    private static HttpRequestDef<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse> genForchangeGaussMySqlInstanceSpecification() {
+    private static HttpRequestDef<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse> genForChangeGaussMySqlInstanceSpecification() {
         // basic
         HttpRequestDef.Builder<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse> builder =
             HttpRequestDef
@@ -480,23 +464,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeGaussMySqlInstanceSpecificationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeGaussMySqlInstanceSpecificationRequest::getInstanceId,
+                ChangeGaussMySqlInstanceSpecificationRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeGaussMySqlInstanceSpecificationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ChangeGaussMySqlInstanceSpecificationRequest::getXLanguage,
+                ChangeGaussMySqlInstanceSpecificationRequest::setXLanguage));
         builder.<MysqlChangeSpecificationRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlChangeSpecificationRequest.class),
-            f -> f.withMarshaller(ChangeGaussMySqlInstanceSpecificationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeGaussMySqlInstanceSpecificationRequest::getBody,
+                ChangeGaussMySqlInstanceSpecificationRequest::setBody));
 
         // response
 
@@ -504,9 +485,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> changeGaussMySqlProxySpecification =
-        genForchangeGaussMySqlProxySpecification();
+        genForChangeGaussMySqlProxySpecification();
 
-    private static HttpRequestDef<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> genForchangeGaussMySqlProxySpecification() {
+    private static HttpRequestDef<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> genForChangeGaussMySqlProxySpecification() {
         // basic
         HttpRequestDef.Builder<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> builder =
             HttpRequestDef
@@ -522,30 +503,26 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getInstanceId,
+                ChangeGaussMySqlProxySpecificationRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getProxyId,
+                ChangeGaussMySqlProxySpecificationRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getXLanguage,
+                ChangeGaussMySqlProxySpecificationRequest::setXLanguage));
         builder.<TaurusProxyScaleRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaurusProxyScaleRequest.class),
-            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeGaussMySqlProxySpecificationRequest::getBody,
+                ChangeGaussMySqlProxySpecificationRequest::setBody));
 
         // response
 
@@ -553,9 +530,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CheckResourceRequest, CheckResourceResponse> checkResource =
-        genForcheckResource();
+        genForCheckResource();
 
-    private static HttpRequestDef<CheckResourceRequest, CheckResourceResponse> genForcheckResource() {
+    private static HttpRequestDef<CheckResourceRequest, CheckResourceResponse> genForCheckResource() {
         // basic
         HttpRequestDef.Builder<CheckResourceRequest, CheckResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckResourceRequest.class, CheckResourceResponse.class)
@@ -568,16 +545,12 @@ public class GaussDBMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckResourceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CheckResourceRequest::getXLanguage, CheckResourceRequest::setXLanguage));
         builder.<CheckResourceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckResourceRequestBody.class),
-            f -> f.withMarshaller(CheckResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckResourceRequest::getBody, CheckResourceRequest::setBody));
 
         // response
 
@@ -585,9 +558,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CopyConfigurationsRequest, CopyConfigurationsResponse> copyConfigurations =
-        genForcopyConfigurations();
+        genForCopyConfigurations();
 
-    private static HttpRequestDef<CopyConfigurationsRequest, CopyConfigurationsResponse> genForcopyConfigurations() {
+    private static HttpRequestDef<CopyConfigurationsRequest, CopyConfigurationsResponse> genForCopyConfigurations() {
         // basic
         HttpRequestDef.Builder<CopyConfigurationsRequest, CopyConfigurationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyConfigurationsRequest.class, CopyConfigurationsResponse.class)
@@ -600,23 +573,18 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyConfigurationsRequest::getConfigurationId, (req, v) -> {
-                req.setConfigurationId(v);
-            }));
+            f -> f.withMarshaller(CopyConfigurationsRequest::getConfigurationId,
+                CopyConfigurationsRequest::setConfigurationId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyConfigurationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CopyConfigurationsRequest::getXLanguage, CopyConfigurationsRequest::setXLanguage));
         builder.<CopyConfigurationsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CopyConfigurationsRequestBody.class),
-            f -> f.withMarshaller(CopyConfigurationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CopyConfigurationsRequest::getBody, CopyConfigurationsRequest::setBody));
 
         // response
 
@@ -624,9 +592,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CopyInstanceConfigurationsRequest, CopyInstanceConfigurationsResponse> copyInstanceConfigurations =
-        genForcopyInstanceConfigurations();
+        genForCopyInstanceConfigurations();
 
-    private static HttpRequestDef<CopyInstanceConfigurationsRequest, CopyInstanceConfigurationsResponse> genForcopyInstanceConfigurations() {
+    private static HttpRequestDef<CopyInstanceConfigurationsRequest, CopyInstanceConfigurationsResponse> genForCopyInstanceConfigurations() {
         // basic
         HttpRequestDef.Builder<CopyInstanceConfigurationsRequest, CopyInstanceConfigurationsResponse> builder =
             HttpRequestDef
@@ -642,30 +610,26 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyInstanceConfigurationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CopyInstanceConfigurationsRequest::getInstanceId,
+                CopyInstanceConfigurationsRequest::setInstanceId));
         builder.<String>withRequestField("configuration_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyInstanceConfigurationsRequest::getConfigurationId, (req, v) -> {
-                req.setConfigurationId(v);
-            }));
+            f -> f.withMarshaller(CopyInstanceConfigurationsRequest::getConfigurationId,
+                CopyInstanceConfigurationsRequest::setConfigurationId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyInstanceConfigurationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CopyInstanceConfigurationsRequest::getXLanguage,
+                CopyInstanceConfigurationsRequest::setXLanguage));
         builder.<CopyInstanceConfigurationsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CopyInstanceConfigurationsRequestBody.class),
-            f -> f.withMarshaller(CopyInstanceConfigurationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CopyInstanceConfigurationsRequest::getBody,
+                CopyInstanceConfigurationsRequest::setBody));
 
         // response
 
@@ -673,9 +637,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CreateAccessControlRequest, CreateAccessControlResponse> createAccessControl =
-        genForcreateAccessControl();
+        genForCreateAccessControl();
 
-    private static HttpRequestDef<CreateAccessControlRequest, CreateAccessControlResponse> genForcreateAccessControl() {
+    private static HttpRequestDef<CreateAccessControlRequest, CreateAccessControlResponse> genForCreateAccessControl() {
         // basic
         HttpRequestDef.Builder<CreateAccessControlRequest, CreateAccessControlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAccessControlRequest.class, CreateAccessControlResponse.class)
@@ -688,30 +652,23 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAccessControlRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAccessControlRequest::getInstanceId,
+                CreateAccessControlRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAccessControlRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(CreateAccessControlRequest::getProxyId, CreateAccessControlRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAccessControlRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateAccessControlRequest::getXLanguage, CreateAccessControlRequest::setXLanguage));
         builder.<CreateAccessControlRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAccessControlRequestBody.class),
-            f -> f.withMarshaller(CreateAccessControlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAccessControlRequest::getBody, CreateAccessControlRequest::setBody));
 
         // response
 
@@ -719,9 +676,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> createGaussMySqlBackup =
-        genForcreateGaussMySqlBackup();
+        genForCreateGaussMySqlBackup();
 
-    private static HttpRequestDef<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> genForcreateGaussMySqlBackup() {
+    private static HttpRequestDef<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> genForCreateGaussMySqlBackup() {
         // basic
         HttpRequestDef.Builder<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateGaussMySqlBackupRequest.class, CreateGaussMySqlBackupResponse.class)
@@ -734,16 +691,13 @@ public class GaussDBMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlBackupRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlBackupRequest::getXLanguage,
+                CreateGaussMySqlBackupRequest::setXLanguage));
         builder.<MysqlCreateBackupRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlCreateBackupRequest.class),
-            f -> f.withMarshaller(CreateGaussMySqlBackupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlBackupRequest::getBody, CreateGaussMySqlBackupRequest::setBody));
 
         // response
 
@@ -751,9 +705,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse> createGaussMySqlConfiguration =
-        genForcreateGaussMySqlConfiguration();
+        genForCreateGaussMySqlConfiguration();
 
-    private static HttpRequestDef<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse> genForcreateGaussMySqlConfiguration() {
+    private static HttpRequestDef<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse> genForCreateGaussMySqlConfiguration() {
         // basic
         HttpRequestDef.Builder<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse> builder =
             HttpRequestDef
@@ -769,16 +723,14 @@ public class GaussDBMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlConfigurationRequest::getXLanguage,
+                CreateGaussMySqlConfigurationRequest::setXLanguage));
         builder.<CreateConfigurationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateConfigurationRequestBody.class),
-            f -> f.withMarshaller(CreateGaussMySqlConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlConfigurationRequest::getBody,
+                CreateGaussMySqlConfigurationRequest::setBody));
 
         // response
 
@@ -786,9 +738,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> createGaussMySqlDatabase =
-        genForcreateGaussMySqlDatabase();
+        genForCreateGaussMySqlDatabase();
 
-    private static HttpRequestDef<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> genForcreateGaussMySqlDatabase() {
+    private static HttpRequestDef<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> genForCreateGaussMySqlDatabase() {
         // basic
         HttpRequestDef.Builder<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> builder =
             HttpRequestDef
@@ -802,23 +754,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseRequest::getInstanceId,
+                CreateGaussMySqlDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlDatabaseRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseRequest::getXLanguage,
+                CreateGaussMySqlDatabaseRequest::setXLanguage));
         builder.<CreateGaussMySqlDatabaseRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateGaussMySqlDatabaseRequestBody.class),
-            f -> f.withMarshaller(CreateGaussMySqlDatabaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseRequest::getBody, CreateGaussMySqlDatabaseRequest::setBody));
 
         // response
 
@@ -826,9 +774,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> createGaussMySqlDatabaseUser =
-        genForcreateGaussMySqlDatabaseUser();
+        genForCreateGaussMySqlDatabaseUser();
 
-    private static HttpRequestDef<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> genForcreateGaussMySqlDatabaseUser() {
+    private static HttpRequestDef<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> genForCreateGaussMySqlDatabaseUser() {
         // basic
         HttpRequestDef.Builder<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> builder =
             HttpRequestDef
@@ -844,23 +792,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlDatabaseUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseUserRequest::getInstanceId,
+                CreateGaussMySqlDatabaseUserRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlDatabaseUserRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseUserRequest::getXLanguage,
+                CreateGaussMySqlDatabaseUserRequest::setXLanguage));
         builder.<CreateDatabaseUserRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDatabaseUserRequest.class),
-            f -> f.withMarshaller(CreateGaussMySqlDatabaseUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlDatabaseUserRequest::getBody,
+                CreateGaussMySqlDatabaseUserRequest::setBody));
 
         // response
 
@@ -868,9 +813,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse> createGaussMySqlInstance =
-        genForcreateGaussMySqlInstance();
+        genForCreateGaussMySqlInstance();
 
-    private static HttpRequestDef<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse> genForcreateGaussMySqlInstance() {
+    private static HttpRequestDef<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse> genForCreateGaussMySqlInstance() {
         // basic
         HttpRequestDef.Builder<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse> builder =
             HttpRequestDef
@@ -884,16 +829,13 @@ public class GaussDBMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlInstanceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlInstanceRequest::getXLanguage,
+                CreateGaussMySqlInstanceRequest::setXLanguage));
         builder.<MysqlInstanceRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlInstanceRequest.class),
-            f -> f.withMarshaller(CreateGaussMySqlInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlInstanceRequest::getBody, CreateGaussMySqlInstanceRequest::setBody));
 
         // response
 
@@ -901,9 +843,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse> createGaussMySqlProxy =
-        genForcreateGaussMySqlProxy();
+        genForCreateGaussMySqlProxy();
 
-    private static HttpRequestDef<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse> genForcreateGaussMySqlProxy() {
+    private static HttpRequestDef<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse> genForCreateGaussMySqlProxy() {
         // basic
         HttpRequestDef.Builder<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateGaussMySqlProxyRequest.class, CreateGaussMySqlProxyResponse.class)
@@ -916,23 +858,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlProxyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlProxyRequest::getInstanceId,
+                CreateGaussMySqlProxyRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlProxyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlProxyRequest::getXLanguage,
+                CreateGaussMySqlProxyRequest::setXLanguage));
         builder.<OpenMysqlProxyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OpenMysqlProxyRequestBody.class),
-            f -> f.withMarshaller(CreateGaussMySqlProxyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlProxyRequest::getBody, CreateGaussMySqlProxyRequest::setBody));
 
         // response
 
@@ -940,9 +878,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse> createGaussMySqlReadonlyNode =
-        genForcreateGaussMySqlReadonlyNode();
+        genForCreateGaussMySqlReadonlyNode();
 
-    private static HttpRequestDef<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse> genForcreateGaussMySqlReadonlyNode() {
+    private static HttpRequestDef<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse> genForCreateGaussMySqlReadonlyNode() {
         // basic
         HttpRequestDef.Builder<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse> builder =
             HttpRequestDef
@@ -958,23 +896,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlReadonlyNodeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlReadonlyNodeRequest::getInstanceId,
+                CreateGaussMySqlReadonlyNodeRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMySqlReadonlyNodeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlReadonlyNodeRequest::getXLanguage,
+                CreateGaussMySqlReadonlyNodeRequest::setXLanguage));
         builder.<MysqlCreateReadonlyNodeRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlCreateReadonlyNodeRequest.class),
-            f -> f.withMarshaller(CreateGaussMySqlReadonlyNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMySqlReadonlyNodeRequest::getBody,
+                CreateGaussMySqlReadonlyNodeRequest::setBody));
 
         // response
 
@@ -982,9 +917,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse> createGaussMysqlDns =
-        genForcreateGaussMysqlDns();
+        genForCreateGaussMysqlDns();
 
-    private static HttpRequestDef<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse> genForcreateGaussMysqlDns() {
+    private static HttpRequestDef<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse> genForCreateGaussMysqlDns() {
         // basic
         HttpRequestDef.Builder<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateGaussMysqlDnsRequest.class, CreateGaussMysqlDnsResponse.class)
@@ -997,23 +932,18 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMysqlDnsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMysqlDnsRequest::getInstanceId,
+                CreateGaussMysqlDnsRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGaussMysqlDnsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMysqlDnsRequest::getXLanguage, CreateGaussMysqlDnsRequest::setXLanguage));
         builder.<CreateDnsNameReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDnsNameReq.class),
-            f -> f.withMarshaller(CreateGaussMysqlDnsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGaussMysqlDnsRequest::getBody, CreateGaussMysqlDnsRequest::setBody));
 
         // response
 
@@ -1021,9 +951,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<CreateRestoreTablesRequest, CreateRestoreTablesResponse> createRestoreTables =
-        genForcreateRestoreTables();
+        genForCreateRestoreTables();
 
-    private static HttpRequestDef<CreateRestoreTablesRequest, CreateRestoreTablesResponse> genForcreateRestoreTables() {
+    private static HttpRequestDef<CreateRestoreTablesRequest, CreateRestoreTablesResponse> genForCreateRestoreTables() {
         // basic
         HttpRequestDef.Builder<CreateRestoreTablesRequest, CreateRestoreTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRestoreTablesRequest.class, CreateRestoreTablesResponse.class)
@@ -1036,23 +966,18 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRestoreTablesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRestoreTablesRequest::getInstanceId,
+                CreateRestoreTablesRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRestoreTablesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateRestoreTablesRequest::getXLanguage, CreateRestoreTablesRequest::setXLanguage));
         builder.<CreateRestoreTablesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRestoreTablesRequestBody.class),
-            f -> f.withMarshaller(CreateRestoreTablesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRestoreTablesRequest::getBody, CreateRestoreTablesRequest::setBody));
 
         // response
 
@@ -1060,9 +985,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> deleteDatabasePermission =
-        genFordeleteDatabasePermission();
+        genForDeleteDatabasePermission();
 
-    private static HttpRequestDef<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> genFordeleteDatabasePermission() {
+    private static HttpRequestDef<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> genForDeleteDatabasePermission() {
         // basic
         HttpRequestDef.Builder<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> builder =
             HttpRequestDef
@@ -1078,23 +1003,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatabasePermissionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabasePermissionRequest::getInstanceId,
+                DeleteDatabasePermissionRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatabasePermissionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabasePermissionRequest::getXLanguage,
+                DeleteDatabasePermissionRequest::setXLanguage));
         builder.<DeleteDatabasePermissionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteDatabasePermissionRequestBody.class),
-            f -> f.withMarshaller(DeleteDatabasePermissionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabasePermissionRequest::getBody, DeleteDatabasePermissionRequest::setBody));
 
         // response
 
@@ -1102,9 +1023,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse> deleteGaussMySqlBackup =
-        genFordeleteGaussMySqlBackup();
+        genForDeleteGaussMySqlBackup();
 
-    private static HttpRequestDef<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse> genFordeleteGaussMySqlBackup() {
+    private static HttpRequestDef<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse> genForDeleteGaussMySqlBackup() {
         // basic
         HttpRequestDef.Builder<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteGaussMySqlBackupRequest.class, DeleteGaussMySqlBackupResponse.class)
@@ -1117,16 +1038,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlBackupRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlBackupRequest::getBackupId,
+                DeleteGaussMySqlBackupRequest::setBackupId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlBackupRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlBackupRequest::getXLanguage,
+                DeleteGaussMySqlBackupRequest::setXLanguage));
 
         // response
 
@@ -1134,9 +1053,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse> deleteGaussMySqlConfiguration =
-        genFordeleteGaussMySqlConfiguration();
+        genForDeleteGaussMySqlConfiguration();
 
-    private static HttpRequestDef<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse> genFordeleteGaussMySqlConfiguration() {
+    private static HttpRequestDef<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse> genForDeleteGaussMySqlConfiguration() {
         // basic
         HttpRequestDef.Builder<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse> builder =
             HttpRequestDef
@@ -1152,16 +1071,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlConfigurationRequest::getConfigurationId, (req, v) -> {
-                req.setConfigurationId(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlConfigurationRequest::getConfigurationId,
+                DeleteGaussMySqlConfigurationRequest::setConfigurationId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlConfigurationRequest::getXLanguage,
+                DeleteGaussMySqlConfigurationRequest::setXLanguage));
 
         // response
 
@@ -1169,9 +1086,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> deleteGaussMySqlDatabase =
-        genFordeleteGaussMySqlDatabase();
+        genForDeleteGaussMySqlDatabase();
 
-    private static HttpRequestDef<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> genFordeleteGaussMySqlDatabase() {
+    private static HttpRequestDef<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> genForDeleteGaussMySqlDatabase() {
         // basic
         HttpRequestDef.Builder<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> builder =
             HttpRequestDef
@@ -1187,23 +1104,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseRequest::getInstanceId,
+                DeleteGaussMySqlDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlDatabaseRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseRequest::getXLanguage,
+                DeleteGaussMySqlDatabaseRequest::setXLanguage));
         builder.<DeleteGaussMySqlDatabaseRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteGaussMySqlDatabaseRequestBody.class),
-            f -> f.withMarshaller(DeleteGaussMySqlDatabaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseRequest::getBody, DeleteGaussMySqlDatabaseRequest::setBody));
 
         // response
 
@@ -1211,9 +1124,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> deleteGaussMySqlDatabaseUser =
-        genFordeleteGaussMySqlDatabaseUser();
+        genForDeleteGaussMySqlDatabaseUser();
 
-    private static HttpRequestDef<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> genFordeleteGaussMySqlDatabaseUser() {
+    private static HttpRequestDef<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> genForDeleteGaussMySqlDatabaseUser() {
         // basic
         HttpRequestDef.Builder<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> builder =
             HttpRequestDef
@@ -1229,23 +1142,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlDatabaseUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseUserRequest::getInstanceId,
+                DeleteGaussMySqlDatabaseUserRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlDatabaseUserRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseUserRequest::getXLanguage,
+                DeleteGaussMySqlDatabaseUserRequest::setXLanguage));
         builder.<DeleteDatabaseUserRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteDatabaseUserRequest.class),
-            f -> f.withMarshaller(DeleteGaussMySqlDatabaseUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlDatabaseUserRequest::getBody,
+                DeleteGaussMySqlDatabaseUserRequest::setBody));
 
         // response
 
@@ -1253,9 +1163,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse> deleteGaussMySqlInstance =
-        genFordeleteGaussMySqlInstance();
+        genForDeleteGaussMySqlInstance();
 
-    private static HttpRequestDef<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse> genFordeleteGaussMySqlInstance() {
+    private static HttpRequestDef<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse> genForDeleteGaussMySqlInstance() {
         // basic
         HttpRequestDef.Builder<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse> builder =
             HttpRequestDef
@@ -1271,16 +1181,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlInstanceRequest::getInstanceId,
+                DeleteGaussMySqlInstanceRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlInstanceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlInstanceRequest::getXLanguage,
+                DeleteGaussMySqlInstanceRequest::setXLanguage));
 
         // response
 
@@ -1288,9 +1196,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse> deleteGaussMySqlProxy =
-        genFordeleteGaussMySqlProxy();
+        genForDeleteGaussMySqlProxy();
 
-    private static HttpRequestDef<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse> genFordeleteGaussMySqlProxy() {
+    private static HttpRequestDef<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse> genForDeleteGaussMySqlProxy() {
         // basic
         HttpRequestDef.Builder<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteGaussMySqlProxyRequest.class, DeleteGaussMySqlProxyResponse.class)
@@ -1303,23 +1211,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlProxyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlProxyRequest::getInstanceId,
+                DeleteGaussMySqlProxyRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlProxyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlProxyRequest::getXLanguage,
+                DeleteGaussMySqlProxyRequest::setXLanguage));
         builder.<CloseMysqlProxyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CloseMysqlProxyRequestBody.class),
-            f -> f.withMarshaller(DeleteGaussMySqlProxyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlProxyRequest::getBody, DeleteGaussMySqlProxyRequest::setBody));
 
         // response
 
@@ -1327,9 +1231,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse> deleteGaussMySqlReadonlyNode =
-        genFordeleteGaussMySqlReadonlyNode();
+        genForDeleteGaussMySqlReadonlyNode();
 
-    private static HttpRequestDef<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse> genFordeleteGaussMySqlReadonlyNode() {
+    private static HttpRequestDef<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse> genForDeleteGaussMySqlReadonlyNode() {
         // basic
         HttpRequestDef.Builder<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse> builder =
             HttpRequestDef
@@ -1345,23 +1249,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlReadonlyNodeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlReadonlyNodeRequest::getInstanceId,
+                DeleteGaussMySqlReadonlyNodeRequest::setInstanceId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlReadonlyNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlReadonlyNodeRequest::getNodeId,
+                DeleteGaussMySqlReadonlyNodeRequest::setNodeId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGaussMySqlReadonlyNodeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteGaussMySqlReadonlyNodeRequest::getXLanguage,
+                DeleteGaussMySqlReadonlyNodeRequest::setXLanguage));
 
         // response
 
@@ -1369,9 +1270,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteScheduleTasKRequest, DeleteScheduleTasKResponse> deleteScheduleTasK =
-        genFordeleteScheduleTasK();
+        genForDeleteScheduleTasK();
 
-    private static HttpRequestDef<DeleteScheduleTasKRequest, DeleteScheduleTasKResponse> genFordeleteScheduleTasK() {
+    private static HttpRequestDef<DeleteScheduleTasKRequest, DeleteScheduleTasKResponse> genForDeleteScheduleTasK() {
         // basic
         HttpRequestDef.Builder<DeleteScheduleTasKRequest, DeleteScheduleTasKResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScheduleTasKRequest.class, DeleteScheduleTasKResponse.class)
@@ -1384,23 +1285,17 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScheduleTasKRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteScheduleTasKRequest::getInstanceId, DeleteScheduleTasKRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScheduleTasKRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteScheduleTasKRequest::getXLanguage, DeleteScheduleTasKRequest::setXLanguage));
         builder.<DeleteScheduleTasKRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteScheduleTasKRequestBody.class),
-            f -> f.withMarshaller(DeleteScheduleTasKRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteScheduleTasKRequest::getBody, DeleteScheduleTasKRequest::setBody));
 
         // response
 
@@ -1408,9 +1303,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteTaskRecordRequest, DeleteTaskRecordResponse> deleteTaskRecord =
-        genFordeleteTaskRecord();
+        genForDeleteTaskRecord();
 
-    private static HttpRequestDef<DeleteTaskRecordRequest, DeleteTaskRecordResponse> genFordeleteTaskRecord() {
+    private static HttpRequestDef<DeleteTaskRecordRequest, DeleteTaskRecordResponse> genForDeleteTaskRecord() {
         // basic
         HttpRequestDef.Builder<DeleteTaskRecordRequest, DeleteTaskRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRecordRequest.class, DeleteTaskRecordResponse.class)
@@ -1423,33 +1318,27 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRecordRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRecordRequest::getJobId, DeleteTaskRecordRequest::setJobId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRecordRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRecordRequest::getXLanguage, DeleteTaskRecordRequest::setXLanguage));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteTaskRecordResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteTaskRecordResponse::getBody, DeleteTaskRecordResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse> describeBackupEncryptStatus =
-        genFordescribeBackupEncryptStatus();
+        genForDescribeBackupEncryptStatus();
 
-    private static HttpRequestDef<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse> genFordescribeBackupEncryptStatus() {
+    private static HttpRequestDef<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse> genForDescribeBackupEncryptStatus() {
         // basic
         HttpRequestDef.Builder<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse> builder =
             HttpRequestDef
@@ -1465,16 +1354,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeBackupEncryptStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DescribeBackupEncryptStatusRequest::getInstanceId,
+                DescribeBackupEncryptStatusRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeBackupEncryptStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DescribeBackupEncryptStatusRequest::getXLanguage,
+                DescribeBackupEncryptStatusRequest::setXLanguage));
 
         // response
 
@@ -1482,9 +1369,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse> expandGaussMySqlInstanceVolume =
-        genForexpandGaussMySqlInstanceVolume();
+        genForExpandGaussMySqlInstanceVolume();
 
-    private static HttpRequestDef<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse> genForexpandGaussMySqlInstanceVolume() {
+    private static HttpRequestDef<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse> genForExpandGaussMySqlInstanceVolume() {
         // basic
         HttpRequestDef.Builder<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse> builder =
             HttpRequestDef
@@ -1500,23 +1387,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandGaussMySqlInstanceVolumeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExpandGaussMySqlInstanceVolumeRequest::getInstanceId,
+                ExpandGaussMySqlInstanceVolumeRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandGaussMySqlInstanceVolumeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ExpandGaussMySqlInstanceVolumeRequest::getXLanguage,
+                ExpandGaussMySqlInstanceVolumeRequest::setXLanguage));
         builder.<MysqlExtendInstanceVolumeRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlExtendInstanceVolumeRequest.class),
-            f -> f.withMarshaller(ExpandGaussMySqlInstanceVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExpandGaussMySqlInstanceVolumeRequest::getBody,
+                ExpandGaussMySqlInstanceVolumeRequest::setBody));
 
         // response
 
@@ -1524,9 +1408,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse> expandGaussMySqlProxy =
-        genForexpandGaussMySqlProxy();
+        genForExpandGaussMySqlProxy();
 
-    private static HttpRequestDef<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse> genForexpandGaussMySqlProxy() {
+    private static HttpRequestDef<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse> genForExpandGaussMySqlProxy() {
         // basic
         HttpRequestDef.Builder<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ExpandGaussMySqlProxyRequest.class, ExpandGaussMySqlProxyResponse.class)
@@ -1539,23 +1423,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandGaussMySqlProxyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExpandGaussMySqlProxyRequest::getInstanceId,
+                ExpandGaussMySqlProxyRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandGaussMySqlProxyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ExpandGaussMySqlProxyRequest::getXLanguage,
+                ExpandGaussMySqlProxyRequest::setXLanguage));
         builder.<EnlargeProxyRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnlargeProxyRequest.class),
-            f -> f.withMarshaller(ExpandGaussMySqlProxyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExpandGaussMySqlProxyRequest::getBody, ExpandGaussMySqlProxyRequest::setBody));
 
         // response
 
@@ -1563,9 +1443,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse> invokeGaussMySqlInstanceSwitchOver =
-        genForinvokeGaussMySqlInstanceSwitchOver();
+        genForInvokeGaussMySqlInstanceSwitchOver();
 
-    private static HttpRequestDef<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse> genForinvokeGaussMySqlInstanceSwitchOver() {
+    private static HttpRequestDef<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse> genForInvokeGaussMySqlInstanceSwitchOver() {
         // basic
         HttpRequestDef.Builder<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse> builder =
             HttpRequestDef
@@ -1581,23 +1461,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InvokeGaussMySqlInstanceSwitchOverRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(InvokeGaussMySqlInstanceSwitchOverRequest::getInstanceId,
+                InvokeGaussMySqlInstanceSwitchOverRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InvokeGaussMySqlInstanceSwitchOverRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(InvokeGaussMySqlInstanceSwitchOverRequest::getXLanguage,
+                InvokeGaussMySqlInstanceSwitchOverRequest::setXLanguage));
         builder.<TaurusSwitchoverRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaurusSwitchoverRequest.class),
-            f -> f.withMarshaller(InvokeGaussMySqlInstanceSwitchOverRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InvokeGaussMySqlInstanceSwitchOverRequest::getBody,
+                InvokeGaussMySqlInstanceSwitchOverRequest::setBody));
 
         // response
 
@@ -1605,9 +1482,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse> listAuditLogDownloadLink =
-        genForlistAuditLogDownloadLink();
+        genForListAuditLogDownloadLink();
 
-    private static HttpRequestDef<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse> genForlistAuditLogDownloadLink() {
+    private static HttpRequestDef<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse> genForListAuditLogDownloadLink() {
         // basic
         HttpRequestDef.Builder<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse> builder =
             HttpRequestDef
@@ -1621,51 +1498,44 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getInstanceId,
+                ListAuditLogDownloadLinkRequest::setInstanceId));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getNodeId,
+                ListAuditLogDownloadLinkRequest::setNodeId));
         builder.<String>withRequestField("last_file_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getLastFileName, (req, v) -> {
-                req.setLastFileName(v);
-            }));
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getLastFileName,
+                ListAuditLogDownloadLinkRequest::setLastFileName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getLimit,
+                ListAuditLogDownloadLinkRequest::setLimit));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getStartTime,
+                ListAuditLogDownloadLinkRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getEndTime,
+                ListAuditLogDownloadLinkRequest::setEndTime));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getXLanguage,
+                ListAuditLogDownloadLinkRequest::setXLanguage));
 
         // response
 
@@ -1673,9 +1543,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListConfigurationsDifferencesRequest, ListConfigurationsDifferencesResponse> listConfigurationsDifferences =
-        genForlistConfigurationsDifferences();
+        genForListConfigurationsDifferences();
 
-    private static HttpRequestDef<ListConfigurationsDifferencesRequest, ListConfigurationsDifferencesResponse> genForlistConfigurationsDifferences() {
+    private static HttpRequestDef<ListConfigurationsDifferencesRequest, ListConfigurationsDifferencesResponse> genForListConfigurationsDifferences() {
         // basic
         HttpRequestDef.Builder<ListConfigurationsDifferencesRequest, ListConfigurationsDifferencesResponse> builder =
             HttpRequestDef
@@ -1691,16 +1561,14 @@ public class GaussDBMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigurationsDifferencesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsDifferencesRequest::getXLanguage,
+                ListConfigurationsDifferencesRequest::setXLanguage));
         builder.<ListConfigurationsDifferencesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListConfigurationsDifferencesRequestBody.class),
-            f -> f.withMarshaller(ListConfigurationsDifferencesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsDifferencesRequest::getBody,
+                ListConfigurationsDifferencesRequest::setBody));
 
         // response
 
@@ -1708,9 +1576,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListConfigurationsInstancesRequest, ListConfigurationsInstancesResponse> listConfigurationsInstances =
-        genForlistConfigurationsInstances();
+        genForListConfigurationsInstances();
 
-    private static HttpRequestDef<ListConfigurationsInstancesRequest, ListConfigurationsInstancesResponse> genForlistConfigurationsInstances() {
+    private static HttpRequestDef<ListConfigurationsInstancesRequest, ListConfigurationsInstancesResponse> genForListConfigurationsInstances() {
         // basic
         HttpRequestDef.Builder<ListConfigurationsInstancesRequest, ListConfigurationsInstancesResponse> builder =
             HttpRequestDef
@@ -1726,30 +1594,26 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigurationsInstancesRequest::getConfigurationId, (req, v) -> {
-                req.setConfigurationId(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsInstancesRequest::getConfigurationId,
+                ListConfigurationsInstancesRequest::setConfigurationId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigurationsInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsInstancesRequest::getOffset,
+                ListConfigurationsInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigurationsInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsInstancesRequest::getLimit,
+                ListConfigurationsInstancesRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigurationsInstancesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsInstancesRequest::getXLanguage,
+                ListConfigurationsInstancesRequest::setXLanguage));
 
         // response
 
@@ -1757,9 +1621,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListEnterpriseProjectsRequest, ListEnterpriseProjectsResponse> listEnterpriseProjects =
-        genForlistEnterpriseProjects();
+        genForListEnterpriseProjects();
 
-    private static HttpRequestDef<ListEnterpriseProjectsRequest, ListEnterpriseProjectsResponse> genForlistEnterpriseProjects() {
+    private static HttpRequestDef<ListEnterpriseProjectsRequest, ListEnterpriseProjectsResponse> genForListEnterpriseProjects() {
         // basic
         HttpRequestDef.Builder<ListEnterpriseProjectsRequest, ListEnterpriseProjectsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEnterpriseProjectsRequest.class, ListEnterpriseProjectsResponse.class)
@@ -1772,23 +1636,18 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseProjectsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectsRequest::getOffset, ListEnterpriseProjectsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseProjectsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectsRequest::getLimit, ListEnterpriseProjectsRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseProjectsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseProjectsRequest::getXLanguage,
+                ListEnterpriseProjectsRequest::setXLanguage));
 
         // response
 
@@ -1796,9 +1655,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse> listGaussMySqlConfigurations =
-        genForlistGaussMySqlConfigurations();
+        genForListGaussMySqlConfigurations();
 
-    private static HttpRequestDef<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse> genForlistGaussMySqlConfigurations() {
+    private static HttpRequestDef<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse> genForListGaussMySqlConfigurations() {
         // basic
         HttpRequestDef.Builder<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse> builder =
             HttpRequestDef
@@ -1814,23 +1673,20 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlConfigurationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlConfigurationsRequest::getOffset,
+                ListGaussMySqlConfigurationsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlConfigurationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlConfigurationsRequest::getLimit,
+                ListGaussMySqlConfigurationsRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlConfigurationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlConfigurationsRequest::getXLanguage,
+                ListGaussMySqlConfigurationsRequest::setXLanguage));
 
         // response
 
@@ -1838,9 +1694,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> listGaussMySqlDatabase =
-        genForlistGaussMySqlDatabase();
+        genForListGaussMySqlDatabase();
 
-    private static HttpRequestDef<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> genForlistGaussMySqlDatabase() {
+    private static HttpRequestDef<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> genForListGaussMySqlDatabase() {
         // basic
         HttpRequestDef.Builder<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListGaussMySqlDatabaseRequest.class, ListGaussMySqlDatabaseResponse.class)
@@ -1853,44 +1709,35 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getInstanceId,
+                ListGaussMySqlDatabaseRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getOffset, ListGaussMySqlDatabaseRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getLimit, ListGaussMySqlDatabaseRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getName, ListGaussMySqlDatabaseRequest::setName));
         builder.<String>withRequestField("charset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getCharset, (req, v) -> {
-                req.setCharset(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getCharset,
+                ListGaussMySqlDatabaseRequest::setCharset));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseRequest::getXLanguage,
+                ListGaussMySqlDatabaseRequest::setXLanguage));
 
         // response
 
@@ -1898,9 +1745,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> listGaussMySqlDatabaseCharsets =
-        genForlistGaussMySqlDatabaseCharsets();
+        genForListGaussMySqlDatabaseCharsets();
 
-    private static HttpRequestDef<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> genForlistGaussMySqlDatabaseCharsets() {
+    private static HttpRequestDef<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> genForListGaussMySqlDatabaseCharsets() {
         // basic
         HttpRequestDef.Builder<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> builder =
             HttpRequestDef
@@ -1916,16 +1763,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseCharsetsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseCharsetsRequest::getInstanceId,
+                ListGaussMySqlDatabaseCharsetsRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseCharsetsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseCharsetsRequest::getXLanguage,
+                ListGaussMySqlDatabaseCharsetsRequest::setXLanguage));
 
         // response
 
@@ -1933,9 +1778,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> listGaussMySqlDatabaseUser =
-        genForlistGaussMySqlDatabaseUser();
+        genForListGaussMySqlDatabaseUser();
 
-    private static HttpRequestDef<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> genForlistGaussMySqlDatabaseUser() {
+    private static HttpRequestDef<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> genForListGaussMySqlDatabaseUser() {
         // basic
         HttpRequestDef.Builder<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> builder =
             HttpRequestDef
@@ -1951,30 +1796,26 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getInstanceId,
+                ListGaussMySqlDatabaseUserRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getOffset,
+                ListGaussMySqlDatabaseUserRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getLimit,
+                ListGaussMySqlDatabaseUserRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDatabaseUserRequest::getXLanguage,
+                ListGaussMySqlDatabaseUserRequest::setXLanguage));
 
         // response
 
@@ -1982,9 +1823,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse> listGaussMySqlDedicatedResources =
-        genForlistGaussMySqlDedicatedResources();
+        genForListGaussMySqlDedicatedResources();
 
-    private static HttpRequestDef<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse> genForlistGaussMySqlDedicatedResources() {
+    private static HttpRequestDef<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse> genForListGaussMySqlDedicatedResources() {
         // basic
         HttpRequestDef.Builder<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse> builder =
             HttpRequestDef
@@ -2000,23 +1841,20 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlDedicatedResourcesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDedicatedResourcesRequest::getOffset,
+                ListGaussMySqlDedicatedResourcesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlDedicatedResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDedicatedResourcesRequest::getLimit,
+                ListGaussMySqlDedicatedResourcesRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlDedicatedResourcesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlDedicatedResourcesRequest::getXLanguage,
+                ListGaussMySqlDedicatedResourcesRequest::setXLanguage));
 
         // response
 
@@ -2024,9 +1862,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfo =
-        genForlistGaussMySqlInstanceDetailInfo();
+        genForListGaussMySqlInstanceDetailInfo();
 
-    private static HttpRequestDef<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> genForlistGaussMySqlInstanceDetailInfo() {
+    private static HttpRequestDef<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> genForListGaussMySqlInstanceDetailInfo() {
         // basic
         HttpRequestDef.Builder<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> builder =
             HttpRequestDef
@@ -2042,16 +1880,14 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoRequest::getInstanceIds, (req, v) -> {
-                req.setInstanceIds(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoRequest::getInstanceIds,
+                ListGaussMySqlInstanceDetailInfoRequest::setInstanceIds));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoRequest::getXLanguage,
+                ListGaussMySqlInstanceDetailInfoRequest::setXLanguage));
 
         // response
 
@@ -2059,9 +1895,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> listGaussMySqlInstanceDetailInfoUnifyStatus =
-        genForlistGaussMySqlInstanceDetailInfoUnifyStatus();
+        genForListGaussMySqlInstanceDetailInfoUnifyStatus();
 
-    private static HttpRequestDef<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> genForlistGaussMySqlInstanceDetailInfoUnifyStatus() {
+    private static HttpRequestDef<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> genForListGaussMySqlInstanceDetailInfoUnifyStatus() {
         // basic
         HttpRequestDef.Builder<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> builder =
             HttpRequestDef
@@ -2077,16 +1913,14 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoUnifyStatusRequest::getInstanceIds, (req, v) -> {
-                req.setInstanceIds(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoUnifyStatusRequest::getInstanceIds,
+                ListGaussMySqlInstanceDetailInfoUnifyStatusRequest::setInstanceIds));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoUnifyStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoUnifyStatusRequest::getXLanguage,
+                ListGaussMySqlInstanceDetailInfoUnifyStatusRequest::setXLanguage));
 
         // response
 
@@ -2094,9 +1928,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> listGaussMySqlInstances =
-        genForlistGaussMySqlInstances();
+        genForListGaussMySqlInstances();
 
-    private static HttpRequestDef<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> genForlistGaussMySqlInstances() {
+    private static HttpRequestDef<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> genForListGaussMySqlInstances() {
         // basic
         HttpRequestDef.Builder<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListGaussMySqlInstancesRequest.class, ListGaussMySqlInstancesResponse.class)
@@ -2109,93 +1943,74 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getId, ListGaussMySqlInstancesRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getName, ListGaussMySqlInstancesRequest::setName));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getType, ListGaussMySqlInstancesRequest::setType));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getDatastoreType,
+                ListGaussMySqlInstancesRequest::setDatastoreType));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getVpcId, ListGaussMySqlInstancesRequest::setVpcId));
         builder.<String>withRequestField("subnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getSubnetId, (req, v) -> {
-                req.setSubnetId(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getSubnetId,
+                ListGaussMySqlInstancesRequest::setSubnetId));
         builder.<String>withRequestField("private_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getPrivateIp, (req, v) -> {
-                req.setPrivateIp(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getPrivateIp,
+                ListGaussMySqlInstancesRequest::setPrivateIp));
         builder.<String>withRequestField("readonly_private_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getReadonlyPrivateIp, (req, v) -> {
-                req.setReadonlyPrivateIp(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getReadonlyPrivateIp,
+                ListGaussMySqlInstancesRequest::setReadonlyPrivateIp));
         builder.<String>withRequestField("proxy_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getProxyIp, (req, v) -> {
-                req.setProxyIp(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getProxyIp,
+                ListGaussMySqlInstancesRequest::setProxyIp));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getOffset,
+                ListGaussMySqlInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getLimit, ListGaussMySqlInstancesRequest::setLimit));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getTags, ListGaussMySqlInstancesRequest::setTags));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getXLanguage,
+                ListGaussMySqlInstancesRequest::setXLanguage));
 
         // response
 
@@ -2203,9 +2018,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse> listGaussMySqlInstancesUnifyStatus =
-        genForlistGaussMySqlInstancesUnifyStatus();
+        genForListGaussMySqlInstancesUnifyStatus();
 
-    private static HttpRequestDef<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse> genForlistGaussMySqlInstancesUnifyStatus() {
+    private static HttpRequestDef<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse> genForListGaussMySqlInstancesUnifyStatus() {
         // basic
         HttpRequestDef.Builder<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse> builder =
             HttpRequestDef
@@ -2221,93 +2036,80 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getId,
+                ListGaussMySqlInstancesUnifyStatusRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getName,
+                ListGaussMySqlInstancesUnifyStatusRequest::setName));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getType,
+                ListGaussMySqlInstancesUnifyStatusRequest::setType));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getDatastoreType,
+                ListGaussMySqlInstancesUnifyStatusRequest::setDatastoreType));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getVpcId,
+                ListGaussMySqlInstancesUnifyStatusRequest::setVpcId));
         builder.<String>withRequestField("subnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getSubnetId, (req, v) -> {
-                req.setSubnetId(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getSubnetId,
+                ListGaussMySqlInstancesUnifyStatusRequest::setSubnetId));
         builder.<String>withRequestField("private_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getPrivateIp, (req, v) -> {
-                req.setPrivateIp(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getPrivateIp,
+                ListGaussMySqlInstancesUnifyStatusRequest::setPrivateIp));
         builder.<String>withRequestField("readonly_private_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getReadonlyPrivateIp, (req, v) -> {
-                req.setReadonlyPrivateIp(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getReadonlyPrivateIp,
+                ListGaussMySqlInstancesUnifyStatusRequest::setReadonlyPrivateIp));
         builder.<String>withRequestField("proxy_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getProxyIp, (req, v) -> {
-                req.setProxyIp(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getProxyIp,
+                ListGaussMySqlInstancesUnifyStatusRequest::setProxyIp));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getOffset,
+                ListGaussMySqlInstancesUnifyStatusRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getLimit,
+                ListGaussMySqlInstancesUnifyStatusRequest::setLimit));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getTags,
+                ListGaussMySqlInstancesUnifyStatusRequest::setTags));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getXLanguage,
+                ListGaussMySqlInstancesUnifyStatusRequest::setXLanguage));
 
         // response
 
@@ -2315,9 +2117,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListImmediateJobsRequest, ListImmediateJobsResponse> listImmediateJobs =
-        genForlistImmediateJobs();
+        genForListImmediateJobs();
 
-    private static HttpRequestDef<ListImmediateJobsRequest, ListImmediateJobsResponse> genForlistImmediateJobs() {
+    private static HttpRequestDef<ListImmediateJobsRequest, ListImmediateJobsResponse> genForListImmediateJobs() {
         // basic
         HttpRequestDef.Builder<ListImmediateJobsRequest, ListImmediateJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListImmediateJobsRequest.class, ListImmediateJobsResponse.class)
@@ -2330,58 +2132,42 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImmediateJobsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListImmediateJobsRequest::getStatus, ListImmediateJobsRequest::setStatus));
         builder.<String>withRequestField("job_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImmediateJobsRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ListImmediateJobsRequest::getJobName, ListImmediateJobsRequest::setJobName));
         builder.<String>withRequestField("job_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImmediateJobsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListImmediateJobsRequest::getJobId, ListImmediateJobsRequest::setJobId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImmediateJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListImmediateJobsRequest::getOffset, ListImmediateJobsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImmediateJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListImmediateJobsRequest::getLimit, ListImmediateJobsRequest::setLimit));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImmediateJobsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListImmediateJobsRequest::getStartTime, ListImmediateJobsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImmediateJobsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListImmediateJobsRequest::getEndTime, ListImmediateJobsRequest::setEndTime));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImmediateJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListImmediateJobsRequest::getXLanguage, ListImmediateJobsRequest::setXLanguage));
 
         // response
 
@@ -2389,9 +2175,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListInstanceConfigurationsRequest, ListInstanceConfigurationsResponse> listInstanceConfigurations =
-        genForlistInstanceConfigurations();
+        genForListInstanceConfigurations();
 
-    private static HttpRequestDef<ListInstanceConfigurationsRequest, ListInstanceConfigurationsResponse> genForlistInstanceConfigurations() {
+    private static HttpRequestDef<ListInstanceConfigurationsRequest, ListInstanceConfigurationsResponse> genForListInstanceConfigurations() {
         // basic
         HttpRequestDef.Builder<ListInstanceConfigurationsRequest, ListInstanceConfigurationsResponse> builder =
             HttpRequestDef
@@ -2407,30 +2193,26 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceConfigurationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConfigurationsRequest::getInstanceId,
+                ListInstanceConfigurationsRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceConfigurationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConfigurationsRequest::getOffset,
+                ListInstanceConfigurationsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceConfigurationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConfigurationsRequest::getLimit,
+                ListInstanceConfigurationsRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceConfigurationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConfigurationsRequest::getXLanguage,
+                ListInstanceConfigurationsRequest::setXLanguage));
 
         // response
 
@@ -2438,9 +2220,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
-        genForlistInstanceTags();
+        genForListInstanceTags();
 
-    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForlistInstanceTags() {
+    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForListInstanceTags() {
         // basic
         HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
@@ -2453,30 +2235,22 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, ListInstanceTagsRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getOffset, ListInstanceTagsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getLimit, ListInstanceTagsRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getXLanguage, ListInstanceTagsRequest::setXLanguage));
 
         // response
 
@@ -2484,9 +2258,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse> listLtsErrorLogDetails =
-        genForlistLtsErrorLogDetails();
+        genForListLtsErrorLogDetails();
 
-    private static HttpRequestDef<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse> genForlistLtsErrorLogDetails() {
+    private static HttpRequestDef<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse> genForListLtsErrorLogDetails() {
         // basic
         HttpRequestDef.Builder<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListLtsErrorLogDetailsRequest.class, ListLtsErrorLogDetailsResponse.class)
@@ -2499,23 +2273,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLtsErrorLogDetailsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLtsErrorLogDetailsRequest::getInstanceId,
+                ListLtsErrorLogDetailsRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLtsErrorLogDetailsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListLtsErrorLogDetailsRequest::getXLanguage,
+                ListLtsErrorLogDetailsRequest::setXLanguage));
         builder.<LtsLogErrorQueryRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LtsLogErrorQueryRequest.class),
-            f -> f.withMarshaller(ListLtsErrorLogDetailsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListLtsErrorLogDetailsRequest::getBody, ListLtsErrorLogDetailsRequest::setBody));
 
         // response
 
@@ -2523,9 +2293,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse> listLtsSlowlogDetails =
-        genForlistLtsSlowlogDetails();
+        genForListLtsSlowlogDetails();
 
-    private static HttpRequestDef<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse> genForlistLtsSlowlogDetails() {
+    private static HttpRequestDef<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse> genForListLtsSlowlogDetails() {
         // basic
         HttpRequestDef.Builder<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListLtsSlowlogDetailsRequest.class, ListLtsSlowlogDetailsResponse.class)
@@ -2538,23 +2308,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLtsSlowlogDetailsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLtsSlowlogDetailsRequest::getInstanceId,
+                ListLtsSlowlogDetailsRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLtsSlowlogDetailsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListLtsSlowlogDetailsRequest::getXLanguage,
+                ListLtsSlowlogDetailsRequest::setXLanguage));
         builder.<LtsLogSlowQueryRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LtsLogSlowQueryRequest.class),
-            f -> f.withMarshaller(ListLtsSlowlogDetailsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListLtsSlowlogDetailsRequest::getBody, ListLtsSlowlogDetailsRequest::setBody));
 
         // response
 
@@ -2562,9 +2328,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListModifyHistoryRequest, ListModifyHistoryResponse> listModifyHistory =
-        genForlistModifyHistory();
+        genForListModifyHistory();
 
-    private static HttpRequestDef<ListModifyHistoryRequest, ListModifyHistoryResponse> genForlistModifyHistory() {
+    private static HttpRequestDef<ListModifyHistoryRequest, ListModifyHistoryResponse> genForListModifyHistory() {
         // basic
         HttpRequestDef.Builder<ListModifyHistoryRequest, ListModifyHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListModifyHistoryRequest.class, ListModifyHistoryResponse.class)
@@ -2577,30 +2343,23 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListModifyHistoryRequest::getConfigurationId, (req, v) -> {
-                req.setConfigurationId(v);
-            }));
+            f -> f.withMarshaller(ListModifyHistoryRequest::getConfigurationId,
+                ListModifyHistoryRequest::setConfigurationId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListModifyHistoryRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListModifyHistoryRequest::getOffset, ListModifyHistoryRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListModifyHistoryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListModifyHistoryRequest::getLimit, ListModifyHistoryRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListModifyHistoryRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListModifyHistoryRequest::getXLanguage, ListModifyHistoryRequest::setXLanguage));
 
         // response
 
@@ -2608,9 +2367,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
-        genForlistProjectTags();
+        genForListProjectTags();
 
-    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForListProjectTags() {
         // basic
         HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
@@ -2623,23 +2382,17 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getOffset, ListProjectTagsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getLimit, ListProjectTagsRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getXLanguage, ListProjectTagsRequest::setXLanguage));
 
         // response
 
@@ -2647,9 +2400,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ListScheduleJobsRequest, ListScheduleJobsResponse> listScheduleJobs =
-        genForlistScheduleJobs();
+        genForListScheduleJobs();
 
-    private static HttpRequestDef<ListScheduleJobsRequest, ListScheduleJobsResponse> genForlistScheduleJobs() {
+    private static HttpRequestDef<ListScheduleJobsRequest, ListScheduleJobsResponse> genForListScheduleJobs() {
         // basic
         HttpRequestDef.Builder<ListScheduleJobsRequest, ListScheduleJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScheduleJobsRequest.class, ListScheduleJobsResponse.class)
@@ -2662,58 +2415,42 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScheduleJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListScheduleJobsRequest::getOffset, ListScheduleJobsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScheduleJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListScheduleJobsRequest::getLimit, ListScheduleJobsRequest::setLimit));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScheduleJobsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListScheduleJobsRequest::getStatus, ListScheduleJobsRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScheduleJobsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListScheduleJobsRequest::getStartTime, ListScheduleJobsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScheduleJobsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListScheduleJobsRequest::getEndTime, ListScheduleJobsRequest::setEndTime));
         builder.<String>withRequestField("job_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScheduleJobsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListScheduleJobsRequest::getJobId, ListScheduleJobsRequest::setJobId));
         builder.<String>withRequestField("job_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScheduleJobsRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ListScheduleJobsRequest::getJobName, ListScheduleJobsRequest::setJobName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScheduleJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListScheduleJobsRequest::getXLanguage, ListScheduleJobsRequest::setXLanguage));
 
         // response
 
@@ -2721,9 +2458,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> modifyBackupEncryptStatus =
-        genFormodifyBackupEncryptStatus();
+        genForModifyBackupEncryptStatus();
 
-    private static HttpRequestDef<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> genFormodifyBackupEncryptStatus() {
+    private static HttpRequestDef<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> genForModifyBackupEncryptStatus() {
         // basic
         HttpRequestDef.Builder<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> builder =
             HttpRequestDef
@@ -2739,23 +2476,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyBackupEncryptStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ModifyBackupEncryptStatusRequest::getInstanceId,
+                ModifyBackupEncryptStatusRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyBackupEncryptStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ModifyBackupEncryptStatusRequest::getXLanguage,
+                ModifyBackupEncryptStatusRequest::setXLanguage));
         builder.<BackupEncryptRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BackupEncryptRequest.class),
-            f -> f.withMarshaller(ModifyBackupEncryptStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyBackupEncryptStatusRequest::getBody,
+                ModifyBackupEncryptStatusRequest::setBody));
 
         // response
 
@@ -2763,9 +2497,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse> modifyGaussMySqlProxyRouteMode =
-        genFormodifyGaussMySqlProxyRouteMode();
+        genForModifyGaussMySqlProxyRouteMode();
 
-    private static HttpRequestDef<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse> genFormodifyGaussMySqlProxyRouteMode() {
+    private static HttpRequestDef<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse> genForModifyGaussMySqlProxyRouteMode() {
         // basic
         HttpRequestDef.Builder<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse> builder =
             HttpRequestDef
@@ -2781,30 +2515,26 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getInstanceId,
+                ModifyGaussMySqlProxyRouteModeRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getProxyId,
+                ModifyGaussMySqlProxyRouteModeRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getXLanguage,
+                ModifyGaussMySqlProxyRouteModeRequest::setXLanguage));
         builder.<ModifyGaussMySqlProxyRouteModeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyGaussMySqlProxyRouteModeRequestBody.class),
-            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getBody,
+                ModifyGaussMySqlProxyRouteModeRequest::setBody));
 
         // response
 
@@ -2812,9 +2542,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse> modifyGaussMysqlDns =
-        genFormodifyGaussMysqlDns();
+        genForModifyGaussMysqlDns();
 
-    private static HttpRequestDef<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse> genFormodifyGaussMysqlDns() {
+    private static HttpRequestDef<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse> genForModifyGaussMysqlDns() {
         // basic
         HttpRequestDef.Builder<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyGaussMysqlDnsRequest.class, ModifyGaussMysqlDnsResponse.class)
@@ -2827,23 +2557,18 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyGaussMysqlDnsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ModifyGaussMysqlDnsRequest::getInstanceId,
+                ModifyGaussMysqlDnsRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyGaussMysqlDnsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ModifyGaussMysqlDnsRequest::getXLanguage, ModifyGaussMysqlDnsRequest::setXLanguage));
         builder.<ModifyDnsNameReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyDnsNameReq.class),
-            f -> f.withMarshaller(ModifyGaussMysqlDnsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyGaussMysqlDnsRequest::getBody, ModifyGaussMysqlDnsRequest::setBody));
 
         // response
 
@@ -2851,9 +2576,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> resetGaussMySqlDatabasePassword =
-        genForresetGaussMySqlDatabasePassword();
+        genForResetGaussMySqlDatabasePassword();
 
-    private static HttpRequestDef<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> genForresetGaussMySqlDatabasePassword() {
+    private static HttpRequestDef<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> genForResetGaussMySqlDatabasePassword() {
         // basic
         HttpRequestDef.Builder<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> builder =
             HttpRequestDef
@@ -2869,23 +2594,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetGaussMySqlDatabasePasswordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetGaussMySqlDatabasePasswordRequest::getInstanceId,
+                ResetGaussMySqlDatabasePasswordRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetGaussMySqlDatabasePasswordRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ResetGaussMySqlDatabasePasswordRequest::getXLanguage,
+                ResetGaussMySqlDatabasePasswordRequest::setXLanguage));
         builder.<ResetDatabasePasswordRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetDatabasePasswordRequest.class),
-            f -> f.withMarshaller(ResetGaussMySqlDatabasePasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetGaussMySqlDatabasePasswordRequest::getBody,
+                ResetGaussMySqlDatabasePasswordRequest::setBody));
 
         // response
 
@@ -2893,9 +2615,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse> resetGaussMySqlPassword =
-        genForresetGaussMySqlPassword();
+        genForResetGaussMySqlPassword();
 
-    private static HttpRequestDef<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse> genForresetGaussMySqlPassword() {
+    private static HttpRequestDef<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse> genForResetGaussMySqlPassword() {
         // basic
         HttpRequestDef.Builder<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ResetGaussMySqlPasswordRequest.class, ResetGaussMySqlPasswordResponse.class)
@@ -2908,23 +2630,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetGaussMySqlPasswordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetGaussMySqlPasswordRequest::getInstanceId,
+                ResetGaussMySqlPasswordRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetGaussMySqlPasswordRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ResetGaussMySqlPasswordRequest::getXLanguage,
+                ResetGaussMySqlPasswordRequest::setXLanguage));
         builder.<MysqlResetPasswordRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlResetPasswordRequest.class),
-            f -> f.withMarshaller(ResetGaussMySqlPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetGaussMySqlPasswordRequest::getBody, ResetGaussMySqlPasswordRequest::setBody));
 
         // response
 
@@ -2932,9 +2650,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse> restartGaussMySqlInstance =
-        genForrestartGaussMySqlInstance();
+        genForRestartGaussMySqlInstance();
 
-    private static HttpRequestDef<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse> genForrestartGaussMySqlInstance() {
+    private static HttpRequestDef<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse> genForRestartGaussMySqlInstance() {
         // basic
         HttpRequestDef.Builder<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse> builder =
             HttpRequestDef
@@ -2950,23 +2668,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartGaussMySqlInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestartGaussMySqlInstanceRequest::getInstanceId,
+                RestartGaussMySqlInstanceRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartGaussMySqlInstanceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(RestartGaussMySqlInstanceRequest::getXLanguage,
+                RestartGaussMySqlInstanceRequest::setXLanguage));
         builder.<TaurusRestartInstanceRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaurusRestartInstanceRequest.class),
-            f -> f.withMarshaller(RestartGaussMySqlInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestartGaussMySqlInstanceRequest::getBody,
+                RestartGaussMySqlInstanceRequest::setBody));
 
         // response
 
@@ -2974,9 +2689,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse> restartGaussMySqlNode =
-        genForrestartGaussMySqlNode();
+        genForRestartGaussMySqlNode();
 
-    private static HttpRequestDef<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse> genForrestartGaussMySqlNode() {
+    private static HttpRequestDef<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse> genForRestartGaussMySqlNode() {
         // basic
         HttpRequestDef.Builder<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RestartGaussMySqlNodeRequest.class, RestartGaussMySqlNodeResponse.class)
@@ -2989,30 +2704,24 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartGaussMySqlNodeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestartGaussMySqlNodeRequest::getInstanceId,
+                RestartGaussMySqlNodeRequest::setInstanceId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartGaussMySqlNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(RestartGaussMySqlNodeRequest::getNodeId, RestartGaussMySqlNodeRequest::setNodeId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartGaussMySqlNodeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(RestartGaussMySqlNodeRequest::getXLanguage,
+                RestartGaussMySqlNodeRequest::setXLanguage));
         builder.<RestartNodeRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RestartNodeRequest.class),
-            f -> f.withMarshaller(RestartGaussMySqlNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestartGaussMySqlNodeRequest::getBody, RestartGaussMySqlNodeRequest::setBody));
 
         // response
 
@@ -3020,9 +2729,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<RestoreOldInstanceRequest, RestoreOldInstanceResponse> restoreOldInstance =
-        genForrestoreOldInstance();
+        genForRestoreOldInstance();
 
-    private static HttpRequestDef<RestoreOldInstanceRequest, RestoreOldInstanceResponse> genForrestoreOldInstance() {
+    private static HttpRequestDef<RestoreOldInstanceRequest, RestoreOldInstanceResponse> genForRestoreOldInstance() {
         // basic
         HttpRequestDef.Builder<RestoreOldInstanceRequest, RestoreOldInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreOldInstanceRequest.class, RestoreOldInstanceResponse.class)
@@ -3035,16 +2744,12 @@ public class GaussDBMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreOldInstanceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(RestoreOldInstanceRequest::getXLanguage, RestoreOldInstanceRequest::setXLanguage));
         builder.<RestoreRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RestoreRequest.class),
-            f -> f.withMarshaller(RestoreOldInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestoreOldInstanceRequest::getBody, RestoreOldInstanceRequest::setBody));
 
         // response
 
@@ -3052,9 +2757,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeight =
-        genForsetGaussMySqlProxyWeight();
+        genForSetGaussMySqlProxyWeight();
 
-    private static HttpRequestDef<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> genForsetGaussMySqlProxyWeight() {
+    private static HttpRequestDef<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> genForSetGaussMySqlProxyWeight() {
         // basic
         HttpRequestDef.Builder<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> builder =
             HttpRequestDef
@@ -3068,30 +2773,25 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getInstanceId,
+                SetGaussMySqlProxyWeightRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getProxyId,
+                SetGaussMySqlProxyWeightRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getXLanguage,
+                SetGaussMySqlProxyWeightRequest::setXLanguage));
         builder.<TaurusModifyProxyWeightRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaurusModifyProxyWeightRequest.class),
-            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetGaussMySqlProxyWeightRequest::getBody, SetGaussMySqlProxyWeightRequest::setBody));
 
         // response
 
@@ -3099,9 +2799,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse> setGaussMySqlQuotas =
-        genForsetGaussMySqlQuotas();
+        genForSetGaussMySqlQuotas();
 
-    private static HttpRequestDef<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse> genForsetGaussMySqlQuotas() {
+    private static HttpRequestDef<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse> genForSetGaussMySqlQuotas() {
         // basic
         HttpRequestDef.Builder<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SetGaussMySqlQuotasRequest.class, SetGaussMySqlQuotasResponse.class)
@@ -3114,25 +2814,21 @@ public class GaussDBMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetGaussMySqlQuotasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SetGaussMySqlQuotasRequest::getXLanguage, SetGaussMySqlQuotasRequest::setXLanguage));
         builder.<SetQuotasRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SetQuotasRequestBody.class),
-            f -> f.withMarshaller(SetGaussMySqlQuotasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetGaussMySqlQuotasRequest::getBody, SetGaussMySqlQuotasRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLog = genForshowAuditLog();
+    public static final HttpRequestDef<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLog = genForShowAuditLog();
 
-    private static HttpRequestDef<ShowAuditLogRequest, ShowAuditLogResponse> genForshowAuditLog() {
+    private static HttpRequestDef<ShowAuditLogRequest, ShowAuditLogResponse> genForShowAuditLog() {
         // basic
         HttpRequestDef.Builder<ShowAuditLogRequest, ShowAuditLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuditLogRequest.class, ShowAuditLogResponse.class)
@@ -3145,16 +2841,12 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getInstanceId, ShowAuditLogRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowAuditLogRequest::getXLanguage, ShowAuditLogRequest::setXLanguage));
 
         // response
 
@@ -3162,9 +2854,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> showAutoScalingPolicy =
-        genForshowAutoScalingPolicy();
+        genForShowAutoScalingPolicy();
 
-    private static HttpRequestDef<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> genForshowAutoScalingPolicy() {
+    private static HttpRequestDef<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> genForShowAutoScalingPolicy() {
         // basic
         HttpRequestDef.Builder<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAutoScalingPolicyRequest.class, ShowAutoScalingPolicyResponse.class)
@@ -3177,16 +2869,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAutoScalingPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAutoScalingPolicyRequest::getInstanceId,
+                ShowAutoScalingPolicyRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAutoScalingPolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowAutoScalingPolicyRequest::getXLanguage,
+                ShowAutoScalingPolicyRequest::setXLanguage));
 
         // response
 
@@ -3194,9 +2884,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> showBackupRestoreTime =
-        genForshowBackupRestoreTime();
+        genForShowBackupRestoreTime();
 
-    private static HttpRequestDef<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> genForshowBackupRestoreTime() {
+    private static HttpRequestDef<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> genForShowBackupRestoreTime() {
         // basic
         HttpRequestDef.Builder<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowBackupRestoreTimeRequest.class, ShowBackupRestoreTimeResponse.class)
@@ -3209,23 +2899,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getInstanceId,
+                ShowBackupRestoreTimeRequest::setInstanceId));
         builder.<String>withRequestField("date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getDate, (req, v) -> {
-                req.setDate(v);
-            }));
+            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getDate, ShowBackupRestoreTimeRequest::setDate));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getXLanguage,
+                ShowBackupRestoreTimeRequest::setXLanguage));
 
         // response
 
@@ -3233,9 +2919,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> showDedicatedResourceInfo =
-        genForshowDedicatedResourceInfo();
+        genForShowDedicatedResourceInfo();
 
-    private static HttpRequestDef<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> genForshowDedicatedResourceInfo() {
+    private static HttpRequestDef<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> genForShowDedicatedResourceInfo() {
         // basic
         HttpRequestDef.Builder<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> builder =
             HttpRequestDef
@@ -3251,16 +2937,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDedicatedResourceInfoRequest::getDedicatedResourceId, (req, v) -> {
-                req.setDedicatedResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowDedicatedResourceInfoRequest::getDedicatedResourceId,
+                ShowDedicatedResourceInfoRequest::setDedicatedResourceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDedicatedResourceInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDedicatedResourceInfoRequest::getXLanguage,
+                ShowDedicatedResourceInfoRequest::setXLanguage));
 
         // response
 
@@ -3268,9 +2952,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse> showGaussMySqlBackupList =
-        genForshowGaussMySqlBackupList();
+        genForShowGaussMySqlBackupList();
 
-    private static HttpRequestDef<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse> genForshowGaussMySqlBackupList() {
+    private static HttpRequestDef<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse> genForShowGaussMySqlBackupList() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse> builder =
             HttpRequestDef
@@ -3284,72 +2968,61 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getInstanceId,
+                ShowGaussMySqlBackupListRequest::setInstanceId));
         builder.<String>withRequestField("backup_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getBackupId,
+                ShowGaussMySqlBackupListRequest::setBackupId));
         builder.<String>withRequestField("backup_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getBackupType, (req, v) -> {
-                req.setBackupType(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getBackupType,
+                ShowGaussMySqlBackupListRequest::setBackupType));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getOffset,
+                ShowGaussMySqlBackupListRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getLimit,
+                ShowGaussMySqlBackupListRequest::setLimit));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getBeginTime,
+                ShowGaussMySqlBackupListRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getEndTime,
+                ShowGaussMySqlBackupListRequest::setEndTime));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getName, ShowGaussMySqlBackupListRequest::setName));
         builder.<String>withRequestField("instance_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getInstanceName, (req, v) -> {
-                req.setInstanceName(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getInstanceName,
+                ShowGaussMySqlBackupListRequest::setInstanceName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupListRequest::getXLanguage,
+                ShowGaussMySqlBackupListRequest::setXLanguage));
 
         // response
 
@@ -3357,9 +3030,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse> showGaussMySqlBackupPolicy =
-        genForshowGaussMySqlBackupPolicy();
+        genForShowGaussMySqlBackupPolicy();
 
-    private static HttpRequestDef<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse> genForshowGaussMySqlBackupPolicy() {
+    private static HttpRequestDef<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse> genForShowGaussMySqlBackupPolicy() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse> builder =
             HttpRequestDef
@@ -3375,16 +3048,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupPolicyRequest::getInstanceId,
+                ShowGaussMySqlBackupPolicyRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlBackupPolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlBackupPolicyRequest::getXLanguage,
+                ShowGaussMySqlBackupPolicyRequest::setXLanguage));
 
         // response
 
@@ -3392,9 +3063,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse> showGaussMySqlConfiguration =
-        genForshowGaussMySqlConfiguration();
+        genForShowGaussMySqlConfiguration();
 
-    private static HttpRequestDef<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse> genForshowGaussMySqlConfiguration() {
+    private static HttpRequestDef<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse> genForShowGaussMySqlConfiguration() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse> builder =
             HttpRequestDef
@@ -3410,16 +3081,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlConfigurationRequest::getConfigurationId, (req, v) -> {
-                req.setConfigurationId(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlConfigurationRequest::getConfigurationId,
+                ShowGaussMySqlConfigurationRequest::setConfigurationId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlConfigurationRequest::getXLanguage,
+                ShowGaussMySqlConfigurationRequest::setXLanguage));
 
         // response
 
@@ -3427,9 +3096,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse> showGaussMySqlEngineVersion =
-        genForshowGaussMySqlEngineVersion();
+        genForShowGaussMySqlEngineVersion();
 
-    private static HttpRequestDef<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse> genForshowGaussMySqlEngineVersion() {
+    private static HttpRequestDef<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse> genForShowGaussMySqlEngineVersion() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse> builder =
             HttpRequestDef
@@ -3445,16 +3114,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlEngineVersionRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlEngineVersionRequest::getDatabaseName,
+                ShowGaussMySqlEngineVersionRequest::setDatabaseName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlEngineVersionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlEngineVersionRequest::getXLanguage,
+                ShowGaussMySqlEngineVersionRequest::setXLanguage));
 
         // response
 
@@ -3462,9 +3129,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse> showGaussMySqlFlavors =
-        genForshowGaussMySqlFlavors();
+        genForShowGaussMySqlFlavors();
 
-    private static HttpRequestDef<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse> genForshowGaussMySqlFlavors() {
+    private static HttpRequestDef<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse> genForShowGaussMySqlFlavors() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowGaussMySqlFlavorsRequest.class, ShowGaussMySqlFlavorsResponse.class)
@@ -3477,37 +3144,32 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlFlavorsRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlFlavorsRequest::getDatabaseName,
+                ShowGaussMySqlFlavorsRequest::setDatabaseName));
         builder.<String>withRequestField("version_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlFlavorsRequest::getVersionName, (req, v) -> {
-                req.setVersionName(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlFlavorsRequest::getVersionName,
+                ShowGaussMySqlFlavorsRequest::setVersionName));
         builder.<String>withRequestField("availability_zone_mode",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlFlavorsRequest::getAvailabilityZoneMode, (req, v) -> {
-                req.setAvailabilityZoneMode(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlFlavorsRequest::getAvailabilityZoneMode,
+                ShowGaussMySqlFlavorsRequest::setAvailabilityZoneMode));
         builder.<String>withRequestField("spec_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlFlavorsRequest::getSpecCode, (req, v) -> {
-                req.setSpecCode(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlFlavorsRequest::getSpecCode,
+                ShowGaussMySqlFlavorsRequest::setSpecCode));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlFlavorsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlFlavorsRequest::getXLanguage,
+                ShowGaussMySqlFlavorsRequest::setXLanguage));
 
         // response
 
@@ -3515,9 +3177,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlIncrementalBackupListRequest, ShowGaussMySqlIncrementalBackupListResponse> showGaussMySqlIncrementalBackupList =
-        genForshowGaussMySqlIncrementalBackupList();
+        genForShowGaussMySqlIncrementalBackupList();
 
-    private static HttpRequestDef<ShowGaussMySqlIncrementalBackupListRequest, ShowGaussMySqlIncrementalBackupListResponse> genForshowGaussMySqlIncrementalBackupList() {
+    private static HttpRequestDef<ShowGaussMySqlIncrementalBackupListRequest, ShowGaussMySqlIncrementalBackupListResponse> genForShowGaussMySqlIncrementalBackupList() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlIncrementalBackupListRequest, ShowGaussMySqlIncrementalBackupListResponse> builder =
             HttpRequestDef
@@ -3533,44 +3195,38 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getInstanceId,
+                ShowGaussMySqlIncrementalBackupListRequest::setInstanceId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getOffset,
+                ShowGaussMySqlIncrementalBackupListRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getLimit,
+                ShowGaussMySqlIncrementalBackupListRequest::setLimit));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getBeginTime,
+                ShowGaussMySqlIncrementalBackupListRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getEndTime,
+                ShowGaussMySqlIncrementalBackupListRequest::setEndTime));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getXLanguage,
+                ShowGaussMySqlIncrementalBackupListRequest::setXLanguage));
 
         // response
 
@@ -3578,9 +3234,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse> showGaussMySqlInstanceInfo =
-        genForshowGaussMySqlInstanceInfo();
+        genForShowGaussMySqlInstanceInfo();
 
-    private static HttpRequestDef<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse> genForshowGaussMySqlInstanceInfo() {
+    private static HttpRequestDef<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse> genForShowGaussMySqlInstanceInfo() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse> builder =
             HttpRequestDef
@@ -3596,16 +3252,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlInstanceInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlInstanceInfoRequest::getInstanceId,
+                ShowGaussMySqlInstanceInfoRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlInstanceInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlInstanceInfoRequest::getXLanguage,
+                ShowGaussMySqlInstanceInfoRequest::setXLanguage));
 
         // response
 
@@ -3613,9 +3267,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse> showGaussMySqlInstanceInfoUnifyStatus =
-        genForshowGaussMySqlInstanceInfoUnifyStatus();
+        genForShowGaussMySqlInstanceInfoUnifyStatus();
 
-    private static HttpRequestDef<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse> genForshowGaussMySqlInstanceInfoUnifyStatus() {
+    private static HttpRequestDef<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse> genForShowGaussMySqlInstanceInfoUnifyStatus() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse> builder =
             HttpRequestDef
@@ -3631,16 +3285,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlInstanceInfoUnifyStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlInstanceInfoUnifyStatusRequest::getInstanceId,
+                ShowGaussMySqlInstanceInfoUnifyStatusRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlInstanceInfoUnifyStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlInstanceInfoUnifyStatusRequest::getXLanguage,
+                ShowGaussMySqlInstanceInfoUnifyStatusRequest::setXLanguage));
 
         // response
 
@@ -3648,9 +3300,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse> showGaussMySqlJobInfo =
-        genForshowGaussMySqlJobInfo();
+        genForShowGaussMySqlJobInfo();
 
-    private static HttpRequestDef<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse> genForshowGaussMySqlJobInfo() {
+    private static HttpRequestDef<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse> genForShowGaussMySqlJobInfo() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowGaussMySqlJobInfoRequest.class, ShowGaussMySqlJobInfoResponse.class)
@@ -3663,16 +3315,13 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlJobInfoRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlJobInfoRequest::getId, ShowGaussMySqlJobInfoRequest::setId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlJobInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlJobInfoRequest::getXLanguage,
+                ShowGaussMySqlJobInfoRequest::setXLanguage));
 
         // response
 
@@ -3680,9 +3329,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse> showGaussMySqlProjectQuotas =
-        genForshowGaussMySqlProjectQuotas();
+        genForShowGaussMySqlProjectQuotas();
 
-    private static HttpRequestDef<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse> genForshowGaussMySqlProjectQuotas() {
+    private static HttpRequestDef<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse> genForShowGaussMySqlProjectQuotas() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse> builder =
             HttpRequestDef
@@ -3698,16 +3347,14 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowGaussMySqlProjectQuotasRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowGaussMySqlProjectQuotasRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlProjectQuotasRequest::getType,
+                ShowGaussMySqlProjectQuotasRequest::setType));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlProjectQuotasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlProjectQuotasRequest::getXLanguage,
+                ShowGaussMySqlProjectQuotasRequest::setXLanguage));
 
         // response
 
@@ -3715,9 +3362,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse> showGaussMySqlProxyFlavors =
-        genForshowGaussMySqlProxyFlavors();
+        genForShowGaussMySqlProxyFlavors();
 
-    private static HttpRequestDef<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse> genForshowGaussMySqlProxyFlavors() {
+    private static HttpRequestDef<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse> genForShowGaussMySqlProxyFlavors() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse> builder =
             HttpRequestDef
@@ -3733,16 +3380,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlProxyFlavorsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlProxyFlavorsRequest::getInstanceId,
+                ShowGaussMySqlProxyFlavorsRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlProxyFlavorsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlProxyFlavorsRequest::getXLanguage,
+                ShowGaussMySqlProxyFlavorsRequest::setXLanguage));
 
         // response
 
@@ -3750,9 +3395,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> showGaussMySqlProxyList =
-        genForshowGaussMySqlProxyList();
+        genForShowGaussMySqlProxyList();
 
-    private static HttpRequestDef<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> genForshowGaussMySqlProxyList() {
+    private static HttpRequestDef<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> genForShowGaussMySqlProxyList() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowGaussMySqlProxyListRequest.class, ShowGaussMySqlProxyListResponse.class)
@@ -3765,30 +3410,25 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getInstanceId,
+                ShowGaussMySqlProxyListRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getOffset,
+                ShowGaussMySqlProxyListRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getLimit, ShowGaussMySqlProxyListRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlProxyListRequest::getXLanguage,
+                ShowGaussMySqlProxyListRequest::setXLanguage));
 
         // response
 
@@ -3796,9 +3436,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse> showGaussMySqlQuotas =
-        genForshowGaussMySqlQuotas();
+        genForShowGaussMySqlQuotas();
 
-    private static HttpRequestDef<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse> genForshowGaussMySqlQuotas() {
+    private static HttpRequestDef<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse> genForShowGaussMySqlQuotas() {
         // basic
         HttpRequestDef.Builder<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowGaussMySqlQuotasRequest.class, ShowGaussMySqlQuotasResponse.class)
@@ -3811,30 +3451,24 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlQuotasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlQuotasRequest::getOffset, ShowGaussMySqlQuotasRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlQuotasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlQuotasRequest::getLimit, ShowGaussMySqlQuotasRequest::setLimit));
         builder.<String>withRequestField("enterprise_project_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlQuotasRequest::getEnterpriseProjectName, (req, v) -> {
-                req.setEnterpriseProjectName(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlQuotasRequest::getEnterpriseProjectName,
+                ShowGaussMySqlQuotasRequest::setEnterpriseProjectName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGaussMySqlQuotasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowGaussMySqlQuotasRequest::getXLanguage,
+                ShowGaussMySqlQuotasRequest::setXLanguage));
 
         // response
 
@@ -3842,9 +3476,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceDatabaseVersionRequest, ShowInstanceDatabaseVersionResponse> showInstanceDatabaseVersion =
-        genForshowInstanceDatabaseVersion();
+        genForShowInstanceDatabaseVersion();
 
-    private static HttpRequestDef<ShowInstanceDatabaseVersionRequest, ShowInstanceDatabaseVersionResponse> genForshowInstanceDatabaseVersion() {
+    private static HttpRequestDef<ShowInstanceDatabaseVersionRequest, ShowInstanceDatabaseVersionResponse> genForShowInstanceDatabaseVersion() {
         // basic
         HttpRequestDef.Builder<ShowInstanceDatabaseVersionRequest, ShowInstanceDatabaseVersionResponse> builder =
             HttpRequestDef
@@ -3860,16 +3494,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceDatabaseVersionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceDatabaseVersionRequest::getInstanceId,
+                ShowInstanceDatabaseVersionRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceDatabaseVersionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceDatabaseVersionRequest::getXLanguage,
+                ShowInstanceDatabaseVersionRequest::setXLanguage));
 
         // response
 
@@ -3877,9 +3509,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> showInstanceMonitorExtend =
-        genForshowInstanceMonitorExtend();
+        genForShowInstanceMonitorExtend();
 
-    private static HttpRequestDef<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> genForshowInstanceMonitorExtend() {
+    private static HttpRequestDef<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> genForShowInstanceMonitorExtend() {
         // basic
         HttpRequestDef.Builder<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> builder =
             HttpRequestDef
@@ -3895,16 +3527,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMonitorExtendRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMonitorExtendRequest::getInstanceId,
+                ShowInstanceMonitorExtendRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceMonitorExtendRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceMonitorExtendRequest::getXLanguage,
+                ShowInstanceMonitorExtendRequest::setXLanguage));
 
         // response
 
@@ -3912,9 +3542,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest, ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse> showIntelligentDiagnosisAbnormalCountOfInstances =
-        genForshowIntelligentDiagnosisAbnormalCountOfInstances();
+        genForShowIntelligentDiagnosisAbnormalCountOfInstances();
 
-    private static HttpRequestDef<ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest, ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse> genForshowIntelligentDiagnosisAbnormalCountOfInstances() {
+    private static HttpRequestDef<ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest, ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse> genForShowIntelligentDiagnosisAbnormalCountOfInstances() {
         // basic
         HttpRequestDef.Builder<ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest, ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse> builder =
             HttpRequestDef
@@ -3930,9 +3560,8 @@ public class GaussDBMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest::getXLanguage,
+                ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest::setXLanguage));
 
         // response
 
@@ -3940,9 +3569,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowIntelligentDiagnosisInstanceInfosPerMetricRequest, ShowIntelligentDiagnosisInstanceInfosPerMetricResponse> showIntelligentDiagnosisInstanceInfosPerMetric =
-        genForshowIntelligentDiagnosisInstanceInfosPerMetric();
+        genForShowIntelligentDiagnosisInstanceInfosPerMetric();
 
-    private static HttpRequestDef<ShowIntelligentDiagnosisInstanceInfosPerMetricRequest, ShowIntelligentDiagnosisInstanceInfosPerMetricResponse> genForshowIntelligentDiagnosisInstanceInfosPerMetric() {
+    private static HttpRequestDef<ShowIntelligentDiagnosisInstanceInfosPerMetricRequest, ShowIntelligentDiagnosisInstanceInfosPerMetricResponse> genForShowIntelligentDiagnosisInstanceInfosPerMetric() {
         // basic
         HttpRequestDef.Builder<ShowIntelligentDiagnosisInstanceInfosPerMetricRequest, ShowIntelligentDiagnosisInstanceInfosPerMetricResponse> builder =
             HttpRequestDef
@@ -3958,30 +3587,26 @@ public class GaussDBMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::getMetricName, (req, v) -> {
-                req.setMetricName(v);
-            }));
+            f -> f.withMarshaller(ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::getMetricName,
+                ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::setMetricName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::getOffset,
+                ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::getLimit,
+                ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::getXLanguage,
+                ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::setXLanguage));
 
         // response
 
@@ -3989,9 +3614,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTables =
-        genForshowRestoreTables();
+        genForShowRestoreTables();
 
-    private static HttpRequestDef<ShowRestoreTablesRequest, ShowRestoreTablesResponse> genForshowRestoreTables() {
+    private static HttpRequestDef<ShowRestoreTablesRequest, ShowRestoreTablesResponse> genForShowRestoreTables() {
         // basic
         HttpRequestDef.Builder<ShowRestoreTablesRequest, ShowRestoreTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRestoreTablesRequest.class, ShowRestoreTablesResponse.class)
@@ -4004,44 +3629,34 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRestoreTablesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getInstanceId, ShowRestoreTablesRequest::setInstanceId));
         builder.<String>withRequestField("restore_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRestoreTablesRequest::getRestoreTime, (req, v) -> {
-                req.setRestoreTime(v);
-            }));
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getRestoreTime, ShowRestoreTablesRequest::setRestoreTime));
         builder.<String>withRequestField("last_table_info",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRestoreTablesRequest::getLastTableInfo, (req, v) -> {
-                req.setLastTableInfo(v);
-            }));
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getLastTableInfo,
+                ShowRestoreTablesRequest::setLastTableInfo));
         builder.<String>withRequestField("database_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRestoreTablesRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getDatabaseName,
+                ShowRestoreTablesRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRestoreTablesRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getTableName, ShowRestoreTablesRequest::setTableName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRestoreTablesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getXLanguage, ShowRestoreTablesRequest::setXLanguage));
 
         // response
 
@@ -4049,9 +3664,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShrinkGaussMySqlProxyRequest, ShrinkGaussMySqlProxyResponse> shrinkGaussMySqlProxy =
-        genForshrinkGaussMySqlProxy();
+        genForShrinkGaussMySqlProxy();
 
-    private static HttpRequestDef<ShrinkGaussMySqlProxyRequest, ShrinkGaussMySqlProxyResponse> genForshrinkGaussMySqlProxy() {
+    private static HttpRequestDef<ShrinkGaussMySqlProxyRequest, ShrinkGaussMySqlProxyResponse> genForShrinkGaussMySqlProxy() {
         // basic
         HttpRequestDef.Builder<ShrinkGaussMySqlProxyRequest, ShrinkGaussMySqlProxyResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, ShrinkGaussMySqlProxyRequest.class, ShrinkGaussMySqlProxyResponse.class)
@@ -4064,30 +3679,24 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShrinkGaussMySqlProxyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShrinkGaussMySqlProxyRequest::getInstanceId,
+                ShrinkGaussMySqlProxyRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShrinkGaussMySqlProxyRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(ShrinkGaussMySqlProxyRequest::getProxyId, ShrinkGaussMySqlProxyRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShrinkGaussMySqlProxyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShrinkGaussMySqlProxyRequest::getXLanguage,
+                ShrinkGaussMySqlProxyRequest::setXLanguage));
         builder.<ShrinkGaussMySqlProxyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShrinkGaussMySqlProxyRequestBody.class),
-            f -> f.withMarshaller(ShrinkGaussMySqlProxyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShrinkGaussMySqlProxyRequest::getBody, ShrinkGaussMySqlProxyRequest::setBody));
 
         // response
 
@@ -4095,9 +3704,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<SwitchAccessControlRequest, SwitchAccessControlResponse> switchAccessControl =
-        genForswitchAccessControl();
+        genForSwitchAccessControl();
 
-    private static HttpRequestDef<SwitchAccessControlRequest, SwitchAccessControlResponse> genForswitchAccessControl() {
+    private static HttpRequestDef<SwitchAccessControlRequest, SwitchAccessControlResponse> genForSwitchAccessControl() {
         // basic
         HttpRequestDef.Builder<SwitchAccessControlRequest, SwitchAccessControlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchAccessControlRequest.class, SwitchAccessControlResponse.class)
@@ -4110,30 +3719,23 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchAccessControlRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchAccessControlRequest::getInstanceId,
+                SwitchAccessControlRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchAccessControlRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(SwitchAccessControlRequest::getProxyId, SwitchAccessControlRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchAccessControlRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SwitchAccessControlRequest::getXLanguage, SwitchAccessControlRequest::setXLanguage));
         builder.<SwitchAccessControlRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchAccessControlRequestBody.class),
-            f -> f.withMarshaller(SwitchAccessControlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchAccessControlRequest::getBody, SwitchAccessControlRequest::setBody));
 
         // response
 
@@ -4141,9 +3743,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse> switchGaussMySqlConfiguration =
-        genForswitchGaussMySqlConfiguration();
+        genForSwitchGaussMySqlConfiguration();
 
-    private static HttpRequestDef<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse> genForswitchGaussMySqlConfiguration() {
+    private static HttpRequestDef<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse> genForSwitchGaussMySqlConfiguration() {
         // basic
         HttpRequestDef.Builder<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse> builder =
             HttpRequestDef
@@ -4159,23 +3761,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchGaussMySqlConfigurationRequest::getConfigurationId, (req, v) -> {
-                req.setConfigurationId(v);
-            }));
+            f -> f.withMarshaller(SwitchGaussMySqlConfigurationRequest::getConfigurationId,
+                SwitchGaussMySqlConfigurationRequest::setConfigurationId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchGaussMySqlConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SwitchGaussMySqlConfigurationRequest::getXLanguage,
+                SwitchGaussMySqlConfigurationRequest::setXLanguage));
         builder.<ApplyConfigurationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApplyConfigurationRequestBody.class),
-            f -> f.withMarshaller(SwitchGaussMySqlConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchGaussMySqlConfigurationRequest::getBody,
+                SwitchGaussMySqlConfigurationRequest::setBody));
 
         // response
 
@@ -4183,9 +3782,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse> switchGaussMySqlInstanceSsl =
-        genForswitchGaussMySqlInstanceSsl();
+        genForSwitchGaussMySqlInstanceSsl();
 
-    private static HttpRequestDef<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse> genForswitchGaussMySqlInstanceSsl() {
+    private static HttpRequestDef<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse> genForSwitchGaussMySqlInstanceSsl() {
         // basic
         HttpRequestDef.Builder<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse> builder =
             HttpRequestDef
@@ -4201,23 +3800,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchGaussMySqlInstanceSslRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchGaussMySqlInstanceSslRequest::getInstanceId,
+                SwitchGaussMySqlInstanceSslRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchGaussMySqlInstanceSslRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SwitchGaussMySqlInstanceSslRequest::getXLanguage,
+                SwitchGaussMySqlInstanceSslRequest::setXLanguage));
         builder.<SwitchSSLRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchSSLRequest.class),
-            f -> f.withMarshaller(SwitchGaussMySqlInstanceSslRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchGaussMySqlInstanceSslRequest::getBody,
+                SwitchGaussMySqlInstanceSslRequest::setBody));
 
         // response
 
@@ -4225,9 +3821,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse> switchGaussMySqlProxySsl =
-        genForswitchGaussMySqlProxySsl();
+        genForSwitchGaussMySqlProxySsl();
 
-    private static HttpRequestDef<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse> genForswitchGaussMySqlProxySsl() {
+    private static HttpRequestDef<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse> genForSwitchGaussMySqlProxySsl() {
         // basic
         HttpRequestDef.Builder<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse> builder =
             HttpRequestDef
@@ -4241,30 +3837,25 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getInstanceId,
+                SwitchGaussMySqlProxySslRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getProxyId,
+                SwitchGaussMySqlProxySslRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getXLanguage,
+                SwitchGaussMySqlProxySslRequest::setXLanguage));
         builder.<SwitchProxySSLRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchProxySSLRequest.class),
-            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getBody, SwitchGaussMySqlProxySslRequest::setBody));
 
         // response
 
@@ -4272,9 +3863,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateAuditLogRequest, UpdateAuditLogResponse> updateAuditLog =
-        genForupdateAuditLog();
+        genForUpdateAuditLog();
 
-    private static HttpRequestDef<UpdateAuditLogRequest, UpdateAuditLogResponse> genForupdateAuditLog() {
+    private static HttpRequestDef<UpdateAuditLogRequest, UpdateAuditLogResponse> genForUpdateAuditLog() {
         // basic
         HttpRequestDef.Builder<UpdateAuditLogRequest, UpdateAuditLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateAuditLogRequest.class, UpdateAuditLogResponse.class)
@@ -4287,23 +3878,17 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAuditLogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAuditLogRequest::getInstanceId, UpdateAuditLogRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAuditLogRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateAuditLogRequest::getXLanguage, UpdateAuditLogRequest::setXLanguage));
         builder.<OperateAuditLogRequestV3Body>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateAuditLogRequestV3Body.class),
-            f -> f.withMarshaller(UpdateAuditLogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAuditLogRequest::getBody, UpdateAuditLogRequest::setBody));
 
         // response
 
@@ -4311,9 +3896,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse> updateAutoScalingPolicy =
-        genForupdateAutoScalingPolicy();
+        genForUpdateAutoScalingPolicy();
 
-    private static HttpRequestDef<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse> genForupdateAutoScalingPolicy() {
+    private static HttpRequestDef<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse> genForUpdateAutoScalingPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateAutoScalingPolicyRequest.class, UpdateAutoScalingPolicyResponse.class)
@@ -4326,23 +3911,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAutoScalingPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAutoScalingPolicyRequest::getInstanceId,
+                UpdateAutoScalingPolicyRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAutoScalingPolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateAutoScalingPolicyRequest::getXLanguage,
+                UpdateAutoScalingPolicyRequest::setXLanguage));
         builder.<UpdateAutoScalingPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAutoScalingPolicyRequestBody.class),
-            f -> f.withMarshaller(UpdateAutoScalingPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAutoScalingPolicyRequest::getBody, UpdateAutoScalingPolicyRequest::setBody));
 
         // response
 
@@ -4350,9 +3931,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateBackupOffsitePolicyRequest, UpdateBackupOffsitePolicyResponse> updateBackupOffsitePolicy =
-        genForupdateBackupOffsitePolicy();
+        genForUpdateBackupOffsitePolicy();
 
-    private static HttpRequestDef<UpdateBackupOffsitePolicyRequest, UpdateBackupOffsitePolicyResponse> genForupdateBackupOffsitePolicy() {
+    private static HttpRequestDef<UpdateBackupOffsitePolicyRequest, UpdateBackupOffsitePolicyResponse> genForUpdateBackupOffsitePolicy() {
         // basic
         HttpRequestDef.Builder<UpdateBackupOffsitePolicyRequest, UpdateBackupOffsitePolicyResponse> builder =
             HttpRequestDef
@@ -4368,23 +3949,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBackupOffsitePolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateBackupOffsitePolicyRequest::getInstanceId,
+                UpdateBackupOffsitePolicyRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBackupOffsitePolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateBackupOffsitePolicyRequest::getXLanguage,
+                UpdateBackupOffsitePolicyRequest::setXLanguage));
         builder.<UpdateBackupOffsitePolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBackupOffsitePolicyRequestBody.class),
-            f -> f.withMarshaller(UpdateBackupOffsitePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBackupOffsitePolicyRequest::getBody,
+                UpdateBackupOffsitePolicyRequest::setBody));
 
         // response
 
@@ -4392,9 +3970,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse> updateGaussMySqlBackupPolicy =
-        genForupdateGaussMySqlBackupPolicy();
+        genForUpdateGaussMySqlBackupPolicy();
 
-    private static HttpRequestDef<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse> genForupdateGaussMySqlBackupPolicy() {
+    private static HttpRequestDef<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse> genForUpdateGaussMySqlBackupPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse> builder =
             HttpRequestDef
@@ -4410,23 +3988,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlBackupPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlBackupPolicyRequest::getInstanceId,
+                UpdateGaussMySqlBackupPolicyRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlBackupPolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlBackupPolicyRequest::getXLanguage,
+                UpdateGaussMySqlBackupPolicyRequest::setXLanguage));
         builder.<MysqlUpdateBackupPolicyRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlUpdateBackupPolicyRequest.class),
-            f -> f.withMarshaller(UpdateGaussMySqlBackupPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlBackupPolicyRequest::getBody,
+                UpdateGaussMySqlBackupPolicyRequest::setBody));
 
         // response
 
@@ -4434,9 +4009,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse> updateGaussMySqlConfiguration =
-        genForupdateGaussMySqlConfiguration();
+        genForUpdateGaussMySqlConfiguration();
 
-    private static HttpRequestDef<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse> genForupdateGaussMySqlConfiguration() {
+    private static HttpRequestDef<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse> genForUpdateGaussMySqlConfiguration() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse> builder =
             HttpRequestDef
@@ -4452,23 +4027,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlConfigurationRequest::getConfigurationId, (req, v) -> {
-                req.setConfigurationId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlConfigurationRequest::getConfigurationId,
+                UpdateGaussMySqlConfigurationRequest::setConfigurationId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlConfigurationRequest::getXLanguage,
+                UpdateGaussMySqlConfigurationRequest::setXLanguage));
         builder.<UpdateConfigurationParameterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateConfigurationParameterRequestBody.class),
-            f -> f.withMarshaller(UpdateGaussMySqlConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlConfigurationRequest::getBody,
+                UpdateGaussMySqlConfigurationRequest::setBody));
 
         // response
 
@@ -4476,9 +4048,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse> updateGaussMySqlDatabaseComment =
-        genForupdateGaussMySqlDatabaseComment();
+        genForUpdateGaussMySqlDatabaseComment();
 
-    private static HttpRequestDef<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse> genForupdateGaussMySqlDatabaseComment() {
+    private static HttpRequestDef<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse> genForUpdateGaussMySqlDatabaseComment() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse> builder =
             HttpRequestDef
@@ -4494,23 +4066,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlDatabaseCommentRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlDatabaseCommentRequest::getInstanceId,
+                UpdateGaussMySqlDatabaseCommentRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlDatabaseCommentRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlDatabaseCommentRequest::getXLanguage,
+                UpdateGaussMySqlDatabaseCommentRequest::setXLanguage));
         builder.<UpdateDatabaseCommentRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDatabaseCommentRequest.class),
-            f -> f.withMarshaller(UpdateGaussMySqlDatabaseCommentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlDatabaseCommentRequest::getBody,
+                UpdateGaussMySqlDatabaseCommentRequest::setBody));
 
         // response
 
@@ -4518,9 +4087,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse> updateGaussMySqlDatabaseUserComment =
-        genForupdateGaussMySqlDatabaseUserComment();
+        genForUpdateGaussMySqlDatabaseUserComment();
 
-    private static HttpRequestDef<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse> genForupdateGaussMySqlDatabaseUserComment() {
+    private static HttpRequestDef<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse> genForUpdateGaussMySqlDatabaseUserComment() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse> builder =
             HttpRequestDef
@@ -4536,23 +4105,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlDatabaseUserCommentRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlDatabaseUserCommentRequest::getInstanceId,
+                UpdateGaussMySqlDatabaseUserCommentRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlDatabaseUserCommentRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlDatabaseUserCommentRequest::getXLanguage,
+                UpdateGaussMySqlDatabaseUserCommentRequest::setXLanguage));
         builder.<UpdateDatabaseUserCommentRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDatabaseUserCommentRequest.class),
-            f -> f.withMarshaller(UpdateGaussMySqlDatabaseUserCommentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlDatabaseUserCommentRequest::getBody,
+                UpdateGaussMySqlDatabaseUserCommentRequest::setBody));
 
         // response
 
@@ -4560,9 +4126,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse> updateGaussMySqlInstanceAlias =
-        genForupdateGaussMySqlInstanceAlias();
+        genForUpdateGaussMySqlInstanceAlias();
 
-    private static HttpRequestDef<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse> genForupdateGaussMySqlInstanceAlias() {
+    private static HttpRequestDef<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse> genForUpdateGaussMySqlInstanceAlias() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse> builder =
             HttpRequestDef
@@ -4578,40 +4144,36 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceAliasRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceAliasRequest::getInstanceId,
+                UpdateGaussMySqlInstanceAliasRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceAliasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceAliasRequest::getXLanguage,
+                UpdateGaussMySqlInstanceAliasRequest::setXLanguage));
         builder.<ModifyAliasRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyAliasRequest.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceAliasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceAliasRequest::getBody,
+                UpdateGaussMySqlInstanceAliasRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceAliasResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceAliasResponse::getBody,
+                UpdateGaussMySqlInstanceAliasResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse> updateGaussMySqlInstanceEip =
-        genForupdateGaussMySqlInstanceEip();
+        genForUpdateGaussMySqlInstanceEip();
 
-    private static HttpRequestDef<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse> genForupdateGaussMySqlInstanceEip() {
+    private static HttpRequestDef<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse> genForUpdateGaussMySqlInstanceEip() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse> builder =
             HttpRequestDef
@@ -4627,23 +4189,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceEipRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceEipRequest::getInstanceId,
+                UpdateGaussMySqlInstanceEipRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceEipRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceEipRequest::getXLanguage,
+                UpdateGaussMySqlInstanceEipRequest::setXLanguage));
         builder.<ModifyBindEipRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyBindEipRequest.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceEipRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceEipRequest::getBody,
+                UpdateGaussMySqlInstanceEipRequest::setBody));
 
         // response
 
@@ -4651,9 +4210,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse> updateGaussMySqlInstanceInternalIp =
-        genForupdateGaussMySqlInstanceInternalIp();
+        genForUpdateGaussMySqlInstanceInternalIp();
 
-    private static HttpRequestDef<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse> genForupdateGaussMySqlInstanceInternalIp() {
+    private static HttpRequestDef<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse> genForUpdateGaussMySqlInstanceInternalIp() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse> builder =
             HttpRequestDef
@@ -4669,23 +4228,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceInternalIpRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceInternalIpRequest::getInstanceId,
+                UpdateGaussMySqlInstanceInternalIpRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceInternalIpRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceInternalIpRequest::getXLanguage,
+                UpdateGaussMySqlInstanceInternalIpRequest::setXLanguage));
         builder.<ModifyInternalIpRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyInternalIpRequest.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceInternalIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceInternalIpRequest::getBody,
+                UpdateGaussMySqlInstanceInternalIpRequest::setBody));
 
         // response
 
@@ -4693,9 +4249,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse> updateGaussMySqlInstanceName =
-        genForupdateGaussMySqlInstanceName();
+        genForUpdateGaussMySqlInstanceName();
 
-    private static HttpRequestDef<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse> genForupdateGaussMySqlInstanceName() {
+    private static HttpRequestDef<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse> genForUpdateGaussMySqlInstanceName() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse> builder =
             HttpRequestDef
@@ -4711,23 +4267,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceNameRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceNameRequest::getInstanceId,
+                UpdateGaussMySqlInstanceNameRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceNameRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceNameRequest::getXLanguage,
+                UpdateGaussMySqlInstanceNameRequest::setXLanguage));
         builder.<MysqlUpdateInstanceNameRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlUpdateInstanceNameRequest.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceNameRequest::getBody,
+                UpdateGaussMySqlInstanceNameRequest::setBody));
 
         // response
 
@@ -4735,9 +4288,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse> updateGaussMySqlInstanceOpsWindow =
-        genForupdateGaussMySqlInstanceOpsWindow();
+        genForUpdateGaussMySqlInstanceOpsWindow();
 
-    private static HttpRequestDef<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse> genForupdateGaussMySqlInstanceOpsWindow() {
+    private static HttpRequestDef<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse> genForUpdateGaussMySqlInstanceOpsWindow() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse> builder =
             HttpRequestDef
@@ -4753,40 +4306,36 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceOpsWindowRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceOpsWindowRequest::getInstanceId,
+                UpdateGaussMySqlInstanceOpsWindowRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceOpsWindowRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceOpsWindowRequest::getXLanguage,
+                UpdateGaussMySqlInstanceOpsWindowRequest::setXLanguage));
         builder.<ModifyOpsWindow>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyOpsWindow.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceOpsWindowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceOpsWindowRequest::getBody,
+                UpdateGaussMySqlInstanceOpsWindowRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceOpsWindowResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceOpsWindowResponse::getBody,
+                UpdateGaussMySqlInstanceOpsWindowResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse> updateGaussMySqlInstancePort =
-        genForupdateGaussMySqlInstancePort();
+        genForUpdateGaussMySqlInstancePort();
 
-    private static HttpRequestDef<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse> genForupdateGaussMySqlInstancePort() {
+    private static HttpRequestDef<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse> genForUpdateGaussMySqlInstancePort() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse> builder =
             HttpRequestDef
@@ -4802,23 +4351,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstancePortRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstancePortRequest::getInstanceId,
+                UpdateGaussMySqlInstancePortRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstancePortRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstancePortRequest::getXLanguage,
+                UpdateGaussMySqlInstancePortRequest::setXLanguage));
         builder.<ModifyPortRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyPortRequest.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstancePortRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstancePortRequest::getBody,
+                UpdateGaussMySqlInstancePortRequest::setBody));
 
         // response
 
@@ -4826,9 +4372,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse> updateGaussMySqlInstanceSecurityGroup =
-        genForupdateGaussMySqlInstanceSecurityGroup();
+        genForUpdateGaussMySqlInstanceSecurityGroup();
 
-    private static HttpRequestDef<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse> genForupdateGaussMySqlInstanceSecurityGroup() {
+    private static HttpRequestDef<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse> genForUpdateGaussMySqlInstanceSecurityGroup() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse> builder =
             HttpRequestDef
@@ -4844,23 +4390,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceSecurityGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceSecurityGroupRequest::getInstanceId,
+                UpdateGaussMySqlInstanceSecurityGroupRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceSecurityGroupRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceSecurityGroupRequest::getXLanguage,
+                UpdateGaussMySqlInstanceSecurityGroupRequest::setXLanguage));
         builder.<ModifySecurityGroupRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifySecurityGroupRequest.class),
-            f -> f.withMarshaller(UpdateGaussMySqlInstanceSecurityGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlInstanceSecurityGroupRequest::getBody,
+                UpdateGaussMySqlInstanceSecurityGroupRequest::setBody));
 
         // response
 
@@ -4868,9 +4411,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse> updateGaussMySqlQuotas =
-        genForupdateGaussMySqlQuotas();
+        genForUpdateGaussMySqlQuotas();
 
-    private static HttpRequestDef<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse> genForupdateGaussMySqlQuotas() {
+    private static HttpRequestDef<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse> genForUpdateGaussMySqlQuotas() {
         // basic
         HttpRequestDef.Builder<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateGaussMySqlQuotasRequest.class, UpdateGaussMySqlQuotasResponse.class)
@@ -4883,16 +4426,13 @@ public class GaussDBMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGaussMySqlQuotasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlQuotasRequest::getXLanguage,
+                UpdateGaussMySqlQuotasRequest::setXLanguage));
         builder.<SetQuotasRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SetQuotasRequestBody.class),
-            f -> f.withMarshaller(UpdateGaussMySqlQuotasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGaussMySqlQuotasRequest::getBody, UpdateGaussMySqlQuotasRequest::setBody));
 
         // response
 
@@ -4900,9 +4440,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse> updateInstanceConfigurations =
-        genForupdateInstanceConfigurations();
+        genForUpdateInstanceConfigurations();
 
-    private static HttpRequestDef<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse> genForupdateInstanceConfigurations() {
+    private static HttpRequestDef<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse> genForUpdateInstanceConfigurations() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse> builder =
             HttpRequestDef
@@ -4918,23 +4458,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceConfigurationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConfigurationsRequest::getInstanceId,
+                UpdateInstanceConfigurationsRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceConfigurationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConfigurationsRequest::getXLanguage,
+                UpdateInstanceConfigurationsRequest::setXLanguage));
         builder.<UpdateInstanceConfigurationsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceConfigurationsRequestBody.class),
-            f -> f.withMarshaller(UpdateInstanceConfigurationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConfigurationsRequest::getBody,
+                UpdateInstanceConfigurationsRequest::setBody));
 
         // response
 
@@ -4942,9 +4479,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> updateInstanceMonitor =
-        genForupdateInstanceMonitor();
+        genForUpdateInstanceMonitor();
 
-    private static HttpRequestDef<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> genForupdateInstanceMonitor() {
+    private static HttpRequestDef<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> genForUpdateInstanceMonitor() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateInstanceMonitorRequest.class, UpdateInstanceMonitorResponse.class)
@@ -4957,23 +4494,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceMonitorRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceMonitorRequest::getInstanceId,
+                UpdateInstanceMonitorRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceMonitorRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceMonitorRequest::getXLanguage,
+                UpdateInstanceMonitorRequest::setXLanguage));
         builder.<TaurusModifyInstanceMonitorRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaurusModifyInstanceMonitorRequestBody.class),
-            f -> f.withMarshaller(UpdateInstanceMonitorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceMonitorRequest::getBody, UpdateInstanceMonitorRequest::setBody));
 
         // response
 
@@ -4981,9 +4514,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolType =
-        genForupdateProxyConnectionPoolType();
+        genForUpdateProxyConnectionPoolType();
 
-    private static HttpRequestDef<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> genForupdateProxyConnectionPoolType() {
+    private static HttpRequestDef<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> genForUpdateProxyConnectionPoolType() {
         // basic
         HttpRequestDef.Builder<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> builder =
             HttpRequestDef
@@ -4999,30 +4532,26 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getInstanceId,
+                UpdateProxyConnectionPoolTypeRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getProxyId,
+                UpdateProxyConnectionPoolTypeRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getXLanguage,
+                UpdateProxyConnectionPoolTypeRequest::setXLanguage));
         builder.<ProxyUpdateProxyConnectionPoolTypeRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProxyUpdateProxyConnectionPoolTypeRequest.class),
-            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getBody,
+                UpdateProxyConnectionPoolTypeRequest::setBody));
 
         // response
 
@@ -5030,9 +4559,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateProxyNewConfigurationsRequest, UpdateProxyNewConfigurationsResponse> updateProxyNewConfigurations =
-        genForupdateProxyNewConfigurations();
+        genForUpdateProxyNewConfigurations();
 
-    private static HttpRequestDef<UpdateProxyNewConfigurationsRequest, UpdateProxyNewConfigurationsResponse> genForupdateProxyNewConfigurations() {
+    private static HttpRequestDef<UpdateProxyNewConfigurationsRequest, UpdateProxyNewConfigurationsResponse> genForUpdateProxyNewConfigurations() {
         // basic
         HttpRequestDef.Builder<UpdateProxyNewConfigurationsRequest, UpdateProxyNewConfigurationsResponse> builder =
             HttpRequestDef
@@ -5048,30 +4577,26 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxyNewConfigurationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyNewConfigurationsRequest::getInstanceId,
+                UpdateProxyNewConfigurationsRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxyNewConfigurationsRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyNewConfigurationsRequest::getProxyId,
+                UpdateProxyNewConfigurationsRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxyNewConfigurationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyNewConfigurationsRequest::getXLanguage,
+                UpdateProxyNewConfigurationsRequest::setXLanguage));
         builder.<UpdateProxyNewConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProxyNewConfigRequestBody.class),
-            f -> f.withMarshaller(UpdateProxyNewConfigurationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyNewConfigurationsRequest::getBody,
+                UpdateProxyNewConfigurationsRequest::setBody));
 
         // response
 
@@ -5079,9 +4604,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateProxyPortRequest, UpdateProxyPortResponse> updateProxyPort =
-        genForupdateProxyPort();
+        genForUpdateProxyPort();
 
-    private static HttpRequestDef<UpdateProxyPortRequest, UpdateProxyPortResponse> genForupdateProxyPort() {
+    private static HttpRequestDef<UpdateProxyPortRequest, UpdateProxyPortResponse> genForUpdateProxyPort() {
         // basic
         HttpRequestDef.Builder<UpdateProxyPortRequest, UpdateProxyPortResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProxyPortRequest.class, UpdateProxyPortResponse.class)
@@ -5094,30 +4619,22 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxyPortRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyPortRequest::getInstanceId, UpdateProxyPortRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxyPortRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyPortRequest::getProxyId, UpdateProxyPortRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxyPortRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyPortRequest::getXLanguage, UpdateProxyPortRequest::setXLanguage));
         builder.<UpdateProxyPortRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProxyPortRequestBody.class),
-            f -> f.withMarshaller(UpdateProxyPortRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProxyPortRequest::getBody, UpdateProxyPortRequest::setBody));
 
         // response
 
@@ -5125,9 +4642,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse> updateProxySessionConsistence =
-        genForupdateProxySessionConsistence();
+        genForUpdateProxySessionConsistence();
 
-    private static HttpRequestDef<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse> genForupdateProxySessionConsistence() {
+    private static HttpRequestDef<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse> genForUpdateProxySessionConsistence() {
         // basic
         HttpRequestDef.Builder<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse> builder =
             HttpRequestDef
@@ -5143,30 +4660,26 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxySessionConsistenceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateProxySessionConsistenceRequest::getInstanceId,
+                UpdateProxySessionConsistenceRequest::setInstanceId));
         builder.<String>withRequestField("proxy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxySessionConsistenceRequest::getProxyId, (req, v) -> {
-                req.setProxyId(v);
-            }));
+            f -> f.withMarshaller(UpdateProxySessionConsistenceRequest::getProxyId,
+                UpdateProxySessionConsistenceRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProxySessionConsistenceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateProxySessionConsistenceRequest::getXLanguage,
+                UpdateProxySessionConsistenceRequest::setXLanguage));
         builder.<ModifyProxyConsistRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyProxyConsistRequest.class),
-            f -> f.withMarshaller(UpdateProxySessionConsistenceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProxySessionConsistenceRequest::getBody,
+                UpdateProxySessionConsistenceRequest::setBody));
 
         // response
 
@@ -5174,9 +4687,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> updateTransactionSplitStatus =
-        genForupdateTransactionSplitStatus();
+        genForUpdateTransactionSplitStatus();
 
-    private static HttpRequestDef<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> genForupdateTransactionSplitStatus() {
+    private static HttpRequestDef<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> genForUpdateTransactionSplitStatus() {
         // basic
         HttpRequestDef.Builder<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> builder =
             HttpRequestDef
@@ -5192,23 +4705,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTransactionSplitStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateTransactionSplitStatusRequest::getInstanceId,
+                UpdateTransactionSplitStatusRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTransactionSplitStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateTransactionSplitStatusRequest::getXLanguage,
+                UpdateTransactionSplitStatusRequest::setXLanguage));
         builder.<ProxyTransactionSplitRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProxyTransactionSplitRequest.class),
-            f -> f.withMarshaller(UpdateTransactionSplitStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTransactionSplitStatusRequest::getBody,
+                UpdateTransactionSplitStatusRequest::setBody));
 
         // response
 
@@ -5216,9 +4726,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse> upgradeGaussMySqlInstanceDatabase =
-        genForupgradeGaussMySqlInstanceDatabase();
+        genForUpgradeGaussMySqlInstanceDatabase();
 
-    private static HttpRequestDef<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse> genForupgradeGaussMySqlInstanceDatabase() {
+    private static HttpRequestDef<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse> genForUpgradeGaussMySqlInstanceDatabase() {
         // basic
         HttpRequestDef.Builder<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse> builder =
             HttpRequestDef
@@ -5234,23 +4744,20 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeGaussMySqlInstanceDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpgradeGaussMySqlInstanceDatabaseRequest::getInstanceId,
+                UpgradeGaussMySqlInstanceDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeGaussMySqlInstanceDatabaseRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpgradeGaussMySqlInstanceDatabaseRequest::getXLanguage,
+                UpgradeGaussMySqlInstanceDatabaseRequest::setXLanguage));
         builder.<UpgradeDatabaseRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeDatabaseRequest.class),
-            f -> f.withMarshaller(UpgradeGaussMySqlInstanceDatabaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpgradeGaussMySqlInstanceDatabaseRequest::getBody,
+                UpgradeGaussMySqlInstanceDatabaseRequest::setBody));
 
         // response
 
@@ -5258,9 +4765,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRule =
-        genFordeleteSqlFilterRule();
+        genForDeleteSqlFilterRule();
 
-    private static HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> genFordeleteSqlFilterRule() {
+    private static HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> genForDeleteSqlFilterRule() {
         // basic
         HttpRequestDef.Builder<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteSqlFilterRuleRequest.class, DeleteSqlFilterRuleResponse.class)
@@ -5273,23 +4780,18 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getInstanceId,
+                DeleteSqlFilterRuleRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getXLanguage, DeleteSqlFilterRuleRequest::setXLanguage));
         builder.<DeleteSqlFilterRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteSqlFilterRuleReq.class),
-            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getBody, DeleteSqlFilterRuleRequest::setBody));
 
         // response
 
@@ -5297,9 +4799,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRule =
-        genForsetSqlFilterRule();
+        genForSetSqlFilterRule();
 
-    private static HttpRequestDef<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> genForsetSqlFilterRule() {
+    private static HttpRequestDef<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> genForSetSqlFilterRule() {
         // basic
         HttpRequestDef.Builder<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetSqlFilterRuleRequest.class, SetSqlFilterRuleResponse.class)
@@ -5312,23 +4814,17 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetSqlFilterRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SetSqlFilterRuleRequest::getInstanceId, SetSqlFilterRuleRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetSqlFilterRuleRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SetSqlFilterRuleRequest::getXLanguage, SetSqlFilterRuleRequest::setXLanguage));
         builder.<OperateSqlFilterRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateSqlFilterRuleReq.class),
-            f -> f.withMarshaller(SetSqlFilterRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetSqlFilterRuleRequest::getBody, SetSqlFilterRuleRequest::setBody));
 
         // response
 
@@ -5336,9 +4832,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControl =
-        genForshowSqlFilterControl();
+        genForShowSqlFilterControl();
 
-    private static HttpRequestDef<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> genForshowSqlFilterControl() {
+    private static HttpRequestDef<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> genForShowSqlFilterControl() {
         // basic
         HttpRequestDef.Builder<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSqlFilterControlRequest.class, ShowSqlFilterControlResponse.class)
@@ -5351,16 +4847,14 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterControlRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSqlFilterControlRequest::getInstanceId,
+                ShowSqlFilterControlRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterControlRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSqlFilterControlRequest::getXLanguage,
+                ShowSqlFilterControlRequest::setXLanguage));
 
         // response
 
@@ -5368,9 +4862,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRule =
-        genForshowSqlFilterRule();
+        genForShowSqlFilterRule();
 
-    private static HttpRequestDef<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> genForshowSqlFilterRule() {
+    private static HttpRequestDef<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> genForShowSqlFilterRule() {
         // basic
         HttpRequestDef.Builder<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSqlFilterRuleRequest.class, ShowSqlFilterRuleResponse.class)
@@ -5383,30 +4877,22 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getInstanceId, ShowSqlFilterRuleRequest::setInstanceId));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getNodeId, ShowSqlFilterRuleRequest::setNodeId));
         builder.<String>withRequestField("sql_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getSqlType, (req, v) -> {
-                req.setSqlType(v);
-            }));
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getSqlType, ShowSqlFilterRuleRequest::setSqlType));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getXLanguage, ShowSqlFilterRuleRequest::setXLanguage));
 
         // response
 
@@ -5414,9 +4900,9 @@ public class GaussDBMeta {
     }
 
     public static final HttpRequestDef<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControl =
-        genForupdateSqlFilterControl();
+        genForUpdateSqlFilterControl();
 
-    private static HttpRequestDef<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> genForupdateSqlFilterControl() {
+    private static HttpRequestDef<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> genForUpdateSqlFilterControl() {
         // basic
         HttpRequestDef.Builder<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateSqlFilterControlRequest.class, UpdateSqlFilterControlResponse.class)
@@ -5429,23 +4915,19 @@ public class GaussDBMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getInstanceId,
+                UpdateSqlFilterControlRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getXLanguage,
+                UpdateSqlFilterControlRequest::setXLanguage));
         builder.<OperateSqlFilterControlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateSqlFilterControlReq.class),
-            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getBody, UpdateSqlFilterControlRequest::setBody));
 
         // response
 

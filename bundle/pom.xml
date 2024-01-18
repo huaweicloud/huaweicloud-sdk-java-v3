@@ -8,13 +8,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.1.77</version>
+        <version>3.1.78</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>huaweicloud-sdk-bundle</artifactId>
-    <version>3.1.77</version>
+    <version>3.1.78</version>
     <packaging>jar</packaging>
     <name>Huawei Cloud SDK for Java Bundle</name>
     <description>A single bundled dependency that includes all service and dependent JARs for Huawei Cloud Java SDK</description>
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-all</artifactId>
-            <version>3.1.77</version>
+            <version>3.1.78</version>
         </dependency>
     </dependencies>
 
@@ -44,6 +44,7 @@
                             <include>com.squareup.okhttp3:*</include>
                             <include>com.squareup.okio:*</include>
                             <include>org.jetbrains.kotlin:*</include>
+                            <include>org.yaml:*</include>
                         </includes>
                     </artifactSet>
                     <relocations>
@@ -62,6 +63,10 @@
                         <relocation>
                             <pattern>kotlin</pattern>
                             <shadedPattern>com.huaweicloud.sdk.thirdparty.kotlin</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.yaml</pattern>
+                            <shadedPattern>com.huaweicloud.sdk.thirdparty.org.yaml</shadedPattern>
                         </relocation>
                     </relocations>
                     <shadedArtifactAttached>false</shadedArtifactAttached>

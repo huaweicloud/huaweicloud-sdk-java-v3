@@ -100,7 +100,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUnblockIpRequest 请求对象
+     * @param request ExecuteUnblockIpRequest 请求对象
      * @return ExecuteUnblockIpResponse
      */
     public ExecuteUnblockIpResponse executeUnblockIp(ExecuteUnblockIpRequest request) {
@@ -114,13 +114,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUnblockIpRequest 请求对象
+     * @param request ExecuteUnblockIpRequest 请求对象
      * @return SyncInvoker<ExecuteUnblockIpRequest, ExecuteUnblockIpResponse>
      */
     public SyncInvoker<ExecuteUnblockIpRequest, ExecuteUnblockIpResponse> executeUnblockIpInvoker(
         ExecuteUnblockIpRequest request) {
-        return new SyncInvoker<ExecuteUnblockIpRequest, ExecuteUnblockIpResponse>(request, AadMeta.executeUnblockIp,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.executeUnblockIp, hcClient);
     }
 
     /**
@@ -130,7 +129,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBlockIpsRequest 请求对象
+     * @param request ListBlockIpsRequest 请求对象
      * @return ListBlockIpsResponse
      */
     public ListBlockIpsResponse listBlockIps(ListBlockIpsRequest request) {
@@ -144,11 +143,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBlockIpsRequest 请求对象
+     * @param request ListBlockIpsRequest 请求对象
      * @return SyncInvoker<ListBlockIpsRequest, ListBlockIpsResponse>
      */
     public SyncInvoker<ListBlockIpsRequest, ListBlockIpsResponse> listBlockIpsInvoker(ListBlockIpsRequest request) {
-        return new SyncInvoker<ListBlockIpsRequest, ListBlockIpsResponse>(request, AadMeta.listBlockIps, hcClient);
+        return new SyncInvoker<>(request, AadMeta.listBlockIps, hcClient);
     }
 
     /**
@@ -158,7 +157,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUnblockQuotaStatisticsRequest 请求对象
+     * @param request ListUnblockQuotaStatisticsRequest 请求对象
      * @return ListUnblockQuotaStatisticsResponse
      */
     public ListUnblockQuotaStatisticsResponse listUnblockQuotaStatistics(ListUnblockQuotaStatisticsRequest request) {
@@ -172,13 +171,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUnblockQuotaStatisticsRequest 请求对象
+     * @param request ListUnblockQuotaStatisticsRequest 请求对象
      * @return SyncInvoker<ListUnblockQuotaStatisticsRequest, ListUnblockQuotaStatisticsResponse>
      */
     public SyncInvoker<ListUnblockQuotaStatisticsRequest, ListUnblockQuotaStatisticsResponse> listUnblockQuotaStatisticsInvoker(
         ListUnblockQuotaStatisticsRequest request) {
-        return new SyncInvoker<ListUnblockQuotaStatisticsRequest, ListUnblockQuotaStatisticsResponse>(request,
-            AadMeta.listUnblockQuotaStatistics, hcClient);
+        return new SyncInvoker<>(request, AadMeta.listUnblockQuotaStatistics, hcClient);
     }
 
     /**
@@ -188,7 +186,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockStatisticsRequest 请求对象
+     * @param request ShowBlockStatisticsRequest 请求对象
      * @return ShowBlockStatisticsResponse
      */
     public ShowBlockStatisticsResponse showBlockStatistics(ShowBlockStatisticsRequest request) {
@@ -202,13 +200,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockStatisticsRequest 请求对象
+     * @param request ShowBlockStatisticsRequest 请求对象
      * @return SyncInvoker<ShowBlockStatisticsRequest, ShowBlockStatisticsResponse>
      */
     public SyncInvoker<ShowBlockStatisticsRequest, ShowBlockStatisticsResponse> showBlockStatisticsInvoker(
         ShowBlockStatisticsRequest request) {
-        return new SyncInvoker<ShowBlockStatisticsRequest, ShowBlockStatisticsResponse>(request,
-            AadMeta.showBlockStatistics, hcClient);
+        return new SyncInvoker<>(request, AadMeta.showBlockStatistics, hcClient);
     }
 
     /**
@@ -218,7 +215,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUnblockRecordRequest 请求对象
+     * @param request ShowUnblockRecordRequest 请求对象
      * @return ShowUnblockRecordResponse
      */
     public ShowUnblockRecordResponse showUnblockRecord(ShowUnblockRecordRequest request) {
@@ -232,13 +229,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUnblockRecordRequest 请求对象
+     * @param request ShowUnblockRecordRequest 请求对象
      * @return SyncInvoker<ShowUnblockRecordRequest, ShowUnblockRecordResponse>
      */
     public SyncInvoker<ShowUnblockRecordRequest, ShowUnblockRecordResponse> showUnblockRecordInvoker(
         ShowUnblockRecordRequest request) {
-        return new SyncInvoker<ShowUnblockRecordRequest, ShowUnblockRecordResponse>(request, AadMeta.showUnblockRecord,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.showUnblockRecord, hcClient);
     }
 
     /**
@@ -248,7 +244,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddBlackWhiteIpListRequest 请求对象
+     * @param request AddBlackWhiteIpListRequest 请求对象
      * @return AddBlackWhiteIpListResponse
      */
     public AddBlackWhiteIpListResponse addBlackWhiteIpList(AddBlackWhiteIpListRequest request) {
@@ -262,13 +258,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddBlackWhiteIpListRequest 请求对象
+     * @param request AddBlackWhiteIpListRequest 请求对象
      * @return SyncInvoker<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse>
      */
     public SyncInvoker<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse> addBlackWhiteIpListInvoker(
         AddBlackWhiteIpListRequest request) {
-        return new SyncInvoker<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse>(request,
-            AadMeta.addBlackWhiteIpList, hcClient);
+        return new SyncInvoker<>(request, AadMeta.addBlackWhiteIpList, hcClient);
     }
 
     /**
@@ -278,7 +273,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPolicyBlackAndWhiteIpListRequest 请求对象
+     * @param request AddPolicyBlackAndWhiteIpListRequest 请求对象
      * @return AddPolicyBlackAndWhiteIpListResponse
      */
     public AddPolicyBlackAndWhiteIpListResponse addPolicyBlackAndWhiteIpList(
@@ -293,13 +288,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPolicyBlackAndWhiteIpListRequest 请求对象
+     * @param request AddPolicyBlackAndWhiteIpListRequest 请求对象
      * @return SyncInvoker<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse>
      */
     public SyncInvoker<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse> addPolicyBlackAndWhiteIpListInvoker(
         AddPolicyBlackAndWhiteIpListRequest request) {
-        return new SyncInvoker<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse>(request,
-            AadMeta.addPolicyBlackAndWhiteIpList, hcClient);
+        return new SyncInvoker<>(request, AadMeta.addPolicyBlackAndWhiteIpList, hcClient);
     }
 
     /**
@@ -309,7 +303,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateIpToPolicyRequest 请求对象
+     * @param request AssociateIpToPolicyRequest 请求对象
      * @return AssociateIpToPolicyResponse
      */
     public AssociateIpToPolicyResponse associateIpToPolicy(AssociateIpToPolicyRequest request) {
@@ -323,13 +317,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateIpToPolicyRequest 请求对象
+     * @param request AssociateIpToPolicyRequest 请求对象
      * @return SyncInvoker<AssociateIpToPolicyRequest, AssociateIpToPolicyResponse>
      */
     public SyncInvoker<AssociateIpToPolicyRequest, AssociateIpToPolicyResponse> associateIpToPolicyInvoker(
         AssociateIpToPolicyRequest request) {
-        return new SyncInvoker<AssociateIpToPolicyRequest, AssociateIpToPolicyResponse>(request,
-            AadMeta.associateIpToPolicy, hcClient);
+        return new SyncInvoker<>(request, AadMeta.associateIpToPolicy, hcClient);
     }
 
     /**
@@ -339,7 +332,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateInstanceIpRuleRequest 请求对象
+     * @param request BatchCreateInstanceIpRuleRequest 请求对象
      * @return BatchCreateInstanceIpRuleResponse
      */
     public BatchCreateInstanceIpRuleResponse batchCreateInstanceIpRule(BatchCreateInstanceIpRuleRequest request) {
@@ -353,13 +346,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateInstanceIpRuleRequest 请求对象
+     * @param request BatchCreateInstanceIpRuleRequest 请求对象
      * @return SyncInvoker<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse>
      */
     public SyncInvoker<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse> batchCreateInstanceIpRuleInvoker(
         BatchCreateInstanceIpRuleRequest request) {
-        return new SyncInvoker<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse>(request,
-            AadMeta.batchCreateInstanceIpRule, hcClient);
+        return new SyncInvoker<>(request, AadMeta.batchCreateInstanceIpRule, hcClient);
     }
 
     /**
@@ -369,7 +361,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceIpRuleRequest 请求对象
+     * @param request BatchDeleteInstanceIpRuleRequest 请求对象
      * @return BatchDeleteInstanceIpRuleResponse
      */
     public BatchDeleteInstanceIpRuleResponse batchDeleteInstanceIpRule(BatchDeleteInstanceIpRuleRequest request) {
@@ -383,13 +375,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceIpRuleRequest 请求对象
+     * @param request BatchDeleteInstanceIpRuleRequest 请求对象
      * @return SyncInvoker<BatchDeleteInstanceIpRuleRequest, BatchDeleteInstanceIpRuleResponse>
      */
     public SyncInvoker<BatchDeleteInstanceIpRuleRequest, BatchDeleteInstanceIpRuleResponse> batchDeleteInstanceIpRuleInvoker(
         BatchDeleteInstanceIpRuleRequest request) {
-        return new SyncInvoker<BatchDeleteInstanceIpRuleRequest, BatchDeleteInstanceIpRuleResponse>(request,
-            AadMeta.batchDeleteInstanceIpRule, hcClient);
+        return new SyncInvoker<>(request, AadMeta.batchDeleteInstanceIpRule, hcClient);
     }
 
     /**
@@ -399,7 +390,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAadDomainRequest 请求对象
+     * @param request CreateAadDomainRequest 请求对象
      * @return CreateAadDomainResponse
      */
     public CreateAadDomainResponse createAadDomain(CreateAadDomainRequest request) {
@@ -413,13 +404,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAadDomainRequest 请求对象
+     * @param request CreateAadDomainRequest 请求对象
      * @return SyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse>
      */
     public SyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse> createAadDomainInvoker(
         CreateAadDomainRequest request) {
-        return new SyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse>(request, AadMeta.createAadDomain,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.createAadDomain, hcClient);
     }
 
     /**
@@ -429,7 +419,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return CreateCertificateResponse
      */
     public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
@@ -443,13 +433,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
      */
     public SyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateInvoker(
         CreateCertificateRequest request) {
-        return new SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request, AadMeta.createCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.createCertificate, hcClient);
     }
 
     /**
@@ -459,7 +448,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return CreatePolicyResponse
      */
     public CreatePolicyResponse createPolicy(CreatePolicyRequest request) {
@@ -473,11 +462,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return SyncInvoker<CreatePolicyRequest, CreatePolicyResponse>
      */
     public SyncInvoker<CreatePolicyRequest, CreatePolicyResponse> createPolicyInvoker(CreatePolicyRequest request) {
-        return new SyncInvoker<CreatePolicyRequest, CreatePolicyResponse>(request, AadMeta.createPolicy, hcClient);
+        return new SyncInvoker<>(request, AadMeta.createPolicy, hcClient);
     }
 
     /**
@@ -487,7 +476,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmConfigRequest 请求对象
+     * @param request DeleteAlarmConfigRequest 请求对象
      * @return DeleteAlarmConfigResponse
      */
     public DeleteAlarmConfigResponse deleteAlarmConfig(DeleteAlarmConfigRequest request) {
@@ -501,13 +490,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmConfigRequest 请求对象
+     * @param request DeleteAlarmConfigRequest 请求对象
      * @return SyncInvoker<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse>
      */
     public SyncInvoker<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse> deleteAlarmConfigInvoker(
         DeleteAlarmConfigRequest request) {
-        return new SyncInvoker<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse>(request, AadMeta.deleteAlarmConfig,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.deleteAlarmConfig, hcClient);
     }
 
     /**
@@ -517,7 +505,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBlackWhiteIpListRequest 请求对象
+     * @param request DeleteBlackWhiteIpListRequest 请求对象
      * @return DeleteBlackWhiteIpListResponse
      */
     public DeleteBlackWhiteIpListResponse deleteBlackWhiteIpList(DeleteBlackWhiteIpListRequest request) {
@@ -531,13 +519,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBlackWhiteIpListRequest 请求对象
+     * @param request DeleteBlackWhiteIpListRequest 请求对象
      * @return SyncInvoker<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse>
      */
     public SyncInvoker<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse> deleteBlackWhiteIpListInvoker(
         DeleteBlackWhiteIpListRequest request) {
-        return new SyncInvoker<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse>(request,
-            AadMeta.deleteBlackWhiteIpList, hcClient);
+        return new SyncInvoker<>(request, AadMeta.deleteBlackWhiteIpList, hcClient);
     }
 
     /**
@@ -547,7 +534,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return DeletePolicyResponse
      */
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) {
@@ -561,11 +548,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return SyncInvoker<DeletePolicyRequest, DeletePolicyResponse>
      */
     public SyncInvoker<DeletePolicyRequest, DeletePolicyResponse> deletePolicyInvoker(DeletePolicyRequest request) {
-        return new SyncInvoker<DeletePolicyRequest, DeletePolicyResponse>(request, AadMeta.deletePolicy, hcClient);
+        return new SyncInvoker<>(request, AadMeta.deletePolicy, hcClient);
     }
 
     /**
@@ -575,7 +562,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyBlackAndWhiteIpListRequest 请求对象
+     * @param request DeletePolicyBlackAndWhiteIpListRequest 请求对象
      * @return DeletePolicyBlackAndWhiteIpListResponse
      */
     public DeletePolicyBlackAndWhiteIpListResponse deletePolicyBlackAndWhiteIpList(
@@ -590,13 +577,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyBlackAndWhiteIpListRequest 请求对象
+     * @param request DeletePolicyBlackAndWhiteIpListRequest 请求对象
      * @return SyncInvoker<DeletePolicyBlackAndWhiteIpListRequest, DeletePolicyBlackAndWhiteIpListResponse>
      */
     public SyncInvoker<DeletePolicyBlackAndWhiteIpListRequest, DeletePolicyBlackAndWhiteIpListResponse> deletePolicyBlackAndWhiteIpListInvoker(
         DeletePolicyBlackAndWhiteIpListRequest request) {
-        return new SyncInvoker<DeletePolicyBlackAndWhiteIpListRequest, DeletePolicyBlackAndWhiteIpListResponse>(request,
-            AadMeta.deletePolicyBlackAndWhiteIpList, hcClient);
+        return new SyncInvoker<>(request, AadMeta.deletePolicyBlackAndWhiteIpList, hcClient);
     }
 
     /**
@@ -606,7 +592,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateIpFromPolicyRequest 请求对象
+     * @param request DisassociateIpFromPolicyRequest 请求对象
      * @return DisassociateIpFromPolicyResponse
      */
     public DisassociateIpFromPolicyResponse disassociateIpFromPolicy(DisassociateIpFromPolicyRequest request) {
@@ -620,13 +606,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateIpFromPolicyRequest 请求对象
+     * @param request DisassociateIpFromPolicyRequest 请求对象
      * @return SyncInvoker<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse>
      */
     public SyncInvoker<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse> disassociateIpFromPolicyInvoker(
         DisassociateIpFromPolicyRequest request) {
-        return new SyncInvoker<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse>(request,
-            AadMeta.disassociateIpFromPolicy, hcClient);
+        return new SyncInvoker<>(request, AadMeta.disassociateIpFromPolicy, hcClient);
     }
 
     /**
@@ -636,7 +621,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainRequest 请求对象
+     * @param request ListDomainRequest 请求对象
      * @return ListDomainResponse
      */
     public ListDomainResponse listDomain(ListDomainRequest request) {
@@ -650,11 +635,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainRequest 请求对象
+     * @param request ListDomainRequest 请求对象
      * @return SyncInvoker<ListDomainRequest, ListDomainResponse>
      */
     public SyncInvoker<ListDomainRequest, ListDomainResponse> listDomainInvoker(ListDomainRequest request) {
-        return new SyncInvoker<ListDomainRequest, ListDomainResponse>(request, AadMeta.listDomain, hcClient);
+        return new SyncInvoker<>(request, AadMeta.listDomain, hcClient);
     }
 
     /**
@@ -664,7 +649,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceRequest 请求对象
+     * @param request ListInstanceRequest 请求对象
      * @return ListInstanceResponse
      */
     public ListInstanceResponse listInstance(ListInstanceRequest request) {
@@ -678,11 +663,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceRequest 请求对象
+     * @param request ListInstanceRequest 请求对象
      * @return SyncInvoker<ListInstanceRequest, ListInstanceResponse>
      */
     public SyncInvoker<ListInstanceRequest, ListInstanceResponse> listInstanceInvoker(ListInstanceRequest request) {
-        return new SyncInvoker<ListInstanceRequest, ListInstanceResponse>(request, AadMeta.listInstance, hcClient);
+        return new SyncInvoker<>(request, AadMeta.listInstance, hcClient);
     }
 
     /**
@@ -692,7 +677,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceIdRequest 请求对象
+     * @param request ListInstanceIdRequest 请求对象
      * @return ListInstanceIdResponse
      */
     public ListInstanceIdResponse listInstanceId(ListInstanceIdRequest request) {
@@ -706,13 +691,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceIdRequest 请求对象
+     * @param request ListInstanceIdRequest 请求对象
      * @return SyncInvoker<ListInstanceIdRequest, ListInstanceIdResponse>
      */
     public SyncInvoker<ListInstanceIdRequest, ListInstanceIdResponse> listInstanceIdInvoker(
         ListInstanceIdRequest request) {
-        return new SyncInvoker<ListInstanceIdRequest, ListInstanceIdResponse>(request, AadMeta.listInstanceId,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.listInstanceId, hcClient);
     }
 
     /**
@@ -722,7 +706,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceIpRuleRequest 请求对象
+     * @param request ListInstanceIpRuleRequest 请求对象
      * @return ListInstanceIpRuleResponse
      */
     public ListInstanceIpRuleResponse listInstanceIpRule(ListInstanceIpRuleRequest request) {
@@ -736,13 +720,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceIpRuleRequest 请求对象
+     * @param request ListInstanceIpRuleRequest 请求对象
      * @return SyncInvoker<ListInstanceIpRuleRequest, ListInstanceIpRuleResponse>
      */
     public SyncInvoker<ListInstanceIpRuleRequest, ListInstanceIpRuleResponse> listInstanceIpRuleInvoker(
         ListInstanceIpRuleRequest request) {
-        return new SyncInvoker<ListInstanceIpRuleRequest, ListInstanceIpRuleResponse>(request,
-            AadMeta.listInstanceIpRule, hcClient);
+        return new SyncInvoker<>(request, AadMeta.listInstanceIpRule, hcClient);
     }
 
     /**
@@ -752,7 +735,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPackageRequest 请求对象
+     * @param request ListPackageRequest 请求对象
      * @return ListPackageResponse
      */
     public ListPackageResponse listPackage(ListPackageRequest request) {
@@ -766,11 +749,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPackageRequest 请求对象
+     * @param request ListPackageRequest 请求对象
      * @return SyncInvoker<ListPackageRequest, ListPackageResponse>
      */
     public SyncInvoker<ListPackageRequest, ListPackageResponse> listPackageInvoker(ListPackageRequest request) {
-        return new SyncInvoker<ListPackageRequest, ListPackageResponse>(request, AadMeta.listPackage, hcClient);
+        return new SyncInvoker<>(request, AadMeta.listPackage, hcClient);
     }
 
     /**
@@ -780,7 +763,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPeakRequest 请求对象
+     * @param request ListPeakRequest 请求对象
      * @return ListPeakResponse
      */
     public ListPeakResponse listPeak(ListPeakRequest request) {
@@ -794,11 +777,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPeakRequest 请求对象
+     * @param request ListPeakRequest 请求对象
      * @return SyncInvoker<ListPeakRequest, ListPeakResponse>
      */
     public SyncInvoker<ListPeakRequest, ListPeakResponse> listPeakInvoker(ListPeakRequest request) {
-        return new SyncInvoker<ListPeakRequest, ListPeakResponse>(request, AadMeta.listPeak, hcClient);
+        return new SyncInvoker<>(request, AadMeta.listPeak, hcClient);
     }
 
     /**
@@ -808,7 +791,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyRequest 请求对象
+     * @param request ListPolicyRequest 请求对象
      * @return ListPolicyResponse
      */
     public ListPolicyResponse listPolicy(ListPolicyRequest request) {
@@ -822,11 +805,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyRequest 请求对象
+     * @param request ListPolicyRequest 请求对象
      * @return SyncInvoker<ListPolicyRequest, ListPolicyResponse>
      */
     public SyncInvoker<ListPolicyRequest, ListPolicyResponse> listPolicyInvoker(ListPolicyRequest request) {
-        return new SyncInvoker<ListPolicyRequest, ListPolicyResponse>(request, AadMeta.listPolicy, hcClient);
+        return new SyncInvoker<>(request, AadMeta.listPolicy, hcClient);
     }
 
     /**
@@ -836,7 +819,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProtectedIpRequest 请求对象
+     * @param request ListProtectedIpRequest 请求对象
      * @return ListProtectedIpResponse
      */
     public ListProtectedIpResponse listProtectedIp(ListProtectedIpRequest request) {
@@ -850,13 +833,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProtectedIpRequest 请求对象
+     * @param request ListProtectedIpRequest 请求对象
      * @return SyncInvoker<ListProtectedIpRequest, ListProtectedIpResponse>
      */
     public SyncInvoker<ListProtectedIpRequest, ListProtectedIpResponse> listProtectedIpInvoker(
         ListProtectedIpRequest request) {
-        return new SyncInvoker<ListProtectedIpRequest, ListProtectedIpResponse>(request, AadMeta.listProtectedIp,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.listProtectedIp, hcClient);
     }
 
     /**
@@ -866,7 +848,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSourceIpsRequest 请求对象
+     * @param request ListSourceIpsRequest 请求对象
      * @return ListSourceIpsResponse
      */
     public ListSourceIpsResponse listSourceIps(ListSourceIpsRequest request) {
@@ -880,11 +862,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSourceIpsRequest 请求对象
+     * @param request ListSourceIpsRequest 请求对象
      * @return SyncInvoker<ListSourceIpsRequest, ListSourceIpsResponse>
      */
     public SyncInvoker<ListSourceIpsRequest, ListSourceIpsResponse> listSourceIpsInvoker(ListSourceIpsRequest request) {
-        return new SyncInvoker<ListSourceIpsRequest, ListSourceIpsResponse>(request, AadMeta.listSourceIps, hcClient);
+        return new SyncInvoker<>(request, AadMeta.listSourceIps, hcClient);
     }
 
     /**
@@ -894,7 +876,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUnboundProtectedIpRequest 请求对象
+     * @param request ListUnboundProtectedIpRequest 请求对象
      * @return ListUnboundProtectedIpResponse
      */
     public ListUnboundProtectedIpResponse listUnboundProtectedIp(ListUnboundProtectedIpRequest request) {
@@ -908,13 +890,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUnboundProtectedIpRequest 请求对象
+     * @param request ListUnboundProtectedIpRequest 请求对象
      * @return SyncInvoker<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse>
      */
     public SyncInvoker<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse> listUnboundProtectedIpInvoker(
         ListUnboundProtectedIpRequest request) {
-        return new SyncInvoker<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse>(request,
-            AadMeta.listUnboundProtectedIp, hcClient);
+        return new SyncInvoker<>(request, AadMeta.listUnboundProtectedIp, hcClient);
     }
 
     /**
@@ -924,7 +905,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyDomainWebSwitchRequest 请求对象
+     * @param request ModifyDomainWebSwitchRequest 请求对象
      * @return ModifyDomainWebSwitchResponse
      */
     public ModifyDomainWebSwitchResponse modifyDomainWebSwitch(ModifyDomainWebSwitchRequest request) {
@@ -938,13 +919,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyDomainWebSwitchRequest 请求对象
+     * @param request ModifyDomainWebSwitchRequest 请求对象
      * @return SyncInvoker<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse>
      */
     public SyncInvoker<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> modifyDomainWebSwitchInvoker(
         ModifyDomainWebSwitchRequest request) {
-        return new SyncInvoker<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse>(request,
-            AadMeta.modifyDomainWebSwitch, hcClient);
+        return new SyncInvoker<>(request, AadMeta.modifyDomainWebSwitch, hcClient);
     }
 
     /**
@@ -954,7 +934,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlarmConfigRequest 请求对象
+     * @param request ShowAlarmConfigRequest 请求对象
      * @return ShowAlarmConfigResponse
      */
     public ShowAlarmConfigResponse showAlarmConfig(ShowAlarmConfigRequest request) {
@@ -968,13 +948,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlarmConfigRequest 请求对象
+     * @param request ShowAlarmConfigRequest 请求对象
      * @return SyncInvoker<ShowAlarmConfigRequest, ShowAlarmConfigResponse>
      */
     public SyncInvoker<ShowAlarmConfigRequest, ShowAlarmConfigResponse> showAlarmConfigInvoker(
         ShowAlarmConfigRequest request) {
-        return new SyncInvoker<ShowAlarmConfigRequest, ShowAlarmConfigResponse>(request, AadMeta.showAlarmConfig,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.showAlarmConfig, hcClient);
     }
 
     /**
@@ -984,7 +963,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyRequest 请求对象
+     * @param request ShowPolicyRequest 请求对象
      * @return ShowPolicyResponse
      */
     public ShowPolicyResponse showPolicy(ShowPolicyRequest request) {
@@ -998,11 +977,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyRequest 请求对象
+     * @param request ShowPolicyRequest 请求对象
      * @return SyncInvoker<ShowPolicyRequest, ShowPolicyResponse>
      */
     public SyncInvoker<ShowPolicyRequest, ShowPolicyResponse> showPolicyInvoker(ShowPolicyRequest request) {
-        return new SyncInvoker<ShowPolicyRequest, ShowPolicyResponse>(request, AadMeta.showPolicy, hcClient);
+        return new SyncInvoker<>(request, AadMeta.showPolicy, hcClient);
     }
 
     /**
@@ -1012,7 +991,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmConfigRequest 请求对象
+     * @param request UpdateAlarmConfigRequest 请求对象
      * @return UpdateAlarmConfigResponse
      */
     public UpdateAlarmConfigResponse updateAlarmConfig(UpdateAlarmConfigRequest request) {
@@ -1026,13 +1005,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmConfigRequest 请求对象
+     * @param request UpdateAlarmConfigRequest 请求对象
      * @return SyncInvoker<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse>
      */
     public SyncInvoker<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse> updateAlarmConfigInvoker(
         UpdateAlarmConfigRequest request) {
-        return new SyncInvoker<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse>(request, AadMeta.updateAlarmConfig,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.updateAlarmConfig, hcClient);
     }
 
     /**
@@ -1042,7 +1020,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainRequest 请求对象
+     * @param request UpdateDomainRequest 请求对象
      * @return UpdateDomainResponse
      */
     public UpdateDomainResponse updateDomain(UpdateDomainRequest request) {
@@ -1056,11 +1034,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainRequest 请求对象
+     * @param request UpdateDomainRequest 请求对象
      * @return SyncInvoker<UpdateDomainRequest, UpdateDomainResponse>
      */
     public SyncInvoker<UpdateDomainRequest, UpdateDomainResponse> updateDomainInvoker(UpdateDomainRequest request) {
-        return new SyncInvoker<UpdateDomainRequest, UpdateDomainResponse>(request, AadMeta.updateDomain, hcClient);
+        return new SyncInvoker<>(request, AadMeta.updateDomain, hcClient);
     }
 
     /**
@@ -1070,7 +1048,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceIpRuleRequest 请求对象
+     * @param request UpdateInstanceIpRuleRequest 请求对象
      * @return UpdateInstanceIpRuleResponse
      */
     public UpdateInstanceIpRuleResponse updateInstanceIpRule(UpdateInstanceIpRuleRequest request) {
@@ -1084,13 +1062,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceIpRuleRequest 请求对象
+     * @param request UpdateInstanceIpRuleRequest 请求对象
      * @return SyncInvoker<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse>
      */
     public SyncInvoker<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse> updateInstanceIpRuleInvoker(
         UpdateInstanceIpRuleRequest request) {
-        return new SyncInvoker<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse>(request,
-            AadMeta.updateInstanceIpRule, hcClient);
+        return new SyncInvoker<>(request, AadMeta.updateInstanceIpRule, hcClient);
     }
 
     /**
@@ -1100,7 +1077,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePackageIpRequest 请求对象
+     * @param request UpdatePackageIpRequest 请求对象
      * @return UpdatePackageIpResponse
      */
     public UpdatePackageIpResponse updatePackageIp(UpdatePackageIpRequest request) {
@@ -1114,13 +1091,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePackageIpRequest 请求对象
+     * @param request UpdatePackageIpRequest 请求对象
      * @return SyncInvoker<UpdatePackageIpRequest, UpdatePackageIpResponse>
      */
     public SyncInvoker<UpdatePackageIpRequest, UpdatePackageIpResponse> updatePackageIpInvoker(
         UpdatePackageIpRequest request) {
-        return new SyncInvoker<UpdatePackageIpRequest, UpdatePackageIpResponse>(request, AadMeta.updatePackageIp,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.updatePackageIp, hcClient);
     }
 
     /**
@@ -1130,7 +1106,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePackageNameRequest 请求对象
+     * @param request UpdatePackageNameRequest 请求对象
      * @return UpdatePackageNameResponse
      */
     public UpdatePackageNameResponse updatePackageName(UpdatePackageNameRequest request) {
@@ -1144,13 +1120,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePackageNameRequest 请求对象
+     * @param request UpdatePackageNameRequest 请求对象
      * @return SyncInvoker<UpdatePackageNameRequest, UpdatePackageNameResponse>
      */
     public SyncInvoker<UpdatePackageNameRequest, UpdatePackageNameResponse> updatePackageNameInvoker(
         UpdatePackageNameRequest request) {
-        return new SyncInvoker<UpdatePackageNameRequest, UpdatePackageNameResponse>(request, AadMeta.updatePackageName,
-            hcClient);
+        return new SyncInvoker<>(request, AadMeta.updatePackageName, hcClient);
     }
 
     /**
@@ -1160,7 +1135,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRequest 请求对象
+     * @param request UpdatePolicyRequest 请求对象
      * @return UpdatePolicyResponse
      */
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) {
@@ -1174,11 +1149,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRequest 请求对象
+     * @param request UpdatePolicyRequest 请求对象
      * @return SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>
      */
     public SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicyInvoker(UpdatePolicyRequest request) {
-        return new SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>(request, AadMeta.updatePolicy, hcClient);
+        return new SyncInvoker<>(request, AadMeta.updatePolicy, hcClient);
     }
 
     /**
@@ -1188,7 +1163,7 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTagForProtectedIpRequest 请求对象
+     * @param request UpdateTagForProtectedIpRequest 请求对象
      * @return UpdateTagForProtectedIpResponse
      */
     public UpdateTagForProtectedIpResponse updateTagForProtectedIp(UpdateTagForProtectedIpRequest request) {
@@ -1202,13 +1177,12 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTagForProtectedIpRequest 请求对象
+     * @param request UpdateTagForProtectedIpRequest 请求对象
      * @return SyncInvoker<UpdateTagForProtectedIpRequest, UpdateTagForProtectedIpResponse>
      */
     public SyncInvoker<UpdateTagForProtectedIpRequest, UpdateTagForProtectedIpResponse> updateTagForProtectedIpInvoker(
         UpdateTagForProtectedIpRequest request) {
-        return new SyncInvoker<UpdateTagForProtectedIpRequest, UpdateTagForProtectedIpResponse>(request,
-            AadMeta.updateTagForProtectedIp, hcClient);
+        return new SyncInvoker<>(request, AadMeta.updateTagForProtectedIp, hcClient);
     }
 
 }

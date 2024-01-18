@@ -52,7 +52,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDefaultConfigRequest 请求对象
+     * @param request CreateDefaultConfigRequest 请求对象
      * @return CreateDefaultConfigResponse
      */
     public CreateDefaultConfigResponse createDefaultConfig(CreateDefaultConfigRequest request) {
@@ -66,13 +66,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDefaultConfigRequest 请求对象
+     * @param request CreateDefaultConfigRequest 请求对象
      * @return SyncInvoker<CreateDefaultConfigRequest, CreateDefaultConfigResponse>
      */
     public SyncInvoker<CreateDefaultConfigRequest, CreateDefaultConfigResponse> createDefaultConfigInvoker(
         CreateDefaultConfigRequest request) {
-        return new SyncInvoker<CreateDefaultConfigRequest, CreateDefaultConfigResponse>(request,
-            AntiDDoSMeta.createDefaultConfig, hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.createDefaultConfig, hcClient);
     }
 
     /**
@@ -82,7 +81,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDefaultConfigRequest 请求对象
+     * @param request DeleteDefaultConfigRequest 请求对象
      * @return DeleteDefaultConfigResponse
      */
     public DeleteDefaultConfigResponse deleteDefaultConfig(DeleteDefaultConfigRequest request) {
@@ -96,13 +95,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDefaultConfigRequest 请求对象
+     * @param request DeleteDefaultConfigRequest 请求对象
      * @return SyncInvoker<DeleteDefaultConfigRequest, DeleteDefaultConfigResponse>
      */
     public SyncInvoker<DeleteDefaultConfigRequest, DeleteDefaultConfigResponse> deleteDefaultConfigInvoker(
         DeleteDefaultConfigRequest request) {
-        return new SyncInvoker<DeleteDefaultConfigRequest, DeleteDefaultConfigResponse>(request,
-            AntiDDoSMeta.deleteDefaultConfig, hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.deleteDefaultConfig, hcClient);
     }
 
     /**
@@ -112,7 +110,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertConfigRequest 请求对象
+     * @param request ShowAlertConfigRequest 请求对象
      * @return ShowAlertConfigResponse
      */
     public ShowAlertConfigResponse showAlertConfig(ShowAlertConfigRequest request) {
@@ -126,13 +124,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertConfigRequest 请求对象
+     * @param request ShowAlertConfigRequest 请求对象
      * @return SyncInvoker<ShowAlertConfigRequest, ShowAlertConfigResponse>
      */
     public SyncInvoker<ShowAlertConfigRequest, ShowAlertConfigResponse> showAlertConfigInvoker(
         ShowAlertConfigRequest request) {
-        return new SyncInvoker<ShowAlertConfigRequest, ShowAlertConfigResponse>(request, AntiDDoSMeta.showAlertConfig,
-            hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.showAlertConfig, hcClient);
     }
 
     /**
@@ -142,7 +139,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDefaultConfigRequest 请求对象
+     * @param request ShowDefaultConfigRequest 请求对象
      * @return ShowDefaultConfigResponse
      */
     public ShowDefaultConfigResponse showDefaultConfig(ShowDefaultConfigRequest request) {
@@ -156,13 +153,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDefaultConfigRequest 请求对象
+     * @param request ShowDefaultConfigRequest 请求对象
      * @return SyncInvoker<ShowDefaultConfigRequest, ShowDefaultConfigResponse>
      */
     public SyncInvoker<ShowDefaultConfigRequest, ShowDefaultConfigResponse> showDefaultConfigInvoker(
         ShowDefaultConfigRequest request) {
-        return new SyncInvoker<ShowDefaultConfigRequest, ShowDefaultConfigResponse>(request,
-            AntiDDoSMeta.showDefaultConfig, hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.showDefaultConfig, hcClient);
     }
 
     /**
@@ -172,7 +168,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlertConfigRequest 请求对象
+     * @param request UpdateAlertConfigRequest 请求对象
      * @return UpdateAlertConfigResponse
      */
     public UpdateAlertConfigResponse updateAlertConfig(UpdateAlertConfigRequest request) {
@@ -186,13 +182,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlertConfigRequest 请求对象
+     * @param request UpdateAlertConfigRequest 请求对象
      * @return SyncInvoker<UpdateAlertConfigRequest, UpdateAlertConfigResponse>
      */
     public SyncInvoker<UpdateAlertConfigRequest, UpdateAlertConfigResponse> updateAlertConfigInvoker(
         UpdateAlertConfigRequest request) {
-        return new SyncInvoker<UpdateAlertConfigRequest, UpdateAlertConfigResponse>(request,
-            AntiDDoSMeta.updateAlertConfig, hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.updateAlertConfig, hcClient);
     }
 
     /**
@@ -202,7 +197,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDDosStatusRequest 请求对象
+     * @param request ListDDosStatusRequest 请求对象
      * @return ListDDosStatusResponse
      */
     public ListDDosStatusResponse listDDosStatus(ListDDosStatusRequest request) {
@@ -216,13 +211,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDDosStatusRequest 请求对象
+     * @param request ListDDosStatusRequest 请求对象
      * @return SyncInvoker<ListDDosStatusRequest, ListDDosStatusResponse>
      */
     public SyncInvoker<ListDDosStatusRequest, ListDDosStatusResponse> listDDosStatusInvoker(
         ListDDosStatusRequest request) {
-        return new SyncInvoker<ListDDosStatusRequest, ListDDosStatusResponse>(request, AntiDDoSMeta.listDDosStatus,
-            hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.listDDosStatus, hcClient);
     }
 
     /**
@@ -232,7 +226,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDailyLogRequest 请求对象
+     * @param request ListDailyLogRequest 请求对象
      * @return ListDailyLogResponse
      */
     public ListDailyLogResponse listDailyLog(ListDailyLogRequest request) {
@@ -246,11 +240,11 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDailyLogRequest 请求对象
+     * @param request ListDailyLogRequest 请求对象
      * @return SyncInvoker<ListDailyLogRequest, ListDailyLogResponse>
      */
     public SyncInvoker<ListDailyLogRequest, ListDailyLogResponse> listDailyLogInvoker(ListDailyLogRequest request) {
-        return new SyncInvoker<ListDailyLogRequest, ListDailyLogResponse>(request, AntiDDoSMeta.listDailyLog, hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.listDailyLog, hcClient);
     }
 
     /**
@@ -260,7 +254,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDailyReportRequest 请求对象
+     * @param request ListDailyReportRequest 请求对象
      * @return ListDailyReportResponse
      */
     public ListDailyReportResponse listDailyReport(ListDailyReportRequest request) {
@@ -274,13 +268,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDailyReportRequest 请求对象
+     * @param request ListDailyReportRequest 请求对象
      * @return SyncInvoker<ListDailyReportRequest, ListDailyReportResponse>
      */
     public SyncInvoker<ListDailyReportRequest, ListDailyReportResponse> listDailyReportInvoker(
         ListDailyReportRequest request) {
-        return new SyncInvoker<ListDailyReportRequest, ListDailyReportResponse>(request, AntiDDoSMeta.listDailyReport,
-            hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.listDailyReport, hcClient);
     }
 
     /**
@@ -290,7 +283,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNewConfigsRequest 请求对象
+     * @param request ListNewConfigsRequest 请求对象
      * @return ListNewConfigsResponse
      */
     public ListNewConfigsResponse listNewConfigs(ListNewConfigsRequest request) {
@@ -304,13 +297,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNewConfigsRequest 请求对象
+     * @param request ListNewConfigsRequest 请求对象
      * @return SyncInvoker<ListNewConfigsRequest, ListNewConfigsResponse>
      */
     public SyncInvoker<ListNewConfigsRequest, ListNewConfigsResponse> listNewConfigsInvoker(
         ListNewConfigsRequest request) {
-        return new SyncInvoker<ListNewConfigsRequest, ListNewConfigsResponse>(request, AntiDDoSMeta.listNewConfigs,
-            hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.listNewConfigs, hcClient);
     }
 
     /**
@@ -320,7 +312,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWeeklyReportsRequest 请求对象
+     * @param request ListWeeklyReportsRequest 请求对象
      * @return ListWeeklyReportsResponse
      */
     public ListWeeklyReportsResponse listWeeklyReports(ListWeeklyReportsRequest request) {
@@ -334,13 +326,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWeeklyReportsRequest 请求对象
+     * @param request ListWeeklyReportsRequest 请求对象
      * @return SyncInvoker<ListWeeklyReportsRequest, ListWeeklyReportsResponse>
      */
     public SyncInvoker<ListWeeklyReportsRequest, ListWeeklyReportsResponse> listWeeklyReportsInvoker(
         ListWeeklyReportsRequest request) {
-        return new SyncInvoker<ListWeeklyReportsRequest, ListWeeklyReportsResponse>(request,
-            AntiDDoSMeta.listWeeklyReports, hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.listWeeklyReports, hcClient);
     }
 
     /**
@@ -350,7 +341,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDDosRequest 请求对象
+     * @param request ShowDDosRequest 请求对象
      * @return ShowDDosResponse
      */
     public ShowDDosResponse showDDos(ShowDDosRequest request) {
@@ -364,11 +355,11 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDDosRequest 请求对象
+     * @param request ShowDDosRequest 请求对象
      * @return SyncInvoker<ShowDDosRequest, ShowDDosResponse>
      */
     public SyncInvoker<ShowDDosRequest, ShowDDosResponse> showDDosInvoker(ShowDDosRequest request) {
-        return new SyncInvoker<ShowDDosRequest, ShowDDosResponse>(request, AntiDDoSMeta.showDDos, hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.showDDos, hcClient);
     }
 
     /**
@@ -378,7 +369,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDDosStatusRequest 请求对象
+     * @param request ShowDDosStatusRequest 请求对象
      * @return ShowDDosStatusResponse
      */
     public ShowDDosStatusResponse showDDosStatus(ShowDDosStatusRequest request) {
@@ -392,13 +383,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDDosStatusRequest 请求对象
+     * @param request ShowDDosStatusRequest 请求对象
      * @return SyncInvoker<ShowDDosStatusRequest, ShowDDosStatusResponse>
      */
     public SyncInvoker<ShowDDosStatusRequest, ShowDDosStatusResponse> showDDosStatusInvoker(
         ShowDDosStatusRequest request) {
-        return new SyncInvoker<ShowDDosStatusRequest, ShowDDosStatusResponse>(request, AntiDDoSMeta.showDDosStatus,
-            hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.showDDosStatus, hcClient);
     }
 
     /**
@@ -408,7 +398,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNewTaskStatusRequest 请求对象
+     * @param request ShowNewTaskStatusRequest 请求对象
      * @return ShowNewTaskStatusResponse
      */
     public ShowNewTaskStatusResponse showNewTaskStatus(ShowNewTaskStatusRequest request) {
@@ -422,13 +412,12 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNewTaskStatusRequest 请求对象
+     * @param request ShowNewTaskStatusRequest 请求对象
      * @return SyncInvoker<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse>
      */
     public SyncInvoker<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse> showNewTaskStatusInvoker(
         ShowNewTaskStatusRequest request) {
-        return new SyncInvoker<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse>(request,
-            AntiDDoSMeta.showNewTaskStatus, hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.showNewTaskStatus, hcClient);
     }
 
     /**
@@ -438,7 +427,7 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDDosRequest 请求对象
+     * @param request UpdateDDosRequest 请求对象
      * @return UpdateDDosResponse
      */
     public UpdateDDosResponse updateDDos(UpdateDDosRequest request) {
@@ -452,11 +441,11 @@ public class AntiDDoSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDDosRequest 请求对象
+     * @param request UpdateDDosRequest 请求对象
      * @return SyncInvoker<UpdateDDosRequest, UpdateDDosResponse>
      */
     public SyncInvoker<UpdateDDosRequest, UpdateDDosResponse> updateDDosInvoker(UpdateDDosRequest request) {
-        return new SyncInvoker<UpdateDDosRequest, UpdateDDosResponse>(request, AntiDDoSMeta.updateDDos, hcClient);
+        return new SyncInvoker<>(request, AntiDDoSMeta.updateDDos, hcClient);
     }
 
 }

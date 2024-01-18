@@ -164,9 +164,9 @@ import java.util.Map;
 public class IoTAnalyticsMeta {
 
     public static final HttpRequestDef<CreateAssetModelRequest, CreateAssetModelResponse> createAssetModel =
-        genForcreateAssetModel();
+        genForCreateAssetModel();
 
-    private static HttpRequestDef<CreateAssetModelRequest, CreateAssetModelResponse> genForcreateAssetModel() {
+    private static HttpRequestDef<CreateAssetModelRequest, CreateAssetModelResponse> genForCreateAssetModel() {
         // basic
         HttpRequestDef.Builder<CreateAssetModelRequest, CreateAssetModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAssetModelRequest.class, CreateAssetModelResponse.class)
@@ -179,9 +179,7 @@ public class IoTAnalyticsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssetModelAddRequest.class),
-            f -> f.withMarshaller(CreateAssetModelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAssetModelRequest::getBody, CreateAssetModelRequest::setBody));
 
         // response
 
@@ -189,9 +187,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<DeleteAssetModelRequest, DeleteAssetModelResponse> deleteAssetModel =
-        genFordeleteAssetModel();
+        genForDeleteAssetModel();
 
-    private static HttpRequestDef<DeleteAssetModelRequest, DeleteAssetModelResponse> genFordeleteAssetModel() {
+    private static HttpRequestDef<DeleteAssetModelRequest, DeleteAssetModelResponse> genForDeleteAssetModel() {
         // basic
         HttpRequestDef.Builder<DeleteAssetModelRequest, DeleteAssetModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAssetModelRequest.class, DeleteAssetModelResponse.class)
@@ -204,9 +202,7 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAssetModelRequest::getModelId, (req, v) -> {
-                req.setModelId(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetModelRequest::getModelId, DeleteAssetModelRequest::setModelId));
 
         // response
 
@@ -214,9 +210,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ListAssetModelsRequest, ListAssetModelsResponse> listAssetModels =
-        genForlistAssetModels();
+        genForListAssetModels();
 
-    private static HttpRequestDef<ListAssetModelsRequest, ListAssetModelsResponse> genForlistAssetModels() {
+    private static HttpRequestDef<ListAssetModelsRequest, ListAssetModelsResponse> genForListAssetModels() {
         // basic
         HttpRequestDef.Builder<ListAssetModelsRequest, ListAssetModelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAssetModelsRequest.class, ListAssetModelsResponse.class)
@@ -229,23 +225,17 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetModelsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListAssetModelsRequest::getFilter, ListAssetModelsRequest::setFilter));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssetModelsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAssetModelsRequest::getLimit, ListAssetModelsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssetModelsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAssetModelsRequest::getOffset, ListAssetModelsRequest::setOffset));
 
         // response
 
@@ -253,9 +243,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ShowAssetModelRequest, ShowAssetModelResponse> showAssetModel =
-        genForshowAssetModel();
+        genForShowAssetModel();
 
-    private static HttpRequestDef<ShowAssetModelRequest, ShowAssetModelResponse> genForshowAssetModel() {
+    private static HttpRequestDef<ShowAssetModelRequest, ShowAssetModelResponse> genForShowAssetModel() {
         // basic
         HttpRequestDef.Builder<ShowAssetModelRequest, ShowAssetModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAssetModelRequest.class, ShowAssetModelResponse.class)
@@ -268,9 +258,7 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetModelRequest::getModelId, (req, v) -> {
-                req.setModelId(v);
-            }));
+            f -> f.withMarshaller(ShowAssetModelRequest::getModelId, ShowAssetModelRequest::setModelId));
 
         // response
 
@@ -278,9 +266,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<UpdateAssetModelRequest, UpdateAssetModelResponse> updateAssetModel =
-        genForupdateAssetModel();
+        genForUpdateAssetModel();
 
-    private static HttpRequestDef<UpdateAssetModelRequest, UpdateAssetModelResponse> genForupdateAssetModel() {
+    private static HttpRequestDef<UpdateAssetModelRequest, UpdateAssetModelResponse> genForUpdateAssetModel() {
         // basic
         HttpRequestDef.Builder<UpdateAssetModelRequest, UpdateAssetModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAssetModelRequest.class, UpdateAssetModelResponse.class)
@@ -293,16 +281,12 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAssetModelRequest::getModelId, (req, v) -> {
-                req.setModelId(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetModelRequest::getModelId, UpdateAssetModelRequest::setModelId));
         builder.<AssetModelModRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssetModelModRequest.class),
-            f -> f.withMarshaller(UpdateAssetModelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetModelRequest::getBody, UpdateAssetModelRequest::setBody));
 
         // response
 
@@ -310,9 +294,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<CreateAssetNewRequest, CreateAssetNewResponse> createAssetNew =
-        genForcreateAssetNew();
+        genForCreateAssetNew();
 
-    private static HttpRequestDef<CreateAssetNewRequest, CreateAssetNewResponse> genForcreateAssetNew() {
+    private static HttpRequestDef<CreateAssetNewRequest, CreateAssetNewResponse> genForCreateAssetNew() {
         // basic
         HttpRequestDef.Builder<CreateAssetNewRequest, CreateAssetNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAssetNewRequest.class, CreateAssetNewResponse.class)
@@ -325,9 +309,7 @@ public class IoTAnalyticsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssetAddRequest.class),
-            f -> f.withMarshaller(CreateAssetNewRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAssetNewRequest::getBody, CreateAssetNewRequest::setBody));
 
         // response
 
@@ -335,9 +317,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<DeleteAssetNewRequest, DeleteAssetNewResponse> deleteAssetNew =
-        genFordeleteAssetNew();
+        genForDeleteAssetNew();
 
-    private static HttpRequestDef<DeleteAssetNewRequest, DeleteAssetNewResponse> genFordeleteAssetNew() {
+    private static HttpRequestDef<DeleteAssetNewRequest, DeleteAssetNewResponse> genForDeleteAssetNew() {
         // basic
         HttpRequestDef.Builder<DeleteAssetNewRequest, DeleteAssetNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAssetNewRequest.class, DeleteAssetNewResponse.class)
@@ -350,9 +332,7 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAssetNewRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetNewRequest::getAssetId, DeleteAssetNewRequest::setAssetId));
 
         // response
 
@@ -360,9 +340,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ListAssetsNewRequest, ListAssetsNewResponse> listAssetsNew =
-        genForlistAssetsNew();
+        genForListAssetsNew();
 
-    private static HttpRequestDef<ListAssetsNewRequest, ListAssetsNewResponse> genForlistAssetsNew() {
+    private static HttpRequestDef<ListAssetsNewRequest, ListAssetsNewResponse> genForListAssetsNew() {
         // basic
         HttpRequestDef.Builder<ListAssetsNewRequest, ListAssetsNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAssetsNewRequest.class, ListAssetsNewResponse.class)
@@ -375,30 +355,22 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssetsNewRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAssetsNewRequest::getLimit, ListAssetsNewRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssetsNewRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAssetsNewRequest::getOffset, ListAssetsNewRequest::setOffset));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetsNewRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListAssetsNewRequest::getFilter, ListAssetsNewRequest::setFilter));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetsNewRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListAssetsNewRequest::getType, ListAssetsNewRequest::setType));
 
         // response
 
@@ -406,9 +378,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<PublishRootAssetRequest, PublishRootAssetResponse> publishRootAsset =
-        genForpublishRootAsset();
+        genForPublishRootAsset();
 
-    private static HttpRequestDef<PublishRootAssetRequest, PublishRootAssetResponse> genForpublishRootAsset() {
+    private static HttpRequestDef<PublishRootAssetRequest, PublishRootAssetResponse> genForPublishRootAsset() {
         // basic
         HttpRequestDef.Builder<PublishRootAssetRequest, PublishRootAssetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishRootAssetRequest.class, PublishRootAssetResponse.class)
@@ -421,18 +393,16 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishRootAssetRequest::getRootAssetId, (req, v) -> {
-                req.setRootAssetId(v);
-            }));
+            f -> f.withMarshaller(PublishRootAssetRequest::getRootAssetId, PublishRootAssetRequest::setRootAssetId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAssetNewRequest, ShowAssetNewResponse> showAssetNew = genForshowAssetNew();
+    public static final HttpRequestDef<ShowAssetNewRequest, ShowAssetNewResponse> showAssetNew = genForShowAssetNew();
 
-    private static HttpRequestDef<ShowAssetNewRequest, ShowAssetNewResponse> genForshowAssetNew() {
+    private static HttpRequestDef<ShowAssetNewRequest, ShowAssetNewResponse> genForShowAssetNew() {
         // basic
         HttpRequestDef.Builder<ShowAssetNewRequest, ShowAssetNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAssetNewRequest.class, ShowAssetNewResponse.class)
@@ -445,16 +415,12 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetNewRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(ShowAssetNewRequest::getAssetId, ShowAssetNewRequest::setAssetId));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetNewRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowAssetNewRequest::getType, ShowAssetNewRequest::setType));
 
         // response
 
@@ -462,9 +428,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<UpdateAssetNewRequest, UpdateAssetNewResponse> updateAssetNew =
-        genForupdateAssetNew();
+        genForUpdateAssetNew();
 
-    private static HttpRequestDef<UpdateAssetNewRequest, UpdateAssetNewResponse> genForupdateAssetNew() {
+    private static HttpRequestDef<UpdateAssetNewRequest, UpdateAssetNewResponse> genForUpdateAssetNew() {
         // basic
         HttpRequestDef.Builder<UpdateAssetNewRequest, UpdateAssetNewResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAssetNewRequest.class, UpdateAssetNewResponse.class)
@@ -477,16 +443,12 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAssetNewRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetNewRequest::getAssetId, UpdateAssetNewRequest::setAssetId));
         builder.<AssetModRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssetModRequest.class),
-            f -> f.withMarshaller(UpdateAssetNewRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetNewRequest::getBody, UpdateAssetNewRequest::setBody));
 
         // response
 
@@ -494,9 +456,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ShowLastPropertyValueRequest, ShowLastPropertyValueResponse> showLastPropertyValue =
-        genForshowLastPropertyValue();
+        genForShowLastPropertyValue();
 
-    private static HttpRequestDef<ShowLastPropertyValueRequest, ShowLastPropertyValueResponse> genForshowLastPropertyValue() {
+    private static HttpRequestDef<ShowLastPropertyValueRequest, ShowLastPropertyValueResponse> genForShowLastPropertyValue() {
         // basic
         HttpRequestDef.Builder<ShowLastPropertyValueRequest, ShowLastPropertyValueResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowLastPropertyValueRequest.class, ShowLastPropertyValueResponse.class)
@@ -509,16 +471,12 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLastPropertyValueRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(ShowLastPropertyValueRequest::getAssetId, ShowLastPropertyValueRequest::setAssetId));
         builder.<LastAssetPropertyValueRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LastAssetPropertyValueRequest.class),
-            f -> f.withMarshaller(ShowLastPropertyValueRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowLastPropertyValueRequest::getBody, ShowLastPropertyValueRequest::setBody));
 
         // response
 
@@ -526,9 +484,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ShowMetricValueRequest, ShowMetricValueResponse> showMetricValue =
-        genForshowMetricValue();
+        genForShowMetricValue();
 
-    private static HttpRequestDef<ShowMetricValueRequest, ShowMetricValueResponse> genForshowMetricValue() {
+    private static HttpRequestDef<ShowMetricValueRequest, ShowMetricValueResponse> genForShowMetricValue() {
         // basic
         HttpRequestDef.Builder<ShowMetricValueRequest, ShowMetricValueResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowMetricValueRequest.class, ShowMetricValueResponse.class)
@@ -541,16 +499,12 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMetricValueRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(ShowMetricValueRequest::getAssetId, ShowMetricValueRequest::setAssetId));
         builder.<GetMetricsValue>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetMetricsValue.class),
-            f -> f.withMarshaller(ShowMetricValueRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowMetricValueRequest::getBody, ShowMetricValueRequest::setBody));
 
         // response
 
@@ -558,9 +512,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ShowPropertyRawValueRequest, ShowPropertyRawValueResponse> showPropertyRawValue =
-        genForshowPropertyRawValue();
+        genForShowPropertyRawValue();
 
-    private static HttpRequestDef<ShowPropertyRawValueRequest, ShowPropertyRawValueResponse> genForshowPropertyRawValue() {
+    private static HttpRequestDef<ShowPropertyRawValueRequest, ShowPropertyRawValueResponse> genForShowPropertyRawValue() {
         // basic
         HttpRequestDef.Builder<ShowPropertyRawValueRequest, ShowPropertyRawValueResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowPropertyRawValueRequest.class, ShowPropertyRawValueResponse.class)
@@ -573,16 +527,12 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPropertyRawValueRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(ShowPropertyRawValueRequest::getAssetId, ShowPropertyRawValueRequest::setAssetId));
         builder.<RawRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RawRequest.class),
-            f -> f.withMarshaller(ShowPropertyRawValueRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowPropertyRawValueRequest::getBody, ShowPropertyRawValueRequest::setBody));
 
         // response
 
@@ -590,9 +540,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<CreateComputingResourceRequest, CreateComputingResourceResponse> createComputingResource =
-        genForcreateComputingResource();
+        genForCreateComputingResource();
 
-    private static HttpRequestDef<CreateComputingResourceRequest, CreateComputingResourceResponse> genForcreateComputingResource() {
+    private static HttpRequestDef<CreateComputingResourceRequest, CreateComputingResourceResponse> genForCreateComputingResource() {
         // basic
         HttpRequestDef.Builder<CreateComputingResourceRequest, CreateComputingResourceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateComputingResourceRequest.class, CreateComputingResourceResponse.class)
@@ -605,9 +555,7 @@ public class IoTAnalyticsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateComputingResourceRequestBody.class),
-            f -> f.withMarshaller(CreateComputingResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateComputingResourceRequest::getBody, CreateComputingResourceRequest::setBody));
 
         // response
 
@@ -615,9 +563,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<DeleteComputingResourceRequest, DeleteComputingResourceResponse> deleteComputingResource =
-        genFordeleteComputingResource();
+        genForDeleteComputingResource();
 
-    private static HttpRequestDef<DeleteComputingResourceRequest, DeleteComputingResourceResponse> genFordeleteComputingResource() {
+    private static HttpRequestDef<DeleteComputingResourceRequest, DeleteComputingResourceResponse> genForDeleteComputingResource() {
         // basic
         HttpRequestDef.Builder<DeleteComputingResourceRequest, DeleteComputingResourceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteComputingResourceRequest.class, DeleteComputingResourceResponse.class)
@@ -630,9 +578,8 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComputingResourceRequest::getComputingResourceId, (req, v) -> {
-                req.setComputingResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteComputingResourceRequest::getComputingResourceId,
+                DeleteComputingResourceRequest::setComputingResourceId));
 
         // response
 
@@ -640,9 +587,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ListComputingResourcesRequest, ListComputingResourcesResponse> listComputingResources =
-        genForlistComputingResources();
+        genForListComputingResources();
 
-    private static HttpRequestDef<ListComputingResourcesRequest, ListComputingResourcesResponse> genForlistComputingResources() {
+    private static HttpRequestDef<ListComputingResourcesRequest, ListComputingResourcesResponse> genForListComputingResources() {
         // basic
         HttpRequestDef.Builder<ListComputingResourcesRequest, ListComputingResourcesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListComputingResourcesRequest.class, ListComputingResourcesResponse.class)
@@ -655,23 +602,18 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComputingResourcesRequest::getComputingResourceName, (req, v) -> {
-                req.setComputingResourceName(v);
-            }));
+            f -> f.withMarshaller(ListComputingResourcesRequest::getComputingResourceName,
+                ListComputingResourcesRequest::setComputingResourceName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListComputingResourcesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListComputingResourcesRequest::getOffset, ListComputingResourcesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListComputingResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListComputingResourcesRequest::getLimit, ListComputingResourcesRequest::setLimit));
 
         // response
 
@@ -679,9 +621,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<CreateDatasourceRequest, CreateDatasourceResponse> createDatasource =
-        genForcreateDatasource();
+        genForCreateDatasource();
 
-    private static HttpRequestDef<CreateDatasourceRequest, CreateDatasourceResponse> genForcreateDatasource() {
+    private static HttpRequestDef<CreateDatasourceRequest, CreateDatasourceResponse> genForCreateDatasource() {
         // basic
         HttpRequestDef.Builder<CreateDatasourceRequest, CreateDatasourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDatasourceRequest.class, CreateDatasourceResponse.class)
@@ -694,9 +636,7 @@ public class IoTAnalyticsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDatasourceReqDTO.class),
-            f -> f.withMarshaller(CreateDatasourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDatasourceRequest::getBody, CreateDatasourceRequest::setBody));
 
         // response
 
@@ -704,9 +644,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<DeleteDatasourceRequest, DeleteDatasourceResponse> deleteDatasource =
-        genFordeleteDatasource();
+        genForDeleteDatasource();
 
-    private static HttpRequestDef<DeleteDatasourceRequest, DeleteDatasourceResponse> genFordeleteDatasource() {
+    private static HttpRequestDef<DeleteDatasourceRequest, DeleteDatasourceResponse> genForDeleteDatasource() {
         // basic
         HttpRequestDef.Builder<DeleteDatasourceRequest, DeleteDatasourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatasourceRequest.class, DeleteDatasourceResponse.class)
@@ -719,26 +659,22 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatasourceRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDatasourceRequest::getDatasourceId, DeleteDatasourceRequest::setDatasourceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteDatasourceResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteDatasourceResponse::getBody, DeleteDatasourceResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowAllDataSourceRequest, ShowAllDataSourceResponse> showAllDataSource =
-        genForshowAllDataSource();
+        genForShowAllDataSource();
 
-    private static HttpRequestDef<ShowAllDataSourceRequest, ShowAllDataSourceResponse> genForshowAllDataSource() {
+    private static HttpRequestDef<ShowAllDataSourceRequest, ShowAllDataSourceResponse> genForShowAllDataSource() {
         // basic
         HttpRequestDef.Builder<ShowAllDataSourceRequest, ShowAllDataSourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAllDataSourceRequest.class, ShowAllDataSourceResponse.class)
@@ -751,30 +687,22 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllDataSourceRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowAllDataSourceRequest::getName, ShowAllDataSourceRequest::setName));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllDataSourceRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowAllDataSourceRequest::getType, ShowAllDataSourceRequest::setType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllDataSourceRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowAllDataSourceRequest::getLimit, ShowAllDataSourceRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllDataSourceRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowAllDataSourceRequest::getOffset, ShowAllDataSourceRequest::setOffset));
 
         // response
 
@@ -782,9 +710,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ShowDataSourceRequest, ShowDataSourceResponse> showDataSource =
-        genForshowDataSource();
+        genForShowDataSource();
 
-    private static HttpRequestDef<ShowDataSourceRequest, ShowDataSourceResponse> genForshowDataSource() {
+    private static HttpRequestDef<ShowDataSourceRequest, ShowDataSourceResponse> genForShowDataSource() {
         // basic
         HttpRequestDef.Builder<ShowDataSourceRequest, ShowDataSourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDataSourceRequest.class, ShowDataSourceResponse.class)
@@ -797,9 +725,7 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataSourceRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(ShowDataSourceRequest::getDatasourceId, ShowDataSourceRequest::setDatasourceId));
 
         // response
 
@@ -807,9 +733,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<UpdateDataSourceRequest, UpdateDataSourceResponse> updateDataSource =
-        genForupdateDataSource();
+        genForUpdateDataSource();
 
-    private static HttpRequestDef<UpdateDataSourceRequest, UpdateDataSourceResponse> genForupdateDataSource() {
+    private static HttpRequestDef<UpdateDataSourceRequest, UpdateDataSourceResponse> genForUpdateDataSource() {
         // basic
         HttpRequestDef.Builder<UpdateDataSourceRequest, UpdateDataSourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDataSourceRequest.class, UpdateDataSourceResponse.class)
@@ -822,25 +748,21 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDataSourceRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDataSourceRequest::getDatasourceId, UpdateDataSourceRequest::setDatasourceId));
         builder.<UpdateDatasourceReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDatasourceReqDTO.class),
-            f -> f.withMarshaller(UpdateDataSourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDataSourceRequest::getBody, UpdateDataSourceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateGroupRequest, CreateGroupResponse> createGroup = genForcreateGroup();
+    public static final HttpRequestDef<CreateGroupRequest, CreateGroupResponse> createGroup = genForCreateGroup();
 
-    private static HttpRequestDef<CreateGroupRequest, CreateGroupResponse> genForcreateGroup() {
+    private static HttpRequestDef<CreateGroupRequest, CreateGroupResponse> genForCreateGroup() {
         // basic
         HttpRequestDef.Builder<CreateGroupRequest, CreateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateGroupRequest.class, CreateGroupResponse.class)
@@ -853,18 +775,16 @@ public class IoTAnalyticsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StorageGroup.class),
-            f -> f.withMarshaller(CreateGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGroupRequest::getBody, CreateGroupRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteGroupRequest, DeleteGroupResponse> deleteGroup = genFordeleteGroup();
+    public static final HttpRequestDef<DeleteGroupRequest, DeleteGroupResponse> deleteGroup = genForDeleteGroup();
 
-    private static HttpRequestDef<DeleteGroupRequest, DeleteGroupResponse> genFordeleteGroup() {
+    private static HttpRequestDef<DeleteGroupRequest, DeleteGroupResponse> genForDeleteGroup() {
         // basic
         HttpRequestDef.Builder<DeleteGroupRequest, DeleteGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteGroupRequest.class, DeleteGroupResponse.class)
@@ -877,18 +797,16 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteGroupRequest::getGroupId, DeleteGroupRequest::setGroupId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListGroupsRequest, ListGroupsResponse> listGroups = genForlistGroups();
+    public static final HttpRequestDef<ListGroupsRequest, ListGroupsResponse> listGroups = genForListGroups();
 
-    private static HttpRequestDef<ListGroupsRequest, ListGroupsResponse> genForlistGroups() {
+    private static HttpRequestDef<ListGroupsRequest, ListGroupsResponse> genForListGroups() {
         // basic
         HttpRequestDef.Builder<ListGroupsRequest, ListGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListGroupsRequest.class, ListGroupsResponse.class)
@@ -901,53 +819,41 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListGroupsRequest.UnitEnum.class),
-            f -> f.withMarshaller(ListGroupsRequest::getUnit, (req, v) -> {
-                req.setUnit(v);
-            }));
+            f -> f.withMarshaller(ListGroupsRequest::getUnit, ListGroupsRequest::setUnit));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGroupsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListGroupsRequest::getType, ListGroupsRequest::setType));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGroupsRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListGroupsRequest::getGroupId, ListGroupsRequest::setGroupId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGroupsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListGroupsRequest::getName, ListGroupsRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListGroupsRequest::getOffset, ListGroupsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListGroupsRequest::getLimit, ListGroupsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateGroupRequest, UpdateGroupResponse> updateGroup = genForupdateGroup();
+    public static final HttpRequestDef<UpdateGroupRequest, UpdateGroupResponse> updateGroup = genForUpdateGroup();
 
-    private static HttpRequestDef<UpdateGroupRequest, UpdateGroupResponse> genForupdateGroup() {
+    private static HttpRequestDef<UpdateGroupRequest, UpdateGroupResponse> genForUpdateGroup() {
         // basic
         HttpRequestDef.Builder<UpdateGroupRequest, UpdateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateGroupRequest.class, UpdateGroupResponse.class)
@@ -960,16 +866,12 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateGroupRequest::getGroupId, UpdateGroupRequest::setGroupId));
         builder.<StorageGroup>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StorageGroup.class),
-            f -> f.withMarshaller(UpdateGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGroupRequest::getBody, UpdateGroupRequest::setBody));
 
         // response
 
@@ -977,9 +879,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<DeleteDataStoreRequest, DeleteDataStoreResponse> deleteDataStore =
-        genFordeleteDataStore();
+        genForDeleteDataStore();
 
-    private static HttpRequestDef<DeleteDataStoreRequest, DeleteDataStoreResponse> genFordeleteDataStore() {
+    private static HttpRequestDef<DeleteDataStoreRequest, DeleteDataStoreResponse> genForDeleteDataStore() {
         // basic
         HttpRequestDef.Builder<DeleteDataStoreRequest, DeleteDataStoreResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDataStoreRequest.class, DeleteDataStoreResponse.class)
@@ -992,9 +894,7 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataStoreRequest::getDataStoreId, (req, v) -> {
-                req.setDataStoreId(v);
-            }));
+            f -> f.withMarshaller(DeleteDataStoreRequest::getDataStoreId, DeleteDataStoreRequest::setDataStoreId));
 
         // response
 
@@ -1002,9 +902,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ListDataStoresRequest, ListDataStoresResponse> listDataStores =
-        genForlistDataStores();
+        genForListDataStores();
 
-    private static HttpRequestDef<ListDataStoresRequest, ListDataStoresResponse> genForlistDataStores() {
+    private static HttpRequestDef<ListDataStoresRequest, ListDataStoresResponse> genForListDataStores() {
         // basic
         HttpRequestDef.Builder<ListDataStoresRequest, ListDataStoresResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDataStoresRequest.class, ListDataStoresResponse.class)
@@ -1017,37 +917,27 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataStoresRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListDataStoresRequest::getGroupId, ListDataStoresRequest::setGroupId));
         builder.<String>withRequestField("data_store_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataStoresRequest::getDataStoreId, (req, v) -> {
-                req.setDataStoreId(v);
-            }));
+            f -> f.withMarshaller(ListDataStoresRequest::getDataStoreId, ListDataStoresRequest::setDataStoreId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataStoresRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDataStoresRequest::getName, ListDataStoresRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDataStoresRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDataStoresRequest::getOffset, ListDataStoresRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDataStoresRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDataStoresRequest::getLimit, ListDataStoresRequest::setLimit));
 
         // response
 
@@ -1055,9 +945,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<UpdateDataStoreRequest, UpdateDataStoreResponse> updateDataStore =
-        genForupdateDataStore();
+        genForUpdateDataStore();
 
-    private static HttpRequestDef<UpdateDataStoreRequest, UpdateDataStoreResponse> genForupdateDataStore() {
+    private static HttpRequestDef<UpdateDataStoreRequest, UpdateDataStoreResponse> genForUpdateDataStore() {
         // basic
         HttpRequestDef.Builder<UpdateDataStoreRequest, UpdateDataStoreResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDataStoreRequest.class, UpdateDataStoreResponse.class)
@@ -1070,25 +960,21 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDataStoreRequest::getDataStoreId, (req, v) -> {
-                req.setDataStoreId(v);
-            }));
+            f -> f.withMarshaller(UpdateDataStoreRequest::getDataStoreId, UpdateDataStoreRequest::setDataStoreId));
         builder.<UpdateDataStore>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDataStore.class),
-            f -> f.withMarshaller(UpdateDataStoreRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDataStoreRequest::getBody, UpdateDataStoreRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListHistoryRequest, ListHistoryResponse> listHistory = genForlistHistory();
+    public static final HttpRequestDef<ListHistoryRequest, ListHistoryResponse> listHistory = genForListHistory();
 
-    private static HttpRequestDef<ListHistoryRequest, ListHistoryResponse> genForlistHistory() {
+    private static HttpRequestDef<ListHistoryRequest, ListHistoryResponse> genForListHistory() {
         // basic
         HttpRequestDef.Builder<ListHistoryRequest, ListHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListHistoryRequest.class, ListHistoryResponse.class)
@@ -1101,25 +987,21 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryRequest::getDataStoreId, (req, v) -> {
-                req.setDataStoreId(v);
-            }));
+            f -> f.withMarshaller(ListHistoryRequest::getDataStoreId, ListHistoryRequest::setDataStoreId));
         builder.<GetHistoryRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetHistoryRequest.class),
-            f -> f.withMarshaller(ListHistoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListHistoryRequest::getBody, ListHistoryRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMetricsRequest, ListMetricsResponse> listMetrics = genForlistMetrics();
+    public static final HttpRequestDef<ListMetricsRequest, ListMetricsResponse> listMetrics = genForListMetrics();
 
-    private static HttpRequestDef<ListMetricsRequest, ListMetricsResponse> genForlistMetrics() {
+    private static HttpRequestDef<ListMetricsRequest, ListMetricsResponse> genForListMetrics() {
         // basic
         HttpRequestDef.Builder<ListMetricsRequest, ListMetricsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListMetricsRequest.class, ListMetricsResponse.class)
@@ -1132,16 +1014,12 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricsRequest::getDataStoreId, (req, v) -> {
-                req.setDataStoreId(v);
-            }));
+            f -> f.withMarshaller(ListMetricsRequest::getDataStoreId, ListMetricsRequest::setDataStoreId));
         builder.<GetMetricsRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetMetricsRequest.class),
-            f -> f.withMarshaller(ListMetricsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListMetricsRequest::getBody, ListMetricsRequest::setBody));
 
         // response
 
@@ -1149,9 +1027,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ShowPropertyValuesRequest, ShowPropertyValuesResponse> showPropertyValues =
-        genForshowPropertyValues();
+        genForShowPropertyValues();
 
-    private static HttpRequestDef<ShowPropertyValuesRequest, ShowPropertyValuesResponse> genForshowPropertyValues() {
+    private static HttpRequestDef<ShowPropertyValuesRequest, ShowPropertyValuesResponse> genForShowPropertyValues() {
         // basic
         HttpRequestDef.Builder<ShowPropertyValuesRequest, ShowPropertyValuesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowPropertyValuesRequest.class, ShowPropertyValuesResponse.class)
@@ -1164,16 +1042,13 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPropertyValuesRequest::getDataStoreId, (req, v) -> {
-                req.setDataStoreId(v);
-            }));
+            f -> f.withMarshaller(ShowPropertyValuesRequest::getDataStoreId,
+                ShowPropertyValuesRequest::setDataStoreId));
         builder.<GetPropertyRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetPropertyRequest.class),
-            f -> f.withMarshaller(ShowPropertyValuesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowPropertyValuesRequest::getBody, ShowPropertyValuesRequest::setBody));
 
         // response
 
@@ -1181,9 +1056,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ListTagValuesRequest, ListTagValuesResponse> listTagValues =
-        genForlistTagValues();
+        genForListTagValues();
 
-    private static HttpRequestDef<ListTagValuesRequest, ListTagValuesResponse> genForlistTagValues() {
+    private static HttpRequestDef<ListTagValuesRequest, ListTagValuesResponse> genForListTagValues() {
         // basic
         HttpRequestDef.Builder<ListTagValuesRequest, ListTagValuesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagValuesRequest.class, ListTagValuesResponse.class)
@@ -1196,37 +1071,27 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagValuesRequest::getDataStoreId, (req, v) -> {
-                req.setDataStoreId(v);
-            }));
+            f -> f.withMarshaller(ListTagValuesRequest::getDataStoreId, ListTagValuesRequest::setDataStoreId));
         builder.<String>withRequestField("tag_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagValuesRequest::getTagName, (req, v) -> {
-                req.setTagName(v);
-            }));
+            f -> f.withMarshaller(ListTagValuesRequest::getTagName, ListTagValuesRequest::setTagName));
         builder.<String>withRequestField("filters",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagValuesRequest::getFilters, (req, v) -> {
-                req.setFilters(v);
-            }));
+            f -> f.withMarshaller(ListTagValuesRequest::getFilters, ListTagValuesRequest::setFilters));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagValuesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTagValuesRequest::getOffset, ListTagValuesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagValuesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTagValuesRequest::getLimit, ListTagValuesRequest::setLimit));
 
         // response
 
@@ -1234,9 +1099,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ExportDatasetRequest, ExportDatasetResponse> exportDataset =
-        genForexportDataset();
+        genForExportDataset();
 
-    private static HttpRequestDef<ExportDatasetRequest, ExportDatasetResponse> genForexportDataset() {
+    private static HttpRequestDef<ExportDatasetRequest, ExportDatasetResponse> genForExportDataset() {
         // basic
         HttpRequestDef.Builder<ExportDatasetRequest, ExportDatasetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportDatasetRequest.class, ExportDatasetResponse.class)
@@ -1249,25 +1114,21 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportDatasetRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ExportDatasetRequest::getJobId, ExportDatasetRequest::setJobId));
         builder.<String>withRequestField("run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportDatasetRequest::getRunId, (req, v) -> {
-                req.setRunId(v);
-            }));
+            f -> f.withMarshaller(ExportDatasetRequest::getRunId, ExportDatasetRequest::setRunId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportDataRequest, ImportDataResponse> importData = genForimportData();
+    public static final HttpRequestDef<ImportDataRequest, ImportDataResponse> importData = genForImportData();
 
-    private static HttpRequestDef<ImportDataRequest, ImportDataResponse> genForimportData() {
+    private static HttpRequestDef<ImportDataRequest, ImportDataResponse> genForImportData() {
         // basic
         HttpRequestDef.Builder<ImportDataRequest, ImportDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportDataRequest.class, ImportDataResponse.class)
@@ -1280,18 +1141,16 @@ public class IoTAnalyticsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportDataRequestBody.class),
-            f -> f.withMarshaller(ImportDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportDataRequest::getBody, ImportDataRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDatasetRequest, ShowDatasetResponse> showDataset = genForshowDataset();
+    public static final HttpRequestDef<ShowDatasetRequest, ShowDatasetResponse> showDataset = genForShowDataset();
 
-    private static HttpRequestDef<ShowDatasetRequest, ShowDatasetResponse> genForshowDataset() {
+    private static HttpRequestDef<ShowDatasetRequest, ShowDatasetResponse> genForShowDataset() {
         // basic
         HttpRequestDef.Builder<ShowDatasetRequest, ShowDatasetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowDatasetRequest.class, ShowDatasetResponse.class)
@@ -1304,39 +1163,31 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDatasetRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowDatasetRequest::getJobId, ShowDatasetRequest::setJobId));
         builder.<String>withRequestField("run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDatasetRequest::getRunId, (req, v) -> {
-                req.setRunId(v);
-            }));
+            f -> f.withMarshaller(ShowDatasetRequest::getRunId, ShowDatasetRequest::setRunId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDatasetRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowDatasetRequest::getOffset, ShowDatasetRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDatasetRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowDatasetRequest::getLimit, ShowDatasetRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ValidateSqlRequest, ValidateSqlResponse> validateSql = genForvalidateSql();
+    public static final HttpRequestDef<ValidateSqlRequest, ValidateSqlResponse> validateSql = genForValidateSql();
 
-    private static HttpRequestDef<ValidateSqlRequest, ValidateSqlResponse> genForvalidateSql() {
+    private static HttpRequestDef<ValidateSqlRequest, ValidateSqlResponse> genForValidateSql() {
         // basic
         HttpRequestDef.Builder<ValidateSqlRequest, ValidateSqlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ValidateSqlRequest.class, ValidateSqlResponse.class)
@@ -1349,18 +1200,16 @@ public class IoTAnalyticsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ValidateSqlRequestBody.class),
-            f -> f.withMarshaller(ValidateSqlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ValidateSqlRequest::getBody, ValidateSqlRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddDevDataRequest, AddDevDataResponse> addDevData = genForaddDevData();
+    public static final HttpRequestDef<AddDevDataRequest, AddDevDataResponse> addDevData = genForAddDevData();
 
-    private static HttpRequestDef<AddDevDataRequest, AddDevDataResponse> genForaddDevData() {
+    private static HttpRequestDef<AddDevDataRequest, AddDevDataResponse> genForAddDevData() {
         // basic
         HttpRequestDef.Builder<AddDevDataRequest, AddDevDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDevDataRequest.class, AddDevDataResponse.class)
@@ -1373,33 +1222,27 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDevDataRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(AddDevDataRequest::getDatasourceId, AddDevDataRequest::setDatasourceId));
         builder.<Object>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Object.class),
-            f -> f.withMarshaller(AddDevDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddDevDataRequest::getBody, AddDevDataRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(AddDevDataResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(AddDevDataResponse::getBody, AddDevDataResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateBatchJobRequest, CreateBatchJobResponse> createBatchJob =
-        genForcreateBatchJob();
+        genForCreateBatchJob();
 
-    private static HttpRequestDef<CreateBatchJobRequest, CreateBatchJobResponse> genForcreateBatchJob() {
+    private static HttpRequestDef<CreateBatchJobRequest, CreateBatchJobResponse> genForCreateBatchJob() {
         // basic
         HttpRequestDef.Builder<CreateBatchJobRequest, CreateBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateBatchJobRequest.class, CreateBatchJobResponse.class)
@@ -1412,9 +1255,7 @@ public class IoTAnalyticsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Job.class),
-            f -> f.withMarshaller(CreateBatchJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBatchJobRequest::getBody, CreateBatchJobRequest::setBody));
 
         // response
 
@@ -1422,9 +1263,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<DeleteBatchJobRequest, DeleteBatchJobResponse> deleteBatchJob =
-        genFordeleteBatchJob();
+        genForDeleteBatchJob();
 
-    private static HttpRequestDef<DeleteBatchJobRequest, DeleteBatchJobResponse> genFordeleteBatchJob() {
+    private static HttpRequestDef<DeleteBatchJobRequest, DeleteBatchJobResponse> genForDeleteBatchJob() {
         // basic
         HttpRequestDef.Builder<DeleteBatchJobRequest, DeleteBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBatchJobRequest.class, DeleteBatchJobResponse.class)
@@ -1437,9 +1278,7 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBatchJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteBatchJobRequest::getJobId, DeleteBatchJobRequest::setJobId));
 
         // response
 
@@ -1447,9 +1286,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ListBatchJobsRequest, ListBatchJobsResponse> listBatchJobs =
-        genForlistBatchJobs();
+        genForListBatchJobs();
 
-    private static HttpRequestDef<ListBatchJobsRequest, ListBatchJobsResponse> genForlistBatchJobs() {
+    private static HttpRequestDef<ListBatchJobsRequest, ListBatchJobsResponse> genForListBatchJobs() {
         // basic
         HttpRequestDef.Builder<ListBatchJobsRequest, ListBatchJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBatchJobsRequest.class, ListBatchJobsResponse.class)
@@ -1462,60 +1301,46 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBatchJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobsRequest::getOffset, ListBatchJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBatchJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobsRequest::getLimit, ListBatchJobsRequest::setLimit));
         builder.<Boolean>withRequestField("has_schedule",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListBatchJobsRequest::getHasSchedule, (req, v) -> {
-                req.setHasSchedule(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobsRequest::getHasSchedule, ListBatchJobsRequest::setHasSchedule));
         builder.<String>withRequestField("job_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchJobsRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobsRequest::getJobName, ListBatchJobsRequest::setJobName));
         builder.<String>withRequestField("schedule_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchJobsRequest::getScheduleStatus, (req, v) -> {
-                req.setScheduleStatus(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobsRequest::getScheduleStatus, ListBatchJobsRequest::setScheduleStatus));
         builder.<String>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchJobsRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobsRequest::getOrderBy, ListBatchJobsRequest::setOrderBy));
         builder.<String>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchJobsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobsRequest::getOrder, ListBatchJobsRequest::setOrder));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBatchJobRequest, ShowBatchJobResponse> showBatchJob = genForshowBatchJob();
+    public static final HttpRequestDef<ShowBatchJobRequest, ShowBatchJobResponse> showBatchJob = genForShowBatchJob();
 
-    private static HttpRequestDef<ShowBatchJobRequest, ShowBatchJobResponse> genForshowBatchJob() {
+    private static HttpRequestDef<ShowBatchJobRequest, ShowBatchJobResponse> genForShowBatchJob() {
         // basic
         HttpRequestDef.Builder<ShowBatchJobRequest, ShowBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBatchJobRequest.class, ShowBatchJobResponse.class)
@@ -1528,9 +1353,7 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBatchJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowBatchJobRequest::getJobId, ShowBatchJobRequest::setJobId));
 
         // response
 
@@ -1538,9 +1361,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<UpdateBatchJobRequest, UpdateBatchJobResponse> updateBatchJob =
-        genForupdateBatchJob();
+        genForUpdateBatchJob();
 
-    private static HttpRequestDef<UpdateBatchJobRequest, UpdateBatchJobResponse> genForupdateBatchJob() {
+    private static HttpRequestDef<UpdateBatchJobRequest, UpdateBatchJobResponse> genForUpdateBatchJob() {
         // basic
         HttpRequestDef.Builder<UpdateBatchJobRequest, UpdateBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateBatchJobRequest.class, UpdateBatchJobResponse.class)
@@ -1553,16 +1376,12 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBatchJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateBatchJobRequest::getJobId, UpdateBatchJobRequest::setJobId));
         builder.<Job>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Job.class),
-            f -> f.withMarshaller(UpdateBatchJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBatchJobRequest::getBody, UpdateBatchJobRequest::setBody));
 
         // response
 
@@ -1570,9 +1389,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<AddPipelineJobRequest, AddPipelineJobResponse> addPipelineJob =
-        genForaddPipelineJob();
+        genForAddPipelineJob();
 
-    private static HttpRequestDef<AddPipelineJobRequest, AddPipelineJobResponse> genForaddPipelineJob() {
+    private static HttpRequestDef<AddPipelineJobRequest, AddPipelineJobResponse> genForAddPipelineJob() {
         // basic
         HttpRequestDef.Builder<AddPipelineJobRequest, AddPipelineJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddPipelineJobRequest.class, AddPipelineJobResponse.class)
@@ -1585,16 +1404,13 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(AddPipelineJobRequest::getCheck, (req, v) -> {
-                req.setCheck(v);
-            }));
+            f -> f.withMarshaller(AddPipelineJobRequest::getCheck, AddPipelineJobRequest::setCheck));
         builder.<Map<String, Object>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(AddPipelineJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(Object.class));
+            f -> f.withMarshaller(AddPipelineJobRequest::getBody, AddPipelineJobRequest::setBody)
+                .withInnerContainerType(Object.class));
 
         // response
 
@@ -1602,9 +1418,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<DeletePipelineJobRequest, DeletePipelineJobResponse> deletePipelineJob =
-        genFordeletePipelineJob();
+        genForDeletePipelineJob();
 
-    private static HttpRequestDef<DeletePipelineJobRequest, DeletePipelineJobResponse> genFordeletePipelineJob() {
+    private static HttpRequestDef<DeletePipelineJobRequest, DeletePipelineJobResponse> genForDeletePipelineJob() {
         // basic
         HttpRequestDef.Builder<DeletePipelineJobRequest, DeletePipelineJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePipelineJobRequest.class, DeletePipelineJobResponse.class)
@@ -1617,26 +1433,22 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePipelineJobRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(DeletePipelineJobRequest::getPipelineId, DeletePipelineJobRequest::setPipelineId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeletePipelineJobResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeletePipelineJobResponse::getBody, DeletePipelineJobResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListPipelineJobsRequest, ListPipelineJobsResponse> listPipelineJobs =
-        genForlistPipelineJobs();
+        genForListPipelineJobs();
 
-    private static HttpRequestDef<ListPipelineJobsRequest, ListPipelineJobsResponse> genForlistPipelineJobs() {
+    private static HttpRequestDef<ListPipelineJobsRequest, ListPipelineJobsResponse> genForListPipelineJobs() {
         // basic
         HttpRequestDef.Builder<ListPipelineJobsRequest, ListPipelineJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPipelineJobsRequest.class, ListPipelineJobsResponse.class)
@@ -1649,58 +1461,44 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineJobsRequest::getDataStoreId, (req, v) -> {
-                req.setDataStoreId(v);
-            }));
+            f -> f.withMarshaller(ListPipelineJobsRequest::getDataStoreId, ListPipelineJobsRequest::setDataStoreId));
         builder.<String>withRequestField("data_store_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineJobsRequest::getDataStoreGroupId, (req, v) -> {
-                req.setDataStoreGroupId(v);
-            }));
+            f -> f.withMarshaller(ListPipelineJobsRequest::getDataStoreGroupId,
+                ListPipelineJobsRequest::setDataStoreGroupId));
         builder.<String>withRequestField("data_source_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineJobsRequest::getDataSourceId, (req, v) -> {
-                req.setDataSourceId(v);
-            }));
+            f -> f.withMarshaller(ListPipelineJobsRequest::getDataSourceId, ListPipelineJobsRequest::setDataSourceId));
         builder.<String>withRequestField("pipeline_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineJobsRequest::getPipelineName, (req, v) -> {
-                req.setPipelineName(v);
-            }));
+            f -> f.withMarshaller(ListPipelineJobsRequest::getPipelineName, ListPipelineJobsRequest::setPipelineName));
         builder.<String>withRequestField("operator_class_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineJobsRequest::getOperatorClassName, (req, v) -> {
-                req.setOperatorClassName(v);
-            }));
+            f -> f.withMarshaller(ListPipelineJobsRequest::getOperatorClassName,
+                ListPipelineJobsRequest::setOperatorClassName));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPipelineJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPipelineJobsRequest::getOffset, ListPipelineJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPipelineJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPipelineJobsRequest::getLimit, ListPipelineJobsRequest::setLimit));
         builder.<Boolean>withRequestField("sync_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPipelineJobsRequest::getSyncStatus, (req, v) -> {
-                req.setSyncStatus(v);
-            }));
+            f -> f.withMarshaller(ListPipelineJobsRequest::getSyncStatus, ListPipelineJobsRequest::setSyncStatus));
 
         // response
 
@@ -1708,9 +1506,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ShowPipelineJobRequest, ShowPipelineJobResponse> showPipelineJob =
-        genForshowPipelineJob();
+        genForShowPipelineJob();
 
-    private static HttpRequestDef<ShowPipelineJobRequest, ShowPipelineJobResponse> genForshowPipelineJob() {
+    private static HttpRequestDef<ShowPipelineJobRequest, ShowPipelineJobResponse> genForShowPipelineJob() {
         // basic
         HttpRequestDef.Builder<ShowPipelineJobRequest, ShowPipelineJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPipelineJobRequest.class, ShowPipelineJobResponse.class)
@@ -1723,9 +1521,7 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineJobRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(ShowPipelineJobRequest::getPipelineId, ShowPipelineJobRequest::setPipelineId));
 
         // response
 
@@ -1733,9 +1529,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<StartPipelineJobRequest, StartPipelineJobResponse> startPipelineJob =
-        genForstartPipelineJob();
+        genForStartPipelineJob();
 
-    private static HttpRequestDef<StartPipelineJobRequest, StartPipelineJobResponse> genForstartPipelineJob() {
+    private static HttpRequestDef<StartPipelineJobRequest, StartPipelineJobResponse> genForStartPipelineJob() {
         // basic
         HttpRequestDef.Builder<StartPipelineJobRequest, StartPipelineJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartPipelineJobRequest.class, StartPipelineJobResponse.class)
@@ -1748,30 +1544,23 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartPipelineJobRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(StartPipelineJobRequest::getPipelineId, StartPipelineJobRequest::setPipelineId));
         builder.<Integer>withRequestField("parallel",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(StartPipelineJobRequest::getParallel, (req, v) -> {
-                req.setParallel(v);
-            }));
+            f -> f.withMarshaller(StartPipelineJobRequest::getParallel, StartPipelineJobRequest::setParallel));
         builder.<Integer>withRequestField("rtu",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(StartPipelineJobRequest::getRtu, (req, v) -> {
-                req.setRtu(v);
-            }));
+            f -> f.withMarshaller(StartPipelineJobRequest::getRtu, StartPipelineJobRequest::setRtu));
         builder.<Boolean>withRequestField("resume_savepoint",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(StartPipelineJobRequest::getResumeSavepoint, (req, v) -> {
-                req.setResumeSavepoint(v);
-            }));
+            f -> f.withMarshaller(StartPipelineJobRequest::getResumeSavepoint,
+                StartPipelineJobRequest::setResumeSavepoint));
 
         // response
 
@@ -1779,9 +1568,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<StopPipelineJobRequest, StopPipelineJobResponse> stopPipelineJob =
-        genForstopPipelineJob();
+        genForStopPipelineJob();
 
-    private static HttpRequestDef<StopPipelineJobRequest, StopPipelineJobResponse> genForstopPipelineJob() {
+    private static HttpRequestDef<StopPipelineJobRequest, StopPipelineJobResponse> genForStopPipelineJob() {
         // basic
         HttpRequestDef.Builder<StopPipelineJobRequest, StopPipelineJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopPipelineJobRequest.class, StopPipelineJobResponse.class)
@@ -1794,16 +1583,13 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopPipelineJobRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(StopPipelineJobRequest::getPipelineId, StopPipelineJobRequest::setPipelineId));
         builder.<Boolean>withRequestField("trigger_savepoint",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(StopPipelineJobRequest::getTriggerSavepoint, (req, v) -> {
-                req.setTriggerSavepoint(v);
-            }));
+            f -> f.withMarshaller(StopPipelineJobRequest::getTriggerSavepoint,
+                StopPipelineJobRequest::setTriggerSavepoint));
 
         // response
 
@@ -1811,9 +1597,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<UpdatePipelineJobRequest, UpdatePipelineJobResponse> updatePipelineJob =
-        genForupdatePipelineJob();
+        genForUpdatePipelineJob();
 
-    private static HttpRequestDef<UpdatePipelineJobRequest, UpdatePipelineJobResponse> genForupdatePipelineJob() {
+    private static HttpRequestDef<UpdatePipelineJobRequest, UpdatePipelineJobResponse> genForUpdatePipelineJob() {
         // basic
         HttpRequestDef.Builder<UpdatePipelineJobRequest, UpdatePipelineJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePipelineJobRequest.class, UpdatePipelineJobResponse.class)
@@ -1826,23 +1612,18 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePipelineJobRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            }));
+            f -> f.withMarshaller(UpdatePipelineJobRequest::getPipelineId, UpdatePipelineJobRequest::setPipelineId));
         builder.<Boolean>withRequestField("check",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(UpdatePipelineJobRequest::getCheck, (req, v) -> {
-                req.setCheck(v);
-            }));
+            f -> f.withMarshaller(UpdatePipelineJobRequest::getCheck, UpdatePipelineJobRequest::setCheck));
         builder.<Map<String, Object>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(UpdatePipelineJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(Object.class));
+            f -> f.withMarshaller(UpdatePipelineJobRequest::getBody, UpdatePipelineJobRequest::setBody)
+                .withInnerContainerType(Object.class));
 
         // response
 
@@ -1850,9 +1631,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<CreateStreamingJobRequest, CreateStreamingJobResponse> createStreamingJob =
-        genForcreateStreamingJob();
+        genForCreateStreamingJob();
 
-    private static HttpRequestDef<CreateStreamingJobRequest, CreateStreamingJobResponse> genForcreateStreamingJob() {
+    private static HttpRequestDef<CreateStreamingJobRequest, CreateStreamingJobResponse> genForCreateStreamingJob() {
         // basic
         HttpRequestDef.Builder<CreateStreamingJobRequest, CreateStreamingJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStreamingJobRequest.class, CreateStreamingJobResponse.class)
@@ -1865,16 +1646,13 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(CreateStreamingJobRequest::getCheck, (req, v) -> {
-                req.setCheck(v);
-            }));
+            f -> f.withMarshaller(CreateStreamingJobRequest::getCheck, CreateStreamingJobRequest::setCheck));
         builder.<Map<String, Object>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(CreateStreamingJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(Object.class));
+            f -> f.withMarshaller(CreateStreamingJobRequest::getBody, CreateStreamingJobRequest::setBody)
+                .withInnerContainerType(Object.class));
 
         // response
 
@@ -1882,9 +1660,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<DeleteStreamingJobByIdRequest, DeleteStreamingJobByIdResponse> deleteStreamingJobById =
-        genFordeleteStreamingJobById();
+        genForDeleteStreamingJobById();
 
-    private static HttpRequestDef<DeleteStreamingJobByIdRequest, DeleteStreamingJobByIdResponse> genFordeleteStreamingJobById() {
+    private static HttpRequestDef<DeleteStreamingJobByIdRequest, DeleteStreamingJobByIdResponse> genForDeleteStreamingJobById() {
         // basic
         HttpRequestDef.Builder<DeleteStreamingJobByIdRequest, DeleteStreamingJobByIdResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteStreamingJobByIdRequest.class, DeleteStreamingJobByIdResponse.class)
@@ -1897,25 +1675,21 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStreamingJobByIdRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteStreamingJobByIdRequest::getJobId, DeleteStreamingJobByIdRequest::setJobId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteStreamingJobByIdResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteStreamingJobByIdResponse::getBody, DeleteStreamingJobByIdResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobByIdRequest, ShowJobByIdResponse> showJobById = genForshowJobById();
+    public static final HttpRequestDef<ShowJobByIdRequest, ShowJobByIdResponse> showJobById = genForShowJobById();
 
-    private static HttpRequestDef<ShowJobByIdRequest, ShowJobByIdResponse> genForshowJobById() {
+    private static HttpRequestDef<ShowJobByIdRequest, ShowJobByIdResponse> genForShowJobById() {
         // basic
         HttpRequestDef.Builder<ShowJobByIdRequest, ShowJobByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobByIdRequest.class, ShowJobByIdResponse.class)
@@ -1928,18 +1702,16 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobByIdRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobByIdRequest::getJobId, ShowJobByIdRequest::setJobId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobsRequest, ShowJobsResponse> showJobs = genForshowJobs();
+    public static final HttpRequestDef<ShowJobsRequest, ShowJobsResponse> showJobs = genForShowJobs();
 
-    private static HttpRequestDef<ShowJobsRequest, ShowJobsResponse> genForshowJobs() {
+    private static HttpRequestDef<ShowJobsRequest, ShowJobsResponse> genForShowJobs() {
         // basic
         HttpRequestDef.Builder<ShowJobsRequest, ShowJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobsRequest.class, ShowJobsResponse.class)
@@ -1952,30 +1724,22 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowJobsRequest.JobInputTypeEnum.class),
-            f -> f.withMarshaller(ShowJobsRequest::getJobInputType, (req, v) -> {
-                req.setJobInputType(v);
-            }));
+            f -> f.withMarshaller(ShowJobsRequest::getJobInputType, ShowJobsRequest::setJobInputType));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowJobsRequest::getOffset, ShowJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowJobsRequest::getLimit, ShowJobsRequest::setLimit));
         builder.<Boolean>withRequestField("sync_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowJobsRequest::getSyncStatus, (req, v) -> {
-                req.setSyncStatus(v);
-            }));
+            f -> f.withMarshaller(ShowJobsRequest::getSyncStatus, ShowJobsRequest::setSyncStatus));
 
         // response
 
@@ -1983,9 +1747,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<UpdateStreamingJobRequest, UpdateStreamingJobResponse> updateStreamingJob =
-        genForupdateStreamingJob();
+        genForUpdateStreamingJob();
 
-    private static HttpRequestDef<UpdateStreamingJobRequest, UpdateStreamingJobResponse> genForupdateStreamingJob() {
+    private static HttpRequestDef<UpdateStreamingJobRequest, UpdateStreamingJobResponse> genForUpdateStreamingJob() {
         // basic
         HttpRequestDef.Builder<UpdateStreamingJobRequest, UpdateStreamingJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateStreamingJobRequest.class, UpdateStreamingJobResponse.class)
@@ -1998,32 +1762,27 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStreamingJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateStreamingJobRequest::getJobId, UpdateStreamingJobRequest::setJobId));
         builder.<Boolean>withRequestField("check",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(UpdateStreamingJobRequest::getCheck, (req, v) -> {
-                req.setCheck(v);
-            }));
+            f -> f.withMarshaller(UpdateStreamingJobRequest::getCheck, UpdateStreamingJobRequest::setCheck));
         builder.<Map<String, Object>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(UpdateStreamingJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(Object.class));
+            f -> f.withMarshaller(UpdateStreamingJobRequest::getBody, UpdateStreamingJobRequest::setBody)
+                .withInnerContainerType(Object.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartJobRequest, StartJobResponse> startJob = genForstartJob();
+    public static final HttpRequestDef<StartJobRequest, StartJobResponse> startJob = genForStartJob();
 
-    private static HttpRequestDef<StartJobRequest, StartJobResponse> genForstartJob() {
+    private static HttpRequestDef<StartJobRequest, StartJobResponse> genForStartJob() {
         // basic
         HttpRequestDef.Builder<StartJobRequest, StartJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartJobRequest.class, StartJobResponse.class)
@@ -2036,39 +1795,31 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(StartJobRequest::getJobId, StartJobRequest::setJobId));
         builder.<Integer>withRequestField("parallel",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(StartJobRequest::getParallel, (req, v) -> {
-                req.setParallel(v);
-            }));
+            f -> f.withMarshaller(StartJobRequest::getParallel, StartJobRequest::setParallel));
         builder.<Integer>withRequestField("rtu",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(StartJobRequest::getRtu, (req, v) -> {
-                req.setRtu(v);
-            }));
+            f -> f.withMarshaller(StartJobRequest::getRtu, StartJobRequest::setRtu));
         builder.<Boolean>withRequestField("resume_savepoint",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(StartJobRequest::getResumeSavepoint, (req, v) -> {
-                req.setResumeSavepoint(v);
-            }));
+            f -> f.withMarshaller(StartJobRequest::getResumeSavepoint, StartJobRequest::setResumeSavepoint));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopJobRequest, StopJobResponse> stopJob = genForstopJob();
+    public static final HttpRequestDef<StopJobRequest, StopJobResponse> stopJob = genForStopJob();
 
-    private static HttpRequestDef<StopJobRequest, StopJobResponse> genForstopJob() {
+    private static HttpRequestDef<StopJobRequest, StopJobResponse> genForStopJob() {
         // basic
         HttpRequestDef.Builder<StopJobRequest, StopJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopJobRequest.class, StopJobResponse.class)
@@ -2081,25 +1832,21 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(StopJobRequest::getJobId, StopJobRequest::setJobId));
         builder.<Boolean>withRequestField("trigger_savepoint",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(StopJobRequest::getTriggerSavepoint, (req, v) -> {
-                req.setTriggerSavepoint(v);
-            }));
+            f -> f.withMarshaller(StopJobRequest::getTriggerSavepoint, StopJobRequest::setTriggerSavepoint));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRunRequest, CreateRunResponse> createRun = genForcreateRun();
+    public static final HttpRequestDef<CreateRunRequest, CreateRunResponse> createRun = genForCreateRun();
 
-    private static HttpRequestDef<CreateRunRequest, CreateRunResponse> genForcreateRun() {
+    private static HttpRequestDef<CreateRunRequest, CreateRunResponse> genForCreateRun() {
         // basic
         HttpRequestDef.Builder<CreateRunRequest, CreateRunResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRunRequest.class, CreateRunResponse.class)
@@ -2112,25 +1859,21 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRunRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(CreateRunRequest::getJobId, CreateRunRequest::setJobId));
         builder.<CreateRunRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRunRequestBody.class),
-            f -> f.withMarshaller(CreateRunRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRunRequest::getBody, CreateRunRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRunRequest, DeleteRunResponse> deleteRun = genFordeleteRun();
+    public static final HttpRequestDef<DeleteRunRequest, DeleteRunResponse> deleteRun = genForDeleteRun();
 
-    private static HttpRequestDef<DeleteRunRequest, DeleteRunResponse> genFordeleteRun() {
+    private static HttpRequestDef<DeleteRunRequest, DeleteRunResponse> genForDeleteRun() {
         // basic
         HttpRequestDef.Builder<DeleteRunRequest, DeleteRunResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRunRequest.class, DeleteRunResponse.class)
@@ -2143,25 +1886,21 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRunRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteRunRequest::getJobId, DeleteRunRequest::setJobId));
         builder.<String>withRequestField("run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRunRequest::getRunId, (req, v) -> {
-                req.setRunId(v);
-            }));
+            f -> f.withMarshaller(DeleteRunRequest::getRunId, DeleteRunRequest::setRunId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRunsRequest, ListRunsResponse> listRuns = genForlistRuns();
+    public static final HttpRequestDef<ListRunsRequest, ListRunsResponse> listRuns = genForListRuns();
 
-    private static HttpRequestDef<ListRunsRequest, ListRunsResponse> genForlistRuns() {
+    private static HttpRequestDef<ListRunsRequest, ListRunsResponse> genForListRuns() {
         // basic
         HttpRequestDef.Builder<ListRunsRequest, ListRunsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRunsRequest.class, ListRunsResponse.class)
@@ -2174,88 +1913,66 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRunsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getOffset, ListRunsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRunsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getLimit, ListRunsRequest::setLimit));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRunsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getStartTime, ListRunsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRunsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getEndTime, ListRunsRequest::setEndTime));
         builder.<String>withRequestField("sql_pattern",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRunsRequest::getSqlPattern, (req, v) -> {
-                req.setSqlPattern(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getSqlPattern, ListRunsRequest::setSqlPattern));
         builder.<String>withRequestField("sql_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRunsRequest::getSqlType, (req, v) -> {
-                req.setSqlType(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getSqlType, ListRunsRequest::setSqlType));
         builder.<String>withRequestField("job_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRunsRequest::getJobType, (req, v) -> {
-                req.setJobType(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getJobType, ListRunsRequest::setJobType));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRunsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getStatus, ListRunsRequest::setStatus));
         builder.<String>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRunsRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getOrderBy, ListRunsRequest::setOrderBy));
         builder.<ListRunsRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRunsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ListRunsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getOrder, ListRunsRequest::setOrder));
         builder.<String>withRequestField("job_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRunsRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ListRunsRequest::getJobName, ListRunsRequest::setJobName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRunRequest, ShowRunResponse> showRun = genForshowRun();
+    public static final HttpRequestDef<ShowRunRequest, ShowRunResponse> showRun = genForShowRun();
 
-    private static HttpRequestDef<ShowRunRequest, ShowRunResponse> genForshowRun() {
+    private static HttpRequestDef<ShowRunRequest, ShowRunResponse> genForShowRun() {
         // basic
         HttpRequestDef.Builder<ShowRunRequest, ShowRunResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRunRequest.class, ShowRunResponse.class)
@@ -2268,32 +1985,26 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRunRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowRunRequest::getJobId, ShowRunRequest::setJobId));
         builder.<String>withRequestField("run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRunRequest::getRunId, (req, v) -> {
-                req.setRunId(v);
-            }));
+            f -> f.withMarshaller(ShowRunRequest::getRunId, ShowRunRequest::setRunId));
         builder.<Boolean>withRequestField("with_details",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowRunRequest::getWithDetails, (req, v) -> {
-                req.setWithDetails(v);
-            }));
+            f -> f.withMarshaller(ShowRunRequest::getWithDetails, ShowRunRequest::setWithDetails));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTableRequest, CreateTableResponse> createTable = genForcreateTable();
+    public static final HttpRequestDef<CreateTableRequest, CreateTableResponse> createTable = genForCreateTable();
 
-    private static HttpRequestDef<CreateTableRequest, CreateTableResponse> genForcreateTable() {
+    private static HttpRequestDef<CreateTableRequest, CreateTableResponse> genForCreateTable() {
         // basic
         HttpRequestDef.Builder<CreateTableRequest, CreateTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTableRequest.class, CreateTableResponse.class)
@@ -2306,18 +2017,16 @@ public class IoTAnalyticsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTableRequestBody.class),
-            f -> f.withMarshaller(CreateTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTableRequest::getBody, CreateTableRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTableRequest, DeleteTableResponse> deleteTable = genFordeleteTable();
+    public static final HttpRequestDef<DeleteTableRequest, DeleteTableResponse> deleteTable = genForDeleteTable();
 
-    private static HttpRequestDef<DeleteTableRequest, DeleteTableResponse> genFordeleteTable() {
+    private static HttpRequestDef<DeleteTableRequest, DeleteTableResponse> genForDeleteTable() {
         // basic
         HttpRequestDef.Builder<DeleteTableRequest, DeleteTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTableRequest.class, DeleteTableResponse.class)
@@ -2330,18 +2039,16 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableRequest::getTableId, (req, v) -> {
-                req.setTableId(v);
-            }));
+            f -> f.withMarshaller(DeleteTableRequest::getTableId, DeleteTableRequest::setTableId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTablesRequest, ListTablesResponse> listTables = genForlistTables();
+    public static final HttpRequestDef<ListTablesRequest, ListTablesResponse> listTables = genForListTables();
 
-    private static HttpRequestDef<ListTablesRequest, ListTablesResponse> genForlistTables() {
+    private static HttpRequestDef<ListTablesRequest, ListTablesResponse> genForListTables() {
         // basic
         HttpRequestDef.Builder<ListTablesRequest, ListTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTablesRequest.class, ListTablesResponse.class)
@@ -2354,44 +2061,32 @@ public class IoTAnalyticsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getKeyword, (req, v) -> {
-                req.setKeyword(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getKeyword, ListTablesRequest::setKeyword));
         builder.<String>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getTag, (req, v) -> {
-                req.setTag(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getTag, ListTablesRequest::setTag));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTablesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getOffset, ListTablesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTablesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getLimit, ListTablesRequest::setLimit));
         builder.<String>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getOrderBy, ListTablesRequest::setOrderBy));
         builder.<String>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTablesRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ListTablesRequest::getOrder, ListTablesRequest::setOrder));
 
         // response
 
@@ -2399,9 +2094,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ShowTablePreviewRequest, ShowTablePreviewResponse> showTablePreview =
-        genForshowTablePreview();
+        genForShowTablePreview();
 
-    private static HttpRequestDef<ShowTablePreviewRequest, ShowTablePreviewResponse> genForshowTablePreview() {
+    private static HttpRequestDef<ShowTablePreviewRequest, ShowTablePreviewResponse> genForShowTablePreview() {
         // basic
         HttpRequestDef.Builder<ShowTablePreviewRequest, ShowTablePreviewResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTablePreviewRequest.class, ShowTablePreviewResponse.class)
@@ -2414,9 +2109,7 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTablePreviewRequest::getTableId, (req, v) -> {
-                req.setTableId(v);
-            }));
+            f -> f.withMarshaller(ShowTablePreviewRequest::getTableId, ShowTablePreviewRequest::setTableId));
 
         // response
 
@@ -2424,9 +2117,9 @@ public class IoTAnalyticsMeta {
     }
 
     public static final HttpRequestDef<ShowTableSchemaRequest, ShowTableSchemaResponse> showTableSchema =
-        genForshowTableSchema();
+        genForShowTableSchema();
 
-    private static HttpRequestDef<ShowTableSchemaRequest, ShowTableSchemaResponse> genForshowTableSchema() {
+    private static HttpRequestDef<ShowTableSchemaRequest, ShowTableSchemaResponse> genForShowTableSchema() {
         // basic
         HttpRequestDef.Builder<ShowTableSchemaRequest, ShowTableSchemaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTableSchemaRequest.class, ShowTableSchemaResponse.class)
@@ -2439,9 +2132,7 @@ public class IoTAnalyticsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTableSchemaRequest::getTableId, (req, v) -> {
-                req.setTableId(v);
-            }));
+            f -> f.withMarshaller(ShowTableSchemaRequest::getTableId, ShowTableSchemaRequest::setTableId));
 
         // response
 

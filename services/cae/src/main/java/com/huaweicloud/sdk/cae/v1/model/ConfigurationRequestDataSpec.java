@@ -79,7 +79,7 @@ public class ConfigurationRequestDataSpec {
     private List<AccessConfigurationDataItems> items = null;
 
     /**
-     * 伸缩策略配置策略类型。  type为\"scaling\"时，配置此参数。 
+     * 伸缩策略配置策略类型。  ConfigurationItem.type为\"scaling\"时，配置此参数。 
      */
     public static final class ScaleStrategyEnum {
 
@@ -240,7 +240,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * RDS数据库实例ID。  type为\"rds\"时，配置此参数。 
+     * RDS数据库实例ID。  ConfigurationItem.type为\"rds\"时，配置此参数。 
      * @return rdsId
      */
     public String getRdsId() {
@@ -257,7 +257,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * RDS数据库名称。  type为\"rds\"时，配置此参数。 
+     * RDS数据库名称。  ConfigurationItem.type为\"rds\"时，配置此参数。 
      * @return rdsDbName
      */
     public String getRdsDbName() {
@@ -274,7 +274,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * RDS数据库地址。  type为\"rds\"时，配置此参数。 
+     * RDS数据库地址。  ConfigurationItem.type为\"rds\"时，配置此参数。 
      * @return rdsAddress
      */
     public String getRdsAddress() {
@@ -291,7 +291,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * RDS数据库用户名称。  type为\"rds\"时，配置此参数。 
+     * RDS数据库用户名称。  ConfigurationItem.type为\"rds\"时，配置此参数。 
      * @return rdsUsername
      */
     public String getRdsUsername() {
@@ -308,7 +308,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * RDS数据库密码。  type为\"rds\"时，配置此参数。 
+     * RDS数据库密码。  ConfigurationItem.type为\"rds\"时，配置此参数。 
      * @return rdsPassword
      */
     public String getRdsPassword() {
@@ -325,7 +325,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * RDS数据库端口。  type为\"rds\"时，配置此参数。 
+     * RDS数据库端口。  ConfigurationItem.type为\"rds\"时，配置此参数。 
      * @return rdsPort
      */
     public String getRdsPort() {
@@ -342,7 +342,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * CSE配置中心地址。  type为\"cse\"时，配置此参数。 
+     * CSE配置中心地址。  ConfigurationItem.type为\"cse\"时，配置此参数。 
      * @return configCenterAddr
      */
     public String getConfigCenterAddr() {
@@ -359,7 +359,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * CSE服务注册发现地址。  type为\"cse\"时，配置此参数。 
+     * CSE服务注册发现地址。  ConfigurationItem.type为\"cse\"时，配置此参数。 
      * @return serviceCenterAddr
      */
     public String getServiceCenterAddr() {
@@ -376,7 +376,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * CSE引擎ID。  type为\"cse\"时，配置此参数。 
+     * CSE引擎ID。  ConfigurationItem.type为\"cse\"时，配置此参数。 
      * @return cseId
      */
     public String getCseId() {
@@ -459,7 +459,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 访问方式配置列表。  type为\"access\"时，配置此参数。 
+     * 访问方式配置列表。  ConfigurationItem.type为\"access\"时，配置此参数。 
      * @return items
      */
     public List<AccessConfigurationDataItems> getItems() {
@@ -476,7 +476,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 伸缩策略配置策略类型。  type为\"scaling\"时，配置此参数。 
+     * 伸缩策略配置策略类型。  ConfigurationItem.type为\"scaling\"时，配置此参数。 
      * @return scaleStrategy
      */
     public ScaleStrategyEnum getScaleStrategy() {
@@ -493,7 +493,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 伸缩策略配置最大伸缩个数。  type为\"scaling\"时，配置此参数。 
+     * 伸缩策略配置最大伸缩个数。  ConfigurationItem.type为\"scaling\"时，配置此参数。 
      * @return maxReplicaCount
      */
     public Integer getMaxReplicaCount() {
@@ -510,7 +510,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 伸缩策略配置最小伸缩个数。  type为\"scaling\"时，配置此参数。 
+     * 伸缩策略配置最小伸缩个数。  ConfigurationItem.type为\"scaling\"时，配置此参数。 
      * @return minReplicaCount
      */
     public Integer getMinReplicaCount() {
@@ -569,7 +569,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 伸缩策略配置触发器列表。  type为\"scaling\"时，配置此参数。 
+     * 伸缩策略配置触发器列表。  ConfigurationItem.type为\"scaling\"时，配置此参数。 
      * @return triggers
      */
     public List<ScaleConfigurationDataTrigger> getTriggers() {
@@ -602,7 +602,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 云存储配置列表。  type为\"volume\"时，配置此参数。 
+     * 云存储配置列表。  ConfigurationItem.type为\"volume\"时，配置此参数。 
      * @return volumes
      */
     public List<VolumeConfigurationDataVolume> getVolumes() {
@@ -768,7 +768,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 自定义日志路径数组。  type为\"log\"时，配置此参数。 
+     * 自定义日志路径数组。  ConfigurationItem.type为\"log\"时，配置此参数。 
      * @return logPaths
      */
     public List<String> getLogPaths() {
@@ -785,7 +785,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 探针注入方式。  type为\"apm2\"时，配置此参数。 
+     * 探针注入方式。  ConfigurationItem.type为\"apm2\"时，配置此参数。 
      * @return instrumentation
      */
     public String getInstrumentation() {
@@ -802,7 +802,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 自定义监控指标配置采集路径。  type为\"customMetric\"时，配置此参数。 
+     * 自定义监控指标配置采集路径。  ConfigurationItem.type为\"customMetric\"时，配置此参数。 
      * @return path
      */
     public String getPath() {
@@ -819,7 +819,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 自定义监控指标配置采集端口。  type为\"customMetric\"时，配置此参数。 
+     * 自定义监控指标配置采集端口。  ConfigurationItem.type为\"customMetric\"时，配置此参数。 
      * @return port
      */
     public String getPort() {
@@ -852,7 +852,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 自定义监控指标配置指标名称。  type为\"customMetric\"时，配置此参数。 
+     * 自定义监控指标配置指标名称。  ConfigurationItem.type为\"customMetric\"时，配置此参数。 
      * @return metrics
      */
     public List<String> getMetrics() {

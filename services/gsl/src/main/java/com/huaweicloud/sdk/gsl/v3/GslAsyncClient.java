@@ -92,7 +92,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSetAttributesRequest 请求对象
+     * @param request BatchSetAttributesRequest 请求对象
      * @return CompletableFuture<BatchSetAttributesResponse>
      */
     public CompletableFuture<BatchSetAttributesResponse> batchSetAttributesAsync(BatchSetAttributesRequest request) {
@@ -106,13 +106,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSetAttributesRequest 请求对象
+     * @param request BatchSetAttributesRequest 请求对象
      * @return AsyncInvoker<BatchSetAttributesRequest, BatchSetAttributesResponse>
      */
     public AsyncInvoker<BatchSetAttributesRequest, BatchSetAttributesResponse> batchSetAttributesAsyncInvoker(
         BatchSetAttributesRequest request) {
-        return new AsyncInvoker<BatchSetAttributesRequest, BatchSetAttributesResponse>(request,
-            GslMeta.batchSetAttributes, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.batchSetAttributes, hcClient);
     }
 
     /**
@@ -122,7 +121,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAttributeRequest 请求对象
+     * @param request CreateAttributeRequest 请求对象
      * @return CompletableFuture<CreateAttributeResponse>
      */
     public CompletableFuture<CreateAttributeResponse> createAttributeAsync(CreateAttributeRequest request) {
@@ -136,13 +135,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAttributeRequest 请求对象
+     * @param request CreateAttributeRequest 请求对象
      * @return AsyncInvoker<CreateAttributeRequest, CreateAttributeResponse>
      */
     public AsyncInvoker<CreateAttributeRequest, CreateAttributeResponse> createAttributeAsyncInvoker(
         CreateAttributeRequest request) {
-        return new AsyncInvoker<CreateAttributeRequest, CreateAttributeResponse>(request, GslMeta.createAttribute,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.createAttribute, hcClient);
     }
 
     /**
@@ -152,7 +150,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableAttributeRequest 请求对象
+     * @param request DisableAttributeRequest 请求对象
      * @return CompletableFuture<DisableAttributeResponse>
      */
     public CompletableFuture<DisableAttributeResponse> disableAttributeAsync(DisableAttributeRequest request) {
@@ -166,13 +164,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableAttributeRequest 请求对象
+     * @param request DisableAttributeRequest 请求对象
      * @return AsyncInvoker<DisableAttributeRequest, DisableAttributeResponse>
      */
     public AsyncInvoker<DisableAttributeRequest, DisableAttributeResponse> disableAttributeAsyncInvoker(
         DisableAttributeRequest request) {
-        return new AsyncInvoker<DisableAttributeRequest, DisableAttributeResponse>(request, GslMeta.disableAttribute,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.disableAttribute, hcClient);
     }
 
     /**
@@ -182,7 +179,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableAttributeRequest 请求对象
+     * @param request EnableAttributeRequest 请求对象
      * @return CompletableFuture<EnableAttributeResponse>
      */
     public CompletableFuture<EnableAttributeResponse> enableAttributeAsync(EnableAttributeRequest request) {
@@ -196,13 +193,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableAttributeRequest 请求对象
+     * @param request EnableAttributeRequest 请求对象
      * @return AsyncInvoker<EnableAttributeRequest, EnableAttributeResponse>
      */
     public AsyncInvoker<EnableAttributeRequest, EnableAttributeResponse> enableAttributeAsyncInvoker(
         EnableAttributeRequest request) {
-        return new AsyncInvoker<EnableAttributeRequest, EnableAttributeResponse>(request, GslMeta.enableAttribute,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.enableAttribute, hcClient);
     }
 
     /**
@@ -212,7 +208,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttributesRequest 请求对象
+     * @param request ListAttributesRequest 请求对象
      * @return CompletableFuture<ListAttributesResponse>
      */
     public CompletableFuture<ListAttributesResponse> listAttributesAsync(ListAttributesRequest request) {
@@ -226,13 +222,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttributesRequest 请求对象
+     * @param request ListAttributesRequest 请求对象
      * @return AsyncInvoker<ListAttributesRequest, ListAttributesResponse>
      */
     public AsyncInvoker<ListAttributesRequest, ListAttributesResponse> listAttributesAsyncInvoker(
         ListAttributesRequest request) {
-        return new AsyncInvoker<ListAttributesRequest, ListAttributesResponse>(request, GslMeta.listAttributes,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listAttributes, hcClient);
     }
 
     /**
@@ -242,7 +237,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAttributeRequest 请求对象
+     * @param request UpdateAttributeRequest 请求对象
      * @return CompletableFuture<UpdateAttributeResponse>
      */
     public CompletableFuture<UpdateAttributeResponse> updateAttributeAsync(UpdateAttributeRequest request) {
@@ -256,13 +251,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAttributeRequest 请求对象
+     * @param request UpdateAttributeRequest 请求对象
      * @return AsyncInvoker<UpdateAttributeRequest, UpdateAttributeResponse>
      */
     public AsyncInvoker<UpdateAttributeRequest, UpdateAttributeResponse> updateAttributeAsyncInvoker(
         UpdateAttributeRequest request) {
-        return new AsyncInvoker<UpdateAttributeRequest, UpdateAttributeResponse>(request, GslMeta.updateAttribute,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.updateAttribute, hcClient);
     }
 
     /**
@@ -272,7 +266,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackPoolMembersRequest 请求对象
+     * @param request ListBackPoolMembersRequest 请求对象
      * @return CompletableFuture<ListBackPoolMembersResponse>
      */
     public CompletableFuture<ListBackPoolMembersResponse> listBackPoolMembersAsync(ListBackPoolMembersRequest request) {
@@ -286,13 +280,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackPoolMembersRequest 请求对象
+     * @param request ListBackPoolMembersRequest 请求对象
      * @return AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>
      */
     public AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse> listBackPoolMembersAsyncInvoker(
         ListBackPoolMembersRequest request) {
-        return new AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>(request,
-            GslMeta.listBackPoolMembers, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listBackPoolMembers, hcClient);
     }
 
     /**
@@ -302,7 +295,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackPoolsRequest 请求对象
+     * @param request ListBackPoolsRequest 请求对象
      * @return CompletableFuture<ListBackPoolsResponse>
      */
     public CompletableFuture<ListBackPoolsResponse> listBackPoolsAsync(ListBackPoolsRequest request) {
@@ -316,12 +309,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackPoolsRequest 请求对象
+     * @param request ListBackPoolsRequest 请求对象
      * @return AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>
      */
     public AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse> listBackPoolsAsyncInvoker(
         ListBackPoolsRequest request) {
-        return new AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>(request, GslMeta.listBackPools, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listBackPools, hcClient);
     }
 
     /**
@@ -331,7 +324,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProPricePlansRequest 请求对象
+     * @param request ListProPricePlansRequest 请求对象
      * @return CompletableFuture<ListProPricePlansResponse>
      */
     public CompletableFuture<ListProPricePlansResponse> listProPricePlansAsync(ListProPricePlansRequest request) {
@@ -345,13 +338,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProPricePlansRequest 请求对象
+     * @param request ListProPricePlansRequest 请求对象
      * @return AsyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse>
      */
     public AsyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse> listProPricePlansAsyncInvoker(
         ListProPricePlansRequest request) {
-        return new AsyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse>(request, GslMeta.listProPricePlans,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listProPricePlans, hcClient);
     }
 
     /**
@@ -361,7 +353,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRealNameRequest 请求对象
+     * @param request DeleteRealNameRequest 请求对象
      * @return CompletableFuture<DeleteRealNameResponse>
      */
     public CompletableFuture<DeleteRealNameResponse> deleteRealNameAsync(DeleteRealNameRequest request) {
@@ -375,13 +367,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRealNameRequest 请求对象
+     * @param request DeleteRealNameRequest 请求对象
      * @return AsyncInvoker<DeleteRealNameRequest, DeleteRealNameResponse>
      */
     public AsyncInvoker<DeleteRealNameRequest, DeleteRealNameResponse> deleteRealNameAsyncInvoker(
         DeleteRealNameRequest request) {
-        return new AsyncInvoker<DeleteRealNameRequest, DeleteRealNameResponse>(request, GslMeta.deleteRealName,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.deleteRealName, hcClient);
     }
 
     /**
@@ -391,7 +382,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableSimCardRequest 请求对象
+     * @param request EnableSimCardRequest 请求对象
      * @return CompletableFuture<EnableSimCardResponse>
      */
     public CompletableFuture<EnableSimCardResponse> enableSimCardAsync(EnableSimCardRequest request) {
@@ -405,12 +396,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableSimCardRequest 请求对象
+     * @param request EnableSimCardRequest 请求对象
      * @return AsyncInvoker<EnableSimCardRequest, EnableSimCardResponse>
      */
     public AsyncInvoker<EnableSimCardRequest, EnableSimCardResponse> enableSimCardAsyncInvoker(
         EnableSimCardRequest request) {
-        return new AsyncInvoker<EnableSimCardRequest, EnableSimCardResponse>(request, GslMeta.enableSimCard, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.enableSimCard, hcClient);
     }
 
     /**
@@ -420,7 +411,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimCardsRequest 请求对象
+     * @param request ListSimCardsRequest 请求对象
      * @return CompletableFuture<ListSimCardsResponse>
      */
     public CompletableFuture<ListSimCardsResponse> listSimCardsAsync(ListSimCardsRequest request) {
@@ -434,12 +425,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimCardsRequest 请求对象
+     * @param request ListSimCardsRequest 请求对象
      * @return AsyncInvoker<ListSimCardsRequest, ListSimCardsResponse>
      */
     public AsyncInvoker<ListSimCardsRequest, ListSimCardsResponse> listSimCardsAsyncInvoker(
         ListSimCardsRequest request) {
-        return new AsyncInvoker<ListSimCardsRequest, ListSimCardsResponse>(request, GslMeta.listSimCards, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listSimCards, hcClient);
     }
 
     /**
@@ -449,7 +440,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterImeiRequest 请求对象
+     * @param request RegisterImeiRequest 请求对象
      * @return CompletableFuture<RegisterImeiResponse>
      */
     public CompletableFuture<RegisterImeiResponse> registerImeiAsync(RegisterImeiRequest request) {
@@ -463,12 +454,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterImeiRequest 请求对象
+     * @param request RegisterImeiRequest 请求对象
      * @return AsyncInvoker<RegisterImeiRequest, RegisterImeiResponse>
      */
     public AsyncInvoker<RegisterImeiRequest, RegisterImeiResponse> registerImeiAsyncInvoker(
         RegisterImeiRequest request) {
-        return new AsyncInvoker<RegisterImeiRequest, RegisterImeiResponse>(request, GslMeta.registerImei, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.registerImei, hcClient);
     }
 
     /**
@@ -478,7 +469,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetSimCardRequest 请求对象
+     * @param request ResetSimCardRequest 请求对象
      * @return CompletableFuture<ResetSimCardResponse>
      */
     public CompletableFuture<ResetSimCardResponse> resetSimCardAsync(ResetSimCardRequest request) {
@@ -492,12 +483,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetSimCardRequest 请求对象
+     * @param request ResetSimCardRequest 请求对象
      * @return AsyncInvoker<ResetSimCardRequest, ResetSimCardResponse>
      */
     public AsyncInvoker<ResetSimCardRequest, ResetSimCardResponse> resetSimCardAsyncInvoker(
         ResetSimCardRequest request) {
-        return new AsyncInvoker<ResetSimCardRequest, ResetSimCardResponse>(request, GslMeta.resetSimCard, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.resetSimCard, hcClient);
     }
 
     /**
@@ -507,7 +498,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetExceedCutNetRequest 请求对象
+     * @param request SetExceedCutNetRequest 请求对象
      * @return CompletableFuture<SetExceedCutNetResponse>
      */
     public CompletableFuture<SetExceedCutNetResponse> setExceedCutNetAsync(SetExceedCutNetRequest request) {
@@ -521,13 +512,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetExceedCutNetRequest 请求对象
+     * @param request SetExceedCutNetRequest 请求对象
      * @return AsyncInvoker<SetExceedCutNetRequest, SetExceedCutNetResponse>
      */
     public AsyncInvoker<SetExceedCutNetRequest, SetExceedCutNetResponse> setExceedCutNetAsyncInvoker(
         SetExceedCutNetRequest request) {
-        return new AsyncInvoker<SetExceedCutNetRequest, SetExceedCutNetResponse>(request, GslMeta.setExceedCutNet,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.setExceedCutNet, hcClient);
     }
 
     /**
@@ -537,7 +527,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetSpeedValueRequest 请求对象
+     * @param request SetSpeedValueRequest 请求对象
      * @return CompletableFuture<SetSpeedValueResponse>
      */
     public CompletableFuture<SetSpeedValueResponse> setSpeedValueAsync(SetSpeedValueRequest request) {
@@ -551,12 +541,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetSpeedValueRequest 请求对象
+     * @param request SetSpeedValueRequest 请求对象
      * @return AsyncInvoker<SetSpeedValueRequest, SetSpeedValueResponse>
      */
     public AsyncInvoker<SetSpeedValueRequest, SetSpeedValueResponse> setSpeedValueAsyncInvoker(
         SetSpeedValueRequest request) {
-        return new AsyncInvoker<SetSpeedValueRequest, SetSpeedValueResponse>(request, GslMeta.setSpeedValue, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.setSpeedValue, hcClient);
     }
 
     /**
@@ -566,7 +556,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMonthUsagesRequest 请求对象
+     * @param request ShowMonthUsagesRequest 请求对象
      * @return CompletableFuture<ShowMonthUsagesResponse>
      */
     public CompletableFuture<ShowMonthUsagesResponse> showMonthUsagesAsync(ShowMonthUsagesRequest request) {
@@ -580,13 +570,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMonthUsagesRequest 请求对象
+     * @param request ShowMonthUsagesRequest 请求对象
      * @return AsyncInvoker<ShowMonthUsagesRequest, ShowMonthUsagesResponse>
      */
     public AsyncInvoker<ShowMonthUsagesRequest, ShowMonthUsagesResponse> showMonthUsagesAsyncInvoker(
         ShowMonthUsagesRequest request) {
-        return new AsyncInvoker<ShowMonthUsagesRequest, ShowMonthUsagesResponse>(request, GslMeta.showMonthUsages,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.showMonthUsages, hcClient);
     }
 
     /**
@@ -596,7 +585,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealNamedRequest 请求对象
+     * @param request ShowRealNamedRequest 请求对象
      * @return CompletableFuture<ShowRealNamedResponse>
      */
     public CompletableFuture<ShowRealNamedResponse> showRealNamedAsync(ShowRealNamedRequest request) {
@@ -610,12 +599,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealNamedRequest 请求对象
+     * @param request ShowRealNamedRequest 请求对象
      * @return AsyncInvoker<ShowRealNamedRequest, ShowRealNamedResponse>
      */
     public AsyncInvoker<ShowRealNamedRequest, ShowRealNamedResponse> showRealNamedAsyncInvoker(
         ShowRealNamedRequest request) {
-        return new AsyncInvoker<ShowRealNamedRequest, ShowRealNamedResponse>(request, GslMeta.showRealNamed, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.showRealNamed, hcClient);
     }
 
     /**
@@ -625,7 +614,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSimCardRequest 请求对象
+     * @param request ShowSimCardRequest 请求对象
      * @return CompletableFuture<ShowSimCardResponse>
      */
     public CompletableFuture<ShowSimCardResponse> showSimCardAsync(ShowSimCardRequest request) {
@@ -639,11 +628,11 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSimCardRequest 请求对象
+     * @param request ShowSimCardRequest 请求对象
      * @return AsyncInvoker<ShowSimCardRequest, ShowSimCardResponse>
      */
     public AsyncInvoker<ShowSimCardRequest, ShowSimCardResponse> showSimCardAsyncInvoker(ShowSimCardRequest request) {
-        return new AsyncInvoker<ShowSimCardRequest, ShowSimCardResponse>(request, GslMeta.showSimCard, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.showSimCard, hcClient);
     }
 
     /**
@@ -653,7 +642,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartStopNetRequest 请求对象
+     * @param request StartStopNetRequest 请求对象
      * @return CompletableFuture<StartStopNetResponse>
      */
     public CompletableFuture<StartStopNetResponse> startStopNetAsync(StartStopNetRequest request) {
@@ -667,12 +656,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartStopNetRequest 请求对象
+     * @param request StartStopNetRequest 请求对象
      * @return AsyncInvoker<StartStopNetRequest, StartStopNetResponse>
      */
     public AsyncInvoker<StartStopNetRequest, StartStopNetResponse> startStopNetAsyncInvoker(
         StartStopNetRequest request) {
-        return new AsyncInvoker<StartStopNetRequest, StartStopNetResponse>(request, GslMeta.startStopNet, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.startStopNet, hcClient);
     }
 
     /**
@@ -682,7 +671,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopSimCardRequest 请求对象
+     * @param request StopSimCardRequest 请求对象
      * @return CompletableFuture<StopSimCardResponse>
      */
     public CompletableFuture<StopSimCardResponse> stopSimCardAsync(StopSimCardRequest request) {
@@ -696,11 +685,11 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopSimCardRequest 请求对象
+     * @param request StopSimCardRequest 请求对象
      * @return AsyncInvoker<StopSimCardRequest, StopSimCardResponse>
      */
     public AsyncInvoker<StopSimCardRequest, StopSimCardResponse> stopSimCardAsyncInvoker(StopSimCardRequest request) {
-        return new AsyncInvoker<StopSimCardRequest, StopSimCardResponse>(request, GslMeta.stopSimCard, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.stopSimCard, hcClient);
     }
 
     /**
@@ -710,7 +699,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPoolMembersRequest 请求对象
+     * @param request ListSimPoolMembersRequest 请求对象
      * @return CompletableFuture<ListSimPoolMembersResponse>
      */
     public CompletableFuture<ListSimPoolMembersResponse> listSimPoolMembersAsync(ListSimPoolMembersRequest request) {
@@ -724,13 +713,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPoolMembersRequest 请求对象
+     * @param request ListSimPoolMembersRequest 请求对象
      * @return AsyncInvoker<ListSimPoolMembersRequest, ListSimPoolMembersResponse>
      */
     public AsyncInvoker<ListSimPoolMembersRequest, ListSimPoolMembersResponse> listSimPoolMembersAsyncInvoker(
         ListSimPoolMembersRequest request) {
-        return new AsyncInvoker<ListSimPoolMembersRequest, ListSimPoolMembersResponse>(request,
-            GslMeta.listSimPoolMembers, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listSimPoolMembers, hcClient);
     }
 
     /**
@@ -740,7 +728,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPoolsRequest 请求对象
+     * @param request ListSimPoolsRequest 请求对象
      * @return CompletableFuture<ListSimPoolsResponse>
      */
     public CompletableFuture<ListSimPoolsResponse> listSimPoolsAsync(ListSimPoolsRequest request) {
@@ -754,12 +742,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPoolsRequest 请求对象
+     * @param request ListSimPoolsRequest 请求对象
      * @return AsyncInvoker<ListSimPoolsRequest, ListSimPoolsResponse>
      */
     public AsyncInvoker<ListSimPoolsRequest, ListSimPoolsResponse> listSimPoolsAsyncInvoker(
         ListSimPoolsRequest request) {
-        return new AsyncInvoker<ListSimPoolsRequest, ListSimPoolsResponse>(request, GslMeta.listSimPools, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listSimPools, hcClient);
     }
 
     /**
@@ -769,7 +757,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlowBySimCardsRequest 请求对象
+     * @param request ListFlowBySimCardsRequest 请求对象
      * @return CompletableFuture<ListFlowBySimCardsResponse>
      */
     public CompletableFuture<ListFlowBySimCardsResponse> listFlowBySimCardsAsync(ListFlowBySimCardsRequest request) {
@@ -783,13 +771,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlowBySimCardsRequest 请求对象
+     * @param request ListFlowBySimCardsRequest 请求对象
      * @return AsyncInvoker<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse>
      */
     public AsyncInvoker<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse> listFlowBySimCardsAsyncInvoker(
         ListFlowBySimCardsRequest request) {
-        return new AsyncInvoker<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse>(request,
-            GslMeta.listFlowBySimCards, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listFlowBySimCards, hcClient);
     }
 
     /**
@@ -799,7 +786,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPricePlansRequest 请求对象
+     * @param request ListSimPricePlansRequest 请求对象
      * @return CompletableFuture<ListSimPricePlansResponse>
      */
     public CompletableFuture<ListSimPricePlansResponse> listSimPricePlansAsync(ListSimPricePlansRequest request) {
@@ -813,13 +800,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSimPricePlansRequest 请求对象
+     * @param request ListSimPricePlansRequest 请求对象
      * @return AsyncInvoker<ListSimPricePlansRequest, ListSimPricePlansResponse>
      */
     public AsyncInvoker<ListSimPricePlansRequest, ListSimPricePlansResponse> listSimPricePlansAsyncInvoker(
         ListSimPricePlansRequest request) {
-        return new AsyncInvoker<ListSimPricePlansRequest, ListSimPricePlansResponse>(request, GslMeta.listSimPricePlans,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listSimPricePlans, hcClient);
     }
 
     /**
@@ -829,7 +815,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSmsDetailsRequest 请求对象
+     * @param request ListSmsDetailsRequest 请求对象
      * @return CompletableFuture<ListSmsDetailsResponse>
      */
     public CompletableFuture<ListSmsDetailsResponse> listSmsDetailsAsync(ListSmsDetailsRequest request) {
@@ -843,13 +829,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSmsDetailsRequest 请求对象
+     * @param request ListSmsDetailsRequest 请求对象
      * @return AsyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse>
      */
     public AsyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse> listSmsDetailsAsyncInvoker(
         ListSmsDetailsRequest request) {
-        return new AsyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse>(request, GslMeta.listSmsDetails,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listSmsDetails, hcClient);
     }
 
     /**
@@ -859,7 +844,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSmsRequest 请求对象
+     * @param request SendSmsRequest 请求对象
      * @return CompletableFuture<SendSmsResponse>
      */
     public CompletableFuture<SendSmsResponse> sendSmsAsync(SendSmsRequest request) {
@@ -873,11 +858,11 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSmsRequest 请求对象
+     * @param request SendSmsRequest 请求对象
      * @return AsyncInvoker<SendSmsRequest, SendSmsResponse>
      */
     public AsyncInvoker<SendSmsRequest, SendSmsResponse> sendSmsAsyncInvoker(SendSmsRequest request) {
-        return new AsyncInvoker<SendSmsRequest, SendSmsResponse>(request, GslMeta.sendSms, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.sendSms, hcClient);
     }
 
     /**
@@ -887,7 +872,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSetTagsRequest 请求对象
+     * @param request BatchSetTagsRequest 请求对象
      * @return CompletableFuture<BatchSetTagsResponse>
      */
     public CompletableFuture<BatchSetTagsResponse> batchSetTagsAsync(BatchSetTagsRequest request) {
@@ -901,12 +886,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchSetTagsRequest 请求对象
+     * @param request BatchSetTagsRequest 请求对象
      * @return AsyncInvoker<BatchSetTagsRequest, BatchSetTagsResponse>
      */
     public AsyncInvoker<BatchSetTagsRequest, BatchSetTagsResponse> batchSetTagsAsyncInvoker(
         BatchSetTagsRequest request) {
-        return new AsyncInvoker<BatchSetTagsRequest, BatchSetTagsResponse>(request, GslMeta.batchSetTags, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.batchSetTags, hcClient);
     }
 
     /**
@@ -916,7 +901,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return CompletableFuture<CreateTagResponse>
      */
     public CompletableFuture<CreateTagResponse> createTagAsync(CreateTagRequest request) {
@@ -930,11 +915,11 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
      */
     public AsyncInvoker<CreateTagRequest, CreateTagResponse> createTagAsyncInvoker(CreateTagRequest request) {
-        return new AsyncInvoker<CreateTagRequest, CreateTagResponse>(request, GslMeta.createTag, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.createTag, hcClient);
     }
 
     /**
@@ -944,7 +929,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return CompletableFuture<DeleteTagResponse>
      */
     public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
@@ -958,11 +943,11 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
      */
     public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
-        return new AsyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, GslMeta.deleteTag, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.deleteTag, hcClient);
     }
 
     /**
@@ -972,7 +957,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return CompletableFuture<ListTagsResponse>
      */
     public CompletableFuture<ListTagsResponse> listTagsAsync(ListTagsRequest request) {
@@ -986,11 +971,11 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
      */
     public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
-        return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, GslMeta.listTags, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listTags, hcClient);
     }
 
     /**
@@ -1000,7 +985,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkOrderDetailsRequest 请求对象
+     * @param request ListWorkOrderDetailsRequest 请求对象
      * @return CompletableFuture<ListWorkOrderDetailsResponse>
      */
     public CompletableFuture<ListWorkOrderDetailsResponse> listWorkOrderDetailsAsync(
@@ -1015,13 +1000,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkOrderDetailsRequest 请求对象
+     * @param request ListWorkOrderDetailsRequest 请求对象
      * @return AsyncInvoker<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse>
      */
     public AsyncInvoker<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse> listWorkOrderDetailsAsyncInvoker(
         ListWorkOrderDetailsRequest request) {
-        return new AsyncInvoker<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse>(request,
-            GslMeta.listWorkOrderDetails, hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listWorkOrderDetails, hcClient);
     }
 
     /**
@@ -1031,7 +1015,7 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkOrdersRequest 请求对象
+     * @param request ListWorkOrdersRequest 请求对象
      * @return CompletableFuture<ListWorkOrdersResponse>
      */
     public CompletableFuture<ListWorkOrdersResponse> listWorkOrdersAsync(ListWorkOrdersRequest request) {
@@ -1045,13 +1029,12 @@ public class GslAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkOrdersRequest 请求对象
+     * @param request ListWorkOrdersRequest 请求对象
      * @return AsyncInvoker<ListWorkOrdersRequest, ListWorkOrdersResponse>
      */
     public AsyncInvoker<ListWorkOrdersRequest, ListWorkOrdersResponse> listWorkOrdersAsyncInvoker(
         ListWorkOrdersRequest request) {
-        return new AsyncInvoker<ListWorkOrdersRequest, ListWorkOrdersResponse>(request, GslMeta.listWorkOrders,
-            hcClient);
+        return new AsyncInvoker<>(request, GslMeta.listWorkOrders, hcClient);
     }
 
 }

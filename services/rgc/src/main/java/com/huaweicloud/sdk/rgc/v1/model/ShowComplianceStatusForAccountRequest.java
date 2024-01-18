@@ -16,9 +16,9 @@ public class ShowComplianceStatusForAccountRequest {
     private String managedAccountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
+    @JsonProperty(value = "control_id")
 
-    private String xSecurityToken;
+    private String controlId;
 
     public ShowComplianceStatusForAccountRequest withManagedAccountId(String managedAccountId) {
         this.managedAccountId = managedAccountId;
@@ -26,7 +26,7 @@ public class ShowComplianceStatusForAccountRequest {
     }
 
     /**
-     * 账号ID。
+     * 纳管账号ID。
      * @return managedAccountId
      */
     public String getManagedAccountId() {
@@ -37,23 +37,21 @@ public class ShowComplianceStatusForAccountRequest {
         this.managedAccountId = managedAccountId;
     }
 
-    public ShowComplianceStatusForAccountRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
+    public ShowComplianceStatusForAccountRequest withControlId(String controlId) {
+        this.controlId = controlId;
         return this;
     }
 
     /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
+     * 启用的控制策略信息。
+     * @return controlId
      */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
+    public String getControlId() {
+        return controlId;
     }
 
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
+    public void setControlId(String controlId) {
+        this.controlId = controlId;
     }
 
     @Override
@@ -66,12 +64,12 @@ public class ShowComplianceStatusForAccountRequest {
         }
         ShowComplianceStatusForAccountRequest that = (ShowComplianceStatusForAccountRequest) obj;
         return Objects.equals(this.managedAccountId, that.managedAccountId)
-            && Objects.equals(this.xSecurityToken, that.xSecurityToken);
+            && Objects.equals(this.controlId, that.controlId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(managedAccountId, xSecurityToken);
+        return Objects.hash(managedAccountId, controlId);
     }
 
     @Override
@@ -79,7 +77,7 @@ public class ShowComplianceStatusForAccountRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowComplianceStatusForAccountRequest {\n");
         sb.append("    managedAccountId: ").append(toIndentedString(managedAccountId)).append("\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
+        sb.append("    controlId: ").append(toIndentedString(controlId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

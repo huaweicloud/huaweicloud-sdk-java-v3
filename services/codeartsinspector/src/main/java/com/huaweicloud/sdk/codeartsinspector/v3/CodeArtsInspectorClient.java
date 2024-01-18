@@ -58,7 +58,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadTaskReportRequest 请求对象
+     * @param request DownloadTaskReportRequest 请求对象
      * @return DownloadTaskReportResponse
      */
     public DownloadTaskReportResponse downloadTaskReport(DownloadTaskReportRequest request) {
@@ -72,13 +72,12 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadTaskReportRequest 请求对象
+     * @param request DownloadTaskReportRequest 请求对象
      * @return SyncInvoker<DownloadTaskReportRequest, DownloadTaskReportResponse>
      */
     public SyncInvoker<DownloadTaskReportRequest, DownloadTaskReportResponse> downloadTaskReportInvoker(
         DownloadTaskReportRequest request) {
-        return new SyncInvoker<DownloadTaskReportRequest, DownloadTaskReportResponse>(request,
-            CodeArtsInspectorMeta.downloadTaskReport, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.downloadTaskReport, hcClient);
     }
 
     /**
@@ -88,7 +87,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGenerateReportRequest 请求对象
+     * @param request ExecuteGenerateReportRequest 请求对象
      * @return ExecuteGenerateReportResponse
      */
     public ExecuteGenerateReportResponse executeGenerateReport(ExecuteGenerateReportRequest request) {
@@ -102,13 +101,12 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGenerateReportRequest 请求对象
+     * @param request ExecuteGenerateReportRequest 请求对象
      * @return SyncInvoker<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse>
      */
     public SyncInvoker<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse> executeGenerateReportInvoker(
         ExecuteGenerateReportRequest request) {
-        return new SyncInvoker<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse>(request,
-            CodeArtsInspectorMeta.executeGenerateReport, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.executeGenerateReport, hcClient);
     }
 
     /**
@@ -118,7 +116,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBusinessRisksRequest 请求对象
+     * @param request ListBusinessRisksRequest 请求对象
      * @return ListBusinessRisksResponse
      */
     public ListBusinessRisksResponse listBusinessRisks(ListBusinessRisksRequest request) {
@@ -132,13 +130,12 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBusinessRisksRequest 请求对象
+     * @param request ListBusinessRisksRequest 请求对象
      * @return SyncInvoker<ListBusinessRisksRequest, ListBusinessRisksResponse>
      */
     public SyncInvoker<ListBusinessRisksRequest, ListBusinessRisksResponse> listBusinessRisksInvoker(
         ListBusinessRisksRequest request) {
-        return new SyncInvoker<ListBusinessRisksRequest, ListBusinessRisksResponse>(request,
-            CodeArtsInspectorMeta.listBusinessRisks, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.listBusinessRisks, hcClient);
     }
 
     /**
@@ -148,7 +145,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortResultsRequest 请求对象
+     * @param request ListPortResultsRequest 请求对象
      * @return ListPortResultsResponse
      */
     public ListPortResultsResponse listPortResults(ListPortResultsRequest request) {
@@ -162,13 +159,12 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortResultsRequest 请求对象
+     * @param request ListPortResultsRequest 请求对象
      * @return SyncInvoker<ListPortResultsRequest, ListPortResultsResponse>
      */
     public SyncInvoker<ListPortResultsRequest, ListPortResultsResponse> listPortResultsInvoker(
         ListPortResultsRequest request) {
-        return new SyncInvoker<ListPortResultsRequest, ListPortResultsResponse>(request,
-            CodeArtsInspectorMeta.listPortResults, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.listPortResults, hcClient);
     }
 
     /**
@@ -178,7 +174,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReportStatusRequest 请求对象
+     * @param request ShowReportStatusRequest 请求对象
      * @return ShowReportStatusResponse
      */
     public ShowReportStatusResponse showReportStatus(ShowReportStatusRequest request) {
@@ -192,13 +188,12 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReportStatusRequest 请求对象
+     * @param request ShowReportStatusRequest 请求对象
      * @return SyncInvoker<ShowReportStatusRequest, ShowReportStatusResponse>
      */
     public SyncInvoker<ShowReportStatusRequest, ShowReportStatusResponse> showReportStatusInvoker(
         ShowReportStatusRequest request) {
-        return new SyncInvoker<ShowReportStatusRequest, ShowReportStatusResponse>(request,
-            CodeArtsInspectorMeta.showReportStatus, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.showReportStatus, hcClient);
     }
 
     /**
@@ -208,7 +203,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResultsRequest 请求对象
+     * @param request ShowResultsRequest 请求对象
      * @return ShowResultsResponse
      */
     public ShowResultsResponse showResults(ShowResultsRequest request) {
@@ -222,12 +217,11 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResultsRequest 请求对象
+     * @param request ShowResultsRequest 请求对象
      * @return SyncInvoker<ShowResultsRequest, ShowResultsResponse>
      */
     public SyncInvoker<ShowResultsRequest, ShowResultsResponse> showResultsInvoker(ShowResultsRequest request) {
-        return new SyncInvoker<ShowResultsRequest, ShowResultsResponse>(request, CodeArtsInspectorMeta.showResults,
-            hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.showResults, hcClient);
     }
 
     /**
@@ -237,7 +231,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFalsePositiveRequest 请求对象
+     * @param request UpdateFalsePositiveRequest 请求对象
      * @return UpdateFalsePositiveResponse
      */
     public UpdateFalsePositiveResponse updateFalsePositive(UpdateFalsePositiveRequest request) {
@@ -251,13 +245,12 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFalsePositiveRequest 请求对象
+     * @param request UpdateFalsePositiveRequest 请求对象
      * @return SyncInvoker<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse>
      */
     public SyncInvoker<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse> updateFalsePositiveInvoker(
         UpdateFalsePositiveRequest request) {
-        return new SyncInvoker<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse>(request,
-            CodeArtsInspectorMeta.updateFalsePositive, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.updateFalsePositive, hcClient);
     }
 
     /**
@@ -267,7 +260,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelTasksRequest 请求对象
+     * @param request CancelTasksRequest 请求对象
      * @return CancelTasksResponse
      */
     public CancelTasksResponse cancelTasks(CancelTasksRequest request) {
@@ -281,12 +274,11 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelTasksRequest 请求对象
+     * @param request CancelTasksRequest 请求对象
      * @return SyncInvoker<CancelTasksRequest, CancelTasksResponse>
      */
     public SyncInvoker<CancelTasksRequest, CancelTasksResponse> cancelTasksInvoker(CancelTasksRequest request) {
-        return new SyncInvoker<CancelTasksRequest, CancelTasksResponse>(request, CodeArtsInspectorMeta.cancelTasks,
-            hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.cancelTasks, hcClient);
     }
 
     /**
@@ -296,7 +288,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTasksRequest 请求对象
+     * @param request CreateTasksRequest 请求对象
      * @return CreateTasksResponse
      */
     public CreateTasksResponse createTasks(CreateTasksRequest request) {
@@ -310,12 +302,11 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTasksRequest 请求对象
+     * @param request CreateTasksRequest 请求对象
      * @return SyncInvoker<CreateTasksRequest, CreateTasksResponse>
      */
     public SyncInvoker<CreateTasksRequest, CreateTasksResponse> createTasksInvoker(CreateTasksRequest request) {
-        return new SyncInvoker<CreateTasksRequest, CreateTasksResponse>(request, CodeArtsInspectorMeta.createTasks,
-            hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.createTasks, hcClient);
     }
 
     /**
@@ -325,7 +316,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskHistoriesRequest 请求对象
+     * @param request ListTaskHistoriesRequest 请求对象
      * @return ListTaskHistoriesResponse
      */
     public ListTaskHistoriesResponse listTaskHistories(ListTaskHistoriesRequest request) {
@@ -339,13 +330,12 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskHistoriesRequest 请求对象
+     * @param request ListTaskHistoriesRequest 请求对象
      * @return SyncInvoker<ListTaskHistoriesRequest, ListTaskHistoriesResponse>
      */
     public SyncInvoker<ListTaskHistoriesRequest, ListTaskHistoriesResponse> listTaskHistoriesInvoker(
         ListTaskHistoriesRequest request) {
-        return new SyncInvoker<ListTaskHistoriesRequest, ListTaskHistoriesResponse>(request,
-            CodeArtsInspectorMeta.listTaskHistories, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.listTaskHistories, hcClient);
     }
 
     /**
@@ -355,7 +345,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTasksRequest 请求对象
+     * @param request ShowTasksRequest 请求对象
      * @return ShowTasksResponse
      */
     public ShowTasksResponse showTasks(ShowTasksRequest request) {
@@ -369,11 +359,11 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTasksRequest 请求对象
+     * @param request ShowTasksRequest 请求对象
      * @return SyncInvoker<ShowTasksRequest, ShowTasksResponse>
      */
     public SyncInvoker<ShowTasksRequest, ShowTasksResponse> showTasksInvoker(ShowTasksRequest request) {
-        return new SyncInvoker<ShowTasksRequest, ShowTasksResponse>(request, CodeArtsInspectorMeta.showTasks, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.showTasks, hcClient);
     }
 
     /**
@@ -383,7 +373,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AuthorizeDomainsRequest 请求对象
+     * @param request AuthorizeDomainsRequest 请求对象
      * @return AuthorizeDomainsResponse
      */
     public AuthorizeDomainsResponse authorizeDomains(AuthorizeDomainsRequest request) {
@@ -397,13 +387,12 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AuthorizeDomainsRequest 请求对象
+     * @param request AuthorizeDomainsRequest 请求对象
      * @return SyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse>
      */
     public SyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse> authorizeDomainsInvoker(
         AuthorizeDomainsRequest request) {
-        return new SyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse>(request,
-            CodeArtsInspectorMeta.authorizeDomains, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.authorizeDomains, hcClient);
     }
 
     /**
@@ -413,7 +402,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDomainsRequest 请求对象
+     * @param request CreateDomainsRequest 请求对象
      * @return CreateDomainsResponse
      */
     public CreateDomainsResponse createDomains(CreateDomainsRequest request) {
@@ -427,12 +416,11 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDomainsRequest 请求对象
+     * @param request CreateDomainsRequest 请求对象
      * @return SyncInvoker<CreateDomainsRequest, CreateDomainsResponse>
      */
     public SyncInvoker<CreateDomainsRequest, CreateDomainsResponse> createDomainsInvoker(CreateDomainsRequest request) {
-        return new SyncInvoker<CreateDomainsRequest, CreateDomainsResponse>(request,
-            CodeArtsInspectorMeta.createDomains, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.createDomains, hcClient);
     }
 
     /**
@@ -442,7 +430,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainsRequest 请求对象
+     * @param request DeleteDomainsRequest 请求对象
      * @return DeleteDomainsResponse
      */
     public DeleteDomainsResponse deleteDomains(DeleteDomainsRequest request) {
@@ -456,12 +444,11 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainsRequest 请求对象
+     * @param request DeleteDomainsRequest 请求对象
      * @return SyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>
      */
     public SyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse> deleteDomainsInvoker(DeleteDomainsRequest request) {
-        return new SyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>(request,
-            CodeArtsInspectorMeta.deleteDomains, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.deleteDomains, hcClient);
     }
 
     /**
@@ -471,7 +458,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainsRequest 请求对象
+     * @param request ListDomainsRequest 请求对象
      * @return ListDomainsResponse
      */
     public ListDomainsResponse listDomains(ListDomainsRequest request) {
@@ -485,12 +472,11 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainsRequest 请求对象
+     * @param request ListDomainsRequest 请求对象
      * @return SyncInvoker<ListDomainsRequest, ListDomainsResponse>
      */
     public SyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsInvoker(ListDomainsRequest request) {
-        return new SyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, CodeArtsInspectorMeta.listDomains,
-            hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.listDomains, hcClient);
     }
 
     /**
@@ -500,7 +486,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainSettingsRequest 请求对象
+     * @param request ShowDomainSettingsRequest 请求对象
      * @return ShowDomainSettingsResponse
      */
     public ShowDomainSettingsResponse showDomainSettings(ShowDomainSettingsRequest request) {
@@ -514,13 +500,12 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainSettingsRequest 请求对象
+     * @param request ShowDomainSettingsRequest 请求对象
      * @return SyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse>
      */
     public SyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse> showDomainSettingsInvoker(
         ShowDomainSettingsRequest request) {
-        return new SyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse>(request,
-            CodeArtsInspectorMeta.showDomainSettings, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.showDomainSettings, hcClient);
     }
 
     /**
@@ -530,7 +515,7 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainSettingsRequest 请求对象
+     * @param request UpdateDomainSettingsRequest 请求对象
      * @return UpdateDomainSettingsResponse
      */
     public UpdateDomainSettingsResponse updateDomainSettings(UpdateDomainSettingsRequest request) {
@@ -544,13 +529,12 @@ public class CodeArtsInspectorClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainSettingsRequest 请求对象
+     * @param request UpdateDomainSettingsRequest 请求对象
      * @return SyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse>
      */
     public SyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> updateDomainSettingsInvoker(
         UpdateDomainSettingsRequest request) {
-        return new SyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse>(request,
-            CodeArtsInspectorMeta.updateDomainSettings, hcClient);
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.updateDomainSettings, hcClient);
     }
 
 }

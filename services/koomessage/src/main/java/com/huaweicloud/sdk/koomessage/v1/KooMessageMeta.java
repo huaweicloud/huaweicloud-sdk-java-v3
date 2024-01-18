@@ -166,9 +166,9 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class KooMessageMeta {
 
-    public static final HttpRequestDef<AddCallBackRequest, AddCallBackResponse> addCallBack = genForaddCallBack();
+    public static final HttpRequestDef<AddCallBackRequest, AddCallBackResponse> addCallBack = genForAddCallBack();
 
-    private static HttpRequestDef<AddCallBackRequest, AddCallBackResponse> genForaddCallBack() {
+    private static HttpRequestDef<AddCallBackRequest, AddCallBackResponse> genForAddCallBack() {
         // basic
         HttpRequestDef.Builder<AddCallBackRequest, AddCallBackResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddCallBackRequest.class, AddCallBackResponse.class)
@@ -181,9 +181,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddCallbackRequestBody.class),
-            f -> f.withMarshaller(AddCallBackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddCallBackRequest::getBody, AddCallBackRequest::setBody));
 
         // response
 
@@ -191,9 +189,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimCallbacksRequest, ListAimCallbacksResponse> listAimCallbacks =
-        genForlistAimCallbacks();
+        genForListAimCallbacks();
 
-    private static HttpRequestDef<ListAimCallbacksRequest, ListAimCallbacksResponse> genForlistAimCallbacks() {
+    private static HttpRequestDef<ListAimCallbacksRequest, ListAimCallbacksResponse> genForListAimCallbacks() {
         // basic
         HttpRequestDef.Builder<ListAimCallbacksRequest, ListAimCallbacksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAimCallbacksRequest.class, ListAimCallbacksResponse.class)
@@ -209,9 +207,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<CheckMobileCapabilityRequest, CheckMobileCapabilityResponse> checkMobileCapability =
-        genForcheckMobileCapability();
+        genForCheckMobileCapability();
 
-    private static HttpRequestDef<CheckMobileCapabilityRequest, CheckMobileCapabilityResponse> genForcheckMobileCapability() {
+    private static HttpRequestDef<CheckMobileCapabilityRequest, CheckMobileCapabilityResponse> genForCheckMobileCapability() {
         // basic
         HttpRequestDef.Builder<CheckMobileCapabilityRequest, CheckMobileCapabilityResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CheckMobileCapabilityRequest.class, CheckMobileCapabilityResponse.class)
@@ -224,9 +222,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckMobileCapabilityRequestBody.class),
-            f -> f.withMarshaller(CheckMobileCapabilityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckMobileCapabilityRequest::getBody, CheckMobileCapabilityRequest::setBody));
 
         // response
 
@@ -234,9 +230,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<CreateResolveTaskRequest, CreateResolveTaskResponse> createResolveTask =
-        genForcreateResolveTask();
+        genForCreateResolveTask();
 
-    private static HttpRequestDef<CreateResolveTaskRequest, CreateResolveTaskResponse> genForcreateResolveTask() {
+    private static HttpRequestDef<CreateResolveTaskRequest, CreateResolveTaskResponse> genForCreateResolveTask() {
         // basic
         HttpRequestDef.Builder<CreateResolveTaskRequest, CreateResolveTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResolveTaskRequest.class, CreateResolveTaskResponse.class)
@@ -249,9 +245,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResolveTaskRequestBody.class),
-            f -> f.withMarshaller(CreateResolveTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResolveTaskRequest::getBody, CreateResolveTaskRequest::setBody));
 
         // response
 
@@ -259,9 +253,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimResolveDetailsRequest, ListAimResolveDetailsResponse> listAimResolveDetails =
-        genForlistAimResolveDetails();
+        genForListAimResolveDetails();
 
-    private static HttpRequestDef<ListAimResolveDetailsRequest, ListAimResolveDetailsResponse> genForlistAimResolveDetails() {
+    private static HttpRequestDef<ListAimResolveDetailsRequest, ListAimResolveDetailsResponse> genForListAimResolveDetails() {
         // basic
         HttpRequestDef.Builder<ListAimResolveDetailsRequest, ListAimResolveDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAimResolveDetailsRequest.class, ListAimResolveDetailsResponse.class)
@@ -274,86 +268,66 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getTaskId, ListAimResolveDetailsRequest::setTaskId));
         builder.<String>withRequestField("task_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getTaskName, (req, v) -> {
-                req.setTaskName(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getTaskName,
+                ListAimResolveDetailsRequest::setTaskName));
         builder.<String>withRequestField("tpl_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getTplId, ListAimResolveDetailsRequest::setTplId));
         builder.<String>withRequestField("tpl_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getTplName, (req, v) -> {
-                req.setTplName(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getTplName, ListAimResolveDetailsRequest::setTplName));
         builder.<String>withRequestField("cust_flag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getCustFlag, (req, v) -> {
-                req.setCustFlag(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getCustFlag,
+                ListAimResolveDetailsRequest::setCustFlag));
         builder.<String>withRequestField("sms_sign",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getSmsSign, (req, v) -> {
-                req.setSmsSign(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getSmsSign, ListAimResolveDetailsRequest::setSmsSign));
         builder.<String>withRequestField("aim_url",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getAimUrl, (req, v) -> {
-                req.setAimUrl(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getAimUrl, ListAimResolveDetailsRequest::setAimUrl));
         builder.<String>withRequestField("resolved_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getResolvedStatus, (req, v) -> {
-                req.setResolvedStatus(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getResolvedStatus,
+                ListAimResolveDetailsRequest::setResolvedStatus));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getBeginTime,
+                ListAimResolveDetailsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getEndTime, ListAimResolveDetailsRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getOffset, ListAimResolveDetailsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimResolveDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getLimit, ListAimResolveDetailsRequest::setLimit));
 
         // response
 
@@ -361,9 +335,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListResolveTasksRequest, ListResolveTasksResponse> listResolveTasks =
-        genForlistResolveTasks();
+        genForListResolveTasks();
 
-    private static HttpRequestDef<ListResolveTasksRequest, ListResolveTasksResponse> genForlistResolveTasks() {
+    private static HttpRequestDef<ListResolveTasksRequest, ListResolveTasksResponse> genForListResolveTasks() {
         // basic
         HttpRequestDef.Builder<ListResolveTasksRequest, ListResolveTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResolveTasksRequest.class, ListResolveTasksResponse.class)
@@ -376,81 +350,61 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResolveTasksRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListResolveTasksRequest::getTaskId, ListResolveTasksRequest::setTaskId));
         builder.<String>withRequestField("task_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResolveTasksRequest::getTaskName, (req, v) -> {
-                req.setTaskName(v);
-            }));
+            f -> f.withMarshaller(ListResolveTasksRequest::getTaskName, ListResolveTasksRequest::setTaskName));
         builder.<String>withRequestField("tpl_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResolveTasksRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(ListResolveTasksRequest::getTplId, ListResolveTasksRequest::setTplId));
         builder.<String>withRequestField("tpl_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResolveTasksRequest::getTplName, (req, v) -> {
-                req.setTplName(v);
-            }));
+            f -> f.withMarshaller(ListResolveTasksRequest::getTplName, ListResolveTasksRequest::setTplName));
         builder.<String>withRequestField("cust_flag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResolveTasksRequest::getCustFlag, (req, v) -> {
-                req.setCustFlag(v);
-            }));
+            f -> f.withMarshaller(ListResolveTasksRequest::getCustFlag, ListResolveTasksRequest::setCustFlag));
         builder.<String>withRequestField("aim_url",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResolveTasksRequest::getAimUrl, (req, v) -> {
-                req.setAimUrl(v);
-            }));
+            f -> f.withMarshaller(ListResolveTasksRequest::getAimUrl, ListResolveTasksRequest::setAimUrl));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResolveTasksRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListResolveTasksRequest::getBeginTime, ListResolveTasksRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResolveTasksRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListResolveTasksRequest::getEndTime, ListResolveTasksRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResolveTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListResolveTasksRequest::getOffset, ListResolveTasksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResolveTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResolveTasksRequest::getLimit, ListResolveTasksRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMenusRequest, ListMenusResponse> listMenus = genForlistMenus();
+    public static final HttpRequestDef<ListMenusRequest, ListMenusResponse> listMenus = genForListMenus();
 
-    private static HttpRequestDef<ListMenusRequest, ListMenusResponse> genForlistMenus() {
+    private static HttpRequestDef<ListMenusRequest, ListMenusResponse> genForListMenus() {
         // basic
         HttpRequestDef.Builder<ListMenusRequest, ListMenusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMenusRequest.class, ListMenusResponse.class)
@@ -463,74 +417,56 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMenusRequest::getMenuId, (req, v) -> {
-                req.setMenuId(v);
-            }));
+            f -> f.withMarshaller(ListMenusRequest::getMenuId, ListMenusRequest::setMenuId));
         builder.<String>withRequestField("pub_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMenusRequest::getPubId, (req, v) -> {
-                req.setPubId(v);
-            }));
+            f -> f.withMarshaller(ListMenusRequest::getPubId, ListMenusRequest::setPubId));
         builder.<String>withRequestField("pub_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMenusRequest::getPubName, (req, v) -> {
-                req.setPubName(v);
-            }));
+            f -> f.withMarshaller(ListMenusRequest::getPubName, ListMenusRequest::setPubName));
         builder.<String>withRequestField("online_begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMenusRequest::getOnlineBeginTime, (req, v) -> {
-                req.setOnlineBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListMenusRequest::getOnlineBeginTime, ListMenusRequest::setOnlineBeginTime));
         builder.<String>withRequestField("online_end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMenusRequest::getOnlineEndTime, (req, v) -> {
-                req.setOnlineEndTime(v);
-            }));
+            f -> f.withMarshaller(ListMenusRequest::getOnlineEndTime, ListMenusRequest::setOnlineEndTime));
         builder.<Integer>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMenusRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListMenusRequest::getState, ListMenusRequest::setState));
         builder.<String>withRequestField("menu_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMenusRequest::getMenuName, (req, v) -> {
-                req.setMenuName(v);
-            }));
+            f -> f.withMarshaller(ListMenusRequest::getMenuName, ListMenusRequest::setMenuName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMenusRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMenusRequest::getOffset, ListMenusRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMenusRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMenusRequest::getLimit, ListMenusRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateMenuRequest, UpdateMenuResponse> updateMenu = genForupdateMenu();
+    public static final HttpRequestDef<UpdateMenuRequest, UpdateMenuResponse> updateMenu = genForUpdateMenu();
 
-    private static HttpRequestDef<UpdateMenuRequest, UpdateMenuResponse> genForupdateMenu() {
+    private static HttpRequestDef<UpdateMenuRequest, UpdateMenuResponse> genForUpdateMenu() {
         // basic
         HttpRequestDef.Builder<UpdateMenuRequest, UpdateMenuResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMenuRequest.class, UpdateMenuResponse.class)
@@ -543,16 +479,12 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMenuRequest::getMenuId, (req, v) -> {
-                req.setMenuId(v);
-            }));
+            f -> f.withMarshaller(UpdateMenuRequest::getMenuId, UpdateMenuRequest::setMenuId));
         builder.<UpdateMenuRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateMenuRequestBody.class),
-            f -> f.withMarshaller(UpdateMenuRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMenuRequest::getBody, UpdateMenuRequest::setBody));
 
         // response
 
@@ -560,9 +492,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<DeletePortInfoRequest, DeletePortInfoResponse> deletePortInfo =
-        genFordeletePortInfo();
+        genForDeletePortInfo();
 
-    private static HttpRequestDef<DeletePortInfoRequest, DeletePortInfoResponse> genFordeletePortInfo() {
+    private static HttpRequestDef<DeletePortInfoRequest, DeletePortInfoResponse> genForDeletePortInfo() {
         // basic
         HttpRequestDef.Builder<DeletePortInfoRequest, DeletePortInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePortInfoRequest.class, DeletePortInfoResponse.class)
@@ -575,9 +507,7 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePortInfoRequest::getPortId, (req, v) -> {
-                req.setPortId(v);
-            }));
+            f -> f.withMarshaller(DeletePortInfoRequest::getPortId, DeletePortInfoRequest::setPortId));
 
         // response
 
@@ -585,9 +515,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListPortInfosRequest, ListPortInfosResponse> listPortInfos =
-        genForlistPortInfos();
+        genForListPortInfos();
 
-    private static HttpRequestDef<ListPortInfosRequest, ListPortInfosResponse> genForlistPortInfos() {
+    private static HttpRequestDef<ListPortInfosRequest, ListPortInfosResponse> genForListPortInfos() {
         // basic
         HttpRequestDef.Builder<ListPortInfosRequest, ListPortInfosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPortInfosRequest.class, ListPortInfosResponse.class)
@@ -600,74 +530,56 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPortInfosRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListPortInfosRequest::getType, ListPortInfosRequest::setType));
         builder.<String>withRequestField("port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPortInfosRequest::getPort, (req, v) -> {
-                req.setPort(v);
-            }));
+            f -> f.withMarshaller(ListPortInfosRequest::getPort, ListPortInfosRequest::setPort));
         builder.<Integer>withRequestField("port_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPortInfosRequest::getPortType, (req, v) -> {
-                req.setPortType(v);
-            }));
+            f -> f.withMarshaller(ListPortInfosRequest::getPortType, ListPortInfosRequest::setPortType));
         builder.<String>withRequestField("sign_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPortInfosRequest::getSignSearch, (req, v) -> {
-                req.setSignSearch(v);
-            }));
+            f -> f.withMarshaller(ListPortInfosRequest::getSignSearch, ListPortInfosRequest::setSignSearch));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPortInfosRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPortInfosRequest::getOffset, ListPortInfosRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPortInfosRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPortInfosRequest::getLimit, ListPortInfosRequest::setLimit));
         builder.<OffsetDateTime>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPortInfosRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListPortInfosRequest::getStartTime, ListPortInfosRequest::setStartTime));
         builder.<OffsetDateTime>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPortInfosRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListPortInfosRequest::getEndTime, ListPortInfosRequest::setEndTime));
         builder.<String>withRequestField("pub_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPortInfosRequest::getPubName, (req, v) -> {
-                req.setPubName(v);
-            }));
+            f -> f.withMarshaller(ListPortInfosRequest::getPubName, ListPortInfosRequest::setPubName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<LockPortRequest, LockPortResponse> lockPort = genForlockPort();
+    public static final HttpRequestDef<LockPortRequest, LockPortResponse> lockPort = genForLockPort();
 
-    private static HttpRequestDef<LockPortRequest, LockPortResponse> genForlockPort() {
+    private static HttpRequestDef<LockPortRequest, LockPortResponse> genForLockPort() {
         // basic
         HttpRequestDef.Builder<LockPortRequest, LockPortResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, LockPortRequest.class, LockPortResponse.class)
@@ -680,18 +592,16 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(LockPortRequestBody.class),
-            f -> f.withMarshaller(LockPortRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(LockPortRequest::getBody, LockPortRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RegisterPortRequest, RegisterPortResponse> registerPort = genForregisterPort();
+    public static final HttpRequestDef<RegisterPortRequest, RegisterPortResponse> registerPort = genForRegisterPort();
 
-    private static HttpRequestDef<RegisterPortRequest, RegisterPortResponse> genForregisterPort() {
+    private static HttpRequestDef<RegisterPortRequest, RegisterPortResponse> genForRegisterPort() {
         // basic
         HttpRequestDef.Builder<RegisterPortRequest, RegisterPortResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RegisterPortRequest.class, RegisterPortResponse.class)
@@ -704,18 +614,16 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RegisterPortRequestBody.class),
-            f -> f.withMarshaller(RegisterPortRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RegisterPortRequest::getBody, RegisterPortRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UnlockPortRequest, UnlockPortResponse> unlockPort = genForunlockPort();
+    public static final HttpRequestDef<UnlockPortRequest, UnlockPortResponse> unlockPort = genForUnlockPort();
 
-    private static HttpRequestDef<UnlockPortRequest, UnlockPortResponse> genForunlockPort() {
+    private static HttpRequestDef<UnlockPortRequest, UnlockPortResponse> genForUnlockPort() {
         // basic
         HttpRequestDef.Builder<UnlockPortRequest, UnlockPortResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UnlockPortRequest.class, UnlockPortResponse.class)
@@ -728,9 +636,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UnlockPortRequestBody.class),
-            f -> f.withMarshaller(UnlockPortRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UnlockPortRequest::getBody, UnlockPortRequest::setBody));
 
         // response
 
@@ -738,9 +644,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListPortalInfosRequest, ListPortalInfosResponse> listPortalInfos =
-        genForlistPortalInfos();
+        genForListPortalInfos();
 
-    private static HttpRequestDef<ListPortalInfosRequest, ListPortalInfosResponse> genForlistPortalInfos() {
+    private static HttpRequestDef<ListPortalInfosRequest, ListPortalInfosResponse> genForListPortalInfos() {
         // basic
         HttpRequestDef.Builder<ListPortalInfosRequest, ListPortalInfosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPortalInfosRequest.class, ListPortalInfosResponse.class)
@@ -753,44 +659,32 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPortalInfosRequest::getPubName, (req, v) -> {
-                req.setPubName(v);
-            }));
+            f -> f.withMarshaller(ListPortalInfosRequest::getPubName, ListPortalInfosRequest::setPubName));
         builder.<OffsetDateTime>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPortalInfosRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListPortalInfosRequest::getBeginTime, ListPortalInfosRequest::setBeginTime));
         builder.<OffsetDateTime>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPortalInfosRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListPortalInfosRequest::getEndTime, ListPortalInfosRequest::setEndTime));
         builder.<Integer>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPortalInfosRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListPortalInfosRequest::getState, ListPortalInfosRequest::setState));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPortalInfosRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPortalInfosRequest::getLimit, ListPortalInfosRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPortalInfosRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPortalInfosRequest::getOffset, ListPortalInfosRequest::setOffset));
 
         // response
 
@@ -798,9 +692,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<UpdatePortalInfoRequest, UpdatePortalInfoResponse> updatePortalInfo =
-        genForupdatePortalInfo();
+        genForUpdatePortalInfo();
 
-    private static HttpRequestDef<UpdatePortalInfoRequest, UpdatePortalInfoResponse> genForupdatePortalInfo() {
+    private static HttpRequestDef<UpdatePortalInfoRequest, UpdatePortalInfoResponse> genForUpdatePortalInfo() {
         // basic
         HttpRequestDef.Builder<UpdatePortalInfoRequest, UpdatePortalInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePortalInfoRequest.class, UpdatePortalInfoResponse.class)
@@ -813,25 +707,21 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePortalInfoRequest::getPortalId, (req, v) -> {
-                req.setPortalId(v);
-            }));
+            f -> f.withMarshaller(UpdatePortalInfoRequest::getPortalId, UpdatePortalInfoRequest::setPortalId));
         builder.<UpdatePortalInfoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePortalInfoRequestBody.class),
-            f -> f.withMarshaller(UpdatePortalInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePortalInfoRequest::getBody, UpdatePortalInfoRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<FreezePubRequest, FreezePubResponse> freezePub = genForfreezePub();
+    public static final HttpRequestDef<FreezePubRequest, FreezePubResponse> freezePub = genForFreezePub();
 
-    private static HttpRequestDef<FreezePubRequest, FreezePubResponse> genForfreezePub() {
+    private static HttpRequestDef<FreezePubRequest, FreezePubResponse> genForFreezePub() {
         // basic
         HttpRequestDef.Builder<FreezePubRequest, FreezePubResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, FreezePubRequest.class, FreezePubResponse.class)
@@ -844,25 +734,21 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(FreezePubRequest::getPubId, (req, v) -> {
-                req.setPubId(v);
-            }));
+            f -> f.withMarshaller(FreezePubRequest::getPubId, FreezePubRequest::setPubId));
         builder.<FreezePubRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(FreezePubRequestBody.class),
-            f -> f.withMarshaller(FreezePubRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(FreezePubRequest::getBody, FreezePubRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPubInfosRequest, ListPubInfosResponse> listPubInfos = genForlistPubInfos();
+    public static final HttpRequestDef<ListPubInfosRequest, ListPubInfosResponse> listPubInfos = genForListPubInfos();
 
-    private static HttpRequestDef<ListPubInfosRequest, ListPubInfosResponse> genForlistPubInfos() {
+    private static HttpRequestDef<ListPubInfosRequest, ListPubInfosResponse> genForListPubInfos() {
         // basic
         HttpRequestDef.Builder<ListPubInfosRequest, ListPubInfosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPubInfosRequest.class, ListPubInfosResponse.class)
@@ -875,67 +761,51 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPubInfosRequest::getPubName, (req, v) -> {
-                req.setPubName(v);
-            }));
+            f -> f.withMarshaller(ListPubInfosRequest::getPubName, ListPubInfosRequest::setPubName));
         builder.<Integer>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPubInfosRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListPubInfosRequest::getState, ListPubInfosRequest::setState));
         builder.<OffsetDateTime>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPubInfosRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListPubInfosRequest::getStartTime, ListPubInfosRequest::setStartTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPubInfosRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPubInfosRequest::getOffset, ListPubInfosRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPubInfosRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPubInfosRequest::getLimit, ListPubInfosRequest::setLimit));
         builder.<OffsetDateTime>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPubInfosRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListPubInfosRequest::getEndTime, ListPubInfosRequest::setEndTime));
         builder.<String>withRequestField("industry",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPubInfosRequest::getIndustry, (req, v) -> {
-                req.setIndustry(v);
-            }));
+            f -> f.withMarshaller(ListPubInfosRequest::getIndustry, ListPubInfosRequest::setIndustry));
         builder.<Integer>withRequestField("approve_state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPubInfosRequest::getApproveState, (req, v) -> {
-                req.setApproveState(v);
-            }));
+            f -> f.withMarshaller(ListPubInfosRequest::getApproveState, ListPubInfosRequest::setApproveState));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UnfreezePubRequest, UnfreezePubResponse> unfreezePub = genForunfreezePub();
+    public static final HttpRequestDef<UnfreezePubRequest, UnfreezePubResponse> unfreezePub = genForUnfreezePub();
 
-    private static HttpRequestDef<UnfreezePubRequest, UnfreezePubResponse> genForunfreezePub() {
+    private static HttpRequestDef<UnfreezePubRequest, UnfreezePubResponse> genForUnfreezePub() {
         // basic
         HttpRequestDef.Builder<UnfreezePubRequest, UnfreezePubResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UnfreezePubRequest.class, UnfreezePubResponse.class)
@@ -948,16 +818,12 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnfreezePubRequest::getPubId, (req, v) -> {
-                req.setPubId(v);
-            }));
+            f -> f.withMarshaller(UnfreezePubRequest::getPubId, UnfreezePubRequest::setPubId));
         builder.<UnfreezePubRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UnfreezePubRequestBody.class),
-            f -> f.withMarshaller(UnfreezePubRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UnfreezePubRequest::getBody, UnfreezePubRequest::setBody));
 
         // response
 
@@ -965,9 +831,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<UpdatePubInfoRequest, UpdatePubInfoResponse> updatePubInfo =
-        genForupdatePubInfo();
+        genForUpdatePubInfo();
 
-    private static HttpRequestDef<UpdatePubInfoRequest, UpdatePubInfoResponse> genForupdatePubInfo() {
+    private static HttpRequestDef<UpdatePubInfoRequest, UpdatePubInfoResponse> genForUpdatePubInfo() {
         // basic
         HttpRequestDef.Builder<UpdatePubInfoRequest, UpdatePubInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdatePubInfoRequest.class, UpdatePubInfoResponse.class)
@@ -980,16 +846,12 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePubInfoRequest::getPubId, (req, v) -> {
-                req.setPubId(v);
-            }));
+            f -> f.withMarshaller(UpdatePubInfoRequest::getPubId, UpdatePubInfoRequest::setPubId));
         builder.<UpdatePubInfoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdatePubInfoRequestBody.class),
-            f -> f.withMarshaller(UpdatePubInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePubInfoRequest::getBody, UpdatePubInfoRequest::setBody));
 
         // response
 
@@ -997,9 +859,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<CreatePubInfoRequest, CreatePubInfoResponse> createPubInfo =
-        genForcreatePubInfo();
+        genForCreatePubInfo();
 
-    private static HttpRequestDef<CreatePubInfoRequest, CreatePubInfoResponse> genForcreatePubInfo() {
+    private static HttpRequestDef<CreatePubInfoRequest, CreatePubInfoResponse> genForCreatePubInfo() {
         // basic
         HttpRequestDef.Builder<CreatePubInfoRequest, CreatePubInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePubInfoRequest.class, CreatePubInfoResponse.class)
@@ -1012,18 +874,16 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePubInfoRequestBody.class),
-            f -> f.withMarshaller(CreatePubInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePubInfoRequest::getBody, CreatePubInfoRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PushMenuInfoRequest, PushMenuInfoResponse> pushMenuInfo = genForpushMenuInfo();
+    public static final HttpRequestDef<PushMenuInfoRequest, PushMenuInfoResponse> pushMenuInfo = genForPushMenuInfo();
 
-    private static HttpRequestDef<PushMenuInfoRequest, PushMenuInfoResponse> genForpushMenuInfo() {
+    private static HttpRequestDef<PushMenuInfoRequest, PushMenuInfoResponse> genForPushMenuInfo() {
         // basic
         HttpRequestDef.Builder<PushMenuInfoRequest, PushMenuInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PushMenuInfoRequest.class, PushMenuInfoResponse.class)
@@ -1036,9 +896,7 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PushMenuInfoRequest::getMenuId, (req, v) -> {
-                req.setMenuId(v);
-            }));
+            f -> f.withMarshaller(PushMenuInfoRequest::getMenuId, PushMenuInfoRequest::setMenuId));
 
         // response
 
@@ -1046,9 +904,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<PushPortalInfoRequest, PushPortalInfoResponse> pushPortalInfo =
-        genForpushPortalInfo();
+        genForPushPortalInfo();
 
-    private static HttpRequestDef<PushPortalInfoRequest, PushPortalInfoResponse> genForpushPortalInfo() {
+    private static HttpRequestDef<PushPortalInfoRequest, PushPortalInfoResponse> genForPushPortalInfo() {
         // basic
         HttpRequestDef.Builder<PushPortalInfoRequest, PushPortalInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PushPortalInfoRequest.class, PushPortalInfoResponse.class)
@@ -1061,18 +919,16 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PushPortalInfoRequest::getPortalId, (req, v) -> {
-                req.setPortalId(v);
-            }));
+            f -> f.withMarshaller(PushPortalInfoRequest::getPortalId, PushPortalInfoRequest::setPortalId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UploadMediaRequest, UploadMediaResponse> uploadMedia = genForuploadMedia();
+    public static final HttpRequestDef<UploadMediaRequest, UploadMediaResponse> uploadMedia = genForUploadMedia();
 
-    private static HttpRequestDef<UploadMediaRequest, UploadMediaResponse> genForuploadMedia() {
+    private static HttpRequestDef<UploadMediaRequest, UploadMediaResponse> genForUploadMedia() {
         // basic
         HttpRequestDef.Builder<UploadMediaRequest, UploadMediaResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadMediaRequest.class, UploadMediaResponse.class)
@@ -1085,9 +941,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadMediaRequestBody.class),
-            f -> f.withMarshaller(UploadMediaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadMediaRequest::getBody, UploadMediaRequest::setBody));
 
         // response
 
@@ -1095,9 +949,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<CreateAimSendTaskRequest, CreateAimSendTaskResponse> createAimSendTask =
-        genForcreateAimSendTask();
+        genForCreateAimSendTask();
 
-    private static HttpRequestDef<CreateAimSendTaskRequest, CreateAimSendTaskResponse> genForcreateAimSendTask() {
+    private static HttpRequestDef<CreateAimSendTaskRequest, CreateAimSendTaskResponse> genForCreateAimSendTask() {
         // basic
         HttpRequestDef.Builder<CreateAimSendTaskRequest, CreateAimSendTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAimSendTaskRequest.class, CreateAimSendTaskResponse.class)
@@ -1110,9 +964,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAimSendTaskRequestBody.class),
-            f -> f.withMarshaller(CreateAimSendTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAimSendTaskRequest::getBody, CreateAimSendTaskRequest::setBody));
 
         // response
 
@@ -1120,9 +972,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimSendDetailsRequest, ListAimSendDetailsResponse> listAimSendDetails =
-        genForlistAimSendDetails();
+        genForListAimSendDetails();
 
-    private static HttpRequestDef<ListAimSendDetailsRequest, ListAimSendDetailsResponse> genForlistAimSendDetails() {
+    private static HttpRequestDef<ListAimSendDetailsRequest, ListAimSendDetailsResponse> genForListAimSendDetails() {
         // basic
         HttpRequestDef.Builder<ListAimSendDetailsRequest, ListAimSendDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAimSendDetailsRequest.class, ListAimSendDetailsResponse.class)
@@ -1135,58 +987,42 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendDetailsRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListAimSendDetailsRequest::getTaskId, ListAimSendDetailsRequest::setTaskId));
         builder.<String>withRequestField("tpl_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendDetailsRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(ListAimSendDetailsRequest::getTplId, ListAimSendDetailsRequest::setTplId));
         builder.<String>withRequestField("sms_sign",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendDetailsRequest::getSmsSign, (req, v) -> {
-                req.setSmsSign(v);
-            }));
+            f -> f.withMarshaller(ListAimSendDetailsRequest::getSmsSign, ListAimSendDetailsRequest::setSmsSign));
         builder.<String>withRequestField("cust_flag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendDetailsRequest::getCustFlag, (req, v) -> {
-                req.setCustFlag(v);
-            }));
+            f -> f.withMarshaller(ListAimSendDetailsRequest::getCustFlag, ListAimSendDetailsRequest::setCustFlag));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendDetailsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListAimSendDetailsRequest::getBeginTime, ListAimSendDetailsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendDetailsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAimSendDetailsRequest::getEndTime, ListAimSendDetailsRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimSendDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAimSendDetailsRequest::getOffset, ListAimSendDetailsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimSendDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAimSendDetailsRequest::getLimit, ListAimSendDetailsRequest::setLimit));
 
         // response
 
@@ -1194,9 +1030,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimSendReportsRequest, ListAimSendReportsResponse> listAimSendReports =
-        genForlistAimSendReports();
+        genForListAimSendReports();
 
-    private static HttpRequestDef<ListAimSendReportsRequest, ListAimSendReportsResponse> genForlistAimSendReports() {
+    private static HttpRequestDef<ListAimSendReportsRequest, ListAimSendReportsResponse> genForListAimSendReports() {
         // basic
         HttpRequestDef.Builder<ListAimSendReportsRequest, ListAimSendReportsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListAimSendReportsRequest.class, ListAimSendReportsResponse.class)
@@ -1209,9 +1045,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListAimSendReportsRequestBody.class),
-            f -> f.withMarshaller(ListAimSendReportsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAimSendReportsRequest::getBody, ListAimSendReportsRequest::setBody));
 
         // response
 
@@ -1219,9 +1053,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimSendTasksRequest, ListAimSendTasksResponse> listAimSendTasks =
-        genForlistAimSendTasks();
+        genForListAimSendTasks();
 
-    private static HttpRequestDef<ListAimSendTasksRequest, ListAimSendTasksResponse> genForlistAimSendTasks() {
+    private static HttpRequestDef<ListAimSendTasksRequest, ListAimSendTasksResponse> genForListAimSendTasks() {
         // basic
         HttpRequestDef.Builder<ListAimSendTasksRequest, ListAimSendTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAimSendTasksRequest.class, ListAimSendTasksResponse.class)
@@ -1234,74 +1068,56 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendTasksRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListAimSendTasksRequest::getTaskId, ListAimSendTasksRequest::setTaskId));
         builder.<String>withRequestField("task_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendTasksRequest::getTaskName, (req, v) -> {
-                req.setTaskName(v);
-            }));
+            f -> f.withMarshaller(ListAimSendTasksRequest::getTaskName, ListAimSendTasksRequest::setTaskName));
         builder.<String>withRequestField("tpl_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendTasksRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(ListAimSendTasksRequest::getTplId, ListAimSendTasksRequest::setTplId));
         builder.<String>withRequestField("tpl_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendTasksRequest::getTplName, (req, v) -> {
-                req.setTplName(v);
-            }));
+            f -> f.withMarshaller(ListAimSendTasksRequest::getTplName, ListAimSendTasksRequest::setTplName));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendTasksRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListAimSendTasksRequest::getBeginTime, ListAimSendTasksRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendTasksRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAimSendTasksRequest::getEndTime, ListAimSendTasksRequest::setEndTime));
         builder.<String>withRequestField("task_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimSendTasksRequest::getTaskStatus, (req, v) -> {
-                req.setTaskStatus(v);
-            }));
+            f -> f.withMarshaller(ListAimSendTasksRequest::getTaskStatus, ListAimSendTasksRequest::setTaskStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimSendTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAimSendTasksRequest::getOffset, ListAimSendTasksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimSendTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAimSendTasksRequest::getLimit, ListAimSendTasksRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSmsAppRequest, CreateSmsAppResponse> createSmsApp = genForcreateSmsApp();
+    public static final HttpRequestDef<CreateSmsAppRequest, CreateSmsAppResponse> createSmsApp = genForCreateSmsApp();
 
-    private static HttpRequestDef<CreateSmsAppRequest, CreateSmsAppResponse> genForcreateSmsApp() {
+    private static HttpRequestDef<CreateSmsAppRequest, CreateSmsAppResponse> genForCreateSmsApp() {
         // basic
         HttpRequestDef.Builder<CreateSmsAppRequest, CreateSmsAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSmsAppRequest.class, CreateSmsAppResponse.class)
@@ -1314,9 +1130,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MsgAppRequest.class),
-            f -> f.withMarshaller(CreateSmsAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSmsAppRequest::getBody, CreateSmsAppRequest::setBody));
 
         // response
 
@@ -1324,9 +1138,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimMsgAppRequest, ListAimMsgAppResponse> listAimMsgApp =
-        genForlistAimMsgApp();
+        genForListAimMsgApp();
 
-    private static HttpRequestDef<ListAimMsgAppRequest, ListAimMsgAppResponse> genForlistAimMsgApp() {
+    private static HttpRequestDef<ListAimMsgAppRequest, ListAimMsgAppResponse> genForListAimMsgApp() {
         // basic
         HttpRequestDef.Builder<ListAimMsgAppRequest, ListAimMsgAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAimMsgAppRequest.class, ListAimMsgAppResponse.class)
@@ -1339,44 +1153,32 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimMsgAppRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgAppRequest::getOffset, ListAimMsgAppRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimMsgAppRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgAppRequest::getLimit, ListAimMsgAppRequest::setLimit));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgAppRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgAppRequest::getAppName, ListAimMsgAppRequest::setAppName));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgAppRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgAppRequest::getStatus, ListAimMsgAppRequest::setStatus));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgAppRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgAppRequest::getBeginTime, ListAimMsgAppRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgAppRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgAppRequest::getEndTime, ListAimMsgAppRequest::setEndTime));
 
         // response
 
@@ -1384,9 +1186,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse> listAimMsgAppDetail =
-        genForlistAimMsgAppDetail();
+        genForListAimMsgAppDetail();
 
-    private static HttpRequestDef<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse> genForlistAimMsgAppDetail() {
+    private static HttpRequestDef<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse> genForListAimMsgAppDetail() {
         // basic
         HttpRequestDef.Builder<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAimMsgAppDetailRequest.class, ListAimMsgAppDetailResponse.class)
@@ -1399,9 +1201,7 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgAppDetailRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgAppDetailRequest::getAppId, ListAimMsgAppDetailRequest::setAppId));
 
         // response
 
@@ -1409,9 +1209,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse> updateAimMsgApp =
-        genForupdateAimMsgApp();
+        genForUpdateAimMsgApp();
 
-    private static HttpRequestDef<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse> genForupdateAimMsgApp() {
+    private static HttpRequestDef<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse> genForUpdateAimMsgApp() {
         // basic
         HttpRequestDef.Builder<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAimMsgAppRequest.class, UpdateAimMsgAppResponse.class)
@@ -1424,16 +1224,12 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAimMsgAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateAimMsgAppRequest::getAppId, UpdateAimMsgAppRequest::setAppId));
         builder.<MsgAppRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MsgAppRequest.class),
-            f -> f.withMarshaller(UpdateAimMsgAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAimMsgAppRequest::getBody, UpdateAimMsgAppRequest::setBody));
 
         // response
 
@@ -1441,9 +1237,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse> sendAimBatchDifferentMessages =
-        genForsendAimBatchDifferentMessages();
+        genForSendAimBatchDifferentMessages();
 
-    private static HttpRequestDef<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse> genForsendAimBatchDifferentMessages() {
+    private static HttpRequestDef<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse> genForSendAimBatchDifferentMessages() {
         // basic
         HttpRequestDef.Builder<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse> builder =
             HttpRequestDef
@@ -1459,9 +1255,8 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SmsMultiTemplateTaskRequestBody.class),
-            f -> f.withMarshaller(SendAimBatchDifferentMessagesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendAimBatchDifferentMessagesRequest::getBody,
+                SendAimBatchDifferentMessagesRequest::setBody));
 
         // response
 
@@ -1469,9 +1264,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse> sendAimBatchMessages =
-        genForsendAimBatchMessages();
+        genForSendAimBatchMessages();
 
-    private static HttpRequestDef<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse> genForsendAimBatchMessages() {
+    private static HttpRequestDef<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse> genForSendAimBatchMessages() {
         // basic
         HttpRequestDef.Builder<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SendAimBatchMessagesRequest.class, SendAimBatchMessagesResponse.class)
@@ -1484,9 +1279,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SmsTaskReq.class),
-            f -> f.withMarshaller(SendAimBatchMessagesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendAimBatchMessagesRequest::getBody, SendAimBatchMessagesRequest::setBody));
 
         // response
 
@@ -1494,9 +1287,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse> addAimMsgSignature =
-        genForaddAimMsgSignature();
+        genForAddAimMsgSignature();
 
-    private static HttpRequestDef<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse> genForaddAimMsgSignature() {
+    private static HttpRequestDef<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse> genForAddAimMsgSignature() {
         // basic
         HttpRequestDef.Builder<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddAimMsgSignatureRequest.class, AddAimMsgSignatureResponse.class)
@@ -1509,9 +1302,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SignatureRequest.class),
-            f -> f.withMarshaller(AddAimMsgSignatureRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddAimMsgSignatureRequest::getBody, AddAimMsgSignatureRequest::setBody));
 
         // response
 
@@ -1519,9 +1310,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse> deleteAimMsgSignature =
-        genFordeleteAimMsgSignature();
+        genForDeleteAimMsgSignature();
 
-    private static HttpRequestDef<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse> genFordeleteAimMsgSignature() {
+    private static HttpRequestDef<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse> genForDeleteAimMsgSignature() {
         // basic
         HttpRequestDef.Builder<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteAimMsgSignatureRequest.class, DeleteAimMsgSignatureResponse.class)
@@ -1534,9 +1325,8 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAimMsgSignatureRequest::getSignatureId, (req, v) -> {
-                req.setSignatureId(v);
-            }));
+            f -> f.withMarshaller(DeleteAimMsgSignatureRequest::getSignatureId,
+                DeleteAimMsgSignatureRequest::setSignatureId));
 
         // response
 
@@ -1544,9 +1334,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse> listAimMsgSignature =
-        genForlistAimMsgSignature();
+        genForListAimMsgSignature();
 
-    private static HttpRequestDef<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse> genForlistAimMsgSignature() {
+    private static HttpRequestDef<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse> genForListAimMsgSignature() {
         // basic
         HttpRequestDef.Builder<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAimMsgSignatureRequest.class, ListAimMsgSignatureResponse.class)
@@ -1559,65 +1349,50 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgSignatureRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getAppName, ListAimMsgSignatureRequest::setAppName));
         builder.<String>withRequestField("signature_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgSignatureRequest::getSignatureId, (req, v) -> {
-                req.setSignatureId(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getSignatureId,
+                ListAimMsgSignatureRequest::setSignatureId));
         builder.<String>withRequestField("signature_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgSignatureRequest::getSignatureName, (req, v) -> {
-                req.setSignatureName(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getSignatureName,
+                ListAimMsgSignatureRequest::setSignatureName));
         builder.<String>withRequestField("signature_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgSignatureRequest::getSignatureType, (req, v) -> {
-                req.setSignatureType(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getSignatureType,
+                ListAimMsgSignatureRequest::setSignatureType));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgSignatureRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getBeginTime, ListAimMsgSignatureRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgSignatureRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getEndTime, ListAimMsgSignatureRequest::setEndTime));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgSignatureRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getStatus, ListAimMsgSignatureRequest::setStatus));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimMsgSignatureRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getLimit, ListAimMsgSignatureRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgSignatureRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getOffset, ListAimMsgSignatureRequest::setOffset));
 
         // response
 
@@ -1625,9 +1400,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse> listAimMsgSignatureDetail =
-        genForlistAimMsgSignatureDetail();
+        genForListAimMsgSignatureDetail();
 
-    private static HttpRequestDef<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse> genForlistAimMsgSignatureDetail() {
+    private static HttpRequestDef<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse> genForListAimMsgSignatureDetail() {
         // basic
         HttpRequestDef.Builder<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse> builder =
             HttpRequestDef
@@ -1643,9 +1418,8 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgSignatureDetailRequest::getSignatureId, (req, v) -> {
-                req.setSignatureId(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgSignatureDetailRequest::getSignatureId,
+                ListAimMsgSignatureDetailRequest::setSignatureId));
 
         // response
 
@@ -1653,9 +1427,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse> showAimMsgSignatureFileInfo =
-        genForshowAimMsgSignatureFileInfo();
+        genForShowAimMsgSignatureFileInfo();
 
-    private static HttpRequestDef<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse> genForshowAimMsgSignatureFileInfo() {
+    private static HttpRequestDef<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse> genForShowAimMsgSignatureFileInfo() {
         // basic
         HttpRequestDef.Builder<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse> builder =
             HttpRequestDef
@@ -1671,23 +1445,20 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAimMsgSignatureFileInfoRequest::getFileId, (req, v) -> {
-                req.setFileId(v);
-            }));
+            f -> f.withMarshaller(ShowAimMsgSignatureFileInfoRequest::getFileId,
+                ShowAimMsgSignatureFileInfoRequest::setFileId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAimMsgSignatureFileInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowAimMsgSignatureFileInfoRequest::getOffset,
+                ShowAimMsgSignatureFileInfoRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAimMsgSignatureFileInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowAimMsgSignatureFileInfoRequest::getLimit,
+                ShowAimMsgSignatureFileInfoRequest::setLimit));
 
         // response
 
@@ -1695,9 +1466,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse> updateAimMsgSignature =
-        genForupdateAimMsgSignature();
+        genForUpdateAimMsgSignature();
 
-    private static HttpRequestDef<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse> genForupdateAimMsgSignature() {
+    private static HttpRequestDef<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse> genForUpdateAimMsgSignature() {
         // basic
         HttpRequestDef.Builder<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateAimMsgSignatureRequest.class, UpdateAimMsgSignatureResponse.class)
@@ -1710,16 +1481,13 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAimMsgSignatureRequest::getSignatureId, (req, v) -> {
-                req.setSignatureId(v);
-            }));
+            f -> f.withMarshaller(UpdateAimMsgSignatureRequest::getSignatureId,
+                UpdateAimMsgSignatureRequest::setSignatureId));
         builder.<SignatureRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SignatureRequest.class),
-            f -> f.withMarshaller(UpdateAimMsgSignatureRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAimMsgSignatureRequest::getBody, UpdateAimMsgSignatureRequest::setBody));
 
         // response
 
@@ -1727,9 +1495,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse> uploadAimMsgSignatureFile =
-        genForuploadAimMsgSignatureFile();
+        genForUploadAimMsgSignatureFile();
 
-    private static HttpRequestDef<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse> genForuploadAimMsgSignatureFile() {
+    private static HttpRequestDef<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse> genForUploadAimMsgSignatureFile() {
         // basic
         HttpRequestDef.Builder<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse> builder =
             HttpRequestDef
@@ -1745,16 +1513,14 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadAimMsgSignatureFileRequest::getFileDesc, (req, v) -> {
-                req.setFileDesc(v);
-            }));
+            f -> f.withMarshaller(UploadAimMsgSignatureFileRequest::getFileDesc,
+                UploadAimMsgSignatureFileRequest::setFileDesc));
         builder.<UploadAimMsgSignatureFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadAimMsgSignatureFileRequestBody.class),
-            f -> f.withMarshaller(UploadAimMsgSignatureFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadAimMsgSignatureFileRequest::getBody,
+                UploadAimMsgSignatureFileRequest::setBody));
 
         // response
 
@@ -1762,9 +1528,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse> createAimMsgTemplate =
-        genForcreateAimMsgTemplate();
+        genForCreateAimMsgTemplate();
 
-    private static HttpRequestDef<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse> genForcreateAimMsgTemplate() {
+    private static HttpRequestDef<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse> genForCreateAimMsgTemplate() {
         // basic
         HttpRequestDef.Builder<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateAimMsgTemplateRequest.class, CreateAimMsgTemplateResponse.class)
@@ -1777,9 +1543,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MsgTemplateRequest.class),
-            f -> f.withMarshaller(CreateAimMsgTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAimMsgTemplateRequest::getBody, CreateAimMsgTemplateRequest::setBody));
 
         // response
 
@@ -1787,9 +1551,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse> deleteAimMsgTemplate =
-        genFordeleteAimMsgTemplate();
+        genForDeleteAimMsgTemplate();
 
-    private static HttpRequestDef<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse> genFordeleteAimMsgTemplate() {
+    private static HttpRequestDef<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse> genForDeleteAimMsgTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteAimMsgTemplateRequest.class, DeleteAimMsgTemplateResponse.class)
@@ -1802,9 +1566,8 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAimMsgTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeleteAimMsgTemplateRequest::getTemplateId,
+                DeleteAimMsgTemplateRequest::setTemplateId));
 
         // response
 
@@ -1812,9 +1575,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse> listAimMsgTemplate =
-        genForlistAimMsgTemplate();
+        genForListAimMsgTemplate();
 
-    private static HttpRequestDef<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse> genForlistAimMsgTemplate() {
+    private static HttpRequestDef<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse> genForListAimMsgTemplate() {
         // basic
         HttpRequestDef.Builder<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAimMsgTemplateRequest.class, ListAimMsgTemplateResponse.class)
@@ -1827,65 +1590,49 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimMsgTemplateRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getOffset, ListAimMsgTemplateRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimMsgTemplateRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getLimit, ListAimMsgTemplateRequest::setLimit));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgTemplateRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getAppName, ListAimMsgTemplateRequest::setAppName));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgTemplateRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getStartTime, ListAimMsgTemplateRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgTemplateRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getEndTime, ListAimMsgTemplateRequest::setEndTime));
         builder.<ListAimMsgTemplateRequest.FlowStatusEnum>withRequestField("flow_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAimMsgTemplateRequest.FlowStatusEnum.class),
-            f -> f.withMarshaller(ListAimMsgTemplateRequest::getFlowStatus, (req, v) -> {
-                req.setFlowStatus(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getFlowStatus, ListAimMsgTemplateRequest::setFlowStatus));
         builder.<String>withRequestField("template_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getTemplateId, ListAimMsgTemplateRequest::setTemplateId));
         builder.<String>withRequestField("template_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimMsgTemplateRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getTemplateName,
+                ListAimMsgTemplateRequest::setTemplateName));
         builder.<ListAimMsgTemplateRequest.TemplateTypeEnum>withRequestField("template_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAimMsgTemplateRequest.TemplateTypeEnum.class),
-            f -> f.withMarshaller(ListAimMsgTemplateRequest::getTemplateType, (req, v) -> {
-                req.setTemplateType(v);
-            }));
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getTemplateType,
+                ListAimMsgTemplateRequest::setTemplateType));
 
         // response
 
@@ -1893,9 +1640,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse> showAimMsgTemplateDetail =
-        genForshowAimMsgTemplateDetail();
+        genForShowAimMsgTemplateDetail();
 
-    private static HttpRequestDef<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse> genForshowAimMsgTemplateDetail() {
+    private static HttpRequestDef<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse> genForShowAimMsgTemplateDetail() {
         // basic
         HttpRequestDef.Builder<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse> builder =
             HttpRequestDef
@@ -1909,9 +1656,8 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAimMsgTemplateDetailRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowAimMsgTemplateDetailRequest::getTemplateId,
+                ShowAimMsgTemplateDetailRequest::setTemplateId));
 
         // response
 
@@ -1919,9 +1665,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse> showAimMsgTemplateVariable =
-        genForshowAimMsgTemplateVariable();
+        genForShowAimMsgTemplateVariable();
 
-    private static HttpRequestDef<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse> genForshowAimMsgTemplateVariable() {
+    private static HttpRequestDef<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse> genForShowAimMsgTemplateVariable() {
         // basic
         HttpRequestDef.Builder<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse> builder =
             HttpRequestDef
@@ -1937,9 +1683,8 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAimMsgTemplateVariableRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowAimMsgTemplateVariableRequest::getTemplateId,
+                ShowAimMsgTemplateVariableRequest::setTemplateId));
 
         // response
 
@@ -1947,9 +1692,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse> updateAimMsgTemplate =
-        genForupdateAimMsgTemplate();
+        genForUpdateAimMsgTemplate();
 
-    private static HttpRequestDef<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse> genForupdateAimMsgTemplate() {
+    private static HttpRequestDef<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse> genForUpdateAimMsgTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateAimMsgTemplateRequest.class, UpdateAimMsgTemplateResponse.class)
@@ -1962,16 +1707,13 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAimMsgTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(UpdateAimMsgTemplateRequest::getTemplateId,
+                UpdateAimMsgTemplateRequest::setTemplateId));
         builder.<MsgTemplateRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MsgTemplateRequest.class),
-            f -> f.withMarshaller(UpdateAimMsgTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAimMsgTemplateRequest::getBody, UpdateAimMsgTemplateRequest::setBody));
 
         // response
 
@@ -1979,9 +1721,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<CreateAimPersonalTemplateRequest, CreateAimPersonalTemplateResponse> createAimPersonalTemplate =
-        genForcreateAimPersonalTemplate();
+        genForCreateAimPersonalTemplate();
 
-    private static HttpRequestDef<CreateAimPersonalTemplateRequest, CreateAimPersonalTemplateResponse> genForcreateAimPersonalTemplate() {
+    private static HttpRequestDef<CreateAimPersonalTemplateRequest, CreateAimPersonalTemplateResponse> genForCreateAimPersonalTemplate() {
         // basic
         HttpRequestDef.Builder<CreateAimPersonalTemplateRequest, CreateAimPersonalTemplateResponse> builder =
             HttpRequestDef
@@ -1997,9 +1739,8 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAimPersonalTemplateRequestBody.class),
-            f -> f.withMarshaller(CreateAimPersonalTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAimPersonalTemplateRequest::getBody,
+                CreateAimPersonalTemplateRequest::setBody));
 
         // response
 
@@ -2007,9 +1748,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<DeleteAimPersonalTemplateRequest, DeleteAimPersonalTemplateResponse> deleteAimPersonalTemplate =
-        genFordeleteAimPersonalTemplate();
+        genForDeleteAimPersonalTemplate();
 
-    private static HttpRequestDef<DeleteAimPersonalTemplateRequest, DeleteAimPersonalTemplateResponse> genFordeleteAimPersonalTemplate() {
+    private static HttpRequestDef<DeleteAimPersonalTemplateRequest, DeleteAimPersonalTemplateResponse> genForDeleteAimPersonalTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteAimPersonalTemplateRequest, DeleteAimPersonalTemplateResponse> builder =
             HttpRequestDef
@@ -2025,9 +1766,8 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAimPersonalTemplateRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(DeleteAimPersonalTemplateRequest::getTplId,
+                DeleteAimPersonalTemplateRequest::setTplId));
 
         // response
 
@@ -2035,9 +1775,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<DeleteTemplateMaterialRequest, DeleteTemplateMaterialResponse> deleteTemplateMaterial =
-        genFordeleteTemplateMaterial();
+        genForDeleteTemplateMaterial();
 
-    private static HttpRequestDef<DeleteTemplateMaterialRequest, DeleteTemplateMaterialResponse> genFordeleteTemplateMaterial() {
+    private static HttpRequestDef<DeleteTemplateMaterialRequest, DeleteTemplateMaterialResponse> genForDeleteTemplateMaterial() {
         // basic
         HttpRequestDef.Builder<DeleteTemplateMaterialRequest, DeleteTemplateMaterialResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DeleteTemplateMaterialRequest.class, DeleteTemplateMaterialResponse.class)
@@ -2050,9 +1790,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteTemplateMaterialRequestBody.class),
-            f -> f.withMarshaller(DeleteTemplateMaterialRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateMaterialRequest::getBody, DeleteTemplateMaterialRequest::setBody));
 
         // response
 
@@ -2060,9 +1798,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimTemplateMaterialsRequest, ListAimTemplateMaterialsResponse> listAimTemplateMaterials =
-        genForlistAimTemplateMaterials();
+        genForListAimTemplateMaterials();
 
-    private static HttpRequestDef<ListAimTemplateMaterialsRequest, ListAimTemplateMaterialsResponse> genForlistAimTemplateMaterials() {
+    private static HttpRequestDef<ListAimTemplateMaterialsRequest, ListAimTemplateMaterialsResponse> genForListAimTemplateMaterials() {
         // basic
         HttpRequestDef.Builder<ListAimTemplateMaterialsRequest, ListAimTemplateMaterialsResponse> builder =
             HttpRequestDef
@@ -2076,44 +1814,38 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getResourceType,
+                ListAimTemplateMaterialsRequest::setResourceType));
         builder.<String>withRequestField("file_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getFileName, (req, v) -> {
-                req.setFileName(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getFileName,
+                ListAimTemplateMaterialsRequest::setFileName));
         builder.<String>withRequestField("material_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getMaterialId, (req, v) -> {
-                req.setMaterialId(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getMaterialId,
+                ListAimTemplateMaterialsRequest::setMaterialId));
         builder.<String>withRequestField("aim_resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getAimResourceId, (req, v) -> {
-                req.setAimResourceId(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getAimResourceId,
+                ListAimTemplateMaterialsRequest::setAimResourceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getOffset,
+                ListAimTemplateMaterialsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplateMaterialsRequest::getLimit,
+                ListAimTemplateMaterialsRequest::setLimit));
 
         // response
 
@@ -2121,9 +1853,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimTemplateReportsRequest, ListAimTemplateReportsResponse> listAimTemplateReports =
-        genForlistAimTemplateReports();
+        genForListAimTemplateReports();
 
-    private static HttpRequestDef<ListAimTemplateReportsRequest, ListAimTemplateReportsResponse> genForlistAimTemplateReports() {
+    private static HttpRequestDef<ListAimTemplateReportsRequest, ListAimTemplateReportsResponse> genForListAimTemplateReports() {
         // basic
         HttpRequestDef.Builder<ListAimTemplateReportsRequest, ListAimTemplateReportsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListAimTemplateReportsRequest.class, ListAimTemplateReportsResponse.class)
@@ -2136,9 +1868,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListAimTemplateReportsRequestBody.class),
-            f -> f.withMarshaller(ListAimTemplateReportsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplateReportsRequest::getBody, ListAimTemplateReportsRequest::setBody));
 
         // response
 
@@ -2146,9 +1876,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListAimTemplatesRequest, ListAimTemplatesResponse> listAimTemplates =
-        genForlistAimTemplates();
+        genForListAimTemplates();
 
-    private static HttpRequestDef<ListAimTemplatesRequest, ListAimTemplatesResponse> genForlistAimTemplates() {
+    private static HttpRequestDef<ListAimTemplatesRequest, ListAimTemplatesResponse> genForListAimTemplates() {
         // basic
         HttpRequestDef.Builder<ListAimTemplatesRequest, ListAimTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAimTemplatesRequest.class, ListAimTemplatesResponse.class)
@@ -2161,72 +1891,52 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimTemplatesRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplatesRequest::getTplId, ListAimTemplatesRequest::setTplId));
         builder.<String>withRequestField("tpl_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimTemplatesRequest::getTplName, (req, v) -> {
-                req.setTplName(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplatesRequest::getTplName, ListAimTemplatesRequest::setTplName));
         builder.<String>withRequestField("tpl_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimTemplatesRequest::getTplType, (req, v) -> {
-                req.setTplType(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplatesRequest::getTplType, ListAimTemplatesRequest::setTplType));
         builder.<List<String>>withRequestField("factory_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAimTemplatesRequest::getFactoryType, (req, v) -> {
-                req.setFactoryType(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplatesRequest::getFactoryType, ListAimTemplatesRequest::setFactoryType));
         builder.<Boolean>withRequestField("has_param",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAimTemplatesRequest::getHasParam, (req, v) -> {
-                req.setHasParam(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplatesRequest::getHasParam, ListAimTemplatesRequest::setHasParam));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimTemplatesRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplatesRequest::getBeginTime, ListAimTemplatesRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAimTemplatesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplatesRequest::getEndTime, ListAimTemplatesRequest::setEndTime));
         builder.<Boolean>withRequestField("is_only_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAimTemplatesRequest::getIsOnlyStatus, (req, v) -> {
-                req.setIsOnlyStatus(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplatesRequest::getIsOnlyStatus, ListAimTemplatesRequest::setIsOnlyStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplatesRequest::getOffset, ListAimTemplatesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAimTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAimTemplatesRequest::getLimit, ListAimTemplatesRequest::setLimit));
 
         // response
 
@@ -2234,9 +1944,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse> setPrimaryVideoThumbnail =
-        genForsetPrimaryVideoThumbnail();
+        genForSetPrimaryVideoThumbnail();
 
-    private static HttpRequestDef<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse> genForsetPrimaryVideoThumbnail() {
+    private static HttpRequestDef<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse> genForSetPrimaryVideoThumbnail() {
         // basic
         HttpRequestDef.Builder<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse> builder =
             HttpRequestDef
@@ -2250,9 +1960,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetPrimaryVideoThumbnailRequestBody.class),
-            f -> f.withMarshaller(SetPrimaryVideoThumbnailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetPrimaryVideoThumbnailRequest::getBody, SetPrimaryVideoThumbnailRequest::setBody));
 
         // response
 
@@ -2260,9 +1968,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse> showTemplateVideoThumbnail =
-        genForshowTemplateVideoThumbnail();
+        genForShowTemplateVideoThumbnail();
 
-    private static HttpRequestDef<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse> genForshowTemplateVideoThumbnail() {
+    private static HttpRequestDef<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse> genForShowTemplateVideoThumbnail() {
         // basic
         HttpRequestDef.Builder<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse> builder =
             HttpRequestDef
@@ -2278,9 +1986,8 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateVideoThumbnailRequest::getAimResourceId, (req, v) -> {
-                req.setAimResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateVideoThumbnailRequest::getAimResourceId,
+                ShowTemplateVideoThumbnailRequest::setAimResourceId));
 
         // response
 
@@ -2288,9 +1995,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse> updatePersonalTemplateState =
-        genForupdatePersonalTemplateState();
+        genForUpdatePersonalTemplateState();
 
-    private static HttpRequestDef<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse> genForupdatePersonalTemplateState() {
+    private static HttpRequestDef<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse> genForUpdatePersonalTemplateState() {
         // basic
         HttpRequestDef.Builder<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse> builder =
             HttpRequestDef
@@ -2306,16 +2013,14 @@ public class KooMessageMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePersonalTemplateStateRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(UpdatePersonalTemplateStateRequest::getTplId,
+                UpdatePersonalTemplateStateRequest::setTplId));
         builder.<UpdatePersonalTemplateStateDataRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePersonalTemplateStateDataRequest.class),
-            f -> f.withMarshaller(UpdatePersonalTemplateStateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePersonalTemplateStateRequest::getBody,
+                UpdatePersonalTemplateStateRequest::setBody));
 
         // response
 
@@ -2323,9 +2028,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<UploadAimTemplateMaterialRequest, UploadAimTemplateMaterialResponse> uploadAimTemplateMaterial =
-        genForuploadAimTemplateMaterial();
+        genForUploadAimTemplateMaterial();
 
-    private static HttpRequestDef<UploadAimTemplateMaterialRequest, UploadAimTemplateMaterialResponse> genForuploadAimTemplateMaterial() {
+    private static HttpRequestDef<UploadAimTemplateMaterialRequest, UploadAimTemplateMaterialResponse> genForUploadAimTemplateMaterial() {
         // basic
         HttpRequestDef.Builder<UploadAimTemplateMaterialRequest, UploadAimTemplateMaterialResponse> builder =
             HttpRequestDef
@@ -2341,9 +2046,8 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadAimTemplateMaterialRequestBody.class),
-            f -> f.withMarshaller(UploadAimTemplateMaterialRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadAimTemplateMaterialRequest::getBody,
+                UploadAimTemplateMaterialRequest::setBody));
 
         // response
 
@@ -2351,9 +2055,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<AddVmsCallBackRequest, AddVmsCallBackResponse> addVmsCallBack =
-        genForaddVmsCallBack();
+        genForAddVmsCallBack();
 
-    private static HttpRequestDef<AddVmsCallBackRequest, AddVmsCallBackResponse> genForaddVmsCallBack() {
+    private static HttpRequestDef<AddVmsCallBackRequest, AddVmsCallBackResponse> genForAddVmsCallBack() {
         // basic
         HttpRequestDef.Builder<AddVmsCallBackRequest, AddVmsCallBackResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddVmsCallBackRequest.class, AddVmsCallBackResponse.class)
@@ -2366,9 +2070,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddVmsCallBackRequestBody.class),
-            f -> f.withMarshaller(AddVmsCallBackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddVmsCallBackRequest::getBody, AddVmsCallBackRequest::setBody));
 
         // response
 
@@ -2376,9 +2078,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<CreateVmsSendTaskRequest, CreateVmsSendTaskResponse> createVmsSendTask =
-        genForcreateVmsSendTask();
+        genForCreateVmsSendTask();
 
-    private static HttpRequestDef<CreateVmsSendTaskRequest, CreateVmsSendTaskResponse> genForcreateVmsSendTask() {
+    private static HttpRequestDef<CreateVmsSendTaskRequest, CreateVmsSendTaskResponse> genForCreateVmsSendTask() {
         // basic
         HttpRequestDef.Builder<CreateVmsSendTaskRequest, CreateVmsSendTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVmsSendTaskRequest.class, CreateVmsSendTaskResponse.class)
@@ -2391,9 +2093,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVmsSendTaskRequestBody.class),
-            f -> f.withMarshaller(CreateVmsSendTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVmsSendTaskRequest::getBody, CreateVmsSendTaskRequest::setBody));
 
         // response
 
@@ -2401,9 +2101,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListVmsCallbacksRequest, ListVmsCallbacksResponse> listVmsCallbacks =
-        genForlistVmsCallbacks();
+        genForListVmsCallbacks();
 
-    private static HttpRequestDef<ListVmsCallbacksRequest, ListVmsCallbacksResponse> genForlistVmsCallbacks() {
+    private static HttpRequestDef<ListVmsCallbacksRequest, ListVmsCallbacksResponse> genForListVmsCallbacks() {
         // basic
         HttpRequestDef.Builder<ListVmsCallbacksRequest, ListVmsCallbacksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVmsCallbacksRequest.class, ListVmsCallbacksResponse.class)
@@ -2419,9 +2119,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListVmsSendTasksRequest, ListVmsSendTasksResponse> listVmsSendTasks =
-        genForlistVmsSendTasks();
+        genForListVmsSendTasks();
 
-    private static HttpRequestDef<ListVmsSendTasksRequest, ListVmsSendTasksResponse> genForlistVmsSendTasks() {
+    private static HttpRequestDef<ListVmsSendTasksRequest, ListVmsSendTasksResponse> genForListVmsSendTasks() {
         // basic
         HttpRequestDef.Builder<ListVmsSendTasksRequest, ListVmsSendTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVmsSendTasksRequest.class, ListVmsSendTasksResponse.class)
@@ -2434,86 +2134,63 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getTaskName, (req, v) -> {
-                req.setTaskName(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getTaskName, ListVmsSendTasksRequest::setTaskName));
         builder.<String>withRequestField("task_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getTaskId, ListVmsSendTasksRequest::setTaskId));
         builder.<String>withRequestField("tpl_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getTplId, ListVmsSendTasksRequest::setTplId));
         builder.<String>withRequestField("tpl_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getTplName, (req, v) -> {
-                req.setTplName(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getTplName, ListVmsSendTasksRequest::setTplName));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getBeginTime, ListVmsSendTasksRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getEndTime, ListVmsSendTasksRequest::setEndTime));
         builder.<String>withRequestField("send_begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getSendBeginTime, (req, v) -> {
-                req.setSendBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getSendBeginTime,
+                ListVmsSendTasksRequest::setSendBeginTime));
         builder.<String>withRequestField("send_end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getSendEndTime, (req, v) -> {
-                req.setSendEndTime(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getSendEndTime, ListVmsSendTasksRequest::setSendEndTime));
         builder.<String>withRequestField("operator",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getOperator, (req, v) -> {
-                req.setOperator(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getOperator, ListVmsSendTasksRequest::setOperator));
         builder.<String>withRequestField("task_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getTaskStatus, (req, v) -> {
-                req.setTaskStatus(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getTaskStatus, ListVmsSendTasksRequest::setTaskStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getOffset, ListVmsSendTasksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVmsSendTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVmsSendTasksRequest::getLimit, ListVmsSendTasksRequest::setLimit));
 
         // response
 
@@ -2521,9 +2198,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<CreateVmsTemplateRequest, CreateVmsTemplateResponse> createVmsTemplate =
-        genForcreateVmsTemplate();
+        genForCreateVmsTemplate();
 
-    private static HttpRequestDef<CreateVmsTemplateRequest, CreateVmsTemplateResponse> genForcreateVmsTemplate() {
+    private static HttpRequestDef<CreateVmsTemplateRequest, CreateVmsTemplateResponse> genForCreateVmsTemplate() {
         // basic
         HttpRequestDef.Builder<CreateVmsTemplateRequest, CreateVmsTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVmsTemplateRequest.class, CreateVmsTemplateResponse.class)
@@ -2536,9 +2213,7 @@ public class KooMessageMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVmsTemplateRequestBody.class),
-            f -> f.withMarshaller(CreateVmsTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVmsTemplateRequest::getBody, CreateVmsTemplateRequest::setBody));
 
         // response
 
@@ -2546,9 +2221,9 @@ public class KooMessageMeta {
     }
 
     public static final HttpRequestDef<ListVmsTemplateStatusRequest, ListVmsTemplateStatusResponse> listVmsTemplateStatus =
-        genForlistVmsTemplateStatus();
+        genForListVmsTemplateStatus();
 
-    private static HttpRequestDef<ListVmsTemplateStatusRequest, ListVmsTemplateStatusResponse> genForlistVmsTemplateStatus() {
+    private static HttpRequestDef<ListVmsTemplateStatusRequest, ListVmsTemplateStatusResponse> genForListVmsTemplateStatus() {
         // basic
         HttpRequestDef.Builder<ListVmsTemplateStatusRequest, ListVmsTemplateStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListVmsTemplateStatusRequest.class, ListVmsTemplateStatusResponse.class)
@@ -2561,58 +2236,44 @@ public class KooMessageMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getTplId, (req, v) -> {
-                req.setTplId(v);
-            }));
+            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getTplId, ListVmsTemplateStatusRequest::setTplId));
         builder.<String>withRequestField("tpl_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getTplName, (req, v) -> {
-                req.setTplName(v);
-            }));
+            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getTplName, ListVmsTemplateStatusRequest::setTplName));
         builder.<String>withRequestField("tpl_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getTplType, (req, v) -> {
-                req.setTplType(v);
-            }));
+            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getTplType, ListVmsTemplateStatusRequest::setTplType));
         builder.<Boolean>withRequestField("has_param",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getHasParam, (req, v) -> {
-                req.setHasParam(v);
-            }));
+            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getHasParam,
+                ListVmsTemplateStatusRequest::setHasParam));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getBeginTime,
+                ListVmsTemplateStatusRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getEndTime, ListVmsTemplateStatusRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getOffset, ListVmsTemplateStatusRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getLimit, ListVmsTemplateStatusRequest::setLimit));
 
         // response
 

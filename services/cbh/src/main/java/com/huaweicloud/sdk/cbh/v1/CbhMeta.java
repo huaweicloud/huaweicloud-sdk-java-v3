@@ -57,9 +57,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CbhMeta {
 
     public static final HttpRequestDef<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse> changeInstanceNetwork =
-        genForchangeInstanceNetwork();
+        genForChangeInstanceNetwork();
 
-    private static HttpRequestDef<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse> genForchangeInstanceNetwork() {
+    private static HttpRequestDef<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse> genForChangeInstanceNetwork() {
         // basic
         HttpRequestDef.Builder<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ChangeInstanceNetworkRequest.class, ChangeInstanceNetworkResponse.class)
@@ -72,16 +72,13 @@ public class CbhMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeInstanceNetworkRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ChangeInstanceNetworkRequest::getServerId,
+                ChangeInstanceNetworkRequest::setServerId));
         builder.<ChangeInstanceNetwork>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeInstanceNetwork.class),
-            f -> f.withMarshaller(ChangeInstanceNetworkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeInstanceNetworkRequest::getBody, ChangeInstanceNetworkRequest::setBody));
 
         // response
 
@@ -89,9 +86,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrder =
-        genForchangeInstanceOrder();
+        genForChangeInstanceOrder();
 
-    private static HttpRequestDef<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> genForchangeInstanceOrder() {
+    private static HttpRequestDef<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> genForChangeInstanceOrder() {
         // basic
         HttpRequestDef.Builder<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ChangeInstanceOrderRequest.class, ChangeInstanceOrderResponse.class)
@@ -104,25 +101,22 @@ public class CbhMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeInstanceOrderRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ChangeInstanceOrderRequest::getServerId, ChangeInstanceOrderRequest::setServerId));
         builder.<String>withRequestField("instance_key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeInstanceOrderRequest::getInstanceKey, (req, v) -> {
-                req.setInstanceKey(v);
-            }));
+            f -> f.withMarshaller(ChangeInstanceOrderRequest::getInstanceKey,
+                ChangeInstanceOrderRequest::setInstanceKey));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateCbhRequest, CreateCbhResponse> createCbh = genForcreateCbh();
+    public static final HttpRequestDef<CreateCbhRequest, CreateCbhResponse> createCbh = genForCreateCbh();
 
-    private static HttpRequestDef<CreateCbhRequest, CreateCbhResponse> genForcreateCbh() {
+    private static HttpRequestDef<CreateCbhRequest, CreateCbhResponse> genForCreateCbh() {
         // basic
         HttpRequestDef.Builder<CreateCbhRequest, CreateCbhResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCbhRequest.class, CreateCbhResponse.class)
@@ -135,9 +129,7 @@ public class CbhMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceBody.class),
-            f -> f.withMarshaller(CreateCbhRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCbhRequest::getBody, CreateCbhRequest::setBody));
 
         // response
 
@@ -145,9 +137,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceOrderRequest, CreateInstanceOrderResponse> createInstanceOrder =
-        genForcreateInstanceOrder();
+        genForCreateInstanceOrder();
 
-    private static HttpRequestDef<CreateInstanceOrderRequest, CreateInstanceOrderResponse> genForcreateInstanceOrder() {
+    private static HttpRequestDef<CreateInstanceOrderRequest, CreateInstanceOrderResponse> genForCreateInstanceOrder() {
         // basic
         HttpRequestDef.Builder<CreateInstanceOrderRequest, CreateInstanceOrderResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceOrderRequest.class, CreateInstanceOrderResponse.class)
@@ -160,9 +152,7 @@ public class CbhMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceOrder.class),
-            f -> f.withMarshaller(CreateInstanceOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceOrderRequest::getBody, CreateInstanceOrderRequest::setBody));
 
         // response
 
@@ -170,9 +160,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<InstallCbhEipRequest, InstallCbhEipResponse> installCbhEip =
-        genForinstallCbhEip();
+        genForInstallCbhEip();
 
-    private static HttpRequestDef<InstallCbhEipRequest, InstallCbhEipResponse> genForinstallCbhEip() {
+    private static HttpRequestDef<InstallCbhEipRequest, InstallCbhEipResponse> genForInstallCbhEip() {
         // basic
         HttpRequestDef.Builder<InstallCbhEipRequest, InstallCbhEipResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, InstallCbhEipRequest.class, InstallCbhEipResponse.class)
@@ -185,16 +175,12 @@ public class CbhMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InstallCbhEipRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(InstallCbhEipRequest::getServerId, InstallCbhEipRequest::setServerId));
         builder.<OperateEipRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateEipRequestBody.class),
-            f -> f.withMarshaller(InstallCbhEipRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InstallCbhEipRequest::getBody, InstallCbhEipRequest::setBody));
 
         // response
 
@@ -202,9 +188,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<ListCbhInstanceRequest, ListCbhInstanceResponse> listCbhInstance =
-        genForlistCbhInstance();
+        genForListCbhInstance();
 
-    private static HttpRequestDef<ListCbhInstanceRequest, ListCbhInstanceResponse> genForlistCbhInstance() {
+    private static HttpRequestDef<ListCbhInstanceRequest, ListCbhInstanceResponse> genForListCbhInstance() {
         // basic
         HttpRequestDef.Builder<ListCbhInstanceRequest, ListCbhInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCbhInstanceRequest.class, ListCbhInstanceResponse.class)
@@ -220,9 +206,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<ListQuotaStatusRequest, ListQuotaStatusResponse> listQuotaStatus =
-        genForlistQuotaStatus();
+        genForListQuotaStatus();
 
-    private static HttpRequestDef<ListQuotaStatusRequest, ListQuotaStatusResponse> genForlistQuotaStatus() {
+    private static HttpRequestDef<ListQuotaStatusRequest, ListQuotaStatusResponse> genForListQuotaStatus() {
         // basic
         HttpRequestDef.Builder<ListQuotaStatusRequest, ListQuotaStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotaStatusRequest.class, ListQuotaStatusResponse.class)
@@ -235,16 +221,14 @@ public class CbhMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQuotaStatusRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListQuotaStatusRequest::getAvailabilityZone,
+                ListQuotaStatusRequest::setAvailabilityZone));
         builder.<String>withRequestField("resource_spec_code",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQuotaStatusRequest::getResourceSpecCode, (req, v) -> {
-                req.setResourceSpecCode(v);
-            }));
+            f -> f.withMarshaller(ListQuotaStatusRequest::getResourceSpecCode,
+                ListQuotaStatusRequest::setResourceSpecCode));
 
         // response
 
@@ -252,9 +236,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<ResetLoginMethodRequest, ResetLoginMethodResponse> resetLoginMethod =
-        genForresetLoginMethod();
+        genForResetLoginMethod();
 
-    private static HttpRequestDef<ResetLoginMethodRequest, ResetLoginMethodResponse> genForresetLoginMethod() {
+    private static HttpRequestDef<ResetLoginMethodRequest, ResetLoginMethodResponse> genForResetLoginMethod() {
         // basic
         HttpRequestDef.Builder<ResetLoginMethodRequest, ResetLoginMethodResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetLoginMethodRequest.class, ResetLoginMethodResponse.class)
@@ -267,9 +251,7 @@ public class CbhMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetLoginMethodRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ResetLoginMethodRequest::getServerId, ResetLoginMethodRequest::setServerId));
 
         // response
 
@@ -277,9 +259,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
-        genForresetPassword();
+        genForResetPassword();
 
-    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
+    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForResetPassword() {
         // basic
         HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetPasswordRequest.class, ResetPasswordResponse.class)
@@ -292,9 +274,7 @@ public class CbhMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetPassword.class),
-            f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetPasswordRequest::getBody, ResetPasswordRequest::setBody));
 
         // response
 
@@ -302,9 +282,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<RestartCbhInstanceRequest, RestartCbhInstanceResponse> restartCbhInstance =
-        genForrestartCbhInstance();
+        genForRestartCbhInstance();
 
-    private static HttpRequestDef<RestartCbhInstanceRequest, RestartCbhInstanceResponse> genForrestartCbhInstance() {
+    private static HttpRequestDef<RestartCbhInstanceRequest, RestartCbhInstanceResponse> genForRestartCbhInstance() {
         // basic
         HttpRequestDef.Builder<RestartCbhInstanceRequest, RestartCbhInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestartCbhInstanceRequest.class, RestartCbhInstanceResponse.class)
@@ -317,18 +297,16 @@ public class CbhMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RebootCbhRequestBody.class),
-            f -> f.withMarshaller(RestartCbhInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestartCbhInstanceRequest::getBody, RestartCbhInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SearchQuotaRequest, SearchQuotaResponse> searchQuota = genForsearchQuota();
+    public static final HttpRequestDef<SearchQuotaRequest, SearchQuotaResponse> searchQuota = genForSearchQuota();
 
-    private static HttpRequestDef<SearchQuotaRequest, SearchQuotaResponse> genForsearchQuota() {
+    private static HttpRequestDef<SearchQuotaRequest, SearchQuotaResponse> genForSearchQuota() {
         // basic
         HttpRequestDef.Builder<SearchQuotaRequest, SearchQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchQuotaRequest.class, SearchQuotaResponse.class)
@@ -344,9 +322,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse> showAvailableZoneInfo =
-        genForshowAvailableZoneInfo();
+        genForShowAvailableZoneInfo();
 
-    private static HttpRequestDef<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse> genForshowAvailableZoneInfo() {
+    private static HttpRequestDef<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse> genForShowAvailableZoneInfo() {
         // basic
         HttpRequestDef.Builder<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAvailableZoneInfoRequest.class, ShowAvailableZoneInfoResponse.class)
@@ -362,9 +340,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse> showNetworkConfiguration =
-        genForshowNetworkConfiguration();
+        genForShowNetworkConfiguration();
 
-    private static HttpRequestDef<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse> genForshowNetworkConfiguration() {
+    private static HttpRequestDef<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse> genForShowNetworkConfiguration() {
         // basic
         HttpRequestDef.Builder<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse> builder =
             HttpRequestDef
@@ -378,9 +356,7 @@ public class CbhMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NetworkRequestBody.class),
-            f -> f.withMarshaller(ShowNetworkConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowNetworkConfigurationRequest::getBody, ShowNetworkConfigurationRequest::setBody));
 
         // response
 
@@ -388,9 +364,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<StartCbhInstanceRequest, StartCbhInstanceResponse> startCbhInstance =
-        genForstartCbhInstance();
+        genForStartCbhInstance();
 
-    private static HttpRequestDef<StartCbhInstanceRequest, StartCbhInstanceResponse> genForstartCbhInstance() {
+    private static HttpRequestDef<StartCbhInstanceRequest, StartCbhInstanceResponse> genForStartCbhInstance() {
         // basic
         HttpRequestDef.Builder<StartCbhInstanceRequest, StartCbhInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartCbhInstanceRequest.class, StartCbhInstanceResponse.class)
@@ -403,9 +379,7 @@ public class CbhMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartCbhRequestBody.class),
-            f -> f.withMarshaller(StartCbhInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartCbhInstanceRequest::getBody, StartCbhInstanceRequest::setBody));
 
         // response
 
@@ -413,9 +387,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<StopCbhInstanceRequest, StopCbhInstanceResponse> stopCbhInstance =
-        genForstopCbhInstance();
+        genForStopCbhInstance();
 
-    private static HttpRequestDef<StopCbhInstanceRequest, StopCbhInstanceResponse> genForstopCbhInstance() {
+    private static HttpRequestDef<StopCbhInstanceRequest, StopCbhInstanceResponse> genForStopCbhInstance() {
         // basic
         HttpRequestDef.Builder<StopCbhInstanceRequest, StopCbhInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopCbhInstanceRequest.class, StopCbhInstanceResponse.class)
@@ -428,9 +402,7 @@ public class CbhMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StopCbhRequestBody.class),
-            f -> f.withMarshaller(StopCbhInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StopCbhInstanceRequest::getBody, StopCbhInstanceRequest::setBody));
 
         // response
 
@@ -438,9 +410,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<UninstallCbhEipRequest, UninstallCbhEipResponse> uninstallCbhEip =
-        genForuninstallCbhEip();
+        genForUninstallCbhEip();
 
-    private static HttpRequestDef<UninstallCbhEipRequest, UninstallCbhEipResponse> genForuninstallCbhEip() {
+    private static HttpRequestDef<UninstallCbhEipRequest, UninstallCbhEipResponse> genForUninstallCbhEip() {
         // basic
         HttpRequestDef.Builder<UninstallCbhEipRequest, UninstallCbhEipResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UninstallCbhEipRequest.class, UninstallCbhEipResponse.class)
@@ -453,16 +425,12 @@ public class CbhMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UninstallCbhEipRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(UninstallCbhEipRequest::getServerId, UninstallCbhEipRequest::setServerId));
         builder.<OperateEipRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateEipRequestBody.class),
-            f -> f.withMarshaller(UninstallCbhEipRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UninstallCbhEipRequest::getBody, UninstallCbhEipRequest::setBody));
 
         // response
 
@@ -470,9 +438,9 @@ public class CbhMeta {
     }
 
     public static final HttpRequestDef<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> upgradeCbhInstance =
-        genForupgradeCbhInstance();
+        genForUpgradeCbhInstance();
 
-    private static HttpRequestDef<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> genForupgradeCbhInstance() {
+    private static HttpRequestDef<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> genForUpgradeCbhInstance() {
         // basic
         HttpRequestDef.Builder<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpgradeCbhInstanceRequest.class, UpgradeCbhInstanceResponse.class)
@@ -485,18 +453,16 @@ public class CbhMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeCbhRequestBody.class),
-            f -> f.withMarshaller(UpgradeCbhInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpgradeCbhInstanceRequest::getBody, UpgradeCbhInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<LoginCbhRequest, LoginCbhResponse> loginCbh = genForloginCbh();
+    public static final HttpRequestDef<LoginCbhRequest, LoginCbhResponse> loginCbh = genForLoginCbh();
 
-    private static HttpRequestDef<LoginCbhRequest, LoginCbhResponse> genForloginCbh() {
+    private static HttpRequestDef<LoginCbhRequest, LoginCbhResponse> genForLoginCbh() {
         // basic
         HttpRequestDef.Builder<LoginCbhRequest, LoginCbhResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, LoginCbhRequest.class, LoginCbhResponse.class)
@@ -509,9 +475,7 @@ public class CbhMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LoginCbhRequestBody.class),
-            f -> f.withMarshaller(LoginCbhRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(LoginCbhRequest::getBody, LoginCbhRequest::setBody));
 
         // response
 

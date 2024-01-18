@@ -184,7 +184,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddAvailableZonesRequest 请求对象
+     * @param request BatchAddAvailableZonesRequest 请求对象
      * @return BatchAddAvailableZonesResponse
      */
     public BatchAddAvailableZonesResponse batchAddAvailableZones(BatchAddAvailableZonesRequest request) {
@@ -198,13 +198,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddAvailableZonesRequest 请求对象
+     * @param request BatchAddAvailableZonesRequest 请求对象
      * @return SyncInvoker<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse>
      */
     public SyncInvoker<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse> batchAddAvailableZonesInvoker(
         BatchAddAvailableZonesRequest request) {
-        return new SyncInvoker<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse>(request,
-            ElbMeta.batchAddAvailableZones, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.batchAddAvailableZones, hcClient);
     }
 
     /**
@@ -214,7 +213,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateMembersRequest 请求对象
+     * @param request BatchCreateMembersRequest 请求对象
      * @return BatchCreateMembersResponse
      */
     public BatchCreateMembersResponse batchCreateMembers(BatchCreateMembersRequest request) {
@@ -228,13 +227,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateMembersRequest 请求对象
+     * @param request BatchCreateMembersRequest 请求对象
      * @return SyncInvoker<BatchCreateMembersRequest, BatchCreateMembersResponse>
      */
     public SyncInvoker<BatchCreateMembersRequest, BatchCreateMembersResponse> batchCreateMembersInvoker(
         BatchCreateMembersRequest request) {
-        return new SyncInvoker<BatchCreateMembersRequest, BatchCreateMembersResponse>(request,
-            ElbMeta.batchCreateMembers, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.batchCreateMembers, hcClient);
     }
 
     /**
@@ -244,7 +242,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMembersRequest 请求对象
+     * @param request BatchDeleteMembersRequest 请求对象
      * @return BatchDeleteMembersResponse
      */
     public BatchDeleteMembersResponse batchDeleteMembers(BatchDeleteMembersRequest request) {
@@ -258,13 +256,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMembersRequest 请求对象
+     * @param request BatchDeleteMembersRequest 请求对象
      * @return SyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse>
      */
     public SyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse> batchDeleteMembersInvoker(
         BatchDeleteMembersRequest request) {
-        return new SyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse>(request,
-            ElbMeta.batchDeleteMembers, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.batchDeleteMembers, hcClient);
     }
 
     /**
@@ -275,7 +272,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemoveAvailableZonesRequest 请求对象
+     * @param request BatchRemoveAvailableZonesRequest 请求对象
      * @return BatchRemoveAvailableZonesResponse
      */
     public BatchRemoveAvailableZonesResponse batchRemoveAvailableZones(BatchRemoveAvailableZonesRequest request) {
@@ -290,13 +287,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemoveAvailableZonesRequest 请求对象
+     * @param request BatchRemoveAvailableZonesRequest 请求对象
      * @return SyncInvoker<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse>
      */
     public SyncInvoker<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse> batchRemoveAvailableZonesInvoker(
         BatchRemoveAvailableZonesRequest request) {
-        return new SyncInvoker<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse>(request,
-            ElbMeta.batchRemoveAvailableZones, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.batchRemoveAvailableZones, hcClient);
     }
 
     /**
@@ -306,7 +302,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateMembersRequest 请求对象
+     * @param request BatchUpdateMembersRequest 请求对象
      * @return BatchUpdateMembersResponse
      */
     public BatchUpdateMembersResponse batchUpdateMembers(BatchUpdateMembersRequest request) {
@@ -320,13 +316,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateMembersRequest 请求对象
+     * @param request BatchUpdateMembersRequest 请求对象
      * @return SyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
      */
     public SyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse> batchUpdateMembersInvoker(
         BatchUpdateMembersRequest request) {
-        return new SyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse>(request,
-            ElbMeta.batchUpdateMembers, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.batchUpdateMembers, hcClient);
     }
 
     /**
@@ -336,7 +331,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdatePoliciesPriorityRequest 请求对象
+     * @param request BatchUpdatePoliciesPriorityRequest 请求对象
      * @return BatchUpdatePoliciesPriorityResponse
      */
     public BatchUpdatePoliciesPriorityResponse batchUpdatePoliciesPriority(BatchUpdatePoliciesPriorityRequest request) {
@@ -350,13 +345,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdatePoliciesPriorityRequest 请求对象
+     * @param request BatchUpdatePoliciesPriorityRequest 请求对象
      * @return SyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse>
      */
     public SyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse> batchUpdatePoliciesPriorityInvoker(
         BatchUpdatePoliciesPriorityRequest request) {
-        return new SyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse>(request,
-            ElbMeta.batchUpdatePoliciesPriority, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.batchUpdatePoliciesPriority, hcClient);
     }
 
     /**
@@ -369,7 +363,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeLoadbalancerChargeModeRequest 请求对象
+     * @param request ChangeLoadbalancerChargeModeRequest 请求对象
      * @return ChangeLoadbalancerChargeModeResponse
      */
     public ChangeLoadbalancerChargeModeResponse changeLoadbalancerChargeMode(
@@ -387,13 +381,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeLoadbalancerChargeModeRequest 请求对象
+     * @param request ChangeLoadbalancerChargeModeRequest 请求对象
      * @return SyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse>
      */
     public SyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse> changeLoadbalancerChargeModeInvoker(
         ChangeLoadbalancerChargeModeRequest request) {
-        return new SyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse>(request,
-            ElbMeta.changeLoadbalancerChargeMode, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.changeLoadbalancerChargeMode, hcClient);
     }
 
     /**
@@ -403,7 +396,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return CreateCertificateResponse
      */
     public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
@@ -417,13 +410,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
      */
     public SyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateInvoker(
         CreateCertificateRequest request) {
-        return new SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request, ElbMeta.createCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createCertificate, hcClient);
     }
 
     /**
@@ -433,7 +425,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHealthMonitorRequest 请求对象
+     * @param request CreateHealthMonitorRequest 请求对象
      * @return CreateHealthMonitorResponse
      */
     public CreateHealthMonitorResponse createHealthMonitor(CreateHealthMonitorRequest request) {
@@ -447,13 +439,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHealthMonitorRequest 请求对象
+     * @param request CreateHealthMonitorRequest 请求对象
      * @return SyncInvoker<CreateHealthMonitorRequest, CreateHealthMonitorResponse>
      */
     public SyncInvoker<CreateHealthMonitorRequest, CreateHealthMonitorResponse> createHealthMonitorInvoker(
         CreateHealthMonitorRequest request) {
-        return new SyncInvoker<CreateHealthMonitorRequest, CreateHealthMonitorResponse>(request,
-            ElbMeta.createHealthMonitor, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createHealthMonitor, hcClient);
     }
 
     /**
@@ -463,7 +454,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateL7PolicyRequest 请求对象
+     * @param request CreateL7PolicyRequest 请求对象
      * @return CreateL7PolicyResponse
      */
     public CreateL7PolicyResponse createL7Policy(CreateL7PolicyRequest request) {
@@ -477,13 +468,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateL7PolicyRequest 请求对象
+     * @param request CreateL7PolicyRequest 请求对象
      * @return SyncInvoker<CreateL7PolicyRequest, CreateL7PolicyResponse>
      */
     public SyncInvoker<CreateL7PolicyRequest, CreateL7PolicyResponse> createL7PolicyInvoker(
         CreateL7PolicyRequest request) {
-        return new SyncInvoker<CreateL7PolicyRequest, CreateL7PolicyResponse>(request, ElbMeta.createL7Policy,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createL7Policy, hcClient);
     }
 
     /**
@@ -493,7 +483,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateL7RuleRequest 请求对象
+     * @param request CreateL7RuleRequest 请求对象
      * @return CreateL7RuleResponse
      */
     public CreateL7RuleResponse createL7Rule(CreateL7RuleRequest request) {
@@ -507,11 +497,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateL7RuleRequest 请求对象
+     * @param request CreateL7RuleRequest 请求对象
      * @return SyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse>
      */
     public SyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse> createL7RuleInvoker(CreateL7RuleRequest request) {
-        return new SyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse>(request, ElbMeta.createL7Rule, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createL7Rule, hcClient);
     }
 
     /**
@@ -521,7 +511,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateListenerRequest 请求对象
+     * @param request CreateListenerRequest 请求对象
      * @return CreateListenerResponse
      */
     public CreateListenerResponse createListener(CreateListenerRequest request) {
@@ -535,13 +525,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateListenerRequest 请求对象
+     * @param request CreateListenerRequest 请求对象
      * @return SyncInvoker<CreateListenerRequest, CreateListenerResponse>
      */
     public SyncInvoker<CreateListenerRequest, CreateListenerResponse> createListenerInvoker(
         CreateListenerRequest request) {
-        return new SyncInvoker<CreateListenerRequest, CreateListenerResponse>(request, ElbMeta.createListener,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createListener, hcClient);
     }
 
     /**
@@ -566,7 +555,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLoadBalancerRequest 请求对象
+     * @param request CreateLoadBalancerRequest 请求对象
      * @return CreateLoadBalancerResponse
      */
     public CreateLoadBalancerResponse createLoadBalancer(CreateLoadBalancerRequest request) {
@@ -595,13 +584,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLoadBalancerRequest 请求对象
+     * @param request CreateLoadBalancerRequest 请求对象
      * @return SyncInvoker<CreateLoadBalancerRequest, CreateLoadBalancerResponse>
      */
     public SyncInvoker<CreateLoadBalancerRequest, CreateLoadBalancerResponse> createLoadBalancerInvoker(
         CreateLoadBalancerRequest request) {
-        return new SyncInvoker<CreateLoadBalancerRequest, CreateLoadBalancerResponse>(request,
-            ElbMeta.createLoadBalancer, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createLoadBalancer, hcClient);
     }
 
     /**
@@ -611,7 +599,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogtankRequest 请求对象
+     * @param request CreateLogtankRequest 请求对象
      * @return CreateLogtankResponse
      */
     public CreateLogtankResponse createLogtank(CreateLogtankRequest request) {
@@ -625,11 +613,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogtankRequest 请求对象
+     * @param request CreateLogtankRequest 请求对象
      * @return SyncInvoker<CreateLogtankRequest, CreateLogtankResponse>
      */
     public SyncInvoker<CreateLogtankRequest, CreateLogtankResponse> createLogtankInvoker(CreateLogtankRequest request) {
-        return new SyncInvoker<CreateLogtankRequest, CreateLogtankResponse>(request, ElbMeta.createLogtank, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createLogtank, hcClient);
     }
 
     /**
@@ -639,7 +627,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMasterSlavePoolRequest 请求对象
+     * @param request CreateMasterSlavePoolRequest 请求对象
      * @return CreateMasterSlavePoolResponse
      */
     public CreateMasterSlavePoolResponse createMasterSlavePool(CreateMasterSlavePoolRequest request) {
@@ -653,13 +641,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMasterSlavePoolRequest 请求对象
+     * @param request CreateMasterSlavePoolRequest 请求对象
      * @return SyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse>
      */
     public SyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse> createMasterSlavePoolInvoker(
         CreateMasterSlavePoolRequest request) {
-        return new SyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse>(request,
-            ElbMeta.createMasterSlavePool, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createMasterSlavePool, hcClient);
     }
 
     /**
@@ -669,7 +656,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMemberRequest 请求对象
+     * @param request CreateMemberRequest 请求对象
      * @return CreateMemberResponse
      */
     public CreateMemberResponse createMember(CreateMemberRequest request) {
@@ -683,11 +670,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMemberRequest 请求对象
+     * @param request CreateMemberRequest 请求对象
      * @return SyncInvoker<CreateMemberRequest, CreateMemberResponse>
      */
     public SyncInvoker<CreateMemberRequest, CreateMemberResponse> createMemberInvoker(CreateMemberRequest request) {
-        return new SyncInvoker<CreateMemberRequest, CreateMemberResponse>(request, ElbMeta.createMember, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createMember, hcClient);
     }
 
     /**
@@ -697,7 +684,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePoolRequest 请求对象
+     * @param request CreatePoolRequest 请求对象
      * @return CreatePoolResponse
      */
     public CreatePoolResponse createPool(CreatePoolRequest request) {
@@ -711,11 +698,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePoolRequest 请求对象
+     * @param request CreatePoolRequest 请求对象
      * @return SyncInvoker<CreatePoolRequest, CreatePoolResponse>
      */
     public SyncInvoker<CreatePoolRequest, CreatePoolResponse> createPoolInvoker(CreatePoolRequest request) {
-        return new SyncInvoker<CreatePoolRequest, CreatePoolResponse>(request, ElbMeta.createPool, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createPool, hcClient);
     }
 
     /**
@@ -727,7 +714,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityPolicyRequest 请求对象
+     * @param request CreateSecurityPolicyRequest 请求对象
      * @return CreateSecurityPolicyResponse
      */
     public CreateSecurityPolicyResponse createSecurityPolicy(CreateSecurityPolicyRequest request) {
@@ -743,13 +730,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityPolicyRequest 请求对象
+     * @param request CreateSecurityPolicyRequest 请求对象
      * @return SyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse>
      */
     public SyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse> createSecurityPolicyInvoker(
         CreateSecurityPolicyRequest request) {
-        return new SyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse>(request,
-            ElbMeta.createSecurityPolicy, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createSecurityPolicy, hcClient);
     }
 
     /**
@@ -759,7 +745,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return DeleteCertificateResponse
      */
     public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
@@ -773,13 +759,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
      */
     public SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateInvoker(
         DeleteCertificateRequest request) {
-        return new SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, ElbMeta.deleteCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteCertificate, hcClient);
     }
 
     /**
@@ -789,7 +774,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHealthMonitorRequest 请求对象
+     * @param request DeleteHealthMonitorRequest 请求对象
      * @return DeleteHealthMonitorResponse
      */
     public DeleteHealthMonitorResponse deleteHealthMonitor(DeleteHealthMonitorRequest request) {
@@ -803,13 +788,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHealthMonitorRequest 请求对象
+     * @param request DeleteHealthMonitorRequest 请求对象
      * @return SyncInvoker<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse>
      */
     public SyncInvoker<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse> deleteHealthMonitorInvoker(
         DeleteHealthMonitorRequest request) {
-        return new SyncInvoker<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse>(request,
-            ElbMeta.deleteHealthMonitor, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteHealthMonitor, hcClient);
     }
 
     /**
@@ -819,7 +803,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteL7PolicyRequest 请求对象
+     * @param request DeleteL7PolicyRequest 请求对象
      * @return DeleteL7PolicyResponse
      */
     public DeleteL7PolicyResponse deleteL7Policy(DeleteL7PolicyRequest request) {
@@ -833,13 +817,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteL7PolicyRequest 请求对象
+     * @param request DeleteL7PolicyRequest 请求对象
      * @return SyncInvoker<DeleteL7PolicyRequest, DeleteL7PolicyResponse>
      */
     public SyncInvoker<DeleteL7PolicyRequest, DeleteL7PolicyResponse> deleteL7PolicyInvoker(
         DeleteL7PolicyRequest request) {
-        return new SyncInvoker<DeleteL7PolicyRequest, DeleteL7PolicyResponse>(request, ElbMeta.deleteL7Policy,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteL7Policy, hcClient);
     }
 
     /**
@@ -849,7 +832,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteL7RuleRequest 请求对象
+     * @param request DeleteL7RuleRequest 请求对象
      * @return DeleteL7RuleResponse
      */
     public DeleteL7RuleResponse deleteL7Rule(DeleteL7RuleRequest request) {
@@ -863,11 +846,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteL7RuleRequest 请求对象
+     * @param request DeleteL7RuleRequest 请求对象
      * @return SyncInvoker<DeleteL7RuleRequest, DeleteL7RuleResponse>
      */
     public SyncInvoker<DeleteL7RuleRequest, DeleteL7RuleResponse> deleteL7RuleInvoker(DeleteL7RuleRequest request) {
-        return new SyncInvoker<DeleteL7RuleRequest, DeleteL7RuleResponse>(request, ElbMeta.deleteL7Rule, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteL7Rule, hcClient);
     }
 
     /**
@@ -877,7 +860,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteListenerRequest 请求对象
+     * @param request DeleteListenerRequest 请求对象
      * @return DeleteListenerResponse
      */
     public DeleteListenerResponse deleteListener(DeleteListenerRequest request) {
@@ -891,13 +874,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteListenerRequest 请求对象
+     * @param request DeleteListenerRequest 请求对象
      * @return SyncInvoker<DeleteListenerRequest, DeleteListenerResponse>
      */
     public SyncInvoker<DeleteListenerRequest, DeleteListenerResponse> deleteListenerInvoker(
         DeleteListenerRequest request) {
-        return new SyncInvoker<DeleteListenerRequest, DeleteListenerResponse>(request, ElbMeta.deleteListener,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteListener, hcClient);
     }
 
     /**
@@ -907,7 +889,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteListenerForceRequest 请求对象
+     * @param request DeleteListenerForceRequest 请求对象
      * @return DeleteListenerForceResponse
      */
     public DeleteListenerForceResponse deleteListenerForce(DeleteListenerForceRequest request) {
@@ -921,13 +903,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteListenerForceRequest 请求对象
+     * @param request DeleteListenerForceRequest 请求对象
      * @return SyncInvoker<DeleteListenerForceRequest, DeleteListenerForceResponse>
      */
     public SyncInvoker<DeleteListenerForceRequest, DeleteListenerForceResponse> deleteListenerForceInvoker(
         DeleteListenerForceRequest request) {
-        return new SyncInvoker<DeleteListenerForceRequest, DeleteListenerForceResponse>(request,
-            ElbMeta.deleteListenerForce, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteListenerForce, hcClient);
     }
 
     /**
@@ -937,7 +918,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLoadBalancerRequest 请求对象
+     * @param request DeleteLoadBalancerRequest 请求对象
      * @return DeleteLoadBalancerResponse
      */
     public DeleteLoadBalancerResponse deleteLoadBalancer(DeleteLoadBalancerRequest request) {
@@ -951,13 +932,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLoadBalancerRequest 请求对象
+     * @param request DeleteLoadBalancerRequest 请求对象
      * @return SyncInvoker<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>
      */
     public SyncInvoker<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse> deleteLoadBalancerInvoker(
         DeleteLoadBalancerRequest request) {
-        return new SyncInvoker<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>(request,
-            ElbMeta.deleteLoadBalancer, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteLoadBalancer, hcClient);
     }
 
     /**
@@ -967,7 +947,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLoadBalancerForceRequest 请求对象
+     * @param request DeleteLoadBalancerForceRequest 请求对象
      * @return DeleteLoadBalancerForceResponse
      */
     public DeleteLoadBalancerForceResponse deleteLoadBalancerForce(DeleteLoadBalancerForceRequest request) {
@@ -981,13 +961,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLoadBalancerForceRequest 请求对象
+     * @param request DeleteLoadBalancerForceRequest 请求对象
      * @return SyncInvoker<DeleteLoadBalancerForceRequest, DeleteLoadBalancerForceResponse>
      */
     public SyncInvoker<DeleteLoadBalancerForceRequest, DeleteLoadBalancerForceResponse> deleteLoadBalancerForceInvoker(
         DeleteLoadBalancerForceRequest request) {
-        return new SyncInvoker<DeleteLoadBalancerForceRequest, DeleteLoadBalancerForceResponse>(request,
-            ElbMeta.deleteLoadBalancerForce, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteLoadBalancerForce, hcClient);
     }
 
     /**
@@ -997,7 +976,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogtankRequest 请求对象
+     * @param request DeleteLogtankRequest 请求对象
      * @return DeleteLogtankResponse
      */
     public DeleteLogtankResponse deleteLogtank(DeleteLogtankRequest request) {
@@ -1011,11 +990,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogtankRequest 请求对象
+     * @param request DeleteLogtankRequest 请求对象
      * @return SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>
      */
     public SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtankInvoker(DeleteLogtankRequest request) {
-        return new SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>(request, ElbMeta.deleteLogtank, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteLogtank, hcClient);
     }
 
     /**
@@ -1025,7 +1004,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMasterSlavePoolRequest 请求对象
+     * @param request DeleteMasterSlavePoolRequest 请求对象
      * @return DeleteMasterSlavePoolResponse
      */
     public DeleteMasterSlavePoolResponse deleteMasterSlavePool(DeleteMasterSlavePoolRequest request) {
@@ -1039,13 +1018,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMasterSlavePoolRequest 请求对象
+     * @param request DeleteMasterSlavePoolRequest 请求对象
      * @return SyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse>
      */
     public SyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse> deleteMasterSlavePoolInvoker(
         DeleteMasterSlavePoolRequest request) {
-        return new SyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse>(request,
-            ElbMeta.deleteMasterSlavePool, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteMasterSlavePool, hcClient);
     }
 
     /**
@@ -1055,7 +1033,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberRequest 请求对象
+     * @param request DeleteMemberRequest 请求对象
      * @return DeleteMemberResponse
      */
     public DeleteMemberResponse deleteMember(DeleteMemberRequest request) {
@@ -1069,11 +1047,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberRequest 请求对象
+     * @param request DeleteMemberRequest 请求对象
      * @return SyncInvoker<DeleteMemberRequest, DeleteMemberResponse>
      */
     public SyncInvoker<DeleteMemberRequest, DeleteMemberResponse> deleteMemberInvoker(DeleteMemberRequest request) {
-        return new SyncInvoker<DeleteMemberRequest, DeleteMemberResponse>(request, ElbMeta.deleteMember, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteMember, hcClient);
     }
 
     /**
@@ -1083,7 +1061,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePoolRequest 请求对象
+     * @param request DeletePoolRequest 请求对象
      * @return DeletePoolResponse
      */
     public DeletePoolResponse deletePool(DeletePoolRequest request) {
@@ -1097,11 +1075,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePoolRequest 请求对象
+     * @param request DeletePoolRequest 请求对象
      * @return SyncInvoker<DeletePoolRequest, DeletePoolResponse>
      */
     public SyncInvoker<DeletePoolRequest, DeletePoolResponse> deletePoolInvoker(DeletePoolRequest request) {
-        return new SyncInvoker<DeletePoolRequest, DeletePoolResponse>(request, ElbMeta.deletePool, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deletePool, hcClient);
     }
 
     /**
@@ -1111,7 +1089,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityPolicyRequest 请求对象
+     * @param request DeleteSecurityPolicyRequest 请求对象
      * @return DeleteSecurityPolicyResponse
      */
     public DeleteSecurityPolicyResponse deleteSecurityPolicy(DeleteSecurityPolicyRequest request) {
@@ -1125,13 +1103,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityPolicyRequest 请求对象
+     * @param request DeleteSecurityPolicyRequest 请求对象
      * @return SyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse>
      */
     public SyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse> deleteSecurityPolicyInvoker(
         DeleteSecurityPolicyRequest request) {
-        return new SyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse>(request,
-            ElbMeta.deleteSecurityPolicy, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteSecurityPolicy, hcClient);
     }
 
     /**
@@ -1141,7 +1118,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllMembersRequest 请求对象
+     * @param request ListAllMembersRequest 请求对象
      * @return ListAllMembersResponse
      */
     public ListAllMembersResponse listAllMembers(ListAllMembersRequest request) {
@@ -1155,13 +1132,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllMembersRequest 请求对象
+     * @param request ListAllMembersRequest 请求对象
      * @return SyncInvoker<ListAllMembersRequest, ListAllMembersResponse>
      */
     public SyncInvoker<ListAllMembersRequest, ListAllMembersResponse> listAllMembersInvoker(
         ListAllMembersRequest request) {
-        return new SyncInvoker<ListAllMembersRequest, ListAllMembersResponse>(request, ElbMeta.listAllMembers,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listAllMembers, hcClient);
     }
 
     /**
@@ -1179,7 +1155,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZonesRequest 请求对象
+     * @param request ListAvailabilityZonesRequest 请求对象
      * @return ListAvailabilityZonesResponse
      */
     public ListAvailabilityZonesResponse listAvailabilityZones(ListAvailabilityZonesRequest request) {
@@ -1201,13 +1177,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZonesRequest 请求对象
+     * @param request ListAvailabilityZonesRequest 请求对象
      * @return SyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>
      */
     public SyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZonesInvoker(
         ListAvailabilityZonesRequest request) {
-        return new SyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>(request,
-            ElbMeta.listAvailabilityZones, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listAvailabilityZones, hcClient);
     }
 
     /**
@@ -1217,7 +1192,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return ListCertificatesResponse
      */
     public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
@@ -1231,13 +1206,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
      */
     public SyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesInvoker(
         ListCertificatesRequest request) {
-        return new SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request, ElbMeta.listCertificates,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listCertificates, hcClient);
     }
 
     /**
@@ -1247,7 +1221,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
      */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
@@ -1261,11 +1235,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
-        return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, ElbMeta.listFlavors, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listFlavors, hcClient);
     }
 
     /**
@@ -1275,7 +1249,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHealthMonitorsRequest 请求对象
+     * @param request ListHealthMonitorsRequest 请求对象
      * @return ListHealthMonitorsResponse
      */
     public ListHealthMonitorsResponse listHealthMonitors(ListHealthMonitorsRequest request) {
@@ -1289,13 +1263,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHealthMonitorsRequest 请求对象
+     * @param request ListHealthMonitorsRequest 请求对象
      * @return SyncInvoker<ListHealthMonitorsRequest, ListHealthMonitorsResponse>
      */
     public SyncInvoker<ListHealthMonitorsRequest, ListHealthMonitorsResponse> listHealthMonitorsInvoker(
         ListHealthMonitorsRequest request) {
-        return new SyncInvoker<ListHealthMonitorsRequest, ListHealthMonitorsResponse>(request,
-            ElbMeta.listHealthMonitors, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listHealthMonitors, hcClient);
     }
 
     /**
@@ -1305,7 +1278,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListL7PoliciesRequest 请求对象
+     * @param request ListL7PoliciesRequest 请求对象
      * @return ListL7PoliciesResponse
      */
     public ListL7PoliciesResponse listL7Policies(ListL7PoliciesRequest request) {
@@ -1319,13 +1292,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListL7PoliciesRequest 请求对象
+     * @param request ListL7PoliciesRequest 请求对象
      * @return SyncInvoker<ListL7PoliciesRequest, ListL7PoliciesResponse>
      */
     public SyncInvoker<ListL7PoliciesRequest, ListL7PoliciesResponse> listL7PoliciesInvoker(
         ListL7PoliciesRequest request) {
-        return new SyncInvoker<ListL7PoliciesRequest, ListL7PoliciesResponse>(request, ElbMeta.listL7Policies,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listL7Policies, hcClient);
     }
 
     /**
@@ -1335,7 +1307,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListL7RulesRequest 请求对象
+     * @param request ListL7RulesRequest 请求对象
      * @return ListL7RulesResponse
      */
     public ListL7RulesResponse listL7Rules(ListL7RulesRequest request) {
@@ -1349,11 +1321,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListL7RulesRequest 请求对象
+     * @param request ListL7RulesRequest 请求对象
      * @return SyncInvoker<ListL7RulesRequest, ListL7RulesResponse>
      */
     public SyncInvoker<ListL7RulesRequest, ListL7RulesResponse> listL7RulesInvoker(ListL7RulesRequest request) {
-        return new SyncInvoker<ListL7RulesRequest, ListL7RulesResponse>(request, ElbMeta.listL7Rules, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listL7Rules, hcClient);
     }
 
     /**
@@ -1363,7 +1335,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListListenersRequest 请求对象
+     * @param request ListListenersRequest 请求对象
      * @return ListListenersResponse
      */
     public ListListenersResponse listListeners(ListListenersRequest request) {
@@ -1377,11 +1349,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListListenersRequest 请求对象
+     * @param request ListListenersRequest 请求对象
      * @return SyncInvoker<ListListenersRequest, ListListenersResponse>
      */
     public SyncInvoker<ListListenersRequest, ListListenersResponse> listListenersInvoker(ListListenersRequest request) {
-        return new SyncInvoker<ListListenersRequest, ListListenersResponse>(request, ElbMeta.listListeners, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listListeners, hcClient);
     }
 
     /**
@@ -1391,7 +1363,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLoadBalancersRequest 请求对象
+     * @param request ListLoadBalancersRequest 请求对象
      * @return ListLoadBalancersResponse
      */
     public ListLoadBalancersResponse listLoadBalancers(ListLoadBalancersRequest request) {
@@ -1405,13 +1377,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLoadBalancersRequest 请求对象
+     * @param request ListLoadBalancersRequest 请求对象
      * @return SyncInvoker<ListLoadBalancersRequest, ListLoadBalancersResponse>
      */
     public SyncInvoker<ListLoadBalancersRequest, ListLoadBalancersResponse> listLoadBalancersInvoker(
         ListLoadBalancersRequest request) {
-        return new SyncInvoker<ListLoadBalancersRequest, ListLoadBalancersResponse>(request, ElbMeta.listLoadBalancers,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listLoadBalancers, hcClient);
     }
 
     /**
@@ -1421,7 +1392,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogtanksRequest 请求对象
+     * @param request ListLogtanksRequest 请求对象
      * @return ListLogtanksResponse
      */
     public ListLogtanksResponse listLogtanks(ListLogtanksRequest request) {
@@ -1435,11 +1406,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogtanksRequest 请求对象
+     * @param request ListLogtanksRequest 请求对象
      * @return SyncInvoker<ListLogtanksRequest, ListLogtanksResponse>
      */
     public SyncInvoker<ListLogtanksRequest, ListLogtanksResponse> listLogtanksInvoker(ListLogtanksRequest request) {
-        return new SyncInvoker<ListLogtanksRequest, ListLogtanksResponse>(request, ElbMeta.listLogtanks, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listLogtanks, hcClient);
     }
 
     /**
@@ -1449,7 +1420,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMasterSlavePoolsRequest 请求对象
+     * @param request ListMasterSlavePoolsRequest 请求对象
      * @return ListMasterSlavePoolsResponse
      */
     public ListMasterSlavePoolsResponse listMasterSlavePools(ListMasterSlavePoolsRequest request) {
@@ -1463,13 +1434,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMasterSlavePoolsRequest 请求对象
+     * @param request ListMasterSlavePoolsRequest 请求对象
      * @return SyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse>
      */
     public SyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse> listMasterSlavePoolsInvoker(
         ListMasterSlavePoolsRequest request) {
-        return new SyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse>(request,
-            ElbMeta.listMasterSlavePools, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listMasterSlavePools, hcClient);
     }
 
     /**
@@ -1479,7 +1449,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMembersRequest 请求对象
+     * @param request ListMembersRequest 请求对象
      * @return ListMembersResponse
      */
     public ListMembersResponse listMembers(ListMembersRequest request) {
@@ -1493,11 +1463,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMembersRequest 请求对象
+     * @param request ListMembersRequest 请求对象
      * @return SyncInvoker<ListMembersRequest, ListMembersResponse>
      */
     public SyncInvoker<ListMembersRequest, ListMembersResponse> listMembersInvoker(ListMembersRequest request) {
-        return new SyncInvoker<ListMembersRequest, ListMembersResponse>(request, ElbMeta.listMembers, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listMembers, hcClient);
     }
 
     /**
@@ -1507,7 +1477,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoolsRequest 请求对象
+     * @param request ListPoolsRequest 请求对象
      * @return ListPoolsResponse
      */
     public ListPoolsResponse listPools(ListPoolsRequest request) {
@@ -1521,11 +1491,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoolsRequest 请求对象
+     * @param request ListPoolsRequest 请求对象
      * @return SyncInvoker<ListPoolsRequest, ListPoolsResponse>
      */
     public SyncInvoker<ListPoolsRequest, ListPoolsResponse> listPoolsInvoker(ListPoolsRequest request) {
-        return new SyncInvoker<ListPoolsRequest, ListPoolsResponse>(request, ElbMeta.listPools, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listPools, hcClient);
     }
 
     /**
@@ -1535,7 +1505,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaDetailsRequest 请求对象
+     * @param request ListQuotaDetailsRequest 请求对象
      * @return ListQuotaDetailsResponse
      */
     public ListQuotaDetailsResponse listQuotaDetails(ListQuotaDetailsRequest request) {
@@ -1549,13 +1519,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaDetailsRequest 请求对象
+     * @param request ListQuotaDetailsRequest 请求对象
      * @return SyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse>
      */
     public SyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse> listQuotaDetailsInvoker(
         ListQuotaDetailsRequest request) {
-        return new SyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse>(request, ElbMeta.listQuotaDetails,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listQuotaDetails, hcClient);
     }
 
     /**
@@ -1565,7 +1534,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityPoliciesRequest 请求对象
+     * @param request ListSecurityPoliciesRequest 请求对象
      * @return ListSecurityPoliciesResponse
      */
     public ListSecurityPoliciesResponse listSecurityPolicies(ListSecurityPoliciesRequest request) {
@@ -1579,13 +1548,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityPoliciesRequest 请求对象
+     * @param request ListSecurityPoliciesRequest 请求对象
      * @return SyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>
      */
     public SyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse> listSecurityPoliciesInvoker(
         ListSecurityPoliciesRequest request) {
-        return new SyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>(request,
-            ElbMeta.listSecurityPolicies, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listSecurityPolicies, hcClient);
     }
 
     /**
@@ -1597,7 +1565,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSystemSecurityPoliciesRequest 请求对象
+     * @param request ListSystemSecurityPoliciesRequest 请求对象
      * @return ListSystemSecurityPoliciesResponse
      */
     public ListSystemSecurityPoliciesResponse listSystemSecurityPolicies(ListSystemSecurityPoliciesRequest request) {
@@ -1613,13 +1581,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSystemSecurityPoliciesRequest 请求对象
+     * @param request ListSystemSecurityPoliciesRequest 请求对象
      * @return SyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse>
      */
     public SyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse> listSystemSecurityPoliciesInvoker(
         ListSystemSecurityPoliciesRequest request) {
-        return new SyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse>(request,
-            ElbMeta.listSystemSecurityPolicies, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listSystemSecurityPolicies, hcClient);
     }
 
     /**
@@ -1629,7 +1596,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return ShowCertificateResponse
      */
     public ShowCertificateResponse showCertificate(ShowCertificateRequest request) {
@@ -1643,13 +1610,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
      */
     public SyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateInvoker(
         ShowCertificateRequest request) {
-        return new SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>(request, ElbMeta.showCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showCertificate, hcClient);
     }
 
     /**
@@ -1659,7 +1625,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlavorRequest 请求对象
+     * @param request ShowFlavorRequest 请求对象
      * @return ShowFlavorResponse
      */
     public ShowFlavorResponse showFlavor(ShowFlavorRequest request) {
@@ -1673,11 +1639,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlavorRequest 请求对象
+     * @param request ShowFlavorRequest 请求对象
      * @return SyncInvoker<ShowFlavorRequest, ShowFlavorResponse>
      */
     public SyncInvoker<ShowFlavorRequest, ShowFlavorResponse> showFlavorInvoker(ShowFlavorRequest request) {
-        return new SyncInvoker<ShowFlavorRequest, ShowFlavorResponse>(request, ElbMeta.showFlavor, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showFlavor, hcClient);
     }
 
     /**
@@ -1687,7 +1653,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHealthMonitorRequest 请求对象
+     * @param request ShowHealthMonitorRequest 请求对象
      * @return ShowHealthMonitorResponse
      */
     public ShowHealthMonitorResponse showHealthMonitor(ShowHealthMonitorRequest request) {
@@ -1701,13 +1667,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHealthMonitorRequest 请求对象
+     * @param request ShowHealthMonitorRequest 请求对象
      * @return SyncInvoker<ShowHealthMonitorRequest, ShowHealthMonitorResponse>
      */
     public SyncInvoker<ShowHealthMonitorRequest, ShowHealthMonitorResponse> showHealthMonitorInvoker(
         ShowHealthMonitorRequest request) {
-        return new SyncInvoker<ShowHealthMonitorRequest, ShowHealthMonitorResponse>(request, ElbMeta.showHealthMonitor,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showHealthMonitor, hcClient);
     }
 
     /**
@@ -1717,7 +1682,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowL7PolicyRequest 请求对象
+     * @param request ShowL7PolicyRequest 请求对象
      * @return ShowL7PolicyResponse
      */
     public ShowL7PolicyResponse showL7Policy(ShowL7PolicyRequest request) {
@@ -1731,11 +1696,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowL7PolicyRequest 请求对象
+     * @param request ShowL7PolicyRequest 请求对象
      * @return SyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse>
      */
     public SyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse> showL7PolicyInvoker(ShowL7PolicyRequest request) {
-        return new SyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse>(request, ElbMeta.showL7Policy, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showL7Policy, hcClient);
     }
 
     /**
@@ -1745,7 +1710,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowL7RuleRequest 请求对象
+     * @param request ShowL7RuleRequest 请求对象
      * @return ShowL7RuleResponse
      */
     public ShowL7RuleResponse showL7Rule(ShowL7RuleRequest request) {
@@ -1759,11 +1724,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowL7RuleRequest 请求对象
+     * @param request ShowL7RuleRequest 请求对象
      * @return SyncInvoker<ShowL7RuleRequest, ShowL7RuleResponse>
      */
     public SyncInvoker<ShowL7RuleRequest, ShowL7RuleResponse> showL7RuleInvoker(ShowL7RuleRequest request) {
-        return new SyncInvoker<ShowL7RuleRequest, ShowL7RuleResponse>(request, ElbMeta.showL7Rule, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showL7Rule, hcClient);
     }
 
     /**
@@ -1773,7 +1738,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowListenerRequest 请求对象
+     * @param request ShowListenerRequest 请求对象
      * @return ShowListenerResponse
      */
     public ShowListenerResponse showListener(ShowListenerRequest request) {
@@ -1787,11 +1752,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowListenerRequest 请求对象
+     * @param request ShowListenerRequest 请求对象
      * @return SyncInvoker<ShowListenerRequest, ShowListenerResponse>
      */
     public SyncInvoker<ShowListenerRequest, ShowListenerResponse> showListenerInvoker(ShowListenerRequest request) {
-        return new SyncInvoker<ShowListenerRequest, ShowListenerResponse>(request, ElbMeta.showListener, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showListener, hcClient);
     }
 
     /**
@@ -1801,7 +1766,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLoadBalancerRequest 请求对象
+     * @param request ShowLoadBalancerRequest 请求对象
      * @return ShowLoadBalancerResponse
      */
     public ShowLoadBalancerResponse showLoadBalancer(ShowLoadBalancerRequest request) {
@@ -1815,13 +1780,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLoadBalancerRequest 请求对象
+     * @param request ShowLoadBalancerRequest 请求对象
      * @return SyncInvoker<ShowLoadBalancerRequest, ShowLoadBalancerResponse>
      */
     public SyncInvoker<ShowLoadBalancerRequest, ShowLoadBalancerResponse> showLoadBalancerInvoker(
         ShowLoadBalancerRequest request) {
-        return new SyncInvoker<ShowLoadBalancerRequest, ShowLoadBalancerResponse>(request, ElbMeta.showLoadBalancer,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showLoadBalancer, hcClient);
     }
 
     /**
@@ -1834,7 +1798,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLoadBalancerStatusRequest 请求对象
+     * @param request ShowLoadBalancerStatusRequest 请求对象
      * @return ShowLoadBalancerStatusResponse
      */
     public ShowLoadBalancerStatusResponse showLoadBalancerStatus(ShowLoadBalancerStatusRequest request) {
@@ -1851,13 +1815,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLoadBalancerStatusRequest 请求对象
+     * @param request ShowLoadBalancerStatusRequest 请求对象
      * @return SyncInvoker<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse>
      */
     public SyncInvoker<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse> showLoadBalancerStatusInvoker(
         ShowLoadBalancerStatusRequest request) {
-        return new SyncInvoker<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse>(request,
-            ElbMeta.showLoadBalancerStatus, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showLoadBalancerStatus, hcClient);
     }
 
     /**
@@ -1867,7 +1830,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLogtankRequest 请求对象
+     * @param request ShowLogtankRequest 请求对象
      * @return ShowLogtankResponse
      */
     public ShowLogtankResponse showLogtank(ShowLogtankRequest request) {
@@ -1881,11 +1844,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLogtankRequest 请求对象
+     * @param request ShowLogtankRequest 请求对象
      * @return SyncInvoker<ShowLogtankRequest, ShowLogtankResponse>
      */
     public SyncInvoker<ShowLogtankRequest, ShowLogtankResponse> showLogtankInvoker(ShowLogtankRequest request) {
-        return new SyncInvoker<ShowLogtankRequest, ShowLogtankResponse>(request, ElbMeta.showLogtank, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showLogtank, hcClient);
     }
 
     /**
@@ -1895,7 +1858,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMasterSlavePoolRequest 请求对象
+     * @param request ShowMasterSlavePoolRequest 请求对象
      * @return ShowMasterSlavePoolResponse
      */
     public ShowMasterSlavePoolResponse showMasterSlavePool(ShowMasterSlavePoolRequest request) {
@@ -1909,13 +1872,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMasterSlavePoolRequest 请求对象
+     * @param request ShowMasterSlavePoolRequest 请求对象
      * @return SyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse>
      */
     public SyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse> showMasterSlavePoolInvoker(
         ShowMasterSlavePoolRequest request) {
-        return new SyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse>(request,
-            ElbMeta.showMasterSlavePool, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showMasterSlavePool, hcClient);
     }
 
     /**
@@ -1925,7 +1887,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMemberRequest 请求对象
+     * @param request ShowMemberRequest 请求对象
      * @return ShowMemberResponse
      */
     public ShowMemberResponse showMember(ShowMemberRequest request) {
@@ -1939,11 +1901,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMemberRequest 请求对象
+     * @param request ShowMemberRequest 请求对象
      * @return SyncInvoker<ShowMemberRequest, ShowMemberResponse>
      */
     public SyncInvoker<ShowMemberRequest, ShowMemberResponse> showMemberInvoker(ShowMemberRequest request) {
-        return new SyncInvoker<ShowMemberRequest, ShowMemberResponse>(request, ElbMeta.showMember, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showMember, hcClient);
     }
 
     /**
@@ -1953,7 +1915,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPoolRequest 请求对象
+     * @param request ShowPoolRequest 请求对象
      * @return ShowPoolResponse
      */
     public ShowPoolResponse showPool(ShowPoolRequest request) {
@@ -1967,11 +1929,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPoolRequest 请求对象
+     * @param request ShowPoolRequest 请求对象
      * @return SyncInvoker<ShowPoolRequest, ShowPoolResponse>
      */
     public SyncInvoker<ShowPoolRequest, ShowPoolResponse> showPoolInvoker(ShowPoolRequest request) {
-        return new SyncInvoker<ShowPoolRequest, ShowPoolResponse>(request, ElbMeta.showPool, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showPool, hcClient);
     }
 
     /**
@@ -1981,7 +1943,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotaRequest 请求对象
+     * @param request ShowQuotaRequest 请求对象
      * @return ShowQuotaResponse
      */
     public ShowQuotaResponse showQuota(ShowQuotaRequest request) {
@@ -1995,11 +1957,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotaRequest 请求对象
+     * @param request ShowQuotaRequest 请求对象
      * @return SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
      */
     public SyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaInvoker(ShowQuotaRequest request) {
-        return new SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, ElbMeta.showQuota, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showQuota, hcClient);
     }
 
     /**
@@ -2009,7 +1971,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityPolicyRequest 请求对象
+     * @param request ShowSecurityPolicyRequest 请求对象
      * @return ShowSecurityPolicyResponse
      */
     public ShowSecurityPolicyResponse showSecurityPolicy(ShowSecurityPolicyRequest request) {
@@ -2023,13 +1985,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityPolicyRequest 请求对象
+     * @param request ShowSecurityPolicyRequest 请求对象
      * @return SyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse>
      */
     public SyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse> showSecurityPolicyInvoker(
         ShowSecurityPolicyRequest request) {
-        return new SyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse>(request,
-            ElbMeta.showSecurityPolicy, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showSecurityPolicy, hcClient);
     }
 
     /**
@@ -2039,7 +2000,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateRequest 请求对象
+     * @param request UpdateCertificateRequest 请求对象
      * @return UpdateCertificateResponse
      */
     public UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request) {
@@ -2053,13 +2014,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateRequest 请求对象
+     * @param request UpdateCertificateRequest 请求对象
      * @return SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>
      */
     public SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateInvoker(
         UpdateCertificateRequest request) {
-        return new SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>(request, ElbMeta.updateCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateCertificate, hcClient);
     }
 
     /**
@@ -2069,7 +2029,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthMonitorRequest 请求对象
+     * @param request UpdateHealthMonitorRequest 请求对象
      * @return UpdateHealthMonitorResponse
      */
     public UpdateHealthMonitorResponse updateHealthMonitor(UpdateHealthMonitorRequest request) {
@@ -2083,13 +2043,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthMonitorRequest 请求对象
+     * @param request UpdateHealthMonitorRequest 请求对象
      * @return SyncInvoker<UpdateHealthMonitorRequest, UpdateHealthMonitorResponse>
      */
     public SyncInvoker<UpdateHealthMonitorRequest, UpdateHealthMonitorResponse> updateHealthMonitorInvoker(
         UpdateHealthMonitorRequest request) {
-        return new SyncInvoker<UpdateHealthMonitorRequest, UpdateHealthMonitorResponse>(request,
-            ElbMeta.updateHealthMonitor, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateHealthMonitor, hcClient);
     }
 
     /**
@@ -2099,7 +2058,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateL7PolicyRequest 请求对象
+     * @param request UpdateL7PolicyRequest 请求对象
      * @return UpdateL7PolicyResponse
      */
     public UpdateL7PolicyResponse updateL7Policy(UpdateL7PolicyRequest request) {
@@ -2113,13 +2072,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateL7PolicyRequest 请求对象
+     * @param request UpdateL7PolicyRequest 请求对象
      * @return SyncInvoker<UpdateL7PolicyRequest, UpdateL7PolicyResponse>
      */
     public SyncInvoker<UpdateL7PolicyRequest, UpdateL7PolicyResponse> updateL7PolicyInvoker(
         UpdateL7PolicyRequest request) {
-        return new SyncInvoker<UpdateL7PolicyRequest, UpdateL7PolicyResponse>(request, ElbMeta.updateL7Policy,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateL7Policy, hcClient);
     }
 
     /**
@@ -2129,7 +2087,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateL7RuleRequest 请求对象
+     * @param request UpdateL7RuleRequest 请求对象
      * @return UpdateL7RuleResponse
      */
     public UpdateL7RuleResponse updateL7Rule(UpdateL7RuleRequest request) {
@@ -2143,11 +2101,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateL7RuleRequest 请求对象
+     * @param request UpdateL7RuleRequest 请求对象
      * @return SyncInvoker<UpdateL7RuleRequest, UpdateL7RuleResponse>
      */
     public SyncInvoker<UpdateL7RuleRequest, UpdateL7RuleResponse> updateL7RuleInvoker(UpdateL7RuleRequest request) {
-        return new SyncInvoker<UpdateL7RuleRequest, UpdateL7RuleResponse>(request, ElbMeta.updateL7Rule, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateL7Rule, hcClient);
     }
 
     /**
@@ -2157,7 +2115,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateListenerRequest 请求对象
+     * @param request UpdateListenerRequest 请求对象
      * @return UpdateListenerResponse
      */
     public UpdateListenerResponse updateListener(UpdateListenerRequest request) {
@@ -2171,13 +2129,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateListenerRequest 请求对象
+     * @param request UpdateListenerRequest 请求对象
      * @return SyncInvoker<UpdateListenerRequest, UpdateListenerResponse>
      */
     public SyncInvoker<UpdateListenerRequest, UpdateListenerResponse> updateListenerInvoker(
         UpdateListenerRequest request) {
-        return new SyncInvoker<UpdateListenerRequest, UpdateListenerResponse>(request, ElbMeta.updateListener,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateListener, hcClient);
     }
 
     /**
@@ -2187,7 +2144,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLoadBalancerRequest 请求对象
+     * @param request UpdateLoadBalancerRequest 请求对象
      * @return UpdateLoadBalancerResponse
      */
     public UpdateLoadBalancerResponse updateLoadBalancer(UpdateLoadBalancerRequest request) {
@@ -2201,13 +2158,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLoadBalancerRequest 请求对象
+     * @param request UpdateLoadBalancerRequest 请求对象
      * @return SyncInvoker<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse>
      */
     public SyncInvoker<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse> updateLoadBalancerInvoker(
         UpdateLoadBalancerRequest request) {
-        return new SyncInvoker<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse>(request,
-            ElbMeta.updateLoadBalancer, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateLoadBalancer, hcClient);
     }
 
     /**
@@ -2217,7 +2173,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogtankRequest 请求对象
+     * @param request UpdateLogtankRequest 请求对象
      * @return UpdateLogtankResponse
      */
     public UpdateLogtankResponse updateLogtank(UpdateLogtankRequest request) {
@@ -2231,11 +2187,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogtankRequest 请求对象
+     * @param request UpdateLogtankRequest 请求对象
      * @return SyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>
      */
     public SyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtankInvoker(UpdateLogtankRequest request) {
-        return new SyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>(request, ElbMeta.updateLogtank, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateLogtank, hcClient);
     }
 
     /**
@@ -2245,7 +2201,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberRequest 请求对象
+     * @param request UpdateMemberRequest 请求对象
      * @return UpdateMemberResponse
      */
     public UpdateMemberResponse updateMember(UpdateMemberRequest request) {
@@ -2259,11 +2215,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberRequest 请求对象
+     * @param request UpdateMemberRequest 请求对象
      * @return SyncInvoker<UpdateMemberRequest, UpdateMemberResponse>
      */
     public SyncInvoker<UpdateMemberRequest, UpdateMemberResponse> updateMemberInvoker(UpdateMemberRequest request) {
-        return new SyncInvoker<UpdateMemberRequest, UpdateMemberResponse>(request, ElbMeta.updateMember, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateMember, hcClient);
     }
 
     /**
@@ -2273,7 +2229,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePoolRequest 请求对象
+     * @param request UpdatePoolRequest 请求对象
      * @return UpdatePoolResponse
      */
     public UpdatePoolResponse updatePool(UpdatePoolRequest request) {
@@ -2287,11 +2243,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePoolRequest 请求对象
+     * @param request UpdatePoolRequest 请求对象
      * @return SyncInvoker<UpdatePoolRequest, UpdatePoolResponse>
      */
     public SyncInvoker<UpdatePoolRequest, UpdatePoolResponse> updatePoolInvoker(UpdatePoolRequest request) {
-        return new SyncInvoker<UpdatePoolRequest, UpdatePoolResponse>(request, ElbMeta.updatePool, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updatePool, hcClient);
     }
 
     /**
@@ -2301,7 +2257,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecurityPolicyRequest 请求对象
+     * @param request UpdateSecurityPolicyRequest 请求对象
      * @return UpdateSecurityPolicyResponse
      */
     public UpdateSecurityPolicyResponse updateSecurityPolicy(UpdateSecurityPolicyRequest request) {
@@ -2315,13 +2271,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecurityPolicyRequest 请求对象
+     * @param request UpdateSecurityPolicyRequest 请求对象
      * @return SyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>
      */
     public SyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse> updateSecurityPolicyInvoker(
         UpdateSecurityPolicyRequest request) {
-        return new SyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>(request,
-            ElbMeta.updateSecurityPolicy, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateSecurityPolicy, hcClient);
     }
 
     /**
@@ -2331,7 +2286,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
      */
     public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
@@ -2345,13 +2300,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsInvoker(
         ListApiVersionsRequest request) {
-        return new SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, ElbMeta.listApiVersions,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -2361,7 +2315,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteIpListRequest 请求对象
+     * @param request BatchDeleteIpListRequest 请求对象
      * @return BatchDeleteIpListResponse
      */
     public BatchDeleteIpListResponse batchDeleteIpList(BatchDeleteIpListRequest request) {
@@ -2375,13 +2329,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteIpListRequest 请求对象
+     * @param request BatchDeleteIpListRequest 请求对象
      * @return SyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse>
      */
     public SyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse> batchDeleteIpListInvoker(
         BatchDeleteIpListRequest request) {
-        return new SyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse>(request, ElbMeta.batchDeleteIpList,
-            hcClient);
+        return new SyncInvoker<>(request, ElbMeta.batchDeleteIpList, hcClient);
     }
 
     /**
@@ -2406,7 +2359,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountPreoccupyIpNumRequest 请求对象
+     * @param request CountPreoccupyIpNumRequest 请求对象
      * @return CountPreoccupyIpNumResponse
      */
     public CountPreoccupyIpNumResponse countPreoccupyIpNum(CountPreoccupyIpNumRequest request) {
@@ -2435,13 +2388,12 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountPreoccupyIpNumRequest 请求对象
+     * @param request CountPreoccupyIpNumRequest 请求对象
      * @return SyncInvoker<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse>
      */
     public SyncInvoker<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse> countPreoccupyIpNumInvoker(
         CountPreoccupyIpNumRequest request) {
-        return new SyncInvoker<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse>(request,
-            ElbMeta.countPreoccupyIpNum, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.countPreoccupyIpNum, hcClient);
     }
 
     /**
@@ -2455,7 +2407,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIpGroupRequest 请求对象
+     * @param request CreateIpGroupRequest 请求对象
      * @return CreateIpGroupResponse
      */
     public CreateIpGroupResponse createIpGroup(CreateIpGroupRequest request) {
@@ -2473,11 +2425,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIpGroupRequest 请求对象
+     * @param request CreateIpGroupRequest 请求对象
      * @return SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>
      */
     public SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroupInvoker(CreateIpGroupRequest request) {
-        return new SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>(request, ElbMeta.createIpGroup, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.createIpGroup, hcClient);
     }
 
     /**
@@ -2487,7 +2439,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpGroupRequest 请求对象
+     * @param request DeleteIpGroupRequest 请求对象
      * @return DeleteIpGroupResponse
      */
     public DeleteIpGroupResponse deleteIpGroup(DeleteIpGroupRequest request) {
@@ -2501,11 +2453,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpGroupRequest 请求对象
+     * @param request DeleteIpGroupRequest 请求对象
      * @return SyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>
      */
     public SyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse> deleteIpGroupInvoker(DeleteIpGroupRequest request) {
-        return new SyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>(request, ElbMeta.deleteIpGroup, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.deleteIpGroup, hcClient);
     }
 
     /**
@@ -2515,7 +2467,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIpGroupsRequest 请求对象
+     * @param request ListIpGroupsRequest 请求对象
      * @return ListIpGroupsResponse
      */
     public ListIpGroupsResponse listIpGroups(ListIpGroupsRequest request) {
@@ -2529,11 +2481,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIpGroupsRequest 请求对象
+     * @param request ListIpGroupsRequest 请求对象
      * @return SyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>
      */
     public SyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse> listIpGroupsInvoker(ListIpGroupsRequest request) {
-        return new SyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>(request, ElbMeta.listIpGroups, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.listIpGroups, hcClient);
     }
 
     /**
@@ -2543,7 +2495,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpGroupRequest 请求对象
+     * @param request ShowIpGroupRequest 请求对象
      * @return ShowIpGroupResponse
      */
     public ShowIpGroupResponse showIpGroup(ShowIpGroupRequest request) {
@@ -2557,11 +2509,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpGroupRequest 请求对象
+     * @param request ShowIpGroupRequest 请求对象
      * @return SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>
      */
     public SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroupInvoker(ShowIpGroupRequest request) {
-        return new SyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>(request, ElbMeta.showIpGroup, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.showIpGroup, hcClient);
     }
 
     /**
@@ -2576,7 +2528,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpGroupRequest 请求对象
+     * @param request UpdateIpGroupRequest 请求对象
      * @return UpdateIpGroupResponse
      */
     public UpdateIpGroupResponse updateIpGroup(UpdateIpGroupRequest request) {
@@ -2595,11 +2547,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpGroupRequest 请求对象
+     * @param request UpdateIpGroupRequest 请求对象
      * @return SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>
      */
     public SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroupInvoker(UpdateIpGroupRequest request) {
-        return new SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>(request, ElbMeta.updateIpGroup, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateIpGroup, hcClient);
     }
 
     /**
@@ -2609,7 +2561,7 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpListRequest 请求对象
+     * @param request UpdateIpListRequest 请求对象
      * @return UpdateIpListResponse
      */
     public UpdateIpListResponse updateIpList(UpdateIpListRequest request) {
@@ -2623,11 +2575,11 @@ public class ElbClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpListRequest 请求对象
+     * @param request UpdateIpListRequest 请求对象
      * @return SyncInvoker<UpdateIpListRequest, UpdateIpListResponse>
      */
     public SyncInvoker<UpdateIpListRequest, UpdateIpListResponse> updateIpListInvoker(UpdateIpListRequest request) {
-        return new SyncInvoker<UpdateIpListRequest, UpdateIpListResponse>(request, ElbMeta.updateIpList, hcClient);
+        return new SyncInvoker<>(request, ElbMeta.updateIpList, hcClient);
     }
 
 }

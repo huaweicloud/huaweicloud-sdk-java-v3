@@ -189,7 +189,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddNodeRequest 请求对象
+     * @param request AddNodeRequest 请求对象
      * @return CompletableFuture<AddNodeResponse>
      */
     public CompletableFuture<AddNodeResponse> addNodeAsync(AddNodeRequest request) {
@@ -204,11 +204,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddNodeRequest 请求对象
+     * @param request AddNodeRequest 请求对象
      * @return AsyncInvoker<AddNodeRequest, AddNodeResponse>
      */
     public AsyncInvoker<AddNodeRequest, AddNodeResponse> addNodeAsyncInvoker(AddNodeRequest request) {
-        return new AsyncInvoker<AddNodeRequest, AddNodeResponse>(request, CceMeta.addNode, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.addNode, hcClient);
     }
 
     /**
@@ -218,7 +218,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AwakeClusterRequest 请求对象
+     * @param request AwakeClusterRequest 请求对象
      * @return CompletableFuture<AwakeClusterResponse>
      */
     public CompletableFuture<AwakeClusterResponse> awakeClusterAsync(AwakeClusterRequest request) {
@@ -232,12 +232,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AwakeClusterRequest 请求对象
+     * @param request AwakeClusterRequest 请求对象
      * @return AsyncInvoker<AwakeClusterRequest, AwakeClusterResponse>
      */
     public AsyncInvoker<AwakeClusterRequest, AwakeClusterResponse> awakeClusterAsyncInvoker(
         AwakeClusterRequest request) {
-        return new AsyncInvoker<AwakeClusterRequest, AwakeClusterResponse>(request, CceMeta.awakeCluster, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.awakeCluster, hcClient);
     }
 
     /**
@@ -249,7 +249,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateClusterTagsRequest 请求对象
+     * @param request BatchCreateClusterTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateClusterTagsResponse>
      */
     public CompletableFuture<BatchCreateClusterTagsResponse> batchCreateClusterTagsAsync(
@@ -266,13 +266,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateClusterTagsRequest 请求对象
+     * @param request BatchCreateClusterTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse>
      */
     public AsyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> batchCreateClusterTagsAsyncInvoker(
         BatchCreateClusterTagsRequest request) {
-        return new AsyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse>(request,
-            CceMeta.batchCreateClusterTags, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.batchCreateClusterTags, hcClient);
     }
 
     /**
@@ -283,7 +282,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteClusterTagsRequest 请求对象
+     * @param request BatchDeleteClusterTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteClusterTagsResponse>
      */
     public CompletableFuture<BatchDeleteClusterTagsResponse> batchDeleteClusterTagsAsync(
@@ -299,13 +298,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteClusterTagsRequest 请求对象
+     * @param request BatchDeleteClusterTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse>
      */
     public AsyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> batchDeleteClusterTagsAsyncInvoker(
         BatchDeleteClusterTagsRequest request) {
-        return new AsyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse>(request,
-            CceMeta.batchDeleteClusterTags, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.batchDeleteClusterTags, hcClient);
     }
 
     /**
@@ -317,7 +315,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ContinueUpgradeClusterTaskRequest 请求对象
+     * @param request ContinueUpgradeClusterTaskRequest 请求对象
      * @return CompletableFuture<ContinueUpgradeClusterTaskResponse>
      */
     public CompletableFuture<ContinueUpgradeClusterTaskResponse> continueUpgradeClusterTaskAsync(
@@ -334,13 +332,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ContinueUpgradeClusterTaskRequest 请求对象
+     * @param request ContinueUpgradeClusterTaskRequest 请求对象
      * @return AsyncInvoker<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse>
      */
     public AsyncInvoker<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse> continueUpgradeClusterTaskAsyncInvoker(
         ContinueUpgradeClusterTaskRequest request) {
-        return new AsyncInvoker<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse>(request,
-            CceMeta.continueUpgradeClusterTask, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.continueUpgradeClusterTask, hcClient);
     }
 
     /**
@@ -350,7 +347,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAddonInstanceRequest 请求对象
+     * @param request CreateAddonInstanceRequest 请求对象
      * @return CompletableFuture<CreateAddonInstanceResponse>
      */
     public CompletableFuture<CreateAddonInstanceResponse> createAddonInstanceAsync(CreateAddonInstanceRequest request) {
@@ -364,13 +361,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAddonInstanceRequest 请求对象
+     * @param request CreateAddonInstanceRequest 请求对象
      * @return AsyncInvoker<CreateAddonInstanceRequest, CreateAddonInstanceResponse>
      */
     public AsyncInvoker<CreateAddonInstanceRequest, CreateAddonInstanceResponse> createAddonInstanceAsyncInvoker(
         CreateAddonInstanceRequest request) {
-        return new AsyncInvoker<CreateAddonInstanceRequest, CreateAddonInstanceResponse>(request,
-            CceMeta.createAddonInstance, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createAddonInstance, hcClient);
     }
 
     /**
@@ -383,7 +379,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCloudPersistentVolumeClaimsRequest 请求对象
+     * @param request CreateCloudPersistentVolumeClaimsRequest 请求对象
      * @return CompletableFuture<CreateCloudPersistentVolumeClaimsResponse>
      */
     public CompletableFuture<CreateCloudPersistentVolumeClaimsResponse> createCloudPersistentVolumeClaimsAsync(
@@ -401,13 +397,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCloudPersistentVolumeClaimsRequest 请求对象
+     * @param request CreateCloudPersistentVolumeClaimsRequest 请求对象
      * @return AsyncInvoker<CreateCloudPersistentVolumeClaimsRequest, CreateCloudPersistentVolumeClaimsResponse>
      */
     public AsyncInvoker<CreateCloudPersistentVolumeClaimsRequest, CreateCloudPersistentVolumeClaimsResponse> createCloudPersistentVolumeClaimsAsyncInvoker(
         CreateCloudPersistentVolumeClaimsRequest request) {
-        return new AsyncInvoker<CreateCloudPersistentVolumeClaimsRequest, CreateCloudPersistentVolumeClaimsResponse>(
-            request, CceMeta.createCloudPersistentVolumeClaims, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createCloudPersistentVolumeClaims, hcClient);
     }
 
     /**
@@ -421,7 +416,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return CompletableFuture<CreateClusterResponse>
      */
     public CompletableFuture<CreateClusterResponse> createClusterAsync(CreateClusterRequest request) {
@@ -439,12 +434,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return AsyncInvoker<CreateClusterRequest, CreateClusterResponse>
      */
     public AsyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterAsyncInvoker(
         CreateClusterRequest request) {
-        return new AsyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, CceMeta.createCluster, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createCluster, hcClient);
     }
 
     /**
@@ -454,7 +449,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterMasterSnapshotRequest 请求对象
+     * @param request CreateClusterMasterSnapshotRequest 请求对象
      * @return CompletableFuture<CreateClusterMasterSnapshotResponse>
      */
     public CompletableFuture<CreateClusterMasterSnapshotResponse> createClusterMasterSnapshotAsync(
@@ -469,13 +464,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterMasterSnapshotRequest 请求对象
+     * @param request CreateClusterMasterSnapshotRequest 请求对象
      * @return AsyncInvoker<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse>
      */
     public AsyncInvoker<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse> createClusterMasterSnapshotAsyncInvoker(
         CreateClusterMasterSnapshotRequest request) {
-        return new AsyncInvoker<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse>(request,
-            CceMeta.createClusterMasterSnapshot, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createClusterMasterSnapshot, hcClient);
     }
 
     /**
@@ -485,7 +479,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKubernetesClusterCertRequest 请求对象
+     * @param request CreateKubernetesClusterCertRequest 请求对象
      * @return CompletableFuture<CreateKubernetesClusterCertResponse>
      */
     public CompletableFuture<CreateKubernetesClusterCertResponse> createKubernetesClusterCertAsync(
@@ -500,13 +494,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKubernetesClusterCertRequest 请求对象
+     * @param request CreateKubernetesClusterCertRequest 请求对象
      * @return AsyncInvoker<CreateKubernetesClusterCertRequest, CreateKubernetesClusterCertResponse>
      */
     public AsyncInvoker<CreateKubernetesClusterCertRequest, CreateKubernetesClusterCertResponse> createKubernetesClusterCertAsyncInvoker(
         CreateKubernetesClusterCertRequest request) {
-        return new AsyncInvoker<CreateKubernetesClusterCertRequest, CreateKubernetesClusterCertResponse>(request,
-            CceMeta.createKubernetesClusterCert, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createKubernetesClusterCert, hcClient);
     }
 
     /**
@@ -518,7 +511,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNodeRequest 请求对象
+     * @param request CreateNodeRequest 请求对象
      * @return CompletableFuture<CreateNodeResponse>
      */
     public CompletableFuture<CreateNodeResponse> createNodeAsync(CreateNodeRequest request) {
@@ -534,11 +527,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNodeRequest 请求对象
+     * @param request CreateNodeRequest 请求对象
      * @return AsyncInvoker<CreateNodeRequest, CreateNodeResponse>
      */
     public AsyncInvoker<CreateNodeRequest, CreateNodeResponse> createNodeAsyncInvoker(CreateNodeRequest request) {
-        return new AsyncInvoker<CreateNodeRequest, CreateNodeResponse>(request, CceMeta.createNode, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createNode, hcClient);
     }
 
     /**
@@ -555,7 +548,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNodePoolRequest 请求对象
+     * @param request CreateNodePoolRequest 请求对象
      * @return CompletableFuture<CreateNodePoolResponse>
      */
     public CompletableFuture<CreateNodePoolResponse> createNodePoolAsync(CreateNodePoolRequest request) {
@@ -576,13 +569,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNodePoolRequest 请求对象
+     * @param request CreateNodePoolRequest 请求对象
      * @return AsyncInvoker<CreateNodePoolRequest, CreateNodePoolResponse>
      */
     public AsyncInvoker<CreateNodePoolRequest, CreateNodePoolResponse> createNodePoolAsyncInvoker(
         CreateNodePoolRequest request) {
-        return new AsyncInvoker<CreateNodePoolRequest, CreateNodePoolResponse>(request, CceMeta.createNodePool,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createNodePool, hcClient);
     }
 
     /**
@@ -592,7 +584,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePartitionRequest 请求对象
+     * @param request CreatePartitionRequest 请求对象
      * @return CompletableFuture<CreatePartitionResponse>
      */
     public CompletableFuture<CreatePartitionResponse> createPartitionAsync(CreatePartitionRequest request) {
@@ -606,13 +598,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePartitionRequest 请求对象
+     * @param request CreatePartitionRequest 请求对象
      * @return AsyncInvoker<CreatePartitionRequest, CreatePartitionResponse>
      */
     public AsyncInvoker<CreatePartitionRequest, CreatePartitionResponse> createPartitionAsyncInvoker(
         CreatePartitionRequest request) {
-        return new AsyncInvoker<CreatePartitionRequest, CreatePartitionResponse>(request, CceMeta.createPartition,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createPartition, hcClient);
     }
 
     /**
@@ -622,7 +613,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostCheckRequest 请求对象
+     * @param request CreatePostCheckRequest 请求对象
      * @return CompletableFuture<CreatePostCheckResponse>
      */
     public CompletableFuture<CreatePostCheckResponse> createPostCheckAsync(CreatePostCheckRequest request) {
@@ -636,13 +627,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostCheckRequest 请求对象
+     * @param request CreatePostCheckRequest 请求对象
      * @return AsyncInvoker<CreatePostCheckRequest, CreatePostCheckResponse>
      */
     public AsyncInvoker<CreatePostCheckRequest, CreatePostCheckResponse> createPostCheckAsyncInvoker(
         CreatePostCheckRequest request) {
-        return new AsyncInvoker<CreatePostCheckRequest, CreatePostCheckResponse>(request, CceMeta.createPostCheck,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createPostCheck, hcClient);
     }
 
     /**
@@ -652,7 +642,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePreCheckRequest 请求对象
+     * @param request CreatePreCheckRequest 请求对象
      * @return CompletableFuture<CreatePreCheckResponse>
      */
     public CompletableFuture<CreatePreCheckResponse> createPreCheckAsync(CreatePreCheckRequest request) {
@@ -666,13 +656,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePreCheckRequest 请求对象
+     * @param request CreatePreCheckRequest 请求对象
      * @return AsyncInvoker<CreatePreCheckRequest, CreatePreCheckResponse>
      */
     public AsyncInvoker<CreatePreCheckRequest, CreatePreCheckResponse> createPreCheckAsyncInvoker(
         CreatePreCheckRequest request) {
-        return new AsyncInvoker<CreatePreCheckRequest, CreatePreCheckResponse>(request, CceMeta.createPreCheck,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createPreCheck, hcClient);
     }
 
     /**
@@ -682,7 +671,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateReleaseRequest 请求对象
+     * @param request CreateReleaseRequest 请求对象
      * @return CompletableFuture<CreateReleaseResponse>
      */
     public CompletableFuture<CreateReleaseResponse> createReleaseAsync(CreateReleaseRequest request) {
@@ -696,12 +685,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateReleaseRequest 请求对象
+     * @param request CreateReleaseRequest 请求对象
      * @return AsyncInvoker<CreateReleaseRequest, CreateReleaseResponse>
      */
     public AsyncInvoker<CreateReleaseRequest, CreateReleaseResponse> createReleaseAsyncInvoker(
         CreateReleaseRequest request) {
-        return new AsyncInvoker<CreateReleaseRequest, CreateReleaseResponse>(request, CceMeta.createRelease, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createRelease, hcClient);
     }
 
     /**
@@ -712,7 +701,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUpgradeWorkFlowRequest 请求对象
+     * @param request CreateUpgradeWorkFlowRequest 请求对象
      * @return CompletableFuture<CreateUpgradeWorkFlowResponse>
      */
     public CompletableFuture<CreateUpgradeWorkFlowResponse> createUpgradeWorkFlowAsync(
@@ -728,13 +717,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUpgradeWorkFlowRequest 请求对象
+     * @param request CreateUpgradeWorkFlowRequest 请求对象
      * @return AsyncInvoker<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse>
      */
     public AsyncInvoker<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse> createUpgradeWorkFlowAsyncInvoker(
         CreateUpgradeWorkFlowRequest request) {
-        return new AsyncInvoker<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse>(request,
-            CceMeta.createUpgradeWorkFlow, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.createUpgradeWorkFlow, hcClient);
     }
 
     /**
@@ -744,7 +732,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAddonInstanceRequest 请求对象
+     * @param request DeleteAddonInstanceRequest 请求对象
      * @return CompletableFuture<DeleteAddonInstanceResponse>
      */
     public CompletableFuture<DeleteAddonInstanceResponse> deleteAddonInstanceAsync(DeleteAddonInstanceRequest request) {
@@ -758,13 +746,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAddonInstanceRequest 请求对象
+     * @param request DeleteAddonInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse>
      */
     public AsyncInvoker<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse> deleteAddonInstanceAsyncInvoker(
         DeleteAddonInstanceRequest request) {
-        return new AsyncInvoker<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse>(request,
-            CceMeta.deleteAddonInstance, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.deleteAddonInstance, hcClient);
     }
 
     /**
@@ -774,7 +761,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteChartRequest 请求对象
+     * @param request DeleteChartRequest 请求对象
      * @return CompletableFuture<DeleteChartResponse>
      */
     public CompletableFuture<DeleteChartResponse> deleteChartAsync(DeleteChartRequest request) {
@@ -788,11 +775,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteChartRequest 请求对象
+     * @param request DeleteChartRequest 请求对象
      * @return AsyncInvoker<DeleteChartRequest, DeleteChartResponse>
      */
     public AsyncInvoker<DeleteChartRequest, DeleteChartResponse> deleteChartAsyncInvoker(DeleteChartRequest request) {
-        return new AsyncInvoker<DeleteChartRequest, DeleteChartResponse>(request, CceMeta.deleteChart, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.deleteChart, hcClient);
     }
 
     /**
@@ -803,7 +790,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCloudPersistentVolumeClaimsRequest 请求对象
+     * @param request DeleteCloudPersistentVolumeClaimsRequest 请求对象
      * @return CompletableFuture<DeleteCloudPersistentVolumeClaimsResponse>
      */
     public CompletableFuture<DeleteCloudPersistentVolumeClaimsResponse> deleteCloudPersistentVolumeClaimsAsync(
@@ -819,13 +806,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCloudPersistentVolumeClaimsRequest 请求对象
+     * @param request DeleteCloudPersistentVolumeClaimsRequest 请求对象
      * @return AsyncInvoker<DeleteCloudPersistentVolumeClaimsRequest, DeleteCloudPersistentVolumeClaimsResponse>
      */
     public AsyncInvoker<DeleteCloudPersistentVolumeClaimsRequest, DeleteCloudPersistentVolumeClaimsResponse> deleteCloudPersistentVolumeClaimsAsyncInvoker(
         DeleteCloudPersistentVolumeClaimsRequest request) {
-        return new AsyncInvoker<DeleteCloudPersistentVolumeClaimsRequest, DeleteCloudPersistentVolumeClaimsResponse>(
-            request, CceMeta.deleteCloudPersistentVolumeClaims, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.deleteCloudPersistentVolumeClaims, hcClient);
     }
 
     /**
@@ -836,7 +822,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterRequest 请求对象
+     * @param request DeleteClusterRequest 请求对象
      * @return CompletableFuture<DeleteClusterResponse>
      */
     public CompletableFuture<DeleteClusterResponse> deleteClusterAsync(DeleteClusterRequest request) {
@@ -851,12 +837,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterRequest 请求对象
+     * @param request DeleteClusterRequest 请求对象
      * @return AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
      */
     public AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse> deleteClusterAsyncInvoker(
         DeleteClusterRequest request) {
-        return new AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse>(request, CceMeta.deleteCluster, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.deleteCluster, hcClient);
     }
 
     /**
@@ -867,7 +853,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNodeRequest 请求对象
+     * @param request DeleteNodeRequest 请求对象
      * @return CompletableFuture<DeleteNodeResponse>
      */
     public CompletableFuture<DeleteNodeResponse> deleteNodeAsync(DeleteNodeRequest request) {
@@ -882,11 +868,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNodeRequest 请求对象
+     * @param request DeleteNodeRequest 请求对象
      * @return AsyncInvoker<DeleteNodeRequest, DeleteNodeResponse>
      */
     public AsyncInvoker<DeleteNodeRequest, DeleteNodeResponse> deleteNodeAsyncInvoker(DeleteNodeRequest request) {
-        return new AsyncInvoker<DeleteNodeRequest, DeleteNodeResponse>(request, CceMeta.deleteNode, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.deleteNode, hcClient);
     }
 
     /**
@@ -897,7 +883,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNodePoolRequest 请求对象
+     * @param request DeleteNodePoolRequest 请求对象
      * @return CompletableFuture<DeleteNodePoolResponse>
      */
     public CompletableFuture<DeleteNodePoolResponse> deleteNodePoolAsync(DeleteNodePoolRequest request) {
@@ -912,13 +898,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNodePoolRequest 请求对象
+     * @param request DeleteNodePoolRequest 请求对象
      * @return AsyncInvoker<DeleteNodePoolRequest, DeleteNodePoolResponse>
      */
     public AsyncInvoker<DeleteNodePoolRequest, DeleteNodePoolResponse> deleteNodePoolAsyncInvoker(
         DeleteNodePoolRequest request) {
-        return new AsyncInvoker<DeleteNodePoolRequest, DeleteNodePoolResponse>(request, CceMeta.deleteNodePool,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.deleteNodePool, hcClient);
     }
 
     /**
@@ -928,7 +913,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteReleaseRequest 请求对象
+     * @param request DeleteReleaseRequest 请求对象
      * @return CompletableFuture<DeleteReleaseResponse>
      */
     public CompletableFuture<DeleteReleaseResponse> deleteReleaseAsync(DeleteReleaseRequest request) {
@@ -942,12 +927,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteReleaseRequest 请求对象
+     * @param request DeleteReleaseRequest 请求对象
      * @return AsyncInvoker<DeleteReleaseRequest, DeleteReleaseResponse>
      */
     public AsyncInvoker<DeleteReleaseRequest, DeleteReleaseResponse> deleteReleaseAsyncInvoker(
         DeleteReleaseRequest request) {
-        return new AsyncInvoker<DeleteReleaseRequest, DeleteReleaseResponse>(request, CceMeta.deleteRelease, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.deleteRelease, hcClient);
     }
 
     /**
@@ -957,7 +942,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadChartRequest 请求对象
+     * @param request DownloadChartRequest 请求对象
      * @return CompletableFuture<DownloadChartResponse>
      */
     public CompletableFuture<DownloadChartResponse> downloadChartAsync(DownloadChartRequest request) {
@@ -971,12 +956,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadChartRequest 请求对象
+     * @param request DownloadChartRequest 请求对象
      * @return AsyncInvoker<DownloadChartRequest, DownloadChartResponse>
      */
     public AsyncInvoker<DownloadChartRequest, DownloadChartResponse> downloadChartAsyncInvoker(
         DownloadChartRequest request) {
-        return new AsyncInvoker<DownloadChartRequest, DownloadChartResponse>(request, CceMeta.downloadChart, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.downloadChart, hcClient);
     }
 
     /**
@@ -986,7 +971,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HibernateClusterRequest 请求对象
+     * @param request HibernateClusterRequest 请求对象
      * @return CompletableFuture<HibernateClusterResponse>
      */
     public CompletableFuture<HibernateClusterResponse> hibernateClusterAsync(HibernateClusterRequest request) {
@@ -1000,13 +985,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HibernateClusterRequest 请求对象
+     * @param request HibernateClusterRequest 请求对象
      * @return AsyncInvoker<HibernateClusterRequest, HibernateClusterResponse>
      */
     public AsyncInvoker<HibernateClusterRequest, HibernateClusterResponse> hibernateClusterAsyncInvoker(
         HibernateClusterRequest request) {
-        return new AsyncInvoker<HibernateClusterRequest, HibernateClusterResponse>(request, CceMeta.hibernateCluster,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.hibernateCluster, hcClient);
     }
 
     /**
@@ -1016,7 +1000,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAddonInstancesRequest 请求对象
+     * @param request ListAddonInstancesRequest 请求对象
      * @return CompletableFuture<ListAddonInstancesResponse>
      */
     public CompletableFuture<ListAddonInstancesResponse> listAddonInstancesAsync(ListAddonInstancesRequest request) {
@@ -1030,13 +1014,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAddonInstancesRequest 请求对象
+     * @param request ListAddonInstancesRequest 请求对象
      * @return AsyncInvoker<ListAddonInstancesRequest, ListAddonInstancesResponse>
      */
     public AsyncInvoker<ListAddonInstancesRequest, ListAddonInstancesResponse> listAddonInstancesAsyncInvoker(
         ListAddonInstancesRequest request) {
-        return new AsyncInvoker<ListAddonInstancesRequest, ListAddonInstancesResponse>(request,
-            CceMeta.listAddonInstances, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listAddonInstances, hcClient);
     }
 
     /**
@@ -1046,7 +1029,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAddonTemplatesRequest 请求对象
+     * @param request ListAddonTemplatesRequest 请求对象
      * @return CompletableFuture<ListAddonTemplatesResponse>
      */
     public CompletableFuture<ListAddonTemplatesResponse> listAddonTemplatesAsync(ListAddonTemplatesRequest request) {
@@ -1060,13 +1043,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAddonTemplatesRequest 请求对象
+     * @param request ListAddonTemplatesRequest 请求对象
      * @return AsyncInvoker<ListAddonTemplatesRequest, ListAddonTemplatesResponse>
      */
     public AsyncInvoker<ListAddonTemplatesRequest, ListAddonTemplatesResponse> listAddonTemplatesAsyncInvoker(
         ListAddonTemplatesRequest request) {
-        return new AsyncInvoker<ListAddonTemplatesRequest, ListAddonTemplatesResponse>(request,
-            CceMeta.listAddonTemplates, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listAddonTemplates, hcClient);
     }
 
     /**
@@ -1076,7 +1058,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListChartsRequest 请求对象
+     * @param request ListChartsRequest 请求对象
      * @return CompletableFuture<ListChartsResponse>
      */
     public CompletableFuture<ListChartsResponse> listChartsAsync(ListChartsRequest request) {
@@ -1090,11 +1072,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListChartsRequest 请求对象
+     * @param request ListChartsRequest 请求对象
      * @return AsyncInvoker<ListChartsRequest, ListChartsResponse>
      */
     public AsyncInvoker<ListChartsRequest, ListChartsResponse> listChartsAsyncInvoker(ListChartsRequest request) {
-        return new AsyncInvoker<ListChartsRequest, ListChartsResponse>(request, CceMeta.listCharts, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listCharts, hcClient);
     }
 
     /**
@@ -1104,7 +1086,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterMasterSnapshotTasksRequest 请求对象
+     * @param request ListClusterMasterSnapshotTasksRequest 请求对象
      * @return CompletableFuture<ListClusterMasterSnapshotTasksResponse>
      */
     public CompletableFuture<ListClusterMasterSnapshotTasksResponse> listClusterMasterSnapshotTasksAsync(
@@ -1119,13 +1101,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterMasterSnapshotTasksRequest 请求对象
+     * @param request ListClusterMasterSnapshotTasksRequest 请求对象
      * @return AsyncInvoker<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse>
      */
     public AsyncInvoker<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse> listClusterMasterSnapshotTasksAsyncInvoker(
         ListClusterMasterSnapshotTasksRequest request) {
-        return new AsyncInvoker<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse>(request,
-            CceMeta.listClusterMasterSnapshotTasks, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listClusterMasterSnapshotTasks, hcClient);
     }
 
     /**
@@ -1135,7 +1116,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterUpgradeFeatureGatesRequest 请求对象
+     * @param request ListClusterUpgradeFeatureGatesRequest 请求对象
      * @return CompletableFuture<ListClusterUpgradeFeatureGatesResponse>
      */
     public CompletableFuture<ListClusterUpgradeFeatureGatesResponse> listClusterUpgradeFeatureGatesAsync(
@@ -1150,13 +1131,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterUpgradeFeatureGatesRequest 请求对象
+     * @param request ListClusterUpgradeFeatureGatesRequest 请求对象
      * @return AsyncInvoker<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse>
      */
     public AsyncInvoker<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse> listClusterUpgradeFeatureGatesAsyncInvoker(
         ListClusterUpgradeFeatureGatesRequest request) {
-        return new AsyncInvoker<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse>(request,
-            CceMeta.listClusterUpgradeFeatureGates, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listClusterUpgradeFeatureGates, hcClient);
     }
 
     /**
@@ -1166,7 +1146,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterUpgradePathsRequest 请求对象
+     * @param request ListClusterUpgradePathsRequest 请求对象
      * @return CompletableFuture<ListClusterUpgradePathsResponse>
      */
     public CompletableFuture<ListClusterUpgradePathsResponse> listClusterUpgradePathsAsync(
@@ -1181,13 +1161,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterUpgradePathsRequest 请求对象
+     * @param request ListClusterUpgradePathsRequest 请求对象
      * @return AsyncInvoker<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse>
      */
     public AsyncInvoker<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse> listClusterUpgradePathsAsyncInvoker(
         ListClusterUpgradePathsRequest request) {
-        return new AsyncInvoker<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse>(request,
-            CceMeta.listClusterUpgradePaths, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listClusterUpgradePaths, hcClient);
     }
 
     /**
@@ -1197,7 +1176,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersRequest 请求对象
+     * @param request ListClustersRequest 请求对象
      * @return CompletableFuture<ListClustersResponse>
      */
     public CompletableFuture<ListClustersResponse> listClustersAsync(ListClustersRequest request) {
@@ -1211,12 +1190,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersRequest 请求对象
+     * @param request ListClustersRequest 请求对象
      * @return AsyncInvoker<ListClustersRequest, ListClustersResponse>
      */
     public AsyncInvoker<ListClustersRequest, ListClustersResponse> listClustersAsyncInvoker(
         ListClustersRequest request) {
-        return new AsyncInvoker<ListClustersRequest, ListClustersResponse>(request, CceMeta.listClusters, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listClusters, hcClient);
     }
 
     /**
@@ -1228,7 +1207,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodePoolsRequest 请求对象
+     * @param request ListNodePoolsRequest 请求对象
      * @return CompletableFuture<ListNodePoolsResponse>
      */
     public CompletableFuture<ListNodePoolsResponse> listNodePoolsAsync(ListNodePoolsRequest request) {
@@ -1244,12 +1223,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodePoolsRequest 请求对象
+     * @param request ListNodePoolsRequest 请求对象
      * @return AsyncInvoker<ListNodePoolsRequest, ListNodePoolsResponse>
      */
     public AsyncInvoker<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsAsyncInvoker(
         ListNodePoolsRequest request) {
-        return new AsyncInvoker<ListNodePoolsRequest, ListNodePoolsResponse>(request, CceMeta.listNodePools, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listNodePools, hcClient);
     }
 
     /**
@@ -1260,7 +1239,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodesRequest 请求对象
+     * @param request ListNodesRequest 请求对象
      * @return CompletableFuture<ListNodesResponse>
      */
     public CompletableFuture<ListNodesResponse> listNodesAsync(ListNodesRequest request) {
@@ -1275,11 +1254,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodesRequest 请求对象
+     * @param request ListNodesRequest 请求对象
      * @return AsyncInvoker<ListNodesRequest, ListNodesResponse>
      */
     public AsyncInvoker<ListNodesRequest, ListNodesResponse> listNodesAsyncInvoker(ListNodesRequest request) {
-        return new AsyncInvoker<ListNodesRequest, ListNodesResponse>(request, CceMeta.listNodes, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listNodes, hcClient);
     }
 
     /**
@@ -1289,7 +1268,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartitionsRequest 请求对象
+     * @param request ListPartitionsRequest 请求对象
      * @return CompletableFuture<ListPartitionsResponse>
      */
     public CompletableFuture<ListPartitionsResponse> listPartitionsAsync(ListPartitionsRequest request) {
@@ -1303,13 +1282,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartitionsRequest 请求对象
+     * @param request ListPartitionsRequest 请求对象
      * @return AsyncInvoker<ListPartitionsRequest, ListPartitionsResponse>
      */
     public AsyncInvoker<ListPartitionsRequest, ListPartitionsResponse> listPartitionsAsyncInvoker(
         ListPartitionsRequest request) {
-        return new AsyncInvoker<ListPartitionsRequest, ListPartitionsResponse>(request, CceMeta.listPartitions,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listPartitions, hcClient);
     }
 
     /**
@@ -1319,7 +1297,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPreCheckTasksRequest 请求对象
+     * @param request ListPreCheckTasksRequest 请求对象
      * @return CompletableFuture<ListPreCheckTasksResponse>
      */
     public CompletableFuture<ListPreCheckTasksResponse> listPreCheckTasksAsync(ListPreCheckTasksRequest request) {
@@ -1333,13 +1311,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPreCheckTasksRequest 请求对象
+     * @param request ListPreCheckTasksRequest 请求对象
      * @return AsyncInvoker<ListPreCheckTasksRequest, ListPreCheckTasksResponse>
      */
     public AsyncInvoker<ListPreCheckTasksRequest, ListPreCheckTasksResponse> listPreCheckTasksAsyncInvoker(
         ListPreCheckTasksRequest request) {
-        return new AsyncInvoker<ListPreCheckTasksRequest, ListPreCheckTasksResponse>(request, CceMeta.listPreCheckTasks,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listPreCheckTasks, hcClient);
     }
 
     /**
@@ -1349,7 +1326,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReleasesRequest 请求对象
+     * @param request ListReleasesRequest 请求对象
      * @return CompletableFuture<ListReleasesResponse>
      */
     public CompletableFuture<ListReleasesResponse> listReleasesAsync(ListReleasesRequest request) {
@@ -1363,12 +1340,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReleasesRequest 请求对象
+     * @param request ListReleasesRequest 请求对象
      * @return AsyncInvoker<ListReleasesRequest, ListReleasesResponse>
      */
     public AsyncInvoker<ListReleasesRequest, ListReleasesResponse> listReleasesAsyncInvoker(
         ListReleasesRequest request) {
-        return new AsyncInvoker<ListReleasesRequest, ListReleasesResponse>(request, CceMeta.listReleases, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listReleases, hcClient);
     }
 
     /**
@@ -1378,7 +1355,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpgradeClusterTasksRequest 请求对象
+     * @param request ListUpgradeClusterTasksRequest 请求对象
      * @return CompletableFuture<ListUpgradeClusterTasksResponse>
      */
     public CompletableFuture<ListUpgradeClusterTasksResponse> listUpgradeClusterTasksAsync(
@@ -1393,13 +1370,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpgradeClusterTasksRequest 请求对象
+     * @param request ListUpgradeClusterTasksRequest 请求对象
      * @return AsyncInvoker<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse>
      */
     public AsyncInvoker<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse> listUpgradeClusterTasksAsyncInvoker(
         ListUpgradeClusterTasksRequest request) {
-        return new AsyncInvoker<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse>(request,
-            CceMeta.listUpgradeClusterTasks, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listUpgradeClusterTasks, hcClient);
     }
 
     /**
@@ -1409,7 +1385,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpgradeWorkFlowsRequest 请求对象
+     * @param request ListUpgradeWorkFlowsRequest 请求对象
      * @return CompletableFuture<ListUpgradeWorkFlowsResponse>
      */
     public CompletableFuture<ListUpgradeWorkFlowsResponse> listUpgradeWorkFlowsAsync(
@@ -1424,13 +1400,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpgradeWorkFlowsRequest 请求对象
+     * @param request ListUpgradeWorkFlowsRequest 请求对象
      * @return AsyncInvoker<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse>
      */
     public AsyncInvoker<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse> listUpgradeWorkFlowsAsyncInvoker(
         ListUpgradeWorkFlowsRequest request) {
-        return new AsyncInvoker<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse>(request,
-            CceMeta.listUpgradeWorkFlows, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.listUpgradeWorkFlows, hcClient);
     }
 
     /**
@@ -1442,7 +1417,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateNodeRequest 请求对象
+     * @param request MigrateNodeRequest 请求对象
      * @return CompletableFuture<MigrateNodeResponse>
      */
     public CompletableFuture<MigrateNodeResponse> migrateNodeAsync(MigrateNodeRequest request) {
@@ -1458,11 +1433,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateNodeRequest 请求对象
+     * @param request MigrateNodeRequest 请求对象
      * @return AsyncInvoker<MigrateNodeRequest, MigrateNodeResponse>
      */
     public AsyncInvoker<MigrateNodeRequest, MigrateNodeResponse> migrateNodeAsyncInvoker(MigrateNodeRequest request) {
-        return new AsyncInvoker<MigrateNodeRequest, MigrateNodeResponse>(request, CceMeta.migrateNode, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.migrateNode, hcClient);
     }
 
     /**
@@ -1474,7 +1449,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseUpgradeClusterTaskRequest 请求对象
+     * @param request PauseUpgradeClusterTaskRequest 请求对象
      * @return CompletableFuture<PauseUpgradeClusterTaskResponse>
      */
     public CompletableFuture<PauseUpgradeClusterTaskResponse> pauseUpgradeClusterTaskAsync(
@@ -1491,13 +1466,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseUpgradeClusterTaskRequest 请求对象
+     * @param request PauseUpgradeClusterTaskRequest 请求对象
      * @return AsyncInvoker<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse>
      */
     public AsyncInvoker<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse> pauseUpgradeClusterTaskAsyncInvoker(
         PauseUpgradeClusterTaskRequest request) {
-        return new AsyncInvoker<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse>(request,
-            CceMeta.pauseUpgradeClusterTask, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.pauseUpgradeClusterTask, hcClient);
     }
 
     /**
@@ -1508,7 +1482,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveNodeRequest 请求对象
+     * @param request RemoveNodeRequest 请求对象
      * @return CompletableFuture<RemoveNodeResponse>
      */
     public CompletableFuture<RemoveNodeResponse> removeNodeAsync(RemoveNodeRequest request) {
@@ -1523,11 +1497,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveNodeRequest 请求对象
+     * @param request RemoveNodeRequest 请求对象
      * @return AsyncInvoker<RemoveNodeRequest, RemoveNodeResponse>
      */
     public AsyncInvoker<RemoveNodeRequest, RemoveNodeResponse> removeNodeAsyncInvoker(RemoveNodeRequest request) {
-        return new AsyncInvoker<RemoveNodeRequest, RemoveNodeResponse>(request, CceMeta.removeNode, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.removeNode, hcClient);
     }
 
     /**
@@ -1538,7 +1512,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetNodeRequest 请求对象
+     * @param request ResetNodeRequest 请求对象
      * @return CompletableFuture<ResetNodeResponse>
      */
     public CompletableFuture<ResetNodeResponse> resetNodeAsync(ResetNodeRequest request) {
@@ -1553,11 +1527,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetNodeRequest 请求对象
+     * @param request ResetNodeRequest 请求对象
      * @return AsyncInvoker<ResetNodeRequest, ResetNodeResponse>
      */
     public AsyncInvoker<ResetNodeRequest, ResetNodeResponse> resetNodeAsyncInvoker(ResetNodeRequest request) {
-        return new AsyncInvoker<ResetNodeRequest, ResetNodeResponse>(request, CceMeta.resetNode, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.resetNode, hcClient);
     }
 
     /**
@@ -1571,7 +1545,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeClusterRequest 请求对象
+     * @param request ResizeClusterRequest 请求对象
      * @return CompletableFuture<ResizeClusterResponse>
      */
     public CompletableFuture<ResizeClusterResponse> resizeClusterAsync(ResizeClusterRequest request) {
@@ -1589,12 +1563,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeClusterRequest 请求对象
+     * @param request ResizeClusterRequest 请求对象
      * @return AsyncInvoker<ResizeClusterRequest, ResizeClusterResponse>
      */
     public AsyncInvoker<ResizeClusterRequest, ResizeClusterResponse> resizeClusterAsyncInvoker(
         ResizeClusterRequest request) {
-        return new AsyncInvoker<ResizeClusterRequest, ResizeClusterResponse>(request, CceMeta.resizeCluster, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.resizeCluster, hcClient);
     }
 
     /**
@@ -1606,7 +1580,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryUpgradeClusterTaskRequest 请求对象
+     * @param request RetryUpgradeClusterTaskRequest 请求对象
      * @return CompletableFuture<RetryUpgradeClusterTaskResponse>
      */
     public CompletableFuture<RetryUpgradeClusterTaskResponse> retryUpgradeClusterTaskAsync(
@@ -1623,13 +1597,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryUpgradeClusterTaskRequest 请求对象
+     * @param request RetryUpgradeClusterTaskRequest 请求对象
      * @return AsyncInvoker<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse>
      */
     public AsyncInvoker<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> retryUpgradeClusterTaskAsyncInvoker(
         RetryUpgradeClusterTaskRequest request) {
-        return new AsyncInvoker<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse>(request,
-            CceMeta.retryUpgradeClusterTask, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.retryUpgradeClusterTask, hcClient);
     }
 
     /**
@@ -1639,7 +1612,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollbackAddonInstanceRequest 请求对象
+     * @param request RollbackAddonInstanceRequest 请求对象
      * @return CompletableFuture<RollbackAddonInstanceResponse>
      */
     public CompletableFuture<RollbackAddonInstanceResponse> rollbackAddonInstanceAsync(
@@ -1654,13 +1627,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollbackAddonInstanceRequest 请求对象
+     * @param request RollbackAddonInstanceRequest 请求对象
      * @return AsyncInvoker<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse>
      */
     public AsyncInvoker<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> rollbackAddonInstanceAsyncInvoker(
         RollbackAddonInstanceRequest request) {
-        return new AsyncInvoker<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse>(request,
-            CceMeta.rollbackAddonInstance, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.rollbackAddonInstance, hcClient);
     }
 
     /**
@@ -1670,7 +1642,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAddonInstanceRequest 请求对象
+     * @param request ShowAddonInstanceRequest 请求对象
      * @return CompletableFuture<ShowAddonInstanceResponse>
      */
     public CompletableFuture<ShowAddonInstanceResponse> showAddonInstanceAsync(ShowAddonInstanceRequest request) {
@@ -1684,13 +1656,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAddonInstanceRequest 请求对象
+     * @param request ShowAddonInstanceRequest 请求对象
      * @return AsyncInvoker<ShowAddonInstanceRequest, ShowAddonInstanceResponse>
      */
     public AsyncInvoker<ShowAddonInstanceRequest, ShowAddonInstanceResponse> showAddonInstanceAsyncInvoker(
         ShowAddonInstanceRequest request) {
-        return new AsyncInvoker<ShowAddonInstanceRequest, ShowAddonInstanceResponse>(request, CceMeta.showAddonInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showAddonInstance, hcClient);
     }
 
     /**
@@ -1700,7 +1671,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowChartRequest 请求对象
+     * @param request ShowChartRequest 请求对象
      * @return CompletableFuture<ShowChartResponse>
      */
     public CompletableFuture<ShowChartResponse> showChartAsync(ShowChartRequest request) {
@@ -1714,11 +1685,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowChartRequest 请求对象
+     * @param request ShowChartRequest 请求对象
      * @return AsyncInvoker<ShowChartRequest, ShowChartResponse>
      */
     public AsyncInvoker<ShowChartRequest, ShowChartResponse> showChartAsyncInvoker(ShowChartRequest request) {
-        return new AsyncInvoker<ShowChartRequest, ShowChartResponse>(request, CceMeta.showChart, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showChart, hcClient);
     }
 
     /**
@@ -1728,7 +1699,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowChartValuesRequest 请求对象
+     * @param request ShowChartValuesRequest 请求对象
      * @return CompletableFuture<ShowChartValuesResponse>
      */
     public CompletableFuture<ShowChartValuesResponse> showChartValuesAsync(ShowChartValuesRequest request) {
@@ -1742,13 +1713,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowChartValuesRequest 请求对象
+     * @param request ShowChartValuesRequest 请求对象
      * @return AsyncInvoker<ShowChartValuesRequest, ShowChartValuesResponse>
      */
     public AsyncInvoker<ShowChartValuesRequest, ShowChartValuesResponse> showChartValuesAsyncInvoker(
         ShowChartValuesRequest request) {
-        return new AsyncInvoker<ShowChartValuesRequest, ShowChartValuesResponse>(request, CceMeta.showChartValues,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showChartValues, hcClient);
     }
 
     /**
@@ -1759,7 +1729,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterRequest 请求对象
+     * @param request ShowClusterRequest 请求对象
      * @return CompletableFuture<ShowClusterResponse>
      */
     public CompletableFuture<ShowClusterResponse> showClusterAsync(ShowClusterRequest request) {
@@ -1774,11 +1744,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterRequest 请求对象
+     * @param request ShowClusterRequest 请求对象
      * @return AsyncInvoker<ShowClusterRequest, ShowClusterResponse>
      */
     public AsyncInvoker<ShowClusterRequest, ShowClusterResponse> showClusterAsyncInvoker(ShowClusterRequest request) {
-        return new AsyncInvoker<ShowClusterRequest, ShowClusterResponse>(request, CceMeta.showCluster, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showCluster, hcClient);
     }
 
     /**
@@ -1788,7 +1758,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterConfigRequest 请求对象
+     * @param request ShowClusterConfigRequest 请求对象
      * @return CompletableFuture<ShowClusterConfigResponse>
      */
     public CompletableFuture<ShowClusterConfigResponse> showClusterConfigAsync(ShowClusterConfigRequest request) {
@@ -1802,13 +1772,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterConfigRequest 请求对象
+     * @param request ShowClusterConfigRequest 请求对象
      * @return AsyncInvoker<ShowClusterConfigRequest, ShowClusterConfigResponse>
      */
     public AsyncInvoker<ShowClusterConfigRequest, ShowClusterConfigResponse> showClusterConfigAsyncInvoker(
         ShowClusterConfigRequest request) {
-        return new AsyncInvoker<ShowClusterConfigRequest, ShowClusterConfigResponse>(request, CceMeta.showClusterConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showClusterConfig, hcClient);
     }
 
     /**
@@ -1818,7 +1787,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterConfigurationDetailsRequest 请求对象
+     * @param request ShowClusterConfigurationDetailsRequest 请求对象
      * @return CompletableFuture<ShowClusterConfigurationDetailsResponse>
      */
     public CompletableFuture<ShowClusterConfigurationDetailsResponse> showClusterConfigurationDetailsAsync(
@@ -1833,13 +1802,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterConfigurationDetailsRequest 请求对象
+     * @param request ShowClusterConfigurationDetailsRequest 请求对象
      * @return AsyncInvoker<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse>
      */
     public AsyncInvoker<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse> showClusterConfigurationDetailsAsyncInvoker(
         ShowClusterConfigurationDetailsRequest request) {
-        return new AsyncInvoker<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse>(
-            request, CceMeta.showClusterConfigurationDetails, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showClusterConfigurationDetails, hcClient);
     }
 
     /**
@@ -1850,7 +1818,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterEndpointsRequest 请求对象
+     * @param request ShowClusterEndpointsRequest 请求对象
      * @return CompletableFuture<ShowClusterEndpointsResponse>
      */
     public CompletableFuture<ShowClusterEndpointsResponse> showClusterEndpointsAsync(
@@ -1866,13 +1834,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterEndpointsRequest 请求对象
+     * @param request ShowClusterEndpointsRequest 请求对象
      * @return AsyncInvoker<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse>
      */
     public AsyncInvoker<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> showClusterEndpointsAsyncInvoker(
         ShowClusterEndpointsRequest request) {
-        return new AsyncInvoker<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse>(request,
-            CceMeta.showClusterEndpoints, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showClusterEndpoints, hcClient);
     }
 
     /**
@@ -1882,7 +1849,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterUpgradeInfoRequest 请求对象
+     * @param request ShowClusterUpgradeInfoRequest 请求对象
      * @return CompletableFuture<ShowClusterUpgradeInfoResponse>
      */
     public CompletableFuture<ShowClusterUpgradeInfoResponse> showClusterUpgradeInfoAsync(
@@ -1897,13 +1864,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterUpgradeInfoRequest 请求对象
+     * @param request ShowClusterUpgradeInfoRequest 请求对象
      * @return AsyncInvoker<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse>
      */
     public AsyncInvoker<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> showClusterUpgradeInfoAsyncInvoker(
         ShowClusterUpgradeInfoRequest request) {
-        return new AsyncInvoker<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse>(request,
-            CceMeta.showClusterUpgradeInfo, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showClusterUpgradeInfo, hcClient);
     }
 
     /**
@@ -1917,7 +1883,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
      */
     public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
@@ -1935,11 +1901,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
-        return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, CceMeta.showJob, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showJob, hcClient);
     }
 
     /**
@@ -1950,7 +1916,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodeRequest 请求对象
+     * @param request ShowNodeRequest 请求对象
      * @return CompletableFuture<ShowNodeResponse>
      */
     public CompletableFuture<ShowNodeResponse> showNodeAsync(ShowNodeRequest request) {
@@ -1965,11 +1931,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodeRequest 请求对象
+     * @param request ShowNodeRequest 请求对象
      * @return AsyncInvoker<ShowNodeRequest, ShowNodeResponse>
      */
     public AsyncInvoker<ShowNodeRequest, ShowNodeResponse> showNodeAsyncInvoker(ShowNodeRequest request) {
-        return new AsyncInvoker<ShowNodeRequest, ShowNodeResponse>(request, CceMeta.showNode, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showNode, hcClient);
     }
 
     /**
@@ -1980,7 +1946,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodePoolRequest 请求对象
+     * @param request ShowNodePoolRequest 请求对象
      * @return CompletableFuture<ShowNodePoolResponse>
      */
     public CompletableFuture<ShowNodePoolResponse> showNodePoolAsync(ShowNodePoolRequest request) {
@@ -1995,12 +1961,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodePoolRequest 请求对象
+     * @param request ShowNodePoolRequest 请求对象
      * @return AsyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse>
      */
     public AsyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse> showNodePoolAsyncInvoker(
         ShowNodePoolRequest request) {
-        return new AsyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse>(request, CceMeta.showNodePool, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showNodePool, hcClient);
     }
 
     /**
@@ -2010,7 +1976,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodePoolConfigurationsRequest 请求对象
+     * @param request ShowNodePoolConfigurationsRequest 请求对象
      * @return CompletableFuture<ShowNodePoolConfigurationsResponse>
      */
     public CompletableFuture<ShowNodePoolConfigurationsResponse> showNodePoolConfigurationsAsync(
@@ -2025,13 +1991,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodePoolConfigurationsRequest 请求对象
+     * @param request ShowNodePoolConfigurationsRequest 请求对象
      * @return AsyncInvoker<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse>
      */
     public AsyncInvoker<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse> showNodePoolConfigurationsAsyncInvoker(
         ShowNodePoolConfigurationsRequest request) {
-        return new AsyncInvoker<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse>(request,
-            CceMeta.showNodePoolConfigurations, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showNodePoolConfigurations, hcClient);
     }
 
     /**
@@ -2041,7 +2006,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionRequest 请求对象
+     * @param request ShowPartitionRequest 请求对象
      * @return CompletableFuture<ShowPartitionResponse>
      */
     public CompletableFuture<ShowPartitionResponse> showPartitionAsync(ShowPartitionRequest request) {
@@ -2055,12 +2020,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionRequest 请求对象
+     * @param request ShowPartitionRequest 请求对象
      * @return AsyncInvoker<ShowPartitionRequest, ShowPartitionResponse>
      */
     public AsyncInvoker<ShowPartitionRequest, ShowPartitionResponse> showPartitionAsyncInvoker(
         ShowPartitionRequest request) {
-        return new AsyncInvoker<ShowPartitionRequest, ShowPartitionResponse>(request, CceMeta.showPartition, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showPartition, hcClient);
     }
 
     /**
@@ -2070,7 +2035,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPreCheckRequest 请求对象
+     * @param request ShowPreCheckRequest 请求对象
      * @return CompletableFuture<ShowPreCheckResponse>
      */
     public CompletableFuture<ShowPreCheckResponse> showPreCheckAsync(ShowPreCheckRequest request) {
@@ -2084,12 +2049,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPreCheckRequest 请求对象
+     * @param request ShowPreCheckRequest 请求对象
      * @return AsyncInvoker<ShowPreCheckRequest, ShowPreCheckResponse>
      */
     public AsyncInvoker<ShowPreCheckRequest, ShowPreCheckResponse> showPreCheckAsyncInvoker(
         ShowPreCheckRequest request) {
-        return new AsyncInvoker<ShowPreCheckRequest, ShowPreCheckResponse>(request, CceMeta.showPreCheck, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showPreCheck, hcClient);
     }
 
     /**
@@ -2099,7 +2064,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return CompletableFuture<ShowQuotasResponse>
      */
     public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
@@ -2113,11 +2078,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
      */
     public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
-        return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, CceMeta.showQuotas, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showQuotas, hcClient);
     }
 
     /**
@@ -2127,7 +2092,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReleaseRequest 请求对象
+     * @param request ShowReleaseRequest 请求对象
      * @return CompletableFuture<ShowReleaseResponse>
      */
     public CompletableFuture<ShowReleaseResponse> showReleaseAsync(ShowReleaseRequest request) {
@@ -2141,11 +2106,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReleaseRequest 请求对象
+     * @param request ShowReleaseRequest 请求对象
      * @return AsyncInvoker<ShowReleaseRequest, ShowReleaseResponse>
      */
     public AsyncInvoker<ShowReleaseRequest, ShowReleaseResponse> showReleaseAsyncInvoker(ShowReleaseRequest request) {
-        return new AsyncInvoker<ShowReleaseRequest, ShowReleaseResponse>(request, CceMeta.showRelease, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showRelease, hcClient);
     }
 
     /**
@@ -2155,7 +2120,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReleaseHistoryRequest 请求对象
+     * @param request ShowReleaseHistoryRequest 请求对象
      * @return CompletableFuture<ShowReleaseHistoryResponse>
      */
     public CompletableFuture<ShowReleaseHistoryResponse> showReleaseHistoryAsync(ShowReleaseHistoryRequest request) {
@@ -2169,13 +2134,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReleaseHistoryRequest 请求对象
+     * @param request ShowReleaseHistoryRequest 请求对象
      * @return AsyncInvoker<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse>
      */
     public AsyncInvoker<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse> showReleaseHistoryAsyncInvoker(
         ShowReleaseHistoryRequest request) {
-        return new AsyncInvoker<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse>(request,
-            CceMeta.showReleaseHistory, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showReleaseHistory, hcClient);
     }
 
     /**
@@ -2187,7 +2151,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUpgradeClusterTaskRequest 请求对象
+     * @param request ShowUpgradeClusterTaskRequest 请求对象
      * @return CompletableFuture<ShowUpgradeClusterTaskResponse>
      */
     public CompletableFuture<ShowUpgradeClusterTaskResponse> showUpgradeClusterTaskAsync(
@@ -2204,13 +2168,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUpgradeClusterTaskRequest 请求对象
+     * @param request ShowUpgradeClusterTaskRequest 请求对象
      * @return AsyncInvoker<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse>
      */
     public AsyncInvoker<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse> showUpgradeClusterTaskAsyncInvoker(
         ShowUpgradeClusterTaskRequest request) {
-        return new AsyncInvoker<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse>(request,
-            CceMeta.showUpgradeClusterTask, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showUpgradeClusterTask, hcClient);
     }
 
     /**
@@ -2220,7 +2183,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUpgradeWorkFlowRequest 请求对象
+     * @param request ShowUpgradeWorkFlowRequest 请求对象
      * @return CompletableFuture<ShowUpgradeWorkFlowResponse>
      */
     public CompletableFuture<ShowUpgradeWorkFlowResponse> showUpgradeWorkFlowAsync(ShowUpgradeWorkFlowRequest request) {
@@ -2234,13 +2197,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUpgradeWorkFlowRequest 请求对象
+     * @param request ShowUpgradeWorkFlowRequest 请求对象
      * @return AsyncInvoker<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse>
      */
     public AsyncInvoker<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse> showUpgradeWorkFlowAsyncInvoker(
         ShowUpgradeWorkFlowRequest request) {
-        return new AsyncInvoker<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse>(request,
-            CceMeta.showUpgradeWorkFlow, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showUpgradeWorkFlow, hcClient);
     }
 
     /**
@@ -2250,7 +2212,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserChartsQuotasRequest 请求对象
+     * @param request ShowUserChartsQuotasRequest 请求对象
      * @return CompletableFuture<ShowUserChartsQuotasResponse>
      */
     public CompletableFuture<ShowUserChartsQuotasResponse> showUserChartsQuotasAsync(
@@ -2265,13 +2227,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserChartsQuotasRequest 请求对象
+     * @param request ShowUserChartsQuotasRequest 请求对象
      * @return AsyncInvoker<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse>
      */
     public AsyncInvoker<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> showUserChartsQuotasAsyncInvoker(
         ShowUserChartsQuotasRequest request) {
-        return new AsyncInvoker<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse>(request,
-            CceMeta.showUserChartsQuotas, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showUserChartsQuotas, hcClient);
     }
 
     /**
@@ -2281,7 +2242,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAddonInstanceRequest 请求对象
+     * @param request UpdateAddonInstanceRequest 请求对象
      * @return CompletableFuture<UpdateAddonInstanceResponse>
      */
     public CompletableFuture<UpdateAddonInstanceResponse> updateAddonInstanceAsync(UpdateAddonInstanceRequest request) {
@@ -2295,13 +2256,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAddonInstanceRequest 请求对象
+     * @param request UpdateAddonInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse>
      */
     public AsyncInvoker<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse> updateAddonInstanceAsyncInvoker(
         UpdateAddonInstanceRequest request) {
-        return new AsyncInvoker<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse>(request,
-            CceMeta.updateAddonInstance, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.updateAddonInstance, hcClient);
     }
 
     /**
@@ -2311,7 +2271,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateChartRequest 请求对象
+     * @param request UpdateChartRequest 请求对象
      * @return CompletableFuture<UpdateChartResponse>
      */
     public CompletableFuture<UpdateChartResponse> updateChartAsync(UpdateChartRequest request) {
@@ -2325,11 +2285,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateChartRequest 请求对象
+     * @param request UpdateChartRequest 请求对象
      * @return AsyncInvoker<UpdateChartRequest, UpdateChartResponse>
      */
     public AsyncInvoker<UpdateChartRequest, UpdateChartResponse> updateChartAsyncInvoker(UpdateChartRequest request) {
-        return new AsyncInvoker<UpdateChartRequest, UpdateChartResponse>(request, CceMeta.updateChart, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.updateChart, hcClient);
     }
 
     /**
@@ -2340,7 +2300,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterRequest 请求对象
+     * @param request UpdateClusterRequest 请求对象
      * @return CompletableFuture<UpdateClusterResponse>
      */
     public CompletableFuture<UpdateClusterResponse> updateClusterAsync(UpdateClusterRequest request) {
@@ -2355,12 +2315,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterRequest 请求对象
+     * @param request UpdateClusterRequest 请求对象
      * @return AsyncInvoker<UpdateClusterRequest, UpdateClusterResponse>
      */
     public AsyncInvoker<UpdateClusterRequest, UpdateClusterResponse> updateClusterAsyncInvoker(
         UpdateClusterRequest request) {
-        return new AsyncInvoker<UpdateClusterRequest, UpdateClusterResponse>(request, CceMeta.updateCluster, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.updateCluster, hcClient);
     }
 
     /**
@@ -2371,7 +2331,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterEipRequest 请求对象
+     * @param request UpdateClusterEipRequest 请求对象
      * @return CompletableFuture<UpdateClusterEipResponse>
      */
     public CompletableFuture<UpdateClusterEipResponse> updateClusterEipAsync(UpdateClusterEipRequest request) {
@@ -2386,13 +2346,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterEipRequest 请求对象
+     * @param request UpdateClusterEipRequest 请求对象
      * @return AsyncInvoker<UpdateClusterEipRequest, UpdateClusterEipResponse>
      */
     public AsyncInvoker<UpdateClusterEipRequest, UpdateClusterEipResponse> updateClusterEipAsyncInvoker(
         UpdateClusterEipRequest request) {
-        return new AsyncInvoker<UpdateClusterEipRequest, UpdateClusterEipResponse>(request, CceMeta.updateClusterEip,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.updateClusterEip, hcClient);
     }
 
     /**
@@ -2402,7 +2361,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterLogConfigRequest 请求对象
+     * @param request UpdateClusterLogConfigRequest 请求对象
      * @return CompletableFuture<UpdateClusterLogConfigResponse>
      */
     public CompletableFuture<UpdateClusterLogConfigResponse> updateClusterLogConfigAsync(
@@ -2417,13 +2376,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterLogConfigRequest 请求对象
+     * @param request UpdateClusterLogConfigRequest 请求对象
      * @return AsyncInvoker<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse>
      */
     public AsyncInvoker<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse> updateClusterLogConfigAsyncInvoker(
         UpdateClusterLogConfigRequest request) {
-        return new AsyncInvoker<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse>(request,
-            CceMeta.updateClusterLogConfig, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.updateClusterLogConfig, hcClient);
     }
 
     /**
@@ -2435,7 +2393,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodeRequest 请求对象
+     * @param request UpdateNodeRequest 请求对象
      * @return CompletableFuture<UpdateNodeResponse>
      */
     public CompletableFuture<UpdateNodeResponse> updateNodeAsync(UpdateNodeRequest request) {
@@ -2451,11 +2409,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodeRequest 请求对象
+     * @param request UpdateNodeRequest 请求对象
      * @return AsyncInvoker<UpdateNodeRequest, UpdateNodeResponse>
      */
     public AsyncInvoker<UpdateNodeRequest, UpdateNodeResponse> updateNodeAsyncInvoker(UpdateNodeRequest request) {
-        return new AsyncInvoker<UpdateNodeRequest, UpdateNodeResponse>(request, CceMeta.updateNode, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.updateNode, hcClient);
     }
 
     /**
@@ -2470,7 +2428,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodePoolRequest 请求对象
+     * @param request UpdateNodePoolRequest 请求对象
      * @return CompletableFuture<UpdateNodePoolResponse>
      */
     public CompletableFuture<UpdateNodePoolResponse> updateNodePoolAsync(UpdateNodePoolRequest request) {
@@ -2489,13 +2447,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodePoolRequest 请求对象
+     * @param request UpdateNodePoolRequest 请求对象
      * @return AsyncInvoker<UpdateNodePoolRequest, UpdateNodePoolResponse>
      */
     public AsyncInvoker<UpdateNodePoolRequest, UpdateNodePoolResponse> updateNodePoolAsyncInvoker(
         UpdateNodePoolRequest request) {
-        return new AsyncInvoker<UpdateNodePoolRequest, UpdateNodePoolResponse>(request, CceMeta.updateNodePool,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.updateNodePool, hcClient);
     }
 
     /**
@@ -2505,7 +2462,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodePoolConfigurationRequest 请求对象
+     * @param request UpdateNodePoolConfigurationRequest 请求对象
      * @return CompletableFuture<UpdateNodePoolConfigurationResponse>
      */
     public CompletableFuture<UpdateNodePoolConfigurationResponse> updateNodePoolConfigurationAsync(
@@ -2520,13 +2477,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNodePoolConfigurationRequest 请求对象
+     * @param request UpdateNodePoolConfigurationRequest 请求对象
      * @return AsyncInvoker<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse>
      */
     public AsyncInvoker<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse> updateNodePoolConfigurationAsyncInvoker(
         UpdateNodePoolConfigurationRequest request) {
-        return new AsyncInvoker<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse>(request,
-            CceMeta.updateNodePoolConfiguration, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.updateNodePoolConfiguration, hcClient);
     }
 
     /**
@@ -2536,7 +2492,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePartitionRequest 请求对象
+     * @param request UpdatePartitionRequest 请求对象
      * @return CompletableFuture<UpdatePartitionResponse>
      */
     public CompletableFuture<UpdatePartitionResponse> updatePartitionAsync(UpdatePartitionRequest request) {
@@ -2550,13 +2506,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePartitionRequest 请求对象
+     * @param request UpdatePartitionRequest 请求对象
      * @return AsyncInvoker<UpdatePartitionRequest, UpdatePartitionResponse>
      */
     public AsyncInvoker<UpdatePartitionRequest, UpdatePartitionResponse> updatePartitionAsyncInvoker(
         UpdatePartitionRequest request) {
-        return new AsyncInvoker<UpdatePartitionRequest, UpdatePartitionResponse>(request, CceMeta.updatePartition,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.updatePartition, hcClient);
     }
 
     /**
@@ -2566,7 +2521,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateReleaseRequest 请求对象
+     * @param request UpdateReleaseRequest 请求对象
      * @return CompletableFuture<UpdateReleaseResponse>
      */
     public CompletableFuture<UpdateReleaseResponse> updateReleaseAsync(UpdateReleaseRequest request) {
@@ -2580,12 +2535,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateReleaseRequest 请求对象
+     * @param request UpdateReleaseRequest 请求对象
      * @return AsyncInvoker<UpdateReleaseRequest, UpdateReleaseResponse>
      */
     public AsyncInvoker<UpdateReleaseRequest, UpdateReleaseResponse> updateReleaseAsyncInvoker(
         UpdateReleaseRequest request) {
-        return new AsyncInvoker<UpdateReleaseRequest, UpdateReleaseResponse>(request, CceMeta.updateRelease, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.updateRelease, hcClient);
     }
 
     /**
@@ -2597,7 +2552,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeClusterRequest 请求对象
+     * @param request UpgradeClusterRequest 请求对象
      * @return CompletableFuture<UpgradeClusterResponse>
      */
     public CompletableFuture<UpgradeClusterResponse> upgradeClusterAsync(UpgradeClusterRequest request) {
@@ -2613,13 +2568,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeClusterRequest 请求对象
+     * @param request UpgradeClusterRequest 请求对象
      * @return AsyncInvoker<UpgradeClusterRequest, UpgradeClusterResponse>
      */
     public AsyncInvoker<UpgradeClusterRequest, UpgradeClusterResponse> upgradeClusterAsyncInvoker(
         UpgradeClusterRequest request) {
-        return new AsyncInvoker<UpgradeClusterRequest, UpgradeClusterResponse>(request, CceMeta.upgradeCluster,
-            hcClient);
+        return new AsyncInvoker<>(request, CceMeta.upgradeCluster, hcClient);
     }
 
     /**
@@ -2630,7 +2584,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeWorkFlowUpdateRequest 请求对象
+     * @param request UpgradeWorkFlowUpdateRequest 请求对象
      * @return CompletableFuture<UpgradeWorkFlowUpdateResponse>
      */
     public CompletableFuture<UpgradeWorkFlowUpdateResponse> upgradeWorkFlowUpdateAsync(
@@ -2646,13 +2600,12 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeWorkFlowUpdateRequest 请求对象
+     * @param request UpgradeWorkFlowUpdateRequest 请求对象
      * @return AsyncInvoker<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse>
      */
     public AsyncInvoker<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse> upgradeWorkFlowUpdateAsyncInvoker(
         UpgradeWorkFlowUpdateRequest request) {
-        return new AsyncInvoker<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse>(request,
-            CceMeta.upgradeWorkFlowUpdate, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.upgradeWorkFlowUpdate, hcClient);
     }
 
     /**
@@ -2662,7 +2615,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadChartRequest 请求对象
+     * @param request UploadChartRequest 请求对象
      * @return CompletableFuture<UploadChartResponse>
      */
     public CompletableFuture<UploadChartResponse> uploadChartAsync(UploadChartRequest request) {
@@ -2676,11 +2629,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadChartRequest 请求对象
+     * @param request UploadChartRequest 请求对象
      * @return AsyncInvoker<UploadChartRequest, UploadChartResponse>
      */
     public AsyncInvoker<UploadChartRequest, UploadChartResponse> uploadChartAsyncInvoker(UploadChartRequest request) {
-        return new AsyncInvoker<UploadChartRequest, UploadChartResponse>(request, CceMeta.uploadChart, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.uploadChart, hcClient);
     }
 
     /**
@@ -2690,7 +2643,7 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return CompletableFuture<ShowVersionResponse>
      */
     public CompletableFuture<ShowVersionResponse> showVersionAsync(ShowVersionRequest request) {
@@ -2704,11 +2657,11 @@ public class CceAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return AsyncInvoker<ShowVersionRequest, ShowVersionResponse>
      */
     public AsyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionAsyncInvoker(ShowVersionRequest request) {
-        return new AsyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, CceMeta.showVersion, hcClient);
+        return new AsyncInvoker<>(request, CceMeta.showVersion, hcClient);
     }
 
 }

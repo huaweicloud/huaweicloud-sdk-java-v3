@@ -174,6 +174,11 @@ public class ClusterSpec {
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableAutopilot")
+
+    private Boolean enableAutopilot;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
@@ -392,6 +397,23 @@ public class ClusterSpec {
 
     public void setFlavor(String flavor) {
         this.flavor = flavor;
+    }
+
+    public ClusterSpec withEnableAutopilot(Boolean enableAutopilot) {
+        this.enableAutopilot = enableAutopilot;
+        return this;
+    }
+
+    /**
+     * CCE Autopilot集群开关： - true：创建集群为CCE Autopilot集群 
+     * @return enableAutopilot
+     */
+    public Boolean getEnableAutopilot() {
+        return enableAutopilot;
+    }
+
+    public void setEnableAutopilot(Boolean enableAutopilot) {
+        this.enableAutopilot = enableAutopilot;
     }
 
     public ClusterSpec withVersion(String version) {
@@ -862,8 +884,8 @@ public class ClusterSpec {
         }
         ClusterSpec that = (ClusterSpec) obj;
         return Objects.equals(this.category, that.category) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.platformVersion, that.platformVersion)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.enableAutopilot, that.enableAutopilot)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.platformVersion, that.platformVersion)
             && Objects.equals(this.description, that.description) && Objects.equals(this.customSan, that.customSan)
             && Objects.equals(this.ipv6enable, that.ipv6enable) && Objects.equals(this.hostNetwork, that.hostNetwork)
             && Objects.equals(this.containerNetwork, that.containerNetwork)
@@ -885,6 +907,7 @@ public class ClusterSpec {
         return Objects.hash(category,
             type,
             flavor,
+            enableAutopilot,
             version,
             platformVersion,
             description,
@@ -914,6 +937,7 @@ public class ClusterSpec {
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+        sb.append("    enableAutopilot: ").append(toIndentedString(enableAutopilot)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    platformVersion: ").append(toIndentedString(platformVersion)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

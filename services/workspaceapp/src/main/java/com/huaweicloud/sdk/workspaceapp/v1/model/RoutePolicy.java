@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 路由策略
+ * 路由策略。
  */
 public class RoutePolicy {
 
@@ -31,7 +31,7 @@ public class RoutePolicy {
     }
 
     /**
-     * 单台服务器最大的链接会话数
+     * 单台服务器最大的链接会话数。
      * minimum: 1
      * maximum: 100
      * @return maxSession
@@ -50,7 +50,7 @@ public class RoutePolicy {
     }
 
     /**
-     * cpu使用率阈值，单位为%
+     * cpu使用率阈值，单位为%。
      * minimum: 1
      * maximum: 100
      * @return cpuThreshold
@@ -69,7 +69,7 @@ public class RoutePolicy {
     }
 
     /**
-     * 内存使用率阈值，单位为%
+     * 内存使用率阈值，单位为%。
      * minimum: 1
      * maximum: 100
      * @return memThreshold

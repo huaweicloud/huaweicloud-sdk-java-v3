@@ -30,7 +30,7 @@ public class ListAppGroupResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count
@@ -65,7 +65,7 @@ public class ListAppGroupResponse extends SdkResponse {
     }
 
     /**
-     * 应用组列表
+     * 应用组列表。
      * @return items
      */
     public List<AppGroup> getItems() {

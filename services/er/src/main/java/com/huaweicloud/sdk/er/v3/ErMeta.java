@@ -122,9 +122,9 @@ import java.util.List;
 public class ErMeta {
 
     public static final HttpRequestDef<AssociateRouteTableRequest, AssociateRouteTableResponse> associateRouteTable =
-        genForassociateRouteTable();
+        genForAssociateRouteTable();
 
-    private static HttpRequestDef<AssociateRouteTableRequest, AssociateRouteTableResponse> genForassociateRouteTable() {
+    private static HttpRequestDef<AssociateRouteTableRequest, AssociateRouteTableResponse> genForAssociateRouteTable() {
         // basic
         HttpRequestDef.Builder<AssociateRouteTableRequest, AssociateRouteTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateRouteTableRequest.class, AssociateRouteTableResponse.class)
@@ -137,30 +137,24 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRouteTableRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(AssociateRouteTableRequest::getErId, AssociateRouteTableRequest::setErId));
         builder.<String>withRequestField("route_table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRouteTableRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(AssociateRouteTableRequest::getRouteTableId,
+                AssociateRouteTableRequest::setRouteTableId));
         builder.<String>withRequestField("X-Client-Token",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRouteTableRequest::getXClientToken, (req, v) -> {
-                req.setXClientToken(v);
-            }));
+            f -> f.withMarshaller(AssociateRouteTableRequest::getXClientToken,
+                AssociateRouteTableRequest::setXClientToken));
         builder.<AssociationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociationRequestBody.class),
-            f -> f.withMarshaller(AssociateRouteTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateRouteTableRequest::getBody, AssociateRouteTableRequest::setBody));
 
         // response
 
@@ -174,9 +168,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<DisassociateRouteTableRequest, DisassociateRouteTableResponse> disassociateRouteTable =
-        genFordisassociateRouteTable();
+        genForDisassociateRouteTable();
 
-    private static HttpRequestDef<DisassociateRouteTableRequest, DisassociateRouteTableResponse> genFordisassociateRouteTable() {
+    private static HttpRequestDef<DisassociateRouteTableRequest, DisassociateRouteTableResponse> genForDisassociateRouteTable() {
         // basic
         HttpRequestDef.Builder<DisassociateRouteTableRequest, DisassociateRouteTableResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DisassociateRouteTableRequest.class, DisassociateRouteTableResponse.class)
@@ -189,23 +183,18 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateRouteTableRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(DisassociateRouteTableRequest::getErId, DisassociateRouteTableRequest::setErId));
         builder.<String>withRequestField("route_table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateRouteTableRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(DisassociateRouteTableRequest::getRouteTableId,
+                DisassociateRouteTableRequest::setRouteTableId));
         builder.<AssociationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociationRequestBody.class),
-            f -> f.withMarshaller(DisassociateRouteTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateRouteTableRequest::getBody, DisassociateRouteTableRequest::setBody));
 
         // response
 
@@ -213,9 +202,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ListAssociationsRequest, ListAssociationsResponse> listAssociations =
-        genForlistAssociations();
+        genForListAssociations();
 
-    private static HttpRequestDef<ListAssociationsRequest, ListAssociationsResponse> genForlistAssociations() {
+    private static HttpRequestDef<ListAssociationsRequest, ListAssociationsResponse> genForListAssociations() {
         // basic
         HttpRequestDef.Builder<ListAssociationsRequest, ListAssociationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAssociationsRequest.class, ListAssociationsResponse.class)
@@ -228,65 +217,47 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssociationsRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ListAssociationsRequest::getErId, ListAssociationsRequest::setErId));
         builder.<String>withRequestField("route_table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssociationsRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(ListAssociationsRequest::getRouteTableId, ListAssociationsRequest::setRouteTableId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssociationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAssociationsRequest::getLimit, ListAssociationsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssociationsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAssociationsRequest::getMarker, ListAssociationsRequest::setMarker));
         builder.<List<String>>withRequestField("attachment_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAssociationsRequest::getAttachmentId, (req, v) -> {
-                req.setAttachmentId(v);
-            }));
+            f -> f.withMarshaller(ListAssociationsRequest::getAttachmentId, ListAssociationsRequest::setAttachmentId));
         builder.<List<ListAssociationsRequest.ResourceTypeEnum>>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAssociationsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListAssociationsRequest::getResourceType, ListAssociationsRequest::setResourceType));
         builder.<List<ListAssociationsRequest.StateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAssociationsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListAssociationsRequest::getState, ListAssociationsRequest::setState));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAssociationsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListAssociationsRequest::getSortKey, ListAssociationsRequest::setSortKey));
         builder.<List<ListAssociationsRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAssociationsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListAssociationsRequest::getSortDir, ListAssociationsRequest::setSortDir));
 
         // response
 
@@ -294,9 +265,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<AcceptAttachmentRequest, AcceptAttachmentResponse> acceptAttachment =
-        genForacceptAttachment();
+        genForAcceptAttachment();
 
-    private static HttpRequestDef<AcceptAttachmentRequest, AcceptAttachmentResponse> genForacceptAttachment() {
+    private static HttpRequestDef<AcceptAttachmentRequest, AcceptAttachmentResponse> genForAcceptAttachment() {
         // basic
         HttpRequestDef.Builder<AcceptAttachmentRequest, AcceptAttachmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AcceptAttachmentRequest.class, AcceptAttachmentResponse.class)
@@ -309,16 +280,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptAttachmentRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(AcceptAttachmentRequest::getErId, AcceptAttachmentRequest::setErId));
         builder.<String>withRequestField("attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptAttachmentRequest::getAttachmentId, (req, v) -> {
-                req.setAttachmentId(v);
-            }));
+            f -> f.withMarshaller(AcceptAttachmentRequest::getAttachmentId, AcceptAttachmentRequest::setAttachmentId));
 
         // response
 
@@ -326,9 +293,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ListAttachmentsRequest, ListAttachmentsResponse> listAttachments =
-        genForlistAttachments();
+        genForListAttachments();
 
-    private static HttpRequestDef<ListAttachmentsRequest, ListAttachmentsResponse> genForlistAttachments() {
+    private static HttpRequestDef<ListAttachmentsRequest, ListAttachmentsResponse> genForListAttachments() {
         // basic
         HttpRequestDef.Builder<ListAttachmentsRequest, ListAttachmentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAttachmentsRequest.class, ListAttachmentsResponse.class)
@@ -341,58 +308,42 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttachmentsRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ListAttachmentsRequest::getErId, ListAttachmentsRequest::setErId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAttachmentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAttachmentsRequest::getLimit, ListAttachmentsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttachmentsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAttachmentsRequest::getMarker, ListAttachmentsRequest::setMarker));
         builder.<List<ListAttachmentsRequest.StateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAttachmentsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListAttachmentsRequest::getState, ListAttachmentsRequest::setState));
         builder.<List<ListAttachmentsRequest.ResourceTypeEnum>>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAttachmentsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListAttachmentsRequest::getResourceType, ListAttachmentsRequest::setResourceType));
         builder.<List<String>>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAttachmentsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListAttachmentsRequest::getResourceId, ListAttachmentsRequest::setResourceId));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAttachmentsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListAttachmentsRequest::getSortKey, ListAttachmentsRequest::setSortKey));
         builder.<List<ListAttachmentsRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAttachmentsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListAttachmentsRequest::getSortDir, ListAttachmentsRequest::setSortDir));
 
         // response
 
@@ -400,9 +351,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<RejectAttachmentRequest, RejectAttachmentResponse> rejectAttachment =
-        genForrejectAttachment();
+        genForRejectAttachment();
 
-    private static HttpRequestDef<RejectAttachmentRequest, RejectAttachmentResponse> genForrejectAttachment() {
+    private static HttpRequestDef<RejectAttachmentRequest, RejectAttachmentResponse> genForRejectAttachment() {
         // basic
         HttpRequestDef.Builder<RejectAttachmentRequest, RejectAttachmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RejectAttachmentRequest.class, RejectAttachmentResponse.class)
@@ -415,16 +366,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RejectAttachmentRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(RejectAttachmentRequest::getErId, RejectAttachmentRequest::setErId));
         builder.<String>withRequestField("attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RejectAttachmentRequest::getAttachmentId, (req, v) -> {
-                req.setAttachmentId(v);
-            }));
+            f -> f.withMarshaller(RejectAttachmentRequest::getAttachmentId, RejectAttachmentRequest::setAttachmentId));
 
         // response
 
@@ -432,9 +379,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ShowAttachmentRequest, ShowAttachmentResponse> showAttachment =
-        genForshowAttachment();
+        genForShowAttachment();
 
-    private static HttpRequestDef<ShowAttachmentRequest, ShowAttachmentResponse> genForshowAttachment() {
+    private static HttpRequestDef<ShowAttachmentRequest, ShowAttachmentResponse> genForShowAttachment() {
         // basic
         HttpRequestDef.Builder<ShowAttachmentRequest, ShowAttachmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAttachmentRequest.class, ShowAttachmentResponse.class)
@@ -447,16 +394,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAttachmentRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ShowAttachmentRequest::getErId, ShowAttachmentRequest::setErId));
         builder.<String>withRequestField("attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAttachmentRequest::getAttachmentId, (req, v) -> {
-                req.setAttachmentId(v);
-            }));
+            f -> f.withMarshaller(ShowAttachmentRequest::getAttachmentId, ShowAttachmentRequest::setAttachmentId));
 
         // response
 
@@ -464,9 +407,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<UpdateAttachmentRequest, UpdateAttachmentResponse> updateAttachment =
-        genForupdateAttachment();
+        genForUpdateAttachment();
 
-    private static HttpRequestDef<UpdateAttachmentRequest, UpdateAttachmentResponse> genForupdateAttachment() {
+    private static HttpRequestDef<UpdateAttachmentRequest, UpdateAttachmentResponse> genForUpdateAttachment() {
         // basic
         HttpRequestDef.Builder<UpdateAttachmentRequest, UpdateAttachmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAttachmentRequest.class, UpdateAttachmentResponse.class)
@@ -479,23 +422,17 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAttachmentRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(UpdateAttachmentRequest::getErId, UpdateAttachmentRequest::setErId));
         builder.<String>withRequestField("attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAttachmentRequest::getAttachmentId, (req, v) -> {
-                req.setAttachmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateAttachmentRequest::getAttachmentId, UpdateAttachmentRequest::setAttachmentId));
         builder.<UpdateAttachmentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAttachmentRequestBody.class),
-            f -> f.withMarshaller(UpdateAttachmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAttachmentRequest::getBody, UpdateAttachmentRequest::setBody));
 
         // response
 
@@ -503,9 +440,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse> listAvailabilityZone =
-        genForlistAvailabilityZone();
+        genForListAvailabilityZone();
 
-    private static HttpRequestDef<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse> genForlistAvailabilityZone() {
+    private static HttpRequestDef<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse> genForListAvailabilityZone() {
         // basic
         HttpRequestDef.Builder<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAvailabilityZoneRequest.class, ListAvailabilityZoneResponse.class)
@@ -518,9 +455,8 @@ public class ErMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAvailabilityZoneRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAvailabilityZoneRequest::getInstanceId,
+                ListAvailabilityZoneRequest::setInstanceId));
 
         // response
 
@@ -528,9 +464,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ChangeAvailabilityZoneRequest, ChangeAvailabilityZoneResponse> changeAvailabilityZone =
-        genForchangeAvailabilityZone();
+        genForChangeAvailabilityZone();
 
-    private static HttpRequestDef<ChangeAvailabilityZoneRequest, ChangeAvailabilityZoneResponse> genForchangeAvailabilityZone() {
+    private static HttpRequestDef<ChangeAvailabilityZoneRequest, ChangeAvailabilityZoneResponse> genForChangeAvailabilityZone() {
         // basic
         HttpRequestDef.Builder<ChangeAvailabilityZoneRequest, ChangeAvailabilityZoneResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ChangeAvailabilityZoneRequest.class, ChangeAvailabilityZoneResponse.class)
@@ -543,16 +479,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeAvailabilityZoneRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ChangeAvailabilityZoneRequest::getErId, ChangeAvailabilityZoneRequest::setErId));
         builder.<EnterpriseRouterAZ>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnterpriseRouterAZ.class),
-            f -> f.withMarshaller(ChangeAvailabilityZoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeAvailabilityZoneRequest::getBody, ChangeAvailabilityZoneRequest::setBody));
 
         // response
 
@@ -560,9 +492,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<CreateEnterpriseRouterRequest, CreateEnterpriseRouterResponse> createEnterpriseRouter =
-        genForcreateEnterpriseRouter();
+        genForCreateEnterpriseRouter();
 
-    private static HttpRequestDef<CreateEnterpriseRouterRequest, CreateEnterpriseRouterResponse> genForcreateEnterpriseRouter() {
+    private static HttpRequestDef<CreateEnterpriseRouterRequest, CreateEnterpriseRouterResponse> genForCreateEnterpriseRouter() {
         // basic
         HttpRequestDef.Builder<CreateEnterpriseRouterRequest, CreateEnterpriseRouterResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateEnterpriseRouterRequest.class, CreateEnterpriseRouterResponse.class)
@@ -575,16 +507,13 @@ public class ErMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEnterpriseRouterRequest::getXClientToken, (req, v) -> {
-                req.setXClientToken(v);
-            }));
+            f -> f.withMarshaller(CreateEnterpriseRouterRequest::getXClientToken,
+                CreateEnterpriseRouterRequest::setXClientToken));
         builder.<CreateEnterpriseRouterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEnterpriseRouterRequestBody.class),
-            f -> f.withMarshaller(CreateEnterpriseRouterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEnterpriseRouterRequest::getBody, CreateEnterpriseRouterRequest::setBody));
 
         // response
 
@@ -598,9 +527,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<DeleteEnterpriseRouterRequest, DeleteEnterpriseRouterResponse> deleteEnterpriseRouter =
-        genFordeleteEnterpriseRouter();
+        genForDeleteEnterpriseRouter();
 
-    private static HttpRequestDef<DeleteEnterpriseRouterRequest, DeleteEnterpriseRouterResponse> genFordeleteEnterpriseRouter() {
+    private static HttpRequestDef<DeleteEnterpriseRouterRequest, DeleteEnterpriseRouterResponse> genForDeleteEnterpriseRouter() {
         // basic
         HttpRequestDef.Builder<DeleteEnterpriseRouterRequest, DeleteEnterpriseRouterResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEnterpriseRouterRequest.class, DeleteEnterpriseRouterResponse.class)
@@ -613,9 +542,7 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnterpriseRouterRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnterpriseRouterRequest::getErId, DeleteEnterpriseRouterRequest::setErId));
 
         // response
 
@@ -623,9 +550,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ListEnterpriseRoutersRequest, ListEnterpriseRoutersResponse> listEnterpriseRouters =
-        genForlistEnterpriseRouters();
+        genForListEnterpriseRouters();
 
-    private static HttpRequestDef<ListEnterpriseRoutersRequest, ListEnterpriseRoutersResponse> genForlistEnterpriseRouters() {
+    private static HttpRequestDef<ListEnterpriseRoutersRequest, ListEnterpriseRoutersResponse> genForListEnterpriseRouters() {
         // basic
         HttpRequestDef.Builder<ListEnterpriseRoutersRequest, ListEnterpriseRoutersResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEnterpriseRoutersRequest.class, ListEnterpriseRoutersResponse.class)
@@ -638,65 +565,50 @@ public class ErMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getLimit, ListEnterpriseRoutersRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getMarker, ListEnterpriseRoutersRequest::setMarker));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getEnterpriseProjectId,
+                ListEnterpriseRoutersRequest::setEnterpriseProjectId));
         builder.<List<ListEnterpriseRoutersRequest.StateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getState, ListEnterpriseRoutersRequest::setState));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getId, ListEnterpriseRoutersRequest::setId));
         builder.<List<String>>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getResourceId,
+                ListEnterpriseRoutersRequest::setResourceId));
         builder.<Boolean>withRequestField("owned_by_self",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getOwnedBySelf, (req, v) -> {
-                req.setOwnedBySelf(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getOwnedBySelf,
+                ListEnterpriseRoutersRequest::setOwnedBySelf));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getSortKey, ListEnterpriseRoutersRequest::setSortKey));
         builder.<List<ListEnterpriseRoutersRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getSortDir, ListEnterpriseRoutersRequest::setSortDir));
 
         // response
 
@@ -704,9 +616,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ShowEnterpriseRouterRequest, ShowEnterpriseRouterResponse> showEnterpriseRouter =
-        genForshowEnterpriseRouter();
+        genForShowEnterpriseRouter();
 
-    private static HttpRequestDef<ShowEnterpriseRouterRequest, ShowEnterpriseRouterResponse> genForshowEnterpriseRouter() {
+    private static HttpRequestDef<ShowEnterpriseRouterRequest, ShowEnterpriseRouterResponse> genForShowEnterpriseRouter() {
         // basic
         HttpRequestDef.Builder<ShowEnterpriseRouterRequest, ShowEnterpriseRouterResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEnterpriseRouterRequest.class, ShowEnterpriseRouterResponse.class)
@@ -719,9 +631,7 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnterpriseRouterRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ShowEnterpriseRouterRequest::getErId, ShowEnterpriseRouterRequest::setErId));
 
         // response
 
@@ -729,9 +639,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<UpdateEnterpriseRouterRequest, UpdateEnterpriseRouterResponse> updateEnterpriseRouter =
-        genForupdateEnterpriseRouter();
+        genForUpdateEnterpriseRouter();
 
-    private static HttpRequestDef<UpdateEnterpriseRouterRequest, UpdateEnterpriseRouterResponse> genForupdateEnterpriseRouter() {
+    private static HttpRequestDef<UpdateEnterpriseRouterRequest, UpdateEnterpriseRouterResponse> genForUpdateEnterpriseRouter() {
         // basic
         HttpRequestDef.Builder<UpdateEnterpriseRouterRequest, UpdateEnterpriseRouterResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEnterpriseRouterRequest.class, UpdateEnterpriseRouterResponse.class)
@@ -744,16 +654,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnterpriseRouterRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnterpriseRouterRequest::getErId, UpdateEnterpriseRouterRequest::setErId));
         builder.<UpdateEnterpriseRouterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEnterpriseRouterRequestBody.class),
-            f -> f.withMarshaller(UpdateEnterpriseRouterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEnterpriseRouterRequest::getBody, UpdateEnterpriseRouterRequest::setBody));
 
         // response
 
@@ -761,9 +667,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<CreateFlowLogRequest, CreateFlowLogResponse> createFlowLog =
-        genForcreateFlowLog();
+        genForCreateFlowLog();
 
-    private static HttpRequestDef<CreateFlowLogRequest, CreateFlowLogResponse> genForcreateFlowLog() {
+    private static HttpRequestDef<CreateFlowLogRequest, CreateFlowLogResponse> genForCreateFlowLog() {
         // basic
         HttpRequestDef.Builder<CreateFlowLogRequest, CreateFlowLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFlowLogRequest.class, CreateFlowLogResponse.class)
@@ -776,23 +682,17 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFlowLogRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(CreateFlowLogRequest::getErId, CreateFlowLogRequest::setErId));
         builder.<String>withRequestField("X-Client-Token",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFlowLogRequest::getXClientToken, (req, v) -> {
-                req.setXClientToken(v);
-            }));
+            f -> f.withMarshaller(CreateFlowLogRequest::getXClientToken, CreateFlowLogRequest::setXClientToken));
         builder.<CreateFlowLogRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFlowLogRequestBody.class),
-            f -> f.withMarshaller(CreateFlowLogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFlowLogRequest::getBody, CreateFlowLogRequest::setBody));
 
         // response
 
@@ -805,9 +705,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<DeleteFlowLogRequest, DeleteFlowLogResponse> deleteFlowLog =
-        genFordeleteFlowLog();
+        genForDeleteFlowLog();
 
-    private static HttpRequestDef<DeleteFlowLogRequest, DeleteFlowLogResponse> genFordeleteFlowLog() {
+    private static HttpRequestDef<DeleteFlowLogRequest, DeleteFlowLogResponse> genForDeleteFlowLog() {
         // basic
         HttpRequestDef.Builder<DeleteFlowLogRequest, DeleteFlowLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFlowLogRequest.class, DeleteFlowLogResponse.class)
@@ -820,16 +720,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFlowLogRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(DeleteFlowLogRequest::getErId, DeleteFlowLogRequest::setErId));
         builder.<String>withRequestField("flow_log_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFlowLogRequest::getFlowLogId, (req, v) -> {
-                req.setFlowLogId(v);
-            }));
+            f -> f.withMarshaller(DeleteFlowLogRequest::getFlowLogId, DeleteFlowLogRequest::setFlowLogId));
 
         // response
 
@@ -837,9 +733,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<DisableFlowLogRequest, DisableFlowLogResponse> disableFlowLog =
-        genFordisableFlowLog();
+        genForDisableFlowLog();
 
-    private static HttpRequestDef<DisableFlowLogRequest, DisableFlowLogResponse> genFordisableFlowLog() {
+    private static HttpRequestDef<DisableFlowLogRequest, DisableFlowLogResponse> genForDisableFlowLog() {
         // basic
         HttpRequestDef.Builder<DisableFlowLogRequest, DisableFlowLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableFlowLogRequest.class, DisableFlowLogResponse.class)
@@ -852,16 +748,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableFlowLogRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(DisableFlowLogRequest::getErId, DisableFlowLogRequest::setErId));
         builder.<String>withRequestField("flow_log_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableFlowLogRequest::getFlowLogId, (req, v) -> {
-                req.setFlowLogId(v);
-            }));
+            f -> f.withMarshaller(DisableFlowLogRequest::getFlowLogId, DisableFlowLogRequest::setFlowLogId));
 
         // response
 
@@ -869,9 +761,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<EnableFlowLogRequest, EnableFlowLogResponse> enableFlowLog =
-        genForenableFlowLog();
+        genForEnableFlowLog();
 
-    private static HttpRequestDef<EnableFlowLogRequest, EnableFlowLogResponse> genForenableFlowLog() {
+    private static HttpRequestDef<EnableFlowLogRequest, EnableFlowLogResponse> genForEnableFlowLog() {
         // basic
         HttpRequestDef.Builder<EnableFlowLogRequest, EnableFlowLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableFlowLogRequest.class, EnableFlowLogResponse.class)
@@ -884,25 +776,21 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableFlowLogRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(EnableFlowLogRequest::getErId, EnableFlowLogRequest::setErId));
         builder.<String>withRequestField("flow_log_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableFlowLogRequest::getFlowLogId, (req, v) -> {
-                req.setFlowLogId(v);
-            }));
+            f -> f.withMarshaller(EnableFlowLogRequest::getFlowLogId, EnableFlowLogRequest::setFlowLogId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogs = genForlistFlowLogs();
+    public static final HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogs = genForListFlowLogs();
 
-    private static HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> genForlistFlowLogs() {
+    private static HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> genForListFlowLogs() {
         // basic
         HttpRequestDef.Builder<ListFlowLogsRequest, ListFlowLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlowLogsRequest.class, ListFlowLogsResponse.class)
@@ -915,60 +803,46 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getErId, ListFlowLogsRequest::setErId));
         builder.<ListFlowLogsRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFlowLogsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getResourceType, ListFlowLogsRequest::setResourceType));
         builder.<List<String>>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getResourceId, ListFlowLogsRequest::setResourceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getLimit, ListFlowLogsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getMarker, ListFlowLogsRequest::setMarker));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getSortKey, ListFlowLogsRequest::setSortKey));
         builder.<List<ListFlowLogsRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getSortDir, ListFlowLogsRequest::setSortDir));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFlowLogRequest, ShowFlowLogResponse> showFlowLog = genForshowFlowLog();
+    public static final HttpRequestDef<ShowFlowLogRequest, ShowFlowLogResponse> showFlowLog = genForShowFlowLog();
 
-    private static HttpRequestDef<ShowFlowLogRequest, ShowFlowLogResponse> genForshowFlowLog() {
+    private static HttpRequestDef<ShowFlowLogRequest, ShowFlowLogResponse> genForShowFlowLog() {
         // basic
         HttpRequestDef.Builder<ShowFlowLogRequest, ShowFlowLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFlowLogRequest.class, ShowFlowLogResponse.class)
@@ -981,16 +855,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFlowLogRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ShowFlowLogRequest::getErId, ShowFlowLogRequest::setErId));
         builder.<String>withRequestField("flow_log_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFlowLogRequest::getFlowLogId, (req, v) -> {
-                req.setFlowLogId(v);
-            }));
+            f -> f.withMarshaller(ShowFlowLogRequest::getFlowLogId, ShowFlowLogRequest::setFlowLogId));
 
         // response
 
@@ -998,9 +868,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<UpdateFlowLogRequest, UpdateFlowLogResponse> updateFlowLog =
-        genForupdateFlowLog();
+        genForUpdateFlowLog();
 
-    private static HttpRequestDef<UpdateFlowLogRequest, UpdateFlowLogResponse> genForupdateFlowLog() {
+    private static HttpRequestDef<UpdateFlowLogRequest, UpdateFlowLogResponse> genForUpdateFlowLog() {
         // basic
         HttpRequestDef.Builder<UpdateFlowLogRequest, UpdateFlowLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateFlowLogRequest.class, UpdateFlowLogResponse.class)
@@ -1013,23 +883,17 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFlowLogRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(UpdateFlowLogRequest::getErId, UpdateFlowLogRequest::setErId));
         builder.<String>withRequestField("flow_log_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFlowLogRequest::getFlowLogId, (req, v) -> {
-                req.setFlowLogId(v);
-            }));
+            f -> f.withMarshaller(UpdateFlowLogRequest::getFlowLogId, UpdateFlowLogRequest::setFlowLogId));
         builder.<UpdateFlowLogRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFlowLogRequestBody.class),
-            f -> f.withMarshaller(UpdateFlowLogRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateFlowLogRequest::getBody, UpdateFlowLogRequest::setBody));
 
         // response
 
@@ -1037,9 +901,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<DisablePropagationRequest, DisablePropagationResponse> disablePropagation =
-        genFordisablePropagation();
+        genForDisablePropagation();
 
-    private static HttpRequestDef<DisablePropagationRequest, DisablePropagationResponse> genFordisablePropagation() {
+    private static HttpRequestDef<DisablePropagationRequest, DisablePropagationResponse> genForDisablePropagation() {
         // basic
         HttpRequestDef.Builder<DisablePropagationRequest, DisablePropagationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisablePropagationRequest.class, DisablePropagationResponse.class)
@@ -1053,23 +917,18 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisablePropagationRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(DisablePropagationRequest::getErId, DisablePropagationRequest::setErId));
         builder.<String>withRequestField("route_table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisablePropagationRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(DisablePropagationRequest::getRouteTableId,
+                DisablePropagationRequest::setRouteTableId));
         builder.<PropagationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PropagationRequestBody.class),
-            f -> f.withMarshaller(DisablePropagationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisablePropagationRequest::getBody, DisablePropagationRequest::setBody));
 
         // response
 
@@ -1077,9 +936,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<EnablePropagationRequest, EnablePropagationResponse> enablePropagation =
-        genForenablePropagation();
+        genForEnablePropagation();
 
-    private static HttpRequestDef<EnablePropagationRequest, EnablePropagationResponse> genForenablePropagation() {
+    private static HttpRequestDef<EnablePropagationRequest, EnablePropagationResponse> genForEnablePropagation() {
         // basic
         HttpRequestDef.Builder<EnablePropagationRequest, EnablePropagationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnablePropagationRequest.class, EnablePropagationResponse.class)
@@ -1092,30 +951,24 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnablePropagationRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(EnablePropagationRequest::getErId, EnablePropagationRequest::setErId));
         builder.<String>withRequestField("route_table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnablePropagationRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(EnablePropagationRequest::getRouteTableId,
+                EnablePropagationRequest::setRouteTableId));
         builder.<String>withRequestField("X-Client-Token",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnablePropagationRequest::getXClientToken, (req, v) -> {
-                req.setXClientToken(v);
-            }));
+            f -> f.withMarshaller(EnablePropagationRequest::getXClientToken,
+                EnablePropagationRequest::setXClientToken));
         builder.<PropagationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PropagationRequestBody.class),
-            f -> f.withMarshaller(EnablePropagationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EnablePropagationRequest::getBody, EnablePropagationRequest::setBody));
 
         // response
 
@@ -1129,9 +982,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ListPropagationsRequest, ListPropagationsResponse> listPropagations =
-        genForlistPropagations();
+        genForListPropagations();
 
-    private static HttpRequestDef<ListPropagationsRequest, ListPropagationsResponse> genForlistPropagations() {
+    private static HttpRequestDef<ListPropagationsRequest, ListPropagationsResponse> genForListPropagations() {
         // basic
         HttpRequestDef.Builder<ListPropagationsRequest, ListPropagationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPropagationsRequest.class, ListPropagationsResponse.class)
@@ -1144,74 +997,56 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPropagationsRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ListPropagationsRequest::getErId, ListPropagationsRequest::setErId));
         builder.<String>withRequestField("route_table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPropagationsRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(ListPropagationsRequest::getRouteTableId, ListPropagationsRequest::setRouteTableId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPropagationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPropagationsRequest::getLimit, ListPropagationsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPropagationsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPropagationsRequest::getMarker, ListPropagationsRequest::setMarker));
         builder.<List<String>>withRequestField("attachment_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPropagationsRequest::getAttachmentId, (req, v) -> {
-                req.setAttachmentId(v);
-            }));
+            f -> f.withMarshaller(ListPropagationsRequest::getAttachmentId, ListPropagationsRequest::setAttachmentId));
         builder.<List<ListPropagationsRequest.ResourceTypeEnum>>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPropagationsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListPropagationsRequest::getResourceType, ListPropagationsRequest::setResourceType));
         builder.<List<ListPropagationsRequest.StateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPropagationsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListPropagationsRequest::getState, ListPropagationsRequest::setState));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPropagationsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListPropagationsRequest::getSortKey, ListPropagationsRequest::setSortKey));
         builder.<List<ListPropagationsRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPropagationsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListPropagationsRequest::getSortDir, ListPropagationsRequest::setSortDir));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForShowQuotas();
 
-    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForShowQuotas() {
         // basic
         HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
@@ -1224,30 +1059,22 @@ public class ErMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowQuotasRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowQuotasRequest::getType, ShowQuotasRequest::setType));
         builder.<List<String>>withRequestField("erId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowQuotasRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ShowQuotasRequest::getErId, ShowQuotasRequest::setErId));
         builder.<List<String>>withRequestField("routeTableId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowQuotasRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(ShowQuotasRequest::getRouteTableId, ShowQuotasRequest::setRouteTableId));
         builder.<List<String>>withRequestField("vpcId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowQuotasRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ShowQuotasRequest::getVpcId, ShowQuotasRequest::setVpcId));
 
         // response
 
@@ -1255,9 +1082,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<CreateStaticRouteRequest, CreateStaticRouteResponse> createStaticRoute =
-        genForcreateStaticRoute();
+        genForCreateStaticRoute();
 
-    private static HttpRequestDef<CreateStaticRouteRequest, CreateStaticRouteResponse> genForcreateStaticRoute() {
+    private static HttpRequestDef<CreateStaticRouteRequest, CreateStaticRouteResponse> genForCreateStaticRoute() {
         // basic
         HttpRequestDef.Builder<CreateStaticRouteRequest, CreateStaticRouteResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStaticRouteRequest.class, CreateStaticRouteResponse.class)
@@ -1270,23 +1097,19 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStaticRouteRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(CreateStaticRouteRequest::getRouteTableId,
+                CreateStaticRouteRequest::setRouteTableId));
         builder.<String>withRequestField("X-Client-Token",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStaticRouteRequest::getXClientToken, (req, v) -> {
-                req.setXClientToken(v);
-            }));
+            f -> f.withMarshaller(CreateStaticRouteRequest::getXClientToken,
+                CreateStaticRouteRequest::setXClientToken));
         builder.<CreateRouteRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRouteRequestBody.class),
-            f -> f.withMarshaller(CreateStaticRouteRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStaticRouteRequest::getBody, CreateStaticRouteRequest::setBody));
 
         // response
 
@@ -1300,9 +1123,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<DeleteStaticRouteRequest, DeleteStaticRouteResponse> deleteStaticRoute =
-        genFordeleteStaticRoute();
+        genForDeleteStaticRoute();
 
-    private static HttpRequestDef<DeleteStaticRouteRequest, DeleteStaticRouteResponse> genFordeleteStaticRoute() {
+    private static HttpRequestDef<DeleteStaticRouteRequest, DeleteStaticRouteResponse> genForDeleteStaticRoute() {
         // basic
         HttpRequestDef.Builder<DeleteStaticRouteRequest, DeleteStaticRouteResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteStaticRouteRequest.class, DeleteStaticRouteResponse.class)
@@ -1315,16 +1138,13 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStaticRouteRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(DeleteStaticRouteRequest::getRouteTableId,
+                DeleteStaticRouteRequest::setRouteTableId));
         builder.<String>withRequestField("route_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStaticRouteRequest::getRouteId, (req, v) -> {
-                req.setRouteId(v);
-            }));
+            f -> f.withMarshaller(DeleteStaticRouteRequest::getRouteId, DeleteStaticRouteRequest::setRouteId));
 
         // response
 
@@ -1332,9 +1152,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ListEffectiveRoutesRequest, ListEffectiveRoutesResponse> listEffectiveRoutes =
-        genForlistEffectiveRoutes();
+        genForListEffectiveRoutes();
 
-    private static HttpRequestDef<ListEffectiveRoutesRequest, ListEffectiveRoutesResponse> genForlistEffectiveRoutes() {
+    private static HttpRequestDef<ListEffectiveRoutesRequest, ListEffectiveRoutesResponse> genForListEffectiveRoutes() {
         // basic
         HttpRequestDef.Builder<ListEffectiveRoutesRequest, ListEffectiveRoutesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEffectiveRoutesRequest.class, ListEffectiveRoutesResponse.class)
@@ -1347,37 +1167,30 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEffectiveRoutesRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(ListEffectiveRoutesRequest::getRouteTableId,
+                ListEffectiveRoutesRequest::setRouteTableId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEffectiveRoutesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEffectiveRoutesRequest::getLimit, ListEffectiveRoutesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEffectiveRoutesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListEffectiveRoutesRequest::getMarker, ListEffectiveRoutesRequest::setMarker));
         builder.<List<String>>withRequestField("destination",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEffectiveRoutesRequest::getDestination, (req, v) -> {
-                req.setDestination(v);
-            }));
+            f -> f.withMarshaller(ListEffectiveRoutesRequest::getDestination,
+                ListEffectiveRoutesRequest::setDestination));
         builder.<List<ListEffectiveRoutesRequest.ResourceTypeEnum>>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEffectiveRoutesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListEffectiveRoutesRequest::getResourceType,
+                ListEffectiveRoutesRequest::setResourceType));
 
         // response
 
@@ -1385,9 +1198,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ListStaticRoutesRequest, ListStaticRoutesResponse> listStaticRoutes =
-        genForlistStaticRoutes();
+        genForListStaticRoutes();
 
-    private static HttpRequestDef<ListStaticRoutesRequest, ListStaticRoutesResponse> genForlistStaticRoutes() {
+    private static HttpRequestDef<ListStaticRoutesRequest, ListStaticRoutesResponse> genForListStaticRoutes() {
         // basic
         HttpRequestDef.Builder<ListStaticRoutesRequest, ListStaticRoutesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStaticRoutesRequest.class, ListStaticRoutesResponse.class)
@@ -1400,58 +1213,42 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStaticRoutesRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(ListStaticRoutesRequest::getRouteTableId, ListStaticRoutesRequest::setRouteTableId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStaticRoutesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListStaticRoutesRequest::getLimit, ListStaticRoutesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStaticRoutesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListStaticRoutesRequest::getMarker, ListStaticRoutesRequest::setMarker));
         builder.<List<String>>withRequestField("destination",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStaticRoutesRequest::getDestination, (req, v) -> {
-                req.setDestination(v);
-            }));
+            f -> f.withMarshaller(ListStaticRoutesRequest::getDestination, ListStaticRoutesRequest::setDestination));
         builder.<List<String>>withRequestField("attachment_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStaticRoutesRequest::getAttachmentId, (req, v) -> {
-                req.setAttachmentId(v);
-            }));
+            f -> f.withMarshaller(ListStaticRoutesRequest::getAttachmentId, ListStaticRoutesRequest::setAttachmentId));
         builder.<List<ListStaticRoutesRequest.ResourceTypeEnum>>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStaticRoutesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListStaticRoutesRequest::getResourceType, ListStaticRoutesRequest::setResourceType));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStaticRoutesRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListStaticRoutesRequest::getSortKey, ListStaticRoutesRequest::setSortKey));
         builder.<List<ListStaticRoutesRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStaticRoutesRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListStaticRoutesRequest::getSortDir, ListStaticRoutesRequest::setSortDir));
 
         // response
 
@@ -1459,9 +1256,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ShowStaticRouteRequest, ShowStaticRouteResponse> showStaticRoute =
-        genForshowStaticRoute();
+        genForShowStaticRoute();
 
-    private static HttpRequestDef<ShowStaticRouteRequest, ShowStaticRouteResponse> genForshowStaticRoute() {
+    private static HttpRequestDef<ShowStaticRouteRequest, ShowStaticRouteResponse> genForShowStaticRoute() {
         // basic
         HttpRequestDef.Builder<ShowStaticRouteRequest, ShowStaticRouteResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStaticRouteRequest.class, ShowStaticRouteResponse.class)
@@ -1474,16 +1271,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStaticRouteRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(ShowStaticRouteRequest::getRouteTableId, ShowStaticRouteRequest::setRouteTableId));
         builder.<String>withRequestField("route_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStaticRouteRequest::getRouteId, (req, v) -> {
-                req.setRouteId(v);
-            }));
+            f -> f.withMarshaller(ShowStaticRouteRequest::getRouteId, ShowStaticRouteRequest::setRouteId));
 
         // response
 
@@ -1491,9 +1284,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<UpdateStaticRouteRequest, UpdateStaticRouteResponse> updateStaticRoute =
-        genForupdateStaticRoute();
+        genForUpdateStaticRoute();
 
-    private static HttpRequestDef<UpdateStaticRouteRequest, UpdateStaticRouteResponse> genForupdateStaticRoute() {
+    private static HttpRequestDef<UpdateStaticRouteRequest, UpdateStaticRouteResponse> genForUpdateStaticRoute() {
         // basic
         HttpRequestDef.Builder<UpdateStaticRouteRequest, UpdateStaticRouteResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateStaticRouteRequest.class, UpdateStaticRouteResponse.class)
@@ -1506,23 +1299,18 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStaticRouteRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(UpdateStaticRouteRequest::getRouteTableId,
+                UpdateStaticRouteRequest::setRouteTableId));
         builder.<String>withRequestField("route_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStaticRouteRequest::getRouteId, (req, v) -> {
-                req.setRouteId(v);
-            }));
+            f -> f.withMarshaller(UpdateStaticRouteRequest::getRouteId, UpdateStaticRouteRequest::setRouteId));
         builder.<UpdateRouteRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRouteRequestBody.class),
-            f -> f.withMarshaller(UpdateStaticRouteRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStaticRouteRequest::getBody, UpdateStaticRouteRequest::setBody));
 
         // response
 
@@ -1530,9 +1318,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<CreateRouteTableRequest, CreateRouteTableResponse> createRouteTable =
-        genForcreateRouteTable();
+        genForCreateRouteTable();
 
-    private static HttpRequestDef<CreateRouteTableRequest, CreateRouteTableResponse> genForcreateRouteTable() {
+    private static HttpRequestDef<CreateRouteTableRequest, CreateRouteTableResponse> genForCreateRouteTable() {
         // basic
         HttpRequestDef.Builder<CreateRouteTableRequest, CreateRouteTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRouteTableRequest.class, CreateRouteTableResponse.class)
@@ -1545,23 +1333,17 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRouteTableRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(CreateRouteTableRequest::getErId, CreateRouteTableRequest::setErId));
         builder.<String>withRequestField("X-Client-Token",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRouteTableRequest::getXClientToken, (req, v) -> {
-                req.setXClientToken(v);
-            }));
+            f -> f.withMarshaller(CreateRouteTableRequest::getXClientToken, CreateRouteTableRequest::setXClientToken));
         builder.<CreateRouteTableRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRouteTableRequestBody.class),
-            f -> f.withMarshaller(CreateRouteTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRouteTableRequest::getBody, CreateRouteTableRequest::setBody));
 
         // response
 
@@ -1575,9 +1357,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<DeleteRouteTableRequest, DeleteRouteTableResponse> deleteRouteTable =
-        genFordeleteRouteTable();
+        genForDeleteRouteTable();
 
-    private static HttpRequestDef<DeleteRouteTableRequest, DeleteRouteTableResponse> genFordeleteRouteTable() {
+    private static HttpRequestDef<DeleteRouteTableRequest, DeleteRouteTableResponse> genForDeleteRouteTable() {
         // basic
         HttpRequestDef.Builder<DeleteRouteTableRequest, DeleteRouteTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRouteTableRequest.class, DeleteRouteTableResponse.class)
@@ -1590,16 +1372,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRouteTableRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(DeleteRouteTableRequest::getErId, DeleteRouteTableRequest::setErId));
         builder.<String>withRequestField("route_table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRouteTableRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(DeleteRouteTableRequest::getRouteTableId, DeleteRouteTableRequest::setRouteTableId));
 
         // response
 
@@ -1607,9 +1385,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ListRouteTablesRequest, ListRouteTablesResponse> listRouteTables =
-        genForlistRouteTables();
+        genForListRouteTables();
 
-    private static HttpRequestDef<ListRouteTablesRequest, ListRouteTablesResponse> genForlistRouteTables() {
+    private static HttpRequestDef<ListRouteTablesRequest, ListRouteTablesResponse> genForListRouteTables() {
         // basic
         HttpRequestDef.Builder<ListRouteTablesRequest, ListRouteTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRouteTablesRequest.class, ListRouteTablesResponse.class)
@@ -1622,58 +1400,44 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRouteTablesRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ListRouteTablesRequest::getErId, ListRouteTablesRequest::setErId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRouteTablesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRouteTablesRequest::getLimit, ListRouteTablesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRouteTablesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListRouteTablesRequest::getMarker, ListRouteTablesRequest::setMarker));
         builder.<List<ListRouteTablesRequest.StateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRouteTablesRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListRouteTablesRequest::getState, ListRouteTablesRequest::setState));
         builder.<Boolean>withRequestField("is_default_propagation_table",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListRouteTablesRequest::getIsDefaultPropagationTable, (req, v) -> {
-                req.setIsDefaultPropagationTable(v);
-            }));
+            f -> f.withMarshaller(ListRouteTablesRequest::getIsDefaultPropagationTable,
+                ListRouteTablesRequest::setIsDefaultPropagationTable));
         builder.<Boolean>withRequestField("is_default_association_table",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListRouteTablesRequest::getIsDefaultAssociationTable, (req, v) -> {
-                req.setIsDefaultAssociationTable(v);
-            }));
+            f -> f.withMarshaller(ListRouteTablesRequest::getIsDefaultAssociationTable,
+                ListRouteTablesRequest::setIsDefaultAssociationTable));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRouteTablesRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListRouteTablesRequest::getSortKey, ListRouteTablesRequest::setSortKey));
         builder.<List<ListRouteTablesRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRouteTablesRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListRouteTablesRequest::getSortDir, ListRouteTablesRequest::setSortDir));
 
         // response
 
@@ -1681,9 +1445,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ShowRouteTableRequest, ShowRouteTableResponse> showRouteTable =
-        genForshowRouteTable();
+        genForShowRouteTable();
 
-    private static HttpRequestDef<ShowRouteTableRequest, ShowRouteTableResponse> genForshowRouteTable() {
+    private static HttpRequestDef<ShowRouteTableRequest, ShowRouteTableResponse> genForShowRouteTable() {
         // basic
         HttpRequestDef.Builder<ShowRouteTableRequest, ShowRouteTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRouteTableRequest.class, ShowRouteTableResponse.class)
@@ -1696,16 +1460,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRouteTableRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ShowRouteTableRequest::getErId, ShowRouteTableRequest::setErId));
         builder.<String>withRequestField("route_table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRouteTableRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(ShowRouteTableRequest::getRouteTableId, ShowRouteTableRequest::setRouteTableId));
 
         // response
 
@@ -1713,9 +1473,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<UpdateRouteTableRequest, UpdateRouteTableResponse> updateRouteTable =
-        genForupdateRouteTable();
+        genForUpdateRouteTable();
 
-    private static HttpRequestDef<UpdateRouteTableRequest, UpdateRouteTableResponse> genForupdateRouteTable() {
+    private static HttpRequestDef<UpdateRouteTableRequest, UpdateRouteTableResponse> genForUpdateRouteTable() {
         // basic
         HttpRequestDef.Builder<UpdateRouteTableRequest, UpdateRouteTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRouteTableRequest.class, UpdateRouteTableResponse.class)
@@ -1728,23 +1488,17 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRouteTableRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(UpdateRouteTableRequest::getErId, UpdateRouteTableRequest::setErId));
         builder.<String>withRequestField("route_table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRouteTableRequest::getRouteTableId, (req, v) -> {
-                req.setRouteTableId(v);
-            }));
+            f -> f.withMarshaller(UpdateRouteTableRequest::getRouteTableId, UpdateRouteTableRequest::setRouteTableId));
         builder.<UpdateRouteTableRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateRouteTableRequestBody.class),
-            f -> f.withMarshaller(UpdateRouteTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRouteTableRequest::getBody, UpdateRouteTableRequest::setBody));
 
         // response
 
@@ -1752,9 +1506,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTags =
-        genForbatchCreateResourceTags();
+        genForBatchCreateResourceTags();
 
-    private static HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> genForbatchCreateResourceTags() {
+    private static HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> genForBatchCreateResourceTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateResourceTagsRequest.class, BatchCreateResourceTagsResponse.class)
@@ -1767,40 +1521,34 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceId,
+                BatchCreateResourceTagsRequest::setResourceId));
         builder.<BatchCreateResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceType,
+                BatchCreateResourceTagsRequest::setResourceType));
         builder.<BatchOperateResourceTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchOperateResourceTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, BatchCreateResourceTagsRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(BatchCreateResourceTagsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsResponse::getBody, BatchCreateResourceTagsResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTag =
-        genForcreateResourceTag();
+        genForCreateResourceTag();
 
-    private static HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> genForcreateResourceTag() {
+    private static HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> genForCreateResourceTag() {
         // basic
         HttpRequestDef.Builder<CreateResourceTagRequest, CreateResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResourceTagRequest.class, CreateResourceTagResponse.class)
@@ -1813,40 +1561,33 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateResourceTagRequest::getResourceId, CreateResourceTagRequest::setResourceId));
         builder.<CreateResourceTagRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResourceTagRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(CreateResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CreateResourceTagRequest::getResourceType,
+                CreateResourceTagRequest::setResourceType));
         builder.<CreateResourceTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResourceTagRequestBody.class),
-            f -> f.withMarshaller(CreateResourceTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResourceTagRequest::getBody, CreateResourceTagRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateResourceTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateResourceTagResponse::getBody, CreateResourceTagResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTag =
-        genFordeleteResourceTag();
+        genForDeleteResourceTag();
 
-    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genFordeleteResourceTag() {
+    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genForDeleteResourceTag() {
         // basic
         HttpRequestDef.Builder<DeleteResourceTagRequest, DeleteResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceTagRequest.class, DeleteResourceTagResponse.class)
@@ -1859,40 +1600,33 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getKey, DeleteResourceTagRequest::setKey));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceId, DeleteResourceTagRequest::setResourceId));
         builder.<DeleteResourceTagRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteResourceTagRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceType,
+                DeleteResourceTagRequest::setResourceType));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteResourceTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagResponse::getBody, DeleteResourceTagResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
-        genForlistProjectTags();
+        genForListProjectTags();
 
-    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForListProjectTags() {
         // basic
         HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
@@ -1905,9 +1639,7 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListProjectTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, ListProjectTagsRequest::setResourceType));
 
         // response
 
@@ -1915,9 +1647,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTag =
-        genForshowResourceTag();
+        genForShowResourceTag();
 
-    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForshowResourceTag() {
+    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForShowResourceTag() {
         // basic
         HttpRequestDef.Builder<ShowResourceTagRequest, ShowResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagRequest.class, ShowResourceTagResponse.class)
@@ -1930,16 +1662,12 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, ShowResourceTagRequest::setResourceId));
         builder.<ShowResourceTagRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowResourceTagRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, ShowResourceTagRequest::setResourceType));
 
         // response
 
@@ -1947,9 +1675,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<CreateVpcAttachmentRequest, CreateVpcAttachmentResponse> createVpcAttachment =
-        genForcreateVpcAttachment();
+        genForCreateVpcAttachment();
 
-    private static HttpRequestDef<CreateVpcAttachmentRequest, CreateVpcAttachmentResponse> genForcreateVpcAttachment() {
+    private static HttpRequestDef<CreateVpcAttachmentRequest, CreateVpcAttachmentResponse> genForCreateVpcAttachment() {
         // basic
         HttpRequestDef.Builder<CreateVpcAttachmentRequest, CreateVpcAttachmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVpcAttachmentRequest.class, CreateVpcAttachmentResponse.class)
@@ -1962,23 +1690,18 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVpcAttachmentRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(CreateVpcAttachmentRequest::getErId, CreateVpcAttachmentRequest::setErId));
         builder.<String>withRequestField("X-Client-Token",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVpcAttachmentRequest::getXClientToken, (req, v) -> {
-                req.setXClientToken(v);
-            }));
+            f -> f.withMarshaller(CreateVpcAttachmentRequest::getXClientToken,
+                CreateVpcAttachmentRequest::setXClientToken));
         builder.<CreateVpcAttachmentBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVpcAttachmentBody.class),
-            f -> f.withMarshaller(CreateVpcAttachmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVpcAttachmentRequest::getBody, CreateVpcAttachmentRequest::setBody));
 
         // response
 
@@ -1992,9 +1715,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<DeleteVpcAttachmentRequest, DeleteVpcAttachmentResponse> deleteVpcAttachment =
-        genFordeleteVpcAttachment();
+        genForDeleteVpcAttachment();
 
-    private static HttpRequestDef<DeleteVpcAttachmentRequest, DeleteVpcAttachmentResponse> genFordeleteVpcAttachment() {
+    private static HttpRequestDef<DeleteVpcAttachmentRequest, DeleteVpcAttachmentResponse> genForDeleteVpcAttachment() {
         // basic
         HttpRequestDef.Builder<DeleteVpcAttachmentRequest, DeleteVpcAttachmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteVpcAttachmentRequest.class, DeleteVpcAttachmentResponse.class)
@@ -2007,16 +1730,13 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVpcAttachmentRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(DeleteVpcAttachmentRequest::getErId, DeleteVpcAttachmentRequest::setErId));
         builder.<String>withRequestField("vpc_attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVpcAttachmentRequest::getVpcAttachmentId, (req, v) -> {
-                req.setVpcAttachmentId(v);
-            }));
+            f -> f.withMarshaller(DeleteVpcAttachmentRequest::getVpcAttachmentId,
+                DeleteVpcAttachmentRequest::setVpcAttachmentId));
 
         // response
 
@@ -2024,9 +1744,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ListVpcAttachmentsRequest, ListVpcAttachmentsResponse> listVpcAttachments =
-        genForlistVpcAttachments();
+        genForListVpcAttachments();
 
-    private static HttpRequestDef<ListVpcAttachmentsRequest, ListVpcAttachmentsResponse> genForlistVpcAttachments() {
+    private static HttpRequestDef<ListVpcAttachmentsRequest, ListVpcAttachmentsResponse> genForListVpcAttachments() {
         // basic
         HttpRequestDef.Builder<ListVpcAttachmentsRequest, ListVpcAttachmentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVpcAttachmentsRequest.class, ListVpcAttachmentsResponse.class)
@@ -2039,58 +1759,42 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcAttachmentsRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ListVpcAttachmentsRequest::getErId, ListVpcAttachmentsRequest::setErId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVpcAttachmentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVpcAttachmentsRequest::getLimit, ListVpcAttachmentsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcAttachmentsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListVpcAttachmentsRequest::getMarker, ListVpcAttachmentsRequest::setMarker));
         builder.<List<ListVpcAttachmentsRequest.StateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVpcAttachmentsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListVpcAttachmentsRequest::getState, ListVpcAttachmentsRequest::setState));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVpcAttachmentsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListVpcAttachmentsRequest::getId, ListVpcAttachmentsRequest::setId));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVpcAttachmentsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListVpcAttachmentsRequest::getSortKey, ListVpcAttachmentsRequest::setSortKey));
         builder.<List<ListVpcAttachmentsRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVpcAttachmentsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListVpcAttachmentsRequest::getSortDir, ListVpcAttachmentsRequest::setSortDir));
         builder.<List<String>>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVpcAttachmentsRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListVpcAttachmentsRequest::getVpcId, ListVpcAttachmentsRequest::setVpcId));
 
         // response
 
@@ -2098,9 +1802,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<ShowVpcAttachmentRequest, ShowVpcAttachmentResponse> showVpcAttachment =
-        genForshowVpcAttachment();
+        genForShowVpcAttachment();
 
-    private static HttpRequestDef<ShowVpcAttachmentRequest, ShowVpcAttachmentResponse> genForshowVpcAttachment() {
+    private static HttpRequestDef<ShowVpcAttachmentRequest, ShowVpcAttachmentResponse> genForShowVpcAttachment() {
         // basic
         HttpRequestDef.Builder<ShowVpcAttachmentRequest, ShowVpcAttachmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVpcAttachmentRequest.class, ShowVpcAttachmentResponse.class)
@@ -2113,16 +1817,13 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVpcAttachmentRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(ShowVpcAttachmentRequest::getErId, ShowVpcAttachmentRequest::setErId));
         builder.<String>withRequestField("vpc_attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVpcAttachmentRequest::getVpcAttachmentId, (req, v) -> {
-                req.setVpcAttachmentId(v);
-            }));
+            f -> f.withMarshaller(ShowVpcAttachmentRequest::getVpcAttachmentId,
+                ShowVpcAttachmentRequest::setVpcAttachmentId));
 
         // response
 
@@ -2130,9 +1831,9 @@ public class ErMeta {
     }
 
     public static final HttpRequestDef<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResponse> updateVpcAttachment =
-        genForupdateVpcAttachment();
+        genForUpdateVpcAttachment();
 
-    private static HttpRequestDef<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResponse> genForupdateVpcAttachment() {
+    private static HttpRequestDef<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResponse> genForUpdateVpcAttachment() {
         // basic
         HttpRequestDef.Builder<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVpcAttachmentRequest.class, UpdateVpcAttachmentResponse.class)
@@ -2145,23 +1846,18 @@ public class ErMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVpcAttachmentRequest::getErId, (req, v) -> {
-                req.setErId(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcAttachmentRequest::getErId, UpdateVpcAttachmentRequest::setErId));
         builder.<String>withRequestField("vpc_attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVpcAttachmentRequest::getVpcAttachmentId, (req, v) -> {
-                req.setVpcAttachmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcAttachmentRequest::getVpcAttachmentId,
+                UpdateVpcAttachmentRequest::setVpcAttachmentId));
         builder.<UpdateVpcAttachmentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateVpcAttachmentRequestBody.class),
-            f -> f.withMarshaller(UpdateVpcAttachmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcAttachmentRequest::getBody, UpdateVpcAttachmentRequest::setBody));
 
         // response
 

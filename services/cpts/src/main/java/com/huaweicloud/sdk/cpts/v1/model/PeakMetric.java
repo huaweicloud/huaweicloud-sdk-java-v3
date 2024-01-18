@@ -41,7 +41,7 @@ public class PeakMetric {
     }
 
     /**
-     * vusers
+     * 虚拟用户数
      * @return vuser
      */
     public Integer getVuser() {
@@ -58,7 +58,7 @@ public class PeakMetric {
     }
 
     /**
-     * tps
+     * 每秒事务数
      * @return rps
      */
     public Double getRps() {
@@ -75,7 +75,7 @@ public class PeakMetric {
     }
 
     /**
-     * avgRT
+     * 平均响应时间
      * @return avgRT
      */
     public Double getAvgRT() {

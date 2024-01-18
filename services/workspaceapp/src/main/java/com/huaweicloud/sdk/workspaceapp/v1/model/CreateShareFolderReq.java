@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 创建共享存储声明
+ * 创建共享存储声明。
  */
 public class CreateShareFolderReq {
 
@@ -21,7 +21,7 @@ public class CreateShareFolderReq {
     }
 
     /**
-     * - 仅支持创建单层级的文件夹 - 单个文件夹名称仅支持以下字符: 英文字母、数字、空格、下划线、中划线 - 名称不能超过32字符 - 不能为全空格或者以空格开头
+     * - 仅支持创建单层级的文件夹。 - 单个文件夹名称仅支持以下字符: 英文字母、数字、空格、下划线、中划线。 - 名称不能超过32字符。 - 不能为全空格或者以空格开头。
      * @return folderName
      */
     public String getFolderName() {

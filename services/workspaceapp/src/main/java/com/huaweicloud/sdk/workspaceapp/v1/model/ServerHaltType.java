@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 停机类型 * &#x60;SOFT&#x60; - 普通 * &#x60;HARD&#x60; - 强制
+ * 停机类型： * &#x60;SOFT&#x60; - 普通 * &#x60;HARD&#x60; - 强制
  */
 public class ServerHaltType {
 

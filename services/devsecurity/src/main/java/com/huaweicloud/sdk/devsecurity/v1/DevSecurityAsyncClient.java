@@ -34,7 +34,7 @@ public class DevSecurityAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecAppTaskRequest 请求对象
+     * @param request CreateSecAppTaskRequest 请求对象
      * @return CompletableFuture<CreateSecAppTaskResponse>
      */
     public CompletableFuture<CreateSecAppTaskResponse> createSecAppTaskAsync(CreateSecAppTaskRequest request) {
@@ -48,13 +48,12 @@ public class DevSecurityAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecAppTaskRequest 请求对象
+     * @param request CreateSecAppTaskRequest 请求对象
      * @return AsyncInvoker<CreateSecAppTaskRequest, CreateSecAppTaskResponse>
      */
     public AsyncInvoker<CreateSecAppTaskRequest, CreateSecAppTaskResponse> createSecAppTaskAsyncInvoker(
         CreateSecAppTaskRequest request) {
-        return new AsyncInvoker<CreateSecAppTaskRequest, CreateSecAppTaskResponse>(request,
-            DevSecurityMeta.createSecAppTask, hcClient);
+        return new AsyncInvoker<>(request, DevSecurityMeta.createSecAppTask, hcClient);
     }
 
     /**
@@ -64,7 +63,7 @@ public class DevSecurityAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecAppTaskRequest 请求对象
+     * @param request DeleteSecAppTaskRequest 请求对象
      * @return CompletableFuture<DeleteSecAppTaskResponse>
      */
     public CompletableFuture<DeleteSecAppTaskResponse> deleteSecAppTaskAsync(DeleteSecAppTaskRequest request) {
@@ -78,13 +77,12 @@ public class DevSecurityAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecAppTaskRequest 请求对象
+     * @param request DeleteSecAppTaskRequest 请求对象
      * @return AsyncInvoker<DeleteSecAppTaskRequest, DeleteSecAppTaskResponse>
      */
     public AsyncInvoker<DeleteSecAppTaskRequest, DeleteSecAppTaskResponse> deleteSecAppTaskAsyncInvoker(
         DeleteSecAppTaskRequest request) {
-        return new AsyncInvoker<DeleteSecAppTaskRequest, DeleteSecAppTaskResponse>(request,
-            DevSecurityMeta.deleteSecAppTask, hcClient);
+        return new AsyncInvoker<>(request, DevSecurityMeta.deleteSecAppTask, hcClient);
     }
 
     /**
@@ -94,7 +92,7 @@ public class DevSecurityAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecAppTaskResultRequest 请求对象
+     * @param request ShowSecAppTaskResultRequest 请求对象
      * @return CompletableFuture<ShowSecAppTaskResultResponse>
      */
     public CompletableFuture<ShowSecAppTaskResultResponse> showSecAppTaskResultAsync(
@@ -109,13 +107,12 @@ public class DevSecurityAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecAppTaskResultRequest 请求对象
+     * @param request ShowSecAppTaskResultRequest 请求对象
      * @return AsyncInvoker<ShowSecAppTaskResultRequest, ShowSecAppTaskResultResponse>
      */
     public AsyncInvoker<ShowSecAppTaskResultRequest, ShowSecAppTaskResultResponse> showSecAppTaskResultAsyncInvoker(
         ShowSecAppTaskResultRequest request) {
-        return new AsyncInvoker<ShowSecAppTaskResultRequest, ShowSecAppTaskResultResponse>(request,
-            DevSecurityMeta.showSecAppTaskResult, hcClient);
+        return new AsyncInvoker<>(request, DevSecurityMeta.showSecAppTaskResult, hcClient);
     }
 
     /**
@@ -125,7 +122,7 @@ public class DevSecurityAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecAppTaskStatusRequest 请求对象
+     * @param request ShowSecAppTaskStatusRequest 请求对象
      * @return CompletableFuture<ShowSecAppTaskStatusResponse>
      */
     public CompletableFuture<ShowSecAppTaskStatusResponse> showSecAppTaskStatusAsync(
@@ -140,13 +137,12 @@ public class DevSecurityAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecAppTaskStatusRequest 请求对象
+     * @param request ShowSecAppTaskStatusRequest 请求对象
      * @return AsyncInvoker<ShowSecAppTaskStatusRequest, ShowSecAppTaskStatusResponse>
      */
     public AsyncInvoker<ShowSecAppTaskStatusRequest, ShowSecAppTaskStatusResponse> showSecAppTaskStatusAsyncInvoker(
         ShowSecAppTaskStatusRequest request) {
-        return new AsyncInvoker<ShowSecAppTaskStatusRequest, ShowSecAppTaskStatusResponse>(request,
-            DevSecurityMeta.showSecAppTaskStatus, hcClient);
+        return new AsyncInvoker<>(request, DevSecurityMeta.showSecAppTaskStatus, hcClient);
     }
 
 }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 蓝图。
+ * 模板。
  */
 public class Blueprint {
 
@@ -26,7 +26,7 @@ public class Blueprint {
     }
 
     /**
-     * 蓝图ID。
+     * 模板ID。
      * @return blueprintProductId
      */
     public String getBlueprintProductId() {
@@ -43,7 +43,7 @@ public class Blueprint {
     }
 
     /**
-     * 蓝图版本。
+     * 模板版本。
      * @return blueprintProductVersion
      */
     public String getBlueprintProductVersion() {

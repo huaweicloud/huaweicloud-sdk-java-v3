@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 服务器组
+ * 服务器组。
  */
 public class BaseServerGroup {
 
@@ -97,7 +97,7 @@ public class BaseServerGroup {
     }
 
     /**
-     * 服务器组的唯一标识
+     * 服务器组的唯一标识。
      * @return id
      */
     public String getId() {
@@ -114,7 +114,7 @@ public class BaseServerGroup {
     }
 
     /**
-     * 服务器组名称
+     * 服务器组名称。
      * @return name
      */
     public String getName() {
@@ -131,7 +131,7 @@ public class BaseServerGroup {
     }
 
     /**
-     * 服务器组描述
+     * 服务器组描述。
      * @return description
      */
     public String getDescription() {
@@ -148,7 +148,7 @@ public class BaseServerGroup {
     }
 
     /**
-     * 服务器组关联的镜像ID，用于创建对应组下的云服务器
+     * 服务器组关联的镜像ID，用于创建对应组下的云服务器。
      * @return imageId
      */
     public String getImageId() {
@@ -182,7 +182,7 @@ public class BaseServerGroup {
     }
 
     /**
-     * 产品id
+     * 产品id。
      * @return productId
      */
     public String getProductId() {
@@ -199,7 +199,7 @@ public class BaseServerGroup {
     }
 
     /**
-     * 网卡对应的子网ID
+     * 网卡对应的子网ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -233,7 +233,7 @@ public class BaseServerGroup {
     }
 
     /**
-     * 磁盘容量，单位GB
+     * 磁盘容量，单位GB。
      * @return systemDiskSize
      */
     public Integer getSystemDiskSize() {
@@ -250,7 +250,7 @@ public class BaseServerGroup {
     }
 
     /**
-     * 是否为vdi单会话模式
+     * 是否为vdi单会话模式。
      * @return isVdi
      */
     public Boolean getIsVdi() {
@@ -284,7 +284,7 @@ public class BaseServerGroup {
     }
 
     /**
-     * 付费会话个数
+     * 付费会话个数。
      * @return extraSessionSize
      */
     public Integer getExtraSessionSize() {

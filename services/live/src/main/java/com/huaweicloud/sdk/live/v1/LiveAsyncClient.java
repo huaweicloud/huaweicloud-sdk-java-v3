@@ -134,7 +134,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowIpBelongsRequest 请求对象
+     * @param request BatchShowIpBelongsRequest 请求对象
      * @return CompletableFuture<BatchShowIpBelongsResponse>
      */
     public CompletableFuture<BatchShowIpBelongsResponse> batchShowIpBelongsAsync(BatchShowIpBelongsRequest request) {
@@ -148,13 +148,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowIpBelongsRequest 请求对象
+     * @param request BatchShowIpBelongsRequest 请求对象
      * @return AsyncInvoker<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse>
      */
     public AsyncInvoker<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse> batchShowIpBelongsAsyncInvoker(
         BatchShowIpBelongsRequest request) {
-        return new AsyncInvoker<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse>(request,
-            LiveMeta.batchShowIpBelongs, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.batchShowIpBelongs, hcClient);
     }
 
     /**
@@ -164,7 +163,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDomainRequest 请求对象
+     * @param request CreateDomainRequest 请求对象
      * @return CompletableFuture<CreateDomainResponse>
      */
     public CompletableFuture<CreateDomainResponse> createDomainAsync(CreateDomainRequest request) {
@@ -178,12 +177,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDomainRequest 请求对象
+     * @param request CreateDomainRequest 请求对象
      * @return AsyncInvoker<CreateDomainRequest, CreateDomainResponse>
      */
     public AsyncInvoker<CreateDomainRequest, CreateDomainResponse> createDomainAsyncInvoker(
         CreateDomainRequest request) {
-        return new AsyncInvoker<CreateDomainRequest, CreateDomainResponse>(request, LiveMeta.createDomain, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.createDomain, hcClient);
     }
 
     /**
@@ -193,7 +192,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDomainMappingRequest 请求对象
+     * @param request CreateDomainMappingRequest 请求对象
      * @return CompletableFuture<CreateDomainMappingResponse>
      */
     public CompletableFuture<CreateDomainMappingResponse> createDomainMappingAsync(CreateDomainMappingRequest request) {
@@ -207,13 +206,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDomainMappingRequest 请求对象
+     * @param request CreateDomainMappingRequest 请求对象
      * @return AsyncInvoker<CreateDomainMappingRequest, CreateDomainMappingResponse>
      */
     public AsyncInvoker<CreateDomainMappingRequest, CreateDomainMappingResponse> createDomainMappingAsyncInvoker(
         CreateDomainMappingRequest request) {
-        return new AsyncInvoker<CreateDomainMappingRequest, CreateDomainMappingResponse>(request,
-            LiveMeta.createDomainMapping, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.createDomainMapping, hcClient);
     }
 
     /**
@@ -223,7 +221,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordCallbackConfigRequest 请求对象
+     * @param request CreateRecordCallbackConfigRequest 请求对象
      * @return CompletableFuture<CreateRecordCallbackConfigResponse>
      */
     public CompletableFuture<CreateRecordCallbackConfigResponse> createRecordCallbackConfigAsync(
@@ -238,13 +236,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordCallbackConfigRequest 请求对象
+     * @param request CreateRecordCallbackConfigRequest 请求对象
      * @return AsyncInvoker<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse>
      */
     public AsyncInvoker<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse> createRecordCallbackConfigAsyncInvoker(
         CreateRecordCallbackConfigRequest request) {
-        return new AsyncInvoker<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse>(request,
-            LiveMeta.createRecordCallbackConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.createRecordCallbackConfig, hcClient);
     }
 
     /**
@@ -254,7 +251,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordIndexRequest 请求对象
+     * @param request CreateRecordIndexRequest 请求对象
      * @return CompletableFuture<CreateRecordIndexResponse>
      */
     public CompletableFuture<CreateRecordIndexResponse> createRecordIndexAsync(CreateRecordIndexRequest request) {
@@ -268,13 +265,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordIndexRequest 请求对象
+     * @param request CreateRecordIndexRequest 请求对象
      * @return AsyncInvoker<CreateRecordIndexRequest, CreateRecordIndexResponse>
      */
     public AsyncInvoker<CreateRecordIndexRequest, CreateRecordIndexResponse> createRecordIndexAsyncInvoker(
         CreateRecordIndexRequest request) {
-        return new AsyncInvoker<CreateRecordIndexRequest, CreateRecordIndexResponse>(request,
-            LiveMeta.createRecordIndex, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.createRecordIndex, hcClient);
     }
 
     /**
@@ -284,7 +280,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordRuleRequest 请求对象
+     * @param request CreateRecordRuleRequest 请求对象
      * @return CompletableFuture<CreateRecordRuleResponse>
      */
     public CompletableFuture<CreateRecordRuleResponse> createRecordRuleAsync(CreateRecordRuleRequest request) {
@@ -298,13 +294,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordRuleRequest 请求对象
+     * @param request CreateRecordRuleRequest 请求对象
      * @return AsyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse>
      */
     public AsyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse> createRecordRuleAsyncInvoker(
         CreateRecordRuleRequest request) {
-        return new AsyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse>(request, LiveMeta.createRecordRule,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.createRecordRule, hcClient);
     }
 
     /**
@@ -314,7 +309,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSnapshotConfigRequest 请求对象
+     * @param request CreateSnapshotConfigRequest 请求对象
      * @return CompletableFuture<CreateSnapshotConfigResponse>
      */
     public CompletableFuture<CreateSnapshotConfigResponse> createSnapshotConfigAsync(
@@ -329,13 +324,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSnapshotConfigRequest 请求对象
+     * @param request CreateSnapshotConfigRequest 请求对象
      * @return AsyncInvoker<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse>
      */
     public AsyncInvoker<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse> createSnapshotConfigAsyncInvoker(
         CreateSnapshotConfigRequest request) {
-        return new AsyncInvoker<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse>(request,
-            LiveMeta.createSnapshotConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.createSnapshotConfig, hcClient);
     }
 
     /**
@@ -345,7 +339,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStreamForbiddenRequest 请求对象
+     * @param request CreateStreamForbiddenRequest 请求对象
      * @return CompletableFuture<CreateStreamForbiddenResponse>
      */
     public CompletableFuture<CreateStreamForbiddenResponse> createStreamForbiddenAsync(
@@ -360,13 +354,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStreamForbiddenRequest 请求对象
+     * @param request CreateStreamForbiddenRequest 请求对象
      * @return AsyncInvoker<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse>
      */
     public AsyncInvoker<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse> createStreamForbiddenAsyncInvoker(
         CreateStreamForbiddenRequest request) {
-        return new AsyncInvoker<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse>(request,
-            LiveMeta.createStreamForbidden, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.createStreamForbidden, hcClient);
     }
 
     /**
@@ -376,7 +369,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTranscodingsTemplateRequest 请求对象
+     * @param request CreateTranscodingsTemplateRequest 请求对象
      * @return CompletableFuture<CreateTranscodingsTemplateResponse>
      */
     public CompletableFuture<CreateTranscodingsTemplateResponse> createTranscodingsTemplateAsync(
@@ -391,13 +384,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTranscodingsTemplateRequest 请求对象
+     * @param request CreateTranscodingsTemplateRequest 请求对象
      * @return AsyncInvoker<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse>
      */
     public AsyncInvoker<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse> createTranscodingsTemplateAsyncInvoker(
         CreateTranscodingsTemplateRequest request) {
-        return new AsyncInvoker<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse>(request,
-            LiveMeta.createTranscodingsTemplate, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.createTranscodingsTemplate, hcClient);
     }
 
     /**
@@ -407,7 +399,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUrlAuthchainRequest 请求对象
+     * @param request CreateUrlAuthchainRequest 请求对象
      * @return CompletableFuture<CreateUrlAuthchainResponse>
      */
     public CompletableFuture<CreateUrlAuthchainResponse> createUrlAuthchainAsync(CreateUrlAuthchainRequest request) {
@@ -421,13 +413,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUrlAuthchainRequest 请求对象
+     * @param request CreateUrlAuthchainRequest 请求对象
      * @return AsyncInvoker<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse>
      */
     public AsyncInvoker<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse> createUrlAuthchainAsyncInvoker(
         CreateUrlAuthchainRequest request) {
-        return new AsyncInvoker<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse>(request,
-            LiveMeta.createUrlAuthchain, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.createUrlAuthchain, hcClient);
     }
 
     /**
@@ -437,7 +428,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainRequest 请求对象
+     * @param request DeleteDomainRequest 请求对象
      * @return CompletableFuture<DeleteDomainResponse>
      */
     public CompletableFuture<DeleteDomainResponse> deleteDomainAsync(DeleteDomainRequest request) {
@@ -451,12 +442,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainRequest 请求对象
+     * @param request DeleteDomainRequest 请求对象
      * @return AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
      */
     public AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainAsyncInvoker(
         DeleteDomainRequest request) {
-        return new AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse>(request, LiveMeta.deleteDomain, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.deleteDomain, hcClient);
     }
 
     /**
@@ -466,7 +457,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainKeyChainRequest 请求对象
+     * @param request DeleteDomainKeyChainRequest 请求对象
      * @return CompletableFuture<DeleteDomainKeyChainResponse>
      */
     public CompletableFuture<DeleteDomainKeyChainResponse> deleteDomainKeyChainAsync(
@@ -481,13 +472,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainKeyChainRequest 请求对象
+     * @param request DeleteDomainKeyChainRequest 请求对象
      * @return AsyncInvoker<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse>
      */
     public AsyncInvoker<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse> deleteDomainKeyChainAsyncInvoker(
         DeleteDomainKeyChainRequest request) {
-        return new AsyncInvoker<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse>(request,
-            LiveMeta.deleteDomainKeyChain, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.deleteDomainKeyChain, hcClient);
     }
 
     /**
@@ -497,7 +487,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainMappingRequest 请求对象
+     * @param request DeleteDomainMappingRequest 请求对象
      * @return CompletableFuture<DeleteDomainMappingResponse>
      */
     public CompletableFuture<DeleteDomainMappingResponse> deleteDomainMappingAsync(DeleteDomainMappingRequest request) {
@@ -511,13 +501,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainMappingRequest 请求对象
+     * @param request DeleteDomainMappingRequest 请求对象
      * @return AsyncInvoker<DeleteDomainMappingRequest, DeleteDomainMappingResponse>
      */
     public AsyncInvoker<DeleteDomainMappingRequest, DeleteDomainMappingResponse> deleteDomainMappingAsyncInvoker(
         DeleteDomainMappingRequest request) {
-        return new AsyncInvoker<DeleteDomainMappingRequest, DeleteDomainMappingResponse>(request,
-            LiveMeta.deleteDomainMapping, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.deleteDomainMapping, hcClient);
     }
 
     /**
@@ -527,7 +516,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublishTemplateRequest 请求对象
+     * @param request DeletePublishTemplateRequest 请求对象
      * @return CompletableFuture<DeletePublishTemplateResponse>
      */
     public CompletableFuture<DeletePublishTemplateResponse> deletePublishTemplateAsync(
@@ -542,13 +531,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublishTemplateRequest 请求对象
+     * @param request DeletePublishTemplateRequest 请求对象
      * @return AsyncInvoker<DeletePublishTemplateRequest, DeletePublishTemplateResponse>
      */
     public AsyncInvoker<DeletePublishTemplateRequest, DeletePublishTemplateResponse> deletePublishTemplateAsyncInvoker(
         DeletePublishTemplateRequest request) {
-        return new AsyncInvoker<DeletePublishTemplateRequest, DeletePublishTemplateResponse>(request,
-            LiveMeta.deletePublishTemplate, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.deletePublishTemplate, hcClient);
     }
 
     /**
@@ -558,7 +546,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordCallbackConfigRequest 请求对象
+     * @param request DeleteRecordCallbackConfigRequest 请求对象
      * @return CompletableFuture<DeleteRecordCallbackConfigResponse>
      */
     public CompletableFuture<DeleteRecordCallbackConfigResponse> deleteRecordCallbackConfigAsync(
@@ -573,13 +561,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordCallbackConfigRequest 请求对象
+     * @param request DeleteRecordCallbackConfigRequest 请求对象
      * @return AsyncInvoker<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse>
      */
     public AsyncInvoker<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse> deleteRecordCallbackConfigAsyncInvoker(
         DeleteRecordCallbackConfigRequest request) {
-        return new AsyncInvoker<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse>(request,
-            LiveMeta.deleteRecordCallbackConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.deleteRecordCallbackConfig, hcClient);
     }
 
     /**
@@ -589,7 +576,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordRuleRequest 请求对象
+     * @param request DeleteRecordRuleRequest 请求对象
      * @return CompletableFuture<DeleteRecordRuleResponse>
      */
     public CompletableFuture<DeleteRecordRuleResponse> deleteRecordRuleAsync(DeleteRecordRuleRequest request) {
@@ -603,13 +590,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordRuleRequest 请求对象
+     * @param request DeleteRecordRuleRequest 请求对象
      * @return AsyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse>
      */
     public AsyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse> deleteRecordRuleAsyncInvoker(
         DeleteRecordRuleRequest request) {
-        return new AsyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse>(request, LiveMeta.deleteRecordRule,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.deleteRecordRule, hcClient);
     }
 
     /**
@@ -619,7 +605,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotConfigRequest 请求对象
+     * @param request DeleteSnapshotConfigRequest 请求对象
      * @return CompletableFuture<DeleteSnapshotConfigResponse>
      */
     public CompletableFuture<DeleteSnapshotConfigResponse> deleteSnapshotConfigAsync(
@@ -634,13 +620,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotConfigRequest 请求对象
+     * @param request DeleteSnapshotConfigRequest 请求对象
      * @return AsyncInvoker<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse>
      */
     public AsyncInvoker<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse> deleteSnapshotConfigAsyncInvoker(
         DeleteSnapshotConfigRequest request) {
-        return new AsyncInvoker<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse>(request,
-            LiveMeta.deleteSnapshotConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.deleteSnapshotConfig, hcClient);
     }
 
     /**
@@ -650,7 +635,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStreamForbiddenRequest 请求对象
+     * @param request DeleteStreamForbiddenRequest 请求对象
      * @return CompletableFuture<DeleteStreamForbiddenResponse>
      */
     public CompletableFuture<DeleteStreamForbiddenResponse> deleteStreamForbiddenAsync(
@@ -665,13 +650,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStreamForbiddenRequest 请求对象
+     * @param request DeleteStreamForbiddenRequest 请求对象
      * @return AsyncInvoker<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse>
      */
     public AsyncInvoker<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse> deleteStreamForbiddenAsyncInvoker(
         DeleteStreamForbiddenRequest request) {
-        return new AsyncInvoker<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse>(request,
-            LiveMeta.deleteStreamForbidden, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.deleteStreamForbidden, hcClient);
     }
 
     /**
@@ -681,7 +665,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTranscodingsTemplateRequest 请求对象
+     * @param request DeleteTranscodingsTemplateRequest 请求对象
      * @return CompletableFuture<DeleteTranscodingsTemplateResponse>
      */
     public CompletableFuture<DeleteTranscodingsTemplateResponse> deleteTranscodingsTemplateAsync(
@@ -696,13 +680,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTranscodingsTemplateRequest 请求对象
+     * @param request DeleteTranscodingsTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse>
      */
     public AsyncInvoker<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse> deleteTranscodingsTemplateAsyncInvoker(
         DeleteTranscodingsTemplateRequest request) {
-        return new AsyncInvoker<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse>(request,
-            LiveMeta.deleteTranscodingsTemplate, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.deleteTranscodingsTemplate, hcClient);
     }
 
     /**
@@ -712,7 +695,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDelayConfigRequest 请求对象
+     * @param request ListDelayConfigRequest 请求对象
      * @return CompletableFuture<ListDelayConfigResponse>
      */
     public CompletableFuture<ListDelayConfigResponse> listDelayConfigAsync(ListDelayConfigRequest request) {
@@ -726,13 +709,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDelayConfigRequest 请求对象
+     * @param request ListDelayConfigRequest 请求对象
      * @return AsyncInvoker<ListDelayConfigRequest, ListDelayConfigResponse>
      */
     public AsyncInvoker<ListDelayConfigRequest, ListDelayConfigResponse> listDelayConfigAsyncInvoker(
         ListDelayConfigRequest request) {
-        return new AsyncInvoker<ListDelayConfigRequest, ListDelayConfigResponse>(request, LiveMeta.listDelayConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listDelayConfig, hcClient);
     }
 
     /**
@@ -742,7 +724,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGeoBlockingConfigRequest 请求对象
+     * @param request ListGeoBlockingConfigRequest 请求对象
      * @return CompletableFuture<ListGeoBlockingConfigResponse>
      */
     public CompletableFuture<ListGeoBlockingConfigResponse> listGeoBlockingConfigAsync(
@@ -757,13 +739,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGeoBlockingConfigRequest 请求对象
+     * @param request ListGeoBlockingConfigRequest 请求对象
      * @return AsyncInvoker<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse>
      */
     public AsyncInvoker<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse> listGeoBlockingConfigAsyncInvoker(
         ListGeoBlockingConfigRequest request) {
-        return new AsyncInvoker<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse>(request,
-            LiveMeta.listGeoBlockingConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listGeoBlockingConfig, hcClient);
     }
 
     /**
@@ -776,7 +757,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIpAuthListRequest 请求对象
+     * @param request ListIpAuthListRequest 请求对象
      * @return CompletableFuture<ListIpAuthListResponse>
      */
     public CompletableFuture<ListIpAuthListResponse> listIpAuthListAsync(ListIpAuthListRequest request) {
@@ -793,13 +774,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIpAuthListRequest 请求对象
+     * @param request ListIpAuthListRequest 请求对象
      * @return AsyncInvoker<ListIpAuthListRequest, ListIpAuthListResponse>
      */
     public AsyncInvoker<ListIpAuthListRequest, ListIpAuthListResponse> listIpAuthListAsyncInvoker(
         ListIpAuthListRequest request) {
-        return new AsyncInvoker<ListIpAuthListRequest, ListIpAuthListResponse>(request, LiveMeta.listIpAuthList,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listIpAuthList, hcClient);
     }
 
     /**
@@ -809,7 +789,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveSampleLogsRequest 请求对象
+     * @param request ListLiveSampleLogsRequest 请求对象
      * @return CompletableFuture<ListLiveSampleLogsResponse>
      */
     public CompletableFuture<ListLiveSampleLogsResponse> listLiveSampleLogsAsync(ListLiveSampleLogsRequest request) {
@@ -823,13 +803,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveSampleLogsRequest 请求对象
+     * @param request ListLiveSampleLogsRequest 请求对象
      * @return AsyncInvoker<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse>
      */
     public AsyncInvoker<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse> listLiveSampleLogsAsyncInvoker(
         ListLiveSampleLogsRequest request) {
-        return new AsyncInvoker<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse>(request,
-            LiveMeta.listLiveSampleLogs, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listLiveSampleLogs, hcClient);
     }
 
     /**
@@ -839,7 +818,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveStreamsOnlineRequest 请求对象
+     * @param request ListLiveStreamsOnlineRequest 请求对象
      * @return CompletableFuture<ListLiveStreamsOnlineResponse>
      */
     public CompletableFuture<ListLiveStreamsOnlineResponse> listLiveStreamsOnlineAsync(
@@ -854,13 +833,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveStreamsOnlineRequest 请求对象
+     * @param request ListLiveStreamsOnlineRequest 请求对象
      * @return AsyncInvoker<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse>
      */
     public AsyncInvoker<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse> listLiveStreamsOnlineAsyncInvoker(
         ListLiveStreamsOnlineRequest request) {
-        return new AsyncInvoker<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse>(request,
-            LiveMeta.listLiveStreamsOnline, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listLiveStreamsOnline, hcClient);
     }
 
     /**
@@ -870,7 +848,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublishTemplateRequest 请求对象
+     * @param request ListPublishTemplateRequest 请求对象
      * @return CompletableFuture<ListPublishTemplateResponse>
      */
     public CompletableFuture<ListPublishTemplateResponse> listPublishTemplateAsync(ListPublishTemplateRequest request) {
@@ -884,13 +862,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublishTemplateRequest 请求对象
+     * @param request ListPublishTemplateRequest 请求对象
      * @return AsyncInvoker<ListPublishTemplateRequest, ListPublishTemplateResponse>
      */
     public AsyncInvoker<ListPublishTemplateRequest, ListPublishTemplateResponse> listPublishTemplateAsyncInvoker(
         ListPublishTemplateRequest request) {
-        return new AsyncInvoker<ListPublishTemplateRequest, ListPublishTemplateResponse>(request,
-            LiveMeta.listPublishTemplate, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listPublishTemplate, hcClient);
     }
 
     /**
@@ -900,7 +877,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordCallbackConfigsRequest 请求对象
+     * @param request ListRecordCallbackConfigsRequest 请求对象
      * @return CompletableFuture<ListRecordCallbackConfigsResponse>
      */
     public CompletableFuture<ListRecordCallbackConfigsResponse> listRecordCallbackConfigsAsync(
@@ -915,13 +892,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordCallbackConfigsRequest 请求对象
+     * @param request ListRecordCallbackConfigsRequest 请求对象
      * @return AsyncInvoker<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse>
      */
     public AsyncInvoker<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse> listRecordCallbackConfigsAsyncInvoker(
         ListRecordCallbackConfigsRequest request) {
-        return new AsyncInvoker<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse>(request,
-            LiveMeta.listRecordCallbackConfigs, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listRecordCallbackConfigs, hcClient);
     }
 
     /**
@@ -931,7 +907,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordContentsRequest 请求对象
+     * @param request ListRecordContentsRequest 请求对象
      * @return CompletableFuture<ListRecordContentsResponse>
      */
     public CompletableFuture<ListRecordContentsResponse> listRecordContentsAsync(ListRecordContentsRequest request) {
@@ -945,13 +921,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordContentsRequest 请求对象
+     * @param request ListRecordContentsRequest 请求对象
      * @return AsyncInvoker<ListRecordContentsRequest, ListRecordContentsResponse>
      */
     public AsyncInvoker<ListRecordContentsRequest, ListRecordContentsResponse> listRecordContentsAsyncInvoker(
         ListRecordContentsRequest request) {
-        return new AsyncInvoker<ListRecordContentsRequest, ListRecordContentsResponse>(request,
-            LiveMeta.listRecordContents, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listRecordContents, hcClient);
     }
 
     /**
@@ -961,7 +936,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordRulesRequest 请求对象
+     * @param request ListRecordRulesRequest 请求对象
      * @return CompletableFuture<ListRecordRulesResponse>
      */
     public CompletableFuture<ListRecordRulesResponse> listRecordRulesAsync(ListRecordRulesRequest request) {
@@ -975,13 +950,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordRulesRequest 请求对象
+     * @param request ListRecordRulesRequest 请求对象
      * @return AsyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse>
      */
     public AsyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse> listRecordRulesAsyncInvoker(
         ListRecordRulesRequest request) {
-        return new AsyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse>(request, LiveMeta.listRecordRules,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listRecordRules, hcClient);
     }
 
     /**
@@ -991,7 +965,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotConfigsRequest 请求对象
+     * @param request ListSnapshotConfigsRequest 请求对象
      * @return CompletableFuture<ListSnapshotConfigsResponse>
      */
     public CompletableFuture<ListSnapshotConfigsResponse> listSnapshotConfigsAsync(ListSnapshotConfigsRequest request) {
@@ -1005,13 +979,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotConfigsRequest 请求对象
+     * @param request ListSnapshotConfigsRequest 请求对象
      * @return AsyncInvoker<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse>
      */
     public AsyncInvoker<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse> listSnapshotConfigsAsyncInvoker(
         ListSnapshotConfigsRequest request) {
-        return new AsyncInvoker<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse>(request,
-            LiveMeta.listSnapshotConfigs, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listSnapshotConfigs, hcClient);
     }
 
     /**
@@ -1021,7 +994,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStreamForbiddenRequest 请求对象
+     * @param request ListStreamForbiddenRequest 请求对象
      * @return CompletableFuture<ListStreamForbiddenResponse>
      */
     public CompletableFuture<ListStreamForbiddenResponse> listStreamForbiddenAsync(ListStreamForbiddenRequest request) {
@@ -1035,13 +1008,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStreamForbiddenRequest 请求对象
+     * @param request ListStreamForbiddenRequest 请求对象
      * @return AsyncInvoker<ListStreamForbiddenRequest, ListStreamForbiddenResponse>
      */
     public AsyncInvoker<ListStreamForbiddenRequest, ListStreamForbiddenResponse> listStreamForbiddenAsyncInvoker(
         ListStreamForbiddenRequest request) {
-        return new AsyncInvoker<ListStreamForbiddenRequest, ListStreamForbiddenResponse>(request,
-            LiveMeta.listStreamForbidden, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.listStreamForbidden, hcClient);
     }
 
     /**
@@ -1051,7 +1023,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunRecordRequest 请求对象
+     * @param request RunRecordRequest 请求对象
      * @return CompletableFuture<RunRecordResponse>
      */
     public CompletableFuture<RunRecordResponse> runRecordAsync(RunRecordRequest request) {
@@ -1065,11 +1037,11 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunRecordRequest 请求对象
+     * @param request RunRecordRequest 请求对象
      * @return AsyncInvoker<RunRecordRequest, RunRecordResponse>
      */
     public AsyncInvoker<RunRecordRequest, RunRecordResponse> runRecordAsyncInvoker(RunRecordRequest request) {
-        return new AsyncInvoker<RunRecordRequest, RunRecordResponse>(request, LiveMeta.runRecord, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.runRecord, hcClient);
     }
 
     /**
@@ -1079,7 +1051,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainRequest 请求对象
+     * @param request ShowDomainRequest 请求对象
      * @return CompletableFuture<ShowDomainResponse>
      */
     public CompletableFuture<ShowDomainResponse> showDomainAsync(ShowDomainRequest request) {
@@ -1093,11 +1065,11 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainRequest 请求对象
+     * @param request ShowDomainRequest 请求对象
      * @return AsyncInvoker<ShowDomainRequest, ShowDomainResponse>
      */
     public AsyncInvoker<ShowDomainRequest, ShowDomainResponse> showDomainAsyncInvoker(ShowDomainRequest request) {
-        return new AsyncInvoker<ShowDomainRequest, ShowDomainResponse>(request, LiveMeta.showDomain, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.showDomain, hcClient);
     }
 
     /**
@@ -1107,7 +1079,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainKeyChainRequest 请求对象
+     * @param request ShowDomainKeyChainRequest 请求对象
      * @return CompletableFuture<ShowDomainKeyChainResponse>
      */
     public CompletableFuture<ShowDomainKeyChainResponse> showDomainKeyChainAsync(ShowDomainKeyChainRequest request) {
@@ -1121,13 +1093,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainKeyChainRequest 请求对象
+     * @param request ShowDomainKeyChainRequest 请求对象
      * @return AsyncInvoker<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse>
      */
     public AsyncInvoker<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> showDomainKeyChainAsyncInvoker(
         ShowDomainKeyChainRequest request) {
-        return new AsyncInvoker<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse>(request,
-            LiveMeta.showDomainKeyChain, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.showDomainKeyChain, hcClient);
     }
 
     /**
@@ -1137,7 +1108,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPullSourcesConfigRequest 请求对象
+     * @param request ShowPullSourcesConfigRequest 请求对象
      * @return CompletableFuture<ShowPullSourcesConfigResponse>
      */
     public CompletableFuture<ShowPullSourcesConfigResponse> showPullSourcesConfigAsync(
@@ -1152,13 +1123,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPullSourcesConfigRequest 请求对象
+     * @param request ShowPullSourcesConfigRequest 请求对象
      * @return AsyncInvoker<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse>
      */
     public AsyncInvoker<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse> showPullSourcesConfigAsyncInvoker(
         ShowPullSourcesConfigRequest request) {
-        return new AsyncInvoker<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse>(request,
-            LiveMeta.showPullSourcesConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.showPullSourcesConfig, hcClient);
     }
 
     /**
@@ -1168,7 +1138,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordCallbackConfigRequest 请求对象
+     * @param request ShowRecordCallbackConfigRequest 请求对象
      * @return CompletableFuture<ShowRecordCallbackConfigResponse>
      */
     public CompletableFuture<ShowRecordCallbackConfigResponse> showRecordCallbackConfigAsync(
@@ -1183,13 +1153,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordCallbackConfigRequest 请求对象
+     * @param request ShowRecordCallbackConfigRequest 请求对象
      * @return AsyncInvoker<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse>
      */
     public AsyncInvoker<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse> showRecordCallbackConfigAsyncInvoker(
         ShowRecordCallbackConfigRequest request) {
-        return new AsyncInvoker<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse>(request,
-            LiveMeta.showRecordCallbackConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.showRecordCallbackConfig, hcClient);
     }
 
     /**
@@ -1199,7 +1168,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordRuleRequest 请求对象
+     * @param request ShowRecordRuleRequest 请求对象
      * @return CompletableFuture<ShowRecordRuleResponse>
      */
     public CompletableFuture<ShowRecordRuleResponse> showRecordRuleAsync(ShowRecordRuleRequest request) {
@@ -1213,13 +1182,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordRuleRequest 请求对象
+     * @param request ShowRecordRuleRequest 请求对象
      * @return AsyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse>
      */
     public AsyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse> showRecordRuleAsyncInvoker(
         ShowRecordRuleRequest request) {
-        return new AsyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse>(request, LiveMeta.showRecordRule,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.showRecordRule, hcClient);
     }
 
     /**
@@ -1229,7 +1197,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTranscodingsTemplateRequest 请求对象
+     * @param request ShowTranscodingsTemplateRequest 请求对象
      * @return CompletableFuture<ShowTranscodingsTemplateResponse>
      */
     public CompletableFuture<ShowTranscodingsTemplateResponse> showTranscodingsTemplateAsync(
@@ -1244,13 +1212,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTranscodingsTemplateRequest 请求对象
+     * @param request ShowTranscodingsTemplateRequest 请求对象
      * @return AsyncInvoker<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse>
      */
     public AsyncInvoker<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse> showTranscodingsTemplateAsyncInvoker(
         ShowTranscodingsTemplateRequest request) {
-        return new AsyncInvoker<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse>(request,
-            LiveMeta.showTranscodingsTemplate, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.showTranscodingsTemplate, hcClient);
     }
 
     /**
@@ -1260,7 +1227,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDelayConfigRequest 请求对象
+     * @param request UpdateDelayConfigRequest 请求对象
      * @return CompletableFuture<UpdateDelayConfigResponse>
      */
     public CompletableFuture<UpdateDelayConfigResponse> updateDelayConfigAsync(UpdateDelayConfigRequest request) {
@@ -1274,13 +1241,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDelayConfigRequest 请求对象
+     * @param request UpdateDelayConfigRequest 请求对象
      * @return AsyncInvoker<UpdateDelayConfigRequest, UpdateDelayConfigResponse>
      */
     public AsyncInvoker<UpdateDelayConfigRequest, UpdateDelayConfigResponse> updateDelayConfigAsyncInvoker(
         UpdateDelayConfigRequest request) {
-        return new AsyncInvoker<UpdateDelayConfigRequest, UpdateDelayConfigResponse>(request,
-            LiveMeta.updateDelayConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateDelayConfig, hcClient);
     }
 
     /**
@@ -1290,7 +1256,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainRequest 请求对象
+     * @param request UpdateDomainRequest 请求对象
      * @return CompletableFuture<UpdateDomainResponse>
      */
     public CompletableFuture<UpdateDomainResponse> updateDomainAsync(UpdateDomainRequest request) {
@@ -1304,12 +1270,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainRequest 请求对象
+     * @param request UpdateDomainRequest 请求对象
      * @return AsyncInvoker<UpdateDomainRequest, UpdateDomainResponse>
      */
     public AsyncInvoker<UpdateDomainRequest, UpdateDomainResponse> updateDomainAsyncInvoker(
         UpdateDomainRequest request) {
-        return new AsyncInvoker<UpdateDomainRequest, UpdateDomainResponse>(request, LiveMeta.updateDomain, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateDomain, hcClient);
     }
 
     /**
@@ -1319,7 +1285,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainIp6SwitchRequest 请求对象
+     * @param request UpdateDomainIp6SwitchRequest 请求对象
      * @return CompletableFuture<UpdateDomainIp6SwitchResponse>
      */
     public CompletableFuture<UpdateDomainIp6SwitchResponse> updateDomainIp6SwitchAsync(
@@ -1334,13 +1300,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainIp6SwitchRequest 请求对象
+     * @param request UpdateDomainIp6SwitchRequest 请求对象
      * @return AsyncInvoker<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse>
      */
     public AsyncInvoker<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse> updateDomainIp6SwitchAsyncInvoker(
         UpdateDomainIp6SwitchRequest request) {
-        return new AsyncInvoker<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse>(request,
-            LiveMeta.updateDomainIp6Switch, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateDomainIp6Switch, hcClient);
     }
 
     /**
@@ -1350,7 +1315,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainKeyChainRequest 请求对象
+     * @param request UpdateDomainKeyChainRequest 请求对象
      * @return CompletableFuture<UpdateDomainKeyChainResponse>
      */
     public CompletableFuture<UpdateDomainKeyChainResponse> updateDomainKeyChainAsync(
@@ -1365,13 +1330,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainKeyChainRequest 请求对象
+     * @param request UpdateDomainKeyChainRequest 请求对象
      * @return AsyncInvoker<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse>
      */
     public AsyncInvoker<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse> updateDomainKeyChainAsyncInvoker(
         UpdateDomainKeyChainRequest request) {
-        return new AsyncInvoker<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse>(request,
-            LiveMeta.updateDomainKeyChain, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateDomainKeyChain, hcClient);
     }
 
     /**
@@ -1381,7 +1345,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGeoBlockingConfigRequest 请求对象
+     * @param request UpdateGeoBlockingConfigRequest 请求对象
      * @return CompletableFuture<UpdateGeoBlockingConfigResponse>
      */
     public CompletableFuture<UpdateGeoBlockingConfigResponse> updateGeoBlockingConfigAsync(
@@ -1396,13 +1360,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGeoBlockingConfigRequest 请求对象
+     * @param request UpdateGeoBlockingConfigRequest 请求对象
      * @return AsyncInvoker<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse>
      */
     public AsyncInvoker<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse> updateGeoBlockingConfigAsyncInvoker(
         UpdateGeoBlockingConfigRequest request) {
-        return new AsyncInvoker<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse>(request,
-            LiveMeta.updateGeoBlockingConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateGeoBlockingConfig, hcClient);
     }
 
     /**
@@ -1415,7 +1378,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpAuthListRequest 请求对象
+     * @param request UpdateIpAuthListRequest 请求对象
      * @return CompletableFuture<UpdateIpAuthListResponse>
      */
     public CompletableFuture<UpdateIpAuthListResponse> updateIpAuthListAsync(UpdateIpAuthListRequest request) {
@@ -1432,13 +1395,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpAuthListRequest 请求对象
+     * @param request UpdateIpAuthListRequest 请求对象
      * @return AsyncInvoker<UpdateIpAuthListRequest, UpdateIpAuthListResponse>
      */
     public AsyncInvoker<UpdateIpAuthListRequest, UpdateIpAuthListResponse> updateIpAuthListAsyncInvoker(
         UpdateIpAuthListRequest request) {
-        return new AsyncInvoker<UpdateIpAuthListRequest, UpdateIpAuthListResponse>(request, LiveMeta.updateIpAuthList,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateIpAuthList, hcClient);
     }
 
     /**
@@ -1448,7 +1410,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublishTemplateRequest 请求对象
+     * @param request UpdatePublishTemplateRequest 请求对象
      * @return CompletableFuture<UpdatePublishTemplateResponse>
      */
     public CompletableFuture<UpdatePublishTemplateResponse> updatePublishTemplateAsync(
@@ -1463,13 +1425,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublishTemplateRequest 请求对象
+     * @param request UpdatePublishTemplateRequest 请求对象
      * @return AsyncInvoker<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse>
      */
     public AsyncInvoker<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse> updatePublishTemplateAsyncInvoker(
         UpdatePublishTemplateRequest request) {
-        return new AsyncInvoker<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse>(request,
-            LiveMeta.updatePublishTemplate, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updatePublishTemplate, hcClient);
     }
 
     /**
@@ -1479,7 +1440,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePullSourcesConfigRequest 请求对象
+     * @param request UpdatePullSourcesConfigRequest 请求对象
      * @return CompletableFuture<UpdatePullSourcesConfigResponse>
      */
     public CompletableFuture<UpdatePullSourcesConfigResponse> updatePullSourcesConfigAsync(
@@ -1494,13 +1455,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePullSourcesConfigRequest 请求对象
+     * @param request UpdatePullSourcesConfigRequest 请求对象
      * @return AsyncInvoker<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse>
      */
     public AsyncInvoker<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse> updatePullSourcesConfigAsyncInvoker(
         UpdatePullSourcesConfigRequest request) {
-        return new AsyncInvoker<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse>(request,
-            LiveMeta.updatePullSourcesConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updatePullSourcesConfig, hcClient);
     }
 
     /**
@@ -1510,7 +1470,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordCallbackConfigRequest 请求对象
+     * @param request UpdateRecordCallbackConfigRequest 请求对象
      * @return CompletableFuture<UpdateRecordCallbackConfigResponse>
      */
     public CompletableFuture<UpdateRecordCallbackConfigResponse> updateRecordCallbackConfigAsync(
@@ -1525,13 +1485,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordCallbackConfigRequest 请求对象
+     * @param request UpdateRecordCallbackConfigRequest 请求对象
      * @return AsyncInvoker<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse>
      */
     public AsyncInvoker<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse> updateRecordCallbackConfigAsyncInvoker(
         UpdateRecordCallbackConfigRequest request) {
-        return new AsyncInvoker<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse>(request,
-            LiveMeta.updateRecordCallbackConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateRecordCallbackConfig, hcClient);
     }
 
     /**
@@ -1541,7 +1500,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordRuleRequest 请求对象
+     * @param request UpdateRecordRuleRequest 请求对象
      * @return CompletableFuture<UpdateRecordRuleResponse>
      */
     public CompletableFuture<UpdateRecordRuleResponse> updateRecordRuleAsync(UpdateRecordRuleRequest request) {
@@ -1555,13 +1514,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordRuleRequest 请求对象
+     * @param request UpdateRecordRuleRequest 请求对象
      * @return AsyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse>
      */
     public AsyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse> updateRecordRuleAsyncInvoker(
         UpdateRecordRuleRequest request) {
-        return new AsyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse>(request, LiveMeta.updateRecordRule,
-            hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateRecordRule, hcClient);
     }
 
     /**
@@ -1571,7 +1529,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSnapshotConfigRequest 请求对象
+     * @param request UpdateSnapshotConfigRequest 请求对象
      * @return CompletableFuture<UpdateSnapshotConfigResponse>
      */
     public CompletableFuture<UpdateSnapshotConfigResponse> updateSnapshotConfigAsync(
@@ -1586,13 +1544,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSnapshotConfigRequest 请求对象
+     * @param request UpdateSnapshotConfigRequest 请求对象
      * @return AsyncInvoker<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse>
      */
     public AsyncInvoker<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse> updateSnapshotConfigAsyncInvoker(
         UpdateSnapshotConfigRequest request) {
-        return new AsyncInvoker<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse>(request,
-            LiveMeta.updateSnapshotConfig, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateSnapshotConfig, hcClient);
     }
 
     /**
@@ -1602,7 +1559,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStreamForbiddenRequest 请求对象
+     * @param request UpdateStreamForbiddenRequest 请求对象
      * @return CompletableFuture<UpdateStreamForbiddenResponse>
      */
     public CompletableFuture<UpdateStreamForbiddenResponse> updateStreamForbiddenAsync(
@@ -1617,13 +1574,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStreamForbiddenRequest 请求对象
+     * @param request UpdateStreamForbiddenRequest 请求对象
      * @return AsyncInvoker<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse>
      */
     public AsyncInvoker<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse> updateStreamForbiddenAsyncInvoker(
         UpdateStreamForbiddenRequest request) {
-        return new AsyncInvoker<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse>(request,
-            LiveMeta.updateStreamForbidden, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateStreamForbidden, hcClient);
     }
 
     /**
@@ -1633,7 +1589,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTranscodingsTemplateRequest 请求对象
+     * @param request UpdateTranscodingsTemplateRequest 请求对象
      * @return CompletableFuture<UpdateTranscodingsTemplateResponse>
      */
     public CompletableFuture<UpdateTranscodingsTemplateResponse> updateTranscodingsTemplateAsync(
@@ -1648,13 +1604,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTranscodingsTemplateRequest 请求对象
+     * @param request UpdateTranscodingsTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse>
      */
     public AsyncInvoker<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse> updateTranscodingsTemplateAsyncInvoker(
         UpdateTranscodingsTemplateRequest request) {
-        return new AsyncInvoker<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse>(request,
-            LiveMeta.updateTranscodingsTemplate, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateTranscodingsTemplate, hcClient);
     }
 
     /**
@@ -1664,7 +1619,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainHttpsCertRequest 请求对象
+     * @param request DeleteDomainHttpsCertRequest 请求对象
      * @return CompletableFuture<DeleteDomainHttpsCertResponse>
      */
     public CompletableFuture<DeleteDomainHttpsCertResponse> deleteDomainHttpsCertAsync(
@@ -1679,13 +1634,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDomainHttpsCertRequest 请求对象
+     * @param request DeleteDomainHttpsCertRequest 请求对象
      * @return AsyncInvoker<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse>
      */
     public AsyncInvoker<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse> deleteDomainHttpsCertAsyncInvoker(
         DeleteDomainHttpsCertRequest request) {
-        return new AsyncInvoker<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse>(request,
-            LiveMeta.deleteDomainHttpsCert, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.deleteDomainHttpsCert, hcClient);
     }
 
     /**
@@ -1695,7 +1649,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainHttpsCertRequest 请求对象
+     * @param request ShowDomainHttpsCertRequest 请求对象
      * @return CompletableFuture<ShowDomainHttpsCertResponse>
      */
     public CompletableFuture<ShowDomainHttpsCertResponse> showDomainHttpsCertAsync(ShowDomainHttpsCertRequest request) {
@@ -1709,13 +1663,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainHttpsCertRequest 请求对象
+     * @param request ShowDomainHttpsCertRequest 请求对象
      * @return AsyncInvoker<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse>
      */
     public AsyncInvoker<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse> showDomainHttpsCertAsyncInvoker(
         ShowDomainHttpsCertRequest request) {
-        return new AsyncInvoker<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse>(request,
-            LiveMeta.showDomainHttpsCert, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.showDomainHttpsCert, hcClient);
     }
 
     /**
@@ -1725,7 +1678,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainHttpsCertRequest 请求对象
+     * @param request UpdateDomainHttpsCertRequest 请求对象
      * @return CompletableFuture<UpdateDomainHttpsCertResponse>
      */
     public CompletableFuture<UpdateDomainHttpsCertResponse> updateDomainHttpsCertAsync(
@@ -1740,13 +1693,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainHttpsCertRequest 请求对象
+     * @param request UpdateDomainHttpsCertRequest 请求对象
      * @return AsyncInvoker<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse>
      */
     public AsyncInvoker<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse> updateDomainHttpsCertAsyncInvoker(
         UpdateDomainHttpsCertRequest request) {
-        return new AsyncInvoker<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse>(request,
-            LiveMeta.updateDomainHttpsCert, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateDomainHttpsCert, hcClient);
     }
 
     /**
@@ -1756,7 +1708,7 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateObsBucketAuthorityPublicRequest 请求对象
+     * @param request UpdateObsBucketAuthorityPublicRequest 请求对象
      * @return CompletableFuture<UpdateObsBucketAuthorityPublicResponse>
      */
     public CompletableFuture<UpdateObsBucketAuthorityPublicResponse> updateObsBucketAuthorityPublicAsync(
@@ -1771,13 +1723,12 @@ public class LiveAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateObsBucketAuthorityPublicRequest 请求对象
+     * @param request UpdateObsBucketAuthorityPublicRequest 请求对象
      * @return AsyncInvoker<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse>
      */
     public AsyncInvoker<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse> updateObsBucketAuthorityPublicAsyncInvoker(
         UpdateObsBucketAuthorityPublicRequest request) {
-        return new AsyncInvoker<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse>(request,
-            LiveMeta.updateObsBucketAuthorityPublic, hcClient);
+        return new AsyncInvoker<>(request, LiveMeta.updateObsBucketAuthorityPublic, hcClient);
     }
 
 }

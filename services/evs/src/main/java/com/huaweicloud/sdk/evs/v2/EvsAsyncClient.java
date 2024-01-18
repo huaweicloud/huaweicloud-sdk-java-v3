@@ -87,7 +87,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateVolumeTagsRequest 请求对象
+     * @param request BatchCreateVolumeTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateVolumeTagsResponse>
      */
     public CompletableFuture<BatchCreateVolumeTagsResponse> batchCreateVolumeTagsAsync(
@@ -105,13 +105,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateVolumeTagsRequest 请求对象
+     * @param request BatchCreateVolumeTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse>
      */
     public AsyncInvoker<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse> batchCreateVolumeTagsAsyncInvoker(
         BatchCreateVolumeTagsRequest request) {
-        return new AsyncInvoker<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse>(request,
-            EvsMeta.batchCreateVolumeTags, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.batchCreateVolumeTags, hcClient);
     }
 
     /**
@@ -121,7 +120,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteVolumeTagsRequest 请求对象
+     * @param request BatchDeleteVolumeTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteVolumeTagsResponse>
      */
     public CompletableFuture<BatchDeleteVolumeTagsResponse> batchDeleteVolumeTagsAsync(
@@ -136,13 +135,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteVolumeTagsRequest 请求对象
+     * @param request BatchDeleteVolumeTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse>
      */
     public AsyncInvoker<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse> batchDeleteVolumeTagsAsyncInvoker(
         BatchDeleteVolumeTagsRequest request) {
-        return new AsyncInvoker<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse>(request,
-            EvsMeta.batchDeleteVolumeTags, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.batchDeleteVolumeTags, hcClient);
     }
 
     /**
@@ -152,7 +150,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderAcceptVolumeTransferRequest 请求对象
+     * @param request CinderAcceptVolumeTransferRequest 请求对象
      * @return CompletableFuture<CinderAcceptVolumeTransferResponse>
      */
     public CompletableFuture<CinderAcceptVolumeTransferResponse> cinderAcceptVolumeTransferAsync(
@@ -167,13 +165,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderAcceptVolumeTransferRequest 请求对象
+     * @param request CinderAcceptVolumeTransferRequest 请求对象
      * @return AsyncInvoker<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse>
      */
     public AsyncInvoker<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse> cinderAcceptVolumeTransferAsyncInvoker(
         CinderAcceptVolumeTransferRequest request) {
-        return new AsyncInvoker<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse>(request,
-            EvsMeta.cinderAcceptVolumeTransfer, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.cinderAcceptVolumeTransfer, hcClient);
     }
 
     /**
@@ -184,7 +181,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderCreateVolumeTransferRequest 请求对象
+     * @param request CinderCreateVolumeTransferRequest 请求对象
      * @return CompletableFuture<CinderCreateVolumeTransferResponse>
      */
     public CompletableFuture<CinderCreateVolumeTransferResponse> cinderCreateVolumeTransferAsync(
@@ -200,13 +197,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderCreateVolumeTransferRequest 请求对象
+     * @param request CinderCreateVolumeTransferRequest 请求对象
      * @return AsyncInvoker<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse>
      */
     public AsyncInvoker<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse> cinderCreateVolumeTransferAsyncInvoker(
         CinderCreateVolumeTransferRequest request) {
-        return new AsyncInvoker<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse>(request,
-            EvsMeta.cinderCreateVolumeTransfer, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.cinderCreateVolumeTransfer, hcClient);
     }
 
     /**
@@ -216,7 +212,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderDeleteVolumeTransferRequest 请求对象
+     * @param request CinderDeleteVolumeTransferRequest 请求对象
      * @return CompletableFuture<CinderDeleteVolumeTransferResponse>
      */
     public CompletableFuture<CinderDeleteVolumeTransferResponse> cinderDeleteVolumeTransferAsync(
@@ -231,13 +227,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderDeleteVolumeTransferRequest 请求对象
+     * @param request CinderDeleteVolumeTransferRequest 请求对象
      * @return AsyncInvoker<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse>
      */
     public AsyncInvoker<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse> cinderDeleteVolumeTransferAsyncInvoker(
         CinderDeleteVolumeTransferRequest request) {
-        return new AsyncInvoker<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse>(request,
-            EvsMeta.cinderDeleteVolumeTransfer, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.cinderDeleteVolumeTransfer, hcClient);
     }
 
     /**
@@ -247,7 +242,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListAvailabilityZonesRequest 请求对象
+     * @param request CinderListAvailabilityZonesRequest 请求对象
      * @return CompletableFuture<CinderListAvailabilityZonesResponse>
      */
     public CompletableFuture<CinderListAvailabilityZonesResponse> cinderListAvailabilityZonesAsync(
@@ -262,13 +257,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListAvailabilityZonesRequest 请求对象
+     * @param request CinderListAvailabilityZonesRequest 请求对象
      * @return AsyncInvoker<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse>
      */
     public AsyncInvoker<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> cinderListAvailabilityZonesAsyncInvoker(
         CinderListAvailabilityZonesRequest request) {
-        return new AsyncInvoker<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse>(request,
-            EvsMeta.cinderListAvailabilityZones, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.cinderListAvailabilityZones, hcClient);
     }
 
     /**
@@ -278,7 +272,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListQuotasRequest 请求对象
+     * @param request CinderListQuotasRequest 请求对象
      * @return CompletableFuture<CinderListQuotasResponse>
      */
     public CompletableFuture<CinderListQuotasResponse> cinderListQuotasAsync(CinderListQuotasRequest request) {
@@ -292,13 +286,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListQuotasRequest 请求对象
+     * @param request CinderListQuotasRequest 请求对象
      * @return AsyncInvoker<CinderListQuotasRequest, CinderListQuotasResponse>
      */
     public AsyncInvoker<CinderListQuotasRequest, CinderListQuotasResponse> cinderListQuotasAsyncInvoker(
         CinderListQuotasRequest request) {
-        return new AsyncInvoker<CinderListQuotasRequest, CinderListQuotasResponse>(request, EvsMeta.cinderListQuotas,
-            hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.cinderListQuotas, hcClient);
     }
 
     /**
@@ -308,7 +301,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListVolumeTransfersRequest 请求对象
+     * @param request CinderListVolumeTransfersRequest 请求对象
      * @return CompletableFuture<CinderListVolumeTransfersResponse>
      */
     public CompletableFuture<CinderListVolumeTransfersResponse> cinderListVolumeTransfersAsync(
@@ -323,13 +316,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListVolumeTransfersRequest 请求对象
+     * @param request CinderListVolumeTransfersRequest 请求对象
      * @return AsyncInvoker<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse>
      */
     public AsyncInvoker<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse> cinderListVolumeTransfersAsyncInvoker(
         CinderListVolumeTransfersRequest request) {
-        return new AsyncInvoker<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse>(request,
-            EvsMeta.cinderListVolumeTransfers, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.cinderListVolumeTransfers, hcClient);
     }
 
     /**
@@ -339,7 +331,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListVolumeTypesRequest 请求对象
+     * @param request CinderListVolumeTypesRequest 请求对象
      * @return CompletableFuture<CinderListVolumeTypesResponse>
      */
     public CompletableFuture<CinderListVolumeTypesResponse> cinderListVolumeTypesAsync(
@@ -354,13 +346,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderListVolumeTypesRequest 请求对象
+     * @param request CinderListVolumeTypesRequest 请求对象
      * @return AsyncInvoker<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse>
      */
     public AsyncInvoker<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse> cinderListVolumeTypesAsyncInvoker(
         CinderListVolumeTypesRequest request) {
-        return new AsyncInvoker<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse>(request,
-            EvsMeta.cinderListVolumeTypes, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.cinderListVolumeTypes, hcClient);
     }
 
     /**
@@ -370,7 +361,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderShowVolumeTransferRequest 请求对象
+     * @param request CinderShowVolumeTransferRequest 请求对象
      * @return CompletableFuture<CinderShowVolumeTransferResponse>
      */
     public CompletableFuture<CinderShowVolumeTransferResponse> cinderShowVolumeTransferAsync(
@@ -385,13 +376,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CinderShowVolumeTransferRequest 请求对象
+     * @param request CinderShowVolumeTransferRequest 请求对象
      * @return AsyncInvoker<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse>
      */
     public AsyncInvoker<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse> cinderShowVolumeTransferAsyncInvoker(
         CinderShowVolumeTransferRequest request) {
-        return new AsyncInvoker<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse>(request,
-            EvsMeta.cinderShowVolumeTransfer, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.cinderShowVolumeTransfer, hcClient);
     }
 
     /**
@@ -401,7 +391,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSnapshotRequest 请求对象
+     * @param request CreateSnapshotRequest 请求对象
      * @return CompletableFuture<CreateSnapshotResponse>
      */
     public CompletableFuture<CreateSnapshotResponse> createSnapshotAsync(CreateSnapshotRequest request) {
@@ -415,13 +405,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSnapshotRequest 请求对象
+     * @param request CreateSnapshotRequest 请求对象
      * @return AsyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>
      */
     public AsyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshotAsyncInvoker(
         CreateSnapshotRequest request) {
-        return new AsyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>(request, EvsMeta.createSnapshot,
-            hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.createSnapshot, hcClient);
     }
 
     /**
@@ -436,7 +425,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVolumeRequest 请求对象
+     * @param request CreateVolumeRequest 请求对象
      * @return CompletableFuture<CreateVolumeResponse>
      */
     public CompletableFuture<CreateVolumeResponse> createVolumeAsync(CreateVolumeRequest request) {
@@ -455,12 +444,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVolumeRequest 请求对象
+     * @param request CreateVolumeRequest 请求对象
      * @return AsyncInvoker<CreateVolumeRequest, CreateVolumeResponse>
      */
     public AsyncInvoker<CreateVolumeRequest, CreateVolumeResponse> createVolumeAsyncInvoker(
         CreateVolumeRequest request) {
-        return new AsyncInvoker<CreateVolumeRequest, CreateVolumeResponse>(request, EvsMeta.createVolume, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.createVolume, hcClient);
     }
 
     /**
@@ -470,7 +459,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotRequest 请求对象
+     * @param request DeleteSnapshotRequest 请求对象
      * @return CompletableFuture<DeleteSnapshotResponse>
      */
     public CompletableFuture<DeleteSnapshotResponse> deleteSnapshotAsync(DeleteSnapshotRequest request) {
@@ -484,13 +473,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotRequest 请求对象
+     * @param request DeleteSnapshotRequest 请求对象
      * @return AsyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse>
      */
     public AsyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshotAsyncInvoker(
         DeleteSnapshotRequest request) {
-        return new AsyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse>(request, EvsMeta.deleteSnapshot,
-            hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.deleteSnapshot, hcClient);
     }
 
     /**
@@ -500,7 +488,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVolumeRequest 请求对象
+     * @param request DeleteVolumeRequest 请求对象
      * @return CompletableFuture<DeleteVolumeResponse>
      */
     public CompletableFuture<DeleteVolumeResponse> deleteVolumeAsync(DeleteVolumeRequest request) {
@@ -514,12 +502,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVolumeRequest 请求对象
+     * @param request DeleteVolumeRequest 请求对象
      * @return AsyncInvoker<DeleteVolumeRequest, DeleteVolumeResponse>
      */
     public AsyncInvoker<DeleteVolumeRequest, DeleteVolumeResponse> deleteVolumeAsyncInvoker(
         DeleteVolumeRequest request) {
-        return new AsyncInvoker<DeleteVolumeRequest, DeleteVolumeResponse>(request, EvsMeta.deleteVolume, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.deleteVolume, hcClient);
     }
 
     /**
@@ -529,7 +517,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotsRequest 请求对象
+     * @param request ListSnapshotsRequest 请求对象
      * @return CompletableFuture<ListSnapshotsResponse>
      */
     public CompletableFuture<ListSnapshotsResponse> listSnapshotsAsync(ListSnapshotsRequest request) {
@@ -543,12 +531,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotsRequest 请求对象
+     * @param request ListSnapshotsRequest 请求对象
      * @return AsyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>
      */
     public AsyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsAsyncInvoker(
         ListSnapshotsRequest request) {
-        return new AsyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>(request, EvsMeta.listSnapshots, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.listSnapshots, hcClient);
     }
 
     /**
@@ -558,7 +546,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumeTagsRequest 请求对象
+     * @param request ListVolumeTagsRequest 请求对象
      * @return CompletableFuture<ListVolumeTagsResponse>
      */
     public CompletableFuture<ListVolumeTagsResponse> listVolumeTagsAsync(ListVolumeTagsRequest request) {
@@ -572,13 +560,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumeTagsRequest 请求对象
+     * @param request ListVolumeTagsRequest 请求对象
      * @return AsyncInvoker<ListVolumeTagsRequest, ListVolumeTagsResponse>
      */
     public AsyncInvoker<ListVolumeTagsRequest, ListVolumeTagsResponse> listVolumeTagsAsyncInvoker(
         ListVolumeTagsRequest request) {
-        return new AsyncInvoker<ListVolumeTagsRequest, ListVolumeTagsResponse>(request, EvsMeta.listVolumeTags,
-            hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.listVolumeTags, hcClient);
     }
 
     /**
@@ -588,7 +575,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumesRequest 请求对象
+     * @param request ListVolumesRequest 请求对象
      * @return CompletableFuture<ListVolumesResponse>
      */
     public CompletableFuture<ListVolumesResponse> listVolumesAsync(ListVolumesRequest request) {
@@ -602,11 +589,11 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumesRequest 请求对象
+     * @param request ListVolumesRequest 请求对象
      * @return AsyncInvoker<ListVolumesRequest, ListVolumesResponse>
      */
     public AsyncInvoker<ListVolumesRequest, ListVolumesResponse> listVolumesAsyncInvoker(ListVolumesRequest request) {
-        return new AsyncInvoker<ListVolumesRequest, ListVolumesResponse>(request, EvsMeta.listVolumes, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.listVolumes, hcClient);
     }
 
     /**
@@ -616,7 +603,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumesByTagsRequest 请求对象
+     * @param request ListVolumesByTagsRequest 请求对象
      * @return CompletableFuture<ListVolumesByTagsResponse>
      */
     public CompletableFuture<ListVolumesByTagsResponse> listVolumesByTagsAsync(ListVolumesByTagsRequest request) {
@@ -630,13 +617,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVolumesByTagsRequest 请求对象
+     * @param request ListVolumesByTagsRequest 请求对象
      * @return AsyncInvoker<ListVolumesByTagsRequest, ListVolumesByTagsResponse>
      */
     public AsyncInvoker<ListVolumesByTagsRequest, ListVolumesByTagsResponse> listVolumesByTagsAsyncInvoker(
         ListVolumesByTagsRequest request) {
-        return new AsyncInvoker<ListVolumesByTagsRequest, ListVolumesByTagsResponse>(request, EvsMeta.listVolumesByTags,
-            hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.listVolumesByTags, hcClient);
     }
 
     /**
@@ -646,7 +632,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyVolumeQoSRequest 请求对象
+     * @param request ModifyVolumeQoSRequest 请求对象
      * @return CompletableFuture<ModifyVolumeQoSResponse>
      */
     public CompletableFuture<ModifyVolumeQoSResponse> modifyVolumeQoSAsync(ModifyVolumeQoSRequest request) {
@@ -660,13 +646,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyVolumeQoSRequest 请求对象
+     * @param request ModifyVolumeQoSRequest 请求对象
      * @return AsyncInvoker<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse>
      */
     public AsyncInvoker<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> modifyVolumeQoSAsyncInvoker(
         ModifyVolumeQoSRequest request) {
-        return new AsyncInvoker<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse>(request, EvsMeta.modifyVolumeQoS,
-            hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.modifyVolumeQoS, hcClient);
     }
 
     /**
@@ -681,7 +666,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeVolumeRequest 请求对象
+     * @param request ResizeVolumeRequest 请求对象
      * @return CompletableFuture<ResizeVolumeResponse>
      */
     public CompletableFuture<ResizeVolumeResponse> resizeVolumeAsync(ResizeVolumeRequest request) {
@@ -700,12 +685,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeVolumeRequest 请求对象
+     * @param request ResizeVolumeRequest 请求对象
      * @return AsyncInvoker<ResizeVolumeRequest, ResizeVolumeResponse>
      */
     public AsyncInvoker<ResizeVolumeRequest, ResizeVolumeResponse> resizeVolumeAsyncInvoker(
         ResizeVolumeRequest request) {
-        return new AsyncInvoker<ResizeVolumeRequest, ResizeVolumeResponse>(request, EvsMeta.resizeVolume, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.resizeVolume, hcClient);
     }
 
     /**
@@ -715,7 +700,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollbackSnapshotRequest 请求对象
+     * @param request RollbackSnapshotRequest 请求对象
      * @return CompletableFuture<RollbackSnapshotResponse>
      */
     public CompletableFuture<RollbackSnapshotResponse> rollbackSnapshotAsync(RollbackSnapshotRequest request) {
@@ -729,13 +714,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollbackSnapshotRequest 请求对象
+     * @param request RollbackSnapshotRequest 请求对象
      * @return AsyncInvoker<RollbackSnapshotRequest, RollbackSnapshotResponse>
      */
     public AsyncInvoker<RollbackSnapshotRequest, RollbackSnapshotResponse> rollbackSnapshotAsyncInvoker(
         RollbackSnapshotRequest request) {
-        return new AsyncInvoker<RollbackSnapshotRequest, RollbackSnapshotResponse>(request, EvsMeta.rollbackSnapshot,
-            hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.rollbackSnapshot, hcClient);
     }
 
     /**
@@ -746,7 +730,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
      */
     public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
@@ -761,11 +745,11 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
-        return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, EvsMeta.showJob, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.showJob, hcClient);
     }
 
     /**
@@ -775,7 +759,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSnapshotRequest 请求对象
+     * @param request ShowSnapshotRequest 请求对象
      * @return CompletableFuture<ShowSnapshotResponse>
      */
     public CompletableFuture<ShowSnapshotResponse> showSnapshotAsync(ShowSnapshotRequest request) {
@@ -789,12 +773,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSnapshotRequest 请求对象
+     * @param request ShowSnapshotRequest 请求对象
      * @return AsyncInvoker<ShowSnapshotRequest, ShowSnapshotResponse>
      */
     public AsyncInvoker<ShowSnapshotRequest, ShowSnapshotResponse> showSnapshotAsyncInvoker(
         ShowSnapshotRequest request) {
-        return new AsyncInvoker<ShowSnapshotRequest, ShowSnapshotResponse>(request, EvsMeta.showSnapshot, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.showSnapshot, hcClient);
     }
 
     /**
@@ -804,7 +788,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeRequest 请求对象
+     * @param request ShowVolumeRequest 请求对象
      * @return CompletableFuture<ShowVolumeResponse>
      */
     public CompletableFuture<ShowVolumeResponse> showVolumeAsync(ShowVolumeRequest request) {
@@ -818,11 +802,11 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeRequest 请求对象
+     * @param request ShowVolumeRequest 请求对象
      * @return AsyncInvoker<ShowVolumeRequest, ShowVolumeResponse>
      */
     public AsyncInvoker<ShowVolumeRequest, ShowVolumeResponse> showVolumeAsyncInvoker(ShowVolumeRequest request) {
-        return new AsyncInvoker<ShowVolumeRequest, ShowVolumeResponse>(request, EvsMeta.showVolume, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.showVolume, hcClient);
     }
 
     /**
@@ -832,7 +816,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeTagsRequest 请求对象
+     * @param request ShowVolumeTagsRequest 请求对象
      * @return CompletableFuture<ShowVolumeTagsResponse>
      */
     public CompletableFuture<ShowVolumeTagsResponse> showVolumeTagsAsync(ShowVolumeTagsRequest request) {
@@ -846,13 +830,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeTagsRequest 请求对象
+     * @param request ShowVolumeTagsRequest 请求对象
      * @return AsyncInvoker<ShowVolumeTagsRequest, ShowVolumeTagsResponse>
      */
     public AsyncInvoker<ShowVolumeTagsRequest, ShowVolumeTagsResponse> showVolumeTagsAsyncInvoker(
         ShowVolumeTagsRequest request) {
-        return new AsyncInvoker<ShowVolumeTagsRequest, ShowVolumeTagsResponse>(request, EvsMeta.showVolumeTags,
-            hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.showVolumeTags, hcClient);
     }
 
     /**
@@ -862,7 +845,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSnapshotRequest 请求对象
+     * @param request UpdateSnapshotRequest 请求对象
      * @return CompletableFuture<UpdateSnapshotResponse>
      */
     public CompletableFuture<UpdateSnapshotResponse> updateSnapshotAsync(UpdateSnapshotRequest request) {
@@ -876,13 +859,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSnapshotRequest 请求对象
+     * @param request UpdateSnapshotRequest 请求对象
      * @return AsyncInvoker<UpdateSnapshotRequest, UpdateSnapshotResponse>
      */
     public AsyncInvoker<UpdateSnapshotRequest, UpdateSnapshotResponse> updateSnapshotAsyncInvoker(
         UpdateSnapshotRequest request) {
-        return new AsyncInvoker<UpdateSnapshotRequest, UpdateSnapshotResponse>(request, EvsMeta.updateSnapshot,
-            hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.updateSnapshot, hcClient);
     }
 
     /**
@@ -892,7 +874,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVolumeRequest 请求对象
+     * @param request UpdateVolumeRequest 请求对象
      * @return CompletableFuture<UpdateVolumeResponse>
      */
     public CompletableFuture<UpdateVolumeResponse> updateVolumeAsync(UpdateVolumeRequest request) {
@@ -906,12 +888,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVolumeRequest 请求对象
+     * @param request UpdateVolumeRequest 请求对象
      * @return AsyncInvoker<UpdateVolumeRequest, UpdateVolumeResponse>
      */
     public AsyncInvoker<UpdateVolumeRequest, UpdateVolumeResponse> updateVolumeAsyncInvoker(
         UpdateVolumeRequest request) {
-        return new AsyncInvoker<UpdateVolumeRequest, UpdateVolumeResponse>(request, EvsMeta.updateVolume, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.updateVolume, hcClient);
     }
 
     /**
@@ -921,7 +903,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionsRequest 请求对象
+     * @param request ListVersionsRequest 请求对象
      * @return CompletableFuture<ListVersionsResponse>
      */
     public CompletableFuture<ListVersionsResponse> listVersionsAsync(ListVersionsRequest request) {
@@ -935,12 +917,12 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionsRequest 请求对象
+     * @param request ListVersionsRequest 请求对象
      * @return AsyncInvoker<ListVersionsRequest, ListVersionsResponse>
      */
     public AsyncInvoker<ListVersionsRequest, ListVersionsResponse> listVersionsAsyncInvoker(
         ListVersionsRequest request) {
-        return new AsyncInvoker<ListVersionsRequest, ListVersionsResponse>(request, EvsMeta.listVersions, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.listVersions, hcClient);
     }
 
     /**
@@ -950,7 +932,7 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return CompletableFuture<ShowVersionResponse>
      */
     public CompletableFuture<ShowVersionResponse> showVersionAsync(ShowVersionRequest request) {
@@ -964,11 +946,11 @@ public class EvsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return AsyncInvoker<ShowVersionRequest, ShowVersionResponse>
      */
     public AsyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionAsyncInvoker(ShowVersionRequest request) {
-        return new AsyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, EvsMeta.showVersion, hcClient);
+        return new AsyncInvoker<>(request, EvsMeta.showVersion, hcClient);
     }
 
 }

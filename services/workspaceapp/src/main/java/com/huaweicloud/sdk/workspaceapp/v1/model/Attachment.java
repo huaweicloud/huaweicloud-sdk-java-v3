@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 配置关联成员
+ * 配置关联成员。
  */
 public class Attachment {
 
@@ -26,7 +26,7 @@ public class Attachment {
     }
 
     /**
-     * 目标
+     * 目标。
      * @return attach
      */
     public String getAttach() {

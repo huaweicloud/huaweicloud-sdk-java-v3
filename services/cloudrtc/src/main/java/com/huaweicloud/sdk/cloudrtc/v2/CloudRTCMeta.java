@@ -80,9 +80,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class CloudRTCMeta {
 
-    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForcreateApp();
+    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForCreateApp();
 
-    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForcreateApp() {
+    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForCreateApp() {
         // basic
         HttpRequestDef.Builder<CreateAppRequest, CreateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppRequest.class, CreateAppResponse.class)
@@ -95,30 +95,22 @@ public class CloudRTCMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getAuthorization, CreateAppRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getXSdkDate, CreateAppRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getXProjectId, CreateAppRequest::setXProjectId));
         builder.<AppReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppReq.class),
-            f -> f.withMarshaller(CreateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getBody, CreateAppRequest::setBody));
 
         // response
 
@@ -131,9 +123,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<CreateIndividualStreamJobRequest, CreateIndividualStreamJobResponse> createIndividualStreamJob =
-        genForcreateIndividualStreamJob();
+        genForCreateIndividualStreamJob();
 
-    private static HttpRequestDef<CreateIndividualStreamJobRequest, CreateIndividualStreamJobResponse> genForcreateIndividualStreamJob() {
+    private static HttpRequestDef<CreateIndividualStreamJobRequest, CreateIndividualStreamJobResponse> genForCreateIndividualStreamJob() {
         // basic
         HttpRequestDef.Builder<CreateIndividualStreamJobRequest, CreateIndividualStreamJobResponse> builder =
             HttpRequestDef
@@ -149,37 +141,32 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateIndividualStreamJobRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateIndividualStreamJobRequest::getAppId,
+                CreateIndividualStreamJobRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateIndividualStreamJobRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(CreateIndividualStreamJobRequest::getAuthorization,
+                CreateIndividualStreamJobRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateIndividualStreamJobRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateIndividualStreamJobRequest::getXSdkDate,
+                CreateIndividualStreamJobRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateIndividualStreamJobRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(CreateIndividualStreamJobRequest::getXProjectId,
+                CreateIndividualStreamJobRequest::setXProjectId));
         builder.<IndividualStreamJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IndividualStreamJobReq.class),
-            f -> f.withMarshaller(CreateIndividualStreamJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateIndividualStreamJobRequest::getBody,
+                CreateIndividualStreamJobRequest::setBody));
 
         // response
 
@@ -192,9 +179,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateMixJobRequest, CreateMixJobResponse> createMixJob = genForcreateMixJob();
+    public static final HttpRequestDef<CreateMixJobRequest, CreateMixJobResponse> createMixJob = genForCreateMixJob();
 
-    private static HttpRequestDef<CreateMixJobRequest, CreateMixJobResponse> genForcreateMixJob() {
+    private static HttpRequestDef<CreateMixJobRequest, CreateMixJobResponse> genForCreateMixJob() {
         // basic
         HttpRequestDef.Builder<CreateMixJobRequest, CreateMixJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMixJobRequest.class, CreateMixJobResponse.class)
@@ -207,37 +194,27 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMixJobRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateMixJobRequest::getAppId, CreateMixJobRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMixJobRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(CreateMixJobRequest::getAuthorization, CreateMixJobRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMixJobRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateMixJobRequest::getXSdkDate, CreateMixJobRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMixJobRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(CreateMixJobRequest::getXProjectId, CreateMixJobRequest::setXProjectId));
         builder.<MixJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MixJobReq.class),
-            f -> f.withMarshaller(CreateMixJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMixJobRequest::getBody, CreateMixJobRequest::setBody));
 
         // response
 
@@ -250,9 +227,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<CreateRecordRuleRequest, CreateRecordRuleResponse> createRecordRule =
-        genForcreateRecordRule();
+        genForCreateRecordRule();
 
-    private static HttpRequestDef<CreateRecordRuleRequest, CreateRecordRuleResponse> genForcreateRecordRule() {
+    private static HttpRequestDef<CreateRecordRuleRequest, CreateRecordRuleResponse> genForCreateRecordRule() {
         // basic
         HttpRequestDef.Builder<CreateRecordRuleRequest, CreateRecordRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRecordRuleRequest.class, CreateRecordRuleResponse.class)
@@ -265,37 +242,28 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecordRuleRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateRecordRuleRequest::getAppId, CreateRecordRuleRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecordRuleRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(CreateRecordRuleRequest::getAuthorization,
+                CreateRecordRuleRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecordRuleRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateRecordRuleRequest::getXSdkDate, CreateRecordRuleRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecordRuleRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(CreateRecordRuleRequest::getXProjectId, CreateRecordRuleRequest::setXProjectId));
         builder.<RecordRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecordRuleReq.class),
-            f -> f.withMarshaller(CreateRecordRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRecordRuleRequest::getBody, CreateRecordRuleRequest::setBody));
 
         // response
 
@@ -307,9 +275,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genFordeleteApp();
+    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genForDeleteApp();
 
-    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genFordeleteApp() {
+    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genForDeleteApp() {
         // basic
         HttpRequestDef.Builder<DeleteAppRequest, DeleteAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppRequest.class, DeleteAppResponse.class)
@@ -322,30 +290,22 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getAppId, DeleteAppRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getAuthorization, DeleteAppRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getXSdkDate, DeleteAppRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getXProjectId, DeleteAppRequest::setXProjectId));
 
         // response
 
@@ -358,9 +318,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<DeleteRecordRuleRequest, DeleteRecordRuleResponse> deleteRecordRule =
-        genFordeleteRecordRule();
+        genForDeleteRecordRule();
 
-    private static HttpRequestDef<DeleteRecordRuleRequest, DeleteRecordRuleResponse> genFordeleteRecordRule() {
+    private static HttpRequestDef<DeleteRecordRuleRequest, DeleteRecordRuleResponse> genForDeleteRecordRule() {
         // basic
         HttpRequestDef.Builder<DeleteRecordRuleRequest, DeleteRecordRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordRuleRequest.class, DeleteRecordRuleResponse.class)
@@ -373,37 +333,28 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordRuleRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordRuleRequest::getAppId, DeleteRecordRuleRequest::setAppId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordRuleRequest::getRuleId, DeleteRecordRuleRequest::setRuleId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordRuleRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordRuleRequest::getAuthorization,
+                DeleteRecordRuleRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordRuleRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordRuleRequest::getXSdkDate, DeleteRecordRuleRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordRuleRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordRuleRequest::getXProjectId, DeleteRecordRuleRequest::setXProjectId));
 
         // response
 
@@ -415,9 +366,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForlistApps();
+    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForListApps();
 
-    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForlistApps() {
+    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForListApps() {
         // basic
         HttpRequestDef.Builder<ListAppsRequest, ListAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsRequest.class, ListAppsResponse.class)
@@ -430,44 +381,32 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAppsRequest.StateEnum.class),
-            f -> f.withMarshaller(ListAppsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getState, ListAppsRequest::setState));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getOffset, ListAppsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getLimit, ListAppsRequest::setLimit));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getAuthorization, ListAppsRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getXSdkDate, ListAppsRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getXProjectId, ListAppsRequest::setXProjectId));
 
         // response
 
@@ -480,9 +419,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRecordRulesRequest, ListRecordRulesResponse> listRecordRules =
-        genForlistRecordRules();
+        genForListRecordRules();
 
-    private static HttpRequestDef<ListRecordRulesRequest, ListRecordRulesResponse> genForlistRecordRules() {
+    private static HttpRequestDef<ListRecordRulesRequest, ListRecordRulesResponse> genForListRecordRules() {
         // basic
         HttpRequestDef.Builder<ListRecordRulesRequest, ListRecordRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRecordRulesRequest.class, ListRecordRulesResponse.class)
@@ -495,44 +434,32 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getAppId, ListRecordRulesRequest::setAppId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getOffset, ListRecordRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getLimit, ListRecordRulesRequest::setLimit));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getAuthorization, ListRecordRulesRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getXSdkDate, ListRecordRulesRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getXProjectId, ListRecordRulesRequest::setXProjectId));
 
         // response
 
@@ -544,9 +471,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RemoveRoomRequest, RemoveRoomResponse> removeRoom = genForremoveRoom();
+    public static final HttpRequestDef<RemoveRoomRequest, RemoveRoomResponse> removeRoom = genForRemoveRoom();
 
-    private static HttpRequestDef<RemoveRoomRequest, RemoveRoomResponse> genForremoveRoom() {
+    private static HttpRequestDef<RemoveRoomRequest, RemoveRoomResponse> genForRemoveRoom() {
         // basic
         HttpRequestDef.Builder<RemoveRoomRequest, RemoveRoomResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RemoveRoomRequest.class, RemoveRoomResponse.class)
@@ -559,37 +486,27 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveRoomRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(RemoveRoomRequest::getAppId, RemoveRoomRequest::setAppId));
         builder.<String>withRequestField("room_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveRoomRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(RemoveRoomRequest::getRoomId, RemoveRoomRequest::setRoomId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveRoomRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(RemoveRoomRequest::getAuthorization, RemoveRoomRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveRoomRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(RemoveRoomRequest::getXSdkDate, RemoveRoomRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveRoomRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(RemoveRoomRequest::getXProjectId, RemoveRoomRequest::setXProjectId));
 
         // response
 
@@ -601,9 +518,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RemoveUsersRequest, RemoveUsersResponse> removeUsers = genForremoveUsers();
+    public static final HttpRequestDef<RemoveUsersRequest, RemoveUsersResponse> removeUsers = genForRemoveUsers();
 
-    private static HttpRequestDef<RemoveUsersRequest, RemoveUsersResponse> genForremoveUsers() {
+    private static HttpRequestDef<RemoveUsersRequest, RemoveUsersResponse> genForRemoveUsers() {
         // basic
         HttpRequestDef.Builder<RemoveUsersRequest, RemoveUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RemoveUsersRequest.class, RemoveUsersResponse.class)
@@ -616,44 +533,32 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveUsersRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(RemoveUsersRequest::getAppId, RemoveUsersRequest::setAppId));
         builder.<String>withRequestField("room_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveUsersRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(RemoveUsersRequest::getRoomId, RemoveUsersRequest::setRoomId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveUsersRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(RemoveUsersRequest::getAuthorization, RemoveUsersRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveUsersRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(RemoveUsersRequest::getXSdkDate, RemoveUsersRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveUsersRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(RemoveUsersRequest::getXProjectId, RemoveUsersRequest::setXProjectId));
         builder.<RemoveUsersReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemoveUsersReq.class),
-            f -> f.withMarshaller(RemoveUsersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RemoveUsersRequest::getBody, RemoveUsersRequest::setBody));
 
         // response
 
@@ -665,9 +570,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForshowApp();
+    public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForShowApp();
 
-    private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForshowApp() {
+    private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForShowApp() {
         // basic
         HttpRequestDef.Builder<ShowAppRequest, ShowAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppRequest.class, ShowAppResponse.class)
@@ -680,30 +585,22 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowAppRequest::getAppId, ShowAppRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ShowAppRequest::getAuthorization, ShowAppRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowAppRequest::getXSdkDate, ShowAppRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowAppRequest::getXProjectId, ShowAppRequest::setXProjectId));
 
         // response
 
@@ -716,9 +613,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ShowAutoRecordRequest, ShowAutoRecordResponse> showAutoRecord =
-        genForshowAutoRecord();
+        genForShowAutoRecord();
 
-    private static HttpRequestDef<ShowAutoRecordRequest, ShowAutoRecordResponse> genForshowAutoRecord() {
+    private static HttpRequestDef<ShowAutoRecordRequest, ShowAutoRecordResponse> genForShowAutoRecord() {
         // basic
         HttpRequestDef.Builder<ShowAutoRecordRequest, ShowAutoRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAutoRecordRequest.class, ShowAutoRecordResponse.class)
@@ -731,30 +628,22 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAutoRecordRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowAutoRecordRequest::getAppId, ShowAutoRecordRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAutoRecordRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ShowAutoRecordRequest::getAuthorization, ShowAutoRecordRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAutoRecordRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowAutoRecordRequest::getXSdkDate, ShowAutoRecordRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAutoRecordRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowAutoRecordRequest::getXProjectId, ShowAutoRecordRequest::setXProjectId));
 
         // response
 
@@ -767,9 +656,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ShowIndividualStreamJobRequest, ShowIndividualStreamJobResponse> showIndividualStreamJob =
-        genForshowIndividualStreamJob();
+        genForShowIndividualStreamJob();
 
-    private static HttpRequestDef<ShowIndividualStreamJobRequest, ShowIndividualStreamJobResponse> genForshowIndividualStreamJob() {
+    private static HttpRequestDef<ShowIndividualStreamJobRequest, ShowIndividualStreamJobResponse> genForShowIndividualStreamJob() {
         // basic
         HttpRequestDef.Builder<ShowIndividualStreamJobRequest, ShowIndividualStreamJobResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowIndividualStreamJobRequest.class, ShowIndividualStreamJobResponse.class)
@@ -782,37 +671,30 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIndividualStreamJobRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowIndividualStreamJobRequest::getAppId, ShowIndividualStreamJobRequest::setAppId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIndividualStreamJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowIndividualStreamJobRequest::getJobId, ShowIndividualStreamJobRequest::setJobId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIndividualStreamJobRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ShowIndividualStreamJobRequest::getAuthorization,
+                ShowIndividualStreamJobRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIndividualStreamJobRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowIndividualStreamJobRequest::getXSdkDate,
+                ShowIndividualStreamJobRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIndividualStreamJobRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowIndividualStreamJobRequest::getXProjectId,
+                ShowIndividualStreamJobRequest::setXProjectId));
 
         // response
 
@@ -825,9 +707,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMixJobRequest, ShowMixJobResponse> showMixJob = genForshowMixJob();
+    public static final HttpRequestDef<ShowMixJobRequest, ShowMixJobResponse> showMixJob = genForShowMixJob();
 
-    private static HttpRequestDef<ShowMixJobRequest, ShowMixJobResponse> genForshowMixJob() {
+    private static HttpRequestDef<ShowMixJobRequest, ShowMixJobResponse> genForShowMixJob() {
         // basic
         HttpRequestDef.Builder<ShowMixJobRequest, ShowMixJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMixJobRequest.class, ShowMixJobResponse.class)
@@ -840,37 +722,27 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMixJobRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowMixJobRequest::getAppId, ShowMixJobRequest::setAppId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMixJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowMixJobRequest::getJobId, ShowMixJobRequest::setJobId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMixJobRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ShowMixJobRequest::getAuthorization, ShowMixJobRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMixJobRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowMixJobRequest::getXSdkDate, ShowMixJobRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMixJobRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowMixJobRequest::getXProjectId, ShowMixJobRequest::setXProjectId));
 
         // response
 
@@ -883,9 +755,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ShowRecordCallbackRequest, ShowRecordCallbackResponse> showRecordCallback =
-        genForshowRecordCallback();
+        genForShowRecordCallback();
 
-    private static HttpRequestDef<ShowRecordCallbackRequest, ShowRecordCallbackResponse> genForshowRecordCallback() {
+    private static HttpRequestDef<ShowRecordCallbackRequest, ShowRecordCallbackResponse> genForShowRecordCallback() {
         // basic
         HttpRequestDef.Builder<ShowRecordCallbackRequest, ShowRecordCallbackResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecordCallbackRequest.class, ShowRecordCallbackResponse.class)
@@ -898,30 +770,23 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordCallbackRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordCallbackRequest::getAppId, ShowRecordCallbackRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordCallbackRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ShowRecordCallbackRequest::getAuthorization,
+                ShowRecordCallbackRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordCallbackRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowRecordCallbackRequest::getXSdkDate, ShowRecordCallbackRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordCallbackRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordCallbackRequest::getXProjectId, ShowRecordCallbackRequest::setXProjectId));
 
         // response
 
@@ -935,9 +800,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ShowRecordRuleRequest, ShowRecordRuleResponse> showRecordRule =
-        genForshowRecordRule();
+        genForShowRecordRule();
 
-    private static HttpRequestDef<ShowRecordRuleRequest, ShowRecordRuleResponse> genForshowRecordRule() {
+    private static HttpRequestDef<ShowRecordRuleRequest, ShowRecordRuleResponse> genForShowRecordRule() {
         // basic
         HttpRequestDef.Builder<ShowRecordRuleRequest, ShowRecordRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecordRuleRequest.class, ShowRecordRuleResponse.class)
@@ -950,37 +815,27 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordRuleRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordRuleRequest::getAppId, ShowRecordRuleRequest::setAppId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordRuleRequest::getRuleId, ShowRecordRuleRequest::setRuleId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordRuleRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ShowRecordRuleRequest::getAuthorization, ShowRecordRuleRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordRuleRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowRecordRuleRequest::getXSdkDate, ShowRecordRuleRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordRuleRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordRuleRequest::getXProjectId, ShowRecordRuleRequest::setXProjectId));
 
         // response
 
@@ -992,9 +847,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowUrlAuthRequest, ShowUrlAuthResponse> showUrlAuth = genForshowUrlAuth();
+    public static final HttpRequestDef<ShowUrlAuthRequest, ShowUrlAuthResponse> showUrlAuth = genForShowUrlAuth();
 
-    private static HttpRequestDef<ShowUrlAuthRequest, ShowUrlAuthResponse> genForshowUrlAuth() {
+    private static HttpRequestDef<ShowUrlAuthRequest, ShowUrlAuthResponse> genForShowUrlAuth() {
         // basic
         HttpRequestDef.Builder<ShowUrlAuthRequest, ShowUrlAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUrlAuthRequest.class, ShowUrlAuthResponse.class)
@@ -1007,30 +862,22 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlAuthRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowUrlAuthRequest::getAppId, ShowUrlAuthRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlAuthRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ShowUrlAuthRequest::getAuthorization, ShowUrlAuthRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlAuthRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowUrlAuthRequest::getXSdkDate, ShowUrlAuthRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlAuthRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowUrlAuthRequest::getXProjectId, ShowUrlAuthRequest::setXProjectId));
 
         // response
 
@@ -1042,9 +889,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartAppRequest, StartAppResponse> startApp = genForstartApp();
+    public static final HttpRequestDef<StartAppRequest, StartAppResponse> startApp = genForStartApp();
 
-    private static HttpRequestDef<StartAppRequest, StartAppResponse> genForstartApp() {
+    private static HttpRequestDef<StartAppRequest, StartAppResponse> genForStartApp() {
         // basic
         HttpRequestDef.Builder<StartAppRequest, StartAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartAppRequest.class, StartAppResponse.class)
@@ -1057,30 +904,22 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(StartAppRequest::getAppId, StartAppRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartAppRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(StartAppRequest::getAuthorization, StartAppRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartAppRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(StartAppRequest::getXSdkDate, StartAppRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartAppRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(StartAppRequest::getXProjectId, StartAppRequest::setXProjectId));
 
         // response
 
@@ -1092,9 +931,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopAppRequest, StopAppResponse> stopApp = genForstopApp();
+    public static final HttpRequestDef<StopAppRequest, StopAppResponse> stopApp = genForStopApp();
 
-    private static HttpRequestDef<StopAppRequest, StopAppResponse> genForstopApp() {
+    private static HttpRequestDef<StopAppRequest, StopAppResponse> genForStopApp() {
         // basic
         HttpRequestDef.Builder<StopAppRequest, StopAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopAppRequest.class, StopAppResponse.class)
@@ -1107,30 +946,22 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(StopAppRequest::getAppId, StopAppRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopAppRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(StopAppRequest::getAuthorization, StopAppRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopAppRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(StopAppRequest::getXSdkDate, StopAppRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopAppRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(StopAppRequest::getXProjectId, StopAppRequest::setXProjectId));
 
         // response
 
@@ -1143,9 +974,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<StopIndividualStreamJobRequest, StopIndividualStreamJobResponse> stopIndividualStreamJob =
-        genForstopIndividualStreamJob();
+        genForStopIndividualStreamJob();
 
-    private static HttpRequestDef<StopIndividualStreamJobRequest, StopIndividualStreamJobResponse> genForstopIndividualStreamJob() {
+    private static HttpRequestDef<StopIndividualStreamJobRequest, StopIndividualStreamJobResponse> genForStopIndividualStreamJob() {
         // basic
         HttpRequestDef.Builder<StopIndividualStreamJobRequest, StopIndividualStreamJobResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, StopIndividualStreamJobRequest.class, StopIndividualStreamJobResponse.class)
@@ -1158,37 +989,30 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopIndividualStreamJobRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(StopIndividualStreamJobRequest::getAppId, StopIndividualStreamJobRequest::setAppId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopIndividualStreamJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(StopIndividualStreamJobRequest::getJobId, StopIndividualStreamJobRequest::setJobId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopIndividualStreamJobRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(StopIndividualStreamJobRequest::getAuthorization,
+                StopIndividualStreamJobRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopIndividualStreamJobRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(StopIndividualStreamJobRequest::getXSdkDate,
+                StopIndividualStreamJobRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopIndividualStreamJobRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(StopIndividualStreamJobRequest::getXProjectId,
+                StopIndividualStreamJobRequest::setXProjectId));
 
         // response
 
@@ -1201,9 +1025,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopMixJobRequest, StopMixJobResponse> stopMixJob = genForstopMixJob();
+    public static final HttpRequestDef<StopMixJobRequest, StopMixJobResponse> stopMixJob = genForStopMixJob();
 
-    private static HttpRequestDef<StopMixJobRequest, StopMixJobResponse> genForstopMixJob() {
+    private static HttpRequestDef<StopMixJobRequest, StopMixJobResponse> genForStopMixJob() {
         // basic
         HttpRequestDef.Builder<StopMixJobRequest, StopMixJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, StopMixJobRequest.class, StopMixJobResponse.class)
@@ -1216,37 +1040,27 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopMixJobRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(StopMixJobRequest::getAppId, StopMixJobRequest::setAppId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopMixJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(StopMixJobRequest::getJobId, StopMixJobRequest::setJobId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopMixJobRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(StopMixJobRequest::getAuthorization, StopMixJobRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopMixJobRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(StopMixJobRequest::getXSdkDate, StopMixJobRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopMixJobRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(StopMixJobRequest::getXProjectId, StopMixJobRequest::setXProjectId));
 
         // response
 
@@ -1259,9 +1073,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<UpdateAutoRecordRequest, UpdateAutoRecordResponse> updateAutoRecord =
-        genForupdateAutoRecord();
+        genForUpdateAutoRecord();
 
-    private static HttpRequestDef<UpdateAutoRecordRequest, UpdateAutoRecordResponse> genForupdateAutoRecord() {
+    private static HttpRequestDef<UpdateAutoRecordRequest, UpdateAutoRecordResponse> genForUpdateAutoRecord() {
         // basic
         HttpRequestDef.Builder<UpdateAutoRecordRequest, UpdateAutoRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAutoRecordRequest.class, UpdateAutoRecordResponse.class)
@@ -1274,37 +1088,28 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAutoRecordRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateAutoRecordRequest::getAppId, UpdateAutoRecordRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAutoRecordRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(UpdateAutoRecordRequest::getAuthorization,
+                UpdateAutoRecordRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAutoRecordRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateAutoRecordRequest::getXSdkDate, UpdateAutoRecordRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAutoRecordRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateAutoRecordRequest::getXProjectId, UpdateAutoRecordRequest::setXProjectId));
         builder.<AutoRecordModeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AutoRecordModeReq.class),
-            f -> f.withMarshaller(UpdateAutoRecordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAutoRecordRequest::getBody, UpdateAutoRecordRequest::setBody));
 
         // response
 
@@ -1317,9 +1122,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse> updateIndividualStreamJob =
-        genForupdateIndividualStreamJob();
+        genForUpdateIndividualStreamJob();
 
-    private static HttpRequestDef<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse> genForupdateIndividualStreamJob() {
+    private static HttpRequestDef<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse> genForUpdateIndividualStreamJob() {
         // basic
         HttpRequestDef.Builder<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse> builder =
             HttpRequestDef
@@ -1335,44 +1140,38 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getAppId,
+                UpdateIndividualStreamJobRequest::setAppId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getJobId,
+                UpdateIndividualStreamJobRequest::setJobId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getAuthorization,
+                UpdateIndividualStreamJobRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getXSdkDate,
+                UpdateIndividualStreamJobRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getXProjectId,
+                UpdateIndividualStreamJobRequest::setXProjectId));
         builder.<UpdateIndividualJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateIndividualJobReq.class),
-            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateIndividualStreamJobRequest::getBody,
+                UpdateIndividualStreamJobRequest::setBody));
 
         // response
 
@@ -1385,9 +1184,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateMixJobRequest, UpdateMixJobResponse> updateMixJob = genForupdateMixJob();
+    public static final HttpRequestDef<UpdateMixJobRequest, UpdateMixJobResponse> updateMixJob = genForUpdateMixJob();
 
-    private static HttpRequestDef<UpdateMixJobRequest, UpdateMixJobResponse> genForupdateMixJob() {
+    private static HttpRequestDef<UpdateMixJobRequest, UpdateMixJobResponse> genForUpdateMixJob() {
         // basic
         HttpRequestDef.Builder<UpdateMixJobRequest, UpdateMixJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMixJobRequest.class, UpdateMixJobResponse.class)
@@ -1400,44 +1199,32 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMixJobRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateMixJobRequest::getAppId, UpdateMixJobRequest::setAppId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMixJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateMixJobRequest::getJobId, UpdateMixJobRequest::setJobId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMixJobRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(UpdateMixJobRequest::getAuthorization, UpdateMixJobRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMixJobRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateMixJobRequest::getXSdkDate, UpdateMixJobRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMixJobRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateMixJobRequest::getXProjectId, UpdateMixJobRequest::setXProjectId));
         builder.<UpdateMixJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateMixJobReq.class),
-            f -> f.withMarshaller(UpdateMixJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMixJobRequest::getBody, UpdateMixJobRequest::setBody));
 
         // response
 
@@ -1450,9 +1237,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<UpdateRecordCallbackRequest, UpdateRecordCallbackResponse> updateRecordCallback =
-        genForupdateRecordCallback();
+        genForUpdateRecordCallback();
 
-    private static HttpRequestDef<UpdateRecordCallbackRequest, UpdateRecordCallbackResponse> genForupdateRecordCallback() {
+    private static HttpRequestDef<UpdateRecordCallbackRequest, UpdateRecordCallbackResponse> genForUpdateRecordCallback() {
         // basic
         HttpRequestDef.Builder<UpdateRecordCallbackRequest, UpdateRecordCallbackResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateRecordCallbackRequest.class, UpdateRecordCallbackResponse.class)
@@ -1465,37 +1252,29 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordCallbackRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordCallbackRequest::getAppId, UpdateRecordCallbackRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordCallbackRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordCallbackRequest::getAuthorization,
+                UpdateRecordCallbackRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordCallbackRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordCallbackRequest::getXSdkDate, UpdateRecordCallbackRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordCallbackRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordCallbackRequest::getXProjectId,
+                UpdateRecordCallbackRequest::setXProjectId));
         builder.<AppCallbackUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppCallbackUrlReq.class),
-            f -> f.withMarshaller(UpdateRecordCallbackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordCallbackRequest::getBody, UpdateRecordCallbackRequest::setBody));
 
         // response
 
@@ -1509,9 +1288,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<UpdateRecordRuleRequest, UpdateRecordRuleResponse> updateRecordRule =
-        genForupdateRecordRule();
+        genForUpdateRecordRule();
 
-    private static HttpRequestDef<UpdateRecordRuleRequest, UpdateRecordRuleResponse> genForupdateRecordRule() {
+    private static HttpRequestDef<UpdateRecordRuleRequest, UpdateRecordRuleResponse> genForUpdateRecordRule() {
         // basic
         HttpRequestDef.Builder<UpdateRecordRuleRequest, UpdateRecordRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRecordRuleRequest.class, UpdateRecordRuleResponse.class)
@@ -1524,44 +1303,33 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordRuleRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordRuleRequest::getAppId, UpdateRecordRuleRequest::setAppId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordRuleRequest::getRuleId, UpdateRecordRuleRequest::setRuleId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordRuleRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordRuleRequest::getAuthorization,
+                UpdateRecordRuleRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordRuleRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordRuleRequest::getXSdkDate, UpdateRecordRuleRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordRuleRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordRuleRequest::getXProjectId, UpdateRecordRuleRequest::setXProjectId));
         builder.<RecordRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecordRuleReq.class),
-            f -> f.withMarshaller(UpdateRecordRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordRuleRequest::getBody, UpdateRecordRuleRequest::setBody));
 
         // response
 
@@ -1574,9 +1342,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<UpdateUrlAuthRequest, UpdateUrlAuthResponse> updateUrlAuth =
-        genForupdateUrlAuth();
+        genForUpdateUrlAuth();
 
-    private static HttpRequestDef<UpdateUrlAuthRequest, UpdateUrlAuthResponse> genForupdateUrlAuth() {
+    private static HttpRequestDef<UpdateUrlAuthRequest, UpdateUrlAuthResponse> genForUpdateUrlAuth() {
         // basic
         HttpRequestDef.Builder<UpdateUrlAuthRequest, UpdateUrlAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateUrlAuthRequest.class, UpdateUrlAuthResponse.class)
@@ -1589,37 +1357,27 @@ public class CloudRTCMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUrlAuthRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateUrlAuthRequest::getAppId, UpdateUrlAuthRequest::setAppId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUrlAuthRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(UpdateUrlAuthRequest::getAuthorization, UpdateUrlAuthRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUrlAuthRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateUrlAuthRequest::getXSdkDate, UpdateUrlAuthRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUrlAuthRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateUrlAuthRequest::getXProjectId, UpdateUrlAuthRequest::setXProjectId));
         builder.<AppAuthReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppAuthReq.class),
-            f -> f.withMarshaller(UpdateUrlAuthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateUrlAuthRequest::getBody, UpdateUrlAuthRequest::setBody));
 
         // response
 
@@ -1632,9 +1390,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse> listObsBucketObjects =
-        genForlistObsBucketObjects();
+        genForListObsBucketObjects();
 
-    private static HttpRequestDef<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse> genForlistObsBucketObjects() {
+    private static HttpRequestDef<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse> genForListObsBucketObjects() {
         // basic
         HttpRequestDef.Builder<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListObsBucketObjectsRequest.class, ListObsBucketObjectsResponse.class)
@@ -1647,30 +1405,22 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListObsBucketObjectsRequest::getBucket, (req, v) -> {
-                req.setBucket(v);
-            }));
+            f -> f.withMarshaller(ListObsBucketObjectsRequest::getBucket, ListObsBucketObjectsRequest::setBucket));
         builder.<String>withRequestField("prefix",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListObsBucketObjectsRequest::getPrefix, (req, v) -> {
-                req.setPrefix(v);
-            }));
+            f -> f.withMarshaller(ListObsBucketObjectsRequest::getPrefix, ListObsBucketObjectsRequest::setPrefix));
         builder.<ListObsBucketObjectsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListObsBucketObjectsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListObsBucketObjectsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListObsBucketObjectsRequest::getType, ListObsBucketObjectsRequest::setType));
         builder.<ListObsBucketObjectsRequest.LocationEnum>withRequestField("location",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListObsBucketObjectsRequest.LocationEnum.class),
-            f -> f.withMarshaller(ListObsBucketObjectsRequest::getLocation, (req, v) -> {
-                req.setLocation(v);
-            }));
+            f -> f.withMarshaller(ListObsBucketObjectsRequest::getLocation, ListObsBucketObjectsRequest::setLocation));
 
         // response
 
@@ -1684,9 +1434,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> listObsBuckets =
-        genForlistObsBuckets();
+        genForListObsBuckets();
 
-    private static HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> genForlistObsBuckets() {
+    private static HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> genForListObsBuckets() {
         // basic
         HttpRequestDef.Builder<ListObsBucketsRequest, ListObsBucketsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListObsBucketsRequest.class, ListObsBucketsResponse.class)
@@ -1707,9 +1457,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse> updateObsBucketAuthority =
-        genForupdateObsBucketAuthority();
+        genForUpdateObsBucketAuthority();
 
-    private static HttpRequestDef<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse> genForupdateObsBucketAuthority() {
+    private static HttpRequestDef<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse> genForUpdateObsBucketAuthority() {
         // basic
         HttpRequestDef.Builder<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse> builder =
             HttpRequestDef
@@ -1723,9 +1473,7 @@ public class CloudRTCMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ObsAuthorityConfig.class),
-            f -> f.withMarshaller(UpdateObsBucketAuthorityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateObsBucketAuthorityRequest::getBody, UpdateObsBucketAuthorityRequest::setBody));
 
         // response
 

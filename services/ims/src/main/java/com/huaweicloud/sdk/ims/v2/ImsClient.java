@@ -110,7 +110,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddImageTagRequest 请求对象
+     * @param request AddImageTagRequest 请求对象
      * @return AddImageTagResponse
      */
     public AddImageTagResponse addImageTag(AddImageTagRequest request) {
@@ -124,11 +124,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddImageTagRequest 请求对象
+     * @param request AddImageTagRequest 请求对象
      * @return SyncInvoker<AddImageTagRequest, AddImageTagResponse>
      */
     public SyncInvoker<AddImageTagRequest, AddImageTagResponse> addImageTagInvoker(AddImageTagRequest request) {
-        return new SyncInvoker<AddImageTagRequest, AddImageTagResponse>(request, ImsMeta.addImageTag, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.addImageTag, hcClient);
     }
 
     /**
@@ -139,7 +139,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddMembersRequest 请求对象
+     * @param request BatchAddMembersRequest 请求对象
      * @return BatchAddMembersResponse
      */
     public BatchAddMembersResponse batchAddMembers(BatchAddMembersRequest request) {
@@ -154,13 +154,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddMembersRequest 请求对象
+     * @param request BatchAddMembersRequest 请求对象
      * @return SyncInvoker<BatchAddMembersRequest, BatchAddMembersResponse>
      */
     public SyncInvoker<BatchAddMembersRequest, BatchAddMembersResponse> batchAddMembersInvoker(
         BatchAddMembersRequest request) {
-        return new SyncInvoker<BatchAddMembersRequest, BatchAddMembersResponse>(request, ImsMeta.batchAddMembers,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.batchAddMembers, hcClient);
     }
 
     /**
@@ -170,7 +169,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddOrDeleteTagsRequest 请求对象
+     * @param request BatchAddOrDeleteTagsRequest 请求对象
      * @return BatchAddOrDeleteTagsResponse
      */
     public BatchAddOrDeleteTagsResponse batchAddOrDeleteTags(BatchAddOrDeleteTagsRequest request) {
@@ -184,13 +183,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddOrDeleteTagsRequest 请求对象
+     * @param request BatchAddOrDeleteTagsRequest 请求对象
      * @return SyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse>
      */
     public SyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse> batchAddOrDeleteTagsInvoker(
         BatchAddOrDeleteTagsRequest request) {
-        return new SyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse>(request,
-            ImsMeta.batchAddOrDeleteTags, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.batchAddOrDeleteTags, hcClient);
     }
 
     /**
@@ -201,7 +199,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMembersRequest 请求对象
+     * @param request BatchDeleteMembersRequest 请求对象
      * @return BatchDeleteMembersResponse
      */
     public BatchDeleteMembersResponse batchDeleteMembers(BatchDeleteMembersRequest request) {
@@ -216,13 +214,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMembersRequest 请求对象
+     * @param request BatchDeleteMembersRequest 请求对象
      * @return SyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse>
      */
     public SyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse> batchDeleteMembersInvoker(
         BatchDeleteMembersRequest request) {
-        return new SyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse>(request,
-            ImsMeta.batchDeleteMembers, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.batchDeleteMembers, hcClient);
     }
 
     /**
@@ -233,7 +230,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateMembersRequest 请求对象
+     * @param request BatchUpdateMembersRequest 请求对象
      * @return BatchUpdateMembersResponse
      */
     public BatchUpdateMembersResponse batchUpdateMembers(BatchUpdateMembersRequest request) {
@@ -248,13 +245,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateMembersRequest 请求对象
+     * @param request BatchUpdateMembersRequest 请求对象
      * @return SyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
      */
     public SyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse> batchUpdateMembersInvoker(
         BatchUpdateMembersRequest request) {
-        return new SyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse>(request,
-            ImsMeta.batchUpdateMembers, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.batchUpdateMembers, hcClient);
     }
 
     /**
@@ -266,7 +262,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyImageCrossRegionRequest 请求对象
+     * @param request CopyImageCrossRegionRequest 请求对象
      * @return CopyImageCrossRegionResponse
      */
     public CopyImageCrossRegionResponse copyImageCrossRegion(CopyImageCrossRegionRequest request) {
@@ -282,13 +278,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyImageCrossRegionRequest 请求对象
+     * @param request CopyImageCrossRegionRequest 请求对象
      * @return SyncInvoker<CopyImageCrossRegionRequest, CopyImageCrossRegionResponse>
      */
     public SyncInvoker<CopyImageCrossRegionRequest, CopyImageCrossRegionResponse> copyImageCrossRegionInvoker(
         CopyImageCrossRegionRequest request) {
-        return new SyncInvoker<CopyImageCrossRegionRequest, CopyImageCrossRegionResponse>(request,
-            ImsMeta.copyImageCrossRegion, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.copyImageCrossRegion, hcClient);
     }
 
     /**
@@ -299,7 +294,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyImageInRegionRequest 请求对象
+     * @param request CopyImageInRegionRequest 请求对象
      * @return CopyImageInRegionResponse
      */
     public CopyImageInRegionResponse copyImageInRegion(CopyImageInRegionRequest request) {
@@ -314,13 +309,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyImageInRegionRequest 请求对象
+     * @param request CopyImageInRegionRequest 请求对象
      * @return SyncInvoker<CopyImageInRegionRequest, CopyImageInRegionResponse>
      */
     public SyncInvoker<CopyImageInRegionRequest, CopyImageInRegionResponse> copyImageInRegionInvoker(
         CopyImageInRegionRequest request) {
-        return new SyncInvoker<CopyImageInRegionRequest, CopyImageInRegionResponse>(request, ImsMeta.copyImageInRegion,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.copyImageInRegion, hcClient);
     }
 
     /**
@@ -330,7 +324,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataImageRequest 请求对象
+     * @param request CreateDataImageRequest 请求对象
      * @return CreateDataImageResponse
      */
     public CreateDataImageResponse createDataImage(CreateDataImageRequest request) {
@@ -344,13 +338,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataImageRequest 请求对象
+     * @param request CreateDataImageRequest 请求对象
      * @return SyncInvoker<CreateDataImageRequest, CreateDataImageResponse>
      */
     public SyncInvoker<CreateDataImageRequest, CreateDataImageResponse> createDataImageInvoker(
         CreateDataImageRequest request) {
-        return new SyncInvoker<CreateDataImageRequest, CreateDataImageResponse>(request, ImsMeta.createDataImage,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.createDataImage, hcClient);
     }
 
     /**
@@ -371,7 +364,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageRequest 请求对象
+     * @param request CreateImageRequest 请求对象
      * @return CreateImageResponse
      */
     public CreateImageResponse createImage(CreateImageRequest request) {
@@ -396,11 +389,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageRequest 请求对象
+     * @param request CreateImageRequest 请求对象
      * @return SyncInvoker<CreateImageRequest, CreateImageResponse>
      */
     public SyncInvoker<CreateImageRequest, CreateImageResponse> createImageInvoker(CreateImageRequest request) {
-        return new SyncInvoker<CreateImageRequest, CreateImageResponse>(request, ImsMeta.createImage, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.createImage, hcClient);
     }
 
     /**
@@ -410,7 +403,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrUpdateTagsRequest 请求对象
+     * @param request CreateOrUpdateTagsRequest 请求对象
      * @return CreateOrUpdateTagsResponse
      */
     public CreateOrUpdateTagsResponse createOrUpdateTags(CreateOrUpdateTagsRequest request) {
@@ -424,13 +417,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrUpdateTagsRequest 请求对象
+     * @param request CreateOrUpdateTagsRequest 请求对象
      * @return SyncInvoker<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse>
      */
     public SyncInvoker<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse> createOrUpdateTagsInvoker(
         CreateOrUpdateTagsRequest request) {
-        return new SyncInvoker<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse>(request,
-            ImsMeta.createOrUpdateTags, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.createOrUpdateTags, hcClient);
     }
 
     /**
@@ -440,7 +432,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWholeImageRequest 请求对象
+     * @param request CreateWholeImageRequest 请求对象
      * @return CreateWholeImageResponse
      */
     public CreateWholeImageResponse createWholeImage(CreateWholeImageRequest request) {
@@ -454,13 +446,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWholeImageRequest 请求对象
+     * @param request CreateWholeImageRequest 请求对象
      * @return SyncInvoker<CreateWholeImageRequest, CreateWholeImageResponse>
      */
     public SyncInvoker<CreateWholeImageRequest, CreateWholeImageResponse> createWholeImageInvoker(
         CreateWholeImageRequest request) {
-        return new SyncInvoker<CreateWholeImageRequest, CreateWholeImageResponse>(request, ImsMeta.createWholeImage,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.createWholeImage, hcClient);
     }
 
     /**
@@ -470,7 +461,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageTagRequest 请求对象
+     * @param request DeleteImageTagRequest 请求对象
      * @return DeleteImageTagResponse
      */
     public DeleteImageTagResponse deleteImageTag(DeleteImageTagRequest request) {
@@ -484,13 +475,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageTagRequest 请求对象
+     * @param request DeleteImageTagRequest 请求对象
      * @return SyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse>
      */
     public SyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse> deleteImageTagInvoker(
         DeleteImageTagRequest request) {
-        return new SyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse>(request, ImsMeta.deleteImageTag,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.deleteImageTag, hcClient);
     }
 
     /**
@@ -500,7 +490,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportImageRequest 请求对象
+     * @param request ExportImageRequest 请求对象
      * @return ExportImageResponse
      */
     public ExportImageResponse exportImage(ExportImageRequest request) {
@@ -514,11 +504,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportImageRequest 请求对象
+     * @param request ExportImageRequest 请求对象
      * @return SyncInvoker<ExportImageRequest, ExportImageResponse>
      */
     public SyncInvoker<ExportImageRequest, ExportImageResponse> exportImageInvoker(ExportImageRequest request) {
-        return new SyncInvoker<ExportImageRequest, ExportImageResponse>(request, ImsMeta.exportImage, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.exportImage, hcClient);
     }
 
     /**
@@ -530,7 +520,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportImageQuickRequest 请求对象
+     * @param request ImportImageQuickRequest 请求对象
      * @return ImportImageQuickResponse
      */
     public ImportImageQuickResponse importImageQuick(ImportImageQuickRequest request) {
@@ -546,13 +536,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportImageQuickRequest 请求对象
+     * @param request ImportImageQuickRequest 请求对象
      * @return SyncInvoker<ImportImageQuickRequest, ImportImageQuickResponse>
      */
     public SyncInvoker<ImportImageQuickRequest, ImportImageQuickResponse> importImageQuickInvoker(
         ImportImageQuickRequest request) {
-        return new SyncInvoker<ImportImageQuickRequest, ImportImageQuickResponse>(request, ImsMeta.importImageQuick,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.importImageQuick, hcClient);
     }
 
     /**
@@ -562,7 +551,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageByTagsRequest 请求对象
+     * @param request ListImageByTagsRequest 请求对象
      * @return ListImageByTagsResponse
      */
     public ListImageByTagsResponse listImageByTags(ListImageByTagsRequest request) {
@@ -576,13 +565,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageByTagsRequest 请求对象
+     * @param request ListImageByTagsRequest 请求对象
      * @return SyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse>
      */
     public SyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse> listImageByTagsInvoker(
         ListImageByTagsRequest request) {
-        return new SyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse>(request, ImsMeta.listImageByTags,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.listImageByTags, hcClient);
     }
 
     /**
@@ -592,7 +580,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageTagsRequest 请求对象
+     * @param request ListImageTagsRequest 请求对象
      * @return ListImageTagsResponse
      */
     public ListImageTagsResponse listImageTags(ListImageTagsRequest request) {
@@ -606,11 +594,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageTagsRequest 请求对象
+     * @param request ListImageTagsRequest 请求对象
      * @return SyncInvoker<ListImageTagsRequest, ListImageTagsResponse>
      */
     public SyncInvoker<ListImageTagsRequest, ListImageTagsResponse> listImageTagsInvoker(ListImageTagsRequest request) {
-        return new SyncInvoker<ListImageTagsRequest, ListImageTagsResponse>(request, ImsMeta.listImageTags, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.listImageTags, hcClient);
     }
 
     /**
@@ -621,7 +609,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImagesRequest 请求对象
+     * @param request ListImagesRequest 请求对象
      * @return ListImagesResponse
      */
     public ListImagesResponse listImages(ListImagesRequest request) {
@@ -636,11 +624,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImagesRequest 请求对象
+     * @param request ListImagesRequest 请求对象
      * @return SyncInvoker<ListImagesRequest, ListImagesResponse>
      */
     public SyncInvoker<ListImagesRequest, ListImagesResponse> listImagesInvoker(ListImagesRequest request) {
-        return new SyncInvoker<ListImagesRequest, ListImagesResponse>(request, ImsMeta.listImages, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.listImages, hcClient);
     }
 
     /**
@@ -650,7 +638,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImagesTagsRequest 请求对象
+     * @param request ListImagesTagsRequest 请求对象
      * @return ListImagesTagsResponse
      */
     public ListImagesTagsResponse listImagesTags(ListImagesTagsRequest request) {
@@ -664,13 +652,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImagesTagsRequest 请求对象
+     * @param request ListImagesTagsRequest 请求对象
      * @return SyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse>
      */
     public SyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse> listImagesTagsInvoker(
         ListImagesTagsRequest request) {
-        return new SyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse>(request, ImsMeta.listImagesTags,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.listImagesTags, hcClient);
     }
 
     /**
@@ -680,7 +667,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOsVersionsRequest 请求对象
+     * @param request ListOsVersionsRequest 请求对象
      * @return ListOsVersionsResponse
      */
     public ListOsVersionsResponse listOsVersions(ListOsVersionsRequest request) {
@@ -694,13 +681,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOsVersionsRequest 请求对象
+     * @param request ListOsVersionsRequest 请求对象
      * @return SyncInvoker<ListOsVersionsRequest, ListOsVersionsResponse>
      */
     public SyncInvoker<ListOsVersionsRequest, ListOsVersionsResponse> listOsVersionsInvoker(
         ListOsVersionsRequest request) {
-        return new SyncInvoker<ListOsVersionsRequest, ListOsVersionsResponse>(request, ImsMeta.listOsVersions,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.listOsVersions, hcClient);
     }
 
     /**
@@ -710,7 +696,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return ListTagsResponse
      */
     public ListTagsResponse listTags(ListTagsRequest request) {
@@ -724,11 +710,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return SyncInvoker<ListTagsRequest, ListTagsResponse>
      */
     public SyncInvoker<ListTagsRequest, ListTagsResponse> listTagsInvoker(ListTagsRequest request) {
-        return new SyncInvoker<ListTagsRequest, ListTagsResponse>(request, ImsMeta.listTags, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.listTags, hcClient);
     }
 
     /**
@@ -744,7 +730,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterImageRequest 请求对象
+     * @param request RegisterImageRequest 请求对象
      * @return RegisterImageResponse
      */
     public RegisterImageResponse registerImage(RegisterImageRequest request) {
@@ -764,11 +750,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterImageRequest 请求对象
+     * @param request RegisterImageRequest 请求对象
      * @return SyncInvoker<RegisterImageRequest, RegisterImageResponse>
      */
     public SyncInvoker<RegisterImageRequest, RegisterImageResponse> registerImageInvoker(RegisterImageRequest request) {
-        return new SyncInvoker<RegisterImageRequest, RegisterImageResponse>(request, ImsMeta.registerImage, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.registerImage, hcClient);
     }
 
     /**
@@ -778,7 +764,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageQuotaRequest 请求对象
+     * @param request ShowImageQuotaRequest 请求对象
      * @return ShowImageQuotaResponse
      */
     public ShowImageQuotaResponse showImageQuota(ShowImageQuotaRequest request) {
@@ -792,13 +778,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageQuotaRequest 请求对象
+     * @param request ShowImageQuotaRequest 请求对象
      * @return SyncInvoker<ShowImageQuotaRequest, ShowImageQuotaResponse>
      */
     public SyncInvoker<ShowImageQuotaRequest, ShowImageQuotaResponse> showImageQuotaInvoker(
         ShowImageQuotaRequest request) {
-        return new SyncInvoker<ShowImageQuotaRequest, ShowImageQuotaResponse>(request, ImsMeta.showImageQuota,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.showImageQuota, hcClient);
     }
 
     /**
@@ -808,7 +793,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return ShowJobResponse
      */
     public ShowJobResponse showJob(ShowJobRequest request) {
@@ -822,11 +807,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public SyncInvoker<ShowJobRequest, ShowJobResponse> showJobInvoker(ShowJobRequest request) {
-        return new SyncInvoker<ShowJobRequest, ShowJobResponse>(request, ImsMeta.showJob, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.showJob, hcClient);
     }
 
     /**
@@ -836,7 +821,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobProgressRequest 请求对象
+     * @param request ShowJobProgressRequest 请求对象
      * @return ShowJobProgressResponse
      */
     public ShowJobProgressResponse showJobProgress(ShowJobProgressRequest request) {
@@ -850,13 +835,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobProgressRequest 请求对象
+     * @param request ShowJobProgressRequest 请求对象
      * @return SyncInvoker<ShowJobProgressRequest, ShowJobProgressResponse>
      */
     public SyncInvoker<ShowJobProgressRequest, ShowJobProgressResponse> showJobProgressInvoker(
         ShowJobProgressRequest request) {
-        return new SyncInvoker<ShowJobProgressRequest, ShowJobProgressResponse>(request, ImsMeta.showJobProgress,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.showJobProgress, hcClient);
     }
 
     /**
@@ -866,7 +850,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateImageRequest 请求对象
+     * @param request UpdateImageRequest 请求对象
      * @return UpdateImageResponse
      */
     public UpdateImageResponse updateImage(UpdateImageRequest request) {
@@ -880,11 +864,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateImageRequest 请求对象
+     * @param request UpdateImageRequest 请求对象
      * @return SyncInvoker<UpdateImageRequest, UpdateImageResponse>
      */
     public SyncInvoker<UpdateImageRequest, UpdateImageResponse> updateImageInvoker(UpdateImageRequest request) {
-        return new SyncInvoker<UpdateImageRequest, UpdateImageResponse>(request, ImsMeta.updateImage, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.updateImage, hcClient);
     }
 
     /**
@@ -894,7 +878,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionsRequest 请求对象
+     * @param request ListVersionsRequest 请求对象
      * @return ListVersionsResponse
      */
     public ListVersionsResponse listVersions(ListVersionsRequest request) {
@@ -908,11 +892,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionsRequest 请求对象
+     * @param request ListVersionsRequest 请求对象
      * @return SyncInvoker<ListVersionsRequest, ListVersionsResponse>
      */
     public SyncInvoker<ListVersionsRequest, ListVersionsResponse> listVersionsInvoker(ListVersionsRequest request) {
-        return new SyncInvoker<ListVersionsRequest, ListVersionsResponse>(request, ImsMeta.listVersions, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.listVersions, hcClient);
     }
 
     /**
@@ -922,7 +906,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return ShowVersionResponse
      */
     public ShowVersionResponse showVersion(ShowVersionRequest request) {
@@ -936,11 +920,11 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return SyncInvoker<ShowVersionRequest, ShowVersionResponse>
      */
     public SyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionInvoker(ShowVersionRequest request) {
-        return new SyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, ImsMeta.showVersion, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.showVersion, hcClient);
     }
 
     /**
@@ -950,7 +934,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceAddImageMemberRequest 请求对象
+     * @param request GlanceAddImageMemberRequest 请求对象
      * @return GlanceAddImageMemberResponse
      */
     public GlanceAddImageMemberResponse glanceAddImageMember(GlanceAddImageMemberRequest request) {
@@ -964,13 +948,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceAddImageMemberRequest 请求对象
+     * @param request GlanceAddImageMemberRequest 请求对象
      * @return SyncInvoker<GlanceAddImageMemberRequest, GlanceAddImageMemberResponse>
      */
     public SyncInvoker<GlanceAddImageMemberRequest, GlanceAddImageMemberResponse> glanceAddImageMemberInvoker(
         GlanceAddImageMemberRequest request) {
-        return new SyncInvoker<GlanceAddImageMemberRequest, GlanceAddImageMemberResponse>(request,
-            ImsMeta.glanceAddImageMember, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceAddImageMember, hcClient);
     }
 
     /**
@@ -980,7 +963,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceCreateImageMetadataRequest 请求对象
+     * @param request GlanceCreateImageMetadataRequest 请求对象
      * @return GlanceCreateImageMetadataResponse
      */
     public GlanceCreateImageMetadataResponse glanceCreateImageMetadata(GlanceCreateImageMetadataRequest request) {
@@ -994,13 +977,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceCreateImageMetadataRequest 请求对象
+     * @param request GlanceCreateImageMetadataRequest 请求对象
      * @return SyncInvoker<GlanceCreateImageMetadataRequest, GlanceCreateImageMetadataResponse>
      */
     public SyncInvoker<GlanceCreateImageMetadataRequest, GlanceCreateImageMetadataResponse> glanceCreateImageMetadataInvoker(
         GlanceCreateImageMetadataRequest request) {
-        return new SyncInvoker<GlanceCreateImageMetadataRequest, GlanceCreateImageMetadataResponse>(request,
-            ImsMeta.glanceCreateImageMetadata, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceCreateImageMetadata, hcClient);
     }
 
     /**
@@ -1010,7 +992,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceCreateTagRequest 请求对象
+     * @param request GlanceCreateTagRequest 请求对象
      * @return GlanceCreateTagResponse
      */
     public GlanceCreateTagResponse glanceCreateTag(GlanceCreateTagRequest request) {
@@ -1024,13 +1006,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceCreateTagRequest 请求对象
+     * @param request GlanceCreateTagRequest 请求对象
      * @return SyncInvoker<GlanceCreateTagRequest, GlanceCreateTagResponse>
      */
     public SyncInvoker<GlanceCreateTagRequest, GlanceCreateTagResponse> glanceCreateTagInvoker(
         GlanceCreateTagRequest request) {
-        return new SyncInvoker<GlanceCreateTagRequest, GlanceCreateTagResponse>(request, ImsMeta.glanceCreateTag,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceCreateTag, hcClient);
     }
 
     /**
@@ -1040,7 +1021,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteImageRequest 请求对象
+     * @param request GlanceDeleteImageRequest 请求对象
      * @return GlanceDeleteImageResponse
      */
     public GlanceDeleteImageResponse glanceDeleteImage(GlanceDeleteImageRequest request) {
@@ -1054,13 +1035,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteImageRequest 请求对象
+     * @param request GlanceDeleteImageRequest 请求对象
      * @return SyncInvoker<GlanceDeleteImageRequest, GlanceDeleteImageResponse>
      */
     public SyncInvoker<GlanceDeleteImageRequest, GlanceDeleteImageResponse> glanceDeleteImageInvoker(
         GlanceDeleteImageRequest request) {
-        return new SyncInvoker<GlanceDeleteImageRequest, GlanceDeleteImageResponse>(request, ImsMeta.glanceDeleteImage,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceDeleteImage, hcClient);
     }
 
     /**
@@ -1070,7 +1050,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteImageMemberRequest 请求对象
+     * @param request GlanceDeleteImageMemberRequest 请求对象
      * @return GlanceDeleteImageMemberResponse
      */
     public GlanceDeleteImageMemberResponse glanceDeleteImageMember(GlanceDeleteImageMemberRequest request) {
@@ -1084,13 +1064,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteImageMemberRequest 请求对象
+     * @param request GlanceDeleteImageMemberRequest 请求对象
      * @return SyncInvoker<GlanceDeleteImageMemberRequest, GlanceDeleteImageMemberResponse>
      */
     public SyncInvoker<GlanceDeleteImageMemberRequest, GlanceDeleteImageMemberResponse> glanceDeleteImageMemberInvoker(
         GlanceDeleteImageMemberRequest request) {
-        return new SyncInvoker<GlanceDeleteImageMemberRequest, GlanceDeleteImageMemberResponse>(request,
-            ImsMeta.glanceDeleteImageMember, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceDeleteImageMember, hcClient);
     }
 
     /**
@@ -1100,7 +1079,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteTagRequest 请求对象
+     * @param request GlanceDeleteTagRequest 请求对象
      * @return GlanceDeleteTagResponse
      */
     public GlanceDeleteTagResponse glanceDeleteTag(GlanceDeleteTagRequest request) {
@@ -1114,13 +1093,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteTagRequest 请求对象
+     * @param request GlanceDeleteTagRequest 请求对象
      * @return SyncInvoker<GlanceDeleteTagRequest, GlanceDeleteTagResponse>
      */
     public SyncInvoker<GlanceDeleteTagRequest, GlanceDeleteTagResponse> glanceDeleteTagInvoker(
         GlanceDeleteTagRequest request) {
-        return new SyncInvoker<GlanceDeleteTagRequest, GlanceDeleteTagResponse>(request, ImsMeta.glanceDeleteTag,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceDeleteTag, hcClient);
     }
 
     /**
@@ -1130,7 +1108,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageMemberSchemasRequest 请求对象
+     * @param request GlanceListImageMemberSchemasRequest 请求对象
      * @return GlanceListImageMemberSchemasResponse
      */
     public GlanceListImageMemberSchemasResponse glanceListImageMemberSchemas(
@@ -1145,13 +1123,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageMemberSchemasRequest 请求对象
+     * @param request GlanceListImageMemberSchemasRequest 请求对象
      * @return SyncInvoker<GlanceListImageMemberSchemasRequest, GlanceListImageMemberSchemasResponse>
      */
     public SyncInvoker<GlanceListImageMemberSchemasRequest, GlanceListImageMemberSchemasResponse> glanceListImageMemberSchemasInvoker(
         GlanceListImageMemberSchemasRequest request) {
-        return new SyncInvoker<GlanceListImageMemberSchemasRequest, GlanceListImageMemberSchemasResponse>(request,
-            ImsMeta.glanceListImageMemberSchemas, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceListImageMemberSchemas, hcClient);
     }
 
     /**
@@ -1161,7 +1138,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageMembersRequest 请求对象
+     * @param request GlanceListImageMembersRequest 请求对象
      * @return GlanceListImageMembersResponse
      */
     public GlanceListImageMembersResponse glanceListImageMembers(GlanceListImageMembersRequest request) {
@@ -1175,13 +1152,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageMembersRequest 请求对象
+     * @param request GlanceListImageMembersRequest 请求对象
      * @return SyncInvoker<GlanceListImageMembersRequest, GlanceListImageMembersResponse>
      */
     public SyncInvoker<GlanceListImageMembersRequest, GlanceListImageMembersResponse> glanceListImageMembersInvoker(
         GlanceListImageMembersRequest request) {
-        return new SyncInvoker<GlanceListImageMembersRequest, GlanceListImageMembersResponse>(request,
-            ImsMeta.glanceListImageMembers, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceListImageMembers, hcClient);
     }
 
     /**
@@ -1191,7 +1167,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageSchemasRequest 请求对象
+     * @param request GlanceListImageSchemasRequest 请求对象
      * @return GlanceListImageSchemasResponse
      */
     public GlanceListImageSchemasResponse glanceListImageSchemas(GlanceListImageSchemasRequest request) {
@@ -1205,13 +1181,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageSchemasRequest 请求对象
+     * @param request GlanceListImageSchemasRequest 请求对象
      * @return SyncInvoker<GlanceListImageSchemasRequest, GlanceListImageSchemasResponse>
      */
     public SyncInvoker<GlanceListImageSchemasRequest, GlanceListImageSchemasResponse> glanceListImageSchemasInvoker(
         GlanceListImageSchemasRequest request) {
-        return new SyncInvoker<GlanceListImageSchemasRequest, GlanceListImageSchemasResponse>(request,
-            ImsMeta.glanceListImageSchemas, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceListImageSchemas, hcClient);
     }
 
     /**
@@ -1225,7 +1200,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImagesRequest 请求对象
+     * @param request GlanceListImagesRequest 请求对象
      * @return GlanceListImagesResponse
      */
     public GlanceListImagesResponse glanceListImages(GlanceListImagesRequest request) {
@@ -1243,13 +1218,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImagesRequest 请求对象
+     * @param request GlanceListImagesRequest 请求对象
      * @return SyncInvoker<GlanceListImagesRequest, GlanceListImagesResponse>
      */
     public SyncInvoker<GlanceListImagesRequest, GlanceListImagesResponse> glanceListImagesInvoker(
         GlanceListImagesRequest request) {
-        return new SyncInvoker<GlanceListImagesRequest, GlanceListImagesResponse>(request, ImsMeta.glanceListImages,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceListImages, hcClient);
     }
 
     /**
@@ -1259,7 +1233,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageRequest 请求对象
+     * @param request GlanceShowImageRequest 请求对象
      * @return GlanceShowImageResponse
      */
     public GlanceShowImageResponse glanceShowImage(GlanceShowImageRequest request) {
@@ -1273,13 +1247,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageRequest 请求对象
+     * @param request GlanceShowImageRequest 请求对象
      * @return SyncInvoker<GlanceShowImageRequest, GlanceShowImageResponse>
      */
     public SyncInvoker<GlanceShowImageRequest, GlanceShowImageResponse> glanceShowImageInvoker(
         GlanceShowImageRequest request) {
-        return new SyncInvoker<GlanceShowImageRequest, GlanceShowImageResponse>(request, ImsMeta.glanceShowImage,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceShowImage, hcClient);
     }
 
     /**
@@ -1289,7 +1262,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageMemberRequest 请求对象
+     * @param request GlanceShowImageMemberRequest 请求对象
      * @return GlanceShowImageMemberResponse
      */
     public GlanceShowImageMemberResponse glanceShowImageMember(GlanceShowImageMemberRequest request) {
@@ -1303,13 +1276,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageMemberRequest 请求对象
+     * @param request GlanceShowImageMemberRequest 请求对象
      * @return SyncInvoker<GlanceShowImageMemberRequest, GlanceShowImageMemberResponse>
      */
     public SyncInvoker<GlanceShowImageMemberRequest, GlanceShowImageMemberResponse> glanceShowImageMemberInvoker(
         GlanceShowImageMemberRequest request) {
-        return new SyncInvoker<GlanceShowImageMemberRequest, GlanceShowImageMemberResponse>(request,
-            ImsMeta.glanceShowImageMember, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceShowImageMember, hcClient);
     }
 
     /**
@@ -1319,7 +1291,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageMemberSchemasRequest 请求对象
+     * @param request GlanceShowImageMemberSchemasRequest 请求对象
      * @return GlanceShowImageMemberSchemasResponse
      */
     public GlanceShowImageMemberSchemasResponse glanceShowImageMemberSchemas(
@@ -1334,13 +1306,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageMemberSchemasRequest 请求对象
+     * @param request GlanceShowImageMemberSchemasRequest 请求对象
      * @return SyncInvoker<GlanceShowImageMemberSchemasRequest, GlanceShowImageMemberSchemasResponse>
      */
     public SyncInvoker<GlanceShowImageMemberSchemasRequest, GlanceShowImageMemberSchemasResponse> glanceShowImageMemberSchemasInvoker(
         GlanceShowImageMemberSchemasRequest request) {
-        return new SyncInvoker<GlanceShowImageMemberSchemasRequest, GlanceShowImageMemberSchemasResponse>(request,
-            ImsMeta.glanceShowImageMemberSchemas, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceShowImageMemberSchemas, hcClient);
     }
 
     /**
@@ -1350,7 +1321,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageSchemasRequest 请求对象
+     * @param request GlanceShowImageSchemasRequest 请求对象
      * @return GlanceShowImageSchemasResponse
      */
     public GlanceShowImageSchemasResponse glanceShowImageSchemas(GlanceShowImageSchemasRequest request) {
@@ -1364,13 +1335,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageSchemasRequest 请求对象
+     * @param request GlanceShowImageSchemasRequest 请求对象
      * @return SyncInvoker<GlanceShowImageSchemasRequest, GlanceShowImageSchemasResponse>
      */
     public SyncInvoker<GlanceShowImageSchemasRequest, GlanceShowImageSchemasResponse> glanceShowImageSchemasInvoker(
         GlanceShowImageSchemasRequest request) {
-        return new SyncInvoker<GlanceShowImageSchemasRequest, GlanceShowImageSchemasResponse>(request,
-            ImsMeta.glanceShowImageSchemas, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceShowImageSchemas, hcClient);
     }
 
     /**
@@ -1380,7 +1350,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceUpdateImageRequest 请求对象
+     * @param request GlanceUpdateImageRequest 请求对象
      * @return GlanceUpdateImageResponse
      */
     public GlanceUpdateImageResponse glanceUpdateImage(GlanceUpdateImageRequest request) {
@@ -1394,13 +1364,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceUpdateImageRequest 请求对象
+     * @param request GlanceUpdateImageRequest 请求对象
      * @return SyncInvoker<GlanceUpdateImageRequest, GlanceUpdateImageResponse>
      */
     public SyncInvoker<GlanceUpdateImageRequest, GlanceUpdateImageResponse> glanceUpdateImageInvoker(
         GlanceUpdateImageRequest request) {
-        return new SyncInvoker<GlanceUpdateImageRequest, GlanceUpdateImageResponse>(request, ImsMeta.glanceUpdateImage,
-            hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceUpdateImage, hcClient);
     }
 
     /**
@@ -1410,7 +1379,7 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceUpdateImageMemberRequest 请求对象
+     * @param request GlanceUpdateImageMemberRequest 请求对象
      * @return GlanceUpdateImageMemberResponse
      */
     public GlanceUpdateImageMemberResponse glanceUpdateImageMember(GlanceUpdateImageMemberRequest request) {
@@ -1424,13 +1393,12 @@ public class ImsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceUpdateImageMemberRequest 请求对象
+     * @param request GlanceUpdateImageMemberRequest 请求对象
      * @return SyncInvoker<GlanceUpdateImageMemberRequest, GlanceUpdateImageMemberResponse>
      */
     public SyncInvoker<GlanceUpdateImageMemberRequest, GlanceUpdateImageMemberResponse> glanceUpdateImageMemberInvoker(
         GlanceUpdateImageMemberRequest request) {
-        return new SyncInvoker<GlanceUpdateImageMemberRequest, GlanceUpdateImageMemberResponse>(request,
-            ImsMeta.glanceUpdateImageMember, hcClient);
+        return new SyncInvoker<>(request, ImsMeta.glanceUpdateImageMember, hcClient);
     }
 
 }

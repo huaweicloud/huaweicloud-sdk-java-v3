@@ -176,7 +176,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddApplyJoinProjectForAgcRequest 请求对象
+     * @param request AddApplyJoinProjectForAgcRequest 请求对象
      * @return AddApplyJoinProjectForAgcResponse
      */
     public AddApplyJoinProjectForAgcResponse addApplyJoinProjectForAgc(AddApplyJoinProjectForAgcRequest request) {
@@ -190,13 +190,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddApplyJoinProjectForAgcRequest 请求对象
+     * @param request AddApplyJoinProjectForAgcRequest 请求对象
      * @return SyncInvoker<AddApplyJoinProjectForAgcRequest, AddApplyJoinProjectForAgcResponse>
      */
     public SyncInvoker<AddApplyJoinProjectForAgcRequest, AddApplyJoinProjectForAgcResponse> addApplyJoinProjectForAgcInvoker(
         AddApplyJoinProjectForAgcRequest request) {
-        return new SyncInvoker<AddApplyJoinProjectForAgcRequest, AddApplyJoinProjectForAgcResponse>(request,
-            ProjectManMeta.addApplyJoinProjectForAgc, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.addApplyJoinProjectForAgc, hcClient);
     }
 
     /**
@@ -206,7 +205,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMemberV4Request 请求对象
+     * @param request AddMemberV4Request 请求对象
      * @return AddMemberV4Response
      */
     public AddMemberV4Response addMemberV4(AddMemberV4Request request) {
@@ -220,11 +219,11 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMemberV4Request 请求对象
+     * @param request AddMemberV4Request 请求对象
      * @return SyncInvoker<AddMemberV4Request, AddMemberV4Response>
      */
     public SyncInvoker<AddMemberV4Request, AddMemberV4Response> addMemberV4Invoker(AddMemberV4Request request) {
-        return new SyncInvoker<AddMemberV4Request, AddMemberV4Response>(request, ProjectManMeta.addMemberV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.addMemberV4, hcClient);
     }
 
     /**
@@ -234,7 +233,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddMembersV4Request 请求对象
+     * @param request BatchAddMembersV4Request 请求对象
      * @return BatchAddMembersV4Response
      */
     public BatchAddMembersV4Response batchAddMembersV4(BatchAddMembersV4Request request) {
@@ -248,13 +247,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddMembersV4Request 请求对象
+     * @param request BatchAddMembersV4Request 请求对象
      * @return SyncInvoker<BatchAddMembersV4Request, BatchAddMembersV4Response>
      */
     public SyncInvoker<BatchAddMembersV4Request, BatchAddMembersV4Response> batchAddMembersV4Invoker(
         BatchAddMembersV4Request request) {
-        return new SyncInvoker<BatchAddMembersV4Request, BatchAddMembersV4Response>(request,
-            ProjectManMeta.batchAddMembersV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.batchAddMembersV4, hcClient);
     }
 
     /**
@@ -264,7 +262,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMembersV4Request 请求对象
+     * @param request BatchDeleteMembersV4Request 请求对象
      * @return BatchDeleteMembersV4Response
      */
     public BatchDeleteMembersV4Response batchDeleteMembersV4(BatchDeleteMembersV4Request request) {
@@ -278,13 +276,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMembersV4Request 请求对象
+     * @param request BatchDeleteMembersV4Request 请求对象
      * @return SyncInvoker<BatchDeleteMembersV4Request, BatchDeleteMembersV4Response>
      */
     public SyncInvoker<BatchDeleteMembersV4Request, BatchDeleteMembersV4Response> batchDeleteMembersV4Invoker(
         BatchDeleteMembersV4Request request) {
-        return new SyncInvoker<BatchDeleteMembersV4Request, BatchDeleteMembersV4Response>(request,
-            ProjectManMeta.batchDeleteMembersV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.batchDeleteMembersV4, hcClient);
     }
 
     /**
@@ -294,7 +291,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateChildNickNamesRequest 请求对象
+     * @param request BatchUpdateChildNickNamesRequest 请求对象
      * @return BatchUpdateChildNickNamesResponse
      */
     public BatchUpdateChildNickNamesResponse batchUpdateChildNickNames(BatchUpdateChildNickNamesRequest request) {
@@ -308,13 +305,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateChildNickNamesRequest 请求对象
+     * @param request BatchUpdateChildNickNamesRequest 请求对象
      * @return SyncInvoker<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse>
      */
     public SyncInvoker<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse> batchUpdateChildNickNamesInvoker(
         BatchUpdateChildNickNamesRequest request) {
-        return new SyncInvoker<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse>(request,
-            ProjectManMeta.batchUpdateChildNickNames, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.batchUpdateChildNickNames, hcClient);
     }
 
     /**
@@ -324,7 +320,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckProjectNameV4Request 请求对象
+     * @param request CheckProjectNameV4Request 请求对象
      * @return CheckProjectNameV4Response
      */
     public CheckProjectNameV4Response checkProjectNameV4(CheckProjectNameV4Request request) {
@@ -338,13 +334,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckProjectNameV4Request 请求对象
+     * @param request CheckProjectNameV4Request 请求对象
      * @return SyncInvoker<CheckProjectNameV4Request, CheckProjectNameV4Response>
      */
     public SyncInvoker<CheckProjectNameV4Request, CheckProjectNameV4Response> checkProjectNameV4Invoker(
         CheckProjectNameV4Request request) {
-        return new SyncInvoker<CheckProjectNameV4Request, CheckProjectNameV4Response>(request,
-            ProjectManMeta.checkProjectNameV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.checkProjectNameV4, hcClient);
     }
 
     /**
@@ -354,7 +349,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectV4Request 请求对象
+     * @param request CreateProjectV4Request 请求对象
      * @return CreateProjectV4Response
      */
     public CreateProjectV4Response createProjectV4(CreateProjectV4Request request) {
@@ -368,13 +363,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectV4Request 请求对象
+     * @param request CreateProjectV4Request 请求对象
      * @return SyncInvoker<CreateProjectV4Request, CreateProjectV4Response>
      */
     public SyncInvoker<CreateProjectV4Request, CreateProjectV4Response> createProjectV4Invoker(
         CreateProjectV4Request request) {
-        return new SyncInvoker<CreateProjectV4Request, CreateProjectV4Response>(request, ProjectManMeta.createProjectV4,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.createProjectV4, hcClient);
     }
 
     /**
@@ -384,7 +378,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProjectV4Request 请求对象
+     * @param request DeleteProjectV4Request 请求对象
      * @return DeleteProjectV4Response
      */
     public DeleteProjectV4Response deleteProjectV4(DeleteProjectV4Request request) {
@@ -398,13 +392,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProjectV4Request 请求对象
+     * @param request DeleteProjectV4Request 请求对象
      * @return SyncInvoker<DeleteProjectV4Request, DeleteProjectV4Response>
      */
     public SyncInvoker<DeleteProjectV4Request, DeleteProjectV4Response> deleteProjectV4Invoker(
         DeleteProjectV4Request request) {
-        return new SyncInvoker<DeleteProjectV4Request, DeleteProjectV4Response>(request, ProjectManMeta.deleteProjectV4,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.deleteProjectV4, hcClient);
     }
 
     /**
@@ -414,7 +407,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainNotAddedProjectsV4Request 请求对象
+     * @param request ListDomainNotAddedProjectsV4Request 请求对象
      * @return ListDomainNotAddedProjectsV4Response
      */
     public ListDomainNotAddedProjectsV4Response listDomainNotAddedProjectsV4(
@@ -429,13 +422,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainNotAddedProjectsV4Request 请求对象
+     * @param request ListDomainNotAddedProjectsV4Request 请求对象
      * @return SyncInvoker<ListDomainNotAddedProjectsV4Request, ListDomainNotAddedProjectsV4Response>
      */
     public SyncInvoker<ListDomainNotAddedProjectsV4Request, ListDomainNotAddedProjectsV4Response> listDomainNotAddedProjectsV4Invoker(
         ListDomainNotAddedProjectsV4Request request) {
-        return new SyncInvoker<ListDomainNotAddedProjectsV4Request, ListDomainNotAddedProjectsV4Response>(request,
-            ProjectManMeta.listDomainNotAddedProjectsV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listDomainNotAddedProjectsV4, hcClient);
     }
 
     /**
@@ -445,7 +437,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectBugStaticsV4Request 请求对象
+     * @param request ListProjectBugStaticsV4Request 请求对象
      * @return ListProjectBugStaticsV4Response
      */
     public ListProjectBugStaticsV4Response listProjectBugStaticsV4(ListProjectBugStaticsV4Request request) {
@@ -459,13 +451,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectBugStaticsV4Request 请求对象
+     * @param request ListProjectBugStaticsV4Request 请求对象
      * @return SyncInvoker<ListProjectBugStaticsV4Request, ListProjectBugStaticsV4Response>
      */
     public SyncInvoker<ListProjectBugStaticsV4Request, ListProjectBugStaticsV4Response> listProjectBugStaticsV4Invoker(
         ListProjectBugStaticsV4Request request) {
-        return new SyncInvoker<ListProjectBugStaticsV4Request, ListProjectBugStaticsV4Response>(request,
-            ProjectManMeta.listProjectBugStaticsV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listProjectBugStaticsV4, hcClient);
     }
 
     /**
@@ -475,7 +466,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectDemandStaticV4Request 请求对象
+     * @param request ListProjectDemandStaticV4Request 请求对象
      * @return ListProjectDemandStaticV4Response
      */
     public ListProjectDemandStaticV4Response listProjectDemandStaticV4(ListProjectDemandStaticV4Request request) {
@@ -489,13 +480,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectDemandStaticV4Request 请求对象
+     * @param request ListProjectDemandStaticV4Request 请求对象
      * @return SyncInvoker<ListProjectDemandStaticV4Request, ListProjectDemandStaticV4Response>
      */
     public SyncInvoker<ListProjectDemandStaticV4Request, ListProjectDemandStaticV4Response> listProjectDemandStaticV4Invoker(
         ListProjectDemandStaticV4Request request) {
-        return new SyncInvoker<ListProjectDemandStaticV4Request, ListProjectDemandStaticV4Response>(request,
-            ProjectManMeta.listProjectDemandStaticV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listProjectDemandStaticV4, hcClient);
     }
 
     /**
@@ -505,7 +495,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectMembersV4Request 请求对象
+     * @param request ListProjectMembersV4Request 请求对象
      * @return ListProjectMembersV4Response
      */
     public ListProjectMembersV4Response listProjectMembersV4(ListProjectMembersV4Request request) {
@@ -519,13 +509,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectMembersV4Request 请求对象
+     * @param request ListProjectMembersV4Request 请求对象
      * @return SyncInvoker<ListProjectMembersV4Request, ListProjectMembersV4Response>
      */
     public SyncInvoker<ListProjectMembersV4Request, ListProjectMembersV4Response> listProjectMembersV4Invoker(
         ListProjectMembersV4Request request) {
-        return new SyncInvoker<ListProjectMembersV4Request, ListProjectMembersV4Response>(request,
-            ProjectManMeta.listProjectMembersV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listProjectMembersV4, hcClient);
     }
 
     /**
@@ -535,7 +524,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectsV4Request 请求对象
+     * @param request ListProjectsV4Request 请求对象
      * @return ListProjectsV4Response
      */
     public ListProjectsV4Response listProjectsV4(ListProjectsV4Request request) {
@@ -549,13 +538,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectsV4Request 请求对象
+     * @param request ListProjectsV4Request 请求对象
      * @return SyncInvoker<ListProjectsV4Request, ListProjectsV4Response>
      */
     public SyncInvoker<ListProjectsV4Request, ListProjectsV4Response> listProjectsV4Invoker(
         ListProjectsV4Request request) {
-        return new SyncInvoker<ListProjectsV4Request, ListProjectsV4Response>(request, ProjectManMeta.listProjectsV4,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listProjectsV4, hcClient);
     }
 
     /**
@@ -565,7 +553,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesRequest 请求对象
+     * @param request ListTemplatesRequest 请求对象
      * @return ListTemplatesResponse
      */
     public ListTemplatesResponse listTemplates(ListTemplatesRequest request) {
@@ -579,12 +567,11 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesRequest 请求对象
+     * @param request ListTemplatesRequest 请求对象
      * @return SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
      */
     public SyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesInvoker(ListTemplatesRequest request) {
-        return new SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, ProjectManMeta.listTemplates,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listTemplates, hcClient);
     }
 
     /**
@@ -594,7 +581,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkitemStatusRecordsV4Request 请求对象
+     * @param request ListWorkitemStatusRecordsV4Request 请求对象
      * @return ListWorkitemStatusRecordsV4Response
      */
     public ListWorkitemStatusRecordsV4Response listWorkitemStatusRecordsV4(ListWorkitemStatusRecordsV4Request request) {
@@ -608,13 +595,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkitemStatusRecordsV4Request 请求对象
+     * @param request ListWorkitemStatusRecordsV4Request 请求对象
      * @return SyncInvoker<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response>
      */
     public SyncInvoker<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response> listWorkitemStatusRecordsV4Invoker(
         ListWorkitemStatusRecordsV4Request request) {
-        return new SyncInvoker<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response>(request,
-            ProjectManMeta.listWorkitemStatusRecordsV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listWorkitemStatusRecordsV4, hcClient);
     }
 
     /**
@@ -624,7 +610,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkitemsRequest 请求对象
+     * @param request ListWorkitemsRequest 请求对象
      * @return ListWorkitemsResponse
      */
     public ListWorkitemsResponse listWorkitems(ListWorkitemsRequest request) {
@@ -638,12 +624,11 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkitemsRequest 请求对象
+     * @param request ListWorkitemsRequest 请求对象
      * @return SyncInvoker<ListWorkitemsRequest, ListWorkitemsResponse>
      */
     public SyncInvoker<ListWorkitemsRequest, ListWorkitemsResponse> listWorkitemsInvoker(ListWorkitemsRequest request) {
-        return new SyncInvoker<ListWorkitemsRequest, ListWorkitemsResponse>(request, ProjectManMeta.listWorkitems,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listWorkitems, hcClient);
     }
 
     /**
@@ -653,7 +638,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveProjectRequest 请求对象
+     * @param request RemoveProjectRequest 请求对象
      * @return RemoveProjectResponse
      */
     public RemoveProjectResponse removeProject(RemoveProjectRequest request) {
@@ -667,12 +652,11 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveProjectRequest 请求对象
+     * @param request RemoveProjectRequest 请求对象
      * @return SyncInvoker<RemoveProjectRequest, RemoveProjectResponse>
      */
     public SyncInvoker<RemoveProjectRequest, RemoveProjectResponse> removeProjectInvoker(RemoveProjectRequest request) {
-        return new SyncInvoker<RemoveProjectRequest, RemoveProjectResponse>(request, ProjectManMeta.removeProject,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.removeProject, hcClient);
     }
 
     /**
@@ -682,7 +666,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBugDensityV2Request 请求对象
+     * @param request ShowBugDensityV2Request 请求对象
      * @return ShowBugDensityV2Response
      */
     public ShowBugDensityV2Response showBugDensityV2(ShowBugDensityV2Request request) {
@@ -696,13 +680,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBugDensityV2Request 请求对象
+     * @param request ShowBugDensityV2Request 请求对象
      * @return SyncInvoker<ShowBugDensityV2Request, ShowBugDensityV2Response>
      */
     public SyncInvoker<ShowBugDensityV2Request, ShowBugDensityV2Response> showBugDensityV2Invoker(
         ShowBugDensityV2Request request) {
-        return new SyncInvoker<ShowBugDensityV2Request, ShowBugDensityV2Response>(request,
-            ProjectManMeta.showBugDensityV2, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showBugDensityV2, hcClient);
     }
 
     /**
@@ -712,7 +695,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBugsPerDeveloperRequest 请求对象
+     * @param request ShowBugsPerDeveloperRequest 请求对象
      * @return ShowBugsPerDeveloperResponse
      */
     public ShowBugsPerDeveloperResponse showBugsPerDeveloper(ShowBugsPerDeveloperRequest request) {
@@ -726,13 +709,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBugsPerDeveloperRequest 请求对象
+     * @param request ShowBugsPerDeveloperRequest 请求对象
      * @return SyncInvoker<ShowBugsPerDeveloperRequest, ShowBugsPerDeveloperResponse>
      */
     public SyncInvoker<ShowBugsPerDeveloperRequest, ShowBugsPerDeveloperResponse> showBugsPerDeveloperInvoker(
         ShowBugsPerDeveloperRequest request) {
-        return new SyncInvoker<ShowBugsPerDeveloperRequest, ShowBugsPerDeveloperResponse>(request,
-            ProjectManMeta.showBugsPerDeveloper, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showBugsPerDeveloper, hcClient);
     }
 
     /**
@@ -742,7 +724,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCompletionRateRequest 请求对象
+     * @param request ShowCompletionRateRequest 请求对象
      * @return ShowCompletionRateResponse
      */
     public ShowCompletionRateResponse showCompletionRate(ShowCompletionRateRequest request) {
@@ -756,13 +738,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCompletionRateRequest 请求对象
+     * @param request ShowCompletionRateRequest 请求对象
      * @return SyncInvoker<ShowCompletionRateRequest, ShowCompletionRateResponse>
      */
     public SyncInvoker<ShowCompletionRateRequest, ShowCompletionRateResponse> showCompletionRateInvoker(
         ShowCompletionRateRequest request) {
-        return new SyncInvoker<ShowCompletionRateRequest, ShowCompletionRateResponse>(request,
-            ProjectManMeta.showCompletionRate, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showCompletionRate, hcClient);
     }
 
     /**
@@ -772,7 +753,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCurUserInfoRequest 请求对象
+     * @param request ShowCurUserInfoRequest 请求对象
      * @return ShowCurUserInfoResponse
      */
     public ShowCurUserInfoResponse showCurUserInfo(ShowCurUserInfoRequest request) {
@@ -786,13 +767,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCurUserInfoRequest 请求对象
+     * @param request ShowCurUserInfoRequest 请求对象
      * @return SyncInvoker<ShowCurUserInfoRequest, ShowCurUserInfoResponse>
      */
     public SyncInvoker<ShowCurUserInfoRequest, ShowCurUserInfoResponse> showCurUserInfoInvoker(
         ShowCurUserInfoRequest request) {
-        return new SyncInvoker<ShowCurUserInfoRequest, ShowCurUserInfoResponse>(request, ProjectManMeta.showCurUserInfo,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showCurUserInfo, hcClient);
     }
 
     /**
@@ -802,7 +782,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCurUserRoleRequest 请求对象
+     * @param request ShowCurUserRoleRequest 请求对象
      * @return ShowCurUserRoleResponse
      */
     public ShowCurUserRoleResponse showCurUserRole(ShowCurUserRoleRequest request) {
@@ -816,13 +796,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCurUserRoleRequest 请求对象
+     * @param request ShowCurUserRoleRequest 请求对象
      * @return SyncInvoker<ShowCurUserRoleRequest, ShowCurUserRoleResponse>
      */
     public SyncInvoker<ShowCurUserRoleRequest, ShowCurUserRoleResponse> showCurUserRoleInvoker(
         ShowCurUserRoleRequest request) {
-        return new SyncInvoker<ShowCurUserRoleRequest, ShowCurUserRoleResponse>(request, ProjectManMeta.showCurUserRole,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showCurUserRole, hcClient);
     }
 
     /**
@@ -832,7 +811,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectInfoV4Request 请求对象
+     * @param request ShowProjectInfoV4Request 请求对象
      * @return ShowProjectInfoV4Response
      */
     public ShowProjectInfoV4Response showProjectInfoV4(ShowProjectInfoV4Request request) {
@@ -846,13 +825,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectInfoV4Request 请求对象
+     * @param request ShowProjectInfoV4Request 请求对象
      * @return SyncInvoker<ShowProjectInfoV4Request, ShowProjectInfoV4Response>
      */
     public SyncInvoker<ShowProjectInfoV4Request, ShowProjectInfoV4Response> showProjectInfoV4Invoker(
         ShowProjectInfoV4Request request) {
-        return new SyncInvoker<ShowProjectInfoV4Request, ShowProjectInfoV4Response>(request,
-            ProjectManMeta.showProjectInfoV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showProjectInfoV4, hcClient);
     }
 
     /**
@@ -862,7 +840,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectSummaryV4Request 请求对象
+     * @param request ShowProjectSummaryV4Request 请求对象
      * @return ShowProjectSummaryV4Response
      */
     public ShowProjectSummaryV4Response showProjectSummaryV4(ShowProjectSummaryV4Request request) {
@@ -876,13 +854,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectSummaryV4Request 请求对象
+     * @param request ShowProjectSummaryV4Request 请求对象
      * @return SyncInvoker<ShowProjectSummaryV4Request, ShowProjectSummaryV4Response>
      */
     public SyncInvoker<ShowProjectSummaryV4Request, ShowProjectSummaryV4Response> showProjectSummaryV4Invoker(
         ShowProjectSummaryV4Request request) {
-        return new SyncInvoker<ShowProjectSummaryV4Request, ShowProjectSummaryV4Response>(request,
-            ProjectManMeta.showProjectSummaryV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showProjectSummaryV4, hcClient);
     }
 
     /**
@@ -892,7 +869,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkItemWrokflowConfigRequest 请求对象
+     * @param request ShowWorkItemWrokflowConfigRequest 请求对象
      * @return ShowWorkItemWrokflowConfigResponse
      */
     public ShowWorkItemWrokflowConfigResponse showWorkItemWrokflowConfig(ShowWorkItemWrokflowConfigRequest request) {
@@ -906,13 +883,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkItemWrokflowConfigRequest 请求对象
+     * @param request ShowWorkItemWrokflowConfigRequest 请求对象
      * @return SyncInvoker<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse>
      */
     public SyncInvoker<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse> showWorkItemWrokflowConfigInvoker(
         ShowWorkItemWrokflowConfigRequest request) {
-        return new SyncInvoker<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse>(request,
-            ProjectManMeta.showWorkItemWrokflowConfig, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showWorkItemWrokflowConfig, hcClient);
     }
 
     /**
@@ -922,7 +898,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMembesRoleV4Request 请求对象
+     * @param request UpdateMembesRoleV4Request 请求对象
      * @return UpdateMembesRoleV4Response
      */
     public UpdateMembesRoleV4Response updateMembesRoleV4(UpdateMembesRoleV4Request request) {
@@ -936,13 +912,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMembesRoleV4Request 请求对象
+     * @param request UpdateMembesRoleV4Request 请求对象
      * @return SyncInvoker<UpdateMembesRoleV4Request, UpdateMembesRoleV4Response>
      */
     public SyncInvoker<UpdateMembesRoleV4Request, UpdateMembesRoleV4Response> updateMembesRoleV4Invoker(
         UpdateMembesRoleV4Request request) {
-        return new SyncInvoker<UpdateMembesRoleV4Request, UpdateMembesRoleV4Response>(request,
-            ProjectManMeta.updateMembesRoleV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.updateMembesRoleV4, hcClient);
     }
 
     /**
@@ -952,7 +927,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNickNameV4Request 请求对象
+     * @param request UpdateNickNameV4Request 请求对象
      * @return UpdateNickNameV4Response
      */
     public UpdateNickNameV4Response updateNickNameV4(UpdateNickNameV4Request request) {
@@ -966,13 +941,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNickNameV4Request 请求对象
+     * @param request UpdateNickNameV4Request 请求对象
      * @return SyncInvoker<UpdateNickNameV4Request, UpdateNickNameV4Response>
      */
     public SyncInvoker<UpdateNickNameV4Request, UpdateNickNameV4Response> updateNickNameV4Invoker(
         UpdateNickNameV4Request request) {
-        return new SyncInvoker<UpdateNickNameV4Request, UpdateNickNameV4Response>(request,
-            ProjectManMeta.updateNickNameV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.updateNickNameV4, hcClient);
     }
 
     /**
@@ -982,7 +956,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectV4Request 请求对象
+     * @param request UpdateProjectV4Request 请求对象
      * @return UpdateProjectV4Response
      */
     public UpdateProjectV4Response updateProjectV4(UpdateProjectV4Request request) {
@@ -996,13 +970,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectV4Request 请求对象
+     * @param request UpdateProjectV4Request 请求对象
      * @return SyncInvoker<UpdateProjectV4Request, UpdateProjectV4Response>
      */
     public SyncInvoker<UpdateProjectV4Request, UpdateProjectV4Response> updateProjectV4Invoker(
         UpdateProjectV4Request request) {
-        return new SyncInvoker<UpdateProjectV4Request, UpdateProjectV4Response>(request, ProjectManMeta.updateProjectV4,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.updateProjectV4, hcClient);
     }
 
     /**
@@ -1012,7 +985,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddIssueWorkHoursRequest 请求对象
+     * @param request AddIssueWorkHoursRequest 请求对象
      * @return AddIssueWorkHoursResponse
      */
     public AddIssueWorkHoursResponse addIssueWorkHours(AddIssueWorkHoursRequest request) {
@@ -1026,13 +999,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddIssueWorkHoursRequest 请求对象
+     * @param request AddIssueWorkHoursRequest 请求对象
      * @return SyncInvoker<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse>
      */
     public SyncInvoker<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse> addIssueWorkHoursInvoker(
         AddIssueWorkHoursRequest request) {
-        return new SyncInvoker<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse>(request,
-            ProjectManMeta.addIssueWorkHours, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.addIssueWorkHours, hcClient);
     }
 
     /**
@@ -1042,7 +1014,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteIssuesV4Request 请求对象
+     * @param request BatchDeleteIssuesV4Request 请求对象
      * @return BatchDeleteIssuesV4Response
      */
     public BatchDeleteIssuesV4Response batchDeleteIssuesV4(BatchDeleteIssuesV4Request request) {
@@ -1056,13 +1028,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteIssuesV4Request 请求对象
+     * @param request BatchDeleteIssuesV4Request 请求对象
      * @return SyncInvoker<BatchDeleteIssuesV4Request, BatchDeleteIssuesV4Response>
      */
     public SyncInvoker<BatchDeleteIssuesV4Request, BatchDeleteIssuesV4Response> batchDeleteIssuesV4Invoker(
         BatchDeleteIssuesV4Request request) {
-        return new SyncInvoker<BatchDeleteIssuesV4Request, BatchDeleteIssuesV4Response>(request,
-            ProjectManMeta.batchDeleteIssuesV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.batchDeleteIssuesV4, hcClient);
     }
 
     /**
@@ -1072,7 +1043,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteIterationsV4Request 请求对象
+     * @param request BatchDeleteIterationsV4Request 请求对象
      * @return BatchDeleteIterationsV4Response
      */
     public BatchDeleteIterationsV4Response batchDeleteIterationsV4(BatchDeleteIterationsV4Request request) {
@@ -1086,13 +1057,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteIterationsV4Request 请求对象
+     * @param request BatchDeleteIterationsV4Request 请求对象
      * @return SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response>
      */
     public SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response> batchDeleteIterationsV4Invoker(
         BatchDeleteIterationsV4Request request) {
-        return new SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response>(request,
-            ProjectManMeta.batchDeleteIterationsV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.batchDeleteIterationsV4, hcClient);
     }
 
     /**
@@ -1102,7 +1072,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelProjectDomainRequest 请求对象
+     * @param request CancelProjectDomainRequest 请求对象
      * @return CancelProjectDomainResponse
      */
     public CancelProjectDomainResponse cancelProjectDomain(CancelProjectDomainRequest request) {
@@ -1116,13 +1086,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelProjectDomainRequest 请求对象
+     * @param request CancelProjectDomainRequest 请求对象
      * @return SyncInvoker<CancelProjectDomainRequest, CancelProjectDomainResponse>
      */
     public SyncInvoker<CancelProjectDomainRequest, CancelProjectDomainResponse> cancelProjectDomainInvoker(
         CancelProjectDomainRequest request) {
-        return new SyncInvoker<CancelProjectDomainRequest, CancelProjectDomainResponse>(request,
-            ProjectManMeta.cancelProjectDomain, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.cancelProjectDomain, hcClient);
     }
 
     /**
@@ -1132,7 +1101,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomfieldsRequest 请求对象
+     * @param request CreateCustomfieldsRequest 请求对象
      * @return CreateCustomfieldsResponse
      */
     public CreateCustomfieldsResponse createCustomfields(CreateCustomfieldsRequest request) {
@@ -1146,13 +1115,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomfieldsRequest 请求对象
+     * @param request CreateCustomfieldsRequest 请求对象
      * @return SyncInvoker<CreateCustomfieldsRequest, CreateCustomfieldsResponse>
      */
     public SyncInvoker<CreateCustomfieldsRequest, CreateCustomfieldsResponse> createCustomfieldsInvoker(
         CreateCustomfieldsRequest request) {
-        return new SyncInvoker<CreateCustomfieldsRequest, CreateCustomfieldsResponse>(request,
-            ProjectManMeta.createCustomfields, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.createCustomfields, hcClient);
     }
 
     /**
@@ -1162,7 +1130,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIssueV4Request 请求对象
+     * @param request CreateIssueV4Request 请求对象
      * @return CreateIssueV4Response
      */
     public CreateIssueV4Response createIssueV4(CreateIssueV4Request request) {
@@ -1176,12 +1144,11 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIssueV4Request 请求对象
+     * @param request CreateIssueV4Request 请求对象
      * @return SyncInvoker<CreateIssueV4Request, CreateIssueV4Response>
      */
     public SyncInvoker<CreateIssueV4Request, CreateIssueV4Response> createIssueV4Invoker(CreateIssueV4Request request) {
-        return new SyncInvoker<CreateIssueV4Request, CreateIssueV4Response>(request, ProjectManMeta.createIssueV4,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.createIssueV4, hcClient);
     }
 
     /**
@@ -1191,7 +1158,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIterationV4Request 请求对象
+     * @param request CreateIterationV4Request 请求对象
      * @return CreateIterationV4Response
      */
     public CreateIterationV4Response createIterationV4(CreateIterationV4Request request) {
@@ -1205,13 +1172,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIterationV4Request 请求对象
+     * @param request CreateIterationV4Request 请求对象
      * @return SyncInvoker<CreateIterationV4Request, CreateIterationV4Response>
      */
     public SyncInvoker<CreateIterationV4Request, CreateIterationV4Response> createIterationV4Invoker(
         CreateIterationV4Request request) {
-        return new SyncInvoker<CreateIterationV4Request, CreateIterationV4Response>(request,
-            ProjectManMeta.createIterationV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.createIterationV4, hcClient);
     }
 
     /**
@@ -1221,7 +1187,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectDomainRequest 请求对象
+     * @param request CreateProjectDomainRequest 请求对象
      * @return CreateProjectDomainResponse
      */
     public CreateProjectDomainResponse createProjectDomain(CreateProjectDomainRequest request) {
@@ -1235,13 +1201,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectDomainRequest 请求对象
+     * @param request CreateProjectDomainRequest 请求对象
      * @return SyncInvoker<CreateProjectDomainRequest, CreateProjectDomainResponse>
      */
     public SyncInvoker<CreateProjectDomainRequest, CreateProjectDomainResponse> createProjectDomainInvoker(
         CreateProjectDomainRequest request) {
-        return new SyncInvoker<CreateProjectDomainRequest, CreateProjectDomainResponse>(request,
-            ProjectManMeta.createProjectDomain, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.createProjectDomain, hcClient);
     }
 
     /**
@@ -1251,7 +1216,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectModuleRequest 请求对象
+     * @param request CreateProjectModuleRequest 请求对象
      * @return CreateProjectModuleResponse
      */
     public CreateProjectModuleResponse createProjectModule(CreateProjectModuleRequest request) {
@@ -1265,13 +1230,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectModuleRequest 请求对象
+     * @param request CreateProjectModuleRequest 请求对象
      * @return SyncInvoker<CreateProjectModuleRequest, CreateProjectModuleResponse>
      */
     public SyncInvoker<CreateProjectModuleRequest, CreateProjectModuleResponse> createProjectModuleInvoker(
         CreateProjectModuleRequest request) {
-        return new SyncInvoker<CreateProjectModuleRequest, CreateProjectModuleResponse>(request,
-            ProjectManMeta.createProjectModule, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.createProjectModule, hcClient);
     }
 
     /**
@@ -1281,7 +1245,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSystemIssueV4Request 请求对象
+     * @param request CreateSystemIssueV4Request 请求对象
      * @return CreateSystemIssueV4Response
      */
     public CreateSystemIssueV4Response createSystemIssueV4(CreateSystemIssueV4Request request) {
@@ -1295,13 +1259,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSystemIssueV4Request 请求对象
+     * @param request CreateSystemIssueV4Request 请求对象
      * @return SyncInvoker<CreateSystemIssueV4Request, CreateSystemIssueV4Response>
      */
     public SyncInvoker<CreateSystemIssueV4Request, CreateSystemIssueV4Response> createSystemIssueV4Invoker(
         CreateSystemIssueV4Request request) {
-        return new SyncInvoker<CreateSystemIssueV4Request, CreateSystemIssueV4Response>(request,
-            ProjectManMeta.createSystemIssueV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.createSystemIssueV4, hcClient);
     }
 
     /**
@@ -1311,7 +1274,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAttachmentRequest 请求对象
+     * @param request DeleteAttachmentRequest 请求对象
      * @return DeleteAttachmentResponse
      */
     public DeleteAttachmentResponse deleteAttachment(DeleteAttachmentRequest request) {
@@ -1325,13 +1288,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAttachmentRequest 请求对象
+     * @param request DeleteAttachmentRequest 请求对象
      * @return SyncInvoker<DeleteAttachmentRequest, DeleteAttachmentResponse>
      */
     public SyncInvoker<DeleteAttachmentRequest, DeleteAttachmentResponse> deleteAttachmentInvoker(
         DeleteAttachmentRequest request) {
-        return new SyncInvoker<DeleteAttachmentRequest, DeleteAttachmentResponse>(request,
-            ProjectManMeta.deleteAttachment, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.deleteAttachment, hcClient);
     }
 
     /**
@@ -1341,7 +1303,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIssueV4Request 请求对象
+     * @param request DeleteIssueV4Request 请求对象
      * @return DeleteIssueV4Response
      */
     public DeleteIssueV4Response deleteIssueV4(DeleteIssueV4Request request) {
@@ -1355,12 +1317,11 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIssueV4Request 请求对象
+     * @param request DeleteIssueV4Request 请求对象
      * @return SyncInvoker<DeleteIssueV4Request, DeleteIssueV4Response>
      */
     public SyncInvoker<DeleteIssueV4Request, DeleteIssueV4Response> deleteIssueV4Invoker(DeleteIssueV4Request request) {
-        return new SyncInvoker<DeleteIssueV4Request, DeleteIssueV4Response>(request, ProjectManMeta.deleteIssueV4,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.deleteIssueV4, hcClient);
     }
 
     /**
@@ -1370,7 +1331,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIterationV4Request 请求对象
+     * @param request DeleteIterationV4Request 请求对象
      * @return DeleteIterationV4Response
      */
     public DeleteIterationV4Response deleteIterationV4(DeleteIterationV4Request request) {
@@ -1384,13 +1345,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIterationV4Request 请求对象
+     * @param request DeleteIterationV4Request 请求对象
      * @return SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response>
      */
     public SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response> deleteIterationV4Invoker(
         DeleteIterationV4Request request) {
-        return new SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response>(request,
-            ProjectManMeta.deleteIterationV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.deleteIterationV4, hcClient);
     }
 
     /**
@@ -1400,7 +1360,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProjectModuleRequest 请求对象
+     * @param request DeleteProjectModuleRequest 请求对象
      * @return DeleteProjectModuleResponse
      */
     public DeleteProjectModuleResponse deleteProjectModule(DeleteProjectModuleRequest request) {
@@ -1414,13 +1374,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProjectModuleRequest 请求对象
+     * @param request DeleteProjectModuleRequest 请求对象
      * @return SyncInvoker<DeleteProjectModuleRequest, DeleteProjectModuleResponse>
      */
     public SyncInvoker<DeleteProjectModuleRequest, DeleteProjectModuleResponse> deleteProjectModuleInvoker(
         DeleteProjectModuleRequest request) {
-        return new SyncInvoker<DeleteProjectModuleRequest, DeleteProjectModuleResponse>(request,
-            ProjectManMeta.deleteProjectModule, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.deleteProjectModule, hcClient);
     }
 
     /**
@@ -1430,7 +1389,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadAttachmentRequest 请求对象
+     * @param request DownloadAttachmentRequest 请求对象
      * @return DownloadAttachmentResponse
      */
     public DownloadAttachmentResponse downloadAttachment(DownloadAttachmentRequest request) {
@@ -1444,13 +1403,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadAttachmentRequest 请求对象
+     * @param request DownloadAttachmentRequest 请求对象
      * @return SyncInvoker<DownloadAttachmentRequest, DownloadAttachmentResponse>
      */
     public SyncInvoker<DownloadAttachmentRequest, DownloadAttachmentResponse> downloadAttachmentInvoker(
         DownloadAttachmentRequest request) {
-        return new SyncInvoker<DownloadAttachmentRequest, DownloadAttachmentResponse>(request,
-            ProjectManMeta.downloadAttachment, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.downloadAttachment, hcClient);
     }
 
     /**
@@ -1460,7 +1418,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadImageFileRequest 请求对象
+     * @param request DownloadImageFileRequest 请求对象
      * @return DownloadImageFileResponse
      */
     public DownloadImageFileResponse downloadImageFile(DownloadImageFileRequest request) {
@@ -1474,13 +1432,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadImageFileRequest 请求对象
+     * @param request DownloadImageFileRequest 请求对象
      * @return SyncInvoker<DownloadImageFileRequest, DownloadImageFileResponse>
      */
     public SyncInvoker<DownloadImageFileRequest, DownloadImageFileResponse> downloadImageFileInvoker(
         DownloadImageFileRequest request) {
-        return new SyncInvoker<DownloadImageFileRequest, DownloadImageFileResponse>(request,
-            ProjectManMeta.downloadImageFile, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.downloadImageFile, hcClient);
     }
 
     /**
@@ -1490,7 +1447,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssociatedIssuesRequest 请求对象
+     * @param request ListAssociatedIssuesRequest 请求对象
      * @return ListAssociatedIssuesResponse
      */
     public ListAssociatedIssuesResponse listAssociatedIssues(ListAssociatedIssuesRequest request) {
@@ -1504,13 +1461,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssociatedIssuesRequest 请求对象
+     * @param request ListAssociatedIssuesRequest 请求对象
      * @return SyncInvoker<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse>
      */
     public SyncInvoker<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse> listAssociatedIssuesInvoker(
         ListAssociatedIssuesRequest request) {
-        return new SyncInvoker<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse>(request,
-            ProjectManMeta.listAssociatedIssues, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listAssociatedIssues, hcClient);
     }
 
     /**
@@ -1520,7 +1476,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssociatedTestCasesRequest 请求对象
+     * @param request ListAssociatedTestCasesRequest 请求对象
      * @return ListAssociatedTestCasesResponse
      */
     public ListAssociatedTestCasesResponse listAssociatedTestCases(ListAssociatedTestCasesRequest request) {
@@ -1534,13 +1490,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssociatedTestCasesRequest 请求对象
+     * @param request ListAssociatedTestCasesRequest 请求对象
      * @return SyncInvoker<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse>
      */
     public SyncInvoker<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse> listAssociatedTestCasesInvoker(
         ListAssociatedTestCasesRequest request) {
-        return new SyncInvoker<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse>(request,
-            ProjectManMeta.listAssociatedTestCases, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listAssociatedTestCases, hcClient);
     }
 
     /**
@@ -1550,7 +1505,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssociatedWikisRequest 请求对象
+     * @param request ListAssociatedWikisRequest 请求对象
      * @return ListAssociatedWikisResponse
      */
     public ListAssociatedWikisResponse listAssociatedWikis(ListAssociatedWikisRequest request) {
@@ -1564,13 +1519,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssociatedWikisRequest 请求对象
+     * @param request ListAssociatedWikisRequest 请求对象
      * @return SyncInvoker<ListAssociatedWikisRequest, ListAssociatedWikisResponse>
      */
     public SyncInvoker<ListAssociatedWikisRequest, ListAssociatedWikisResponse> listAssociatedWikisInvoker(
         ListAssociatedWikisRequest request) {
-        return new SyncInvoker<ListAssociatedWikisRequest, ListAssociatedWikisResponse>(request,
-            ProjectManMeta.listAssociatedWikis, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listAssociatedWikis, hcClient);
     }
 
     /**
@@ -1580,7 +1534,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListChildIssuesV4Request 请求对象
+     * @param request ListChildIssuesV4Request 请求对象
      * @return ListChildIssuesV4Response
      */
     public ListChildIssuesV4Response listChildIssuesV4(ListChildIssuesV4Request request) {
@@ -1594,13 +1548,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListChildIssuesV4Request 请求对象
+     * @param request ListChildIssuesV4Request 请求对象
      * @return SyncInvoker<ListChildIssuesV4Request, ListChildIssuesV4Response>
      */
     public SyncInvoker<ListChildIssuesV4Request, ListChildIssuesV4Response> listChildIssuesV4Invoker(
         ListChildIssuesV4Request request) {
-        return new SyncInvoker<ListChildIssuesV4Request, ListChildIssuesV4Response>(request,
-            ProjectManMeta.listChildIssuesV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listChildIssuesV4, hcClient);
     }
 
     /**
@@ -1610,7 +1563,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssueAssociatedCommitsRequest 请求对象
+     * @param request ListIssueAssociatedCommitsRequest 请求对象
      * @return ListIssueAssociatedCommitsResponse
      */
     public ListIssueAssociatedCommitsResponse listIssueAssociatedCommits(ListIssueAssociatedCommitsRequest request) {
@@ -1624,13 +1577,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssueAssociatedCommitsRequest 请求对象
+     * @param request ListIssueAssociatedCommitsRequest 请求对象
      * @return SyncInvoker<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse>
      */
     public SyncInvoker<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse> listIssueAssociatedCommitsInvoker(
         ListIssueAssociatedCommitsRequest request) {
-        return new SyncInvoker<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse>(request,
-            ProjectManMeta.listIssueAssociatedCommits, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listIssueAssociatedCommits, hcClient);
     }
 
     /**
@@ -1640,7 +1592,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssueCommentsV4Request 请求对象
+     * @param request ListIssueCommentsV4Request 请求对象
      * @return ListIssueCommentsV4Response
      */
     public ListIssueCommentsV4Response listIssueCommentsV4(ListIssueCommentsV4Request request) {
@@ -1654,13 +1606,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssueCommentsV4Request 请求对象
+     * @param request ListIssueCommentsV4Request 请求对象
      * @return SyncInvoker<ListIssueCommentsV4Request, ListIssueCommentsV4Response>
      */
     public SyncInvoker<ListIssueCommentsV4Request, ListIssueCommentsV4Response> listIssueCommentsV4Invoker(
         ListIssueCommentsV4Request request) {
-        return new SyncInvoker<ListIssueCommentsV4Request, ListIssueCommentsV4Response>(request,
-            ProjectManMeta.listIssueCommentsV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listIssueCommentsV4, hcClient);
     }
 
     /**
@@ -1670,7 +1621,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssueCustomFieldsRequest 请求对象
+     * @param request ListIssueCustomFieldsRequest 请求对象
      * @return ListIssueCustomFieldsResponse
      */
     public ListIssueCustomFieldsResponse listIssueCustomFields(ListIssueCustomFieldsRequest request) {
@@ -1684,13 +1635,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssueCustomFieldsRequest 请求对象
+     * @param request ListIssueCustomFieldsRequest 请求对象
      * @return SyncInvoker<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse>
      */
     public SyncInvoker<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse> listIssueCustomFieldsInvoker(
         ListIssueCustomFieldsRequest request) {
-        return new SyncInvoker<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse>(request,
-            ProjectManMeta.listIssueCustomFields, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listIssueCustomFields, hcClient);
     }
 
     /**
@@ -1700,7 +1650,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssueRecordsV4Request 请求对象
+     * @param request ListIssueRecordsV4Request 请求对象
      * @return ListIssueRecordsV4Response
      */
     public ListIssueRecordsV4Response listIssueRecordsV4(ListIssueRecordsV4Request request) {
@@ -1714,13 +1664,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssueRecordsV4Request 请求对象
+     * @param request ListIssueRecordsV4Request 请求对象
      * @return SyncInvoker<ListIssueRecordsV4Request, ListIssueRecordsV4Response>
      */
     public SyncInvoker<ListIssueRecordsV4Request, ListIssueRecordsV4Response> listIssueRecordsV4Invoker(
         ListIssueRecordsV4Request request) {
-        return new SyncInvoker<ListIssueRecordsV4Request, ListIssueRecordsV4Response>(request,
-            ProjectManMeta.listIssueRecordsV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listIssueRecordsV4, hcClient);
     }
 
     /**
@@ -1730,7 +1679,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuesSfV4Request 请求对象
+     * @param request ListIssuesSfV4Request 请求对象
      * @return ListIssuesSfV4Response
      */
     public ListIssuesSfV4Response listIssuesSfV4(ListIssuesSfV4Request request) {
@@ -1744,13 +1693,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuesSfV4Request 请求对象
+     * @param request ListIssuesSfV4Request 请求对象
      * @return SyncInvoker<ListIssuesSfV4Request, ListIssuesSfV4Response>
      */
     public SyncInvoker<ListIssuesSfV4Request, ListIssuesSfV4Response> listIssuesSfV4Invoker(
         ListIssuesSfV4Request request) {
-        return new SyncInvoker<ListIssuesSfV4Request, ListIssuesSfV4Response>(request, ProjectManMeta.listIssuesSfV4,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listIssuesSfV4, hcClient);
     }
 
     /**
@@ -1760,7 +1708,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuesV4Request 请求对象
+     * @param request ListIssuesV4Request 请求对象
      * @return ListIssuesV4Response
      */
     public ListIssuesV4Response listIssuesV4(ListIssuesV4Request request) {
@@ -1774,12 +1722,11 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuesV4Request 请求对象
+     * @param request ListIssuesV4Request 请求对象
      * @return SyncInvoker<ListIssuesV4Request, ListIssuesV4Response>
      */
     public SyncInvoker<ListIssuesV4Request, ListIssuesV4Response> listIssuesV4Invoker(ListIssuesV4Request request) {
-        return new SyncInvoker<ListIssuesV4Request, ListIssuesV4Response>(request, ProjectManMeta.listIssuesV4,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listIssuesV4, hcClient);
     }
 
     /**
@@ -1789,7 +1736,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIterationHistoriesRequest 请求对象
+     * @param request ListIterationHistoriesRequest 请求对象
      * @return ListIterationHistoriesResponse
      */
     public ListIterationHistoriesResponse listIterationHistories(ListIterationHistoriesRequest request) {
@@ -1803,13 +1750,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIterationHistoriesRequest 请求对象
+     * @param request ListIterationHistoriesRequest 请求对象
      * @return SyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse>
      */
     public SyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse> listIterationHistoriesInvoker(
         ListIterationHistoriesRequest request) {
-        return new SyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse>(request,
-            ProjectManMeta.listIterationHistories, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listIterationHistories, hcClient);
     }
 
     /**
@@ -1819,7 +1765,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectDomainsRequest 请求对象
+     * @param request ListProjectDomainsRequest 请求对象
      * @return ListProjectDomainsResponse
      */
     public ListProjectDomainsResponse listProjectDomains(ListProjectDomainsRequest request) {
@@ -1833,13 +1779,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectDomainsRequest 请求对象
+     * @param request ListProjectDomainsRequest 请求对象
      * @return SyncInvoker<ListProjectDomainsRequest, ListProjectDomainsResponse>
      */
     public SyncInvoker<ListProjectDomainsRequest, ListProjectDomainsResponse> listProjectDomainsInvoker(
         ListProjectDomainsRequest request) {
-        return new SyncInvoker<ListProjectDomainsRequest, ListProjectDomainsResponse>(request,
-            ProjectManMeta.listProjectDomains, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listProjectDomains, hcClient);
     }
 
     /**
@@ -1849,7 +1794,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectIssuesRecordsV4Request 请求对象
+     * @param request ListProjectIssuesRecordsV4Request 请求对象
      * @return ListProjectIssuesRecordsV4Response
      */
     public ListProjectIssuesRecordsV4Response listProjectIssuesRecordsV4(ListProjectIssuesRecordsV4Request request) {
@@ -1863,13 +1808,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectIssuesRecordsV4Request 请求对象
+     * @param request ListProjectIssuesRecordsV4Request 请求对象
      * @return SyncInvoker<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response>
      */
     public SyncInvoker<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response> listProjectIssuesRecordsV4Invoker(
         ListProjectIssuesRecordsV4Request request) {
-        return new SyncInvoker<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response>(request,
-            ProjectManMeta.listProjectIssuesRecordsV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listProjectIssuesRecordsV4, hcClient);
     }
 
     /**
@@ -1879,7 +1823,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectIterationsV4Request 请求对象
+     * @param request ListProjectIterationsV4Request 请求对象
      * @return ListProjectIterationsV4Response
      */
     public ListProjectIterationsV4Response listProjectIterationsV4(ListProjectIterationsV4Request request) {
@@ -1893,13 +1837,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectIterationsV4Request 请求对象
+     * @param request ListProjectIterationsV4Request 请求对象
      * @return SyncInvoker<ListProjectIterationsV4Request, ListProjectIterationsV4Response>
      */
     public SyncInvoker<ListProjectIterationsV4Request, ListProjectIterationsV4Response> listProjectIterationsV4Invoker(
         ListProjectIterationsV4Request request) {
-        return new SyncInvoker<ListProjectIterationsV4Request, ListProjectIterationsV4Response>(request,
-            ProjectManMeta.listProjectIterationsV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listProjectIterationsV4, hcClient);
     }
 
     /**
@@ -1909,7 +1852,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectModulesRequest 请求对象
+     * @param request ListProjectModulesRequest 请求对象
      * @return ListProjectModulesResponse
      */
     public ListProjectModulesResponse listProjectModules(ListProjectModulesRequest request) {
@@ -1923,13 +1866,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectModulesRequest 请求对象
+     * @param request ListProjectModulesRequest 请求对象
      * @return SyncInvoker<ListProjectModulesRequest, ListProjectModulesResponse>
      */
     public SyncInvoker<ListProjectModulesRequest, ListProjectModulesResponse> listProjectModulesInvoker(
         ListProjectModulesRequest request) {
-        return new SyncInvoker<ListProjectModulesRequest, ListProjectModulesResponse>(request,
-            ProjectManMeta.listProjectModules, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listProjectModules, hcClient);
     }
 
     /**
@@ -1939,7 +1881,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectWorkHoursRequest 请求对象
+     * @param request ListProjectWorkHoursRequest 请求对象
      * @return ListProjectWorkHoursResponse
      */
     public ListProjectWorkHoursResponse listProjectWorkHours(ListProjectWorkHoursRequest request) {
@@ -1953,13 +1895,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectWorkHoursRequest 请求对象
+     * @param request ListProjectWorkHoursRequest 请求对象
      * @return SyncInvoker<ListProjectWorkHoursRequest, ListProjectWorkHoursResponse>
      */
     public SyncInvoker<ListProjectWorkHoursRequest, ListProjectWorkHoursResponse> listProjectWorkHoursInvoker(
         ListProjectWorkHoursRequest request) {
-        return new SyncInvoker<ListProjectWorkHoursRequest, ListProjectWorkHoursResponse>(request,
-            ProjectManMeta.listProjectWorkHours, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listProjectWorkHours, hcClient);
     }
 
     /**
@@ -1969,7 +1910,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectWorkHoursTypeRequest 请求对象
+     * @param request ListProjectWorkHoursTypeRequest 请求对象
      * @return ListProjectWorkHoursTypeResponse
      */
     public ListProjectWorkHoursTypeResponse listProjectWorkHoursType(ListProjectWorkHoursTypeRequest request) {
@@ -1983,13 +1924,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectWorkHoursTypeRequest 请求对象
+     * @param request ListProjectWorkHoursTypeRequest 请求对象
      * @return SyncInvoker<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse>
      */
     public SyncInvoker<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse> listProjectWorkHoursTypeInvoker(
         ListProjectWorkHoursTypeRequest request) {
-        return new SyncInvoker<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse>(request,
-            ProjectManMeta.listProjectWorkHoursType, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listProjectWorkHoursType, hcClient);
     }
 
     /**
@@ -1999,7 +1939,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScrumProjectStatusesRequest 请求对象
+     * @param request ListScrumProjectStatusesRequest 请求对象
      * @return ListScrumProjectStatusesResponse
      */
     public ListScrumProjectStatusesResponse listScrumProjectStatuses(ListScrumProjectStatusesRequest request) {
@@ -2013,13 +1953,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScrumProjectStatusesRequest 请求对象
+     * @param request ListScrumProjectStatusesRequest 请求对象
      * @return SyncInvoker<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse>
      */
     public SyncInvoker<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse> listScrumProjectStatusesInvoker(
         ListScrumProjectStatusesRequest request) {
-        return new SyncInvoker<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse>(request,
-            ProjectManMeta.listScrumProjectStatuses, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listScrumProjectStatuses, hcClient);
     }
 
     /**
@@ -2029,7 +1968,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpecIssueStayTimesRequest 请求对象
+     * @param request ListSpecIssueStayTimesRequest 请求对象
      * @return ListSpecIssueStayTimesResponse
      */
     public ListSpecIssueStayTimesResponse listSpecIssueStayTimes(ListSpecIssueStayTimesRequest request) {
@@ -2043,13 +1982,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpecIssueStayTimesRequest 请求对象
+     * @param request ListSpecIssueStayTimesRequest 请求对象
      * @return SyncInvoker<ListSpecIssueStayTimesRequest, ListSpecIssueStayTimesResponse>
      */
     public SyncInvoker<ListSpecIssueStayTimesRequest, ListSpecIssueStayTimesResponse> listSpecIssueStayTimesInvoker(
         ListSpecIssueStayTimesRequest request) {
-        return new SyncInvoker<ListSpecIssueStayTimesRequest, ListSpecIssueStayTimesResponse>(request,
-            ProjectManMeta.listSpecIssueStayTimes, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listSpecIssueStayTimes, hcClient);
     }
 
     /**
@@ -2059,7 +1997,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatusStatisticRequest 请求对象
+     * @param request ListStatusStatisticRequest 请求对象
      * @return ListStatusStatisticResponse
      */
     public ListStatusStatisticResponse listStatusStatistic(ListStatusStatisticRequest request) {
@@ -2073,13 +2011,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatusStatisticRequest 请求对象
+     * @param request ListStatusStatisticRequest 请求对象
      * @return SyncInvoker<ListStatusStatisticRequest, ListStatusStatisticResponse>
      */
     public SyncInvoker<ListStatusStatisticRequest, ListStatusStatisticResponse> listStatusStatisticInvoker(
         ListStatusStatisticRequest request) {
-        return new SyncInvoker<ListStatusStatisticRequest, ListStatusStatisticResponse>(request,
-            ProjectManMeta.listStatusStatistic, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.listStatusStatistic, hcClient);
     }
 
     /**
@@ -2089,7 +2026,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchIssuesRequest 请求对象
+     * @param request SearchIssuesRequest 请求对象
      * @return SearchIssuesResponse
      */
     public SearchIssuesResponse searchIssues(SearchIssuesRequest request) {
@@ -2103,12 +2040,11 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchIssuesRequest 请求对象
+     * @param request SearchIssuesRequest 请求对象
      * @return SyncInvoker<SearchIssuesRequest, SearchIssuesResponse>
      */
     public SyncInvoker<SearchIssuesRequest, SearchIssuesResponse> searchIssuesInvoker(SearchIssuesRequest request) {
-        return new SyncInvoker<SearchIssuesRequest, SearchIssuesResponse>(request, ProjectManMeta.searchIssues,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.searchIssues, hcClient);
     }
 
     /**
@@ -2118,7 +2054,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIssueCompletionRateRequest 请求对象
+     * @param request ShowIssueCompletionRateRequest 请求对象
      * @return ShowIssueCompletionRateResponse
      */
     public ShowIssueCompletionRateResponse showIssueCompletionRate(ShowIssueCompletionRateRequest request) {
@@ -2132,13 +2068,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIssueCompletionRateRequest 请求对象
+     * @param request ShowIssueCompletionRateRequest 请求对象
      * @return SyncInvoker<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse>
      */
     public SyncInvoker<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse> showIssueCompletionRateInvoker(
         ShowIssueCompletionRateRequest request) {
-        return new SyncInvoker<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse>(request,
-            ProjectManMeta.showIssueCompletionRate, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showIssueCompletionRate, hcClient);
     }
 
     /**
@@ -2148,7 +2083,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIssueV4Request 请求对象
+     * @param request ShowIssueV4Request 请求对象
      * @return ShowIssueV4Response
      */
     public ShowIssueV4Response showIssueV4(ShowIssueV4Request request) {
@@ -2162,11 +2097,11 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIssueV4Request 请求对象
+     * @param request ShowIssueV4Request 请求对象
      * @return SyncInvoker<ShowIssueV4Request, ShowIssueV4Response>
      */
     public SyncInvoker<ShowIssueV4Request, ShowIssueV4Response> showIssueV4Invoker(ShowIssueV4Request request) {
-        return new SyncInvoker<ShowIssueV4Request, ShowIssueV4Response>(request, ProjectManMeta.showIssueV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showIssueV4, hcClient);
     }
 
     /**
@@ -2176,7 +2111,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIssuesWrokFlowConfigRequest 请求对象
+     * @param request ShowIssuesWrokFlowConfigRequest 请求对象
      * @return ShowIssuesWrokFlowConfigResponse
      */
     public ShowIssuesWrokFlowConfigResponse showIssuesWrokFlowConfig(ShowIssuesWrokFlowConfigRequest request) {
@@ -2190,13 +2125,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIssuesWrokFlowConfigRequest 请求对象
+     * @param request ShowIssuesWrokFlowConfigRequest 请求对象
      * @return SyncInvoker<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse>
      */
     public SyncInvoker<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse> showIssuesWrokFlowConfigInvoker(
         ShowIssuesWrokFlowConfigRequest request) {
-        return new SyncInvoker<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse>(request,
-            ProjectManMeta.showIssuesWrokFlowConfig, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showIssuesWrokFlowConfig, hcClient);
     }
 
     /**
@@ -2206,7 +2140,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIterationV4Request 请求对象
+     * @param request ShowIterationV4Request 请求对象
      * @return ShowIterationV4Response
      */
     public ShowIterationV4Response showIterationV4(ShowIterationV4Request request) {
@@ -2220,13 +2154,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIterationV4Request 请求对象
+     * @param request ShowIterationV4Request 请求对象
      * @return SyncInvoker<ShowIterationV4Request, ShowIterationV4Response>
      */
     public SyncInvoker<ShowIterationV4Request, ShowIterationV4Response> showIterationV4Invoker(
         ShowIterationV4Request request) {
-        return new SyncInvoker<ShowIterationV4Request, ShowIterationV4Response>(request, ProjectManMeta.showIterationV4,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showIterationV4, hcClient);
     }
 
     /**
@@ -2236,7 +2169,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectWorkHoursRequest 请求对象
+     * @param request ShowProjectWorkHoursRequest 请求对象
      * @return ShowProjectWorkHoursResponse
      */
     public ShowProjectWorkHoursResponse showProjectWorkHours(ShowProjectWorkHoursRequest request) {
@@ -2250,13 +2183,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectWorkHoursRequest 请求对象
+     * @param request ShowProjectWorkHoursRequest 请求对象
      * @return SyncInvoker<ShowProjectWorkHoursRequest, ShowProjectWorkHoursResponse>
      */
     public SyncInvoker<ShowProjectWorkHoursRequest, ShowProjectWorkHoursResponse> showProjectWorkHoursInvoker(
         ShowProjectWorkHoursRequest request) {
-        return new SyncInvoker<ShowProjectWorkHoursRequest, ShowProjectWorkHoursResponse>(request,
-            ProjectManMeta.showProjectWorkHours, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.showProjectWorkHours, hcClient);
     }
 
     /**
@@ -2266,7 +2198,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIssueV4Request 请求对象
+     * @param request UpdateIssueV4Request 请求对象
      * @return UpdateIssueV4Response
      */
     public UpdateIssueV4Response updateIssueV4(UpdateIssueV4Request request) {
@@ -2280,12 +2212,11 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIssueV4Request 请求对象
+     * @param request UpdateIssueV4Request 请求对象
      * @return SyncInvoker<UpdateIssueV4Request, UpdateIssueV4Response>
      */
     public SyncInvoker<UpdateIssueV4Request, UpdateIssueV4Response> updateIssueV4Invoker(UpdateIssueV4Request request) {
-        return new SyncInvoker<UpdateIssueV4Request, UpdateIssueV4Response>(request, ProjectManMeta.updateIssueV4,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.updateIssueV4, hcClient);
     }
 
     /**
@@ -2295,7 +2226,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIterationV4Request 请求对象
+     * @param request UpdateIterationV4Request 请求对象
      * @return UpdateIterationV4Response
      */
     public UpdateIterationV4Response updateIterationV4(UpdateIterationV4Request request) {
@@ -2309,13 +2240,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIterationV4Request 请求对象
+     * @param request UpdateIterationV4Request 请求对象
      * @return SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>
      */
     public SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response> updateIterationV4Invoker(
         UpdateIterationV4Request request) {
-        return new SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>(request,
-            ProjectManMeta.updateIterationV4, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.updateIterationV4, hcClient);
     }
 
     /**
@@ -2325,7 +2255,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectDomainRequest 请求对象
+     * @param request UpdateProjectDomainRequest 请求对象
      * @return UpdateProjectDomainResponse
      */
     public UpdateProjectDomainResponse updateProjectDomain(UpdateProjectDomainRequest request) {
@@ -2339,13 +2269,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectDomainRequest 请求对象
+     * @param request UpdateProjectDomainRequest 请求对象
      * @return SyncInvoker<UpdateProjectDomainRequest, UpdateProjectDomainResponse>
      */
     public SyncInvoker<UpdateProjectDomainRequest, UpdateProjectDomainResponse> updateProjectDomainInvoker(
         UpdateProjectDomainRequest request) {
-        return new SyncInvoker<UpdateProjectDomainRequest, UpdateProjectDomainResponse>(request,
-            ProjectManMeta.updateProjectDomain, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.updateProjectDomain, hcClient);
     }
 
     /**
@@ -2355,7 +2284,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectModuleRequest 请求对象
+     * @param request UpdateProjectModuleRequest 请求对象
      * @return UpdateProjectModuleResponse
      */
     public UpdateProjectModuleResponse updateProjectModule(UpdateProjectModuleRequest request) {
@@ -2369,13 +2298,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectModuleRequest 请求对象
+     * @param request UpdateProjectModuleRequest 请求对象
      * @return SyncInvoker<UpdateProjectModuleRequest, UpdateProjectModuleResponse>
      */
     public SyncInvoker<UpdateProjectModuleRequest, UpdateProjectModuleResponse> updateProjectModuleInvoker(
         UpdateProjectModuleRequest request) {
-        return new SyncInvoker<UpdateProjectModuleRequest, UpdateProjectModuleResponse>(request,
-            ProjectManMeta.updateProjectModule, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.updateProjectModule, hcClient);
     }
 
     /**
@@ -2385,7 +2313,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadAttachmentsRequest 请求对象
+     * @param request UploadAttachmentsRequest 请求对象
      * @return UploadAttachmentsResponse
      */
     public UploadAttachmentsResponse uploadAttachments(UploadAttachmentsRequest request) {
@@ -2399,13 +2327,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadAttachmentsRequest 请求对象
+     * @param request UploadAttachmentsRequest 请求对象
      * @return SyncInvoker<UploadAttachmentsRequest, UploadAttachmentsResponse>
      */
     public SyncInvoker<UploadAttachmentsRequest, UploadAttachmentsResponse> uploadAttachmentsInvoker(
         UploadAttachmentsRequest request) {
-        return new SyncInvoker<UploadAttachmentsRequest, UploadAttachmentsResponse>(request,
-            ProjectManMeta.uploadAttachments, hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.uploadAttachments, hcClient);
     }
 
     /**
@@ -2415,7 +2342,7 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadIssueImgRequest 请求对象
+     * @param request UploadIssueImgRequest 请求对象
      * @return UploadIssueImgResponse
      */
     public UploadIssueImgResponse uploadIssueImg(UploadIssueImgRequest request) {
@@ -2429,13 +2356,12 @@ public class ProjectManClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadIssueImgRequest 请求对象
+     * @param request UploadIssueImgRequest 请求对象
      * @return SyncInvoker<UploadIssueImgRequest, UploadIssueImgResponse>
      */
     public SyncInvoker<UploadIssueImgRequest, UploadIssueImgResponse> uploadIssueImgInvoker(
         UploadIssueImgRequest request) {
-        return new SyncInvoker<UploadIssueImgRequest, UploadIssueImgResponse>(request, ProjectManMeta.uploadIssueImg,
-            hcClient);
+        return new SyncInvoker<>(request, ProjectManMeta.uploadIssueImg, hcClient);
     }
 
 }

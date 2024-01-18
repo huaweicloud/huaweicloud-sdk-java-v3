@@ -92,7 +92,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return CompletableFuture<ListApiVersionsResponse>
      */
     public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
@@ -106,13 +106,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(
         ListApiVersionsRequest request) {
-        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, DasMeta.listApiVersions,
-            hcClient);
+        return new AsyncInvoker<>(request, DasMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -122,7 +121,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return CompletableFuture<ShowApiVersionResponse>
      */
     public CompletableFuture<ShowApiVersionResponse> showApiVersionAsync(ShowApiVersionRequest request) {
@@ -136,13 +135,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
      */
     public AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionAsyncInvoker(
         ShowApiVersionRequest request) {
-        return new AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, DasMeta.showApiVersion,
-            hcClient);
+        return new AsyncInvoker<>(request, DasMeta.showApiVersion, hcClient);
     }
 
     /**
@@ -153,7 +151,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelShareConnectionsRequest 请求对象
+     * @param request CancelShareConnectionsRequest 请求对象
      * @return CompletableFuture<CancelShareConnectionsResponse>
      */
     public CompletableFuture<CancelShareConnectionsResponse> cancelShareConnectionsAsync(
@@ -169,13 +167,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelShareConnectionsRequest 请求对象
+     * @param request CancelShareConnectionsRequest 请求对象
      * @return AsyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse>
      */
     public AsyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse> cancelShareConnectionsAsyncInvoker(
         CancelShareConnectionsRequest request) {
-        return new AsyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse>(request,
-            DasMeta.cancelShareConnections, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.cancelShareConnections, hcClient);
     }
 
     /**
@@ -185,7 +182,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeSqlLimitSwitchStatusRequest 请求对象
+     * @param request ChangeSqlLimitSwitchStatusRequest 请求对象
      * @return CompletableFuture<ChangeSqlLimitSwitchStatusResponse>
      */
     public CompletableFuture<ChangeSqlLimitSwitchStatusResponse> changeSqlLimitSwitchStatusAsync(
@@ -200,13 +197,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeSqlLimitSwitchStatusRequest 请求对象
+     * @param request ChangeSqlLimitSwitchStatusRequest 请求对象
      * @return AsyncInvoker<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse>
      */
     public AsyncInvoker<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse> changeSqlLimitSwitchStatusAsyncInvoker(
         ChangeSqlLimitSwitchStatusRequest request) {
-        return new AsyncInvoker<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse>(request,
-            DasMeta.changeSqlLimitSwitchStatus, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.changeSqlLimitSwitchStatus, hcClient);
     }
 
     /**
@@ -217,7 +213,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeSqlSwitchRequest 请求对象
+     * @param request ChangeSqlSwitchRequest 请求对象
      * @return CompletableFuture<ChangeSqlSwitchResponse>
      */
     public CompletableFuture<ChangeSqlSwitchResponse> changeSqlSwitchAsync(ChangeSqlSwitchRequest request) {
@@ -232,13 +228,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeSqlSwitchRequest 请求对象
+     * @param request ChangeSqlSwitchRequest 请求对象
      * @return AsyncInvoker<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse>
      */
     public AsyncInvoker<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> changeSqlSwitchAsyncInvoker(
         ChangeSqlSwitchRequest request) {
-        return new AsyncInvoker<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse>(request, DasMeta.changeSqlSwitch,
-            hcClient);
+        return new AsyncInvoker<>(request, DasMeta.changeSqlSwitch, hcClient);
     }
 
     /**
@@ -249,7 +244,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateShareConnectionsRequest 请求对象
+     * @param request CreateShareConnectionsRequest 请求对象
      * @return CompletableFuture<CreateShareConnectionsResponse>
      */
     public CompletableFuture<CreateShareConnectionsResponse> createShareConnectionsAsync(
@@ -265,13 +260,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateShareConnectionsRequest 请求对象
+     * @param request CreateShareConnectionsRequest 请求对象
      * @return AsyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse>
      */
     public AsyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse> createShareConnectionsAsyncInvoker(
         CreateShareConnectionsRequest request) {
-        return new AsyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse>(request,
-            DasMeta.createShareConnections, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.createShareConnections, hcClient);
     }
 
     /**
@@ -281,7 +275,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSpaceAnalysisTaskRequest 请求对象
+     * @param request CreateSpaceAnalysisTaskRequest 请求对象
      * @return CompletableFuture<CreateSpaceAnalysisTaskResponse>
      */
     public CompletableFuture<CreateSpaceAnalysisTaskResponse> createSpaceAnalysisTaskAsync(
@@ -296,13 +290,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSpaceAnalysisTaskRequest 请求对象
+     * @param request CreateSpaceAnalysisTaskRequest 请求对象
      * @return AsyncInvoker<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse>
      */
     public AsyncInvoker<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> createSpaceAnalysisTaskAsyncInvoker(
         CreateSpaceAnalysisTaskRequest request) {
-        return new AsyncInvoker<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse>(request,
-            DasMeta.createSpaceAnalysisTask, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.createSpaceAnalysisTask, hcClient);
     }
 
     /**
@@ -319,7 +312,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSqlLimitRulesRequest 请求对象
+     * @param request CreateSqlLimitRulesRequest 请求对象
      * @return CompletableFuture<CreateSqlLimitRulesResponse>
      */
     public CompletableFuture<CreateSqlLimitRulesResponse> createSqlLimitRulesAsync(CreateSqlLimitRulesRequest request) {
@@ -340,13 +333,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSqlLimitRulesRequest 请求对象
+     * @param request CreateSqlLimitRulesRequest 请求对象
      * @return AsyncInvoker<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse>
      */
     public AsyncInvoker<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse> createSqlLimitRulesAsyncInvoker(
         CreateSqlLimitRulesRequest request) {
-        return new AsyncInvoker<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse>(request,
-            DasMeta.createSqlLimitRules, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.createSqlLimitRules, hcClient);
     }
 
     /**
@@ -357,7 +349,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTuningRequest 请求对象
+     * @param request CreateTuningRequest 请求对象
      * @return CompletableFuture<CreateTuningResponse>
      */
     public CompletableFuture<CreateTuningResponse> createTuningAsync(CreateTuningRequest request) {
@@ -372,12 +364,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTuningRequest 请求对象
+     * @param request CreateTuningRequest 请求对象
      * @return AsyncInvoker<CreateTuningRequest, CreateTuningResponse>
      */
     public AsyncInvoker<CreateTuningRequest, CreateTuningResponse> createTuningAsyncInvoker(
         CreateTuningRequest request) {
-        return new AsyncInvoker<CreateTuningRequest, CreateTuningResponse>(request, DasMeta.createTuning, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.createTuning, hcClient);
     }
 
     /**
@@ -388,7 +380,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDbUserRequest 请求对象
+     * @param request DeleteDbUserRequest 请求对象
      * @return CompletableFuture<DeleteDbUserResponse>
      */
     public CompletableFuture<DeleteDbUserResponse> deleteDbUserAsync(DeleteDbUserRequest request) {
@@ -403,12 +395,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDbUserRequest 请求对象
+     * @param request DeleteDbUserRequest 请求对象
      * @return AsyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>
      */
     public AsyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUserAsyncInvoker(
         DeleteDbUserRequest request) {
-        return new AsyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>(request, DasMeta.deleteDbUser, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.deleteDbUser, hcClient);
     }
 
     /**
@@ -419,7 +411,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProcessRequest 请求对象
+     * @param request DeleteProcessRequest 请求对象
      * @return CompletableFuture<DeleteProcessResponse>
      */
     public CompletableFuture<DeleteProcessResponse> deleteProcessAsync(DeleteProcessRequest request) {
@@ -434,12 +426,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProcessRequest 请求对象
+     * @param request DeleteProcessRequest 请求对象
      * @return AsyncInvoker<DeleteProcessRequest, DeleteProcessResponse>
      */
     public AsyncInvoker<DeleteProcessRequest, DeleteProcessResponse> deleteProcessAsyncInvoker(
         DeleteProcessRequest request) {
-        return new AsyncInvoker<DeleteProcessRequest, DeleteProcessResponse>(request, DasMeta.deleteProcess, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.deleteProcess, hcClient);
     }
 
     /**
@@ -449,7 +441,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSqlLimitRulesRequest 请求对象
+     * @param request DeleteSqlLimitRulesRequest 请求对象
      * @return CompletableFuture<DeleteSqlLimitRulesResponse>
      */
     public CompletableFuture<DeleteSqlLimitRulesResponse> deleteSqlLimitRulesAsync(DeleteSqlLimitRulesRequest request) {
@@ -463,13 +455,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSqlLimitRulesRequest 请求对象
+     * @param request DeleteSqlLimitRulesRequest 请求对象
      * @return AsyncInvoker<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse>
      */
     public AsyncInvoker<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse> deleteSqlLimitRulesAsyncInvoker(
         DeleteSqlLimitRulesRequest request) {
-        return new AsyncInvoker<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse>(request,
-            DasMeta.deleteSqlLimitRules, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.deleteSqlLimitRules, hcClient);
     }
 
     /**
@@ -479,7 +470,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportSlowQueryLogsRequest 请求对象
+     * @param request ExportSlowQueryLogsRequest 请求对象
      * @return CompletableFuture<ExportSlowQueryLogsResponse>
      */
     public CompletableFuture<ExportSlowQueryLogsResponse> exportSlowQueryLogsAsync(ExportSlowQueryLogsRequest request) {
@@ -493,13 +484,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportSlowQueryLogsRequest 请求对象
+     * @param request ExportSlowQueryLogsRequest 请求对象
      * @return AsyncInvoker<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse>
      */
     public AsyncInvoker<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> exportSlowQueryLogsAsyncInvoker(
         ExportSlowQueryLogsRequest request) {
-        return new AsyncInvoker<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse>(request,
-            DasMeta.exportSlowQueryLogs, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.exportSlowQueryLogs, hcClient);
     }
 
     /**
@@ -509,7 +499,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportSlowSqlTemplatesDetailsRequest 请求对象
+     * @param request ExportSlowSqlTemplatesDetailsRequest 请求对象
      * @return CompletableFuture<ExportSlowSqlTemplatesDetailsResponse>
      */
     public CompletableFuture<ExportSlowSqlTemplatesDetailsResponse> exportSlowSqlTemplatesDetailsAsync(
@@ -524,13 +514,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportSlowSqlTemplatesDetailsRequest 请求对象
+     * @param request ExportSlowSqlTemplatesDetailsRequest 请求对象
      * @return AsyncInvoker<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse>
      */
     public AsyncInvoker<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse> exportSlowSqlTemplatesDetailsAsyncInvoker(
         ExportSlowSqlTemplatesDetailsRequest request) {
-        return new AsyncInvoker<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse>(request,
-            DasMeta.exportSlowSqlTemplatesDetails, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.exportSlowSqlTemplatesDetails, hcClient);
     }
 
     /**
@@ -540,7 +529,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportSqlStatementsRequest 请求对象
+     * @param request ExportSqlStatementsRequest 请求对象
      * @return CompletableFuture<ExportSqlStatementsResponse>
      */
     public CompletableFuture<ExportSqlStatementsResponse> exportSqlStatementsAsync(ExportSqlStatementsRequest request) {
@@ -554,13 +543,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportSqlStatementsRequest 请求对象
+     * @param request ExportSqlStatementsRequest 请求对象
      * @return AsyncInvoker<ExportSqlStatementsRequest, ExportSqlStatementsResponse>
      */
     public AsyncInvoker<ExportSqlStatementsRequest, ExportSqlStatementsResponse> exportSqlStatementsAsyncInvoker(
         ExportSqlStatementsRequest request) {
-        return new AsyncInvoker<ExportSqlStatementsRequest, ExportSqlStatementsResponse>(request,
-            DasMeta.exportSqlStatements, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.exportSqlStatements, hcClient);
     }
 
     /**
@@ -570,7 +558,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportTopSqlTemplatesDetailsRequest 请求对象
+     * @param request ExportTopSqlTemplatesDetailsRequest 请求对象
      * @return CompletableFuture<ExportTopSqlTemplatesDetailsResponse>
      */
     public CompletableFuture<ExportTopSqlTemplatesDetailsResponse> exportTopSqlTemplatesDetailsAsync(
@@ -585,13 +573,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportTopSqlTemplatesDetailsRequest 请求对象
+     * @param request ExportTopSqlTemplatesDetailsRequest 请求对象
      * @return AsyncInvoker<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse>
      */
     public AsyncInvoker<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse> exportTopSqlTemplatesDetailsAsyncInvoker(
         ExportTopSqlTemplatesDetailsRequest request) {
-        return new AsyncInvoker<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse>(request,
-            DasMeta.exportTopSqlTemplatesDetails, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.exportTopSqlTemplatesDetails, hcClient);
     }
 
     /**
@@ -601,7 +588,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportTopSqlTrendDetailsRequest 请求对象
+     * @param request ExportTopSqlTrendDetailsRequest 请求对象
      * @return CompletableFuture<ExportTopSqlTrendDetailsResponse>
      */
     public CompletableFuture<ExportTopSqlTrendDetailsResponse> exportTopSqlTrendDetailsAsync(
@@ -616,13 +603,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportTopSqlTrendDetailsRequest 请求对象
+     * @param request ExportTopSqlTrendDetailsRequest 请求对象
      * @return AsyncInvoker<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse>
      */
     public AsyncInvoker<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse> exportTopSqlTrendDetailsAsyncInvoker(
         ExportTopSqlTrendDetailsRequest request) {
-        return new AsyncInvoker<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse>(request,
-            DasMeta.exportTopSqlTrendDetails, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.exportTopSqlTrendDetails, hcClient);
     }
 
     /**
@@ -633,7 +619,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDbUsersRequest 请求对象
+     * @param request ListDbUsersRequest 请求对象
      * @return CompletableFuture<ListDbUsersResponse>
      */
     public CompletableFuture<ListDbUsersResponse> listDbUsersAsync(ListDbUsersRequest request) {
@@ -648,11 +634,11 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDbUsersRequest 请求对象
+     * @param request ListDbUsersRequest 请求对象
      * @return AsyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
      */
     public AsyncInvoker<ListDbUsersRequest, ListDbUsersResponse> listDbUsersAsyncInvoker(ListDbUsersRequest request) {
-        return new AsyncInvoker<ListDbUsersRequest, ListDbUsersResponse>(request, DasMeta.listDbUsers, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.listDbUsers, hcClient);
     }
 
     /**
@@ -663,7 +649,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInnodbLocksRequest 请求对象
+     * @param request ListInnodbLocksRequest 请求对象
      * @return CompletableFuture<ListInnodbLocksResponse>
      */
     public CompletableFuture<ListInnodbLocksResponse> listInnodbLocksAsync(ListInnodbLocksRequest request) {
@@ -678,13 +664,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInnodbLocksRequest 请求对象
+     * @param request ListInnodbLocksRequest 请求对象
      * @return AsyncInvoker<ListInnodbLocksRequest, ListInnodbLocksResponse>
      */
     public AsyncInvoker<ListInnodbLocksRequest, ListInnodbLocksResponse> listInnodbLocksAsyncInvoker(
         ListInnodbLocksRequest request) {
-        return new AsyncInvoker<ListInnodbLocksRequest, ListInnodbLocksResponse>(request, DasMeta.listInnodbLocks,
-            hcClient);
+        return new AsyncInvoker<>(request, DasMeta.listInnodbLocks, hcClient);
     }
 
     /**
@@ -695,7 +680,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetadataLocksRequest 请求对象
+     * @param request ListMetadataLocksRequest 请求对象
      * @return CompletableFuture<ListMetadataLocksResponse>
      */
     public CompletableFuture<ListMetadataLocksResponse> listMetadataLocksAsync(ListMetadataLocksRequest request) {
@@ -710,13 +695,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetadataLocksRequest 请求对象
+     * @param request ListMetadataLocksRequest 请求对象
      * @return AsyncInvoker<ListMetadataLocksRequest, ListMetadataLocksResponse>
      */
     public AsyncInvoker<ListMetadataLocksRequest, ListMetadataLocksResponse> listMetadataLocksAsyncInvoker(
         ListMetadataLocksRequest request) {
-        return new AsyncInvoker<ListMetadataLocksRequest, ListMetadataLocksResponse>(request, DasMeta.listMetadataLocks,
-            hcClient);
+        return new AsyncInvoker<>(request, DasMeta.listMetadataLocks, hcClient);
     }
 
     /**
@@ -727,7 +711,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProcessesRequest 请求对象
+     * @param request ListProcessesRequest 请求对象
      * @return CompletableFuture<ListProcessesResponse>
      */
     public CompletableFuture<ListProcessesResponse> listProcessesAsync(ListProcessesRequest request) {
@@ -742,12 +726,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProcessesRequest 请求对象
+     * @param request ListProcessesRequest 请求对象
      * @return AsyncInvoker<ListProcessesRequest, ListProcessesResponse>
      */
     public AsyncInvoker<ListProcessesRequest, ListProcessesResponse> listProcessesAsyncInvoker(
         ListProcessesRequest request) {
-        return new AsyncInvoker<ListProcessesRequest, ListProcessesResponse>(request, DasMeta.listProcesses, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.listProcesses, hcClient);
     }
 
     /**
@@ -757,7 +741,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpaceAnalysisRequest 请求对象
+     * @param request ListSpaceAnalysisRequest 请求对象
      * @return CompletableFuture<ListSpaceAnalysisResponse>
      */
     public CompletableFuture<ListSpaceAnalysisResponse> listSpaceAnalysisAsync(ListSpaceAnalysisRequest request) {
@@ -771,13 +755,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpaceAnalysisRequest 请求对象
+     * @param request ListSpaceAnalysisRequest 请求对象
      * @return AsyncInvoker<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse>
      */
     public AsyncInvoker<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> listSpaceAnalysisAsyncInvoker(
         ListSpaceAnalysisRequest request) {
-        return new AsyncInvoker<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse>(request, DasMeta.listSpaceAnalysis,
-            hcClient);
+        return new AsyncInvoker<>(request, DasMeta.listSpaceAnalysis, hcClient);
     }
 
     /**
@@ -787,7 +770,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlLimitRulesRequest 请求对象
+     * @param request ListSqlLimitRulesRequest 请求对象
      * @return CompletableFuture<ListSqlLimitRulesResponse>
      */
     public CompletableFuture<ListSqlLimitRulesResponse> listSqlLimitRulesAsync(ListSqlLimitRulesRequest request) {
@@ -801,13 +784,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlLimitRulesRequest 请求对象
+     * @param request ListSqlLimitRulesRequest 请求对象
      * @return AsyncInvoker<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse>
      */
     public AsyncInvoker<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse> listSqlLimitRulesAsyncInvoker(
         ListSqlLimitRulesRequest request) {
-        return new AsyncInvoker<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse>(request, DasMeta.listSqlLimitRules,
-            hcClient);
+        return new AsyncInvoker<>(request, DasMeta.listSqlLimitRules, hcClient);
     }
 
     /**
@@ -818,7 +800,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterDbUserRequest 请求对象
+     * @param request RegisterDbUserRequest 请求对象
      * @return CompletableFuture<RegisterDbUserResponse>
      */
     public CompletableFuture<RegisterDbUserResponse> registerDbUserAsync(RegisterDbUserRequest request) {
@@ -833,13 +815,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterDbUserRequest 请求对象
+     * @param request RegisterDbUserRequest 请求对象
      * @return AsyncInvoker<RegisterDbUserRequest, RegisterDbUserResponse>
      */
     public AsyncInvoker<RegisterDbUserRequest, RegisterDbUserResponse> registerDbUserAsyncInvoker(
         RegisterDbUserRequest request) {
-        return new AsyncInvoker<RegisterDbUserRequest, RegisterDbUserResponse>(request, DasMeta.registerDbUser,
-            hcClient);
+        return new AsyncInvoker<>(request, DasMeta.registerDbUser, hcClient);
     }
 
     /**
@@ -850,7 +831,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDbUserRequest 请求对象
+     * @param request ShowDbUserRequest 请求对象
      * @return CompletableFuture<ShowDbUserResponse>
      */
     public CompletableFuture<ShowDbUserResponse> showDbUserAsync(ShowDbUserRequest request) {
@@ -865,11 +846,11 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDbUserRequest 请求对象
+     * @param request ShowDbUserRequest 请求对象
      * @return AsyncInvoker<ShowDbUserRequest, ShowDbUserResponse>
      */
     public AsyncInvoker<ShowDbUserRequest, ShowDbUserResponse> showDbUserAsyncInvoker(ShowDbUserRequest request) {
-        return new AsyncInvoker<ShowDbUserRequest, ShowDbUserResponse>(request, DasMeta.showDbUser, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.showDbUser, hcClient);
     }
 
     /**
@@ -879,7 +860,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return CompletableFuture<ShowQuotasResponse>
      */
     public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
@@ -893,11 +874,11 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
      */
     public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
-        return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, DasMeta.showQuotas, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.showQuotas, hcClient);
     }
 
     /**
@@ -908,7 +889,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlExecutionPlanRequest 请求对象
+     * @param request ShowSqlExecutionPlanRequest 请求对象
      * @return CompletableFuture<ShowSqlExecutionPlanResponse>
      */
     public CompletableFuture<ShowSqlExecutionPlanResponse> showSqlExecutionPlanAsync(
@@ -924,13 +905,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlExecutionPlanRequest 请求对象
+     * @param request ShowSqlExecutionPlanRequest 请求对象
      * @return AsyncInvoker<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse>
      */
     public AsyncInvoker<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse> showSqlExecutionPlanAsyncInvoker(
         ShowSqlExecutionPlanRequest request) {
-        return new AsyncInvoker<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse>(request,
-            DasMeta.showSqlExecutionPlan, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.showSqlExecutionPlan, hcClient);
     }
 
     /**
@@ -942,7 +922,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlExplainRequest 请求对象
+     * @param request ShowSqlExplainRequest 请求对象
      * @return CompletableFuture<ShowSqlExplainResponse>
      */
     public CompletableFuture<ShowSqlExplainResponse> showSqlExplainAsync(ShowSqlExplainRequest request) {
@@ -958,13 +938,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlExplainRequest 请求对象
+     * @param request ShowSqlExplainRequest 请求对象
      * @return AsyncInvoker<ShowSqlExplainRequest, ShowSqlExplainResponse>
      */
     public AsyncInvoker<ShowSqlExplainRequest, ShowSqlExplainResponse> showSqlExplainAsyncInvoker(
         ShowSqlExplainRequest request) {
-        return new AsyncInvoker<ShowSqlExplainRequest, ShowSqlExplainResponse>(request, DasMeta.showSqlExplain,
-            hcClient);
+        return new AsyncInvoker<>(request, DasMeta.showSqlExplain, hcClient);
     }
 
     /**
@@ -974,7 +953,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlLimitJobInfoRequest 请求对象
+     * @param request ShowSqlLimitJobInfoRequest 请求对象
      * @return CompletableFuture<ShowSqlLimitJobInfoResponse>
      */
     public CompletableFuture<ShowSqlLimitJobInfoResponse> showSqlLimitJobInfoAsync(ShowSqlLimitJobInfoRequest request) {
@@ -988,13 +967,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlLimitJobInfoRequest 请求对象
+     * @param request ShowSqlLimitJobInfoRequest 请求对象
      * @return AsyncInvoker<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse>
      */
     public AsyncInvoker<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse> showSqlLimitJobInfoAsyncInvoker(
         ShowSqlLimitJobInfoRequest request) {
-        return new AsyncInvoker<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse>(request,
-            DasMeta.showSqlLimitJobInfo, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.showSqlLimitJobInfo, hcClient);
     }
 
     /**
@@ -1004,7 +982,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlLimitSwitchStatusRequest 请求对象
+     * @param request ShowSqlLimitSwitchStatusRequest 请求对象
      * @return CompletableFuture<ShowSqlLimitSwitchStatusResponse>
      */
     public CompletableFuture<ShowSqlLimitSwitchStatusResponse> showSqlLimitSwitchStatusAsync(
@@ -1019,13 +997,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlLimitSwitchStatusRequest 请求对象
+     * @param request ShowSqlLimitSwitchStatusRequest 请求对象
      * @return AsyncInvoker<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse>
      */
     public AsyncInvoker<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse> showSqlLimitSwitchStatusAsyncInvoker(
         ShowSqlLimitSwitchStatusRequest request) {
-        return new AsyncInvoker<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse>(request,
-            DasMeta.showSqlLimitSwitchStatus, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.showSqlLimitSwitchStatus, hcClient);
     }
 
     /**
@@ -1035,7 +1012,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlSwitchStatusRequest 请求对象
+     * @param request ShowSqlSwitchStatusRequest 请求对象
      * @return CompletableFuture<ShowSqlSwitchStatusResponse>
      */
     public CompletableFuture<ShowSqlSwitchStatusResponse> showSqlSwitchStatusAsync(ShowSqlSwitchStatusRequest request) {
@@ -1049,13 +1026,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlSwitchStatusRequest 请求对象
+     * @param request ShowSqlSwitchStatusRequest 请求对象
      * @return AsyncInvoker<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse>
      */
     public AsyncInvoker<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> showSqlSwitchStatusAsyncInvoker(
         ShowSqlSwitchStatusRequest request) {
-        return new AsyncInvoker<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse>(request,
-            DasMeta.showSqlSwitchStatus, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.showSqlSwitchStatus, hcClient);
     }
 
     /**
@@ -1065,7 +1041,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTuningRequest 请求对象
+     * @param request ShowTuningRequest 请求对象
      * @return CompletableFuture<ShowTuningResponse>
      */
     public CompletableFuture<ShowTuningResponse> showTuningAsync(ShowTuningRequest request) {
@@ -1079,11 +1055,11 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTuningRequest 请求对象
+     * @param request ShowTuningRequest 请求对象
      * @return AsyncInvoker<ShowTuningRequest, ShowTuningResponse>
      */
     public AsyncInvoker<ShowTuningRequest, ShowTuningResponse> showTuningAsyncInvoker(ShowTuningRequest request) {
-        return new AsyncInvoker<ShowTuningRequest, ShowTuningResponse>(request, DasMeta.showTuning, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.showTuning, hcClient);
     }
 
     /**
@@ -1094,7 +1070,7 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDbUserRequest 请求对象
+     * @param request UpdateDbUserRequest 请求对象
      * @return CompletableFuture<UpdateDbUserResponse>
      */
     public CompletableFuture<UpdateDbUserResponse> updateDbUserAsync(UpdateDbUserRequest request) {
@@ -1109,12 +1085,12 @@ public class DasAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDbUserRequest 请求对象
+     * @param request UpdateDbUserRequest 请求对象
      * @return AsyncInvoker<UpdateDbUserRequest, UpdateDbUserResponse>
      */
     public AsyncInvoker<UpdateDbUserRequest, UpdateDbUserResponse> updateDbUserAsyncInvoker(
         UpdateDbUserRequest request) {
-        return new AsyncInvoker<UpdateDbUserRequest, UpdateDbUserResponse>(request, DasMeta.updateDbUser, hcClient);
+        return new AsyncInvoker<>(request, DasMeta.updateDbUser, hcClient);
     }
 
 }

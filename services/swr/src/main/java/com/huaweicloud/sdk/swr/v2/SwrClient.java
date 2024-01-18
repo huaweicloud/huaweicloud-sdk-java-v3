@@ -114,7 +114,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageSyncRepoRequest 请求对象
+     * @param request CreateImageSyncRepoRequest 请求对象
      * @return CreateImageSyncRepoResponse
      */
     public CreateImageSyncRepoResponse createImageSyncRepo(CreateImageSyncRepoRequest request) {
@@ -128,13 +128,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageSyncRepoRequest 请求对象
+     * @param request CreateImageSyncRepoRequest 请求对象
      * @return SyncInvoker<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse>
      */
     public SyncInvoker<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse> createImageSyncRepoInvoker(
         CreateImageSyncRepoRequest request) {
-        return new SyncInvoker<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse>(request,
-            SwrMeta.createImageSyncRepo, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.createImageSyncRepo, hcClient);
     }
 
     /**
@@ -144,7 +143,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateManualImageSyncRepoRequest 请求对象
+     * @param request CreateManualImageSyncRepoRequest 请求对象
      * @return CreateManualImageSyncRepoResponse
      */
     public CreateManualImageSyncRepoResponse createManualImageSyncRepo(CreateManualImageSyncRepoRequest request) {
@@ -158,13 +157,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateManualImageSyncRepoRequest 请求对象
+     * @param request CreateManualImageSyncRepoRequest 请求对象
      * @return SyncInvoker<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse>
      */
     public SyncInvoker<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse> createManualImageSyncRepoInvoker(
         CreateManualImageSyncRepoRequest request) {
-        return new SyncInvoker<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse>(request,
-            SwrMeta.createManualImageSyncRepo, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.createManualImageSyncRepo, hcClient);
     }
 
     /**
@@ -174,7 +172,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNamespaceRequest 请求对象
+     * @param request CreateNamespaceRequest 请求对象
      * @return CreateNamespaceResponse
      */
     public CreateNamespaceResponse createNamespace(CreateNamespaceRequest request) {
@@ -188,13 +186,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNamespaceRequest 请求对象
+     * @param request CreateNamespaceRequest 请求对象
      * @return SyncInvoker<CreateNamespaceRequest, CreateNamespaceResponse>
      */
     public SyncInvoker<CreateNamespaceRequest, CreateNamespaceResponse> createNamespaceInvoker(
         CreateNamespaceRequest request) {
-        return new SyncInvoker<CreateNamespaceRequest, CreateNamespaceResponse>(request, SwrMeta.createNamespace,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.createNamespace, hcClient);
     }
 
     /**
@@ -204,7 +201,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNamespaceAuthRequest 请求对象
+     * @param request CreateNamespaceAuthRequest 请求对象
      * @return CreateNamespaceAuthResponse
      */
     public CreateNamespaceAuthResponse createNamespaceAuth(CreateNamespaceAuthRequest request) {
@@ -218,13 +215,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNamespaceAuthRequest 请求对象
+     * @param request CreateNamespaceAuthRequest 请求对象
      * @return SyncInvoker<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse>
      */
     public SyncInvoker<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse> createNamespaceAuthInvoker(
         CreateNamespaceAuthRequest request) {
-        return new SyncInvoker<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse>(request,
-            SwrMeta.createNamespaceAuth, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.createNamespaceAuth, hcClient);
     }
 
     /**
@@ -234,7 +230,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRepoRequest 请求对象
+     * @param request CreateRepoRequest 请求对象
      * @return CreateRepoResponse
      */
     public CreateRepoResponse createRepo(CreateRepoRequest request) {
@@ -248,11 +244,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRepoRequest 请求对象
+     * @param request CreateRepoRequest 请求对象
      * @return SyncInvoker<CreateRepoRequest, CreateRepoResponse>
      */
     public SyncInvoker<CreateRepoRequest, CreateRepoResponse> createRepoInvoker(CreateRepoRequest request) {
-        return new SyncInvoker<CreateRepoRequest, CreateRepoResponse>(request, SwrMeta.createRepo, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.createRepo, hcClient);
     }
 
     /**
@@ -262,7 +258,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRepoDomainsRequest 请求对象
+     * @param request CreateRepoDomainsRequest 请求对象
      * @return CreateRepoDomainsResponse
      */
     public CreateRepoDomainsResponse createRepoDomains(CreateRepoDomainsRequest request) {
@@ -276,13 +272,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRepoDomainsRequest 请求对象
+     * @param request CreateRepoDomainsRequest 请求对象
      * @return SyncInvoker<CreateRepoDomainsRequest, CreateRepoDomainsResponse>
      */
     public SyncInvoker<CreateRepoDomainsRequest, CreateRepoDomainsResponse> createRepoDomainsInvoker(
         CreateRepoDomainsRequest request) {
-        return new SyncInvoker<CreateRepoDomainsRequest, CreateRepoDomainsResponse>(request, SwrMeta.createRepoDomains,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.createRepoDomains, hcClient);
     }
 
     /**
@@ -292,7 +287,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRetentionRequest 请求对象
+     * @param request CreateRetentionRequest 请求对象
      * @return CreateRetentionResponse
      */
     public CreateRetentionResponse createRetention(CreateRetentionRequest request) {
@@ -306,13 +301,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRetentionRequest 请求对象
+     * @param request CreateRetentionRequest 请求对象
      * @return SyncInvoker<CreateRetentionRequest, CreateRetentionResponse>
      */
     public SyncInvoker<CreateRetentionRequest, CreateRetentionResponse> createRetentionInvoker(
         CreateRetentionRequest request) {
-        return new SyncInvoker<CreateRetentionRequest, CreateRetentionResponse>(request, SwrMeta.createRetention,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.createRetention, hcClient);
     }
 
     /**
@@ -322,7 +316,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretRequest 请求对象
+     * @param request CreateSecretRequest 请求对象
      * @return CreateSecretResponse
      */
     public CreateSecretResponse createSecret(CreateSecretRequest request) {
@@ -336,11 +330,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecretRequest 请求对象
+     * @param request CreateSecretRequest 请求对象
      * @return SyncInvoker<CreateSecretRequest, CreateSecretResponse>
      */
     public SyncInvoker<CreateSecretRequest, CreateSecretResponse> createSecretInvoker(CreateSecretRequest request) {
-        return new SyncInvoker<CreateSecretRequest, CreateSecretResponse>(request, SwrMeta.createSecret, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.createSecret, hcClient);
     }
 
     /**
@@ -350,7 +344,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTriggerRequest 请求对象
+     * @param request CreateTriggerRequest 请求对象
      * @return CreateTriggerResponse
      */
     public CreateTriggerResponse createTrigger(CreateTriggerRequest request) {
@@ -364,11 +358,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTriggerRequest 请求对象
+     * @param request CreateTriggerRequest 请求对象
      * @return SyncInvoker<CreateTriggerRequest, CreateTriggerResponse>
      */
     public SyncInvoker<CreateTriggerRequest, CreateTriggerResponse> createTriggerInvoker(CreateTriggerRequest request) {
-        return new SyncInvoker<CreateTriggerRequest, CreateTriggerResponse>(request, SwrMeta.createTrigger, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.createTrigger, hcClient);
     }
 
     /**
@@ -378,7 +372,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUserRepositoryAuthRequest 请求对象
+     * @param request CreateUserRepositoryAuthRequest 请求对象
      * @return CreateUserRepositoryAuthResponse
      */
     public CreateUserRepositoryAuthResponse createUserRepositoryAuth(CreateUserRepositoryAuthRequest request) {
@@ -392,13 +386,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUserRepositoryAuthRequest 请求对象
+     * @param request CreateUserRepositoryAuthRequest 请求对象
      * @return SyncInvoker<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse>
      */
     public SyncInvoker<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse> createUserRepositoryAuthInvoker(
         CreateUserRepositoryAuthRequest request) {
-        return new SyncInvoker<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse>(request,
-            SwrMeta.createUserRepositoryAuth, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.createUserRepositoryAuth, hcClient);
     }
 
     /**
@@ -408,7 +401,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageSyncRepoRequest 请求对象
+     * @param request DeleteImageSyncRepoRequest 请求对象
      * @return DeleteImageSyncRepoResponse
      */
     public DeleteImageSyncRepoResponse deleteImageSyncRepo(DeleteImageSyncRepoRequest request) {
@@ -422,13 +415,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageSyncRepoRequest 请求对象
+     * @param request DeleteImageSyncRepoRequest 请求对象
      * @return SyncInvoker<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse>
      */
     public SyncInvoker<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse> deleteImageSyncRepoInvoker(
         DeleteImageSyncRepoRequest request) {
-        return new SyncInvoker<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse>(request,
-            SwrMeta.deleteImageSyncRepo, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.deleteImageSyncRepo, hcClient);
     }
 
     /**
@@ -438,7 +430,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNamespaceAuthRequest 请求对象
+     * @param request DeleteNamespaceAuthRequest 请求对象
      * @return DeleteNamespaceAuthResponse
      */
     public DeleteNamespaceAuthResponse deleteNamespaceAuth(DeleteNamespaceAuthRequest request) {
@@ -452,13 +444,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNamespaceAuthRequest 请求对象
+     * @param request DeleteNamespaceAuthRequest 请求对象
      * @return SyncInvoker<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse>
      */
     public SyncInvoker<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse> deleteNamespaceAuthInvoker(
         DeleteNamespaceAuthRequest request) {
-        return new SyncInvoker<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse>(request,
-            SwrMeta.deleteNamespaceAuth, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.deleteNamespaceAuth, hcClient);
     }
 
     /**
@@ -468,7 +459,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNamespacesRequest 请求对象
+     * @param request DeleteNamespacesRequest 请求对象
      * @return DeleteNamespacesResponse
      */
     public DeleteNamespacesResponse deleteNamespaces(DeleteNamespacesRequest request) {
@@ -482,13 +473,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNamespacesRequest 请求对象
+     * @param request DeleteNamespacesRequest 请求对象
      * @return SyncInvoker<DeleteNamespacesRequest, DeleteNamespacesResponse>
      */
     public SyncInvoker<DeleteNamespacesRequest, DeleteNamespacesResponse> deleteNamespacesInvoker(
         DeleteNamespacesRequest request) {
-        return new SyncInvoker<DeleteNamespacesRequest, DeleteNamespacesResponse>(request, SwrMeta.deleteNamespaces,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.deleteNamespaces, hcClient);
     }
 
     /**
@@ -498,7 +488,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRepoRequest 请求对象
+     * @param request DeleteRepoRequest 请求对象
      * @return DeleteRepoResponse
      */
     public DeleteRepoResponse deleteRepo(DeleteRepoRequest request) {
@@ -512,11 +502,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRepoRequest 请求对象
+     * @param request DeleteRepoRequest 请求对象
      * @return SyncInvoker<DeleteRepoRequest, DeleteRepoResponse>
      */
     public SyncInvoker<DeleteRepoRequest, DeleteRepoResponse> deleteRepoInvoker(DeleteRepoRequest request) {
-        return new SyncInvoker<DeleteRepoRequest, DeleteRepoResponse>(request, SwrMeta.deleteRepo, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.deleteRepo, hcClient);
     }
 
     /**
@@ -526,7 +516,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRepoDomainsRequest 请求对象
+     * @param request DeleteRepoDomainsRequest 请求对象
      * @return DeleteRepoDomainsResponse
      */
     public DeleteRepoDomainsResponse deleteRepoDomains(DeleteRepoDomainsRequest request) {
@@ -540,13 +530,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRepoDomainsRequest 请求对象
+     * @param request DeleteRepoDomainsRequest 请求对象
      * @return SyncInvoker<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse>
      */
     public SyncInvoker<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse> deleteRepoDomainsInvoker(
         DeleteRepoDomainsRequest request) {
-        return new SyncInvoker<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse>(request, SwrMeta.deleteRepoDomains,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.deleteRepoDomains, hcClient);
     }
 
     /**
@@ -556,7 +545,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRepoTagRequest 请求对象
+     * @param request DeleteRepoTagRequest 请求对象
      * @return DeleteRepoTagResponse
      */
     public DeleteRepoTagResponse deleteRepoTag(DeleteRepoTagRequest request) {
@@ -570,11 +559,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRepoTagRequest 请求对象
+     * @param request DeleteRepoTagRequest 请求对象
      * @return SyncInvoker<DeleteRepoTagRequest, DeleteRepoTagResponse>
      */
     public SyncInvoker<DeleteRepoTagRequest, DeleteRepoTagResponse> deleteRepoTagInvoker(DeleteRepoTagRequest request) {
-        return new SyncInvoker<DeleteRepoTagRequest, DeleteRepoTagResponse>(request, SwrMeta.deleteRepoTag, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.deleteRepoTag, hcClient);
     }
 
     /**
@@ -584,7 +573,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRetentionRequest 请求对象
+     * @param request DeleteRetentionRequest 请求对象
      * @return DeleteRetentionResponse
      */
     public DeleteRetentionResponse deleteRetention(DeleteRetentionRequest request) {
@@ -598,13 +587,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRetentionRequest 请求对象
+     * @param request DeleteRetentionRequest 请求对象
      * @return SyncInvoker<DeleteRetentionRequest, DeleteRetentionResponse>
      */
     public SyncInvoker<DeleteRetentionRequest, DeleteRetentionResponse> deleteRetentionInvoker(
         DeleteRetentionRequest request) {
-        return new SyncInvoker<DeleteRetentionRequest, DeleteRetentionResponse>(request, SwrMeta.deleteRetention,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.deleteRetention, hcClient);
     }
 
     /**
@@ -614,7 +602,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTriggerRequest 请求对象
+     * @param request DeleteTriggerRequest 请求对象
      * @return DeleteTriggerResponse
      */
     public DeleteTriggerResponse deleteTrigger(DeleteTriggerRequest request) {
@@ -628,11 +616,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTriggerRequest 请求对象
+     * @param request DeleteTriggerRequest 请求对象
      * @return SyncInvoker<DeleteTriggerRequest, DeleteTriggerResponse>
      */
     public SyncInvoker<DeleteTriggerRequest, DeleteTriggerResponse> deleteTriggerInvoker(DeleteTriggerRequest request) {
-        return new SyncInvoker<DeleteTriggerRequest, DeleteTriggerResponse>(request, SwrMeta.deleteTrigger, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.deleteTrigger, hcClient);
     }
 
     /**
@@ -642,7 +630,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserRepositoryAuthRequest 请求对象
+     * @param request DeleteUserRepositoryAuthRequest 请求对象
      * @return DeleteUserRepositoryAuthResponse
      */
     public DeleteUserRepositoryAuthResponse deleteUserRepositoryAuth(DeleteUserRepositoryAuthRequest request) {
@@ -656,13 +644,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserRepositoryAuthRequest 请求对象
+     * @param request DeleteUserRepositoryAuthRequest 请求对象
      * @return SyncInvoker<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse>
      */
     public SyncInvoker<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse> deleteUserRepositoryAuthInvoker(
         DeleteUserRepositoryAuthRequest request) {
-        return new SyncInvoker<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse>(request,
-            SwrMeta.deleteUserRepositoryAuth, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.deleteUserRepositoryAuth, hcClient);
     }
 
     /**
@@ -672,7 +659,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageAutoSyncReposDetailsRequest 请求对象
+     * @param request ListImageAutoSyncReposDetailsRequest 请求对象
      * @return ListImageAutoSyncReposDetailsResponse
      */
     public ListImageAutoSyncReposDetailsResponse listImageAutoSyncReposDetails(
@@ -687,13 +674,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageAutoSyncReposDetailsRequest 请求对象
+     * @param request ListImageAutoSyncReposDetailsRequest 请求对象
      * @return SyncInvoker<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse>
      */
     public SyncInvoker<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse> listImageAutoSyncReposDetailsInvoker(
         ListImageAutoSyncReposDetailsRequest request) {
-        return new SyncInvoker<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse>(request,
-            SwrMeta.listImageAutoSyncReposDetails, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listImageAutoSyncReposDetails, hcClient);
     }
 
     /**
@@ -703,7 +689,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNamespacesRequest 请求对象
+     * @param request ListNamespacesRequest 请求对象
      * @return ListNamespacesResponse
      */
     public ListNamespacesResponse listNamespaces(ListNamespacesRequest request) {
@@ -717,13 +703,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNamespacesRequest 请求对象
+     * @param request ListNamespacesRequest 请求对象
      * @return SyncInvoker<ListNamespacesRequest, ListNamespacesResponse>
      */
     public SyncInvoker<ListNamespacesRequest, ListNamespacesResponse> listNamespacesInvoker(
         ListNamespacesRequest request) {
-        return new SyncInvoker<ListNamespacesRequest, ListNamespacesResponse>(request, SwrMeta.listNamespaces,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listNamespaces, hcClient);
     }
 
     /**
@@ -733,7 +718,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return ListQuotasResponse
      */
     public ListQuotasResponse listQuotas(ListQuotasRequest request) {
@@ -747,11 +732,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
-        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, SwrMeta.listQuotas, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listQuotas, hcClient);
     }
 
     /**
@@ -761,7 +746,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRepoDomainsRequest 请求对象
+     * @param request ListRepoDomainsRequest 请求对象
      * @return ListRepoDomainsResponse
      */
     public ListRepoDomainsResponse listRepoDomains(ListRepoDomainsRequest request) {
@@ -775,13 +760,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRepoDomainsRequest 请求对象
+     * @param request ListRepoDomainsRequest 请求对象
      * @return SyncInvoker<ListRepoDomainsRequest, ListRepoDomainsResponse>
      */
     public SyncInvoker<ListRepoDomainsRequest, ListRepoDomainsResponse> listRepoDomainsInvoker(
         ListRepoDomainsRequest request) {
-        return new SyncInvoker<ListRepoDomainsRequest, ListRepoDomainsResponse>(request, SwrMeta.listRepoDomains,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listRepoDomains, hcClient);
     }
 
     /**
@@ -791,7 +775,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReposDetailsRequest 请求对象
+     * @param request ListReposDetailsRequest 请求对象
      * @return ListReposDetailsResponse
      */
     public ListReposDetailsResponse listReposDetails(ListReposDetailsRequest request) {
@@ -805,13 +789,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReposDetailsRequest 请求对象
+     * @param request ListReposDetailsRequest 请求对象
      * @return SyncInvoker<ListReposDetailsRequest, ListReposDetailsResponse>
      */
     public SyncInvoker<ListReposDetailsRequest, ListReposDetailsResponse> listReposDetailsInvoker(
         ListReposDetailsRequest request) {
-        return new SyncInvoker<ListReposDetailsRequest, ListReposDetailsResponse>(request, SwrMeta.listReposDetails,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listReposDetails, hcClient);
     }
 
     /**
@@ -821,7 +804,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRepositoryTagsRequest 请求对象
+     * @param request ListRepositoryTagsRequest 请求对象
      * @return ListRepositoryTagsResponse
      */
     public ListRepositoryTagsResponse listRepositoryTags(ListRepositoryTagsRequest request) {
@@ -835,13 +818,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRepositoryTagsRequest 请求对象
+     * @param request ListRepositoryTagsRequest 请求对象
      * @return SyncInvoker<ListRepositoryTagsRequest, ListRepositoryTagsResponse>
      */
     public SyncInvoker<ListRepositoryTagsRequest, ListRepositoryTagsResponse> listRepositoryTagsInvoker(
         ListRepositoryTagsRequest request) {
-        return new SyncInvoker<ListRepositoryTagsRequest, ListRepositoryTagsResponse>(request,
-            SwrMeta.listRepositoryTags, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listRepositoryTags, hcClient);
     }
 
     /**
@@ -851,7 +833,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRetentionHistoriesRequest 请求对象
+     * @param request ListRetentionHistoriesRequest 请求对象
      * @return ListRetentionHistoriesResponse
      */
     public ListRetentionHistoriesResponse listRetentionHistories(ListRetentionHistoriesRequest request) {
@@ -865,13 +847,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRetentionHistoriesRequest 请求对象
+     * @param request ListRetentionHistoriesRequest 请求对象
      * @return SyncInvoker<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse>
      */
     public SyncInvoker<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse> listRetentionHistoriesInvoker(
         ListRetentionHistoriesRequest request) {
-        return new SyncInvoker<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse>(request,
-            SwrMeta.listRetentionHistories, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listRetentionHistories, hcClient);
     }
 
     /**
@@ -881,7 +862,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRetentionsRequest 请求对象
+     * @param request ListRetentionsRequest 请求对象
      * @return ListRetentionsResponse
      */
     public ListRetentionsResponse listRetentions(ListRetentionsRequest request) {
@@ -895,13 +876,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRetentionsRequest 请求对象
+     * @param request ListRetentionsRequest 请求对象
      * @return SyncInvoker<ListRetentionsRequest, ListRetentionsResponse>
      */
     public SyncInvoker<ListRetentionsRequest, ListRetentionsResponse> listRetentionsInvoker(
         ListRetentionsRequest request) {
-        return new SyncInvoker<ListRetentionsRequest, ListRetentionsResponse>(request, SwrMeta.listRetentions,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listRetentions, hcClient);
     }
 
     /**
@@ -911,7 +891,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSharedReposDetailsRequest 请求对象
+     * @param request ListSharedReposDetailsRequest 请求对象
      * @return ListSharedReposDetailsResponse
      */
     public ListSharedReposDetailsResponse listSharedReposDetails(ListSharedReposDetailsRequest request) {
@@ -925,13 +905,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSharedReposDetailsRequest 请求对象
+     * @param request ListSharedReposDetailsRequest 请求对象
      * @return SyncInvoker<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse>
      */
     public SyncInvoker<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse> listSharedReposDetailsInvoker(
         ListSharedReposDetailsRequest request) {
-        return new SyncInvoker<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse>(request,
-            SwrMeta.listSharedReposDetails, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listSharedReposDetails, hcClient);
     }
 
     /**
@@ -941,7 +920,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTriggersDetailsRequest 请求对象
+     * @param request ListTriggersDetailsRequest 请求对象
      * @return ListTriggersDetailsResponse
      */
     public ListTriggersDetailsResponse listTriggersDetails(ListTriggersDetailsRequest request) {
@@ -955,13 +934,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTriggersDetailsRequest 请求对象
+     * @param request ListTriggersDetailsRequest 请求对象
      * @return SyncInvoker<ListTriggersDetailsRequest, ListTriggersDetailsResponse>
      */
     public SyncInvoker<ListTriggersDetailsRequest, ListTriggersDetailsResponse> listTriggersDetailsInvoker(
         ListTriggersDetailsRequest request) {
-        return new SyncInvoker<ListTriggersDetailsRequest, ListTriggersDetailsResponse>(request,
-            SwrMeta.listTriggersDetails, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listTriggersDetails, hcClient);
     }
 
     /**
@@ -971,7 +949,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAccessDomainRequest 请求对象
+     * @param request ShowAccessDomainRequest 请求对象
      * @return ShowAccessDomainResponse
      */
     public ShowAccessDomainResponse showAccessDomain(ShowAccessDomainRequest request) {
@@ -985,13 +963,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAccessDomainRequest 请求对象
+     * @param request ShowAccessDomainRequest 请求对象
      * @return SyncInvoker<ShowAccessDomainRequest, ShowAccessDomainResponse>
      */
     public SyncInvoker<ShowAccessDomainRequest, ShowAccessDomainResponse> showAccessDomainInvoker(
         ShowAccessDomainRequest request) {
-        return new SyncInvoker<ShowAccessDomainRequest, ShowAccessDomainResponse>(request, SwrMeta.showAccessDomain,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.showAccessDomain, hcClient);
     }
 
     /**
@@ -1001,7 +978,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNamespaceRequest 请求对象
+     * @param request ShowNamespaceRequest 请求对象
      * @return ShowNamespaceResponse
      */
     public ShowNamespaceResponse showNamespace(ShowNamespaceRequest request) {
@@ -1015,11 +992,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNamespaceRequest 请求对象
+     * @param request ShowNamespaceRequest 请求对象
      * @return SyncInvoker<ShowNamespaceRequest, ShowNamespaceResponse>
      */
     public SyncInvoker<ShowNamespaceRequest, ShowNamespaceResponse> showNamespaceInvoker(ShowNamespaceRequest request) {
-        return new SyncInvoker<ShowNamespaceRequest, ShowNamespaceResponse>(request, SwrMeta.showNamespace, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.showNamespace, hcClient);
     }
 
     /**
@@ -1029,7 +1006,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNamespaceAuthRequest 请求对象
+     * @param request ShowNamespaceAuthRequest 请求对象
      * @return ShowNamespaceAuthResponse
      */
     public ShowNamespaceAuthResponse showNamespaceAuth(ShowNamespaceAuthRequest request) {
@@ -1043,13 +1020,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNamespaceAuthRequest 请求对象
+     * @param request ShowNamespaceAuthRequest 请求对象
      * @return SyncInvoker<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse>
      */
     public SyncInvoker<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse> showNamespaceAuthInvoker(
         ShowNamespaceAuthRequest request) {
-        return new SyncInvoker<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse>(request, SwrMeta.showNamespaceAuth,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.showNamespaceAuth, hcClient);
     }
 
     /**
@@ -1059,7 +1035,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryRequest 请求对象
+     * @param request ShowRepositoryRequest 请求对象
      * @return ShowRepositoryResponse
      */
     public ShowRepositoryResponse showRepository(ShowRepositoryRequest request) {
@@ -1073,13 +1049,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryRequest 请求对象
+     * @param request ShowRepositoryRequest 请求对象
      * @return SyncInvoker<ShowRepositoryRequest, ShowRepositoryResponse>
      */
     public SyncInvoker<ShowRepositoryRequest, ShowRepositoryResponse> showRepositoryInvoker(
         ShowRepositoryRequest request) {
-        return new SyncInvoker<ShowRepositoryRequest, ShowRepositoryResponse>(request, SwrMeta.showRepository,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.showRepository, hcClient);
     }
 
     /**
@@ -1089,7 +1064,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRetentionRequest 请求对象
+     * @param request ShowRetentionRequest 请求对象
      * @return ShowRetentionResponse
      */
     public ShowRetentionResponse showRetention(ShowRetentionRequest request) {
@@ -1103,11 +1078,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRetentionRequest 请求对象
+     * @param request ShowRetentionRequest 请求对象
      * @return SyncInvoker<ShowRetentionRequest, ShowRetentionResponse>
      */
     public SyncInvoker<ShowRetentionRequest, ShowRetentionResponse> showRetentionInvoker(ShowRetentionRequest request) {
-        return new SyncInvoker<ShowRetentionRequest, ShowRetentionResponse>(request, SwrMeta.showRetention, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.showRetention, hcClient);
     }
 
     /**
@@ -1117,7 +1092,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSyncJobRequest 请求对象
+     * @param request ShowSyncJobRequest 请求对象
      * @return ShowSyncJobResponse
      */
     public ShowSyncJobResponse showSyncJob(ShowSyncJobRequest request) {
@@ -1131,11 +1106,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSyncJobRequest 请求对象
+     * @param request ShowSyncJobRequest 请求对象
      * @return SyncInvoker<ShowSyncJobRequest, ShowSyncJobResponse>
      */
     public SyncInvoker<ShowSyncJobRequest, ShowSyncJobResponse> showSyncJobInvoker(ShowSyncJobRequest request) {
-        return new SyncInvoker<ShowSyncJobRequest, ShowSyncJobResponse>(request, SwrMeta.showSyncJob, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.showSyncJob, hcClient);
     }
 
     /**
@@ -1145,7 +1120,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTriggerRequest 请求对象
+     * @param request ShowTriggerRequest 请求对象
      * @return ShowTriggerResponse
      */
     public ShowTriggerResponse showTrigger(ShowTriggerRequest request) {
@@ -1159,11 +1134,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTriggerRequest 请求对象
+     * @param request ShowTriggerRequest 请求对象
      * @return SyncInvoker<ShowTriggerRequest, ShowTriggerResponse>
      */
     public SyncInvoker<ShowTriggerRequest, ShowTriggerResponse> showTriggerInvoker(ShowTriggerRequest request) {
-        return new SyncInvoker<ShowTriggerRequest, ShowTriggerResponse>(request, SwrMeta.showTrigger, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.showTrigger, hcClient);
     }
 
     /**
@@ -1173,7 +1148,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserRepositoryAuthRequest 请求对象
+     * @param request ShowUserRepositoryAuthRequest 请求对象
      * @return ShowUserRepositoryAuthResponse
      */
     public ShowUserRepositoryAuthResponse showUserRepositoryAuth(ShowUserRepositoryAuthRequest request) {
@@ -1187,13 +1162,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserRepositoryAuthRequest 请求对象
+     * @param request ShowUserRepositoryAuthRequest 请求对象
      * @return SyncInvoker<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse>
      */
     public SyncInvoker<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse> showUserRepositoryAuthInvoker(
         ShowUserRepositoryAuthRequest request) {
-        return new SyncInvoker<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse>(request,
-            SwrMeta.showUserRepositoryAuth, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.showUserRepositoryAuth, hcClient);
     }
 
     /**
@@ -1203,7 +1177,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNamespaceAuthRequest 请求对象
+     * @param request UpdateNamespaceAuthRequest 请求对象
      * @return UpdateNamespaceAuthResponse
      */
     public UpdateNamespaceAuthResponse updateNamespaceAuth(UpdateNamespaceAuthRequest request) {
@@ -1217,13 +1191,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNamespaceAuthRequest 请求对象
+     * @param request UpdateNamespaceAuthRequest 请求对象
      * @return SyncInvoker<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse>
      */
     public SyncInvoker<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse> updateNamespaceAuthInvoker(
         UpdateNamespaceAuthRequest request) {
-        return new SyncInvoker<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse>(request,
-            SwrMeta.updateNamespaceAuth, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.updateNamespaceAuth, hcClient);
     }
 
     /**
@@ -1233,7 +1206,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRepoRequest 请求对象
+     * @param request UpdateRepoRequest 请求对象
      * @return UpdateRepoResponse
      */
     public UpdateRepoResponse updateRepo(UpdateRepoRequest request) {
@@ -1247,11 +1220,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRepoRequest 请求对象
+     * @param request UpdateRepoRequest 请求对象
      * @return SyncInvoker<UpdateRepoRequest, UpdateRepoResponse>
      */
     public SyncInvoker<UpdateRepoRequest, UpdateRepoResponse> updateRepoInvoker(UpdateRepoRequest request) {
-        return new SyncInvoker<UpdateRepoRequest, UpdateRepoResponse>(request, SwrMeta.updateRepo, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.updateRepo, hcClient);
     }
 
     /**
@@ -1261,7 +1234,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRepoDomainsRequest 请求对象
+     * @param request UpdateRepoDomainsRequest 请求对象
      * @return UpdateRepoDomainsResponse
      */
     public UpdateRepoDomainsResponse updateRepoDomains(UpdateRepoDomainsRequest request) {
@@ -1275,13 +1248,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRepoDomainsRequest 请求对象
+     * @param request UpdateRepoDomainsRequest 请求对象
      * @return SyncInvoker<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse>
      */
     public SyncInvoker<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse> updateRepoDomainsInvoker(
         UpdateRepoDomainsRequest request) {
-        return new SyncInvoker<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse>(request, SwrMeta.updateRepoDomains,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.updateRepoDomains, hcClient);
     }
 
     /**
@@ -1291,7 +1263,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRetentionRequest 请求对象
+     * @param request UpdateRetentionRequest 请求对象
      * @return UpdateRetentionResponse
      */
     public UpdateRetentionResponse updateRetention(UpdateRetentionRequest request) {
@@ -1305,13 +1277,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRetentionRequest 请求对象
+     * @param request UpdateRetentionRequest 请求对象
      * @return SyncInvoker<UpdateRetentionRequest, UpdateRetentionResponse>
      */
     public SyncInvoker<UpdateRetentionRequest, UpdateRetentionResponse> updateRetentionInvoker(
         UpdateRetentionRequest request) {
-        return new SyncInvoker<UpdateRetentionRequest, UpdateRetentionResponse>(request, SwrMeta.updateRetention,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.updateRetention, hcClient);
     }
 
     /**
@@ -1321,7 +1292,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTriggerRequest 请求对象
+     * @param request UpdateTriggerRequest 请求对象
      * @return UpdateTriggerResponse
      */
     public UpdateTriggerResponse updateTrigger(UpdateTriggerRequest request) {
@@ -1335,11 +1306,11 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTriggerRequest 请求对象
+     * @param request UpdateTriggerRequest 请求对象
      * @return SyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse>
      */
     public SyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse> updateTriggerInvoker(UpdateTriggerRequest request) {
-        return new SyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse>(request, SwrMeta.updateTrigger, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.updateTrigger, hcClient);
     }
 
     /**
@@ -1349,7 +1320,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRepositoryAuthRequest 请求对象
+     * @param request UpdateUserRepositoryAuthRequest 请求对象
      * @return UpdateUserRepositoryAuthResponse
      */
     public UpdateUserRepositoryAuthResponse updateUserRepositoryAuth(UpdateUserRepositoryAuthRequest request) {
@@ -1363,13 +1334,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRepositoryAuthRequest 请求对象
+     * @param request UpdateUserRepositoryAuthRequest 请求对象
      * @return SyncInvoker<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse>
      */
     public SyncInvoker<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse> updateUserRepositoryAuthInvoker(
         UpdateUserRepositoryAuthRequest request) {
-        return new SyncInvoker<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse>(request,
-            SwrMeta.updateUserRepositoryAuth, hcClient);
+        return new SyncInvoker<>(request, SwrMeta.updateUserRepositoryAuth, hcClient);
     }
 
     /**
@@ -1379,7 +1349,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
      */
     public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
@@ -1393,13 +1363,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsInvoker(
         ListApiVersionsRequest request) {
-        return new SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, SwrMeta.listApiVersions,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -1409,7 +1378,7 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return ShowApiVersionResponse
      */
     public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
@@ -1423,13 +1392,12 @@ public class SwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
      */
     public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(
         ShowApiVersionRequest request) {
-        return new SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, SwrMeta.showApiVersion,
-            hcClient);
+        return new SyncInvoker<>(request, SwrMeta.showApiVersion, hcClient);
     }
 
 }

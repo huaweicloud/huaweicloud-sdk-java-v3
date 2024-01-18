@@ -205,7 +205,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AutoRenewalResourcesRequest 请求对象
+     * @param request AutoRenewalResourcesRequest 请求对象
      * @return CompletableFuture<AutoRenewalResourcesResponse>
      */
     public CompletableFuture<AutoRenewalResourcesResponse> autoRenewalResourcesAsync(
@@ -229,13 +229,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AutoRenewalResourcesRequest 请求对象
+     * @param request AutoRenewalResourcesRequest 请求对象
      * @return AsyncInvoker<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse>
      */
     public AsyncInvoker<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse> autoRenewalResourcesAsyncInvoker(
         AutoRenewalResourcesRequest request) {
-        return new AsyncInvoker<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse>(request,
-            BssMeta.autoRenewalResources, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.autoRenewalResources, hcClient);
     }
 
     /**
@@ -252,7 +251,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelAutoRenewalResourcesRequest 请求对象
+     * @param request CancelAutoRenewalResourcesRequest 请求对象
      * @return CompletableFuture<CancelAutoRenewalResourcesResponse>
      */
     public CompletableFuture<CancelAutoRenewalResourcesResponse> cancelAutoRenewalResourcesAsync(
@@ -274,13 +273,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelAutoRenewalResourcesRequest 请求对象
+     * @param request CancelAutoRenewalResourcesRequest 请求对象
      * @return AsyncInvoker<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse>
      */
     public AsyncInvoker<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse> cancelAutoRenewalResourcesAsyncInvoker(
         CancelAutoRenewalResourcesRequest request) {
-        return new AsyncInvoker<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse>(request,
-            BssMeta.cancelAutoRenewalResources, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.cancelAutoRenewalResources, hcClient);
     }
 
     /**
@@ -295,7 +293,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelCustomerOrderRequest 请求对象
+     * @param request CancelCustomerOrderRequest 请求对象
      * @return CompletableFuture<CancelCustomerOrderResponse>
      */
     public CompletableFuture<CancelCustomerOrderResponse> cancelCustomerOrderAsync(CancelCustomerOrderRequest request) {
@@ -314,13 +312,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelCustomerOrderRequest 请求对象
+     * @param request CancelCustomerOrderRequest 请求对象
      * @return AsyncInvoker<CancelCustomerOrderRequest, CancelCustomerOrderResponse>
      */
     public AsyncInvoker<CancelCustomerOrderRequest, CancelCustomerOrderResponse> cancelCustomerOrderAsyncInvoker(
         CancelCustomerOrderRequest request) {
-        return new AsyncInvoker<CancelCustomerOrderRequest, CancelCustomerOrderResponse>(request,
-            BssMeta.cancelCustomerOrder, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.cancelCustomerOrder, hcClient);
     }
 
     /**
@@ -340,7 +337,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelResourcesSubscriptionRequest 请求对象
+     * @param request CancelResourcesSubscriptionRequest 请求对象
      * @return CompletableFuture<CancelResourcesSubscriptionResponse>
      */
     public CompletableFuture<CancelResourcesSubscriptionResponse> cancelResourcesSubscriptionAsync(
@@ -365,13 +362,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelResourcesSubscriptionRequest 请求对象
+     * @param request CancelResourcesSubscriptionRequest 请求对象
      * @return AsyncInvoker<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse>
      */
     public AsyncInvoker<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse> cancelResourcesSubscriptionAsyncInvoker(
         CancelResourcesSubscriptionRequest request) {
-        return new AsyncInvoker<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse>(request,
-            BssMeta.cancelResourcesSubscription, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.cancelResourcesSubscription, hcClient);
     }
 
     /**
@@ -383,7 +379,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeEnterpriseRealnameAuthenticationRequest 请求对象
+     * @param request ChangeEnterpriseRealnameAuthenticationRequest 请求对象
      * @return CompletableFuture<ChangeEnterpriseRealnameAuthenticationResponse>
      */
     public CompletableFuture<ChangeEnterpriseRealnameAuthenticationResponse> changeEnterpriseRealnameAuthenticationAsync(
@@ -400,13 +396,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeEnterpriseRealnameAuthenticationRequest 请求对象
+     * @param request ChangeEnterpriseRealnameAuthenticationRequest 请求对象
      * @return AsyncInvoker<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse>
      */
     public AsyncInvoker<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse> changeEnterpriseRealnameAuthenticationAsyncInvoker(
         ChangeEnterpriseRealnameAuthenticationRequest request) {
-        return new AsyncInvoker<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse>(
-            request, BssMeta.changeEnterpriseRealnameAuthentication, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.changeEnterpriseRealnameAuthentication, hcClient);
     }
 
     /**
@@ -419,7 +414,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckUserIdentityRequest 请求对象
+     * @param request CheckUserIdentityRequest 请求对象
      * @return CompletableFuture<CheckUserIdentityResponse>
      */
     public CompletableFuture<CheckUserIdentityResponse> checkUserIdentityAsync(CheckUserIdentityRequest request) {
@@ -436,13 +431,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckUserIdentityRequest 请求对象
+     * @param request CheckUserIdentityRequest 请求对象
      * @return AsyncInvoker<CheckUserIdentityRequest, CheckUserIdentityResponse>
      */
     public AsyncInvoker<CheckUserIdentityRequest, CheckUserIdentityResponse> checkUserIdentityAsyncInvoker(
         CheckUserIdentityRequest request) {
-        return new AsyncInvoker<CheckUserIdentityRequest, CheckUserIdentityResponse>(request, BssMeta.checkUserIdentity,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.checkUserIdentity, hcClient);
     }
 
     /**
@@ -455,7 +449,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ClaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @param request ClaimEnterpriseMultiAccountCouponRequest 请求对象
      * @return CompletableFuture<ClaimEnterpriseMultiAccountCouponResponse>
      */
     public CompletableFuture<ClaimEnterpriseMultiAccountCouponResponse> claimEnterpriseMultiAccountCouponAsync(
@@ -473,13 +467,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ClaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @param request ClaimEnterpriseMultiAccountCouponRequest 请求对象
      * @return AsyncInvoker<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse>
      */
     public AsyncInvoker<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse> claimEnterpriseMultiAccountCouponAsyncInvoker(
         ClaimEnterpriseMultiAccountCouponRequest request) {
-        return new AsyncInvoker<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse>(
-            request, BssMeta.claimEnterpriseMultiAccountCoupon, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.claimEnterpriseMultiAccountCoupon, hcClient);
     }
 
     /**
@@ -489,7 +482,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseProjectAuthRequest 请求对象
+     * @param request CreateEnterpriseProjectAuthRequest 请求对象
      * @return CompletableFuture<CreateEnterpriseProjectAuthResponse>
      */
     public CompletableFuture<CreateEnterpriseProjectAuthResponse> createEnterpriseProjectAuthAsync(
@@ -504,13 +497,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseProjectAuthRequest 请求对象
+     * @param request CreateEnterpriseProjectAuthRequest 请求对象
      * @return AsyncInvoker<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse>
      */
     public AsyncInvoker<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> createEnterpriseProjectAuthAsyncInvoker(
         CreateEnterpriseProjectAuthRequest request) {
-        return new AsyncInvoker<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse>(request,
-            BssMeta.createEnterpriseProjectAuth, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.createEnterpriseProjectAuth, hcClient);
     }
 
     /**
@@ -522,7 +514,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseRealnameAuthenticationRequest 请求对象
+     * @param request CreateEnterpriseRealnameAuthenticationRequest 请求对象
      * @return CompletableFuture<CreateEnterpriseRealnameAuthenticationResponse>
      */
     public CompletableFuture<CreateEnterpriseRealnameAuthenticationResponse> createEnterpriseRealnameAuthenticationAsync(
@@ -539,13 +531,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseRealnameAuthenticationRequest 请求对象
+     * @param request CreateEnterpriseRealnameAuthenticationRequest 请求对象
      * @return AsyncInvoker<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse>
      */
     public AsyncInvoker<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse> createEnterpriseRealnameAuthenticationAsyncInvoker(
         CreateEnterpriseRealnameAuthenticationRequest request) {
-        return new AsyncInvoker<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse>(
-            request, BssMeta.createEnterpriseRealnameAuthentication, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.createEnterpriseRealnameAuthentication, hcClient);
     }
 
     /**
@@ -560,7 +551,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePartnerCouponsRequest 请求对象
+     * @param request CreatePartnerCouponsRequest 请求对象
      * @return CompletableFuture<CreatePartnerCouponsResponse>
      */
     public CompletableFuture<CreatePartnerCouponsResponse> createPartnerCouponsAsync(
@@ -580,13 +571,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePartnerCouponsRequest 请求对象
+     * @param request CreatePartnerCouponsRequest 请求对象
      * @return AsyncInvoker<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse>
      */
     public AsyncInvoker<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse> createPartnerCouponsAsyncInvoker(
         CreatePartnerCouponsRequest request) {
-        return new AsyncInvoker<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse>(request,
-            BssMeta.createPartnerCoupons, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.createPartnerCoupons, hcClient);
     }
 
     /**
@@ -598,7 +588,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePersonalRealnameAuthRequest 请求对象
+     * @param request CreatePersonalRealnameAuthRequest 请求对象
      * @return CompletableFuture<CreatePersonalRealnameAuthResponse>
      */
     public CompletableFuture<CreatePersonalRealnameAuthResponse> createPersonalRealnameAuthAsync(
@@ -615,13 +605,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePersonalRealnameAuthRequest 请求对象
+     * @param request CreatePersonalRealnameAuthRequest 请求对象
      * @return AsyncInvoker<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse>
      */
     public AsyncInvoker<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse> createPersonalRealnameAuthAsyncInvoker(
         CreatePersonalRealnameAuthRequest request) {
-        return new AsyncInvoker<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse>(request,
-            BssMeta.createPersonalRealnameAuth, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.createPersonalRealnameAuth, hcClient);
     }
 
     /**
@@ -638,7 +627,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubCustomerRequest 请求对象
+     * @param request CreateSubCustomerRequest 请求对象
      * @return CompletableFuture<CreateSubCustomerResponse>
      */
     public CompletableFuture<CreateSubCustomerResponse> createSubCustomerAsync(CreateSubCustomerRequest request) {
@@ -659,13 +648,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubCustomerRequest 请求对象
+     * @param request CreateSubCustomerRequest 请求对象
      * @return AsyncInvoker<CreateSubCustomerRequest, CreateSubCustomerResponse>
      */
     public AsyncInvoker<CreateSubCustomerRequest, CreateSubCustomerResponse> createSubCustomerAsyncInvoker(
         CreateSubCustomerRequest request) {
-        return new AsyncInvoker<CreateSubCustomerRequest, CreateSubCustomerResponse>(request, BssMeta.createSubCustomer,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.createSubCustomer, hcClient);
     }
 
     /**
@@ -677,7 +665,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubEnterpriseAccountRequest 请求对象
+     * @param request CreateSubEnterpriseAccountRequest 请求对象
      * @return CompletableFuture<CreateSubEnterpriseAccountResponse>
      */
     public CompletableFuture<CreateSubEnterpriseAccountResponse> createSubEnterpriseAccountAsync(
@@ -694,13 +682,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubEnterpriseAccountRequest 请求对象
+     * @param request CreateSubEnterpriseAccountRequest 请求对象
      * @return AsyncInvoker<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse>
      */
     public AsyncInvoker<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse> createSubEnterpriseAccountAsyncInvoker(
         CreateSubEnterpriseAccountRequest request) {
-        return new AsyncInvoker<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse>(request,
-            BssMeta.createSubEnterpriseAccount, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.createSubEnterpriseAccount, hcClient);
     }
 
     /**
@@ -710,7 +697,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCitiesRequest 请求对象
+     * @param request ListCitiesRequest 请求对象
      * @return CompletableFuture<ListCitiesResponse>
      */
     public CompletableFuture<ListCitiesResponse> listCitiesAsync(ListCitiesRequest request) {
@@ -724,11 +711,11 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCitiesRequest 请求对象
+     * @param request ListCitiesRequest 请求对象
      * @return AsyncInvoker<ListCitiesRequest, ListCitiesResponse>
      */
     public AsyncInvoker<ListCitiesRequest, ListCitiesResponse> listCitiesAsyncInvoker(ListCitiesRequest request) {
-        return new AsyncInvoker<ListCitiesRequest, ListCitiesResponse>(request, BssMeta.listCities, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCities, hcClient);
     }
 
     /**
@@ -741,7 +728,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConsumeSubCustomersRequest 请求对象
+     * @param request ListConsumeSubCustomersRequest 请求对象
      * @return CompletableFuture<ListConsumeSubCustomersResponse>
      */
     public CompletableFuture<ListConsumeSubCustomersResponse> listConsumeSubCustomersAsync(
@@ -759,13 +746,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConsumeSubCustomersRequest 请求对象
+     * @param request ListConsumeSubCustomersRequest 请求对象
      * @return AsyncInvoker<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse>
      */
     public AsyncInvoker<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse> listConsumeSubCustomersAsyncInvoker(
         ListConsumeSubCustomersRequest request) {
-        return new AsyncInvoker<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse>(request,
-            BssMeta.listConsumeSubCustomers, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listConsumeSubCustomers, hcClient);
     }
 
     /**
@@ -775,7 +761,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConversionsRequest 请求对象
+     * @param request ListConversionsRequest 请求对象
      * @return CompletableFuture<ListConversionsResponse>
      */
     public CompletableFuture<ListConversionsResponse> listConversionsAsync(ListConversionsRequest request) {
@@ -789,13 +775,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConversionsRequest 请求对象
+     * @param request ListConversionsRequest 请求对象
      * @return AsyncInvoker<ListConversionsRequest, ListConversionsResponse>
      */
     public AsyncInvoker<ListConversionsRequest, ListConversionsResponse> listConversionsAsyncInvoker(
         ListConversionsRequest request) {
-        return new AsyncInvoker<ListConversionsRequest, ListConversionsResponse>(request, BssMeta.listConversions,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listConversions, hcClient);
     }
 
     /**
@@ -805,7 +790,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCostsRequest 请求对象
+     * @param request ListCostsRequest 请求对象
      * @return CompletableFuture<ListCostsResponse>
      */
     public CompletableFuture<ListCostsResponse> listCostsAsync(ListCostsRequest request) {
@@ -819,11 +804,11 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCostsRequest 请求对象
+     * @param request ListCostsRequest 请求对象
      * @return AsyncInvoker<ListCostsRequest, ListCostsResponse>
      */
     public AsyncInvoker<ListCostsRequest, ListCostsResponse> listCostsAsyncInvoker(ListCostsRequest request) {
-        return new AsyncInvoker<ListCostsRequest, ListCostsResponse>(request, BssMeta.listCosts, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCosts, hcClient);
     }
 
     /**
@@ -833,7 +818,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCountiesRequest 请求对象
+     * @param request ListCountiesRequest 请求对象
      * @return CompletableFuture<ListCountiesResponse>
      */
     public CompletableFuture<ListCountiesResponse> listCountiesAsync(ListCountiesRequest request) {
@@ -847,12 +832,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCountiesRequest 请求对象
+     * @param request ListCountiesRequest 请求对象
      * @return AsyncInvoker<ListCountiesRequest, ListCountiesResponse>
      */
     public AsyncInvoker<ListCountiesRequest, ListCountiesResponse> listCountiesAsyncInvoker(
         ListCountiesRequest request) {
-        return new AsyncInvoker<ListCountiesRequest, ListCountiesResponse>(request, BssMeta.listCounties, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCounties, hcClient);
     }
 
     /**
@@ -867,7 +852,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCouponQuotasRecordsRequest 请求对象
+     * @param request ListCouponQuotasRecordsRequest 请求对象
      * @return CompletableFuture<ListCouponQuotasRecordsResponse>
      */
     public CompletableFuture<ListCouponQuotasRecordsResponse> listCouponQuotasRecordsAsync(
@@ -887,13 +872,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCouponQuotasRecordsRequest 请求对象
+     * @param request ListCouponQuotasRecordsRequest 请求对象
      * @return AsyncInvoker<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse>
      */
     public AsyncInvoker<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse> listCouponQuotasRecordsAsyncInvoker(
         ListCouponQuotasRecordsRequest request) {
-        return new AsyncInvoker<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse>(request,
-            BssMeta.listCouponQuotasRecords, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCouponQuotasRecords, hcClient);
     }
 
     /**
@@ -903,7 +887,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerAccountChangeRecordsRequest 请求对象
+     * @param request ListCustomerAccountChangeRecordsRequest 请求对象
      * @return CompletableFuture<ListCustomerAccountChangeRecordsResponse>
      */
     public CompletableFuture<ListCustomerAccountChangeRecordsResponse> listCustomerAccountChangeRecordsAsync(
@@ -918,13 +902,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerAccountChangeRecordsRequest 请求对象
+     * @param request ListCustomerAccountChangeRecordsRequest 请求对象
      * @return AsyncInvoker<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse>
      */
     public AsyncInvoker<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse> listCustomerAccountChangeRecordsAsyncInvoker(
         ListCustomerAccountChangeRecordsRequest request) {
-        return new AsyncInvoker<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse>(
-            request, BssMeta.listCustomerAccountChangeRecords, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCustomerAccountChangeRecords, hcClient);
     }
 
     /**
@@ -936,7 +919,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerBillsFeeRecordsRequest 请求对象
+     * @param request ListCustomerBillsFeeRecordsRequest 请求对象
      * @return CompletableFuture<ListCustomerBillsFeeRecordsResponse>
      */
     public CompletableFuture<ListCustomerBillsFeeRecordsResponse> listCustomerBillsFeeRecordsAsync(
@@ -953,13 +936,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerBillsFeeRecordsRequest 请求对象
+     * @param request ListCustomerBillsFeeRecordsRequest 请求对象
      * @return AsyncInvoker<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse>
      */
     public AsyncInvoker<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> listCustomerBillsFeeRecordsAsyncInvoker(
         ListCustomerBillsFeeRecordsRequest request) {
-        return new AsyncInvoker<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse>(request,
-            BssMeta.listCustomerBillsFeeRecords, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCustomerBillsFeeRecords, hcClient);
     }
 
     /**
@@ -976,7 +958,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerBillsMonthlyBreakDownRequest 请求对象
+     * @param request ListCustomerBillsMonthlyBreakDownRequest 请求对象
      * @return CompletableFuture<ListCustomerBillsMonthlyBreakDownResponse>
      */
     public CompletableFuture<ListCustomerBillsMonthlyBreakDownResponse> listCustomerBillsMonthlyBreakDownAsync(
@@ -998,13 +980,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerBillsMonthlyBreakDownRequest 请求对象
+     * @param request ListCustomerBillsMonthlyBreakDownRequest 请求对象
      * @return AsyncInvoker<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse>
      */
     public AsyncInvoker<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> listCustomerBillsMonthlyBreakDownAsyncInvoker(
         ListCustomerBillsMonthlyBreakDownRequest request) {
-        return new AsyncInvoker<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse>(
-            request, BssMeta.listCustomerBillsMonthlyBreakDown, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCustomerBillsMonthlyBreakDown, hcClient);
     }
 
     /**
@@ -1014,7 +995,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerOnDemandResourcesRequest 请求对象
+     * @param request ListCustomerOnDemandResourcesRequest 请求对象
      * @return CompletableFuture<ListCustomerOnDemandResourcesResponse>
      */
     public CompletableFuture<ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResourcesAsync(
@@ -1029,13 +1010,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerOnDemandResourcesRequest 请求对象
+     * @param request ListCustomerOnDemandResourcesRequest 请求对象
      * @return AsyncInvoker<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse>
      */
     public AsyncInvoker<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResourcesAsyncInvoker(
         ListCustomerOnDemandResourcesRequest request) {
-        return new AsyncInvoker<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse>(request,
-            BssMeta.listCustomerOnDemandResources, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCustomerOnDemandResources, hcClient);
     }
 
     /**
@@ -1050,7 +1030,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerOrdersRequest 请求对象
+     * @param request ListCustomerOrdersRequest 请求对象
      * @return CompletableFuture<ListCustomerOrdersResponse>
      */
     public CompletableFuture<ListCustomerOrdersResponse> listCustomerOrdersAsync(ListCustomerOrdersRequest request) {
@@ -1069,13 +1049,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerOrdersRequest 请求对象
+     * @param request ListCustomerOrdersRequest 请求对象
      * @return AsyncInvoker<ListCustomerOrdersRequest, ListCustomerOrdersResponse>
      */
     public AsyncInvoker<ListCustomerOrdersRequest, ListCustomerOrdersResponse> listCustomerOrdersAsyncInvoker(
         ListCustomerOrdersRequest request) {
-        return new AsyncInvoker<ListCustomerOrdersRequest, ListCustomerOrdersResponse>(request,
-            BssMeta.listCustomerOrders, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCustomerOrders, hcClient);
     }
 
     /**
@@ -1090,7 +1069,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomersBalancesDetailRequest 请求对象
+     * @param request ListCustomersBalancesDetailRequest 请求对象
      * @return CompletableFuture<ListCustomersBalancesDetailResponse>
      */
     public CompletableFuture<ListCustomersBalancesDetailResponse> listCustomersBalancesDetailAsync(
@@ -1110,13 +1089,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomersBalancesDetailRequest 请求对象
+     * @param request ListCustomersBalancesDetailRequest 请求对象
      * @return AsyncInvoker<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse>
      */
     public AsyncInvoker<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse> listCustomersBalancesDetailAsyncInvoker(
         ListCustomersBalancesDetailRequest request) {
-        return new AsyncInvoker<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse>(request,
-            BssMeta.listCustomersBalancesDetail, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCustomersBalancesDetail, hcClient);
     }
 
     /**
@@ -1131,7 +1109,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerselfResourceRecordDetailsRequest 请求对象
+     * @param request ListCustomerselfResourceRecordDetailsRequest 请求对象
      * @return CompletableFuture<ListCustomerselfResourceRecordDetailsResponse>
      */
     public CompletableFuture<ListCustomerselfResourceRecordDetailsResponse> listCustomerselfResourceRecordDetailsAsync(
@@ -1151,13 +1129,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerselfResourceRecordDetailsRequest 请求对象
+     * @param request ListCustomerselfResourceRecordDetailsRequest 请求对象
      * @return AsyncInvoker<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse>
      */
     public AsyncInvoker<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse> listCustomerselfResourceRecordDetailsAsyncInvoker(
         ListCustomerselfResourceRecordDetailsRequest request) {
-        return new AsyncInvoker<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse>(
-            request, BssMeta.listCustomerselfResourceRecordDetails, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCustomerselfResourceRecordDetails, hcClient);
     }
 
     /**
@@ -1169,7 +1146,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerselfResourceRecordsRequest 请求对象
+     * @param request ListCustomerselfResourceRecordsRequest 请求对象
      * @return CompletableFuture<ListCustomerselfResourceRecordsResponse>
      */
     public CompletableFuture<ListCustomerselfResourceRecordsResponse> listCustomerselfResourceRecordsAsync(
@@ -1186,13 +1163,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerselfResourceRecordsRequest 请求对象
+     * @param request ListCustomerselfResourceRecordsRequest 请求对象
      * @return AsyncInvoker<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse>
      */
     public AsyncInvoker<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse> listCustomerselfResourceRecordsAsyncInvoker(
         ListCustomerselfResourceRecordsRequest request) {
-        return new AsyncInvoker<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse>(
-            request, BssMeta.listCustomerselfResourceRecords, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listCustomerselfResourceRecords, hcClient);
     }
 
     /**
@@ -1202,7 +1178,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseMultiAccountRequest 请求对象
+     * @param request ListEnterpriseMultiAccountRequest 请求对象
      * @return CompletableFuture<ListEnterpriseMultiAccountResponse>
      */
     public CompletableFuture<ListEnterpriseMultiAccountResponse> listEnterpriseMultiAccountAsync(
@@ -1217,13 +1193,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseMultiAccountRequest 请求对象
+     * @param request ListEnterpriseMultiAccountRequest 请求对象
      * @return AsyncInvoker<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse>
      */
     public AsyncInvoker<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse> listEnterpriseMultiAccountAsyncInvoker(
         ListEnterpriseMultiAccountRequest request) {
-        return new AsyncInvoker<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse>(request,
-            BssMeta.listEnterpriseMultiAccount, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listEnterpriseMultiAccount, hcClient);
     }
 
     /**
@@ -1233,7 +1208,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseOrganizationsRequest 请求对象
+     * @param request ListEnterpriseOrganizationsRequest 请求对象
      * @return CompletableFuture<ListEnterpriseOrganizationsResponse>
      */
     public CompletableFuture<ListEnterpriseOrganizationsResponse> listEnterpriseOrganizationsAsync(
@@ -1248,13 +1223,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseOrganizationsRequest 请求对象
+     * @param request ListEnterpriseOrganizationsRequest 请求对象
      * @return AsyncInvoker<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse>
      */
     public AsyncInvoker<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse> listEnterpriseOrganizationsAsyncInvoker(
         ListEnterpriseOrganizationsRequest request) {
-        return new AsyncInvoker<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse>(request,
-            BssMeta.listEnterpriseOrganizations, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listEnterpriseOrganizations, hcClient);
     }
 
     /**
@@ -1264,7 +1238,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseSubCustomersRequest 请求对象
+     * @param request ListEnterpriseSubCustomersRequest 请求对象
      * @return CompletableFuture<ListEnterpriseSubCustomersResponse>
      */
     public CompletableFuture<ListEnterpriseSubCustomersResponse> listEnterpriseSubCustomersAsync(
@@ -1279,13 +1253,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseSubCustomersRequest 请求对象
+     * @param request ListEnterpriseSubCustomersRequest 请求对象
      * @return AsyncInvoker<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse>
      */
     public AsyncInvoker<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> listEnterpriseSubCustomersAsyncInvoker(
         ListEnterpriseSubCustomersRequest request) {
-        return new AsyncInvoker<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse>(request,
-            BssMeta.listEnterpriseSubCustomers, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listEnterpriseSubCustomers, hcClient);
     }
 
     /**
@@ -1295,7 +1268,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourceInfosRequest 请求对象
+     * @param request ListFreeResourceInfosRequest 请求对象
      * @return CompletableFuture<ListFreeResourceInfosResponse>
      */
     public CompletableFuture<ListFreeResourceInfosResponse> listFreeResourceInfosAsync(
@@ -1310,13 +1283,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourceInfosRequest 请求对象
+     * @param request ListFreeResourceInfosRequest 请求对象
      * @return AsyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse>
      */
     public AsyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse> listFreeResourceInfosAsyncInvoker(
         ListFreeResourceInfosRequest request) {
-        return new AsyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse>(request,
-            BssMeta.listFreeResourceInfos, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listFreeResourceInfos, hcClient);
     }
 
     /**
@@ -1326,7 +1298,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourceUsagesRequest 请求对象
+     * @param request ListFreeResourceUsagesRequest 请求对象
      * @return CompletableFuture<ListFreeResourceUsagesResponse>
      */
     public CompletableFuture<ListFreeResourceUsagesResponse> listFreeResourceUsagesAsync(
@@ -1341,13 +1313,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourceUsagesRequest 请求对象
+     * @param request ListFreeResourceUsagesRequest 请求对象
      * @return AsyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>
      */
     public AsyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> listFreeResourceUsagesAsyncInvoker(
         ListFreeResourceUsagesRequest request) {
-        return new AsyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>(request,
-            BssMeta.listFreeResourceUsages, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listFreeResourceUsages, hcClient);
     }
 
     /**
@@ -1357,7 +1328,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourcesUsageRecordsRequest 请求对象
+     * @param request ListFreeResourcesUsageRecordsRequest 请求对象
      * @return CompletableFuture<ListFreeResourcesUsageRecordsResponse>
      */
     public CompletableFuture<ListFreeResourcesUsageRecordsResponse> listFreeResourcesUsageRecordsAsync(
@@ -1372,13 +1343,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourcesUsageRecordsRequest 请求对象
+     * @param request ListFreeResourcesUsageRecordsRequest 请求对象
      * @return AsyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse>
      */
     public AsyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> listFreeResourcesUsageRecordsAsyncInvoker(
         ListFreeResourcesUsageRecordsRequest request) {
-        return new AsyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse>(request,
-            BssMeta.listFreeResourcesUsageRecords, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listFreeResourcesUsageRecords, hcClient);
     }
 
     /**
@@ -1390,7 +1360,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIncentiveDiscountPoliciesRequest 请求对象
+     * @param request ListIncentiveDiscountPoliciesRequest 请求对象
      * @return CompletableFuture<ListIncentiveDiscountPoliciesResponse>
      */
     public CompletableFuture<ListIncentiveDiscountPoliciesResponse> listIncentiveDiscountPoliciesAsync(
@@ -1407,13 +1377,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIncentiveDiscountPoliciesRequest 请求对象
+     * @param request ListIncentiveDiscountPoliciesRequest 请求对象
      * @return AsyncInvoker<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse>
      */
     public AsyncInvoker<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> listIncentiveDiscountPoliciesAsyncInvoker(
         ListIncentiveDiscountPoliciesRequest request) {
-        return new AsyncInvoker<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse>(request,
-            BssMeta.listIncentiveDiscountPolicies, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listIncentiveDiscountPolicies, hcClient);
     }
 
     /**
@@ -1425,7 +1394,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIndirectPartnersRequest 请求对象
+     * @param request ListIndirectPartnersRequest 请求对象
      * @return CompletableFuture<ListIndirectPartnersResponse>
      */
     public CompletableFuture<ListIndirectPartnersResponse> listIndirectPartnersAsync(
@@ -1442,13 +1411,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIndirectPartnersRequest 请求对象
+     * @param request ListIndirectPartnersRequest 请求对象
      * @return AsyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse>
      */
     public AsyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse> listIndirectPartnersAsyncInvoker(
         ListIndirectPartnersRequest request) {
-        return new AsyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse>(request,
-            BssMeta.listIndirectPartners, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listIndirectPartners, hcClient);
     }
 
     /**
@@ -1463,7 +1431,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuedCouponQuotasRequest 请求对象
+     * @param request ListIssuedCouponQuotasRequest 请求对象
      * @return CompletableFuture<ListIssuedCouponQuotasResponse>
      */
     public CompletableFuture<ListIssuedCouponQuotasResponse> listIssuedCouponQuotasAsync(
@@ -1483,13 +1451,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuedCouponQuotasRequest 请求对象
+     * @param request ListIssuedCouponQuotasRequest 请求对象
      * @return AsyncInvoker<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse>
      */
     public AsyncInvoker<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse> listIssuedCouponQuotasAsyncInvoker(
         ListIssuedCouponQuotasRequest request) {
-        return new AsyncInvoker<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse>(request,
-            BssMeta.listIssuedCouponQuotas, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listIssuedCouponQuotas, hcClient);
     }
 
     /**
@@ -1507,7 +1474,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuedPartnerCouponsRequest 请求对象
+     * @param request ListIssuedPartnerCouponsRequest 请求对象
      * @return CompletableFuture<ListIssuedPartnerCouponsResponse>
      */
     public CompletableFuture<ListIssuedPartnerCouponsResponse> listIssuedPartnerCouponsAsync(
@@ -1530,13 +1497,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuedPartnerCouponsRequest 请求对象
+     * @param request ListIssuedPartnerCouponsRequest 请求对象
      * @return AsyncInvoker<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse>
      */
     public AsyncInvoker<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse> listIssuedPartnerCouponsAsyncInvoker(
         ListIssuedPartnerCouponsRequest request) {
-        return new AsyncInvoker<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse>(request,
-            BssMeta.listIssuedPartnerCoupons, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listIssuedPartnerCoupons, hcClient);
     }
 
     /**
@@ -1546,7 +1512,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMeasureUnitsRequest 请求对象
+     * @param request ListMeasureUnitsRequest 请求对象
      * @return CompletableFuture<ListMeasureUnitsResponse>
      */
     public CompletableFuture<ListMeasureUnitsResponse> listMeasureUnitsAsync(ListMeasureUnitsRequest request) {
@@ -1560,13 +1526,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMeasureUnitsRequest 请求对象
+     * @param request ListMeasureUnitsRequest 请求对象
      * @return AsyncInvoker<ListMeasureUnitsRequest, ListMeasureUnitsResponse>
      */
     public AsyncInvoker<ListMeasureUnitsRequest, ListMeasureUnitsResponse> listMeasureUnitsAsyncInvoker(
         ListMeasureUnitsRequest request) {
-        return new AsyncInvoker<ListMeasureUnitsRequest, ListMeasureUnitsResponse>(request, BssMeta.listMeasureUnits,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listMeasureUnits, hcClient);
     }
 
     /**
@@ -1579,7 +1544,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMultiAccountRetrieveCouponsRequest 请求对象
+     * @param request ListMultiAccountRetrieveCouponsRequest 请求对象
      * @return CompletableFuture<ListMultiAccountRetrieveCouponsResponse>
      */
     public CompletableFuture<ListMultiAccountRetrieveCouponsResponse> listMultiAccountRetrieveCouponsAsync(
@@ -1597,13 +1562,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMultiAccountRetrieveCouponsRequest 请求对象
+     * @param request ListMultiAccountRetrieveCouponsRequest 请求对象
      * @return AsyncInvoker<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse>
      */
     public AsyncInvoker<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse> listMultiAccountRetrieveCouponsAsyncInvoker(
         ListMultiAccountRetrieveCouponsRequest request) {
-        return new AsyncInvoker<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse>(
-            request, BssMeta.listMultiAccountRetrieveCoupons, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listMultiAccountRetrieveCoupons, hcClient);
     }
 
     /**
@@ -1616,7 +1580,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMultiAccountTransferCouponsRequest 请求对象
+     * @param request ListMultiAccountTransferCouponsRequest 请求对象
      * @return CompletableFuture<ListMultiAccountTransferCouponsResponse>
      */
     public CompletableFuture<ListMultiAccountTransferCouponsResponse> listMultiAccountTransferCouponsAsync(
@@ -1634,13 +1598,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMultiAccountTransferCouponsRequest 请求对象
+     * @param request ListMultiAccountTransferCouponsRequest 请求对象
      * @return AsyncInvoker<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse>
      */
     public AsyncInvoker<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse> listMultiAccountTransferCouponsAsyncInvoker(
         ListMultiAccountTransferCouponsRequest request) {
-        return new AsyncInvoker<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse>(
-            request, BssMeta.listMultiAccountTransferCoupons, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listMultiAccountTransferCoupons, hcClient);
     }
 
     /**
@@ -1657,7 +1620,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOnDemandResourceRatingsRequest 请求对象
+     * @param request ListOnDemandResourceRatingsRequest 请求对象
      * @return CompletableFuture<ListOnDemandResourceRatingsResponse>
      */
     public CompletableFuture<ListOnDemandResourceRatingsResponse> listOnDemandResourceRatingsAsync(
@@ -1679,13 +1642,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOnDemandResourceRatingsRequest 请求对象
+     * @param request ListOnDemandResourceRatingsRequest 请求对象
      * @return AsyncInvoker<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse>
      */
     public AsyncInvoker<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse> listOnDemandResourceRatingsAsyncInvoker(
         ListOnDemandResourceRatingsRequest request) {
-        return new AsyncInvoker<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse>(request,
-            BssMeta.listOnDemandResourceRatings, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listOnDemandResourceRatings, hcClient);
     }
 
     /**
@@ -1695,7 +1657,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrderCouponsByOrderIdRequest 请求对象
+     * @param request ListOrderCouponsByOrderIdRequest 请求对象
      * @return CompletableFuture<ListOrderCouponsByOrderIdResponse>
      */
     public CompletableFuture<ListOrderCouponsByOrderIdResponse> listOrderCouponsByOrderIdAsync(
@@ -1710,13 +1672,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrderCouponsByOrderIdRequest 请求对象
+     * @param request ListOrderCouponsByOrderIdRequest 请求对象
      * @return AsyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse>
      */
     public AsyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> listOrderCouponsByOrderIdAsyncInvoker(
         ListOrderCouponsByOrderIdRequest request) {
-        return new AsyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse>(request,
-            BssMeta.listOrderCouponsByOrderId, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listOrderCouponsByOrderId, hcClient);
     }
 
     /**
@@ -1726,7 +1687,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrderDiscountsRequest 请求对象
+     * @param request ListOrderDiscountsRequest 请求对象
      * @return CompletableFuture<ListOrderDiscountsResponse>
      */
     public CompletableFuture<ListOrderDiscountsResponse> listOrderDiscountsAsync(ListOrderDiscountsRequest request) {
@@ -1740,13 +1701,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrderDiscountsRequest 请求对象
+     * @param request ListOrderDiscountsRequest 请求对象
      * @return AsyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>
      */
     public AsyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse> listOrderDiscountsAsyncInvoker(
         ListOrderDiscountsRequest request) {
-        return new AsyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>(request,
-            BssMeta.listOrderDiscounts, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listOrderDiscounts, hcClient);
     }
 
     /**
@@ -1756,7 +1716,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerAccountChangeRecordsRequest 请求对象
+     * @param request ListPartnerAccountChangeRecordsRequest 请求对象
      * @return CompletableFuture<ListPartnerAccountChangeRecordsResponse>
      */
     public CompletableFuture<ListPartnerAccountChangeRecordsResponse> listPartnerAccountChangeRecordsAsync(
@@ -1771,13 +1731,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerAccountChangeRecordsRequest 请求对象
+     * @param request ListPartnerAccountChangeRecordsRequest 请求对象
      * @return AsyncInvoker<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse>
      */
     public AsyncInvoker<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> listPartnerAccountChangeRecordsAsyncInvoker(
         ListPartnerAccountChangeRecordsRequest request) {
-        return new AsyncInvoker<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse>(
-            request, BssMeta.listPartnerAccountChangeRecords, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listPartnerAccountChangeRecords, hcClient);
     }
 
     /**
@@ -1789,7 +1748,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerAdjustRecordsRequest 请求对象
+     * @param request ListPartnerAdjustRecordsRequest 请求对象
      * @return CompletableFuture<ListPartnerAdjustRecordsResponse>
      */
     public CompletableFuture<ListPartnerAdjustRecordsResponse> listPartnerAdjustRecordsAsync(
@@ -1806,13 +1765,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerAdjustRecordsRequest 请求对象
+     * @param request ListPartnerAdjustRecordsRequest 请求对象
      * @return AsyncInvoker<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse>
      */
     public AsyncInvoker<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> listPartnerAdjustRecordsAsyncInvoker(
         ListPartnerAdjustRecordsRequest request) {
-        return new AsyncInvoker<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse>(request,
-            BssMeta.listPartnerAdjustRecords, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listPartnerAdjustRecords, hcClient);
     }
 
     /**
@@ -1822,7 +1780,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerBalancesRequest 请求对象
+     * @param request ListPartnerBalancesRequest 请求对象
      * @return CompletableFuture<ListPartnerBalancesResponse>
      */
     public CompletableFuture<ListPartnerBalancesResponse> listPartnerBalancesAsync(ListPartnerBalancesRequest request) {
@@ -1836,13 +1794,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerBalancesRequest 请求对象
+     * @param request ListPartnerBalancesRequest 请求对象
      * @return AsyncInvoker<ListPartnerBalancesRequest, ListPartnerBalancesResponse>
      */
     public AsyncInvoker<ListPartnerBalancesRequest, ListPartnerBalancesResponse> listPartnerBalancesAsyncInvoker(
         ListPartnerBalancesRequest request) {
-        return new AsyncInvoker<ListPartnerBalancesRequest, ListPartnerBalancesResponse>(request,
-            BssMeta.listPartnerBalances, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listPartnerBalances, hcClient);
     }
 
     /**
@@ -1854,7 +1811,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerCouponsRecordRequest 请求对象
+     * @param request ListPartnerCouponsRecordRequest 请求对象
      * @return CompletableFuture<ListPartnerCouponsRecordResponse>
      */
     public CompletableFuture<ListPartnerCouponsRecordResponse> listPartnerCouponsRecordAsync(
@@ -1871,13 +1828,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerCouponsRecordRequest 请求对象
+     * @param request ListPartnerCouponsRecordRequest 请求对象
      * @return AsyncInvoker<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse>
      */
     public AsyncInvoker<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse> listPartnerCouponsRecordAsyncInvoker(
         ListPartnerCouponsRecordRequest request) {
-        return new AsyncInvoker<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse>(request,
-            BssMeta.listPartnerCouponsRecord, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listPartnerCouponsRecord, hcClient);
     }
 
     /**
@@ -1890,7 +1846,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPayPerUseCustomerResourcesRequest 请求对象
+     * @param request ListPayPerUseCustomerResourcesRequest 请求对象
      * @return CompletableFuture<ListPayPerUseCustomerResourcesResponse>
      */
     public CompletableFuture<ListPayPerUseCustomerResourcesResponse> listPayPerUseCustomerResourcesAsync(
@@ -1908,13 +1864,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPayPerUseCustomerResourcesRequest 请求对象
+     * @param request ListPayPerUseCustomerResourcesRequest 请求对象
      * @return AsyncInvoker<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse>
      */
     public AsyncInvoker<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse> listPayPerUseCustomerResourcesAsyncInvoker(
         ListPayPerUseCustomerResourcesRequest request) {
-        return new AsyncInvoker<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse>(request,
-            BssMeta.listPayPerUseCustomerResources, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listPayPerUseCustomerResources, hcClient);
     }
 
     /**
@@ -1924,7 +1879,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProvincesRequest 请求对象
+     * @param request ListProvincesRequest 请求对象
      * @return CompletableFuture<ListProvincesResponse>
      */
     public CompletableFuture<ListProvincesResponse> listProvincesAsync(ListProvincesRequest request) {
@@ -1938,12 +1893,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProvincesRequest 请求对象
+     * @param request ListProvincesRequest 请求对象
      * @return AsyncInvoker<ListProvincesRequest, ListProvincesResponse>
      */
     public AsyncInvoker<ListProvincesRequest, ListProvincesResponse> listProvincesAsyncInvoker(
         ListProvincesRequest request) {
-        return new AsyncInvoker<ListProvincesRequest, ListProvincesResponse>(request, BssMeta.listProvinces, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listProvinces, hcClient);
     }
 
     /**
@@ -1955,7 +1910,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaCouponsRequest 请求对象
+     * @param request ListQuotaCouponsRequest 请求对象
      * @return CompletableFuture<ListQuotaCouponsResponse>
      */
     public CompletableFuture<ListQuotaCouponsResponse> listQuotaCouponsAsync(ListQuotaCouponsRequest request) {
@@ -1971,13 +1926,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaCouponsRequest 请求对象
+     * @param request ListQuotaCouponsRequest 请求对象
      * @return AsyncInvoker<ListQuotaCouponsRequest, ListQuotaCouponsResponse>
      */
     public AsyncInvoker<ListQuotaCouponsRequest, ListQuotaCouponsResponse> listQuotaCouponsAsyncInvoker(
         ListQuotaCouponsRequest request) {
-        return new AsyncInvoker<ListQuotaCouponsRequest, ListQuotaCouponsResponse>(request, BssMeta.listQuotaCoupons,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listQuotaCoupons, hcClient);
     }
 
     /**
@@ -1994,7 +1948,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRateOnPeriodDetailRequest 请求对象
+     * @param request ListRateOnPeriodDetailRequest 请求对象
      * @return CompletableFuture<ListRateOnPeriodDetailResponse>
      */
     public CompletableFuture<ListRateOnPeriodDetailResponse> listRateOnPeriodDetailAsync(
@@ -2016,13 +1970,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRateOnPeriodDetailRequest 请求对象
+     * @param request ListRateOnPeriodDetailRequest 请求对象
      * @return AsyncInvoker<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse>
      */
     public AsyncInvoker<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse> listRateOnPeriodDetailAsyncInvoker(
         ListRateOnPeriodDetailRequest request) {
-        return new AsyncInvoker<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse>(request,
-            BssMeta.listRateOnPeriodDetail, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listRateOnPeriodDetail, hcClient);
     }
 
     /**
@@ -2032,7 +1985,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRenewRateOnPeriodRequest 请求对象
+     * @param request ListRenewRateOnPeriodRequest 请求对象
      * @return CompletableFuture<ListRenewRateOnPeriodResponse>
      */
     public CompletableFuture<ListRenewRateOnPeriodResponse> listRenewRateOnPeriodAsync(
@@ -2047,13 +2000,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRenewRateOnPeriodRequest 请求对象
+     * @param request ListRenewRateOnPeriodRequest 请求对象
      * @return AsyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse>
      */
     public AsyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> listRenewRateOnPeriodAsyncInvoker(
         ListRenewRateOnPeriodRequest request) {
-        return new AsyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse>(request,
-            BssMeta.listRenewRateOnPeriod, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listRenewRateOnPeriod, hcClient);
     }
 
     /**
@@ -2063,7 +2015,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTypesRequest 请求对象
+     * @param request ListResourceTypesRequest 请求对象
      * @return CompletableFuture<ListResourceTypesResponse>
      */
     public CompletableFuture<ListResourceTypesResponse> listResourceTypesAsync(ListResourceTypesRequest request) {
@@ -2077,13 +2029,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTypesRequest 请求对象
+     * @param request ListResourceTypesRequest 请求对象
      * @return AsyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>
      */
     public AsyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypesAsyncInvoker(
         ListResourceTypesRequest request) {
-        return new AsyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>(request, BssMeta.listResourceTypes,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listResourceTypes, hcClient);
     }
 
     /**
@@ -2096,7 +2047,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceUsageRequest 请求对象
+     * @param request ListResourceUsageRequest 请求对象
      * @return CompletableFuture<ListResourceUsageResponse>
      */
     public CompletableFuture<ListResourceUsageResponse> listResourceUsageAsync(ListResourceUsageRequest request) {
@@ -2113,13 +2064,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceUsageRequest 请求对象
+     * @param request ListResourceUsageRequest 请求对象
      * @return AsyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse>
      */
     public AsyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse> listResourceUsageAsyncInvoker(
         ListResourceUsageRequest request) {
-        return new AsyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse>(request, BssMeta.listResourceUsage,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listResourceUsage, hcClient);
     }
 
     /**
@@ -2133,7 +2083,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceUsageSummaryRequest 请求对象
+     * @param request ListResourceUsageSummaryRequest 请求对象
      * @return CompletableFuture<ListResourceUsageSummaryResponse>
      */
     public CompletableFuture<ListResourceUsageSummaryResponse> listResourceUsageSummaryAsync(
@@ -2152,13 +2102,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceUsageSummaryRequest 请求对象
+     * @param request ListResourceUsageSummaryRequest 请求对象
      * @return AsyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse>
      */
     public AsyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> listResourceUsageSummaryAsyncInvoker(
         ListResourceUsageSummaryRequest request) {
-        return new AsyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse>(request,
-            BssMeta.listResourceUsageSummary, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listResourceUsageSummary, hcClient);
     }
 
     /**
@@ -2168,7 +2117,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceResourcesRequest 请求对象
+     * @param request ListServiceResourcesRequest 请求对象
      * @return CompletableFuture<ListServiceResourcesResponse>
      */
     public CompletableFuture<ListServiceResourcesResponse> listServiceResourcesAsync(
@@ -2183,13 +2132,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceResourcesRequest 请求对象
+     * @param request ListServiceResourcesRequest 请求对象
      * @return AsyncInvoker<ListServiceResourcesRequest, ListServiceResourcesResponse>
      */
     public AsyncInvoker<ListServiceResourcesRequest, ListServiceResourcesResponse> listServiceResourcesAsyncInvoker(
         ListServiceResourcesRequest request) {
-        return new AsyncInvoker<ListServiceResourcesRequest, ListServiceResourcesResponse>(request,
-            BssMeta.listServiceResources, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listServiceResources, hcClient);
     }
 
     /**
@@ -2199,7 +2147,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceTypesRequest 请求对象
+     * @param request ListServiceTypesRequest 请求对象
      * @return CompletableFuture<ListServiceTypesResponse>
      */
     public CompletableFuture<ListServiceTypesResponse> listServiceTypesAsync(ListServiceTypesRequest request) {
@@ -2213,13 +2161,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceTypesRequest 请求对象
+     * @param request ListServiceTypesRequest 请求对象
      * @return AsyncInvoker<ListServiceTypesRequest, ListServiceTypesResponse>
      */
     public AsyncInvoker<ListServiceTypesRequest, ListServiceTypesResponse> listServiceTypesAsyncInvoker(
         ListServiceTypesRequest request) {
-        return new AsyncInvoker<ListServiceTypesRequest, ListServiceTypesResponse>(request, BssMeta.listServiceTypes,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listServiceTypes, hcClient);
     }
 
     /**
@@ -2229,7 +2176,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoredValueCardsRequest 请求对象
+     * @param request ListStoredValueCardsRequest 请求对象
      * @return CompletableFuture<ListStoredValueCardsResponse>
      */
     public CompletableFuture<ListStoredValueCardsResponse> listStoredValueCardsAsync(
@@ -2244,13 +2191,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoredValueCardsRequest 请求对象
+     * @param request ListStoredValueCardsRequest 请求对象
      * @return AsyncInvoker<ListStoredValueCardsRequest, ListStoredValueCardsResponse>
      */
     public AsyncInvoker<ListStoredValueCardsRequest, ListStoredValueCardsResponse> listStoredValueCardsAsyncInvoker(
         ListStoredValueCardsRequest request) {
-        return new AsyncInvoker<ListStoredValueCardsRequest, ListStoredValueCardsResponse>(request,
-            BssMeta.listStoredValueCards, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listStoredValueCards, hcClient);
     }
 
     /**
@@ -2267,7 +2213,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @param request ListSubCustomerBillDetailRequest 请求对象
      * @return CompletableFuture<ListSubCustomerBillDetailResponse>
      */
     public CompletableFuture<ListSubCustomerBillDetailResponse> listSubCustomerBillDetailAsync(
@@ -2289,13 +2235,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @param request ListSubCustomerBillDetailRequest 请求对象
      * @return AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse>
      */
     public AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> listSubCustomerBillDetailAsyncInvoker(
         ListSubCustomerBillDetailRequest request) {
-        return new AsyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse>(request,
-            BssMeta.listSubCustomerBillDetail, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listSubCustomerBillDetail, hcClient);
     }
 
     /**
@@ -2307,7 +2252,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerCouponsRequest 请求对象
+     * @param request ListSubCustomerCouponsRequest 请求对象
      * @return CompletableFuture<ListSubCustomerCouponsResponse>
      */
     public CompletableFuture<ListSubCustomerCouponsResponse> listSubCustomerCouponsAsync(
@@ -2324,13 +2269,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerCouponsRequest 请求对象
+     * @param request ListSubCustomerCouponsRequest 请求对象
      * @return AsyncInvoker<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse>
      */
     public AsyncInvoker<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse> listSubCustomerCouponsAsyncInvoker(
         ListSubCustomerCouponsRequest request) {
-        return new AsyncInvoker<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse>(request,
-            BssMeta.listSubCustomerCoupons, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listSubCustomerCoupons, hcClient);
     }
 
     /**
@@ -2344,7 +2288,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerNewTagRequest 请求对象
+     * @param request ListSubCustomerNewTagRequest 请求对象
      * @return CompletableFuture<ListSubCustomerNewTagResponse>
      */
     public CompletableFuture<ListSubCustomerNewTagResponse> listSubCustomerNewTagAsync(
@@ -2363,13 +2307,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerNewTagRequest 请求对象
+     * @param request ListSubCustomerNewTagRequest 请求对象
      * @return AsyncInvoker<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse>
      */
     public AsyncInvoker<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse> listSubCustomerNewTagAsyncInvoker(
         ListSubCustomerNewTagRequest request) {
-        return new AsyncInvoker<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse>(request,
-            BssMeta.listSubCustomerNewTag, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listSubCustomerNewTag, hcClient);
     }
 
     /**
@@ -2381,7 +2324,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomersRequest 请求对象
+     * @param request ListSubCustomersRequest 请求对象
      * @return CompletableFuture<ListSubCustomersResponse>
      */
     public CompletableFuture<ListSubCustomersResponse> listSubCustomersAsync(ListSubCustomersRequest request) {
@@ -2397,13 +2340,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomersRequest 请求对象
+     * @param request ListSubCustomersRequest 请求对象
      * @return AsyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse>
      */
     public AsyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse> listSubCustomersAsyncInvoker(
         ListSubCustomersRequest request) {
-        return new AsyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse>(request, BssMeta.listSubCustomers,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listSubCustomers, hcClient);
     }
 
     /**
@@ -2419,7 +2361,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubcustomerMonthlyBillsRequest 请求对象
+     * @param request ListSubcustomerMonthlyBillsRequest 请求对象
      * @return CompletableFuture<ListSubcustomerMonthlyBillsResponse>
      */
     public CompletableFuture<ListSubcustomerMonthlyBillsResponse> listSubcustomerMonthlyBillsAsync(
@@ -2440,13 +2382,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubcustomerMonthlyBillsRequest 请求对象
+     * @param request ListSubcustomerMonthlyBillsRequest 请求对象
      * @return AsyncInvoker<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse>
      */
     public AsyncInvoker<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse> listSubcustomerMonthlyBillsAsyncInvoker(
         ListSubcustomerMonthlyBillsRequest request) {
-        return new AsyncInvoker<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse>(request,
-            BssMeta.listSubcustomerMonthlyBills, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listSubcustomerMonthlyBills, hcClient);
     }
 
     /**
@@ -2456,7 +2397,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsageTypesRequest 请求对象
+     * @param request ListUsageTypesRequest 请求对象
      * @return CompletableFuture<ListUsageTypesResponse>
      */
     public CompletableFuture<ListUsageTypesResponse> listUsageTypesAsync(ListUsageTypesRequest request) {
@@ -2470,13 +2411,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsageTypesRequest 请求对象
+     * @param request ListUsageTypesRequest 请求对象
      * @return AsyncInvoker<ListUsageTypesRequest, ListUsageTypesResponse>
      */
     public AsyncInvoker<ListUsageTypesRequest, ListUsageTypesResponse> listUsageTypesAsyncInvoker(
         ListUsageTypesRequest request) {
-        return new AsyncInvoker<ListUsageTypesRequest, ListUsageTypesResponse>(request, BssMeta.listUsageTypes,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.listUsageTypes, hcClient);
     }
 
     /**
@@ -2495,7 +2435,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PayOrdersRequest 请求对象
+     * @param request PayOrdersRequest 请求对象
      * @return CompletableFuture<PayOrdersResponse>
      */
     public CompletableFuture<PayOrdersResponse> payOrdersAsync(PayOrdersRequest request) {
@@ -2518,11 +2458,11 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PayOrdersRequest 请求对象
+     * @param request PayOrdersRequest 请求对象
      * @return AsyncInvoker<PayOrdersRequest, PayOrdersResponse>
      */
     public AsyncInvoker<PayOrdersRequest, PayOrdersResponse> payOrdersAsyncInvoker(PayOrdersRequest request) {
-        return new AsyncInvoker<PayOrdersRequest, PayOrdersResponse>(request, BssMeta.payOrders, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.payOrders, hcClient);
     }
 
     /**
@@ -2534,7 +2474,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimCouponQuotasRequest 请求对象
+     * @param request ReclaimCouponQuotasRequest 请求对象
      * @return CompletableFuture<ReclaimCouponQuotasResponse>
      */
     public CompletableFuture<ReclaimCouponQuotasResponse> reclaimCouponQuotasAsync(ReclaimCouponQuotasRequest request) {
@@ -2550,13 +2490,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimCouponQuotasRequest 请求对象
+     * @param request ReclaimCouponQuotasRequest 请求对象
      * @return AsyncInvoker<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse>
      */
     public AsyncInvoker<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse> reclaimCouponQuotasAsyncInvoker(
         ReclaimCouponQuotasRequest request) {
-        return new AsyncInvoker<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse>(request,
-            BssMeta.reclaimCouponQuotas, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.reclaimCouponQuotas, hcClient);
     }
 
     /**
@@ -2569,7 +2508,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @param request ReclaimEnterpriseMultiAccountCouponRequest 请求对象
      * @return CompletableFuture<ReclaimEnterpriseMultiAccountCouponResponse>
      */
     public CompletableFuture<ReclaimEnterpriseMultiAccountCouponResponse> reclaimEnterpriseMultiAccountCouponAsync(
@@ -2587,13 +2526,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @param request ReclaimEnterpriseMultiAccountCouponRequest 请求对象
      * @return AsyncInvoker<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse>
      */
     public AsyncInvoker<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse> reclaimEnterpriseMultiAccountCouponAsyncInvoker(
         ReclaimEnterpriseMultiAccountCouponRequest request) {
-        return new AsyncInvoker<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse>(
-            request, BssMeta.reclaimEnterpriseMultiAccountCoupon, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.reclaimEnterpriseMultiAccountCoupon, hcClient);
     }
 
     /**
@@ -2605,7 +2543,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimIndirectPartnerAccountRequest 请求对象
+     * @param request ReclaimIndirectPartnerAccountRequest 请求对象
      * @return CompletableFuture<ReclaimIndirectPartnerAccountResponse>
      */
     public CompletableFuture<ReclaimIndirectPartnerAccountResponse> reclaimIndirectPartnerAccountAsync(
@@ -2622,13 +2560,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimIndirectPartnerAccountRequest 请求对象
+     * @param request ReclaimIndirectPartnerAccountRequest 请求对象
      * @return AsyncInvoker<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse>
      */
     public AsyncInvoker<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse> reclaimIndirectPartnerAccountAsyncInvoker(
         ReclaimIndirectPartnerAccountRequest request) {
-        return new AsyncInvoker<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse>(request,
-            BssMeta.reclaimIndirectPartnerAccount, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.reclaimIndirectPartnerAccount, hcClient);
     }
 
     /**
@@ -2643,7 +2580,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimPartnerCouponsRequest 请求对象
+     * @param request ReclaimPartnerCouponsRequest 请求对象
      * @return CompletableFuture<ReclaimPartnerCouponsResponse>
      */
     public CompletableFuture<ReclaimPartnerCouponsResponse> reclaimPartnerCouponsAsync(
@@ -2663,13 +2600,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimPartnerCouponsRequest 请求对象
+     * @param request ReclaimPartnerCouponsRequest 请求对象
      * @return AsyncInvoker<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse>
      */
     public AsyncInvoker<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse> reclaimPartnerCouponsAsyncInvoker(
         ReclaimPartnerCouponsRequest request) {
-        return new AsyncInvoker<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse>(request,
-            BssMeta.reclaimPartnerCoupons, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.reclaimPartnerCoupons, hcClient);
     }
 
     /**
@@ -2681,7 +2617,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimSubEnterpriseAmountRequest 请求对象
+     * @param request ReclaimSubEnterpriseAmountRequest 请求对象
      * @return CompletableFuture<ReclaimSubEnterpriseAmountResponse>
      */
     public CompletableFuture<ReclaimSubEnterpriseAmountResponse> reclaimSubEnterpriseAmountAsync(
@@ -2698,13 +2634,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimSubEnterpriseAmountRequest 请求对象
+     * @param request ReclaimSubEnterpriseAmountRequest 请求对象
      * @return AsyncInvoker<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse>
      */
     public AsyncInvoker<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse> reclaimSubEnterpriseAmountAsyncInvoker(
         ReclaimSubEnterpriseAmountRequest request) {
-        return new AsyncInvoker<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse>(request,
-            BssMeta.reclaimSubEnterpriseAmount, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.reclaimSubEnterpriseAmount, hcClient);
     }
 
     /**
@@ -2716,7 +2651,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimToPartnerAccountRequest 请求对象
+     * @param request ReclaimToPartnerAccountRequest 请求对象
      * @return CompletableFuture<ReclaimToPartnerAccountResponse>
      */
     public CompletableFuture<ReclaimToPartnerAccountResponse> reclaimToPartnerAccountAsync(
@@ -2733,13 +2668,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimToPartnerAccountRequest 请求对象
+     * @param request ReclaimToPartnerAccountRequest 请求对象
      * @return AsyncInvoker<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse>
      */
     public AsyncInvoker<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse> reclaimToPartnerAccountAsyncInvoker(
         ReclaimToPartnerAccountRequest request) {
-        return new AsyncInvoker<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse>(request,
-            BssMeta.reclaimToPartnerAccount, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.reclaimToPartnerAccount, hcClient);
     }
 
     /**
@@ -2756,7 +2690,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenewalResourcesRequest 请求对象
+     * @param request RenewalResourcesRequest 请求对象
      * @return CompletableFuture<RenewalResourcesResponse>
      */
     public CompletableFuture<RenewalResourcesResponse> renewalResourcesAsync(RenewalResourcesRequest request) {
@@ -2777,13 +2711,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenewalResourcesRequest 请求对象
+     * @param request RenewalResourcesRequest 请求对象
      * @return AsyncInvoker<RenewalResourcesRequest, RenewalResourcesResponse>
      */
     public AsyncInvoker<RenewalResourcesRequest, RenewalResourcesResponse> renewalResourcesAsyncInvoker(
         RenewalResourcesRequest request) {
-        return new AsyncInvoker<RenewalResourcesRequest, RenewalResourcesResponse>(request, BssMeta.renewalResources,
-            hcClient);
+        return new AsyncInvoker<>(request, BssMeta.renewalResources, hcClient);
     }
 
     /**
@@ -2793,7 +2726,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSmsVerificationCodeRequest 请求对象
+     * @param request SendSmsVerificationCodeRequest 请求对象
      * @return CompletableFuture<SendSmsVerificationCodeResponse>
      */
     public CompletableFuture<SendSmsVerificationCodeResponse> sendSmsVerificationCodeAsync(
@@ -2808,13 +2741,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSmsVerificationCodeRequest 请求对象
+     * @param request SendSmsVerificationCodeRequest 请求对象
      * @return AsyncInvoker<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse>
      */
     public AsyncInvoker<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse> sendSmsVerificationCodeAsyncInvoker(
         SendSmsVerificationCodeRequest request) {
-        return new AsyncInvoker<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse>(request,
-            BssMeta.sendSmsVerificationCode, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.sendSmsVerificationCode, hcClient);
     }
 
     /**
@@ -2824,7 +2756,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVerificationMessageCodeRequest 请求对象
+     * @param request SendVerificationMessageCodeRequest 请求对象
      * @return CompletableFuture<SendVerificationMessageCodeResponse>
      */
     public CompletableFuture<SendVerificationMessageCodeResponse> sendVerificationMessageCodeAsync(
@@ -2839,13 +2771,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVerificationMessageCodeRequest 请求对象
+     * @param request SendVerificationMessageCodeRequest 请求对象
      * @return AsyncInvoker<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse>
      */
     public AsyncInvoker<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse> sendVerificationMessageCodeAsyncInvoker(
         SendVerificationMessageCodeRequest request) {
-        return new AsyncInvoker<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse>(request,
-            BssMeta.sendVerificationMessageCode, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.sendVerificationMessageCode, hcClient);
     }
 
     /**
@@ -2857,7 +2788,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerAccountBalancesRequest 请求对象
+     * @param request ShowCustomerAccountBalancesRequest 请求对象
      * @return CompletableFuture<ShowCustomerAccountBalancesResponse>
      */
     public CompletableFuture<ShowCustomerAccountBalancesResponse> showCustomerAccountBalancesAsync(
@@ -2874,13 +2805,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerAccountBalancesRequest 请求对象
+     * @param request ShowCustomerAccountBalancesRequest 请求对象
      * @return AsyncInvoker<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse>
      */
     public AsyncInvoker<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> showCustomerAccountBalancesAsyncInvoker(
         ShowCustomerAccountBalancesRequest request) {
-        return new AsyncInvoker<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse>(request,
-            BssMeta.showCustomerAccountBalances, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.showCustomerAccountBalances, hcClient);
     }
 
     /**
@@ -2895,7 +2825,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerMonthlySumRequest 请求对象
+     * @param request ShowCustomerMonthlySumRequest 请求对象
      * @return CompletableFuture<ShowCustomerMonthlySumResponse>
      */
     public CompletableFuture<ShowCustomerMonthlySumResponse> showCustomerMonthlySumAsync(
@@ -2915,13 +2845,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerMonthlySumRequest 请求对象
+     * @param request ShowCustomerMonthlySumRequest 请求对象
      * @return AsyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse>
      */
     public AsyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> showCustomerMonthlySumAsyncInvoker(
         ShowCustomerMonthlySumRequest request) {
-        return new AsyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse>(request,
-            BssMeta.showCustomerMonthlySum, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.showCustomerMonthlySum, hcClient);
     }
 
     /**
@@ -2936,7 +2865,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerOrderDetailsRequest 请求对象
+     * @param request ShowCustomerOrderDetailsRequest 请求对象
      * @return CompletableFuture<ShowCustomerOrderDetailsResponse>
      */
     public CompletableFuture<ShowCustomerOrderDetailsResponse> showCustomerOrderDetailsAsync(
@@ -2956,13 +2885,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerOrderDetailsRequest 请求对象
+     * @param request ShowCustomerOrderDetailsRequest 请求对象
      * @return AsyncInvoker<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse>
      */
     public AsyncInvoker<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> showCustomerOrderDetailsAsyncInvoker(
         ShowCustomerOrderDetailsRequest request) {
-        return new AsyncInvoker<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse>(request,
-            BssMeta.showCustomerOrderDetails, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.showCustomerOrderDetails, hcClient);
     }
 
     /**
@@ -2972,7 +2900,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMultiAccountTransferAmountRequest 请求对象
+     * @param request ShowMultiAccountTransferAmountRequest 请求对象
      * @return CompletableFuture<ShowMultiAccountTransferAmountResponse>
      */
     public CompletableFuture<ShowMultiAccountTransferAmountResponse> showMultiAccountTransferAmountAsync(
@@ -2987,13 +2915,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMultiAccountTransferAmountRequest 请求对象
+     * @param request ShowMultiAccountTransferAmountRequest 请求对象
      * @return AsyncInvoker<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse>
      */
     public AsyncInvoker<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> showMultiAccountTransferAmountAsyncInvoker(
         ShowMultiAccountTransferAmountRequest request) {
-        return new AsyncInvoker<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse>(request,
-            BssMeta.showMultiAccountTransferAmount, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.showMultiAccountTransferAmount, hcClient);
     }
 
     /**
@@ -3003,7 +2930,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealnameAuthenticationReviewResultRequest 请求对象
+     * @param request ShowRealnameAuthenticationReviewResultRequest 请求对象
      * @return CompletableFuture<ShowRealnameAuthenticationReviewResultResponse>
      */
     public CompletableFuture<ShowRealnameAuthenticationReviewResultResponse> showRealnameAuthenticationReviewResultAsync(
@@ -3018,13 +2945,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealnameAuthenticationReviewResultRequest 请求对象
+     * @param request ShowRealnameAuthenticationReviewResultRequest 请求对象
      * @return AsyncInvoker<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse>
      */
     public AsyncInvoker<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse> showRealnameAuthenticationReviewResultAsyncInvoker(
         ShowRealnameAuthenticationReviewResultRequest request) {
-        return new AsyncInvoker<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse>(
-            request, BssMeta.showRealnameAuthenticationReviewResult, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.showRealnameAuthenticationReviewResult, hcClient);
     }
 
     /**
@@ -3038,7 +2964,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRefundOrderDetailsRequest 请求对象
+     * @param request ShowRefundOrderDetailsRequest 请求对象
      * @return CompletableFuture<ShowRefundOrderDetailsResponse>
      */
     public CompletableFuture<ShowRefundOrderDetailsResponse> showRefundOrderDetailsAsync(
@@ -3057,13 +2983,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRefundOrderDetailsRequest 请求对象
+     * @param request ShowRefundOrderDetailsRequest 请求对象
      * @return AsyncInvoker<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse>
      */
     public AsyncInvoker<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse> showRefundOrderDetailsAsyncInvoker(
         ShowRefundOrderDetailsRequest request) {
-        return new AsyncInvoker<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse>(request,
-            BssMeta.showRefundOrderDetails, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.showRefundOrderDetails, hcClient);
     }
 
     /**
@@ -3075,7 +3000,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCouponQuotasRequest 请求对象
+     * @param request UpdateCouponQuotasRequest 请求对象
      * @return CompletableFuture<UpdateCouponQuotasResponse>
      */
     public CompletableFuture<UpdateCouponQuotasResponse> updateCouponQuotasAsync(UpdateCouponQuotasRequest request) {
@@ -3091,13 +3016,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCouponQuotasRequest 请求对象
+     * @param request UpdateCouponQuotasRequest 请求对象
      * @return AsyncInvoker<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse>
      */
     public AsyncInvoker<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse> updateCouponQuotasAsyncInvoker(
         UpdateCouponQuotasRequest request) {
-        return new AsyncInvoker<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse>(request,
-            BssMeta.updateCouponQuotas, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.updateCouponQuotas, hcClient);
     }
 
     /**
@@ -3109,7 +3033,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomerAccountAmountRequest 请求对象
+     * @param request UpdateCustomerAccountAmountRequest 请求对象
      * @return CompletableFuture<UpdateCustomerAccountAmountResponse>
      */
     public CompletableFuture<UpdateCustomerAccountAmountResponse> updateCustomerAccountAmountAsync(
@@ -3126,13 +3050,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomerAccountAmountRequest 请求对象
+     * @param request UpdateCustomerAccountAmountRequest 请求对象
      * @return AsyncInvoker<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse>
      */
     public AsyncInvoker<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse> updateCustomerAccountAmountAsyncInvoker(
         UpdateCustomerAccountAmountRequest request) {
-        return new AsyncInvoker<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse>(request,
-            BssMeta.updateCustomerAccountAmount, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.updateCustomerAccountAmount, hcClient);
     }
 
     /**
@@ -3144,7 +3067,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIndirectPartnerAccountRequest 请求对象
+     * @param request UpdateIndirectPartnerAccountRequest 请求对象
      * @return CompletableFuture<UpdateIndirectPartnerAccountResponse>
      */
     public CompletableFuture<UpdateIndirectPartnerAccountResponse> updateIndirectPartnerAccountAsync(
@@ -3161,13 +3084,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIndirectPartnerAccountRequest 请求对象
+     * @param request UpdateIndirectPartnerAccountRequest 请求对象
      * @return AsyncInvoker<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse>
      */
     public AsyncInvoker<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse> updateIndirectPartnerAccountAsyncInvoker(
         UpdateIndirectPartnerAccountRequest request) {
-        return new AsyncInvoker<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse>(request,
-            BssMeta.updateIndirectPartnerAccount, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.updateIndirectPartnerAccount, hcClient);
     }
 
     /**
@@ -3186,7 +3108,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePeriodToOnDemandRequest 请求对象
+     * @param request UpdatePeriodToOnDemandRequest 请求对象
      * @return CompletableFuture<UpdatePeriodToOnDemandResponse>
      */
     public CompletableFuture<UpdatePeriodToOnDemandResponse> updatePeriodToOnDemandAsync(
@@ -3210,13 +3132,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePeriodToOnDemandRequest 请求对象
+     * @param request UpdatePeriodToOnDemandRequest 请求对象
      * @return AsyncInvoker<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse>
      */
     public AsyncInvoker<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> updatePeriodToOnDemandAsyncInvoker(
         UpdatePeriodToOnDemandRequest request) {
-        return new AsyncInvoker<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse>(request,
-            BssMeta.updatePeriodToOnDemand, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.updatePeriodToOnDemand, hcClient);
     }
 
     /**
@@ -3226,7 +3147,7 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubEnterpriseAmountRequest 请求对象
+     * @param request UpdateSubEnterpriseAmountRequest 请求对象
      * @return CompletableFuture<UpdateSubEnterpriseAmountResponse>
      */
     public CompletableFuture<UpdateSubEnterpriseAmountResponse> updateSubEnterpriseAmountAsync(
@@ -3241,13 +3162,12 @@ public class BssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubEnterpriseAmountRequest 请求对象
+     * @param request UpdateSubEnterpriseAmountRequest 请求对象
      * @return AsyncInvoker<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse>
      */
     public AsyncInvoker<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse> updateSubEnterpriseAmountAsyncInvoker(
         UpdateSubEnterpriseAmountRequest request) {
-        return new AsyncInvoker<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse>(request,
-            BssMeta.updateSubEnterpriseAmount, hcClient);
+        return new AsyncInvoker<>(request, BssMeta.updateSubEnterpriseAmount, hcClient);
     }
 
 }

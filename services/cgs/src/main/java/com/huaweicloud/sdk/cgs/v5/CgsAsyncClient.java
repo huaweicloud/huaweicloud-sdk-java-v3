@@ -28,7 +28,7 @@ public class CgsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListContainerNodesRequest 请求对象
+     * @param request ListContainerNodesRequest 请求对象
      * @return CompletableFuture<ListContainerNodesResponse>
      */
     public CompletableFuture<ListContainerNodesResponse> listContainerNodesAsync(ListContainerNodesRequest request) {
@@ -42,13 +42,12 @@ public class CgsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListContainerNodesRequest 请求对象
+     * @param request ListContainerNodesRequest 请求对象
      * @return AsyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse>
      */
     public AsyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse> listContainerNodesAsyncInvoker(
         ListContainerNodesRequest request) {
-        return new AsyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse>(request,
-            CgsMeta.listContainerNodes, hcClient);
+        return new AsyncInvoker<>(request, CgsMeta.listContainerNodes, hcClient);
     }
 
 }

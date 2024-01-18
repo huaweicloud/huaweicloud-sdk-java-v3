@@ -34,7 +34,7 @@ public class CampusGoAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTasksRequest 请求对象
+     * @param request CreateTasksRequest 请求对象
      * @return CompletableFuture<CreateTasksResponse>
      */
     public CompletableFuture<CreateTasksResponse> createTasksAsync(CreateTasksRequest request) {
@@ -48,11 +48,11 @@ public class CampusGoAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTasksRequest 请求对象
+     * @param request CreateTasksRequest 请求对象
      * @return AsyncInvoker<CreateTasksRequest, CreateTasksResponse>
      */
     public AsyncInvoker<CreateTasksRequest, CreateTasksResponse> createTasksAsyncInvoker(CreateTasksRequest request) {
-        return new AsyncInvoker<CreateTasksRequest, CreateTasksResponse>(request, CampusGoMeta.createTasks, hcClient);
+        return new AsyncInvoker<>(request, CampusGoMeta.createTasks, hcClient);
     }
 
     /**
@@ -62,7 +62,7 @@ public class CampusGoAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
      */
     public CompletableFuture<DeleteTaskResponse> deleteTaskAsync(DeleteTaskRequest request) {
@@ -76,11 +76,11 @@ public class CampusGoAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
-        return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, CampusGoMeta.deleteTask, hcClient);
+        return new AsyncInvoker<>(request, CampusGoMeta.deleteTask, hcClient);
     }
 
     /**
@@ -90,7 +90,7 @@ public class CampusGoAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksDetailsRequest 请求对象
+     * @param request ListTasksDetailsRequest 请求对象
      * @return CompletableFuture<ListTasksDetailsResponse>
      */
     public CompletableFuture<ListTasksDetailsResponse> listTasksDetailsAsync(ListTasksDetailsRequest request) {
@@ -104,13 +104,12 @@ public class CampusGoAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksDetailsRequest 请求对象
+     * @param request ListTasksDetailsRequest 请求对象
      * @return AsyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse>
      */
     public AsyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse> listTasksDetailsAsyncInvoker(
         ListTasksDetailsRequest request) {
-        return new AsyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse>(request,
-            CampusGoMeta.listTasksDetails, hcClient);
+        return new AsyncInvoker<>(request, CampusGoMeta.listTasksDetails, hcClient);
     }
 
     /**
@@ -120,7 +119,7 @@ public class CampusGoAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return CompletableFuture<ShowTaskResponse>
      */
     public CompletableFuture<ShowTaskResponse> showTaskAsync(ShowTaskRequest request) {
@@ -134,11 +133,11 @@ public class CampusGoAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
      */
     public AsyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskAsyncInvoker(ShowTaskRequest request) {
-        return new AsyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, CampusGoMeta.showTask, hcClient);
+        return new AsyncInvoker<>(request, CampusGoMeta.showTask, hcClient);
     }
 
 }

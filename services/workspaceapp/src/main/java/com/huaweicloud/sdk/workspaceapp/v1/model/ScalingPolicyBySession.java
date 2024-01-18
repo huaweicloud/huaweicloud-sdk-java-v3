@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 基于会话的弹性策略
+ * 基于会话的弹性策略。
  */
 public class ScalingPolicyBySession {
 
@@ -26,7 +26,7 @@ public class ScalingPolicyBySession {
     }
 
     /**
-     * 分组的总会话使用率(达到改阈值后扩容)
+     * 分组的总会话使用率(达到改阈值后扩容)。
      * minimum: 1
      * maximum: 100
      * @return sessionUsageThreshold
@@ -45,7 +45,7 @@ public class ScalingPolicyBySession {
     }
 
     /**
-     * 给定时间内无会话连接的的实例进行释放
+     * 给定时间内无会话连接的的实例进行释放。
      * minimum: 5
      * maximum: 120
      * @return shrinkAfterSessionIdleMinutes

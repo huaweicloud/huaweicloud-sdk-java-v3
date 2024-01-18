@@ -31,7 +31,7 @@ public class PanguLargeModelsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteChatCompletionRequest 请求对象
+     * @param request ExecuteChatCompletionRequest 请求对象
      * @return CompletableFuture<ExecuteChatCompletionResponse>
      */
     public CompletableFuture<ExecuteChatCompletionResponse> executeChatCompletionAsync(
@@ -46,13 +46,12 @@ public class PanguLargeModelsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteChatCompletionRequest 请求对象
+     * @param request ExecuteChatCompletionRequest 请求对象
      * @return AsyncInvoker<ExecuteChatCompletionRequest, ExecuteChatCompletionResponse>
      */
     public AsyncInvoker<ExecuteChatCompletionRequest, ExecuteChatCompletionResponse> executeChatCompletionAsyncInvoker(
         ExecuteChatCompletionRequest request) {
-        return new AsyncInvoker<ExecuteChatCompletionRequest, ExecuteChatCompletionResponse>(request,
-            PanguLargeModelsMeta.executeChatCompletion, hcClient);
+        return new AsyncInvoker<>(request, PanguLargeModelsMeta.executeChatCompletion, hcClient);
     }
 
     /**
@@ -62,7 +61,7 @@ public class PanguLargeModelsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteTextCompletionRequest 请求对象
+     * @param request ExecuteTextCompletionRequest 请求对象
      * @return CompletableFuture<ExecuteTextCompletionResponse>
      */
     public CompletableFuture<ExecuteTextCompletionResponse> executeTextCompletionAsync(
@@ -77,13 +76,12 @@ public class PanguLargeModelsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteTextCompletionRequest 请求对象
+     * @param request ExecuteTextCompletionRequest 请求对象
      * @return AsyncInvoker<ExecuteTextCompletionRequest, ExecuteTextCompletionResponse>
      */
     public AsyncInvoker<ExecuteTextCompletionRequest, ExecuteTextCompletionResponse> executeTextCompletionAsyncInvoker(
         ExecuteTextCompletionRequest request) {
-        return new AsyncInvoker<ExecuteTextCompletionRequest, ExecuteTextCompletionResponse>(request,
-            PanguLargeModelsMeta.executeTextCompletion, hcClient);
+        return new AsyncInvoker<>(request, PanguLargeModelsMeta.executeTextCompletion, hcClient);
     }
 
 }

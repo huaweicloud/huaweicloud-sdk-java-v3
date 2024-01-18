@@ -89,7 +89,7 @@ public class ShowLandingZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * LandingZone的完成进度。
+     * Landing Zone的完成进度。
      * minimum: 1
      * maximum: 100
      * @return percentageComplete

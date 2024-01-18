@@ -43,7 +43,7 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPushCertificateRequest 请求对象
+     * @param request BatchPushCertificateRequest 请求对象
      * @return CompletableFuture<BatchPushCertificateResponse>
      */
     public CompletableFuture<BatchPushCertificateResponse> batchPushCertificateAsync(
@@ -58,13 +58,12 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPushCertificateRequest 请求对象
+     * @param request BatchPushCertificateRequest 请求对象
      * @return AsyncInvoker<BatchPushCertificateRequest, BatchPushCertificateResponse>
      */
     public AsyncInvoker<BatchPushCertificateRequest, BatchPushCertificateResponse> batchPushCertificateAsyncInvoker(
         BatchPushCertificateRequest request) {
-        return new AsyncInvoker<BatchPushCertificateRequest, BatchPushCertificateResponse>(request,
-            ScmMeta.batchPushCertificate, hcClient);
+        return new AsyncInvoker<>(request, ScmMeta.batchPushCertificate, hcClient);
     }
 
     /**
@@ -74,7 +73,7 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return CompletableFuture<DeleteCertificateResponse>
      */
     public CompletableFuture<DeleteCertificateResponse> deleteCertificateAsync(DeleteCertificateRequest request) {
@@ -88,13 +87,12 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
      */
     public AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateAsyncInvoker(
         DeleteCertificateRequest request) {
-        return new AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, ScmMeta.deleteCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, ScmMeta.deleteCertificate, hcClient);
     }
 
     /**
@@ -104,7 +102,7 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeployCertificateRequest 请求对象
+     * @param request DeployCertificateRequest 请求对象
      * @return CompletableFuture<DeployCertificateResponse>
      */
     public CompletableFuture<DeployCertificateResponse> deployCertificateAsync(DeployCertificateRequest request) {
@@ -118,13 +116,12 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeployCertificateRequest 请求对象
+     * @param request DeployCertificateRequest 请求对象
      * @return AsyncInvoker<DeployCertificateRequest, DeployCertificateResponse>
      */
     public AsyncInvoker<DeployCertificateRequest, DeployCertificateResponse> deployCertificateAsyncInvoker(
         DeployCertificateRequest request) {
-        return new AsyncInvoker<DeployCertificateRequest, DeployCertificateResponse>(request, ScmMeta.deployCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, ScmMeta.deployCertificate, hcClient);
     }
 
     /**
@@ -134,7 +131,7 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportCertificateRequest 请求对象
+     * @param request ExportCertificateRequest 请求对象
      * @return CompletableFuture<ExportCertificateResponse>
      */
     public CompletableFuture<ExportCertificateResponse> exportCertificateAsync(ExportCertificateRequest request) {
@@ -148,13 +145,12 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportCertificateRequest 请求对象
+     * @param request ExportCertificateRequest 请求对象
      * @return AsyncInvoker<ExportCertificateRequest, ExportCertificateResponse>
      */
     public AsyncInvoker<ExportCertificateRequest, ExportCertificateResponse> exportCertificateAsyncInvoker(
         ExportCertificateRequest request) {
-        return new AsyncInvoker<ExportCertificateRequest, ExportCertificateResponse>(request, ScmMeta.exportCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, ScmMeta.exportCertificate, hcClient);
     }
 
     /**
@@ -164,7 +160,7 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportCertificateRequest 请求对象
+     * @param request ImportCertificateRequest 请求对象
      * @return CompletableFuture<ImportCertificateResponse>
      */
     public CompletableFuture<ImportCertificateResponse> importCertificateAsync(ImportCertificateRequest request) {
@@ -178,13 +174,12 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportCertificateRequest 请求对象
+     * @param request ImportCertificateRequest 请求对象
      * @return AsyncInvoker<ImportCertificateRequest, ImportCertificateResponse>
      */
     public AsyncInvoker<ImportCertificateRequest, ImportCertificateResponse> importCertificateAsyncInvoker(
         ImportCertificateRequest request) {
-        return new AsyncInvoker<ImportCertificateRequest, ImportCertificateResponse>(request, ScmMeta.importCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, ScmMeta.importCertificate, hcClient);
     }
 
     /**
@@ -194,7 +189,7 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return CompletableFuture<ListCertificatesResponse>
      */
     public CompletableFuture<ListCertificatesResponse> listCertificatesAsync(ListCertificatesRequest request) {
@@ -208,13 +203,12 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
      */
     public AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesAsyncInvoker(
         ListCertificatesRequest request) {
-        return new AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request, ScmMeta.listCertificates,
-            hcClient);
+        return new AsyncInvoker<>(request, ScmMeta.listCertificates, hcClient);
     }
 
     /**
@@ -224,7 +218,7 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushCertificateRequest 请求对象
+     * @param request PushCertificateRequest 请求对象
      * @return CompletableFuture<PushCertificateResponse>
      */
     public CompletableFuture<PushCertificateResponse> pushCertificateAsync(PushCertificateRequest request) {
@@ -238,13 +232,12 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushCertificateRequest 请求对象
+     * @param request PushCertificateRequest 请求对象
      * @return AsyncInvoker<PushCertificateRequest, PushCertificateResponse>
      */
     public AsyncInvoker<PushCertificateRequest, PushCertificateResponse> pushCertificateAsyncInvoker(
         PushCertificateRequest request) {
-        return new AsyncInvoker<PushCertificateRequest, PushCertificateResponse>(request, ScmMeta.pushCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, ScmMeta.pushCertificate, hcClient);
     }
 
     /**
@@ -254,7 +247,7 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return CompletableFuture<ShowCertificateResponse>
      */
     public CompletableFuture<ShowCertificateResponse> showCertificateAsync(ShowCertificateRequest request) {
@@ -268,13 +261,12 @@ public class ScmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
      */
     public AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateAsyncInvoker(
         ShowCertificateRequest request) {
-        return new AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse>(request, ScmMeta.showCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, ScmMeta.showCertificate, hcClient);
     }
 
 }

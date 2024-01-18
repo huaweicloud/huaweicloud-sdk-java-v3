@@ -183,7 +183,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptManualReviewRequest 请求对象
+     * @param request AcceptManualReviewRequest 请求对象
      * @return CompletableFuture<AcceptManualReviewResponse>
      */
     public CompletableFuture<AcceptManualReviewResponse> acceptManualReviewAsync(AcceptManualReviewRequest request) {
@@ -197,13 +197,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptManualReviewRequest 请求对象
+     * @param request AcceptManualReviewRequest 请求对象
      * @return AsyncInvoker<AcceptManualReviewRequest, AcceptManualReviewResponse>
      */
     public AsyncInvoker<AcceptManualReviewRequest, AcceptManualReviewResponse> acceptManualReviewAsyncInvoker(
         AcceptManualReviewRequest request) {
-        return new AsyncInvoker<AcceptManualReviewRequest, AcceptManualReviewResponse>(request,
-            CodeArtsPipelineMeta.acceptManualReview, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.acceptManualReview, hcClient);
     }
 
     /**
@@ -213,7 +212,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchMovePipelineToGroupRequest 请求对象
+     * @param request BatchMovePipelineToGroupRequest 请求对象
      * @return CompletableFuture<BatchMovePipelineToGroupResponse>
      */
     public CompletableFuture<BatchMovePipelineToGroupResponse> batchMovePipelineToGroupAsync(
@@ -228,13 +227,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchMovePipelineToGroupRequest 请求对象
+     * @param request BatchMovePipelineToGroupRequest 请求对象
      * @return AsyncInvoker<BatchMovePipelineToGroupRequest, BatchMovePipelineToGroupResponse>
      */
     public AsyncInvoker<BatchMovePipelineToGroupRequest, BatchMovePipelineToGroupResponse> batchMovePipelineToGroupAsyncInvoker(
         BatchMovePipelineToGroupRequest request) {
-        return new AsyncInvoker<BatchMovePipelineToGroupRequest, BatchMovePipelineToGroupResponse>(request,
-            CodeArtsPipelineMeta.batchMovePipelineToGroup, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.batchMovePipelineToGroup, hcClient);
     }
 
     /**
@@ -244,7 +242,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowPipelinesLatestStatusRequest 请求对象
+     * @param request BatchShowPipelinesLatestStatusRequest 请求对象
      * @return CompletableFuture<BatchShowPipelinesLatestStatusResponse>
      */
     public CompletableFuture<BatchShowPipelinesLatestStatusResponse> batchShowPipelinesLatestStatusAsync(
@@ -259,13 +257,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowPipelinesLatestStatusRequest 请求对象
+     * @param request BatchShowPipelinesLatestStatusRequest 请求对象
      * @return AsyncInvoker<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse>
      */
     public AsyncInvoker<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> batchShowPipelinesLatestStatusAsyncInvoker(
         BatchShowPipelinesLatestStatusRequest request) {
-        return new AsyncInvoker<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse>(request,
-            CodeArtsPipelineMeta.batchShowPipelinesLatestStatus, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.batchShowPipelinesLatestStatus, hcClient);
     }
 
     /**
@@ -275,7 +272,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowPipelinesStatusRequest 请求对象
+     * @param request BatchShowPipelinesStatusRequest 请求对象
      * @return CompletableFuture<BatchShowPipelinesStatusResponse>
      */
     public CompletableFuture<BatchShowPipelinesStatusResponse> batchShowPipelinesStatusAsync(
@@ -290,13 +287,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowPipelinesStatusRequest 请求对象
+     * @param request BatchShowPipelinesStatusRequest 请求对象
      * @return AsyncInvoker<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse>
      */
     public AsyncInvoker<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> batchShowPipelinesStatusAsyncInvoker(
         BatchShowPipelinesStatusRequest request) {
-        return new AsyncInvoker<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse>(request,
-            CodeArtsPipelineMeta.batchShowPipelinesStatus, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.batchShowPipelinesStatus, hcClient);
     }
 
     /**
@@ -306,7 +302,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBasicPluginRequest 请求对象
+     * @param request CreateBasicPluginRequest 请求对象
      * @return CompletableFuture<CreateBasicPluginResponse>
      */
     public CompletableFuture<CreateBasicPluginResponse> createBasicPluginAsync(CreateBasicPluginRequest request) {
@@ -320,13 +316,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBasicPluginRequest 请求对象
+     * @param request CreateBasicPluginRequest 请求对象
      * @return AsyncInvoker<CreateBasicPluginRequest, CreateBasicPluginResponse>
      */
     public AsyncInvoker<CreateBasicPluginRequest, CreateBasicPluginResponse> createBasicPluginAsyncInvoker(
         CreateBasicPluginRequest request) {
-        return new AsyncInvoker<CreateBasicPluginRequest, CreateBasicPluginResponse>(request,
-            CodeArtsPipelineMeta.createBasicPlugin, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createBasicPlugin, hcClient);
     }
 
     /**
@@ -336,7 +331,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipelineByTemplateRequest 请求对象
+     * @param request CreatePipelineByTemplateRequest 请求对象
      * @return CompletableFuture<CreatePipelineByTemplateResponse>
      */
     public CompletableFuture<CreatePipelineByTemplateResponse> createPipelineByTemplateAsync(
@@ -351,13 +346,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipelineByTemplateRequest 请求对象
+     * @param request CreatePipelineByTemplateRequest 请求对象
      * @return AsyncInvoker<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse>
      */
     public AsyncInvoker<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse> createPipelineByTemplateAsyncInvoker(
         CreatePipelineByTemplateRequest request) {
-        return new AsyncInvoker<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse>(request,
-            CodeArtsPipelineMeta.createPipelineByTemplate, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createPipelineByTemplate, hcClient);
     }
 
     /**
@@ -367,7 +361,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipelineByTemplateIdRequest 请求对象
+     * @param request CreatePipelineByTemplateIdRequest 请求对象
      * @return CompletableFuture<CreatePipelineByTemplateIdResponse>
      */
     public CompletableFuture<CreatePipelineByTemplateIdResponse> createPipelineByTemplateIdAsync(
@@ -382,13 +376,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipelineByTemplateIdRequest 请求对象
+     * @param request CreatePipelineByTemplateIdRequest 请求对象
      * @return AsyncInvoker<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse>
      */
     public AsyncInvoker<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse> createPipelineByTemplateIdAsyncInvoker(
         CreatePipelineByTemplateIdRequest request) {
-        return new AsyncInvoker<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse>(request,
-            CodeArtsPipelineMeta.createPipelineByTemplateId, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createPipelineByTemplateId, hcClient);
     }
 
     /**
@@ -398,7 +391,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipelineGroupRequest 请求对象
+     * @param request CreatePipelineGroupRequest 请求对象
      * @return CompletableFuture<CreatePipelineGroupResponse>
      */
     public CompletableFuture<CreatePipelineGroupResponse> createPipelineGroupAsync(CreatePipelineGroupRequest request) {
@@ -412,13 +405,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipelineGroupRequest 请求对象
+     * @param request CreatePipelineGroupRequest 请求对象
      * @return AsyncInvoker<CreatePipelineGroupRequest, CreatePipelineGroupResponse>
      */
     public AsyncInvoker<CreatePipelineGroupRequest, CreatePipelineGroupResponse> createPipelineGroupAsyncInvoker(
         CreatePipelineGroupRequest request) {
-        return new AsyncInvoker<CreatePipelineGroupRequest, CreatePipelineGroupResponse>(request,
-            CodeArtsPipelineMeta.createPipelineGroup, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createPipelineGroup, hcClient);
     }
 
     /**
@@ -428,7 +420,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipelineNewRequest 请求对象
+     * @param request CreatePipelineNewRequest 请求对象
      * @return CompletableFuture<CreatePipelineNewResponse>
      */
     public CompletableFuture<CreatePipelineNewResponse> createPipelineNewAsync(CreatePipelineNewRequest request) {
@@ -442,13 +434,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipelineNewRequest 请求对象
+     * @param request CreatePipelineNewRequest 请求对象
      * @return AsyncInvoker<CreatePipelineNewRequest, CreatePipelineNewResponse>
      */
     public AsyncInvoker<CreatePipelineNewRequest, CreatePipelineNewResponse> createPipelineNewAsyncInvoker(
         CreatePipelineNewRequest request) {
-        return new AsyncInvoker<CreatePipelineNewRequest, CreatePipelineNewResponse>(request,
-            CodeArtsPipelineMeta.createPipelineNew, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createPipelineNew, hcClient);
     }
 
     /**
@@ -458,7 +449,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipelineTemplateRequest 请求对象
+     * @param request CreatePipelineTemplateRequest 请求对象
      * @return CompletableFuture<CreatePipelineTemplateResponse>
      */
     public CompletableFuture<CreatePipelineTemplateResponse> createPipelineTemplateAsync(
@@ -473,13 +464,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipelineTemplateRequest 请求对象
+     * @param request CreatePipelineTemplateRequest 请求对象
      * @return AsyncInvoker<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse>
      */
     public AsyncInvoker<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse> createPipelineTemplateAsyncInvoker(
         CreatePipelineTemplateRequest request) {
-        return new AsyncInvoker<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse>(request,
-            CodeArtsPipelineMeta.createPipelineTemplate, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createPipelineTemplate, hcClient);
     }
 
     /**
@@ -489,7 +479,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePluginDraftRequest 请求对象
+     * @param request CreatePluginDraftRequest 请求对象
      * @return CompletableFuture<CreatePluginDraftResponse>
      */
     public CompletableFuture<CreatePluginDraftResponse> createPluginDraftAsync(CreatePluginDraftRequest request) {
@@ -503,13 +493,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePluginDraftRequest 请求对象
+     * @param request CreatePluginDraftRequest 请求对象
      * @return AsyncInvoker<CreatePluginDraftRequest, CreatePluginDraftResponse>
      */
     public AsyncInvoker<CreatePluginDraftRequest, CreatePluginDraftResponse> createPluginDraftAsyncInvoker(
         CreatePluginDraftRequest request) {
-        return new AsyncInvoker<CreatePluginDraftRequest, CreatePluginDraftResponse>(request,
-            CodeArtsPipelineMeta.createPluginDraft, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createPluginDraft, hcClient);
     }
 
     /**
@@ -519,7 +508,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePluginVersionRequest 请求对象
+     * @param request CreatePluginVersionRequest 请求对象
      * @return CompletableFuture<CreatePluginVersionResponse>
      */
     public CompletableFuture<CreatePluginVersionResponse> createPluginVersionAsync(CreatePluginVersionRequest request) {
@@ -533,13 +522,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePluginVersionRequest 请求对象
+     * @param request CreatePluginVersionRequest 请求对象
      * @return AsyncInvoker<CreatePluginVersionRequest, CreatePluginVersionResponse>
      */
     public AsyncInvoker<CreatePluginVersionRequest, CreatePluginVersionResponse> createPluginVersionAsyncInvoker(
         CreatePluginVersionRequest request) {
-        return new AsyncInvoker<CreatePluginVersionRequest, CreatePluginVersionResponse>(request,
-            CodeArtsPipelineMeta.createPluginVersion, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createPluginVersion, hcClient);
     }
 
     /**
@@ -549,7 +537,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePublisherRequest 请求对象
+     * @param request CreatePublisherRequest 请求对象
      * @return CompletableFuture<CreatePublisherResponse>
      */
     public CompletableFuture<CreatePublisherResponse> createPublisherAsync(CreatePublisherRequest request) {
@@ -563,13 +551,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePublisherRequest 请求对象
+     * @param request CreatePublisherRequest 请求对象
      * @return AsyncInvoker<CreatePublisherRequest, CreatePublisherResponse>
      */
     public AsyncInvoker<CreatePublisherRequest, CreatePublisherResponse> createPublisherAsyncInvoker(
         CreatePublisherRequest request) {
-        return new AsyncInvoker<CreatePublisherRequest, CreatePublisherResponse>(request,
-            CodeArtsPipelineMeta.createPublisher, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createPublisher, hcClient);
     }
 
     /**
@@ -579,7 +566,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRuleRequest 请求对象
+     * @param request CreateRuleRequest 请求对象
      * @return CompletableFuture<CreateRuleResponse>
      */
     public CompletableFuture<CreateRuleResponse> createRuleAsync(CreateRuleRequest request) {
@@ -593,12 +580,11 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRuleRequest 请求对象
+     * @param request CreateRuleRequest 请求对象
      * @return AsyncInvoker<CreateRuleRequest, CreateRuleResponse>
      */
     public AsyncInvoker<CreateRuleRequest, CreateRuleResponse> createRuleAsyncInvoker(CreateRuleRequest request) {
-        return new AsyncInvoker<CreateRuleRequest, CreateRuleResponse>(request, CodeArtsPipelineMeta.createRule,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createRule, hcClient);
     }
 
     /**
@@ -608,7 +594,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStrategyRequest 请求对象
+     * @param request CreateStrategyRequest 请求对象
      * @return CompletableFuture<CreateStrategyResponse>
      */
     public CompletableFuture<CreateStrategyResponse> createStrategyAsync(CreateStrategyRequest request) {
@@ -622,13 +608,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStrategyRequest 请求对象
+     * @param request CreateStrategyRequest 请求对象
      * @return AsyncInvoker<CreateStrategyRequest, CreateStrategyResponse>
      */
     public AsyncInvoker<CreateStrategyRequest, CreateStrategyResponse> createStrategyAsyncInvoker(
         CreateStrategyRequest request) {
-        return new AsyncInvoker<CreateStrategyRequest, CreateStrategyResponse>(request,
-            CodeArtsPipelineMeta.createStrategy, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createStrategy, hcClient);
     }
 
     /**
@@ -638,7 +623,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBasicPluginRequest 请求对象
+     * @param request DeleteBasicPluginRequest 请求对象
      * @return CompletableFuture<DeleteBasicPluginResponse>
      */
     public CompletableFuture<DeleteBasicPluginResponse> deleteBasicPluginAsync(DeleteBasicPluginRequest request) {
@@ -652,13 +637,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBasicPluginRequest 请求对象
+     * @param request DeleteBasicPluginRequest 请求对象
      * @return AsyncInvoker<DeleteBasicPluginRequest, DeleteBasicPluginResponse>
      */
     public AsyncInvoker<DeleteBasicPluginRequest, DeleteBasicPluginResponse> deleteBasicPluginAsyncInvoker(
         DeleteBasicPluginRequest request) {
-        return new AsyncInvoker<DeleteBasicPluginRequest, DeleteBasicPluginResponse>(request,
-            CodeArtsPipelineMeta.deleteBasicPlugin, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deleteBasicPlugin, hcClient);
     }
 
     /**
@@ -668,7 +652,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePipelineRequest 请求对象
+     * @param request DeletePipelineRequest 请求对象
      * @return CompletableFuture<DeletePipelineResponse>
      */
     public CompletableFuture<DeletePipelineResponse> deletePipelineAsync(DeletePipelineRequest request) {
@@ -682,13 +666,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePipelineRequest 请求对象
+     * @param request DeletePipelineRequest 请求对象
      * @return AsyncInvoker<DeletePipelineRequest, DeletePipelineResponse>
      */
     public AsyncInvoker<DeletePipelineRequest, DeletePipelineResponse> deletePipelineAsyncInvoker(
         DeletePipelineRequest request) {
-        return new AsyncInvoker<DeletePipelineRequest, DeletePipelineResponse>(request,
-            CodeArtsPipelineMeta.deletePipeline, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deletePipeline, hcClient);
     }
 
     /**
@@ -698,7 +681,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePipelineGroupRequest 请求对象
+     * @param request DeletePipelineGroupRequest 请求对象
      * @return CompletableFuture<DeletePipelineGroupResponse>
      */
     public CompletableFuture<DeletePipelineGroupResponse> deletePipelineGroupAsync(DeletePipelineGroupRequest request) {
@@ -712,13 +695,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePipelineGroupRequest 请求对象
+     * @param request DeletePipelineGroupRequest 请求对象
      * @return AsyncInvoker<DeletePipelineGroupRequest, DeletePipelineGroupResponse>
      */
     public AsyncInvoker<DeletePipelineGroupRequest, DeletePipelineGroupResponse> deletePipelineGroupAsyncInvoker(
         DeletePipelineGroupRequest request) {
-        return new AsyncInvoker<DeletePipelineGroupRequest, DeletePipelineGroupResponse>(request,
-            CodeArtsPipelineMeta.deletePipelineGroup, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deletePipelineGroup, hcClient);
     }
 
     /**
@@ -728,7 +710,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePipelineTemplateRequest 请求对象
+     * @param request DeletePipelineTemplateRequest 请求对象
      * @return CompletableFuture<DeletePipelineTemplateResponse>
      */
     public CompletableFuture<DeletePipelineTemplateResponse> deletePipelineTemplateAsync(
@@ -743,13 +725,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePipelineTemplateRequest 请求对象
+     * @param request DeletePipelineTemplateRequest 请求对象
      * @return AsyncInvoker<DeletePipelineTemplateRequest, DeletePipelineTemplateResponse>
      */
     public AsyncInvoker<DeletePipelineTemplateRequest, DeletePipelineTemplateResponse> deletePipelineTemplateAsyncInvoker(
         DeletePipelineTemplateRequest request) {
-        return new AsyncInvoker<DeletePipelineTemplateRequest, DeletePipelineTemplateResponse>(request,
-            CodeArtsPipelineMeta.deletePipelineTemplate, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deletePipelineTemplate, hcClient);
     }
 
     /**
@@ -759,7 +740,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePluginDraftRequest 请求对象
+     * @param request DeletePluginDraftRequest 请求对象
      * @return CompletableFuture<DeletePluginDraftResponse>
      */
     public CompletableFuture<DeletePluginDraftResponse> deletePluginDraftAsync(DeletePluginDraftRequest request) {
@@ -773,13 +754,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePluginDraftRequest 请求对象
+     * @param request DeletePluginDraftRequest 请求对象
      * @return AsyncInvoker<DeletePluginDraftRequest, DeletePluginDraftResponse>
      */
     public AsyncInvoker<DeletePluginDraftRequest, DeletePluginDraftResponse> deletePluginDraftAsyncInvoker(
         DeletePluginDraftRequest request) {
-        return new AsyncInvoker<DeletePluginDraftRequest, DeletePluginDraftResponse>(request,
-            CodeArtsPipelineMeta.deletePluginDraft, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deletePluginDraft, hcClient);
     }
 
     /**
@@ -789,7 +769,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublisherRequest 请求对象
+     * @param request DeletePublisherRequest 请求对象
      * @return CompletableFuture<DeletePublisherResponse>
      */
     public CompletableFuture<DeletePublisherResponse> deletePublisherAsync(DeletePublisherRequest request) {
@@ -803,13 +783,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublisherRequest 请求对象
+     * @param request DeletePublisherRequest 请求对象
      * @return AsyncInvoker<DeletePublisherRequest, DeletePublisherResponse>
      */
     public AsyncInvoker<DeletePublisherRequest, DeletePublisherResponse> deletePublisherAsyncInvoker(
         DeletePublisherRequest request) {
-        return new AsyncInvoker<DeletePublisherRequest, DeletePublisherResponse>(request,
-            CodeArtsPipelineMeta.deletePublisher, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deletePublisher, hcClient);
     }
 
     /**
@@ -819,7 +798,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleRequest 请求对象
+     * @param request DeleteRuleRequest 请求对象
      * @return CompletableFuture<DeleteRuleResponse>
      */
     public CompletableFuture<DeleteRuleResponse> deleteRuleAsync(DeleteRuleRequest request) {
@@ -833,12 +812,11 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleRequest 请求对象
+     * @param request DeleteRuleRequest 请求对象
      * @return AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse>
      */
     public AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse> deleteRuleAsyncInvoker(DeleteRuleRequest request) {
-        return new AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse>(request, CodeArtsPipelineMeta.deleteRule,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deleteRule, hcClient);
     }
 
     /**
@@ -848,7 +826,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStrategyRequest 请求对象
+     * @param request DeleteStrategyRequest 请求对象
      * @return CompletableFuture<DeleteStrategyResponse>
      */
     public CompletableFuture<DeleteStrategyResponse> deleteStrategyAsync(DeleteStrategyRequest request) {
@@ -862,13 +840,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStrategyRequest 请求对象
+     * @param request DeleteStrategyRequest 请求对象
      * @return AsyncInvoker<DeleteStrategyRequest, DeleteStrategyResponse>
      */
     public AsyncInvoker<DeleteStrategyRequest, DeleteStrategyResponse> deleteStrategyAsyncInvoker(
         DeleteStrategyRequest request) {
-        return new AsyncInvoker<DeleteStrategyRequest, DeleteStrategyResponse>(request,
-            CodeArtsPipelineMeta.deleteStrategy, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deleteStrategy, hcClient);
     }
 
     /**
@@ -878,7 +855,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailablePublisherRequest 请求对象
+     * @param request ListAvailablePublisherRequest 请求对象
      * @return CompletableFuture<ListAvailablePublisherResponse>
      */
     public CompletableFuture<ListAvailablePublisherResponse> listAvailablePublisherAsync(
@@ -893,13 +870,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailablePublisherRequest 请求对象
+     * @param request ListAvailablePublisherRequest 请求对象
      * @return AsyncInvoker<ListAvailablePublisherRequest, ListAvailablePublisherResponse>
      */
     public AsyncInvoker<ListAvailablePublisherRequest, ListAvailablePublisherResponse> listAvailablePublisherAsyncInvoker(
         ListAvailablePublisherRequest request) {
-        return new AsyncInvoker<ListAvailablePublisherRequest, ListAvailablePublisherResponse>(request,
-            CodeArtsPipelineMeta.listAvailablePublisher, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listAvailablePublisher, hcClient);
     }
 
     /**
@@ -909,7 +885,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBasePluginsRequest 请求对象
+     * @param request ListBasePluginsRequest 请求对象
      * @return CompletableFuture<ListBasePluginsResponse>
      */
     public CompletableFuture<ListBasePluginsResponse> listBasePluginsAsync(ListBasePluginsRequest request) {
@@ -923,13 +899,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBasePluginsRequest 请求对象
+     * @param request ListBasePluginsRequest 请求对象
      * @return AsyncInvoker<ListBasePluginsRequest, ListBasePluginsResponse>
      */
     public AsyncInvoker<ListBasePluginsRequest, ListBasePluginsResponse> listBasePluginsAsyncInvoker(
         ListBasePluginsRequest request) {
-        return new AsyncInvoker<ListBasePluginsRequest, ListBasePluginsResponse>(request,
-            CodeArtsPipelineMeta.listBasePlugins, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listBasePlugins, hcClient);
     }
 
     /**
@@ -939,7 +914,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBasePluginsNewPostRequest 请求对象
+     * @param request ListBasePluginsNewPostRequest 请求对象
      * @return CompletableFuture<ListBasePluginsNewPostResponse>
      */
     public CompletableFuture<ListBasePluginsNewPostResponse> listBasePluginsNewPostAsync(
@@ -954,13 +929,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBasePluginsNewPostRequest 请求对象
+     * @param request ListBasePluginsNewPostRequest 请求对象
      * @return AsyncInvoker<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse>
      */
     public AsyncInvoker<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse> listBasePluginsNewPostAsyncInvoker(
         ListBasePluginsNewPostRequest request) {
-        return new AsyncInvoker<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse>(request,
-            CodeArtsPipelineMeta.listBasePluginsNewPost, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listBasePluginsNewPost, hcClient);
     }
 
     /**
@@ -970,7 +944,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPLuginVersionRequest 请求对象
+     * @param request ListPLuginVersionRequest 请求对象
      * @return CompletableFuture<ListPLuginVersionResponse>
      */
     public CompletableFuture<ListPLuginVersionResponse> listPLuginVersionAsync(ListPLuginVersionRequest request) {
@@ -984,13 +958,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPLuginVersionRequest 请求对象
+     * @param request ListPLuginVersionRequest 请求对象
      * @return AsyncInvoker<ListPLuginVersionRequest, ListPLuginVersionResponse>
      */
     public AsyncInvoker<ListPLuginVersionRequest, ListPLuginVersionResponse> listPLuginVersionAsyncInvoker(
         ListPLuginVersionRequest request) {
-        return new AsyncInvoker<ListPLuginVersionRequest, ListPLuginVersionResponse>(request,
-            CodeArtsPipelineMeta.listPLuginVersion, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPLuginVersion, hcClient);
     }
 
     /**
@@ -1000,7 +973,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelineRunsRequest 请求对象
+     * @param request ListPipelineRunsRequest 请求对象
      * @return CompletableFuture<ListPipelineRunsResponse>
      */
     public CompletableFuture<ListPipelineRunsResponse> listPipelineRunsAsync(ListPipelineRunsRequest request) {
@@ -1014,13 +987,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelineRunsRequest 请求对象
+     * @param request ListPipelineRunsRequest 请求对象
      * @return AsyncInvoker<ListPipelineRunsRequest, ListPipelineRunsResponse>
      */
     public AsyncInvoker<ListPipelineRunsRequest, ListPipelineRunsResponse> listPipelineRunsAsyncInvoker(
         ListPipelineRunsRequest request) {
-        return new AsyncInvoker<ListPipelineRunsRequest, ListPipelineRunsResponse>(request,
-            CodeArtsPipelineMeta.listPipelineRuns, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPipelineRuns, hcClient);
     }
 
     /**
@@ -1030,7 +1002,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelineSimpleInfoRequest 请求对象
+     * @param request ListPipelineSimpleInfoRequest 请求对象
      * @return CompletableFuture<ListPipelineSimpleInfoResponse>
      */
     public CompletableFuture<ListPipelineSimpleInfoResponse> listPipelineSimpleInfoAsync(
@@ -1045,13 +1017,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelineSimpleInfoRequest 请求对象
+     * @param request ListPipelineSimpleInfoRequest 请求对象
      * @return AsyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse>
      */
     public AsyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> listPipelineSimpleInfoAsyncInvoker(
         ListPipelineSimpleInfoRequest request) {
-        return new AsyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse>(request,
-            CodeArtsPipelineMeta.listPipelineSimpleInfo, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPipelineSimpleInfo, hcClient);
     }
 
     /**
@@ -1061,7 +1032,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelineTemplatesRequest 请求对象
+     * @param request ListPipelineTemplatesRequest 请求对象
      * @return CompletableFuture<ListPipelineTemplatesResponse>
      */
     public CompletableFuture<ListPipelineTemplatesResponse> listPipelineTemplatesAsync(
@@ -1076,13 +1047,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelineTemplatesRequest 请求对象
+     * @param request ListPipelineTemplatesRequest 请求对象
      * @return AsyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse>
      */
     public AsyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> listPipelineTemplatesAsyncInvoker(
         ListPipelineTemplatesRequest request) {
-        return new AsyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse>(request,
-            CodeArtsPipelineMeta.listPipelineTemplates, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPipelineTemplates, hcClient);
     }
 
     /**
@@ -1092,7 +1062,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelinesRequest 请求对象
+     * @param request ListPipelinesRequest 请求对象
      * @return CompletableFuture<ListPipelinesResponse>
      */
     public CompletableFuture<ListPipelinesResponse> listPipelinesAsync(ListPipelinesRequest request) {
@@ -1106,13 +1076,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipelinesRequest 请求对象
+     * @param request ListPipelinesRequest 请求对象
      * @return AsyncInvoker<ListPipelinesRequest, ListPipelinesResponse>
      */
     public AsyncInvoker<ListPipelinesRequest, ListPipelinesResponse> listPipelinesAsyncInvoker(
         ListPipelinesRequest request) {
-        return new AsyncInvoker<ListPipelinesRequest, ListPipelinesResponse>(request,
-            CodeArtsPipelineMeta.listPipelines, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPipelines, hcClient);
     }
 
     /**
@@ -1122,7 +1091,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipleineBuildResultRequest 请求对象
+     * @param request ListPipleineBuildResultRequest 请求对象
      * @return CompletableFuture<ListPipleineBuildResultResponse>
      */
     public CompletableFuture<ListPipleineBuildResultResponse> listPipleineBuildResultAsync(
@@ -1137,13 +1106,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPipleineBuildResultRequest 请求对象
+     * @param request ListPipleineBuildResultRequest 请求对象
      * @return AsyncInvoker<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse>
      */
     public AsyncInvoker<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> listPipleineBuildResultAsyncInvoker(
         ListPipleineBuildResultRequest request) {
-        return new AsyncInvoker<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse>(request,
-            CodeArtsPipelineMeta.listPipleineBuildResult, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPipleineBuildResult, hcClient);
     }
 
     /**
@@ -1153,7 +1121,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginVersionNumberRequest 请求对象
+     * @param request ListPluginVersionNumberRequest 请求对象
      * @return CompletableFuture<ListPluginVersionNumberResponse>
      */
     public CompletableFuture<ListPluginVersionNumberResponse> listPluginVersionNumberAsync(
@@ -1168,13 +1136,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginVersionNumberRequest 请求对象
+     * @param request ListPluginVersionNumberRequest 请求对象
      * @return AsyncInvoker<ListPluginVersionNumberRequest, ListPluginVersionNumberResponse>
      */
     public AsyncInvoker<ListPluginVersionNumberRequest, ListPluginVersionNumberResponse> listPluginVersionNumberAsyncInvoker(
         ListPluginVersionNumberRequest request) {
-        return new AsyncInvoker<ListPluginVersionNumberRequest, ListPluginVersionNumberResponse>(request,
-            CodeArtsPipelineMeta.listPluginVersionNumber, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPluginVersionNumber, hcClient);
     }
 
     /**
@@ -1184,7 +1151,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return CompletableFuture<ListPluginsResponse>
      */
     public CompletableFuture<ListPluginsResponse> listPluginsAsync(ListPluginsRequest request) {
@@ -1198,12 +1165,11 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return AsyncInvoker<ListPluginsRequest, ListPluginsResponse>
      */
     public AsyncInvoker<ListPluginsRequest, ListPluginsResponse> listPluginsAsyncInvoker(ListPluginsRequest request) {
-        return new AsyncInvoker<ListPluginsRequest, ListPluginsResponse>(request, CodeArtsPipelineMeta.listPlugins,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPlugins, hcClient);
     }
 
     /**
@@ -1213,7 +1179,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectStrategyRequest 请求对象
+     * @param request ListProjectStrategyRequest 请求对象
      * @return CompletableFuture<ListProjectStrategyResponse>
      */
     public CompletableFuture<ListProjectStrategyResponse> listProjectStrategyAsync(ListProjectStrategyRequest request) {
@@ -1227,13 +1193,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectStrategyRequest 请求对象
+     * @param request ListProjectStrategyRequest 请求对象
      * @return AsyncInvoker<ListProjectStrategyRequest, ListProjectStrategyResponse>
      */
     public AsyncInvoker<ListProjectStrategyRequest, ListProjectStrategyResponse> listProjectStrategyAsyncInvoker(
         ListProjectStrategyRequest request) {
-        return new AsyncInvoker<ListProjectStrategyRequest, ListProjectStrategyResponse>(request,
-            CodeArtsPipelineMeta.listProjectStrategy, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listProjectStrategy, hcClient);
     }
 
     /**
@@ -1243,7 +1208,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublisherRequest 请求对象
+     * @param request ListPublisherRequest 请求对象
      * @return CompletableFuture<ListPublisherResponse>
      */
     public CompletableFuture<ListPublisherResponse> listPublisherAsync(ListPublisherRequest request) {
@@ -1257,13 +1222,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublisherRequest 请求对象
+     * @param request ListPublisherRequest 请求对象
      * @return AsyncInvoker<ListPublisherRequest, ListPublisherResponse>
      */
     public AsyncInvoker<ListPublisherRequest, ListPublisherResponse> listPublisherAsyncInvoker(
         ListPublisherRequest request) {
-        return new AsyncInvoker<ListPublisherRequest, ListPublisherResponse>(request,
-            CodeArtsPipelineMeta.listPublisher, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPublisher, hcClient);
     }
 
     /**
@@ -1273,7 +1237,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRuleRequest 请求对象
+     * @param request ListRuleRequest 请求对象
      * @return CompletableFuture<ListRuleResponse>
      */
     public CompletableFuture<ListRuleResponse> listRuleAsync(ListRuleRequest request) {
@@ -1287,11 +1251,11 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRuleRequest 请求对象
+     * @param request ListRuleRequest 请求对象
      * @return AsyncInvoker<ListRuleRequest, ListRuleResponse>
      */
     public AsyncInvoker<ListRuleRequest, ListRuleResponse> listRuleAsyncInvoker(ListRuleRequest request) {
-        return new AsyncInvoker<ListRuleRequest, ListRuleResponse>(request, CodeArtsPipelineMeta.listRule, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listRule, hcClient);
     }
 
     /**
@@ -1301,7 +1265,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStagePluginsRequest 请求对象
+     * @param request ListStagePluginsRequest 请求对象
      * @return CompletableFuture<ListStagePluginsResponse>
      */
     public CompletableFuture<ListStagePluginsResponse> listStagePluginsAsync(ListStagePluginsRequest request) {
@@ -1315,13 +1279,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStagePluginsRequest 请求对象
+     * @param request ListStagePluginsRequest 请求对象
      * @return AsyncInvoker<ListStagePluginsRequest, ListStagePluginsResponse>
      */
     public AsyncInvoker<ListStagePluginsRequest, ListStagePluginsResponse> listStagePluginsAsyncInvoker(
         ListStagePluginsRequest request) {
-        return new AsyncInvoker<ListStagePluginsRequest, ListStagePluginsResponse>(request,
-            CodeArtsPipelineMeta.listStagePlugins, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listStagePlugins, hcClient);
     }
 
     /**
@@ -1331,7 +1294,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStrategyRequest 请求对象
+     * @param request ListStrategyRequest 请求对象
      * @return CompletableFuture<ListStrategyResponse>
      */
     public CompletableFuture<ListStrategyResponse> listStrategyAsync(ListStrategyRequest request) {
@@ -1345,13 +1308,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStrategyRequest 请求对象
+     * @param request ListStrategyRequest 请求对象
      * @return AsyncInvoker<ListStrategyRequest, ListStrategyResponse>
      */
     public AsyncInvoker<ListStrategyRequest, ListStrategyResponse> listStrategyAsyncInvoker(
         ListStrategyRequest request) {
-        return new AsyncInvoker<ListStrategyRequest, ListStrategyResponse>(request, CodeArtsPipelineMeta.listStrategy,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listStrategy, hcClient);
     }
 
     /**
@@ -1361,7 +1323,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesRequest 请求对象
+     * @param request ListTemplatesRequest 请求对象
      * @return CompletableFuture<ListTemplatesResponse>
      */
     public CompletableFuture<ListTemplatesResponse> listTemplatesAsync(ListTemplatesRequest request) {
@@ -1375,13 +1337,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesRequest 请求对象
+     * @param request ListTemplatesRequest 请求对象
      * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
      */
     public AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesAsyncInvoker(
         ListTemplatesRequest request) {
-        return new AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request,
-            CodeArtsPipelineMeta.listTemplates, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listTemplates, hcClient);
     }
 
     /**
@@ -1391,7 +1352,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishPluginRequest 请求对象
+     * @param request PublishPluginRequest 请求对象
      * @return CompletableFuture<PublishPluginResponse>
      */
     public CompletableFuture<PublishPluginResponse> publishPluginAsync(PublishPluginRequest request) {
@@ -1405,13 +1366,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishPluginRequest 请求对象
+     * @param request PublishPluginRequest 请求对象
      * @return AsyncInvoker<PublishPluginRequest, PublishPluginResponse>
      */
     public AsyncInvoker<PublishPluginRequest, PublishPluginResponse> publishPluginAsyncInvoker(
         PublishPluginRequest request) {
-        return new AsyncInvoker<PublishPluginRequest, PublishPluginResponse>(request,
-            CodeArtsPipelineMeta.publishPlugin, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.publishPlugin, hcClient);
     }
 
     /**
@@ -1421,7 +1381,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishPluginBindRequest 请求对象
+     * @param request PublishPluginBindRequest 请求对象
      * @return CompletableFuture<PublishPluginBindResponse>
      */
     public CompletableFuture<PublishPluginBindResponse> publishPluginBindAsync(PublishPluginBindRequest request) {
@@ -1435,13 +1395,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishPluginBindRequest 请求对象
+     * @param request PublishPluginBindRequest 请求对象
      * @return AsyncInvoker<PublishPluginBindRequest, PublishPluginBindResponse>
      */
     public AsyncInvoker<PublishPluginBindRequest, PublishPluginBindResponse> publishPluginBindAsyncInvoker(
         PublishPluginBindRequest request) {
-        return new AsyncInvoker<PublishPluginBindRequest, PublishPluginBindResponse>(request,
-            CodeArtsPipelineMeta.publishPluginBind, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.publishPluginBind, hcClient);
     }
 
     /**
@@ -1451,7 +1410,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishPluginDraftRequest 请求对象
+     * @param request PublishPluginDraftRequest 请求对象
      * @return CompletableFuture<PublishPluginDraftResponse>
      */
     public CompletableFuture<PublishPluginDraftResponse> publishPluginDraftAsync(PublishPluginDraftRequest request) {
@@ -1465,13 +1424,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishPluginDraftRequest 请求对象
+     * @param request PublishPluginDraftRequest 请求对象
      * @return AsyncInvoker<PublishPluginDraftRequest, PublishPluginDraftResponse>
      */
     public AsyncInvoker<PublishPluginDraftRequest, PublishPluginDraftResponse> publishPluginDraftAsyncInvoker(
         PublishPluginDraftRequest request) {
-        return new AsyncInvoker<PublishPluginDraftRequest, PublishPluginDraftResponse>(request,
-            CodeArtsPipelineMeta.publishPluginDraft, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.publishPluginDraft, hcClient);
     }
 
     /**
@@ -1481,7 +1439,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RejectManualReviewRequest 请求对象
+     * @param request RejectManualReviewRequest 请求对象
      * @return CompletableFuture<RejectManualReviewResponse>
      */
     public CompletableFuture<RejectManualReviewResponse> rejectManualReviewAsync(RejectManualReviewRequest request) {
@@ -1495,13 +1453,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RejectManualReviewRequest 请求对象
+     * @param request RejectManualReviewRequest 请求对象
      * @return AsyncInvoker<RejectManualReviewRequest, RejectManualReviewResponse>
      */
     public AsyncInvoker<RejectManualReviewRequest, RejectManualReviewResponse> rejectManualReviewAsyncInvoker(
         RejectManualReviewRequest request) {
-        return new AsyncInvoker<RejectManualReviewRequest, RejectManualReviewResponse>(request,
-            CodeArtsPipelineMeta.rejectManualReview, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.rejectManualReview, hcClient);
     }
 
     /**
@@ -1511,7 +1468,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemovePipelineRequest 请求对象
+     * @param request RemovePipelineRequest 请求对象
      * @return CompletableFuture<RemovePipelineResponse>
      */
     public CompletableFuture<RemovePipelineResponse> removePipelineAsync(RemovePipelineRequest request) {
@@ -1525,13 +1482,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemovePipelineRequest 请求对象
+     * @param request RemovePipelineRequest 请求对象
      * @return AsyncInvoker<RemovePipelineRequest, RemovePipelineResponse>
      */
     public AsyncInvoker<RemovePipelineRequest, RemovePipelineResponse> removePipelineAsyncInvoker(
         RemovePipelineRequest request) {
-        return new AsyncInvoker<RemovePipelineRequest, RemovePipelineResponse>(request,
-            CodeArtsPipelineMeta.removePipeline, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.removePipeline, hcClient);
     }
 
     /**
@@ -1541,7 +1497,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryPipelineRunRequest 请求对象
+     * @param request RetryPipelineRunRequest 请求对象
      * @return CompletableFuture<RetryPipelineRunResponse>
      */
     public CompletableFuture<RetryPipelineRunResponse> retryPipelineRunAsync(RetryPipelineRunRequest request) {
@@ -1555,13 +1511,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryPipelineRunRequest 请求对象
+     * @param request RetryPipelineRunRequest 请求对象
      * @return AsyncInvoker<RetryPipelineRunRequest, RetryPipelineRunResponse>
      */
     public AsyncInvoker<RetryPipelineRunRequest, RetryPipelineRunResponse> retryPipelineRunAsyncInvoker(
         RetryPipelineRunRequest request) {
-        return new AsyncInvoker<RetryPipelineRunRequest, RetryPipelineRunResponse>(request,
-            CodeArtsPipelineMeta.retryPipelineRun, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.retryPipelineRun, hcClient);
     }
 
     /**
@@ -1571,7 +1526,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunPipelineRequest 请求对象
+     * @param request RunPipelineRequest 请求对象
      * @return CompletableFuture<RunPipelineResponse>
      */
     public CompletableFuture<RunPipelineResponse> runPipelineAsync(RunPipelineRequest request) {
@@ -1585,12 +1540,11 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunPipelineRequest 请求对象
+     * @param request RunPipelineRequest 请求对象
      * @return AsyncInvoker<RunPipelineRequest, RunPipelineResponse>
      */
     public AsyncInvoker<RunPipelineRequest, RunPipelineResponse> runPipelineAsyncInvoker(RunPipelineRequest request) {
-        return new AsyncInvoker<RunPipelineRequest, RunPipelineResponse>(request, CodeArtsPipelineMeta.runPipeline,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.runPipeline, hcClient);
     }
 
     /**
@@ -1600,7 +1554,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBasicPluginRequest 请求对象
+     * @param request ShowBasicPluginRequest 请求对象
      * @return CompletableFuture<ShowBasicPluginResponse>
      */
     public CompletableFuture<ShowBasicPluginResponse> showBasicPluginAsync(ShowBasicPluginRequest request) {
@@ -1614,13 +1568,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBasicPluginRequest 请求对象
+     * @param request ShowBasicPluginRequest 请求对象
      * @return AsyncInvoker<ShowBasicPluginRequest, ShowBasicPluginResponse>
      */
     public AsyncInvoker<ShowBasicPluginRequest, ShowBasicPluginResponse> showBasicPluginAsyncInvoker(
         ShowBasicPluginRequest request) {
-        return new AsyncInvoker<ShowBasicPluginRequest, ShowBasicPluginResponse>(request,
-            CodeArtsPipelineMeta.showBasicPlugin, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showBasicPlugin, hcClient);
     }
 
     /**
@@ -1630,7 +1583,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceStatusRequest 请求对象
+     * @param request ShowInstanceStatusRequest 请求对象
      * @return CompletableFuture<ShowInstanceStatusResponse>
      */
     public CompletableFuture<ShowInstanceStatusResponse> showInstanceStatusAsync(ShowInstanceStatusRequest request) {
@@ -1644,13 +1597,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceStatusRequest 请求对象
+     * @param request ShowInstanceStatusRequest 请求对象
      * @return AsyncInvoker<ShowInstanceStatusRequest, ShowInstanceStatusResponse>
      */
     public AsyncInvoker<ShowInstanceStatusRequest, ShowInstanceStatusResponse> showInstanceStatusAsyncInvoker(
         ShowInstanceStatusRequest request) {
-        return new AsyncInvoker<ShowInstanceStatusRequest, ShowInstanceStatusResponse>(request,
-            CodeArtsPipelineMeta.showInstanceStatus, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showInstanceStatus, hcClient);
     }
 
     /**
@@ -1660,7 +1612,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineDetailRequest 请求对象
+     * @param request ShowPipelineDetailRequest 请求对象
      * @return CompletableFuture<ShowPipelineDetailResponse>
      */
     public CompletableFuture<ShowPipelineDetailResponse> showPipelineDetailAsync(ShowPipelineDetailRequest request) {
@@ -1674,13 +1626,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineDetailRequest 请求对象
+     * @param request ShowPipelineDetailRequest 请求对象
      * @return AsyncInvoker<ShowPipelineDetailRequest, ShowPipelineDetailResponse>
      */
     public AsyncInvoker<ShowPipelineDetailRequest, ShowPipelineDetailResponse> showPipelineDetailAsyncInvoker(
         ShowPipelineDetailRequest request) {
-        return new AsyncInvoker<ShowPipelineDetailRequest, ShowPipelineDetailResponse>(request,
-            CodeArtsPipelineMeta.showPipelineDetail, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPipelineDetail, hcClient);
     }
 
     /**
@@ -1690,7 +1641,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineGroupTreeRequest 请求对象
+     * @param request ShowPipelineGroupTreeRequest 请求对象
      * @return CompletableFuture<ShowPipelineGroupTreeResponse>
      */
     public CompletableFuture<ShowPipelineGroupTreeResponse> showPipelineGroupTreeAsync(
@@ -1705,13 +1656,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineGroupTreeRequest 请求对象
+     * @param request ShowPipelineGroupTreeRequest 请求对象
      * @return AsyncInvoker<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse>
      */
     public AsyncInvoker<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse> showPipelineGroupTreeAsyncInvoker(
         ShowPipelineGroupTreeRequest request) {
-        return new AsyncInvoker<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse>(request,
-            CodeArtsPipelineMeta.showPipelineGroupTree, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPipelineGroupTree, hcClient);
     }
 
     /**
@@ -1721,7 +1671,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineLogRequest 请求对象
+     * @param request ShowPipelineLogRequest 请求对象
      * @return CompletableFuture<ShowPipelineLogResponse>
      */
     public CompletableFuture<ShowPipelineLogResponse> showPipelineLogAsync(ShowPipelineLogRequest request) {
@@ -1735,13 +1685,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineLogRequest 请求对象
+     * @param request ShowPipelineLogRequest 请求对象
      * @return AsyncInvoker<ShowPipelineLogRequest, ShowPipelineLogResponse>
      */
     public AsyncInvoker<ShowPipelineLogRequest, ShowPipelineLogResponse> showPipelineLogAsyncInvoker(
         ShowPipelineLogRequest request) {
-        return new AsyncInvoker<ShowPipelineLogRequest, ShowPipelineLogResponse>(request,
-            CodeArtsPipelineMeta.showPipelineLog, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPipelineLog, hcClient);
     }
 
     /**
@@ -1751,7 +1700,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineRunDetailRequest 请求对象
+     * @param request ShowPipelineRunDetailRequest 请求对象
      * @return CompletableFuture<ShowPipelineRunDetailResponse>
      */
     public CompletableFuture<ShowPipelineRunDetailResponse> showPipelineRunDetailAsync(
@@ -1766,13 +1715,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineRunDetailRequest 请求对象
+     * @param request ShowPipelineRunDetailRequest 请求对象
      * @return AsyncInvoker<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse>
      */
     public AsyncInvoker<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse> showPipelineRunDetailAsyncInvoker(
         ShowPipelineRunDetailRequest request) {
-        return new AsyncInvoker<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse>(request,
-            CodeArtsPipelineMeta.showPipelineRunDetail, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPipelineRunDetail, hcClient);
     }
 
     /**
@@ -1782,7 +1730,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineTemplateDetailRequest 请求对象
+     * @param request ShowPipelineTemplateDetailRequest 请求对象
      * @return CompletableFuture<ShowPipelineTemplateDetailResponse>
      */
     public CompletableFuture<ShowPipelineTemplateDetailResponse> showPipelineTemplateDetailAsync(
@@ -1797,13 +1745,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipelineTemplateDetailRequest 请求对象
+     * @param request ShowPipelineTemplateDetailRequest 请求对象
      * @return AsyncInvoker<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse>
      */
     public AsyncInvoker<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse> showPipelineTemplateDetailAsyncInvoker(
         ShowPipelineTemplateDetailRequest request) {
-        return new AsyncInvoker<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse>(request,
-            CodeArtsPipelineMeta.showPipelineTemplateDetail, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPipelineTemplateDetail, hcClient);
     }
 
     /**
@@ -1813,7 +1760,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipleineStatusRequest 请求对象
+     * @param request ShowPipleineStatusRequest 请求对象
      * @return CompletableFuture<ShowPipleineStatusResponse>
      */
     public CompletableFuture<ShowPipleineStatusResponse> showPipleineStatusAsync(ShowPipleineStatusRequest request) {
@@ -1827,13 +1774,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPipleineStatusRequest 请求对象
+     * @param request ShowPipleineStatusRequest 请求对象
      * @return AsyncInvoker<ShowPipleineStatusRequest, ShowPipleineStatusResponse>
      */
     public AsyncInvoker<ShowPipleineStatusRequest, ShowPipleineStatusResponse> showPipleineStatusAsyncInvoker(
         ShowPipleineStatusRequest request) {
-        return new AsyncInvoker<ShowPipleineStatusRequest, ShowPipleineStatusResponse>(request,
-            CodeArtsPipelineMeta.showPipleineStatus, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPipleineStatus, hcClient);
     }
 
     /**
@@ -1843,7 +1789,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginInputsRequest 请求对象
+     * @param request ShowPluginInputsRequest 请求对象
      * @return CompletableFuture<ShowPluginInputsResponse>
      */
     public CompletableFuture<ShowPluginInputsResponse> showPluginInputsAsync(ShowPluginInputsRequest request) {
@@ -1857,13 +1803,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginInputsRequest 请求对象
+     * @param request ShowPluginInputsRequest 请求对象
      * @return AsyncInvoker<ShowPluginInputsRequest, ShowPluginInputsResponse>
      */
     public AsyncInvoker<ShowPluginInputsRequest, ShowPluginInputsResponse> showPluginInputsAsyncInvoker(
         ShowPluginInputsRequest request) {
-        return new AsyncInvoker<ShowPluginInputsRequest, ShowPluginInputsResponse>(request,
-            CodeArtsPipelineMeta.showPluginInputs, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPluginInputs, hcClient);
     }
 
     /**
@@ -1873,7 +1818,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginMetricsRequest 请求对象
+     * @param request ShowPluginMetricsRequest 请求对象
      * @return CompletableFuture<ShowPluginMetricsResponse>
      */
     public CompletableFuture<ShowPluginMetricsResponse> showPluginMetricsAsync(ShowPluginMetricsRequest request) {
@@ -1887,13 +1832,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginMetricsRequest 请求对象
+     * @param request ShowPluginMetricsRequest 请求对象
      * @return AsyncInvoker<ShowPluginMetricsRequest, ShowPluginMetricsResponse>
      */
     public AsyncInvoker<ShowPluginMetricsRequest, ShowPluginMetricsResponse> showPluginMetricsAsyncInvoker(
         ShowPluginMetricsRequest request) {
-        return new AsyncInvoker<ShowPluginMetricsRequest, ShowPluginMetricsResponse>(request,
-            CodeArtsPipelineMeta.showPluginMetrics, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPluginMetrics, hcClient);
     }
 
     /**
@@ -1903,7 +1847,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginOutputsRequest 请求对象
+     * @param request ShowPluginOutputsRequest 请求对象
      * @return CompletableFuture<ShowPluginOutputsResponse>
      */
     public CompletableFuture<ShowPluginOutputsResponse> showPluginOutputsAsync(ShowPluginOutputsRequest request) {
@@ -1917,13 +1861,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginOutputsRequest 请求对象
+     * @param request ShowPluginOutputsRequest 请求对象
      * @return AsyncInvoker<ShowPluginOutputsRequest, ShowPluginOutputsResponse>
      */
     public AsyncInvoker<ShowPluginOutputsRequest, ShowPluginOutputsResponse> showPluginOutputsAsyncInvoker(
         ShowPluginOutputsRequest request) {
-        return new AsyncInvoker<ShowPluginOutputsRequest, ShowPluginOutputsResponse>(request,
-            CodeArtsPipelineMeta.showPluginOutputs, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPluginOutputs, hcClient);
     }
 
     /**
@@ -1933,7 +1876,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginVersionRequest 请求对象
+     * @param request ShowPluginVersionRequest 请求对象
      * @return CompletableFuture<ShowPluginVersionResponse>
      */
     public CompletableFuture<ShowPluginVersionResponse> showPluginVersionAsync(ShowPluginVersionRequest request) {
@@ -1947,13 +1890,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginVersionRequest 请求对象
+     * @param request ShowPluginVersionRequest 请求对象
      * @return AsyncInvoker<ShowPluginVersionRequest, ShowPluginVersionResponse>
      */
     public AsyncInvoker<ShowPluginVersionRequest, ShowPluginVersionResponse> showPluginVersionAsyncInvoker(
         ShowPluginVersionRequest request) {
-        return new AsyncInvoker<ShowPluginVersionRequest, ShowPluginVersionResponse>(request,
-            CodeArtsPipelineMeta.showPluginVersion, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPluginVersion, hcClient);
     }
 
     /**
@@ -1963,7 +1905,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectStrategyRequest 请求对象
+     * @param request ShowProjectStrategyRequest 请求对象
      * @return CompletableFuture<ShowProjectStrategyResponse>
      */
     public CompletableFuture<ShowProjectStrategyResponse> showProjectStrategyAsync(ShowProjectStrategyRequest request) {
@@ -1977,13 +1919,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectStrategyRequest 请求对象
+     * @param request ShowProjectStrategyRequest 请求对象
      * @return AsyncInvoker<ShowProjectStrategyRequest, ShowProjectStrategyResponse>
      */
     public AsyncInvoker<ShowProjectStrategyRequest, ShowProjectStrategyResponse> showProjectStrategyAsyncInvoker(
         ShowProjectStrategyRequest request) {
-        return new AsyncInvoker<ShowProjectStrategyRequest, ShowProjectStrategyResponse>(request,
-            CodeArtsPipelineMeta.showProjectStrategy, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showProjectStrategy, hcClient);
     }
 
     /**
@@ -1993,7 +1934,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublisherRequest 请求对象
+     * @param request ShowPublisherRequest 请求对象
      * @return CompletableFuture<ShowPublisherResponse>
      */
     public CompletableFuture<ShowPublisherResponse> showPublisherAsync(ShowPublisherRequest request) {
@@ -2007,13 +1948,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublisherRequest 请求对象
+     * @param request ShowPublisherRequest 请求对象
      * @return AsyncInvoker<ShowPublisherRequest, ShowPublisherResponse>
      */
     public AsyncInvoker<ShowPublisherRequest, ShowPublisherResponse> showPublisherAsyncInvoker(
         ShowPublisherRequest request) {
-        return new AsyncInvoker<ShowPublisherRequest, ShowPublisherResponse>(request,
-            CodeArtsPipelineMeta.showPublisher, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showPublisher, hcClient);
     }
 
     /**
@@ -2023,7 +1963,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRuleRequest 请求对象
+     * @param request ShowRuleRequest 请求对象
      * @return CompletableFuture<ShowRuleResponse>
      */
     public CompletableFuture<ShowRuleResponse> showRuleAsync(ShowRuleRequest request) {
@@ -2037,11 +1977,11 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRuleRequest 请求对象
+     * @param request ShowRuleRequest 请求对象
      * @return AsyncInvoker<ShowRuleRequest, ShowRuleResponse>
      */
     public AsyncInvoker<ShowRuleRequest, ShowRuleResponse> showRuleAsyncInvoker(ShowRuleRequest request) {
-        return new AsyncInvoker<ShowRuleRequest, ShowRuleResponse>(request, CodeArtsPipelineMeta.showRule, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showRule, hcClient);
     }
 
     /**
@@ -2051,7 +1991,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStrategyRequest 请求对象
+     * @param request ShowStrategyRequest 请求对象
      * @return CompletableFuture<ShowStrategyResponse>
      */
     public CompletableFuture<ShowStrategyResponse> showStrategyAsync(ShowStrategyRequest request) {
@@ -2065,13 +2005,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStrategyRequest 请求对象
+     * @param request ShowStrategyRequest 请求对象
      * @return AsyncInvoker<ShowStrategyRequest, ShowStrategyResponse>
      */
     public AsyncInvoker<ShowStrategyRequest, ShowStrategyResponse> showStrategyAsyncInvoker(
         ShowStrategyRequest request) {
-        return new AsyncInvoker<ShowStrategyRequest, ShowStrategyResponse>(request, CodeArtsPipelineMeta.showStrategy,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showStrategy, hcClient);
     }
 
     /**
@@ -2081,7 +2020,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateDetailRequest 请求对象
+     * @param request ShowTemplateDetailRequest 请求对象
      * @return CompletableFuture<ShowTemplateDetailResponse>
      */
     public CompletableFuture<ShowTemplateDetailResponse> showTemplateDetailAsync(ShowTemplateDetailRequest request) {
@@ -2095,13 +2034,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateDetailRequest 请求对象
+     * @param request ShowTemplateDetailRequest 请求对象
      * @return AsyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse>
      */
     public AsyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse> showTemplateDetailAsyncInvoker(
         ShowTemplateDetailRequest request) {
-        return new AsyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse>(request,
-            CodeArtsPipelineMeta.showTemplateDetail, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showTemplateDetail, hcClient);
     }
 
     /**
@@ -2111,7 +2049,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartNewPipelineRequest 请求对象
+     * @param request StartNewPipelineRequest 请求对象
      * @return CompletableFuture<StartNewPipelineResponse>
      */
     public CompletableFuture<StartNewPipelineResponse> startNewPipelineAsync(StartNewPipelineRequest request) {
@@ -2125,13 +2063,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartNewPipelineRequest 请求对象
+     * @param request StartNewPipelineRequest 请求对象
      * @return AsyncInvoker<StartNewPipelineRequest, StartNewPipelineResponse>
      */
     public AsyncInvoker<StartNewPipelineRequest, StartNewPipelineResponse> startNewPipelineAsyncInvoker(
         StartNewPipelineRequest request) {
-        return new AsyncInvoker<StartNewPipelineRequest, StartNewPipelineResponse>(request,
-            CodeArtsPipelineMeta.startNewPipeline, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.startNewPipeline, hcClient);
     }
 
     /**
@@ -2141,7 +2078,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopPipelineNewRequest 请求对象
+     * @param request StopPipelineNewRequest 请求对象
      * @return CompletableFuture<StopPipelineNewResponse>
      */
     public CompletableFuture<StopPipelineNewResponse> stopPipelineNewAsync(StopPipelineNewRequest request) {
@@ -2155,13 +2092,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopPipelineNewRequest 请求对象
+     * @param request StopPipelineNewRequest 请求对象
      * @return AsyncInvoker<StopPipelineNewRequest, StopPipelineNewResponse>
      */
     public AsyncInvoker<StopPipelineNewRequest, StopPipelineNewResponse> stopPipelineNewAsyncInvoker(
         StopPipelineNewRequest request) {
-        return new AsyncInvoker<StopPipelineNewRequest, StopPipelineNewResponse>(request,
-            CodeArtsPipelineMeta.stopPipelineNew, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.stopPipelineNew, hcClient);
     }
 
     /**
@@ -2171,7 +2107,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopPipelineRunRequest 请求对象
+     * @param request StopPipelineRunRequest 请求对象
      * @return CompletableFuture<StopPipelineRunResponse>
      */
     public CompletableFuture<StopPipelineRunResponse> stopPipelineRunAsync(StopPipelineRunRequest request) {
@@ -2185,13 +2121,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopPipelineRunRequest 请求对象
+     * @param request StopPipelineRunRequest 请求对象
      * @return AsyncInvoker<StopPipelineRunRequest, StopPipelineRunResponse>
      */
     public AsyncInvoker<StopPipelineRunRequest, StopPipelineRunResponse> stopPipelineRunAsyncInvoker(
         StopPipelineRunRequest request) {
-        return new AsyncInvoker<StopPipelineRunRequest, StopPipelineRunResponse>(request,
-            CodeArtsPipelineMeta.stopPipelineRun, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.stopPipelineRun, hcClient);
     }
 
     /**
@@ -2201,7 +2136,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchStrategyRequest 请求对象
+     * @param request SwitchStrategyRequest 请求对象
      * @return CompletableFuture<SwitchStrategyResponse>
      */
     public CompletableFuture<SwitchStrategyResponse> switchStrategyAsync(SwitchStrategyRequest request) {
@@ -2215,13 +2150,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchStrategyRequest 请求对象
+     * @param request SwitchStrategyRequest 请求对象
      * @return AsyncInvoker<SwitchStrategyRequest, SwitchStrategyResponse>
      */
     public AsyncInvoker<SwitchStrategyRequest, SwitchStrategyResponse> switchStrategyAsyncInvoker(
         SwitchStrategyRequest request) {
-        return new AsyncInvoker<SwitchStrategyRequest, SwitchStrategyResponse>(request,
-            CodeArtsPipelineMeta.switchStrategy, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.switchStrategy, hcClient);
     }
 
     /**
@@ -2231,7 +2165,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBasicPluginRequest 请求对象
+     * @param request UpdateBasicPluginRequest 请求对象
      * @return CompletableFuture<UpdateBasicPluginResponse>
      */
     public CompletableFuture<UpdateBasicPluginResponse> updateBasicPluginAsync(UpdateBasicPluginRequest request) {
@@ -2245,13 +2179,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBasicPluginRequest 请求对象
+     * @param request UpdateBasicPluginRequest 请求对象
      * @return AsyncInvoker<UpdateBasicPluginRequest, UpdateBasicPluginResponse>
      */
     public AsyncInvoker<UpdateBasicPluginRequest, UpdateBasicPluginResponse> updateBasicPluginAsyncInvoker(
         UpdateBasicPluginRequest request) {
-        return new AsyncInvoker<UpdateBasicPluginRequest, UpdateBasicPluginResponse>(request,
-            CodeArtsPipelineMeta.updateBasicPlugin, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.updateBasicPlugin, hcClient);
     }
 
     /**
@@ -2261,7 +2194,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePipelineGroupRequest 请求对象
+     * @param request UpdatePipelineGroupRequest 请求对象
      * @return CompletableFuture<UpdatePipelineGroupResponse>
      */
     public CompletableFuture<UpdatePipelineGroupResponse> updatePipelineGroupAsync(UpdatePipelineGroupRequest request) {
@@ -2275,13 +2208,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePipelineGroupRequest 请求对象
+     * @param request UpdatePipelineGroupRequest 请求对象
      * @return AsyncInvoker<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse>
      */
     public AsyncInvoker<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse> updatePipelineGroupAsyncInvoker(
         UpdatePipelineGroupRequest request) {
-        return new AsyncInvoker<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse>(request,
-            CodeArtsPipelineMeta.updatePipelineGroup, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.updatePipelineGroup, hcClient);
     }
 
     /**
@@ -2291,7 +2223,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePipelineTemplateRequest 请求对象
+     * @param request UpdatePipelineTemplateRequest 请求对象
      * @return CompletableFuture<UpdatePipelineTemplateResponse>
      */
     public CompletableFuture<UpdatePipelineTemplateResponse> updatePipelineTemplateAsync(
@@ -2306,13 +2238,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePipelineTemplateRequest 请求对象
+     * @param request UpdatePipelineTemplateRequest 请求对象
      * @return AsyncInvoker<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse>
      */
     public AsyncInvoker<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse> updatePipelineTemplateAsyncInvoker(
         UpdatePipelineTemplateRequest request) {
-        return new AsyncInvoker<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse>(request,
-            CodeArtsPipelineMeta.updatePipelineTemplate, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.updatePipelineTemplate, hcClient);
     }
 
     /**
@@ -2322,7 +2253,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginBaseInfoRequest 请求对象
+     * @param request UpdatePluginBaseInfoRequest 请求对象
      * @return CompletableFuture<UpdatePluginBaseInfoResponse>
      */
     public CompletableFuture<UpdatePluginBaseInfoResponse> updatePluginBaseInfoAsync(
@@ -2337,13 +2268,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginBaseInfoRequest 请求对象
+     * @param request UpdatePluginBaseInfoRequest 请求对象
      * @return AsyncInvoker<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse>
      */
     public AsyncInvoker<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse> updatePluginBaseInfoAsyncInvoker(
         UpdatePluginBaseInfoRequest request) {
-        return new AsyncInvoker<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse>(request,
-            CodeArtsPipelineMeta.updatePluginBaseInfo, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.updatePluginBaseInfo, hcClient);
     }
 
     /**
@@ -2353,7 +2283,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginDraftRequest 请求对象
+     * @param request UpdatePluginDraftRequest 请求对象
      * @return CompletableFuture<UpdatePluginDraftResponse>
      */
     public CompletableFuture<UpdatePluginDraftResponse> updatePluginDraftAsync(UpdatePluginDraftRequest request) {
@@ -2367,13 +2297,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginDraftRequest 请求对象
+     * @param request UpdatePluginDraftRequest 请求对象
      * @return AsyncInvoker<UpdatePluginDraftRequest, UpdatePluginDraftResponse>
      */
     public AsyncInvoker<UpdatePluginDraftRequest, UpdatePluginDraftResponse> updatePluginDraftAsyncInvoker(
         UpdatePluginDraftRequest request) {
-        return new AsyncInvoker<UpdatePluginDraftRequest, UpdatePluginDraftResponse>(request,
-            CodeArtsPipelineMeta.updatePluginDraft, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.updatePluginDraft, hcClient);
     }
 
     /**
@@ -2383,7 +2312,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRuleRequest 请求对象
+     * @param request UpdateRuleRequest 请求对象
      * @return CompletableFuture<UpdateRuleResponse>
      */
     public CompletableFuture<UpdateRuleResponse> updateRuleAsync(UpdateRuleRequest request) {
@@ -2397,12 +2326,11 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRuleRequest 请求对象
+     * @param request UpdateRuleRequest 请求对象
      * @return AsyncInvoker<UpdateRuleRequest, UpdateRuleResponse>
      */
     public AsyncInvoker<UpdateRuleRequest, UpdateRuleResponse> updateRuleAsyncInvoker(UpdateRuleRequest request) {
-        return new AsyncInvoker<UpdateRuleRequest, UpdateRuleResponse>(request, CodeArtsPipelineMeta.updateRule,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.updateRule, hcClient);
     }
 
     /**
@@ -2412,7 +2340,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStrategyRequest 请求对象
+     * @param request UpdateStrategyRequest 请求对象
      * @return CompletableFuture<UpdateStrategyResponse>
      */
     public CompletableFuture<UpdateStrategyResponse> updateStrategyAsync(UpdateStrategyRequest request) {
@@ -2426,13 +2354,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStrategyRequest 请求对象
+     * @param request UpdateStrategyRequest 请求对象
      * @return AsyncInvoker<UpdateStrategyRequest, UpdateStrategyResponse>
      */
     public AsyncInvoker<UpdateStrategyRequest, UpdateStrategyResponse> updateStrategyAsyncInvoker(
         UpdateStrategyRequest request) {
-        return new AsyncInvoker<UpdateStrategyRequest, UpdateStrategyResponse>(request,
-            CodeArtsPipelineMeta.updateStrategy, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.updateStrategy, hcClient);
     }
 
     /**
@@ -2442,7 +2369,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadBasicPluginRequest 请求对象
+     * @param request UploadBasicPluginRequest 请求对象
      * @return CompletableFuture<UploadBasicPluginResponse>
      */
     public CompletableFuture<UploadBasicPluginResponse> uploadBasicPluginAsync(UploadBasicPluginRequest request) {
@@ -2456,13 +2383,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadBasicPluginRequest 请求对象
+     * @param request UploadBasicPluginRequest 请求对象
      * @return AsyncInvoker<UploadBasicPluginRequest, UploadBasicPluginResponse>
      */
     public AsyncInvoker<UploadBasicPluginRequest, UploadBasicPluginResponse> uploadBasicPluginAsyncInvoker(
         UploadBasicPluginRequest request) {
-        return new AsyncInvoker<UploadBasicPluginRequest, UploadBasicPluginResponse>(request,
-            CodeArtsPipelineMeta.uploadBasicPlugin, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.uploadBasicPlugin, hcClient);
     }
 
     /**
@@ -2472,7 +2398,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadPluginIconRequest 请求对象
+     * @param request UploadPluginIconRequest 请求对象
      * @return CompletableFuture<UploadPluginIconResponse>
      */
     public CompletableFuture<UploadPluginIconResponse> uploadPluginIconAsync(UploadPluginIconRequest request) {
@@ -2486,13 +2412,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadPluginIconRequest 请求对象
+     * @param request UploadPluginIconRequest 请求对象
      * @return AsyncInvoker<UploadPluginIconRequest, UploadPluginIconResponse>
      */
     public AsyncInvoker<UploadPluginIconRequest, UploadPluginIconResponse> uploadPluginIconAsyncInvoker(
         UploadPluginIconRequest request) {
-        return new AsyncInvoker<UploadPluginIconRequest, UploadPluginIconResponse>(request,
-            CodeArtsPipelineMeta.uploadPluginIcon, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.uploadPluginIcon, hcClient);
     }
 
     /**
@@ -2502,7 +2427,7 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadPublisherIconRequest 请求对象
+     * @param request UploadPublisherIconRequest 请求对象
      * @return CompletableFuture<UploadPublisherIconResponse>
      */
     public CompletableFuture<UploadPublisherIconResponse> uploadPublisherIconAsync(UploadPublisherIconRequest request) {
@@ -2516,13 +2441,12 @@ public class CodeArtsPipelineAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadPublisherIconRequest 请求对象
+     * @param request UploadPublisherIconRequest 请求对象
      * @return AsyncInvoker<UploadPublisherIconRequest, UploadPublisherIconResponse>
      */
     public AsyncInvoker<UploadPublisherIconRequest, UploadPublisherIconResponse> uploadPublisherIconAsyncInvoker(
         UploadPublisherIconRequest request) {
-        return new AsyncInvoker<UploadPublisherIconRequest, UploadPublisherIconResponse>(request,
-            CodeArtsPipelineMeta.uploadPublisherIcon, hcClient);
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.uploadPublisherIcon, hcClient);
     }
 
 }

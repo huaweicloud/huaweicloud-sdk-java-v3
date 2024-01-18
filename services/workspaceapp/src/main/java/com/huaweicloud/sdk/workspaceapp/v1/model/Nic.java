@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 云服务对应的网卡信息
+ * 云服务对应的网卡信息。
  */
 public class Nic {
 
@@ -26,7 +26,7 @@ public class Nic {
     }
 
     /**
-     * IP地址
+     * IP地址。
      * @return ipAddress
      */
     public String getIpAddress() {
@@ -43,7 +43,7 @@ public class Nic {
     }
 
     /**
-     * 网卡对应的子网ID
+     * 网卡对应的子网ID。
      * @return subnetId
      */
     public String getSubnetId() {

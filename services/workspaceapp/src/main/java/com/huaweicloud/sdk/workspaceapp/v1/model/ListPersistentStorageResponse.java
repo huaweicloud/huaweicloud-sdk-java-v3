@@ -30,7 +30,7 @@ public class ListPersistentStorageResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count
@@ -65,7 +65,7 @@ public class ListPersistentStorageResponse extends SdkResponse {
     }
 
     /**
-     * 存储列表
+     * 存储列表。
      * @return items
      */
     public List<PersistentStorage> getItems() {

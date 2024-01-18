@@ -46,7 +46,7 @@ public class ListPublishedAppRequest {
     }
 
     /**
-     * 应用组ID
+     * 应用组ID。
      * @return appGroupId
      */
     public String getAppGroupId() {
@@ -63,7 +63,7 @@ public class ListPublishedAppRequest {
     }
 
     /**
-     * 单次查询的大小[1-100]
+     * 单次查询的大小[1-100]。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -82,7 +82,7 @@ public class ListPublishedAppRequest {
     }
 
     /**
-     * 查询的偏移量
+     * 查询的偏移量。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -101,7 +101,7 @@ public class ListPublishedAppRequest {
     }
 
     /**
-     * 应用名称
+     * 应用名称。
      * @return name
      */
     public String getName() {
@@ -118,7 +118,7 @@ public class ListPublishedAppRequest {
     }
 
     /**
-     * 应用状态正常、禁用(NORMAL、FORBIDDEN)
+     * 应用状态： * `NORMAL` - 正常状态。 * `FORBIDDEN` - 禁用状态。
      * @return state
      */
     public String getState() {
@@ -135,7 +135,7 @@ public class ListPublishedAppRequest {
     }
 
     /**
-     * 应用ID
+     * 应用ID。
      * @return appId
      */
     public String getAppId() {

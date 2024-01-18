@@ -140,7 +140,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataChannelRequest 请求对象
+     * @param request CreateDataChannelRequest 请求对象
      * @return CreateDataChannelResponse
      */
     public CreateDataChannelResponse createDataChannel(CreateDataChannelRequest request) {
@@ -154,13 +154,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataChannelRequest 请求对象
+     * @param request CreateDataChannelRequest 请求对象
      * @return SyncInvoker<CreateDataChannelRequest, CreateDataChannelResponse>
      */
     public SyncInvoker<CreateDataChannelRequest, CreateDataChannelResponse> createDataChannelInvoker(
         CreateDataChannelRequest request) {
-        return new SyncInvoker<CreateDataChannelRequest, CreateDataChannelResponse>(request, DrisMeta.createDataChannel,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.createDataChannel, hcClient);
     }
 
     /**
@@ -170,7 +169,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataChannelRequest 请求对象
+     * @param request DeleteDataChannelRequest 请求对象
      * @return DeleteDataChannelResponse
      */
     public DeleteDataChannelResponse deleteDataChannel(DeleteDataChannelRequest request) {
@@ -184,13 +183,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataChannelRequest 请求对象
+     * @param request DeleteDataChannelRequest 请求对象
      * @return SyncInvoker<DeleteDataChannelRequest, DeleteDataChannelResponse>
      */
     public SyncInvoker<DeleteDataChannelRequest, DeleteDataChannelResponse> deleteDataChannelInvoker(
         DeleteDataChannelRequest request) {
-        return new SyncInvoker<DeleteDataChannelRequest, DeleteDataChannelResponse>(request, DrisMeta.deleteDataChannel,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteDataChannel, hcClient);
     }
 
     /**
@@ -200,7 +198,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataChannelRequest 请求对象
+     * @param request ShowDataChannelRequest 请求对象
      * @return ShowDataChannelResponse
      */
     public ShowDataChannelResponse showDataChannel(ShowDataChannelRequest request) {
@@ -214,13 +212,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataChannelRequest 请求对象
+     * @param request ShowDataChannelRequest 请求对象
      * @return SyncInvoker<ShowDataChannelRequest, ShowDataChannelResponse>
      */
     public SyncInvoker<ShowDataChannelRequest, ShowDataChannelResponse> showDataChannelInvoker(
         ShowDataChannelRequest request) {
-        return new SyncInvoker<ShowDataChannelRequest, ShowDataChannelResponse>(request, DrisMeta.showDataChannel,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showDataChannel, hcClient);
     }
 
     /**
@@ -230,7 +227,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataChannelRequest 请求对象
+     * @param request UpdateDataChannelRequest 请求对象
      * @return UpdateDataChannelResponse
      */
     public UpdateDataChannelResponse updateDataChannel(UpdateDataChannelRequest request) {
@@ -244,13 +241,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataChannelRequest 请求对象
+     * @param request UpdateDataChannelRequest 请求对象
      * @return SyncInvoker<UpdateDataChannelRequest, UpdateDataChannelResponse>
      */
     public SyncInvoker<UpdateDataChannelRequest, UpdateDataChannelResponse> updateDataChannelInvoker(
         UpdateDataChannelRequest request) {
-        return new SyncInvoker<UpdateDataChannelRequest, UpdateDataChannelResponse>(request, DrisMeta.updateDataChannel,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateDataChannel, hcClient);
     }
 
     /**
@@ -260,7 +256,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateV2xEdgeRequest 请求对象
+     * @param request CreateV2xEdgeRequest 请求对象
      * @return CreateV2xEdgeResponse
      */
     public CreateV2xEdgeResponse createV2xEdge(CreateV2xEdgeRequest request) {
@@ -274,11 +270,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateV2xEdgeRequest 请求对象
+     * @param request CreateV2xEdgeRequest 请求对象
      * @return SyncInvoker<CreateV2xEdgeRequest, CreateV2xEdgeResponse>
      */
     public SyncInvoker<CreateV2xEdgeRequest, CreateV2xEdgeResponse> createV2xEdgeInvoker(CreateV2xEdgeRequest request) {
-        return new SyncInvoker<CreateV2xEdgeRequest, CreateV2xEdgeResponse>(request, DrisMeta.createV2xEdge, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.createV2xEdge, hcClient);
     }
 
     /**
@@ -288,7 +284,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteV2XEdgeByV2xEdgeIdRequest 请求对象
+     * @param request DeleteV2XEdgeByV2xEdgeIdRequest 请求对象
      * @return DeleteV2XEdgeByV2xEdgeIdResponse
      */
     public DeleteV2XEdgeByV2xEdgeIdResponse deleteV2XEdgeByV2xEdgeId(DeleteV2XEdgeByV2xEdgeIdRequest request) {
@@ -302,13 +298,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteV2XEdgeByV2xEdgeIdRequest 请求对象
+     * @param request DeleteV2XEdgeByV2xEdgeIdRequest 请求对象
      * @return SyncInvoker<DeleteV2XEdgeByV2xEdgeIdRequest, DeleteV2XEdgeByV2xEdgeIdResponse>
      */
     public SyncInvoker<DeleteV2XEdgeByV2xEdgeIdRequest, DeleteV2XEdgeByV2xEdgeIdResponse> deleteV2XEdgeByV2xEdgeIdInvoker(
         DeleteV2XEdgeByV2xEdgeIdRequest request) {
-        return new SyncInvoker<DeleteV2XEdgeByV2xEdgeIdRequest, DeleteV2XEdgeByV2xEdgeIdResponse>(request,
-            DrisMeta.deleteV2XEdgeByV2xEdgeId, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteV2XEdgeByV2xEdgeId, hcClient);
     }
 
     /**
@@ -318,7 +313,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListV2xEdgesRequest 请求对象
+     * @param request ListV2xEdgesRequest 请求对象
      * @return ListV2xEdgesResponse
      */
     public ListV2xEdgesResponse listV2xEdges(ListV2xEdgesRequest request) {
@@ -332,11 +327,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListV2xEdgesRequest 请求对象
+     * @param request ListV2xEdgesRequest 请求对象
      * @return SyncInvoker<ListV2xEdgesRequest, ListV2xEdgesResponse>
      */
     public SyncInvoker<ListV2xEdgesRequest, ListV2xEdgesResponse> listV2xEdgesInvoker(ListV2xEdgesRequest request) {
-        return new SyncInvoker<ListV2xEdgesRequest, ListV2xEdgesResponse>(request, DrisMeta.listV2xEdges, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.listV2xEdges, hcClient);
     }
 
     /**
@@ -346,7 +341,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentCodeRequest 请求对象
+     * @param request ShowDeploymentCodeRequest 请求对象
      * @return ShowDeploymentCodeResponse
      */
     public ShowDeploymentCodeResponse showDeploymentCode(ShowDeploymentCodeRequest request) {
@@ -360,13 +355,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentCodeRequest 请求对象
+     * @param request ShowDeploymentCodeRequest 请求对象
      * @return SyncInvoker<ShowDeploymentCodeRequest, ShowDeploymentCodeResponse>
      */
     public SyncInvoker<ShowDeploymentCodeRequest, ShowDeploymentCodeResponse> showDeploymentCodeInvoker(
         ShowDeploymentCodeRequest request) {
-        return new SyncInvoker<ShowDeploymentCodeRequest, ShowDeploymentCodeResponse>(request,
-            DrisMeta.showDeploymentCode, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showDeploymentCode, hcClient);
     }
 
     /**
@@ -376,7 +370,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowV2xEdgeDetailRequest 请求对象
+     * @param request ShowV2xEdgeDetailRequest 请求对象
      * @return ShowV2xEdgeDetailResponse
      */
     public ShowV2xEdgeDetailResponse showV2xEdgeDetail(ShowV2xEdgeDetailRequest request) {
@@ -390,13 +384,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowV2xEdgeDetailRequest 请求对象
+     * @param request ShowV2xEdgeDetailRequest 请求对象
      * @return SyncInvoker<ShowV2xEdgeDetailRequest, ShowV2xEdgeDetailResponse>
      */
     public SyncInvoker<ShowV2xEdgeDetailRequest, ShowV2xEdgeDetailResponse> showV2xEdgeDetailInvoker(
         ShowV2xEdgeDetailRequest request) {
-        return new SyncInvoker<ShowV2xEdgeDetailRequest, ShowV2xEdgeDetailResponse>(request, DrisMeta.showV2xEdgeDetail,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showV2xEdgeDetail, hcClient);
     }
 
     /**
@@ -406,7 +399,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateV2xEdgeRequest 请求对象
+     * @param request UpdateV2xEdgeRequest 请求对象
      * @return UpdateV2xEdgeResponse
      */
     public UpdateV2xEdgeResponse updateV2xEdge(UpdateV2xEdgeRequest request) {
@@ -420,11 +413,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateV2xEdgeRequest 请求对象
+     * @param request UpdateV2xEdgeRequest 请求对象
      * @return SyncInvoker<UpdateV2xEdgeRequest, UpdateV2xEdgeResponse>
      */
     public SyncInvoker<UpdateV2xEdgeRequest, UpdateV2xEdgeResponse> updateV2xEdgeInvoker(UpdateV2xEdgeRequest request) {
-        return new SyncInvoker<UpdateV2xEdgeRequest, UpdateV2xEdgeResponse>(request, DrisMeta.updateV2xEdge, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateV2xEdge, hcClient);
     }
 
     /**
@@ -434,7 +427,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddForwardingConfigsRequest 请求对象
+     * @param request AddForwardingConfigsRequest 请求对象
      * @return AddForwardingConfigsResponse
      */
     public AddForwardingConfigsResponse addForwardingConfigs(AddForwardingConfigsRequest request) {
@@ -448,13 +441,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddForwardingConfigsRequest 请求对象
+     * @param request AddForwardingConfigsRequest 请求对象
      * @return SyncInvoker<AddForwardingConfigsRequest, AddForwardingConfigsResponse>
      */
     public SyncInvoker<AddForwardingConfigsRequest, AddForwardingConfigsResponse> addForwardingConfigsInvoker(
         AddForwardingConfigsRequest request) {
-        return new SyncInvoker<AddForwardingConfigsRequest, AddForwardingConfigsResponse>(request,
-            DrisMeta.addForwardingConfigs, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.addForwardingConfigs, hcClient);
     }
 
     /**
@@ -464,7 +456,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteForwardingConfigRequest 请求对象
+     * @param request DeleteForwardingConfigRequest 请求对象
      * @return DeleteForwardingConfigResponse
      */
     public DeleteForwardingConfigResponse deleteForwardingConfig(DeleteForwardingConfigRequest request) {
@@ -478,13 +470,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteForwardingConfigRequest 请求对象
+     * @param request DeleteForwardingConfigRequest 请求对象
      * @return SyncInvoker<DeleteForwardingConfigRequest, DeleteForwardingConfigResponse>
      */
     public SyncInvoker<DeleteForwardingConfigRequest, DeleteForwardingConfigResponse> deleteForwardingConfigInvoker(
         DeleteForwardingConfigRequest request) {
-        return new SyncInvoker<DeleteForwardingConfigRequest, DeleteForwardingConfigResponse>(request,
-            DrisMeta.deleteForwardingConfig, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteForwardingConfig, hcClient);
     }
 
     /**
@@ -494,7 +485,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowForwardingConfigRequest 请求对象
+     * @param request ShowForwardingConfigRequest 请求对象
      * @return ShowForwardingConfigResponse
      */
     public ShowForwardingConfigResponse showForwardingConfig(ShowForwardingConfigRequest request) {
@@ -508,13 +499,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowForwardingConfigRequest 请求对象
+     * @param request ShowForwardingConfigRequest 请求对象
      * @return SyncInvoker<ShowForwardingConfigRequest, ShowForwardingConfigResponse>
      */
     public SyncInvoker<ShowForwardingConfigRequest, ShowForwardingConfigResponse> showForwardingConfigInvoker(
         ShowForwardingConfigRequest request) {
-        return new SyncInvoker<ShowForwardingConfigRequest, ShowForwardingConfigResponse>(request,
-            DrisMeta.showForwardingConfig, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showForwardingConfig, hcClient);
     }
 
     /**
@@ -524,7 +514,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowForwardingConfigsRequest 请求对象
+     * @param request ShowForwardingConfigsRequest 请求对象
      * @return ShowForwardingConfigsResponse
      */
     public ShowForwardingConfigsResponse showForwardingConfigs(ShowForwardingConfigsRequest request) {
@@ -538,13 +528,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowForwardingConfigsRequest 请求对象
+     * @param request ShowForwardingConfigsRequest 请求对象
      * @return SyncInvoker<ShowForwardingConfigsRequest, ShowForwardingConfigsResponse>
      */
     public SyncInvoker<ShowForwardingConfigsRequest, ShowForwardingConfigsResponse> showForwardingConfigsInvoker(
         ShowForwardingConfigsRequest request) {
-        return new SyncInvoker<ShowForwardingConfigsRequest, ShowForwardingConfigsResponse>(request,
-            DrisMeta.showForwardingConfigs, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showForwardingConfigs, hcClient);
     }
 
     /**
@@ -554,7 +543,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateForwardingConfigRequest 请求对象
+     * @param request UpdateForwardingConfigRequest 请求对象
      * @return UpdateForwardingConfigResponse
      */
     public UpdateForwardingConfigResponse updateForwardingConfig(UpdateForwardingConfigRequest request) {
@@ -568,13 +557,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateForwardingConfigRequest 请求对象
+     * @param request UpdateForwardingConfigRequest 请求对象
      * @return SyncInvoker<UpdateForwardingConfigRequest, UpdateForwardingConfigResponse>
      */
     public SyncInvoker<UpdateForwardingConfigRequest, UpdateForwardingConfigResponse> updateForwardingConfigInvoker(
         UpdateForwardingConfigRequest request) {
-        return new SyncInvoker<UpdateForwardingConfigRequest, UpdateForwardingConfigResponse>(request,
-            DrisMeta.updateForwardingConfig, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateForwardingConfig, hcClient);
     }
 
     /**
@@ -584,7 +572,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeFlowsRequest 请求对象
+     * @param request ListEdgeFlowsRequest 请求对象
      * @return ListEdgeFlowsResponse
      */
     public ListEdgeFlowsResponse listEdgeFlows(ListEdgeFlowsRequest request) {
@@ -598,11 +586,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeFlowsRequest 请求对象
+     * @param request ListEdgeFlowsRequest 请求对象
      * @return SyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>
      */
     public SyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse> listEdgeFlowsInvoker(ListEdgeFlowsRequest request) {
-        return new SyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>(request, DrisMeta.listEdgeFlows, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.listEdgeFlows, hcClient);
     }
 
     /**
@@ -612,7 +600,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHistoryTrafficEventsRequest 请求对象
+     * @param request ShowHistoryTrafficEventsRequest 请求对象
      * @return ShowHistoryTrafficEventsResponse
      */
     public ShowHistoryTrafficEventsResponse showHistoryTrafficEvents(ShowHistoryTrafficEventsRequest request) {
@@ -626,13 +614,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHistoryTrafficEventsRequest 请求对象
+     * @param request ShowHistoryTrafficEventsRequest 请求对象
      * @return SyncInvoker<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse>
      */
     public SyncInvoker<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse> showHistoryTrafficEventsInvoker(
         ShowHistoryTrafficEventsRequest request) {
-        return new SyncInvoker<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse>(request,
-            DrisMeta.showHistoryTrafficEvents, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showHistoryTrafficEvents, hcClient);
     }
 
     /**
@@ -642,7 +629,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowIpcsRequest 请求对象
+     * @param request BatchShowIpcsRequest 请求对象
      * @return BatchShowIpcsResponse
      */
     public BatchShowIpcsResponse batchShowIpcs(BatchShowIpcsRequest request) {
@@ -656,11 +643,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowIpcsRequest 请求对象
+     * @param request BatchShowIpcsRequest 请求对象
      * @return SyncInvoker<BatchShowIpcsRequest, BatchShowIpcsResponse>
      */
     public SyncInvoker<BatchShowIpcsRequest, BatchShowIpcsResponse> batchShowIpcsInvoker(BatchShowIpcsRequest request) {
-        return new SyncInvoker<BatchShowIpcsRequest, BatchShowIpcsResponse>(request, DrisMeta.batchShowIpcs, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.batchShowIpcs, hcClient);
     }
 
     /**
@@ -670,7 +657,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpcRequest 请求对象
+     * @param request ShowIpcRequest 请求对象
      * @return ShowIpcResponse
      */
     public ShowIpcResponse showIpc(ShowIpcRequest request) {
@@ -684,11 +671,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpcRequest 请求对象
+     * @param request ShowIpcRequest 请求对象
      * @return SyncInvoker<ShowIpcRequest, ShowIpcResponse>
      */
     public SyncInvoker<ShowIpcRequest, ShowIpcResponse> showIpcInvoker(ShowIpcRequest request) {
-        return new SyncInvoker<ShowIpcRequest, ShowIpcResponse>(request, DrisMeta.showIpc, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showIpc, hcClient);
     }
 
     /**
@@ -698,7 +685,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowRadarsRequest 请求对象
+     * @param request BatchShowRadarsRequest 请求对象
      * @return BatchShowRadarsResponse
      */
     public BatchShowRadarsResponse batchShowRadars(BatchShowRadarsRequest request) {
@@ -712,13 +699,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowRadarsRequest 请求对象
+     * @param request BatchShowRadarsRequest 请求对象
      * @return SyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse>
      */
     public SyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse> batchShowRadarsInvoker(
         BatchShowRadarsRequest request) {
-        return new SyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse>(request, DrisMeta.batchShowRadars,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.batchShowRadars, hcClient);
     }
 
     /**
@@ -728,7 +714,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowRsusRequest 请求对象
+     * @param request BatchShowRsusRequest 请求对象
      * @return BatchShowRsusResponse
      */
     public BatchShowRsusResponse batchShowRsus(BatchShowRsusRequest request) {
@@ -742,11 +728,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowRsusRequest 请求对象
+     * @param request BatchShowRsusRequest 请求对象
      * @return SyncInvoker<BatchShowRsusRequest, BatchShowRsusResponse>
      */
     public SyncInvoker<BatchShowRsusRequest, BatchShowRsusResponse> batchShowRsusInvoker(BatchShowRsusRequest request) {
-        return new SyncInvoker<BatchShowRsusRequest, BatchShowRsusResponse>(request, DrisMeta.batchShowRsus, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.batchShowRsus, hcClient);
     }
 
     /**
@@ -756,7 +742,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRsuRequest 请求对象
+     * @param request CreateRsuRequest 请求对象
      * @return CreateRsuResponse
      */
     public CreateRsuResponse createRsu(CreateRsuRequest request) {
@@ -770,11 +756,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRsuRequest 请求对象
+     * @param request CreateRsuRequest 请求对象
      * @return SyncInvoker<CreateRsuRequest, CreateRsuResponse>
      */
     public SyncInvoker<CreateRsuRequest, CreateRsuResponse> createRsuInvoker(CreateRsuRequest request) {
-        return new SyncInvoker<CreateRsuRequest, CreateRsuResponse>(request, DrisMeta.createRsu, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.createRsu, hcClient);
     }
 
     /**
@@ -784,7 +770,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRsuRequest 请求对象
+     * @param request DeleteRsuRequest 请求对象
      * @return DeleteRsuResponse
      */
     public DeleteRsuResponse deleteRsu(DeleteRsuRequest request) {
@@ -798,11 +784,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRsuRequest 请求对象
+     * @param request DeleteRsuRequest 请求对象
      * @return SyncInvoker<DeleteRsuRequest, DeleteRsuResponse>
      */
     public SyncInvoker<DeleteRsuRequest, DeleteRsuResponse> deleteRsuInvoker(DeleteRsuRequest request) {
-        return new SyncInvoker<DeleteRsuRequest, DeleteRsuResponse>(request, DrisMeta.deleteRsu, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteRsu, hcClient);
     }
 
     /**
@@ -812,7 +798,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRsuRequest 请求对象
+     * @param request UpdateRsuRequest 请求对象
      * @return UpdateRsuResponse
      */
     public UpdateRsuResponse updateRsu(UpdateRsuRequest request) {
@@ -826,11 +812,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRsuRequest 请求对象
+     * @param request UpdateRsuRequest 请求对象
      * @return SyncInvoker<UpdateRsuRequest, UpdateRsuResponse>
      */
     public SyncInvoker<UpdateRsuRequest, UpdateRsuResponse> updateRsuInvoker(UpdateRsuRequest request) {
-        return new SyncInvoker<UpdateRsuRequest, UpdateRsuResponse>(request, DrisMeta.updateRsu, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateRsu, hcClient);
     }
 
     /**
@@ -840,7 +826,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendImmediateEventRequest 请求对象
+     * @param request SendImmediateEventRequest 请求对象
      * @return SendImmediateEventResponse
      */
     public SendImmediateEventResponse sendImmediateEvent(SendImmediateEventRequest request) {
@@ -854,13 +840,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendImmediateEventRequest 请求对象
+     * @param request SendImmediateEventRequest 请求对象
      * @return SyncInvoker<SendImmediateEventRequest, SendImmediateEventResponse>
      */
     public SyncInvoker<SendImmediateEventRequest, SendImmediateEventResponse> sendImmediateEventInvoker(
         SendImmediateEventRequest request) {
-        return new SyncInvoker<SendImmediateEventRequest, SendImmediateEventResponse>(request,
-            DrisMeta.sendImmediateEvent, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.sendImmediateEvent, hcClient);
     }
 
     /**
@@ -870,7 +855,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowTrafficControllersRequest 请求对象
+     * @param request BatchShowTrafficControllersRequest 请求对象
      * @return BatchShowTrafficControllersResponse
      */
     public BatchShowTrafficControllersResponse batchShowTrafficControllers(BatchShowTrafficControllersRequest request) {
@@ -884,13 +869,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowTrafficControllersRequest 请求对象
+     * @param request BatchShowTrafficControllersRequest 请求对象
      * @return SyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse>
      */
     public SyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> batchShowTrafficControllersInvoker(
         BatchShowTrafficControllersRequest request) {
-        return new SyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse>(request,
-            DrisMeta.batchShowTrafficControllers, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.batchShowTrafficControllers, hcClient);
     }
 
     /**
@@ -900,7 +884,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficControllerRequest 请求对象
+     * @param request CreateTrafficControllerRequest 请求对象
      * @return CreateTrafficControllerResponse
      */
     public CreateTrafficControllerResponse createTrafficController(CreateTrafficControllerRequest request) {
@@ -914,13 +898,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficControllerRequest 请求对象
+     * @param request CreateTrafficControllerRequest 请求对象
      * @return SyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse>
      */
     public SyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse> createTrafficControllerInvoker(
         CreateTrafficControllerRequest request) {
-        return new SyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse>(request,
-            DrisMeta.createTrafficController, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.createTrafficController, hcClient);
     }
 
     /**
@@ -930,7 +913,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficControllerRequest 请求对象
+     * @param request DeleteTrafficControllerRequest 请求对象
      * @return DeleteTrafficControllerResponse
      */
     public DeleteTrafficControllerResponse deleteTrafficController(DeleteTrafficControllerRequest request) {
@@ -944,13 +927,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficControllerRequest 请求对象
+     * @param request DeleteTrafficControllerRequest 请求对象
      * @return SyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse>
      */
     public SyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> deleteTrafficControllerInvoker(
         DeleteTrafficControllerRequest request) {
-        return new SyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse>(request,
-            DrisMeta.deleteTrafficController, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteTrafficController, hcClient);
     }
 
     /**
@@ -960,7 +942,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficControllerRequest 请求对象
+     * @param request UpdateTrafficControllerRequest 请求对象
      * @return UpdateTrafficControllerResponse
      */
     public UpdateTrafficControllerResponse updateTrafficController(UpdateTrafficControllerRequest request) {
@@ -974,13 +956,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficControllerRequest 请求对象
+     * @param request UpdateTrafficControllerRequest 请求对象
      * @return SyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse>
      */
     public SyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> updateTrafficControllerInvoker(
         UpdateTrafficControllerRequest request) {
-        return new SyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse>(request,
-            DrisMeta.updateTrafficController, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateTrafficController, hcClient);
     }
 
     /**
@@ -990,7 +971,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowTrafficEventsRequest 请求对象
+     * @param request BatchShowTrafficEventsRequest 请求对象
      * @return BatchShowTrafficEventsResponse
      */
     public BatchShowTrafficEventsResponse batchShowTrafficEvents(BatchShowTrafficEventsRequest request) {
@@ -1004,13 +985,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowTrafficEventsRequest 请求对象
+     * @param request BatchShowTrafficEventsRequest 请求对象
      * @return SyncInvoker<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse>
      */
     public SyncInvoker<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse> batchShowTrafficEventsInvoker(
         BatchShowTrafficEventsRequest request) {
-        return new SyncInvoker<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse>(request,
-            DrisMeta.batchShowTrafficEvents, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.batchShowTrafficEvents, hcClient);
     }
 
     /**
@@ -1020,7 +1000,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficEventRequest 请求对象
+     * @param request CreateTrafficEventRequest 请求对象
      * @return CreateTrafficEventResponse
      */
     public CreateTrafficEventResponse createTrafficEvent(CreateTrafficEventRequest request) {
@@ -1034,13 +1014,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficEventRequest 请求对象
+     * @param request CreateTrafficEventRequest 请求对象
      * @return SyncInvoker<CreateTrafficEventRequest, CreateTrafficEventResponse>
      */
     public SyncInvoker<CreateTrafficEventRequest, CreateTrafficEventResponse> createTrafficEventInvoker(
         CreateTrafficEventRequest request) {
-        return new SyncInvoker<CreateTrafficEventRequest, CreateTrafficEventResponse>(request,
-            DrisMeta.createTrafficEvent, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.createTrafficEvent, hcClient);
     }
 
     /**
@@ -1050,7 +1029,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficEventRequest 请求对象
+     * @param request DeleteTrafficEventRequest 请求对象
      * @return DeleteTrafficEventResponse
      */
     public DeleteTrafficEventResponse deleteTrafficEvent(DeleteTrafficEventRequest request) {
@@ -1064,13 +1043,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficEventRequest 请求对象
+     * @param request DeleteTrafficEventRequest 请求对象
      * @return SyncInvoker<DeleteTrafficEventRequest, DeleteTrafficEventResponse>
      */
     public SyncInvoker<DeleteTrafficEventRequest, DeleteTrafficEventResponse> deleteTrafficEventInvoker(
         DeleteTrafficEventRequest request) {
-        return new SyncInvoker<DeleteTrafficEventRequest, DeleteTrafficEventResponse>(request,
-            DrisMeta.deleteTrafficEvent, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteTrafficEvent, hcClient);
     }
 
     /**
@@ -1080,7 +1058,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrafficEventRequest 请求对象
+     * @param request ShowTrafficEventRequest 请求对象
      * @return ShowTrafficEventResponse
      */
     public ShowTrafficEventResponse showTrafficEvent(ShowTrafficEventRequest request) {
@@ -1094,13 +1072,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrafficEventRequest 请求对象
+     * @param request ShowTrafficEventRequest 请求对象
      * @return SyncInvoker<ShowTrafficEventRequest, ShowTrafficEventResponse>
      */
     public SyncInvoker<ShowTrafficEventRequest, ShowTrafficEventResponse> showTrafficEventInvoker(
         ShowTrafficEventRequest request) {
-        return new SyncInvoker<ShowTrafficEventRequest, ShowTrafficEventResponse>(request, DrisMeta.showTrafficEvent,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showTrafficEvent, hcClient);
     }
 
     /**
@@ -1110,7 +1087,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficEventRequest 请求对象
+     * @param request UpdateTrafficEventRequest 请求对象
      * @return UpdateTrafficEventResponse
      */
     public UpdateTrafficEventResponse updateTrafficEvent(UpdateTrafficEventRequest request) {
@@ -1124,13 +1101,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficEventRequest 请求对象
+     * @param request UpdateTrafficEventRequest 请求对象
      * @return SyncInvoker<UpdateTrafficEventRequest, UpdateTrafficEventResponse>
      */
     public SyncInvoker<UpdateTrafficEventRequest, UpdateTrafficEventResponse> updateTrafficEventInvoker(
         UpdateTrafficEventRequest request) {
-        return new SyncInvoker<UpdateTrafficEventRequest, UpdateTrafficEventResponse>(request,
-            DrisMeta.updateTrafficEvent, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateTrafficEvent, hcClient);
     }
 
     /**
@@ -1150,7 +1126,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateV2xEdgeAppRequest 请求对象
+     * @param request CreateV2xEdgeAppRequest 请求对象
      * @return CreateV2xEdgeAppResponse
      */
     public CreateV2xEdgeAppResponse createV2xEdgeApp(CreateV2xEdgeAppRequest request) {
@@ -1174,13 +1150,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateV2xEdgeAppRequest 请求对象
+     * @param request CreateV2xEdgeAppRequest 请求对象
      * @return SyncInvoker<CreateV2xEdgeAppRequest, CreateV2xEdgeAppResponse>
      */
     public SyncInvoker<CreateV2xEdgeAppRequest, CreateV2xEdgeAppResponse> createV2xEdgeAppInvoker(
         CreateV2xEdgeAppRequest request) {
-        return new SyncInvoker<CreateV2xEdgeAppRequest, CreateV2xEdgeAppResponse>(request, DrisMeta.createV2xEdgeApp,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.createV2xEdgeApp, hcClient);
     }
 
     /**
@@ -1190,7 +1165,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteV2XEdgeAppByEdgeAppIdRequest 请求对象
+     * @param request DeleteV2XEdgeAppByEdgeAppIdRequest 请求对象
      * @return DeleteV2XEdgeAppByEdgeAppIdResponse
      */
     public DeleteV2XEdgeAppByEdgeAppIdResponse deleteV2XEdgeAppByEdgeAppId(DeleteV2XEdgeAppByEdgeAppIdRequest request) {
@@ -1204,13 +1179,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteV2XEdgeAppByEdgeAppIdRequest 请求对象
+     * @param request DeleteV2XEdgeAppByEdgeAppIdRequest 请求对象
      * @return SyncInvoker<DeleteV2XEdgeAppByEdgeAppIdRequest, DeleteV2XEdgeAppByEdgeAppIdResponse>
      */
     public SyncInvoker<DeleteV2XEdgeAppByEdgeAppIdRequest, DeleteV2XEdgeAppByEdgeAppIdResponse> deleteV2XEdgeAppByEdgeAppIdInvoker(
         DeleteV2XEdgeAppByEdgeAppIdRequest request) {
-        return new SyncInvoker<DeleteV2XEdgeAppByEdgeAppIdRequest, DeleteV2XEdgeAppByEdgeAppIdResponse>(request,
-            DrisMeta.deleteV2XEdgeAppByEdgeAppId, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteV2XEdgeAppByEdgeAppId, hcClient);
     }
 
     /**
@@ -1220,7 +1194,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListV2xEdgeAppRequest 请求对象
+     * @param request ListV2xEdgeAppRequest 请求对象
      * @return ListV2xEdgeAppResponse
      */
     public ListV2xEdgeAppResponse listV2xEdgeApp(ListV2xEdgeAppRequest request) {
@@ -1234,13 +1208,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListV2xEdgeAppRequest 请求对象
+     * @param request ListV2xEdgeAppRequest 请求对象
      * @return SyncInvoker<ListV2xEdgeAppRequest, ListV2xEdgeAppResponse>
      */
     public SyncInvoker<ListV2xEdgeAppRequest, ListV2xEdgeAppResponse> listV2xEdgeAppInvoker(
         ListV2xEdgeAppRequest request) {
-        return new SyncInvoker<ListV2xEdgeAppRequest, ListV2xEdgeAppResponse>(request, DrisMeta.listV2xEdgeApp,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.listV2xEdgeApp, hcClient);
     }
 
     /**
@@ -1250,7 +1223,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowV2XEdgeAppDetailByEdgeAppIdRequest 请求对象
+     * @param request ShowV2XEdgeAppDetailByEdgeAppIdRequest 请求对象
      * @return ShowV2XEdgeAppDetailByEdgeAppIdResponse
      */
     public ShowV2XEdgeAppDetailByEdgeAppIdResponse showV2XEdgeAppDetailByEdgeAppId(
@@ -1265,13 +1238,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowV2XEdgeAppDetailByEdgeAppIdRequest 请求对象
+     * @param request ShowV2XEdgeAppDetailByEdgeAppIdRequest 请求对象
      * @return SyncInvoker<ShowV2XEdgeAppDetailByEdgeAppIdRequest, ShowV2XEdgeAppDetailByEdgeAppIdResponse>
      */
     public SyncInvoker<ShowV2XEdgeAppDetailByEdgeAppIdRequest, ShowV2XEdgeAppDetailByEdgeAppIdResponse> showV2XEdgeAppDetailByEdgeAppIdInvoker(
         ShowV2XEdgeAppDetailByEdgeAppIdRequest request) {
-        return new SyncInvoker<ShowV2XEdgeAppDetailByEdgeAppIdRequest, ShowV2XEdgeAppDetailByEdgeAppIdResponse>(request,
-            DrisMeta.showV2XEdgeAppDetailByEdgeAppId, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showV2XEdgeAppDetailByEdgeAppId, hcClient);
     }
 
     /**
@@ -1291,7 +1263,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateV2xEdgeAppRequest 请求对象
+     * @param request UpdateV2xEdgeAppRequest 请求对象
      * @return UpdateV2xEdgeAppResponse
      */
     public UpdateV2xEdgeAppResponse updateV2xEdgeApp(UpdateV2xEdgeAppRequest request) {
@@ -1315,13 +1287,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateV2xEdgeAppRequest 请求对象
+     * @param request UpdateV2xEdgeAppRequest 请求对象
      * @return SyncInvoker<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse>
      */
     public SyncInvoker<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse> updateV2xEdgeAppInvoker(
         UpdateV2xEdgeAppRequest request) {
-        return new SyncInvoker<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse>(request, DrisMeta.updateV2xEdgeApp,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateV2xEdgeApp, hcClient);
     }
 
     /**
@@ -1331,7 +1302,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowVehiclesRequest 请求对象
+     * @param request BatchShowVehiclesRequest 请求对象
      * @return BatchShowVehiclesResponse
      */
     public BatchShowVehiclesResponse batchShowVehicles(BatchShowVehiclesRequest request) {
@@ -1345,13 +1316,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowVehiclesRequest 请求对象
+     * @param request BatchShowVehiclesRequest 请求对象
      * @return SyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse>
      */
     public SyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse> batchShowVehiclesInvoker(
         BatchShowVehiclesRequest request) {
-        return new SyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse>(request, DrisMeta.batchShowVehicles,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.batchShowVehicles, hcClient);
     }
 
     /**
@@ -1361,7 +1331,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVehicleRequest 请求对象
+     * @param request CreateVehicleRequest 请求对象
      * @return CreateVehicleResponse
      */
     public CreateVehicleResponse createVehicle(CreateVehicleRequest request) {
@@ -1375,11 +1345,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVehicleRequest 请求对象
+     * @param request CreateVehicleRequest 请求对象
      * @return SyncInvoker<CreateVehicleRequest, CreateVehicleResponse>
      */
     public SyncInvoker<CreateVehicleRequest, CreateVehicleResponse> createVehicleInvoker(CreateVehicleRequest request) {
-        return new SyncInvoker<CreateVehicleRequest, CreateVehicleResponse>(request, DrisMeta.createVehicle, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.createVehicle, hcClient);
     }
 
     /**
@@ -1389,7 +1359,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVehicleRequest 请求对象
+     * @param request DeleteVehicleRequest 请求对象
      * @return DeleteVehicleResponse
      */
     public DeleteVehicleResponse deleteVehicle(DeleteVehicleRequest request) {
@@ -1403,11 +1373,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVehicleRequest 请求对象
+     * @param request DeleteVehicleRequest 请求对象
      * @return SyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse>
      */
     public SyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse> deleteVehicleInvoker(DeleteVehicleRequest request) {
-        return new SyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse>(request, DrisMeta.deleteVehicle, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteVehicle, hcClient);
     }
 
     /**
@@ -1417,7 +1387,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVehicleRequest 请求对象
+     * @param request UpdateVehicleRequest 请求对象
      * @return UpdateVehicleResponse
      */
     public UpdateVehicleResponse updateVehicle(UpdateVehicleRequest request) {
@@ -1431,11 +1401,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVehicleRequest 请求对象
+     * @param request UpdateVehicleRequest 请求对象
      * @return SyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse>
      */
     public SyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse> updateVehicleInvoker(UpdateVehicleRequest request) {
-        return new SyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse>(request, DrisMeta.updateVehicle, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateVehicle, hcClient);
     }
 
     /**
@@ -1445,7 +1415,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowEdgeAppsRequest 请求对象
+     * @param request BatchShowEdgeAppsRequest 请求对象
      * @return BatchShowEdgeAppsResponse
      */
     public BatchShowEdgeAppsResponse batchShowEdgeApps(BatchShowEdgeAppsRequest request) {
@@ -1459,13 +1429,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowEdgeAppsRequest 请求对象
+     * @param request BatchShowEdgeAppsRequest 请求对象
      * @return SyncInvoker<BatchShowEdgeAppsRequest, BatchShowEdgeAppsResponse>
      */
     public SyncInvoker<BatchShowEdgeAppsRequest, BatchShowEdgeAppsResponse> batchShowEdgeAppsInvoker(
         BatchShowEdgeAppsRequest request) {
-        return new SyncInvoker<BatchShowEdgeAppsRequest, BatchShowEdgeAppsResponse>(request, DrisMeta.batchShowEdgeApps,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.batchShowEdgeApps, hcClient);
     }
 
     /**
@@ -1475,7 +1444,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeAppRequest 请求对象
+     * @param request CreateEdgeAppRequest 请求对象
      * @return CreateEdgeAppResponse
      */
     public CreateEdgeAppResponse createEdgeApp(CreateEdgeAppRequest request) {
@@ -1489,11 +1458,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeAppRequest 请求对象
+     * @param request CreateEdgeAppRequest 请求对象
      * @return SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>
      */
     public SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse> createEdgeAppInvoker(CreateEdgeAppRequest request) {
-        return new SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>(request, DrisMeta.createEdgeApp, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.createEdgeApp, hcClient);
     }
 
     /**
@@ -1503,7 +1472,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeAppRequest 请求对象
+     * @param request DeleteEdgeAppRequest 请求对象
      * @return DeleteEdgeAppResponse
      */
     public DeleteEdgeAppResponse deleteEdgeApp(DeleteEdgeAppRequest request) {
@@ -1517,11 +1486,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeAppRequest 请求对象
+     * @param request DeleteEdgeAppRequest 请求对象
      * @return SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>
      */
     public SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse> deleteEdgeAppInvoker(DeleteEdgeAppRequest request) {
-        return new SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>(request, DrisMeta.deleteEdgeApp, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteEdgeApp, hcClient);
     }
 
     /**
@@ -1531,7 +1500,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeAppRequest 请求对象
+     * @param request UpdateEdgeAppRequest 请求对象
      * @return UpdateEdgeAppResponse
      */
     public UpdateEdgeAppResponse updateEdgeApp(UpdateEdgeAppRequest request) {
@@ -1545,11 +1514,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeAppRequest 请求对象
+     * @param request UpdateEdgeAppRequest 请求对象
      * @return SyncInvoker<UpdateEdgeAppRequest, UpdateEdgeAppResponse>
      */
     public SyncInvoker<UpdateEdgeAppRequest, UpdateEdgeAppResponse> updateEdgeAppInvoker(UpdateEdgeAppRequest request) {
-        return new SyncInvoker<UpdateEdgeAppRequest, UpdateEdgeAppResponse>(request, DrisMeta.updateEdgeApp, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateEdgeApp, hcClient);
     }
 
     /**
@@ -1559,7 +1528,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowEdgeAppVersionsRequest 请求对象
+     * @param request BatchShowEdgeAppVersionsRequest 请求对象
      * @return BatchShowEdgeAppVersionsResponse
      */
     public BatchShowEdgeAppVersionsResponse batchShowEdgeAppVersions(BatchShowEdgeAppVersionsRequest request) {
@@ -1573,13 +1542,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowEdgeAppVersionsRequest 请求对象
+     * @param request BatchShowEdgeAppVersionsRequest 请求对象
      * @return SyncInvoker<BatchShowEdgeAppVersionsRequest, BatchShowEdgeAppVersionsResponse>
      */
     public SyncInvoker<BatchShowEdgeAppVersionsRequest, BatchShowEdgeAppVersionsResponse> batchShowEdgeAppVersionsInvoker(
         BatchShowEdgeAppVersionsRequest request) {
-        return new SyncInvoker<BatchShowEdgeAppVersionsRequest, BatchShowEdgeAppVersionsResponse>(request,
-            DrisMeta.batchShowEdgeAppVersions, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.batchShowEdgeAppVersions, hcClient);
     }
 
     /**
@@ -1589,7 +1557,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeApplicationVersionRequest 请求对象
+     * @param request CreateEdgeApplicationVersionRequest 请求对象
      * @return CreateEdgeApplicationVersionResponse
      */
     public CreateEdgeApplicationVersionResponse createEdgeApplicationVersion(
@@ -1604,13 +1572,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeApplicationVersionRequest 请求对象
+     * @param request CreateEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>
      */
     public SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> createEdgeApplicationVersionInvoker(
         CreateEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>(request,
-            DrisMeta.createEdgeApplicationVersion, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.createEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -1620,7 +1587,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeApplicationVersionRequest 请求对象
+     * @param request DeleteEdgeApplicationVersionRequest 请求对象
      * @return DeleteEdgeApplicationVersionResponse
      */
     public DeleteEdgeApplicationVersionResponse deleteEdgeApplicationVersion(
@@ -1635,13 +1602,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeApplicationVersionRequest 请求对象
+     * @param request DeleteEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>
      */
     public SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersionInvoker(
         DeleteEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>(request,
-            DrisMeta.deleteEdgeApplicationVersion, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -1651,7 +1617,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeApplicationVersionRequest 请求对象
+     * @param request ShowEdgeApplicationVersionRequest 请求对象
      * @return ShowEdgeApplicationVersionResponse
      */
     public ShowEdgeApplicationVersionResponse showEdgeApplicationVersion(ShowEdgeApplicationVersionRequest request) {
@@ -1665,13 +1631,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeApplicationVersionRequest 请求对象
+     * @param request ShowEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>
      */
     public SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> showEdgeApplicationVersionInvoker(
         ShowEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>(request,
-            DrisMeta.showEdgeApplicationVersion, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -1681,7 +1646,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionRequest 请求对象
      * @return UpdateEdgeApplicationVersionResponse
      */
     public UpdateEdgeApplicationVersionResponse updateEdgeApplicationVersion(
@@ -1696,13 +1661,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>
      */
     public SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersionInvoker(
         UpdateEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>(request,
-            DrisMeta.updateEdgeApplicationVersion, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -1712,7 +1676,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionStateRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return UpdateEdgeApplicationVersionStateResponse
      */
     public UpdateEdgeApplicationVersionStateResponse updateEdgeApplicationVersionState(
@@ -1727,13 +1691,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionStateRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>
      */
     public SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionStateInvoker(
         UpdateEdgeApplicationVersionStateRequest request) {
-        return new SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>(
-            request, DrisMeta.updateEdgeApplicationVersionState, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateEdgeApplicationVersionState, hcClient);
     }
 
     /**
@@ -1743,7 +1706,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRsuModelRequest 请求对象
+     * @param request CreateRsuModelRequest 请求对象
      * @return CreateRsuModelResponse
      */
     public CreateRsuModelResponse createRsuModel(CreateRsuModelRequest request) {
@@ -1757,13 +1720,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRsuModelRequest 请求对象
+     * @param request CreateRsuModelRequest 请求对象
      * @return SyncInvoker<CreateRsuModelRequest, CreateRsuModelResponse>
      */
     public SyncInvoker<CreateRsuModelRequest, CreateRsuModelResponse> createRsuModelInvoker(
         CreateRsuModelRequest request) {
-        return new SyncInvoker<CreateRsuModelRequest, CreateRsuModelResponse>(request, DrisMeta.createRsuModel,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.createRsuModel, hcClient);
     }
 
     /**
@@ -1773,7 +1735,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRsuModelRequest 请求对象
+     * @param request DeleteRsuModelRequest 请求对象
      * @return DeleteRsuModelResponse
      */
     public DeleteRsuModelResponse deleteRsuModel(DeleteRsuModelRequest request) {
@@ -1787,13 +1749,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRsuModelRequest 请求对象
+     * @param request DeleteRsuModelRequest 请求对象
      * @return SyncInvoker<DeleteRsuModelRequest, DeleteRsuModelResponse>
      */
     public SyncInvoker<DeleteRsuModelRequest, DeleteRsuModelResponse> deleteRsuModelInvoker(
         DeleteRsuModelRequest request) {
-        return new SyncInvoker<DeleteRsuModelRequest, DeleteRsuModelResponse>(request, DrisMeta.deleteRsuModel,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.deleteRsuModel, hcClient);
     }
 
     /**
@@ -1803,7 +1764,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRsuModelsRequest 请求对象
+     * @param request ListRsuModelsRequest 请求对象
      * @return ListRsuModelsResponse
      */
     public ListRsuModelsResponse listRsuModels(ListRsuModelsRequest request) {
@@ -1817,11 +1778,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRsuModelsRequest 请求对象
+     * @param request ListRsuModelsRequest 请求对象
      * @return SyncInvoker<ListRsuModelsRequest, ListRsuModelsResponse>
      */
     public SyncInvoker<ListRsuModelsRequest, ListRsuModelsResponse> listRsuModelsInvoker(ListRsuModelsRequest request) {
-        return new SyncInvoker<ListRsuModelsRequest, ListRsuModelsResponse>(request, DrisMeta.listRsuModels, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.listRsuModels, hcClient);
     }
 
     /**
@@ -1831,7 +1792,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRsuModelRequest 请求对象
+     * @param request ShowRsuModelRequest 请求对象
      * @return ShowRsuModelResponse
      */
     public ShowRsuModelResponse showRsuModel(ShowRsuModelRequest request) {
@@ -1845,11 +1806,11 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRsuModelRequest 请求对象
+     * @param request ShowRsuModelRequest 请求对象
      * @return SyncInvoker<ShowRsuModelRequest, ShowRsuModelResponse>
      */
     public SyncInvoker<ShowRsuModelRequest, ShowRsuModelResponse> showRsuModelInvoker(ShowRsuModelRequest request) {
-        return new SyncInvoker<ShowRsuModelRequest, ShowRsuModelResponse>(request, DrisMeta.showRsuModel, hcClient);
+        return new SyncInvoker<>(request, DrisMeta.showRsuModel, hcClient);
     }
 
     /**
@@ -1859,7 +1820,7 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRsuModelRequest 请求对象
+     * @param request UpdateRsuModelRequest 请求对象
      * @return UpdateRsuModelResponse
      */
     public UpdateRsuModelResponse updateRsuModel(UpdateRsuModelRequest request) {
@@ -1873,13 +1834,12 @@ public class DrisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRsuModelRequest 请求对象
+     * @param request UpdateRsuModelRequest 请求对象
      * @return SyncInvoker<UpdateRsuModelRequest, UpdateRsuModelResponse>
      */
     public SyncInvoker<UpdateRsuModelRequest, UpdateRsuModelResponse> updateRsuModelInvoker(
         UpdateRsuModelRequest request) {
-        return new SyncInvoker<UpdateRsuModelRequest, UpdateRsuModelResponse>(request, DrisMeta.updateRsuModel,
-            hcClient);
+        return new SyncInvoker<>(request, DrisMeta.updateRsuModel, hcClient);
     }
 
 }

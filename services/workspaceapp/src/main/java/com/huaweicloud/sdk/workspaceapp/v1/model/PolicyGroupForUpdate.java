@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改的策略组详情
+ * 修改的策略组详情。
  */
 public class PolicyGroupForUpdate {
 
@@ -44,7 +44,7 @@ public class PolicyGroupForUpdate {
     }
 
     /**
-     * 策略组名称，名称需要满足如下规则 1. 由英文、数字或者下划线组成，不能有空格 2. 字符长度范围1-55
+     * 策略组名称，名称需要满足如下规则： 1. 由英文、数字或者下划线组成，不能有空格。 2. 字符长度范围1-55。
      * @return policyGroupName
      */
     public String getPolicyGroupName() {

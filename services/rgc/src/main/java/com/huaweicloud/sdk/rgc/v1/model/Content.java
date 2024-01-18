@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * policy content。
+ * 控制策略内容。
  */
 public class Content {
 

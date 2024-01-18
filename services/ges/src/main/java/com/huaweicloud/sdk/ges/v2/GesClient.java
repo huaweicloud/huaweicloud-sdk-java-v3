@@ -88,7 +88,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachEip2Request 请求对象
+     * @param request AttachEip2Request 请求对象
      * @return AttachEip2Response
      */
     public AttachEip2Response attachEip2(AttachEip2Request request) {
@@ -102,11 +102,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachEip2Request 请求对象
+     * @param request AttachEip2Request 请求对象
      * @return SyncInvoker<AttachEip2Request, AttachEip2Response>
      */
     public SyncInvoker<AttachEip2Request, AttachEip2Response> attachEip2Invoker(AttachEip2Request request) {
-        return new SyncInvoker<AttachEip2Request, AttachEip2Response>(request, GesMeta.attachEip2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.attachEip2, hcClient);
     }
 
     /**
@@ -116,7 +116,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ClearGraph2Request 请求对象
+     * @param request ClearGraph2Request 请求对象
      * @return ClearGraph2Response
      */
     public ClearGraph2Response clearGraph2(ClearGraph2Request request) {
@@ -130,11 +130,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ClearGraph2Request 请求对象
+     * @param request ClearGraph2Request 请求对象
      * @return SyncInvoker<ClearGraph2Request, ClearGraph2Response>
      */
     public SyncInvoker<ClearGraph2Request, ClearGraph2Response> clearGraph2Invoker(ClearGraph2Request request) {
-        return new SyncInvoker<ClearGraph2Request, ClearGraph2Response>(request, GesMeta.clearGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.clearGraph2, hcClient);
     }
 
     /**
@@ -144,7 +144,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackup2Request 请求对象
+     * @param request CreateBackup2Request 请求对象
      * @return CreateBackup2Response
      */
     public CreateBackup2Response createBackup2(CreateBackup2Request request) {
@@ -158,11 +158,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackup2Request 请求对象
+     * @param request CreateBackup2Request 请求对象
      * @return SyncInvoker<CreateBackup2Request, CreateBackup2Response>
      */
     public SyncInvoker<CreateBackup2Request, CreateBackup2Response> createBackup2Invoker(CreateBackup2Request request) {
-        return new SyncInvoker<CreateBackup2Request, CreateBackup2Response>(request, GesMeta.createBackup2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.createBackup2, hcClient);
     }
 
     /**
@@ -172,7 +172,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGraph2Request 请求对象
+     * @param request CreateGraph2Request 请求对象
      * @return CreateGraph2Response
      */
     public CreateGraph2Response createGraph2(CreateGraph2Request request) {
@@ -186,11 +186,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGraph2Request 请求对象
+     * @param request CreateGraph2Request 请求对象
      * @return SyncInvoker<CreateGraph2Request, CreateGraph2Response>
      */
     public SyncInvoker<CreateGraph2Request, CreateGraph2Response> createGraph2Invoker(CreateGraph2Request request) {
-        return new SyncInvoker<CreateGraph2Request, CreateGraph2Response>(request, GesMeta.createGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.createGraph2, hcClient);
     }
 
     /**
@@ -200,7 +200,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMetadata2Request 请求对象
+     * @param request CreateMetadata2Request 请求对象
      * @return CreateMetadata2Response
      */
     public CreateMetadata2Response createMetadata2(CreateMetadata2Request request) {
@@ -214,13 +214,12 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMetadata2Request 请求对象
+     * @param request CreateMetadata2Request 请求对象
      * @return SyncInvoker<CreateMetadata2Request, CreateMetadata2Response>
      */
     public SyncInvoker<CreateMetadata2Request, CreateMetadata2Response> createMetadata2Invoker(
         CreateMetadata2Request request) {
-        return new SyncInvoker<CreateMetadata2Request, CreateMetadata2Response>(request, GesMeta.createMetadata2,
-            hcClient);
+        return new SyncInvoker<>(request, GesMeta.createMetadata2, hcClient);
     }
 
     /**
@@ -230,7 +229,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackup2Request 请求对象
+     * @param request DeleteBackup2Request 请求对象
      * @return DeleteBackup2Response
      */
     public DeleteBackup2Response deleteBackup2(DeleteBackup2Request request) {
@@ -244,11 +243,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackup2Request 请求对象
+     * @param request DeleteBackup2Request 请求对象
      * @return SyncInvoker<DeleteBackup2Request, DeleteBackup2Response>
      */
     public SyncInvoker<DeleteBackup2Request, DeleteBackup2Response> deleteBackup2Invoker(DeleteBackup2Request request) {
-        return new SyncInvoker<DeleteBackup2Request, DeleteBackup2Response>(request, GesMeta.deleteBackup2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.deleteBackup2, hcClient);
     }
 
     /**
@@ -258,7 +257,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGraph2Request 请求对象
+     * @param request DeleteGraph2Request 请求对象
      * @return DeleteGraph2Response
      */
     public DeleteGraph2Response deleteGraph2(DeleteGraph2Request request) {
@@ -272,11 +271,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGraph2Request 请求对象
+     * @param request DeleteGraph2Request 请求对象
      * @return SyncInvoker<DeleteGraph2Request, DeleteGraph2Response>
      */
     public SyncInvoker<DeleteGraph2Request, DeleteGraph2Response> deleteGraph2Invoker(DeleteGraph2Request request) {
-        return new SyncInvoker<DeleteGraph2Request, DeleteGraph2Response>(request, GesMeta.deleteGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.deleteGraph2, hcClient);
     }
 
     /**
@@ -286,7 +285,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMetadata2Request 请求对象
+     * @param request DeleteMetadata2Request 请求对象
      * @return DeleteMetadata2Response
      */
     public DeleteMetadata2Response deleteMetadata2(DeleteMetadata2Request request) {
@@ -300,13 +299,12 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMetadata2Request 请求对象
+     * @param request DeleteMetadata2Request 请求对象
      * @return SyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response>
      */
     public SyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response> deleteMetadata2Invoker(
         DeleteMetadata2Request request) {
-        return new SyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response>(request, GesMeta.deleteMetadata2,
-            hcClient);
+        return new SyncInvoker<>(request, GesMeta.deleteMetadata2, hcClient);
     }
 
     /**
@@ -316,7 +314,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachEip2Request 请求对象
+     * @param request DetachEip2Request 请求对象
      * @return DetachEip2Response
      */
     public DetachEip2Response detachEip2(DetachEip2Request request) {
@@ -330,11 +328,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachEip2Request 请求对象
+     * @param request DetachEip2Request 请求对象
      * @return SyncInvoker<DetachEip2Request, DetachEip2Response>
      */
     public SyncInvoker<DetachEip2Request, DetachEip2Response> detachEip2Invoker(DetachEip2Request request) {
-        return new SyncInvoker<DetachEip2Request, DetachEip2Response>(request, GesMeta.detachEip2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.detachEip2, hcClient);
     }
 
     /**
@@ -347,7 +345,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandGraph2Request 请求对象
+     * @param request ExpandGraph2Request 请求对象
      * @return ExpandGraph2Response
      */
     public ExpandGraph2Response expandGraph2(ExpandGraph2Request request) {
@@ -364,11 +362,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandGraph2Request 请求对象
+     * @param request ExpandGraph2Request 请求对象
      * @return SyncInvoker<ExpandGraph2Request, ExpandGraph2Response>
      */
     public SyncInvoker<ExpandGraph2Request, ExpandGraph2Response> expandGraph2Invoker(ExpandGraph2Request request) {
-        return new SyncInvoker<ExpandGraph2Request, ExpandGraph2Response>(request, GesMeta.expandGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.expandGraph2, hcClient);
     }
 
     /**
@@ -378,7 +376,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportBackup2Request 请求对象
+     * @param request ExportBackup2Request 请求对象
      * @return ExportBackup2Response
      */
     public ExportBackup2Response exportBackup2(ExportBackup2Request request) {
@@ -392,11 +390,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportBackup2Request 请求对象
+     * @param request ExportBackup2Request 请求对象
      * @return SyncInvoker<ExportBackup2Request, ExportBackup2Response>
      */
     public SyncInvoker<ExportBackup2Request, ExportBackup2Response> exportBackup2Invoker(ExportBackup2Request request) {
-        return new SyncInvoker<ExportBackup2Request, ExportBackup2Response>(request, GesMeta.exportBackup2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.exportBackup2, hcClient);
     }
 
     /**
@@ -406,7 +404,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportGraph2Request 请求对象
+     * @param request ExportGraph2Request 请求对象
      * @return ExportGraph2Response
      */
     public ExportGraph2Response exportGraph2(ExportGraph2Request request) {
@@ -420,11 +418,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportGraph2Request 请求对象
+     * @param request ExportGraph2Request 请求对象
      * @return SyncInvoker<ExportGraph2Request, ExportGraph2Response>
      */
     public SyncInvoker<ExportGraph2Request, ExportGraph2Response> exportGraph2Invoker(ExportGraph2Request request) {
-        return new SyncInvoker<ExportGraph2Request, ExportGraph2Response>(request, GesMeta.exportGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.exportGraph2, hcClient);
     }
 
     /**
@@ -434,7 +432,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportBackup2Request 请求对象
+     * @param request ImportBackup2Request 请求对象
      * @return ImportBackup2Response
      */
     public ImportBackup2Response importBackup2(ImportBackup2Request request) {
@@ -448,11 +446,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportBackup2Request 请求对象
+     * @param request ImportBackup2Request 请求对象
      * @return SyncInvoker<ImportBackup2Request, ImportBackup2Response>
      */
     public SyncInvoker<ImportBackup2Request, ImportBackup2Response> importBackup2Invoker(ImportBackup2Request request) {
-        return new SyncInvoker<ImportBackup2Request, ImportBackup2Response>(request, GesMeta.importBackup2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.importBackup2, hcClient);
     }
 
     /**
@@ -463,7 +461,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportGraph2Request 请求对象
+     * @param request ImportGraph2Request 请求对象
      * @return ImportGraph2Response
      */
     public ImportGraph2Response importGraph2(ImportGraph2Request request) {
@@ -478,11 +476,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportGraph2Request 请求对象
+     * @param request ImportGraph2Request 请求对象
      * @return SyncInvoker<ImportGraph2Request, ImportGraph2Response>
      */
     public SyncInvoker<ImportGraph2Request, ImportGraph2Response> importGraph2Invoker(ImportGraph2Request request) {
-        return new SyncInvoker<ImportGraph2Request, ImportGraph2Response>(request, GesMeta.importGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.importGraph2, hcClient);
     }
 
     /**
@@ -492,7 +490,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackups2Request 请求对象
+     * @param request ListBackups2Request 请求对象
      * @return ListBackups2Response
      */
     public ListBackups2Response listBackups2(ListBackups2Request request) {
@@ -506,11 +504,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackups2Request 请求对象
+     * @param request ListBackups2Request 请求对象
      * @return SyncInvoker<ListBackups2Request, ListBackups2Response>
      */
     public SyncInvoker<ListBackups2Request, ListBackups2Response> listBackups2Invoker(ListBackups2Request request) {
-        return new SyncInvoker<ListBackups2Request, ListBackups2Response>(request, GesMeta.listBackups2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.listBackups2, hcClient);
     }
 
     /**
@@ -520,7 +518,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGraphBackups2Request 请求对象
+     * @param request ListGraphBackups2Request 请求对象
      * @return ListGraphBackups2Response
      */
     public ListGraphBackups2Response listGraphBackups2(ListGraphBackups2Request request) {
@@ -534,13 +532,12 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGraphBackups2Request 请求对象
+     * @param request ListGraphBackups2Request 请求对象
      * @return SyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response>
      */
     public SyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response> listGraphBackups2Invoker(
         ListGraphBackups2Request request) {
-        return new SyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response>(request, GesMeta.listGraphBackups2,
-            hcClient);
+        return new SyncInvoker<>(request, GesMeta.listGraphBackups2, hcClient);
     }
 
     /**
@@ -550,7 +547,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGraphs2Request 请求对象
+     * @param request ListGraphs2Request 请求对象
      * @return ListGraphs2Response
      */
     public ListGraphs2Response listGraphs2(ListGraphs2Request request) {
@@ -564,11 +561,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGraphs2Request 请求对象
+     * @param request ListGraphs2Request 请求对象
      * @return SyncInvoker<ListGraphs2Request, ListGraphs2Response>
      */
     public SyncInvoker<ListGraphs2Request, ListGraphs2Response> listGraphs2Invoker(ListGraphs2Request request) {
-        return new SyncInvoker<ListGraphs2Request, ListGraphs2Response>(request, GesMeta.listGraphs2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.listGraphs2, hcClient);
     }
 
     /**
@@ -578,7 +575,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobs2Request 请求对象
+     * @param request ListJobs2Request 请求对象
      * @return ListJobs2Response
      */
     public ListJobs2Response listJobs2(ListJobs2Request request) {
@@ -592,11 +589,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobs2Request 请求对象
+     * @param request ListJobs2Request 请求对象
      * @return SyncInvoker<ListJobs2Request, ListJobs2Response>
      */
     public SyncInvoker<ListJobs2Request, ListJobs2Response> listJobs2Invoker(ListJobs2Request request) {
-        return new SyncInvoker<ListJobs2Request, ListJobs2Response>(request, GesMeta.listJobs2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.listJobs2, hcClient);
     }
 
     /**
@@ -606,7 +603,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetadatas2Request 请求对象
+     * @param request ListMetadatas2Request 请求对象
      * @return ListMetadatas2Response
      */
     public ListMetadatas2Response listMetadatas2(ListMetadatas2Request request) {
@@ -620,13 +617,12 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetadatas2Request 请求对象
+     * @param request ListMetadatas2Request 请求对象
      * @return SyncInvoker<ListMetadatas2Request, ListMetadatas2Response>
      */
     public SyncInvoker<ListMetadatas2Request, ListMetadatas2Response> listMetadatas2Invoker(
         ListMetadatas2Request request) {
-        return new SyncInvoker<ListMetadatas2Request, ListMetadatas2Response>(request, GesMeta.listMetadatas2,
-            hcClient);
+        return new SyncInvoker<>(request, GesMeta.listMetadatas2, hcClient);
     }
 
     /**
@@ -636,7 +632,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotas2Request 请求对象
+     * @param request ListQuotas2Request 请求对象
      * @return ListQuotas2Response
      */
     public ListQuotas2Response listQuotas2(ListQuotas2Request request) {
@@ -650,11 +646,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotas2Request 请求对象
+     * @param request ListQuotas2Request 请求对象
      * @return SyncInvoker<ListQuotas2Request, ListQuotas2Response>
      */
     public SyncInvoker<ListQuotas2Request, ListQuotas2Response> listQuotas2Invoker(ListQuotas2Request request) {
-        return new SyncInvoker<ListQuotas2Request, ListQuotas2Response>(request, GesMeta.listQuotas2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.listQuotas2, hcClient);
     }
 
     /**
@@ -665,7 +661,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeGraph2Request 请求对象
+     * @param request ResizeGraph2Request 请求对象
      * @return ResizeGraph2Response
      */
     public ResizeGraph2Response resizeGraph2(ResizeGraph2Request request) {
@@ -680,11 +676,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeGraph2Request 请求对象
+     * @param request ResizeGraph2Request 请求对象
      * @return SyncInvoker<ResizeGraph2Request, ResizeGraph2Response>
      */
     public SyncInvoker<ResizeGraph2Request, ResizeGraph2Response> resizeGraph2Invoker(ResizeGraph2Request request) {
-        return new SyncInvoker<ResizeGraph2Request, ResizeGraph2Response>(request, GesMeta.resizeGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.resizeGraph2, hcClient);
     }
 
     /**
@@ -694,7 +690,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartGraph2Request 请求对象
+     * @param request RestartGraph2Request 请求对象
      * @return RestartGraph2Response
      */
     public RestartGraph2Response restartGraph2(RestartGraph2Request request) {
@@ -708,11 +704,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartGraph2Request 请求对象
+     * @param request RestartGraph2Request 请求对象
      * @return SyncInvoker<RestartGraph2Request, RestartGraph2Response>
      */
     public SyncInvoker<RestartGraph2Request, RestartGraph2Response> restartGraph2Invoker(RestartGraph2Request request) {
-        return new SyncInvoker<RestartGraph2Request, RestartGraph2Response>(request, GesMeta.restartGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.restartGraph2, hcClient);
     }
 
     /**
@@ -722,7 +718,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGraph2Request 请求对象
+     * @param request ShowGraph2Request 请求对象
      * @return ShowGraph2Response
      */
     public ShowGraph2Response showGraph2(ShowGraph2Request request) {
@@ -736,11 +732,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGraph2Request 请求对象
+     * @param request ShowGraph2Request 请求对象
      * @return SyncInvoker<ShowGraph2Request, ShowGraph2Response>
      */
     public SyncInvoker<ShowGraph2Request, ShowGraph2Response> showGraph2Invoker(ShowGraph2Request request) {
-        return new SyncInvoker<ShowGraph2Request, ShowGraph2Response>(request, GesMeta.showGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.showGraph2, hcClient);
     }
 
     /**
@@ -750,7 +746,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJob2Request 请求对象
+     * @param request ShowJob2Request 请求对象
      * @return ShowJob2Response
      */
     public ShowJob2Response showJob2(ShowJob2Request request) {
@@ -764,11 +760,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJob2Request 请求对象
+     * @param request ShowJob2Request 请求对象
      * @return SyncInvoker<ShowJob2Request, ShowJob2Response>
      */
     public SyncInvoker<ShowJob2Request, ShowJob2Response> showJob2Invoker(ShowJob2Request request) {
-        return new SyncInvoker<ShowJob2Request, ShowJob2Response>(request, GesMeta.showJob2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.showJob2, hcClient);
     }
 
     /**
@@ -778,7 +774,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetadata2Request 请求对象
+     * @param request ShowMetadata2Request 请求对象
      * @return ShowMetadata2Response
      */
     public ShowMetadata2Response showMetadata2(ShowMetadata2Request request) {
@@ -792,11 +788,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetadata2Request 请求对象
+     * @param request ShowMetadata2Request 请求对象
      * @return SyncInvoker<ShowMetadata2Request, ShowMetadata2Response>
      */
     public SyncInvoker<ShowMetadata2Request, ShowMetadata2Response> showMetadata2Invoker(ShowMetadata2Request request) {
-        return new SyncInvoker<ShowMetadata2Request, ShowMetadata2Response>(request, GesMeta.showMetadata2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.showMetadata2, hcClient);
     }
 
     /**
@@ -806,7 +802,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartGraph2Request 请求对象
+     * @param request StartGraph2Request 请求对象
      * @return StartGraph2Response
      */
     public StartGraph2Response startGraph2(StartGraph2Request request) {
@@ -820,11 +816,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartGraph2Request 请求对象
+     * @param request StartGraph2Request 请求对象
      * @return SyncInvoker<StartGraph2Request, StartGraph2Response>
      */
     public SyncInvoker<StartGraph2Request, StartGraph2Response> startGraph2Invoker(StartGraph2Request request) {
-        return new SyncInvoker<StartGraph2Request, StartGraph2Response>(request, GesMeta.startGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.startGraph2, hcClient);
     }
 
     /**
@@ -835,7 +831,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopGraph2Request 请求对象
+     * @param request StopGraph2Request 请求对象
      * @return StopGraph2Response
      */
     public StopGraph2Response stopGraph2(StopGraph2Request request) {
@@ -850,11 +846,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopGraph2Request 请求对象
+     * @param request StopGraph2Request 请求对象
      * @return SyncInvoker<StopGraph2Request, StopGraph2Response>
      */
     public SyncInvoker<StopGraph2Request, StopGraph2Response> stopGraph2Invoker(StopGraph2Request request) {
-        return new SyncInvoker<StopGraph2Request, StopGraph2Response>(request, GesMeta.stopGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.stopGraph2, hcClient);
     }
 
     /**
@@ -864,7 +860,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeGraph2Request 请求对象
+     * @param request UpgradeGraph2Request 请求对象
      * @return UpgradeGraph2Response
      */
     public UpgradeGraph2Response upgradeGraph2(UpgradeGraph2Request request) {
@@ -878,11 +874,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeGraph2Request 请求对象
+     * @param request UpgradeGraph2Request 请求对象
      * @return SyncInvoker<UpgradeGraph2Request, UpgradeGraph2Response>
      */
     public SyncInvoker<UpgradeGraph2Request, UpgradeGraph2Response> upgradeGraph2Invoker(UpgradeGraph2Request request) {
-        return new SyncInvoker<UpgradeGraph2Request, UpgradeGraph2Response>(request, GesMeta.upgradeGraph2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.upgradeGraph2, hcClient);
     }
 
     /**
@@ -892,7 +888,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFromObs2Request 请求对象
+     * @param request UploadFromObs2Request 请求对象
      * @return UploadFromObs2Response
      */
     public UploadFromObs2Response uploadFromObs2(UploadFromObs2Request request) {
@@ -906,13 +902,12 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFromObs2Request 请求对象
+     * @param request UploadFromObs2Request 请求对象
      * @return SyncInvoker<UploadFromObs2Request, UploadFromObs2Response>
      */
     public SyncInvoker<UploadFromObs2Request, UploadFromObs2Response> uploadFromObs2Invoker(
         UploadFromObs2Request request) {
-        return new SyncInvoker<UploadFromObs2Request, UploadFromObs2Response>(request, GesMeta.uploadFromObs2,
-            hcClient);
+        return new SyncInvoker<>(request, GesMeta.uploadFromObs2, hcClient);
     }
 
     /**
@@ -922,7 +917,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeregisterScenes2Request 请求对象
+     * @param request DeregisterScenes2Request 请求对象
      * @return DeregisterScenes2Response
      */
     public DeregisterScenes2Response deregisterScenes2(DeregisterScenes2Request request) {
@@ -936,13 +931,12 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeregisterScenes2Request 请求对象
+     * @param request DeregisterScenes2Request 请求对象
      * @return SyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response>
      */
     public SyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response> deregisterScenes2Invoker(
         DeregisterScenes2Request request) {
-        return new SyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response>(request, GesMeta.deregisterScenes2,
-            hcClient);
+        return new SyncInvoker<>(request, GesMeta.deregisterScenes2, hcClient);
     }
 
     /**
@@ -952,7 +946,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScenes2Request 请求对象
+     * @param request ListScenes2Request 请求对象
      * @return ListScenes2Response
      */
     public ListScenes2Response listScenes2(ListScenes2Request request) {
@@ -966,11 +960,11 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScenes2Request 请求对象
+     * @param request ListScenes2Request 请求对象
      * @return SyncInvoker<ListScenes2Request, ListScenes2Response>
      */
     public SyncInvoker<ListScenes2Request, ListScenes2Response> listScenes2Invoker(ListScenes2Request request) {
-        return new SyncInvoker<ListScenes2Request, ListScenes2Response>(request, GesMeta.listScenes2, hcClient);
+        return new SyncInvoker<>(request, GesMeta.listScenes2, hcClient);
     }
 
     /**
@@ -981,7 +975,7 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterScenes2Request 请求对象
+     * @param request RegisterScenes2Request 请求对象
      * @return RegisterScenes2Response
      */
     public RegisterScenes2Response registerScenes2(RegisterScenes2Request request) {
@@ -996,13 +990,12 @@ public class GesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterScenes2Request 请求对象
+     * @param request RegisterScenes2Request 请求对象
      * @return SyncInvoker<RegisterScenes2Request, RegisterScenes2Response>
      */
     public SyncInvoker<RegisterScenes2Request, RegisterScenes2Response> registerScenes2Invoker(
         RegisterScenes2Request request) {
-        return new SyncInvoker<RegisterScenes2Request, RegisterScenes2Response>(request, GesMeta.registerScenes2,
-            hcClient);
+        return new SyncInvoker<>(request, GesMeta.registerScenes2, hcClient);
     }
 
 }

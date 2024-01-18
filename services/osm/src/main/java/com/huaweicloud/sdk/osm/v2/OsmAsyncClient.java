@@ -218,7 +218,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckHostsRequest 请求对象
+     * @param request CheckHostsRequest 请求对象
      * @return CompletableFuture<CheckHostsResponse>
      */
     public CompletableFuture<CheckHostsResponse> checkHostsAsync(CheckHostsRequest request) {
@@ -232,11 +232,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckHostsRequest 请求对象
+     * @param request CheckHostsRequest 请求对象
      * @return AsyncInvoker<CheckHostsRequest, CheckHostsResponse>
      */
     public AsyncInvoker<CheckHostsRequest, CheckHostsResponse> checkHostsAsyncInvoker(CheckHostsRequest request) {
-        return new AsyncInvoker<CheckHostsRequest, CheckHostsResponse>(request, OsmMeta.checkHosts, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.checkHosts, hcClient);
     }
 
     /**
@@ -246,7 +246,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckNeedVerifyRequest 请求对象
+     * @param request CheckNeedVerifyRequest 请求对象
      * @return CompletableFuture<CheckNeedVerifyResponse>
      */
     public CompletableFuture<CheckNeedVerifyResponse> checkNeedVerifyAsync(CheckNeedVerifyRequest request) {
@@ -260,13 +260,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckNeedVerifyRequest 请求对象
+     * @param request CheckNeedVerifyRequest 请求对象
      * @return AsyncInvoker<CheckNeedVerifyRequest, CheckNeedVerifyResponse>
      */
     public AsyncInvoker<CheckNeedVerifyRequest, CheckNeedVerifyResponse> checkNeedVerifyAsyncInvoker(
         CheckNeedVerifyRequest request) {
-        return new AsyncInvoker<CheckNeedVerifyRequest, CheckNeedVerifyResponse>(request, OsmMeta.checkNeedVerify,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.checkNeedVerify, hcClient);
     }
 
     /**
@@ -276,7 +275,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVerifyCodesRequest 请求对象
+     * @param request CheckVerifyCodesRequest 请求对象
      * @return CompletableFuture<CheckVerifyCodesResponse>
      */
     public CompletableFuture<CheckVerifyCodesResponse> checkVerifyCodesAsync(CheckVerifyCodesRequest request) {
@@ -290,13 +289,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVerifyCodesRequest 请求对象
+     * @param request CheckVerifyCodesRequest 请求对象
      * @return AsyncInvoker<CheckVerifyCodesRequest, CheckVerifyCodesResponse>
      */
     public AsyncInvoker<CheckVerifyCodesRequest, CheckVerifyCodesResponse> checkVerifyCodesAsyncInvoker(
         CheckVerifyCodesRequest request) {
-        return new AsyncInvoker<CheckVerifyCodesRequest, CheckVerifyCodesResponse>(request, OsmMeta.checkVerifyCodes,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.checkVerifyCodes, hcClient);
     }
 
     /**
@@ -306,7 +304,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmAuthorizationsRequest 请求对象
+     * @param request ConfirmAuthorizationsRequest 请求对象
      * @return CompletableFuture<ConfirmAuthorizationsResponse>
      */
     public CompletableFuture<ConfirmAuthorizationsResponse> confirmAuthorizationsAsync(
@@ -321,13 +319,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmAuthorizationsRequest 请求对象
+     * @param request ConfirmAuthorizationsRequest 请求对象
      * @return AsyncInvoker<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse>
      */
     public AsyncInvoker<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse> confirmAuthorizationsAsyncInvoker(
         ConfirmAuthorizationsRequest request) {
-        return new AsyncInvoker<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse>(request,
-            OsmMeta.confirmAuthorizations, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.confirmAuthorizations, hcClient);
     }
 
     /**
@@ -337,7 +334,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAskQuestionRequest 请求对象
+     * @param request CreateAskQuestionRequest 请求对象
      * @return CompletableFuture<CreateAskQuestionResponse>
      */
     public CompletableFuture<CreateAskQuestionResponse> createAskQuestionAsync(CreateAskQuestionRequest request) {
@@ -351,13 +348,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAskQuestionRequest 请求对象
+     * @param request CreateAskQuestionRequest 请求对象
      * @return AsyncInvoker<CreateAskQuestionRequest, CreateAskQuestionResponse>
      */
     public AsyncInvoker<CreateAskQuestionRequest, CreateAskQuestionResponse> createAskQuestionAsyncInvoker(
         CreateAskQuestionRequest request) {
-        return new AsyncInvoker<CreateAskQuestionRequest, CreateAskQuestionResponse>(request, OsmMeta.createAskQuestion,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createAskQuestion, hcClient);
     }
 
     /**
@@ -367,7 +363,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCaseExtendsParamRequest 请求对象
+     * @param request CreateCaseExtendsParamRequest 请求对象
      * @return CompletableFuture<CreateCaseExtendsParamResponse>
      */
     public CompletableFuture<CreateCaseExtendsParamResponse> createCaseExtendsParamAsync(
@@ -382,13 +378,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCaseExtendsParamRequest 请求对象
+     * @param request CreateCaseExtendsParamRequest 请求对象
      * @return AsyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse>
      */
     public AsyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse> createCaseExtendsParamAsyncInvoker(
         CreateCaseExtendsParamRequest request) {
-        return new AsyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse>(request,
-            OsmMeta.createCaseExtendsParam, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createCaseExtendsParam, hcClient);
     }
 
     /**
@@ -398,7 +393,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCaseLabelsRequest 请求对象
+     * @param request CreateCaseLabelsRequest 请求对象
      * @return CompletableFuture<CreateCaseLabelsResponse>
      */
     public CompletableFuture<CreateCaseLabelsResponse> createCaseLabelsAsync(CreateCaseLabelsRequest request) {
@@ -412,13 +407,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCaseLabelsRequest 请求对象
+     * @param request CreateCaseLabelsRequest 请求对象
      * @return AsyncInvoker<CreateCaseLabelsRequest, CreateCaseLabelsResponse>
      */
     public AsyncInvoker<CreateCaseLabelsRequest, CreateCaseLabelsResponse> createCaseLabelsAsyncInvoker(
         CreateCaseLabelsRequest request) {
-        return new AsyncInvoker<CreateCaseLabelsRequest, CreateCaseLabelsResponse>(request, OsmMeta.createCaseLabels,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createCaseLabels, hcClient);
     }
 
     /**
@@ -428,7 +422,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCasesRequest 请求对象
+     * @param request CreateCasesRequest 请求对象
      * @return CompletableFuture<CreateCasesResponse>
      */
     public CompletableFuture<CreateCasesResponse> createCasesAsync(CreateCasesRequest request) {
@@ -442,11 +436,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCasesRequest 请求对象
+     * @param request CreateCasesRequest 请求对象
      * @return AsyncInvoker<CreateCasesRequest, CreateCasesResponse>
      */
     public AsyncInvoker<CreateCasesRequest, CreateCasesResponse> createCasesAsyncInvoker(CreateCasesRequest request) {
-        return new AsyncInvoker<CreateCasesRequest, CreateCasesResponse>(request, OsmMeta.createCases, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createCases, hcClient);
     }
 
     /**
@@ -456,7 +450,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDiagnoseFeedbackRequest 请求对象
+     * @param request CreateDiagnoseFeedbackRequest 请求对象
      * @return CompletableFuture<CreateDiagnoseFeedbackResponse>
      */
     public CompletableFuture<CreateDiagnoseFeedbackResponse> createDiagnoseFeedbackAsync(
@@ -471,13 +465,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDiagnoseFeedbackRequest 请求对象
+     * @param request CreateDiagnoseFeedbackRequest 请求对象
      * @return AsyncInvoker<CreateDiagnoseFeedbackRequest, CreateDiagnoseFeedbackResponse>
      */
     public AsyncInvoker<CreateDiagnoseFeedbackRequest, CreateDiagnoseFeedbackResponse> createDiagnoseFeedbackAsyncInvoker(
         CreateDiagnoseFeedbackRequest request) {
-        return new AsyncInvoker<CreateDiagnoseFeedbackRequest, CreateDiagnoseFeedbackResponse>(request,
-            OsmMeta.createDiagnoseFeedback, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createDiagnoseFeedback, hcClient);
     }
 
     /**
@@ -487,7 +480,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDiagnoseJobRequest 请求对象
+     * @param request CreateDiagnoseJobRequest 请求对象
      * @return CompletableFuture<CreateDiagnoseJobResponse>
      */
     public CompletableFuture<CreateDiagnoseJobResponse> createDiagnoseJobAsync(CreateDiagnoseJobRequest request) {
@@ -501,13 +494,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDiagnoseJobRequest 请求对象
+     * @param request CreateDiagnoseJobRequest 请求对象
      * @return AsyncInvoker<CreateDiagnoseJobRequest, CreateDiagnoseJobResponse>
      */
     public AsyncInvoker<CreateDiagnoseJobRequest, CreateDiagnoseJobResponse> createDiagnoseJobAsyncInvoker(
         CreateDiagnoseJobRequest request) {
-        return new AsyncInvoker<CreateDiagnoseJobRequest, CreateDiagnoseJobResponse>(request, OsmMeta.createDiagnoseJob,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createDiagnoseJob, hcClient);
     }
 
     /**
@@ -517,7 +509,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEvaluateRequest 请求对象
+     * @param request CreateEvaluateRequest 请求对象
      * @return CompletableFuture<CreateEvaluateResponse>
      */
     public CompletableFuture<CreateEvaluateResponse> createEvaluateAsync(CreateEvaluateRequest request) {
@@ -531,13 +523,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEvaluateRequest 请求对象
+     * @param request CreateEvaluateRequest 请求对象
      * @return AsyncInvoker<CreateEvaluateRequest, CreateEvaluateResponse>
      */
     public AsyncInvoker<CreateEvaluateRequest, CreateEvaluateResponse> createEvaluateAsyncInvoker(
         CreateEvaluateRequest request) {
-        return new AsyncInvoker<CreateEvaluateRequest, CreateEvaluateResponse>(request, OsmMeta.createEvaluate,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createEvaluate, hcClient);
     }
 
     /**
@@ -547,7 +538,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFeedbackRequest 请求对象
+     * @param request CreateFeedbackRequest 请求对象
      * @return CompletableFuture<CreateFeedbackResponse>
      */
     public CompletableFuture<CreateFeedbackResponse> createFeedbackAsync(CreateFeedbackRequest request) {
@@ -561,13 +552,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFeedbackRequest 请求对象
+     * @param request CreateFeedbackRequest 请求对象
      * @return AsyncInvoker<CreateFeedbackRequest, CreateFeedbackResponse>
      */
     public AsyncInvoker<CreateFeedbackRequest, CreateFeedbackResponse> createFeedbackAsyncInvoker(
         CreateFeedbackRequest request) {
-        return new AsyncInvoker<CreateFeedbackRequest, CreateFeedbackResponse>(request, OsmMeta.createFeedback,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createFeedback, hcClient);
     }
 
     /**
@@ -577,7 +567,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLabelsRequest 请求对象
+     * @param request CreateLabelsRequest 请求对象
      * @return CompletableFuture<CreateLabelsResponse>
      */
     public CompletableFuture<CreateLabelsResponse> createLabelsAsync(CreateLabelsRequest request) {
@@ -591,12 +581,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLabelsRequest 请求对象
+     * @param request CreateLabelsRequest 请求对象
      * @return AsyncInvoker<CreateLabelsRequest, CreateLabelsResponse>
      */
     public AsyncInvoker<CreateLabelsRequest, CreateLabelsResponse> createLabelsAsyncInvoker(
         CreateLabelsRequest request) {
-        return new AsyncInvoker<CreateLabelsRequest, CreateLabelsResponse>(request, OsmMeta.createLabels, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createLabels, hcClient);
     }
 
     /**
@@ -606,7 +596,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMessagesRequest 请求对象
+     * @param request CreateMessagesRequest 请求对象
      * @return CompletableFuture<CreateMessagesResponse>
      */
     public CompletableFuture<CreateMessagesResponse> createMessagesAsync(CreateMessagesRequest request) {
@@ -620,13 +610,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMessagesRequest 请求对象
+     * @param request CreateMessagesRequest 请求对象
      * @return AsyncInvoker<CreateMessagesRequest, CreateMessagesResponse>
      */
     public AsyncInvoker<CreateMessagesRequest, CreateMessagesResponse> createMessagesAsyncInvoker(
         CreateMessagesRequest request) {
-        return new AsyncInvoker<CreateMessagesRequest, CreateMessagesResponse>(request, OsmMeta.createMessages,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createMessages, hcClient);
     }
 
     /**
@@ -636,7 +625,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivilegesRequest 请求对象
+     * @param request CreatePrivilegesRequest 请求对象
      * @return CompletableFuture<CreatePrivilegesResponse>
      */
     public CompletableFuture<CreatePrivilegesResponse> createPrivilegesAsync(CreatePrivilegesRequest request) {
@@ -650,13 +639,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivilegesRequest 请求对象
+     * @param request CreatePrivilegesRequest 请求对象
      * @return AsyncInvoker<CreatePrivilegesRequest, CreatePrivilegesResponse>
      */
     public AsyncInvoker<CreatePrivilegesRequest, CreatePrivilegesResponse> createPrivilegesAsyncInvoker(
         CreatePrivilegesRequest request) {
-        return new AsyncInvoker<CreatePrivilegesRequest, CreatePrivilegesResponse>(request, OsmMeta.createPrivileges,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createPrivileges, hcClient);
     }
 
     /**
@@ -666,7 +654,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQaAskRequest 请求对象
+     * @param request CreateQaAskRequest 请求对象
      * @return CompletableFuture<CreateQaAskResponse>
      */
     public CompletableFuture<CreateQaAskResponse> createQaAskAsync(CreateQaAskRequest request) {
@@ -680,11 +668,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQaAskRequest 请求对象
+     * @param request CreateQaAskRequest 请求对象
      * @return AsyncInvoker<CreateQaAskRequest, CreateQaAskResponse>
      */
     public AsyncInvoker<CreateQaAskRequest, CreateQaAskResponse> createQaAskAsyncInvoker(CreateQaAskRequest request) {
-        return new AsyncInvoker<CreateQaAskRequest, CreateQaAskResponse>(request, OsmMeta.createQaAsk, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createQaAsk, hcClient);
     }
 
     /**
@@ -694,7 +682,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQaFeedbacksRequest 请求对象
+     * @param request CreateQaFeedbacksRequest 请求对象
      * @return CompletableFuture<CreateQaFeedbacksResponse>
      */
     public CompletableFuture<CreateQaFeedbacksResponse> createQaFeedbacksAsync(CreateQaFeedbacksRequest request) {
@@ -708,13 +696,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQaFeedbacksRequest 请求对象
+     * @param request CreateQaFeedbacksRequest 请求对象
      * @return AsyncInvoker<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse>
      */
     public AsyncInvoker<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse> createQaFeedbacksAsyncInvoker(
         CreateQaFeedbacksRequest request) {
-        return new AsyncInvoker<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse>(request, OsmMeta.createQaFeedbacks,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createQaFeedbacks, hcClient);
     }
 
     /**
@@ -724,7 +711,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQuestionInSessionRequest 请求对象
+     * @param request CreateQuestionInSessionRequest 请求对象
      * @return CompletableFuture<CreateQuestionInSessionResponse>
      */
     public CompletableFuture<CreateQuestionInSessionResponse> createQuestionInSessionAsync(
@@ -739,13 +726,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQuestionInSessionRequest 请求对象
+     * @param request CreateQuestionInSessionRequest 请求对象
      * @return AsyncInvoker<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse>
      */
     public AsyncInvoker<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse> createQuestionInSessionAsyncInvoker(
         CreateQuestionInSessionRequest request) {
-        return new AsyncInvoker<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse>(request,
-            OsmMeta.createQuestionInSession, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createQuestionInSession, hcClient);
     }
 
     /**
@@ -755,7 +741,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRelationsRequest 请求对象
+     * @param request CreateRelationsRequest 请求对象
      * @return CompletableFuture<CreateRelationsResponse>
      */
     public CompletableFuture<CreateRelationsResponse> createRelationsAsync(CreateRelationsRequest request) {
@@ -769,13 +755,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRelationsRequest 请求对象
+     * @param request CreateRelationsRequest 请求对象
      * @return AsyncInvoker<CreateRelationsRequest, CreateRelationsResponse>
      */
     public AsyncInvoker<CreateRelationsRequest, CreateRelationsResponse> createRelationsAsyncInvoker(
         CreateRelationsRequest request) {
-        return new AsyncInvoker<CreateRelationsRequest, CreateRelationsResponse>(request, OsmMeta.createRelations,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createRelations, hcClient);
     }
 
     /**
@@ -785,7 +770,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScoresRequest 请求对象
+     * @param request CreateScoresRequest 请求对象
      * @return CompletableFuture<CreateScoresResponse>
      */
     public CompletableFuture<CreateScoresResponse> createScoresAsync(CreateScoresRequest request) {
@@ -799,12 +784,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScoresRequest 请求对象
+     * @param request CreateScoresRequest 请求对象
      * @return AsyncInvoker<CreateScoresRequest, CreateScoresResponse>
      */
     public AsyncInvoker<CreateScoresRequest, CreateScoresResponse> createScoresAsyncInvoker(
         CreateScoresRequest request) {
-        return new AsyncInvoker<CreateScoresRequest, CreateScoresResponse>(request, OsmMeta.createScores, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createScores, hcClient);
     }
 
     /**
@@ -814,7 +799,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSessionRequest 请求对象
+     * @param request CreateSessionRequest 请求对象
      * @return CompletableFuture<CreateSessionResponse>
      */
     public CompletableFuture<CreateSessionResponse> createSessionAsync(CreateSessionRequest request) {
@@ -828,12 +813,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSessionRequest 请求对象
+     * @param request CreateSessionRequest 请求对象
      * @return AsyncInvoker<CreateSessionRequest, CreateSessionResponse>
      */
     public AsyncInvoker<CreateSessionRequest, CreateSessionResponse> createSessionAsyncInvoker(
         CreateSessionRequest request) {
-        return new AsyncInvoker<CreateSessionRequest, CreateSessionResponse>(request, OsmMeta.createSession, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.createSession, hcClient);
     }
 
     /**
@@ -843,7 +828,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAccessoriesRequest 请求对象
+     * @param request DeleteAccessoriesRequest 请求对象
      * @return CompletableFuture<DeleteAccessoriesResponse>
      */
     public CompletableFuture<DeleteAccessoriesResponse> deleteAccessoriesAsync(DeleteAccessoriesRequest request) {
@@ -857,13 +842,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAccessoriesRequest 请求对象
+     * @param request DeleteAccessoriesRequest 请求对象
      * @return AsyncInvoker<DeleteAccessoriesRequest, DeleteAccessoriesResponse>
      */
     public AsyncInvoker<DeleteAccessoriesRequest, DeleteAccessoriesResponse> deleteAccessoriesAsyncInvoker(
         DeleteAccessoriesRequest request) {
-        return new AsyncInvoker<DeleteAccessoriesRequest, DeleteAccessoriesResponse>(request, OsmMeta.deleteAccessories,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.deleteAccessories, hcClient);
     }
 
     /**
@@ -873,7 +857,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCaseLabelsRequest 请求对象
+     * @param request DeleteCaseLabelsRequest 请求对象
      * @return CompletableFuture<DeleteCaseLabelsResponse>
      */
     public CompletableFuture<DeleteCaseLabelsResponse> deleteCaseLabelsAsync(DeleteCaseLabelsRequest request) {
@@ -887,13 +871,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCaseLabelsRequest 请求对象
+     * @param request DeleteCaseLabelsRequest 请求对象
      * @return AsyncInvoker<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse>
      */
     public AsyncInvoker<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse> deleteCaseLabelsAsyncInvoker(
         DeleteCaseLabelsRequest request) {
-        return new AsyncInvoker<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse>(request, OsmMeta.deleteCaseLabels,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.deleteCaseLabels, hcClient);
     }
 
     /**
@@ -903,7 +886,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLabelsRequest 请求对象
+     * @param request DeleteLabelsRequest 请求对象
      * @return CompletableFuture<DeleteLabelsResponse>
      */
     public CompletableFuture<DeleteLabelsResponse> deleteLabelsAsync(DeleteLabelsRequest request) {
@@ -917,12 +900,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLabelsRequest 请求对象
+     * @param request DeleteLabelsRequest 请求对象
      * @return AsyncInvoker<DeleteLabelsRequest, DeleteLabelsResponse>
      */
     public AsyncInvoker<DeleteLabelsRequest, DeleteLabelsResponse> deleteLabelsAsyncInvoker(
         DeleteLabelsRequest request) {
-        return new AsyncInvoker<DeleteLabelsRequest, DeleteLabelsResponse>(request, OsmMeta.deleteLabels, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.deleteLabels, hcClient);
     }
 
     /**
@@ -932,7 +915,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRelationRequest 请求对象
+     * @param request DeleteRelationRequest 请求对象
      * @return CompletableFuture<DeleteRelationResponse>
      */
     public CompletableFuture<DeleteRelationResponse> deleteRelationAsync(DeleteRelationRequest request) {
@@ -946,13 +929,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRelationRequest 请求对象
+     * @param request DeleteRelationRequest 请求对象
      * @return AsyncInvoker<DeleteRelationRequest, DeleteRelationResponse>
      */
     public AsyncInvoker<DeleteRelationRequest, DeleteRelationResponse> deleteRelationAsyncInvoker(
         DeleteRelationRequest request) {
-        return new AsyncInvoker<DeleteRelationRequest, DeleteRelationResponse>(request, OsmMeta.deleteRelation,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.deleteRelation, hcClient);
     }
 
     /**
@@ -962,7 +944,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadAccessoriesRequest 请求对象
+     * @param request DownloadAccessoriesRequest 请求对象
      * @return CompletableFuture<DownloadAccessoriesResponse>
      */
     public CompletableFuture<DownloadAccessoriesResponse> downloadAccessoriesAsync(DownloadAccessoriesRequest request) {
@@ -976,13 +958,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadAccessoriesRequest 请求对象
+     * @param request DownloadAccessoriesRequest 请求对象
      * @return AsyncInvoker<DownloadAccessoriesRequest, DownloadAccessoriesResponse>
      */
     public AsyncInvoker<DownloadAccessoriesRequest, DownloadAccessoriesResponse> downloadAccessoriesAsyncInvoker(
         DownloadAccessoriesRequest request) {
-        return new AsyncInvoker<DownloadAccessoriesRequest, DownloadAccessoriesResponse>(request,
-            OsmMeta.downloadAccessories, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.downloadAccessories, hcClient);
     }
 
     /**
@@ -992,7 +973,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadCasesRequest 请求对象
+     * @param request DownloadCasesRequest 请求对象
      * @return CompletableFuture<DownloadCasesResponse>
      */
     public CompletableFuture<DownloadCasesResponse> downloadCasesAsync(DownloadCasesRequest request) {
@@ -1006,12 +987,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadCasesRequest 请求对象
+     * @param request DownloadCasesRequest 请求对象
      * @return AsyncInvoker<DownloadCasesRequest, DownloadCasesResponse>
      */
     public AsyncInvoker<DownloadCasesRequest, DownloadCasesResponse> downloadCasesAsyncInvoker(
         DownloadCasesRequest request) {
-        return new AsyncInvoker<DownloadCasesRequest, DownloadCasesResponse>(request, OsmMeta.downloadCases, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.downloadCases, hcClient);
     }
 
     /**
@@ -1021,7 +1002,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadImagesRequest 请求对象
+     * @param request DownloadImagesRequest 请求对象
      * @return CompletableFuture<DownloadImagesResponse>
      */
     public CompletableFuture<DownloadImagesResponse> downloadImagesAsync(DownloadImagesRequest request) {
@@ -1035,13 +1016,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadImagesRequest 请求对象
+     * @param request DownloadImagesRequest 请求对象
      * @return AsyncInvoker<DownloadImagesRequest, DownloadImagesResponse>
      */
     public AsyncInvoker<DownloadImagesRequest, DownloadImagesResponse> downloadImagesAsyncInvoker(
         DownloadImagesRequest request) {
-        return new AsyncInvoker<DownloadImagesRequest, DownloadImagesResponse>(request, OsmMeta.downloadImages,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.downloadImages, hcClient);
     }
 
     /**
@@ -1051,7 +1031,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccessoryAccessUrlsRequest 请求对象
+     * @param request ListAccessoryAccessUrlsRequest 请求对象
      * @return CompletableFuture<ListAccessoryAccessUrlsResponse>
      */
     public CompletableFuture<ListAccessoryAccessUrlsResponse> listAccessoryAccessUrlsAsync(
@@ -1066,13 +1046,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccessoryAccessUrlsRequest 请求对象
+     * @param request ListAccessoryAccessUrlsRequest 请求对象
      * @return AsyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse>
      */
     public AsyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse> listAccessoryAccessUrlsAsyncInvoker(
         ListAccessoryAccessUrlsRequest request) {
-        return new AsyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse>(request,
-            OsmMeta.listAccessoryAccessUrls, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listAccessoryAccessUrls, hcClient);
     }
 
     /**
@@ -1082,7 +1061,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgenciesRequest 请求对象
+     * @param request ListAgenciesRequest 请求对象
      * @return CompletableFuture<ListAgenciesResponse>
      */
     public CompletableFuture<ListAgenciesResponse> listAgenciesAsync(ListAgenciesRequest request) {
@@ -1096,12 +1075,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgenciesRequest 请求对象
+     * @param request ListAgenciesRequest 请求对象
      * @return AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
      */
     public AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse> listAgenciesAsyncInvoker(
         ListAgenciesRequest request) {
-        return new AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse>(request, OsmMeta.listAgencies, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listAgencies, hcClient);
     }
 
     /**
@@ -1111,7 +1090,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAreaCodesRequest 请求对象
+     * @param request ListAreaCodesRequest 请求对象
      * @return CompletableFuture<ListAreaCodesResponse>
      */
     public CompletableFuture<ListAreaCodesResponse> listAreaCodesAsync(ListAreaCodesRequest request) {
@@ -1125,12 +1104,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAreaCodesRequest 请求对象
+     * @param request ListAreaCodesRequest 请求对象
      * @return AsyncInvoker<ListAreaCodesRequest, ListAreaCodesResponse>
      */
     public AsyncInvoker<ListAreaCodesRequest, ListAreaCodesResponse> listAreaCodesAsyncInvoker(
         ListAreaCodesRequest request) {
-        return new AsyncInvoker<ListAreaCodesRequest, ListAreaCodesResponse>(request, OsmMeta.listAreaCodes, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listAreaCodes, hcClient);
     }
 
     /**
@@ -1140,7 +1119,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListArticlesRequest 请求对象
+     * @param request ListArticlesRequest 请求对象
      * @return CompletableFuture<ListArticlesResponse>
      */
     public CompletableFuture<ListArticlesResponse> listArticlesAsync(ListArticlesRequest request) {
@@ -1154,12 +1133,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListArticlesRequest 请求对象
+     * @param request ListArticlesRequest 请求对象
      * @return AsyncInvoker<ListArticlesRequest, ListArticlesResponse>
      */
     public AsyncInvoker<ListArticlesRequest, ListArticlesResponse> listArticlesAsyncInvoker(
         ListArticlesRequest request) {
-        return new AsyncInvoker<ListArticlesRequest, ListArticlesResponse>(request, OsmMeta.listArticles, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listArticles, hcClient);
     }
 
     /**
@@ -1169,7 +1148,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuthorizationsRequest 请求对象
+     * @param request ListAuthorizationsRequest 请求对象
      * @return CompletableFuture<ListAuthorizationsResponse>
      */
     public CompletableFuture<ListAuthorizationsResponse> listAuthorizationsAsync(ListAuthorizationsRequest request) {
@@ -1183,13 +1162,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuthorizationsRequest 请求对象
+     * @param request ListAuthorizationsRequest 请求对象
      * @return AsyncInvoker<ListAuthorizationsRequest, ListAuthorizationsResponse>
      */
     public AsyncInvoker<ListAuthorizationsRequest, ListAuthorizationsResponse> listAuthorizationsAsyncInvoker(
         ListAuthorizationsRequest request) {
-        return new AsyncInvoker<ListAuthorizationsRequest, ListAuthorizationsResponse>(request,
-            OsmMeta.listAuthorizations, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listAuthorizations, hcClient);
     }
 
     /**
@@ -1199,7 +1177,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseCategoriesRequest 请求对象
+     * @param request ListCaseCategoriesRequest 请求对象
      * @return CompletableFuture<ListCaseCategoriesResponse>
      */
     public CompletableFuture<ListCaseCategoriesResponse> listCaseCategoriesAsync(ListCaseCategoriesRequest request) {
@@ -1213,13 +1191,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseCategoriesRequest 请求对象
+     * @param request ListCaseCategoriesRequest 请求对象
      * @return AsyncInvoker<ListCaseCategoriesRequest, ListCaseCategoriesResponse>
      */
     public AsyncInvoker<ListCaseCategoriesRequest, ListCaseCategoriesResponse> listCaseCategoriesAsyncInvoker(
         ListCaseCategoriesRequest request) {
-        return new AsyncInvoker<ListCaseCategoriesRequest, ListCaseCategoriesResponse>(request,
-            OsmMeta.listCaseCategories, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listCaseCategories, hcClient);
     }
 
     /**
@@ -1229,7 +1206,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseCcEmailsRequest 请求对象
+     * @param request ListCaseCcEmailsRequest 请求对象
      * @return CompletableFuture<ListCaseCcEmailsResponse>
      */
     public CompletableFuture<ListCaseCcEmailsResponse> listCaseCcEmailsAsync(ListCaseCcEmailsRequest request) {
@@ -1243,13 +1220,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseCcEmailsRequest 请求对象
+     * @param request ListCaseCcEmailsRequest 请求对象
      * @return AsyncInvoker<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse>
      */
     public AsyncInvoker<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse> listCaseCcEmailsAsyncInvoker(
         ListCaseCcEmailsRequest request) {
-        return new AsyncInvoker<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse>(request, OsmMeta.listCaseCcEmails,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listCaseCcEmails, hcClient);
     }
 
     /**
@@ -1259,7 +1235,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseCountsRequest 请求对象
+     * @param request ListCaseCountsRequest 请求对象
      * @return CompletableFuture<ListCaseCountsResponse>
      */
     public CompletableFuture<ListCaseCountsResponse> listCaseCountsAsync(ListCaseCountsRequest request) {
@@ -1273,13 +1249,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseCountsRequest 请求对象
+     * @param request ListCaseCountsRequest 请求对象
      * @return AsyncInvoker<ListCaseCountsRequest, ListCaseCountsResponse>
      */
     public AsyncInvoker<ListCaseCountsRequest, ListCaseCountsResponse> listCaseCountsAsyncInvoker(
         ListCaseCountsRequest request) {
-        return new AsyncInvoker<ListCaseCountsRequest, ListCaseCountsResponse>(request, OsmMeta.listCaseCounts,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listCaseCounts, hcClient);
     }
 
     /**
@@ -1289,7 +1264,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseLabelsRequest 请求对象
+     * @param request ListCaseLabelsRequest 请求对象
      * @return CompletableFuture<ListCaseLabelsResponse>
      */
     public CompletableFuture<ListCaseLabelsResponse> listCaseLabelsAsync(ListCaseLabelsRequest request) {
@@ -1303,13 +1278,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseLabelsRequest 请求对象
+     * @param request ListCaseLabelsRequest 请求对象
      * @return AsyncInvoker<ListCaseLabelsRequest, ListCaseLabelsResponse>
      */
     public AsyncInvoker<ListCaseLabelsRequest, ListCaseLabelsResponse> listCaseLabelsAsyncInvoker(
         ListCaseLabelsRequest request) {
-        return new AsyncInvoker<ListCaseLabelsRequest, ListCaseLabelsResponse>(request, OsmMeta.listCaseLabels,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listCaseLabels, hcClient);
     }
 
     /**
@@ -1319,7 +1293,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseLimitsRequest 请求对象
+     * @param request ListCaseLimitsRequest 请求对象
      * @return CompletableFuture<ListCaseLimitsResponse>
      */
     public CompletableFuture<ListCaseLimitsResponse> listCaseLimitsAsync(ListCaseLimitsRequest request) {
@@ -1333,13 +1307,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseLimitsRequest 请求对象
+     * @param request ListCaseLimitsRequest 请求对象
      * @return AsyncInvoker<ListCaseLimitsRequest, ListCaseLimitsResponse>
      */
     public AsyncInvoker<ListCaseLimitsRequest, ListCaseLimitsResponse> listCaseLimitsAsyncInvoker(
         ListCaseLimitsRequest request) {
-        return new AsyncInvoker<ListCaseLimitsRequest, ListCaseLimitsResponse>(request, OsmMeta.listCaseLimits,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listCaseLimits, hcClient);
     }
 
     /**
@@ -1349,7 +1322,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseOperateLogsRequest 请求对象
+     * @param request ListCaseOperateLogsRequest 请求对象
      * @return CompletableFuture<ListCaseOperateLogsResponse>
      */
     public CompletableFuture<ListCaseOperateLogsResponse> listCaseOperateLogsAsync(ListCaseOperateLogsRequest request) {
@@ -1363,13 +1336,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseOperateLogsRequest 请求对象
+     * @param request ListCaseOperateLogsRequest 请求对象
      * @return AsyncInvoker<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse>
      */
     public AsyncInvoker<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse> listCaseOperateLogsAsyncInvoker(
         ListCaseOperateLogsRequest request) {
-        return new AsyncInvoker<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse>(request,
-            OsmMeta.listCaseOperateLogs, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listCaseOperateLogs, hcClient);
     }
 
     /**
@@ -1379,7 +1351,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseQuotasRequest 请求对象
+     * @param request ListCaseQuotasRequest 请求对象
      * @return CompletableFuture<ListCaseQuotasResponse>
      */
     public CompletableFuture<ListCaseQuotasResponse> listCaseQuotasAsync(ListCaseQuotasRequest request) {
@@ -1393,13 +1365,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseQuotasRequest 请求对象
+     * @param request ListCaseQuotasRequest 请求对象
      * @return AsyncInvoker<ListCaseQuotasRequest, ListCaseQuotasResponse>
      */
     public AsyncInvoker<ListCaseQuotasRequest, ListCaseQuotasResponse> listCaseQuotasAsyncInvoker(
         ListCaseQuotasRequest request) {
-        return new AsyncInvoker<ListCaseQuotasRequest, ListCaseQuotasResponse>(request, OsmMeta.listCaseQuotas,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listCaseQuotas, hcClient);
     }
 
     /**
@@ -1409,7 +1380,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseTemplatesRequest 请求对象
+     * @param request ListCaseTemplatesRequest 请求对象
      * @return CompletableFuture<ListCaseTemplatesResponse>
      */
     public CompletableFuture<ListCaseTemplatesResponse> listCaseTemplatesAsync(ListCaseTemplatesRequest request) {
@@ -1423,13 +1394,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCaseTemplatesRequest 请求对象
+     * @param request ListCaseTemplatesRequest 请求对象
      * @return AsyncInvoker<ListCaseTemplatesRequest, ListCaseTemplatesResponse>
      */
     public AsyncInvoker<ListCaseTemplatesRequest, ListCaseTemplatesResponse> listCaseTemplatesAsyncInvoker(
         ListCaseTemplatesRequest request) {
-        return new AsyncInvoker<ListCaseTemplatesRequest, ListCaseTemplatesResponse>(request, OsmMeta.listCaseTemplates,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listCaseTemplates, hcClient);
     }
 
     /**
@@ -1439,7 +1409,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCasesRequest 请求对象
+     * @param request ListCasesRequest 请求对象
      * @return CompletableFuture<ListCasesResponse>
      */
     public CompletableFuture<ListCasesResponse> listCasesAsync(ListCasesRequest request) {
@@ -1453,11 +1423,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCasesRequest 请求对象
+     * @param request ListCasesRequest 请求对象
      * @return AsyncInvoker<ListCasesRequest, ListCasesResponse>
      */
     public AsyncInvoker<ListCasesRequest, ListCasesResponse> listCasesAsyncInvoker(ListCasesRequest request) {
-        return new AsyncInvoker<ListCasesRequest, ListCasesResponse>(request, OsmMeta.listCases, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listCases, hcClient);
     }
 
     /**
@@ -1467,7 +1437,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomersRegionsRequest 请求对象
+     * @param request ListCustomersRegionsRequest 请求对象
      * @return CompletableFuture<ListCustomersRegionsResponse>
      */
     public CompletableFuture<ListCustomersRegionsResponse> listCustomersRegionsAsync(
@@ -1482,13 +1452,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomersRegionsRequest 请求对象
+     * @param request ListCustomersRegionsRequest 请求对象
      * @return AsyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse>
      */
     public AsyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse> listCustomersRegionsAsyncInvoker(
         ListCustomersRegionsRequest request) {
-        return new AsyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse>(request,
-            OsmMeta.listCustomersRegions, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listCustomersRegions, hcClient);
     }
 
     /**
@@ -1498,7 +1467,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDiagnoseItemsRequest 请求对象
+     * @param request ListDiagnoseItemsRequest 请求对象
      * @return CompletableFuture<ListDiagnoseItemsResponse>
      */
     public CompletableFuture<ListDiagnoseItemsResponse> listDiagnoseItemsAsync(ListDiagnoseItemsRequest request) {
@@ -1512,13 +1481,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDiagnoseItemsRequest 请求对象
+     * @param request ListDiagnoseItemsRequest 请求对象
      * @return AsyncInvoker<ListDiagnoseItemsRequest, ListDiagnoseItemsResponse>
      */
     public AsyncInvoker<ListDiagnoseItemsRequest, ListDiagnoseItemsResponse> listDiagnoseItemsAsyncInvoker(
         ListDiagnoseItemsRequest request) {
-        return new AsyncInvoker<ListDiagnoseItemsRequest, ListDiagnoseItemsResponse>(request, OsmMeta.listDiagnoseItems,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listDiagnoseItems, hcClient);
     }
 
     /**
@@ -1528,7 +1496,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDiagnoseJobRequest 请求对象
+     * @param request ListDiagnoseJobRequest 请求对象
      * @return CompletableFuture<ListDiagnoseJobResponse>
      */
     public CompletableFuture<ListDiagnoseJobResponse> listDiagnoseJobAsync(ListDiagnoseJobRequest request) {
@@ -1542,13 +1510,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDiagnoseJobRequest 请求对象
+     * @param request ListDiagnoseJobRequest 请求对象
      * @return AsyncInvoker<ListDiagnoseJobRequest, ListDiagnoseJobResponse>
      */
     public AsyncInvoker<ListDiagnoseJobRequest, ListDiagnoseJobResponse> listDiagnoseJobAsyncInvoker(
         ListDiagnoseJobRequest request) {
-        return new AsyncInvoker<ListDiagnoseJobRequest, ListDiagnoseJobResponse>(request, OsmMeta.listDiagnoseJob,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listDiagnoseJob, hcClient);
     }
 
     /**
@@ -1558,7 +1525,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDiagnoseRecordsRequest 请求对象
+     * @param request ListDiagnoseRecordsRequest 请求对象
      * @return CompletableFuture<ListDiagnoseRecordsResponse>
      */
     public CompletableFuture<ListDiagnoseRecordsResponse> listDiagnoseRecordsAsync(ListDiagnoseRecordsRequest request) {
@@ -1572,13 +1539,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDiagnoseRecordsRequest 请求对象
+     * @param request ListDiagnoseRecordsRequest 请求对象
      * @return AsyncInvoker<ListDiagnoseRecordsRequest, ListDiagnoseRecordsResponse>
      */
     public AsyncInvoker<ListDiagnoseRecordsRequest, ListDiagnoseRecordsResponse> listDiagnoseRecordsAsyncInvoker(
         ListDiagnoseRecordsRequest request) {
-        return new AsyncInvoker<ListDiagnoseRecordsRequest, ListDiagnoseRecordsResponse>(request,
-            OsmMeta.listDiagnoseRecords, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listDiagnoseRecords, hcClient);
     }
 
     /**
@@ -1588,7 +1554,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDiagnoseResourcesRequest 请求对象
+     * @param request ListDiagnoseResourcesRequest 请求对象
      * @return CompletableFuture<ListDiagnoseResourcesResponse>
      */
     public CompletableFuture<ListDiagnoseResourcesResponse> listDiagnoseResourcesAsync(
@@ -1603,13 +1569,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDiagnoseResourcesRequest 请求对象
+     * @param request ListDiagnoseResourcesRequest 请求对象
      * @return AsyncInvoker<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse>
      */
     public AsyncInvoker<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse> listDiagnoseResourcesAsyncInvoker(
         ListDiagnoseResourcesRequest request) {
-        return new AsyncInvoker<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse>(request,
-            OsmMeta.listDiagnoseResources, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listDiagnoseResources, hcClient);
     }
 
     /**
@@ -1619,7 +1584,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExtendsParamsRequest 请求对象
+     * @param request ListExtendsParamsRequest 请求对象
      * @return CompletableFuture<ListExtendsParamsResponse>
      */
     public CompletableFuture<ListExtendsParamsResponse> listExtendsParamsAsync(ListExtendsParamsRequest request) {
@@ -1633,13 +1598,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExtendsParamsRequest 请求对象
+     * @param request ListExtendsParamsRequest 请求对象
      * @return AsyncInvoker<ListExtendsParamsRequest, ListExtendsParamsResponse>
      */
     public AsyncInvoker<ListExtendsParamsRequest, ListExtendsParamsResponse> listExtendsParamsAsyncInvoker(
         ListExtendsParamsRequest request) {
-        return new AsyncInvoker<ListExtendsParamsRequest, ListExtendsParamsResponse>(request, OsmMeta.listExtendsParams,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listExtendsParams, hcClient);
     }
 
     /**
@@ -1649,7 +1613,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFeedbackOptionRequest 请求对象
+     * @param request ListFeedbackOptionRequest 请求对象
      * @return CompletableFuture<ListFeedbackOptionResponse>
      */
     public CompletableFuture<ListFeedbackOptionResponse> listFeedbackOptionAsync(ListFeedbackOptionRequest request) {
@@ -1663,13 +1627,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFeedbackOptionRequest 请求对象
+     * @param request ListFeedbackOptionRequest 请求对象
      * @return AsyncInvoker<ListFeedbackOptionRequest, ListFeedbackOptionResponse>
      */
     public AsyncInvoker<ListFeedbackOptionRequest, ListFeedbackOptionResponse> listFeedbackOptionAsyncInvoker(
         ListFeedbackOptionRequest request) {
-        return new AsyncInvoker<ListFeedbackOptionRequest, ListFeedbackOptionResponse>(request,
-            OsmMeta.listFeedbackOption, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listFeedbackOption, hcClient);
     }
 
     /**
@@ -1679,7 +1642,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHasVerifiedContactsRequest 请求对象
+     * @param request ListHasVerifiedContactsRequest 请求对象
      * @return CompletableFuture<ListHasVerifiedContactsResponse>
      */
     public CompletableFuture<ListHasVerifiedContactsResponse> listHasVerifiedContactsAsync(
@@ -1694,13 +1657,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHasVerifiedContactsRequest 请求对象
+     * @param request ListHasVerifiedContactsRequest 请求对象
      * @return AsyncInvoker<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse>
      */
     public AsyncInvoker<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> listHasVerifiedContactsAsyncInvoker(
         ListHasVerifiedContactsRequest request) {
-        return new AsyncInvoker<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse>(request,
-            OsmMeta.listHasVerifiedContacts, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listHasVerifiedContacts, hcClient);
     }
 
     /**
@@ -1710,7 +1672,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryOperateLogsRequest 请求对象
+     * @param request ListHistoryOperateLogsRequest 请求对象
      * @return CompletableFuture<ListHistoryOperateLogsResponse>
      */
     public CompletableFuture<ListHistoryOperateLogsResponse> listHistoryOperateLogsAsync(
@@ -1725,13 +1687,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryOperateLogsRequest 请求对象
+     * @param request ListHistoryOperateLogsRequest 请求对象
      * @return AsyncInvoker<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse>
      */
     public AsyncInvoker<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse> listHistoryOperateLogsAsyncInvoker(
         ListHistoryOperateLogsRequest request) {
-        return new AsyncInvoker<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse>(request,
-            OsmMeta.listHistoryOperateLogs, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listHistoryOperateLogs, hcClient);
     }
 
     /**
@@ -1741,7 +1702,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistorySessionsRequest 请求对象
+     * @param request ListHistorySessionsRequest 请求对象
      * @return CompletableFuture<ListHistorySessionsResponse>
      */
     public CompletableFuture<ListHistorySessionsResponse> listHistorySessionsAsync(ListHistorySessionsRequest request) {
@@ -1755,13 +1716,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistorySessionsRequest 请求对象
+     * @param request ListHistorySessionsRequest 请求对象
      * @return AsyncInvoker<ListHistorySessionsRequest, ListHistorySessionsResponse>
      */
     public AsyncInvoker<ListHistorySessionsRequest, ListHistorySessionsResponse> listHistorySessionsAsyncInvoker(
         ListHistorySessionsRequest request) {
-        return new AsyncInvoker<ListHistorySessionsRequest, ListHistorySessionsResponse>(request,
-            OsmMeta.listHistorySessions, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listHistorySessions, hcClient);
     }
 
     /**
@@ -1771,7 +1731,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelsRequest 请求对象
+     * @param request ListLabelsRequest 请求对象
      * @return CompletableFuture<ListLabelsResponse>
      */
     public CompletableFuture<ListLabelsResponse> listLabelsAsync(ListLabelsRequest request) {
@@ -1785,11 +1745,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelsRequest 请求对象
+     * @param request ListLabelsRequest 请求对象
      * @return AsyncInvoker<ListLabelsRequest, ListLabelsResponse>
      */
     public AsyncInvoker<ListLabelsRequest, ListLabelsResponse> listLabelsAsyncInvoker(ListLabelsRequest request) {
-        return new AsyncInvoker<ListLabelsRequest, ListLabelsResponse>(request, OsmMeta.listLabels, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listLabels, hcClient);
     }
 
     /**
@@ -1799,7 +1759,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessagesRequest 请求对象
+     * @param request ListMessagesRequest 请求对象
      * @return CompletableFuture<ListMessagesResponse>
      */
     public CompletableFuture<ListMessagesResponse> listMessagesAsync(ListMessagesRequest request) {
@@ -1813,12 +1773,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessagesRequest 请求对象
+     * @param request ListMessagesRequest 请求对象
      * @return AsyncInvoker<ListMessagesRequest, ListMessagesResponse>
      */
     public AsyncInvoker<ListMessagesRequest, ListMessagesResponse> listMessagesAsyncInvoker(
         ListMessagesRequest request) {
-        return new AsyncInvoker<ListMessagesRequest, ListMessagesResponse>(request, OsmMeta.listMessages, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listMessages, hcClient);
     }
 
     /**
@@ -1828,7 +1788,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMoreInstantMessagesRequest 请求对象
+     * @param request ListMoreInstantMessagesRequest 请求对象
      * @return CompletableFuture<ListMoreInstantMessagesResponse>
      */
     public CompletableFuture<ListMoreInstantMessagesResponse> listMoreInstantMessagesAsync(
@@ -1843,13 +1803,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMoreInstantMessagesRequest 请求对象
+     * @param request ListMoreInstantMessagesRequest 请求对象
      * @return AsyncInvoker<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse>
      */
     public AsyncInvoker<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse> listMoreInstantMessagesAsyncInvoker(
         ListMoreInstantMessagesRequest request) {
-        return new AsyncInvoker<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse>(request,
-            OsmMeta.listMoreInstantMessages, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listMoreInstantMessages, hcClient);
     }
 
     /**
@@ -1859,7 +1818,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNewInstantMessagesRequest 请求对象
+     * @param request ListNewInstantMessagesRequest 请求对象
      * @return CompletableFuture<ListNewInstantMessagesResponse>
      */
     public CompletableFuture<ListNewInstantMessagesResponse> listNewInstantMessagesAsync(
@@ -1874,13 +1833,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNewInstantMessagesRequest 请求对象
+     * @param request ListNewInstantMessagesRequest 请求对象
      * @return AsyncInvoker<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse>
      */
     public AsyncInvoker<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse> listNewInstantMessagesAsyncInvoker(
         ListNewInstantMessagesRequest request) {
-        return new AsyncInvoker<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse>(request,
-            OsmMeta.listNewInstantMessages, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listNewInstantMessages, hcClient);
     }
 
     /**
@@ -1890,7 +1848,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNoticesRequest 请求对象
+     * @param request ListNoticesRequest 请求对象
      * @return CompletableFuture<ListNoticesResponse>
      */
     public CompletableFuture<ListNoticesResponse> listNoticesAsync(ListNoticesRequest request) {
@@ -1904,11 +1862,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNoticesRequest 请求对象
+     * @param request ListNoticesRequest 请求对象
      * @return AsyncInvoker<ListNoticesRequest, ListNoticesResponse>
      */
     public AsyncInvoker<ListNoticesRequest, ListNoticesResponse> listNoticesAsyncInvoker(ListNoticesRequest request) {
-        return new AsyncInvoker<ListNoticesRequest, ListNoticesResponse>(request, OsmMeta.listNotices, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listNotices, hcClient);
     }
 
     /**
@@ -1918,7 +1876,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrderIncidentRequest 请求对象
+     * @param request ListOrderIncidentRequest 请求对象
      * @return CompletableFuture<ListOrderIncidentResponse>
      */
     public CompletableFuture<ListOrderIncidentResponse> listOrderIncidentAsync(ListOrderIncidentRequest request) {
@@ -1932,13 +1890,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrderIncidentRequest 请求对象
+     * @param request ListOrderIncidentRequest 请求对象
      * @return AsyncInvoker<ListOrderIncidentRequest, ListOrderIncidentResponse>
      */
     public AsyncInvoker<ListOrderIncidentRequest, ListOrderIncidentResponse> listOrderIncidentAsyncInvoker(
         ListOrderIncidentRequest request) {
-        return new AsyncInvoker<ListOrderIncidentRequest, ListOrderIncidentResponse>(request, OsmMeta.listOrderIncident,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listOrderIncident, hcClient);
     }
 
     /**
@@ -1948,7 +1905,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivilegesRequest 请求对象
+     * @param request ListPrivilegesRequest 请求对象
      * @return CompletableFuture<ListPrivilegesResponse>
      */
     public CompletableFuture<ListPrivilegesResponse> listPrivilegesAsync(ListPrivilegesRequest request) {
@@ -1962,13 +1919,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivilegesRequest 请求对象
+     * @param request ListPrivilegesRequest 请求对象
      * @return AsyncInvoker<ListPrivilegesRequest, ListPrivilegesResponse>
      */
     public AsyncInvoker<ListPrivilegesRequest, ListPrivilegesResponse> listPrivilegesAsyncInvoker(
         ListPrivilegesRequest request) {
-        return new AsyncInvoker<ListPrivilegesRequest, ListPrivilegesResponse>(request, OsmMeta.listPrivileges,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listPrivileges, hcClient);
     }
 
     /**
@@ -1978,7 +1934,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProblemTypesRequest 请求对象
+     * @param request ListProblemTypesRequest 请求对象
      * @return CompletableFuture<ListProblemTypesResponse>
      */
     public CompletableFuture<ListProblemTypesResponse> listProblemTypesAsync(ListProblemTypesRequest request) {
@@ -1992,13 +1948,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProblemTypesRequest 请求对象
+     * @param request ListProblemTypesRequest 请求对象
      * @return AsyncInvoker<ListProblemTypesRequest, ListProblemTypesResponse>
      */
     public AsyncInvoker<ListProblemTypesRequest, ListProblemTypesResponse> listProblemTypesAsyncInvoker(
         ListProblemTypesRequest request) {
-        return new AsyncInvoker<ListProblemTypesRequest, ListProblemTypesResponse>(request, OsmMeta.listProblemTypes,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listProblemTypes, hcClient);
     }
 
     /**
@@ -2008,7 +1963,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductCategoriesRequest 请求对象
+     * @param request ListProductCategoriesRequest 请求对象
      * @return CompletableFuture<ListProductCategoriesResponse>
      */
     public CompletableFuture<ListProductCategoriesResponse> listProductCategoriesAsync(
@@ -2023,13 +1978,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductCategoriesRequest 请求对象
+     * @param request ListProductCategoriesRequest 请求对象
      * @return AsyncInvoker<ListProductCategoriesRequest, ListProductCategoriesResponse>
      */
     public AsyncInvoker<ListProductCategoriesRequest, ListProductCategoriesResponse> listProductCategoriesAsyncInvoker(
         ListProductCategoriesRequest request) {
-        return new AsyncInvoker<ListProductCategoriesRequest, ListProductCategoriesResponse>(request,
-            OsmMeta.listProductCategories, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listProductCategories, hcClient);
     }
 
     /**
@@ -2039,7 +1993,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecommendWordsRequest 请求对象
+     * @param request ListRecommendWordsRequest 请求对象
      * @return CompletableFuture<ListRecommendWordsResponse>
      */
     public CompletableFuture<ListRecommendWordsResponse> listRecommendWordsAsync(ListRecommendWordsRequest request) {
@@ -2053,13 +2007,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecommendWordsRequest 请求对象
+     * @param request ListRecommendWordsRequest 请求对象
      * @return AsyncInvoker<ListRecommendWordsRequest, ListRecommendWordsResponse>
      */
     public AsyncInvoker<ListRecommendWordsRequest, ListRecommendWordsResponse> listRecommendWordsAsyncInvoker(
         ListRecommendWordsRequest request) {
-        return new AsyncInvoker<ListRecommendWordsRequest, ListRecommendWordsResponse>(request,
-            OsmMeta.listRecommendWords, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listRecommendWords, hcClient);
     }
 
     /**
@@ -2069,7 +2022,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRegionsRequest 请求对象
+     * @param request ListRegionsRequest 请求对象
      * @return CompletableFuture<ListRegionsResponse>
      */
     public CompletableFuture<ListRegionsResponse> listRegionsAsync(ListRegionsRequest request) {
@@ -2083,11 +2036,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRegionsRequest 请求对象
+     * @param request ListRegionsRequest 请求对象
      * @return AsyncInvoker<ListRegionsRequest, ListRegionsResponse>
      */
     public AsyncInvoker<ListRegionsRequest, ListRegionsResponse> listRegionsAsyncInvoker(ListRegionsRequest request) {
-        return new AsyncInvoker<ListRegionsRequest, ListRegionsResponse>(request, OsmMeta.listRegions, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listRegions, hcClient);
     }
 
     /**
@@ -2097,7 +2050,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationRequest 请求对象
+     * @param request ListRelationRequest 请求对象
      * @return CompletableFuture<ListRelationResponse>
      */
     public CompletableFuture<ListRelationResponse> listRelationAsync(ListRelationRequest request) {
@@ -2111,12 +2064,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelationRequest 请求对象
+     * @param request ListRelationRequest 请求对象
      * @return AsyncInvoker<ListRelationRequest, ListRelationResponse>
      */
     public AsyncInvoker<ListRelationRequest, ListRelationResponse> listRelationAsyncInvoker(
         ListRelationRequest request) {
-        return new AsyncInvoker<ListRelationRequest, ListRelationResponse>(request, OsmMeta.listRelation, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listRelation, hcClient);
     }
 
     /**
@@ -2126,7 +2079,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSatisfactionDimensionsRequest 请求对象
+     * @param request ListSatisfactionDimensionsRequest 请求对象
      * @return CompletableFuture<ListSatisfactionDimensionsResponse>
      */
     public CompletableFuture<ListSatisfactionDimensionsResponse> listSatisfactionDimensionsAsync(
@@ -2141,13 +2094,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSatisfactionDimensionsRequest 请求对象
+     * @param request ListSatisfactionDimensionsRequest 请求对象
      * @return AsyncInvoker<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse>
      */
     public AsyncInvoker<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse> listSatisfactionDimensionsAsyncInvoker(
         ListSatisfactionDimensionsRequest request) {
-        return new AsyncInvoker<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse>(request,
-            OsmMeta.listSatisfactionDimensions, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listSatisfactionDimensions, hcClient);
     }
 
     /**
@@ -2157,7 +2109,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSeveritiesRequest 请求对象
+     * @param request ListSeveritiesRequest 请求对象
      * @return CompletableFuture<ListSeveritiesResponse>
      */
     public CompletableFuture<ListSeveritiesResponse> listSeveritiesAsync(ListSeveritiesRequest request) {
@@ -2171,13 +2123,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSeveritiesRequest 请求对象
+     * @param request ListSeveritiesRequest 请求对象
      * @return AsyncInvoker<ListSeveritiesRequest, ListSeveritiesResponse>
      */
     public AsyncInvoker<ListSeveritiesRequest, ListSeveritiesResponse> listSeveritiesAsyncInvoker(
         ListSeveritiesRequest request) {
-        return new AsyncInvoker<ListSeveritiesRequest, ListSeveritiesResponse>(request, OsmMeta.listSeverities,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listSeverities, hcClient);
     }
 
     /**
@@ -2187,7 +2138,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomersRequest 请求对象
+     * @param request ListSubCustomersRequest 请求对象
      * @return CompletableFuture<ListSubCustomersResponse>
      */
     public CompletableFuture<ListSubCustomersResponse> listSubCustomersAsync(ListSubCustomersRequest request) {
@@ -2201,13 +2152,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomersRequest 请求对象
+     * @param request ListSubCustomersRequest 请求对象
      * @return AsyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse>
      */
     public AsyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse> listSubCustomersAsyncInvoker(
         ListSubCustomersRequest request) {
-        return new AsyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse>(request, OsmMeta.listSubCustomers,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listSubCustomers, hcClient);
     }
 
     /**
@@ -2217,7 +2167,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListToolsRequest 请求对象
+     * @param request ListToolsRequest 请求对象
      * @return CompletableFuture<ListToolsResponse>
      */
     public CompletableFuture<ListToolsResponse> listToolsAsync(ListToolsRequest request) {
@@ -2231,11 +2181,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListToolsRequest 请求对象
+     * @param request ListToolsRequest 请求对象
      * @return AsyncInvoker<ListToolsRequest, ListToolsResponse>
      */
     public AsyncInvoker<ListToolsRequest, ListToolsResponse> listToolsAsyncInvoker(ListToolsRequest request) {
-        return new AsyncInvoker<ListToolsRequest, ListToolsResponse>(request, OsmMeta.listTools, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listTools, hcClient);
     }
 
     /**
@@ -2245,7 +2195,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransportHistoriesRequest 请求对象
+     * @param request ListTransportHistoriesRequest 请求对象
      * @return CompletableFuture<ListTransportHistoriesResponse>
      */
     public CompletableFuture<ListTransportHistoriesResponse> listTransportHistoriesAsync(
@@ -2260,13 +2210,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransportHistoriesRequest 请求对象
+     * @param request ListTransportHistoriesRequest 请求对象
      * @return AsyncInvoker<ListTransportHistoriesRequest, ListTransportHistoriesResponse>
      */
     public AsyncInvoker<ListTransportHistoriesRequest, ListTransportHistoriesResponse> listTransportHistoriesAsyncInvoker(
         ListTransportHistoriesRequest request) {
-        return new AsyncInvoker<ListTransportHistoriesRequest, ListTransportHistoriesResponse>(request,
-            OsmMeta.listTransportHistories, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listTransportHistories, hcClient);
     }
 
     /**
@@ -2276,7 +2225,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUnreadNewInstantMessagesRequest 请求对象
+     * @param request ListUnreadNewInstantMessagesRequest 请求对象
      * @return CompletableFuture<ListUnreadNewInstantMessagesResponse>
      */
     public CompletableFuture<ListUnreadNewInstantMessagesResponse> listUnreadNewInstantMessagesAsync(
@@ -2291,13 +2240,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUnreadNewInstantMessagesRequest 请求对象
+     * @param request ListUnreadNewInstantMessagesRequest 请求对象
      * @return AsyncInvoker<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse>
      */
     public AsyncInvoker<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse> listUnreadNewInstantMessagesAsyncInvoker(
         ListUnreadNewInstantMessagesRequest request) {
-        return new AsyncInvoker<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse>(request,
-            OsmMeta.listUnreadNewInstantMessages, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.listUnreadNewInstantMessages, hcClient);
     }
 
     /**
@@ -2307,7 +2255,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RevokeMessageRequest 请求对象
+     * @param request RevokeMessageRequest 请求对象
      * @return CompletableFuture<RevokeMessageResponse>
      */
     public CompletableFuture<RevokeMessageResponse> revokeMessageAsync(RevokeMessageRequest request) {
@@ -2321,12 +2269,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RevokeMessageRequest 请求对象
+     * @param request RevokeMessageRequest 请求对象
      * @return AsyncInvoker<RevokeMessageRequest, RevokeMessageResponse>
      */
     public AsyncInvoker<RevokeMessageRequest, RevokeMessageResponse> revokeMessageAsyncInvoker(
         RevokeMessageRequest request) {
-        return new AsyncInvoker<RevokeMessageRequest, RevokeMessageResponse>(request, OsmMeta.revokeMessage, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.revokeMessage, hcClient);
     }
 
     /**
@@ -2336,7 +2284,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVerifyCodesRequest 请求对象
+     * @param request SendVerifyCodesRequest 请求对象
      * @return CompletableFuture<SendVerifyCodesResponse>
      */
     public CompletableFuture<SendVerifyCodesResponse> sendVerifyCodesAsync(SendVerifyCodesRequest request) {
@@ -2350,13 +2298,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVerifyCodesRequest 请求对象
+     * @param request SendVerifyCodesRequest 请求对象
      * @return AsyncInvoker<SendVerifyCodesRequest, SendVerifyCodesResponse>
      */
     public AsyncInvoker<SendVerifyCodesRequest, SendVerifyCodesResponse> sendVerifyCodesAsyncInvoker(
         SendVerifyCodesRequest request) {
-        return new AsyncInvoker<SendVerifyCodesRequest, SendVerifyCodesResponse>(request, OsmMeta.sendVerifyCodes,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.sendVerifyCodes, hcClient);
     }
 
     /**
@@ -2366,7 +2313,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAccessoryLimitsRequest 请求对象
+     * @param request ShowAccessoryLimitsRequest 请求对象
      * @return CompletableFuture<ShowAccessoryLimitsResponse>
      */
     public CompletableFuture<ShowAccessoryLimitsResponse> showAccessoryLimitsAsync(ShowAccessoryLimitsRequest request) {
@@ -2380,13 +2327,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAccessoryLimitsRequest 请求对象
+     * @param request ShowAccessoryLimitsRequest 请求对象
      * @return AsyncInvoker<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse>
      */
     public AsyncInvoker<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse> showAccessoryLimitsAsyncInvoker(
         ShowAccessoryLimitsRequest request) {
-        return new AsyncInvoker<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse>(request,
-            OsmMeta.showAccessoryLimits, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showAccessoryLimits, hcClient);
     }
 
     /**
@@ -2396,7 +2342,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssociatedQuestionsRequest 请求对象
+     * @param request ShowAssociatedQuestionsRequest 请求对象
      * @return CompletableFuture<ShowAssociatedQuestionsResponse>
      */
     public CompletableFuture<ShowAssociatedQuestionsResponse> showAssociatedQuestionsAsync(
@@ -2411,13 +2357,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssociatedQuestionsRequest 请求对象
+     * @param request ShowAssociatedQuestionsRequest 请求对象
      * @return AsyncInvoker<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse>
      */
     public AsyncInvoker<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse> showAssociatedQuestionsAsyncInvoker(
         ShowAssociatedQuestionsRequest request) {
-        return new AsyncInvoker<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse>(request,
-            OsmMeta.showAssociatedQuestions, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showAssociatedQuestions, hcClient);
     }
 
     /**
@@ -2427,7 +2372,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuthorizationDetailRequest 请求对象
+     * @param request ShowAuthorizationDetailRequest 请求对象
      * @return CompletableFuture<ShowAuthorizationDetailResponse>
      */
     public CompletableFuture<ShowAuthorizationDetailResponse> showAuthorizationDetailAsync(
@@ -2442,13 +2387,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuthorizationDetailRequest 请求对象
+     * @param request ShowAuthorizationDetailRequest 请求对象
      * @return AsyncInvoker<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse>
      */
     public AsyncInvoker<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse> showAuthorizationDetailAsyncInvoker(
         ShowAuthorizationDetailRequest request) {
-        return new AsyncInvoker<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse>(request,
-            OsmMeta.showAuthorizationDetail, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showAuthorizationDetail, hcClient);
     }
 
     /**
@@ -2458,7 +2402,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCaseDetailRequest 请求对象
+     * @param request ShowCaseDetailRequest 请求对象
      * @return CompletableFuture<ShowCaseDetailResponse>
      */
     public CompletableFuture<ShowCaseDetailResponse> showCaseDetailAsync(ShowCaseDetailRequest request) {
@@ -2472,13 +2416,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCaseDetailRequest 请求对象
+     * @param request ShowCaseDetailRequest 请求对象
      * @return AsyncInvoker<ShowCaseDetailRequest, ShowCaseDetailResponse>
      */
     public AsyncInvoker<ShowCaseDetailRequest, ShowCaseDetailResponse> showCaseDetailAsyncInvoker(
         ShowCaseDetailRequest request) {
-        return new AsyncInvoker<ShowCaseDetailRequest, ShowCaseDetailResponse>(request, OsmMeta.showCaseDetail,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showCaseDetail, hcClient);
     }
 
     /**
@@ -2488,7 +2431,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCaseExtendsParamRequest 请求对象
+     * @param request ShowCaseExtendsParamRequest 请求对象
      * @return CompletableFuture<ShowCaseExtendsParamResponse>
      */
     public CompletableFuture<ShowCaseExtendsParamResponse> showCaseExtendsParamAsync(
@@ -2503,13 +2446,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCaseExtendsParamRequest 请求对象
+     * @param request ShowCaseExtendsParamRequest 请求对象
      * @return AsyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse>
      */
     public AsyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse> showCaseExtendsParamAsyncInvoker(
         ShowCaseExtendsParamRequest request) {
-        return new AsyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse>(request,
-            OsmMeta.showCaseExtendsParam, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showCaseExtendsParam, hcClient);
     }
 
     /**
@@ -2519,7 +2461,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCaseStatusRequest 请求对象
+     * @param request ShowCaseStatusRequest 请求对象
      * @return CompletableFuture<ShowCaseStatusResponse>
      */
     public CompletableFuture<ShowCaseStatusResponse> showCaseStatusAsync(ShowCaseStatusRequest request) {
@@ -2533,13 +2475,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCaseStatusRequest 请求对象
+     * @param request ShowCaseStatusRequest 请求对象
      * @return AsyncInvoker<ShowCaseStatusRequest, ShowCaseStatusResponse>
      */
     public AsyncInvoker<ShowCaseStatusRequest, ShowCaseStatusResponse> showCaseStatusAsyncInvoker(
         ShowCaseStatusRequest request) {
-        return new AsyncInvoker<ShowCaseStatusRequest, ShowCaseStatusResponse>(request, OsmMeta.showCaseStatus,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showCaseStatus, hcClient);
     }
 
     /**
@@ -2549,7 +2490,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigurationRequest 请求对象
+     * @param request ShowConfigurationRequest 请求对象
      * @return CompletableFuture<ShowConfigurationResponse>
      */
     public CompletableFuture<ShowConfigurationResponse> showConfigurationAsync(ShowConfigurationRequest request) {
@@ -2563,13 +2504,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigurationRequest 请求对象
+     * @param request ShowConfigurationRequest 请求对象
      * @return AsyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse>
      */
     public AsyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse> showConfigurationAsyncInvoker(
         ShowConfigurationRequest request) {
-        return new AsyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse>(request, OsmMeta.showConfiguration,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showConfiguration, hcClient);
     }
 
     /**
@@ -2579,7 +2519,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerPrivilegePolicyRequest 请求对象
+     * @param request ShowCustomerPrivilegePolicyRequest 请求对象
      * @return CompletableFuture<ShowCustomerPrivilegePolicyResponse>
      */
     public CompletableFuture<ShowCustomerPrivilegePolicyResponse> showCustomerPrivilegePolicyAsync(
@@ -2594,13 +2534,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerPrivilegePolicyRequest 请求对象
+     * @param request ShowCustomerPrivilegePolicyRequest 请求对象
      * @return AsyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse>
      */
     public AsyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse> showCustomerPrivilegePolicyAsyncInvoker(
         ShowCustomerPrivilegePolicyRequest request) {
-        return new AsyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse>(request,
-            OsmMeta.showCustomerPrivilegePolicy, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showCustomerPrivilegePolicy, hcClient);
     }
 
     /**
@@ -2610,7 +2549,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDownloadAccessoryUrlRequest 请求对象
+     * @param request ShowDownloadAccessoryUrlRequest 请求对象
      * @return CompletableFuture<ShowDownloadAccessoryUrlResponse>
      */
     public CompletableFuture<ShowDownloadAccessoryUrlResponse> showDownloadAccessoryUrlAsync(
@@ -2625,13 +2564,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDownloadAccessoryUrlRequest 请求对象
+     * @param request ShowDownloadAccessoryUrlRequest 请求对象
      * @return AsyncInvoker<ShowDownloadAccessoryUrlRequest, ShowDownloadAccessoryUrlResponse>
      */
     public AsyncInvoker<ShowDownloadAccessoryUrlRequest, ShowDownloadAccessoryUrlResponse> showDownloadAccessoryUrlAsyncInvoker(
         ShowDownloadAccessoryUrlRequest request) {
-        return new AsyncInvoker<ShowDownloadAccessoryUrlRequest, ShowDownloadAccessoryUrlResponse>(request,
-            OsmMeta.showDownloadAccessoryUrl, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showDownloadAccessoryUrl, hcClient);
     }
 
     /**
@@ -2641,7 +2579,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLatestPublishedAgreementRequest 请求对象
+     * @param request ShowLatestPublishedAgreementRequest 请求对象
      * @return CompletableFuture<ShowLatestPublishedAgreementResponse>
      */
     public CompletableFuture<ShowLatestPublishedAgreementResponse> showLatestPublishedAgreementAsync(
@@ -2656,13 +2594,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLatestPublishedAgreementRequest 请求对象
+     * @param request ShowLatestPublishedAgreementRequest 请求对象
      * @return AsyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse>
      */
     public AsyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse> showLatestPublishedAgreementAsyncInvoker(
         ShowLatestPublishedAgreementRequest request) {
-        return new AsyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse>(request,
-            OsmMeta.showLatestPublishedAgreement, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showLatestPublishedAgreement, hcClient);
     }
 
     /**
@@ -2672,7 +2609,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLoginTypeRequest 请求对象
+     * @param request ShowLoginTypeRequest 请求对象
      * @return CompletableFuture<ShowLoginTypeResponse>
      */
     public CompletableFuture<ShowLoginTypeResponse> showLoginTypeAsync(ShowLoginTypeRequest request) {
@@ -2686,12 +2623,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLoginTypeRequest 请求对象
+     * @param request ShowLoginTypeRequest 请求对象
      * @return AsyncInvoker<ShowLoginTypeRequest, ShowLoginTypeResponse>
      */
     public AsyncInvoker<ShowLoginTypeRequest, ShowLoginTypeResponse> showLoginTypeAsyncInvoker(
         ShowLoginTypeRequest request) {
-        return new AsyncInvoker<ShowLoginTypeRequest, ShowLoginTypeResponse>(request, OsmMeta.showLoginType, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showLoginType, hcClient);
     }
 
     /**
@@ -2701,7 +2638,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartnersCasesPrivilegeRequest 请求对象
+     * @param request ShowPartnersCasesPrivilegeRequest 请求对象
      * @return CompletableFuture<ShowPartnersCasesPrivilegeResponse>
      */
     public CompletableFuture<ShowPartnersCasesPrivilegeResponse> showPartnersCasesPrivilegeAsync(
@@ -2716,13 +2653,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartnersCasesPrivilegeRequest 请求对象
+     * @param request ShowPartnersCasesPrivilegeRequest 请求对象
      * @return AsyncInvoker<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse>
      */
     public AsyncInvoker<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse> showPartnersCasesPrivilegeAsyncInvoker(
         ShowPartnersCasesPrivilegeRequest request) {
-        return new AsyncInvoker<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse>(request,
-            OsmMeta.showPartnersCasesPrivilege, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showPartnersCasesPrivilege, hcClient);
     }
 
     /**
@@ -2732,7 +2668,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartnersServiceInfoRequest 请求对象
+     * @param request ShowPartnersServiceInfoRequest 请求对象
      * @return CompletableFuture<ShowPartnersServiceInfoResponse>
      */
     public CompletableFuture<ShowPartnersServiceInfoResponse> showPartnersServiceInfoAsync(
@@ -2747,13 +2683,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartnersServiceInfoRequest 请求对象
+     * @param request ShowPartnersServiceInfoRequest 请求对象
      * @return AsyncInvoker<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse>
      */
     public AsyncInvoker<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse> showPartnersServiceInfoAsyncInvoker(
         ShowPartnersServiceInfoRequest request) {
-        return new AsyncInvoker<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse>(request,
-            OsmMeta.showPartnersServiceInfo, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showPartnersServiceInfo, hcClient);
     }
 
     /**
@@ -2763,7 +2698,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQaPairDetailRequest 请求对象
+     * @param request ShowQaPairDetailRequest 请求对象
      * @return CompletableFuture<ShowQaPairDetailResponse>
      */
     public CompletableFuture<ShowQaPairDetailResponse> showQaPairDetailAsync(ShowQaPairDetailRequest request) {
@@ -2777,13 +2712,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQaPairDetailRequest 请求对象
+     * @param request ShowQaPairDetailRequest 请求对象
      * @return AsyncInvoker<ShowQaPairDetailRequest, ShowQaPairDetailResponse>
      */
     public AsyncInvoker<ShowQaPairDetailRequest, ShowQaPairDetailResponse> showQaPairDetailAsyncInvoker(
         ShowQaPairDetailRequest request) {
-        return new AsyncInvoker<ShowQaPairDetailRequest, ShowQaPairDetailResponse>(request, OsmMeta.showQaPairDetail,
-            hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showQaPairDetail, hcClient);
     }
 
     /**
@@ -2793,7 +2727,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQaPairsRequest 请求对象
+     * @param request ShowQaPairsRequest 请求对象
      * @return CompletableFuture<ShowQaPairsResponse>
      */
     public CompletableFuture<ShowQaPairsResponse> showQaPairsAsync(ShowQaPairsRequest request) {
@@ -2807,11 +2741,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQaPairsRequest 请求对象
+     * @param request ShowQaPairsRequest 请求对象
      * @return AsyncInvoker<ShowQaPairsRequest, ShowQaPairsResponse>
      */
     public AsyncInvoker<ShowQaPairsRequest, ShowQaPairsResponse> showQaPairsAsyncInvoker(ShowQaPairsRequest request) {
-        return new AsyncInvoker<ShowQaPairsRequest, ShowQaPairsResponse>(request, OsmMeta.showQaPairs, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showQaPairs, hcClient);
     }
 
     /**
@@ -2821,7 +2755,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSignedLatestPublishedAgreementRequest 请求对象
+     * @param request ShowSignedLatestPublishedAgreementRequest 请求对象
      * @return CompletableFuture<ShowSignedLatestPublishedAgreementResponse>
      */
     public CompletableFuture<ShowSignedLatestPublishedAgreementResponse> showSignedLatestPublishedAgreementAsync(
@@ -2836,13 +2770,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSignedLatestPublishedAgreementRequest 请求对象
+     * @param request ShowSignedLatestPublishedAgreementRequest 请求对象
      * @return AsyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse>
      */
     public AsyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse> showSignedLatestPublishedAgreementAsyncInvoker(
         ShowSignedLatestPublishedAgreementRequest request) {
-        return new AsyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse>(
-            request, OsmMeta.showSignedLatestPublishedAgreement, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showSignedLatestPublishedAgreement, hcClient);
     }
 
     /**
@@ -2852,7 +2785,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowThemeRequest 请求对象
+     * @param request ShowThemeRequest 请求对象
      * @return CompletableFuture<ShowThemeResponse>
      */
     public CompletableFuture<ShowThemeResponse> showThemeAsync(ShowThemeRequest request) {
@@ -2866,11 +2799,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowThemeRequest 请求对象
+     * @param request ShowThemeRequest 请求对象
      * @return AsyncInvoker<ShowThemeRequest, ShowThemeResponse>
      */
     public AsyncInvoker<ShowThemeRequest, ShowThemeResponse> showThemeAsyncInvoker(ShowThemeRequest request) {
-        return new AsyncInvoker<ShowThemeRequest, ShowThemeResponse>(request, OsmMeta.showTheme, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.showTheme, hcClient);
     }
 
     /**
@@ -2880,7 +2813,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SignPublishedAgreementRequest 请求对象
+     * @param request SignPublishedAgreementRequest 请求对象
      * @return CompletableFuture<SignPublishedAgreementResponse>
      */
     public CompletableFuture<SignPublishedAgreementResponse> signPublishedAgreementAsync(
@@ -2895,13 +2828,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SignPublishedAgreementRequest 请求对象
+     * @param request SignPublishedAgreementRequest 请求对象
      * @return AsyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse>
      */
     public AsyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse> signPublishedAgreementAsyncInvoker(
         SignPublishedAgreementRequest request) {
-        return new AsyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse>(request,
-            OsmMeta.signPublishedAgreement, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.signPublishedAgreement, hcClient);
     }
 
     /**
@@ -2911,7 +2843,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAuthorizationsRequest 请求对象
+     * @param request UpdateAuthorizationsRequest 请求对象
      * @return CompletableFuture<UpdateAuthorizationsResponse>
      */
     public CompletableFuture<UpdateAuthorizationsResponse> updateAuthorizationsAsync(
@@ -2926,13 +2858,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAuthorizationsRequest 请求对象
+     * @param request UpdateAuthorizationsRequest 请求对象
      * @return AsyncInvoker<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse>
      */
     public AsyncInvoker<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse> updateAuthorizationsAsyncInvoker(
         UpdateAuthorizationsRequest request) {
-        return new AsyncInvoker<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse>(request,
-            OsmMeta.updateAuthorizations, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.updateAuthorizations, hcClient);
     }
 
     /**
@@ -2942,7 +2873,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCaseContactInfoRequest 请求对象
+     * @param request UpdateCaseContactInfoRequest 请求对象
      * @return CompletableFuture<UpdateCaseContactInfoResponse>
      */
     public CompletableFuture<UpdateCaseContactInfoResponse> updateCaseContactInfoAsync(
@@ -2957,13 +2888,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCaseContactInfoRequest 请求对象
+     * @param request UpdateCaseContactInfoRequest 请求对象
      * @return AsyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse>
      */
     public AsyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse> updateCaseContactInfoAsyncInvoker(
         UpdateCaseContactInfoRequest request) {
-        return new AsyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse>(request,
-            OsmMeta.updateCaseContactInfo, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.updateCaseContactInfo, hcClient);
     }
 
     /**
@@ -2973,7 +2903,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCasesRequest 请求对象
+     * @param request UpdateCasesRequest 请求对象
      * @return CompletableFuture<UpdateCasesResponse>
      */
     public CompletableFuture<UpdateCasesResponse> updateCasesAsync(UpdateCasesRequest request) {
@@ -2987,11 +2917,11 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCasesRequest 请求对象
+     * @param request UpdateCasesRequest 请求对象
      * @return AsyncInvoker<UpdateCasesRequest, UpdateCasesResponse>
      */
     public AsyncInvoker<UpdateCasesRequest, UpdateCasesResponse> updateCasesAsyncInvoker(UpdateCasesRequest request) {
-        return new AsyncInvoker<UpdateCasesRequest, UpdateCasesResponse>(request, OsmMeta.updateCases, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.updateCases, hcClient);
     }
 
     /**
@@ -3001,7 +2931,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLabelsRequest 请求对象
+     * @param request UpdateLabelsRequest 请求对象
      * @return CompletableFuture<UpdateLabelsResponse>
      */
     public CompletableFuture<UpdateLabelsResponse> updateLabelsAsync(UpdateLabelsRequest request) {
@@ -3015,12 +2945,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLabelsRequest 请求对象
+     * @param request UpdateLabelsRequest 请求对象
      * @return AsyncInvoker<UpdateLabelsRequest, UpdateLabelsResponse>
      */
     public AsyncInvoker<UpdateLabelsRequest, UpdateLabelsResponse> updateLabelsAsyncInvoker(
         UpdateLabelsRequest request) {
-        return new AsyncInvoker<UpdateLabelsRequest, UpdateLabelsResponse>(request, OsmMeta.updateLabels, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.updateLabels, hcClient);
     }
 
     /**
@@ -3030,7 +2960,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNewInstantMessagesReadRequest 请求对象
+     * @param request UpdateNewInstantMessagesReadRequest 请求对象
      * @return CompletableFuture<UpdateNewInstantMessagesReadResponse>
      */
     public CompletableFuture<UpdateNewInstantMessagesReadResponse> updateNewInstantMessagesReadAsync(
@@ -3045,13 +2975,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNewInstantMessagesReadRequest 请求对象
+     * @param request UpdateNewInstantMessagesReadRequest 请求对象
      * @return AsyncInvoker<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse>
      */
     public AsyncInvoker<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse> updateNewInstantMessagesReadAsyncInvoker(
         UpdateNewInstantMessagesReadRequest request) {
-        return new AsyncInvoker<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse>(request,
-            OsmMeta.updateNewInstantMessagesRead, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.updateNewInstantMessagesRead, hcClient);
     }
 
     /**
@@ -3061,7 +2990,7 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadJsonAccessoriesRequest 请求对象
+     * @param request UploadJsonAccessoriesRequest 请求对象
      * @return CompletableFuture<UploadJsonAccessoriesResponse>
      */
     public CompletableFuture<UploadJsonAccessoriesResponse> uploadJsonAccessoriesAsync(
@@ -3076,13 +3005,12 @@ public class OsmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadJsonAccessoriesRequest 请求对象
+     * @param request UploadJsonAccessoriesRequest 请求对象
      * @return AsyncInvoker<UploadJsonAccessoriesRequest, UploadJsonAccessoriesResponse>
      */
     public AsyncInvoker<UploadJsonAccessoriesRequest, UploadJsonAccessoriesResponse> uploadJsonAccessoriesAsyncInvoker(
         UploadJsonAccessoriesRequest request) {
-        return new AsyncInvoker<UploadJsonAccessoriesRequest, UploadJsonAccessoriesResponse>(request,
-            OsmMeta.uploadJsonAccessories, hcClient);
+        return new AsyncInvoker<>(request, OsmMeta.uploadJsonAccessories, hcClient);
     }
 
 }

@@ -90,7 +90,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResDatasourceRequest 请求对象
+     * @param request CreateResDatasourceRequest 请求对象
      * @return CreateResDatasourceResponse
      */
     public CreateResDatasourceResponse createResDatasource(CreateResDatasourceRequest request) {
@@ -104,13 +104,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResDatasourceRequest 请求对象
+     * @param request CreateResDatasourceRequest 请求对象
      * @return SyncInvoker<CreateResDatasourceRequest, CreateResDatasourceResponse>
      */
     public SyncInvoker<CreateResDatasourceRequest, CreateResDatasourceResponse> createResDatasourceInvoker(
         CreateResDatasourceRequest request) {
-        return new SyncInvoker<CreateResDatasourceRequest, CreateResDatasourceResponse>(request,
-            ResMeta.createResDatasource, hcClient);
+        return new SyncInvoker<>(request, ResMeta.createResDatasource, hcClient);
     }
 
     /**
@@ -120,7 +119,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResIntelligentSceneRequest 请求对象
+     * @param request CreateResIntelligentSceneRequest 请求对象
      * @return CreateResIntelligentSceneResponse
      */
     public CreateResIntelligentSceneResponse createResIntelligentScene(CreateResIntelligentSceneRequest request) {
@@ -134,13 +133,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResIntelligentSceneRequest 请求对象
+     * @param request CreateResIntelligentSceneRequest 请求对象
      * @return SyncInvoker<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse>
      */
     public SyncInvoker<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse> createResIntelligentSceneInvoker(
         CreateResIntelligentSceneRequest request) {
-        return new SyncInvoker<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse>(request,
-            ResMeta.createResIntelligentScene, hcClient);
+        return new SyncInvoker<>(request, ResMeta.createResIntelligentScene, hcClient);
     }
 
     /**
@@ -150,7 +148,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResJobRequest 请求对象
+     * @param request CreateResJobRequest 请求对象
      * @return CreateResJobResponse
      */
     public CreateResJobResponse createResJob(CreateResJobRequest request) {
@@ -164,11 +162,11 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResJobRequest 请求对象
+     * @param request CreateResJobRequest 请求对象
      * @return SyncInvoker<CreateResJobRequest, CreateResJobResponse>
      */
     public SyncInvoker<CreateResJobRequest, CreateResJobResponse> createResJobInvoker(CreateResJobRequest request) {
-        return new SyncInvoker<CreateResJobRequest, CreateResJobResponse>(request, ResMeta.createResJob, hcClient);
+        return new SyncInvoker<>(request, ResMeta.createResJob, hcClient);
     }
 
     /**
@@ -178,7 +176,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResJobsRequest 请求对象
+     * @param request CreateResJobsRequest 请求对象
      * @return CreateResJobsResponse
      */
     public CreateResJobsResponse createResJobs(CreateResJobsRequest request) {
@@ -192,11 +190,11 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResJobsRequest 请求对象
+     * @param request CreateResJobsRequest 请求对象
      * @return SyncInvoker<CreateResJobsRequest, CreateResJobsResponse>
      */
     public SyncInvoker<CreateResJobsRequest, CreateResJobsResponse> createResJobsInvoker(CreateResJobsRequest request) {
-        return new SyncInvoker<CreateResJobsRequest, CreateResJobsResponse>(request, ResMeta.createResJobs, hcClient);
+        return new SyncInvoker<>(request, ResMeta.createResJobs, hcClient);
     }
 
     /**
@@ -206,7 +204,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResOnlineInstanceRequest 请求对象
+     * @param request CreateResOnlineInstanceRequest 请求对象
      * @return CreateResOnlineInstanceResponse
      */
     public CreateResOnlineInstanceResponse createResOnlineInstance(CreateResOnlineInstanceRequest request) {
@@ -220,13 +218,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResOnlineInstanceRequest 请求对象
+     * @param request CreateResOnlineInstanceRequest 请求对象
      * @return SyncInvoker<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse>
      */
     public SyncInvoker<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse> createResOnlineInstanceInvoker(
         CreateResOnlineInstanceRequest request) {
-        return new SyncInvoker<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse>(request,
-            ResMeta.createResOnlineInstance, hcClient);
+        return new SyncInvoker<>(request, ResMeta.createResOnlineInstance, hcClient);
     }
 
     /**
@@ -236,7 +233,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResSceneRequest 请求对象
+     * @param request CreateResSceneRequest 请求对象
      * @return CreateResSceneResponse
      */
     public CreateResSceneResponse createResScene(CreateResSceneRequest request) {
@@ -250,13 +247,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResSceneRequest 请求对象
+     * @param request CreateResSceneRequest 请求对象
      * @return SyncInvoker<CreateResSceneRequest, CreateResSceneResponse>
      */
     public SyncInvoker<CreateResSceneRequest, CreateResSceneResponse> createResSceneInvoker(
         CreateResSceneRequest request) {
-        return new SyncInvoker<CreateResSceneRequest, CreateResSceneResponse>(request, ResMeta.createResScene,
-            hcClient);
+        return new SyncInvoker<>(request, ResMeta.createResScene, hcClient);
     }
 
     /**
@@ -266,7 +262,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResWorkspaceRequest 请求对象
+     * @param request CreateResWorkspaceRequest 请求对象
      * @return CreateResWorkspaceResponse
      */
     public CreateResWorkspaceResponse createResWorkspace(CreateResWorkspaceRequest request) {
@@ -280,13 +276,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResWorkspaceRequest 请求对象
+     * @param request CreateResWorkspaceRequest 请求对象
      * @return SyncInvoker<CreateResWorkspaceRequest, CreateResWorkspaceResponse>
      */
     public SyncInvoker<CreateResWorkspaceRequest, CreateResWorkspaceResponse> createResWorkspaceInvoker(
         CreateResWorkspaceRequest request) {
-        return new SyncInvoker<CreateResWorkspaceRequest, CreateResWorkspaceResponse>(request,
-            ResMeta.createResWorkspace, hcClient);
+        return new SyncInvoker<>(request, ResMeta.createResWorkspace, hcClient);
     }
 
     /**
@@ -296,7 +291,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResDatasourceRequest 请求对象
+     * @param request DeleteResDatasourceRequest 请求对象
      * @return DeleteResDatasourceResponse
      */
     public DeleteResDatasourceResponse deleteResDatasource(DeleteResDatasourceRequest request) {
@@ -310,13 +305,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResDatasourceRequest 请求对象
+     * @param request DeleteResDatasourceRequest 请求对象
      * @return SyncInvoker<DeleteResDatasourceRequest, DeleteResDatasourceResponse>
      */
     public SyncInvoker<DeleteResDatasourceRequest, DeleteResDatasourceResponse> deleteResDatasourceInvoker(
         DeleteResDatasourceRequest request) {
-        return new SyncInvoker<DeleteResDatasourceRequest, DeleteResDatasourceResponse>(request,
-            ResMeta.deleteResDatasource, hcClient);
+        return new SyncInvoker<>(request, ResMeta.deleteResDatasource, hcClient);
     }
 
     /**
@@ -326,7 +320,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResJobRequest 请求对象
+     * @param request DeleteResJobRequest 请求对象
      * @return DeleteResJobResponse
      */
     public DeleteResJobResponse deleteResJob(DeleteResJobRequest request) {
@@ -340,11 +334,11 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResJobRequest 请求对象
+     * @param request DeleteResJobRequest 请求对象
      * @return SyncInvoker<DeleteResJobRequest, DeleteResJobResponse>
      */
     public SyncInvoker<DeleteResJobRequest, DeleteResJobResponse> deleteResJobInvoker(DeleteResJobRequest request) {
-        return new SyncInvoker<DeleteResJobRequest, DeleteResJobResponse>(request, ResMeta.deleteResJob, hcClient);
+        return new SyncInvoker<>(request, ResMeta.deleteResJob, hcClient);
     }
 
     /**
@@ -354,7 +348,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResOnlineInstanceRequest 请求对象
+     * @param request DeleteResOnlineInstanceRequest 请求对象
      * @return DeleteResOnlineInstanceResponse
      */
     public DeleteResOnlineInstanceResponse deleteResOnlineInstance(DeleteResOnlineInstanceRequest request) {
@@ -368,13 +362,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResOnlineInstanceRequest 请求对象
+     * @param request DeleteResOnlineInstanceRequest 请求对象
      * @return SyncInvoker<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse>
      */
     public SyncInvoker<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse> deleteResOnlineInstanceInvoker(
         DeleteResOnlineInstanceRequest request) {
-        return new SyncInvoker<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse>(request,
-            ResMeta.deleteResOnlineInstance, hcClient);
+        return new SyncInvoker<>(request, ResMeta.deleteResOnlineInstance, hcClient);
     }
 
     /**
@@ -384,7 +377,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResSceneRequest 请求对象
+     * @param request DeleteResSceneRequest 请求对象
      * @return DeleteResSceneResponse
      */
     public DeleteResSceneResponse deleteResScene(DeleteResSceneRequest request) {
@@ -398,13 +391,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResSceneRequest 请求对象
+     * @param request DeleteResSceneRequest 请求对象
      * @return SyncInvoker<DeleteResSceneRequest, DeleteResSceneResponse>
      */
     public SyncInvoker<DeleteResSceneRequest, DeleteResSceneResponse> deleteResSceneInvoker(
         DeleteResSceneRequest request) {
-        return new SyncInvoker<DeleteResSceneRequest, DeleteResSceneResponse>(request, ResMeta.deleteResScene,
-            hcClient);
+        return new SyncInvoker<>(request, ResMeta.deleteResScene, hcClient);
     }
 
     /**
@@ -414,7 +406,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResWorkspaceRequest 请求对象
+     * @param request DeleteResWorkspaceRequest 请求对象
      * @return DeleteResWorkspaceResponse
      */
     public DeleteResWorkspaceResponse deleteResWorkspace(DeleteResWorkspaceRequest request) {
@@ -428,13 +420,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResWorkspaceRequest 请求对象
+     * @param request DeleteResWorkspaceRequest 请求对象
      * @return SyncInvoker<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse>
      */
     public SyncInvoker<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse> deleteResWorkspaceInvoker(
         DeleteResWorkspaceRequest request) {
-        return new SyncInvoker<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse>(request,
-            ResMeta.deleteResWorkspace, hcClient);
+        return new SyncInvoker<>(request, ResMeta.deleteResWorkspace, hcClient);
     }
 
     /**
@@ -444,7 +435,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResDatasourcesRequest 请求对象
+     * @param request ListResDatasourcesRequest 请求对象
      * @return ListResDatasourcesResponse
      */
     public ListResDatasourcesResponse listResDatasources(ListResDatasourcesRequest request) {
@@ -458,13 +449,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResDatasourcesRequest 请求对象
+     * @param request ListResDatasourcesRequest 请求对象
      * @return SyncInvoker<ListResDatasourcesRequest, ListResDatasourcesResponse>
      */
     public SyncInvoker<ListResDatasourcesRequest, ListResDatasourcesResponse> listResDatasourcesInvoker(
         ListResDatasourcesRequest request) {
-        return new SyncInvoker<ListResDatasourcesRequest, ListResDatasourcesResponse>(request,
-            ResMeta.listResDatasources, hcClient);
+        return new SyncInvoker<>(request, ResMeta.listResDatasources, hcClient);
     }
 
     /**
@@ -474,7 +464,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResEnterprisesRequest 请求对象
+     * @param request ListResEnterprisesRequest 请求对象
      * @return ListResEnterprisesResponse
      */
     public ListResEnterprisesResponse listResEnterprises(ListResEnterprisesRequest request) {
@@ -488,13 +478,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResEnterprisesRequest 请求对象
+     * @param request ListResEnterprisesRequest 请求对象
      * @return SyncInvoker<ListResEnterprisesRequest, ListResEnterprisesResponse>
      */
     public SyncInvoker<ListResEnterprisesRequest, ListResEnterprisesResponse> listResEnterprisesInvoker(
         ListResEnterprisesRequest request) {
-        return new SyncInvoker<ListResEnterprisesRequest, ListResEnterprisesResponse>(request,
-            ResMeta.listResEnterprises, hcClient);
+        return new SyncInvoker<>(request, ResMeta.listResEnterprises, hcClient);
     }
 
     /**
@@ -504,7 +493,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResOnlineServiceDetailsRequest 请求对象
+     * @param request ListResOnlineServiceDetailsRequest 请求对象
      * @return ListResOnlineServiceDetailsResponse
      */
     public ListResOnlineServiceDetailsResponse listResOnlineServiceDetails(ListResOnlineServiceDetailsRequest request) {
@@ -518,13 +507,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResOnlineServiceDetailsRequest 请求对象
+     * @param request ListResOnlineServiceDetailsRequest 请求对象
      * @return SyncInvoker<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse>
      */
     public SyncInvoker<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse> listResOnlineServiceDetailsInvoker(
         ListResOnlineServiceDetailsRequest request) {
-        return new SyncInvoker<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse>(request,
-            ResMeta.listResOnlineServiceDetails, hcClient);
+        return new SyncInvoker<>(request, ResMeta.listResOnlineServiceDetails, hcClient);
     }
 
     /**
@@ -534,7 +522,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResResourceSpecRequest 请求对象
+     * @param request ListResResourceSpecRequest 请求对象
      * @return ListResResourceSpecResponse
      */
     public ListResResourceSpecResponse listResResourceSpec(ListResResourceSpecRequest request) {
@@ -548,13 +536,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResResourceSpecRequest 请求对象
+     * @param request ListResResourceSpecRequest 请求对象
      * @return SyncInvoker<ListResResourceSpecRequest, ListResResourceSpecResponse>
      */
     public SyncInvoker<ListResResourceSpecRequest, ListResResourceSpecResponse> listResResourceSpecInvoker(
         ListResResourceSpecRequest request) {
-        return new SyncInvoker<ListResResourceSpecRequest, ListResResourceSpecResponse>(request,
-            ResMeta.listResResourceSpec, hcClient);
+        return new SyncInvoker<>(request, ResMeta.listResResourceSpec, hcClient);
     }
 
     /**
@@ -564,7 +551,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResScenesRequest 请求对象
+     * @param request ListResScenesRequest 请求对象
      * @return ListResScenesResponse
      */
     public ListResScenesResponse listResScenes(ListResScenesRequest request) {
@@ -578,11 +565,11 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResScenesRequest 请求对象
+     * @param request ListResScenesRequest 请求对象
      * @return SyncInvoker<ListResScenesRequest, ListResScenesResponse>
      */
     public SyncInvoker<ListResScenesRequest, ListResScenesResponse> listResScenesInvoker(ListResScenesRequest request) {
-        return new SyncInvoker<ListResScenesRequest, ListResScenesResponse>(request, ResMeta.listResScenes, hcClient);
+        return new SyncInvoker<>(request, ResMeta.listResScenes, hcClient);
     }
 
     /**
@@ -592,7 +579,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResWorkspacesRequest 请求对象
+     * @param request ListResWorkspacesRequest 请求对象
      * @return ListResWorkspacesResponse
      */
     public ListResWorkspacesResponse listResWorkspaces(ListResWorkspacesRequest request) {
@@ -606,13 +593,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResWorkspacesRequest 请求对象
+     * @param request ListResWorkspacesRequest 请求对象
      * @return SyncInvoker<ListResWorkspacesRequest, ListResWorkspacesResponse>
      */
     public SyncInvoker<ListResWorkspacesRequest, ListResWorkspacesResponse> listResWorkspacesInvoker(
         ListResWorkspacesRequest request) {
-        return new SyncInvoker<ListResWorkspacesRequest, ListResWorkspacesResponse>(request, ResMeta.listResWorkspaces,
-            hcClient);
+        return new SyncInvoker<>(request, ResMeta.listResWorkspaces, hcClient);
     }
 
     /**
@@ -622,7 +608,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResDatasourceRequest 请求对象
+     * @param request ShowResDatasourceRequest 请求对象
      * @return ShowResDatasourceResponse
      */
     public ShowResDatasourceResponse showResDatasource(ShowResDatasourceRequest request) {
@@ -636,13 +622,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResDatasourceRequest 请求对象
+     * @param request ShowResDatasourceRequest 请求对象
      * @return SyncInvoker<ShowResDatasourceRequest, ShowResDatasourceResponse>
      */
     public SyncInvoker<ShowResDatasourceRequest, ShowResDatasourceResponse> showResDatasourceInvoker(
         ShowResDatasourceRequest request) {
-        return new SyncInvoker<ShowResDatasourceRequest, ShowResDatasourceResponse>(request, ResMeta.showResDatasource,
-            hcClient);
+        return new SyncInvoker<>(request, ResMeta.showResDatasource, hcClient);
     }
 
     /**
@@ -652,7 +637,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResDatasourceWorkDetailRequest 请求对象
+     * @param request ShowResDatasourceWorkDetailRequest 请求对象
      * @return ShowResDatasourceWorkDetailResponse
      */
     public ShowResDatasourceWorkDetailResponse showResDatasourceWorkDetail(ShowResDatasourceWorkDetailRequest request) {
@@ -666,13 +651,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResDatasourceWorkDetailRequest 请求对象
+     * @param request ShowResDatasourceWorkDetailRequest 请求对象
      * @return SyncInvoker<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse>
      */
     public SyncInvoker<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse> showResDatasourceWorkDetailInvoker(
         ShowResDatasourceWorkDetailRequest request) {
-        return new SyncInvoker<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse>(request,
-            ResMeta.showResDatasourceWorkDetail, hcClient);
+        return new SyncInvoker<>(request, ResMeta.showResDatasourceWorkDetail, hcClient);
     }
 
     /**
@@ -682,7 +666,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResJobRequest 请求对象
+     * @param request ShowResJobRequest 请求对象
      * @return ShowResJobResponse
      */
     public ShowResJobResponse showResJob(ShowResJobRequest request) {
@@ -696,11 +680,11 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResJobRequest 请求对象
+     * @param request ShowResJobRequest 请求对象
      * @return SyncInvoker<ShowResJobRequest, ShowResJobResponse>
      */
     public SyncInvoker<ShowResJobRequest, ShowResJobResponse> showResJobInvoker(ShowResJobRequest request) {
-        return new SyncInvoker<ShowResJobRequest, ShowResJobResponse>(request, ResMeta.showResJob, hcClient);
+        return new SyncInvoker<>(request, ResMeta.showResJob, hcClient);
     }
 
     /**
@@ -710,7 +694,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResRecallSetRequest 请求对象
+     * @param request ShowResRecallSetRequest 请求对象
      * @return ShowResRecallSetResponse
      */
     public ShowResRecallSetResponse showResRecallSet(ShowResRecallSetRequest request) {
@@ -724,13 +708,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResRecallSetRequest 请求对象
+     * @param request ShowResRecallSetRequest 请求对象
      * @return SyncInvoker<ShowResRecallSetRequest, ShowResRecallSetResponse>
      */
     public SyncInvoker<ShowResRecallSetRequest, ShowResRecallSetResponse> showResRecallSetInvoker(
         ShowResRecallSetRequest request) {
-        return new SyncInvoker<ShowResRecallSetRequest, ShowResRecallSetResponse>(request, ResMeta.showResRecallSet,
-            hcClient);
+        return new SyncInvoker<>(request, ResMeta.showResRecallSet, hcClient);
     }
 
     /**
@@ -740,7 +723,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResSceneRequest 请求对象
+     * @param request ShowResSceneRequest 请求对象
      * @return ShowResSceneResponse
      */
     public ShowResSceneResponse showResScene(ShowResSceneRequest request) {
@@ -754,11 +737,11 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResSceneRequest 请求对象
+     * @param request ShowResSceneRequest 请求对象
      * @return SyncInvoker<ShowResSceneRequest, ShowResSceneResponse>
      */
     public SyncInvoker<ShowResSceneRequest, ShowResSceneResponse> showResSceneInvoker(ShowResSceneRequest request) {
-        return new SyncInvoker<ShowResSceneRequest, ShowResSceneResponse>(request, ResMeta.showResScene, hcClient);
+        return new SyncInvoker<>(request, ResMeta.showResScene, hcClient);
     }
 
     /**
@@ -768,7 +751,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResWrokspaceRequest 请求对象
+     * @param request ShowResWrokspaceRequest 请求对象
      * @return ShowResWrokspaceResponse
      */
     public ShowResWrokspaceResponse showResWrokspace(ShowResWrokspaceRequest request) {
@@ -782,13 +765,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResWrokspaceRequest 请求对象
+     * @param request ShowResWrokspaceRequest 请求对象
      * @return SyncInvoker<ShowResWrokspaceRequest, ShowResWrokspaceResponse>
      */
     public SyncInvoker<ShowResWrokspaceRequest, ShowResWrokspaceResponse> showResWrokspaceInvoker(
         ShowResWrokspaceRequest request) {
-        return new SyncInvoker<ShowResWrokspaceRequest, ShowResWrokspaceResponse>(request, ResMeta.showResWrokspace,
-            hcClient);
+        return new SyncInvoker<>(request, ResMeta.showResWrokspace, hcClient);
     }
 
     /**
@@ -798,7 +780,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartResJobRequest 请求对象
+     * @param request StartResJobRequest 请求对象
      * @return StartResJobResponse
      */
     public StartResJobResponse startResJob(StartResJobRequest request) {
@@ -812,11 +794,11 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartResJobRequest 请求对象
+     * @param request StartResJobRequest 请求对象
      * @return SyncInvoker<StartResJobRequest, StartResJobResponse>
      */
     public SyncInvoker<StartResJobRequest, StartResJobResponse> startResJobInvoker(StartResJobRequest request) {
-        return new SyncInvoker<StartResJobRequest, StartResJobResponse>(request, ResMeta.startResJob, hcClient);
+        return new SyncInvoker<>(request, ResMeta.startResJob, hcClient);
     }
 
     /**
@@ -826,7 +808,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartResSceneJobsRequest 请求对象
+     * @param request StartResSceneJobsRequest 请求对象
      * @return StartResSceneJobsResponse
      */
     public StartResSceneJobsResponse startResSceneJobs(StartResSceneJobsRequest request) {
@@ -840,13 +822,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartResSceneJobsRequest 请求对象
+     * @param request StartResSceneJobsRequest 请求对象
      * @return SyncInvoker<StartResSceneJobsRequest, StartResSceneJobsResponse>
      */
     public SyncInvoker<StartResSceneJobsRequest, StartResSceneJobsResponse> startResSceneJobsInvoker(
         StartResSceneJobsRequest request) {
-        return new SyncInvoker<StartResSceneJobsRequest, StartResSceneJobsResponse>(request, ResMeta.startResSceneJobs,
-            hcClient);
+        return new SyncInvoker<>(request, ResMeta.startResSceneJobs, hcClient);
     }
 
     /**
@@ -856,7 +837,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResDatasourceRequest 请求对象
+     * @param request UpdateResDatasourceRequest 请求对象
      * @return UpdateResDatasourceResponse
      */
     public UpdateResDatasourceResponse updateResDatasource(UpdateResDatasourceRequest request) {
@@ -870,13 +851,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResDatasourceRequest 请求对象
+     * @param request UpdateResDatasourceRequest 请求对象
      * @return SyncInvoker<UpdateResDatasourceRequest, UpdateResDatasourceResponse>
      */
     public SyncInvoker<UpdateResDatasourceRequest, UpdateResDatasourceResponse> updateResDatasourceInvoker(
         UpdateResDatasourceRequest request) {
-        return new SyncInvoker<UpdateResDatasourceRequest, UpdateResDatasourceResponse>(request,
-            ResMeta.updateResDatasource, hcClient);
+        return new SyncInvoker<>(request, ResMeta.updateResDatasource, hcClient);
     }
 
     /**
@@ -886,7 +866,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResDatastructRequest 请求对象
+     * @param request UpdateResDatastructRequest 请求对象
      * @return UpdateResDatastructResponse
      */
     public UpdateResDatastructResponse updateResDatastruct(UpdateResDatastructRequest request) {
@@ -900,13 +880,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResDatastructRequest 请求对象
+     * @param request UpdateResDatastructRequest 请求对象
      * @return SyncInvoker<UpdateResDatastructRequest, UpdateResDatastructResponse>
      */
     public SyncInvoker<UpdateResDatastructRequest, UpdateResDatastructResponse> updateResDatastructInvoker(
         UpdateResDatastructRequest request) {
-        return new SyncInvoker<UpdateResDatastructRequest, UpdateResDatastructResponse>(request,
-            ResMeta.updateResDatastruct, hcClient);
+        return new SyncInvoker<>(request, ResMeta.updateResDatastruct, hcClient);
     }
 
     /**
@@ -916,7 +895,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResIntelligentSceneRequest 请求对象
+     * @param request UpdateResIntelligentSceneRequest 请求对象
      * @return UpdateResIntelligentSceneResponse
      */
     public UpdateResIntelligentSceneResponse updateResIntelligentScene(UpdateResIntelligentSceneRequest request) {
@@ -930,13 +909,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResIntelligentSceneRequest 请求对象
+     * @param request UpdateResIntelligentSceneRequest 请求对象
      * @return SyncInvoker<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse>
      */
     public SyncInvoker<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse> updateResIntelligentSceneInvoker(
         UpdateResIntelligentSceneRequest request) {
-        return new SyncInvoker<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse>(request,
-            ResMeta.updateResIntelligentScene, hcClient);
+        return new SyncInvoker<>(request, ResMeta.updateResIntelligentScene, hcClient);
     }
 
     /**
@@ -946,7 +924,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResJobRequest 请求对象
+     * @param request UpdateResJobRequest 请求对象
      * @return UpdateResJobResponse
      */
     public UpdateResJobResponse updateResJob(UpdateResJobRequest request) {
@@ -960,11 +938,11 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResJobRequest 请求对象
+     * @param request UpdateResJobRequest 请求对象
      * @return SyncInvoker<UpdateResJobRequest, UpdateResJobResponse>
      */
     public SyncInvoker<UpdateResJobRequest, UpdateResJobResponse> updateResJobInvoker(UpdateResJobRequest request) {
-        return new SyncInvoker<UpdateResJobRequest, UpdateResJobResponse>(request, ResMeta.updateResJob, hcClient);
+        return new SyncInvoker<>(request, ResMeta.updateResJob, hcClient);
     }
 
     /**
@@ -974,7 +952,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResOnlineInstanceRequest 请求对象
+     * @param request UpdateResOnlineInstanceRequest 请求对象
      * @return UpdateResOnlineInstanceResponse
      */
     public UpdateResOnlineInstanceResponse updateResOnlineInstance(UpdateResOnlineInstanceRequest request) {
@@ -988,13 +966,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResOnlineInstanceRequest 请求对象
+     * @param request UpdateResOnlineInstanceRequest 请求对象
      * @return SyncInvoker<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse>
      */
     public SyncInvoker<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse> updateResOnlineInstanceInvoker(
         UpdateResOnlineInstanceRequest request) {
-        return new SyncInvoker<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse>(request,
-            ResMeta.updateResOnlineInstance, hcClient);
+        return new SyncInvoker<>(request, ResMeta.updateResOnlineInstance, hcClient);
     }
 
     /**
@@ -1004,7 +981,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResSceneRequest 请求对象
+     * @param request UpdateResSceneRequest 请求对象
      * @return UpdateResSceneResponse
      */
     public UpdateResSceneResponse updateResScene(UpdateResSceneRequest request) {
@@ -1018,13 +995,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResSceneRequest 请求对象
+     * @param request UpdateResSceneRequest 请求对象
      * @return SyncInvoker<UpdateResSceneRequest, UpdateResSceneResponse>
      */
     public SyncInvoker<UpdateResSceneRequest, UpdateResSceneResponse> updateResSceneInvoker(
         UpdateResSceneRequest request) {
-        return new SyncInvoker<UpdateResSceneRequest, UpdateResSceneResponse>(request, ResMeta.updateResScene,
-            hcClient);
+        return new SyncInvoker<>(request, ResMeta.updateResScene, hcClient);
     }
 
     /**
@@ -1034,7 +1010,7 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResWorkspaceRequest 请求对象
+     * @param request UpdateResWorkspaceRequest 请求对象
      * @return UpdateResWorkspaceResponse
      */
     public UpdateResWorkspaceResponse updateResWorkspace(UpdateResWorkspaceRequest request) {
@@ -1048,13 +1024,12 @@ public class ResClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResWorkspaceRequest 请求对象
+     * @param request UpdateResWorkspaceRequest 请求对象
      * @return SyncInvoker<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse>
      */
     public SyncInvoker<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse> updateResWorkspaceInvoker(
         UpdateResWorkspaceRequest request) {
-        return new SyncInvoker<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse>(request,
-            ResMeta.updateResWorkspace, hcClient);
+        return new SyncInvoker<>(request, ResMeta.updateResWorkspace, hcClient);
     }
 
 }

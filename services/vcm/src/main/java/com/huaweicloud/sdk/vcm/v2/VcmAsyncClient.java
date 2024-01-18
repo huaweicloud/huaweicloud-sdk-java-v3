@@ -42,7 +42,7 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAudioJobRequest 请求对象
+     * @param request CheckAudioJobRequest 请求对象
      * @return CompletableFuture<CheckAudioJobResponse>
      */
     public CompletableFuture<CheckAudioJobResponse> checkAudioJobAsync(CheckAudioJobRequest request) {
@@ -56,12 +56,12 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAudioJobRequest 请求对象
+     * @param request CheckAudioJobRequest 请求对象
      * @return AsyncInvoker<CheckAudioJobRequest, CheckAudioJobResponse>
      */
     public AsyncInvoker<CheckAudioJobRequest, CheckAudioJobResponse> checkAudioJobAsyncInvoker(
         CheckAudioJobRequest request) {
-        return new AsyncInvoker<CheckAudioJobRequest, CheckAudioJobResponse>(request, VcmMeta.checkAudioJob, hcClient);
+        return new AsyncInvoker<>(request, VcmMeta.checkAudioJob, hcClient);
     }
 
     /**
@@ -71,7 +71,7 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVideoJobRequest 请求对象
+     * @param request CheckVideoJobRequest 请求对象
      * @return CompletableFuture<CheckVideoJobResponse>
      */
     public CompletableFuture<CheckVideoJobResponse> checkVideoJobAsync(CheckVideoJobRequest request) {
@@ -85,12 +85,12 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVideoJobRequest 请求对象
+     * @param request CheckVideoJobRequest 请求对象
      * @return AsyncInvoker<CheckVideoJobRequest, CheckVideoJobResponse>
      */
     public AsyncInvoker<CheckVideoJobRequest, CheckVideoJobResponse> checkVideoJobAsyncInvoker(
         CheckVideoJobRequest request) {
-        return new AsyncInvoker<CheckVideoJobRequest, CheckVideoJobResponse>(request, VcmMeta.checkVideoJob, hcClient);
+        return new AsyncInvoker<>(request, VcmMeta.checkVideoJob, hcClient);
     }
 
     /**
@@ -100,7 +100,7 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAudioJobRequest 请求对象
+     * @param request CreateAudioJobRequest 请求对象
      * @return CompletableFuture<CreateAudioJobResponse>
      */
     public CompletableFuture<CreateAudioJobResponse> createAudioJobAsync(CreateAudioJobRequest request) {
@@ -114,13 +114,12 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAudioJobRequest 请求对象
+     * @param request CreateAudioJobRequest 请求对象
      * @return AsyncInvoker<CreateAudioJobRequest, CreateAudioJobResponse>
      */
     public AsyncInvoker<CreateAudioJobRequest, CreateAudioJobResponse> createAudioJobAsyncInvoker(
         CreateAudioJobRequest request) {
-        return new AsyncInvoker<CreateAudioJobRequest, CreateAudioJobResponse>(request, VcmMeta.createAudioJob,
-            hcClient);
+        return new AsyncInvoker<>(request, VcmMeta.createAudioJob, hcClient);
     }
 
     /**
@@ -130,7 +129,7 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVideoJobRequest 请求对象
+     * @param request CreateVideoJobRequest 请求对象
      * @return CompletableFuture<CreateVideoJobResponse>
      */
     public CompletableFuture<CreateVideoJobResponse> createVideoJobAsync(CreateVideoJobRequest request) {
@@ -144,13 +143,12 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVideoJobRequest 请求对象
+     * @param request CreateVideoJobRequest 请求对象
      * @return AsyncInvoker<CreateVideoJobRequest, CreateVideoJobResponse>
      */
     public AsyncInvoker<CreateVideoJobRequest, CreateVideoJobResponse> createVideoJobAsyncInvoker(
         CreateVideoJobRequest request) {
-        return new AsyncInvoker<CreateVideoJobRequest, CreateVideoJobResponse>(request, VcmMeta.createVideoJob,
-            hcClient);
+        return new AsyncInvoker<>(request, VcmMeta.createVideoJob, hcClient);
     }
 
     /**
@@ -160,7 +158,7 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDemoInfoRequest 请求对象
+     * @param request DeleteDemoInfoRequest 请求对象
      * @return CompletableFuture<DeleteDemoInfoResponse>
      */
     public CompletableFuture<DeleteDemoInfoResponse> deleteDemoInfoAsync(DeleteDemoInfoRequest request) {
@@ -174,13 +172,12 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDemoInfoRequest 请求对象
+     * @param request DeleteDemoInfoRequest 请求对象
      * @return AsyncInvoker<DeleteDemoInfoRequest, DeleteDemoInfoResponse>
      */
     public AsyncInvoker<DeleteDemoInfoRequest, DeleteDemoInfoResponse> deleteDemoInfoAsyncInvoker(
         DeleteDemoInfoRequest request) {
-        return new AsyncInvoker<DeleteDemoInfoRequest, DeleteDemoInfoResponse>(request, VcmMeta.deleteDemoInfo,
-            hcClient);
+        return new AsyncInvoker<>(request, VcmMeta.deleteDemoInfo, hcClient);
     }
 
     /**
@@ -190,7 +187,7 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVideoJobRequest 请求对象
+     * @param request DeleteVideoJobRequest 请求对象
      * @return CompletableFuture<DeleteVideoJobResponse>
      */
     public CompletableFuture<DeleteVideoJobResponse> deleteVideoJobAsync(DeleteVideoJobRequest request) {
@@ -204,13 +201,12 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVideoJobRequest 请求对象
+     * @param request DeleteVideoJobRequest 请求对象
      * @return AsyncInvoker<DeleteVideoJobRequest, DeleteVideoJobResponse>
      */
     public AsyncInvoker<DeleteVideoJobRequest, DeleteVideoJobResponse> deleteVideoJobAsyncInvoker(
         DeleteVideoJobRequest request) {
-        return new AsyncInvoker<DeleteVideoJobRequest, DeleteVideoJobResponse>(request, VcmMeta.deleteVideoJob,
-            hcClient);
+        return new AsyncInvoker<>(request, VcmMeta.deleteVideoJob, hcClient);
     }
 
     /**
@@ -220,7 +216,7 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAudioJobsRequest 请求对象
+     * @param request ListAudioJobsRequest 请求对象
      * @return CompletableFuture<ListAudioJobsResponse>
      */
     public CompletableFuture<ListAudioJobsResponse> listAudioJobsAsync(ListAudioJobsRequest request) {
@@ -234,12 +230,12 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAudioJobsRequest 请求对象
+     * @param request ListAudioJobsRequest 请求对象
      * @return AsyncInvoker<ListAudioJobsRequest, ListAudioJobsResponse>
      */
     public AsyncInvoker<ListAudioJobsRequest, ListAudioJobsResponse> listAudioJobsAsyncInvoker(
         ListAudioJobsRequest request) {
-        return new AsyncInvoker<ListAudioJobsRequest, ListAudioJobsResponse>(request, VcmMeta.listAudioJobs, hcClient);
+        return new AsyncInvoker<>(request, VcmMeta.listAudioJobs, hcClient);
     }
 
     /**
@@ -249,7 +245,7 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVideoJobsRequest 请求对象
+     * @param request ListVideoJobsRequest 请求对象
      * @return CompletableFuture<ListVideoJobsResponse>
      */
     public CompletableFuture<ListVideoJobsResponse> listVideoJobsAsync(ListVideoJobsRequest request) {
@@ -263,12 +259,12 @@ public class VcmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVideoJobsRequest 请求对象
+     * @param request ListVideoJobsRequest 请求对象
      * @return AsyncInvoker<ListVideoJobsRequest, ListVideoJobsResponse>
      */
     public AsyncInvoker<ListVideoJobsRequest, ListVideoJobsResponse> listVideoJobsAsyncInvoker(
         ListVideoJobsRequest request) {
-        return new AsyncInvoker<ListVideoJobsRequest, ListVideoJobsResponse>(request, VcmMeta.listVideoJobs, hcClient);
+        return new AsyncInvoker<>(request, VcmMeta.listVideoJobs, hcClient);
     }
 
 }

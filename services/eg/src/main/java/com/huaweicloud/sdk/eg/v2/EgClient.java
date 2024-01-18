@@ -28,7 +28,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutEventsRequest 请求对象
+     * @param request PutEventsRequest 请求对象
      * @return PutEventsResponse
      */
     public PutEventsResponse putEvents(PutEventsRequest request) {
@@ -42,11 +42,11 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutEventsRequest 请求对象
+     * @param request PutEventsRequest 请求对象
      * @return SyncInvoker<PutEventsRequest, PutEventsResponse>
      */
     public SyncInvoker<PutEventsRequest, PutEventsResponse> putEventsInvoker(PutEventsRequest request) {
-        return new SyncInvoker<PutEventsRequest, PutEventsResponse>(request, EgMeta.putEvents, hcClient);
+        return new SyncInvoker<>(request, EgMeta.putEvents, hcClient);
     }
 
     /**
@@ -56,7 +56,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutOfficialEventsRequest 请求对象
+     * @param request PutOfficialEventsRequest 请求对象
      * @return PutOfficialEventsResponse
      */
     public PutOfficialEventsResponse putOfficialEvents(PutOfficialEventsRequest request) {
@@ -70,13 +70,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutOfficialEventsRequest 请求对象
+     * @param request PutOfficialEventsRequest 请求对象
      * @return SyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>
      */
     public SyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse> putOfficialEventsInvoker(
         PutOfficialEventsRequest request) {
-        return new SyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>(request, EgMeta.putOfficialEvents,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.putOfficialEvents, hcClient);
     }
 
 }

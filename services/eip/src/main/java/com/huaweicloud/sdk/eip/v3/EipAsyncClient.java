@@ -66,7 +66,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthRequest 请求对象
+     * @param request ListBandwidthRequest 请求对象
      * @return CompletableFuture<ListBandwidthResponse>
      */
     public CompletableFuture<ListBandwidthResponse> listBandwidthAsync(ListBandwidthRequest request) {
@@ -80,12 +80,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthRequest 请求对象
+     * @param request ListBandwidthRequest 请求对象
      * @return AsyncInvoker<ListBandwidthRequest, ListBandwidthResponse>
      */
     public AsyncInvoker<ListBandwidthRequest, ListBandwidthResponse> listBandwidthAsyncInvoker(
         ListBandwidthRequest request) {
-        return new AsyncInvoker<ListBandwidthRequest, ListBandwidthResponse>(request, EipMeta.listBandwidth, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.listBandwidth, hcClient);
     }
 
     /**
@@ -95,7 +95,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthsLimitRequest 请求对象
+     * @param request ListBandwidthsLimitRequest 请求对象
      * @return CompletableFuture<ListBandwidthsLimitResponse>
      */
     public CompletableFuture<ListBandwidthsLimitResponse> listBandwidthsLimitAsync(ListBandwidthsLimitRequest request) {
@@ -109,13 +109,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthsLimitRequest 请求对象
+     * @param request ListBandwidthsLimitRequest 请求对象
      * @return AsyncInvoker<ListBandwidthsLimitRequest, ListBandwidthsLimitResponse>
      */
     public AsyncInvoker<ListBandwidthsLimitRequest, ListBandwidthsLimitResponse> listBandwidthsLimitAsyncInvoker(
         ListBandwidthsLimitRequest request) {
-        return new AsyncInvoker<ListBandwidthsLimitRequest, ListBandwidthsLimitResponse>(request,
-            EipMeta.listBandwidthsLimit, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.listBandwidthsLimit, hcClient);
     }
 
     /**
@@ -125,7 +124,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCommonPoolsRequest 请求对象
+     * @param request ListCommonPoolsRequest 请求对象
      * @return CompletableFuture<ListCommonPoolsResponse>
      */
     public CompletableFuture<ListCommonPoolsResponse> listCommonPoolsAsync(ListCommonPoolsRequest request) {
@@ -139,13 +138,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCommonPoolsRequest 请求对象
+     * @param request ListCommonPoolsRequest 请求对象
      * @return AsyncInvoker<ListCommonPoolsRequest, ListCommonPoolsResponse>
      */
     public AsyncInvoker<ListCommonPoolsRequest, ListCommonPoolsResponse> listCommonPoolsAsyncInvoker(
         ListCommonPoolsRequest request) {
-        return new AsyncInvoker<ListCommonPoolsRequest, ListCommonPoolsResponse>(request, EipMeta.listCommonPools,
-            hcClient);
+        return new AsyncInvoker<>(request, EipMeta.listCommonPools, hcClient);
     }
 
     /**
@@ -155,7 +153,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEipBandwidthsRequest 请求对象
+     * @param request ListEipBandwidthsRequest 请求对象
      * @return CompletableFuture<ListEipBandwidthsResponse>
      */
     public CompletableFuture<ListEipBandwidthsResponse> listEipBandwidthsAsync(ListEipBandwidthsRequest request) {
@@ -169,13 +167,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEipBandwidthsRequest 请求对象
+     * @param request ListEipBandwidthsRequest 请求对象
      * @return AsyncInvoker<ListEipBandwidthsRequest, ListEipBandwidthsResponse>
      */
     public AsyncInvoker<ListEipBandwidthsRequest, ListEipBandwidthsResponse> listEipBandwidthsAsyncInvoker(
         ListEipBandwidthsRequest request) {
-        return new AsyncInvoker<ListEipBandwidthsRequest, ListEipBandwidthsResponse>(request, EipMeta.listEipBandwidths,
-            hcClient);
+        return new AsyncInvoker<>(request, EipMeta.listEipBandwidths, hcClient);
     }
 
     /**
@@ -185,7 +182,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicBorderGroupsRequest 请求对象
+     * @param request ListPublicBorderGroupsRequest 请求对象
      * @return CompletableFuture<ListPublicBorderGroupsResponse>
      */
     public CompletableFuture<ListPublicBorderGroupsResponse> listPublicBorderGroupsAsync(
@@ -200,13 +197,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicBorderGroupsRequest 请求对象
+     * @param request ListPublicBorderGroupsRequest 请求对象
      * @return AsyncInvoker<ListPublicBorderGroupsRequest, ListPublicBorderGroupsResponse>
      */
     public AsyncInvoker<ListPublicBorderGroupsRequest, ListPublicBorderGroupsResponse> listPublicBorderGroupsAsyncInvoker(
         ListPublicBorderGroupsRequest request) {
-        return new AsyncInvoker<ListPublicBorderGroupsRequest, ListPublicBorderGroupsResponse>(request,
-            EipMeta.listPublicBorderGroups, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.listPublicBorderGroups, hcClient);
     }
 
     /**
@@ -216,7 +212,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicipPoolRequest 请求对象
+     * @param request ListPublicipPoolRequest 请求对象
      * @return CompletableFuture<ListPublicipPoolResponse>
      */
     public CompletableFuture<ListPublicipPoolResponse> listPublicipPoolAsync(ListPublicipPoolRequest request) {
@@ -230,13 +226,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicipPoolRequest 请求对象
+     * @param request ListPublicipPoolRequest 请求对象
      * @return AsyncInvoker<ListPublicipPoolRequest, ListPublicipPoolResponse>
      */
     public AsyncInvoker<ListPublicipPoolRequest, ListPublicipPoolResponse> listPublicipPoolAsyncInvoker(
         ListPublicipPoolRequest request) {
-        return new AsyncInvoker<ListPublicipPoolRequest, ListPublicipPoolResponse>(request, EipMeta.listPublicipPool,
-            hcClient);
+        return new AsyncInvoker<>(request, EipMeta.listPublicipPool, hcClient);
     }
 
     /**
@@ -246,7 +241,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListShareBandwidthTypesRequest 请求对象
+     * @param request ListShareBandwidthTypesRequest 请求对象
      * @return CompletableFuture<ListShareBandwidthTypesResponse>
      */
     public CompletableFuture<ListShareBandwidthTypesResponse> listShareBandwidthTypesAsync(
@@ -261,13 +256,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListShareBandwidthTypesRequest 请求对象
+     * @param request ListShareBandwidthTypesRequest 请求对象
      * @return AsyncInvoker<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse>
      */
     public AsyncInvoker<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse> listShareBandwidthTypesAsyncInvoker(
         ListShareBandwidthTypesRequest request) {
-        return new AsyncInvoker<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse>(request,
-            EipMeta.listShareBandwidthTypes, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.listShareBandwidthTypes, hcClient);
     }
 
     /**
@@ -277,7 +271,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicipPoolRequest 请求对象
+     * @param request ShowPublicipPoolRequest 请求对象
      * @return CompletableFuture<ShowPublicipPoolResponse>
      */
     public CompletableFuture<ShowPublicipPoolResponse> showPublicipPoolAsync(ShowPublicipPoolRequest request) {
@@ -291,13 +285,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicipPoolRequest 请求对象
+     * @param request ShowPublicipPoolRequest 请求对象
      * @return AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse>
      */
     public AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse> showPublicipPoolAsyncInvoker(
         ShowPublicipPoolRequest request) {
-        return new AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse>(request, EipMeta.showPublicipPool,
-            hcClient);
+        return new AsyncInvoker<>(request, EipMeta.showPublicipPool, hcClient);
     }
 
     /**
@@ -307,7 +300,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociatePublicipsRequest 请求对象
+     * @param request AssociatePublicipsRequest 请求对象
      * @return CompletableFuture<AssociatePublicipsResponse>
      */
     public CompletableFuture<AssociatePublicipsResponse> associatePublicipsAsync(AssociatePublicipsRequest request) {
@@ -321,13 +314,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociatePublicipsRequest 请求对象
+     * @param request AssociatePublicipsRequest 请求对象
      * @return AsyncInvoker<AssociatePublicipsRequest, AssociatePublicipsResponse>
      */
     public AsyncInvoker<AssociatePublicipsRequest, AssociatePublicipsResponse> associatePublicipsAsyncInvoker(
         AssociatePublicipsRequest request) {
-        return new AsyncInvoker<AssociatePublicipsRequest, AssociatePublicipsResponse>(request,
-            EipMeta.associatePublicips, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.associatePublicips, hcClient);
     }
 
     /**
@@ -337,7 +329,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachBatchPublicIpRequest 请求对象
+     * @param request AttachBatchPublicIpRequest 请求对象
      * @return CompletableFuture<AttachBatchPublicIpResponse>
      */
     public CompletableFuture<AttachBatchPublicIpResponse> attachBatchPublicIpAsync(AttachBatchPublicIpRequest request) {
@@ -351,13 +343,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachBatchPublicIpRequest 请求对象
+     * @param request AttachBatchPublicIpRequest 请求对象
      * @return AsyncInvoker<AttachBatchPublicIpRequest, AttachBatchPublicIpResponse>
      */
     public AsyncInvoker<AttachBatchPublicIpRequest, AttachBatchPublicIpResponse> attachBatchPublicIpAsyncInvoker(
         AttachBatchPublicIpRequest request) {
-        return new AsyncInvoker<AttachBatchPublicIpRequest, AttachBatchPublicIpResponse>(request,
-            EipMeta.attachBatchPublicIp, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.attachBatchPublicIp, hcClient);
     }
 
     /**
@@ -367,7 +358,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachShareBandwidthRequest 请求对象
+     * @param request AttachShareBandwidthRequest 请求对象
      * @return CompletableFuture<AttachShareBandwidthResponse>
      */
     public CompletableFuture<AttachShareBandwidthResponse> attachShareBandwidthAsync(
@@ -382,13 +373,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachShareBandwidthRequest 请求对象
+     * @param request AttachShareBandwidthRequest 请求对象
      * @return AsyncInvoker<AttachShareBandwidthRequest, AttachShareBandwidthResponse>
      */
     public AsyncInvoker<AttachShareBandwidthRequest, AttachShareBandwidthResponse> attachShareBandwidthAsyncInvoker(
         AttachShareBandwidthRequest request) {
-        return new AsyncInvoker<AttachShareBandwidthRequest, AttachShareBandwidthResponse>(request,
-            EipMeta.attachShareBandwidth, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.attachShareBandwidth, hcClient);
     }
 
     /**
@@ -398,7 +388,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountEipAvailableResourcesRequest 请求对象
+     * @param request CountEipAvailableResourcesRequest 请求对象
      * @return CompletableFuture<CountEipAvailableResourcesResponse>
      */
     public CompletableFuture<CountEipAvailableResourcesResponse> countEipAvailableResourcesAsync(
@@ -413,13 +403,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountEipAvailableResourcesRequest 请求对象
+     * @param request CountEipAvailableResourcesRequest 请求对象
      * @return AsyncInvoker<CountEipAvailableResourcesRequest, CountEipAvailableResourcesResponse>
      */
     public AsyncInvoker<CountEipAvailableResourcesRequest, CountEipAvailableResourcesResponse> countEipAvailableResourcesAsyncInvoker(
         CountEipAvailableResourcesRequest request) {
-        return new AsyncInvoker<CountEipAvailableResourcesRequest, CountEipAvailableResourcesResponse>(request,
-            EipMeta.countEipAvailableResources, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.countEipAvailableResources, hcClient);
     }
 
     /**
@@ -429,7 +418,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachBatchPublicIpRequest 请求对象
+     * @param request DetachBatchPublicIpRequest 请求对象
      * @return CompletableFuture<DetachBatchPublicIpResponse>
      */
     public CompletableFuture<DetachBatchPublicIpResponse> detachBatchPublicIpAsync(DetachBatchPublicIpRequest request) {
@@ -443,13 +432,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachBatchPublicIpRequest 请求对象
+     * @param request DetachBatchPublicIpRequest 请求对象
      * @return AsyncInvoker<DetachBatchPublicIpRequest, DetachBatchPublicIpResponse>
      */
     public AsyncInvoker<DetachBatchPublicIpRequest, DetachBatchPublicIpResponse> detachBatchPublicIpAsyncInvoker(
         DetachBatchPublicIpRequest request) {
-        return new AsyncInvoker<DetachBatchPublicIpRequest, DetachBatchPublicIpResponse>(request,
-            EipMeta.detachBatchPublicIp, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.detachBatchPublicIp, hcClient);
     }
 
     /**
@@ -459,7 +447,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachShareBandwidthRequest 请求对象
+     * @param request DetachShareBandwidthRequest 请求对象
      * @return CompletableFuture<DetachShareBandwidthResponse>
      */
     public CompletableFuture<DetachShareBandwidthResponse> detachShareBandwidthAsync(
@@ -474,13 +462,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachShareBandwidthRequest 请求对象
+     * @param request DetachShareBandwidthRequest 请求对象
      * @return AsyncInvoker<DetachShareBandwidthRequest, DetachShareBandwidthResponse>
      */
     public AsyncInvoker<DetachShareBandwidthRequest, DetachShareBandwidthResponse> detachShareBandwidthAsyncInvoker(
         DetachShareBandwidthRequest request) {
-        return new AsyncInvoker<DetachShareBandwidthRequest, DetachShareBandwidthResponse>(request,
-            EipMeta.detachShareBandwidth, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.detachShareBandwidth, hcClient);
     }
 
     /**
@@ -490,7 +477,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableNat64Request 请求对象
+     * @param request DisableNat64Request 请求对象
      * @return CompletableFuture<DisableNat64Response>
      */
     public CompletableFuture<DisableNat64Response> disableNat64Async(DisableNat64Request request) {
@@ -504,12 +491,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableNat64Request 请求对象
+     * @param request DisableNat64Request 请求对象
      * @return AsyncInvoker<DisableNat64Request, DisableNat64Response>
      */
     public AsyncInvoker<DisableNat64Request, DisableNat64Response> disableNat64AsyncInvoker(
         DisableNat64Request request) {
-        return new AsyncInvoker<DisableNat64Request, DisableNat64Response>(request, EipMeta.disableNat64, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.disableNat64, hcClient);
     }
 
     /**
@@ -519,7 +506,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociatePublicipsRequest 请求对象
+     * @param request DisassociatePublicipsRequest 请求对象
      * @return CompletableFuture<DisassociatePublicipsResponse>
      */
     public CompletableFuture<DisassociatePublicipsResponse> disassociatePublicipsAsync(
@@ -534,13 +521,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociatePublicipsRequest 请求对象
+     * @param request DisassociatePublicipsRequest 请求对象
      * @return AsyncInvoker<DisassociatePublicipsRequest, DisassociatePublicipsResponse>
      */
     public AsyncInvoker<DisassociatePublicipsRequest, DisassociatePublicipsResponse> disassociatePublicipsAsyncInvoker(
         DisassociatePublicipsRequest request) {
-        return new AsyncInvoker<DisassociatePublicipsRequest, DisassociatePublicipsResponse>(request,
-            EipMeta.disassociatePublicips, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.disassociatePublicips, hcClient);
     }
 
     /**
@@ -550,7 +536,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableNat64Request 请求对象
+     * @param request EnableNat64Request 请求对象
      * @return CompletableFuture<EnableNat64Response>
      */
     public CompletableFuture<EnableNat64Response> enableNat64Async(EnableNat64Request request) {
@@ -564,11 +550,11 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableNat64Request 请求对象
+     * @param request EnableNat64Request 请求对象
      * @return AsyncInvoker<EnableNat64Request, EnableNat64Response>
      */
     public AsyncInvoker<EnableNat64Request, EnableNat64Response> enableNat64AsyncInvoker(EnableNat64Request request) {
-        return new AsyncInvoker<EnableNat64Request, EnableNat64Response>(request, EipMeta.enableNat64, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.enableNat64, hcClient);
     }
 
     /**
@@ -578,7 +564,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicipsRequest 请求对象
+     * @param request ListPublicipsRequest 请求对象
      * @return CompletableFuture<ListPublicipsResponse>
      */
     public CompletableFuture<ListPublicipsResponse> listPublicipsAsync(ListPublicipsRequest request) {
@@ -592,12 +578,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicipsRequest 请求对象
+     * @param request ListPublicipsRequest 请求对象
      * @return AsyncInvoker<ListPublicipsRequest, ListPublicipsResponse>
      */
     public AsyncInvoker<ListPublicipsRequest, ListPublicipsResponse> listPublicipsAsyncInvoker(
         ListPublicipsRequest request) {
-        return new AsyncInvoker<ListPublicipsRequest, ListPublicipsResponse>(request, EipMeta.listPublicips, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.listPublicips, hcClient);
     }
 
     /**
@@ -607,7 +593,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicipRequest 请求对象
+     * @param request ShowPublicipRequest 请求对象
      * @return CompletableFuture<ShowPublicipResponse>
      */
     public CompletableFuture<ShowPublicipResponse> showPublicipAsync(ShowPublicipRequest request) {
@@ -621,12 +607,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicipRequest 请求对象
+     * @param request ShowPublicipRequest 请求对象
      * @return AsyncInvoker<ShowPublicipRequest, ShowPublicipResponse>
      */
     public AsyncInvoker<ShowPublicipRequest, ShowPublicipResponse> showPublicipAsyncInvoker(
         ShowPublicipRequest request) {
-        return new AsyncInvoker<ShowPublicipRequest, ShowPublicipResponse>(request, EipMeta.showPublicip, hcClient);
+        return new AsyncInvoker<>(request, EipMeta.showPublicip, hcClient);
     }
 
     /**
@@ -636,7 +622,7 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicipRequest 请求对象
+     * @param request UpdatePublicipRequest 请求对象
      * @return CompletableFuture<UpdatePublicipResponse>
      */
     public CompletableFuture<UpdatePublicipResponse> updatePublicipAsync(UpdatePublicipRequest request) {
@@ -650,13 +636,12 @@ public class EipAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicipRequest 请求对象
+     * @param request UpdatePublicipRequest 请求对象
      * @return AsyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse>
      */
     public AsyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse> updatePublicipAsyncInvoker(
         UpdatePublicipRequest request) {
-        return new AsyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse>(request, EipMeta.updatePublicip,
-            hcClient);
+        return new AsyncInvoker<>(request, EipMeta.updatePublicip, hcClient);
     }
 
 }

@@ -102,7 +102,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPublicipsIntoSharedBandwidthRequest 请求对象
+     * @param request AddPublicipsIntoSharedBandwidthRequest 请求对象
      * @return AddPublicipsIntoSharedBandwidthResponse
      */
     public AddPublicipsIntoSharedBandwidthResponse addPublicipsIntoSharedBandwidth(
@@ -117,13 +117,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPublicipsIntoSharedBandwidthRequest 请求对象
+     * @param request AddPublicipsIntoSharedBandwidthRequest 请求对象
      * @return SyncInvoker<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse>
      */
     public SyncInvoker<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse> addPublicipsIntoSharedBandwidthInvoker(
         AddPublicipsIntoSharedBandwidthRequest request) {
-        return new SyncInvoker<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse>(request,
-            EipMeta.addPublicipsIntoSharedBandwidth, hcClient);
+        return new SyncInvoker<>(request, EipMeta.addPublicipsIntoSharedBandwidth, hcClient);
     }
 
     /**
@@ -133,7 +132,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateSharedBandwidthsRequest 请求对象
+     * @param request BatchCreateSharedBandwidthsRequest 请求对象
      * @return BatchCreateSharedBandwidthsResponse
      */
     public BatchCreateSharedBandwidthsResponse batchCreateSharedBandwidths(BatchCreateSharedBandwidthsRequest request) {
@@ -147,13 +146,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateSharedBandwidthsRequest 请求对象
+     * @param request BatchCreateSharedBandwidthsRequest 请求对象
      * @return SyncInvoker<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse>
      */
     public SyncInvoker<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse> batchCreateSharedBandwidthsInvoker(
         BatchCreateSharedBandwidthsRequest request) {
-        return new SyncInvoker<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse>(request,
-            EipMeta.batchCreateSharedBandwidths, hcClient);
+        return new SyncInvoker<>(request, EipMeta.batchCreateSharedBandwidths, hcClient);
     }
 
     /**
@@ -163,7 +161,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchModifyBandwidthRequest 请求对象
+     * @param request BatchModifyBandwidthRequest 请求对象
      * @return BatchModifyBandwidthResponse
      */
     public BatchModifyBandwidthResponse batchModifyBandwidth(BatchModifyBandwidthRequest request) {
@@ -177,13 +175,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchModifyBandwidthRequest 请求对象
+     * @param request BatchModifyBandwidthRequest 请求对象
      * @return SyncInvoker<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse>
      */
     public SyncInvoker<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse> batchModifyBandwidthInvoker(
         BatchModifyBandwidthRequest request) {
-        return new SyncInvoker<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse>(request,
-            EipMeta.batchModifyBandwidth, hcClient);
+        return new SyncInvoker<>(request, EipMeta.batchModifyBandwidth, hcClient);
     }
 
     /**
@@ -193,7 +190,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBandwidthToPeriodRequest 请求对象
+     * @param request ChangeBandwidthToPeriodRequest 请求对象
      * @return ChangeBandwidthToPeriodResponse
      */
     public ChangeBandwidthToPeriodResponse changeBandwidthToPeriod(ChangeBandwidthToPeriodRequest request) {
@@ -207,13 +204,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBandwidthToPeriodRequest 请求对象
+     * @param request ChangeBandwidthToPeriodRequest 请求对象
      * @return SyncInvoker<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse>
      */
     public SyncInvoker<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse> changeBandwidthToPeriodInvoker(
         ChangeBandwidthToPeriodRequest request) {
-        return new SyncInvoker<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse>(request,
-            EipMeta.changeBandwidthToPeriod, hcClient);
+        return new SyncInvoker<>(request, EipMeta.changeBandwidthToPeriod, hcClient);
     }
 
     /**
@@ -223,7 +219,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSharedBandwidthRequest 请求对象
+     * @param request CreateSharedBandwidthRequest 请求对象
      * @return CreateSharedBandwidthResponse
      */
     public CreateSharedBandwidthResponse createSharedBandwidth(CreateSharedBandwidthRequest request) {
@@ -237,13 +233,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSharedBandwidthRequest 请求对象
+     * @param request CreateSharedBandwidthRequest 请求对象
      * @return SyncInvoker<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse>
      */
     public SyncInvoker<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse> createSharedBandwidthInvoker(
         CreateSharedBandwidthRequest request) {
-        return new SyncInvoker<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse>(request,
-            EipMeta.createSharedBandwidth, hcClient);
+        return new SyncInvoker<>(request, EipMeta.createSharedBandwidth, hcClient);
     }
 
     /**
@@ -253,7 +248,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSharedBandwidthRequest 请求对象
+     * @param request DeleteSharedBandwidthRequest 请求对象
      * @return DeleteSharedBandwidthResponse
      */
     public DeleteSharedBandwidthResponse deleteSharedBandwidth(DeleteSharedBandwidthRequest request) {
@@ -267,13 +262,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSharedBandwidthRequest 请求对象
+     * @param request DeleteSharedBandwidthRequest 请求对象
      * @return SyncInvoker<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse>
      */
     public SyncInvoker<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse> deleteSharedBandwidthInvoker(
         DeleteSharedBandwidthRequest request) {
-        return new SyncInvoker<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse>(request,
-            EipMeta.deleteSharedBandwidth, hcClient);
+        return new SyncInvoker<>(request, EipMeta.deleteSharedBandwidth, hcClient);
     }
 
     /**
@@ -283,7 +277,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthPkgRequest 请求对象
+     * @param request ListBandwidthPkgRequest 请求对象
      * @return ListBandwidthPkgResponse
      */
     public ListBandwidthPkgResponse listBandwidthPkg(ListBandwidthPkgRequest request) {
@@ -297,13 +291,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthPkgRequest 请求对象
+     * @param request ListBandwidthPkgRequest 请求对象
      * @return SyncInvoker<ListBandwidthPkgRequest, ListBandwidthPkgResponse>
      */
     public SyncInvoker<ListBandwidthPkgRequest, ListBandwidthPkgResponse> listBandwidthPkgInvoker(
         ListBandwidthPkgRequest request) {
-        return new SyncInvoker<ListBandwidthPkgRequest, ListBandwidthPkgResponse>(request, EipMeta.listBandwidthPkg,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.listBandwidthPkg, hcClient);
     }
 
     /**
@@ -313,7 +306,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthsRequest 请求对象
+     * @param request ListBandwidthsRequest 请求对象
      * @return ListBandwidthsResponse
      */
     public ListBandwidthsResponse listBandwidths(ListBandwidthsRequest request) {
@@ -327,13 +320,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthsRequest 请求对象
+     * @param request ListBandwidthsRequest 请求对象
      * @return SyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse>
      */
     public SyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse> listBandwidthsInvoker(
         ListBandwidthsRequest request) {
-        return new SyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse>(request, EipMeta.listBandwidths,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.listBandwidths, hcClient);
     }
 
     /**
@@ -343,7 +335,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return ListQuotasResponse
      */
     public ListQuotasResponse listQuotas(ListQuotasRequest request) {
@@ -357,11 +349,11 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
-        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, EipMeta.listQuotas, hcClient);
+        return new SyncInvoker<>(request, EipMeta.listQuotas, hcClient);
     }
 
     /**
@@ -371,7 +363,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemovePublicipsFromSharedBandwidthRequest 请求对象
+     * @param request RemovePublicipsFromSharedBandwidthRequest 请求对象
      * @return RemovePublicipsFromSharedBandwidthResponse
      */
     public RemovePublicipsFromSharedBandwidthResponse removePublicipsFromSharedBandwidth(
@@ -386,13 +378,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemovePublicipsFromSharedBandwidthRequest 请求对象
+     * @param request RemovePublicipsFromSharedBandwidthRequest 请求对象
      * @return SyncInvoker<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse>
      */
     public SyncInvoker<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse> removePublicipsFromSharedBandwidthInvoker(
         RemovePublicipsFromSharedBandwidthRequest request) {
-        return new SyncInvoker<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse>(
-            request, EipMeta.removePublicipsFromSharedBandwidth, hcClient);
+        return new SyncInvoker<>(request, EipMeta.removePublicipsFromSharedBandwidth, hcClient);
     }
 
     /**
@@ -402,7 +393,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBandwidthRequest 请求对象
+     * @param request ShowBandwidthRequest 请求对象
      * @return ShowBandwidthResponse
      */
     public ShowBandwidthResponse showBandwidth(ShowBandwidthRequest request) {
@@ -416,11 +407,11 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBandwidthRequest 请求对象
+     * @param request ShowBandwidthRequest 请求对象
      * @return SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>
      */
     public SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse> showBandwidthInvoker(ShowBandwidthRequest request) {
-        return new SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>(request, EipMeta.showBandwidth, hcClient);
+        return new SyncInvoker<>(request, EipMeta.showBandwidth, hcClient);
     }
 
     /**
@@ -430,7 +421,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBandwidthRequest 请求对象
+     * @param request UpdateBandwidthRequest 请求对象
      * @return UpdateBandwidthResponse
      */
     public UpdateBandwidthResponse updateBandwidth(UpdateBandwidthRequest request) {
@@ -444,13 +435,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBandwidthRequest 请求对象
+     * @param request UpdateBandwidthRequest 请求对象
      * @return SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>
      */
     public SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidthInvoker(
         UpdateBandwidthRequest request) {
-        return new SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>(request, EipMeta.updateBandwidth,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.updateBandwidth, hcClient);
     }
 
     /**
@@ -460,7 +450,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrePaidBandwidthRequest 请求对象
+     * @param request UpdatePrePaidBandwidthRequest 请求对象
      * @return UpdatePrePaidBandwidthResponse
      */
     public UpdatePrePaidBandwidthResponse updatePrePaidBandwidth(UpdatePrePaidBandwidthRequest request) {
@@ -474,13 +464,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrePaidBandwidthRequest 请求对象
+     * @param request UpdatePrePaidBandwidthRequest 请求对象
      * @return SyncInvoker<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse>
      */
     public SyncInvoker<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse> updatePrePaidBandwidthInvoker(
         UpdatePrePaidBandwidthRequest request) {
-        return new SyncInvoker<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse>(request,
-            EipMeta.updatePrePaidBandwidth, hcClient);
+        return new SyncInvoker<>(request, EipMeta.updatePrePaidBandwidth, hcClient);
     }
 
     /**
@@ -490,7 +479,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreatePublicipTagsRequest 请求对象
+     * @param request BatchCreatePublicipTagsRequest 请求对象
      * @return BatchCreatePublicipTagsResponse
      */
     public BatchCreatePublicipTagsResponse batchCreatePublicipTags(BatchCreatePublicipTagsRequest request) {
@@ -504,13 +493,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreatePublicipTagsRequest 请求对象
+     * @param request BatchCreatePublicipTagsRequest 请求对象
      * @return SyncInvoker<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse>
      */
     public SyncInvoker<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse> batchCreatePublicipTagsInvoker(
         BatchCreatePublicipTagsRequest request) {
-        return new SyncInvoker<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse>(request,
-            EipMeta.batchCreatePublicipTags, hcClient);
+        return new SyncInvoker<>(request, EipMeta.batchCreatePublicipTags, hcClient);
     }
 
     /**
@@ -520,7 +508,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreatePublicipsRequest 请求对象
+     * @param request BatchCreatePublicipsRequest 请求对象
      * @return BatchCreatePublicipsResponse
      */
     public BatchCreatePublicipsResponse batchCreatePublicips(BatchCreatePublicipsRequest request) {
@@ -534,13 +522,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreatePublicipsRequest 请求对象
+     * @param request BatchCreatePublicipsRequest 请求对象
      * @return SyncInvoker<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse>
      */
     public SyncInvoker<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse> batchCreatePublicipsInvoker(
         BatchCreatePublicipsRequest request) {
-        return new SyncInvoker<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse>(request,
-            EipMeta.batchCreatePublicips, hcClient);
+        return new SyncInvoker<>(request, EipMeta.batchCreatePublicips, hcClient);
     }
 
     /**
@@ -550,7 +537,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeletePublicIpRequest 请求对象
+     * @param request BatchDeletePublicIpRequest 请求对象
      * @return BatchDeletePublicIpResponse
      */
     public BatchDeletePublicIpResponse batchDeletePublicIp(BatchDeletePublicIpRequest request) {
@@ -564,13 +551,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeletePublicIpRequest 请求对象
+     * @param request BatchDeletePublicIpRequest 请求对象
      * @return SyncInvoker<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse>
      */
     public SyncInvoker<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse> batchDeletePublicIpInvoker(
         BatchDeletePublicIpRequest request) {
-        return new SyncInvoker<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse>(request,
-            EipMeta.batchDeletePublicIp, hcClient);
+        return new SyncInvoker<>(request, EipMeta.batchDeletePublicIp, hcClient);
     }
 
     /**
@@ -580,7 +566,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeletePublicipTagsRequest 请求对象
+     * @param request BatchDeletePublicipTagsRequest 请求对象
      * @return BatchDeletePublicipTagsResponse
      */
     public BatchDeletePublicipTagsResponse batchDeletePublicipTags(BatchDeletePublicipTagsRequest request) {
@@ -594,13 +580,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeletePublicipTagsRequest 请求对象
+     * @param request BatchDeletePublicipTagsRequest 请求对象
      * @return SyncInvoker<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse>
      */
     public SyncInvoker<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse> batchDeletePublicipTagsInvoker(
         BatchDeletePublicipTagsRequest request) {
-        return new SyncInvoker<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse>(request,
-            EipMeta.batchDeletePublicipTags, hcClient);
+        return new SyncInvoker<>(request, EipMeta.batchDeletePublicipTags, hcClient);
     }
 
     /**
@@ -610,7 +595,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociatePublicipsRequest 请求对象
+     * @param request BatchDisassociatePublicipsRequest 请求对象
      * @return BatchDisassociatePublicipsResponse
      */
     public BatchDisassociatePublicipsResponse batchDisassociatePublicips(BatchDisassociatePublicipsRequest request) {
@@ -624,13 +609,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociatePublicipsRequest 请求对象
+     * @param request BatchDisassociatePublicipsRequest 请求对象
      * @return SyncInvoker<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse>
      */
     public SyncInvoker<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse> batchDisassociatePublicipsInvoker(
         BatchDisassociatePublicipsRequest request) {
-        return new SyncInvoker<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse>(request,
-            EipMeta.batchDisassociatePublicips, hcClient);
+        return new SyncInvoker<>(request, EipMeta.batchDisassociatePublicips, hcClient);
     }
 
     /**
@@ -640,7 +624,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePublicipToPeriodRequest 请求对象
+     * @param request ChangePublicipToPeriodRequest 请求对象
      * @return ChangePublicipToPeriodResponse
      */
     public ChangePublicipToPeriodResponse changePublicipToPeriod(ChangePublicipToPeriodRequest request) {
@@ -654,13 +638,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePublicipToPeriodRequest 请求对象
+     * @param request ChangePublicipToPeriodRequest 请求对象
      * @return SyncInvoker<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse>
      */
     public SyncInvoker<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse> changePublicipToPeriodInvoker(
         ChangePublicipToPeriodRequest request) {
-        return new SyncInvoker<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse>(request,
-            EipMeta.changePublicipToPeriod, hcClient);
+        return new SyncInvoker<>(request, EipMeta.changePublicipToPeriod, hcClient);
     }
 
     /**
@@ -670,7 +653,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountPublicIpRequest 请求对象
+     * @param request CountPublicIpRequest 请求对象
      * @return CountPublicIpResponse
      */
     public CountPublicIpResponse countPublicIp(CountPublicIpRequest request) {
@@ -684,11 +667,11 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountPublicIpRequest 请求对象
+     * @param request CountPublicIpRequest 请求对象
      * @return SyncInvoker<CountPublicIpRequest, CountPublicIpResponse>
      */
     public SyncInvoker<CountPublicIpRequest, CountPublicIpResponse> countPublicIpInvoker(CountPublicIpRequest request) {
-        return new SyncInvoker<CountPublicIpRequest, CountPublicIpResponse>(request, EipMeta.countPublicIp, hcClient);
+        return new SyncInvoker<>(request, EipMeta.countPublicIp, hcClient);
     }
 
     /**
@@ -698,7 +681,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountPublicIpInstanceRequest 请求对象
+     * @param request CountPublicIpInstanceRequest 请求对象
      * @return CountPublicIpInstanceResponse
      */
     public CountPublicIpInstanceResponse countPublicIpInstance(CountPublicIpInstanceRequest request) {
@@ -712,13 +695,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountPublicIpInstanceRequest 请求对象
+     * @param request CountPublicIpInstanceRequest 请求对象
      * @return SyncInvoker<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse>
      */
     public SyncInvoker<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse> countPublicIpInstanceInvoker(
         CountPublicIpInstanceRequest request) {
-        return new SyncInvoker<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse>(request,
-            EipMeta.countPublicIpInstance, hcClient);
+        return new SyncInvoker<>(request, EipMeta.countPublicIpInstance, hcClient);
     }
 
     /**
@@ -728,7 +710,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrePaidPublicipRequest 请求对象
+     * @param request CreatePrePaidPublicipRequest 请求对象
      * @return CreatePrePaidPublicipResponse
      */
     public CreatePrePaidPublicipResponse createPrePaidPublicip(CreatePrePaidPublicipRequest request) {
@@ -742,13 +724,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrePaidPublicipRequest 请求对象
+     * @param request CreatePrePaidPublicipRequest 请求对象
      * @return SyncInvoker<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse>
      */
     public SyncInvoker<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse> createPrePaidPublicipInvoker(
         CreatePrePaidPublicipRequest request) {
-        return new SyncInvoker<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse>(request,
-            EipMeta.createPrePaidPublicip, hcClient);
+        return new SyncInvoker<>(request, EipMeta.createPrePaidPublicip, hcClient);
     }
 
     /**
@@ -759,7 +740,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePublicipRequest 请求对象
+     * @param request CreatePublicipRequest 请求对象
      * @return CreatePublicipResponse
      */
     public CreatePublicipResponse createPublicip(CreatePublicipRequest request) {
@@ -774,13 +755,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePublicipRequest 请求对象
+     * @param request CreatePublicipRequest 请求对象
      * @return SyncInvoker<CreatePublicipRequest, CreatePublicipResponse>
      */
     public SyncInvoker<CreatePublicipRequest, CreatePublicipResponse> createPublicipInvoker(
         CreatePublicipRequest request) {
-        return new SyncInvoker<CreatePublicipRequest, CreatePublicipResponse>(request, EipMeta.createPublicip,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.createPublicip, hcClient);
     }
 
     /**
@@ -790,7 +770,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePublicipTagRequest 请求对象
+     * @param request CreatePublicipTagRequest 请求对象
      * @return CreatePublicipTagResponse
      */
     public CreatePublicipTagResponse createPublicipTag(CreatePublicipTagRequest request) {
@@ -804,13 +784,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePublicipTagRequest 请求对象
+     * @param request CreatePublicipTagRequest 请求对象
      * @return SyncInvoker<CreatePublicipTagRequest, CreatePublicipTagResponse>
      */
     public SyncInvoker<CreatePublicipTagRequest, CreatePublicipTagResponse> createPublicipTagInvoker(
         CreatePublicipTagRequest request) {
-        return new SyncInvoker<CreatePublicipTagRequest, CreatePublicipTagResponse>(request, EipMeta.createPublicipTag,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.createPublicipTag, hcClient);
     }
 
     /**
@@ -820,7 +799,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublicipRequest 请求对象
+     * @param request DeletePublicipRequest 请求对象
      * @return DeletePublicipResponse
      */
     public DeletePublicipResponse deletePublicip(DeletePublicipRequest request) {
@@ -834,13 +813,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublicipRequest 请求对象
+     * @param request DeletePublicipRequest 请求对象
      * @return SyncInvoker<DeletePublicipRequest, DeletePublicipResponse>
      */
     public SyncInvoker<DeletePublicipRequest, DeletePublicipResponse> deletePublicipInvoker(
         DeletePublicipRequest request) {
-        return new SyncInvoker<DeletePublicipRequest, DeletePublicipResponse>(request, EipMeta.deletePublicip,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.deletePublicip, hcClient);
     }
 
     /**
@@ -850,7 +828,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublicipTagRequest 请求对象
+     * @param request DeletePublicipTagRequest 请求对象
      * @return DeletePublicipTagResponse
      */
     public DeletePublicipTagResponse deletePublicipTag(DeletePublicipTagRequest request) {
@@ -864,13 +842,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublicipTagRequest 请求对象
+     * @param request DeletePublicipTagRequest 请求对象
      * @return SyncInvoker<DeletePublicipTagRequest, DeletePublicipTagResponse>
      */
     public SyncInvoker<DeletePublicipTagRequest, DeletePublicipTagResponse> deletePublicipTagInvoker(
         DeletePublicipTagRequest request) {
-        return new SyncInvoker<DeletePublicipTagRequest, DeletePublicipTagResponse>(request, EipMeta.deletePublicipTag,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.deletePublicipTag, hcClient);
     }
 
     /**
@@ -880,7 +857,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicipTagsRequest 请求对象
+     * @param request ListPublicipTagsRequest 请求对象
      * @return ListPublicipTagsResponse
      */
     public ListPublicipTagsResponse listPublicipTags(ListPublicipTagsRequest request) {
@@ -894,13 +871,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicipTagsRequest 请求对象
+     * @param request ListPublicipTagsRequest 请求对象
      * @return SyncInvoker<ListPublicipTagsRequest, ListPublicipTagsResponse>
      */
     public SyncInvoker<ListPublicipTagsRequest, ListPublicipTagsResponse> listPublicipTagsInvoker(
         ListPublicipTagsRequest request) {
-        return new SyncInvoker<ListPublicipTagsRequest, ListPublicipTagsResponse>(request, EipMeta.listPublicipTags,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.listPublicipTags, hcClient);
     }
 
     /**
@@ -910,7 +886,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicipsRequest 请求对象
+     * @param request ListPublicipsRequest 请求对象
      * @return ListPublicipsResponse
      */
     public ListPublicipsResponse listPublicips(ListPublicipsRequest request) {
@@ -924,11 +900,11 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicipsRequest 请求对象
+     * @param request ListPublicipsRequest 请求对象
      * @return SyncInvoker<ListPublicipsRequest, ListPublicipsResponse>
      */
     public SyncInvoker<ListPublicipsRequest, ListPublicipsResponse> listPublicipsInvoker(ListPublicipsRequest request) {
-        return new SyncInvoker<ListPublicipsRequest, ListPublicipsResponse>(request, EipMeta.listPublicips, hcClient);
+        return new SyncInvoker<>(request, EipMeta.listPublicips, hcClient);
     }
 
     /**
@@ -938,7 +914,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicipsByTagsRequest 请求对象
+     * @param request ListPublicipsByTagsRequest 请求对象
      * @return ListPublicipsByTagsResponse
      */
     public ListPublicipsByTagsResponse listPublicipsByTags(ListPublicipsByTagsRequest request) {
@@ -952,13 +928,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicipsByTagsRequest 请求对象
+     * @param request ListPublicipsByTagsRequest 请求对象
      * @return SyncInvoker<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse>
      */
     public SyncInvoker<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse> listPublicipsByTagsInvoker(
         ListPublicipsByTagsRequest request) {
-        return new SyncInvoker<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse>(request,
-            EipMeta.listPublicipsByTags, hcClient);
+        return new SyncInvoker<>(request, EipMeta.listPublicipsByTags, hcClient);
     }
 
     /**
@@ -968,7 +943,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicIpTypeRequest 请求对象
+     * @param request ShowPublicIpTypeRequest 请求对象
      * @return ShowPublicIpTypeResponse
      */
     public ShowPublicIpTypeResponse showPublicIpType(ShowPublicIpTypeRequest request) {
@@ -982,13 +957,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicIpTypeRequest 请求对象
+     * @param request ShowPublicIpTypeRequest 请求对象
      * @return SyncInvoker<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse>
      */
     public SyncInvoker<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse> showPublicIpTypeInvoker(
         ShowPublicIpTypeRequest request) {
-        return new SyncInvoker<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse>(request, EipMeta.showPublicIpType,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.showPublicIpType, hcClient);
     }
 
     /**
@@ -998,7 +972,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicipRequest 请求对象
+     * @param request ShowPublicipRequest 请求对象
      * @return ShowPublicipResponse
      */
     public ShowPublicipResponse showPublicip(ShowPublicipRequest request) {
@@ -1012,11 +986,11 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicipRequest 请求对象
+     * @param request ShowPublicipRequest 请求对象
      * @return SyncInvoker<ShowPublicipRequest, ShowPublicipResponse>
      */
     public SyncInvoker<ShowPublicipRequest, ShowPublicipResponse> showPublicipInvoker(ShowPublicipRequest request) {
-        return new SyncInvoker<ShowPublicipRequest, ShowPublicipResponse>(request, EipMeta.showPublicip, hcClient);
+        return new SyncInvoker<>(request, EipMeta.showPublicip, hcClient);
     }
 
     /**
@@ -1026,7 +1000,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicipTagsRequest 请求对象
+     * @param request ShowPublicipTagsRequest 请求对象
      * @return ShowPublicipTagsResponse
      */
     public ShowPublicipTagsResponse showPublicipTags(ShowPublicipTagsRequest request) {
@@ -1040,13 +1014,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicipTagsRequest 请求对象
+     * @param request ShowPublicipTagsRequest 请求对象
      * @return SyncInvoker<ShowPublicipTagsRequest, ShowPublicipTagsResponse>
      */
     public SyncInvoker<ShowPublicipTagsRequest, ShowPublicipTagsResponse> showPublicipTagsInvoker(
         ShowPublicipTagsRequest request) {
-        return new SyncInvoker<ShowPublicipTagsRequest, ShowPublicipTagsResponse>(request, EipMeta.showPublicipTags,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.showPublicipTags, hcClient);
     }
 
     /**
@@ -1056,7 +1029,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicipRequest 请求对象
+     * @param request UpdatePublicipRequest 请求对象
      * @return UpdatePublicipResponse
      */
     public UpdatePublicipResponse updatePublicip(UpdatePublicipRequest request) {
@@ -1070,13 +1043,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicipRequest 请求对象
+     * @param request UpdatePublicipRequest 请求对象
      * @return SyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse>
      */
     public SyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse> updatePublicipInvoker(
         UpdatePublicipRequest request) {
-        return new SyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse>(request, EipMeta.updatePublicip,
-            hcClient);
+        return new SyncInvoker<>(request, EipMeta.updatePublicip, hcClient);
     }
 
     /**
@@ -1086,7 +1058,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourcesJobDetailRequest 请求对象
+     * @param request ShowResourcesJobDetailRequest 请求对象
      * @return ShowResourcesJobDetailResponse
      */
     public ShowResourcesJobDetailResponse showResourcesJobDetail(ShowResourcesJobDetailRequest request) {
@@ -1100,13 +1072,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourcesJobDetailRequest 请求对象
+     * @param request ShowResourcesJobDetailRequest 请求对象
      * @return SyncInvoker<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse>
      */
     public SyncInvoker<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse> showResourcesJobDetailInvoker(
         ShowResourcesJobDetailRequest request) {
-        return new SyncInvoker<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse>(request,
-            EipMeta.showResourcesJobDetail, hcClient);
+        return new SyncInvoker<>(request, EipMeta.showResourcesJobDetail, hcClient);
     }
 
     /**
@@ -1116,7 +1087,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NeutronCreateFloatingIpRequest 请求对象
+     * @param request NeutronCreateFloatingIpRequest 请求对象
      * @return NeutronCreateFloatingIpResponse
      */
     public NeutronCreateFloatingIpResponse neutronCreateFloatingIp(NeutronCreateFloatingIpRequest request) {
@@ -1130,13 +1101,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NeutronCreateFloatingIpRequest 请求对象
+     * @param request NeutronCreateFloatingIpRequest 请求对象
      * @return SyncInvoker<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse>
      */
     public SyncInvoker<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse> neutronCreateFloatingIpInvoker(
         NeutronCreateFloatingIpRequest request) {
-        return new SyncInvoker<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse>(request,
-            EipMeta.neutronCreateFloatingIp, hcClient);
+        return new SyncInvoker<>(request, EipMeta.neutronCreateFloatingIp, hcClient);
     }
 
     /**
@@ -1146,7 +1116,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NeutronDeleteFloatingIpRequest 请求对象
+     * @param request NeutronDeleteFloatingIpRequest 请求对象
      * @return NeutronDeleteFloatingIpResponse
      */
     public NeutronDeleteFloatingIpResponse neutronDeleteFloatingIp(NeutronDeleteFloatingIpRequest request) {
@@ -1160,13 +1130,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NeutronDeleteFloatingIpRequest 请求对象
+     * @param request NeutronDeleteFloatingIpRequest 请求对象
      * @return SyncInvoker<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse>
      */
     public SyncInvoker<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse> neutronDeleteFloatingIpInvoker(
         NeutronDeleteFloatingIpRequest request) {
-        return new SyncInvoker<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse>(request,
-            EipMeta.neutronDeleteFloatingIp, hcClient);
+        return new SyncInvoker<>(request, EipMeta.neutronDeleteFloatingIp, hcClient);
     }
 
     /**
@@ -1176,7 +1145,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NeutronListFloatingIpsRequest 请求对象
+     * @param request NeutronListFloatingIpsRequest 请求对象
      * @return NeutronListFloatingIpsResponse
      */
     public NeutronListFloatingIpsResponse neutronListFloatingIps(NeutronListFloatingIpsRequest request) {
@@ -1190,13 +1159,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NeutronListFloatingIpsRequest 请求对象
+     * @param request NeutronListFloatingIpsRequest 请求对象
      * @return SyncInvoker<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse>
      */
     public SyncInvoker<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse> neutronListFloatingIpsInvoker(
         NeutronListFloatingIpsRequest request) {
-        return new SyncInvoker<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse>(request,
-            EipMeta.neutronListFloatingIps, hcClient);
+        return new SyncInvoker<>(request, EipMeta.neutronListFloatingIps, hcClient);
     }
 
     /**
@@ -1206,7 +1174,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NeutronShowFloatingIpRequest 请求对象
+     * @param request NeutronShowFloatingIpRequest 请求对象
      * @return NeutronShowFloatingIpResponse
      */
     public NeutronShowFloatingIpResponse neutronShowFloatingIp(NeutronShowFloatingIpRequest request) {
@@ -1220,13 +1188,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NeutronShowFloatingIpRequest 请求对象
+     * @param request NeutronShowFloatingIpRequest 请求对象
      * @return SyncInvoker<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse>
      */
     public SyncInvoker<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse> neutronShowFloatingIpInvoker(
         NeutronShowFloatingIpRequest request) {
-        return new SyncInvoker<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse>(request,
-            EipMeta.neutronShowFloatingIp, hcClient);
+        return new SyncInvoker<>(request, EipMeta.neutronShowFloatingIp, hcClient);
     }
 
     /**
@@ -1238,7 +1205,7 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NeutronUpdateFloatingIpRequest 请求对象
+     * @param request NeutronUpdateFloatingIpRequest 请求对象
      * @return NeutronUpdateFloatingIpResponse
      */
     public NeutronUpdateFloatingIpResponse neutronUpdateFloatingIp(NeutronUpdateFloatingIpRequest request) {
@@ -1254,13 +1221,12 @@ public class EipClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NeutronUpdateFloatingIpRequest 请求对象
+     * @param request NeutronUpdateFloatingIpRequest 请求对象
      * @return SyncInvoker<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse>
      */
     public SyncInvoker<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse> neutronUpdateFloatingIpInvoker(
         NeutronUpdateFloatingIpRequest request) {
-        return new SyncInvoker<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse>(request,
-            EipMeta.neutronUpdateFloatingIp, hcClient);
+        return new SyncInvoker<>(request, EipMeta.neutronUpdateFloatingIp, hcClient);
     }
 
 }

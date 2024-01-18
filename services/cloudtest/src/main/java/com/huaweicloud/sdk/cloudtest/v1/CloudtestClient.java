@@ -78,7 +78,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTestCaseRequest 请求对象
+     * @param request BatchDeleteTestCaseRequest 请求对象
      * @return BatchDeleteTestCaseResponse
      */
     public BatchDeleteTestCaseResponse batchDeleteTestCase(BatchDeleteTestCaseRequest request) {
@@ -92,13 +92,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTestCaseRequest 请求对象
+     * @param request BatchDeleteTestCaseRequest 请求对象
      * @return SyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse>
      */
     public SyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> batchDeleteTestCaseInvoker(
         BatchDeleteTestCaseRequest request) {
-        return new SyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse>(request,
-            CloudtestMeta.batchDeleteTestCase, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.batchDeleteTestCase, hcClient);
     }
 
     /**
@@ -108,7 +107,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlanRequest 请求对象
+     * @param request CreatePlanRequest 请求对象
      * @return CreatePlanResponse
      */
     public CreatePlanResponse createPlan(CreatePlanRequest request) {
@@ -122,11 +121,11 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlanRequest 请求对象
+     * @param request CreatePlanRequest 请求对象
      * @return SyncInvoker<CreatePlanRequest, CreatePlanResponse>
      */
     public SyncInvoker<CreatePlanRequest, CreatePlanResponse> createPlanInvoker(CreatePlanRequest request) {
-        return new SyncInvoker<CreatePlanRequest, CreatePlanResponse>(request, CloudtestMeta.createPlan, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.createPlan, hcClient);
     }
 
     /**
@@ -136,7 +135,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateServiceRequest 请求对象
+     * @param request CreateServiceRequest 请求对象
      * @return CreateServiceResponse
      */
     public CreateServiceResponse createService(CreateServiceRequest request) {
@@ -150,12 +149,11 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateServiceRequest 请求对象
+     * @param request CreateServiceRequest 请求对象
      * @return SyncInvoker<CreateServiceRequest, CreateServiceResponse>
      */
     public SyncInvoker<CreateServiceRequest, CreateServiceResponse> createServiceInvoker(CreateServiceRequest request) {
-        return new SyncInvoker<CreateServiceRequest, CreateServiceResponse>(request, CloudtestMeta.createService,
-            hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.createService, hcClient);
     }
 
     /**
@@ -165,7 +163,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTestCaseRequest 请求对象
+     * @param request CreateTestCaseRequest 请求对象
      * @return CreateTestCaseResponse
      */
     public CreateTestCaseResponse createTestCase(CreateTestCaseRequest request) {
@@ -179,13 +177,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTestCaseRequest 请求对象
+     * @param request CreateTestCaseRequest 请求对象
      * @return SyncInvoker<CreateTestCaseRequest, CreateTestCaseResponse>
      */
     public SyncInvoker<CreateTestCaseRequest, CreateTestCaseResponse> createTestCaseInvoker(
         CreateTestCaseRequest request) {
-        return new SyncInvoker<CreateTestCaseRequest, CreateTestCaseResponse>(request, CloudtestMeta.createTestCase,
-            hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.createTestCase, hcClient);
     }
 
     /**
@@ -195,7 +192,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTestCaseInPlanRequest 请求对象
+     * @param request CreateTestCaseInPlanRequest 请求对象
      * @return CreateTestCaseInPlanResponse
      */
     public CreateTestCaseInPlanResponse createTestCaseInPlan(CreateTestCaseInPlanRequest request) {
@@ -209,13 +206,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTestCaseInPlanRequest 请求对象
+     * @param request CreateTestCaseInPlanRequest 请求对象
      * @return SyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse>
      */
     public SyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse> createTestCaseInPlanInvoker(
         CreateTestCaseInPlanRequest request) {
-        return new SyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse>(request,
-            CloudtestMeta.createTestCaseInPlan, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.createTestCaseInPlan, hcClient);
     }
 
     /**
@@ -225,7 +221,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServiceRequest 请求对象
+     * @param request DeleteServiceRequest 请求对象
      * @return DeleteServiceResponse
      */
     public DeleteServiceResponse deleteService(DeleteServiceRequest request) {
@@ -239,12 +235,11 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServiceRequest 请求对象
+     * @param request DeleteServiceRequest 请求对象
      * @return SyncInvoker<DeleteServiceRequest, DeleteServiceResponse>
      */
     public SyncInvoker<DeleteServiceRequest, DeleteServiceResponse> deleteServiceInvoker(DeleteServiceRequest request) {
-        return new SyncInvoker<DeleteServiceRequest, DeleteServiceResponse>(request, CloudtestMeta.deleteService,
-            hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.deleteService, hcClient);
     }
 
     /**
@@ -254,7 +249,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBranchesRequest 请求对象
+     * @param request ListBranchesRequest 请求对象
      * @return ListBranchesResponse
      */
     public ListBranchesResponse listBranches(ListBranchesRequest request) {
@@ -268,12 +263,11 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBranchesRequest 请求对象
+     * @param request ListBranchesRequest 请求对象
      * @return SyncInvoker<ListBranchesRequest, ListBranchesResponse>
      */
     public SyncInvoker<ListBranchesRequest, ListBranchesResponse> listBranchesInvoker(ListBranchesRequest request) {
-        return new SyncInvoker<ListBranchesRequest, ListBranchesResponse>(request, CloudtestMeta.listBranches,
-            hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.listBranches, hcClient);
     }
 
     /**
@@ -283,7 +277,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTestCaseHistoriesRequest 请求对象
+     * @param request ListTestCaseHistoriesRequest 请求对象
      * @return ListTestCaseHistoriesResponse
      */
     public ListTestCaseHistoriesResponse listTestCaseHistories(ListTestCaseHistoriesRequest request) {
@@ -297,13 +291,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTestCaseHistoriesRequest 请求对象
+     * @param request ListTestCaseHistoriesRequest 请求对象
      * @return SyncInvoker<ListTestCaseHistoriesRequest, ListTestCaseHistoriesResponse>
      */
     public SyncInvoker<ListTestCaseHistoriesRequest, ListTestCaseHistoriesResponse> listTestCaseHistoriesInvoker(
         ListTestCaseHistoriesRequest request) {
-        return new SyncInvoker<ListTestCaseHistoriesRequest, ListTestCaseHistoriesResponse>(request,
-            CloudtestMeta.listTestCaseHistories, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.listTestCaseHistories, hcClient);
     }
 
     /**
@@ -313,7 +306,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTestCasesRequest 请求对象
+     * @param request ListTestCasesRequest 请求对象
      * @return ListTestCasesResponse
      */
     public ListTestCasesResponse listTestCases(ListTestCasesRequest request) {
@@ -327,12 +320,11 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTestCasesRequest 请求对象
+     * @param request ListTestCasesRequest 请求对象
      * @return SyncInvoker<ListTestCasesRequest, ListTestCasesResponse>
      */
     public SyncInvoker<ListTestCasesRequest, ListTestCasesResponse> listTestCasesInvoker(ListTestCasesRequest request) {
-        return new SyncInvoker<ListTestCasesRequest, ListTestCasesResponse>(request, CloudtestMeta.listTestCases,
-            hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.listTestCases, hcClient);
     }
 
     /**
@@ -342,7 +334,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTestCaseRequest 请求对象
+     * @param request RunTestCaseRequest 请求对象
      * @return RunTestCaseResponse
      */
     public RunTestCaseResponse runTestCase(RunTestCaseRequest request) {
@@ -356,11 +348,11 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTestCaseRequest 请求对象
+     * @param request RunTestCaseRequest 请求对象
      * @return SyncInvoker<RunTestCaseRequest, RunTestCaseResponse>
      */
     public SyncInvoker<RunTestCaseRequest, RunTestCaseResponse> runTestCaseInvoker(RunTestCaseRequest request) {
-        return new SyncInvoker<RunTestCaseRequest, RunTestCaseResponse>(request, CloudtestMeta.runTestCase, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.runTestCase, hcClient);
     }
 
     /**
@@ -370,7 +362,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiTestcaseHistoriesRequest 请求对象
+     * @param request ShowApiTestcaseHistoriesRequest 请求对象
      * @return ShowApiTestcaseHistoriesResponse
      */
     public ShowApiTestcaseHistoriesResponse showApiTestcaseHistories(ShowApiTestcaseHistoriesRequest request) {
@@ -384,13 +376,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiTestcaseHistoriesRequest 请求对象
+     * @param request ShowApiTestcaseHistoriesRequest 请求对象
      * @return SyncInvoker<ShowApiTestcaseHistoriesRequest, ShowApiTestcaseHistoriesResponse>
      */
     public SyncInvoker<ShowApiTestcaseHistoriesRequest, ShowApiTestcaseHistoriesResponse> showApiTestcaseHistoriesInvoker(
         ShowApiTestcaseHistoriesRequest request) {
-        return new SyncInvoker<ShowApiTestcaseHistoriesRequest, ShowApiTestcaseHistoriesResponse>(request,
-            CloudtestMeta.showApiTestcaseHistories, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showApiTestcaseHistories, hcClient);
     }
 
     /**
@@ -400,7 +391,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIssuesByPlanIdRequest 请求对象
+     * @param request ShowIssuesByPlanIdRequest 请求对象
      * @return ShowIssuesByPlanIdResponse
      */
     public ShowIssuesByPlanIdResponse showIssuesByPlanId(ShowIssuesByPlanIdRequest request) {
@@ -414,13 +405,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIssuesByPlanIdRequest 请求对象
+     * @param request ShowIssuesByPlanIdRequest 请求对象
      * @return SyncInvoker<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse>
      */
     public SyncInvoker<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse> showIssuesByPlanIdInvoker(
         ShowIssuesByPlanIdRequest request) {
-        return new SyncInvoker<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse>(request,
-            CloudtestMeta.showIssuesByPlanId, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showIssuesByPlanId, hcClient);
     }
 
     /**
@@ -430,7 +420,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlanJournalsRequest 请求对象
+     * @param request ShowPlanJournalsRequest 请求对象
      * @return ShowPlanJournalsResponse
      */
     public ShowPlanJournalsResponse showPlanJournals(ShowPlanJournalsRequest request) {
@@ -444,13 +434,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlanJournalsRequest 请求对象
+     * @param request ShowPlanJournalsRequest 请求对象
      * @return SyncInvoker<ShowPlanJournalsRequest, ShowPlanJournalsResponse>
      */
     public SyncInvoker<ShowPlanJournalsRequest, ShowPlanJournalsResponse> showPlanJournalsInvoker(
         ShowPlanJournalsRequest request) {
-        return new SyncInvoker<ShowPlanJournalsRequest, ShowPlanJournalsResponse>(request,
-            CloudtestMeta.showPlanJournals, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showPlanJournals, hcClient);
     }
 
     /**
@@ -460,7 +449,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlanListRequest 请求对象
+     * @param request ShowPlanListRequest 请求对象
      * @return ShowPlanListResponse
      */
     public ShowPlanListResponse showPlanList(ShowPlanListRequest request) {
@@ -474,12 +463,11 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlanListRequest 请求对象
+     * @param request ShowPlanListRequest 请求对象
      * @return SyncInvoker<ShowPlanListRequest, ShowPlanListResponse>
      */
     public SyncInvoker<ShowPlanListRequest, ShowPlanListResponse> showPlanListInvoker(ShowPlanListRequest request) {
-        return new SyncInvoker<ShowPlanListRequest, ShowPlanListResponse>(request, CloudtestMeta.showPlanList,
-            hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showPlanList, hcClient);
     }
 
     /**
@@ -489,7 +477,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlansRequest 请求对象
+     * @param request ShowPlansRequest 请求对象
      * @return ShowPlansResponse
      */
     public ShowPlansResponse showPlans(ShowPlansRequest request) {
@@ -503,11 +491,11 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlansRequest 请求对象
+     * @param request ShowPlansRequest 请求对象
      * @return SyncInvoker<ShowPlansRequest, ShowPlansResponse>
      */
     public SyncInvoker<ShowPlansRequest, ShowPlansResponse> showPlansInvoker(ShowPlansRequest request) {
-        return new SyncInvoker<ShowPlansRequest, ShowPlansResponse>(request, CloudtestMeta.showPlans, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showPlans, hcClient);
     }
 
     /**
@@ -517,7 +505,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectDataDashboardRequest 请求对象
+     * @param request ShowProjectDataDashboardRequest 请求对象
      * @return ShowProjectDataDashboardResponse
      */
     public ShowProjectDataDashboardResponse showProjectDataDashboard(ShowProjectDataDashboardRequest request) {
@@ -531,13 +519,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectDataDashboardRequest 请求对象
+     * @param request ShowProjectDataDashboardRequest 请求对象
      * @return SyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse>
      */
     public SyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse> showProjectDataDashboardInvoker(
         ShowProjectDataDashboardRequest request) {
-        return new SyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse>(request,
-            CloudtestMeta.showProjectDataDashboard, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showProjectDataDashboard, hcClient);
     }
 
     /**
@@ -547,7 +534,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRegisterServiceRequest 请求对象
+     * @param request ShowRegisterServiceRequest 请求对象
      * @return ShowRegisterServiceResponse
      */
     public ShowRegisterServiceResponse showRegisterService(ShowRegisterServiceRequest request) {
@@ -561,13 +548,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRegisterServiceRequest 请求对象
+     * @param request ShowRegisterServiceRequest 请求对象
      * @return SyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse>
      */
     public SyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse> showRegisterServiceInvoker(
         ShowRegisterServiceRequest request) {
-        return new SyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse>(request,
-            CloudtestMeta.showRegisterService, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showRegisterService, hcClient);
     }
 
     /**
@@ -577,7 +563,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReportRequest 请求对象
+     * @param request ShowReportRequest 请求对象
      * @return ShowReportResponse
      */
     public ShowReportResponse showReport(ShowReportRequest request) {
@@ -591,11 +577,11 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReportRequest 请求对象
+     * @param request ShowReportRequest 请求对象
      * @return SyncInvoker<ShowReportRequest, ShowReportResponse>
      */
     public SyncInvoker<ShowReportRequest, ShowReportResponse> showReportInvoker(ShowReportRequest request) {
-        return new SyncInvoker<ShowReportRequest, ShowReportResponse>(request, CloudtestMeta.showReport, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showReport, hcClient);
     }
 
     /**
@@ -605,7 +591,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseAndDefectInfoRequest 请求对象
+     * @param request ShowTestCaseAndDefectInfoRequest 请求对象
      * @return ShowTestCaseAndDefectInfoResponse
      */
     public ShowTestCaseAndDefectInfoResponse showTestCaseAndDefectInfo(ShowTestCaseAndDefectInfoRequest request) {
@@ -619,13 +605,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseAndDefectInfoRequest 请求对象
+     * @param request ShowTestCaseAndDefectInfoRequest 请求对象
      * @return SyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse>
      */
     public SyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse> showTestCaseAndDefectInfoInvoker(
         ShowTestCaseAndDefectInfoRequest request) {
-        return new SyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse>(request,
-            CloudtestMeta.showTestCaseAndDefectInfo, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showTestCaseAndDefectInfo, hcClient);
     }
 
     /**
@@ -635,7 +620,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseDetailRequest 请求对象
+     * @param request ShowTestCaseDetailRequest 请求对象
      * @return ShowTestCaseDetailResponse
      */
     public ShowTestCaseDetailResponse showTestCaseDetail(ShowTestCaseDetailRequest request) {
@@ -649,13 +634,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseDetailRequest 请求对象
+     * @param request ShowTestCaseDetailRequest 请求对象
      * @return SyncInvoker<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse>
      */
     public SyncInvoker<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse> showTestCaseDetailInvoker(
         ShowTestCaseDetailRequest request) {
-        return new SyncInvoker<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse>(request,
-            CloudtestMeta.showTestCaseDetail, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showTestCaseDetail, hcClient);
     }
 
     /**
@@ -665,7 +649,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseDetailV2Request 请求对象
+     * @param request ShowTestCaseDetailV2Request 请求对象
      * @return ShowTestCaseDetailV2Response
      */
     public ShowTestCaseDetailV2Response showTestCaseDetailV2(ShowTestCaseDetailV2Request request) {
@@ -679,13 +663,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseDetailV2Request 请求对象
+     * @param request ShowTestCaseDetailV2Request 请求对象
      * @return SyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response>
      */
     public SyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response> showTestCaseDetailV2Invoker(
         ShowTestCaseDetailV2Request request) {
-        return new SyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response>(request,
-            CloudtestMeta.showTestCaseDetailV2, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showTestCaseDetailV2, hcClient);
     }
 
     /**
@@ -695,7 +678,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserExecuteTestCaseInfoRequest 请求对象
+     * @param request ShowUserExecuteTestCaseInfoRequest 请求对象
      * @return ShowUserExecuteTestCaseInfoResponse
      */
     public ShowUserExecuteTestCaseInfoResponse showUserExecuteTestCaseInfo(ShowUserExecuteTestCaseInfoRequest request) {
@@ -709,13 +692,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserExecuteTestCaseInfoRequest 请求对象
+     * @param request ShowUserExecuteTestCaseInfoRequest 请求对象
      * @return SyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse>
      */
     public SyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse> showUserExecuteTestCaseInfoInvoker(
         ShowUserExecuteTestCaseInfoRequest request) {
-        return new SyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse>(request,
-            CloudtestMeta.showUserExecuteTestCaseInfo, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.showUserExecuteTestCaseInfo, hcClient);
     }
 
     /**
@@ -725,7 +707,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServiceRequest 请求对象
+     * @param request UpdateServiceRequest 请求对象
      * @return UpdateServiceResponse
      */
     public UpdateServiceResponse updateService(UpdateServiceRequest request) {
@@ -739,12 +721,11 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServiceRequest 请求对象
+     * @param request UpdateServiceRequest 请求对象
      * @return SyncInvoker<UpdateServiceRequest, UpdateServiceResponse>
      */
     public SyncInvoker<UpdateServiceRequest, UpdateServiceResponse> updateServiceInvoker(UpdateServiceRequest request) {
-        return new SyncInvoker<UpdateServiceRequest, UpdateServiceResponse>(request, CloudtestMeta.updateService,
-            hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.updateService, hcClient);
     }
 
     /**
@@ -754,7 +735,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTestCaseRequest 请求对象
+     * @param request UpdateTestCaseRequest 请求对象
      * @return UpdateTestCaseResponse
      */
     public UpdateTestCaseResponse updateTestCase(UpdateTestCaseRequest request) {
@@ -768,13 +749,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTestCaseRequest 请求对象
+     * @param request UpdateTestCaseRequest 请求对象
      * @return SyncInvoker<UpdateTestCaseRequest, UpdateTestCaseResponse>
      */
     public SyncInvoker<UpdateTestCaseRequest, UpdateTestCaseResponse> updateTestCaseInvoker(
         UpdateTestCaseRequest request) {
-        return new SyncInvoker<UpdateTestCaseRequest, UpdateTestCaseResponse>(request, CloudtestMeta.updateTestCase,
-            hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.updateTestCase, hcClient);
     }
 
     /**
@@ -784,7 +764,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTestCaseResultRequest 请求对象
+     * @param request UpdateTestCaseResultRequest 请求对象
      * @return UpdateTestCaseResultResponse
      */
     public UpdateTestCaseResultResponse updateTestCaseResult(UpdateTestCaseResultRequest request) {
@@ -798,13 +778,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTestCaseResultRequest 请求对象
+     * @param request UpdateTestCaseResultRequest 请求对象
      * @return SyncInvoker<UpdateTestCaseResultRequest, UpdateTestCaseResultResponse>
      */
     public SyncInvoker<UpdateTestCaseResultRequest, UpdateTestCaseResultResponse> updateTestCaseResultInvoker(
         UpdateTestCaseResultRequest request) {
-        return new SyncInvoker<UpdateTestCaseResultRequest, UpdateTestCaseResultResponse>(request,
-            CloudtestMeta.updateTestCaseResult, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.updateTestCaseResult, hcClient);
     }
 
     /**
@@ -814,7 +793,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
+     * @param request CreateApiTestSuiteByRepoFileRequest 请求对象
      * @return CreateApiTestSuiteByRepoFileResponse
      */
     public CreateApiTestSuiteByRepoFileResponse createApiTestSuiteByRepoFile(
@@ -829,13 +808,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
+     * @param request CreateApiTestSuiteByRepoFileRequest 请求对象
      * @return SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>
      */
     public SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFileInvoker(
         CreateApiTestSuiteByRepoFileRequest request) {
-        return new SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>(request,
-            CloudtestMeta.createApiTestSuiteByRepoFile, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.createApiTestSuiteByRepoFile, hcClient);
     }
 
     /**
@@ -845,7 +823,7 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentsRequest 请求对象
+     * @param request ListEnvironmentsRequest 请求对象
      * @return ListEnvironmentsResponse
      */
     public ListEnvironmentsResponse listEnvironments(ListEnvironmentsRequest request) {
@@ -859,13 +837,12 @@ public class CloudtestClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentsRequest 请求对象
+     * @param request ListEnvironmentsRequest 请求对象
      * @return SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>
      */
     public SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironmentsInvoker(
         ListEnvironmentsRequest request) {
-        return new SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>(request,
-            CloudtestMeta.listEnvironments, hcClient);
+        return new SyncInvoker<>(request, CloudtestMeta.listEnvironments, hcClient);
     }
 
 }

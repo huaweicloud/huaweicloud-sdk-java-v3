@@ -88,9 +88,9 @@ import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
 public class DasMeta {
 
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForlistApiVersions();
+        genForListApiVersions();
 
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
@@ -106,9 +106,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
-        genForshowApiVersion();
+        genForShowApiVersion();
 
-    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
+    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForShowApiVersion() {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
@@ -121,9 +121,7 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowApiVersionRequest::getVersion, ShowApiVersionRequest::setVersion));
 
         // response
 
@@ -131,9 +129,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<CancelShareConnectionsRequest, CancelShareConnectionsResponse> cancelShareConnections =
-        genForcancelShareConnections();
+        genForCancelShareConnections();
 
-    private static HttpRequestDef<CancelShareConnectionsRequest, CancelShareConnectionsResponse> genForcancelShareConnections() {
+    private static HttpRequestDef<CancelShareConnectionsRequest, CancelShareConnectionsResponse> genForCancelShareConnections() {
         // basic
         HttpRequestDef.Builder<CancelShareConnectionsRequest, CancelShareConnectionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, CancelShareConnectionsRequest.class, CancelShareConnectionsResponse.class)
@@ -146,16 +144,13 @@ public class DasMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelShareConnectionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CancelShareConnectionsRequest::getXLanguage,
+                CancelShareConnectionsRequest::setXLanguage));
         builder.<CancelShareConnectionsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CancelShareConnectionsRequestBody.class),
-            f -> f.withMarshaller(CancelShareConnectionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CancelShareConnectionsRequest::getBody, CancelShareConnectionsRequest::setBody));
 
         // response
 
@@ -163,9 +158,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse> changeSqlLimitSwitchStatus =
-        genForchangeSqlLimitSwitchStatus();
+        genForChangeSqlLimitSwitchStatus();
 
-    private static HttpRequestDef<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse> genForchangeSqlLimitSwitchStatus() {
+    private static HttpRequestDef<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse> genForChangeSqlLimitSwitchStatus() {
         // basic
         HttpRequestDef.Builder<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse> builder =
             HttpRequestDef
@@ -181,23 +176,20 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeSqlLimitSwitchStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeSqlLimitSwitchStatusRequest::getInstanceId,
+                ChangeSqlLimitSwitchStatusRequest::setInstanceId));
         builder.<ChangeSqlLimitSwitchStatusRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ChangeSqlLimitSwitchStatusRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ChangeSqlLimitSwitchStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ChangeSqlLimitSwitchStatusRequest::getXLanguage,
+                ChangeSqlLimitSwitchStatusRequest::setXLanguage));
         builder.<ChangeSqlLimitSwitchStatusBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeSqlLimitSwitchStatusBody.class),
-            f -> f.withMarshaller(ChangeSqlLimitSwitchStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeSqlLimitSwitchStatusRequest::getBody,
+                ChangeSqlLimitSwitchStatusRequest::setBody));
 
         // response
 
@@ -205,9 +197,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> changeSqlSwitch =
-        genForchangeSqlSwitch();
+        genForChangeSqlSwitch();
 
-    private static HttpRequestDef<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> genForchangeSqlSwitch() {
+    private static HttpRequestDef<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> genForChangeSqlSwitch() {
         // basic
         HttpRequestDef.Builder<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ChangeSqlSwitchRequest.class, ChangeSqlSwitchResponse.class)
@@ -220,23 +212,17 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeSqlSwitchRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeSqlSwitchRequest::getInstanceId, ChangeSqlSwitchRequest::setInstanceId));
         builder.<ChangeSqlSwitchRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ChangeSqlSwitchRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ChangeSqlSwitchRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ChangeSqlSwitchRequest::getXLanguage, ChangeSqlSwitchRequest::setXLanguage));
         builder.<ChangeSqlSwitchBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeSqlSwitchBody.class),
-            f -> f.withMarshaller(ChangeSqlSwitchRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeSqlSwitchRequest::getBody, ChangeSqlSwitchRequest::setBody));
 
         // response
 
@@ -244,9 +230,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<CreateShareConnectionsRequest, CreateShareConnectionsResponse> createShareConnections =
-        genForcreateShareConnections();
+        genForCreateShareConnections();
 
-    private static HttpRequestDef<CreateShareConnectionsRequest, CreateShareConnectionsResponse> genForcreateShareConnections() {
+    private static HttpRequestDef<CreateShareConnectionsRequest, CreateShareConnectionsResponse> genForCreateShareConnections() {
         // basic
         HttpRequestDef.Builder<CreateShareConnectionsRequest, CreateShareConnectionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateShareConnectionsRequest.class, CreateShareConnectionsResponse.class)
@@ -259,16 +245,13 @@ public class DasMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateShareConnectionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateShareConnectionsRequest::getXLanguage,
+                CreateShareConnectionsRequest::setXLanguage));
         builder.<CreateShareConnectionsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateShareConnectionsRequestBody.class),
-            f -> f.withMarshaller(CreateShareConnectionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateShareConnectionsRequest::getBody, CreateShareConnectionsRequest::setBody));
 
         // response
 
@@ -276,9 +259,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> createSpaceAnalysisTask =
-        genForcreateSpaceAnalysisTask();
+        genForCreateSpaceAnalysisTask();
 
-    private static HttpRequestDef<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> genForcreateSpaceAnalysisTask() {
+    private static HttpRequestDef<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> genForCreateSpaceAnalysisTask() {
         // basic
         HttpRequestDef.Builder<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateSpaceAnalysisTaskRequest.class, CreateSpaceAnalysisTaskResponse.class)
@@ -291,23 +274,19 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getInstanceId,
+                CreateSpaceAnalysisTaskRequest::setInstanceId));
         builder.<CreateSpaceAnalysisTaskRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateSpaceAnalysisTaskRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getXLanguage,
+                CreateSpaceAnalysisTaskRequest::setXLanguage));
         builder.<CreateSpaceAnalysisTaskBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSpaceAnalysisTaskBody.class),
-            f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getBody, CreateSpaceAnalysisTaskRequest::setBody));
 
         // response
 
@@ -315,9 +294,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse> createSqlLimitRules =
-        genForcreateSqlLimitRules();
+        genForCreateSqlLimitRules();
 
-    private static HttpRequestDef<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse> genForcreateSqlLimitRules() {
+    private static HttpRequestDef<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse> genForCreateSqlLimitRules() {
         // basic
         HttpRequestDef.Builder<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSqlLimitRulesRequest.class, CreateSqlLimitRulesResponse.class)
@@ -330,32 +309,27 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSqlLimitRulesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateSqlLimitRulesRequest::getInstanceId,
+                CreateSqlLimitRulesRequest::setInstanceId));
         builder.<CreateSqlLimitRulesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateSqlLimitRulesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CreateSqlLimitRulesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateSqlLimitRulesRequest::getXLanguage, CreateSqlLimitRulesRequest::setXLanguage));
         builder.<CreateSqlLimitRulesBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSqlLimitRulesBody.class),
-            f -> f.withMarshaller(CreateSqlLimitRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSqlLimitRulesRequest::getBody, CreateSqlLimitRulesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTuningRequest, CreateTuningResponse> createTuning = genForcreateTuning();
+    public static final HttpRequestDef<CreateTuningRequest, CreateTuningResponse> createTuning = genForCreateTuning();
 
-    private static HttpRequestDef<CreateTuningRequest, CreateTuningResponse> genForcreateTuning() {
+    private static HttpRequestDef<CreateTuningRequest, CreateTuningResponse> genForCreateTuning() {
         // basic
         HttpRequestDef.Builder<CreateTuningRequest, CreateTuningResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTuningRequest.class, CreateTuningResponse.class)
@@ -368,32 +342,26 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTuningRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(CreateTuningRequest::getConnectionId, CreateTuningRequest::setConnectionId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTuningRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateTuningRequest::getXLanguage, CreateTuningRequest::setXLanguage));
         builder.<CreateTuningReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTuningReq.class),
-            f -> f.withMarshaller(CreateTuningRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTuningRequest::getBody, CreateTuningRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUser = genFordeleteDbUser();
+    public static final HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUser = genForDeleteDbUser();
 
-    private static HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> genFordeleteDbUser() {
+    private static HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> genForDeleteDbUser() {
         // basic
         HttpRequestDef.Builder<DeleteDbUserRequest, DeleteDbUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDbUserRequest.class, DeleteDbUserResponse.class)
@@ -406,23 +374,17 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDbUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDbUserRequest::getInstanceId, DeleteDbUserRequest::setInstanceId));
         builder.<String>withRequestField("db_user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDbUserRequest::getDbUserId, (req, v) -> {
-                req.setDbUserId(v);
-            }));
+            f -> f.withMarshaller(DeleteDbUserRequest::getDbUserId, DeleteDbUserRequest::setDbUserId));
         builder.<DeleteDbUserRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteDbUserRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(DeleteDbUserRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteDbUserRequest::getXLanguage, DeleteDbUserRequest::setXLanguage));
 
         // response
 
@@ -430,9 +392,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<DeleteProcessRequest, DeleteProcessResponse> deleteProcess =
-        genFordeleteProcess();
+        genForDeleteProcess();
 
-    private static HttpRequestDef<DeleteProcessRequest, DeleteProcessResponse> genFordeleteProcess() {
+    private static HttpRequestDef<DeleteProcessRequest, DeleteProcessResponse> genForDeleteProcess() {
         // basic
         HttpRequestDef.Builder<DeleteProcessRequest, DeleteProcessResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteProcessRequest.class, DeleteProcessResponse.class)
@@ -445,23 +407,17 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProcessRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteProcessRequest::getInstanceId, DeleteProcessRequest::setInstanceId));
         builder.<DeleteProcessRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteProcessRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(DeleteProcessRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteProcessRequest::getXLanguage, DeleteProcessRequest::setXLanguage));
         builder.<DeleteProcessReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteProcessReqBody.class),
-            f -> f.withMarshaller(DeleteProcessRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteProcessRequest::getBody, DeleteProcessRequest::setBody));
 
         // response
 
@@ -469,9 +425,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse> deleteSqlLimitRules =
-        genFordeleteSqlLimitRules();
+        genForDeleteSqlLimitRules();
 
-    private static HttpRequestDef<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse> genFordeleteSqlLimitRules() {
+    private static HttpRequestDef<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse> genForDeleteSqlLimitRules() {
         // basic
         HttpRequestDef.Builder<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteSqlLimitRulesRequest.class, DeleteSqlLimitRulesResponse.class)
@@ -484,23 +440,18 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSqlLimitRulesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSqlLimitRulesRequest::getInstanceId,
+                DeleteSqlLimitRulesRequest::setInstanceId));
         builder.<DeleteSqlLimitRulesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteSqlLimitRulesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(DeleteSqlLimitRulesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteSqlLimitRulesRequest::getXLanguage, DeleteSqlLimitRulesRequest::setXLanguage));
         builder.<DeleteSqlLimitRulesBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteSqlLimitRulesBody.class),
-            f -> f.withMarshaller(DeleteSqlLimitRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteSqlLimitRulesRequest::getBody, DeleteSqlLimitRulesRequest::setBody));
 
         // response
 
@@ -508,9 +459,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> exportSlowQueryLogs =
-        genForexportSlowQueryLogs();
+        genForExportSlowQueryLogs();
 
-    private static HttpRequestDef<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> genForexportSlowQueryLogs() {
+    private static HttpRequestDef<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> genForExportSlowQueryLogs() {
         // basic
         HttpRequestDef.Builder<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ExportSlowQueryLogsRequest.class, ExportSlowQueryLogsResponse.class)
@@ -523,51 +474,39 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getInstanceId,
+                ExportSlowQueryLogsRequest::setInstanceId));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getDatastoreType,
+                ExportSlowQueryLogsRequest::setDatastoreType));
         builder.<Long>withRequestField("start_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getStartAt, (req, v) -> {
-                req.setStartAt(v);
-            }));
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getStartAt, ExportSlowQueryLogsRequest::setStartAt));
         builder.<Long>withRequestField("end_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getEndAt, (req, v) -> {
-                req.setEndAt(v);
-            }));
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getEndAt, ExportSlowQueryLogsRequest::setEndAt));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getLimit, ExportSlowQueryLogsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getMarker, ExportSlowQueryLogsRequest::setMarker));
         builder.<ExportSlowQueryLogsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportSlowQueryLogsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getXLanguage, ExportSlowQueryLogsRequest::setXLanguage));
 
         // response
 
@@ -575,9 +514,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse> exportSlowSqlTemplatesDetails =
-        genForexportSlowSqlTemplatesDetails();
+        genForExportSlowSqlTemplatesDetails();
 
-    private static HttpRequestDef<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse> genForexportSlowSqlTemplatesDetails() {
+    private static HttpRequestDef<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse> genForExportSlowSqlTemplatesDetails() {
         // basic
         HttpRequestDef.Builder<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse> builder =
             HttpRequestDef
@@ -593,58 +532,50 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getInstanceId,
+                ExportSlowSqlTemplatesDetailsRequest::setInstanceId));
         builder.<Long>withRequestField("start_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getStartAt, (req, v) -> {
-                req.setStartAt(v);
-            }));
+            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getStartAt,
+                ExportSlowSqlTemplatesDetailsRequest::setStartAt));
         builder.<Long>withRequestField("end_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getEndAt, (req, v) -> {
-                req.setEndAt(v);
-            }));
+            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getEndAt,
+                ExportSlowSqlTemplatesDetailsRequest::setEndAt));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getDatastoreType,
+                ExportSlowSqlTemplatesDetailsRequest::setDatastoreType));
         builder.<String>withRequestField("db_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getDbName, (req, v) -> {
-                req.setDbName(v);
-            }));
+            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getDbName,
+                ExportSlowSqlTemplatesDetailsRequest::setDbName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getOffset,
+                ExportSlowSqlTemplatesDetailsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getLimit,
+                ExportSlowSqlTemplatesDetailsRequest::setLimit));
         builder.<ExportSlowSqlTemplatesDetailsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportSlowSqlTemplatesDetailsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getXLanguage,
+                ExportSlowSqlTemplatesDetailsRequest::setXLanguage));
 
         // response
 
@@ -652,9 +583,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ExportSqlStatementsRequest, ExportSqlStatementsResponse> exportSqlStatements =
-        genForexportSqlStatements();
+        genForExportSqlStatements();
 
-    private static HttpRequestDef<ExportSqlStatementsRequest, ExportSqlStatementsResponse> genForexportSqlStatements() {
+    private static HttpRequestDef<ExportSqlStatementsRequest, ExportSqlStatementsResponse> genForExportSqlStatements() {
         // basic
         HttpRequestDef.Builder<ExportSqlStatementsRequest, ExportSqlStatementsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ExportSqlStatementsRequest.class, ExportSqlStatementsResponse.class)
@@ -667,51 +598,39 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportSqlStatementsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getInstanceId,
+                ExportSqlStatementsRequest::setInstanceId));
         builder.<Long>withRequestField("start_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ExportSqlStatementsRequest::getStartAt, (req, v) -> {
-                req.setStartAt(v);
-            }));
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getStartAt, ExportSqlStatementsRequest::setStartAt));
         builder.<Long>withRequestField("end_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ExportSqlStatementsRequest::getEndAt, (req, v) -> {
-                req.setEndAt(v);
-            }));
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getEndAt, ExportSqlStatementsRequest::setEndAt));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ExportSqlStatementsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getLimit, ExportSqlStatementsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportSqlStatementsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getMarker, ExportSqlStatementsRequest::setMarker));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportSqlStatementsRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getDatastoreType,
+                ExportSqlStatementsRequest::setDatastoreType));
         builder.<ExportSqlStatementsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportSqlStatementsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ExportSqlStatementsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getXLanguage, ExportSqlStatementsRequest::setXLanguage));
 
         // response
 
@@ -719,9 +638,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse> exportTopSqlTemplatesDetails =
-        genForexportTopSqlTemplatesDetails();
+        genForExportTopSqlTemplatesDetails();
 
-    private static HttpRequestDef<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse> genForexportTopSqlTemplatesDetails() {
+    private static HttpRequestDef<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse> genForExportTopSqlTemplatesDetails() {
         // basic
         HttpRequestDef.Builder<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse> builder =
             HttpRequestDef
@@ -737,72 +656,62 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getInstanceId,
+                ExportTopSqlTemplatesDetailsRequest::setInstanceId));
         builder.<Long>withRequestField("start_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getStartAt, (req, v) -> {
-                req.setStartAt(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getStartAt,
+                ExportTopSqlTemplatesDetailsRequest::setStartAt));
         builder.<Long>withRequestField("end_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getEndAt, (req, v) -> {
-                req.setEndAt(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getEndAt,
+                ExportTopSqlTemplatesDetailsRequest::setEndAt));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getDatastoreType,
+                ExportTopSqlTemplatesDetailsRequest::setDatastoreType));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getNodeId,
+                ExportTopSqlTemplatesDetailsRequest::setNodeId));
         builder.<ExportTopSqlTemplatesDetailsRequest.SortEnum>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportTopSqlTemplatesDetailsRequest.SortEnum.class),
-            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getSort,
+                ExportTopSqlTemplatesDetailsRequest::setSort));
         builder.<Boolean>withRequestField("asc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getAsc, (req, v) -> {
-                req.setAsc(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getAsc,
+                ExportTopSqlTemplatesDetailsRequest::setAsc));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getOffset,
+                ExportTopSqlTemplatesDetailsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getLimit,
+                ExportTopSqlTemplatesDetailsRequest::setLimit));
         builder.<ExportTopSqlTemplatesDetailsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportTopSqlTemplatesDetailsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTemplatesDetailsRequest::getXLanguage,
+                ExportTopSqlTemplatesDetailsRequest::setXLanguage));
 
         // response
 
@@ -810,9 +719,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse> exportTopSqlTrendDetails =
-        genForexportTopSqlTrendDetails();
+        genForExportTopSqlTrendDetails();
 
-    private static HttpRequestDef<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse> genForexportTopSqlTrendDetails() {
+    private static HttpRequestDef<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse> genForExportTopSqlTrendDetails() {
         // basic
         HttpRequestDef.Builder<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse> builder =
             HttpRequestDef
@@ -826,53 +735,47 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getInstanceId,
+                ExportTopSqlTrendDetailsRequest::setInstanceId));
         builder.<Long>withRequestField("start_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getStartAt, (req, v) -> {
-                req.setStartAt(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getStartAt,
+                ExportTopSqlTrendDetailsRequest::setStartAt));
         builder.<Long>withRequestField("end_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getEndAt, (req, v) -> {
-                req.setEndAt(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getEndAt,
+                ExportTopSqlTrendDetailsRequest::setEndAt));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getDatastoreType,
+                ExportTopSqlTrendDetailsRequest::setDatastoreType));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getNodeId,
+                ExportTopSqlTrendDetailsRequest::setNodeId));
         builder.<ExportTopSqlTrendDetailsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportTopSqlTrendDetailsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getXLanguage,
+                ExportTopSqlTrendDetailsRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> listDbUsers = genForlistDbUsers();
+    public static final HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> listDbUsers = genForListDbUsers();
 
-    private static HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> genForlistDbUsers() {
+    private static HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> genForListDbUsers() {
         // basic
         HttpRequestDef.Builder<ListDbUsersRequest, ListDbUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDbUsersRequest.class, ListDbUsersResponse.class)
@@ -885,44 +788,32 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getInstanceId, ListDbUsersRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getOffset, ListDbUsersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getLimit, ListDbUsersRequest::setLimit));
         builder.<String>withRequestField("db_user_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getDbUserId, (req, v) -> {
-                req.setDbUserId(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getDbUserId, ListDbUsersRequest::setDbUserId));
         builder.<String>withRequestField("db_username",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getDbUsername, (req, v) -> {
-                req.setDbUsername(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getDbUsername, ListDbUsersRequest::setDbUsername));
         builder.<ListDbUsersRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDbUsersRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getXLanguage, ListDbUsersRequest::setXLanguage));
 
         // response
 
@@ -930,9 +821,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ListInnodbLocksRequest, ListInnodbLocksResponse> listInnodbLocks =
-        genForlistInnodbLocks();
+        genForListInnodbLocks();
 
-    private static HttpRequestDef<ListInnodbLocksRequest, ListInnodbLocksResponse> genForlistInnodbLocks() {
+    private static HttpRequestDef<ListInnodbLocksRequest, ListInnodbLocksResponse> genForListInnodbLocks() {
         // basic
         HttpRequestDef.Builder<ListInnodbLocksRequest, ListInnodbLocksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInnodbLocksRequest.class, ListInnodbLocksResponse.class)
@@ -945,23 +836,17 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInnodbLocksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInnodbLocksRequest::getInstanceId, ListInnodbLocksRequest::setInstanceId));
         builder.<String>withRequestField("db_user_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInnodbLocksRequest::getDbUserId, (req, v) -> {
-                req.setDbUserId(v);
-            }));
+            f -> f.withMarshaller(ListInnodbLocksRequest::getDbUserId, ListInnodbLocksRequest::setDbUserId));
         builder.<ListInnodbLocksRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInnodbLocksRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListInnodbLocksRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListInnodbLocksRequest::getXLanguage, ListInnodbLocksRequest::setXLanguage));
 
         // response
 
@@ -969,9 +854,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ListMetadataLocksRequest, ListMetadataLocksResponse> listMetadataLocks =
-        genForlistMetadataLocks();
+        genForListMetadataLocks();
 
-    private static HttpRequestDef<ListMetadataLocksRequest, ListMetadataLocksResponse> genForlistMetadataLocks() {
+    private static HttpRequestDef<ListMetadataLocksRequest, ListMetadataLocksResponse> genForListMetadataLocks() {
         // basic
         HttpRequestDef.Builder<ListMetadataLocksRequest, ListMetadataLocksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMetadataLocksRequest.class, ListMetadataLocksResponse.class)
@@ -984,44 +869,32 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetadataLocksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMetadataLocksRequest::getInstanceId, ListMetadataLocksRequest::setInstanceId));
         builder.<String>withRequestField("db_user_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetadataLocksRequest::getDbUserId, (req, v) -> {
-                req.setDbUserId(v);
-            }));
+            f -> f.withMarshaller(ListMetadataLocksRequest::getDbUserId, ListMetadataLocksRequest::setDbUserId));
         builder.<String>withRequestField("thread_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetadataLocksRequest::getThreadId, (req, v) -> {
-                req.setThreadId(v);
-            }));
+            f -> f.withMarshaller(ListMetadataLocksRequest::getThreadId, ListMetadataLocksRequest::setThreadId));
         builder.<String>withRequestField("database",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetadataLocksRequest::getDatabase, (req, v) -> {
-                req.setDatabase(v);
-            }));
+            f -> f.withMarshaller(ListMetadataLocksRequest::getDatabase, ListMetadataLocksRequest::setDatabase));
         builder.<String>withRequestField("table",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetadataLocksRequest::getTable, (req, v) -> {
-                req.setTable(v);
-            }));
+            f -> f.withMarshaller(ListMetadataLocksRequest::getTable, ListMetadataLocksRequest::setTable));
         builder.<ListMetadataLocksRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListMetadataLocksRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListMetadataLocksRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListMetadataLocksRequest::getXLanguage, ListMetadataLocksRequest::setXLanguage));
 
         // response
 
@@ -1029,9 +902,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ListProcessesRequest, ListProcessesResponse> listProcesses =
-        genForlistProcesses();
+        genForListProcesses();
 
-    private static HttpRequestDef<ListProcessesRequest, ListProcessesResponse> genForlistProcesses() {
+    private static HttpRequestDef<ListProcessesRequest, ListProcessesResponse> genForListProcesses() {
         // basic
         HttpRequestDef.Builder<ListProcessesRequest, ListProcessesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProcessesRequest.class, ListProcessesResponse.class)
@@ -1044,51 +917,37 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProcessesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListProcessesRequest::getInstanceId, ListProcessesRequest::setInstanceId));
         builder.<String>withRequestField("db_user_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProcessesRequest::getDbUserId, (req, v) -> {
-                req.setDbUserId(v);
-            }));
+            f -> f.withMarshaller(ListProcessesRequest::getDbUserId, ListProcessesRequest::setDbUserId));
         builder.<String>withRequestField("user",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProcessesRequest::getUser, (req, v) -> {
-                req.setUser(v);
-            }));
+            f -> f.withMarshaller(ListProcessesRequest::getUser, ListProcessesRequest::setUser));
         builder.<String>withRequestField("database",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProcessesRequest::getDatabase, (req, v) -> {
-                req.setDatabase(v);
-            }));
+            f -> f.withMarshaller(ListProcessesRequest::getDatabase, ListProcessesRequest::setDatabase));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProcessesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProcessesRequest::getOffset, ListProcessesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProcessesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProcessesRequest::getLimit, ListProcessesRequest::setLimit));
         builder.<ListProcessesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProcessesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListProcessesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListProcessesRequest::getXLanguage, ListProcessesRequest::setXLanguage));
 
         // response
 
@@ -1096,9 +955,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> listSpaceAnalysis =
-        genForlistSpaceAnalysis();
+        genForListSpaceAnalysis();
 
-    private static HttpRequestDef<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> genForlistSpaceAnalysis() {
+    private static HttpRequestDef<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> genForListSpaceAnalysis() {
         // basic
         HttpRequestDef.Builder<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSpaceAnalysisRequest.class, ListSpaceAnalysisResponse.class)
@@ -1111,58 +970,44 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpaceAnalysisRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getInstanceId, ListSpaceAnalysisRequest::setInstanceId));
         builder.<ListSpaceAnalysisRequest.ObjectTypeEnum>withRequestField("object_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListSpaceAnalysisRequest.ObjectTypeEnum.class),
-            f -> f.withMarshaller(ListSpaceAnalysisRequest::getObjectType, (req, v) -> {
-                req.setObjectType(v);
-            }));
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getObjectType, ListSpaceAnalysisRequest::setObjectType));
         builder.<String>withRequestField("database_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpaceAnalysisRequest::getDatabaseId, (req, v) -> {
-                req.setDatabaseId(v);
-            }));
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getDatabaseId, ListSpaceAnalysisRequest::setDatabaseId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpaceAnalysisRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getOffset, ListSpaceAnalysisRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpaceAnalysisRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getLimit, ListSpaceAnalysisRequest::setLimit));
         builder.<String>withRequestField("show_instance_info",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpaceAnalysisRequest::getShowInstanceInfo, (req, v) -> {
-                req.setShowInstanceInfo(v);
-            }));
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getShowInstanceInfo,
+                ListSpaceAnalysisRequest::setShowInstanceInfo));
         builder.<ListSpaceAnalysisRequest.DatastoreTypeEnum>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListSpaceAnalysisRequest.DatastoreTypeEnum.class),
-            f -> f.withMarshaller(ListSpaceAnalysisRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getDatastoreType,
+                ListSpaceAnalysisRequest::setDatastoreType));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpaceAnalysisRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getXLanguage, ListSpaceAnalysisRequest::setXLanguage));
 
         // response
 
@@ -1170,9 +1015,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse> listSqlLimitRules =
-        genForlistSqlLimitRules();
+        genForListSqlLimitRules();
 
-    private static HttpRequestDef<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse> genForlistSqlLimitRules() {
+    private static HttpRequestDef<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse> genForListSqlLimitRules() {
         // basic
         HttpRequestDef.Builder<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSqlLimitRulesRequest.class, ListSqlLimitRulesResponse.class)
@@ -1185,37 +1030,28 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSqlLimitRulesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSqlLimitRulesRequest::getInstanceId, ListSqlLimitRulesRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSqlLimitRulesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSqlLimitRulesRequest::getOffset, ListSqlLimitRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSqlLimitRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSqlLimitRulesRequest::getLimit, ListSqlLimitRulesRequest::setLimit));
         builder.<ListSqlLimitRulesRequest.DatastoreTypeEnum>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListSqlLimitRulesRequest.DatastoreTypeEnum.class),
-            f -> f.withMarshaller(ListSqlLimitRulesRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ListSqlLimitRulesRequest::getDatastoreType,
+                ListSqlLimitRulesRequest::setDatastoreType));
         builder.<ListSqlLimitRulesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSqlLimitRulesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListSqlLimitRulesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListSqlLimitRulesRequest::getXLanguage, ListSqlLimitRulesRequest::setXLanguage));
 
         // response
 
@@ -1223,9 +1059,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<RegisterDbUserRequest, RegisterDbUserResponse> registerDbUser =
-        genForregisterDbUser();
+        genForRegisterDbUser();
 
-    private static HttpRequestDef<RegisterDbUserRequest, RegisterDbUserResponse> genForregisterDbUser() {
+    private static HttpRequestDef<RegisterDbUserRequest, RegisterDbUserResponse> genForRegisterDbUser() {
         // basic
         HttpRequestDef.Builder<RegisterDbUserRequest, RegisterDbUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RegisterDbUserRequest.class, RegisterDbUserResponse.class)
@@ -1238,32 +1074,26 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RegisterDbUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RegisterDbUserRequest::getInstanceId, RegisterDbUserRequest::setInstanceId));
         builder.<RegisterDbUserRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RegisterDbUserRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(RegisterDbUserRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(RegisterDbUserRequest::getXLanguage, RegisterDbUserRequest::setXLanguage));
         builder.<RegisterDbUserRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RegisterDbUserRequestBody.class),
-            f -> f.withMarshaller(RegisterDbUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RegisterDbUserRequest::getBody, RegisterDbUserRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDbUserRequest, ShowDbUserResponse> showDbUser = genForshowDbUser();
+    public static final HttpRequestDef<ShowDbUserRequest, ShowDbUserResponse> showDbUser = genForShowDbUser();
 
-    private static HttpRequestDef<ShowDbUserRequest, ShowDbUserResponse> genForshowDbUser() {
+    private static HttpRequestDef<ShowDbUserRequest, ShowDbUserResponse> genForShowDbUser() {
         // basic
         HttpRequestDef.Builder<ShowDbUserRequest, ShowDbUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDbUserRequest.class, ShowDbUserResponse.class)
@@ -1276,32 +1106,26 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDbUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDbUserRequest::getInstanceId, ShowDbUserRequest::setInstanceId));
         builder.<String>withRequestField("db_user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDbUserRequest::getDbUserId, (req, v) -> {
-                req.setDbUserId(v);
-            }));
+            f -> f.withMarshaller(ShowDbUserRequest::getDbUserId, ShowDbUserRequest::setDbUserId));
         builder.<ShowDbUserRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDbUserRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowDbUserRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDbUserRequest::getXLanguage, ShowDbUserRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForShowQuotas();
 
-    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForShowQuotas() {
         // basic
         HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
@@ -1314,9 +1138,7 @@ public class DasMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowQuotasRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowQuotasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowQuotasRequest::getXLanguage, ShowQuotasRequest::setXLanguage));
 
         // response
 
@@ -1324,9 +1146,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse> showSqlExecutionPlan =
-        genForshowSqlExecutionPlan();
+        genForShowSqlExecutionPlan();
 
-    private static HttpRequestDef<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse> genForshowSqlExecutionPlan() {
+    private static HttpRequestDef<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse> genForShowSqlExecutionPlan() {
         // basic
         HttpRequestDef.Builder<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSqlExecutionPlanRequest.class, ShowSqlExecutionPlanResponse.class)
@@ -1339,37 +1161,29 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getInstanceId,
+                ShowSqlExecutionPlanRequest::setInstanceId));
         builder.<String>withRequestField("db_user_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getDbUserId, (req, v) -> {
-                req.setDbUserId(v);
-            }));
+            f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getDbUserId, ShowSqlExecutionPlanRequest::setDbUserId));
         builder.<String>withRequestField("database",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getDatabase, (req, v) -> {
-                req.setDatabase(v);
-            }));
+            f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getDatabase, ShowSqlExecutionPlanRequest::setDatabase));
         builder.<String>withRequestField("sql",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getSql, (req, v) -> {
-                req.setSql(v);
-            }));
+            f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getSql, ShowSqlExecutionPlanRequest::setSql));
         builder.<ShowSqlExecutionPlanRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSqlExecutionPlanRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getXLanguage,
+                ShowSqlExecutionPlanRequest::setXLanguage));
 
         // response
 
@@ -1377,9 +1191,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ShowSqlExplainRequest, ShowSqlExplainResponse> showSqlExplain =
-        genForshowSqlExplain();
+        genForShowSqlExplain();
 
-    private static HttpRequestDef<ShowSqlExplainRequest, ShowSqlExplainResponse> genForshowSqlExplain() {
+    private static HttpRequestDef<ShowSqlExplainRequest, ShowSqlExplainResponse> genForShowSqlExplain() {
         // basic
         HttpRequestDef.Builder<ShowSqlExplainRequest, ShowSqlExplainResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowSqlExplainRequest.class, ShowSqlExplainResponse.class)
@@ -1392,23 +1206,17 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlExplainRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSqlExplainRequest::getInstanceId, ShowSqlExplainRequest::setInstanceId));
         builder.<ShowSqlExplainRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSqlExplainRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowSqlExplainRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSqlExplainRequest::getXLanguage, ShowSqlExplainRequest::setXLanguage));
         builder.<QuerySqlPlanBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QuerySqlPlanBody.class),
-            f -> f.withMarshaller(ShowSqlExplainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowSqlExplainRequest::getBody, ShowSqlExplainRequest::setBody));
 
         // response
 
@@ -1416,9 +1224,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse> showSqlLimitJobInfo =
-        genForshowSqlLimitJobInfo();
+        genForShowSqlLimitJobInfo();
 
-    private static HttpRequestDef<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse> genForshowSqlLimitJobInfo() {
+    private static HttpRequestDef<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse> genForShowSqlLimitJobInfo() {
         // basic
         HttpRequestDef.Builder<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSqlLimitJobInfoRequest.class, ShowSqlLimitJobInfoResponse.class)
@@ -1431,23 +1239,18 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlLimitJobInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSqlLimitJobInfoRequest::getInstanceId,
+                ShowSqlLimitJobInfoRequest::setInstanceId));
         builder.<String>withRequestField("job_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlLimitJobInfoRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowSqlLimitJobInfoRequest::getJobId, ShowSqlLimitJobInfoRequest::setJobId));
         builder.<ShowSqlLimitJobInfoRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSqlLimitJobInfoRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowSqlLimitJobInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSqlLimitJobInfoRequest::getXLanguage, ShowSqlLimitJobInfoRequest::setXLanguage));
 
         // response
 
@@ -1455,9 +1258,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse> showSqlLimitSwitchStatus =
-        genForshowSqlLimitSwitchStatus();
+        genForShowSqlLimitSwitchStatus();
 
-    private static HttpRequestDef<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse> genForshowSqlLimitSwitchStatus() {
+    private static HttpRequestDef<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse> genForShowSqlLimitSwitchStatus() {
         // basic
         HttpRequestDef.Builder<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse> builder =
             HttpRequestDef
@@ -1471,23 +1274,20 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlLimitSwitchStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSqlLimitSwitchStatusRequest::getInstanceId,
+                ShowSqlLimitSwitchStatusRequest::setInstanceId));
         builder.<ShowSqlLimitSwitchStatusRequest.DatastoreTypeEnum>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowSqlLimitSwitchStatusRequest.DatastoreTypeEnum.class),
-            f -> f.withMarshaller(ShowSqlLimitSwitchStatusRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ShowSqlLimitSwitchStatusRequest::getDatastoreType,
+                ShowSqlLimitSwitchStatusRequest::setDatastoreType));
         builder.<ShowSqlLimitSwitchStatusRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSqlLimitSwitchStatusRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowSqlLimitSwitchStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSqlLimitSwitchStatusRequest::getXLanguage,
+                ShowSqlLimitSwitchStatusRequest::setXLanguage));
 
         // response
 
@@ -1495,9 +1295,9 @@ public class DasMeta {
     }
 
     public static final HttpRequestDef<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> showSqlSwitchStatus =
-        genForshowSqlSwitchStatus();
+        genForShowSqlSwitchStatus();
 
-    private static HttpRequestDef<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> genForshowSqlSwitchStatus() {
+    private static HttpRequestDef<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> genForShowSqlSwitchStatus() {
         // basic
         HttpRequestDef.Builder<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSqlSwitchStatusRequest.class, ShowSqlSwitchStatusResponse.class)
@@ -1510,39 +1310,33 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getInstanceId,
+                ShowSqlSwitchStatusRequest::setInstanceId));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getType, ShowSqlSwitchStatusRequest::setType));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getDatastoreType,
+                ShowSqlSwitchStatusRequest::setDatastoreType));
         builder.<ShowSqlSwitchStatusRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSqlSwitchStatusRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getXLanguage, ShowSqlSwitchStatusRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTuningRequest, ShowTuningResponse> showTuning = genForshowTuning();
+    public static final HttpRequestDef<ShowTuningRequest, ShowTuningResponse> showTuning = genForShowTuning();
 
-    private static HttpRequestDef<ShowTuningRequest, ShowTuningResponse> genForshowTuning() {
+    private static HttpRequestDef<ShowTuningRequest, ShowTuningResponse> genForShowTuning() {
         // basic
         HttpRequestDef.Builder<ShowTuningRequest, ShowTuningResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTuningRequest.class, ShowTuningResponse.class)
@@ -1555,32 +1349,26 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTuningRequest::getMessageId, (req, v) -> {
-                req.setMessageId(v);
-            }));
+            f -> f.withMarshaller(ShowTuningRequest::getMessageId, ShowTuningRequest::setMessageId));
         builder.<String>withRequestField("connection_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTuningRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(ShowTuningRequest::getConnectionId, ShowTuningRequest::setConnectionId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTuningRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowTuningRequest::getXLanguage, ShowTuningRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDbUserRequest, UpdateDbUserResponse> updateDbUser = genForupdateDbUser();
+    public static final HttpRequestDef<UpdateDbUserRequest, UpdateDbUserResponse> updateDbUser = genForUpdateDbUser();
 
-    private static HttpRequestDef<UpdateDbUserRequest, UpdateDbUserResponse> genForupdateDbUser() {
+    private static HttpRequestDef<UpdateDbUserRequest, UpdateDbUserResponse> genForUpdateDbUser() {
         // basic
         HttpRequestDef.Builder<UpdateDbUserRequest, UpdateDbUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDbUserRequest.class, UpdateDbUserResponse.class)
@@ -1593,30 +1381,22 @@ public class DasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDbUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDbUserRequest::getInstanceId, UpdateDbUserRequest::setInstanceId));
         builder.<String>withRequestField("db_user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDbUserRequest::getDbUserId, (req, v) -> {
-                req.setDbUserId(v);
-            }));
+            f -> f.withMarshaller(UpdateDbUserRequest::getDbUserId, UpdateDbUserRequest::setDbUserId));
         builder.<UpdateDbUserRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateDbUserRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(UpdateDbUserRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateDbUserRequest::getXLanguage, UpdateDbUserRequest::setXLanguage));
         builder.<UpdateDbUserRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDbUserRequestBody.class),
-            f -> f.withMarshaller(UpdateDbUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDbUserRequest::getBody, UpdateDbUserRequest::setBody));
 
         // response
 

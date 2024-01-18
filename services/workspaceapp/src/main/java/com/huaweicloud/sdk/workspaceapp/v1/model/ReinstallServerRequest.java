@@ -27,7 +27,7 @@ public class ReinstallServerRequest {
     }
 
     /**
-     * 服务器唯一标识
+     * 服务器唯一标识。
      * @return serverId
      */
     public String getServerId() {

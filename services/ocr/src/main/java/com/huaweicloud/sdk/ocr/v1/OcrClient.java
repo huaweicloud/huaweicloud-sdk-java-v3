@@ -71,6 +71,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeRealEstateCertificateRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeRealEstateCertificateResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeSealRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeSealResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeSmartDocumentRecognizerRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeSmartDocumentRecognizerResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeTaxiInvoiceRequest;
@@ -120,7 +122,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeAcceptanceBillRequest 请求对象
+     * @param request RecognizeAcceptanceBillRequest 请求对象
      * @return RecognizeAcceptanceBillResponse
      */
     public RecognizeAcceptanceBillResponse recognizeAcceptanceBill(RecognizeAcceptanceBillRequest request) {
@@ -134,13 +136,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeAcceptanceBillRequest 请求对象
+     * @param request RecognizeAcceptanceBillRequest 请求对象
      * @return SyncInvoker<RecognizeAcceptanceBillRequest, RecognizeAcceptanceBillResponse>
      */
     public SyncInvoker<RecognizeAcceptanceBillRequest, RecognizeAcceptanceBillResponse> recognizeAcceptanceBillInvoker(
         RecognizeAcceptanceBillRequest request) {
-        return new SyncInvoker<RecognizeAcceptanceBillRequest, RecognizeAcceptanceBillResponse>(request,
-            OcrMeta.recognizeAcceptanceBill, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeAcceptanceBill, hcClient);
     }
 
     /**
@@ -152,7 +153,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeAutoClassificationRequest 请求对象
+     * @param request RecognizeAutoClassificationRequest 请求对象
      * @return RecognizeAutoClassificationResponse
      */
     public RecognizeAutoClassificationResponse recognizeAutoClassification(RecognizeAutoClassificationRequest request) {
@@ -168,13 +169,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeAutoClassificationRequest 请求对象
+     * @param request RecognizeAutoClassificationRequest 请求对象
      * @return SyncInvoker<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse>
      */
     public SyncInvoker<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse> recognizeAutoClassificationInvoker(
         RecognizeAutoClassificationRequest request) {
-        return new SyncInvoker<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse>(request,
-            OcrMeta.recognizeAutoClassification, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeAutoClassification, hcClient);
     }
 
     /**
@@ -186,7 +186,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeBankcardRequest 请求对象
+     * @param request RecognizeBankcardRequest 请求对象
      * @return RecognizeBankcardResponse
      */
     public RecognizeBankcardResponse recognizeBankcard(RecognizeBankcardRequest request) {
@@ -202,13 +202,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeBankcardRequest 请求对象
+     * @param request RecognizeBankcardRequest 请求对象
      * @return SyncInvoker<RecognizeBankcardRequest, RecognizeBankcardResponse>
      */
     public SyncInvoker<RecognizeBankcardRequest, RecognizeBankcardResponse> recognizeBankcardInvoker(
         RecognizeBankcardRequest request) {
-        return new SyncInvoker<RecognizeBankcardRequest, RecognizeBankcardResponse>(request, OcrMeta.recognizeBankcard,
-            hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeBankcard, hcClient);
     }
 
     /**
@@ -218,7 +217,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeBusinessCardRequest 请求对象
+     * @param request RecognizeBusinessCardRequest 请求对象
      * @return RecognizeBusinessCardResponse
      */
     public RecognizeBusinessCardResponse recognizeBusinessCard(RecognizeBusinessCardRequest request) {
@@ -232,13 +231,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeBusinessCardRequest 请求对象
+     * @param request RecognizeBusinessCardRequest 请求对象
      * @return SyncInvoker<RecognizeBusinessCardRequest, RecognizeBusinessCardResponse>
      */
     public SyncInvoker<RecognizeBusinessCardRequest, RecognizeBusinessCardResponse> recognizeBusinessCardInvoker(
         RecognizeBusinessCardRequest request) {
-        return new SyncInvoker<RecognizeBusinessCardRequest, RecognizeBusinessCardResponse>(request,
-            OcrMeta.recognizeBusinessCard, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeBusinessCard, hcClient);
     }
 
     /**
@@ -252,7 +250,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeBusinessLicenseRequest 请求对象
+     * @param request RecognizeBusinessLicenseRequest 请求对象
      * @return RecognizeBusinessLicenseResponse
      */
     public RecognizeBusinessLicenseResponse recognizeBusinessLicense(RecognizeBusinessLicenseRequest request) {
@@ -270,13 +268,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeBusinessLicenseRequest 请求对象
+     * @param request RecognizeBusinessLicenseRequest 请求对象
      * @return SyncInvoker<RecognizeBusinessLicenseRequest, RecognizeBusinessLicenseResponse>
      */
     public SyncInvoker<RecognizeBusinessLicenseRequest, RecognizeBusinessLicenseResponse> recognizeBusinessLicenseInvoker(
         RecognizeBusinessLicenseRequest request) {
-        return new SyncInvoker<RecognizeBusinessLicenseRequest, RecognizeBusinessLicenseResponse>(request,
-            OcrMeta.recognizeBusinessLicense, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeBusinessLicense, hcClient);
     }
 
     /**
@@ -286,7 +283,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeCambodianIdCardRequest 请求对象
+     * @param request RecognizeCambodianIdCardRequest 请求对象
      * @return RecognizeCambodianIdCardResponse
      */
     public RecognizeCambodianIdCardResponse recognizeCambodianIdCard(RecognizeCambodianIdCardRequest request) {
@@ -300,13 +297,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeCambodianIdCardRequest 请求对象
+     * @param request RecognizeCambodianIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeCambodianIdCardRequest, RecognizeCambodianIdCardResponse>
      */
     public SyncInvoker<RecognizeCambodianIdCardRequest, RecognizeCambodianIdCardResponse> recognizeCambodianIdCardInvoker(
         RecognizeCambodianIdCardRequest request) {
-        return new SyncInvoker<RecognizeCambodianIdCardRequest, RecognizeCambodianIdCardResponse>(request,
-            OcrMeta.recognizeCambodianIdCard, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeCambodianIdCard, hcClient);
     }
 
     /**
@@ -316,7 +312,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeChileIdCardRequest 请求对象
+     * @param request RecognizeChileIdCardRequest 请求对象
      * @return RecognizeChileIdCardResponse
      */
     public RecognizeChileIdCardResponse recognizeChileIdCard(RecognizeChileIdCardRequest request) {
@@ -330,13 +326,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeChileIdCardRequest 请求对象
+     * @param request RecognizeChileIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse>
      */
     public SyncInvoker<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse> recognizeChileIdCardInvoker(
         RecognizeChileIdCardRequest request) {
-        return new SyncInvoker<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse>(request,
-            OcrMeta.recognizeChileIdCard, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeChileIdCard, hcClient);
     }
 
     /**
@@ -346,7 +341,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeColombiaIdCardRequest 请求对象
+     * @param request RecognizeColombiaIdCardRequest 请求对象
      * @return RecognizeColombiaIdCardResponse
      */
     public RecognizeColombiaIdCardResponse recognizeColombiaIdCard(RecognizeColombiaIdCardRequest request) {
@@ -360,13 +355,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeColombiaIdCardRequest 请求对象
+     * @param request RecognizeColombiaIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeColombiaIdCardRequest, RecognizeColombiaIdCardResponse>
      */
     public SyncInvoker<RecognizeColombiaIdCardRequest, RecognizeColombiaIdCardResponse> recognizeColombiaIdCardInvoker(
         RecognizeColombiaIdCardRequest request) {
-        return new SyncInvoker<RecognizeColombiaIdCardRequest, RecognizeColombiaIdCardResponse>(request,
-            OcrMeta.recognizeColombiaIdCard, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeColombiaIdCard, hcClient);
     }
 
     /**
@@ -380,7 +374,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeDriverLicenseRequest 请求对象
+     * @param request RecognizeDriverLicenseRequest 请求对象
      * @return RecognizeDriverLicenseResponse
      */
     public RecognizeDriverLicenseResponse recognizeDriverLicense(RecognizeDriverLicenseRequest request) {
@@ -398,13 +392,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeDriverLicenseRequest 请求对象
+     * @param request RecognizeDriverLicenseRequest 请求对象
      * @return SyncInvoker<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse>
      */
     public SyncInvoker<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse> recognizeDriverLicenseInvoker(
         RecognizeDriverLicenseRequest request) {
-        return new SyncInvoker<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse>(request,
-            OcrMeta.recognizeDriverLicense, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeDriverLicense, hcClient);
     }
 
     /**
@@ -414,7 +407,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeExitEntryPermitRequest 请求对象
+     * @param request RecognizeExitEntryPermitRequest 请求对象
      * @return RecognizeExitEntryPermitResponse
      */
     public RecognizeExitEntryPermitResponse recognizeExitEntryPermit(RecognizeExitEntryPermitRequest request) {
@@ -428,13 +421,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeExitEntryPermitRequest 请求对象
+     * @param request RecognizeExitEntryPermitRequest 请求对象
      * @return SyncInvoker<RecognizeExitEntryPermitRequest, RecognizeExitEntryPermitResponse>
      */
     public SyncInvoker<RecognizeExitEntryPermitRequest, RecognizeExitEntryPermitResponse> recognizeExitEntryPermitInvoker(
         RecognizeExitEntryPermitRequest request) {
-        return new SyncInvoker<RecognizeExitEntryPermitRequest, RecognizeExitEntryPermitResponse>(request,
-            OcrMeta.recognizeExitEntryPermit, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeExitEntryPermit, hcClient);
     }
 
     /**
@@ -444,7 +436,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeFinancialStatementRequest 请求对象
+     * @param request RecognizeFinancialStatementRequest 请求对象
      * @return RecognizeFinancialStatementResponse
      */
     public RecognizeFinancialStatementResponse recognizeFinancialStatement(RecognizeFinancialStatementRequest request) {
@@ -458,13 +450,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeFinancialStatementRequest 请求对象
+     * @param request RecognizeFinancialStatementRequest 请求对象
      * @return SyncInvoker<RecognizeFinancialStatementRequest, RecognizeFinancialStatementResponse>
      */
     public SyncInvoker<RecognizeFinancialStatementRequest, RecognizeFinancialStatementResponse> recognizeFinancialStatementInvoker(
         RecognizeFinancialStatementRequest request) {
-        return new SyncInvoker<RecognizeFinancialStatementRequest, RecognizeFinancialStatementResponse>(request,
-            OcrMeta.recognizeFinancialStatement, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeFinancialStatement, hcClient);
     }
 
     /**
@@ -476,7 +467,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeFlightItineraryRequest 请求对象
+     * @param request RecognizeFlightItineraryRequest 请求对象
      * @return RecognizeFlightItineraryResponse
      */
     public RecognizeFlightItineraryResponse recognizeFlightItinerary(RecognizeFlightItineraryRequest request) {
@@ -492,13 +483,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeFlightItineraryRequest 请求对象
+     * @param request RecognizeFlightItineraryRequest 请求对象
      * @return SyncInvoker<RecognizeFlightItineraryRequest, RecognizeFlightItineraryResponse>
      */
     public SyncInvoker<RecognizeFlightItineraryRequest, RecognizeFlightItineraryResponse> recognizeFlightItineraryInvoker(
         RecognizeFlightItineraryRequest request) {
-        return new SyncInvoker<RecognizeFlightItineraryRequest, RecognizeFlightItineraryResponse>(request,
-            OcrMeta.recognizeFlightItinerary, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeFlightItinerary, hcClient);
     }
 
     /**
@@ -508,7 +498,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeGeneralTableRequest 请求对象
+     * @param request RecognizeGeneralTableRequest 请求对象
      * @return RecognizeGeneralTableResponse
      */
     public RecognizeGeneralTableResponse recognizeGeneralTable(RecognizeGeneralTableRequest request) {
@@ -522,13 +512,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeGeneralTableRequest 请求对象
+     * @param request RecognizeGeneralTableRequest 请求对象
      * @return SyncInvoker<RecognizeGeneralTableRequest, RecognizeGeneralTableResponse>
      */
     public SyncInvoker<RecognizeGeneralTableRequest, RecognizeGeneralTableResponse> recognizeGeneralTableInvoker(
         RecognizeGeneralTableRequest request) {
-        return new SyncInvoker<RecognizeGeneralTableRequest, RecognizeGeneralTableResponse>(request,
-            OcrMeta.recognizeGeneralTable, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeGeneralTable, hcClient);
     }
 
     /**
@@ -538,7 +527,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeGeneralTextRequest 请求对象
+     * @param request RecognizeGeneralTextRequest 请求对象
      * @return RecognizeGeneralTextResponse
      */
     public RecognizeGeneralTextResponse recognizeGeneralText(RecognizeGeneralTextRequest request) {
@@ -552,13 +541,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeGeneralTextRequest 请求对象
+     * @param request RecognizeGeneralTextRequest 请求对象
      * @return SyncInvoker<RecognizeGeneralTextRequest, RecognizeGeneralTextResponse>
      */
     public SyncInvoker<RecognizeGeneralTextRequest, RecognizeGeneralTextResponse> recognizeGeneralTextInvoker(
         RecognizeGeneralTextRequest request) {
-        return new SyncInvoker<RecognizeGeneralTextRequest, RecognizeGeneralTextResponse>(request,
-            OcrMeta.recognizeGeneralText, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeGeneralText, hcClient);
     }
 
     /**
@@ -568,7 +556,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeHandwritingRequest 请求对象
+     * @param request RecognizeHandwritingRequest 请求对象
      * @return RecognizeHandwritingResponse
      */
     public RecognizeHandwritingResponse recognizeHandwriting(RecognizeHandwritingRequest request) {
@@ -582,13 +570,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeHandwritingRequest 请求对象
+     * @param request RecognizeHandwritingRequest 请求对象
      * @return SyncInvoker<RecognizeHandwritingRequest, RecognizeHandwritingResponse>
      */
     public SyncInvoker<RecognizeHandwritingRequest, RecognizeHandwritingResponse> recognizeHandwritingInvoker(
         RecognizeHandwritingRequest request) {
-        return new SyncInvoker<RecognizeHandwritingRequest, RecognizeHandwritingResponse>(request,
-            OcrMeta.recognizeHandwriting, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeHandwriting, hcClient);
     }
 
     /**
@@ -598,7 +585,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeHealthCodeRequest 请求对象
+     * @param request RecognizeHealthCodeRequest 请求对象
      * @return RecognizeHealthCodeResponse
      */
     public RecognizeHealthCodeResponse recognizeHealthCode(RecognizeHealthCodeRequest request) {
@@ -612,13 +599,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeHealthCodeRequest 请求对象
+     * @param request RecognizeHealthCodeRequest 请求对象
      * @return SyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse>
      */
     public SyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse> recognizeHealthCodeInvoker(
         RecognizeHealthCodeRequest request) {
-        return new SyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse>(request,
-            OcrMeta.recognizeHealthCode, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeHealthCode, hcClient);
     }
 
     /**
@@ -628,7 +614,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeHkIdCardRequest 请求对象
+     * @param request RecognizeHkIdCardRequest 请求对象
      * @return RecognizeHkIdCardResponse
      */
     public RecognizeHkIdCardResponse recognizeHkIdCard(RecognizeHkIdCardRequest request) {
@@ -642,13 +628,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeHkIdCardRequest 请求对象
+     * @param request RecognizeHkIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse>
      */
     public SyncInvoker<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse> recognizeHkIdCardInvoker(
         RecognizeHkIdCardRequest request) {
-        return new SyncInvoker<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse>(request, OcrMeta.recognizeHkIdCard,
-            hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeHkIdCard, hcClient);
     }
 
     /**
@@ -664,7 +649,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeIdCardRequest 请求对象
+     * @param request RecognizeIdCardRequest 请求对象
      * @return RecognizeIdCardResponse
      */
     public RecognizeIdCardResponse recognizeIdCard(RecognizeIdCardRequest request) {
@@ -684,13 +669,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeIdCardRequest 请求对象
+     * @param request RecognizeIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeIdCardRequest, RecognizeIdCardResponse>
      */
     public SyncInvoker<RecognizeIdCardRequest, RecognizeIdCardResponse> recognizeIdCardInvoker(
         RecognizeIdCardRequest request) {
-        return new SyncInvoker<RecognizeIdCardRequest, RecognizeIdCardResponse>(request, OcrMeta.recognizeIdCard,
-            hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeIdCard, hcClient);
     }
 
     /**
@@ -724,7 +708,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeIdDocumentRequest 请求对象
+     * @param request RecognizeIdDocumentRequest 请求对象
      * @return RecognizeIdDocumentResponse
      */
     public RecognizeIdDocumentResponse recognizeIdDocument(RecognizeIdDocumentRequest request) {
@@ -762,13 +746,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeIdDocumentRequest 请求对象
+     * @param request RecognizeIdDocumentRequest 请求对象
      * @return SyncInvoker<RecognizeIdDocumentRequest, RecognizeIdDocumentResponse>
      */
     public SyncInvoker<RecognizeIdDocumentRequest, RecognizeIdDocumentResponse> recognizeIdDocumentInvoker(
         RecognizeIdDocumentRequest request) {
-        return new SyncInvoker<RecognizeIdDocumentRequest, RecognizeIdDocumentResponse>(request,
-            OcrMeta.recognizeIdDocument, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeIdDocument, hcClient);
     }
 
     /**
@@ -778,7 +761,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeInsurancePolicyRequest 请求对象
+     * @param request RecognizeInsurancePolicyRequest 请求对象
      * @return RecognizeInsurancePolicyResponse
      */
     public RecognizeInsurancePolicyResponse recognizeInsurancePolicy(RecognizeInsurancePolicyRequest request) {
@@ -792,13 +775,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeInsurancePolicyRequest 请求对象
+     * @param request RecognizeInsurancePolicyRequest 请求对象
      * @return SyncInvoker<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse>
      */
     public SyncInvoker<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse> recognizeInsurancePolicyInvoker(
         RecognizeInsurancePolicyRequest request) {
-        return new SyncInvoker<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse>(request,
-            OcrMeta.recognizeInsurancePolicy, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeInsurancePolicy, hcClient);
     }
 
     /**
@@ -808,7 +790,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeInvoiceVerificationRequest 请求对象
+     * @param request RecognizeInvoiceVerificationRequest 请求对象
      * @return RecognizeInvoiceVerificationResponse
      */
     public RecognizeInvoiceVerificationResponse recognizeInvoiceVerification(
@@ -823,13 +805,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeInvoiceVerificationRequest 请求对象
+     * @param request RecognizeInvoiceVerificationRequest 请求对象
      * @return SyncInvoker<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse>
      */
     public SyncInvoker<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse> recognizeInvoiceVerificationInvoker(
         RecognizeInvoiceVerificationRequest request) {
-        return new SyncInvoker<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse>(request,
-            OcrMeta.recognizeInvoiceVerification, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeInvoiceVerification, hcClient);
     }
 
     /**
@@ -839,7 +820,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeLicensePlateRequest 请求对象
+     * @param request RecognizeLicensePlateRequest 请求对象
      * @return RecognizeLicensePlateResponse
      */
     public RecognizeLicensePlateResponse recognizeLicensePlate(RecognizeLicensePlateRequest request) {
@@ -853,13 +834,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeLicensePlateRequest 请求对象
+     * @param request RecognizeLicensePlateRequest 请求对象
      * @return SyncInvoker<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse>
      */
     public SyncInvoker<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse> recognizeLicensePlateInvoker(
         RecognizeLicensePlateRequest request) {
-        return new SyncInvoker<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse>(request,
-            OcrMeta.recognizeLicensePlate, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeLicensePlate, hcClient);
     }
 
     /**
@@ -869,7 +849,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeMacaoIdCardRequest 请求对象
+     * @param request RecognizeMacaoIdCardRequest 请求对象
      * @return RecognizeMacaoIdCardResponse
      */
     public RecognizeMacaoIdCardResponse recognizeMacaoIdCard(RecognizeMacaoIdCardRequest request) {
@@ -883,13 +863,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeMacaoIdCardRequest 请求对象
+     * @param request RecognizeMacaoIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeMacaoIdCardRequest, RecognizeMacaoIdCardResponse>
      */
     public SyncInvoker<RecognizeMacaoIdCardRequest, RecognizeMacaoIdCardResponse> recognizeMacaoIdCardInvoker(
         RecognizeMacaoIdCardRequest request) {
-        return new SyncInvoker<RecognizeMacaoIdCardRequest, RecognizeMacaoIdCardResponse>(request,
-            OcrMeta.recognizeMacaoIdCard, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeMacaoIdCard, hcClient);
     }
 
     /**
@@ -899,7 +878,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeMainlandTravelPermitRequest 请求对象
+     * @param request RecognizeMainlandTravelPermitRequest 请求对象
      * @return RecognizeMainlandTravelPermitResponse
      */
     public RecognizeMainlandTravelPermitResponse recognizeMainlandTravelPermit(
@@ -914,13 +893,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeMainlandTravelPermitRequest 请求对象
+     * @param request RecognizeMainlandTravelPermitRequest 请求对象
      * @return SyncInvoker<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse>
      */
     public SyncInvoker<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse> recognizeMainlandTravelPermitInvoker(
         RecognizeMainlandTravelPermitRequest request) {
-        return new SyncInvoker<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse>(request,
-            OcrMeta.recognizeMainlandTravelPermit, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeMainlandTravelPermit, hcClient);
     }
 
     /**
@@ -933,7 +911,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeMvsInvoiceRequest 请求对象
+     * @param request RecognizeMvsInvoiceRequest 请求对象
      * @return RecognizeMvsInvoiceResponse
      */
     public RecognizeMvsInvoiceResponse recognizeMvsInvoice(RecognizeMvsInvoiceRequest request) {
@@ -950,13 +928,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeMvsInvoiceRequest 请求对象
+     * @param request RecognizeMvsInvoiceRequest 请求对象
      * @return SyncInvoker<RecognizeMvsInvoiceRequest, RecognizeMvsInvoiceResponse>
      */
     public SyncInvoker<RecognizeMvsInvoiceRequest, RecognizeMvsInvoiceResponse> recognizeMvsInvoiceInvoker(
         RecognizeMvsInvoiceRequest request) {
-        return new SyncInvoker<RecognizeMvsInvoiceRequest, RecognizeMvsInvoiceResponse>(request,
-            OcrMeta.recognizeMvsInvoice, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeMvsInvoice, hcClient);
     }
 
     /**
@@ -966,7 +943,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeMyanmarDriverLicenseRequest 请求对象
+     * @param request RecognizeMyanmarDriverLicenseRequest 请求对象
      * @return RecognizeMyanmarDriverLicenseResponse
      */
     public RecognizeMyanmarDriverLicenseResponse recognizeMyanmarDriverLicense(
@@ -981,13 +958,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeMyanmarDriverLicenseRequest 请求对象
+     * @param request RecognizeMyanmarDriverLicenseRequest 请求对象
      * @return SyncInvoker<RecognizeMyanmarDriverLicenseRequest, RecognizeMyanmarDriverLicenseResponse>
      */
     public SyncInvoker<RecognizeMyanmarDriverLicenseRequest, RecognizeMyanmarDriverLicenseResponse> recognizeMyanmarDriverLicenseInvoker(
         RecognizeMyanmarDriverLicenseRequest request) {
-        return new SyncInvoker<RecognizeMyanmarDriverLicenseRequest, RecognizeMyanmarDriverLicenseResponse>(request,
-            OcrMeta.recognizeMyanmarDriverLicense, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeMyanmarDriverLicense, hcClient);
     }
 
     /**
@@ -997,7 +973,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeMyanmarIdcardRequest 请求对象
+     * @param request RecognizeMyanmarIdcardRequest 请求对象
      * @return RecognizeMyanmarIdcardResponse
      */
     public RecognizeMyanmarIdcardResponse recognizeMyanmarIdcard(RecognizeMyanmarIdcardRequest request) {
@@ -1011,13 +987,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeMyanmarIdcardRequest 请求对象
+     * @param request RecognizeMyanmarIdcardRequest 请求对象
      * @return SyncInvoker<RecognizeMyanmarIdcardRequest, RecognizeMyanmarIdcardResponse>
      */
     public SyncInvoker<RecognizeMyanmarIdcardRequest, RecognizeMyanmarIdcardResponse> recognizeMyanmarIdcardInvoker(
         RecognizeMyanmarIdcardRequest request) {
-        return new SyncInvoker<RecognizeMyanmarIdcardRequest, RecognizeMyanmarIdcardResponse>(request,
-            OcrMeta.recognizeMyanmarIdcard, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeMyanmarIdcard, hcClient);
     }
 
     /**
@@ -1029,7 +1004,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizePassportRequest 请求对象
+     * @param request RecognizePassportRequest 请求对象
      * @return RecognizePassportResponse
      */
     public RecognizePassportResponse recognizePassport(RecognizePassportRequest request) {
@@ -1045,13 +1020,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizePassportRequest 请求对象
+     * @param request RecognizePassportRequest 请求对象
      * @return SyncInvoker<RecognizePassportRequest, RecognizePassportResponse>
      */
     public SyncInvoker<RecognizePassportRequest, RecognizePassportResponse> recognizePassportInvoker(
         RecognizePassportRequest request) {
-        return new SyncInvoker<RecognizePassportRequest, RecognizePassportResponse>(request, OcrMeta.recognizePassport,
-            hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizePassport, hcClient);
     }
 
     /**
@@ -1061,7 +1035,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizePcrTestRecordRequest 请求对象
+     * @param request RecognizePcrTestRecordRequest 请求对象
      * @return RecognizePcrTestRecordResponse
      */
     public RecognizePcrTestRecordResponse recognizePcrTestRecord(RecognizePcrTestRecordRequest request) {
@@ -1075,13 +1049,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizePcrTestRecordRequest 请求对象
+     * @param request RecognizePcrTestRecordRequest 请求对象
      * @return SyncInvoker<RecognizePcrTestRecordRequest, RecognizePcrTestRecordResponse>
      */
     public SyncInvoker<RecognizePcrTestRecordRequest, RecognizePcrTestRecordResponse> recognizePcrTestRecordInvoker(
         RecognizePcrTestRecordRequest request) {
-        return new SyncInvoker<RecognizePcrTestRecordRequest, RecognizePcrTestRecordResponse>(request,
-            OcrMeta.recognizePcrTestRecord, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizePcrTestRecord, hcClient);
     }
 
     /**
@@ -1091,7 +1064,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizePeruIdCardRequest 请求对象
+     * @param request RecognizePeruIdCardRequest 请求对象
      * @return RecognizePeruIdCardResponse
      */
     public RecognizePeruIdCardResponse recognizePeruIdCard(RecognizePeruIdCardRequest request) {
@@ -1105,13 +1078,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizePeruIdCardRequest 请求对象
+     * @param request RecognizePeruIdCardRequest 请求对象
      * @return SyncInvoker<RecognizePeruIdCardRequest, RecognizePeruIdCardResponse>
      */
     public SyncInvoker<RecognizePeruIdCardRequest, RecognizePeruIdCardResponse> recognizePeruIdCardInvoker(
         RecognizePeruIdCardRequest request) {
-        return new SyncInvoker<RecognizePeruIdCardRequest, RecognizePeruIdCardResponse>(request,
-            OcrMeta.recognizePeruIdCard, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizePeruIdCard, hcClient);
     }
 
     /**
@@ -1121,7 +1093,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeQualificationCertificateRequest 请求对象
+     * @param request RecognizeQualificationCertificateRequest 请求对象
      * @return RecognizeQualificationCertificateResponse
      */
     public RecognizeQualificationCertificateResponse recognizeQualificationCertificate(
@@ -1136,13 +1108,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeQualificationCertificateRequest 请求对象
+     * @param request RecognizeQualificationCertificateRequest 请求对象
      * @return SyncInvoker<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse>
      */
     public SyncInvoker<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse> recognizeQualificationCertificateInvoker(
         RecognizeQualificationCertificateRequest request) {
-        return new SyncInvoker<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse>(
-            request, OcrMeta.recognizeQualificationCertificate, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeQualificationCertificate, hcClient);
     }
 
     /**
@@ -1156,7 +1127,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeQuotaInvoiceRequest 请求对象
+     * @param request RecognizeQuotaInvoiceRequest 请求对象
      * @return RecognizeQuotaInvoiceResponse
      */
     public RecognizeQuotaInvoiceResponse recognizeQuotaInvoice(RecognizeQuotaInvoiceRequest request) {
@@ -1174,13 +1145,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeQuotaInvoiceRequest 请求对象
+     * @param request RecognizeQuotaInvoiceRequest 请求对象
      * @return SyncInvoker<RecognizeQuotaInvoiceRequest, RecognizeQuotaInvoiceResponse>
      */
     public SyncInvoker<RecognizeQuotaInvoiceRequest, RecognizeQuotaInvoiceResponse> recognizeQuotaInvoiceInvoker(
         RecognizeQuotaInvoiceRequest request) {
-        return new SyncInvoker<RecognizeQuotaInvoiceRequest, RecognizeQuotaInvoiceResponse>(request,
-            OcrMeta.recognizeQuotaInvoice, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeQuotaInvoice, hcClient);
     }
 
     /**
@@ -1191,7 +1161,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeRealEstateCertificateRequest 请求对象
+     * @param request RecognizeRealEstateCertificateRequest 请求对象
      * @return RecognizeRealEstateCertificateResponse
      */
     public RecognizeRealEstateCertificateResponse recognizeRealEstateCertificate(
@@ -1207,13 +1177,40 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeRealEstateCertificateRequest 请求对象
+     * @param request RecognizeRealEstateCertificateRequest 请求对象
      * @return SyncInvoker<RecognizeRealEstateCertificateRequest, RecognizeRealEstateCertificateResponse>
      */
     public SyncInvoker<RecognizeRealEstateCertificateRequest, RecognizeRealEstateCertificateResponse> recognizeRealEstateCertificateInvoker(
         RecognizeRealEstateCertificateRequest request) {
-        return new SyncInvoker<RecognizeRealEstateCertificateRequest, RecognizeRealEstateCertificateResponse>(request,
-            OcrMeta.recognizeRealEstateCertificate, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeRealEstateCertificate, hcClient);
+    }
+
+    /**
+     * 印章识别
+     *
+     * 检测和识别合同文件或常用票据中的印章，并可擦除和提取图片中的印章，通过JSON格式返回印章检测、识别、擦除和提取的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecognizeSealRequest 请求对象
+     * @return RecognizeSealResponse
+     */
+    public RecognizeSealResponse recognizeSeal(RecognizeSealRequest request) {
+        return hcClient.syncInvokeHttp(request, OcrMeta.recognizeSeal);
+    }
+
+    /**
+     * 印章识别
+     *
+     * 检测和识别合同文件或常用票据中的印章，并可擦除和提取图片中的印章，通过JSON格式返回印章检测、识别、擦除和提取的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecognizeSealRequest 请求对象
+     * @return SyncInvoker<RecognizeSealRequest, RecognizeSealResponse>
+     */
+    public SyncInvoker<RecognizeSealRequest, RecognizeSealResponse> recognizeSealInvoker(RecognizeSealRequest request) {
+        return new SyncInvoker<>(request, OcrMeta.recognizeSeal, hcClient);
     }
 
     /**
@@ -1223,7 +1220,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeSmartDocumentRecognizerRequest 请求对象
+     * @param request RecognizeSmartDocumentRecognizerRequest 请求对象
      * @return RecognizeSmartDocumentRecognizerResponse
      */
     public RecognizeSmartDocumentRecognizerResponse recognizeSmartDocumentRecognizer(
@@ -1238,13 +1235,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeSmartDocumentRecognizerRequest 请求对象
+     * @param request RecognizeSmartDocumentRecognizerRequest 请求对象
      * @return SyncInvoker<RecognizeSmartDocumentRecognizerRequest, RecognizeSmartDocumentRecognizerResponse>
      */
     public SyncInvoker<RecognizeSmartDocumentRecognizerRequest, RecognizeSmartDocumentRecognizerResponse> recognizeSmartDocumentRecognizerInvoker(
         RecognizeSmartDocumentRecognizerRequest request) {
-        return new SyncInvoker<RecognizeSmartDocumentRecognizerRequest, RecognizeSmartDocumentRecognizerResponse>(
-            request, OcrMeta.recognizeSmartDocumentRecognizer, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeSmartDocumentRecognizer, hcClient);
     }
 
     /**
@@ -1257,7 +1253,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeTaxiInvoiceRequest 请求对象
+     * @param request RecognizeTaxiInvoiceRequest 请求对象
      * @return RecognizeTaxiInvoiceResponse
      */
     public RecognizeTaxiInvoiceResponse recognizeTaxiInvoice(RecognizeTaxiInvoiceRequest request) {
@@ -1274,13 +1270,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeTaxiInvoiceRequest 请求对象
+     * @param request RecognizeTaxiInvoiceRequest 请求对象
      * @return SyncInvoker<RecognizeTaxiInvoiceRequest, RecognizeTaxiInvoiceResponse>
      */
     public SyncInvoker<RecognizeTaxiInvoiceRequest, RecognizeTaxiInvoiceResponse> recognizeTaxiInvoiceInvoker(
         RecognizeTaxiInvoiceRequest request) {
-        return new SyncInvoker<RecognizeTaxiInvoiceRequest, RecognizeTaxiInvoiceResponse>(request,
-            OcrMeta.recognizeTaxiInvoice, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeTaxiInvoice, hcClient);
     }
 
     /**
@@ -1290,7 +1285,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeThailandIdcardRequest 请求对象
+     * @param request RecognizeThailandIdcardRequest 请求对象
      * @return RecognizeThailandIdcardResponse
      */
     public RecognizeThailandIdcardResponse recognizeThailandIdcard(RecognizeThailandIdcardRequest request) {
@@ -1304,13 +1299,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeThailandIdcardRequest 请求对象
+     * @param request RecognizeThailandIdcardRequest 请求对象
      * @return SyncInvoker<RecognizeThailandIdcardRequest, RecognizeThailandIdcardResponse>
      */
     public SyncInvoker<RecognizeThailandIdcardRequest, RecognizeThailandIdcardResponse> recognizeThailandIdcardInvoker(
         RecognizeThailandIdcardRequest request) {
-        return new SyncInvoker<RecognizeThailandIdcardRequest, RecognizeThailandIdcardResponse>(request,
-            OcrMeta.recognizeThailandIdcard, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeThailandIdcard, hcClient);
     }
 
     /**
@@ -1320,7 +1314,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeThailandLicensePlateRequest 请求对象
+     * @param request RecognizeThailandLicensePlateRequest 请求对象
      * @return RecognizeThailandLicensePlateResponse
      */
     public RecognizeThailandLicensePlateResponse recognizeThailandLicensePlate(
@@ -1335,13 +1329,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeThailandLicensePlateRequest 请求对象
+     * @param request RecognizeThailandLicensePlateRequest 请求对象
      * @return SyncInvoker<RecognizeThailandLicensePlateRequest, RecognizeThailandLicensePlateResponse>
      */
     public SyncInvoker<RecognizeThailandLicensePlateRequest, RecognizeThailandLicensePlateResponse> recognizeThailandLicensePlateInvoker(
         RecognizeThailandLicensePlateRequest request) {
-        return new SyncInvoker<RecognizeThailandLicensePlateRequest, RecognizeThailandLicensePlateResponse>(request,
-            OcrMeta.recognizeThailandLicensePlate, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeThailandLicensePlate, hcClient);
     }
 
     /**
@@ -1353,7 +1346,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeTollInvoiceRequest 请求对象
+     * @param request RecognizeTollInvoiceRequest 请求对象
      * @return RecognizeTollInvoiceResponse
      */
     public RecognizeTollInvoiceResponse recognizeTollInvoice(RecognizeTollInvoiceRequest request) {
@@ -1369,13 +1362,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeTollInvoiceRequest 请求对象
+     * @param request RecognizeTollInvoiceRequest 请求对象
      * @return SyncInvoker<RecognizeTollInvoiceRequest, RecognizeTollInvoiceResponse>
      */
     public SyncInvoker<RecognizeTollInvoiceRequest, RecognizeTollInvoiceResponse> recognizeTollInvoiceInvoker(
         RecognizeTollInvoiceRequest request) {
-        return new SyncInvoker<RecognizeTollInvoiceRequest, RecognizeTollInvoiceResponse>(request,
-            OcrMeta.recognizeTollInvoice, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeTollInvoice, hcClient);
     }
 
     /**
@@ -1387,7 +1379,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeTrainTicketRequest 请求对象
+     * @param request RecognizeTrainTicketRequest 请求对象
      * @return RecognizeTrainTicketResponse
      */
     public RecognizeTrainTicketResponse recognizeTrainTicket(RecognizeTrainTicketRequest request) {
@@ -1403,13 +1395,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeTrainTicketRequest 请求对象
+     * @param request RecognizeTrainTicketRequest 请求对象
      * @return SyncInvoker<RecognizeTrainTicketRequest, RecognizeTrainTicketResponse>
      */
     public SyncInvoker<RecognizeTrainTicketRequest, RecognizeTrainTicketResponse> recognizeTrainTicketInvoker(
         RecognizeTrainTicketRequest request) {
-        return new SyncInvoker<RecognizeTrainTicketRequest, RecognizeTrainTicketResponse>(request,
-            OcrMeta.recognizeTrainTicket, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeTrainTicket, hcClient);
     }
 
     /**
@@ -1420,7 +1411,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeTransportationLicenseRequest 请求对象
+     * @param request RecognizeTransportationLicenseRequest 请求对象
      * @return RecognizeTransportationLicenseResponse
      */
     public RecognizeTransportationLicenseResponse recognizeTransportationLicense(
@@ -1436,13 +1427,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeTransportationLicenseRequest 请求对象
+     * @param request RecognizeTransportationLicenseRequest 请求对象
      * @return SyncInvoker<RecognizeTransportationLicenseRequest, RecognizeTransportationLicenseResponse>
      */
     public SyncInvoker<RecognizeTransportationLicenseRequest, RecognizeTransportationLicenseResponse> recognizeTransportationLicenseInvoker(
         RecognizeTransportationLicenseRequest request) {
-        return new SyncInvoker<RecognizeTransportationLicenseRequest, RecognizeTransportationLicenseResponse>(request,
-            OcrMeta.recognizeTransportationLicense, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeTransportationLicense, hcClient);
     }
 
     /**
@@ -1456,7 +1446,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeVatInvoiceRequest 请求对象
+     * @param request RecognizeVatInvoiceRequest 请求对象
      * @return RecognizeVatInvoiceResponse
      */
     public RecognizeVatInvoiceResponse recognizeVatInvoice(RecognizeVatInvoiceRequest request) {
@@ -1474,13 +1464,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeVatInvoiceRequest 请求对象
+     * @param request RecognizeVatInvoiceRequest 请求对象
      * @return SyncInvoker<RecognizeVatInvoiceRequest, RecognizeVatInvoiceResponse>
      */
     public SyncInvoker<RecognizeVatInvoiceRequest, RecognizeVatInvoiceResponse> recognizeVatInvoiceInvoker(
         RecognizeVatInvoiceRequest request) {
-        return new SyncInvoker<RecognizeVatInvoiceRequest, RecognizeVatInvoiceResponse>(request,
-            OcrMeta.recognizeVatInvoice, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeVatInvoice, hcClient);
     }
 
     /**
@@ -1490,7 +1479,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeVehicleCertificateRequest 请求对象
+     * @param request RecognizeVehicleCertificateRequest 请求对象
      * @return RecognizeVehicleCertificateResponse
      */
     public RecognizeVehicleCertificateResponse recognizeVehicleCertificate(RecognizeVehicleCertificateRequest request) {
@@ -1504,13 +1493,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeVehicleCertificateRequest 请求对象
+     * @param request RecognizeVehicleCertificateRequest 请求对象
      * @return SyncInvoker<RecognizeVehicleCertificateRequest, RecognizeVehicleCertificateResponse>
      */
     public SyncInvoker<RecognizeVehicleCertificateRequest, RecognizeVehicleCertificateResponse> recognizeVehicleCertificateInvoker(
         RecognizeVehicleCertificateRequest request) {
-        return new SyncInvoker<RecognizeVehicleCertificateRequest, RecognizeVehicleCertificateResponse>(request,
-            OcrMeta.recognizeVehicleCertificate, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeVehicleCertificate, hcClient);
     }
 
     /**
@@ -1522,7 +1510,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeVehicleLicenseRequest 请求对象
+     * @param request RecognizeVehicleLicenseRequest 请求对象
      * @return RecognizeVehicleLicenseResponse
      */
     public RecognizeVehicleLicenseResponse recognizeVehicleLicense(RecognizeVehicleLicenseRequest request) {
@@ -1538,13 +1526,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeVehicleLicenseRequest 请求对象
+     * @param request RecognizeVehicleLicenseRequest 请求对象
      * @return SyncInvoker<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse>
      */
     public SyncInvoker<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse> recognizeVehicleLicenseInvoker(
         RecognizeVehicleLicenseRequest request) {
-        return new SyncInvoker<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse>(request,
-            OcrMeta.recognizeVehicleLicense, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeVehicleLicense, hcClient);
     }
 
     /**
@@ -1554,7 +1541,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeVietnamIdCardRequest 请求对象
+     * @param request RecognizeVietnamIdCardRequest 请求对象
      * @return RecognizeVietnamIdCardResponse
      */
     public RecognizeVietnamIdCardResponse recognizeVietnamIdCard(RecognizeVietnamIdCardRequest request) {
@@ -1568,13 +1555,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeVietnamIdCardRequest 请求对象
+     * @param request RecognizeVietnamIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeVietnamIdCardRequest, RecognizeVietnamIdCardResponse>
      */
     public SyncInvoker<RecognizeVietnamIdCardRequest, RecognizeVietnamIdCardResponse> recognizeVietnamIdCardInvoker(
         RecognizeVietnamIdCardRequest request) {
-        return new SyncInvoker<RecognizeVietnamIdCardRequest, RecognizeVietnamIdCardResponse>(request,
-            OcrMeta.recognizeVietnamIdCard, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeVietnamIdCard, hcClient);
     }
 
     /**
@@ -1584,7 +1570,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeWaybillElectronicRequest 请求对象
+     * @param request RecognizeWaybillElectronicRequest 请求对象
      * @return RecognizeWaybillElectronicResponse
      */
     public RecognizeWaybillElectronicResponse recognizeWaybillElectronic(RecognizeWaybillElectronicRequest request) {
@@ -1598,13 +1584,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeWaybillElectronicRequest 请求对象
+     * @param request RecognizeWaybillElectronicRequest 请求对象
      * @return SyncInvoker<RecognizeWaybillElectronicRequest, RecognizeWaybillElectronicResponse>
      */
     public SyncInvoker<RecognizeWaybillElectronicRequest, RecognizeWaybillElectronicResponse> recognizeWaybillElectronicInvoker(
         RecognizeWaybillElectronicRequest request) {
-        return new SyncInvoker<RecognizeWaybillElectronicRequest, RecognizeWaybillElectronicResponse>(request,
-            OcrMeta.recognizeWaybillElectronic, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeWaybillElectronic, hcClient);
     }
 
     /**
@@ -1614,7 +1599,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeWebImageRequest 请求对象
+     * @param request RecognizeWebImageRequest 请求对象
      * @return RecognizeWebImageResponse
      */
     public RecognizeWebImageResponse recognizeWebImage(RecognizeWebImageRequest request) {
@@ -1628,13 +1613,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeWebImageRequest 请求对象
+     * @param request RecognizeWebImageRequest 请求对象
      * @return SyncInvoker<RecognizeWebImageRequest, RecognizeWebImageResponse>
      */
     public SyncInvoker<RecognizeWebImageRequest, RecognizeWebImageResponse> recognizeWebImageInvoker(
         RecognizeWebImageRequest request) {
-        return new SyncInvoker<RecognizeWebImageRequest, RecognizeWebImageResponse>(request, OcrMeta.recognizeWebImage,
-            hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeWebImage, hcClient);
     }
 
     /**
@@ -1644,7 +1628,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeCustomTemplateRequest 请求对象
+     * @param request RecognizeCustomTemplateRequest 请求对象
      * @return RecognizeCustomTemplateResponse
      */
     public RecognizeCustomTemplateResponse recognizeCustomTemplate(RecognizeCustomTemplateRequest request) {
@@ -1658,13 +1642,12 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeCustomTemplateRequest 请求对象
+     * @param request RecognizeCustomTemplateRequest 请求对象
      * @return SyncInvoker<RecognizeCustomTemplateRequest, RecognizeCustomTemplateResponse>
      */
     public SyncInvoker<RecognizeCustomTemplateRequest, RecognizeCustomTemplateResponse> recognizeCustomTemplateInvoker(
         RecognizeCustomTemplateRequest request) {
-        return new SyncInvoker<RecognizeCustomTemplateRequest, RecognizeCustomTemplateResponse>(request,
-            OcrMeta.recognizeCustomTemplate, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeCustomTemplate, hcClient);
     }
 
     /**
@@ -1674,7 +1657,7 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeVinRequest 请求对象
+     * @param request RecognizeVinRequest 请求对象
      * @return RecognizeVinResponse
      */
     public RecognizeVinResponse recognizeVin(RecognizeVinRequest request) {
@@ -1688,11 +1671,11 @@ public class OcrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeVinRequest 请求对象
+     * @param request RecognizeVinRequest 请求对象
      * @return SyncInvoker<RecognizeVinRequest, RecognizeVinResponse>
      */
     public SyncInvoker<RecognizeVinRequest, RecognizeVinResponse> recognizeVinInvoker(RecognizeVinRequest request) {
-        return new SyncInvoker<RecognizeVinRequest, RecognizeVinResponse>(request, OcrMeta.recognizeVin, hcClient);
+        return new SyncInvoker<>(request, OcrMeta.recognizeVin, hcClient);
     }
 
 }

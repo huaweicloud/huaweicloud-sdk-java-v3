@@ -32,7 +32,7 @@ public class OaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckItemListRequest 请求对象
+     * @param request ShowCheckItemListRequest 请求对象
      * @return CompletableFuture<ShowCheckItemListResponse>
      */
     public CompletableFuture<ShowCheckItemListResponse> showCheckItemListAsync(ShowCheckItemListRequest request) {
@@ -46,13 +46,12 @@ public class OaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckItemListRequest 请求对象
+     * @param request ShowCheckItemListRequest 请求对象
      * @return AsyncInvoker<ShowCheckItemListRequest, ShowCheckItemListResponse>
      */
     public AsyncInvoker<ShowCheckItemListRequest, ShowCheckItemListResponse> showCheckItemListAsyncInvoker(
         ShowCheckItemListRequest request) {
-        return new AsyncInvoker<ShowCheckItemListRequest, ShowCheckItemListResponse>(request, OaMeta.showCheckItemList,
-            hcClient);
+        return new AsyncInvoker<>(request, OaMeta.showCheckItemList, hcClient);
     }
 
     /**
@@ -62,7 +61,7 @@ public class OaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckItemResultRequest 请求对象
+     * @param request ShowCheckItemResultRequest 请求对象
      * @return CompletableFuture<ShowCheckItemResultResponse>
      */
     public CompletableFuture<ShowCheckItemResultResponse> showCheckItemResultAsync(ShowCheckItemResultRequest request) {
@@ -76,13 +75,12 @@ public class OaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckItemResultRequest 请求对象
+     * @param request ShowCheckItemResultRequest 请求对象
      * @return AsyncInvoker<ShowCheckItemResultRequest, ShowCheckItemResultResponse>
      */
     public AsyncInvoker<ShowCheckItemResultRequest, ShowCheckItemResultResponse> showCheckItemResultAsyncInvoker(
         ShowCheckItemResultRequest request) {
-        return new AsyncInvoker<ShowCheckItemResultRequest, ShowCheckItemResultResponse>(request,
-            OaMeta.showCheckItemResult, hcClient);
+        return new AsyncInvoker<>(request, OaMeta.showCheckItemResult, hcClient);
     }
 
     /**
@@ -92,7 +90,7 @@ public class OaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartItemCheckRequest 请求对象
+     * @param request StartItemCheckRequest 请求对象
      * @return CompletableFuture<StartItemCheckResponse>
      */
     public CompletableFuture<StartItemCheckResponse> startItemCheckAsync(StartItemCheckRequest request) {
@@ -106,13 +104,12 @@ public class OaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartItemCheckRequest 请求对象
+     * @param request StartItemCheckRequest 请求对象
      * @return AsyncInvoker<StartItemCheckRequest, StartItemCheckResponse>
      */
     public AsyncInvoker<StartItemCheckRequest, StartItemCheckResponse> startItemCheckAsyncInvoker(
         StartItemCheckRequest request) {
-        return new AsyncInvoker<StartItemCheckRequest, StartItemCheckResponse>(request, OaMeta.startItemCheck,
-            hcClient);
+        return new AsyncInvoker<>(request, OaMeta.startItemCheck, hcClient);
     }
 
 }

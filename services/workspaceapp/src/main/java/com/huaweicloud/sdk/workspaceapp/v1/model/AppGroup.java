@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 应用组
+ * 应用组。
  */
 public class AppGroup {
 
@@ -67,7 +67,7 @@ public class AppGroup {
     }
 
     /**
-     * 应用组ID
+     * 应用组ID。
      * @return id
      */
     public String getId() {
@@ -84,7 +84,7 @@ public class AppGroup {
     }
 
     /**
-     * 应用组名称
+     * 应用组名称。
      * @return name
      */
     public String getName() {
@@ -101,7 +101,7 @@ public class AppGroup {
     }
 
     /**
-     * 应用服务器组ID
+     * 应用服务器组ID。
      * @return appServerGroupId
      */
     public String getAppServerGroupId() {
@@ -118,7 +118,7 @@ public class AppGroup {
     }
 
     /**
-     * 应用服务器组名称
+     * 应用服务器组名称。
      * @return appServerGroupName
      */
     public String getAppServerGroupName() {
@@ -135,7 +135,7 @@ public class AppGroup {
     }
 
     /**
-     * 应用组描述
+     * 应用组描述。
      * @return description
      */
     public String getDescription() {
@@ -169,7 +169,7 @@ public class AppGroup {
     }
 
     /**
-     * 租户ID
+     * 租户ID。
      * @return tenantId
      */
     public String getTenantId() {
@@ -203,7 +203,7 @@ public class AppGroup {
     }
 
     /**
-     * 发布时间
+     * 发布时间。
      * @return createAt
      */
     public OffsetDateTime getCreateAt() {
@@ -220,7 +220,7 @@ public class AppGroup {
     }
 
     /**
-     * 应用数量
+     * 应用数量。
      * @return appCount
      */
     public Integer getAppCount() {

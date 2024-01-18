@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 根据storage_claim_id删除对应的共享存储目录
+ * 根据storage_claim_id删除对应的共享存储目录。
  */
 public class DeleteStorageClaimReq {
 
@@ -40,7 +40,7 @@ public class DeleteStorageClaimReq {
     }
 
     /**
-     * storage_claim_id,数量区间 [1, 50]
+     * storage_claim_id,数量区间 [1, 50]。
      * @return items
      */
     public List<String> getItems() {

@@ -14,9 +14,9 @@ import com.huaweicloud.sdk.eg.v2.model.PutOfficialEventsResponse;
 @SuppressWarnings("unchecked")
 public class EgMeta {
 
-    public static final HttpRequestDef<PutEventsRequest, PutEventsResponse> putEvents = genForputEvents();
+    public static final HttpRequestDef<PutEventsRequest, PutEventsResponse> putEvents = genForPutEvents();
 
-    private static HttpRequestDef<PutEventsRequest, PutEventsResponse> genForputEvents() {
+    private static HttpRequestDef<PutEventsRequest, PutEventsResponse> genForPutEvents() {
         // basic
         HttpRequestDef.Builder<PutEventsRequest, PutEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PutEventsRequest.class, PutEventsResponse.class)
@@ -29,25 +29,19 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PutEventsRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(PutEventsRequest::getChannelId, PutEventsRequest::setChannelId));
         builder.<PutEventsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PutEventsReq.class),
-            f -> f.withMarshaller(PutEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PutEventsRequest::getBody, PutEventsRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(PutEventsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(PutEventsResponse::getBody, PutEventsResponse::setBody));
 
         builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,
@@ -58,9 +52,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<PutOfficialEventsRequest, PutOfficialEventsResponse> putOfficialEvents =
-        genForputOfficialEvents();
+        genForPutOfficialEvents();
 
-    private static HttpRequestDef<PutOfficialEventsRequest, PutOfficialEventsResponse> genForputOfficialEvents() {
+    private static HttpRequestDef<PutOfficialEventsRequest, PutOfficialEventsResponse> genForPutOfficialEvents() {
         // basic
         HttpRequestDef.Builder<PutOfficialEventsRequest, PutOfficialEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PutOfficialEventsRequest.class, PutOfficialEventsResponse.class)
@@ -73,25 +67,19 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PutOfficialEventsRequest::getSourceName, (req, v) -> {
-                req.setSourceName(v);
-            }));
+            f -> f.withMarshaller(PutOfficialEventsRequest::getSourceName, PutOfficialEventsRequest::setSourceName));
         builder.<PutEventsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PutEventsReq.class),
-            f -> f.withMarshaller(PutOfficialEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PutOfficialEventsRequest::getBody, PutOfficialEventsRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(PutOfficialEventsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(PutOfficialEventsResponse::getBody, PutOfficialEventsResponse::setBody));
 
         builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,

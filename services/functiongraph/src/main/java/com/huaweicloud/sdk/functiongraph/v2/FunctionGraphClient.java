@@ -208,7 +208,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AsyncInvokeFunctionRequest 请求对象
+     * @param request AsyncInvokeFunctionRequest 请求对象
      * @return AsyncInvokeFunctionResponse
      */
     public AsyncInvokeFunctionResponse asyncInvokeFunction(AsyncInvokeFunctionRequest request) {
@@ -222,13 +222,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AsyncInvokeFunctionRequest 请求对象
+     * @param request AsyncInvokeFunctionRequest 请求对象
      * @return SyncInvoker<AsyncInvokeFunctionRequest, AsyncInvokeFunctionResponse>
      */
     public SyncInvoker<AsyncInvokeFunctionRequest, AsyncInvokeFunctionResponse> asyncInvokeFunctionInvoker(
         AsyncInvokeFunctionRequest request) {
-        return new SyncInvoker<AsyncInvokeFunctionRequest, AsyncInvokeFunctionResponse>(request,
-            FunctionGraphMeta.asyncInvokeFunction, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.asyncInvokeFunction, hcClient);
     }
 
     /**
@@ -242,7 +241,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteFunctionTriggersRequest 请求对象
+     * @param request BatchDeleteFunctionTriggersRequest 请求对象
      * @return BatchDeleteFunctionTriggersResponse
      */
     public BatchDeleteFunctionTriggersResponse batchDeleteFunctionTriggers(BatchDeleteFunctionTriggersRequest request) {
@@ -260,13 +259,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteFunctionTriggersRequest 请求对象
+     * @param request BatchDeleteFunctionTriggersRequest 请求对象
      * @return SyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>
      */
     public SyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse> batchDeleteFunctionTriggersInvoker(
         BatchDeleteFunctionTriggersRequest request) {
-        return new SyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>(request,
-            FunctionGraphMeta.batchDeleteFunctionTriggers, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.batchDeleteFunctionTriggers, hcClient);
     }
 
     /**
@@ -276,7 +274,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteWorkflowsRequest 请求对象
+     * @param request BatchDeleteWorkflowsRequest 请求对象
      * @return BatchDeleteWorkflowsResponse
      */
     public BatchDeleteWorkflowsResponse batchDeleteWorkflows(BatchDeleteWorkflowsRequest request) {
@@ -290,13 +288,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteWorkflowsRequest 请求对象
+     * @param request BatchDeleteWorkflowsRequest 请求对象
      * @return SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>
      */
     public SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse> batchDeleteWorkflowsInvoker(
         BatchDeleteWorkflowsRequest request) {
-        return new SyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>(request,
-            FunctionGraphMeta.batchDeleteWorkflows, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.batchDeleteWorkflows, hcClient);
     }
 
     /**
@@ -306,7 +303,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelAsyncInvocationRequest 请求对象
+     * @param request CancelAsyncInvocationRequest 请求对象
      * @return CancelAsyncInvocationResponse
      */
     public CancelAsyncInvocationResponse cancelAsyncInvocation(CancelAsyncInvocationRequest request) {
@@ -320,13 +317,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelAsyncInvocationRequest 请求对象
+     * @param request CancelAsyncInvocationRequest 请求对象
      * @return SyncInvoker<CancelAsyncInvocationRequest, CancelAsyncInvocationResponse>
      */
     public SyncInvoker<CancelAsyncInvocationRequest, CancelAsyncInvocationResponse> cancelAsyncInvocationInvoker(
         CancelAsyncInvocationRequest request) {
-        return new SyncInvoker<CancelAsyncInvocationRequest, CancelAsyncInvocationResponse>(request,
-            FunctionGraphMeta.cancelAsyncInvocation, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.cancelAsyncInvocation, hcClient);
     }
 
     /**
@@ -336,7 +332,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCallbackWorkflowRequest 请求对象
+     * @param request CreateCallbackWorkflowRequest 请求对象
      * @return CreateCallbackWorkflowResponse
      */
     public CreateCallbackWorkflowResponse createCallbackWorkflow(CreateCallbackWorkflowRequest request) {
@@ -350,13 +346,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCallbackWorkflowRequest 请求对象
+     * @param request CreateCallbackWorkflowRequest 请求对象
      * @return SyncInvoker<CreateCallbackWorkflowRequest, CreateCallbackWorkflowResponse>
      */
     public SyncInvoker<CreateCallbackWorkflowRequest, CreateCallbackWorkflowResponse> createCallbackWorkflowInvoker(
         CreateCallbackWorkflowRequest request) {
-        return new SyncInvoker<CreateCallbackWorkflowRequest, CreateCallbackWorkflowResponse>(request,
-            FunctionGraphMeta.createCallbackWorkflow, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createCallbackWorkflow, hcClient);
     }
 
     /**
@@ -366,7 +361,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDependencyVersionRequest 请求对象
+     * @param request CreateDependencyVersionRequest 请求对象
      * @return CreateDependencyVersionResponse
      */
     public CreateDependencyVersionResponse createDependencyVersion(CreateDependencyVersionRequest request) {
@@ -380,13 +375,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDependencyVersionRequest 请求对象
+     * @param request CreateDependencyVersionRequest 请求对象
      * @return SyncInvoker<CreateDependencyVersionRequest, CreateDependencyVersionResponse>
      */
     public SyncInvoker<CreateDependencyVersionRequest, CreateDependencyVersionResponse> createDependencyVersionInvoker(
         CreateDependencyVersionRequest request) {
-        return new SyncInvoker<CreateDependencyVersionRequest, CreateDependencyVersionResponse>(request,
-            FunctionGraphMeta.createDependencyVersion, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createDependencyVersion, hcClient);
     }
 
     /**
@@ -396,7 +390,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventRequest 请求对象
+     * @param request CreateEventRequest 请求对象
      * @return CreateEventResponse
      */
     public CreateEventResponse createEvent(CreateEventRequest request) {
@@ -410,12 +404,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventRequest 请求对象
+     * @param request CreateEventRequest 请求对象
      * @return SyncInvoker<CreateEventRequest, CreateEventResponse>
      */
     public SyncInvoker<CreateEventRequest, CreateEventResponse> createEventInvoker(CreateEventRequest request) {
-        return new SyncInvoker<CreateEventRequest, CreateEventResponse>(request, FunctionGraphMeta.createEvent,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createEvent, hcClient);
     }
 
     /**
@@ -425,7 +418,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFunctionRequest 请求对象
+     * @param request CreateFunctionRequest 请求对象
      * @return CreateFunctionResponse
      */
     public CreateFunctionResponse createFunction(CreateFunctionRequest request) {
@@ -439,13 +432,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFunctionRequest 请求对象
+     * @param request CreateFunctionRequest 请求对象
      * @return SyncInvoker<CreateFunctionRequest, CreateFunctionResponse>
      */
     public SyncInvoker<CreateFunctionRequest, CreateFunctionResponse> createFunctionInvoker(
         CreateFunctionRequest request) {
-        return new SyncInvoker<CreateFunctionRequest, CreateFunctionResponse>(request, FunctionGraphMeta.createFunction,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createFunction, hcClient);
     }
 
     /**
@@ -455,7 +447,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFunctionAppRequest 请求对象
+     * @param request CreateFunctionAppRequest 请求对象
      * @return CreateFunctionAppResponse
      */
     public CreateFunctionAppResponse createFunctionApp(CreateFunctionAppRequest request) {
@@ -469,13 +461,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFunctionAppRequest 请求对象
+     * @param request CreateFunctionAppRequest 请求对象
      * @return SyncInvoker<CreateFunctionAppRequest, CreateFunctionAppResponse>
      */
     public SyncInvoker<CreateFunctionAppRequest, CreateFunctionAppResponse> createFunctionAppInvoker(
         CreateFunctionAppRequest request) {
-        return new SyncInvoker<CreateFunctionAppRequest, CreateFunctionAppResponse>(request,
-            FunctionGraphMeta.createFunctionApp, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createFunctionApp, hcClient);
     }
 
     /**
@@ -489,7 +480,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFunctionTriggerRequest 请求对象
+     * @param request CreateFunctionTriggerRequest 请求对象
      * @return CreateFunctionTriggerResponse
      */
     public CreateFunctionTriggerResponse createFunctionTrigger(CreateFunctionTriggerRequest request) {
@@ -507,13 +498,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFunctionTriggerRequest 请求对象
+     * @param request CreateFunctionTriggerRequest 请求对象
      * @return SyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>
      */
     public SyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse> createFunctionTriggerInvoker(
         CreateFunctionTriggerRequest request) {
-        return new SyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>(request,
-            FunctionGraphMeta.createFunctionTrigger, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createFunctionTrigger, hcClient);
     }
 
     /**
@@ -523,7 +513,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFunctionVersionRequest 请求对象
+     * @param request CreateFunctionVersionRequest 请求对象
      * @return CreateFunctionVersionResponse
      */
     public CreateFunctionVersionResponse createFunctionVersion(CreateFunctionVersionRequest request) {
@@ -537,13 +527,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFunctionVersionRequest 请求对象
+     * @param request CreateFunctionVersionRequest 请求对象
      * @return SyncInvoker<CreateFunctionVersionRequest, CreateFunctionVersionResponse>
      */
     public SyncInvoker<CreateFunctionVersionRequest, CreateFunctionVersionResponse> createFunctionVersionInvoker(
         CreateFunctionVersionRequest request) {
-        return new SyncInvoker<CreateFunctionVersionRequest, CreateFunctionVersionResponse>(request,
-            FunctionGraphMeta.createFunctionVersion, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createFunctionVersion, hcClient);
     }
 
     /**
@@ -553,7 +542,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagsRequest 请求对象
+     * @param request CreateTagsRequest 请求对象
      * @return CreateTagsResponse
      */
     public CreateTagsResponse createTags(CreateTagsRequest request) {
@@ -567,11 +556,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagsRequest 请求对象
+     * @param request CreateTagsRequest 请求对象
      * @return SyncInvoker<CreateTagsRequest, CreateTagsResponse>
      */
     public SyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsInvoker(CreateTagsRequest request) {
-        return new SyncInvoker<CreateTagsRequest, CreateTagsResponse>(request, FunctionGraphMeta.createTags, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createTags, hcClient);
     }
 
     /**
@@ -581,7 +570,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVersionAliasRequest 请求对象
+     * @param request CreateVersionAliasRequest 请求对象
      * @return CreateVersionAliasResponse
      */
     public CreateVersionAliasResponse createVersionAlias(CreateVersionAliasRequest request) {
@@ -595,13 +584,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVersionAliasRequest 请求对象
+     * @param request CreateVersionAliasRequest 请求对象
      * @return SyncInvoker<CreateVersionAliasRequest, CreateVersionAliasResponse>
      */
     public SyncInvoker<CreateVersionAliasRequest, CreateVersionAliasResponse> createVersionAliasInvoker(
         CreateVersionAliasRequest request) {
-        return new SyncInvoker<CreateVersionAliasRequest, CreateVersionAliasResponse>(request,
-            FunctionGraphMeta.createVersionAlias, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createVersionAlias, hcClient);
     }
 
     /**
@@ -611,7 +599,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcEndpointRequest 请求对象
+     * @param request CreateVpcEndpointRequest 请求对象
      * @return CreateVpcEndpointResponse
      */
     public CreateVpcEndpointResponse createVpcEndpoint(CreateVpcEndpointRequest request) {
@@ -625,13 +613,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcEndpointRequest 请求对象
+     * @param request CreateVpcEndpointRequest 请求对象
      * @return SyncInvoker<CreateVpcEndpointRequest, CreateVpcEndpointResponse>
      */
     public SyncInvoker<CreateVpcEndpointRequest, CreateVpcEndpointResponse> createVpcEndpointInvoker(
         CreateVpcEndpointRequest request) {
-        return new SyncInvoker<CreateVpcEndpointRequest, CreateVpcEndpointResponse>(request,
-            FunctionGraphMeta.createVpcEndpoint, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createVpcEndpoint, hcClient);
     }
 
     /**
@@ -641,7 +628,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowRequest 请求对象
+     * @param request CreateWorkflowRequest 请求对象
      * @return CreateWorkflowResponse
      */
     public CreateWorkflowResponse createWorkflow(CreateWorkflowRequest request) {
@@ -655,13 +642,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowRequest 请求对象
+     * @param request CreateWorkflowRequest 请求对象
      * @return SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
      */
     public SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowInvoker(
         CreateWorkflowRequest request) {
-        return new SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request, FunctionGraphMeta.createWorkflow,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.createWorkflow, hcClient);
     }
 
     /**
@@ -671,7 +657,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDependencyVersionRequest 请求对象
+     * @param request DeleteDependencyVersionRequest 请求对象
      * @return DeleteDependencyVersionResponse
      */
     public DeleteDependencyVersionResponse deleteDependencyVersion(DeleteDependencyVersionRequest request) {
@@ -685,13 +671,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDependencyVersionRequest 请求对象
+     * @param request DeleteDependencyVersionRequest 请求对象
      * @return SyncInvoker<DeleteDependencyVersionRequest, DeleteDependencyVersionResponse>
      */
     public SyncInvoker<DeleteDependencyVersionRequest, DeleteDependencyVersionResponse> deleteDependencyVersionInvoker(
         DeleteDependencyVersionRequest request) {
-        return new SyncInvoker<DeleteDependencyVersionRequest, DeleteDependencyVersionResponse>(request,
-            FunctionGraphMeta.deleteDependencyVersion, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.deleteDependencyVersion, hcClient);
     }
 
     /**
@@ -701,7 +686,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventRequest 请求对象
+     * @param request DeleteEventRequest 请求对象
      * @return DeleteEventResponse
      */
     public DeleteEventResponse deleteEvent(DeleteEventRequest request) {
@@ -715,12 +700,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventRequest 请求对象
+     * @param request DeleteEventRequest 请求对象
      * @return SyncInvoker<DeleteEventRequest, DeleteEventResponse>
      */
     public SyncInvoker<DeleteEventRequest, DeleteEventResponse> deleteEventInvoker(DeleteEventRequest request) {
-        return new SyncInvoker<DeleteEventRequest, DeleteEventResponse>(request, FunctionGraphMeta.deleteEvent,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.deleteEvent, hcClient);
     }
 
     /**
@@ -733,7 +717,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFunctionRequest 请求对象
+     * @param request DeleteFunctionRequest 请求对象
      * @return DeleteFunctionResponse
      */
     public DeleteFunctionResponse deleteFunction(DeleteFunctionRequest request) {
@@ -750,13 +734,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFunctionRequest 请求对象
+     * @param request DeleteFunctionRequest 请求对象
      * @return SyncInvoker<DeleteFunctionRequest, DeleteFunctionResponse>
      */
     public SyncInvoker<DeleteFunctionRequest, DeleteFunctionResponse> deleteFunctionInvoker(
         DeleteFunctionRequest request) {
-        return new SyncInvoker<DeleteFunctionRequest, DeleteFunctionResponse>(request, FunctionGraphMeta.deleteFunction,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.deleteFunction, hcClient);
     }
 
     /**
@@ -766,7 +749,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFunctionAppRequest 请求对象
+     * @param request DeleteFunctionAppRequest 请求对象
      * @return DeleteFunctionAppResponse
      */
     public DeleteFunctionAppResponse deleteFunctionApp(DeleteFunctionAppRequest request) {
@@ -780,13 +763,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFunctionAppRequest 请求对象
+     * @param request DeleteFunctionAppRequest 请求对象
      * @return SyncInvoker<DeleteFunctionAppRequest, DeleteFunctionAppResponse>
      */
     public SyncInvoker<DeleteFunctionAppRequest, DeleteFunctionAppResponse> deleteFunctionAppInvoker(
         DeleteFunctionAppRequest request) {
-        return new SyncInvoker<DeleteFunctionAppRequest, DeleteFunctionAppResponse>(request,
-            FunctionGraphMeta.deleteFunctionApp, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.deleteFunctionApp, hcClient);
     }
 
     /**
@@ -796,7 +778,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFunctionAsyncInvokeConfigRequest 请求对象
+     * @param request DeleteFunctionAsyncInvokeConfigRequest 请求对象
      * @return DeleteFunctionAsyncInvokeConfigResponse
      */
     public DeleteFunctionAsyncInvokeConfigResponse deleteFunctionAsyncInvokeConfig(
@@ -811,13 +793,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFunctionAsyncInvokeConfigRequest 请求对象
+     * @param request DeleteFunctionAsyncInvokeConfigRequest 请求对象
      * @return SyncInvoker<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse>
      */
     public SyncInvoker<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse> deleteFunctionAsyncInvokeConfigInvoker(
         DeleteFunctionAsyncInvokeConfigRequest request) {
-        return new SyncInvoker<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse>(request,
-            FunctionGraphMeta.deleteFunctionAsyncInvokeConfig, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.deleteFunctionAsyncInvokeConfig, hcClient);
     }
 
     /**
@@ -827,7 +808,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFunctionTriggerRequest 请求对象
+     * @param request DeleteFunctionTriggerRequest 请求对象
      * @return DeleteFunctionTriggerResponse
      */
     public DeleteFunctionTriggerResponse deleteFunctionTrigger(DeleteFunctionTriggerRequest request) {
@@ -841,13 +822,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFunctionTriggerRequest 请求对象
+     * @param request DeleteFunctionTriggerRequest 请求对象
      * @return SyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>
      */
     public SyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse> deleteFunctionTriggerInvoker(
         DeleteFunctionTriggerRequest request) {
-        return new SyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>(request,
-            FunctionGraphMeta.deleteFunctionTrigger, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.deleteFunctionTrigger, hcClient);
     }
 
     /**
@@ -857,7 +837,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagsRequest 请求对象
+     * @param request DeleteTagsRequest 请求对象
      * @return DeleteTagsResponse
      */
     public DeleteTagsResponse deleteTags(DeleteTagsRequest request) {
@@ -871,11 +851,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagsRequest 请求对象
+     * @param request DeleteTagsRequest 请求对象
      * @return SyncInvoker<DeleteTagsRequest, DeleteTagsResponse>
      */
     public SyncInvoker<DeleteTagsRequest, DeleteTagsResponse> deleteTagsInvoker(DeleteTagsRequest request) {
-        return new SyncInvoker<DeleteTagsRequest, DeleteTagsResponse>(request, FunctionGraphMeta.deleteTags, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.deleteTags, hcClient);
     }
 
     /**
@@ -885,7 +865,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVersionAliasRequest 请求对象
+     * @param request DeleteVersionAliasRequest 请求对象
      * @return DeleteVersionAliasResponse
      */
     public DeleteVersionAliasResponse deleteVersionAlias(DeleteVersionAliasRequest request) {
@@ -899,13 +879,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVersionAliasRequest 请求对象
+     * @param request DeleteVersionAliasRequest 请求对象
      * @return SyncInvoker<DeleteVersionAliasRequest, DeleteVersionAliasResponse>
      */
     public SyncInvoker<DeleteVersionAliasRequest, DeleteVersionAliasResponse> deleteVersionAliasInvoker(
         DeleteVersionAliasRequest request) {
-        return new SyncInvoker<DeleteVersionAliasRequest, DeleteVersionAliasResponse>(request,
-            FunctionGraphMeta.deleteVersionAlias, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.deleteVersionAlias, hcClient);
     }
 
     /**
@@ -915,7 +894,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcEndpointRequest 请求对象
+     * @param request DeleteVpcEndpointRequest 请求对象
      * @return DeleteVpcEndpointResponse
      */
     public DeleteVpcEndpointResponse deleteVpcEndpoint(DeleteVpcEndpointRequest request) {
@@ -929,13 +908,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcEndpointRequest 请求对象
+     * @param request DeleteVpcEndpointRequest 请求对象
      * @return SyncInvoker<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse>
      */
     public SyncInvoker<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse> deleteVpcEndpointInvoker(
         DeleteVpcEndpointRequest request) {
-        return new SyncInvoker<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse>(request,
-            FunctionGraphMeta.deleteVpcEndpoint, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.deleteVpcEndpoint, hcClient);
     }
 
     /**
@@ -945,7 +923,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableAsyncStatusLogRequest 请求对象
+     * @param request EnableAsyncStatusLogRequest 请求对象
      * @return EnableAsyncStatusLogResponse
      */
     public EnableAsyncStatusLogResponse enableAsyncStatusLog(EnableAsyncStatusLogRequest request) {
@@ -959,13 +937,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableAsyncStatusLogRequest 请求对象
+     * @param request EnableAsyncStatusLogRequest 请求对象
      * @return SyncInvoker<EnableAsyncStatusLogRequest, EnableAsyncStatusLogResponse>
      */
     public SyncInvoker<EnableAsyncStatusLogRequest, EnableAsyncStatusLogResponse> enableAsyncStatusLogInvoker(
         EnableAsyncStatusLogRequest request) {
-        return new SyncInvoker<EnableAsyncStatusLogRequest, EnableAsyncStatusLogResponse>(request,
-            FunctionGraphMeta.enableAsyncStatusLog, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.enableAsyncStatusLog, hcClient);
     }
 
     /**
@@ -975,7 +952,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableLtsLogsRequest 请求对象
+     * @param request EnableLtsLogsRequest 请求对象
      * @return EnableLtsLogsResponse
      */
     public EnableLtsLogsResponse enableLtsLogs(EnableLtsLogsRequest request) {
@@ -989,12 +966,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableLtsLogsRequest 请求对象
+     * @param request EnableLtsLogsRequest 请求对象
      * @return SyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>
      */
     public SyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse> enableLtsLogsInvoker(EnableLtsLogsRequest request) {
-        return new SyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>(request, FunctionGraphMeta.enableLtsLogs,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.enableLtsLogs, hcClient);
     }
 
     /**
@@ -1004,7 +980,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportFunctionRequest 请求对象
+     * @param request ExportFunctionRequest 请求对象
      * @return ExportFunctionResponse
      */
     public ExportFunctionResponse exportFunction(ExportFunctionRequest request) {
@@ -1018,13 +994,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportFunctionRequest 请求对象
+     * @param request ExportFunctionRequest 请求对象
      * @return SyncInvoker<ExportFunctionRequest, ExportFunctionResponse>
      */
     public SyncInvoker<ExportFunctionRequest, ExportFunctionResponse> exportFunctionInvoker(
         ExportFunctionRequest request) {
-        return new SyncInvoker<ExportFunctionRequest, ExportFunctionResponse>(request, FunctionGraphMeta.exportFunction,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.exportFunction, hcClient);
     }
 
     /**
@@ -1034,7 +1009,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportFunctionRequest 请求对象
+     * @param request ImportFunctionRequest 请求对象
      * @return ImportFunctionResponse
      */
     public ImportFunctionResponse importFunction(ImportFunctionRequest request) {
@@ -1048,13 +1023,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportFunctionRequest 请求对象
+     * @param request ImportFunctionRequest 请求对象
      * @return SyncInvoker<ImportFunctionRequest, ImportFunctionResponse>
      */
     public SyncInvoker<ImportFunctionRequest, ImportFunctionResponse> importFunctionInvoker(
         ImportFunctionRequest request) {
-        return new SyncInvoker<ImportFunctionRequest, ImportFunctionResponse>(request, FunctionGraphMeta.importFunction,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.importFunction, hcClient);
     }
 
     /**
@@ -1064,7 +1038,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InvokeFunctionRequest 请求对象
+     * @param request InvokeFunctionRequest 请求对象
      * @return InvokeFunctionResponse
      */
     public InvokeFunctionResponse invokeFunction(InvokeFunctionRequest request) {
@@ -1078,13 +1052,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InvokeFunctionRequest 请求对象
+     * @param request InvokeFunctionRequest 请求对象
      * @return SyncInvoker<InvokeFunctionRequest, InvokeFunctionResponse>
      */
     public SyncInvoker<InvokeFunctionRequest, InvokeFunctionResponse> invokeFunctionInvoker(
         InvokeFunctionRequest request) {
-        return new SyncInvoker<InvokeFunctionRequest, InvokeFunctionResponse>(request, FunctionGraphMeta.invokeFunction,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.invokeFunction, hcClient);
     }
 
     /**
@@ -1094,7 +1067,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListActiveAsyncInvocationsRequest 请求对象
+     * @param request ListActiveAsyncInvocationsRequest 请求对象
      * @return ListActiveAsyncInvocationsResponse
      */
     public ListActiveAsyncInvocationsResponse listActiveAsyncInvocations(ListActiveAsyncInvocationsRequest request) {
@@ -1108,13 +1081,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListActiveAsyncInvocationsRequest 请求对象
+     * @param request ListActiveAsyncInvocationsRequest 请求对象
      * @return SyncInvoker<ListActiveAsyncInvocationsRequest, ListActiveAsyncInvocationsResponse>
      */
     public SyncInvoker<ListActiveAsyncInvocationsRequest, ListActiveAsyncInvocationsResponse> listActiveAsyncInvocationsInvoker(
         ListActiveAsyncInvocationsRequest request) {
-        return new SyncInvoker<ListActiveAsyncInvocationsRequest, ListActiveAsyncInvocationsResponse>(request,
-            FunctionGraphMeta.listActiveAsyncInvocations, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listActiveAsyncInvocations, hcClient);
     }
 
     /**
@@ -1124,7 +1096,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppTemplatesRequest 请求对象
+     * @param request ListAppTemplatesRequest 请求对象
      * @return ListAppTemplatesResponse
      */
     public ListAppTemplatesResponse listAppTemplates(ListAppTemplatesRequest request) {
@@ -1138,13 +1110,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppTemplatesRequest 请求对象
+     * @param request ListAppTemplatesRequest 请求对象
      * @return SyncInvoker<ListAppTemplatesRequest, ListAppTemplatesResponse>
      */
     public SyncInvoker<ListAppTemplatesRequest, ListAppTemplatesResponse> listAppTemplatesInvoker(
         ListAppTemplatesRequest request) {
-        return new SyncInvoker<ListAppTemplatesRequest, ListAppTemplatesResponse>(request,
-            FunctionGraphMeta.listAppTemplates, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listAppTemplates, hcClient);
     }
 
     /**
@@ -1154,7 +1125,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAsyncInvocationsRequest 请求对象
+     * @param request ListAsyncInvocationsRequest 请求对象
      * @return ListAsyncInvocationsResponse
      */
     public ListAsyncInvocationsResponse listAsyncInvocations(ListAsyncInvocationsRequest request) {
@@ -1168,13 +1139,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAsyncInvocationsRequest 请求对象
+     * @param request ListAsyncInvocationsRequest 请求对象
      * @return SyncInvoker<ListAsyncInvocationsRequest, ListAsyncInvocationsResponse>
      */
     public SyncInvoker<ListAsyncInvocationsRequest, ListAsyncInvocationsResponse> listAsyncInvocationsInvoker(
         ListAsyncInvocationsRequest request) {
-        return new SyncInvoker<ListAsyncInvocationsRequest, ListAsyncInvocationsResponse>(request,
-            FunctionGraphMeta.listAsyncInvocations, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listAsyncInvocations, hcClient);
     }
 
     /**
@@ -1184,7 +1154,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBridgeFunctionsRequest 请求对象
+     * @param request ListBridgeFunctionsRequest 请求对象
      * @return ListBridgeFunctionsResponse
      */
     public ListBridgeFunctionsResponse listBridgeFunctions(ListBridgeFunctionsRequest request) {
@@ -1198,13 +1168,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBridgeFunctionsRequest 请求对象
+     * @param request ListBridgeFunctionsRequest 请求对象
      * @return SyncInvoker<ListBridgeFunctionsRequest, ListBridgeFunctionsResponse>
      */
     public SyncInvoker<ListBridgeFunctionsRequest, ListBridgeFunctionsResponse> listBridgeFunctionsInvoker(
         ListBridgeFunctionsRequest request) {
-        return new SyncInvoker<ListBridgeFunctionsRequest, ListBridgeFunctionsResponse>(request,
-            FunctionGraphMeta.listBridgeFunctions, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listBridgeFunctions, hcClient);
     }
 
     /**
@@ -1214,7 +1183,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBridgeVersionsRequest 请求对象
+     * @param request ListBridgeVersionsRequest 请求对象
      * @return ListBridgeVersionsResponse
      */
     public ListBridgeVersionsResponse listBridgeVersions(ListBridgeVersionsRequest request) {
@@ -1228,13 +1197,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBridgeVersionsRequest 请求对象
+     * @param request ListBridgeVersionsRequest 请求对象
      * @return SyncInvoker<ListBridgeVersionsRequest, ListBridgeVersionsResponse>
      */
     public SyncInvoker<ListBridgeVersionsRequest, ListBridgeVersionsResponse> listBridgeVersionsInvoker(
         ListBridgeVersionsRequest request) {
-        return new SyncInvoker<ListBridgeVersionsRequest, ListBridgeVersionsResponse>(request,
-            FunctionGraphMeta.listBridgeVersions, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listBridgeVersions, hcClient);
     }
 
     /**
@@ -1244,7 +1212,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDependenciesRequest 请求对象
+     * @param request ListDependenciesRequest 请求对象
      * @return ListDependenciesResponse
      */
     public ListDependenciesResponse listDependencies(ListDependenciesRequest request) {
@@ -1258,13 +1226,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDependenciesRequest 请求对象
+     * @param request ListDependenciesRequest 请求对象
      * @return SyncInvoker<ListDependenciesRequest, ListDependenciesResponse>
      */
     public SyncInvoker<ListDependenciesRequest, ListDependenciesResponse> listDependenciesInvoker(
         ListDependenciesRequest request) {
-        return new SyncInvoker<ListDependenciesRequest, ListDependenciesResponse>(request,
-            FunctionGraphMeta.listDependencies, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listDependencies, hcClient);
     }
 
     /**
@@ -1274,7 +1241,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDependencyVersionRequest 请求对象
+     * @param request ListDependencyVersionRequest 请求对象
      * @return ListDependencyVersionResponse
      */
     public ListDependencyVersionResponse listDependencyVersion(ListDependencyVersionRequest request) {
@@ -1288,13 +1255,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDependencyVersionRequest 请求对象
+     * @param request ListDependencyVersionRequest 请求对象
      * @return SyncInvoker<ListDependencyVersionRequest, ListDependencyVersionResponse>
      */
     public SyncInvoker<ListDependencyVersionRequest, ListDependencyVersionResponse> listDependencyVersionInvoker(
         ListDependencyVersionRequest request) {
-        return new SyncInvoker<ListDependencyVersionRequest, ListDependencyVersionResponse>(request,
-            FunctionGraphMeta.listDependencyVersion, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listDependencyVersion, hcClient);
     }
 
     /**
@@ -1304,7 +1270,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventsRequest 请求对象
+     * @param request ListEventsRequest 请求对象
      * @return ListEventsResponse
      */
     public ListEventsResponse listEvents(ListEventsRequest request) {
@@ -1318,11 +1284,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventsRequest 请求对象
+     * @param request ListEventsRequest 请求对象
      * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
      */
     public SyncInvoker<ListEventsRequest, ListEventsResponse> listEventsInvoker(ListEventsRequest request) {
-        return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, FunctionGraphMeta.listEvents, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listEvents, hcClient);
     }
 
     /**
@@ -1332,7 +1298,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionApplicationsRequest 请求对象
+     * @param request ListFunctionApplicationsRequest 请求对象
      * @return ListFunctionApplicationsResponse
      */
     public ListFunctionApplicationsResponse listFunctionApplications(ListFunctionApplicationsRequest request) {
@@ -1346,13 +1312,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionApplicationsRequest 请求对象
+     * @param request ListFunctionApplicationsRequest 请求对象
      * @return SyncInvoker<ListFunctionApplicationsRequest, ListFunctionApplicationsResponse>
      */
     public SyncInvoker<ListFunctionApplicationsRequest, ListFunctionApplicationsResponse> listFunctionApplicationsInvoker(
         ListFunctionApplicationsRequest request) {
-        return new SyncInvoker<ListFunctionApplicationsRequest, ListFunctionApplicationsResponse>(request,
-            FunctionGraphMeta.listFunctionApplications, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listFunctionApplications, hcClient);
     }
 
     /**
@@ -1364,7 +1329,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionAsMetricRequest 请求对象
+     * @param request ListFunctionAsMetricRequest 请求对象
      * @return ListFunctionAsMetricResponse
      */
     public ListFunctionAsMetricResponse listFunctionAsMetric(ListFunctionAsMetricRequest request) {
@@ -1380,13 +1345,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionAsMetricRequest 请求对象
+     * @param request ListFunctionAsMetricRequest 请求对象
      * @return SyncInvoker<ListFunctionAsMetricRequest, ListFunctionAsMetricResponse>
      */
     public SyncInvoker<ListFunctionAsMetricRequest, ListFunctionAsMetricResponse> listFunctionAsMetricInvoker(
         ListFunctionAsMetricRequest request) {
-        return new SyncInvoker<ListFunctionAsMetricRequest, ListFunctionAsMetricResponse>(request,
-            FunctionGraphMeta.listFunctionAsMetric, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listFunctionAsMetric, hcClient);
     }
 
     /**
@@ -1396,7 +1360,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionAsyncInvokeConfigRequest 请求对象
+     * @param request ListFunctionAsyncInvokeConfigRequest 请求对象
      * @return ListFunctionAsyncInvokeConfigResponse
      */
     public ListFunctionAsyncInvokeConfigResponse listFunctionAsyncInvokeConfig(
@@ -1411,13 +1375,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionAsyncInvokeConfigRequest 请求对象
+     * @param request ListFunctionAsyncInvokeConfigRequest 请求对象
      * @return SyncInvoker<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse>
      */
     public SyncInvoker<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse> listFunctionAsyncInvokeConfigInvoker(
         ListFunctionAsyncInvokeConfigRequest request) {
-        return new SyncInvoker<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse>(request,
-            FunctionGraphMeta.listFunctionAsyncInvokeConfig, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listFunctionAsyncInvokeConfig, hcClient);
     }
 
     /**
@@ -1427,7 +1390,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionReservedInstancesRequest 请求对象
+     * @param request ListFunctionReservedInstancesRequest 请求对象
      * @return ListFunctionReservedInstancesResponse
      */
     public ListFunctionReservedInstancesResponse listFunctionReservedInstances(
@@ -1442,13 +1405,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionReservedInstancesRequest 请求对象
+     * @param request ListFunctionReservedInstancesRequest 请求对象
      * @return SyncInvoker<ListFunctionReservedInstancesRequest, ListFunctionReservedInstancesResponse>
      */
     public SyncInvoker<ListFunctionReservedInstancesRequest, ListFunctionReservedInstancesResponse> listFunctionReservedInstancesInvoker(
         ListFunctionReservedInstancesRequest request) {
-        return new SyncInvoker<ListFunctionReservedInstancesRequest, ListFunctionReservedInstancesResponse>(request,
-            FunctionGraphMeta.listFunctionReservedInstances, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listFunctionReservedInstances, hcClient);
     }
 
     /**
@@ -1458,7 +1420,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionStatisticsRequest 请求对象
+     * @param request ListFunctionStatisticsRequest 请求对象
      * @return ListFunctionStatisticsResponse
      */
     public ListFunctionStatisticsResponse listFunctionStatistics(ListFunctionStatisticsRequest request) {
@@ -1472,13 +1434,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionStatisticsRequest 请求对象
+     * @param request ListFunctionStatisticsRequest 请求对象
      * @return SyncInvoker<ListFunctionStatisticsRequest, ListFunctionStatisticsResponse>
      */
     public SyncInvoker<ListFunctionStatisticsRequest, ListFunctionStatisticsResponse> listFunctionStatisticsInvoker(
         ListFunctionStatisticsRequest request) {
-        return new SyncInvoker<ListFunctionStatisticsRequest, ListFunctionStatisticsResponse>(request,
-            FunctionGraphMeta.listFunctionStatistics, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listFunctionStatistics, hcClient);
     }
 
     /**
@@ -1488,7 +1449,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionTagsRequest 请求对象
+     * @param request ListFunctionTagsRequest 请求对象
      * @return ListFunctionTagsResponse
      */
     public ListFunctionTagsResponse listFunctionTags(ListFunctionTagsRequest request) {
@@ -1502,13 +1463,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionTagsRequest 请求对象
+     * @param request ListFunctionTagsRequest 请求对象
      * @return SyncInvoker<ListFunctionTagsRequest, ListFunctionTagsResponse>
      */
     public SyncInvoker<ListFunctionTagsRequest, ListFunctionTagsResponse> listFunctionTagsInvoker(
         ListFunctionTagsRequest request) {
-        return new SyncInvoker<ListFunctionTagsRequest, ListFunctionTagsResponse>(request,
-            FunctionGraphMeta.listFunctionTags, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listFunctionTags, hcClient);
     }
 
     /**
@@ -1518,7 +1478,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionTemplateRequest 请求对象
+     * @param request ListFunctionTemplateRequest 请求对象
      * @return ListFunctionTemplateResponse
      */
     public ListFunctionTemplateResponse listFunctionTemplate(ListFunctionTemplateRequest request) {
@@ -1532,13 +1492,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionTemplateRequest 请求对象
+     * @param request ListFunctionTemplateRequest 请求对象
      * @return SyncInvoker<ListFunctionTemplateRequest, ListFunctionTemplateResponse>
      */
     public SyncInvoker<ListFunctionTemplateRequest, ListFunctionTemplateResponse> listFunctionTemplateInvoker(
         ListFunctionTemplateRequest request) {
-        return new SyncInvoker<ListFunctionTemplateRequest, ListFunctionTemplateResponse>(request,
-            FunctionGraphMeta.listFunctionTemplate, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listFunctionTemplate, hcClient);
     }
 
     /**
@@ -1548,7 +1507,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionTriggersRequest 请求对象
+     * @param request ListFunctionTriggersRequest 请求对象
      * @return ListFunctionTriggersResponse
      */
     public ListFunctionTriggersResponse listFunctionTriggers(ListFunctionTriggersRequest request) {
@@ -1562,13 +1521,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionTriggersRequest 请求对象
+     * @param request ListFunctionTriggersRequest 请求对象
      * @return SyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>
      */
     public SyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse> listFunctionTriggersInvoker(
         ListFunctionTriggersRequest request) {
-        return new SyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>(request,
-            FunctionGraphMeta.listFunctionTriggers, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listFunctionTriggers, hcClient);
     }
 
     /**
@@ -1578,7 +1536,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionVersionsRequest 请求对象
+     * @param request ListFunctionVersionsRequest 请求对象
      * @return ListFunctionVersionsResponse
      */
     public ListFunctionVersionsResponse listFunctionVersions(ListFunctionVersionsRequest request) {
@@ -1592,13 +1550,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionVersionsRequest 请求对象
+     * @param request ListFunctionVersionsRequest 请求对象
      * @return SyncInvoker<ListFunctionVersionsRequest, ListFunctionVersionsResponse>
      */
     public SyncInvoker<ListFunctionVersionsRequest, ListFunctionVersionsResponse> listFunctionVersionsInvoker(
         ListFunctionVersionsRequest request) {
-        return new SyncInvoker<ListFunctionVersionsRequest, ListFunctionVersionsResponse>(request,
-            FunctionGraphMeta.listFunctionVersions, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listFunctionVersions, hcClient);
     }
 
     /**
@@ -1608,7 +1565,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionsRequest 请求对象
+     * @param request ListFunctionsRequest 请求对象
      * @return ListFunctionsResponse
      */
     public ListFunctionsResponse listFunctions(ListFunctionsRequest request) {
@@ -1622,12 +1579,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFunctionsRequest 请求对象
+     * @param request ListFunctionsRequest 请求对象
      * @return SyncInvoker<ListFunctionsRequest, ListFunctionsResponse>
      */
     public SyncInvoker<ListFunctionsRequest, ListFunctionsResponse> listFunctionsInvoker(ListFunctionsRequest request) {
-        return new SyncInvoker<ListFunctionsRequest, ListFunctionsResponse>(request, FunctionGraphMeta.listFunctions,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listFunctions, hcClient);
     }
 
     /**
@@ -1637,7 +1593,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return ListQuotasResponse
      */
     public ListQuotasResponse listQuotas(ListQuotasRequest request) {
@@ -1651,11 +1607,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
-        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, FunctionGraphMeta.listQuotas, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listQuotas, hcClient);
     }
 
     /**
@@ -1665,7 +1621,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReservedInstanceConfigsRequest 请求对象
+     * @param request ListReservedInstanceConfigsRequest 请求对象
      * @return ListReservedInstanceConfigsResponse
      */
     public ListReservedInstanceConfigsResponse listReservedInstanceConfigs(ListReservedInstanceConfigsRequest request) {
@@ -1679,13 +1635,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReservedInstanceConfigsRequest 请求对象
+     * @param request ListReservedInstanceConfigsRequest 请求对象
      * @return SyncInvoker<ListReservedInstanceConfigsRequest, ListReservedInstanceConfigsResponse>
      */
     public SyncInvoker<ListReservedInstanceConfigsRequest, ListReservedInstanceConfigsResponse> listReservedInstanceConfigsInvoker(
         ListReservedInstanceConfigsRequest request) {
-        return new SyncInvoker<ListReservedInstanceConfigsRequest, ListReservedInstanceConfigsResponse>(request,
-            FunctionGraphMeta.listReservedInstanceConfigs, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listReservedInstanceConfigs, hcClient);
     }
 
     /**
@@ -1698,7 +1653,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatisticsRequest 请求对象
+     * @param request ListStatisticsRequest 请求对象
      * @return ListStatisticsResponse
      */
     public ListStatisticsResponse listStatistics(ListStatisticsRequest request) {
@@ -1715,13 +1670,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatisticsRequest 请求对象
+     * @param request ListStatisticsRequest 请求对象
      * @return SyncInvoker<ListStatisticsRequest, ListStatisticsResponse>
      */
     public SyncInvoker<ListStatisticsRequest, ListStatisticsResponse> listStatisticsInvoker(
         ListStatisticsRequest request) {
-        return new SyncInvoker<ListStatisticsRequest, ListStatisticsResponse>(request, FunctionGraphMeta.listStatistics,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listStatistics, hcClient);
     }
 
     /**
@@ -1731,7 +1685,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionAliasesRequest 请求对象
+     * @param request ListVersionAliasesRequest 请求对象
      * @return ListVersionAliasesResponse
      */
     public ListVersionAliasesResponse listVersionAliases(ListVersionAliasesRequest request) {
@@ -1745,13 +1699,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionAliasesRequest 请求对象
+     * @param request ListVersionAliasesRequest 请求对象
      * @return SyncInvoker<ListVersionAliasesRequest, ListVersionAliasesResponse>
      */
     public SyncInvoker<ListVersionAliasesRequest, ListVersionAliasesResponse> listVersionAliasesInvoker(
         ListVersionAliasesRequest request) {
-        return new SyncInvoker<ListVersionAliasesRequest, ListVersionAliasesResponse>(request,
-            FunctionGraphMeta.listVersionAliases, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listVersionAliases, hcClient);
     }
 
     /**
@@ -1761,7 +1714,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowRequest 请求对象
+     * @param request ListWorkflowRequest 请求对象
      * @return ListWorkflowResponse
      */
     public ListWorkflowResponse listWorkflow(ListWorkflowRequest request) {
@@ -1775,12 +1728,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowRequest 请求对象
+     * @param request ListWorkflowRequest 请求对象
      * @return SyncInvoker<ListWorkflowRequest, ListWorkflowResponse>
      */
     public SyncInvoker<ListWorkflowRequest, ListWorkflowResponse> listWorkflowInvoker(ListWorkflowRequest request) {
-        return new SyncInvoker<ListWorkflowRequest, ListWorkflowResponse>(request, FunctionGraphMeta.listWorkflow,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listWorkflow, hcClient);
     }
 
     /**
@@ -1790,7 +1742,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowExecutionsRequest 请求对象
+     * @param request ListWorkflowExecutionsRequest 请求对象
      * @return ListWorkflowExecutionsResponse
      */
     public ListWorkflowExecutionsResponse listWorkflowExecutions(ListWorkflowExecutionsRequest request) {
@@ -1804,13 +1756,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowExecutionsRequest 请求对象
+     * @param request ListWorkflowExecutionsRequest 请求对象
      * @return SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>
      */
     public SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsInvoker(
         ListWorkflowExecutionsRequest request) {
-        return new SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>(request,
-            FunctionGraphMeta.listWorkflowExecutions, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.listWorkflowExecutions, hcClient);
     }
 
     /**
@@ -1820,7 +1771,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryWorkFlowRequest 请求对象
+     * @param request RetryWorkFlowRequest 请求对象
      * @return RetryWorkFlowResponse
      */
     public RetryWorkFlowResponse retryWorkFlow(RetryWorkFlowRequest request) {
@@ -1834,12 +1785,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryWorkFlowRequest 请求对象
+     * @param request RetryWorkFlowRequest 请求对象
      * @return SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>
      */
     public SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse> retryWorkFlowInvoker(RetryWorkFlowRequest request) {
-        return new SyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>(request, FunctionGraphMeta.retryWorkFlow,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.retryWorkFlow, hcClient);
     }
 
     /**
@@ -1849,7 +1799,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppTemplateRequest 请求对象
+     * @param request ShowAppTemplateRequest 请求对象
      * @return ShowAppTemplateResponse
      */
     public ShowAppTemplateResponse showAppTemplate(ShowAppTemplateRequest request) {
@@ -1863,13 +1813,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppTemplateRequest 请求对象
+     * @param request ShowAppTemplateRequest 请求对象
      * @return SyncInvoker<ShowAppTemplateRequest, ShowAppTemplateResponse>
      */
     public SyncInvoker<ShowAppTemplateRequest, ShowAppTemplateResponse> showAppTemplateInvoker(
         ShowAppTemplateRequest request) {
-        return new SyncInvoker<ShowAppTemplateRequest, ShowAppTemplateResponse>(request,
-            FunctionGraphMeta.showAppTemplate, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showAppTemplate, hcClient);
     }
 
     /**
@@ -1879,7 +1828,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDependencyVersionRequest 请求对象
+     * @param request ShowDependencyVersionRequest 请求对象
      * @return ShowDependencyVersionResponse
      */
     public ShowDependencyVersionResponse showDependencyVersion(ShowDependencyVersionRequest request) {
@@ -1893,13 +1842,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDependencyVersionRequest 请求对象
+     * @param request ShowDependencyVersionRequest 请求对象
      * @return SyncInvoker<ShowDependencyVersionRequest, ShowDependencyVersionResponse>
      */
     public SyncInvoker<ShowDependencyVersionRequest, ShowDependencyVersionResponse> showDependencyVersionInvoker(
         ShowDependencyVersionRequest request) {
-        return new SyncInvoker<ShowDependencyVersionRequest, ShowDependencyVersionResponse>(request,
-            FunctionGraphMeta.showDependencyVersion, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showDependencyVersion, hcClient);
     }
 
     /**
@@ -1909,7 +1857,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventRequest 请求对象
+     * @param request ShowEventRequest 请求对象
      * @return ShowEventResponse
      */
     public ShowEventResponse showEvent(ShowEventRequest request) {
@@ -1923,11 +1871,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventRequest 请求对象
+     * @param request ShowEventRequest 请求对象
      * @return SyncInvoker<ShowEventRequest, ShowEventResponse>
      */
     public SyncInvoker<ShowEventRequest, ShowEventResponse> showEventInvoker(ShowEventRequest request) {
-        return new SyncInvoker<ShowEventRequest, ShowEventResponse>(request, FunctionGraphMeta.showEvent, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showEvent, hcClient);
     }
 
     /**
@@ -1943,7 +1891,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFuncReservedInstanceMetricsRequest 请求对象
+     * @param request ShowFuncReservedInstanceMetricsRequest 请求对象
      * @return ShowFuncReservedInstanceMetricsResponse
      */
     public ShowFuncReservedInstanceMetricsResponse showFuncReservedInstanceMetrics(
@@ -1964,13 +1912,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFuncReservedInstanceMetricsRequest 请求对象
+     * @param request ShowFuncReservedInstanceMetricsRequest 请求对象
      * @return SyncInvoker<ShowFuncReservedInstanceMetricsRequest, ShowFuncReservedInstanceMetricsResponse>
      */
     public SyncInvoker<ShowFuncReservedInstanceMetricsRequest, ShowFuncReservedInstanceMetricsResponse> showFuncReservedInstanceMetricsInvoker(
         ShowFuncReservedInstanceMetricsRequest request) {
-        return new SyncInvoker<ShowFuncReservedInstanceMetricsRequest, ShowFuncReservedInstanceMetricsResponse>(request,
-            FunctionGraphMeta.showFuncReservedInstanceMetrics, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showFuncReservedInstanceMetrics, hcClient);
     }
 
     /**
@@ -1980,7 +1927,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFuncSnapshotStateRequest 请求对象
+     * @param request ShowFuncSnapshotStateRequest 请求对象
      * @return ShowFuncSnapshotStateResponse
      */
     public ShowFuncSnapshotStateResponse showFuncSnapshotState(ShowFuncSnapshotStateRequest request) {
@@ -1994,13 +1941,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFuncSnapshotStateRequest 请求对象
+     * @param request ShowFuncSnapshotStateRequest 请求对象
      * @return SyncInvoker<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse>
      */
     public SyncInvoker<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse> showFuncSnapshotStateInvoker(
         ShowFuncSnapshotStateRequest request) {
-        return new SyncInvoker<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse>(request,
-            FunctionGraphMeta.showFuncSnapshotState, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showFuncSnapshotState, hcClient);
     }
 
     /**
@@ -2010,7 +1956,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionAppRequest 请求对象
+     * @param request ShowFunctionAppRequest 请求对象
      * @return ShowFunctionAppResponse
      */
     public ShowFunctionAppResponse showFunctionApp(ShowFunctionAppRequest request) {
@@ -2024,13 +1970,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionAppRequest 请求对象
+     * @param request ShowFunctionAppRequest 请求对象
      * @return SyncInvoker<ShowFunctionAppRequest, ShowFunctionAppResponse>
      */
     public SyncInvoker<ShowFunctionAppRequest, ShowFunctionAppResponse> showFunctionAppInvoker(
         ShowFunctionAppRequest request) {
-        return new SyncInvoker<ShowFunctionAppRequest, ShowFunctionAppResponse>(request,
-            FunctionGraphMeta.showFunctionApp, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showFunctionApp, hcClient);
     }
 
     /**
@@ -2040,7 +1985,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionAsyncInvokeConfigRequest 请求对象
+     * @param request ShowFunctionAsyncInvokeConfigRequest 请求对象
      * @return ShowFunctionAsyncInvokeConfigResponse
      */
     public ShowFunctionAsyncInvokeConfigResponse showFunctionAsyncInvokeConfig(
@@ -2055,13 +2000,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionAsyncInvokeConfigRequest 请求对象
+     * @param request ShowFunctionAsyncInvokeConfigRequest 请求对象
      * @return SyncInvoker<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse>
      */
     public SyncInvoker<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse> showFunctionAsyncInvokeConfigInvoker(
         ShowFunctionAsyncInvokeConfigRequest request) {
-        return new SyncInvoker<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse>(request,
-            FunctionGraphMeta.showFunctionAsyncInvokeConfig, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showFunctionAsyncInvokeConfig, hcClient);
     }
 
     /**
@@ -2071,7 +2015,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionCodeRequest 请求对象
+     * @param request ShowFunctionCodeRequest 请求对象
      * @return ShowFunctionCodeResponse
      */
     public ShowFunctionCodeResponse showFunctionCode(ShowFunctionCodeRequest request) {
@@ -2085,13 +2029,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionCodeRequest 请求对象
+     * @param request ShowFunctionCodeRequest 请求对象
      * @return SyncInvoker<ShowFunctionCodeRequest, ShowFunctionCodeResponse>
      */
     public SyncInvoker<ShowFunctionCodeRequest, ShowFunctionCodeResponse> showFunctionCodeInvoker(
         ShowFunctionCodeRequest request) {
-        return new SyncInvoker<ShowFunctionCodeRequest, ShowFunctionCodeResponse>(request,
-            FunctionGraphMeta.showFunctionCode, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showFunctionCode, hcClient);
     }
 
     /**
@@ -2101,7 +2044,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionConfigRequest 请求对象
+     * @param request ShowFunctionConfigRequest 请求对象
      * @return ShowFunctionConfigResponse
      */
     public ShowFunctionConfigResponse showFunctionConfig(ShowFunctionConfigRequest request) {
@@ -2115,13 +2058,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionConfigRequest 请求对象
+     * @param request ShowFunctionConfigRequest 请求对象
      * @return SyncInvoker<ShowFunctionConfigRequest, ShowFunctionConfigResponse>
      */
     public SyncInvoker<ShowFunctionConfigRequest, ShowFunctionConfigResponse> showFunctionConfigInvoker(
         ShowFunctionConfigRequest request) {
-        return new SyncInvoker<ShowFunctionConfigRequest, ShowFunctionConfigResponse>(request,
-            FunctionGraphMeta.showFunctionConfig, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showFunctionConfig, hcClient);
     }
 
     /**
@@ -2131,7 +2073,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionMetricsRequest 请求对象
+     * @param request ShowFunctionMetricsRequest 请求对象
      * @return ShowFunctionMetricsResponse
      */
     public ShowFunctionMetricsResponse showFunctionMetrics(ShowFunctionMetricsRequest request) {
@@ -2145,13 +2087,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionMetricsRequest 请求对象
+     * @param request ShowFunctionMetricsRequest 请求对象
      * @return SyncInvoker<ShowFunctionMetricsRequest, ShowFunctionMetricsResponse>
      */
     public SyncInvoker<ShowFunctionMetricsRequest, ShowFunctionMetricsResponse> showFunctionMetricsInvoker(
         ShowFunctionMetricsRequest request) {
-        return new SyncInvoker<ShowFunctionMetricsRequest, ShowFunctionMetricsResponse>(request,
-            FunctionGraphMeta.showFunctionMetrics, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showFunctionMetrics, hcClient);
     }
 
     /**
@@ -2161,7 +2102,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionTemplateRequest 请求对象
+     * @param request ShowFunctionTemplateRequest 请求对象
      * @return ShowFunctionTemplateResponse
      */
     public ShowFunctionTemplateResponse showFunctionTemplate(ShowFunctionTemplateRequest request) {
@@ -2175,13 +2116,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionTemplateRequest 请求对象
+     * @param request ShowFunctionTemplateRequest 请求对象
      * @return SyncInvoker<ShowFunctionTemplateRequest, ShowFunctionTemplateResponse>
      */
     public SyncInvoker<ShowFunctionTemplateRequest, ShowFunctionTemplateResponse> showFunctionTemplateInvoker(
         ShowFunctionTemplateRequest request) {
-        return new SyncInvoker<ShowFunctionTemplateRequest, ShowFunctionTemplateResponse>(request,
-            FunctionGraphMeta.showFunctionTemplate, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showFunctionTemplate, hcClient);
     }
 
     /**
@@ -2191,7 +2131,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionTriggerRequest 请求对象
+     * @param request ShowFunctionTriggerRequest 请求对象
      * @return ShowFunctionTriggerResponse
      */
     public ShowFunctionTriggerResponse showFunctionTrigger(ShowFunctionTriggerRequest request) {
@@ -2205,13 +2145,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFunctionTriggerRequest 请求对象
+     * @param request ShowFunctionTriggerRequest 请求对象
      * @return SyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>
      */
     public SyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse> showFunctionTriggerInvoker(
         ShowFunctionTriggerRequest request) {
-        return new SyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>(request,
-            FunctionGraphMeta.showFunctionTrigger, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showFunctionTrigger, hcClient);
     }
 
     /**
@@ -2221,7 +2160,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLtsLogDetailsRequest 请求对象
+     * @param request ShowLtsLogDetailsRequest 请求对象
      * @return ShowLtsLogDetailsResponse
      */
     public ShowLtsLogDetailsResponse showLtsLogDetails(ShowLtsLogDetailsRequest request) {
@@ -2235,13 +2174,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLtsLogDetailsRequest 请求对象
+     * @param request ShowLtsLogDetailsRequest 请求对象
      * @return SyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>
      */
     public SyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse> showLtsLogDetailsInvoker(
         ShowLtsLogDetailsRequest request) {
-        return new SyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>(request,
-            FunctionGraphMeta.showLtsLogDetails, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showLtsLogDetails, hcClient);
     }
 
     /**
@@ -2251,7 +2189,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectAsyncStatusLogInfoRequest 请求对象
+     * @param request ShowProjectAsyncStatusLogInfoRequest 请求对象
      * @return ShowProjectAsyncStatusLogInfoResponse
      */
     public ShowProjectAsyncStatusLogInfoResponse showProjectAsyncStatusLogInfo(
@@ -2266,13 +2204,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectAsyncStatusLogInfoRequest 请求对象
+     * @param request ShowProjectAsyncStatusLogInfoRequest 请求对象
      * @return SyncInvoker<ShowProjectAsyncStatusLogInfoRequest, ShowProjectAsyncStatusLogInfoResponse>
      */
     public SyncInvoker<ShowProjectAsyncStatusLogInfoRequest, ShowProjectAsyncStatusLogInfoResponse> showProjectAsyncStatusLogInfoInvoker(
         ShowProjectAsyncStatusLogInfoRequest request) {
-        return new SyncInvoker<ShowProjectAsyncStatusLogInfoRequest, ShowProjectAsyncStatusLogInfoResponse>(request,
-            FunctionGraphMeta.showProjectAsyncStatusLogInfo, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showProjectAsyncStatusLogInfo, hcClient);
     }
 
     /**
@@ -2282,7 +2219,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTagsListRequest 请求对象
+     * @param request ShowProjectTagsListRequest 请求对象
      * @return ShowProjectTagsListResponse
      */
     public ShowProjectTagsListResponse showProjectTagsList(ShowProjectTagsListRequest request) {
@@ -2296,13 +2233,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTagsListRequest 请求对象
+     * @param request ShowProjectTagsListRequest 请求对象
      * @return SyncInvoker<ShowProjectTagsListRequest, ShowProjectTagsListResponse>
      */
     public SyncInvoker<ShowProjectTagsListRequest, ShowProjectTagsListResponse> showProjectTagsListInvoker(
         ShowProjectTagsListRequest request) {
-        return new SyncInvoker<ShowProjectTagsListRequest, ShowProjectTagsListResponse>(request,
-            FunctionGraphMeta.showProjectTagsList, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showProjectTagsList, hcClient);
     }
 
     /**
@@ -2312,7 +2248,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResInstanceInfoRequest 请求对象
+     * @param request ShowResInstanceInfoRequest 请求对象
      * @return ShowResInstanceInfoResponse
      */
     public ShowResInstanceInfoResponse showResInstanceInfo(ShowResInstanceInfoRequest request) {
@@ -2326,13 +2262,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResInstanceInfoRequest 请求对象
+     * @param request ShowResInstanceInfoRequest 请求对象
      * @return SyncInvoker<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse>
      */
     public SyncInvoker<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse> showResInstanceInfoInvoker(
         ShowResInstanceInfoRequest request) {
-        return new SyncInvoker<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse>(request,
-            FunctionGraphMeta.showResInstanceInfo, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showResInstanceInfo, hcClient);
     }
 
     /**
@@ -2342,7 +2277,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTenantMetricRequest 请求对象
+     * @param request ShowTenantMetricRequest 请求对象
      * @return ShowTenantMetricResponse
      */
     public ShowTenantMetricResponse showTenantMetric(ShowTenantMetricRequest request) {
@@ -2356,13 +2291,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTenantMetricRequest 请求对象
+     * @param request ShowTenantMetricRequest 请求对象
      * @return SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>
      */
     public SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse> showTenantMetricInvoker(
         ShowTenantMetricRequest request) {
-        return new SyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>(request,
-            FunctionGraphMeta.showTenantMetric, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showTenantMetric, hcClient);
     }
 
     /**
@@ -2372,7 +2306,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTracingRequest 请求对象
+     * @param request ShowTracingRequest 请求对象
      * @return ShowTracingResponse
      */
     public ShowTracingResponse showTracing(ShowTracingRequest request) {
@@ -2386,12 +2320,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTracingRequest 请求对象
+     * @param request ShowTracingRequest 请求对象
      * @return SyncInvoker<ShowTracingRequest, ShowTracingResponse>
      */
     public SyncInvoker<ShowTracingRequest, ShowTracingResponse> showTracingInvoker(ShowTracingRequest request) {
-        return new SyncInvoker<ShowTracingRequest, ShowTracingResponse>(request, FunctionGraphMeta.showTracing,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showTracing, hcClient);
     }
 
     /**
@@ -2401,7 +2334,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionAliasRequest 请求对象
+     * @param request ShowVersionAliasRequest 请求对象
      * @return ShowVersionAliasResponse
      */
     public ShowVersionAliasResponse showVersionAlias(ShowVersionAliasRequest request) {
@@ -2415,13 +2348,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionAliasRequest 请求对象
+     * @param request ShowVersionAliasRequest 请求对象
      * @return SyncInvoker<ShowVersionAliasRequest, ShowVersionAliasResponse>
      */
     public SyncInvoker<ShowVersionAliasRequest, ShowVersionAliasResponse> showVersionAliasInvoker(
         ShowVersionAliasRequest request) {
-        return new SyncInvoker<ShowVersionAliasRequest, ShowVersionAliasResponse>(request,
-            FunctionGraphMeta.showVersionAlias, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showVersionAlias, hcClient);
     }
 
     /**
@@ -2431,7 +2363,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkFlowRequest 请求对象
+     * @param request ShowWorkFlowRequest 请求对象
      * @return ShowWorkFlowResponse
      */
     public ShowWorkFlowResponse showWorkFlow(ShowWorkFlowRequest request) {
@@ -2445,12 +2377,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkFlowRequest 请求对象
+     * @param request ShowWorkFlowRequest 请求对象
      * @return SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>
      */
     public SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse> showWorkFlowInvoker(ShowWorkFlowRequest request) {
-        return new SyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>(request, FunctionGraphMeta.showWorkFlow,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showWorkFlow, hcClient);
     }
 
     /**
@@ -2460,7 +2391,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkFlowMetricRequest 请求对象
+     * @param request ShowWorkFlowMetricRequest 请求对象
      * @return ShowWorkFlowMetricResponse
      */
     public ShowWorkFlowMetricResponse showWorkFlowMetric(ShowWorkFlowMetricRequest request) {
@@ -2474,13 +2405,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkFlowMetricRequest 请求对象
+     * @param request ShowWorkFlowMetricRequest 请求对象
      * @return SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>
      */
     public SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse> showWorkFlowMetricInvoker(
         ShowWorkFlowMetricRequest request) {
-        return new SyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>(request,
-            FunctionGraphMeta.showWorkFlowMetric, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showWorkFlowMetric, hcClient);
     }
 
     /**
@@ -2490,7 +2420,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowExecutionRequest 请求对象
+     * @param request ShowWorkflowExecutionRequest 请求对象
      * @return ShowWorkflowExecutionResponse
      */
     public ShowWorkflowExecutionResponse showWorkflowExecution(ShowWorkflowExecutionRequest request) {
@@ -2504,13 +2434,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowExecutionRequest 请求对象
+     * @param request ShowWorkflowExecutionRequest 请求对象
      * @return SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>
      */
     public SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> showWorkflowExecutionInvoker(
         ShowWorkflowExecutionRequest request) {
-        return new SyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>(request,
-            FunctionGraphMeta.showWorkflowExecution, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showWorkflowExecution, hcClient);
     }
 
     /**
@@ -2520,7 +2449,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowExecutionForPageRequest 请求对象
+     * @param request ShowWorkflowExecutionForPageRequest 请求对象
      * @return ShowWorkflowExecutionForPageResponse
      */
     public ShowWorkflowExecutionForPageResponse showWorkflowExecutionForPage(
@@ -2535,13 +2464,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowExecutionForPageRequest 请求对象
+     * @param request ShowWorkflowExecutionForPageRequest 请求对象
      * @return SyncInvoker<ShowWorkflowExecutionForPageRequest, ShowWorkflowExecutionForPageResponse>
      */
     public SyncInvoker<ShowWorkflowExecutionForPageRequest, ShowWorkflowExecutionForPageResponse> showWorkflowExecutionForPageInvoker(
         ShowWorkflowExecutionForPageRequest request) {
-        return new SyncInvoker<ShowWorkflowExecutionForPageRequest, ShowWorkflowExecutionForPageResponse>(request,
-            FunctionGraphMeta.showWorkflowExecutionForPage, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.showWorkflowExecutionForPage, hcClient);
     }
 
     /**
@@ -2551,7 +2479,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartSyncWorkflowExecutionRequest 请求对象
+     * @param request StartSyncWorkflowExecutionRequest 请求对象
      * @return StartSyncWorkflowExecutionResponse
      */
     public StartSyncWorkflowExecutionResponse startSyncWorkflowExecution(StartSyncWorkflowExecutionRequest request) {
@@ -2565,13 +2493,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartSyncWorkflowExecutionRequest 请求对象
+     * @param request StartSyncWorkflowExecutionRequest 请求对象
      * @return SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>
      */
     public SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse> startSyncWorkflowExecutionInvoker(
         StartSyncWorkflowExecutionRequest request) {
-        return new SyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>(request,
-            FunctionGraphMeta.startSyncWorkflowExecution, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.startSyncWorkflowExecution, hcClient);
     }
 
     /**
@@ -2581,7 +2508,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartWorkflowExecutionRequest 请求对象
+     * @param request StartWorkflowExecutionRequest 请求对象
      * @return StartWorkflowExecutionResponse
      */
     public StartWorkflowExecutionResponse startWorkflowExecution(StartWorkflowExecutionRequest request) {
@@ -2595,13 +2522,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartWorkflowExecutionRequest 请求对象
+     * @param request StartWorkflowExecutionRequest 请求对象
      * @return SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>
      */
     public SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse> startWorkflowExecutionInvoker(
         StartWorkflowExecutionRequest request) {
-        return new SyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>(request,
-            FunctionGraphMeta.startWorkflowExecution, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.startWorkflowExecution, hcClient);
     }
 
     /**
@@ -2611,7 +2537,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopWorkFlowRequest 请求对象
+     * @param request StopWorkFlowRequest 请求对象
      * @return StopWorkFlowResponse
      */
     public StopWorkFlowResponse stopWorkFlow(StopWorkFlowRequest request) {
@@ -2625,12 +2551,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopWorkFlowRequest 请求对象
+     * @param request StopWorkFlowRequest 请求对象
      * @return SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>
      */
     public SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse> stopWorkFlowInvoker(StopWorkFlowRequest request) {
-        return new SyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>(request, FunctionGraphMeta.stopWorkFlow,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.stopWorkFlow, hcClient);
     }
 
     /**
@@ -2640,7 +2565,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventRequest 请求对象
+     * @param request UpdateEventRequest 请求对象
      * @return UpdateEventResponse
      */
     public UpdateEventResponse updateEvent(UpdateEventRequest request) {
@@ -2654,12 +2579,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventRequest 请求对象
+     * @param request UpdateEventRequest 请求对象
      * @return SyncInvoker<UpdateEventRequest, UpdateEventResponse>
      */
     public SyncInvoker<UpdateEventRequest, UpdateEventResponse> updateEventInvoker(UpdateEventRequest request) {
-        return new SyncInvoker<UpdateEventRequest, UpdateEventResponse>(request, FunctionGraphMeta.updateEvent,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateEvent, hcClient);
     }
 
     /**
@@ -2669,7 +2593,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFuncSnapshotRequest 请求对象
+     * @param request UpdateFuncSnapshotRequest 请求对象
      * @return UpdateFuncSnapshotResponse
      */
     public UpdateFuncSnapshotResponse updateFuncSnapshot(UpdateFuncSnapshotRequest request) {
@@ -2683,13 +2607,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFuncSnapshotRequest 请求对象
+     * @param request UpdateFuncSnapshotRequest 请求对象
      * @return SyncInvoker<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse>
      */
     public SyncInvoker<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse> updateFuncSnapshotInvoker(
         UpdateFuncSnapshotRequest request) {
-        return new SyncInvoker<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse>(request,
-            FunctionGraphMeta.updateFuncSnapshot, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateFuncSnapshot, hcClient);
     }
 
     /**
@@ -2699,7 +2622,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionAsyncInvokeConfigRequest 请求对象
+     * @param request UpdateFunctionAsyncInvokeConfigRequest 请求对象
      * @return UpdateFunctionAsyncInvokeConfigResponse
      */
     public UpdateFunctionAsyncInvokeConfigResponse updateFunctionAsyncInvokeConfig(
@@ -2714,13 +2637,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionAsyncInvokeConfigRequest 请求对象
+     * @param request UpdateFunctionAsyncInvokeConfigRequest 请求对象
      * @return SyncInvoker<UpdateFunctionAsyncInvokeConfigRequest, UpdateFunctionAsyncInvokeConfigResponse>
      */
     public SyncInvoker<UpdateFunctionAsyncInvokeConfigRequest, UpdateFunctionAsyncInvokeConfigResponse> updateFunctionAsyncInvokeConfigInvoker(
         UpdateFunctionAsyncInvokeConfigRequest request) {
-        return new SyncInvoker<UpdateFunctionAsyncInvokeConfigRequest, UpdateFunctionAsyncInvokeConfigResponse>(request,
-            FunctionGraphMeta.updateFunctionAsyncInvokeConfig, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateFunctionAsyncInvokeConfig, hcClient);
     }
 
     /**
@@ -2730,7 +2652,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionCodeRequest 请求对象
+     * @param request UpdateFunctionCodeRequest 请求对象
      * @return UpdateFunctionCodeResponse
      */
     public UpdateFunctionCodeResponse updateFunctionCode(UpdateFunctionCodeRequest request) {
@@ -2744,13 +2666,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionCodeRequest 请求对象
+     * @param request UpdateFunctionCodeRequest 请求对象
      * @return SyncInvoker<UpdateFunctionCodeRequest, UpdateFunctionCodeResponse>
      */
     public SyncInvoker<UpdateFunctionCodeRequest, UpdateFunctionCodeResponse> updateFunctionCodeInvoker(
         UpdateFunctionCodeRequest request) {
-        return new SyncInvoker<UpdateFunctionCodeRequest, UpdateFunctionCodeResponse>(request,
-            FunctionGraphMeta.updateFunctionCode, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateFunctionCode, hcClient);
     }
 
     /**
@@ -2760,7 +2681,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionCollectStateRequest 请求对象
+     * @param request UpdateFunctionCollectStateRequest 请求对象
      * @return UpdateFunctionCollectStateResponse
      */
     public UpdateFunctionCollectStateResponse updateFunctionCollectState(UpdateFunctionCollectStateRequest request) {
@@ -2774,13 +2695,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionCollectStateRequest 请求对象
+     * @param request UpdateFunctionCollectStateRequest 请求对象
      * @return SyncInvoker<UpdateFunctionCollectStateRequest, UpdateFunctionCollectStateResponse>
      */
     public SyncInvoker<UpdateFunctionCollectStateRequest, UpdateFunctionCollectStateResponse> updateFunctionCollectStateInvoker(
         UpdateFunctionCollectStateRequest request) {
-        return new SyncInvoker<UpdateFunctionCollectStateRequest, UpdateFunctionCollectStateResponse>(request,
-            FunctionGraphMeta.updateFunctionCollectState, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateFunctionCollectState, hcClient);
     }
 
     /**
@@ -2790,7 +2710,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionConfigRequest 请求对象
+     * @param request UpdateFunctionConfigRequest 请求对象
      * @return UpdateFunctionConfigResponse
      */
     public UpdateFunctionConfigResponse updateFunctionConfig(UpdateFunctionConfigRequest request) {
@@ -2804,13 +2724,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionConfigRequest 请求对象
+     * @param request UpdateFunctionConfigRequest 请求对象
      * @return SyncInvoker<UpdateFunctionConfigRequest, UpdateFunctionConfigResponse>
      */
     public SyncInvoker<UpdateFunctionConfigRequest, UpdateFunctionConfigResponse> updateFunctionConfigInvoker(
         UpdateFunctionConfigRequest request) {
-        return new SyncInvoker<UpdateFunctionConfigRequest, UpdateFunctionConfigResponse>(request,
-            FunctionGraphMeta.updateFunctionConfig, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateFunctionConfig, hcClient);
     }
 
     /**
@@ -2820,7 +2739,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionMaxInstanceConfigRequest 请求对象
+     * @param request UpdateFunctionMaxInstanceConfigRequest 请求对象
      * @return UpdateFunctionMaxInstanceConfigResponse
      */
     public UpdateFunctionMaxInstanceConfigResponse updateFunctionMaxInstanceConfig(
@@ -2835,13 +2754,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionMaxInstanceConfigRequest 请求对象
+     * @param request UpdateFunctionMaxInstanceConfigRequest 请求对象
      * @return SyncInvoker<UpdateFunctionMaxInstanceConfigRequest, UpdateFunctionMaxInstanceConfigResponse>
      */
     public SyncInvoker<UpdateFunctionMaxInstanceConfigRequest, UpdateFunctionMaxInstanceConfigResponse> updateFunctionMaxInstanceConfigInvoker(
         UpdateFunctionMaxInstanceConfigRequest request) {
-        return new SyncInvoker<UpdateFunctionMaxInstanceConfigRequest, UpdateFunctionMaxInstanceConfigResponse>(request,
-            FunctionGraphMeta.updateFunctionMaxInstanceConfig, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateFunctionMaxInstanceConfig, hcClient);
     }
 
     /**
@@ -2851,7 +2769,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionReservedInstancesCountRequest 请求对象
+     * @param request UpdateFunctionReservedInstancesCountRequest 请求对象
      * @return UpdateFunctionReservedInstancesCountResponse
      */
     public UpdateFunctionReservedInstancesCountResponse updateFunctionReservedInstancesCount(
@@ -2866,13 +2784,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFunctionReservedInstancesCountRequest 请求对象
+     * @param request UpdateFunctionReservedInstancesCountRequest 请求对象
      * @return SyncInvoker<UpdateFunctionReservedInstancesCountRequest, UpdateFunctionReservedInstancesCountResponse>
      */
     public SyncInvoker<UpdateFunctionReservedInstancesCountRequest, UpdateFunctionReservedInstancesCountResponse> updateFunctionReservedInstancesCountInvoker(
         UpdateFunctionReservedInstancesCountRequest request) {
-        return new SyncInvoker<UpdateFunctionReservedInstancesCountRequest, UpdateFunctionReservedInstancesCountResponse>(
-            request, FunctionGraphMeta.updateFunctionReservedInstancesCount, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateFunctionReservedInstancesCount, hcClient);
     }
 
     /**
@@ -2882,7 +2799,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTracingRequest 请求对象
+     * @param request UpdateTracingRequest 请求对象
      * @return UpdateTracingResponse
      */
     public UpdateTracingResponse updateTracing(UpdateTracingRequest request) {
@@ -2896,12 +2813,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTracingRequest 请求对象
+     * @param request UpdateTracingRequest 请求对象
      * @return SyncInvoker<UpdateTracingRequest, UpdateTracingResponse>
      */
     public SyncInvoker<UpdateTracingRequest, UpdateTracingResponse> updateTracingInvoker(UpdateTracingRequest request) {
-        return new SyncInvoker<UpdateTracingRequest, UpdateTracingResponse>(request, FunctionGraphMeta.updateTracing,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateTracing, hcClient);
     }
 
     /**
@@ -2911,7 +2827,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTriggerRequest 请求对象
+     * @param request UpdateTriggerRequest 请求对象
      * @return UpdateTriggerResponse
      */
     public UpdateTriggerResponse updateTrigger(UpdateTriggerRequest request) {
@@ -2925,12 +2841,11 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTriggerRequest 请求对象
+     * @param request UpdateTriggerRequest 请求对象
      * @return SyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse>
      */
     public SyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse> updateTriggerInvoker(UpdateTriggerRequest request) {
-        return new SyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse>(request, FunctionGraphMeta.updateTrigger,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateTrigger, hcClient);
     }
 
     /**
@@ -2940,7 +2855,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVersionAliasRequest 请求对象
+     * @param request UpdateVersionAliasRequest 请求对象
      * @return UpdateVersionAliasResponse
      */
     public UpdateVersionAliasResponse updateVersionAlias(UpdateVersionAliasRequest request) {
@@ -2954,13 +2869,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVersionAliasRequest 请求对象
+     * @param request UpdateVersionAliasRequest 请求对象
      * @return SyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>
      */
     public SyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse> updateVersionAliasInvoker(
         UpdateVersionAliasRequest request) {
-        return new SyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>(request,
-            FunctionGraphMeta.updateVersionAlias, hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateVersionAlias, hcClient);
     }
 
     /**
@@ -2970,7 +2884,7 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkFlowRequest 请求对象
+     * @param request UpdateWorkFlowRequest 请求对象
      * @return UpdateWorkFlowResponse
      */
     public UpdateWorkFlowResponse updateWorkFlow(UpdateWorkFlowRequest request) {
@@ -2984,13 +2898,12 @@ public class FunctionGraphClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkFlowRequest 请求对象
+     * @param request UpdateWorkFlowRequest 请求对象
      * @return SyncInvoker<UpdateWorkFlowRequest, UpdateWorkFlowResponse>
      */
     public SyncInvoker<UpdateWorkFlowRequest, UpdateWorkFlowResponse> updateWorkFlowInvoker(
         UpdateWorkFlowRequest request) {
-        return new SyncInvoker<UpdateWorkFlowRequest, UpdateWorkFlowResponse>(request, FunctionGraphMeta.updateWorkFlow,
-            hcClient);
+        return new SyncInvoker<>(request, FunctionGraphMeta.updateWorkFlow, hcClient);
     }
 
 }

@@ -110,9 +110,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class CaeMeta {
 
-    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForcreateAgency();
+    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForCreateAgency();
 
-    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForcreateAgency() {
+    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForCreateAgency() {
         // basic
         HttpRequestDef.Builder<CreateAgencyRequest, CreateAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgencyRequest.class, CreateAgencyResponse.class)
@@ -125,18 +125,16 @@ public class CaeMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Agency.class),
-            f -> f.withMarshaller(CreateAgencyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAgencyRequest::getBody, CreateAgencyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForlistAgencies();
+    public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForListAgencies();
 
-    private static HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> genForlistAgencies() {
+    private static HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> genForListAgencies() {
         // basic
         HttpRequestDef.Builder<ListAgenciesRequest, ListAgenciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgenciesRequest.class, ListAgenciesResponse.class)
@@ -152,9 +150,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<CreateApplicationRequest, CreateApplicationResponse> createApplication =
-        genForcreateApplication();
+        genForCreateApplication();
 
-    private static HttpRequestDef<CreateApplicationRequest, CreateApplicationResponse> genForcreateApplication() {
+    private static HttpRequestDef<CreateApplicationRequest, CreateApplicationResponse> genForCreateApplication() {
         // basic
         HttpRequestDef.Builder<CreateApplicationRequest, CreateApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApplicationRequest.class, CreateApplicationResponse.class)
@@ -167,23 +165,19 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApplicationRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateApplicationRequest::getXEnterpriseProjectID,
+                CreateApplicationRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApplicationRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(CreateApplicationRequest::getXEnvironmentID,
+                CreateApplicationRequest::setXEnvironmentID));
         builder.<CreateApplicationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateApplicationRequestBody.class),
-            f -> f.withMarshaller(CreateApplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApplicationRequest::getBody, CreateApplicationRequest::setBody));
 
         // response
 
@@ -191,9 +185,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplication =
-        genFordeleteApplication();
+        genForDeleteApplication();
 
-    private static HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> genFordeleteApplication() {
+    private static HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> genForDeleteApplication() {
         // basic
         HttpRequestDef.Builder<DeleteApplicationRequest, DeleteApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApplicationRequest.class, DeleteApplicationResponse.class)
@@ -206,23 +200,20 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApplicationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(DeleteApplicationRequest::getApplicationId,
+                DeleteApplicationRequest::setApplicationId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApplicationRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteApplicationRequest::getXEnterpriseProjectID,
+                DeleteApplicationRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApplicationRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(DeleteApplicationRequest::getXEnvironmentID,
+                DeleteApplicationRequest::setXEnvironmentID));
 
         // response
 
@@ -230,9 +221,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ListApplicationsRequest, ListApplicationsResponse> listApplications =
-        genForlistApplications();
+        genForListApplications();
 
-    private static HttpRequestDef<ListApplicationsRequest, ListApplicationsResponse> genForlistApplications() {
+    private static HttpRequestDef<ListApplicationsRequest, ListApplicationsResponse> genForListApplications() {
         // basic
         HttpRequestDef.Builder<ListApplicationsRequest, ListApplicationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApplicationsRequest.class, ListApplicationsResponse.class)
@@ -245,16 +236,14 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplicationsRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListApplicationsRequest::getXEnterpriseProjectID,
+                ListApplicationsRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplicationsRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListApplicationsRequest::getXEnvironmentID,
+                ListApplicationsRequest::setXEnvironmentID));
 
         // response
 
@@ -262,9 +251,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ShowApplicationRequest, ShowApplicationResponse> showApplication =
-        genForshowApplication();
+        genForShowApplication();
 
-    private static HttpRequestDef<ShowApplicationRequest, ShowApplicationResponse> genForshowApplication() {
+    private static HttpRequestDef<ShowApplicationRequest, ShowApplicationResponse> genForShowApplication() {
         // basic
         HttpRequestDef.Builder<ShowApplicationRequest, ShowApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApplicationRequest.class, ShowApplicationResponse.class)
@@ -277,23 +266,19 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplicationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ShowApplicationRequest::getApplicationId, ShowApplicationRequest::setApplicationId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplicationRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ShowApplicationRequest::getXEnterpriseProjectID,
+                ShowApplicationRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApplicationRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ShowApplicationRequest::getXEnvironmentID,
+                ShowApplicationRequest::setXEnvironmentID));
 
         // response
 
@@ -301,9 +286,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate =
-        genForcreateCertificate();
+        genForCreateCertificate();
 
-    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForcreateCertificate() {
+    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForCreateCertificate() {
         // basic
         HttpRequestDef.Builder<CreateCertificateRequest, CreateCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCertificateRequest.class, CreateCertificateResponse.class)
@@ -316,23 +301,19 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCertificateRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateRequest::getXEnterpriseProjectID,
+                CreateCertificateRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCertificateRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateRequest::getXEnvironmentID,
+                CreateCertificateRequest::setXEnvironmentID));
         builder.<CertReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CertReq.class),
-            f -> f.withMarshaller(CreateCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateRequest::getBody, CreateCertificateRequest::setBody));
 
         // response
 
@@ -340,9 +321,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate =
-        genFordeleteCertificate();
+        genForDeleteCertificate();
 
-    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genFordeleteCertificate() {
+    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genForDeleteCertificate() {
         // basic
         HttpRequestDef.Builder<DeleteCertificateRequest, DeleteCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCertificateRequest.class, DeleteCertificateResponse.class)
@@ -355,23 +336,20 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId,
+                DeleteCertificateRequest::setCertificateId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateRequest::getXEnterpriseProjectID,
+                DeleteCertificateRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateRequest::getXEnvironmentID,
+                DeleteCertificateRequest::setXEnvironmentID));
 
         // response
 
@@ -379,9 +357,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates =
-        genForlistCertificates();
+        genForListCertificates();
 
-    private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForlistCertificates() {
+    private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForListCertificates() {
         // basic
         HttpRequestDef.Builder<ListCertificatesRequest, ListCertificatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertificatesRequest.class, ListCertificatesResponse.class)
@@ -394,16 +372,14 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getXEnterpriseProjectID,
+                ListCertificatesRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getXEnvironmentID,
+                ListCertificatesRequest::setXEnvironmentID));
 
         // response
 
@@ -411,9 +387,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificate =
-        genForupdateCertificate();
+        genForUpdateCertificate();
 
-    private static HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> genForupdateCertificate() {
+    private static HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> genForUpdateCertificate() {
         // basic
         HttpRequestDef.Builder<UpdateCertificateRequest, UpdateCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCertificateRequest.class, UpdateCertificateResponse.class)
@@ -426,30 +402,25 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateRequest::getCertificateId,
+                UpdateCertificateRequest::setCertificateId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCertificateRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateRequest::getXEnterpriseProjectID,
+                UpdateCertificateRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCertificateRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateRequest::getXEnvironmentID,
+                UpdateCertificateRequest::setXEnvironmentID));
         builder.<UpdateCertReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCertReq.class),
-            f -> f.withMarshaller(UpdateCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateRequest::getBody, UpdateCertificateRequest::setBody));
 
         // response
 
@@ -457,9 +428,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<CreateComponentRequest, CreateComponentResponse> createComponent =
-        genForcreateComponent();
+        genForCreateComponent();
 
-    private static HttpRequestDef<CreateComponentRequest, CreateComponentResponse> genForcreateComponent() {
+    private static HttpRequestDef<CreateComponentRequest, CreateComponentResponse> genForCreateComponent() {
         // basic
         HttpRequestDef.Builder<CreateComponentRequest, CreateComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateComponentRequest.class, CreateComponentResponse.class)
@@ -472,30 +443,24 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(CreateComponentRequest::getApplicationId, CreateComponentRequest::setApplicationId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateComponentRequest::getXEnterpriseProjectID,
+                CreateComponentRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(CreateComponentRequest::getXEnvironmentID,
+                CreateComponentRequest::setXEnvironmentID));
         builder.<CreateComponentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateComponentRequestBody.class),
-            f -> f.withMarshaller(CreateComponentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateComponentRequest::getBody, CreateComponentRequest::setBody));
 
         // response
 
@@ -503,9 +468,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> deleteComponent =
-        genFordeleteComponent();
+        genForDeleteComponent();
 
-    private static HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> genFordeleteComponent() {
+    private static HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> genForDeleteComponent() {
         // basic
         HttpRequestDef.Builder<DeleteComponentRequest, DeleteComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteComponentRequest.class, DeleteComponentResponse.class)
@@ -518,30 +483,24 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentRequest::getApplicationId, DeleteComponentRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentRequest::getComponentId, DeleteComponentRequest::setComponentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentRequest::getXEnterpriseProjectID,
+                DeleteComponentRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentRequest::getXEnvironmentID,
+                DeleteComponentRequest::setXEnvironmentID));
 
         // response
 
@@ -549,9 +508,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ExecuteActionRequest, ExecuteActionResponse> executeAction =
-        genForexecuteAction();
+        genForExecuteAction();
 
-    private static HttpRequestDef<ExecuteActionRequest, ExecuteActionResponse> genForexecuteAction() {
+    private static HttpRequestDef<ExecuteActionRequest, ExecuteActionResponse> genForExecuteAction() {
         // basic
         HttpRequestDef.Builder<ExecuteActionRequest, ExecuteActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExecuteActionRequest.class, ExecuteActionResponse.class)
@@ -564,37 +523,28 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteActionRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ExecuteActionRequest::getApplicationId, ExecuteActionRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteActionRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ExecuteActionRequest::getComponentId, ExecuteActionRequest::setComponentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteActionRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ExecuteActionRequest::getXEnterpriseProjectID,
+                ExecuteActionRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteActionRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ExecuteActionRequest::getXEnvironmentID, ExecuteActionRequest::setXEnvironmentID));
         builder.<ExecuteActionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExecuteActionRequestBody.class),
-            f -> f.withMarshaller(ExecuteActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteActionRequest::getBody, ExecuteActionRequest::setBody));
 
         // response
 
@@ -602,9 +552,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ListComponentEventsRequest, ListComponentEventsResponse> listComponentEvents =
-        genForlistComponentEvents();
+        genForListComponentEvents();
 
-    private static HttpRequestDef<ListComponentEventsRequest, ListComponentEventsResponse> genForlistComponentEvents() {
+    private static HttpRequestDef<ListComponentEventsRequest, ListComponentEventsResponse> genForListComponentEvents() {
         // basic
         HttpRequestDef.Builder<ListComponentEventsRequest, ListComponentEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListComponentEventsRequest.class, ListComponentEventsResponse.class)
@@ -617,30 +567,26 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentEventsRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ListComponentEventsRequest::getApplicationId,
+                ListComponentEventsRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentEventsRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ListComponentEventsRequest::getComponentId,
+                ListComponentEventsRequest::setComponentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentEventsRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListComponentEventsRequest::getXEnterpriseProjectID,
+                ListComponentEventsRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentEventsRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListComponentEventsRequest::getXEnvironmentID,
+                ListComponentEventsRequest::setXEnvironmentID));
 
         // response
 
@@ -648,9 +594,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ListComponentInstancesRequest, ListComponentInstancesResponse> listComponentInstances =
-        genForlistComponentInstances();
+        genForListComponentInstances();
 
-    private static HttpRequestDef<ListComponentInstancesRequest, ListComponentInstancesResponse> genForlistComponentInstances() {
+    private static HttpRequestDef<ListComponentInstancesRequest, ListComponentInstancesResponse> genForListComponentInstances() {
         // basic
         HttpRequestDef.Builder<ListComponentInstancesRequest, ListComponentInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListComponentInstancesRequest.class, ListComponentInstancesResponse.class)
@@ -663,30 +609,26 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentInstancesRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ListComponentInstancesRequest::getApplicationId,
+                ListComponentInstancesRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentInstancesRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ListComponentInstancesRequest::getComponentId,
+                ListComponentInstancesRequest::setComponentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentInstancesRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListComponentInstancesRequest::getXEnterpriseProjectID,
+                ListComponentInstancesRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentInstancesRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListComponentInstancesRequest::getXEnvironmentID,
+                ListComponentInstancesRequest::setXEnvironmentID));
 
         // response
 
@@ -694,9 +636,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ListComponentSnapshotsRequest, ListComponentSnapshotsResponse> listComponentSnapshots =
-        genForlistComponentSnapshots();
+        genForListComponentSnapshots();
 
-    private static HttpRequestDef<ListComponentSnapshotsRequest, ListComponentSnapshotsResponse> genForlistComponentSnapshots() {
+    private static HttpRequestDef<ListComponentSnapshotsRequest, ListComponentSnapshotsResponse> genForListComponentSnapshots() {
         // basic
         HttpRequestDef.Builder<ListComponentSnapshotsRequest, ListComponentSnapshotsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListComponentSnapshotsRequest.class, ListComponentSnapshotsResponse.class)
@@ -709,30 +651,26 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentSnapshotsRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ListComponentSnapshotsRequest::getApplicationId,
+                ListComponentSnapshotsRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentSnapshotsRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ListComponentSnapshotsRequest::getComponentId,
+                ListComponentSnapshotsRequest::setComponentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentSnapshotsRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListComponentSnapshotsRequest::getXEnterpriseProjectID,
+                ListComponentSnapshotsRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentSnapshotsRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListComponentSnapshotsRequest::getXEnvironmentID,
+                ListComponentSnapshotsRequest::setXEnvironmentID));
 
         // response
 
@@ -740,9 +678,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ListComponentsRequest, ListComponentsResponse> listComponents =
-        genForlistComponents();
+        genForListComponents();
 
-    private static HttpRequestDef<ListComponentsRequest, ListComponentsResponse> genForlistComponents() {
+    private static HttpRequestDef<ListComponentsRequest, ListComponentsResponse> genForListComponents() {
         // basic
         HttpRequestDef.Builder<ListComponentsRequest, ListComponentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListComponentsRequest.class, ListComponentsResponse.class)
@@ -755,37 +693,28 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentsRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ListComponentsRequest::getApplicationId, ListComponentsRequest::setApplicationId));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListComponentsRequest::getLimit, ListComponentsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListComponentsRequest::getOffset, ListComponentsRequest::setOffset));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentsRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListComponentsRequest::getXEnterpriseProjectID,
+                ListComponentsRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentsRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListComponentsRequest::getXEnvironmentID, ListComponentsRequest::setXEnvironmentID));
 
         // response
 
@@ -793,9 +722,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ShowComponentRequest, ShowComponentResponse> showComponent =
-        genForshowComponent();
+        genForShowComponent();
 
-    private static HttpRequestDef<ShowComponentRequest, ShowComponentResponse> genForshowComponent() {
+    private static HttpRequestDef<ShowComponentRequest, ShowComponentResponse> genForShowComponent() {
         // basic
         HttpRequestDef.Builder<ShowComponentRequest, ShowComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowComponentRequest.class, ShowComponentResponse.class)
@@ -808,30 +737,23 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRequest::getApplicationId, ShowComponentRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRequest::getComponentId, ShowComponentRequest::setComponentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRequest::getXEnterpriseProjectID,
+                ShowComponentRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRequest::getXEnvironmentID, ShowComponentRequest::setXEnvironmentID));
 
         // response
 
@@ -839,9 +761,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<UpdateComponentRequest, UpdateComponentResponse> updateComponent =
-        genForupdateComponent();
+        genForUpdateComponent();
 
-    private static HttpRequestDef<UpdateComponentRequest, UpdateComponentResponse> genForupdateComponent() {
+    private static HttpRequestDef<UpdateComponentRequest, UpdateComponentResponse> genForUpdateComponent() {
         // basic
         HttpRequestDef.Builder<UpdateComponentRequest, UpdateComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateComponentRequest.class, UpdateComponentResponse.class)
@@ -854,37 +776,29 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateComponentRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(UpdateComponentRequest::getApplicationId, UpdateComponentRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateComponentRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(UpdateComponentRequest::getComponentId, UpdateComponentRequest::setComponentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateComponentRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(UpdateComponentRequest::getXEnterpriseProjectID,
+                UpdateComponentRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateComponentRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(UpdateComponentRequest::getXEnvironmentID,
+                UpdateComponentRequest::setXEnvironmentID));
         builder.<UpdateComponentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateComponentRequestBody.class),
-            f -> f.withMarshaller(UpdateComponentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateComponentRequest::getBody, UpdateComponentRequest::setBody));
 
         // response
 
@@ -892,9 +806,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse> createComponentConfiguration =
-        genForcreateComponentConfiguration();
+        genForCreateComponentConfiguration();
 
-    private static HttpRequestDef<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse> genForcreateComponentConfiguration() {
+    private static HttpRequestDef<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse> genForCreateComponentConfiguration() {
         // basic
         HttpRequestDef.Builder<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse> builder =
             HttpRequestDef
@@ -910,37 +824,32 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentConfigurationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(CreateComponentConfigurationRequest::getApplicationId,
+                CreateComponentConfigurationRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentConfigurationRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(CreateComponentConfigurationRequest::getComponentId,
+                CreateComponentConfigurationRequest::setComponentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentConfigurationRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateComponentConfigurationRequest::getXEnterpriseProjectID,
+                CreateComponentConfigurationRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentConfigurationRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(CreateComponentConfigurationRequest::getXEnvironmentID,
+                CreateComponentConfigurationRequest::setXEnvironmentID));
         builder.<CreateComponentConfigurationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateComponentConfigurationRequestBody.class),
-            f -> f.withMarshaller(CreateComponentConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateComponentConfigurationRequest::getBody,
+                CreateComponentConfigurationRequest::setBody));
 
         // response
 
@@ -948,9 +857,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<DeleteComponentConfigurationRequest, DeleteComponentConfigurationResponse> deleteComponentConfiguration =
-        genFordeleteComponentConfiguration();
+        genForDeleteComponentConfiguration();
 
-    private static HttpRequestDef<DeleteComponentConfigurationRequest, DeleteComponentConfigurationResponse> genFordeleteComponentConfiguration() {
+    private static HttpRequestDef<DeleteComponentConfigurationRequest, DeleteComponentConfigurationResponse> genForDeleteComponentConfiguration() {
         // basic
         HttpRequestDef.Builder<DeleteComponentConfigurationRequest, DeleteComponentConfigurationResponse> builder =
             HttpRequestDef
@@ -966,30 +875,26 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentConfigurationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentConfigurationRequest::getApplicationId,
+                DeleteComponentConfigurationRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentConfigurationRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentConfigurationRequest::getComponentId,
+                DeleteComponentConfigurationRequest::setComponentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentConfigurationRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentConfigurationRequest::getXEnterpriseProjectID,
+                DeleteComponentConfigurationRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentConfigurationRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentConfigurationRequest::getXEnvironmentID,
+                DeleteComponentConfigurationRequest::setXEnvironmentID));
 
         // response
 
@@ -997,9 +902,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ListComponentConfigurationsRequest, ListComponentConfigurationsResponse> listComponentConfigurations =
-        genForlistComponentConfigurations();
+        genForListComponentConfigurations();
 
-    private static HttpRequestDef<ListComponentConfigurationsRequest, ListComponentConfigurationsResponse> genForlistComponentConfigurations() {
+    private static HttpRequestDef<ListComponentConfigurationsRequest, ListComponentConfigurationsResponse> genForListComponentConfigurations() {
         // basic
         HttpRequestDef.Builder<ListComponentConfigurationsRequest, ListComponentConfigurationsResponse> builder =
             HttpRequestDef
@@ -1015,39 +920,35 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentConfigurationsRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ListComponentConfigurationsRequest::getApplicationId,
+                ListComponentConfigurationsRequest::setApplicationId));
         builder.<String>withRequestField("component_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentConfigurationsRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ListComponentConfigurationsRequest::getComponentId,
+                ListComponentConfigurationsRequest::setComponentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentConfigurationsRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListComponentConfigurationsRequest::getXEnterpriseProjectID,
+                ListComponentConfigurationsRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentConfigurationsRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListComponentConfigurationsRequest::getXEnvironmentID,
+                ListComponentConfigurationsRequest::setXEnvironmentID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForcreateDomain();
+    public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForCreateDomain();
 
-    private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForcreateDomain() {
+    private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForCreateDomain() {
         // basic
         HttpRequestDef.Builder<CreateDomainRequest, CreateDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDomainRequest.class, CreateDomainResponse.class)
@@ -1060,32 +961,27 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDomainRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateDomainRequest::getXEnterpriseProjectID,
+                CreateDomainRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDomainRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(CreateDomainRequest::getXEnvironmentID, CreateDomainRequest::setXEnvironmentID));
         builder.<CreateDomainReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDomainReq.class),
-            f -> f.withMarshaller(CreateDomainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDomainRequest::getBody, CreateDomainRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genFordeleteDomain();
+    public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genForDeleteDomain();
 
-    private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genFordeleteDomain() {
+    private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genForDeleteDomain() {
         // basic
         HttpRequestDef.Builder<DeleteDomainRequest, DeleteDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainRequest.class, DeleteDomainResponse.class)
@@ -1098,32 +994,27 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainRequest::getDomainId, DeleteDomainRequest::setDomainId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainRequest::getXEnterpriseProjectID,
+                DeleteDomainRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainRequest::getXEnvironmentID, DeleteDomainRequest::setXEnvironmentID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDomainsRequest, ListDomainsResponse> listDomains = genForlistDomains();
+    public static final HttpRequestDef<ListDomainsRequest, ListDomainsResponse> listDomains = genForListDomains();
 
-    private static HttpRequestDef<ListDomainsRequest, ListDomainsResponse> genForlistDomains() {
+    private static HttpRequestDef<ListDomainsRequest, ListDomainsResponse> genForListDomains() {
         // basic
         HttpRequestDef.Builder<ListDomainsRequest, ListDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainsRequest.class, ListDomainsResponse.class)
@@ -1136,25 +1027,22 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getXEnterpriseProjectID,
+                ListDomainsRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getXEnvironmentID, ListDomainsRequest::setXEnvironmentID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEipsRequest, ListEipsResponse> listEips = genForlistEips();
+    public static final HttpRequestDef<ListEipsRequest, ListEipsResponse> listEips = genForListEips();
 
-    private static HttpRequestDef<ListEipsRequest, ListEipsResponse> genForlistEips() {
+    private static HttpRequestDef<ListEipsRequest, ListEipsResponse> genForListEips() {
         // basic
         HttpRequestDef.Builder<ListEipsRequest, ListEipsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEipsRequest.class, ListEipsResponse.class)
@@ -1167,25 +1055,21 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipsRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getXEnterpriseProjectID, ListEipsRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipsRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getXEnvironmentID, ListEipsRequest::setXEnvironmentID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateEipRequest, UpdateEipResponse> updateEip = genForupdateEip();
+    public static final HttpRequestDef<UpdateEipRequest, UpdateEipResponse> updateEip = genForUpdateEip();
 
-    private static HttpRequestDef<UpdateEipRequest, UpdateEipResponse> genForupdateEip() {
+    private static HttpRequestDef<UpdateEipRequest, UpdateEipResponse> genForUpdateEip() {
         // basic
         HttpRequestDef.Builder<UpdateEipRequest, UpdateEipResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEipRequest.class, UpdateEipResponse.class)
@@ -1198,23 +1082,18 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEipRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(UpdateEipRequest::getXEnterpriseProjectID,
+                UpdateEipRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEipRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(UpdateEipRequest::getXEnvironmentID, UpdateEipRequest::setXEnvironmentID));
         builder.<UpdateEipRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEipRequestBody.class),
-            f -> f.withMarshaller(UpdateEipRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEipRequest::getBody, UpdateEipRequest::setBody));
 
         // response
 
@@ -1222,9 +1101,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> createEnvironment =
-        genForcreateEnvironment();
+        genForCreateEnvironment();
 
-    private static HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> genForcreateEnvironment() {
+    private static HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> genForCreateEnvironment() {
         // basic
         HttpRequestDef.Builder<CreateEnvironmentRequest, CreateEnvironmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEnvironmentRequest.class, CreateEnvironmentResponse.class)
@@ -1237,16 +1116,13 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEnvironmentRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentRequest::getXEnterpriseProjectID,
+                CreateEnvironmentRequest::setXEnterpriseProjectID));
         builder.<CreateEnvironmentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEnvironmentRequestBody.class),
-            f -> f.withMarshaller(CreateEnvironmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentRequest::getBody, CreateEnvironmentRequest::setBody));
 
         // response
 
@@ -1254,9 +1130,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<DeleteEnvironmentRequest, DeleteEnvironmentResponse> deleteEnvironment =
-        genFordeleteEnvironment();
+        genForDeleteEnvironment();
 
-    private static HttpRequestDef<DeleteEnvironmentRequest, DeleteEnvironmentResponse> genFordeleteEnvironment() {
+    private static HttpRequestDef<DeleteEnvironmentRequest, DeleteEnvironmentResponse> genForDeleteEnvironment() {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentRequest, DeleteEnvironmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvironmentRequest.class, DeleteEnvironmentResponse.class)
@@ -1269,16 +1145,14 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentRequest::getEnvironmentId,
+                DeleteEnvironmentRequest::setEnvironmentId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentRequest::getXEnterpriseProjectID,
+                DeleteEnvironmentRequest::setXEnterpriseProjectID));
 
         // response
 
@@ -1286,9 +1160,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironments =
-        genForlistEnvironments();
+        genForListEnvironments();
 
-    private static HttpRequestDef<ListEnvironmentsRequest, ListEnvironmentsResponse> genForlistEnvironments() {
+    private static HttpRequestDef<ListEnvironmentsRequest, ListEnvironmentsResponse> genForListEnvironments() {
         // basic
         HttpRequestDef.Builder<ListEnvironmentsRequest, ListEnvironmentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentsRequest.class, ListEnvironmentsResponse.class)
@@ -1301,18 +1175,17 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentsRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentsRequest::getXEnterpriseProjectID,
+                ListEnvironmentsRequest::setXEnterpriseProjectID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RetryJobRequest, RetryJobResponse> retryJob = genForretryJob();
+    public static final HttpRequestDef<RetryJobRequest, RetryJobResponse> retryJob = genForRetryJob();
 
-    private static HttpRequestDef<RetryJobRequest, RetryJobResponse> genForretryJob() {
+    private static HttpRequestDef<RetryJobRequest, RetryJobResponse> genForRetryJob() {
         // basic
         HttpRequestDef.Builder<RetryJobRequest, RetryJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RetryJobRequest.class, RetryJobResponse.class)
@@ -1325,32 +1198,26 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(RetryJobRequest::getJobId, RetryJobRequest::setJobId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryJobRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(RetryJobRequest::getXEnterpriseProjectID, RetryJobRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryJobRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(RetryJobRequest::getXEnvironmentID, RetryJobRequest::setXEnvironmentID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
+    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForShowJob();
 
-    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
+    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForShowJob() {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
@@ -1363,23 +1230,17 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobRequest::getJobId, ShowJobRequest::setJobId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ShowJobRequest::getXEnterpriseProjectID, ShowJobRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ShowJobRequest::getXEnvironmentID, ShowJobRequest::setXEnvironmentID));
 
         // response
 
@@ -1387,9 +1248,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<CreateMonitorSystemRequest, CreateMonitorSystemResponse> createMonitorSystem =
-        genForcreateMonitorSystem();
+        genForCreateMonitorSystem();
 
-    private static HttpRequestDef<CreateMonitorSystemRequest, CreateMonitorSystemResponse> genForcreateMonitorSystem() {
+    private static HttpRequestDef<CreateMonitorSystemRequest, CreateMonitorSystemResponse> genForCreateMonitorSystem() {
         // basic
         HttpRequestDef.Builder<CreateMonitorSystemRequest, CreateMonitorSystemResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMonitorSystemRequest.class, CreateMonitorSystemResponse.class)
@@ -1402,23 +1263,19 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMonitorSystemRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateMonitorSystemRequest::getXEnterpriseProjectID,
+                CreateMonitorSystemRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMonitorSystemRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(CreateMonitorSystemRequest::getXEnvironmentID,
+                CreateMonitorSystemRequest::setXEnvironmentID));
         builder.<MonitorSystemRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MonitorSystemRequestBody.class),
-            f -> f.withMarshaller(CreateMonitorSystemRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMonitorSystemRequest::getBody, CreateMonitorSystemRequest::setBody));
 
         // response
 
@@ -1426,9 +1283,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ShowMonitorSystemRequest, ShowMonitorSystemResponse> showMonitorSystem =
-        genForshowMonitorSystem();
+        genForShowMonitorSystem();
 
-    private static HttpRequestDef<ShowMonitorSystemRequest, ShowMonitorSystemResponse> genForshowMonitorSystem() {
+    private static HttpRequestDef<ShowMonitorSystemRequest, ShowMonitorSystemResponse> genForShowMonitorSystem() {
         // basic
         HttpRequestDef.Builder<ShowMonitorSystemRequest, ShowMonitorSystemResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMonitorSystemRequest.class, ShowMonitorSystemResponse.class)
@@ -1441,16 +1298,14 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMonitorSystemRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ShowMonitorSystemRequest::getXEnterpriseProjectID,
+                ShowMonitorSystemRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMonitorSystemRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ShowMonitorSystemRequest::getXEnvironmentID,
+                ShowMonitorSystemRequest::setXEnvironmentID));
 
         // response
 
@@ -1458,9 +1313,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse> updateMonitorSystem =
-        genForupdateMonitorSystem();
+        genForUpdateMonitorSystem();
 
-    private static HttpRequestDef<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse> genForupdateMonitorSystem() {
+    private static HttpRequestDef<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse> genForUpdateMonitorSystem() {
         // basic
         HttpRequestDef.Builder<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMonitorSystemRequest.class, UpdateMonitorSystemResponse.class)
@@ -1473,30 +1328,25 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMonitorSystemRequest::getMonitorSystemId, (req, v) -> {
-                req.setMonitorSystemId(v);
-            }));
+            f -> f.withMarshaller(UpdateMonitorSystemRequest::getMonitorSystemId,
+                UpdateMonitorSystemRequest::setMonitorSystemId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMonitorSystemRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(UpdateMonitorSystemRequest::getXEnterpriseProjectID,
+                UpdateMonitorSystemRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMonitorSystemRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(UpdateMonitorSystemRequest::getXEnvironmentID,
+                UpdateMonitorSystemRequest::setXEnvironmentID));
         builder.<MonitorSystemRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MonitorSystemRequestBody.class),
-            f -> f.withMarshaller(UpdateMonitorSystemRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMonitorSystemRequest::getBody, UpdateMonitorSystemRequest::setBody));
 
         // response
 
@@ -1504,9 +1354,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<CreateTimerRuleRequest, CreateTimerRuleResponse> createTimerRule =
-        genForcreateTimerRule();
+        genForCreateTimerRule();
 
-    private static HttpRequestDef<CreateTimerRuleRequest, CreateTimerRuleResponse> genForcreateTimerRule() {
+    private static HttpRequestDef<CreateTimerRuleRequest, CreateTimerRuleResponse> genForCreateTimerRule() {
         // basic
         HttpRequestDef.Builder<CreateTimerRuleRequest, CreateTimerRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTimerRuleRequest.class, CreateTimerRuleResponse.class)
@@ -1519,23 +1369,19 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTimerRuleRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateTimerRuleRequest::getXEnterpriseProjectID,
+                CreateTimerRuleRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTimerRuleRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(CreateTimerRuleRequest::getXEnvironmentID,
+                CreateTimerRuleRequest::setXEnvironmentID));
         builder.<CreateTimerRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTimerRuleReq.class),
-            f -> f.withMarshaller(CreateTimerRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTimerRuleRequest::getBody, CreateTimerRuleRequest::setBody));
 
         // response
 
@@ -1543,9 +1389,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<DeleteTimerRuleRequest, DeleteTimerRuleResponse> deleteTimerRule =
-        genFordeleteTimerRule();
+        genForDeleteTimerRule();
 
-    private static HttpRequestDef<DeleteTimerRuleRequest, DeleteTimerRuleResponse> genFordeleteTimerRule() {
+    private static HttpRequestDef<DeleteTimerRuleRequest, DeleteTimerRuleResponse> genForDeleteTimerRule() {
         // basic
         HttpRequestDef.Builder<DeleteTimerRuleRequest, DeleteTimerRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTimerRuleRequest.class, DeleteTimerRuleResponse.class)
@@ -1558,23 +1404,19 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTimerRuleRequest::getTimerRuleId, (req, v) -> {
-                req.setTimerRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteTimerRuleRequest::getTimerRuleId, DeleteTimerRuleRequest::setTimerRuleId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTimerRuleRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteTimerRuleRequest::getXEnterpriseProjectID,
+                DeleteTimerRuleRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTimerRuleRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(DeleteTimerRuleRequest::getXEnvironmentID,
+                DeleteTimerRuleRequest::setXEnvironmentID));
 
         // response
 
@@ -1582,9 +1424,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ListTimerRulesRequest, ListTimerRulesResponse> listTimerRules =
-        genForlistTimerRules();
+        genForListTimerRules();
 
-    private static HttpRequestDef<ListTimerRulesRequest, ListTimerRulesResponse> genForlistTimerRules() {
+    private static HttpRequestDef<ListTimerRulesRequest, ListTimerRulesResponse> genForListTimerRules() {
         // basic
         HttpRequestDef.Builder<ListTimerRulesRequest, ListTimerRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTimerRulesRequest.class, ListTimerRulesResponse.class)
@@ -1597,16 +1439,13 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTimerRulesRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListTimerRulesRequest::getXEnterpriseProjectID,
+                ListTimerRulesRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTimerRulesRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListTimerRulesRequest::getXEnvironmentID, ListTimerRulesRequest::setXEnvironmentID));
 
         // response
 
@@ -1614,9 +1453,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<ShowExecutionResultRequest, ShowExecutionResultResponse> showExecutionResult =
-        genForshowExecutionResult();
+        genForShowExecutionResult();
 
-    private static HttpRequestDef<ShowExecutionResultRequest, ShowExecutionResultResponse> genForshowExecutionResult() {
+    private static HttpRequestDef<ShowExecutionResultRequest, ShowExecutionResultResponse> genForShowExecutionResult() {
         // basic
         HttpRequestDef.Builder<ShowExecutionResultRequest, ShowExecutionResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowExecutionResultRequest.class, ShowExecutionResultResponse.class)
@@ -1629,23 +1468,20 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExecutionResultRequest::getTimerRuleId, (req, v) -> {
-                req.setTimerRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowExecutionResultRequest::getTimerRuleId,
+                ShowExecutionResultRequest::setTimerRuleId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExecutionResultRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ShowExecutionResultRequest::getXEnterpriseProjectID,
+                ShowExecutionResultRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExecutionResultRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ShowExecutionResultRequest::getXEnvironmentID,
+                ShowExecutionResultRequest::setXEnvironmentID));
 
         // response
 
@@ -1653,9 +1489,9 @@ public class CaeMeta {
     }
 
     public static final HttpRequestDef<UpdateTimerRuleRequest, UpdateTimerRuleResponse> updateTimerRule =
-        genForupdateTimerRule();
+        genForUpdateTimerRule();
 
-    private static HttpRequestDef<UpdateTimerRuleRequest, UpdateTimerRuleResponse> genForupdateTimerRule() {
+    private static HttpRequestDef<UpdateTimerRuleRequest, UpdateTimerRuleResponse> genForUpdateTimerRule() {
         // basic
         HttpRequestDef.Builder<UpdateTimerRuleRequest, UpdateTimerRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTimerRuleRequest.class, UpdateTimerRuleResponse.class)
@@ -1668,39 +1504,33 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTimerRuleRequest::getTimerRuleId, (req, v) -> {
-                req.setTimerRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateTimerRuleRequest::getTimerRuleId, UpdateTimerRuleRequest::setTimerRuleId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTimerRuleRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(UpdateTimerRuleRequest::getXEnterpriseProjectID,
+                UpdateTimerRuleRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTimerRuleRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(UpdateTimerRuleRequest::getXEnvironmentID,
+                UpdateTimerRuleRequest::setXEnvironmentID));
         builder.<UpdateTimerRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTimerRuleReq.class),
-            f -> f.withMarshaller(UpdateTimerRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTimerRuleRequest::getBody, UpdateTimerRuleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateVolumeRequest, CreateVolumeResponse> createVolume = genForcreateVolume();
+    public static final HttpRequestDef<CreateVolumeRequest, CreateVolumeResponse> createVolume = genForCreateVolume();
 
-    private static HttpRequestDef<CreateVolumeRequest, CreateVolumeResponse> genForcreateVolume() {
+    private static HttpRequestDef<CreateVolumeRequest, CreateVolumeResponse> genForCreateVolume() {
         // basic
         HttpRequestDef.Builder<CreateVolumeRequest, CreateVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVolumeRequest.class, CreateVolumeResponse.class)
@@ -1713,32 +1543,27 @@ public class CaeMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVolumeRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateVolumeRequest::getXEnterpriseProjectID,
+                CreateVolumeRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVolumeRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(CreateVolumeRequest::getXEnvironmentID, CreateVolumeRequest::setXEnvironmentID));
         builder.<CreateVolumeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVolumeReq.class),
-            f -> f.withMarshaller(CreateVolumeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVolumeRequest::getBody, CreateVolumeRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteVolumeRequest, DeleteVolumeResponse> deleteVolume = genFordeleteVolume();
+    public static final HttpRequestDef<DeleteVolumeRequest, DeleteVolumeResponse> deleteVolume = genForDeleteVolume();
 
-    private static HttpRequestDef<DeleteVolumeRequest, DeleteVolumeResponse> genFordeleteVolume() {
+    private static HttpRequestDef<DeleteVolumeRequest, DeleteVolumeResponse> genForDeleteVolume() {
         // basic
         HttpRequestDef.Builder<DeleteVolumeRequest, DeleteVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVolumeRequest.class, DeleteVolumeResponse.class)
@@ -1751,32 +1576,27 @@ public class CaeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVolumeRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteVolumeRequest::getId, DeleteVolumeRequest::setId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVolumeRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteVolumeRequest::getXEnterpriseProjectID,
+                DeleteVolumeRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVolumeRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(DeleteVolumeRequest::getXEnvironmentID, DeleteVolumeRequest::setXEnvironmentID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListVolumesRequest, ListVolumesResponse> listVolumes = genForlistVolumes();
+    public static final HttpRequestDef<ListVolumesRequest, ListVolumesResponse> listVolumes = genForListVolumes();
 
-    private static HttpRequestDef<ListVolumesRequest, ListVolumesResponse> genForlistVolumes() {
+    private static HttpRequestDef<ListVolumesRequest, ListVolumesResponse> genForListVolumes() {
         // basic
         HttpRequestDef.Builder<ListVolumesRequest, ListVolumesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVolumesRequest.class, ListVolumesResponse.class)
@@ -1789,23 +1609,18 @@ public class CaeMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getResourceType, ListVolumesRequest::setResourceType));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getXEnterpriseProjectID,
+                ListVolumesRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("X-Environment-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getXEnvironmentID, (req, v) -> {
-                req.setXEnvironmentID(v);
-            }));
+            f -> f.withMarshaller(ListVolumesRequest::getXEnvironmentID, ListVolumesRequest::setXEnvironmentID));
 
         // response
 

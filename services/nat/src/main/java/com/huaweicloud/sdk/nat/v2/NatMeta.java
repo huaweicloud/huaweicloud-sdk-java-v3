@@ -138,9 +138,9 @@ import java.util.List;
 public class NatMeta {
 
     public static final HttpRequestDef<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse> batchCreateNatGatewayDnatRules =
-        genForbatchCreateNatGatewayDnatRules();
+        genForBatchCreateNatGatewayDnatRules();
 
-    private static HttpRequestDef<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse> genForbatchCreateNatGatewayDnatRules() {
+    private static HttpRequestDef<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse> genForBatchCreateNatGatewayDnatRules() {
         // basic
         HttpRequestDef.Builder<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse> builder =
             HttpRequestDef
@@ -156,9 +156,8 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateNatGatewayDnatRulesRequestBody.class),
-            f -> f.withMarshaller(BatchCreateNatGatewayDnatRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateNatGatewayDnatRulesRequest::getBody,
+                BatchCreateNatGatewayDnatRulesRequest::setBody));
 
         // response
 
@@ -166,9 +165,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<CreateNatGatewayDnatRuleRequest, CreateNatGatewayDnatRuleResponse> createNatGatewayDnatRule =
-        genForcreateNatGatewayDnatRule();
+        genForCreateNatGatewayDnatRule();
 
-    private static HttpRequestDef<CreateNatGatewayDnatRuleRequest, CreateNatGatewayDnatRuleResponse> genForcreateNatGatewayDnatRule() {
+    private static HttpRequestDef<CreateNatGatewayDnatRuleRequest, CreateNatGatewayDnatRuleResponse> genForCreateNatGatewayDnatRule() {
         // basic
         HttpRequestDef.Builder<CreateNatGatewayDnatRuleRequest, CreateNatGatewayDnatRuleResponse> builder =
             HttpRequestDef
@@ -182,9 +181,7 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNatGatewayDnatRuleOption.class),
-            f -> f.withMarshaller(CreateNatGatewayDnatRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNatGatewayDnatRuleRequest::getBody, CreateNatGatewayDnatRuleRequest::setBody));
 
         // response
 
@@ -192,9 +189,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<CreatePrivateDnatRequest, CreatePrivateDnatResponse> createPrivateDnat =
-        genForcreatePrivateDnat();
+        genForCreatePrivateDnat();
 
-    private static HttpRequestDef<CreatePrivateDnatRequest, CreatePrivateDnatResponse> genForcreatePrivateDnat() {
+    private static HttpRequestDef<CreatePrivateDnatRequest, CreatePrivateDnatResponse> genForCreatePrivateDnat() {
         // basic
         HttpRequestDef.Builder<CreatePrivateDnatRequest, CreatePrivateDnatResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePrivateDnatRequest.class, CreatePrivateDnatResponse.class)
@@ -207,9 +204,7 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePrivateDnatOptionBody.class),
-            f -> f.withMarshaller(CreatePrivateDnatRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePrivateDnatRequest::getBody, CreatePrivateDnatRequest::setBody));
 
         // response
 
@@ -217,9 +212,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<DeleteNatGatewayDnatRuleRequest, DeleteNatGatewayDnatRuleResponse> deleteNatGatewayDnatRule =
-        genFordeleteNatGatewayDnatRule();
+        genForDeleteNatGatewayDnatRule();
 
-    private static HttpRequestDef<DeleteNatGatewayDnatRuleRequest, DeleteNatGatewayDnatRuleResponse> genFordeleteNatGatewayDnatRule() {
+    private static HttpRequestDef<DeleteNatGatewayDnatRuleRequest, DeleteNatGatewayDnatRuleResponse> genForDeleteNatGatewayDnatRule() {
         // basic
         HttpRequestDef.Builder<DeleteNatGatewayDnatRuleRequest, DeleteNatGatewayDnatRuleResponse> builder =
             HttpRequestDef
@@ -235,16 +230,14 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNatGatewayDnatRuleRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(DeleteNatGatewayDnatRuleRequest::getNatGatewayId,
+                DeleteNatGatewayDnatRuleRequest::setNatGatewayId));
         builder.<String>withRequestField("dnat_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNatGatewayDnatRuleRequest::getDnatRuleId, (req, v) -> {
-                req.setDnatRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteNatGatewayDnatRuleRequest::getDnatRuleId,
+                DeleteNatGatewayDnatRuleRequest::setDnatRuleId));
 
         // response
 
@@ -252,9 +245,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<DeletePrivateDnatRequest, DeletePrivateDnatResponse> deletePrivateDnat =
-        genFordeletePrivateDnat();
+        genForDeletePrivateDnat();
 
-    private static HttpRequestDef<DeletePrivateDnatRequest, DeletePrivateDnatResponse> genFordeletePrivateDnat() {
+    private static HttpRequestDef<DeletePrivateDnatRequest, DeletePrivateDnatResponse> genForDeletePrivateDnat() {
         // basic
         HttpRequestDef.Builder<DeletePrivateDnatRequest, DeletePrivateDnatResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePrivateDnatRequest.class, DeletePrivateDnatResponse.class)
@@ -267,9 +260,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePrivateDnatRequest::getDnatRuleId, (req, v) -> {
-                req.setDnatRuleId(v);
-            }));
+            f -> f.withMarshaller(DeletePrivateDnatRequest::getDnatRuleId, DeletePrivateDnatRequest::setDnatRuleId));
 
         // response
 
@@ -277,9 +268,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListNatGatewayDnatRulesRequest, ListNatGatewayDnatRulesResponse> listNatGatewayDnatRules =
-        genForlistNatGatewayDnatRules();
+        genForListNatGatewayDnatRules();
 
-    private static HttpRequestDef<ListNatGatewayDnatRulesRequest, ListNatGatewayDnatRulesResponse> genForlistNatGatewayDnatRules() {
+    private static HttpRequestDef<ListNatGatewayDnatRulesRequest, ListNatGatewayDnatRulesResponse> genForListNatGatewayDnatRules() {
         // basic
         HttpRequestDef.Builder<ListNatGatewayDnatRulesRequest, ListNatGatewayDnatRulesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListNatGatewayDnatRulesRequest.class, ListNatGatewayDnatRulesResponse.class)
@@ -292,100 +283,84 @@ public class NatMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getAdminStateUp, (req, v) -> {
-                req.setAdminStateUp(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getAdminStateUp,
+                ListNatGatewayDnatRulesRequest::setAdminStateUp));
         builder.<Integer>withRequestField("external_service_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getExternalServicePort, (req, v) -> {
-                req.setExternalServicePort(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getExternalServicePort,
+                ListNatGatewayDnatRulesRequest::setExternalServicePort));
         builder.<String>withRequestField("floating_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getFloatingIpAddress, (req, v) -> {
-                req.setFloatingIpAddress(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getFloatingIpAddress,
+                ListNatGatewayDnatRulesRequest::setFloatingIpAddress));
         builder.<List<ListNatGatewayDnatRulesRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getStatus,
+                ListNatGatewayDnatRulesRequest::setStatus));
         builder.<String>withRequestField("floating_ip_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getFloatingIpId, (req, v) -> {
-                req.setFloatingIpId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getFloatingIpId,
+                ListNatGatewayDnatRulesRequest::setFloatingIpId));
         builder.<Integer>withRequestField("internal_service_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getInternalServicePort, (req, v) -> {
-                req.setInternalServicePort(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getInternalServicePort,
+                ListNatGatewayDnatRulesRequest::setInternalServicePort));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getLimit, ListNatGatewayDnatRulesRequest::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getId, ListNatGatewayDnatRulesRequest::setId));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getDescription,
+                ListNatGatewayDnatRulesRequest::setDescription));
         builder.<String>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getCreatedAt, (req, v) -> {
-                req.setCreatedAt(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getCreatedAt,
+                ListNatGatewayDnatRulesRequest::setCreatedAt));
         builder.<List<String>>withRequestField("nat_gateway_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getNatGatewayId,
+                ListNatGatewayDnatRulesRequest::setNatGatewayId));
         builder.<String>withRequestField("port_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getPortId, (req, v) -> {
-                req.setPortId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getPortId,
+                ListNatGatewayDnatRulesRequest::setPortId));
         builder.<String>withRequestField("private_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getPrivateIp, (req, v) -> {
-                req.setPrivateIp(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getPrivateIp,
+                ListNatGatewayDnatRulesRequest::setPrivateIp));
         builder.<List<String>>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getProtocol,
+                ListNatGatewayDnatRulesRequest::setProtocol));
 
         // response
 
@@ -393,9 +368,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListPrivateDnatsRequest, ListPrivateDnatsResponse> listPrivateDnats =
-        genForlistPrivateDnats();
+        genForListPrivateDnats();
 
-    private static HttpRequestDef<ListPrivateDnatsRequest, ListPrivateDnatsResponse> genForlistPrivateDnats() {
+    private static HttpRequestDef<ListPrivateDnatsRequest, ListPrivateDnatsResponse> genForListPrivateDnats() {
         // basic
         HttpRequestDef.Builder<ListPrivateDnatsRequest, ListPrivateDnatsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrivateDnatsRequest.class, ListPrivateDnatsResponse.class)
@@ -408,86 +383,66 @@ public class NatMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getLimit, ListPrivateDnatsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getMarker, ListPrivateDnatsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getPageReverse, ListPrivateDnatsRequest::setPageReverse));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getId, ListPrivateDnatsRequest::setId));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getEnterpriseProjectId,
+                ListPrivateDnatsRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getDescription, ListPrivateDnatsRequest::setDescription));
         builder.<List<String>>withRequestField("gateway_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getGatewayId, (req, v) -> {
-                req.setGatewayId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getGatewayId, ListPrivateDnatsRequest::setGatewayId));
         builder.<List<String>>withRequestField("transit_ip_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getTransitIpId, (req, v) -> {
-                req.setTransitIpId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getTransitIpId, ListPrivateDnatsRequest::setTransitIpId));
         builder.<List<String>>withRequestField("external_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getExternalIpAddress, (req, v) -> {
-                req.setExternalIpAddress(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getExternalIpAddress,
+                ListPrivateDnatsRequest::setExternalIpAddress));
         builder.<List<String>>withRequestField("network_interface_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getNetworkInterfaceId, (req, v) -> {
-                req.setNetworkInterfaceId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getNetworkInterfaceId,
+                ListPrivateDnatsRequest::setNetworkInterfaceId));
         builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getType, ListPrivateDnatsRequest::setType));
         builder.<List<String>>withRequestField("private_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getPrivateIpAddress, (req, v) -> {
-                req.setPrivateIpAddress(v);
-            }));
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getPrivateIpAddress,
+                ListPrivateDnatsRequest::setPrivateIpAddress));
 
         // response
 
@@ -495,9 +450,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ShowNatGatewayDnatRuleRequest, ShowNatGatewayDnatRuleResponse> showNatGatewayDnatRule =
-        genForshowNatGatewayDnatRule();
+        genForShowNatGatewayDnatRule();
 
-    private static HttpRequestDef<ShowNatGatewayDnatRuleRequest, ShowNatGatewayDnatRuleResponse> genForshowNatGatewayDnatRule() {
+    private static HttpRequestDef<ShowNatGatewayDnatRuleRequest, ShowNatGatewayDnatRuleResponse> genForShowNatGatewayDnatRule() {
         // basic
         HttpRequestDef.Builder<ShowNatGatewayDnatRuleRequest, ShowNatGatewayDnatRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowNatGatewayDnatRuleRequest.class, ShowNatGatewayDnatRuleResponse.class)
@@ -510,9 +465,8 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNatGatewayDnatRuleRequest::getDnatRuleId, (req, v) -> {
-                req.setDnatRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowNatGatewayDnatRuleRequest::getDnatRuleId,
+                ShowNatGatewayDnatRuleRequest::setDnatRuleId));
 
         // response
 
@@ -520,9 +474,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ShowPrivateDnatRequest, ShowPrivateDnatResponse> showPrivateDnat =
-        genForshowPrivateDnat();
+        genForShowPrivateDnat();
 
-    private static HttpRequestDef<ShowPrivateDnatRequest, ShowPrivateDnatResponse> genForshowPrivateDnat() {
+    private static HttpRequestDef<ShowPrivateDnatRequest, ShowPrivateDnatResponse> genForShowPrivateDnat() {
         // basic
         HttpRequestDef.Builder<ShowPrivateDnatRequest, ShowPrivateDnatResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPrivateDnatRequest.class, ShowPrivateDnatResponse.class)
@@ -535,9 +489,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPrivateDnatRequest::getDnatRuleId, (req, v) -> {
-                req.setDnatRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowPrivateDnatRequest::getDnatRuleId, ShowPrivateDnatRequest::setDnatRuleId));
 
         // response
 
@@ -545,9 +497,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<UpdateNatGatewayDnatRuleRequest, UpdateNatGatewayDnatRuleResponse> updateNatGatewayDnatRule =
-        genForupdateNatGatewayDnatRule();
+        genForUpdateNatGatewayDnatRule();
 
-    private static HttpRequestDef<UpdateNatGatewayDnatRuleRequest, UpdateNatGatewayDnatRuleResponse> genForupdateNatGatewayDnatRule() {
+    private static HttpRequestDef<UpdateNatGatewayDnatRuleRequest, UpdateNatGatewayDnatRuleResponse> genForUpdateNatGatewayDnatRule() {
         // basic
         HttpRequestDef.Builder<UpdateNatGatewayDnatRuleRequest, UpdateNatGatewayDnatRuleResponse> builder =
             HttpRequestDef
@@ -561,16 +513,13 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNatGatewayDnatRuleRequest::getDnatRuleId, (req, v) -> {
-                req.setDnatRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateNatGatewayDnatRuleRequest::getDnatRuleId,
+                UpdateNatGatewayDnatRuleRequest::setDnatRuleId));
         builder.<UpdateNatGatewayDnatRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNatGatewayDnatRuleRequestBody.class),
-            f -> f.withMarshaller(UpdateNatGatewayDnatRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNatGatewayDnatRuleRequest::getBody, UpdateNatGatewayDnatRuleRequest::setBody));
 
         // response
 
@@ -578,9 +527,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<UpdatePrivateDnatRequest, UpdatePrivateDnatResponse> updatePrivateDnat =
-        genForupdatePrivateDnat();
+        genForUpdatePrivateDnat();
 
-    private static HttpRequestDef<UpdatePrivateDnatRequest, UpdatePrivateDnatResponse> genForupdatePrivateDnat() {
+    private static HttpRequestDef<UpdatePrivateDnatRequest, UpdatePrivateDnatResponse> genForUpdatePrivateDnat() {
         // basic
         HttpRequestDef.Builder<UpdatePrivateDnatRequest, UpdatePrivateDnatResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePrivateDnatRequest.class, UpdatePrivateDnatResponse.class)
@@ -593,16 +542,12 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePrivateDnatRequest::getDnatRuleId, (req, v) -> {
-                req.setDnatRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateDnatRequest::getDnatRuleId, UpdatePrivateDnatRequest::setDnatRuleId));
         builder.<UpdatePrivateDnatRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePrivateDnatRequestBody.class),
-            f -> f.withMarshaller(UpdatePrivateDnatRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateDnatRequest::getBody, UpdatePrivateDnatRequest::setBody));
 
         // response
 
@@ -610,9 +555,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<BatchCreateDeleteTransitIpTagsRequest, BatchCreateDeleteTransitIpTagsResponse> batchCreateDeleteTransitIpTags =
-        genForbatchCreateDeleteTransitIpTags();
+        genForBatchCreateDeleteTransitIpTags();
 
-    private static HttpRequestDef<BatchCreateDeleteTransitIpTagsRequest, BatchCreateDeleteTransitIpTagsResponse> genForbatchCreateDeleteTransitIpTags() {
+    private static HttpRequestDef<BatchCreateDeleteTransitIpTagsRequest, BatchCreateDeleteTransitIpTagsResponse> genForBatchCreateDeleteTransitIpTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateDeleteTransitIpTagsRequest, BatchCreateDeleteTransitIpTagsResponse> builder =
             HttpRequestDef
@@ -628,16 +573,14 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateDeleteTransitIpTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDeleteTransitIpTagsRequest::getResourceId,
+                BatchCreateDeleteTransitIpTagsRequest::setResourceId));
         builder.<BatchOperateResourceTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchOperateResourceTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateDeleteTransitIpTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDeleteTransitIpTagsRequest::getBody,
+                BatchCreateDeleteTransitIpTagsRequest::setBody));
 
         // response
 
@@ -645,9 +588,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<CreateTransitIpTagRequest, CreateTransitIpTagResponse> createTransitIpTag =
-        genForcreateTransitIpTag();
+        genForCreateTransitIpTag();
 
-    private static HttpRequestDef<CreateTransitIpTagRequest, CreateTransitIpTagResponse> genForcreateTransitIpTag() {
+    private static HttpRequestDef<CreateTransitIpTagRequest, CreateTransitIpTagResponse> genForCreateTransitIpTag() {
         // basic
         HttpRequestDef.Builder<CreateTransitIpTagRequest, CreateTransitIpTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTransitIpTagRequest.class, CreateTransitIpTagResponse.class)
@@ -660,16 +603,12 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTransitIpTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateTransitIpTagRequest::getResourceId, CreateTransitIpTagRequest::setResourceId));
         builder.<CreateResourceTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResourceTagRequestBody.class),
-            f -> f.withMarshaller(CreateTransitIpTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTransitIpTagRequest::getBody, CreateTransitIpTagRequest::setBody));
 
         // response
 
@@ -677,9 +616,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<DeleteTransitIpTagRequest, DeleteTransitIpTagResponse> deleteTransitIpTag =
-        genFordeleteTransitIpTag();
+        genForDeleteTransitIpTag();
 
-    private static HttpRequestDef<DeleteTransitIpTagRequest, DeleteTransitIpTagResponse> genFordeleteTransitIpTag() {
+    private static HttpRequestDef<DeleteTransitIpTagRequest, DeleteTransitIpTagResponse> genForDeleteTransitIpTag() {
         // basic
         HttpRequestDef.Builder<DeleteTransitIpTagRequest, DeleteTransitIpTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTransitIpTagRequest.class, DeleteTransitIpTagResponse.class)
@@ -692,33 +631,27 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTransitIpTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteTransitIpTagRequest::getKey, DeleteTransitIpTagRequest::setKey));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTransitIpTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTransitIpTagRequest::getResourceId, DeleteTransitIpTagRequest::setResourceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteTransitIpTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteTransitIpTagResponse::getBody, DeleteTransitIpTagResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListTransitIpTagsRequest, ListTransitIpTagsResponse> listTransitIpTags =
-        genForlistTransitIpTags();
+        genForListTransitIpTags();
 
-    private static HttpRequestDef<ListTransitIpTagsRequest, ListTransitIpTagsResponse> genForlistTransitIpTags() {
+    private static HttpRequestDef<ListTransitIpTagsRequest, ListTransitIpTagsResponse> genForListTransitIpTags() {
         // basic
         HttpRequestDef.Builder<ListTransitIpTagsRequest, ListTransitIpTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTransitIpTagsRequest.class, ListTransitIpTagsResponse.class)
@@ -734,9 +667,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListTransitIpsByTagsRequest, ListTransitIpsByTagsResponse> listTransitIpsByTags =
-        genForlistTransitIpsByTags();
+        genForListTransitIpsByTags();
 
-    private static HttpRequestDef<ListTransitIpsByTagsRequest, ListTransitIpsByTagsResponse> genForlistTransitIpsByTags() {
+    private static HttpRequestDef<ListTransitIpsByTagsRequest, ListTransitIpsByTagsResponse> genForListTransitIpsByTags() {
         // basic
         HttpRequestDef.Builder<ListTransitIpsByTagsRequest, ListTransitIpsByTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListTransitIpsByTagsRequest.class, ListTransitIpsByTagsResponse.class)
@@ -749,9 +682,7 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTagResourceInstancesRequestBody.class),
-            f -> f.withMarshaller(ListTransitIpsByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListTransitIpsByTagsRequest::getBody, ListTransitIpsByTagsRequest::setBody));
 
         // response
 
@@ -759,9 +690,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ShowTransitIpTagsRequest, ShowTransitIpTagsResponse> showTransitIpTags =
-        genForshowTransitIpTags();
+        genForShowTransitIpTags();
 
-    private static HttpRequestDef<ShowTransitIpTagsRequest, ShowTransitIpTagsResponse> genForshowTransitIpTags() {
+    private static HttpRequestDef<ShowTransitIpTagsRequest, ShowTransitIpTagsResponse> genForShowTransitIpTags() {
         // basic
         HttpRequestDef.Builder<ShowTransitIpTagsRequest, ShowTransitIpTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTransitIpTagsRequest.class, ShowTransitIpTagsResponse.class)
@@ -774,9 +705,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTransitIpTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowTransitIpTagsRequest::getResourceId, ShowTransitIpTagsRequest::setResourceId));
 
         // response
 
@@ -784,9 +713,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<BatchCreateDeleteNatGatewayTagRequest, BatchCreateDeleteNatGatewayTagResponse> batchCreateDeleteNatGatewayTag =
-        genForbatchCreateDeleteNatGatewayTag();
+        genForBatchCreateDeleteNatGatewayTag();
 
-    private static HttpRequestDef<BatchCreateDeleteNatGatewayTagRequest, BatchCreateDeleteNatGatewayTagResponse> genForbatchCreateDeleteNatGatewayTag() {
+    private static HttpRequestDef<BatchCreateDeleteNatGatewayTagRequest, BatchCreateDeleteNatGatewayTagResponse> genForBatchCreateDeleteNatGatewayTag() {
         // basic
         HttpRequestDef.Builder<BatchCreateDeleteNatGatewayTagRequest, BatchCreateDeleteNatGatewayTagResponse> builder =
             HttpRequestDef
@@ -802,16 +731,14 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateDeleteNatGatewayTagRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDeleteNatGatewayTagRequest::getNatGatewayId,
+                BatchCreateDeleteNatGatewayTagRequest::setNatGatewayId));
         builder.<BatchCreateDeleteNatTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateDeleteNatTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateDeleteNatGatewayTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDeleteNatGatewayTagRequest::getBody,
+                BatchCreateDeleteNatGatewayTagRequest::setBody));
 
         // response
 
@@ -819,9 +746,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<BatchCreateDeletePrivateNatTagsRequest, BatchCreateDeletePrivateNatTagsResponse> batchCreateDeletePrivateNatTags =
-        genForbatchCreateDeletePrivateNatTags();
+        genForBatchCreateDeletePrivateNatTags();
 
-    private static HttpRequestDef<BatchCreateDeletePrivateNatTagsRequest, BatchCreateDeletePrivateNatTagsResponse> genForbatchCreateDeletePrivateNatTags() {
+    private static HttpRequestDef<BatchCreateDeletePrivateNatTagsRequest, BatchCreateDeletePrivateNatTagsResponse> genForBatchCreateDeletePrivateNatTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateDeletePrivateNatTagsRequest, BatchCreateDeletePrivateNatTagsResponse> builder =
             HttpRequestDef
@@ -837,16 +764,14 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateDeletePrivateNatTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDeletePrivateNatTagsRequest::getResourceId,
+                BatchCreateDeletePrivateNatTagsRequest::setResourceId));
         builder.<BatchOperateResourceTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchOperateResourceTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateDeletePrivateNatTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDeletePrivateNatTagsRequest::getBody,
+                BatchCreateDeletePrivateNatTagsRequest::setBody));
 
         // response
 
@@ -854,9 +779,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<CreateNatGatewayRequest, CreateNatGatewayResponse> createNatGateway =
-        genForcreateNatGateway();
+        genForCreateNatGateway();
 
-    private static HttpRequestDef<CreateNatGatewayRequest, CreateNatGatewayResponse> genForcreateNatGateway() {
+    private static HttpRequestDef<CreateNatGatewayRequest, CreateNatGatewayResponse> genForCreateNatGateway() {
         // basic
         HttpRequestDef.Builder<CreateNatGatewayRequest, CreateNatGatewayResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNatGatewayRequest.class, CreateNatGatewayResponse.class)
@@ -869,9 +794,7 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNatGatewayRequestBody.class),
-            f -> f.withMarshaller(CreateNatGatewayRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNatGatewayRequest::getBody, CreateNatGatewayRequest::setBody));
 
         // response
 
@@ -879,9 +802,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> createNatGatewayTag =
-        genForcreateNatGatewayTag();
+        genForCreateNatGatewayTag();
 
-    private static HttpRequestDef<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> genForcreateNatGatewayTag() {
+    private static HttpRequestDef<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> genForCreateNatGatewayTag() {
         // basic
         HttpRequestDef.Builder<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNatGatewayTagRequest.class, CreateNatGatewayTagResponse.class)
@@ -894,16 +817,13 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNatGatewayTagRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(CreateNatGatewayTagRequest::getNatGatewayId,
+                CreateNatGatewayTagRequest::setNatGatewayId));
         builder.<CreateNatTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNatTagRequestBody.class),
-            f -> f.withMarshaller(CreateNatGatewayTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNatGatewayTagRequest::getBody, CreateNatGatewayTagRequest::setBody));
 
         // response
 
@@ -911,9 +831,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<CreatePrivateNatRequest, CreatePrivateNatResponse> createPrivateNat =
-        genForcreatePrivateNat();
+        genForCreatePrivateNat();
 
-    private static HttpRequestDef<CreatePrivateNatRequest, CreatePrivateNatResponse> genForcreatePrivateNat() {
+    private static HttpRequestDef<CreatePrivateNatRequest, CreatePrivateNatResponse> genForCreatePrivateNat() {
         // basic
         HttpRequestDef.Builder<CreatePrivateNatRequest, CreatePrivateNatResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePrivateNatRequest.class, CreatePrivateNatResponse.class)
@@ -926,9 +846,7 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePrivateNatRequestBody.class),
-            f -> f.withMarshaller(CreatePrivateNatRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePrivateNatRequest::getBody, CreatePrivateNatRequest::setBody));
 
         // response
 
@@ -936,9 +854,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<CreatePrivateNatTagRequest, CreatePrivateNatTagResponse> createPrivateNatTag =
-        genForcreatePrivateNatTag();
+        genForCreatePrivateNatTag();
 
-    private static HttpRequestDef<CreatePrivateNatTagRequest, CreatePrivateNatTagResponse> genForcreatePrivateNatTag() {
+    private static HttpRequestDef<CreatePrivateNatTagRequest, CreatePrivateNatTagResponse> genForCreatePrivateNatTag() {
         // basic
         HttpRequestDef.Builder<CreatePrivateNatTagRequest, CreatePrivateNatTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePrivateNatTagRequest.class, CreatePrivateNatTagResponse.class)
@@ -951,16 +869,13 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePrivateNatTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreatePrivateNatTagRequest::getResourceId,
+                CreatePrivateNatTagRequest::setResourceId));
         builder.<CreateResourceTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResourceTagRequestBody.class),
-            f -> f.withMarshaller(CreatePrivateNatTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePrivateNatTagRequest::getBody, CreatePrivateNatTagRequest::setBody));
 
         // response
 
@@ -968,9 +883,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<DeleteNatGatewayRequest, DeleteNatGatewayResponse> deleteNatGateway =
-        genFordeleteNatGateway();
+        genForDeleteNatGateway();
 
-    private static HttpRequestDef<DeleteNatGatewayRequest, DeleteNatGatewayResponse> genFordeleteNatGateway() {
+    private static HttpRequestDef<DeleteNatGatewayRequest, DeleteNatGatewayResponse> genForDeleteNatGateway() {
         // basic
         HttpRequestDef.Builder<DeleteNatGatewayRequest, DeleteNatGatewayResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNatGatewayRequest.class, DeleteNatGatewayResponse.class)
@@ -983,9 +898,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNatGatewayRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(DeleteNatGatewayRequest::getNatGatewayId, DeleteNatGatewayRequest::setNatGatewayId));
 
         // response
 
@@ -993,9 +906,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> deleteNatGatewayTag =
-        genFordeleteNatGatewayTag();
+        genForDeleteNatGatewayTag();
 
-    private static HttpRequestDef<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> genFordeleteNatGatewayTag() {
+    private static HttpRequestDef<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> genForDeleteNatGatewayTag() {
         // basic
         HttpRequestDef.Builder<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteNatGatewayTagRequest.class, DeleteNatGatewayTagResponse.class)
@@ -1008,33 +921,28 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNatGatewayTagRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(DeleteNatGatewayTagRequest::getNatGatewayId,
+                DeleteNatGatewayTagRequest::setNatGatewayId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNatGatewayTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteNatGatewayTagRequest::getKey, DeleteNatGatewayTagRequest::setKey));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteNatGatewayTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteNatGatewayTagResponse::getBody, DeleteNatGatewayTagResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeletePrivateNatRequest, DeletePrivateNatResponse> deletePrivateNat =
-        genFordeletePrivateNat();
+        genForDeletePrivateNat();
 
-    private static HttpRequestDef<DeletePrivateNatRequest, DeletePrivateNatResponse> genFordeletePrivateNat() {
+    private static HttpRequestDef<DeletePrivateNatRequest, DeletePrivateNatResponse> genForDeletePrivateNat() {
         // basic
         HttpRequestDef.Builder<DeletePrivateNatRequest, DeletePrivateNatResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePrivateNatRequest.class, DeletePrivateNatResponse.class)
@@ -1047,9 +955,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePrivateNatRequest::getGatewayId, (req, v) -> {
-                req.setGatewayId(v);
-            }));
+            f -> f.withMarshaller(DeletePrivateNatRequest::getGatewayId, DeletePrivateNatRequest::setGatewayId));
 
         // response
 
@@ -1057,9 +963,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<DeletePrivateNatTagRequest, DeletePrivateNatTagResponse> deletePrivateNatTag =
-        genFordeletePrivateNatTag();
+        genForDeletePrivateNatTag();
 
-    private static HttpRequestDef<DeletePrivateNatTagRequest, DeletePrivateNatTagResponse> genFordeletePrivateNatTag() {
+    private static HttpRequestDef<DeletePrivateNatTagRequest, DeletePrivateNatTagResponse> genForDeletePrivateNatTag() {
         // basic
         HttpRequestDef.Builder<DeletePrivateNatTagRequest, DeletePrivateNatTagResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeletePrivateNatTagRequest.class, DeletePrivateNatTagResponse.class)
@@ -1072,33 +978,28 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePrivateNatTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeletePrivateNatTagRequest::getKey, DeletePrivateNatTagRequest::setKey));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePrivateNatTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeletePrivateNatTagRequest::getResourceId,
+                DeletePrivateNatTagRequest::setResourceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeletePrivateNatTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeletePrivateNatTagResponse::getBody, DeletePrivateNatTagResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> listNatGatewayByTag =
-        genForlistNatGatewayByTag();
+        genForListNatGatewayByTag();
 
-    private static HttpRequestDef<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> genForlistNatGatewayByTag() {
+    private static HttpRequestDef<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> genForListNatGatewayByTag() {
         // basic
         HttpRequestDef.Builder<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListNatGatewayByTagRequest.class, ListNatGatewayByTagResponse.class)
@@ -1111,9 +1012,7 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListNatsByTagsRequestBody.class),
-            f -> f.withMarshaller(ListNatGatewayByTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewayByTagRequest::getBody, ListNatGatewayByTagRequest::setBody));
 
         // response
 
@@ -1121,9 +1020,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListNatGatewayTagRequest, ListNatGatewayTagResponse> listNatGatewayTag =
-        genForlistNatGatewayTag();
+        genForListNatGatewayTag();
 
-    private static HttpRequestDef<ListNatGatewayTagRequest, ListNatGatewayTagResponse> genForlistNatGatewayTag() {
+    private static HttpRequestDef<ListNatGatewayTagRequest, ListNatGatewayTagResponse> genForListNatGatewayTag() {
         // basic
         HttpRequestDef.Builder<ListNatGatewayTagRequest, ListNatGatewayTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNatGatewayTagRequest.class, ListNatGatewayTagResponse.class)
@@ -1139,9 +1038,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListNatGatewaysRequest, ListNatGatewaysResponse> listNatGateways =
-        genForlistNatGateways();
+        genForListNatGateways();
 
-    private static HttpRequestDef<ListNatGatewaysRequest, ListNatGatewaysResponse> genForlistNatGateways() {
+    private static HttpRequestDef<ListNatGatewaysRequest, ListNatGatewaysResponse> genForListNatGateways() {
         // basic
         HttpRequestDef.Builder<ListNatGatewaysRequest, ListNatGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNatGatewaysRequest.class, ListNatGatewaysResponse.class)
@@ -1154,79 +1053,59 @@ public class NatMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getId, ListNatGatewaysRequest::setId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getEnterpriseProjectId,
+                ListNatGatewaysRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getDescription, ListNatGatewaysRequest::setDescription));
         builder.<String>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getCreatedAt, (req, v) -> {
-                req.setCreatedAt(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getCreatedAt, ListNatGatewaysRequest::setCreatedAt));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getName, ListNatGatewaysRequest::setName));
         builder.<List<ListNatGatewaysRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getStatus, ListNatGatewaysRequest::setStatus));
         builder.<List<ListNatGatewaysRequest.SpecEnum>>withRequestField("spec",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getSpec, (req, v) -> {
-                req.setSpec(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getSpec, ListNatGatewaysRequest::setSpec));
         builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getAdminStateUp, (req, v) -> {
-                req.setAdminStateUp(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getAdminStateUp, ListNatGatewaysRequest::setAdminStateUp));
         builder.<String>withRequestField("internal_network_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getInternalNetworkId, (req, v) -> {
-                req.setInternalNetworkId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getInternalNetworkId,
+                ListNatGatewaysRequest::setInternalNetworkId));
         builder.<String>withRequestField("router_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getRouterId, (req, v) -> {
-                req.setRouterId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getRouterId, ListNatGatewaysRequest::setRouterId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNatGatewaysRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaysRequest::getLimit, ListNatGatewaysRequest::setLimit));
 
         // response
 
@@ -1234,9 +1113,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListPrivateNatTagsRequest, ListPrivateNatTagsResponse> listPrivateNatTags =
-        genForlistPrivateNatTags();
+        genForListPrivateNatTags();
 
-    private static HttpRequestDef<ListPrivateNatTagsRequest, ListPrivateNatTagsResponse> genForlistPrivateNatTags() {
+    private static HttpRequestDef<ListPrivateNatTagsRequest, ListPrivateNatTagsResponse> genForListPrivateNatTags() {
         // basic
         HttpRequestDef.Builder<ListPrivateNatTagsRequest, ListPrivateNatTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrivateNatTagsRequest.class, ListPrivateNatTagsResponse.class)
@@ -1252,9 +1131,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListPrivateNatsRequest, ListPrivateNatsResponse> listPrivateNats =
-        genForlistPrivateNats();
+        genForListPrivateNats();
 
-    private static HttpRequestDef<ListPrivateNatsRequest, ListPrivateNatsResponse> genForlistPrivateNats() {
+    private static HttpRequestDef<ListPrivateNatsRequest, ListPrivateNatsResponse> genForListPrivateNats() {
         // basic
         HttpRequestDef.Builder<ListPrivateNatsRequest, ListPrivateNatsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrivateNatsRequest.class, ListPrivateNatsResponse.class)
@@ -1267,79 +1146,58 @@ public class NatMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getLimit, ListPrivateNatsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getMarker, ListPrivateNatsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getPageReverse, ListPrivateNatsRequest::setPageReverse));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getId, ListPrivateNatsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getName, ListPrivateNatsRequest::setName));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getDescription, ListPrivateNatsRequest::setDescription));
         builder.<List<ListPrivateNatsRequest.SpecEnum>>withRequestField("spec",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getSpec, (req, v) -> {
-                req.setSpec(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getSpec, ListPrivateNatsRequest::setSpec));
         builder.<List<ListPrivateNatsRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getStatus, ListPrivateNatsRequest::setStatus));
         builder.<List<String>>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getVpcId, ListPrivateNatsRequest::setVpcId));
         builder.<List<String>>withRequestField("virsubnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getVirsubnetId, (req, v) -> {
-                req.setVirsubnetId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getVirsubnetId, ListPrivateNatsRequest::setVirsubnetId));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateNatsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsRequest::getEnterpriseProjectId,
+                ListPrivateNatsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1347,9 +1205,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListPrivateNatsByTagsRequest, ListPrivateNatsByTagsResponse> listPrivateNatsByTags =
-        genForlistPrivateNatsByTags();
+        genForListPrivateNatsByTags();
 
-    private static HttpRequestDef<ListPrivateNatsByTagsRequest, ListPrivateNatsByTagsResponse> genForlistPrivateNatsByTags() {
+    private static HttpRequestDef<ListPrivateNatsByTagsRequest, ListPrivateNatsByTagsResponse> genForListPrivateNatsByTags() {
         // basic
         HttpRequestDef.Builder<ListPrivateNatsByTagsRequest, ListPrivateNatsByTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListPrivateNatsByTagsRequest.class, ListPrivateNatsByTagsResponse.class)
@@ -1362,9 +1220,7 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTagResourceInstancesRequestBody.class),
-            f -> f.withMarshaller(ListPrivateNatsByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListPrivateNatsByTagsRequest::getBody, ListPrivateNatsByTagsRequest::setBody));
 
         // response
 
@@ -1372,9 +1228,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ShowNatGatewayRequest, ShowNatGatewayResponse> showNatGateway =
-        genForshowNatGateway();
+        genForShowNatGateway();
 
-    private static HttpRequestDef<ShowNatGatewayRequest, ShowNatGatewayResponse> genForshowNatGateway() {
+    private static HttpRequestDef<ShowNatGatewayRequest, ShowNatGatewayResponse> genForShowNatGateway() {
         // basic
         HttpRequestDef.Builder<ShowNatGatewayRequest, ShowNatGatewayResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNatGatewayRequest.class, ShowNatGatewayResponse.class)
@@ -1387,9 +1243,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNatGatewayRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(ShowNatGatewayRequest::getNatGatewayId, ShowNatGatewayRequest::setNatGatewayId));
 
         // response
 
@@ -1397,9 +1251,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> showNatGatewayTag =
-        genForshowNatGatewayTag();
+        genForShowNatGatewayTag();
 
-    private static HttpRequestDef<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> genForshowNatGatewayTag() {
+    private static HttpRequestDef<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> genForShowNatGatewayTag() {
         // basic
         HttpRequestDef.Builder<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNatGatewayTagRequest.class, ShowNatGatewayTagResponse.class)
@@ -1412,9 +1266,8 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNatGatewayTagRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(ShowNatGatewayTagRequest::getNatGatewayId,
+                ShowNatGatewayTagRequest::setNatGatewayId));
 
         // response
 
@@ -1422,9 +1275,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ShowPrivateNatRequest, ShowPrivateNatResponse> showPrivateNat =
-        genForshowPrivateNat();
+        genForShowPrivateNat();
 
-    private static HttpRequestDef<ShowPrivateNatRequest, ShowPrivateNatResponse> genForshowPrivateNat() {
+    private static HttpRequestDef<ShowPrivateNatRequest, ShowPrivateNatResponse> genForShowPrivateNat() {
         // basic
         HttpRequestDef.Builder<ShowPrivateNatRequest, ShowPrivateNatResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPrivateNatRequest.class, ShowPrivateNatResponse.class)
@@ -1437,9 +1290,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPrivateNatRequest::getGatewayId, (req, v) -> {
-                req.setGatewayId(v);
-            }));
+            f -> f.withMarshaller(ShowPrivateNatRequest::getGatewayId, ShowPrivateNatRequest::setGatewayId));
 
         // response
 
@@ -1447,9 +1298,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ShowPrivateNatTagsRequest, ShowPrivateNatTagsResponse> showPrivateNatTags =
-        genForshowPrivateNatTags();
+        genForShowPrivateNatTags();
 
-    private static HttpRequestDef<ShowPrivateNatTagsRequest, ShowPrivateNatTagsResponse> genForshowPrivateNatTags() {
+    private static HttpRequestDef<ShowPrivateNatTagsRequest, ShowPrivateNatTagsResponse> genForShowPrivateNatTags() {
         // basic
         HttpRequestDef.Builder<ShowPrivateNatTagsRequest, ShowPrivateNatTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPrivateNatTagsRequest.class, ShowPrivateNatTagsResponse.class)
@@ -1462,9 +1313,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPrivateNatTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowPrivateNatTagsRequest::getResourceId, ShowPrivateNatTagsRequest::setResourceId));
 
         // response
 
@@ -1472,9 +1321,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<UpdateNatGatewayRequest, UpdateNatGatewayResponse> updateNatGateway =
-        genForupdateNatGateway();
+        genForUpdateNatGateway();
 
-    private static HttpRequestDef<UpdateNatGatewayRequest, UpdateNatGatewayResponse> genForupdateNatGateway() {
+    private static HttpRequestDef<UpdateNatGatewayRequest, UpdateNatGatewayResponse> genForUpdateNatGateway() {
         // basic
         HttpRequestDef.Builder<UpdateNatGatewayRequest, UpdateNatGatewayResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNatGatewayRequest.class, UpdateNatGatewayResponse.class)
@@ -1487,16 +1336,12 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNatGatewayRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(UpdateNatGatewayRequest::getNatGatewayId, UpdateNatGatewayRequest::setNatGatewayId));
         builder.<UpdateNatGatewayRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNatGatewayRequestBody.class),
-            f -> f.withMarshaller(UpdateNatGatewayRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNatGatewayRequest::getBody, UpdateNatGatewayRequest::setBody));
 
         // response
 
@@ -1504,9 +1349,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<UpdatePrivateNatRequest, UpdatePrivateNatResponse> updatePrivateNat =
-        genForupdatePrivateNat();
+        genForUpdatePrivateNat();
 
-    private static HttpRequestDef<UpdatePrivateNatRequest, UpdatePrivateNatResponse> genForupdatePrivateNat() {
+    private static HttpRequestDef<UpdatePrivateNatRequest, UpdatePrivateNatResponse> genForUpdatePrivateNat() {
         // basic
         HttpRequestDef.Builder<UpdatePrivateNatRequest, UpdatePrivateNatResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePrivateNatRequest.class, UpdatePrivateNatResponse.class)
@@ -1519,16 +1364,12 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePrivateNatRequest::getGatewayId, (req, v) -> {
-                req.setGatewayId(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateNatRequest::getGatewayId, UpdatePrivateNatRequest::setGatewayId));
         builder.<UpdatePrivateNatRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePrivateNatRequestBody.class),
-            f -> f.withMarshaller(UpdatePrivateNatRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateNatRequest::getBody, UpdatePrivateNatRequest::setBody));
 
         // response
 
@@ -1536,9 +1377,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<CreateTransitIpRequest, CreateTransitIpResponse> createTransitIp =
-        genForcreateTransitIp();
+        genForCreateTransitIp();
 
-    private static HttpRequestDef<CreateTransitIpRequest, CreateTransitIpResponse> genForcreateTransitIp() {
+    private static HttpRequestDef<CreateTransitIpRequest, CreateTransitIpResponse> genForCreateTransitIp() {
         // basic
         HttpRequestDef.Builder<CreateTransitIpRequest, CreateTransitIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTransitIpRequest.class, CreateTransitIpResponse.class)
@@ -1551,9 +1392,7 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTransitIpRequestBody.class),
-            f -> f.withMarshaller(CreateTransitIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTransitIpRequest::getBody, CreateTransitIpRequest::setBody));
 
         // response
 
@@ -1561,9 +1400,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<DeleteTransitIpRequest, DeleteTransitIpResponse> deleteTransitIp =
-        genFordeleteTransitIp();
+        genForDeleteTransitIp();
 
-    private static HttpRequestDef<DeleteTransitIpRequest, DeleteTransitIpResponse> genFordeleteTransitIp() {
+    private static HttpRequestDef<DeleteTransitIpRequest, DeleteTransitIpResponse> genForDeleteTransitIp() {
         // basic
         HttpRequestDef.Builder<DeleteTransitIpRequest, DeleteTransitIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTransitIpRequest.class, DeleteTransitIpResponse.class)
@@ -1576,9 +1415,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTransitIpRequest::getTransitIpId, (req, v) -> {
-                req.setTransitIpId(v);
-            }));
+            f -> f.withMarshaller(DeleteTransitIpRequest::getTransitIpId, DeleteTransitIpRequest::setTransitIpId));
 
         // response
 
@@ -1586,9 +1423,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListTransitIpsRequest, ListTransitIpsResponse> listTransitIps =
-        genForlistTransitIps();
+        genForListTransitIps();
 
-    private static HttpRequestDef<ListTransitIpsRequest, ListTransitIpsResponse> genForlistTransitIps() {
+    private static HttpRequestDef<ListTransitIpsRequest, ListTransitIpsResponse> genForListTransitIps() {
         // basic
         HttpRequestDef.Builder<ListTransitIpsRequest, ListTransitIpsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTransitIpsRequest.class, ListTransitIpsResponse.class)
@@ -1601,65 +1438,49 @@ public class NatMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTransitIpsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTransitIpsRequest::getLimit, ListTransitIpsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTransitIpsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTransitIpsRequest::getMarker, ListTransitIpsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListTransitIpsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListTransitIpsRequest::getPageReverse, ListTransitIpsRequest::setPageReverse));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTransitIpsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListTransitIpsRequest::getId, ListTransitIpsRequest::setId));
         builder.<List<String>>withRequestField("network_interface_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTransitIpsRequest::getNetworkInterfaceId, (req, v) -> {
-                req.setNetworkInterfaceId(v);
-            }));
+            f -> f.withMarshaller(ListTransitIpsRequest::getNetworkInterfaceId,
+                ListTransitIpsRequest::setNetworkInterfaceId));
         builder.<List<String>>withRequestField("ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTransitIpsRequest::getIpAddress, (req, v) -> {
-                req.setIpAddress(v);
-            }));
+            f -> f.withMarshaller(ListTransitIpsRequest::getIpAddress, ListTransitIpsRequest::setIpAddress));
         builder.<List<String>>withRequestField("gateway_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTransitIpsRequest::getGatewayId, (req, v) -> {
-                req.setGatewayId(v);
-            }));
+            f -> f.withMarshaller(ListTransitIpsRequest::getGatewayId, ListTransitIpsRequest::setGatewayId));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTransitIpsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListTransitIpsRequest::getEnterpriseProjectId,
+                ListTransitIpsRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("virsubnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTransitIpsRequest::getVirsubnetId, (req, v) -> {
-                req.setVirsubnetId(v);
-            }));
+            f -> f.withMarshaller(ListTransitIpsRequest::getVirsubnetId, ListTransitIpsRequest::setVirsubnetId));
 
         // response
 
@@ -1667,9 +1488,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ShowTransitIpRequest, ShowTransitIpResponse> showTransitIp =
-        genForshowTransitIp();
+        genForShowTransitIp();
 
-    private static HttpRequestDef<ShowTransitIpRequest, ShowTransitIpResponse> genForshowTransitIp() {
+    private static HttpRequestDef<ShowTransitIpRequest, ShowTransitIpResponse> genForShowTransitIp() {
         // basic
         HttpRequestDef.Builder<ShowTransitIpRequest, ShowTransitIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTransitIpRequest.class, ShowTransitIpResponse.class)
@@ -1682,9 +1503,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTransitIpRequest::getTransitIpId, (req, v) -> {
-                req.setTransitIpId(v);
-            }));
+            f -> f.withMarshaller(ShowTransitIpRequest::getTransitIpId, ShowTransitIpRequest::setTransitIpId));
 
         // response
 
@@ -1692,9 +1511,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<CreateNatGatewaySnatRuleRequest, CreateNatGatewaySnatRuleResponse> createNatGatewaySnatRule =
-        genForcreateNatGatewaySnatRule();
+        genForCreateNatGatewaySnatRule();
 
-    private static HttpRequestDef<CreateNatGatewaySnatRuleRequest, CreateNatGatewaySnatRuleResponse> genForcreateNatGatewaySnatRule() {
+    private static HttpRequestDef<CreateNatGatewaySnatRuleRequest, CreateNatGatewaySnatRuleResponse> genForCreateNatGatewaySnatRule() {
         // basic
         HttpRequestDef.Builder<CreateNatGatewaySnatRuleRequest, CreateNatGatewaySnatRuleResponse> builder =
             HttpRequestDef
@@ -1708,9 +1527,7 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNatGatewaySnatRuleRequestOption.class),
-            f -> f.withMarshaller(CreateNatGatewaySnatRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNatGatewaySnatRuleRequest::getBody, CreateNatGatewaySnatRuleRequest::setBody));
 
         // response
 
@@ -1718,9 +1535,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<CreatePrivateSnatRequest, CreatePrivateSnatResponse> createPrivateSnat =
-        genForcreatePrivateSnat();
+        genForCreatePrivateSnat();
 
-    private static HttpRequestDef<CreatePrivateSnatRequest, CreatePrivateSnatResponse> genForcreatePrivateSnat() {
+    private static HttpRequestDef<CreatePrivateSnatRequest, CreatePrivateSnatResponse> genForCreatePrivateSnat() {
         // basic
         HttpRequestDef.Builder<CreatePrivateSnatRequest, CreatePrivateSnatResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePrivateSnatRequest.class, CreatePrivateSnatResponse.class)
@@ -1733,9 +1550,7 @@ public class NatMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePrivateSnatOptionBody.class),
-            f -> f.withMarshaller(CreatePrivateSnatRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePrivateSnatRequest::getBody, CreatePrivateSnatRequest::setBody));
 
         // response
 
@@ -1743,9 +1558,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<DeleteNatGatewaySnatRuleRequest, DeleteNatGatewaySnatRuleResponse> deleteNatGatewaySnatRule =
-        genFordeleteNatGatewaySnatRule();
+        genForDeleteNatGatewaySnatRule();
 
-    private static HttpRequestDef<DeleteNatGatewaySnatRuleRequest, DeleteNatGatewaySnatRuleResponse> genFordeleteNatGatewaySnatRule() {
+    private static HttpRequestDef<DeleteNatGatewaySnatRuleRequest, DeleteNatGatewaySnatRuleResponse> genForDeleteNatGatewaySnatRule() {
         // basic
         HttpRequestDef.Builder<DeleteNatGatewaySnatRuleRequest, DeleteNatGatewaySnatRuleResponse> builder =
             HttpRequestDef
@@ -1761,16 +1576,14 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNatGatewaySnatRuleRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(DeleteNatGatewaySnatRuleRequest::getNatGatewayId,
+                DeleteNatGatewaySnatRuleRequest::setNatGatewayId));
         builder.<String>withRequestField("snat_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNatGatewaySnatRuleRequest::getSnatRuleId, (req, v) -> {
-                req.setSnatRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteNatGatewaySnatRuleRequest::getSnatRuleId,
+                DeleteNatGatewaySnatRuleRequest::setSnatRuleId));
 
         // response
 
@@ -1778,9 +1591,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<DeletePrivateSnatRequest, DeletePrivateSnatResponse> deletePrivateSnat =
-        genFordeletePrivateSnat();
+        genForDeletePrivateSnat();
 
-    private static HttpRequestDef<DeletePrivateSnatRequest, DeletePrivateSnatResponse> genFordeletePrivateSnat() {
+    private static HttpRequestDef<DeletePrivateSnatRequest, DeletePrivateSnatResponse> genForDeletePrivateSnat() {
         // basic
         HttpRequestDef.Builder<DeletePrivateSnatRequest, DeletePrivateSnatResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePrivateSnatRequest.class, DeletePrivateSnatResponse.class)
@@ -1793,9 +1606,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePrivateSnatRequest::getSnatRuleId, (req, v) -> {
-                req.setSnatRuleId(v);
-            }));
+            f -> f.withMarshaller(DeletePrivateSnatRequest::getSnatRuleId, DeletePrivateSnatRequest::setSnatRuleId));
 
         // response
 
@@ -1803,9 +1614,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListNatGatewaySnatRulesRequest, ListNatGatewaySnatRulesResponse> listNatGatewaySnatRules =
-        genForlistNatGatewaySnatRules();
+        genForListNatGatewaySnatRules();
 
-    private static HttpRequestDef<ListNatGatewaySnatRulesRequest, ListNatGatewaySnatRulesResponse> genForlistNatGatewaySnatRules() {
+    private static HttpRequestDef<ListNatGatewaySnatRulesRequest, ListNatGatewaySnatRulesResponse> genForListNatGatewaySnatRules() {
         // basic
         HttpRequestDef.Builder<ListNatGatewaySnatRulesRequest, ListNatGatewaySnatRulesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListNatGatewaySnatRulesRequest.class, ListNatGatewaySnatRulesResponse.class)
@@ -1818,86 +1629,71 @@ public class NatMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getAdminStateUp, (req, v) -> {
-                req.setAdminStateUp(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getAdminStateUp,
+                ListNatGatewaySnatRulesRequest::setAdminStateUp));
         builder.<String>withRequestField("cidr",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getCidr, (req, v) -> {
-                req.setCidr(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getCidr, ListNatGatewaySnatRulesRequest::setCidr));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getLimit, ListNatGatewaySnatRulesRequest::setLimit));
         builder.<String>withRequestField("floating_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getFloatingIpAddress, (req, v) -> {
-                req.setFloatingIpAddress(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getFloatingIpAddress,
+                ListNatGatewaySnatRulesRequest::setFloatingIpAddress));
         builder.<String>withRequestField("floating_ip_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getFloatingIpId, (req, v) -> {
-                req.setFloatingIpId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getFloatingIpId,
+                ListNatGatewaySnatRulesRequest::setFloatingIpId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getId, ListNatGatewaySnatRulesRequest::setId));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getDescription,
+                ListNatGatewaySnatRulesRequest::setDescription));
         builder.<String>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getCreatedAt, (req, v) -> {
-                req.setCreatedAt(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getCreatedAt,
+                ListNatGatewaySnatRulesRequest::setCreatedAt));
         builder.<List<String>>withRequestField("nat_gateway_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getNatGatewayId,
+                ListNatGatewaySnatRulesRequest::setNatGatewayId));
         builder.<String>withRequestField("network_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getNetworkId, (req, v) -> {
-                req.setNetworkId(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getNetworkId,
+                ListNatGatewaySnatRulesRequest::setNetworkId));
         builder.<Integer>withRequestField("source_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getSourceType, (req, v) -> {
-                req.setSourceType(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getSourceType,
+                ListNatGatewaySnatRulesRequest::setSourceType));
         builder.<ListNatGatewaySnatRulesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListNatGatewaySnatRulesRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getStatus,
+                ListNatGatewaySnatRulesRequest::setStatus));
 
         // response
 
@@ -1905,9 +1701,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ListPrivateSnatsRequest, ListPrivateSnatsResponse> listPrivateSnats =
-        genForlistPrivateSnats();
+        genForListPrivateSnats();
 
-    private static HttpRequestDef<ListPrivateSnatsRequest, ListPrivateSnatsResponse> genForlistPrivateSnats() {
+    private static HttpRequestDef<ListPrivateSnatsRequest, ListPrivateSnatsResponse> genForListPrivateSnats() {
         // basic
         HttpRequestDef.Builder<ListPrivateSnatsRequest, ListPrivateSnatsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrivateSnatsRequest.class, ListPrivateSnatsResponse.class)
@@ -1920,79 +1716,59 @@ public class NatMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getLimit, ListPrivateSnatsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getMarker, ListPrivateSnatsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getPageReverse, ListPrivateSnatsRequest::setPageReverse));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getId, ListPrivateSnatsRequest::setId));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getDescription, ListPrivateSnatsRequest::setDescription));
         builder.<List<String>>withRequestField("gateway_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getGatewayId, (req, v) -> {
-                req.setGatewayId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getGatewayId, ListPrivateSnatsRequest::setGatewayId));
         builder.<List<String>>withRequestField("cidr",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getCidr, (req, v) -> {
-                req.setCidr(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getCidr, ListPrivateSnatsRequest::setCidr));
         builder.<List<String>>withRequestField("virsubnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getVirsubnetId, (req, v) -> {
-                req.setVirsubnetId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getVirsubnetId, ListPrivateSnatsRequest::setVirsubnetId));
         builder.<List<String>>withRequestField("transit_ip_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getTransitIpId, (req, v) -> {
-                req.setTransitIpId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getTransitIpId, ListPrivateSnatsRequest::setTransitIpId));
         builder.<List<String>>withRequestField("transit_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getTransitIpAddress, (req, v) -> {
-                req.setTransitIpAddress(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getTransitIpAddress,
+                ListPrivateSnatsRequest::setTransitIpAddress));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateSnatsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateSnatsRequest::getEnterpriseProjectId,
+                ListPrivateSnatsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -2000,9 +1776,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ShowNatGatewaySnatRuleRequest, ShowNatGatewaySnatRuleResponse> showNatGatewaySnatRule =
-        genForshowNatGatewaySnatRule();
+        genForShowNatGatewaySnatRule();
 
-    private static HttpRequestDef<ShowNatGatewaySnatRuleRequest, ShowNatGatewaySnatRuleResponse> genForshowNatGatewaySnatRule() {
+    private static HttpRequestDef<ShowNatGatewaySnatRuleRequest, ShowNatGatewaySnatRuleResponse> genForShowNatGatewaySnatRule() {
         // basic
         HttpRequestDef.Builder<ShowNatGatewaySnatRuleRequest, ShowNatGatewaySnatRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowNatGatewaySnatRuleRequest.class, ShowNatGatewaySnatRuleResponse.class)
@@ -2015,9 +1791,8 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNatGatewaySnatRuleRequest::getSnatRuleId, (req, v) -> {
-                req.setSnatRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowNatGatewaySnatRuleRequest::getSnatRuleId,
+                ShowNatGatewaySnatRuleRequest::setSnatRuleId));
 
         // response
 
@@ -2025,9 +1800,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<ShowPrivateSnatRequest, ShowPrivateSnatResponse> showPrivateSnat =
-        genForshowPrivateSnat();
+        genForShowPrivateSnat();
 
-    private static HttpRequestDef<ShowPrivateSnatRequest, ShowPrivateSnatResponse> genForshowPrivateSnat() {
+    private static HttpRequestDef<ShowPrivateSnatRequest, ShowPrivateSnatResponse> genForShowPrivateSnat() {
         // basic
         HttpRequestDef.Builder<ShowPrivateSnatRequest, ShowPrivateSnatResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPrivateSnatRequest.class, ShowPrivateSnatResponse.class)
@@ -2040,9 +1815,7 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPrivateSnatRequest::getSnatRuleId, (req, v) -> {
-                req.setSnatRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowPrivateSnatRequest::getSnatRuleId, ShowPrivateSnatRequest::setSnatRuleId));
 
         // response
 
@@ -2050,9 +1823,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<UpdateNatGatewaySnatRuleRequest, UpdateNatGatewaySnatRuleResponse> updateNatGatewaySnatRule =
-        genForupdateNatGatewaySnatRule();
+        genForUpdateNatGatewaySnatRule();
 
-    private static HttpRequestDef<UpdateNatGatewaySnatRuleRequest, UpdateNatGatewaySnatRuleResponse> genForupdateNatGatewaySnatRule() {
+    private static HttpRequestDef<UpdateNatGatewaySnatRuleRequest, UpdateNatGatewaySnatRuleResponse> genForUpdateNatGatewaySnatRule() {
         // basic
         HttpRequestDef.Builder<UpdateNatGatewaySnatRuleRequest, UpdateNatGatewaySnatRuleResponse> builder =
             HttpRequestDef
@@ -2066,16 +1839,13 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNatGatewaySnatRuleRequest::getSnatRuleId, (req, v) -> {
-                req.setSnatRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateNatGatewaySnatRuleRequest::getSnatRuleId,
+                UpdateNatGatewaySnatRuleRequest::setSnatRuleId));
         builder.<UpdateNatGatewaySnatRuleRequestOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNatGatewaySnatRuleRequestOption.class),
-            f -> f.withMarshaller(UpdateNatGatewaySnatRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNatGatewaySnatRuleRequest::getBody, UpdateNatGatewaySnatRuleRequest::setBody));
 
         // response
 
@@ -2083,9 +1853,9 @@ public class NatMeta {
     }
 
     public static final HttpRequestDef<UpdatePrivateSnatRequest, UpdatePrivateSnatResponse> updatePrivateSnat =
-        genForupdatePrivateSnat();
+        genForUpdatePrivateSnat();
 
-    private static HttpRequestDef<UpdatePrivateSnatRequest, UpdatePrivateSnatResponse> genForupdatePrivateSnat() {
+    private static HttpRequestDef<UpdatePrivateSnatRequest, UpdatePrivateSnatResponse> genForUpdatePrivateSnat() {
         // basic
         HttpRequestDef.Builder<UpdatePrivateSnatRequest, UpdatePrivateSnatResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePrivateSnatRequest.class, UpdatePrivateSnatResponse.class)
@@ -2098,16 +1868,12 @@ public class NatMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePrivateSnatRequest::getSnatRuleId, (req, v) -> {
-                req.setSnatRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateSnatRequest::getSnatRuleId, UpdatePrivateSnatRequest::setSnatRuleId));
         builder.<UpdatePrivateSnatOptionBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePrivateSnatOptionBody.class),
-            f -> f.withMarshaller(UpdatePrivateSnatRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateSnatRequest::getBody, UpdatePrivateSnatRequest::setBody));
 
         // response
 

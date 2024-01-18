@@ -51,7 +51,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 查询的偏移量
+     * 查询的偏移量。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -70,7 +70,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 查询的数量，值区间[1-100]
+     * 查询的数量，值区间[1-100]。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -89,7 +89,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 服务器组唯一标识
+     * 服务器组唯一标识。
      * @return serverGroupId
      */
     public String getServerGroupId() {
@@ -106,7 +106,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 服务器名称，支持部分匹配
+     * 服务器名称，支持部分匹配。
      * @return serverName
      */
     public String getServerName() {
@@ -123,7 +123,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 服务器唯一标识
+     * 服务器唯一标识。
      * @return serverId
      */
     public String getServerId() {
@@ -140,7 +140,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 服务器维护状态 - true : 维护态的实例 - false: 非维护态的实例
+     * 服务器维护状态： - true : 维护态的实例。 - false: 非维护态的实例。
      * @return maintainStatus
      */
     public String getMaintainStatus() {
@@ -157,7 +157,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 是否是弹性创建 true : 通过弹性伸缩创建 false: 不是通过弹性伸缩创建
+     * 是否是弹性创建： true : 通过弹性伸缩创建。 false: 不是通过弹性伸缩创建。
      * @return scalingAutoCreate
      */
     public String getScalingAutoCreate() {

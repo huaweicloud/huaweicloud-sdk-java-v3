@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 可设置的OU类型。包括核心OU和自定义OU。
+ * 可设置的注册OU类型。包括核心注册OU和自定义注册OU。
  */
 public class OrganizationalUnitTypeForSetup {
 

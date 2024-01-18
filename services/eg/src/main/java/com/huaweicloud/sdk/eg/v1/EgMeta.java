@@ -135,9 +135,9 @@ import java.util.List;
 public class EgMeta {
 
     public static final HttpRequestDef<CheckPutEventsRequest, CheckPutEventsResponse> checkPutEvents =
-        genForcheckPutEvents();
+        genForCheckPutEvents();
 
-    private static HttpRequestDef<CheckPutEventsRequest, CheckPutEventsResponse> genForcheckPutEvents() {
+    private static HttpRequestDef<CheckPutEventsRequest, CheckPutEventsResponse> genForCheckPutEvents() {
         // basic
         HttpRequestDef.Builder<CheckPutEventsRequest, CheckPutEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckPutEventsRequest.class, CheckPutEventsResponse.class)
@@ -150,9 +150,7 @@ public class EgMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CheckPutEventsReq.class),
-            f -> f.withMarshaller(CheckPutEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckPutEventsRequest::getBody, CheckPutEventsRequest::setBody));
 
         // response
 
@@ -165,9 +163,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<CreateAgenciesRequest, CreateAgenciesResponse> createAgencies =
-        genForcreateAgencies();
+        genForCreateAgencies();
 
-    private static HttpRequestDef<CreateAgenciesRequest, CreateAgenciesResponse> genForcreateAgencies() {
+    private static HttpRequestDef<CreateAgenciesRequest, CreateAgenciesResponse> genForCreateAgencies() {
         // basic
         HttpRequestDef.Builder<CreateAgenciesRequest, CreateAgenciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgenciesRequest.class, CreateAgenciesResponse.class)
@@ -180,9 +178,7 @@ public class EgMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgencyCreateReq.class),
-            f -> f.withMarshaller(CreateAgenciesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAgenciesRequest::getBody, CreateAgenciesRequest::setBody));
 
         // response
 
@@ -190,9 +186,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<CreateChannelRequest, CreateChannelResponse> createChannel =
-        genForcreateChannel();
+        genForCreateChannel();
 
-    private static HttpRequestDef<CreateChannelRequest, CreateChannelResponse> genForcreateChannel() {
+    private static HttpRequestDef<CreateChannelRequest, CreateChannelResponse> genForCreateChannel() {
         // basic
         HttpRequestDef.Builder<CreateChannelRequest, CreateChannelResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateChannelRequest.class, CreateChannelResponse.class)
@@ -205,16 +201,13 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateChannelRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(CreateChannelRequest::getEnterpriseProjectId,
+                CreateChannelRequest::setEnterpriseProjectId));
         builder.<ChannelCreateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChannelCreateReq.class),
-            f -> f.withMarshaller(CreateChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateChannelRequest::getBody, CreateChannelRequest::setBody));
 
         // response
 
@@ -227,9 +220,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> createConnection =
-        genForcreateConnection();
+        genForCreateConnection();
 
-    private static HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> genForcreateConnection() {
+    private static HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> genForCreateConnection() {
         // basic
         HttpRequestDef.Builder<CreateConnectionRequest, CreateConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConnectionRequest.class, CreateConnectionResponse.class)
@@ -242,9 +235,7 @@ public class EgMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConnectionCreateReq.class),
-            f -> f.withMarshaller(CreateConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConnectionRequest::getBody, CreateConnectionRequest::setBody));
 
         // response
 
@@ -257,9 +248,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> createEndpoint =
-        genForcreateEndpoint();
+        genForCreateEndpoint();
 
-    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForcreateEndpoint() {
+    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForCreateEndpoint() {
         // basic
         HttpRequestDef.Builder<CreateEndpointRequest, CreateEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEndpointRequest.class, CreateEndpointResponse.class)
@@ -272,9 +263,7 @@ public class EgMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EndpointCreateReq.class),
-            f -> f.withMarshaller(CreateEndpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEndpointRequest::getBody, CreateEndpointRequest::setBody));
 
         // response
 
@@ -287,9 +276,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<CreateEventSourceRequest, CreateEventSourceResponse> createEventSource =
-        genForcreateEventSource();
+        genForCreateEventSource();
 
-    private static HttpRequestDef<CreateEventSourceRequest, CreateEventSourceResponse> genForcreateEventSource() {
+    private static HttpRequestDef<CreateEventSourceRequest, CreateEventSourceResponse> genForCreateEventSource() {
         // basic
         HttpRequestDef.Builder<CreateEventSourceRequest, CreateEventSourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEventSourceRequest.class, CreateEventSourceResponse.class)
@@ -302,9 +291,7 @@ public class EgMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CustomizeSourceCreateReq.class),
-            f -> f.withMarshaller(CreateEventSourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEventSourceRequest::getBody, CreateEventSourceRequest::setBody));
 
         // response
 
@@ -317,9 +304,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<CreateEventStreamingRequest, CreateEventStreamingResponse> createEventStreaming =
-        genForcreateEventStreaming();
+        genForCreateEventStreaming();
 
-    private static HttpRequestDef<CreateEventStreamingRequest, CreateEventStreamingResponse> genForcreateEventStreaming() {
+    private static HttpRequestDef<CreateEventStreamingRequest, CreateEventStreamingResponse> genForCreateEventStreaming() {
         // basic
         HttpRequestDef.Builder<CreateEventStreamingRequest, CreateEventStreamingResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateEventStreamingRequest.class, CreateEventStreamingResponse.class)
@@ -332,9 +319,7 @@ public class EgMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EventStreamingCreateReq.class),
-            f -> f.withMarshaller(CreateEventStreamingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEventStreamingRequest::getBody, CreateEventStreamingRequest::setBody));
 
         // response
 
@@ -348,9 +333,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<CreateSubscriptionRequest, CreateSubscriptionResponse> createSubscription =
-        genForcreateSubscription();
+        genForCreateSubscription();
 
-    private static HttpRequestDef<CreateSubscriptionRequest, CreateSubscriptionResponse> genForcreateSubscription() {
+    private static HttpRequestDef<CreateSubscriptionRequest, CreateSubscriptionResponse> genForCreateSubscription() {
         // basic
         HttpRequestDef.Builder<CreateSubscriptionRequest, CreateSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSubscriptionRequest.class, CreateSubscriptionResponse.class)
@@ -363,9 +348,7 @@ public class EgMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubscriptionCreateReq.class),
-            f -> f.withMarshaller(CreateSubscriptionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSubscriptionRequest::getBody, CreateSubscriptionRequest::setBody));
 
         // response
 
@@ -379,9 +362,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse> createSubscriptionTarget =
-        genForcreateSubscriptionTarget();
+        genForCreateSubscriptionTarget();
 
-    private static HttpRequestDef<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse> genForcreateSubscriptionTarget() {
+    private static HttpRequestDef<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse> genForCreateSubscriptionTarget() {
         // basic
         HttpRequestDef.Builder<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse> builder =
             HttpRequestDef
@@ -395,16 +378,13 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSubscriptionTargetRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            }));
+            f -> f.withMarshaller(CreateSubscriptionTargetRequest::getSubscriptionId,
+                CreateSubscriptionTargetRequest::setSubscriptionId));
         builder.<SubscriptionTarget>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubscriptionTarget.class),
-            f -> f.withMarshaller(CreateSubscriptionTargetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSubscriptionTargetRequest::getBody, CreateSubscriptionTargetRequest::setBody));
 
         // response
 
@@ -418,9 +398,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<DeleteChannelRequest, DeleteChannelResponse> deleteChannel =
-        genFordeleteChannel();
+        genForDeleteChannel();
 
-    private static HttpRequestDef<DeleteChannelRequest, DeleteChannelResponse> genFordeleteChannel() {
+    private static HttpRequestDef<DeleteChannelRequest, DeleteChannelResponse> genForDeleteChannel() {
         // basic
         HttpRequestDef.Builder<DeleteChannelRequest, DeleteChannelResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteChannelRequest.class, DeleteChannelResponse.class)
@@ -433,16 +413,13 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteChannelRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(DeleteChannelRequest::getChannelId, DeleteChannelRequest::setChannelId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteChannelRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteChannelRequest::getEnterpriseProjectId,
+                DeleteChannelRequest::setEnterpriseProjectId));
 
         // response
 
@@ -450,9 +427,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<DeleteConnectionRequest, DeleteConnectionResponse> deleteConnection =
-        genFordeleteConnection();
+        genForDeleteConnection();
 
-    private static HttpRequestDef<DeleteConnectionRequest, DeleteConnectionResponse> genFordeleteConnection() {
+    private static HttpRequestDef<DeleteConnectionRequest, DeleteConnectionResponse> genForDeleteConnection() {
         // basic
         HttpRequestDef.Builder<DeleteConnectionRequest, DeleteConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteConnectionRequest.class, DeleteConnectionResponse.class)
@@ -465,9 +442,7 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnectionRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(DeleteConnectionRequest::getConnectionId, DeleteConnectionRequest::setConnectionId));
 
         // response
 
@@ -475,9 +450,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpoint =
-        genFordeleteEndpoint();
+        genForDeleteEndpoint();
 
-    private static HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> genFordeleteEndpoint() {
+    private static HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> genForDeleteEndpoint() {
         // basic
         HttpRequestDef.Builder<DeleteEndpointRequest, DeleteEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEndpointRequest.class, DeleteEndpointResponse.class)
@@ -490,9 +465,7 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEndpointRequest::getEndpointId, (req, v) -> {
-                req.setEndpointId(v);
-            }));
+            f -> f.withMarshaller(DeleteEndpointRequest::getEndpointId, DeleteEndpointRequest::setEndpointId));
 
         // response
 
@@ -500,9 +473,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<DeleteEventSourceRequest, DeleteEventSourceResponse> deleteEventSource =
-        genFordeleteEventSource();
+        genForDeleteEventSource();
 
-    private static HttpRequestDef<DeleteEventSourceRequest, DeleteEventSourceResponse> genFordeleteEventSource() {
+    private static HttpRequestDef<DeleteEventSourceRequest, DeleteEventSourceResponse> genForDeleteEventSource() {
         // basic
         HttpRequestDef.Builder<DeleteEventSourceRequest, DeleteEventSourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEventSourceRequest.class, DeleteEventSourceResponse.class)
@@ -515,9 +488,7 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEventSourceRequest::getSourceId, (req, v) -> {
-                req.setSourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEventSourceRequest::getSourceId, DeleteEventSourceRequest::setSourceId));
 
         // response
 
@@ -525,9 +496,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<DeleteEventStreamingRequest, DeleteEventStreamingResponse> deleteEventStreaming =
-        genFordeleteEventStreaming();
+        genForDeleteEventStreaming();
 
-    private static HttpRequestDef<DeleteEventStreamingRequest, DeleteEventStreamingResponse> genFordeleteEventStreaming() {
+    private static HttpRequestDef<DeleteEventStreamingRequest, DeleteEventStreamingResponse> genForDeleteEventStreaming() {
         // basic
         HttpRequestDef.Builder<DeleteEventStreamingRequest, DeleteEventStreamingResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEventStreamingRequest.class, DeleteEventStreamingResponse.class)
@@ -540,9 +511,8 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEventStreamingRequest::getEventstreamingId, (req, v) -> {
-                req.setEventstreamingId(v);
-            }));
+            f -> f.withMarshaller(DeleteEventStreamingRequest::getEventstreamingId,
+                DeleteEventStreamingRequest::setEventstreamingId));
 
         // response
 
@@ -550,9 +520,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<DeleteSubscriptionRequest, DeleteSubscriptionResponse> deleteSubscription =
-        genFordeleteSubscription();
+        genForDeleteSubscription();
 
-    private static HttpRequestDef<DeleteSubscriptionRequest, DeleteSubscriptionResponse> genFordeleteSubscription() {
+    private static HttpRequestDef<DeleteSubscriptionRequest, DeleteSubscriptionResponse> genForDeleteSubscription() {
         // basic
         HttpRequestDef.Builder<DeleteSubscriptionRequest, DeleteSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubscriptionRequest.class, DeleteSubscriptionResponse.class)
@@ -565,9 +535,8 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSubscriptionRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            }));
+            f -> f.withMarshaller(DeleteSubscriptionRequest::getSubscriptionId,
+                DeleteSubscriptionRequest::setSubscriptionId));
 
         // response
 
@@ -575,9 +544,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse> deleteSubscriptionTarget =
-        genFordeleteSubscriptionTarget();
+        genForDeleteSubscriptionTarget();
 
-    private static HttpRequestDef<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse> genFordeleteSubscriptionTarget() {
+    private static HttpRequestDef<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse> genForDeleteSubscriptionTarget() {
         // basic
         HttpRequestDef.Builder<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse> builder =
             HttpRequestDef
@@ -593,25 +562,23 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSubscriptionTargetRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            }));
+            f -> f.withMarshaller(DeleteSubscriptionTargetRequest::getSubscriptionId,
+                DeleteSubscriptionTargetRequest::setSubscriptionId));
         builder.<String>withRequestField("target_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSubscriptionTargetRequest::getTargetId, (req, v) -> {
-                req.setTargetId(v);
-            }));
+            f -> f.withMarshaller(DeleteSubscriptionTargetRequest::getTargetId,
+                DeleteSubscriptionTargetRequest::setTargetId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForlistAgencies();
+    public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForListAgencies();
 
-    private static HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> genForlistAgencies() {
+    private static HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> genForListAgencies() {
         // basic
         HttpRequestDef.Builder<ListAgenciesRequest, ListAgenciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgenciesRequest.class, ListAgenciesResponse.class)
@@ -624,18 +591,16 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListAgenciesRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListAgenciesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListAgenciesRequest::getType, ListAgenciesRequest::setType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListChannelsRequest, ListChannelsResponse> listChannels = genForlistChannels();
+    public static final HttpRequestDef<ListChannelsRequest, ListChannelsResponse> listChannels = genForListChannels();
 
-    private static HttpRequestDef<ListChannelsRequest, ListChannelsResponse> genForlistChannels() {
+    private static HttpRequestDef<ListChannelsRequest, ListChannelsResponse> genForListChannels() {
         // basic
         HttpRequestDef.Builder<ListChannelsRequest, ListChannelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListChannelsRequest.class, ListChannelsResponse.class)
@@ -648,51 +613,37 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListChannelsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListChannelsRequest::getOffset, ListChannelsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListChannelsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListChannelsRequest::getLimit, ListChannelsRequest::setLimit));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListChannelsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListChannelsRequest::getSort, ListChannelsRequest::setSort));
         builder.<ListChannelsRequest.ProviderTypeEnum>withRequestField("provider_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListChannelsRequest.ProviderTypeEnum.class),
-            f -> f.withMarshaller(ListChannelsRequest::getProviderType, (req, v) -> {
-                req.setProviderType(v);
-            }));
+            f -> f.withMarshaller(ListChannelsRequest::getProviderType, ListChannelsRequest::setProviderType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListChannelsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListChannelsRequest::getName, ListChannelsRequest::setName));
         builder.<String>withRequestField("fuzzy_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListChannelsRequest::getFuzzyName, (req, v) -> {
-                req.setFuzzyName(v);
-            }));
+            f -> f.withMarshaller(ListChannelsRequest::getFuzzyName, ListChannelsRequest::setFuzzyName));
         builder.<String>withRequestField("eps_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListChannelsRequest::getEpsId, (req, v) -> {
-                req.setEpsId(v);
-            }));
+            f -> f.withMarshaller(ListChannelsRequest::getEpsId, ListChannelsRequest::setEpsId));
 
         // response
 
@@ -700,9 +651,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> listConnections =
-        genForlistConnections();
+        genForListConnections();
 
-    private static HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> genForlistConnections() {
+    private static HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> genForListConnections() {
         // basic
         HttpRequestDef.Builder<ListConnectionsRequest, ListConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConnectionsRequest.class, ListConnectionsResponse.class)
@@ -715,44 +666,32 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConnectionsRequest::getOffset, ListConnectionsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConnectionsRequest::getLimit, ListConnectionsRequest::setLimit));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListConnectionsRequest::getSort, ListConnectionsRequest::setSort));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListConnectionsRequest::getName, ListConnectionsRequest::setName));
         builder.<String>withRequestField("fuzzy_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getFuzzyName, (req, v) -> {
-                req.setFuzzyName(v);
-            }));
+            f -> f.withMarshaller(ListConnectionsRequest::getFuzzyName, ListConnectionsRequest::setFuzzyName));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListConnectionsRequest::getInstanceId, ListConnectionsRequest::setInstanceId));
 
         // response
 
@@ -760,9 +699,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> listEndpoints =
-        genForlistEndpoints();
+        genForListEndpoints();
 
-    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForlistEndpoints() {
+    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForListEndpoints() {
         // basic
         HttpRequestDef.Builder<ListEndpointsRequest, ListEndpointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEndpointsRequest.class, ListEndpointsResponse.class)
@@ -775,58 +714,42 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getOffset, ListEndpointsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getLimit, ListEndpointsRequest::setLimit));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getSort, ListEndpointsRequest::setSort));
         builder.<ListEndpointsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEndpointsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getType, ListEndpointsRequest::setType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getName, ListEndpointsRequest::setName));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getVpcId, ListEndpointsRequest::setVpcId));
         builder.<String>withRequestField("fuzzy_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getFuzzyName, (req, v) -> {
-                req.setFuzzyName(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getFuzzyName, ListEndpointsRequest::setFuzzyName));
         builder.<String>withRequestField("subnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getSubnetId, (req, v) -> {
-                req.setSubnetId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getSubnetId, ListEndpointsRequest::setSubnetId));
 
         // response
 
@@ -839,9 +762,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListEventSourcesRequest, ListEventSourcesResponse> listEventSources =
-        genForlistEventSources();
+        genForListEventSources();
 
-    private static HttpRequestDef<ListEventSourcesRequest, ListEventSourcesResponse> genForlistEventSources() {
+    private static HttpRequestDef<ListEventSourcesRequest, ListEventSourcesResponse> genForListEventSources() {
         // basic
         HttpRequestDef.Builder<ListEventSourcesRequest, ListEventSourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEventSourcesRequest.class, ListEventSourcesResponse.class)
@@ -854,58 +777,42 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEventSourcesRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(ListEventSourcesRequest::getChannelId, ListEventSourcesRequest::setChannelId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEventSourcesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEventSourcesRequest::getOffset, ListEventSourcesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEventSourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEventSourcesRequest::getLimit, ListEventSourcesRequest::setLimit));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEventSourcesRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListEventSourcesRequest::getSort, ListEventSourcesRequest::setSort));
         builder.<ListEventSourcesRequest.ProviderTypeEnum>withRequestField("provider_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEventSourcesRequest.ProviderTypeEnum.class),
-            f -> f.withMarshaller(ListEventSourcesRequest::getProviderType, (req, v) -> {
-                req.setProviderType(v);
-            }));
+            f -> f.withMarshaller(ListEventSourcesRequest::getProviderType, ListEventSourcesRequest::setProviderType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEventSourcesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEventSourcesRequest::getName, ListEventSourcesRequest::setName));
         builder.<String>withRequestField("fuzzy_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEventSourcesRequest::getFuzzyName, (req, v) -> {
-                req.setFuzzyName(v);
-            }));
+            f -> f.withMarshaller(ListEventSourcesRequest::getFuzzyName, ListEventSourcesRequest::setFuzzyName));
         builder.<String>withRequestField("fuzzy_label",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEventSourcesRequest::getFuzzyLabel, (req, v) -> {
-                req.setFuzzyLabel(v);
-            }));
+            f -> f.withMarshaller(ListEventSourcesRequest::getFuzzyLabel, ListEventSourcesRequest::setFuzzyLabel));
 
         // response
 
@@ -913,9 +820,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListEventStreamingRequest, ListEventStreamingResponse> listEventStreaming =
-        genForlistEventStreaming();
+        genForListEventStreaming();
 
-    private static HttpRequestDef<ListEventStreamingRequest, ListEventStreamingResponse> genForlistEventStreaming() {
+    private static HttpRequestDef<ListEventStreamingRequest, ListEventStreamingResponse> genForListEventStreaming() {
         // basic
         HttpRequestDef.Builder<ListEventStreamingRequest, ListEventStreamingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEventStreamingRequest.class, ListEventStreamingResponse.class)
@@ -928,30 +835,22 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEventStreamingRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEventStreamingRequest::getOffset, ListEventStreamingRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEventStreamingRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEventStreamingRequest::getLimit, ListEventStreamingRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEventStreamingRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEventStreamingRequest::getName, ListEventStreamingRequest::setName));
         builder.<String>withRequestField("fuzzy_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEventStreamingRequest::getFuzzyName, (req, v) -> {
-                req.setFuzzyName(v);
-            }));
+            f -> f.withMarshaller(ListEventStreamingRequest::getFuzzyName, ListEventStreamingRequest::setFuzzyName));
 
         // response
 
@@ -965,9 +864,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListEventTargetRequest, ListEventTargetResponse> listEventTarget =
-        genForlistEventTarget();
+        genForListEventTarget();
 
-    private static HttpRequestDef<ListEventTargetRequest, ListEventTargetResponse> genForlistEventTarget() {
+    private static HttpRequestDef<ListEventTargetRequest, ListEventTargetResponse> genForListEventTarget() {
         // basic
         HttpRequestDef.Builder<ListEventTargetRequest, ListEventTargetResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEventTargetRequest.class, ListEventTargetResponse.class)
@@ -980,37 +879,27 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEventTargetRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEventTargetRequest::getOffset, ListEventTargetRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEventTargetRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEventTargetRequest::getLimit, ListEventTargetRequest::setLimit));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEventTargetRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListEventTargetRequest::getSort, ListEventTargetRequest::setSort));
         builder.<String>withRequestField("fuzzy_label",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEventTargetRequest::getFuzzyLabel, (req, v) -> {
-                req.setFuzzyLabel(v);
-            }));
+            f -> f.withMarshaller(ListEventTargetRequest::getFuzzyLabel, ListEventTargetRequest::setFuzzyLabel));
         builder.<List<ListEventTargetRequest.SupportTypesEnum>>withRequestField("support_types",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEventTargetRequest::getSupportTypes, (req, v) -> {
-                req.setSupportTypes(v);
-            }));
+            f -> f.withMarshaller(ListEventTargetRequest::getSupportTypes, ListEventTargetRequest::setSupportTypes));
 
         // response
 
@@ -1018,9 +907,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListPubMetricsRequest, ListPubMetricsResponse> listPubMetrics =
-        genForlistPubMetrics();
+        genForListPubMetrics();
 
-    private static HttpRequestDef<ListPubMetricsRequest, ListPubMetricsResponse> genForlistPubMetrics() {
+    private static HttpRequestDef<ListPubMetricsRequest, ListPubMetricsResponse> genForListPubMetrics() {
         // basic
         HttpRequestDef.Builder<ListPubMetricsRequest, ListPubMetricsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPubMetricsRequest.class, ListPubMetricsResponse.class)
@@ -1033,60 +922,46 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPubMetricsRequest.FilterEnum.class),
-            f -> f.withMarshaller(ListPubMetricsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListPubMetricsRequest::getFilter, ListPubMetricsRequest::setFilter));
         builder.<Integer>withRequestField("period",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPubMetricsRequest::getPeriod, (req, v) -> {
-                req.setPeriod(v);
-            }));
+            f -> f.withMarshaller(ListPubMetricsRequest::getPeriod, ListPubMetricsRequest::setPeriod));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPubMetricsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListPubMetricsRequest::getStartTime, ListPubMetricsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPubMetricsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListPubMetricsRequest::getEndTime, ListPubMetricsRequest::setEndTime));
         builder.<String>withRequestField("channel_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPubMetricsRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(ListPubMetricsRequest::getChannelId, ListPubMetricsRequest::setChannelId));
         builder.<ListPubMetricsRequest.ProviderTypeEnum>withRequestField("provider_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPubMetricsRequest.ProviderTypeEnum.class),
-            f -> f.withMarshaller(ListPubMetricsRequest::getProviderType, (req, v) -> {
-                req.setProviderType(v);
-            }));
+            f -> f.withMarshaller(ListPubMetricsRequest::getProviderType, ListPubMetricsRequest::setProviderType));
         builder.<String>withRequestField("source_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPubMetricsRequest::getSourceName, (req, v) -> {
-                req.setSourceName(v);
-            }));
+            f -> f.withMarshaller(ListPubMetricsRequest::getSourceName, ListPubMetricsRequest::setSourceName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForListQuotas();
 
-    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForListQuotas() {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
@@ -1099,9 +974,7 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListQuotasRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListQuotasRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListQuotasRequest::getType, ListQuotasRequest::setType));
 
         // response
 
@@ -1109,9 +982,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListSubMetricsRequest, ListSubMetricsResponse> listSubMetrics =
-        genForlistSubMetrics();
+        genForListSubMetrics();
 
-    private static HttpRequestDef<ListSubMetricsRequest, ListSubMetricsResponse> genForlistSubMetrics() {
+    private static HttpRequestDef<ListSubMetricsRequest, ListSubMetricsResponse> genForListSubMetrics() {
         // basic
         HttpRequestDef.Builder<ListSubMetricsRequest, ListSubMetricsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubMetricsRequest.class, ListSubMetricsResponse.class)
@@ -1124,51 +997,37 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSubMetricsRequest.FilterEnum.class),
-            f -> f.withMarshaller(ListSubMetricsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListSubMetricsRequest::getFilter, ListSubMetricsRequest::setFilter));
         builder.<Integer>withRequestField("period",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubMetricsRequest::getPeriod, (req, v) -> {
-                req.setPeriod(v);
-            }));
+            f -> f.withMarshaller(ListSubMetricsRequest::getPeriod, ListSubMetricsRequest::setPeriod));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSubMetricsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSubMetricsRequest::getStartTime, ListSubMetricsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSubMetricsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSubMetricsRequest::getEndTime, ListSubMetricsRequest::setEndTime));
         builder.<String>withRequestField("subscription_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubMetricsRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            }));
+            f -> f.withMarshaller(ListSubMetricsRequest::getSubscriptionId, ListSubMetricsRequest::setSubscriptionId));
         builder.<ListSubMetricsRequest.ProviderTypeEnum>withRequestField("provider_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSubMetricsRequest.ProviderTypeEnum.class),
-            f -> f.withMarshaller(ListSubMetricsRequest::getProviderType, (req, v) -> {
-                req.setProviderType(v);
-            }));
+            f -> f.withMarshaller(ListSubMetricsRequest::getProviderType, ListSubMetricsRequest::setProviderType));
         builder.<String>withRequestField("target_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubMetricsRequest::getTargetId, (req, v) -> {
-                req.setTargetId(v);
-            }));
+            f -> f.withMarshaller(ListSubMetricsRequest::getTargetId, ListSubMetricsRequest::setTargetId));
 
         // response
 
@@ -1176,9 +1035,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptions =
-        genForlistSubscriptions();
+        genForListSubscriptions();
 
-    private static HttpRequestDef<ListSubscriptionsRequest, ListSubscriptionsResponse> genForlistSubscriptions() {
+    private static HttpRequestDef<ListSubscriptionsRequest, ListSubscriptionsResponse> genForListSubscriptions() {
         // basic
         HttpRequestDef.Builder<ListSubscriptionsRequest, ListSubscriptionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubscriptionsRequest.class, ListSubscriptionsResponse.class)
@@ -1191,51 +1050,38 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubscriptionsRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(ListSubscriptionsRequest::getChannelId, ListSubscriptionsRequest::setChannelId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubscriptionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSubscriptionsRequest::getOffset, ListSubscriptionsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubscriptionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSubscriptionsRequest::getLimit, ListSubscriptionsRequest::setLimit));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubscriptionsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListSubscriptionsRequest::getSort, ListSubscriptionsRequest::setSort));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubscriptionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSubscriptionsRequest::getName, ListSubscriptionsRequest::setName));
         builder.<String>withRequestField("fuzzy_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubscriptionsRequest::getFuzzyName, (req, v) -> {
-                req.setFuzzyName(v);
-            }));
+            f -> f.withMarshaller(ListSubscriptionsRequest::getFuzzyName, ListSubscriptionsRequest::setFuzzyName));
         builder.<String>withRequestField("connection_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubscriptionsRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListSubscriptionsRequest::getConnectionId,
+                ListSubscriptionsRequest::setConnectionId));
 
         // response
 
@@ -1243,9 +1089,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListTracedEventsRequest, ListTracedEventsResponse> listTracedEvents =
-        genForlistTracedEvents();
+        genForListTracedEvents();
 
-    private static HttpRequestDef<ListTracedEventsRequest, ListTracedEventsResponse> genForlistTracedEvents() {
+    private static HttpRequestDef<ListTracedEventsRequest, ListTracedEventsResponse> genForListTracedEvents() {
         // basic
         HttpRequestDef.Builder<ListTracedEventsRequest, ListTracedEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTracedEventsRequest.class, ListTracedEventsResponse.class)
@@ -1258,65 +1104,48 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTracedEventsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListTracedEventsRequest::getStartTime, ListTracedEventsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTracedEventsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListTracedEventsRequest::getEndTime, ListTracedEventsRequest::setEndTime));
         builder.<String>withRequestField("event_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracedEventsRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(ListTracedEventsRequest::getEventId, ListTracedEventsRequest::setEventId));
         builder.<String>withRequestField("source_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracedEventsRequest::getSourceName, (req, v) -> {
-                req.setSourceName(v);
-            }));
+            f -> f.withMarshaller(ListTracedEventsRequest::getSourceName, ListTracedEventsRequest::setSourceName));
         builder.<String>withRequestField("event_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracedEventsRequest::getEventType, (req, v) -> {
-                req.setEventType(v);
-            }));
+            f -> f.withMarshaller(ListTracedEventsRequest::getEventType, ListTracedEventsRequest::setEventType));
         builder.<String>withRequestField("subscription_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracedEventsRequest::getSubscriptionName, (req, v) -> {
-                req.setSubscriptionName(v);
-            }));
+            f -> f.withMarshaller(ListTracedEventsRequest::getSubscriptionName,
+                ListTracedEventsRequest::setSubscriptionName));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracedEventsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTracedEventsRequest::getLimit, ListTracedEventsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTracedEventsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTracedEventsRequest::getOffset, ListTracedEventsRequest::setOffset));
         builder.<String>withRequestField("channel_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracedEventsRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(ListTracedEventsRequest::getChannelId, ListTracedEventsRequest::setChannelId));
 
         // response
 
@@ -1328,9 +1157,9 @@ public class EgMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTriggersRequest, ListTriggersResponse> listTriggers = genForlistTriggers();
+    public static final HttpRequestDef<ListTriggersRequest, ListTriggersResponse> listTriggers = genForListTriggers();
 
-    private static HttpRequestDef<ListTriggersRequest, ListTriggersResponse> genForlistTriggers() {
+    private static HttpRequestDef<ListTriggersRequest, ListTriggersResponse> genForListTriggers() {
         // basic
         HttpRequestDef.Builder<ListTriggersRequest, ListTriggersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTriggersRequest.class, ListTriggersResponse.class)
@@ -1343,30 +1172,22 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTriggersRequest::getFuncUrn, (req, v) -> {
-                req.setFuncUrn(v);
-            }));
+            f -> f.withMarshaller(ListTriggersRequest::getFuncUrn, ListTriggersRequest::setFuncUrn));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTriggersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTriggersRequest::getOffset, ListTriggersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTriggersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTriggersRequest::getLimit, ListTriggersRequest::setLimit));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTriggersRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListTriggersRequest::getSort, ListTriggersRequest::setSort));
 
         // response
 
@@ -1374,9 +1195,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> listWorkflowTriggers =
-        genForlistWorkflowTriggers();
+        genForListWorkflowTriggers();
 
-    private static HttpRequestDef<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> genForlistWorkflowTriggers() {
+    private static HttpRequestDef<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> genForListWorkflowTriggers() {
         // basic
         HttpRequestDef.Builder<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListWorkflowTriggersRequest.class, ListWorkflowTriggersResponse.class)
@@ -1389,30 +1210,23 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowTriggersRequest::getWorkflowId, (req, v) -> {
-                req.setWorkflowId(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowTriggersRequest::getWorkflowId,
+                ListWorkflowTriggersRequest::setWorkflowId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkflowTriggersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowTriggersRequest::getOffset, ListWorkflowTriggersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkflowTriggersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowTriggersRequest::getLimit, ListWorkflowTriggersRequest::setLimit));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowTriggersRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowTriggersRequest::getSort, ListWorkflowTriggersRequest::setSort));
 
         // response
 
@@ -1420,9 +1234,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<OperateSubscriptionRequest, OperateSubscriptionResponse> operateSubscription =
-        genForoperateSubscription();
+        genForOperateSubscription();
 
-    private static HttpRequestDef<OperateSubscriptionRequest, OperateSubscriptionResponse> genForoperateSubscription() {
+    private static HttpRequestDef<OperateSubscriptionRequest, OperateSubscriptionResponse> genForOperateSubscription() {
         // basic
         HttpRequestDef.Builder<OperateSubscriptionRequest, OperateSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, OperateSubscriptionRequest.class, OperateSubscriptionResponse.class)
@@ -1435,9 +1249,7 @@ public class EgMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubscriptionOperateReq.class),
-            f -> f.withMarshaller(OperateSubscriptionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(OperateSubscriptionRequest::getBody, OperateSubscriptionRequest::setBody));
 
         // response
 
@@ -1450,9 +1262,9 @@ public class EgMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<PutEventsRequest, PutEventsResponse> putEvents = genForputEvents();
+    public static final HttpRequestDef<PutEventsRequest, PutEventsResponse> putEvents = genForPutEvents();
 
-    private static HttpRequestDef<PutEventsRequest, PutEventsResponse> genForputEvents() {
+    private static HttpRequestDef<PutEventsRequest, PutEventsResponse> genForPutEvents() {
         // basic
         HttpRequestDef.Builder<PutEventsRequest, PutEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PutEventsRequest.class, PutEventsResponse.class)
@@ -1465,16 +1277,12 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PutEventsRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(PutEventsRequest::getChannelId, PutEventsRequest::setChannelId));
         builder.<PutEventsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PutEventsReq.class),
-            f -> f.withMarshaller(PutEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PutEventsRequest::getBody, PutEventsRequest::setBody));
 
         // response
 
@@ -1487,9 +1295,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<PutOfficialEventsRequest, PutOfficialEventsResponse> putOfficialEvents =
-        genForputOfficialEvents();
+        genForPutOfficialEvents();
 
-    private static HttpRequestDef<PutOfficialEventsRequest, PutOfficialEventsResponse> genForputOfficialEvents() {
+    private static HttpRequestDef<PutOfficialEventsRequest, PutOfficialEventsResponse> genForPutOfficialEvents() {
         // basic
         HttpRequestDef.Builder<PutOfficialEventsRequest, PutOfficialEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PutOfficialEventsRequest.class, PutOfficialEventsResponse.class)
@@ -1502,16 +1310,12 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PutOfficialEventsRequest::getSourceName, (req, v) -> {
-                req.setSourceName(v);
-            }));
+            f -> f.withMarshaller(PutOfficialEventsRequest::getSourceName, PutOfficialEventsRequest::setSourceName));
         builder.<PutEventsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PutEventsReq.class),
-            f -> f.withMarshaller(PutOfficialEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PutOfficialEventsRequest::getBody, PutOfficialEventsRequest::setBody));
 
         // response
 
@@ -1524,9 +1328,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ResumeEventStreamingRequest, ResumeEventStreamingResponse> resumeEventStreaming =
-        genForresumeEventStreaming();
+        genForResumeEventStreaming();
 
-    private static HttpRequestDef<ResumeEventStreamingRequest, ResumeEventStreamingResponse> genForresumeEventStreaming() {
+    private static HttpRequestDef<ResumeEventStreamingRequest, ResumeEventStreamingResponse> genForResumeEventStreaming() {
         // basic
         HttpRequestDef.Builder<ResumeEventStreamingRequest, ResumeEventStreamingResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ResumeEventStreamingRequest.class, ResumeEventStreamingResponse.class)
@@ -1539,16 +1343,13 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResumeEventStreamingRequest::getEventstreamingId, (req, v) -> {
-                req.setEventstreamingId(v);
-            }));
+            f -> f.withMarshaller(ResumeEventStreamingRequest::getEventstreamingId,
+                ResumeEventStreamingRequest::setEventstreamingId));
         builder.<EventStreamingOperateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EventStreamingOperateReq.class),
-            f -> f.withMarshaller(ResumeEventStreamingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResumeEventStreamingRequest::getBody, ResumeEventStreamingRequest::setBody));
 
         // response
 
@@ -1562,9 +1363,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse> showDetailOfChannel =
-        genForshowDetailOfChannel();
+        genForShowDetailOfChannel();
 
-    private static HttpRequestDef<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse> genForshowDetailOfChannel() {
+    private static HttpRequestDef<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse> genForShowDetailOfChannel() {
         // basic
         HttpRequestDef.Builder<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailOfChannelRequest.class, ShowDetailOfChannelResponse.class)
@@ -1577,16 +1378,13 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfChannelRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfChannelRequest::getChannelId, ShowDetailOfChannelRequest::setChannelId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfChannelRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfChannelRequest::getEnterpriseProjectId,
+                ShowDetailOfChannelRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1594,9 +1392,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse> showDetailOfConnection =
-        genForshowDetailOfConnection();
+        genForShowDetailOfConnection();
 
-    private static HttpRequestDef<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse> genForshowDetailOfConnection() {
+    private static HttpRequestDef<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse> genForShowDetailOfConnection() {
         // basic
         HttpRequestDef.Builder<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDetailOfConnectionRequest.class, ShowDetailOfConnectionResponse.class)
@@ -1609,9 +1407,8 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfConnectionRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfConnectionRequest::getConnectionId,
+                ShowDetailOfConnectionRequest::setConnectionId));
 
         // response
 
@@ -1619,9 +1416,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ShowDetailOfEventRequest, ShowDetailOfEventResponse> showDetailOfEvent =
-        genForshowDetailOfEvent();
+        genForShowDetailOfEvent();
 
-    private static HttpRequestDef<ShowDetailOfEventRequest, ShowDetailOfEventResponse> genForshowDetailOfEvent() {
+    private static HttpRequestDef<ShowDetailOfEventRequest, ShowDetailOfEventResponse> genForShowDetailOfEvent() {
         // basic
         HttpRequestDef.Builder<ShowDetailOfEventRequest, ShowDetailOfEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailOfEventRequest.class, ShowDetailOfEventResponse.class)
@@ -1634,33 +1431,27 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfEventRequest::getTraceId, (req, v) -> {
-                req.setTraceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfEventRequest::getTraceId, ShowDetailOfEventRequest::setTraceId));
         builder.<String>withRequestField("channel_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfEventRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfEventRequest::getChannelId, ShowDetailOfEventRequest::setChannelId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ShowDetailOfEventResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ShowDetailOfEventResponse::getBody, ShowDetailOfEventResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse> showDetailOfEventSource =
-        genForshowDetailOfEventSource();
+        genForShowDetailOfEventSource();
 
-    private static HttpRequestDef<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse> genForshowDetailOfEventSource() {
+    private static HttpRequestDef<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse> genForShowDetailOfEventSource() {
         // basic
         HttpRequestDef.Builder<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDetailOfEventSourceRequest.class, ShowDetailOfEventSourceResponse.class)
@@ -1673,9 +1464,8 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfEventSourceRequest::getSourceId, (req, v) -> {
-                req.setSourceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfEventSourceRequest::getSourceId,
+                ShowDetailOfEventSourceRequest::setSourceId));
 
         // response
 
@@ -1683,9 +1473,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse> showDetailOfEventTrace =
-        genForshowDetailOfEventTrace();
+        genForShowDetailOfEventTrace();
 
-    private static HttpRequestDef<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse> genForshowDetailOfEventTrace() {
+    private static HttpRequestDef<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse> genForShowDetailOfEventTrace() {
         // basic
         HttpRequestDef.Builder<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDetailOfEventTraceRequest.class, ShowDetailOfEventTraceResponse.class)
@@ -1698,16 +1488,14 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfEventTraceRequest::getTraceId, (req, v) -> {
-                req.setTraceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfEventTraceRequest::getTraceId,
+                ShowDetailOfEventTraceRequest::setTraceId));
         builder.<String>withRequestField("channel_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfEventTraceRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfEventTraceRequest::getChannelId,
+                ShowDetailOfEventTraceRequest::setChannelId));
 
         // response
 
@@ -1715,9 +1503,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse> showDetailOfSubscription =
-        genForshowDetailOfSubscription();
+        genForShowDetailOfSubscription();
 
-    private static HttpRequestDef<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse> genForshowDetailOfSubscription() {
+    private static HttpRequestDef<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse> genForShowDetailOfSubscription() {
         // basic
         HttpRequestDef.Builder<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse> builder =
             HttpRequestDef
@@ -1731,9 +1519,8 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfSubscriptionRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfSubscriptionRequest::getSubscriptionId,
+                ShowDetailOfSubscriptionRequest::setSubscriptionId));
 
         // response
 
@@ -1741,9 +1528,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse> showDetailOfSubscriptionTarget =
-        genForshowDetailOfSubscriptionTarget();
+        genForShowDetailOfSubscriptionTarget();
 
-    private static HttpRequestDef<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse> genForshowDetailOfSubscriptionTarget() {
+    private static HttpRequestDef<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse> genForShowDetailOfSubscriptionTarget() {
         // basic
         HttpRequestDef.Builder<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse> builder =
             HttpRequestDef
@@ -1759,16 +1546,14 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfSubscriptionTargetRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfSubscriptionTargetRequest::getSubscriptionId,
+                ShowDetailOfSubscriptionTargetRequest::setSubscriptionId));
         builder.<String>withRequestField("target_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailOfSubscriptionTargetRequest::getTargetId, (req, v) -> {
-                req.setTargetId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailOfSubscriptionTargetRequest::getTargetId,
+                ShowDetailOfSubscriptionTargetRequest::setTargetId));
 
         // response
 
@@ -1776,9 +1561,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ShowEventStreamingRequest, ShowEventStreamingResponse> showEventStreaming =
-        genForshowEventStreaming();
+        genForShowEventStreaming();
 
-    private static HttpRequestDef<ShowEventStreamingRequest, ShowEventStreamingResponse> genForshowEventStreaming() {
+    private static HttpRequestDef<ShowEventStreamingRequest, ShowEventStreamingResponse> genForShowEventStreaming() {
         // basic
         HttpRequestDef.Builder<ShowEventStreamingRequest, ShowEventStreamingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEventStreamingRequest.class, ShowEventStreamingResponse.class)
@@ -1791,9 +1576,8 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEventStreamingRequest::getEventstreamingId, (req, v) -> {
-                req.setEventstreamingId(v);
-            }));
+            f -> f.withMarshaller(ShowEventStreamingRequest::getEventstreamingId,
+                ShowEventStreamingRequest::setEventstreamingId));
 
         // response
 
@@ -1807,9 +1591,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<UpdateChannelRequest, UpdateChannelResponse> updateChannel =
-        genForupdateChannel();
+        genForUpdateChannel();
 
-    private static HttpRequestDef<UpdateChannelRequest, UpdateChannelResponse> genForupdateChannel() {
+    private static HttpRequestDef<UpdateChannelRequest, UpdateChannelResponse> genForUpdateChannel() {
         // basic
         HttpRequestDef.Builder<UpdateChannelRequest, UpdateChannelResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateChannelRequest.class, UpdateChannelResponse.class)
@@ -1822,23 +1606,18 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateChannelRequest::getChannelId, (req, v) -> {
-                req.setChannelId(v);
-            }));
+            f -> f.withMarshaller(UpdateChannelRequest::getChannelId, UpdateChannelRequest::setChannelId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateChannelRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateChannelRequest::getEnterpriseProjectId,
+                UpdateChannelRequest::setEnterpriseProjectId));
         builder.<ChannelUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChannelUpdateReq.class),
-            f -> f.withMarshaller(UpdateChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateChannelRequest::getBody, UpdateChannelRequest::setBody));
 
         // response
 
@@ -1851,9 +1630,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> updateConnection =
-        genForupdateConnection();
+        genForUpdateConnection();
 
-    private static HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> genForupdateConnection() {
+    private static HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> genForUpdateConnection() {
         // basic
         HttpRequestDef.Builder<UpdateConnectionRequest, UpdateConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateConnectionRequest.class, UpdateConnectionResponse.class)
@@ -1866,16 +1645,12 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConnectionRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(UpdateConnectionRequest::getConnectionId, UpdateConnectionRequest::setConnectionId));
         builder.<ConnectionUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConnectionUpdateReq.class),
-            f -> f.withMarshaller(UpdateConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateConnectionRequest::getBody, UpdateConnectionRequest::setBody));
 
         // response
 
@@ -1888,9 +1663,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> updateEndpoint =
-        genForupdateEndpoint();
+        genForUpdateEndpoint();
 
-    private static HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> genForupdateEndpoint() {
+    private static HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> genForUpdateEndpoint() {
         // basic
         HttpRequestDef.Builder<UpdateEndpointRequest, UpdateEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEndpointRequest.class, UpdateEndpointResponse.class)
@@ -1903,16 +1678,12 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointRequest::getEndpointId, (req, v) -> {
-                req.setEndpointId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointRequest::getEndpointId, UpdateEndpointRequest::setEndpointId));
         builder.<EndpointUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EndpointUpdateReq.class),
-            f -> f.withMarshaller(UpdateEndpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointRequest::getBody, UpdateEndpointRequest::setBody));
 
         // response
 
@@ -1920,9 +1691,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<UpdateEventSourceRequest, UpdateEventSourceResponse> updateEventSource =
-        genForupdateEventSource();
+        genForUpdateEventSource();
 
-    private static HttpRequestDef<UpdateEventSourceRequest, UpdateEventSourceResponse> genForupdateEventSource() {
+    private static HttpRequestDef<UpdateEventSourceRequest, UpdateEventSourceResponse> genForUpdateEventSource() {
         // basic
         HttpRequestDef.Builder<UpdateEventSourceRequest, UpdateEventSourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEventSourceRequest.class, UpdateEventSourceResponse.class)
@@ -1935,16 +1706,12 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEventSourceRequest::getSourceId, (req, v) -> {
-                req.setSourceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEventSourceRequest::getSourceId, UpdateEventSourceRequest::setSourceId));
         builder.<CustomizeSourceUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CustomizeSourceUpdateReq.class),
-            f -> f.withMarshaller(UpdateEventSourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEventSourceRequest::getBody, UpdateEventSourceRequest::setBody));
 
         // response
 
@@ -1957,9 +1724,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<UpdateEventStreamingRequest, UpdateEventStreamingResponse> updateEventStreaming =
-        genForupdateEventStreaming();
+        genForUpdateEventStreaming();
 
-    private static HttpRequestDef<UpdateEventStreamingRequest, UpdateEventStreamingResponse> genForupdateEventStreaming() {
+    private static HttpRequestDef<UpdateEventStreamingRequest, UpdateEventStreamingResponse> genForUpdateEventStreaming() {
         // basic
         HttpRequestDef.Builder<UpdateEventStreamingRequest, UpdateEventStreamingResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEventStreamingRequest.class, UpdateEventStreamingResponse.class)
@@ -1972,16 +1739,13 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEventStreamingRequest::getEventstreamingId, (req, v) -> {
-                req.setEventstreamingId(v);
-            }));
+            f -> f.withMarshaller(UpdateEventStreamingRequest::getEventstreamingId,
+                UpdateEventStreamingRequest::setEventstreamingId));
         builder.<EventStreamingUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EventStreamingUpdateReq.class),
-            f -> f.withMarshaller(UpdateEventStreamingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEventStreamingRequest::getBody, UpdateEventStreamingRequest::setBody));
 
         // response
 
@@ -1995,9 +1759,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<UpdateSubscriptionRequest, UpdateSubscriptionResponse> updateSubscription =
-        genForupdateSubscription();
+        genForUpdateSubscription();
 
-    private static HttpRequestDef<UpdateSubscriptionRequest, UpdateSubscriptionResponse> genForupdateSubscription() {
+    private static HttpRequestDef<UpdateSubscriptionRequest, UpdateSubscriptionResponse> genForUpdateSubscription() {
         // basic
         HttpRequestDef.Builder<UpdateSubscriptionRequest, UpdateSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSubscriptionRequest.class, UpdateSubscriptionResponse.class)
@@ -2010,16 +1774,13 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSubscriptionRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            }));
+            f -> f.withMarshaller(UpdateSubscriptionRequest::getSubscriptionId,
+                UpdateSubscriptionRequest::setSubscriptionId));
         builder.<SubscriptionUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubscriptionUpdateReq.class),
-            f -> f.withMarshaller(UpdateSubscriptionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSubscriptionRequest::getBody, UpdateSubscriptionRequest::setBody));
 
         // response
 
@@ -2033,9 +1794,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse> updateSubscriptionSource =
-        genForupdateSubscriptionSource();
+        genForUpdateSubscriptionSource();
 
-    private static HttpRequestDef<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse> genForupdateSubscriptionSource() {
+    private static HttpRequestDef<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse> genForUpdateSubscriptionSource() {
         // basic
         HttpRequestDef.Builder<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse> builder =
             HttpRequestDef
@@ -2049,23 +1810,19 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSubscriptionSourceRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            }));
+            f -> f.withMarshaller(UpdateSubscriptionSourceRequest::getSubscriptionId,
+                UpdateSubscriptionSourceRequest::setSubscriptionId));
         builder.<String>withRequestField("source_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSubscriptionSourceRequest::getSourceId, (req, v) -> {
-                req.setSourceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSubscriptionSourceRequest::getSourceId,
+                UpdateSubscriptionSourceRequest::setSourceId));
         builder.<SubscriptionSource>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubscriptionSource.class),
-            f -> f.withMarshaller(UpdateSubscriptionSourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSubscriptionSourceRequest::getBody, UpdateSubscriptionSourceRequest::setBody));
 
         // response
 
@@ -2079,9 +1836,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse> updateSubscriptionTarget =
-        genForupdateSubscriptionTarget();
+        genForUpdateSubscriptionTarget();
 
-    private static HttpRequestDef<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse> genForupdateSubscriptionTarget() {
+    private static HttpRequestDef<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse> genForUpdateSubscriptionTarget() {
         // basic
         HttpRequestDef.Builder<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse> builder =
             HttpRequestDef
@@ -2095,23 +1852,19 @@ public class EgMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSubscriptionTargetRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            }));
+            f -> f.withMarshaller(UpdateSubscriptionTargetRequest::getSubscriptionId,
+                UpdateSubscriptionTargetRequest::setSubscriptionId));
         builder.<String>withRequestField("target_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSubscriptionTargetRequest::getTargetId, (req, v) -> {
-                req.setTargetId(v);
-            }));
+            f -> f.withMarshaller(UpdateSubscriptionTargetRequest::getTargetId,
+                UpdateSubscriptionTargetRequest::setTargetId));
         builder.<SubscriptionTarget>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubscriptionTarget.class),
-            f -> f.withMarshaller(UpdateSubscriptionTargetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSubscriptionTargetRequest::getBody, UpdateSubscriptionTargetRequest::setBody));
 
         // response
 
@@ -2125,9 +1878,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForlistApiVersions();
+        genForListApiVersions();
 
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
@@ -2143,9 +1896,9 @@ public class EgMeta {
     }
 
     public static final HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> listObsBuckets =
-        genForlistObsBuckets();
+        genForListObsBuckets();
 
-    private static HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> genForlistObsBuckets() {
+    private static HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> genForListObsBuckets() {
         // basic
         HttpRequestDef.Builder<ListObsBucketsRequest, ListObsBucketsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListObsBucketsRequest.class, ListObsBucketsResponse.class)
@@ -2158,23 +1911,17 @@ public class EgMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListObsBucketsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListObsBucketsRequest::getOffset, ListObsBucketsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListObsBucketsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListObsBucketsRequest::getLimit, ListObsBucketsRequest::setLimit));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListObsBucketsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListObsBucketsRequest::getSort, ListObsBucketsRequest::setSort));
 
         // response
 

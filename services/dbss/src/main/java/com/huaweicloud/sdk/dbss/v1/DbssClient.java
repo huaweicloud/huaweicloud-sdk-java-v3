@@ -68,7 +68,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddRdsNoAgentDatabaseRequest 请求对象
+     * @param request AddRdsNoAgentDatabaseRequest 请求对象
      * @return AddRdsNoAgentDatabaseResponse
      */
     public AddRdsNoAgentDatabaseResponse addRdsNoAgentDatabase(AddRdsNoAgentDatabaseRequest request) {
@@ -82,13 +82,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddRdsNoAgentDatabaseRequest 请求对象
+     * @param request AddRdsNoAgentDatabaseRequest 请求对象
      * @return SyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse>
      */
     public SyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse> addRdsNoAgentDatabaseInvoker(
         AddRdsNoAgentDatabaseRequest request) {
-        return new SyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse>(request,
-            DbssMeta.addRdsNoAgentDatabase, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.addRdsNoAgentDatabase, hcClient);
     }
 
     /**
@@ -98,7 +97,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddResourceTagRequest 请求对象
+     * @param request BatchAddResourceTagRequest 请求对象
      * @return BatchAddResourceTagResponse
      */
     public BatchAddResourceTagResponse batchAddResourceTag(BatchAddResourceTagRequest request) {
@@ -112,13 +111,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddResourceTagRequest 请求对象
+     * @param request BatchAddResourceTagRequest 请求对象
      * @return SyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse>
      */
     public SyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse> batchAddResourceTagInvoker(
         BatchAddResourceTagRequest request) {
-        return new SyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse>(request,
-            DbssMeta.batchAddResourceTag, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.batchAddResourceTag, hcClient);
     }
 
     /**
@@ -128,7 +126,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceTagRequest 请求对象
+     * @param request BatchDeleteResourceTagRequest 请求对象
      * @return BatchDeleteResourceTagResponse
      */
     public BatchDeleteResourceTagResponse batchDeleteResourceTag(BatchDeleteResourceTagRequest request) {
@@ -142,13 +140,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceTagRequest 请求对象
+     * @param request BatchDeleteResourceTagRequest 请求对象
      * @return SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>
      */
     public SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTagInvoker(
         BatchDeleteResourceTagRequest request) {
-        return new SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>(request,
-            DbssMeta.batchDeleteResourceTag, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.batchDeleteResourceTag, hcClient);
     }
 
     /**
@@ -158,7 +155,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountResourceInstanceByTagRequest 请求对象
+     * @param request CountResourceInstanceByTagRequest 请求对象
      * @return CountResourceInstanceByTagResponse
      */
     public CountResourceInstanceByTagResponse countResourceInstanceByTag(CountResourceInstanceByTagRequest request) {
@@ -172,13 +169,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountResourceInstanceByTagRequest 请求对象
+     * @param request CountResourceInstanceByTagRequest 请求对象
      * @return SyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse>
      */
     public SyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> countResourceInstanceByTagInvoker(
         CountResourceInstanceByTagRequest request) {
-        return new SyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse>(request,
-            DbssMeta.countResourceInstanceByTag, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.countResourceInstanceByTag, hcClient);
     }
 
     /**
@@ -188,7 +184,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstancesPeriodOrderRequest 请求对象
+     * @param request CreateInstancesPeriodOrderRequest 请求对象
      * @return CreateInstancesPeriodOrderResponse
      */
     public CreateInstancesPeriodOrderResponse createInstancesPeriodOrder(CreateInstancesPeriodOrderRequest request) {
@@ -202,13 +198,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstancesPeriodOrderRequest 请求对象
+     * @param request CreateInstancesPeriodOrderRequest 请求对象
      * @return SyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse>
      */
     public SyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse> createInstancesPeriodOrderInvoker(
         CreateInstancesPeriodOrderRequest request) {
-        return new SyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse>(request,
-            DbssMeta.createInstancesPeriodOrder, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.createInstancesPeriodOrder, hcClient);
     }
 
     /**
@@ -218,7 +213,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditDatabasesRequest 请求对象
+     * @param request ListAuditDatabasesRequest 请求对象
      * @return ListAuditDatabasesResponse
      */
     public ListAuditDatabasesResponse listAuditDatabases(ListAuditDatabasesRequest request) {
@@ -232,13 +227,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditDatabasesRequest 请求对象
+     * @param request ListAuditDatabasesRequest 请求对象
      * @return SyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse>
      */
     public SyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse> listAuditDatabasesInvoker(
         ListAuditDatabasesRequest request) {
-        return new SyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse>(request,
-            DbssMeta.listAuditDatabases, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listAuditDatabases, hcClient);
     }
 
     /**
@@ -248,7 +242,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditInstanceJobsRequest 请求对象
+     * @param request ListAuditInstanceJobsRequest 请求对象
      * @return ListAuditInstanceJobsResponse
      */
     public ListAuditInstanceJobsResponse listAuditInstanceJobs(ListAuditInstanceJobsRequest request) {
@@ -262,13 +256,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditInstanceJobsRequest 请求对象
+     * @param request ListAuditInstanceJobsRequest 请求对象
      * @return SyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse>
      */
     public SyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse> listAuditInstanceJobsInvoker(
         ListAuditInstanceJobsRequest request) {
-        return new SyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse>(request,
-            DbssMeta.listAuditInstanceJobs, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listAuditInstanceJobs, hcClient);
     }
 
     /**
@@ -278,7 +271,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditInstancesRequest 请求对象
+     * @param request ListAuditInstancesRequest 请求对象
      * @return ListAuditInstancesResponse
      */
     public ListAuditInstancesResponse listAuditInstances(ListAuditInstancesRequest request) {
@@ -292,13 +285,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditInstancesRequest 请求对象
+     * @param request ListAuditInstancesRequest 请求对象
      * @return SyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse>
      */
     public SyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse> listAuditInstancesInvoker(
         ListAuditInstancesRequest request) {
-        return new SyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse>(request,
-            DbssMeta.listAuditInstances, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listAuditInstances, hcClient);
     }
 
     /**
@@ -308,7 +300,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditOperateLogsRequest 请求对象
+     * @param request ListAuditOperateLogsRequest 请求对象
      * @return ListAuditOperateLogsResponse
      */
     public ListAuditOperateLogsResponse listAuditOperateLogs(ListAuditOperateLogsRequest request) {
@@ -322,13 +314,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditOperateLogsRequest 请求对象
+     * @param request ListAuditOperateLogsRequest 请求对象
      * @return SyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse>
      */
     public SyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse> listAuditOperateLogsInvoker(
         ListAuditOperateLogsRequest request) {
-        return new SyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse>(request,
-            DbssMeta.listAuditOperateLogs, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listAuditOperateLogs, hcClient);
     }
 
     /**
@@ -338,7 +329,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditRuleRisksRequest 请求对象
+     * @param request ListAuditRuleRisksRequest 请求对象
      * @return ListAuditRuleRisksResponse
      */
     public ListAuditRuleRisksResponse listAuditRuleRisks(ListAuditRuleRisksRequest request) {
@@ -352,13 +343,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditRuleRisksRequest 请求对象
+     * @param request ListAuditRuleRisksRequest 请求对象
      * @return SyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse>
      */
     public SyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse> listAuditRuleRisksInvoker(
         ListAuditRuleRisksRequest request) {
-        return new SyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse>(request,
-            DbssMeta.listAuditRuleRisks, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listAuditRuleRisks, hcClient);
     }
 
     /**
@@ -368,7 +358,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditRuleScopesRequest 请求对象
+     * @param request ListAuditRuleScopesRequest 请求对象
      * @return ListAuditRuleScopesResponse
      */
     public ListAuditRuleScopesResponse listAuditRuleScopes(ListAuditRuleScopesRequest request) {
@@ -382,13 +372,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditRuleScopesRequest 请求对象
+     * @param request ListAuditRuleScopesRequest 请求对象
      * @return SyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse>
      */
     public SyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse> listAuditRuleScopesInvoker(
         ListAuditRuleScopesRequest request) {
-        return new SyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse>(request,
-            DbssMeta.listAuditRuleScopes, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listAuditRuleScopes, hcClient);
     }
 
     /**
@@ -398,7 +387,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditSensitiveMasksRequest 请求对象
+     * @param request ListAuditSensitiveMasksRequest 请求对象
      * @return ListAuditSensitiveMasksResponse
      */
     public ListAuditSensitiveMasksResponse listAuditSensitiveMasks(ListAuditSensitiveMasksRequest request) {
@@ -412,13 +401,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditSensitiveMasksRequest 请求对象
+     * @param request ListAuditSensitiveMasksRequest 请求对象
      * @return SyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse>
      */
     public SyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse> listAuditSensitiveMasksInvoker(
         ListAuditSensitiveMasksRequest request) {
-        return new SyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse>(request,
-            DbssMeta.listAuditSensitiveMasks, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listAuditSensitiveMasks, hcClient);
     }
 
     /**
@@ -428,7 +416,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZoneInfosRequest 请求对象
+     * @param request ListAvailabilityZoneInfosRequest 请求对象
      * @return ListAvailabilityZoneInfosResponse
      */
     public ListAvailabilityZoneInfosResponse listAvailabilityZoneInfos(ListAvailabilityZoneInfosRequest request) {
@@ -442,13 +430,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZoneInfosRequest 请求对象
+     * @param request ListAvailabilityZoneInfosRequest 请求对象
      * @return SyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse>
      */
     public SyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse> listAvailabilityZoneInfosInvoker(
         ListAvailabilityZoneInfosRequest request) {
-        return new SyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse>(request,
-            DbssMeta.listAvailabilityZoneInfos, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listAvailabilityZoneInfos, hcClient);
     }
 
     /**
@@ -458,7 +445,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEcsSpecificationRequest 请求对象
+     * @param request ListEcsSpecificationRequest 请求对象
      * @return ListEcsSpecificationResponse
      */
     public ListEcsSpecificationResponse listEcsSpecification(ListEcsSpecificationRequest request) {
@@ -472,13 +459,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEcsSpecificationRequest 请求对象
+     * @param request ListEcsSpecificationRequest 请求对象
      * @return SyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse>
      */
     public SyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse> listEcsSpecificationInvoker(
         ListEcsSpecificationRequest request) {
-        return new SyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse>(request,
-            DbssMeta.listEcsSpecification, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listEcsSpecification, hcClient);
     }
 
     /**
@@ -488,7 +474,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectResourceTagsRequest 请求对象
+     * @param request ListProjectResourceTagsRequest 请求对象
      * @return ListProjectResourceTagsResponse
      */
     public ListProjectResourceTagsResponse listProjectResourceTags(ListProjectResourceTagsRequest request) {
@@ -502,13 +488,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectResourceTagsRequest 请求对象
+     * @param request ListProjectResourceTagsRequest 请求对象
      * @return SyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse>
      */
     public SyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> listProjectResourceTagsInvoker(
         ListProjectResourceTagsRequest request) {
-        return new SyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse>(request,
-            DbssMeta.listProjectResourceTags, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listProjectResourceTags, hcClient);
     }
 
     /**
@@ -518,7 +503,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstanceByTagRequest 请求对象
+     * @param request ListResourceInstanceByTagRequest 请求对象
      * @return ListResourceInstanceByTagResponse
      */
     public ListResourceInstanceByTagResponse listResourceInstanceByTag(ListResourceInstanceByTagRequest request) {
@@ -532,13 +517,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstanceByTagRequest 请求对象
+     * @param request ListResourceInstanceByTagRequest 请求对象
      * @return SyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse>
      */
     public SyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> listResourceInstanceByTagInvoker(
         ListResourceInstanceByTagRequest request) {
-        return new SyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse>(request,
-            DbssMeta.listResourceInstanceByTag, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listResourceInstanceByTag, hcClient);
     }
 
     /**
@@ -548,7 +532,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlInjectionRulesRequest 请求对象
+     * @param request ListSqlInjectionRulesRequest 请求对象
      * @return ListSqlInjectionRulesResponse
      */
     public ListSqlInjectionRulesResponse listSqlInjectionRules(ListSqlInjectionRulesRequest request) {
@@ -562,13 +546,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlInjectionRulesRequest 请求对象
+     * @param request ListSqlInjectionRulesRequest 请求对象
      * @return SyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse>
      */
     public SyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse> listSqlInjectionRulesInvoker(
         ListSqlInjectionRulesRequest request) {
-        return new SyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse>(request,
-            DbssMeta.listSqlInjectionRules, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.listSqlInjectionRules, hcClient);
     }
 
     /**
@@ -578,7 +561,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuditQuotaRequest 请求对象
+     * @param request ShowAuditQuotaRequest 请求对象
      * @return ShowAuditQuotaResponse
      */
     public ShowAuditQuotaResponse showAuditQuota(ShowAuditQuotaRequest request) {
@@ -592,13 +575,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuditQuotaRequest 请求对象
+     * @param request ShowAuditQuotaRequest 请求对象
      * @return SyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse>
      */
     public SyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse> showAuditQuotaInvoker(
         ShowAuditQuotaRequest request) {
-        return new SyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse>(request, DbssMeta.showAuditQuota,
-            hcClient);
+        return new SyncInvoker<>(request, DbssMeta.showAuditQuota, hcClient);
     }
 
     /**
@@ -608,7 +590,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuditRuleRiskRequest 请求对象
+     * @param request ShowAuditRuleRiskRequest 请求对象
      * @return ShowAuditRuleRiskResponse
      */
     public ShowAuditRuleRiskResponse showAuditRuleRisk(ShowAuditRuleRiskRequest request) {
@@ -622,13 +604,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuditRuleRiskRequest 请求对象
+     * @param request ShowAuditRuleRiskRequest 请求对象
      * @return SyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse>
      */
     public SyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse> showAuditRuleRiskInvoker(
         ShowAuditRuleRiskRequest request) {
-        return new SyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse>(request, DbssMeta.showAuditRuleRisk,
-            hcClient);
+        return new SyncInvoker<>(request, DbssMeta.showAuditRuleRisk, hcClient);
     }
 
     /**
@@ -638,7 +619,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchAgentRequest 请求对象
+     * @param request SwitchAgentRequest 请求对象
      * @return SwitchAgentResponse
      */
     public SwitchAgentResponse switchAgent(SwitchAgentRequest request) {
@@ -652,11 +633,11 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchAgentRequest 请求对象
+     * @param request SwitchAgentRequest 请求对象
      * @return SyncInvoker<SwitchAgentRequest, SwitchAgentResponse>
      */
     public SyncInvoker<SwitchAgentRequest, SwitchAgentResponse> switchAgentInvoker(SwitchAgentRequest request) {
-        return new SyncInvoker<SwitchAgentRequest, SwitchAgentResponse>(request, DbssMeta.switchAgent, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.switchAgent, hcClient);
     }
 
     /**
@@ -666,7 +647,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchRiskRuleRequest 请求对象
+     * @param request SwitchRiskRuleRequest 请求对象
      * @return SwitchRiskRuleResponse
      */
     public SwitchRiskRuleResponse switchRiskRule(SwitchRiskRuleRequest request) {
@@ -680,13 +661,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchRiskRuleRequest 请求对象
+     * @param request SwitchRiskRuleRequest 请求对象
      * @return SyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse>
      */
     public SyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse> switchRiskRuleInvoker(
         SwitchRiskRuleRequest request) {
-        return new SyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse>(request, DbssMeta.switchRiskRule,
-            hcClient);
+        return new SyncInvoker<>(request, DbssMeta.switchRiskRule, hcClient);
     }
 
     /**
@@ -696,7 +676,7 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAuditSecurityGroupRequest 请求对象
+     * @param request UpdateAuditSecurityGroupRequest 请求对象
      * @return UpdateAuditSecurityGroupResponse
      */
     public UpdateAuditSecurityGroupResponse updateAuditSecurityGroup(UpdateAuditSecurityGroupRequest request) {
@@ -710,13 +690,12 @@ public class DbssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAuditSecurityGroupRequest 请求对象
+     * @param request UpdateAuditSecurityGroupRequest 请求对象
      * @return SyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse>
      */
     public SyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse> updateAuditSecurityGroupInvoker(
         UpdateAuditSecurityGroupRequest request) {
-        return new SyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse>(request,
-            DbssMeta.updateAuditSecurityGroup, hcClient);
+        return new SyncInvoker<>(request, DbssMeta.updateAuditSecurityGroup, hcClient);
     }
 
 }

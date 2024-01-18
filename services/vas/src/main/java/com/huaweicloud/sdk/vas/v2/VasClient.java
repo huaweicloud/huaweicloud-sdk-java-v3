@@ -38,7 +38,7 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTasksRequest 请求对象
+     * @param request CreateTasksRequest 请求对象
      * @return CreateTasksResponse
      */
     public CreateTasksResponse createTasks(CreateTasksRequest request) {
@@ -52,11 +52,11 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTasksRequest 请求对象
+     * @param request CreateTasksRequest 请求对象
      * @return SyncInvoker<CreateTasksRequest, CreateTasksResponse>
      */
     public SyncInvoker<CreateTasksRequest, CreateTasksResponse> createTasksInvoker(CreateTasksRequest request) {
-        return new SyncInvoker<CreateTasksRequest, CreateTasksResponse>(request, VasMeta.createTasks, hcClient);
+        return new SyncInvoker<>(request, VasMeta.createTasks, hcClient);
     }
 
     /**
@@ -66,7 +66,7 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return DeleteTaskResponse
      */
     public DeleteTaskResponse deleteTask(DeleteTaskRequest request) {
@@ -80,11 +80,11 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
-        return new SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, VasMeta.deleteTask, hcClient);
+        return new SyncInvoker<>(request, VasMeta.deleteTask, hcClient);
     }
 
     /**
@@ -94,7 +94,7 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksDetailsRequest 请求对象
+     * @param request ListTasksDetailsRequest 请求对象
      * @return ListTasksDetailsResponse
      */
     public ListTasksDetailsResponse listTasksDetails(ListTasksDetailsRequest request) {
@@ -108,13 +108,12 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksDetailsRequest 请求对象
+     * @param request ListTasksDetailsRequest 请求对象
      * @return SyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse>
      */
     public SyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse> listTasksDetailsInvoker(
         ListTasksDetailsRequest request) {
-        return new SyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse>(request, VasMeta.listTasksDetails,
-            hcClient);
+        return new SyncInvoker<>(request, VasMeta.listTasksDetails, hcClient);
     }
 
     /**
@@ -124,7 +123,7 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return ShowTaskResponse
      */
     public ShowTaskResponse showTask(ShowTaskRequest request) {
@@ -138,11 +137,11 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return SyncInvoker<ShowTaskRequest, ShowTaskResponse>
      */
     public SyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskInvoker(ShowTaskRequest request) {
-        return new SyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, VasMeta.showTask, hcClient);
+        return new SyncInvoker<>(request, VasMeta.showTask, hcClient);
     }
 
     /**
@@ -152,7 +151,7 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTaskRequest 请求对象
+     * @param request StartTaskRequest 请求对象
      * @return StartTaskResponse
      */
     public StartTaskResponse startTask(StartTaskRequest request) {
@@ -166,11 +165,11 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTaskRequest 请求对象
+     * @param request StartTaskRequest 请求对象
      * @return SyncInvoker<StartTaskRequest, StartTaskResponse>
      */
     public SyncInvoker<StartTaskRequest, StartTaskResponse> startTaskInvoker(StartTaskRequest request) {
-        return new SyncInvoker<StartTaskRequest, StartTaskResponse>(request, VasMeta.startTask, hcClient);
+        return new SyncInvoker<>(request, VasMeta.startTask, hcClient);
     }
 
     /**
@@ -180,7 +179,7 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskRequest 请求对象
+     * @param request StopTaskRequest 请求对象
      * @return StopTaskResponse
      */
     public StopTaskResponse stopTask(StopTaskRequest request) {
@@ -194,11 +193,11 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskRequest 请求对象
+     * @param request StopTaskRequest 请求对象
      * @return SyncInvoker<StopTaskRequest, StopTaskResponse>
      */
     public SyncInvoker<StopTaskRequest, StopTaskResponse> stopTaskInvoker(StopTaskRequest request) {
-        return new SyncInvoker<StopTaskRequest, StopTaskResponse>(request, VasMeta.stopTask, hcClient);
+        return new SyncInvoker<>(request, VasMeta.stopTask, hcClient);
     }
 
     /**
@@ -208,7 +207,7 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskRequest 请求对象
+     * @param request UpdateTaskRequest 请求对象
      * @return UpdateTaskResponse
      */
     public UpdateTaskResponse updateTask(UpdateTaskRequest request) {
@@ -222,11 +221,11 @@ public class VasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskRequest 请求对象
+     * @param request UpdateTaskRequest 请求对象
      * @return SyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
      */
     public SyncInvoker<UpdateTaskRequest, UpdateTaskResponse> updateTaskInvoker(UpdateTaskRequest request) {
-        return new SyncInvoker<UpdateTaskRequest, UpdateTaskResponse>(request, VasMeta.updateTask, hcClient);
+        return new SyncInvoker<>(request, VasMeta.updateTask, hcClient);
     }
 
 }

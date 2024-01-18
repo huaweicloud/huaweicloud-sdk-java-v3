@@ -102,7 +102,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUnblockIpRequest 请求对象
+     * @param request ExecuteUnblockIpRequest 请求对象
      * @return CompletableFuture<ExecuteUnblockIpResponse>
      */
     public CompletableFuture<ExecuteUnblockIpResponse> executeUnblockIpAsync(ExecuteUnblockIpRequest request) {
@@ -116,13 +116,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUnblockIpRequest 请求对象
+     * @param request ExecuteUnblockIpRequest 请求对象
      * @return AsyncInvoker<ExecuteUnblockIpRequest, ExecuteUnblockIpResponse>
      */
     public AsyncInvoker<ExecuteUnblockIpRequest, ExecuteUnblockIpResponse> executeUnblockIpAsyncInvoker(
         ExecuteUnblockIpRequest request) {
-        return new AsyncInvoker<ExecuteUnblockIpRequest, ExecuteUnblockIpResponse>(request, AadMeta.executeUnblockIp,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.executeUnblockIp, hcClient);
     }
 
     /**
@@ -132,7 +131,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBlockIpsRequest 请求对象
+     * @param request ListBlockIpsRequest 请求对象
      * @return CompletableFuture<ListBlockIpsResponse>
      */
     public CompletableFuture<ListBlockIpsResponse> listBlockIpsAsync(ListBlockIpsRequest request) {
@@ -146,12 +145,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBlockIpsRequest 请求对象
+     * @param request ListBlockIpsRequest 请求对象
      * @return AsyncInvoker<ListBlockIpsRequest, ListBlockIpsResponse>
      */
     public AsyncInvoker<ListBlockIpsRequest, ListBlockIpsResponse> listBlockIpsAsyncInvoker(
         ListBlockIpsRequest request) {
-        return new AsyncInvoker<ListBlockIpsRequest, ListBlockIpsResponse>(request, AadMeta.listBlockIps, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listBlockIps, hcClient);
     }
 
     /**
@@ -161,7 +160,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUnblockQuotaStatisticsRequest 请求对象
+     * @param request ListUnblockQuotaStatisticsRequest 请求对象
      * @return CompletableFuture<ListUnblockQuotaStatisticsResponse>
      */
     public CompletableFuture<ListUnblockQuotaStatisticsResponse> listUnblockQuotaStatisticsAsync(
@@ -176,13 +175,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUnblockQuotaStatisticsRequest 请求对象
+     * @param request ListUnblockQuotaStatisticsRequest 请求对象
      * @return AsyncInvoker<ListUnblockQuotaStatisticsRequest, ListUnblockQuotaStatisticsResponse>
      */
     public AsyncInvoker<ListUnblockQuotaStatisticsRequest, ListUnblockQuotaStatisticsResponse> listUnblockQuotaStatisticsAsyncInvoker(
         ListUnblockQuotaStatisticsRequest request) {
-        return new AsyncInvoker<ListUnblockQuotaStatisticsRequest, ListUnblockQuotaStatisticsResponse>(request,
-            AadMeta.listUnblockQuotaStatistics, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listUnblockQuotaStatistics, hcClient);
     }
 
     /**
@@ -192,7 +190,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockStatisticsRequest 请求对象
+     * @param request ShowBlockStatisticsRequest 请求对象
      * @return CompletableFuture<ShowBlockStatisticsResponse>
      */
     public CompletableFuture<ShowBlockStatisticsResponse> showBlockStatisticsAsync(ShowBlockStatisticsRequest request) {
@@ -206,13 +204,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockStatisticsRequest 请求对象
+     * @param request ShowBlockStatisticsRequest 请求对象
      * @return AsyncInvoker<ShowBlockStatisticsRequest, ShowBlockStatisticsResponse>
      */
     public AsyncInvoker<ShowBlockStatisticsRequest, ShowBlockStatisticsResponse> showBlockStatisticsAsyncInvoker(
         ShowBlockStatisticsRequest request) {
-        return new AsyncInvoker<ShowBlockStatisticsRequest, ShowBlockStatisticsResponse>(request,
-            AadMeta.showBlockStatistics, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.showBlockStatistics, hcClient);
     }
 
     /**
@@ -222,7 +219,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUnblockRecordRequest 请求对象
+     * @param request ShowUnblockRecordRequest 请求对象
      * @return CompletableFuture<ShowUnblockRecordResponse>
      */
     public CompletableFuture<ShowUnblockRecordResponse> showUnblockRecordAsync(ShowUnblockRecordRequest request) {
@@ -236,13 +233,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUnblockRecordRequest 请求对象
+     * @param request ShowUnblockRecordRequest 请求对象
      * @return AsyncInvoker<ShowUnblockRecordRequest, ShowUnblockRecordResponse>
      */
     public AsyncInvoker<ShowUnblockRecordRequest, ShowUnblockRecordResponse> showUnblockRecordAsyncInvoker(
         ShowUnblockRecordRequest request) {
-        return new AsyncInvoker<ShowUnblockRecordRequest, ShowUnblockRecordResponse>(request, AadMeta.showUnblockRecord,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.showUnblockRecord, hcClient);
     }
 
     /**
@@ -252,7 +248,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddBlackWhiteIpListRequest 请求对象
+     * @param request AddBlackWhiteIpListRequest 请求对象
      * @return CompletableFuture<AddBlackWhiteIpListResponse>
      */
     public CompletableFuture<AddBlackWhiteIpListResponse> addBlackWhiteIpListAsync(AddBlackWhiteIpListRequest request) {
@@ -266,13 +262,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddBlackWhiteIpListRequest 请求对象
+     * @param request AddBlackWhiteIpListRequest 请求对象
      * @return AsyncInvoker<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse>
      */
     public AsyncInvoker<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse> addBlackWhiteIpListAsyncInvoker(
         AddBlackWhiteIpListRequest request) {
-        return new AsyncInvoker<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse>(request,
-            AadMeta.addBlackWhiteIpList, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.addBlackWhiteIpList, hcClient);
     }
 
     /**
@@ -282,7 +277,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPolicyBlackAndWhiteIpListRequest 请求对象
+     * @param request AddPolicyBlackAndWhiteIpListRequest 请求对象
      * @return CompletableFuture<AddPolicyBlackAndWhiteIpListResponse>
      */
     public CompletableFuture<AddPolicyBlackAndWhiteIpListResponse> addPolicyBlackAndWhiteIpListAsync(
@@ -297,13 +292,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPolicyBlackAndWhiteIpListRequest 请求对象
+     * @param request AddPolicyBlackAndWhiteIpListRequest 请求对象
      * @return AsyncInvoker<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse>
      */
     public AsyncInvoker<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse> addPolicyBlackAndWhiteIpListAsyncInvoker(
         AddPolicyBlackAndWhiteIpListRequest request) {
-        return new AsyncInvoker<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse>(request,
-            AadMeta.addPolicyBlackAndWhiteIpList, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.addPolicyBlackAndWhiteIpList, hcClient);
     }
 
     /**
@@ -313,7 +307,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateIpToPolicyRequest 请求对象
+     * @param request AssociateIpToPolicyRequest 请求对象
      * @return CompletableFuture<AssociateIpToPolicyResponse>
      */
     public CompletableFuture<AssociateIpToPolicyResponse> associateIpToPolicyAsync(AssociateIpToPolicyRequest request) {
@@ -327,13 +321,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateIpToPolicyRequest 请求对象
+     * @param request AssociateIpToPolicyRequest 请求对象
      * @return AsyncInvoker<AssociateIpToPolicyRequest, AssociateIpToPolicyResponse>
      */
     public AsyncInvoker<AssociateIpToPolicyRequest, AssociateIpToPolicyResponse> associateIpToPolicyAsyncInvoker(
         AssociateIpToPolicyRequest request) {
-        return new AsyncInvoker<AssociateIpToPolicyRequest, AssociateIpToPolicyResponse>(request,
-            AadMeta.associateIpToPolicy, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.associateIpToPolicy, hcClient);
     }
 
     /**
@@ -343,7 +336,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateInstanceIpRuleRequest 请求对象
+     * @param request BatchCreateInstanceIpRuleRequest 请求对象
      * @return CompletableFuture<BatchCreateInstanceIpRuleResponse>
      */
     public CompletableFuture<BatchCreateInstanceIpRuleResponse> batchCreateInstanceIpRuleAsync(
@@ -358,13 +351,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateInstanceIpRuleRequest 请求对象
+     * @param request BatchCreateInstanceIpRuleRequest 请求对象
      * @return AsyncInvoker<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse>
      */
     public AsyncInvoker<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse> batchCreateInstanceIpRuleAsyncInvoker(
         BatchCreateInstanceIpRuleRequest request) {
-        return new AsyncInvoker<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse>(request,
-            AadMeta.batchCreateInstanceIpRule, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.batchCreateInstanceIpRule, hcClient);
     }
 
     /**
@@ -374,7 +366,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceIpRuleRequest 请求对象
+     * @param request BatchDeleteInstanceIpRuleRequest 请求对象
      * @return CompletableFuture<BatchDeleteInstanceIpRuleResponse>
      */
     public CompletableFuture<BatchDeleteInstanceIpRuleResponse> batchDeleteInstanceIpRuleAsync(
@@ -389,13 +381,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceIpRuleRequest 请求对象
+     * @param request BatchDeleteInstanceIpRuleRequest 请求对象
      * @return AsyncInvoker<BatchDeleteInstanceIpRuleRequest, BatchDeleteInstanceIpRuleResponse>
      */
     public AsyncInvoker<BatchDeleteInstanceIpRuleRequest, BatchDeleteInstanceIpRuleResponse> batchDeleteInstanceIpRuleAsyncInvoker(
         BatchDeleteInstanceIpRuleRequest request) {
-        return new AsyncInvoker<BatchDeleteInstanceIpRuleRequest, BatchDeleteInstanceIpRuleResponse>(request,
-            AadMeta.batchDeleteInstanceIpRule, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.batchDeleteInstanceIpRule, hcClient);
     }
 
     /**
@@ -405,7 +396,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAadDomainRequest 请求对象
+     * @param request CreateAadDomainRequest 请求对象
      * @return CompletableFuture<CreateAadDomainResponse>
      */
     public CompletableFuture<CreateAadDomainResponse> createAadDomainAsync(CreateAadDomainRequest request) {
@@ -419,13 +410,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAadDomainRequest 请求对象
+     * @param request CreateAadDomainRequest 请求对象
      * @return AsyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse>
      */
     public AsyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse> createAadDomainAsyncInvoker(
         CreateAadDomainRequest request) {
-        return new AsyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse>(request, AadMeta.createAadDomain,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.createAadDomain, hcClient);
     }
 
     /**
@@ -435,7 +425,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return CompletableFuture<CreateCertificateResponse>
      */
     public CompletableFuture<CreateCertificateResponse> createCertificateAsync(CreateCertificateRequest request) {
@@ -449,13 +439,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
      */
     public AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateAsyncInvoker(
         CreateCertificateRequest request) {
-        return new AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request, AadMeta.createCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.createCertificate, hcClient);
     }
 
     /**
@@ -465,7 +454,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return CompletableFuture<CreatePolicyResponse>
      */
     public CompletableFuture<CreatePolicyResponse> createPolicyAsync(CreatePolicyRequest request) {
@@ -479,12 +468,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>
      */
     public AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse> createPolicyAsyncInvoker(
         CreatePolicyRequest request) {
-        return new AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>(request, AadMeta.createPolicy, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.createPolicy, hcClient);
     }
 
     /**
@@ -494,7 +483,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmConfigRequest 请求对象
+     * @param request DeleteAlarmConfigRequest 请求对象
      * @return CompletableFuture<DeleteAlarmConfigResponse>
      */
     public CompletableFuture<DeleteAlarmConfigResponse> deleteAlarmConfigAsync(DeleteAlarmConfigRequest request) {
@@ -508,13 +497,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmConfigRequest 请求对象
+     * @param request DeleteAlarmConfigRequest 请求对象
      * @return AsyncInvoker<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse>
      */
     public AsyncInvoker<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse> deleteAlarmConfigAsyncInvoker(
         DeleteAlarmConfigRequest request) {
-        return new AsyncInvoker<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse>(request, AadMeta.deleteAlarmConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.deleteAlarmConfig, hcClient);
     }
 
     /**
@@ -524,7 +512,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBlackWhiteIpListRequest 请求对象
+     * @param request DeleteBlackWhiteIpListRequest 请求对象
      * @return CompletableFuture<DeleteBlackWhiteIpListResponse>
      */
     public CompletableFuture<DeleteBlackWhiteIpListResponse> deleteBlackWhiteIpListAsync(
@@ -539,13 +527,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBlackWhiteIpListRequest 请求对象
+     * @param request DeleteBlackWhiteIpListRequest 请求对象
      * @return AsyncInvoker<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse>
      */
     public AsyncInvoker<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse> deleteBlackWhiteIpListAsyncInvoker(
         DeleteBlackWhiteIpListRequest request) {
-        return new AsyncInvoker<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse>(request,
-            AadMeta.deleteBlackWhiteIpList, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.deleteBlackWhiteIpList, hcClient);
     }
 
     /**
@@ -555,7 +542,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return CompletableFuture<DeletePolicyResponse>
      */
     public CompletableFuture<DeletePolicyResponse> deletePolicyAsync(DeletePolicyRequest request) {
@@ -569,12 +556,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse>
      */
     public AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse> deletePolicyAsyncInvoker(
         DeletePolicyRequest request) {
-        return new AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse>(request, AadMeta.deletePolicy, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.deletePolicy, hcClient);
     }
 
     /**
@@ -584,7 +571,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyBlackAndWhiteIpListRequest 请求对象
+     * @param request DeletePolicyBlackAndWhiteIpListRequest 请求对象
      * @return CompletableFuture<DeletePolicyBlackAndWhiteIpListResponse>
      */
     public CompletableFuture<DeletePolicyBlackAndWhiteIpListResponse> deletePolicyBlackAndWhiteIpListAsync(
@@ -599,13 +586,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyBlackAndWhiteIpListRequest 请求对象
+     * @param request DeletePolicyBlackAndWhiteIpListRequest 请求对象
      * @return AsyncInvoker<DeletePolicyBlackAndWhiteIpListRequest, DeletePolicyBlackAndWhiteIpListResponse>
      */
     public AsyncInvoker<DeletePolicyBlackAndWhiteIpListRequest, DeletePolicyBlackAndWhiteIpListResponse> deletePolicyBlackAndWhiteIpListAsyncInvoker(
         DeletePolicyBlackAndWhiteIpListRequest request) {
-        return new AsyncInvoker<DeletePolicyBlackAndWhiteIpListRequest, DeletePolicyBlackAndWhiteIpListResponse>(
-            request, AadMeta.deletePolicyBlackAndWhiteIpList, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.deletePolicyBlackAndWhiteIpList, hcClient);
     }
 
     /**
@@ -615,7 +601,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateIpFromPolicyRequest 请求对象
+     * @param request DisassociateIpFromPolicyRequest 请求对象
      * @return CompletableFuture<DisassociateIpFromPolicyResponse>
      */
     public CompletableFuture<DisassociateIpFromPolicyResponse> disassociateIpFromPolicyAsync(
@@ -630,13 +616,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateIpFromPolicyRequest 请求对象
+     * @param request DisassociateIpFromPolicyRequest 请求对象
      * @return AsyncInvoker<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse>
      */
     public AsyncInvoker<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse> disassociateIpFromPolicyAsyncInvoker(
         DisassociateIpFromPolicyRequest request) {
-        return new AsyncInvoker<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse>(request,
-            AadMeta.disassociateIpFromPolicy, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.disassociateIpFromPolicy, hcClient);
     }
 
     /**
@@ -646,7 +631,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainRequest 请求对象
+     * @param request ListDomainRequest 请求对象
      * @return CompletableFuture<ListDomainResponse>
      */
     public CompletableFuture<ListDomainResponse> listDomainAsync(ListDomainRequest request) {
@@ -660,11 +645,11 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainRequest 请求对象
+     * @param request ListDomainRequest 请求对象
      * @return AsyncInvoker<ListDomainRequest, ListDomainResponse>
      */
     public AsyncInvoker<ListDomainRequest, ListDomainResponse> listDomainAsyncInvoker(ListDomainRequest request) {
-        return new AsyncInvoker<ListDomainRequest, ListDomainResponse>(request, AadMeta.listDomain, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listDomain, hcClient);
     }
 
     /**
@@ -674,7 +659,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceRequest 请求对象
+     * @param request ListInstanceRequest 请求对象
      * @return CompletableFuture<ListInstanceResponse>
      */
     public CompletableFuture<ListInstanceResponse> listInstanceAsync(ListInstanceRequest request) {
@@ -688,12 +673,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceRequest 请求对象
+     * @param request ListInstanceRequest 请求对象
      * @return AsyncInvoker<ListInstanceRequest, ListInstanceResponse>
      */
     public AsyncInvoker<ListInstanceRequest, ListInstanceResponse> listInstanceAsyncInvoker(
         ListInstanceRequest request) {
-        return new AsyncInvoker<ListInstanceRequest, ListInstanceResponse>(request, AadMeta.listInstance, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listInstance, hcClient);
     }
 
     /**
@@ -703,7 +688,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceIdRequest 请求对象
+     * @param request ListInstanceIdRequest 请求对象
      * @return CompletableFuture<ListInstanceIdResponse>
      */
     public CompletableFuture<ListInstanceIdResponse> listInstanceIdAsync(ListInstanceIdRequest request) {
@@ -717,13 +702,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceIdRequest 请求对象
+     * @param request ListInstanceIdRequest 请求对象
      * @return AsyncInvoker<ListInstanceIdRequest, ListInstanceIdResponse>
      */
     public AsyncInvoker<ListInstanceIdRequest, ListInstanceIdResponse> listInstanceIdAsyncInvoker(
         ListInstanceIdRequest request) {
-        return new AsyncInvoker<ListInstanceIdRequest, ListInstanceIdResponse>(request, AadMeta.listInstanceId,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listInstanceId, hcClient);
     }
 
     /**
@@ -733,7 +717,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceIpRuleRequest 请求对象
+     * @param request ListInstanceIpRuleRequest 请求对象
      * @return CompletableFuture<ListInstanceIpRuleResponse>
      */
     public CompletableFuture<ListInstanceIpRuleResponse> listInstanceIpRuleAsync(ListInstanceIpRuleRequest request) {
@@ -747,13 +731,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceIpRuleRequest 请求对象
+     * @param request ListInstanceIpRuleRequest 请求对象
      * @return AsyncInvoker<ListInstanceIpRuleRequest, ListInstanceIpRuleResponse>
      */
     public AsyncInvoker<ListInstanceIpRuleRequest, ListInstanceIpRuleResponse> listInstanceIpRuleAsyncInvoker(
         ListInstanceIpRuleRequest request) {
-        return new AsyncInvoker<ListInstanceIpRuleRequest, ListInstanceIpRuleResponse>(request,
-            AadMeta.listInstanceIpRule, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listInstanceIpRule, hcClient);
     }
 
     /**
@@ -763,7 +746,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPackageRequest 请求对象
+     * @param request ListPackageRequest 请求对象
      * @return CompletableFuture<ListPackageResponse>
      */
     public CompletableFuture<ListPackageResponse> listPackageAsync(ListPackageRequest request) {
@@ -777,11 +760,11 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPackageRequest 请求对象
+     * @param request ListPackageRequest 请求对象
      * @return AsyncInvoker<ListPackageRequest, ListPackageResponse>
      */
     public AsyncInvoker<ListPackageRequest, ListPackageResponse> listPackageAsyncInvoker(ListPackageRequest request) {
-        return new AsyncInvoker<ListPackageRequest, ListPackageResponse>(request, AadMeta.listPackage, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listPackage, hcClient);
     }
 
     /**
@@ -791,7 +774,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPeakRequest 请求对象
+     * @param request ListPeakRequest 请求对象
      * @return CompletableFuture<ListPeakResponse>
      */
     public CompletableFuture<ListPeakResponse> listPeakAsync(ListPeakRequest request) {
@@ -805,11 +788,11 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPeakRequest 请求对象
+     * @param request ListPeakRequest 请求对象
      * @return AsyncInvoker<ListPeakRequest, ListPeakResponse>
      */
     public AsyncInvoker<ListPeakRequest, ListPeakResponse> listPeakAsyncInvoker(ListPeakRequest request) {
-        return new AsyncInvoker<ListPeakRequest, ListPeakResponse>(request, AadMeta.listPeak, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listPeak, hcClient);
     }
 
     /**
@@ -819,7 +802,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyRequest 请求对象
+     * @param request ListPolicyRequest 请求对象
      * @return CompletableFuture<ListPolicyResponse>
      */
     public CompletableFuture<ListPolicyResponse> listPolicyAsync(ListPolicyRequest request) {
@@ -833,11 +816,11 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyRequest 请求对象
+     * @param request ListPolicyRequest 请求对象
      * @return AsyncInvoker<ListPolicyRequest, ListPolicyResponse>
      */
     public AsyncInvoker<ListPolicyRequest, ListPolicyResponse> listPolicyAsyncInvoker(ListPolicyRequest request) {
-        return new AsyncInvoker<ListPolicyRequest, ListPolicyResponse>(request, AadMeta.listPolicy, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listPolicy, hcClient);
     }
 
     /**
@@ -847,7 +830,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProtectedIpRequest 请求对象
+     * @param request ListProtectedIpRequest 请求对象
      * @return CompletableFuture<ListProtectedIpResponse>
      */
     public CompletableFuture<ListProtectedIpResponse> listProtectedIpAsync(ListProtectedIpRequest request) {
@@ -861,13 +844,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProtectedIpRequest 请求对象
+     * @param request ListProtectedIpRequest 请求对象
      * @return AsyncInvoker<ListProtectedIpRequest, ListProtectedIpResponse>
      */
     public AsyncInvoker<ListProtectedIpRequest, ListProtectedIpResponse> listProtectedIpAsyncInvoker(
         ListProtectedIpRequest request) {
-        return new AsyncInvoker<ListProtectedIpRequest, ListProtectedIpResponse>(request, AadMeta.listProtectedIp,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listProtectedIp, hcClient);
     }
 
     /**
@@ -877,7 +859,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSourceIpsRequest 请求对象
+     * @param request ListSourceIpsRequest 请求对象
      * @return CompletableFuture<ListSourceIpsResponse>
      */
     public CompletableFuture<ListSourceIpsResponse> listSourceIpsAsync(ListSourceIpsRequest request) {
@@ -891,12 +873,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSourceIpsRequest 请求对象
+     * @param request ListSourceIpsRequest 请求对象
      * @return AsyncInvoker<ListSourceIpsRequest, ListSourceIpsResponse>
      */
     public AsyncInvoker<ListSourceIpsRequest, ListSourceIpsResponse> listSourceIpsAsyncInvoker(
         ListSourceIpsRequest request) {
-        return new AsyncInvoker<ListSourceIpsRequest, ListSourceIpsResponse>(request, AadMeta.listSourceIps, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listSourceIps, hcClient);
     }
 
     /**
@@ -906,7 +888,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUnboundProtectedIpRequest 请求对象
+     * @param request ListUnboundProtectedIpRequest 请求对象
      * @return CompletableFuture<ListUnboundProtectedIpResponse>
      */
     public CompletableFuture<ListUnboundProtectedIpResponse> listUnboundProtectedIpAsync(
@@ -921,13 +903,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUnboundProtectedIpRequest 请求对象
+     * @param request ListUnboundProtectedIpRequest 请求对象
      * @return AsyncInvoker<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse>
      */
     public AsyncInvoker<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse> listUnboundProtectedIpAsyncInvoker(
         ListUnboundProtectedIpRequest request) {
-        return new AsyncInvoker<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse>(request,
-            AadMeta.listUnboundProtectedIp, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.listUnboundProtectedIp, hcClient);
     }
 
     /**
@@ -937,7 +918,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyDomainWebSwitchRequest 请求对象
+     * @param request ModifyDomainWebSwitchRequest 请求对象
      * @return CompletableFuture<ModifyDomainWebSwitchResponse>
      */
     public CompletableFuture<ModifyDomainWebSwitchResponse> modifyDomainWebSwitchAsync(
@@ -952,13 +933,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyDomainWebSwitchRequest 请求对象
+     * @param request ModifyDomainWebSwitchRequest 请求对象
      * @return AsyncInvoker<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse>
      */
     public AsyncInvoker<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> modifyDomainWebSwitchAsyncInvoker(
         ModifyDomainWebSwitchRequest request) {
-        return new AsyncInvoker<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse>(request,
-            AadMeta.modifyDomainWebSwitch, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.modifyDomainWebSwitch, hcClient);
     }
 
     /**
@@ -968,7 +948,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlarmConfigRequest 请求对象
+     * @param request ShowAlarmConfigRequest 请求对象
      * @return CompletableFuture<ShowAlarmConfigResponse>
      */
     public CompletableFuture<ShowAlarmConfigResponse> showAlarmConfigAsync(ShowAlarmConfigRequest request) {
@@ -982,13 +962,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlarmConfigRequest 请求对象
+     * @param request ShowAlarmConfigRequest 请求对象
      * @return AsyncInvoker<ShowAlarmConfigRequest, ShowAlarmConfigResponse>
      */
     public AsyncInvoker<ShowAlarmConfigRequest, ShowAlarmConfigResponse> showAlarmConfigAsyncInvoker(
         ShowAlarmConfigRequest request) {
-        return new AsyncInvoker<ShowAlarmConfigRequest, ShowAlarmConfigResponse>(request, AadMeta.showAlarmConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.showAlarmConfig, hcClient);
     }
 
     /**
@@ -998,7 +977,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyRequest 请求对象
+     * @param request ShowPolicyRequest 请求对象
      * @return CompletableFuture<ShowPolicyResponse>
      */
     public CompletableFuture<ShowPolicyResponse> showPolicyAsync(ShowPolicyRequest request) {
@@ -1012,11 +991,11 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyRequest 请求对象
+     * @param request ShowPolicyRequest 请求对象
      * @return AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse>
      */
     public AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse> showPolicyAsyncInvoker(ShowPolicyRequest request) {
-        return new AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse>(request, AadMeta.showPolicy, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.showPolicy, hcClient);
     }
 
     /**
@@ -1026,7 +1005,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmConfigRequest 请求对象
+     * @param request UpdateAlarmConfigRequest 请求对象
      * @return CompletableFuture<UpdateAlarmConfigResponse>
      */
     public CompletableFuture<UpdateAlarmConfigResponse> updateAlarmConfigAsync(UpdateAlarmConfigRequest request) {
@@ -1040,13 +1019,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmConfigRequest 请求对象
+     * @param request UpdateAlarmConfigRequest 请求对象
      * @return AsyncInvoker<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse>
      */
     public AsyncInvoker<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse> updateAlarmConfigAsyncInvoker(
         UpdateAlarmConfigRequest request) {
-        return new AsyncInvoker<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse>(request, AadMeta.updateAlarmConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.updateAlarmConfig, hcClient);
     }
 
     /**
@@ -1056,7 +1034,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainRequest 请求对象
+     * @param request UpdateDomainRequest 请求对象
      * @return CompletableFuture<UpdateDomainResponse>
      */
     public CompletableFuture<UpdateDomainResponse> updateDomainAsync(UpdateDomainRequest request) {
@@ -1070,12 +1048,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainRequest 请求对象
+     * @param request UpdateDomainRequest 请求对象
      * @return AsyncInvoker<UpdateDomainRequest, UpdateDomainResponse>
      */
     public AsyncInvoker<UpdateDomainRequest, UpdateDomainResponse> updateDomainAsyncInvoker(
         UpdateDomainRequest request) {
-        return new AsyncInvoker<UpdateDomainRequest, UpdateDomainResponse>(request, AadMeta.updateDomain, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.updateDomain, hcClient);
     }
 
     /**
@@ -1085,7 +1063,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceIpRuleRequest 请求对象
+     * @param request UpdateInstanceIpRuleRequest 请求对象
      * @return CompletableFuture<UpdateInstanceIpRuleResponse>
      */
     public CompletableFuture<UpdateInstanceIpRuleResponse> updateInstanceIpRuleAsync(
@@ -1100,13 +1078,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceIpRuleRequest 请求对象
+     * @param request UpdateInstanceIpRuleRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse>
      */
     public AsyncInvoker<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse> updateInstanceIpRuleAsyncInvoker(
         UpdateInstanceIpRuleRequest request) {
-        return new AsyncInvoker<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse>(request,
-            AadMeta.updateInstanceIpRule, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.updateInstanceIpRule, hcClient);
     }
 
     /**
@@ -1116,7 +1093,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePackageIpRequest 请求对象
+     * @param request UpdatePackageIpRequest 请求对象
      * @return CompletableFuture<UpdatePackageIpResponse>
      */
     public CompletableFuture<UpdatePackageIpResponse> updatePackageIpAsync(UpdatePackageIpRequest request) {
@@ -1130,13 +1107,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePackageIpRequest 请求对象
+     * @param request UpdatePackageIpRequest 请求对象
      * @return AsyncInvoker<UpdatePackageIpRequest, UpdatePackageIpResponse>
      */
     public AsyncInvoker<UpdatePackageIpRequest, UpdatePackageIpResponse> updatePackageIpAsyncInvoker(
         UpdatePackageIpRequest request) {
-        return new AsyncInvoker<UpdatePackageIpRequest, UpdatePackageIpResponse>(request, AadMeta.updatePackageIp,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.updatePackageIp, hcClient);
     }
 
     /**
@@ -1146,7 +1122,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePackageNameRequest 请求对象
+     * @param request UpdatePackageNameRequest 请求对象
      * @return CompletableFuture<UpdatePackageNameResponse>
      */
     public CompletableFuture<UpdatePackageNameResponse> updatePackageNameAsync(UpdatePackageNameRequest request) {
@@ -1160,13 +1136,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePackageNameRequest 请求对象
+     * @param request UpdatePackageNameRequest 请求对象
      * @return AsyncInvoker<UpdatePackageNameRequest, UpdatePackageNameResponse>
      */
     public AsyncInvoker<UpdatePackageNameRequest, UpdatePackageNameResponse> updatePackageNameAsyncInvoker(
         UpdatePackageNameRequest request) {
-        return new AsyncInvoker<UpdatePackageNameRequest, UpdatePackageNameResponse>(request, AadMeta.updatePackageName,
-            hcClient);
+        return new AsyncInvoker<>(request, AadMeta.updatePackageName, hcClient);
     }
 
     /**
@@ -1176,7 +1151,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRequest 请求对象
+     * @param request UpdatePolicyRequest 请求对象
      * @return CompletableFuture<UpdatePolicyResponse>
      */
     public CompletableFuture<UpdatePolicyResponse> updatePolicyAsync(UpdatePolicyRequest request) {
@@ -1190,12 +1165,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRequest 请求对象
+     * @param request UpdatePolicyRequest 请求对象
      * @return AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>
      */
     public AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicyAsyncInvoker(
         UpdatePolicyRequest request) {
-        return new AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>(request, AadMeta.updatePolicy, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.updatePolicy, hcClient);
     }
 
     /**
@@ -1205,7 +1180,7 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTagForProtectedIpRequest 请求对象
+     * @param request UpdateTagForProtectedIpRequest 请求对象
      * @return CompletableFuture<UpdateTagForProtectedIpResponse>
      */
     public CompletableFuture<UpdateTagForProtectedIpResponse> updateTagForProtectedIpAsync(
@@ -1220,13 +1195,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTagForProtectedIpRequest 请求对象
+     * @param request UpdateTagForProtectedIpRequest 请求对象
      * @return AsyncInvoker<UpdateTagForProtectedIpRequest, UpdateTagForProtectedIpResponse>
      */
     public AsyncInvoker<UpdateTagForProtectedIpRequest, UpdateTagForProtectedIpResponse> updateTagForProtectedIpAsyncInvoker(
         UpdateTagForProtectedIpRequest request) {
-        return new AsyncInvoker<UpdateTagForProtectedIpRequest, UpdateTagForProtectedIpResponse>(request,
-            AadMeta.updateTagForProtectedIp, hcClient);
+        return new AsyncInvoker<>(request, AadMeta.updateTagForProtectedIp, hcClient);
     }
 
 }

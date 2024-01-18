@@ -58,7 +58,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionInfoRequest 请求对象
+     * @param request CreateConnectionInfoRequest 请求对象
      * @return CompletableFuture<CreateConnectionInfoResponse>
      */
     public CompletableFuture<CreateConnectionInfoResponse> createConnectionInfoAsync(
@@ -73,13 +73,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionInfoRequest 请求对象
+     * @param request CreateConnectionInfoRequest 请求对象
      * @return AsyncInvoker<CreateConnectionInfoRequest, CreateConnectionInfoResponse>
      */
     public AsyncInvoker<CreateConnectionInfoRequest, CreateConnectionInfoResponse> createConnectionInfoAsyncInvoker(
         CreateConnectionInfoRequest request) {
-        return new AsyncInvoker<CreateConnectionInfoRequest, CreateConnectionInfoResponse>(request,
-            MssiMeta.createConnectionInfo, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.createConnectionInfo, hcClient);
     }
 
     /**
@@ -89,7 +88,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomConnectorFromOpenapiRequest 请求对象
+     * @param request CreateCustomConnectorFromOpenapiRequest 请求对象
      * @return CompletableFuture<CreateCustomConnectorFromOpenapiResponse>
      */
     public CompletableFuture<CreateCustomConnectorFromOpenapiResponse> createCustomConnectorFromOpenapiAsync(
@@ -104,13 +103,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomConnectorFromOpenapiRequest 请求对象
+     * @param request CreateCustomConnectorFromOpenapiRequest 请求对象
      * @return AsyncInvoker<CreateCustomConnectorFromOpenapiRequest, CreateCustomConnectorFromOpenapiResponse>
      */
     public AsyncInvoker<CreateCustomConnectorFromOpenapiRequest, CreateCustomConnectorFromOpenapiResponse> createCustomConnectorFromOpenapiAsyncInvoker(
         CreateCustomConnectorFromOpenapiRequest request) {
-        return new AsyncInvoker<CreateCustomConnectorFromOpenapiRequest, CreateCustomConnectorFromOpenapiResponse>(
-            request, MssiMeta.createCustomConnectorFromOpenapi, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.createCustomConnectorFromOpenapi, hcClient);
     }
 
     /**
@@ -120,7 +118,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlowRequest 请求对象
+     * @param request CreateFlowRequest 请求对象
      * @return CompletableFuture<CreateFlowResponse>
      */
     public CompletableFuture<CreateFlowResponse> createFlowAsync(CreateFlowRequest request) {
@@ -134,11 +132,11 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlowRequest 请求对象
+     * @param request CreateFlowRequest 请求对象
      * @return AsyncInvoker<CreateFlowRequest, CreateFlowResponse>
      */
     public AsyncInvoker<CreateFlowRequest, CreateFlowResponse> createFlowAsyncInvoker(CreateFlowRequest request) {
-        return new AsyncInvoker<CreateFlowRequest, CreateFlowResponse>(request, MssiMeta.createFlow, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.createFlow, hcClient);
     }
 
     /**
@@ -147,7 +145,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlowTemplateFromFlowRequest 请求对象
+     * @param request CreateFlowTemplateFromFlowRequest 请求对象
      * @return CompletableFuture<CreateFlowTemplateFromFlowResponse>
      */
     public CompletableFuture<CreateFlowTemplateFromFlowResponse> createFlowTemplateFromFlowAsync(
@@ -161,13 +159,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlowTemplateFromFlowRequest 请求对象
+     * @param request CreateFlowTemplateFromFlowRequest 请求对象
      * @return AsyncInvoker<CreateFlowTemplateFromFlowRequest, CreateFlowTemplateFromFlowResponse>
      */
     public AsyncInvoker<CreateFlowTemplateFromFlowRequest, CreateFlowTemplateFromFlowResponse> createFlowTemplateFromFlowAsyncInvoker(
         CreateFlowTemplateFromFlowRequest request) {
-        return new AsyncInvoker<CreateFlowTemplateFromFlowRequest, CreateFlowTemplateFromFlowResponse>(request,
-            MssiMeta.createFlowTemplateFromFlow, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.createFlowTemplateFromFlow, hcClient);
     }
 
     /**
@@ -177,7 +174,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectionInfoRequest 请求对象
+     * @param request DeleteConnectionInfoRequest 请求对象
      * @return CompletableFuture<DeleteConnectionInfoResponse>
      */
     public CompletableFuture<DeleteConnectionInfoResponse> deleteConnectionInfoAsync(
@@ -192,13 +189,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectionInfoRequest 请求对象
+     * @param request DeleteConnectionInfoRequest 请求对象
      * @return AsyncInvoker<DeleteConnectionInfoRequest, DeleteConnectionInfoResponse>
      */
     public AsyncInvoker<DeleteConnectionInfoRequest, DeleteConnectionInfoResponse> deleteConnectionInfoAsyncInvoker(
         DeleteConnectionInfoRequest request) {
-        return new AsyncInvoker<DeleteConnectionInfoRequest, DeleteConnectionInfoResponse>(request,
-            MssiMeta.deleteConnectionInfo, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.deleteConnectionInfo, hcClient);
     }
 
     /**
@@ -208,7 +204,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomConnectorRequest 请求对象
+     * @param request DeleteCustomConnectorRequest 请求对象
      * @return CompletableFuture<DeleteCustomConnectorResponse>
      */
     public CompletableFuture<DeleteCustomConnectorResponse> deleteCustomConnectorAsync(
@@ -223,13 +219,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomConnectorRequest 请求对象
+     * @param request DeleteCustomConnectorRequest 请求对象
      * @return AsyncInvoker<DeleteCustomConnectorRequest, DeleteCustomConnectorResponse>
      */
     public AsyncInvoker<DeleteCustomConnectorRequest, DeleteCustomConnectorResponse> deleteCustomConnectorAsyncInvoker(
         DeleteCustomConnectorRequest request) {
-        return new AsyncInvoker<DeleteCustomConnectorRequest, DeleteCustomConnectorResponse>(request,
-            MssiMeta.deleteCustomConnector, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.deleteCustomConnector, hcClient);
     }
 
     /**
@@ -239,7 +234,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFlowRequest 请求对象
+     * @param request DeleteFlowRequest 请求对象
      * @return CompletableFuture<DeleteFlowResponse>
      */
     public CompletableFuture<DeleteFlowResponse> deleteFlowAsync(DeleteFlowRequest request) {
@@ -253,11 +248,11 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFlowRequest 请求对象
+     * @param request DeleteFlowRequest 请求对象
      * @return AsyncInvoker<DeleteFlowRequest, DeleteFlowResponse>
      */
     public AsyncInvoker<DeleteFlowRequest, DeleteFlowResponse> deleteFlowAsyncInvoker(DeleteFlowRequest request) {
-        return new AsyncInvoker<DeleteFlowRequest, DeleteFlowResponse>(request, MssiMeta.deleteFlow, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.deleteFlow, hcClient);
     }
 
     /**
@@ -267,7 +262,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFlowByIdRequest 请求对象
+     * @param request SearchFlowByIdRequest 请求对象
      * @return CompletableFuture<SearchFlowByIdResponse>
      */
     public CompletableFuture<SearchFlowByIdResponse> searchFlowByIdAsync(SearchFlowByIdRequest request) {
@@ -281,13 +276,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFlowByIdRequest 请求对象
+     * @param request SearchFlowByIdRequest 请求对象
      * @return AsyncInvoker<SearchFlowByIdRequest, SearchFlowByIdResponse>
      */
     public AsyncInvoker<SearchFlowByIdRequest, SearchFlowByIdResponse> searchFlowByIdAsyncInvoker(
         SearchFlowByIdRequest request) {
-        return new AsyncInvoker<SearchFlowByIdRequest, SearchFlowByIdResponse>(request, MssiMeta.searchFlowById,
-            hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.searchFlowById, hcClient);
     }
 
     /**
@@ -297,7 +291,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllConnectionsRequest 请求对象
+     * @param request ShowAllConnectionsRequest 请求对象
      * @return CompletableFuture<ShowAllConnectionsResponse>
      */
     public CompletableFuture<ShowAllConnectionsResponse> showAllConnectionsAsync(ShowAllConnectionsRequest request) {
@@ -311,13 +305,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllConnectionsRequest 请求对象
+     * @param request ShowAllConnectionsRequest 请求对象
      * @return AsyncInvoker<ShowAllConnectionsRequest, ShowAllConnectionsResponse>
      */
     public AsyncInvoker<ShowAllConnectionsRequest, ShowAllConnectionsResponse> showAllConnectionsAsyncInvoker(
         ShowAllConnectionsRequest request) {
-        return new AsyncInvoker<ShowAllConnectionsRequest, ShowAllConnectionsResponse>(request,
-            MssiMeta.showAllConnections, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.showAllConnections, hcClient);
     }
 
     /**
@@ -327,7 +320,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllFlowsRequest 请求对象
+     * @param request ShowAllFlowsRequest 请求对象
      * @return CompletableFuture<ShowAllFlowsResponse>
      */
     public CompletableFuture<ShowAllFlowsResponse> showAllFlowsAsync(ShowAllFlowsRequest request) {
@@ -341,12 +334,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllFlowsRequest 请求对象
+     * @param request ShowAllFlowsRequest 请求对象
      * @return AsyncInvoker<ShowAllFlowsRequest, ShowAllFlowsResponse>
      */
     public AsyncInvoker<ShowAllFlowsRequest, ShowAllFlowsResponse> showAllFlowsAsyncInvoker(
         ShowAllFlowsRequest request) {
-        return new AsyncInvoker<ShowAllFlowsRequest, ShowAllFlowsResponse>(request, MssiMeta.showAllFlows, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.showAllFlows, hcClient);
     }
 
     /**
@@ -356,7 +349,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectorsRequest 请求对象
+     * @param request ShowConnectorsRequest 请求对象
      * @return CompletableFuture<ShowConnectorsResponse>
      */
     public CompletableFuture<ShowConnectorsResponse> showConnectorsAsync(ShowConnectorsRequest request) {
@@ -370,13 +363,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectorsRequest 请求对象
+     * @param request ShowConnectorsRequest 请求对象
      * @return AsyncInvoker<ShowConnectorsRequest, ShowConnectorsResponse>
      */
     public AsyncInvoker<ShowConnectorsRequest, ShowConnectorsResponse> showConnectorsAsyncInvoker(
         ShowConnectorsRequest request) {
-        return new AsyncInvoker<ShowConnectorsRequest, ShowConnectorsResponse>(request, MssiMeta.showConnectors,
-            hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.showConnectors, hcClient);
     }
 
     /**
@@ -386,7 +378,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomConnectorRequest 请求对象
+     * @param request ShowCustomConnectorRequest 请求对象
      * @return CompletableFuture<ShowCustomConnectorResponse>
      */
     public CompletableFuture<ShowCustomConnectorResponse> showCustomConnectorAsync(ShowCustomConnectorRequest request) {
@@ -400,13 +392,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomConnectorRequest 请求对象
+     * @param request ShowCustomConnectorRequest 请求对象
      * @return AsyncInvoker<ShowCustomConnectorRequest, ShowCustomConnectorResponse>
      */
     public AsyncInvoker<ShowCustomConnectorRequest, ShowCustomConnectorResponse> showCustomConnectorAsyncInvoker(
         ShowCustomConnectorRequest request) {
-        return new AsyncInvoker<ShowCustomConnectorRequest, ShowCustomConnectorResponse>(request,
-            MssiMeta.showCustomConnector, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.showCustomConnector, hcClient);
     }
 
     /**
@@ -416,7 +407,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomConnectorsRequest 请求对象
+     * @param request ShowCustomConnectorsRequest 请求对象
      * @return CompletableFuture<ShowCustomConnectorsResponse>
      */
     public CompletableFuture<ShowCustomConnectorsResponse> showCustomConnectorsAsync(
@@ -431,13 +422,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomConnectorsRequest 请求对象
+     * @param request ShowCustomConnectorsRequest 请求对象
      * @return AsyncInvoker<ShowCustomConnectorsRequest, ShowCustomConnectorsResponse>
      */
     public AsyncInvoker<ShowCustomConnectorsRequest, ShowCustomConnectorsResponse> showCustomConnectorsAsyncInvoker(
         ShowCustomConnectorsRequest request) {
-        return new AsyncInvoker<ShowCustomConnectorsRequest, ShowCustomConnectorsResponse>(request,
-            MssiMeta.showCustomConnectors, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.showCustomConnectors, hcClient);
     }
 
     /**
@@ -447,7 +437,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSingleConnectionRequest 请求对象
+     * @param request ShowSingleConnectionRequest 请求对象
      * @return CompletableFuture<ShowSingleConnectionResponse>
      */
     public CompletableFuture<ShowSingleConnectionResponse> showSingleConnectionAsync(
@@ -462,13 +452,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSingleConnectionRequest 请求对象
+     * @param request ShowSingleConnectionRequest 请求对象
      * @return AsyncInvoker<ShowSingleConnectionRequest, ShowSingleConnectionResponse>
      */
     public AsyncInvoker<ShowSingleConnectionRequest, ShowSingleConnectionResponse> showSingleConnectionAsyncInvoker(
         ShowSingleConnectionRequest request) {
-        return new AsyncInvoker<ShowSingleConnectionRequest, ShowSingleConnectionResponse>(request,
-            MssiMeta.showSingleConnection, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.showSingleConnection, hcClient);
     }
 
     /**
@@ -477,7 +466,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionInfoRequest 请求对象
+     * @param request UpdateConnectionInfoRequest 请求对象
      * @return CompletableFuture<UpdateConnectionInfoResponse>
      */
     public CompletableFuture<UpdateConnectionInfoResponse> updateConnectionInfoAsync(
@@ -491,13 +480,12 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionInfoRequest 请求对象
+     * @param request UpdateConnectionInfoRequest 请求对象
      * @return AsyncInvoker<UpdateConnectionInfoRequest, UpdateConnectionInfoResponse>
      */
     public AsyncInvoker<UpdateConnectionInfoRequest, UpdateConnectionInfoResponse> updateConnectionInfoAsyncInvoker(
         UpdateConnectionInfoRequest request) {
-        return new AsyncInvoker<UpdateConnectionInfoRequest, UpdateConnectionInfoResponse>(request,
-            MssiMeta.updateConnectionInfo, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.updateConnectionInfo, hcClient);
     }
 
     /**
@@ -507,7 +495,7 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlowRequest 请求对象
+     * @param request UpdateFlowRequest 请求对象
      * @return CompletableFuture<UpdateFlowResponse>
      */
     public CompletableFuture<UpdateFlowResponse> updateFlowAsync(UpdateFlowRequest request) {
@@ -521,11 +509,11 @@ public class MssiAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlowRequest 请求对象
+     * @param request UpdateFlowRequest 请求对象
      * @return AsyncInvoker<UpdateFlowRequest, UpdateFlowResponse>
      */
     public AsyncInvoker<UpdateFlowRequest, UpdateFlowResponse> updateFlowAsyncInvoker(UpdateFlowRequest request) {
-        return new AsyncInvoker<UpdateFlowRequest, UpdateFlowResponse>(request, MssiMeta.updateFlow, hcClient);
+        return new AsyncInvoker<>(request, MssiMeta.updateFlow, hcClient);
     }
 
 }

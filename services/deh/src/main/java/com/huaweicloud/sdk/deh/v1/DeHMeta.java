@@ -38,9 +38,9 @@ import com.huaweicloud.sdk.deh.v1.model.UpdateDedicatedHostResponse;
 public class DeHMeta {
 
     public static final HttpRequestDef<BatchCreateDedicatedHostTagsRequest, BatchCreateDedicatedHostTagsResponse> batchCreateDedicatedHostTags =
-        genForbatchCreateDedicatedHostTags();
+        genForBatchCreateDedicatedHostTags();
 
-    private static HttpRequestDef<BatchCreateDedicatedHostTagsRequest, BatchCreateDedicatedHostTagsResponse> genForbatchCreateDedicatedHostTags() {
+    private static HttpRequestDef<BatchCreateDedicatedHostTagsRequest, BatchCreateDedicatedHostTagsResponse> genForBatchCreateDedicatedHostTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateDedicatedHostTagsRequest, BatchCreateDedicatedHostTagsResponse> builder =
             HttpRequestDef
@@ -56,16 +56,14 @@ public class DeHMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateDedicatedHostTagsRequest::getDedicatedHostId, (req, v) -> {
-                req.setDedicatedHostId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDedicatedHostTagsRequest::getDedicatedHostId,
+                BatchCreateDedicatedHostTagsRequest::setDedicatedHostId));
         builder.<ReqSetOrDeleteTags>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqSetOrDeleteTags.class),
-            f -> f.withMarshaller(BatchCreateDedicatedHostTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDedicatedHostTagsRequest::getBody,
+                BatchCreateDedicatedHostTagsRequest::setBody));
 
         // response
 
@@ -73,9 +71,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteDedicatedHostTagsRequest, BatchDeleteDedicatedHostTagsResponse> batchDeleteDedicatedHostTags =
-        genForbatchDeleteDedicatedHostTags();
+        genForBatchDeleteDedicatedHostTags();
 
-    private static HttpRequestDef<BatchDeleteDedicatedHostTagsRequest, BatchDeleteDedicatedHostTagsResponse> genForbatchDeleteDedicatedHostTags() {
+    private static HttpRequestDef<BatchDeleteDedicatedHostTagsRequest, BatchDeleteDedicatedHostTagsResponse> genForBatchDeleteDedicatedHostTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteDedicatedHostTagsRequest, BatchDeleteDedicatedHostTagsResponse> builder =
             HttpRequestDef
@@ -91,16 +89,14 @@ public class DeHMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteDedicatedHostTagsRequest::getDedicatedHostId, (req, v) -> {
-                req.setDedicatedHostId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteDedicatedHostTagsRequest::getDedicatedHostId,
+                BatchDeleteDedicatedHostTagsRequest::setDedicatedHostId));
         builder.<ReqSetOrDeleteTags>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqSetOrDeleteTags.class),
-            f -> f.withMarshaller(BatchDeleteDedicatedHostTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteDedicatedHostTagsRequest::getBody,
+                BatchDeleteDedicatedHostTagsRequest::setBody));
 
         // response
 
@@ -108,9 +104,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<CreateDedicatedHostRequest, CreateDedicatedHostResponse> createDedicatedHost =
-        genForcreateDedicatedHost();
+        genForCreateDedicatedHost();
 
-    private static HttpRequestDef<CreateDedicatedHostRequest, CreateDedicatedHostResponse> genForcreateDedicatedHost() {
+    private static HttpRequestDef<CreateDedicatedHostRequest, CreateDedicatedHostResponse> genForCreateDedicatedHost() {
         // basic
         HttpRequestDef.Builder<CreateDedicatedHostRequest, CreateDedicatedHostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDedicatedHostRequest.class, CreateDedicatedHostResponse.class)
@@ -123,9 +119,7 @@ public class DeHMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqAllocateDeh.class),
-            f -> f.withMarshaller(CreateDedicatedHostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDedicatedHostRequest::getBody, CreateDedicatedHostRequest::setBody));
 
         // response
 
@@ -133,9 +127,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse> deleteDedicatedHost =
-        genFordeleteDedicatedHost();
+        genForDeleteDedicatedHost();
 
-    private static HttpRequestDef<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse> genFordeleteDedicatedHost() {
+    private static HttpRequestDef<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse> genForDeleteDedicatedHost() {
         // basic
         HttpRequestDef.Builder<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteDedicatedHostRequest.class, DeleteDedicatedHostResponse.class)
@@ -148,9 +142,8 @@ public class DeHMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDedicatedHostRequest::getDedicatedHostId, (req, v) -> {
-                req.setDedicatedHostId(v);
-            }));
+            f -> f.withMarshaller(DeleteDedicatedHostRequest::getDedicatedHostId,
+                DeleteDedicatedHostRequest::setDedicatedHostId));
 
         // response
 
@@ -158,9 +151,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<ListDedicatedHostTypesRequest, ListDedicatedHostTypesResponse> listDedicatedHostTypes =
-        genForlistDedicatedHostTypes();
+        genForListDedicatedHostTypes();
 
-    private static HttpRequestDef<ListDedicatedHostTypesRequest, ListDedicatedHostTypesResponse> genForlistDedicatedHostTypes() {
+    private static HttpRequestDef<ListDedicatedHostTypesRequest, ListDedicatedHostTypesResponse> genForListDedicatedHostTypes() {
         // basic
         HttpRequestDef.Builder<ListDedicatedHostTypesRequest, ListDedicatedHostTypesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListDedicatedHostTypesRequest.class, ListDedicatedHostTypesResponse.class)
@@ -173,9 +166,8 @@ public class DeHMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostTypesRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostTypesRequest::getAvailabilityZone,
+                ListDedicatedHostTypesRequest::setAvailabilityZone));
 
         // response
 
@@ -183,9 +175,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<ListDedicatedHostsRequest, ListDedicatedHostsResponse> listDedicatedHosts =
-        genForlistDedicatedHosts();
+        genForListDedicatedHosts();
 
-    private static HttpRequestDef<ListDedicatedHostsRequest, ListDedicatedHostsResponse> genForlistDedicatedHosts() {
+    private static HttpRequestDef<ListDedicatedHostsRequest, ListDedicatedHostsResponse> genForListDedicatedHosts() {
         // basic
         HttpRequestDef.Builder<ListDedicatedHostsRequest, ListDedicatedHostsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDedicatedHostsRequest.class, ListDedicatedHostsResponse.class)
@@ -198,100 +190,77 @@ public class DeHMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getDedicatedHostId, (req, v) -> {
-                req.setDedicatedHostId(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getDedicatedHostId,
+                ListDedicatedHostsRequest::setDedicatedHostId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getName, ListDedicatedHostsRequest::setName));
         builder.<String>withRequestField("host_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getHostType, (req, v) -> {
-                req.setHostType(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getHostType, ListDedicatedHostsRequest::setHostType));
         builder.<String>withRequestField("host_type_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getHostTypeName, (req, v) -> {
-                req.setHostTypeName(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getHostTypeName,
+                ListDedicatedHostsRequest::setHostTypeName));
         builder.<String>withRequestField("flavor",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getFlavor, (req, v) -> {
-                req.setFlavor(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getFlavor, ListDedicatedHostsRequest::setFlavor));
         builder.<ListDedicatedHostsRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDedicatedHostsRequest.StateEnum.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getState, ListDedicatedHostsRequest::setState));
         builder.<String>withRequestField("tenant",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getTenant, (req, v) -> {
-                req.setTenant(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getTenant, ListDedicatedHostsRequest::setTenant));
         builder.<String>withRequestField("availability_zone",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getAvailabilityZone,
+                ListDedicatedHostsRequest::setAvailabilityZone));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getLimit, ListDedicatedHostsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getMarker, ListDedicatedHostsRequest::setMarker));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getTags, ListDedicatedHostsRequest::setTags));
         builder.<String>withRequestField("instance_uuid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getInstanceUuid, (req, v) -> {
-                req.setInstanceUuid(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getInstanceUuid,
+                ListDedicatedHostsRequest::setInstanceUuid));
         builder.<String>withRequestField("released_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getReleasedAt, (req, v) -> {
-                req.setReleasedAt(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getReleasedAt, ListDedicatedHostsRequest::setReleasedAt));
         builder.<String>withRequestField("changes-since",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDedicatedHostsRequest::getChangesSince, (req, v) -> {
-                req.setChangesSince(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsRequest::getChangesSince,
+                ListDedicatedHostsRequest::setChangesSince));
 
         // response
 
@@ -299,9 +268,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<ListDedicatedHostsByTagsRequest, ListDedicatedHostsByTagsResponse> listDedicatedHostsByTags =
-        genForlistDedicatedHostsByTags();
+        genForListDedicatedHostsByTags();
 
-    private static HttpRequestDef<ListDedicatedHostsByTagsRequest, ListDedicatedHostsByTagsResponse> genForlistDedicatedHostsByTags() {
+    private static HttpRequestDef<ListDedicatedHostsByTagsRequest, ListDedicatedHostsByTagsResponse> genForListDedicatedHostsByTags() {
         // basic
         HttpRequestDef.Builder<ListDedicatedHostsByTagsRequest, ListDedicatedHostsByTagsResponse> builder =
             HttpRequestDef
@@ -315,9 +284,7 @@ public class DeHMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqListDehByTags.class),
-            f -> f.withMarshaller(ListDedicatedHostsByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListDedicatedHostsByTagsRequest::getBody, ListDedicatedHostsByTagsRequest::setBody));
 
         // response
 
@@ -325,9 +292,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<ListServersDedicatedHostRequest, ListServersDedicatedHostResponse> listServersDedicatedHost =
-        genForlistServersDedicatedHost();
+        genForListServersDedicatedHost();
 
-    private static HttpRequestDef<ListServersDedicatedHostRequest, ListServersDedicatedHostResponse> genForlistServersDedicatedHost() {
+    private static HttpRequestDef<ListServersDedicatedHostRequest, ListServersDedicatedHostResponse> genForListServersDedicatedHost() {
         // basic
         HttpRequestDef.Builder<ListServersDedicatedHostRequest, ListServersDedicatedHostResponse> builder =
             HttpRequestDef
@@ -341,23 +308,20 @@ public class DeHMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDedicatedHostRequest::getDedicatedHostId, (req, v) -> {
-                req.setDedicatedHostId(v);
-            }));
+            f -> f.withMarshaller(ListServersDedicatedHostRequest::getDedicatedHostId,
+                ListServersDedicatedHostRequest::setDedicatedHostId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServersDedicatedHostRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServersDedicatedHostRequest::getLimit,
+                ListServersDedicatedHostRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServersDedicatedHostRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListServersDedicatedHostRequest::getMarker,
+                ListServersDedicatedHostRequest::setMarker));
 
         // response
 
@@ -365,9 +329,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<ShowDedicatedHostRequest, ShowDedicatedHostResponse> showDedicatedHost =
-        genForshowDedicatedHost();
+        genForShowDedicatedHost();
 
-    private static HttpRequestDef<ShowDedicatedHostRequest, ShowDedicatedHostResponse> genForshowDedicatedHost() {
+    private static HttpRequestDef<ShowDedicatedHostRequest, ShowDedicatedHostResponse> genForShowDedicatedHost() {
         // basic
         HttpRequestDef.Builder<ShowDedicatedHostRequest, ShowDedicatedHostResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDedicatedHostRequest.class, ShowDedicatedHostResponse.class)
@@ -380,9 +344,8 @@ public class DeHMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDedicatedHostRequest::getDedicatedHostId, (req, v) -> {
-                req.setDedicatedHostId(v);
-            }));
+            f -> f.withMarshaller(ShowDedicatedHostRequest::getDedicatedHostId,
+                ShowDedicatedHostRequest::setDedicatedHostId));
 
         // response
 
@@ -390,9 +353,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<ShowDedicatedHostTagsRequest, ShowDedicatedHostTagsResponse> showDedicatedHostTags =
-        genForshowDedicatedHostTags();
+        genForShowDedicatedHostTags();
 
-    private static HttpRequestDef<ShowDedicatedHostTagsRequest, ShowDedicatedHostTagsResponse> genForshowDedicatedHostTags() {
+    private static HttpRequestDef<ShowDedicatedHostTagsRequest, ShowDedicatedHostTagsResponse> genForShowDedicatedHostTags() {
         // basic
         HttpRequestDef.Builder<ShowDedicatedHostTagsRequest, ShowDedicatedHostTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDedicatedHostTagsRequest.class, ShowDedicatedHostTagsResponse.class)
@@ -405,9 +368,8 @@ public class DeHMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDedicatedHostTagsRequest::getDedicatedHostId, (req, v) -> {
-                req.setDedicatedHostId(v);
-            }));
+            f -> f.withMarshaller(ShowDedicatedHostTagsRequest::getDedicatedHostId,
+                ShowDedicatedHostTagsRequest::setDedicatedHostId));
 
         // response
 
@@ -415,9 +377,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<ShowQuotaSetsRequest, ShowQuotaSetsResponse> showQuotaSets =
-        genForshowQuotaSets();
+        genForShowQuotaSets();
 
-    private static HttpRequestDef<ShowQuotaSetsRequest, ShowQuotaSetsResponse> genForshowQuotaSets() {
+    private static HttpRequestDef<ShowQuotaSetsRequest, ShowQuotaSetsResponse> genForShowQuotaSets() {
         // basic
         HttpRequestDef.Builder<ShowQuotaSetsRequest, ShowQuotaSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotaSetsRequest.class, ShowQuotaSetsResponse.class)
@@ -430,16 +392,12 @@ public class DeHMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQuotaSetsRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(ShowQuotaSetsRequest::getTenantId, ShowQuotaSetsRequest::setTenantId));
         builder.<String>withRequestField("resource",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQuotaSetsRequest::getResource, (req, v) -> {
-                req.setResource(v);
-            }));
+            f -> f.withMarshaller(ShowQuotaSetsRequest::getResource, ShowQuotaSetsRequest::setResource));
 
         // response
 
@@ -447,9 +405,9 @@ public class DeHMeta {
     }
 
     public static final HttpRequestDef<UpdateDedicatedHostRequest, UpdateDedicatedHostResponse> updateDedicatedHost =
-        genForupdateDedicatedHost();
+        genForUpdateDedicatedHost();
 
-    private static HttpRequestDef<UpdateDedicatedHostRequest, UpdateDedicatedHostResponse> genForupdateDedicatedHost() {
+    private static HttpRequestDef<UpdateDedicatedHostRequest, UpdateDedicatedHostResponse> genForUpdateDedicatedHost() {
         // basic
         HttpRequestDef.Builder<UpdateDedicatedHostRequest, UpdateDedicatedHostResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDedicatedHostRequest.class, UpdateDedicatedHostResponse.class)
@@ -462,16 +420,13 @@ public class DeHMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDedicatedHostRequest::getDedicatedHostId, (req, v) -> {
-                req.setDedicatedHostId(v);
-            }));
+            f -> f.withMarshaller(UpdateDedicatedHostRequest::getDedicatedHostId,
+                UpdateDedicatedHostRequest::setDedicatedHostId));
         builder.<ReqUpdateDeh>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqUpdateDeh.class),
-            f -> f.withMarshaller(UpdateDedicatedHostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDedicatedHostRequest::getBody, UpdateDedicatedHostRequest::setBody));
 
         // response
 

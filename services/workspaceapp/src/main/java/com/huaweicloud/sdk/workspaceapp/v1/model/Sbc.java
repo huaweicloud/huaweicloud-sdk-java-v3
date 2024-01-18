@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class Sbc {
 
     /**
-     * 连接策略。 - DISABLED：已禁用 - AUTO_DISCONNECT：自动断开 - AUTO_LOCK：自动锁屏
+     * 连接策略： - DISABLED：已禁用 - AUTO_DISCONNECT：自动断开 - AUTO_LOCK：自动锁屏
      */
     public static final class SbcAutomaticDisconnectionEnum {
 
@@ -110,7 +110,7 @@ public class Sbc {
     }
 
     /**
-     * 连接策略。 - DISABLED：已禁用 - AUTO_DISCONNECT：自动断开 - AUTO_LOCK：自动锁屏
+     * 连接策略： - DISABLED：已禁用 - AUTO_DISCONNECT：自动断开 - AUTO_LOCK：自动锁屏
      * @return sbcAutomaticDisconnection
      */
     public SbcAutomaticDisconnectionEnum getSbcAutomaticDisconnection() {

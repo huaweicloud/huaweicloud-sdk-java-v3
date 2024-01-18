@@ -21,7 +21,7 @@ public class CreateCaseResultJson {
     }
 
     /**
-     * task_case_id
+     * 用例id
      * minimum: 0
      * maximum: 2147483647
      * @return taskCaseId

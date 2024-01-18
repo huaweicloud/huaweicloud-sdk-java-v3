@@ -36,7 +36,7 @@ public class ShowTopUrlRequest {
     private String domainName;
 
     /**
-     * mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
+     * mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为global(全球)。
      */
     public static final class ServiceAreaEnum {
 
@@ -50,12 +50,18 @@ public class ShowTopUrlRequest {
          */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
+        /**
+         * Enum GLOBAL for value: "global"
+         */
+        public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
+
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceAreaEnum> createStaticFields() {
             Map<String, ServiceAreaEnum> map = new HashMap<>();
             map.put("mainland_china", MAINLAND_CHINA);
             map.put("outside_mainland_china", OUTSIDE_MAINLAND_CHINA);
+            map.put("global", GLOBAL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -259,7 +265,7 @@ public class ShowTopUrlRequest {
     }
 
     /**
-     * mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
+     * mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为global(全球)。
      * @return serviceArea
      */
     public ServiceAreaEnum getServiceArea() {

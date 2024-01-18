@@ -142,7 +142,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRuleRequest 请求对象
+     * @param request CreateAlertRuleRequest 请求对象
      * @return CreateAlertRuleResponse
      */
     public CreateAlertRuleResponse createAlertRule(CreateAlertRuleRequest request) {
@@ -156,13 +156,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRuleRequest 请求对象
+     * @param request CreateAlertRuleRequest 请求对象
      * @return SyncInvoker<CreateAlertRuleRequest, CreateAlertRuleResponse>
      */
     public SyncInvoker<CreateAlertRuleRequest, CreateAlertRuleResponse> createAlertRuleInvoker(
         CreateAlertRuleRequest request) {
-        return new SyncInvoker<CreateAlertRuleRequest, CreateAlertRuleResponse>(request, SaMeta.createAlertRule,
-            hcClient);
+        return new SyncInvoker<>(request, SaMeta.createAlertRule, hcClient);
     }
 
     /**
@@ -172,7 +171,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRuleSimulationRequest 请求对象
+     * @param request CreateAlertRuleSimulationRequest 请求对象
      * @return CreateAlertRuleSimulationResponse
      */
     public CreateAlertRuleSimulationResponse createAlertRuleSimulation(CreateAlertRuleSimulationRequest request) {
@@ -186,13 +185,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRuleSimulationRequest 请求对象
+     * @param request CreateAlertRuleSimulationRequest 请求对象
      * @return SyncInvoker<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse>
      */
     public SyncInvoker<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse> createAlertRuleSimulationInvoker(
         CreateAlertRuleSimulationRequest request) {
-        return new SyncInvoker<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse>(request,
-            SaMeta.createAlertRuleSimulation, hcClient);
+        return new SyncInvoker<>(request, SaMeta.createAlertRuleSimulation, hcClient);
     }
 
     /**
@@ -202,7 +200,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlertRuleRequest 请求对象
+     * @param request DeleteAlertRuleRequest 请求对象
      * @return DeleteAlertRuleResponse
      */
     public DeleteAlertRuleResponse deleteAlertRule(DeleteAlertRuleRequest request) {
@@ -216,13 +214,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlertRuleRequest 请求对象
+     * @param request DeleteAlertRuleRequest 请求对象
      * @return SyncInvoker<DeleteAlertRuleRequest, DeleteAlertRuleResponse>
      */
     public SyncInvoker<DeleteAlertRuleRequest, DeleteAlertRuleResponse> deleteAlertRuleInvoker(
         DeleteAlertRuleRequest request) {
-        return new SyncInvoker<DeleteAlertRuleRequest, DeleteAlertRuleResponse>(request, SaMeta.deleteAlertRule,
-            hcClient);
+        return new SyncInvoker<>(request, SaMeta.deleteAlertRule, hcClient);
     }
 
     /**
@@ -232,7 +229,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableAlertRuleRequest 请求对象
+     * @param request DisableAlertRuleRequest 请求对象
      * @return DisableAlertRuleResponse
      */
     public DisableAlertRuleResponse disableAlertRule(DisableAlertRuleRequest request) {
@@ -246,13 +243,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableAlertRuleRequest 请求对象
+     * @param request DisableAlertRuleRequest 请求对象
      * @return SyncInvoker<DisableAlertRuleRequest, DisableAlertRuleResponse>
      */
     public SyncInvoker<DisableAlertRuleRequest, DisableAlertRuleResponse> disableAlertRuleInvoker(
         DisableAlertRuleRequest request) {
-        return new SyncInvoker<DisableAlertRuleRequest, DisableAlertRuleResponse>(request, SaMeta.disableAlertRule,
-            hcClient);
+        return new SyncInvoker<>(request, SaMeta.disableAlertRule, hcClient);
     }
 
     /**
@@ -262,7 +258,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableAlertRuleRequest 请求对象
+     * @param request EnableAlertRuleRequest 请求对象
      * @return EnableAlertRuleResponse
      */
     public EnableAlertRuleResponse enableAlertRule(EnableAlertRuleRequest request) {
@@ -276,13 +272,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableAlertRuleRequest 请求对象
+     * @param request EnableAlertRuleRequest 请求对象
      * @return SyncInvoker<EnableAlertRuleRequest, EnableAlertRuleResponse>
      */
     public SyncInvoker<EnableAlertRuleRequest, EnableAlertRuleResponse> enableAlertRuleInvoker(
         EnableAlertRuleRequest request) {
-        return new SyncInvoker<EnableAlertRuleRequest, EnableAlertRuleResponse>(request, SaMeta.enableAlertRule,
-            hcClient);
+        return new SyncInvoker<>(request, SaMeta.enableAlertRule, hcClient);
     }
 
     /**
@@ -292,7 +287,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRuleMetricsRequest 请求对象
+     * @param request ListAlertRuleMetricsRequest 请求对象
      * @return ListAlertRuleMetricsResponse
      */
     public ListAlertRuleMetricsResponse listAlertRuleMetrics(ListAlertRuleMetricsRequest request) {
@@ -306,13 +301,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRuleMetricsRequest 请求对象
+     * @param request ListAlertRuleMetricsRequest 请求对象
      * @return SyncInvoker<ListAlertRuleMetricsRequest, ListAlertRuleMetricsResponse>
      */
     public SyncInvoker<ListAlertRuleMetricsRequest, ListAlertRuleMetricsResponse> listAlertRuleMetricsInvoker(
         ListAlertRuleMetricsRequest request) {
-        return new SyncInvoker<ListAlertRuleMetricsRequest, ListAlertRuleMetricsResponse>(request,
-            SaMeta.listAlertRuleMetrics, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listAlertRuleMetrics, hcClient);
     }
 
     /**
@@ -322,7 +316,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRuleTemplatesRequest 请求对象
+     * @param request ListAlertRuleTemplatesRequest 请求对象
      * @return ListAlertRuleTemplatesResponse
      */
     public ListAlertRuleTemplatesResponse listAlertRuleTemplates(ListAlertRuleTemplatesRequest request) {
@@ -336,13 +330,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRuleTemplatesRequest 请求对象
+     * @param request ListAlertRuleTemplatesRequest 请求对象
      * @return SyncInvoker<ListAlertRuleTemplatesRequest, ListAlertRuleTemplatesResponse>
      */
     public SyncInvoker<ListAlertRuleTemplatesRequest, ListAlertRuleTemplatesResponse> listAlertRuleTemplatesInvoker(
         ListAlertRuleTemplatesRequest request) {
-        return new SyncInvoker<ListAlertRuleTemplatesRequest, ListAlertRuleTemplatesResponse>(request,
-            SaMeta.listAlertRuleTemplates, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listAlertRuleTemplates, hcClient);
     }
 
     /**
@@ -352,7 +345,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRulesRequest 请求对象
+     * @param request ListAlertRulesRequest 请求对象
      * @return ListAlertRulesResponse
      */
     public ListAlertRulesResponse listAlertRules(ListAlertRulesRequest request) {
@@ -366,12 +359,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRulesRequest 请求对象
+     * @param request ListAlertRulesRequest 请求对象
      * @return SyncInvoker<ListAlertRulesRequest, ListAlertRulesResponse>
      */
     public SyncInvoker<ListAlertRulesRequest, ListAlertRulesResponse> listAlertRulesInvoker(
         ListAlertRulesRequest request) {
-        return new SyncInvoker<ListAlertRulesRequest, ListAlertRulesResponse>(request, SaMeta.listAlertRules, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listAlertRules, hcClient);
     }
 
     /**
@@ -381,7 +374,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRuleRequest 请求对象
+     * @param request ShowAlertRuleRequest 请求对象
      * @return ShowAlertRuleResponse
      */
     public ShowAlertRuleResponse showAlertRule(ShowAlertRuleRequest request) {
@@ -395,11 +388,11 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRuleRequest 请求对象
+     * @param request ShowAlertRuleRequest 请求对象
      * @return SyncInvoker<ShowAlertRuleRequest, ShowAlertRuleResponse>
      */
     public SyncInvoker<ShowAlertRuleRequest, ShowAlertRuleResponse> showAlertRuleInvoker(ShowAlertRuleRequest request) {
-        return new SyncInvoker<ShowAlertRuleRequest, ShowAlertRuleResponse>(request, SaMeta.showAlertRule, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showAlertRule, hcClient);
     }
 
     /**
@@ -409,7 +402,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRuleTemplateRequest 请求对象
+     * @param request ShowAlertRuleTemplateRequest 请求对象
      * @return ShowAlertRuleTemplateResponse
      */
     public ShowAlertRuleTemplateResponse showAlertRuleTemplate(ShowAlertRuleTemplateRequest request) {
@@ -423,13 +416,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRuleTemplateRequest 请求对象
+     * @param request ShowAlertRuleTemplateRequest 请求对象
      * @return SyncInvoker<ShowAlertRuleTemplateRequest, ShowAlertRuleTemplateResponse>
      */
     public SyncInvoker<ShowAlertRuleTemplateRequest, ShowAlertRuleTemplateResponse> showAlertRuleTemplateInvoker(
         ShowAlertRuleTemplateRequest request) {
-        return new SyncInvoker<ShowAlertRuleTemplateRequest, ShowAlertRuleTemplateResponse>(request,
-            SaMeta.showAlertRuleTemplate, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showAlertRuleTemplate, hcClient);
     }
 
     /**
@@ -439,7 +431,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlertRuleRequest 请求对象
+     * @param request UpdateAlertRuleRequest 请求对象
      * @return UpdateAlertRuleResponse
      */
     public UpdateAlertRuleResponse updateAlertRule(UpdateAlertRuleRequest request) {
@@ -453,13 +445,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlertRuleRequest 请求对象
+     * @param request UpdateAlertRuleRequest 请求对象
      * @return SyncInvoker<UpdateAlertRuleRequest, UpdateAlertRuleResponse>
      */
     public SyncInvoker<UpdateAlertRuleRequest, UpdateAlertRuleResponse> updateAlertRuleInvoker(
         UpdateAlertRuleRequest request) {
-        return new SyncInvoker<UpdateAlertRuleRequest, UpdateAlertRuleResponse>(request, SaMeta.updateAlertRule,
-            hcClient);
+        return new SyncInvoker<>(request, SaMeta.updateAlertRule, hcClient);
     }
 
     /**
@@ -469,7 +460,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeAlertRequest 请求对象
+     * @param request ChangeAlertRequest 请求对象
      * @return ChangeAlertResponse
      */
     public ChangeAlertResponse changeAlert(ChangeAlertRequest request) {
@@ -483,11 +474,11 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeAlertRequest 请求对象
+     * @param request ChangeAlertRequest 请求对象
      * @return SyncInvoker<ChangeAlertRequest, ChangeAlertResponse>
      */
     public SyncInvoker<ChangeAlertRequest, ChangeAlertResponse> changeAlertInvoker(ChangeAlertRequest request) {
-        return new SyncInvoker<ChangeAlertRequest, ChangeAlertResponse>(request, SaMeta.changeAlert, hcClient);
+        return new SyncInvoker<>(request, SaMeta.changeAlert, hcClient);
     }
 
     /**
@@ -497,7 +488,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRequest 请求对象
+     * @param request CreateAlertRequest 请求对象
      * @return CreateAlertResponse
      */
     public CreateAlertResponse createAlert(CreateAlertRequest request) {
@@ -511,11 +502,11 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRequest 请求对象
+     * @param request CreateAlertRequest 请求对象
      * @return SyncInvoker<CreateAlertRequest, CreateAlertResponse>
      */
     public SyncInvoker<CreateAlertRequest, CreateAlertResponse> createAlertInvoker(CreateAlertRequest request) {
-        return new SyncInvoker<CreateAlertRequest, CreateAlertResponse>(request, SaMeta.createAlert, hcClient);
+        return new SyncInvoker<>(request, SaMeta.createAlert, hcClient);
     }
 
     /**
@@ -525,7 +516,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBatchOrderAlertsRequest 请求对象
+     * @param request CreateBatchOrderAlertsRequest 请求对象
      * @return CreateBatchOrderAlertsResponse
      */
     public CreateBatchOrderAlertsResponse createBatchOrderAlerts(CreateBatchOrderAlertsRequest request) {
@@ -539,13 +530,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBatchOrderAlertsRequest 请求对象
+     * @param request CreateBatchOrderAlertsRequest 请求对象
      * @return SyncInvoker<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse>
      */
     public SyncInvoker<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse> createBatchOrderAlertsInvoker(
         CreateBatchOrderAlertsRequest request) {
-        return new SyncInvoker<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse>(request,
-            SaMeta.createBatchOrderAlerts, hcClient);
+        return new SyncInvoker<>(request, SaMeta.createBatchOrderAlerts, hcClient);
     }
 
     /**
@@ -555,7 +545,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlertRequest 请求对象
+     * @param request DeleteAlertRequest 请求对象
      * @return DeleteAlertResponse
      */
     public DeleteAlertResponse deleteAlert(DeleteAlertRequest request) {
@@ -569,11 +559,11 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlertRequest 请求对象
+     * @param request DeleteAlertRequest 请求对象
      * @return SyncInvoker<DeleteAlertRequest, DeleteAlertResponse>
      */
     public SyncInvoker<DeleteAlertRequest, DeleteAlertResponse> deleteAlertInvoker(DeleteAlertRequest request) {
-        return new SyncInvoker<DeleteAlertRequest, DeleteAlertResponse>(request, SaMeta.deleteAlert, hcClient);
+        return new SyncInvoker<>(request, SaMeta.deleteAlert, hcClient);
     }
 
     /**
@@ -583,7 +573,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertsRequest 请求对象
+     * @param request ListAlertsRequest 请求对象
      * @return ListAlertsResponse
      */
     public ListAlertsResponse listAlerts(ListAlertsRequest request) {
@@ -597,11 +587,11 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertsRequest 请求对象
+     * @param request ListAlertsRequest 请求对象
      * @return SyncInvoker<ListAlertsRequest, ListAlertsResponse>
      */
     public SyncInvoker<ListAlertsRequest, ListAlertsResponse> listAlertsInvoker(ListAlertsRequest request) {
-        return new SyncInvoker<ListAlertsRequest, ListAlertsResponse>(request, SaMeta.listAlerts, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listAlerts, hcClient);
     }
 
     /**
@@ -611,7 +601,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRequest 请求对象
+     * @param request ShowAlertRequest 请求对象
      * @return ShowAlertResponse
      */
     public ShowAlertResponse showAlert(ShowAlertRequest request) {
@@ -625,11 +615,11 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRequest 请求对象
+     * @param request ShowAlertRequest 请求对象
      * @return SyncInvoker<ShowAlertRequest, ShowAlertResponse>
      */
     public SyncInvoker<ShowAlertRequest, ShowAlertResponse> showAlertInvoker(ShowAlertRequest request) {
-        return new SyncInvoker<ShowAlertRequest, ShowAlertResponse>(request, SaMeta.showAlert, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showAlert, hcClient);
     }
 
     /**
@@ -639,7 +629,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeIncidentRequest 请求对象
+     * @param request ChangeIncidentRequest 请求对象
      * @return ChangeIncidentResponse
      */
     public ChangeIncidentResponse changeIncident(ChangeIncidentRequest request) {
@@ -653,12 +643,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeIncidentRequest 请求对象
+     * @param request ChangeIncidentRequest 请求对象
      * @return SyncInvoker<ChangeIncidentRequest, ChangeIncidentResponse>
      */
     public SyncInvoker<ChangeIncidentRequest, ChangeIncidentResponse> changeIncidentInvoker(
         ChangeIncidentRequest request) {
-        return new SyncInvoker<ChangeIncidentRequest, ChangeIncidentResponse>(request, SaMeta.changeIncident, hcClient);
+        return new SyncInvoker<>(request, SaMeta.changeIncident, hcClient);
     }
 
     /**
@@ -668,7 +658,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIncidentRequest 请求对象
+     * @param request CreateIncidentRequest 请求对象
      * @return CreateIncidentResponse
      */
     public CreateIncidentResponse createIncident(CreateIncidentRequest request) {
@@ -682,12 +672,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIncidentRequest 请求对象
+     * @param request CreateIncidentRequest 请求对象
      * @return SyncInvoker<CreateIncidentRequest, CreateIncidentResponse>
      */
     public SyncInvoker<CreateIncidentRequest, CreateIncidentResponse> createIncidentInvoker(
         CreateIncidentRequest request) {
-        return new SyncInvoker<CreateIncidentRequest, CreateIncidentResponse>(request, SaMeta.createIncident, hcClient);
+        return new SyncInvoker<>(request, SaMeta.createIncident, hcClient);
     }
 
     /**
@@ -697,7 +687,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIncidentRequest 请求对象
+     * @param request DeleteIncidentRequest 请求对象
      * @return DeleteIncidentResponse
      */
     public DeleteIncidentResponse deleteIncident(DeleteIncidentRequest request) {
@@ -711,12 +701,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIncidentRequest 请求对象
+     * @param request DeleteIncidentRequest 请求对象
      * @return SyncInvoker<DeleteIncidentRequest, DeleteIncidentResponse>
      */
     public SyncInvoker<DeleteIncidentRequest, DeleteIncidentResponse> deleteIncidentInvoker(
         DeleteIncidentRequest request) {
-        return new SyncInvoker<DeleteIncidentRequest, DeleteIncidentResponse>(request, SaMeta.deleteIncident, hcClient);
+        return new SyncInvoker<>(request, SaMeta.deleteIncident, hcClient);
     }
 
     /**
@@ -726,7 +716,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIncidentTypesRequest 请求对象
+     * @param request ListIncidentTypesRequest 请求对象
      * @return ListIncidentTypesResponse
      */
     public ListIncidentTypesResponse listIncidentTypes(ListIncidentTypesRequest request) {
@@ -740,13 +730,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIncidentTypesRequest 请求对象
+     * @param request ListIncidentTypesRequest 请求对象
      * @return SyncInvoker<ListIncidentTypesRequest, ListIncidentTypesResponse>
      */
     public SyncInvoker<ListIncidentTypesRequest, ListIncidentTypesResponse> listIncidentTypesInvoker(
         ListIncidentTypesRequest request) {
-        return new SyncInvoker<ListIncidentTypesRequest, ListIncidentTypesResponse>(request, SaMeta.listIncidentTypes,
-            hcClient);
+        return new SyncInvoker<>(request, SaMeta.listIncidentTypes, hcClient);
     }
 
     /**
@@ -756,7 +745,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIncidentsRequest 请求对象
+     * @param request ListIncidentsRequest 请求对象
      * @return ListIncidentsResponse
      */
     public ListIncidentsResponse listIncidents(ListIncidentsRequest request) {
@@ -770,11 +759,11 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIncidentsRequest 请求对象
+     * @param request ListIncidentsRequest 请求对象
      * @return SyncInvoker<ListIncidentsRequest, ListIncidentsResponse>
      */
     public SyncInvoker<ListIncidentsRequest, ListIncidentsResponse> listIncidentsInvoker(ListIncidentsRequest request) {
-        return new SyncInvoker<ListIncidentsRequest, ListIncidentsResponse>(request, SaMeta.listIncidents, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listIncidents, hcClient);
     }
 
     /**
@@ -784,7 +773,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIncidentRequest 请求对象
+     * @param request ShowIncidentRequest 请求对象
      * @return ShowIncidentResponse
      */
     public ShowIncidentResponse showIncident(ShowIncidentRequest request) {
@@ -798,11 +787,11 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIncidentRequest 请求对象
+     * @param request ShowIncidentRequest 请求对象
      * @return SyncInvoker<ShowIncidentRequest, ShowIncidentResponse>
      */
     public SyncInvoker<ShowIncidentRequest, ShowIncidentResponse> showIncidentInvoker(ShowIncidentRequest request) {
-        return new SyncInvoker<ShowIncidentRequest, ShowIncidentResponse>(request, SaMeta.showIncident, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showIncident, hcClient);
     }
 
     /**
@@ -812,7 +801,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIndicatorRequest 请求对象
+     * @param request CreateIndicatorRequest 请求对象
      * @return CreateIndicatorResponse
      */
     public CreateIndicatorResponse createIndicator(CreateIndicatorRequest request) {
@@ -826,13 +815,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIndicatorRequest 请求对象
+     * @param request CreateIndicatorRequest 请求对象
      * @return SyncInvoker<CreateIndicatorRequest, CreateIndicatorResponse>
      */
     public SyncInvoker<CreateIndicatorRequest, CreateIndicatorResponse> createIndicatorInvoker(
         CreateIndicatorRequest request) {
-        return new SyncInvoker<CreateIndicatorRequest, CreateIndicatorResponse>(request, SaMeta.createIndicator,
-            hcClient);
+        return new SyncInvoker<>(request, SaMeta.createIndicator, hcClient);
     }
 
     /**
@@ -842,7 +830,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIndicatorRequest 请求对象
+     * @param request DeleteIndicatorRequest 请求对象
      * @return DeleteIndicatorResponse
      */
     public DeleteIndicatorResponse deleteIndicator(DeleteIndicatorRequest request) {
@@ -856,13 +844,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIndicatorRequest 请求对象
+     * @param request DeleteIndicatorRequest 请求对象
      * @return SyncInvoker<DeleteIndicatorRequest, DeleteIndicatorResponse>
      */
     public SyncInvoker<DeleteIndicatorRequest, DeleteIndicatorResponse> deleteIndicatorInvoker(
         DeleteIndicatorRequest request) {
-        return new SyncInvoker<DeleteIndicatorRequest, DeleteIndicatorResponse>(request, SaMeta.deleteIndicator,
-            hcClient);
+        return new SyncInvoker<>(request, SaMeta.deleteIndicator, hcClient);
     }
 
     /**
@@ -872,7 +859,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIndicatorsRequest 请求对象
+     * @param request ListIndicatorsRequest 请求对象
      * @return ListIndicatorsResponse
      */
     public ListIndicatorsResponse listIndicators(ListIndicatorsRequest request) {
@@ -886,12 +873,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIndicatorsRequest 请求对象
+     * @param request ListIndicatorsRequest 请求对象
      * @return SyncInvoker<ListIndicatorsRequest, ListIndicatorsResponse>
      */
     public SyncInvoker<ListIndicatorsRequest, ListIndicatorsResponse> listIndicatorsInvoker(
         ListIndicatorsRequest request) {
-        return new SyncInvoker<ListIndicatorsRequest, ListIndicatorsResponse>(request, SaMeta.listIndicators, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listIndicators, hcClient);
     }
 
     /**
@@ -901,7 +888,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIndicatorDetailRequest 请求对象
+     * @param request ShowIndicatorDetailRequest 请求对象
      * @return ShowIndicatorDetailResponse
      */
     public ShowIndicatorDetailResponse showIndicatorDetail(ShowIndicatorDetailRequest request) {
@@ -915,13 +902,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIndicatorDetailRequest 请求对象
+     * @param request ShowIndicatorDetailRequest 请求对象
      * @return SyncInvoker<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse>
      */
     public SyncInvoker<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse> showIndicatorDetailInvoker(
         ShowIndicatorDetailRequest request) {
-        return new SyncInvoker<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse>(request,
-            SaMeta.showIndicatorDetail, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showIndicatorDetail, hcClient);
     }
 
     /**
@@ -931,7 +917,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIndicatorRequest 请求对象
+     * @param request UpdateIndicatorRequest 请求对象
      * @return UpdateIndicatorResponse
      */
     public UpdateIndicatorResponse updateIndicator(UpdateIndicatorRequest request) {
@@ -945,13 +931,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIndicatorRequest 请求对象
+     * @param request UpdateIndicatorRequest 请求对象
      * @return SyncInvoker<UpdateIndicatorRequest, UpdateIndicatorResponse>
      */
     public SyncInvoker<UpdateIndicatorRequest, UpdateIndicatorResponse> updateIndicatorInvoker(
         UpdateIndicatorRequest request) {
-        return new SyncInvoker<UpdateIndicatorRequest, UpdateIndicatorResponse>(request, SaMeta.updateIndicator,
-            hcClient);
+        return new SyncInvoker<>(request, SaMeta.updateIndicator, hcClient);
     }
 
     /**
@@ -961,7 +946,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookRequest 请求对象
+     * @param request CreatePlaybookRequest 请求对象
      * @return CreatePlaybookResponse
      */
     public CreatePlaybookResponse createPlaybook(CreatePlaybookRequest request) {
@@ -975,12 +960,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookRequest 请求对象
+     * @param request CreatePlaybookRequest 请求对象
      * @return SyncInvoker<CreatePlaybookRequest, CreatePlaybookResponse>
      */
     public SyncInvoker<CreatePlaybookRequest, CreatePlaybookResponse> createPlaybookInvoker(
         CreatePlaybookRequest request) {
-        return new SyncInvoker<CreatePlaybookRequest, CreatePlaybookResponse>(request, SaMeta.createPlaybook, hcClient);
+        return new SyncInvoker<>(request, SaMeta.createPlaybook, hcClient);
     }
 
     /**
@@ -990,7 +975,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookRequest 请求对象
+     * @param request DeletePlaybookRequest 请求对象
      * @return DeletePlaybookResponse
      */
     public DeletePlaybookResponse deletePlaybook(DeletePlaybookRequest request) {
@@ -1004,12 +989,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookRequest 请求对象
+     * @param request DeletePlaybookRequest 请求对象
      * @return SyncInvoker<DeletePlaybookRequest, DeletePlaybookResponse>
      */
     public SyncInvoker<DeletePlaybookRequest, DeletePlaybookResponse> deletePlaybookInvoker(
         DeletePlaybookRequest request) {
-        return new SyncInvoker<DeletePlaybookRequest, DeletePlaybookResponse>(request, SaMeta.deletePlaybook, hcClient);
+        return new SyncInvoker<>(request, SaMeta.deletePlaybook, hcClient);
     }
 
     /**
@@ -1019,7 +1004,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybooksRequest 请求对象
+     * @param request ListPlaybooksRequest 请求对象
      * @return ListPlaybooksResponse
      */
     public ListPlaybooksResponse listPlaybooks(ListPlaybooksRequest request) {
@@ -1033,11 +1018,11 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybooksRequest 请求对象
+     * @param request ListPlaybooksRequest 请求对象
      * @return SyncInvoker<ListPlaybooksRequest, ListPlaybooksResponse>
      */
     public SyncInvoker<ListPlaybooksRequest, ListPlaybooksResponse> listPlaybooksInvoker(ListPlaybooksRequest request) {
-        return new SyncInvoker<ListPlaybooksRequest, ListPlaybooksResponse>(request, SaMeta.listPlaybooks, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listPlaybooks, hcClient);
     }
 
     /**
@@ -1047,7 +1032,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookRequest 请求对象
+     * @param request ShowPlaybookRequest 请求对象
      * @return ShowPlaybookResponse
      */
     public ShowPlaybookResponse showPlaybook(ShowPlaybookRequest request) {
@@ -1061,11 +1046,11 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookRequest 请求对象
+     * @param request ShowPlaybookRequest 请求对象
      * @return SyncInvoker<ShowPlaybookRequest, ShowPlaybookResponse>
      */
     public SyncInvoker<ShowPlaybookRequest, ShowPlaybookResponse> showPlaybookInvoker(ShowPlaybookRequest request) {
-        return new SyncInvoker<ShowPlaybookRequest, ShowPlaybookResponse>(request, SaMeta.showPlaybook, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showPlaybook, hcClient);
     }
 
     /**
@@ -1075,7 +1060,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookMonitorsRequest 请求对象
+     * @param request ShowPlaybookMonitorsRequest 请求对象
      * @return ShowPlaybookMonitorsResponse
      */
     public ShowPlaybookMonitorsResponse showPlaybookMonitors(ShowPlaybookMonitorsRequest request) {
@@ -1089,13 +1074,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookMonitorsRequest 请求对象
+     * @param request ShowPlaybookMonitorsRequest 请求对象
      * @return SyncInvoker<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse>
      */
     public SyncInvoker<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse> showPlaybookMonitorsInvoker(
         ShowPlaybookMonitorsRequest request) {
-        return new SyncInvoker<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse>(request,
-            SaMeta.showPlaybookMonitors, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showPlaybookMonitors, hcClient);
     }
 
     /**
@@ -1105,7 +1089,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookStatisticsRequest 请求对象
+     * @param request ShowPlaybookStatisticsRequest 请求对象
      * @return ShowPlaybookStatisticsResponse
      */
     public ShowPlaybookStatisticsResponse showPlaybookStatistics(ShowPlaybookStatisticsRequest request) {
@@ -1119,13 +1103,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookStatisticsRequest 请求对象
+     * @param request ShowPlaybookStatisticsRequest 请求对象
      * @return SyncInvoker<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse>
      */
     public SyncInvoker<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse> showPlaybookStatisticsInvoker(
         ShowPlaybookStatisticsRequest request) {
-        return new SyncInvoker<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse>(request,
-            SaMeta.showPlaybookStatistics, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showPlaybookStatistics, hcClient);
     }
 
     /**
@@ -1135,7 +1118,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookRequest 请求对象
+     * @param request UpdatePlaybookRequest 请求对象
      * @return UpdatePlaybookResponse
      */
     public UpdatePlaybookResponse updatePlaybook(UpdatePlaybookRequest request) {
@@ -1149,12 +1132,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookRequest 请求对象
+     * @param request UpdatePlaybookRequest 请求对象
      * @return SyncInvoker<UpdatePlaybookRequest, UpdatePlaybookResponse>
      */
     public SyncInvoker<UpdatePlaybookRequest, UpdatePlaybookResponse> updatePlaybookInvoker(
         UpdatePlaybookRequest request) {
-        return new SyncInvoker<UpdatePlaybookRequest, UpdatePlaybookResponse>(request, SaMeta.updatePlaybook, hcClient);
+        return new SyncInvoker<>(request, SaMeta.updatePlaybook, hcClient);
     }
 
     /**
@@ -1164,7 +1147,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookActionRequest 请求对象
+     * @param request CreatePlaybookActionRequest 请求对象
      * @return CreatePlaybookActionResponse
      */
     public CreatePlaybookActionResponse createPlaybookAction(CreatePlaybookActionRequest request) {
@@ -1178,13 +1161,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookActionRequest 请求对象
+     * @param request CreatePlaybookActionRequest 请求对象
      * @return SyncInvoker<CreatePlaybookActionRequest, CreatePlaybookActionResponse>
      */
     public SyncInvoker<CreatePlaybookActionRequest, CreatePlaybookActionResponse> createPlaybookActionInvoker(
         CreatePlaybookActionRequest request) {
-        return new SyncInvoker<CreatePlaybookActionRequest, CreatePlaybookActionResponse>(request,
-            SaMeta.createPlaybookAction, hcClient);
+        return new SyncInvoker<>(request, SaMeta.createPlaybookAction, hcClient);
     }
 
     /**
@@ -1194,7 +1176,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookActionRequest 请求对象
+     * @param request DeletePlaybookActionRequest 请求对象
      * @return DeletePlaybookActionResponse
      */
     public DeletePlaybookActionResponse deletePlaybookAction(DeletePlaybookActionRequest request) {
@@ -1208,13 +1190,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookActionRequest 请求对象
+     * @param request DeletePlaybookActionRequest 请求对象
      * @return SyncInvoker<DeletePlaybookActionRequest, DeletePlaybookActionResponse>
      */
     public SyncInvoker<DeletePlaybookActionRequest, DeletePlaybookActionResponse> deletePlaybookActionInvoker(
         DeletePlaybookActionRequest request) {
-        return new SyncInvoker<DeletePlaybookActionRequest, DeletePlaybookActionResponse>(request,
-            SaMeta.deletePlaybookAction, hcClient);
+        return new SyncInvoker<>(request, SaMeta.deletePlaybookAction, hcClient);
     }
 
     /**
@@ -1224,7 +1205,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookActionsRequest 请求对象
+     * @param request ListPlaybookActionsRequest 请求对象
      * @return ListPlaybookActionsResponse
      */
     public ListPlaybookActionsResponse listPlaybookActions(ListPlaybookActionsRequest request) {
@@ -1238,13 +1219,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookActionsRequest 请求对象
+     * @param request ListPlaybookActionsRequest 请求对象
      * @return SyncInvoker<ListPlaybookActionsRequest, ListPlaybookActionsResponse>
      */
     public SyncInvoker<ListPlaybookActionsRequest, ListPlaybookActionsResponse> listPlaybookActionsInvoker(
         ListPlaybookActionsRequest request) {
-        return new SyncInvoker<ListPlaybookActionsRequest, ListPlaybookActionsResponse>(request,
-            SaMeta.listPlaybookActions, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listPlaybookActions, hcClient);
     }
 
     /**
@@ -1254,7 +1234,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookActionRequest 请求对象
+     * @param request UpdatePlaybookActionRequest 请求对象
      * @return UpdatePlaybookActionResponse
      */
     public UpdatePlaybookActionResponse updatePlaybookAction(UpdatePlaybookActionRequest request) {
@@ -1268,13 +1248,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookActionRequest 请求对象
+     * @param request UpdatePlaybookActionRequest 请求对象
      * @return SyncInvoker<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse>
      */
     public SyncInvoker<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse> updatePlaybookActionInvoker(
         UpdatePlaybookActionRequest request) {
-        return new SyncInvoker<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse>(request,
-            SaMeta.updatePlaybookAction, hcClient);
+        return new SyncInvoker<>(request, SaMeta.updatePlaybookAction, hcClient);
     }
 
     /**
@@ -1284,7 +1263,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookApproveRequest 请求对象
+     * @param request CreatePlaybookApproveRequest 请求对象
      * @return CreatePlaybookApproveResponse
      */
     public CreatePlaybookApproveResponse createPlaybookApprove(CreatePlaybookApproveRequest request) {
@@ -1298,13 +1277,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookApproveRequest 请求对象
+     * @param request CreatePlaybookApproveRequest 请求对象
      * @return SyncInvoker<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse>
      */
     public SyncInvoker<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse> createPlaybookApproveInvoker(
         CreatePlaybookApproveRequest request) {
-        return new SyncInvoker<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse>(request,
-            SaMeta.createPlaybookApprove, hcClient);
+        return new SyncInvoker<>(request, SaMeta.createPlaybookApprove, hcClient);
     }
 
     /**
@@ -1314,7 +1292,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookApprovesRequest 请求对象
+     * @param request ListPlaybookApprovesRequest 请求对象
      * @return ListPlaybookApprovesResponse
      */
     public ListPlaybookApprovesResponse listPlaybookApproves(ListPlaybookApprovesRequest request) {
@@ -1328,13 +1306,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookApprovesRequest 请求对象
+     * @param request ListPlaybookApprovesRequest 请求对象
      * @return SyncInvoker<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse>
      */
     public SyncInvoker<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse> listPlaybookApprovesInvoker(
         ListPlaybookApprovesRequest request) {
-        return new SyncInvoker<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse>(request,
-            SaMeta.listPlaybookApproves, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listPlaybookApproves, hcClient);
     }
 
     /**
@@ -1344,7 +1321,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePlaybookInstanceRequest 请求对象
+     * @param request ChangePlaybookInstanceRequest 请求对象
      * @return ChangePlaybookInstanceResponse
      */
     public ChangePlaybookInstanceResponse changePlaybookInstance(ChangePlaybookInstanceRequest request) {
@@ -1358,13 +1335,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePlaybookInstanceRequest 请求对象
+     * @param request ChangePlaybookInstanceRequest 请求对象
      * @return SyncInvoker<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse>
      */
     public SyncInvoker<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse> changePlaybookInstanceInvoker(
         ChangePlaybookInstanceRequest request) {
-        return new SyncInvoker<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse>(request,
-            SaMeta.changePlaybookInstance, hcClient);
+        return new SyncInvoker<>(request, SaMeta.changePlaybookInstance, hcClient);
     }
 
     /**
@@ -1374,7 +1350,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookAuditLogsRequest 请求对象
+     * @param request ListPlaybookAuditLogsRequest 请求对象
      * @return ListPlaybookAuditLogsResponse
      */
     public ListPlaybookAuditLogsResponse listPlaybookAuditLogs(ListPlaybookAuditLogsRequest request) {
@@ -1388,13 +1364,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookAuditLogsRequest 请求对象
+     * @param request ListPlaybookAuditLogsRequest 请求对象
      * @return SyncInvoker<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse>
      */
     public SyncInvoker<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse> listPlaybookAuditLogsInvoker(
         ListPlaybookAuditLogsRequest request) {
-        return new SyncInvoker<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse>(request,
-            SaMeta.listPlaybookAuditLogs, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listPlaybookAuditLogs, hcClient);
     }
 
     /**
@@ -1404,7 +1379,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookInstancesRequest 请求对象
+     * @param request ListPlaybookInstancesRequest 请求对象
      * @return ListPlaybookInstancesResponse
      */
     public ListPlaybookInstancesResponse listPlaybookInstances(ListPlaybookInstancesRequest request) {
@@ -1418,13 +1393,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookInstancesRequest 请求对象
+     * @param request ListPlaybookInstancesRequest 请求对象
      * @return SyncInvoker<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse>
      */
     public SyncInvoker<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse> listPlaybookInstancesInvoker(
         ListPlaybookInstancesRequest request) {
-        return new SyncInvoker<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse>(request,
-            SaMeta.listPlaybookInstances, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listPlaybookInstances, hcClient);
     }
 
     /**
@@ -1434,7 +1408,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookInstanceRequest 请求对象
+     * @param request ShowPlaybookInstanceRequest 请求对象
      * @return ShowPlaybookInstanceResponse
      */
     public ShowPlaybookInstanceResponse showPlaybookInstance(ShowPlaybookInstanceRequest request) {
@@ -1448,13 +1422,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookInstanceRequest 请求对象
+     * @param request ShowPlaybookInstanceRequest 请求对象
      * @return SyncInvoker<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse>
      */
     public SyncInvoker<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse> showPlaybookInstanceInvoker(
         ShowPlaybookInstanceRequest request) {
-        return new SyncInvoker<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse>(request,
-            SaMeta.showPlaybookInstance, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showPlaybookInstance, hcClient);
     }
 
     /**
@@ -1464,7 +1437,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookTopologyRequest 请求对象
+     * @param request ShowPlaybookTopologyRequest 请求对象
      * @return ShowPlaybookTopologyResponse
      */
     public ShowPlaybookTopologyResponse showPlaybookTopology(ShowPlaybookTopologyRequest request) {
@@ -1478,13 +1451,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookTopologyRequest 请求对象
+     * @param request ShowPlaybookTopologyRequest 请求对象
      * @return SyncInvoker<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse>
      */
     public SyncInvoker<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse> showPlaybookTopologyInvoker(
         ShowPlaybookTopologyRequest request) {
-        return new SyncInvoker<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse>(request,
-            SaMeta.showPlaybookTopology, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showPlaybookTopology, hcClient);
     }
 
     /**
@@ -1494,7 +1466,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookRuleRequest 请求对象
+     * @param request CreatePlaybookRuleRequest 请求对象
      * @return CreatePlaybookRuleResponse
      */
     public CreatePlaybookRuleResponse createPlaybookRule(CreatePlaybookRuleRequest request) {
@@ -1508,13 +1480,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookRuleRequest 请求对象
+     * @param request CreatePlaybookRuleRequest 请求对象
      * @return SyncInvoker<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse>
      */
     public SyncInvoker<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse> createPlaybookRuleInvoker(
         CreatePlaybookRuleRequest request) {
-        return new SyncInvoker<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse>(request,
-            SaMeta.createPlaybookRule, hcClient);
+        return new SyncInvoker<>(request, SaMeta.createPlaybookRule, hcClient);
     }
 
     /**
@@ -1524,7 +1495,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookRuleRequest 请求对象
+     * @param request DeletePlaybookRuleRequest 请求对象
      * @return DeletePlaybookRuleResponse
      */
     public DeletePlaybookRuleResponse deletePlaybookRule(DeletePlaybookRuleRequest request) {
@@ -1538,13 +1509,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookRuleRequest 请求对象
+     * @param request DeletePlaybookRuleRequest 请求对象
      * @return SyncInvoker<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse>
      */
     public SyncInvoker<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse> deletePlaybookRuleInvoker(
         DeletePlaybookRuleRequest request) {
-        return new SyncInvoker<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse>(request,
-            SaMeta.deletePlaybookRule, hcClient);
+        return new SyncInvoker<>(request, SaMeta.deletePlaybookRule, hcClient);
     }
 
     /**
@@ -1554,7 +1524,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookRuleRequest 请求对象
+     * @param request ShowPlaybookRuleRequest 请求对象
      * @return ShowPlaybookRuleResponse
      */
     public ShowPlaybookRuleResponse showPlaybookRule(ShowPlaybookRuleRequest request) {
@@ -1568,13 +1538,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookRuleRequest 请求对象
+     * @param request ShowPlaybookRuleRequest 请求对象
      * @return SyncInvoker<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse>
      */
     public SyncInvoker<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse> showPlaybookRuleInvoker(
         ShowPlaybookRuleRequest request) {
-        return new SyncInvoker<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse>(request, SaMeta.showPlaybookRule,
-            hcClient);
+        return new SyncInvoker<>(request, SaMeta.showPlaybookRule, hcClient);
     }
 
     /**
@@ -1584,7 +1553,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookRuleRequest 请求对象
+     * @param request UpdatePlaybookRuleRequest 请求对象
      * @return UpdatePlaybookRuleResponse
      */
     public UpdatePlaybookRuleResponse updatePlaybookRule(UpdatePlaybookRuleRequest request) {
@@ -1598,13 +1567,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookRuleRequest 请求对象
+     * @param request UpdatePlaybookRuleRequest 请求对象
      * @return SyncInvoker<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse>
      */
     public SyncInvoker<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse> updatePlaybookRuleInvoker(
         UpdatePlaybookRuleRequest request) {
-        return new SyncInvoker<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse>(request,
-            SaMeta.updatePlaybookRule, hcClient);
+        return new SyncInvoker<>(request, SaMeta.updatePlaybookRule, hcClient);
     }
 
     /**
@@ -1614,7 +1582,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyPlaybookVersionRequest 请求对象
+     * @param request CopyPlaybookVersionRequest 请求对象
      * @return CopyPlaybookVersionResponse
      */
     public CopyPlaybookVersionResponse copyPlaybookVersion(CopyPlaybookVersionRequest request) {
@@ -1628,13 +1596,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyPlaybookVersionRequest 请求对象
+     * @param request CopyPlaybookVersionRequest 请求对象
      * @return SyncInvoker<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse>
      */
     public SyncInvoker<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse> copyPlaybookVersionInvoker(
         CopyPlaybookVersionRequest request) {
-        return new SyncInvoker<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse>(request,
-            SaMeta.copyPlaybookVersion, hcClient);
+        return new SyncInvoker<>(request, SaMeta.copyPlaybookVersion, hcClient);
     }
 
     /**
@@ -1644,7 +1611,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookVersionRequest 请求对象
+     * @param request CreatePlaybookVersionRequest 请求对象
      * @return CreatePlaybookVersionResponse
      */
     public CreatePlaybookVersionResponse createPlaybookVersion(CreatePlaybookVersionRequest request) {
@@ -1658,13 +1625,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookVersionRequest 请求对象
+     * @param request CreatePlaybookVersionRequest 请求对象
      * @return SyncInvoker<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse>
      */
     public SyncInvoker<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse> createPlaybookVersionInvoker(
         CreatePlaybookVersionRequest request) {
-        return new SyncInvoker<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse>(request,
-            SaMeta.createPlaybookVersion, hcClient);
+        return new SyncInvoker<>(request, SaMeta.createPlaybookVersion, hcClient);
     }
 
     /**
@@ -1674,7 +1640,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookVersionRequest 请求对象
+     * @param request DeletePlaybookVersionRequest 请求对象
      * @return DeletePlaybookVersionResponse
      */
     public DeletePlaybookVersionResponse deletePlaybookVersion(DeletePlaybookVersionRequest request) {
@@ -1688,13 +1654,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookVersionRequest 请求对象
+     * @param request DeletePlaybookVersionRequest 请求对象
      * @return SyncInvoker<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse>
      */
     public SyncInvoker<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse> deletePlaybookVersionInvoker(
         DeletePlaybookVersionRequest request) {
-        return new SyncInvoker<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse>(request,
-            SaMeta.deletePlaybookVersion, hcClient);
+        return new SyncInvoker<>(request, SaMeta.deletePlaybookVersion, hcClient);
     }
 
     /**
@@ -1704,7 +1669,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookVersionsRequest 请求对象
+     * @param request ListPlaybookVersionsRequest 请求对象
      * @return ListPlaybookVersionsResponse
      */
     public ListPlaybookVersionsResponse listPlaybookVersions(ListPlaybookVersionsRequest request) {
@@ -1718,13 +1683,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookVersionsRequest 请求对象
+     * @param request ListPlaybookVersionsRequest 请求对象
      * @return SyncInvoker<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse>
      */
     public SyncInvoker<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse> listPlaybookVersionsInvoker(
         ListPlaybookVersionsRequest request) {
-        return new SyncInvoker<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse>(request,
-            SaMeta.listPlaybookVersions, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listPlaybookVersions, hcClient);
     }
 
     /**
@@ -1734,7 +1698,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookVersionRequest 请求对象
+     * @param request ShowPlaybookVersionRequest 请求对象
      * @return ShowPlaybookVersionResponse
      */
     public ShowPlaybookVersionResponse showPlaybookVersion(ShowPlaybookVersionRequest request) {
@@ -1748,13 +1712,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookVersionRequest 请求对象
+     * @param request ShowPlaybookVersionRequest 请求对象
      * @return SyncInvoker<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse>
      */
     public SyncInvoker<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse> showPlaybookVersionInvoker(
         ShowPlaybookVersionRequest request) {
-        return new SyncInvoker<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse>(request,
-            SaMeta.showPlaybookVersion, hcClient);
+        return new SyncInvoker<>(request, SaMeta.showPlaybookVersion, hcClient);
     }
 
     /**
@@ -1764,7 +1727,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookVersionRequest 请求对象
+     * @param request UpdatePlaybookVersionRequest 请求对象
      * @return UpdatePlaybookVersionResponse
      */
     public UpdatePlaybookVersionResponse updatePlaybookVersion(UpdatePlaybookVersionRequest request) {
@@ -1778,13 +1741,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookVersionRequest 请求对象
+     * @param request UpdatePlaybookVersionRequest 请求对象
      * @return SyncInvoker<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse>
      */
     public SyncInvoker<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse> updatePlaybookVersionInvoker(
         UpdatePlaybookVersionRequest request) {
-        return new SyncInvoker<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse>(request,
-            SaMeta.updatePlaybookVersion, hcClient);
+        return new SyncInvoker<>(request, SaMeta.updatePlaybookVersion, hcClient);
     }
 
     /**
@@ -1794,7 +1756,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataobjectRelationRequest 请求对象
+     * @param request CreateDataobjectRelationRequest 请求对象
      * @return CreateDataobjectRelationResponse
      */
     public CreateDataobjectRelationResponse createDataobjectRelation(CreateDataobjectRelationRequest request) {
@@ -1808,13 +1770,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataobjectRelationRequest 请求对象
+     * @param request CreateDataobjectRelationRequest 请求对象
      * @return SyncInvoker<CreateDataobjectRelationRequest, CreateDataobjectRelationResponse>
      */
     public SyncInvoker<CreateDataobjectRelationRequest, CreateDataobjectRelationResponse> createDataobjectRelationInvoker(
         CreateDataobjectRelationRequest request) {
-        return new SyncInvoker<CreateDataobjectRelationRequest, CreateDataobjectRelationResponse>(request,
-            SaMeta.createDataobjectRelation, hcClient);
+        return new SyncInvoker<>(request, SaMeta.createDataobjectRelation, hcClient);
     }
 
     /**
@@ -1824,7 +1785,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataobjectRelationRequest 请求对象
+     * @param request DeleteDataobjectRelationRequest 请求对象
      * @return DeleteDataobjectRelationResponse
      */
     public DeleteDataobjectRelationResponse deleteDataobjectRelation(DeleteDataobjectRelationRequest request) {
@@ -1838,13 +1799,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataobjectRelationRequest 请求对象
+     * @param request DeleteDataobjectRelationRequest 请求对象
      * @return SyncInvoker<DeleteDataobjectRelationRequest, DeleteDataobjectRelationResponse>
      */
     public SyncInvoker<DeleteDataobjectRelationRequest, DeleteDataobjectRelationResponse> deleteDataobjectRelationInvoker(
         DeleteDataobjectRelationRequest request) {
-        return new SyncInvoker<DeleteDataobjectRelationRequest, DeleteDataobjectRelationResponse>(request,
-            SaMeta.deleteDataobjectRelation, hcClient);
+        return new SyncInvoker<>(request, SaMeta.deleteDataobjectRelation, hcClient);
     }
 
     /**
@@ -1854,7 +1814,7 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataobjectRelationRequest 请求对象
+     * @param request ListDataobjectRelationRequest 请求对象
      * @return ListDataobjectRelationResponse
      */
     public ListDataobjectRelationResponse listDataobjectRelation(ListDataobjectRelationRequest request) {
@@ -1868,13 +1828,12 @@ public class SaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataobjectRelationRequest 请求对象
+     * @param request ListDataobjectRelationRequest 请求对象
      * @return SyncInvoker<ListDataobjectRelationRequest, ListDataobjectRelationResponse>
      */
     public SyncInvoker<ListDataobjectRelationRequest, ListDataobjectRelationResponse> listDataobjectRelationInvoker(
         ListDataobjectRelationRequest request) {
-        return new SyncInvoker<ListDataobjectRelationRequest, ListDataobjectRelationResponse>(request,
-            SaMeta.listDataobjectRelation, hcClient);
+        return new SyncInvoker<>(request, SaMeta.listDataobjectRelation, hcClient);
     }
 
 }

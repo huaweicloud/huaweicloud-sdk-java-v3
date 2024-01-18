@@ -62,7 +62,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return CreateAppResponse
      */
     public CreateAppResponse createApp(CreateAppRequest request) {
@@ -76,11 +76,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return SyncInvoker<CreateAppRequest, CreateAppResponse>
      */
     public SyncInvoker<CreateAppRequest, CreateAppResponse> createAppInvoker(CreateAppRequest request) {
-        return new SyncInvoker<CreateAppRequest, CreateAppResponse>(request, AomMeta.createApp, hcClient);
+        return new SyncInvoker<>(request, AomMeta.createApp, hcClient);
     }
 
     /**
@@ -90,7 +90,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateComponentRequest 请求对象
+     * @param request CreateComponentRequest 请求对象
      * @return CreateComponentResponse
      */
     public CreateComponentResponse createComponent(CreateComponentRequest request) {
@@ -104,13 +104,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateComponentRequest 请求对象
+     * @param request CreateComponentRequest 请求对象
      * @return SyncInvoker<CreateComponentRequest, CreateComponentResponse>
      */
     public SyncInvoker<CreateComponentRequest, CreateComponentResponse> createComponentInvoker(
         CreateComponentRequest request) {
-        return new SyncInvoker<CreateComponentRequest, CreateComponentResponse>(request, AomMeta.createComponent,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.createComponent, hcClient);
     }
 
     /**
@@ -120,7 +119,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvRequest 请求对象
+     * @param request CreateEnvRequest 请求对象
      * @return CreateEnvResponse
      */
     public CreateEnvResponse createEnv(CreateEnvRequest request) {
@@ -134,11 +133,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvRequest 请求对象
+     * @param request CreateEnvRequest 请求对象
      * @return SyncInvoker<CreateEnvRequest, CreateEnvResponse>
      */
     public SyncInvoker<CreateEnvRequest, CreateEnvResponse> createEnvInvoker(CreateEnvRequest request) {
-        return new SyncInvoker<CreateEnvRequest, CreateEnvResponse>(request, AomMeta.createEnv, hcClient);
+        return new SyncInvoker<>(request, AomMeta.createEnv, hcClient);
     }
 
     /**
@@ -148,7 +147,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubAppRequest 请求对象
+     * @param request CreateSubAppRequest 请求对象
      * @return CreateSubAppResponse
      */
     public CreateSubAppResponse createSubApp(CreateSubAppRequest request) {
@@ -162,11 +161,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubAppRequest 请求对象
+     * @param request CreateSubAppRequest 请求对象
      * @return SyncInvoker<CreateSubAppRequest, CreateSubAppResponse>
      */
     public SyncInvoker<CreateSubAppRequest, CreateSubAppResponse> createSubAppInvoker(CreateSubAppRequest request) {
-        return new SyncInvoker<CreateSubAppRequest, CreateSubAppResponse>(request, AomMeta.createSubApp, hcClient);
+        return new SyncInvoker<>(request, AomMeta.createSubApp, hcClient);
     }
 
     /**
@@ -176,7 +175,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return DeleteAppResponse
      */
     public DeleteAppResponse deleteApp(DeleteAppRequest request) {
@@ -190,11 +189,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return SyncInvoker<DeleteAppRequest, DeleteAppResponse>
      */
     public SyncInvoker<DeleteAppRequest, DeleteAppResponse> deleteAppInvoker(DeleteAppRequest request) {
-        return new SyncInvoker<DeleteAppRequest, DeleteAppResponse>(request, AomMeta.deleteApp, hcClient);
+        return new SyncInvoker<>(request, AomMeta.deleteApp, hcClient);
     }
 
     /**
@@ -204,7 +203,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteComponentRequest 请求对象
+     * @param request DeleteComponentRequest 请求对象
      * @return DeleteComponentResponse
      */
     public DeleteComponentResponse deleteComponent(DeleteComponentRequest request) {
@@ -218,13 +217,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteComponentRequest 请求对象
+     * @param request DeleteComponentRequest 请求对象
      * @return SyncInvoker<DeleteComponentRequest, DeleteComponentResponse>
      */
     public SyncInvoker<DeleteComponentRequest, DeleteComponentResponse> deleteComponentInvoker(
         DeleteComponentRequest request) {
-        return new SyncInvoker<DeleteComponentRequest, DeleteComponentResponse>(request, AomMeta.deleteComponent,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.deleteComponent, hcClient);
     }
 
     /**
@@ -234,7 +232,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvRequest 请求对象
+     * @param request DeleteEnvRequest 请求对象
      * @return DeleteEnvResponse
      */
     public DeleteEnvResponse deleteEnv(DeleteEnvRequest request) {
@@ -248,11 +246,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvRequest 请求对象
+     * @param request DeleteEnvRequest 请求对象
      * @return SyncInvoker<DeleteEnvRequest, DeleteEnvResponse>
      */
     public SyncInvoker<DeleteEnvRequest, DeleteEnvResponse> deleteEnvInvoker(DeleteEnvRequest request) {
-        return new SyncInvoker<DeleteEnvRequest, DeleteEnvResponse>(request, AomMeta.deleteEnv, hcClient);
+        return new SyncInvoker<>(request, AomMeta.deleteEnv, hcClient);
     }
 
     /**
@@ -262,7 +260,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubAppRequest 请求对象
+     * @param request DeleteSubAppRequest 请求对象
      * @return DeleteSubAppResponse
      */
     public DeleteSubAppResponse deleteSubApp(DeleteSubAppRequest request) {
@@ -276,11 +274,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubAppRequest 请求对象
+     * @param request DeleteSubAppRequest 请求对象
      * @return SyncInvoker<DeleteSubAppRequest, DeleteSubAppResponse>
      */
     public SyncInvoker<DeleteSubAppRequest, DeleteSubAppResponse> deleteSubAppInvoker(DeleteSubAppRequest request) {
-        return new SyncInvoker<DeleteSubAppRequest, DeleteSubAppResponse>(request, AomMeta.deleteSubApp, hcClient);
+        return new SyncInvoker<>(request, AomMeta.deleteSubApp, hcClient);
     }
 
     /**
@@ -290,7 +288,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceUnderNodeRequest 请求对象
+     * @param request ListResourceUnderNodeRequest 请求对象
      * @return ListResourceUnderNodeResponse
      */
     public ListResourceUnderNodeResponse listResourceUnderNode(ListResourceUnderNodeRequest request) {
@@ -304,13 +302,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceUnderNodeRequest 请求对象
+     * @param request ListResourceUnderNodeRequest 请求对象
      * @return SyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse>
      */
     public SyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> listResourceUnderNodeInvoker(
         ListResourceUnderNodeRequest request) {
-        return new SyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse>(request,
-            AomMeta.listResourceUnderNode, hcClient);
+        return new SyncInvoker<>(request, AomMeta.listResourceUnderNode, hcClient);
     }
 
     /**
@@ -320,7 +317,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return ShowAppResponse
      */
     public ShowAppResponse showApp(ShowAppRequest request) {
@@ -334,11 +331,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return SyncInvoker<ShowAppRequest, ShowAppResponse>
      */
     public SyncInvoker<ShowAppRequest, ShowAppResponse> showAppInvoker(ShowAppRequest request) {
-        return new SyncInvoker<ShowAppRequest, ShowAppResponse>(request, AomMeta.showApp, hcClient);
+        return new SyncInvoker<>(request, AomMeta.showApp, hcClient);
     }
 
     /**
@@ -348,7 +345,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppByNameRequest 请求对象
+     * @param request ShowAppByNameRequest 请求对象
      * @return ShowAppByNameResponse
      */
     public ShowAppByNameResponse showAppByName(ShowAppByNameRequest request) {
@@ -362,11 +359,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppByNameRequest 请求对象
+     * @param request ShowAppByNameRequest 请求对象
      * @return SyncInvoker<ShowAppByNameRequest, ShowAppByNameResponse>
      */
     public SyncInvoker<ShowAppByNameRequest, ShowAppByNameResponse> showAppByNameInvoker(ShowAppByNameRequest request) {
-        return new SyncInvoker<ShowAppByNameRequest, ShowAppByNameResponse>(request, AomMeta.showAppByName, hcClient);
+        return new SyncInvoker<>(request, AomMeta.showAppByName, hcClient);
     }
 
     /**
@@ -376,7 +373,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentRequest 请求对象
+     * @param request ShowComponentRequest 请求对象
      * @return ShowComponentResponse
      */
     public ShowComponentResponse showComponent(ShowComponentRequest request) {
@@ -390,11 +387,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentRequest 请求对象
+     * @param request ShowComponentRequest 请求对象
      * @return SyncInvoker<ShowComponentRequest, ShowComponentResponse>
      */
     public SyncInvoker<ShowComponentRequest, ShowComponentResponse> showComponentInvoker(ShowComponentRequest request) {
-        return new SyncInvoker<ShowComponentRequest, ShowComponentResponse>(request, AomMeta.showComponent, hcClient);
+        return new SyncInvoker<>(request, AomMeta.showComponent, hcClient);
     }
 
     /**
@@ -404,7 +401,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentByNameRequest 请求对象
+     * @param request ShowComponentByNameRequest 请求对象
      * @return ShowComponentByNameResponse
      */
     public ShowComponentByNameResponse showComponentByName(ShowComponentByNameRequest request) {
@@ -418,13 +415,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentByNameRequest 请求对象
+     * @param request ShowComponentByNameRequest 请求对象
      * @return SyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse>
      */
     public SyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse> showComponentByNameInvoker(
         ShowComponentByNameRequest request) {
-        return new SyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse>(request,
-            AomMeta.showComponentByName, hcClient);
+        return new SyncInvoker<>(request, AomMeta.showComponentByName, hcClient);
     }
 
     /**
@@ -434,7 +430,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvRequest 请求对象
+     * @param request ShowEnvRequest 请求对象
      * @return ShowEnvResponse
      */
     public ShowEnvResponse showEnv(ShowEnvRequest request) {
@@ -448,11 +444,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvRequest 请求对象
+     * @param request ShowEnvRequest 请求对象
      * @return SyncInvoker<ShowEnvRequest, ShowEnvResponse>
      */
     public SyncInvoker<ShowEnvRequest, ShowEnvResponse> showEnvInvoker(ShowEnvRequest request) {
-        return new SyncInvoker<ShowEnvRequest, ShowEnvResponse>(request, AomMeta.showEnv, hcClient);
+        return new SyncInvoker<>(request, AomMeta.showEnv, hcClient);
     }
 
     /**
@@ -462,7 +458,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvByNameRequest 请求对象
+     * @param request ShowEnvByNameRequest 请求对象
      * @return ShowEnvByNameResponse
      */
     public ShowEnvByNameResponse showEnvByName(ShowEnvByNameRequest request) {
@@ -476,11 +472,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvByNameRequest 请求对象
+     * @param request ShowEnvByNameRequest 请求对象
      * @return SyncInvoker<ShowEnvByNameRequest, ShowEnvByNameResponse>
      */
     public SyncInvoker<ShowEnvByNameRequest, ShowEnvByNameResponse> showEnvByNameInvoker(ShowEnvByNameRequest request) {
-        return new SyncInvoker<ShowEnvByNameRequest, ShowEnvByNameResponse>(request, AomMeta.showEnvByName, hcClient);
+        return new SyncInvoker<>(request, AomMeta.showEnvByName, hcClient);
     }
 
     /**
@@ -490,7 +486,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return UpdateAppResponse
      */
     public UpdateAppResponse updateApp(UpdateAppRequest request) {
@@ -504,11 +500,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return SyncInvoker<UpdateAppRequest, UpdateAppResponse>
      */
     public SyncInvoker<UpdateAppRequest, UpdateAppResponse> updateAppInvoker(UpdateAppRequest request) {
-        return new SyncInvoker<UpdateAppRequest, UpdateAppResponse>(request, AomMeta.updateApp, hcClient);
+        return new SyncInvoker<>(request, AomMeta.updateApp, hcClient);
     }
 
     /**
@@ -518,7 +514,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateComponentRequest 请求对象
+     * @param request UpdateComponentRequest 请求对象
      * @return UpdateComponentResponse
      */
     public UpdateComponentResponse updateComponent(UpdateComponentRequest request) {
@@ -532,13 +528,12 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateComponentRequest 请求对象
+     * @param request UpdateComponentRequest 请求对象
      * @return SyncInvoker<UpdateComponentRequest, UpdateComponentResponse>
      */
     public SyncInvoker<UpdateComponentRequest, UpdateComponentResponse> updateComponentInvoker(
         UpdateComponentRequest request) {
-        return new SyncInvoker<UpdateComponentRequest, UpdateComponentResponse>(request, AomMeta.updateComponent,
-            hcClient);
+        return new SyncInvoker<>(request, AomMeta.updateComponent, hcClient);
     }
 
     /**
@@ -548,7 +543,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvRequest 请求对象
+     * @param request UpdateEnvRequest 请求对象
      * @return UpdateEnvResponse
      */
     public UpdateEnvResponse updateEnv(UpdateEnvRequest request) {
@@ -562,11 +557,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvRequest 请求对象
+     * @param request UpdateEnvRequest 请求对象
      * @return SyncInvoker<UpdateEnvRequest, UpdateEnvResponse>
      */
     public SyncInvoker<UpdateEnvRequest, UpdateEnvResponse> updateEnvInvoker(UpdateEnvRequest request) {
-        return new SyncInvoker<UpdateEnvRequest, UpdateEnvResponse>(request, AomMeta.updateEnv, hcClient);
+        return new SyncInvoker<>(request, AomMeta.updateEnv, hcClient);
     }
 
     /**
@@ -576,7 +571,7 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubAppRequest 请求对象
+     * @param request UpdateSubAppRequest 请求对象
      * @return UpdateSubAppResponse
      */
     public UpdateSubAppResponse updateSubApp(UpdateSubAppRequest request) {
@@ -590,11 +585,11 @@ public class AomClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubAppRequest 请求对象
+     * @param request UpdateSubAppRequest 请求对象
      * @return SyncInvoker<UpdateSubAppRequest, UpdateSubAppResponse>
      */
     public SyncInvoker<UpdateSubAppRequest, UpdateSubAppResponse> updateSubAppInvoker(UpdateSubAppRequest request) {
-        return new SyncInvoker<UpdateSubAppRequest, UpdateSubAppResponse>(request, AomMeta.updateSubApp, hcClient);
+        return new SyncInvoker<>(request, AomMeta.updateSubApp, hcClient);
     }
 
 }

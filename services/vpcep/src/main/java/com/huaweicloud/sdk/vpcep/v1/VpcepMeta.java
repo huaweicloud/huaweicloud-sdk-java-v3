@@ -85,9 +85,9 @@ import com.huaweicloud.sdk.vpcep.v1.model.UpdatePermissionDescRequest;
 public class VpcepMeta {
 
     public static final HttpRequestDef<AcceptOrRejectEndpointRequest, AcceptOrRejectEndpointResponse> acceptOrRejectEndpoint =
-        genForacceptOrRejectEndpoint();
+        genForAcceptOrRejectEndpoint();
 
-    private static HttpRequestDef<AcceptOrRejectEndpointRequest, AcceptOrRejectEndpointResponse> genForacceptOrRejectEndpoint() {
+    private static HttpRequestDef<AcceptOrRejectEndpointRequest, AcceptOrRejectEndpointResponse> genForAcceptOrRejectEndpoint() {
         // basic
         HttpRequestDef.Builder<AcceptOrRejectEndpointRequest, AcceptOrRejectEndpointResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AcceptOrRejectEndpointRequest.class, AcceptOrRejectEndpointResponse.class)
@@ -100,16 +100,13 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptOrRejectEndpointRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(AcceptOrRejectEndpointRequest::getVpcEndpointServiceId,
+                AcceptOrRejectEndpointRequest::setVpcEndpointServiceId));
         builder.<AcceptOrRejectEndpointRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AcceptOrRejectEndpointRequestBody.class),
-            f -> f.withMarshaller(AcceptOrRejectEndpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AcceptOrRejectEndpointRequest::getBody, AcceptOrRejectEndpointRequest::setBody));
 
         // response
 
@@ -117,9 +114,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<AddOrRemoveServicePermissionsRequest, AddOrRemoveServicePermissionsResponse> addOrRemoveServicePermissions =
-        genForaddOrRemoveServicePermissions();
+        genForAddOrRemoveServicePermissions();
 
-    private static HttpRequestDef<AddOrRemoveServicePermissionsRequest, AddOrRemoveServicePermissionsResponse> genForaddOrRemoveServicePermissions() {
+    private static HttpRequestDef<AddOrRemoveServicePermissionsRequest, AddOrRemoveServicePermissionsResponse> genForAddOrRemoveServicePermissions() {
         // basic
         HttpRequestDef.Builder<AddOrRemoveServicePermissionsRequest, AddOrRemoveServicePermissionsResponse> builder =
             HttpRequestDef
@@ -135,16 +132,14 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddOrRemoveServicePermissionsRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(AddOrRemoveServicePermissionsRequest::getVpcEndpointServiceId,
+                AddOrRemoveServicePermissionsRequest::setVpcEndpointServiceId));
         builder.<AddOrRemoveServicePermissionsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddOrRemoveServicePermissionsRequestBody.class),
-            f -> f.withMarshaller(AddOrRemoveServicePermissionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddOrRemoveServicePermissionsRequest::getBody,
+                AddOrRemoveServicePermissionsRequest::setBody));
 
         // response
 
@@ -152,9 +147,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse> batchAddEndpointServicePermissions =
-        genForbatchAddEndpointServicePermissions();
+        genForBatchAddEndpointServicePermissions();
 
-    private static HttpRequestDef<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse> genForbatchAddEndpointServicePermissions() {
+    private static HttpRequestDef<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse> genForBatchAddEndpointServicePermissions() {
         // basic
         HttpRequestDef.Builder<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse> builder =
             HttpRequestDef
@@ -170,16 +165,14 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddEndpointServicePermissionsRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(BatchAddEndpointServicePermissionsRequest::getVpcEndpointServiceId,
+                BatchAddEndpointServicePermissionsRequest::setVpcEndpointServiceId));
         builder.<BatchAddPermissionRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAddPermissionRequest.class),
-            f -> f.withMarshaller(BatchAddEndpointServicePermissionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddEndpointServicePermissionsRequest::getBody,
+                BatchAddEndpointServicePermissionsRequest::setBody));
 
         // response
 
@@ -187,9 +180,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse> batchRemoveEndpointServicePermissions =
-        genForbatchRemoveEndpointServicePermissions();
+        genForBatchRemoveEndpointServicePermissions();
 
-    private static HttpRequestDef<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse> genForbatchRemoveEndpointServicePermissions() {
+    private static HttpRequestDef<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse> genForBatchRemoveEndpointServicePermissions() {
         // basic
         HttpRequestDef.Builder<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse> builder =
             HttpRequestDef
@@ -205,16 +198,14 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchRemoveEndpointServicePermissionsRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(BatchRemoveEndpointServicePermissionsRequest::getVpcEndpointServiceId,
+                BatchRemoveEndpointServicePermissionsRequest::setVpcEndpointServiceId));
         builder.<BatchRemovePermissionRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchRemovePermissionRequest.class),
-            f -> f.withMarshaller(BatchRemoveEndpointServicePermissionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRemoveEndpointServicePermissionsRequest::getBody,
+                BatchRemoveEndpointServicePermissionsRequest::setBody));
 
         // response
 
@@ -222,9 +213,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> createEndpoint =
-        genForcreateEndpoint();
+        genForCreateEndpoint();
 
-    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForcreateEndpoint() {
+    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForCreateEndpoint() {
         // basic
         HttpRequestDef.Builder<CreateEndpointRequest, CreateEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEndpointRequest.class, CreateEndpointResponse.class)
@@ -237,9 +228,7 @@ public class VpcepMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEndpointRequestBody.class),
-            f -> f.withMarshaller(CreateEndpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEndpointRequest::getBody, CreateEndpointRequest::setBody));
 
         // response
 
@@ -247,9 +236,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<CreateEndpointServiceRequest, CreateEndpointServiceResponse> createEndpointService =
-        genForcreateEndpointService();
+        genForCreateEndpointService();
 
-    private static HttpRequestDef<CreateEndpointServiceRequest, CreateEndpointServiceResponse> genForcreateEndpointService() {
+    private static HttpRequestDef<CreateEndpointServiceRequest, CreateEndpointServiceResponse> genForCreateEndpointService() {
         // basic
         HttpRequestDef.Builder<CreateEndpointServiceRequest, CreateEndpointServiceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateEndpointServiceRequest.class, CreateEndpointServiceResponse.class)
@@ -262,9 +251,7 @@ public class VpcepMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEndpointServiceRequestBody.class),
-            f -> f.withMarshaller(CreateEndpointServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEndpointServiceRequest::getBody, CreateEndpointServiceRequest::setBody));
 
         // response
 
@@ -272,9 +259,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpoint =
-        genFordeleteEndpoint();
+        genForDeleteEndpoint();
 
-    private static HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> genFordeleteEndpoint() {
+    private static HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> genForDeleteEndpoint() {
         // basic
         HttpRequestDef.Builder<DeleteEndpointRequest, DeleteEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEndpointRequest.class, DeleteEndpointResponse.class)
@@ -287,9 +274,7 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEndpointRequest::getVpcEndpointId, (req, v) -> {
-                req.setVpcEndpointId(v);
-            }));
+            f -> f.withMarshaller(DeleteEndpointRequest::getVpcEndpointId, DeleteEndpointRequest::setVpcEndpointId));
 
         // response
 
@@ -297,9 +282,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse> deleteEndpointPolicy =
-        genFordeleteEndpointPolicy();
+        genForDeleteEndpointPolicy();
 
-    private static HttpRequestDef<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse> genFordeleteEndpointPolicy() {
+    private static HttpRequestDef<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse> genForDeleteEndpointPolicy() {
         // basic
         HttpRequestDef.Builder<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEndpointPolicyRequest.class, DeleteEndpointPolicyResponse.class)
@@ -312,9 +297,8 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEndpointPolicyRequest::getVpcEndpointId, (req, v) -> {
-                req.setVpcEndpointId(v);
-            }));
+            f -> f.withMarshaller(DeleteEndpointPolicyRequest::getVpcEndpointId,
+                DeleteEndpointPolicyRequest::setVpcEndpointId));
 
         // response
 
@@ -322,9 +306,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<DeleteEndpointServiceRequest, DeleteEndpointServiceResponse> deleteEndpointService =
-        genFordeleteEndpointService();
+        genForDeleteEndpointService();
 
-    private static HttpRequestDef<DeleteEndpointServiceRequest, DeleteEndpointServiceResponse> genFordeleteEndpointService() {
+    private static HttpRequestDef<DeleteEndpointServiceRequest, DeleteEndpointServiceResponse> genForDeleteEndpointService() {
         // basic
         HttpRequestDef.Builder<DeleteEndpointServiceRequest, DeleteEndpointServiceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEndpointServiceRequest.class, DeleteEndpointServiceResponse.class)
@@ -337,9 +321,8 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEndpointServiceRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEndpointServiceRequest::getVpcEndpointServiceId,
+                DeleteEndpointServiceRequest::setVpcEndpointServiceId));
 
         // response
 
@@ -347,9 +330,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListEndpointInfoDetailsRequest, ListEndpointInfoDetailsResponse> listEndpointInfoDetails =
-        genForlistEndpointInfoDetails();
+        genForListEndpointInfoDetails();
 
-    private static HttpRequestDef<ListEndpointInfoDetailsRequest, ListEndpointInfoDetailsResponse> genForlistEndpointInfoDetails() {
+    private static HttpRequestDef<ListEndpointInfoDetailsRequest, ListEndpointInfoDetailsResponse> genForListEndpointInfoDetails() {
         // basic
         HttpRequestDef.Builder<ListEndpointInfoDetailsRequest, ListEndpointInfoDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEndpointInfoDetailsRequest.class, ListEndpointInfoDetailsResponse.class)
@@ -362,9 +345,8 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointInfoDetailsRequest::getVpcEndpointId, (req, v) -> {
-                req.setVpcEndpointId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointInfoDetailsRequest::getVpcEndpointId,
+                ListEndpointInfoDetailsRequest::setVpcEndpointId));
 
         // response
 
@@ -372,9 +354,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListEndpointServiceRequest, ListEndpointServiceResponse> listEndpointService =
-        genForlistEndpointService();
+        genForListEndpointService();
 
-    private static HttpRequestDef<ListEndpointServiceRequest, ListEndpointServiceResponse> genForlistEndpointService() {
+    private static HttpRequestDef<ListEndpointServiceRequest, ListEndpointServiceResponse> genForListEndpointService() {
         // basic
         HttpRequestDef.Builder<ListEndpointServiceRequest, ListEndpointServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEndpointServiceRequest.class, ListEndpointServiceResponse.class)
@@ -387,58 +369,44 @@ public class VpcepMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointServiceRequest::getEndpointServiceName, (req, v) -> {
-                req.setEndpointServiceName(v);
-            }));
+            f -> f.withMarshaller(ListEndpointServiceRequest::getEndpointServiceName,
+                ListEndpointServiceRequest::setEndpointServiceName));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointServiceRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointServiceRequest::getId, ListEndpointServiceRequest::setId));
         builder.<ListEndpointServiceRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEndpointServiceRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListEndpointServiceRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListEndpointServiceRequest::getStatus, ListEndpointServiceRequest::setStatus));
         builder.<ListEndpointServiceRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEndpointServiceRequest.SortKeyEnum.class),
-            f -> f.withMarshaller(ListEndpointServiceRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListEndpointServiceRequest::getSortKey, ListEndpointServiceRequest::setSortKey));
         builder.<ListEndpointServiceRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEndpointServiceRequest.SortDirEnum.class),
-            f -> f.withMarshaller(ListEndpointServiceRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListEndpointServiceRequest::getSortDir, ListEndpointServiceRequest::setSortDir));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointServiceRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEndpointServiceRequest::getLimit, ListEndpointServiceRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointServiceRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEndpointServiceRequest::getOffset, ListEndpointServiceRequest::setOffset));
         builder.<String>withRequestField("public_border_group",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointServiceRequest::getPublicBorderGroup, (req, v) -> {
-                req.setPublicBorderGroup(v);
-            }));
+            f -> f.withMarshaller(ListEndpointServiceRequest::getPublicBorderGroup,
+                ListEndpointServiceRequest::setPublicBorderGroup));
 
         // response
 
@@ -446,9 +414,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> listEndpoints =
-        genForlistEndpoints();
+        genForListEndpoints();
 
-    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForlistEndpoints() {
+    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForListEndpoints() {
         // basic
         HttpRequestDef.Builder<ListEndpointsRequest, ListEndpointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEndpointsRequest.class, ListEndpointsResponse.class)
@@ -461,58 +429,44 @@ public class VpcepMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getEndpointServiceName, (req, v) -> {
-                req.setEndpointServiceName(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getEndpointServiceName,
+                ListEndpointsRequest::setEndpointServiceName));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getVpcId, ListEndpointsRequest::setVpcId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getId, ListEndpointsRequest::setId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getLimit, ListEndpointsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getOffset, ListEndpointsRequest::setOffset));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getSortKey, ListEndpointsRequest::setSortKey));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getSortDir, ListEndpointsRequest::setSortDir));
         builder.<String>withRequestField("public_border_group",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getPublicBorderGroup, (req, v) -> {
-                req.setPublicBorderGroup(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getPublicBorderGroup,
+                ListEndpointsRequest::setPublicBorderGroup));
 
         // response
 
@@ -520,9 +474,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListQuotaDetailsRequest, ListQuotaDetailsResponse> listQuotaDetails =
-        genForlistQuotaDetails();
+        genForListQuotaDetails();
 
-    private static HttpRequestDef<ListQuotaDetailsRequest, ListQuotaDetailsResponse> genForlistQuotaDetails() {
+    private static HttpRequestDef<ListQuotaDetailsRequest, ListQuotaDetailsResponse> genForListQuotaDetails() {
         // basic
         HttpRequestDef.Builder<ListQuotaDetailsRequest, ListQuotaDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotaDetailsRequest.class, ListQuotaDetailsResponse.class)
@@ -535,9 +489,7 @@ public class VpcepMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListQuotaDetailsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListQuotaDetailsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListQuotaDetailsRequest::getType, ListQuotaDetailsRequest::setType));
 
         // response
 
@@ -545,9 +497,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListServiceConnectionsRequest, ListServiceConnectionsResponse> listServiceConnections =
-        genForlistServiceConnections();
+        genForListServiceConnections();
 
-    private static HttpRequestDef<ListServiceConnectionsRequest, ListServiceConnectionsResponse> genForlistServiceConnections() {
+    private static HttpRequestDef<ListServiceConnectionsRequest, ListServiceConnectionsResponse> genForListServiceConnections() {
         // basic
         HttpRequestDef.Builder<ListServiceConnectionsRequest, ListServiceConnectionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListServiceConnectionsRequest.class, ListServiceConnectionsResponse.class)
@@ -560,58 +512,46 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceConnectionsRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(ListServiceConnectionsRequest::getVpcEndpointServiceId,
+                ListServiceConnectionsRequest::setVpcEndpointServiceId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceConnectionsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListServiceConnectionsRequest::getId, ListServiceConnectionsRequest::setId));
         builder.<String>withRequestField("marker_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceConnectionsRequest::getMarkerId, (req, v) -> {
-                req.setMarkerId(v);
-            }));
+            f -> f.withMarshaller(ListServiceConnectionsRequest::getMarkerId,
+                ListServiceConnectionsRequest::setMarkerId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceConnectionsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListServiceConnectionsRequest::getStatus, ListServiceConnectionsRequest::setStatus));
         builder.<ListServiceConnectionsRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListServiceConnectionsRequest.SortKeyEnum.class),
-            f -> f.withMarshaller(ListServiceConnectionsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListServiceConnectionsRequest::getSortKey,
+                ListServiceConnectionsRequest::setSortKey));
         builder.<ListServiceConnectionsRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListServiceConnectionsRequest.SortDirEnum.class),
-            f -> f.withMarshaller(ListServiceConnectionsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListServiceConnectionsRequest::getSortDir,
+                ListServiceConnectionsRequest::setSortDir));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceConnectionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServiceConnectionsRequest::getLimit, ListServiceConnectionsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceConnectionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServiceConnectionsRequest::getOffset, ListServiceConnectionsRequest::setOffset));
 
         // response
 
@@ -619,9 +559,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListServiceDescribeDetailsRequest, ListServiceDescribeDetailsResponse> listServiceDescribeDetails =
-        genForlistServiceDescribeDetails();
+        genForListServiceDescribeDetails();
 
-    private static HttpRequestDef<ListServiceDescribeDetailsRequest, ListServiceDescribeDetailsResponse> genForlistServiceDescribeDetails() {
+    private static HttpRequestDef<ListServiceDescribeDetailsRequest, ListServiceDescribeDetailsResponse> genForListServiceDescribeDetails() {
         // basic
         HttpRequestDef.Builder<ListServiceDescribeDetailsRequest, ListServiceDescribeDetailsResponse> builder =
             HttpRequestDef
@@ -637,16 +577,13 @@ public class VpcepMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceDescribeDetailsRequest::getEndpointServiceName, (req, v) -> {
-                req.setEndpointServiceName(v);
-            }));
+            f -> f.withMarshaller(ListServiceDescribeDetailsRequest::getEndpointServiceName,
+                ListServiceDescribeDetailsRequest::setEndpointServiceName));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceDescribeDetailsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListServiceDescribeDetailsRequest::getId, ListServiceDescribeDetailsRequest::setId));
 
         // response
 
@@ -654,9 +591,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListServiceDetailsRequest, ListServiceDetailsResponse> listServiceDetails =
-        genForlistServiceDetails();
+        genForListServiceDetails();
 
-    private static HttpRequestDef<ListServiceDetailsRequest, ListServiceDetailsResponse> genForlistServiceDetails() {
+    private static HttpRequestDef<ListServiceDetailsRequest, ListServiceDetailsResponse> genForListServiceDetails() {
         // basic
         HttpRequestDef.Builder<ListServiceDetailsRequest, ListServiceDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServiceDetailsRequest.class, ListServiceDetailsResponse.class)
@@ -669,9 +606,8 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceDetailsRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(ListServiceDetailsRequest::getVpcEndpointServiceId,
+                ListServiceDetailsRequest::setVpcEndpointServiceId));
 
         // response
 
@@ -679,9 +615,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListServicePermissionsDetailsRequest, ListServicePermissionsDetailsResponse> listServicePermissionsDetails =
-        genForlistServicePermissionsDetails();
+        genForListServicePermissionsDetails();
 
-    private static HttpRequestDef<ListServicePermissionsDetailsRequest, ListServicePermissionsDetailsResponse> genForlistServicePermissionsDetails() {
+    private static HttpRequestDef<ListServicePermissionsDetailsRequest, ListServicePermissionsDetailsResponse> genForListServicePermissionsDetails() {
         // basic
         HttpRequestDef.Builder<ListServicePermissionsDetailsRequest, ListServicePermissionsDetailsResponse> builder =
             HttpRequestDef
@@ -697,44 +633,38 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getVpcEndpointServiceId,
+                ListServicePermissionsDetailsRequest::setVpcEndpointServiceId));
         builder.<String>withRequestField("permission",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getPermission, (req, v) -> {
-                req.setPermission(v);
-            }));
+            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getPermission,
+                ListServicePermissionsDetailsRequest::setPermission));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getLimit,
+                ListServicePermissionsDetailsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getOffset,
+                ListServicePermissionsDetailsRequest::setOffset));
         builder.<ListServicePermissionsDetailsRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListServicePermissionsDetailsRequest.SortKeyEnum.class),
-            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getSortKey,
+                ListServicePermissionsDetailsRequest::setSortKey));
         builder.<ListServicePermissionsDetailsRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListServicePermissionsDetailsRequest.SortDirEnum.class),
-            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListServicePermissionsDetailsRequest::getSortDir,
+                ListServicePermissionsDetailsRequest::setSortDir));
 
         // response
 
@@ -742,9 +672,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListServicePublicDetailsRequest, ListServicePublicDetailsResponse> listServicePublicDetails =
-        genForlistServicePublicDetails();
+        genForListServicePublicDetails();
 
-    private static HttpRequestDef<ListServicePublicDetailsRequest, ListServicePublicDetailsResponse> genForlistServicePublicDetails() {
+    private static HttpRequestDef<ListServicePublicDetailsRequest, ListServicePublicDetailsResponse> genForListServicePublicDetails() {
         // basic
         HttpRequestDef.Builder<ListServicePublicDetailsRequest, ListServicePublicDetailsResponse> builder =
             HttpRequestDef
@@ -758,44 +688,37 @@ public class VpcepMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServicePublicDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServicePublicDetailsRequest::getLimit,
+                ListServicePublicDetailsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServicePublicDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServicePublicDetailsRequest::getOffset,
+                ListServicePublicDetailsRequest::setOffset));
         builder.<String>withRequestField("endpoint_service_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicePublicDetailsRequest::getEndpointServiceName, (req, v) -> {
-                req.setEndpointServiceName(v);
-            }));
+            f -> f.withMarshaller(ListServicePublicDetailsRequest::getEndpointServiceName,
+                ListServicePublicDetailsRequest::setEndpointServiceName));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicePublicDetailsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListServicePublicDetailsRequest::getId, ListServicePublicDetailsRequest::setId));
         builder.<ListServicePublicDetailsRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListServicePublicDetailsRequest.SortKeyEnum.class),
-            f -> f.withMarshaller(ListServicePublicDetailsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListServicePublicDetailsRequest::getSortKey,
+                ListServicePublicDetailsRequest::setSortKey));
         builder.<ListServicePublicDetailsRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListServicePublicDetailsRequest.SortDirEnum.class),
-            f -> f.withMarshaller(ListServicePublicDetailsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListServicePublicDetailsRequest::getSortDir,
+                ListServicePublicDetailsRequest::setSortDir));
 
         // response
 
@@ -803,9 +726,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListSpecifiedVersionDetailsRequest, ListSpecifiedVersionDetailsResponse> listSpecifiedVersionDetails =
-        genForlistSpecifiedVersionDetails();
+        genForListSpecifiedVersionDetails();
 
-    private static HttpRequestDef<ListSpecifiedVersionDetailsRequest, ListSpecifiedVersionDetailsResponse> genForlistSpecifiedVersionDetails() {
+    private static HttpRequestDef<ListSpecifiedVersionDetailsRequest, ListSpecifiedVersionDetailsResponse> genForListSpecifiedVersionDetails() {
         // basic
         HttpRequestDef.Builder<ListSpecifiedVersionDetailsRequest, ListSpecifiedVersionDetailsResponse> builder =
             HttpRequestDef
@@ -821,9 +744,8 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecifiedVersionDetailsRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ListSpecifiedVersionDetailsRequest::getVersion,
+                ListSpecifiedVersionDetailsRequest::setVersion));
 
         // response
 
@@ -831,9 +753,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListVersionDetailsRequest, ListVersionDetailsResponse> listVersionDetails =
-        genForlistVersionDetails();
+        genForListVersionDetails();
 
-    private static HttpRequestDef<ListVersionDetailsRequest, ListVersionDetailsResponse> genForlistVersionDetails() {
+    private static HttpRequestDef<ListVersionDetailsRequest, ListVersionDetailsResponse> genForListVersionDetails() {
         // basic
         HttpRequestDef.Builder<ListVersionDetailsRequest, ListVersionDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVersionDetailsRequest.class, ListVersionDetailsResponse.class)
@@ -849,9 +771,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse> updateEndpointConnectionsDesc =
-        genForupdateEndpointConnectionsDesc();
+        genForUpdateEndpointConnectionsDesc();
 
-    private static HttpRequestDef<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse> genForupdateEndpointConnectionsDesc() {
+    private static HttpRequestDef<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse> genForUpdateEndpointConnectionsDesc() {
         // basic
         HttpRequestDef.Builder<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse> builder =
             HttpRequestDef
@@ -867,16 +789,14 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointConnectionsDescRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointConnectionsDescRequest::getVpcEndpointServiceId,
+                UpdateEndpointConnectionsDescRequest::setVpcEndpointServiceId));
         builder.<UpdateEpConnections>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEpConnections.class),
-            f -> f.withMarshaller(UpdateEndpointConnectionsDescRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointConnectionsDescRequest::getBody,
+                UpdateEndpointConnectionsDescRequest::setBody));
 
         // response
 
@@ -884,9 +804,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse> updateEndpointPolicy =
-        genForupdateEndpointPolicy();
+        genForUpdateEndpointPolicy();
 
-    private static HttpRequestDef<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse> genForupdateEndpointPolicy() {
+    private static HttpRequestDef<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse> genForUpdateEndpointPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEndpointPolicyRequest.class, UpdateEndpointPolicyResponse.class)
@@ -899,16 +819,13 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointPolicyRequest::getVpcEndpointId, (req, v) -> {
-                req.setVpcEndpointId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointPolicyRequest::getVpcEndpointId,
+                UpdateEndpointPolicyRequest::setVpcEndpointId));
         builder.<UpdateEndpointPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEndpointPolicyRequestBody.class),
-            f -> f.withMarshaller(UpdateEndpointPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointPolicyRequest::getBody, UpdateEndpointPolicyRequest::setBody));
 
         // response
 
@@ -916,9 +833,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<UpdateEndpointRoutetableRequest, UpdateEndpointRoutetableResponse> updateEndpointRoutetable =
-        genForupdateEndpointRoutetable();
+        genForUpdateEndpointRoutetable();
 
-    private static HttpRequestDef<UpdateEndpointRoutetableRequest, UpdateEndpointRoutetableResponse> genForupdateEndpointRoutetable() {
+    private static HttpRequestDef<UpdateEndpointRoutetableRequest, UpdateEndpointRoutetableResponse> genForUpdateEndpointRoutetable() {
         // basic
         HttpRequestDef.Builder<UpdateEndpointRoutetableRequest, UpdateEndpointRoutetableResponse> builder =
             HttpRequestDef
@@ -932,16 +849,13 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointRoutetableRequest::getVpcEndpointId, (req, v) -> {
-                req.setVpcEndpointId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointRoutetableRequest::getVpcEndpointId,
+                UpdateEndpointRoutetableRequest::setVpcEndpointId));
         builder.<UpdateEndpointRoutetableRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEndpointRoutetableRequestBody.class),
-            f -> f.withMarshaller(UpdateEndpointRoutetableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointRoutetableRequest::getBody, UpdateEndpointRoutetableRequest::setBody));
 
         // response
 
@@ -949,9 +863,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<UpdateEndpointServiceRequest, UpdateEndpointServiceResponse> updateEndpointService =
-        genForupdateEndpointService();
+        genForUpdateEndpointService();
 
-    private static HttpRequestDef<UpdateEndpointServiceRequest, UpdateEndpointServiceResponse> genForupdateEndpointService() {
+    private static HttpRequestDef<UpdateEndpointServiceRequest, UpdateEndpointServiceResponse> genForUpdateEndpointService() {
         // basic
         HttpRequestDef.Builder<UpdateEndpointServiceRequest, UpdateEndpointServiceResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEndpointServiceRequest.class, UpdateEndpointServiceResponse.class)
@@ -964,16 +878,13 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointServiceRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointServiceRequest::getVpcEndpointServiceId,
+                UpdateEndpointServiceRequest::setVpcEndpointServiceId));
         builder.<UpdateEndpointServiceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEndpointServiceRequestBody.class),
-            f -> f.withMarshaller(UpdateEndpointServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointServiceRequest::getBody, UpdateEndpointServiceRequest::setBody));
 
         // response
 
@@ -981,9 +892,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse> updateEndpointServiceName =
-        genForupdateEndpointServiceName();
+        genForUpdateEndpointServiceName();
 
-    private static HttpRequestDef<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse> genForupdateEndpointServiceName() {
+    private static HttpRequestDef<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse> genForUpdateEndpointServiceName() {
         // basic
         HttpRequestDef.Builder<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse> builder =
             HttpRequestDef
@@ -999,16 +910,14 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointServiceNameRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointServiceNameRequest::getVpcEndpointServiceId,
+                UpdateEndpointServiceNameRequest::setVpcEndpointServiceId));
         builder.<UpdateEndpointServiceNameMode>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateEndpointServiceNameMode.class),
-            f -> f.withMarshaller(UpdateEndpointServiceNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointServiceNameRequest::getBody,
+                UpdateEndpointServiceNameRequest::setBody));
 
         // response
 
@@ -1016,9 +925,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse> updateEndpointServicePermissionDesc =
-        genForupdateEndpointServicePermissionDesc();
+        genForUpdateEndpointServicePermissionDesc();
 
-    private static HttpRequestDef<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse> genForupdateEndpointServicePermissionDesc() {
+    private static HttpRequestDef<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse> genForUpdateEndpointServicePermissionDesc() {
         // basic
         HttpRequestDef.Builder<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse> builder =
             HttpRequestDef
@@ -1034,23 +943,20 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getVpcEndpointServiceId, (req, v) -> {
-                req.setVpcEndpointServiceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getVpcEndpointServiceId,
+                UpdateEndpointServicePermissionDescRequest::setVpcEndpointServiceId));
         builder.<String>withRequestField("permission_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getPermissionId, (req, v) -> {
-                req.setPermissionId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getPermissionId,
+                UpdateEndpointServicePermissionDescRequest::setPermissionId));
         builder.<UpdatePermissionDescRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePermissionDescRequest.class),
-            f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getBody,
+                UpdateEndpointServicePermissionDescRequest::setBody));
 
         // response
 
@@ -1058,9 +964,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<UpdateEndpointWhiteRequest, UpdateEndpointWhiteResponse> updateEndpointWhite =
-        genForupdateEndpointWhite();
+        genForUpdateEndpointWhite();
 
-    private static HttpRequestDef<UpdateEndpointWhiteRequest, UpdateEndpointWhiteResponse> genForupdateEndpointWhite() {
+    private static HttpRequestDef<UpdateEndpointWhiteRequest, UpdateEndpointWhiteResponse> genForUpdateEndpointWhite() {
         // basic
         HttpRequestDef.Builder<UpdateEndpointWhiteRequest, UpdateEndpointWhiteResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEndpointWhiteRequest.class, UpdateEndpointWhiteResponse.class)
@@ -1073,16 +979,13 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEndpointWhiteRequest::getVpcEndpointId, (req, v) -> {
-                req.setVpcEndpointId(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointWhiteRequest::getVpcEndpointId,
+                UpdateEndpointWhiteRequest::setVpcEndpointId));
         builder.<UpdateEndpointWhiteRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEndpointWhiteRequestBody.class),
-            f -> f.withMarshaller(UpdateEndpointWhiteRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEndpointWhiteRequest::getBody, UpdateEndpointWhiteRequest::setBody));
 
         // response
 
@@ -1090,9 +993,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<BatchAddOrRemoveResourceInstanceRequest, BatchAddOrRemoveResourceInstanceResponse> batchAddOrRemoveResourceInstance =
-        genForbatchAddOrRemoveResourceInstance();
+        genForBatchAddOrRemoveResourceInstance();
 
-    private static HttpRequestDef<BatchAddOrRemoveResourceInstanceRequest, BatchAddOrRemoveResourceInstanceResponse> genForbatchAddOrRemoveResourceInstance() {
+    private static HttpRequestDef<BatchAddOrRemoveResourceInstanceRequest, BatchAddOrRemoveResourceInstanceResponse> genForBatchAddOrRemoveResourceInstance() {
         // basic
         HttpRequestDef.Builder<BatchAddOrRemoveResourceInstanceRequest, BatchAddOrRemoveResourceInstanceResponse> builder =
             HttpRequestDef
@@ -1108,23 +1011,20 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddOrRemoveResourceInstanceRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchAddOrRemoveResourceInstanceRequest::getResourceType,
+                BatchAddOrRemoveResourceInstanceRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddOrRemoveResourceInstanceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchAddOrRemoveResourceInstanceRequest::getResourceId,
+                BatchAddOrRemoveResourceInstanceRequest::setResourceId));
         builder.<BatchAddOrRemoveResourceInstanceBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchAddOrRemoveResourceInstanceBody.class),
-            f -> f.withMarshaller(BatchAddOrRemoveResourceInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddOrRemoveResourceInstanceRequest::getBody,
+                BatchAddOrRemoveResourceInstanceRequest::setBody));
 
         // response
 
@@ -1132,9 +1032,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListQueryProjectResourceTagsRequest, ListQueryProjectResourceTagsResponse> listQueryProjectResourceTags =
-        genForlistQueryProjectResourceTags();
+        genForListQueryProjectResourceTags();
 
-    private static HttpRequestDef<ListQueryProjectResourceTagsRequest, ListQueryProjectResourceTagsResponse> genForlistQueryProjectResourceTags() {
+    private static HttpRequestDef<ListQueryProjectResourceTagsRequest, ListQueryProjectResourceTagsResponse> genForListQueryProjectResourceTags() {
         // basic
         HttpRequestDef.Builder<ListQueryProjectResourceTagsRequest, ListQueryProjectResourceTagsResponse> builder =
             HttpRequestDef
@@ -1150,9 +1050,8 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryProjectResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListQueryProjectResourceTagsRequest::getResourceType,
+                ListQueryProjectResourceTagsRequest::setResourceType));
 
         // response
 
@@ -1160,9 +1059,9 @@ public class VpcepMeta {
     }
 
     public static final HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstances =
-        genForlistResourceInstances();
+        genForListResourceInstances();
 
-    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForlistResourceInstances() {
+    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForListResourceInstances() {
         // basic
         HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
@@ -1175,16 +1074,13 @@ public class VpcepMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType,
+                ListResourceInstancesRequest::setResourceType));
         builder.<QueryResourceInstanceTagsBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryResourceInstanceTagsBody.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, ListResourceInstancesRequest::setBody));
 
         // response
 

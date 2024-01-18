@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 自定义策略设置项
+ * 自定义策略设置项。
  */
 public class CustomOptions {
 
@@ -21,7 +21,7 @@ public class CustomOptions {
     }
 
     /**
-     * 配置项1内容
+     * 配置项1内容。
      * @return customConfiguration1Rule
      */
     public String getCustomConfiguration1Rule() {

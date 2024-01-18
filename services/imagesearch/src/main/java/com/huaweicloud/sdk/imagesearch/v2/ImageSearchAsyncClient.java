@@ -36,7 +36,7 @@ public class ImageSearchAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAddDataRequest 请求对象
+     * @param request RunAddDataRequest 请求对象
      * @return CompletableFuture<RunAddDataResponse>
      */
     public CompletableFuture<RunAddDataResponse> runAddDataAsync(RunAddDataRequest request) {
@@ -50,11 +50,11 @@ public class ImageSearchAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAddDataRequest 请求对象
+     * @param request RunAddDataRequest 请求对象
      * @return AsyncInvoker<RunAddDataRequest, RunAddDataResponse>
      */
     public AsyncInvoker<RunAddDataRequest, RunAddDataResponse> runAddDataAsyncInvoker(RunAddDataRequest request) {
-        return new AsyncInvoker<RunAddDataRequest, RunAddDataResponse>(request, ImageSearchMeta.runAddData, hcClient);
+        return new AsyncInvoker<>(request, ImageSearchMeta.runAddData, hcClient);
     }
 
     /**
@@ -64,7 +64,7 @@ public class ImageSearchAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCheckDataRequest 请求对象
+     * @param request RunCheckDataRequest 请求对象
      * @return CompletableFuture<RunCheckDataResponse>
      */
     public CompletableFuture<RunCheckDataResponse> runCheckDataAsync(RunCheckDataRequest request) {
@@ -78,13 +78,12 @@ public class ImageSearchAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCheckDataRequest 请求对象
+     * @param request RunCheckDataRequest 请求对象
      * @return AsyncInvoker<RunCheckDataRequest, RunCheckDataResponse>
      */
     public AsyncInvoker<RunCheckDataRequest, RunCheckDataResponse> runCheckDataAsyncInvoker(
         RunCheckDataRequest request) {
-        return new AsyncInvoker<RunCheckDataRequest, RunCheckDataResponse>(request, ImageSearchMeta.runCheckData,
-            hcClient);
+        return new AsyncInvoker<>(request, ImageSearchMeta.runCheckData, hcClient);
     }
 
     /**
@@ -94,7 +93,7 @@ public class ImageSearchAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDeleteDataRequest 请求对象
+     * @param request RunDeleteDataRequest 请求对象
      * @return CompletableFuture<RunDeleteDataResponse>
      */
     public CompletableFuture<RunDeleteDataResponse> runDeleteDataAsync(RunDeleteDataRequest request) {
@@ -108,13 +107,12 @@ public class ImageSearchAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDeleteDataRequest 请求对象
+     * @param request RunDeleteDataRequest 请求对象
      * @return AsyncInvoker<RunDeleteDataRequest, RunDeleteDataResponse>
      */
     public AsyncInvoker<RunDeleteDataRequest, RunDeleteDataResponse> runDeleteDataAsyncInvoker(
         RunDeleteDataRequest request) {
-        return new AsyncInvoker<RunDeleteDataRequest, RunDeleteDataResponse>(request, ImageSearchMeta.runDeleteData,
-            hcClient);
+        return new AsyncInvoker<>(request, ImageSearchMeta.runDeleteData, hcClient);
     }
 
     /**
@@ -124,7 +122,7 @@ public class ImageSearchAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSearchRequest 请求对象
+     * @param request RunSearchRequest 请求对象
      * @return CompletableFuture<RunSearchResponse>
      */
     public CompletableFuture<RunSearchResponse> runSearchAsync(RunSearchRequest request) {
@@ -138,11 +136,11 @@ public class ImageSearchAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSearchRequest 请求对象
+     * @param request RunSearchRequest 请求对象
      * @return AsyncInvoker<RunSearchRequest, RunSearchResponse>
      */
     public AsyncInvoker<RunSearchRequest, RunSearchResponse> runSearchAsyncInvoker(RunSearchRequest request) {
-        return new AsyncInvoker<RunSearchRequest, RunSearchResponse>(request, ImageSearchMeta.runSearch, hcClient);
+        return new AsyncInvoker<>(request, ImageSearchMeta.runSearch, hcClient);
     }
 
     /**
@@ -152,7 +150,7 @@ public class ImageSearchAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunUpdateDataRequest 请求对象
+     * @param request RunUpdateDataRequest 请求对象
      * @return CompletableFuture<RunUpdateDataResponse>
      */
     public CompletableFuture<RunUpdateDataResponse> runUpdateDataAsync(RunUpdateDataRequest request) {
@@ -166,13 +164,12 @@ public class ImageSearchAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunUpdateDataRequest 请求对象
+     * @param request RunUpdateDataRequest 请求对象
      * @return AsyncInvoker<RunUpdateDataRequest, RunUpdateDataResponse>
      */
     public AsyncInvoker<RunUpdateDataRequest, RunUpdateDataResponse> runUpdateDataAsyncInvoker(
         RunUpdateDataRequest request) {
-        return new AsyncInvoker<RunUpdateDataRequest, RunUpdateDataResponse>(request, ImageSearchMeta.runUpdateData,
-            hcClient);
+        return new AsyncInvoker<>(request, ImageSearchMeta.runUpdateData, hcClient);
     }
 
 }

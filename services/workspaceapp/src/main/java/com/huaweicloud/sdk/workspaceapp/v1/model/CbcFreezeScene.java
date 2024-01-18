@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 更新云服务状态的业务场景，默认&#x60;ARREAR&#x60;。 * &#x60;ARREAR&#x60; - 欠费场景；为正常的运营业务场景，包括包周期资源到期、按需资源扣费失败 * &#x60;POLICE&#x60; - 公安冻结场景 * &#x60;ILLEGAL&#x60; - 违规冻结场景 * &#x60;VERIFY&#x60; - 客户未实名认证冻结场景 * &#x60;PARTNER&#x60; - 合作伙伴冻结（合作伙伴冻结子客户资源）
+ * 更新云服务状态的业务场景，默认&#x60;ARREAR&#x60;。 * &#x60;ARREAR&#x60; - 欠费场景；为正常的运营业务场景，包括包周期资源到期、按需资源扣费失败。 * &#x60;POLICE&#x60; - 公安冻结场景。 * &#x60;ILLEGAL&#x60; - 违规冻结场景。 * &#x60;VERIFY&#x60; - 客户未实名认证冻结场景。 * &#x60;PARTNER&#x60; - 合作伙伴冻结（合作伙伴冻结子客户资源）。
  */
 public class CbcFreezeScene {
 

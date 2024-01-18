@@ -70,7 +70,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptServiceContractRequest 请求对象
+     * @param request AcceptServiceContractRequest 请求对象
      * @return AcceptServiceContractResponse
      */
     public AcceptServiceContractResponse acceptServiceContract(AcceptServiceContractRequest request) {
@@ -84,13 +84,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptServiceContractRequest 请求对象
+     * @param request AcceptServiceContractRequest 请求对象
      * @return SyncInvoker<AcceptServiceContractRequest, AcceptServiceContractResponse>
      */
     public SyncInvoker<AcceptServiceContractRequest, AcceptServiceContractResponse> acceptServiceContractInvoker(
         AcceptServiceContractRequest request) {
-        return new SyncInvoker<AcceptServiceContractRequest, AcceptServiceContractResponse>(request,
-            DwrMeta.acceptServiceContract, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.acceptServiceContract, hcClient);
     }
 
     /**
@@ -100,7 +99,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AsyncInvokeApiStartWorkflowRequest 请求对象
+     * @param request AsyncInvokeApiStartWorkflowRequest 请求对象
      * @return AsyncInvokeApiStartWorkflowResponse
      */
     public AsyncInvokeApiStartWorkflowResponse asyncInvokeApiStartWorkflow(AsyncInvokeApiStartWorkflowRequest request) {
@@ -114,13 +113,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AsyncInvokeApiStartWorkflowRequest 请求对象
+     * @param request AsyncInvokeApiStartWorkflowRequest 请求对象
      * @return SyncInvoker<AsyncInvokeApiStartWorkflowRequest, AsyncInvokeApiStartWorkflowResponse>
      */
     public SyncInvoker<AsyncInvokeApiStartWorkflowRequest, AsyncInvokeApiStartWorkflowResponse> asyncInvokeApiStartWorkflowInvoker(
         AsyncInvokeApiStartWorkflowRequest request) {
-        return new SyncInvoker<AsyncInvokeApiStartWorkflowRequest, AsyncInvokeApiStartWorkflowResponse>(request,
-            DwrMeta.asyncInvokeApiStartWorkflow, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.asyncInvokeApiStartWorkflow, hcClient);
     }
 
     /**
@@ -130,7 +128,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckWorkflowAuthenticationRequest 请求对象
+     * @param request CheckWorkflowAuthenticationRequest 请求对象
      * @return CheckWorkflowAuthenticationResponse
      */
     public CheckWorkflowAuthenticationResponse checkWorkflowAuthentication(CheckWorkflowAuthenticationRequest request) {
@@ -144,13 +142,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckWorkflowAuthenticationRequest 请求对象
+     * @param request CheckWorkflowAuthenticationRequest 请求对象
      * @return SyncInvoker<CheckWorkflowAuthenticationRequest, CheckWorkflowAuthenticationResponse>
      */
     public SyncInvoker<CheckWorkflowAuthenticationRequest, CheckWorkflowAuthenticationResponse> checkWorkflowAuthenticationInvoker(
         CheckWorkflowAuthenticationRequest request) {
-        return new SyncInvoker<CheckWorkflowAuthenticationRequest, CheckWorkflowAuthenticationResponse>(request,
-            DwrMeta.checkWorkflowAuthentication, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.checkWorkflowAuthentication, hcClient);
     }
 
     /**
@@ -160,7 +157,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMyActionTemplateRequest 请求对象
+     * @param request CreateMyActionTemplateRequest 请求对象
      * @return CreateMyActionTemplateResponse
      */
     public CreateMyActionTemplateResponse createMyActionTemplate(CreateMyActionTemplateRequest request) {
@@ -174,13 +171,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMyActionTemplateRequest 请求对象
+     * @param request CreateMyActionTemplateRequest 请求对象
      * @return SyncInvoker<CreateMyActionTemplateRequest, CreateMyActionTemplateResponse>
      */
     public SyncInvoker<CreateMyActionTemplateRequest, CreateMyActionTemplateResponse> createMyActionTemplateInvoker(
         CreateMyActionTemplateRequest request) {
-        return new SyncInvoker<CreateMyActionTemplateRequest, CreateMyActionTemplateResponse>(request,
-            DwrMeta.createMyActionTemplate, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.createMyActionTemplate, hcClient);
     }
 
     /**
@@ -190,7 +186,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowAuthenticationRequest 请求对象
+     * @param request CreateWorkflowAuthenticationRequest 请求对象
      * @return CreateWorkflowAuthenticationResponse
      */
     public CreateWorkflowAuthenticationResponse createWorkflowAuthentication(
@@ -205,13 +201,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowAuthenticationRequest 请求对象
+     * @param request CreateWorkflowAuthenticationRequest 请求对象
      * @return SyncInvoker<CreateWorkflowAuthenticationRequest, CreateWorkflowAuthenticationResponse>
      */
     public SyncInvoker<CreateWorkflowAuthenticationRequest, CreateWorkflowAuthenticationResponse> createWorkflowAuthenticationInvoker(
         CreateWorkflowAuthenticationRequest request) {
-        return new SyncInvoker<CreateWorkflowAuthenticationRequest, CreateWorkflowAuthenticationResponse>(request,
-            DwrMeta.createWorkflowAuthentication, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.createWorkflowAuthentication, hcClient);
     }
 
     /**
@@ -221,7 +216,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMyActionTemplateRequest 请求对象
+     * @param request DeleteMyActionTemplateRequest 请求对象
      * @return DeleteMyActionTemplateResponse
      */
     public DeleteMyActionTemplateResponse deleteMyActionTemplate(DeleteMyActionTemplateRequest request) {
@@ -235,13 +230,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMyActionTemplateRequest 请求对象
+     * @param request DeleteMyActionTemplateRequest 请求对象
      * @return SyncInvoker<DeleteMyActionTemplateRequest, DeleteMyActionTemplateResponse>
      */
     public SyncInvoker<DeleteMyActionTemplateRequest, DeleteMyActionTemplateResponse> deleteMyActionTemplateInvoker(
         DeleteMyActionTemplateRequest request) {
-        return new SyncInvoker<DeleteMyActionTemplateRequest, DeleteMyActionTemplateResponse>(request,
-            DwrMeta.deleteMyActionTemplate, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.deleteMyActionTemplate, hcClient);
     }
 
     /**
@@ -251,7 +245,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMyActionTemplateRequest 请求对象
+     * @param request ListMyActionTemplateRequest 请求对象
      * @return ListMyActionTemplateResponse
      */
     public ListMyActionTemplateResponse listMyActionTemplate(ListMyActionTemplateRequest request) {
@@ -265,13 +259,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMyActionTemplateRequest 请求对象
+     * @param request ListMyActionTemplateRequest 请求对象
      * @return SyncInvoker<ListMyActionTemplateRequest, ListMyActionTemplateResponse>
      */
     public SyncInvoker<ListMyActionTemplateRequest, ListMyActionTemplateResponse> listMyActionTemplateInvoker(
         ListMyActionTemplateRequest request) {
-        return new SyncInvoker<ListMyActionTemplateRequest, ListMyActionTemplateResponse>(request,
-            DwrMeta.listMyActionTemplate, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.listMyActionTemplate, hcClient);
     }
 
     /**
@@ -281,7 +274,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSystemTemplatesRequest 请求对象
+     * @param request ListSystemTemplatesRequest 请求对象
      * @return ListSystemTemplatesResponse
      */
     public ListSystemTemplatesResponse listSystemTemplates(ListSystemTemplatesRequest request) {
@@ -295,13 +288,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSystemTemplatesRequest 请求对象
+     * @param request ListSystemTemplatesRequest 请求对象
      * @return SyncInvoker<ListSystemTemplatesRequest, ListSystemTemplatesResponse>
      */
     public SyncInvoker<ListSystemTemplatesRequest, ListSystemTemplatesResponse> listSystemTemplatesInvoker(
         ListSystemTemplatesRequest request) {
-        return new SyncInvoker<ListSystemTemplatesRequest, ListSystemTemplatesResponse>(request,
-            DwrMeta.listSystemTemplates, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.listSystemTemplates, hcClient);
     }
 
     /**
@@ -311,7 +303,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowInstanceRequest 请求对象
+     * @param request ListWorkflowInstanceRequest 请求对象
      * @return ListWorkflowInstanceResponse
      */
     public ListWorkflowInstanceResponse listWorkflowInstance(ListWorkflowInstanceRequest request) {
@@ -325,13 +317,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowInstanceRequest 请求对象
+     * @param request ListWorkflowInstanceRequest 请求对象
      * @return SyncInvoker<ListWorkflowInstanceRequest, ListWorkflowInstanceResponse>
      */
     public SyncInvoker<ListWorkflowInstanceRequest, ListWorkflowInstanceResponse> listWorkflowInstanceInvoker(
         ListWorkflowInstanceRequest request) {
-        return new SyncInvoker<ListWorkflowInstanceRequest, ListWorkflowInstanceResponse>(request,
-            DwrMeta.listWorkflowInstance, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.listWorkflowInstance, hcClient);
     }
 
     /**
@@ -341,7 +332,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreWorkflowExecutionRequest 请求对象
+     * @param request RestoreWorkflowExecutionRequest 请求对象
      * @return RestoreWorkflowExecutionResponse
      */
     public RestoreWorkflowExecutionResponse restoreWorkflowExecution(RestoreWorkflowExecutionRequest request) {
@@ -355,13 +346,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreWorkflowExecutionRequest 请求对象
+     * @param request RestoreWorkflowExecutionRequest 请求对象
      * @return SyncInvoker<RestoreWorkflowExecutionRequest, RestoreWorkflowExecutionResponse>
      */
     public SyncInvoker<RestoreWorkflowExecutionRequest, RestoreWorkflowExecutionResponse> restoreWorkflowExecutionInvoker(
         RestoreWorkflowExecutionRequest request) {
-        return new SyncInvoker<RestoreWorkflowExecutionRequest, RestoreWorkflowExecutionResponse>(request,
-            DwrMeta.restoreWorkflowExecution, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.restoreWorkflowExecution, hcClient);
     }
 
     /**
@@ -371,7 +361,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicActionListRequest 请求对象
+     * @param request ShowPublicActionListRequest 请求对象
      * @return ShowPublicActionListResponse
      */
     public ShowPublicActionListResponse showPublicActionList(ShowPublicActionListRequest request) {
@@ -385,13 +375,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicActionListRequest 请求对象
+     * @param request ShowPublicActionListRequest 请求对象
      * @return SyncInvoker<ShowPublicActionListRequest, ShowPublicActionListResponse>
      */
     public SyncInvoker<ShowPublicActionListRequest, ShowPublicActionListResponse> showPublicActionListInvoker(
         ShowPublicActionListRequest request) {
-        return new SyncInvoker<ShowPublicActionListRequest, ShowPublicActionListResponse>(request,
-            DwrMeta.showPublicActionList, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.showPublicActionList, hcClient);
     }
 
     /**
@@ -401,7 +390,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicTemplateInfoRequest 请求对象
+     * @param request ShowPublicTemplateInfoRequest 请求对象
      * @return ShowPublicTemplateInfoResponse
      */
     public ShowPublicTemplateInfoResponse showPublicTemplateInfo(ShowPublicTemplateInfoRequest request) {
@@ -415,13 +404,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicTemplateInfoRequest 请求对象
+     * @param request ShowPublicTemplateInfoRequest 请求对象
      * @return SyncInvoker<ShowPublicTemplateInfoRequest, ShowPublicTemplateInfoResponse>
      */
     public SyncInvoker<ShowPublicTemplateInfoRequest, ShowPublicTemplateInfoResponse> showPublicTemplateInfoInvoker(
         ShowPublicTemplateInfoRequest request) {
-        return new SyncInvoker<ShowPublicTemplateInfoRequest, ShowPublicTemplateInfoResponse>(request,
-            DwrMeta.showPublicTemplateInfo, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.showPublicTemplateInfo, hcClient);
     }
 
     /**
@@ -431,7 +419,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowServiceContractRequest 请求对象
+     * @param request ShowServiceContractRequest 请求对象
      * @return ShowServiceContractResponse
      */
     public ShowServiceContractResponse showServiceContract(ShowServiceContractRequest request) {
@@ -445,13 +433,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowServiceContractRequest 请求对象
+     * @param request ShowServiceContractRequest 请求对象
      * @return SyncInvoker<ShowServiceContractRequest, ShowServiceContractResponse>
      */
     public SyncInvoker<ShowServiceContractRequest, ShowServiceContractResponse> showServiceContractInvoker(
         ShowServiceContractRequest request) {
-        return new SyncInvoker<ShowServiceContractRequest, ShowServiceContractResponse>(request,
-            DwrMeta.showServiceContract, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.showServiceContract, hcClient);
     }
 
     /**
@@ -461,7 +448,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSystemTemplateDetailRequest 请求对象
+     * @param request ShowSystemTemplateDetailRequest 请求对象
      * @return ShowSystemTemplateDetailResponse
      */
     public ShowSystemTemplateDetailResponse showSystemTemplateDetail(ShowSystemTemplateDetailRequest request) {
@@ -475,13 +462,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSystemTemplateDetailRequest 请求对象
+     * @param request ShowSystemTemplateDetailRequest 请求对象
      * @return SyncInvoker<ShowSystemTemplateDetailRequest, ShowSystemTemplateDetailResponse>
      */
     public SyncInvoker<ShowSystemTemplateDetailRequest, ShowSystemTemplateDetailResponse> showSystemTemplateDetailInvoker(
         ShowSystemTemplateDetailRequest request) {
-        return new SyncInvoker<ShowSystemTemplateDetailRequest, ShowSystemTemplateDetailResponse>(request,
-            DwrMeta.showSystemTemplateDetail, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.showSystemTemplateDetail, hcClient);
     }
 
     /**
@@ -491,7 +477,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowThirdTemplateInfoRequest 请求对象
+     * @param request ShowThirdTemplateInfoRequest 请求对象
      * @return ShowThirdTemplateInfoResponse
      */
     public ShowThirdTemplateInfoResponse showThirdTemplateInfo(ShowThirdTemplateInfoRequest request) {
@@ -505,13 +491,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowThirdTemplateInfoRequest 请求对象
+     * @param request ShowThirdTemplateInfoRequest 请求对象
      * @return SyncInvoker<ShowThirdTemplateInfoRequest, ShowThirdTemplateInfoResponse>
      */
     public SyncInvoker<ShowThirdTemplateInfoRequest, ShowThirdTemplateInfoResponse> showThirdTemplateInfoInvoker(
         ShowThirdTemplateInfoRequest request) {
-        return new SyncInvoker<ShowThirdTemplateInfoRequest, ShowThirdTemplateInfoResponse>(request,
-            DwrMeta.showThirdTemplateInfo, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.showThirdTemplateInfo, hcClient);
     }
 
     /**
@@ -521,7 +506,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowInstanceRequest 请求对象
+     * @param request ShowWorkflowInstanceRequest 请求对象
      * @return ShowWorkflowInstanceResponse
      */
     public ShowWorkflowInstanceResponse showWorkflowInstance(ShowWorkflowInstanceRequest request) {
@@ -535,13 +520,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowInstanceRequest 请求对象
+     * @param request ShowWorkflowInstanceRequest 请求对象
      * @return SyncInvoker<ShowWorkflowInstanceRequest, ShowWorkflowInstanceResponse>
      */
     public SyncInvoker<ShowWorkflowInstanceRequest, ShowWorkflowInstanceResponse> showWorkflowInstanceInvoker(
         ShowWorkflowInstanceRequest request) {
-        return new SyncInvoker<ShowWorkflowInstanceRequest, ShowWorkflowInstanceResponse>(request,
-            DwrMeta.showWorkflowInstance, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.showWorkflowInstance, hcClient);
     }
 
     /**
@@ -551,7 +535,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMyActionTemplateRequest 请求对象
+     * @param request UpdateMyActionTemplateRequest 请求对象
      * @return UpdateMyActionTemplateResponse
      */
     public UpdateMyActionTemplateResponse updateMyActionTemplate(UpdateMyActionTemplateRequest request) {
@@ -565,13 +549,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMyActionTemplateRequest 请求对象
+     * @param request UpdateMyActionTemplateRequest 请求对象
      * @return SyncInvoker<UpdateMyActionTemplateRequest, UpdateMyActionTemplateResponse>
      */
     public SyncInvoker<UpdateMyActionTemplateRequest, UpdateMyActionTemplateResponse> updateMyActionTemplateInvoker(
         UpdateMyActionTemplateRequest request) {
-        return new SyncInvoker<UpdateMyActionTemplateRequest, UpdateMyActionTemplateResponse>(request,
-            DwrMeta.updateMyActionTemplate, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.updateMyActionTemplate, hcClient);
     }
 
     /**
@@ -581,7 +564,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMyActionTemplateToDeprecatedRequest 请求对象
+     * @param request UpdateMyActionTemplateToDeprecatedRequest 请求对象
      * @return UpdateMyActionTemplateToDeprecatedResponse
      */
     public UpdateMyActionTemplateToDeprecatedResponse updateMyActionTemplateToDeprecated(
@@ -596,13 +579,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMyActionTemplateToDeprecatedRequest 请求对象
+     * @param request UpdateMyActionTemplateToDeprecatedRequest 请求对象
      * @return SyncInvoker<UpdateMyActionTemplateToDeprecatedRequest, UpdateMyActionTemplateToDeprecatedResponse>
      */
     public SyncInvoker<UpdateMyActionTemplateToDeprecatedRequest, UpdateMyActionTemplateToDeprecatedResponse> updateMyActionTemplateToDeprecatedInvoker(
         UpdateMyActionTemplateToDeprecatedRequest request) {
-        return new SyncInvoker<UpdateMyActionTemplateToDeprecatedRequest, UpdateMyActionTemplateToDeprecatedResponse>(
-            request, DwrMeta.updateMyActionTemplateToDeprecated, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.updateMyActionTemplateToDeprecated, hcClient);
     }
 
     /**
@@ -612,7 +594,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowRequest 请求对象
+     * @param request CreateWorkflowRequest 请求对象
      * @return CreateWorkflowResponse
      */
     public CreateWorkflowResponse createWorkflow(CreateWorkflowRequest request) {
@@ -626,13 +608,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowRequest 请求对象
+     * @param request CreateWorkflowRequest 请求对象
      * @return SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
      */
     public SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowInvoker(
         CreateWorkflowRequest request) {
-        return new SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request, DwrMeta.createWorkflow,
-            hcClient);
+        return new SyncInvoker<>(request, DwrMeta.createWorkflow, hcClient);
     }
 
     /**
@@ -642,7 +623,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkflowRequest 请求对象
+     * @param request DeleteWorkflowRequest 请求对象
      * @return DeleteWorkflowResponse
      */
     public DeleteWorkflowResponse deleteWorkflow(DeleteWorkflowRequest request) {
@@ -656,13 +637,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkflowRequest 请求对象
+     * @param request DeleteWorkflowRequest 请求对象
      * @return SyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse>
      */
     public SyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse> deleteWorkflowInvoker(
         DeleteWorkflowRequest request) {
-        return new SyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse>(request, DwrMeta.deleteWorkflow,
-            hcClient);
+        return new SyncInvoker<>(request, DwrMeta.deleteWorkflow, hcClient);
     }
 
     /**
@@ -672,7 +652,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowsRequest 请求对象
+     * @param request ListWorkflowsRequest 请求对象
      * @return ListWorkflowsResponse
      */
     public ListWorkflowsResponse listWorkflows(ListWorkflowsRequest request) {
@@ -686,11 +666,11 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowsRequest 请求对象
+     * @param request ListWorkflowsRequest 请求对象
      * @return SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>
      */
     public SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsInvoker(ListWorkflowsRequest request) {
-        return new SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>(request, DwrMeta.listWorkflows, hcClient);
+        return new SyncInvoker<>(request, DwrMeta.listWorkflows, hcClient);
     }
 
     /**
@@ -700,7 +680,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowInfoRequest 请求对象
+     * @param request ShowWorkflowInfoRequest 请求对象
      * @return ShowWorkflowInfoResponse
      */
     public ShowWorkflowInfoResponse showWorkflowInfo(ShowWorkflowInfoRequest request) {
@@ -714,13 +694,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowInfoRequest 请求对象
+     * @param request ShowWorkflowInfoRequest 请求对象
      * @return SyncInvoker<ShowWorkflowInfoRequest, ShowWorkflowInfoResponse>
      */
     public SyncInvoker<ShowWorkflowInfoRequest, ShowWorkflowInfoResponse> showWorkflowInfoInvoker(
         ShowWorkflowInfoRequest request) {
-        return new SyncInvoker<ShowWorkflowInfoRequest, ShowWorkflowInfoResponse>(request, DwrMeta.showWorkflowInfo,
-            hcClient);
+        return new SyncInvoker<>(request, DwrMeta.showWorkflowInfo, hcClient);
     }
 
     /**
@@ -730,7 +709,7 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkflowRequest 请求对象
+     * @param request UpdateWorkflowRequest 请求对象
      * @return UpdateWorkflowResponse
      */
     public UpdateWorkflowResponse updateWorkflow(UpdateWorkflowRequest request) {
@@ -744,13 +723,12 @@ public class DwrClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkflowRequest 请求对象
+     * @param request UpdateWorkflowRequest 请求对象
      * @return SyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse>
      */
     public SyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse> updateWorkflowInvoker(
         UpdateWorkflowRequest request) {
-        return new SyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse>(request, DwrMeta.updateWorkflow,
-            hcClient);
+        return new SyncInvoker<>(request, DwrMeta.updateWorkflow, hcClient);
     }
 
 }

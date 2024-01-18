@@ -47,7 +47,7 @@ public class UpdateTaskStatusRequestBody {
     }
 
     /**
-     * cluster_id
+     * 资源组id
      * minimum: -1
      * maximum: 2147483647
      * @return clusterId
@@ -66,7 +66,7 @@ public class UpdateTaskStatusRequestBody {
     }
 
     /**
-     * cluster_type
+     * 资源组类型（共享资源组：shared-cluster-internet；私有资源组：private-cluster）
      * @return clusterType
      */
     public String getClusterType() {
@@ -83,7 +83,7 @@ public class UpdateTaskStatusRequestBody {
     }
 
     /**
-     * without_package
+     * 套餐包VUM不足的情况下用户选择是不是要走按需计费模式（当前版本固定值：0）
      * minimum: 0
      * maximum: 2147483647
      * @return withoutPackage
@@ -128,7 +128,7 @@ public class UpdateTaskStatusRequestBody {
     }
 
     /**
-     * status
+     * 状态（9：启动任务；2：停止任务）
      * minimum: 0
      * maximum: 2147483647
      * @return status

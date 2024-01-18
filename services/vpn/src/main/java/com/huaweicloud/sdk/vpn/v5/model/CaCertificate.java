@@ -12,6 +12,11 @@ import java.util.Objects;
 public class CaCertificate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_number")
 
     private String serialNumber;
@@ -40,6 +45,23 @@ public class CaCertificate {
     @JsonProperty(value = "is_updatable")
 
     private Boolean isUpdatable;
+
+    public CaCertificate withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 证书ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public CaCertificate withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
@@ -152,7 +174,7 @@ public class CaCertificate {
             return false;
         }
         CaCertificate that = (CaCertificate) obj;
-        return Objects.equals(this.serialNumber, that.serialNumber)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.serialNumber, that.serialNumber)
             && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
             && Objects.equals(this.issuer, that.issuer) && Objects.equals(this.subject, that.subject)
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.isUpdatable, that.isUpdatable);
@@ -160,13 +182,14 @@ public class CaCertificate {
 
     @Override
     public int hashCode() {
-        return Objects.hash(serialNumber, signatureAlgorithm, issuer, subject, expireTime, isUpdatable);
+        return Objects.hash(id, serialNumber, signatureAlgorithm, issuer, subject, expireTime, isUpdatable);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CaCertificate {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
         sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");

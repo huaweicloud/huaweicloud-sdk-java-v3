@@ -47,9 +47,9 @@ import com.huaweicloud.sdk.mssi.v1.model.UpdateFlowResponse;
 public class MssiMeta {
 
     public static final HttpRequestDef<CreateConnectionInfoRequest, CreateConnectionInfoResponse> createConnectionInfo =
-        genForcreateConnectionInfo();
+        genForCreateConnectionInfo();
 
-    private static HttpRequestDef<CreateConnectionInfoRequest, CreateConnectionInfoResponse> genForcreateConnectionInfo() {
+    private static HttpRequestDef<CreateConnectionInfoRequest, CreateConnectionInfoResponse> genForCreateConnectionInfo() {
         // basic
         HttpRequestDef.Builder<CreateConnectionInfoRequest, CreateConnectionInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateConnectionInfoRequest.class, CreateConnectionInfoResponse.class)
@@ -62,9 +62,7 @@ public class MssiMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BaseConnectionInfo.class),
-            f -> f.withMarshaller(CreateConnectionInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConnectionInfoRequest::getBody, CreateConnectionInfoRequest::setBody));
 
         // response
 
@@ -72,9 +70,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<CreateCustomConnectorFromOpenapiRequest, CreateCustomConnectorFromOpenapiResponse> createCustomConnectorFromOpenapi =
-        genForcreateCustomConnectorFromOpenapi();
+        genForCreateCustomConnectorFromOpenapi();
 
-    private static HttpRequestDef<CreateCustomConnectorFromOpenapiRequest, CreateCustomConnectorFromOpenapiResponse> genForcreateCustomConnectorFromOpenapi() {
+    private static HttpRequestDef<CreateCustomConnectorFromOpenapiRequest, CreateCustomConnectorFromOpenapiResponse> genForCreateCustomConnectorFromOpenapi() {
         // basic
         HttpRequestDef.Builder<CreateCustomConnectorFromOpenapiRequest, CreateCustomConnectorFromOpenapiResponse> builder =
             HttpRequestDef
@@ -90,18 +88,17 @@ public class MssiMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CustomConnectorInfoV2.class),
-            f -> f.withMarshaller(CreateCustomConnectorFromOpenapiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCustomConnectorFromOpenapiRequest::getBody,
+                CreateCustomConnectorFromOpenapiRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateFlowRequest, CreateFlowResponse> createFlow = genForcreateFlow();
+    public static final HttpRequestDef<CreateFlowRequest, CreateFlowResponse> createFlow = genForCreateFlow();
 
-    private static HttpRequestDef<CreateFlowRequest, CreateFlowResponse> genForcreateFlow() {
+    private static HttpRequestDef<CreateFlowRequest, CreateFlowResponse> genForCreateFlow() {
         // basic
         HttpRequestDef.Builder<CreateFlowRequest, CreateFlowResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFlowRequest.class, CreateFlowResponse.class)
@@ -114,9 +111,7 @@ public class MssiMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(FlowMeta.class),
-            f -> f.withMarshaller(CreateFlowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFlowRequest::getBody, CreateFlowRequest::setBody));
 
         // response
 
@@ -124,9 +119,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<CreateFlowTemplateFromFlowRequest, CreateFlowTemplateFromFlowResponse> createFlowTemplateFromFlow =
-        genForcreateFlowTemplateFromFlow();
+        genForCreateFlowTemplateFromFlow();
 
-    private static HttpRequestDef<CreateFlowTemplateFromFlowRequest, CreateFlowTemplateFromFlowResponse> genForcreateFlowTemplateFromFlow() {
+    private static HttpRequestDef<CreateFlowTemplateFromFlowRequest, CreateFlowTemplateFromFlowResponse> genForCreateFlowTemplateFromFlow() {
         // basic
         HttpRequestDef.Builder<CreateFlowTemplateFromFlowRequest, CreateFlowTemplateFromFlowResponse> builder =
             HttpRequestDef
@@ -142,16 +137,14 @@ public class MssiMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFlowTemplateFromFlowRequest::getFlowId, (req, v) -> {
-                req.setFlowId(v);
-            }));
+            f -> f.withMarshaller(CreateFlowTemplateFromFlowRequest::getFlowId,
+                CreateFlowTemplateFromFlowRequest::setFlowId));
         builder.<TemplateMessage>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(TemplateMessage.class),
-            f -> f.withMarshaller(CreateFlowTemplateFromFlowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFlowTemplateFromFlowRequest::getBody,
+                CreateFlowTemplateFromFlowRequest::setBody));
 
         // response
 
@@ -159,9 +152,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<DeleteConnectionInfoRequest, DeleteConnectionInfoResponse> deleteConnectionInfo =
-        genFordeleteConnectionInfo();
+        genForDeleteConnectionInfo();
 
-    private static HttpRequestDef<DeleteConnectionInfoRequest, DeleteConnectionInfoResponse> genFordeleteConnectionInfo() {
+    private static HttpRequestDef<DeleteConnectionInfoRequest, DeleteConnectionInfoResponse> genForDeleteConnectionInfo() {
         // basic
         HttpRequestDef.Builder<DeleteConnectionInfoRequest, DeleteConnectionInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteConnectionInfoRequest.class, DeleteConnectionInfoResponse.class)
@@ -174,9 +167,8 @@ public class MssiMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnectionInfoRequest::getConnectId, (req, v) -> {
-                req.setConnectId(v);
-            }));
+            f -> f.withMarshaller(DeleteConnectionInfoRequest::getConnectId,
+                DeleteConnectionInfoRequest::setConnectId));
 
         // response
 
@@ -184,9 +176,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<DeleteCustomConnectorRequest, DeleteCustomConnectorResponse> deleteCustomConnector =
-        genFordeleteCustomConnector();
+        genForDeleteCustomConnector();
 
-    private static HttpRequestDef<DeleteCustomConnectorRequest, DeleteCustomConnectorResponse> genFordeleteCustomConnector() {
+    private static HttpRequestDef<DeleteCustomConnectorRequest, DeleteCustomConnectorResponse> genForDeleteCustomConnector() {
         // basic
         HttpRequestDef.Builder<DeleteCustomConnectorRequest, DeleteCustomConnectorResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteCustomConnectorRequest.class, DeleteCustomConnectorResponse.class)
@@ -199,18 +191,17 @@ public class MssiMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCustomConnectorRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(DeleteCustomConnectorRequest::getConnectorId,
+                DeleteCustomConnectorRequest::setConnectorId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteFlowRequest, DeleteFlowResponse> deleteFlow = genFordeleteFlow();
+    public static final HttpRequestDef<DeleteFlowRequest, DeleteFlowResponse> deleteFlow = genForDeleteFlow();
 
-    private static HttpRequestDef<DeleteFlowRequest, DeleteFlowResponse> genFordeleteFlow() {
+    private static HttpRequestDef<DeleteFlowRequest, DeleteFlowResponse> genForDeleteFlow() {
         // basic
         HttpRequestDef.Builder<DeleteFlowRequest, DeleteFlowResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFlowRequest.class, DeleteFlowResponse.class)
@@ -223,9 +214,7 @@ public class MssiMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFlowRequest::getFlowId, (req, v) -> {
-                req.setFlowId(v);
-            }));
+            f -> f.withMarshaller(DeleteFlowRequest::getFlowId, DeleteFlowRequest::setFlowId));
 
         // response
 
@@ -233,9 +222,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<SearchFlowByIdRequest, SearchFlowByIdResponse> searchFlowById =
-        genForsearchFlowById();
+        genForSearchFlowById();
 
-    private static HttpRequestDef<SearchFlowByIdRequest, SearchFlowByIdResponse> genForsearchFlowById() {
+    private static HttpRequestDef<SearchFlowByIdRequest, SearchFlowByIdResponse> genForSearchFlowById() {
         // basic
         HttpRequestDef.Builder<SearchFlowByIdRequest, SearchFlowByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchFlowByIdRequest.class, SearchFlowByIdResponse.class)
@@ -248,16 +237,12 @@ public class MssiMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchFlowByIdRequest::getFlowId, (req, v) -> {
-                req.setFlowId(v);
-            }));
+            f -> f.withMarshaller(SearchFlowByIdRequest::getFlowId, SearchFlowByIdRequest::setFlowId));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchFlowByIdRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(SearchFlowByIdRequest::getVersion, SearchFlowByIdRequest::setVersion));
 
         // response
 
@@ -265,9 +250,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<ShowAllConnectionsRequest, ShowAllConnectionsResponse> showAllConnections =
-        genForshowAllConnections();
+        genForShowAllConnections();
 
-    private static HttpRequestDef<ShowAllConnectionsRequest, ShowAllConnectionsResponse> genForshowAllConnections() {
+    private static HttpRequestDef<ShowAllConnectionsRequest, ShowAllConnectionsResponse> genForShowAllConnections() {
         // basic
         HttpRequestDef.Builder<ShowAllConnectionsRequest, ShowAllConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAllConnectionsRequest.class, ShowAllConnectionsResponse.class)
@@ -280,32 +265,26 @@ public class MssiMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllConnectionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowAllConnectionsRequest::getOffset, ShowAllConnectionsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllConnectionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowAllConnectionsRequest::getLimit, ShowAllConnectionsRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllConnectionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowAllConnectionsRequest::getName, ShowAllConnectionsRequest::setName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAllFlowsRequest, ShowAllFlowsResponse> showAllFlows = genForshowAllFlows();
+    public static final HttpRequestDef<ShowAllFlowsRequest, ShowAllFlowsResponse> showAllFlows = genForShowAllFlows();
 
-    private static HttpRequestDef<ShowAllFlowsRequest, ShowAllFlowsResponse> genForshowAllFlows() {
+    private static HttpRequestDef<ShowAllFlowsRequest, ShowAllFlowsResponse> genForShowAllFlows() {
         // basic
         HttpRequestDef.Builder<ShowAllFlowsRequest, ShowAllFlowsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAllFlowsRequest.class, ShowAllFlowsResponse.class)
@@ -318,44 +297,32 @@ public class MssiMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllFlowsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowAllFlowsRequest::getOffset, ShowAllFlowsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAllFlowsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowAllFlowsRequest::getLimit, ShowAllFlowsRequest::setLimit));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllFlowsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowAllFlowsRequest::getType, ShowAllFlowsRequest::setType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllFlowsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowAllFlowsRequest::getName, ShowAllFlowsRequest::setName));
         builder.<Boolean>withRequestField("have_child_flow",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowAllFlowsRequest::getHaveChildFlow, (req, v) -> {
-                req.setHaveChildFlow(v);
-            }));
+            f -> f.withMarshaller(ShowAllFlowsRequest::getHaveChildFlow, ShowAllFlowsRequest::setHaveChildFlow));
         builder.<String>withRequestField("ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllFlowsRequest::getIds, (req, v) -> {
-                req.setIds(v);
-            }));
+            f -> f.withMarshaller(ShowAllFlowsRequest::getIds, ShowAllFlowsRequest::setIds));
 
         // response
 
@@ -363,9 +330,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<ShowConnectorsRequest, ShowConnectorsResponse> showConnectors =
-        genForshowConnectors();
+        genForShowConnectors();
 
-    private static HttpRequestDef<ShowConnectorsRequest, ShowConnectorsResponse> genForshowConnectors() {
+    private static HttpRequestDef<ShowConnectorsRequest, ShowConnectorsResponse> genForShowConnectors() {
         // basic
         HttpRequestDef.Builder<ShowConnectorsRequest, ShowConnectorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConnectorsRequest.class, ShowConnectorsResponse.class)
@@ -378,44 +345,32 @@ public class MssiMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowConnectorsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowConnectorsRequest::getOffset, ShowConnectorsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowConnectorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowConnectorsRequest::getLimit, ShowConnectorsRequest::setLimit));
         builder.<String>withRequestField("scope",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectorsRequest::getScope, (req, v) -> {
-                req.setScope(v);
-            }));
+            f -> f.withMarshaller(ShowConnectorsRequest::getScope, ShowConnectorsRequest::setScope));
         builder.<String>withRequestField("category",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectorsRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(ShowConnectorsRequest::getCategory, ShowConnectorsRequest::setCategory));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectorsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowConnectorsRequest::getName, ShowConnectorsRequest::setName));
         builder.<String>withRequestField("operation_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectorsRequest::getOperationType, (req, v) -> {
-                req.setOperationType(v);
-            }));
+            f -> f.withMarshaller(ShowConnectorsRequest::getOperationType, ShowConnectorsRequest::setOperationType));
 
         // response
 
@@ -423,9 +378,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<ShowCustomConnectorRequest, ShowCustomConnectorResponse> showCustomConnector =
-        genForshowCustomConnector();
+        genForShowCustomConnector();
 
-    private static HttpRequestDef<ShowCustomConnectorRequest, ShowCustomConnectorResponse> genForshowCustomConnector() {
+    private static HttpRequestDef<ShowCustomConnectorRequest, ShowCustomConnectorResponse> genForShowCustomConnector() {
         // basic
         HttpRequestDef.Builder<ShowCustomConnectorRequest, ShowCustomConnectorResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowCustomConnectorRequest.class, ShowCustomConnectorResponse.class)
@@ -438,9 +393,8 @@ public class MssiMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomConnectorRequest::getConnectorId, (req, v) -> {
-                req.setConnectorId(v);
-            }));
+            f -> f.withMarshaller(ShowCustomConnectorRequest::getConnectorId,
+                ShowCustomConnectorRequest::setConnectorId));
 
         // response
 
@@ -448,9 +402,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<ShowCustomConnectorsRequest, ShowCustomConnectorsResponse> showCustomConnectors =
-        genForshowCustomConnectors();
+        genForShowCustomConnectors();
 
-    private static HttpRequestDef<ShowCustomConnectorsRequest, ShowCustomConnectorsResponse> genForshowCustomConnectors() {
+    private static HttpRequestDef<ShowCustomConnectorsRequest, ShowCustomConnectorsResponse> genForShowCustomConnectors() {
         // basic
         HttpRequestDef.Builder<ShowCustomConnectorsRequest, ShowCustomConnectorsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowCustomConnectorsRequest.class, ShowCustomConnectorsResponse.class)
@@ -463,23 +417,17 @@ public class MssiMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCustomConnectorsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowCustomConnectorsRequest::getOffset, ShowCustomConnectorsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCustomConnectorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowCustomConnectorsRequest::getLimit, ShowCustomConnectorsRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomConnectorsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowCustomConnectorsRequest::getName, ShowCustomConnectorsRequest::setName));
 
         // response
 
@@ -487,9 +435,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<ShowSingleConnectionRequest, ShowSingleConnectionResponse> showSingleConnection =
-        genForshowSingleConnection();
+        genForShowSingleConnection();
 
-    private static HttpRequestDef<ShowSingleConnectionRequest, ShowSingleConnectionResponse> genForshowSingleConnection() {
+    private static HttpRequestDef<ShowSingleConnectionRequest, ShowSingleConnectionResponse> genForShowSingleConnection() {
         // basic
         HttpRequestDef.Builder<ShowSingleConnectionRequest, ShowSingleConnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSingleConnectionRequest.class, ShowSingleConnectionResponse.class)
@@ -502,9 +450,8 @@ public class MssiMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSingleConnectionRequest::getConnectId, (req, v) -> {
-                req.setConnectId(v);
-            }));
+            f -> f.withMarshaller(ShowSingleConnectionRequest::getConnectId,
+                ShowSingleConnectionRequest::setConnectId));
 
         // response
 
@@ -512,9 +459,9 @@ public class MssiMeta {
     }
 
     public static final HttpRequestDef<UpdateConnectionInfoRequest, UpdateConnectionInfoResponse> updateConnectionInfo =
-        genForupdateConnectionInfo();
+        genForUpdateConnectionInfo();
 
-    private static HttpRequestDef<UpdateConnectionInfoRequest, UpdateConnectionInfoResponse> genForupdateConnectionInfo() {
+    private static HttpRequestDef<UpdateConnectionInfoRequest, UpdateConnectionInfoResponse> genForUpdateConnectionInfo() {
         // basic
         HttpRequestDef.Builder<UpdateConnectionInfoRequest, UpdateConnectionInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateConnectionInfoRequest.class, UpdateConnectionInfoResponse.class)
@@ -527,25 +474,22 @@ public class MssiMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConnectionInfoRequest::getConnectId, (req, v) -> {
-                req.setConnectId(v);
-            }));
+            f -> f.withMarshaller(UpdateConnectionInfoRequest::getConnectId,
+                UpdateConnectionInfoRequest::setConnectId));
         builder.<ConnectionInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ConnectionInfo.class),
-            f -> f.withMarshaller(UpdateConnectionInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateConnectionInfoRequest::getBody, UpdateConnectionInfoRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateFlowRequest, UpdateFlowResponse> updateFlow = genForupdateFlow();
+    public static final HttpRequestDef<UpdateFlowRequest, UpdateFlowResponse> updateFlow = genForUpdateFlow();
 
-    private static HttpRequestDef<UpdateFlowRequest, UpdateFlowResponse> genForupdateFlow() {
+    private static HttpRequestDef<UpdateFlowRequest, UpdateFlowResponse> genForUpdateFlow() {
         // basic
         HttpRequestDef.Builder<UpdateFlowRequest, UpdateFlowResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateFlowRequest.class, UpdateFlowResponse.class)
@@ -558,16 +502,12 @@ public class MssiMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFlowRequest::getFlowId, (req, v) -> {
-                req.setFlowId(v);
-            }));
+            f -> f.withMarshaller(UpdateFlowRequest::getFlowId, UpdateFlowRequest::setFlowId));
         builder.<FlowMeta>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(FlowMeta.class),
-            f -> f.withMarshaller(UpdateFlowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateFlowRequest::getBody, UpdateFlowRequest::setBody));
 
         // response
 

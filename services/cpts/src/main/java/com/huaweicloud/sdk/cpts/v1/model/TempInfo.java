@@ -69,7 +69,7 @@ public class TempInfo {
     }
 
     /**
-     * id
+     * 事务id
      * minimum: 0
      * maximum: 2147483647
      * @return id
@@ -88,7 +88,7 @@ public class TempInfo {
     }
 
     /**
-     * project_id
+     * 工程id
      * minimum: 0
      * maximum: 2147483647
      * @return projectId
@@ -107,7 +107,7 @@ public class TempInfo {
     }
 
     /**
-     * name
+     * 事务名称
      * @return name
      */
     public String getName() {
@@ -124,7 +124,7 @@ public class TempInfo {
     }
 
     /**
-     * description
+     * 事务描述
      * @return description
      */
     public String getDescription() {
@@ -141,7 +141,7 @@ public class TempInfo {
     }
 
     /**
-     * variables
+     * 变量
      * @return variables
      */
     public String getVariables() {
@@ -174,7 +174,7 @@ public class TempInfo {
     }
 
     /**
-     * contents
+     * 事务脚本信息
      * @return contents
      */
     public List<Object> getContents() {
@@ -191,7 +191,7 @@ public class TempInfo {
     }
 
     /**
-     * temp_type
+     * 事务类型（弃用）
      * minimum: 0
      * maximum: 2147483647
      * @return tempType
@@ -226,7 +226,7 @@ public class TempInfo {
     }
 
     /**
-     * for_loop_params
+     * 旧版本逻辑控制器字段，当前已未使用
      * @return forLoopParams
      */
     public List<Object> getForLoopParams() {
@@ -269,7 +269,7 @@ public class TempInfo {
     }
 
     /**
-     * enable_pre
+     * 是否启用预置事务，当前版本已未使用
      * @return enablePre
      */
     public Boolean getEnablePre() {

@@ -68,9 +68,9 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsResponse;
 public class RabbitMQMeta {
 
     public static final HttpRequestDef<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> batchCreateOrDeleteRabbitMqTag =
-        genForbatchCreateOrDeleteRabbitMqTag();
+        genForBatchCreateOrDeleteRabbitMqTag();
 
-    private static HttpRequestDef<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> genForbatchCreateOrDeleteRabbitMqTag() {
+    private static HttpRequestDef<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> genForBatchCreateOrDeleteRabbitMqTag() {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> builder =
             HttpRequestDef
@@ -86,16 +86,14 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteRabbitMqTagRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteRabbitMqTagRequest::getInstanceId,
+                BatchCreateOrDeleteRabbitMqTagRequest::setInstanceId));
         builder.<BatchCreateOrDeleteTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagReq.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteRabbitMqTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteRabbitMqTagRequest::getBody,
+                BatchCreateOrDeleteRabbitMqTagRequest::setBody));
 
         // response
 
@@ -103,9 +101,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstances =
-        genForbatchRestartOrDeleteInstances();
+        genForBatchRestartOrDeleteInstances();
 
-    private static HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> genForbatchRestartOrDeleteInstances() {
+    private static HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> genForBatchRestartOrDeleteInstances() {
         // basic
         HttpRequestDef.Builder<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> builder =
             HttpRequestDef
@@ -121,9 +119,8 @@ public class RabbitMQMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchRestartOrDeleteInstanceReq.class),
-            f -> f.withMarshaller(BatchRestartOrDeleteInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRestartOrDeleteInstancesRequest::getBody,
+                BatchRestartOrDeleteInstancesRequest::setBody));
 
         // response
 
@@ -131,9 +128,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstance =
-        genForcreatePostPaidInstance();
+        genForCreatePostPaidInstance();
 
-    private static HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> genForcreatePostPaidInstance() {
+    private static HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> genForCreatePostPaidInstance() {
         // basic
         HttpRequestDef.Builder<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePostPaidInstanceRequest.class, CreatePostPaidInstanceResponse.class)
@@ -146,9 +143,7 @@ public class RabbitMQMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceReq.class),
-            f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, CreatePostPaidInstanceRequest::setBody));
 
         // response
 
@@ -156,9 +151,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse> createPostPaidInstanceByEngine =
-        genForcreatePostPaidInstanceByEngine();
+        genForCreatePostPaidInstanceByEngine();
 
-    private static HttpRequestDef<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse> genForcreatePostPaidInstanceByEngine() {
+    private static HttpRequestDef<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse> genForCreatePostPaidInstanceByEngine() {
         // basic
         HttpRequestDef.Builder<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse> builder =
             HttpRequestDef
@@ -174,16 +169,14 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePostPaidInstanceByEngineRequest.EngineEnum.class),
-            f -> f.withMarshaller(CreatePostPaidInstanceByEngineRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(CreatePostPaidInstanceByEngineRequest::getEngine,
+                CreatePostPaidInstanceByEngineRequest::setEngine));
         builder.<CreateInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceReq.class),
-            f -> f.withMarshaller(CreatePostPaidInstanceByEngineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePostPaidInstanceByEngineRequest::getBody,
+                CreatePostPaidInstanceByEngineRequest::setBody));
 
         // response
 
@@ -191,9 +184,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask =
-        genFordeleteBackgroundTask();
+        genForDeleteBackgroundTask();
 
-    private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genFordeleteBackgroundTask() {
+    private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genForDeleteBackgroundTask() {
         // basic
         HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
@@ -206,16 +199,13 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getInstanceId,
+                DeleteBackgroundTaskRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, DeleteBackgroundTaskRequest::setTaskId));
 
         // response
 
@@ -223,9 +213,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
-        genFordeleteInstance();
+        genForDeleteInstance();
 
-    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genFordeleteInstance() {
+    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genForDeleteInstance() {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
@@ -238,9 +228,7 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
 
         // response
 
@@ -248,9 +236,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones =
-        genForlistAvailableZones();
+        genForListAvailableZones();
 
-    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForlistAvailableZones() {
+    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForListAvailableZones() {
         // basic
         HttpRequestDef.Builder<ListAvailableZonesRequest, ListAvailableZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAvailableZonesRequest.class, ListAvailableZonesResponse.class)
@@ -266,9 +254,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasks =
-        genForlistBackgroundTasks();
+        genForListBackgroundTasks();
 
-    private static HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> genForlistBackgroundTasks() {
+    private static HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> genForListBackgroundTasks() {
         // basic
         HttpRequestDef.Builder<ListBackgroundTasksRequest, ListBackgroundTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackgroundTasksRequest.class, ListBackgroundTasksResponse.class)
@@ -281,37 +269,28 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId,
+                ListBackgroundTasksRequest::setInstanceId));
         builder.<Integer>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, (req, v) -> {
-                req.setStart(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, ListBackgroundTasksRequest::setStart));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getLimit, ListBackgroundTasksRequest::setLimit));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getBeginTime, ListBackgroundTasksRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getEndTime, ListBackgroundTasksRequest::setEndTime));
 
         // response
 
@@ -319,9 +298,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProducts =
-        genForlistEngineProducts();
+        genForListEngineProducts();
 
-    private static HttpRequestDef<ListEngineProductsRequest, ListEngineProductsResponse> genForlistEngineProducts() {
+    private static HttpRequestDef<ListEngineProductsRequest, ListEngineProductsResponse> genForListEngineProducts() {
         // basic
         HttpRequestDef.Builder<ListEngineProductsRequest, ListEngineProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEngineProductsRequest.class, ListEngineProductsResponse.class)
@@ -334,16 +313,12 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListEngineProductsRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListEngineProductsRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListEngineProductsRequest::getEngine, ListEngineProductsRequest::setEngine));
         builder.<String>withRequestField("product_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEngineProductsRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ListEngineProductsRequest::getProductId, ListEngineProductsRequest::setProductId));
 
         // response
 
@@ -351,9 +326,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ListInstancesDetailsRequest, ListInstancesDetailsResponse> listInstancesDetails =
-        genForlistInstancesDetails();
+        genForListInstancesDetails();
 
-    private static HttpRequestDef<ListInstancesDetailsRequest, ListInstancesDetailsResponse> genForlistInstancesDetails() {
+    private static HttpRequestDef<ListInstancesDetailsRequest, ListInstancesDetailsResponse> genForListInstancesDetails() {
         // basic
         HttpRequestDef.Builder<ListInstancesDetailsRequest, ListInstancesDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListInstancesDetailsRequest.class, ListInstancesDetailsResponse.class)
@@ -366,74 +341,60 @@ public class RabbitMQMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getEngine, ListInstancesDetailsRequest::setEngine));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getName, ListInstancesDetailsRequest::setName));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getInstanceId,
+                ListInstancesDetailsRequest::setInstanceId));
         builder.<ListInstancesDetailsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getStatus, ListInstancesDetailsRequest::setStatus));
         builder.<ListInstancesDetailsRequest.IncludeFailureEnum>withRequestField("include_failure",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.IncludeFailureEnum.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getIncludeFailure, (req, v) -> {
-                req.setIncludeFailure(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getIncludeFailure,
+                ListInstancesDetailsRequest::setIncludeFailure));
         builder.<ListInstancesDetailsRequest.ExactMatchNameEnum>withRequestField("exact_match_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.ExactMatchNameEnum.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getExactMatchName, (req, v) -> {
-                req.setExactMatchName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getExactMatchName,
+                ListInstancesDetailsRequest::setExactMatchName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getEnterpriseProjectId,
+                ListInstancesDetailsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getOffset, ListInstancesDetailsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getLimit, ListInstancesDetailsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForlistPlugins();
+    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForListPlugins();
 
-    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForlistPlugins() {
+    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForListPlugins() {
         // basic
         HttpRequestDef.Builder<ListPluginsRequest, ListPluginsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPluginsRequest.class, ListPluginsResponse.class)
@@ -446,18 +407,16 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getInstanceId, ListPluginsRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForlistProducts();
+    public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForListProducts();
 
-    private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForlistProducts() {
+    private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForListProducts() {
         // basic
         HttpRequestDef.Builder<ListProductsRequest, ListProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductsRequest.class, ListProductsResponse.class)
@@ -470,9 +429,7 @@ public class RabbitMQMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProductsRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListProductsRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getEngine, ListProductsRequest::setEngine));
 
         // response
 
@@ -480,9 +437,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
-        genForresetPassword();
+        genForResetPassword();
 
-    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
+    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForResetPassword() {
         // basic
         HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetPasswordRequest.class, ResetPasswordResponse.class)
@@ -495,16 +452,12 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, ResetPasswordRequest::setInstanceId));
         builder.<ResetPasswordReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetPasswordReq.class),
-            f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetPasswordRequest::getBody, ResetPasswordRequest::setBody));
 
         // response
 
@@ -512,9 +465,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstance =
-        genForresizeEngineInstance();
+        genForResizeEngineInstance();
 
-    private static HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> genForresizeEngineInstance() {
+    private static HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> genForResizeEngineInstance() {
         // basic
         HttpRequestDef.Builder<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ResizeEngineInstanceRequest.class, ResizeEngineInstanceResponse.class)
@@ -527,23 +480,18 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeEngineInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getInstanceId,
+                ResizeEngineInstanceRequest::setInstanceId));
         builder.<ResizeEngineInstanceRequest.EngineEnum>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeEngineInstanceRequest.EngineEnum.class),
-            f -> f.withMarshaller(ResizeEngineInstanceRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getEngine, ResizeEngineInstanceRequest::setEngine));
         builder.<ResizeEngineInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeEngineInstanceReq.class),
-            f -> f.withMarshaller(ResizeEngineInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getBody, ResizeEngineInstanceRequest::setBody));
 
         // response
 
@@ -551,9 +499,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
-        genForresizeInstance();
+        genForResizeInstance();
 
-    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
+    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForResizeInstance() {
         // basic
         HttpRequestDef.Builder<ResizeInstanceRequest, ResizeInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeInstanceRequest.class, ResizeInstanceResponse.class)
@@ -566,16 +514,12 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, ResizeInstanceRequest::setInstanceId));
         builder.<ResizeInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeInstanceReq.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getBody, ResizeInstanceRequest::setBody));
 
         // response
 
@@ -583,9 +527,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTask =
-        genForshowBackgroundTask();
+        genForShowBackgroundTask();
 
-    private static HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> genForshowBackgroundTask() {
+    private static HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> genForShowBackgroundTask() {
         // basic
         HttpRequestDef.Builder<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackgroundTaskRequest.class, ShowBackgroundTaskResponse.class)
@@ -598,16 +542,12 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackgroundTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowBackgroundTaskRequest::getInstanceId, ShowBackgroundTaskRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackgroundTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowBackgroundTaskRequest::getTaskId, ShowBackgroundTaskRequest::setTaskId));
 
         // response
 
@@ -615,9 +555,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchy =
-        genForshowCesHierarchy();
+        genForShowCesHierarchy();
 
-    private static HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> genForshowCesHierarchy() {
+    private static HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> genForShowCesHierarchy() {
         // basic
         HttpRequestDef.Builder<ShowCesHierarchyRequest, ShowCesHierarchyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCesHierarchyRequest.class, ShowCesHierarchyResponse.class)
@@ -630,9 +570,7 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCesHierarchyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowCesHierarchyRequest::getInstanceId, ShowCesHierarchyRequest::setInstanceId));
 
         // response
 
@@ -640,9 +578,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfo =
-        genForshowEngineInstanceExtendProductInfo();
+        genForShowEngineInstanceExtendProductInfo();
 
-    private static HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> genForshowEngineInstanceExtendProductInfo() {
+    private static HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> genForShowEngineInstanceExtendProductInfo() {
         // basic
         HttpRequestDef.Builder<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> builder =
             HttpRequestDef
@@ -658,32 +596,29 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.EngineEnum.class),
-            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getEngine,
+                ShowEngineInstanceExtendProductInfoRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getInstanceId,
+                ShowEngineInstanceExtendProductInfoRequest::setInstanceId));
         builder.<ShowEngineInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getType,
+                ShowEngineInstanceExtendProductInfoRequest::setType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForshowInstance();
+    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForShowInstance();
 
-    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForshowInstance() {
+    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForShowInstance() {
         // basic
         HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
@@ -696,9 +631,7 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, ShowInstanceRequest::setInstanceId));
 
         // response
 
@@ -706,9 +639,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfo =
-        genForshowInstanceExtendProductInfo();
+        genForShowInstanceExtendProductInfo();
 
-    private static HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> genForshowInstanceExtendProductInfo() {
+    private static HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> genForShowInstanceExtendProductInfo() {
         // basic
         HttpRequestDef.Builder<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> builder =
             HttpRequestDef
@@ -724,23 +657,20 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getInstanceId,
+                ShowInstanceExtendProductInfoRequest::setInstanceId));
         builder.<ShowInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowInstanceExtendProductInfoRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getType,
+                ShowInstanceExtendProductInfoRequest::setType));
         builder.<ShowInstanceExtendProductInfoRequest.EngineEnum>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowInstanceExtendProductInfoRequest.EngineEnum.class),
-            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine,
+                ShowInstanceExtendProductInfoRequest::setEngine));
 
         // response
 
@@ -748,9 +678,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindows =
-        genForshowMaintainWindows();
+        genForShowMaintainWindows();
 
-    private static HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> genForshowMaintainWindows() {
+    private static HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> genForShowMaintainWindows() {
         // basic
         HttpRequestDef.Builder<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMaintainWindowsRequest.class, ShowMaintainWindowsResponse.class)
@@ -766,9 +696,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> showRabbitMqProjectTags =
-        genForshowRabbitMqProjectTags();
+        genForShowRabbitMqProjectTags();
 
-    private static HttpRequestDef<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> genForshowRabbitMqProjectTags() {
+    private static HttpRequestDef<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> genForShowRabbitMqProjectTags() {
         // basic
         HttpRequestDef.Builder<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowRabbitMqProjectTagsRequest.class, ShowRabbitMqProjectTagsResponse.class)
@@ -784,9 +714,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> showRabbitMqTags =
-        genForshowRabbitMqTags();
+        genForShowRabbitMqTags();
 
-    private static HttpRequestDef<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> genForshowRabbitMqTags() {
+    private static HttpRequestDef<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> genForShowRabbitMqTags() {
         // basic
         HttpRequestDef.Builder<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRabbitMqTagsRequest.class, ShowRabbitMqTagsResponse.class)
@@ -799,9 +729,7 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRabbitMqTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRabbitMqTagsRequest::getInstanceId, ShowRabbitMqTagsRequest::setInstanceId));
 
         // response
 
@@ -809,9 +737,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
-        genForupdateInstance();
+        genForUpdateInstance();
 
-    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
+    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForUpdateInstance() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
@@ -824,16 +752,12 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, UpdateInstanceRequest::setInstanceId));
         builder.<UpdateInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceReq.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getBody, UpdateInstanceRequest::setBody));
 
         // response
 
@@ -841,9 +765,9 @@ public class RabbitMQMeta {
     }
 
     public static final HttpRequestDef<UpdatePluginsRequest, UpdatePluginsResponse> updatePlugins =
-        genForupdatePlugins();
+        genForUpdatePlugins();
 
-    private static HttpRequestDef<UpdatePluginsRequest, UpdatePluginsResponse> genForupdatePlugins() {
+    private static HttpRequestDef<UpdatePluginsRequest, UpdatePluginsResponse> genForUpdatePlugins() {
         // basic
         HttpRequestDef.Builder<UpdatePluginsRequest, UpdatePluginsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePluginsRequest.class, UpdatePluginsResponse.class)
@@ -856,16 +780,12 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePluginsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginsRequest::getInstanceId, UpdatePluginsRequest::setInstanceId));
         builder.<UpdatePluginsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePluginsReq.class),
-            f -> f.withMarshaller(UpdatePluginsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginsRequest::getBody, UpdatePluginsRequest::setBody));
 
         // response
 

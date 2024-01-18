@@ -76,9 +76,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CodeArtsBuildMeta {
 
     public static final HttpRequestDef<CreateBuildJobRequest, CreateBuildJobResponse> createBuildJob =
-        genForcreateBuildJob();
+        genForCreateBuildJob();
 
-    private static HttpRequestDef<CreateBuildJobRequest, CreateBuildJobResponse> genForcreateBuildJob() {
+    private static HttpRequestDef<CreateBuildJobRequest, CreateBuildJobResponse> genForCreateBuildJob() {
         // basic
         HttpRequestDef.Builder<CreateBuildJobRequest, CreateBuildJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateBuildJobRequest.class, CreateBuildJobResponse.class)
@@ -91,9 +91,7 @@ public class CodeArtsBuildMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateBuildJobRequestBody.class),
-            f -> f.withMarshaller(CreateBuildJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBuildJobRequest::getBody, CreateBuildJobRequest::setBody));
 
         // response
 
@@ -101,9 +99,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<CreateTemplatesRequest, CreateTemplatesResponse> createTemplates =
-        genForcreateTemplates();
+        genForCreateTemplates();
 
-    private static HttpRequestDef<CreateTemplatesRequest, CreateTemplatesResponse> genForcreateTemplates() {
+    private static HttpRequestDef<CreateTemplatesRequest, CreateTemplatesResponse> genForCreateTemplates() {
         // basic
         HttpRequestDef.Builder<CreateTemplatesRequest, CreateTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTemplatesRequest.class, CreateTemplatesResponse.class)
@@ -116,9 +114,7 @@ public class CodeArtsBuildMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTemplatesRequestBody.class),
-            f -> f.withMarshaller(CreateTemplatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTemplatesRequest::getBody, CreateTemplatesRequest::setBody));
 
         // response
 
@@ -126,9 +122,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<DeleteBuildJobRequest, DeleteBuildJobResponse> deleteBuildJob =
-        genFordeleteBuildJob();
+        genForDeleteBuildJob();
 
-    private static HttpRequestDef<DeleteBuildJobRequest, DeleteBuildJobResponse> genFordeleteBuildJob() {
+    private static HttpRequestDef<DeleteBuildJobRequest, DeleteBuildJobResponse> genForDeleteBuildJob() {
         // basic
         HttpRequestDef.Builder<DeleteBuildJobRequest, DeleteBuildJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteBuildJobRequest.class, DeleteBuildJobResponse.class)
@@ -141,9 +137,7 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBuildJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteBuildJobRequest::getJobId, DeleteBuildJobRequest::setJobId));
 
         // response
 
@@ -151,9 +145,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<DeleteTemplatesRequest, DeleteTemplatesResponse> deleteTemplates =
-        genFordeleteTemplates();
+        genForDeleteTemplates();
 
-    private static HttpRequestDef<DeleteTemplatesRequest, DeleteTemplatesResponse> genFordeleteTemplates() {
+    private static HttpRequestDef<DeleteTemplatesRequest, DeleteTemplatesResponse> genForDeleteTemplates() {
         // basic
         HttpRequestDef.Builder<DeleteTemplatesRequest, DeleteTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplatesRequest.class, DeleteTemplatesResponse.class)
@@ -166,9 +160,7 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplatesRequest::getUuid, (req, v) -> {
-                req.setUuid(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplatesRequest::getUuid, DeleteTemplatesRequest::setUuid));
 
         // response
 
@@ -176,9 +168,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<DisableBuildJobRequest, DisableBuildJobResponse> disableBuildJob =
-        genFordisableBuildJob();
+        genForDisableBuildJob();
 
-    private static HttpRequestDef<DisableBuildJobRequest, DisableBuildJobResponse> genFordisableBuildJob() {
+    private static HttpRequestDef<DisableBuildJobRequest, DisableBuildJobResponse> genForDisableBuildJob() {
         // basic
         HttpRequestDef.Builder<DisableBuildJobRequest, DisableBuildJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableBuildJobRequest.class, DisableBuildJobResponse.class)
@@ -191,9 +183,7 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableBuildJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DisableBuildJobRequest::getJobId, DisableBuildJobRequest::setJobId));
 
         // response
 
@@ -201,9 +191,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<DisableNoticeRequest, DisableNoticeResponse> disableNotice =
-        genFordisableNotice();
+        genForDisableNotice();
 
-    private static HttpRequestDef<DisableNoticeRequest, DisableNoticeResponse> genFordisableNotice() {
+    private static HttpRequestDef<DisableNoticeRequest, DisableNoticeResponse> genForDisableNotice() {
         // basic
         HttpRequestDef.Builder<DisableNoticeRequest, DisableNoticeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableNoticeRequest.class, DisableNoticeResponse.class)
@@ -216,16 +206,12 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableNoticeRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DisableNoticeRequest::getJobId, DisableNoticeRequest::setJobId));
         builder.<String>withRequestField("notice_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableNoticeRequest::getNoticeType, (req, v) -> {
-                req.setNoticeType(v);
-            }));
+            f -> f.withMarshaller(DisableNoticeRequest::getNoticeType, DisableNoticeRequest::setNoticeType));
 
         // response
 
@@ -233,9 +219,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<DownloadBuildLogRequest, DownloadBuildLogResponse> downloadBuildLog =
-        genFordownloadBuildLog();
+        genForDownloadBuildLog();
 
-    private static HttpRequestDef<DownloadBuildLogRequest, DownloadBuildLogResponse> genFordownloadBuildLog() {
+    private static HttpRequestDef<DownloadBuildLogRequest, DownloadBuildLogResponse> genForDownloadBuildLog() {
         // basic
         HttpRequestDef.Builder<DownloadBuildLogRequest, DownloadBuildLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadBuildLogRequest.class, DownloadBuildLogResponse.class)
@@ -248,16 +234,12 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadBuildLogRequest::getRecordId, (req, v) -> {
-                req.setRecordId(v);
-            }));
+            f -> f.withMarshaller(DownloadBuildLogRequest::getRecordId, DownloadBuildLogRequest::setRecordId));
         builder.<String>withRequestField("log_level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadBuildLogRequest::getLogLevel, (req, v) -> {
-                req.setLogLevel(v);
-            }));
+            f -> f.withMarshaller(DownloadBuildLogRequest::getLogLevel, DownloadBuildLogRequest::setLogLevel));
 
         // response
 
@@ -265,9 +247,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> downloadKeystore =
-        genFordownloadKeystore();
+        genForDownloadKeystore();
 
-    private static HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> genFordownloadKeystore() {
+    private static HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> genForDownloadKeystore() {
         // basic
         HttpRequestDef.Builder<DownloadKeystoreRequest, DownloadKeystoreResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadKeystoreRequest.class, DownloadKeystoreResponse.class)
@@ -280,16 +262,12 @@ public class CodeArtsBuildMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadKeystoreRequest::getFileName, (req, v) -> {
-                req.setFileName(v);
-            }));
+            f -> f.withMarshaller(DownloadKeystoreRequest::getFileName, DownloadKeystoreRequest::setFileName));
         builder.<String>withRequestField("domain_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadKeystoreRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DownloadKeystoreRequest::getDomainId, DownloadKeystoreRequest::setDomainId));
 
         // response
 
@@ -297,9 +275,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<DownloadTaskLogRequest, DownloadTaskLogResponse> downloadTaskLog =
-        genFordownloadTaskLog();
+        genForDownloadTaskLog();
 
-    private static HttpRequestDef<DownloadTaskLogRequest, DownloadTaskLogResponse> genFordownloadTaskLog() {
+    private static HttpRequestDef<DownloadTaskLogRequest, DownloadTaskLogResponse> genForDownloadTaskLog() {
         // basic
         HttpRequestDef.Builder<DownloadTaskLogRequest, DownloadTaskLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadTaskLogRequest.class, DownloadTaskLogResponse.class)
@@ -312,23 +290,17 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadTaskLogRequest::getRecordId, (req, v) -> {
-                req.setRecordId(v);
-            }));
+            f -> f.withMarshaller(DownloadTaskLogRequest::getRecordId, DownloadTaskLogRequest::setRecordId));
         builder.<String>withRequestField("task_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadTaskLogRequest::getTaskName, (req, v) -> {
-                req.setTaskName(v);
-            }));
+            f -> f.withMarshaller(DownloadTaskLogRequest::getTaskName, DownloadTaskLogRequest::setTaskName));
         builder.<String>withRequestField("log_level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadTaskLogRequest::getLogLevel, (req, v) -> {
-                req.setLogLevel(v);
-            }));
+            f -> f.withMarshaller(DownloadTaskLogRequest::getLogLevel, DownloadTaskLogRequest::setLogLevel));
 
         // response
 
@@ -336,9 +308,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<EnableBuildJobRequest, EnableBuildJobResponse> enableBuildJob =
-        genForenableBuildJob();
+        genForEnableBuildJob();
 
-    private static HttpRequestDef<EnableBuildJobRequest, EnableBuildJobResponse> genForenableBuildJob() {
+    private static HttpRequestDef<EnableBuildJobRequest, EnableBuildJobResponse> genForEnableBuildJob() {
         // basic
         HttpRequestDef.Builder<EnableBuildJobRequest, EnableBuildJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableBuildJobRequest.class, EnableBuildJobResponse.class)
@@ -351,9 +323,7 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableBuildJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(EnableBuildJobRequest::getJobId, EnableBuildJobRequest::setJobId));
 
         // response
 
@@ -361,9 +331,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ListJobConfigRequest, ListJobConfigResponse> listJobConfig =
-        genForlistJobConfig();
+        genForListJobConfig();
 
-    private static HttpRequestDef<ListJobConfigRequest, ListJobConfigResponse> genForlistJobConfig() {
+    private static HttpRequestDef<ListJobConfigRequest, ListJobConfigResponse> genForListJobConfig() {
         // basic
         HttpRequestDef.Builder<ListJobConfigRequest, ListJobConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobConfigRequest.class, ListJobConfigResponse.class)
@@ -376,25 +346,21 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobConfigRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListJobConfigRequest::getJobId, ListJobConfigRequest::setJobId));
         builder.<String>withRequestField("get_all_params",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobConfigRequest::getGetAllParams, (req, v) -> {
-                req.setGetAllParams(v);
-            }));
+            f -> f.withMarshaller(ListJobConfigRequest::getGetAllParams, ListJobConfigRequest::setGetAllParams));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNoticeRequest, ListNoticeResponse> listNotice = genForlistNotice();
+    public static final HttpRequestDef<ListNoticeRequest, ListNoticeResponse> listNotice = genForListNotice();
 
-    private static HttpRequestDef<ListNoticeRequest, ListNoticeResponse> genForlistNotice() {
+    private static HttpRequestDef<ListNoticeRequest, ListNoticeResponse> genForListNotice() {
         // basic
         HttpRequestDef.Builder<ListNoticeRequest, ListNoticeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNoticeRequest.class, ListNoticeResponse.class)
@@ -407,9 +373,7 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNoticeRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListNoticeRequest::getJobId, ListNoticeRequest::setJobId));
 
         // response
 
@@ -417,9 +381,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates =
-        genForlistTemplates();
+        genForListTemplates();
 
-    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForlistTemplates() {
+    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForListTemplates() {
         // basic
         HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
@@ -432,32 +396,26 @@ public class CodeArtsBuildMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getName, ListTemplatesRequest::setName));
         builder.<String>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getPage, ListTemplatesRequest::setPage));
         builder.<String>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getPageSize, ListTemplatesRequest::setPageSize));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunJobRequest, RunJobResponse> runJob = genForrunJob();
+    public static final HttpRequestDef<RunJobRequest, RunJobResponse> runJob = genForRunJob();
 
-    private static HttpRequestDef<RunJobRequest, RunJobResponse> genForrunJob() {
+    private static HttpRequestDef<RunJobRequest, RunJobResponse> genForRunJob() {
         // basic
         HttpRequestDef.Builder<RunJobRequest, RunJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunJobRequest.class, RunJobResponse.class)
@@ -470,9 +428,7 @@ public class CodeArtsBuildMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RunJobRequestBody.class),
-            f -> f.withMarshaller(RunJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunJobRequest::getBody, RunJobRequest::setBody));
 
         // response
 
@@ -480,9 +436,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse> showHistoryDetails =
-        genForshowHistoryDetails();
+        genForShowHistoryDetails();
 
-    private static HttpRequestDef<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse> genForshowHistoryDetails() {
+    private static HttpRequestDef<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse> genForShowHistoryDetails() {
         // basic
         HttpRequestDef.Builder<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHistoryDetailsRequest.class, ShowHistoryDetailsResponse.class)
@@ -495,16 +451,13 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryDetailsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryDetailsRequest::getJobId, ShowHistoryDetailsRequest::setJobId));
         builder.<Integer>withRequestField("build_number",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHistoryDetailsRequest::getBuildNumber, (req, v) -> {
-                req.setBuildNumber(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryDetailsRequest::getBuildNumber,
+                ShowHistoryDetailsRequest::setBuildNumber));
 
         // response
 
@@ -512,9 +465,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> showJobListByProjectId =
-        genForshowJobListByProjectId();
+        genForShowJobListByProjectId();
 
-    private static HttpRequestDef<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> genForshowJobListByProjectId() {
+    private static HttpRequestDef<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> genForShowJobListByProjectId() {
         // basic
         HttpRequestDef.Builder<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowJobListByProjectIdRequest.class, ShowJobListByProjectIdResponse.class)
@@ -527,23 +480,20 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobListByProjectIdRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowJobListByProjectIdRequest::getProjectId,
+                ShowJobListByProjectIdRequest::setProjectId));
         builder.<Integer>withRequestField("page_index",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowJobListByProjectIdRequest::getPageIndex, (req, v) -> {
-                req.setPageIndex(v);
-            }));
+            f -> f.withMarshaller(ShowJobListByProjectIdRequest::getPageIndex,
+                ShowJobListByProjectIdRequest::setPageIndex));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowJobListByProjectIdRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowJobListByProjectIdRequest::getPageSize,
+                ShowJobListByProjectIdRequest::setPageSize));
 
         // response
 
@@ -551,9 +501,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatus =
-        genForshowJobStatus();
+        genForShowJobStatus();
 
-    private static HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> genForshowJobStatus() {
+    private static HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> genForShowJobStatus() {
         // basic
         HttpRequestDef.Builder<ShowJobStatusRequest, ShowJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobStatusRequest.class, ShowJobStatusResponse.class)
@@ -566,9 +516,7 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobStatusRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobStatusRequest::getJobId, ShowJobStatusRequest::setJobId));
 
         // response
 
@@ -576,9 +524,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> showJobSuccessRatio =
-        genForshowJobSuccessRatio();
+        genForShowJobSuccessRatio();
 
-    private static HttpRequestDef<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> genForshowJobSuccessRatio() {
+    private static HttpRequestDef<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> genForShowJobSuccessRatio() {
         // basic
         HttpRequestDef.Builder<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobSuccessRatioRequest.class, ShowJobSuccessRatioResponse.class)
@@ -591,23 +539,17 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobSuccessRatioRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobSuccessRatioRequest::getJobId, ShowJobSuccessRatioRequest::setJobId));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobSuccessRatioRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowJobSuccessRatioRequest::getStartTime, ShowJobSuccessRatioRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobSuccessRatioRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowJobSuccessRatioRequest::getEndTime, ShowJobSuccessRatioRequest::setEndTime));
 
         // response
 
@@ -615,9 +557,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowLastHistoryRequest, ShowLastHistoryResponse> showLastHistory =
-        genForshowLastHistory();
+        genForShowLastHistory();
 
-    private static HttpRequestDef<ShowLastHistoryRequest, ShowLastHistoryResponse> genForshowLastHistory() {
+    private static HttpRequestDef<ShowLastHistoryRequest, ShowLastHistoryResponse> genForShowLastHistory() {
         // basic
         HttpRequestDef.Builder<ShowLastHistoryRequest, ShowLastHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLastHistoryRequest.class, ShowLastHistoryResponse.class)
@@ -630,16 +572,13 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLastHistoryRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowLastHistoryRequest::getProjectId, ShowLastHistoryRequest::setProjectId));
         builder.<String>withRequestField("repository_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLastHistoryRequest::getRepositoryName, (req, v) -> {
-                req.setRepositoryName(v);
-            }));
+            f -> f.withMarshaller(ShowLastHistoryRequest::getRepositoryName,
+                ShowLastHistoryRequest::setRepositoryName));
 
         // response
 
@@ -647,9 +586,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowListHistoryRequest, ShowListHistoryResponse> showListHistory =
-        genForshowListHistory();
+        genForShowListHistory();
 
-    private static HttpRequestDef<ShowListHistoryRequest, ShowListHistoryResponse> genForshowListHistory() {
+    private static HttpRequestDef<ShowListHistoryRequest, ShowListHistoryResponse> genForShowListHistory() {
         // basic
         HttpRequestDef.Builder<ShowListHistoryRequest, ShowListHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowListHistoryRequest.class, ShowListHistoryResponse.class)
@@ -662,30 +601,22 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowListHistoryRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowListHistoryRequest::getJobId, ShowListHistoryRequest::setJobId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowListHistoryRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowListHistoryRequest::getOffset, ShowListHistoryRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowListHistoryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowListHistoryRequest::getLimit, ShowListHistoryRequest::setLimit));
         builder.<Integer>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowListHistoryRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ShowListHistoryRequest::getInterval, ShowListHistoryRequest::setInterval));
 
         // response
 
@@ -693,9 +624,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> showListPeriodHistory =
-        genForshowListPeriodHistory();
+        genForShowListPeriodHistory();
 
-    private static HttpRequestDef<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> genForshowListPeriodHistory() {
+    private static HttpRequestDef<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> genForShowListPeriodHistory() {
         // basic
         HttpRequestDef.Builder<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowListPeriodHistoryRequest.class, ShowListPeriodHistoryResponse.class)
@@ -708,37 +639,28 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getJobId, ShowListPeriodHistoryRequest::setJobId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getOffset, ShowListPeriodHistoryRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getLimit, ShowListPeriodHistoryRequest::setLimit));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getStartTime,
+                ShowListPeriodHistoryRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getEndTime, ShowListPeriodHistoryRequest::setEndTime));
 
         // response
 
@@ -746,9 +668,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowOutputInfoRequest, ShowOutputInfoResponse> showOutputInfo =
-        genForshowOutputInfo();
+        genForShowOutputInfo();
 
-    private static HttpRequestDef<ShowOutputInfoRequest, ShowOutputInfoResponse> genForshowOutputInfo() {
+    private static HttpRequestDef<ShowOutputInfoRequest, ShowOutputInfoResponse> genForShowOutputInfo() {
         // basic
         HttpRequestDef.Builder<ShowOutputInfoRequest, ShowOutputInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOutputInfoRequest.class, ShowOutputInfoResponse.class)
@@ -761,16 +683,12 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOutputInfoRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowOutputInfoRequest::getJobId, ShowOutputInfoRequest::setJobId));
         builder.<Integer>withRequestField("build_no",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowOutputInfoRequest::getBuildNo, (req, v) -> {
-                req.setBuildNo(v);
-            }));
+            f -> f.withMarshaller(ShowOutputInfoRequest::getBuildNo, ShowOutputInfoRequest::setBuildNo));
 
         // response
 
@@ -778,9 +696,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowRecordDetailRequest, ShowRecordDetailResponse> showRecordDetail =
-        genForshowRecordDetail();
+        genForShowRecordDetail();
 
-    private static HttpRequestDef<ShowRecordDetailRequest, ShowRecordDetailResponse> genForshowRecordDetail() {
+    private static HttpRequestDef<ShowRecordDetailRequest, ShowRecordDetailResponse> genForShowRecordDetail() {
         // basic
         HttpRequestDef.Builder<ShowRecordDetailRequest, ShowRecordDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecordDetailRequest.class, ShowRecordDetailResponse.class)
@@ -793,25 +711,21 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordDetailRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordDetailRequest::getJobId, ShowRecordDetailRequest::setJobId));
         builder.<Integer>withRequestField("build_no",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRecordDetailRequest::getBuildNo, (req, v) -> {
-                req.setBuildNo(v);
-            }));
+            f -> f.withMarshaller(ShowRecordDetailRequest::getBuildNo, ShowRecordDetailRequest::setBuildNo));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopBuildJobRequest, StopBuildJobResponse> stopBuildJob = genForstopBuildJob();
+    public static final HttpRequestDef<StopBuildJobRequest, StopBuildJobResponse> stopBuildJob = genForStopBuildJob();
 
-    private static HttpRequestDef<StopBuildJobRequest, StopBuildJobResponse> genForstopBuildJob() {
+    private static HttpRequestDef<StopBuildJobRequest, StopBuildJobResponse> genForStopBuildJob() {
         // basic
         HttpRequestDef.Builder<StopBuildJobRequest, StopBuildJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopBuildJobRequest.class, StopBuildJobResponse.class)
@@ -824,16 +738,12 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopBuildJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(StopBuildJobRequest::getJobId, StopBuildJobRequest::setJobId));
         builder.<Integer>withRequestField("build_no",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(StopBuildJobRequest::getBuildNo, (req, v) -> {
-                req.setBuildNo(v);
-            }));
+            f -> f.withMarshaller(StopBuildJobRequest::getBuildNo, StopBuildJobRequest::setBuildNo));
 
         // response
 
@@ -841,9 +751,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<UpdateBuildJobRequest, UpdateBuildJobResponse> updateBuildJob =
-        genForupdateBuildJob();
+        genForUpdateBuildJob();
 
-    private static HttpRequestDef<UpdateBuildJobRequest, UpdateBuildJobResponse> genForupdateBuildJob() {
+    private static HttpRequestDef<UpdateBuildJobRequest, UpdateBuildJobResponse> genForUpdateBuildJob() {
         // basic
         HttpRequestDef.Builder<UpdateBuildJobRequest, UpdateBuildJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateBuildJobRequest.class, UpdateBuildJobResponse.class)
@@ -856,18 +766,16 @@ public class CodeArtsBuildMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBuildJobRequestBody.class),
-            f -> f.withMarshaller(UpdateBuildJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBuildJobRequest::getBody, UpdateBuildJobRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateNoticeRequest, UpdateNoticeResponse> updateNotice = genForupdateNotice();
+    public static final HttpRequestDef<UpdateNoticeRequest, UpdateNoticeResponse> updateNotice = genForUpdateNotice();
 
-    private static HttpRequestDef<UpdateNoticeRequest, UpdateNoticeResponse> genForupdateNotice() {
+    private static HttpRequestDef<UpdateNoticeRequest, UpdateNoticeResponse> genForUpdateNotice() {
         // basic
         HttpRequestDef.Builder<UpdateNoticeRequest, UpdateNoticeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateNoticeRequest.class, UpdateNoticeResponse.class)
@@ -880,16 +788,12 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNoticeRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateNoticeRequest::getJobId, UpdateNoticeRequest::setJobId));
         builder.<UpdateNoticeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNoticeRequestBody.class),
-            f -> f.withMarshaller(UpdateNoticeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNoticeRequest::getBody, UpdateNoticeRequest::setBody));
 
         // response
 
@@ -897,9 +801,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse> downloadLogByRecordId =
-        genFordownloadLogByRecordId();
+        genForDownloadLogByRecordId();
 
-    private static HttpRequestDef<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse> genFordownloadLogByRecordId() {
+    private static HttpRequestDef<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse> genForDownloadLogByRecordId() {
         // basic
         HttpRequestDef.Builder<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, DownloadLogByRecordIdRequest.class, DownloadLogByRecordIdResponse.class)
@@ -912,9 +816,8 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadLogByRecordIdRequest::getRecordId, (req, v) -> {
-                req.setRecordId(v);
-            }));
+            f -> f.withMarshaller(DownloadLogByRecordIdRequest::getRecordId,
+                DownloadLogByRecordIdRequest::setRecordId));
 
         // response
 
@@ -922,9 +825,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowFlowGraphRequest, ShowFlowGraphResponse> showFlowGraph =
-        genForshowFlowGraph();
+        genForShowFlowGraph();
 
-    private static HttpRequestDef<ShowFlowGraphRequest, ShowFlowGraphResponse> genForshowFlowGraph() {
+    private static HttpRequestDef<ShowFlowGraphRequest, ShowFlowGraphResponse> genForShowFlowGraph() {
         // basic
         HttpRequestDef.Builder<ShowFlowGraphRequest, ShowFlowGraphResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFlowGraphRequest.class, ShowFlowGraphResponse.class)
@@ -937,9 +840,8 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFlowGraphRequest::getBuildFlowRecordId, (req, v) -> {
-                req.setBuildFlowRecordId(v);
-            }));
+            f -> f.withMarshaller(ShowFlowGraphRequest::getBuildFlowRecordId,
+                ShowFlowGraphRequest::setBuildFlowRecordId));
 
         // response
 
@@ -947,9 +849,9 @@ public class CodeArtsBuildMeta {
     }
 
     public static final HttpRequestDef<ShowRecordInfoRequest, ShowRecordInfoResponse> showRecordInfo =
-        genForshowRecordInfo();
+        genForShowRecordInfo();
 
-    private static HttpRequestDef<ShowRecordInfoRequest, ShowRecordInfoResponse> genForshowRecordInfo() {
+    private static HttpRequestDef<ShowRecordInfoRequest, ShowRecordInfoResponse> genForShowRecordInfo() {
         // basic
         HttpRequestDef.Builder<ShowRecordInfoRequest, ShowRecordInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecordInfoRequest.class, ShowRecordInfoResponse.class)
@@ -962,25 +864,21 @@ public class CodeArtsBuildMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordInfoRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordInfoRequest::getJobId, ShowRecordInfoRequest::setJobId));
         builder.<Integer>withRequestField("build_no",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRecordInfoRequest::getBuildNo, (req, v) -> {
-                req.setBuildNo(v);
-            }));
+            f -> f.withMarshaller(ShowRecordInfoRequest::getBuildNo, ShowRecordInfoRequest::setBuildNo));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopJobRequest, StopJobResponse> stopJob = genForstopJob();
+    public static final HttpRequestDef<StopJobRequest, StopJobResponse> stopJob = genForStopJob();
 
-    private static HttpRequestDef<StopJobRequest, StopJobResponse> genForstopJob() {
+    private static HttpRequestDef<StopJobRequest, StopJobResponse> genForStopJob() {
         // basic
         HttpRequestDef.Builder<StopJobRequest, StopJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopJobRequest.class, StopJobResponse.class)
@@ -993,9 +891,7 @@ public class CodeArtsBuildMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StopJobRequestBody.class),
-            f -> f.withMarshaller(StopJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StopJobRequest::getBody, StopJobRequest::setBody));
 
         // response
 

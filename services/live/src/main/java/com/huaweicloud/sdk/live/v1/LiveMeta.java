@@ -141,9 +141,9 @@ import java.util.List;
 public class LiveMeta {
 
     public static final HttpRequestDef<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse> batchShowIpBelongs =
-        genForbatchShowIpBelongs();
+        genForBatchShowIpBelongs();
 
-    private static HttpRequestDef<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse> genForbatchShowIpBelongs() {
+    private static HttpRequestDef<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse> genForBatchShowIpBelongs() {
         // basic
         HttpRequestDef.Builder<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchShowIpBelongsRequest.class, BatchShowIpBelongsResponse.class)
@@ -156,18 +156,16 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchShowIpBelongsRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(BatchShowIpBelongsRequest::getIp, BatchShowIpBelongsRequest::setIp));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForcreateDomain();
+    public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForCreateDomain();
 
-    private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForcreateDomain() {
+    private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForCreateDomain() {
         // basic
         HttpRequestDef.Builder<CreateDomainRequest, CreateDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDomainRequest.class, CreateDomainResponse.class)
@@ -180,9 +178,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDomainCreateReq.class),
-            f -> f.withMarshaller(CreateDomainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDomainRequest::getBody, CreateDomainRequest::setBody));
 
         // response
 
@@ -190,9 +186,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<CreateDomainMappingRequest, CreateDomainMappingResponse> createDomainMapping =
-        genForcreateDomainMapping();
+        genForCreateDomainMapping();
 
-    private static HttpRequestDef<CreateDomainMappingRequest, CreateDomainMappingResponse> genForcreateDomainMapping() {
+    private static HttpRequestDef<CreateDomainMappingRequest, CreateDomainMappingResponse> genForCreateDomainMapping() {
         // basic
         HttpRequestDef.Builder<CreateDomainMappingRequest, CreateDomainMappingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateDomainMappingRequest.class, CreateDomainMappingResponse.class)
@@ -205,9 +201,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DomainMapping.class),
-            f -> f.withMarshaller(CreateDomainMappingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDomainMappingRequest::getBody, CreateDomainMappingRequest::setBody));
 
         // response
 
@@ -215,9 +209,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse> createRecordCallbackConfig =
-        genForcreateRecordCallbackConfig();
+        genForCreateRecordCallbackConfig();
 
-    private static HttpRequestDef<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse> genForcreateRecordCallbackConfig() {
+    private static HttpRequestDef<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse> genForCreateRecordCallbackConfig() {
         // basic
         HttpRequestDef.Builder<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse> builder =
             HttpRequestDef
@@ -233,9 +227,8 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecordCallbackConfigRequest.class),
-            f -> f.withMarshaller(CreateRecordCallbackConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRecordCallbackConfigRequest::getBody,
+                CreateRecordCallbackConfigRequest::setBody));
 
         // response
 
@@ -243,9 +236,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<CreateRecordIndexRequest, CreateRecordIndexResponse> createRecordIndex =
-        genForcreateRecordIndex();
+        genForCreateRecordIndex();
 
-    private static HttpRequestDef<CreateRecordIndexRequest, CreateRecordIndexResponse> genForcreateRecordIndex() {
+    private static HttpRequestDef<CreateRecordIndexRequest, CreateRecordIndexResponse> genForCreateRecordIndex() {
         // basic
         HttpRequestDef.Builder<CreateRecordIndexRequest, CreateRecordIndexResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRecordIndexRequest.class, CreateRecordIndexResponse.class)
@@ -258,9 +251,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecordIndexRequestBody.class),
-            f -> f.withMarshaller(CreateRecordIndexRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRecordIndexRequest::getBody, CreateRecordIndexRequest::setBody));
 
         // response
 
@@ -273,9 +264,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<CreateRecordRuleRequest, CreateRecordRuleResponse> createRecordRule =
-        genForcreateRecordRule();
+        genForCreateRecordRule();
 
-    private static HttpRequestDef<CreateRecordRuleRequest, CreateRecordRuleResponse> genForcreateRecordRule() {
+    private static HttpRequestDef<CreateRecordRuleRequest, CreateRecordRuleResponse> genForCreateRecordRule() {
         // basic
         HttpRequestDef.Builder<CreateRecordRuleRequest, CreateRecordRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRecordRuleRequest.class, CreateRecordRuleResponse.class)
@@ -288,9 +279,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecordRuleRequest.class),
-            f -> f.withMarshaller(CreateRecordRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRecordRuleRequest::getBody, CreateRecordRuleRequest::setBody));
 
         // response
 
@@ -298,9 +287,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse> createSnapshotConfig =
-        genForcreateSnapshotConfig();
+        genForCreateSnapshotConfig();
 
-    private static HttpRequestDef<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse> genForcreateSnapshotConfig() {
+    private static HttpRequestDef<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse> genForCreateSnapshotConfig() {
         // basic
         HttpRequestDef.Builder<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateSnapshotConfigRequest.class, CreateSnapshotConfigResponse.class)
@@ -313,9 +302,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveSnapshotConfig.class),
-            f -> f.withMarshaller(CreateSnapshotConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSnapshotConfigRequest::getBody, CreateSnapshotConfigRequest::setBody));
 
         // response
 
@@ -323,9 +310,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse> createStreamForbidden =
-        genForcreateStreamForbidden();
+        genForCreateStreamForbidden();
 
-    private static HttpRequestDef<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse> genForcreateStreamForbidden() {
+    private static HttpRequestDef<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse> genForCreateStreamForbidden() {
         // basic
         HttpRequestDef.Builder<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateStreamForbiddenRequest.class, CreateStreamForbiddenResponse.class)
@@ -338,9 +325,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StreamForbiddenSetting.class),
-            f -> f.withMarshaller(CreateStreamForbiddenRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStreamForbiddenRequest::getBody, CreateStreamForbiddenRequest::setBody));
 
         // response
 
@@ -348,9 +333,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse> createTranscodingsTemplate =
-        genForcreateTranscodingsTemplate();
+        genForCreateTranscodingsTemplate();
 
-    private static HttpRequestDef<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse> genForcreateTranscodingsTemplate() {
+    private static HttpRequestDef<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse> genForCreateTranscodingsTemplate() {
         // basic
         HttpRequestDef.Builder<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse> builder =
             HttpRequestDef
@@ -366,9 +351,8 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StreamTranscodingTemplate.class),
-            f -> f.withMarshaller(CreateTranscodingsTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTranscodingsTemplateRequest::getBody,
+                CreateTranscodingsTemplateRequest::setBody));
 
         // response
 
@@ -376,9 +360,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse> createUrlAuthchain =
-        genForcreateUrlAuthchain();
+        genForCreateUrlAuthchain();
 
-    private static HttpRequestDef<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse> genForcreateUrlAuthchain() {
+    private static HttpRequestDef<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse> genForCreateUrlAuthchain() {
         // basic
         HttpRequestDef.Builder<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateUrlAuthchainRequest.class, CreateUrlAuthchainResponse.class)
@@ -391,18 +375,16 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateUrlAuthchainReq.class),
-            f -> f.withMarshaller(CreateUrlAuthchainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateUrlAuthchainRequest::getBody, CreateUrlAuthchainRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genFordeleteDomain();
+    public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genForDeleteDomain();
 
-    private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genFordeleteDomain() {
+    private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genForDeleteDomain() {
         // basic
         HttpRequestDef.Builder<DeleteDomainRequest, DeleteDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainRequest.class, DeleteDomainResponse.class)
@@ -415,9 +397,7 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainRequest::getDomain, DeleteDomainRequest::setDomain));
 
         // response
 
@@ -425,9 +405,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse> deleteDomainKeyChain =
-        genFordeleteDomainKeyChain();
+        genForDeleteDomainKeyChain();
 
-    private static HttpRequestDef<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse> genFordeleteDomainKeyChain() {
+    private static HttpRequestDef<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse> genForDeleteDomainKeyChain() {
         // basic
         HttpRequestDef.Builder<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteDomainKeyChainRequest.class, DeleteDomainKeyChainResponse.class)
@@ -440,9 +420,7 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainKeyChainRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainKeyChainRequest::getDomain, DeleteDomainKeyChainRequest::setDomain));
 
         // response
 
@@ -450,9 +428,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<DeleteDomainMappingRequest, DeleteDomainMappingResponse> deleteDomainMapping =
-        genFordeleteDomainMapping();
+        genForDeleteDomainMapping();
 
-    private static HttpRequestDef<DeleteDomainMappingRequest, DeleteDomainMappingResponse> genFordeleteDomainMapping() {
+    private static HttpRequestDef<DeleteDomainMappingRequest, DeleteDomainMappingResponse> genForDeleteDomainMapping() {
         // basic
         HttpRequestDef.Builder<DeleteDomainMappingRequest, DeleteDomainMappingResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteDomainMappingRequest.class, DeleteDomainMappingResponse.class)
@@ -465,16 +443,14 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainMappingRequest::getPullDomain, (req, v) -> {
-                req.setPullDomain(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainMappingRequest::getPullDomain,
+                DeleteDomainMappingRequest::setPullDomain));
         builder.<String>withRequestField("push_domain",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainMappingRequest::getPushDomain, (req, v) -> {
-                req.setPushDomain(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainMappingRequest::getPushDomain,
+                DeleteDomainMappingRequest::setPushDomain));
 
         // response
 
@@ -482,9 +458,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<DeletePublishTemplateRequest, DeletePublishTemplateResponse> deletePublishTemplate =
-        genFordeletePublishTemplate();
+        genForDeletePublishTemplate();
 
-    private static HttpRequestDef<DeletePublishTemplateRequest, DeletePublishTemplateResponse> genFordeletePublishTemplate() {
+    private static HttpRequestDef<DeletePublishTemplateRequest, DeletePublishTemplateResponse> genForDeletePublishTemplate() {
         // basic
         HttpRequestDef.Builder<DeletePublishTemplateRequest, DeletePublishTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeletePublishTemplateRequest.class, DeletePublishTemplateResponse.class)
@@ -497,9 +473,7 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePublishTemplateRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(DeletePublishTemplateRequest::getDomain, DeletePublishTemplateRequest::setDomain));
 
         // response
 
@@ -507,9 +481,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse> deleteRecordCallbackConfig =
-        genFordeleteRecordCallbackConfig();
+        genForDeleteRecordCallbackConfig();
 
-    private static HttpRequestDef<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse> genFordeleteRecordCallbackConfig() {
+    private static HttpRequestDef<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse> genForDeleteRecordCallbackConfig() {
         // basic
         HttpRequestDef.Builder<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse> builder =
             HttpRequestDef
@@ -525,9 +499,7 @@ public class LiveMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordCallbackConfigRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordCallbackConfigRequest::getId, DeleteRecordCallbackConfigRequest::setId));
 
         // response
 
@@ -535,9 +507,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<DeleteRecordRuleRequest, DeleteRecordRuleResponse> deleteRecordRule =
-        genFordeleteRecordRule();
+        genForDeleteRecordRule();
 
-    private static HttpRequestDef<DeleteRecordRuleRequest, DeleteRecordRuleResponse> genFordeleteRecordRule() {
+    private static HttpRequestDef<DeleteRecordRuleRequest, DeleteRecordRuleResponse> genForDeleteRecordRule() {
         // basic
         HttpRequestDef.Builder<DeleteRecordRuleRequest, DeleteRecordRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordRuleRequest.class, DeleteRecordRuleResponse.class)
@@ -550,9 +522,7 @@ public class LiveMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordRuleRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordRuleRequest::getId, DeleteRecordRuleRequest::setId));
 
         // response
 
@@ -560,9 +530,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse> deleteSnapshotConfig =
-        genFordeleteSnapshotConfig();
+        genForDeleteSnapshotConfig();
 
-    private static HttpRequestDef<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse> genFordeleteSnapshotConfig() {
+    private static HttpRequestDef<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse> genForDeleteSnapshotConfig() {
         // basic
         HttpRequestDef.Builder<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteSnapshotConfigRequest.class, DeleteSnapshotConfigResponse.class)
@@ -575,16 +545,12 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSnapshotConfigRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(DeleteSnapshotConfigRequest::getDomain, DeleteSnapshotConfigRequest::setDomain));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSnapshotConfigRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(DeleteSnapshotConfigRequest::getAppName, DeleteSnapshotConfigRequest::setAppName));
 
         // response
 
@@ -592,9 +558,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse> deleteStreamForbidden =
-        genFordeleteStreamForbidden();
+        genForDeleteStreamForbidden();
 
-    private static HttpRequestDef<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse> genFordeleteStreamForbidden() {
+    private static HttpRequestDef<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse> genForDeleteStreamForbidden() {
         // basic
         HttpRequestDef.Builder<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteStreamForbiddenRequest.class, DeleteStreamForbiddenResponse.class)
@@ -607,23 +573,18 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStreamForbiddenRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(DeleteStreamForbiddenRequest::getDomain, DeleteStreamForbiddenRequest::setDomain));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStreamForbiddenRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(DeleteStreamForbiddenRequest::getAppName, DeleteStreamForbiddenRequest::setAppName));
         builder.<String>withRequestField("stream_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStreamForbiddenRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(DeleteStreamForbiddenRequest::getStreamName,
+                DeleteStreamForbiddenRequest::setStreamName));
 
         // response
 
@@ -631,9 +592,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse> deleteTranscodingsTemplate =
-        genFordeleteTranscodingsTemplate();
+        genForDeleteTranscodingsTemplate();
 
-    private static HttpRequestDef<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse> genFordeleteTranscodingsTemplate() {
+    private static HttpRequestDef<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse> genForDeleteTranscodingsTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse> builder =
             HttpRequestDef
@@ -649,16 +610,14 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTranscodingsTemplateRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(DeleteTranscodingsTemplateRequest::getDomain,
+                DeleteTranscodingsTemplateRequest::setDomain));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTranscodingsTemplateRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(DeleteTranscodingsTemplateRequest::getAppName,
+                DeleteTranscodingsTemplateRequest::setAppName));
 
         // response
 
@@ -666,9 +625,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListDelayConfigRequest, ListDelayConfigResponse> listDelayConfig =
-        genForlistDelayConfig();
+        genForListDelayConfig();
 
-    private static HttpRequestDef<ListDelayConfigRequest, ListDelayConfigResponse> genForlistDelayConfig() {
+    private static HttpRequestDef<ListDelayConfigRequest, ListDelayConfigResponse> genForListDelayConfig() {
         // basic
         HttpRequestDef.Builder<ListDelayConfigRequest, ListDelayConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDelayConfigRequest.class, ListDelayConfigResponse.class)
@@ -681,9 +640,7 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDelayConfigRequest::getPlayDomain, (req, v) -> {
-                req.setPlayDomain(v);
-            }));
+            f -> f.withMarshaller(ListDelayConfigRequest::getPlayDomain, ListDelayConfigRequest::setPlayDomain));
 
         // response
 
@@ -691,9 +648,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse> listGeoBlockingConfig =
-        genForlistGeoBlockingConfig();
+        genForListGeoBlockingConfig();
 
-    private static HttpRequestDef<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse> genForlistGeoBlockingConfig() {
+    private static HttpRequestDef<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse> genForListGeoBlockingConfig() {
         // basic
         HttpRequestDef.Builder<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListGeoBlockingConfigRequest.class, ListGeoBlockingConfigResponse.class)
@@ -706,9 +663,8 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGeoBlockingConfigRequest::getPlayDomain, (req, v) -> {
-                req.setPlayDomain(v);
-            }));
+            f -> f.withMarshaller(ListGeoBlockingConfigRequest::getPlayDomain,
+                ListGeoBlockingConfigRequest::setPlayDomain));
 
         // response
 
@@ -722,9 +678,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListIpAuthListRequest, ListIpAuthListResponse> listIpAuthList =
-        genForlistIpAuthList();
+        genForListIpAuthList();
 
-    private static HttpRequestDef<ListIpAuthListRequest, ListIpAuthListResponse> genForlistIpAuthList() {
+    private static HttpRequestDef<ListIpAuthListRequest, ListIpAuthListResponse> genForListIpAuthList() {
         // basic
         HttpRequestDef.Builder<ListIpAuthListRequest, ListIpAuthListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListIpAuthListRequest.class, ListIpAuthListResponse.class)
@@ -737,9 +693,7 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIpAuthListRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ListIpAuthListRequest::getDomain, ListIpAuthListRequest::setDomain));
 
         // response
 
@@ -752,9 +706,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse> listLiveSampleLogs =
-        genForlistLiveSampleLogs();
+        genForListLiveSampleLogs();
 
-    private static HttpRequestDef<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse> genForlistLiveSampleLogs() {
+    private static HttpRequestDef<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse> genForListLiveSampleLogs() {
         // basic
         HttpRequestDef.Builder<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLiveSampleLogsRequest.class, ListLiveSampleLogsResponse.class)
@@ -767,23 +721,17 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveSampleLogsRequest::getPlayDomain, (req, v) -> {
-                req.setPlayDomain(v);
-            }));
+            f -> f.withMarshaller(ListLiveSampleLogsRequest::getPlayDomain, ListLiveSampleLogsRequest::setPlayDomain));
         builder.<OffsetDateTime>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListLiveSampleLogsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListLiveSampleLogsRequest::getStartTime, ListLiveSampleLogsRequest::setStartTime));
         builder.<OffsetDateTime>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListLiveSampleLogsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListLiveSampleLogsRequest::getEndTime, ListLiveSampleLogsRequest::setEndTime));
 
         // response
 
@@ -791,9 +739,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse> listLiveStreamsOnline =
-        genForlistLiveStreamsOnline();
+        genForListLiveStreamsOnline();
 
-    private static HttpRequestDef<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse> genForlistLiveStreamsOnline() {
+    private static HttpRequestDef<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse> genForListLiveStreamsOnline() {
         // basic
         HttpRequestDef.Builder<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListLiveStreamsOnlineRequest.class, ListLiveStreamsOnlineResponse.class)
@@ -806,37 +754,28 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getPublishDomain, (req, v) -> {
-                req.setPublishDomain(v);
-            }));
+            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getPublishDomain,
+                ListLiveStreamsOnlineRequest::setPublishDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getApp, ListLiveStreamsOnlineRequest::setApp));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getOffset, ListLiveStreamsOnlineRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getLimit, ListLiveStreamsOnlineRequest::setLimit));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getStream, ListLiveStreamsOnlineRequest::setStream));
 
         // response
 
@@ -844,9 +783,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListPublishTemplateRequest, ListPublishTemplateResponse> listPublishTemplate =
-        genForlistPublishTemplate();
+        genForListPublishTemplate();
 
-    private static HttpRequestDef<ListPublishTemplateRequest, ListPublishTemplateResponse> genForlistPublishTemplate() {
+    private static HttpRequestDef<ListPublishTemplateRequest, ListPublishTemplateResponse> genForListPublishTemplate() {
         // basic
         HttpRequestDef.Builder<ListPublishTemplateRequest, ListPublishTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublishTemplateRequest.class, ListPublishTemplateResponse.class)
@@ -859,9 +798,7 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublishTemplateRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ListPublishTemplateRequest::getDomain, ListPublishTemplateRequest::setDomain));
 
         // response
 
@@ -869,9 +806,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse> listRecordCallbackConfigs =
-        genForlistRecordCallbackConfigs();
+        genForListRecordCallbackConfigs();
 
-    private static HttpRequestDef<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse> genForlistRecordCallbackConfigs() {
+    private static HttpRequestDef<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse> genForListRecordCallbackConfigs() {
         // basic
         HttpRequestDef.Builder<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse> builder =
             HttpRequestDef
@@ -887,30 +824,25 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getPublishDomain, (req, v) -> {
-                req.setPublishDomain(v);
-            }));
+            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getPublishDomain,
+                ListRecordCallbackConfigsRequest::setPublishDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getApp, ListRecordCallbackConfigsRequest::setApp));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getOffset,
+                ListRecordCallbackConfigsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getLimit,
+                ListRecordCallbackConfigsRequest::setLimit));
 
         // response
 
@@ -918,9 +850,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListRecordContentsRequest, ListRecordContentsResponse> listRecordContents =
-        genForlistRecordContents();
+        genForListRecordContents();
 
-    private static HttpRequestDef<ListRecordContentsRequest, ListRecordContentsResponse> genForlistRecordContents() {
+    private static HttpRequestDef<ListRecordContentsRequest, ListRecordContentsResponse> genForListRecordContents() {
         // basic
         HttpRequestDef.Builder<ListRecordContentsRequest, ListRecordContentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRecordContentsRequest.class, ListRecordContentsResponse.class)
@@ -933,58 +865,43 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordContentsRequest::getPublishDomain, (req, v) -> {
-                req.setPublishDomain(v);
-            }));
+            f -> f.withMarshaller(ListRecordContentsRequest::getPublishDomain,
+                ListRecordContentsRequest::setPublishDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordContentsRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRecordContentsRequest::getApp, ListRecordContentsRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordContentsRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListRecordContentsRequest::getStream, ListRecordContentsRequest::setStream));
         builder.<ListRecordContentsRequest.RecordTypeEnum>withRequestField("record_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRecordContentsRequest.RecordTypeEnum.class),
-            f -> f.withMarshaller(ListRecordContentsRequest::getRecordType, (req, v) -> {
-                req.setRecordType(v);
-            }));
+            f -> f.withMarshaller(ListRecordContentsRequest::getRecordType, ListRecordContentsRequest::setRecordType));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordContentsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRecordContentsRequest::getStartTime, ListRecordContentsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordContentsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRecordContentsRequest::getEndTime, ListRecordContentsRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordContentsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRecordContentsRequest::getOffset, ListRecordContentsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordContentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRecordContentsRequest::getLimit, ListRecordContentsRequest::setLimit));
 
         // response
 
@@ -998,9 +915,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListRecordRulesRequest, ListRecordRulesResponse> listRecordRules =
-        genForlistRecordRules();
+        genForListRecordRules();
 
-    private static HttpRequestDef<ListRecordRulesRequest, ListRecordRulesResponse> genForlistRecordRules() {
+    private static HttpRequestDef<ListRecordRulesRequest, ListRecordRulesResponse> genForListRecordRules() {
         // basic
         HttpRequestDef.Builder<ListRecordRulesRequest, ListRecordRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRecordRulesRequest.class, ListRecordRulesResponse.class)
@@ -1013,44 +930,32 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getPublishDomain, (req, v) -> {
-                req.setPublishDomain(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getPublishDomain, ListRecordRulesRequest::setPublishDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getApp, ListRecordRulesRequest::setApp));
         builder.<String>withRequestField("stream",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getStream, (req, v) -> {
-                req.setStream(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getStream, ListRecordRulesRequest::setStream));
         builder.<ListRecordRulesRequest.RecordTypeEnum>withRequestField("record_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRecordRulesRequest.RecordTypeEnum.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getRecordType, (req, v) -> {
-                req.setRecordType(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getRecordType, ListRecordRulesRequest::setRecordType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getOffset, ListRecordRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRecordRulesRequest::getLimit, ListRecordRulesRequest::setLimit));
 
         // response
 
@@ -1058,9 +963,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse> listSnapshotConfigs =
-        genForlistSnapshotConfigs();
+        genForListSnapshotConfigs();
 
-    private static HttpRequestDef<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse> genForlistSnapshotConfigs() {
+    private static HttpRequestDef<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse> genForListSnapshotConfigs() {
         // basic
         HttpRequestDef.Builder<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSnapshotConfigsRequest.class, ListSnapshotConfigsResponse.class)
@@ -1073,30 +978,22 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotConfigsRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotConfigsRequest::getDomain, ListSnapshotConfigsRequest::setDomain));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotConfigsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotConfigsRequest::getAppName, ListSnapshotConfigsRequest::setAppName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSnapshotConfigsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotConfigsRequest::getLimit, ListSnapshotConfigsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSnapshotConfigsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSnapshotConfigsRequest::getOffset, ListSnapshotConfigsRequest::setOffset));
 
         // response
 
@@ -1104,9 +1001,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ListStreamForbiddenRequest, ListStreamForbiddenResponse> listStreamForbidden =
-        genForlistStreamForbidden();
+        genForListStreamForbidden();
 
-    private static HttpRequestDef<ListStreamForbiddenRequest, ListStreamForbiddenResponse> genForlistStreamForbidden() {
+    private static HttpRequestDef<ListStreamForbiddenRequest, ListStreamForbiddenResponse> genForListStreamForbidden() {
         // basic
         HttpRequestDef.Builder<ListStreamForbiddenRequest, ListStreamForbiddenResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStreamForbiddenRequest.class, ListStreamForbiddenResponse.class)
@@ -1119,46 +1016,37 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStreamForbiddenRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ListStreamForbiddenRequest::getDomain, ListStreamForbiddenRequest::setDomain));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStreamForbiddenRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListStreamForbiddenRequest::getAppName, ListStreamForbiddenRequest::setAppName));
         builder.<String>withRequestField("stream_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStreamForbiddenRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ListStreamForbiddenRequest::getStreamName,
+                ListStreamForbiddenRequest::setStreamName));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStreamForbiddenRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListStreamForbiddenRequest::getPage, ListStreamForbiddenRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStreamForbiddenRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListStreamForbiddenRequest::getSize, ListStreamForbiddenRequest::setSize));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunRecordRequest, RunRecordResponse> runRecord = genForrunRecord();
+    public static final HttpRequestDef<RunRecordRequest, RunRecordResponse> runRecord = genForRunRecord();
 
-    private static HttpRequestDef<RunRecordRequest, RunRecordResponse> genForrunRecord() {
+    private static HttpRequestDef<RunRecordRequest, RunRecordResponse> genForRunRecord() {
         // basic
         HttpRequestDef.Builder<RunRecordRequest, RunRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunRecordRequest.class, RunRecordResponse.class)
@@ -1171,16 +1059,12 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RunRecordRequest.ActionEnum.class),
-            f -> f.withMarshaller(RunRecordRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(RunRecordRequest::getAction, RunRecordRequest::setAction));
         builder.<RecordControlInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecordControlInfo.class),
-            f -> f.withMarshaller(RunRecordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunRecordRequest::getBody, RunRecordRequest::setBody));
 
         // response
 
@@ -1192,9 +1076,9 @@ public class LiveMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDomainRequest, ShowDomainResponse> showDomain = genForshowDomain();
+    public static final HttpRequestDef<ShowDomainRequest, ShowDomainResponse> showDomain = genForShowDomain();
 
-    private static HttpRequestDef<ShowDomainRequest, ShowDomainResponse> genForshowDomain() {
+    private static HttpRequestDef<ShowDomainRequest, ShowDomainResponse> genForShowDomain() {
         // basic
         HttpRequestDef.Builder<ShowDomainRequest, ShowDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainRequest.class, ShowDomainResponse.class)
@@ -1207,16 +1091,13 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRequest::getDomain, ShowDomainRequest::setDomain));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRequest::getEnterpriseProjectId,
+                ShowDomainRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1224,9 +1105,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> showDomainKeyChain =
-        genForshowDomainKeyChain();
+        genForShowDomainKeyChain();
 
-    private static HttpRequestDef<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> genForshowDomainKeyChain() {
+    private static HttpRequestDef<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> genForShowDomainKeyChain() {
         // basic
         HttpRequestDef.Builder<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainKeyChainRequest.class, ShowDomainKeyChainResponse.class)
@@ -1239,9 +1120,7 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainKeyChainRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ShowDomainKeyChainRequest::getDomain, ShowDomainKeyChainRequest::setDomain));
 
         // response
 
@@ -1249,9 +1128,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse> showPullSourcesConfig =
-        genForshowPullSourcesConfig();
+        genForShowPullSourcesConfig();
 
-    private static HttpRequestDef<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse> genForshowPullSourcesConfig() {
+    private static HttpRequestDef<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse> genForShowPullSourcesConfig() {
         // basic
         HttpRequestDef.Builder<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPullSourcesConfigRequest.class, ShowPullSourcesConfigResponse.class)
@@ -1264,9 +1143,8 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPullSourcesConfigRequest::getPlayDomain, (req, v) -> {
-                req.setPlayDomain(v);
-            }));
+            f -> f.withMarshaller(ShowPullSourcesConfigRequest::getPlayDomain,
+                ShowPullSourcesConfigRequest::setPlayDomain));
 
         // response
 
@@ -1274,9 +1152,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse> showRecordCallbackConfig =
-        genForshowRecordCallbackConfig();
+        genForShowRecordCallbackConfig();
 
-    private static HttpRequestDef<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse> genForshowRecordCallbackConfig() {
+    private static HttpRequestDef<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse> genForShowRecordCallbackConfig() {
         // basic
         HttpRequestDef.Builder<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse> builder =
             HttpRequestDef
@@ -1290,9 +1168,7 @@ public class LiveMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordCallbackConfigRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordCallbackConfigRequest::getId, ShowRecordCallbackConfigRequest::setId));
 
         // response
 
@@ -1300,9 +1176,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ShowRecordRuleRequest, ShowRecordRuleResponse> showRecordRule =
-        genForshowRecordRule();
+        genForShowRecordRule();
 
-    private static HttpRequestDef<ShowRecordRuleRequest, ShowRecordRuleResponse> genForshowRecordRule() {
+    private static HttpRequestDef<ShowRecordRuleRequest, ShowRecordRuleResponse> genForShowRecordRule() {
         // basic
         HttpRequestDef.Builder<ShowRecordRuleRequest, ShowRecordRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecordRuleRequest.class, ShowRecordRuleResponse.class)
@@ -1315,9 +1191,7 @@ public class LiveMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordRuleRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordRuleRequest::getId, ShowRecordRuleRequest::setId));
 
         // response
 
@@ -1325,9 +1199,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse> showTranscodingsTemplate =
-        genForshowTranscodingsTemplate();
+        genForShowTranscodingsTemplate();
 
-    private static HttpRequestDef<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse> genForshowTranscodingsTemplate() {
+    private static HttpRequestDef<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse> genForShowTranscodingsTemplate() {
         // basic
         HttpRequestDef.Builder<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse> builder =
             HttpRequestDef
@@ -1341,30 +1215,24 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTranscodingsTemplateRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ShowTranscodingsTemplateRequest::getDomain,
+                ShowTranscodingsTemplateRequest::setDomain));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTranscodingsTemplateRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ShowTranscodingsTemplateRequest::getAppName,
+                ShowTranscodingsTemplateRequest::setAppName));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTranscodingsTemplateRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ShowTranscodingsTemplateRequest::getPage, ShowTranscodingsTemplateRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTranscodingsTemplateRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ShowTranscodingsTemplateRequest::getSize, ShowTranscodingsTemplateRequest::setSize));
 
         // response
 
@@ -1372,9 +1240,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateDelayConfigRequest, UpdateDelayConfigResponse> updateDelayConfig =
-        genForupdateDelayConfig();
+        genForUpdateDelayConfig();
 
-    private static HttpRequestDef<UpdateDelayConfigRequest, UpdateDelayConfigResponse> genForupdateDelayConfig() {
+    private static HttpRequestDef<UpdateDelayConfigRequest, UpdateDelayConfigResponse> genForUpdateDelayConfig() {
         // basic
         HttpRequestDef.Builder<UpdateDelayConfigRequest, UpdateDelayConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDelayConfigRequest.class, UpdateDelayConfigResponse.class)
@@ -1387,18 +1255,16 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyDelayConfig.class),
-            f -> f.withMarshaller(UpdateDelayConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDelayConfigRequest::getBody, UpdateDelayConfigRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> updateDomain = genForupdateDomain();
+    public static final HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> updateDomain = genForUpdateDomain();
 
-    private static HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> genForupdateDomain() {
+    private static HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> genForUpdateDomain() {
         // basic
         HttpRequestDef.Builder<UpdateDomainRequest, UpdateDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainRequest.class, UpdateDomainResponse.class)
@@ -1411,9 +1277,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDomainModifyReq.class),
-            f -> f.withMarshaller(UpdateDomainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainRequest::getBody, UpdateDomainRequest::setBody));
 
         // response
 
@@ -1421,9 +1285,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse> updateDomainIp6Switch =
-        genForupdateDomainIp6Switch();
+        genForUpdateDomainIp6Switch();
 
-    private static HttpRequestDef<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse> genForupdateDomainIp6Switch() {
+    private static HttpRequestDef<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse> genForUpdateDomainIp6Switch() {
         // basic
         HttpRequestDef.Builder<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateDomainIp6SwitchRequest.class, UpdateDomainIp6SwitchResponse.class)
@@ -1436,9 +1300,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DomainIpv6SwitchReq.class),
-            f -> f.withMarshaller(UpdateDomainIp6SwitchRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainIp6SwitchRequest::getBody, UpdateDomainIp6SwitchRequest::setBody));
 
         // response
 
@@ -1446,9 +1308,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse> updateDomainKeyChain =
-        genForupdateDomainKeyChain();
+        genForUpdateDomainKeyChain();
 
-    private static HttpRequestDef<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse> genForupdateDomainKeyChain() {
+    private static HttpRequestDef<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse> genForUpdateDomainKeyChain() {
         // basic
         HttpRequestDef.Builder<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateDomainKeyChainRequest.class, UpdateDomainKeyChainResponse.class)
@@ -1461,16 +1323,12 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainKeyChainRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainKeyChainRequest::getDomain, UpdateDomainKeyChainRequest::setDomain));
         builder.<KeyChainInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(KeyChainInfo.class),
-            f -> f.withMarshaller(UpdateDomainKeyChainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainKeyChainRequest::getBody, UpdateDomainKeyChainRequest::setBody));
 
         // response
 
@@ -1478,9 +1336,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse> updateGeoBlockingConfig =
-        genForupdateGeoBlockingConfig();
+        genForUpdateGeoBlockingConfig();
 
-    private static HttpRequestDef<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse> genForupdateGeoBlockingConfig() {
+    private static HttpRequestDef<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse> genForUpdateGeoBlockingConfig() {
         // basic
         HttpRequestDef.Builder<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateGeoBlockingConfigRequest.class, UpdateGeoBlockingConfigResponse.class)
@@ -1493,16 +1351,13 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGeoBlockingConfigRequest::getPlayDomain, (req, v) -> {
-                req.setPlayDomain(v);
-            }));
+            f -> f.withMarshaller(UpdateGeoBlockingConfigRequest::getPlayDomain,
+                UpdateGeoBlockingConfigRequest::setPlayDomain));
         builder.<GeoBlockingConfigInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GeoBlockingConfigInfo.class),
-            f -> f.withMarshaller(UpdateGeoBlockingConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGeoBlockingConfigRequest::getBody, UpdateGeoBlockingConfigRequest::setBody));
 
         // response
 
@@ -1516,9 +1371,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateIpAuthListRequest, UpdateIpAuthListResponse> updateIpAuthList =
-        genForupdateIpAuthList();
+        genForUpdateIpAuthList();
 
-    private static HttpRequestDef<UpdateIpAuthListRequest, UpdateIpAuthListResponse> genForupdateIpAuthList() {
+    private static HttpRequestDef<UpdateIpAuthListRequest, UpdateIpAuthListResponse> genForUpdateIpAuthList() {
         // basic
         HttpRequestDef.Builder<UpdateIpAuthListRequest, UpdateIpAuthListResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateIpAuthListRequest.class, UpdateIpAuthListResponse.class)
@@ -1531,9 +1386,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IPAuthInfo.class),
-            f -> f.withMarshaller(UpdateIpAuthListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateIpAuthListRequest::getBody, UpdateIpAuthListRequest::setBody));
 
         // response
 
@@ -1546,9 +1399,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse> updatePublishTemplate =
-        genForupdatePublishTemplate();
+        genForUpdatePublishTemplate();
 
-    private static HttpRequestDef<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse> genForupdatePublishTemplate() {
+    private static HttpRequestDef<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse> genForUpdatePublishTemplate() {
         // basic
         HttpRequestDef.Builder<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdatePublishTemplateRequest.class, UpdatePublishTemplateResponse.class)
@@ -1561,16 +1414,12 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePublishTemplateRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(UpdatePublishTemplateRequest::getDomain, UpdatePublishTemplateRequest::setDomain));
         builder.<CallbackUrl>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CallbackUrl.class),
-            f -> f.withMarshaller(UpdatePublishTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePublishTemplateRequest::getBody, UpdatePublishTemplateRequest::setBody));
 
         // response
 
@@ -1578,9 +1427,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse> updatePullSourcesConfig =
-        genForupdatePullSourcesConfig();
+        genForUpdatePullSourcesConfig();
 
-    private static HttpRequestDef<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse> genForupdatePullSourcesConfig() {
+    private static HttpRequestDef<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse> genForUpdatePullSourcesConfig() {
         // basic
         HttpRequestDef.Builder<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdatePullSourcesConfigRequest.class, UpdatePullSourcesConfigResponse.class)
@@ -1593,9 +1442,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyPullSourcesConfig.class),
-            f -> f.withMarshaller(UpdatePullSourcesConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePullSourcesConfigRequest::getBody, UpdatePullSourcesConfigRequest::setBody));
 
         // response
 
@@ -1603,9 +1450,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse> updateRecordCallbackConfig =
-        genForupdateRecordCallbackConfig();
+        genForUpdateRecordCallbackConfig();
 
-    private static HttpRequestDef<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse> genForupdateRecordCallbackConfig() {
+    private static HttpRequestDef<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse> genForUpdateRecordCallbackConfig() {
         // basic
         HttpRequestDef.Builder<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse> builder =
             HttpRequestDef
@@ -1621,16 +1468,13 @@ public class LiveMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordCallbackConfigRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordCallbackConfigRequest::getId, UpdateRecordCallbackConfigRequest::setId));
         builder.<RecordCallbackConfigRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecordCallbackConfigRequest.class),
-            f -> f.withMarshaller(UpdateRecordCallbackConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordCallbackConfigRequest::getBody,
+                UpdateRecordCallbackConfigRequest::setBody));
 
         // response
 
@@ -1638,9 +1482,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateRecordRuleRequest, UpdateRecordRuleResponse> updateRecordRule =
-        genForupdateRecordRule();
+        genForUpdateRecordRule();
 
-    private static HttpRequestDef<UpdateRecordRuleRequest, UpdateRecordRuleResponse> genForupdateRecordRule() {
+    private static HttpRequestDef<UpdateRecordRuleRequest, UpdateRecordRuleResponse> genForUpdateRecordRule() {
         // basic
         HttpRequestDef.Builder<UpdateRecordRuleRequest, UpdateRecordRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRecordRuleRequest.class, UpdateRecordRuleResponse.class)
@@ -1653,16 +1497,12 @@ public class LiveMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordRuleRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordRuleRequest::getId, UpdateRecordRuleRequest::setId));
         builder.<RecordRuleRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecordRuleRequest.class),
-            f -> f.withMarshaller(UpdateRecordRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordRuleRequest::getBody, UpdateRecordRuleRequest::setBody));
 
         // response
 
@@ -1670,9 +1510,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse> updateSnapshotConfig =
-        genForupdateSnapshotConfig();
+        genForUpdateSnapshotConfig();
 
-    private static HttpRequestDef<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse> genForupdateSnapshotConfig() {
+    private static HttpRequestDef<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse> genForUpdateSnapshotConfig() {
         // basic
         HttpRequestDef.Builder<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateSnapshotConfigRequest.class, UpdateSnapshotConfigResponse.class)
@@ -1685,9 +1525,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveSnapshotConfig.class),
-            f -> f.withMarshaller(UpdateSnapshotConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSnapshotConfigRequest::getBody, UpdateSnapshotConfigRequest::setBody));
 
         // response
 
@@ -1695,9 +1533,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse> updateStreamForbidden =
-        genForupdateStreamForbidden();
+        genForUpdateStreamForbidden();
 
-    private static HttpRequestDef<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse> genForupdateStreamForbidden() {
+    private static HttpRequestDef<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse> genForUpdateStreamForbidden() {
         // basic
         HttpRequestDef.Builder<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateStreamForbiddenRequest.class, UpdateStreamForbiddenResponse.class)
@@ -1710,9 +1548,7 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StreamForbiddenSetting.class),
-            f -> f.withMarshaller(UpdateStreamForbiddenRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStreamForbiddenRequest::getBody, UpdateStreamForbiddenRequest::setBody));
 
         // response
 
@@ -1720,9 +1556,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse> updateTranscodingsTemplate =
-        genForupdateTranscodingsTemplate();
+        genForUpdateTranscodingsTemplate();
 
-    private static HttpRequestDef<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse> genForupdateTranscodingsTemplate() {
+    private static HttpRequestDef<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse> genForUpdateTranscodingsTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse> builder =
             HttpRequestDef
@@ -1738,9 +1574,8 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StreamTranscodingTemplate.class),
-            f -> f.withMarshaller(UpdateTranscodingsTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTranscodingsTemplateRequest::getBody,
+                UpdateTranscodingsTemplateRequest::setBody));
 
         // response
 
@@ -1748,9 +1583,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse> deleteDomainHttpsCert =
-        genFordeleteDomainHttpsCert();
+        genForDeleteDomainHttpsCert();
 
-    private static HttpRequestDef<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse> genFordeleteDomainHttpsCert() {
+    private static HttpRequestDef<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse> genForDeleteDomainHttpsCert() {
         // basic
         HttpRequestDef.Builder<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteDomainHttpsCertRequest.class, DeleteDomainHttpsCertResponse.class)
@@ -1763,9 +1598,7 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainHttpsCertRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainHttpsCertRequest::getDomain, DeleteDomainHttpsCertRequest::setDomain));
 
         // response
 
@@ -1773,9 +1606,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse> showDomainHttpsCert =
-        genForshowDomainHttpsCert();
+        genForShowDomainHttpsCert();
 
-    private static HttpRequestDef<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse> genForshowDomainHttpsCert() {
+    private static HttpRequestDef<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse> genForShowDomainHttpsCert() {
         // basic
         HttpRequestDef.Builder<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainHttpsCertRequest.class, ShowDomainHttpsCertResponse.class)
@@ -1788,9 +1621,7 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainHttpsCertRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ShowDomainHttpsCertRequest::getDomain, ShowDomainHttpsCertRequest::setDomain));
 
         // response
 
@@ -1798,9 +1629,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse> updateDomainHttpsCert =
-        genForupdateDomainHttpsCert();
+        genForUpdateDomainHttpsCert();
 
-    private static HttpRequestDef<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse> genForupdateDomainHttpsCert() {
+    private static HttpRequestDef<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse> genForUpdateDomainHttpsCert() {
         // basic
         HttpRequestDef.Builder<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateDomainHttpsCertRequest.class, UpdateDomainHttpsCertResponse.class)
@@ -1813,16 +1644,12 @@ public class LiveMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainHttpsCertRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainHttpsCertRequest::getDomain, UpdateDomainHttpsCertRequest::setDomain));
         builder.<DomainHttpsCertInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DomainHttpsCertInfo.class),
-            f -> f.withMarshaller(UpdateDomainHttpsCertRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainHttpsCertRequest::getBody, UpdateDomainHttpsCertRequest::setBody));
 
         // response
 
@@ -1830,9 +1657,9 @@ public class LiveMeta {
     }
 
     public static final HttpRequestDef<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse> updateObsBucketAuthorityPublic =
-        genForupdateObsBucketAuthorityPublic();
+        genForUpdateObsBucketAuthorityPublic();
 
-    private static HttpRequestDef<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse> genForupdateObsBucketAuthorityPublic() {
+    private static HttpRequestDef<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse> genForUpdateObsBucketAuthorityPublic() {
         // basic
         HttpRequestDef.Builder<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse> builder =
             HttpRequestDef
@@ -1848,9 +1675,8 @@ public class LiveMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ObsAuthorityConfigV2.class),
-            f -> f.withMarshaller(UpdateObsBucketAuthorityPublicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateObsBucketAuthorityPublicRequest::getBody,
+                UpdateObsBucketAuthorityPublicRequest::setBody));
 
         // response
 

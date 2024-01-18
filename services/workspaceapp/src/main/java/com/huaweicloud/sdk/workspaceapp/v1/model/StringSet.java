@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * API批量唯一标识列表  **⚠ 警告: 此Model不生成java代码，允许其它Model中引用，请勿直接作为Model使用**
+ * API批量唯一标识列表。  **⚠ 警告: 此Model不生成java代码，允许其它Model中引用，请勿直接作为Model使用**
  */
 public class StringSet {
 
@@ -40,7 +40,7 @@ public class StringSet {
     }
 
     /**
-     * 批量唯一标识请求列表，一次请求数量区间 [1, 20]
+     * 批量唯一标识请求列表，一次请求数量区间 [1, 20]。
      * @return items
      */
     public List<String> getItems() {

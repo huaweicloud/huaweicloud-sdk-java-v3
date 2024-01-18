@@ -131,7 +131,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyExecutionPlanRequest 请求对象
+     * @param request ApplyExecutionPlanRequest 请求对象
      * @return CompletableFuture<ApplyExecutionPlanResponse>
      */
     public CompletableFuture<ApplyExecutionPlanResponse> applyExecutionPlanAsync(ApplyExecutionPlanRequest request) {
@@ -162,13 +162,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyExecutionPlanRequest 请求对象
+     * @param request ApplyExecutionPlanRequest 请求对象
      * @return AsyncInvoker<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse>
      */
     public AsyncInvoker<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse> applyExecutionPlanAsyncInvoker(
         ApplyExecutionPlanRequest request) {
-        return new AsyncInvoker<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse>(request,
-            AosMeta.applyExecutionPlan, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.applyExecutionPlan, hcClient);
     }
 
     /**
@@ -192,7 +191,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExecutionPlanRequest 请求对象
+     * @param request CreateExecutionPlanRequest 请求对象
      * @return CompletableFuture<CreateExecutionPlanResponse>
      */
     public CompletableFuture<CreateExecutionPlanResponse> createExecutionPlanAsync(CreateExecutionPlanRequest request) {
@@ -220,13 +219,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExecutionPlanRequest 请求对象
+     * @param request CreateExecutionPlanRequest 请求对象
      * @return AsyncInvoker<CreateExecutionPlanRequest, CreateExecutionPlanResponse>
      */
     public AsyncInvoker<CreateExecutionPlanRequest, CreateExecutionPlanResponse> createExecutionPlanAsyncInvoker(
         CreateExecutionPlanRequest request) {
-        return new AsyncInvoker<CreateExecutionPlanRequest, CreateExecutionPlanResponse>(request,
-            AosMeta.createExecutionPlan, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.createExecutionPlan, hcClient);
     }
 
     /**
@@ -240,7 +238,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteExecutionPlanRequest 请求对象
+     * @param request DeleteExecutionPlanRequest 请求对象
      * @return CompletableFuture<DeleteExecutionPlanResponse>
      */
     public CompletableFuture<DeleteExecutionPlanResponse> deleteExecutionPlanAsync(DeleteExecutionPlanRequest request) {
@@ -258,13 +256,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteExecutionPlanRequest 请求对象
+     * @param request DeleteExecutionPlanRequest 请求对象
      * @return AsyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse>
      */
     public AsyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> deleteExecutionPlanAsyncInvoker(
         DeleteExecutionPlanRequest request) {
-        return new AsyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse>(request,
-            AosMeta.deleteExecutionPlan, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.deleteExecutionPlan, hcClient);
     }
 
     /**
@@ -325,7 +322,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EstimateExecutionPlanPriceRequest 请求对象
+     * @param request EstimateExecutionPlanPriceRequest 请求对象
      * @return CompletableFuture<EstimateExecutionPlanPriceResponse>
      */
     public CompletableFuture<EstimateExecutionPlanPriceResponse> estimateExecutionPlanPriceAsync(
@@ -391,13 +388,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EstimateExecutionPlanPriceRequest 请求对象
+     * @param request EstimateExecutionPlanPriceRequest 请求对象
      * @return AsyncInvoker<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse>
      */
     public AsyncInvoker<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse> estimateExecutionPlanPriceAsyncInvoker(
         EstimateExecutionPlanPriceRequest request) {
-        return new AsyncInvoker<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse>(request,
-            AosMeta.estimateExecutionPlanPrice, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.estimateExecutionPlanPrice, hcClient);
     }
 
     /**
@@ -411,7 +407,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetExecutionPlanRequest 请求对象
+     * @param request GetExecutionPlanRequest 请求对象
      * @return CompletableFuture<GetExecutionPlanResponse>
      */
     public CompletableFuture<GetExecutionPlanResponse> getExecutionPlanAsync(GetExecutionPlanRequest request) {
@@ -429,13 +425,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetExecutionPlanRequest 请求对象
+     * @param request GetExecutionPlanRequest 请求对象
      * @return AsyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse>
      */
     public AsyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse> getExecutionPlanAsyncInvoker(
         GetExecutionPlanRequest request) {
-        return new AsyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse>(request, AosMeta.getExecutionPlan,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.getExecutionPlan, hcClient);
     }
 
     /**
@@ -451,7 +446,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetExecutionPlanMetadataRequest 请求对象
+     * @param request GetExecutionPlanMetadataRequest 请求对象
      * @return CompletableFuture<GetExecutionPlanMetadataResponse>
      */
     public CompletableFuture<GetExecutionPlanMetadataResponse> getExecutionPlanMetadataAsync(
@@ -472,13 +467,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetExecutionPlanMetadataRequest 请求对象
+     * @param request GetExecutionPlanMetadataRequest 请求对象
      * @return AsyncInvoker<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse>
      */
     public AsyncInvoker<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse> getExecutionPlanMetadataAsyncInvoker(
         GetExecutionPlanMetadataRequest request) {
-        return new AsyncInvoker<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse>(request,
-            AosMeta.getExecutionPlanMetadata, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.getExecutionPlanMetadata, hcClient);
     }
 
     /**
@@ -497,7 +491,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExecutionPlansRequest 请求对象
+     * @param request ListExecutionPlansRequest 请求对象
      * @return CompletableFuture<ListExecutionPlansResponse>
      */
     public CompletableFuture<ListExecutionPlansResponse> listExecutionPlansAsync(ListExecutionPlansRequest request) {
@@ -520,13 +514,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExecutionPlansRequest 请求对象
+     * @param request ListExecutionPlansRequest 请求对象
      * @return AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse>
      */
     public AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse> listExecutionPlansAsyncInvoker(
         ListExecutionPlansRequest request) {
-        return new AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse>(request,
-            AosMeta.listExecutionPlans, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.listExecutionPlans, hcClient);
     }
 
     /**
@@ -542,7 +535,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ContinueDeployStackRequest 请求对象
+     * @param request ContinueDeployStackRequest 请求对象
      * @return CompletableFuture<ContinueDeployStackResponse>
      */
     public CompletableFuture<ContinueDeployStackResponse> continueDeployStackAsync(ContinueDeployStackRequest request) {
@@ -562,13 +555,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ContinueDeployStackRequest 请求对象
+     * @param request ContinueDeployStackRequest 请求对象
      * @return AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse>
      */
     public AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse> continueDeployStackAsyncInvoker(
         ContinueDeployStackRequest request) {
-        return new AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse>(request,
-            AosMeta.continueDeployStack, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.continueDeployStack, hcClient);
     }
 
     /**
@@ -585,7 +577,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ContinueRollbackStackRequest 请求对象
+     * @param request ContinueRollbackStackRequest 请求对象
      * @return CompletableFuture<ContinueRollbackStackResponse>
      */
     public CompletableFuture<ContinueRollbackStackResponse> continueRollbackStackAsync(
@@ -607,13 +599,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ContinueRollbackStackRequest 请求对象
+     * @param request ContinueRollbackStackRequest 请求对象
      * @return AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse>
      */
     public AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse> continueRollbackStackAsyncInvoker(
         ContinueRollbackStackRequest request) {
-        return new AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse>(request,
-            AosMeta.continueRollbackStack, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.continueRollbackStack, hcClient);
     }
 
     /**
@@ -626,7 +617,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStackRequest 请求对象
+     * @param request CreateStackRequest 请求对象
      * @return CompletableFuture<CreateStackResponse>
      */
     public CompletableFuture<CreateStackResponse> createStackAsync(CreateStackRequest request) {
@@ -643,11 +634,11 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStackRequest 请求对象
+     * @param request CreateStackRequest 请求对象
      * @return AsyncInvoker<CreateStackRequest, CreateStackResponse>
      */
     public AsyncInvoker<CreateStackRequest, CreateStackResponse> createStackAsyncInvoker(CreateStackRequest request) {
-        return new AsyncInvoker<CreateStackRequest, CreateStackResponse>(request, AosMeta.createStack, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.createStack, hcClient);
     }
 
     /**
@@ -670,7 +661,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStackRequest 请求对象
+     * @param request DeleteStackRequest 请求对象
      * @return CompletableFuture<DeleteStackResponse>
      */
     public CompletableFuture<DeleteStackResponse> deleteStackAsync(DeleteStackRequest request) {
@@ -697,11 +688,11 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStackRequest 请求对象
+     * @param request DeleteStackRequest 请求对象
      * @return AsyncInvoker<DeleteStackRequest, DeleteStackResponse>
      */
     public AsyncInvoker<DeleteStackRequest, DeleteStackResponse> deleteStackAsyncInvoker(DeleteStackRequest request) {
-        return new AsyncInvoker<DeleteStackRequest, DeleteStackResponse>(request, AosMeta.deleteStack, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.deleteStack, hcClient);
     }
 
     /**
@@ -726,7 +717,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStackEnhancedRequest 请求对象
+     * @param request DeleteStackEnhancedRequest 请求对象
      * @return CompletableFuture<DeleteStackEnhancedResponse>
      */
     public CompletableFuture<DeleteStackEnhancedResponse> deleteStackEnhancedAsync(DeleteStackEnhancedRequest request) {
@@ -755,13 +746,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStackEnhancedRequest 请求对象
+     * @param request DeleteStackEnhancedRequest 请求对象
      * @return AsyncInvoker<DeleteStackEnhancedRequest, DeleteStackEnhancedResponse>
      */
     public AsyncInvoker<DeleteStackEnhancedRequest, DeleteStackEnhancedResponse> deleteStackEnhancedAsyncInvoker(
         DeleteStackEnhancedRequest request) {
-        return new AsyncInvoker<DeleteStackEnhancedRequest, DeleteStackEnhancedResponse>(request,
-            AosMeta.deleteStackEnhanced, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.deleteStackEnhanced, hcClient);
     }
 
     /**
@@ -781,7 +771,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeployStackRequest 请求对象
+     * @param request DeployStackRequest 请求对象
      * @return CompletableFuture<DeployStackResponse>
      */
     public CompletableFuture<DeployStackResponse> deployStackAsync(DeployStackRequest request) {
@@ -805,11 +795,11 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeployStackRequest 请求对象
+     * @param request DeployStackRequest 请求对象
      * @return AsyncInvoker<DeployStackRequest, DeployStackResponse>
      */
     public AsyncInvoker<DeployStackRequest, DeployStackResponse> deployStackAsyncInvoker(DeployStackRequest request) {
-        return new AsyncInvoker<DeployStackRequest, DeployStackResponse>(request, AosMeta.deployStack, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.deployStack, hcClient);
     }
 
     /**
@@ -840,7 +830,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetStackMetadataRequest 请求对象
+     * @param request GetStackMetadataRequest 请求对象
      * @return CompletableFuture<GetStackMetadataResponse>
      */
     public CompletableFuture<GetStackMetadataResponse> getStackMetadataAsync(GetStackMetadataRequest request) {
@@ -875,13 +865,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetStackMetadataRequest 请求对象
+     * @param request GetStackMetadataRequest 请求对象
      * @return AsyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse>
      */
     public AsyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse> getStackMetadataAsyncInvoker(
         GetStackMetadataRequest request) {
-        return new AsyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse>(request, AosMeta.getStackMetadata,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.getStackMetadata, hcClient);
     }
 
     /**
@@ -913,7 +902,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetStackTemplateRequest 请求对象
+     * @param request GetStackTemplateRequest 请求对象
      * @return CompletableFuture<GetStackTemplateResponse>
      */
     public CompletableFuture<GetStackTemplateResponse> getStackTemplateAsync(GetStackTemplateRequest request) {
@@ -949,13 +938,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetStackTemplateRequest 请求对象
+     * @param request GetStackTemplateRequest 请求对象
      * @return AsyncInvoker<GetStackTemplateRequest, GetStackTemplateResponse>
      */
     public AsyncInvoker<GetStackTemplateRequest, GetStackTemplateResponse> getStackTemplateAsyncInvoker(
         GetStackTemplateRequest request) {
-        return new AsyncInvoker<GetStackTemplateRequest, GetStackTemplateResponse>(request, AosMeta.getStackTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.getStackTemplate, hcClient);
     }
 
     /**
@@ -973,7 +961,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackEventsRequest 请求对象
+     * @param request ListStackEventsRequest 请求对象
      * @return CompletableFuture<ListStackEventsResponse>
      */
     public CompletableFuture<ListStackEventsResponse> listStackEventsAsync(ListStackEventsRequest request) {
@@ -995,13 +983,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackEventsRequest 请求对象
+     * @param request ListStackEventsRequest 请求对象
      * @return AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse>
      */
     public AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse> listStackEventsAsyncInvoker(
         ListStackEventsRequest request) {
-        return new AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse>(request, AosMeta.listStackEvents,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.listStackEvents, hcClient);
     }
 
     /**
@@ -1022,7 +1009,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackOutputsRequest 请求对象
+     * @param request ListStackOutputsRequest 请求对象
      * @return CompletableFuture<ListStackOutputsResponse>
      */
     public CompletableFuture<ListStackOutputsResponse> listStackOutputsAsync(ListStackOutputsRequest request) {
@@ -1047,13 +1034,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackOutputsRequest 请求对象
+     * @param request ListStackOutputsRequest 请求对象
      * @return AsyncInvoker<ListStackOutputsRequest, ListStackOutputsResponse>
      */
     public AsyncInvoker<ListStackOutputsRequest, ListStackOutputsResponse> listStackOutputsAsyncInvoker(
         ListStackOutputsRequest request) {
-        return new AsyncInvoker<ListStackOutputsRequest, ListStackOutputsResponse>(request, AosMeta.listStackOutputs,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.listStackOutputs, hcClient);
     }
 
     /**
@@ -1072,7 +1058,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackResourcesRequest 请求对象
+     * @param request ListStackResourcesRequest 请求对象
      * @return CompletableFuture<ListStackResourcesResponse>
      */
     public CompletableFuture<ListStackResourcesResponse> listStackResourcesAsync(ListStackResourcesRequest request) {
@@ -1095,13 +1081,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackResourcesRequest 请求对象
+     * @param request ListStackResourcesRequest 请求对象
      * @return AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse>
      */
     public AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse> listStackResourcesAsyncInvoker(
         ListStackResourcesRequest request) {
-        return new AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse>(request,
-            AosMeta.listStackResources, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.listStackResources, hcClient);
     }
 
     /**
@@ -1119,7 +1104,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStacksRequest 请求对象
+     * @param request ListStacksRequest 请求对象
      * @return CompletableFuture<ListStacksResponse>
      */
     public CompletableFuture<ListStacksResponse> listStacksAsync(ListStacksRequest request) {
@@ -1141,11 +1126,11 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStacksRequest 请求对象
+     * @param request ListStacksRequest 请求对象
      * @return AsyncInvoker<ListStacksRequest, ListStacksResponse>
      */
     public AsyncInvoker<ListStacksRequest, ListStacksResponse> listStacksAsyncInvoker(ListStacksRequest request) {
-        return new AsyncInvoker<ListStacksRequest, ListStacksResponse>(request, AosMeta.listStacks, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.listStacks, hcClient);
     }
 
     /**
@@ -1173,7 +1158,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStackRequest 请求对象
+     * @param request UpdateStackRequest 请求对象
      * @return CompletableFuture<UpdateStackResponse>
      */
     public CompletableFuture<UpdateStackResponse> updateStackAsync(UpdateStackRequest request) {
@@ -1205,11 +1190,11 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStackRequest 请求对象
+     * @param request UpdateStackRequest 请求对象
      * @return AsyncInvoker<UpdateStackRequest, UpdateStackResponse>
      */
     public AsyncInvoker<UpdateStackRequest, UpdateStackResponse> updateStackAsyncInvoker(UpdateStackRequest request) {
-        return new AsyncInvoker<UpdateStackRequest, UpdateStackResponse>(request, AosMeta.updateStack, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.updateStack, hcClient);
     }
 
     /**
@@ -1229,7 +1214,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStackInstanceRequest 请求对象
+     * @param request CreateStackInstanceRequest 请求对象
      * @return CompletableFuture<CreateStackInstanceResponse>
      */
     public CompletableFuture<CreateStackInstanceResponse> createStackInstanceAsync(CreateStackInstanceRequest request) {
@@ -1253,13 +1238,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStackInstanceRequest 请求对象
+     * @param request CreateStackInstanceRequest 请求对象
      * @return AsyncInvoker<CreateStackInstanceRequest, CreateStackInstanceResponse>
      */
     public AsyncInvoker<CreateStackInstanceRequest, CreateStackInstanceResponse> createStackInstanceAsyncInvoker(
         CreateStackInstanceRequest request) {
-        return new AsyncInvoker<CreateStackInstanceRequest, CreateStackInstanceResponse>(request,
-            AosMeta.createStackInstance, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.createStackInstance, hcClient);
     }
 
     /**
@@ -1271,7 +1255,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStackSetRequest 请求对象
+     * @param request CreateStackSetRequest 请求对象
      * @return CompletableFuture<CreateStackSetResponse>
      */
     public CompletableFuture<CreateStackSetResponse> createStackSetAsync(CreateStackSetRequest request) {
@@ -1287,13 +1271,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStackSetRequest 请求对象
+     * @param request CreateStackSetRequest 请求对象
      * @return AsyncInvoker<CreateStackSetRequest, CreateStackSetResponse>
      */
     public AsyncInvoker<CreateStackSetRequest, CreateStackSetResponse> createStackSetAsyncInvoker(
         CreateStackSetRequest request) {
-        return new AsyncInvoker<CreateStackSetRequest, CreateStackSetResponse>(request, AosMeta.createStackSet,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.createStackSet, hcClient);
     }
 
     /**
@@ -1309,7 +1292,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStackInstanceRequest 请求对象
+     * @param request DeleteStackInstanceRequest 请求对象
      * @return CompletableFuture<DeleteStackInstanceResponse>
      */
     public CompletableFuture<DeleteStackInstanceResponse> deleteStackInstanceAsync(DeleteStackInstanceRequest request) {
@@ -1329,13 +1312,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStackInstanceRequest 请求对象
+     * @param request DeleteStackInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteStackInstanceRequest, DeleteStackInstanceResponse>
      */
     public AsyncInvoker<DeleteStackInstanceRequest, DeleteStackInstanceResponse> deleteStackInstanceAsyncInvoker(
         DeleteStackInstanceRequest request) {
-        return new AsyncInvoker<DeleteStackInstanceRequest, DeleteStackInstanceResponse>(request,
-            AosMeta.deleteStackInstance, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.deleteStackInstance, hcClient);
     }
 
     /**
@@ -1351,7 +1333,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStackInstanceDeprecatedRequest 请求对象
+     * @param request DeleteStackInstanceDeprecatedRequest 请求对象
      * @return CompletableFuture<DeleteStackInstanceDeprecatedResponse>
      */
     public CompletableFuture<DeleteStackInstanceDeprecatedResponse> deleteStackInstanceDeprecatedAsync(
@@ -1372,13 +1354,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStackInstanceDeprecatedRequest 请求对象
+     * @param request DeleteStackInstanceDeprecatedRequest 请求对象
      * @return AsyncInvoker<DeleteStackInstanceDeprecatedRequest, DeleteStackInstanceDeprecatedResponse>
      */
     public AsyncInvoker<DeleteStackInstanceDeprecatedRequest, DeleteStackInstanceDeprecatedResponse> deleteStackInstanceDeprecatedAsyncInvoker(
         DeleteStackInstanceDeprecatedRequest request) {
-        return new AsyncInvoker<DeleteStackInstanceDeprecatedRequest, DeleteStackInstanceDeprecatedResponse>(request,
-            AosMeta.deleteStackInstanceDeprecated, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.deleteStackInstanceDeprecated, hcClient);
     }
 
     /**
@@ -1394,7 +1375,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStackSetRequest 请求对象
+     * @param request DeleteStackSetRequest 请求对象
      * @return CompletableFuture<DeleteStackSetResponse>
      */
     public CompletableFuture<DeleteStackSetResponse> deleteStackSetAsync(DeleteStackSetRequest request) {
@@ -1414,13 +1395,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStackSetRequest 请求对象
+     * @param request DeleteStackSetRequest 请求对象
      * @return AsyncInvoker<DeleteStackSetRequest, DeleteStackSetResponse>
      */
     public AsyncInvoker<DeleteStackSetRequest, DeleteStackSetResponse> deleteStackSetAsyncInvoker(
         DeleteStackSetRequest request) {
-        return new AsyncInvoker<DeleteStackSetRequest, DeleteStackSetResponse>(request, AosMeta.deleteStackSet,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.deleteStackSet, hcClient);
     }
 
     /**
@@ -1442,7 +1422,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeployStackSetRequest 请求对象
+     * @param request DeployStackSetRequest 请求对象
      * @return CompletableFuture<DeployStackSetResponse>
      */
     public CompletableFuture<DeployStackSetResponse> deployStackSetAsync(DeployStackSetRequest request) {
@@ -1468,13 +1448,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeployStackSetRequest 请求对象
+     * @param request DeployStackSetRequest 请求对象
      * @return AsyncInvoker<DeployStackSetRequest, DeployStackSetResponse>
      */
     public AsyncInvoker<DeployStackSetRequest, DeployStackSetResponse> deployStackSetAsyncInvoker(
         DeployStackSetRequest request) {
-        return new AsyncInvoker<DeployStackSetRequest, DeployStackSetResponse>(request, AosMeta.deployStackSet,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.deployStackSet, hcClient);
     }
 
     /**
@@ -1490,7 +1469,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackInstancesRequest 请求对象
+     * @param request ListStackInstancesRequest 请求对象
      * @return CompletableFuture<ListStackInstancesResponse>
      */
     public CompletableFuture<ListStackInstancesResponse> listStackInstancesAsync(ListStackInstancesRequest request) {
@@ -1510,13 +1489,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackInstancesRequest 请求对象
+     * @param request ListStackInstancesRequest 请求对象
      * @return AsyncInvoker<ListStackInstancesRequest, ListStackInstancesResponse>
      */
     public AsyncInvoker<ListStackInstancesRequest, ListStackInstancesResponse> listStackInstancesAsyncInvoker(
         ListStackInstancesRequest request) {
-        return new AsyncInvoker<ListStackInstancesRequest, ListStackInstancesResponse>(request,
-            AosMeta.listStackInstances, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.listStackInstances, hcClient);
     }
 
     /**
@@ -1532,7 +1510,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackSetOperationsRequest 请求对象
+     * @param request ListStackSetOperationsRequest 请求对象
      * @return CompletableFuture<ListStackSetOperationsResponse>
      */
     public CompletableFuture<ListStackSetOperationsResponse> listStackSetOperationsAsync(
@@ -1553,13 +1531,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackSetOperationsRequest 请求对象
+     * @param request ListStackSetOperationsRequest 请求对象
      * @return AsyncInvoker<ListStackSetOperationsRequest, ListStackSetOperationsResponse>
      */
     public AsyncInvoker<ListStackSetOperationsRequest, ListStackSetOperationsResponse> listStackSetOperationsAsyncInvoker(
         ListStackSetOperationsRequest request) {
-        return new AsyncInvoker<ListStackSetOperationsRequest, ListStackSetOperationsResponse>(request,
-            AosMeta.listStackSetOperations, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.listStackSetOperations, hcClient);
     }
 
     /**
@@ -1576,7 +1553,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackSetsRequest 请求对象
+     * @param request ListStackSetsRequest 请求对象
      * @return CompletableFuture<ListStackSetsResponse>
      */
     public CompletableFuture<ListStackSetsResponse> listStackSetsAsync(ListStackSetsRequest request) {
@@ -1597,12 +1574,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStackSetsRequest 请求对象
+     * @param request ListStackSetsRequest 请求对象
      * @return AsyncInvoker<ListStackSetsRequest, ListStackSetsResponse>
      */
     public AsyncInvoker<ListStackSetsRequest, ListStackSetsResponse> listStackSetsAsyncInvoker(
         ListStackSetsRequest request) {
-        return new AsyncInvoker<ListStackSetsRequest, ListStackSetsResponse>(request, AosMeta.listStackSets, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.listStackSets, hcClient);
     }
 
     /**
@@ -1614,7 +1591,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStackInstanceRequest 请求对象
+     * @param request ShowStackInstanceRequest 请求对象
      * @return CompletableFuture<ShowStackInstanceResponse>
      */
     public CompletableFuture<ShowStackInstanceResponse> showStackInstanceAsync(ShowStackInstanceRequest request) {
@@ -1630,13 +1607,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStackInstanceRequest 请求对象
+     * @param request ShowStackInstanceRequest 请求对象
      * @return AsyncInvoker<ShowStackInstanceRequest, ShowStackInstanceResponse>
      */
     public AsyncInvoker<ShowStackInstanceRequest, ShowStackInstanceResponse> showStackInstanceAsyncInvoker(
         ShowStackInstanceRequest request) {
-        return new AsyncInvoker<ShowStackInstanceRequest, ShowStackInstanceResponse>(request, AosMeta.showStackInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.showStackInstance, hcClient);
     }
 
     /**
@@ -1648,7 +1624,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStackSetMetadataRequest 请求对象
+     * @param request ShowStackSetMetadataRequest 请求对象
      * @return CompletableFuture<ShowStackSetMetadataResponse>
      */
     public CompletableFuture<ShowStackSetMetadataResponse> showStackSetMetadataAsync(
@@ -1665,13 +1641,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStackSetMetadataRequest 请求对象
+     * @param request ShowStackSetMetadataRequest 请求对象
      * @return AsyncInvoker<ShowStackSetMetadataRequest, ShowStackSetMetadataResponse>
      */
     public AsyncInvoker<ShowStackSetMetadataRequest, ShowStackSetMetadataResponse> showStackSetMetadataAsyncInvoker(
         ShowStackSetMetadataRequest request) {
-        return new AsyncInvoker<ShowStackSetMetadataRequest, ShowStackSetMetadataResponse>(request,
-            AosMeta.showStackSetMetadata, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.showStackSetMetadata, hcClient);
     }
 
     /**
@@ -1685,7 +1660,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStackSetOperationMetadataRequest 请求对象
+     * @param request ShowStackSetOperationMetadataRequest 请求对象
      * @return CompletableFuture<ShowStackSetOperationMetadataResponse>
      */
     public CompletableFuture<ShowStackSetOperationMetadataResponse> showStackSetOperationMetadataAsync(
@@ -1704,13 +1679,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStackSetOperationMetadataRequest 请求对象
+     * @param request ShowStackSetOperationMetadataRequest 请求对象
      * @return AsyncInvoker<ShowStackSetOperationMetadataRequest, ShowStackSetOperationMetadataResponse>
      */
     public AsyncInvoker<ShowStackSetOperationMetadataRequest, ShowStackSetOperationMetadataResponse> showStackSetOperationMetadataAsyncInvoker(
         ShowStackSetOperationMetadataRequest request) {
-        return new AsyncInvoker<ShowStackSetOperationMetadataRequest, ShowStackSetOperationMetadataResponse>(request,
-            AosMeta.showStackSetOperationMetadata, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.showStackSetOperationMetadata, hcClient);
     }
 
     /**
@@ -1725,7 +1699,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStackSetTemplateRequest 请求对象
+     * @param request ShowStackSetTemplateRequest 请求对象
      * @return CompletableFuture<ShowStackSetTemplateResponse>
      */
     public CompletableFuture<ShowStackSetTemplateResponse> showStackSetTemplateAsync(
@@ -1745,13 +1719,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStackSetTemplateRequest 请求对象
+     * @param request ShowStackSetTemplateRequest 请求对象
      * @return AsyncInvoker<ShowStackSetTemplateRequest, ShowStackSetTemplateResponse>
      */
     public AsyncInvoker<ShowStackSetTemplateRequest, ShowStackSetTemplateResponse> showStackSetTemplateAsyncInvoker(
         ShowStackSetTemplateRequest request) {
-        return new AsyncInvoker<ShowStackSetTemplateRequest, ShowStackSetTemplateResponse>(request,
-            AosMeta.showStackSetTemplate, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.showStackSetTemplate, hcClient);
     }
 
     /**
@@ -1773,7 +1746,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStackInstancesRequest 请求对象
+     * @param request UpdateStackInstancesRequest 请求对象
      * @return CompletableFuture<UpdateStackInstancesResponse>
      */
     public CompletableFuture<UpdateStackInstancesResponse> updateStackInstancesAsync(
@@ -1800,13 +1773,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStackInstancesRequest 请求对象
+     * @param request UpdateStackInstancesRequest 请求对象
      * @return AsyncInvoker<UpdateStackInstancesRequest, UpdateStackInstancesResponse>
      */
     public AsyncInvoker<UpdateStackInstancesRequest, UpdateStackInstancesResponse> updateStackInstancesAsyncInvoker(
         UpdateStackInstancesRequest request) {
-        return new AsyncInvoker<UpdateStackInstancesRequest, UpdateStackInstancesResponse>(request,
-            AosMeta.updateStackInstances, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.updateStackInstances, hcClient);
     }
 
     /**
@@ -1826,7 +1798,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStackSetRequest 请求对象
+     * @param request UpdateStackSetRequest 请求对象
      * @return CompletableFuture<UpdateStackSetResponse>
      */
     public CompletableFuture<UpdateStackSetResponse> updateStackSetAsync(UpdateStackSetRequest request) {
@@ -1850,13 +1822,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStackSetRequest 请求对象
+     * @param request UpdateStackSetRequest 请求对象
      * @return AsyncInvoker<UpdateStackSetRequest, UpdateStackSetResponse>
      */
     public AsyncInvoker<UpdateStackSetRequest, UpdateStackSetResponse> updateStackSetAsyncInvoker(
         UpdateStackSetRequest request) {
-        return new AsyncInvoker<UpdateStackSetRequest, UpdateStackSetResponse>(request, AosMeta.updateStackSet,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.updateStackSet, hcClient);
     }
 
     /**
@@ -1872,7 +1843,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ParseTemplateVariablesRequest 请求对象
+     * @param request ParseTemplateVariablesRequest 请求对象
      * @return CompletableFuture<ParseTemplateVariablesResponse>
      */
     public CompletableFuture<ParseTemplateVariablesResponse> parseTemplateVariablesAsync(
@@ -1893,13 +1864,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ParseTemplateVariablesRequest 请求对象
+     * @param request ParseTemplateVariablesRequest 请求对象
      * @return AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse>
      */
     public AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> parseTemplateVariablesAsyncInvoker(
         ParseTemplateVariablesRequest request) {
-        return new AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse>(request,
-            AosMeta.parseTemplateVariables, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.parseTemplateVariables, hcClient);
     }
 
     /**
@@ -1914,7 +1884,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return CompletableFuture<DeleteTemplateResponse>
      */
     public CompletableFuture<DeleteTemplateResponse> deleteTemplateAsync(DeleteTemplateRequest request) {
@@ -1933,13 +1903,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
      */
     public AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateAsyncInvoker(
         DeleteTemplateRequest request) {
-        return new AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>(request, AosMeta.deleteTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, AosMeta.deleteTemplate, hcClient);
     }
 
     /**
@@ -1956,7 +1925,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateVersionRequest 请求对象
+     * @param request DeleteTemplateVersionRequest 请求对象
      * @return CompletableFuture<DeleteTemplateVersionResponse>
      */
     public CompletableFuture<DeleteTemplateVersionResponse> deleteTemplateVersionAsync(
@@ -1978,13 +1947,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateVersionRequest 请求对象
+     * @param request DeleteTemplateVersionRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse>
      */
     public AsyncInvoker<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse> deleteTemplateVersionAsyncInvoker(
         DeleteTemplateVersionRequest request) {
-        return new AsyncInvoker<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse>(request,
-            AosMeta.deleteTemplateVersion, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.deleteTemplateVersion, hcClient);
     }
 
     /**
@@ -2004,7 +1972,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateVersionsRequest 请求对象
+     * @param request ListTemplateVersionsRequest 请求对象
      * @return CompletableFuture<ListTemplateVersionsResponse>
      */
     public CompletableFuture<ListTemplateVersionsResponse> listTemplateVersionsAsync(
@@ -2029,13 +1997,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateVersionsRequest 请求对象
+     * @param request ListTemplateVersionsRequest 请求对象
      * @return AsyncInvoker<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
      */
     public AsyncInvoker<ListTemplateVersionsRequest, ListTemplateVersionsResponse> listTemplateVersionsAsyncInvoker(
         ListTemplateVersionsRequest request) {
-        return new AsyncInvoker<ListTemplateVersionsRequest, ListTemplateVersionsResponse>(request,
-            AosMeta.listTemplateVersions, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.listTemplateVersions, hcClient);
     }
 
     /**
@@ -2054,7 +2021,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesRequest 请求对象
+     * @param request ListTemplatesRequest 请求对象
      * @return CompletableFuture<ListTemplatesResponse>
      */
     public CompletableFuture<ListTemplatesResponse> listTemplatesAsync(ListTemplatesRequest request) {
@@ -2077,12 +2044,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesRequest 请求对象
+     * @param request ListTemplatesRequest 请求对象
      * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
      */
     public AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesAsyncInvoker(
         ListTemplatesRequest request) {
-        return new AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, AosMeta.listTemplates, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.listTemplates, hcClient);
     }
 
     /**
@@ -2098,7 +2065,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateMetadataRequest 请求对象
+     * @param request ShowTemplateMetadataRequest 请求对象
      * @return CompletableFuture<ShowTemplateMetadataResponse>
      */
     public CompletableFuture<ShowTemplateMetadataResponse> showTemplateMetadataAsync(
@@ -2119,13 +2086,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateMetadataRequest 请求对象
+     * @param request ShowTemplateMetadataRequest 请求对象
      * @return AsyncInvoker<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse>
      */
     public AsyncInvoker<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse> showTemplateMetadataAsyncInvoker(
         ShowTemplateMetadataRequest request) {
-        return new AsyncInvoker<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse>(request,
-            AosMeta.showTemplateMetadata, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.showTemplateMetadata, hcClient);
     }
 
     /**
@@ -2142,7 +2108,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateVersionContentRequest 请求对象
+     * @param request ShowTemplateVersionContentRequest 请求对象
      * @return CompletableFuture<ShowTemplateVersionContentResponse>
      */
     public CompletableFuture<ShowTemplateVersionContentResponse> showTemplateVersionContentAsync(
@@ -2164,13 +2130,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateVersionContentRequest 请求对象
+     * @param request ShowTemplateVersionContentRequest 请求对象
      * @return AsyncInvoker<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse>
      */
     public AsyncInvoker<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse> showTemplateVersionContentAsyncInvoker(
         ShowTemplateVersionContentRequest request) {
-        return new AsyncInvoker<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse>(request,
-            AosMeta.showTemplateVersionContent, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.showTemplateVersionContent, hcClient);
     }
 
     /**
@@ -2186,7 +2151,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateVersionMetadataRequest 请求对象
+     * @param request ShowTemplateVersionMetadataRequest 请求对象
      * @return CompletableFuture<ShowTemplateVersionMetadataResponse>
      */
     public CompletableFuture<ShowTemplateVersionMetadataResponse> showTemplateVersionMetadataAsync(
@@ -2207,13 +2172,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateVersionMetadataRequest 请求对象
+     * @param request ShowTemplateVersionMetadataRequest 请求对象
      * @return AsyncInvoker<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse>
      */
     public AsyncInvoker<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse> showTemplateVersionMetadataAsyncInvoker(
         ShowTemplateVersionMetadataRequest request) {
-        return new AsyncInvoker<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse>(request,
-            AosMeta.showTemplateVersionMetadata, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.showTemplateVersionMetadata, hcClient);
     }
 
     /**
@@ -2227,7 +2191,7 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateMetadataRequest 请求对象
+     * @param request UpdateTemplateMetadataRequest 请求对象
      * @return CompletableFuture<UpdateTemplateMetadataResponse>
      */
     public CompletableFuture<UpdateTemplateMetadataResponse> updateTemplateMetadataAsync(
@@ -2246,13 +2210,12 @@ public class AosAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateMetadataRequest 请求对象
+     * @param request UpdateTemplateMetadataRequest 请求对象
      * @return AsyncInvoker<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse>
      */
     public AsyncInvoker<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse> updateTemplateMetadataAsyncInvoker(
         UpdateTemplateMetadataRequest request) {
-        return new AsyncInvoker<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse>(request,
-            AosMeta.updateTemplateMetadata, hcClient);
+        return new AsyncInvoker<>(request, AosMeta.updateTemplateMetadata, hcClient);
     }
 
 }

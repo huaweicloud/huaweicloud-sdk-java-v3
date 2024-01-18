@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量删除应用
+ * 批量删除应用。
  */
 public class DeleteAppGroupReq {
 
@@ -40,7 +40,7 @@ public class DeleteAppGroupReq {
     }
 
     /**
-     * 应用组ID,单次最多20个
+     * 应用组ID,单次最多20个。
      * @return ids
      */
     public List<String> getIds() {

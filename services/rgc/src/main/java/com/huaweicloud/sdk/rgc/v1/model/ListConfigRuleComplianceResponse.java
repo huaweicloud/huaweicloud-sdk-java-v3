@@ -30,7 +30,7 @@ public class ListConfigRuleComplianceResponse extends SdkResponse {
     }
 
     /**
-     * 账号ID
+     * 纳管账号ID
      * @return accountId
      */
     public String getAccountId() {
@@ -66,7 +66,7 @@ public class ListConfigRuleComplianceResponse extends SdkResponse {
     }
 
     /**
-     * Get configRuleCompliances
+     * Config规则合规性信息
      * @return configRuleCompliances
      */
     public List<ConfigRuleCompliance> getConfigRuleCompliances() {

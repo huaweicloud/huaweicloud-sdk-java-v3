@@ -215,6 +215,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListUpdatableVersionRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListUpdatableVersionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListUpdateRecordRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListUpdateRecordResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListWorkloadPlansRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListWorkloadPlansResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListWorkloadQueueResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListWorkloadQueueUsersRequest;
@@ -330,7 +332,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddQueueUserListRequest 请求对象
+     * @param request AddQueueUserListRequest 请求对象
      * @return AddQueueUserListResponse
      */
     public AddQueueUserListResponse addQueueUserList(AddQueueUserListRequest request) {
@@ -344,13 +346,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddQueueUserListRequest 请求对象
+     * @param request AddQueueUserListRequest 请求对象
      * @return SyncInvoker<AddQueueUserListRequest, AddQueueUserListResponse>
      */
     public SyncInvoker<AddQueueUserListRequest, AddQueueUserListResponse> addQueueUserListInvoker(
         AddQueueUserListRequest request) {
-        return new SyncInvoker<AddQueueUserListRequest, AddQueueUserListResponse>(request, DwsMeta.addQueueUserList,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.addQueueUserList, hcClient);
     }
 
     /**
@@ -360,7 +361,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSnapshotCrossRegionPolicyRequest 请求对象
+     * @param request AddSnapshotCrossRegionPolicyRequest 请求对象
      * @return AddSnapshotCrossRegionPolicyResponse
      */
     public AddSnapshotCrossRegionPolicyResponse addSnapshotCrossRegionPolicy(
@@ -375,13 +376,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSnapshotCrossRegionPolicyRequest 请求对象
+     * @param request AddSnapshotCrossRegionPolicyRequest 请求对象
      * @return SyncInvoker<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse>
      */
     public SyncInvoker<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse> addSnapshotCrossRegionPolicyInvoker(
         AddSnapshotCrossRegionPolicyRequest request) {
-        return new SyncInvoker<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse>(request,
-            DwsMeta.addSnapshotCrossRegionPolicy, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.addSnapshotCrossRegionPolicy, hcClient);
     }
 
     /**
@@ -391,7 +391,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddWorkloadPlanStageRequest 请求对象
+     * @param request AddWorkloadPlanStageRequest 请求对象
      * @return AddWorkloadPlanStageResponse
      */
     public AddWorkloadPlanStageResponse addWorkloadPlanStage(AddWorkloadPlanStageRequest request) {
@@ -405,13 +405,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddWorkloadPlanStageRequest 请求对象
+     * @param request AddWorkloadPlanStageRequest 请求对象
      * @return SyncInvoker<AddWorkloadPlanStageRequest, AddWorkloadPlanStageResponse>
      */
     public SyncInvoker<AddWorkloadPlanStageRequest, AddWorkloadPlanStageResponse> addWorkloadPlanStageInvoker(
         AddWorkloadPlanStageRequest request) {
-        return new SyncInvoker<AddWorkloadPlanStageRequest, AddWorkloadPlanStageResponse>(request,
-            DwsMeta.addWorkloadPlanStage, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.addWorkloadPlanStage, hcClient);
     }
 
     /**
@@ -421,7 +420,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddWorkloadQueueRequest 请求对象
+     * @param request AddWorkloadQueueRequest 请求对象
      * @return AddWorkloadQueueResponse
      */
     public AddWorkloadQueueResponse addWorkloadQueue(AddWorkloadQueueRequest request) {
@@ -435,13 +434,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddWorkloadQueueRequest 请求对象
+     * @param request AddWorkloadQueueRequest 请求对象
      * @return SyncInvoker<AddWorkloadQueueRequest, AddWorkloadQueueResponse>
      */
     public SyncInvoker<AddWorkloadQueueRequest, AddWorkloadQueueResponse> addWorkloadQueueInvoker(
         AddWorkloadQueueRequest request) {
-        return new SyncInvoker<AddWorkloadQueueRequest, AddWorkloadQueueResponse>(request, DwsMeta.addWorkloadQueue,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.addWorkloadQueue, hcClient);
     }
 
     /**
@@ -451,7 +449,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateEipRequest 请求对象
+     * @param request AssociateEipRequest 请求对象
      * @return AssociateEipResponse
      */
     public AssociateEipResponse associateEip(AssociateEipRequest request) {
@@ -465,11 +463,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateEipRequest 请求对象
+     * @param request AssociateEipRequest 请求对象
      * @return SyncInvoker<AssociateEipRequest, AssociateEipResponse>
      */
     public SyncInvoker<AssociateEipRequest, AssociateEipResponse> associateEipInvoker(AssociateEipRequest request) {
-        return new SyncInvoker<AssociateEipRequest, AssociateEipResponse>(request, DwsMeta.associateEip, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.associateEip, hcClient);
     }
 
     /**
@@ -479,7 +477,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateElbRequest 请求对象
+     * @param request AssociateElbRequest 请求对象
      * @return AssociateElbResponse
      */
     public AssociateElbResponse associateElb(AssociateElbRequest request) {
@@ -493,11 +491,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateElbRequest 请求对象
+     * @param request AssociateElbRequest 请求对象
      * @return SyncInvoker<AssociateElbRequest, AssociateElbResponse>
      */
     public SyncInvoker<AssociateElbRequest, AssociateElbResponse> associateElbInvoker(AssociateElbRequest request) {
-        return new SyncInvoker<AssociateElbRequest, AssociateElbResponse>(request, DwsMeta.associateElb, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.associateElb, hcClient);
     }
 
     /**
@@ -510,7 +508,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateClusterCnRequest 请求对象
+     * @param request BatchCreateClusterCnRequest 请求对象
      * @return BatchCreateClusterCnResponse
      */
     public BatchCreateClusterCnResponse batchCreateClusterCn(BatchCreateClusterCnRequest request) {
@@ -527,13 +525,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateClusterCnRequest 请求对象
+     * @param request BatchCreateClusterCnRequest 请求对象
      * @return SyncInvoker<BatchCreateClusterCnRequest, BatchCreateClusterCnResponse>
      */
     public SyncInvoker<BatchCreateClusterCnRequest, BatchCreateClusterCnResponse> batchCreateClusterCnInvoker(
         BatchCreateClusterCnRequest request) {
-        return new SyncInvoker<BatchCreateClusterCnRequest, BatchCreateClusterCnResponse>(request,
-            DwsMeta.batchCreateClusterCn, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.batchCreateClusterCn, hcClient);
     }
 
     /**
@@ -543,7 +540,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceTagRequest 请求对象
+     * @param request BatchCreateResourceTagRequest 请求对象
      * @return BatchCreateResourceTagResponse
      */
     public BatchCreateResourceTagResponse batchCreateResourceTag(BatchCreateResourceTagRequest request) {
@@ -557,13 +554,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceTagRequest 请求对象
+     * @param request BatchCreateResourceTagRequest 请求对象
      * @return SyncInvoker<BatchCreateResourceTagRequest, BatchCreateResourceTagResponse>
      */
     public SyncInvoker<BatchCreateResourceTagRequest, BatchCreateResourceTagResponse> batchCreateResourceTagInvoker(
         BatchCreateResourceTagRequest request) {
-        return new SyncInvoker<BatchCreateResourceTagRequest, BatchCreateResourceTagResponse>(request,
-            DwsMeta.batchCreateResourceTag, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.batchCreateResourceTag, hcClient);
     }
 
     /**
@@ -576,7 +572,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteClusterCnRequest 请求对象
+     * @param request BatchDeleteClusterCnRequest 请求对象
      * @return BatchDeleteClusterCnResponse
      */
     public BatchDeleteClusterCnResponse batchDeleteClusterCn(BatchDeleteClusterCnRequest request) {
@@ -593,13 +589,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteClusterCnRequest 请求对象
+     * @param request BatchDeleteClusterCnRequest 请求对象
      * @return SyncInvoker<BatchDeleteClusterCnRequest, BatchDeleteClusterCnResponse>
      */
     public SyncInvoker<BatchDeleteClusterCnRequest, BatchDeleteClusterCnResponse> batchDeleteClusterCnInvoker(
         BatchDeleteClusterCnRequest request) {
-        return new SyncInvoker<BatchDeleteClusterCnRequest, BatchDeleteClusterCnResponse>(request,
-            DwsMeta.batchDeleteClusterCn, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.batchDeleteClusterCn, hcClient);
     }
 
     /**
@@ -609,7 +604,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceTagRequest 请求对象
+     * @param request BatchDeleteResourceTagRequest 请求对象
      * @return BatchDeleteResourceTagResponse
      */
     public BatchDeleteResourceTagResponse batchDeleteResourceTag(BatchDeleteResourceTagRequest request) {
@@ -623,13 +618,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceTagRequest 请求对象
+     * @param request BatchDeleteResourceTagRequest 请求对象
      * @return SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>
      */
     public SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTagInvoker(
         BatchDeleteResourceTagRequest request) {
-        return new SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>(request,
-            DwsMeta.batchDeleteResourceTag, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.batchDeleteResourceTag, hcClient);
     }
 
     /**
@@ -640,7 +634,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelReadonlyClusterRequest 请求对象
+     * @param request CancelReadonlyClusterRequest 请求对象
      * @return CancelReadonlyClusterResponse
      */
     public CancelReadonlyClusterResponse cancelReadonlyCluster(CancelReadonlyClusterRequest request) {
@@ -655,13 +649,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelReadonlyClusterRequest 请求对象
+     * @param request CancelReadonlyClusterRequest 请求对象
      * @return SyncInvoker<CancelReadonlyClusterRequest, CancelReadonlyClusterResponse>
      */
     public SyncInvoker<CancelReadonlyClusterRequest, CancelReadonlyClusterResponse> cancelReadonlyClusterInvoker(
         CancelReadonlyClusterRequest request) {
-        return new SyncInvoker<CancelReadonlyClusterRequest, CancelReadonlyClusterResponse>(request,
-            DwsMeta.cancelReadonlyCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.cancelReadonlyCluster, hcClient);
     }
 
     /**
@@ -671,7 +664,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckClusterRequest 请求对象
+     * @param request CheckClusterRequest 请求对象
      * @return CheckClusterResponse
      */
     public CheckClusterResponse checkCluster(CheckClusterRequest request) {
@@ -685,11 +678,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckClusterRequest 请求对象
+     * @param request CheckClusterRequest 请求对象
      * @return SyncInvoker<CheckClusterRequest, CheckClusterResponse>
      */
     public SyncInvoker<CheckClusterRequest, CheckClusterResponse> checkClusterInvoker(CheckClusterRequest request) {
-        return new SyncInvoker<CheckClusterRequest, CheckClusterResponse>(request, DwsMeta.checkCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.checkCluster, hcClient);
     }
 
     /**
@@ -699,7 +692,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDisasterNameRequest 请求对象
+     * @param request CheckDisasterNameRequest 请求对象
      * @return CheckDisasterNameResponse
      */
     public CheckDisasterNameResponse checkDisasterName(CheckDisasterNameRequest request) {
@@ -713,13 +706,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDisasterNameRequest 请求对象
+     * @param request CheckDisasterNameRequest 请求对象
      * @return SyncInvoker<CheckDisasterNameRequest, CheckDisasterNameResponse>
      */
     public SyncInvoker<CheckDisasterNameRequest, CheckDisasterNameResponse> checkDisasterNameInvoker(
         CheckDisasterNameRequest request) {
-        return new SyncInvoker<CheckDisasterNameRequest, CheckDisasterNameResponse>(request, DwsMeta.checkDisasterName,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.checkDisasterName, hcClient);
     }
 
     /**
@@ -729,7 +721,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTableRestoreRequest 请求对象
+     * @param request CheckTableRestoreRequest 请求对象
      * @return CheckTableRestoreResponse
      */
     public CheckTableRestoreResponse checkTableRestore(CheckTableRestoreRequest request) {
@@ -743,13 +735,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTableRestoreRequest 请求对象
+     * @param request CheckTableRestoreRequest 请求对象
      * @return SyncInvoker<CheckTableRestoreRequest, CheckTableRestoreResponse>
      */
     public SyncInvoker<CheckTableRestoreRequest, CheckTableRestoreResponse> checkTableRestoreInvoker(
         CheckTableRestoreRequest request) {
-        return new SyncInvoker<CheckTableRestoreRequest, CheckTableRestoreResponse>(request, DwsMeta.checkTableRestore,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.checkTableRestore, hcClient);
     }
 
     /**
@@ -759,7 +750,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConvertToLogicalClusterRequest 请求对象
+     * @param request ConvertToLogicalClusterRequest 请求对象
      * @return ConvertToLogicalClusterResponse
      */
     public ConvertToLogicalClusterResponse convertToLogicalCluster(ConvertToLogicalClusterRequest request) {
@@ -773,13 +764,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConvertToLogicalClusterRequest 请求对象
+     * @param request ConvertToLogicalClusterRequest 请求对象
      * @return SyncInvoker<ConvertToLogicalClusterRequest, ConvertToLogicalClusterResponse>
      */
     public SyncInvoker<ConvertToLogicalClusterRequest, ConvertToLogicalClusterResponse> convertToLogicalClusterInvoker(
         ConvertToLogicalClusterRequest request) {
-        return new SyncInvoker<ConvertToLogicalClusterRequest, ConvertToLogicalClusterResponse>(request,
-            DwsMeta.convertToLogicalCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.convertToLogicalCluster, hcClient);
     }
 
     /**
@@ -789,7 +779,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopySnapshotRequest 请求对象
+     * @param request CopySnapshotRequest 请求对象
      * @return CopySnapshotResponse
      */
     public CopySnapshotResponse copySnapshot(CopySnapshotRequest request) {
@@ -803,11 +793,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopySnapshotRequest 请求对象
+     * @param request CopySnapshotRequest 请求对象
      * @return SyncInvoker<CopySnapshotRequest, CopySnapshotResponse>
      */
     public SyncInvoker<CopySnapshotRequest, CopySnapshotResponse> copySnapshotInvoker(CopySnapshotRequest request) {
-        return new SyncInvoker<CopySnapshotRequest, CopySnapshotResponse>(request, DwsMeta.copySnapshot, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.copySnapshot, hcClient);
     }
 
     /**
@@ -817,7 +807,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlarmSubRequest 请求对象
+     * @param request CreateAlarmSubRequest 请求对象
      * @return CreateAlarmSubResponse
      */
     public CreateAlarmSubResponse createAlarmSub(CreateAlarmSubRequest request) {
@@ -831,13 +821,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlarmSubRequest 请求对象
+     * @param request CreateAlarmSubRequest 请求对象
      * @return SyncInvoker<CreateAlarmSubRequest, CreateAlarmSubResponse>
      */
     public SyncInvoker<CreateAlarmSubRequest, CreateAlarmSubResponse> createAlarmSubInvoker(
         CreateAlarmSubRequest request) {
-        return new SyncInvoker<CreateAlarmSubRequest, CreateAlarmSubResponse>(request, DwsMeta.createAlarmSub,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createAlarmSub, hcClient);
     }
 
     /**
@@ -849,7 +838,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return CreateClusterResponse
      */
     public CreateClusterResponse createCluster(CreateClusterRequest request) {
@@ -865,11 +854,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return SyncInvoker<CreateClusterRequest, CreateClusterResponse>
      */
     public SyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterInvoker(CreateClusterRequest request) {
-        return new SyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, DwsMeta.createCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createCluster, hcClient);
     }
 
     /**
@@ -879,7 +868,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterDnsRequest 请求对象
+     * @param request CreateClusterDnsRequest 请求对象
      * @return CreateClusterDnsResponse
      */
     public CreateClusterDnsResponse createClusterDns(CreateClusterDnsRequest request) {
@@ -893,13 +882,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterDnsRequest 请求对象
+     * @param request CreateClusterDnsRequest 请求对象
      * @return SyncInvoker<CreateClusterDnsRequest, CreateClusterDnsResponse>
      */
     public SyncInvoker<CreateClusterDnsRequest, CreateClusterDnsResponse> createClusterDnsInvoker(
         CreateClusterDnsRequest request) {
-        return new SyncInvoker<CreateClusterDnsRequest, CreateClusterDnsResponse>(request, DwsMeta.createClusterDns,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createClusterDns, hcClient);
     }
 
     /**
@@ -911,7 +899,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterV2Request 请求对象
+     * @param request CreateClusterV2Request 请求对象
      * @return CreateClusterV2Response
      */
     public CreateClusterV2Response createClusterV2(CreateClusterV2Request request) {
@@ -927,13 +915,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterV2Request 请求对象
+     * @param request CreateClusterV2Request 请求对象
      * @return SyncInvoker<CreateClusterV2Request, CreateClusterV2Response>
      */
     public SyncInvoker<CreateClusterV2Request, CreateClusterV2Response> createClusterV2Invoker(
         CreateClusterV2Request request) {
-        return new SyncInvoker<CreateClusterV2Request, CreateClusterV2Response>(request, DwsMeta.createClusterV2,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createClusterV2, hcClient);
     }
 
     /**
@@ -943,7 +930,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterWorkloadRequest 请求对象
+     * @param request CreateClusterWorkloadRequest 请求对象
      * @return CreateClusterWorkloadResponse
      */
     public CreateClusterWorkloadResponse createClusterWorkload(CreateClusterWorkloadRequest request) {
@@ -957,13 +944,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterWorkloadRequest 请求对象
+     * @param request CreateClusterWorkloadRequest 请求对象
      * @return SyncInvoker<CreateClusterWorkloadRequest, CreateClusterWorkloadResponse>
      */
     public SyncInvoker<CreateClusterWorkloadRequest, CreateClusterWorkloadResponse> createClusterWorkloadInvoker(
         CreateClusterWorkloadRequest request) {
-        return new SyncInvoker<CreateClusterWorkloadRequest, CreateClusterWorkloadResponse>(request,
-            DwsMeta.createClusterWorkload, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createClusterWorkload, hcClient);
     }
 
     /**
@@ -973,7 +959,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataSourceRequest 请求对象
+     * @param request CreateDataSourceRequest 请求对象
      * @return CreateDataSourceResponse
      */
     public CreateDataSourceResponse createDataSource(CreateDataSourceRequest request) {
@@ -987,13 +973,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataSourceRequest 请求对象
+     * @param request CreateDataSourceRequest 请求对象
      * @return SyncInvoker<CreateDataSourceRequest, CreateDataSourceResponse>
      */
     public SyncInvoker<CreateDataSourceRequest, CreateDataSourceResponse> createDataSourceInvoker(
         CreateDataSourceRequest request) {
-        return new SyncInvoker<CreateDataSourceRequest, CreateDataSourceResponse>(request, DwsMeta.createDataSource,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createDataSource, hcClient);
     }
 
     /**
@@ -1003,7 +988,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDisasterRecoveryRequest 请求对象
+     * @param request CreateDisasterRecoveryRequest 请求对象
      * @return CreateDisasterRecoveryResponse
      */
     public CreateDisasterRecoveryResponse createDisasterRecovery(CreateDisasterRecoveryRequest request) {
@@ -1017,13 +1002,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDisasterRecoveryRequest 请求对象
+     * @param request CreateDisasterRecoveryRequest 请求对象
      * @return SyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>
      */
     public SyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> createDisasterRecoveryInvoker(
         CreateDisasterRecoveryRequest request) {
-        return new SyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>(request,
-            DwsMeta.createDisasterRecovery, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createDisasterRecovery, hcClient);
     }
 
     /**
@@ -1033,7 +1017,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventSubRequest 请求对象
+     * @param request CreateEventSubRequest 请求对象
      * @return CreateEventSubResponse
      */
     public CreateEventSubResponse createEventSub(CreateEventSubRequest request) {
@@ -1047,13 +1031,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventSubRequest 请求对象
+     * @param request CreateEventSubRequest 请求对象
      * @return SyncInvoker<CreateEventSubRequest, CreateEventSubResponse>
      */
     public SyncInvoker<CreateEventSubRequest, CreateEventSubResponse> createEventSubInvoker(
         CreateEventSubRequest request) {
-        return new SyncInvoker<CreateEventSubRequest, CreateEventSubResponse>(request, DwsMeta.createEventSub,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createEventSub, hcClient);
     }
 
     /**
@@ -1063,7 +1046,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogicalClusterRequest 请求对象
+     * @param request CreateLogicalClusterRequest 请求对象
      * @return CreateLogicalClusterResponse
      */
     public CreateLogicalClusterResponse createLogicalCluster(CreateLogicalClusterRequest request) {
@@ -1077,13 +1060,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogicalClusterRequest 请求对象
+     * @param request CreateLogicalClusterRequest 请求对象
      * @return SyncInvoker<CreateLogicalClusterRequest, CreateLogicalClusterResponse>
      */
     public SyncInvoker<CreateLogicalClusterRequest, CreateLogicalClusterResponse> createLogicalClusterInvoker(
         CreateLogicalClusterRequest request) {
-        return new SyncInvoker<CreateLogicalClusterRequest, CreateLogicalClusterResponse>(request,
-            DwsMeta.createLogicalCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createLogicalCluster, hcClient);
     }
 
     /**
@@ -1093,7 +1075,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSnapshotRequest 请求对象
+     * @param request CreateSnapshotRequest 请求对象
      * @return CreateSnapshotResponse
      */
     public CreateSnapshotResponse createSnapshot(CreateSnapshotRequest request) {
@@ -1107,13 +1089,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSnapshotRequest 请求对象
+     * @param request CreateSnapshotRequest 请求对象
      * @return SyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>
      */
     public SyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshotInvoker(
         CreateSnapshotRequest request) {
-        return new SyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>(request, DwsMeta.createSnapshot,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createSnapshot, hcClient);
     }
 
     /**
@@ -1123,7 +1104,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSnapshotPolicyRequest 请求对象
+     * @param request CreateSnapshotPolicyRequest 请求对象
      * @return CreateSnapshotPolicyResponse
      */
     public CreateSnapshotPolicyResponse createSnapshotPolicy(CreateSnapshotPolicyRequest request) {
@@ -1137,13 +1118,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSnapshotPolicyRequest 请求对象
+     * @param request CreateSnapshotPolicyRequest 请求对象
      * @return SyncInvoker<CreateSnapshotPolicyRequest, CreateSnapshotPolicyResponse>
      */
     public SyncInvoker<CreateSnapshotPolicyRequest, CreateSnapshotPolicyResponse> createSnapshotPolicyInvoker(
         CreateSnapshotPolicyRequest request) {
-        return new SyncInvoker<CreateSnapshotPolicyRequest, CreateSnapshotPolicyResponse>(request,
-            DwsMeta.createSnapshotPolicy, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createSnapshotPolicy, hcClient);
     }
 
     /**
@@ -1153,7 +1133,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkloadPlanRequest 请求对象
+     * @param request CreateWorkloadPlanRequest 请求对象
      * @return CreateWorkloadPlanResponse
      */
     public CreateWorkloadPlanResponse createWorkloadPlan(CreateWorkloadPlanRequest request) {
@@ -1167,13 +1147,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkloadPlanRequest 请求对象
+     * @param request CreateWorkloadPlanRequest 请求对象
      * @return SyncInvoker<CreateWorkloadPlanRequest, CreateWorkloadPlanResponse>
      */
     public SyncInvoker<CreateWorkloadPlanRequest, CreateWorkloadPlanResponse> createWorkloadPlanInvoker(
         CreateWorkloadPlanRequest request) {
-        return new SyncInvoker<CreateWorkloadPlanRequest, CreateWorkloadPlanResponse>(request,
-            DwsMeta.createWorkloadPlan, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.createWorkloadPlan, hcClient);
     }
 
     /**
@@ -1183,7 +1162,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmSubRequest 请求对象
+     * @param request DeleteAlarmSubRequest 请求对象
      * @return DeleteAlarmSubResponse
      */
     public DeleteAlarmSubResponse deleteAlarmSub(DeleteAlarmSubRequest request) {
@@ -1197,13 +1176,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmSubRequest 请求对象
+     * @param request DeleteAlarmSubRequest 请求对象
      * @return SyncInvoker<DeleteAlarmSubRequest, DeleteAlarmSubResponse>
      */
     public SyncInvoker<DeleteAlarmSubRequest, DeleteAlarmSubResponse> deleteAlarmSubInvoker(
         DeleteAlarmSubRequest request) {
-        return new SyncInvoker<DeleteAlarmSubRequest, DeleteAlarmSubResponse>(request, DwsMeta.deleteAlarmSub,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteAlarmSub, hcClient);
     }
 
     /**
@@ -1213,7 +1191,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterRequest 请求对象
+     * @param request DeleteClusterRequest 请求对象
      * @return DeleteClusterResponse
      */
     public DeleteClusterResponse deleteCluster(DeleteClusterRequest request) {
@@ -1227,11 +1205,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterRequest 请求对象
+     * @param request DeleteClusterRequest 请求对象
      * @return SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
      */
     public SyncInvoker<DeleteClusterRequest, DeleteClusterResponse> deleteClusterInvoker(DeleteClusterRequest request) {
-        return new SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>(request, DwsMeta.deleteCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteCluster, hcClient);
     }
 
     /**
@@ -1241,7 +1219,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterDnsRequest 请求对象
+     * @param request DeleteClusterDnsRequest 请求对象
      * @return DeleteClusterDnsResponse
      */
     public DeleteClusterDnsResponse deleteClusterDns(DeleteClusterDnsRequest request) {
@@ -1255,13 +1233,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterDnsRequest 请求对象
+     * @param request DeleteClusterDnsRequest 请求对象
      * @return SyncInvoker<DeleteClusterDnsRequest, DeleteClusterDnsResponse>
      */
     public SyncInvoker<DeleteClusterDnsRequest, DeleteClusterDnsResponse> deleteClusterDnsInvoker(
         DeleteClusterDnsRequest request) {
-        return new SyncInvoker<DeleteClusterDnsRequest, DeleteClusterDnsResponse>(request, DwsMeta.deleteClusterDns,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteClusterDns, hcClient);
     }
 
     /**
@@ -1271,7 +1248,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterNodesRequest 请求对象
+     * @param request DeleteClusterNodesRequest 请求对象
      * @return DeleteClusterNodesResponse
      */
     public DeleteClusterNodesResponse deleteClusterNodes(DeleteClusterNodesRequest request) {
@@ -1285,13 +1262,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterNodesRequest 请求对象
+     * @param request DeleteClusterNodesRequest 请求对象
      * @return SyncInvoker<DeleteClusterNodesRequest, DeleteClusterNodesResponse>
      */
     public SyncInvoker<DeleteClusterNodesRequest, DeleteClusterNodesResponse> deleteClusterNodesInvoker(
         DeleteClusterNodesRequest request) {
-        return new SyncInvoker<DeleteClusterNodesRequest, DeleteClusterNodesResponse>(request,
-            DwsMeta.deleteClusterNodes, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteClusterNodes, hcClient);
     }
 
     /**
@@ -1301,7 +1277,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataSourceRequest 请求对象
+     * @param request DeleteDataSourceRequest 请求对象
      * @return DeleteDataSourceResponse
      */
     public DeleteDataSourceResponse deleteDataSource(DeleteDataSourceRequest request) {
@@ -1315,13 +1291,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataSourceRequest 请求对象
+     * @param request DeleteDataSourceRequest 请求对象
      * @return SyncInvoker<DeleteDataSourceRequest, DeleteDataSourceResponse>
      */
     public SyncInvoker<DeleteDataSourceRequest, DeleteDataSourceResponse> deleteDataSourceInvoker(
         DeleteDataSourceRequest request) {
-        return new SyncInvoker<DeleteDataSourceRequest, DeleteDataSourceResponse>(request, DwsMeta.deleteDataSource,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteDataSource, hcClient);
     }
 
     /**
@@ -1331,7 +1306,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDisasterRecoveryRequest 请求对象
+     * @param request DeleteDisasterRecoveryRequest 请求对象
      * @return DeleteDisasterRecoveryResponse
      */
     public DeleteDisasterRecoveryResponse deleteDisasterRecovery(DeleteDisasterRecoveryRequest request) {
@@ -1345,13 +1320,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDisasterRecoveryRequest 请求对象
+     * @param request DeleteDisasterRecoveryRequest 请求对象
      * @return SyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>
      */
     public SyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecoveryInvoker(
         DeleteDisasterRecoveryRequest request) {
-        return new SyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>(request,
-            DwsMeta.deleteDisasterRecovery, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteDisasterRecovery, hcClient);
     }
 
     /**
@@ -1361,7 +1335,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventSubRequest 请求对象
+     * @param request DeleteEventSubRequest 请求对象
      * @return DeleteEventSubResponse
      */
     public DeleteEventSubResponse deleteEventSub(DeleteEventSubRequest request) {
@@ -1375,13 +1349,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventSubRequest 请求对象
+     * @param request DeleteEventSubRequest 请求对象
      * @return SyncInvoker<DeleteEventSubRequest, DeleteEventSubResponse>
      */
     public SyncInvoker<DeleteEventSubRequest, DeleteEventSubResponse> deleteEventSubInvoker(
         DeleteEventSubRequest request) {
-        return new SyncInvoker<DeleteEventSubRequest, DeleteEventSubResponse>(request, DwsMeta.deleteEventSub,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteEventSub, hcClient);
     }
 
     /**
@@ -1391,7 +1364,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogicalClusterRequest 请求对象
+     * @param request DeleteLogicalClusterRequest 请求对象
      * @return DeleteLogicalClusterResponse
      */
     public DeleteLogicalClusterResponse deleteLogicalCluster(DeleteLogicalClusterRequest request) {
@@ -1405,13 +1378,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogicalClusterRequest 请求对象
+     * @param request DeleteLogicalClusterRequest 请求对象
      * @return SyncInvoker<DeleteLogicalClusterRequest, DeleteLogicalClusterResponse>
      */
     public SyncInvoker<DeleteLogicalClusterRequest, DeleteLogicalClusterResponse> deleteLogicalClusterInvoker(
         DeleteLogicalClusterRequest request) {
-        return new SyncInvoker<DeleteLogicalClusterRequest, DeleteLogicalClusterResponse>(request,
-            DwsMeta.deleteLogicalCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteLogicalCluster, hcClient);
     }
 
     /**
@@ -1421,7 +1393,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQueueUserListRequest 请求对象
+     * @param request DeleteQueueUserListRequest 请求对象
      * @return DeleteQueueUserListResponse
      */
     public DeleteQueueUserListResponse deleteQueueUserList(DeleteQueueUserListRequest request) {
@@ -1435,13 +1407,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQueueUserListRequest 请求对象
+     * @param request DeleteQueueUserListRequest 请求对象
      * @return SyncInvoker<DeleteQueueUserListRequest, DeleteQueueUserListResponse>
      */
     public SyncInvoker<DeleteQueueUserListRequest, DeleteQueueUserListResponse> deleteQueueUserListInvoker(
         DeleteQueueUserListRequest request) {
-        return new SyncInvoker<DeleteQueueUserListRequest, DeleteQueueUserListResponse>(request,
-            DwsMeta.deleteQueueUserList, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteQueueUserList, hcClient);
     }
 
     /**
@@ -1451,7 +1422,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotRequest 请求对象
+     * @param request DeleteSnapshotRequest 请求对象
      * @return DeleteSnapshotResponse
      */
     public DeleteSnapshotResponse deleteSnapshot(DeleteSnapshotRequest request) {
@@ -1465,13 +1436,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotRequest 请求对象
+     * @param request DeleteSnapshotRequest 请求对象
      * @return SyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse>
      */
     public SyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshotInvoker(
         DeleteSnapshotRequest request) {
-        return new SyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse>(request, DwsMeta.deleteSnapshot,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteSnapshot, hcClient);
     }
 
     /**
@@ -1481,7 +1451,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotCrossRegionPolicyRequest 请求对象
+     * @param request DeleteSnapshotCrossRegionPolicyRequest 请求对象
      * @return DeleteSnapshotCrossRegionPolicyResponse
      */
     public DeleteSnapshotCrossRegionPolicyResponse deleteSnapshotCrossRegionPolicy(
@@ -1496,13 +1466,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotCrossRegionPolicyRequest 请求对象
+     * @param request DeleteSnapshotCrossRegionPolicyRequest 请求对象
      * @return SyncInvoker<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse>
      */
     public SyncInvoker<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse> deleteSnapshotCrossRegionPolicyInvoker(
         DeleteSnapshotCrossRegionPolicyRequest request) {
-        return new SyncInvoker<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse>(request,
-            DwsMeta.deleteSnapshotCrossRegionPolicy, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteSnapshotCrossRegionPolicy, hcClient);
     }
 
     /**
@@ -1512,7 +1481,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotPolicyRequest 请求对象
+     * @param request DeleteSnapshotPolicyRequest 请求对象
      * @return DeleteSnapshotPolicyResponse
      */
     public DeleteSnapshotPolicyResponse deleteSnapshotPolicy(DeleteSnapshotPolicyRequest request) {
@@ -1526,13 +1495,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSnapshotPolicyRequest 请求对象
+     * @param request DeleteSnapshotPolicyRequest 请求对象
      * @return SyncInvoker<DeleteSnapshotPolicyRequest, DeleteSnapshotPolicyResponse>
      */
     public SyncInvoker<DeleteSnapshotPolicyRequest, DeleteSnapshotPolicyResponse> deleteSnapshotPolicyInvoker(
         DeleteSnapshotPolicyRequest request) {
-        return new SyncInvoker<DeleteSnapshotPolicyRequest, DeleteSnapshotPolicyResponse>(request,
-            DwsMeta.deleteSnapshotPolicy, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteSnapshotPolicy, hcClient);
     }
 
     /**
@@ -1542,7 +1510,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkloadPlanRequest 请求对象
+     * @param request DeleteWorkloadPlanRequest 请求对象
      * @return DeleteWorkloadPlanResponse
      */
     public DeleteWorkloadPlanResponse deleteWorkloadPlan(DeleteWorkloadPlanRequest request) {
@@ -1556,13 +1524,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkloadPlanRequest 请求对象
+     * @param request DeleteWorkloadPlanRequest 请求对象
      * @return SyncInvoker<DeleteWorkloadPlanRequest, DeleteWorkloadPlanResponse>
      */
     public SyncInvoker<DeleteWorkloadPlanRequest, DeleteWorkloadPlanResponse> deleteWorkloadPlanInvoker(
         DeleteWorkloadPlanRequest request) {
-        return new SyncInvoker<DeleteWorkloadPlanRequest, DeleteWorkloadPlanResponse>(request,
-            DwsMeta.deleteWorkloadPlan, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteWorkloadPlan, hcClient);
     }
 
     /**
@@ -1572,7 +1539,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkloadPlanStageRequest 请求对象
+     * @param request DeleteWorkloadPlanStageRequest 请求对象
      * @return DeleteWorkloadPlanStageResponse
      */
     public DeleteWorkloadPlanStageResponse deleteWorkloadPlanStage(DeleteWorkloadPlanStageRequest request) {
@@ -1586,13 +1553,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkloadPlanStageRequest 请求对象
+     * @param request DeleteWorkloadPlanStageRequest 请求对象
      * @return SyncInvoker<DeleteWorkloadPlanStageRequest, DeleteWorkloadPlanStageResponse>
      */
     public SyncInvoker<DeleteWorkloadPlanStageRequest, DeleteWorkloadPlanStageResponse> deleteWorkloadPlanStageInvoker(
         DeleteWorkloadPlanStageRequest request) {
-        return new SyncInvoker<DeleteWorkloadPlanStageRequest, DeleteWorkloadPlanStageResponse>(request,
-            DwsMeta.deleteWorkloadPlanStage, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteWorkloadPlanStage, hcClient);
     }
 
     /**
@@ -1602,7 +1568,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkloadQueueRequest 请求对象
+     * @param request DeleteWorkloadQueueRequest 请求对象
      * @return DeleteWorkloadQueueResponse
      */
     public DeleteWorkloadQueueResponse deleteWorkloadQueue(DeleteWorkloadQueueRequest request) {
@@ -1616,13 +1582,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkloadQueueRequest 请求对象
+     * @param request DeleteWorkloadQueueRequest 请求对象
      * @return SyncInvoker<DeleteWorkloadQueueRequest, DeleteWorkloadQueueResponse>
      */
     public SyncInvoker<DeleteWorkloadQueueRequest, DeleteWorkloadQueueResponse> deleteWorkloadQueueInvoker(
         DeleteWorkloadQueueRequest request) {
-        return new SyncInvoker<DeleteWorkloadQueueRequest, DeleteWorkloadQueueResponse>(request,
-            DwsMeta.deleteWorkloadQueue, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.deleteWorkloadQueue, hcClient);
     }
 
     /**
@@ -1632,7 +1597,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableLtsLogsRequest 请求对象
+     * @param request DisableLtsLogsRequest 请求对象
      * @return DisableLtsLogsResponse
      */
     public DisableLtsLogsResponse disableLtsLogs(DisableLtsLogsRequest request) {
@@ -1646,13 +1611,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableLtsLogsRequest 请求对象
+     * @param request DisableLtsLogsRequest 请求对象
      * @return SyncInvoker<DisableLtsLogsRequest, DisableLtsLogsResponse>
      */
     public SyncInvoker<DisableLtsLogsRequest, DisableLtsLogsResponse> disableLtsLogsInvoker(
         DisableLtsLogsRequest request) {
-        return new SyncInvoker<DisableLtsLogsRequest, DisableLtsLogsResponse>(request, DwsMeta.disableLtsLogs,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.disableLtsLogs, hcClient);
     }
 
     /**
@@ -1662,7 +1626,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateEipRequest 请求对象
+     * @param request DisassociateEipRequest 请求对象
      * @return DisassociateEipResponse
      */
     public DisassociateEipResponse disassociateEip(DisassociateEipRequest request) {
@@ -1676,13 +1640,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateEipRequest 请求对象
+     * @param request DisassociateEipRequest 请求对象
      * @return SyncInvoker<DisassociateEipRequest, DisassociateEipResponse>
      */
     public SyncInvoker<DisassociateEipRequest, DisassociateEipResponse> disassociateEipInvoker(
         DisassociateEipRequest request) {
-        return new SyncInvoker<DisassociateEipRequest, DisassociateEipResponse>(request, DwsMeta.disassociateEip,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.disassociateEip, hcClient);
     }
 
     /**
@@ -1692,7 +1655,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateElbRequest 请求对象
+     * @param request DisassociateElbRequest 请求对象
      * @return DisassociateElbResponse
      */
     public DisassociateElbResponse disassociateElb(DisassociateElbRequest request) {
@@ -1706,13 +1669,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateElbRequest 请求对象
+     * @param request DisassociateElbRequest 请求对象
      * @return SyncInvoker<DisassociateElbRequest, DisassociateElbResponse>
      */
     public SyncInvoker<DisassociateElbRequest, DisassociateElbResponse> disassociateElbInvoker(
         DisassociateElbRequest request) {
-        return new SyncInvoker<DisassociateElbRequest, DisassociateElbResponse>(request, DwsMeta.disassociateElb,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.disassociateElb, hcClient);
     }
 
     /**
@@ -1722,7 +1684,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableLogicalClusterRequest 请求对象
+     * @param request EnableLogicalClusterRequest 请求对象
      * @return EnableLogicalClusterResponse
      */
     public EnableLogicalClusterResponse enableLogicalCluster(EnableLogicalClusterRequest request) {
@@ -1736,13 +1698,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableLogicalClusterRequest 请求对象
+     * @param request EnableLogicalClusterRequest 请求对象
      * @return SyncInvoker<EnableLogicalClusterRequest, EnableLogicalClusterResponse>
      */
     public SyncInvoker<EnableLogicalClusterRequest, EnableLogicalClusterResponse> enableLogicalClusterInvoker(
         EnableLogicalClusterRequest request) {
-        return new SyncInvoker<EnableLogicalClusterRequest, EnableLogicalClusterResponse>(request,
-            DwsMeta.enableLogicalCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.enableLogicalCluster, hcClient);
     }
 
     /**
@@ -1752,7 +1713,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableLtsLogsRequest 请求对象
+     * @param request EnableLtsLogsRequest 请求对象
      * @return EnableLtsLogsResponse
      */
     public EnableLtsLogsResponse enableLtsLogs(EnableLtsLogsRequest request) {
@@ -1766,11 +1727,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableLtsLogsRequest 请求对象
+     * @param request EnableLtsLogsRequest 请求对象
      * @return SyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>
      */
     public SyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse> enableLtsLogsInvoker(EnableLtsLogsRequest request) {
-        return new SyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>(request, DwsMeta.enableLtsLogs, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.enableLtsLogs, hcClient);
     }
 
     /**
@@ -1780,7 +1741,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteClusterUpgradeActionRequest 请求对象
+     * @param request ExecuteClusterUpgradeActionRequest 请求对象
      * @return ExecuteClusterUpgradeActionResponse
      */
     public ExecuteClusterUpgradeActionResponse executeClusterUpgradeAction(ExecuteClusterUpgradeActionRequest request) {
@@ -1794,13 +1755,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteClusterUpgradeActionRequest 请求对象
+     * @param request ExecuteClusterUpgradeActionRequest 请求对象
      * @return SyncInvoker<ExecuteClusterUpgradeActionRequest, ExecuteClusterUpgradeActionResponse>
      */
     public SyncInvoker<ExecuteClusterUpgradeActionRequest, ExecuteClusterUpgradeActionResponse> executeClusterUpgradeActionInvoker(
         ExecuteClusterUpgradeActionRequest request) {
-        return new SyncInvoker<ExecuteClusterUpgradeActionRequest, ExecuteClusterUpgradeActionResponse>(request,
-            DwsMeta.executeClusterUpgradeAction, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.executeClusterUpgradeAction, hcClient);
     }
 
     /**
@@ -1810,7 +1770,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDatabaseOmUserActionRequest 请求对象
+     * @param request ExecuteDatabaseOmUserActionRequest 请求对象
      * @return ExecuteDatabaseOmUserActionResponse
      */
     public ExecuteDatabaseOmUserActionResponse executeDatabaseOmUserAction(ExecuteDatabaseOmUserActionRequest request) {
@@ -1824,13 +1784,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDatabaseOmUserActionRequest 请求对象
+     * @param request ExecuteDatabaseOmUserActionRequest 请求对象
      * @return SyncInvoker<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse>
      */
     public SyncInvoker<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse> executeDatabaseOmUserActionInvoker(
         ExecuteDatabaseOmUserActionRequest request) {
-        return new SyncInvoker<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse>(request,
-            DwsMeta.executeDatabaseOmUserAction, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.executeDatabaseOmUserAction, hcClient);
     }
 
     /**
@@ -1840,7 +1799,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteRedistributionClusterRequest 请求对象
+     * @param request ExecuteRedistributionClusterRequest 请求对象
      * @return ExecuteRedistributionClusterResponse
      */
     public ExecuteRedistributionClusterResponse executeRedistributionCluster(
@@ -1855,13 +1814,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteRedistributionClusterRequest 请求对象
+     * @param request ExecuteRedistributionClusterRequest 请求对象
      * @return SyncInvoker<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse>
      */
     public SyncInvoker<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse> executeRedistributionClusterInvoker(
         ExecuteRedistributionClusterRequest request) {
-        return new SyncInvoker<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse>(request,
-            DwsMeta.executeRedistributionCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.executeRedistributionCluster, hcClient);
     }
 
     /**
@@ -1873,7 +1831,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandInstanceStorageRequest 请求对象
+     * @param request ExpandInstanceStorageRequest 请求对象
      * @return ExpandInstanceStorageResponse
      */
     public ExpandInstanceStorageResponse expandInstanceStorage(ExpandInstanceStorageRequest request) {
@@ -1889,13 +1847,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandInstanceStorageRequest 请求对象
+     * @param request ExpandInstanceStorageRequest 请求对象
      * @return SyncInvoker<ExpandInstanceStorageRequest, ExpandInstanceStorageResponse>
      */
     public SyncInvoker<ExpandInstanceStorageRequest, ExpandInstanceStorageResponse> expandInstanceStorageInvoker(
         ExpandInstanceStorageRequest request) {
-        return new SyncInvoker<ExpandInstanceStorageRequest, ExpandInstanceStorageResponse>(request,
-            DwsMeta.expandInstanceStorage, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.expandInstanceStorage, hcClient);
     }
 
     /**
@@ -1905,7 +1862,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmConfigsRequest 请求对象
+     * @param request ListAlarmConfigsRequest 请求对象
      * @return ListAlarmConfigsResponse
      */
     public ListAlarmConfigsResponse listAlarmConfigs(ListAlarmConfigsRequest request) {
@@ -1919,13 +1876,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmConfigsRequest 请求对象
+     * @param request ListAlarmConfigsRequest 请求对象
      * @return SyncInvoker<ListAlarmConfigsRequest, ListAlarmConfigsResponse>
      */
     public SyncInvoker<ListAlarmConfigsRequest, ListAlarmConfigsResponse> listAlarmConfigsInvoker(
         ListAlarmConfigsRequest request) {
-        return new SyncInvoker<ListAlarmConfigsRequest, ListAlarmConfigsResponse>(request, DwsMeta.listAlarmConfigs,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listAlarmConfigs, hcClient);
     }
 
     /**
@@ -1935,7 +1891,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmDetailRequest 请求对象
+     * @param request ListAlarmDetailRequest 请求对象
      * @return ListAlarmDetailResponse
      */
     public ListAlarmDetailResponse listAlarmDetail(ListAlarmDetailRequest request) {
@@ -1949,13 +1905,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmDetailRequest 请求对象
+     * @param request ListAlarmDetailRequest 请求对象
      * @return SyncInvoker<ListAlarmDetailRequest, ListAlarmDetailResponse>
      */
     public SyncInvoker<ListAlarmDetailRequest, ListAlarmDetailResponse> listAlarmDetailInvoker(
         ListAlarmDetailRequest request) {
-        return new SyncInvoker<ListAlarmDetailRequest, ListAlarmDetailResponse>(request, DwsMeta.listAlarmDetail,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listAlarmDetail, hcClient);
     }
 
     /**
@@ -1965,7 +1920,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmStatisticRequest 请求对象
+     * @param request ListAlarmStatisticRequest 请求对象
      * @return ListAlarmStatisticResponse
      */
     public ListAlarmStatisticResponse listAlarmStatistic(ListAlarmStatisticRequest request) {
@@ -1979,13 +1934,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmStatisticRequest 请求对象
+     * @param request ListAlarmStatisticRequest 请求对象
      * @return SyncInvoker<ListAlarmStatisticRequest, ListAlarmStatisticResponse>
      */
     public SyncInvoker<ListAlarmStatisticRequest, ListAlarmStatisticResponse> listAlarmStatisticInvoker(
         ListAlarmStatisticRequest request) {
-        return new SyncInvoker<ListAlarmStatisticRequest, ListAlarmStatisticResponse>(request,
-            DwsMeta.listAlarmStatistic, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listAlarmStatistic, hcClient);
     }
 
     /**
@@ -1995,7 +1949,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmSubsRequest 请求对象
+     * @param request ListAlarmSubsRequest 请求对象
      * @return ListAlarmSubsResponse
      */
     public ListAlarmSubsResponse listAlarmSubs(ListAlarmSubsRequest request) {
@@ -2009,11 +1963,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmSubsRequest 请求对象
+     * @param request ListAlarmSubsRequest 请求对象
      * @return SyncInvoker<ListAlarmSubsRequest, ListAlarmSubsResponse>
      */
     public SyncInvoker<ListAlarmSubsRequest, ListAlarmSubsResponse> listAlarmSubsInvoker(ListAlarmSubsRequest request) {
-        return new SyncInvoker<ListAlarmSubsRequest, ListAlarmSubsResponse>(request, DwsMeta.listAlarmSubs, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listAlarmSubs, hcClient);
     }
 
     /**
@@ -2023,7 +1977,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditLogRequest 请求对象
+     * @param request ListAuditLogRequest 请求对象
      * @return ListAuditLogResponse
      */
     public ListAuditLogResponse listAuditLog(ListAuditLogRequest request) {
@@ -2037,11 +1991,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditLogRequest 请求对象
+     * @param request ListAuditLogRequest 请求对象
      * @return SyncInvoker<ListAuditLogRequest, ListAuditLogResponse>
      */
     public SyncInvoker<ListAuditLogRequest, ListAuditLogResponse> listAuditLogInvoker(ListAuditLogRequest request) {
-        return new SyncInvoker<ListAuditLogRequest, ListAuditLogResponse>(request, DwsMeta.listAuditLog, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listAuditLog, hcClient);
     }
 
     /**
@@ -2051,7 +2005,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZonesRequest 请求对象
+     * @param request ListAvailabilityZonesRequest 请求对象
      * @return ListAvailabilityZonesResponse
      */
     public ListAvailabilityZonesResponse listAvailabilityZones(ListAvailabilityZonesRequest request) {
@@ -2065,13 +2019,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZonesRequest 请求对象
+     * @param request ListAvailabilityZonesRequest 请求对象
      * @return SyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>
      */
     public SyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZonesInvoker(
         ListAvailabilityZonesRequest request) {
-        return new SyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>(request,
-            DwsMeta.listAvailabilityZones, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listAvailabilityZones, hcClient);
     }
 
     /**
@@ -2081,7 +2034,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableDisasterClustersRequest 请求对象
+     * @param request ListAvailableDisasterClustersRequest 请求对象
      * @return ListAvailableDisasterClustersResponse
      */
     public ListAvailableDisasterClustersResponse listAvailableDisasterClusters(
@@ -2096,13 +2049,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableDisasterClustersRequest 请求对象
+     * @param request ListAvailableDisasterClustersRequest 请求对象
      * @return SyncInvoker<ListAvailableDisasterClustersRequest, ListAvailableDisasterClustersResponse>
      */
     public SyncInvoker<ListAvailableDisasterClustersRequest, ListAvailableDisasterClustersResponse> listAvailableDisasterClustersInvoker(
         ListAvailableDisasterClustersRequest request) {
-        return new SyncInvoker<ListAvailableDisasterClustersRequest, ListAvailableDisasterClustersResponse>(request,
-            DwsMeta.listAvailableDisasterClusters, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listAvailableDisasterClusters, hcClient);
     }
 
     /**
@@ -2112,7 +2064,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterCnRequest 请求对象
+     * @param request ListClusterCnRequest 请求对象
      * @return ListClusterCnResponse
      */
     public ListClusterCnResponse listClusterCn(ListClusterCnRequest request) {
@@ -2126,11 +2078,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterCnRequest 请求对象
+     * @param request ListClusterCnRequest 请求对象
      * @return SyncInvoker<ListClusterCnRequest, ListClusterCnResponse>
      */
     public SyncInvoker<ListClusterCnRequest, ListClusterCnResponse> listClusterCnInvoker(ListClusterCnRequest request) {
-        return new SyncInvoker<ListClusterCnRequest, ListClusterCnResponse>(request, DwsMeta.listClusterCn, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listClusterCn, hcClient);
     }
 
     /**
@@ -2140,7 +2092,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterConfigurationsRequest 请求对象
+     * @param request ListClusterConfigurationsRequest 请求对象
      * @return ListClusterConfigurationsResponse
      */
     public ListClusterConfigurationsResponse listClusterConfigurations(ListClusterConfigurationsRequest request) {
@@ -2154,13 +2106,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterConfigurationsRequest 请求对象
+     * @param request ListClusterConfigurationsRequest 请求对象
      * @return SyncInvoker<ListClusterConfigurationsRequest, ListClusterConfigurationsResponse>
      */
     public SyncInvoker<ListClusterConfigurationsRequest, ListClusterConfigurationsResponse> listClusterConfigurationsInvoker(
         ListClusterConfigurationsRequest request) {
-        return new SyncInvoker<ListClusterConfigurationsRequest, ListClusterConfigurationsResponse>(request,
-            DwsMeta.listClusterConfigurations, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listClusterConfigurations, hcClient);
     }
 
     /**
@@ -2170,7 +2121,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterConfigurationsParameterRequest 请求对象
+     * @param request ListClusterConfigurationsParameterRequest 请求对象
      * @return ListClusterConfigurationsParameterResponse
      */
     public ListClusterConfigurationsParameterResponse listClusterConfigurationsParameter(
@@ -2185,13 +2136,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterConfigurationsParameterRequest 请求对象
+     * @param request ListClusterConfigurationsParameterRequest 请求对象
      * @return SyncInvoker<ListClusterConfigurationsParameterRequest, ListClusterConfigurationsParameterResponse>
      */
     public SyncInvoker<ListClusterConfigurationsParameterRequest, ListClusterConfigurationsParameterResponse> listClusterConfigurationsParameterInvoker(
         ListClusterConfigurationsParameterRequest request) {
-        return new SyncInvoker<ListClusterConfigurationsParameterRequest, ListClusterConfigurationsParameterResponse>(
-            request, DwsMeta.listClusterConfigurationsParameter, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listClusterConfigurationsParameter, hcClient);
     }
 
     /**
@@ -2201,7 +2151,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterDetailsRequest 请求对象
+     * @param request ListClusterDetailsRequest 请求对象
      * @return ListClusterDetailsResponse
      */
     public ListClusterDetailsResponse listClusterDetails(ListClusterDetailsRequest request) {
@@ -2215,13 +2165,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterDetailsRequest 请求对象
+     * @param request ListClusterDetailsRequest 请求对象
      * @return SyncInvoker<ListClusterDetailsRequest, ListClusterDetailsResponse>
      */
     public SyncInvoker<ListClusterDetailsRequest, ListClusterDetailsResponse> listClusterDetailsInvoker(
         ListClusterDetailsRequest request) {
-        return new SyncInvoker<ListClusterDetailsRequest, ListClusterDetailsResponse>(request,
-            DwsMeta.listClusterDetails, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listClusterDetails, hcClient);
     }
 
     /**
@@ -2231,7 +2180,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterNodesRequest 请求对象
+     * @param request ListClusterNodesRequest 请求对象
      * @return ListClusterNodesResponse
      */
     public ListClusterNodesResponse listClusterNodes(ListClusterNodesRequest request) {
@@ -2245,13 +2194,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterNodesRequest 请求对象
+     * @param request ListClusterNodesRequest 请求对象
      * @return SyncInvoker<ListClusterNodesRequest, ListClusterNodesResponse>
      */
     public SyncInvoker<ListClusterNodesRequest, ListClusterNodesResponse> listClusterNodesInvoker(
         ListClusterNodesRequest request) {
-        return new SyncInvoker<ListClusterNodesRequest, ListClusterNodesResponse>(request, DwsMeta.listClusterNodes,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listClusterNodes, hcClient);
     }
 
     /**
@@ -2261,7 +2209,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterScaleInNumbersRequest 请求对象
+     * @param request ListClusterScaleInNumbersRequest 请求对象
      * @return ListClusterScaleInNumbersResponse
      */
     public ListClusterScaleInNumbersResponse listClusterScaleInNumbers(ListClusterScaleInNumbersRequest request) {
@@ -2275,13 +2223,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterScaleInNumbersRequest 请求对象
+     * @param request ListClusterScaleInNumbersRequest 请求对象
      * @return SyncInvoker<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse>
      */
     public SyncInvoker<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse> listClusterScaleInNumbersInvoker(
         ListClusterScaleInNumbersRequest request) {
-        return new SyncInvoker<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse>(request,
-            DwsMeta.listClusterScaleInNumbers, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listClusterScaleInNumbers, hcClient);
     }
 
     /**
@@ -2291,7 +2238,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterSnapshotsRequest 请求对象
+     * @param request ListClusterSnapshotsRequest 请求对象
      * @return ListClusterSnapshotsResponse
      */
     public ListClusterSnapshotsResponse listClusterSnapshots(ListClusterSnapshotsRequest request) {
@@ -2305,13 +2252,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterSnapshotsRequest 请求对象
+     * @param request ListClusterSnapshotsRequest 请求对象
      * @return SyncInvoker<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse>
      */
     public SyncInvoker<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse> listClusterSnapshotsInvoker(
         ListClusterSnapshotsRequest request) {
-        return new SyncInvoker<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse>(request,
-            DwsMeta.listClusterSnapshots, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listClusterSnapshots, hcClient);
     }
 
     /**
@@ -2321,7 +2267,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterTagsRequest 请求对象
+     * @param request ListClusterTagsRequest 请求对象
      * @return ListClusterTagsResponse
      */
     public ListClusterTagsResponse listClusterTags(ListClusterTagsRequest request) {
@@ -2335,13 +2281,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterTagsRequest 请求对象
+     * @param request ListClusterTagsRequest 请求对象
      * @return SyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse>
      */
     public SyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse> listClusterTagsInvoker(
         ListClusterTagsRequest request) {
-        return new SyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse>(request, DwsMeta.listClusterTags,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listClusterTags, hcClient);
     }
 
     /**
@@ -2351,7 +2296,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterWorkloadRequest 请求对象
+     * @param request ListClusterWorkloadRequest 请求对象
      * @return ListClusterWorkloadResponse
      */
     public ListClusterWorkloadResponse listClusterWorkload(ListClusterWorkloadRequest request) {
@@ -2365,13 +2310,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterWorkloadRequest 请求对象
+     * @param request ListClusterWorkloadRequest 请求对象
      * @return SyncInvoker<ListClusterWorkloadRequest, ListClusterWorkloadResponse>
      */
     public SyncInvoker<ListClusterWorkloadRequest, ListClusterWorkloadResponse> listClusterWorkloadInvoker(
         ListClusterWorkloadRequest request) {
-        return new SyncInvoker<ListClusterWorkloadRequest, ListClusterWorkloadResponse>(request,
-            DwsMeta.listClusterWorkload, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listClusterWorkload, hcClient);
     }
 
     /**
@@ -2381,7 +2325,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersRequest 请求对象
+     * @param request ListClustersRequest 请求对象
      * @return ListClustersResponse
      */
     public ListClustersResponse listClusters(ListClustersRequest request) {
@@ -2395,11 +2339,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersRequest 请求对象
+     * @param request ListClustersRequest 请求对象
      * @return SyncInvoker<ListClustersRequest, ListClustersResponse>
      */
     public SyncInvoker<ListClustersRequest, ListClustersResponse> listClustersInvoker(ListClustersRequest request) {
-        return new SyncInvoker<ListClustersRequest, ListClustersResponse>(request, DwsMeta.listClusters, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listClusters, hcClient);
     }
 
     /**
@@ -2409,7 +2353,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsAuditRecordsRequest 请求对象
+     * @param request ListConfigurationsAuditRecordsRequest 请求对象
      * @return ListConfigurationsAuditRecordsResponse
      */
     public ListConfigurationsAuditRecordsResponse listConfigurationsAuditRecords(
@@ -2424,13 +2368,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsAuditRecordsRequest 请求对象
+     * @param request ListConfigurationsAuditRecordsRequest 请求对象
      * @return SyncInvoker<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse>
      */
     public SyncInvoker<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse> listConfigurationsAuditRecordsInvoker(
         ListConfigurationsAuditRecordsRequest request) {
-        return new SyncInvoker<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse>(request,
-            DwsMeta.listConfigurationsAuditRecords, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listConfigurationsAuditRecords, hcClient);
     }
 
     /**
@@ -2440,7 +2383,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataSourceRequest 请求对象
+     * @param request ListDataSourceRequest 请求对象
      * @return ListDataSourceResponse
      */
     public ListDataSourceResponse listDataSource(ListDataSourceRequest request) {
@@ -2454,13 +2397,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataSourceRequest 请求对象
+     * @param request ListDataSourceRequest 请求对象
      * @return SyncInvoker<ListDataSourceRequest, ListDataSourceResponse>
      */
     public SyncInvoker<ListDataSourceRequest, ListDataSourceResponse> listDataSourceInvoker(
         ListDataSourceRequest request) {
-        return new SyncInvoker<ListDataSourceRequest, ListDataSourceResponse>(request, DwsMeta.listDataSource,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listDataSource, hcClient);
     }
 
     /**
@@ -2470,7 +2412,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseUsersRequest 请求对象
+     * @param request ListDatabaseUsersRequest 请求对象
      * @return ListDatabaseUsersResponse
      */
     public ListDatabaseUsersResponse listDatabaseUsers(ListDatabaseUsersRequest request) {
@@ -2484,13 +2426,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseUsersRequest 请求对象
+     * @param request ListDatabaseUsersRequest 请求对象
      * @return SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>
      */
     public SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsersInvoker(
         ListDatabaseUsersRequest request) {
-        return new SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>(request, DwsMeta.listDatabaseUsers,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listDatabaseUsers, hcClient);
     }
 
     /**
@@ -2500,7 +2441,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDisasterRecoverRequest 请求对象
+     * @param request ListDisasterRecoverRequest 请求对象
      * @return ListDisasterRecoverResponse
      */
     public ListDisasterRecoverResponse listDisasterRecover(ListDisasterRecoverRequest request) {
@@ -2514,13 +2455,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDisasterRecoverRequest 请求对象
+     * @param request ListDisasterRecoverRequest 请求对象
      * @return SyncInvoker<ListDisasterRecoverRequest, ListDisasterRecoverResponse>
      */
     public SyncInvoker<ListDisasterRecoverRequest, ListDisasterRecoverResponse> listDisasterRecoverInvoker(
         ListDisasterRecoverRequest request) {
-        return new SyncInvoker<ListDisasterRecoverRequest, ListDisasterRecoverResponse>(request,
-            DwsMeta.listDisasterRecover, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listDisasterRecover, hcClient);
     }
 
     /**
@@ -2530,7 +2470,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDssPoolsRequest 请求对象
+     * @param request ListDssPoolsRequest 请求对象
      * @return ListDssPoolsResponse
      */
     public ListDssPoolsResponse listDssPools(ListDssPoolsRequest request) {
@@ -2544,11 +2484,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDssPoolsRequest 请求对象
+     * @param request ListDssPoolsRequest 请求对象
      * @return SyncInvoker<ListDssPoolsRequest, ListDssPoolsResponse>
      */
     public SyncInvoker<ListDssPoolsRequest, ListDssPoolsResponse> listDssPoolsInvoker(ListDssPoolsRequest request) {
-        return new SyncInvoker<ListDssPoolsRequest, ListDssPoolsResponse>(request, DwsMeta.listDssPools, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listDssPools, hcClient);
     }
 
     /**
@@ -2558,7 +2498,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListElbsRequest 请求对象
+     * @param request ListElbsRequest 请求对象
      * @return ListElbsResponse
      */
     public ListElbsResponse listElbs(ListElbsRequest request) {
@@ -2572,11 +2512,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListElbsRequest 请求对象
+     * @param request ListElbsRequest 请求对象
      * @return SyncInvoker<ListElbsRequest, ListElbsResponse>
      */
     public SyncInvoker<ListElbsRequest, ListElbsResponse> listElbsInvoker(ListElbsRequest request) {
-        return new SyncInvoker<ListElbsRequest, ListElbsResponse>(request, DwsMeta.listElbs, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listElbs, hcClient);
     }
 
     /**
@@ -2586,7 +2526,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventSpecsRequest 请求对象
+     * @param request ListEventSpecsRequest 请求对象
      * @return ListEventSpecsResponse
      */
     public ListEventSpecsResponse listEventSpecs(ListEventSpecsRequest request) {
@@ -2600,13 +2540,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventSpecsRequest 请求对象
+     * @param request ListEventSpecsRequest 请求对象
      * @return SyncInvoker<ListEventSpecsRequest, ListEventSpecsResponse>
      */
     public SyncInvoker<ListEventSpecsRequest, ListEventSpecsResponse> listEventSpecsInvoker(
         ListEventSpecsRequest request) {
-        return new SyncInvoker<ListEventSpecsRequest, ListEventSpecsResponse>(request, DwsMeta.listEventSpecs,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listEventSpecs, hcClient);
     }
 
     /**
@@ -2616,7 +2555,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventSubsRequest 请求对象
+     * @param request ListEventSubsRequest 请求对象
      * @return ListEventSubsResponse
      */
     public ListEventSubsResponse listEventSubs(ListEventSubsRequest request) {
@@ -2630,11 +2569,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventSubsRequest 请求对象
+     * @param request ListEventSubsRequest 请求对象
      * @return SyncInvoker<ListEventSubsRequest, ListEventSubsResponse>
      */
     public SyncInvoker<ListEventSubsRequest, ListEventSubsResponse> listEventSubsInvoker(ListEventSubsRequest request) {
-        return new SyncInvoker<ListEventSubsRequest, ListEventSubsResponse>(request, DwsMeta.listEventSubs, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listEventSubs, hcClient);
     }
 
     /**
@@ -2644,7 +2583,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventsRequest 请求对象
+     * @param request ListEventsRequest 请求对象
      * @return ListEventsResponse
      */
     public ListEventsResponse listEvents(ListEventsRequest request) {
@@ -2658,11 +2597,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventsRequest 请求对象
+     * @param request ListEventsRequest 请求对象
      * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
      */
     public SyncInvoker<ListEventsRequest, ListEventsResponse> listEventsInvoker(ListEventsRequest request) {
-        return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, DwsMeta.listEvents, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listEvents, hcClient);
     }
 
     /**
@@ -2672,7 +2611,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostDiskRequest 请求对象
+     * @param request ListHostDiskRequest 请求对象
      * @return ListHostDiskResponse
      */
     public ListHostDiskResponse listHostDisk(ListHostDiskRequest request) {
@@ -2686,11 +2625,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostDiskRequest 请求对象
+     * @param request ListHostDiskRequest 请求对象
      * @return SyncInvoker<ListHostDiskRequest, ListHostDiskResponse>
      */
     public SyncInvoker<ListHostDiskRequest, ListHostDiskResponse> listHostDiskInvoker(ListHostDiskRequest request) {
-        return new SyncInvoker<ListHostDiskRequest, ListHostDiskResponse>(request, DwsMeta.listHostDisk, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listHostDisk, hcClient);
     }
 
     /**
@@ -2700,7 +2639,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostNetRequest 请求对象
+     * @param request ListHostNetRequest 请求对象
      * @return ListHostNetResponse
      */
     public ListHostNetResponse listHostNet(ListHostNetRequest request) {
@@ -2714,11 +2653,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostNetRequest 请求对象
+     * @param request ListHostNetRequest 请求对象
      * @return SyncInvoker<ListHostNetRequest, ListHostNetResponse>
      */
     public SyncInvoker<ListHostNetRequest, ListHostNetResponse> listHostNetInvoker(ListHostNetRequest request) {
-        return new SyncInvoker<ListHostNetRequest, ListHostNetResponse>(request, DwsMeta.listHostNet, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listHostNet, hcClient);
     }
 
     /**
@@ -2728,7 +2667,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostOverviewRequest 请求对象
+     * @param request ListHostOverviewRequest 请求对象
      * @return ListHostOverviewResponse
      */
     public ListHostOverviewResponse listHostOverview(ListHostOverviewRequest request) {
@@ -2742,13 +2681,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostOverviewRequest 请求对象
+     * @param request ListHostOverviewRequest 请求对象
      * @return SyncInvoker<ListHostOverviewRequest, ListHostOverviewResponse>
      */
     public SyncInvoker<ListHostOverviewRequest, ListHostOverviewResponse> listHostOverviewInvoker(
         ListHostOverviewRequest request) {
-        return new SyncInvoker<ListHostOverviewRequest, ListHostOverviewResponse>(request, DwsMeta.listHostOverview,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listHostOverview, hcClient);
     }
 
     /**
@@ -2758,7 +2696,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobDetailsRequest 请求对象
+     * @param request ListJobDetailsRequest 请求对象
      * @return ListJobDetailsResponse
      */
     public ListJobDetailsResponse listJobDetails(ListJobDetailsRequest request) {
@@ -2772,13 +2710,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobDetailsRequest 请求对象
+     * @param request ListJobDetailsRequest 请求对象
      * @return SyncInvoker<ListJobDetailsRequest, ListJobDetailsResponse>
      */
     public SyncInvoker<ListJobDetailsRequest, ListJobDetailsResponse> listJobDetailsInvoker(
         ListJobDetailsRequest request) {
-        return new SyncInvoker<ListJobDetailsRequest, ListJobDetailsResponse>(request, DwsMeta.listJobDetails,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listJobDetails, hcClient);
     }
 
     /**
@@ -2788,7 +2725,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogicalClusterRingsRequest 请求对象
+     * @param request ListLogicalClusterRingsRequest 请求对象
      * @return ListLogicalClusterRingsResponse
      */
     public ListLogicalClusterRingsResponse listLogicalClusterRings(ListLogicalClusterRingsRequest request) {
@@ -2802,13 +2739,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogicalClusterRingsRequest 请求对象
+     * @param request ListLogicalClusterRingsRequest 请求对象
      * @return SyncInvoker<ListLogicalClusterRingsRequest, ListLogicalClusterRingsResponse>
      */
     public SyncInvoker<ListLogicalClusterRingsRequest, ListLogicalClusterRingsResponse> listLogicalClusterRingsInvoker(
         ListLogicalClusterRingsRequest request) {
-        return new SyncInvoker<ListLogicalClusterRingsRequest, ListLogicalClusterRingsResponse>(request,
-            DwsMeta.listLogicalClusterRings, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listLogicalClusterRings, hcClient);
     }
 
     /**
@@ -2818,7 +2754,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogicalClusterTasksRequest 请求对象
+     * @param request ListLogicalClusterTasksRequest 请求对象
      * @return ListLogicalClusterTasksResponse
      */
     public ListLogicalClusterTasksResponse listLogicalClusterTasks(ListLogicalClusterTasksRequest request) {
@@ -2832,13 +2768,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogicalClusterTasksRequest 请求对象
+     * @param request ListLogicalClusterTasksRequest 请求对象
      * @return SyncInvoker<ListLogicalClusterTasksRequest, ListLogicalClusterTasksResponse>
      */
     public SyncInvoker<ListLogicalClusterTasksRequest, ListLogicalClusterTasksResponse> listLogicalClusterTasksInvoker(
         ListLogicalClusterTasksRequest request) {
-        return new SyncInvoker<ListLogicalClusterTasksRequest, ListLogicalClusterTasksResponse>(request,
-            DwsMeta.listLogicalClusterTasks, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listLogicalClusterTasks, hcClient);
     }
 
     /**
@@ -2848,7 +2783,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogicalClusterVolumesRequest 请求对象
+     * @param request ListLogicalClusterVolumesRequest 请求对象
      * @return ListLogicalClusterVolumesResponse
      */
     public ListLogicalClusterVolumesResponse listLogicalClusterVolumes(ListLogicalClusterVolumesRequest request) {
@@ -2862,13 +2797,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogicalClusterVolumesRequest 请求对象
+     * @param request ListLogicalClusterVolumesRequest 请求对象
      * @return SyncInvoker<ListLogicalClusterVolumesRequest, ListLogicalClusterVolumesResponse>
      */
     public SyncInvoker<ListLogicalClusterVolumesRequest, ListLogicalClusterVolumesResponse> listLogicalClusterVolumesInvoker(
         ListLogicalClusterVolumesRequest request) {
-        return new SyncInvoker<ListLogicalClusterVolumesRequest, ListLogicalClusterVolumesResponse>(request,
-            DwsMeta.listLogicalClusterVolumes, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listLogicalClusterVolumes, hcClient);
     }
 
     /**
@@ -2878,7 +2812,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogicalClustersRequest 请求对象
+     * @param request ListLogicalClustersRequest 请求对象
      * @return ListLogicalClustersResponse
      */
     public ListLogicalClustersResponse listLogicalClusters(ListLogicalClustersRequest request) {
@@ -2892,13 +2826,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogicalClustersRequest 请求对象
+     * @param request ListLogicalClustersRequest 请求对象
      * @return SyncInvoker<ListLogicalClustersRequest, ListLogicalClustersResponse>
      */
     public SyncInvoker<ListLogicalClustersRequest, ListLogicalClustersResponse> listLogicalClustersInvoker(
         ListLogicalClustersRequest request) {
-        return new SyncInvoker<ListLogicalClustersRequest, ListLogicalClustersResponse>(request,
-            DwsMeta.listLogicalClusters, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listLogicalClusters, hcClient);
     }
 
     /**
@@ -2908,7 +2841,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLtsLogsRequest 请求对象
+     * @param request ListLtsLogsRequest 请求对象
      * @return ListLtsLogsResponse
      */
     public ListLtsLogsResponse listLtsLogs(ListLtsLogsRequest request) {
@@ -2922,11 +2855,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLtsLogsRequest 请求对象
+     * @param request ListLtsLogsRequest 请求对象
      * @return SyncInvoker<ListLtsLogsRequest, ListLtsLogsResponse>
      */
     public SyncInvoker<ListLtsLogsRequest, ListLtsLogsResponse> listLtsLogsInvoker(ListLtsLogsRequest request) {
-        return new SyncInvoker<ListLtsLogsRequest, ListLtsLogsResponse>(request, DwsMeta.listLtsLogs, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listLtsLogs, hcClient);
     }
 
     /**
@@ -2936,7 +2869,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitorIndicatorDataRequest 请求对象
+     * @param request ListMonitorIndicatorDataRequest 请求对象
      * @return ListMonitorIndicatorDataResponse
      */
     public ListMonitorIndicatorDataResponse listMonitorIndicatorData(ListMonitorIndicatorDataRequest request) {
@@ -2950,13 +2883,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitorIndicatorDataRequest 请求对象
+     * @param request ListMonitorIndicatorDataRequest 请求对象
      * @return SyncInvoker<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse>
      */
     public SyncInvoker<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse> listMonitorIndicatorDataInvoker(
         ListMonitorIndicatorDataRequest request) {
-        return new SyncInvoker<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse>(request,
-            DwsMeta.listMonitorIndicatorData, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listMonitorIndicatorData, hcClient);
     }
 
     /**
@@ -2966,7 +2898,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitorIndicatorsRequest 请求对象
+     * @param request ListMonitorIndicatorsRequest 请求对象
      * @return ListMonitorIndicatorsResponse
      */
     public ListMonitorIndicatorsResponse listMonitorIndicators(ListMonitorIndicatorsRequest request) {
@@ -2980,13 +2912,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitorIndicatorsRequest 请求对象
+     * @param request ListMonitorIndicatorsRequest 请求对象
      * @return SyncInvoker<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse>
      */
     public SyncInvoker<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse> listMonitorIndicatorsInvoker(
         ListMonitorIndicatorsRequest request) {
-        return new SyncInvoker<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse>(request,
-            DwsMeta.listMonitorIndicators, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listMonitorIndicators, hcClient);
     }
 
     /**
@@ -2996,7 +2927,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodeTypesRequest 请求对象
+     * @param request ListNodeTypesRequest 请求对象
      * @return ListNodeTypesResponse
      */
     public ListNodeTypesResponse listNodeTypes(ListNodeTypesRequest request) {
@@ -3010,11 +2941,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodeTypesRequest 请求对象
+     * @param request ListNodeTypesRequest 请求对象
      * @return SyncInvoker<ListNodeTypesRequest, ListNodeTypesResponse>
      */
     public SyncInvoker<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypesInvoker(ListNodeTypesRequest request) {
-        return new SyncInvoker<ListNodeTypesRequest, ListNodeTypesResponse>(request, DwsMeta.listNodeTypes, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listNodeTypes, hcClient);
     }
 
     /**
@@ -3024,7 +2955,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlanExecLogsRequest 请求对象
+     * @param request ListPlanExecLogsRequest 请求对象
      * @return ListPlanExecLogsResponse
      */
     public ListPlanExecLogsResponse listPlanExecLogs(ListPlanExecLogsRequest request) {
@@ -3038,13 +2969,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlanExecLogsRequest 请求对象
+     * @param request ListPlanExecLogsRequest 请求对象
      * @return SyncInvoker<ListPlanExecLogsRequest, ListPlanExecLogsResponse>
      */
     public SyncInvoker<ListPlanExecLogsRequest, ListPlanExecLogsResponse> listPlanExecLogsInvoker(
         ListPlanExecLogsRequest request) {
-        return new SyncInvoker<ListPlanExecLogsRequest, ListPlanExecLogsResponse>(request, DwsMeta.listPlanExecLogs,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listPlanExecLogs, hcClient);
     }
 
     /**
@@ -3054,7 +2984,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueriesRequest 请求对象
+     * @param request ListQueriesRequest 请求对象
      * @return ListQueriesResponse
      */
     public ListQueriesResponse listQueries(ListQueriesRequest request) {
@@ -3068,11 +2998,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueriesRequest 请求对象
+     * @param request ListQueriesRequest 请求对象
      * @return SyncInvoker<ListQueriesRequest, ListQueriesResponse>
      */
     public SyncInvoker<ListQueriesRequest, ListQueriesResponse> listQueriesInvoker(ListQueriesRequest request) {
-        return new SyncInvoker<ListQueriesRequest, ListQueriesResponse>(request, DwsMeta.listQueries, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listQueries, hcClient);
     }
 
     /**
@@ -3082,7 +3012,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return ListQuotasResponse
      */
     public ListQuotasResponse listQuotas(ListQuotasRequest request) {
@@ -3096,11 +3026,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
-        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, DwsMeta.listQuotas, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listQuotas, hcClient);
     }
 
     /**
@@ -3110,7 +3040,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSchemasRequest 请求对象
+     * @param request ListSchemasRequest 请求对象
      * @return ListSchemasResponse
      */
     public ListSchemasResponse listSchemas(ListSchemasRequest request) {
@@ -3124,11 +3054,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSchemasRequest 请求对象
+     * @param request ListSchemasRequest 请求对象
      * @return SyncInvoker<ListSchemasRequest, ListSchemasResponse>
      */
     public SyncInvoker<ListSchemasRequest, ListSchemasResponse> listSchemasInvoker(ListSchemasRequest request) {
-        return new SyncInvoker<ListSchemasRequest, ListSchemasResponse>(request, DwsMeta.listSchemas, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listSchemas, hcClient);
     }
 
     /**
@@ -3138,7 +3068,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotCrossRegionRequest 请求对象
+     * @param request ListSnapshotCrossRegionRequest 请求对象
      * @return ListSnapshotCrossRegionResponse
      */
     public ListSnapshotCrossRegionResponse listSnapshotCrossRegion(ListSnapshotCrossRegionRequest request) {
@@ -3152,13 +3082,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotCrossRegionRequest 请求对象
+     * @param request ListSnapshotCrossRegionRequest 请求对象
      * @return SyncInvoker<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse>
      */
     public SyncInvoker<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse> listSnapshotCrossRegionInvoker(
         ListSnapshotCrossRegionRequest request) {
-        return new SyncInvoker<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse>(request,
-            DwsMeta.listSnapshotCrossRegion, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listSnapshotCrossRegion, hcClient);
     }
 
     /**
@@ -3168,7 +3097,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotCrossRegionPolicyRequest 请求对象
+     * @param request ListSnapshotCrossRegionPolicyRequest 请求对象
      * @return ListSnapshotCrossRegionPolicyResponse
      */
     public ListSnapshotCrossRegionPolicyResponse listSnapshotCrossRegionPolicy(
@@ -3183,13 +3112,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotCrossRegionPolicyRequest 请求对象
+     * @param request ListSnapshotCrossRegionPolicyRequest 请求对象
      * @return SyncInvoker<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse>
      */
     public SyncInvoker<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse> listSnapshotCrossRegionPolicyInvoker(
         ListSnapshotCrossRegionPolicyRequest request) {
-        return new SyncInvoker<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse>(request,
-            DwsMeta.listSnapshotCrossRegionPolicy, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listSnapshotCrossRegionPolicy, hcClient);
     }
 
     /**
@@ -3199,7 +3127,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotDetailsRequest 请求对象
+     * @param request ListSnapshotDetailsRequest 请求对象
      * @return ListSnapshotDetailsResponse
      */
     public ListSnapshotDetailsResponse listSnapshotDetails(ListSnapshotDetailsRequest request) {
@@ -3213,13 +3141,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotDetailsRequest 请求对象
+     * @param request ListSnapshotDetailsRequest 请求对象
      * @return SyncInvoker<ListSnapshotDetailsRequest, ListSnapshotDetailsResponse>
      */
     public SyncInvoker<ListSnapshotDetailsRequest, ListSnapshotDetailsResponse> listSnapshotDetailsInvoker(
         ListSnapshotDetailsRequest request) {
-        return new SyncInvoker<ListSnapshotDetailsRequest, ListSnapshotDetailsResponse>(request,
-            DwsMeta.listSnapshotDetails, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listSnapshotDetails, hcClient);
     }
 
     /**
@@ -3229,7 +3156,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotPolicyRequest 请求对象
+     * @param request ListSnapshotPolicyRequest 请求对象
      * @return ListSnapshotPolicyResponse
      */
     public ListSnapshotPolicyResponse listSnapshotPolicy(ListSnapshotPolicyRequest request) {
@@ -3243,13 +3170,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotPolicyRequest 请求对象
+     * @param request ListSnapshotPolicyRequest 请求对象
      * @return SyncInvoker<ListSnapshotPolicyRequest, ListSnapshotPolicyResponse>
      */
     public SyncInvoker<ListSnapshotPolicyRequest, ListSnapshotPolicyResponse> listSnapshotPolicyInvoker(
         ListSnapshotPolicyRequest request) {
-        return new SyncInvoker<ListSnapshotPolicyRequest, ListSnapshotPolicyResponse>(request,
-            DwsMeta.listSnapshotPolicy, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listSnapshotPolicy, hcClient);
     }
 
     /**
@@ -3259,7 +3185,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotStatisticsRequest 请求对象
+     * @param request ListSnapshotStatisticsRequest 请求对象
      * @return ListSnapshotStatisticsResponse
      */
     public ListSnapshotStatisticsResponse listSnapshotStatistics(ListSnapshotStatisticsRequest request) {
@@ -3273,13 +3199,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotStatisticsRequest 请求对象
+     * @param request ListSnapshotStatisticsRequest 请求对象
      * @return SyncInvoker<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse>
      */
     public SyncInvoker<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse> listSnapshotStatisticsInvoker(
         ListSnapshotStatisticsRequest request) {
-        return new SyncInvoker<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse>(request,
-            DwsMeta.listSnapshotStatistics, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listSnapshotStatistics, hcClient);
     }
 
     /**
@@ -3289,7 +3214,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotsRequest 请求对象
+     * @param request ListSnapshotsRequest 请求对象
      * @return ListSnapshotsResponse
      */
     public ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request) {
@@ -3303,11 +3228,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotsRequest 请求对象
+     * @param request ListSnapshotsRequest 请求对象
      * @return SyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>
      */
     public SyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsInvoker(ListSnapshotsRequest request) {
-        return new SyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>(request, DwsMeta.listSnapshots, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listSnapshots, hcClient);
     }
 
     /**
@@ -3317,7 +3242,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatisticsRequest 请求对象
+     * @param request ListStatisticsRequest 请求对象
      * @return ListStatisticsResponse
      */
     public ListStatisticsResponse listStatistics(ListStatisticsRequest request) {
@@ -3331,13 +3256,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatisticsRequest 请求对象
+     * @param request ListStatisticsRequest 请求对象
      * @return SyncInvoker<ListStatisticsRequest, ListStatisticsResponse>
      */
     public SyncInvoker<ListStatisticsRequest, ListStatisticsResponse> listStatisticsInvoker(
         ListStatisticsRequest request) {
-        return new SyncInvoker<ListStatisticsRequest, ListStatisticsResponse>(request, DwsMeta.listStatistics,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listStatistics, hcClient);
     }
 
     /**
@@ -3347,7 +3271,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTablesStatisticRequest 请求对象
+     * @param request ListTablesStatisticRequest 请求对象
      * @return ListTablesStatisticResponse
      */
     public ListTablesStatisticResponse listTablesStatistic(ListTablesStatisticRequest request) {
@@ -3361,13 +3285,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTablesStatisticRequest 请求对象
+     * @param request ListTablesStatisticRequest 请求对象
      * @return SyncInvoker<ListTablesStatisticRequest, ListTablesStatisticResponse>
      */
     public SyncInvoker<ListTablesStatisticRequest, ListTablesStatisticResponse> listTablesStatisticInvoker(
         ListTablesStatisticRequest request) {
-        return new SyncInvoker<ListTablesStatisticRequest, ListTablesStatisticResponse>(request,
-            DwsMeta.listTablesStatistic, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listTablesStatistic, hcClient);
     }
 
     /**
@@ -3377,7 +3300,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return ListTagsResponse
      */
     public ListTagsResponse listTags(ListTagsRequest request) {
@@ -3391,11 +3314,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return SyncInvoker<ListTagsRequest, ListTagsResponse>
      */
     public SyncInvoker<ListTagsRequest, ListTagsResponse> listTagsInvoker(ListTagsRequest request) {
-        return new SyncInvoker<ListTagsRequest, ListTagsResponse>(request, DwsMeta.listTags, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listTags, hcClient);
     }
 
     /**
@@ -3405,7 +3328,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopoRingsRequest 请求对象
+     * @param request ListTopoRingsRequest 请求对象
      * @return ListTopoRingsResponse
      */
     public ListTopoRingsResponse listTopoRings(ListTopoRingsRequest request) {
@@ -3419,11 +3342,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopoRingsRequest 请求对象
+     * @param request ListTopoRingsRequest 请求对象
      * @return SyncInvoker<ListTopoRingsRequest, ListTopoRingsResponse>
      */
     public SyncInvoker<ListTopoRingsRequest, ListTopoRingsResponse> listTopoRingsInvoker(ListTopoRingsRequest request) {
-        return new SyncInvoker<ListTopoRingsRequest, ListTopoRingsResponse>(request, DwsMeta.listTopoRings, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listTopoRings, hcClient);
     }
 
     /**
@@ -3433,7 +3356,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpdatableVersionRequest 请求对象
+     * @param request ListUpdatableVersionRequest 请求对象
      * @return ListUpdatableVersionResponse
      */
     public ListUpdatableVersionResponse listUpdatableVersion(ListUpdatableVersionRequest request) {
@@ -3447,13 +3370,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpdatableVersionRequest 请求对象
+     * @param request ListUpdatableVersionRequest 请求对象
      * @return SyncInvoker<ListUpdatableVersionRequest, ListUpdatableVersionResponse>
      */
     public SyncInvoker<ListUpdatableVersionRequest, ListUpdatableVersionResponse> listUpdatableVersionInvoker(
         ListUpdatableVersionRequest request) {
-        return new SyncInvoker<ListUpdatableVersionRequest, ListUpdatableVersionResponse>(request,
-            DwsMeta.listUpdatableVersion, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listUpdatableVersion, hcClient);
     }
 
     /**
@@ -3463,7 +3385,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpdateRecordRequest 请求对象
+     * @param request ListUpdateRecordRequest 请求对象
      * @return ListUpdateRecordResponse
      */
     public ListUpdateRecordResponse listUpdateRecord(ListUpdateRecordRequest request) {
@@ -3477,13 +3399,41 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpdateRecordRequest 请求对象
+     * @param request ListUpdateRecordRequest 请求对象
      * @return SyncInvoker<ListUpdateRecordRequest, ListUpdateRecordResponse>
      */
     public SyncInvoker<ListUpdateRecordRequest, ListUpdateRecordResponse> listUpdateRecordInvoker(
         ListUpdateRecordRequest request) {
-        return new SyncInvoker<ListUpdateRecordRequest, ListUpdateRecordResponse>(request, DwsMeta.listUpdateRecord,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listUpdateRecord, hcClient);
+    }
+
+    /**
+     * 查询资源管理计划列表
+     *
+     * 查询集群中所有资源管理计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkloadPlansRequest 请求对象
+     * @return ListWorkloadPlansResponse
+     */
+    public ListWorkloadPlansResponse listWorkloadPlans(ListWorkloadPlansRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listWorkloadPlans);
+    }
+
+    /**
+     * 查询资源管理计划列表
+     *
+     * 查询集群中所有资源管理计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkloadPlansRequest 请求对象
+     * @return SyncInvoker<ListWorkloadPlansRequest, ListWorkloadPlansResponse>
+     */
+    public SyncInvoker<ListWorkloadPlansRequest, ListWorkloadPlansResponse> listWorkloadPlansInvoker(
+        ListWorkloadPlansRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listWorkloadPlans, hcClient);
     }
 
     /**
@@ -3493,7 +3443,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkloadQueueRequest 请求对象
+     * @param request ListWorkloadQueueRequest 请求对象
      * @return ListWorkloadQueueResponse
      */
     public ListWorkloadQueueResponse listWorkloadQueue(ListWorkloadQueueRequest request) {
@@ -3507,13 +3457,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkloadQueueRequest 请求对象
+     * @param request ListWorkloadQueueRequest 请求对象
      * @return SyncInvoker<ListWorkloadQueueRequest, ListWorkloadQueueResponse>
      */
     public SyncInvoker<ListWorkloadQueueRequest, ListWorkloadQueueResponse> listWorkloadQueueInvoker(
         ListWorkloadQueueRequest request) {
-        return new SyncInvoker<ListWorkloadQueueRequest, ListWorkloadQueueResponse>(request, DwsMeta.listWorkloadQueue,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listWorkloadQueue, hcClient);
     }
 
     /**
@@ -3523,7 +3472,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkloadQueueUsersRequest 请求对象
+     * @param request ListWorkloadQueueUsersRequest 请求对象
      * @return ListWorkloadQueueUsersResponse
      */
     public ListWorkloadQueueUsersResponse listWorkloadQueueUsers(ListWorkloadQueueUsersRequest request) {
@@ -3537,13 +3486,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkloadQueueUsersRequest 请求对象
+     * @param request ListWorkloadQueueUsersRequest 请求对象
      * @return SyncInvoker<ListWorkloadQueueUsersRequest, ListWorkloadQueueUsersResponse>
      */
     public SyncInvoker<ListWorkloadQueueUsersRequest, ListWorkloadQueueUsersResponse> listWorkloadQueueUsersInvoker(
         ListWorkloadQueueUsersRequest request) {
-        return new SyncInvoker<ListWorkloadQueueUsersRequest, ListWorkloadQueueUsersResponse>(request,
-            DwsMeta.listWorkloadQueueUsers, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.listWorkloadQueueUsers, hcClient);
     }
 
     /**
@@ -3553,7 +3501,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseDisasterRecoveryRequest 请求对象
+     * @param request PauseDisasterRecoveryRequest 请求对象
      * @return PauseDisasterRecoveryResponse
      */
     public PauseDisasterRecoveryResponse pauseDisasterRecovery(PauseDisasterRecoveryRequest request) {
@@ -3567,13 +3515,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseDisasterRecoveryRequest 请求对象
+     * @param request PauseDisasterRecoveryRequest 请求对象
      * @return SyncInvoker<PauseDisasterRecoveryRequest, PauseDisasterRecoveryResponse>
      */
     public SyncInvoker<PauseDisasterRecoveryRequest, PauseDisasterRecoveryResponse> pauseDisasterRecoveryInvoker(
         PauseDisasterRecoveryRequest request) {
-        return new SyncInvoker<PauseDisasterRecoveryRequest, PauseDisasterRecoveryResponse>(request,
-            DwsMeta.pauseDisasterRecovery, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.pauseDisasterRecovery, hcClient);
     }
 
     /**
@@ -3583,7 +3530,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
      */
     public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
@@ -3597,11 +3544,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
     public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
-        return new SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, DwsMeta.resetPassword, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.resetPassword, hcClient);
     }
 
     /**
@@ -3611,7 +3558,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeClusterRequest 请求对象
+     * @param request ResizeClusterRequest 请求对象
      * @return ResizeClusterResponse
      */
     public ResizeClusterResponse resizeCluster(ResizeClusterRequest request) {
@@ -3625,11 +3572,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeClusterRequest 请求对象
+     * @param request ResizeClusterRequest 请求对象
      * @return SyncInvoker<ResizeClusterRequest, ResizeClusterResponse>
      */
     public SyncInvoker<ResizeClusterRequest, ResizeClusterResponse> resizeClusterInvoker(ResizeClusterRequest request) {
-        return new SyncInvoker<ResizeClusterRequest, ResizeClusterResponse>(request, DwsMeta.resizeCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.resizeCluster, hcClient);
     }
 
     /**
@@ -3639,7 +3586,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeClusterWithExistedNodesRequest 请求对象
+     * @param request ResizeClusterWithExistedNodesRequest 请求对象
      * @return ResizeClusterWithExistedNodesResponse
      */
     public ResizeClusterWithExistedNodesResponse resizeClusterWithExistedNodes(
@@ -3654,13 +3601,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeClusterWithExistedNodesRequest 请求对象
+     * @param request ResizeClusterWithExistedNodesRequest 请求对象
      * @return SyncInvoker<ResizeClusterWithExistedNodesRequest, ResizeClusterWithExistedNodesResponse>
      */
     public SyncInvoker<ResizeClusterWithExistedNodesRequest, ResizeClusterWithExistedNodesResponse> resizeClusterWithExistedNodesInvoker(
         ResizeClusterWithExistedNodesRequest request) {
-        return new SyncInvoker<ResizeClusterWithExistedNodesRequest, ResizeClusterWithExistedNodesResponse>(request,
-            DwsMeta.resizeClusterWithExistedNodes, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.resizeClusterWithExistedNodes, hcClient);
     }
 
     /**
@@ -3670,7 +3616,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartClusterRequest 请求对象
+     * @param request RestartClusterRequest 请求对象
      * @return RestartClusterResponse
      */
     public RestartClusterResponse restartCluster(RestartClusterRequest request) {
@@ -3684,13 +3630,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartClusterRequest 请求对象
+     * @param request RestartClusterRequest 请求对象
      * @return SyncInvoker<RestartClusterRequest, RestartClusterResponse>
      */
     public SyncInvoker<RestartClusterRequest, RestartClusterResponse> restartClusterInvoker(
         RestartClusterRequest request) {
-        return new SyncInvoker<RestartClusterRequest, RestartClusterResponse>(request, DwsMeta.restartCluster,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.restartCluster, hcClient);
     }
 
     /**
@@ -3700,7 +3645,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartLogicalClusterRequest 请求对象
+     * @param request RestartLogicalClusterRequest 请求对象
      * @return RestartLogicalClusterResponse
      */
     public RestartLogicalClusterResponse restartLogicalCluster(RestartLogicalClusterRequest request) {
@@ -3714,13 +3659,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartLogicalClusterRequest 请求对象
+     * @param request RestartLogicalClusterRequest 请求对象
      * @return SyncInvoker<RestartLogicalClusterRequest, RestartLogicalClusterResponse>
      */
     public SyncInvoker<RestartLogicalClusterRequest, RestartLogicalClusterResponse> restartLogicalClusterInvoker(
         RestartLogicalClusterRequest request) {
-        return new SyncInvoker<RestartLogicalClusterRequest, RestartLogicalClusterResponse>(request,
-            DwsMeta.restartLogicalCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.restartLogicalCluster, hcClient);
     }
 
     /**
@@ -3730,7 +3674,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreClusterRequest 请求对象
+     * @param request RestoreClusterRequest 请求对象
      * @return RestoreClusterResponse
      */
     public RestoreClusterResponse restoreCluster(RestoreClusterRequest request) {
@@ -3744,13 +3688,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreClusterRequest 请求对象
+     * @param request RestoreClusterRequest 请求对象
      * @return SyncInvoker<RestoreClusterRequest, RestoreClusterResponse>
      */
     public SyncInvoker<RestoreClusterRequest, RestoreClusterResponse> restoreClusterInvoker(
         RestoreClusterRequest request) {
-        return new SyncInvoker<RestoreClusterRequest, RestoreClusterResponse>(request, DwsMeta.restoreCluster,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.restoreCluster, hcClient);
     }
 
     /**
@@ -3760,7 +3703,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreDisasterRequest 请求对象
+     * @param request RestoreDisasterRequest 请求对象
      * @return RestoreDisasterResponse
      */
     public RestoreDisasterResponse restoreDisaster(RestoreDisasterRequest request) {
@@ -3774,13 +3717,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreDisasterRequest 请求对象
+     * @param request RestoreDisasterRequest 请求对象
      * @return SyncInvoker<RestoreDisasterRequest, RestoreDisasterResponse>
      */
     public SyncInvoker<RestoreDisasterRequest, RestoreDisasterResponse> restoreDisasterInvoker(
         RestoreDisasterRequest request) {
-        return new SyncInvoker<RestoreDisasterRequest, RestoreDisasterResponse>(request, DwsMeta.restoreDisaster,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.restoreDisaster, hcClient);
     }
 
     /**
@@ -3790,7 +3732,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreRedistributionRequest 请求对象
+     * @param request RestoreRedistributionRequest 请求对象
      * @return RestoreRedistributionResponse
      */
     public RestoreRedistributionResponse restoreRedistribution(RestoreRedistributionRequest request) {
@@ -3804,13 +3746,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreRedistributionRequest 请求对象
+     * @param request RestoreRedistributionRequest 请求对象
      * @return SyncInvoker<RestoreRedistributionRequest, RestoreRedistributionResponse>
      */
     public SyncInvoker<RestoreRedistributionRequest, RestoreRedistributionResponse> restoreRedistributionInvoker(
         RestoreRedistributionRequest request) {
-        return new SyncInvoker<RestoreRedistributionRequest, RestoreRedistributionResponse>(request,
-            DwsMeta.restoreRedistribution, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.restoreRedistribution, hcClient);
     }
 
     /**
@@ -3820,7 +3761,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreTableRequest 请求对象
+     * @param request RestoreTableRequest 请求对象
      * @return RestoreTableResponse
      */
     public RestoreTableResponse restoreTable(RestoreTableRequest request) {
@@ -3834,11 +3775,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreTableRequest 请求对象
+     * @param request RestoreTableRequest 请求对象
      * @return SyncInvoker<RestoreTableRequest, RestoreTableResponse>
      */
     public SyncInvoker<RestoreTableRequest, RestoreTableResponse> restoreTableInvoker(RestoreTableRequest request) {
-        return new SyncInvoker<RestoreTableRequest, RestoreTableResponse>(request, DwsMeta.restoreTable, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.restoreTable, hcClient);
     }
 
     /**
@@ -3848,7 +3789,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveClusterDescriptionInfoRequest 请求对象
+     * @param request SaveClusterDescriptionInfoRequest 请求对象
      * @return SaveClusterDescriptionInfoResponse
      */
     public SaveClusterDescriptionInfoResponse saveClusterDescriptionInfo(SaveClusterDescriptionInfoRequest request) {
@@ -3862,13 +3803,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveClusterDescriptionInfoRequest 请求对象
+     * @param request SaveClusterDescriptionInfoRequest 请求对象
      * @return SyncInvoker<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse>
      */
     public SyncInvoker<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse> saveClusterDescriptionInfoInvoker(
         SaveClusterDescriptionInfoRequest request) {
-        return new SyncInvoker<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse>(request,
-            DwsMeta.saveClusterDescriptionInfo, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.saveClusterDescriptionInfo, hcClient);
     }
 
     /**
@@ -3878,7 +3818,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterRedistributionRequest 请求对象
+     * @param request ShowClusterRedistributionRequest 请求对象
      * @return ShowClusterRedistributionResponse
      */
     public ShowClusterRedistributionResponse showClusterRedistribution(ShowClusterRedistributionRequest request) {
@@ -3892,13 +3832,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterRedistributionRequest 请求对象
+     * @param request ShowClusterRedistributionRequest 请求对象
      * @return SyncInvoker<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse>
      */
     public SyncInvoker<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse> showClusterRedistributionInvoker(
         ShowClusterRedistributionRequest request) {
-        return new SyncInvoker<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse>(request,
-            DwsMeta.showClusterRedistribution, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showClusterRedistribution, hcClient);
     }
 
     /**
@@ -3908,7 +3847,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatabaseAuthorityRequest 请求对象
+     * @param request ShowDatabaseAuthorityRequest 请求对象
      * @return ShowDatabaseAuthorityResponse
      */
     public ShowDatabaseAuthorityResponse showDatabaseAuthority(ShowDatabaseAuthorityRequest request) {
@@ -3922,13 +3861,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatabaseAuthorityRequest 请求对象
+     * @param request ShowDatabaseAuthorityRequest 请求对象
      * @return SyncInvoker<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse>
      */
     public SyncInvoker<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse> showDatabaseAuthorityInvoker(
         ShowDatabaseAuthorityRequest request) {
-        return new SyncInvoker<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse>(request,
-            DwsMeta.showDatabaseAuthority, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showDatabaseAuthority, hcClient);
     }
 
     /**
@@ -3938,7 +3876,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatabaseOmUserStatusRequest 请求对象
+     * @param request ShowDatabaseOmUserStatusRequest 请求对象
      * @return ShowDatabaseOmUserStatusResponse
      */
     public ShowDatabaseOmUserStatusResponse showDatabaseOmUserStatus(ShowDatabaseOmUserStatusRequest request) {
@@ -3952,13 +3890,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatabaseOmUserStatusRequest 请求对象
+     * @param request ShowDatabaseOmUserStatusRequest 请求对象
      * @return SyncInvoker<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse>
      */
     public SyncInvoker<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse> showDatabaseOmUserStatusInvoker(
         ShowDatabaseOmUserStatusRequest request) {
-        return new SyncInvoker<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse>(request,
-            DwsMeta.showDatabaseOmUserStatus, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showDatabaseOmUserStatus, hcClient);
     }
 
     /**
@@ -3968,7 +3905,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatabaseUserRequest 请求对象
+     * @param request ShowDatabaseUserRequest 请求对象
      * @return ShowDatabaseUserResponse
      */
     public ShowDatabaseUserResponse showDatabaseUser(ShowDatabaseUserRequest request) {
@@ -3982,13 +3919,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatabaseUserRequest 请求对象
+     * @param request ShowDatabaseUserRequest 请求对象
      * @return SyncInvoker<ShowDatabaseUserRequest, ShowDatabaseUserResponse>
      */
     public SyncInvoker<ShowDatabaseUserRequest, ShowDatabaseUserResponse> showDatabaseUserInvoker(
         ShowDatabaseUserRequest request) {
-        return new SyncInvoker<ShowDatabaseUserRequest, ShowDatabaseUserResponse>(request, DwsMeta.showDatabaseUser,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showDatabaseUser, hcClient);
     }
 
     /**
@@ -3998,7 +3934,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDisasterDetailRequest 请求对象
+     * @param request ShowDisasterDetailRequest 请求对象
      * @return ShowDisasterDetailResponse
      */
     public ShowDisasterDetailResponse showDisasterDetail(ShowDisasterDetailRequest request) {
@@ -4012,13 +3948,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDisasterDetailRequest 请求对象
+     * @param request ShowDisasterDetailRequest 请求对象
      * @return SyncInvoker<ShowDisasterDetailRequest, ShowDisasterDetailResponse>
      */
     public SyncInvoker<ShowDisasterDetailRequest, ShowDisasterDetailResponse> showDisasterDetailInvoker(
         ShowDisasterDetailRequest request) {
-        return new SyncInvoker<ShowDisasterDetailRequest, ShowDisasterDetailResponse>(request,
-            DwsMeta.showDisasterDetail, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showDisasterDetail, hcClient);
     }
 
     /**
@@ -4028,7 +3963,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDisasterProgressRequest 请求对象
+     * @param request ShowDisasterProgressRequest 请求对象
      * @return ShowDisasterProgressResponse
      */
     public ShowDisasterProgressResponse showDisasterProgress(ShowDisasterProgressRequest request) {
@@ -4042,13 +3977,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDisasterProgressRequest 请求对象
+     * @param request ShowDisasterProgressRequest 请求对象
      * @return SyncInvoker<ShowDisasterProgressRequest, ShowDisasterProgressResponse>
      */
     public SyncInvoker<ShowDisasterProgressRequest, ShowDisasterProgressResponse> showDisasterProgressInvoker(
         ShowDisasterProgressRequest request) {
-        return new SyncInvoker<ShowDisasterProgressRequest, ShowDisasterProgressResponse>(request,
-            DwsMeta.showDisasterProgress, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showDisasterProgress, hcClient);
     }
 
     /**
@@ -4058,7 +3992,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
      */
     public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
@@ -4072,11 +4006,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
-        return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, DwsMeta.showInstance, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showInstance, hcClient);
     }
 
     /**
@@ -4086,7 +4020,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQueryDetailRequest 请求对象
+     * @param request ShowQueryDetailRequest 请求对象
      * @return ShowQueryDetailResponse
      */
     public ShowQueryDetailResponse showQueryDetail(ShowQueryDetailRequest request) {
@@ -4100,13 +4034,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQueryDetailRequest 请求对象
+     * @param request ShowQueryDetailRequest 请求对象
      * @return SyncInvoker<ShowQueryDetailRequest, ShowQueryDetailResponse>
      */
     public SyncInvoker<ShowQueryDetailRequest, ShowQueryDetailResponse> showQueryDetailInvoker(
         ShowQueryDetailRequest request) {
-        return new SyncInvoker<ShowQueryDetailRequest, ShowQueryDetailResponse>(request, DwsMeta.showQueryDetail,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showQueryDetail, hcClient);
     }
 
     /**
@@ -4116,7 +4049,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceStatisticsRequest 请求对象
+     * @param request ShowResourceStatisticsRequest 请求对象
      * @return ShowResourceStatisticsResponse
      */
     public ShowResourceStatisticsResponse showResourceStatistics(ShowResourceStatisticsRequest request) {
@@ -4130,13 +4063,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceStatisticsRequest 请求对象
+     * @param request ShowResourceStatisticsRequest 请求对象
      * @return SyncInvoker<ShowResourceStatisticsRequest, ShowResourceStatisticsResponse>
      */
     public SyncInvoker<ShowResourceStatisticsRequest, ShowResourceStatisticsResponse> showResourceStatisticsInvoker(
         ShowResourceStatisticsRequest request) {
-        return new SyncInvoker<ShowResourceStatisticsRequest, ShowResourceStatisticsResponse>(request,
-            DwsMeta.showResourceStatistics, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showResourceStatistics, hcClient);
     }
 
     /**
@@ -4146,7 +4078,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkloadPlanRequest 请求对象
+     * @param request ShowWorkloadPlanRequest 请求对象
      * @return ShowWorkloadPlanResponse
      */
     public ShowWorkloadPlanResponse showWorkloadPlan(ShowWorkloadPlanRequest request) {
@@ -4160,13 +4092,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkloadPlanRequest 请求对象
+     * @param request ShowWorkloadPlanRequest 请求对象
      * @return SyncInvoker<ShowWorkloadPlanRequest, ShowWorkloadPlanResponse>
      */
     public SyncInvoker<ShowWorkloadPlanRequest, ShowWorkloadPlanResponse> showWorkloadPlanInvoker(
         ShowWorkloadPlanRequest request) {
-        return new SyncInvoker<ShowWorkloadPlanRequest, ShowWorkloadPlanResponse>(request, DwsMeta.showWorkloadPlan,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showWorkloadPlan, hcClient);
     }
 
     /**
@@ -4176,7 +4107,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkloadPlanStageRequest 请求对象
+     * @param request ShowWorkloadPlanStageRequest 请求对象
      * @return ShowWorkloadPlanStageResponse
      */
     public ShowWorkloadPlanStageResponse showWorkloadPlanStage(ShowWorkloadPlanStageRequest request) {
@@ -4190,13 +4121,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkloadPlanStageRequest 请求对象
+     * @param request ShowWorkloadPlanStageRequest 请求对象
      * @return SyncInvoker<ShowWorkloadPlanStageRequest, ShowWorkloadPlanStageResponse>
      */
     public SyncInvoker<ShowWorkloadPlanStageRequest, ShowWorkloadPlanStageResponse> showWorkloadPlanStageInvoker(
         ShowWorkloadPlanStageRequest request) {
-        return new SyncInvoker<ShowWorkloadPlanStageRequest, ShowWorkloadPlanStageResponse>(request,
-            DwsMeta.showWorkloadPlanStage, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showWorkloadPlanStage, hcClient);
     }
 
     /**
@@ -4206,7 +4136,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkloadQueueRequest 请求对象
+     * @param request ShowWorkloadQueueRequest 请求对象
      * @return ShowWorkloadQueueResponse
      */
     public ShowWorkloadQueueResponse showWorkloadQueue(ShowWorkloadQueueRequest request) {
@@ -4220,13 +4150,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkloadQueueRequest 请求对象
+     * @param request ShowWorkloadQueueRequest 请求对象
      * @return SyncInvoker<ShowWorkloadQueueRequest, ShowWorkloadQueueResponse>
      */
     public SyncInvoker<ShowWorkloadQueueRequest, ShowWorkloadQueueResponse> showWorkloadQueueInvoker(
         ShowWorkloadQueueRequest request) {
-        return new SyncInvoker<ShowWorkloadQueueRequest, ShowWorkloadQueueResponse>(request, DwsMeta.showWorkloadQueue,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.showWorkloadQueue, hcClient);
     }
 
     /**
@@ -4236,7 +4165,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShrinkClusterRequest 请求对象
+     * @param request ShrinkClusterRequest 请求对象
      * @return ShrinkClusterResponse
      */
     public ShrinkClusterResponse shrinkCluster(ShrinkClusterRequest request) {
@@ -4250,11 +4179,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShrinkClusterRequest 请求对象
+     * @param request ShrinkClusterRequest 请求对象
      * @return SyncInvoker<ShrinkClusterRequest, ShrinkClusterResponse>
      */
     public SyncInvoker<ShrinkClusterRequest, ShrinkClusterResponse> shrinkClusterInvoker(ShrinkClusterRequest request) {
-        return new SyncInvoker<ShrinkClusterRequest, ShrinkClusterResponse>(request, DwsMeta.shrinkCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.shrinkCluster, hcClient);
     }
 
     /**
@@ -4264,7 +4193,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartDisasterRecoveryRequest 请求对象
+     * @param request StartDisasterRecoveryRequest 请求对象
      * @return StartDisasterRecoveryResponse
      */
     public StartDisasterRecoveryResponse startDisasterRecovery(StartDisasterRecoveryRequest request) {
@@ -4278,13 +4207,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartDisasterRecoveryRequest 请求对象
+     * @param request StartDisasterRecoveryRequest 请求对象
      * @return SyncInvoker<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse>
      */
     public SyncInvoker<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse> startDisasterRecoveryInvoker(
         StartDisasterRecoveryRequest request) {
-        return new SyncInvoker<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse>(request,
-            DwsMeta.startDisasterRecovery, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.startDisasterRecovery, hcClient);
     }
 
     /**
@@ -4294,7 +4222,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartWorkloadPlanRequest 请求对象
+     * @param request StartWorkloadPlanRequest 请求对象
      * @return StartWorkloadPlanResponse
      */
     public StartWorkloadPlanResponse startWorkloadPlan(StartWorkloadPlanRequest request) {
@@ -4308,13 +4236,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartWorkloadPlanRequest 请求对象
+     * @param request StartWorkloadPlanRequest 请求对象
      * @return SyncInvoker<StartWorkloadPlanRequest, StartWorkloadPlanResponse>
      */
     public SyncInvoker<StartWorkloadPlanRequest, StartWorkloadPlanResponse> startWorkloadPlanInvoker(
         StartWorkloadPlanRequest request) {
-        return new SyncInvoker<StartWorkloadPlanRequest, StartWorkloadPlanResponse>(request, DwsMeta.startWorkloadPlan,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.startWorkloadPlan, hcClient);
     }
 
     /**
@@ -4324,7 +4251,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopRedistributionRequest 请求对象
+     * @param request StopRedistributionRequest 请求对象
      * @return StopRedistributionResponse
      */
     public StopRedistributionResponse stopRedistribution(StopRedistributionRequest request) {
@@ -4338,13 +4265,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopRedistributionRequest 请求对象
+     * @param request StopRedistributionRequest 请求对象
      * @return SyncInvoker<StopRedistributionRequest, StopRedistributionResponse>
      */
     public SyncInvoker<StopRedistributionRequest, StopRedistributionResponse> stopRedistributionInvoker(
         StopRedistributionRequest request) {
-        return new SyncInvoker<StopRedistributionRequest, StopRedistributionResponse>(request,
-            DwsMeta.stopRedistribution, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.stopRedistribution, hcClient);
     }
 
     /**
@@ -4354,7 +4280,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopWorkloadPlanRequest 请求对象
+     * @param request StopWorkloadPlanRequest 请求对象
      * @return StopWorkloadPlanResponse
      */
     public StopWorkloadPlanResponse stopWorkloadPlan(StopWorkloadPlanRequest request) {
@@ -4368,13 +4294,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopWorkloadPlanRequest 请求对象
+     * @param request StopWorkloadPlanRequest 请求对象
      * @return SyncInvoker<StopWorkloadPlanRequest, StopWorkloadPlanResponse>
      */
     public SyncInvoker<StopWorkloadPlanRequest, StopWorkloadPlanResponse> stopWorkloadPlanInvoker(
         StopWorkloadPlanRequest request) {
-        return new SyncInvoker<StopWorkloadPlanRequest, StopWorkloadPlanResponse>(request, DwsMeta.stopWorkloadPlan,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.stopWorkloadPlan, hcClient);
     }
 
     /**
@@ -4384,7 +4309,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchFailoverDisasterRequest 请求对象
+     * @param request SwitchFailoverDisasterRequest 请求对象
      * @return SwitchFailoverDisasterResponse
      */
     public SwitchFailoverDisasterResponse switchFailoverDisaster(SwitchFailoverDisasterRequest request) {
@@ -4398,13 +4323,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchFailoverDisasterRequest 请求对象
+     * @param request SwitchFailoverDisasterRequest 请求对象
      * @return SyncInvoker<SwitchFailoverDisasterRequest, SwitchFailoverDisasterResponse>
      */
     public SyncInvoker<SwitchFailoverDisasterRequest, SwitchFailoverDisasterResponse> switchFailoverDisasterInvoker(
         SwitchFailoverDisasterRequest request) {
-        return new SyncInvoker<SwitchFailoverDisasterRequest, SwitchFailoverDisasterResponse>(request,
-            DwsMeta.switchFailoverDisaster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.switchFailoverDisaster, hcClient);
     }
 
     /**
@@ -4416,7 +4340,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchOverClusterRequest 请求对象
+     * @param request SwitchOverClusterRequest 请求对象
      * @return SwitchOverClusterResponse
      */
     public SwitchOverClusterResponse switchOverCluster(SwitchOverClusterRequest request) {
@@ -4432,13 +4356,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchOverClusterRequest 请求对象
+     * @param request SwitchOverClusterRequest 请求对象
      * @return SyncInvoker<SwitchOverClusterRequest, SwitchOverClusterResponse>
      */
     public SyncInvoker<SwitchOverClusterRequest, SwitchOverClusterResponse> switchOverClusterInvoker(
         SwitchOverClusterRequest request) {
-        return new SyncInvoker<SwitchOverClusterRequest, SwitchOverClusterResponse>(request, DwsMeta.switchOverCluster,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.switchOverCluster, hcClient);
     }
 
     /**
@@ -4448,7 +4371,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchPlanStageRequest 请求对象
+     * @param request SwitchPlanStageRequest 请求对象
      * @return SwitchPlanStageResponse
      */
     public SwitchPlanStageResponse switchPlanStage(SwitchPlanStageRequest request) {
@@ -4462,13 +4385,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchPlanStageRequest 请求对象
+     * @param request SwitchPlanStageRequest 请求对象
      * @return SyncInvoker<SwitchPlanStageRequest, SwitchPlanStageResponse>
      */
     public SyncInvoker<SwitchPlanStageRequest, SwitchPlanStageResponse> switchPlanStageInvoker(
         SwitchPlanStageRequest request) {
-        return new SyncInvoker<SwitchPlanStageRequest, SwitchPlanStageResponse>(request, DwsMeta.switchPlanStage,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.switchPlanStage, hcClient);
     }
 
     /**
@@ -4478,7 +4400,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchoverDisasterRecoveryRequest 请求对象
+     * @param request SwitchoverDisasterRecoveryRequest 请求对象
      * @return SwitchoverDisasterRecoveryResponse
      */
     public SwitchoverDisasterRecoveryResponse switchoverDisasterRecovery(SwitchoverDisasterRecoveryRequest request) {
@@ -4492,13 +4414,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchoverDisasterRecoveryRequest 请求对象
+     * @param request SwitchoverDisasterRecoveryRequest 请求对象
      * @return SyncInvoker<SwitchoverDisasterRecoveryRequest, SwitchoverDisasterRecoveryResponse>
      */
     public SyncInvoker<SwitchoverDisasterRecoveryRequest, SwitchoverDisasterRecoveryResponse> switchoverDisasterRecoveryInvoker(
         SwitchoverDisasterRecoveryRequest request) {
-        return new SyncInvoker<SwitchoverDisasterRecoveryRequest, SwitchoverDisasterRecoveryResponse>(request,
-            DwsMeta.switchoverDisasterRecovery, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.switchoverDisasterRecovery, hcClient);
     }
 
     /**
@@ -4508,7 +4429,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncIamUsersRequest 请求对象
+     * @param request SyncIamUsersRequest 请求对象
      * @return SyncIamUsersResponse
      */
     public SyncIamUsersResponse syncIamUsers(SyncIamUsersRequest request) {
@@ -4522,11 +4443,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncIamUsersRequest 请求对象
+     * @param request SyncIamUsersRequest 请求对象
      * @return SyncInvoker<SyncIamUsersRequest, SyncIamUsersResponse>
      */
     public SyncInvoker<SyncIamUsersRequest, SyncIamUsersResponse> syncIamUsersInvoker(SyncIamUsersRequest request) {
-        return new SyncInvoker<SyncIamUsersRequest, SyncIamUsersResponse>(request, DwsMeta.syncIamUsers, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.syncIamUsers, hcClient);
     }
 
     /**
@@ -4536,7 +4457,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmSubRequest 请求对象
+     * @param request UpdateAlarmSubRequest 请求对象
      * @return UpdateAlarmSubResponse
      */
     public UpdateAlarmSubResponse updateAlarmSub(UpdateAlarmSubRequest request) {
@@ -4550,13 +4471,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmSubRequest 请求对象
+     * @param request UpdateAlarmSubRequest 请求对象
      * @return SyncInvoker<UpdateAlarmSubRequest, UpdateAlarmSubResponse>
      */
     public SyncInvoker<UpdateAlarmSubRequest, UpdateAlarmSubResponse> updateAlarmSubInvoker(
         UpdateAlarmSubRequest request) {
-        return new SyncInvoker<UpdateAlarmSubRequest, UpdateAlarmSubResponse>(request, DwsMeta.updateAlarmSub,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateAlarmSub, hcClient);
     }
 
     /**
@@ -4566,7 +4486,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterDnsRequest 请求对象
+     * @param request UpdateClusterDnsRequest 请求对象
      * @return UpdateClusterDnsResponse
      */
     public UpdateClusterDnsResponse updateClusterDns(UpdateClusterDnsRequest request) {
@@ -4580,13 +4500,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterDnsRequest 请求对象
+     * @param request UpdateClusterDnsRequest 请求对象
      * @return SyncInvoker<UpdateClusterDnsRequest, UpdateClusterDnsResponse>
      */
     public SyncInvoker<UpdateClusterDnsRequest, UpdateClusterDnsResponse> updateClusterDnsInvoker(
         UpdateClusterDnsRequest request) {
-        return new SyncInvoker<UpdateClusterDnsRequest, UpdateClusterDnsResponse>(request, DwsMeta.updateClusterDns,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateClusterDns, hcClient);
     }
 
     /**
@@ -4596,7 +4515,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigurationRequest 请求对象
+     * @param request UpdateConfigurationRequest 请求对象
      * @return UpdateConfigurationResponse
      */
     public UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request) {
@@ -4610,13 +4529,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigurationRequest 请求对象
+     * @param request UpdateConfigurationRequest 请求对象
      * @return SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>
      */
     public SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfigurationInvoker(
         UpdateConfigurationRequest request) {
-        return new SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>(request,
-            DwsMeta.updateConfiguration, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateConfiguration, hcClient);
     }
 
     /**
@@ -4626,7 +4544,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataSourceRequest 请求对象
+     * @param request UpdateDataSourceRequest 请求对象
      * @return UpdateDataSourceResponse
      */
     public UpdateDataSourceResponse updateDataSource(UpdateDataSourceRequest request) {
@@ -4640,13 +4558,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataSourceRequest 请求对象
+     * @param request UpdateDataSourceRequest 请求对象
      * @return SyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse>
      */
     public SyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse> updateDataSourceInvoker(
         UpdateDataSourceRequest request) {
-        return new SyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse>(request, DwsMeta.updateDataSource,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateDataSource, hcClient);
     }
 
     /**
@@ -4656,7 +4573,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseAuthorityRequest 请求对象
+     * @param request UpdateDatabaseAuthorityRequest 请求对象
      * @return UpdateDatabaseAuthorityResponse
      */
     public UpdateDatabaseAuthorityResponse updateDatabaseAuthority(UpdateDatabaseAuthorityRequest request) {
@@ -4670,13 +4587,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseAuthorityRequest 请求对象
+     * @param request UpdateDatabaseAuthorityRequest 请求对象
      * @return SyncInvoker<UpdateDatabaseAuthorityRequest, UpdateDatabaseAuthorityResponse>
      */
     public SyncInvoker<UpdateDatabaseAuthorityRequest, UpdateDatabaseAuthorityResponse> updateDatabaseAuthorityInvoker(
         UpdateDatabaseAuthorityRequest request) {
-        return new SyncInvoker<UpdateDatabaseAuthorityRequest, UpdateDatabaseAuthorityResponse>(request,
-            DwsMeta.updateDatabaseAuthority, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateDatabaseAuthority, hcClient);
     }
 
     /**
@@ -4686,7 +4602,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseUserInfoRequest 请求对象
+     * @param request UpdateDatabaseUserInfoRequest 请求对象
      * @return UpdateDatabaseUserInfoResponse
      */
     public UpdateDatabaseUserInfoResponse updateDatabaseUserInfo(UpdateDatabaseUserInfoRequest request) {
@@ -4700,13 +4616,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseUserInfoRequest 请求对象
+     * @param request UpdateDatabaseUserInfoRequest 请求对象
      * @return SyncInvoker<UpdateDatabaseUserInfoRequest, UpdateDatabaseUserInfoResponse>
      */
     public SyncInvoker<UpdateDatabaseUserInfoRequest, UpdateDatabaseUserInfoResponse> updateDatabaseUserInfoInvoker(
         UpdateDatabaseUserInfoRequest request) {
-        return new SyncInvoker<UpdateDatabaseUserInfoRequest, UpdateDatabaseUserInfoResponse>(request,
-            DwsMeta.updateDatabaseUserInfo, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateDatabaseUserInfo, hcClient);
     }
 
     /**
@@ -4716,7 +4631,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDisasterInfoRequest 请求对象
+     * @param request UpdateDisasterInfoRequest 请求对象
      * @return UpdateDisasterInfoResponse
      */
     public UpdateDisasterInfoResponse updateDisasterInfo(UpdateDisasterInfoRequest request) {
@@ -4730,13 +4645,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDisasterInfoRequest 请求对象
+     * @param request UpdateDisasterInfoRequest 请求对象
      * @return SyncInvoker<UpdateDisasterInfoRequest, UpdateDisasterInfoResponse>
      */
     public SyncInvoker<UpdateDisasterInfoRequest, UpdateDisasterInfoResponse> updateDisasterInfoInvoker(
         UpdateDisasterInfoRequest request) {
-        return new SyncInvoker<UpdateDisasterInfoRequest, UpdateDisasterInfoResponse>(request,
-            DwsMeta.updateDisasterInfo, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateDisasterInfo, hcClient);
     }
 
     /**
@@ -4746,7 +4660,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventSubRequest 请求对象
+     * @param request UpdateEventSubRequest 请求对象
      * @return UpdateEventSubResponse
      */
     public UpdateEventSubResponse updateEventSub(UpdateEventSubRequest request) {
@@ -4760,13 +4674,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventSubRequest 请求对象
+     * @param request UpdateEventSubRequest 请求对象
      * @return SyncInvoker<UpdateEventSubRequest, UpdateEventSubResponse>
      */
     public SyncInvoker<UpdateEventSubRequest, UpdateEventSubResponse> updateEventSubInvoker(
         UpdateEventSubRequest request) {
-        return new SyncInvoker<UpdateEventSubRequest, UpdateEventSubResponse>(request, DwsMeta.updateEventSub,
-            hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateEventSub, hcClient);
     }
 
     /**
@@ -4776,7 +4689,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogicalClusterRequest 请求对象
+     * @param request UpdateLogicalClusterRequest 请求对象
      * @return UpdateLogicalClusterResponse
      */
     public UpdateLogicalClusterResponse updateLogicalCluster(UpdateLogicalClusterRequest request) {
@@ -4790,13 +4703,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogicalClusterRequest 请求对象
+     * @param request UpdateLogicalClusterRequest 请求对象
      * @return SyncInvoker<UpdateLogicalClusterRequest, UpdateLogicalClusterResponse>
      */
     public SyncInvoker<UpdateLogicalClusterRequest, UpdateLogicalClusterResponse> updateLogicalClusterInvoker(
         UpdateLogicalClusterRequest request) {
-        return new SyncInvoker<UpdateLogicalClusterRequest, UpdateLogicalClusterResponse>(request,
-            DwsMeta.updateLogicalCluster, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateLogicalCluster, hcClient);
     }
 
     /**
@@ -4806,7 +4718,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMaintenanceWindowRequest 请求对象
+     * @param request UpdateMaintenanceWindowRequest 请求对象
      * @return UpdateMaintenanceWindowResponse
      */
     public UpdateMaintenanceWindowResponse updateMaintenanceWindow(UpdateMaintenanceWindowRequest request) {
@@ -4820,13 +4732,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMaintenanceWindowRequest 请求对象
+     * @param request UpdateMaintenanceWindowRequest 请求对象
      * @return SyncInvoker<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse>
      */
     public SyncInvoker<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse> updateMaintenanceWindowInvoker(
         UpdateMaintenanceWindowRequest request) {
-        return new SyncInvoker<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse>(request,
-            DwsMeta.updateMaintenanceWindow, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateMaintenanceWindow, hcClient);
     }
 
     /**
@@ -4836,7 +4747,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateQueueResourcesRequest 请求对象
+     * @param request UpdateQueueResourcesRequest 请求对象
      * @return UpdateQueueResourcesResponse
      */
     public UpdateQueueResourcesResponse updateQueueResources(UpdateQueueResourcesRequest request) {
@@ -4850,13 +4761,12 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateQueueResourcesRequest 请求对象
+     * @param request UpdateQueueResourcesRequest 请求对象
      * @return SyncInvoker<UpdateQueueResourcesRequest, UpdateQueueResourcesResponse>
      */
     public SyncInvoker<UpdateQueueResourcesRequest, UpdateQueueResourcesResponse> updateQueueResourcesInvoker(
         UpdateQueueResourcesRequest request) {
-        return new SyncInvoker<UpdateQueueResourcesRequest, UpdateQueueResourcesResponse>(request,
-            DwsMeta.updateQueueResources, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateQueueResources, hcClient);
     }
 
     /**
@@ -4866,7 +4776,7 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSchemasRequest 请求对象
+     * @param request UpdateSchemasRequest 请求对象
      * @return UpdateSchemasResponse
      */
     public UpdateSchemasResponse updateSchemas(UpdateSchemasRequest request) {
@@ -4880,11 +4790,11 @@ public class DwsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSchemasRequest 请求对象
+     * @param request UpdateSchemasRequest 请求对象
      * @return SyncInvoker<UpdateSchemasRequest, UpdateSchemasResponse>
      */
     public SyncInvoker<UpdateSchemasRequest, UpdateSchemasResponse> updateSchemasInvoker(UpdateSchemasRequest request) {
-        return new SyncInvoker<UpdateSchemasRequest, UpdateSchemasResponse>(request, DwsMeta.updateSchemas, hcClient);
+        return new SyncInvoker<>(request, DwsMeta.updateSchemas, hcClient);
     }
 
 }

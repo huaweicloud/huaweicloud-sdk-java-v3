@@ -99,7 +99,7 @@ public class CaseInfoDetail {
     }
 
     /**
-     * case_id
+     * 用例id
      * minimum: 0
      * maximum: 2147483647
      * @return caseId
@@ -135,7 +135,7 @@ public class CaseInfoDetail {
     }
 
     /**
-     * case_type
+     * 用例类型（0：常规用例；）
      * minimum: 0
      * maximum: 2147483647
      * @return caseType
@@ -170,7 +170,7 @@ public class CaseInfoDetail {
     }
 
     /**
-     * contents
+     * 用例脚本信息
      * @return contents
      */
     public List<Contents> getContents() {
@@ -203,7 +203,7 @@ public class CaseInfoDetail {
     }
 
     /**
-     * for_loop_params
+     * 旧版本逻辑控制器字段，当前已未使用
      * @return forLoopParams
      */
     public List<Object> getForLoopParams() {
@@ -236,7 +236,7 @@ public class CaseInfoDetail {
     }
 
     /**
-     * increase_setting
+     * 梯度递增
      * @return increaseSetting
      */
     public List<Object> getIncreaseSetting() {
@@ -269,7 +269,7 @@ public class CaseInfoDetail {
     }
 
     /**
-     * stages
+     * 阶段信息
      * @return stages
      */
     public List<TestCaseStage> getStages() {
@@ -305,7 +305,7 @@ public class CaseInfoDetail {
     }
 
     /**
-     * temp_id
+     * 用例id
      * minimum: 0
      * maximum: 2147483647
      * @return tempId

@@ -30,7 +30,7 @@ public class ListShareFolderResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count
@@ -65,7 +65,7 @@ public class ListShareFolderResponse extends SdkResponse {
     }
 
     /**
-     * 存储声明
+     * 存储声明。
      * @return items
      */
     public List<SharePersistentStorageClaim> getItems() {

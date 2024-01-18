@@ -241,7 +241,7 @@ public class Control {
     }
 
     /**
-     * 业务控制策略（SCP），配置规则。
+     * 服务控制策略（SCP），配置规则。
      * @return implementation
      */
     public String getImplementation() {
@@ -275,7 +275,7 @@ public class Control {
     }
 
     /**
-     * 账号的创建来源，包括CUSTOM和RGC。
+     * 纳管账号的创建来源，包括CUSTOM和RGC。
      * @return owner
      */
     public String getOwner() {
@@ -292,7 +292,7 @@ public class Control {
     }
 
     /**
-     * 严重性(High)。
+     * 控制策略严重性。
      * @return severity
      */
     public String getSeverity() {
@@ -326,7 +326,7 @@ public class Control {
     }
 
     /**
-     * 版本。
+     * 控制策略版本。
      * @return version
      */
     public String getVersion() {
@@ -343,7 +343,7 @@ public class Control {
     }
 
     /**
-     * 发布时间。
+     * 控制策略发布时间。
      * @return releaseDate
      */
     public OffsetDateTime getReleaseDate() {

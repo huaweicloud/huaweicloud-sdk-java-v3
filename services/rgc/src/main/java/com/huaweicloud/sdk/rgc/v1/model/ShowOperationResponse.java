@@ -113,7 +113,7 @@ public class ShowOperationResponse extends SdkResponse {
     }
 
     /**
-     * 创建账号、纳管OU、纳管账号的详细进度信息。
+     * 创建账号、纳管注册OU、纳管账号的详细进度信息。
      * @return percentageDetails
      */
     public List<OrganizationalPercentageDetail> getPercentageDetails() {
@@ -130,7 +130,7 @@ public class ShowOperationResponse extends SdkResponse {
     }
 
     /**
-     * 错误信息描述。
+     * 创建账号、纳管注册OU、纳管账号的错误信息描述。
      * @return message
      */
     public String getMessage() {

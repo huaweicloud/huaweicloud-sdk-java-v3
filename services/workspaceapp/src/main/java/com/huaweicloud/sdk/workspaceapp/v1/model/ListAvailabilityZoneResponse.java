@@ -64,7 +64,7 @@ public class ListAvailabilityZoneResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * @return totalCount
      */
     public Integer getTotalCount() {

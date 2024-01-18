@@ -123,7 +123,7 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
     }
 
     /**
-     * Get id
+     * 服务发现规则id列表，多AZ配置同步时使用。
      * @return id
      */
     public List<String> getId() {

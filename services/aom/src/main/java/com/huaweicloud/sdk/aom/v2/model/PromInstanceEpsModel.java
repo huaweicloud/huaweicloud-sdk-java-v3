@@ -27,7 +27,7 @@ public class PromInstanceEpsModel {
     private String promId;
 
     /**
-     * Prometheus实例类型。
+     * Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
      */
     public static final class PromTypeEnum {
 
@@ -143,16 +143,6 @@ public class PromInstanceEpsModel {
     private String promVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cce_spec")
-
-    private String cceSpec;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "prom_config")
-
-    private PromConfigModel promConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prom_create_timestamp")
 
     private Long promCreateTimestamp;
@@ -162,10 +152,86 @@ public class PromInstanceEpsModel {
 
     private Long promUpdateTimestamp;
 
+    /**
+     * Prometheus实例状态。
+     */
+    public static final class PromStatusEnum {
+
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
+        public static final PromStatusEnum DELETED = new PromStatusEnum("DELETED");
+
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
+        public static final PromStatusEnum NORMAL = new PromStatusEnum("NORMAL");
+
+        /**
+         * Enum ALL for value: "ALL"
+         */
+        public static final PromStatusEnum ALL = new PromStatusEnum("ALL");
+
+        private static final Map<String, PromStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PromStatusEnum> createStaticFields() {
+            Map<String, PromStatusEnum> map = new HashMap<>();
+            map.put("DELETED", DELETED);
+            map.put("NORMAL", NORMAL);
+            map.put("ALL", ALL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PromStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PromStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PromStatusEnum(value));
+        }
+
+        public static PromStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PromStatusEnum) {
+                return this.value.equals(((PromStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prom_status")
 
-    private String promStatus;
+    private PromStatusEnum promStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -196,11 +262,6 @@ public class PromInstanceEpsModel {
     @JsonProperty(value = "cce_spec_config")
 
     private String cceSpecConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "application")
-
-    private ApplicationModel application;
 
     public PromInstanceEpsModel withPromName(String promName) {
         this.promName = promName;
@@ -242,7 +303,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * Prometheus实例类型。
+     * Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
      * @return promType
      */
     public PromTypeEnum getPromType() {
@@ -268,49 +329,6 @@ public class PromInstanceEpsModel {
 
     public void setPromVersion(String promVersion) {
         this.promVersion = promVersion;
-    }
-
-    public PromInstanceEpsModel withCceSpec(String cceSpec) {
-        this.cceSpec = cceSpec;
-        return this;
-    }
-
-    /**
-     * CCE场景特殊字段。
-     * @return cceSpec
-     */
-    public String getCceSpec() {
-        return cceSpec;
-    }
-
-    public void setCceSpec(String cceSpec) {
-        this.cceSpec = cceSpec;
-    }
-
-    public PromInstanceEpsModel withPromConfig(PromConfigModel promConfig) {
-        this.promConfig = promConfig;
-        return this;
-    }
-
-    public PromInstanceEpsModel withPromConfig(Consumer<PromConfigModel> promConfigSetter) {
-        if (this.promConfig == null) {
-            this.promConfig = new PromConfigModel();
-            promConfigSetter.accept(this.promConfig);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get promConfig
-     * @return promConfig
-     */
-    public PromConfigModel getPromConfig() {
-        return promConfig;
-    }
-
-    public void setPromConfig(PromConfigModel promConfig) {
-        this.promConfig = promConfig;
     }
 
     public PromInstanceEpsModel withPromCreateTimestamp(Long promCreateTimestamp) {
@@ -347,7 +365,7 @@ public class PromInstanceEpsModel {
         this.promUpdateTimestamp = promUpdateTimestamp;
     }
 
-    public PromInstanceEpsModel withPromStatus(String promStatus) {
+    public PromInstanceEpsModel withPromStatus(PromStatusEnum promStatus) {
         this.promStatus = promStatus;
         return this;
     }
@@ -356,11 +374,11 @@ public class PromInstanceEpsModel {
      * Prometheus实例状态。
      * @return promStatus
      */
-    public String getPromStatus() {
+    public PromStatusEnum getPromStatus() {
         return promStatus;
     }
 
-    public void setPromStatus(String promStatus) {
+    public void setPromStatus(PromStatusEnum promStatus) {
         this.promStatus = promStatus;
     }
 
@@ -475,32 +493,6 @@ public class PromInstanceEpsModel {
         this.cceSpecConfig = cceSpecConfig;
     }
 
-    public PromInstanceEpsModel withApplication(ApplicationModel application) {
-        this.application = application;
-        return this;
-    }
-
-    public PromInstanceEpsModel withApplication(Consumer<ApplicationModel> applicationSetter) {
-        if (this.application == null) {
-            this.application = new ApplicationModel();
-            applicationSetter.accept(this.application);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get application
-     * @return application
-     */
-    public ApplicationModel getApplication() {
-        return application;
-    }
-
-    public void setApplication(ApplicationModel application) {
-        this.application = application;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -512,7 +504,6 @@ public class PromInstanceEpsModel {
         PromInstanceEpsModel that = (PromInstanceEpsModel) obj;
         return Objects.equals(this.promName, that.promName) && Objects.equals(this.promId, that.promId)
             && Objects.equals(this.promType, that.promType) && Objects.equals(this.promVersion, that.promVersion)
-            && Objects.equals(this.cceSpec, that.cceSpec) && Objects.equals(this.promConfig, that.promConfig)
             && Objects.equals(this.promCreateTimestamp, that.promCreateTimestamp)
             && Objects.equals(this.promUpdateTimestamp, that.promUpdateTimestamp)
             && Objects.equals(this.promStatus, that.promStatus)
@@ -520,8 +511,7 @@ public class PromInstanceEpsModel {
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.isDeletedTag, that.isDeletedTag)
             && Objects.equals(this.deletedTime, that.deletedTime)
             && Objects.equals(this.promSpecConfig, that.promSpecConfig)
-            && Objects.equals(this.cceSpecConfig, that.cceSpecConfig)
-            && Objects.equals(this.application, that.application);
+            && Objects.equals(this.cceSpecConfig, that.cceSpecConfig);
     }
 
     @Override
@@ -530,8 +520,6 @@ public class PromInstanceEpsModel {
             promId,
             promType,
             promVersion,
-            cceSpec,
-            promConfig,
             promCreateTimestamp,
             promUpdateTimestamp,
             promStatus,
@@ -540,8 +528,7 @@ public class PromInstanceEpsModel {
             isDeletedTag,
             deletedTime,
             promSpecConfig,
-            cceSpecConfig,
-            application);
+            cceSpecConfig);
     }
 
     @Override
@@ -552,8 +539,6 @@ public class PromInstanceEpsModel {
         sb.append("    promId: ").append(toIndentedString(promId)).append("\n");
         sb.append("    promType: ").append(toIndentedString(promType)).append("\n");
         sb.append("    promVersion: ").append(toIndentedString(promVersion)).append("\n");
-        sb.append("    cceSpec: ").append(toIndentedString(cceSpec)).append("\n");
-        sb.append("    promConfig: ").append(toIndentedString(promConfig)).append("\n");
         sb.append("    promCreateTimestamp: ").append(toIndentedString(promCreateTimestamp)).append("\n");
         sb.append("    promUpdateTimestamp: ").append(toIndentedString(promUpdateTimestamp)).append("\n");
         sb.append("    promStatus: ").append(toIndentedString(promStatus)).append("\n");
@@ -563,7 +548,6 @@ public class PromInstanceEpsModel {
         sb.append("    deletedTime: ").append(toIndentedString(deletedTime)).append("\n");
         sb.append("    promSpecConfig: ").append(toIndentedString(promSpecConfig)).append("\n");
         sb.append("    cceSpecConfig: ").append(toIndentedString(cceSpecConfig)).append("\n");
-        sb.append("    application: ").append(toIndentedString(application)).append("\n");
         sb.append("}");
         return sb.toString();
     }

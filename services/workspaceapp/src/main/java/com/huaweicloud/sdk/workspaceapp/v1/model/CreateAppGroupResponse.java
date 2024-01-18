@@ -68,7 +68,7 @@ public class CreateAppGroupResponse extends SdkResponse {
     }
 
     /**
-     * 应用组ID
+     * 应用组ID。
      * @return id
      */
     public String getId() {
@@ -85,7 +85,7 @@ public class CreateAppGroupResponse extends SdkResponse {
     }
 
     /**
-     * 应用组名称
+     * 应用组名称。
      * @return name
      */
     public String getName() {
@@ -102,7 +102,7 @@ public class CreateAppGroupResponse extends SdkResponse {
     }
 
     /**
-     * 应用服务器组ID
+     * 应用服务器组ID。
      * @return appServerGroupId
      */
     public String getAppServerGroupId() {
@@ -119,7 +119,7 @@ public class CreateAppGroupResponse extends SdkResponse {
     }
 
     /**
-     * 应用服务器组名称
+     * 应用服务器组名称。
      * @return appServerGroupName
      */
     public String getAppServerGroupName() {
@@ -136,7 +136,7 @@ public class CreateAppGroupResponse extends SdkResponse {
     }
 
     /**
-     * 应用组描述
+     * 应用组描述。
      * @return description
      */
     public String getDescription() {
@@ -170,7 +170,7 @@ public class CreateAppGroupResponse extends SdkResponse {
     }
 
     /**
-     * 租户ID
+     * 租户ID。
      * @return tenantId
      */
     public String getTenantId() {
@@ -204,7 +204,7 @@ public class CreateAppGroupResponse extends SdkResponse {
     }
 
     /**
-     * 发布时间
+     * 发布时间。
      * @return createAt
      */
     public OffsetDateTime getCreateAt() {
@@ -221,7 +221,7 @@ public class CreateAppGroupResponse extends SdkResponse {
     }
 
     /**
-     * 应用数量
+     * 应用数量。
      * @return appCount
      */
     public Integer getAppCount() {

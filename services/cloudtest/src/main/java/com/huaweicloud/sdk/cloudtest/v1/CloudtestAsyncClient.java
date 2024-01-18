@@ -80,7 +80,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTestCaseRequest 请求对象
+     * @param request BatchDeleteTestCaseRequest 请求对象
      * @return CompletableFuture<BatchDeleteTestCaseResponse>
      */
     public CompletableFuture<BatchDeleteTestCaseResponse> batchDeleteTestCaseAsync(BatchDeleteTestCaseRequest request) {
@@ -94,13 +94,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTestCaseRequest 请求对象
+     * @param request BatchDeleteTestCaseRequest 请求对象
      * @return AsyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse>
      */
     public AsyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> batchDeleteTestCaseAsyncInvoker(
         BatchDeleteTestCaseRequest request) {
-        return new AsyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse>(request,
-            CloudtestMeta.batchDeleteTestCase, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.batchDeleteTestCase, hcClient);
     }
 
     /**
@@ -110,7 +109,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlanRequest 请求对象
+     * @param request CreatePlanRequest 请求对象
      * @return CompletableFuture<CreatePlanResponse>
      */
     public CompletableFuture<CreatePlanResponse> createPlanAsync(CreatePlanRequest request) {
@@ -124,11 +123,11 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlanRequest 请求对象
+     * @param request CreatePlanRequest 请求对象
      * @return AsyncInvoker<CreatePlanRequest, CreatePlanResponse>
      */
     public AsyncInvoker<CreatePlanRequest, CreatePlanResponse> createPlanAsyncInvoker(CreatePlanRequest request) {
-        return new AsyncInvoker<CreatePlanRequest, CreatePlanResponse>(request, CloudtestMeta.createPlan, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.createPlan, hcClient);
     }
 
     /**
@@ -138,7 +137,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateServiceRequest 请求对象
+     * @param request CreateServiceRequest 请求对象
      * @return CompletableFuture<CreateServiceResponse>
      */
     public CompletableFuture<CreateServiceResponse> createServiceAsync(CreateServiceRequest request) {
@@ -152,13 +151,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateServiceRequest 请求对象
+     * @param request CreateServiceRequest 请求对象
      * @return AsyncInvoker<CreateServiceRequest, CreateServiceResponse>
      */
     public AsyncInvoker<CreateServiceRequest, CreateServiceResponse> createServiceAsyncInvoker(
         CreateServiceRequest request) {
-        return new AsyncInvoker<CreateServiceRequest, CreateServiceResponse>(request, CloudtestMeta.createService,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.createService, hcClient);
     }
 
     /**
@@ -168,7 +166,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTestCaseRequest 请求对象
+     * @param request CreateTestCaseRequest 请求对象
      * @return CompletableFuture<CreateTestCaseResponse>
      */
     public CompletableFuture<CreateTestCaseResponse> createTestCaseAsync(CreateTestCaseRequest request) {
@@ -182,13 +180,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTestCaseRequest 请求对象
+     * @param request CreateTestCaseRequest 请求对象
      * @return AsyncInvoker<CreateTestCaseRequest, CreateTestCaseResponse>
      */
     public AsyncInvoker<CreateTestCaseRequest, CreateTestCaseResponse> createTestCaseAsyncInvoker(
         CreateTestCaseRequest request) {
-        return new AsyncInvoker<CreateTestCaseRequest, CreateTestCaseResponse>(request, CloudtestMeta.createTestCase,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.createTestCase, hcClient);
     }
 
     /**
@@ -198,7 +195,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTestCaseInPlanRequest 请求对象
+     * @param request CreateTestCaseInPlanRequest 请求对象
      * @return CompletableFuture<CreateTestCaseInPlanResponse>
      */
     public CompletableFuture<CreateTestCaseInPlanResponse> createTestCaseInPlanAsync(
@@ -213,13 +210,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTestCaseInPlanRequest 请求对象
+     * @param request CreateTestCaseInPlanRequest 请求对象
      * @return AsyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse>
      */
     public AsyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse> createTestCaseInPlanAsyncInvoker(
         CreateTestCaseInPlanRequest request) {
-        return new AsyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse>(request,
-            CloudtestMeta.createTestCaseInPlan, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.createTestCaseInPlan, hcClient);
     }
 
     /**
@@ -229,7 +225,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServiceRequest 请求对象
+     * @param request DeleteServiceRequest 请求对象
      * @return CompletableFuture<DeleteServiceResponse>
      */
     public CompletableFuture<DeleteServiceResponse> deleteServiceAsync(DeleteServiceRequest request) {
@@ -243,13 +239,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServiceRequest 请求对象
+     * @param request DeleteServiceRequest 请求对象
      * @return AsyncInvoker<DeleteServiceRequest, DeleteServiceResponse>
      */
     public AsyncInvoker<DeleteServiceRequest, DeleteServiceResponse> deleteServiceAsyncInvoker(
         DeleteServiceRequest request) {
-        return new AsyncInvoker<DeleteServiceRequest, DeleteServiceResponse>(request, CloudtestMeta.deleteService,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.deleteService, hcClient);
     }
 
     /**
@@ -259,7 +254,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBranchesRequest 请求对象
+     * @param request ListBranchesRequest 请求对象
      * @return CompletableFuture<ListBranchesResponse>
      */
     public CompletableFuture<ListBranchesResponse> listBranchesAsync(ListBranchesRequest request) {
@@ -273,13 +268,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBranchesRequest 请求对象
+     * @param request ListBranchesRequest 请求对象
      * @return AsyncInvoker<ListBranchesRequest, ListBranchesResponse>
      */
     public AsyncInvoker<ListBranchesRequest, ListBranchesResponse> listBranchesAsyncInvoker(
         ListBranchesRequest request) {
-        return new AsyncInvoker<ListBranchesRequest, ListBranchesResponse>(request, CloudtestMeta.listBranches,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.listBranches, hcClient);
     }
 
     /**
@@ -289,7 +283,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTestCaseHistoriesRequest 请求对象
+     * @param request ListTestCaseHistoriesRequest 请求对象
      * @return CompletableFuture<ListTestCaseHistoriesResponse>
      */
     public CompletableFuture<ListTestCaseHistoriesResponse> listTestCaseHistoriesAsync(
@@ -304,13 +298,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTestCaseHistoriesRequest 请求对象
+     * @param request ListTestCaseHistoriesRequest 请求对象
      * @return AsyncInvoker<ListTestCaseHistoriesRequest, ListTestCaseHistoriesResponse>
      */
     public AsyncInvoker<ListTestCaseHistoriesRequest, ListTestCaseHistoriesResponse> listTestCaseHistoriesAsyncInvoker(
         ListTestCaseHistoriesRequest request) {
-        return new AsyncInvoker<ListTestCaseHistoriesRequest, ListTestCaseHistoriesResponse>(request,
-            CloudtestMeta.listTestCaseHistories, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.listTestCaseHistories, hcClient);
     }
 
     /**
@@ -320,7 +313,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTestCasesRequest 请求对象
+     * @param request ListTestCasesRequest 请求对象
      * @return CompletableFuture<ListTestCasesResponse>
      */
     public CompletableFuture<ListTestCasesResponse> listTestCasesAsync(ListTestCasesRequest request) {
@@ -334,13 +327,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTestCasesRequest 请求对象
+     * @param request ListTestCasesRequest 请求对象
      * @return AsyncInvoker<ListTestCasesRequest, ListTestCasesResponse>
      */
     public AsyncInvoker<ListTestCasesRequest, ListTestCasesResponse> listTestCasesAsyncInvoker(
         ListTestCasesRequest request) {
-        return new AsyncInvoker<ListTestCasesRequest, ListTestCasesResponse>(request, CloudtestMeta.listTestCases,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.listTestCases, hcClient);
     }
 
     /**
@@ -350,7 +342,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTestCaseRequest 请求对象
+     * @param request RunTestCaseRequest 请求对象
      * @return CompletableFuture<RunTestCaseResponse>
      */
     public CompletableFuture<RunTestCaseResponse> runTestCaseAsync(RunTestCaseRequest request) {
@@ -364,11 +356,11 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTestCaseRequest 请求对象
+     * @param request RunTestCaseRequest 请求对象
      * @return AsyncInvoker<RunTestCaseRequest, RunTestCaseResponse>
      */
     public AsyncInvoker<RunTestCaseRequest, RunTestCaseResponse> runTestCaseAsyncInvoker(RunTestCaseRequest request) {
-        return new AsyncInvoker<RunTestCaseRequest, RunTestCaseResponse>(request, CloudtestMeta.runTestCase, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.runTestCase, hcClient);
     }
 
     /**
@@ -378,7 +370,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiTestcaseHistoriesRequest 请求对象
+     * @param request ShowApiTestcaseHistoriesRequest 请求对象
      * @return CompletableFuture<ShowApiTestcaseHistoriesResponse>
      */
     public CompletableFuture<ShowApiTestcaseHistoriesResponse> showApiTestcaseHistoriesAsync(
@@ -393,13 +385,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiTestcaseHistoriesRequest 请求对象
+     * @param request ShowApiTestcaseHistoriesRequest 请求对象
      * @return AsyncInvoker<ShowApiTestcaseHistoriesRequest, ShowApiTestcaseHistoriesResponse>
      */
     public AsyncInvoker<ShowApiTestcaseHistoriesRequest, ShowApiTestcaseHistoriesResponse> showApiTestcaseHistoriesAsyncInvoker(
         ShowApiTestcaseHistoriesRequest request) {
-        return new AsyncInvoker<ShowApiTestcaseHistoriesRequest, ShowApiTestcaseHistoriesResponse>(request,
-            CloudtestMeta.showApiTestcaseHistories, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showApiTestcaseHistories, hcClient);
     }
 
     /**
@@ -409,7 +400,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIssuesByPlanIdRequest 请求对象
+     * @param request ShowIssuesByPlanIdRequest 请求对象
      * @return CompletableFuture<ShowIssuesByPlanIdResponse>
      */
     public CompletableFuture<ShowIssuesByPlanIdResponse> showIssuesByPlanIdAsync(ShowIssuesByPlanIdRequest request) {
@@ -423,13 +414,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIssuesByPlanIdRequest 请求对象
+     * @param request ShowIssuesByPlanIdRequest 请求对象
      * @return AsyncInvoker<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse>
      */
     public AsyncInvoker<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse> showIssuesByPlanIdAsyncInvoker(
         ShowIssuesByPlanIdRequest request) {
-        return new AsyncInvoker<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse>(request,
-            CloudtestMeta.showIssuesByPlanId, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showIssuesByPlanId, hcClient);
     }
 
     /**
@@ -439,7 +429,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlanJournalsRequest 请求对象
+     * @param request ShowPlanJournalsRequest 请求对象
      * @return CompletableFuture<ShowPlanJournalsResponse>
      */
     public CompletableFuture<ShowPlanJournalsResponse> showPlanJournalsAsync(ShowPlanJournalsRequest request) {
@@ -453,13 +443,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlanJournalsRequest 请求对象
+     * @param request ShowPlanJournalsRequest 请求对象
      * @return AsyncInvoker<ShowPlanJournalsRequest, ShowPlanJournalsResponse>
      */
     public AsyncInvoker<ShowPlanJournalsRequest, ShowPlanJournalsResponse> showPlanJournalsAsyncInvoker(
         ShowPlanJournalsRequest request) {
-        return new AsyncInvoker<ShowPlanJournalsRequest, ShowPlanJournalsResponse>(request,
-            CloudtestMeta.showPlanJournals, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showPlanJournals, hcClient);
     }
 
     /**
@@ -469,7 +458,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlanListRequest 请求对象
+     * @param request ShowPlanListRequest 请求对象
      * @return CompletableFuture<ShowPlanListResponse>
      */
     public CompletableFuture<ShowPlanListResponse> showPlanListAsync(ShowPlanListRequest request) {
@@ -483,13 +472,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlanListRequest 请求对象
+     * @param request ShowPlanListRequest 请求对象
      * @return AsyncInvoker<ShowPlanListRequest, ShowPlanListResponse>
      */
     public AsyncInvoker<ShowPlanListRequest, ShowPlanListResponse> showPlanListAsyncInvoker(
         ShowPlanListRequest request) {
-        return new AsyncInvoker<ShowPlanListRequest, ShowPlanListResponse>(request, CloudtestMeta.showPlanList,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showPlanList, hcClient);
     }
 
     /**
@@ -499,7 +487,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlansRequest 请求对象
+     * @param request ShowPlansRequest 请求对象
      * @return CompletableFuture<ShowPlansResponse>
      */
     public CompletableFuture<ShowPlansResponse> showPlansAsync(ShowPlansRequest request) {
@@ -513,11 +501,11 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlansRequest 请求对象
+     * @param request ShowPlansRequest 请求对象
      * @return AsyncInvoker<ShowPlansRequest, ShowPlansResponse>
      */
     public AsyncInvoker<ShowPlansRequest, ShowPlansResponse> showPlansAsyncInvoker(ShowPlansRequest request) {
-        return new AsyncInvoker<ShowPlansRequest, ShowPlansResponse>(request, CloudtestMeta.showPlans, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showPlans, hcClient);
     }
 
     /**
@@ -527,7 +515,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectDataDashboardRequest 请求对象
+     * @param request ShowProjectDataDashboardRequest 请求对象
      * @return CompletableFuture<ShowProjectDataDashboardResponse>
      */
     public CompletableFuture<ShowProjectDataDashboardResponse> showProjectDataDashboardAsync(
@@ -542,13 +530,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectDataDashboardRequest 请求对象
+     * @param request ShowProjectDataDashboardRequest 请求对象
      * @return AsyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse>
      */
     public AsyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse> showProjectDataDashboardAsyncInvoker(
         ShowProjectDataDashboardRequest request) {
-        return new AsyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse>(request,
-            CloudtestMeta.showProjectDataDashboard, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showProjectDataDashboard, hcClient);
     }
 
     /**
@@ -558,7 +545,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRegisterServiceRequest 请求对象
+     * @param request ShowRegisterServiceRequest 请求对象
      * @return CompletableFuture<ShowRegisterServiceResponse>
      */
     public CompletableFuture<ShowRegisterServiceResponse> showRegisterServiceAsync(ShowRegisterServiceRequest request) {
@@ -572,13 +559,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRegisterServiceRequest 请求对象
+     * @param request ShowRegisterServiceRequest 请求对象
      * @return AsyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse>
      */
     public AsyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse> showRegisterServiceAsyncInvoker(
         ShowRegisterServiceRequest request) {
-        return new AsyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse>(request,
-            CloudtestMeta.showRegisterService, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showRegisterService, hcClient);
     }
 
     /**
@@ -588,7 +574,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReportRequest 请求对象
+     * @param request ShowReportRequest 请求对象
      * @return CompletableFuture<ShowReportResponse>
      */
     public CompletableFuture<ShowReportResponse> showReportAsync(ShowReportRequest request) {
@@ -602,11 +588,11 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReportRequest 请求对象
+     * @param request ShowReportRequest 请求对象
      * @return AsyncInvoker<ShowReportRequest, ShowReportResponse>
      */
     public AsyncInvoker<ShowReportRequest, ShowReportResponse> showReportAsyncInvoker(ShowReportRequest request) {
-        return new AsyncInvoker<ShowReportRequest, ShowReportResponse>(request, CloudtestMeta.showReport, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showReport, hcClient);
     }
 
     /**
@@ -616,7 +602,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseAndDefectInfoRequest 请求对象
+     * @param request ShowTestCaseAndDefectInfoRequest 请求对象
      * @return CompletableFuture<ShowTestCaseAndDefectInfoResponse>
      */
     public CompletableFuture<ShowTestCaseAndDefectInfoResponse> showTestCaseAndDefectInfoAsync(
@@ -631,13 +617,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseAndDefectInfoRequest 请求对象
+     * @param request ShowTestCaseAndDefectInfoRequest 请求对象
      * @return AsyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse>
      */
     public AsyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse> showTestCaseAndDefectInfoAsyncInvoker(
         ShowTestCaseAndDefectInfoRequest request) {
-        return new AsyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse>(request,
-            CloudtestMeta.showTestCaseAndDefectInfo, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showTestCaseAndDefectInfo, hcClient);
     }
 
     /**
@@ -647,7 +632,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseDetailRequest 请求对象
+     * @param request ShowTestCaseDetailRequest 请求对象
      * @return CompletableFuture<ShowTestCaseDetailResponse>
      */
     public CompletableFuture<ShowTestCaseDetailResponse> showTestCaseDetailAsync(ShowTestCaseDetailRequest request) {
@@ -661,13 +646,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseDetailRequest 请求对象
+     * @param request ShowTestCaseDetailRequest 请求对象
      * @return AsyncInvoker<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse>
      */
     public AsyncInvoker<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse> showTestCaseDetailAsyncInvoker(
         ShowTestCaseDetailRequest request) {
-        return new AsyncInvoker<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse>(request,
-            CloudtestMeta.showTestCaseDetail, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showTestCaseDetail, hcClient);
     }
 
     /**
@@ -677,7 +661,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseDetailV2Request 请求对象
+     * @param request ShowTestCaseDetailV2Request 请求对象
      * @return CompletableFuture<ShowTestCaseDetailV2Response>
      */
     public CompletableFuture<ShowTestCaseDetailV2Response> showTestCaseDetailV2Async(
@@ -692,13 +676,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTestCaseDetailV2Request 请求对象
+     * @param request ShowTestCaseDetailV2Request 请求对象
      * @return AsyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response>
      */
     public AsyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response> showTestCaseDetailV2AsyncInvoker(
         ShowTestCaseDetailV2Request request) {
-        return new AsyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response>(request,
-            CloudtestMeta.showTestCaseDetailV2, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showTestCaseDetailV2, hcClient);
     }
 
     /**
@@ -708,7 +691,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserExecuteTestCaseInfoRequest 请求对象
+     * @param request ShowUserExecuteTestCaseInfoRequest 请求对象
      * @return CompletableFuture<ShowUserExecuteTestCaseInfoResponse>
      */
     public CompletableFuture<ShowUserExecuteTestCaseInfoResponse> showUserExecuteTestCaseInfoAsync(
@@ -723,13 +706,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserExecuteTestCaseInfoRequest 请求对象
+     * @param request ShowUserExecuteTestCaseInfoRequest 请求对象
      * @return AsyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse>
      */
     public AsyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse> showUserExecuteTestCaseInfoAsyncInvoker(
         ShowUserExecuteTestCaseInfoRequest request) {
-        return new AsyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse>(request,
-            CloudtestMeta.showUserExecuteTestCaseInfo, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.showUserExecuteTestCaseInfo, hcClient);
     }
 
     /**
@@ -739,7 +721,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServiceRequest 请求对象
+     * @param request UpdateServiceRequest 请求对象
      * @return CompletableFuture<UpdateServiceResponse>
      */
     public CompletableFuture<UpdateServiceResponse> updateServiceAsync(UpdateServiceRequest request) {
@@ -753,13 +735,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServiceRequest 请求对象
+     * @param request UpdateServiceRequest 请求对象
      * @return AsyncInvoker<UpdateServiceRequest, UpdateServiceResponse>
      */
     public AsyncInvoker<UpdateServiceRequest, UpdateServiceResponse> updateServiceAsyncInvoker(
         UpdateServiceRequest request) {
-        return new AsyncInvoker<UpdateServiceRequest, UpdateServiceResponse>(request, CloudtestMeta.updateService,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.updateService, hcClient);
     }
 
     /**
@@ -769,7 +750,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTestCaseRequest 请求对象
+     * @param request UpdateTestCaseRequest 请求对象
      * @return CompletableFuture<UpdateTestCaseResponse>
      */
     public CompletableFuture<UpdateTestCaseResponse> updateTestCaseAsync(UpdateTestCaseRequest request) {
@@ -783,13 +764,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTestCaseRequest 请求对象
+     * @param request UpdateTestCaseRequest 请求对象
      * @return AsyncInvoker<UpdateTestCaseRequest, UpdateTestCaseResponse>
      */
     public AsyncInvoker<UpdateTestCaseRequest, UpdateTestCaseResponse> updateTestCaseAsyncInvoker(
         UpdateTestCaseRequest request) {
-        return new AsyncInvoker<UpdateTestCaseRequest, UpdateTestCaseResponse>(request, CloudtestMeta.updateTestCase,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.updateTestCase, hcClient);
     }
 
     /**
@@ -799,7 +779,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTestCaseResultRequest 请求对象
+     * @param request UpdateTestCaseResultRequest 请求对象
      * @return CompletableFuture<UpdateTestCaseResultResponse>
      */
     public CompletableFuture<UpdateTestCaseResultResponse> updateTestCaseResultAsync(
@@ -814,13 +794,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTestCaseResultRequest 请求对象
+     * @param request UpdateTestCaseResultRequest 请求对象
      * @return AsyncInvoker<UpdateTestCaseResultRequest, UpdateTestCaseResultResponse>
      */
     public AsyncInvoker<UpdateTestCaseResultRequest, UpdateTestCaseResultResponse> updateTestCaseResultAsyncInvoker(
         UpdateTestCaseResultRequest request) {
-        return new AsyncInvoker<UpdateTestCaseResultRequest, UpdateTestCaseResultResponse>(request,
-            CloudtestMeta.updateTestCaseResult, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.updateTestCaseResult, hcClient);
     }
 
     /**
@@ -830,7 +809,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
+     * @param request CreateApiTestSuiteByRepoFileRequest 请求对象
      * @return CompletableFuture<CreateApiTestSuiteByRepoFileResponse>
      */
     public CompletableFuture<CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFileAsync(
@@ -845,13 +824,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
+     * @param request CreateApiTestSuiteByRepoFileRequest 请求对象
      * @return AsyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>
      */
     public AsyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFileAsyncInvoker(
         CreateApiTestSuiteByRepoFileRequest request) {
-        return new AsyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>(request,
-            CloudtestMeta.createApiTestSuiteByRepoFile, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.createApiTestSuiteByRepoFile, hcClient);
     }
 
     /**
@@ -861,7 +839,7 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentsRequest 请求对象
+     * @param request ListEnvironmentsRequest 请求对象
      * @return CompletableFuture<ListEnvironmentsResponse>
      */
     public CompletableFuture<ListEnvironmentsResponse> listEnvironmentsAsync(ListEnvironmentsRequest request) {
@@ -875,13 +853,12 @@ public class CloudtestAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentsRequest 请求对象
+     * @param request ListEnvironmentsRequest 请求对象
      * @return AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>
      */
     public AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironmentsAsyncInvoker(
         ListEnvironmentsRequest request) {
-        return new AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>(request,
-            CloudtestMeta.listEnvironments, hcClient);
+        return new AsyncInvoker<>(request, CloudtestMeta.listEnvironments, hcClient);
     }
 
 }

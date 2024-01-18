@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 重建服务器的请求体
+ * 重建服务器的请求体。
  */
 public class ReinstallServerReq {
 
@@ -21,7 +21,7 @@ public class ReinstallServerReq {
     }
 
     /**
-     * 是否自动升级hda版本
+     * 是否自动升级hda版本。
      * @return updateAccessAgent
      */
     public Boolean getUpdateAccessAgent() {

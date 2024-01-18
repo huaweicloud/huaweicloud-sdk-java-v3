@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 磁盘
+ * 磁盘。
  */
 public class Volume {
 
@@ -48,7 +48,7 @@ public class Volume {
     }
 
     /**
-     * 磁盘容量，单位GB，数值约束为10的倍数 * `系统盘` minLength: 10，maxLength: 1024 * `数据盘` minLength: 10，maxLength: 32768
+     * 磁盘容量，单位GB，数值约束为10的倍数。 * `系统盘` minLength: 10，maxLength: 1024 * `数据盘` minLength: 10，maxLength: 32768
      * minimum: 10
      * maximum: 32768
      * @return size
@@ -67,7 +67,7 @@ public class Volume {
     }
 
     /**
-     * 云服务器系统盘对应的存储池的ID
+     * 云服务器系统盘对应的存储池的ID。
      * @return clusterId
      */
     public String getClusterId() {

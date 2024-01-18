@@ -200,7 +200,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddNicsRequest 请求对象
+     * @param request AddNicsRequest 请求对象
      * @return AddNicsResponse
      */
     public AddNicsResponse addNics(AddNicsRequest request) {
@@ -214,11 +214,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddNicsRequest 请求对象
+     * @param request AddNicsRequest 请求对象
      * @return SyncInvoker<AddNicsRequest, AddNicsResponse>
      */
     public SyncInvoker<AddNicsRequest, AddNicsResponse> addNicsInvoker(AddNicsRequest request) {
-        return new SyncInvoker<AddNicsRequest, AddNicsResponse>(request, IecMeta.addNics, hcClient);
+        return new SyncInvoker<>(request, IecMeta.addNics, hcClient);
     }
 
     /**
@@ -228,7 +228,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateSubnetRequest 请求对象
+     * @param request AssociateSubnetRequest 请求对象
      * @return AssociateSubnetResponse
      */
     public AssociateSubnetResponse associateSubnet(AssociateSubnetRequest request) {
@@ -242,13 +242,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateSubnetRequest 请求对象
+     * @param request AssociateSubnetRequest 请求对象
      * @return SyncInvoker<AssociateSubnetRequest, AssociateSubnetResponse>
      */
     public SyncInvoker<AssociateSubnetRequest, AssociateSubnetResponse> associateSubnetInvoker(
         AssociateSubnetRequest request) {
-        return new SyncInvoker<AssociateSubnetRequest, AssociateSubnetResponse>(request, IecMeta.associateSubnet,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.associateSubnet, hcClient);
     }
 
     /**
@@ -258,7 +257,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRebootInstanceRequest 请求对象
+     * @param request BatchRebootInstanceRequest 请求对象
      * @return BatchRebootInstanceResponse
      */
     public BatchRebootInstanceResponse batchRebootInstance(BatchRebootInstanceRequest request) {
@@ -272,13 +271,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRebootInstanceRequest 请求对象
+     * @param request BatchRebootInstanceRequest 请求对象
      * @return SyncInvoker<BatchRebootInstanceRequest, BatchRebootInstanceResponse>
      */
     public SyncInvoker<BatchRebootInstanceRequest, BatchRebootInstanceResponse> batchRebootInstanceInvoker(
         BatchRebootInstanceRequest request) {
-        return new SyncInvoker<BatchRebootInstanceRequest, BatchRebootInstanceResponse>(request,
-            IecMeta.batchRebootInstance, hcClient);
+        return new SyncInvoker<>(request, IecMeta.batchRebootInstance, hcClient);
     }
 
     /**
@@ -288,7 +286,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartInstanceRequest 请求对象
+     * @param request BatchStartInstanceRequest 请求对象
      * @return BatchStartInstanceResponse
      */
     public BatchStartInstanceResponse batchStartInstance(BatchStartInstanceRequest request) {
@@ -302,13 +300,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartInstanceRequest 请求对象
+     * @param request BatchStartInstanceRequest 请求对象
      * @return SyncInvoker<BatchStartInstanceRequest, BatchStartInstanceResponse>
      */
     public SyncInvoker<BatchStartInstanceRequest, BatchStartInstanceResponse> batchStartInstanceInvoker(
         BatchStartInstanceRequest request) {
-        return new SyncInvoker<BatchStartInstanceRequest, BatchStartInstanceResponse>(request,
-            IecMeta.batchStartInstance, hcClient);
+        return new SyncInvoker<>(request, IecMeta.batchStartInstance, hcClient);
     }
 
     /**
@@ -318,7 +315,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopInstanceRequest 请求对象
+     * @param request BatchStopInstanceRequest 请求对象
      * @return BatchStopInstanceResponse
      */
     public BatchStopInstanceResponse batchStopInstance(BatchStopInstanceRequest request) {
@@ -332,13 +329,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopInstanceRequest 请求对象
+     * @param request BatchStopInstanceRequest 请求对象
      * @return SyncInvoker<BatchStopInstanceRequest, BatchStopInstanceResponse>
      */
     public SyncInvoker<BatchStopInstanceRequest, BatchStopInstanceResponse> batchStopInstanceInvoker(
         BatchStopInstanceRequest request) {
-        return new SyncInvoker<BatchStopInstanceRequest, BatchStopInstanceResponse>(request, IecMeta.batchStopInstance,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.batchStopInstance, hcClient);
     }
 
     /**
@@ -350,7 +346,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeOsRequest 请求对象
+     * @param request ChangeOsRequest 请求对象
      * @return ChangeOsResponse
      */
     public ChangeOsResponse changeOs(ChangeOsRequest request) {
@@ -366,11 +362,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeOsRequest 请求对象
+     * @param request ChangeOsRequest 请求对象
      * @return SyncInvoker<ChangeOsRequest, ChangeOsResponse>
      */
     public SyncInvoker<ChangeOsRequest, ChangeOsResponse> changeOsInvoker(ChangeOsRequest request) {
-        return new SyncInvoker<ChangeOsRequest, ChangeOsResponse>(request, IecMeta.changeOs, hcClient);
+        return new SyncInvoker<>(request, IecMeta.changeOs, hcClient);
     }
 
     /**
@@ -386,7 +382,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeploymentRequest 请求对象
+     * @param request CreateDeploymentRequest 请求对象
      * @return CreateDeploymentResponse
      */
     public CreateDeploymentResponse createDeployment(CreateDeploymentRequest request) {
@@ -406,13 +402,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeploymentRequest 请求对象
+     * @param request CreateDeploymentRequest 请求对象
      * @return SyncInvoker<CreateDeploymentRequest, CreateDeploymentResponse>
      */
     public SyncInvoker<CreateDeploymentRequest, CreateDeploymentResponse> createDeploymentInvoker(
         CreateDeploymentRequest request) {
-        return new SyncInvoker<CreateDeploymentRequest, CreateDeploymentResponse>(request, IecMeta.createDeployment,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.createDeployment, hcClient);
     }
 
     /**
@@ -422,7 +417,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageRequest 请求对象
+     * @param request CreateImageRequest 请求对象
      * @return CreateImageResponse
      */
     public CreateImageResponse createImage(CreateImageRequest request) {
@@ -436,11 +431,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageRequest 请求对象
+     * @param request CreateImageRequest 请求对象
      * @return SyncInvoker<CreateImageRequest, CreateImageResponse>
      */
     public SyncInvoker<CreateImageRequest, CreateImageResponse> createImageInvoker(CreateImageRequest request) {
-        return new SyncInvoker<CreateImageRequest, CreateImageResponse>(request, IecMeta.createImage, hcClient);
+        return new SyncInvoker<>(request, IecMeta.createImage, hcClient);
     }
 
     /**
@@ -450,7 +445,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
      */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
@@ -464,13 +459,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
     public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
         CreateInstanceRequest request) {
-        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, IecMeta.createInstance,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.createInstance, hcClient);
     }
 
     /**
@@ -482,7 +476,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKeypairRequest 请求对象
+     * @param request CreateKeypairRequest 请求对象
      * @return CreateKeypairResponse
      */
     public CreateKeypairResponse createKeypair(CreateKeypairRequest request) {
@@ -498,11 +492,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKeypairRequest 请求对象
+     * @param request CreateKeypairRequest 请求对象
      * @return SyncInvoker<CreateKeypairRequest, CreateKeypairResponse>
      */
     public SyncInvoker<CreateKeypairRequest, CreateKeypairResponse> createKeypairInvoker(CreateKeypairRequest request) {
-        return new SyncInvoker<CreateKeypairRequest, CreateKeypairResponse>(request, IecMeta.createKeypair, hcClient);
+        return new SyncInvoker<>(request, IecMeta.createKeypair, hcClient);
     }
 
     /**
@@ -512,7 +506,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePortRequest 请求对象
+     * @param request CreatePortRequest 请求对象
      * @return CreatePortResponse
      */
     public CreatePortResponse createPort(CreatePortRequest request) {
@@ -526,11 +520,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePortRequest 请求对象
+     * @param request CreatePortRequest 请求对象
      * @return SyncInvoker<CreatePortRequest, CreatePortResponse>
      */
     public SyncInvoker<CreatePortRequest, CreatePortResponse> createPortInvoker(CreatePortRequest request) {
-        return new SyncInvoker<CreatePortRequest, CreatePortResponse>(request, IecMeta.createPort, hcClient);
+        return new SyncInvoker<>(request, IecMeta.createPort, hcClient);
     }
 
     /**
@@ -540,7 +534,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRoutesRequest 请求对象
+     * @param request CreateRoutesRequest 请求对象
      * @return CreateRoutesResponse
      */
     public CreateRoutesResponse createRoutes(CreateRoutesRequest request) {
@@ -554,11 +548,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRoutesRequest 请求对象
+     * @param request CreateRoutesRequest 请求对象
      * @return SyncInvoker<CreateRoutesRequest, CreateRoutesResponse>
      */
     public SyncInvoker<CreateRoutesRequest, CreateRoutesResponse> createRoutesInvoker(CreateRoutesRequest request) {
-        return new SyncInvoker<CreateRoutesRequest, CreateRoutesResponse>(request, IecMeta.createRoutes, hcClient);
+        return new SyncInvoker<>(request, IecMeta.createRoutes, hcClient);
     }
 
     /**
@@ -568,7 +562,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRoutetableRequest 请求对象
+     * @param request CreateRoutetableRequest 请求对象
      * @return CreateRoutetableResponse
      */
     public CreateRoutetableResponse createRoutetable(CreateRoutetableRequest request) {
@@ -582,13 +576,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRoutetableRequest 请求对象
+     * @param request CreateRoutetableRequest 请求对象
      * @return SyncInvoker<CreateRoutetableRequest, CreateRoutetableResponse>
      */
     public SyncInvoker<CreateRoutetableRequest, CreateRoutetableResponse> createRoutetableInvoker(
         CreateRoutetableRequest request) {
-        return new SyncInvoker<CreateRoutetableRequest, CreateRoutetableResponse>(request, IecMeta.createRoutetable,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.createRoutetable, hcClient);
     }
 
     /**
@@ -598,7 +591,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityGroupRequest 请求对象
+     * @param request CreateSecurityGroupRequest 请求对象
      * @return CreateSecurityGroupResponse
      */
     public CreateSecurityGroupResponse createSecurityGroup(CreateSecurityGroupRequest request) {
@@ -612,13 +605,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityGroupRequest 请求对象
+     * @param request CreateSecurityGroupRequest 请求对象
      * @return SyncInvoker<CreateSecurityGroupRequest, CreateSecurityGroupResponse>
      */
     public SyncInvoker<CreateSecurityGroupRequest, CreateSecurityGroupResponse> createSecurityGroupInvoker(
         CreateSecurityGroupRequest request) {
-        return new SyncInvoker<CreateSecurityGroupRequest, CreateSecurityGroupResponse>(request,
-            IecMeta.createSecurityGroup, hcClient);
+        return new SyncInvoker<>(request, IecMeta.createSecurityGroup, hcClient);
     }
 
     /**
@@ -628,7 +620,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityGroupRuleRequest 请求对象
+     * @param request CreateSecurityGroupRuleRequest 请求对象
      * @return CreateSecurityGroupRuleResponse
      */
     public CreateSecurityGroupRuleResponse createSecurityGroupRule(CreateSecurityGroupRuleRequest request) {
@@ -642,13 +634,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSecurityGroupRuleRequest 请求对象
+     * @param request CreateSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse>
      */
     public SyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> createSecurityGroupRuleInvoker(
         CreateSecurityGroupRuleRequest request) {
-        return new SyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse>(request,
-            IecMeta.createSecurityGroupRule, hcClient);
+        return new SyncInvoker<>(request, IecMeta.createSecurityGroupRule, hcClient);
     }
 
     /**
@@ -658,7 +649,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcRequest 请求对象
+     * @param request CreateVpcRequest 请求对象
      * @return CreateVpcResponse
      */
     public CreateVpcResponse createVpc(CreateVpcRequest request) {
@@ -672,11 +663,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcRequest 请求对象
+     * @param request CreateVpcRequest 请求对象
      * @return SyncInvoker<CreateVpcRequest, CreateVpcResponse>
      */
     public SyncInvoker<CreateVpcRequest, CreateVpcResponse> createVpcInvoker(CreateVpcRequest request) {
-        return new SyncInvoker<CreateVpcRequest, CreateVpcResponse>(request, IecMeta.createVpc, hcClient);
+        return new SyncInvoker<>(request, IecMeta.createVpc, hcClient);
     }
 
     /**
@@ -686,7 +677,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBandwidthRequest 请求对象
+     * @param request DeleteBandwidthRequest 请求对象
      * @return DeleteBandwidthResponse
      */
     public DeleteBandwidthResponse deleteBandwidth(DeleteBandwidthRequest request) {
@@ -700,13 +691,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBandwidthRequest 请求对象
+     * @param request DeleteBandwidthRequest 请求对象
      * @return SyncInvoker<DeleteBandwidthRequest, DeleteBandwidthResponse>
      */
     public SyncInvoker<DeleteBandwidthRequest, DeleteBandwidthResponse> deleteBandwidthInvoker(
         DeleteBandwidthRequest request) {
-        return new SyncInvoker<DeleteBandwidthRequest, DeleteBandwidthResponse>(request, IecMeta.deleteBandwidth,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteBandwidth, hcClient);
     }
 
     /**
@@ -716,7 +706,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeploymentRequest 请求对象
+     * @param request DeleteDeploymentRequest 请求对象
      * @return DeleteDeploymentResponse
      */
     public DeleteDeploymentResponse deleteDeployment(DeleteDeploymentRequest request) {
@@ -730,13 +720,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeploymentRequest 请求对象
+     * @param request DeleteDeploymentRequest 请求对象
      * @return SyncInvoker<DeleteDeploymentRequest, DeleteDeploymentResponse>
      */
     public SyncInvoker<DeleteDeploymentRequest, DeleteDeploymentResponse> deleteDeploymentInvoker(
         DeleteDeploymentRequest request) {
-        return new SyncInvoker<DeleteDeploymentRequest, DeleteDeploymentResponse>(request, IecMeta.deleteDeployment,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteDeployment, hcClient);
     }
 
     /**
@@ -746,7 +735,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeCloudRequest 请求对象
+     * @param request DeleteEdgeCloudRequest 请求对象
      * @return DeleteEdgeCloudResponse
      */
     public DeleteEdgeCloudResponse deleteEdgeCloud(DeleteEdgeCloudRequest request) {
@@ -760,13 +749,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeCloudRequest 请求对象
+     * @param request DeleteEdgeCloudRequest 请求对象
      * @return SyncInvoker<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse>
      */
     public SyncInvoker<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse> deleteEdgeCloudInvoker(
         DeleteEdgeCloudRequest request) {
-        return new SyncInvoker<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse>(request, IecMeta.deleteEdgeCloud,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteEdgeCloud, hcClient);
     }
 
     /**
@@ -776,7 +764,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageRequest 请求对象
+     * @param request DeleteImageRequest 请求对象
      * @return DeleteImageResponse
      */
     public DeleteImageResponse deleteImage(DeleteImageRequest request) {
@@ -790,11 +778,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageRequest 请求对象
+     * @param request DeleteImageRequest 请求对象
      * @return SyncInvoker<DeleteImageRequest, DeleteImageResponse>
      */
     public SyncInvoker<DeleteImageRequest, DeleteImageResponse> deleteImageInvoker(DeleteImageRequest request) {
-        return new SyncInvoker<DeleteImageRequest, DeleteImageResponse>(request, IecMeta.deleteImage, hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteImage, hcClient);
     }
 
     /**
@@ -804,7 +792,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstancesRequest 请求对象
+     * @param request DeleteInstancesRequest 请求对象
      * @return DeleteInstancesResponse
      */
     public DeleteInstancesResponse deleteInstances(DeleteInstancesRequest request) {
@@ -818,13 +806,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstancesRequest 请求对象
+     * @param request DeleteInstancesRequest 请求对象
      * @return SyncInvoker<DeleteInstancesRequest, DeleteInstancesResponse>
      */
     public SyncInvoker<DeleteInstancesRequest, DeleteInstancesResponse> deleteInstancesInvoker(
         DeleteInstancesRequest request) {
-        return new SyncInvoker<DeleteInstancesRequest, DeleteInstancesResponse>(request, IecMeta.deleteInstances,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteInstances, hcClient);
     }
 
     /**
@@ -834,7 +821,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKeypairRequest 请求对象
+     * @param request DeleteKeypairRequest 请求对象
      * @return DeleteKeypairResponse
      */
     public DeleteKeypairResponse deleteKeypair(DeleteKeypairRequest request) {
@@ -848,11 +835,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKeypairRequest 请求对象
+     * @param request DeleteKeypairRequest 请求对象
      * @return SyncInvoker<DeleteKeypairRequest, DeleteKeypairResponse>
      */
     public SyncInvoker<DeleteKeypairRequest, DeleteKeypairResponse> deleteKeypairInvoker(DeleteKeypairRequest request) {
-        return new SyncInvoker<DeleteKeypairRequest, DeleteKeypairResponse>(request, IecMeta.deleteKeypair, hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteKeypair, hcClient);
     }
 
     /**
@@ -862,7 +849,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNicsRequest 请求对象
+     * @param request DeleteNicsRequest 请求对象
      * @return DeleteNicsResponse
      */
     public DeleteNicsResponse deleteNics(DeleteNicsRequest request) {
@@ -876,11 +863,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNicsRequest 请求对象
+     * @param request DeleteNicsRequest 请求对象
      * @return SyncInvoker<DeleteNicsRequest, DeleteNicsResponse>
      */
     public SyncInvoker<DeleteNicsRequest, DeleteNicsResponse> deleteNicsInvoker(DeleteNicsRequest request) {
-        return new SyncInvoker<DeleteNicsRequest, DeleteNicsResponse>(request, IecMeta.deleteNics, hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteNics, hcClient);
     }
 
     /**
@@ -890,7 +877,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePortRequest 请求对象
+     * @param request DeletePortRequest 请求对象
      * @return DeletePortResponse
      */
     public DeletePortResponse deletePort(DeletePortRequest request) {
@@ -904,11 +891,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePortRequest 请求对象
+     * @param request DeletePortRequest 请求对象
      * @return SyncInvoker<DeletePortRequest, DeletePortResponse>
      */
     public SyncInvoker<DeletePortRequest, DeletePortResponse> deletePortInvoker(DeletePortRequest request) {
-        return new SyncInvoker<DeletePortRequest, DeletePortResponse>(request, IecMeta.deletePort, hcClient);
+        return new SyncInvoker<>(request, IecMeta.deletePort, hcClient);
     }
 
     /**
@@ -918,7 +905,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRoutesRequest 请求对象
+     * @param request DeleteRoutesRequest 请求对象
      * @return DeleteRoutesResponse
      */
     public DeleteRoutesResponse deleteRoutes(DeleteRoutesRequest request) {
@@ -932,11 +919,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRoutesRequest 请求对象
+     * @param request DeleteRoutesRequest 请求对象
      * @return SyncInvoker<DeleteRoutesRequest, DeleteRoutesResponse>
      */
     public SyncInvoker<DeleteRoutesRequest, DeleteRoutesResponse> deleteRoutesInvoker(DeleteRoutesRequest request) {
-        return new SyncInvoker<DeleteRoutesRequest, DeleteRoutesResponse>(request, IecMeta.deleteRoutes, hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteRoutes, hcClient);
     }
 
     /**
@@ -946,7 +933,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRoutetableRequest 请求对象
+     * @param request DeleteRoutetableRequest 请求对象
      * @return DeleteRoutetableResponse
      */
     public DeleteRoutetableResponse deleteRoutetable(DeleteRoutetableRequest request) {
@@ -960,13 +947,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRoutetableRequest 请求对象
+     * @param request DeleteRoutetableRequest 请求对象
      * @return SyncInvoker<DeleteRoutetableRequest, DeleteRoutetableResponse>
      */
     public SyncInvoker<DeleteRoutetableRequest, DeleteRoutetableResponse> deleteRoutetableInvoker(
         DeleteRoutetableRequest request) {
-        return new SyncInvoker<DeleteRoutetableRequest, DeleteRoutetableResponse>(request, IecMeta.deleteRoutetable,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteRoutetable, hcClient);
     }
 
     /**
@@ -976,7 +962,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityGroupRequest 请求对象
+     * @param request DeleteSecurityGroupRequest 请求对象
      * @return DeleteSecurityGroupResponse
      */
     public DeleteSecurityGroupResponse deleteSecurityGroup(DeleteSecurityGroupRequest request) {
@@ -990,13 +976,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityGroupRequest 请求对象
+     * @param request DeleteSecurityGroupRequest 请求对象
      * @return SyncInvoker<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>
      */
     public SyncInvoker<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroupInvoker(
         DeleteSecurityGroupRequest request) {
-        return new SyncInvoker<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>(request,
-            IecMeta.deleteSecurityGroup, hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteSecurityGroup, hcClient);
     }
 
     /**
@@ -1006,7 +991,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityGroupRuleRequest 请求对象
+     * @param request DeleteSecurityGroupRuleRequest 请求对象
      * @return DeleteSecurityGroupRuleResponse
      */
     public DeleteSecurityGroupRuleResponse deleteSecurityGroupRule(DeleteSecurityGroupRuleRequest request) {
@@ -1020,13 +1005,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSecurityGroupRuleRequest 请求对象
+     * @param request DeleteSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse>
      */
     public SyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> deleteSecurityGroupRuleInvoker(
         DeleteSecurityGroupRuleRequest request) {
-        return new SyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse>(request,
-            IecMeta.deleteSecurityGroupRule, hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteSecurityGroupRule, hcClient);
     }
 
     /**
@@ -1036,7 +1020,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubnetRequest 请求对象
+     * @param request DeleteSubnetRequest 请求对象
      * @return DeleteSubnetResponse
      */
     public DeleteSubnetResponse deleteSubnet(DeleteSubnetRequest request) {
@@ -1050,11 +1034,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubnetRequest 请求对象
+     * @param request DeleteSubnetRequest 请求对象
      * @return SyncInvoker<DeleteSubnetRequest, DeleteSubnetResponse>
      */
     public SyncInvoker<DeleteSubnetRequest, DeleteSubnetResponse> deleteSubnetInvoker(DeleteSubnetRequest request) {
-        return new SyncInvoker<DeleteSubnetRequest, DeleteSubnetResponse>(request, IecMeta.deleteSubnet, hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteSubnet, hcClient);
     }
 
     /**
@@ -1064,7 +1048,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcRequest 请求对象
+     * @param request DeleteVpcRequest 请求对象
      * @return DeleteVpcResponse
      */
     public DeleteVpcResponse deleteVpc(DeleteVpcRequest request) {
@@ -1078,11 +1062,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcRequest 请求对象
+     * @param request DeleteVpcRequest 请求对象
      * @return SyncInvoker<DeleteVpcRequest, DeleteVpcResponse>
      */
     public SyncInvoker<DeleteVpcRequest, DeleteVpcResponse> deleteVpcInvoker(DeleteVpcRequest request) {
-        return new SyncInvoker<DeleteVpcRequest, DeleteVpcResponse>(request, IecMeta.deleteVpc, hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteVpc, hcClient);
     }
 
     /**
@@ -1092,7 +1076,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateSubnetRequest 请求对象
+     * @param request DisassociateSubnetRequest 请求对象
      * @return DisassociateSubnetResponse
      */
     public DisassociateSubnetResponse disassociateSubnet(DisassociateSubnetRequest request) {
@@ -1106,13 +1090,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateSubnetRequest 请求对象
+     * @param request DisassociateSubnetRequest 请求对象
      * @return SyncInvoker<DisassociateSubnetRequest, DisassociateSubnetResponse>
      */
     public SyncInvoker<DisassociateSubnetRequest, DisassociateSubnetResponse> disassociateSubnetInvoker(
         DisassociateSubnetRequest request) {
-        return new SyncInvoker<DisassociateSubnetRequest, DisassociateSubnetResponse>(request,
-            IecMeta.disassociateSubnet, hcClient);
+        return new SyncInvoker<>(request, IecMeta.disassociateSubnet, hcClient);
     }
 
     /**
@@ -1122,7 +1105,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeploymentRequest 请求对象
+     * @param request ExecuteDeploymentRequest 请求对象
      * @return ExecuteDeploymentResponse
      */
     public ExecuteDeploymentResponse executeDeployment(ExecuteDeploymentRequest request) {
@@ -1136,13 +1119,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeploymentRequest 请求对象
+     * @param request ExecuteDeploymentRequest 请求对象
      * @return SyncInvoker<ExecuteDeploymentRequest, ExecuteDeploymentResponse>
      */
     public SyncInvoker<ExecuteDeploymentRequest, ExecuteDeploymentResponse> executeDeploymentInvoker(
         ExecuteDeploymentRequest request) {
-        return new SyncInvoker<ExecuteDeploymentRequest, ExecuteDeploymentResponse>(request, IecMeta.executeDeployment,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.executeDeployment, hcClient);
     }
 
     /**
@@ -1152,7 +1134,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandEdgecloudRequest 请求对象
+     * @param request ExpandEdgecloudRequest 请求对象
      * @return ExpandEdgecloudResponse
      */
     public ExpandEdgecloudResponse expandEdgecloud(ExpandEdgecloudRequest request) {
@@ -1166,13 +1148,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandEdgecloudRequest 请求对象
+     * @param request ExpandEdgecloudRequest 请求对象
      * @return SyncInvoker<ExpandEdgecloudRequest, ExpandEdgecloudResponse>
      */
     public SyncInvoker<ExpandEdgecloudRequest, ExpandEdgecloudResponse> expandEdgecloudInvoker(
         ExpandEdgecloudRequest request) {
-        return new SyncInvoker<ExpandEdgecloudRequest, ExpandEdgecloudResponse>(request, IecMeta.expandEdgecloud,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.expandEdgecloud, hcClient);
     }
 
     /**
@@ -1182,7 +1163,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthTypesRequest 请求对象
+     * @param request ListBandwidthTypesRequest 请求对象
      * @return ListBandwidthTypesResponse
      */
     public ListBandwidthTypesResponse listBandwidthTypes(ListBandwidthTypesRequest request) {
@@ -1196,13 +1177,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthTypesRequest 请求对象
+     * @param request ListBandwidthTypesRequest 请求对象
      * @return SyncInvoker<ListBandwidthTypesRequest, ListBandwidthTypesResponse>
      */
     public SyncInvoker<ListBandwidthTypesRequest, ListBandwidthTypesResponse> listBandwidthTypesInvoker(
         ListBandwidthTypesRequest request) {
-        return new SyncInvoker<ListBandwidthTypesRequest, ListBandwidthTypesResponse>(request,
-            IecMeta.listBandwidthTypes, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listBandwidthTypes, hcClient);
     }
 
     /**
@@ -1212,7 +1192,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthsRequest 请求对象
+     * @param request ListBandwidthsRequest 请求对象
      * @return ListBandwidthsResponse
      */
     public ListBandwidthsResponse listBandwidths(ListBandwidthsRequest request) {
@@ -1226,13 +1206,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthsRequest 请求对象
+     * @param request ListBandwidthsRequest 请求对象
      * @return SyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse>
      */
     public SyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse> listBandwidthsInvoker(
         ListBandwidthsRequest request) {
-        return new SyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse>(request, IecMeta.listBandwidths,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.listBandwidths, hcClient);
     }
 
     /**
@@ -1242,7 +1221,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudImagesRequest 请求对象
+     * @param request ListCloudImagesRequest 请求对象
      * @return ListCloudImagesResponse
      */
     public ListCloudImagesResponse listCloudImages(ListCloudImagesRequest request) {
@@ -1256,13 +1235,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudImagesRequest 请求对象
+     * @param request ListCloudImagesRequest 请求对象
      * @return SyncInvoker<ListCloudImagesRequest, ListCloudImagesResponse>
      */
     public SyncInvoker<ListCloudImagesRequest, ListCloudImagesResponse> listCloudImagesInvoker(
         ListCloudImagesRequest request) {
-        return new SyncInvoker<ListCloudImagesRequest, ListCloudImagesResponse>(request, IecMeta.listCloudImages,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.listCloudImages, hcClient);
     }
 
     /**
@@ -1272,7 +1250,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeploymentsRequest 请求对象
+     * @param request ListDeploymentsRequest 请求对象
      * @return ListDeploymentsResponse
      */
     public ListDeploymentsResponse listDeployments(ListDeploymentsRequest request) {
@@ -1286,13 +1264,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeploymentsRequest 请求对象
+     * @param request ListDeploymentsRequest 请求对象
      * @return SyncInvoker<ListDeploymentsRequest, ListDeploymentsResponse>
      */
     public SyncInvoker<ListDeploymentsRequest, ListDeploymentsResponse> listDeploymentsInvoker(
         ListDeploymentsRequest request) {
-        return new SyncInvoker<ListDeploymentsRequest, ListDeploymentsResponse>(request, IecMeta.listDeployments,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.listDeployments, hcClient);
     }
 
     /**
@@ -1302,7 +1279,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeCloudRequest 请求对象
+     * @param request ListEdgeCloudRequest 请求对象
      * @return ListEdgeCloudResponse
      */
     public ListEdgeCloudResponse listEdgeCloud(ListEdgeCloudRequest request) {
@@ -1316,11 +1293,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeCloudRequest 请求对象
+     * @param request ListEdgeCloudRequest 请求对象
      * @return SyncInvoker<ListEdgeCloudRequest, ListEdgeCloudResponse>
      */
     public SyncInvoker<ListEdgeCloudRequest, ListEdgeCloudResponse> listEdgeCloudInvoker(ListEdgeCloudRequest request) {
-        return new SyncInvoker<ListEdgeCloudRequest, ListEdgeCloudResponse>(request, IecMeta.listEdgeCloud, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listEdgeCloud, hcClient);
     }
 
     /**
@@ -1330,7 +1307,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
      */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
@@ -1344,11 +1321,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
-        return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, IecMeta.listFlavors, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listFlavors, hcClient);
     }
 
     /**
@@ -1361,7 +1338,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImagesRequest 请求对象
+     * @param request ListImagesRequest 请求对象
      * @return ListImagesResponse
      */
     public ListImagesResponse listImages(ListImagesRequest request) {
@@ -1378,11 +1355,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImagesRequest 请求对象
+     * @param request ListImagesRequest 请求对象
      * @return SyncInvoker<ListImagesRequest, ListImagesResponse>
      */
     public SyncInvoker<ListImagesRequest, ListImagesResponse> listImagesInvoker(ListImagesRequest request) {
-        return new SyncInvoker<ListImagesRequest, ListImagesResponse>(request, IecMeta.listImages, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listImages, hcClient);
     }
 
     /**
@@ -1392,7 +1369,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return ListInstancesResponse
      */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
@@ -1406,11 +1383,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
-        return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, IecMeta.listInstances, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listInstances, hcClient);
     }
 
     /**
@@ -1420,7 +1397,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeypairsRequest 请求对象
+     * @param request ListKeypairsRequest 请求对象
      * @return ListKeypairsResponse
      */
     public ListKeypairsResponse listKeypairs(ListKeypairsRequest request) {
@@ -1434,11 +1411,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeypairsRequest 请求对象
+     * @param request ListKeypairsRequest 请求对象
      * @return SyncInvoker<ListKeypairsRequest, ListKeypairsResponse>
      */
     public SyncInvoker<ListKeypairsRequest, ListKeypairsResponse> listKeypairsInvoker(ListKeypairsRequest request) {
-        return new SyncInvoker<ListKeypairsRequest, ListKeypairsResponse>(request, IecMeta.listKeypairs, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listKeypairs, hcClient);
     }
 
     /**
@@ -1448,7 +1425,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortsRequest 请求对象
+     * @param request ListPortsRequest 请求对象
      * @return ListPortsResponse
      */
     public ListPortsResponse listPorts(ListPortsRequest request) {
@@ -1462,11 +1439,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortsRequest 请求对象
+     * @param request ListPortsRequest 请求对象
      * @return SyncInvoker<ListPortsRequest, ListPortsResponse>
      */
     public SyncInvoker<ListPortsRequest, ListPortsResponse> listPortsInvoker(ListPortsRequest request) {
-        return new SyncInvoker<ListPortsRequest, ListPortsResponse>(request, IecMeta.listPorts, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listPorts, hcClient);
     }
 
     /**
@@ -1476,7 +1453,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaRequest 请求对象
+     * @param request ListQuotaRequest 请求对象
      * @return ListQuotaResponse
      */
     public ListQuotaResponse listQuota(ListQuotaRequest request) {
@@ -1490,11 +1467,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaRequest 请求对象
+     * @param request ListQuotaRequest 请求对象
      * @return SyncInvoker<ListQuotaRequest, ListQuotaResponse>
      */
     public SyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaInvoker(ListQuotaRequest request) {
-        return new SyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, IecMeta.listQuota, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listQuota, hcClient);
     }
 
     /**
@@ -1504,7 +1481,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelatedRoutetablesRequest 请求对象
+     * @param request ListRelatedRoutetablesRequest 请求对象
      * @return ListRelatedRoutetablesResponse
      */
     public ListRelatedRoutetablesResponse listRelatedRoutetables(ListRelatedRoutetablesRequest request) {
@@ -1518,13 +1495,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRelatedRoutetablesRequest 请求对象
+     * @param request ListRelatedRoutetablesRequest 请求对象
      * @return SyncInvoker<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse>
      */
     public SyncInvoker<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse> listRelatedRoutetablesInvoker(
         ListRelatedRoutetablesRequest request) {
-        return new SyncInvoker<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse>(request,
-            IecMeta.listRelatedRoutetables, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listRelatedRoutetables, hcClient);
     }
 
     /**
@@ -1534,7 +1510,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRoutesRequest 请求对象
+     * @param request ListRoutesRequest 请求对象
      * @return ListRoutesResponse
      */
     public ListRoutesResponse listRoutes(ListRoutesRequest request) {
@@ -1548,11 +1524,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRoutesRequest 请求对象
+     * @param request ListRoutesRequest 请求对象
      * @return SyncInvoker<ListRoutesRequest, ListRoutesResponse>
      */
     public SyncInvoker<ListRoutesRequest, ListRoutesResponse> listRoutesInvoker(ListRoutesRequest request) {
-        return new SyncInvoker<ListRoutesRequest, ListRoutesResponse>(request, IecMeta.listRoutes, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listRoutes, hcClient);
     }
 
     /**
@@ -1562,7 +1538,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRoutetablesRequest 请求对象
+     * @param request ListRoutetablesRequest 请求对象
      * @return ListRoutetablesResponse
      */
     public ListRoutetablesResponse listRoutetables(ListRoutetablesRequest request) {
@@ -1576,13 +1552,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRoutetablesRequest 请求对象
+     * @param request ListRoutetablesRequest 请求对象
      * @return SyncInvoker<ListRoutetablesRequest, ListRoutetablesResponse>
      */
     public SyncInvoker<ListRoutetablesRequest, ListRoutetablesResponse> listRoutetablesInvoker(
         ListRoutetablesRequest request) {
-        return new SyncInvoker<ListRoutetablesRequest, ListRoutetablesResponse>(request, IecMeta.listRoutetables,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.listRoutetables, hcClient);
     }
 
     /**
@@ -1592,7 +1567,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityGroupRulesRequest 请求对象
+     * @param request ListSecurityGroupRulesRequest 请求对象
      * @return ListSecurityGroupRulesResponse
      */
     public ListSecurityGroupRulesResponse listSecurityGroupRules(ListSecurityGroupRulesRequest request) {
@@ -1606,13 +1581,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityGroupRulesRequest 请求对象
+     * @param request ListSecurityGroupRulesRequest 请求对象
      * @return SyncInvoker<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse>
      */
     public SyncInvoker<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> listSecurityGroupRulesInvoker(
         ListSecurityGroupRulesRequest request) {
-        return new SyncInvoker<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse>(request,
-            IecMeta.listSecurityGroupRules, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listSecurityGroupRules, hcClient);
     }
 
     /**
@@ -1622,7 +1596,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityGroupsRequest 请求对象
+     * @param request ListSecurityGroupsRequest 请求对象
      * @return ListSecurityGroupsResponse
      */
     public ListSecurityGroupsResponse listSecurityGroups(ListSecurityGroupsRequest request) {
@@ -1636,13 +1610,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityGroupsRequest 请求对象
+     * @param request ListSecurityGroupsRequest 请求对象
      * @return SyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse>
      */
     public SyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse> listSecurityGroupsInvoker(
         ListSecurityGroupsRequest request) {
-        return new SyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse>(request,
-            IecMeta.listSecurityGroups, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listSecurityGroups, hcClient);
     }
 
     /**
@@ -1655,7 +1628,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSitesRequest 请求对象
+     * @param request ListSitesRequest 请求对象
      * @return ListSitesResponse
      */
     public ListSitesResponse listSites(ListSitesRequest request) {
@@ -1672,11 +1645,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSitesRequest 请求对象
+     * @param request ListSitesRequest 请求对象
      * @return SyncInvoker<ListSitesRequest, ListSitesResponse>
      */
     public SyncInvoker<ListSitesRequest, ListSitesResponse> listSitesInvoker(ListSitesRequest request) {
-        return new SyncInvoker<ListSitesRequest, ListSitesResponse>(request, IecMeta.listSites, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listSites, hcClient);
     }
 
     /**
@@ -1686,7 +1659,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubnetsRequest 请求对象
+     * @param request ListSubnetsRequest 请求对象
      * @return ListSubnetsResponse
      */
     public ListSubnetsResponse listSubnets(ListSubnetsRequest request) {
@@ -1700,11 +1673,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubnetsRequest 请求对象
+     * @param request ListSubnetsRequest 请求对象
      * @return SyncInvoker<ListSubnetsRequest, ListSubnetsResponse>
      */
     public SyncInvoker<ListSubnetsRequest, ListSubnetsResponse> listSubnetsInvoker(ListSubnetsRequest request) {
-        return new SyncInvoker<ListSubnetsRequest, ListSubnetsResponse>(request, IecMeta.listSubnets, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listSubnets, hcClient);
     }
 
     /**
@@ -1714,7 +1687,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcsRequest 请求对象
+     * @param request ListVpcsRequest 请求对象
      * @return ListVpcsResponse
      */
     public ListVpcsResponse listVpcs(ListVpcsRequest request) {
@@ -1728,11 +1701,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcsRequest 请求对象
+     * @param request ListVpcsRequest 请求对象
      * @return SyncInvoker<ListVpcsRequest, ListVpcsResponse>
      */
     public SyncInvoker<ListVpcsRequest, ListVpcsResponse> listVpcsInvoker(ListVpcsRequest request) {
-        return new SyncInvoker<ListVpcsRequest, ListVpcsResponse>(request, IecMeta.listVpcs, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listVpcs, hcClient);
     }
 
     /**
@@ -1742,7 +1715,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RebuildImageRequest 请求对象
+     * @param request RebuildImageRequest 请求对象
      * @return RebuildImageResponse
      */
     public RebuildImageResponse rebuildImage(RebuildImageRequest request) {
@@ -1756,11 +1729,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RebuildImageRequest 请求对象
+     * @param request RebuildImageRequest 请求对象
      * @return SyncInvoker<RebuildImageRequest, RebuildImageResponse>
      */
     public SyncInvoker<RebuildImageRequest, RebuildImageResponse> rebuildImageInvoker(RebuildImageRequest request) {
-        return new SyncInvoker<RebuildImageRequest, RebuildImageResponse>(request, IecMeta.rebuildImage, hcClient);
+        return new SyncInvoker<>(request, IecMeta.rebuildImage, hcClient);
     }
 
     /**
@@ -1771,7 +1744,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterImageRequest 请求对象
+     * @param request RegisterImageRequest 请求对象
      * @return RegisterImageResponse
      */
     public RegisterImageResponse registerImage(RegisterImageRequest request) {
@@ -1786,11 +1759,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterImageRequest 请求对象
+     * @param request RegisterImageRequest 请求对象
      * @return SyncInvoker<RegisterImageRequest, RegisterImageResponse>
      */
     public SyncInvoker<RegisterImageRequest, RegisterImageResponse> registerImageInvoker(RegisterImageRequest request) {
-        return new SyncInvoker<RegisterImageRequest, RegisterImageResponse>(request, IecMeta.registerImage, hcClient);
+        return new SyncInvoker<>(request, IecMeta.registerImage, hcClient);
     }
 
     /**
@@ -1800,7 +1773,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBandwidthRequest 请求对象
+     * @param request ShowBandwidthRequest 请求对象
      * @return ShowBandwidthResponse
      */
     public ShowBandwidthResponse showBandwidth(ShowBandwidthRequest request) {
@@ -1814,11 +1787,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBandwidthRequest 请求对象
+     * @param request ShowBandwidthRequest 请求对象
      * @return SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>
      */
     public SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse> showBandwidthInvoker(ShowBandwidthRequest request) {
-        return new SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>(request, IecMeta.showBandwidth, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showBandwidth, hcClient);
     }
 
     /**
@@ -1828,7 +1801,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeCloudRequest 请求对象
+     * @param request ShowEdgeCloudRequest 请求对象
      * @return ShowEdgeCloudResponse
      */
     public ShowEdgeCloudResponse showEdgeCloud(ShowEdgeCloudRequest request) {
@@ -1842,11 +1815,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeCloudRequest 请求对象
+     * @param request ShowEdgeCloudRequest 请求对象
      * @return SyncInvoker<ShowEdgeCloudRequest, ShowEdgeCloudResponse>
      */
     public SyncInvoker<ShowEdgeCloudRequest, ShowEdgeCloudResponse> showEdgeCloudInvoker(ShowEdgeCloudRequest request) {
-        return new SyncInvoker<ShowEdgeCloudRequest, ShowEdgeCloudResponse>(request, IecMeta.showEdgeCloud, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showEdgeCloud, hcClient);
     }
 
     /**
@@ -1856,7 +1829,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageRequest 请求对象
+     * @param request ShowImageRequest 请求对象
      * @return ShowImageResponse
      */
     public ShowImageResponse showImage(ShowImageRequest request) {
@@ -1870,11 +1843,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageRequest 请求对象
+     * @param request ShowImageRequest 请求对象
      * @return SyncInvoker<ShowImageRequest, ShowImageResponse>
      */
     public SyncInvoker<ShowImageRequest, ShowImageResponse> showImageInvoker(ShowImageRequest request) {
-        return new SyncInvoker<ShowImageRequest, ShowImageResponse>(request, IecMeta.showImage, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showImage, hcClient);
     }
 
     /**
@@ -1884,7 +1857,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
      */
     public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
@@ -1898,11 +1871,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
-        return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, IecMeta.showInstance, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showInstance, hcClient);
     }
 
     /**
@@ -1912,7 +1885,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKeypairRequest 请求对象
+     * @param request ShowKeypairRequest 请求对象
      * @return ShowKeypairResponse
      */
     public ShowKeypairResponse showKeypair(ShowKeypairRequest request) {
@@ -1926,11 +1899,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKeypairRequest 请求对象
+     * @param request ShowKeypairRequest 请求对象
      * @return SyncInvoker<ShowKeypairRequest, ShowKeypairResponse>
      */
     public SyncInvoker<ShowKeypairRequest, ShowKeypairResponse> showKeypairInvoker(ShowKeypairRequest request) {
-        return new SyncInvoker<ShowKeypairRequest, ShowKeypairResponse>(request, IecMeta.showKeypair, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showKeypair, hcClient);
     }
 
     /**
@@ -1940,7 +1913,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPortRequest 请求对象
+     * @param request ShowPortRequest 请求对象
      * @return ShowPortResponse
      */
     public ShowPortResponse showPort(ShowPortRequest request) {
@@ -1954,11 +1927,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPortRequest 请求对象
+     * @param request ShowPortRequest 请求对象
      * @return SyncInvoker<ShowPortRequest, ShowPortResponse>
      */
     public SyncInvoker<ShowPortRequest, ShowPortResponse> showPortInvoker(ShowPortRequest request) {
-        return new SyncInvoker<ShowPortRequest, ShowPortResponse>(request, IecMeta.showPort, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showPort, hcClient);
     }
 
     /**
@@ -1968,7 +1941,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRoutetableRequest 请求对象
+     * @param request ShowRoutetableRequest 请求对象
      * @return ShowRoutetableResponse
      */
     public ShowRoutetableResponse showRoutetable(ShowRoutetableRequest request) {
@@ -1982,13 +1955,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRoutetableRequest 请求对象
+     * @param request ShowRoutetableRequest 请求对象
      * @return SyncInvoker<ShowRoutetableRequest, ShowRoutetableResponse>
      */
     public SyncInvoker<ShowRoutetableRequest, ShowRoutetableResponse> showRoutetableInvoker(
         ShowRoutetableRequest request) {
-        return new SyncInvoker<ShowRoutetableRequest, ShowRoutetableResponse>(request, IecMeta.showRoutetable,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.showRoutetable, hcClient);
     }
 
     /**
@@ -1998,7 +1970,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityGroupRequest 请求对象
+     * @param request ShowSecurityGroupRequest 请求对象
      * @return ShowSecurityGroupResponse
      */
     public ShowSecurityGroupResponse showSecurityGroup(ShowSecurityGroupRequest request) {
@@ -2012,13 +1984,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityGroupRequest 请求对象
+     * @param request ShowSecurityGroupRequest 请求对象
      * @return SyncInvoker<ShowSecurityGroupRequest, ShowSecurityGroupResponse>
      */
     public SyncInvoker<ShowSecurityGroupRequest, ShowSecurityGroupResponse> showSecurityGroupInvoker(
         ShowSecurityGroupRequest request) {
-        return new SyncInvoker<ShowSecurityGroupRequest, ShowSecurityGroupResponse>(request, IecMeta.showSecurityGroup,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.showSecurityGroup, hcClient);
     }
 
     /**
@@ -2028,7 +1999,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityGroupRuleRequest 请求对象
+     * @param request ShowSecurityGroupRuleRequest 请求对象
      * @return ShowSecurityGroupRuleResponse
      */
     public ShowSecurityGroupRuleResponse showSecurityGroupRule(ShowSecurityGroupRuleRequest request) {
@@ -2042,13 +2013,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSecurityGroupRuleRequest 请求对象
+     * @param request ShowSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse>
      */
     public SyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> showSecurityGroupRuleInvoker(
         ShowSecurityGroupRuleRequest request) {
-        return new SyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse>(request,
-            IecMeta.showSecurityGroupRule, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showSecurityGroupRule, hcClient);
     }
 
     /**
@@ -2058,7 +2028,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubnetRequest 请求对象
+     * @param request ShowSubnetRequest 请求对象
      * @return ShowSubnetResponse
      */
     public ShowSubnetResponse showSubnet(ShowSubnetRequest request) {
@@ -2072,11 +2042,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubnetRequest 请求对象
+     * @param request ShowSubnetRequest 请求对象
      * @return SyncInvoker<ShowSubnetRequest, ShowSubnetResponse>
      */
     public SyncInvoker<ShowSubnetRequest, ShowSubnetResponse> showSubnetInvoker(ShowSubnetRequest request) {
-        return new SyncInvoker<ShowSubnetRequest, ShowSubnetResponse>(request, IecMeta.showSubnet, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showSubnet, hcClient);
     }
 
     /**
@@ -2086,7 +2056,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeRequest 请求对象
+     * @param request ShowVolumeRequest 请求对象
      * @return ShowVolumeResponse
      */
     public ShowVolumeResponse showVolume(ShowVolumeRequest request) {
@@ -2100,11 +2070,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeRequest 请求对象
+     * @param request ShowVolumeRequest 请求对象
      * @return SyncInvoker<ShowVolumeRequest, ShowVolumeResponse>
      */
     public SyncInvoker<ShowVolumeRequest, ShowVolumeResponse> showVolumeInvoker(ShowVolumeRequest request) {
-        return new SyncInvoker<ShowVolumeRequest, ShowVolumeResponse>(request, IecMeta.showVolume, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showVolume, hcClient);
     }
 
     /**
@@ -2114,7 +2084,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeTypesRequest 请求对象
+     * @param request ShowVolumeTypesRequest 请求对象
      * @return ShowVolumeTypesResponse
      */
     public ShowVolumeTypesResponse showVolumeTypes(ShowVolumeTypesRequest request) {
@@ -2128,13 +2098,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVolumeTypesRequest 请求对象
+     * @param request ShowVolumeTypesRequest 请求对象
      * @return SyncInvoker<ShowVolumeTypesRequest, ShowVolumeTypesResponse>
      */
     public SyncInvoker<ShowVolumeTypesRequest, ShowVolumeTypesResponse> showVolumeTypesInvoker(
         ShowVolumeTypesRequest request) {
-        return new SyncInvoker<ShowVolumeTypesRequest, ShowVolumeTypesResponse>(request, IecMeta.showVolumeTypes,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.showVolumeTypes, hcClient);
     }
 
     /**
@@ -2144,7 +2113,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVpcRequest 请求对象
+     * @param request ShowVpcRequest 请求对象
      * @return ShowVpcResponse
      */
     public ShowVpcResponse showVpc(ShowVpcRequest request) {
@@ -2158,11 +2127,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVpcRequest 请求对象
+     * @param request ShowVpcRequest 请求对象
      * @return SyncInvoker<ShowVpcRequest, ShowVpcResponse>
      */
     public SyncInvoker<ShowVpcRequest, ShowVpcResponse> showVpcInvoker(ShowVpcRequest request) {
-        return new SyncInvoker<ShowVpcRequest, ShowVpcResponse>(request, IecMeta.showVpc, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showVpc, hcClient);
     }
 
     /**
@@ -2172,7 +2141,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBandwidthRequest 请求对象
+     * @param request UpdateBandwidthRequest 请求对象
      * @return UpdateBandwidthResponse
      */
     public UpdateBandwidthResponse updateBandwidth(UpdateBandwidthRequest request) {
@@ -2186,13 +2155,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBandwidthRequest 请求对象
+     * @param request UpdateBandwidthRequest 请求对象
      * @return SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>
      */
     public SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidthInvoker(
         UpdateBandwidthRequest request) {
-        return new SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>(request, IecMeta.updateBandwidth,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.updateBandwidth, hcClient);
     }
 
     /**
@@ -2202,7 +2170,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
      */
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
@@ -2216,13 +2184,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
      */
     public SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceInvoker(
         UpdateInstanceRequest request) {
-        return new SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, IecMeta.updateInstance,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.updateInstance, hcClient);
     }
 
     /**
@@ -2232,7 +2199,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePortRequest 请求对象
+     * @param request UpdatePortRequest 请求对象
      * @return UpdatePortResponse
      */
     public UpdatePortResponse updatePort(UpdatePortRequest request) {
@@ -2246,11 +2213,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePortRequest 请求对象
+     * @param request UpdatePortRequest 请求对象
      * @return SyncInvoker<UpdatePortRequest, UpdatePortResponse>
      */
     public SyncInvoker<UpdatePortRequest, UpdatePortResponse> updatePortInvoker(UpdatePortRequest request) {
-        return new SyncInvoker<UpdatePortRequest, UpdatePortResponse>(request, IecMeta.updatePort, hcClient);
+        return new SyncInvoker<>(request, IecMeta.updatePort, hcClient);
     }
 
     /**
@@ -2260,7 +2227,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoutesRequest 请求对象
+     * @param request UpdateRoutesRequest 请求对象
      * @return UpdateRoutesResponse
      */
     public UpdateRoutesResponse updateRoutes(UpdateRoutesRequest request) {
@@ -2274,11 +2241,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoutesRequest 请求对象
+     * @param request UpdateRoutesRequest 请求对象
      * @return SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>
      */
     public SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutesInvoker(UpdateRoutesRequest request) {
-        return new SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>(request, IecMeta.updateRoutes, hcClient);
+        return new SyncInvoker<>(request, IecMeta.updateRoutes, hcClient);
     }
 
     /**
@@ -2288,7 +2255,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoutetableRequest 请求对象
+     * @param request UpdateRoutetableRequest 请求对象
      * @return UpdateRoutetableResponse
      */
     public UpdateRoutetableResponse updateRoutetable(UpdateRoutetableRequest request) {
@@ -2302,13 +2269,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoutetableRequest 请求对象
+     * @param request UpdateRoutetableRequest 请求对象
      * @return SyncInvoker<UpdateRoutetableRequest, UpdateRoutetableResponse>
      */
     public SyncInvoker<UpdateRoutetableRequest, UpdateRoutetableResponse> updateRoutetableInvoker(
         UpdateRoutetableRequest request) {
-        return new SyncInvoker<UpdateRoutetableRequest, UpdateRoutetableResponse>(request, IecMeta.updateRoutetable,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.updateRoutetable, hcClient);
     }
 
     /**
@@ -2318,7 +2284,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubnetRequest 请求对象
+     * @param request UpdateSubnetRequest 请求对象
      * @return UpdateSubnetResponse
      */
     public UpdateSubnetResponse updateSubnet(UpdateSubnetRequest request) {
@@ -2332,11 +2298,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubnetRequest 请求对象
+     * @param request UpdateSubnetRequest 请求对象
      * @return SyncInvoker<UpdateSubnetRequest, UpdateSubnetResponse>
      */
     public SyncInvoker<UpdateSubnetRequest, UpdateSubnetResponse> updateSubnetInvoker(UpdateSubnetRequest request) {
-        return new SyncInvoker<UpdateSubnetRequest, UpdateSubnetResponse>(request, IecMeta.updateSubnet, hcClient);
+        return new SyncInvoker<>(request, IecMeta.updateSubnet, hcClient);
     }
 
     /**
@@ -2346,7 +2312,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcRequest 请求对象
+     * @param request UpdateVpcRequest 请求对象
      * @return UpdateVpcResponse
      */
     public UpdateVpcResponse updateVpc(UpdateVpcRequest request) {
@@ -2360,11 +2326,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcRequest 请求对象
+     * @param request UpdateVpcRequest 请求对象
      * @return SyncInvoker<UpdateVpcRequest, UpdateVpcResponse>
      */
     public SyncInvoker<UpdateVpcRequest, UpdateVpcResponse> updateVpcInvoker(UpdateVpcRequest request) {
-        return new SyncInvoker<UpdateVpcRequest, UpdateVpcResponse>(request, IecMeta.updateVpc, hcClient);
+        return new SyncInvoker<>(request, IecMeta.updateVpc, hcClient);
     }
 
     /**
@@ -2374,7 +2340,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFirewallRequest 请求对象
+     * @param request CreateFirewallRequest 请求对象
      * @return CreateFirewallResponse
      */
     public CreateFirewallResponse createFirewall(CreateFirewallRequest request) {
@@ -2388,13 +2354,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFirewallRequest 请求对象
+     * @param request CreateFirewallRequest 请求对象
      * @return SyncInvoker<CreateFirewallRequest, CreateFirewallResponse>
      */
     public SyncInvoker<CreateFirewallRequest, CreateFirewallResponse> createFirewallInvoker(
         CreateFirewallRequest request) {
-        return new SyncInvoker<CreateFirewallRequest, CreateFirewallResponse>(request, IecMeta.createFirewall,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.createFirewall, hcClient);
     }
 
     /**
@@ -2404,7 +2369,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFirewallRequest 请求对象
+     * @param request DeleteFirewallRequest 请求对象
      * @return DeleteFirewallResponse
      */
     public DeleteFirewallResponse deleteFirewall(DeleteFirewallRequest request) {
@@ -2418,13 +2383,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFirewallRequest 请求对象
+     * @param request DeleteFirewallRequest 请求对象
      * @return SyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>
      */
     public SyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewallInvoker(
         DeleteFirewallRequest request) {
-        return new SyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>(request, IecMeta.deleteFirewall,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.deleteFirewall, hcClient);
     }
 
     /**
@@ -2434,7 +2398,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFirewallsRequest 请求对象
+     * @param request ListFirewallsRequest 请求对象
      * @return ListFirewallsResponse
      */
     public ListFirewallsResponse listFirewalls(ListFirewallsRequest request) {
@@ -2448,11 +2412,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFirewallsRequest 请求对象
+     * @param request ListFirewallsRequest 请求对象
      * @return SyncInvoker<ListFirewallsRequest, ListFirewallsResponse>
      */
     public SyncInvoker<ListFirewallsRequest, ListFirewallsResponse> listFirewallsInvoker(ListFirewallsRequest request) {
-        return new SyncInvoker<ListFirewallsRequest, ListFirewallsResponse>(request, IecMeta.listFirewalls, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listFirewalls, hcClient);
     }
 
     /**
@@ -2462,7 +2426,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFirewallRequest 请求对象
+     * @param request ShowFirewallRequest 请求对象
      * @return ShowFirewallResponse
      */
     public ShowFirewallResponse showFirewall(ShowFirewallRequest request) {
@@ -2476,11 +2440,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFirewallRequest 请求对象
+     * @param request ShowFirewallRequest 请求对象
      * @return SyncInvoker<ShowFirewallRequest, ShowFirewallResponse>
      */
     public SyncInvoker<ShowFirewallRequest, ShowFirewallResponse> showFirewallInvoker(ShowFirewallRequest request) {
-        return new SyncInvoker<ShowFirewallRequest, ShowFirewallResponse>(request, IecMeta.showFirewall, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showFirewall, hcClient);
     }
 
     /**
@@ -2490,7 +2454,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFirewallRequest 请求对象
+     * @param request UpdateFirewallRequest 请求对象
      * @return UpdateFirewallResponse
      */
     public UpdateFirewallResponse updateFirewall(UpdateFirewallRequest request) {
@@ -2504,13 +2468,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFirewallRequest 请求对象
+     * @param request UpdateFirewallRequest 请求对象
      * @return SyncInvoker<UpdateFirewallRequest, UpdateFirewallResponse>
      */
     public SyncInvoker<UpdateFirewallRequest, UpdateFirewallResponse> updateFirewallInvoker(
         UpdateFirewallRequest request) {
-        return new SyncInvoker<UpdateFirewallRequest, UpdateFirewallResponse>(request, IecMeta.updateFirewall,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.updateFirewall, hcClient);
     }
 
     /**
@@ -2520,7 +2483,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFirewallRuleRequest 请求对象
+     * @param request UpdateFirewallRuleRequest 请求对象
      * @return UpdateFirewallRuleResponse
      */
     public UpdateFirewallRuleResponse updateFirewallRule(UpdateFirewallRuleRequest request) {
@@ -2534,13 +2497,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFirewallRuleRequest 请求对象
+     * @param request UpdateFirewallRuleRequest 请求对象
      * @return SyncInvoker<UpdateFirewallRuleRequest, UpdateFirewallRuleResponse>
      */
     public SyncInvoker<UpdateFirewallRuleRequest, UpdateFirewallRuleResponse> updateFirewallRuleInvoker(
         UpdateFirewallRuleRequest request) {
-        return new SyncInvoker<UpdateFirewallRuleRequest, UpdateFirewallRuleResponse>(request,
-            IecMeta.updateFirewallRule, hcClient);
+        return new SyncInvoker<>(request, IecMeta.updateFirewallRule, hcClient);
     }
 
     /**
@@ -2550,7 +2512,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePublicIpRequest 请求对象
+     * @param request CreatePublicIpRequest 请求对象
      * @return CreatePublicIpResponse
      */
     public CreatePublicIpResponse createPublicIp(CreatePublicIpRequest request) {
@@ -2564,13 +2526,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePublicIpRequest 请求对象
+     * @param request CreatePublicIpRequest 请求对象
      * @return SyncInvoker<CreatePublicIpRequest, CreatePublicIpResponse>
      */
     public SyncInvoker<CreatePublicIpRequest, CreatePublicIpResponse> createPublicIpInvoker(
         CreatePublicIpRequest request) {
-        return new SyncInvoker<CreatePublicIpRequest, CreatePublicIpResponse>(request, IecMeta.createPublicIp,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.createPublicIp, hcClient);
     }
 
     /**
@@ -2580,7 +2541,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublicIpRequest 请求对象
+     * @param request DeletePublicIpRequest 请求对象
      * @return DeletePublicIpResponse
      */
     public DeletePublicIpResponse deletePublicIp(DeletePublicIpRequest request) {
@@ -2594,13 +2555,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublicIpRequest 请求对象
+     * @param request DeletePublicIpRequest 请求对象
      * @return SyncInvoker<DeletePublicIpRequest, DeletePublicIpResponse>
      */
     public SyncInvoker<DeletePublicIpRequest, DeletePublicIpResponse> deletePublicIpInvoker(
         DeletePublicIpRequest request) {
-        return new SyncInvoker<DeletePublicIpRequest, DeletePublicIpResponse>(request, IecMeta.deletePublicIp,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.deletePublicIp, hcClient);
     }
 
     /**
@@ -2610,7 +2570,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicIpsRequest 请求对象
+     * @param request ListPublicIpsRequest 请求对象
      * @return ListPublicIpsResponse
      */
     public ListPublicIpsResponse listPublicIps(ListPublicIpsRequest request) {
@@ -2624,11 +2584,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicIpsRequest 请求对象
+     * @param request ListPublicIpsRequest 请求对象
      * @return SyncInvoker<ListPublicIpsRequest, ListPublicIpsResponse>
      */
     public SyncInvoker<ListPublicIpsRequest, ListPublicIpsResponse> listPublicIpsInvoker(ListPublicIpsRequest request) {
-        return new SyncInvoker<ListPublicIpsRequest, ListPublicIpsResponse>(request, IecMeta.listPublicIps, hcClient);
+        return new SyncInvoker<>(request, IecMeta.listPublicIps, hcClient);
     }
 
     /**
@@ -2638,7 +2598,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicIpRequest 请求对象
+     * @param request ShowPublicIpRequest 请求对象
      * @return ShowPublicIpResponse
      */
     public ShowPublicIpResponse showPublicIp(ShowPublicIpRequest request) {
@@ -2652,11 +2612,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicIpRequest 请求对象
+     * @param request ShowPublicIpRequest 请求对象
      * @return SyncInvoker<ShowPublicIpRequest, ShowPublicIpResponse>
      */
     public SyncInvoker<ShowPublicIpRequest, ShowPublicIpResponse> showPublicIpInvoker(ShowPublicIpRequest request) {
-        return new SyncInvoker<ShowPublicIpRequest, ShowPublicIpResponse>(request, IecMeta.showPublicIp, hcClient);
+        return new SyncInvoker<>(request, IecMeta.showPublicIp, hcClient);
     }
 
     /**
@@ -2666,7 +2626,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicIpRequest 请求对象
+     * @param request UpdatePublicIpRequest 请求对象
      * @return UpdatePublicIpResponse
      */
     public UpdatePublicIpResponse updatePublicIp(UpdatePublicIpRequest request) {
@@ -2680,13 +2640,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicIpRequest 请求对象
+     * @param request UpdatePublicIpRequest 请求对象
      * @return SyncInvoker<UpdatePublicIpRequest, UpdatePublicIpResponse>
      */
     public SyncInvoker<UpdatePublicIpRequest, UpdatePublicIpResponse> updatePublicIpInvoker(
         UpdatePublicIpRequest request) {
-        return new SyncInvoker<UpdatePublicIpRequest, UpdatePublicIpResponse>(request, IecMeta.updatePublicIp,
-            hcClient);
+        return new SyncInvoker<>(request, IecMeta.updatePublicIp, hcClient);
     }
 
     /**
@@ -2696,7 +2655,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachVipBandwidthRequest 请求对象
+     * @param request AttachVipBandwidthRequest 请求对象
      * @return AttachVipBandwidthResponse
      */
     public AttachVipBandwidthResponse attachVipBandwidth(AttachVipBandwidthRequest request) {
@@ -2710,13 +2669,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachVipBandwidthRequest 请求对象
+     * @param request AttachVipBandwidthRequest 请求对象
      * @return SyncInvoker<AttachVipBandwidthRequest, AttachVipBandwidthResponse>
      */
     public SyncInvoker<AttachVipBandwidthRequest, AttachVipBandwidthResponse> attachVipBandwidthInvoker(
         AttachVipBandwidthRequest request) {
-        return new SyncInvoker<AttachVipBandwidthRequest, AttachVipBandwidthResponse>(request,
-            IecMeta.attachVipBandwidth, hcClient);
+        return new SyncInvoker<>(request, IecMeta.attachVipBandwidth, hcClient);
     }
 
     /**
@@ -2726,7 +2684,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachVipBandwidthRequest 请求对象
+     * @param request DetachVipBandwidthRequest 请求对象
      * @return DetachVipBandwidthResponse
      */
     public DetachVipBandwidthResponse detachVipBandwidth(DetachVipBandwidthRequest request) {
@@ -2740,13 +2698,12 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachVipBandwidthRequest 请求对象
+     * @param request DetachVipBandwidthRequest 请求对象
      * @return SyncInvoker<DetachVipBandwidthRequest, DetachVipBandwidthResponse>
      */
     public SyncInvoker<DetachVipBandwidthRequest, DetachVipBandwidthResponse> detachVipBandwidthInvoker(
         DetachVipBandwidthRequest request) {
-        return new SyncInvoker<DetachVipBandwidthRequest, DetachVipBandwidthResponse>(request,
-            IecMeta.detachVipBandwidth, hcClient);
+        return new SyncInvoker<>(request, IecMeta.detachVipBandwidth, hcClient);
     }
 
     /**
@@ -2756,7 +2713,7 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubnetRequest 请求对象
+     * @param request CreateSubnetRequest 请求对象
      * @return CreateSubnetResponse
      */
     public CreateSubnetResponse createSubnet(CreateSubnetRequest request) {
@@ -2770,11 +2727,11 @@ public class IecClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubnetRequest 请求对象
+     * @param request CreateSubnetRequest 请求对象
      * @return SyncInvoker<CreateSubnetRequest, CreateSubnetResponse>
      */
     public SyncInvoker<CreateSubnetRequest, CreateSubnetResponse> createSubnetInvoker(CreateSubnetRequest request) {
-        return new SyncInvoker<CreateSubnetRequest, CreateSubnetResponse>(request, IecMeta.createSubnet, hcClient);
+        return new SyncInvoker<>(request, IecMeta.createSubnet, hcClient);
     }
 
 }

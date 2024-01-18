@@ -90,9 +90,9 @@ import com.huaweicloud.sdk.nlp.v2.model.TextTranslationReq;
 public class NlpMeta {
 
     public static final HttpRequestDef<RunAspectSentimentRequest, RunAspectSentimentResponse> runAspectSentiment =
-        genForrunAspectSentiment();
+        genForRunAspectSentiment();
 
-    private static HttpRequestDef<RunAspectSentimentRequest, RunAspectSentimentResponse> genForrunAspectSentiment() {
+    private static HttpRequestDef<RunAspectSentimentRequest, RunAspectSentimentResponse> genForRunAspectSentiment() {
         // basic
         HttpRequestDef.Builder<RunAspectSentimentRequest, RunAspectSentimentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunAspectSentimentRequest.class, RunAspectSentimentResponse.class)
@@ -105,9 +105,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AspectSentimentRequest.class),
-            f -> f.withMarshaller(RunAspectSentimentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunAspectSentimentRequest::getBody, RunAspectSentimentRequest::setBody));
 
         // response
 
@@ -115,9 +113,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse> runAspectSentimentAdvance =
-        genForrunAspectSentimentAdvance();
+        genForRunAspectSentimentAdvance();
 
-    private static HttpRequestDef<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse> genForrunAspectSentimentAdvance() {
+    private static HttpRequestDef<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse> genForRunAspectSentimentAdvance() {
         // basic
         HttpRequestDef.Builder<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse> builder =
             HttpRequestDef
@@ -133,9 +131,8 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AspectSentimentAdvanceRequest.class),
-            f -> f.withMarshaller(RunAspectSentimentAdvanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunAspectSentimentAdvanceRequest::getBody,
+                RunAspectSentimentAdvanceRequest::setBody));
 
         // response
 
@@ -143,9 +140,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunClassificationRequest, RunClassificationResponse> runClassification =
-        genForrunClassification();
+        genForRunClassification();
 
-    private static HttpRequestDef<RunClassificationRequest, RunClassificationResponse> genForrunClassification() {
+    private static HttpRequestDef<RunClassificationRequest, RunClassificationResponse> genForRunClassification() {
         // basic
         HttpRequestDef.Builder<RunClassificationRequest, RunClassificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunClassificationRequest.class, RunClassificationResponse.class)
@@ -158,9 +155,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ClassificationReq.class),
-            f -> f.withMarshaller(RunClassificationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunClassificationRequest::getBody, RunClassificationRequest::setBody));
 
         // response
 
@@ -168,9 +163,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunConstituencyParserRequest, RunConstituencyParserResponse> runConstituencyParser =
-        genForrunConstituencyParser();
+        genForRunConstituencyParser();
 
-    private static HttpRequestDef<RunConstituencyParserRequest, RunConstituencyParserResponse> genForrunConstituencyParser() {
+    private static HttpRequestDef<RunConstituencyParserRequest, RunConstituencyParserResponse> genForRunConstituencyParser() {
         // basic
         HttpRequestDef.Builder<RunConstituencyParserRequest, RunConstituencyParserResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RunConstituencyParserRequest.class, RunConstituencyParserResponse.class)
@@ -183,9 +178,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConstituencyParserReq.class),
-            f -> f.withMarshaller(RunConstituencyParserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunConstituencyParserRequest::getBody, RunConstituencyParserRequest::setBody));
 
         // response
 
@@ -193,9 +186,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunDependencyParserRequest, RunDependencyParserResponse> runDependencyParser =
-        genForrunDependencyParser();
+        genForRunDependencyParser();
 
-    private static HttpRequestDef<RunDependencyParserRequest, RunDependencyParserResponse> genForrunDependencyParser() {
+    private static HttpRequestDef<RunDependencyParserRequest, RunDependencyParserResponse> genForRunDependencyParser() {
         // basic
         HttpRequestDef.Builder<RunDependencyParserRequest, RunDependencyParserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunDependencyParserRequest.class, RunDependencyParserResponse.class)
@@ -208,9 +201,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DependencyParserRequest.class),
-            f -> f.withMarshaller(RunDependencyParserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunDependencyParserRequest::getBody, RunDependencyParserRequest::setBody));
 
         // response
 
@@ -218,9 +209,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunDocClassificationRequest, RunDocClassificationResponse> runDocClassification =
-        genForrunDocClassification();
+        genForRunDocClassification();
 
-    private static HttpRequestDef<RunDocClassificationRequest, RunDocClassificationResponse> genForrunDocClassification() {
+    private static HttpRequestDef<RunDocClassificationRequest, RunDocClassificationResponse> genForRunDocClassification() {
         // basic
         HttpRequestDef.Builder<RunDocClassificationRequest, RunDocClassificationResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RunDocClassificationRequest.class, RunDocClassificationResponse.class)
@@ -233,9 +224,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DocumentClassificationReq.class),
-            f -> f.withMarshaller(RunDocClassificationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunDocClassificationRequest::getBody, RunDocClassificationRequest::setBody));
 
         // response
 
@@ -243,9 +232,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunDomainSentimentRequest, RunDomainSentimentResponse> runDomainSentiment =
-        genForrunDomainSentiment();
+        genForRunDomainSentiment();
 
-    private static HttpRequestDef<RunDomainSentimentRequest, RunDomainSentimentResponse> genForrunDomainSentiment() {
+    private static HttpRequestDef<RunDomainSentimentRequest, RunDomainSentimentResponse> genForRunDomainSentiment() {
         // basic
         HttpRequestDef.Builder<RunDomainSentimentRequest, RunDomainSentimentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunDomainSentimentRequest.class, RunDomainSentimentResponse.class)
@@ -258,9 +247,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DomainSentimentReq.class),
-            f -> f.withMarshaller(RunDomainSentimentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunDomainSentimentRequest::getBody, RunDomainSentimentRequest::setBody));
 
         // response
 
@@ -268,9 +255,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunEntityLinkingRequest, RunEntityLinkingResponse> runEntityLinking =
-        genForrunEntityLinking();
+        genForRunEntityLinking();
 
-    private static HttpRequestDef<RunEntityLinkingRequest, RunEntityLinkingResponse> genForrunEntityLinking() {
+    private static HttpRequestDef<RunEntityLinkingRequest, RunEntityLinkingResponse> genForRunEntityLinking() {
         // basic
         HttpRequestDef.Builder<RunEntityLinkingRequest, RunEntityLinkingResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunEntityLinkingRequest.class, RunEntityLinkingResponse.class)
@@ -283,9 +270,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostEntityLinkingRequest.class),
-            f -> f.withMarshaller(RunEntityLinkingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunEntityLinkingRequest::getBody, RunEntityLinkingRequest::setBody));
 
         // response
 
@@ -293,9 +278,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunEntitySentimentRequest, RunEntitySentimentResponse> runEntitySentiment =
-        genForrunEntitySentiment();
+        genForRunEntitySentiment();
 
-    private static HttpRequestDef<RunEntitySentimentRequest, RunEntitySentimentResponse> genForrunEntitySentiment() {
+    private static HttpRequestDef<RunEntitySentimentRequest, RunEntitySentimentResponse> genForRunEntitySentiment() {
         // basic
         HttpRequestDef.Builder<RunEntitySentimentRequest, RunEntitySentimentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunEntitySentimentRequest.class, RunEntitySentimentResponse.class)
@@ -308,9 +293,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EntitySentimentReq.class),
-            f -> f.withMarshaller(RunEntitySentimentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunEntitySentimentRequest::getBody, RunEntitySentimentRequest::setBody));
 
         // response
 
@@ -318,9 +301,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunEventExtractionRequest, RunEventExtractionResponse> runEventExtraction =
-        genForrunEventExtraction();
+        genForRunEventExtraction();
 
-    private static HttpRequestDef<RunEventExtractionRequest, RunEventExtractionResponse> genForrunEventExtraction() {
+    private static HttpRequestDef<RunEventExtractionRequest, RunEventExtractionResponse> genForRunEventExtraction() {
         // basic
         HttpRequestDef.Builder<RunEventExtractionRequest, RunEventExtractionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunEventExtractionRequest.class, RunEventExtractionResponse.class)
@@ -333,9 +316,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostEventExtractionReq.class),
-            f -> f.withMarshaller(RunEventExtractionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunEventExtractionRequest::getBody, RunEventExtractionRequest::setBody));
 
         // response
 
@@ -343,9 +324,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunFileTranslationRequest, RunFileTranslationResponse> runFileTranslation =
-        genForrunFileTranslation();
+        genForRunFileTranslation();
 
-    private static HttpRequestDef<RunFileTranslationRequest, RunFileTranslationResponse> genForrunFileTranslation() {
+    private static HttpRequestDef<RunFileTranslationRequest, RunFileTranslationResponse> genForRunFileTranslation() {
         // basic
         HttpRequestDef.Builder<RunFileTranslationRequest, RunFileTranslationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunFileTranslationRequest.class, RunFileTranslationResponse.class)
@@ -358,9 +339,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FileTranslationReq.class),
-            f -> f.withMarshaller(RunFileTranslationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunFileTranslationRequest::getBody, RunFileTranslationRequest::setBody));
 
         // response
 
@@ -368,9 +347,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse> runGetFileTranslationResult =
-        genForrunGetFileTranslationResult();
+        genForRunGetFileTranslationResult();
 
-    private static HttpRequestDef<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse> genForrunGetFileTranslationResult() {
+    private static HttpRequestDef<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse> genForRunGetFileTranslationResult() {
         // basic
         HttpRequestDef.Builder<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse> builder =
             HttpRequestDef
@@ -386,9 +365,8 @@ public class NlpMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunGetFileTranslationResultRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(RunGetFileTranslationResultRequest::getJobId,
+                RunGetFileTranslationResultRequest::setJobId));
 
         // response
 
@@ -396,9 +374,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunKeywordExtractRequest, RunKeywordExtractResponse> runKeywordExtract =
-        genForrunKeywordExtract();
+        genForRunKeywordExtract();
 
-    private static HttpRequestDef<RunKeywordExtractRequest, RunKeywordExtractResponse> genForrunKeywordExtract() {
+    private static HttpRequestDef<RunKeywordExtractRequest, RunKeywordExtractResponse> genForRunKeywordExtract() {
         // basic
         HttpRequestDef.Builder<RunKeywordExtractRequest, RunKeywordExtractResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunKeywordExtractRequest.class, RunKeywordExtractResponse.class)
@@ -411,9 +389,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KeywordExtractReq.class),
-            f -> f.withMarshaller(RunKeywordExtractRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunKeywordExtractRequest::getBody, RunKeywordExtractRequest::setBody));
 
         // response
 
@@ -421,9 +397,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunLanguageDetectionRequest, RunLanguageDetectionResponse> runLanguageDetection =
-        genForrunLanguageDetection();
+        genForRunLanguageDetection();
 
-    private static HttpRequestDef<RunLanguageDetectionRequest, RunLanguageDetectionResponse> genForrunLanguageDetection() {
+    private static HttpRequestDef<RunLanguageDetectionRequest, RunLanguageDetectionResponse> genForRunLanguageDetection() {
         // basic
         HttpRequestDef.Builder<RunLanguageDetectionRequest, RunLanguageDetectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RunLanguageDetectionRequest.class, RunLanguageDetectionResponse.class)
@@ -436,9 +412,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LanguageDetectionReq.class),
-            f -> f.withMarshaller(RunLanguageDetectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunLanguageDetectionRequest::getBody, RunLanguageDetectionRequest::setBody));
 
         // response
 
@@ -446,9 +420,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse> runMultiGrainedSegment =
-        genForrunMultiGrainedSegment();
+        genForRunMultiGrainedSegment();
 
-    private static HttpRequestDef<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse> genForrunMultiGrainedSegment() {
+    private static HttpRequestDef<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse> genForRunMultiGrainedSegment() {
         // basic
         HttpRequestDef.Builder<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RunMultiGrainedSegmentRequest.class, RunMultiGrainedSegmentResponse.class)
@@ -461,18 +435,16 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostMultiGrainedSegmentReq.class),
-            f -> f.withMarshaller(RunMultiGrainedSegmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunMultiGrainedSegmentRequest::getBody, RunMultiGrainedSegmentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunNerRequest, RunNerResponse> runNer = genForrunNer();
+    public static final HttpRequestDef<RunNerRequest, RunNerResponse> runNer = genForRunNer();
 
-    private static HttpRequestDef<RunNerRequest, RunNerResponse> genForrunNer() {
+    private static HttpRequestDef<RunNerRequest, RunNerResponse> genForRunNer() {
         // basic
         HttpRequestDef.Builder<RunNerRequest, RunNerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunNerRequest.class, RunNerResponse.class)
@@ -485,18 +457,16 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NerRequest.class),
-            f -> f.withMarshaller(RunNerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunNerRequest::getBody, RunNerRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunNerDomainRequest, RunNerDomainResponse> runNerDomain = genForrunNerDomain();
+    public static final HttpRequestDef<RunNerDomainRequest, RunNerDomainResponse> runNerDomain = genForRunNerDomain();
 
-    private static HttpRequestDef<RunNerDomainRequest, RunNerDomainResponse> genForrunNerDomain() {
+    private static HttpRequestDef<RunNerDomainRequest, RunNerDomainResponse> genForRunNerDomain() {
         // basic
         HttpRequestDef.Builder<RunNerDomainRequest, RunNerDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunNerDomainRequest.class, RunNerDomainResponse.class)
@@ -509,18 +479,16 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostDomainNerRequest.class),
-            f -> f.withMarshaller(RunNerDomainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunNerDomainRequest::getBody, RunNerDomainRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunPoemRequest, RunPoemResponse> runPoem = genForrunPoem();
+    public static final HttpRequestDef<RunPoemRequest, RunPoemResponse> runPoem = genForRunPoem();
 
-    private static HttpRequestDef<RunPoemRequest, RunPoemResponse> genForrunPoem() {
+    private static HttpRequestDef<RunPoemRequest, RunPoemResponse> genForRunPoem() {
         // basic
         HttpRequestDef.Builder<RunPoemRequest, RunPoemResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunPoemRequest.class, RunPoemResponse.class)
@@ -533,18 +501,16 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePoem.class),
-            f -> f.withMarshaller(RunPoemRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunPoemRequest::getBody, RunPoemRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunSegmentRequest, RunSegmentResponse> runSegment = genForrunSegment();
+    public static final HttpRequestDef<RunSegmentRequest, RunSegmentResponse> runSegment = genForRunSegment();
 
-    private static HttpRequestDef<RunSegmentRequest, RunSegmentResponse> genForrunSegment() {
+    private static HttpRequestDef<RunSegmentRequest, RunSegmentResponse> genForRunSegment() {
         // basic
         HttpRequestDef.Builder<RunSegmentRequest, RunSegmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunSegmentRequest.class, RunSegmentResponse.class)
@@ -557,9 +523,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SegmentRequest.class),
-            f -> f.withMarshaller(RunSegmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunSegmentRequest::getBody, RunSegmentRequest::setBody));
 
         // response
 
@@ -567,9 +531,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunSemanticParserRequest, RunSemanticParserResponse> runSemanticParser =
-        genForrunSemanticParser();
+        genForRunSemanticParser();
 
-    private static HttpRequestDef<RunSemanticParserRequest, RunSemanticParserResponse> genForrunSemanticParser() {
+    private static HttpRequestDef<RunSemanticParserRequest, RunSemanticParserResponse> genForRunSemanticParser() {
         // basic
         HttpRequestDef.Builder<RunSemanticParserRequest, RunSemanticParserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunSemanticParserRequest.class, RunSemanticParserResponse.class)
@@ -582,9 +546,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IntentReq.class),
-            f -> f.withMarshaller(RunSemanticParserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunSemanticParserRequest::getBody, RunSemanticParserRequest::setBody));
 
         // response
 
@@ -592,9 +554,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse> runSentenceEmbedding =
-        genForrunSentenceEmbedding();
+        genForRunSentenceEmbedding();
 
-    private static HttpRequestDef<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse> genForrunSentenceEmbedding() {
+    private static HttpRequestDef<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse> genForRunSentenceEmbedding() {
         // basic
         HttpRequestDef.Builder<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RunSentenceEmbeddingRequest.class, RunSentenceEmbeddingResponse.class)
@@ -607,18 +569,16 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostSentenceEmbeddingReq.class),
-            f -> f.withMarshaller(RunSentenceEmbeddingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunSentenceEmbeddingRequest::getBody, RunSentenceEmbeddingRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunSentimentRequest, RunSentimentResponse> runSentiment = genForrunSentiment();
+    public static final HttpRequestDef<RunSentimentRequest, RunSentimentResponse> runSentiment = genForRunSentiment();
 
-    private static HttpRequestDef<RunSentimentRequest, RunSentimentResponse> genForrunSentiment() {
+    private static HttpRequestDef<RunSentimentRequest, RunSentimentResponse> genForRunSentiment() {
         // basic
         HttpRequestDef.Builder<RunSentimentRequest, RunSentimentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunSentimentRequest.class, RunSentimentResponse.class)
@@ -631,18 +591,16 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HWCloudSentimentReq.class),
-            f -> f.withMarshaller(RunSentimentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunSentimentRequest::getBody, RunSentimentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunSummaryRequest, RunSummaryResponse> runSummary = genForrunSummary();
+    public static final HttpRequestDef<RunSummaryRequest, RunSummaryResponse> runSummary = genForRunSummary();
 
-    private static HttpRequestDef<RunSummaryRequest, RunSummaryResponse> genForrunSummary() {
+    private static HttpRequestDef<RunSummaryRequest, RunSummaryResponse> genForRunSummary() {
         // basic
         HttpRequestDef.Builder<RunSummaryRequest, RunSummaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunSummaryRequest.class, RunSummaryResponse.class)
@@ -655,9 +613,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SummaryReq.class),
-            f -> f.withMarshaller(RunSummaryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunSummaryRequest::getBody, RunSummaryRequest::setBody));
 
         // response
 
@@ -665,9 +621,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunSummaryDomainRequest, RunSummaryDomainResponse> runSummaryDomain =
-        genForrunSummaryDomain();
+        genForRunSummaryDomain();
 
-    private static HttpRequestDef<RunSummaryDomainRequest, RunSummaryDomainResponse> genForrunSummaryDomain() {
+    private static HttpRequestDef<RunSummaryDomainRequest, RunSummaryDomainResponse> genForRunSummaryDomain() {
         // basic
         HttpRequestDef.Builder<RunSummaryDomainRequest, RunSummaryDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunSummaryDomainRequest.class, RunSummaryDomainResponse.class)
@@ -680,9 +636,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SummaryDomainReq.class),
-            f -> f.withMarshaller(RunSummaryDomainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunSummaryDomainRequest::getBody, RunSummaryDomainRequest::setBody));
 
         // response
 
@@ -690,9 +644,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunTextSimilarityRequest, RunTextSimilarityResponse> runTextSimilarity =
-        genForrunTextSimilarity();
+        genForRunTextSimilarity();
 
-    private static HttpRequestDef<RunTextSimilarityRequest, RunTextSimilarityResponse> genForrunTextSimilarity() {
+    private static HttpRequestDef<RunTextSimilarityRequest, RunTextSimilarityResponse> genForRunTextSimilarity() {
         // basic
         HttpRequestDef.Builder<RunTextSimilarityRequest, RunTextSimilarityResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTextSimilarityRequest.class, RunTextSimilarityResponse.class)
@@ -705,9 +659,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TextSimilarityRequest.class),
-            f -> f.withMarshaller(RunTextSimilarityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunTextSimilarityRequest::getBody, RunTextSimilarityRequest::setBody));
 
         // response
 
@@ -715,9 +667,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse> runTextSimilarityAdvance =
-        genForrunTextSimilarityAdvance();
+        genForRunTextSimilarityAdvance();
 
-    private static HttpRequestDef<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse> genForrunTextSimilarityAdvance() {
+    private static HttpRequestDef<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse> genForRunTextSimilarityAdvance() {
         // basic
         HttpRequestDef.Builder<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse> builder =
             HttpRequestDef
@@ -731,9 +683,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TextSimilarityAdvanceRequest.class),
-            f -> f.withMarshaller(RunTextSimilarityAdvanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunTextSimilarityAdvanceRequest::getBody, RunTextSimilarityAdvanceRequest::setBody));
 
         // response
 
@@ -741,9 +691,9 @@ public class NlpMeta {
     }
 
     public static final HttpRequestDef<RunTextTranslationRequest, RunTextTranslationResponse> runTextTranslation =
-        genForrunTextTranslation();
+        genForRunTextTranslation();
 
-    private static HttpRequestDef<RunTextTranslationRequest, RunTextTranslationResponse> genForrunTextTranslation() {
+    private static HttpRequestDef<RunTextTranslationRequest, RunTextTranslationResponse> genForRunTextTranslation() {
         // basic
         HttpRequestDef.Builder<RunTextTranslationRequest, RunTextTranslationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTextTranslationRequest.class, RunTextTranslationResponse.class)
@@ -756,9 +706,7 @@ public class NlpMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TextTranslationReq.class),
-            f -> f.withMarshaller(RunTextTranslationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunTextTranslationRequest::getBody, RunTextTranslationRequest::setBody));
 
         // response
 

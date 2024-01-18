@@ -111,9 +111,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class ApmMeta {
 
-    public static final HttpRequestDef<CreateAkSkRequest, CreateAkSkResponse> createAkSk = genForcreateAkSk();
+    public static final HttpRequestDef<CreateAkSkRequest, CreateAkSkResponse> createAkSk = genForCreateAkSk();
 
-    private static HttpRequestDef<CreateAkSkRequest, CreateAkSkResponse> genForcreateAkSk() {
+    private static HttpRequestDef<CreateAkSkRequest, CreateAkSkResponse> genForCreateAkSk() {
         // basic
         HttpRequestDef.Builder<CreateAkSkRequest, CreateAkSkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAkSkRequest.class, CreateAkSkResponse.class)
@@ -126,18 +126,16 @@ public class ApmMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateAkskModel.class),
-            f -> f.withMarshaller(CreateAkSkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAkSkRequest::getBody, CreateAkSkRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAkSkRequest, DeleteAkSkResponse> deleteAkSk = genFordeleteAkSk();
+    public static final HttpRequestDef<DeleteAkSkRequest, DeleteAkSkResponse> deleteAkSk = genForDeleteAkSk();
 
-    private static HttpRequestDef<DeleteAkSkRequest, DeleteAkSkResponse> genFordeleteAkSk() {
+    private static HttpRequestDef<DeleteAkSkRequest, DeleteAkSkResponse> genForDeleteAkSk() {
         // basic
         HttpRequestDef.Builder<DeleteAkSkRequest, DeleteAkSkResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAkSkRequest.class, DeleteAkSkResponse.class)
@@ -150,18 +148,16 @@ public class ApmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAkSkRequest::getAk, (req, v) -> {
-                req.setAk(v);
-            }));
+            f -> f.withMarshaller(DeleteAkSkRequest::getAk, DeleteAkSkRequest::setAk));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAkSksRequest, ShowAkSksResponse> showAkSks = genForshowAkSks();
+    public static final HttpRequestDef<ShowAkSksRequest, ShowAkSksResponse> showAkSks = genForShowAkSks();
 
-    private static HttpRequestDef<ShowAkSksRequest, ShowAkSksResponse> genForshowAkSks() {
+    private static HttpRequestDef<ShowAkSksRequest, ShowAkSksResponse> genForShowAkSks() {
         // basic
         HttpRequestDef.Builder<ShowAkSksRequest, ShowAkSksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAkSksRequest.class, ShowAkSksResponse.class)
@@ -177,9 +173,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ListAlarmDataRequest, ListAlarmDataResponse> listAlarmData =
-        genForlistAlarmData();
+        genForListAlarmData();
 
-    private static HttpRequestDef<ListAlarmDataRequest, ListAlarmDataResponse> genForlistAlarmData() {
+    private static HttpRequestDef<ListAlarmDataRequest, ListAlarmDataResponse> genForListAlarmData() {
         // basic
         HttpRequestDef.Builder<ListAlarmDataRequest, ListAlarmDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListAlarmDataRequest.class, ListAlarmDataResponse.class)
@@ -192,16 +188,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAlarmDataRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ListAlarmDataRequest::getXBusinessId, ListAlarmDataRequest::setXBusinessId));
         builder.<AlarmDataListRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AlarmDataListRequest.class),
-            f -> f.withMarshaller(ListAlarmDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAlarmDataRequest::getBody, ListAlarmDataRequest::setBody));
 
         // response
 
@@ -209,9 +201,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ListAlarmNotifyRequest, ListAlarmNotifyResponse> listAlarmNotify =
-        genForlistAlarmNotify();
+        genForListAlarmNotify();
 
-    private static HttpRequestDef<ListAlarmNotifyRequest, ListAlarmNotifyResponse> genForlistAlarmNotify() {
+    private static HttpRequestDef<ListAlarmNotifyRequest, ListAlarmNotifyResponse> genForListAlarmNotify() {
         // basic
         HttpRequestDef.Builder<ListAlarmNotifyRequest, ListAlarmNotifyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListAlarmNotifyRequest.class, ListAlarmNotifyResponse.class)
@@ -224,16 +216,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAlarmNotifyRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ListAlarmNotifyRequest::getXBusinessId, ListAlarmNotifyRequest::setXBusinessId));
         builder.<AlarmNotifyListRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AlarmNotifyListRequest.class),
-            f -> f.withMarshaller(ListAlarmNotifyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAlarmNotifyRequest::getBody, ListAlarmNotifyRequest::setBody));
 
         // response
 
@@ -241,9 +229,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ChangeAgentStatusRequest, ChangeAgentStatusResponse> changeAgentStatus =
-        genForchangeAgentStatus();
+        genForChangeAgentStatus();
 
-    private static HttpRequestDef<ChangeAgentStatusRequest, ChangeAgentStatusResponse> genForchangeAgentStatus() {
+    private static HttpRequestDef<ChangeAgentStatusRequest, ChangeAgentStatusResponse> genForChangeAgentStatus() {
         // basic
         HttpRequestDef.Builder<ChangeAgentStatusRequest, ChangeAgentStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ChangeAgentStatusRequest.class, ChangeAgentStatusResponse.class)
@@ -256,25 +244,21 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ChangeAgentStatusRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ChangeAgentStatusRequest::getXBusinessId, ChangeAgentStatusRequest::setXBusinessId));
         builder.<AgentStatusChangeParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AgentStatusChangeParam.class),
-            f -> f.withMarshaller(ChangeAgentStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeAgentStatusRequest::getBody, ChangeAgentStatusRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAgentRequest, DeleteAgentResponse> deleteAgent = genFordeleteAgent();
+    public static final HttpRequestDef<DeleteAgentRequest, DeleteAgentResponse> deleteAgent = genForDeleteAgent();
 
-    private static HttpRequestDef<DeleteAgentRequest, DeleteAgentResponse> genFordeleteAgent() {
+    private static HttpRequestDef<DeleteAgentRequest, DeleteAgentResponse> genForDeleteAgent() {
         // basic
         HttpRequestDef.Builder<DeleteAgentRequest, DeleteAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteAgentRequest.class, DeleteAgentResponse.class)
@@ -287,25 +271,21 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteAgentRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(DeleteAgentRequest::getXBusinessId, DeleteAgentRequest::setXBusinessId));
         builder.<AgentDeleteParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AgentDeleteParam.class),
-            f -> f.withMarshaller(DeleteAgentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteAgentRequest::getBody, DeleteAgentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAkSkRequest, ListAkSkResponse> listAkSk = genForlistAkSk();
+    public static final HttpRequestDef<ListAkSkRequest, ListAkSkResponse> listAkSk = genForListAkSk();
 
-    private static HttpRequestDef<ListAkSkRequest, ListAkSkResponse> genForlistAkSk() {
+    private static HttpRequestDef<ListAkSkRequest, ListAkSkResponse> genForListAkSk() {
         // basic
         HttpRequestDef.Builder<ListAkSkRequest, ListAkSkResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAkSkRequest.class, ListAkSkResponse.class)
@@ -320,9 +300,9 @@ public class ApmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBusinessRequest, ListBusinessResponse> listBusiness = genForlistBusiness();
+    public static final HttpRequestDef<ListBusinessRequest, ListBusinessResponse> listBusiness = genForListBusiness();
 
-    private static HttpRequestDef<ListBusinessRequest, ListBusinessResponse> genForlistBusiness() {
+    private static HttpRequestDef<ListBusinessRequest, ListBusinessResponse> genForListBusiness() {
         // basic
         HttpRequestDef.Builder<ListBusinessRequest, ListBusinessResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBusinessRequest.class, ListBusinessResponse.class)
@@ -338,9 +318,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse> listEnvMonitorItem =
-        genForlistEnvMonitorItem();
+        genForListEnvMonitorItem();
 
-    private static HttpRequestDef<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse> genForlistEnvMonitorItem() {
+    private static HttpRequestDef<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse> genForListEnvMonitorItem() {
         // basic
         HttpRequestDef.Builder<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListEnvMonitorItemRequest.class, ListEnvMonitorItemResponse.class)
@@ -353,16 +333,13 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEnvMonitorItemRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ListEnvMonitorItemRequest::getXBusinessId,
+                ListEnvMonitorItemRequest::setXBusinessId));
         builder.<GetEnvMonitorItemListParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(GetEnvMonitorItemListParam.class),
-            f -> f.withMarshaller(ListEnvMonitorItemRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListEnvMonitorItemRequest::getBody, ListEnvMonitorItemRequest::setBody));
 
         // response
 
@@ -370,9 +347,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse> saveMonitorItemConfig =
-        genForsaveMonitorItemConfig();
+        genForSaveMonitorItemConfig();
 
-    private static HttpRequestDef<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse> genForsaveMonitorItemConfig() {
+    private static HttpRequestDef<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse> genForSaveMonitorItemConfig() {
         // basic
         HttpRequestDef.Builder<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SaveMonitorItemConfigRequest.class, SaveMonitorItemConfigResponse.class)
@@ -385,25 +362,22 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SaveMonitorItemConfigRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(SaveMonitorItemConfigRequest::getXBusinessId,
+                SaveMonitorItemConfigRequest::setXBusinessId));
         builder.<SaveMonitorItemParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SaveMonitorItemParam.class),
-            f -> f.withMarshaller(SaveMonitorItemConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SaveMonitorItemConfigRequest::getBody, SaveMonitorItemConfigRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SearchAgentRequest, SearchAgentResponse> searchAgent = genForsearchAgent();
+    public static final HttpRequestDef<SearchAgentRequest, SearchAgentResponse> searchAgent = genForSearchAgent();
 
-    private static HttpRequestDef<SearchAgentRequest, SearchAgentResponse> genForsearchAgent() {
+    private static HttpRequestDef<SearchAgentRequest, SearchAgentResponse> genForSearchAgent() {
         // basic
         HttpRequestDef.Builder<SearchAgentRequest, SearchAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SearchAgentRequest.class, SearchAgentResponse.class)
@@ -416,16 +390,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchAgentRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(SearchAgentRequest::getXBusinessId, SearchAgentRequest::setXBusinessId));
         builder.<AgentSearchParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AgentSearchParam.class),
-            f -> f.withMarshaller(SearchAgentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchAgentRequest::getBody, SearchAgentRequest::setBody));
 
         // response
 
@@ -433,9 +403,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<SearchApplicationRequest, SearchApplicationResponse> searchApplication =
-        genForsearchApplication();
+        genForSearchApplication();
 
-    private static HttpRequestDef<SearchApplicationRequest, SearchApplicationResponse> genForsearchApplication() {
+    private static HttpRequestDef<SearchApplicationRequest, SearchApplicationResponse> genForSearchApplication() {
         // basic
         HttpRequestDef.Builder<SearchApplicationRequest, SearchApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SearchApplicationRequest.class, SearchApplicationResponse.class)
@@ -448,16 +418,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchApplicationRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(SearchApplicationRequest::getXBusinessId, SearchApplicationRequest::setXBusinessId));
         builder.<AppSearchParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppSearchParam.class),
-            f -> f.withMarshaller(SearchApplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchApplicationRequest::getBody, SearchApplicationRequest::setBody));
 
         // response
 
@@ -465,9 +431,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowMasterAddressRequest, ShowMasterAddressResponse> showMasterAddress =
-        genForshowMasterAddress();
+        genForShowMasterAddress();
 
-    private static HttpRequestDef<ShowMasterAddressRequest, ShowMasterAddressResponse> genForshowMasterAddress() {
+    private static HttpRequestDef<ShowMasterAddressRequest, ShowMasterAddressResponse> genForShowMasterAddress() {
         // basic
         HttpRequestDef.Builder<ShowMasterAddressRequest, ShowMasterAddressResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMasterAddressRequest.class, ShowMasterAddressResponse.class)
@@ -480,18 +446,16 @@ public class ApmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMasterAddressRequest::getRegionName, (req, v) -> {
-                req.setRegionName(v);
-            }));
+            f -> f.withMarshaller(ShowMasterAddressRequest::getRegionName, ShowMasterAddressRequest::setRegionName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genFordeleteApp();
+    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genForDeleteApp();
 
-    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genFordeleteApp() {
+    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genForDeleteApp() {
         // basic
         HttpRequestDef.Builder<DeleteAppRequest, DeleteAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppRequest.class, DeleteAppResponse.class)
@@ -504,25 +468,21 @@ public class ApmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteAppRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getApplicationId, DeleteAppRequest::setApplicationId));
         builder.<Long>withRequestField("x-business-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteAppRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getXBusinessId, DeleteAppRequest::setXBusinessId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppEnvsRequest, ListAppEnvsResponse> listAppEnvs = genForlistAppEnvs();
+    public static final HttpRequestDef<ListAppEnvsRequest, ListAppEnvsResponse> listAppEnvs = genForListAppEnvs();
 
-    private static HttpRequestDef<ListAppEnvsRequest, ListAppEnvsResponse> genForlistAppEnvs() {
+    private static HttpRequestDef<ListAppEnvsRequest, ListAppEnvsResponse> genForListAppEnvs() {
         // basic
         HttpRequestDef.Builder<ListAppEnvsRequest, ListAppEnvsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppEnvsRequest.class, ListAppEnvsResponse.class)
@@ -535,25 +495,21 @@ public class ApmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppEnvsRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAppEnvsRequest::getAppId, ListAppEnvsRequest::setAppId));
         builder.<Long>withRequestField("x-business-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppEnvsRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ListAppEnvsRequest::getXBusinessId, ListAppEnvsRequest::setXBusinessId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForlistApps();
+    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForListApps();
 
-    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForlistApps() {
+    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForListApps() {
         // basic
         HttpRequestDef.Builder<ListAppsRequest, ListAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsRequest.class, ListAppsResponse.class)
@@ -566,25 +522,21 @@ public class ApmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsRequest::getBusinessId, (req, v) -> {
-                req.setBusinessId(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getBusinessId, ListAppsRequest::setBusinessId));
         builder.<Long>withRequestField("x-business-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getXBusinessId, ListAppsRequest::setXBusinessId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEnvTagsRequest, ListEnvTagsResponse> listEnvTags = genForlistEnvTags();
+    public static final HttpRequestDef<ListEnvTagsRequest, ListEnvTagsResponse> listEnvTags = genForListEnvTags();
 
-    private static HttpRequestDef<ListEnvTagsRequest, ListEnvTagsResponse> genForlistEnvTags() {
+    private static HttpRequestDef<ListEnvTagsRequest, ListEnvTagsResponse> genForListEnvTags() {
         // basic
         HttpRequestDef.Builder<ListEnvTagsRequest, ListEnvTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListEnvTagsRequest.class, ListEnvTagsResponse.class)
@@ -597,16 +549,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEnvTagsRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ListEnvTagsRequest::getXBusinessId, ListEnvTagsRequest::setXBusinessId));
         builder.<TagParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagParam.class),
-            f -> f.withMarshaller(ListEnvTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListEnvTagsRequest::getBody, ListEnvTagsRequest::setBody));
 
         // response
 
@@ -614,9 +562,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowBusinessDetailRequest, ShowBusinessDetailResponse> showBusinessDetail =
-        genForshowBusinessDetail();
+        genForShowBusinessDetail();
 
-    private static HttpRequestDef<ShowBusinessDetailRequest, ShowBusinessDetailResponse> genForshowBusinessDetail() {
+    private static HttpRequestDef<ShowBusinessDetailRequest, ShowBusinessDetailResponse> genForShowBusinessDetail() {
         // basic
         HttpRequestDef.Builder<ShowBusinessDetailRequest, ShowBusinessDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBusinessDetailRequest.class, ShowBusinessDetailResponse.class)
@@ -629,16 +577,13 @@ public class ApmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowBusinessDetailRequest::getBusinessId, (req, v) -> {
-                req.setBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowBusinessDetailRequest::getBusinessId, ShowBusinessDetailRequest::setBusinessId));
         builder.<Long>withRequestField("x-business-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowBusinessDetailRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowBusinessDetailRequest::getXBusinessId,
+                ShowBusinessDetailRequest::setXBusinessId));
 
         // response
 
@@ -646,9 +591,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse> showSubBusinessDetail =
-        genForshowSubBusinessDetail();
+        genForShowSubBusinessDetail();
 
-    private static HttpRequestDef<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse> genForshowSubBusinessDetail() {
+    private static HttpRequestDef<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse> genForShowSubBusinessDetail() {
         // basic
         HttpRequestDef.Builder<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSubBusinessDetailRequest.class, ShowSubBusinessDetailResponse.class)
@@ -661,16 +606,14 @@ public class ApmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowSubBusinessDetailRequest::getSubBusinessId, (req, v) -> {
-                req.setSubBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowSubBusinessDetailRequest::getSubBusinessId,
+                ShowSubBusinessDetailRequest::setSubBusinessId));
         builder.<Long>withRequestField("x-business-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowSubBusinessDetailRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowSubBusinessDetailRequest::getXBusinessId,
+                ShowSubBusinessDetailRequest::setXBusinessId));
 
         // response
 
@@ -678,9 +621,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowTopologyTreeRequest, ShowTopologyTreeResponse> showTopologyTree =
-        genForshowTopologyTree();
+        genForShowTopologyTree();
 
-    private static HttpRequestDef<ShowTopologyTreeRequest, ShowTopologyTreeResponse> genForshowTopologyTree() {
+    private static HttpRequestDef<ShowTopologyTreeRequest, ShowTopologyTreeResponse> genForShowTopologyTree() {
         // basic
         HttpRequestDef.Builder<ShowTopologyTreeRequest, ShowTopologyTreeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTopologyTreeRequest.class, ShowTopologyTreeResponse.class)
@@ -693,37 +636,27 @@ public class ApmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTopologyTreeRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ShowTopologyTreeRequest::getRegionId, ShowTopologyTreeRequest::setRegionId));
         builder.<Long>withRequestField("business_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowTopologyTreeRequest::getBusinessId, (req, v) -> {
-                req.setBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowTopologyTreeRequest::getBusinessId, ShowTopologyTreeRequest::setBusinessId));
         builder.<Long>withRequestField("env_tag_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowTopologyTreeRequest::getEnvTagId, (req, v) -> {
-                req.setEnvTagId(v);
-            }));
+            f -> f.withMarshaller(ShowTopologyTreeRequest::getEnvTagId, ShowTopologyTreeRequest::setEnvTagId));
         builder.<String>withRequestField("env_keyword",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTopologyTreeRequest::getEnvKeyword, (req, v) -> {
-                req.setEnvKeyword(v);
-            }));
+            f -> f.withMarshaller(ShowTopologyTreeRequest::getEnvKeyword, ShowTopologyTreeRequest::setEnvKeyword));
         builder.<Long>withRequestField("x-business-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowTopologyTreeRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowTopologyTreeRequest::getXBusinessId, ShowTopologyTreeRequest::setXBusinessId));
 
         // response
 
@@ -731,9 +664,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ListOpenRegionRequest, ListOpenRegionResponse> listOpenRegion =
-        genForlistOpenRegion();
+        genForListOpenRegion();
 
-    private static HttpRequestDef<ListOpenRegionRequest, ListOpenRegionResponse> genForlistOpenRegion() {
+    private static HttpRequestDef<ListOpenRegionRequest, ListOpenRegionResponse> genForListOpenRegion() {
         // basic
         HttpRequestDef.Builder<ListOpenRegionRequest, ListOpenRegionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOpenRegionRequest.class, ListOpenRegionResponse.class)
@@ -749,9 +682,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ListSupportedRegionRequest, ListSupportedRegionResponse> listSupportedRegion =
-        genForlistSupportedRegion();
+        genForListSupportedRegion();
 
-    private static HttpRequestDef<ListSupportedRegionRequest, ListSupportedRegionResponse> genForlistSupportedRegion() {
+    private static HttpRequestDef<ListSupportedRegionRequest, ListSupportedRegionResponse> genForListSupportedRegion() {
         // basic
         HttpRequestDef.Builder<ListSupportedRegionRequest, ListSupportedRegionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSupportedRegionRequest.class, ListSupportedRegionResponse.class)
@@ -767,9 +700,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse> searchBusinessTopology =
-        genForsearchBusinessTopology();
+        genForSearchBusinessTopology();
 
-    private static HttpRequestDef<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse> genForsearchBusinessTopology() {
+    private static HttpRequestDef<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse> genForSearchBusinessTopology() {
         // basic
         HttpRequestDef.Builder<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SearchBusinessTopologyRequest.class, SearchBusinessTopologyResponse.class)
@@ -782,16 +715,13 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchBusinessTopologyRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(SearchBusinessTopologyRequest::getXBusinessId,
+                SearchBusinessTopologyRequest::setXBusinessId));
         builder.<BusinessTopoRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BusinessTopoRequest.class),
-            f -> f.withMarshaller(SearchBusinessTopologyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchBusinessTopologyRequest::getBody, SearchBusinessTopologyRequest::setBody));
 
         // response
 
@@ -799,9 +729,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<SearchEnvTopologyRequest, SearchEnvTopologyResponse> searchEnvTopology =
-        genForsearchEnvTopology();
+        genForSearchEnvTopology();
 
-    private static HttpRequestDef<SearchEnvTopologyRequest, SearchEnvTopologyResponse> genForsearchEnvTopology() {
+    private static HttpRequestDef<SearchEnvTopologyRequest, SearchEnvTopologyResponse> genForSearchEnvTopology() {
         // basic
         HttpRequestDef.Builder<SearchEnvTopologyRequest, SearchEnvTopologyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SearchEnvTopologyRequest.class, SearchEnvTopologyResponse.class)
@@ -814,16 +744,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchEnvTopologyRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(SearchEnvTopologyRequest::getXBusinessId, SearchEnvTopologyRequest::setXBusinessId));
         builder.<EnvTopoRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvTopoRequest.class),
-            f -> f.withMarshaller(SearchEnvTopologyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchEnvTopologyRequest::getBody, SearchEnvTopologyRequest::setBody));
 
         // response
 
@@ -831,9 +757,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ListBusinessEnvRequest, ListBusinessEnvResponse> listBusinessEnv =
-        genForlistBusinessEnv();
+        genForListBusinessEnv();
 
-    private static HttpRequestDef<ListBusinessEnvRequest, ListBusinessEnvResponse> genForlistBusinessEnv() {
+    private static HttpRequestDef<ListBusinessEnvRequest, ListBusinessEnvResponse> genForListBusinessEnv() {
         // basic
         HttpRequestDef.Builder<ListBusinessEnvRequest, ListBusinessEnvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListBusinessEnvRequest.class, ListBusinessEnvResponse.class)
@@ -846,16 +772,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBusinessEnvRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ListBusinessEnvRequest::getXBusinessId, ListBusinessEnvRequest::setXBusinessId));
         builder.<BusinessEnvRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BusinessEnvRequest.class),
-            f -> f.withMarshaller(ListBusinessEnvRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListBusinessEnvRequest::getBody, ListBusinessEnvRequest::setBody));
 
         // response
 
@@ -863,9 +785,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<SearchTransactionRequest, SearchTransactionResponse> searchTransaction =
-        genForsearchTransaction();
+        genForSearchTransaction();
 
-    private static HttpRequestDef<SearchTransactionRequest, SearchTransactionResponse> genForsearchTransaction() {
+    private static HttpRequestDef<SearchTransactionRequest, SearchTransactionResponse> genForSearchTransaction() {
         // basic
         HttpRequestDef.Builder<SearchTransactionRequest, SearchTransactionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SearchTransactionRequest.class, SearchTransactionResponse.class)
@@ -878,16 +800,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchTransactionRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(SearchTransactionRequest::getXBusinessId, SearchTransactionRequest::setXBusinessId));
         builder.<TxSearchRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TxSearchRequest.class),
-            f -> f.withMarshaller(SearchTransactionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchTransactionRequest::getBody, SearchTransactionRequest::setBody));
 
         // response
 
@@ -895,9 +813,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<SearchTransactionConfigRequest, SearchTransactionConfigResponse> searchTransactionConfig =
-        genForsearchTransactionConfig();
+        genForSearchTransactionConfig();
 
-    private static HttpRequestDef<SearchTransactionConfigRequest, SearchTransactionConfigResponse> genForsearchTransactionConfig() {
+    private static HttpRequestDef<SearchTransactionConfigRequest, SearchTransactionConfigResponse> genForSearchTransactionConfig() {
         // basic
         HttpRequestDef.Builder<SearchTransactionConfigRequest, SearchTransactionConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SearchTransactionConfigRequest.class, SearchTransactionConfigResponse.class)
@@ -910,16 +828,13 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SearchTransactionConfigRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(SearchTransactionConfigRequest::getXBusinessId,
+                SearchTransactionConfigRequest::setXBusinessId));
         builder.<TransactionConfigSearchRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TransactionConfigSearchRequest.class),
-            f -> f.withMarshaller(SearchTransactionConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchTransactionConfigRequest::getBody, SearchTransactionConfigRequest::setBody));
 
         // response
 
@@ -927,9 +842,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowTransactionDetailRequest, ShowTransactionDetailResponse> showTransactionDetail =
-        genForshowTransactionDetail();
+        genForShowTransactionDetail();
 
-    private static HttpRequestDef<ShowTransactionDetailRequest, ShowTransactionDetailResponse> genForshowTransactionDetail() {
+    private static HttpRequestDef<ShowTransactionDetailRequest, ShowTransactionDetailResponse> genForShowTransactionDetail() {
         // basic
         HttpRequestDef.Builder<ShowTransactionDetailRequest, ShowTransactionDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowTransactionDetailRequest.class, ShowTransactionDetailResponse.class)
@@ -942,16 +857,13 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowTransactionDetailRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowTransactionDetailRequest::getXBusinessId,
+                ShowTransactionDetailRequest::setXBusinessId));
         builder.<TxDetailRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TxDetailRequest.class),
-            f -> f.withMarshaller(ShowTransactionDetailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowTransactionDetailRequest::getBody, ShowTransactionDetailRequest::setBody));
 
         // response
 
@@ -959,9 +871,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ListEnvInstancesRequest, ListEnvInstancesResponse> listEnvInstances =
-        genForlistEnvInstances();
+        genForListEnvInstances();
 
-    private static HttpRequestDef<ListEnvInstancesRequest, ListEnvInstancesResponse> genForlistEnvInstances() {
+    private static HttpRequestDef<ListEnvInstancesRequest, ListEnvInstancesResponse> genForListEnvInstances() {
         // basic
         HttpRequestDef.Builder<ListEnvInstancesRequest, ListEnvInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListEnvInstancesRequest.class, ListEnvInstancesResponse.class)
@@ -974,16 +886,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEnvInstancesRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ListEnvInstancesRequest::getXBusinessId, ListEnvInstancesRequest::setXBusinessId));
         builder.<InstanceSearchParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceSearchParam.class),
-            f -> f.withMarshaller(ListEnvInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListEnvInstancesRequest::getBody, ListEnvInstancesRequest::setBody));
 
         // response
 
@@ -991,9 +899,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowClobDetailRequest, ShowClobDetailResponse> showClobDetail =
-        genForshowClobDetail();
+        genForShowClobDetail();
 
-    private static HttpRequestDef<ShowClobDetailRequest, ShowClobDetailResponse> genForshowClobDetail() {
+    private static HttpRequestDef<ShowClobDetailRequest, ShowClobDetailResponse> genForShowClobDetail() {
         // basic
         HttpRequestDef.Builder<ShowClobDetailRequest, ShowClobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowClobDetailRequest.class, ShowClobDetailResponse.class)
@@ -1006,16 +914,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowClobDetailRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowClobDetailRequest::getXBusinessId, ShowClobDetailRequest::setXBusinessId));
         builder.<GetClobDetailParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetClobDetailParam.class),
-            f -> f.withMarshaller(ShowClobDetailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowClobDetailRequest::getBody, ShowClobDetailRequest::setBody));
 
         // response
 
@@ -1023,9 +927,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowEnvMonitorItemsRequest, ShowEnvMonitorItemsResponse> showEnvMonitorItems =
-        genForshowEnvMonitorItems();
+        genForShowEnvMonitorItems();
 
-    private static HttpRequestDef<ShowEnvMonitorItemsRequest, ShowEnvMonitorItemsResponse> genForshowEnvMonitorItems() {
+    private static HttpRequestDef<ShowEnvMonitorItemsRequest, ShowEnvMonitorItemsResponse> genForShowEnvMonitorItems() {
         // basic
         HttpRequestDef.Builder<ShowEnvMonitorItemsRequest, ShowEnvMonitorItemsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEnvMonitorItemsRequest.class, ShowEnvMonitorItemsResponse.class)
@@ -1038,16 +942,13 @@ public class ApmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowEnvMonitorItemsRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ShowEnvMonitorItemsRequest::getEnvId, ShowEnvMonitorItemsRequest::setEnvId));
         builder.<Long>withRequestField("x-business-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowEnvMonitorItemsRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowEnvMonitorItemsRequest::getXBusinessId,
+                ShowEnvMonitorItemsRequest::setXBusinessId));
 
         // response
 
@@ -1055,9 +956,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowEventDetailRequest, ShowEventDetailResponse> showEventDetail =
-        genForshowEventDetail();
+        genForShowEventDetail();
 
-    private static HttpRequestDef<ShowEventDetailRequest, ShowEventDetailResponse> genForshowEventDetail() {
+    private static HttpRequestDef<ShowEventDetailRequest, ShowEventDetailResponse> genForShowEventDetail() {
         // basic
         HttpRequestDef.Builder<ShowEventDetailRequest, ShowEventDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEventDetailRequest.class, ShowEventDetailResponse.class)
@@ -1070,30 +971,22 @@ public class ApmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEventDetailRequest::getTraceId, (req, v) -> {
-                req.setTraceId(v);
-            }));
+            f -> f.withMarshaller(ShowEventDetailRequest::getTraceId, ShowEventDetailRequest::setTraceId));
         builder.<String>withRequestField("span_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEventDetailRequest::getSpanId, (req, v) -> {
-                req.setSpanId(v);
-            }));
+            f -> f.withMarshaller(ShowEventDetailRequest::getSpanId, ShowEventDetailRequest::setSpanId));
         builder.<String>withRequestField("event_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEventDetailRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(ShowEventDetailRequest::getEventId, ShowEventDetailRequest::setEventId));
         builder.<Long>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowEventDetailRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ShowEventDetailRequest::getEnvId, ShowEventDetailRequest::setEnvId));
 
         // response
 
@@ -1101,9 +994,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowMonitorItemViewConfigRequest, ShowMonitorItemViewConfigResponse> showMonitorItemViewConfig =
-        genForshowMonitorItemViewConfig();
+        genForShowMonitorItemViewConfig();
 
-    private static HttpRequestDef<ShowMonitorItemViewConfigRequest, ShowMonitorItemViewConfigResponse> genForshowMonitorItemViewConfig() {
+    private static HttpRequestDef<ShowMonitorItemViewConfigRequest, ShowMonitorItemViewConfigResponse> genForShowMonitorItemViewConfig() {
         // basic
         HttpRequestDef.Builder<ShowMonitorItemViewConfigRequest, ShowMonitorItemViewConfigResponse> builder =
             HttpRequestDef
@@ -1119,32 +1012,29 @@ public class ApmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowMonitorItemViewConfigRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ShowMonitorItemViewConfigRequest::getEnvId,
+                ShowMonitorItemViewConfigRequest::setEnvId));
         builder.<Long>withRequestField("collector_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowMonitorItemViewConfigRequest::getCollectorId, (req, v) -> {
-                req.setCollectorId(v);
-            }));
+            f -> f.withMarshaller(ShowMonitorItemViewConfigRequest::getCollectorId,
+                ShowMonitorItemViewConfigRequest::setCollectorId));
         builder.<Long>withRequestField("x-business-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowMonitorItemViewConfigRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowMonitorItemViewConfigRequest::getXBusinessId,
+                ShowMonitorItemViewConfigRequest::setXBusinessId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRawTableRequest, ShowRawTableResponse> showRawTable = genForshowRawTable();
+    public static final HttpRequestDef<ShowRawTableRequest, ShowRawTableResponse> showRawTable = genForShowRawTable();
 
-    private static HttpRequestDef<ShowRawTableRequest, ShowRawTableResponse> genForshowRawTable() {
+    private static HttpRequestDef<ShowRawTableRequest, ShowRawTableResponse> genForShowRawTable() {
         // basic
         HttpRequestDef.Builder<ShowRawTableRequest, ShowRawTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowRawTableRequest.class, ShowRawTableResponse.class)
@@ -1157,16 +1047,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowRawTableRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowRawTableRequest::getXBusinessId, ShowRawTableRequest::setXBusinessId));
         builder.<RawTableParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RawTableParam.class),
-            f -> f.withMarshaller(ShowRawTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowRawTableRequest::getBody, ShowRawTableRequest::setBody));
 
         // response
 
@@ -1174,9 +1060,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowSpanSearchRequest, ShowSpanSearchResponse> showSpanSearch =
-        genForshowSpanSearch();
+        genForShowSpanSearch();
 
-    private static HttpRequestDef<ShowSpanSearchRequest, ShowSpanSearchResponse> genForshowSpanSearch() {
+    private static HttpRequestDef<ShowSpanSearchRequest, ShowSpanSearchResponse> genForShowSpanSearch() {
         // basic
         HttpRequestDef.Builder<ShowSpanSearchRequest, ShowSpanSearchResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowSpanSearchRequest.class, ShowSpanSearchResponse.class)
@@ -1189,25 +1075,21 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowSpanSearchRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowSpanSearchRequest::getXBusinessId, ShowSpanSearchRequest::setXBusinessId));
         builder.<TraceSearchParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TraceSearchParam.class),
-            f -> f.withMarshaller(ShowSpanSearchRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowSpanSearchRequest::getBody, ShowSpanSearchRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSumTableRequest, ShowSumTableResponse> showSumTable = genForshowSumTable();
+    public static final HttpRequestDef<ShowSumTableRequest, ShowSumTableResponse> showSumTable = genForShowSumTable();
 
-    private static HttpRequestDef<ShowSumTableRequest, ShowSumTableResponse> genForshowSumTable() {
+    private static HttpRequestDef<ShowSumTableRequest, ShowSumTableResponse> genForShowSumTable() {
         // basic
         HttpRequestDef.Builder<ShowSumTableRequest, ShowSumTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowSumTableRequest.class, ShowSumTableResponse.class)
@@ -1220,25 +1102,21 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowSumTableRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowSumTableRequest::getXBusinessId, ShowSumTableRequest::setXBusinessId));
         builder.<SumTableParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SumTableParam.class),
-            f -> f.withMarshaller(ShowSumTableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowSumTableRequest::getBody, ShowSumTableRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTopologyRequest, ShowTopologyResponse> showTopology = genForshowTopology();
+    public static final HttpRequestDef<ShowTopologyRequest, ShowTopologyResponse> showTopology = genForShowTopology();
 
-    private static HttpRequestDef<ShowTopologyRequest, ShowTopologyResponse> genForshowTopology() {
+    private static HttpRequestDef<ShowTopologyRequest, ShowTopologyResponse> genForShowTopology() {
         // basic
         HttpRequestDef.Builder<ShowTopologyRequest, ShowTopologyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTopologyRequest.class, ShowTopologyResponse.class)
@@ -1251,9 +1129,7 @@ public class ApmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTopologyRequest::getTraceId, (req, v) -> {
-                req.setTraceId(v);
-            }));
+            f -> f.withMarshaller(ShowTopologyRequest::getTraceId, ShowTopologyRequest::setTraceId));
 
         // response
 
@@ -1261,9 +1137,9 @@ public class ApmMeta {
     }
 
     public static final HttpRequestDef<ShowTraceEventsRequest, ShowTraceEventsResponse> showTraceEvents =
-        genForshowTraceEvents();
+        genForShowTraceEvents();
 
-    private static HttpRequestDef<ShowTraceEventsRequest, ShowTraceEventsResponse> genForshowTraceEvents() {
+    private static HttpRequestDef<ShowTraceEventsRequest, ShowTraceEventsResponse> genForShowTraceEvents() {
         // basic
         HttpRequestDef.Builder<ShowTraceEventsRequest, ShowTraceEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTraceEventsRequest.class, ShowTraceEventsResponse.class)
@@ -1276,18 +1152,16 @@ public class ApmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTraceEventsRequest::getTraceId, (req, v) -> {
-                req.setTraceId(v);
-            }));
+            f -> f.withMarshaller(ShowTraceEventsRequest::getTraceId, ShowTraceEventsRequest::setTraceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTrendRequest, ShowTrendResponse> showTrend = genForshowTrend();
+    public static final HttpRequestDef<ShowTrendRequest, ShowTrendResponse> showTrend = genForShowTrend();
 
-    private static HttpRequestDef<ShowTrendRequest, ShowTrendResponse> genForshowTrend() {
+    private static HttpRequestDef<ShowTrendRequest, ShowTrendResponse> genForShowTrend() {
         // basic
         HttpRequestDef.Builder<ShowTrendRequest, ShowTrendResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowTrendRequest.class, ShowTrendResponse.class)
@@ -1300,16 +1174,12 @@ public class ApmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowTrendRequest::getXBusinessId, (req, v) -> {
-                req.setXBusinessId(v);
-            }));
+            f -> f.withMarshaller(ShowTrendRequest::getXBusinessId, ShowTrendRequest::setXBusinessId));
         builder.<TrendParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TrendParam.class),
-            f -> f.withMarshaller(ShowTrendRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowTrendRequest::getBody, ShowTrendRequest::setBody));
 
         // response
 

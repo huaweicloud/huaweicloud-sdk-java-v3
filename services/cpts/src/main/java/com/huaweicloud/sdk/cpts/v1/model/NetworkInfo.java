@@ -21,7 +21,7 @@ public class NetworkInfo {
     }
 
     /**
-     * network_type
+     * 网络类型（固定值：internet）
      * @return networkType
      */
     public String getNetworkType() {

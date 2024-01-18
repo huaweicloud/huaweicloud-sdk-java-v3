@@ -185,6 +185,11 @@ public class VolumeConfigurationDataVolume {
     private ResourceSubTypeEnum resourceSubType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "umask")
+
+    private String umask;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_info")
 
     private List<VolumeConfigurationMountInfo> mountInfo = null;
@@ -257,6 +262,23 @@ public class VolumeConfigurationDataVolume {
         this.resourceSubType = resourceSubType;
     }
 
+    public VolumeConfigurationDataVolume withUmask(String umask) {
+        this.umask = umask;
+        return this;
+    }
+
+    /**
+     * 设置目录或文件缺省权限，默认值0027，sfs3.0类型的云存储不支持配置此参数。
+     * @return umask
+     */
+    public String getUmask() {
+        return umask;
+    }
+
+    public void setUmask(String umask) {
+        this.umask = umask;
+    }
+
     public VolumeConfigurationDataVolume withMountInfo(List<VolumeConfigurationMountInfo> mountInfo) {
         this.mountInfo = mountInfo;
         return this;
@@ -301,13 +323,13 @@ public class VolumeConfigurationDataVolume {
         VolumeConfigurationDataVolume that = (VolumeConfigurationDataVolume) obj;
         return Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.resourceSubType, that.resourceSubType)
+            && Objects.equals(this.resourceSubType, that.resourceSubType) && Objects.equals(this.umask, that.umask)
             && Objects.equals(this.mountInfo, that.mountInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(volumeId, resourceName, resourceType, resourceSubType, mountInfo);
+        return Objects.hash(volumeId, resourceName, resourceType, resourceSubType, umask, mountInfo);
     }
 
     @Override
@@ -318,6 +340,7 @@ public class VolumeConfigurationDataVolume {
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceSubType: ").append(toIndentedString(resourceSubType)).append("\n");
+        sb.append("    umask: ").append(toIndentedString(umask)).append("\n");
         sb.append("    mountInfo: ").append(toIndentedString(mountInfo)).append("\n");
         sb.append("}");
         return sb.toString();

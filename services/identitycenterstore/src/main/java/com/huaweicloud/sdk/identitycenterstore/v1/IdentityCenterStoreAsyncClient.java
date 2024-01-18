@@ -29,7 +29,7 @@ public class IdentityCenterStoreAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersRequest 请求对象
+     * @param request ListUsersRequest 请求对象
      * @return CompletableFuture<ListUsersResponse>
      */
     public CompletableFuture<ListUsersResponse> listUsersAsync(ListUsersRequest request) {
@@ -43,12 +43,11 @@ public class IdentityCenterStoreAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersRequest 请求对象
+     * @param request ListUsersRequest 请求对象
      * @return AsyncInvoker<ListUsersRequest, ListUsersResponse>
      */
     public AsyncInvoker<ListUsersRequest, ListUsersResponse> listUsersAsyncInvoker(ListUsersRequest request) {
-        return new AsyncInvoker<ListUsersRequest, ListUsersResponse>(request, IdentityCenterStoreMeta.listUsers,
-            hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterStoreMeta.listUsers, hcClient);
     }
 
 }

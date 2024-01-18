@@ -15,18 +15,13 @@ public class ShowManagedCoreAccountRequest {
 
     private String accountType;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-
-    private String xSecurityToken;
-
     public ShowManagedCoreAccountRequest withAccountType(String accountType) {
         this.accountType = accountType;
         return this;
     }
 
     /**
-     * 账号类型。包括LOGGING，SECURITY和PRIMARY账号。
+     * 纳管账号类型。类型包括LOGGING，SECURITY和PRIMARY。
      * @return accountType
      */
     public String getAccountType() {
@@ -35,25 +30,6 @@ public class ShowManagedCoreAccountRequest {
 
     public void setAccountType(String accountType) {
         this.accountType = accountType;
-    }
-
-    public ShowManagedCoreAccountRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-        return this;
-    }
-
-    /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
-    }
-
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
     }
 
     @Override
@@ -65,13 +41,12 @@ public class ShowManagedCoreAccountRequest {
             return false;
         }
         ShowManagedCoreAccountRequest that = (ShowManagedCoreAccountRequest) obj;
-        return Objects.equals(this.accountType, that.accountType)
-            && Objects.equals(this.xSecurityToken, that.xSecurityToken);
+        return Objects.equals(this.accountType, that.accountType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountType, xSecurityToken);
+        return Objects.hash(accountType);
     }
 
     @Override
@@ -79,7 +54,6 @@ public class ShowManagedCoreAccountRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowManagedCoreAccountRequest {\n");
         sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("}");
         return sb.toString();
     }

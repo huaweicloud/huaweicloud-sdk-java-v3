@@ -78,9 +78,9 @@ import java.util.List;
 public class CodeArtsArtifactMeta {
 
     public static final HttpRequestDef<BatchDeleteTrashesRequest, BatchDeleteTrashesResponse> batchDeleteTrashes =
-        genForbatchDeleteTrashes();
+        genForBatchDeleteTrashes();
 
-    private static HttpRequestDef<BatchDeleteTrashesRequest, BatchDeleteTrashesResponse> genForbatchDeleteTrashes() {
+    private static HttpRequestDef<BatchDeleteTrashesRequest, BatchDeleteTrashesResponse> genForBatchDeleteTrashes() {
         // basic
         HttpRequestDef.Builder<BatchDeleteTrashesRequest, BatchDeleteTrashesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteTrashesRequest.class, BatchDeleteTrashesResponse.class)
@@ -93,9 +93,8 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchDeleteTrashesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(TrashArtifactModelForDelete.class));
+            f -> f.withMarshaller(BatchDeleteTrashesRequest::getBody, BatchDeleteTrashesRequest::setBody)
+                .withInnerContainerType(TrashArtifactModelForDelete.class));
 
         // response
 
@@ -103,9 +102,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<BatchRestoreRepoRequest, BatchRestoreRepoResponse> batchRestoreRepo =
-        genForbatchRestoreRepo();
+        genForBatchRestoreRepo();
 
-    private static HttpRequestDef<BatchRestoreRepoRequest, BatchRestoreRepoResponse> genForbatchRestoreRepo() {
+    private static HttpRequestDef<BatchRestoreRepoRequest, BatchRestoreRepoResponse> genForBatchRestoreRepo() {
         // basic
         HttpRequestDef.Builder<BatchRestoreRepoRequest, BatchRestoreRepoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchRestoreRepoRequest.class, BatchRestoreRepoResponse.class)
@@ -118,9 +117,8 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchRestoreRepoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(IDETrashArtifactModel.class));
+            f -> f.withMarshaller(BatchRestoreRepoRequest::getBody, BatchRestoreRepoRequest::setBody)
+                .withInnerContainerType(IDETrashArtifactModel.class));
 
         // response
 
@@ -128,9 +126,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<CreateArtifactoryRequest, CreateArtifactoryResponse> createArtifactory =
-        genForcreateArtifactory();
+        genForCreateArtifactory();
 
-    private static HttpRequestDef<CreateArtifactoryRequest, CreateArtifactoryResponse> genForcreateArtifactory() {
+    private static HttpRequestDef<CreateArtifactoryRequest, CreateArtifactoryResponse> genForCreateArtifactory() {
         // basic
         HttpRequestDef.Builder<CreateArtifactoryRequest, CreateArtifactoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateArtifactoryRequest.class, CreateArtifactoryResponse.class)
@@ -143,9 +141,7 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNotMavenRepoDO.class),
-            f -> f.withMarshaller(CreateArtifactoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateArtifactoryRequest::getBody, CreateArtifactoryRequest::setBody));
 
         // response
 
@@ -153,9 +149,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<CreateAttentionRequest, CreateAttentionResponse> createAttention =
-        genForcreateAttention();
+        genForCreateAttention();
 
-    private static HttpRequestDef<CreateAttentionRequest, CreateAttentionResponse> genForcreateAttention() {
+    private static HttpRequestDef<CreateAttentionRequest, CreateAttentionResponse> genForCreateAttention() {
         // basic
         HttpRequestDef.Builder<CreateAttentionRequest, CreateAttentionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAttentionRequest.class, CreateAttentionResponse.class)
@@ -168,9 +164,7 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttentionDO.class),
-            f -> f.withMarshaller(CreateAttentionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAttentionRequest::getBody, CreateAttentionRequest::setBody));
 
         // response
 
@@ -178,9 +172,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<CreateDockerRepositoriesRequest, CreateDockerRepositoriesResponse> createDockerRepositories =
-        genForcreateDockerRepositories();
+        genForCreateDockerRepositories();
 
-    private static HttpRequestDef<CreateDockerRepositoriesRequest, CreateDockerRepositoriesResponse> genForcreateDockerRepositories() {
+    private static HttpRequestDef<CreateDockerRepositoriesRequest, CreateDockerRepositoriesResponse> genForCreateDockerRepositories() {
         // basic
         HttpRequestDef.Builder<CreateDockerRepositoriesRequest, CreateDockerRepositoriesResponse> builder =
             HttpRequestDef
@@ -194,9 +188,7 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDockerRepositoryDO.class),
-            f -> f.withMarshaller(CreateDockerRepositoriesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDockerRepositoriesRequest::getBody, CreateDockerRepositoriesRequest::setBody));
 
         // response
 
@@ -204,9 +196,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<CreateMavenRepoRequest, CreateMavenRepoResponse> createMavenRepo =
-        genForcreateMavenRepo();
+        genForCreateMavenRepo();
 
-    private static HttpRequestDef<CreateMavenRepoRequest, CreateMavenRepoResponse> genForcreateMavenRepo() {
+    private static HttpRequestDef<CreateMavenRepoRequest, CreateMavenRepoResponse> genForCreateMavenRepo() {
         // basic
         HttpRequestDef.Builder<CreateMavenRepoRequest, CreateMavenRepoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMavenRepoRequest.class, CreateMavenRepoResponse.class)
@@ -219,9 +211,7 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IDERepositoryDO.class),
-            f -> f.withMarshaller(CreateMavenRepoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMavenRepoRequest::getBody, CreateMavenRepoRequest::setBody));
 
         // response
 
@@ -229,9 +219,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<CreateProjectRelatedRepositoryRequest, CreateProjectRelatedRepositoryResponse> createProjectRelatedRepository =
-        genForcreateProjectRelatedRepository();
+        genForCreateProjectRelatedRepository();
 
-    private static HttpRequestDef<CreateProjectRelatedRepositoryRequest, CreateProjectRelatedRepositoryResponse> genForcreateProjectRelatedRepository() {
+    private static HttpRequestDef<CreateProjectRelatedRepositoryRequest, CreateProjectRelatedRepositoryResponse> genForCreateProjectRelatedRepository() {
         // basic
         HttpRequestDef.Builder<CreateProjectRelatedRepositoryRequest, CreateProjectRelatedRepositoryResponse> builder =
             HttpRequestDef
@@ -247,9 +237,8 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(IDEPrivilageProjectInfo.class),
-            f -> f.withMarshaller(CreateProjectRelatedRepositoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProjectRelatedRepositoryRequest::getBody,
+                CreateProjectRelatedRepositoryRequest::setBody));
 
         // response
 
@@ -257,9 +246,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<DeleteArtifactFileRequest, DeleteArtifactFileResponse> deleteArtifactFile =
-        genFordeleteArtifactFile();
+        genForDeleteArtifactFile();
 
-    private static HttpRequestDef<DeleteArtifactFileRequest, DeleteArtifactFileResponse> genFordeleteArtifactFile() {
+    private static HttpRequestDef<DeleteArtifactFileRequest, DeleteArtifactFileResponse> genForDeleteArtifactFile() {
         // basic
         HttpRequestDef.Builder<DeleteArtifactFileRequest, DeleteArtifactFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteArtifactFileRequest.class, DeleteArtifactFileResponse.class)
@@ -272,9 +261,7 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PathMap.class),
-            f -> f.withMarshaller(DeleteArtifactFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteArtifactFileRequest::getBody, DeleteArtifactFileRequest::setBody));
 
         // response
 
@@ -282,9 +269,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<DeleteRepositoryRequest, DeleteRepositoryResponse> deleteRepository =
-        genFordeleteRepository();
+        genForDeleteRepository();
 
-    private static HttpRequestDef<DeleteRepositoryRequest, DeleteRepositoryResponse> genFordeleteRepository() {
+    private static HttpRequestDef<DeleteRepositoryRequest, DeleteRepositoryResponse> genForDeleteRepository() {
         // basic
         HttpRequestDef.Builder<DeleteRepositoryRequest, DeleteRepositoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRepositoryRequest.class, DeleteRepositoryResponse.class)
@@ -297,9 +284,7 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IDERepoRevisionModel.class),
-            f -> f.withMarshaller(DeleteRepositoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteRepositoryRequest::getBody, DeleteRepositoryRequest::setBody));
 
         // response
 
@@ -307,9 +292,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ListAllRepositoriesRequest, ListAllRepositoriesResponse> listAllRepositories =
-        genForlistAllRepositories();
+        genForListAllRepositories();
 
-    private static HttpRequestDef<ListAllRepositoriesRequest, ListAllRepositoriesResponse> genForlistAllRepositories() {
+    private static HttpRequestDef<ListAllRepositoriesRequest, ListAllRepositoriesResponse> genForListAllRepositories() {
         // basic
         HttpRequestDef.Builder<ListAllRepositoriesRequest, ListAllRepositoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllRepositoriesRequest.class, ListAllRepositoriesResponse.class)
@@ -322,93 +307,70 @@ public class CodeArtsArtifactMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getTenantId, ListAllRepositoriesRequest::setTenantId));
         builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getProjectId, ListAllRepositoriesRequest::setProjectId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getGroupId, ListAllRepositoriesRequest::setGroupId));
         builder.<Integer>withRequestField("page_no",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getPageNo, ListAllRepositoriesRequest::setPageNo));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getPageSize, ListAllRepositoriesRequest::setPageSize));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getSort, ListAllRepositoriesRequest::setSort));
         builder.<String>withRequestField("qname",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getQname, (req, v) -> {
-                req.setQname(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getQname, ListAllRepositoriesRequest::setQname));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getType, ListAllRepositoriesRequest::setType));
         builder.<String>withRequestField("format",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getFormat, (req, v) -> {
-                req.setFormat(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getFormat, ListAllRepositoriesRequest::setFormat));
         builder.<String>withRequestField("format_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getFormatList, (req, v) -> {
-                req.setFormatList(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getFormatList,
+                ListAllRepositoriesRequest::setFormatList));
         builder.<Boolean>withRequestField("is_recycle_bin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getIsRecycleBin, (req, v) -> {
-                req.setIsRecycleBin(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getIsRecycleBin,
+                ListAllRepositoriesRequest::setIsRecycleBin));
         builder.<Boolean>withRequestField("is_need_paging",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getIsNeedPaging, (req, v) -> {
-                req.setIsNeedPaging(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getIsNeedPaging,
+                ListAllRepositoriesRequest::setIsNeedPaging));
         builder.<Boolean>withRequestField("in_project",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAllRepositoriesRequest::getInProject, (req, v) -> {
-                req.setInProject(v);
-            }));
+            f -> f.withMarshaller(ListAllRepositoriesRequest::getInProject, ListAllRepositoriesRequest::setInProject));
 
         // response
 
@@ -416,9 +378,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ListArtifactoryComponentRequest, ListArtifactoryComponentResponse> listArtifactoryComponent =
-        genForlistArtifactoryComponent();
+        genForListArtifactoryComponent();
 
-    private static HttpRequestDef<ListArtifactoryComponentRequest, ListArtifactoryComponentResponse> genForlistArtifactoryComponent() {
+    private static HttpRequestDef<ListArtifactoryComponentRequest, ListArtifactoryComponentResponse> genForListArtifactoryComponent() {
         // basic
         HttpRequestDef.Builder<ListArtifactoryComponentRequest, ListArtifactoryComponentResponse> builder =
             HttpRequestDef
@@ -432,44 +394,37 @@ public class CodeArtsArtifactMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryComponentRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryComponentRequest::getTenantId,
+                ListArtifactoryComponentRequest::setTenantId));
         builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryComponentRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryComponentRequest::getProjectId,
+                ListArtifactoryComponentRequest::setProjectId));
         builder.<String>withRequestField("repo_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryComponentRequest::getRepoName, (req, v) -> {
-                req.setRepoName(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryComponentRequest::getRepoName,
+                ListArtifactoryComponentRequest::setRepoName));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryComponentRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryComponentRequest::getPath, ListArtifactoryComponentRequest::setPath));
         builder.<String>withRequestField("format",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryComponentRequest::getFormat, (req, v) -> {
-                req.setFormat(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryComponentRequest::getFormat,
+                ListArtifactoryComponentRequest::setFormat));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryComponentRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryComponentRequest::getInstanceId,
+                ListArtifactoryComponentRequest::setInstanceId));
 
         // response
 
@@ -477,9 +432,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ListArtifactoryStorageStatisticRequest, ListArtifactoryStorageStatisticResponse> listArtifactoryStorageStatistic =
-        genForlistArtifactoryStorageStatistic();
+        genForListArtifactoryStorageStatistic();
 
-    private static HttpRequestDef<ListArtifactoryStorageStatisticRequest, ListArtifactoryStorageStatisticResponse> genForlistArtifactoryStorageStatistic() {
+    private static HttpRequestDef<ListArtifactoryStorageStatisticRequest, ListArtifactoryStorageStatisticResponse> genForListArtifactoryStorageStatistic() {
         // basic
         HttpRequestDef.Builder<ListArtifactoryStorageStatisticRequest, ListArtifactoryStorageStatisticResponse> builder =
             HttpRequestDef
@@ -495,44 +450,38 @@ public class CodeArtsArtifactMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getTenantId,
+                ListArtifactoryStorageStatisticRequest::setTenantId));
         builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getProjectId,
+                ListArtifactoryStorageStatisticRequest::setProjectId));
         builder.<String>withRequestField("repo",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getRepo, (req, v) -> {
-                req.setRepo(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getRepo,
+                ListArtifactoryStorageStatisticRequest::setRepo));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getStartTime,
+                ListArtifactoryStorageStatisticRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getEndTime,
+                ListArtifactoryStorageStatisticRequest::setEndTime));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListArtifactoryStorageStatisticRequest::getInstanceId,
+                ListArtifactoryStorageStatisticRequest::setInstanceId));
 
         // response
 
@@ -540,9 +489,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ListAttentionsRequest, ListAttentionsResponse> listAttentions =
-        genForlistAttentions();
+        genForListAttentions();
 
-    private static HttpRequestDef<ListAttentionsRequest, ListAttentionsResponse> genForlistAttentions() {
+    private static HttpRequestDef<ListAttentionsRequest, ListAttentionsResponse> genForListAttentions() {
         // basic
         HttpRequestDef.Builder<ListAttentionsRequest, ListAttentionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAttentionsRequest.class, ListAttentionsResponse.class)
@@ -555,23 +504,17 @@ public class CodeArtsArtifactMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAttentionsRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(ListAttentionsRequest::getPageNo, ListAttentionsRequest::setPageNo));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAttentionsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListAttentionsRequest::getPageSize, ListAttentionsRequest::setPageSize));
         builder.<String>withRequestField("project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttentionsRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAttentionsRequest::getProjectId, ListAttentionsRequest::setProjectId));
 
         // response
 
@@ -579,9 +522,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ModifyRepositoryRequest, ModifyRepositoryResponse> modifyRepository =
-        genFormodifyRepository();
+        genForModifyRepository();
 
-    private static HttpRequestDef<ModifyRepositoryRequest, ModifyRepositoryResponse> genFormodifyRepository() {
+    private static HttpRequestDef<ModifyRepositoryRequest, ModifyRepositoryResponse> genForModifyRepository() {
         // basic
         HttpRequestDef.Builder<ModifyRepositoryRequest, ModifyRepositoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyRepositoryRequest.class, ModifyRepositoryResponse.class)
@@ -594,16 +537,12 @@ public class CodeArtsArtifactMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyRepositoryRequest::getTabId, (req, v) -> {
-                req.setTabId(v);
-            }));
+            f -> f.withMarshaller(ModifyRepositoryRequest::getTabId, ModifyRepositoryRequest::setTabId));
         builder.<IDERepositoryPair>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IDERepositoryPair.class),
-            f -> f.withMarshaller(ModifyRepositoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyRepositoryRequest::getBody, ModifyRepositoryRequest::setBody));
 
         // response
 
@@ -611,9 +550,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ResetUserPasswordRequest, ResetUserPasswordResponse> resetUserPassword =
-        genForresetUserPassword();
+        genForResetUserPassword();
 
-    private static HttpRequestDef<ResetUserPasswordRequest, ResetUserPasswordResponse> genForresetUserPassword() {
+    private static HttpRequestDef<ResetUserPasswordRequest, ResetUserPasswordResponse> genForResetUserPassword() {
         // basic
         HttpRequestDef.Builder<ResetUserPasswordRequest, ResetUserPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetUserPasswordRequest.class, ResetUserPasswordResponse.class)
@@ -629,9 +568,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<SearchArtifactsRequest, SearchArtifactsResponse> searchArtifacts =
-        genForsearchArtifacts();
+        genForSearchArtifacts();
 
-    private static HttpRequestDef<SearchArtifactsRequest, SearchArtifactsResponse> genForsearchArtifacts() {
+    private static HttpRequestDef<SearchArtifactsRequest, SearchArtifactsResponse> genForSearchArtifacts() {
         // basic
         HttpRequestDef.Builder<SearchArtifactsRequest, SearchArtifactsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SearchArtifactsRequest.class, SearchArtifactsResponse.class)
@@ -644,9 +583,7 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IDERepoSearchDO.class),
-            f -> f.withMarshaller(SearchArtifactsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchArtifactsRequest::getBody, SearchArtifactsRequest::setBody));
 
         // response
 
@@ -654,9 +591,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<SearchByChecksumRequest, SearchByChecksumResponse> searchByChecksum =
-        genForsearchByChecksum();
+        genForSearchByChecksum();
 
-    private static HttpRequestDef<SearchByChecksumRequest, SearchByChecksumResponse> genForsearchByChecksum() {
+    private static HttpRequestDef<SearchByChecksumRequest, SearchByChecksumResponse> genForSearchByChecksum() {
         // basic
         HttpRequestDef.Builder<SearchByChecksumRequest, SearchByChecksumResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchByChecksumRequest.class, SearchByChecksumResponse.class)
@@ -669,53 +606,41 @@ public class CodeArtsArtifactMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchByChecksumRequest::getChecksum, (req, v) -> {
-                req.setChecksum(v);
-            }));
+            f -> f.withMarshaller(SearchByChecksumRequest::getChecksum, SearchByChecksumRequest::setChecksum));
         builder.<Integer>withRequestField("page_no",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchByChecksumRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(SearchByChecksumRequest::getPageNo, SearchByChecksumRequest::setPageNo));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SearchByChecksumRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(SearchByChecksumRequest::getPageSize, SearchByChecksumRequest::setPageSize));
         builder.<String>withRequestField("format",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchByChecksumRequest::getFormat, (req, v) -> {
-                req.setFormat(v);
-            }));
+            f -> f.withMarshaller(SearchByChecksumRequest::getFormat, SearchByChecksumRequest::setFormat));
         builder.<String>withRequestField("in_project",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchByChecksumRequest::getInProject, (req, v) -> {
-                req.setInProject(v);
-            }));
+            f -> f.withMarshaller(SearchByChecksumRequest::getInProject, SearchByChecksumRequest::setInProject));
         builder.<String>withRequestField("project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchByChecksumRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(SearchByChecksumRequest::getProjectId, SearchByChecksumRequest::setProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAuditRequest, ShowAuditResponse> showAudit = genForshowAudit();
+    public static final HttpRequestDef<ShowAuditRequest, ShowAuditResponse> showAudit = genForShowAudit();
 
-    private static HttpRequestDef<ShowAuditRequest, ShowAuditResponse> genForshowAudit() {
+    private static HttpRequestDef<ShowAuditRequest, ShowAuditResponse> genForShowAudit() {
         // basic
         HttpRequestDef.Builder<ShowAuditRequest, ShowAuditResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuditRequest.class, ShowAuditResponse.class)
@@ -728,67 +653,51 @@ public class CodeArtsArtifactMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(ShowAuditRequest::getTenantId, ShowAuditRequest::setTenantId));
         builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowAuditRequest::getProjectId, ShowAuditRequest::setProjectId));
         builder.<String>withRequestField("module",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditRequest::getModule, (req, v) -> {
-                req.setModule(v);
-            }));
+            f -> f.withMarshaller(ShowAuditRequest::getModule, ShowAuditRequest::setModule));
         builder.<String>withRequestField("repo",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditRequest::getRepo, (req, v) -> {
-                req.setRepo(v);
-            }));
+            f -> f.withMarshaller(ShowAuditRequest::getRepo, ShowAuditRequest::setRepo));
         builder.<String>withRequestField("user_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(ShowAuditRequest::getUserId, ShowAuditRequest::setUserId));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuditRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAuditRequest::getInstanceId, ShowAuditRequest::setInstanceId));
         builder.<Integer>withRequestField("page_num",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAuditRequest::getPageNum, (req, v) -> {
-                req.setPageNum(v);
-            }));
+            f -> f.withMarshaller(ShowAuditRequest::getPageNum, ShowAuditRequest::setPageNum));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAuditRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowAuditRequest::getPageSize, ShowAuditRequest::setPageSize));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFileTreeRequest, ShowFileTreeResponse> showFileTree = genForshowFileTree();
+    public static final HttpRequestDef<ShowFileTreeRequest, ShowFileTreeResponse> showFileTree = genForShowFileTree();
 
-    private static HttpRequestDef<ShowFileTreeRequest, ShowFileTreeResponse> genForshowFileTree() {
+    private static HttpRequestDef<ShowFileTreeRequest, ShowFileTreeResponse> genForShowFileTree() {
         // basic
         HttpRequestDef.Builder<ShowFileTreeRequest, ShowFileTreeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFileTreeRequest.class, ShowFileTreeResponse.class)
@@ -801,44 +710,32 @@ public class CodeArtsArtifactMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFileTreeRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(ShowFileTreeRequest::getTenantId, ShowFileTreeRequest::setTenantId));
         builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFileTreeRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowFileTreeRequest::getProjectId, ShowFileTreeRequest::setProjectId));
         builder.<String>withRequestField("repo_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFileTreeRequest::getRepoName, (req, v) -> {
-                req.setRepoName(v);
-            }));
+            f -> f.withMarshaller(ShowFileTreeRequest::getRepoName, ShowFileTreeRequest::setRepoName));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFileTreeRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ShowFileTreeRequest::getPath, ShowFileTreeRequest::setPath));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFileTreeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowFileTreeRequest::getInstanceId, ShowFileTreeRequest::setInstanceId));
         builder.<Boolean>withRequestField("is_recycle_bin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowFileTreeRequest::getIsRecycleBin, (req, v) -> {
-                req.setIsRecycleBin(v);
-            }));
+            f -> f.withMarshaller(ShowFileTreeRequest::getIsRecycleBin, ShowFileTreeRequest::setIsRecycleBin));
 
         // response
 
@@ -846,9 +743,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ShowMavenInfoRequest, ShowMavenInfoResponse> showMavenInfo =
-        genForshowMavenInfo();
+        genForShowMavenInfo();
 
-    private static HttpRequestDef<ShowMavenInfoRequest, ShowMavenInfoResponse> genForshowMavenInfo() {
+    private static HttpRequestDef<ShowMavenInfoRequest, ShowMavenInfoResponse> genForShowMavenInfo() {
         // basic
         HttpRequestDef.Builder<ShowMavenInfoRequest, ShowMavenInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMavenInfoRequest.class, ShowMavenInfoResponse.class)
@@ -861,37 +758,27 @@ public class CodeArtsArtifactMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMavenInfoRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowMavenInfoRequest::getProjectId, ShowMavenInfoRequest::setProjectId));
         builder.<String>withRequestField("policy",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMavenInfoRequest::getPolicy, (req, v) -> {
-                req.setPolicy(v);
-            }));
+            f -> f.withMarshaller(ShowMavenInfoRequest::getPolicy, ShowMavenInfoRequest::setPolicy));
         builder.<String>withRequestField("access",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMavenInfoRequest::getAccess, (req, v) -> {
-                req.setAccess(v);
-            }));
+            f -> f.withMarshaller(ShowMavenInfoRequest::getAccess, ShowMavenInfoRequest::setAccess));
         builder.<String>withRequestField("default",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMavenInfoRequest::getDefault, (req, v) -> {
-                req.setDefault(v);
-            }));
+            f -> f.withMarshaller(ShowMavenInfoRequest::getDefault, ShowMavenInfoRequest::setDefault));
         builder.<String>withRequestField("ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMavenInfoRequest::getIds, (req, v) -> {
-                req.setIds(v);
-            }));
+            f -> f.withMarshaller(ShowMavenInfoRequest::getIds, ShowMavenInfoRequest::setIds));
 
         // response
 
@@ -899,9 +786,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ShowProjectListRequest, ShowProjectListResponse> showProjectList =
-        genForshowProjectList();
+        genForShowProjectList();
 
-    private static HttpRequestDef<ShowProjectListRequest, ShowProjectListResponse> genForshowProjectList() {
+    private static HttpRequestDef<ShowProjectListRequest, ShowProjectListResponse> genForShowProjectList() {
         // basic
         HttpRequestDef.Builder<ShowProjectListRequest, ShowProjectListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectListRequest.class, ShowProjectListResponse.class)
@@ -914,9 +801,7 @@ public class CodeArtsArtifactMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectListRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowProjectListRequest::getProjectId, ShowProjectListRequest::setProjectId));
 
         // response
 
@@ -924,9 +809,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ShowProjectReleaseFilesRequest, ShowProjectReleaseFilesResponse> showProjectReleaseFiles =
-        genForshowProjectReleaseFiles();
+        genForShowProjectReleaseFiles();
 
-    private static HttpRequestDef<ShowProjectReleaseFilesRequest, ShowProjectReleaseFilesResponse> genForshowProjectReleaseFiles() {
+    private static HttpRequestDef<ShowProjectReleaseFilesRequest, ShowProjectReleaseFilesResponse> genForShowProjectReleaseFiles() {
         // basic
         HttpRequestDef.Builder<ShowProjectReleaseFilesRequest, ShowProjectReleaseFilesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowProjectReleaseFilesRequest.class, ShowProjectReleaseFilesResponse.class)
@@ -939,30 +824,25 @@ public class CodeArtsArtifactMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectReleaseFilesRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowProjectReleaseFilesRequest::getProjectId,
+                ShowProjectReleaseFilesRequest::setProjectId));
         builder.<String>withRequestField("file_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectReleaseFilesRequest::getFileName, (req, v) -> {
-                req.setFileName(v);
-            }));
+            f -> f.withMarshaller(ShowProjectReleaseFilesRequest::getFileName,
+                ShowProjectReleaseFilesRequest::setFileName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProjectReleaseFilesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowProjectReleaseFilesRequest::getLimit, ShowProjectReleaseFilesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProjectReleaseFilesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowProjectReleaseFilesRequest::getOffset,
+                ShowProjectReleaseFilesRequest::setOffset));
 
         // response
 
@@ -970,9 +850,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse> showReleaseProjectFiles =
-        genForshowReleaseProjectFiles();
+        genForShowReleaseProjectFiles();
 
-    private static HttpRequestDef<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse> genForshowReleaseProjectFiles() {
+    private static HttpRequestDef<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse> genForShowReleaseProjectFiles() {
         // basic
         HttpRequestDef.Builder<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowReleaseProjectFilesRequest.class, ShowReleaseProjectFilesResponse.class)
@@ -985,30 +865,25 @@ public class CodeArtsArtifactMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReleaseProjectFilesRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowReleaseProjectFilesRequest::getProjectId,
+                ShowReleaseProjectFilesRequest::setProjectId));
         builder.<String>withRequestField("file_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReleaseProjectFilesRequest::getFileName, (req, v) -> {
-                req.setFileName(v);
-            }));
+            f -> f.withMarshaller(ShowReleaseProjectFilesRequest::getFileName,
+                ShowReleaseProjectFilesRequest::setFileName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowReleaseProjectFilesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowReleaseProjectFilesRequest::getLimit, ShowReleaseProjectFilesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowReleaseProjectFilesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowReleaseProjectFilesRequest::getOffset,
+                ShowReleaseProjectFilesRequest::setOffset));
 
         // response
 
@@ -1016,9 +891,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ShowRepositoryRequest, ShowRepositoryResponse> showRepository =
-        genForshowRepository();
+        genForShowRepository();
 
-    private static HttpRequestDef<ShowRepositoryRequest, ShowRepositoryResponse> genForshowRepository() {
+    private static HttpRequestDef<ShowRepositoryRequest, ShowRepositoryResponse> genForShowRepository() {
         // basic
         HttpRequestDef.Builder<ShowRepositoryRequest, ShowRepositoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRepositoryRequest.class, ShowRepositoryResponse.class)
@@ -1031,30 +906,22 @@ public class CodeArtsArtifactMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryRequest::getTenantId, ShowRepositoryRequest::setTenantId));
         builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryRequest::getProjectId, ShowRepositoryRequest::setProjectId));
         builder.<String>withRequestField("repo_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryRequest::getRepoId, (req, v) -> {
-                req.setRepoId(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryRequest::getRepoId, ShowRepositoryRequest::setRepoId));
         builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryRequest::getRegion, ShowRepositoryRequest::setRegion));
 
         // response
 
@@ -1062,9 +929,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<ShowRepositoryInfoRequest, ShowRepositoryInfoResponse> showRepositoryInfo =
-        genForshowRepositoryInfo();
+        genForShowRepositoryInfo();
 
-    private static HttpRequestDef<ShowRepositoryInfoRequest, ShowRepositoryInfoResponse> genForshowRepositoryInfo() {
+    private static HttpRequestDef<ShowRepositoryInfoRequest, ShowRepositoryInfoResponse> genForShowRepositoryInfo() {
         // basic
         HttpRequestDef.Builder<ShowRepositoryInfoRequest, ShowRepositoryInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRepositoryInfoRequest.class, ShowRepositoryInfoResponse.class)
@@ -1077,18 +944,16 @@ public class CodeArtsArtifactMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryInfoRequest::getRepoId, (req, v) -> {
-                req.setRepoId(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryInfoRequest::getRepoId, ShowRepositoryInfoRequest::setRepoId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowStorageRequest, ShowStorageResponse> showStorage = genForshowStorage();
+    public static final HttpRequestDef<ShowStorageRequest, ShowStorageResponse> showStorage = genForShowStorage();
 
-    private static HttpRequestDef<ShowStorageRequest, ShowStorageResponse> genForshowStorage() {
+    private static HttpRequestDef<ShowStorageRequest, ShowStorageResponse> genForShowStorage() {
         // basic
         HttpRequestDef.Builder<ShowStorageRequest, ShowStorageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStorageRequest.class, ShowStorageResponse.class)
@@ -1101,16 +966,12 @@ public class CodeArtsArtifactMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStorageRequest::getFormatList, (req, v) -> {
-                req.setFormatList(v);
-            }));
+            f -> f.withMarshaller(ShowStorageRequest::getFormatList, ShowStorageRequest::setFormatList));
         builder.<String>withRequestField("in_project",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStorageRequest::getInProject, (req, v) -> {
-                req.setInProject(v);
-            }));
+            f -> f.withMarshaller(ShowStorageRequest::getInProject, ShowStorageRequest::setInProject));
 
         // response
 
@@ -1118,9 +979,9 @@ public class CodeArtsArtifactMeta {
     }
 
     public static final HttpRequestDef<UpdateArtifactoryRequest, UpdateArtifactoryResponse> updateArtifactory =
-        genForupdateArtifactory();
+        genForUpdateArtifactory();
 
-    private static HttpRequestDef<UpdateArtifactoryRequest, UpdateArtifactoryResponse> genForupdateArtifactory() {
+    private static HttpRequestDef<UpdateArtifactoryRequest, UpdateArtifactoryResponse> genForUpdateArtifactory() {
         // basic
         HttpRequestDef.Builder<UpdateArtifactoryRequest, UpdateArtifactoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateArtifactoryRequest.class, UpdateArtifactoryResponse.class)
@@ -1133,9 +994,7 @@ public class CodeArtsArtifactMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNotMavenRepoDO.class),
-            f -> f.withMarshaller(UpdateArtifactoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateArtifactoryRequest::getBody, UpdateArtifactoryRequest::setBody));
 
         // response
 

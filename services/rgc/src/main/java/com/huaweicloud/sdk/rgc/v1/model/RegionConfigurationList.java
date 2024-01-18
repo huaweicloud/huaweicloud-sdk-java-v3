@@ -21,7 +21,7 @@ public class RegionConfigurationList {
     private String region;
 
     /**
-     * 账号类型logging,security。 * ENABLED - 开启 * DISABLED - 关闭
+     * 纳管账号类型LOGGING,SECURITY。
      */
     public static final class RegionConfigurationStatusEnum {
 
@@ -120,7 +120,7 @@ public class RegionConfigurationList {
     }
 
     /**
-     * 账号类型logging,security。 * ENABLED - 开启 * DISABLED - 关闭
+     * 纳管账号类型LOGGING,SECURITY。
      * @return regionConfigurationStatus
      */
     public RegionConfigurationStatusEnum getRegionConfigurationStatus() {

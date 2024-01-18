@@ -25,7 +25,7 @@ public class MasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNameSpaceListRequest 请求对象
+     * @param request ShowNameSpaceListRequest 请求对象
      * @return ShowNameSpaceListResponse
      */
     public ShowNameSpaceListResponse showNameSpaceList(ShowNameSpaceListRequest request) {
@@ -38,13 +38,12 @@ public class MasClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNameSpaceListRequest 请求对象
+     * @param request ShowNameSpaceListRequest 请求对象
      * @return SyncInvoker<ShowNameSpaceListRequest, ShowNameSpaceListResponse>
      */
     public SyncInvoker<ShowNameSpaceListRequest, ShowNameSpaceListResponse> showNameSpaceListInvoker(
         ShowNameSpaceListRequest request) {
-        return new SyncInvoker<ShowNameSpaceListRequest, ShowNameSpaceListResponse>(request, MasMeta.showNameSpaceList,
-            hcClient);
+        return new SyncInvoker<>(request, MasMeta.showNameSpaceList, hcClient);
     }
 
 }

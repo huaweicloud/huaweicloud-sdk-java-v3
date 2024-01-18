@@ -28,9 +28,9 @@ import com.huaweicloud.sdk.ivs.v2.model.IvsStandardByVideoAndNameAndIdRequestBod
 public class IvsMeta {
 
     public static final HttpRequestDef<DetectExtentionByIdCardImageRequest, DetectExtentionByIdCardImageResponse> detectExtentionByIdCardImage =
-        genFordetectExtentionByIdCardImage();
+        genForDetectExtentionByIdCardImage();
 
-    private static HttpRequestDef<DetectExtentionByIdCardImageRequest, DetectExtentionByIdCardImageResponse> genFordetectExtentionByIdCardImage() {
+    private static HttpRequestDef<DetectExtentionByIdCardImageRequest, DetectExtentionByIdCardImageResponse> genForDetectExtentionByIdCardImage() {
         // basic
         HttpRequestDef.Builder<DetectExtentionByIdCardImageRequest, DetectExtentionByIdCardImageResponse> builder =
             HttpRequestDef
@@ -46,16 +46,14 @@ public class IvsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectExtentionByIdCardImageRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectExtentionByIdCardImageRequest::getEnterpriseProjectId,
+                DetectExtentionByIdCardImageRequest::setEnterpriseProjectId));
         builder.<IvsExtentionByIdCardImageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IvsExtentionByIdCardImageRequestBody.class),
-            f -> f.withMarshaller(DetectExtentionByIdCardImageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectExtentionByIdCardImageRequest::getBody,
+                DetectExtentionByIdCardImageRequest::setBody));
 
         // response
 
@@ -69,9 +67,9 @@ public class IvsMeta {
     }
 
     public static final HttpRequestDef<DetectExtentionByNameAndIdRequest, DetectExtentionByNameAndIdResponse> detectExtentionByNameAndId =
-        genFordetectExtentionByNameAndId();
+        genForDetectExtentionByNameAndId();
 
-    private static HttpRequestDef<DetectExtentionByNameAndIdRequest, DetectExtentionByNameAndIdResponse> genFordetectExtentionByNameAndId() {
+    private static HttpRequestDef<DetectExtentionByNameAndIdRequest, DetectExtentionByNameAndIdResponse> genForDetectExtentionByNameAndId() {
         // basic
         HttpRequestDef.Builder<DetectExtentionByNameAndIdRequest, DetectExtentionByNameAndIdResponse> builder =
             HttpRequestDef
@@ -87,16 +85,14 @@ public class IvsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectExtentionByNameAndIdRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectExtentionByNameAndIdRequest::getEnterpriseProjectId,
+                DetectExtentionByNameAndIdRequest::setEnterpriseProjectId));
         builder.<IvsExtentionByNameAndIdRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IvsExtentionByNameAndIdRequestBody.class),
-            f -> f.withMarshaller(DetectExtentionByNameAndIdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectExtentionByNameAndIdRequest::getBody,
+                DetectExtentionByNameAndIdRequest::setBody));
 
         // response
 
@@ -110,9 +106,9 @@ public class IvsMeta {
     }
 
     public static final HttpRequestDef<DetectStandardByIdCardImageRequest, DetectStandardByIdCardImageResponse> detectStandardByIdCardImage =
-        genFordetectStandardByIdCardImage();
+        genForDetectStandardByIdCardImage();
 
-    private static HttpRequestDef<DetectStandardByIdCardImageRequest, DetectStandardByIdCardImageResponse> genFordetectStandardByIdCardImage() {
+    private static HttpRequestDef<DetectStandardByIdCardImageRequest, DetectStandardByIdCardImageResponse> genForDetectStandardByIdCardImage() {
         // basic
         HttpRequestDef.Builder<DetectStandardByIdCardImageRequest, DetectStandardByIdCardImageResponse> builder =
             HttpRequestDef
@@ -128,16 +124,14 @@ public class IvsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectStandardByIdCardImageRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectStandardByIdCardImageRequest::getEnterpriseProjectId,
+                DetectStandardByIdCardImageRequest::setEnterpriseProjectId));
         builder.<IvsStandardByIdCardImageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IvsStandardByIdCardImageRequestBody.class),
-            f -> f.withMarshaller(DetectStandardByIdCardImageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectStandardByIdCardImageRequest::getBody,
+                DetectStandardByIdCardImageRequest::setBody));
 
         // response
 
@@ -151,9 +145,9 @@ public class IvsMeta {
     }
 
     public static final HttpRequestDef<DetectStandardByNameAndIdRequest, DetectStandardByNameAndIdResponse> detectStandardByNameAndId =
-        genFordetectStandardByNameAndId();
+        genForDetectStandardByNameAndId();
 
-    private static HttpRequestDef<DetectStandardByNameAndIdRequest, DetectStandardByNameAndIdResponse> genFordetectStandardByNameAndId() {
+    private static HttpRequestDef<DetectStandardByNameAndIdRequest, DetectStandardByNameAndIdResponse> genForDetectStandardByNameAndId() {
         // basic
         HttpRequestDef.Builder<DetectStandardByNameAndIdRequest, DetectStandardByNameAndIdResponse> builder =
             HttpRequestDef
@@ -169,16 +163,14 @@ public class IvsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectStandardByNameAndIdRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectStandardByNameAndIdRequest::getEnterpriseProjectId,
+                DetectStandardByNameAndIdRequest::setEnterpriseProjectId));
         builder.<IvsStandardByNameAndIdRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IvsStandardByNameAndIdRequestBody.class),
-            f -> f.withMarshaller(DetectStandardByNameAndIdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectStandardByNameAndIdRequest::getBody,
+                DetectStandardByNameAndIdRequest::setBody));
 
         // response
 
@@ -192,9 +184,9 @@ public class IvsMeta {
     }
 
     public static final HttpRequestDef<DetectStandardByVideoAndIdCardImageRequest, DetectStandardByVideoAndIdCardImageResponse> detectStandardByVideoAndIdCardImage =
-        genFordetectStandardByVideoAndIdCardImage();
+        genForDetectStandardByVideoAndIdCardImage();
 
-    private static HttpRequestDef<DetectStandardByVideoAndIdCardImageRequest, DetectStandardByVideoAndIdCardImageResponse> genFordetectStandardByVideoAndIdCardImage() {
+    private static HttpRequestDef<DetectStandardByVideoAndIdCardImageRequest, DetectStandardByVideoAndIdCardImageResponse> genForDetectStandardByVideoAndIdCardImage() {
         // basic
         HttpRequestDef.Builder<DetectStandardByVideoAndIdCardImageRequest, DetectStandardByVideoAndIdCardImageResponse> builder =
             HttpRequestDef
@@ -210,16 +202,14 @@ public class IvsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectStandardByVideoAndIdCardImageRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectStandardByVideoAndIdCardImageRequest::getEnterpriseProjectId,
+                DetectStandardByVideoAndIdCardImageRequest::setEnterpriseProjectId));
         builder.<IvsStandardByVideoAndIdCardImageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IvsStandardByVideoAndIdCardImageRequestBody.class),
-            f -> f.withMarshaller(DetectStandardByVideoAndIdCardImageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectStandardByVideoAndIdCardImageRequest::getBody,
+                DetectStandardByVideoAndIdCardImageRequest::setBody));
 
         // response
 
@@ -233,9 +223,9 @@ public class IvsMeta {
     }
 
     public static final HttpRequestDef<DetectStandardByVideoAndNameAndIdRequest, DetectStandardByVideoAndNameAndIdResponse> detectStandardByVideoAndNameAndId =
-        genFordetectStandardByVideoAndNameAndId();
+        genForDetectStandardByVideoAndNameAndId();
 
-    private static HttpRequestDef<DetectStandardByVideoAndNameAndIdRequest, DetectStandardByVideoAndNameAndIdResponse> genFordetectStandardByVideoAndNameAndId() {
+    private static HttpRequestDef<DetectStandardByVideoAndNameAndIdRequest, DetectStandardByVideoAndNameAndIdResponse> genForDetectStandardByVideoAndNameAndId() {
         // basic
         HttpRequestDef.Builder<DetectStandardByVideoAndNameAndIdRequest, DetectStandardByVideoAndNameAndIdResponse> builder =
             HttpRequestDef
@@ -251,16 +241,14 @@ public class IvsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectStandardByVideoAndNameAndIdRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectStandardByVideoAndNameAndIdRequest::getEnterpriseProjectId,
+                DetectStandardByVideoAndNameAndIdRequest::setEnterpriseProjectId));
         builder.<IvsStandardByVideoAndNameAndIdRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IvsStandardByVideoAndNameAndIdRequestBody.class),
-            f -> f.withMarshaller(DetectStandardByVideoAndNameAndIdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectStandardByVideoAndNameAndIdRequest::getBody,
+                DetectStandardByVideoAndNameAndIdRequest::setBody));
 
         // response
 

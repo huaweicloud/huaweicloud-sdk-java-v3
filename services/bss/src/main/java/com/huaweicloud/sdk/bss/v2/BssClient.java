@@ -203,7 +203,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AutoRenewalResourcesRequest 请求对象
+     * @param request AutoRenewalResourcesRequest 请求对象
      * @return AutoRenewalResourcesResponse
      */
     public AutoRenewalResourcesResponse autoRenewalResources(AutoRenewalResourcesRequest request) {
@@ -226,13 +226,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AutoRenewalResourcesRequest 请求对象
+     * @param request AutoRenewalResourcesRequest 请求对象
      * @return SyncInvoker<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse>
      */
     public SyncInvoker<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse> autoRenewalResourcesInvoker(
         AutoRenewalResourcesRequest request) {
-        return new SyncInvoker<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse>(request,
-            BssMeta.autoRenewalResources, hcClient);
+        return new SyncInvoker<>(request, BssMeta.autoRenewalResources, hcClient);
     }
 
     /**
@@ -249,7 +248,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelAutoRenewalResourcesRequest 请求对象
+     * @param request CancelAutoRenewalResourcesRequest 请求对象
      * @return CancelAutoRenewalResourcesResponse
      */
     public CancelAutoRenewalResourcesResponse cancelAutoRenewalResources(CancelAutoRenewalResourcesRequest request) {
@@ -270,13 +269,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelAutoRenewalResourcesRequest 请求对象
+     * @param request CancelAutoRenewalResourcesRequest 请求对象
      * @return SyncInvoker<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse>
      */
     public SyncInvoker<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse> cancelAutoRenewalResourcesInvoker(
         CancelAutoRenewalResourcesRequest request) {
-        return new SyncInvoker<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse>(request,
-            BssMeta.cancelAutoRenewalResources, hcClient);
+        return new SyncInvoker<>(request, BssMeta.cancelAutoRenewalResources, hcClient);
     }
 
     /**
@@ -291,7 +289,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelCustomerOrderRequest 请求对象
+     * @param request CancelCustomerOrderRequest 请求对象
      * @return CancelCustomerOrderResponse
      */
     public CancelCustomerOrderResponse cancelCustomerOrder(CancelCustomerOrderRequest request) {
@@ -310,13 +308,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelCustomerOrderRequest 请求对象
+     * @param request CancelCustomerOrderRequest 请求对象
      * @return SyncInvoker<CancelCustomerOrderRequest, CancelCustomerOrderResponse>
      */
     public SyncInvoker<CancelCustomerOrderRequest, CancelCustomerOrderResponse> cancelCustomerOrderInvoker(
         CancelCustomerOrderRequest request) {
-        return new SyncInvoker<CancelCustomerOrderRequest, CancelCustomerOrderResponse>(request,
-            BssMeta.cancelCustomerOrder, hcClient);
+        return new SyncInvoker<>(request, BssMeta.cancelCustomerOrder, hcClient);
     }
 
     /**
@@ -336,7 +333,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelResourcesSubscriptionRequest 请求对象
+     * @param request CancelResourcesSubscriptionRequest 请求对象
      * @return CancelResourcesSubscriptionResponse
      */
     public CancelResourcesSubscriptionResponse cancelResourcesSubscription(CancelResourcesSubscriptionRequest request) {
@@ -360,13 +357,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelResourcesSubscriptionRequest 请求对象
+     * @param request CancelResourcesSubscriptionRequest 请求对象
      * @return SyncInvoker<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse>
      */
     public SyncInvoker<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse> cancelResourcesSubscriptionInvoker(
         CancelResourcesSubscriptionRequest request) {
-        return new SyncInvoker<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse>(request,
-            BssMeta.cancelResourcesSubscription, hcClient);
+        return new SyncInvoker<>(request, BssMeta.cancelResourcesSubscription, hcClient);
     }
 
     /**
@@ -378,7 +374,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeEnterpriseRealnameAuthenticationRequest 请求对象
+     * @param request ChangeEnterpriseRealnameAuthenticationRequest 请求对象
      * @return ChangeEnterpriseRealnameAuthenticationResponse
      */
     public ChangeEnterpriseRealnameAuthenticationResponse changeEnterpriseRealnameAuthentication(
@@ -395,13 +391,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeEnterpriseRealnameAuthenticationRequest 请求对象
+     * @param request ChangeEnterpriseRealnameAuthenticationRequest 请求对象
      * @return SyncInvoker<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse>
      */
     public SyncInvoker<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse> changeEnterpriseRealnameAuthenticationInvoker(
         ChangeEnterpriseRealnameAuthenticationRequest request) {
-        return new SyncInvoker<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse>(
-            request, BssMeta.changeEnterpriseRealnameAuthentication, hcClient);
+        return new SyncInvoker<>(request, BssMeta.changeEnterpriseRealnameAuthentication, hcClient);
     }
 
     /**
@@ -414,7 +409,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckUserIdentityRequest 请求对象
+     * @param request CheckUserIdentityRequest 请求对象
      * @return CheckUserIdentityResponse
      */
     public CheckUserIdentityResponse checkUserIdentity(CheckUserIdentityRequest request) {
@@ -431,13 +426,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckUserIdentityRequest 请求对象
+     * @param request CheckUserIdentityRequest 请求对象
      * @return SyncInvoker<CheckUserIdentityRequest, CheckUserIdentityResponse>
      */
     public SyncInvoker<CheckUserIdentityRequest, CheckUserIdentityResponse> checkUserIdentityInvoker(
         CheckUserIdentityRequest request) {
-        return new SyncInvoker<CheckUserIdentityRequest, CheckUserIdentityResponse>(request, BssMeta.checkUserIdentity,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.checkUserIdentity, hcClient);
     }
 
     /**
@@ -450,7 +444,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ClaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @param request ClaimEnterpriseMultiAccountCouponRequest 请求对象
      * @return ClaimEnterpriseMultiAccountCouponResponse
      */
     public ClaimEnterpriseMultiAccountCouponResponse claimEnterpriseMultiAccountCoupon(
@@ -468,13 +462,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ClaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @param request ClaimEnterpriseMultiAccountCouponRequest 请求对象
      * @return SyncInvoker<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse>
      */
     public SyncInvoker<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse> claimEnterpriseMultiAccountCouponInvoker(
         ClaimEnterpriseMultiAccountCouponRequest request) {
-        return new SyncInvoker<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse>(
-            request, BssMeta.claimEnterpriseMultiAccountCoupon, hcClient);
+        return new SyncInvoker<>(request, BssMeta.claimEnterpriseMultiAccountCoupon, hcClient);
     }
 
     /**
@@ -484,7 +477,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseProjectAuthRequest 请求对象
+     * @param request CreateEnterpriseProjectAuthRequest 请求对象
      * @return CreateEnterpriseProjectAuthResponse
      */
     public CreateEnterpriseProjectAuthResponse createEnterpriseProjectAuth(CreateEnterpriseProjectAuthRequest request) {
@@ -498,13 +491,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseProjectAuthRequest 请求对象
+     * @param request CreateEnterpriseProjectAuthRequest 请求对象
      * @return SyncInvoker<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse>
      */
     public SyncInvoker<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> createEnterpriseProjectAuthInvoker(
         CreateEnterpriseProjectAuthRequest request) {
-        return new SyncInvoker<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse>(request,
-            BssMeta.createEnterpriseProjectAuth, hcClient);
+        return new SyncInvoker<>(request, BssMeta.createEnterpriseProjectAuth, hcClient);
     }
 
     /**
@@ -516,7 +508,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseRealnameAuthenticationRequest 请求对象
+     * @param request CreateEnterpriseRealnameAuthenticationRequest 请求对象
      * @return CreateEnterpriseRealnameAuthenticationResponse
      */
     public CreateEnterpriseRealnameAuthenticationResponse createEnterpriseRealnameAuthentication(
@@ -533,13 +525,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseRealnameAuthenticationRequest 请求对象
+     * @param request CreateEnterpriseRealnameAuthenticationRequest 请求对象
      * @return SyncInvoker<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse>
      */
     public SyncInvoker<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse> createEnterpriseRealnameAuthenticationInvoker(
         CreateEnterpriseRealnameAuthenticationRequest request) {
-        return new SyncInvoker<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse>(
-            request, BssMeta.createEnterpriseRealnameAuthentication, hcClient);
+        return new SyncInvoker<>(request, BssMeta.createEnterpriseRealnameAuthentication, hcClient);
     }
 
     /**
@@ -554,7 +545,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePartnerCouponsRequest 请求对象
+     * @param request CreatePartnerCouponsRequest 请求对象
      * @return CreatePartnerCouponsResponse
      */
     public CreatePartnerCouponsResponse createPartnerCoupons(CreatePartnerCouponsRequest request) {
@@ -573,13 +564,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePartnerCouponsRequest 请求对象
+     * @param request CreatePartnerCouponsRequest 请求对象
      * @return SyncInvoker<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse>
      */
     public SyncInvoker<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse> createPartnerCouponsInvoker(
         CreatePartnerCouponsRequest request) {
-        return new SyncInvoker<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse>(request,
-            BssMeta.createPartnerCoupons, hcClient);
+        return new SyncInvoker<>(request, BssMeta.createPartnerCoupons, hcClient);
     }
 
     /**
@@ -591,7 +581,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePersonalRealnameAuthRequest 请求对象
+     * @param request CreatePersonalRealnameAuthRequest 请求对象
      * @return CreatePersonalRealnameAuthResponse
      */
     public CreatePersonalRealnameAuthResponse createPersonalRealnameAuth(CreatePersonalRealnameAuthRequest request) {
@@ -607,13 +597,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePersonalRealnameAuthRequest 请求对象
+     * @param request CreatePersonalRealnameAuthRequest 请求对象
      * @return SyncInvoker<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse>
      */
     public SyncInvoker<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse> createPersonalRealnameAuthInvoker(
         CreatePersonalRealnameAuthRequest request) {
-        return new SyncInvoker<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse>(request,
-            BssMeta.createPersonalRealnameAuth, hcClient);
+        return new SyncInvoker<>(request, BssMeta.createPersonalRealnameAuth, hcClient);
     }
 
     /**
@@ -630,7 +619,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubCustomerRequest 请求对象
+     * @param request CreateSubCustomerRequest 请求对象
      * @return CreateSubCustomerResponse
      */
     public CreateSubCustomerResponse createSubCustomer(CreateSubCustomerRequest request) {
@@ -651,13 +640,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubCustomerRequest 请求对象
+     * @param request CreateSubCustomerRequest 请求对象
      * @return SyncInvoker<CreateSubCustomerRequest, CreateSubCustomerResponse>
      */
     public SyncInvoker<CreateSubCustomerRequest, CreateSubCustomerResponse> createSubCustomerInvoker(
         CreateSubCustomerRequest request) {
-        return new SyncInvoker<CreateSubCustomerRequest, CreateSubCustomerResponse>(request, BssMeta.createSubCustomer,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.createSubCustomer, hcClient);
     }
 
     /**
@@ -669,7 +657,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubEnterpriseAccountRequest 请求对象
+     * @param request CreateSubEnterpriseAccountRequest 请求对象
      * @return CreateSubEnterpriseAccountResponse
      */
     public CreateSubEnterpriseAccountResponse createSubEnterpriseAccount(CreateSubEnterpriseAccountRequest request) {
@@ -685,13 +673,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubEnterpriseAccountRequest 请求对象
+     * @param request CreateSubEnterpriseAccountRequest 请求对象
      * @return SyncInvoker<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse>
      */
     public SyncInvoker<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse> createSubEnterpriseAccountInvoker(
         CreateSubEnterpriseAccountRequest request) {
-        return new SyncInvoker<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse>(request,
-            BssMeta.createSubEnterpriseAccount, hcClient);
+        return new SyncInvoker<>(request, BssMeta.createSubEnterpriseAccount, hcClient);
     }
 
     /**
@@ -701,7 +688,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCitiesRequest 请求对象
+     * @param request ListCitiesRequest 请求对象
      * @return ListCitiesResponse
      */
     public ListCitiesResponse listCities(ListCitiesRequest request) {
@@ -715,11 +702,11 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCitiesRequest 请求对象
+     * @param request ListCitiesRequest 请求对象
      * @return SyncInvoker<ListCitiesRequest, ListCitiesResponse>
      */
     public SyncInvoker<ListCitiesRequest, ListCitiesResponse> listCitiesInvoker(ListCitiesRequest request) {
-        return new SyncInvoker<ListCitiesRequest, ListCitiesResponse>(request, BssMeta.listCities, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCities, hcClient);
     }
 
     /**
@@ -732,7 +719,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConsumeSubCustomersRequest 请求对象
+     * @param request ListConsumeSubCustomersRequest 请求对象
      * @return ListConsumeSubCustomersResponse
      */
     public ListConsumeSubCustomersResponse listConsumeSubCustomers(ListConsumeSubCustomersRequest request) {
@@ -749,13 +736,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConsumeSubCustomersRequest 请求对象
+     * @param request ListConsumeSubCustomersRequest 请求对象
      * @return SyncInvoker<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse>
      */
     public SyncInvoker<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse> listConsumeSubCustomersInvoker(
         ListConsumeSubCustomersRequest request) {
-        return new SyncInvoker<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse>(request,
-            BssMeta.listConsumeSubCustomers, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listConsumeSubCustomers, hcClient);
     }
 
     /**
@@ -765,7 +751,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConversionsRequest 请求对象
+     * @param request ListConversionsRequest 请求对象
      * @return ListConversionsResponse
      */
     public ListConversionsResponse listConversions(ListConversionsRequest request) {
@@ -779,13 +765,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConversionsRequest 请求对象
+     * @param request ListConversionsRequest 请求对象
      * @return SyncInvoker<ListConversionsRequest, ListConversionsResponse>
      */
     public SyncInvoker<ListConversionsRequest, ListConversionsResponse> listConversionsInvoker(
         ListConversionsRequest request) {
-        return new SyncInvoker<ListConversionsRequest, ListConversionsResponse>(request, BssMeta.listConversions,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.listConversions, hcClient);
     }
 
     /**
@@ -795,7 +780,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCostsRequest 请求对象
+     * @param request ListCostsRequest 请求对象
      * @return ListCostsResponse
      */
     public ListCostsResponse listCosts(ListCostsRequest request) {
@@ -809,11 +794,11 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCostsRequest 请求对象
+     * @param request ListCostsRequest 请求对象
      * @return SyncInvoker<ListCostsRequest, ListCostsResponse>
      */
     public SyncInvoker<ListCostsRequest, ListCostsResponse> listCostsInvoker(ListCostsRequest request) {
-        return new SyncInvoker<ListCostsRequest, ListCostsResponse>(request, BssMeta.listCosts, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCosts, hcClient);
     }
 
     /**
@@ -823,7 +808,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCountiesRequest 请求对象
+     * @param request ListCountiesRequest 请求对象
      * @return ListCountiesResponse
      */
     public ListCountiesResponse listCounties(ListCountiesRequest request) {
@@ -837,11 +822,11 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCountiesRequest 请求对象
+     * @param request ListCountiesRequest 请求对象
      * @return SyncInvoker<ListCountiesRequest, ListCountiesResponse>
      */
     public SyncInvoker<ListCountiesRequest, ListCountiesResponse> listCountiesInvoker(ListCountiesRequest request) {
-        return new SyncInvoker<ListCountiesRequest, ListCountiesResponse>(request, BssMeta.listCounties, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCounties, hcClient);
     }
 
     /**
@@ -856,7 +841,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCouponQuotasRecordsRequest 请求对象
+     * @param request ListCouponQuotasRecordsRequest 请求对象
      * @return ListCouponQuotasRecordsResponse
      */
     public ListCouponQuotasRecordsResponse listCouponQuotasRecords(ListCouponQuotasRecordsRequest request) {
@@ -875,13 +860,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCouponQuotasRecordsRequest 请求对象
+     * @param request ListCouponQuotasRecordsRequest 请求对象
      * @return SyncInvoker<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse>
      */
     public SyncInvoker<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse> listCouponQuotasRecordsInvoker(
         ListCouponQuotasRecordsRequest request) {
-        return new SyncInvoker<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse>(request,
-            BssMeta.listCouponQuotasRecords, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCouponQuotasRecords, hcClient);
     }
 
     /**
@@ -891,7 +875,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerAccountChangeRecordsRequest 请求对象
+     * @param request ListCustomerAccountChangeRecordsRequest 请求对象
      * @return ListCustomerAccountChangeRecordsResponse
      */
     public ListCustomerAccountChangeRecordsResponse listCustomerAccountChangeRecords(
@@ -906,13 +890,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerAccountChangeRecordsRequest 请求对象
+     * @param request ListCustomerAccountChangeRecordsRequest 请求对象
      * @return SyncInvoker<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse>
      */
     public SyncInvoker<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse> listCustomerAccountChangeRecordsInvoker(
         ListCustomerAccountChangeRecordsRequest request) {
-        return new SyncInvoker<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse>(
-            request, BssMeta.listCustomerAccountChangeRecords, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCustomerAccountChangeRecords, hcClient);
     }
 
     /**
@@ -924,7 +907,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerBillsFeeRecordsRequest 请求对象
+     * @param request ListCustomerBillsFeeRecordsRequest 请求对象
      * @return ListCustomerBillsFeeRecordsResponse
      */
     public ListCustomerBillsFeeRecordsResponse listCustomerBillsFeeRecords(ListCustomerBillsFeeRecordsRequest request) {
@@ -940,13 +923,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerBillsFeeRecordsRequest 请求对象
+     * @param request ListCustomerBillsFeeRecordsRequest 请求对象
      * @return SyncInvoker<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse>
      */
     public SyncInvoker<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> listCustomerBillsFeeRecordsInvoker(
         ListCustomerBillsFeeRecordsRequest request) {
-        return new SyncInvoker<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse>(request,
-            BssMeta.listCustomerBillsFeeRecords, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCustomerBillsFeeRecords, hcClient);
     }
 
     /**
@@ -963,7 +945,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerBillsMonthlyBreakDownRequest 请求对象
+     * @param request ListCustomerBillsMonthlyBreakDownRequest 请求对象
      * @return ListCustomerBillsMonthlyBreakDownResponse
      */
     public ListCustomerBillsMonthlyBreakDownResponse listCustomerBillsMonthlyBreakDown(
@@ -985,13 +967,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerBillsMonthlyBreakDownRequest 请求对象
+     * @param request ListCustomerBillsMonthlyBreakDownRequest 请求对象
      * @return SyncInvoker<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse>
      */
     public SyncInvoker<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> listCustomerBillsMonthlyBreakDownInvoker(
         ListCustomerBillsMonthlyBreakDownRequest request) {
-        return new SyncInvoker<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse>(
-            request, BssMeta.listCustomerBillsMonthlyBreakDown, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCustomerBillsMonthlyBreakDown, hcClient);
     }
 
     /**
@@ -1001,7 +982,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerOnDemandResourcesRequest 请求对象
+     * @param request ListCustomerOnDemandResourcesRequest 请求对象
      * @return ListCustomerOnDemandResourcesResponse
      */
     public ListCustomerOnDemandResourcesResponse listCustomerOnDemandResources(
@@ -1016,13 +997,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerOnDemandResourcesRequest 请求对象
+     * @param request ListCustomerOnDemandResourcesRequest 请求对象
      * @return SyncInvoker<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse>
      */
     public SyncInvoker<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResourcesInvoker(
         ListCustomerOnDemandResourcesRequest request) {
-        return new SyncInvoker<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse>(request,
-            BssMeta.listCustomerOnDemandResources, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCustomerOnDemandResources, hcClient);
     }
 
     /**
@@ -1037,7 +1017,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerOrdersRequest 请求对象
+     * @param request ListCustomerOrdersRequest 请求对象
      * @return ListCustomerOrdersResponse
      */
     public ListCustomerOrdersResponse listCustomerOrders(ListCustomerOrdersRequest request) {
@@ -1056,13 +1036,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerOrdersRequest 请求对象
+     * @param request ListCustomerOrdersRequest 请求对象
      * @return SyncInvoker<ListCustomerOrdersRequest, ListCustomerOrdersResponse>
      */
     public SyncInvoker<ListCustomerOrdersRequest, ListCustomerOrdersResponse> listCustomerOrdersInvoker(
         ListCustomerOrdersRequest request) {
-        return new SyncInvoker<ListCustomerOrdersRequest, ListCustomerOrdersResponse>(request,
-            BssMeta.listCustomerOrders, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCustomerOrders, hcClient);
     }
 
     /**
@@ -1077,7 +1056,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomersBalancesDetailRequest 请求对象
+     * @param request ListCustomersBalancesDetailRequest 请求对象
      * @return ListCustomersBalancesDetailResponse
      */
     public ListCustomersBalancesDetailResponse listCustomersBalancesDetail(ListCustomersBalancesDetailRequest request) {
@@ -1096,13 +1075,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomersBalancesDetailRequest 请求对象
+     * @param request ListCustomersBalancesDetailRequest 请求对象
      * @return SyncInvoker<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse>
      */
     public SyncInvoker<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse> listCustomersBalancesDetailInvoker(
         ListCustomersBalancesDetailRequest request) {
-        return new SyncInvoker<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse>(request,
-            BssMeta.listCustomersBalancesDetail, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCustomersBalancesDetail, hcClient);
     }
 
     /**
@@ -1117,7 +1095,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerselfResourceRecordDetailsRequest 请求对象
+     * @param request ListCustomerselfResourceRecordDetailsRequest 请求对象
      * @return ListCustomerselfResourceRecordDetailsResponse
      */
     public ListCustomerselfResourceRecordDetailsResponse listCustomerselfResourceRecordDetails(
@@ -1137,13 +1115,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerselfResourceRecordDetailsRequest 请求对象
+     * @param request ListCustomerselfResourceRecordDetailsRequest 请求对象
      * @return SyncInvoker<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse>
      */
     public SyncInvoker<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse> listCustomerselfResourceRecordDetailsInvoker(
         ListCustomerselfResourceRecordDetailsRequest request) {
-        return new SyncInvoker<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse>(
-            request, BssMeta.listCustomerselfResourceRecordDetails, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCustomerselfResourceRecordDetails, hcClient);
     }
 
     /**
@@ -1155,7 +1132,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerselfResourceRecordsRequest 请求对象
+     * @param request ListCustomerselfResourceRecordsRequest 请求对象
      * @return ListCustomerselfResourceRecordsResponse
      */
     public ListCustomerselfResourceRecordsResponse listCustomerselfResourceRecords(
@@ -1172,13 +1149,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerselfResourceRecordsRequest 请求对象
+     * @param request ListCustomerselfResourceRecordsRequest 请求对象
      * @return SyncInvoker<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse>
      */
     public SyncInvoker<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse> listCustomerselfResourceRecordsInvoker(
         ListCustomerselfResourceRecordsRequest request) {
-        return new SyncInvoker<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse>(request,
-            BssMeta.listCustomerselfResourceRecords, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listCustomerselfResourceRecords, hcClient);
     }
 
     /**
@@ -1188,7 +1164,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseMultiAccountRequest 请求对象
+     * @param request ListEnterpriseMultiAccountRequest 请求对象
      * @return ListEnterpriseMultiAccountResponse
      */
     public ListEnterpriseMultiAccountResponse listEnterpriseMultiAccount(ListEnterpriseMultiAccountRequest request) {
@@ -1202,13 +1178,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseMultiAccountRequest 请求对象
+     * @param request ListEnterpriseMultiAccountRequest 请求对象
      * @return SyncInvoker<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse>
      */
     public SyncInvoker<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse> listEnterpriseMultiAccountInvoker(
         ListEnterpriseMultiAccountRequest request) {
-        return new SyncInvoker<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse>(request,
-            BssMeta.listEnterpriseMultiAccount, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listEnterpriseMultiAccount, hcClient);
     }
 
     /**
@@ -1218,7 +1193,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseOrganizationsRequest 请求对象
+     * @param request ListEnterpriseOrganizationsRequest 请求对象
      * @return ListEnterpriseOrganizationsResponse
      */
     public ListEnterpriseOrganizationsResponse listEnterpriseOrganizations(ListEnterpriseOrganizationsRequest request) {
@@ -1232,13 +1207,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseOrganizationsRequest 请求对象
+     * @param request ListEnterpriseOrganizationsRequest 请求对象
      * @return SyncInvoker<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse>
      */
     public SyncInvoker<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse> listEnterpriseOrganizationsInvoker(
         ListEnterpriseOrganizationsRequest request) {
-        return new SyncInvoker<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse>(request,
-            BssMeta.listEnterpriseOrganizations, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listEnterpriseOrganizations, hcClient);
     }
 
     /**
@@ -1248,7 +1222,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseSubCustomersRequest 请求对象
+     * @param request ListEnterpriseSubCustomersRequest 请求对象
      * @return ListEnterpriseSubCustomersResponse
      */
     public ListEnterpriseSubCustomersResponse listEnterpriseSubCustomers(ListEnterpriseSubCustomersRequest request) {
@@ -1262,13 +1236,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseSubCustomersRequest 请求对象
+     * @param request ListEnterpriseSubCustomersRequest 请求对象
      * @return SyncInvoker<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse>
      */
     public SyncInvoker<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> listEnterpriseSubCustomersInvoker(
         ListEnterpriseSubCustomersRequest request) {
-        return new SyncInvoker<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse>(request,
-            BssMeta.listEnterpriseSubCustomers, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listEnterpriseSubCustomers, hcClient);
     }
 
     /**
@@ -1278,7 +1251,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourceInfosRequest 请求对象
+     * @param request ListFreeResourceInfosRequest 请求对象
      * @return ListFreeResourceInfosResponse
      */
     public ListFreeResourceInfosResponse listFreeResourceInfos(ListFreeResourceInfosRequest request) {
@@ -1292,13 +1265,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourceInfosRequest 请求对象
+     * @param request ListFreeResourceInfosRequest 请求对象
      * @return SyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse>
      */
     public SyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse> listFreeResourceInfosInvoker(
         ListFreeResourceInfosRequest request) {
-        return new SyncInvoker<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse>(request,
-            BssMeta.listFreeResourceInfos, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listFreeResourceInfos, hcClient);
     }
 
     /**
@@ -1308,7 +1280,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourceUsagesRequest 请求对象
+     * @param request ListFreeResourceUsagesRequest 请求对象
      * @return ListFreeResourceUsagesResponse
      */
     public ListFreeResourceUsagesResponse listFreeResourceUsages(ListFreeResourceUsagesRequest request) {
@@ -1322,13 +1294,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourceUsagesRequest 请求对象
+     * @param request ListFreeResourceUsagesRequest 请求对象
      * @return SyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>
      */
     public SyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> listFreeResourceUsagesInvoker(
         ListFreeResourceUsagesRequest request) {
-        return new SyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>(request,
-            BssMeta.listFreeResourceUsages, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listFreeResourceUsages, hcClient);
     }
 
     /**
@@ -1338,7 +1309,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourcesUsageRecordsRequest 请求对象
+     * @param request ListFreeResourcesUsageRecordsRequest 请求对象
      * @return ListFreeResourcesUsageRecordsResponse
      */
     public ListFreeResourcesUsageRecordsResponse listFreeResourcesUsageRecords(
@@ -1353,13 +1324,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFreeResourcesUsageRecordsRequest 请求对象
+     * @param request ListFreeResourcesUsageRecordsRequest 请求对象
      * @return SyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse>
      */
     public SyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> listFreeResourcesUsageRecordsInvoker(
         ListFreeResourcesUsageRecordsRequest request) {
-        return new SyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse>(request,
-            BssMeta.listFreeResourcesUsageRecords, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listFreeResourcesUsageRecords, hcClient);
     }
 
     /**
@@ -1371,7 +1341,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIncentiveDiscountPoliciesRequest 请求对象
+     * @param request ListIncentiveDiscountPoliciesRequest 请求对象
      * @return ListIncentiveDiscountPoliciesResponse
      */
     public ListIncentiveDiscountPoliciesResponse listIncentiveDiscountPolicies(
@@ -1388,13 +1358,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIncentiveDiscountPoliciesRequest 请求对象
+     * @param request ListIncentiveDiscountPoliciesRequest 请求对象
      * @return SyncInvoker<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse>
      */
     public SyncInvoker<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> listIncentiveDiscountPoliciesInvoker(
         ListIncentiveDiscountPoliciesRequest request) {
-        return new SyncInvoker<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse>(request,
-            BssMeta.listIncentiveDiscountPolicies, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listIncentiveDiscountPolicies, hcClient);
     }
 
     /**
@@ -1406,7 +1375,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIndirectPartnersRequest 请求对象
+     * @param request ListIndirectPartnersRequest 请求对象
      * @return ListIndirectPartnersResponse
      */
     public ListIndirectPartnersResponse listIndirectPartners(ListIndirectPartnersRequest request) {
@@ -1422,13 +1391,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIndirectPartnersRequest 请求对象
+     * @param request ListIndirectPartnersRequest 请求对象
      * @return SyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse>
      */
     public SyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse> listIndirectPartnersInvoker(
         ListIndirectPartnersRequest request) {
-        return new SyncInvoker<ListIndirectPartnersRequest, ListIndirectPartnersResponse>(request,
-            BssMeta.listIndirectPartners, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listIndirectPartners, hcClient);
     }
 
     /**
@@ -1443,7 +1411,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuedCouponQuotasRequest 请求对象
+     * @param request ListIssuedCouponQuotasRequest 请求对象
      * @return ListIssuedCouponQuotasResponse
      */
     public ListIssuedCouponQuotasResponse listIssuedCouponQuotas(ListIssuedCouponQuotasRequest request) {
@@ -1462,13 +1430,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuedCouponQuotasRequest 请求对象
+     * @param request ListIssuedCouponQuotasRequest 请求对象
      * @return SyncInvoker<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse>
      */
     public SyncInvoker<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse> listIssuedCouponQuotasInvoker(
         ListIssuedCouponQuotasRequest request) {
-        return new SyncInvoker<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse>(request,
-            BssMeta.listIssuedCouponQuotas, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listIssuedCouponQuotas, hcClient);
     }
 
     /**
@@ -1486,7 +1453,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuedPartnerCouponsRequest 请求对象
+     * @param request ListIssuedPartnerCouponsRequest 请求对象
      * @return ListIssuedPartnerCouponsResponse
      */
     public ListIssuedPartnerCouponsResponse listIssuedPartnerCoupons(ListIssuedPartnerCouponsRequest request) {
@@ -1508,13 +1475,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIssuedPartnerCouponsRequest 请求对象
+     * @param request ListIssuedPartnerCouponsRequest 请求对象
      * @return SyncInvoker<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse>
      */
     public SyncInvoker<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse> listIssuedPartnerCouponsInvoker(
         ListIssuedPartnerCouponsRequest request) {
-        return new SyncInvoker<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse>(request,
-            BssMeta.listIssuedPartnerCoupons, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listIssuedPartnerCoupons, hcClient);
     }
 
     /**
@@ -1524,7 +1490,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMeasureUnitsRequest 请求对象
+     * @param request ListMeasureUnitsRequest 请求对象
      * @return ListMeasureUnitsResponse
      */
     public ListMeasureUnitsResponse listMeasureUnits(ListMeasureUnitsRequest request) {
@@ -1538,13 +1504,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMeasureUnitsRequest 请求对象
+     * @param request ListMeasureUnitsRequest 请求对象
      * @return SyncInvoker<ListMeasureUnitsRequest, ListMeasureUnitsResponse>
      */
     public SyncInvoker<ListMeasureUnitsRequest, ListMeasureUnitsResponse> listMeasureUnitsInvoker(
         ListMeasureUnitsRequest request) {
-        return new SyncInvoker<ListMeasureUnitsRequest, ListMeasureUnitsResponse>(request, BssMeta.listMeasureUnits,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.listMeasureUnits, hcClient);
     }
 
     /**
@@ -1557,7 +1522,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMultiAccountRetrieveCouponsRequest 请求对象
+     * @param request ListMultiAccountRetrieveCouponsRequest 请求对象
      * @return ListMultiAccountRetrieveCouponsResponse
      */
     public ListMultiAccountRetrieveCouponsResponse listMultiAccountRetrieveCoupons(
@@ -1575,13 +1540,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMultiAccountRetrieveCouponsRequest 请求对象
+     * @param request ListMultiAccountRetrieveCouponsRequest 请求对象
      * @return SyncInvoker<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse>
      */
     public SyncInvoker<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse> listMultiAccountRetrieveCouponsInvoker(
         ListMultiAccountRetrieveCouponsRequest request) {
-        return new SyncInvoker<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse>(request,
-            BssMeta.listMultiAccountRetrieveCoupons, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listMultiAccountRetrieveCoupons, hcClient);
     }
 
     /**
@@ -1594,7 +1558,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMultiAccountTransferCouponsRequest 请求对象
+     * @param request ListMultiAccountTransferCouponsRequest 请求对象
      * @return ListMultiAccountTransferCouponsResponse
      */
     public ListMultiAccountTransferCouponsResponse listMultiAccountTransferCoupons(
@@ -1612,13 +1576,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMultiAccountTransferCouponsRequest 请求对象
+     * @param request ListMultiAccountTransferCouponsRequest 请求对象
      * @return SyncInvoker<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse>
      */
     public SyncInvoker<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse> listMultiAccountTransferCouponsInvoker(
         ListMultiAccountTransferCouponsRequest request) {
-        return new SyncInvoker<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse>(request,
-            BssMeta.listMultiAccountTransferCoupons, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listMultiAccountTransferCoupons, hcClient);
     }
 
     /**
@@ -1635,7 +1598,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOnDemandResourceRatingsRequest 请求对象
+     * @param request ListOnDemandResourceRatingsRequest 请求对象
      * @return ListOnDemandResourceRatingsResponse
      */
     public ListOnDemandResourceRatingsResponse listOnDemandResourceRatings(ListOnDemandResourceRatingsRequest request) {
@@ -1656,13 +1619,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOnDemandResourceRatingsRequest 请求对象
+     * @param request ListOnDemandResourceRatingsRequest 请求对象
      * @return SyncInvoker<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse>
      */
     public SyncInvoker<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse> listOnDemandResourceRatingsInvoker(
         ListOnDemandResourceRatingsRequest request) {
-        return new SyncInvoker<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse>(request,
-            BssMeta.listOnDemandResourceRatings, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listOnDemandResourceRatings, hcClient);
     }
 
     /**
@@ -1672,7 +1634,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrderCouponsByOrderIdRequest 请求对象
+     * @param request ListOrderCouponsByOrderIdRequest 请求对象
      * @return ListOrderCouponsByOrderIdResponse
      */
     public ListOrderCouponsByOrderIdResponse listOrderCouponsByOrderId(ListOrderCouponsByOrderIdRequest request) {
@@ -1686,13 +1648,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrderCouponsByOrderIdRequest 请求对象
+     * @param request ListOrderCouponsByOrderIdRequest 请求对象
      * @return SyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse>
      */
     public SyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> listOrderCouponsByOrderIdInvoker(
         ListOrderCouponsByOrderIdRequest request) {
-        return new SyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse>(request,
-            BssMeta.listOrderCouponsByOrderId, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listOrderCouponsByOrderId, hcClient);
     }
 
     /**
@@ -1702,7 +1663,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrderDiscountsRequest 请求对象
+     * @param request ListOrderDiscountsRequest 请求对象
      * @return ListOrderDiscountsResponse
      */
     public ListOrderDiscountsResponse listOrderDiscounts(ListOrderDiscountsRequest request) {
@@ -1716,13 +1677,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrderDiscountsRequest 请求对象
+     * @param request ListOrderDiscountsRequest 请求对象
      * @return SyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>
      */
     public SyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse> listOrderDiscountsInvoker(
         ListOrderDiscountsRequest request) {
-        return new SyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>(request,
-            BssMeta.listOrderDiscounts, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listOrderDiscounts, hcClient);
     }
 
     /**
@@ -1732,7 +1692,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerAccountChangeRecordsRequest 请求对象
+     * @param request ListPartnerAccountChangeRecordsRequest 请求对象
      * @return ListPartnerAccountChangeRecordsResponse
      */
     public ListPartnerAccountChangeRecordsResponse listPartnerAccountChangeRecords(
@@ -1747,13 +1707,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerAccountChangeRecordsRequest 请求对象
+     * @param request ListPartnerAccountChangeRecordsRequest 请求对象
      * @return SyncInvoker<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse>
      */
     public SyncInvoker<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> listPartnerAccountChangeRecordsInvoker(
         ListPartnerAccountChangeRecordsRequest request) {
-        return new SyncInvoker<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse>(request,
-            BssMeta.listPartnerAccountChangeRecords, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listPartnerAccountChangeRecords, hcClient);
     }
 
     /**
@@ -1765,7 +1724,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerAdjustRecordsRequest 请求对象
+     * @param request ListPartnerAdjustRecordsRequest 请求对象
      * @return ListPartnerAdjustRecordsResponse
      */
     public ListPartnerAdjustRecordsResponse listPartnerAdjustRecords(ListPartnerAdjustRecordsRequest request) {
@@ -1781,13 +1740,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerAdjustRecordsRequest 请求对象
+     * @param request ListPartnerAdjustRecordsRequest 请求对象
      * @return SyncInvoker<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse>
      */
     public SyncInvoker<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> listPartnerAdjustRecordsInvoker(
         ListPartnerAdjustRecordsRequest request) {
-        return new SyncInvoker<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse>(request,
-            BssMeta.listPartnerAdjustRecords, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listPartnerAdjustRecords, hcClient);
     }
 
     /**
@@ -1797,7 +1755,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerBalancesRequest 请求对象
+     * @param request ListPartnerBalancesRequest 请求对象
      * @return ListPartnerBalancesResponse
      */
     public ListPartnerBalancesResponse listPartnerBalances(ListPartnerBalancesRequest request) {
@@ -1811,13 +1769,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerBalancesRequest 请求对象
+     * @param request ListPartnerBalancesRequest 请求对象
      * @return SyncInvoker<ListPartnerBalancesRequest, ListPartnerBalancesResponse>
      */
     public SyncInvoker<ListPartnerBalancesRequest, ListPartnerBalancesResponse> listPartnerBalancesInvoker(
         ListPartnerBalancesRequest request) {
-        return new SyncInvoker<ListPartnerBalancesRequest, ListPartnerBalancesResponse>(request,
-            BssMeta.listPartnerBalances, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listPartnerBalances, hcClient);
     }
 
     /**
@@ -1829,7 +1786,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerCouponsRecordRequest 请求对象
+     * @param request ListPartnerCouponsRecordRequest 请求对象
      * @return ListPartnerCouponsRecordResponse
      */
     public ListPartnerCouponsRecordResponse listPartnerCouponsRecord(ListPartnerCouponsRecordRequest request) {
@@ -1845,13 +1802,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPartnerCouponsRecordRequest 请求对象
+     * @param request ListPartnerCouponsRecordRequest 请求对象
      * @return SyncInvoker<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse>
      */
     public SyncInvoker<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse> listPartnerCouponsRecordInvoker(
         ListPartnerCouponsRecordRequest request) {
-        return new SyncInvoker<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse>(request,
-            BssMeta.listPartnerCouponsRecord, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listPartnerCouponsRecord, hcClient);
     }
 
     /**
@@ -1864,7 +1820,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPayPerUseCustomerResourcesRequest 请求对象
+     * @param request ListPayPerUseCustomerResourcesRequest 请求对象
      * @return ListPayPerUseCustomerResourcesResponse
      */
     public ListPayPerUseCustomerResourcesResponse listPayPerUseCustomerResources(
@@ -1882,13 +1838,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPayPerUseCustomerResourcesRequest 请求对象
+     * @param request ListPayPerUseCustomerResourcesRequest 请求对象
      * @return SyncInvoker<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse>
      */
     public SyncInvoker<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse> listPayPerUseCustomerResourcesInvoker(
         ListPayPerUseCustomerResourcesRequest request) {
-        return new SyncInvoker<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse>(request,
-            BssMeta.listPayPerUseCustomerResources, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listPayPerUseCustomerResources, hcClient);
     }
 
     /**
@@ -1898,7 +1853,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProvincesRequest 请求对象
+     * @param request ListProvincesRequest 请求对象
      * @return ListProvincesResponse
      */
     public ListProvincesResponse listProvinces(ListProvincesRequest request) {
@@ -1912,11 +1867,11 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProvincesRequest 请求对象
+     * @param request ListProvincesRequest 请求对象
      * @return SyncInvoker<ListProvincesRequest, ListProvincesResponse>
      */
     public SyncInvoker<ListProvincesRequest, ListProvincesResponse> listProvincesInvoker(ListProvincesRequest request) {
-        return new SyncInvoker<ListProvincesRequest, ListProvincesResponse>(request, BssMeta.listProvinces, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listProvinces, hcClient);
     }
 
     /**
@@ -1928,7 +1883,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaCouponsRequest 请求对象
+     * @param request ListQuotaCouponsRequest 请求对象
      * @return ListQuotaCouponsResponse
      */
     public ListQuotaCouponsResponse listQuotaCoupons(ListQuotaCouponsRequest request) {
@@ -1944,13 +1899,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaCouponsRequest 请求对象
+     * @param request ListQuotaCouponsRequest 请求对象
      * @return SyncInvoker<ListQuotaCouponsRequest, ListQuotaCouponsResponse>
      */
     public SyncInvoker<ListQuotaCouponsRequest, ListQuotaCouponsResponse> listQuotaCouponsInvoker(
         ListQuotaCouponsRequest request) {
-        return new SyncInvoker<ListQuotaCouponsRequest, ListQuotaCouponsResponse>(request, BssMeta.listQuotaCoupons,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.listQuotaCoupons, hcClient);
     }
 
     /**
@@ -1967,7 +1921,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRateOnPeriodDetailRequest 请求对象
+     * @param request ListRateOnPeriodDetailRequest 请求对象
      * @return ListRateOnPeriodDetailResponse
      */
     public ListRateOnPeriodDetailResponse listRateOnPeriodDetail(ListRateOnPeriodDetailRequest request) {
@@ -1988,13 +1942,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRateOnPeriodDetailRequest 请求对象
+     * @param request ListRateOnPeriodDetailRequest 请求对象
      * @return SyncInvoker<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse>
      */
     public SyncInvoker<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse> listRateOnPeriodDetailInvoker(
         ListRateOnPeriodDetailRequest request) {
-        return new SyncInvoker<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse>(request,
-            BssMeta.listRateOnPeriodDetail, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listRateOnPeriodDetail, hcClient);
     }
 
     /**
@@ -2004,7 +1957,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRenewRateOnPeriodRequest 请求对象
+     * @param request ListRenewRateOnPeriodRequest 请求对象
      * @return ListRenewRateOnPeriodResponse
      */
     public ListRenewRateOnPeriodResponse listRenewRateOnPeriod(ListRenewRateOnPeriodRequest request) {
@@ -2018,13 +1971,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRenewRateOnPeriodRequest 请求对象
+     * @param request ListRenewRateOnPeriodRequest 请求对象
      * @return SyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse>
      */
     public SyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> listRenewRateOnPeriodInvoker(
         ListRenewRateOnPeriodRequest request) {
-        return new SyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse>(request,
-            BssMeta.listRenewRateOnPeriod, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listRenewRateOnPeriod, hcClient);
     }
 
     /**
@@ -2034,7 +1986,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTypesRequest 请求对象
+     * @param request ListResourceTypesRequest 请求对象
      * @return ListResourceTypesResponse
      */
     public ListResourceTypesResponse listResourceTypes(ListResourceTypesRequest request) {
@@ -2048,13 +2000,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTypesRequest 请求对象
+     * @param request ListResourceTypesRequest 请求对象
      * @return SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>
      */
     public SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypesInvoker(
         ListResourceTypesRequest request) {
-        return new SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>(request, BssMeta.listResourceTypes,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.listResourceTypes, hcClient);
     }
 
     /**
@@ -2067,7 +2018,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceUsageRequest 请求对象
+     * @param request ListResourceUsageRequest 请求对象
      * @return ListResourceUsageResponse
      */
     public ListResourceUsageResponse listResourceUsage(ListResourceUsageRequest request) {
@@ -2084,13 +2035,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceUsageRequest 请求对象
+     * @param request ListResourceUsageRequest 请求对象
      * @return SyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse>
      */
     public SyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse> listResourceUsageInvoker(
         ListResourceUsageRequest request) {
-        return new SyncInvoker<ListResourceUsageRequest, ListResourceUsageResponse>(request, BssMeta.listResourceUsage,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.listResourceUsage, hcClient);
     }
 
     /**
@@ -2104,7 +2054,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceUsageSummaryRequest 请求对象
+     * @param request ListResourceUsageSummaryRequest 请求对象
      * @return ListResourceUsageSummaryResponse
      */
     public ListResourceUsageSummaryResponse listResourceUsageSummary(ListResourceUsageSummaryRequest request) {
@@ -2122,13 +2072,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceUsageSummaryRequest 请求对象
+     * @param request ListResourceUsageSummaryRequest 请求对象
      * @return SyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse>
      */
     public SyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> listResourceUsageSummaryInvoker(
         ListResourceUsageSummaryRequest request) {
-        return new SyncInvoker<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse>(request,
-            BssMeta.listResourceUsageSummary, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listResourceUsageSummary, hcClient);
     }
 
     /**
@@ -2138,7 +2087,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceResourcesRequest 请求对象
+     * @param request ListServiceResourcesRequest 请求对象
      * @return ListServiceResourcesResponse
      */
     public ListServiceResourcesResponse listServiceResources(ListServiceResourcesRequest request) {
@@ -2152,13 +2101,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceResourcesRequest 请求对象
+     * @param request ListServiceResourcesRequest 请求对象
      * @return SyncInvoker<ListServiceResourcesRequest, ListServiceResourcesResponse>
      */
     public SyncInvoker<ListServiceResourcesRequest, ListServiceResourcesResponse> listServiceResourcesInvoker(
         ListServiceResourcesRequest request) {
-        return new SyncInvoker<ListServiceResourcesRequest, ListServiceResourcesResponse>(request,
-            BssMeta.listServiceResources, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listServiceResources, hcClient);
     }
 
     /**
@@ -2168,7 +2116,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceTypesRequest 请求对象
+     * @param request ListServiceTypesRequest 请求对象
      * @return ListServiceTypesResponse
      */
     public ListServiceTypesResponse listServiceTypes(ListServiceTypesRequest request) {
@@ -2182,13 +2130,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceTypesRequest 请求对象
+     * @param request ListServiceTypesRequest 请求对象
      * @return SyncInvoker<ListServiceTypesRequest, ListServiceTypesResponse>
      */
     public SyncInvoker<ListServiceTypesRequest, ListServiceTypesResponse> listServiceTypesInvoker(
         ListServiceTypesRequest request) {
-        return new SyncInvoker<ListServiceTypesRequest, ListServiceTypesResponse>(request, BssMeta.listServiceTypes,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.listServiceTypes, hcClient);
     }
 
     /**
@@ -2198,7 +2145,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoredValueCardsRequest 请求对象
+     * @param request ListStoredValueCardsRequest 请求对象
      * @return ListStoredValueCardsResponse
      */
     public ListStoredValueCardsResponse listStoredValueCards(ListStoredValueCardsRequest request) {
@@ -2212,13 +2159,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoredValueCardsRequest 请求对象
+     * @param request ListStoredValueCardsRequest 请求对象
      * @return SyncInvoker<ListStoredValueCardsRequest, ListStoredValueCardsResponse>
      */
     public SyncInvoker<ListStoredValueCardsRequest, ListStoredValueCardsResponse> listStoredValueCardsInvoker(
         ListStoredValueCardsRequest request) {
-        return new SyncInvoker<ListStoredValueCardsRequest, ListStoredValueCardsResponse>(request,
-            BssMeta.listStoredValueCards, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listStoredValueCards, hcClient);
     }
 
     /**
@@ -2235,7 +2181,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @param request ListSubCustomerBillDetailRequest 请求对象
      * @return ListSubCustomerBillDetailResponse
      */
     public ListSubCustomerBillDetailResponse listSubCustomerBillDetail(ListSubCustomerBillDetailRequest request) {
@@ -2256,13 +2202,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerBillDetailRequest 请求对象
+     * @param request ListSubCustomerBillDetailRequest 请求对象
      * @return SyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse>
      */
     public SyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> listSubCustomerBillDetailInvoker(
         ListSubCustomerBillDetailRequest request) {
-        return new SyncInvoker<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse>(request,
-            BssMeta.listSubCustomerBillDetail, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listSubCustomerBillDetail, hcClient);
     }
 
     /**
@@ -2274,7 +2219,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerCouponsRequest 请求对象
+     * @param request ListSubCustomerCouponsRequest 请求对象
      * @return ListSubCustomerCouponsResponse
      */
     public ListSubCustomerCouponsResponse listSubCustomerCoupons(ListSubCustomerCouponsRequest request) {
@@ -2290,13 +2235,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerCouponsRequest 请求对象
+     * @param request ListSubCustomerCouponsRequest 请求对象
      * @return SyncInvoker<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse>
      */
     public SyncInvoker<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse> listSubCustomerCouponsInvoker(
         ListSubCustomerCouponsRequest request) {
-        return new SyncInvoker<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse>(request,
-            BssMeta.listSubCustomerCoupons, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listSubCustomerCoupons, hcClient);
     }
 
     /**
@@ -2310,7 +2254,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerNewTagRequest 请求对象
+     * @param request ListSubCustomerNewTagRequest 请求对象
      * @return ListSubCustomerNewTagResponse
      */
     public ListSubCustomerNewTagResponse listSubCustomerNewTag(ListSubCustomerNewTagRequest request) {
@@ -2328,13 +2272,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomerNewTagRequest 请求对象
+     * @param request ListSubCustomerNewTagRequest 请求对象
      * @return SyncInvoker<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse>
      */
     public SyncInvoker<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse> listSubCustomerNewTagInvoker(
         ListSubCustomerNewTagRequest request) {
-        return new SyncInvoker<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse>(request,
-            BssMeta.listSubCustomerNewTag, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listSubCustomerNewTag, hcClient);
     }
 
     /**
@@ -2346,7 +2289,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomersRequest 请求对象
+     * @param request ListSubCustomersRequest 请求对象
      * @return ListSubCustomersResponse
      */
     public ListSubCustomersResponse listSubCustomers(ListSubCustomersRequest request) {
@@ -2362,13 +2305,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubCustomersRequest 请求对象
+     * @param request ListSubCustomersRequest 请求对象
      * @return SyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse>
      */
     public SyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse> listSubCustomersInvoker(
         ListSubCustomersRequest request) {
-        return new SyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse>(request, BssMeta.listSubCustomers,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.listSubCustomers, hcClient);
     }
 
     /**
@@ -2384,7 +2326,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubcustomerMonthlyBillsRequest 请求对象
+     * @param request ListSubcustomerMonthlyBillsRequest 请求对象
      * @return ListSubcustomerMonthlyBillsResponse
      */
     public ListSubcustomerMonthlyBillsResponse listSubcustomerMonthlyBills(ListSubcustomerMonthlyBillsRequest request) {
@@ -2404,13 +2346,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubcustomerMonthlyBillsRequest 请求对象
+     * @param request ListSubcustomerMonthlyBillsRequest 请求对象
      * @return SyncInvoker<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse>
      */
     public SyncInvoker<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse> listSubcustomerMonthlyBillsInvoker(
         ListSubcustomerMonthlyBillsRequest request) {
-        return new SyncInvoker<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse>(request,
-            BssMeta.listSubcustomerMonthlyBills, hcClient);
+        return new SyncInvoker<>(request, BssMeta.listSubcustomerMonthlyBills, hcClient);
     }
 
     /**
@@ -2420,7 +2361,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsageTypesRequest 请求对象
+     * @param request ListUsageTypesRequest 请求对象
      * @return ListUsageTypesResponse
      */
     public ListUsageTypesResponse listUsageTypes(ListUsageTypesRequest request) {
@@ -2434,13 +2375,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsageTypesRequest 请求对象
+     * @param request ListUsageTypesRequest 请求对象
      * @return SyncInvoker<ListUsageTypesRequest, ListUsageTypesResponse>
      */
     public SyncInvoker<ListUsageTypesRequest, ListUsageTypesResponse> listUsageTypesInvoker(
         ListUsageTypesRequest request) {
-        return new SyncInvoker<ListUsageTypesRequest, ListUsageTypesResponse>(request, BssMeta.listUsageTypes,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.listUsageTypes, hcClient);
     }
 
     /**
@@ -2459,7 +2399,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PayOrdersRequest 请求对象
+     * @param request PayOrdersRequest 请求对象
      * @return PayOrdersResponse
      */
     public PayOrdersResponse payOrders(PayOrdersRequest request) {
@@ -2482,11 +2422,11 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PayOrdersRequest 请求对象
+     * @param request PayOrdersRequest 请求对象
      * @return SyncInvoker<PayOrdersRequest, PayOrdersResponse>
      */
     public SyncInvoker<PayOrdersRequest, PayOrdersResponse> payOrdersInvoker(PayOrdersRequest request) {
-        return new SyncInvoker<PayOrdersRequest, PayOrdersResponse>(request, BssMeta.payOrders, hcClient);
+        return new SyncInvoker<>(request, BssMeta.payOrders, hcClient);
     }
 
     /**
@@ -2498,7 +2438,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimCouponQuotasRequest 请求对象
+     * @param request ReclaimCouponQuotasRequest 请求对象
      * @return ReclaimCouponQuotasResponse
      */
     public ReclaimCouponQuotasResponse reclaimCouponQuotas(ReclaimCouponQuotasRequest request) {
@@ -2514,13 +2454,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimCouponQuotasRequest 请求对象
+     * @param request ReclaimCouponQuotasRequest 请求对象
      * @return SyncInvoker<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse>
      */
     public SyncInvoker<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse> reclaimCouponQuotasInvoker(
         ReclaimCouponQuotasRequest request) {
-        return new SyncInvoker<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse>(request,
-            BssMeta.reclaimCouponQuotas, hcClient);
+        return new SyncInvoker<>(request, BssMeta.reclaimCouponQuotas, hcClient);
     }
 
     /**
@@ -2533,7 +2472,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @param request ReclaimEnterpriseMultiAccountCouponRequest 请求对象
      * @return ReclaimEnterpriseMultiAccountCouponResponse
      */
     public ReclaimEnterpriseMultiAccountCouponResponse reclaimEnterpriseMultiAccountCoupon(
@@ -2551,13 +2490,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @param request ReclaimEnterpriseMultiAccountCouponRequest 请求对象
      * @return SyncInvoker<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse>
      */
     public SyncInvoker<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse> reclaimEnterpriseMultiAccountCouponInvoker(
         ReclaimEnterpriseMultiAccountCouponRequest request) {
-        return new SyncInvoker<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse>(
-            request, BssMeta.reclaimEnterpriseMultiAccountCoupon, hcClient);
+        return new SyncInvoker<>(request, BssMeta.reclaimEnterpriseMultiAccountCoupon, hcClient);
     }
 
     /**
@@ -2569,7 +2507,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimIndirectPartnerAccountRequest 请求对象
+     * @param request ReclaimIndirectPartnerAccountRequest 请求对象
      * @return ReclaimIndirectPartnerAccountResponse
      */
     public ReclaimIndirectPartnerAccountResponse reclaimIndirectPartnerAccount(
@@ -2586,13 +2524,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimIndirectPartnerAccountRequest 请求对象
+     * @param request ReclaimIndirectPartnerAccountRequest 请求对象
      * @return SyncInvoker<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse>
      */
     public SyncInvoker<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse> reclaimIndirectPartnerAccountInvoker(
         ReclaimIndirectPartnerAccountRequest request) {
-        return new SyncInvoker<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse>(request,
-            BssMeta.reclaimIndirectPartnerAccount, hcClient);
+        return new SyncInvoker<>(request, BssMeta.reclaimIndirectPartnerAccount, hcClient);
     }
 
     /**
@@ -2607,7 +2544,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimPartnerCouponsRequest 请求对象
+     * @param request ReclaimPartnerCouponsRequest 请求对象
      * @return ReclaimPartnerCouponsResponse
      */
     public ReclaimPartnerCouponsResponse reclaimPartnerCoupons(ReclaimPartnerCouponsRequest request) {
@@ -2626,13 +2563,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimPartnerCouponsRequest 请求对象
+     * @param request ReclaimPartnerCouponsRequest 请求对象
      * @return SyncInvoker<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse>
      */
     public SyncInvoker<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse> reclaimPartnerCouponsInvoker(
         ReclaimPartnerCouponsRequest request) {
-        return new SyncInvoker<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse>(request,
-            BssMeta.reclaimPartnerCoupons, hcClient);
+        return new SyncInvoker<>(request, BssMeta.reclaimPartnerCoupons, hcClient);
     }
 
     /**
@@ -2644,7 +2580,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimSubEnterpriseAmountRequest 请求对象
+     * @param request ReclaimSubEnterpriseAmountRequest 请求对象
      * @return ReclaimSubEnterpriseAmountResponse
      */
     public ReclaimSubEnterpriseAmountResponse reclaimSubEnterpriseAmount(ReclaimSubEnterpriseAmountRequest request) {
@@ -2660,13 +2596,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimSubEnterpriseAmountRequest 请求对象
+     * @param request ReclaimSubEnterpriseAmountRequest 请求对象
      * @return SyncInvoker<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse>
      */
     public SyncInvoker<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse> reclaimSubEnterpriseAmountInvoker(
         ReclaimSubEnterpriseAmountRequest request) {
-        return new SyncInvoker<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse>(request,
-            BssMeta.reclaimSubEnterpriseAmount, hcClient);
+        return new SyncInvoker<>(request, BssMeta.reclaimSubEnterpriseAmount, hcClient);
     }
 
     /**
@@ -2678,7 +2613,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimToPartnerAccountRequest 请求对象
+     * @param request ReclaimToPartnerAccountRequest 请求对象
      * @return ReclaimToPartnerAccountResponse
      */
     public ReclaimToPartnerAccountResponse reclaimToPartnerAccount(ReclaimToPartnerAccountRequest request) {
@@ -2694,13 +2629,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ReclaimToPartnerAccountRequest 请求对象
+     * @param request ReclaimToPartnerAccountRequest 请求对象
      * @return SyncInvoker<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse>
      */
     public SyncInvoker<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse> reclaimToPartnerAccountInvoker(
         ReclaimToPartnerAccountRequest request) {
-        return new SyncInvoker<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse>(request,
-            BssMeta.reclaimToPartnerAccount, hcClient);
+        return new SyncInvoker<>(request, BssMeta.reclaimToPartnerAccount, hcClient);
     }
 
     /**
@@ -2717,7 +2651,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenewalResourcesRequest 请求对象
+     * @param request RenewalResourcesRequest 请求对象
      * @return RenewalResourcesResponse
      */
     public RenewalResourcesResponse renewalResources(RenewalResourcesRequest request) {
@@ -2738,13 +2672,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenewalResourcesRequest 请求对象
+     * @param request RenewalResourcesRequest 请求对象
      * @return SyncInvoker<RenewalResourcesRequest, RenewalResourcesResponse>
      */
     public SyncInvoker<RenewalResourcesRequest, RenewalResourcesResponse> renewalResourcesInvoker(
         RenewalResourcesRequest request) {
-        return new SyncInvoker<RenewalResourcesRequest, RenewalResourcesResponse>(request, BssMeta.renewalResources,
-            hcClient);
+        return new SyncInvoker<>(request, BssMeta.renewalResources, hcClient);
     }
 
     /**
@@ -2754,7 +2687,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSmsVerificationCodeRequest 请求对象
+     * @param request SendSmsVerificationCodeRequest 请求对象
      * @return SendSmsVerificationCodeResponse
      */
     public SendSmsVerificationCodeResponse sendSmsVerificationCode(SendSmsVerificationCodeRequest request) {
@@ -2768,13 +2701,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSmsVerificationCodeRequest 请求对象
+     * @param request SendSmsVerificationCodeRequest 请求对象
      * @return SyncInvoker<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse>
      */
     public SyncInvoker<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse> sendSmsVerificationCodeInvoker(
         SendSmsVerificationCodeRequest request) {
-        return new SyncInvoker<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse>(request,
-            BssMeta.sendSmsVerificationCode, hcClient);
+        return new SyncInvoker<>(request, BssMeta.sendSmsVerificationCode, hcClient);
     }
 
     /**
@@ -2784,7 +2716,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVerificationMessageCodeRequest 请求对象
+     * @param request SendVerificationMessageCodeRequest 请求对象
      * @return SendVerificationMessageCodeResponse
      */
     public SendVerificationMessageCodeResponse sendVerificationMessageCode(SendVerificationMessageCodeRequest request) {
@@ -2798,13 +2730,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVerificationMessageCodeRequest 请求对象
+     * @param request SendVerificationMessageCodeRequest 请求对象
      * @return SyncInvoker<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse>
      */
     public SyncInvoker<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse> sendVerificationMessageCodeInvoker(
         SendVerificationMessageCodeRequest request) {
-        return new SyncInvoker<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse>(request,
-            BssMeta.sendVerificationMessageCode, hcClient);
+        return new SyncInvoker<>(request, BssMeta.sendVerificationMessageCode, hcClient);
     }
 
     /**
@@ -2816,7 +2747,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerAccountBalancesRequest 请求对象
+     * @param request ShowCustomerAccountBalancesRequest 请求对象
      * @return ShowCustomerAccountBalancesResponse
      */
     public ShowCustomerAccountBalancesResponse showCustomerAccountBalances(ShowCustomerAccountBalancesRequest request) {
@@ -2832,13 +2763,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerAccountBalancesRequest 请求对象
+     * @param request ShowCustomerAccountBalancesRequest 请求对象
      * @return SyncInvoker<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse>
      */
     public SyncInvoker<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> showCustomerAccountBalancesInvoker(
         ShowCustomerAccountBalancesRequest request) {
-        return new SyncInvoker<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse>(request,
-            BssMeta.showCustomerAccountBalances, hcClient);
+        return new SyncInvoker<>(request, BssMeta.showCustomerAccountBalances, hcClient);
     }
 
     /**
@@ -2853,7 +2783,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerMonthlySumRequest 请求对象
+     * @param request ShowCustomerMonthlySumRequest 请求对象
      * @return ShowCustomerMonthlySumResponse
      */
     public ShowCustomerMonthlySumResponse showCustomerMonthlySum(ShowCustomerMonthlySumRequest request) {
@@ -2872,13 +2802,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerMonthlySumRequest 请求对象
+     * @param request ShowCustomerMonthlySumRequest 请求对象
      * @return SyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse>
      */
     public SyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> showCustomerMonthlySumInvoker(
         ShowCustomerMonthlySumRequest request) {
-        return new SyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse>(request,
-            BssMeta.showCustomerMonthlySum, hcClient);
+        return new SyncInvoker<>(request, BssMeta.showCustomerMonthlySum, hcClient);
     }
 
     /**
@@ -2893,7 +2822,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerOrderDetailsRequest 请求对象
+     * @param request ShowCustomerOrderDetailsRequest 请求对象
      * @return ShowCustomerOrderDetailsResponse
      */
     public ShowCustomerOrderDetailsResponse showCustomerOrderDetails(ShowCustomerOrderDetailsRequest request) {
@@ -2912,13 +2841,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomerOrderDetailsRequest 请求对象
+     * @param request ShowCustomerOrderDetailsRequest 请求对象
      * @return SyncInvoker<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse>
      */
     public SyncInvoker<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> showCustomerOrderDetailsInvoker(
         ShowCustomerOrderDetailsRequest request) {
-        return new SyncInvoker<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse>(request,
-            BssMeta.showCustomerOrderDetails, hcClient);
+        return new SyncInvoker<>(request, BssMeta.showCustomerOrderDetails, hcClient);
     }
 
     /**
@@ -2928,7 +2856,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMultiAccountTransferAmountRequest 请求对象
+     * @param request ShowMultiAccountTransferAmountRequest 请求对象
      * @return ShowMultiAccountTransferAmountResponse
      */
     public ShowMultiAccountTransferAmountResponse showMultiAccountTransferAmount(
@@ -2943,13 +2871,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMultiAccountTransferAmountRequest 请求对象
+     * @param request ShowMultiAccountTransferAmountRequest 请求对象
      * @return SyncInvoker<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse>
      */
     public SyncInvoker<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> showMultiAccountTransferAmountInvoker(
         ShowMultiAccountTransferAmountRequest request) {
-        return new SyncInvoker<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse>(request,
-            BssMeta.showMultiAccountTransferAmount, hcClient);
+        return new SyncInvoker<>(request, BssMeta.showMultiAccountTransferAmount, hcClient);
     }
 
     /**
@@ -2959,7 +2886,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealnameAuthenticationReviewResultRequest 请求对象
+     * @param request ShowRealnameAuthenticationReviewResultRequest 请求对象
      * @return ShowRealnameAuthenticationReviewResultResponse
      */
     public ShowRealnameAuthenticationReviewResultResponse showRealnameAuthenticationReviewResult(
@@ -2974,13 +2901,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealnameAuthenticationReviewResultRequest 请求对象
+     * @param request ShowRealnameAuthenticationReviewResultRequest 请求对象
      * @return SyncInvoker<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse>
      */
     public SyncInvoker<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse> showRealnameAuthenticationReviewResultInvoker(
         ShowRealnameAuthenticationReviewResultRequest request) {
-        return new SyncInvoker<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse>(
-            request, BssMeta.showRealnameAuthenticationReviewResult, hcClient);
+        return new SyncInvoker<>(request, BssMeta.showRealnameAuthenticationReviewResult, hcClient);
     }
 
     /**
@@ -2994,7 +2920,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRefundOrderDetailsRequest 请求对象
+     * @param request ShowRefundOrderDetailsRequest 请求对象
      * @return ShowRefundOrderDetailsResponse
      */
     public ShowRefundOrderDetailsResponse showRefundOrderDetails(ShowRefundOrderDetailsRequest request) {
@@ -3012,13 +2938,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRefundOrderDetailsRequest 请求对象
+     * @param request ShowRefundOrderDetailsRequest 请求对象
      * @return SyncInvoker<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse>
      */
     public SyncInvoker<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse> showRefundOrderDetailsInvoker(
         ShowRefundOrderDetailsRequest request) {
-        return new SyncInvoker<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse>(request,
-            BssMeta.showRefundOrderDetails, hcClient);
+        return new SyncInvoker<>(request, BssMeta.showRefundOrderDetails, hcClient);
     }
 
     /**
@@ -3030,7 +2955,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCouponQuotasRequest 请求对象
+     * @param request UpdateCouponQuotasRequest 请求对象
      * @return UpdateCouponQuotasResponse
      */
     public UpdateCouponQuotasResponse updateCouponQuotas(UpdateCouponQuotasRequest request) {
@@ -3046,13 +2971,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCouponQuotasRequest 请求对象
+     * @param request UpdateCouponQuotasRequest 请求对象
      * @return SyncInvoker<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse>
      */
     public SyncInvoker<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse> updateCouponQuotasInvoker(
         UpdateCouponQuotasRequest request) {
-        return new SyncInvoker<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse>(request,
-            BssMeta.updateCouponQuotas, hcClient);
+        return new SyncInvoker<>(request, BssMeta.updateCouponQuotas, hcClient);
     }
 
     /**
@@ -3064,7 +2988,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomerAccountAmountRequest 请求对象
+     * @param request UpdateCustomerAccountAmountRequest 请求对象
      * @return UpdateCustomerAccountAmountResponse
      */
     public UpdateCustomerAccountAmountResponse updateCustomerAccountAmount(UpdateCustomerAccountAmountRequest request) {
@@ -3080,13 +3004,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomerAccountAmountRequest 请求对象
+     * @param request UpdateCustomerAccountAmountRequest 请求对象
      * @return SyncInvoker<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse>
      */
     public SyncInvoker<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse> updateCustomerAccountAmountInvoker(
         UpdateCustomerAccountAmountRequest request) {
-        return new SyncInvoker<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse>(request,
-            BssMeta.updateCustomerAccountAmount, hcClient);
+        return new SyncInvoker<>(request, BssMeta.updateCustomerAccountAmount, hcClient);
     }
 
     /**
@@ -3098,7 +3021,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIndirectPartnerAccountRequest 请求对象
+     * @param request UpdateIndirectPartnerAccountRequest 请求对象
      * @return UpdateIndirectPartnerAccountResponse
      */
     public UpdateIndirectPartnerAccountResponse updateIndirectPartnerAccount(
@@ -3115,13 +3038,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIndirectPartnerAccountRequest 请求对象
+     * @param request UpdateIndirectPartnerAccountRequest 请求对象
      * @return SyncInvoker<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse>
      */
     public SyncInvoker<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse> updateIndirectPartnerAccountInvoker(
         UpdateIndirectPartnerAccountRequest request) {
-        return new SyncInvoker<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse>(request,
-            BssMeta.updateIndirectPartnerAccount, hcClient);
+        return new SyncInvoker<>(request, BssMeta.updateIndirectPartnerAccount, hcClient);
     }
 
     /**
@@ -3140,7 +3062,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePeriodToOnDemandRequest 请求对象
+     * @param request UpdatePeriodToOnDemandRequest 请求对象
      * @return UpdatePeriodToOnDemandResponse
      */
     public UpdatePeriodToOnDemandResponse updatePeriodToOnDemand(UpdatePeriodToOnDemandRequest request) {
@@ -3163,13 +3085,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePeriodToOnDemandRequest 请求对象
+     * @param request UpdatePeriodToOnDemandRequest 请求对象
      * @return SyncInvoker<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse>
      */
     public SyncInvoker<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> updatePeriodToOnDemandInvoker(
         UpdatePeriodToOnDemandRequest request) {
-        return new SyncInvoker<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse>(request,
-            BssMeta.updatePeriodToOnDemand, hcClient);
+        return new SyncInvoker<>(request, BssMeta.updatePeriodToOnDemand, hcClient);
     }
 
     /**
@@ -3179,7 +3100,7 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubEnterpriseAmountRequest 请求对象
+     * @param request UpdateSubEnterpriseAmountRequest 请求对象
      * @return UpdateSubEnterpriseAmountResponse
      */
     public UpdateSubEnterpriseAmountResponse updateSubEnterpriseAmount(UpdateSubEnterpriseAmountRequest request) {
@@ -3193,13 +3114,12 @@ public class BssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubEnterpriseAmountRequest 请求对象
+     * @param request UpdateSubEnterpriseAmountRequest 请求对象
      * @return SyncInvoker<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse>
      */
     public SyncInvoker<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse> updateSubEnterpriseAmountInvoker(
         UpdateSubEnterpriseAmountRequest request) {
-        return new SyncInvoker<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse>(request,
-            BssMeta.updateSubEnterpriseAmount, hcClient);
+        return new SyncInvoker<>(request, BssMeta.updateSubEnterpriseAmount, hcClient);
     }
 
 }

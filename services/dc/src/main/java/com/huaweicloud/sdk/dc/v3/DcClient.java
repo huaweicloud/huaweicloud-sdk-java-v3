@@ -87,7 +87,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHostedDirectConnectRequest 请求对象
+     * @param request CreateHostedDirectConnectRequest 请求对象
      * @return CreateHostedDirectConnectResponse
      */
     public CreateHostedDirectConnectResponse createHostedDirectConnect(CreateHostedDirectConnectRequest request) {
@@ -102,13 +102,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHostedDirectConnectRequest 请求对象
+     * @param request CreateHostedDirectConnectRequest 请求对象
      * @return SyncInvoker<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse>
      */
     public SyncInvoker<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse> createHostedDirectConnectInvoker(
         CreateHostedDirectConnectRequest request) {
-        return new SyncInvoker<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse>(request,
-            DcMeta.createHostedDirectConnect, hcClient);
+        return new SyncInvoker<>(request, DcMeta.createHostedDirectConnect, hcClient);
     }
 
     /**
@@ -118,7 +117,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDirectConnectRequest 请求对象
+     * @param request DeleteDirectConnectRequest 请求对象
      * @return DeleteDirectConnectResponse
      */
     public DeleteDirectConnectResponse deleteDirectConnect(DeleteDirectConnectRequest request) {
@@ -132,13 +131,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDirectConnectRequest 请求对象
+     * @param request DeleteDirectConnectRequest 请求对象
      * @return SyncInvoker<DeleteDirectConnectRequest, DeleteDirectConnectResponse>
      */
     public SyncInvoker<DeleteDirectConnectRequest, DeleteDirectConnectResponse> deleteDirectConnectInvoker(
         DeleteDirectConnectRequest request) {
-        return new SyncInvoker<DeleteDirectConnectRequest, DeleteDirectConnectResponse>(request,
-            DcMeta.deleteDirectConnect, hcClient);
+        return new SyncInvoker<>(request, DcMeta.deleteDirectConnect, hcClient);
     }
 
     /**
@@ -148,7 +146,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHostedDirectConnectRequest 请求对象
+     * @param request DeleteHostedDirectConnectRequest 请求对象
      * @return DeleteHostedDirectConnectResponse
      */
     public DeleteHostedDirectConnectResponse deleteHostedDirectConnect(DeleteHostedDirectConnectRequest request) {
@@ -162,13 +160,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHostedDirectConnectRequest 请求对象
+     * @param request DeleteHostedDirectConnectRequest 请求对象
      * @return SyncInvoker<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse>
      */
     public SyncInvoker<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse> deleteHostedDirectConnectInvoker(
         DeleteHostedDirectConnectRequest request) {
-        return new SyncInvoker<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse>(request,
-            DcMeta.deleteHostedDirectConnect, hcClient);
+        return new SyncInvoker<>(request, DcMeta.deleteHostedDirectConnect, hcClient);
     }
 
     /**
@@ -178,7 +175,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDirectConnectsRequest 请求对象
+     * @param request ListDirectConnectsRequest 请求对象
      * @return ListDirectConnectsResponse
      */
     public ListDirectConnectsResponse listDirectConnects(ListDirectConnectsRequest request) {
@@ -192,13 +189,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDirectConnectsRequest 请求对象
+     * @param request ListDirectConnectsRequest 请求对象
      * @return SyncInvoker<ListDirectConnectsRequest, ListDirectConnectsResponse>
      */
     public SyncInvoker<ListDirectConnectsRequest, ListDirectConnectsResponse> listDirectConnectsInvoker(
         ListDirectConnectsRequest request) {
-        return new SyncInvoker<ListDirectConnectsRequest, ListDirectConnectsResponse>(request,
-            DcMeta.listDirectConnects, hcClient);
+        return new SyncInvoker<>(request, DcMeta.listDirectConnects, hcClient);
     }
 
     /**
@@ -208,7 +204,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostedDirectConnectsRequest 请求对象
+     * @param request ListHostedDirectConnectsRequest 请求对象
      * @return ListHostedDirectConnectsResponse
      */
     public ListHostedDirectConnectsResponse listHostedDirectConnects(ListHostedDirectConnectsRequest request) {
@@ -222,13 +218,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostedDirectConnectsRequest 请求对象
+     * @param request ListHostedDirectConnectsRequest 请求对象
      * @return SyncInvoker<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse>
      */
     public SyncInvoker<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse> listHostedDirectConnectsInvoker(
         ListHostedDirectConnectsRequest request) {
-        return new SyncInvoker<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse>(request,
-            DcMeta.listHostedDirectConnects, hcClient);
+        return new SyncInvoker<>(request, DcMeta.listHostedDirectConnects, hcClient);
     }
 
     /**
@@ -238,7 +233,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDirectConnectRequest 请求对象
+     * @param request ShowDirectConnectRequest 请求对象
      * @return ShowDirectConnectResponse
      */
     public ShowDirectConnectResponse showDirectConnect(ShowDirectConnectRequest request) {
@@ -252,13 +247,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDirectConnectRequest 请求对象
+     * @param request ShowDirectConnectRequest 请求对象
      * @return SyncInvoker<ShowDirectConnectRequest, ShowDirectConnectResponse>
      */
     public SyncInvoker<ShowDirectConnectRequest, ShowDirectConnectResponse> showDirectConnectInvoker(
         ShowDirectConnectRequest request) {
-        return new SyncInvoker<ShowDirectConnectRequest, ShowDirectConnectResponse>(request, DcMeta.showDirectConnect,
-            hcClient);
+        return new SyncInvoker<>(request, DcMeta.showDirectConnect, hcClient);
     }
 
     /**
@@ -268,7 +262,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHostedDirectConnectRequest 请求对象
+     * @param request ShowHostedDirectConnectRequest 请求对象
      * @return ShowHostedDirectConnectResponse
      */
     public ShowHostedDirectConnectResponse showHostedDirectConnect(ShowHostedDirectConnectRequest request) {
@@ -282,13 +276,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHostedDirectConnectRequest 请求对象
+     * @param request ShowHostedDirectConnectRequest 请求对象
      * @return SyncInvoker<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse>
      */
     public SyncInvoker<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse> showHostedDirectConnectInvoker(
         ShowHostedDirectConnectRequest request) {
-        return new SyncInvoker<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse>(request,
-            DcMeta.showHostedDirectConnect, hcClient);
+        return new SyncInvoker<>(request, DcMeta.showHostedDirectConnect, hcClient);
     }
 
     /**
@@ -298,7 +291,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDirectConnectRequest 请求对象
+     * @param request UpdateDirectConnectRequest 请求对象
      * @return UpdateDirectConnectResponse
      */
     public UpdateDirectConnectResponse updateDirectConnect(UpdateDirectConnectRequest request) {
@@ -312,13 +305,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDirectConnectRequest 请求对象
+     * @param request UpdateDirectConnectRequest 请求对象
      * @return SyncInvoker<UpdateDirectConnectRequest, UpdateDirectConnectResponse>
      */
     public SyncInvoker<UpdateDirectConnectRequest, UpdateDirectConnectResponse> updateDirectConnectInvoker(
         UpdateDirectConnectRequest request) {
-        return new SyncInvoker<UpdateDirectConnectRequest, UpdateDirectConnectResponse>(request,
-            DcMeta.updateDirectConnect, hcClient);
+        return new SyncInvoker<>(request, DcMeta.updateDirectConnect, hcClient);
     }
 
     /**
@@ -328,7 +320,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHostedDirectConnectRequest 请求对象
+     * @param request UpdateHostedDirectConnectRequest 请求对象
      * @return UpdateHostedDirectConnectResponse
      */
     public UpdateHostedDirectConnectResponse updateHostedDirectConnect(UpdateHostedDirectConnectRequest request) {
@@ -342,13 +334,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHostedDirectConnectRequest 请求对象
+     * @param request UpdateHostedDirectConnectRequest 请求对象
      * @return SyncInvoker<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse>
      */
     public SyncInvoker<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse> updateHostedDirectConnectInvoker(
         UpdateHostedDirectConnectRequest request) {
-        return new SyncInvoker<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse>(request,
-            DcMeta.updateHostedDirectConnect, hcClient);
+        return new SyncInvoker<>(request, DcMeta.updateHostedDirectConnect, hcClient);
     }
 
     /**
@@ -358,7 +349,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return ShowQuotasResponse
      */
     public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
@@ -372,11 +363,11 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
      */
     public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
-        return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, DcMeta.showQuotas, hcClient);
+        return new SyncInvoker<>(request, DcMeta.showQuotas, hcClient);
     }
 
     /**
@@ -388,7 +379,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceTagsRequest 请求对象
+     * @param request BatchCreateResourceTagsRequest 请求对象
      * @return BatchCreateResourceTagsResponse
      */
     public BatchCreateResourceTagsResponse batchCreateResourceTags(BatchCreateResourceTagsRequest request) {
@@ -404,13 +395,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceTagsRequest 请求对象
+     * @param request BatchCreateResourceTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>
      */
     public SyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTagsInvoker(
         BatchCreateResourceTagsRequest request) {
-        return new SyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>(request,
-            DcMeta.batchCreateResourceTags, hcClient);
+        return new SyncInvoker<>(request, DcMeta.batchCreateResourceTags, hcClient);
     }
 
     /**
@@ -422,7 +412,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagRequest 请求对象
+     * @param request CreateResourceTagRequest 请求对象
      * @return CreateResourceTagResponse
      */
     public CreateResourceTagResponse createResourceTag(CreateResourceTagRequest request) {
@@ -438,13 +428,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagRequest 请求对象
+     * @param request CreateResourceTagRequest 请求对象
      * @return SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>
      */
     public SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTagInvoker(
         CreateResourceTagRequest request) {
-        return new SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>(request, DcMeta.createResourceTag,
-            hcClient);
+        return new SyncInvoker<>(request, DcMeta.createResourceTag, hcClient);
     }
 
     /**
@@ -454,7 +443,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return DeleteResourceTagResponse
      */
     public DeleteResourceTagResponse deleteResourceTag(DeleteResourceTagRequest request) {
@@ -468,13 +457,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
      */
     public SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTagInvoker(
         DeleteResourceTagRequest request) {
-        return new SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>(request, DcMeta.deleteResourceTag,
-            hcClient);
+        return new SyncInvoker<>(request, DcMeta.deleteResourceTag, hcClient);
     }
 
     /**
@@ -485,7 +473,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return ListProjectTagsResponse
      */
     public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
@@ -500,13 +488,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
     public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
         ListProjectTagsRequest request) {
-        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, DcMeta.listProjectTags,
-            hcClient);
+        return new SyncInvoker<>(request, DcMeta.listProjectTags, hcClient);
     }
 
     /**
@@ -516,7 +503,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagResourceInstancesRequest 请求对象
+     * @param request ListTagResourceInstancesRequest 请求对象
      * @return ListTagResourceInstancesResponse
      */
     public ListTagResourceInstancesResponse listTagResourceInstances(ListTagResourceInstancesRequest request) {
@@ -530,13 +517,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagResourceInstancesRequest 请求对象
+     * @param request ListTagResourceInstancesRequest 请求对象
      * @return SyncInvoker<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse>
      */
     public SyncInvoker<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse> listTagResourceInstancesInvoker(
         ListTagResourceInstancesRequest request) {
-        return new SyncInvoker<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse>(request,
-            DcMeta.listTagResourceInstances, hcClient);
+        return new SyncInvoker<>(request, DcMeta.listTagResourceInstances, hcClient);
     }
 
     /**
@@ -546,7 +532,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagRequest 请求对象
+     * @param request ShowResourceTagRequest 请求对象
      * @return ShowResourceTagResponse
      */
     public ShowResourceTagResponse showResourceTag(ShowResourceTagRequest request) {
@@ -560,13 +546,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagRequest 请求对象
+     * @param request ShowResourceTagRequest 请求对象
      * @return SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>
      */
     public SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTagInvoker(
         ShowResourceTagRequest request) {
-        return new SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>(request, DcMeta.showResourceTag,
-            hcClient);
+        return new SyncInvoker<>(request, DcMeta.showResourceTag, hcClient);
     }
 
     /**
@@ -576,7 +561,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVirtualGatewayRequest 请求对象
+     * @param request CreateVirtualGatewayRequest 请求对象
      * @return CreateVirtualGatewayResponse
      */
     public CreateVirtualGatewayResponse createVirtualGateway(CreateVirtualGatewayRequest request) {
@@ -590,13 +575,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVirtualGatewayRequest 请求对象
+     * @param request CreateVirtualGatewayRequest 请求对象
      * @return SyncInvoker<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse>
      */
     public SyncInvoker<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse> createVirtualGatewayInvoker(
         CreateVirtualGatewayRequest request) {
-        return new SyncInvoker<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse>(request,
-            DcMeta.createVirtualGateway, hcClient);
+        return new SyncInvoker<>(request, DcMeta.createVirtualGateway, hcClient);
     }
 
     /**
@@ -606,7 +590,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVirtualGatewayRequest 请求对象
+     * @param request DeleteVirtualGatewayRequest 请求对象
      * @return DeleteVirtualGatewayResponse
      */
     public DeleteVirtualGatewayResponse deleteVirtualGateway(DeleteVirtualGatewayRequest request) {
@@ -620,13 +604,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVirtualGatewayRequest 请求对象
+     * @param request DeleteVirtualGatewayRequest 请求对象
      * @return SyncInvoker<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse>
      */
     public SyncInvoker<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse> deleteVirtualGatewayInvoker(
         DeleteVirtualGatewayRequest request) {
-        return new SyncInvoker<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse>(request,
-            DcMeta.deleteVirtualGateway, hcClient);
+        return new SyncInvoker<>(request, DcMeta.deleteVirtualGateway, hcClient);
     }
 
     /**
@@ -636,7 +619,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVirtualGatewaysRequest 请求对象
+     * @param request ListVirtualGatewaysRequest 请求对象
      * @return ListVirtualGatewaysResponse
      */
     public ListVirtualGatewaysResponse listVirtualGateways(ListVirtualGatewaysRequest request) {
@@ -650,13 +633,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVirtualGatewaysRequest 请求对象
+     * @param request ListVirtualGatewaysRequest 请求对象
      * @return SyncInvoker<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse>
      */
     public SyncInvoker<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse> listVirtualGatewaysInvoker(
         ListVirtualGatewaysRequest request) {
-        return new SyncInvoker<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse>(request,
-            DcMeta.listVirtualGateways, hcClient);
+        return new SyncInvoker<>(request, DcMeta.listVirtualGateways, hcClient);
     }
 
     /**
@@ -666,7 +648,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVirtualGatewayRequest 请求对象
+     * @param request ShowVirtualGatewayRequest 请求对象
      * @return ShowVirtualGatewayResponse
      */
     public ShowVirtualGatewayResponse showVirtualGateway(ShowVirtualGatewayRequest request) {
@@ -680,13 +662,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVirtualGatewayRequest 请求对象
+     * @param request ShowVirtualGatewayRequest 请求对象
      * @return SyncInvoker<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse>
      */
     public SyncInvoker<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse> showVirtualGatewayInvoker(
         ShowVirtualGatewayRequest request) {
-        return new SyncInvoker<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse>(request,
-            DcMeta.showVirtualGateway, hcClient);
+        return new SyncInvoker<>(request, DcMeta.showVirtualGateway, hcClient);
     }
 
     /**
@@ -696,7 +677,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVirtualGatewayRequest 请求对象
+     * @param request UpdateVirtualGatewayRequest 请求对象
      * @return UpdateVirtualGatewayResponse
      */
     public UpdateVirtualGatewayResponse updateVirtualGateway(UpdateVirtualGatewayRequest request) {
@@ -710,13 +691,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVirtualGatewayRequest 请求对象
+     * @param request UpdateVirtualGatewayRequest 请求对象
      * @return SyncInvoker<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse>
      */
     public SyncInvoker<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse> updateVirtualGatewayInvoker(
         UpdateVirtualGatewayRequest request) {
-        return new SyncInvoker<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse>(request,
-            DcMeta.updateVirtualGateway, hcClient);
+        return new SyncInvoker<>(request, DcMeta.updateVirtualGateway, hcClient);
     }
 
     /**
@@ -726,7 +706,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVifPeerRequest 请求对象
+     * @param request CreateVifPeerRequest 请求对象
      * @return CreateVifPeerResponse
      */
     public CreateVifPeerResponse createVifPeer(CreateVifPeerRequest request) {
@@ -740,11 +720,11 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVifPeerRequest 请求对象
+     * @param request CreateVifPeerRequest 请求对象
      * @return SyncInvoker<CreateVifPeerRequest, CreateVifPeerResponse>
      */
     public SyncInvoker<CreateVifPeerRequest, CreateVifPeerResponse> createVifPeerInvoker(CreateVifPeerRequest request) {
-        return new SyncInvoker<CreateVifPeerRequest, CreateVifPeerResponse>(request, DcMeta.createVifPeer, hcClient);
+        return new SyncInvoker<>(request, DcMeta.createVifPeer, hcClient);
     }
 
     /**
@@ -754,7 +734,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVirtualInterfaceRequest 请求对象
+     * @param request CreateVirtualInterfaceRequest 请求对象
      * @return CreateVirtualInterfaceResponse
      */
     public CreateVirtualInterfaceResponse createVirtualInterface(CreateVirtualInterfaceRequest request) {
@@ -768,13 +748,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVirtualInterfaceRequest 请求对象
+     * @param request CreateVirtualInterfaceRequest 请求对象
      * @return SyncInvoker<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse>
      */
     public SyncInvoker<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse> createVirtualInterfaceInvoker(
         CreateVirtualInterfaceRequest request) {
-        return new SyncInvoker<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse>(request,
-            DcMeta.createVirtualInterface, hcClient);
+        return new SyncInvoker<>(request, DcMeta.createVirtualInterface, hcClient);
     }
 
     /**
@@ -784,7 +763,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVifPeerRequest 请求对象
+     * @param request DeleteVifPeerRequest 请求对象
      * @return DeleteVifPeerResponse
      */
     public DeleteVifPeerResponse deleteVifPeer(DeleteVifPeerRequest request) {
@@ -798,11 +777,11 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVifPeerRequest 请求对象
+     * @param request DeleteVifPeerRequest 请求对象
      * @return SyncInvoker<DeleteVifPeerRequest, DeleteVifPeerResponse>
      */
     public SyncInvoker<DeleteVifPeerRequest, DeleteVifPeerResponse> deleteVifPeerInvoker(DeleteVifPeerRequest request) {
-        return new SyncInvoker<DeleteVifPeerRequest, DeleteVifPeerResponse>(request, DcMeta.deleteVifPeer, hcClient);
+        return new SyncInvoker<>(request, DcMeta.deleteVifPeer, hcClient);
     }
 
     /**
@@ -812,7 +791,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVirtualInterfaceRequest 请求对象
+     * @param request DeleteVirtualInterfaceRequest 请求对象
      * @return DeleteVirtualInterfaceResponse
      */
     public DeleteVirtualInterfaceResponse deleteVirtualInterface(DeleteVirtualInterfaceRequest request) {
@@ -826,13 +805,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVirtualInterfaceRequest 请求对象
+     * @param request DeleteVirtualInterfaceRequest 请求对象
      * @return SyncInvoker<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>
      */
     public SyncInvoker<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse> deleteVirtualInterfaceInvoker(
         DeleteVirtualInterfaceRequest request) {
-        return new SyncInvoker<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>(request,
-            DcMeta.deleteVirtualInterface, hcClient);
+        return new SyncInvoker<>(request, DcMeta.deleteVirtualInterface, hcClient);
     }
 
     /**
@@ -842,7 +820,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSwitchoverTestRecordsRequest 请求对象
+     * @param request ListSwitchoverTestRecordsRequest 请求对象
      * @return ListSwitchoverTestRecordsResponse
      */
     public ListSwitchoverTestRecordsResponse listSwitchoverTestRecords(ListSwitchoverTestRecordsRequest request) {
@@ -856,13 +834,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSwitchoverTestRecordsRequest 请求对象
+     * @param request ListSwitchoverTestRecordsRequest 请求对象
      * @return SyncInvoker<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse>
      */
     public SyncInvoker<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse> listSwitchoverTestRecordsInvoker(
         ListSwitchoverTestRecordsRequest request) {
-        return new SyncInvoker<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse>(request,
-            DcMeta.listSwitchoverTestRecords, hcClient);
+        return new SyncInvoker<>(request, DcMeta.listSwitchoverTestRecords, hcClient);
     }
 
     /**
@@ -872,7 +849,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVirtualInterfacesRequest 请求对象
+     * @param request ListVirtualInterfacesRequest 请求对象
      * @return ListVirtualInterfacesResponse
      */
     public ListVirtualInterfacesResponse listVirtualInterfaces(ListVirtualInterfacesRequest request) {
@@ -886,13 +863,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVirtualInterfacesRequest 请求对象
+     * @param request ListVirtualInterfacesRequest 请求对象
      * @return SyncInvoker<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse>
      */
     public SyncInvoker<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse> listVirtualInterfacesInvoker(
         ListVirtualInterfacesRequest request) {
-        return new SyncInvoker<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse>(request,
-            DcMeta.listVirtualInterfaces, hcClient);
+        return new SyncInvoker<>(request, DcMeta.listVirtualInterfaces, hcClient);
     }
 
     /**
@@ -902,7 +878,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVirtualInterfaceRequest 请求对象
+     * @param request ShowVirtualInterfaceRequest 请求对象
      * @return ShowVirtualInterfaceResponse
      */
     public ShowVirtualInterfaceResponse showVirtualInterface(ShowVirtualInterfaceRequest request) {
@@ -916,13 +892,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVirtualInterfaceRequest 请求对象
+     * @param request ShowVirtualInterfaceRequest 请求对象
      * @return SyncInvoker<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse>
      */
     public SyncInvoker<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse> showVirtualInterfaceInvoker(
         ShowVirtualInterfaceRequest request) {
-        return new SyncInvoker<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse>(request,
-            DcMeta.showVirtualInterface, hcClient);
+        return new SyncInvoker<>(request, DcMeta.showVirtualInterface, hcClient);
     }
 
     /**
@@ -932,7 +907,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchoverTestRequest 请求对象
+     * @param request SwitchoverTestRequest 请求对象
      * @return SwitchoverTestResponse
      */
     public SwitchoverTestResponse switchoverTest(SwitchoverTestRequest request) {
@@ -946,12 +921,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchoverTestRequest 请求对象
+     * @param request SwitchoverTestRequest 请求对象
      * @return SyncInvoker<SwitchoverTestRequest, SwitchoverTestResponse>
      */
     public SyncInvoker<SwitchoverTestRequest, SwitchoverTestResponse> switchoverTestInvoker(
         SwitchoverTestRequest request) {
-        return new SyncInvoker<SwitchoverTestRequest, SwitchoverTestResponse>(request, DcMeta.switchoverTest, hcClient);
+        return new SyncInvoker<>(request, DcMeta.switchoverTest, hcClient);
     }
 
     /**
@@ -961,7 +936,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVifPeerRequest 请求对象
+     * @param request UpdateVifPeerRequest 请求对象
      * @return UpdateVifPeerResponse
      */
     public UpdateVifPeerResponse updateVifPeer(UpdateVifPeerRequest request) {
@@ -975,11 +950,11 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVifPeerRequest 请求对象
+     * @param request UpdateVifPeerRequest 请求对象
      * @return SyncInvoker<UpdateVifPeerRequest, UpdateVifPeerResponse>
      */
     public SyncInvoker<UpdateVifPeerRequest, UpdateVifPeerResponse> updateVifPeerInvoker(UpdateVifPeerRequest request) {
-        return new SyncInvoker<UpdateVifPeerRequest, UpdateVifPeerResponse>(request, DcMeta.updateVifPeer, hcClient);
+        return new SyncInvoker<>(request, DcMeta.updateVifPeer, hcClient);
     }
 
     /**
@@ -989,7 +964,7 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVirtualInterfaceRequest 请求对象
+     * @param request UpdateVirtualInterfaceRequest 请求对象
      * @return UpdateVirtualInterfaceResponse
      */
     public UpdateVirtualInterfaceResponse updateVirtualInterface(UpdateVirtualInterfaceRequest request) {
@@ -1003,13 +978,12 @@ public class DcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVirtualInterfaceRequest 请求对象
+     * @param request UpdateVirtualInterfaceRequest 请求对象
      * @return SyncInvoker<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse>
      */
     public SyncInvoker<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse> updateVirtualInterfaceInvoker(
         UpdateVirtualInterfaceRequest request) {
-        return new SyncInvoker<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse>(request,
-            DcMeta.updateVirtualInterface, hcClient);
+        return new SyncInvoker<>(request, DcMeta.updateVirtualInterface, hcClient);
     }
 
 }

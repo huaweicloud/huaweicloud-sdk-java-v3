@@ -151,9 +151,9 @@ import java.util.List;
 public class DrisMeta {
 
     public static final HttpRequestDef<CreateDataChannelRequest, CreateDataChannelResponse> createDataChannel =
-        genForcreateDataChannel();
+        genForCreateDataChannel();
 
-    private static HttpRequestDef<CreateDataChannelRequest, CreateDataChannelResponse> genForcreateDataChannel() {
+    private static HttpRequestDef<CreateDataChannelRequest, CreateDataChannelResponse> genForCreateDataChannel() {
         // basic
         HttpRequestDef.Builder<CreateDataChannelRequest, CreateDataChannelResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDataChannelRequest.class, CreateDataChannelResponse.class)
@@ -166,23 +166,17 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataChannelRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(CreateDataChannelRequest::getV2xEdgeId, CreateDataChannelRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataChannelRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDataChannelRequest::getInstanceId, CreateDataChannelRequest::setInstanceId));
         builder.<AddV2XEdgeDataChannelDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddV2XEdgeDataChannelDTO.class),
-            f -> f.withMarshaller(CreateDataChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDataChannelRequest::getBody, CreateDataChannelRequest::setBody));
 
         // response
 
@@ -190,9 +184,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<DeleteDataChannelRequest, DeleteDataChannelResponse> deleteDataChannel =
-        genFordeleteDataChannel();
+        genForDeleteDataChannel();
 
-    private static HttpRequestDef<DeleteDataChannelRequest, DeleteDataChannelResponse> genFordeleteDataChannel() {
+    private static HttpRequestDef<DeleteDataChannelRequest, DeleteDataChannelResponse> genForDeleteDataChannel() {
         // basic
         HttpRequestDef.Builder<DeleteDataChannelRequest, DeleteDataChannelResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDataChannelRequest.class, DeleteDataChannelResponse.class)
@@ -205,33 +199,27 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataChannelRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(DeleteDataChannelRequest::getV2xEdgeId, DeleteDataChannelRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataChannelRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDataChannelRequest::getInstanceId, DeleteDataChannelRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteDataChannelResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteDataChannelResponse::getBody, DeleteDataChannelResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowDataChannelRequest, ShowDataChannelResponse> showDataChannel =
-        genForshowDataChannel();
+        genForShowDataChannel();
 
-    private static HttpRequestDef<ShowDataChannelRequest, ShowDataChannelResponse> genForshowDataChannel() {
+    private static HttpRequestDef<ShowDataChannelRequest, ShowDataChannelResponse> genForShowDataChannel() {
         // basic
         HttpRequestDef.Builder<ShowDataChannelRequest, ShowDataChannelResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDataChannelRequest.class, ShowDataChannelResponse.class)
@@ -244,16 +232,12 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataChannelRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(ShowDataChannelRequest::getV2xEdgeId, ShowDataChannelRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataChannelRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDataChannelRequest::getInstanceId, ShowDataChannelRequest::setInstanceId));
 
         // response
 
@@ -261,9 +245,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<UpdateDataChannelRequest, UpdateDataChannelResponse> updateDataChannel =
-        genForupdateDataChannel();
+        genForUpdateDataChannel();
 
-    private static HttpRequestDef<UpdateDataChannelRequest, UpdateDataChannelResponse> genForupdateDataChannel() {
+    private static HttpRequestDef<UpdateDataChannelRequest, UpdateDataChannelResponse> genForUpdateDataChannel() {
         // basic
         HttpRequestDef.Builder<UpdateDataChannelRequest, UpdateDataChannelResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDataChannelRequest.class, UpdateDataChannelResponse.class)
@@ -276,23 +260,17 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDataChannelRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(UpdateDataChannelRequest::getV2xEdgeId, UpdateDataChannelRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDataChannelRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDataChannelRequest::getInstanceId, UpdateDataChannelRequest::setInstanceId));
         builder.<AddV2XEdgeDataChannelDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddV2XEdgeDataChannelDTO.class),
-            f -> f.withMarshaller(UpdateDataChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDataChannelRequest::getBody, UpdateDataChannelRequest::setBody));
 
         // response
 
@@ -300,9 +278,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<CreateV2xEdgeRequest, CreateV2xEdgeResponse> createV2xEdge =
-        genForcreateV2xEdge();
+        genForCreateV2xEdge();
 
-    private static HttpRequestDef<CreateV2xEdgeRequest, CreateV2xEdgeResponse> genForcreateV2xEdge() {
+    private static HttpRequestDef<CreateV2xEdgeRequest, CreateV2xEdgeResponse> genForCreateV2xEdge() {
         // basic
         HttpRequestDef.Builder<CreateV2xEdgeRequest, CreateV2xEdgeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateV2xEdgeRequest.class, CreateV2xEdgeResponse.class)
@@ -315,16 +293,12 @@ public class DrisMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateV2xEdgeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateV2xEdgeRequest::getInstanceId, CreateV2xEdgeRequest::setInstanceId));
         builder.<AddV2XEdgeDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddV2XEdgeDTO.class),
-            f -> f.withMarshaller(CreateV2xEdgeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateV2xEdgeRequest::getBody, CreateV2xEdgeRequest::setBody));
 
         // response
 
@@ -332,9 +306,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<DeleteV2XEdgeByV2xEdgeIdRequest, DeleteV2XEdgeByV2xEdgeIdResponse> deleteV2XEdgeByV2xEdgeId =
-        genFordeleteV2XEdgeByV2xEdgeId();
+        genForDeleteV2XEdgeByV2xEdgeId();
 
-    private static HttpRequestDef<DeleteV2XEdgeByV2xEdgeIdRequest, DeleteV2XEdgeByV2xEdgeIdResponse> genFordeleteV2XEdgeByV2xEdgeId() {
+    private static HttpRequestDef<DeleteV2XEdgeByV2xEdgeIdRequest, DeleteV2XEdgeByV2xEdgeIdResponse> genForDeleteV2XEdgeByV2xEdgeId() {
         // basic
         HttpRequestDef.Builder<DeleteV2XEdgeByV2xEdgeIdRequest, DeleteV2XEdgeByV2xEdgeIdResponse> builder =
             HttpRequestDef
@@ -350,32 +324,29 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteV2XEdgeByV2xEdgeIdRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(DeleteV2XEdgeByV2xEdgeIdRequest::getV2xEdgeId,
+                DeleteV2XEdgeByV2xEdgeIdRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteV2XEdgeByV2xEdgeIdRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteV2XEdgeByV2xEdgeIdRequest::getInstanceId,
+                DeleteV2XEdgeByV2xEdgeIdRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteV2XEdgeByV2xEdgeIdResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteV2XEdgeByV2xEdgeIdResponse::getBody,
+                DeleteV2XEdgeByV2xEdgeIdResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListV2xEdgesRequest, ListV2xEdgesResponse> listV2xEdges = genForlistV2xEdges();
+    public static final HttpRequestDef<ListV2xEdgesRequest, ListV2xEdgesResponse> listV2xEdges = genForListV2xEdges();
 
-    private static HttpRequestDef<ListV2xEdgesRequest, ListV2xEdgesResponse> genForlistV2xEdges() {
+    private static HttpRequestDef<ListV2xEdgesRequest, ListV2xEdgesResponse> genForListV2xEdges() {
         // basic
         HttpRequestDef.Builder<ListV2xEdgesRequest, ListV2xEdgesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListV2xEdgesRequest.class, ListV2xEdgesResponse.class)
@@ -388,30 +359,22 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListV2xEdgesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListV2xEdgesRequest::getOffset, ListV2xEdgesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListV2xEdgesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListV2xEdgesRequest::getLimit, ListV2xEdgesRequest::setLimit));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListV2xEdgesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListV2xEdgesRequest::getStatus, ListV2xEdgesRequest::setStatus));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListV2xEdgesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListV2xEdgesRequest::getInstanceId, ListV2xEdgesRequest::setInstanceId));
 
         // response
 
@@ -419,9 +382,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<ShowDeploymentCodeRequest, ShowDeploymentCodeResponse> showDeploymentCode =
-        genForshowDeploymentCode();
+        genForShowDeploymentCode();
 
-    private static HttpRequestDef<ShowDeploymentCodeRequest, ShowDeploymentCodeResponse> genForshowDeploymentCode() {
+    private static HttpRequestDef<ShowDeploymentCodeRequest, ShowDeploymentCodeResponse> genForShowDeploymentCode() {
         // basic
         HttpRequestDef.Builder<ShowDeploymentCodeRequest, ShowDeploymentCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowDeploymentCodeRequest.class, ShowDeploymentCodeResponse.class)
@@ -434,16 +397,12 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentCodeRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentCodeRequest::getV2xEdgeId, ShowDeploymentCodeRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentCodeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentCodeRequest::getInstanceId, ShowDeploymentCodeRequest::setInstanceId));
 
         // response
 
@@ -451,9 +410,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<ShowV2xEdgeDetailRequest, ShowV2xEdgeDetailResponse> showV2xEdgeDetail =
-        genForshowV2xEdgeDetail();
+        genForShowV2xEdgeDetail();
 
-    private static HttpRequestDef<ShowV2xEdgeDetailRequest, ShowV2xEdgeDetailResponse> genForshowV2xEdgeDetail() {
+    private static HttpRequestDef<ShowV2xEdgeDetailRequest, ShowV2xEdgeDetailResponse> genForShowV2xEdgeDetail() {
         // basic
         HttpRequestDef.Builder<ShowV2xEdgeDetailRequest, ShowV2xEdgeDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowV2xEdgeDetailRequest.class, ShowV2xEdgeDetailResponse.class)
@@ -466,16 +425,12 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowV2xEdgeDetailRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(ShowV2xEdgeDetailRequest::getV2xEdgeId, ShowV2xEdgeDetailRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowV2xEdgeDetailRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowV2xEdgeDetailRequest::getInstanceId, ShowV2xEdgeDetailRequest::setInstanceId));
 
         // response
 
@@ -483,9 +438,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<UpdateV2xEdgeRequest, UpdateV2xEdgeResponse> updateV2xEdge =
-        genForupdateV2xEdge();
+        genForUpdateV2xEdge();
 
-    private static HttpRequestDef<UpdateV2xEdgeRequest, UpdateV2xEdgeResponse> genForupdateV2xEdge() {
+    private static HttpRequestDef<UpdateV2xEdgeRequest, UpdateV2xEdgeResponse> genForUpdateV2xEdge() {
         // basic
         HttpRequestDef.Builder<UpdateV2xEdgeRequest, UpdateV2xEdgeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateV2xEdgeRequest.class, UpdateV2xEdgeResponse.class)
@@ -498,23 +453,17 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateV2xEdgeRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(UpdateV2xEdgeRequest::getV2xEdgeId, UpdateV2xEdgeRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateV2xEdgeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateV2xEdgeRequest::getInstanceId, UpdateV2xEdgeRequest::setInstanceId));
         builder.<ModifyV2XEdgeDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyV2XEdgeDTO.class),
-            f -> f.withMarshaller(UpdateV2xEdgeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateV2xEdgeRequest::getBody, UpdateV2xEdgeRequest::setBody));
 
         // response
 
@@ -522,9 +471,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<AddForwardingConfigsRequest, AddForwardingConfigsResponse> addForwardingConfigs =
-        genForaddForwardingConfigs();
+        genForAddForwardingConfigs();
 
-    private static HttpRequestDef<AddForwardingConfigsRequest, AddForwardingConfigsResponse> genForaddForwardingConfigs() {
+    private static HttpRequestDef<AddForwardingConfigsRequest, AddForwardingConfigsResponse> genForAddForwardingConfigs() {
         // basic
         HttpRequestDef.Builder<AddForwardingConfigsRequest, AddForwardingConfigsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddForwardingConfigsRequest.class, AddForwardingConfigsResponse.class)
@@ -537,16 +486,13 @@ public class DrisMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddForwardingConfigsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddForwardingConfigsRequest::getInstanceId,
+                AddForwardingConfigsRequest::setInstanceId));
         builder.<AddForwardingConfigRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddForwardingConfigRequestDTO.class),
-            f -> f.withMarshaller(AddForwardingConfigsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddForwardingConfigsRequest::getBody, AddForwardingConfigsRequest::setBody));
 
         // response
 
@@ -554,9 +500,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<DeleteForwardingConfigRequest, DeleteForwardingConfigResponse> deleteForwardingConfig =
-        genFordeleteForwardingConfig();
+        genForDeleteForwardingConfig();
 
-    private static HttpRequestDef<DeleteForwardingConfigRequest, DeleteForwardingConfigResponse> genFordeleteForwardingConfig() {
+    private static HttpRequestDef<DeleteForwardingConfigRequest, DeleteForwardingConfigResponse> genForDeleteForwardingConfig() {
         // basic
         HttpRequestDef.Builder<DeleteForwardingConfigRequest, DeleteForwardingConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteForwardingConfigRequest.class, DeleteForwardingConfigResponse.class)
@@ -569,40 +515,35 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteForwardingConfigRequest::getForwardingConfigId, (req, v) -> {
-                req.setForwardingConfigId(v);
-            }));
+            f -> f.withMarshaller(DeleteForwardingConfigRequest::getForwardingConfigId,
+                DeleteForwardingConfigRequest::setForwardingConfigId));
         builder.<String>withRequestField("forwarding_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteForwardingConfigRequest::getForwardingType, (req, v) -> {
-                req.setForwardingType(v);
-            }));
+            f -> f.withMarshaller(DeleteForwardingConfigRequest::getForwardingType,
+                DeleteForwardingConfigRequest::setForwardingType));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteForwardingConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteForwardingConfigRequest::getInstanceId,
+                DeleteForwardingConfigRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteForwardingConfigResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteForwardingConfigResponse::getBody, DeleteForwardingConfigResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowForwardingConfigRequest, ShowForwardingConfigResponse> showForwardingConfig =
-        genForshowForwardingConfig();
+        genForShowForwardingConfig();
 
-    private static HttpRequestDef<ShowForwardingConfigRequest, ShowForwardingConfigResponse> genForshowForwardingConfig() {
+    private static HttpRequestDef<ShowForwardingConfigRequest, ShowForwardingConfigResponse> genForShowForwardingConfig() {
         // basic
         HttpRequestDef.Builder<ShowForwardingConfigRequest, ShowForwardingConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowForwardingConfigRequest.class, ShowForwardingConfigResponse.class)
@@ -615,23 +556,20 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowForwardingConfigRequest::getForwardingConfigId, (req, v) -> {
-                req.setForwardingConfigId(v);
-            }));
+            f -> f.withMarshaller(ShowForwardingConfigRequest::getForwardingConfigId,
+                ShowForwardingConfigRequest::setForwardingConfigId));
         builder.<String>withRequestField("forwarding_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowForwardingConfigRequest::getForwardingType, (req, v) -> {
-                req.setForwardingType(v);
-            }));
+            f -> f.withMarshaller(ShowForwardingConfigRequest::getForwardingType,
+                ShowForwardingConfigRequest::setForwardingType));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowForwardingConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowForwardingConfigRequest::getInstanceId,
+                ShowForwardingConfigRequest::setInstanceId));
 
         // response
 
@@ -639,9 +577,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<ShowForwardingConfigsRequest, ShowForwardingConfigsResponse> showForwardingConfigs =
-        genForshowForwardingConfigs();
+        genForShowForwardingConfigs();
 
-    private static HttpRequestDef<ShowForwardingConfigsRequest, ShowForwardingConfigsResponse> genForshowForwardingConfigs() {
+    private static HttpRequestDef<ShowForwardingConfigsRequest, ShowForwardingConfigsResponse> genForShowForwardingConfigs() {
         // basic
         HttpRequestDef.Builder<ShowForwardingConfigsRequest, ShowForwardingConfigsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowForwardingConfigsRequest.class, ShowForwardingConfigsResponse.class)
@@ -654,30 +592,24 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowForwardingConfigsRequest::getForwardingType, (req, v) -> {
-                req.setForwardingType(v);
-            }));
+            f -> f.withMarshaller(ShowForwardingConfigsRequest::getForwardingType,
+                ShowForwardingConfigsRequest::setForwardingType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowForwardingConfigsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowForwardingConfigsRequest::getOffset, ShowForwardingConfigsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowForwardingConfigsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowForwardingConfigsRequest::getLimit, ShowForwardingConfigsRequest::setLimit));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowForwardingConfigsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowForwardingConfigsRequest::getInstanceId,
+                ShowForwardingConfigsRequest::setInstanceId));
 
         // response
 
@@ -685,9 +617,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<UpdateForwardingConfigRequest, UpdateForwardingConfigResponse> updateForwardingConfig =
-        genForupdateForwardingConfig();
+        genForUpdateForwardingConfig();
 
-    private static HttpRequestDef<UpdateForwardingConfigRequest, UpdateForwardingConfigResponse> genForupdateForwardingConfig() {
+    private static HttpRequestDef<UpdateForwardingConfigRequest, UpdateForwardingConfigResponse> genForUpdateForwardingConfig() {
         // basic
         HttpRequestDef.Builder<UpdateForwardingConfigRequest, UpdateForwardingConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateForwardingConfigRequest.class, UpdateForwardingConfigResponse.class)
@@ -700,30 +632,25 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateForwardingConfigRequest::getForwardingConfigId, (req, v) -> {
-                req.setForwardingConfigId(v);
-            }));
+            f -> f.withMarshaller(UpdateForwardingConfigRequest::getForwardingConfigId,
+                UpdateForwardingConfigRequest::setForwardingConfigId));
         builder.<String>withRequestField("forwarding_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateForwardingConfigRequest::getForwardingType, (req, v) -> {
-                req.setForwardingType(v);
-            }));
+            f -> f.withMarshaller(UpdateForwardingConfigRequest::getForwardingType,
+                UpdateForwardingConfigRequest::setForwardingType));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateForwardingConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateForwardingConfigRequest::getInstanceId,
+                UpdateForwardingConfigRequest::setInstanceId));
         builder.<UpdateForwardingConfigRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateForwardingConfigRequestDTO.class),
-            f -> f.withMarshaller(UpdateForwardingConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateForwardingConfigRequest::getBody, UpdateForwardingConfigRequest::setBody));
 
         // response
 
@@ -731,9 +658,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<ListEdgeFlowsRequest, ListEdgeFlowsResponse> listEdgeFlows =
-        genForlistEdgeFlows();
+        genForListEdgeFlows();
 
-    private static HttpRequestDef<ListEdgeFlowsRequest, ListEdgeFlowsResponse> genForlistEdgeFlows() {
+    private static HttpRequestDef<ListEdgeFlowsRequest, ListEdgeFlowsResponse> genForListEdgeFlows() {
         // basic
         HttpRequestDef.Builder<ListEdgeFlowsRequest, ListEdgeFlowsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEdgeFlowsRequest.class, ListEdgeFlowsResponse.class)
@@ -746,44 +673,32 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getOffset, ListEdgeFlowsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getLimit, ListEdgeFlowsRequest::setLimit));
         builder.<String>withRequestField("from_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getFromDate, (req, v) -> {
-                req.setFromDate(v);
-            }));
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getFromDate, ListEdgeFlowsRequest::setFromDate));
         builder.<String>withRequestField("to_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getToDate, (req, v) -> {
-                req.setToDate(v);
-            }));
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getToDate, ListEdgeFlowsRequest::setToDate));
         builder.<String>withRequestField("edge_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getEdgeId, (req, v) -> {
-                req.setEdgeId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getEdgeId, ListEdgeFlowsRequest::setEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getInstanceId, ListEdgeFlowsRequest::setInstanceId));
 
         // response
 
@@ -791,9 +706,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse> showHistoryTrafficEvents =
-        genForshowHistoryTrafficEvents();
+        genForShowHistoryTrafficEvents();
 
-    private static HttpRequestDef<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse> genForshowHistoryTrafficEvents() {
+    private static HttpRequestDef<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse> genForShowHistoryTrafficEvents() {
         // basic
         HttpRequestDef.Builder<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse> builder =
             HttpRequestDef
@@ -807,65 +722,56 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getOffset,
+                ShowHistoryTrafficEventsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getLimit,
+                ShowHistoryTrafficEventsRequest::setLimit));
         builder.<Long>withRequestField("from_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getFromDate, (req, v) -> {
-                req.setFromDate(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getFromDate,
+                ShowHistoryTrafficEventsRequest::setFromDate));
         builder.<Long>withRequestField("to_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getToDate, (req, v) -> {
-                req.setToDate(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getToDate,
+                ShowHistoryTrafficEventsRequest::setToDate));
         builder.<String>withRequestField("event_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getEventId,
+                ShowHistoryTrafficEventsRequest::setEventId));
         builder.<String>withRequestField("event_class",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getEventClass, (req, v) -> {
-                req.setEventClass(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getEventClass,
+                ShowHistoryTrafficEventsRequest::setEventClass));
         builder.<String>withRequestField("event_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getEventType, (req, v) -> {
-                req.setEventType(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getEventType,
+                ShowHistoryTrafficEventsRequest::setEventType));
         builder.<String>withRequestField("event_source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getEventSource, (req, v) -> {
-                req.setEventSource(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getEventSource,
+                ShowHistoryTrafficEventsRequest::setEventSource));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTrafficEventsRequest::getInstanceId,
+                ShowHistoryTrafficEventsRequest::setInstanceId));
 
         // response
 
@@ -873,9 +779,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<BatchShowIpcsRequest, BatchShowIpcsResponse> batchShowIpcs =
-        genForbatchShowIpcs();
+        genForBatchShowIpcs();
 
-    private static HttpRequestDef<BatchShowIpcsRequest, BatchShowIpcsResponse> genForbatchShowIpcs() {
+    private static HttpRequestDef<BatchShowIpcsRequest, BatchShowIpcsResponse> genForBatchShowIpcs() {
         // basic
         HttpRequestDef.Builder<BatchShowIpcsRequest, BatchShowIpcsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchShowIpcsRequest.class, BatchShowIpcsResponse.class)
@@ -888,46 +794,36 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowIpcsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchShowIpcsRequest::getOffset, BatchShowIpcsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowIpcsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchShowIpcsRequest::getLimit, BatchShowIpcsRequest::setLimit));
         builder.<BatchShowIpcsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchShowIpcsRequest.StatusEnum.class),
-            f -> f.withMarshaller(BatchShowIpcsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(BatchShowIpcsRequest::getStatus, BatchShowIpcsRequest::setStatus));
         builder.<String>withRequestField("v2x_edge_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowIpcsRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(BatchShowIpcsRequest::getV2xEdgeId, BatchShowIpcsRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowIpcsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchShowIpcsRequest::getInstanceId, BatchShowIpcsRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowIpcRequest, ShowIpcResponse> showIpc = genForshowIpc();
+    public static final HttpRequestDef<ShowIpcRequest, ShowIpcResponse> showIpc = genForShowIpc();
 
-    private static HttpRequestDef<ShowIpcRequest, ShowIpcResponse> genForshowIpc() {
+    private static HttpRequestDef<ShowIpcRequest, ShowIpcResponse> genForShowIpc() {
         // basic
         HttpRequestDef.Builder<ShowIpcRequest, ShowIpcResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowIpcRequest.class, ShowIpcResponse.class)
@@ -940,16 +836,12 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIpcRequest::getCameraId, (req, v) -> {
-                req.setCameraId(v);
-            }));
+            f -> f.withMarshaller(ShowIpcRequest::getCameraId, ShowIpcRequest::setCameraId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIpcRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowIpcRequest::getInstanceId, ShowIpcRequest::setInstanceId));
 
         // response
 
@@ -957,9 +849,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<BatchShowRadarsRequest, BatchShowRadarsResponse> batchShowRadars =
-        genForbatchShowRadars();
+        genForBatchShowRadars();
 
-    private static HttpRequestDef<BatchShowRadarsRequest, BatchShowRadarsResponse> genForbatchShowRadars() {
+    private static HttpRequestDef<BatchShowRadarsRequest, BatchShowRadarsResponse> genForBatchShowRadars() {
         // basic
         HttpRequestDef.Builder<BatchShowRadarsRequest, BatchShowRadarsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchShowRadarsRequest.class, BatchShowRadarsResponse.class)
@@ -972,37 +864,27 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowRadarsRequest::getEsn, (req, v) -> {
-                req.setEsn(v);
-            }));
+            f -> f.withMarshaller(BatchShowRadarsRequest::getEsn, BatchShowRadarsRequest::setEsn));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowRadarsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchShowRadarsRequest::getOffset, BatchShowRadarsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowRadarsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchShowRadarsRequest::getLimit, BatchShowRadarsRequest::setLimit));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowRadarsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(BatchShowRadarsRequest::getStatus, BatchShowRadarsRequest::setStatus));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowRadarsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchShowRadarsRequest::getInstanceId, BatchShowRadarsRequest::setInstanceId));
 
         // response
 
@@ -1010,9 +892,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<BatchShowRsusRequest, BatchShowRsusResponse> batchShowRsus =
-        genForbatchShowRsus();
+        genForBatchShowRsus();
 
-    private static HttpRequestDef<BatchShowRsusRequest, BatchShowRsusResponse> genForbatchShowRsus() {
+    private static HttpRequestDef<BatchShowRsusRequest, BatchShowRsusResponse> genForBatchShowRsus() {
         // basic
         HttpRequestDef.Builder<BatchShowRsusRequest, BatchShowRsusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchShowRsusRequest.class, BatchShowRsusResponse.class)
@@ -1025,60 +907,46 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowRsusRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchShowRsusRequest::getOffset, BatchShowRsusRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowRsusRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchShowRsusRequest::getLimit, BatchShowRsusRequest::setLimit));
         builder.<String>withRequestField("rsu_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowRsusRequest::getRsuId, (req, v) -> {
-                req.setRsuId(v);
-            }));
+            f -> f.withMarshaller(BatchShowRsusRequest::getRsuId, BatchShowRsusRequest::setRsuId));
         builder.<String>withRequestField("esn",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowRsusRequest::getEsn, (req, v) -> {
-                req.setEsn(v);
-            }));
+            f -> f.withMarshaller(BatchShowRsusRequest::getEsn, BatchShowRsusRequest::setEsn));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowRsusRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(BatchShowRsusRequest::getStatus, BatchShowRsusRequest::setStatus));
         builder.<String>withRequestField("rsu_model_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowRsusRequest::getRsuModelId, (req, v) -> {
-                req.setRsuModelId(v);
-            }));
+            f -> f.withMarshaller(BatchShowRsusRequest::getRsuModelId, BatchShowRsusRequest::setRsuModelId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowRsusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchShowRsusRequest::getInstanceId, BatchShowRsusRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRsuRequest, CreateRsuResponse> createRsu = genForcreateRsu();
+    public static final HttpRequestDef<CreateRsuRequest, CreateRsuResponse> createRsu = genForCreateRsu();
 
-    private static HttpRequestDef<CreateRsuRequest, CreateRsuResponse> genForcreateRsu() {
+    private static HttpRequestDef<CreateRsuRequest, CreateRsuResponse> genForCreateRsu() {
         // basic
         HttpRequestDef.Builder<CreateRsuRequest, CreateRsuResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRsuRequest.class, CreateRsuResponse.class)
@@ -1091,25 +959,21 @@ public class DrisMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRsuRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRsuRequest::getInstanceId, CreateRsuRequest::setInstanceId));
         builder.<AddRsuDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddRsuDTO.class),
-            f -> f.withMarshaller(CreateRsuRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRsuRequest::getBody, CreateRsuRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRsuRequest, DeleteRsuResponse> deleteRsu = genFordeleteRsu();
+    public static final HttpRequestDef<DeleteRsuRequest, DeleteRsuResponse> deleteRsu = genForDeleteRsu();
 
-    private static HttpRequestDef<DeleteRsuRequest, DeleteRsuResponse> genFordeleteRsu() {
+    private static HttpRequestDef<DeleteRsuRequest, DeleteRsuResponse> genForDeleteRsu() {
         // basic
         HttpRequestDef.Builder<DeleteRsuRequest, DeleteRsuResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRsuRequest.class, DeleteRsuResponse.class)
@@ -1122,32 +986,26 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRsuRequest::getRsuId, (req, v) -> {
-                req.setRsuId(v);
-            }));
+            f -> f.withMarshaller(DeleteRsuRequest::getRsuId, DeleteRsuRequest::setRsuId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRsuRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRsuRequest::getInstanceId, DeleteRsuRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteRsuResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteRsuResponse::getBody, DeleteRsuResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateRsuRequest, UpdateRsuResponse> updateRsu = genForupdateRsu();
+    public static final HttpRequestDef<UpdateRsuRequest, UpdateRsuResponse> updateRsu = genForUpdateRsu();
 
-    private static HttpRequestDef<UpdateRsuRequest, UpdateRsuResponse> genForupdateRsu() {
+    private static HttpRequestDef<UpdateRsuRequest, UpdateRsuResponse> genForUpdateRsu() {
         // basic
         HttpRequestDef.Builder<UpdateRsuRequest, UpdateRsuResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRsuRequest.class, UpdateRsuResponse.class)
@@ -1160,23 +1018,17 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRsuRequest::getRsuId, (req, v) -> {
-                req.setRsuId(v);
-            }));
+            f -> f.withMarshaller(UpdateRsuRequest::getRsuId, UpdateRsuRequest::setRsuId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRsuRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRsuRequest::getInstanceId, UpdateRsuRequest::setInstanceId));
         builder.<ModifyRsuRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyRsuRequestDTO.class),
-            f -> f.withMarshaller(UpdateRsuRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRsuRequest::getBody, UpdateRsuRequest::setBody));
 
         // response
 
@@ -1184,9 +1036,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<SendImmediateEventRequest, SendImmediateEventResponse> sendImmediateEvent =
-        genForsendImmediateEvent();
+        genForSendImmediateEvent();
 
-    private static HttpRequestDef<SendImmediateEventRequest, SendImmediateEventResponse> genForsendImmediateEvent() {
+    private static HttpRequestDef<SendImmediateEventRequest, SendImmediateEventResponse> genForSendImmediateEvent() {
         // basic
         HttpRequestDef.Builder<SendImmediateEventRequest, SendImmediateEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendImmediateEventRequest.class, SendImmediateEventResponse.class)
@@ -1199,16 +1051,12 @@ public class DrisMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendImmediateEventRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SendImmediateEventRequest::getInstanceId, SendImmediateEventRequest::setInstanceId));
         builder.<SendImmediateEventsDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SendImmediateEventsDTO.class),
-            f -> f.withMarshaller(SendImmediateEventRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendImmediateEventRequest::getBody, SendImmediateEventRequest::setBody));
 
         // response
 
@@ -1216,9 +1064,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> batchShowTrafficControllers =
-        genForbatchShowTrafficControllers();
+        genForBatchShowTrafficControllers();
 
-    private static HttpRequestDef<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> genForbatchShowTrafficControllers() {
+    private static HttpRequestDef<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> genForBatchShowTrafficControllers() {
         // basic
         HttpRequestDef.Builder<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> builder =
             HttpRequestDef
@@ -1234,44 +1082,38 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getOffset,
+                BatchShowTrafficControllersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getLimit,
+                BatchShowTrafficControllersRequest::setLimit));
         builder.<String>withRequestField("traffic_controller_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getTrafficControllerId, (req, v) -> {
-                req.setTrafficControllerId(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getTrafficControllerId,
+                BatchShowTrafficControllersRequest::setTrafficControllerId));
         builder.<String>withRequestField("esn",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getEsn, (req, v) -> {
-                req.setEsn(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getEsn,
+                BatchShowTrafficControllersRequest::setEsn));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getStatus,
+                BatchShowTrafficControllersRequest::setStatus));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getInstanceId,
+                BatchShowTrafficControllersRequest::setInstanceId));
 
         // response
 
@@ -1279,9 +1121,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<CreateTrafficControllerRequest, CreateTrafficControllerResponse> createTrafficController =
-        genForcreateTrafficController();
+        genForCreateTrafficController();
 
-    private static HttpRequestDef<CreateTrafficControllerRequest, CreateTrafficControllerResponse> genForcreateTrafficController() {
+    private static HttpRequestDef<CreateTrafficControllerRequest, CreateTrafficControllerResponse> genForCreateTrafficController() {
         // basic
         HttpRequestDef.Builder<CreateTrafficControllerRequest, CreateTrafficControllerResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateTrafficControllerRequest.class, CreateTrafficControllerResponse.class)
@@ -1294,16 +1136,13 @@ public class DrisMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTrafficControllerRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateTrafficControllerRequest::getInstanceId,
+                CreateTrafficControllerRequest::setInstanceId));
         builder.<AddTrafficControllerDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AddTrafficControllerDTO.class),
-            f -> f.withMarshaller(CreateTrafficControllerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTrafficControllerRequest::getBody, CreateTrafficControllerRequest::setBody));
 
         // response
 
@@ -1311,9 +1150,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> deleteTrafficController =
-        genFordeleteTrafficController();
+        genForDeleteTrafficController();
 
-    private static HttpRequestDef<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> genFordeleteTrafficController() {
+    private static HttpRequestDef<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> genForDeleteTrafficController() {
         // basic
         HttpRequestDef.Builder<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteTrafficControllerRequest.class, DeleteTrafficControllerResponse.class)
@@ -1326,33 +1165,29 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTrafficControllerRequest::getTrafficControllerId, (req, v) -> {
-                req.setTrafficControllerId(v);
-            }));
+            f -> f.withMarshaller(DeleteTrafficControllerRequest::getTrafficControllerId,
+                DeleteTrafficControllerRequest::setTrafficControllerId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTrafficControllerRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTrafficControllerRequest::getInstanceId,
+                DeleteTrafficControllerRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteTrafficControllerResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteTrafficControllerResponse::getBody, DeleteTrafficControllerResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> updateTrafficController =
-        genForupdateTrafficController();
+        genForUpdateTrafficController();
 
-    private static HttpRequestDef<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> genForupdateTrafficController() {
+    private static HttpRequestDef<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> genForUpdateTrafficController() {
         // basic
         HttpRequestDef.Builder<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateTrafficControllerRequest.class, UpdateTrafficControllerResponse.class)
@@ -1365,23 +1200,19 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTrafficControllerRequest::getTrafficControllerId, (req, v) -> {
-                req.setTrafficControllerId(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficControllerRequest::getTrafficControllerId,
+                UpdateTrafficControllerRequest::setTrafficControllerId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTrafficControllerRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficControllerRequest::getInstanceId,
+                UpdateTrafficControllerRequest::setInstanceId));
         builder.<ModifyTrafficControllerRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyTrafficControllerRequestDTO.class),
-            f -> f.withMarshaller(UpdateTrafficControllerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficControllerRequest::getBody, UpdateTrafficControllerRequest::setBody));
 
         // response
 
@@ -1389,9 +1220,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse> batchShowTrafficEvents =
-        genForbatchShowTrafficEvents();
+        genForBatchShowTrafficEvents();
 
-    private static HttpRequestDef<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse> genForbatchShowTrafficEvents() {
+    private static HttpRequestDef<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse> genForBatchShowTrafficEvents() {
         // basic
         HttpRequestDef.Builder<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, BatchShowTrafficEventsRequest.class, BatchShowTrafficEventsResponse.class)
@@ -1404,93 +1235,76 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getOffset, BatchShowTrafficEventsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getLimit, BatchShowTrafficEventsRequest::setLimit));
         builder.<Integer>withRequestField("area_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getAreaCode, (req, v) -> {
-                req.setAreaCode(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getAreaCode,
+                BatchShowTrafficEventsRequest::setAreaCode));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getStatus, BatchShowTrafficEventsRequest::setStatus));
         builder.<Integer>withRequestField("event_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getEventType, (req, v) -> {
-                req.setEventType(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getEventType,
+                BatchShowTrafficEventsRequest::setEventType));
         builder.<List<String>>withRequestField("event_source_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getEventSourceType, (req, v) -> {
-                req.setEventSourceType(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getEventSourceType,
+                BatchShowTrafficEventsRequest::setEventSourceType));
         builder.<String>withRequestField("event_class",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getEventClass, (req, v) -> {
-                req.setEventClass(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getEventClass,
+                BatchShowTrafficEventsRequest::setEventClass));
         builder.<String>withRequestField("event_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getEventId,
+                BatchShowTrafficEventsRequest::setEventId));
         builder.<String>withRequestField("from_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getFromTime, (req, v) -> {
-                req.setFromTime(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getFromTime,
+                BatchShowTrafficEventsRequest::setFromTime));
         builder.<String>withRequestField("to_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getToTime, (req, v) -> {
-                req.setToTime(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getToTime, BatchShowTrafficEventsRequest::setToTime));
         builder.<BatchShowTrafficEventsRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchShowTrafficEventsRequest.SortKeyEnum.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getSortKey,
+                BatchShowTrafficEventsRequest::setSortKey));
         builder.<BatchShowTrafficEventsRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchShowTrafficEventsRequest.SortDirEnum.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getSortDir,
+                BatchShowTrafficEventsRequest::setSortDir));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchShowTrafficEventsRequest::getInstanceId,
+                BatchShowTrafficEventsRequest::setInstanceId));
 
         // response
 
@@ -1498,9 +1312,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<CreateTrafficEventRequest, CreateTrafficEventResponse> createTrafficEvent =
-        genForcreateTrafficEvent();
+        genForCreateTrafficEvent();
 
-    private static HttpRequestDef<CreateTrafficEventRequest, CreateTrafficEventResponse> genForcreateTrafficEvent() {
+    private static HttpRequestDef<CreateTrafficEventRequest, CreateTrafficEventResponse> genForCreateTrafficEvent() {
         // basic
         HttpRequestDef.Builder<CreateTrafficEventRequest, CreateTrafficEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTrafficEventRequest.class, CreateTrafficEventResponse.class)
@@ -1513,16 +1327,12 @@ public class DrisMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTrafficEventRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateTrafficEventRequest::getInstanceId, CreateTrafficEventRequest::setInstanceId));
         builder.<AddTrafficEventDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddTrafficEventDTO.class),
-            f -> f.withMarshaller(CreateTrafficEventRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTrafficEventRequest::getBody, CreateTrafficEventRequest::setBody));
 
         // response
 
@@ -1530,9 +1340,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<DeleteTrafficEventRequest, DeleteTrafficEventResponse> deleteTrafficEvent =
-        genFordeleteTrafficEvent();
+        genForDeleteTrafficEvent();
 
-    private static HttpRequestDef<DeleteTrafficEventRequest, DeleteTrafficEventResponse> genFordeleteTrafficEvent() {
+    private static HttpRequestDef<DeleteTrafficEventRequest, DeleteTrafficEventResponse> genForDeleteTrafficEvent() {
         // basic
         HttpRequestDef.Builder<DeleteTrafficEventRequest, DeleteTrafficEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTrafficEventRequest.class, DeleteTrafficEventResponse.class)
@@ -1545,33 +1355,27 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTrafficEventRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(DeleteTrafficEventRequest::getEventId, DeleteTrafficEventRequest::setEventId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTrafficEventRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTrafficEventRequest::getInstanceId, DeleteTrafficEventRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteTrafficEventResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteTrafficEventResponse::getBody, DeleteTrafficEventResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowTrafficEventRequest, ShowTrafficEventResponse> showTrafficEvent =
-        genForshowTrafficEvent();
+        genForShowTrafficEvent();
 
-    private static HttpRequestDef<ShowTrafficEventRequest, ShowTrafficEventResponse> genForshowTrafficEvent() {
+    private static HttpRequestDef<ShowTrafficEventRequest, ShowTrafficEventResponse> genForShowTrafficEvent() {
         // basic
         HttpRequestDef.Builder<ShowTrafficEventRequest, ShowTrafficEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTrafficEventRequest.class, ShowTrafficEventResponse.class)
@@ -1584,16 +1388,12 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTrafficEventRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(ShowTrafficEventRequest::getEventId, ShowTrafficEventRequest::setEventId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTrafficEventRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowTrafficEventRequest::getInstanceId, ShowTrafficEventRequest::setInstanceId));
 
         // response
 
@@ -1601,9 +1401,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<UpdateTrafficEventRequest, UpdateTrafficEventResponse> updateTrafficEvent =
-        genForupdateTrafficEvent();
+        genForUpdateTrafficEvent();
 
-    private static HttpRequestDef<UpdateTrafficEventRequest, UpdateTrafficEventResponse> genForupdateTrafficEvent() {
+    private static HttpRequestDef<UpdateTrafficEventRequest, UpdateTrafficEventResponse> genForUpdateTrafficEvent() {
         // basic
         HttpRequestDef.Builder<UpdateTrafficEventRequest, UpdateTrafficEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTrafficEventRequest.class, UpdateTrafficEventResponse.class)
@@ -1616,23 +1416,17 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTrafficEventRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficEventRequest::getEventId, UpdateTrafficEventRequest::setEventId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTrafficEventRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficEventRequest::getInstanceId, UpdateTrafficEventRequest::setInstanceId));
         builder.<UpdateTrafficEventDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTrafficEventDTO.class),
-            f -> f.withMarshaller(UpdateTrafficEventRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficEventRequest::getBody, UpdateTrafficEventRequest::setBody));
 
         // response
 
@@ -1640,9 +1434,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<CreateV2xEdgeAppRequest, CreateV2xEdgeAppResponse> createV2xEdgeApp =
-        genForcreateV2xEdgeApp();
+        genForCreateV2xEdgeApp();
 
-    private static HttpRequestDef<CreateV2xEdgeAppRequest, CreateV2xEdgeAppResponse> genForcreateV2xEdgeApp() {
+    private static HttpRequestDef<CreateV2xEdgeAppRequest, CreateV2xEdgeAppResponse> genForCreateV2xEdgeApp() {
         // basic
         HttpRequestDef.Builder<CreateV2xEdgeAppRequest, CreateV2xEdgeAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateV2xEdgeAppRequest.class, CreateV2xEdgeAppResponse.class)
@@ -1655,23 +1449,17 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateV2xEdgeAppRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(CreateV2xEdgeAppRequest::getV2xEdgeId, CreateV2xEdgeAppRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateV2xEdgeAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateV2xEdgeAppRequest::getInstanceId, CreateV2xEdgeAppRequest::setInstanceId));
         builder.<AddV2XEdgeAppDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddV2XEdgeAppDTO.class),
-            f -> f.withMarshaller(CreateV2xEdgeAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateV2xEdgeAppRequest::getBody, CreateV2xEdgeAppRequest::setBody));
 
         // response
 
@@ -1679,9 +1467,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<DeleteV2XEdgeAppByEdgeAppIdRequest, DeleteV2XEdgeAppByEdgeAppIdResponse> deleteV2XEdgeAppByEdgeAppId =
-        genFordeleteV2XEdgeAppByEdgeAppId();
+        genForDeleteV2XEdgeAppByEdgeAppId();
 
-    private static HttpRequestDef<DeleteV2XEdgeAppByEdgeAppIdRequest, DeleteV2XEdgeAppByEdgeAppIdResponse> genFordeleteV2XEdgeAppByEdgeAppId() {
+    private static HttpRequestDef<DeleteV2XEdgeAppByEdgeAppIdRequest, DeleteV2XEdgeAppByEdgeAppIdResponse> genForDeleteV2XEdgeAppByEdgeAppId() {
         // basic
         HttpRequestDef.Builder<DeleteV2XEdgeAppByEdgeAppIdRequest, DeleteV2XEdgeAppByEdgeAppIdResponse> builder =
             HttpRequestDef
@@ -1697,40 +1485,36 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteV2XEdgeAppByEdgeAppIdRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteV2XEdgeAppByEdgeAppIdRequest::getEdgeAppId,
+                DeleteV2XEdgeAppByEdgeAppIdRequest::setEdgeAppId));
         builder.<String>withRequestField("v2x_edge_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteV2XEdgeAppByEdgeAppIdRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(DeleteV2XEdgeAppByEdgeAppIdRequest::getV2xEdgeId,
+                DeleteV2XEdgeAppByEdgeAppIdRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteV2XEdgeAppByEdgeAppIdRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteV2XEdgeAppByEdgeAppIdRequest::getInstanceId,
+                DeleteV2XEdgeAppByEdgeAppIdRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteV2XEdgeAppByEdgeAppIdResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteV2XEdgeAppByEdgeAppIdResponse::getBody,
+                DeleteV2XEdgeAppByEdgeAppIdResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListV2xEdgeAppRequest, ListV2xEdgeAppResponse> listV2xEdgeApp =
-        genForlistV2xEdgeApp();
+        genForListV2xEdgeApp();
 
-    private static HttpRequestDef<ListV2xEdgeAppRequest, ListV2xEdgeAppResponse> genForlistV2xEdgeApp() {
+    private static HttpRequestDef<ListV2xEdgeAppRequest, ListV2xEdgeAppResponse> genForListV2xEdgeApp() {
         // basic
         HttpRequestDef.Builder<ListV2xEdgeAppRequest, ListV2xEdgeAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListV2xEdgeAppRequest.class, ListV2xEdgeAppResponse.class)
@@ -1743,30 +1527,22 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListV2xEdgeAppRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(ListV2xEdgeAppRequest::getV2xEdgeId, ListV2xEdgeAppRequest::setV2xEdgeId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListV2xEdgeAppRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListV2xEdgeAppRequest::getOffset, ListV2xEdgeAppRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListV2xEdgeAppRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListV2xEdgeAppRequest::getLimit, ListV2xEdgeAppRequest::setLimit));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListV2xEdgeAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListV2xEdgeAppRequest::getInstanceId, ListV2xEdgeAppRequest::setInstanceId));
 
         // response
 
@@ -1774,9 +1550,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<ShowV2XEdgeAppDetailByEdgeAppIdRequest, ShowV2XEdgeAppDetailByEdgeAppIdResponse> showV2XEdgeAppDetailByEdgeAppId =
-        genForshowV2XEdgeAppDetailByEdgeAppId();
+        genForShowV2XEdgeAppDetailByEdgeAppId();
 
-    private static HttpRequestDef<ShowV2XEdgeAppDetailByEdgeAppIdRequest, ShowV2XEdgeAppDetailByEdgeAppIdResponse> genForshowV2XEdgeAppDetailByEdgeAppId() {
+    private static HttpRequestDef<ShowV2XEdgeAppDetailByEdgeAppIdRequest, ShowV2XEdgeAppDetailByEdgeAppIdResponse> genForShowV2XEdgeAppDetailByEdgeAppId() {
         // basic
         HttpRequestDef.Builder<ShowV2XEdgeAppDetailByEdgeAppIdRequest, ShowV2XEdgeAppDetailByEdgeAppIdResponse> builder =
             HttpRequestDef
@@ -1792,23 +1568,20 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowV2XEdgeAppDetailByEdgeAppIdRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(ShowV2XEdgeAppDetailByEdgeAppIdRequest::getEdgeAppId,
+                ShowV2XEdgeAppDetailByEdgeAppIdRequest::setEdgeAppId));
         builder.<String>withRequestField("v2x_edge_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowV2XEdgeAppDetailByEdgeAppIdRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(ShowV2XEdgeAppDetailByEdgeAppIdRequest::getV2xEdgeId,
+                ShowV2XEdgeAppDetailByEdgeAppIdRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowV2XEdgeAppDetailByEdgeAppIdRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowV2XEdgeAppDetailByEdgeAppIdRequest::getInstanceId,
+                ShowV2XEdgeAppDetailByEdgeAppIdRequest::setInstanceId));
 
         // response
 
@@ -1816,9 +1589,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse> updateV2xEdgeApp =
-        genForupdateV2xEdgeApp();
+        genForUpdateV2xEdgeApp();
 
-    private static HttpRequestDef<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse> genForupdateV2xEdgeApp() {
+    private static HttpRequestDef<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse> genForUpdateV2xEdgeApp() {
         // basic
         HttpRequestDef.Builder<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateV2xEdgeAppRequest.class, UpdateV2xEdgeAppResponse.class)
@@ -1831,30 +1604,22 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateV2xEdgeAppRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateV2xEdgeAppRequest::getEdgeAppId, UpdateV2xEdgeAppRequest::setEdgeAppId));
         builder.<String>withRequestField("v2x_edge_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateV2xEdgeAppRequest::getV2xEdgeId, (req, v) -> {
-                req.setV2xEdgeId(v);
-            }));
+            f -> f.withMarshaller(UpdateV2xEdgeAppRequest::getV2xEdgeId, UpdateV2xEdgeAppRequest::setV2xEdgeId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateV2xEdgeAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateV2xEdgeAppRequest::getInstanceId, UpdateV2xEdgeAppRequest::setInstanceId));
         builder.<ModifyV2XEdgeAppDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyV2XEdgeAppDTO.class),
-            f -> f.withMarshaller(UpdateV2xEdgeAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateV2xEdgeAppRequest::getBody, UpdateV2xEdgeAppRequest::setBody));
 
         // response
 
@@ -1862,9 +1627,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<BatchShowVehiclesRequest, BatchShowVehiclesResponse> batchShowVehicles =
-        genForbatchShowVehicles();
+        genForBatchShowVehicles();
 
-    private static HttpRequestDef<BatchShowVehiclesRequest, BatchShowVehiclesResponse> genForbatchShowVehicles() {
+    private static HttpRequestDef<BatchShowVehiclesRequest, BatchShowVehiclesResponse> genForBatchShowVehicles() {
         // basic
         HttpRequestDef.Builder<BatchShowVehiclesRequest, BatchShowVehiclesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchShowVehiclesRequest.class, BatchShowVehiclesResponse.class)
@@ -1877,37 +1642,27 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowVehiclesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchShowVehiclesRequest::getOffset, BatchShowVehiclesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowVehiclesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchShowVehiclesRequest::getLimit, BatchShowVehiclesRequest::setLimit));
         builder.<String>withRequestField("vehicle_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowVehiclesRequest::getVehicleId, (req, v) -> {
-                req.setVehicleId(v);
-            }));
+            f -> f.withMarshaller(BatchShowVehiclesRequest::getVehicleId, BatchShowVehiclesRequest::setVehicleId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowVehiclesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(BatchShowVehiclesRequest::getStatus, BatchShowVehiclesRequest::setStatus));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowVehiclesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchShowVehiclesRequest::getInstanceId, BatchShowVehiclesRequest::setInstanceId));
 
         // response
 
@@ -1915,9 +1670,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<CreateVehicleRequest, CreateVehicleResponse> createVehicle =
-        genForcreateVehicle();
+        genForCreateVehicle();
 
-    private static HttpRequestDef<CreateVehicleRequest, CreateVehicleResponse> genForcreateVehicle() {
+    private static HttpRequestDef<CreateVehicleRequest, CreateVehicleResponse> genForCreateVehicle() {
         // basic
         HttpRequestDef.Builder<CreateVehicleRequest, CreateVehicleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVehicleRequest.class, CreateVehicleResponse.class)
@@ -1930,16 +1685,12 @@ public class DrisMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVehicleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateVehicleRequest::getInstanceId, CreateVehicleRequest::setInstanceId));
         builder.<AddVehicleDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AddVehicleDTO.class),
-            f -> f.withMarshaller(CreateVehicleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVehicleRequest::getBody, CreateVehicleRequest::setBody));
 
         // response
 
@@ -1947,9 +1698,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<DeleteVehicleRequest, DeleteVehicleResponse> deleteVehicle =
-        genFordeleteVehicle();
+        genForDeleteVehicle();
 
-    private static HttpRequestDef<DeleteVehicleRequest, DeleteVehicleResponse> genFordeleteVehicle() {
+    private static HttpRequestDef<DeleteVehicleRequest, DeleteVehicleResponse> genForDeleteVehicle() {
         // basic
         HttpRequestDef.Builder<DeleteVehicleRequest, DeleteVehicleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVehicleRequest.class, DeleteVehicleResponse.class)
@@ -1962,33 +1713,27 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVehicleRequest::getVehicleId, (req, v) -> {
-                req.setVehicleId(v);
-            }));
+            f -> f.withMarshaller(DeleteVehicleRequest::getVehicleId, DeleteVehicleRequest::setVehicleId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVehicleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteVehicleRequest::getInstanceId, DeleteVehicleRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteVehicleResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteVehicleResponse::getBody, DeleteVehicleResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateVehicleRequest, UpdateVehicleResponse> updateVehicle =
-        genForupdateVehicle();
+        genForUpdateVehicle();
 
-    private static HttpRequestDef<UpdateVehicleRequest, UpdateVehicleResponse> genForupdateVehicle() {
+    private static HttpRequestDef<UpdateVehicleRequest, UpdateVehicleResponse> genForUpdateVehicle() {
         // basic
         HttpRequestDef.Builder<UpdateVehicleRequest, UpdateVehicleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVehicleRequest.class, UpdateVehicleResponse.class)
@@ -2001,23 +1746,17 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVehicleRequest::getVehicleId, (req, v) -> {
-                req.setVehicleId(v);
-            }));
+            f -> f.withMarshaller(UpdateVehicleRequest::getVehicleId, UpdateVehicleRequest::setVehicleId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVehicleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateVehicleRequest::getInstanceId, UpdateVehicleRequest::setInstanceId));
         builder.<ModifyVehicleRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyVehicleRequestDTO.class),
-            f -> f.withMarshaller(UpdateVehicleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVehicleRequest::getBody, UpdateVehicleRequest::setBody));
 
         // response
 
@@ -2025,9 +1764,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<BatchShowEdgeAppsRequest, BatchShowEdgeAppsResponse> batchShowEdgeApps =
-        genForbatchShowEdgeApps();
+        genForBatchShowEdgeApps();
 
-    private static HttpRequestDef<BatchShowEdgeAppsRequest, BatchShowEdgeAppsResponse> genForbatchShowEdgeApps() {
+    private static HttpRequestDef<BatchShowEdgeAppsRequest, BatchShowEdgeAppsResponse> genForBatchShowEdgeApps() {
         // basic
         HttpRequestDef.Builder<BatchShowEdgeAppsRequest, BatchShowEdgeAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchShowEdgeAppsRequest.class, BatchShowEdgeAppsResponse.class)
@@ -2040,30 +1779,22 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowEdgeAppsRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(BatchShowEdgeAppsRequest::getEdgeAppId, BatchShowEdgeAppsRequest::setEdgeAppId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowEdgeAppsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchShowEdgeAppsRequest::getOffset, BatchShowEdgeAppsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowEdgeAppsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchShowEdgeAppsRequest::getLimit, BatchShowEdgeAppsRequest::setLimit));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowEdgeAppsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchShowEdgeAppsRequest::getInstanceId, BatchShowEdgeAppsRequest::setInstanceId));
 
         // response
 
@@ -2071,9 +1802,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<CreateEdgeAppRequest, CreateEdgeAppResponse> createEdgeApp =
-        genForcreateEdgeApp();
+        genForCreateEdgeApp();
 
-    private static HttpRequestDef<CreateEdgeAppRequest, CreateEdgeAppResponse> genForcreateEdgeApp() {
+    private static HttpRequestDef<CreateEdgeAppRequest, CreateEdgeAppResponse> genForCreateEdgeApp() {
         // basic
         HttpRequestDef.Builder<CreateEdgeAppRequest, CreateEdgeAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEdgeAppRequest.class, CreateEdgeAppResponse.class)
@@ -2086,16 +1817,12 @@ public class DrisMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEdgeAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeAppRequest::getInstanceId, CreateEdgeAppRequest::setInstanceId));
         builder.<CreateEdgeApplicationRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEdgeApplicationRequestDTO.class),
-            f -> f.withMarshaller(CreateEdgeAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeAppRequest::getBody, CreateEdgeAppRequest::setBody));
 
         // response
 
@@ -2103,9 +1830,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeAppRequest, DeleteEdgeAppResponse> deleteEdgeApp =
-        genFordeleteEdgeApp();
+        genForDeleteEdgeApp();
 
-    private static HttpRequestDef<DeleteEdgeAppRequest, DeleteEdgeAppResponse> genFordeleteEdgeApp() {
+    private static HttpRequestDef<DeleteEdgeAppRequest, DeleteEdgeAppResponse> genForDeleteEdgeApp() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeAppRequest, DeleteEdgeAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEdgeAppRequest.class, DeleteEdgeAppResponse.class)
@@ -2118,33 +1845,27 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeAppRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeAppRequest::getEdgeAppId, DeleteEdgeAppRequest::setEdgeAppId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeAppRequest::getInstanceId, DeleteEdgeAppRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteEdgeAppResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteEdgeAppResponse::getBody, DeleteEdgeAppResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateEdgeAppRequest, UpdateEdgeAppResponse> updateEdgeApp =
-        genForupdateEdgeApp();
+        genForUpdateEdgeApp();
 
-    private static HttpRequestDef<UpdateEdgeAppRequest, UpdateEdgeAppResponse> genForupdateEdgeApp() {
+    private static HttpRequestDef<UpdateEdgeAppRequest, UpdateEdgeAppResponse> genForUpdateEdgeApp() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeAppRequest, UpdateEdgeAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEdgeAppRequest.class, UpdateEdgeAppResponse.class)
@@ -2157,23 +1878,17 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeAppRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeAppRequest::getEdgeAppId, UpdateEdgeAppRequest::setEdgeAppId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeAppRequest::getInstanceId, UpdateEdgeAppRequest::setInstanceId));
         builder.<UpdateEdgeApplicationRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeApplicationRequestDTO.class),
-            f -> f.withMarshaller(UpdateEdgeAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeAppRequest::getBody, UpdateEdgeAppRequest::setBody));
 
         // response
 
@@ -2181,9 +1896,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<BatchShowEdgeAppVersionsRequest, BatchShowEdgeAppVersionsResponse> batchShowEdgeAppVersions =
-        genForbatchShowEdgeAppVersions();
+        genForBatchShowEdgeAppVersions();
 
-    private static HttpRequestDef<BatchShowEdgeAppVersionsRequest, BatchShowEdgeAppVersionsResponse> genForbatchShowEdgeAppVersions() {
+    private static HttpRequestDef<BatchShowEdgeAppVersionsRequest, BatchShowEdgeAppVersionsResponse> genForBatchShowEdgeAppVersions() {
         // basic
         HttpRequestDef.Builder<BatchShowEdgeAppVersionsRequest, BatchShowEdgeAppVersionsResponse> builder =
             HttpRequestDef
@@ -2197,44 +1912,38 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getEdgeAppId,
+                BatchShowEdgeAppVersionsRequest::setEdgeAppId));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getVersion,
+                BatchShowEdgeAppVersionsRequest::setVersion));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getOffset,
+                BatchShowEdgeAppVersionsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getLimit,
+                BatchShowEdgeAppVersionsRequest::setLimit));
         builder.<BatchShowEdgeAppVersionsRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchShowEdgeAppVersionsRequest.StateEnum.class),
-            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getState,
+                BatchShowEdgeAppVersionsRequest::setState));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchShowEdgeAppVersionsRequest::getInstanceId,
+                BatchShowEdgeAppVersionsRequest::setInstanceId));
 
         // response
 
@@ -2242,9 +1951,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> createEdgeApplicationVersion =
-        genForcreateEdgeApplicationVersion();
+        genForCreateEdgeApplicationVersion();
 
-    private static HttpRequestDef<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> genForcreateEdgeApplicationVersion() {
+    private static HttpRequestDef<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> genForCreateEdgeApplicationVersion() {
         // basic
         HttpRequestDef.Builder<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> builder =
             HttpRequestDef
@@ -2260,23 +1969,20 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEdgeApplicationVersionRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeApplicationVersionRequest::getEdgeAppId,
+                CreateEdgeApplicationVersionRequest::setEdgeAppId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEdgeApplicationVersionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeApplicationVersionRequest::getInstanceId,
+                CreateEdgeApplicationVersionRequest::setInstanceId));
         builder.<CreateEdgeApplicationVersionDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEdgeApplicationVersionDTO.class),
-            f -> f.withMarshaller(CreateEdgeApplicationVersionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeApplicationVersionRequest::getBody,
+                CreateEdgeApplicationVersionRequest::setBody));
 
         // response
 
@@ -2284,9 +1990,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersion =
-        genFordeleteEdgeApplicationVersion();
+        genForDeleteEdgeApplicationVersion();
 
-    private static HttpRequestDef<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> genFordeleteEdgeApplicationVersion() {
+    private static HttpRequestDef<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> genForDeleteEdgeApplicationVersion() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> builder =
             HttpRequestDef
@@ -2302,40 +2008,36 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeApplicationVersionRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeApplicationVersionRequest::getEdgeAppId,
+                DeleteEdgeApplicationVersionRequest::setEdgeAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeApplicationVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeApplicationVersionRequest::getVersion,
+                DeleteEdgeApplicationVersionRequest::setVersion));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeApplicationVersionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeApplicationVersionRequest::getInstanceId,
+                DeleteEdgeApplicationVersionRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteEdgeApplicationVersionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteEdgeApplicationVersionResponse::getBody,
+                DeleteEdgeApplicationVersionResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> showEdgeApplicationVersion =
-        genForshowEdgeApplicationVersion();
+        genForShowEdgeApplicationVersion();
 
-    private static HttpRequestDef<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> genForshowEdgeApplicationVersion() {
+    private static HttpRequestDef<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> genForShowEdgeApplicationVersion() {
         // basic
         HttpRequestDef.Builder<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> builder =
             HttpRequestDef
@@ -2351,23 +2053,20 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeApplicationVersionRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeApplicationVersionRequest::getEdgeAppId,
+                ShowEdgeApplicationVersionRequest::setEdgeAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeApplicationVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeApplicationVersionRequest::getVersion,
+                ShowEdgeApplicationVersionRequest::setVersion));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeApplicationVersionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeApplicationVersionRequest::getInstanceId,
+                ShowEdgeApplicationVersionRequest::setInstanceId));
 
         // response
 
@@ -2375,9 +2074,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersion =
-        genForupdateEdgeApplicationVersion();
+        genForUpdateEdgeApplicationVersion();
 
-    private static HttpRequestDef<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> genForupdateEdgeApplicationVersion() {
+    private static HttpRequestDef<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> genForUpdateEdgeApplicationVersion() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> builder =
             HttpRequestDef
@@ -2393,30 +2092,26 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getEdgeAppId,
+                UpdateEdgeApplicationVersionRequest::setEdgeAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getVersion,
+                UpdateEdgeApplicationVersionRequest::setVersion));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getInstanceId,
+                UpdateEdgeApplicationVersionRequest::setInstanceId));
         builder.<UpdateEdgeAppVersionDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeAppVersionDTO.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionRequest::getBody,
+                UpdateEdgeApplicationVersionRequest::setBody));
 
         // response
 
@@ -2424,9 +2119,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionState =
-        genForupdateEdgeApplicationVersionState();
+        genForUpdateEdgeApplicationVersionState();
 
-    private static HttpRequestDef<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> genForupdateEdgeApplicationVersionState() {
+    private static HttpRequestDef<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> genForUpdateEdgeApplicationVersionState() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> builder =
             HttpRequestDef
@@ -2442,30 +2137,26 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getEdgeAppId, (req, v) -> {
-                req.setEdgeAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getEdgeAppId,
+                UpdateEdgeApplicationVersionStateRequest::setEdgeAppId));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getVersion,
+                UpdateEdgeApplicationVersionStateRequest::setVersion));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getInstanceId,
+                UpdateEdgeApplicationVersionStateRequest::setInstanceId));
         builder.<UpdateEdgeAppVersionStateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeAppVersionStateDTO.class),
-            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getBody,
+                UpdateEdgeApplicationVersionStateRequest::setBody));
 
         // response
 
@@ -2473,9 +2164,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<CreateRsuModelRequest, CreateRsuModelResponse> createRsuModel =
-        genForcreateRsuModel();
+        genForCreateRsuModel();
 
-    private static HttpRequestDef<CreateRsuModelRequest, CreateRsuModelResponse> genForcreateRsuModel() {
+    private static HttpRequestDef<CreateRsuModelRequest, CreateRsuModelResponse> genForCreateRsuModel() {
         // basic
         HttpRequestDef.Builder<CreateRsuModelRequest, CreateRsuModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRsuModelRequest.class, CreateRsuModelResponse.class)
@@ -2488,16 +2179,12 @@ public class DrisMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRsuModelRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRsuModelRequest::getInstanceId, CreateRsuModelRequest::setInstanceId));
         builder.<AddRsuModel>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AddRsuModel.class),
-            f -> f.withMarshaller(CreateRsuModelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRsuModelRequest::getBody, CreateRsuModelRequest::setBody));
 
         // response
 
@@ -2505,9 +2192,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<DeleteRsuModelRequest, DeleteRsuModelResponse> deleteRsuModel =
-        genFordeleteRsuModel();
+        genForDeleteRsuModel();
 
-    private static HttpRequestDef<DeleteRsuModelRequest, DeleteRsuModelResponse> genFordeleteRsuModel() {
+    private static HttpRequestDef<DeleteRsuModelRequest, DeleteRsuModelResponse> genForDeleteRsuModel() {
         // basic
         HttpRequestDef.Builder<DeleteRsuModelRequest, DeleteRsuModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRsuModelRequest.class, DeleteRsuModelResponse.class)
@@ -2520,33 +2207,27 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRsuModelRequest::getRsuModelId, (req, v) -> {
-                req.setRsuModelId(v);
-            }));
+            f -> f.withMarshaller(DeleteRsuModelRequest::getRsuModelId, DeleteRsuModelRequest::setRsuModelId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRsuModelRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRsuModelRequest::getInstanceId, DeleteRsuModelRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteRsuModelResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteRsuModelResponse::getBody, DeleteRsuModelResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListRsuModelsRequest, ListRsuModelsResponse> listRsuModels =
-        genForlistRsuModels();
+        genForListRsuModels();
 
-    private static HttpRequestDef<ListRsuModelsRequest, ListRsuModelsResponse> genForlistRsuModels() {
+    private static HttpRequestDef<ListRsuModelsRequest, ListRsuModelsResponse> genForListRsuModels() {
         // basic
         HttpRequestDef.Builder<ListRsuModelsRequest, ListRsuModelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRsuModelsRequest.class, ListRsuModelsResponse.class)
@@ -2559,39 +2240,32 @@ public class DrisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRsuModelsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRsuModelsRequest::getLimit, ListRsuModelsRequest::setLimit));
         builder.<String>withRequestField("manufacturer_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRsuModelsRequest::getManufacturerName, (req, v) -> {
-                req.setManufacturerName(v);
-            }));
+            f -> f.withMarshaller(ListRsuModelsRequest::getManufacturerName,
+                ListRsuModelsRequest::setManufacturerName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRsuModelsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRsuModelsRequest::getOffset, ListRsuModelsRequest::setOffset));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRsuModelsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRsuModelsRequest::getInstanceId, ListRsuModelsRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRsuModelRequest, ShowRsuModelResponse> showRsuModel = genForshowRsuModel();
+    public static final HttpRequestDef<ShowRsuModelRequest, ShowRsuModelResponse> showRsuModel = genForShowRsuModel();
 
-    private static HttpRequestDef<ShowRsuModelRequest, ShowRsuModelResponse> genForshowRsuModel() {
+    private static HttpRequestDef<ShowRsuModelRequest, ShowRsuModelResponse> genForShowRsuModel() {
         // basic
         HttpRequestDef.Builder<ShowRsuModelRequest, ShowRsuModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRsuModelRequest.class, ShowRsuModelResponse.class)
@@ -2604,16 +2278,12 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRsuModelRequest::getRsuModelId, (req, v) -> {
-                req.setRsuModelId(v);
-            }));
+            f -> f.withMarshaller(ShowRsuModelRequest::getRsuModelId, ShowRsuModelRequest::setRsuModelId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRsuModelRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRsuModelRequest::getInstanceId, ShowRsuModelRequest::setInstanceId));
 
         // response
 
@@ -2621,9 +2291,9 @@ public class DrisMeta {
     }
 
     public static final HttpRequestDef<UpdateRsuModelRequest, UpdateRsuModelResponse> updateRsuModel =
-        genForupdateRsuModel();
+        genForUpdateRsuModel();
 
-    private static HttpRequestDef<UpdateRsuModelRequest, UpdateRsuModelResponse> genForupdateRsuModel() {
+    private static HttpRequestDef<UpdateRsuModelRequest, UpdateRsuModelResponse> genForUpdateRsuModel() {
         // basic
         HttpRequestDef.Builder<UpdateRsuModelRequest, UpdateRsuModelResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRsuModelRequest.class, UpdateRsuModelResponse.class)
@@ -2636,23 +2306,17 @@ public class DrisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRsuModelRequest::getRsuModelId, (req, v) -> {
-                req.setRsuModelId(v);
-            }));
+            f -> f.withMarshaller(UpdateRsuModelRequest::getRsuModelId, UpdateRsuModelRequest::setRsuModelId));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRsuModelRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRsuModelRequest::getInstanceId, UpdateRsuModelRequest::setInstanceId));
         builder.<UpdateRsuModel>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRsuModel.class),
-            f -> f.withMarshaller(UpdateRsuModelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRsuModelRequest::getBody, UpdateRsuModelRequest::setBody));
 
         // response
 

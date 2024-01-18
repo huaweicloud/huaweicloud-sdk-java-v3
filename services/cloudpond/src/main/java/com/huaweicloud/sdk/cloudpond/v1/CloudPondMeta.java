@@ -39,9 +39,9 @@ import java.util.List;
 public class CloudPondMeta {
 
     public static final HttpRequestDef<CreateEdgeSiteRequest, CreateEdgeSiteResponse> createEdgeSite =
-        genForcreateEdgeSite();
+        genForCreateEdgeSite();
 
-    private static HttpRequestDef<CreateEdgeSiteRequest, CreateEdgeSiteResponse> genForcreateEdgeSite() {
+    private static HttpRequestDef<CreateEdgeSiteRequest, CreateEdgeSiteResponse> genForCreateEdgeSite() {
         // basic
         HttpRequestDef.Builder<CreateEdgeSiteRequest, CreateEdgeSiteResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEdgeSiteRequest.class, CreateEdgeSiteResponse.class)
@@ -54,9 +54,7 @@ public class CloudPondMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEdgeSiteRequestBody.class),
-            f -> f.withMarshaller(CreateEdgeSiteRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeSiteRequest::getBody, CreateEdgeSiteRequest::setBody));
 
         // response
 
@@ -64,9 +62,9 @@ public class CloudPondMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse> deleteEdgeSite =
-        genFordeleteEdgeSite();
+        genForDeleteEdgeSite();
 
-    private static HttpRequestDef<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse> genFordeleteEdgeSite() {
+    private static HttpRequestDef<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse> genForDeleteEdgeSite() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEdgeSiteRequest.class, DeleteEdgeSiteResponse.class)
@@ -79,9 +77,7 @@ public class CloudPondMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeSiteRequest::getSiteId, (req, v) -> {
-                req.setSiteId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeSiteRequest::getSiteId, DeleteEdgeSiteRequest::setSiteId));
 
         // response
 
@@ -89,9 +85,9 @@ public class CloudPondMeta {
     }
 
     public static final HttpRequestDef<ListEdgeSitesRequest, ListEdgeSitesResponse> listEdgeSites =
-        genForlistEdgeSites();
+        genForListEdgeSites();
 
-    private static HttpRequestDef<ListEdgeSitesRequest, ListEdgeSitesResponse> genForlistEdgeSites() {
+    private static HttpRequestDef<ListEdgeSitesRequest, ListEdgeSitesResponse> genForListEdgeSites() {
         // basic
         HttpRequestDef.Builder<ListEdgeSitesRequest, ListEdgeSitesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEdgeSitesRequest.class, ListEdgeSitesResponse.class)
@@ -104,67 +100,52 @@ public class CloudPondMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeSitesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSitesRequest::getLimit, ListEdgeSitesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeSitesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSitesRequest::getMarker, ListEdgeSitesRequest::setMarker));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEdgeSitesRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSitesRequest::getSortKey, ListEdgeSitesRequest::setSortKey));
         builder.<List<String>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEdgeSitesRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSitesRequest::getSortDir, ListEdgeSitesRequest::setSortDir));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEdgeSitesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSitesRequest::getId, ListEdgeSitesRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEdgeSitesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSitesRequest::getName, ListEdgeSitesRequest::setName));
         builder.<List<String>>withRequestField("availability_zone_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEdgeSitesRequest::getAvailabilityZoneId, (req, v) -> {
-                req.setAvailabilityZoneId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSitesRequest::getAvailabilityZoneId,
+                ListEdgeSitesRequest::setAvailabilityZoneId));
         builder.<List<SiteStatus>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEdgeSitesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSitesRequest::getStatus, ListEdgeSitesRequest::setStatus));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEdgeSiteRequest, ShowEdgeSiteResponse> showEdgeSite = genForshowEdgeSite();
+    public static final HttpRequestDef<ShowEdgeSiteRequest, ShowEdgeSiteResponse> showEdgeSite = genForShowEdgeSite();
 
-    private static HttpRequestDef<ShowEdgeSiteRequest, ShowEdgeSiteResponse> genForshowEdgeSite() {
+    private static HttpRequestDef<ShowEdgeSiteRequest, ShowEdgeSiteResponse> genForShowEdgeSite() {
         // basic
         HttpRequestDef.Builder<ShowEdgeSiteRequest, ShowEdgeSiteResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEdgeSiteRequest.class, ShowEdgeSiteResponse.class)
@@ -177,9 +158,7 @@ public class CloudPondMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeSiteRequest::getSiteId, (req, v) -> {
-                req.setSiteId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeSiteRequest::getSiteId, ShowEdgeSiteRequest::setSiteId));
 
         // response
 
@@ -187,9 +166,9 @@ public class CloudPondMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse> updateEdgeSite =
-        genForupdateEdgeSite();
+        genForUpdateEdgeSite();
 
-    private static HttpRequestDef<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse> genForupdateEdgeSite() {
+    private static HttpRequestDef<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse> genForUpdateEdgeSite() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEdgeSiteRequest.class, UpdateEdgeSiteResponse.class)
@@ -202,16 +181,12 @@ public class CloudPondMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeSiteRequest::getSiteId, (req, v) -> {
-                req.setSiteId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeSiteRequest::getSiteId, UpdateEdgeSiteRequest::setSiteId));
         builder.<UpdateEdgeSiteRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeSiteRequestBody.class),
-            f -> f.withMarshaller(UpdateEdgeSiteRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeSiteRequest::getBody, UpdateEdgeSiteRequest::setBody));
 
         // response
 
@@ -219,9 +194,9 @@ public class CloudPondMeta {
     }
 
     public static final HttpRequestDef<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse> listEdgeSiteMetrics =
-        genForlistEdgeSiteMetrics();
+        genForListEdgeSiteMetrics();
 
-    private static HttpRequestDef<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse> genForlistEdgeSiteMetrics() {
+    private static HttpRequestDef<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse> genForListEdgeSiteMetrics() {
         // basic
         HttpRequestDef.Builder<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEdgeSiteMetricsRequest.class, ListEdgeSiteMetricsResponse.class)
@@ -234,25 +209,21 @@ public class CloudPondMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeSiteMetricsRequest::getSiteId, (req, v) -> {
-                req.setSiteId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSiteMetricsRequest::getSiteId, ListEdgeSiteMetricsRequest::setSiteId));
         builder.<ListEdgeSiteMetricsRequest.DimEnum>withRequestField("dim",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEdgeSiteMetricsRequest.DimEnum.class),
-            f -> f.withMarshaller(ListEdgeSiteMetricsRequest::getDim, (req, v) -> {
-                req.setDim(v);
-            }));
+            f -> f.withMarshaller(ListEdgeSiteMetricsRequest::getDim, ListEdgeSiteMetricsRequest::setDim));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForListQuotas();
 
-    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForListQuotas() {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
@@ -267,9 +238,9 @@ public class CloudPondMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRacksRequest, ListRacksResponse> listRacks = genForlistRacks();
+    public static final HttpRequestDef<ListRacksRequest, ListRacksResponse> listRacks = genForListRacks();
 
-    private static HttpRequestDef<ListRacksRequest, ListRacksResponse> genForlistRacks() {
+    private static HttpRequestDef<ListRacksRequest, ListRacksResponse> genForListRacks() {
         // basic
         HttpRequestDef.Builder<ListRacksRequest, ListRacksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRacksRequest.class, ListRacksResponse.class)
@@ -282,46 +253,36 @@ public class CloudPondMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRacksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRacksRequest::getLimit, ListRacksRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRacksRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListRacksRequest::getMarker, ListRacksRequest::setMarker));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRacksRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListRacksRequest::getSortKey, ListRacksRequest::setSortKey));
         builder.<List<String>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRacksRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListRacksRequest::getSortDir, ListRacksRequest::setSortDir));
         builder.<String>withRequestField("edge_site_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRacksRequest::getEdgeSiteId, (req, v) -> {
-                req.setEdgeSiteId(v);
-            }));
+            f -> f.withMarshaller(ListRacksRequest::getEdgeSiteId, ListRacksRequest::setEdgeSiteId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRackRequest, ShowRackResponse> showRack = genForshowRack();
+    public static final HttpRequestDef<ShowRackRequest, ShowRackResponse> showRack = genForShowRack();
 
-    private static HttpRequestDef<ShowRackRequest, ShowRackResponse> genForshowRack() {
+    private static HttpRequestDef<ShowRackRequest, ShowRackResponse> genForShowRack() {
         // basic
         HttpRequestDef.Builder<ShowRackRequest, ShowRackResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRackRequest.class, ShowRackResponse.class)
@@ -334,9 +295,7 @@ public class CloudPondMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRackRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowRackRequest::getId, ShowRackRequest::setId));
 
         // response
 
@@ -344,9 +303,9 @@ public class CloudPondMeta {
     }
 
     public static final HttpRequestDef<ListSupportedRegionsRequest, ListSupportedRegionsResponse> listSupportedRegions =
-        genForlistSupportedRegions();
+        genForListSupportedRegions();
 
-    private static HttpRequestDef<ListSupportedRegionsRequest, ListSupportedRegionsResponse> genForlistSupportedRegions() {
+    private static HttpRequestDef<ListSupportedRegionsRequest, ListSupportedRegionsResponse> genForListSupportedRegions() {
         // basic
         HttpRequestDef.Builder<ListSupportedRegionsRequest, ListSupportedRegionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSupportedRegionsRequest.class, ListSupportedRegionsResponse.class)
@@ -359,37 +318,28 @@ public class CloudPondMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSupportedRegionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSupportedRegionsRequest::getLimit, ListSupportedRegionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSupportedRegionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListSupportedRegionsRequest::getMarker, ListSupportedRegionsRequest::setMarker));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSupportedRegionsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListSupportedRegionsRequest::getSortKey, ListSupportedRegionsRequest::setSortKey));
         builder.<List<String>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSupportedRegionsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListSupportedRegionsRequest::getSortDir, ListSupportedRegionsRequest::setSortDir));
         builder.<ListSupportedRegionsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSupportedRegionsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListSupportedRegionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListSupportedRegionsRequest::getXLanguage,
+                ListSupportedRegionsRequest::setXLanguage));
 
         // response
 
@@ -397,9 +347,9 @@ public class CloudPondMeta {
     }
 
     public static final HttpRequestDef<ListStoragePoolsRequest, ListStoragePoolsResponse> listStoragePools =
-        genForlistStoragePools();
+        genForListStoragePools();
 
-    private static HttpRequestDef<ListStoragePoolsRequest, ListStoragePoolsResponse> genForlistStoragePools() {
+    private static HttpRequestDef<ListStoragePoolsRequest, ListStoragePoolsResponse> genForListStoragePools() {
         // basic
         HttpRequestDef.Builder<ListStoragePoolsRequest, ListStoragePoolsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStoragePoolsRequest.class, ListStoragePoolsResponse.class)
@@ -412,37 +362,27 @@ public class CloudPondMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStoragePoolsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListStoragePoolsRequest::getLimit, ListStoragePoolsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStoragePoolsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListStoragePoolsRequest::getMarker, ListStoragePoolsRequest::setMarker));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStoragePoolsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListStoragePoolsRequest::getSortKey, ListStoragePoolsRequest::setSortKey));
         builder.<List<String>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStoragePoolsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListStoragePoolsRequest::getSortDir, ListStoragePoolsRequest::setSortDir));
         builder.<String>withRequestField("edge_site_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStoragePoolsRequest::getEdgeSiteId, (req, v) -> {
-                req.setEdgeSiteId(v);
-            }));
+            f -> f.withMarshaller(ListStoragePoolsRequest::getEdgeSiteId, ListStoragePoolsRequest::setEdgeSiteId));
 
         // response
 
@@ -450,9 +390,9 @@ public class CloudPondMeta {
     }
 
     public static final HttpRequestDef<ShowStoragePoolRequest, ShowStoragePoolResponse> showStoragePool =
-        genForshowStoragePool();
+        genForShowStoragePool();
 
-    private static HttpRequestDef<ShowStoragePoolRequest, ShowStoragePoolResponse> genForshowStoragePool() {
+    private static HttpRequestDef<ShowStoragePoolRequest, ShowStoragePoolResponse> genForShowStoragePool() {
         // basic
         HttpRequestDef.Builder<ShowStoragePoolRequest, ShowStoragePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStoragePoolRequest.class, ShowStoragePoolResponse.class)
@@ -465,9 +405,7 @@ public class CloudPondMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStoragePoolRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowStoragePoolRequest::getId, ShowStoragePoolRequest::setId));
 
         // response
 

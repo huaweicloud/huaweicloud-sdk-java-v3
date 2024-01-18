@@ -119,9 +119,9 @@ import com.huaweicloud.sdk.cph.v1.model.UpdateServerNameResponse;
 public class CphMeta {
 
     public static final HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTags =
-        genForbatchCreateTags();
+        genForBatchCreateTags();
 
-    private static HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> genForbatchCreateTags() {
+    private static HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> genForBatchCreateTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateTagsRequest, BatchCreateTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateTagsRequest.class, BatchCreateTagsResponse.class)
@@ -134,23 +134,17 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceType, BatchCreateTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceId, BatchCreateTagsRequest::setResourceId));
         builder.<BatchCreateTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagsRequest::getBody, BatchCreateTagsRequest::setBody));
 
         // response
 
@@ -158,9 +152,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTags =
-        genForbatchDeleteTags();
+        genForBatchDeleteTags();
 
-    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForbatchDeleteTags() {
+    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForBatchDeleteTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteTagsRequest, BatchDeleteTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTagsRequest.class, BatchDeleteTagsResponse.class)
@@ -173,23 +167,17 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceType, BatchDeleteTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceId, BatchDeleteTagsRequest::setResourceId));
         builder.<BatchDeleteTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, BatchDeleteTagsRequest::setBody));
 
         // response
 
@@ -197,9 +185,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse> batchExportCloudPhoneData =
-        genForbatchExportCloudPhoneData();
+        genForBatchExportCloudPhoneData();
 
-    private static HttpRequestDef<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse> genForbatchExportCloudPhoneData() {
+    private static HttpRequestDef<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse> genForBatchExportCloudPhoneData() {
         // basic
         HttpRequestDef.Builder<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse> builder =
             HttpRequestDef
@@ -215,9 +203,8 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchExportCloudPhoneDataRequestBody.class),
-            f -> f.withMarshaller(BatchExportCloudPhoneDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchExportCloudPhoneDataRequest::getBody,
+                BatchExportCloudPhoneDataRequest::setBody));
 
         // response
 
@@ -225,9 +212,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse> batchImportCloudPhoneData =
-        genForbatchImportCloudPhoneData();
+        genForBatchImportCloudPhoneData();
 
-    private static HttpRequestDef<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse> genForbatchImportCloudPhoneData() {
+    private static HttpRequestDef<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse> genForBatchImportCloudPhoneData() {
         // basic
         HttpRequestDef.Builder<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse> builder =
             HttpRequestDef
@@ -243,9 +230,8 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchImportCloudPhoneDataRequestBody.class),
-            f -> f.withMarshaller(BatchImportCloudPhoneDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchImportCloudPhoneDataRequest::getBody,
+                BatchImportCloudPhoneDataRequest::setBody));
 
         // response
 
@@ -253,9 +239,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse> changeCloudPhoneServerModel =
-        genForchangeCloudPhoneServerModel();
+        genForChangeCloudPhoneServerModel();
 
-    private static HttpRequestDef<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse> genForchangeCloudPhoneServerModel() {
+    private static HttpRequestDef<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse> genForChangeCloudPhoneServerModel() {
         // basic
         HttpRequestDef.Builder<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse> builder =
             HttpRequestDef
@@ -271,9 +257,8 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeCloudPhoneServerModelRequestBody.class),
-            f -> f.withMarshaller(ChangeCloudPhoneServerModelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeCloudPhoneServerModelRequest::getBody,
+                ChangeCloudPhoneServerModelRequest::setBody));
 
         // response
 
@@ -281,9 +266,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse> createNet2CloudPhoneServer =
-        genForcreateNet2CloudPhoneServer();
+        genForCreateNet2CloudPhoneServer();
 
-    private static HttpRequestDef<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse> genForcreateNet2CloudPhoneServer() {
+    private static HttpRequestDef<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse> genForCreateNet2CloudPhoneServer() {
         // basic
         HttpRequestDef.Builder<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse> builder =
             HttpRequestDef
@@ -299,9 +284,8 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNet2CloudPhoneServerRequestBody.class),
-            f -> f.withMarshaller(CreateNet2CloudPhoneServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNet2CloudPhoneServerRequest::getBody,
+                CreateNet2CloudPhoneServerRequest::setBody));
 
         // response
 
@@ -309,9 +293,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<DeleteShareAppsRequest, DeleteShareAppsResponse> deleteShareApps =
-        genFordeleteShareApps();
+        genForDeleteShareApps();
 
-    private static HttpRequestDef<DeleteShareAppsRequest, DeleteShareAppsResponse> genFordeleteShareApps() {
+    private static HttpRequestDef<DeleteShareAppsRequest, DeleteShareAppsResponse> genForDeleteShareApps() {
         // basic
         HttpRequestDef.Builder<DeleteShareAppsRequest, DeleteShareAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteShareAppsRequest.class, DeleteShareAppsResponse.class)
@@ -324,9 +308,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteShareAppsRequestBody.class),
-            f -> f.withMarshaller(DeleteShareAppsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteShareAppsRequest::getBody, DeleteShareAppsRequest::setBody));
 
         // response
 
@@ -334,9 +316,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<DeleteShareFilesRequest, DeleteShareFilesResponse> deleteShareFiles =
-        genFordeleteShareFiles();
+        genForDeleteShareFiles();
 
-    private static HttpRequestDef<DeleteShareFilesRequest, DeleteShareFilesResponse> genFordeleteShareFiles() {
+    private static HttpRequestDef<DeleteShareFilesRequest, DeleteShareFilesResponse> genForDeleteShareFiles() {
         // basic
         HttpRequestDef.Builder<DeleteShareFilesRequest, DeleteShareFilesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteShareFilesRequest.class, DeleteShareFilesResponse.class)
@@ -349,9 +331,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteShareFilesRequestBody.class),
-            f -> f.withMarshaller(DeleteShareFilesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteShareFilesRequest::getBody, DeleteShareFilesRequest::setBody));
 
         // response
 
@@ -359,9 +339,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ImportTrafficRequest, ImportTrafficResponse> importTraffic =
-        genForimportTraffic();
+        genForImportTraffic();
 
-    private static HttpRequestDef<ImportTrafficRequest, ImportTrafficResponse> genForimportTraffic() {
+    private static HttpRequestDef<ImportTrafficRequest, ImportTrafficResponse> genForImportTraffic() {
         // basic
         HttpRequestDef.Builder<ImportTrafficRequest, ImportTrafficResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportTrafficRequest.class, ImportTrafficResponse.class)
@@ -374,9 +354,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportTrafficRequestBody.class),
-            f -> f.withMarshaller(ImportTrafficRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportTrafficRequest::getBody, ImportTrafficRequest::setBody));
 
         // response
 
@@ -384,9 +362,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse> listCloudPhoneImages =
-        genForlistCloudPhoneImages();
+        genForListCloudPhoneImages();
 
-    private static HttpRequestDef<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse> genForlistCloudPhoneImages() {
+    private static HttpRequestDef<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse> genForListCloudPhoneImages() {
         // basic
         HttpRequestDef.Builder<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCloudPhoneImagesRequest.class, ListCloudPhoneImagesResponse.class)
@@ -402,9 +380,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse> listCloudPhoneModels =
-        genForlistCloudPhoneModels();
+        genForListCloudPhoneModels();
 
-    private static HttpRequestDef<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse> genForlistCloudPhoneModels() {
+    private static HttpRequestDef<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse> genForListCloudPhoneModels() {
         // basic
         HttpRequestDef.Builder<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCloudPhoneModelsRequest.class, ListCloudPhoneModelsResponse.class)
@@ -417,23 +395,17 @@ public class CphMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudPhoneModelsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhoneModelsRequest::getStatus, ListCloudPhoneModelsRequest::setStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudPhoneModelsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhoneModelsRequest::getOffset, ListCloudPhoneModelsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudPhoneModelsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhoneModelsRequest::getLimit, ListCloudPhoneModelsRequest::setLimit));
 
         // response
 
@@ -441,9 +413,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse> listCloudPhoneServerModels =
-        genForlistCloudPhoneServerModels();
+        genForListCloudPhoneServerModels();
 
-    private static HttpRequestDef<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse> genForlistCloudPhoneServerModels() {
+    private static HttpRequestDef<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse> genForListCloudPhoneServerModels() {
         // basic
         HttpRequestDef.Builder<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse> builder =
             HttpRequestDef
@@ -459,9 +431,8 @@ public class CphMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudPhoneServerModelsRequest::getProductType, (req, v) -> {
-                req.setProductType(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhoneServerModelsRequest::getProductType,
+                ListCloudPhoneServerModelsRequest::setProductType));
 
         // response
 
@@ -469,9 +440,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse> listCloudPhoneServers =
-        genForlistCloudPhoneServers();
+        genForListCloudPhoneServers();
 
-    private static HttpRequestDef<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse> genForlistCloudPhoneServers() {
+    private static HttpRequestDef<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse> genForListCloudPhoneServers() {
         // basic
         HttpRequestDef.Builder<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCloudPhoneServersRequest.class, ListCloudPhoneServersResponse.class)
@@ -484,37 +455,30 @@ public class CphMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudPhoneServersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhoneServersRequest::getOffset, ListCloudPhoneServersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudPhoneServersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhoneServersRequest::getLimit, ListCloudPhoneServersRequest::setLimit));
         builder.<String>withRequestField("server_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudPhoneServersRequest::getServerName, (req, v) -> {
-                req.setServerName(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhoneServersRequest::getServerName,
+                ListCloudPhoneServersRequest::setServerName));
         builder.<String>withRequestField("server_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudPhoneServersRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhoneServersRequest::getServerId,
+                ListCloudPhoneServersRequest::setServerId));
         builder.<String>withRequestField("network_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudPhoneServersRequest::getNetworkVersion, (req, v) -> {
-                req.setNetworkVersion(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhoneServersRequest::getNetworkVersion,
+                ListCloudPhoneServersRequest::setNetworkVersion));
 
         // response
 
@@ -522,9 +486,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ListCloudPhonesRequest, ListCloudPhonesResponse> listCloudPhones =
-        genForlistCloudPhones();
+        genForListCloudPhones();
 
-    private static HttpRequestDef<ListCloudPhonesRequest, ListCloudPhonesResponse> genForlistCloudPhones() {
+    private static HttpRequestDef<ListCloudPhonesRequest, ListCloudPhonesResponse> genForListCloudPhones() {
         // basic
         HttpRequestDef.Builder<ListCloudPhonesRequest, ListCloudPhonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCloudPhonesRequest.class, ListCloudPhonesResponse.class)
@@ -537,44 +501,32 @@ public class CphMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudPhonesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhonesRequest::getOffset, ListCloudPhonesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudPhonesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhonesRequest::getLimit, ListCloudPhonesRequest::setLimit));
         builder.<String>withRequestField("phone_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudPhonesRequest::getPhoneName, (req, v) -> {
-                req.setPhoneName(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhonesRequest::getPhoneName, ListCloudPhonesRequest::setPhoneName));
         builder.<String>withRequestField("server_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudPhonesRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhonesRequest::getServerId, ListCloudPhonesRequest::setServerId));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudPhonesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhonesRequest::getStatus, ListCloudPhonesRequest::setStatus));
         builder.<Integer>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudPhonesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListCloudPhonesRequest::getType, ListCloudPhonesRequest::setType));
 
         // response
 
@@ -582,9 +534,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ListEncodeServersRequest, ListEncodeServersResponse> listEncodeServers =
-        genForlistEncodeServers();
+        genForListEncodeServers();
 
-    private static HttpRequestDef<ListEncodeServersRequest, ListEncodeServersResponse> genForlistEncodeServers() {
+    private static HttpRequestDef<ListEncodeServersRequest, ListEncodeServersResponse> genForListEncodeServers() {
         // basic
         HttpRequestDef.Builder<ListEncodeServersRequest, ListEncodeServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEncodeServersRequest.class, ListEncodeServersResponse.class)
@@ -597,46 +549,36 @@ public class CphMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncodeServersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEncodeServersRequest::getOffset, ListEncodeServersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncodeServersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEncodeServersRequest::getLimit, ListEncodeServersRequest::setLimit));
         builder.<Integer>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncodeServersRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListEncodeServersRequest::getType, ListEncodeServersRequest::setType));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncodeServersRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListEncodeServersRequest::getStatus, ListEncodeServersRequest::setStatus));
         builder.<String>withRequestField("server_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEncodeServersRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ListEncodeServersRequest::getServerId, ListEncodeServersRequest::setServerId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForlistJobs();
+    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForListJobs();
 
-    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForlistJobs() {
+    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForListJobs() {
         // basic
         HttpRequestDef.Builder<ListJobsRequest, ListJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobsRequest.class, ListJobsResponse.class)
@@ -649,30 +591,22 @@ public class CphMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getRequestId, (req, v) -> {
-                req.setRequestId(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getRequestId, ListJobsRequest::setRequestId));
         builder.<String>withRequestField("request_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getRequestIds, (req, v) -> {
-                req.setRequestIds(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getRequestIds, ListJobsRequest::setRequestIds));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getOffset, ListJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getLimit, ListJobsRequest::setLimit));
 
         // response
 
@@ -680,9 +614,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
-        genForlistProjectTags();
+        genForListProjectTags();
 
-    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForListProjectTags() {
         // basic
         HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
@@ -695,9 +629,7 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListProjectTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, ListProjectTagsRequest::setResourceType));
 
         // response
 
@@ -705,9 +637,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstances =
-        genForlistResourceInstances();
+        genForListResourceInstances();
 
-    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForlistResourceInstances() {
+    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForListResourceInstances() {
         // basic
         HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
@@ -720,16 +652,13 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceInstancesRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType,
+                ListResourceInstancesRequest::setResourceType));
         builder.<ListResourceInstancesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, ListResourceInstancesRequest::setBody));
 
         // response
 
@@ -737,9 +666,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTags =
-        genForlistResourceTags();
+        genForListResourceTags();
 
-    private static HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> genForlistResourceTags() {
+    private static HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> genForListResourceTags() {
         // basic
         HttpRequestDef.Builder<ListResourceTagsRequest, ListResourceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceTagsRequest.class, ListResourceTagsResponse.class)
@@ -752,16 +681,12 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceTagsRequest::getResourceType, ListResourceTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListResourceTagsRequest::getResourceId, ListResourceTagsRequest::setResourceId));
 
         // response
 
@@ -769,9 +694,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ListShareFilesRequest, ListShareFilesResponse> listShareFiles =
-        genForlistShareFiles();
+        genForListShareFiles();
 
-    private static HttpRequestDef<ListShareFilesRequest, ListShareFilesResponse> genForlistShareFiles() {
+    private static HttpRequestDef<ListShareFilesRequest, ListShareFilesResponse> genForListShareFiles() {
         // basic
         HttpRequestDef.Builder<ListShareFilesRequest, ListShareFilesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListShareFilesRequest.class, ListShareFilesResponse.class)
@@ -784,30 +709,22 @@ public class CphMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListShareFilesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListShareFilesRequest::getOffset, ListShareFilesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListShareFilesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListShareFilesRequest::getLimit, ListShareFilesRequest::setLimit));
         builder.<String>withRequestField("server_ids",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareFilesRequest::getServerIds, (req, v) -> {
-                req.setServerIds(v);
-            }));
+            f -> f.withMarshaller(ListShareFilesRequest::getServerIds, ListShareFilesRequest::setServerIds));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareFilesRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ListShareFilesRequest::getPath, ListShareFilesRequest::setPath));
 
         // response
 
@@ -815,9 +732,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<PushShareAppsRequest, PushShareAppsResponse> pushShareApps =
-        genForpushShareApps();
+        genForPushShareApps();
 
-    private static HttpRequestDef<PushShareAppsRequest, PushShareAppsResponse> genForpushShareApps() {
+    private static HttpRequestDef<PushShareAppsRequest, PushShareAppsResponse> genForPushShareApps() {
         // basic
         HttpRequestDef.Builder<PushShareAppsRequest, PushShareAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PushShareAppsRequest.class, PushShareAppsResponse.class)
@@ -830,9 +747,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PushShareAppsRequestBody.class),
-            f -> f.withMarshaller(PushShareAppsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PushShareAppsRequest::getBody, PushShareAppsRequest::setBody));
 
         // response
 
@@ -840,9 +755,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<PushShareFilesRequest, PushShareFilesResponse> pushShareFiles =
-        genForpushShareFiles();
+        genForPushShareFiles();
 
-    private static HttpRequestDef<PushShareFilesRequest, PushShareFilesResponse> genForpushShareFiles() {
+    private static HttpRequestDef<PushShareFilesRequest, PushShareFilesResponse> genForPushShareFiles() {
         // basic
         HttpRequestDef.Builder<PushShareFilesRequest, PushShareFilesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PushShareFilesRequest.class, PushShareFilesResponse.class)
@@ -855,9 +770,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PushShareFilesRequestBody.class),
-            f -> f.withMarshaller(PushShareFilesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PushShareFilesRequest::getBody, PushShareFilesRequest::setBody));
 
         // response
 
@@ -865,9 +778,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ResetCloudPhoneRequest, ResetCloudPhoneResponse> resetCloudPhone =
-        genForresetCloudPhone();
+        genForResetCloudPhone();
 
-    private static HttpRequestDef<ResetCloudPhoneRequest, ResetCloudPhoneResponse> genForresetCloudPhone() {
+    private static HttpRequestDef<ResetCloudPhoneRequest, ResetCloudPhoneResponse> genForResetCloudPhone() {
         // basic
         HttpRequestDef.Builder<ResetCloudPhoneRequest, ResetCloudPhoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetCloudPhoneRequest.class, ResetCloudPhoneResponse.class)
@@ -880,9 +793,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetCloudPhoneRequestBody.class),
-            f -> f.withMarshaller(ResetCloudPhoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetCloudPhoneRequest::getBody, ResetCloudPhoneRequest::setBody));
 
         // response
 
@@ -890,9 +801,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<RestartCloudPhoneRequest, RestartCloudPhoneResponse> restartCloudPhone =
-        genForrestartCloudPhone();
+        genForRestartCloudPhone();
 
-    private static HttpRequestDef<RestartCloudPhoneRequest, RestartCloudPhoneResponse> genForrestartCloudPhone() {
+    private static HttpRequestDef<RestartCloudPhoneRequest, RestartCloudPhoneResponse> genForRestartCloudPhone() {
         // basic
         HttpRequestDef.Builder<RestartCloudPhoneRequest, RestartCloudPhoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestartCloudPhoneRequest.class, RestartCloudPhoneResponse.class)
@@ -905,9 +816,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestartCloudPhoneRequestBody.class),
-            f -> f.withMarshaller(RestartCloudPhoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestartCloudPhoneRequest::getBody, RestartCloudPhoneRequest::setBody));
 
         // response
 
@@ -915,9 +824,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse> restartCloudPhoneServer =
-        genForrestartCloudPhoneServer();
+        genForRestartCloudPhoneServer();
 
-    private static HttpRequestDef<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse> genForrestartCloudPhoneServer() {
+    private static HttpRequestDef<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse> genForRestartCloudPhoneServer() {
         // basic
         HttpRequestDef.Builder<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RestartCloudPhoneServerRequest.class, RestartCloudPhoneServerResponse.class)
@@ -930,9 +839,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestartCloudPhoneServerRequestBody.class),
-            f -> f.withMarshaller(RestartCloudPhoneServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestartCloudPhoneServerRequest::getBody, RestartCloudPhoneServerRequest::setBody));
 
         // response
 
@@ -940,9 +847,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<RestartEncodeServerRequest, RestartEncodeServerResponse> restartEncodeServer =
-        genForrestartEncodeServer();
+        genForRestartEncodeServer();
 
-    private static HttpRequestDef<RestartEncodeServerRequest, RestartEncodeServerResponse> genForrestartEncodeServer() {
+    private static HttpRequestDef<RestartEncodeServerRequest, RestartEncodeServerResponse> genForRestartEncodeServer() {
         // basic
         HttpRequestDef.Builder<RestartEncodeServerRequest, RestartEncodeServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestartEncodeServerRequest.class, RestartEncodeServerResponse.class)
@@ -955,9 +862,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestartEncodeServerRequestBody.class),
-            f -> f.withMarshaller(RestartEncodeServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestartEncodeServerRequest::getBody, RestartEncodeServerRequest::setBody));
 
         // response
 
@@ -965,9 +870,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse> showBandwidthDetail =
-        genForshowBandwidthDetail();
+        genForShowBandwidthDetail();
 
-    private static HttpRequestDef<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse> genForshowBandwidthDetail() {
+    private static HttpRequestDef<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse> genForShowBandwidthDetail() {
         // basic
         HttpRequestDef.Builder<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBandwidthDetailRequest.class, ShowBandwidthDetailResponse.class)
@@ -980,16 +885,12 @@ public class CphMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBandwidthDetailRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowBandwidthDetailRequest::getOffset, ShowBandwidthDetailRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBandwidthDetailRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowBandwidthDetailRequest::getLimit, ShowBandwidthDetailRequest::setLimit));
 
         // response
 
@@ -997,9 +898,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse> showCloudPhoneDetail =
-        genForshowCloudPhoneDetail();
+        genForShowCloudPhoneDetail();
 
-    private static HttpRequestDef<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse> genForshowCloudPhoneDetail() {
+    private static HttpRequestDef<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse> genForShowCloudPhoneDetail() {
         // basic
         HttpRequestDef.Builder<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowCloudPhoneDetailRequest.class, ShowCloudPhoneDetailResponse.class)
@@ -1012,9 +913,7 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCloudPhoneDetailRequest::getPhoneId, (req, v) -> {
-                req.setPhoneId(v);
-            }));
+            f -> f.withMarshaller(ShowCloudPhoneDetailRequest::getPhoneId, ShowCloudPhoneDetailRequest::setPhoneId));
 
         // response
 
@@ -1022,9 +921,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse> showCloudPhoneServerDetail =
-        genForshowCloudPhoneServerDetail();
+        genForShowCloudPhoneServerDetail();
 
-    private static HttpRequestDef<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse> genForshowCloudPhoneServerDetail() {
+    private static HttpRequestDef<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse> genForShowCloudPhoneServerDetail() {
         // basic
         HttpRequestDef.Builder<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse> builder =
             HttpRequestDef
@@ -1040,18 +939,17 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCloudPhoneServerDetailRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ShowCloudPhoneServerDetailRequest::getServerId,
+                ShowCloudPhoneServerDetailRequest::setServerId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
+    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForShowJob();
 
-    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
+    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForShowJob() {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
@@ -1064,9 +962,7 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobRequest::getJobId, ShowJobRequest::setJobId));
 
         // response
 
@@ -1074,9 +970,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<StopCloudPhoneRequest, StopCloudPhoneResponse> stopCloudPhone =
-        genForstopCloudPhone();
+        genForStopCloudPhone();
 
-    private static HttpRequestDef<StopCloudPhoneRequest, StopCloudPhoneResponse> genForstopCloudPhone() {
+    private static HttpRequestDef<StopCloudPhoneRequest, StopCloudPhoneResponse> genForStopCloudPhone() {
         // basic
         HttpRequestDef.Builder<StopCloudPhoneRequest, StopCloudPhoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopCloudPhoneRequest.class, StopCloudPhoneResponse.class)
@@ -1089,9 +985,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StopCloudPhoneRequestBody.class),
-            f -> f.withMarshaller(StopCloudPhoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StopCloudPhoneRequest::getBody, StopCloudPhoneRequest::setBody));
 
         // response
 
@@ -1099,9 +993,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidth =
-        genForupdateBandwidth();
+        genForUpdateBandwidth();
 
-    private static HttpRequestDef<UpdateBandwidthRequest, UpdateBandwidthResponse> genForupdateBandwidth() {
+    private static HttpRequestDef<UpdateBandwidthRequest, UpdateBandwidthResponse> genForUpdateBandwidth() {
         // basic
         HttpRequestDef.Builder<UpdateBandwidthRequest, UpdateBandwidthResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateBandwidthRequest.class, UpdateBandwidthResponse.class)
@@ -1114,16 +1008,12 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBandwidthRequest::getBandWidthId, (req, v) -> {
-                req.setBandWidthId(v);
-            }));
+            f -> f.withMarshaller(UpdateBandwidthRequest::getBandWidthId, UpdateBandwidthRequest::setBandWidthId));
         builder.<UpdateBandwidthRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBandwidthRequestBody.class),
-            f -> f.withMarshaller(UpdateBandwidthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBandwidthRequest::getBody, UpdateBandwidthRequest::setBody));
 
         // response
 
@@ -1131,9 +1021,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse> updateCloudPhoneProperty =
-        genForupdateCloudPhoneProperty();
+        genForUpdateCloudPhoneProperty();
 
-    private static HttpRequestDef<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse> genForupdateCloudPhoneProperty() {
+    private static HttpRequestDef<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse> genForUpdateCloudPhoneProperty() {
         // basic
         HttpRequestDef.Builder<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse> builder =
             HttpRequestDef
@@ -1147,9 +1037,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCloudPhonePropertyRequestBody.class),
-            f -> f.withMarshaller(UpdateCloudPhonePropertyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCloudPhonePropertyRequest::getBody, UpdateCloudPhonePropertyRequest::setBody));
 
         // response
 
@@ -1157,9 +1045,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<UpdateKeypairRequest, UpdateKeypairResponse> updateKeypair =
-        genForupdateKeypair();
+        genForUpdateKeypair();
 
-    private static HttpRequestDef<UpdateKeypairRequest, UpdateKeypairResponse> genForupdateKeypair() {
+    private static HttpRequestDef<UpdateKeypairRequest, UpdateKeypairResponse> genForUpdateKeypair() {
         // basic
         HttpRequestDef.Builder<UpdateKeypairRequest, UpdateKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateKeypairRequest.class, UpdateKeypairResponse.class)
@@ -1172,9 +1060,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateKeypairRequestBody.class),
-            f -> f.withMarshaller(UpdateKeypairRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateKeypairRequest::getBody, UpdateKeypairRequest::setBody));
 
         // response
 
@@ -1182,9 +1068,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<UpdatePhoneNameRequest, UpdatePhoneNameResponse> updatePhoneName =
-        genForupdatePhoneName();
+        genForUpdatePhoneName();
 
-    private static HttpRequestDef<UpdatePhoneNameRequest, UpdatePhoneNameResponse> genForupdatePhoneName() {
+    private static HttpRequestDef<UpdatePhoneNameRequest, UpdatePhoneNameResponse> genForUpdatePhoneName() {
         // basic
         HttpRequestDef.Builder<UpdatePhoneNameRequest, UpdatePhoneNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePhoneNameRequest.class, UpdatePhoneNameResponse.class)
@@ -1197,16 +1083,12 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePhoneNameRequest::getPhoneId, (req, v) -> {
-                req.setPhoneId(v);
-            }));
+            f -> f.withMarshaller(UpdatePhoneNameRequest::getPhoneId, UpdatePhoneNameRequest::setPhoneId));
         builder.<UpdatePhoneNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePhoneNameRequestBody.class),
-            f -> f.withMarshaller(UpdatePhoneNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePhoneNameRequest::getBody, UpdatePhoneNameRequest::setBody));
 
         // response
 
@@ -1214,9 +1096,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<UpdateServerNameRequest, UpdateServerNameResponse> updateServerName =
-        genForupdateServerName();
+        genForUpdateServerName();
 
-    private static HttpRequestDef<UpdateServerNameRequest, UpdateServerNameResponse> genForupdateServerName() {
+    private static HttpRequestDef<UpdateServerNameRequest, UpdateServerNameResponse> genForUpdateServerName() {
         // basic
         HttpRequestDef.Builder<UpdateServerNameRequest, UpdateServerNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateServerNameRequest.class, UpdateServerNameResponse.class)
@@ -1229,25 +1111,21 @@ public class CphMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServerNameRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(UpdateServerNameRequest::getServerId, UpdateServerNameRequest::setServerId));
         builder.<UpdateServerNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerNameRequestBody.class),
-            f -> f.withMarshaller(UpdateServerNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateServerNameRequest::getBody, UpdateServerNameRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<InstallApkRequest, InstallApkResponse> installApk = genForinstallApk();
+    public static final HttpRequestDef<InstallApkRequest, InstallApkResponse> installApk = genForInstallApk();
 
-    private static HttpRequestDef<InstallApkRequest, InstallApkResponse> genForinstallApk() {
+    private static HttpRequestDef<InstallApkRequest, InstallApkResponse> genForInstallApk() {
         // basic
         HttpRequestDef.Builder<InstallApkRequest, InstallApkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, InstallApkRequest.class, InstallApkResponse.class)
@@ -1260,18 +1138,16 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstallApkRequestBody.class),
-            f -> f.withMarshaller(InstallApkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InstallApkRequest::getBody, InstallApkRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PushFileRequest, PushFileResponse> pushFile = genForpushFile();
+    public static final HttpRequestDef<PushFileRequest, PushFileResponse> pushFile = genForPushFile();
 
-    private static HttpRequestDef<PushFileRequest, PushFileResponse> genForpushFile() {
+    private static HttpRequestDef<PushFileRequest, PushFileResponse> genForPushFile() {
         // basic
         HttpRequestDef.Builder<PushFileRequest, PushFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PushFileRequest.class, PushFileResponse.class)
@@ -1284,9 +1160,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PushFileRequestBody.class),
-            f -> f.withMarshaller(PushFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PushFileRequest::getBody, PushFileRequest::setBody));
 
         // response
 
@@ -1294,9 +1168,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<RunShellCommandRequest, RunShellCommandResponse> runShellCommand =
-        genForrunShellCommand();
+        genForRunShellCommand();
 
-    private static HttpRequestDef<RunShellCommandRequest, RunShellCommandResponse> genForrunShellCommand() {
+    private static HttpRequestDef<RunShellCommandRequest, RunShellCommandResponse> genForRunShellCommand() {
         // basic
         HttpRequestDef.Builder<RunShellCommandRequest, RunShellCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunShellCommandRequest.class, RunShellCommandResponse.class)
@@ -1309,9 +1183,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RunShellCommandRequestBody.class),
-            f -> f.withMarshaller(RunShellCommandRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunShellCommandRequest::getBody, RunShellCommandRequest::setBody));
 
         // response
 
@@ -1319,9 +1191,9 @@ public class CphMeta {
     }
 
     public static final HttpRequestDef<RunSyncCommandRequest, RunSyncCommandResponse> runSyncCommand =
-        genForrunSyncCommand();
+        genForRunSyncCommand();
 
-    private static HttpRequestDef<RunSyncCommandRequest, RunSyncCommandResponse> genForrunSyncCommand() {
+    private static HttpRequestDef<RunSyncCommandRequest, RunSyncCommandResponse> genForRunSyncCommand() {
         // basic
         HttpRequestDef.Builder<RunSyncCommandRequest, RunSyncCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunSyncCommandRequest.class, RunSyncCommandResponse.class)
@@ -1334,18 +1206,16 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RunSyncCommandRequestBody.class),
-            f -> f.withMarshaller(RunSyncCommandRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunSyncCommandRequest::getBody, RunSyncCommandRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UninstallApkRequest, UninstallApkResponse> uninstallApk = genForuninstallApk();
+    public static final HttpRequestDef<UninstallApkRequest, UninstallApkResponse> uninstallApk = genForUninstallApk();
 
-    private static HttpRequestDef<UninstallApkRequest, UninstallApkResponse> genForuninstallApk() {
+    private static HttpRequestDef<UninstallApkRequest, UninstallApkResponse> genForUninstallApk() {
         // basic
         HttpRequestDef.Builder<UninstallApkRequest, UninstallApkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UninstallApkRequest.class, UninstallApkResponse.class)
@@ -1358,9 +1228,7 @@ public class CphMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UninstallApkRequestBody.class),
-            f -> f.withMarshaller(UninstallApkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UninstallApkRequest::getBody, UninstallApkRequest::setBody));
 
         // response
 

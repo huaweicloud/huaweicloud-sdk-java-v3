@@ -45,7 +45,7 @@ public class AppGroupAuthorizeReq {
     }
 
     /**
-     * 应用组ID,最多同时操作10个
+     * 应用组ID,最多同时操作10个。
      * @return appGroupIds
      */
     public List<String> getAppGroupIds() {
@@ -78,7 +78,7 @@ public class AppGroupAuthorizeReq {
     }
 
     /**
-     * 用户(组),单次最多允许操作50个用户(组)
+     * 用户(组),单次最多允许操作50个用户(组)。
      * @return accounts
      */
     public List<AccountInfo> getAccounts() {

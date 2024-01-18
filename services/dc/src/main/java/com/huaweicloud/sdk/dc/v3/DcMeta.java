@@ -87,9 +87,9 @@ import java.util.List;
 public class DcMeta {
 
     public static final HttpRequestDef<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse> createHostedDirectConnect =
-        genForcreateHostedDirectConnect();
+        genForCreateHostedDirectConnect();
 
-    private static HttpRequestDef<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse> genForcreateHostedDirectConnect() {
+    private static HttpRequestDef<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse> genForCreateHostedDirectConnect() {
         // basic
         HttpRequestDef.Builder<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse> builder =
             HttpRequestDef
@@ -105,9 +105,8 @@ public class DcMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateHostedDirectConnectRequestBody.class),
-            f -> f.withMarshaller(CreateHostedDirectConnectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateHostedDirectConnectRequest::getBody,
+                CreateHostedDirectConnectRequest::setBody));
 
         // response
 
@@ -115,9 +114,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<DeleteDirectConnectRequest, DeleteDirectConnectResponse> deleteDirectConnect =
-        genFordeleteDirectConnect();
+        genForDeleteDirectConnect();
 
-    private static HttpRequestDef<DeleteDirectConnectRequest, DeleteDirectConnectResponse> genFordeleteDirectConnect() {
+    private static HttpRequestDef<DeleteDirectConnectRequest, DeleteDirectConnectResponse> genForDeleteDirectConnect() {
         // basic
         HttpRequestDef.Builder<DeleteDirectConnectRequest, DeleteDirectConnectResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteDirectConnectRequest.class, DeleteDirectConnectResponse.class)
@@ -130,9 +129,8 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDirectConnectRequest::getDirectConnectId, (req, v) -> {
-                req.setDirectConnectId(v);
-            }));
+            f -> f.withMarshaller(DeleteDirectConnectRequest::getDirectConnectId,
+                DeleteDirectConnectRequest::setDirectConnectId));
 
         // response
 
@@ -140,9 +138,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse> deleteHostedDirectConnect =
-        genFordeleteHostedDirectConnect();
+        genForDeleteHostedDirectConnect();
 
-    private static HttpRequestDef<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse> genFordeleteHostedDirectConnect() {
+    private static HttpRequestDef<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse> genForDeleteHostedDirectConnect() {
         // basic
         HttpRequestDef.Builder<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse> builder =
             HttpRequestDef
@@ -158,9 +156,8 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteHostedDirectConnectRequest::getHostedConnectId, (req, v) -> {
-                req.setHostedConnectId(v);
-            }));
+            f -> f.withMarshaller(DeleteHostedDirectConnectRequest::getHostedConnectId,
+                DeleteHostedDirectConnectRequest::setHostedConnectId));
 
         // response
 
@@ -168,9 +165,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ListDirectConnectsRequest, ListDirectConnectsResponse> listDirectConnects =
-        genForlistDirectConnects();
+        genForListDirectConnects();
 
-    private static HttpRequestDef<ListDirectConnectsRequest, ListDirectConnectsResponse> genForlistDirectConnects() {
+    private static HttpRequestDef<ListDirectConnectsRequest, ListDirectConnectsResponse> genForListDirectConnects() {
         // basic
         HttpRequestDef.Builder<ListDirectConnectsRequest, ListDirectConnectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDirectConnectsRequest.class, ListDirectConnectsResponse.class)
@@ -183,65 +180,48 @@ public class DcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDirectConnectsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDirectConnectsRequest::getLimit, ListDirectConnectsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDirectConnectsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListDirectConnectsRequest::getMarker, ListDirectConnectsRequest::setMarker));
         builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDirectConnectsRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
+            f -> f.withMarshaller(ListDirectConnectsRequest::getFields, ListDirectConnectsRequest::setFields));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDirectConnectsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListDirectConnectsRequest::getSortKey, ListDirectConnectsRequest::setSortKey));
         builder.<List<ListDirectConnectsRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDirectConnectsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListDirectConnectsRequest::getSortDir, ListDirectConnectsRequest::setSortDir));
         builder.<List<String>>withRequestField("hosting_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDirectConnectsRequest::getHostingId, (req, v) -> {
-                req.setHostingId(v);
-            }));
+            f -> f.withMarshaller(ListDirectConnectsRequest::getHostingId, ListDirectConnectsRequest::setHostingId));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDirectConnectsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListDirectConnectsRequest::getEnterpriseProjectId,
+                ListDirectConnectsRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDirectConnectsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListDirectConnectsRequest::getId, ListDirectConnectsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDirectConnectsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDirectConnectsRequest::getName, ListDirectConnectsRequest::setName));
 
         // response
 
@@ -249,9 +229,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse> listHostedDirectConnects =
-        genForlistHostedDirectConnects();
+        genForListHostedDirectConnects();
 
-    private static HttpRequestDef<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse> genForlistHostedDirectConnects() {
+    private static HttpRequestDef<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse> genForListHostedDirectConnects() {
         // basic
         HttpRequestDef.Builder<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse> builder =
             HttpRequestDef
@@ -265,58 +245,48 @@ public class DcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getLimit,
+                ListHostedDirectConnectsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getMarker,
+                ListHostedDirectConnectsRequest::setMarker));
         builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
+            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getFields,
+                ListHostedDirectConnectsRequest::setFields));
         builder.<List<ListHostedDirectConnectsRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getSortDir,
+                ListHostedDirectConnectsRequest::setSortDir));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getSortKey,
+                ListHostedDirectConnectsRequest::setSortKey));
         builder.<List<String>>withRequestField("hosting_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getHostingId, (req, v) -> {
-                req.setHostingId(v);
-            }));
+            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getHostingId,
+                ListHostedDirectConnectsRequest::setHostingId));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getId, ListHostedDirectConnectsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListHostedDirectConnectsRequest::getName, ListHostedDirectConnectsRequest::setName));
 
         // response
 
@@ -324,9 +294,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ShowDirectConnectRequest, ShowDirectConnectResponse> showDirectConnect =
-        genForshowDirectConnect();
+        genForShowDirectConnect();
 
-    private static HttpRequestDef<ShowDirectConnectRequest, ShowDirectConnectResponse> genForshowDirectConnect() {
+    private static HttpRequestDef<ShowDirectConnectRequest, ShowDirectConnectResponse> genForShowDirectConnect() {
         // basic
         HttpRequestDef.Builder<ShowDirectConnectRequest, ShowDirectConnectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDirectConnectRequest.class, ShowDirectConnectResponse.class)
@@ -339,16 +309,13 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDirectConnectRequest::getDirectConnectId, (req, v) -> {
-                req.setDirectConnectId(v);
-            }));
+            f -> f.withMarshaller(ShowDirectConnectRequest::getDirectConnectId,
+                ShowDirectConnectRequest::setDirectConnectId));
         builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowDirectConnectRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
+            f -> f.withMarshaller(ShowDirectConnectRequest::getFields, ShowDirectConnectRequest::setFields));
 
         // response
 
@@ -356,9 +323,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse> showHostedDirectConnect =
-        genForshowHostedDirectConnect();
+        genForShowHostedDirectConnect();
 
-    private static HttpRequestDef<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse> genForshowHostedDirectConnect() {
+    private static HttpRequestDef<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse> genForShowHostedDirectConnect() {
         // basic
         HttpRequestDef.Builder<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowHostedDirectConnectRequest.class, ShowHostedDirectConnectResponse.class)
@@ -371,51 +338,43 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getHostedConnectId, (req, v) -> {
-                req.setHostedConnectId(v);
-            }));
+            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getHostedConnectId,
+                ShowHostedDirectConnectRequest::setHostedConnectId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getLimit, ShowHostedDirectConnectRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getMarker,
+                ShowHostedDirectConnectRequest::setMarker));
         builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
+            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getFields,
+                ShowHostedDirectConnectRequest::setFields));
         builder.<List<ShowHostedDirectConnectRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getSortDir,
+                ShowHostedDirectConnectRequest::setSortDir));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getSortKey,
+                ShowHostedDirectConnectRequest::setSortKey));
         builder.<List<String>>withRequestField("hosting_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getHostingId, (req, v) -> {
-                req.setHostingId(v);
-            }));
+            f -> f.withMarshaller(ShowHostedDirectConnectRequest::getHostingId,
+                ShowHostedDirectConnectRequest::setHostingId));
 
         // response
 
@@ -423,9 +382,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<UpdateDirectConnectRequest, UpdateDirectConnectResponse> updateDirectConnect =
-        genForupdateDirectConnect();
+        genForUpdateDirectConnect();
 
-    private static HttpRequestDef<UpdateDirectConnectRequest, UpdateDirectConnectResponse> genForupdateDirectConnect() {
+    private static HttpRequestDef<UpdateDirectConnectRequest, UpdateDirectConnectResponse> genForUpdateDirectConnect() {
         // basic
         HttpRequestDef.Builder<UpdateDirectConnectRequest, UpdateDirectConnectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDirectConnectRequest.class, UpdateDirectConnectResponse.class)
@@ -438,16 +397,13 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDirectConnectRequest::getDirectConnectId, (req, v) -> {
-                req.setDirectConnectId(v);
-            }));
+            f -> f.withMarshaller(UpdateDirectConnectRequest::getDirectConnectId,
+                UpdateDirectConnectRequest::setDirectConnectId));
         builder.<UpdateDirectConnectRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateDirectConnectRequestBody.class),
-            f -> f.withMarshaller(UpdateDirectConnectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDirectConnectRequest::getBody, UpdateDirectConnectRequest::setBody));
 
         // response
 
@@ -455,9 +411,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse> updateHostedDirectConnect =
-        genForupdateHostedDirectConnect();
+        genForUpdateHostedDirectConnect();
 
-    private static HttpRequestDef<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse> genForupdateHostedDirectConnect() {
+    private static HttpRequestDef<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse> genForUpdateHostedDirectConnect() {
         // basic
         HttpRequestDef.Builder<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse> builder =
             HttpRequestDef
@@ -473,25 +429,23 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHostedDirectConnectRequest::getHostedConnectId, (req, v) -> {
-                req.setHostedConnectId(v);
-            }));
+            f -> f.withMarshaller(UpdateHostedDirectConnectRequest::getHostedConnectId,
+                UpdateHostedDirectConnectRequest::setHostedConnectId));
         builder.<UpdateHostedDirectConnectRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateHostedDirectConnectRequestBody.class),
-            f -> f.withMarshaller(UpdateHostedDirectConnectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateHostedDirectConnectRequest::getBody,
+                UpdateHostedDirectConnectRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForShowQuotas();
 
-    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForShowQuotas() {
         // basic
         HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
@@ -504,9 +458,7 @@ public class DcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowQuotasRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowQuotasRequest::getType, ShowQuotasRequest::setType));
 
         // response
 
@@ -514,9 +466,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTags =
-        genForbatchCreateResourceTags();
+        genForBatchCreateResourceTags();
 
-    private static HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> genForbatchCreateResourceTags() {
+    private static HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> genForBatchCreateResourceTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateResourceTagsRequest.class, BatchCreateResourceTagsResponse.class)
@@ -529,40 +481,34 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceId,
+                BatchCreateResourceTagsRequest::setResourceId));
         builder.<BatchCreateResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceType,
+                BatchCreateResourceTagsRequest::setResourceType));
         builder.<BatchOperateResourceTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchOperateResourceTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, BatchCreateResourceTagsRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(BatchCreateResourceTagsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsResponse::getBody, BatchCreateResourceTagsResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTag =
-        genForcreateResourceTag();
+        genForCreateResourceTag();
 
-    private static HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> genForcreateResourceTag() {
+    private static HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> genForCreateResourceTag() {
         // basic
         HttpRequestDef.Builder<CreateResourceTagRequest, CreateResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResourceTagRequest.class, CreateResourceTagResponse.class)
@@ -575,40 +521,33 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateResourceTagRequest::getResourceId, CreateResourceTagRequest::setResourceId));
         builder.<CreateResourceTagRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResourceTagRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(CreateResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CreateResourceTagRequest::getResourceType,
+                CreateResourceTagRequest::setResourceType));
         builder.<CreateResourceTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResourceTagRequestBody.class),
-            f -> f.withMarshaller(CreateResourceTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResourceTagRequest::getBody, CreateResourceTagRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateResourceTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateResourceTagResponse::getBody, CreateResourceTagResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTag =
-        genFordeleteResourceTag();
+        genForDeleteResourceTag();
 
-    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genFordeleteResourceTag() {
+    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genForDeleteResourceTag() {
         // basic
         HttpRequestDef.Builder<DeleteResourceTagRequest, DeleteResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceTagRequest.class, DeleteResourceTagResponse.class)
@@ -621,23 +560,18 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getKey, DeleteResourceTagRequest::setKey));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceId, DeleteResourceTagRequest::setResourceId));
         builder.<DeleteResourceTagRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteResourceTagRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceType,
+                DeleteResourceTagRequest::setResourceType));
 
         // response
 
@@ -645,9 +579,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
-        genForlistProjectTags();
+        genForListProjectTags();
 
-    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForListProjectTags() {
         // basic
         HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
@@ -660,9 +594,7 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListProjectTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, ListProjectTagsRequest::setResourceType));
 
         // response
 
@@ -670,9 +602,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse> listTagResourceInstances =
-        genForlistTagResourceInstances();
+        genForListTagResourceInstances();
 
-    private static HttpRequestDef<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse> genForlistTagResourceInstances() {
+    private static HttpRequestDef<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse> genForListTagResourceInstances() {
         // basic
         HttpRequestDef.Builder<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse> builder =
             HttpRequestDef
@@ -686,16 +618,13 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTagResourceInstancesRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListTagResourceInstancesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListTagResourceInstancesRequest::getResourceType,
+                ListTagResourceInstancesRequest::setResourceType));
         builder.<ListTagResourceInstancesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTagResourceInstancesRequestBody.class),
-            f -> f.withMarshaller(ListTagResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListTagResourceInstancesRequest::getBody, ListTagResourceInstancesRequest::setBody));
 
         // response
 
@@ -703,9 +632,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTag =
-        genForshowResourceTag();
+        genForShowResourceTag();
 
-    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForshowResourceTag() {
+    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForShowResourceTag() {
         // basic
         HttpRequestDef.Builder<ShowResourceTagRequest, ShowResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagRequest.class, ShowResourceTagResponse.class)
@@ -718,16 +647,12 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowResourceTagRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, ShowResourceTagRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, ShowResourceTagRequest::setResourceId));
 
         // response
 
@@ -735,9 +660,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse> createVirtualGateway =
-        genForcreateVirtualGateway();
+        genForCreateVirtualGateway();
 
-    private static HttpRequestDef<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse> genForcreateVirtualGateway() {
+    private static HttpRequestDef<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse> genForCreateVirtualGateway() {
         // basic
         HttpRequestDef.Builder<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateVirtualGatewayRequest.class, CreateVirtualGatewayResponse.class)
@@ -750,9 +675,7 @@ public class DcMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateVirtualGatewayRequestBody.class),
-            f -> f.withMarshaller(CreateVirtualGatewayRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVirtualGatewayRequest::getBody, CreateVirtualGatewayRequest::setBody));
 
         // response
 
@@ -760,9 +683,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse> deleteVirtualGateway =
-        genFordeleteVirtualGateway();
+        genForDeleteVirtualGateway();
 
-    private static HttpRequestDef<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse> genFordeleteVirtualGateway() {
+    private static HttpRequestDef<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse> genForDeleteVirtualGateway() {
         // basic
         HttpRequestDef.Builder<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteVirtualGatewayRequest.class, DeleteVirtualGatewayResponse.class)
@@ -775,9 +698,8 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVirtualGatewayRequest::getVirtualGatewayId, (req, v) -> {
-                req.setVirtualGatewayId(v);
-            }));
+            f -> f.withMarshaller(DeleteVirtualGatewayRequest::getVirtualGatewayId,
+                DeleteVirtualGatewayRequest::setVirtualGatewayId));
 
         // response
 
@@ -785,9 +707,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse> listVirtualGateways =
-        genForlistVirtualGateways();
+        genForListVirtualGateways();
 
-    private static HttpRequestDef<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse> genForlistVirtualGateways() {
+    private static HttpRequestDef<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse> genForListVirtualGateways() {
         // basic
         HttpRequestDef.Builder<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVirtualGatewaysRequest.class, ListVirtualGatewaysResponse.class)
@@ -800,58 +722,43 @@ public class DcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVirtualGatewaysRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVirtualGatewaysRequest::getLimit, ListVirtualGatewaysRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVirtualGatewaysRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListVirtualGatewaysRequest::getMarker, ListVirtualGatewaysRequest::setMarker));
         builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualGatewaysRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
+            f -> f.withMarshaller(ListVirtualGatewaysRequest::getFields, ListVirtualGatewaysRequest::setFields));
         builder.<List<ListVirtualGatewaysRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualGatewaysRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListVirtualGatewaysRequest::getSortDir, ListVirtualGatewaysRequest::setSortDir));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVirtualGatewaysRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListVirtualGatewaysRequest::getSortKey, ListVirtualGatewaysRequest::setSortKey));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualGatewaysRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListVirtualGatewaysRequest::getId, ListVirtualGatewaysRequest::setId));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualGatewaysRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListVirtualGatewaysRequest::getEnterpriseProjectId,
+                ListVirtualGatewaysRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualGatewaysRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListVirtualGatewaysRequest::getVpcId, ListVirtualGatewaysRequest::setVpcId));
 
         // response
 
@@ -859,9 +766,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse> showVirtualGateway =
-        genForshowVirtualGateway();
+        genForShowVirtualGateway();
 
-    private static HttpRequestDef<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse> genForshowVirtualGateway() {
+    private static HttpRequestDef<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse> genForShowVirtualGateway() {
         // basic
         HttpRequestDef.Builder<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVirtualGatewayRequest.class, ShowVirtualGatewayResponse.class)
@@ -874,16 +781,13 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVirtualGatewayRequest::getVirtualGatewayId, (req, v) -> {
-                req.setVirtualGatewayId(v);
-            }));
+            f -> f.withMarshaller(ShowVirtualGatewayRequest::getVirtualGatewayId,
+                ShowVirtualGatewayRequest::setVirtualGatewayId));
         builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowVirtualGatewayRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
+            f -> f.withMarshaller(ShowVirtualGatewayRequest::getFields, ShowVirtualGatewayRequest::setFields));
 
         // response
 
@@ -891,9 +795,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse> updateVirtualGateway =
-        genForupdateVirtualGateway();
+        genForUpdateVirtualGateway();
 
-    private static HttpRequestDef<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse> genForupdateVirtualGateway() {
+    private static HttpRequestDef<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse> genForUpdateVirtualGateway() {
         // basic
         HttpRequestDef.Builder<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateVirtualGatewayRequest.class, UpdateVirtualGatewayResponse.class)
@@ -906,16 +810,13 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVirtualGatewayRequest::getVirtualGatewayId, (req, v) -> {
-                req.setVirtualGatewayId(v);
-            }));
+            f -> f.withMarshaller(UpdateVirtualGatewayRequest::getVirtualGatewayId,
+                UpdateVirtualGatewayRequest::setVirtualGatewayId));
         builder.<UpdateVirtualGatewayRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateVirtualGatewayRequestBody.class),
-            f -> f.withMarshaller(UpdateVirtualGatewayRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVirtualGatewayRequest::getBody, UpdateVirtualGatewayRequest::setBody));
 
         // response
 
@@ -923,9 +824,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<CreateVifPeerRequest, CreateVifPeerResponse> createVifPeer =
-        genForcreateVifPeer();
+        genForCreateVifPeer();
 
-    private static HttpRequestDef<CreateVifPeerRequest, CreateVifPeerResponse> genForcreateVifPeer() {
+    private static HttpRequestDef<CreateVifPeerRequest, CreateVifPeerResponse> genForCreateVifPeer() {
         // basic
         HttpRequestDef.Builder<CreateVifPeerRequest, CreateVifPeerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVifPeerRequest.class, CreateVifPeerResponse.class)
@@ -938,9 +839,7 @@ public class DcMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateVifPeerRequestBody.class),
-            f -> f.withMarshaller(CreateVifPeerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVifPeerRequest::getBody, CreateVifPeerRequest::setBody));
 
         // response
 
@@ -948,9 +847,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse> createVirtualInterface =
-        genForcreateVirtualInterface();
+        genForCreateVirtualInterface();
 
-    private static HttpRequestDef<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse> genForcreateVirtualInterface() {
+    private static HttpRequestDef<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse> genForCreateVirtualInterface() {
         // basic
         HttpRequestDef.Builder<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateVirtualInterfaceRequest.class, CreateVirtualInterfaceResponse.class)
@@ -963,9 +862,7 @@ public class DcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVirtualInterfaceRequestBody.class),
-            f -> f.withMarshaller(CreateVirtualInterfaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVirtualInterfaceRequest::getBody, CreateVirtualInterfaceRequest::setBody));
 
         // response
 
@@ -973,9 +870,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<DeleteVifPeerRequest, DeleteVifPeerResponse> deleteVifPeer =
-        genFordeleteVifPeer();
+        genForDeleteVifPeer();
 
-    private static HttpRequestDef<DeleteVifPeerRequest, DeleteVifPeerResponse> genFordeleteVifPeer() {
+    private static HttpRequestDef<DeleteVifPeerRequest, DeleteVifPeerResponse> genForDeleteVifPeer() {
         // basic
         HttpRequestDef.Builder<DeleteVifPeerRequest, DeleteVifPeerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVifPeerRequest.class, DeleteVifPeerResponse.class)
@@ -988,9 +885,7 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVifPeerRequest::getVifPeerId, (req, v) -> {
-                req.setVifPeerId(v);
-            }));
+            f -> f.withMarshaller(DeleteVifPeerRequest::getVifPeerId, DeleteVifPeerRequest::setVifPeerId));
 
         // response
 
@@ -998,9 +893,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse> deleteVirtualInterface =
-        genFordeleteVirtualInterface();
+        genForDeleteVirtualInterface();
 
-    private static HttpRequestDef<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse> genFordeleteVirtualInterface() {
+    private static HttpRequestDef<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse> genForDeleteVirtualInterface() {
         // basic
         HttpRequestDef.Builder<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteVirtualInterfaceRequest.class, DeleteVirtualInterfaceResponse.class)
@@ -1013,9 +908,8 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVirtualInterfaceRequest::getVirtualInterfaceId, (req, v) -> {
-                req.setVirtualInterfaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteVirtualInterfaceRequest::getVirtualInterfaceId,
+                DeleteVirtualInterfaceRequest::setVirtualInterfaceId));
 
         // response
 
@@ -1023,9 +917,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse> listSwitchoverTestRecords =
-        genForlistSwitchoverTestRecords();
+        genForListSwitchoverTestRecords();
 
-    private static HttpRequestDef<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse> genForlistSwitchoverTestRecords() {
+    private static HttpRequestDef<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse> genForListSwitchoverTestRecords() {
         // basic
         HttpRequestDef.Builder<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse> builder =
             HttpRequestDef
@@ -1041,44 +935,38 @@ public class DcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getLimit,
+                ListSwitchoverTestRecordsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getMarker,
+                ListSwitchoverTestRecordsRequest::setMarker));
         builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getFields,
+                ListSwitchoverTestRecordsRequest::setFields));
         builder.<List<ListSwitchoverTestRecordsRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getSortDir,
+                ListSwitchoverTestRecordsRequest::setSortDir));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getSortKey,
+                ListSwitchoverTestRecordsRequest::setSortKey));
         builder.<List<String>>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getResourceId,
+                ListSwitchoverTestRecordsRequest::setResourceId));
 
         // response
 
@@ -1086,9 +974,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse> listVirtualInterfaces =
-        genForlistVirtualInterfaces();
+        genForListVirtualInterfaces();
 
-    private static HttpRequestDef<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse> genForlistVirtualInterfaces() {
+    private static HttpRequestDef<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse> genForListVirtualInterfaces() {
         // basic
         HttpRequestDef.Builder<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListVirtualInterfacesRequest.class, ListVirtualInterfacesResponse.class)
@@ -1101,72 +989,54 @@ public class DcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVirtualInterfacesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVirtualInterfacesRequest::getLimit, ListVirtualInterfacesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVirtualInterfacesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListVirtualInterfacesRequest::getMarker, ListVirtualInterfacesRequest::setMarker));
         builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualInterfacesRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
+            f -> f.withMarshaller(ListVirtualInterfacesRequest::getFields, ListVirtualInterfacesRequest::setFields));
         builder.<List<ListVirtualInterfacesRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualInterfacesRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListVirtualInterfacesRequest::getSortDir, ListVirtualInterfacesRequest::setSortDir));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVirtualInterfacesRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListVirtualInterfacesRequest::getSortKey, ListVirtualInterfacesRequest::setSortKey));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualInterfacesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListVirtualInterfacesRequest::getEnterpriseProjectId,
+                ListVirtualInterfacesRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualInterfacesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListVirtualInterfacesRequest::getId, ListVirtualInterfacesRequest::setId));
         builder.<List<String>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualInterfacesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListVirtualInterfacesRequest::getStatus, ListVirtualInterfacesRequest::setStatus));
         builder.<List<String>>withRequestField("direct_connect_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualInterfacesRequest::getDirectConnectId, (req, v) -> {
-                req.setDirectConnectId(v);
-            }));
+            f -> f.withMarshaller(ListVirtualInterfacesRequest::getDirectConnectId,
+                ListVirtualInterfacesRequest::setDirectConnectId));
         builder.<List<String>>withRequestField("vgw_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVirtualInterfacesRequest::getVgwId, (req, v) -> {
-                req.setVgwId(v);
-            }));
+            f -> f.withMarshaller(ListVirtualInterfacesRequest::getVgwId, ListVirtualInterfacesRequest::setVgwId));
 
         // response
 
@@ -1174,9 +1044,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse> showVirtualInterface =
-        genForshowVirtualInterface();
+        genForShowVirtualInterface();
 
-    private static HttpRequestDef<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse> genForshowVirtualInterface() {
+    private static HttpRequestDef<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse> genForShowVirtualInterface() {
         // basic
         HttpRequestDef.Builder<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowVirtualInterfaceRequest.class, ShowVirtualInterfaceResponse.class)
@@ -1189,16 +1059,13 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVirtualInterfaceRequest::getVirtualInterfaceId, (req, v) -> {
-                req.setVirtualInterfaceId(v);
-            }));
+            f -> f.withMarshaller(ShowVirtualInterfaceRequest::getVirtualInterfaceId,
+                ShowVirtualInterfaceRequest::setVirtualInterfaceId));
         builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowVirtualInterfaceRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
+            f -> f.withMarshaller(ShowVirtualInterfaceRequest::getFields, ShowVirtualInterfaceRequest::setFields));
 
         // response
 
@@ -1206,9 +1073,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<SwitchoverTestRequest, SwitchoverTestResponse> switchoverTest =
-        genForswitchoverTest();
+        genForSwitchoverTest();
 
-    private static HttpRequestDef<SwitchoverTestRequest, SwitchoverTestResponse> genForswitchoverTest() {
+    private static HttpRequestDef<SwitchoverTestRequest, SwitchoverTestResponse> genForSwitchoverTest() {
         // basic
         HttpRequestDef.Builder<SwitchoverTestRequest, SwitchoverTestResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchoverTestRequest.class, SwitchoverTestResponse.class)
@@ -1221,9 +1088,7 @@ public class DcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSwitchoverTestRequestBody.class),
-            f -> f.withMarshaller(SwitchoverTestRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchoverTestRequest::getBody, SwitchoverTestRequest::setBody));
 
         // response
 
@@ -1231,9 +1096,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<UpdateVifPeerRequest, UpdateVifPeerResponse> updateVifPeer =
-        genForupdateVifPeer();
+        genForUpdateVifPeer();
 
-    private static HttpRequestDef<UpdateVifPeerRequest, UpdateVifPeerResponse> genForupdateVifPeer() {
+    private static HttpRequestDef<UpdateVifPeerRequest, UpdateVifPeerResponse> genForUpdateVifPeer() {
         // basic
         HttpRequestDef.Builder<UpdateVifPeerRequest, UpdateVifPeerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVifPeerRequest.class, UpdateVifPeerResponse.class)
@@ -1246,16 +1111,12 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVifPeerRequest::getVifPeerId, (req, v) -> {
-                req.setVifPeerId(v);
-            }));
+            f -> f.withMarshaller(UpdateVifPeerRequest::getVifPeerId, UpdateVifPeerRequest::setVifPeerId));
         builder.<UpdateVifPeerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateVifPeerRequestBody.class),
-            f -> f.withMarshaller(UpdateVifPeerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVifPeerRequest::getBody, UpdateVifPeerRequest::setBody));
 
         // response
 
@@ -1263,9 +1124,9 @@ public class DcMeta {
     }
 
     public static final HttpRequestDef<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse> updateVirtualInterface =
-        genForupdateVirtualInterface();
+        genForUpdateVirtualInterface();
 
-    private static HttpRequestDef<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse> genForupdateVirtualInterface() {
+    private static HttpRequestDef<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse> genForUpdateVirtualInterface() {
         // basic
         HttpRequestDef.Builder<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateVirtualInterfaceRequest.class, UpdateVirtualInterfaceResponse.class)
@@ -1278,16 +1139,13 @@ public class DcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVirtualInterfaceRequest::getVirtualInterfaceId, (req, v) -> {
-                req.setVirtualInterfaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateVirtualInterfaceRequest::getVirtualInterfaceId,
+                UpdateVirtualInterfaceRequest::setVirtualInterfaceId));
         builder.<UpdateVirtualInterfaceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateVirtualInterfaceRequestBody.class),
-            f -> f.withMarshaller(UpdateVirtualInterfaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVirtualInterfaceRequest::getBody, UpdateVirtualInterfaceRequest::setBody));
 
         // response
 

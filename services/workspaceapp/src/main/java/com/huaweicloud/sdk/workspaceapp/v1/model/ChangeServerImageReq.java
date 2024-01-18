@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 修改服务器镜像的请求体
+ * 修改服务器镜像的请求体。
  */
 public class ChangeServerImageReq {
 
@@ -41,7 +41,7 @@ public class ChangeServerImageReq {
     }
 
     /**
-     * 镜像id，要求与服务器原有镜像id不相同
+     * 镜像id，要求与服务器原有镜像id不相同。
      * @return imageId
      */
     public String getImageId() {
@@ -92,7 +92,7 @@ public class ChangeServerImageReq {
     }
 
     /**
-     * 镜像的产品id，当镜像是市场镜像时候，该字段必传
+     * 镜像的产品id，当镜像是市场镜像时候，该字段必传。
      * @return imageProductId
      */
     public String getImageProductId() {
@@ -109,7 +109,7 @@ public class ChangeServerImageReq {
     }
 
     /**
-     * 是否自动升级hda版本
+     * 是否自动升级hda版本。
      * @return updateAccessAgent
      */
     public Boolean getUpdateAccessAgent() {

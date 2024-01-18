@@ -169,9 +169,9 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public class CbrMeta {
 
-    public static final HttpRequestDef<AddAgentPathRequest, AddAgentPathResponse> addAgentPath = genForaddAgentPath();
+    public static final HttpRequestDef<AddAgentPathRequest, AddAgentPathResponse> addAgentPath = genForAddAgentPath();
 
-    private static HttpRequestDef<AddAgentPathRequest, AddAgentPathResponse> genForaddAgentPath() {
+    private static HttpRequestDef<AddAgentPathRequest, AddAgentPathResponse> genForAddAgentPath() {
         // basic
         HttpRequestDef.Builder<AddAgentPathRequest, AddAgentPathResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddAgentPathRequest.class, AddAgentPathResponse.class)
@@ -184,25 +184,21 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddAgentPathRequest::getAgentId, (req, v) -> {
-                req.setAgentId(v);
-            }));
+            f -> f.withMarshaller(AddAgentPathRequest::getAgentId, AddAgentPathRequest::setAgentId));
         builder.<AgentAddPathReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgentAddPathReq.class),
-            f -> f.withMarshaller(AddAgentPathRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddAgentPathRequest::getBody, AddAgentPathRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddMemberRequest, AddMemberResponse> addMember = genForaddMember();
+    public static final HttpRequestDef<AddMemberRequest, AddMemberResponse> addMember = genForAddMember();
 
-    private static HttpRequestDef<AddMemberRequest, AddMemberResponse> genForaddMember() {
+    private static HttpRequestDef<AddMemberRequest, AddMemberResponse> genForAddMember() {
         // basic
         HttpRequestDef.Builder<AddMemberRequest, AddMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddMemberRequest.class, AddMemberResponse.class)
@@ -215,16 +211,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddMemberRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(AddMemberRequest::getBackupId, AddMemberRequest::setBackupId));
         builder.<AddMembersReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddMembersReq.class),
-            f -> f.withMarshaller(AddMemberRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddMemberRequest::getBody, AddMemberRequest::setBody));
 
         // response
 
@@ -232,9 +224,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<AddVaultResourceRequest, AddVaultResourceResponse> addVaultResource =
-        genForaddVaultResource();
+        genForAddVaultResource();
 
-    private static HttpRequestDef<AddVaultResourceRequest, AddVaultResourceResponse> genForaddVaultResource() {
+    private static HttpRequestDef<AddVaultResourceRequest, AddVaultResourceResponse> genForAddVaultResource() {
         // basic
         HttpRequestDef.Builder<AddVaultResourceRequest, AddVaultResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddVaultResourceRequest.class, AddVaultResourceResponse.class)
@@ -247,16 +239,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddVaultResourceRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(AddVaultResourceRequest::getVaultId, AddVaultResourceRequest::setVaultId));
         builder.<VaultAddResourceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultAddResourceReq.class),
-            f -> f.withMarshaller(AddVaultResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddVaultResourceRequest::getBody, AddVaultResourceRequest::setBody));
 
         // response
 
@@ -264,9 +252,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<AssociateVaultPolicyRequest, AssociateVaultPolicyResponse> associateVaultPolicy =
-        genForassociateVaultPolicy();
+        genForAssociateVaultPolicy();
 
-    private static HttpRequestDef<AssociateVaultPolicyRequest, AssociateVaultPolicyResponse> genForassociateVaultPolicy() {
+    private static HttpRequestDef<AssociateVaultPolicyRequest, AssociateVaultPolicyResponse> genForAssociateVaultPolicy() {
         // basic
         HttpRequestDef.Builder<AssociateVaultPolicyRequest, AssociateVaultPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AssociateVaultPolicyRequest.class, AssociateVaultPolicyResponse.class)
@@ -279,16 +267,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateVaultPolicyRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(AssociateVaultPolicyRequest::getVaultId, AssociateVaultPolicyRequest::setVaultId));
         builder.<VaultAssociate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultAssociate.class),
-            f -> f.withMarshaller(AssociateVaultPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateVaultPolicyRequest::getBody, AssociateVaultPolicyRequest::setBody));
 
         // response
 
@@ -296,9 +280,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse> batchCreateAndDeleteVaultTags =
-        genForbatchCreateAndDeleteVaultTags();
+        genForBatchCreateAndDeleteVaultTags();
 
-    private static HttpRequestDef<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse> genForbatchCreateAndDeleteVaultTags() {
+    private static HttpRequestDef<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse> genForBatchCreateAndDeleteVaultTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse> builder =
             HttpRequestDef
@@ -314,16 +298,14 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateAndDeleteVaultTagsRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateAndDeleteVaultTagsRequest::getVaultId,
+                BatchCreateAndDeleteVaultTagsRequest::setVaultId));
         builder.<BulkCreateAndDeleteVaultTagsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BulkCreateAndDeleteVaultTagsReq.class),
-            f -> f.withMarshaller(BatchCreateAndDeleteVaultTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateAndDeleteVaultTagsRequest::getBody,
+                BatchCreateAndDeleteVaultTagsRequest::setBody));
 
         // response
 
@@ -331,9 +313,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateVaultRequest, BatchUpdateVaultResponse> batchUpdateVault =
-        genForbatchUpdateVault();
+        genForBatchUpdateVault();
 
-    private static HttpRequestDef<BatchUpdateVaultRequest, BatchUpdateVaultResponse> genForbatchUpdateVault() {
+    private static HttpRequestDef<BatchUpdateVaultRequest, BatchUpdateVaultResponse> genForBatchUpdateVault() {
         // basic
         HttpRequestDef.Builder<BatchUpdateVaultRequest, BatchUpdateVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateVaultRequest.class, BatchUpdateVaultResponse.class)
@@ -346,18 +328,16 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateVaultRequestBody.class),
-            f -> f.withMarshaller(BatchUpdateVaultRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateVaultRequest::getBody, BatchUpdateVaultRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckAgentRequest, CheckAgentResponse> checkAgent = genForcheckAgent();
+    public static final HttpRequestDef<CheckAgentRequest, CheckAgentResponse> checkAgent = genForCheckAgent();
 
-    private static HttpRequestDef<CheckAgentRequest, CheckAgentResponse> genForcheckAgent() {
+    private static HttpRequestDef<CheckAgentRequest, CheckAgentResponse> genForCheckAgent() {
         // basic
         HttpRequestDef.Builder<CheckAgentRequest, CheckAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckAgentRequest.class, CheckAgentResponse.class)
@@ -370,18 +350,16 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProtectableAgentReq.class),
-            f -> f.withMarshaller(CheckAgentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckAgentRequest::getBody, CheckAgentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CopyBackupRequest, CopyBackupResponse> copyBackup = genForcopyBackup();
+    public static final HttpRequestDef<CopyBackupRequest, CopyBackupResponse> copyBackup = genForCopyBackup();
 
-    private static HttpRequestDef<CopyBackupRequest, CopyBackupResponse> genForcopyBackup() {
+    private static HttpRequestDef<CopyBackupRequest, CopyBackupResponse> genForCopyBackup() {
         // basic
         HttpRequestDef.Builder<CopyBackupRequest, CopyBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyBackupRequest.class, CopyBackupResponse.class)
@@ -394,16 +372,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyBackupRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(CopyBackupRequest::getBackupId, CopyBackupRequest::setBackupId));
         builder.<BackupReplicateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BackupReplicateReq.class),
-            f -> f.withMarshaller(CopyBackupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CopyBackupRequest::getBody, CopyBackupRequest::setBody));
 
         // response
 
@@ -411,9 +385,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<CopyCheckpointRequest, CopyCheckpointResponse> copyCheckpoint =
-        genForcopyCheckpoint();
+        genForCopyCheckpoint();
 
-    private static HttpRequestDef<CopyCheckpointRequest, CopyCheckpointResponse> genForcopyCheckpoint() {
+    private static HttpRequestDef<CopyCheckpointRequest, CopyCheckpointResponse> genForCopyCheckpoint() {
         // basic
         HttpRequestDef.Builder<CopyCheckpointRequest, CopyCheckpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyCheckpointRequest.class, CopyCheckpointResponse.class)
@@ -426,9 +400,7 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckpointReplicateReq.class),
-            f -> f.withMarshaller(CopyCheckpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CopyCheckpointRequest::getBody, CopyCheckpointRequest::setBody));
 
         // response
 
@@ -436,9 +408,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<CreateCheckpointRequest, CreateCheckpointResponse> createCheckpoint =
-        genForcreateCheckpoint();
+        genForCreateCheckpoint();
 
-    private static HttpRequestDef<CreateCheckpointRequest, CreateCheckpointResponse> genForcreateCheckpoint() {
+    private static HttpRequestDef<CreateCheckpointRequest, CreateCheckpointResponse> genForCreateCheckpoint() {
         // basic
         HttpRequestDef.Builder<CreateCheckpointRequest, CreateCheckpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCheckpointRequest.class, CreateCheckpointResponse.class)
@@ -451,18 +423,16 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultBackupReq.class),
-            f -> f.withMarshaller(CreateCheckpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCheckpointRequest::getBody, CreateCheckpointRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForcreatePolicy();
+    public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForCreatePolicy();
 
-    private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForcreatePolicy() {
+    private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForCreatePolicy() {
         // basic
         HttpRequestDef.Builder<CreatePolicyRequest, CreatePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePolicyRequest.class, CreatePolicyResponse.class)
@@ -475,9 +445,7 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PolicyCreateReq.class),
-            f -> f.withMarshaller(CreatePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePolicyRequest::getBody, CreatePolicyRequest::setBody));
 
         // response
 
@@ -485,9 +453,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<CreatePostPaidVaultRequest, CreatePostPaidVaultResponse> createPostPaidVault =
-        genForcreatePostPaidVault();
+        genForCreatePostPaidVault();
 
-    private static HttpRequestDef<CreatePostPaidVaultRequest, CreatePostPaidVaultResponse> genForcreatePostPaidVault() {
+    private static HttpRequestDef<CreatePostPaidVaultRequest, CreatePostPaidVaultResponse> genForCreatePostPaidVault() {
         // basic
         HttpRequestDef.Builder<CreatePostPaidVaultRequest, CreatePostPaidVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePostPaidVaultRequest.class, CreatePostPaidVaultResponse.class)
@@ -500,18 +468,16 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultOrderCreateReqs.class),
-            f -> f.withMarshaller(CreatePostPaidVaultRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePostPaidVaultRequest::getBody, CreatePostPaidVaultRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateVaultRequest, CreateVaultResponse> createVault = genForcreateVault();
+    public static final HttpRequestDef<CreateVaultRequest, CreateVaultResponse> createVault = genForCreateVault();
 
-    private static HttpRequestDef<CreateVaultRequest, CreateVaultResponse> genForcreateVault() {
+    private static HttpRequestDef<CreateVaultRequest, CreateVaultResponse> genForCreateVault() {
         // basic
         HttpRequestDef.Builder<CreateVaultRequest, CreateVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVaultRequest.class, CreateVaultResponse.class)
@@ -524,9 +490,7 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultCreateReq.class),
-            f -> f.withMarshaller(CreateVaultRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVaultRequest::getBody, CreateVaultRequest::setBody));
 
         // response
 
@@ -534,9 +498,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<CreateVaultTagsRequest, CreateVaultTagsResponse> createVaultTags =
-        genForcreateVaultTags();
+        genForCreateVaultTags();
 
-    private static HttpRequestDef<CreateVaultTagsRequest, CreateVaultTagsResponse> genForcreateVaultTags() {
+    private static HttpRequestDef<CreateVaultTagsRequest, CreateVaultTagsResponse> genForCreateVaultTags() {
         // basic
         HttpRequestDef.Builder<CreateVaultTagsRequest, CreateVaultTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVaultTagsRequest.class, CreateVaultTagsResponse.class)
@@ -549,25 +513,21 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVaultTagsRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(CreateVaultTagsRequest::getVaultId, CreateVaultTagsRequest::setVaultId));
         builder.<VaultTagsCreateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(VaultTagsCreateReq.class),
-            f -> f.withMarshaller(CreateVaultTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVaultTagsRequest::getBody, CreateVaultTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> deleteBackup = genFordeleteBackup();
+    public static final HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> deleteBackup = genForDeleteBackup();
 
-    private static HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> genFordeleteBackup() {
+    private static HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> genForDeleteBackup() {
         // basic
         HttpRequestDef.Builder<DeleteBackupRequest, DeleteBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackupRequest.class, DeleteBackupResponse.class)
@@ -580,18 +540,16 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackupRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackupRequest::getBackupId, DeleteBackupRequest::setBackupId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteMemberRequest, DeleteMemberResponse> deleteMember = genFordeleteMember();
+    public static final HttpRequestDef<DeleteMemberRequest, DeleteMemberResponse> deleteMember = genForDeleteMember();
 
-    private static HttpRequestDef<DeleteMemberRequest, DeleteMemberResponse> genFordeleteMember() {
+    private static HttpRequestDef<DeleteMemberRequest, DeleteMemberResponse> genForDeleteMember() {
         // basic
         HttpRequestDef.Builder<DeleteMemberRequest, DeleteMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMemberRequest.class, DeleteMemberResponse.class)
@@ -604,25 +562,21 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMemberRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberRequest::getBackupId, DeleteMemberRequest::setBackupId));
         builder.<String>withRequestField("member_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMemberRequest::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberRequest::getMemberId, DeleteMemberRequest::setMemberId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> deletePolicy = genFordeletePolicy();
+    public static final HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> deletePolicy = genForDeletePolicy();
 
-    private static HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> genFordeletePolicy() {
+    private static HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> genForDeletePolicy() {
         // basic
         HttpRequestDef.Builder<DeletePolicyRequest, DeletePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePolicyRequest.class, DeletePolicyResponse.class)
@@ -635,18 +589,16 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, DeletePolicyRequest::setPolicyId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteVaultRequest, DeleteVaultResponse> deleteVault = genFordeleteVault();
+    public static final HttpRequestDef<DeleteVaultRequest, DeleteVaultResponse> deleteVault = genForDeleteVault();
 
-    private static HttpRequestDef<DeleteVaultRequest, DeleteVaultResponse> genFordeleteVault() {
+    private static HttpRequestDef<DeleteVaultRequest, DeleteVaultResponse> genForDeleteVault() {
         // basic
         HttpRequestDef.Builder<DeleteVaultRequest, DeleteVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVaultRequest.class, DeleteVaultResponse.class)
@@ -659,9 +611,7 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVaultRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(DeleteVaultRequest::getVaultId, DeleteVaultRequest::setVaultId));
 
         // response
 
@@ -669,9 +619,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<DeleteVaultTagRequest, DeleteVaultTagResponse> deleteVaultTag =
-        genFordeleteVaultTag();
+        genForDeleteVaultTag();
 
-    private static HttpRequestDef<DeleteVaultTagRequest, DeleteVaultTagResponse> genFordeleteVaultTag() {
+    private static HttpRequestDef<DeleteVaultTagRequest, DeleteVaultTagResponse> genForDeleteVaultTag() {
         // basic
         HttpRequestDef.Builder<DeleteVaultTagRequest, DeleteVaultTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVaultTagRequest.class, DeleteVaultTagResponse.class)
@@ -684,16 +634,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVaultTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteVaultTagRequest::getKey, DeleteVaultTagRequest::setKey));
         builder.<String>withRequestField("vault_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVaultTagRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(DeleteVaultTagRequest::getVaultId, DeleteVaultTagRequest::setVaultId));
 
         // response
 
@@ -701,9 +647,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<DisassociateVaultPolicyRequest, DisassociateVaultPolicyResponse> disassociateVaultPolicy =
-        genFordisassociateVaultPolicy();
+        genForDisassociateVaultPolicy();
 
-    private static HttpRequestDef<DisassociateVaultPolicyRequest, DisassociateVaultPolicyResponse> genFordisassociateVaultPolicy() {
+    private static HttpRequestDef<DisassociateVaultPolicyRequest, DisassociateVaultPolicyResponse> genForDisassociateVaultPolicy() {
         // basic
         HttpRequestDef.Builder<DisassociateVaultPolicyRequest, DisassociateVaultPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DisassociateVaultPolicyRequest.class, DisassociateVaultPolicyResponse.class)
@@ -716,25 +662,22 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateVaultPolicyRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(DisassociateVaultPolicyRequest::getVaultId,
+                DisassociateVaultPolicyRequest::setVaultId));
         builder.<VaultDissociate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultDissociate.class),
-            f -> f.withMarshaller(DisassociateVaultPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateVaultPolicyRequest::getBody, DisassociateVaultPolicyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportBackupRequest, ImportBackupResponse> importBackup = genForimportBackup();
+    public static final HttpRequestDef<ImportBackupRequest, ImportBackupResponse> importBackup = genForImportBackup();
 
-    private static HttpRequestDef<ImportBackupRequest, ImportBackupResponse> genForimportBackup() {
+    private static HttpRequestDef<ImportBackupRequest, ImportBackupResponse> genForImportBackup() {
         // basic
         HttpRequestDef.Builder<ImportBackupRequest, ImportBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportBackupRequest.class, ImportBackupResponse.class)
@@ -747,9 +690,7 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BackupSyncReq.class),
-            f -> f.withMarshaller(ImportBackupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportBackupRequest::getBody, ImportBackupRequest::setBody));
 
         // response
 
@@ -757,9 +698,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ImportCheckpointRequest, ImportCheckpointResponse> importCheckpoint =
-        genForimportCheckpoint();
+        genForImportCheckpoint();
 
-    private static HttpRequestDef<ImportCheckpointRequest, ImportCheckpointResponse> genForimportCheckpoint() {
+    private static HttpRequestDef<ImportCheckpointRequest, ImportCheckpointResponse> genForImportCheckpoint() {
         // basic
         HttpRequestDef.Builder<ImportCheckpointRequest, ImportCheckpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportCheckpointRequest.class, ImportCheckpointResponse.class)
@@ -772,18 +713,16 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SyncReq.class),
-            f -> f.withMarshaller(ImportCheckpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportCheckpointRequest::getBody, ImportCheckpointRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAgentRequest, ListAgentResponse> listAgent = genForlistAgent();
+    public static final HttpRequestDef<ListAgentRequest, ListAgentResponse> listAgent = genForListAgent();
 
-    private static HttpRequestDef<ListAgentRequest, ListAgentResponse> genForlistAgent() {
+    private static HttpRequestDef<ListAgentRequest, ListAgentResponse> genForListAgent() {
         // basic
         HttpRequestDef.Builder<ListAgentRequest, ListAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgentRequest.class, ListAgentResponse.class)
@@ -796,39 +735,31 @@ public class CbrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAgentRequest::getLimit, ListAgentRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAgentRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAgentRequest::getOffset, ListAgentRequest::setOffset));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAgentRequest::getStatus, ListAgentRequest::setStatus));
         builder.<List<String>>withRequestField("agent_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAgentRequest::getAgentId, (req, v) -> {
-                req.setAgentId(v);
-            }));
+            f -> f.withMarshaller(ListAgentRequest::getAgentId, ListAgentRequest::setAgentId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBackupsRequest, ListBackupsResponse> listBackups = genForlistBackups();
+    public static final HttpRequestDef<ListBackupsRequest, ListBackupsResponse> listBackups = genForListBackups();
 
-    private static HttpRequestDef<ListBackupsRequest, ListBackupsResponse> genForlistBackups() {
+    private static HttpRequestDef<ListBackupsRequest, ListBackupsResponse> genForListBackups() {
         // basic
         HttpRequestDef.Builder<ListBackupsRequest, ListBackupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackupsRequest.class, ListBackupsResponse.class)
@@ -841,163 +772,118 @@ public class CbrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getCheckpointId, (req, v) -> {
-                req.setCheckpointId(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getCheckpointId, ListBackupsRequest::setCheckpointId));
         builder.<Boolean>withRequestField("dec",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListBackupsRequest::getDec, (req, v) -> {
-                req.setDec(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getDec, ListBackupsRequest::setDec));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getEndTime, ListBackupsRequest::setEndTime));
         builder.<ListBackupsRequest.ImageTypeEnum>withRequestField("image_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBackupsRequest.ImageTypeEnum.class),
-            f -> f.withMarshaller(ListBackupsRequest::getImageType, (req, v) -> {
-                req.setImageType(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getImageType, ListBackupsRequest::setImageType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getLimit, ListBackupsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getMarker, ListBackupsRequest::setMarker));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getName, ListBackupsRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getOffset, ListBackupsRequest::setOffset));
         builder.<String>withRequestField("resource_az",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getResourceAz, (req, v) -> {
-                req.setResourceAz(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getResourceAz, ListBackupsRequest::setResourceAz));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getResourceId, ListBackupsRequest::setResourceId));
         builder.<String>withRequestField("resource_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getResourceName, (req, v) -> {
-                req.setResourceName(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getResourceName, ListBackupsRequest::setResourceName));
         builder.<ListBackupsRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBackupsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListBackupsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getResourceType, ListBackupsRequest::setResourceType));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getSort, ListBackupsRequest::setSort));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getStartTime, ListBackupsRequest::setStartTime));
         builder.<ListBackupsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBackupsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListBackupsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getStatus, ListBackupsRequest::setStatus));
         builder.<String>withRequestField("vault_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getVaultId, ListBackupsRequest::setVaultId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getEnterpriseProjectId,
+                ListBackupsRequest::setEnterpriseProjectId));
         builder.<ListBackupsRequest.OwnTypeEnum>withRequestField("own_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBackupsRequest.OwnTypeEnum.class),
-            f -> f.withMarshaller(ListBackupsRequest::getOwnType, (req, v) -> {
-                req.setOwnType(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getOwnType, ListBackupsRequest::setOwnType));
         builder.<ListBackupsRequest.MemberStatusEnum>withRequestField("member_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBackupsRequest.MemberStatusEnum.class),
-            f -> f.withMarshaller(ListBackupsRequest::getMemberStatus, (req, v) -> {
-                req.setMemberStatus(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getMemberStatus, ListBackupsRequest::setMemberStatus));
         builder.<String>withRequestField("parent_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getParentId, (req, v) -> {
-                req.setParentId(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getParentId, ListBackupsRequest::setParentId));
         builder.<String>withRequestField("used_percent",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getUsedPercent, (req, v) -> {
-                req.setUsedPercent(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getUsedPercent, ListBackupsRequest::setUsedPercent));
         builder.<Boolean>withRequestField("show_replication",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListBackupsRequest::getShowReplication, (req, v) -> {
-                req.setShowReplication(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getShowReplication, ListBackupsRequest::setShowReplication));
         builder.<Boolean>withRequestField("incremental",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListBackupsRequest::getIncremental, (req, v) -> {
-                req.setIncremental(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getIncremental, ListBackupsRequest::setIncremental));
 
         // response
 
@@ -1005,9 +891,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ListDomainProjectsRequest, ListDomainProjectsResponse> listDomainProjects =
-        genForlistDomainProjects();
+        genForListDomainProjects();
 
-    private static HttpRequestDef<ListDomainProjectsRequest, ListDomainProjectsResponse> genForlistDomainProjects() {
+    private static HttpRequestDef<ListDomainProjectsRequest, ListDomainProjectsResponse> genForListDomainProjects() {
         // basic
         HttpRequestDef.Builder<ListDomainProjectsRequest, ListDomainProjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainProjectsRequest.class, ListDomainProjectsResponse.class)
@@ -1020,9 +906,7 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainProjectsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListDomainProjectsRequest::getDomainName, ListDomainProjectsRequest::setDomainName));
 
         // response
 
@@ -1030,9 +914,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ListExternalVaultRequest, ListExternalVaultResponse> listExternalVault =
-        genForlistExternalVault();
+        genForListExternalVault();
 
-    private static HttpRequestDef<ListExternalVaultRequest, ListExternalVaultResponse> genForlistExternalVault() {
+    private static HttpRequestDef<ListExternalVaultRequest, ListExternalVaultResponse> genForListExternalVault() {
         // basic
         HttpRequestDef.Builder<ListExternalVaultRequest, ListExternalVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListExternalVaultRequest.class, ListExternalVaultResponse.class)
@@ -1045,67 +929,52 @@ public class CbrMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExternalVaultRequest::getExternalProjectId, (req, v) -> {
-                req.setExternalProjectId(v);
-            }));
+            f -> f.withMarshaller(ListExternalVaultRequest::getExternalProjectId,
+                ListExternalVaultRequest::setExternalProjectId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListExternalVaultRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListExternalVaultRequest::getLimit, ListExternalVaultRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListExternalVaultRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListExternalVaultRequest::getOffset, ListExternalVaultRequest::setOffset));
         builder.<ListExternalVaultRequest.ProtectTypeEnum>withRequestField("protect_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListExternalVaultRequest.ProtectTypeEnum.class),
-            f -> f.withMarshaller(ListExternalVaultRequest::getProtectType, (req, v) -> {
-                req.setProtectType(v);
-            }));
+            f -> f.withMarshaller(ListExternalVaultRequest::getProtectType, ListExternalVaultRequest::setProtectType));
         builder.<String>withRequestField("region_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExternalVaultRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ListExternalVaultRequest::getRegionId, ListExternalVaultRequest::setRegionId));
         builder.<String>withRequestField("objcet_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExternalVaultRequest::getObjcetType, (req, v) -> {
-                req.setObjcetType(v);
-            }));
+            f -> f.withMarshaller(ListExternalVaultRequest::getObjcetType, ListExternalVaultRequest::setObjcetType));
         builder.<String>withRequestField("cloud_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExternalVaultRequest::getCloudType, (req, v) -> {
-                req.setCloudType(v);
-            }));
+            f -> f.withMarshaller(ListExternalVaultRequest::getCloudType, ListExternalVaultRequest::setCloudType));
         builder.<String>withRequestField("vault_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExternalVaultRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(ListExternalVaultRequest::getVaultId, ListExternalVaultRequest::setVaultId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListOpLogsRequest, ListOpLogsResponse> listOpLogs = genForlistOpLogs();
+    public static final HttpRequestDef<ListOpLogsRequest, ListOpLogsResponse> listOpLogs = genForListOpLogs();
 
-    private static HttpRequestDef<ListOpLogsRequest, ListOpLogsResponse> genForlistOpLogs() {
+    private static HttpRequestDef<ListOpLogsRequest, ListOpLogsResponse> genForListOpLogs() {
         // basic
         HttpRequestDef.Builder<ListOpLogsRequest, ListOpLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOpLogsRequest.class, ListOpLogsResponse.class)
@@ -1118,95 +987,72 @@ public class CbrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getEndTime, ListOpLogsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getLimit, ListOpLogsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getOffset, ListOpLogsRequest::setOffset));
         builder.<ListOpLogsRequest.OperationTypeEnum>withRequestField("operation_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListOpLogsRequest.OperationTypeEnum.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getOperationType, (req, v) -> {
-                req.setOperationType(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getOperationType, ListOpLogsRequest::setOperationType));
         builder.<String>withRequestField("provider_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getProviderId, (req, v) -> {
-                req.setProviderId(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getProviderId, ListOpLogsRequest::setProviderId));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getResourceId, ListOpLogsRequest::setResourceId));
         builder.<String>withRequestField("resource_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getResourceName, (req, v) -> {
-                req.setResourceName(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getResourceName, ListOpLogsRequest::setResourceName));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getStartTime, ListOpLogsRequest::setStartTime));
         builder.<ListOpLogsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListOpLogsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getStatus, ListOpLogsRequest::setStatus));
         builder.<String>withRequestField("vault_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getVaultId, ListOpLogsRequest::setVaultId));
         builder.<String>withRequestField("vault_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getVaultName, (req, v) -> {
-                req.setVaultName(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getVaultName, ListOpLogsRequest::setVaultName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOpLogsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListOpLogsRequest::getEnterpriseProjectId,
+                ListOpLogsRequest::setEnterpriseProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> listPolicies = genForlistPolicies();
+    public static final HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> listPolicies = genForListPolicies();
 
-    private static HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> genForlistPolicies() {
+    private static HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> genForListPolicies() {
         // basic
         HttpRequestDef.Builder<ListPoliciesRequest, ListPoliciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPoliciesRequest.class, ListPoliciesResponse.class)
@@ -1219,25 +1065,21 @@ public class CbrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPoliciesRequest.OperationTypeEnum.class),
-            f -> f.withMarshaller(ListPoliciesRequest::getOperationType, (req, v) -> {
-                req.setOperationType(v);
-            }));
+            f -> f.withMarshaller(ListPoliciesRequest::getOperationType, ListPoliciesRequest::setOperationType));
         builder.<String>withRequestField("vault_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoliciesRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(ListPoliciesRequest::getVaultId, ListPoliciesRequest::setVaultId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListProjectsRequest, ListProjectsResponse> listProjects = genForlistProjects();
+    public static final HttpRequestDef<ListProjectsRequest, ListProjectsResponse> listProjects = genForListProjects();
 
-    private static HttpRequestDef<ListProjectsRequest, ListProjectsResponse> genForlistProjects() {
+    private static HttpRequestDef<ListProjectsRequest, ListProjectsResponse> genForListProjects() {
         // basic
         HttpRequestDef.Builder<ListProjectsRequest, ListProjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectsRequest.class, ListProjectsResponse.class)
@@ -1253,9 +1095,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ListProtectableRequest, ListProtectableResponse> listProtectable =
-        genForlistProtectable();
+        genForListProtectable();
 
-    private static HttpRequestDef<ListProtectableRequest, ListProtectableResponse> genForlistProtectable() {
+    private static HttpRequestDef<ListProtectableRequest, ListProtectableResponse> genForListProtectable() {
         // basic
         HttpRequestDef.Builder<ListProtectableRequest, ListProtectableResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProtectableRequest.class, ListProtectableResponse.class)
@@ -1268,67 +1110,52 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListProtectableRequest.ProtectableTypeEnum.class),
-            f -> f.withMarshaller(ListProtectableRequest::getProtectableType, (req, v) -> {
-                req.setProtectableType(v);
-            }));
+            f -> f.withMarshaller(ListProtectableRequest::getProtectableType,
+                ListProtectableRequest::setProtectableType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProtectableRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProtectableRequest::getLimit, ListProtectableRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectableRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListProtectableRequest::getMarker, ListProtectableRequest::setMarker));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectableRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListProtectableRequest::getName, ListProtectableRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProtectableRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProtectableRequest::getOffset, ListProtectableRequest::setOffset));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectableRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListProtectableRequest::getStatus, ListProtectableRequest::setStatus));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectableRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListProtectableRequest::getId, ListProtectableRequest::setId));
         builder.<String>withRequestField("server_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectableRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
+            f -> f.withMarshaller(ListProtectableRequest::getServerId, ListProtectableRequest::setServerId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListVaultRequest, ListVaultResponse> listVault = genForlistVault();
+    public static final HttpRequestDef<ListVaultRequest, ListVaultResponse> listVault = genForListVault();
 
-    private static HttpRequestDef<ListVaultRequest, ListVaultResponse> genForlistVault() {
+    private static HttpRequestDef<ListVaultRequest, ListVaultResponse> genForListVault() {
         // basic
         HttpRequestDef.Builder<ListVaultRequest, ListVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVaultRequest.class, ListVaultResponse.class)
@@ -1341,79 +1168,57 @@ public class CbrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVaultRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getLimit, ListVaultRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVaultRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getName, ListVaultRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVaultRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getOffset, ListVaultRequest::setOffset));
         builder.<ListVaultRequest.CloudTypeEnum>withRequestField("cloud_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListVaultRequest.CloudTypeEnum.class),
-            f -> f.withMarshaller(ListVaultRequest::getCloudType, (req, v) -> {
-                req.setCloudType(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getCloudType, ListVaultRequest::setCloudType));
         builder.<ListVaultRequest.ProtectTypeEnum>withRequestField("protect_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListVaultRequest.ProtectTypeEnum.class),
-            f -> f.withMarshaller(ListVaultRequest::getProtectType, (req, v) -> {
-                req.setProtectType(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getProtectType, ListVaultRequest::setProtectType));
         builder.<String>withRequestField("object_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVaultRequest::getObjectType, (req, v) -> {
-                req.setObjectType(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getObjectType, ListVaultRequest::setObjectType));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVaultRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getEnterpriseProjectId, ListVaultRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVaultRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getId, ListVaultRequest::setId));
         builder.<String>withRequestField("policy_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVaultRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getPolicyId, ListVaultRequest::setPolicyId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVaultRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getStatus, ListVaultRequest::setStatus));
         builder.<String>withRequestField("resource_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVaultRequest::getResourceIds, (req, v) -> {
-                req.setResourceIds(v);
-            }));
+            f -> f.withMarshaller(ListVaultRequest::getResourceIds, ListVaultRequest::setResourceIds));
 
         // response
 
@@ -1421,9 +1226,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<MigrateDomainRequest, MigrateDomainResponse> migrateDomain =
-        genFormigrateDomain();
+        genForMigrateDomain();
 
-    private static HttpRequestDef<MigrateDomainRequest, MigrateDomainResponse> genFormigrateDomain() {
+    private static HttpRequestDef<MigrateDomainRequest, MigrateDomainResponse> genForMigrateDomain() {
         // basic
         HttpRequestDef.Builder<MigrateDomainRequest, MigrateDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, MigrateDomainRequest.class, MigrateDomainResponse.class)
@@ -1436,26 +1241,23 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DomainMigrate.class),
-            f -> f.withMarshaller(MigrateDomainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MigrateDomainRequest::getBody, MigrateDomainRequest::setBody));
 
         // response
         builder.<Map<String, String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(MigrateDomainResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(MigrateDomainResponse::getBody, MigrateDomainResponse::setBody)
+                .withInnerContainerType(String.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<MigrateVaultResourceRequest, MigrateVaultResourceResponse> migrateVaultResource =
-        genFormigrateVaultResource();
+        genForMigrateVaultResource();
 
-    private static HttpRequestDef<MigrateVaultResourceRequest, MigrateVaultResourceResponse> genFormigrateVaultResource() {
+    private static HttpRequestDef<MigrateVaultResourceRequest, MigrateVaultResourceResponse> genForMigrateVaultResource() {
         // basic
         HttpRequestDef.Builder<MigrateVaultResourceRequest, MigrateVaultResourceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, MigrateVaultResourceRequest.class, MigrateVaultResourceResponse.class)
@@ -1468,16 +1270,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MigrateVaultResourceRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(MigrateVaultResourceRequest::getVaultId, MigrateVaultResourceRequest::setVaultId));
         builder.<VaultMigrateResourceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultMigrateResourceReq.class),
-            f -> f.withMarshaller(MigrateVaultResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MigrateVaultResourceRequest::getBody, MigrateVaultResourceRequest::setBody));
 
         // response
 
@@ -1485,9 +1283,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<RegisterAgentRequest, RegisterAgentResponse> registerAgent =
-        genForregisterAgent();
+        genForRegisterAgent();
 
-    private static HttpRequestDef<RegisterAgentRequest, RegisterAgentResponse> genForregisterAgent() {
+    private static HttpRequestDef<RegisterAgentRequest, RegisterAgentResponse> genForRegisterAgent() {
         // basic
         HttpRequestDef.Builder<RegisterAgentRequest, RegisterAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RegisterAgentRequest.class, RegisterAgentResponse.class)
@@ -1500,9 +1298,7 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgentRegisterReq.class),
-            f -> f.withMarshaller(RegisterAgentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RegisterAgentRequest::getBody, RegisterAgentRequest::setBody));
 
         // response
 
@@ -1510,9 +1306,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<RemoveAgentPathRequest, RemoveAgentPathResponse> removeAgentPath =
-        genForremoveAgentPath();
+        genForRemoveAgentPath();
 
-    private static HttpRequestDef<RemoveAgentPathRequest, RemoveAgentPathResponse> genForremoveAgentPath() {
+    private static HttpRequestDef<RemoveAgentPathRequest, RemoveAgentPathResponse> genForRemoveAgentPath() {
         // basic
         HttpRequestDef.Builder<RemoveAgentPathRequest, RemoveAgentPathResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RemoveAgentPathRequest.class, RemoveAgentPathResponse.class)
@@ -1525,16 +1321,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveAgentPathRequest::getAgentId, (req, v) -> {
-                req.setAgentId(v);
-            }));
+            f -> f.withMarshaller(RemoveAgentPathRequest::getAgentId, RemoveAgentPathRequest::setAgentId));
         builder.<AgentRemovePathReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgentRemovePathReq.class),
-            f -> f.withMarshaller(RemoveAgentPathRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RemoveAgentPathRequest::getBody, RemoveAgentPathRequest::setBody));
 
         // response
 
@@ -1542,9 +1334,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<RemoveVaultResourceRequest, RemoveVaultResourceResponse> removeVaultResource =
-        genForremoveVaultResource();
+        genForRemoveVaultResource();
 
-    private static HttpRequestDef<RemoveVaultResourceRequest, RemoveVaultResourceResponse> genForremoveVaultResource() {
+    private static HttpRequestDef<RemoveVaultResourceRequest, RemoveVaultResourceResponse> genForRemoveVaultResource() {
         // basic
         HttpRequestDef.Builder<RemoveVaultResourceRequest, RemoveVaultResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RemoveVaultResourceRequest.class, RemoveVaultResourceResponse.class)
@@ -1557,16 +1349,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveVaultResourceRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(RemoveVaultResourceRequest::getVaultId, RemoveVaultResourceRequest::setVaultId));
         builder.<VaultRemoveResourceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultRemoveResourceReq.class),
-            f -> f.withMarshaller(RemoveVaultResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RemoveVaultResourceRequest::getBody, RemoveVaultResourceRequest::setBody));
 
         // response
 
@@ -1574,9 +1362,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<RestoreBackupRequest, RestoreBackupResponse> restoreBackup =
-        genForrestoreBackup();
+        genForRestoreBackup();
 
-    private static HttpRequestDef<RestoreBackupRequest, RestoreBackupResponse> genForrestoreBackup() {
+    private static HttpRequestDef<RestoreBackupRequest, RestoreBackupResponse> genForRestoreBackup() {
         // basic
         HttpRequestDef.Builder<RestoreBackupRequest, RestoreBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreBackupRequest.class, RestoreBackupResponse.class)
@@ -1589,16 +1377,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreBackupRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(RestoreBackupRequest::getBackupId, RestoreBackupRequest::setBackupId));
         builder.<BackupRestoreReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BackupRestoreReq.class),
-            f -> f.withMarshaller(RestoreBackupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestoreBackupRequest::getBody, RestoreBackupRequest::setBody));
 
         // response
 
@@ -1606,9 +1390,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<SetVaultResourceRequest, SetVaultResourceResponse> setVaultResource =
-        genForsetVaultResource();
+        genForSetVaultResource();
 
-    private static HttpRequestDef<SetVaultResourceRequest, SetVaultResourceResponse> genForsetVaultResource() {
+    private static HttpRequestDef<SetVaultResourceRequest, SetVaultResourceResponse> genForSetVaultResource() {
         // basic
         HttpRequestDef.Builder<SetVaultResourceRequest, SetVaultResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetVaultResourceRequest.class, SetVaultResourceResponse.class)
@@ -1621,25 +1405,21 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetVaultResourceRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(SetVaultResourceRequest::getVaultId, SetVaultResourceRequest::setVaultId));
         builder.<VaultSetResourceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultSetResourceReq.class),
-            f -> f.withMarshaller(SetVaultResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetVaultResourceRequest::getBody, SetVaultResourceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAgentRequest, ShowAgentResponse> showAgent = genForshowAgent();
+    public static final HttpRequestDef<ShowAgentRequest, ShowAgentResponse> showAgent = genForShowAgent();
 
-    private static HttpRequestDef<ShowAgentRequest, ShowAgentResponse> genForshowAgent() {
+    private static HttpRequestDef<ShowAgentRequest, ShowAgentResponse> genForShowAgent() {
         // basic
         HttpRequestDef.Builder<ShowAgentRequest, ShowAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgentRequest.class, ShowAgentResponse.class)
@@ -1652,18 +1432,16 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAgentRequest::getAgentId, (req, v) -> {
-                req.setAgentId(v);
-            }));
+            f -> f.withMarshaller(ShowAgentRequest::getAgentId, ShowAgentRequest::setAgentId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBackupRequest, ShowBackupResponse> showBackup = genForshowBackup();
+    public static final HttpRequestDef<ShowBackupRequest, ShowBackupResponse> showBackup = genForShowBackup();
 
-    private static HttpRequestDef<ShowBackupRequest, ShowBackupResponse> genForshowBackup() {
+    private static HttpRequestDef<ShowBackupRequest, ShowBackupResponse> genForShowBackup() {
         // basic
         HttpRequestDef.Builder<ShowBackupRequest, ShowBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackupRequest.class, ShowBackupResponse.class)
@@ -1676,9 +1454,7 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackupRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ShowBackupRequest::getBackupId, ShowBackupRequest::setBackupId));
 
         // response
 
@@ -1686,9 +1462,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ShowCheckpointRequest, ShowCheckpointResponse> showCheckpoint =
-        genForshowCheckpoint();
+        genForShowCheckpoint();
 
-    private static HttpRequestDef<ShowCheckpointRequest, ShowCheckpointResponse> genForshowCheckpoint() {
+    private static HttpRequestDef<ShowCheckpointRequest, ShowCheckpointResponse> genForShowCheckpoint() {
         // basic
         HttpRequestDef.Builder<ShowCheckpointRequest, ShowCheckpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCheckpointRequest.class, ShowCheckpointResponse.class)
@@ -1701,18 +1477,16 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCheckpointRequest::getCheckpointId, (req, v) -> {
-                req.setCheckpointId(v);
-            }));
+            f -> f.withMarshaller(ShowCheckpointRequest::getCheckpointId, ShowCheckpointRequest::setCheckpointId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDomainRequest, ShowDomainResponse> showDomain = genForshowDomain();
+    public static final HttpRequestDef<ShowDomainRequest, ShowDomainResponse> showDomain = genForShowDomain();
 
-    private static HttpRequestDef<ShowDomainRequest, ShowDomainResponse> genForshowDomain() {
+    private static HttpRequestDef<ShowDomainRequest, ShowDomainResponse> genForShowDomain() {
         // basic
         HttpRequestDef.Builder<ShowDomainRequest, ShowDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainRequest.class, ShowDomainResponse.class)
@@ -1725,9 +1499,7 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainRequest::getSourceProjectId, (req, v) -> {
-                req.setSourceProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainRequest::getSourceProjectId, ShowDomainRequest::setSourceProjectId));
 
         // response
 
@@ -1735,9 +1507,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ShowMemberDetailRequest, ShowMemberDetailResponse> showMemberDetail =
-        genForshowMemberDetail();
+        genForShowMemberDetail();
 
-    private static HttpRequestDef<ShowMemberDetailRequest, ShowMemberDetailResponse> genForshowMemberDetail() {
+    private static HttpRequestDef<ShowMemberDetailRequest, ShowMemberDetailResponse> genForShowMemberDetail() {
         // basic
         HttpRequestDef.Builder<ShowMemberDetailRequest, ShowMemberDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMemberDetailRequest.class, ShowMemberDetailResponse.class)
@@ -1750,16 +1522,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMemberDetailRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ShowMemberDetailRequest::getBackupId, ShowMemberDetailRequest::setBackupId));
         builder.<String>withRequestField("member_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMemberDetailRequest::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(ShowMemberDetailRequest::getMemberId, ShowMemberDetailRequest::setMemberId));
 
         // response
 
@@ -1767,9 +1535,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ShowMembersDetailRequest, ShowMembersDetailResponse> showMembersDetail =
-        genForshowMembersDetail();
+        genForShowMembersDetail();
 
-    private static HttpRequestDef<ShowMembersDetailRequest, ShowMembersDetailResponse> genForshowMembersDetail() {
+    private static HttpRequestDef<ShowMembersDetailRequest, ShowMembersDetailResponse> genForShowMembersDetail() {
         // basic
         HttpRequestDef.Builder<ShowMembersDetailRequest, ShowMembersDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMembersDetailRequest.class, ShowMembersDetailResponse.class)
@@ -1782,74 +1550,57 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMembersDetailRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ShowMembersDetailRequest::getBackupId, ShowMembersDetailRequest::setBackupId));
         builder.<String>withRequestField("dest_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMembersDetailRequest::getDestProjectId, (req, v) -> {
-                req.setDestProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowMembersDetailRequest::getDestProjectId,
+                ShowMembersDetailRequest::setDestProjectId));
         builder.<String>withRequestField("image_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMembersDetailRequest::getImageId, (req, v) -> {
-                req.setImageId(v);
-            }));
+            f -> f.withMarshaller(ShowMembersDetailRequest::getImageId, ShowMembersDetailRequest::setImageId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMembersDetailRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowMembersDetailRequest::getStatus, ShowMembersDetailRequest::setStatus));
         builder.<String>withRequestField("vault_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMembersDetailRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(ShowMembersDetailRequest::getVaultId, ShowMembersDetailRequest::setVaultId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMembersDetailRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowMembersDetailRequest::getLimit, ShowMembersDetailRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMembersDetailRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowMembersDetailRequest::getMarker, ShowMembersDetailRequest::setMarker));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMembersDetailRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowMembersDetailRequest::getOffset, ShowMembersDetailRequest::setOffset));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMembersDetailRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ShowMembersDetailRequest::getSort, ShowMembersDetailRequest::setSort));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> showMetadata = genForshowMetadata();
+    public static final HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> showMetadata = genForShowMetadata();
 
-    private static HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> genForshowMetadata() {
+    private static HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> genForShowMetadata() {
         // basic
         HttpRequestDef.Builder<ShowMetadataRequest, ShowMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMetadataRequest.class, ShowMetadataResponse.class)
@@ -1862,9 +1613,7 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMetadataRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ShowMetadataRequest::getBackupId, ShowMetadataRequest::setBackupId));
 
         // response
 
@@ -1872,9 +1621,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ShowMigrateStatusRequest, ShowMigrateStatusResponse> showMigrateStatus =
-        genForshowMigrateStatus();
+        genForShowMigrateStatus();
 
-    private static HttpRequestDef<ShowMigrateStatusRequest, ShowMigrateStatusResponse> genForshowMigrateStatus() {
+    private static HttpRequestDef<ShowMigrateStatusRequest, ShowMigrateStatusResponse> genForShowMigrateStatus() {
         // basic
         HttpRequestDef.Builder<ShowMigrateStatusRequest, ShowMigrateStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMigrateStatusRequest.class, ShowMigrateStatusResponse.class)
@@ -1887,18 +1636,16 @@ public class CbrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowMigrateStatusRequest::getAllRegions, (req, v) -> {
-                req.setAllRegions(v);
-            }));
+            f -> f.withMarshaller(ShowMigrateStatusRequest::getAllRegions, ShowMigrateStatusRequest::setAllRegions));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowOpLogRequest, ShowOpLogResponse> showOpLog = genForshowOpLog();
+    public static final HttpRequestDef<ShowOpLogRequest, ShowOpLogResponse> showOpLog = genForShowOpLog();
 
-    private static HttpRequestDef<ShowOpLogRequest, ShowOpLogResponse> genForshowOpLog() {
+    private static HttpRequestDef<ShowOpLogRequest, ShowOpLogResponse> genForShowOpLog() {
         // basic
         HttpRequestDef.Builder<ShowOpLogRequest, ShowOpLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOpLogRequest.class, ShowOpLogResponse.class)
@@ -1911,18 +1658,16 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOpLogRequest::getOperationLogId, (req, v) -> {
-                req.setOperationLogId(v);
-            }));
+            f -> f.withMarshaller(ShowOpLogRequest::getOperationLogId, ShowOpLogRequest::setOperationLogId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> showPolicy = genForshowPolicy();
+    public static final HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> showPolicy = genForShowPolicy();
 
-    private static HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> genForshowPolicy() {
+    private static HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> genForShowPolicy() {
         // basic
         HttpRequestDef.Builder<ShowPolicyRequest, ShowPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPolicyRequest.class, ShowPolicyResponse.class)
@@ -1935,9 +1680,7 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(ShowPolicyRequest::getPolicyId, ShowPolicyRequest::setPolicyId));
 
         // response
 
@@ -1945,9 +1688,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ShowProtectableRequest, ShowProtectableResponse> showProtectable =
-        genForshowProtectable();
+        genForShowProtectable();
 
-    private static HttpRequestDef<ShowProtectableRequest, ShowProtectableResponse> genForshowProtectable() {
+    private static HttpRequestDef<ShowProtectableRequest, ShowProtectableResponse> genForShowProtectable() {
         // basic
         HttpRequestDef.Builder<ShowProtectableRequest, ShowProtectableResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProtectableRequest.class, ShowProtectableResponse.class)
@@ -1960,16 +1703,13 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProtectableRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowProtectableRequest::getInstanceId, ShowProtectableRequest::setInstanceId));
         builder.<ShowProtectableRequest.ProtectableTypeEnum>withRequestField("protectable_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowProtectableRequest.ProtectableTypeEnum.class),
-            f -> f.withMarshaller(ShowProtectableRequest::getProtectableType, (req, v) -> {
-                req.setProtectableType(v);
-            }));
+            f -> f.withMarshaller(ShowProtectableRequest::getProtectableType,
+                ShowProtectableRequest::setProtectableType));
 
         // response
 
@@ -1977,9 +1717,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ShowReplicationCapabilitiesRequest, ShowReplicationCapabilitiesResponse> showReplicationCapabilities =
-        genForshowReplicationCapabilities();
+        genForShowReplicationCapabilities();
 
-    private static HttpRequestDef<ShowReplicationCapabilitiesRequest, ShowReplicationCapabilitiesResponse> genForshowReplicationCapabilities() {
+    private static HttpRequestDef<ShowReplicationCapabilitiesRequest, ShowReplicationCapabilitiesResponse> genForShowReplicationCapabilities() {
         // basic
         HttpRequestDef.Builder<ShowReplicationCapabilitiesRequest, ShowReplicationCapabilitiesResponse> builder =
             HttpRequestDef
@@ -1998,9 +1738,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ShowStorageUsageRequest, ShowStorageUsageResponse> showStorageUsage =
-        genForshowStorageUsage();
+        genForShowStorageUsage();
 
-    private static HttpRequestDef<ShowStorageUsageRequest, ShowStorageUsageResponse> genForshowStorageUsage() {
+    private static HttpRequestDef<ShowStorageUsageRequest, ShowStorageUsageResponse> genForShowStorageUsage() {
         // basic
         HttpRequestDef.Builder<ShowStorageUsageRequest, ShowStorageUsageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStorageUsageRequest.class, ShowStorageUsageResponse.class)
@@ -2013,39 +1753,31 @@ public class CbrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowStorageUsageRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowStorageUsageRequest::getLimit, ShowStorageUsageRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowStorageUsageRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowStorageUsageRequest::getOffset, ShowStorageUsageRequest::setOffset));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStorageUsageRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowStorageUsageRequest::getResourceId, ShowStorageUsageRequest::setResourceId));
         builder.<ShowStorageUsageRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowStorageUsageRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ShowStorageUsageRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ShowStorageUsageRequest::getResourceType, ShowStorageUsageRequest::setResourceType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSummaryRequest, ShowSummaryResponse> showSummary = genForshowSummary();
+    public static final HttpRequestDef<ShowSummaryRequest, ShowSummaryResponse> showSummary = genForShowSummary();
 
-    private static HttpRequestDef<ShowSummaryRequest, ShowSummaryResponse> genForshowSummary() {
+    private static HttpRequestDef<ShowSummaryRequest, ShowSummaryResponse> genForShowSummary() {
         // basic
         HttpRequestDef.Builder<ShowSummaryRequest, ShowSummaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSummaryRequest.class, ShowSummaryResponse.class)
@@ -2060,9 +1792,9 @@ public class CbrMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVaultRequest, ShowVaultResponse> showVault = genForshowVault();
+    public static final HttpRequestDef<ShowVaultRequest, ShowVaultResponse> showVault = genForShowVault();
 
-    private static HttpRequestDef<ShowVaultRequest, ShowVaultResponse> genForshowVault() {
+    private static HttpRequestDef<ShowVaultRequest, ShowVaultResponse> genForShowVault() {
         // basic
         HttpRequestDef.Builder<ShowVaultRequest, ShowVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVaultRequest.class, ShowVaultResponse.class)
@@ -2075,9 +1807,7 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVaultRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(ShowVaultRequest::getVaultId, ShowVaultRequest::setVaultId));
 
         // response
 
@@ -2085,9 +1815,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse> showVaultProjectTag =
-        genForshowVaultProjectTag();
+        genForShowVaultProjectTag();
 
-    private static HttpRequestDef<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse> genForshowVaultProjectTag() {
+    private static HttpRequestDef<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse> genForShowVaultProjectTag() {
         // basic
         HttpRequestDef.Builder<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVaultProjectTagRequest.class, ShowVaultProjectTagResponse.class)
@@ -2103,9 +1833,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse> showVaultResourceInstances =
-        genForshowVaultResourceInstances();
+        genForShowVaultResourceInstances();
 
-    private static HttpRequestDef<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse> genForshowVaultResourceInstances() {
+    private static HttpRequestDef<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse> genForShowVaultResourceInstances() {
         // basic
         HttpRequestDef.Builder<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse> builder =
             HttpRequestDef
@@ -2121,18 +1851,17 @@ public class CbrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultResourceInstancesReq.class),
-            f -> f.withMarshaller(ShowVaultResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowVaultResourceInstancesRequest::getBody,
+                ShowVaultResourceInstancesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVaultTagRequest, ShowVaultTagResponse> showVaultTag = genForshowVaultTag();
+    public static final HttpRequestDef<ShowVaultTagRequest, ShowVaultTagResponse> showVaultTag = genForShowVaultTag();
 
-    private static HttpRequestDef<ShowVaultTagRequest, ShowVaultTagResponse> genForshowVaultTag() {
+    private static HttpRequestDef<ShowVaultTagRequest, ShowVaultTagResponse> genForShowVaultTag() {
         // basic
         HttpRequestDef.Builder<ShowVaultTagRequest, ShowVaultTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVaultTagRequest.class, ShowVaultTagResponse.class)
@@ -2145,9 +1874,7 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVaultTagRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(ShowVaultTagRequest::getVaultId, ShowVaultTagRequest::setVaultId));
 
         // response
 
@@ -2155,9 +1882,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<UnregisterAgentRequest, UnregisterAgentResponse> unregisterAgent =
-        genForunregisterAgent();
+        genForUnregisterAgent();
 
-    private static HttpRequestDef<UnregisterAgentRequest, UnregisterAgentResponse> genForunregisterAgent() {
+    private static HttpRequestDef<UnregisterAgentRequest, UnregisterAgentResponse> genForUnregisterAgent() {
         // basic
         HttpRequestDef.Builder<UnregisterAgentRequest, UnregisterAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, UnregisterAgentRequest.class, UnregisterAgentResponse.class)
@@ -2170,18 +1897,16 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnregisterAgentRequest::getAgentId, (req, v) -> {
-                req.setAgentId(v);
-            }));
+            f -> f.withMarshaller(UnregisterAgentRequest::getAgentId, UnregisterAgentRequest::setAgentId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAgentRequest, UpdateAgentResponse> updateAgent = genForupdateAgent();
+    public static final HttpRequestDef<UpdateAgentRequest, UpdateAgentResponse> updateAgent = genForUpdateAgent();
 
-    private static HttpRequestDef<UpdateAgentRequest, UpdateAgentResponse> genForupdateAgent() {
+    private static HttpRequestDef<UpdateAgentRequest, UpdateAgentResponse> genForUpdateAgent() {
         // basic
         HttpRequestDef.Builder<UpdateAgentRequest, UpdateAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAgentRequest.class, UpdateAgentResponse.class)
@@ -2194,25 +1919,21 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAgentRequest::getAgentId, (req, v) -> {
-                req.setAgentId(v);
-            }));
+            f -> f.withMarshaller(UpdateAgentRequest::getAgentId, UpdateAgentRequest::setAgentId));
         builder.<AgentUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgentUpdateReq.class),
-            f -> f.withMarshaller(UpdateAgentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAgentRequest::getBody, UpdateAgentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateBackupRequest, UpdateBackupResponse> updateBackup = genForupdateBackup();
+    public static final HttpRequestDef<UpdateBackupRequest, UpdateBackupResponse> updateBackup = genForUpdateBackup();
 
-    private static HttpRequestDef<UpdateBackupRequest, UpdateBackupResponse> genForupdateBackup() {
+    private static HttpRequestDef<UpdateBackupRequest, UpdateBackupResponse> genForUpdateBackup() {
         // basic
         HttpRequestDef.Builder<UpdateBackupRequest, UpdateBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateBackupRequest.class, UpdateBackupResponse.class)
@@ -2225,16 +1946,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBackupRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(UpdateBackupRequest::getBackupId, UpdateBackupRequest::setBackupId));
         builder.<BackupUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BackupUpdateReq.class),
-            f -> f.withMarshaller(UpdateBackupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBackupRequest::getBody, UpdateBackupRequest::setBody));
 
         // response
 
@@ -2242,9 +1959,9 @@ public class CbrMeta {
     }
 
     public static final HttpRequestDef<UpdateMemberStatusRequest, UpdateMemberStatusResponse> updateMemberStatus =
-        genForupdateMemberStatus();
+        genForUpdateMemberStatus();
 
-    private static HttpRequestDef<UpdateMemberStatusRequest, UpdateMemberStatusResponse> genForupdateMemberStatus() {
+    private static HttpRequestDef<UpdateMemberStatusRequest, UpdateMemberStatusResponse> genForUpdateMemberStatus() {
         // basic
         HttpRequestDef.Builder<UpdateMemberStatusRequest, UpdateMemberStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMemberStatusRequest.class, UpdateMemberStatusResponse.class)
@@ -2257,32 +1974,26 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberStatusRequest::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberStatusRequest::getMemberId, UpdateMemberStatusRequest::setMemberId));
         builder.<String>withRequestField("backup_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberStatusRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberStatusRequest::getBackupId, UpdateMemberStatusRequest::setBackupId));
         builder.<UpdateMember>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateMember.class),
-            f -> f.withMarshaller(UpdateMemberStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberStatusRequest::getBody, UpdateMemberStatusRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateOrderRequest, UpdateOrderResponse> updateOrder = genForupdateOrder();
+    public static final HttpRequestDef<UpdateOrderRequest, UpdateOrderResponse> updateOrder = genForUpdateOrder();
 
-    private static HttpRequestDef<UpdateOrderRequest, UpdateOrderResponse> genForupdateOrder() {
+    private static HttpRequestDef<UpdateOrderRequest, UpdateOrderResponse> genForUpdateOrder() {
         // basic
         HttpRequestDef.Builder<UpdateOrderRequest, UpdateOrderResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateOrderRequest.class, UpdateOrderResponse.class)
@@ -2295,25 +2006,21 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateOrderRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(UpdateOrderRequest::getOrderId, UpdateOrderRequest::setOrderId));
         builder.<CbcUpdate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CbcUpdate.class),
-            f -> f.withMarshaller(UpdateOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateOrderRequest::getBody, UpdateOrderRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicy = genForupdatePolicy();
+    public static final HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicy = genForUpdatePolicy();
 
-    private static HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> genForupdatePolicy() {
+    private static HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> genForUpdatePolicy() {
         // basic
         HttpRequestDef.Builder<UpdatePolicyRequest, UpdatePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePolicyRequest.class, UpdatePolicyResponse.class)
@@ -2326,25 +2033,21 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyRequest::getPolicyId, UpdatePolicyRequest::setPolicyId));
         builder.<PolicyUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PolicyUpdateReq.class),
-            f -> f.withMarshaller(UpdatePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyRequest::getBody, UpdatePolicyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateVaultRequest, UpdateVaultResponse> updateVault = genForupdateVault();
+    public static final HttpRequestDef<UpdateVaultRequest, UpdateVaultResponse> updateVault = genForUpdateVault();
 
-    private static HttpRequestDef<UpdateVaultRequest, UpdateVaultResponse> genForupdateVault() {
+    private static HttpRequestDef<UpdateVaultRequest, UpdateVaultResponse> genForUpdateVault() {
         // basic
         HttpRequestDef.Builder<UpdateVaultRequest, UpdateVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVaultRequest.class, UpdateVaultResponse.class)
@@ -2357,16 +2060,12 @@ public class CbrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVaultRequest::getVaultId, (req, v) -> {
-                req.setVaultId(v);
-            }));
+            f -> f.withMarshaller(UpdateVaultRequest::getVaultId, UpdateVaultRequest::setVaultId));
         builder.<VaultUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VaultUpdateReq.class),
-            f -> f.withMarshaller(UpdateVaultRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVaultRequest::getBody, UpdateVaultRequest::setBody));
 
         // response
 

@@ -205,9 +205,9 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CceMeta {
 
-    public static final HttpRequestDef<AddNodeRequest, AddNodeResponse> addNode = genForaddNode();
+    public static final HttpRequestDef<AddNodeRequest, AddNodeResponse> addNode = genForAddNode();
 
-    private static HttpRequestDef<AddNodeRequest, AddNodeResponse> genForaddNode() {
+    private static HttpRequestDef<AddNodeRequest, AddNodeResponse> genForAddNode() {
         // basic
         HttpRequestDef.Builder<AddNodeRequest, AddNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddNodeRequest.class, AddNodeResponse.class)
@@ -220,25 +220,21 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddNodeRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(AddNodeRequest::getClusterId, AddNodeRequest::setClusterId));
         builder.<AddNodeList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddNodeList.class),
-            f -> f.withMarshaller(AddNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddNodeRequest::getBody, AddNodeRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AwakeClusterRequest, AwakeClusterResponse> awakeCluster = genForawakeCluster();
+    public static final HttpRequestDef<AwakeClusterRequest, AwakeClusterResponse> awakeCluster = genForAwakeCluster();
 
-    private static HttpRequestDef<AwakeClusterRequest, AwakeClusterResponse> genForawakeCluster() {
+    private static HttpRequestDef<AwakeClusterRequest, AwakeClusterResponse> genForAwakeCluster() {
         // basic
         HttpRequestDef.Builder<AwakeClusterRequest, AwakeClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AwakeClusterRequest.class, AwakeClusterResponse.class)
@@ -251,9 +247,7 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AwakeClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(AwakeClusterRequest::getClusterId, AwakeClusterRequest::setClusterId));
 
         // response
 
@@ -261,9 +255,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> batchCreateClusterTags =
-        genForbatchCreateClusterTags();
+        genForBatchCreateClusterTags();
 
-    private static HttpRequestDef<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> genForbatchCreateClusterTags() {
+    private static HttpRequestDef<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> genForBatchCreateClusterTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateClusterTagsRequest.class, BatchCreateClusterTagsResponse.class)
@@ -276,16 +270,13 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateClusterTagsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateClusterTagsRequest::getClusterId,
+                BatchCreateClusterTagsRequest::setClusterId));
         builder.<BatchCreateClusterTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateClusterTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateClusterTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateClusterTagsRequest::getBody, BatchCreateClusterTagsRequest::setBody));
 
         // response
 
@@ -293,9 +284,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> batchDeleteClusterTags =
-        genForbatchDeleteClusterTags();
+        genForBatchDeleteClusterTags();
 
-    private static HttpRequestDef<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> genForbatchDeleteClusterTags() {
+    private static HttpRequestDef<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> genForBatchDeleteClusterTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteClusterTagsRequest.class, BatchDeleteClusterTagsResponse.class)
@@ -308,16 +299,13 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getClusterId,
+                BatchDeleteClusterTagsRequest::setClusterId));
         builder.<BatchDeleteClusterTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteClusterTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getBody, BatchDeleteClusterTagsRequest::setBody));
 
         // response
 
@@ -325,9 +313,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse> continueUpgradeClusterTask =
-        genForcontinueUpgradeClusterTask();
+        genForContinueUpgradeClusterTask();
 
-    private static HttpRequestDef<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse> genForcontinueUpgradeClusterTask() {
+    private static HttpRequestDef<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse> genForContinueUpgradeClusterTask() {
         // basic
         HttpRequestDef.Builder<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse> builder =
             HttpRequestDef
@@ -343,9 +331,8 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ContinueUpgradeClusterTaskRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ContinueUpgradeClusterTaskRequest::getClusterId,
+                ContinueUpgradeClusterTaskRequest::setClusterId));
 
         // response
 
@@ -353,9 +340,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreateAddonInstanceRequest, CreateAddonInstanceResponse> createAddonInstance =
-        genForcreateAddonInstance();
+        genForCreateAddonInstance();
 
-    private static HttpRequestDef<CreateAddonInstanceRequest, CreateAddonInstanceResponse> genForcreateAddonInstance() {
+    private static HttpRequestDef<CreateAddonInstanceRequest, CreateAddonInstanceResponse> genForCreateAddonInstance() {
         // basic
         HttpRequestDef.Builder<CreateAddonInstanceRequest, CreateAddonInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAddonInstanceRequest.class, CreateAddonInstanceResponse.class)
@@ -368,9 +355,7 @@ public class CceMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceRequest.class),
-            f -> f.withMarshaller(CreateAddonInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAddonInstanceRequest::getBody, CreateAddonInstanceRequest::setBody));
 
         // response
 
@@ -378,9 +363,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreateCloudPersistentVolumeClaimsRequest, CreateCloudPersistentVolumeClaimsResponse> createCloudPersistentVolumeClaims =
-        genForcreateCloudPersistentVolumeClaims();
+        genForCreateCloudPersistentVolumeClaims();
 
-    private static HttpRequestDef<CreateCloudPersistentVolumeClaimsRequest, CreateCloudPersistentVolumeClaimsResponse> genForcreateCloudPersistentVolumeClaims() {
+    private static HttpRequestDef<CreateCloudPersistentVolumeClaimsRequest, CreateCloudPersistentVolumeClaimsResponse> genForCreateCloudPersistentVolumeClaims() {
         // basic
         HttpRequestDef.Builder<CreateCloudPersistentVolumeClaimsRequest, CreateCloudPersistentVolumeClaimsResponse> builder =
             HttpRequestDef
@@ -396,23 +381,20 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCloudPersistentVolumeClaimsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(CreateCloudPersistentVolumeClaimsRequest::getNamespace,
+                CreateCloudPersistentVolumeClaimsRequest::setNamespace));
         builder.<String>withRequestField("X-Cluster-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCloudPersistentVolumeClaimsRequest::getXClusterID, (req, v) -> {
-                req.setXClusterID(v);
-            }));
+            f -> f.withMarshaller(CreateCloudPersistentVolumeClaimsRequest::getXClusterID,
+                CreateCloudPersistentVolumeClaimsRequest::setXClusterID));
         builder.<PersistentVolumeClaim>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PersistentVolumeClaim.class),
-            f -> f.withMarshaller(CreateCloudPersistentVolumeClaimsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCloudPersistentVolumeClaimsRequest::getBody,
+                CreateCloudPersistentVolumeClaimsRequest::setBody));
 
         // response
 
@@ -420,9 +402,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster =
-        genForcreateCluster();
+        genForCreateCluster();
 
-    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForcreateCluster() {
+    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForCreateCluster() {
         // basic
         HttpRequestDef.Builder<CreateClusterRequest, CreateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClusterRequest.class, CreateClusterResponse.class)
@@ -435,9 +417,7 @@ public class CceMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Cluster.class),
-            f -> f.withMarshaller(CreateClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateClusterRequest::getBody, CreateClusterRequest::setBody));
 
         // response
 
@@ -445,9 +425,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse> createClusterMasterSnapshot =
-        genForcreateClusterMasterSnapshot();
+        genForCreateClusterMasterSnapshot();
 
-    private static HttpRequestDef<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse> genForcreateClusterMasterSnapshot() {
+    private static HttpRequestDef<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse> genForCreateClusterMasterSnapshot() {
         // basic
         HttpRequestDef.Builder<CreateClusterMasterSnapshotRequest, CreateClusterMasterSnapshotResponse> builder =
             HttpRequestDef
@@ -463,9 +443,8 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateClusterMasterSnapshotRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateClusterMasterSnapshotRequest::getClusterId,
+                CreateClusterMasterSnapshotRequest::setClusterId));
 
         // response
 
@@ -473,9 +452,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreateKubernetesClusterCertRequest, CreateKubernetesClusterCertResponse> createKubernetesClusterCert =
-        genForcreateKubernetesClusterCert();
+        genForCreateKubernetesClusterCert();
 
-    private static HttpRequestDef<CreateKubernetesClusterCertRequest, CreateKubernetesClusterCertResponse> genForcreateKubernetesClusterCert() {
+    private static HttpRequestDef<CreateKubernetesClusterCertRequest, CreateKubernetesClusterCertResponse> genForCreateKubernetesClusterCert() {
         // basic
         HttpRequestDef.Builder<CreateKubernetesClusterCertRequest, CreateKubernetesClusterCertResponse> builder =
             HttpRequestDef
@@ -491,16 +470,14 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateKubernetesClusterCertRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateKubernetesClusterCertRequest::getClusterId,
+                CreateKubernetesClusterCertRequest::setClusterId));
         builder.<CertDuration>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CertDuration.class),
-            f -> f.withMarshaller(CreateKubernetesClusterCertRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateKubernetesClusterCertRequest::getBody,
+                CreateKubernetesClusterCertRequest::setBody));
 
         // response
 
@@ -513,9 +490,9 @@ public class CceMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateNodeRequest, CreateNodeResponse> createNode = genForcreateNode();
+    public static final HttpRequestDef<CreateNodeRequest, CreateNodeResponse> createNode = genForCreateNode();
 
-    private static HttpRequestDef<CreateNodeRequest, CreateNodeResponse> genForcreateNode() {
+    private static HttpRequestDef<CreateNodeRequest, CreateNodeResponse> genForCreateNode() {
         // basic
         HttpRequestDef.Builder<CreateNodeRequest, CreateNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNodeRequest.class, CreateNodeResponse.class)
@@ -528,23 +505,17 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNodeRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateNodeRequest::getClusterId, CreateNodeRequest::setClusterId));
         builder.<CreateNodeRequest.NodepoolScaleUpEnum>withRequestField("nodepoolScaleUp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateNodeRequest.NodepoolScaleUpEnum.class),
-            f -> f.withMarshaller(CreateNodeRequest::getNodepoolScaleUp, (req, v) -> {
-                req.setNodepoolScaleUp(v);
-            }));
+            f -> f.withMarshaller(CreateNodeRequest::getNodepoolScaleUp, CreateNodeRequest::setNodepoolScaleUp));
         builder.<NodeCreateRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NodeCreateRequest.class),
-            f -> f.withMarshaller(CreateNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNodeRequest::getBody, CreateNodeRequest::setBody));
 
         // response
 
@@ -552,9 +523,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreateNodePoolRequest, CreateNodePoolResponse> createNodePool =
-        genForcreateNodePool();
+        genForCreateNodePool();
 
-    private static HttpRequestDef<CreateNodePoolRequest, CreateNodePoolResponse> genForcreateNodePool() {
+    private static HttpRequestDef<CreateNodePoolRequest, CreateNodePoolResponse> genForCreateNodePool() {
         // basic
         HttpRequestDef.Builder<CreateNodePoolRequest, CreateNodePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNodePoolRequest.class, CreateNodePoolResponse.class)
@@ -567,16 +538,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNodePoolRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateNodePoolRequest::getClusterId, CreateNodePoolRequest::setClusterId));
         builder.<NodePool>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NodePool.class),
-            f -> f.withMarshaller(CreateNodePoolRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNodePoolRequest::getBody, CreateNodePoolRequest::setBody));
 
         // response
 
@@ -584,9 +551,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> createPartition =
-        genForcreatePartition();
+        genForCreatePartition();
 
-    private static HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> genForcreatePartition() {
+    private static HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> genForCreatePartition() {
         // basic
         HttpRequestDef.Builder<CreatePartitionRequest, CreatePartitionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePartitionRequest.class, CreatePartitionResponse.class)
@@ -599,16 +566,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePartitionRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreatePartitionRequest::getClusterId, CreatePartitionRequest::setClusterId));
         builder.<PartitionReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PartitionReqBody.class),
-            f -> f.withMarshaller(CreatePartitionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePartitionRequest::getBody, CreatePartitionRequest::setBody));
 
         // response
 
@@ -616,9 +579,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreatePostCheckRequest, CreatePostCheckResponse> createPostCheck =
-        genForcreatePostCheck();
+        genForCreatePostCheck();
 
-    private static HttpRequestDef<CreatePostCheckRequest, CreatePostCheckResponse> genForcreatePostCheck() {
+    private static HttpRequestDef<CreatePostCheckRequest, CreatePostCheckResponse> genForCreatePostCheck() {
         // basic
         HttpRequestDef.Builder<CreatePostCheckRequest, CreatePostCheckResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePostCheckRequest.class, CreatePostCheckResponse.class)
@@ -631,16 +594,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePostCheckRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreatePostCheckRequest::getClusterId, CreatePostCheckRequest::setClusterId));
         builder.<PostcheckClusterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostcheckClusterRequestBody.class),
-            f -> f.withMarshaller(CreatePostCheckRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePostCheckRequest::getBody, CreatePostCheckRequest::setBody));
 
         // response
 
@@ -648,9 +607,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreatePreCheckRequest, CreatePreCheckResponse> createPreCheck =
-        genForcreatePreCheck();
+        genForCreatePreCheck();
 
-    private static HttpRequestDef<CreatePreCheckRequest, CreatePreCheckResponse> genForcreatePreCheck() {
+    private static HttpRequestDef<CreatePreCheckRequest, CreatePreCheckResponse> genForCreatePreCheck() {
         // basic
         HttpRequestDef.Builder<CreatePreCheckRequest, CreatePreCheckResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePreCheckRequest.class, CreatePreCheckResponse.class)
@@ -663,16 +622,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePreCheckRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreatePreCheckRequest::getClusterId, CreatePreCheckRequest::setClusterId));
         builder.<PrecheckClusterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PrecheckClusterRequestBody.class),
-            f -> f.withMarshaller(CreatePreCheckRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePreCheckRequest::getBody, CreatePreCheckRequest::setBody));
 
         // response
 
@@ -680,9 +635,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreateReleaseRequest, CreateReleaseResponse> createRelease =
-        genForcreateRelease();
+        genForCreateRelease();
 
-    private static HttpRequestDef<CreateReleaseRequest, CreateReleaseResponse> genForcreateRelease() {
+    private static HttpRequestDef<CreateReleaseRequest, CreateReleaseResponse> genForCreateRelease() {
         // basic
         HttpRequestDef.Builder<CreateReleaseRequest, CreateReleaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateReleaseRequest.class, CreateReleaseResponse.class)
@@ -695,16 +650,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateReleaseRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateReleaseRequest::getClusterId, CreateReleaseRequest::setClusterId));
         builder.<CreateReleaseReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateReleaseReqBody.class),
-            f -> f.withMarshaller(CreateReleaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateReleaseRequest::getBody, CreateReleaseRequest::setBody));
 
         // response
 
@@ -712,9 +663,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse> createUpgradeWorkFlow =
-        genForcreateUpgradeWorkFlow();
+        genForCreateUpgradeWorkFlow();
 
-    private static HttpRequestDef<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse> genForcreateUpgradeWorkFlow() {
+    private static HttpRequestDef<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse> genForCreateUpgradeWorkFlow() {
         // basic
         HttpRequestDef.Builder<CreateUpgradeWorkFlowRequest, CreateUpgradeWorkFlowResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateUpgradeWorkFlowRequest.class, CreateUpgradeWorkFlowResponse.class)
@@ -727,16 +678,13 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateUpgradeWorkFlowRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateUpgradeWorkFlowRequest::getClusterId,
+                CreateUpgradeWorkFlowRequest::setClusterId));
         builder.<CreateUpgradeWorkFlowRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateUpgradeWorkFlowRequestBody.class),
-            f -> f.withMarshaller(CreateUpgradeWorkFlowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateUpgradeWorkFlowRequest::getBody, CreateUpgradeWorkFlowRequest::setBody));
 
         // response
 
@@ -744,9 +692,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse> deleteAddonInstance =
-        genFordeleteAddonInstance();
+        genForDeleteAddonInstance();
 
-    private static HttpRequestDef<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse> genFordeleteAddonInstance() {
+    private static HttpRequestDef<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse> genForDeleteAddonInstance() {
         // basic
         HttpRequestDef.Builder<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteAddonInstanceRequest.class, DeleteAddonInstanceResponse.class)
@@ -759,32 +707,26 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAddonInstanceRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteAddonInstanceRequest::getId, DeleteAddonInstanceRequest::setId));
         builder.<String>withRequestField("cluster_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAddonInstanceRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteAddonInstanceRequest::getClusterId, DeleteAddonInstanceRequest::setClusterId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAddonInstanceResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteAddonInstanceResponse::getBody, DeleteAddonInstanceResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteChartRequest, DeleteChartResponse> deleteChart = genFordeleteChart();
+    public static final HttpRequestDef<DeleteChartRequest, DeleteChartResponse> deleteChart = genForDeleteChart();
 
-    private static HttpRequestDef<DeleteChartRequest, DeleteChartResponse> genFordeleteChart() {
+    private static HttpRequestDef<DeleteChartRequest, DeleteChartResponse> genForDeleteChart() {
         // basic
         HttpRequestDef.Builder<DeleteChartRequest, DeleteChartResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteChartRequest.class, DeleteChartResponse.class)
@@ -797,26 +739,22 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteChartRequest::getChartId, (req, v) -> {
-                req.setChartId(v);
-            }));
+            f -> f.withMarshaller(DeleteChartRequest::getChartId, DeleteChartRequest::setChartId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteChartResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteChartResponse::getBody, DeleteChartResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteCloudPersistentVolumeClaimsRequest, DeleteCloudPersistentVolumeClaimsResponse> deleteCloudPersistentVolumeClaims =
-        genFordeleteCloudPersistentVolumeClaims();
+        genForDeleteCloudPersistentVolumeClaims();
 
-    private static HttpRequestDef<DeleteCloudPersistentVolumeClaimsRequest, DeleteCloudPersistentVolumeClaimsResponse> genFordeleteCloudPersistentVolumeClaims() {
+    private static HttpRequestDef<DeleteCloudPersistentVolumeClaimsRequest, DeleteCloudPersistentVolumeClaimsResponse> genForDeleteCloudPersistentVolumeClaims() {
         // basic
         HttpRequestDef.Builder<DeleteCloudPersistentVolumeClaimsRequest, DeleteCloudPersistentVolumeClaimsResponse> builder =
             HttpRequestDef
@@ -832,37 +770,32 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getName,
+                DeleteCloudPersistentVolumeClaimsRequest::setName));
         builder.<String>withRequestField("namespace",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getNamespace,
+                DeleteCloudPersistentVolumeClaimsRequest::setNamespace));
         builder.<String>withRequestField("deleteVolume",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getDeleteVolume, (req, v) -> {
-                req.setDeleteVolume(v);
-            }));
+            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getDeleteVolume,
+                DeleteCloudPersistentVolumeClaimsRequest::setDeleteVolume));
         builder.<String>withRequestField("storageType",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getStorageType, (req, v) -> {
-                req.setStorageType(v);
-            }));
+            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getStorageType,
+                DeleteCloudPersistentVolumeClaimsRequest::setStorageType));
         builder.<String>withRequestField("X-Cluster-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getXClusterID, (req, v) -> {
-                req.setXClusterID(v);
-            }));
+            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getXClusterID,
+                DeleteCloudPersistentVolumeClaimsRequest::setXClusterID));
 
         // response
 
@@ -870,9 +803,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> deleteCluster =
-        genFordeleteCluster();
+        genForDeleteCluster();
 
-    private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genFordeleteCluster() {
+    private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genForDeleteCluster() {
         // basic
         HttpRequestDef.Builder<DeleteClusterRequest, DeleteClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteClusterRequest.class, DeleteClusterResponse.class)
@@ -885,88 +818,68 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getClusterId, DeleteClusterRequest::setClusterId));
         builder.<DeleteClusterRequest.DeleteEfsEnum>withRequestField("delete_efs",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.DeleteEfsEnum.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getDeleteEfs, (req, v) -> {
-                req.setDeleteEfs(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getDeleteEfs, DeleteClusterRequest::setDeleteEfs));
         builder.<DeleteClusterRequest.DeleteEniEnum>withRequestField("delete_eni",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.DeleteEniEnum.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getDeleteEni, (req, v) -> {
-                req.setDeleteEni(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getDeleteEni, DeleteClusterRequest::setDeleteEni));
         builder.<DeleteClusterRequest.DeleteEvsEnum>withRequestField("delete_evs",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.DeleteEvsEnum.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getDeleteEvs, (req, v) -> {
-                req.setDeleteEvs(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getDeleteEvs, DeleteClusterRequest::setDeleteEvs));
         builder.<DeleteClusterRequest.DeleteNetEnum>withRequestField("delete_net",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.DeleteNetEnum.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getDeleteNet, (req, v) -> {
-                req.setDeleteNet(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getDeleteNet, DeleteClusterRequest::setDeleteNet));
         builder.<DeleteClusterRequest.DeleteObsEnum>withRequestField("delete_obs",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.DeleteObsEnum.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getDeleteObs, (req, v) -> {
-                req.setDeleteObs(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getDeleteObs, DeleteClusterRequest::setDeleteObs));
         builder.<DeleteClusterRequest.DeleteSfsEnum>withRequestField("delete_sfs",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.DeleteSfsEnum.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getDeleteSfs, (req, v) -> {
-                req.setDeleteSfs(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getDeleteSfs, DeleteClusterRequest::setDeleteSfs));
         builder.<DeleteClusterRequest.DeleteSfs30Enum>withRequestField("delete_sfs30",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.DeleteSfs30Enum.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getDeleteSfs30, (req, v) -> {
-                req.setDeleteSfs30(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getDeleteSfs30, DeleteClusterRequest::setDeleteSfs30));
         builder.<DeleteClusterRequest.TobedeletedEnum>withRequestField("tobedeleted",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.TobedeletedEnum.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getTobedeleted, (req, v) -> {
-                req.setTobedeleted(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getTobedeleted, DeleteClusterRequest::setTobedeleted));
         builder.<DeleteClusterRequest.OndemandNodePolicyEnum>withRequestField("ondemand_node_policy",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.OndemandNodePolicyEnum.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getOndemandNodePolicy, (req, v) -> {
-                req.setOndemandNodePolicy(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getOndemandNodePolicy,
+                DeleteClusterRequest::setOndemandNodePolicy));
         builder.<DeleteClusterRequest.PeriodicNodePolicyEnum>withRequestField("periodic_node_policy",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.PeriodicNodePolicyEnum.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getPeriodicNodePolicy, (req, v) -> {
-                req.setPeriodicNodePolicy(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getPeriodicNodePolicy,
+                DeleteClusterRequest::setPeriodicNodePolicy));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteNodeRequest, DeleteNodeResponse> deleteNode = genFordeleteNode();
+    public static final HttpRequestDef<DeleteNodeRequest, DeleteNodeResponse> deleteNode = genForDeleteNode();
 
-    private static HttpRequestDef<DeleteNodeRequest, DeleteNodeResponse> genFordeleteNode() {
+    private static HttpRequestDef<DeleteNodeRequest, DeleteNodeResponse> genForDeleteNode() {
         // basic
         HttpRequestDef.Builder<DeleteNodeRequest, DeleteNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNodeRequest.class, DeleteNodeResponse.class)
@@ -979,23 +892,17 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNodeRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteNodeRequest::getClusterId, DeleteNodeRequest::setClusterId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteNodeRequest::getNodeId, DeleteNodeRequest::setNodeId));
         builder.<DeleteNodeRequest.NodepoolScaleDownEnum>withRequestField("nodepoolScaleDown",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteNodeRequest.NodepoolScaleDownEnum.class),
-            f -> f.withMarshaller(DeleteNodeRequest::getNodepoolScaleDown, (req, v) -> {
-                req.setNodepoolScaleDown(v);
-            }));
+            f -> f.withMarshaller(DeleteNodeRequest::getNodepoolScaleDown, DeleteNodeRequest::setNodepoolScaleDown));
 
         // response
 
@@ -1003,9 +910,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<DeleteNodePoolRequest, DeleteNodePoolResponse> deleteNodePool =
-        genFordeleteNodePool();
+        genForDeleteNodePool();
 
-    private static HttpRequestDef<DeleteNodePoolRequest, DeleteNodePoolResponse> genFordeleteNodePool() {
+    private static HttpRequestDef<DeleteNodePoolRequest, DeleteNodePoolResponse> genForDeleteNodePool() {
         // basic
         HttpRequestDef.Builder<DeleteNodePoolRequest, DeleteNodePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNodePoolRequest.class, DeleteNodePoolResponse.class)
@@ -1018,16 +925,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNodePoolRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteNodePoolRequest::getClusterId, DeleteNodePoolRequest::setClusterId));
         builder.<String>withRequestField("nodepool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNodePoolRequest::getNodepoolId, (req, v) -> {
-                req.setNodepoolId(v);
-            }));
+            f -> f.withMarshaller(DeleteNodePoolRequest::getNodepoolId, DeleteNodePoolRequest::setNodepoolId));
 
         // response
 
@@ -1035,9 +938,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<DeleteReleaseRequest, DeleteReleaseResponse> deleteRelease =
-        genFordeleteRelease();
+        genForDeleteRelease();
 
-    private static HttpRequestDef<DeleteReleaseRequest, DeleteReleaseResponse> genFordeleteRelease() {
+    private static HttpRequestDef<DeleteReleaseRequest, DeleteReleaseResponse> genForDeleteRelease() {
         // basic
         HttpRequestDef.Builder<DeleteReleaseRequest, DeleteReleaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteReleaseRequest.class, DeleteReleaseResponse.class)
@@ -1050,40 +953,32 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteReleaseRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(DeleteReleaseRequest::getName, DeleteReleaseRequest::setName));
         builder.<String>withRequestField("namespace",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteReleaseRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteReleaseRequest::getNamespace, DeleteReleaseRequest::setNamespace));
         builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteReleaseRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteReleaseRequest::getClusterId, DeleteReleaseRequest::setClusterId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteReleaseResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteReleaseResponse::getBody, DeleteReleaseResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DownloadChartRequest, DownloadChartResponse> downloadChart =
-        genFordownloadChart();
+        genForDownloadChart();
 
-    private static HttpRequestDef<DownloadChartRequest, DownloadChartResponse> genFordownloadChart() {
+    private static HttpRequestDef<DownloadChartRequest, DownloadChartResponse> genForDownloadChart() {
         // basic
         HttpRequestDef.Builder<DownloadChartRequest, DownloadChartResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadChartRequest.class, DownloadChartResponse.class)
@@ -1096,9 +991,7 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadChartRequest::getChartId, (req, v) -> {
-                req.setChartId(v);
-            }));
+            f -> f.withMarshaller(DownloadChartRequest::getChartId, DownloadChartRequest::setChartId));
 
         // response
 
@@ -1106,9 +999,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<HibernateClusterRequest, HibernateClusterResponse> hibernateCluster =
-        genForhibernateCluster();
+        genForHibernateCluster();
 
-    private static HttpRequestDef<HibernateClusterRequest, HibernateClusterResponse> genForhibernateCluster() {
+    private static HttpRequestDef<HibernateClusterRequest, HibernateClusterResponse> genForHibernateCluster() {
         // basic
         HttpRequestDef.Builder<HibernateClusterRequest, HibernateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, HibernateClusterRequest.class, HibernateClusterResponse.class)
@@ -1121,9 +1014,7 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(HibernateClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(HibernateClusterRequest::getClusterId, HibernateClusterRequest::setClusterId));
 
         // response
 
@@ -1131,9 +1022,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ListAddonInstancesRequest, ListAddonInstancesResponse> listAddonInstances =
-        genForlistAddonInstances();
+        genForListAddonInstances();
 
-    private static HttpRequestDef<ListAddonInstancesRequest, ListAddonInstancesResponse> genForlistAddonInstances() {
+    private static HttpRequestDef<ListAddonInstancesRequest, ListAddonInstancesResponse> genForListAddonInstances() {
         // basic
         HttpRequestDef.Builder<ListAddonInstancesRequest, ListAddonInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAddonInstancesRequest.class, ListAddonInstancesResponse.class)
@@ -1146,9 +1037,7 @@ public class CceMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddonInstancesRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListAddonInstancesRequest::getClusterId, ListAddonInstancesRequest::setClusterId));
 
         // response
 
@@ -1156,9 +1045,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ListAddonTemplatesRequest, ListAddonTemplatesResponse> listAddonTemplates =
-        genForlistAddonTemplates();
+        genForListAddonTemplates();
 
-    private static HttpRequestDef<ListAddonTemplatesRequest, ListAddonTemplatesResponse> genForlistAddonTemplates() {
+    private static HttpRequestDef<ListAddonTemplatesRequest, ListAddonTemplatesResponse> genForListAddonTemplates() {
         // basic
         HttpRequestDef.Builder<ListAddonTemplatesRequest, ListAddonTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAddonTemplatesRequest.class, ListAddonTemplatesResponse.class)
@@ -1171,18 +1060,17 @@ public class CceMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddonTemplatesRequest::getAddonTemplateName, (req, v) -> {
-                req.setAddonTemplateName(v);
-            }));
+            f -> f.withMarshaller(ListAddonTemplatesRequest::getAddonTemplateName,
+                ListAddonTemplatesRequest::setAddonTemplateName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListChartsRequest, ListChartsResponse> listCharts = genForlistCharts();
+    public static final HttpRequestDef<ListChartsRequest, ListChartsResponse> listCharts = genForListCharts();
 
-    private static HttpRequestDef<ListChartsRequest, ListChartsResponse> genForlistCharts() {
+    private static HttpRequestDef<ListChartsRequest, ListChartsResponse> genForListCharts() {
         // basic
         HttpRequestDef.Builder<ListChartsRequest, ListChartsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListChartsRequest.class, ListChartsResponse.class)
@@ -1197,17 +1085,16 @@ public class CceMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListChartsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ChartResp.class));
+            f -> f.withMarshaller(ListChartsResponse::getBody, ListChartsResponse::setBody)
+                .withInnerContainerType(ChartResp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse> listClusterMasterSnapshotTasks =
-        genForlistClusterMasterSnapshotTasks();
+        genForListClusterMasterSnapshotTasks();
 
-    private static HttpRequestDef<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse> genForlistClusterMasterSnapshotTasks() {
+    private static HttpRequestDef<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse> genForListClusterMasterSnapshotTasks() {
         // basic
         HttpRequestDef.Builder<ListClusterMasterSnapshotTasksRequest, ListClusterMasterSnapshotTasksResponse> builder =
             HttpRequestDef
@@ -1223,9 +1110,8 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClusterMasterSnapshotTasksRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListClusterMasterSnapshotTasksRequest::getClusterId,
+                ListClusterMasterSnapshotTasksRequest::setClusterId));
 
         // response
 
@@ -1233,9 +1119,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse> listClusterUpgradeFeatureGates =
-        genForlistClusterUpgradeFeatureGates();
+        genForListClusterUpgradeFeatureGates();
 
-    private static HttpRequestDef<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse> genForlistClusterUpgradeFeatureGates() {
+    private static HttpRequestDef<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse> genForListClusterUpgradeFeatureGates() {
         // basic
         HttpRequestDef.Builder<ListClusterUpgradeFeatureGatesRequest, ListClusterUpgradeFeatureGatesResponse> builder =
             HttpRequestDef
@@ -1254,9 +1140,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse> listClusterUpgradePaths =
-        genForlistClusterUpgradePaths();
+        genForListClusterUpgradePaths();
 
-    private static HttpRequestDef<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse> genForlistClusterUpgradePaths() {
+    private static HttpRequestDef<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse> genForListClusterUpgradePaths() {
         // basic
         HttpRequestDef.Builder<ListClusterUpgradePathsRequest, ListClusterUpgradePathsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListClusterUpgradePathsRequest.class, ListClusterUpgradePathsResponse.class)
@@ -1271,9 +1157,9 @@ public class CceMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForlistClusters();
+    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForListClusters();
 
-    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForlistClusters() {
+    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForListClusters() {
         // basic
         HttpRequestDef.Builder<ListClustersRequest, ListClustersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClustersRequest.class, ListClustersResponse.class)
@@ -1286,30 +1172,22 @@ public class CceMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClustersRequest::getDetail, (req, v) -> {
-                req.setDetail(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getDetail, ListClustersRequest::setDetail));
         builder.<ListClustersRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListClustersRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListClustersRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getStatus, ListClustersRequest::setStatus));
         builder.<ListClustersRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListClustersRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListClustersRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getType, ListClustersRequest::setType));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClustersRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getVersion, ListClustersRequest::setVersion));
 
         // response
 
@@ -1317,9 +1195,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ListNodePoolsRequest, ListNodePoolsResponse> listNodePools =
-        genForlistNodePools();
+        genForListNodePools();
 
-    private static HttpRequestDef<ListNodePoolsRequest, ListNodePoolsResponse> genForlistNodePools() {
+    private static HttpRequestDef<ListNodePoolsRequest, ListNodePoolsResponse> genForListNodePools() {
         // basic
         HttpRequestDef.Builder<ListNodePoolsRequest, ListNodePoolsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNodePoolsRequest.class, ListNodePoolsResponse.class)
@@ -1332,25 +1210,22 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNodePoolsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListNodePoolsRequest::getClusterId, ListNodePoolsRequest::setClusterId));
         builder.<String>withRequestField("showDefaultNodePool",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNodePoolsRequest::getShowDefaultNodePool, (req, v) -> {
-                req.setShowDefaultNodePool(v);
-            }));
+            f -> f.withMarshaller(ListNodePoolsRequest::getShowDefaultNodePool,
+                ListNodePoolsRequest::setShowDefaultNodePool));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNodesRequest, ListNodesResponse> listNodes = genForlistNodes();
+    public static final HttpRequestDef<ListNodesRequest, ListNodesResponse> listNodes = genForListNodes();
 
-    private static HttpRequestDef<ListNodesRequest, ListNodesResponse> genForlistNodes() {
+    private static HttpRequestDef<ListNodesRequest, ListNodesResponse> genForListNodes() {
         // basic
         HttpRequestDef.Builder<ListNodesRequest, ListNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNodesRequest.class, ListNodesResponse.class)
@@ -1363,9 +1238,7 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNodesRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListNodesRequest::getClusterId, ListNodesRequest::setClusterId));
 
         // response
 
@@ -1373,9 +1246,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> listPartitions =
-        genForlistPartitions();
+        genForListPartitions();
 
-    private static HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> genForlistPartitions() {
+    private static HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> genForListPartitions() {
         // basic
         HttpRequestDef.Builder<ListPartitionsRequest, ListPartitionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPartitionsRequest.class, ListPartitionsResponse.class)
@@ -1388,9 +1261,7 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartitionsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListPartitionsRequest::getClusterId, ListPartitionsRequest::setClusterId));
 
         // response
 
@@ -1398,9 +1269,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ListPreCheckTasksRequest, ListPreCheckTasksResponse> listPreCheckTasks =
-        genForlistPreCheckTasks();
+        genForListPreCheckTasks();
 
-    private static HttpRequestDef<ListPreCheckTasksRequest, ListPreCheckTasksResponse> genForlistPreCheckTasks() {
+    private static HttpRequestDef<ListPreCheckTasksRequest, ListPreCheckTasksResponse> genForListPreCheckTasks() {
         // basic
         HttpRequestDef.Builder<ListPreCheckTasksRequest, ListPreCheckTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPreCheckTasksRequest.class, ListPreCheckTasksResponse.class)
@@ -1413,18 +1284,16 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPreCheckTasksRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListPreCheckTasksRequest::getClusterId, ListPreCheckTasksRequest::setClusterId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListReleasesRequest, ListReleasesResponse> listReleases = genForlistReleases();
+    public static final HttpRequestDef<ListReleasesRequest, ListReleasesResponse> listReleases = genForListReleases();
 
-    private static HttpRequestDef<ListReleasesRequest, ListReleasesResponse> genForlistReleases() {
+    private static HttpRequestDef<ListReleasesRequest, ListReleasesResponse> genForListReleases() {
         // basic
         HttpRequestDef.Builder<ListReleasesRequest, ListReleasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListReleasesRequest.class, ListReleasesResponse.class)
@@ -1437,40 +1306,33 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReleasesRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListReleasesRequest::getClusterId, ListReleasesRequest::setClusterId));
         builder.<String>withRequestField("chart_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReleasesRequest::getChartId, (req, v) -> {
-                req.setChartId(v);
-            }));
+            f -> f.withMarshaller(ListReleasesRequest::getChartId, ListReleasesRequest::setChartId));
         builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReleasesRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListReleasesRequest::getNamespace, ListReleasesRequest::setNamespace));
 
         // response
         builder.<List<ReleaseResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListReleasesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ReleaseResp.class));
+            f -> f.withMarshaller(ListReleasesResponse::getBody, ListReleasesResponse::setBody)
+                .withInnerContainerType(ReleaseResp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse> listUpgradeClusterTasks =
-        genForlistUpgradeClusterTasks();
+        genForListUpgradeClusterTasks();
 
-    private static HttpRequestDef<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse> genForlistUpgradeClusterTasks() {
+    private static HttpRequestDef<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse> genForListUpgradeClusterTasks() {
         // basic
         HttpRequestDef.Builder<ListUpgradeClusterTasksRequest, ListUpgradeClusterTasksResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListUpgradeClusterTasksRequest.class, ListUpgradeClusterTasksResponse.class)
@@ -1483,9 +1345,8 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpgradeClusterTasksRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListUpgradeClusterTasksRequest::getClusterId,
+                ListUpgradeClusterTasksRequest::setClusterId));
 
         // response
 
@@ -1493,9 +1354,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse> listUpgradeWorkFlows =
-        genForlistUpgradeWorkFlows();
+        genForListUpgradeWorkFlows();
 
-    private static HttpRequestDef<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse> genForlistUpgradeWorkFlows() {
+    private static HttpRequestDef<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse> genForListUpgradeWorkFlows() {
         // basic
         HttpRequestDef.Builder<ListUpgradeWorkFlowsRequest, ListUpgradeWorkFlowsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListUpgradeWorkFlowsRequest.class, ListUpgradeWorkFlowsResponse.class)
@@ -1508,18 +1369,17 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUpgradeWorkFlowsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListUpgradeWorkFlowsRequest::getClusterId,
+                ListUpgradeWorkFlowsRequest::setClusterId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<MigrateNodeRequest, MigrateNodeResponse> migrateNode = genFormigrateNode();
+    public static final HttpRequestDef<MigrateNodeRequest, MigrateNodeResponse> migrateNode = genForMigrateNode();
 
-    private static HttpRequestDef<MigrateNodeRequest, MigrateNodeResponse> genFormigrateNode() {
+    private static HttpRequestDef<MigrateNodeRequest, MigrateNodeResponse> genForMigrateNode() {
         // basic
         HttpRequestDef.Builder<MigrateNodeRequest, MigrateNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, MigrateNodeRequest.class, MigrateNodeResponse.class)
@@ -1533,23 +1393,17 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MigrateNodeRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(MigrateNodeRequest::getClusterId, MigrateNodeRequest::setClusterId));
         builder.<String>withRequestField("target_cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MigrateNodeRequest::getTargetClusterId, (req, v) -> {
-                req.setTargetClusterId(v);
-            }));
+            f -> f.withMarshaller(MigrateNodeRequest::getTargetClusterId, MigrateNodeRequest::setTargetClusterId));
         builder.<MigrateNodesTask>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MigrateNodesTask.class),
-            f -> f.withMarshaller(MigrateNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MigrateNodeRequest::getBody, MigrateNodeRequest::setBody));
 
         // response
 
@@ -1557,9 +1411,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse> pauseUpgradeClusterTask =
-        genForpauseUpgradeClusterTask();
+        genForPauseUpgradeClusterTask();
 
-    private static HttpRequestDef<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse> genForpauseUpgradeClusterTask() {
+    private static HttpRequestDef<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse> genForPauseUpgradeClusterTask() {
         // basic
         HttpRequestDef.Builder<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, PauseUpgradeClusterTaskRequest.class, PauseUpgradeClusterTaskResponse.class)
@@ -1572,18 +1426,17 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PauseUpgradeClusterTaskRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(PauseUpgradeClusterTaskRequest::getClusterId,
+                PauseUpgradeClusterTaskRequest::setClusterId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RemoveNodeRequest, RemoveNodeResponse> removeNode = genForremoveNode();
+    public static final HttpRequestDef<RemoveNodeRequest, RemoveNodeResponse> removeNode = genForRemoveNode();
 
-    private static HttpRequestDef<RemoveNodeRequest, RemoveNodeResponse> genForremoveNode() {
+    private static HttpRequestDef<RemoveNodeRequest, RemoveNodeResponse> genForRemoveNode() {
         // basic
         HttpRequestDef.Builder<RemoveNodeRequest, RemoveNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RemoveNodeRequest.class, RemoveNodeResponse.class)
@@ -1596,25 +1449,21 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveNodeRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(RemoveNodeRequest::getClusterId, RemoveNodeRequest::setClusterId));
         builder.<RemoveNodesTask>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemoveNodesTask.class),
-            f -> f.withMarshaller(RemoveNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RemoveNodeRequest::getBody, RemoveNodeRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetNodeRequest, ResetNodeResponse> resetNode = genForresetNode();
+    public static final HttpRequestDef<ResetNodeRequest, ResetNodeResponse> resetNode = genForResetNode();
 
-    private static HttpRequestDef<ResetNodeRequest, ResetNodeResponse> genForresetNode() {
+    private static HttpRequestDef<ResetNodeRequest, ResetNodeResponse> genForResetNode() {
         // basic
         HttpRequestDef.Builder<ResetNodeRequest, ResetNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetNodeRequest.class, ResetNodeResponse.class)
@@ -1627,16 +1476,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetNodeRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ResetNodeRequest::getClusterId, ResetNodeRequest::setClusterId));
         builder.<ResetNodeList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetNodeList.class),
-            f -> f.withMarshaller(ResetNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetNodeRequest::getBody, ResetNodeRequest::setBody));
 
         // response
 
@@ -1644,9 +1489,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ResizeClusterRequest, ResizeClusterResponse> resizeCluster =
-        genForresizeCluster();
+        genForResizeCluster();
 
-    private static HttpRequestDef<ResizeClusterRequest, ResizeClusterResponse> genForresizeCluster() {
+    private static HttpRequestDef<ResizeClusterRequest, ResizeClusterResponse> genForResizeCluster() {
         // basic
         HttpRequestDef.Builder<ResizeClusterRequest, ResizeClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeClusterRequest.class, ResizeClusterResponse.class)
@@ -1659,16 +1504,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ResizeClusterRequest::getClusterId, ResizeClusterRequest::setClusterId));
         builder.<ResizeClusterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeClusterRequestBody.class),
-            f -> f.withMarshaller(ResizeClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeClusterRequest::getBody, ResizeClusterRequest::setBody));
 
         // response
 
@@ -1676,9 +1517,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> retryUpgradeClusterTask =
-        genForretryUpgradeClusterTask();
+        genForRetryUpgradeClusterTask();
 
-    private static HttpRequestDef<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> genForretryUpgradeClusterTask() {
+    private static HttpRequestDef<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> genForRetryUpgradeClusterTask() {
         // basic
         HttpRequestDef.Builder<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RetryUpgradeClusterTaskRequest.class, RetryUpgradeClusterTaskResponse.class)
@@ -1691,9 +1532,8 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryUpgradeClusterTaskRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(RetryUpgradeClusterTaskRequest::getClusterId,
+                RetryUpgradeClusterTaskRequest::setClusterId));
 
         // response
 
@@ -1701,9 +1541,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> rollbackAddonInstance =
-        genForrollbackAddonInstance();
+        genForRollbackAddonInstance();
 
-    private static HttpRequestDef<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> genForrollbackAddonInstance() {
+    private static HttpRequestDef<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> genForRollbackAddonInstance() {
         // basic
         HttpRequestDef.Builder<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RollbackAddonInstanceRequest.class, RollbackAddonInstanceResponse.class)
@@ -1716,16 +1556,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RollbackAddonInstanceRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(RollbackAddonInstanceRequest::getId, RollbackAddonInstanceRequest::setId));
         builder.<AddonInstanceRollbackRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddonInstanceRollbackRequest.class),
-            f -> f.withMarshaller(RollbackAddonInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RollbackAddonInstanceRequest::getBody, RollbackAddonInstanceRequest::setBody));
 
         // response
 
@@ -1733,9 +1569,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowAddonInstanceRequest, ShowAddonInstanceResponse> showAddonInstance =
-        genForshowAddonInstance();
+        genForShowAddonInstance();
 
-    private static HttpRequestDef<ShowAddonInstanceRequest, ShowAddonInstanceResponse> genForshowAddonInstance() {
+    private static HttpRequestDef<ShowAddonInstanceRequest, ShowAddonInstanceResponse> genForShowAddonInstance() {
         // basic
         HttpRequestDef.Builder<ShowAddonInstanceRequest, ShowAddonInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAddonInstanceRequest.class, ShowAddonInstanceResponse.class)
@@ -1748,25 +1584,21 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAddonInstanceRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowAddonInstanceRequest::getId, ShowAddonInstanceRequest::setId));
         builder.<String>withRequestField("cluster_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAddonInstanceRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowAddonInstanceRequest::getClusterId, ShowAddonInstanceRequest::setClusterId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowChartRequest, ShowChartResponse> showChart = genForshowChart();
+    public static final HttpRequestDef<ShowChartRequest, ShowChartResponse> showChart = genForShowChart();
 
-    private static HttpRequestDef<ShowChartRequest, ShowChartResponse> genForshowChart() {
+    private static HttpRequestDef<ShowChartRequest, ShowChartResponse> genForShowChart() {
         // basic
         HttpRequestDef.Builder<ShowChartRequest, ShowChartResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowChartRequest.class, ShowChartResponse.class)
@@ -1779,9 +1611,7 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowChartRequest::getChartId, (req, v) -> {
-                req.setChartId(v);
-            }));
+            f -> f.withMarshaller(ShowChartRequest::getChartId, ShowChartRequest::setChartId));
 
         // response
 
@@ -1789,9 +1619,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowChartValuesRequest, ShowChartValuesResponse> showChartValues =
-        genForshowChartValues();
+        genForShowChartValues();
 
-    private static HttpRequestDef<ShowChartValuesRequest, ShowChartValuesResponse> genForshowChartValues() {
+    private static HttpRequestDef<ShowChartValuesRequest, ShowChartValuesResponse> genForShowChartValues() {
         // basic
         HttpRequestDef.Builder<ShowChartValuesRequest, ShowChartValuesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowChartValuesRequest.class, ShowChartValuesResponse.class)
@@ -1804,18 +1634,16 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowChartValuesRequest::getChartId, (req, v) -> {
-                req.setChartId(v);
-            }));
+            f -> f.withMarshaller(ShowChartValuesRequest::getChartId, ShowChartValuesRequest::setChartId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowClusterRequest, ShowClusterResponse> showCluster = genForshowCluster();
+    public static final HttpRequestDef<ShowClusterRequest, ShowClusterResponse> showCluster = genForShowCluster();
 
-    private static HttpRequestDef<ShowClusterRequest, ShowClusterResponse> genForshowCluster() {
+    private static HttpRequestDef<ShowClusterRequest, ShowClusterResponse> genForShowCluster() {
         // basic
         HttpRequestDef.Builder<ShowClusterRequest, ShowClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterRequest.class, ShowClusterResponse.class)
@@ -1828,16 +1656,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterRequest::getClusterId, ShowClusterRequest::setClusterId));
         builder.<String>withRequestField("detail",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterRequest::getDetail, (req, v) -> {
-                req.setDetail(v);
-            }));
+            f -> f.withMarshaller(ShowClusterRequest::getDetail, ShowClusterRequest::setDetail));
 
         // response
 
@@ -1845,9 +1669,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowClusterConfigRequest, ShowClusterConfigResponse> showClusterConfig =
-        genForshowClusterConfig();
+        genForShowClusterConfig();
 
-    private static HttpRequestDef<ShowClusterConfigRequest, ShowClusterConfigResponse> genForshowClusterConfig() {
+    private static HttpRequestDef<ShowClusterConfigRequest, ShowClusterConfigResponse> genForShowClusterConfig() {
         // basic
         HttpRequestDef.Builder<ShowClusterConfigRequest, ShowClusterConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterConfigRequest.class, ShowClusterConfigResponse.class)
@@ -1860,16 +1684,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterConfigRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterConfigRequest::getClusterId, ShowClusterConfigRequest::setClusterId));
         builder.<ShowClusterConfigRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowClusterConfigRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowClusterConfigRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowClusterConfigRequest::getType, ShowClusterConfigRequest::setType));
 
         // response
 
@@ -1877,9 +1697,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse> showClusterConfigurationDetails =
-        genForshowClusterConfigurationDetails();
+        genForShowClusterConfigurationDetails();
 
-    private static HttpRequestDef<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse> genForshowClusterConfigurationDetails() {
+    private static HttpRequestDef<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse> genForShowClusterConfigurationDetails() {
         // basic
         HttpRequestDef.Builder<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse> builder =
             HttpRequestDef
@@ -1895,9 +1715,8 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterConfigurationDetailsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterConfigurationDetailsRequest::getClusterId,
+                ShowClusterConfigurationDetailsRequest::setClusterId));
 
         // response
 
@@ -1905,9 +1724,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> showClusterEndpoints =
-        genForshowClusterEndpoints();
+        genForShowClusterEndpoints();
 
-    private static HttpRequestDef<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> genForshowClusterEndpoints() {
+    private static HttpRequestDef<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> genForShowClusterEndpoints() {
         // basic
         HttpRequestDef.Builder<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowClusterEndpointsRequest.class, ShowClusterEndpointsResponse.class)
@@ -1920,9 +1739,8 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterEndpointsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterEndpointsRequest::getClusterId,
+                ShowClusterEndpointsRequest::setClusterId));
 
         // response
 
@@ -1930,9 +1748,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> showClusterUpgradeInfo =
-        genForshowClusterUpgradeInfo();
+        genForShowClusterUpgradeInfo();
 
-    private static HttpRequestDef<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> genForshowClusterUpgradeInfo() {
+    private static HttpRequestDef<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> genForShowClusterUpgradeInfo() {
         // basic
         HttpRequestDef.Builder<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowClusterUpgradeInfoRequest.class, ShowClusterUpgradeInfoResponse.class)
@@ -1945,18 +1763,17 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterUpgradeInfoRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterUpgradeInfoRequest::getClusterId,
+                ShowClusterUpgradeInfoRequest::setClusterId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
+    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForShowJob();
 
-    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
+    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForShowJob() {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
@@ -1969,18 +1786,16 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobRequest::getJobId, ShowJobRequest::setJobId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNodeRequest, ShowNodeResponse> showNode = genForshowNode();
+    public static final HttpRequestDef<ShowNodeRequest, ShowNodeResponse> showNode = genForShowNode();
 
-    private static HttpRequestDef<ShowNodeRequest, ShowNodeResponse> genForshowNode() {
+    private static HttpRequestDef<ShowNodeRequest, ShowNodeResponse> genForShowNode() {
         // basic
         HttpRequestDef.Builder<ShowNodeRequest, ShowNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNodeRequest.class, ShowNodeResponse.class)
@@ -1993,25 +1808,21 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodeRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowNodeRequest::getClusterId, ShowNodeRequest::setClusterId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowNodeRequest::getNodeId, ShowNodeRequest::setNodeId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNodePoolRequest, ShowNodePoolResponse> showNodePool = genForshowNodePool();
+    public static final HttpRequestDef<ShowNodePoolRequest, ShowNodePoolResponse> showNodePool = genForShowNodePool();
 
-    private static HttpRequestDef<ShowNodePoolRequest, ShowNodePoolResponse> genForshowNodePool() {
+    private static HttpRequestDef<ShowNodePoolRequest, ShowNodePoolResponse> genForShowNodePool() {
         // basic
         HttpRequestDef.Builder<ShowNodePoolRequest, ShowNodePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNodePoolRequest.class, ShowNodePoolResponse.class)
@@ -2024,16 +1835,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodePoolRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowNodePoolRequest::getClusterId, ShowNodePoolRequest::setClusterId));
         builder.<String>withRequestField("nodepool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodePoolRequest::getNodepoolId, (req, v) -> {
-                req.setNodepoolId(v);
-            }));
+            f -> f.withMarshaller(ShowNodePoolRequest::getNodepoolId, ShowNodePoolRequest::setNodepoolId));
 
         // response
 
@@ -2041,9 +1848,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse> showNodePoolConfigurations =
-        genForshowNodePoolConfigurations();
+        genForShowNodePoolConfigurations();
 
-    private static HttpRequestDef<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse> genForshowNodePoolConfigurations() {
+    private static HttpRequestDef<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse> genForShowNodePoolConfigurations() {
         // basic
         HttpRequestDef.Builder<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse> builder =
             HttpRequestDef
@@ -2059,16 +1866,14 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodePoolConfigurationsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowNodePoolConfigurationsRequest::getClusterId,
+                ShowNodePoolConfigurationsRequest::setClusterId));
         builder.<String>withRequestField("nodepool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodePoolConfigurationsRequest::getNodepoolId, (req, v) -> {
-                req.setNodepoolId(v);
-            }));
+            f -> f.withMarshaller(ShowNodePoolConfigurationsRequest::getNodepoolId,
+                ShowNodePoolConfigurationsRequest::setNodepoolId));
 
         // response
 
@@ -2076,9 +1881,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowPartitionRequest, ShowPartitionResponse> showPartition =
-        genForshowPartition();
+        genForShowPartition();
 
-    private static HttpRequestDef<ShowPartitionRequest, ShowPartitionResponse> genForshowPartition() {
+    private static HttpRequestDef<ShowPartitionRequest, ShowPartitionResponse> genForShowPartition() {
         // basic
         HttpRequestDef.Builder<ShowPartitionRequest, ShowPartitionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPartitionRequest.class, ShowPartitionResponse.class)
@@ -2091,25 +1896,21 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionRequest::getClusterId, ShowPartitionRequest::setClusterId));
         builder.<String>withRequestField("partition_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionRequest::getPartitionName, (req, v) -> {
-                req.setPartitionName(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionRequest::getPartitionName, ShowPartitionRequest::setPartitionName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPreCheckRequest, ShowPreCheckResponse> showPreCheck = genForshowPreCheck();
+    public static final HttpRequestDef<ShowPreCheckRequest, ShowPreCheckResponse> showPreCheck = genForShowPreCheck();
 
-    private static HttpRequestDef<ShowPreCheckRequest, ShowPreCheckResponse> genForshowPreCheck() {
+    private static HttpRequestDef<ShowPreCheckRequest, ShowPreCheckResponse> genForShowPreCheck() {
         // basic
         HttpRequestDef.Builder<ShowPreCheckRequest, ShowPreCheckResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPreCheckRequest.class, ShowPreCheckResponse.class)
@@ -2122,25 +1923,21 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPreCheckRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowPreCheckRequest::getClusterId, ShowPreCheckRequest::setClusterId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPreCheckRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowPreCheckRequest::getTaskId, ShowPreCheckRequest::setTaskId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForShowQuotas();
 
-    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForShowQuotas() {
         // basic
         HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
@@ -2155,9 +1952,9 @@ public class CceMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowReleaseRequest, ShowReleaseResponse> showRelease = genForshowRelease();
+    public static final HttpRequestDef<ShowReleaseRequest, ShowReleaseResponse> showRelease = genForShowRelease();
 
-    private static HttpRequestDef<ShowReleaseRequest, ShowReleaseResponse> genForshowRelease() {
+    private static HttpRequestDef<ShowReleaseRequest, ShowReleaseResponse> genForShowRelease() {
         // basic
         HttpRequestDef.Builder<ShowReleaseRequest, ShowReleaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowReleaseRequest.class, ShowReleaseResponse.class)
@@ -2170,23 +1967,17 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReleaseRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowReleaseRequest::getName, ShowReleaseRequest::setName));
         builder.<String>withRequestField("namespace",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReleaseRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ShowReleaseRequest::getNamespace, ShowReleaseRequest::setNamespace));
         builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReleaseRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowReleaseRequest::getClusterId, ShowReleaseRequest::setClusterId));
 
         // response
 
@@ -2194,9 +1985,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse> showReleaseHistory =
-        genForshowReleaseHistory();
+        genForShowReleaseHistory();
 
-    private static HttpRequestDef<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse> genForshowReleaseHistory() {
+    private static HttpRequestDef<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse> genForShowReleaseHistory() {
         // basic
         HttpRequestDef.Builder<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowReleaseHistoryRequest.class, ShowReleaseHistoryResponse.class)
@@ -2209,40 +2000,33 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReleaseHistoryRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowReleaseHistoryRequest::getName, ShowReleaseHistoryRequest::setName));
         builder.<String>withRequestField("namespace",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReleaseHistoryRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ShowReleaseHistoryRequest::getNamespace, ShowReleaseHistoryRequest::setNamespace));
         builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReleaseHistoryRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowReleaseHistoryRequest::getClusterId, ShowReleaseHistoryRequest::setClusterId));
 
         // response
         builder.<List<ReleaseResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowReleaseHistoryResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ReleaseResp.class));
+            f -> f.withMarshaller(ShowReleaseHistoryResponse::getBody, ShowReleaseHistoryResponse::setBody)
+                .withInnerContainerType(ReleaseResp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse> showUpgradeClusterTask =
-        genForshowUpgradeClusterTask();
+        genForShowUpgradeClusterTask();
 
-    private static HttpRequestDef<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse> genForshowUpgradeClusterTask() {
+    private static HttpRequestDef<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse> genForShowUpgradeClusterTask() {
         // basic
         HttpRequestDef.Builder<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowUpgradeClusterTaskRequest.class, ShowUpgradeClusterTaskResponse.class)
@@ -2255,16 +2039,13 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpgradeClusterTaskRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowUpgradeClusterTaskRequest::getClusterId,
+                ShowUpgradeClusterTaskRequest::setClusterId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpgradeClusterTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowUpgradeClusterTaskRequest::getTaskId, ShowUpgradeClusterTaskRequest::setTaskId));
 
         // response
 
@@ -2272,9 +2053,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse> showUpgradeWorkFlow =
-        genForshowUpgradeWorkFlow();
+        genForShowUpgradeWorkFlow();
 
-    private static HttpRequestDef<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse> genForshowUpgradeWorkFlow() {
+    private static HttpRequestDef<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse> genForShowUpgradeWorkFlow() {
         // basic
         HttpRequestDef.Builder<ShowUpgradeWorkFlowRequest, ShowUpgradeWorkFlowResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowUpgradeWorkFlowRequest.class, ShowUpgradeWorkFlowResponse.class)
@@ -2288,16 +2069,13 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpgradeWorkFlowRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowUpgradeWorkFlowRequest::getClusterId, ShowUpgradeWorkFlowRequest::setClusterId));
         builder.<String>withRequestField("upgrade_workflow_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpgradeWorkFlowRequest::getUpgradeWorkflowId, (req, v) -> {
-                req.setUpgradeWorkflowId(v);
-            }));
+            f -> f.withMarshaller(ShowUpgradeWorkFlowRequest::getUpgradeWorkflowId,
+                ShowUpgradeWorkFlowRequest::setUpgradeWorkflowId));
 
         // response
 
@@ -2305,9 +2083,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> showUserChartsQuotas =
-        genForshowUserChartsQuotas();
+        genForShowUserChartsQuotas();
 
-    private static HttpRequestDef<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> genForshowUserChartsQuotas() {
+    private static HttpRequestDef<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> genForShowUserChartsQuotas() {
         // basic
         HttpRequestDef.Builder<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowUserChartsQuotasRequest.class, ShowUserChartsQuotasResponse.class)
@@ -2323,9 +2101,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse> updateAddonInstance =
-        genForupdateAddonInstance();
+        genForUpdateAddonInstance();
 
-    private static HttpRequestDef<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse> genForupdateAddonInstance() {
+    private static HttpRequestDef<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse> genForUpdateAddonInstance() {
         // basic
         HttpRequestDef.Builder<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAddonInstanceRequest.class, UpdateAddonInstanceResponse.class)
@@ -2338,25 +2116,21 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAddonInstanceRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateAddonInstanceRequest::getId, UpdateAddonInstanceRequest::setId));
         builder.<InstanceRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceRequest.class),
-            f -> f.withMarshaller(UpdateAddonInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAddonInstanceRequest::getBody, UpdateAddonInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateChartRequest, UpdateChartResponse> updateChart = genForupdateChart();
+    public static final HttpRequestDef<UpdateChartRequest, UpdateChartResponse> updateChart = genForUpdateChart();
 
-    private static HttpRequestDef<UpdateChartRequest, UpdateChartResponse> genForupdateChart() {
+    private static HttpRequestDef<UpdateChartRequest, UpdateChartResponse> genForUpdateChart() {
         // basic
         HttpRequestDef.Builder<UpdateChartRequest, UpdateChartResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateChartRequest.class, UpdateChartResponse.class)
@@ -2369,16 +2143,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateChartRequest::getChartId, (req, v) -> {
-                req.setChartId(v);
-            }));
+            f -> f.withMarshaller(UpdateChartRequest::getChartId, UpdateChartRequest::setChartId));
         builder.<UpdateChartRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateChartRequestBody.class),
-            f -> f.withMarshaller(UpdateChartRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateChartRequest::getBody, UpdateChartRequest::setBody));
 
         // response
 
@@ -2386,9 +2156,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<UpdateClusterRequest, UpdateClusterResponse> updateCluster =
-        genForupdateCluster();
+        genForUpdateCluster();
 
-    private static HttpRequestDef<UpdateClusterRequest, UpdateClusterResponse> genForupdateCluster() {
+    private static HttpRequestDef<UpdateClusterRequest, UpdateClusterResponse> genForUpdateCluster() {
         // basic
         HttpRequestDef.Builder<UpdateClusterRequest, UpdateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateClusterRequest.class, UpdateClusterResponse.class)
@@ -2401,16 +2171,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterRequest::getClusterId, UpdateClusterRequest::setClusterId));
         builder.<ClusterInformation>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ClusterInformation.class),
-            f -> f.withMarshaller(UpdateClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterRequest::getBody, UpdateClusterRequest::setBody));
 
         // response
 
@@ -2418,9 +2184,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<UpdateClusterEipRequest, UpdateClusterEipResponse> updateClusterEip =
-        genForupdateClusterEip();
+        genForUpdateClusterEip();
 
-    private static HttpRequestDef<UpdateClusterEipRequest, UpdateClusterEipResponse> genForupdateClusterEip() {
+    private static HttpRequestDef<UpdateClusterEipRequest, UpdateClusterEipResponse> genForUpdateClusterEip() {
         // basic
         HttpRequestDef.Builder<UpdateClusterEipRequest, UpdateClusterEipResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateClusterEipRequest.class, UpdateClusterEipResponse.class)
@@ -2433,16 +2199,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateClusterEipRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterEipRequest::getClusterId, UpdateClusterEipRequest::setClusterId));
         builder.<MasterEIPRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MasterEIPRequest.class),
-            f -> f.withMarshaller(UpdateClusterEipRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterEipRequest::getBody, UpdateClusterEipRequest::setBody));
 
         // response
 
@@ -2450,9 +2212,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse> updateClusterLogConfig =
-        genForupdateClusterLogConfig();
+        genForUpdateClusterLogConfig();
 
-    private static HttpRequestDef<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse> genForupdateClusterLogConfig() {
+    private static HttpRequestDef<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse> genForUpdateClusterLogConfig() {
         // basic
         HttpRequestDef.Builder<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateClusterLogConfigRequest.class, UpdateClusterLogConfigResponse.class)
@@ -2465,25 +2227,22 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateClusterLogConfigRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterLogConfigRequest::getClusterId,
+                UpdateClusterLogConfigRequest::setClusterId));
         builder.<ClusterLogConfig>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ClusterLogConfig.class),
-            f -> f.withMarshaller(UpdateClusterLogConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterLogConfigRequest::getBody, UpdateClusterLogConfigRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateNodeRequest, UpdateNodeResponse> updateNode = genForupdateNode();
+    public static final HttpRequestDef<UpdateNodeRequest, UpdateNodeResponse> updateNode = genForUpdateNode();
 
-    private static HttpRequestDef<UpdateNodeRequest, UpdateNodeResponse> genForupdateNode() {
+    private static HttpRequestDef<UpdateNodeRequest, UpdateNodeResponse> genForUpdateNode() {
         // basic
         HttpRequestDef.Builder<UpdateNodeRequest, UpdateNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNodeRequest.class, UpdateNodeResponse.class)
@@ -2496,23 +2255,17 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodeRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeRequest::getClusterId, UpdateNodeRequest::setClusterId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeRequest::getNodeId, UpdateNodeRequest::setNodeId));
         builder.<ClusterNodeInformation>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ClusterNodeInformation.class),
-            f -> f.withMarshaller(UpdateNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeRequest::getBody, UpdateNodeRequest::setBody));
 
         // response
 
@@ -2520,9 +2273,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<UpdateNodePoolRequest, UpdateNodePoolResponse> updateNodePool =
-        genForupdateNodePool();
+        genForUpdateNodePool();
 
-    private static HttpRequestDef<UpdateNodePoolRequest, UpdateNodePoolResponse> genForupdateNodePool() {
+    private static HttpRequestDef<UpdateNodePoolRequest, UpdateNodePoolResponse> genForUpdateNodePool() {
         // basic
         HttpRequestDef.Builder<UpdateNodePoolRequest, UpdateNodePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNodePoolRequest.class, UpdateNodePoolResponse.class)
@@ -2535,23 +2288,17 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodePoolRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodePoolRequest::getClusterId, UpdateNodePoolRequest::setClusterId));
         builder.<String>withRequestField("nodepool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodePoolRequest::getNodepoolId, (req, v) -> {
-                req.setNodepoolId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodePoolRequest::getNodepoolId, UpdateNodePoolRequest::setNodepoolId));
         builder.<NodePoolUpdate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NodePoolUpdate.class),
-            f -> f.withMarshaller(UpdateNodePoolRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNodePoolRequest::getBody, UpdateNodePoolRequest::setBody));
 
         // response
 
@@ -2559,9 +2306,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse> updateNodePoolConfiguration =
-        genForupdateNodePoolConfiguration();
+        genForUpdateNodePoolConfiguration();
 
-    private static HttpRequestDef<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse> genForupdateNodePoolConfiguration() {
+    private static HttpRequestDef<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse> genForUpdateNodePoolConfiguration() {
         // basic
         HttpRequestDef.Builder<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse> builder =
             HttpRequestDef
@@ -2577,23 +2324,20 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodePoolConfigurationRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodePoolConfigurationRequest::getClusterId,
+                UpdateNodePoolConfigurationRequest::setClusterId));
         builder.<String>withRequestField("nodepool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodePoolConfigurationRequest::getNodepoolId, (req, v) -> {
-                req.setNodepoolId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodePoolConfigurationRequest::getNodepoolId,
+                UpdateNodePoolConfigurationRequest::setNodepoolId));
         builder.<UpdateClusterConfigurationsBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateClusterConfigurationsBody.class),
-            f -> f.withMarshaller(UpdateNodePoolConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNodePoolConfigurationRequest::getBody,
+                UpdateNodePoolConfigurationRequest::setBody));
 
         // response
 
@@ -2601,9 +2345,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<UpdatePartitionRequest, UpdatePartitionResponse> updatePartition =
-        genForupdatePartition();
+        genForUpdatePartition();
 
-    private static HttpRequestDef<UpdatePartitionRequest, UpdatePartitionResponse> genForupdatePartition() {
+    private static HttpRequestDef<UpdatePartitionRequest, UpdatePartitionResponse> genForUpdatePartition() {
         // basic
         HttpRequestDef.Builder<UpdatePartitionRequest, UpdatePartitionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePartitionRequest.class, UpdatePartitionResponse.class)
@@ -2616,23 +2360,17 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePartitionRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdatePartitionRequest::getClusterId, UpdatePartitionRequest::setClusterId));
         builder.<String>withRequestField("partition_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePartitionRequest::getPartitionName, (req, v) -> {
-                req.setPartitionName(v);
-            }));
+            f -> f.withMarshaller(UpdatePartitionRequest::getPartitionName, UpdatePartitionRequest::setPartitionName));
         builder.<PartitionReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PartitionReqBody.class),
-            f -> f.withMarshaller(UpdatePartitionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePartitionRequest::getBody, UpdatePartitionRequest::setBody));
 
         // response
 
@@ -2640,9 +2378,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<UpdateReleaseRequest, UpdateReleaseResponse> updateRelease =
-        genForupdateRelease();
+        genForUpdateRelease();
 
-    private static HttpRequestDef<UpdateReleaseRequest, UpdateReleaseResponse> genForupdateRelease() {
+    private static HttpRequestDef<UpdateReleaseRequest, UpdateReleaseResponse> genForUpdateRelease() {
         // basic
         HttpRequestDef.Builder<UpdateReleaseRequest, UpdateReleaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateReleaseRequest.class, UpdateReleaseResponse.class)
@@ -2655,30 +2393,22 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReleaseRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(UpdateReleaseRequest::getName, UpdateReleaseRequest::setName));
         builder.<String>withRequestField("namespace",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReleaseRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(UpdateReleaseRequest::getNamespace, UpdateReleaseRequest::setNamespace));
         builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReleaseRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateReleaseRequest::getClusterId, UpdateReleaseRequest::setClusterId));
         builder.<UpdateReleaseReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateReleaseReqBody.class),
-            f -> f.withMarshaller(UpdateReleaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateReleaseRequest::getBody, UpdateReleaseRequest::setBody));
 
         // response
 
@@ -2686,9 +2416,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<UpgradeClusterRequest, UpgradeClusterResponse> upgradeCluster =
-        genForupgradeCluster();
+        genForUpgradeCluster();
 
-    private static HttpRequestDef<UpgradeClusterRequest, UpgradeClusterResponse> genForupgradeCluster() {
+    private static HttpRequestDef<UpgradeClusterRequest, UpgradeClusterResponse> genForUpgradeCluster() {
         // basic
         HttpRequestDef.Builder<UpgradeClusterRequest, UpgradeClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpgradeClusterRequest.class, UpgradeClusterResponse.class)
@@ -2701,16 +2431,12 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpgradeClusterRequest::getClusterId, UpgradeClusterRequest::setClusterId));
         builder.<UpgradeClusterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeClusterRequestBody.class),
-            f -> f.withMarshaller(UpgradeClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpgradeClusterRequest::getBody, UpgradeClusterRequest::setBody));
 
         // response
 
@@ -2718,9 +2444,9 @@ public class CceMeta {
     }
 
     public static final HttpRequestDef<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse> upgradeWorkFlowUpdate =
-        genForupgradeWorkFlowUpdate();
+        genForUpgradeWorkFlowUpdate();
 
-    private static HttpRequestDef<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse> genForupgradeWorkFlowUpdate() {
+    private static HttpRequestDef<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse> genForUpgradeWorkFlowUpdate() {
         // basic
         HttpRequestDef.Builder<UpgradeWorkFlowUpdateRequest, UpgradeWorkFlowUpdateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PATCH, UpgradeWorkFlowUpdateRequest.class, UpgradeWorkFlowUpdateResponse.class)
@@ -2734,32 +2460,28 @@ public class CceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeWorkFlowUpdateRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpgradeWorkFlowUpdateRequest::getClusterId,
+                UpgradeWorkFlowUpdateRequest::setClusterId));
         builder.<String>withRequestField("upgrade_workflow_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeWorkFlowUpdateRequest::getUpgradeWorkflowId, (req, v) -> {
-                req.setUpgradeWorkflowId(v);
-            }));
+            f -> f.withMarshaller(UpgradeWorkFlowUpdateRequest::getUpgradeWorkflowId,
+                UpgradeWorkFlowUpdateRequest::setUpgradeWorkflowId));
         builder.<UpgradeWorkFlowUpdateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeWorkFlowUpdateRequestBody.class),
-            f -> f.withMarshaller(UpgradeWorkFlowUpdateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpgradeWorkFlowUpdateRequest::getBody, UpgradeWorkFlowUpdateRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UploadChartRequest, UploadChartResponse> uploadChart = genForuploadChart();
+    public static final HttpRequestDef<UploadChartRequest, UploadChartResponse> uploadChart = genForUploadChart();
 
-    private static HttpRequestDef<UploadChartRequest, UploadChartResponse> genForuploadChart() {
+    private static HttpRequestDef<UploadChartRequest, UploadChartResponse> genForUploadChart() {
         // basic
         HttpRequestDef.Builder<UploadChartRequest, UploadChartResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadChartRequest.class, UploadChartResponse.class)
@@ -2772,18 +2494,16 @@ public class CceMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadChartRequestBody.class),
-            f -> f.withMarshaller(UploadChartRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadChartRequest::getBody, UploadChartRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForshowVersion();
+    public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForShowVersion();
 
-    private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForshowVersion() {
+    private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForShowVersion() {
         // basic
         HttpRequestDef.Builder<ShowVersionRequest, ShowVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionRequest.class, ShowVersionResponse.class)

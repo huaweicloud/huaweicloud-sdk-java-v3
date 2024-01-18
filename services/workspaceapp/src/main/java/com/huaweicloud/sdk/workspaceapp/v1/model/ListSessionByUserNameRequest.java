@@ -21,7 +21,7 @@ public class ListSessionByUserNameRequest {
     }
 
     /**
-     * 用户名
+     * 用户名。
      * @return userName
      */
     public String getUserName() {

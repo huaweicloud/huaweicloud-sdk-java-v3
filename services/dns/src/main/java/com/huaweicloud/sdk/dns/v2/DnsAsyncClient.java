@@ -140,7 +140,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomLineRequest 请求对象
+     * @param request CreateCustomLineRequest 请求对象
      * @return CompletableFuture<CreateCustomLineResponse>
      */
     public CompletableFuture<CreateCustomLineResponse> createCustomLineAsync(CreateCustomLineRequest request) {
@@ -154,13 +154,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomLineRequest 请求对象
+     * @param request CreateCustomLineRequest 请求对象
      * @return AsyncInvoker<CreateCustomLineRequest, CreateCustomLineResponse>
      */
     public AsyncInvoker<CreateCustomLineRequest, CreateCustomLineResponse> createCustomLineAsyncInvoker(
         CreateCustomLineRequest request) {
-        return new AsyncInvoker<CreateCustomLineRequest, CreateCustomLineResponse>(request, DnsMeta.createCustomLine,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.createCustomLine, hcClient);
     }
 
     /**
@@ -170,7 +169,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLineGroupRequest 请求对象
+     * @param request CreateLineGroupRequest 请求对象
      * @return CompletableFuture<CreateLineGroupResponse>
      */
     public CompletableFuture<CreateLineGroupResponse> createLineGroupAsync(CreateLineGroupRequest request) {
@@ -184,13 +183,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLineGroupRequest 请求对象
+     * @param request CreateLineGroupRequest 请求对象
      * @return AsyncInvoker<CreateLineGroupRequest, CreateLineGroupResponse>
      */
     public AsyncInvoker<CreateLineGroupRequest, CreateLineGroupResponse> createLineGroupAsyncInvoker(
         CreateLineGroupRequest request) {
-        return new AsyncInvoker<CreateLineGroupRequest, CreateLineGroupResponse>(request, DnsMeta.createLineGroup,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.createLineGroup, hcClient);
     }
 
     /**
@@ -200,7 +198,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomLineRequest 请求对象
+     * @param request DeleteCustomLineRequest 请求对象
      * @return CompletableFuture<DeleteCustomLineResponse>
      */
     public CompletableFuture<DeleteCustomLineResponse> deleteCustomLineAsync(DeleteCustomLineRequest request) {
@@ -214,13 +212,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomLineRequest 请求对象
+     * @param request DeleteCustomLineRequest 请求对象
      * @return AsyncInvoker<DeleteCustomLineRequest, DeleteCustomLineResponse>
      */
     public AsyncInvoker<DeleteCustomLineRequest, DeleteCustomLineResponse> deleteCustomLineAsyncInvoker(
         DeleteCustomLineRequest request) {
-        return new AsyncInvoker<DeleteCustomLineRequest, DeleteCustomLineResponse>(request, DnsMeta.deleteCustomLine,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.deleteCustomLine, hcClient);
     }
 
     /**
@@ -230,7 +227,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLineGroupRequest 请求对象
+     * @param request DeleteLineGroupRequest 请求对象
      * @return CompletableFuture<DeleteLineGroupResponse>
      */
     public CompletableFuture<DeleteLineGroupResponse> deleteLineGroupAsync(DeleteLineGroupRequest request) {
@@ -244,13 +241,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLineGroupRequest 请求对象
+     * @param request DeleteLineGroupRequest 请求对象
      * @return AsyncInvoker<DeleteLineGroupRequest, DeleteLineGroupResponse>
      */
     public AsyncInvoker<DeleteLineGroupRequest, DeleteLineGroupResponse> deleteLineGroupAsyncInvoker(
         DeleteLineGroupRequest request) {
-        return new AsyncInvoker<DeleteLineGroupRequest, DeleteLineGroupResponse>(request, DnsMeta.deleteLineGroup,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.deleteLineGroup, hcClient);
     }
 
     /**
@@ -260,7 +256,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return CompletableFuture<ListApiVersionsResponse>
      */
     public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
@@ -274,13 +270,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(
         ListApiVersionsRequest request) {
-        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, DnsMeta.listApiVersions,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -290,7 +285,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomLineRequest 请求对象
+     * @param request ListCustomLineRequest 请求对象
      * @return CompletableFuture<ListCustomLineResponse>
      */
     public CompletableFuture<ListCustomLineResponse> listCustomLineAsync(ListCustomLineRequest request) {
@@ -304,13 +299,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomLineRequest 请求对象
+     * @param request ListCustomLineRequest 请求对象
      * @return AsyncInvoker<ListCustomLineRequest, ListCustomLineResponse>
      */
     public AsyncInvoker<ListCustomLineRequest, ListCustomLineResponse> listCustomLineAsyncInvoker(
         ListCustomLineRequest request) {
-        return new AsyncInvoker<ListCustomLineRequest, ListCustomLineResponse>(request, DnsMeta.listCustomLine,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listCustomLine, hcClient);
     }
 
     /**
@@ -320,7 +314,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLineGroupsRequest 请求对象
+     * @param request ListLineGroupsRequest 请求对象
      * @return CompletableFuture<ListLineGroupsResponse>
      */
     public CompletableFuture<ListLineGroupsResponse> listLineGroupsAsync(ListLineGroupsRequest request) {
@@ -334,13 +328,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLineGroupsRequest 请求对象
+     * @param request ListLineGroupsRequest 请求对象
      * @return AsyncInvoker<ListLineGroupsRequest, ListLineGroupsResponse>
      */
     public AsyncInvoker<ListLineGroupsRequest, ListLineGroupsResponse> listLineGroupsAsyncInvoker(
         ListLineGroupsRequest request) {
-        return new AsyncInvoker<ListLineGroupsRequest, ListLineGroupsResponse>(request, DnsMeta.listLineGroups,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listLineGroups, hcClient);
     }
 
     /**
@@ -350,7 +343,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNameServersRequest 请求对象
+     * @param request ListNameServersRequest 请求对象
      * @return CompletableFuture<ListNameServersResponse>
      */
     public CompletableFuture<ListNameServersResponse> listNameServersAsync(ListNameServersRequest request) {
@@ -364,13 +357,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNameServersRequest 请求对象
+     * @param request ListNameServersRequest 请求对象
      * @return AsyncInvoker<ListNameServersRequest, ListNameServersResponse>
      */
     public AsyncInvoker<ListNameServersRequest, ListNameServersResponse> listNameServersAsyncInvoker(
         ListNameServersRequest request) {
-        return new AsyncInvoker<ListNameServersRequest, ListNameServersResponse>(request, DnsMeta.listNameServers,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listNameServers, hcClient);
     }
 
     /**
@@ -380,7 +372,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiInfoRequest 请求对象
+     * @param request ShowApiInfoRequest 请求对象
      * @return CompletableFuture<ShowApiInfoResponse>
      */
     public CompletableFuture<ShowApiInfoResponse> showApiInfoAsync(ShowApiInfoRequest request) {
@@ -394,11 +386,11 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiInfoRequest 请求对象
+     * @param request ShowApiInfoRequest 请求对象
      * @return AsyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>
      */
     public AsyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfoAsyncInvoker(ShowApiInfoRequest request) {
-        return new AsyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>(request, DnsMeta.showApiInfo, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showApiInfo, hcClient);
     }
 
     /**
@@ -408,7 +400,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainQuotaRequest 请求对象
+     * @param request ShowDomainQuotaRequest 请求对象
      * @return CompletableFuture<ShowDomainQuotaResponse>
      */
     public CompletableFuture<ShowDomainQuotaResponse> showDomainQuotaAsync(ShowDomainQuotaRequest request) {
@@ -422,13 +414,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainQuotaRequest 请求对象
+     * @param request ShowDomainQuotaRequest 请求对象
      * @return AsyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse>
      */
     public AsyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuotaAsyncInvoker(
         ShowDomainQuotaRequest request) {
-        return new AsyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse>(request, DnsMeta.showDomainQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showDomainQuota, hcClient);
     }
 
     /**
@@ -438,7 +429,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLineGroupRequest 请求对象
+     * @param request ShowLineGroupRequest 请求对象
      * @return CompletableFuture<ShowLineGroupResponse>
      */
     public CompletableFuture<ShowLineGroupResponse> showLineGroupAsync(ShowLineGroupRequest request) {
@@ -452,12 +443,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLineGroupRequest 请求对象
+     * @param request ShowLineGroupRequest 请求对象
      * @return AsyncInvoker<ShowLineGroupRequest, ShowLineGroupResponse>
      */
     public AsyncInvoker<ShowLineGroupRequest, ShowLineGroupResponse> showLineGroupAsyncInvoker(
         ShowLineGroupRequest request) {
-        return new AsyncInvoker<ShowLineGroupRequest, ShowLineGroupResponse>(request, DnsMeta.showLineGroup, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showLineGroup, hcClient);
     }
 
     /**
@@ -467,7 +458,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomLineRequest 请求对象
+     * @param request UpdateCustomLineRequest 请求对象
      * @return CompletableFuture<UpdateCustomLineResponse>
      */
     public CompletableFuture<UpdateCustomLineResponse> updateCustomLineAsync(UpdateCustomLineRequest request) {
@@ -481,13 +472,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomLineRequest 请求对象
+     * @param request UpdateCustomLineRequest 请求对象
      * @return AsyncInvoker<UpdateCustomLineRequest, UpdateCustomLineResponse>
      */
     public AsyncInvoker<UpdateCustomLineRequest, UpdateCustomLineResponse> updateCustomLineAsyncInvoker(
         UpdateCustomLineRequest request) {
-        return new AsyncInvoker<UpdateCustomLineRequest, UpdateCustomLineResponse>(request, DnsMeta.updateCustomLine,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.updateCustomLine, hcClient);
     }
 
     /**
@@ -497,7 +487,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLineGroupsRequest 请求对象
+     * @param request UpdateLineGroupsRequest 请求对象
      * @return CompletableFuture<UpdateLineGroupsResponse>
      */
     public CompletableFuture<UpdateLineGroupsResponse> updateLineGroupsAsync(UpdateLineGroupsRequest request) {
@@ -511,13 +501,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLineGroupsRequest 请求对象
+     * @param request UpdateLineGroupsRequest 请求对象
      * @return AsyncInvoker<UpdateLineGroupsRequest, UpdateLineGroupsResponse>
      */
     public AsyncInvoker<UpdateLineGroupsRequest, UpdateLineGroupsResponse> updateLineGroupsAsyncInvoker(
         UpdateLineGroupsRequest request) {
-        return new AsyncInvoker<UpdateLineGroupsRequest, UpdateLineGroupsResponse>(request, DnsMeta.updateLineGroups,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.updateLineGroups, hcClient);
     }
 
     /**
@@ -527,7 +516,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEipRecordSetRequest 请求对象
+     * @param request CreateEipRecordSetRequest 请求对象
      * @return CompletableFuture<CreateEipRecordSetResponse>
      */
     public CompletableFuture<CreateEipRecordSetResponse> createEipRecordSetAsync(CreateEipRecordSetRequest request) {
@@ -541,13 +530,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEipRecordSetRequest 请求对象
+     * @param request CreateEipRecordSetRequest 请求对象
      * @return AsyncInvoker<CreateEipRecordSetRequest, CreateEipRecordSetResponse>
      */
     public AsyncInvoker<CreateEipRecordSetRequest, CreateEipRecordSetResponse> createEipRecordSetAsyncInvoker(
         CreateEipRecordSetRequest request) {
-        return new AsyncInvoker<CreateEipRecordSetRequest, CreateEipRecordSetResponse>(request,
-            DnsMeta.createEipRecordSet, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.createEipRecordSet, hcClient);
     }
 
     /**
@@ -557,7 +545,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPtrRecordsRequest 请求对象
+     * @param request ListPtrRecordsRequest 请求对象
      * @return CompletableFuture<ListPtrRecordsResponse>
      */
     public CompletableFuture<ListPtrRecordsResponse> listPtrRecordsAsync(ListPtrRecordsRequest request) {
@@ -571,13 +559,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPtrRecordsRequest 请求对象
+     * @param request ListPtrRecordsRequest 请求对象
      * @return AsyncInvoker<ListPtrRecordsRequest, ListPtrRecordsResponse>
      */
     public AsyncInvoker<ListPtrRecordsRequest, ListPtrRecordsResponse> listPtrRecordsAsyncInvoker(
         ListPtrRecordsRequest request) {
-        return new AsyncInvoker<ListPtrRecordsRequest, ListPtrRecordsResponse>(request, DnsMeta.listPtrRecords,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listPtrRecords, hcClient);
     }
 
     /**
@@ -587,7 +574,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestorePtrRecordRequest 请求对象
+     * @param request RestorePtrRecordRequest 请求对象
      * @return CompletableFuture<RestorePtrRecordResponse>
      */
     public CompletableFuture<RestorePtrRecordResponse> restorePtrRecordAsync(RestorePtrRecordRequest request) {
@@ -601,13 +588,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestorePtrRecordRequest 请求对象
+     * @param request RestorePtrRecordRequest 请求对象
      * @return AsyncInvoker<RestorePtrRecordRequest, RestorePtrRecordResponse>
      */
     public AsyncInvoker<RestorePtrRecordRequest, RestorePtrRecordResponse> restorePtrRecordAsyncInvoker(
         RestorePtrRecordRequest request) {
-        return new AsyncInvoker<RestorePtrRecordRequest, RestorePtrRecordResponse>(request, DnsMeta.restorePtrRecord,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.restorePtrRecord, hcClient);
     }
 
     /**
@@ -617,7 +603,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPtrRecordSetRequest 请求对象
+     * @param request ShowPtrRecordSetRequest 请求对象
      * @return CompletableFuture<ShowPtrRecordSetResponse>
      */
     public CompletableFuture<ShowPtrRecordSetResponse> showPtrRecordSetAsync(ShowPtrRecordSetRequest request) {
@@ -631,13 +617,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPtrRecordSetRequest 请求对象
+     * @param request ShowPtrRecordSetRequest 请求对象
      * @return AsyncInvoker<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse>
      */
     public AsyncInvoker<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> showPtrRecordSetAsyncInvoker(
         ShowPtrRecordSetRequest request) {
-        return new AsyncInvoker<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse>(request, DnsMeta.showPtrRecordSet,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showPtrRecordSet, hcClient);
     }
 
     /**
@@ -647,7 +632,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePtrRecordRequest 请求对象
+     * @param request UpdatePtrRecordRequest 请求对象
      * @return CompletableFuture<UpdatePtrRecordResponse>
      */
     public CompletableFuture<UpdatePtrRecordResponse> updatePtrRecordAsync(UpdatePtrRecordRequest request) {
@@ -661,13 +646,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePtrRecordRequest 请求对象
+     * @param request UpdatePtrRecordRequest 请求对象
      * @return AsyncInvoker<UpdatePtrRecordRequest, UpdatePtrRecordResponse>
      */
     public AsyncInvoker<UpdatePtrRecordRequest, UpdatePtrRecordResponse> updatePtrRecordAsyncInvoker(
         UpdatePtrRecordRequest request) {
-        return new AsyncInvoker<UpdatePtrRecordRequest, UpdatePtrRecordResponse>(request, DnsMeta.updatePtrRecord,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.updatePtrRecord, hcClient);
     }
 
     /**
@@ -677,7 +661,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateHealthCheckRequest 请求对象
+     * @param request AssociateHealthCheckRequest 请求对象
      * @return CompletableFuture<AssociateHealthCheckResponse>
      */
     public CompletableFuture<AssociateHealthCheckResponse> associateHealthCheckAsync(
@@ -692,13 +676,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateHealthCheckRequest 请求对象
+     * @param request AssociateHealthCheckRequest 请求对象
      * @return AsyncInvoker<AssociateHealthCheckRequest, AssociateHealthCheckResponse>
      */
     public AsyncInvoker<AssociateHealthCheckRequest, AssociateHealthCheckResponse> associateHealthCheckAsyncInvoker(
         AssociateHealthCheckRequest request) {
-        return new AsyncInvoker<AssociateHealthCheckRequest, AssociateHealthCheckResponse>(request,
-            DnsMeta.associateHealthCheck, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.associateHealthCheck, hcClient);
     }
 
     /**
@@ -709,7 +692,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteRecordSetWithLineRequest 请求对象
+     * @param request BatchDeleteRecordSetWithLineRequest 请求对象
      * @return CompletableFuture<BatchDeleteRecordSetWithLineResponse>
      */
     public CompletableFuture<BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLineAsync(
@@ -725,13 +708,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteRecordSetWithLineRequest 请求对象
+     * @param request BatchDeleteRecordSetWithLineRequest 请求对象
      * @return AsyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse>
      */
     public AsyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLineAsyncInvoker(
         BatchDeleteRecordSetWithLineRequest request) {
-        return new AsyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse>(request,
-            DnsMeta.batchDeleteRecordSetWithLine, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.batchDeleteRecordSetWithLine, hcClient);
     }
 
     /**
@@ -742,7 +724,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateRecordSetWithLineRequest 请求对象
+     * @param request BatchUpdateRecordSetWithLineRequest 请求对象
      * @return CompletableFuture<BatchUpdateRecordSetWithLineResponse>
      */
     public CompletableFuture<BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLineAsync(
@@ -758,13 +740,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateRecordSetWithLineRequest 请求对象
+     * @param request BatchUpdateRecordSetWithLineRequest 请求对象
      * @return AsyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse>
      */
     public AsyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLineAsyncInvoker(
         BatchUpdateRecordSetWithLineRequest request) {
-        return new AsyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse>(request,
-            DnsMeta.batchUpdateRecordSetWithLine, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.batchUpdateRecordSetWithLine, hcClient);
     }
 
     /**
@@ -774,7 +755,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordSetRequest 请求对象
+     * @param request CreateRecordSetRequest 请求对象
      * @return CompletableFuture<CreateRecordSetResponse>
      */
     public CompletableFuture<CreateRecordSetResponse> createRecordSetAsync(CreateRecordSetRequest request) {
@@ -788,13 +769,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordSetRequest 请求对象
+     * @param request CreateRecordSetRequest 请求对象
      * @return AsyncInvoker<CreateRecordSetRequest, CreateRecordSetResponse>
      */
     public AsyncInvoker<CreateRecordSetRequest, CreateRecordSetResponse> createRecordSetAsyncInvoker(
         CreateRecordSetRequest request) {
-        return new AsyncInvoker<CreateRecordSetRequest, CreateRecordSetResponse>(request, DnsMeta.createRecordSet,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.createRecordSet, hcClient);
     }
 
     /**
@@ -804,7 +784,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordSetWithBatchLinesRequest 请求对象
+     * @param request CreateRecordSetWithBatchLinesRequest 请求对象
      * @return CompletableFuture<CreateRecordSetWithBatchLinesResponse>
      */
     public CompletableFuture<CreateRecordSetWithBatchLinesResponse> createRecordSetWithBatchLinesAsync(
@@ -819,13 +799,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordSetWithBatchLinesRequest 请求对象
+     * @param request CreateRecordSetWithBatchLinesRequest 请求对象
      * @return AsyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse>
      */
     public AsyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> createRecordSetWithBatchLinesAsyncInvoker(
         CreateRecordSetWithBatchLinesRequest request) {
-        return new AsyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse>(request,
-            DnsMeta.createRecordSetWithBatchLines, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.createRecordSetWithBatchLines, hcClient);
     }
 
     /**
@@ -835,7 +814,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordSetWithLineRequest 请求对象
+     * @param request CreateRecordSetWithLineRequest 请求对象
      * @return CompletableFuture<CreateRecordSetWithLineResponse>
      */
     public CompletableFuture<CreateRecordSetWithLineResponse> createRecordSetWithLineAsync(
@@ -850,13 +829,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecordSetWithLineRequest 请求对象
+     * @param request CreateRecordSetWithLineRequest 请求对象
      * @return AsyncInvoker<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse>
      */
     public AsyncInvoker<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse> createRecordSetWithLineAsyncInvoker(
         CreateRecordSetWithLineRequest request) {
-        return new AsyncInvoker<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse>(request,
-            DnsMeta.createRecordSetWithLine, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.createRecordSetWithLine, hcClient);
     }
 
     /**
@@ -866,7 +844,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordSetRequest 请求对象
+     * @param request DeleteRecordSetRequest 请求对象
      * @return CompletableFuture<DeleteRecordSetResponse>
      */
     public CompletableFuture<DeleteRecordSetResponse> deleteRecordSetAsync(DeleteRecordSetRequest request) {
@@ -880,13 +858,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordSetRequest 请求对象
+     * @param request DeleteRecordSetRequest 请求对象
      * @return AsyncInvoker<DeleteRecordSetRequest, DeleteRecordSetResponse>
      */
     public AsyncInvoker<DeleteRecordSetRequest, DeleteRecordSetResponse> deleteRecordSetAsyncInvoker(
         DeleteRecordSetRequest request) {
-        return new AsyncInvoker<DeleteRecordSetRequest, DeleteRecordSetResponse>(request, DnsMeta.deleteRecordSet,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.deleteRecordSet, hcClient);
     }
 
     /**
@@ -896,7 +873,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordSetsRequest 请求对象
+     * @param request DeleteRecordSetsRequest 请求对象
      * @return CompletableFuture<DeleteRecordSetsResponse>
      */
     public CompletableFuture<DeleteRecordSetsResponse> deleteRecordSetsAsync(DeleteRecordSetsRequest request) {
@@ -910,13 +887,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordSetsRequest 请求对象
+     * @param request DeleteRecordSetsRequest 请求对象
      * @return AsyncInvoker<DeleteRecordSetsRequest, DeleteRecordSetsResponse>
      */
     public AsyncInvoker<DeleteRecordSetsRequest, DeleteRecordSetsResponse> deleteRecordSetsAsyncInvoker(
         DeleteRecordSetsRequest request) {
-        return new AsyncInvoker<DeleteRecordSetsRequest, DeleteRecordSetsResponse>(request, DnsMeta.deleteRecordSets,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.deleteRecordSets, hcClient);
     }
 
     /**
@@ -926,7 +902,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateHealthCheckRequest 请求对象
+     * @param request DisassociateHealthCheckRequest 请求对象
      * @return CompletableFuture<DisassociateHealthCheckResponse>
      */
     public CompletableFuture<DisassociateHealthCheckResponse> disassociateHealthCheckAsync(
@@ -941,13 +917,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateHealthCheckRequest 请求对象
+     * @param request DisassociateHealthCheckRequest 请求对象
      * @return AsyncInvoker<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse>
      */
     public AsyncInvoker<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> disassociateHealthCheckAsyncInvoker(
         DisassociateHealthCheckRequest request) {
-        return new AsyncInvoker<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse>(request,
-            DnsMeta.disassociateHealthCheck, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.disassociateHealthCheck, hcClient);
     }
 
     /**
@@ -957,7 +932,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordSetsRequest 请求对象
+     * @param request ListRecordSetsRequest 请求对象
      * @return CompletableFuture<ListRecordSetsResponse>
      */
     public CompletableFuture<ListRecordSetsResponse> listRecordSetsAsync(ListRecordSetsRequest request) {
@@ -971,13 +946,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordSetsRequest 请求对象
+     * @param request ListRecordSetsRequest 请求对象
      * @return AsyncInvoker<ListRecordSetsRequest, ListRecordSetsResponse>
      */
     public AsyncInvoker<ListRecordSetsRequest, ListRecordSetsResponse> listRecordSetsAsyncInvoker(
         ListRecordSetsRequest request) {
-        return new AsyncInvoker<ListRecordSetsRequest, ListRecordSetsResponse>(request, DnsMeta.listRecordSets,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listRecordSets, hcClient);
     }
 
     /**
@@ -987,7 +961,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordSetsByZoneRequest 请求对象
+     * @param request ListRecordSetsByZoneRequest 请求对象
      * @return CompletableFuture<ListRecordSetsByZoneResponse>
      */
     public CompletableFuture<ListRecordSetsByZoneResponse> listRecordSetsByZoneAsync(
@@ -1002,13 +976,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordSetsByZoneRequest 请求对象
+     * @param request ListRecordSetsByZoneRequest 请求对象
      * @return AsyncInvoker<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse>
      */
     public AsyncInvoker<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse> listRecordSetsByZoneAsyncInvoker(
         ListRecordSetsByZoneRequest request) {
-        return new AsyncInvoker<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse>(request,
-            DnsMeta.listRecordSetsByZone, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listRecordSetsByZone, hcClient);
     }
 
     /**
@@ -1018,7 +991,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordSetsWithLineRequest 请求对象
+     * @param request ListRecordSetsWithLineRequest 请求对象
      * @return CompletableFuture<ListRecordSetsWithLineResponse>
      */
     public CompletableFuture<ListRecordSetsWithLineResponse> listRecordSetsWithLineAsync(
@@ -1033,13 +1006,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordSetsWithLineRequest 请求对象
+     * @param request ListRecordSetsWithLineRequest 请求对象
      * @return AsyncInvoker<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse>
      */
     public AsyncInvoker<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse> listRecordSetsWithLineAsyncInvoker(
         ListRecordSetsWithLineRequest request) {
-        return new AsyncInvoker<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse>(request,
-            DnsMeta.listRecordSetsWithLine, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listRecordSetsWithLine, hcClient);
     }
 
     /**
@@ -1049,7 +1021,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRecordSetsStatusRequest 请求对象
+     * @param request SetRecordSetsStatusRequest 请求对象
      * @return CompletableFuture<SetRecordSetsStatusResponse>
      */
     public CompletableFuture<SetRecordSetsStatusResponse> setRecordSetsStatusAsync(SetRecordSetsStatusRequest request) {
@@ -1063,13 +1035,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRecordSetsStatusRequest 请求对象
+     * @param request SetRecordSetsStatusRequest 请求对象
      * @return AsyncInvoker<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse>
      */
     public AsyncInvoker<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse> setRecordSetsStatusAsyncInvoker(
         SetRecordSetsStatusRequest request) {
-        return new AsyncInvoker<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse>(request,
-            DnsMeta.setRecordSetsStatus, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.setRecordSetsStatus, hcClient);
     }
 
     /**
@@ -1079,7 +1050,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordSetRequest 请求对象
+     * @param request ShowRecordSetRequest 请求对象
      * @return CompletableFuture<ShowRecordSetResponse>
      */
     public CompletableFuture<ShowRecordSetResponse> showRecordSetAsync(ShowRecordSetRequest request) {
@@ -1093,12 +1064,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordSetRequest 请求对象
+     * @param request ShowRecordSetRequest 请求对象
      * @return AsyncInvoker<ShowRecordSetRequest, ShowRecordSetResponse>
      */
     public AsyncInvoker<ShowRecordSetRequest, ShowRecordSetResponse> showRecordSetAsyncInvoker(
         ShowRecordSetRequest request) {
-        return new AsyncInvoker<ShowRecordSetRequest, ShowRecordSetResponse>(request, DnsMeta.showRecordSet, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showRecordSet, hcClient);
     }
 
     /**
@@ -1108,7 +1079,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordSetByZoneRequest 请求对象
+     * @param request ShowRecordSetByZoneRequest 请求对象
      * @return CompletableFuture<ShowRecordSetByZoneResponse>
      */
     public CompletableFuture<ShowRecordSetByZoneResponse> showRecordSetByZoneAsync(ShowRecordSetByZoneRequest request) {
@@ -1122,13 +1093,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordSetByZoneRequest 请求对象
+     * @param request ShowRecordSetByZoneRequest 请求对象
      * @return AsyncInvoker<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse>
      */
     public AsyncInvoker<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse> showRecordSetByZoneAsyncInvoker(
         ShowRecordSetByZoneRequest request) {
-        return new AsyncInvoker<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse>(request,
-            DnsMeta.showRecordSetByZone, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showRecordSetByZone, hcClient);
     }
 
     /**
@@ -1138,7 +1108,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordSetWithLineRequest 请求对象
+     * @param request ShowRecordSetWithLineRequest 请求对象
      * @return CompletableFuture<ShowRecordSetWithLineResponse>
      */
     public CompletableFuture<ShowRecordSetWithLineResponse> showRecordSetWithLineAsync(
@@ -1153,13 +1123,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordSetWithLineRequest 请求对象
+     * @param request ShowRecordSetWithLineRequest 请求对象
      * @return AsyncInvoker<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse>
      */
     public AsyncInvoker<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse> showRecordSetWithLineAsyncInvoker(
         ShowRecordSetWithLineRequest request) {
-        return new AsyncInvoker<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse>(request,
-            DnsMeta.showRecordSetWithLine, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showRecordSetWithLine, hcClient);
     }
 
     /**
@@ -1169,7 +1138,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordSetRequest 请求对象
+     * @param request UpdateRecordSetRequest 请求对象
      * @return CompletableFuture<UpdateRecordSetResponse>
      */
     public CompletableFuture<UpdateRecordSetResponse> updateRecordSetAsync(UpdateRecordSetRequest request) {
@@ -1183,13 +1152,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordSetRequest 请求对象
+     * @param request UpdateRecordSetRequest 请求对象
      * @return AsyncInvoker<UpdateRecordSetRequest, UpdateRecordSetResponse>
      */
     public AsyncInvoker<UpdateRecordSetRequest, UpdateRecordSetResponse> updateRecordSetAsyncInvoker(
         UpdateRecordSetRequest request) {
-        return new AsyncInvoker<UpdateRecordSetRequest, UpdateRecordSetResponse>(request, DnsMeta.updateRecordSet,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.updateRecordSet, hcClient);
     }
 
     /**
@@ -1199,7 +1167,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordSetsRequest 请求对象
+     * @param request UpdateRecordSetsRequest 请求对象
      * @return CompletableFuture<UpdateRecordSetsResponse>
      */
     public CompletableFuture<UpdateRecordSetsResponse> updateRecordSetsAsync(UpdateRecordSetsRequest request) {
@@ -1213,13 +1181,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecordSetsRequest 请求对象
+     * @param request UpdateRecordSetsRequest 请求对象
      * @return AsyncInvoker<UpdateRecordSetsRequest, UpdateRecordSetsResponse>
      */
     public AsyncInvoker<UpdateRecordSetsRequest, UpdateRecordSetsResponse> updateRecordSetsAsyncInvoker(
         UpdateRecordSetsRequest request) {
-        return new AsyncInvoker<UpdateRecordSetsRequest, UpdateRecordSetsResponse>(request, DnsMeta.updateRecordSets,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.updateRecordSets, hcClient);
     }
 
     /**
@@ -1229,7 +1196,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagRequest 请求对象
+     * @param request BatchCreateTagRequest 请求对象
      * @return CompletableFuture<BatchCreateTagResponse>
      */
     public CompletableFuture<BatchCreateTagResponse> batchCreateTagAsync(BatchCreateTagRequest request) {
@@ -1243,13 +1210,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagRequest 请求对象
+     * @param request BatchCreateTagRequest 请求对象
      * @return AsyncInvoker<BatchCreateTagRequest, BatchCreateTagResponse>
      */
     public AsyncInvoker<BatchCreateTagRequest, BatchCreateTagResponse> batchCreateTagAsyncInvoker(
         BatchCreateTagRequest request) {
-        return new AsyncInvoker<BatchCreateTagRequest, BatchCreateTagResponse>(request, DnsMeta.batchCreateTag,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.batchCreateTag, hcClient);
     }
 
     /**
@@ -1259,7 +1225,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return CompletableFuture<CreateTagResponse>
      */
     public CompletableFuture<CreateTagResponse> createTagAsync(CreateTagRequest request) {
@@ -1273,11 +1239,11 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
      */
     public AsyncInvoker<CreateTagRequest, CreateTagResponse> createTagAsyncInvoker(CreateTagRequest request) {
-        return new AsyncInvoker<CreateTagRequest, CreateTagResponse>(request, DnsMeta.createTag, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.createTag, hcClient);
     }
 
     /**
@@ -1287,7 +1253,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return CompletableFuture<DeleteTagResponse>
      */
     public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
@@ -1301,11 +1267,11 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
      */
     public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
-        return new AsyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, DnsMeta.deleteTag, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.deleteTag, hcClient);
     }
 
     /**
@@ -1315,7 +1281,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagRequest 请求对象
+     * @param request ListTagRequest 请求对象
      * @return CompletableFuture<ListTagResponse>
      */
     public CompletableFuture<ListTagResponse> listTagAsync(ListTagRequest request) {
@@ -1329,11 +1295,11 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagRequest 请求对象
+     * @param request ListTagRequest 请求对象
      * @return AsyncInvoker<ListTagRequest, ListTagResponse>
      */
     public AsyncInvoker<ListTagRequest, ListTagResponse> listTagAsyncInvoker(ListTagRequest request) {
-        return new AsyncInvoker<ListTagRequest, ListTagResponse>(request, DnsMeta.listTag, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listTag, hcClient);
     }
 
     /**
@@ -1343,7 +1309,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return CompletableFuture<ListTagsResponse>
      */
     public CompletableFuture<ListTagsResponse> listTagsAsync(ListTagsRequest request) {
@@ -1357,11 +1323,11 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
      */
     public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
-        return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, DnsMeta.listTags, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listTags, hcClient);
     }
 
     /**
@@ -1371,7 +1337,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagRequest 请求对象
+     * @param request ShowResourceTagRequest 请求对象
      * @return CompletableFuture<ShowResourceTagResponse>
      */
     public CompletableFuture<ShowResourceTagResponse> showResourceTagAsync(ShowResourceTagRequest request) {
@@ -1385,13 +1351,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagRequest 请求对象
+     * @param request ShowResourceTagRequest 请求对象
      * @return AsyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>
      */
     public AsyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTagAsyncInvoker(
         ShowResourceTagRequest request) {
-        return new AsyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>(request, DnsMeta.showResourceTag,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showResourceTag, hcClient);
     }
 
     /**
@@ -1401,7 +1366,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRouterRequest 请求对象
+     * @param request AssociateRouterRequest 请求对象
      * @return CompletableFuture<AssociateRouterResponse>
      */
     public CompletableFuture<AssociateRouterResponse> associateRouterAsync(AssociateRouterRequest request) {
@@ -1415,13 +1380,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRouterRequest 请求对象
+     * @param request AssociateRouterRequest 请求对象
      * @return AsyncInvoker<AssociateRouterRequest, AssociateRouterResponse>
      */
     public AsyncInvoker<AssociateRouterRequest, AssociateRouterResponse> associateRouterAsyncInvoker(
         AssociateRouterRequest request) {
-        return new AsyncInvoker<AssociateRouterRequest, AssociateRouterResponse>(request, DnsMeta.associateRouter,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.associateRouter, hcClient);
     }
 
     /**
@@ -1431,7 +1395,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivateZoneRequest 请求对象
+     * @param request CreatePrivateZoneRequest 请求对象
      * @return CompletableFuture<CreatePrivateZoneResponse>
      */
     public CompletableFuture<CreatePrivateZoneResponse> createPrivateZoneAsync(CreatePrivateZoneRequest request) {
@@ -1445,13 +1409,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivateZoneRequest 请求对象
+     * @param request CreatePrivateZoneRequest 请求对象
      * @return AsyncInvoker<CreatePrivateZoneRequest, CreatePrivateZoneResponse>
      */
     public AsyncInvoker<CreatePrivateZoneRequest, CreatePrivateZoneResponse> createPrivateZoneAsyncInvoker(
         CreatePrivateZoneRequest request) {
-        return new AsyncInvoker<CreatePrivateZoneRequest, CreatePrivateZoneResponse>(request, DnsMeta.createPrivateZone,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.createPrivateZone, hcClient);
     }
 
     /**
@@ -1461,7 +1424,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePublicZoneRequest 请求对象
+     * @param request CreatePublicZoneRequest 请求对象
      * @return CompletableFuture<CreatePublicZoneResponse>
      */
     public CompletableFuture<CreatePublicZoneResponse> createPublicZoneAsync(CreatePublicZoneRequest request) {
@@ -1475,13 +1438,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePublicZoneRequest 请求对象
+     * @param request CreatePublicZoneRequest 请求对象
      * @return AsyncInvoker<CreatePublicZoneRequest, CreatePublicZoneResponse>
      */
     public AsyncInvoker<CreatePublicZoneRequest, CreatePublicZoneResponse> createPublicZoneAsyncInvoker(
         CreatePublicZoneRequest request) {
-        return new AsyncInvoker<CreatePublicZoneRequest, CreatePublicZoneResponse>(request, DnsMeta.createPublicZone,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.createPublicZone, hcClient);
     }
 
     /**
@@ -1491,7 +1453,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivateZoneRequest 请求对象
+     * @param request DeletePrivateZoneRequest 请求对象
      * @return CompletableFuture<DeletePrivateZoneResponse>
      */
     public CompletableFuture<DeletePrivateZoneResponse> deletePrivateZoneAsync(DeletePrivateZoneRequest request) {
@@ -1505,13 +1467,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivateZoneRequest 请求对象
+     * @param request DeletePrivateZoneRequest 请求对象
      * @return AsyncInvoker<DeletePrivateZoneRequest, DeletePrivateZoneResponse>
      */
     public AsyncInvoker<DeletePrivateZoneRequest, DeletePrivateZoneResponse> deletePrivateZoneAsyncInvoker(
         DeletePrivateZoneRequest request) {
-        return new AsyncInvoker<DeletePrivateZoneRequest, DeletePrivateZoneResponse>(request, DnsMeta.deletePrivateZone,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.deletePrivateZone, hcClient);
     }
 
     /**
@@ -1521,7 +1482,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublicZoneRequest 请求对象
+     * @param request DeletePublicZoneRequest 请求对象
      * @return CompletableFuture<DeletePublicZoneResponse>
      */
     public CompletableFuture<DeletePublicZoneResponse> deletePublicZoneAsync(DeletePublicZoneRequest request) {
@@ -1535,13 +1496,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePublicZoneRequest 请求对象
+     * @param request DeletePublicZoneRequest 请求对象
      * @return AsyncInvoker<DeletePublicZoneRequest, DeletePublicZoneResponse>
      */
     public AsyncInvoker<DeletePublicZoneRequest, DeletePublicZoneResponse> deletePublicZoneAsyncInvoker(
         DeletePublicZoneRequest request) {
-        return new AsyncInvoker<DeletePublicZoneRequest, DeletePublicZoneResponse>(request, DnsMeta.deletePublicZone,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.deletePublicZone, hcClient);
     }
 
     /**
@@ -1551,7 +1511,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateRouterRequest 请求对象
+     * @param request DisassociateRouterRequest 请求对象
      * @return CompletableFuture<DisassociateRouterResponse>
      */
     public CompletableFuture<DisassociateRouterResponse> disassociateRouterAsync(DisassociateRouterRequest request) {
@@ -1565,13 +1525,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateRouterRequest 请求对象
+     * @param request DisassociateRouterRequest 请求对象
      * @return AsyncInvoker<DisassociateRouterRequest, DisassociateRouterResponse>
      */
     public AsyncInvoker<DisassociateRouterRequest, DisassociateRouterResponse> disassociateRouterAsyncInvoker(
         DisassociateRouterRequest request) {
-        return new AsyncInvoker<DisassociateRouterRequest, DisassociateRouterResponse>(request,
-            DnsMeta.disassociateRouter, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.disassociateRouter, hcClient);
     }
 
     /**
@@ -1581,7 +1540,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateZonesRequest 请求对象
+     * @param request ListPrivateZonesRequest 请求对象
      * @return CompletableFuture<ListPrivateZonesResponse>
      */
     public CompletableFuture<ListPrivateZonesResponse> listPrivateZonesAsync(ListPrivateZonesRequest request) {
@@ -1595,13 +1554,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivateZonesRequest 请求对象
+     * @param request ListPrivateZonesRequest 请求对象
      * @return AsyncInvoker<ListPrivateZonesRequest, ListPrivateZonesResponse>
      */
     public AsyncInvoker<ListPrivateZonesRequest, ListPrivateZonesResponse> listPrivateZonesAsyncInvoker(
         ListPrivateZonesRequest request) {
-        return new AsyncInvoker<ListPrivateZonesRequest, ListPrivateZonesResponse>(request, DnsMeta.listPrivateZones,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listPrivateZones, hcClient);
     }
 
     /**
@@ -1611,7 +1569,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicZonesRequest 请求对象
+     * @param request ListPublicZonesRequest 请求对象
      * @return CompletableFuture<ListPublicZonesResponse>
      */
     public CompletableFuture<ListPublicZonesResponse> listPublicZonesAsync(ListPublicZonesRequest request) {
@@ -1625,13 +1583,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublicZonesRequest 请求对象
+     * @param request ListPublicZonesRequest 请求对象
      * @return AsyncInvoker<ListPublicZonesRequest, ListPublicZonesResponse>
      */
     public AsyncInvoker<ListPublicZonesRequest, ListPublicZonesResponse> listPublicZonesAsyncInvoker(
         ListPublicZonesRequest request) {
-        return new AsyncInvoker<ListPublicZonesRequest, ListPublicZonesResponse>(request, DnsMeta.listPublicZones,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.listPublicZones, hcClient);
     }
 
     /**
@@ -1641,7 +1598,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateZoneRequest 请求对象
+     * @param request ShowPrivateZoneRequest 请求对象
      * @return CompletableFuture<ShowPrivateZoneResponse>
      */
     public CompletableFuture<ShowPrivateZoneResponse> showPrivateZoneAsync(ShowPrivateZoneRequest request) {
@@ -1655,13 +1612,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateZoneRequest 请求对象
+     * @param request ShowPrivateZoneRequest 请求对象
      * @return AsyncInvoker<ShowPrivateZoneRequest, ShowPrivateZoneResponse>
      */
     public AsyncInvoker<ShowPrivateZoneRequest, ShowPrivateZoneResponse> showPrivateZoneAsyncInvoker(
         ShowPrivateZoneRequest request) {
-        return new AsyncInvoker<ShowPrivateZoneRequest, ShowPrivateZoneResponse>(request, DnsMeta.showPrivateZone,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showPrivateZone, hcClient);
     }
 
     /**
@@ -1671,7 +1627,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateZoneNameServerRequest 请求对象
+     * @param request ShowPrivateZoneNameServerRequest 请求对象
      * @return CompletableFuture<ShowPrivateZoneNameServerResponse>
      */
     public CompletableFuture<ShowPrivateZoneNameServerResponse> showPrivateZoneNameServerAsync(
@@ -1686,13 +1642,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateZoneNameServerRequest 请求对象
+     * @param request ShowPrivateZoneNameServerRequest 请求对象
      * @return AsyncInvoker<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse>
      */
     public AsyncInvoker<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> showPrivateZoneNameServerAsyncInvoker(
         ShowPrivateZoneNameServerRequest request) {
-        return new AsyncInvoker<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse>(request,
-            DnsMeta.showPrivateZoneNameServer, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showPrivateZoneNameServer, hcClient);
     }
 
     /**
@@ -1702,7 +1657,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicZoneRequest 请求对象
+     * @param request ShowPublicZoneRequest 请求对象
      * @return CompletableFuture<ShowPublicZoneResponse>
      */
     public CompletableFuture<ShowPublicZoneResponse> showPublicZoneAsync(ShowPublicZoneRequest request) {
@@ -1716,13 +1671,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicZoneRequest 请求对象
+     * @param request ShowPublicZoneRequest 请求对象
      * @return AsyncInvoker<ShowPublicZoneRequest, ShowPublicZoneResponse>
      */
     public AsyncInvoker<ShowPublicZoneRequest, ShowPublicZoneResponse> showPublicZoneAsyncInvoker(
         ShowPublicZoneRequest request) {
-        return new AsyncInvoker<ShowPublicZoneRequest, ShowPublicZoneResponse>(request, DnsMeta.showPublicZone,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showPublicZone, hcClient);
     }
 
     /**
@@ -1732,7 +1686,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicZoneNameServerRequest 请求对象
+     * @param request ShowPublicZoneNameServerRequest 请求对象
      * @return CompletableFuture<ShowPublicZoneNameServerResponse>
      */
     public CompletableFuture<ShowPublicZoneNameServerResponse> showPublicZoneNameServerAsync(
@@ -1747,13 +1701,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicZoneNameServerRequest 请求对象
+     * @param request ShowPublicZoneNameServerRequest 请求对象
      * @return AsyncInvoker<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse>
      */
     public AsyncInvoker<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> showPublicZoneNameServerAsyncInvoker(
         ShowPublicZoneNameServerRequest request) {
-        return new AsyncInvoker<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse>(request,
-            DnsMeta.showPublicZoneNameServer, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.showPublicZoneNameServer, hcClient);
     }
 
     /**
@@ -1763,7 +1716,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrivateZoneRequest 请求对象
+     * @param request UpdatePrivateZoneRequest 请求对象
      * @return CompletableFuture<UpdatePrivateZoneResponse>
      */
     public CompletableFuture<UpdatePrivateZoneResponse> updatePrivateZoneAsync(UpdatePrivateZoneRequest request) {
@@ -1777,13 +1730,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrivateZoneRequest 请求对象
+     * @param request UpdatePrivateZoneRequest 请求对象
      * @return AsyncInvoker<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse>
      */
     public AsyncInvoker<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> updatePrivateZoneAsyncInvoker(
         UpdatePrivateZoneRequest request) {
-        return new AsyncInvoker<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse>(request, DnsMeta.updatePrivateZone,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.updatePrivateZone, hcClient);
     }
 
     /**
@@ -1793,7 +1745,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicZoneRequest 请求对象
+     * @param request UpdatePublicZoneRequest 请求对象
      * @return CompletableFuture<UpdatePublicZoneResponse>
      */
     public CompletableFuture<UpdatePublicZoneResponse> updatePublicZoneAsync(UpdatePublicZoneRequest request) {
@@ -1807,13 +1759,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicZoneRequest 请求对象
+     * @param request UpdatePublicZoneRequest 请求对象
      * @return AsyncInvoker<UpdatePublicZoneRequest, UpdatePublicZoneResponse>
      */
     public AsyncInvoker<UpdatePublicZoneRequest, UpdatePublicZoneResponse> updatePublicZoneAsyncInvoker(
         UpdatePublicZoneRequest request) {
-        return new AsyncInvoker<UpdatePublicZoneRequest, UpdatePublicZoneResponse>(request, DnsMeta.updatePublicZone,
-            hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.updatePublicZone, hcClient);
     }
 
     /**
@@ -1823,7 +1774,7 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicZoneStatusRequest 请求对象
+     * @param request UpdatePublicZoneStatusRequest 请求对象
      * @return CompletableFuture<UpdatePublicZoneStatusResponse>
      */
     public CompletableFuture<UpdatePublicZoneStatusResponse> updatePublicZoneStatusAsync(
@@ -1838,13 +1789,12 @@ public class DnsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicZoneStatusRequest 请求对象
+     * @param request UpdatePublicZoneStatusRequest 请求对象
      * @return AsyncInvoker<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse>
      */
     public AsyncInvoker<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> updatePublicZoneStatusAsyncInvoker(
         UpdatePublicZoneStatusRequest request) {
-        return new AsyncInvoker<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse>(request,
-            DnsMeta.updatePublicZoneStatus, hcClient);
+        return new AsyncInvoker<>(request, DnsMeta.updatePublicZoneStatus, hcClient);
     }
 
 }

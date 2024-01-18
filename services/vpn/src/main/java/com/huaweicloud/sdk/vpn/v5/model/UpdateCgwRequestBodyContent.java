@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * UpdateCgwRequestBodyContent
@@ -14,6 +15,11 @@ public class UpdateCgwRequestBodyContent {
     @JsonProperty(value = "name")
 
     private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ca_certificate")
+
+    private CaCertificateRequest caCertificate;
 
     public UpdateCgwRequestBodyContent withName(String name) {
         this.name = name;
@@ -32,6 +38,32 @@ public class UpdateCgwRequestBodyContent {
         this.name = name;
     }
 
+    public UpdateCgwRequestBodyContent withCaCertificate(CaCertificateRequest caCertificate) {
+        this.caCertificate = caCertificate;
+        return this;
+    }
+
+    public UpdateCgwRequestBodyContent withCaCertificate(Consumer<CaCertificateRequest> caCertificateSetter) {
+        if (this.caCertificate == null) {
+            this.caCertificate = new CaCertificateRequest();
+            caCertificateSetter.accept(this.caCertificate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get caCertificate
+     * @return caCertificate
+     */
+    public CaCertificateRequest getCaCertificate() {
+        return caCertificate;
+    }
+
+    public void setCaCertificate(CaCertificateRequest caCertificate) {
+        this.caCertificate = caCertificate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +73,12 @@ public class UpdateCgwRequestBodyContent {
             return false;
         }
         UpdateCgwRequestBodyContent that = (UpdateCgwRequestBodyContent) obj;
-        return Objects.equals(this.name, that.name);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.caCertificate, that.caCertificate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, caCertificate);
     }
 
     @Override
@@ -54,6 +86,7 @@ public class UpdateCgwRequestBodyContent {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateCgwRequestBodyContent {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    caCertificate: ").append(toIndentedString(caCertificate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

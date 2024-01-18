@@ -29,9 +29,9 @@ import com.huaweicloud.sdk.moderation.v2.model.TextDetectionReq;
 public class ModerationMeta {
 
     public static final HttpRequestDef<RunCheckResultRequest, RunCheckResultResponse> runCheckResult =
-        genForrunCheckResult();
+        genForRunCheckResult();
 
-    private static HttpRequestDef<RunCheckResultRequest, RunCheckResultResponse> genForrunCheckResult() {
+    private static HttpRequestDef<RunCheckResultRequest, RunCheckResultResponse> genForRunCheckResult() {
         // basic
         HttpRequestDef.Builder<RunCheckResultRequest, RunCheckResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, RunCheckResultRequest.class, RunCheckResultResponse.class)
@@ -44,9 +44,7 @@ public class ModerationMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunCheckResultRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(RunCheckResultRequest::getJobId, RunCheckResultRequest::setJobId));
 
         // response
 
@@ -54,9 +52,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunCheckTaskJobsRequest, RunCheckTaskJobsResponse> runCheckTaskJobs =
-        genForrunCheckTaskJobs();
+        genForRunCheckTaskJobs();
 
-    private static HttpRequestDef<RunCheckTaskJobsRequest, RunCheckTaskJobsResponse> genForrunCheckTaskJobs() {
+    private static HttpRequestDef<RunCheckTaskJobsRequest, RunCheckTaskJobsResponse> genForRunCheckTaskJobs() {
         // basic
         HttpRequestDef.Builder<RunCheckTaskJobsRequest, RunCheckTaskJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, RunCheckTaskJobsRequest.class, RunCheckTaskJobsResponse.class)
@@ -69,23 +67,17 @@ public class ModerationMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RunCheckTaskJobsRequest.StatusEnum.class),
-            f -> f.withMarshaller(RunCheckTaskJobsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(RunCheckTaskJobsRequest::getStatus, RunCheckTaskJobsRequest::setStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(RunCheckTaskJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(RunCheckTaskJobsRequest::getOffset, RunCheckTaskJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(RunCheckTaskJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(RunCheckTaskJobsRequest::getLimit, RunCheckTaskJobsRequest::setLimit));
 
         // response
 
@@ -93,9 +85,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunImageBatchModerationRequest, RunImageBatchModerationResponse> runImageBatchModeration =
-        genForrunImageBatchModeration();
+        genForRunImageBatchModeration();
 
-    private static HttpRequestDef<RunImageBatchModerationRequest, RunImageBatchModerationResponse> genForrunImageBatchModeration() {
+    private static HttpRequestDef<RunImageBatchModerationRequest, RunImageBatchModerationResponse> genForRunImageBatchModeration() {
         // basic
         HttpRequestDef.Builder<RunImageBatchModerationRequest, RunImageBatchModerationResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RunImageBatchModerationRequest.class, RunImageBatchModerationResponse.class)
@@ -108,9 +100,7 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImageBatchModerationReq.class),
-            f -> f.withMarshaller(RunImageBatchModerationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunImageBatchModerationRequest::getBody, RunImageBatchModerationRequest::setBody));
 
         // response
 
@@ -118,9 +108,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunImageModerationRequest, RunImageModerationResponse> runImageModeration =
-        genForrunImageModeration();
+        genForRunImageModeration();
 
-    private static HttpRequestDef<RunImageModerationRequest, RunImageModerationResponse> genForrunImageModeration() {
+    private static HttpRequestDef<RunImageModerationRequest, RunImageModerationResponse> genForRunImageModeration() {
         // basic
         HttpRequestDef.Builder<RunImageModerationRequest, RunImageModerationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunImageModerationRequest.class, RunImageModerationResponse.class)
@@ -133,9 +123,7 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImageDetectionReq.class),
-            f -> f.withMarshaller(RunImageModerationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunImageModerationRequest::getBody, RunImageModerationRequest::setBody));
 
         // response
 
@@ -143,9 +131,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunModerationAudioRequest, RunModerationAudioResponse> runModerationAudio =
-        genForrunModerationAudio();
+        genForRunModerationAudio();
 
-    private static HttpRequestDef<RunModerationAudioRequest, RunModerationAudioResponse> genForrunModerationAudio() {
+    private static HttpRequestDef<RunModerationAudioRequest, RunModerationAudioResponse> genForRunModerationAudio() {
         // basic
         HttpRequestDef.Builder<RunModerationAudioRequest, RunModerationAudioResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunModerationAudioRequest.class, RunModerationAudioResponse.class)
@@ -158,9 +146,7 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RunModerationAudioRequestBody.class),
-            f -> f.withMarshaller(RunModerationAudioRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunModerationAudioRequest::getBody, RunModerationAudioRequest::setBody));
 
         // response
 
@@ -168,9 +154,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunTaskSumbitRequest, RunTaskSumbitResponse> runTaskSumbit =
-        genForrunTaskSumbit();
+        genForRunTaskSumbit();
 
-    private static HttpRequestDef<RunTaskSumbitRequest, RunTaskSumbitResponse> genForrunTaskSumbit() {
+    private static HttpRequestDef<RunTaskSumbitRequest, RunTaskSumbitResponse> genForRunTaskSumbit() {
         // basic
         HttpRequestDef.Builder<RunTaskSumbitRequest, RunTaskSumbitResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTaskSumbitRequest.class, RunTaskSumbitResponse.class)
@@ -183,9 +169,7 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaskSumbitReq.class),
-            f -> f.withMarshaller(RunTaskSumbitRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunTaskSumbitRequest::getBody, RunTaskSumbitRequest::setBody));
 
         // response
 
@@ -193,9 +177,9 @@ public class ModerationMeta {
     }
 
     public static final HttpRequestDef<RunTextModerationRequest, RunTextModerationResponse> runTextModeration =
-        genForrunTextModeration();
+        genForRunTextModeration();
 
-    private static HttpRequestDef<RunTextModerationRequest, RunTextModerationResponse> genForrunTextModeration() {
+    private static HttpRequestDef<RunTextModerationRequest, RunTextModerationResponse> genForRunTextModeration() {
         // basic
         HttpRequestDef.Builder<RunTextModerationRequest, RunTextModerationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTextModerationRequest.class, RunTextModerationResponse.class)
@@ -208,9 +192,7 @@ public class ModerationMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TextDetectionReq.class),
-            f -> f.withMarshaller(RunTextModerationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunTextModerationRequest::getBody, RunTextModerationRequest::setBody));
 
         // response
 

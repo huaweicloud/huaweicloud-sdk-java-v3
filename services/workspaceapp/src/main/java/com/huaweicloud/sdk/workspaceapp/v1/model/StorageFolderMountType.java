@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 用户访问APS的应用时,对应NAS存储目录在APS上的挂载策略 * &#x60;USER&#x60; - 仅挂载个人目录 * &#x60;SHARE&#x60; - 仅挂载共享目录 * &#x60;ANY&#x60; - 挂载目录不做限制(个人和共享NAS存储目录都会自动挂载)
+ * 用户访问APS的应用时，对应NAS存储目录在APS上的挂载策略。 * &#x60;USER&#x60; - 仅挂载个人目录。 * &#x60;SHARE&#x60; - 仅挂载共享目录。 * &#x60;ANY&#x60; - 挂载目录不做限制(个人和共享NAS存储目录都会自动挂载)。
  */
 public class StorageFolderMountType {
 

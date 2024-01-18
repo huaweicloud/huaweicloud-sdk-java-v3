@@ -13,9 +13,9 @@ import com.huaweicloud.sdk.eihealth.v2.model.ShowAdmetWithCustomPropsResponse;
 public class EiHealthMeta {
 
     public static final HttpRequestDef<ShowAdmetWithCustomPropsRequest, ShowAdmetWithCustomPropsResponse> showAdmetWithCustomProps =
-        genForshowAdmetWithCustomProps();
+        genForShowAdmetWithCustomProps();
 
-    private static HttpRequestDef<ShowAdmetWithCustomPropsRequest, ShowAdmetWithCustomPropsResponse> genForshowAdmetWithCustomProps() {
+    private static HttpRequestDef<ShowAdmetWithCustomPropsRequest, ShowAdmetWithCustomPropsResponse> genForShowAdmetWithCustomProps() {
         // basic
         HttpRequestDef.Builder<ShowAdmetWithCustomPropsRequest, ShowAdmetWithCustomPropsResponse> builder =
             HttpRequestDef
@@ -29,9 +29,7 @@ public class EiHealthMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AdmetWithCustomRequest.class),
-            f -> f.withMarshaller(ShowAdmetWithCustomPropsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowAdmetWithCustomPropsRequest::getBody, ShowAdmetWithCustomPropsRequest::setBody));
 
         // response
 

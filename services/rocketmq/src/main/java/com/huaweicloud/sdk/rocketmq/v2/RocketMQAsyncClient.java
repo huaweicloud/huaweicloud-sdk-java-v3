@@ -120,7 +120,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteRocketmqTagRequest 请求对象
+     * @param request BatchCreateOrDeleteRocketmqTagRequest 请求对象
      * @return CompletableFuture<BatchCreateOrDeleteRocketmqTagResponse>
      */
     public CompletableFuture<BatchCreateOrDeleteRocketmqTagResponse> batchCreateOrDeleteRocketmqTagAsync(
@@ -135,13 +135,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteRocketmqTagRequest 请求对象
+     * @param request BatchCreateOrDeleteRocketmqTagRequest 请求对象
      * @return AsyncInvoker<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse>
      */
     public AsyncInvoker<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse> batchCreateOrDeleteRocketmqTagAsyncInvoker(
         BatchCreateOrDeleteRocketmqTagRequest request) {
-        return new AsyncInvoker<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse>(request,
-            RocketMQMeta.batchCreateOrDeleteRocketmqTag, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.batchCreateOrDeleteRocketmqTag, hcClient);
     }
 
     /**
@@ -151,7 +150,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstancesRequest 请求对象
+     * @param request BatchDeleteInstancesRequest 请求对象
      * @return CompletableFuture<BatchDeleteInstancesResponse>
      */
     public CompletableFuture<BatchDeleteInstancesResponse> batchDeleteInstancesAsync(
@@ -166,13 +165,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstancesRequest 请求对象
+     * @param request BatchDeleteInstancesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse>
      */
     public AsyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> batchDeleteInstancesAsyncInvoker(
         BatchDeleteInstancesRequest request) {
-        return new AsyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse>(request,
-            RocketMQMeta.batchDeleteInstances, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.batchDeleteInstances, hcClient);
     }
 
     /**
@@ -182,7 +180,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateConsumerGroupRequest 请求对象
+     * @param request BatchUpdateConsumerGroupRequest 请求对象
      * @return CompletableFuture<BatchUpdateConsumerGroupResponse>
      */
     public CompletableFuture<BatchUpdateConsumerGroupResponse> batchUpdateConsumerGroupAsync(
@@ -197,13 +195,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateConsumerGroupRequest 请求对象
+     * @param request BatchUpdateConsumerGroupRequest 请求对象
      * @return AsyncInvoker<BatchUpdateConsumerGroupRequest, BatchUpdateConsumerGroupResponse>
      */
     public AsyncInvoker<BatchUpdateConsumerGroupRequest, BatchUpdateConsumerGroupResponse> batchUpdateConsumerGroupAsyncInvoker(
         BatchUpdateConsumerGroupRequest request) {
-        return new AsyncInvoker<BatchUpdateConsumerGroupRequest, BatchUpdateConsumerGroupResponse>(request,
-            RocketMQMeta.batchUpdateConsumerGroup, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.batchUpdateConsumerGroup, hcClient);
     }
 
     /**
@@ -213,7 +210,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConsumerGroupOrBatchDeleteConsumerGroupRequest 请求对象
+     * @param request CreateConsumerGroupOrBatchDeleteConsumerGroupRequest 请求对象
      * @return CompletableFuture<CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>
      */
     public CompletableFuture<CreateConsumerGroupOrBatchDeleteConsumerGroupResponse> createConsumerGroupOrBatchDeleteConsumerGroupAsync(
@@ -228,13 +225,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConsumerGroupOrBatchDeleteConsumerGroupRequest 请求对象
+     * @param request CreateConsumerGroupOrBatchDeleteConsumerGroupRequest 请求对象
      * @return AsyncInvoker<CreateConsumerGroupOrBatchDeleteConsumerGroupRequest, CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>
      */
     public AsyncInvoker<CreateConsumerGroupOrBatchDeleteConsumerGroupRequest, CreateConsumerGroupOrBatchDeleteConsumerGroupResponse> createConsumerGroupOrBatchDeleteConsumerGroupAsyncInvoker(
         CreateConsumerGroupOrBatchDeleteConsumerGroupRequest request) {
-        return new AsyncInvoker<CreateConsumerGroupOrBatchDeleteConsumerGroupRequest, CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>(
-            request, RocketMQMeta.createConsumerGroupOrBatchDeleteConsumerGroup, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.createConsumerGroupOrBatchDeleteConsumerGroup, hcClient);
     }
 
     /**
@@ -244,7 +240,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceByEngineRequest 请求对象
+     * @param request CreateInstanceByEngineRequest 请求对象
      * @return CompletableFuture<CreateInstanceByEngineResponse>
      */
     public CompletableFuture<CreateInstanceByEngineResponse> createInstanceByEngineAsync(
@@ -259,13 +255,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceByEngineRequest 请求对象
+     * @param request CreateInstanceByEngineRequest 请求对象
      * @return AsyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse>
      */
     public AsyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> createInstanceByEngineAsyncInvoker(
         CreateInstanceByEngineRequest request) {
-        return new AsyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse>(request,
-            RocketMQMeta.createInstanceByEngine, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.createInstanceByEngine, hcClient);
     }
 
     /**
@@ -275,7 +270,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceRequest 请求对象
+     * @param request CreatePostPaidInstanceRequest 请求对象
      * @return CompletableFuture<CreatePostPaidInstanceResponse>
      */
     public CompletableFuture<CreatePostPaidInstanceResponse> createPostPaidInstanceAsync(
@@ -290,13 +285,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceRequest 请求对象
+     * @param request CreatePostPaidInstanceRequest 请求对象
      * @return AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>
      */
     public AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstanceAsyncInvoker(
         CreatePostPaidInstanceRequest request) {
-        return new AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>(request,
-            RocketMQMeta.createPostPaidInstance, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.createPostPaidInstance, hcClient);
     }
 
     /**
@@ -306,7 +300,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRocketMqMigrationTaskRequest 请求对象
+     * @param request CreateRocketMqMigrationTaskRequest 请求对象
      * @return CompletableFuture<CreateRocketMqMigrationTaskResponse>
      */
     public CompletableFuture<CreateRocketMqMigrationTaskResponse> createRocketMqMigrationTaskAsync(
@@ -321,13 +315,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRocketMqMigrationTaskRequest 请求对象
+     * @param request CreateRocketMqMigrationTaskRequest 请求对象
      * @return AsyncInvoker<CreateRocketMqMigrationTaskRequest, CreateRocketMqMigrationTaskResponse>
      */
     public AsyncInvoker<CreateRocketMqMigrationTaskRequest, CreateRocketMqMigrationTaskResponse> createRocketMqMigrationTaskAsyncInvoker(
         CreateRocketMqMigrationTaskRequest request) {
-        return new AsyncInvoker<CreateRocketMqMigrationTaskRequest, CreateRocketMqMigrationTaskResponse>(request,
-            RocketMQMeta.createRocketMqMigrationTask, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.createRocketMqMigrationTask, hcClient);
     }
 
     /**
@@ -337,7 +330,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUserRequest 请求对象
+     * @param request CreateUserRequest 请求对象
      * @return CompletableFuture<CreateUserResponse>
      */
     public CompletableFuture<CreateUserResponse> createUserAsync(CreateUserRequest request) {
@@ -351,11 +344,11 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUserRequest 请求对象
+     * @param request CreateUserRequest 请求对象
      * @return AsyncInvoker<CreateUserRequest, CreateUserResponse>
      */
     public AsyncInvoker<CreateUserRequest, CreateUserResponse> createUserAsyncInvoker(CreateUserRequest request) {
-        return new AsyncInvoker<CreateUserRequest, CreateUserResponse>(request, RocketMQMeta.createUser, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.createUser, hcClient);
     }
 
     /**
@@ -365,7 +358,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConsumerGroupRequest 请求对象
+     * @param request DeleteConsumerGroupRequest 请求对象
      * @return CompletableFuture<DeleteConsumerGroupResponse>
      */
     public CompletableFuture<DeleteConsumerGroupResponse> deleteConsumerGroupAsync(DeleteConsumerGroupRequest request) {
@@ -379,13 +372,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConsumerGroupRequest 请求对象
+     * @param request DeleteConsumerGroupRequest 请求对象
      * @return AsyncInvoker<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse>
      */
     public AsyncInvoker<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse> deleteConsumerGroupAsyncInvoker(
         DeleteConsumerGroupRequest request) {
-        return new AsyncInvoker<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse>(request,
-            RocketMQMeta.deleteConsumerGroup, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.deleteConsumerGroup, hcClient);
     }
 
     /**
@@ -395,7 +387,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
      */
     public CompletableFuture<DeleteInstanceResponse> deleteInstanceAsync(DeleteInstanceRequest request) {
@@ -409,13 +401,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
-        return new AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, RocketMQMeta.deleteInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -425,7 +416,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRocketMqMigrationTaskRequest 请求对象
+     * @param request DeleteRocketMqMigrationTaskRequest 请求对象
      * @return CompletableFuture<DeleteRocketMqMigrationTaskResponse>
      */
     public CompletableFuture<DeleteRocketMqMigrationTaskResponse> deleteRocketMqMigrationTaskAsync(
@@ -440,13 +431,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRocketMqMigrationTaskRequest 请求对象
+     * @param request DeleteRocketMqMigrationTaskRequest 请求对象
      * @return AsyncInvoker<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse>
      */
     public AsyncInvoker<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> deleteRocketMqMigrationTaskAsyncInvoker(
         DeleteRocketMqMigrationTaskRequest request) {
-        return new AsyncInvoker<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse>(request,
-            RocketMQMeta.deleteRocketMqMigrationTask, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.deleteRocketMqMigrationTask, hcClient);
     }
 
     /**
@@ -456,7 +446,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserRequest 请求对象
+     * @param request DeleteUserRequest 请求对象
      * @return CompletableFuture<DeleteUserResponse>
      */
     public CompletableFuture<DeleteUserResponse> deleteUserAsync(DeleteUserRequest request) {
@@ -470,11 +460,11 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserRequest 请求对象
+     * @param request DeleteUserRequest 请求对象
      * @return AsyncInvoker<DeleteUserRequest, DeleteUserResponse>
      */
     public AsyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserAsyncInvoker(DeleteUserRequest request) {
-        return new AsyncInvoker<DeleteUserRequest, DeleteUserResponse>(request, RocketMQMeta.deleteUser, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.deleteUser, hcClient);
     }
 
     /**
@@ -484,7 +474,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportDlqMessageRequest 请求对象
+     * @param request ExportDlqMessageRequest 请求对象
      * @return CompletableFuture<ExportDlqMessageResponse>
      */
     public CompletableFuture<ExportDlqMessageResponse> exportDlqMessageAsync(ExportDlqMessageRequest request) {
@@ -498,13 +488,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportDlqMessageRequest 请求对象
+     * @param request ExportDlqMessageRequest 请求对象
      * @return AsyncInvoker<ExportDlqMessageRequest, ExportDlqMessageResponse>
      */
     public AsyncInvoker<ExportDlqMessageRequest, ExportDlqMessageResponse> exportDlqMessageAsyncInvoker(
         ExportDlqMessageRequest request) {
-        return new AsyncInvoker<ExportDlqMessageRequest, ExportDlqMessageResponse>(request,
-            RocketMQMeta.exportDlqMessage, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.exportDlqMessage, hcClient);
     }
 
     /**
@@ -514,7 +503,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return CompletableFuture<ListAvailableZonesResponse>
      */
     public CompletableFuture<ListAvailableZonesResponse> listAvailableZonesAsync(ListAvailableZonesRequest request) {
@@ -528,13 +517,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
      */
     public AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesAsyncInvoker(
         ListAvailableZonesRequest request) {
-        return new AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request,
-            RocketMQMeta.listAvailableZones, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listAvailableZones, hcClient);
     }
 
     /**
@@ -544,7 +532,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBrokersRequest 请求对象
+     * @param request ListBrokersRequest 请求对象
      * @return CompletableFuture<ListBrokersResponse>
      */
     public CompletableFuture<ListBrokersResponse> listBrokersAsync(ListBrokersRequest request) {
@@ -558,11 +546,11 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBrokersRequest 请求对象
+     * @param request ListBrokersRequest 请求对象
      * @return AsyncInvoker<ListBrokersRequest, ListBrokersResponse>
      */
     public AsyncInvoker<ListBrokersRequest, ListBrokersResponse> listBrokersAsyncInvoker(ListBrokersRequest request) {
-        return new AsyncInvoker<ListBrokersRequest, ListBrokersResponse>(request, RocketMQMeta.listBrokers, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listBrokers, hcClient);
     }
 
     /**
@@ -572,7 +560,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConsumeGroupAccessPolicyRequest 请求对象
+     * @param request ListConsumeGroupAccessPolicyRequest 请求对象
      * @return CompletableFuture<ListConsumeGroupAccessPolicyResponse>
      */
     public CompletableFuture<ListConsumeGroupAccessPolicyResponse> listConsumeGroupAccessPolicyAsync(
@@ -587,13 +575,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConsumeGroupAccessPolicyRequest 请求对象
+     * @param request ListConsumeGroupAccessPolicyRequest 请求对象
      * @return AsyncInvoker<ListConsumeGroupAccessPolicyRequest, ListConsumeGroupAccessPolicyResponse>
      */
     public AsyncInvoker<ListConsumeGroupAccessPolicyRequest, ListConsumeGroupAccessPolicyResponse> listConsumeGroupAccessPolicyAsyncInvoker(
         ListConsumeGroupAccessPolicyRequest request) {
-        return new AsyncInvoker<ListConsumeGroupAccessPolicyRequest, ListConsumeGroupAccessPolicyResponse>(request,
-            RocketMQMeta.listConsumeGroupAccessPolicy, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listConsumeGroupAccessPolicy, hcClient);
     }
 
     /**
@@ -603,7 +590,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConsumerGroupsRequest 请求对象
+     * @param request ListInstanceConsumerGroupsRequest 请求对象
      * @return CompletableFuture<ListInstanceConsumerGroupsResponse>
      */
     public CompletableFuture<ListInstanceConsumerGroupsResponse> listInstanceConsumerGroupsAsync(
@@ -618,13 +605,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConsumerGroupsRequest 请求对象
+     * @param request ListInstanceConsumerGroupsRequest 请求对象
      * @return AsyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>
      */
     public AsyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> listInstanceConsumerGroupsAsyncInvoker(
         ListInstanceConsumerGroupsRequest request) {
-        return new AsyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>(request,
-            RocketMQMeta.listInstanceConsumerGroups, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listInstanceConsumerGroups, hcClient);
     }
 
     /**
@@ -634,7 +620,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
      */
     public CompletableFuture<ListInstancesResponse> listInstancesAsync(ListInstancesRequest request) {
@@ -648,13 +634,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
-        return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, RocketMQMeta.listInstances,
-            hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listInstances, hcClient);
     }
 
     /**
@@ -664,7 +649,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageTraceRequest 请求对象
+     * @param request ListMessageTraceRequest 请求对象
      * @return CompletableFuture<ListMessageTraceResponse>
      */
     public CompletableFuture<ListMessageTraceResponse> listMessageTraceAsync(ListMessageTraceRequest request) {
@@ -678,13 +663,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageTraceRequest 请求对象
+     * @param request ListMessageTraceRequest 请求对象
      * @return AsyncInvoker<ListMessageTraceRequest, ListMessageTraceResponse>
      */
     public AsyncInvoker<ListMessageTraceRequest, ListMessageTraceResponse> listMessageTraceAsyncInvoker(
         ListMessageTraceRequest request) {
-        return new AsyncInvoker<ListMessageTraceRequest, ListMessageTraceResponse>(request,
-            RocketMQMeta.listMessageTrace, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listMessageTrace, hcClient);
     }
 
     /**
@@ -694,7 +678,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessagesRequest 请求对象
+     * @param request ListMessagesRequest 请求对象
      * @return CompletableFuture<ListMessagesResponse>
      */
     public CompletableFuture<ListMessagesResponse> listMessagesAsync(ListMessagesRequest request) {
@@ -708,13 +692,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessagesRequest 请求对象
+     * @param request ListMessagesRequest 请求对象
      * @return AsyncInvoker<ListMessagesRequest, ListMessagesResponse>
      */
     public AsyncInvoker<ListMessagesRequest, ListMessagesResponse> listMessagesAsyncInvoker(
         ListMessagesRequest request) {
-        return new AsyncInvoker<ListMessagesRequest, ListMessagesResponse>(request, RocketMQMeta.listMessages,
-            hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listMessages, hcClient);
     }
 
     /**
@@ -725,7 +708,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRocketMqMigrationTaskRequest 请求对象
+     * @param request ListRocketMqMigrationTaskRequest 请求对象
      * @return CompletableFuture<ListRocketMqMigrationTaskResponse>
      */
     public CompletableFuture<ListRocketMqMigrationTaskResponse> listRocketMqMigrationTaskAsync(
@@ -741,13 +724,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRocketMqMigrationTaskRequest 请求对象
+     * @param request ListRocketMqMigrationTaskRequest 请求对象
      * @return AsyncInvoker<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse>
      */
     public AsyncInvoker<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse> listRocketMqMigrationTaskAsyncInvoker(
         ListRocketMqMigrationTaskRequest request) {
-        return new AsyncInvoker<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse>(request,
-            RocketMQMeta.listRocketMqMigrationTask, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listRocketMqMigrationTask, hcClient);
     }
 
     /**
@@ -757,7 +739,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicAccessPolicyRequest 请求对象
+     * @param request ListTopicAccessPolicyRequest 请求对象
      * @return CompletableFuture<ListTopicAccessPolicyResponse>
      */
     public CompletableFuture<ListTopicAccessPolicyResponse> listTopicAccessPolicyAsync(
@@ -772,13 +754,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicAccessPolicyRequest 请求对象
+     * @param request ListTopicAccessPolicyRequest 请求对象
      * @return AsyncInvoker<ListTopicAccessPolicyRequest, ListTopicAccessPolicyResponse>
      */
     public AsyncInvoker<ListTopicAccessPolicyRequest, ListTopicAccessPolicyResponse> listTopicAccessPolicyAsyncInvoker(
         ListTopicAccessPolicyRequest request) {
-        return new AsyncInvoker<ListTopicAccessPolicyRequest, ListTopicAccessPolicyResponse>(request,
-            RocketMQMeta.listTopicAccessPolicy, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listTopicAccessPolicy, hcClient);
     }
 
     /**
@@ -788,7 +769,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserRequest 请求对象
+     * @param request ListUserRequest 请求对象
      * @return CompletableFuture<ListUserResponse>
      */
     public CompletableFuture<ListUserResponse> listUserAsync(ListUserRequest request) {
@@ -802,11 +783,11 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserRequest 请求对象
+     * @param request ListUserRequest 请求对象
      * @return AsyncInvoker<ListUserRequest, ListUserResponse>
      */
     public AsyncInvoker<ListUserRequest, ListUserResponse> listUserAsyncInvoker(ListUserRequest request) {
-        return new AsyncInvoker<ListUserRequest, ListUserResponse>(request, RocketMQMeta.listUser, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listUser, hcClient);
     }
 
     /**
@@ -816,7 +797,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetConsumeOffsetRequest 请求对象
+     * @param request ResetConsumeOffsetRequest 请求对象
      * @return CompletableFuture<ResetConsumeOffsetResponse>
      */
     public CompletableFuture<ResetConsumeOffsetResponse> resetConsumeOffsetAsync(ResetConsumeOffsetRequest request) {
@@ -830,13 +811,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetConsumeOffsetRequest 请求对象
+     * @param request ResetConsumeOffsetRequest 请求对象
      * @return AsyncInvoker<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse>
      */
     public AsyncInvoker<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse> resetConsumeOffsetAsyncInvoker(
         ResetConsumeOffsetRequest request) {
-        return new AsyncInvoker<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse>(request,
-            RocketMQMeta.resetConsumeOffset, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.resetConsumeOffset, hcClient);
     }
 
     /**
@@ -848,7 +828,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return CompletableFuture<ResizeInstanceResponse>
      */
     public CompletableFuture<ResizeInstanceResponse> resizeInstanceAsync(ResizeInstanceRequest request) {
@@ -864,13 +844,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
      */
     public AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceAsyncInvoker(
         ResizeInstanceRequest request) {
-        return new AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request, RocketMQMeta.resizeInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.resizeInstance, hcClient);
     }
 
     /**
@@ -880,7 +859,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendDlqMessageRequest 请求对象
+     * @param request SendDlqMessageRequest 请求对象
      * @return CompletableFuture<SendDlqMessageResponse>
      */
     public CompletableFuture<SendDlqMessageResponse> sendDlqMessageAsync(SendDlqMessageRequest request) {
@@ -894,13 +873,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendDlqMessageRequest 请求对象
+     * @param request SendDlqMessageRequest 请求对象
      * @return AsyncInvoker<SendDlqMessageRequest, SendDlqMessageResponse>
      */
     public AsyncInvoker<SendDlqMessageRequest, SendDlqMessageResponse> sendDlqMessageAsyncInvoker(
         SendDlqMessageRequest request) {
-        return new AsyncInvoker<SendDlqMessageRequest, SendDlqMessageResponse>(request, RocketMQMeta.sendDlqMessage,
-            hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.sendDlqMessage, hcClient);
     }
 
     /**
@@ -910,7 +888,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConsumerConnectionsRequest 请求对象
+     * @param request ShowConsumerConnectionsRequest 请求对象
      * @return CompletableFuture<ShowConsumerConnectionsResponse>
      */
     public CompletableFuture<ShowConsumerConnectionsResponse> showConsumerConnectionsAsync(
@@ -925,13 +903,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConsumerConnectionsRequest 请求对象
+     * @param request ShowConsumerConnectionsRequest 请求对象
      * @return AsyncInvoker<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse>
      */
     public AsyncInvoker<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse> showConsumerConnectionsAsyncInvoker(
         ShowConsumerConnectionsRequest request) {
-        return new AsyncInvoker<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse>(request,
-            RocketMQMeta.showConsumerConnections, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showConsumerConnections, hcClient);
     }
 
     /**
@@ -941,7 +918,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConsumerListOrDetailsRequest 请求对象
+     * @param request ShowConsumerListOrDetailsRequest 请求对象
      * @return CompletableFuture<ShowConsumerListOrDetailsResponse>
      */
     public CompletableFuture<ShowConsumerListOrDetailsResponse> showConsumerListOrDetailsAsync(
@@ -956,13 +933,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConsumerListOrDetailsRequest 请求对象
+     * @param request ShowConsumerListOrDetailsRequest 请求对象
      * @return AsyncInvoker<ShowConsumerListOrDetailsRequest, ShowConsumerListOrDetailsResponse>
      */
     public AsyncInvoker<ShowConsumerListOrDetailsRequest, ShowConsumerListOrDetailsResponse> showConsumerListOrDetailsAsyncInvoker(
         ShowConsumerListOrDetailsRequest request) {
-        return new AsyncInvoker<ShowConsumerListOrDetailsRequest, ShowConsumerListOrDetailsResponse>(request,
-            RocketMQMeta.showConsumerListOrDetails, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showConsumerListOrDetails, hcClient);
     }
 
     /**
@@ -972,7 +948,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowEngineInstanceExtendProductInfoRequest 请求对象
      * @return CompletableFuture<ShowEngineInstanceExtendProductInfoResponse>
      */
     public CompletableFuture<ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsync(
@@ -987,13 +963,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowEngineInstanceExtendProductInfoRequest 请求对象
      * @return AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>
      */
     public AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsyncInvoker(
         ShowEngineInstanceExtendProductInfoRequest request) {
-        return new AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>(
-            request, RocketMQMeta.showEngineInstanceExtendProductInfo, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showEngineInstanceExtendProductInfo, hcClient);
     }
 
     /**
@@ -1003,7 +978,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGroupRequest 请求对象
+     * @param request ShowGroupRequest 请求对象
      * @return CompletableFuture<ShowGroupResponse>
      */
     public CompletableFuture<ShowGroupResponse> showGroupAsync(ShowGroupRequest request) {
@@ -1017,11 +992,11 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGroupRequest 请求对象
+     * @param request ShowGroupRequest 请求对象
      * @return AsyncInvoker<ShowGroupRequest, ShowGroupResponse>
      */
     public AsyncInvoker<ShowGroupRequest, ShowGroupResponse> showGroupAsyncInvoker(ShowGroupRequest request) {
-        return new AsyncInvoker<ShowGroupRequest, ShowGroupResponse>(request, RocketMQMeta.showGroup, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showGroup, hcClient);
     }
 
     /**
@@ -1031,7 +1006,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
      */
     public CompletableFuture<ShowInstanceResponse> showInstanceAsync(ShowInstanceRequest request) {
@@ -1045,13 +1020,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(
         ShowInstanceRequest request) {
-        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, RocketMQMeta.showInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showInstance, hcClient);
     }
 
     /**
@@ -1061,7 +1035,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRocketMqConfigsRequest 请求对象
+     * @param request ShowRocketMqConfigsRequest 请求对象
      * @return CompletableFuture<ShowRocketMqConfigsResponse>
      */
     public CompletableFuture<ShowRocketMqConfigsResponse> showRocketMqConfigsAsync(ShowRocketMqConfigsRequest request) {
@@ -1075,13 +1049,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRocketMqConfigsRequest 请求对象
+     * @param request ShowRocketMqConfigsRequest 请求对象
      * @return AsyncInvoker<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse>
      */
     public AsyncInvoker<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse> showRocketMqConfigsAsyncInvoker(
         ShowRocketMqConfigsRequest request) {
-        return new AsyncInvoker<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse>(request,
-            RocketMQMeta.showRocketMqConfigs, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showRocketMqConfigs, hcClient);
     }
 
     /**
@@ -1091,7 +1064,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRocketmqProjectTagsRequest 请求对象
+     * @param request ShowRocketmqProjectTagsRequest 请求对象
      * @return CompletableFuture<ShowRocketmqProjectTagsResponse>
      */
     public CompletableFuture<ShowRocketmqProjectTagsResponse> showRocketmqProjectTagsAsync(
@@ -1106,13 +1079,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRocketmqProjectTagsRequest 请求对象
+     * @param request ShowRocketmqProjectTagsRequest 请求对象
      * @return AsyncInvoker<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse>
      */
     public AsyncInvoker<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse> showRocketmqProjectTagsAsyncInvoker(
         ShowRocketmqProjectTagsRequest request) {
-        return new AsyncInvoker<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse>(request,
-            RocketMQMeta.showRocketmqProjectTags, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showRocketmqProjectTags, hcClient);
     }
 
     /**
@@ -1122,7 +1094,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRocketmqTagsRequest 请求对象
+     * @param request ShowRocketmqTagsRequest 请求对象
      * @return CompletableFuture<ShowRocketmqTagsResponse>
      */
     public CompletableFuture<ShowRocketmqTagsResponse> showRocketmqTagsAsync(ShowRocketmqTagsRequest request) {
@@ -1136,13 +1108,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRocketmqTagsRequest 请求对象
+     * @param request ShowRocketmqTagsRequest 请求对象
      * @return AsyncInvoker<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse>
      */
     public AsyncInvoker<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse> showRocketmqTagsAsyncInvoker(
         ShowRocketmqTagsRequest request) {
-        return new AsyncInvoker<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse>(request,
-            RocketMQMeta.showRocketmqTags, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showRocketmqTags, hcClient);
     }
 
     /**
@@ -1152,7 +1123,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserRequest 请求对象
+     * @param request ShowUserRequest 请求对象
      * @return CompletableFuture<ShowUserResponse>
      */
     public CompletableFuture<ShowUserResponse> showUserAsync(ShowUserRequest request) {
@@ -1166,11 +1137,11 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserRequest 请求对象
+     * @param request ShowUserRequest 请求对象
      * @return AsyncInvoker<ShowUserRequest, ShowUserResponse>
      */
     public AsyncInvoker<ShowUserRequest, ShowUserResponse> showUserAsyncInvoker(ShowUserRequest request) {
-        return new AsyncInvoker<ShowUserRequest, ShowUserResponse>(request, RocketMQMeta.showUser, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showUser, hcClient);
     }
 
     /**
@@ -1180,7 +1151,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConsumerGroupRequest 请求对象
+     * @param request UpdateConsumerGroupRequest 请求对象
      * @return CompletableFuture<UpdateConsumerGroupResponse>
      */
     public CompletableFuture<UpdateConsumerGroupResponse> updateConsumerGroupAsync(UpdateConsumerGroupRequest request) {
@@ -1194,13 +1165,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConsumerGroupRequest 请求对象
+     * @param request UpdateConsumerGroupRequest 请求对象
      * @return AsyncInvoker<UpdateConsumerGroupRequest, UpdateConsumerGroupResponse>
      */
     public AsyncInvoker<UpdateConsumerGroupRequest, UpdateConsumerGroupResponse> updateConsumerGroupAsyncInvoker(
         UpdateConsumerGroupRequest request) {
-        return new AsyncInvoker<UpdateConsumerGroupRequest, UpdateConsumerGroupResponse>(request,
-            RocketMQMeta.updateConsumerGroup, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.updateConsumerGroup, hcClient);
     }
 
     /**
@@ -1210,7 +1180,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return CompletableFuture<UpdateInstanceResponse>
      */
     public CompletableFuture<UpdateInstanceResponse> updateInstanceAsync(UpdateInstanceRequest request) {
@@ -1224,13 +1194,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
      */
     public AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceAsyncInvoker(
         UpdateInstanceRequest request) {
-        return new AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, RocketMQMeta.updateInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.updateInstance, hcClient);
     }
 
     /**
@@ -1240,7 +1209,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRocketMqConfigsRequest 请求对象
+     * @param request UpdateRocketMqConfigsRequest 请求对象
      * @return CompletableFuture<UpdateRocketMqConfigsResponse>
      */
     public CompletableFuture<UpdateRocketMqConfigsResponse> updateRocketMqConfigsAsync(
@@ -1255,13 +1224,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRocketMqConfigsRequest 请求对象
+     * @param request UpdateRocketMqConfigsRequest 请求对象
      * @return AsyncInvoker<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse>
      */
     public AsyncInvoker<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse> updateRocketMqConfigsAsyncInvoker(
         UpdateRocketMqConfigsRequest request) {
-        return new AsyncInvoker<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse>(request,
-            RocketMQMeta.updateRocketMqConfigs, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.updateRocketMqConfigs, hcClient);
     }
 
     /**
@@ -1271,7 +1239,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return CompletableFuture<UpdateUserResponse>
      */
     public CompletableFuture<UpdateUserResponse> updateUserAsync(UpdateUserRequest request) {
@@ -1285,11 +1253,11 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return AsyncInvoker<UpdateUserRequest, UpdateUserResponse>
      */
     public AsyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserAsyncInvoker(UpdateUserRequest request) {
-        return new AsyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, RocketMQMeta.updateUser, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.updateUser, hcClient);
     }
 
     /**
@@ -1299,7 +1267,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateConsumedMessageRequest 请求对象
+     * @param request ValidateConsumedMessageRequest 请求对象
      * @return CompletableFuture<ValidateConsumedMessageResponse>
      */
     public CompletableFuture<ValidateConsumedMessageResponse> validateConsumedMessageAsync(
@@ -1314,13 +1282,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateConsumedMessageRequest 请求对象
+     * @param request ValidateConsumedMessageRequest 请求对象
      * @return AsyncInvoker<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse>
      */
     public AsyncInvoker<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> validateConsumedMessageAsyncInvoker(
         ValidateConsumedMessageRequest request) {
-        return new AsyncInvoker<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse>(request,
-            RocketMQMeta.validateConsumedMessage, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.validateConsumedMessage, hcClient);
     }
 
     /**
@@ -1330,7 +1297,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTopicOrBatchDeleteTopicRequest 请求对象
+     * @param request CreateTopicOrBatchDeleteTopicRequest 请求对象
      * @return CompletableFuture<CreateTopicOrBatchDeleteTopicResponse>
      */
     public CompletableFuture<CreateTopicOrBatchDeleteTopicResponse> createTopicOrBatchDeleteTopicAsync(
@@ -1345,13 +1312,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTopicOrBatchDeleteTopicRequest 请求对象
+     * @param request CreateTopicOrBatchDeleteTopicRequest 请求对象
      * @return AsyncInvoker<CreateTopicOrBatchDeleteTopicRequest, CreateTopicOrBatchDeleteTopicResponse>
      */
     public AsyncInvoker<CreateTopicOrBatchDeleteTopicRequest, CreateTopicOrBatchDeleteTopicResponse> createTopicOrBatchDeleteTopicAsyncInvoker(
         CreateTopicOrBatchDeleteTopicRequest request) {
-        return new AsyncInvoker<CreateTopicOrBatchDeleteTopicRequest, CreateTopicOrBatchDeleteTopicResponse>(request,
-            RocketMQMeta.createTopicOrBatchDeleteTopic, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.createTopicOrBatchDeleteTopic, hcClient);
     }
 
     /**
@@ -1361,7 +1327,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTopicRequest 请求对象
+     * @param request DeleteTopicRequest 请求对象
      * @return CompletableFuture<DeleteTopicResponse>
      */
     public CompletableFuture<DeleteTopicResponse> deleteTopicAsync(DeleteTopicRequest request) {
@@ -1375,11 +1341,11 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTopicRequest 请求对象
+     * @param request DeleteTopicRequest 请求对象
      * @return AsyncInvoker<DeleteTopicRequest, DeleteTopicResponse>
      */
     public AsyncInvoker<DeleteTopicRequest, DeleteTopicResponse> deleteTopicAsyncInvoker(DeleteTopicRequest request) {
-        return new AsyncInvoker<DeleteTopicRequest, DeleteTopicResponse>(request, RocketMQMeta.deleteTopic, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.deleteTopic, hcClient);
     }
 
     /**
@@ -1389,7 +1355,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConsumerGroupOfTopicRequest 请求对象
+     * @param request ListConsumerGroupOfTopicRequest 请求对象
      * @return CompletableFuture<ListConsumerGroupOfTopicResponse>
      */
     public CompletableFuture<ListConsumerGroupOfTopicResponse> listConsumerGroupOfTopicAsync(
@@ -1404,13 +1370,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConsumerGroupOfTopicRequest 请求对象
+     * @param request ListConsumerGroupOfTopicRequest 请求对象
      * @return AsyncInvoker<ListConsumerGroupOfTopicRequest, ListConsumerGroupOfTopicResponse>
      */
     public AsyncInvoker<ListConsumerGroupOfTopicRequest, ListConsumerGroupOfTopicResponse> listConsumerGroupOfTopicAsyncInvoker(
         ListConsumerGroupOfTopicRequest request) {
-        return new AsyncInvoker<ListConsumerGroupOfTopicRequest, ListConsumerGroupOfTopicResponse>(request,
-            RocketMQMeta.listConsumerGroupOfTopic, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listConsumerGroupOfTopic, hcClient);
     }
 
     /**
@@ -1420,7 +1385,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRocketInstanceTopicsRequest 请求对象
+     * @param request ListRocketInstanceTopicsRequest 请求对象
      * @return CompletableFuture<ListRocketInstanceTopicsResponse>
      */
     public CompletableFuture<ListRocketInstanceTopicsResponse> listRocketInstanceTopicsAsync(
@@ -1435,13 +1400,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRocketInstanceTopicsRequest 请求对象
+     * @param request ListRocketInstanceTopicsRequest 请求对象
      * @return AsyncInvoker<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse>
      */
     public AsyncInvoker<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse> listRocketInstanceTopicsAsyncInvoker(
         ListRocketInstanceTopicsRequest request) {
-        return new AsyncInvoker<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse>(request,
-            RocketMQMeta.listRocketInstanceTopics, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.listRocketInstanceTopics, hcClient);
     }
 
     /**
@@ -1451,7 +1415,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOneTopicRequest 请求对象
+     * @param request ShowOneTopicRequest 请求对象
      * @return CompletableFuture<ShowOneTopicResponse>
      */
     public CompletableFuture<ShowOneTopicResponse> showOneTopicAsync(ShowOneTopicRequest request) {
@@ -1465,13 +1429,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOneTopicRequest 请求对象
+     * @param request ShowOneTopicRequest 请求对象
      * @return AsyncInvoker<ShowOneTopicRequest, ShowOneTopicResponse>
      */
     public AsyncInvoker<ShowOneTopicRequest, ShowOneTopicResponse> showOneTopicAsyncInvoker(
         ShowOneTopicRequest request) {
-        return new AsyncInvoker<ShowOneTopicRequest, ShowOneTopicResponse>(request, RocketMQMeta.showOneTopic,
-            hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showOneTopic, hcClient);
     }
 
     /**
@@ -1481,7 +1444,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopicStatusRequest 请求对象
+     * @param request ShowTopicStatusRequest 请求对象
      * @return CompletableFuture<ShowTopicStatusResponse>
      */
     public CompletableFuture<ShowTopicStatusResponse> showTopicStatusAsync(ShowTopicStatusRequest request) {
@@ -1495,13 +1458,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopicStatusRequest 请求对象
+     * @param request ShowTopicStatusRequest 请求对象
      * @return AsyncInvoker<ShowTopicStatusRequest, ShowTopicStatusResponse>
      */
     public AsyncInvoker<ShowTopicStatusRequest, ShowTopicStatusResponse> showTopicStatusAsyncInvoker(
         ShowTopicStatusRequest request) {
-        return new AsyncInvoker<ShowTopicStatusRequest, ShowTopicStatusResponse>(request, RocketMQMeta.showTopicStatus,
-            hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.showTopicStatus, hcClient);
     }
 
     /**
@@ -1511,7 +1473,7 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicRequest 请求对象
+     * @param request UpdateTopicRequest 请求对象
      * @return CompletableFuture<UpdateTopicResponse>
      */
     public CompletableFuture<UpdateTopicResponse> updateTopicAsync(UpdateTopicRequest request) {
@@ -1525,11 +1487,11 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicRequest 请求对象
+     * @param request UpdateTopicRequest 请求对象
      * @return AsyncInvoker<UpdateTopicRequest, UpdateTopicResponse>
      */
     public AsyncInvoker<UpdateTopicRequest, UpdateTopicResponse> updateTopicAsyncInvoker(UpdateTopicRequest request) {
-        return new AsyncInvoker<UpdateTopicRequest, UpdateTopicResponse>(request, RocketMQMeta.updateTopic, hcClient);
+        return new AsyncInvoker<>(request, RocketMQMeta.updateTopic, hcClient);
     }
 
 }

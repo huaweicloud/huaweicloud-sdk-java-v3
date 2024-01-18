@@ -26,7 +26,7 @@ public class LogicController {
     }
 
     /**
-     * for_loop_params
+     * 旧版本逻辑控制器字段，当前已未使用
      * @return forLoopParams
      */
     public String getForLoopParams() {
@@ -43,7 +43,7 @@ public class LogicController {
     }
 
     /**
-     * condition
+     * 逻辑控制器条件
      * @return condition
      */
     public String getCondition() {

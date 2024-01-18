@@ -28,7 +28,7 @@ public class HiLensClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeviceAlarmsRequest 请求对象
+     * @param request ListDeviceAlarmsRequest 请求对象
      * @return ListDeviceAlarmsResponse
      */
     public ListDeviceAlarmsResponse listDeviceAlarms(ListDeviceAlarmsRequest request) {
@@ -42,13 +42,12 @@ public class HiLensClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeviceAlarmsRequest 请求对象
+     * @param request ListDeviceAlarmsRequest 请求对象
      * @return SyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse>
      */
     public SyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse> listDeviceAlarmsInvoker(
         ListDeviceAlarmsRequest request) {
-        return new SyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse>(request, HiLensMeta.listDeviceAlarms,
-            hcClient);
+        return new SyncInvoker<>(request, HiLensMeta.listDeviceAlarms, hcClient);
     }
 
     /**
@@ -58,7 +57,7 @@ public class HiLensClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesRequest 请求对象
+     * @param request ListDevicesRequest 请求对象
      * @return ListDevicesResponse
      */
     public ListDevicesResponse listDevices(ListDevicesRequest request) {
@@ -72,11 +71,11 @@ public class HiLensClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesRequest 请求对象
+     * @param request ListDevicesRequest 请求对象
      * @return SyncInvoker<ListDevicesRequest, ListDevicesResponse>
      */
     public SyncInvoker<ListDevicesRequest, ListDevicesResponse> listDevicesInvoker(ListDevicesRequest request) {
-        return new SyncInvoker<ListDevicesRequest, ListDevicesResponse>(request, HiLensMeta.listDevices, hcClient);
+        return new SyncInvoker<>(request, HiLensMeta.listDevices, hcClient);
     }
 
 }

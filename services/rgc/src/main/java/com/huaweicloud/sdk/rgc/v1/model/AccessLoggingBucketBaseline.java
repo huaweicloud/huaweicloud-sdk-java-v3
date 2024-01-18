@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Access日志基础设置。
+ * 访问日志基础设置。
  */
 public class AccessLoggingBucketBaseline {
 

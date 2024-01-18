@@ -60,9 +60,9 @@ import com.huaweicloud.sdk.dwr.v3.model.UpdateWorkflowResponse;
 public class DwrMeta {
 
     public static final HttpRequestDef<AcceptServiceContractRequest, AcceptServiceContractResponse> acceptServiceContract =
-        genForacceptServiceContract();
+        genForAcceptServiceContract();
 
-    private static HttpRequestDef<AcceptServiceContractRequest, AcceptServiceContractResponse> genForacceptServiceContract() {
+    private static HttpRequestDef<AcceptServiceContractRequest, AcceptServiceContractResponse> genForAcceptServiceContract() {
         // basic
         HttpRequestDef.Builder<AcceptServiceContractRequest, AcceptServiceContractResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AcceptServiceContractRequest.class, AcceptServiceContractResponse.class)
@@ -75,9 +75,7 @@ public class DwrMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AcceptServiceContractRequest.TypeEnum.class),
-            f -> f.withMarshaller(AcceptServiceContractRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(AcceptServiceContractRequest::getType, AcceptServiceContractRequest::setType));
 
         // response
 
@@ -97,9 +95,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<AsyncInvokeApiStartWorkflowRequest, AsyncInvokeApiStartWorkflowResponse> asyncInvokeApiStartWorkflow =
-        genForasyncInvokeApiStartWorkflow();
+        genForAsyncInvokeApiStartWorkflow();
 
-    private static HttpRequestDef<AsyncInvokeApiStartWorkflowRequest, AsyncInvokeApiStartWorkflowResponse> genForasyncInvokeApiStartWorkflow() {
+    private static HttpRequestDef<AsyncInvokeApiStartWorkflowRequest, AsyncInvokeApiStartWorkflowResponse> genForAsyncInvokeApiStartWorkflow() {
         // basic
         HttpRequestDef.Builder<AsyncInvokeApiStartWorkflowRequest, AsyncInvokeApiStartWorkflowResponse> builder =
             HttpRequestDef
@@ -115,16 +113,14 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AsyncInvokeApiStartWorkflowRequest::getGraphName, (req, v) -> {
-                req.setGraphName(v);
-            }));
+            f -> f.withMarshaller(AsyncInvokeApiStartWorkflowRequest::getGraphName,
+                AsyncInvokeApiStartWorkflowRequest::setGraphName));
         builder.<ExecuteWorkflowBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExecuteWorkflowBody.class),
-            f -> f.withMarshaller(AsyncInvokeApiStartWorkflowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AsyncInvokeApiStartWorkflowRequest::getBody,
+                AsyncInvokeApiStartWorkflowRequest::setBody));
 
         // response
 
@@ -156,9 +152,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<CheckWorkflowAuthenticationRequest, CheckWorkflowAuthenticationResponse> checkWorkflowAuthentication =
-        genForcheckWorkflowAuthentication();
+        genForCheckWorkflowAuthentication();
 
-    private static HttpRequestDef<CheckWorkflowAuthenticationRequest, CheckWorkflowAuthenticationResponse> genForcheckWorkflowAuthentication() {
+    private static HttpRequestDef<CheckWorkflowAuthenticationRequest, CheckWorkflowAuthenticationResponse> genForCheckWorkflowAuthentication() {
         // basic
         HttpRequestDef.Builder<CheckWorkflowAuthenticationRequest, CheckWorkflowAuthenticationResponse> builder =
             HttpRequestDef
@@ -201,9 +197,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<CreateMyActionTemplateRequest, CreateMyActionTemplateResponse> createMyActionTemplate =
-        genForcreateMyActionTemplate();
+        genForCreateMyActionTemplate();
 
-    private static HttpRequestDef<CreateMyActionTemplateRequest, CreateMyActionTemplateResponse> genForcreateMyActionTemplate() {
+    private static HttpRequestDef<CreateMyActionTemplateRequest, CreateMyActionTemplateResponse> genForCreateMyActionTemplate() {
         // basic
         HttpRequestDef.Builder<CreateMyActionTemplateRequest, CreateMyActionTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateMyActionTemplateRequest.class, CreateMyActionTemplateResponse.class)
@@ -216,16 +212,13 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMyActionTemplateRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(CreateMyActionTemplateRequest::getTemplateName,
+                CreateMyActionTemplateRequest::setTemplateName));
         builder.<ThirdTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThirdTemplateRequestBody.class),
-            f -> f.withMarshaller(CreateMyActionTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMyActionTemplateRequest::getBody, CreateMyActionTemplateRequest::setBody));
 
         // response
 
@@ -256,9 +249,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<CreateWorkflowAuthenticationRequest, CreateWorkflowAuthenticationResponse> createWorkflowAuthentication =
-        genForcreateWorkflowAuthentication();
+        genForCreateWorkflowAuthentication();
 
-    private static HttpRequestDef<CreateWorkflowAuthenticationRequest, CreateWorkflowAuthenticationResponse> genForcreateWorkflowAuthentication() {
+    private static HttpRequestDef<CreateWorkflowAuthenticationRequest, CreateWorkflowAuthenticationResponse> genForCreateWorkflowAuthentication() {
         // basic
         HttpRequestDef.Builder<CreateWorkflowAuthenticationRequest, CreateWorkflowAuthenticationResponse> builder =
             HttpRequestDef
@@ -289,9 +282,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<DeleteMyActionTemplateRequest, DeleteMyActionTemplateResponse> deleteMyActionTemplate =
-        genFordeleteMyActionTemplate();
+        genForDeleteMyActionTemplate();
 
-    private static HttpRequestDef<DeleteMyActionTemplateRequest, DeleteMyActionTemplateResponse> genFordeleteMyActionTemplate() {
+    private static HttpRequestDef<DeleteMyActionTemplateRequest, DeleteMyActionTemplateResponse> genForDeleteMyActionTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteMyActionTemplateRequest, DeleteMyActionTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteMyActionTemplateRequest.class, DeleteMyActionTemplateResponse.class)
@@ -304,9 +297,8 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMyActionTemplateRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(DeleteMyActionTemplateRequest::getTemplateName,
+                DeleteMyActionTemplateRequest::setTemplateName));
 
         // response
 
@@ -326,9 +318,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ListMyActionTemplateRequest, ListMyActionTemplateResponse> listMyActionTemplate =
-        genForlistMyActionTemplate();
+        genForListMyActionTemplate();
 
-    private static HttpRequestDef<ListMyActionTemplateRequest, ListMyActionTemplateResponse> genForlistMyActionTemplate() {
+    private static HttpRequestDef<ListMyActionTemplateRequest, ListMyActionTemplateResponse> genForListMyActionTemplate() {
         // basic
         HttpRequestDef.Builder<ListMyActionTemplateRequest, ListMyActionTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMyActionTemplateRequest.class, ListMyActionTemplateResponse.class)
@@ -341,37 +333,27 @@ public class DwrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMyActionTemplateRequest::getPrefix, (req, v) -> {
-                req.setPrefix(v);
-            }));
+            f -> f.withMarshaller(ListMyActionTemplateRequest::getPrefix, ListMyActionTemplateRequest::setPrefix));
         builder.<ListMyActionTemplateRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListMyActionTemplateRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListMyActionTemplateRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListMyActionTemplateRequest::getStatus, ListMyActionTemplateRequest::setStatus));
         builder.<ListMyActionTemplateRequest.CategoryEnum>withRequestField("category",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListMyActionTemplateRequest.CategoryEnum.class),
-            f -> f.withMarshaller(ListMyActionTemplateRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(ListMyActionTemplateRequest::getCategory, ListMyActionTemplateRequest::setCategory));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMyActionTemplateRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMyActionTemplateRequest::getOffset, ListMyActionTemplateRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMyActionTemplateRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMyActionTemplateRequest::getLimit, ListMyActionTemplateRequest::setLimit));
 
         // response
 
@@ -402,9 +384,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ListSystemTemplatesRequest, ListSystemTemplatesResponse> listSystemTemplates =
-        genForlistSystemTemplates();
+        genForListSystemTemplates();
 
-    private static HttpRequestDef<ListSystemTemplatesRequest, ListSystemTemplatesResponse> genForlistSystemTemplates() {
+    private static HttpRequestDef<ListSystemTemplatesRequest, ListSystemTemplatesResponse> genForListSystemTemplates() {
         // basic
         HttpRequestDef.Builder<ListSystemTemplatesRequest, ListSystemTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSystemTemplatesRequest.class, ListSystemTemplatesResponse.class)
@@ -417,30 +399,22 @@ public class DwrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSystemTemplatesRequest::getPrefix, (req, v) -> {
-                req.setPrefix(v);
-            }));
+            f -> f.withMarshaller(ListSystemTemplatesRequest::getPrefix, ListSystemTemplatesRequest::setPrefix));
         builder.<String>withRequestField("category",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSystemTemplatesRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(ListSystemTemplatesRequest::getCategory, ListSystemTemplatesRequest::setCategory));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSystemTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSystemTemplatesRequest::getOffset, ListSystemTemplatesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSystemTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSystemTemplatesRequest::getLimit, ListSystemTemplatesRequest::setLimit));
 
         // response
 
@@ -471,9 +445,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ListWorkflowInstanceRequest, ListWorkflowInstanceResponse> listWorkflowInstance =
-        genForlistWorkflowInstance();
+        genForListWorkflowInstance();
 
-    private static HttpRequestDef<ListWorkflowInstanceRequest, ListWorkflowInstanceResponse> genForlistWorkflowInstance() {
+    private static HttpRequestDef<ListWorkflowInstanceRequest, ListWorkflowInstanceResponse> genForListWorkflowInstance() {
         // basic
         HttpRequestDef.Builder<ListWorkflowInstanceRequest, ListWorkflowInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListWorkflowInstanceRequest.class, ListWorkflowInstanceResponse.class)
@@ -486,44 +460,34 @@ public class DwrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkflowInstanceRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowInstanceRequest::getLimit, ListWorkflowInstanceRequest::setLimit));
         builder.<String>withRequestField("graph_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowInstanceRequest::getGraphName, (req, v) -> {
-                req.setGraphName(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowInstanceRequest::getGraphName,
+                ListWorkflowInstanceRequest::setGraphName));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowInstanceRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowInstanceRequest::getStartTime,
+                ListWorkflowInstanceRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowInstanceRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowInstanceRequest::getEndTime, ListWorkflowInstanceRequest::setEndTime));
         builder.<ListWorkflowInstanceRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListWorkflowInstanceRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListWorkflowInstanceRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowInstanceRequest::getStatus, ListWorkflowInstanceRequest::setStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkflowInstanceRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowInstanceRequest::getOffset, ListWorkflowInstanceRequest::setOffset));
 
         // response
 
@@ -554,9 +518,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<RestoreWorkflowExecutionRequest, RestoreWorkflowExecutionResponse> restoreWorkflowExecution =
-        genForrestoreWorkflowExecution();
+        genForRestoreWorkflowExecution();
 
-    private static HttpRequestDef<RestoreWorkflowExecutionRequest, RestoreWorkflowExecutionResponse> genForrestoreWorkflowExecution() {
+    private static HttpRequestDef<RestoreWorkflowExecutionRequest, RestoreWorkflowExecutionResponse> genForRestoreWorkflowExecution() {
         // basic
         HttpRequestDef.Builder<RestoreWorkflowExecutionRequest, RestoreWorkflowExecutionResponse> builder =
             HttpRequestDef
@@ -570,16 +534,14 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreWorkflowExecutionRequest::getExecutionName, (req, v) -> {
-                req.setExecutionName(v);
-            }));
+            f -> f.withMarshaller(RestoreWorkflowExecutionRequest::getExecutionName,
+                RestoreWorkflowExecutionRequest::setExecutionName));
         builder.<String>withRequestField("graph_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreWorkflowExecutionRequest::getGraphName, (req, v) -> {
-                req.setGraphName(v);
-            }));
+            f -> f.withMarshaller(RestoreWorkflowExecutionRequest::getGraphName,
+                RestoreWorkflowExecutionRequest::setGraphName));
 
         // response
 
@@ -611,9 +573,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ShowPublicActionListRequest, ShowPublicActionListResponse> showPublicActionList =
-        genForshowPublicActionList();
+        genForShowPublicActionList();
 
-    private static HttpRequestDef<ShowPublicActionListRequest, ShowPublicActionListResponse> genForshowPublicActionList() {
+    private static HttpRequestDef<ShowPublicActionListRequest, ShowPublicActionListResponse> genForShowPublicActionList() {
         // basic
         HttpRequestDef.Builder<ShowPublicActionListRequest, ShowPublicActionListResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPublicActionListRequest.class, ShowPublicActionListResponse.class)
@@ -626,30 +588,22 @@ public class DwrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicActionListRequest::getPrefix, (req, v) -> {
-                req.setPrefix(v);
-            }));
+            f -> f.withMarshaller(ShowPublicActionListRequest::getPrefix, ShowPublicActionListRequest::setPrefix));
         builder.<String>withRequestField("category",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicActionListRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(ShowPublicActionListRequest::getCategory, ShowPublicActionListRequest::setCategory));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPublicActionListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowPublicActionListRequest::getOffset, ShowPublicActionListRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicActionListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowPublicActionListRequest::getLimit, ShowPublicActionListRequest::setLimit));
 
         // response
 
@@ -680,9 +634,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ShowPublicTemplateInfoRequest, ShowPublicTemplateInfoResponse> showPublicTemplateInfo =
-        genForshowPublicTemplateInfo();
+        genForShowPublicTemplateInfo();
 
-    private static HttpRequestDef<ShowPublicTemplateInfoRequest, ShowPublicTemplateInfoResponse> genForshowPublicTemplateInfo() {
+    private static HttpRequestDef<ShowPublicTemplateInfoRequest, ShowPublicTemplateInfoResponse> genForShowPublicTemplateInfo() {
         // basic
         HttpRequestDef.Builder<ShowPublicTemplateInfoRequest, ShowPublicTemplateInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPublicTemplateInfoRequest.class, ShowPublicTemplateInfoResponse.class)
@@ -695,9 +649,8 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicTemplateInfoRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(ShowPublicTemplateInfoRequest::getTemplateName,
+                ShowPublicTemplateInfoRequest::setTemplateName));
 
         // response
 
@@ -728,9 +681,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ShowServiceContractRequest, ShowServiceContractResponse> showServiceContract =
-        genForshowServiceContract();
+        genForShowServiceContract();
 
-    private static HttpRequestDef<ShowServiceContractRequest, ShowServiceContractResponse> genForshowServiceContract() {
+    private static HttpRequestDef<ShowServiceContractRequest, ShowServiceContractResponse> genForShowServiceContract() {
         // basic
         HttpRequestDef.Builder<ShowServiceContractRequest, ShowServiceContractResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServiceContractRequest.class, ShowServiceContractResponse.class)
@@ -743,9 +696,7 @@ public class DwrMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowServiceContractRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowServiceContractRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowServiceContractRequest::getType, ShowServiceContractRequest::setType));
 
         // response
 
@@ -776,9 +727,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ShowSystemTemplateDetailRequest, ShowSystemTemplateDetailResponse> showSystemTemplateDetail =
-        genForshowSystemTemplateDetail();
+        genForShowSystemTemplateDetail();
 
-    private static HttpRequestDef<ShowSystemTemplateDetailRequest, ShowSystemTemplateDetailResponse> genForshowSystemTemplateDetail() {
+    private static HttpRequestDef<ShowSystemTemplateDetailRequest, ShowSystemTemplateDetailResponse> genForShowSystemTemplateDetail() {
         // basic
         HttpRequestDef.Builder<ShowSystemTemplateDetailRequest, ShowSystemTemplateDetailResponse> builder =
             HttpRequestDef
@@ -792,9 +743,8 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSystemTemplateDetailRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(ShowSystemTemplateDetailRequest::getTemplateName,
+                ShowSystemTemplateDetailRequest::setTemplateName));
 
         // response
 
@@ -826,9 +776,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ShowThirdTemplateInfoRequest, ShowThirdTemplateInfoResponse> showThirdTemplateInfo =
-        genForshowThirdTemplateInfo();
+        genForShowThirdTemplateInfo();
 
-    private static HttpRequestDef<ShowThirdTemplateInfoRequest, ShowThirdTemplateInfoResponse> genForshowThirdTemplateInfo() {
+    private static HttpRequestDef<ShowThirdTemplateInfoRequest, ShowThirdTemplateInfoResponse> genForShowThirdTemplateInfo() {
         // basic
         HttpRequestDef.Builder<ShowThirdTemplateInfoRequest, ShowThirdTemplateInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowThirdTemplateInfoRequest.class, ShowThirdTemplateInfoResponse.class)
@@ -841,9 +791,8 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThirdTemplateInfoRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(ShowThirdTemplateInfoRequest::getTemplateName,
+                ShowThirdTemplateInfoRequest::setTemplateName));
 
         // response
 
@@ -874,9 +823,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ShowWorkflowInstanceRequest, ShowWorkflowInstanceResponse> showWorkflowInstance =
-        genForshowWorkflowInstance();
+        genForShowWorkflowInstance();
 
-    private static HttpRequestDef<ShowWorkflowInstanceRequest, ShowWorkflowInstanceResponse> genForshowWorkflowInstance() {
+    private static HttpRequestDef<ShowWorkflowInstanceRequest, ShowWorkflowInstanceResponse> genForShowWorkflowInstance() {
         // basic
         HttpRequestDef.Builder<ShowWorkflowInstanceRequest, ShowWorkflowInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowWorkflowInstanceRequest.class, ShowWorkflowInstanceResponse.class)
@@ -889,16 +838,14 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWorkflowInstanceRequest::getExecutionName, (req, v) -> {
-                req.setExecutionName(v);
-            }));
+            f -> f.withMarshaller(ShowWorkflowInstanceRequest::getExecutionName,
+                ShowWorkflowInstanceRequest::setExecutionName));
         builder.<String>withRequestField("graph_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWorkflowInstanceRequest::getGraphName, (req, v) -> {
-                req.setGraphName(v);
-            }));
+            f -> f.withMarshaller(ShowWorkflowInstanceRequest::getGraphName,
+                ShowWorkflowInstanceRequest::setGraphName));
 
         // response
 
@@ -929,9 +876,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<UpdateMyActionTemplateRequest, UpdateMyActionTemplateResponse> updateMyActionTemplate =
-        genForupdateMyActionTemplate();
+        genForUpdateMyActionTemplate();
 
-    private static HttpRequestDef<UpdateMyActionTemplateRequest, UpdateMyActionTemplateResponse> genForupdateMyActionTemplate() {
+    private static HttpRequestDef<UpdateMyActionTemplateRequest, UpdateMyActionTemplateResponse> genForUpdateMyActionTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateMyActionTemplateRequest, UpdateMyActionTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateMyActionTemplateRequest.class, UpdateMyActionTemplateResponse.class)
@@ -944,16 +891,13 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMyActionTemplateRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(UpdateMyActionTemplateRequest::getTemplateName,
+                UpdateMyActionTemplateRequest::setTemplateName));
         builder.<ThirdTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThirdTemplateRequestBody.class),
-            f -> f.withMarshaller(UpdateMyActionTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMyActionTemplateRequest::getBody, UpdateMyActionTemplateRequest::setBody));
 
         // response
 
@@ -984,9 +928,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<UpdateMyActionTemplateToDeprecatedRequest, UpdateMyActionTemplateToDeprecatedResponse> updateMyActionTemplateToDeprecated =
-        genForupdateMyActionTemplateToDeprecated();
+        genForUpdateMyActionTemplateToDeprecated();
 
-    private static HttpRequestDef<UpdateMyActionTemplateToDeprecatedRequest, UpdateMyActionTemplateToDeprecatedResponse> genForupdateMyActionTemplateToDeprecated() {
+    private static HttpRequestDef<UpdateMyActionTemplateToDeprecatedRequest, UpdateMyActionTemplateToDeprecatedResponse> genForUpdateMyActionTemplateToDeprecated() {
         // basic
         HttpRequestDef.Builder<UpdateMyActionTemplateToDeprecatedRequest, UpdateMyActionTemplateToDeprecatedResponse> builder =
             HttpRequestDef
@@ -1002,9 +946,8 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMyActionTemplateToDeprecatedRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(UpdateMyActionTemplateToDeprecatedRequest::getTemplateName,
+                UpdateMyActionTemplateToDeprecatedRequest::setTemplateName));
 
         // response
 
@@ -1024,9 +967,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflow =
-        genForcreateWorkflow();
+        genForCreateWorkflow();
 
-    private static HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> genForcreateWorkflow() {
+    private static HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> genForCreateWorkflow() {
         // basic
         HttpRequestDef.Builder<CreateWorkflowRequest, CreateWorkflowResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateWorkflowRequest.class, CreateWorkflowResponse.class)
@@ -1039,16 +982,12 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateWorkflowRequest::getGraphName, (req, v) -> {
-                req.setGraphName(v);
-            }));
+            f -> f.withMarshaller(CreateWorkflowRequest::getGraphName, CreateWorkflowRequest::setGraphName));
         builder.<CreateWorkflowRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateWorkflowRequestBody.class),
-            f -> f.withMarshaller(CreateWorkflowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateWorkflowRequest::getBody, CreateWorkflowRequest::setBody));
 
         // response
 
@@ -1076,9 +1015,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<DeleteWorkflowRequest, DeleteWorkflowResponse> deleteWorkflow =
-        genFordeleteWorkflow();
+        genForDeleteWorkflow();
 
-    private static HttpRequestDef<DeleteWorkflowRequest, DeleteWorkflowResponse> genFordeleteWorkflow() {
+    private static HttpRequestDef<DeleteWorkflowRequest, DeleteWorkflowResponse> genForDeleteWorkflow() {
         // basic
         HttpRequestDef.Builder<DeleteWorkflowRequest, DeleteWorkflowResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteWorkflowRequest.class, DeleteWorkflowResponse.class)
@@ -1091,9 +1030,7 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWorkflowRequest::getGraphName, (req, v) -> {
-                req.setGraphName(v);
-            }));
+            f -> f.withMarshaller(DeleteWorkflowRequest::getGraphName, DeleteWorkflowRequest::setGraphName));
 
         // response
 
@@ -1111,9 +1048,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflows =
-        genForlistWorkflows();
+        genForListWorkflows();
 
-    private static HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> genForlistWorkflows() {
+    private static HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> genForListWorkflows() {
         // basic
         HttpRequestDef.Builder<ListWorkflowsRequest, ListWorkflowsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWorkflowsRequest.class, ListWorkflowsResponse.class)
@@ -1126,23 +1063,17 @@ public class DwrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getPrefix, (req, v) -> {
-                req.setPrefix(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowsRequest::getPrefix, ListWorkflowsRequest::setPrefix));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowsRequest::getOffset, ListWorkflowsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListWorkflowsRequest::getLimit, ListWorkflowsRequest::setLimit));
 
         // response
 
@@ -1170,9 +1101,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<ShowWorkflowInfoRequest, ShowWorkflowInfoResponse> showWorkflowInfo =
-        genForshowWorkflowInfo();
+        genForShowWorkflowInfo();
 
-    private static HttpRequestDef<ShowWorkflowInfoRequest, ShowWorkflowInfoResponse> genForshowWorkflowInfo() {
+    private static HttpRequestDef<ShowWorkflowInfoRequest, ShowWorkflowInfoResponse> genForShowWorkflowInfo() {
         // basic
         HttpRequestDef.Builder<ShowWorkflowInfoRequest, ShowWorkflowInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowWorkflowInfoRequest.class, ShowWorkflowInfoResponse.class)
@@ -1185,9 +1116,7 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWorkflowInfoRequest::getGraphName, (req, v) -> {
-                req.setGraphName(v);
-            }));
+            f -> f.withMarshaller(ShowWorkflowInfoRequest::getGraphName, ShowWorkflowInfoRequest::setGraphName));
 
         // response
 
@@ -1216,9 +1145,9 @@ public class DwrMeta {
     }
 
     public static final HttpRequestDef<UpdateWorkflowRequest, UpdateWorkflowResponse> updateWorkflow =
-        genForupdateWorkflow();
+        genForUpdateWorkflow();
 
-    private static HttpRequestDef<UpdateWorkflowRequest, UpdateWorkflowResponse> genForupdateWorkflow() {
+    private static HttpRequestDef<UpdateWorkflowRequest, UpdateWorkflowResponse> genForUpdateWorkflow() {
         // basic
         HttpRequestDef.Builder<UpdateWorkflowRequest, UpdateWorkflowResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateWorkflowRequest.class, UpdateWorkflowResponse.class)
@@ -1231,16 +1160,12 @@ public class DwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWorkflowRequest::getGraphName, (req, v) -> {
-                req.setGraphName(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkflowRequest::getGraphName, UpdateWorkflowRequest::setGraphName));
         builder.<UpdateWorkflowBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateWorkflowBody.class),
-            f -> f.withMarshaller(UpdateWorkflowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkflowRequest::getBody, UpdateWorkflowRequest::setBody));
 
         // response
 

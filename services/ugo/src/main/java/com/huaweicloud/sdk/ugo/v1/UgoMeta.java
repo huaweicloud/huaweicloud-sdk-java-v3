@@ -58,9 +58,9 @@ import com.huaweicloud.sdk.ugo.v1.model.SqlConvertReq;
 public class UgoMeta {
 
     public static final HttpRequestDef<CheckPermissionRequest, CheckPermissionResponse> checkPermission =
-        genForcheckPermission();
+        genForCheckPermission();
 
-    private static HttpRequestDef<CheckPermissionRequest, CheckPermissionResponse> genForcheckPermission() {
+    private static HttpRequestDef<CheckPermissionRequest, CheckPermissionResponse> genForCheckPermission() {
         // basic
         HttpRequestDef.Builder<CheckPermissionRequest, CheckPermissionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckPermissionRequest.class, CheckPermissionResponse.class)
@@ -73,9 +73,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckPermissionRequest::getMigrationProjectId, (req, v) -> {
-                req.setMigrationProjectId(v);
-            }));
+            f -> f.withMarshaller(CheckPermissionRequest::getMigrationProjectId,
+                CheckPermissionRequest::setMigrationProjectId));
 
         // response
 
@@ -83,9 +82,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<CommitSyntaxConversionRequest, CommitSyntaxConversionResponse> commitSyntaxConversion =
-        genForcommitSyntaxConversion();
+        genForCommitSyntaxConversion();
 
-    private static HttpRequestDef<CommitSyntaxConversionRequest, CommitSyntaxConversionResponse> genForcommitSyntaxConversion() {
+    private static HttpRequestDef<CommitSyntaxConversionRequest, CommitSyntaxConversionResponse> genForCommitSyntaxConversion() {
         // basic
         HttpRequestDef.Builder<CommitSyntaxConversionRequest, CommitSyntaxConversionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CommitSyntaxConversionRequest.class, CommitSyntaxConversionResponse.class)
@@ -98,9 +97,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CommitSyntaxConversionRequest::getMigrationProjectId, (req, v) -> {
-                req.setMigrationProjectId(v);
-            }));
+            f -> f.withMarshaller(CommitSyntaxConversionRequest::getMigrationProjectId,
+                CommitSyntaxConversionRequest::setMigrationProjectId));
 
         // response
 
@@ -108,9 +106,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<CommitVerificationRequest, CommitVerificationResponse> commitVerification =
-        genForcommitVerification();
+        genForCommitVerification();
 
-    private static HttpRequestDef<CommitVerificationRequest, CommitVerificationResponse> genForcommitVerification() {
+    private static HttpRequestDef<CommitVerificationRequest, CommitVerificationResponse> genForCommitVerification() {
         // basic
         HttpRequestDef.Builder<CommitVerificationRequest, CommitVerificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CommitVerificationRequest.class, CommitVerificationResponse.class)
@@ -123,9 +121,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CommitVerificationRequest::getMigrationProjectId, (req, v) -> {
-                req.setMigrationProjectId(v);
-            }));
+            f -> f.withMarshaller(CommitVerificationRequest::getMigrationProjectId,
+                CommitVerificationRequest::setMigrationProjectId));
 
         // response
 
@@ -133,9 +130,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ConfirmTargetDbTypeRequest, ConfirmTargetDbTypeResponse> confirmTargetDbType =
-        genForconfirmTargetDbType();
+        genForConfirmTargetDbType();
 
-    private static HttpRequestDef<ConfirmTargetDbTypeRequest, ConfirmTargetDbTypeResponse> genForconfirmTargetDbType() {
+    private static HttpRequestDef<ConfirmTargetDbTypeRequest, ConfirmTargetDbTypeResponse> genForConfirmTargetDbType() {
         // basic
         HttpRequestDef.Builder<ConfirmTargetDbTypeRequest, ConfirmTargetDbTypeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ConfirmTargetDbTypeRequest.class, ConfirmTargetDbTypeResponse.class)
@@ -148,9 +145,7 @@ public class UgoMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfirmTargetDBReq.class),
-            f -> f.withMarshaller(ConfirmTargetDbTypeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ConfirmTargetDbTypeRequest::getBody, ConfirmTargetDbTypeRequest::setBody));
 
         // response
 
@@ -158,9 +153,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<CreateEvaluationProjectRequest, CreateEvaluationProjectResponse> createEvaluationProject =
-        genForcreateEvaluationProject();
+        genForCreateEvaluationProject();
 
-    private static HttpRequestDef<CreateEvaluationProjectRequest, CreateEvaluationProjectResponse> genForcreateEvaluationProject() {
+    private static HttpRequestDef<CreateEvaluationProjectRequest, CreateEvaluationProjectResponse> genForCreateEvaluationProject() {
         // basic
         HttpRequestDef.Builder<CreateEvaluationProjectRequest, CreateEvaluationProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateEvaluationProjectRequest.class, CreateEvaluationProjectResponse.class)
@@ -173,9 +168,7 @@ public class UgoMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEvaluationProjectReq.class),
-            f -> f.withMarshaller(CreateEvaluationProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEvaluationProjectRequest::getBody, CreateEvaluationProjectRequest::setBody));
 
         // response
 
@@ -183,9 +176,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<CreateMigrationProjectRequest, CreateMigrationProjectResponse> createMigrationProject =
-        genForcreateMigrationProject();
+        genForCreateMigrationProject();
 
-    private static HttpRequestDef<CreateMigrationProjectRequest, CreateMigrationProjectResponse> genForcreateMigrationProject() {
+    private static HttpRequestDef<CreateMigrationProjectRequest, CreateMigrationProjectResponse> genForCreateMigrationProject() {
         // basic
         HttpRequestDef.Builder<CreateMigrationProjectRequest, CreateMigrationProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateMigrationProjectRequest.class, CreateMigrationProjectResponse.class)
@@ -198,9 +191,7 @@ public class UgoMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMigrationProject.class),
-            f -> f.withMarshaller(CreateMigrationProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMigrationProjectRequest::getBody, CreateMigrationProjectRequest::setBody));
 
         // response
 
@@ -208,9 +199,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<DeleteEvaluationProjectRequest, DeleteEvaluationProjectResponse> deleteEvaluationProject =
-        genFordeleteEvaluationProject();
+        genForDeleteEvaluationProject();
 
-    private static HttpRequestDef<DeleteEvaluationProjectRequest, DeleteEvaluationProjectResponse> genFordeleteEvaluationProject() {
+    private static HttpRequestDef<DeleteEvaluationProjectRequest, DeleteEvaluationProjectResponse> genForDeleteEvaluationProject() {
         // basic
         HttpRequestDef.Builder<DeleteEvaluationProjectRequest, DeleteEvaluationProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEvaluationProjectRequest.class, DeleteEvaluationProjectResponse.class)
@@ -223,9 +214,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEvaluationProjectRequest::getEvaluationProjectId, (req, v) -> {
-                req.setEvaluationProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteEvaluationProjectRequest::getEvaluationProjectId,
+                DeleteEvaluationProjectRequest::setEvaluationProjectId));
 
         // response
 
@@ -233,9 +223,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<DeleteMigrationProjectRequest, DeleteMigrationProjectResponse> deleteMigrationProject =
-        genFordeleteMigrationProject();
+        genForDeleteMigrationProject();
 
-    private static HttpRequestDef<DeleteMigrationProjectRequest, DeleteMigrationProjectResponse> genFordeleteMigrationProject() {
+    private static HttpRequestDef<DeleteMigrationProjectRequest, DeleteMigrationProjectResponse> genForDeleteMigrationProject() {
         // basic
         HttpRequestDef.Builder<DeleteMigrationProjectRequest, DeleteMigrationProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteMigrationProjectRequest.class, DeleteMigrationProjectResponse.class)
@@ -248,9 +238,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMigrationProjectRequest::getMigrationProjectId, (req, v) -> {
-                req.setMigrationProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteMigrationProjectRequest::getMigrationProjectId,
+                DeleteMigrationProjectRequest::setMigrationProjectId));
 
         // response
 
@@ -258,9 +247,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<DownloadFailureReportRequest, DownloadFailureReportResponse> downloadFailureReport =
-        genFordownloadFailureReport();
+        genForDownloadFailureReport();
 
-    private static HttpRequestDef<DownloadFailureReportRequest, DownloadFailureReportResponse> genFordownloadFailureReport() {
+    private static HttpRequestDef<DownloadFailureReportRequest, DownloadFailureReportResponse> genForDownloadFailureReport() {
         // basic
         HttpRequestDef.Builder<DownloadFailureReportRequest, DownloadFailureReportResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, DownloadFailureReportRequest.class, DownloadFailureReportResponse.class)
@@ -273,9 +262,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadFailureReportRequest::getMigrationProjectId, (req, v) -> {
-                req.setMigrationProjectId(v);
-            }));
+            f -> f.withMarshaller(DownloadFailureReportRequest::getMigrationProjectId,
+                DownloadFailureReportRequest::setMigrationProjectId));
 
         // response
 
@@ -283,9 +271,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ListEvaluationProjectsRequest, ListEvaluationProjectsResponse> listEvaluationProjects =
-        genForlistEvaluationProjects();
+        genForListEvaluationProjects();
 
-    private static HttpRequestDef<ListEvaluationProjectsRequest, ListEvaluationProjectsResponse> genForlistEvaluationProjects() {
+    private static HttpRequestDef<ListEvaluationProjectsRequest, ListEvaluationProjectsResponse> genForListEvaluationProjects() {
         // basic
         HttpRequestDef.Builder<ListEvaluationProjectsRequest, ListEvaluationProjectsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEvaluationProjectsRequest.class, ListEvaluationProjectsResponse.class)
@@ -298,30 +286,24 @@ public class UgoMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEvaluationProjectsRequest::getEvaluationProjectName, (req, v) -> {
-                req.setEvaluationProjectName(v);
-            }));
+            f -> f.withMarshaller(ListEvaluationProjectsRequest::getEvaluationProjectName,
+                ListEvaluationProjectsRequest::setEvaluationProjectName));
         builder.<ListEvaluationProjectsRequest.EvaluationProjectStatusEnum>withRequestField("evaluation_project_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEvaluationProjectsRequest.EvaluationProjectStatusEnum.class),
-            f -> f.withMarshaller(ListEvaluationProjectsRequest::getEvaluationProjectStatus, (req, v) -> {
-                req.setEvaluationProjectStatus(v);
-            }));
+            f -> f.withMarshaller(ListEvaluationProjectsRequest::getEvaluationProjectStatus,
+                ListEvaluationProjectsRequest::setEvaluationProjectStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEvaluationProjectsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEvaluationProjectsRequest::getOffset, ListEvaluationProjectsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEvaluationProjectsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEvaluationProjectsRequest::getLimit, ListEvaluationProjectsRequest::setLimit));
 
         // response
 
@@ -329,9 +311,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ListMigrationProjectsRequest, ListMigrationProjectsResponse> listMigrationProjects =
-        genForlistMigrationProjects();
+        genForListMigrationProjects();
 
-    private static HttpRequestDef<ListMigrationProjectsRequest, ListMigrationProjectsResponse> genForlistMigrationProjects() {
+    private static HttpRequestDef<ListMigrationProjectsRequest, ListMigrationProjectsResponse> genForListMigrationProjects() {
         // basic
         HttpRequestDef.Builder<ListMigrationProjectsRequest, ListMigrationProjectsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMigrationProjectsRequest.class, ListMigrationProjectsResponse.class)
@@ -344,16 +326,12 @@ public class UgoMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMigrationProjectsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMigrationProjectsRequest::getOffset, ListMigrationProjectsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMigrationProjectsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMigrationProjectsRequest::getLimit, ListMigrationProjectsRequest::setLimit));
 
         // response
 
@@ -361,9 +339,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ListPermissionCheckResultRequest, ListPermissionCheckResultResponse> listPermissionCheckResult =
-        genForlistPermissionCheckResult();
+        genForListPermissionCheckResult();
 
-    private static HttpRequestDef<ListPermissionCheckResultRequest, ListPermissionCheckResultResponse> genForlistPermissionCheckResult() {
+    private static HttpRequestDef<ListPermissionCheckResultRequest, ListPermissionCheckResultResponse> genForListPermissionCheckResult() {
         // basic
         HttpRequestDef.Builder<ListPermissionCheckResultRequest, ListPermissionCheckResultResponse> builder =
             HttpRequestDef
@@ -379,32 +357,29 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionCheckResultRequest::getMigrationProjectId, (req, v) -> {
-                req.setMigrationProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPermissionCheckResultRequest::getMigrationProjectId,
+                ListPermissionCheckResultRequest::setMigrationProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPermissionCheckResultRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPermissionCheckResultRequest::getOffset,
+                ListPermissionCheckResultRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPermissionCheckResultRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPermissionCheckResultRequest::getLimit,
+                ListPermissionCheckResultRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForListQuotas();
 
-    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForListQuotas() {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
@@ -420,9 +395,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ListSyntaxConversionProgressRequest, ListSyntaxConversionProgressResponse> listSyntaxConversionProgress =
-        genForlistSyntaxConversionProgress();
+        genForListSyntaxConversionProgress();
 
-    private static HttpRequestDef<ListSyntaxConversionProgressRequest, ListSyntaxConversionProgressResponse> genForlistSyntaxConversionProgress() {
+    private static HttpRequestDef<ListSyntaxConversionProgressRequest, ListSyntaxConversionProgressResponse> genForListSyntaxConversionProgress() {
         // basic
         HttpRequestDef.Builder<ListSyntaxConversionProgressRequest, ListSyntaxConversionProgressResponse> builder =
             HttpRequestDef
@@ -438,9 +413,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSyntaxConversionProgressRequest::getMigrationProjectId, (req, v) -> {
-                req.setMigrationProjectId(v);
-            }));
+            f -> f.withMarshaller(ListSyntaxConversionProgressRequest::getMigrationProjectId,
+                ListSyntaxConversionProgressRequest::setMigrationProjectId));
 
         // response
 
@@ -448,9 +422,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ListVerificationProgressRequest, ListVerificationProgressResponse> listVerificationProgress =
-        genForlistVerificationProgress();
+        genForListVerificationProgress();
 
-    private static HttpRequestDef<ListVerificationProgressRequest, ListVerificationProgressResponse> genForlistVerificationProgress() {
+    private static HttpRequestDef<ListVerificationProgressRequest, ListVerificationProgressResponse> genForListVerificationProgress() {
         // basic
         HttpRequestDef.Builder<ListVerificationProgressRequest, ListVerificationProgressResponse> builder =
             HttpRequestDef
@@ -464,9 +438,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVerificationProgressRequest::getMigrationProjectId, (req, v) -> {
-                req.setMigrationProjectId(v);
-            }));
+            f -> f.withMarshaller(ListVerificationProgressRequest::getMigrationProjectId,
+                ListVerificationProgressRequest::setMigrationProjectId));
 
         // response
 
@@ -474,9 +447,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ShowEvaluationProjectDetailRequest, ShowEvaluationProjectDetailResponse> showEvaluationProjectDetail =
-        genForshowEvaluationProjectDetail();
+        genForShowEvaluationProjectDetail();
 
-    private static HttpRequestDef<ShowEvaluationProjectDetailRequest, ShowEvaluationProjectDetailResponse> genForshowEvaluationProjectDetail() {
+    private static HttpRequestDef<ShowEvaluationProjectDetailRequest, ShowEvaluationProjectDetailResponse> genForShowEvaluationProjectDetail() {
         // basic
         HttpRequestDef.Builder<ShowEvaluationProjectDetailRequest, ShowEvaluationProjectDetailResponse> builder =
             HttpRequestDef
@@ -492,9 +465,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEvaluationProjectDetailRequest::getEvaluationProjectId, (req, v) -> {
-                req.setEvaluationProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowEvaluationProjectDetailRequest::getEvaluationProjectId,
+                ShowEvaluationProjectDetailRequest::setEvaluationProjectId));
 
         // response
 
@@ -502,9 +474,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ShowEvaluationProjectStatusRequest, ShowEvaluationProjectStatusResponse> showEvaluationProjectStatus =
-        genForshowEvaluationProjectStatus();
+        genForShowEvaluationProjectStatus();
 
-    private static HttpRequestDef<ShowEvaluationProjectStatusRequest, ShowEvaluationProjectStatusResponse> genForshowEvaluationProjectStatus() {
+    private static HttpRequestDef<ShowEvaluationProjectStatusRequest, ShowEvaluationProjectStatusResponse> genForShowEvaluationProjectStatus() {
         // basic
         HttpRequestDef.Builder<ShowEvaluationProjectStatusRequest, ShowEvaluationProjectStatusResponse> builder =
             HttpRequestDef
@@ -520,9 +492,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEvaluationProjectStatusRequest::getEvaluationProjectId, (req, v) -> {
-                req.setEvaluationProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowEvaluationProjectStatusRequest::getEvaluationProjectId,
+                ShowEvaluationProjectStatusRequest::setEvaluationProjectId));
 
         // response
 
@@ -530,9 +501,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ShowMigrationProjectDetailRequest, ShowMigrationProjectDetailResponse> showMigrationProjectDetail =
-        genForshowMigrationProjectDetail();
+        genForShowMigrationProjectDetail();
 
-    private static HttpRequestDef<ShowMigrationProjectDetailRequest, ShowMigrationProjectDetailResponse> genForshowMigrationProjectDetail() {
+    private static HttpRequestDef<ShowMigrationProjectDetailRequest, ShowMigrationProjectDetailResponse> genForShowMigrationProjectDetail() {
         // basic
         HttpRequestDef.Builder<ShowMigrationProjectDetailRequest, ShowMigrationProjectDetailResponse> builder =
             HttpRequestDef
@@ -548,9 +519,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMigrationProjectDetailRequest::getMigrationProjectId, (req, v) -> {
-                req.setMigrationProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowMigrationProjectDetailRequest::getMigrationProjectId,
+                ShowMigrationProjectDetailRequest::setMigrationProjectId));
 
         // response
 
@@ -558,9 +528,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ShowMigrationProjectStatusRequest, ShowMigrationProjectStatusResponse> showMigrationProjectStatus =
-        genForshowMigrationProjectStatus();
+        genForShowMigrationProjectStatus();
 
-    private static HttpRequestDef<ShowMigrationProjectStatusRequest, ShowMigrationProjectStatusResponse> genForshowMigrationProjectStatus() {
+    private static HttpRequestDef<ShowMigrationProjectStatusRequest, ShowMigrationProjectStatusResponse> genForShowMigrationProjectStatus() {
         // basic
         HttpRequestDef.Builder<ShowMigrationProjectStatusRequest, ShowMigrationProjectStatusResponse> builder =
             HttpRequestDef
@@ -576,9 +546,8 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMigrationProjectStatusRequest::getMigrationProjectId, (req, v) -> {
-                req.setMigrationProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowMigrationProjectStatusRequest::getMigrationProjectId,
+                ShowMigrationProjectStatusRequest::setMigrationProjectId));
 
         // response
 
@@ -586,9 +555,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForlistApiVersions();
+        genForListApiVersions();
 
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
@@ -604,9 +573,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<ShowApiVersionInfoRequest, ShowApiVersionInfoResponse> showApiVersionInfo =
-        genForshowApiVersionInfo();
+        genForShowApiVersionInfo();
 
-    private static HttpRequestDef<ShowApiVersionInfoRequest, ShowApiVersionInfoResponse> genForshowApiVersionInfo() {
+    private static HttpRequestDef<ShowApiVersionInfoRequest, ShowApiVersionInfoResponse> genForShowApiVersionInfo() {
         // basic
         HttpRequestDef.Builder<ShowApiVersionInfoRequest, ShowApiVersionInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionInfoRequest.class, ShowApiVersionInfoResponse.class)
@@ -619,9 +588,7 @@ public class UgoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowApiVersionInfoRequest.ApiVersionEnum.class),
-            f -> f.withMarshaller(ShowApiVersionInfoRequest::getApiVersion, (req, v) -> {
-                req.setApiVersion(v);
-            }));
+            f -> f.withMarshaller(ShowApiVersionInfoRequest::getApiVersion, ShowApiVersionInfoRequest::setApiVersion));
 
         // response
 
@@ -629,9 +596,9 @@ public class UgoMeta {
     }
 
     public static final HttpRequestDef<RunSqlConversionRequest, RunSqlConversionResponse> runSqlConversion =
-        genForrunSqlConversion();
+        genForRunSqlConversion();
 
-    private static HttpRequestDef<RunSqlConversionRequest, RunSqlConversionResponse> genForrunSqlConversion() {
+    private static HttpRequestDef<RunSqlConversionRequest, RunSqlConversionResponse> genForRunSqlConversion() {
         // basic
         HttpRequestDef.Builder<RunSqlConversionRequest, RunSqlConversionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunSqlConversionRequest.class, RunSqlConversionResponse.class)
@@ -644,9 +611,7 @@ public class UgoMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SqlConvertReq.class),
-            f -> f.withMarshaller(RunSqlConversionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunSqlConversionRequest::getBody, RunSqlConversionRequest::setBody));
 
         // response
 

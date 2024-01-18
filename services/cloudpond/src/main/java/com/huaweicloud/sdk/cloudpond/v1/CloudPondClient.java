@@ -49,7 +49,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeSiteRequest 请求对象
+     * @param request CreateEdgeSiteRequest 请求对象
      * @return CreateEdgeSiteResponse
      */
     public CreateEdgeSiteResponse createEdgeSite(CreateEdgeSiteRequest request) {
@@ -64,13 +64,12 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeSiteRequest 请求对象
+     * @param request CreateEdgeSiteRequest 请求对象
      * @return SyncInvoker<CreateEdgeSiteRequest, CreateEdgeSiteResponse>
      */
     public SyncInvoker<CreateEdgeSiteRequest, CreateEdgeSiteResponse> createEdgeSiteInvoker(
         CreateEdgeSiteRequest request) {
-        return new SyncInvoker<CreateEdgeSiteRequest, CreateEdgeSiteResponse>(request, CloudPondMeta.createEdgeSite,
-            hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.createEdgeSite, hcClient);
     }
 
     /**
@@ -80,7 +79,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeSiteRequest 请求对象
+     * @param request DeleteEdgeSiteRequest 请求对象
      * @return DeleteEdgeSiteResponse
      */
     public DeleteEdgeSiteResponse deleteEdgeSite(DeleteEdgeSiteRequest request) {
@@ -94,13 +93,12 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeSiteRequest 请求对象
+     * @param request DeleteEdgeSiteRequest 请求对象
      * @return SyncInvoker<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse>
      */
     public SyncInvoker<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse> deleteEdgeSiteInvoker(
         DeleteEdgeSiteRequest request) {
-        return new SyncInvoker<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse>(request, CloudPondMeta.deleteEdgeSite,
-            hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.deleteEdgeSite, hcClient);
     }
 
     /**
@@ -110,7 +108,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSitesRequest 请求对象
+     * @param request ListEdgeSitesRequest 请求对象
      * @return ListEdgeSitesResponse
      */
     public ListEdgeSitesResponse listEdgeSites(ListEdgeSitesRequest request) {
@@ -124,12 +122,11 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSitesRequest 请求对象
+     * @param request ListEdgeSitesRequest 请求对象
      * @return SyncInvoker<ListEdgeSitesRequest, ListEdgeSitesResponse>
      */
     public SyncInvoker<ListEdgeSitesRequest, ListEdgeSitesResponse> listEdgeSitesInvoker(ListEdgeSitesRequest request) {
-        return new SyncInvoker<ListEdgeSitesRequest, ListEdgeSitesResponse>(request, CloudPondMeta.listEdgeSites,
-            hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.listEdgeSites, hcClient);
     }
 
     /**
@@ -139,7 +136,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeSiteRequest 请求对象
+     * @param request ShowEdgeSiteRequest 请求对象
      * @return ShowEdgeSiteResponse
      */
     public ShowEdgeSiteResponse showEdgeSite(ShowEdgeSiteRequest request) {
@@ -153,12 +150,11 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeSiteRequest 请求对象
+     * @param request ShowEdgeSiteRequest 请求对象
      * @return SyncInvoker<ShowEdgeSiteRequest, ShowEdgeSiteResponse>
      */
     public SyncInvoker<ShowEdgeSiteRequest, ShowEdgeSiteResponse> showEdgeSiteInvoker(ShowEdgeSiteRequest request) {
-        return new SyncInvoker<ShowEdgeSiteRequest, ShowEdgeSiteResponse>(request, CloudPondMeta.showEdgeSite,
-            hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.showEdgeSite, hcClient);
     }
 
     /**
@@ -169,7 +165,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeSiteRequest 请求对象
+     * @param request UpdateEdgeSiteRequest 请求对象
      * @return UpdateEdgeSiteResponse
      */
     public UpdateEdgeSiteResponse updateEdgeSite(UpdateEdgeSiteRequest request) {
@@ -184,13 +180,12 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeSiteRequest 请求对象
+     * @param request UpdateEdgeSiteRequest 请求对象
      * @return SyncInvoker<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse>
      */
     public SyncInvoker<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse> updateEdgeSiteInvoker(
         UpdateEdgeSiteRequest request) {
-        return new SyncInvoker<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse>(request, CloudPondMeta.updateEdgeSite,
-            hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.updateEdgeSite, hcClient);
     }
 
     /**
@@ -200,7 +195,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSiteMetricsRequest 请求对象
+     * @param request ListEdgeSiteMetricsRequest 请求对象
      * @return ListEdgeSiteMetricsResponse
      */
     public ListEdgeSiteMetricsResponse listEdgeSiteMetrics(ListEdgeSiteMetricsRequest request) {
@@ -214,13 +209,12 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSiteMetricsRequest 请求对象
+     * @param request ListEdgeSiteMetricsRequest 请求对象
      * @return SyncInvoker<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse>
      */
     public SyncInvoker<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse> listEdgeSiteMetricsInvoker(
         ListEdgeSiteMetricsRequest request) {
-        return new SyncInvoker<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse>(request,
-            CloudPondMeta.listEdgeSiteMetrics, hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.listEdgeSiteMetrics, hcClient);
     }
 
     /**
@@ -230,7 +224,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return ListQuotasResponse
      */
     public ListQuotasResponse listQuotas(ListQuotasRequest request) {
@@ -244,11 +238,11 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
-        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, CloudPondMeta.listQuotas, hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.listQuotas, hcClient);
     }
 
     /**
@@ -258,7 +252,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRacksRequest 请求对象
+     * @param request ListRacksRequest 请求对象
      * @return ListRacksResponse
      */
     public ListRacksResponse listRacks(ListRacksRequest request) {
@@ -272,11 +266,11 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRacksRequest 请求对象
+     * @param request ListRacksRequest 请求对象
      * @return SyncInvoker<ListRacksRequest, ListRacksResponse>
      */
     public SyncInvoker<ListRacksRequest, ListRacksResponse> listRacksInvoker(ListRacksRequest request) {
-        return new SyncInvoker<ListRacksRequest, ListRacksResponse>(request, CloudPondMeta.listRacks, hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.listRacks, hcClient);
     }
 
     /**
@@ -286,7 +280,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRackRequest 请求对象
+     * @param request ShowRackRequest 请求对象
      * @return ShowRackResponse
      */
     public ShowRackResponse showRack(ShowRackRequest request) {
@@ -300,11 +294,11 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRackRequest 请求对象
+     * @param request ShowRackRequest 请求对象
      * @return SyncInvoker<ShowRackRequest, ShowRackResponse>
      */
     public SyncInvoker<ShowRackRequest, ShowRackResponse> showRackInvoker(ShowRackRequest request) {
-        return new SyncInvoker<ShowRackRequest, ShowRackResponse>(request, CloudPondMeta.showRack, hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.showRack, hcClient);
     }
 
     /**
@@ -314,7 +308,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSupportedRegionsRequest 请求对象
+     * @param request ListSupportedRegionsRequest 请求对象
      * @return ListSupportedRegionsResponse
      */
     public ListSupportedRegionsResponse listSupportedRegions(ListSupportedRegionsRequest request) {
@@ -328,13 +322,12 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSupportedRegionsRequest 请求对象
+     * @param request ListSupportedRegionsRequest 请求对象
      * @return SyncInvoker<ListSupportedRegionsRequest, ListSupportedRegionsResponse>
      */
     public SyncInvoker<ListSupportedRegionsRequest, ListSupportedRegionsResponse> listSupportedRegionsInvoker(
         ListSupportedRegionsRequest request) {
-        return new SyncInvoker<ListSupportedRegionsRequest, ListSupportedRegionsResponse>(request,
-            CloudPondMeta.listSupportedRegions, hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.listSupportedRegions, hcClient);
     }
 
     /**
@@ -344,7 +337,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoragePoolsRequest 请求对象
+     * @param request ListStoragePoolsRequest 请求对象
      * @return ListStoragePoolsResponse
      */
     public ListStoragePoolsResponse listStoragePools(ListStoragePoolsRequest request) {
@@ -358,13 +351,12 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoragePoolsRequest 请求对象
+     * @param request ListStoragePoolsRequest 请求对象
      * @return SyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse>
      */
     public SyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse> listStoragePoolsInvoker(
         ListStoragePoolsRequest request) {
-        return new SyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse>(request,
-            CloudPondMeta.listStoragePools, hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.listStoragePools, hcClient);
     }
 
     /**
@@ -374,7 +366,7 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStoragePoolRequest 请求对象
+     * @param request ShowStoragePoolRequest 请求对象
      * @return ShowStoragePoolResponse
      */
     public ShowStoragePoolResponse showStoragePool(ShowStoragePoolRequest request) {
@@ -388,13 +380,12 @@ public class CloudPondClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStoragePoolRequest 请求对象
+     * @param request ShowStoragePoolRequest 请求对象
      * @return SyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse>
      */
     public SyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse> showStoragePoolInvoker(
         ShowStoragePoolRequest request) {
-        return new SyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse>(request, CloudPondMeta.showStoragePool,
-            hcClient);
+        return new SyncInvoker<>(request, CloudPondMeta.showStoragePool, hcClient);
     }
 
 }

@@ -133,9 +133,9 @@ import com.huaweicloud.sdk.sdrs.v1.model.UpdateReplicationNameResponse;
 public class SdrsMeta {
 
     public static final HttpRequestDef<AddProtectedInstanceNicRequest, AddProtectedInstanceNicResponse> addProtectedInstanceNic =
-        genForaddProtectedInstanceNic();
+        genForAddProtectedInstanceNic();
 
-    private static HttpRequestDef<AddProtectedInstanceNicRequest, AddProtectedInstanceNicResponse> genForaddProtectedInstanceNic() {
+    private static HttpRequestDef<AddProtectedInstanceNicRequest, AddProtectedInstanceNicResponse> genForAddProtectedInstanceNic() {
         // basic
         HttpRequestDef.Builder<AddProtectedInstanceNicRequest, AddProtectedInstanceNicResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddProtectedInstanceNicRequest.class, AddProtectedInstanceNicResponse.class)
@@ -148,16 +148,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddProtectedInstanceNicRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddProtectedInstanceNicRequest::getProtectedInstanceId,
+                AddProtectedInstanceNicRequest::setProtectedInstanceId));
         builder.<ProtectedInstanceAddNicRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProtectedInstanceAddNicRequestBody.class),
-            f -> f.withMarshaller(AddProtectedInstanceNicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddProtectedInstanceNicRequest::getBody, AddProtectedInstanceNicRequest::setBody));
 
         // response
 
@@ -165,9 +162,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<AddProtectedInstanceTagsRequest, AddProtectedInstanceTagsResponse> addProtectedInstanceTags =
-        genForaddProtectedInstanceTags();
+        genForAddProtectedInstanceTags();
 
-    private static HttpRequestDef<AddProtectedInstanceTagsRequest, AddProtectedInstanceTagsResponse> genForaddProtectedInstanceTags() {
+    private static HttpRequestDef<AddProtectedInstanceTagsRequest, AddProtectedInstanceTagsResponse> genForAddProtectedInstanceTags() {
         // basic
         HttpRequestDef.Builder<AddProtectedInstanceTagsRequest, AddProtectedInstanceTagsResponse> builder =
             HttpRequestDef
@@ -181,16 +178,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddProtectedInstanceTagsRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddProtectedInstanceTagsRequest::getProtectedInstanceId,
+                AddProtectedInstanceTagsRequest::setProtectedInstanceId));
         builder.<ProtectedInstanceAddTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProtectedInstanceAddTagsRequestBody.class),
-            f -> f.withMarshaller(AddProtectedInstanceTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddProtectedInstanceTagsRequest::getBody, AddProtectedInstanceTagsRequest::setBody));
 
         // response
 
@@ -198,9 +192,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<AttachProtectedInstanceReplicationRequest, AttachProtectedInstanceReplicationResponse> attachProtectedInstanceReplication =
-        genForattachProtectedInstanceReplication();
+        genForAttachProtectedInstanceReplication();
 
-    private static HttpRequestDef<AttachProtectedInstanceReplicationRequest, AttachProtectedInstanceReplicationResponse> genForattachProtectedInstanceReplication() {
+    private static HttpRequestDef<AttachProtectedInstanceReplicationRequest, AttachProtectedInstanceReplicationResponse> genForAttachProtectedInstanceReplication() {
         // basic
         HttpRequestDef.Builder<AttachProtectedInstanceReplicationRequest, AttachProtectedInstanceReplicationResponse> builder =
             HttpRequestDef
@@ -216,25 +210,23 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachProtectedInstanceReplicationRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(AttachProtectedInstanceReplicationRequest::getProtectedInstanceId,
+                AttachProtectedInstanceReplicationRequest::setProtectedInstanceId));
         builder.<ProtectedInstanceAttachReplicationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProtectedInstanceAttachReplicationRequestBody.class),
-            f -> f.withMarshaller(AttachProtectedInstanceReplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachProtectedInstanceReplicationRequest::getBody,
+                AttachProtectedInstanceReplicationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchAddTagsRequest, BatchAddTagsResponse> batchAddTags = genForbatchAddTags();
+    public static final HttpRequestDef<BatchAddTagsRequest, BatchAddTagsResponse> batchAddTags = genForBatchAddTags();
 
-    private static HttpRequestDef<BatchAddTagsRequest, BatchAddTagsResponse> genForbatchAddTags() {
+    private static HttpRequestDef<BatchAddTagsRequest, BatchAddTagsResponse> genForBatchAddTags() {
         // basic
         HttpRequestDef.Builder<BatchAddTagsRequest, BatchAddTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchAddTagsRequest.class, BatchAddTagsResponse.class)
@@ -247,16 +239,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddTagsRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchAddTagsRequest::getProtectedInstanceId,
+                BatchAddTagsRequest::setProtectedInstanceId));
         builder.<BatchAddTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAddTagsRequestBody.class),
-            f -> f.withMarshaller(BatchAddTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddTagsRequest::getBody, BatchAddTagsRequest::setBody));
 
         // response
 
@@ -264,9 +253,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<BatchCreateProtectedInstancesRequest, BatchCreateProtectedInstancesResponse> batchCreateProtectedInstances =
-        genForbatchCreateProtectedInstances();
+        genForBatchCreateProtectedInstances();
 
-    private static HttpRequestDef<BatchCreateProtectedInstancesRequest, BatchCreateProtectedInstancesResponse> genForbatchCreateProtectedInstances() {
+    private static HttpRequestDef<BatchCreateProtectedInstancesRequest, BatchCreateProtectedInstancesResponse> genForBatchCreateProtectedInstances() {
         // basic
         HttpRequestDef.Builder<BatchCreateProtectedInstancesRequest, BatchCreateProtectedInstancesResponse> builder =
             HttpRequestDef
@@ -282,9 +271,8 @@ public class SdrsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateProtectedInstancesRequestBody.class),
-            f -> f.withMarshaller(BatchCreateProtectedInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateProtectedInstancesRequest::getBody,
+                BatchCreateProtectedInstancesRequest::setBody));
 
         // response
 
@@ -292,9 +280,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteProtectedInstancesRequest, BatchDeleteProtectedInstancesResponse> batchDeleteProtectedInstances =
-        genForbatchDeleteProtectedInstances();
+        genForBatchDeleteProtectedInstances();
 
-    private static HttpRequestDef<BatchDeleteProtectedInstancesRequest, BatchDeleteProtectedInstancesResponse> genForbatchDeleteProtectedInstances() {
+    private static HttpRequestDef<BatchDeleteProtectedInstancesRequest, BatchDeleteProtectedInstancesResponse> genForBatchDeleteProtectedInstances() {
         // basic
         HttpRequestDef.Builder<BatchDeleteProtectedInstancesRequest, BatchDeleteProtectedInstancesResponse> builder =
             HttpRequestDef
@@ -310,9 +298,8 @@ public class SdrsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteProtectedInstancesRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteProtectedInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteProtectedInstancesRequest::getBody,
+                BatchDeleteProtectedInstancesRequest::setBody));
 
         // response
 
@@ -320,9 +307,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTags =
-        genForbatchDeleteTags();
+        genForBatchDeleteTags();
 
-    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForbatchDeleteTags() {
+    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForBatchDeleteTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteTagsRequest, BatchDeleteTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTagsRequest.class, BatchDeleteTagsResponse.class)
@@ -335,16 +322,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getProtectedInstanceId,
+                BatchDeleteTagsRequest::setProtectedInstanceId));
         builder.<BatchDeleteTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, BatchDeleteTagsRequest::setBody));
 
         // response
 
@@ -352,9 +336,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<CreateDisasterRecoveryDrillRequest, CreateDisasterRecoveryDrillResponse> createDisasterRecoveryDrill =
-        genForcreateDisasterRecoveryDrill();
+        genForCreateDisasterRecoveryDrill();
 
-    private static HttpRequestDef<CreateDisasterRecoveryDrillRequest, CreateDisasterRecoveryDrillResponse> genForcreateDisasterRecoveryDrill() {
+    private static HttpRequestDef<CreateDisasterRecoveryDrillRequest, CreateDisasterRecoveryDrillResponse> genForCreateDisasterRecoveryDrill() {
         // basic
         HttpRequestDef.Builder<CreateDisasterRecoveryDrillRequest, CreateDisasterRecoveryDrillResponse> builder =
             HttpRequestDef
@@ -370,9 +354,8 @@ public class SdrsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDisasterRecoveryDrillRequestBody.class),
-            f -> f.withMarshaller(CreateDisasterRecoveryDrillRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDisasterRecoveryDrillRequest::getBody,
+                CreateDisasterRecoveryDrillRequest::setBody));
 
         // response
 
@@ -380,9 +363,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<CreateProtectedInstanceRequest, CreateProtectedInstanceResponse> createProtectedInstance =
-        genForcreateProtectedInstance();
+        genForCreateProtectedInstance();
 
-    private static HttpRequestDef<CreateProtectedInstanceRequest, CreateProtectedInstanceResponse> genForcreateProtectedInstance() {
+    private static HttpRequestDef<CreateProtectedInstanceRequest, CreateProtectedInstanceResponse> genForCreateProtectedInstance() {
         // basic
         HttpRequestDef.Builder<CreateProtectedInstanceRequest, CreateProtectedInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateProtectedInstanceRequest.class, CreateProtectedInstanceResponse.class)
@@ -395,9 +378,7 @@ public class SdrsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateProtectedInstanceRequestBody.class),
-            f -> f.withMarshaller(CreateProtectedInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProtectedInstanceRequest::getBody, CreateProtectedInstanceRequest::setBody));
 
         // response
 
@@ -405,9 +386,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<CreateProtectionGroupRequest, CreateProtectionGroupResponse> createProtectionGroup =
-        genForcreateProtectionGroup();
+        genForCreateProtectionGroup();
 
-    private static HttpRequestDef<CreateProtectionGroupRequest, CreateProtectionGroupResponse> genForcreateProtectionGroup() {
+    private static HttpRequestDef<CreateProtectionGroupRequest, CreateProtectionGroupResponse> genForCreateProtectionGroup() {
         // basic
         HttpRequestDef.Builder<CreateProtectionGroupRequest, CreateProtectionGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateProtectionGroupRequest.class, CreateProtectionGroupResponse.class)
@@ -420,9 +401,7 @@ public class SdrsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateProtectionGroupRequestBody.class),
-            f -> f.withMarshaller(CreateProtectionGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProtectionGroupRequest::getBody, CreateProtectionGroupRequest::setBody));
 
         // response
 
@@ -430,9 +409,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<CreateReplicationRequest, CreateReplicationResponse> createReplication =
-        genForcreateReplication();
+        genForCreateReplication();
 
-    private static HttpRequestDef<CreateReplicationRequest, CreateReplicationResponse> genForcreateReplication() {
+    private static HttpRequestDef<CreateReplicationRequest, CreateReplicationResponse> genForCreateReplication() {
         // basic
         HttpRequestDef.Builder<CreateReplicationRequest, CreateReplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateReplicationRequest.class, CreateReplicationResponse.class)
@@ -445,9 +424,7 @@ public class SdrsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateReplicationRequestBody.class),
-            f -> f.withMarshaller(CreateReplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateReplicationRequest::getBody, CreateReplicationRequest::setBody));
 
         // response
 
@@ -455,9 +432,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<DeleteAllServerGroupFailureJobsRequest, DeleteAllServerGroupFailureJobsResponse> deleteAllServerGroupFailureJobs =
-        genFordeleteAllServerGroupFailureJobs();
+        genForDeleteAllServerGroupFailureJobs();
 
-    private static HttpRequestDef<DeleteAllServerGroupFailureJobsRequest, DeleteAllServerGroupFailureJobsResponse> genFordeleteAllServerGroupFailureJobs() {
+    private static HttpRequestDef<DeleteAllServerGroupFailureJobsRequest, DeleteAllServerGroupFailureJobsResponse> genForDeleteAllServerGroupFailureJobs() {
         // basic
         HttpRequestDef.Builder<DeleteAllServerGroupFailureJobsRequest, DeleteAllServerGroupFailureJobsResponse> builder =
             HttpRequestDef
@@ -476,9 +453,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<DeleteDisasterRecoveryDrillRequest, DeleteDisasterRecoveryDrillResponse> deleteDisasterRecoveryDrill =
-        genFordeleteDisasterRecoveryDrill();
+        genForDeleteDisasterRecoveryDrill();
 
-    private static HttpRequestDef<DeleteDisasterRecoveryDrillRequest, DeleteDisasterRecoveryDrillResponse> genFordeleteDisasterRecoveryDrill() {
+    private static HttpRequestDef<DeleteDisasterRecoveryDrillRequest, DeleteDisasterRecoveryDrillResponse> genForDeleteDisasterRecoveryDrill() {
         // basic
         HttpRequestDef.Builder<DeleteDisasterRecoveryDrillRequest, DeleteDisasterRecoveryDrillResponse> builder =
             HttpRequestDef
@@ -494,9 +471,8 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDisasterRecoveryDrillRequest::getDisasterRecoveryDrillId, (req, v) -> {
-                req.setDisasterRecoveryDrillId(v);
-            }));
+            f -> f.withMarshaller(DeleteDisasterRecoveryDrillRequest::getDisasterRecoveryDrillId,
+                DeleteDisasterRecoveryDrillRequest::setDisasterRecoveryDrillId));
 
         // response
 
@@ -504,9 +480,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<DeleteFailureJobRequest, DeleteFailureJobResponse> deleteFailureJob =
-        genFordeleteFailureJob();
+        genForDeleteFailureJob();
 
-    private static HttpRequestDef<DeleteFailureJobRequest, DeleteFailureJobResponse> genFordeleteFailureJob() {
+    private static HttpRequestDef<DeleteFailureJobRequest, DeleteFailureJobResponse> genForDeleteFailureJob() {
         // basic
         HttpRequestDef.Builder<DeleteFailureJobRequest, DeleteFailureJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFailureJobRequest.class, DeleteFailureJobResponse.class)
@@ -519,9 +495,7 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFailureJobRequest::getFailureJobId, (req, v) -> {
-                req.setFailureJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteFailureJobRequest::getFailureJobId, DeleteFailureJobRequest::setFailureJobId));
 
         // response
 
@@ -529,9 +503,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<DeleteProtectedInstanceRequest, DeleteProtectedInstanceResponse> deleteProtectedInstance =
-        genFordeleteProtectedInstance();
+        genForDeleteProtectedInstance();
 
-    private static HttpRequestDef<DeleteProtectedInstanceRequest, DeleteProtectedInstanceResponse> genFordeleteProtectedInstance() {
+    private static HttpRequestDef<DeleteProtectedInstanceRequest, DeleteProtectedInstanceResponse> genForDeleteProtectedInstance() {
         // basic
         HttpRequestDef.Builder<DeleteProtectedInstanceRequest, DeleteProtectedInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteProtectedInstanceRequest.class, DeleteProtectedInstanceResponse.class)
@@ -544,16 +518,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProtectedInstanceRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteProtectedInstanceRequest::getProtectedInstanceId,
+                DeleteProtectedInstanceRequest::setProtectedInstanceId));
         builder.<DeleteProtectedInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteProtectedInstanceRequestBody.class),
-            f -> f.withMarshaller(DeleteProtectedInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteProtectedInstanceRequest::getBody, DeleteProtectedInstanceRequest::setBody));
 
         // response
 
@@ -561,9 +532,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<DeleteProtectedInstanceNicRequest, DeleteProtectedInstanceNicResponse> deleteProtectedInstanceNic =
-        genFordeleteProtectedInstanceNic();
+        genForDeleteProtectedInstanceNic();
 
-    private static HttpRequestDef<DeleteProtectedInstanceNicRequest, DeleteProtectedInstanceNicResponse> genFordeleteProtectedInstanceNic() {
+    private static HttpRequestDef<DeleteProtectedInstanceNicRequest, DeleteProtectedInstanceNicResponse> genForDeleteProtectedInstanceNic() {
         // basic
         HttpRequestDef.Builder<DeleteProtectedInstanceNicRequest, DeleteProtectedInstanceNicResponse> builder =
             HttpRequestDef
@@ -579,16 +550,14 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProtectedInstanceNicRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteProtectedInstanceNicRequest::getProtectedInstanceId,
+                DeleteProtectedInstanceNicRequest::setProtectedInstanceId));
         builder.<ProtectedInstanceDeleteNicRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProtectedInstanceDeleteNicRequestBody.class),
-            f -> f.withMarshaller(DeleteProtectedInstanceNicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteProtectedInstanceNicRequest::getBody,
+                DeleteProtectedInstanceNicRequest::setBody));
 
         // response
 
@@ -596,9 +565,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<DeleteProtectedInstanceTagRequest, DeleteProtectedInstanceTagResponse> deleteProtectedInstanceTag =
-        genFordeleteProtectedInstanceTag();
+        genForDeleteProtectedInstanceTag();
 
-    private static HttpRequestDef<DeleteProtectedInstanceTagRequest, DeleteProtectedInstanceTagResponse> genFordeleteProtectedInstanceTag() {
+    private static HttpRequestDef<DeleteProtectedInstanceTagRequest, DeleteProtectedInstanceTagResponse> genForDeleteProtectedInstanceTag() {
         // basic
         HttpRequestDef.Builder<DeleteProtectedInstanceTagRequest, DeleteProtectedInstanceTagResponse> builder =
             HttpRequestDef
@@ -614,16 +583,14 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProtectedInstanceTagRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteProtectedInstanceTagRequest::getProtectedInstanceId,
+                DeleteProtectedInstanceTagRequest::setProtectedInstanceId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProtectedInstanceTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteProtectedInstanceTagRequest::getKey,
+                DeleteProtectedInstanceTagRequest::setKey));
 
         // response
 
@@ -631,9 +598,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<DeleteProtectionGroupRequest, DeleteProtectionGroupResponse> deleteProtectionGroup =
-        genFordeleteProtectionGroup();
+        genForDeleteProtectionGroup();
 
-    private static HttpRequestDef<DeleteProtectionGroupRequest, DeleteProtectionGroupResponse> genFordeleteProtectionGroup() {
+    private static HttpRequestDef<DeleteProtectionGroupRequest, DeleteProtectionGroupResponse> genForDeleteProtectionGroup() {
         // basic
         HttpRequestDef.Builder<DeleteProtectionGroupRequest, DeleteProtectionGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteProtectionGroupRequest.class, DeleteProtectionGroupResponse.class)
@@ -646,9 +613,8 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProtectionGroupRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteProtectionGroupRequest::getServerGroupId,
+                DeleteProtectionGroupRequest::setServerGroupId));
 
         // response
 
@@ -656,9 +622,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<DeleteReplicationRequest, DeleteReplicationResponse> deleteReplication =
-        genFordeleteReplication();
+        genForDeleteReplication();
 
-    private static HttpRequestDef<DeleteReplicationRequest, DeleteReplicationResponse> genFordeleteReplication() {
+    private static HttpRequestDef<DeleteReplicationRequest, DeleteReplicationResponse> genForDeleteReplication() {
         // basic
         HttpRequestDef.Builder<DeleteReplicationRequest, DeleteReplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteReplicationRequest.class, DeleteReplicationResponse.class)
@@ -671,16 +637,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteReplicationRequest::getReplicationId, (req, v) -> {
-                req.setReplicationId(v);
-            }));
+            f -> f.withMarshaller(DeleteReplicationRequest::getReplicationId,
+                DeleteReplicationRequest::setReplicationId));
         builder.<DeleteReplicationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteReplicationRequestBody.class),
-            f -> f.withMarshaller(DeleteReplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteReplicationRequest::getBody, DeleteReplicationRequest::setBody));
 
         // response
 
@@ -688,9 +651,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<DeleteServerGroupFailureJobsRequest, DeleteServerGroupFailureJobsResponse> deleteServerGroupFailureJobs =
-        genFordeleteServerGroupFailureJobs();
+        genForDeleteServerGroupFailureJobs();
 
-    private static HttpRequestDef<DeleteServerGroupFailureJobsRequest, DeleteServerGroupFailureJobsResponse> genFordeleteServerGroupFailureJobs() {
+    private static HttpRequestDef<DeleteServerGroupFailureJobsRequest, DeleteServerGroupFailureJobsResponse> genForDeleteServerGroupFailureJobs() {
         // basic
         HttpRequestDef.Builder<DeleteServerGroupFailureJobsRequest, DeleteServerGroupFailureJobsResponse> builder =
             HttpRequestDef
@@ -706,9 +669,8 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServerGroupFailureJobsRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteServerGroupFailureJobsRequest::getServerGroupId,
+                DeleteServerGroupFailureJobsRequest::setServerGroupId));
 
         // response
 
@@ -716,9 +678,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<DetachProtectedInstanceReplicationRequest, DetachProtectedInstanceReplicationResponse> detachProtectedInstanceReplication =
-        genFordetachProtectedInstanceReplication();
+        genForDetachProtectedInstanceReplication();
 
-    private static HttpRequestDef<DetachProtectedInstanceReplicationRequest, DetachProtectedInstanceReplicationResponse> genFordetachProtectedInstanceReplication() {
+    private static HttpRequestDef<DetachProtectedInstanceReplicationRequest, DetachProtectedInstanceReplicationResponse> genForDetachProtectedInstanceReplication() {
         // basic
         HttpRequestDef.Builder<DetachProtectedInstanceReplicationRequest, DetachProtectedInstanceReplicationResponse> builder =
             HttpRequestDef
@@ -735,16 +697,14 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachProtectedInstanceReplicationRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(DetachProtectedInstanceReplicationRequest::getProtectedInstanceId,
+                DetachProtectedInstanceReplicationRequest::setProtectedInstanceId));
         builder.<String>withRequestField("replication_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachProtectedInstanceReplicationRequest::getReplicationId, (req, v) -> {
-                req.setReplicationId(v);
-            }));
+            f -> f.withMarshaller(DetachProtectedInstanceReplicationRequest::getReplicationId,
+                DetachProtectedInstanceReplicationRequest::setReplicationId));
 
         // response
 
@@ -752,9 +712,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ExpandReplicationRequest, ExpandReplicationResponse> expandReplication =
-        genForexpandReplication();
+        genForExpandReplication();
 
-    private static HttpRequestDef<ExpandReplicationRequest, ExpandReplicationResponse> genForexpandReplication() {
+    private static HttpRequestDef<ExpandReplicationRequest, ExpandReplicationResponse> genForExpandReplication() {
         // basic
         HttpRequestDef.Builder<ExpandReplicationRequest, ExpandReplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExpandReplicationRequest.class, ExpandReplicationResponse.class)
@@ -767,16 +727,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandReplicationRequest::getReplicationId, (req, v) -> {
-                req.setReplicationId(v);
-            }));
+            f -> f.withMarshaller(ExpandReplicationRequest::getReplicationId,
+                ExpandReplicationRequest::setReplicationId));
         builder.<ExtendReplicationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExtendReplicationRequestBody.class),
-            f -> f.withMarshaller(ExpandReplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExpandReplicationRequest::getBody, ExpandReplicationRequest::setBody));
 
         // response
 
@@ -784,9 +741,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListActiveActiveDomainsRequest, ListActiveActiveDomainsResponse> listActiveActiveDomains =
-        genForlistActiveActiveDomains();
+        genForListActiveActiveDomains();
 
-    private static HttpRequestDef<ListActiveActiveDomainsRequest, ListActiveActiveDomainsResponse> genForlistActiveActiveDomains() {
+    private static HttpRequestDef<ListActiveActiveDomainsRequest, ListActiveActiveDomainsResponse> genForListActiveActiveDomains() {
         // basic
         HttpRequestDef.Builder<ListActiveActiveDomainsRequest, ListActiveActiveDomainsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListActiveActiveDomainsRequest.class, ListActiveActiveDomainsResponse.class)
@@ -802,9 +759,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListDisasterRecoveryDrillsRequest, ListDisasterRecoveryDrillsResponse> listDisasterRecoveryDrills =
-        genForlistDisasterRecoveryDrills();
+        genForListDisasterRecoveryDrills();
 
-    private static HttpRequestDef<ListDisasterRecoveryDrillsRequest, ListDisasterRecoveryDrillsResponse> genForlistDisasterRecoveryDrills() {
+    private static HttpRequestDef<ListDisasterRecoveryDrillsRequest, ListDisasterRecoveryDrillsResponse> genForListDisasterRecoveryDrills() {
         // basic
         HttpRequestDef.Builder<ListDisasterRecoveryDrillsRequest, ListDisasterRecoveryDrillsResponse> builder =
             HttpRequestDef
@@ -820,44 +777,38 @@ public class SdrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getServerGroupId,
+                ListDisasterRecoveryDrillsRequest::setServerGroupId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getName,
+                ListDisasterRecoveryDrillsRequest::setName));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getStatus,
+                ListDisasterRecoveryDrillsRequest::setStatus));
         builder.<String>withRequestField("drill_vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getDrillVpcId, (req, v) -> {
-                req.setDrillVpcId(v);
-            }));
+            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getDrillVpcId,
+                ListDisasterRecoveryDrillsRequest::setDrillVpcId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getLimit,
+                ListDisasterRecoveryDrillsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDisasterRecoveryDrillsRequest::getOffset,
+                ListDisasterRecoveryDrillsRequest::setOffset));
 
         // response
 
@@ -865,9 +816,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListFailureJobsRequest, ListFailureJobsResponse> listFailureJobs =
-        genForlistFailureJobs();
+        genForListFailureJobs();
 
-    private static HttpRequestDef<ListFailureJobsRequest, ListFailureJobsResponse> genForlistFailureJobs() {
+    private static HttpRequestDef<ListFailureJobsRequest, ListFailureJobsResponse> genForListFailureJobs() {
         // basic
         HttpRequestDef.Builder<ListFailureJobsRequest, ListFailureJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFailureJobsRequest.class, ListFailureJobsResponse.class)
@@ -880,44 +831,32 @@ public class SdrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFailureJobsRequest.FailureStatusEnum.class),
-            f -> f.withMarshaller(ListFailureJobsRequest::getFailureStatus, (req, v) -> {
-                req.setFailureStatus(v);
-            }));
+            f -> f.withMarshaller(ListFailureJobsRequest::getFailureStatus, ListFailureJobsRequest::setFailureStatus));
         builder.<String>withRequestField("resource_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFailureJobsRequest::getResourceName, (req, v) -> {
-                req.setResourceName(v);
-            }));
+            f -> f.withMarshaller(ListFailureJobsRequest::getResourceName, ListFailureJobsRequest::setResourceName));
         builder.<String>withRequestField("server_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFailureJobsRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(ListFailureJobsRequest::getServerGroupId, ListFailureJobsRequest::setServerGroupId));
         builder.<ListFailureJobsRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFailureJobsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListFailureJobsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListFailureJobsRequest::getResourceType, ListFailureJobsRequest::setResourceType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFailureJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFailureJobsRequest::getLimit, ListFailureJobsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFailureJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFailureJobsRequest::getOffset, ListFailureJobsRequest::setOffset));
 
         // response
 
@@ -925,9 +864,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListProtectedInstanceTagsRequest, ListProtectedInstanceTagsResponse> listProtectedInstanceTags =
-        genForlistProtectedInstanceTags();
+        genForListProtectedInstanceTags();
 
-    private static HttpRequestDef<ListProtectedInstanceTagsRequest, ListProtectedInstanceTagsResponse> genForlistProtectedInstanceTags() {
+    private static HttpRequestDef<ListProtectedInstanceTagsRequest, ListProtectedInstanceTagsResponse> genForListProtectedInstanceTags() {
         // basic
         HttpRequestDef.Builder<ListProtectedInstanceTagsRequest, ListProtectedInstanceTagsResponse> builder =
             HttpRequestDef
@@ -943,9 +882,8 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedInstanceTagsRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstanceTagsRequest::getProtectedInstanceId,
+                ListProtectedInstanceTagsRequest::setProtectedInstanceId));
 
         // response
 
@@ -953,9 +891,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListProtectedInstancesRequest, ListProtectedInstancesResponse> listProtectedInstances =
-        genForlistProtectedInstances();
+        genForListProtectedInstances();
 
-    private static HttpRequestDef<ListProtectedInstancesRequest, ListProtectedInstancesResponse> genForlistProtectedInstances() {
+    private static HttpRequestDef<ListProtectedInstancesRequest, ListProtectedInstancesResponse> genForListProtectedInstances() {
         // basic
         HttpRequestDef.Builder<ListProtectedInstancesRequest, ListProtectedInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProtectedInstancesRequest.class, ListProtectedInstancesResponse.class)
@@ -968,65 +906,52 @@ public class SdrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedInstancesRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstancesRequest::getServerGroupId,
+                ListProtectedInstancesRequest::setServerGroupId));
         builder.<String>withRequestField("server_group_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedInstancesRequest::getServerGroupIds, (req, v) -> {
-                req.setServerGroupIds(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstancesRequest::getServerGroupIds,
+                ListProtectedInstancesRequest::setServerGroupIds));
         builder.<String>withRequestField("protected_instance_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedInstancesRequest::getProtectedInstanceIds, (req, v) -> {
-                req.setProtectedInstanceIds(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstancesRequest::getProtectedInstanceIds,
+                ListProtectedInstancesRequest::setProtectedInstanceIds));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProtectedInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstancesRequest::getLimit, ListProtectedInstancesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProtectedInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstancesRequest::getOffset, ListProtectedInstancesRequest::setOffset));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedInstancesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstancesRequest::getStatus, ListProtectedInstancesRequest::setStatus));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstancesRequest::getName, ListProtectedInstancesRequest::setName));
         builder.<ListProtectedInstancesRequest.QueryTypeEnum>withRequestField("query_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProtectedInstancesRequest.QueryTypeEnum.class),
-            f -> f.withMarshaller(ListProtectedInstancesRequest::getQueryType, (req, v) -> {
-                req.setQueryType(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstancesRequest::getQueryType,
+                ListProtectedInstancesRequest::setQueryType));
         builder.<String>withRequestField("availability_zone",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedInstancesRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstancesRequest::getAvailabilityZone,
+                ListProtectedInstancesRequest::setAvailabilityZone));
 
         // response
 
@@ -1034,9 +959,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListProtectedInstancesByTagsRequest, ListProtectedInstancesByTagsResponse> listProtectedInstancesByTags =
-        genForlistProtectedInstancesByTags();
+        genForListProtectedInstancesByTags();
 
-    private static HttpRequestDef<ListProtectedInstancesByTagsRequest, ListProtectedInstancesByTagsResponse> genForlistProtectedInstancesByTags() {
+    private static HttpRequestDef<ListProtectedInstancesByTagsRequest, ListProtectedInstancesByTagsResponse> genForListProtectedInstancesByTags() {
         // basic
         HttpRequestDef.Builder<ListProtectedInstancesByTagsRequest, ListProtectedInstancesByTagsResponse> builder =
             HttpRequestDef
@@ -1052,9 +977,8 @@ public class SdrsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListProtectedInstancesByTagsRequestBody.class),
-            f -> f.withMarshaller(ListProtectedInstancesByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListProtectedInstancesByTagsRequest::getBody,
+                ListProtectedInstancesByTagsRequest::setBody));
 
         // response
 
@@ -1062,9 +986,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListProtectedInstancesProjectTagsRequest, ListProtectedInstancesProjectTagsResponse> listProtectedInstancesProjectTags =
-        genForlistProtectedInstancesProjectTags();
+        genForListProtectedInstancesProjectTags();
 
-    private static HttpRequestDef<ListProtectedInstancesProjectTagsRequest, ListProtectedInstancesProjectTagsResponse> genForlistProtectedInstancesProjectTags() {
+    private static HttpRequestDef<ListProtectedInstancesProjectTagsRequest, ListProtectedInstancesProjectTagsResponse> genForListProtectedInstancesProjectTags() {
         // basic
         HttpRequestDef.Builder<ListProtectedInstancesProjectTagsRequest, ListProtectedInstancesProjectTagsResponse> builder =
             HttpRequestDef
@@ -1083,9 +1007,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListProtectionGroupsRequest, ListProtectionGroupsResponse> listProtectionGroups =
-        genForlistProtectionGroups();
+        genForListProtectionGroups();
 
-    private static HttpRequestDef<ListProtectionGroupsRequest, ListProtectionGroupsResponse> genForlistProtectionGroups() {
+    private static HttpRequestDef<ListProtectionGroupsRequest, ListProtectionGroupsResponse> genForListProtectionGroups() {
         // basic
         HttpRequestDef.Builder<ListProtectionGroupsRequest, ListProtectionGroupsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProtectionGroupsRequest.class, ListProtectionGroupsResponse.class)
@@ -1098,44 +1022,34 @@ public class SdrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProtectionGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProtectionGroupsRequest::getLimit, ListProtectionGroupsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProtectionGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProtectionGroupsRequest::getOffset, ListProtectionGroupsRequest::setOffset));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectionGroupsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListProtectionGroupsRequest::getStatus, ListProtectionGroupsRequest::setStatus));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectionGroupsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListProtectionGroupsRequest::getName, ListProtectionGroupsRequest::setName));
         builder.<ListProtectionGroupsRequest.QueryTypeEnum>withRequestField("query_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProtectionGroupsRequest.QueryTypeEnum.class),
-            f -> f.withMarshaller(ListProtectionGroupsRequest::getQueryType, (req, v) -> {
-                req.setQueryType(v);
-            }));
+            f -> f.withMarshaller(ListProtectionGroupsRequest::getQueryType,
+                ListProtectionGroupsRequest::setQueryType));
         builder.<String>withRequestField("availability_zone",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectionGroupsRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListProtectionGroupsRequest::getAvailabilityZone,
+                ListProtectionGroupsRequest::setAvailabilityZone));
 
         // response
 
@@ -1143,9 +1057,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListReplicationsRequest, ListReplicationsResponse> listReplications =
-        genForlistReplications();
+        genForListReplications();
 
-    private static HttpRequestDef<ListReplicationsRequest, ListReplicationsResponse> genForlistReplications() {
+    private static HttpRequestDef<ListReplicationsRequest, ListReplicationsResponse> genForListReplications() {
         // basic
         HttpRequestDef.Builder<ListReplicationsRequest, ListReplicationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListReplicationsRequest.class, ListReplicationsResponse.class)
@@ -1158,72 +1072,57 @@ public class SdrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReplicationsRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(ListReplicationsRequest::getServerGroupId,
+                ListReplicationsRequest::setServerGroupId));
         builder.<String>withRequestField("server_group_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReplicationsRequest::getServerGroupIds, (req, v) -> {
-                req.setServerGroupIds(v);
-            }));
+            f -> f.withMarshaller(ListReplicationsRequest::getServerGroupIds,
+                ListReplicationsRequest::setServerGroupIds));
         builder.<String>withRequestField("protected_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReplicationsRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListReplicationsRequest::getProtectedInstanceId,
+                ListReplicationsRequest::setProtectedInstanceId));
         builder.<String>withRequestField("protected_instance_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReplicationsRequest::getProtectedInstanceIds, (req, v) -> {
-                req.setProtectedInstanceIds(v);
-            }));
+            f -> f.withMarshaller(ListReplicationsRequest::getProtectedInstanceIds,
+                ListReplicationsRequest::setProtectedInstanceIds));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReplicationsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListReplicationsRequest::getName, ListReplicationsRequest::setName));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReplicationsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListReplicationsRequest::getStatus, ListReplicationsRequest::setStatus));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListReplicationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListReplicationsRequest::getLimit, ListReplicationsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListReplicationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListReplicationsRequest::getOffset, ListReplicationsRequest::setOffset));
         builder.<ListReplicationsRequest.QueryTypeEnum>withRequestField("query_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListReplicationsRequest.QueryTypeEnum.class),
-            f -> f.withMarshaller(ListReplicationsRequest::getQueryType, (req, v) -> {
-                req.setQueryType(v);
-            }));
+            f -> f.withMarshaller(ListReplicationsRequest::getQueryType, ListReplicationsRequest::setQueryType));
         builder.<String>withRequestField("availability_zone",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReplicationsRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
+            f -> f.withMarshaller(ListReplicationsRequest::getAvailabilityZone,
+                ListReplicationsRequest::setAvailabilityZone));
 
         // response
 
@@ -1231,9 +1130,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListRpoStatisticsRequest, ListRpoStatisticsResponse> listRpoStatistics =
-        genForlistRpoStatistics();
+        genForListRpoStatistics();
 
-    private static HttpRequestDef<ListRpoStatisticsRequest, ListRpoStatisticsResponse> genForlistRpoStatistics() {
+    private static HttpRequestDef<ListRpoStatisticsRequest, ListRpoStatisticsResponse> genForListRpoStatistics() {
         // basic
         HttpRequestDef.Builder<ListRpoStatisticsRequest, ListRpoStatisticsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRpoStatisticsRequest.class, ListRpoStatisticsResponse.class)
@@ -1246,37 +1145,28 @@ public class SdrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRpoStatisticsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRpoStatisticsRequest::getLimit, ListRpoStatisticsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRpoStatisticsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRpoStatisticsRequest::getOffset, ListRpoStatisticsRequest::setOffset));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRpoStatisticsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRpoStatisticsRequest::getStartTime, ListRpoStatisticsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRpoStatisticsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRpoStatisticsRequest::getEndTime, ListRpoStatisticsRequest::setEndTime));
         builder.<String>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRpoStatisticsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListRpoStatisticsRequest::getResourceType,
+                ListRpoStatisticsRequest::setResourceType));
 
         // response
 
@@ -1284,9 +1174,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ResizeProtectedInstanceRequest, ResizeProtectedInstanceResponse> resizeProtectedInstance =
-        genForresizeProtectedInstance();
+        genForResizeProtectedInstance();
 
-    private static HttpRequestDef<ResizeProtectedInstanceRequest, ResizeProtectedInstanceResponse> genForresizeProtectedInstance() {
+    private static HttpRequestDef<ResizeProtectedInstanceRequest, ResizeProtectedInstanceResponse> genForResizeProtectedInstance() {
         // basic
         HttpRequestDef.Builder<ResizeProtectedInstanceRequest, ResizeProtectedInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ResizeProtectedInstanceRequest.class, ResizeProtectedInstanceResponse.class)
@@ -1299,16 +1189,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeProtectedInstanceRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeProtectedInstanceRequest::getProtectedInstanceId,
+                ResizeProtectedInstanceRequest::setProtectedInstanceId));
         builder.<ResizeProtectedInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeProtectedInstanceRequestBody.class),
-            f -> f.withMarshaller(ResizeProtectedInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeProtectedInstanceRequest::getBody, ResizeProtectedInstanceRequest::setBody));
 
         // response
 
@@ -1316,9 +1203,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ShowDisasterRecoveryDrillRequest, ShowDisasterRecoveryDrillResponse> showDisasterRecoveryDrill =
-        genForshowDisasterRecoveryDrill();
+        genForShowDisasterRecoveryDrill();
 
-    private static HttpRequestDef<ShowDisasterRecoveryDrillRequest, ShowDisasterRecoveryDrillResponse> genForshowDisasterRecoveryDrill() {
+    private static HttpRequestDef<ShowDisasterRecoveryDrillRequest, ShowDisasterRecoveryDrillResponse> genForShowDisasterRecoveryDrill() {
         // basic
         HttpRequestDef.Builder<ShowDisasterRecoveryDrillRequest, ShowDisasterRecoveryDrillResponse> builder =
             HttpRequestDef
@@ -1334,9 +1221,8 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDisasterRecoveryDrillRequest::getDisasterRecoveryDrillId, (req, v) -> {
-                req.setDisasterRecoveryDrillId(v);
-            }));
+            f -> f.withMarshaller(ShowDisasterRecoveryDrillRequest::getDisasterRecoveryDrillId,
+                ShowDisasterRecoveryDrillRequest::setDisasterRecoveryDrillId));
 
         // response
 
@@ -1344,9 +1230,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ShowProtectedInstanceRequest, ShowProtectedInstanceResponse> showProtectedInstance =
-        genForshowProtectedInstance();
+        genForShowProtectedInstance();
 
-    private static HttpRequestDef<ShowProtectedInstanceRequest, ShowProtectedInstanceResponse> genForshowProtectedInstance() {
+    private static HttpRequestDef<ShowProtectedInstanceRequest, ShowProtectedInstanceResponse> genForShowProtectedInstance() {
         // basic
         HttpRequestDef.Builder<ShowProtectedInstanceRequest, ShowProtectedInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowProtectedInstanceRequest.class, ShowProtectedInstanceResponse.class)
@@ -1359,9 +1245,8 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProtectedInstanceRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowProtectedInstanceRequest::getProtectedInstanceId,
+                ShowProtectedInstanceRequest::setProtectedInstanceId));
 
         // response
 
@@ -1369,9 +1254,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ShowProtectionGroupRequest, ShowProtectionGroupResponse> showProtectionGroup =
-        genForshowProtectionGroup();
+        genForShowProtectionGroup();
 
-    private static HttpRequestDef<ShowProtectionGroupRequest, ShowProtectionGroupResponse> genForshowProtectionGroup() {
+    private static HttpRequestDef<ShowProtectionGroupRequest, ShowProtectionGroupResponse> genForShowProtectionGroup() {
         // basic
         HttpRequestDef.Builder<ShowProtectionGroupRequest, ShowProtectionGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProtectionGroupRequest.class, ShowProtectionGroupResponse.class)
@@ -1384,18 +1269,17 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProtectionGroupRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowProtectionGroupRequest::getServerGroupId,
+                ShowProtectionGroupRequest::setServerGroupId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForshowQuota();
+    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForShowQuota();
 
-    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForshowQuota() {
+    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForShowQuota() {
         // basic
         HttpRequestDef.Builder<ShowQuotaRequest, ShowQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
@@ -1411,9 +1295,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ShowReplicationRequest, ShowReplicationResponse> showReplication =
-        genForshowReplication();
+        genForShowReplication();
 
-    private static HttpRequestDef<ShowReplicationRequest, ShowReplicationResponse> genForshowReplication() {
+    private static HttpRequestDef<ShowReplicationRequest, ShowReplicationResponse> genForShowReplication() {
         // basic
         HttpRequestDef.Builder<ShowReplicationRequest, ShowReplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowReplicationRequest.class, ShowReplicationResponse.class)
@@ -1426,9 +1310,7 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReplicationRequest::getReplicationId, (req, v) -> {
-                req.setReplicationId(v);
-            }));
+            f -> f.withMarshaller(ShowReplicationRequest::getReplicationId, ShowReplicationRequest::setReplicationId));
 
         // response
 
@@ -1436,9 +1318,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<StartFailoverProtectionGroupRequest, StartFailoverProtectionGroupResponse> startFailoverProtectionGroup =
-        genForstartFailoverProtectionGroup();
+        genForStartFailoverProtectionGroup();
 
-    private static HttpRequestDef<StartFailoverProtectionGroupRequest, StartFailoverProtectionGroupResponse> genForstartFailoverProtectionGroup() {
+    private static HttpRequestDef<StartFailoverProtectionGroupRequest, StartFailoverProtectionGroupResponse> genForStartFailoverProtectionGroup() {
         // basic
         HttpRequestDef.Builder<StartFailoverProtectionGroupRequest, StartFailoverProtectionGroupResponse> builder =
             HttpRequestDef
@@ -1454,16 +1336,14 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartFailoverProtectionGroupRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(StartFailoverProtectionGroupRequest::getServerGroupId,
+                StartFailoverProtectionGroupRequest::setServerGroupId));
         builder.<FailoverProtectionGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FailoverProtectionGroupRequestBody.class),
-            f -> f.withMarshaller(StartFailoverProtectionGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartFailoverProtectionGroupRequest::getBody,
+                StartFailoverProtectionGroupRequest::setBody));
 
         // response
 
@@ -1471,9 +1351,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<StartProtectionGroupRequest, StartProtectionGroupResponse> startProtectionGroup =
-        genForstartProtectionGroup();
+        genForStartProtectionGroup();
 
-    private static HttpRequestDef<StartProtectionGroupRequest, StartProtectionGroupResponse> genForstartProtectionGroup() {
+    private static HttpRequestDef<StartProtectionGroupRequest, StartProtectionGroupResponse> genForStartProtectionGroup() {
         // basic
         HttpRequestDef.Builder<StartProtectionGroupRequest, StartProtectionGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, StartProtectionGroupRequest.class, StartProtectionGroupResponse.class)
@@ -1486,16 +1366,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartProtectionGroupRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(StartProtectionGroupRequest::getServerGroupId,
+                StartProtectionGroupRequest::setServerGroupId));
         builder.<StartProtectionGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartProtectionGroupRequestBody.class),
-            f -> f.withMarshaller(StartProtectionGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartProtectionGroupRequest::getBody, StartProtectionGroupRequest::setBody));
 
         // response
 
@@ -1503,9 +1380,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<StartReverseProtectionGroupRequest, StartReverseProtectionGroupResponse> startReverseProtectionGroup =
-        genForstartReverseProtectionGroup();
+        genForStartReverseProtectionGroup();
 
-    private static HttpRequestDef<StartReverseProtectionGroupRequest, StartReverseProtectionGroupResponse> genForstartReverseProtectionGroup() {
+    private static HttpRequestDef<StartReverseProtectionGroupRequest, StartReverseProtectionGroupResponse> genForStartReverseProtectionGroup() {
         // basic
         HttpRequestDef.Builder<StartReverseProtectionGroupRequest, StartReverseProtectionGroupResponse> builder =
             HttpRequestDef
@@ -1521,16 +1398,14 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartReverseProtectionGroupRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(StartReverseProtectionGroupRequest::getServerGroupId,
+                StartReverseProtectionGroupRequest::setServerGroupId));
         builder.<ReverseProtectionGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReverseProtectionGroupRequestBody.class),
-            f -> f.withMarshaller(StartReverseProtectionGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartReverseProtectionGroupRequest::getBody,
+                StartReverseProtectionGroupRequest::setBody));
 
         // response
 
@@ -1538,9 +1413,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<StopProtectionGroupRequest, StopProtectionGroupResponse> stopProtectionGroup =
-        genForstopProtectionGroup();
+        genForStopProtectionGroup();
 
-    private static HttpRequestDef<StopProtectionGroupRequest, StopProtectionGroupResponse> genForstopProtectionGroup() {
+    private static HttpRequestDef<StopProtectionGroupRequest, StopProtectionGroupResponse> genForStopProtectionGroup() {
         // basic
         HttpRequestDef.Builder<StopProtectionGroupRequest, StopProtectionGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopProtectionGroupRequest.class, StopProtectionGroupResponse.class)
@@ -1553,16 +1428,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopProtectionGroupRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(StopProtectionGroupRequest::getServerGroupId,
+                StopProtectionGroupRequest::setServerGroupId));
         builder.<StopProtectionGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StopProtectionGroupRequestBody.class),
-            f -> f.withMarshaller(StopProtectionGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StopProtectionGroupRequest::getBody, StopProtectionGroupRequest::setBody));
 
         // response
 
@@ -1570,9 +1442,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<UpdateDisasterRecoveryDrillNameRequest, UpdateDisasterRecoveryDrillNameResponse> updateDisasterRecoveryDrillName =
-        genForupdateDisasterRecoveryDrillName();
+        genForUpdateDisasterRecoveryDrillName();
 
-    private static HttpRequestDef<UpdateDisasterRecoveryDrillNameRequest, UpdateDisasterRecoveryDrillNameResponse> genForupdateDisasterRecoveryDrillName() {
+    private static HttpRequestDef<UpdateDisasterRecoveryDrillNameRequest, UpdateDisasterRecoveryDrillNameResponse> genForUpdateDisasterRecoveryDrillName() {
         // basic
         HttpRequestDef.Builder<UpdateDisasterRecoveryDrillNameRequest, UpdateDisasterRecoveryDrillNameResponse> builder =
             HttpRequestDef
@@ -1588,16 +1460,14 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDisasterRecoveryDrillNameRequest::getDisasterRecoveryDrillId, (req, v) -> {
-                req.setDisasterRecoveryDrillId(v);
-            }));
+            f -> f.withMarshaller(UpdateDisasterRecoveryDrillNameRequest::getDisasterRecoveryDrillId,
+                UpdateDisasterRecoveryDrillNameRequest::setDisasterRecoveryDrillId));
         builder.<UpdateDisasterRecoveryDrillNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDisasterRecoveryDrillNameRequestBody.class),
-            f -> f.withMarshaller(UpdateDisasterRecoveryDrillNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDisasterRecoveryDrillNameRequest::getBody,
+                UpdateDisasterRecoveryDrillNameRequest::setBody));
 
         // response
 
@@ -1605,9 +1475,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<UpdateProtectedInstanceNameRequest, UpdateProtectedInstanceNameResponse> updateProtectedInstanceName =
-        genForupdateProtectedInstanceName();
+        genForUpdateProtectedInstanceName();
 
-    private static HttpRequestDef<UpdateProtectedInstanceNameRequest, UpdateProtectedInstanceNameResponse> genForupdateProtectedInstanceName() {
+    private static HttpRequestDef<UpdateProtectedInstanceNameRequest, UpdateProtectedInstanceNameResponse> genForUpdateProtectedInstanceName() {
         // basic
         HttpRequestDef.Builder<UpdateProtectedInstanceNameRequest, UpdateProtectedInstanceNameResponse> builder =
             HttpRequestDef
@@ -1623,16 +1493,14 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProtectedInstanceNameRequest::getProtectedInstanceId, (req, v) -> {
-                req.setProtectedInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateProtectedInstanceNameRequest::getProtectedInstanceId,
+                UpdateProtectedInstanceNameRequest::setProtectedInstanceId));
         builder.<UpdateProtectedInstanceNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProtectedInstanceNameRequestBody.class),
-            f -> f.withMarshaller(UpdateProtectedInstanceNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProtectedInstanceNameRequest::getBody,
+                UpdateProtectedInstanceNameRequest::setBody));
 
         // response
 
@@ -1640,9 +1508,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<UpdateProtectionGroupNameRequest, UpdateProtectionGroupNameResponse> updateProtectionGroupName =
-        genForupdateProtectionGroupName();
+        genForUpdateProtectionGroupName();
 
-    private static HttpRequestDef<UpdateProtectionGroupNameRequest, UpdateProtectionGroupNameResponse> genForupdateProtectionGroupName() {
+    private static HttpRequestDef<UpdateProtectionGroupNameRequest, UpdateProtectionGroupNameResponse> genForUpdateProtectionGroupName() {
         // basic
         HttpRequestDef.Builder<UpdateProtectionGroupNameRequest, UpdateProtectionGroupNameResponse> builder =
             HttpRequestDef
@@ -1658,16 +1526,14 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProtectionGroupNameRequest::getServerGroupId, (req, v) -> {
-                req.setServerGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateProtectionGroupNameRequest::getServerGroupId,
+                UpdateProtectionGroupNameRequest::setServerGroupId));
         builder.<UpdateProtectionGroupNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProtectionGroupNameRequestBody.class),
-            f -> f.withMarshaller(UpdateProtectionGroupNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProtectionGroupNameRequest::getBody,
+                UpdateProtectionGroupNameRequest::setBody));
 
         // response
 
@@ -1675,9 +1541,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<UpdateReplicationNameRequest, UpdateReplicationNameResponse> updateReplicationName =
-        genForupdateReplicationName();
+        genForUpdateReplicationName();
 
-    private static HttpRequestDef<UpdateReplicationNameRequest, UpdateReplicationNameResponse> genForupdateReplicationName() {
+    private static HttpRequestDef<UpdateReplicationNameRequest, UpdateReplicationNameResponse> genForUpdateReplicationName() {
         // basic
         HttpRequestDef.Builder<UpdateReplicationNameRequest, UpdateReplicationNameResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateReplicationNameRequest.class, UpdateReplicationNameResponse.class)
@@ -1690,16 +1556,13 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReplicationNameRequest::getReplicationId, (req, v) -> {
-                req.setReplicationId(v);
-            }));
+            f -> f.withMarshaller(UpdateReplicationNameRequest::getReplicationId,
+                UpdateReplicationNameRequest::setReplicationId));
         builder.<UpdateReplicationNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateReplicationNameRequestBody.class),
-            f -> f.withMarshaller(UpdateReplicationNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateReplicationNameRequest::getBody, UpdateReplicationNameRequest::setBody));
 
         // response
 
@@ -1707,9 +1570,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForlistApiVersions();
+        genForListApiVersions();
 
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
@@ -1725,9 +1588,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ShowSpecifiedApiVersionRequest, ShowSpecifiedApiVersionResponse> showSpecifiedApiVersion =
-        genForshowSpecifiedApiVersion();
+        genForShowSpecifiedApiVersion();
 
-    private static HttpRequestDef<ShowSpecifiedApiVersionRequest, ShowSpecifiedApiVersionResponse> genForshowSpecifiedApiVersion() {
+    private static HttpRequestDef<ShowSpecifiedApiVersionRequest, ShowSpecifiedApiVersionResponse> genForShowSpecifiedApiVersion() {
         // basic
         HttpRequestDef.Builder<ShowSpecifiedApiVersionRequest, ShowSpecifiedApiVersionResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSpecifiedApiVersionRequest.class, ShowSpecifiedApiVersionResponse.class)
@@ -1740,9 +1603,8 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSpecifiedApiVersionRequest::getApiVersion, (req, v) -> {
-                req.setApiVersion(v);
-            }));
+            f -> f.withMarshaller(ShowSpecifiedApiVersionRequest::getApiVersion,
+                ShowSpecifiedApiVersionRequest::setApiVersion));
 
         // response
 
@@ -1750,9 +1612,9 @@ public class SdrsMeta {
     }
 
     public static final HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatus =
-        genForshowJobStatus();
+        genForShowJobStatus();
 
-    private static HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> genForshowJobStatus() {
+    private static HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> genForShowJobStatus() {
         // basic
         HttpRequestDef.Builder<ShowJobStatusRequest, ShowJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobStatusRequest.class, ShowJobStatusResponse.class)
@@ -1765,9 +1627,7 @@ public class SdrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobStatusRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobStatusRequest::getJobId, ShowJobStatusRequest::setJobId));
 
         // response
 

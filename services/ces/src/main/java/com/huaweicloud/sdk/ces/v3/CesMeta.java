@@ -18,9 +18,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CesMeta {
 
     public static final HttpRequestDef<ListAgentStatusRequest, ListAgentStatusResponse> listAgentStatus =
-        genForlistAgentStatus();
+        genForListAgentStatus();
 
-    private static HttpRequestDef<ListAgentStatusRequest, ListAgentStatusResponse> genForlistAgentStatus() {
+    private static HttpRequestDef<ListAgentStatusRequest, ListAgentStatusResponse> genForListAgentStatus() {
         // basic
         HttpRequestDef.Builder<ListAgentStatusRequest, ListAgentStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListAgentStatusRequest.class, ListAgentStatusResponse.class)
@@ -33,9 +33,7 @@ public class CesMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAgentStatusRequestBody.class),
-            f -> f.withMarshaller(ListAgentStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAgentStatusRequest::getBody, ListAgentStatusRequest::setBody));
 
         // response
 
@@ -43,9 +41,9 @@ public class CesMeta {
     }
 
     public static final HttpRequestDef<BatchCreateAgentInvocationsRequest, BatchCreateAgentInvocationsResponse> batchCreateAgentInvocations =
-        genForbatchCreateAgentInvocations();
+        genForBatchCreateAgentInvocations();
 
-    private static HttpRequestDef<BatchCreateAgentInvocationsRequest, BatchCreateAgentInvocationsResponse> genForbatchCreateAgentInvocations() {
+    private static HttpRequestDef<BatchCreateAgentInvocationsRequest, BatchCreateAgentInvocationsResponse> genForBatchCreateAgentInvocations() {
         // basic
         HttpRequestDef.Builder<BatchCreateAgentInvocationsRequest, BatchCreateAgentInvocationsResponse> builder =
             HttpRequestDef
@@ -61,9 +59,8 @@ public class CesMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateInvocationRequestBody.class),
-            f -> f.withMarshaller(BatchCreateAgentInvocationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateAgentInvocationsRequest::getBody,
+                BatchCreateAgentInvocationsRequest::setBody));
 
         // response
 
@@ -71,9 +68,9 @@ public class CesMeta {
     }
 
     public static final HttpRequestDef<ListAgentInvocationsRequest, ListAgentInvocationsResponse> listAgentInvocations =
-        genForlistAgentInvocations();
+        genForListAgentInvocations();
 
-    private static HttpRequestDef<ListAgentInvocationsRequest, ListAgentInvocationsResponse> genForlistAgentInvocations() {
+    private static HttpRequestDef<ListAgentInvocationsRequest, ListAgentInvocationsResponse> genForListAgentInvocations() {
         // basic
         HttpRequestDef.Builder<ListAgentInvocationsRequest, ListAgentInvocationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAgentInvocationsRequest.class, ListAgentInvocationsResponse.class)
@@ -86,51 +83,42 @@ public class CesMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentInvocationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAgentInvocationsRequest::getInstanceId,
+                ListAgentInvocationsRequest::setInstanceId));
         builder.<ListAgentInvocationsRequest.InstanceTypeEnum>withRequestField("instance_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAgentInvocationsRequest.InstanceTypeEnum.class),
-            f -> f.withMarshaller(ListAgentInvocationsRequest::getInstanceType, (req, v) -> {
-                req.setInstanceType(v);
-            }));
+            f -> f.withMarshaller(ListAgentInvocationsRequest::getInstanceType,
+                ListAgentInvocationsRequest::setInstanceType));
         builder.<String>withRequestField("invocation_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentInvocationsRequest::getInvocationId, (req, v) -> {
-                req.setInvocationId(v);
-            }));
+            f -> f.withMarshaller(ListAgentInvocationsRequest::getInvocationId,
+                ListAgentInvocationsRequest::setInvocationId));
         builder.<ListAgentInvocationsRequest.InvocationTypeEnum>withRequestField("invocation_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAgentInvocationsRequest.InvocationTypeEnum.class),
-            f -> f.withMarshaller(ListAgentInvocationsRequest::getInvocationType, (req, v) -> {
-                req.setInvocationType(v);
-            }));
+            f -> f.withMarshaller(ListAgentInvocationsRequest::getInvocationType,
+                ListAgentInvocationsRequest::setInvocationType));
         builder.<ListAgentInvocationsRequest.InvocationTargetEnum>withRequestField("invocation_target",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAgentInvocationsRequest.InvocationTargetEnum.class),
-            f -> f.withMarshaller(ListAgentInvocationsRequest::getInvocationTarget, (req, v) -> {
-                req.setInvocationTarget(v);
-            }));
+            f -> f.withMarshaller(ListAgentInvocationsRequest::getInvocationTarget,
+                ListAgentInvocationsRequest::setInvocationTarget));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAgentInvocationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAgentInvocationsRequest::getOffset, ListAgentInvocationsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAgentInvocationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAgentInvocationsRequest::getLimit, ListAgentInvocationsRequest::setLimit));
 
         // response
 

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 虚拟IP功能选项
+ * 虚拟IP功能选项。
  */
 public class IpVirtual {
 

@@ -137,9 +137,9 @@ import com.huaweicloud.sdk.hilens.v3.model.UpdateWorkSpaceResponse;
 public class HiLensMeta {
 
     public static final HttpRequestDef<AddDeploymentNodesRequest, AddDeploymentNodesResponse> addDeploymentNodes =
-        genForaddDeploymentNodes();
+        genForAddDeploymentNodes();
 
-    private static HttpRequestDef<AddDeploymentNodesRequest, AddDeploymentNodesResponse> genForaddDeploymentNodes() {
+    private static HttpRequestDef<AddDeploymentNodesRequest, AddDeploymentNodesResponse> genForAddDeploymentNodes() {
         // basic
         HttpRequestDef.Builder<AddDeploymentNodesRequest, AddDeploymentNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AddDeploymentNodesRequest.class, AddDeploymentNodesResponse.class)
@@ -152,23 +152,18 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDeploymentNodesRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(AddDeploymentNodesRequest::getDeploymentId,
+                AddDeploymentNodesRequest::setDeploymentId));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDeploymentNodesRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(AddDeploymentNodesRequest::getProvider, AddDeploymentNodesRequest::setProvider));
         builder.<DeploymentAddNodesRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeploymentAddNodesRequest.class),
-            f -> f.withMarshaller(AddDeploymentNodesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddDeploymentNodesRequest::getBody, AddDeploymentNodesRequest::setBody));
 
         // response
 
@@ -176,9 +171,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<BatchCreateNodeTagsRequest, BatchCreateNodeTagsResponse> batchCreateNodeTags =
-        genForbatchCreateNodeTags();
+        genForBatchCreateNodeTags();
 
-    private static HttpRequestDef<BatchCreateNodeTagsRequest, BatchCreateNodeTagsResponse> genForbatchCreateNodeTags() {
+    private static HttpRequestDef<BatchCreateNodeTagsRequest, BatchCreateNodeTagsResponse> genForBatchCreateNodeTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateNodeTagsRequest, BatchCreateNodeTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateNodeTagsRequest.class, BatchCreateNodeTagsResponse.class)
@@ -191,9 +186,7 @@ public class HiLensMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MultiResourcesMultiTags.class),
-            f -> f.withMarshaller(BatchCreateNodeTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateNodeTagsRequest::getBody, BatchCreateNodeTagsRequest::setBody));
 
         // response
 
@@ -201,9 +194,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<CreateConfigMapRequest, CreateConfigMapResponse> createConfigMap =
-        genForcreateConfigMap();
+        genForCreateConfigMap();
 
-    private static HttpRequestDef<CreateConfigMapRequest, CreateConfigMapResponse> genForcreateConfigMap() {
+    private static HttpRequestDef<CreateConfigMapRequest, CreateConfigMapResponse> genForCreateConfigMap() {
         // basic
         HttpRequestDef.Builder<CreateConfigMapRequest, CreateConfigMapResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConfigMapRequest.class, CreateConfigMapResponse.class)
@@ -216,16 +209,12 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConfigMapRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(CreateConfigMapRequest::getProvider, CreateConfigMapRequest::setProvider));
         builder.<ConfigMapModelBoxDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfigMapModelBoxDTO.class),
-            f -> f.withMarshaller(CreateConfigMapRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConfigMapRequest::getBody, CreateConfigMapRequest::setBody));
 
         // response
 
@@ -233,9 +222,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<CreateDeploymentRequest, CreateDeploymentResponse> createDeployment =
-        genForcreateDeployment();
+        genForCreateDeployment();
 
-    private static HttpRequestDef<CreateDeploymentRequest, CreateDeploymentResponse> genForcreateDeployment() {
+    private static HttpRequestDef<CreateDeploymentRequest, CreateDeploymentResponse> genForCreateDeployment() {
         // basic
         HttpRequestDef.Builder<CreateDeploymentRequest, CreateDeploymentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDeploymentRequest.class, CreateDeploymentResponse.class)
@@ -248,32 +237,26 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDeploymentRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(CreateDeploymentRequest::getProvider, CreateDeploymentRequest::setProvider));
         builder.<Integer>withRequestField("X-Expired-Time",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateDeploymentRequest::getXExpiredTime, (req, v) -> {
-                req.setXExpiredTime(v);
-            }));
+            f -> f.withMarshaller(CreateDeploymentRequest::getXExpiredTime, CreateDeploymentRequest::setXExpiredTime));
         builder.<DeploymentCreateRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeploymentCreateRequest.class),
-            f -> f.withMarshaller(CreateDeploymentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDeploymentRequest::getBody, CreateDeploymentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateNodeRequest, CreateNodeResponse> createNode = genForcreateNode();
+    public static final HttpRequestDef<CreateNodeRequest, CreateNodeResponse> createNode = genForCreateNode();
 
-    private static HttpRequestDef<CreateNodeRequest, CreateNodeResponse> genForcreateNode() {
+    private static HttpRequestDef<CreateNodeRequest, CreateNodeResponse> genForCreateNode() {
         // basic
         HttpRequestDef.Builder<CreateNodeRequest, CreateNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNodeRequest.class, CreateNodeResponse.class)
@@ -286,16 +269,12 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNodeRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(CreateNodeRequest::getProvider, CreateNodeRequest::setProvider));
         builder.<NodeRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NodeRequest.class),
-            f -> f.withMarshaller(CreateNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNodeRequest::getBody, CreateNodeRequest::setBody));
 
         // response
 
@@ -303,9 +282,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<CreateOrderFormRequest, CreateOrderFormResponse> createOrderForm =
-        genForcreateOrderForm();
+        genForCreateOrderForm();
 
-    private static HttpRequestDef<CreateOrderFormRequest, CreateOrderFormResponse> genForcreateOrderForm() {
+    private static HttpRequestDef<CreateOrderFormRequest, CreateOrderFormResponse> genForCreateOrderForm() {
         // basic
         HttpRequestDef.Builder<CreateOrderFormRequest, CreateOrderFormResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateOrderFormRequest.class, CreateOrderFormResponse.class)
@@ -318,9 +297,7 @@ public class HiLensMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSkillOrderFrom.class),
-            f -> f.withMarshaller(CreateOrderFormRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOrderFormRequest::getBody, CreateOrderFormRequest::setBody));
 
         // response
 
@@ -328,9 +305,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<CreateResourceTagsRequest, CreateResourceTagsResponse> createResourceTags =
-        genForcreateResourceTags();
+        genForCreateResourceTags();
 
-    private static HttpRequestDef<CreateResourceTagsRequest, CreateResourceTagsResponse> genForcreateResourceTags() {
+    private static HttpRequestDef<CreateResourceTagsRequest, CreateResourceTagsResponse> genForCreateResourceTags() {
         // basic
         HttpRequestDef.Builder<CreateResourceTagsRequest, CreateResourceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResourceTagsRequest.class, CreateResourceTagsResponse.class)
@@ -343,32 +320,27 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResourceTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateResourceTagsRequest::getResourceId, CreateResourceTagsRequest::setResourceId));
         builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CreateResourceTagsRequest::getResourceType,
+                CreateResourceTagsRequest::setResourceType));
         builder.<TagRequestDetail>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagRequestDetail.class),
-            f -> f.withMarshaller(CreateResourceTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResourceTagsRequest::getBody, CreateResourceTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForcreateSecret();
+    public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForCreateSecret();
 
-    private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForcreateSecret() {
+    private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForCreateSecret() {
         // basic
         HttpRequestDef.Builder<CreateSecretRequest, CreateSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecretRequest.class, CreateSecretResponse.class)
@@ -381,25 +353,21 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecretRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(CreateSecretRequest::getProvider, CreateSecretRequest::setProvider));
         builder.<SecretRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SecretRequestBody.class),
-            f -> f.withMarshaller(CreateSecretRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecretRequest::getBody, CreateSecretRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForcreateTask();
+    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForCreateTask();
 
-    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForcreateTask() {
+    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForCreateTask() {
         // basic
         HttpRequestDef.Builder<CreateTaskRequest, CreateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskRequest.class, CreateTaskResponse.class)
@@ -412,16 +380,12 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTaskRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getDeploymentId, CreateTaskRequest::setDeploymentId));
         builder.<TaskRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaskRequest.class),
-            f -> f.withMarshaller(CreateTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getBody, CreateTaskRequest::setBody));
 
         // response
 
@@ -429,9 +393,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<CreateWorkSpaceRequest, CreateWorkSpaceResponse> createWorkSpace =
-        genForcreateWorkSpace();
+        genForCreateWorkSpace();
 
-    private static HttpRequestDef<CreateWorkSpaceRequest, CreateWorkSpaceResponse> genForcreateWorkSpace() {
+    private static HttpRequestDef<CreateWorkSpaceRequest, CreateWorkSpaceResponse> genForCreateWorkSpace() {
         // basic
         HttpRequestDef.Builder<CreateWorkSpaceRequest, CreateWorkSpaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateWorkSpaceRequest.class, CreateWorkSpaceResponse.class)
@@ -444,9 +408,7 @@ public class HiLensMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RequestWorkspace.class),
-            f -> f.withMarshaller(CreateWorkSpaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateWorkSpaceRequest::getBody, CreateWorkSpaceRequest::setBody));
 
         // response
 
@@ -454,9 +416,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<DeleteConfigMapRequest, DeleteConfigMapResponse> deleteConfigMap =
-        genFordeleteConfigMap();
+        genForDeleteConfigMap();
 
-    private static HttpRequestDef<DeleteConfigMapRequest, DeleteConfigMapResponse> genFordeleteConfigMap() {
+    private static HttpRequestDef<DeleteConfigMapRequest, DeleteConfigMapResponse> genForDeleteConfigMap() {
         // basic
         HttpRequestDef.Builder<DeleteConfigMapRequest, DeleteConfigMapResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteConfigMapRequest.class, DeleteConfigMapResponse.class)
@@ -469,9 +431,7 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConfigMapRequest::getConfigMapId, (req, v) -> {
-                req.setConfigMapId(v);
-            }));
+            f -> f.withMarshaller(DeleteConfigMapRequest::getConfigMapId, DeleteConfigMapRequest::setConfigMapId));
 
         // response
 
@@ -479,9 +439,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<DeleteDeploymentRequest, DeleteDeploymentResponse> deleteDeployment =
-        genFordeleteDeployment();
+        genForDeleteDeployment();
 
-    private static HttpRequestDef<DeleteDeploymentRequest, DeleteDeploymentResponse> genFordeleteDeployment() {
+    private static HttpRequestDef<DeleteDeploymentRequest, DeleteDeploymentResponse> genForDeleteDeployment() {
         // basic
         HttpRequestDef.Builder<DeleteDeploymentRequest, DeleteDeploymentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeploymentRequest.class, DeleteDeploymentResponse.class)
@@ -494,39 +454,31 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeploymentRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeploymentRequest::getDeploymentId, DeleteDeploymentRequest::setDeploymentId));
         builder.<Boolean>withRequestField("force_delete",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteDeploymentRequest::getForceDelete, (req, v) -> {
-                req.setForceDelete(v);
-            }));
+            f -> f.withMarshaller(DeleteDeploymentRequest::getForceDelete, DeleteDeploymentRequest::setForceDelete));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeploymentRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(DeleteDeploymentRequest::getProvider, DeleteDeploymentRequest::setProvider));
         builder.<Integer>withRequestField("X-Expired-Time",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDeploymentRequest::getXExpiredTime, (req, v) -> {
-                req.setXExpiredTime(v);
-            }));
+            f -> f.withMarshaller(DeleteDeploymentRequest::getXExpiredTime, DeleteDeploymentRequest::setXExpiredTime));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteNodeRequest, DeleteNodeResponse> deleteNode = genFordeleteNode();
+    public static final HttpRequestDef<DeleteNodeRequest, DeleteNodeResponse> deleteNode = genForDeleteNode();
 
-    private static HttpRequestDef<DeleteNodeRequest, DeleteNodeResponse> genFordeleteNode() {
+    private static HttpRequestDef<DeleteNodeRequest, DeleteNodeResponse> genForDeleteNode() {
         // basic
         HttpRequestDef.Builder<DeleteNodeRequest, DeleteNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNodeRequest.class, DeleteNodeResponse.class)
@@ -539,25 +491,21 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteNodeRequest::getNodeId, DeleteNodeRequest::setNodeId));
         builder.<Boolean>withRequestField("force_delete",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteNodeRequest::getForceDelete, (req, v) -> {
-                req.setForceDelete(v);
-            }));
+            f -> f.withMarshaller(DeleteNodeRequest::getForceDelete, DeleteNodeRequest::setForceDelete));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePodRequest, DeletePodResponse> deletePod = genFordeletePod();
+    public static final HttpRequestDef<DeletePodRequest, DeletePodResponse> deletePod = genForDeletePod();
 
-    private static HttpRequestDef<DeletePodRequest, DeletePodResponse> genFordeletePod() {
+    private static HttpRequestDef<DeletePodRequest, DeletePodResponse> genForDeletePod() {
         // basic
         HttpRequestDef.Builder<DeletePodRequest, DeletePodResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePodRequest.class, DeletePodResponse.class)
@@ -570,23 +518,17 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePodRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(DeletePodRequest::getDeploymentId, DeletePodRequest::setDeploymentId));
         builder.<String>withRequestField("pod_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePodRequest::getPodId, (req, v) -> {
-                req.setPodId(v);
-            }));
+            f -> f.withMarshaller(DeletePodRequest::getPodId, DeletePodRequest::setPodId));
         builder.<Boolean>withRequestField("force_delete",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeletePodRequest::getForceDelete, (req, v) -> {
-                req.setForceDelete(v);
-            }));
+            f -> f.withMarshaller(DeletePodRequest::getForceDelete, DeletePodRequest::setForceDelete));
 
         // response
 
@@ -594,9 +536,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTag =
-        genFordeleteResourceTag();
+        genForDeleteResourceTag();
 
-    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genFordeleteResourceTag() {
+    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genForDeleteResourceTag() {
         // basic
         HttpRequestDef.Builder<DeleteResourceTagRequest, DeleteResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceTagRequest.class, DeleteResourceTagResponse.class)
@@ -609,32 +551,27 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceId, DeleteResourceTagRequest::setResourceId));
         builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceType,
+                DeleteResourceTagRequest::setResourceType));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getKey, DeleteResourceTagRequest::setKey));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> deleteSecret = genFordeleteSecret();
+    public static final HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> deleteSecret = genForDeleteSecret();
 
-    private static HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> genFordeleteSecret() {
+    private static HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> genForDeleteSecret() {
         // basic
         HttpRequestDef.Builder<DeleteSecretRequest, DeleteSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretRequest.class, DeleteSecretResponse.class)
@@ -647,18 +584,16 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretRequest::getSecretId, DeleteSecretRequest::setSecretId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
+    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genForDeleteTask();
 
-    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
+    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genForDeleteTask() {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
@@ -671,16 +606,12 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getDeploymentId, DeleteTaskRequest::setDeploymentId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, DeleteTaskRequest::setTaskId));
 
         // response
 
@@ -688,9 +619,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<DeleteWorkSpaceRequest, DeleteWorkSpaceResponse> deleteWorkSpace =
-        genFordeleteWorkSpace();
+        genForDeleteWorkSpace();
 
-    private static HttpRequestDef<DeleteWorkSpaceRequest, DeleteWorkSpaceResponse> genFordeleteWorkSpace() {
+    private static HttpRequestDef<DeleteWorkSpaceRequest, DeleteWorkSpaceResponse> genForDeleteWorkSpace() {
         // basic
         HttpRequestDef.Builder<DeleteWorkSpaceRequest, DeleteWorkSpaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteWorkSpaceRequest.class, DeleteWorkSpaceResponse.class)
@@ -703,18 +634,16 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWorkSpaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteWorkSpaceRequest::getWorkspaceId, DeleteWorkSpaceRequest::setWorkspaceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<FreezeNodeRequest, FreezeNodeResponse> freezeNode = genForfreezeNode();
+    public static final HttpRequestDef<FreezeNodeRequest, FreezeNodeResponse> freezeNode = genForFreezeNode();
 
-    private static HttpRequestDef<FreezeNodeRequest, FreezeNodeResponse> genForfreezeNode() {
+    private static HttpRequestDef<FreezeNodeRequest, FreezeNodeResponse> genForFreezeNode() {
         // basic
         HttpRequestDef.Builder<FreezeNodeRequest, FreezeNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, FreezeNodeRequest.class, FreezeNodeResponse.class)
@@ -727,9 +656,7 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(FreezeNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(FreezeNodeRequest::getNodeId, FreezeNodeRequest::setNodeId));
 
         // response
 
@@ -737,9 +664,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ListConfigMapsRequest, ListConfigMapsResponse> listConfigMaps =
-        genForlistConfigMaps();
+        genForListConfigMaps();
 
-    private static HttpRequestDef<ListConfigMapsRequest, ListConfigMapsResponse> genForlistConfigMaps() {
+    private static HttpRequestDef<ListConfigMapsRequest, ListConfigMapsResponse> genForListConfigMaps() {
         // basic
         HttpRequestDef.Builder<ListConfigMapsRequest, ListConfigMapsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConfigMapsRequest.class, ListConfigMapsResponse.class)
@@ -752,51 +679,37 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getProvider, ListConfigMapsRequest::setProvider));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getName, ListConfigMapsRequest::setName));
         builder.<String>withRequestField("workspace_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getWorkspaceId, ListConfigMapsRequest::setWorkspaceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getLimit, ListConfigMapsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getOffset, ListConfigMapsRequest::setOffset));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getSort, ListConfigMapsRequest::setSort));
         builder.<String>withRequestField("tag_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getTagKey, (req, v) -> {
-                req.setTagKey(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getTagKey, ListConfigMapsRequest::setTagKey));
 
         // response
 
@@ -804,9 +717,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ListFirmwaresRequest, ListFirmwaresResponse> listFirmwares =
-        genForlistFirmwares();
+        genForListFirmwares();
 
-    private static HttpRequestDef<ListFirmwaresRequest, ListFirmwaresResponse> genForlistFirmwares() {
+    private static HttpRequestDef<ListFirmwaresRequest, ListFirmwaresResponse> genForListFirmwares() {
         // basic
         HttpRequestDef.Builder<ListFirmwaresRequest, ListFirmwaresResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFirmwaresRequest.class, ListFirmwaresResponse.class)
@@ -819,44 +732,32 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFirmwaresRequest::getDeviceType, (req, v) -> {
-                req.setDeviceType(v);
-            }));
+            f -> f.withMarshaller(ListFirmwaresRequest::getDeviceType, ListFirmwaresRequest::setDeviceType));
         builder.<String>withRequestField("arch",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFirmwaresRequest::getArch, (req, v) -> {
-                req.setArch(v);
-            }));
+            f -> f.withMarshaller(ListFirmwaresRequest::getArch, ListFirmwaresRequest::setArch));
         builder.<String>withRequestField("os_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFirmwaresRequest::getOsName, (req, v) -> {
-                req.setOsName(v);
-            }));
+            f -> f.withMarshaller(ListFirmwaresRequest::getOsName, ListFirmwaresRequest::setOsName));
         builder.<String>withRequestField("os_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFirmwaresRequest::getOsVersion, (req, v) -> {
-                req.setOsVersion(v);
-            }));
+            f -> f.withMarshaller(ListFirmwaresRequest::getOsVersion, ListFirmwaresRequest::setOsVersion));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFirmwaresRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFirmwaresRequest::getOffset, ListFirmwaresRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFirmwaresRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFirmwaresRequest::getLimit, ListFirmwaresRequest::setLimit));
 
         // response
 
@@ -864,9 +765,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ListPlatformManagerRequest, ListPlatformManagerResponse> listPlatformManager =
-        genForlistPlatformManager();
+        genForListPlatformManager();
 
-    private static HttpRequestDef<ListPlatformManagerRequest, ListPlatformManagerResponse> genForlistPlatformManager() {
+    private static HttpRequestDef<ListPlatformManagerRequest, ListPlatformManagerResponse> genForListPlatformManager() {
         // basic
         HttpRequestDef.Builder<ListPlatformManagerRequest, ListPlatformManagerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPlatformManagerRequest.class, ListPlatformManagerResponse.class)
@@ -879,37 +780,28 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlatformManagerRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListPlatformManagerRequest::getId, ListPlatformManagerRequest::setId));
         builder.<String>withRequestField("device_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlatformManagerRequest::getDeviceType, (req, v) -> {
-                req.setDeviceType(v);
-            }));
+            f -> f.withMarshaller(ListPlatformManagerRequest::getDeviceType,
+                ListPlatformManagerRequest::setDeviceType));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlatformManagerRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListPlatformManagerRequest::getType, ListPlatformManagerRequest::setType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlatformManagerRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPlatformManagerRequest::getOffset, ListPlatformManagerRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlatformManagerRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPlatformManagerRequest::getLimit, ListPlatformManagerRequest::setLimit));
 
         // response
 
@@ -917,9 +809,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTags =
-        genForlistResourceTags();
+        genForListResourceTags();
 
-    private static HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> genForlistResourceTags() {
+    private static HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> genForListResourceTags() {
         // basic
         HttpRequestDef.Builder<ListResourceTagsRequest, ListResourceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceTagsRequest.class, ListResourceTagsResponse.class)
@@ -932,18 +824,16 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceTagsRequest::getResourceType, ListResourceTagsRequest::setResourceType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSecretsRequest, ListSecretsResponse> listSecrets = genForlistSecrets();
+    public static final HttpRequestDef<ListSecretsRequest, ListSecretsResponse> listSecrets = genForListSecrets();
 
-    private static HttpRequestDef<ListSecretsRequest, ListSecretsResponse> genForlistSecrets() {
+    private static HttpRequestDef<ListSecretsRequest, ListSecretsResponse> genForListSecrets() {
         // basic
         HttpRequestDef.Builder<ListSecretsRequest, ListSecretsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecretsRequest.class, ListSecretsResponse.class)
@@ -956,60 +846,46 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecretsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getOffset, ListSecretsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecretsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getLimit, ListSecretsRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getName, ListSecretsRequest::setName));
         builder.<String>withRequestField("workspace_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getWorkspaceId, ListSecretsRequest::setWorkspaceId));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getTags, ListSecretsRequest::setTags));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getProvider, ListSecretsRequest::setProvider));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getSort, ListSecretsRequest::setSort));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForlistTasks();
+    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForListTasks();
 
-    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForlistTasks() {
+    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForListTasks() {
         // basic
         HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
@@ -1022,23 +898,17 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getDeploymentId, ListTasksRequest::setDeploymentId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getOffset, ListTasksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getLimit, ListTasksRequest::setLimit));
 
         // response
 
@@ -1046,9 +916,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ListWorkSpacesRequest, ListWorkSpacesResponse> listWorkSpaces =
-        genForlistWorkSpaces();
+        genForListWorkSpaces();
 
-    private static HttpRequestDef<ListWorkSpacesRequest, ListWorkSpacesResponse> genForlistWorkSpaces() {
+    private static HttpRequestDef<ListWorkSpacesRequest, ListWorkSpacesResponse> genForListWorkSpaces() {
         // basic
         HttpRequestDef.Builder<ListWorkSpacesRequest, ListWorkSpacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWorkSpacesRequest.class, ListWorkSpacesResponse.class)
@@ -1061,23 +931,17 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkSpacesRequest::getIamUserId, (req, v) -> {
-                req.setIamUserId(v);
-            }));
+            f -> f.withMarshaller(ListWorkSpacesRequest::getIamUserId, ListWorkSpacesRequest::setIamUserId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkSpacesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListWorkSpacesRequest::getOffset, ListWorkSpacesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkSpacesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListWorkSpacesRequest::getLimit, ListWorkSpacesRequest::setLimit));
 
         // response
 
@@ -1085,9 +949,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<SetDefaultOrderFormRequest, SetDefaultOrderFormResponse> setDefaultOrderForm =
-        genForsetDefaultOrderForm();
+        genForSetDefaultOrderForm();
 
-    private static HttpRequestDef<SetDefaultOrderFormRequest, SetDefaultOrderFormResponse> genForsetDefaultOrderForm() {
+    private static HttpRequestDef<SetDefaultOrderFormRequest, SetDefaultOrderFormResponse> genForSetDefaultOrderForm() {
         // basic
         HttpRequestDef.Builder<SetDefaultOrderFormRequest, SetDefaultOrderFormResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetDefaultOrderFormRequest.class, SetDefaultOrderFormResponse.class)
@@ -1100,9 +964,7 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetDefaultOrderFormRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(SetDefaultOrderFormRequest::getOrderId, SetDefaultOrderFormRequest::setOrderId));
 
         // response
 
@@ -1110,9 +972,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowConfigMapRequest, ShowConfigMapResponse> showConfigMap =
-        genForshowConfigMap();
+        genForShowConfigMap();
 
-    private static HttpRequestDef<ShowConfigMapRequest, ShowConfigMapResponse> genForshowConfigMap() {
+    private static HttpRequestDef<ShowConfigMapRequest, ShowConfigMapResponse> genForShowConfigMap() {
         // basic
         HttpRequestDef.Builder<ShowConfigMapRequest, ShowConfigMapResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConfigMapRequest.class, ShowConfigMapResponse.class)
@@ -1125,9 +987,7 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigMapRequest::getConfigMapId, (req, v) -> {
-                req.setConfigMapId(v);
-            }));
+            f -> f.withMarshaller(ShowConfigMapRequest::getConfigMapId, ShowConfigMapRequest::setConfigMapId));
 
         // response
 
@@ -1135,9 +995,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowDeploymentRequest, ShowDeploymentResponse> showDeployment =
-        genForshowDeployment();
+        genForShowDeployment();
 
-    private static HttpRequestDef<ShowDeploymentRequest, ShowDeploymentResponse> genForshowDeployment() {
+    private static HttpRequestDef<ShowDeploymentRequest, ShowDeploymentResponse> genForShowDeployment() {
         // basic
         HttpRequestDef.Builder<ShowDeploymentRequest, ShowDeploymentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeploymentRequest.class, ShowDeploymentResponse.class)
@@ -1150,16 +1010,12 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentRequest::getDeploymentId, ShowDeploymentRequest::setDeploymentId));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentRequest::getProvider, ShowDeploymentRequest::setProvider));
 
         // response
 
@@ -1167,9 +1023,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowDeploymentPodsRequest, ShowDeploymentPodsResponse> showDeploymentPods =
-        genForshowDeploymentPods();
+        genForShowDeploymentPods();
 
-    private static HttpRequestDef<ShowDeploymentPodsRequest, ShowDeploymentPodsResponse> genForshowDeploymentPods() {
+    private static HttpRequestDef<ShowDeploymentPodsRequest, ShowDeploymentPodsResponse> genForShowDeploymentPods() {
         // basic
         HttpRequestDef.Builder<ShowDeploymentPodsRequest, ShowDeploymentPodsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeploymentPodsRequest.class, ShowDeploymentPodsResponse.class)
@@ -1182,51 +1038,39 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentPodsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentPodsRequest::getClusterId, ShowDeploymentPodsRequest::setClusterId));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentPodsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentPodsRequest::getNodeId, ShowDeploymentPodsRequest::setNodeId));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentPodsRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentPodsRequest::getProvider, ShowDeploymentPodsRequest::setProvider));
         builder.<String>withRequestField("deployment_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentPodsRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentPodsRequest::getDeploymentId,
+                ShowDeploymentPodsRequest::setDeploymentId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentPodsRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentPodsRequest::getWorkspaceId,
+                ShowDeploymentPodsRequest::setWorkspaceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDeploymentPodsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentPodsRequest::getOffset, ShowDeploymentPodsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDeploymentPodsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentPodsRequest::getLimit, ShowDeploymentPodsRequest::setLimit));
 
         // response
 
@@ -1234,9 +1078,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowDeploymentsRequest, ShowDeploymentsResponse> showDeployments =
-        genForshowDeployments();
+        genForShowDeployments();
 
-    private static HttpRequestDef<ShowDeploymentsRequest, ShowDeploymentsResponse> genForshowDeployments() {
+    private static HttpRequestDef<ShowDeploymentsRequest, ShowDeploymentsResponse> genForShowDeployments() {
         // basic
         HttpRequestDef.Builder<ShowDeploymentsRequest, ShowDeploymentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeploymentsRequest.class, ShowDeploymentsResponse.class)
@@ -1249,60 +1093,46 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentsRequest::getClusterId, ShowDeploymentsRequest::setClusterId));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentsRequest::getNodeId, ShowDeploymentsRequest::setNodeId));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentsRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentsRequest::getProvider, ShowDeploymentsRequest::setProvider));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentsRequest::getName, ShowDeploymentsRequest::setName));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentsRequest::getSort, ShowDeploymentsRequest::setSort));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDeploymentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentsRequest::getLimit, ShowDeploymentsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDeploymentsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentsRequest::getOffset, ShowDeploymentsRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNodeRequest, ShowNodeResponse> showNode = genForshowNode();
+    public static final HttpRequestDef<ShowNodeRequest, ShowNodeResponse> showNode = genForShowNode();
 
-    private static HttpRequestDef<ShowNodeRequest, ShowNodeResponse> genForshowNode() {
+    private static HttpRequestDef<ShowNodeRequest, ShowNodeResponse> genForShowNode() {
         // basic
         HttpRequestDef.Builder<ShowNodeRequest, ShowNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNodeRequest.class, ShowNodeResponse.class)
@@ -1315,9 +1145,7 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowNodeRequest::getNodeId, ShowNodeRequest::setNodeId));
 
         // response
 
@@ -1325,9 +1153,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowNodeActivationRecordsRequest, ShowNodeActivationRecordsResponse> showNodeActivationRecords =
-        genForshowNodeActivationRecords();
+        genForShowNodeActivationRecords();
 
-    private static HttpRequestDef<ShowNodeActivationRecordsRequest, ShowNodeActivationRecordsResponse> genForshowNodeActivationRecords() {
+    private static HttpRequestDef<ShowNodeActivationRecordsRequest, ShowNodeActivationRecordsResponse> genForShowNodeActivationRecords() {
         // basic
         HttpRequestDef.Builder<ShowNodeActivationRecordsRequest, ShowNodeActivationRecordsResponse> builder =
             HttpRequestDef
@@ -1343,32 +1171,29 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodeActivationRecordsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowNodeActivationRecordsRequest::getNodeId,
+                ShowNodeActivationRecordsRequest::setNodeId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowNodeActivationRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowNodeActivationRecordsRequest::getOffset,
+                ShowNodeActivationRecordsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowNodeActivationRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowNodeActivationRecordsRequest::getLimit,
+                ShowNodeActivationRecordsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNodesRequest, ShowNodesResponse> showNodes = genForshowNodes();
+    public static final HttpRequestDef<ShowNodesRequest, ShowNodesResponse> showNodes = genForShowNodes();
 
-    private static HttpRequestDef<ShowNodesRequest, ShowNodesResponse> genForshowNodes() {
+    private static HttpRequestDef<ShowNodesRequest, ShowNodesResponse> genForShowNodes() {
         // basic
         HttpRequestDef.Builder<ShowNodesRequest, ShowNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNodesRequest.class, ShowNodesResponse.class)
@@ -1381,72 +1206,52 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowNodesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowNodesRequest::getOffset, ShowNodesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowNodesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowNodesRequest::getLimit, ShowNodesRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowNodesRequest::getName, ShowNodesRequest::setName));
         builder.<String>withRequestField("workspace_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodesRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowNodesRequest::getWorkspaceId, ShowNodesRequest::setWorkspaceId));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodesRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ShowNodesRequest::getAppName, ShowNodesRequest::setAppName));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ShowNodesRequest::getTags, ShowNodesRequest::setTags));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodesRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(ShowNodesRequest::getProvider, ShowNodesRequest::setProvider));
         builder.<String>withRequestField("cluster_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodesRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowNodesRequest::getClusterId, ShowNodesRequest::setClusterId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowNodesRequest::getStatus, ShowNodesRequest::setStatus));
         builder.<String>withRequestField("active_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodesRequest::getActiveStatus, (req, v) -> {
-                req.setActiveStatus(v);
-            }));
+            f -> f.withMarshaller(ShowNodesRequest::getActiveStatus, ShowNodesRequest::setActiveStatus));
 
         // response
 
@@ -1454,9 +1259,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTags =
-        genForshowResourceTags();
+        genForShowResourceTags();
 
-    private static HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> genForshowResourceTags() {
+    private static HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> genForShowResourceTags() {
         // basic
         HttpRequestDef.Builder<ShowResourceTagsRequest, ShowResourceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagsRequest.class, ShowResourceTagsResponse.class)
@@ -1469,25 +1274,21 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceId, ShowResourceTagsRequest::setResourceId));
         builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceType, ShowResourceTagsRequest::setResourceType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSecretRequest, ShowSecretResponse> showSecret = genForshowSecret();
+    public static final HttpRequestDef<ShowSecretRequest, ShowSecretResponse> showSecret = genForShowSecret();
 
-    private static HttpRequestDef<ShowSecretRequest, ShowSecretResponse> genForshowSecret() {
+    private static HttpRequestDef<ShowSecretRequest, ShowSecretResponse> genForShowSecret() {
         // basic
         HttpRequestDef.Builder<ShowSecretRequest, ShowSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecretRequest.class, ShowSecretResponse.class)
@@ -1500,9 +1301,7 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecretRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
+            f -> f.withMarshaller(ShowSecretRequest::getSecretId, ShowSecretRequest::setSecretId));
 
         // response
 
@@ -1510,9 +1309,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowSkillInfoRequest, ShowSkillInfoResponse> showSkillInfo =
-        genForshowSkillInfo();
+        genForShowSkillInfo();
 
-    private static HttpRequestDef<ShowSkillInfoRequest, ShowSkillInfoResponse> genForshowSkillInfo() {
+    private static HttpRequestDef<ShowSkillInfoRequest, ShowSkillInfoResponse> genForShowSkillInfo() {
         // basic
         HttpRequestDef.Builder<ShowSkillInfoRequest, ShowSkillInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSkillInfoRequest.class, ShowSkillInfoResponse.class)
@@ -1525,23 +1324,17 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillInfoRequest::getSkillId, (req, v) -> {
-                req.setSkillId(v);
-            }));
+            f -> f.withMarshaller(ShowSkillInfoRequest::getSkillId, ShowSkillInfoRequest::setSkillId));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowSkillInfoRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowSkillInfoRequest::getStatus, ShowSkillInfoRequest::setStatus));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillInfoRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowSkillInfoRequest::getVersion, ShowSkillInfoRequest::setVersion));
 
         // response
 
@@ -1554,9 +1347,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowSkillListRequest, ShowSkillListResponse> showSkillList =
-        genForshowSkillList();
+        genForShowSkillList();
 
-    private static HttpRequestDef<ShowSkillListRequest, ShowSkillListResponse> genForshowSkillList() {
+    private static HttpRequestDef<ShowSkillListRequest, ShowSkillListResponse> genForShowSkillList() {
         // basic
         HttpRequestDef.Builder<ShowSkillListRequest, ShowSkillListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSkillListRequest.class, ShowSkillListResponse.class)
@@ -1569,100 +1362,72 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getLimit, ShowSkillListRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getOffset, ShowSkillListRequest::setOffset));
         builder.<String>withRequestField("skill_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getSkillName, (req, v) -> {
-                req.setSkillName(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getSkillName, ShowSkillListRequest::setSkillName));
         builder.<String>withRequestField("skill_form",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getSkillForm, (req, v) -> {
-                req.setSkillForm(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getSkillForm, ShowSkillListRequest::setSkillForm));
         builder.<String>withRequestField("permission",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getPermission, (req, v) -> {
-                req.setPermission(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getPermission, ShowSkillListRequest::setPermission));
         builder.<String>withRequestField("template_source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getTemplateSource, (req, v) -> {
-                req.setTemplateSource(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getTemplateSource, ShowSkillListRequest::setTemplateSource));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getStatus, ShowSkillListRequest::setStatus));
         builder.<Integer>withRequestField("charge_model",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getChargeModel, (req, v) -> {
-                req.setChargeModel(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getChargeModel, ShowSkillListRequest::setChargeModel));
         builder.<String>withRequestField("platform",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getPlatform, (req, v) -> {
-                req.setPlatform(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getPlatform, ShowSkillListRequest::setPlatform));
         builder.<String>withRequestField("chip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getChip, (req, v) -> {
-                req.setChip(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getChip, ShowSkillListRequest::setChip));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getType, ShowSkillListRequest::setType));
         builder.<String>withRequestField("charge_models",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getChargeModels, (req, v) -> {
-                req.setChargeModels(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getChargeModels, ShowSkillListRequest::setChargeModels));
         builder.<String>withRequestField("device_types",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getDeviceTypes, (req, v) -> {
-                req.setDeviceTypes(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getDeviceTypes, ShowSkillListRequest::setDeviceTypes));
         builder.<String>withRequestField("scenes",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillListRequest::getScenes, (req, v) -> {
-                req.setScenes(v);
-            }));
+            f -> f.withMarshaller(ShowSkillListRequest::getScenes, ShowSkillListRequest::setScenes));
 
         // response
 
@@ -1670,9 +1435,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowSkillOrderInfoRequest, ShowSkillOrderInfoResponse> showSkillOrderInfo =
-        genForshowSkillOrderInfo();
+        genForShowSkillOrderInfo();
 
-    private static HttpRequestDef<ShowSkillOrderInfoRequest, ShowSkillOrderInfoResponse> genForshowSkillOrderInfo() {
+    private static HttpRequestDef<ShowSkillOrderInfoRequest, ShowSkillOrderInfoResponse> genForShowSkillOrderInfo() {
         // basic
         HttpRequestDef.Builder<ShowSkillOrderInfoRequest, ShowSkillOrderInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSkillOrderInfoRequest.class, ShowSkillOrderInfoResponse.class)
@@ -1685,9 +1450,7 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillOrderInfoRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(ShowSkillOrderInfoRequest::getOrderId, ShowSkillOrderInfoRequest::setOrderId));
 
         // response
 
@@ -1695,9 +1458,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowSkillOrderListRequest, ShowSkillOrderListResponse> showSkillOrderList =
-        genForshowSkillOrderList();
+        genForShowSkillOrderList();
 
-    private static HttpRequestDef<ShowSkillOrderListRequest, ShowSkillOrderListResponse> genForshowSkillOrderList() {
+    private static HttpRequestDef<ShowSkillOrderListRequest, ShowSkillOrderListResponse> genForShowSkillOrderList() {
         // basic
         HttpRequestDef.Builder<ShowSkillOrderListRequest, ShowSkillOrderListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSkillOrderListRequest.class, ShowSkillOrderListResponse.class)
@@ -1710,39 +1473,31 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowSkillOrderListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowSkillOrderListRequest::getLimit, ShowSkillOrderListRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowSkillOrderListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowSkillOrderListRequest::getOffset, ShowSkillOrderListRequest::setOffset));
         builder.<String>withRequestField("skill_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillOrderListRequest::getSkillName, (req, v) -> {
-                req.setSkillName(v);
-            }));
+            f -> f.withMarshaller(ShowSkillOrderListRequest::getSkillName, ShowSkillOrderListRequest::setSkillName));
         builder.<String>withRequestField("skill_form",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSkillOrderListRequest::getSkillForm, (req, v) -> {
-                req.setSkillForm(v);
-            }));
+            f -> f.withMarshaller(ShowSkillOrderListRequest::getSkillForm, ShowSkillOrderListRequest::setSkillForm));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForshowTask();
+    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForShowTask();
 
-    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForshowTask() {
+    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForShowTask() {
         // basic
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
@@ -1755,16 +1510,12 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getDeploymentId, ShowTaskRequest::setDeploymentId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getTaskId, ShowTaskRequest::setTaskId));
 
         // response
 
@@ -1772,9 +1523,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowUpgradeProgressRequest, ShowUpgradeProgressResponse> showUpgradeProgress =
-        genForshowUpgradeProgress();
+        genForShowUpgradeProgress();
 
-    private static HttpRequestDef<ShowUpgradeProgressRequest, ShowUpgradeProgressResponse> genForshowUpgradeProgress() {
+    private static HttpRequestDef<ShowUpgradeProgressRequest, ShowUpgradeProgressResponse> genForShowUpgradeProgress() {
         // basic
         HttpRequestDef.Builder<ShowUpgradeProgressRequest, ShowUpgradeProgressResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUpgradeProgressRequest.class, ShowUpgradeProgressResponse.class)
@@ -1787,23 +1538,17 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpgradeProgressRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowUpgradeProgressRequest::getNodeId, ShowUpgradeProgressRequest::setNodeId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowUpgradeProgressRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowUpgradeProgressRequest::getOffset, ShowUpgradeProgressRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowUpgradeProgressRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowUpgradeProgressRequest::getLimit, ShowUpgradeProgressRequest::setLimit));
 
         // response
 
@@ -1811,9 +1556,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<ShowWorkSpaceRequest, ShowWorkSpaceResponse> showWorkSpace =
-        genForshowWorkSpace();
+        genForShowWorkSpace();
 
-    private static HttpRequestDef<ShowWorkSpaceRequest, ShowWorkSpaceResponse> genForshowWorkSpace() {
+    private static HttpRequestDef<ShowWorkSpaceRequest, ShowWorkSpaceResponse> genForShowWorkSpace() {
         // basic
         HttpRequestDef.Builder<ShowWorkSpaceRequest, ShowWorkSpaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowWorkSpaceRequest.class, ShowWorkSpaceResponse.class)
@@ -1826,9 +1571,7 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWorkSpaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowWorkSpaceRequest::getWorkspaceId, ShowWorkSpaceRequest::setWorkspaceId));
 
         // response
 
@@ -1836,9 +1579,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse> startAndStopDeployment =
-        genForstartAndStopDeployment();
+        genForStartAndStopDeployment();
 
-    private static HttpRequestDef<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse> genForstartAndStopDeployment() {
+    private static HttpRequestDef<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse> genForStartAndStopDeployment() {
         // basic
         HttpRequestDef.Builder<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, StartAndStopDeploymentRequest.class, StartAndStopDeploymentResponse.class)
@@ -1851,16 +1594,13 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartAndStopDeploymentRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(StartAndStopDeploymentRequest::getDeploymentId,
+                StartAndStopDeploymentRequest::setDeploymentId));
         builder.<String>withRequestField("action",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartAndStopDeploymentRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(StartAndStopDeploymentRequest::getAction, StartAndStopDeploymentRequest::setAction));
 
         // response
 
@@ -1868,9 +1608,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse> startAndStopDeploymentPod =
-        genForstartAndStopDeploymentPod();
+        genForStartAndStopDeploymentPod();
 
-    private static HttpRequestDef<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse> genForstartAndStopDeploymentPod() {
+    private static HttpRequestDef<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse> genForStartAndStopDeploymentPod() {
         // basic
         HttpRequestDef.Builder<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse> builder =
             HttpRequestDef
@@ -1886,23 +1626,20 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartAndStopDeploymentPodRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(StartAndStopDeploymentPodRequest::getDeploymentId,
+                StartAndStopDeploymentPodRequest::setDeploymentId));
         builder.<String>withRequestField("pod_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartAndStopDeploymentPodRequest::getPodId, (req, v) -> {
-                req.setPodId(v);
-            }));
+            f -> f.withMarshaller(StartAndStopDeploymentPodRequest::getPodId,
+                StartAndStopDeploymentPodRequest::setPodId));
         builder.<String>withRequestField("action",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartAndStopDeploymentPodRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(StartAndStopDeploymentPodRequest::getAction,
+                StartAndStopDeploymentPodRequest::setAction));
 
         // response
 
@@ -1910,9 +1647,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<SwitchNodeConnectionRequest, SwitchNodeConnectionResponse> switchNodeConnection =
-        genForswitchNodeConnection();
+        genForSwitchNodeConnection();
 
-    private static HttpRequestDef<SwitchNodeConnectionRequest, SwitchNodeConnectionResponse> genForswitchNodeConnection() {
+    private static HttpRequestDef<SwitchNodeConnectionRequest, SwitchNodeConnectionResponse> genForSwitchNodeConnection() {
         // basic
         HttpRequestDef.Builder<SwitchNodeConnectionRequest, SwitchNodeConnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SwitchNodeConnectionRequest.class, SwitchNodeConnectionResponse.class)
@@ -1925,32 +1662,26 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchNodeConnectionRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(SwitchNodeConnectionRequest::getNodeId, SwitchNodeConnectionRequest::setNodeId));
         builder.<String>withRequestField("action",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchNodeConnectionRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(SwitchNodeConnectionRequest::getAction, SwitchNodeConnectionRequest::setAction));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchNodeConnectionRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(SwitchNodeConnectionRequest::getProvider, SwitchNodeConnectionRequest::setProvider));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UnfreezeNodeRequest, UnfreezeNodeResponse> unfreezeNode = genForunfreezeNode();
+    public static final HttpRequestDef<UnfreezeNodeRequest, UnfreezeNodeResponse> unfreezeNode = genForUnfreezeNode();
 
-    private static HttpRequestDef<UnfreezeNodeRequest, UnfreezeNodeResponse> genForunfreezeNode() {
+    private static HttpRequestDef<UnfreezeNodeRequest, UnfreezeNodeResponse> genForUnfreezeNode() {
         // basic
         HttpRequestDef.Builder<UnfreezeNodeRequest, UnfreezeNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UnfreezeNodeRequest.class, UnfreezeNodeResponse.class)
@@ -1963,16 +1694,12 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnfreezeNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(UnfreezeNodeRequest::getNodeId, UnfreezeNodeRequest::setNodeId));
         builder.<ActivateNodeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ActivateNodeRequestBody.class),
-            f -> f.withMarshaller(UnfreezeNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UnfreezeNodeRequest::getBody, UnfreezeNodeRequest::setBody));
 
         // response
 
@@ -1980,9 +1707,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<UpdateConfigMapRequest, UpdateConfigMapResponse> updateConfigMap =
-        genForupdateConfigMap();
+        genForUpdateConfigMap();
 
-    private static HttpRequestDef<UpdateConfigMapRequest, UpdateConfigMapResponse> genForupdateConfigMap() {
+    private static HttpRequestDef<UpdateConfigMapRequest, UpdateConfigMapResponse> genForUpdateConfigMap() {
         // basic
         HttpRequestDef.Builder<UpdateConfigMapRequest, UpdateConfigMapResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateConfigMapRequest.class, UpdateConfigMapResponse.class)
@@ -1995,16 +1722,12 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConfigMapRequest::getConfigMapId, (req, v) -> {
-                req.setConfigMapId(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigMapRequest::getConfigMapId, UpdateConfigMapRequest::setConfigMapId));
         builder.<ConfigMapModelBoxDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfigMapModelBoxDTO.class),
-            f -> f.withMarshaller(UpdateConfigMapRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigMapRequest::getBody, UpdateConfigMapRequest::setBody));
 
         // response
 
@@ -2012,9 +1735,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<UpdateDeploymentRequest, UpdateDeploymentResponse> updateDeployment =
-        genForupdateDeployment();
+        genForUpdateDeployment();
 
-    private static HttpRequestDef<UpdateDeploymentRequest, UpdateDeploymentResponse> genForupdateDeployment() {
+    private static HttpRequestDef<UpdateDeploymentRequest, UpdateDeploymentResponse> genForUpdateDeployment() {
         // basic
         HttpRequestDef.Builder<UpdateDeploymentRequest, UpdateDeploymentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeploymentRequest.class, UpdateDeploymentResponse.class)
@@ -2027,30 +1750,22 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeploymentRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeploymentRequest::getDeploymentId, UpdateDeploymentRequest::setDeploymentId));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeploymentRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(UpdateDeploymentRequest::getProvider, UpdateDeploymentRequest::setProvider));
         builder.<Integer>withRequestField("X-Expired-Time",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateDeploymentRequest::getXExpiredTime, (req, v) -> {
-                req.setXExpiredTime(v);
-            }));
+            f -> f.withMarshaller(UpdateDeploymentRequest::getXExpiredTime, UpdateDeploymentRequest::setXExpiredTime));
         builder.<DeploymentUpdateRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeploymentUpdateRequest.class),
-            f -> f.withMarshaller(UpdateDeploymentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDeploymentRequest::getBody, UpdateDeploymentRequest::setBody));
 
         // response
 
@@ -2058,9 +1773,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<UpdateDeploymentUsingPatchRequest, UpdateDeploymentUsingPatchResponse> updateDeploymentUsingPatch =
-        genForupdateDeploymentUsingPatch();
+        genForUpdateDeploymentUsingPatch();
 
-    private static HttpRequestDef<UpdateDeploymentUsingPatchRequest, UpdateDeploymentUsingPatchResponse> genForupdateDeploymentUsingPatch() {
+    private static HttpRequestDef<UpdateDeploymentUsingPatchRequest, UpdateDeploymentUsingPatchResponse> genForUpdateDeploymentUsingPatch() {
         // basic
         HttpRequestDef.Builder<UpdateDeploymentUsingPatchRequest, UpdateDeploymentUsingPatchResponse> builder =
             HttpRequestDef
@@ -2076,25 +1791,23 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeploymentUsingPatchRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeploymentUsingPatchRequest::getDeploymentId,
+                UpdateDeploymentUsingPatchRequest::setDeploymentId));
         builder.<DeploymentPatchRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeploymentPatchRequest.class),
-            f -> f.withMarshaller(UpdateDeploymentUsingPatchRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDeploymentUsingPatchRequest::getBody,
+                UpdateDeploymentUsingPatchRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateNodeRequest, UpdateNodeResponse> updateNode = genForupdateNode();
+    public static final HttpRequestDef<UpdateNodeRequest, UpdateNodeResponse> updateNode = genForUpdateNode();
 
-    private static HttpRequestDef<UpdateNodeRequest, UpdateNodeResponse> genForupdateNode() {
+    private static HttpRequestDef<UpdateNodeRequest, UpdateNodeResponse> genForUpdateNode() {
         // basic
         HttpRequestDef.Builder<UpdateNodeRequest, UpdateNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNodeRequest.class, UpdateNodeResponse.class)
@@ -2107,16 +1820,12 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeRequest::getNodeId, UpdateNodeRequest::setNodeId));
         builder.<UpdateNodeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNodeRequestBody.class),
-            f -> f.withMarshaller(UpdateNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeRequest::getBody, UpdateNodeRequest::setBody));
 
         // response
 
@@ -2124,9 +1833,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<UpdateNodeCertRequest, UpdateNodeCertResponse> updateNodeCert =
-        genForupdateNodeCert();
+        genForUpdateNodeCert();
 
-    private static HttpRequestDef<UpdateNodeCertRequest, UpdateNodeCertResponse> genForupdateNodeCert() {
+    private static HttpRequestDef<UpdateNodeCertRequest, UpdateNodeCertResponse> genForUpdateNodeCert() {
         // basic
         HttpRequestDef.Builder<UpdateNodeCertRequest, UpdateNodeCertResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNodeCertRequest.class, UpdateNodeCertResponse.class)
@@ -2139,9 +1848,7 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodeCertRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeCertRequest::getNodeId, UpdateNodeCertRequest::setNodeId));
 
         // response
 
@@ -2149,9 +1856,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<UpdateNodeFirmwareRequest, UpdateNodeFirmwareResponse> updateNodeFirmware =
-        genForupdateNodeFirmware();
+        genForUpdateNodeFirmware();
 
-    private static HttpRequestDef<UpdateNodeFirmwareRequest, UpdateNodeFirmwareResponse> genForupdateNodeFirmware() {
+    private static HttpRequestDef<UpdateNodeFirmwareRequest, UpdateNodeFirmwareResponse> genForUpdateNodeFirmware() {
         // basic
         HttpRequestDef.Builder<UpdateNodeFirmwareRequest, UpdateNodeFirmwareResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNodeFirmwareRequest.class, UpdateNodeFirmwareResponse.class)
@@ -2164,32 +1871,25 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodeFirmwareRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeFirmwareRequest::getNodeId, UpdateNodeFirmwareRequest::setNodeId));
         builder.<String>withRequestField("firmware_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodeFirmwareRequest::getFirmwareId, (req, v) -> {
-                req.setFirmwareId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeFirmwareRequest::getFirmwareId, UpdateNodeFirmwareRequest::setFirmwareId));
         builder.<Integer>withRequestField("X-Expired-Time",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateNodeFirmwareRequest::getXExpiredTime, (req, v) -> {
-                req.setXExpiredTime(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeFirmwareRequest::getXExpiredTime,
+                UpdateNodeFirmwareRequest::setXExpiredTime));
 
         // response
         builder.<Object>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             Object.class,
-            f -> f.withMarshaller(UpdateNodeFirmwareResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateNodeFirmwareResponse::getBody, UpdateNodeFirmwareResponse::setBody));
 
         builder.<String>withResponseField("firmware_name",
             LocationType.Header,
@@ -2206,9 +1906,9 @@ public class HiLensMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> updateSecret = genForupdateSecret();
+    public static final HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> updateSecret = genForUpdateSecret();
 
-    private static HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> genForupdateSecret() {
+    private static HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> genForUpdateSecret() {
         // basic
         HttpRequestDef.Builder<UpdateSecretRequest, UpdateSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSecretRequest.class, UpdateSecretResponse.class)
@@ -2221,25 +1921,21 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecretRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretRequest::getSecretId, UpdateSecretRequest::setSecretId));
         builder.<SecretRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SecretRequestBody.class),
-            f -> f.withMarshaller(UpdateSecretRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretRequest::getBody, UpdateSecretRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> updateTask = genForupdateTask();
+    public static final HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> updateTask = genForUpdateTask();
 
-    private static HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> genForupdateTask() {
+    private static HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> genForUpdateTask() {
         // basic
         HttpRequestDef.Builder<UpdateTaskRequest, UpdateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateTaskRequest.class, UpdateTaskResponse.class)
@@ -2252,23 +1948,17 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTaskRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskRequest::getDeploymentId, UpdateTaskRequest::setDeploymentId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskRequest::getTaskId, UpdateTaskRequest::setTaskId));
         builder.<TaskRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaskRequest.class),
-            f -> f.withMarshaller(UpdateTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskRequest::getBody, UpdateTaskRequest::setBody));
 
         // response
 
@@ -2276,9 +1966,9 @@ public class HiLensMeta {
     }
 
     public static final HttpRequestDef<UpdateWorkSpaceRequest, UpdateWorkSpaceResponse> updateWorkSpace =
-        genForupdateWorkSpace();
+        genForUpdateWorkSpace();
 
-    private static HttpRequestDef<UpdateWorkSpaceRequest, UpdateWorkSpaceResponse> genForupdateWorkSpace() {
+    private static HttpRequestDef<UpdateWorkSpaceRequest, UpdateWorkSpaceResponse> genForUpdateWorkSpace() {
         // basic
         HttpRequestDef.Builder<UpdateWorkSpaceRequest, UpdateWorkSpaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateWorkSpaceRequest.class, UpdateWorkSpaceResponse.class)
@@ -2291,16 +1981,12 @@ public class HiLensMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWorkSpaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkSpaceRequest::getWorkspaceId, UpdateWorkSpaceRequest::setWorkspaceId));
         builder.<UpdateDescription>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateDescription.class),
-            f -> f.withMarshaller(UpdateWorkSpaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkSpaceRequest::getBody, UpdateWorkSpaceRequest::setBody));
 
         // response
 

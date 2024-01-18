@@ -75,6 +75,11 @@ public class ListDigitalHumanVideoRequest {
 
     private String assetName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_type")
+
+    private String jobType;
+
     public ListDigitalHumanVideoRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -136,7 +141,7 @@ public class ListDigitalHumanVideoRequest {
     }
 
     /**
-     * 第三方用户ID。 > *不允许输入中文。
+     * 第三方用户ID。 > * 不允许输入中文。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -306,6 +311,23 @@ public class ListDigitalHumanVideoRequest {
         this.assetName = assetName;
     }
 
+    public ListDigitalHumanVideoRequest withJobType(String jobType) {
+        this.jobType = jobType;
+        return this;
+    }
+
+    /**
+     * 任务类型。 * 2D_DIGITAL_HUMAN_VIDEO: 分身数字人视频制作任务 * PHOTO_DIGITAL_HUMAN_VIDEO: 照片数字人视频制作任务
+     * @return jobType
+     */
+    public String getJobType() {
+        return jobType;
+    }
+
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -321,7 +343,7 @@ public class ListDigitalHumanVideoRequest {
             && Objects.equals(this.state, that.state) && Objects.equals(this.sortKey, that.sortKey)
             && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.createUntil, that.createUntil)
             && Objects.equals(this.createSince, that.createSince) && Objects.equals(this.scriptId, that.scriptId)
-            && Objects.equals(this.assetName, that.assetName);
+            && Objects.equals(this.assetName, that.assetName) && Objects.equals(this.jobType, that.jobType);
     }
 
     @Override
@@ -338,7 +360,8 @@ public class ListDigitalHumanVideoRequest {
             createUntil,
             createSince,
             scriptId,
-            assetName);
+            assetName,
+            jobType);
     }
 
     @Override
@@ -358,6 +381,7 @@ public class ListDigitalHumanVideoRequest {
         sb.append("    createSince: ").append(toIndentedString(createSince)).append("\n");
         sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
         sb.append("    assetName: ").append(toIndentedString(assetName)).append("\n");
+        sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

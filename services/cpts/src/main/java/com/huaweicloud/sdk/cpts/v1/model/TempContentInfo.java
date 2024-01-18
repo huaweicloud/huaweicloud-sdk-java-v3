@@ -44,7 +44,7 @@ public class TempContentInfo {
     }
 
     /**
-     * content_id
+     * 报文id或者事务id或者插件id
      * minimum: 0
      * maximum: 2147483647
      * @return contentId
@@ -79,7 +79,7 @@ public class TempContentInfo {
     }
 
     /**
-     * content
+     * 内容
      * @return content
      */
     public List<Content> getContent() {
@@ -96,7 +96,7 @@ public class TempContentInfo {
     }
 
     /**
-     * index
+     * 索引
      * minimum: 0
      * maximum: 2147483647
      * @return index
@@ -115,7 +115,7 @@ public class TempContentInfo {
     }
 
     /**
-     * data
+     * 数据指令内容
      * @return data
      */
     public Object getData() {
@@ -132,7 +132,7 @@ public class TempContentInfo {
     }
 
     /**
-     * data_type
+     * 数据指令类型（0：默认请求卡片；1：数据指令；201：循环指令；202：条件指令；203：vu百分比控制器；204：吞吐量控制器；301：集合点；302：插件请求）
      * minimum: 0
      * maximum: 2147483647
      * @return dataType

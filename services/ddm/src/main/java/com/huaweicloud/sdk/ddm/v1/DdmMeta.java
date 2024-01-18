@@ -91,9 +91,9 @@ import com.huaweicloud.sdk.ddm.v1.model.WeakPasswordReq;
 public class DdmMeta {
 
     public static final HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> createDatabase =
-        genForcreateDatabase();
+        genForCreateDatabase();
 
-    private static HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> genForcreateDatabase() {
+    private static HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> genForCreateDatabase() {
         // basic
         HttpRequestDef.Builder<CreateDatabaseRequest, CreateDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDatabaseRequest.class, CreateDatabaseResponse.class)
@@ -106,16 +106,12 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseRequest::getInstanceId, CreateDatabaseRequest::setInstanceId));
         builder.<CreateDatabaseReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDatabaseReq.class),
-            f -> f.withMarshaller(CreateDatabaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseRequest::getBody, CreateDatabaseRequest::setBody));
 
         // response
 
@@ -123,9 +119,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
-        genForcreateInstance();
+        genForCreateInstance();
 
-    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForcreateInstance() {
+    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForCreateInstance() {
         // basic
         HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
@@ -138,18 +134,16 @@ public class DdmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceReq.class),
-            f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceRequest::getBody, CreateInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateUsersRequest, CreateUsersResponse> createUsers = genForcreateUsers();
+    public static final HttpRequestDef<CreateUsersRequest, CreateUsersResponse> createUsers = genForCreateUsers();
 
-    private static HttpRequestDef<CreateUsersRequest, CreateUsersResponse> genForcreateUsers() {
+    private static HttpRequestDef<CreateUsersRequest, CreateUsersResponse> genForCreateUsers() {
         // basic
         HttpRequestDef.Builder<CreateUsersRequest, CreateUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateUsersRequest.class, CreateUsersResponse.class)
@@ -162,16 +156,12 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateUsersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateUsersRequest::getInstanceId, CreateUsersRequest::setInstanceId));
         builder.<CreateUsersReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateUsersReq.class),
-            f -> f.withMarshaller(CreateUsersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateUsersRequest::getBody, CreateUsersRequest::setBody));
 
         // response
 
@@ -179,9 +169,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabase =
-        genFordeleteDatabase();
+        genForDeleteDatabase();
 
-    private static HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> genFordeleteDatabase() {
+    private static HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> genForDeleteDatabase() {
         // basic
         HttpRequestDef.Builder<DeleteDatabaseRequest, DeleteDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabaseRequest.class, DeleteDatabaseResponse.class)
@@ -194,40 +184,32 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getInstanceId, DeleteDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("ddm_dbname",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getDdmDbname, (req, v) -> {
-                req.setDdmDbname(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getDdmDbname, DeleteDatabaseRequest::setDdmDbname));
         builder.<DeleteDatabaseRequest.DeleteRdsDataEnum>withRequestField("delete_rds_data",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteDatabaseRequest.DeleteRdsDataEnum.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getDeleteRdsData, (req, v) -> {
-                req.setDeleteRdsData(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getDeleteRdsData, DeleteDatabaseRequest::setDeleteRdsData));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteDatabaseResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseResponse::getBody, DeleteDatabaseResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
-        genFordeleteInstance();
+        genForDeleteInstance();
 
-    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genFordeleteInstance() {
+    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genForDeleteInstance() {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
@@ -240,25 +222,21 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
         builder.<DeleteInstanceRequest.DeleteRdsDataEnum>withRequestField("delete_rds_data",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteInstanceRequest.DeleteRdsDataEnum.class),
-            f -> f.withMarshaller(DeleteInstanceRequest::getDeleteRdsData, (req, v) -> {
-                req.setDeleteRdsData(v);
-            }));
+            f -> f.withMarshaller(DeleteInstanceRequest::getDeleteRdsData, DeleteInstanceRequest::setDeleteRdsData));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteUserRequest, DeleteUserResponse> deleteUser = genFordeleteUser();
+    public static final HttpRequestDef<DeleteUserRequest, DeleteUserResponse> deleteUser = genForDeleteUser();
 
-    private static HttpRequestDef<DeleteUserRequest, DeleteUserResponse> genFordeleteUser() {
+    private static HttpRequestDef<DeleteUserRequest, DeleteUserResponse> genForDeleteUser() {
         // basic
         HttpRequestDef.Builder<DeleteUserRequest, DeleteUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteUserRequest.class, DeleteUserResponse.class)
@@ -271,16 +249,12 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteUserRequest::getInstanceId, DeleteUserRequest::setInstanceId));
         builder.<String>withRequestField("username",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteUserRequest::getUsername, (req, v) -> {
-                req.setUsername(v);
-            }));
+            f -> f.withMarshaller(DeleteUserRequest::getUsername, DeleteUserRequest::setUsername));
 
         // response
 
@@ -288,9 +262,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<ExpandInstanceNodesRequest, ExpandInstanceNodesResponse> expandInstanceNodes =
-        genForexpandInstanceNodes();
+        genForExpandInstanceNodes();
 
-    private static HttpRequestDef<ExpandInstanceNodesRequest, ExpandInstanceNodesResponse> genForexpandInstanceNodes() {
+    private static HttpRequestDef<ExpandInstanceNodesRequest, ExpandInstanceNodesResponse> genForExpandInstanceNodes() {
         // basic
         HttpRequestDef.Builder<ExpandInstanceNodesRequest, ExpandInstanceNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExpandInstanceNodesRequest.class, ExpandInstanceNodesResponse.class)
@@ -303,16 +277,13 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandInstanceNodesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExpandInstanceNodesRequest::getInstanceId,
+                ExpandInstanceNodesRequest::setInstanceId));
         builder.<EnlargeRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnlargeRequest.class),
-            f -> f.withMarshaller(ExpandInstanceNodesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExpandInstanceNodesRequest::getBody, ExpandInstanceNodesRequest::setBody));
 
         // response
 
@@ -320,9 +291,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<ListAvailableRdsListRequest, ListAvailableRdsListResponse> listAvailableRdsList =
-        genForlistAvailableRdsList();
+        genForListAvailableRdsList();
 
-    private static HttpRequestDef<ListAvailableRdsListRequest, ListAvailableRdsListResponse> genForlistAvailableRdsList() {
+    private static HttpRequestDef<ListAvailableRdsListRequest, ListAvailableRdsListResponse> genForListAvailableRdsList() {
         // basic
         HttpRequestDef.Builder<ListAvailableRdsListRequest, ListAvailableRdsListResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAvailableRdsListRequest.class, ListAvailableRdsListResponse.class)
@@ -335,23 +306,18 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAvailableRdsListRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAvailableRdsListRequest::getInstanceId,
+                ListAvailableRdsListRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAvailableRdsListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAvailableRdsListRequest::getOffset, ListAvailableRdsListRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAvailableRdsListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAvailableRdsListRequest::getLimit, ListAvailableRdsListRequest::setLimit));
 
         // response
 
@@ -359,9 +325,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> listDatabases =
-        genForlistDatabases();
+        genForListDatabases();
 
-    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForlistDatabases() {
+    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForListDatabases() {
         // basic
         HttpRequestDef.Builder<ListDatabasesRequest, ListDatabasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatabasesRequest.class, ListDatabasesResponse.class)
@@ -374,32 +340,26 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getInstanceId, ListDatabasesRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getOffset, ListDatabasesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getLimit, ListDatabasesRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEnginesRequest, ListEnginesResponse> listEngines = genForlistEngines();
+    public static final HttpRequestDef<ListEnginesRequest, ListEnginesResponse> listEngines = genForListEngines();
 
-    private static HttpRequestDef<ListEnginesRequest, ListEnginesResponse> genForlistEngines() {
+    private static HttpRequestDef<ListEnginesRequest, ListEnginesResponse> genForListEngines() {
         // basic
         HttpRequestDef.Builder<ListEnginesRequest, ListEnginesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnginesRequest.class, ListEnginesResponse.class)
@@ -412,25 +372,21 @@ public class DdmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnginesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEnginesRequest::getOffset, ListEnginesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnginesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnginesRequest::getLimit, ListEnginesRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
+    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForListFlavors();
 
-    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
+    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForListFlavors() {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
@@ -443,23 +399,17 @@ public class DdmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getEngineId, (req, v) -> {
-                req.setEngineId(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getEngineId, ListFlavorsRequest::setEngineId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getOffset, ListFlavorsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getLimit, ListFlavorsRequest::setLimit));
 
         // response
 
@@ -467,9 +417,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
-        genForlistInstances();
+        genForListInstances();
 
-    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
@@ -482,25 +432,21 @@ public class DdmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, ListInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNodesRequest, ListNodesResponse> listNodes = genForlistNodes();
+    public static final HttpRequestDef<ListNodesRequest, ListNodesResponse> listNodes = genForListNodes();
 
-    private static HttpRequestDef<ListNodesRequest, ListNodesResponse> genForlistNodes() {
+    private static HttpRequestDef<ListNodesRequest, ListNodesResponse> genForListNodes() {
         // basic
         HttpRequestDef.Builder<ListNodesRequest, ListNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNodesRequest.class, ListNodesResponse.class)
@@ -513,23 +459,17 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNodesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListNodesRequest::getInstanceId, ListNodesRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNodesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListNodesRequest::getOffset, ListNodesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNodesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNodesRequest::getLimit, ListNodesRequest::setLimit));
 
         // response
 
@@ -537,9 +477,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<ListReadWriteRatioRequest, ListReadWriteRatioResponse> listReadWriteRatio =
-        genForlistReadWriteRatio();
+        genForListReadWriteRatio();
 
-    private static HttpRequestDef<ListReadWriteRatioRequest, ListReadWriteRatioResponse> genForlistReadWriteRatio() {
+    private static HttpRequestDef<ListReadWriteRatioRequest, ListReadWriteRatioResponse> genForListReadWriteRatio() {
         // basic
         HttpRequestDef.Builder<ListReadWriteRatioRequest, ListReadWriteRatioResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListReadWriteRatioRequest.class, ListReadWriteRatioResponse.class)
@@ -552,46 +492,36 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReadWriteRatioRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListReadWriteRatioRequest::getInstanceId, ListReadWriteRatioRequest::setInstanceId));
         builder.<String>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReadWriteRatioRequest::getCurPage, (req, v) -> {
-                req.setCurPage(v);
-            }));
+            f -> f.withMarshaller(ListReadWriteRatioRequest::getCurPage, ListReadWriteRatioRequest::setCurPage));
         builder.<String>withRequestField("perPage",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReadWriteRatioRequest::getPerPage, (req, v) -> {
-                req.setPerPage(v);
-            }));
+            f -> f.withMarshaller(ListReadWriteRatioRequest::getPerPage, ListReadWriteRatioRequest::setPerPage));
         builder.<String>withRequestField("startDate",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReadWriteRatioRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ListReadWriteRatioRequest::getStartDate, ListReadWriteRatioRequest::setStartDate));
         builder.<String>withRequestField("endDate",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReadWriteRatioRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ListReadWriteRatioRequest::getEndDate, ListReadWriteRatioRequest::setEndDate));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSlowLogRequest, ListSlowLogResponse> listSlowLog = genForlistSlowLog();
+    public static final HttpRequestDef<ListSlowLogRequest, ListSlowLogResponse> listSlowLog = genForListSlowLog();
 
-    private static HttpRequestDef<ListSlowLogRequest, ListSlowLogResponse> genForlistSlowLog() {
+    private static HttpRequestDef<ListSlowLogRequest, ListSlowLogResponse> genForListSlowLog() {
         // basic
         HttpRequestDef.Builder<ListSlowLogRequest, ListSlowLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSlowLogRequest.class, ListSlowLogResponse.class)
@@ -604,46 +534,36 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowLogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogRequest::getInstanceId, ListSlowLogRequest::setInstanceId));
         builder.<String>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowLogRequest::getCurPage, (req, v) -> {
-                req.setCurPage(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogRequest::getCurPage, ListSlowLogRequest::setCurPage));
         builder.<String>withRequestField("perPage",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowLogRequest::getPerPage, (req, v) -> {
-                req.setPerPage(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogRequest::getPerPage, ListSlowLogRequest::setPerPage));
         builder.<String>withRequestField("startDate",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowLogRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogRequest::getStartDate, ListSlowLogRequest::setStartDate));
         builder.<String>withRequestField("endDate",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowLogRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ListSlowLogRequest::getEndDate, ListSlowLogRequest::setEndDate));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForlistUsers();
+    public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForListUsers();
 
-    private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForlistUsers() {
+    private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForListUsers() {
         // basic
         HttpRequestDef.Builder<ListUsersRequest, ListUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsersRequest.class, ListUsersResponse.class)
@@ -656,23 +576,17 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getInstanceId, ListUsersRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getOffset, ListUsersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getLimit, ListUsersRequest::setLimit));
 
         // response
 
@@ -680,9 +594,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<RebuildConfigRequest, RebuildConfigResponse> rebuildConfig =
-        genForrebuildConfig();
+        genForRebuildConfig();
 
-    private static HttpRequestDef<RebuildConfigRequest, RebuildConfigResponse> genForrebuildConfig() {
+    private static HttpRequestDef<RebuildConfigRequest, RebuildConfigResponse> genForRebuildConfig() {
         // basic
         HttpRequestDef.Builder<RebuildConfigRequest, RebuildConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RebuildConfigRequest.class, RebuildConfigResponse.class)
@@ -695,26 +609,22 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RebuildConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RebuildConfigRequest::getInstanceId, RebuildConfigRequest::setInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(RebuildConfigResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(RebuildConfigResponse::getBody, RebuildConfigResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ResetAdministratorRequest, ResetAdministratorResponse> resetAdministrator =
-        genForresetAdministrator();
+        genForResetAdministrator();
 
-    private static HttpRequestDef<ResetAdministratorRequest, ResetAdministratorResponse> genForresetAdministrator() {
+    private static HttpRequestDef<ResetAdministratorRequest, ResetAdministratorResponse> genForResetAdministrator() {
         // basic
         HttpRequestDef.Builder<ResetAdministratorRequest, ResetAdministratorResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetAdministratorRequest.class, ResetAdministratorResponse.class)
@@ -727,16 +637,12 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetAdministratorRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetAdministratorRequest::getInstanceId, ResetAdministratorRequest::setInstanceId));
         builder.<AdminUserInfoReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AdminUserInfoReq.class),
-            f -> f.withMarshaller(ResetAdministratorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetAdministratorRequest::getBody, ResetAdministratorRequest::setBody));
 
         // response
 
@@ -744,9 +650,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<ResetUserPasswordRequest, ResetUserPasswordResponse> resetUserPassword =
-        genForresetUserPassword();
+        genForResetUserPassword();
 
-    private static HttpRequestDef<ResetUserPasswordRequest, ResetUserPasswordResponse> genForresetUserPassword() {
+    private static HttpRequestDef<ResetUserPasswordRequest, ResetUserPasswordResponse> genForResetUserPassword() {
         // basic
         HttpRequestDef.Builder<ResetUserPasswordRequest, ResetUserPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetUserPasswordRequest.class, ResetUserPasswordResponse.class)
@@ -759,32 +665,26 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetUserPasswordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetUserPasswordRequest::getInstanceId, ResetUserPasswordRequest::setInstanceId));
         builder.<String>withRequestField("username",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetUserPasswordRequest::getUsername, (req, v) -> {
-                req.setUsername(v);
-            }));
+            f -> f.withMarshaller(ResetUserPasswordRequest::getUsername, ResetUserPasswordRequest::setUsername));
         builder.<ResetUserPasswordReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetUserPasswordReq.class),
-            f -> f.withMarshaller(ResetUserPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetUserPasswordRequest::getBody, ResetUserPasswordRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizeFlavorRequest, ResizeFlavorResponse> resizeFlavor = genForresizeFlavor();
+    public static final HttpRequestDef<ResizeFlavorRequest, ResizeFlavorResponse> resizeFlavor = genForResizeFlavor();
 
-    private static HttpRequestDef<ResizeFlavorRequest, ResizeFlavorResponse> genForresizeFlavor() {
+    private static HttpRequestDef<ResizeFlavorRequest, ResizeFlavorResponse> genForResizeFlavor() {
         // basic
         HttpRequestDef.Builder<ResizeFlavorRequest, ResizeFlavorResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResizeFlavorRequest.class, ResizeFlavorResponse.class)
@@ -797,16 +697,12 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeFlavorRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeFlavorRequest::getInstanceId, ResizeFlavorRequest::setInstanceId));
         builder.<ResizeFlavorReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeFlavorReq.class),
-            f -> f.withMarshaller(ResizeFlavorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeFlavorRequest::getBody, ResizeFlavorRequest::setBody));
 
         // response
 
@@ -814,9 +710,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> restartInstance =
-        genForrestartInstance();
+        genForRestartInstance();
 
-    private static HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> genForrestartInstance() {
+    private static HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> genForRestartInstance() {
         // basic
         HttpRequestDef.Builder<RestartInstanceRequest, RestartInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestartInstanceRequest.class, RestartInstanceResponse.class)
@@ -829,25 +725,21 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, RestartInstanceRequest::setInstanceId));
         builder.<RestartInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestartInstanceReq.class),
-            f -> f.withMarshaller(RestartInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestartInstanceRequest::getBody, RestartInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDatabaseRequest, ShowDatabaseResponse> showDatabase = genForshowDatabase();
+    public static final HttpRequestDef<ShowDatabaseRequest, ShowDatabaseResponse> showDatabase = genForShowDatabase();
 
-    private static HttpRequestDef<ShowDatabaseRequest, ShowDatabaseResponse> genForshowDatabase() {
+    private static HttpRequestDef<ShowDatabaseRequest, ShowDatabaseResponse> genForShowDatabase() {
         // basic
         HttpRequestDef.Builder<ShowDatabaseRequest, ShowDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDatabaseRequest.class, ShowDatabaseResponse.class)
@@ -860,25 +752,21 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDatabaseRequest::getInstanceId, ShowDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("ddm_dbname",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDatabaseRequest::getDdmDbname, (req, v) -> {
-                req.setDdmDbname(v);
-            }));
+            f -> f.withMarshaller(ShowDatabaseRequest::getDdmDbname, ShowDatabaseRequest::setDdmDbname));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForshowInstance();
+    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForShowInstance();
 
-    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForshowInstance() {
+    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForShowInstance() {
         // basic
         HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
@@ -891,9 +779,7 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, ShowInstanceRequest::setInstanceId));
 
         // response
 
@@ -901,9 +787,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceParamRequest, ShowInstanceParamResponse> showInstanceParam =
-        genForshowInstanceParam();
+        genForShowInstanceParam();
 
-    private static HttpRequestDef<ShowInstanceParamRequest, ShowInstanceParamResponse> genForshowInstanceParam() {
+    private static HttpRequestDef<ShowInstanceParamRequest, ShowInstanceParamResponse> genForShowInstanceParam() {
         // basic
         HttpRequestDef.Builder<ShowInstanceParamRequest, ShowInstanceParamResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceParamRequest.class, ShowInstanceParamResponse.class)
@@ -916,39 +802,31 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceParamRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceParamRequest::getInstanceId, ShowInstanceParamRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowInstanceParamRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceParamRequest::getOffset, ShowInstanceParamRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowInstanceParamRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceParamRequest::getLimit, ShowInstanceParamRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceParamRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceParamRequest::getXLanguage, ShowInstanceParamRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNodeRequest, ShowNodeResponse> showNode = genForshowNode();
+    public static final HttpRequestDef<ShowNodeRequest, ShowNodeResponse> showNode = genForShowNode();
 
-    private static HttpRequestDef<ShowNodeRequest, ShowNodeResponse> genForshowNode() {
+    private static HttpRequestDef<ShowNodeRequest, ShowNodeResponse> genForShowNode() {
         // basic
         HttpRequestDef.Builder<ShowNodeRequest, ShowNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNodeRequest.class, ShowNodeResponse.class)
@@ -961,16 +839,12 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowNodeRequest::getInstanceId, ShowNodeRequest::setInstanceId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowNodeRequest::getNodeId, ShowNodeRequest::setNodeId));
 
         // response
 
@@ -978,9 +852,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> shrinkInstanceNodes =
-        genForshrinkInstanceNodes();
+        genForShrinkInstanceNodes();
 
-    private static HttpRequestDef<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> genForshrinkInstanceNodes() {
+    private static HttpRequestDef<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> genForShrinkInstanceNodes() {
         // basic
         HttpRequestDef.Builder<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShrinkInstanceNodesRequest.class, ShrinkInstanceNodesResponse.class)
@@ -993,16 +867,13 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShrinkInstanceNodesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShrinkInstanceNodesRequest::getInstanceId,
+                ShrinkInstanceNodesRequest::setInstanceId));
         builder.<ReduceRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReduceRequest.class),
-            f -> f.withMarshaller(ShrinkInstanceNodesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShrinkInstanceNodesRequest::getBody, ShrinkInstanceNodesRequest::setBody));
 
         // response
 
@@ -1010,9 +881,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<UpdateDatabaseInfoRequest, UpdateDatabaseInfoResponse> updateDatabaseInfo =
-        genForupdateDatabaseInfo();
+        genForUpdateDatabaseInfo();
 
-    private static HttpRequestDef<UpdateDatabaseInfoRequest, UpdateDatabaseInfoResponse> genForupdateDatabaseInfo() {
+    private static HttpRequestDef<UpdateDatabaseInfoRequest, UpdateDatabaseInfoResponse> genForUpdateDatabaseInfo() {
         // basic
         HttpRequestDef.Builder<UpdateDatabaseInfoRequest, UpdateDatabaseInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateDatabaseInfoRequest.class, UpdateDatabaseInfoResponse.class)
@@ -1025,9 +896,7 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDatabaseInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDatabaseInfoRequest::getInstanceId, UpdateDatabaseInfoRequest::setInstanceId));
 
         // response
 
@@ -1035,9 +904,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceName =
-        genForupdateInstanceName();
+        genForUpdateInstanceName();
 
-    private static HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> genForupdateInstanceName() {
+    private static HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> genForUpdateInstanceName() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceNameRequest, UpdateInstanceNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceNameRequest.class, UpdateInstanceNameResponse.class)
@@ -1050,16 +919,12 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceNameRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceNameRequest::getInstanceId, UpdateInstanceNameRequest::setInstanceId));
         builder.<ModifyInstanceNameReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyInstanceNameReq.class),
-            f -> f.withMarshaller(UpdateInstanceNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceNameRequest::getBody, UpdateInstanceNameRequest::setBody));
 
         // response
 
@@ -1067,9 +932,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceParamRequest, UpdateInstanceParamResponse> updateInstanceParam =
-        genForupdateInstanceParam();
+        genForUpdateInstanceParam();
 
-    private static HttpRequestDef<UpdateInstanceParamRequest, UpdateInstanceParamResponse> genForupdateInstanceParam() {
+    private static HttpRequestDef<UpdateInstanceParamRequest, UpdateInstanceParamResponse> genForUpdateInstanceParam() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceParamRequest, UpdateInstanceParamResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceParamRequest.class, UpdateInstanceParamResponse.class)
@@ -1082,23 +947,18 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceParamRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceParamRequest::getInstanceId,
+                UpdateInstanceParamRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceParamRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceParamRequest::getXLanguage, UpdateInstanceParamRequest::setXLanguage));
         builder.<UpdateParametersReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateParametersReq.class),
-            f -> f.withMarshaller(UpdateInstanceParamRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceParamRequest::getBody, UpdateInstanceParamRequest::setBody));
 
         // response
 
@@ -1106,9 +966,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceSecurityGroupRequest, UpdateInstanceSecurityGroupResponse> updateInstanceSecurityGroup =
-        genForupdateInstanceSecurityGroup();
+        genForUpdateInstanceSecurityGroup();
 
-    private static HttpRequestDef<UpdateInstanceSecurityGroupRequest, UpdateInstanceSecurityGroupResponse> genForupdateInstanceSecurityGroup() {
+    private static HttpRequestDef<UpdateInstanceSecurityGroupRequest, UpdateInstanceSecurityGroupResponse> genForUpdateInstanceSecurityGroup() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceSecurityGroupRequest, UpdateInstanceSecurityGroupResponse> builder =
             HttpRequestDef
@@ -1124,16 +984,14 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceSecurityGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceSecurityGroupRequest::getInstanceId,
+                UpdateInstanceSecurityGroupRequest::setInstanceId));
         builder.<ModifyInstanceSecurityGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyInstanceSecurityGroupReq.class),
-            f -> f.withMarshaller(UpdateInstanceSecurityGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceSecurityGroupRequest::getBody,
+                UpdateInstanceSecurityGroupRequest::setBody));
 
         // response
 
@@ -1141,9 +999,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<UpdateReadAndWriteStrategyRequest, UpdateReadAndWriteStrategyResponse> updateReadAndWriteStrategy =
-        genForupdateReadAndWriteStrategy();
+        genForUpdateReadAndWriteStrategy();
 
-    private static HttpRequestDef<UpdateReadAndWriteStrategyRequest, UpdateReadAndWriteStrategyResponse> genForupdateReadAndWriteStrategy() {
+    private static HttpRequestDef<UpdateReadAndWriteStrategyRequest, UpdateReadAndWriteStrategyResponse> genForUpdateReadAndWriteStrategy() {
         // basic
         HttpRequestDef.Builder<UpdateReadAndWriteStrategyRequest, UpdateReadAndWriteStrategyResponse> builder =
             HttpRequestDef
@@ -1159,25 +1017,23 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReadAndWriteStrategyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateReadAndWriteStrategyRequest::getInstanceId,
+                UpdateReadAndWriteStrategyRequest::setInstanceId));
         builder.<ModifyReadAndWriteStrategyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyReadAndWriteStrategyReq.class),
-            f -> f.withMarshaller(UpdateReadAndWriteStrategyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateReadAndWriteStrategyRequest::getBody,
+                UpdateReadAndWriteStrategyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForupdateUser();
+    public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForUpdateUser();
 
-    private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForupdateUser() {
+    private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForUpdateUser() {
         // basic
         HttpRequestDef.Builder<UpdateUserRequest, UpdateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateUserRequest.class, UpdateUserResponse.class)
@@ -1190,23 +1046,17 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getInstanceId, UpdateUserRequest::setInstanceId));
         builder.<String>withRequestField("username",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserRequest::getUsername, (req, v) -> {
-                req.setUsername(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getUsername, UpdateUserRequest::setUsername));
         builder.<UpdateUserReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateUserReq.class),
-            f -> f.withMarshaller(UpdateUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getBody, UpdateUserRequest::setBody));
 
         // response
 
@@ -1214,9 +1064,9 @@ public class DdmMeta {
     }
 
     public static final HttpRequestDef<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> validateWeakPassword =
-        genForvalidateWeakPassword();
+        genForValidateWeakPassword();
 
-    private static HttpRequestDef<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> genForvalidateWeakPassword() {
+    private static HttpRequestDef<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> genForValidateWeakPassword() {
         // basic
         HttpRequestDef.Builder<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ValidateWeakPasswordRequest.class, ValidateWeakPasswordResponse.class)
@@ -1229,9 +1079,7 @@ public class DdmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WeakPasswordReq.class),
-            f -> f.withMarshaller(ValidateWeakPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ValidateWeakPasswordRequest::getBody, ValidateWeakPasswordRequest::setBody));
 
         // response
 

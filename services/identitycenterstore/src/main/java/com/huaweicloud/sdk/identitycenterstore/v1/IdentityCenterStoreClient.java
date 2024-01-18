@@ -27,7 +27,7 @@ public class IdentityCenterStoreClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersRequest 请求对象
+     * @param request ListUsersRequest 请求对象
      * @return ListUsersResponse
      */
     public ListUsersResponse listUsers(ListUsersRequest request) {
@@ -41,12 +41,11 @@ public class IdentityCenterStoreClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersRequest 请求对象
+     * @param request ListUsersRequest 请求对象
      * @return SyncInvoker<ListUsersRequest, ListUsersResponse>
      */
     public SyncInvoker<ListUsersRequest, ListUsersResponse> listUsersInvoker(ListUsersRequest request) {
-        return new SyncInvoker<ListUsersRequest, ListUsersResponse>(request, IdentityCenterStoreMeta.listUsers,
-            hcClient);
+        return new SyncInvoker<>(request, IdentityCenterStoreMeta.listUsers, hcClient);
     }
 
 }

@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 请求用户登录记录响应体
+ * 请求用户登录记录响应体。
  */
 public class ListUserConnectionReq {
 
@@ -112,7 +112,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录记录唯一标识ID
+     * 登录记录唯一标识ID。
      * @return id
      */
     public String getId() {
@@ -129,7 +129,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 用户连接类别
+     * 用户连接类别。
      * @return connectType
      */
     public String getConnectType() {
@@ -146,7 +146,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录用户名称
+     * 登录用户名称。
      * @return userName
      */
     public String getUserName() {
@@ -163,7 +163,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 应用服务器sid
+     * 应用服务器sid。
      * @return machineSid
      */
     public String getMachineSid() {
@@ -180,7 +180,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 应用服务器名称
+     * 应用服务器名称。
      * @return machineName
      */
     public String getMachineName() {
@@ -197,7 +197,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 连接失败原因
+     * 连接失败原因。
      * @return failedReason
      */
     public String getFailedReason() {
@@ -214,7 +214,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 连接失败状态码
+     * 连接失败状态码。
      * @return failedCode
      */
     public String getFailedCode() {
@@ -231,7 +231,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 客户端名称
+     * 客户端名称。
      * @return clientName
      */
     public String getClientName() {
@@ -248,7 +248,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 客户端版本
+     * 客户端版本。
      * @return clientVersion
      */
     public String getClientVersion() {
@@ -265,7 +265,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 客户端操作系统类型
+     * 客户端操作系统类型。
      * @return clientType
      */
     public String getClientType() {
@@ -282,7 +282,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * aps hda版本
+     * aps hda版本。
      * @return agentVersion
      */
     public String getAgentVersion() {
@@ -299,7 +299,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 应用服务器ip
+     * 应用服务器ip。
      * @return vmIp
      */
     public String getVmIp() {
@@ -316,7 +316,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 连接标志，目前值为0
+     * 连接标志，目前值为0。
      * @return connectFlag
      */
     public String getConnectFlag() {
@@ -333,7 +333,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 连接IP
+     * 连接IP。
      * @return wiIp
      */
     public String getWiIp() {
@@ -350,7 +350,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录应用开始时间，格式 2022-10-31 08:07:39
+     * 登录应用开始时间，格式 2022-10-31 08:07:39。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -367,7 +367,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 租户id
+     * 租户id。
      * @return tenantId
      */
     public String getTenantId() {
@@ -384,7 +384,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录应用开始时间，格式 2022-10-31 08:07:39
+     * 登录应用开始时间，格式 2022-10-31 08:07:39。
      * @return loginStartTime
      */
     public OffsetDateTime getLoginStartTime() {
@@ -401,7 +401,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录应用结束时间，格式 2022-10-31 08:07:39
+     * 登录应用结束时间，格式 2022-10-31 08:07:39。
      * @return loginEndTime
      */
     public OffsetDateTime getLoginEndTime() {
@@ -418,7 +418,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 会话虚拟ip
+     * 会话虚拟ip。
      * @return virtualIp
      */
     public String getVirtualIp() {

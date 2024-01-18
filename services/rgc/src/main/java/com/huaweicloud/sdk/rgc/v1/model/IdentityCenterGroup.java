@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Identity Center的group信息。
+ * Identity Center的用户组信息。
  */
 public class IdentityCenterGroup {
 
@@ -31,7 +31,7 @@ public class IdentityCenterGroup {
     }
 
     /**
-     * Identity Center的group ID。
+     * Identity Center的用户组ID。
      * @return groupId
      */
     public String getGroupId() {
@@ -48,7 +48,7 @@ public class IdentityCenterGroup {
     }
 
     /**
-     * group name。
+     * 用户组名称。
      * @return groupName
      */
     public String getGroupName() {
@@ -65,7 +65,7 @@ public class IdentityCenterGroup {
     }
 
     /**
-     * Identity Center的group描述信息。
+     * Identity Center的用户组描述信息。
      * @return description
      */
     public String getDescription() {

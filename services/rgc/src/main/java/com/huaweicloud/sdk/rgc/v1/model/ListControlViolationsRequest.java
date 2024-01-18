@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListControlViolationsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-
-    private String xSecurityToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_id")
 
     private String accountId;
@@ -25,32 +20,13 @@ public class ListControlViolationsRequest {
 
     private String organizationUnitId;
 
-    public ListControlViolationsRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-        return this;
-    }
-
-    /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
-    }
-
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-    }
-
     public ListControlViolationsRequest withAccountId(String accountId) {
         this.accountId = accountId;
         return this;
     }
 
     /**
-     * 账户Id。
+     * 账户ID，用于过滤不合规资源。
      * @return accountId
      */
     public String getAccountId() {
@@ -67,7 +43,7 @@ public class ListControlViolationsRequest {
     }
 
     /**
-     * OU ID。
+     * 注册OU ID，用于过滤不合规资源。
      * @return organizationUnitId
      */
     public String getOrganizationUnitId() {
@@ -87,21 +63,19 @@ public class ListControlViolationsRequest {
             return false;
         }
         ListControlViolationsRequest that = (ListControlViolationsRequest) obj;
-        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
-            && Objects.equals(this.accountId, that.accountId)
+        return Objects.equals(this.accountId, that.accountId)
             && Objects.equals(this.organizationUnitId, that.organizationUnitId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xSecurityToken, accountId, organizationUnitId);
+        return Objects.hash(accountId, organizationUnitId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListControlViolationsRequest {\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    organizationUnitId: ").append(toIndentedString(organizationUnitId)).append("\n");
         sb.append("}");

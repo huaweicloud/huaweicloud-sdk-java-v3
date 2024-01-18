@@ -158,7 +158,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCommitRequest 请求对象
+     * @param request CreateCommitRequest 请求对象
      * @return CompletableFuture<CreateCommitResponse>
      */
     public CompletableFuture<CreateCommitResponse> createCommitAsync(CreateCommitRequest request) {
@@ -172,12 +172,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCommitRequest 请求对象
+     * @param request CreateCommitRequest 请求对象
      * @return AsyncInvoker<CreateCommitRequest, CreateCommitResponse>
      */
     public AsyncInvoker<CreateCommitRequest, CreateCommitResponse> createCommitAsyncInvoker(
         CreateCommitRequest request) {
-        return new AsyncInvoker<CreateCommitRequest, CreateCommitResponse>(request, CodeHubMeta.createCommit, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.createCommit, hcClient);
     }
 
     /**
@@ -187,7 +187,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCommitsRequest 请求对象
+     * @param request ListCommitsRequest 请求对象
      * @return CompletableFuture<ListCommitsResponse>
      */
     public CompletableFuture<ListCommitsResponse> listCommitsAsync(ListCommitsRequest request) {
@@ -201,11 +201,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCommitsRequest 请求对象
+     * @param request ListCommitsRequest 请求对象
      * @return AsyncInvoker<ListCommitsRequest, ListCommitsResponse>
      */
     public AsyncInvoker<ListCommitsRequest, ListCommitsResponse> listCommitsAsyncInvoker(ListCommitsRequest request) {
-        return new AsyncInvoker<ListCommitsRequest, ListCommitsResponse>(request, CodeHubMeta.listCommits, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listCommits, hcClient);
     }
 
     /**
@@ -215,7 +215,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDiffCommitRequest 请求对象
+     * @param request ShowDiffCommitRequest 请求对象
      * @return CompletableFuture<ShowDiffCommitResponse>
      */
     public CompletableFuture<ShowDiffCommitResponse> showDiffCommitAsync(ShowDiffCommitRequest request) {
@@ -229,13 +229,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDiffCommitRequest 请求对象
+     * @param request ShowDiffCommitRequest 请求对象
      * @return AsyncInvoker<ShowDiffCommitRequest, ShowDiffCommitResponse>
      */
     public AsyncInvoker<ShowDiffCommitRequest, ShowDiffCommitResponse> showDiffCommitAsyncInvoker(
         ShowDiffCommitRequest request) {
-        return new AsyncInvoker<ShowDiffCommitRequest, ShowDiffCommitResponse>(request, CodeHubMeta.showDiffCommit,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showDiffCommit, hcClient);
     }
 
     /**
@@ -245,7 +244,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSingleCommitRequest 请求对象
+     * @param request ShowSingleCommitRequest 请求对象
      * @return CompletableFuture<ShowSingleCommitResponse>
      */
     public CompletableFuture<ShowSingleCommitResponse> showSingleCommitAsync(ShowSingleCommitRequest request) {
@@ -259,13 +258,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSingleCommitRequest 请求对象
+     * @param request ShowSingleCommitRequest 请求对象
      * @return AsyncInvoker<ShowSingleCommitRequest, ShowSingleCommitResponse>
      */
     public AsyncInvoker<ShowSingleCommitRequest, ShowSingleCommitResponse> showSingleCommitAsyncInvoker(
         ShowSingleCommitRequest request) {
-        return new AsyncInvoker<ShowSingleCommitRequest, ShowSingleCommitResponse>(request,
-            CodeHubMeta.showSingleCommit, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showSingleCommit, hcClient);
     }
 
     /**
@@ -275,7 +273,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMergeRequestDiscussionRequest 请求对象
+     * @param request CreateMergeRequestDiscussionRequest 请求对象
      * @return CompletableFuture<CreateMergeRequestDiscussionResponse>
      */
     public CompletableFuture<CreateMergeRequestDiscussionResponse> createMergeRequestDiscussionAsync(
@@ -290,13 +288,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMergeRequestDiscussionRequest 请求对象
+     * @param request CreateMergeRequestDiscussionRequest 请求对象
      * @return AsyncInvoker<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse>
      */
     public AsyncInvoker<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse> createMergeRequestDiscussionAsyncInvoker(
         CreateMergeRequestDiscussionRequest request) {
-        return new AsyncInvoker<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse>(request,
-            CodeHubMeta.createMergeRequestDiscussion, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.createMergeRequestDiscussion, hcClient);
     }
 
     /**
@@ -306,7 +303,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMergeRequestDiscussionNoteRequest 请求对象
+     * @param request CreateMergeRequestDiscussionNoteRequest 请求对象
      * @return CompletableFuture<CreateMergeRequestDiscussionNoteResponse>
      */
     public CompletableFuture<CreateMergeRequestDiscussionNoteResponse> createMergeRequestDiscussionNoteAsync(
@@ -321,13 +318,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMergeRequestDiscussionNoteRequest 请求对象
+     * @param request CreateMergeRequestDiscussionNoteRequest 请求对象
      * @return AsyncInvoker<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse>
      */
     public AsyncInvoker<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse> createMergeRequestDiscussionNoteAsyncInvoker(
         CreateMergeRequestDiscussionNoteRequest request) {
-        return new AsyncInvoker<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse>(
-            request, CodeHubMeta.createMergeRequestDiscussionNote, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.createMergeRequestDiscussionNote, hcClient);
     }
 
     /**
@@ -337,7 +333,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReviewSettingRequest 请求对象
+     * @param request ShowReviewSettingRequest 请求对象
      * @return CompletableFuture<ShowReviewSettingResponse>
      */
     public CompletableFuture<ShowReviewSettingResponse> showReviewSettingAsync(ShowReviewSettingRequest request) {
@@ -351,13 +347,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReviewSettingRequest 请求对象
+     * @param request ShowReviewSettingRequest 请求对象
      * @return AsyncInvoker<ShowReviewSettingRequest, ShowReviewSettingResponse>
      */
     public AsyncInvoker<ShowReviewSettingRequest, ShowReviewSettingResponse> showReviewSettingAsyncInvoker(
         ShowReviewSettingRequest request) {
-        return new AsyncInvoker<ShowReviewSettingRequest, ShowReviewSettingResponse>(request,
-            CodeHubMeta.showReviewSetting, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showReviewSetting, hcClient);
     }
 
     /**
@@ -367,7 +362,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFilesByQueryRequest 请求对象
+     * @param request ListFilesByQueryRequest 请求对象
      * @return CompletableFuture<ListFilesByQueryResponse>
      */
     public CompletableFuture<ListFilesByQueryResponse> listFilesByQueryAsync(ListFilesByQueryRequest request) {
@@ -381,13 +376,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFilesByQueryRequest 请求对象
+     * @param request ListFilesByQueryRequest 请求对象
      * @return AsyncInvoker<ListFilesByQueryRequest, ListFilesByQueryResponse>
      */
     public AsyncInvoker<ListFilesByQueryRequest, ListFilesByQueryResponse> listFilesByQueryAsyncInvoker(
         ListFilesByQueryRequest request) {
-        return new AsyncInvoker<ListFilesByQueryRequest, ListFilesByQueryResponse>(request,
-            CodeHubMeta.listFilesByQuery, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listFilesByQuery, hcClient);
     }
 
     /**
@@ -397,7 +391,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFileRequest 请求对象
+     * @param request ShowFileRequest 请求对象
      * @return CompletableFuture<ShowFileResponse>
      */
     @Deprecated
@@ -412,12 +406,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFileRequest 请求对象
+     * @param request ShowFileRequest 请求对象
      * @return AsyncInvoker<ShowFileRequest, ShowFileResponse>
      */
     @Deprecated
     public AsyncInvoker<ShowFileRequest, ShowFileResponse> showFileAsyncInvoker(ShowFileRequest request) {
-        return new AsyncInvoker<ShowFileRequest, ShowFileResponse>(request, CodeHubMeta.showFile, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showFile, hcClient);
     }
 
     /**
@@ -427,7 +421,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetAllRepositoryByProjectIdRequest 请求对象
+     * @param request GetAllRepositoryByProjectIdRequest 请求对象
      * @return CompletableFuture<GetAllRepositoryByProjectIdResponse>
      */
     @Deprecated
@@ -443,14 +437,13 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetAllRepositoryByProjectIdRequest 请求对象
+     * @param request GetAllRepositoryByProjectIdRequest 请求对象
      * @return AsyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse>
      */
     @Deprecated
     public AsyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse> getAllRepositoryByProjectIdAsyncInvoker(
         GetAllRepositoryByProjectIdRequest request) {
-        return new AsyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse>(request,
-            CodeHubMeta.getAllRepositoryByProjectId, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.getAllRepositoryByProjectId, hcClient);
     }
 
     /**
@@ -460,7 +453,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetProductTemplatesRequest 请求对象
+     * @param request GetProductTemplatesRequest 请求对象
      * @return CompletableFuture<GetProductTemplatesResponse>
      */
     @Deprecated
@@ -475,14 +468,13 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetProductTemplatesRequest 请求对象
+     * @param request GetProductTemplatesRequest 请求对象
      * @return AsyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse>
      */
     @Deprecated
     public AsyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse> getProductTemplatesAsyncInvoker(
         GetProductTemplatesRequest request) {
-        return new AsyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse>(request,
-            CodeHubMeta.getProductTemplates, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.getProductTemplates, hcClient);
     }
 
     /**
@@ -492,7 +484,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductTwoTemplatesRequest 请求对象
+     * @param request ListProductTwoTemplatesRequest 请求对象
      * @return CompletableFuture<ListProductTwoTemplatesResponse>
      */
     public CompletableFuture<ListProductTwoTemplatesResponse> listProductTwoTemplatesAsync(
@@ -507,13 +499,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductTwoTemplatesRequest 请求对象
+     * @param request ListProductTwoTemplatesRequest 请求对象
      * @return AsyncInvoker<ListProductTwoTemplatesRequest, ListProductTwoTemplatesResponse>
      */
     public AsyncInvoker<ListProductTwoTemplatesRequest, ListProductTwoTemplatesResponse> listProductTwoTemplatesAsyncInvoker(
         ListProductTwoTemplatesRequest request) {
-        return new AsyncInvoker<ListProductTwoTemplatesRequest, ListProductTwoTemplatesResponse>(request,
-            CodeHubMeta.listProductTwoTemplates, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listProductTwoTemplates, hcClient);
     }
 
     /**
@@ -523,7 +514,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryNameExistRequest 请求对象
+     * @param request ShowRepositoryNameExistRequest 请求对象
      * @return CompletableFuture<ShowRepositoryNameExistResponse>
      */
     public CompletableFuture<ShowRepositoryNameExistResponse> showRepositoryNameExistAsync(
@@ -538,13 +529,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryNameExistRequest 请求对象
+     * @param request ShowRepositoryNameExistRequest 请求对象
      * @return AsyncInvoker<ShowRepositoryNameExistRequest, ShowRepositoryNameExistResponse>
      */
     public AsyncInvoker<ShowRepositoryNameExistRequest, ShowRepositoryNameExistResponse> showRepositoryNameExistAsyncInvoker(
         ShowRepositoryNameExistRequest request) {
-        return new AsyncInvoker<ShowRepositoryNameExistRequest, ShowRepositoryNameExistResponse>(request,
-            CodeHubMeta.showRepositoryNameExist, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showRepositoryNameExist, hcClient);
     }
 
     /**
@@ -554,7 +544,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddRepoMembersRequest 请求对象
+     * @param request AddRepoMembersRequest 请求对象
      * @return CompletableFuture<AddRepoMembersResponse>
      */
     public CompletableFuture<AddRepoMembersResponse> addRepoMembersAsync(AddRepoMembersRequest request) {
@@ -568,13 +558,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddRepoMembersRequest 请求对象
+     * @param request AddRepoMembersRequest 请求对象
      * @return AsyncInvoker<AddRepoMembersRequest, AddRepoMembersResponse>
      */
     public AsyncInvoker<AddRepoMembersRequest, AddRepoMembersResponse> addRepoMembersAsyncInvoker(
         AddRepoMembersRequest request) {
-        return new AsyncInvoker<AddRepoMembersRequest, AddRepoMembersResponse>(request, CodeHubMeta.addRepoMembers,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.addRepoMembers, hcClient);
     }
 
     /**
@@ -584,7 +573,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRepoMemberRequest 请求对象
+     * @param request DeleteRepoMemberRequest 请求对象
      * @return CompletableFuture<DeleteRepoMemberResponse>
      */
     public CompletableFuture<DeleteRepoMemberResponse> deleteRepoMemberAsync(DeleteRepoMemberRequest request) {
@@ -598,13 +587,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRepoMemberRequest 请求对象
+     * @param request DeleteRepoMemberRequest 请求对象
      * @return AsyncInvoker<DeleteRepoMemberRequest, DeleteRepoMemberResponse>
      */
     public AsyncInvoker<DeleteRepoMemberRequest, DeleteRepoMemberResponse> deleteRepoMemberAsyncInvoker(
         DeleteRepoMemberRequest request) {
-        return new AsyncInvoker<DeleteRepoMemberRequest, DeleteRepoMemberResponse>(request,
-            CodeHubMeta.deleteRepoMember, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.deleteRepoMember, hcClient);
     }
 
     /**
@@ -614,7 +602,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRepoMembersRequest 请求对象
+     * @param request ListRepoMembersRequest 请求对象
      * @return CompletableFuture<ListRepoMembersResponse>
      */
     public CompletableFuture<ListRepoMembersResponse> listRepoMembersAsync(ListRepoMembersRequest request) {
@@ -628,13 +616,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRepoMembersRequest 请求对象
+     * @param request ListRepoMembersRequest 请求对象
      * @return AsyncInvoker<ListRepoMembersRequest, ListRepoMembersResponse>
      */
     public AsyncInvoker<ListRepoMembersRequest, ListRepoMembersResponse> listRepoMembersAsyncInvoker(
         ListRepoMembersRequest request) {
-        return new AsyncInvoker<ListRepoMembersRequest, ListRepoMembersResponse>(request, CodeHubMeta.listRepoMembers,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listRepoMembers, hcClient);
     }
 
     /**
@@ -644,7 +631,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRepoRoleRequest 请求对象
+     * @param request SetRepoRoleRequest 请求对象
      * @return CompletableFuture<SetRepoRoleResponse>
      */
     public CompletableFuture<SetRepoRoleResponse> setRepoRoleAsync(SetRepoRoleRequest request) {
@@ -658,11 +645,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRepoRoleRequest 请求对象
+     * @param request SetRepoRoleRequest 请求对象
      * @return AsyncInvoker<SetRepoRoleRequest, SetRepoRoleResponse>
      */
     public AsyncInvoker<SetRepoRoleRequest, SetRepoRoleResponse> setRepoRoleAsyncInvoker(SetRepoRoleRequest request) {
-        return new AsyncInvoker<SetRepoRoleRequest, SetRepoRoleResponse>(request, CodeHubMeta.setRepoRole, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.setRepoRole, hcClient);
     }
 
     /**
@@ -672,7 +659,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeployKeyRequest 请求对象
+     * @param request AddDeployKeyRequest 请求对象
      * @return CompletableFuture<AddDeployKeyResponse>
      */
     @Deprecated
@@ -687,13 +674,13 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeployKeyRequest 请求对象
+     * @param request AddDeployKeyRequest 请求对象
      * @return AsyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse>
      */
     @Deprecated
     public AsyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse> addDeployKeyAsyncInvoker(
         AddDeployKeyRequest request) {
-        return new AsyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse>(request, CodeHubMeta.addDeployKey, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.addDeployKey, hcClient);
     }
 
     /**
@@ -703,7 +690,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeployKeyV2Request 请求对象
+     * @param request AddDeployKeyV2Request 请求对象
      * @return CompletableFuture<AddDeployKeyV2Response>
      */
     public CompletableFuture<AddDeployKeyV2Response> addDeployKeyV2Async(AddDeployKeyV2Request request) {
@@ -717,13 +704,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeployKeyV2Request 请求对象
+     * @param request AddDeployKeyV2Request 请求对象
      * @return AsyncInvoker<AddDeployKeyV2Request, AddDeployKeyV2Response>
      */
     public AsyncInvoker<AddDeployKeyV2Request, AddDeployKeyV2Response> addDeployKeyV2AsyncInvoker(
         AddDeployKeyV2Request request) {
-        return new AsyncInvoker<AddDeployKeyV2Request, AddDeployKeyV2Response>(request, CodeHubMeta.addDeployKeyV2,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.addDeployKeyV2, hcClient);
     }
 
     /**
@@ -733,7 +719,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddProtectBranchV2Request 请求对象
+     * @param request AddProtectBranchV2Request 请求对象
      * @return CompletableFuture<AddProtectBranchV2Response>
      */
     public CompletableFuture<AddProtectBranchV2Response> addProtectBranchV2Async(AddProtectBranchV2Request request) {
@@ -747,13 +733,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddProtectBranchV2Request 请求对象
+     * @param request AddProtectBranchV2Request 请求对象
      * @return AsyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response>
      */
     public AsyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response> addProtectBranchV2AsyncInvoker(
         AddProtectBranchV2Request request) {
-        return new AsyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response>(request,
-            CodeHubMeta.addProtectBranchV2, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.addProtectBranchV2, hcClient);
     }
 
     /**
@@ -763,7 +748,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddTagV2Request 请求对象
+     * @param request AddTagV2Request 请求对象
      * @return CompletableFuture<AddTagV2Response>
      */
     public CompletableFuture<AddTagV2Response> addTagV2Async(AddTagV2Request request) {
@@ -777,11 +762,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddTagV2Request 请求对象
+     * @param request AddTagV2Request 请求对象
      * @return AsyncInvoker<AddTagV2Request, AddTagV2Response>
      */
     public AsyncInvoker<AddTagV2Request, AddTagV2Response> addTagV2AsyncInvoker(AddTagV2Request request) {
-        return new AsyncInvoker<AddTagV2Request, AddTagV2Response>(request, CodeHubMeta.addTagV2, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.addTagV2, hcClient);
     }
 
     /**
@@ -791,7 +776,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRepositoryRequest 请求对象
+     * @param request CreateRepositoryRequest 请求对象
      * @return CompletableFuture<CreateRepositoryResponse>
      */
     public CompletableFuture<CreateRepositoryResponse> createRepositoryAsync(CreateRepositoryRequest request) {
@@ -805,13 +790,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRepositoryRequest 请求对象
+     * @param request CreateRepositoryRequest 请求对象
      * @return AsyncInvoker<CreateRepositoryRequest, CreateRepositoryResponse>
      */
     public AsyncInvoker<CreateRepositoryRequest, CreateRepositoryResponse> createRepositoryAsyncInvoker(
         CreateRepositoryRequest request) {
-        return new AsyncInvoker<CreateRepositoryRequest, CreateRepositoryResponse>(request,
-            CodeHubMeta.createRepository, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.createRepository, hcClient);
     }
 
     /**
@@ -821,7 +805,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeployKeyRequest 请求对象
+     * @param request DeleteDeployKeyRequest 请求对象
      * @return CompletableFuture<DeleteDeployKeyResponse>
      */
     @Deprecated
@@ -836,14 +820,13 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeployKeyRequest 请求对象
+     * @param request DeleteDeployKeyRequest 请求对象
      * @return AsyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse>
      */
     @Deprecated
     public AsyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse> deleteDeployKeyAsyncInvoker(
         DeleteDeployKeyRequest request) {
-        return new AsyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse>(request, CodeHubMeta.deleteDeployKey,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.deleteDeployKey, hcClient);
     }
 
     /**
@@ -853,7 +836,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeployKeyV2Request 请求对象
+     * @param request DeleteDeployKeyV2Request 请求对象
      * @return CompletableFuture<DeleteDeployKeyV2Response>
      */
     public CompletableFuture<DeleteDeployKeyV2Response> deleteDeployKeyV2Async(DeleteDeployKeyV2Request request) {
@@ -867,13 +850,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeployKeyV2Request 请求对象
+     * @param request DeleteDeployKeyV2Request 请求对象
      * @return AsyncInvoker<DeleteDeployKeyV2Request, DeleteDeployKeyV2Response>
      */
     public AsyncInvoker<DeleteDeployKeyV2Request, DeleteDeployKeyV2Response> deleteDeployKeyV2AsyncInvoker(
         DeleteDeployKeyV2Request request) {
-        return new AsyncInvoker<DeleteDeployKeyV2Request, DeleteDeployKeyV2Response>(request,
-            CodeHubMeta.deleteDeployKeyV2, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.deleteDeployKeyV2, hcClient);
     }
 
     /**
@@ -883,7 +865,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRepositoryRequest 请求对象
+     * @param request DeleteRepositoryRequest 请求对象
      * @return CompletableFuture<DeleteRepositoryResponse>
      */
     public CompletableFuture<DeleteRepositoryResponse> deleteRepositoryAsync(DeleteRepositoryRequest request) {
@@ -897,13 +879,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRepositoryRequest 请求对象
+     * @param request DeleteRepositoryRequest 请求对象
      * @return AsyncInvoker<DeleteRepositoryRequest, DeleteRepositoryResponse>
      */
     public AsyncInvoker<DeleteRepositoryRequest, DeleteRepositoryResponse> deleteRepositoryAsyncInvoker(
         DeleteRepositoryRequest request) {
-        return new AsyncInvoker<DeleteRepositoryRequest, DeleteRepositoryResponse>(request,
-            CodeHubMeta.deleteRepository, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.deleteRepository, hcClient);
     }
 
     /**
@@ -913,7 +894,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetRepositoryByProjectIdRequest 请求对象
+     * @param request GetRepositoryByProjectIdRequest 请求对象
      * @return CompletableFuture<GetRepositoryByProjectIdResponse>
      */
     @Deprecated
@@ -929,14 +910,13 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetRepositoryByProjectIdRequest 请求对象
+     * @param request GetRepositoryByProjectIdRequest 请求对象
      * @return AsyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse>
      */
     @Deprecated
     public AsyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse> getRepositoryByProjectIdAsyncInvoker(
         GetRepositoryByProjectIdRequest request) {
-        return new AsyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse>(request,
-            CodeHubMeta.getRepositoryByProjectId, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.getRepositoryByProjectId, hcClient);
     }
 
     /**
@@ -946,7 +926,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetTemplatesRequest 请求对象
+     * @param request GetTemplatesRequest 请求对象
      * @return CompletableFuture<GetTemplatesResponse>
      */
     @Deprecated
@@ -961,13 +941,13 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GetTemplatesRequest 请求对象
+     * @param request GetTemplatesRequest 请求对象
      * @return AsyncInvoker<GetTemplatesRequest, GetTemplatesResponse>
      */
     @Deprecated
     public AsyncInvoker<GetTemplatesRequest, GetTemplatesResponse> getTemplatesAsyncInvoker(
         GetTemplatesRequest request) {
-        return new AsyncInvoker<GetTemplatesRequest, GetTemplatesResponse>(request, CodeHubMeta.getTemplates, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.getTemplates, hcClient);
     }
 
     /**
@@ -977,7 +957,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBranchesByRepositoryIdRequest 请求对象
+     * @param request ListBranchesByRepositoryIdRequest 请求对象
      * @return CompletableFuture<ListBranchesByRepositoryIdResponse>
      */
     public CompletableFuture<ListBranchesByRepositoryIdResponse> listBranchesByRepositoryIdAsync(
@@ -992,13 +972,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBranchesByRepositoryIdRequest 请求对象
+     * @param request ListBranchesByRepositoryIdRequest 请求对象
      * @return AsyncInvoker<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse>
      */
     public AsyncInvoker<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse> listBranchesByRepositoryIdAsyncInvoker(
         ListBranchesByRepositoryIdRequest request) {
-        return new AsyncInvoker<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse>(request,
-            CodeHubMeta.listBranchesByRepositoryId, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listBranchesByRepositoryId, hcClient);
     }
 
     /**
@@ -1008,7 +987,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCommitStatisticsRequest 请求对象
+     * @param request ListCommitStatisticsRequest 请求对象
      * @return CompletableFuture<ListCommitStatisticsResponse>
      */
     public CompletableFuture<ListCommitStatisticsResponse> listCommitStatisticsAsync(
@@ -1023,13 +1002,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCommitStatisticsRequest 请求对象
+     * @param request ListCommitStatisticsRequest 请求对象
      * @return AsyncInvoker<ListCommitStatisticsRequest, ListCommitStatisticsResponse>
      */
     public AsyncInvoker<ListCommitStatisticsRequest, ListCommitStatisticsResponse> listCommitStatisticsAsyncInvoker(
         ListCommitStatisticsRequest request) {
-        return new AsyncInvoker<ListCommitStatisticsRequest, ListCommitStatisticsResponse>(request,
-            CodeHubMeta.listCommitStatistics, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listCommitStatistics, hcClient);
     }
 
     /**
@@ -1039,7 +1017,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFilesRequest 请求对象
+     * @param request ListFilesRequest 请求对象
      * @return CompletableFuture<ListFilesResponse>
      */
     public CompletableFuture<ListFilesResponse> listFilesAsync(ListFilesRequest request) {
@@ -1053,11 +1031,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFilesRequest 请求对象
+     * @param request ListFilesRequest 请求对象
      * @return AsyncInvoker<ListFilesRequest, ListFilesResponse>
      */
     public AsyncInvoker<ListFilesRequest, ListFilesResponse> listFilesAsyncInvoker(ListFilesRequest request) {
-        return new AsyncInvoker<ListFilesRequest, ListFilesResponse>(request, CodeHubMeta.listFiles, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listFiles, hcClient);
     }
 
     /**
@@ -1067,7 +1045,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMergeRequestRequest 请求对象
+     * @param request ListMergeRequestRequest 请求对象
      * @return CompletableFuture<ListMergeRequestResponse>
      */
     public CompletableFuture<ListMergeRequestResponse> listMergeRequestAsync(ListMergeRequestRequest request) {
@@ -1081,13 +1059,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMergeRequestRequest 请求对象
+     * @param request ListMergeRequestRequest 请求对象
      * @return AsyncInvoker<ListMergeRequestRequest, ListMergeRequestResponse>
      */
     public AsyncInvoker<ListMergeRequestRequest, ListMergeRequestResponse> listMergeRequestAsyncInvoker(
         ListMergeRequestRequest request) {
-        return new AsyncInvoker<ListMergeRequestRequest, ListMergeRequestResponse>(request,
-            CodeHubMeta.listMergeRequest, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listMergeRequest, hcClient);
     }
 
     /**
@@ -1097,7 +1074,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRepositoryStatusRequest 请求对象
+     * @param request ListRepositoryStatusRequest 请求对象
      * @return CompletableFuture<ListRepositoryStatusResponse>
      */
     public CompletableFuture<ListRepositoryStatusResponse> listRepositoryStatusAsync(
@@ -1112,13 +1089,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRepositoryStatusRequest 请求对象
+     * @param request ListRepositoryStatusRequest 请求对象
      * @return AsyncInvoker<ListRepositoryStatusRequest, ListRepositoryStatusResponse>
      */
     public AsyncInvoker<ListRepositoryStatusRequest, ListRepositoryStatusResponse> listRepositoryStatusAsyncInvoker(
         ListRepositoryStatusRequest request) {
-        return new AsyncInvoker<ListRepositoryStatusRequest, ListRepositoryStatusResponse>(request,
-            CodeHubMeta.listRepositoryStatus, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listRepositoryStatus, hcClient);
     }
 
     /**
@@ -1128,7 +1104,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubfilesRequest 请求对象
+     * @param request ListSubfilesRequest 请求对象
      * @return CompletableFuture<ListSubfilesResponse>
      */
     public CompletableFuture<ListSubfilesResponse> listSubfilesAsync(ListSubfilesRequest request) {
@@ -1142,12 +1118,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubfilesRequest 请求对象
+     * @param request ListSubfilesRequest 请求对象
      * @return AsyncInvoker<ListSubfilesRequest, ListSubfilesResponse>
      */
     public AsyncInvoker<ListSubfilesRequest, ListSubfilesResponse> listSubfilesAsyncInvoker(
         ListSubfilesRequest request) {
-        return new AsyncInvoker<ListSubfilesRequest, ListSubfilesResponse>(request, CodeHubMeta.listSubfiles, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listSubfiles, hcClient);
     }
 
     /**
@@ -1157,7 +1133,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesTwoRequest 请求对象
+     * @param request ListTemplatesTwoRequest 请求对象
      * @return CompletableFuture<ListTemplatesTwoResponse>
      */
     public CompletableFuture<ListTemplatesTwoResponse> listTemplatesTwoAsync(ListTemplatesTwoRequest request) {
@@ -1171,13 +1147,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplatesTwoRequest 请求对象
+     * @param request ListTemplatesTwoRequest 请求对象
      * @return AsyncInvoker<ListTemplatesTwoRequest, ListTemplatesTwoResponse>
      */
     public AsyncInvoker<ListTemplatesTwoRequest, ListTemplatesTwoResponse> listTemplatesTwoAsyncInvoker(
         ListTemplatesTwoRequest request) {
-        return new AsyncInvoker<ListTemplatesTwoRequest, ListTemplatesTwoResponse>(request,
-            CodeHubMeta.listTemplatesTwo, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listTemplatesTwo, hcClient);
     }
 
     /**
@@ -1187,7 +1162,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTwoTemplatesRequest 请求对象
+     * @param request ListTwoTemplatesRequest 请求对象
      * @return CompletableFuture<ListTwoTemplatesResponse>
      */
     public CompletableFuture<ListTwoTemplatesResponse> listTwoTemplatesAsync(ListTwoTemplatesRequest request) {
@@ -1201,13 +1176,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTwoTemplatesRequest 请求对象
+     * @param request ListTwoTemplatesRequest 请求对象
      * @return AsyncInvoker<ListTwoTemplatesRequest, ListTwoTemplatesResponse>
      */
     public AsyncInvoker<ListTwoTemplatesRequest, ListTwoTemplatesResponse> listTwoTemplatesAsyncInvoker(
         ListTwoTemplatesRequest request) {
-        return new AsyncInvoker<ListTwoTemplatesRequest, ListTwoTemplatesResponse>(request,
-            CodeHubMeta.listTwoTemplates, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listTwoTemplates, hcClient);
     }
 
     /**
@@ -1217,7 +1191,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShareTemplatesRequest 请求对象
+     * @param request ShareTemplatesRequest 请求对象
      * @return CompletableFuture<ShareTemplatesResponse>
      */
     @Deprecated
@@ -1232,14 +1206,13 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShareTemplatesRequest 请求对象
+     * @param request ShareTemplatesRequest 请求对象
      * @return AsyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse>
      */
     @Deprecated
     public AsyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse> shareTemplatesAsyncInvoker(
         ShareTemplatesRequest request) {
-        return new AsyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse>(request, CodeHubMeta.shareTemplates,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.shareTemplates, hcClient);
     }
 
     /**
@@ -1249,7 +1222,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBranchesByRepositoryIdRequest 请求对象
+     * @param request ShowBranchesByRepositoryIdRequest 请求对象
      * @return CompletableFuture<ShowBranchesByRepositoryIdResponse>
      */
     public CompletableFuture<ShowBranchesByRepositoryIdResponse> showBranchesByRepositoryIdAsync(
@@ -1264,13 +1237,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBranchesByRepositoryIdRequest 请求对象
+     * @param request ShowBranchesByRepositoryIdRequest 请求对象
      * @return AsyncInvoker<ShowBranchesByRepositoryIdRequest, ShowBranchesByRepositoryIdResponse>
      */
     public AsyncInvoker<ShowBranchesByRepositoryIdRequest, ShowBranchesByRepositoryIdResponse> showBranchesByRepositoryIdAsyncInvoker(
         ShowBranchesByRepositoryIdRequest request) {
-        return new AsyncInvoker<ShowBranchesByRepositoryIdRequest, ShowBranchesByRepositoryIdResponse>(request,
-            CodeHubMeta.showBranchesByRepositoryId, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showBranchesByRepositoryId, hcClient);
     }
 
     /**
@@ -1280,7 +1252,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBranchesByTwoRepositoryIdRequest 请求对象
+     * @param request ShowBranchesByTwoRepositoryIdRequest 请求对象
      * @return CompletableFuture<ShowBranchesByTwoRepositoryIdResponse>
      */
     public CompletableFuture<ShowBranchesByTwoRepositoryIdResponse> showBranchesByTwoRepositoryIdAsync(
@@ -1295,13 +1267,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBranchesByTwoRepositoryIdRequest 请求对象
+     * @param request ShowBranchesByTwoRepositoryIdRequest 请求对象
      * @return AsyncInvoker<ShowBranchesByTwoRepositoryIdRequest, ShowBranchesByTwoRepositoryIdResponse>
      */
     public AsyncInvoker<ShowBranchesByTwoRepositoryIdRequest, ShowBranchesByTwoRepositoryIdResponse> showBranchesByTwoRepositoryIdAsyncInvoker(
         ShowBranchesByTwoRepositoryIdRequest request) {
-        return new AsyncInvoker<ShowBranchesByTwoRepositoryIdRequest, ShowBranchesByTwoRepositoryIdResponse>(request,
-            CodeHubMeta.showBranchesByTwoRepositoryId, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showBranchesByTwoRepositoryId, hcClient);
     }
 
     /**
@@ -1311,7 +1282,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCommitsByBranchRequest 请求对象
+     * @param request ShowCommitsByBranchRequest 请求对象
      * @return CompletableFuture<ShowCommitsByBranchResponse>
      */
     public CompletableFuture<ShowCommitsByBranchResponse> showCommitsByBranchAsync(ShowCommitsByBranchRequest request) {
@@ -1325,13 +1296,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCommitsByBranchRequest 请求对象
+     * @param request ShowCommitsByBranchRequest 请求对象
      * @return AsyncInvoker<ShowCommitsByBranchRequest, ShowCommitsByBranchResponse>
      */
     public AsyncInvoker<ShowCommitsByBranchRequest, ShowCommitsByBranchResponse> showCommitsByBranchAsyncInvoker(
         ShowCommitsByBranchRequest request) {
-        return new AsyncInvoker<ShowCommitsByBranchRequest, ShowCommitsByBranchResponse>(request,
-            CodeHubMeta.showCommitsByBranch, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showCommitsByBranch, hcClient);
     }
 
     /**
@@ -1341,7 +1311,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCommitsByRepoIdRequest 请求对象
+     * @param request ShowCommitsByRepoIdRequest 请求对象
      * @return CompletableFuture<ShowCommitsByRepoIdResponse>
      */
     public CompletableFuture<ShowCommitsByRepoIdResponse> showCommitsByRepoIdAsync(ShowCommitsByRepoIdRequest request) {
@@ -1355,13 +1325,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCommitsByRepoIdRequest 请求对象
+     * @param request ShowCommitsByRepoIdRequest 请求对象
      * @return AsyncInvoker<ShowCommitsByRepoIdRequest, ShowCommitsByRepoIdResponse>
      */
     public AsyncInvoker<ShowCommitsByRepoIdRequest, ShowCommitsByRepoIdResponse> showCommitsByRepoIdAsyncInvoker(
         ShowCommitsByRepoIdRequest request) {
-        return new AsyncInvoker<ShowCommitsByRepoIdRequest, ShowCommitsByRepoIdResponse>(request,
-            CodeHubMeta.showCommitsByRepoId, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showCommitsByRepoId, hcClient);
     }
 
     /**
@@ -1371,7 +1340,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHasPipelineRequest 请求对象
+     * @param request ShowHasPipelineRequest 请求对象
      * @return CompletableFuture<ShowHasPipelineResponse>
      */
     public CompletableFuture<ShowHasPipelineResponse> showHasPipelineAsync(ShowHasPipelineRequest request) {
@@ -1385,13 +1354,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHasPipelineRequest 请求对象
+     * @param request ShowHasPipelineRequest 请求对象
      * @return AsyncInvoker<ShowHasPipelineRequest, ShowHasPipelineResponse>
      */
     public AsyncInvoker<ShowHasPipelineRequest, ShowHasPipelineResponse> showHasPipelineAsyncInvoker(
         ShowHasPipelineRequest request) {
-        return new AsyncInvoker<ShowHasPipelineRequest, ShowHasPipelineResponse>(request, CodeHubMeta.showHasPipeline,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showHasPipeline, hcClient);
     }
 
     /**
@@ -1401,7 +1369,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageBlobRequest 请求对象
+     * @param request ShowImageBlobRequest 请求对象
      * @return CompletableFuture<ShowImageBlobResponse>
      */
     public CompletableFuture<ShowImageBlobResponse> showImageBlobAsync(ShowImageBlobRequest request) {
@@ -1415,13 +1383,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageBlobRequest 请求对象
+     * @param request ShowImageBlobRequest 请求对象
      * @return AsyncInvoker<ShowImageBlobRequest, ShowImageBlobResponse>
      */
     public AsyncInvoker<ShowImageBlobRequest, ShowImageBlobResponse> showImageBlobAsyncInvoker(
         ShowImageBlobRequest request) {
-        return new AsyncInvoker<ShowImageBlobRequest, ShowImageBlobResponse>(request, CodeHubMeta.showImageBlob,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showImageBlob, hcClient);
     }
 
     /**
@@ -1431,7 +1398,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMasterRequest 请求对象
+     * @param request ShowMasterRequest 请求对象
      * @return CompletableFuture<ShowMasterResponse>
      */
     public CompletableFuture<ShowMasterResponse> showMasterAsync(ShowMasterRequest request) {
@@ -1445,11 +1412,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMasterRequest 请求对象
+     * @param request ShowMasterRequest 请求对象
      * @return AsyncInvoker<ShowMasterRequest, ShowMasterResponse>
      */
     public AsyncInvoker<ShowMasterRequest, ShowMasterResponse> showMasterAsyncInvoker(ShowMasterRequest request) {
-        return new AsyncInvoker<ShowMasterRequest, ShowMasterResponse>(request, CodeHubMeta.showMaster, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showMaster, hcClient);
     }
 
     /**
@@ -1459,7 +1426,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMergeRequestRequest 请求对象
+     * @param request ShowMergeRequestRequest 请求对象
      * @return CompletableFuture<ShowMergeRequestResponse>
      */
     public CompletableFuture<ShowMergeRequestResponse> showMergeRequestAsync(ShowMergeRequestRequest request) {
@@ -1473,13 +1440,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMergeRequestRequest 请求对象
+     * @param request ShowMergeRequestRequest 请求对象
      * @return AsyncInvoker<ShowMergeRequestRequest, ShowMergeRequestResponse>
      */
     public AsyncInvoker<ShowMergeRequestRequest, ShowMergeRequestResponse> showMergeRequestAsyncInvoker(
         ShowMergeRequestRequest request) {
-        return new AsyncInvoker<ShowMergeRequestRequest, ShowMergeRequestResponse>(request,
-            CodeHubMeta.showMergeRequest, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showMergeRequest, hcClient);
     }
 
     /**
@@ -1489,7 +1455,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepoIdRequest 请求对象
+     * @param request ShowRepoIdRequest 请求对象
      * @return CompletableFuture<ShowRepoIdResponse>
      */
     public CompletableFuture<ShowRepoIdResponse> showRepoIdAsync(ShowRepoIdRequest request) {
@@ -1503,11 +1469,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepoIdRequest 请求对象
+     * @param request ShowRepoIdRequest 请求对象
      * @return AsyncInvoker<ShowRepoIdRequest, ShowRepoIdResponse>
      */
     public AsyncInvoker<ShowRepoIdRequest, ShowRepoIdResponse> showRepoIdAsyncInvoker(ShowRepoIdRequest request) {
-        return new AsyncInvoker<ShowRepoIdRequest, ShowRepoIdResponse>(request, CodeHubMeta.showRepoId, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showRepoId, hcClient);
     }
 
     /**
@@ -1517,7 +1483,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryArchiveRequest 请求对象
+     * @param request ShowRepositoryArchiveRequest 请求对象
      * @return CompletableFuture<ShowRepositoryArchiveResponse>
      */
     public CompletableFuture<ShowRepositoryArchiveResponse> showRepositoryArchiveAsync(
@@ -1532,13 +1498,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryArchiveRequest 请求对象
+     * @param request ShowRepositoryArchiveRequest 请求对象
      * @return AsyncInvoker<ShowRepositoryArchiveRequest, ShowRepositoryArchiveResponse>
      */
     public AsyncInvoker<ShowRepositoryArchiveRequest, ShowRepositoryArchiveResponse> showRepositoryArchiveAsyncInvoker(
         ShowRepositoryArchiveRequest request) {
-        return new AsyncInvoker<ShowRepositoryArchiveRequest, ShowRepositoryArchiveResponse>(request,
-            CodeHubMeta.showRepositoryArchive, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showRepositoryArchive, hcClient);
     }
 
     /**
@@ -1548,7 +1513,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryByUuidRequest 请求对象
+     * @param request ShowRepositoryByUuidRequest 请求对象
      * @return CompletableFuture<ShowRepositoryByUuidResponse>
      */
     public CompletableFuture<ShowRepositoryByUuidResponse> showRepositoryByUuidAsync(
@@ -1563,13 +1528,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryByUuidRequest 请求对象
+     * @param request ShowRepositoryByUuidRequest 请求对象
      * @return AsyncInvoker<ShowRepositoryByUuidRequest, ShowRepositoryByUuidResponse>
      */
     public AsyncInvoker<ShowRepositoryByUuidRequest, ShowRepositoryByUuidResponse> showRepositoryByUuidAsyncInvoker(
         ShowRepositoryByUuidRequest request) {
-        return new AsyncInvoker<ShowRepositoryByUuidRequest, ShowRepositoryByUuidResponse>(request,
-            CodeHubMeta.showRepositoryByUuid, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showRepositoryByUuid, hcClient);
     }
 
     /**
@@ -1579,7 +1543,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryStatisticsRequest 请求对象
+     * @param request ShowRepositoryStatisticsRequest 请求对象
      * @return CompletableFuture<ShowRepositoryStatisticsResponse>
      */
     public CompletableFuture<ShowRepositoryStatisticsResponse> showRepositoryStatisticsAsync(
@@ -1594,13 +1558,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRepositoryStatisticsRequest 请求对象
+     * @param request ShowRepositoryStatisticsRequest 请求对象
      * @return AsyncInvoker<ShowRepositoryStatisticsRequest, ShowRepositoryStatisticsResponse>
      */
     public AsyncInvoker<ShowRepositoryStatisticsRequest, ShowRepositoryStatisticsResponse> showRepositoryStatisticsAsyncInvoker(
         ShowRepositoryStatisticsRequest request) {
-        return new AsyncInvoker<ShowRepositoryStatisticsRequest, ShowRepositoryStatisticsResponse>(request,
-            CodeHubMeta.showRepositoryStatistics, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showRepositoryStatistics, hcClient);
     }
 
     /**
@@ -1610,7 +1573,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticCommitRequest 请求对象
+     * @param request ShowStatisticCommitRequest 请求对象
      * @return CompletableFuture<ShowStatisticCommitResponse>
      */
     @Deprecated
@@ -1625,14 +1588,13 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticCommitRequest 请求对象
+     * @param request ShowStatisticCommitRequest 请求对象
      * @return AsyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse>
      */
     @Deprecated
     public AsyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse> showStatisticCommitAsyncInvoker(
         ShowStatisticCommitRequest request) {
-        return new AsyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse>(request,
-            CodeHubMeta.showStatisticCommit, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showStatisticCommit, hcClient);
     }
 
     /**
@@ -1642,7 +1604,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticCommitV3Request 请求对象
+     * @param request ShowStatisticCommitV3Request 请求对象
      * @return CompletableFuture<ShowStatisticCommitV3Response>
      */
     public CompletableFuture<ShowStatisticCommitV3Response> showStatisticCommitV3Async(
@@ -1657,13 +1619,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticCommitV3Request 请求对象
+     * @param request ShowStatisticCommitV3Request 请求对象
      * @return AsyncInvoker<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response>
      */
     public AsyncInvoker<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response> showStatisticCommitV3AsyncInvoker(
         ShowStatisticCommitV3Request request) {
-        return new AsyncInvoker<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response>(request,
-            CodeHubMeta.showStatisticCommitV3, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showStatisticCommitV3, hcClient);
     }
 
     /**
@@ -1673,7 +1634,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticalDataRequest 请求对象
+     * @param request ShowStatisticalDataRequest 请求对象
      * @return CompletableFuture<ShowStatisticalDataResponse>
      */
     public CompletableFuture<ShowStatisticalDataResponse> showStatisticalDataAsync(ShowStatisticalDataRequest request) {
@@ -1687,13 +1648,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticalDataRequest 请求对象
+     * @param request ShowStatisticalDataRequest 请求对象
      * @return AsyncInvoker<ShowStatisticalDataRequest, ShowStatisticalDataResponse>
      */
     public AsyncInvoker<ShowStatisticalDataRequest, ShowStatisticalDataResponse> showStatisticalDataAsyncInvoker(
         ShowStatisticalDataRequest request) {
-        return new AsyncInvoker<ShowStatisticalDataRequest, ShowStatisticalDataResponse>(request,
-            CodeHubMeta.showStatisticalData, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showStatisticalData, hcClient);
     }
 
     /**
@@ -1703,7 +1663,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSshKeyRequest 请求对象
+     * @param request AddSshKeyRequest 请求对象
      * @return CompletableFuture<AddSshKeyResponse>
      */
     public CompletableFuture<AddSshKeyResponse> addSshKeyAsync(AddSshKeyRequest request) {
@@ -1717,11 +1677,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSshKeyRequest 请求对象
+     * @param request AddSshKeyRequest 请求对象
      * @return AsyncInvoker<AddSshKeyRequest, AddSshKeyResponse>
      */
     public AsyncInvoker<AddSshKeyRequest, AddSshKeyResponse> addSshKeyAsyncInvoker(AddSshKeyRequest request) {
-        return new AsyncInvoker<AddSshKeyRequest, AddSshKeyResponse>(request, CodeHubMeta.addSshKey, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.addSshKey, hcClient);
     }
 
     /**
@@ -1731,7 +1691,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSShkeyRequest 请求对象
+     * @param request DeleteSShkeyRequest 请求对象
      * @return CompletableFuture<DeleteSShkeyResponse>
      */
     @Deprecated
@@ -1746,13 +1706,13 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSShkeyRequest 请求对象
+     * @param request DeleteSShkeyRequest 请求对象
      * @return AsyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse>
      */
     @Deprecated
     public AsyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse> deleteSShkeyAsyncInvoker(
         DeleteSShkeyRequest request) {
-        return new AsyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse>(request, CodeHubMeta.deleteSShkey, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.deleteSShkey, hcClient);
     }
 
     /**
@@ -1762,7 +1722,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSshKeysRequest 请求对象
+     * @param request ListSshKeysRequest 请求对象
      * @return CompletableFuture<ListSshKeysResponse>
      */
     public CompletableFuture<ListSshKeysResponse> listSshKeysAsync(ListSshKeysRequest request) {
@@ -1776,11 +1736,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSshKeysRequest 请求对象
+     * @param request ListSshKeysRequest 请求对象
      * @return AsyncInvoker<ListSshKeysRequest, ListSshKeysResponse>
      */
     public AsyncInvoker<ListSshKeysRequest, ListSshKeysResponse> listSshKeysAsyncInvoker(ListSshKeysRequest request) {
-        return new AsyncInvoker<ListSshKeysRequest, ListSshKeysResponse>(request, CodeHubMeta.listSshKeys, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listSshKeys, hcClient);
     }
 
     /**
@@ -1790,7 +1750,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateKeyVerifyRequest 请求对象
+     * @param request ShowPrivateKeyVerifyRequest 请求对象
      * @return CompletableFuture<ShowPrivateKeyVerifyResponse>
      */
     public CompletableFuture<ShowPrivateKeyVerifyResponse> showPrivateKeyVerifyAsync(
@@ -1805,13 +1765,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivateKeyVerifyRequest 请求对象
+     * @param request ShowPrivateKeyVerifyRequest 请求对象
      * @return AsyncInvoker<ShowPrivateKeyVerifyRequest, ShowPrivateKeyVerifyResponse>
      */
     public AsyncInvoker<ShowPrivateKeyVerifyRequest, ShowPrivateKeyVerifyResponse> showPrivateKeyVerifyAsyncInvoker(
         ShowPrivateKeyVerifyRequest request) {
-        return new AsyncInvoker<ShowPrivateKeyVerifyRequest, ShowPrivateKeyVerifyResponse>(request,
-            CodeHubMeta.showPrivateKeyVerify, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showPrivateKeyVerify, hcClient);
     }
 
     /**
@@ -1821,7 +1780,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateHttpsInfoRequest 请求对象
+     * @param request ValidateHttpsInfoRequest 请求对象
      * @return CompletableFuture<ValidateHttpsInfoResponse>
      */
     @Deprecated
@@ -1836,14 +1795,13 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateHttpsInfoRequest 请求对象
+     * @param request ValidateHttpsInfoRequest 请求对象
      * @return AsyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse>
      */
     @Deprecated
     public AsyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse> validateHttpsInfoAsyncInvoker(
         ValidateHttpsInfoRequest request) {
-        return new AsyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse>(request,
-            CodeHubMeta.validateHttpsInfo, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.validateHttpsInfo, hcClient);
     }
 
     /**
@@ -1853,7 +1811,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateHttpsInfoV2Request 请求对象
+     * @param request ValidateHttpsInfoV2Request 请求对象
      * @return CompletableFuture<ValidateHttpsInfoV2Response>
      */
     public CompletableFuture<ValidateHttpsInfoV2Response> validateHttpsInfoV2Async(ValidateHttpsInfoV2Request request) {
@@ -1867,13 +1825,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateHttpsInfoV2Request 请求对象
+     * @param request ValidateHttpsInfoV2Request 请求对象
      * @return AsyncInvoker<ValidateHttpsInfoV2Request, ValidateHttpsInfoV2Response>
      */
     public AsyncInvoker<ValidateHttpsInfoV2Request, ValidateHttpsInfoV2Response> validateHttpsInfoV2AsyncInvoker(
         ValidateHttpsInfoV2Request request) {
-        return new AsyncInvoker<ValidateHttpsInfoV2Request, ValidateHttpsInfoV2Response>(request,
-            CodeHubMeta.validateHttpsInfoV2, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.validateHttpsInfoV2, hcClient);
     }
 
     /**
@@ -1883,7 +1840,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNewBranchRequest 请求对象
+     * @param request CreateNewBranchRequest 请求对象
      * @return CompletableFuture<CreateNewBranchResponse>
      */
     public CompletableFuture<CreateNewBranchResponse> createNewBranchAsync(CreateNewBranchRequest request) {
@@ -1897,13 +1854,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNewBranchRequest 请求对象
+     * @param request CreateNewBranchRequest 请求对象
      * @return AsyncInvoker<CreateNewBranchRequest, CreateNewBranchResponse>
      */
     public AsyncInvoker<CreateNewBranchRequest, CreateNewBranchResponse> createNewBranchAsyncInvoker(
         CreateNewBranchRequest request) {
-        return new AsyncInvoker<CreateNewBranchRequest, CreateNewBranchResponse>(request, CodeHubMeta.createNewBranch,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.createNewBranch, hcClient);
     }
 
     /**
@@ -1913,7 +1869,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateIssuesRequest 请求对象
+     * @param request AssociateIssuesRequest 请求对象
      * @return CompletableFuture<AssociateIssuesResponse>
      */
     public CompletableFuture<AssociateIssuesResponse> associateIssuesAsync(AssociateIssuesRequest request) {
@@ -1927,13 +1883,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateIssuesRequest 请求对象
+     * @param request AssociateIssuesRequest 请求对象
      * @return AsyncInvoker<AssociateIssuesRequest, AssociateIssuesResponse>
      */
     public AsyncInvoker<AssociateIssuesRequest, AssociateIssuesResponse> associateIssuesAsyncInvoker(
         AssociateIssuesRequest request) {
-        return new AsyncInvoker<AssociateIssuesRequest, AssociateIssuesResponse>(request, CodeHubMeta.associateIssues,
-            hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.associateIssues, hcClient);
     }
 
     /**
@@ -1943,7 +1898,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectAndRepositoriesRequest 请求对象
+     * @param request CreateProjectAndRepositoriesRequest 请求对象
      * @return CompletableFuture<CreateProjectAndRepositoriesResponse>
      */
     public CompletableFuture<CreateProjectAndRepositoriesResponse> createProjectAndRepositoriesAsync(
@@ -1958,13 +1913,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectAndRepositoriesRequest 请求对象
+     * @param request CreateProjectAndRepositoriesRequest 请求对象
      * @return AsyncInvoker<CreateProjectAndRepositoriesRequest, CreateProjectAndRepositoriesResponse>
      */
     public AsyncInvoker<CreateProjectAndRepositoriesRequest, CreateProjectAndRepositoriesResponse> createProjectAndRepositoriesAsyncInvoker(
         CreateProjectAndRepositoriesRequest request) {
-        return new AsyncInvoker<CreateProjectAndRepositoriesRequest, CreateProjectAndRepositoriesResponse>(request,
-            CodeHubMeta.createProjectAndRepositories, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.createProjectAndRepositories, hcClient);
     }
 
     /**
@@ -1974,7 +1928,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectAndforkRepositoriesRequest 请求对象
+     * @param request CreateProjectAndforkRepositoriesRequest 请求对象
      * @return CompletableFuture<CreateProjectAndforkRepositoriesResponse>
      */
     public CompletableFuture<CreateProjectAndforkRepositoriesResponse> createProjectAndforkRepositoriesAsync(
@@ -1989,13 +1943,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectAndforkRepositoriesRequest 请求对象
+     * @param request CreateProjectAndforkRepositoriesRequest 请求对象
      * @return AsyncInvoker<CreateProjectAndforkRepositoriesRequest, CreateProjectAndforkRepositoriesResponse>
      */
     public AsyncInvoker<CreateProjectAndforkRepositoriesRequest, CreateProjectAndforkRepositoriesResponse> createProjectAndforkRepositoriesAsyncInvoker(
         CreateProjectAndforkRepositoriesRequest request) {
-        return new AsyncInvoker<CreateProjectAndforkRepositoriesRequest, CreateProjectAndforkRepositoriesResponse>(
-            request, CodeHubMeta.createProjectAndforkRepositories, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.createProjectAndforkRepositories, hcClient);
     }
 
     /**
@@ -2005,7 +1958,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserAllRepositoriesRequest 请求对象
+     * @param request ListUserAllRepositoriesRequest 请求对象
      * @return CompletableFuture<ListUserAllRepositoriesResponse>
      */
     public CompletableFuture<ListUserAllRepositoriesResponse> listUserAllRepositoriesAsync(
@@ -2020,13 +1973,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserAllRepositoriesRequest 请求对象
+     * @param request ListUserAllRepositoriesRequest 请求对象
      * @return AsyncInvoker<ListUserAllRepositoriesRequest, ListUserAllRepositoriesResponse>
      */
     public AsyncInvoker<ListUserAllRepositoriesRequest, ListUserAllRepositoriesResponse> listUserAllRepositoriesAsyncInvoker(
         ListUserAllRepositoriesRequest request) {
-        return new AsyncInvoker<ListUserAllRepositoriesRequest, ListUserAllRepositoriesResponse>(request,
-            CodeHubMeta.listUserAllRepositories, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listUserAllRepositories, hcClient);
     }
 
     /**
@@ -2036,7 +1988,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllRepositoryByTwoProjectIdRequest 请求对象
+     * @param request ShowAllRepositoryByTwoProjectIdRequest 请求对象
      * @return CompletableFuture<ShowAllRepositoryByTwoProjectIdResponse>
      */
     public CompletableFuture<ShowAllRepositoryByTwoProjectIdResponse> showAllRepositoryByTwoProjectIdAsync(
@@ -2051,13 +2003,12 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllRepositoryByTwoProjectIdRequest 请求对象
+     * @param request ShowAllRepositoryByTwoProjectIdRequest 请求对象
      * @return AsyncInvoker<ShowAllRepositoryByTwoProjectIdRequest, ShowAllRepositoryByTwoProjectIdResponse>
      */
     public AsyncInvoker<ShowAllRepositoryByTwoProjectIdRequest, ShowAllRepositoryByTwoProjectIdResponse> showAllRepositoryByTwoProjectIdAsyncInvoker(
         ShowAllRepositoryByTwoProjectIdRequest request) {
-        return new AsyncInvoker<ShowAllRepositoryByTwoProjectIdRequest, ShowAllRepositoryByTwoProjectIdResponse>(
-            request, CodeHubMeta.showAllRepositoryByTwoProjectId, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.showAllRepositoryByTwoProjectId, hcClient);
     }
 
     /**
@@ -2067,7 +2018,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddHooksRequest 请求对象
+     * @param request AddHooksRequest 请求对象
      * @return CompletableFuture<AddHooksResponse>
      */
     public CompletableFuture<AddHooksResponse> addHooksAsync(AddHooksRequest request) {
@@ -2081,11 +2032,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddHooksRequest 请求对象
+     * @param request AddHooksRequest 请求对象
      * @return AsyncInvoker<AddHooksRequest, AddHooksResponse>
      */
     public AsyncInvoker<AddHooksRequest, AddHooksResponse> addHooksAsyncInvoker(AddHooksRequest request) {
-        return new AsyncInvoker<AddHooksRequest, AddHooksResponse>(request, CodeHubMeta.addHooks, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.addHooks, hcClient);
     }
 
     /**
@@ -2095,7 +2046,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHooksRequest 请求对象
+     * @param request DeleteHooksRequest 请求对象
      * @return CompletableFuture<DeleteHooksResponse>
      */
     public CompletableFuture<DeleteHooksResponse> deleteHooksAsync(DeleteHooksRequest request) {
@@ -2109,11 +2060,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHooksRequest 请求对象
+     * @param request DeleteHooksRequest 请求对象
      * @return AsyncInvoker<DeleteHooksRequest, DeleteHooksResponse>
      */
     public AsyncInvoker<DeleteHooksRequest, DeleteHooksResponse> deleteHooksAsyncInvoker(DeleteHooksRequest request) {
-        return new AsyncInvoker<DeleteHooksRequest, DeleteHooksResponse>(request, CodeHubMeta.deleteHooks, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.deleteHooks, hcClient);
     }
 
     /**
@@ -2123,7 +2074,7 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHooksRequest 请求对象
+     * @param request ListHooksRequest 请求对象
      * @return CompletableFuture<ListHooksResponse>
      */
     public CompletableFuture<ListHooksResponse> listHooksAsync(ListHooksRequest request) {
@@ -2137,11 +2088,11 @@ public class CodeHubAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHooksRequest 请求对象
+     * @param request ListHooksRequest 请求对象
      * @return AsyncInvoker<ListHooksRequest, ListHooksResponse>
      */
     public AsyncInvoker<ListHooksRequest, ListHooksResponse> listHooksAsyncInvoker(ListHooksRequest request) {
-        return new AsyncInvoker<ListHooksRequest, ListHooksResponse>(request, CodeHubMeta.listHooks, hcClient);
+        return new AsyncInvoker<>(request, CodeHubMeta.listHooks, hcClient);
     }
 
 }

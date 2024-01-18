@@ -44,9 +44,9 @@ import com.huaweicloud.sdk.tms.v1.model.UpdatePredefineTagsResponse;
 public class TmsMeta {
 
     public static final HttpRequestDef<CreatePredefineTagsRequest, CreatePredefineTagsResponse> createPredefineTags =
-        genForcreatePredefineTags();
+        genForCreatePredefineTags();
 
-    private static HttpRequestDef<CreatePredefineTagsRequest, CreatePredefineTagsResponse> genForcreatePredefineTags() {
+    private static HttpRequestDef<CreatePredefineTagsRequest, CreatePredefineTagsResponse> genForCreatePredefineTags() {
         // basic
         HttpRequestDef.Builder<CreatePredefineTagsRequest, CreatePredefineTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePredefineTagsRequest.class, CreatePredefineTagsResponse.class)
@@ -59,9 +59,7 @@ public class TmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqCreatePredefineTag.class),
-            f -> f.withMarshaller(CreatePredefineTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePredefineTagsRequest::getBody, CreatePredefineTagsRequest::setBody));
 
         // response
 
@@ -69,9 +67,9 @@ public class TmsMeta {
     }
 
     public static final HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTag =
-        genForcreateResourceTag();
+        genForCreateResourceTag();
 
-    private static HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> genForcreateResourceTag() {
+    private static HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> genForCreateResourceTag() {
         // basic
         HttpRequestDef.Builder<CreateResourceTagRequest, CreateResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResourceTagRequest.class, CreateResourceTagResponse.class)
@@ -84,9 +82,7 @@ public class TmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqCreateTag.class),
-            f -> f.withMarshaller(CreateResourceTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResourceTagRequest::getBody, CreateResourceTagRequest::setBody));
 
         // response
 
@@ -94,9 +90,9 @@ public class TmsMeta {
     }
 
     public static final HttpRequestDef<DeletePredefineTagsRequest, DeletePredefineTagsResponse> deletePredefineTags =
-        genFordeletePredefineTags();
+        genForDeletePredefineTags();
 
-    private static HttpRequestDef<DeletePredefineTagsRequest, DeletePredefineTagsResponse> genFordeletePredefineTags() {
+    private static HttpRequestDef<DeletePredefineTagsRequest, DeletePredefineTagsResponse> genForDeletePredefineTags() {
         // basic
         HttpRequestDef.Builder<DeletePredefineTagsRequest, DeletePredefineTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeletePredefineTagsRequest.class, DeletePredefineTagsResponse.class)
@@ -109,9 +105,7 @@ public class TmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqDeletePredefineTag.class),
-            f -> f.withMarshaller(DeletePredefineTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeletePredefineTagsRequest::getBody, DeletePredefineTagsRequest::setBody));
 
         // response
 
@@ -119,9 +113,9 @@ public class TmsMeta {
     }
 
     public static final HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTag =
-        genFordeleteResourceTag();
+        genForDeleteResourceTag();
 
-    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genFordeleteResourceTag() {
+    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genForDeleteResourceTag() {
         // basic
         HttpRequestDef.Builder<DeleteResourceTagRequest, DeleteResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteResourceTagRequest.class, DeleteResourceTagResponse.class)
@@ -134,9 +128,7 @@ public class TmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqDeleteTag.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getBody, DeleteResourceTagRequest::setBody));
 
         // response
 
@@ -144,9 +136,9 @@ public class TmsMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForlistApiVersions();
+        genForListApiVersions();
 
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
@@ -162,9 +154,9 @@ public class TmsMeta {
     }
 
     public static final HttpRequestDef<ListPredefineTagsRequest, ListPredefineTagsResponse> listPredefineTags =
-        genForlistPredefineTags();
+        genForListPredefineTags();
 
-    private static HttpRequestDef<ListPredefineTagsRequest, ListPredefineTagsResponse> genForlistPredefineTags() {
+    private static HttpRequestDef<ListPredefineTagsRequest, ListPredefineTagsResponse> genForListPredefineTags() {
         // basic
         HttpRequestDef.Builder<ListPredefineTagsRequest, ListPredefineTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPredefineTagsRequest.class, ListPredefineTagsResponse.class)
@@ -177,44 +169,32 @@ public class TmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPredefineTagsRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(ListPredefineTagsRequest::getKey, ListPredefineTagsRequest::setKey));
         builder.<String>withRequestField("value",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPredefineTagsRequest::getValue, (req, v) -> {
-                req.setValue(v);
-            }));
+            f -> f.withMarshaller(ListPredefineTagsRequest::getValue, ListPredefineTagsRequest::setValue));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPredefineTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPredefineTagsRequest::getLimit, ListPredefineTagsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPredefineTagsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPredefineTagsRequest::getMarker, ListPredefineTagsRequest::setMarker));
         builder.<String>withRequestField("order_field",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPredefineTagsRequest::getOrderField, (req, v) -> {
-                req.setOrderField(v);
-            }));
+            f -> f.withMarshaller(ListPredefineTagsRequest::getOrderField, ListPredefineTagsRequest::setOrderField));
         builder.<ListPredefineTagsRequest.OrderMethodEnum>withRequestField("order_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPredefineTagsRequest.OrderMethodEnum.class),
-            f -> f.withMarshaller(ListPredefineTagsRequest::getOrderMethod, (req, v) -> {
-                req.setOrderMethod(v);
-            }));
+            f -> f.withMarshaller(ListPredefineTagsRequest::getOrderMethod, ListPredefineTagsRequest::setOrderMethod));
 
         // response
 
@@ -222,9 +202,9 @@ public class TmsMeta {
     }
 
     public static final HttpRequestDef<ListProvidersRequest, ListProvidersResponse> listProviders =
-        genForlistProviders();
+        genForListProviders();
 
-    private static HttpRequestDef<ListProvidersRequest, ListProvidersResponse> genForlistProviders() {
+    private static HttpRequestDef<ListProvidersRequest, ListProvidersResponse> genForListProviders() {
         // basic
         HttpRequestDef.Builder<ListProvidersRequest, ListProvidersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProvidersRequest.class, ListProvidersResponse.class)
@@ -237,39 +217,31 @@ public class TmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProvidersRequest.LocaleEnum.class),
-            f -> f.withMarshaller(ListProvidersRequest::getLocale, (req, v) -> {
-                req.setLocale(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getLocale, ListProvidersRequest::setLocale));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProvidersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getLimit, ListProvidersRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProvidersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getOffset, ListProvidersRequest::setOffset));
         builder.<String>withRequestField("provider",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProvidersRequest::getProvider, (req, v) -> {
-                req.setProvider(v);
-            }));
+            f -> f.withMarshaller(ListProvidersRequest::getProvider, ListProvidersRequest::setProvider));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResourceRequest, ListResourceResponse> listResource = genForlistResource();
+    public static final HttpRequestDef<ListResourceRequest, ListResourceResponse> listResource = genForListResource();
 
-    private static HttpRequestDef<ListResourceRequest, ListResourceResponse> genForlistResource() {
+    private static HttpRequestDef<ListResourceRequest, ListResourceResponse> genForListResource() {
         // basic
         HttpRequestDef.Builder<ListResourceRequest, ListResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListResourceRequest.class, ListResourceResponse.class)
@@ -282,18 +254,16 @@ public class TmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResqTagResource.class),
-            f -> f.withMarshaller(ListResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceRequest::getBody, ListResourceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTagKeysRequest, ListTagKeysResponse> listTagKeys = genForlistTagKeys();
+    public static final HttpRequestDef<ListTagKeysRequest, ListTagKeysResponse> listTagKeys = genForListTagKeys();
 
-    private static HttpRequestDef<ListTagKeysRequest, ListTagKeysResponse> genForlistTagKeys() {
+    private static HttpRequestDef<ListTagKeysRequest, ListTagKeysResponse> genForListTagKeys() {
         // basic
         HttpRequestDef.Builder<ListTagKeysRequest, ListTagKeysResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagKeysRequest.class, ListTagKeysResponse.class)
@@ -306,23 +276,17 @@ public class TmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagKeysRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ListTagKeysRequest::getRegionId, ListTagKeysRequest::setRegionId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagKeysRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTagKeysRequest::getLimit, ListTagKeysRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagKeysRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTagKeysRequest::getMarker, ListTagKeysRequest::setMarker));
 
         // response
 
@@ -330,9 +294,9 @@ public class TmsMeta {
     }
 
     public static final HttpRequestDef<ListTagValuesRequest, ListTagValuesResponse> listTagValues =
-        genForlistTagValues();
+        genForListTagValues();
 
-    private static HttpRequestDef<ListTagValuesRequest, ListTagValuesResponse> genForlistTagValues() {
+    private static HttpRequestDef<ListTagValuesRequest, ListTagValuesResponse> genForListTagValues() {
         // basic
         HttpRequestDef.Builder<ListTagValuesRequest, ListTagValuesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagValuesRequest.class, ListTagValuesResponse.class)
@@ -345,30 +309,22 @@ public class TmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagValuesRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ListTagValuesRequest::getRegionId, ListTagValuesRequest::setRegionId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagValuesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTagValuesRequest::getLimit, ListTagValuesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagValuesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTagValuesRequest::getMarker, ListTagValuesRequest::setMarker));
         builder.<String>withRequestField("key",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagValuesRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(ListTagValuesRequest::getKey, ListTagValuesRequest::setKey));
 
         // response
 
@@ -376,9 +332,9 @@ public class TmsMeta {
     }
 
     public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
-        genForshowApiVersion();
+        genForShowApiVersion();
 
-    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
+    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForShowApiVersion() {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
@@ -391,9 +347,7 @@ public class TmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, (req, v) -> {
-                req.setApiVersion(v);
-            }));
+            f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, ShowApiVersionRequest::setApiVersion));
 
         // response
 
@@ -401,9 +355,9 @@ public class TmsMeta {
     }
 
     public static final HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTag =
-        genForshowResourceTag();
+        genForShowResourceTag();
 
-    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForshowResourceTag() {
+    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForShowResourceTag() {
         // basic
         HttpRequestDef.Builder<ShowResourceTagRequest, ShowResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagRequest.class, ShowResourceTagResponse.class)
@@ -416,32 +370,26 @@ public class TmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, ShowResourceTagRequest::setResourceId));
         builder.<String>withRequestField("project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagRequest::getProjectId, ShowResourceTagRequest::setProjectId));
         builder.<String>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, ShowResourceTagRequest::setResourceType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTagQuotaRequest, ShowTagQuotaResponse> showTagQuota = genForshowTagQuota();
+    public static final HttpRequestDef<ShowTagQuotaRequest, ShowTagQuotaResponse> showTagQuota = genForShowTagQuota();
 
-    private static HttpRequestDef<ShowTagQuotaRequest, ShowTagQuotaResponse> genForshowTagQuota() {
+    private static HttpRequestDef<ShowTagQuotaRequest, ShowTagQuotaResponse> genForShowTagQuota() {
         // basic
         HttpRequestDef.Builder<ShowTagQuotaRequest, ShowTagQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTagQuotaRequest.class, ShowTagQuotaResponse.class)
@@ -457,9 +405,9 @@ public class TmsMeta {
     }
 
     public static final HttpRequestDef<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse> updatePredefineTags =
-        genForupdatePredefineTags();
+        genForUpdatePredefineTags();
 
-    private static HttpRequestDef<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse> genForupdatePredefineTags() {
+    private static HttpRequestDef<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse> genForUpdatePredefineTags() {
         // basic
         HttpRequestDef.Builder<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePredefineTagsRequest.class, UpdatePredefineTagsResponse.class)
@@ -472,9 +420,7 @@ public class TmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyPrefineTag.class),
-            f -> f.withMarshaller(UpdatePredefineTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePredefineTagsRequest::getBody, UpdatePredefineTagsRequest::setBody));
 
         // response
 

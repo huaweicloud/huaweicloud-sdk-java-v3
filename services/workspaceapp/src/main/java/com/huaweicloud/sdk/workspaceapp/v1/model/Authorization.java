@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 用户授权信息
+ * 用户授权信息。
  */
 public class Authorization {
 
@@ -77,7 +77,7 @@ public class Authorization {
     }
 
     /**
-     * 授权ID
+     * 授权ID。
      * @return id
      */
     public String getId() {
@@ -94,7 +94,7 @@ public class Authorization {
     }
 
     /**
-     * 用户ID(或用户组ID)
+     * 用户ID(或用户组ID)。
      * @return accountId
      */
     public String getAccountId() {
@@ -111,7 +111,7 @@ public class Authorization {
     }
 
     /**
-     * 用户名(或用户组名)
+     * 用户名(或用户组名)。
      * @return account
      */
     public String getAccount() {
@@ -128,7 +128,7 @@ public class Authorization {
     }
 
     /**
-     * 应用ID (按照组授权时,该字段为空)
+     * 应用ID (按照组授权时,该字段为空)。
      * @return appId
      */
     public String getAppId() {
@@ -145,7 +145,7 @@ public class Authorization {
     }
 
     /**
-     * 应用名称 (按照组授权时,该字段为空)
+     * 应用名称 (按照组授权时,该字段为空)。
      * @return appName
      */
     public String getAppName() {
@@ -162,7 +162,7 @@ public class Authorization {
     }
 
     /**
-     * 应用组ID
+     * 应用组ID。
      * @return appGroupId
      */
     public String getAppGroupId() {
@@ -179,7 +179,7 @@ public class Authorization {
     }
 
     /**
-     * 应用组名称
+     * 应用组名称。
      * @return appGroupName
      */
     public String getAppGroupName() {
@@ -247,7 +247,7 @@ public class Authorization {
     }
 
     /**
-     * 域名城
+     * 域名城。
      * @return domain
      */
     public String getDomain() {
@@ -264,7 +264,7 @@ public class Authorization {
     }
 
     /**
-     * 发布时间
+     * 发布时间。
      * @return createAt
      */
     public OffsetDateTime getCreateAt() {

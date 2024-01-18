@@ -36,7 +36,7 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCelebrityRecognitionRequest 请求对象
+     * @param request RunCelebrityRecognitionRequest 请求对象
      * @return RunCelebrityRecognitionResponse
      */
     public RunCelebrityRecognitionResponse runCelebrityRecognition(RunCelebrityRecognitionRequest request) {
@@ -50,13 +50,12 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCelebrityRecognitionRequest 请求对象
+     * @param request RunCelebrityRecognitionRequest 请求对象
      * @return SyncInvoker<RunCelebrityRecognitionRequest, RunCelebrityRecognitionResponse>
      */
     public SyncInvoker<RunCelebrityRecognitionRequest, RunCelebrityRecognitionResponse> runCelebrityRecognitionInvoker(
         RunCelebrityRecognitionRequest request) {
-        return new SyncInvoker<RunCelebrityRecognitionRequest, RunCelebrityRecognitionResponse>(request,
-            ImageMeta.runCelebrityRecognition, hcClient);
+        return new SyncInvoker<>(request, ImageMeta.runCelebrityRecognition, hcClient);
     }
 
     /**
@@ -66,7 +65,7 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunImageMainObjectDetectionRequest 请求对象
+     * @param request RunImageMainObjectDetectionRequest 请求对象
      * @return RunImageMainObjectDetectionResponse
      */
     public RunImageMainObjectDetectionResponse runImageMainObjectDetection(RunImageMainObjectDetectionRequest request) {
@@ -80,13 +79,12 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunImageMainObjectDetectionRequest 请求对象
+     * @param request RunImageMainObjectDetectionRequest 请求对象
      * @return SyncInvoker<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse>
      */
     public SyncInvoker<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse> runImageMainObjectDetectionInvoker(
         RunImageMainObjectDetectionRequest request) {
-        return new SyncInvoker<RunImageMainObjectDetectionRequest, RunImageMainObjectDetectionResponse>(request,
-            ImageMeta.runImageMainObjectDetection, hcClient);
+        return new SyncInvoker<>(request, ImageMeta.runImageMainObjectDetection, hcClient);
     }
 
     /**
@@ -96,7 +94,7 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunImageMediaTaggingRequest 请求对象
+     * @param request RunImageMediaTaggingRequest 请求对象
      * @return RunImageMediaTaggingResponse
      */
     public RunImageMediaTaggingResponse runImageMediaTagging(RunImageMediaTaggingRequest request) {
@@ -110,13 +108,12 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunImageMediaTaggingRequest 请求对象
+     * @param request RunImageMediaTaggingRequest 请求对象
      * @return SyncInvoker<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse>
      */
     public SyncInvoker<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse> runImageMediaTaggingInvoker(
         RunImageMediaTaggingRequest request) {
-        return new SyncInvoker<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse>(request,
-            ImageMeta.runImageMediaTagging, hcClient);
+        return new SyncInvoker<>(request, ImageMeta.runImageMediaTagging, hcClient);
     }
 
     /**
@@ -126,7 +123,7 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunImageMediaTaggingDetRequest 请求对象
+     * @param request RunImageMediaTaggingDetRequest 请求对象
      * @return RunImageMediaTaggingDetResponse
      */
     public RunImageMediaTaggingDetResponse runImageMediaTaggingDet(RunImageMediaTaggingDetRequest request) {
@@ -140,13 +137,12 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunImageMediaTaggingDetRequest 请求对象
+     * @param request RunImageMediaTaggingDetRequest 请求对象
      * @return SyncInvoker<RunImageMediaTaggingDetRequest, RunImageMediaTaggingDetResponse>
      */
     public SyncInvoker<RunImageMediaTaggingDetRequest, RunImageMediaTaggingDetResponse> runImageMediaTaggingDetInvoker(
         RunImageMediaTaggingDetRequest request) {
-        return new SyncInvoker<RunImageMediaTaggingDetRequest, RunImageMediaTaggingDetResponse>(request,
-            ImageMeta.runImageMediaTaggingDet, hcClient);
+        return new SyncInvoker<>(request, ImageMeta.runImageMediaTaggingDet, hcClient);
     }
 
     /**
@@ -156,7 +152,7 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunImageTaggingRequest 请求对象
+     * @param request RunImageTaggingRequest 请求对象
      * @return RunImageTaggingResponse
      */
     public RunImageTaggingResponse runImageTagging(RunImageTaggingRequest request) {
@@ -170,13 +166,12 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunImageTaggingRequest 请求对象
+     * @param request RunImageTaggingRequest 请求对象
      * @return SyncInvoker<RunImageTaggingRequest, RunImageTaggingResponse>
      */
     public SyncInvoker<RunImageTaggingRequest, RunImageTaggingResponse> runImageTaggingInvoker(
         RunImageTaggingRequest request) {
-        return new SyncInvoker<RunImageTaggingRequest, RunImageTaggingResponse>(request, ImageMeta.runImageTagging,
-            hcClient);
+        return new SyncInvoker<>(request, ImageMeta.runImageTagging, hcClient);
     }
 
     /**
@@ -186,7 +181,7 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunRecaptureDetectRequest 请求对象
+     * @param request RunRecaptureDetectRequest 请求对象
      * @return RunRecaptureDetectResponse
      */
     public RunRecaptureDetectResponse runRecaptureDetect(RunRecaptureDetectRequest request) {
@@ -200,13 +195,12 @@ public class ImageClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunRecaptureDetectRequest 请求对象
+     * @param request RunRecaptureDetectRequest 请求对象
      * @return SyncInvoker<RunRecaptureDetectRequest, RunRecaptureDetectResponse>
      */
     public SyncInvoker<RunRecaptureDetectRequest, RunRecaptureDetectResponse> runRecaptureDetectInvoker(
         RunRecaptureDetectRequest request) {
-        return new SyncInvoker<RunRecaptureDetectRequest, RunRecaptureDetectResponse>(request,
-            ImageMeta.runRecaptureDetect, hcClient);
+        return new SyncInvoker<>(request, ImageMeta.runRecaptureDetect, hcClient);
     }
 
 }

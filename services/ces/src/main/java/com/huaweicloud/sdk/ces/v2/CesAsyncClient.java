@@ -124,7 +124,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAlarmRuleResourcesRequest 请求对象
+     * @param request AddAlarmRuleResourcesRequest 请求对象
      * @return CompletableFuture<AddAlarmRuleResourcesResponse>
      */
     public CompletableFuture<AddAlarmRuleResourcesResponse> addAlarmRuleResourcesAsync(
@@ -139,13 +139,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddAlarmRuleResourcesRequest 请求对象
+     * @param request AddAlarmRuleResourcesRequest 请求对象
      * @return AsyncInvoker<AddAlarmRuleResourcesRequest, AddAlarmRuleResourcesResponse>
      */
     public AsyncInvoker<AddAlarmRuleResourcesRequest, AddAlarmRuleResourcesResponse> addAlarmRuleResourcesAsyncInvoker(
         AddAlarmRuleResourcesRequest request) {
-        return new AsyncInvoker<AddAlarmRuleResourcesRequest, AddAlarmRuleResourcesResponse>(request,
-            CesMeta.addAlarmRuleResources, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.addAlarmRuleResources, hcClient);
     }
 
     /**
@@ -155,7 +154,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourcesRequest 请求对象
+     * @param request BatchCreateResourcesRequest 请求对象
      * @return CompletableFuture<BatchCreateResourcesResponse>
      */
     public CompletableFuture<BatchCreateResourcesResponse> batchCreateResourcesAsync(
@@ -170,13 +169,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourcesRequest 请求对象
+     * @param request BatchCreateResourcesRequest 请求对象
      * @return AsyncInvoker<BatchCreateResourcesRequest, BatchCreateResourcesResponse>
      */
     public AsyncInvoker<BatchCreateResourcesRequest, BatchCreateResourcesResponse> batchCreateResourcesAsyncInvoker(
         BatchCreateResourcesRequest request) {
-        return new AsyncInvoker<BatchCreateResourcesRequest, BatchCreateResourcesResponse>(request,
-            CesMeta.batchCreateResources, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchCreateResources, hcClient);
     }
 
     /**
@@ -186,7 +184,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAlarmRulesRequest 请求对象
+     * @param request BatchDeleteAlarmRulesRequest 请求对象
      * @return CompletableFuture<BatchDeleteAlarmRulesResponse>
      */
     public CompletableFuture<BatchDeleteAlarmRulesResponse> batchDeleteAlarmRulesAsync(
@@ -201,13 +199,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAlarmRulesRequest 请求对象
+     * @param request BatchDeleteAlarmRulesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteAlarmRulesRequest, BatchDeleteAlarmRulesResponse>
      */
     public AsyncInvoker<BatchDeleteAlarmRulesRequest, BatchDeleteAlarmRulesResponse> batchDeleteAlarmRulesAsyncInvoker(
         BatchDeleteAlarmRulesRequest request) {
-        return new AsyncInvoker<BatchDeleteAlarmRulesRequest, BatchDeleteAlarmRulesResponse>(request,
-            CesMeta.batchDeleteAlarmRules, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchDeleteAlarmRules, hcClient);
     }
 
     /**
@@ -217,7 +214,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAlarmTemplatesRequest 请求对象
+     * @param request BatchDeleteAlarmTemplatesRequest 请求对象
      * @return CompletableFuture<BatchDeleteAlarmTemplatesResponse>
      */
     public CompletableFuture<BatchDeleteAlarmTemplatesResponse> batchDeleteAlarmTemplatesAsync(
@@ -232,13 +229,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAlarmTemplatesRequest 请求对象
+     * @param request BatchDeleteAlarmTemplatesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteAlarmTemplatesRequest, BatchDeleteAlarmTemplatesResponse>
      */
     public AsyncInvoker<BatchDeleteAlarmTemplatesRequest, BatchDeleteAlarmTemplatesResponse> batchDeleteAlarmTemplatesAsyncInvoker(
         BatchDeleteAlarmTemplatesRequest request) {
-        return new AsyncInvoker<BatchDeleteAlarmTemplatesRequest, BatchDeleteAlarmTemplatesResponse>(request,
-            CesMeta.batchDeleteAlarmTemplates, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchDeleteAlarmTemplates, hcClient);
     }
 
     /**
@@ -248,7 +244,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteNotificationMasksRequest 请求对象
+     * @param request BatchDeleteNotificationMasksRequest 请求对象
      * @return CompletableFuture<BatchDeleteNotificationMasksResponse>
      */
     public CompletableFuture<BatchDeleteNotificationMasksResponse> batchDeleteNotificationMasksAsync(
@@ -263,13 +259,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteNotificationMasksRequest 请求对象
+     * @param request BatchDeleteNotificationMasksRequest 请求对象
      * @return AsyncInvoker<BatchDeleteNotificationMasksRequest, BatchDeleteNotificationMasksResponse>
      */
     public AsyncInvoker<BatchDeleteNotificationMasksRequest, BatchDeleteNotificationMasksResponse> batchDeleteNotificationMasksAsyncInvoker(
         BatchDeleteNotificationMasksRequest request) {
-        return new AsyncInvoker<BatchDeleteNotificationMasksRequest, BatchDeleteNotificationMasksResponse>(request,
-            CesMeta.batchDeleteNotificationMasks, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchDeleteNotificationMasks, hcClient);
     }
 
     /**
@@ -279,7 +274,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteOneClickAlarmsRequest 请求对象
+     * @param request BatchDeleteOneClickAlarmsRequest 请求对象
      * @return CompletableFuture<BatchDeleteOneClickAlarmsResponse>
      */
     public CompletableFuture<BatchDeleteOneClickAlarmsResponse> batchDeleteOneClickAlarmsAsync(
@@ -294,13 +289,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteOneClickAlarmsRequest 请求对象
+     * @param request BatchDeleteOneClickAlarmsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteOneClickAlarmsRequest, BatchDeleteOneClickAlarmsResponse>
      */
     public AsyncInvoker<BatchDeleteOneClickAlarmsRequest, BatchDeleteOneClickAlarmsResponse> batchDeleteOneClickAlarmsAsyncInvoker(
         BatchDeleteOneClickAlarmsRequest request) {
-        return new AsyncInvoker<BatchDeleteOneClickAlarmsRequest, BatchDeleteOneClickAlarmsResponse>(request,
-            CesMeta.batchDeleteOneClickAlarms, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchDeleteOneClickAlarms, hcClient);
     }
 
     /**
@@ -310,7 +304,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceGroupsRequest 请求对象
+     * @param request BatchDeleteResourceGroupsRequest 请求对象
      * @return CompletableFuture<BatchDeleteResourceGroupsResponse>
      */
     public CompletableFuture<BatchDeleteResourceGroupsResponse> batchDeleteResourceGroupsAsync(
@@ -325,13 +319,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceGroupsRequest 请求对象
+     * @param request BatchDeleteResourceGroupsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteResourceGroupsRequest, BatchDeleteResourceGroupsResponse>
      */
     public AsyncInvoker<BatchDeleteResourceGroupsRequest, BatchDeleteResourceGroupsResponse> batchDeleteResourceGroupsAsyncInvoker(
         BatchDeleteResourceGroupsRequest request) {
-        return new AsyncInvoker<BatchDeleteResourceGroupsRequest, BatchDeleteResourceGroupsResponse>(request,
-            CesMeta.batchDeleteResourceGroups, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchDeleteResourceGroups, hcClient);
     }
 
     /**
@@ -341,7 +334,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourcesRequest 请求对象
+     * @param request BatchDeleteResourcesRequest 请求对象
      * @return CompletableFuture<BatchDeleteResourcesResponse>
      */
     public CompletableFuture<BatchDeleteResourcesResponse> batchDeleteResourcesAsync(
@@ -356,13 +349,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourcesRequest 请求对象
+     * @param request BatchDeleteResourcesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteResourcesRequest, BatchDeleteResourcesResponse>
      */
     public AsyncInvoker<BatchDeleteResourcesRequest, BatchDeleteResourcesResponse> batchDeleteResourcesAsyncInvoker(
         BatchDeleteResourcesRequest request) {
-        return new AsyncInvoker<BatchDeleteResourcesRequest, BatchDeleteResourcesResponse>(request,
-            CesMeta.batchDeleteResources, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchDeleteResources, hcClient);
     }
 
     /**
@@ -372,7 +364,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchEnableAlarmRulesRequest 请求对象
+     * @param request BatchEnableAlarmRulesRequest 请求对象
      * @return CompletableFuture<BatchEnableAlarmRulesResponse>
      */
     public CompletableFuture<BatchEnableAlarmRulesResponse> batchEnableAlarmRulesAsync(
@@ -387,13 +379,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchEnableAlarmRulesRequest 请求对象
+     * @param request BatchEnableAlarmRulesRequest 请求对象
      * @return AsyncInvoker<BatchEnableAlarmRulesRequest, BatchEnableAlarmRulesResponse>
      */
     public AsyncInvoker<BatchEnableAlarmRulesRequest, BatchEnableAlarmRulesResponse> batchEnableAlarmRulesAsyncInvoker(
         BatchEnableAlarmRulesRequest request) {
-        return new AsyncInvoker<BatchEnableAlarmRulesRequest, BatchEnableAlarmRulesResponse>(request,
-            CesMeta.batchEnableAlarmRules, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchEnableAlarmRules, hcClient);
     }
 
     /**
@@ -403,7 +394,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNotificationMaskTimeRequest 请求对象
+     * @param request BatchUpdateNotificationMaskTimeRequest 请求对象
      * @return CompletableFuture<BatchUpdateNotificationMaskTimeResponse>
      */
     public CompletableFuture<BatchUpdateNotificationMaskTimeResponse> batchUpdateNotificationMaskTimeAsync(
@@ -418,13 +409,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNotificationMaskTimeRequest 请求对象
+     * @param request BatchUpdateNotificationMaskTimeRequest 请求对象
      * @return AsyncInvoker<BatchUpdateNotificationMaskTimeRequest, BatchUpdateNotificationMaskTimeResponse>
      */
     public AsyncInvoker<BatchUpdateNotificationMaskTimeRequest, BatchUpdateNotificationMaskTimeResponse> batchUpdateNotificationMaskTimeAsyncInvoker(
         BatchUpdateNotificationMaskTimeRequest request) {
-        return new AsyncInvoker<BatchUpdateNotificationMaskTimeRequest, BatchUpdateNotificationMaskTimeResponse>(
-            request, CesMeta.batchUpdateNotificationMaskTime, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchUpdateNotificationMaskTime, hcClient);
     }
 
     /**
@@ -434,7 +424,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNotificationMasksRequest 请求对象
+     * @param request BatchUpdateNotificationMasksRequest 请求对象
      * @return CompletableFuture<BatchUpdateNotificationMasksResponse>
      */
     public CompletableFuture<BatchUpdateNotificationMasksResponse> batchUpdateNotificationMasksAsync(
@@ -449,13 +439,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNotificationMasksRequest 请求对象
+     * @param request BatchUpdateNotificationMasksRequest 请求对象
      * @return AsyncInvoker<BatchUpdateNotificationMasksRequest, BatchUpdateNotificationMasksResponse>
      */
     public AsyncInvoker<BatchUpdateNotificationMasksRequest, BatchUpdateNotificationMasksResponse> batchUpdateNotificationMasksAsyncInvoker(
         BatchUpdateNotificationMasksRequest request) {
-        return new AsyncInvoker<BatchUpdateNotificationMasksRequest, BatchUpdateNotificationMasksResponse>(request,
-            CesMeta.batchUpdateNotificationMasks, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchUpdateNotificationMasks, hcClient);
     }
 
     /**
@@ -465,7 +454,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateOneClickAlarmPoliciesEnabledStateRequest 请求对象
+     * @param request BatchUpdateOneClickAlarmPoliciesEnabledStateRequest 请求对象
      * @return CompletableFuture<BatchUpdateOneClickAlarmPoliciesEnabledStateResponse>
      */
     public CompletableFuture<BatchUpdateOneClickAlarmPoliciesEnabledStateResponse> batchUpdateOneClickAlarmPoliciesEnabledStateAsync(
@@ -480,13 +469,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateOneClickAlarmPoliciesEnabledStateRequest 请求对象
+     * @param request BatchUpdateOneClickAlarmPoliciesEnabledStateRequest 请求对象
      * @return AsyncInvoker<BatchUpdateOneClickAlarmPoliciesEnabledStateRequest, BatchUpdateOneClickAlarmPoliciesEnabledStateResponse>
      */
     public AsyncInvoker<BatchUpdateOneClickAlarmPoliciesEnabledStateRequest, BatchUpdateOneClickAlarmPoliciesEnabledStateResponse> batchUpdateOneClickAlarmPoliciesEnabledStateAsyncInvoker(
         BatchUpdateOneClickAlarmPoliciesEnabledStateRequest request) {
-        return new AsyncInvoker<BatchUpdateOneClickAlarmPoliciesEnabledStateRequest, BatchUpdateOneClickAlarmPoliciesEnabledStateResponse>(
-            request, CesMeta.batchUpdateOneClickAlarmPoliciesEnabledState, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchUpdateOneClickAlarmPoliciesEnabledState, hcClient);
     }
 
     /**
@@ -496,7 +484,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateOneClickAlarmsEnabledStateRequest 请求对象
+     * @param request BatchUpdateOneClickAlarmsEnabledStateRequest 请求对象
      * @return CompletableFuture<BatchUpdateOneClickAlarmsEnabledStateResponse>
      */
     public CompletableFuture<BatchUpdateOneClickAlarmsEnabledStateResponse> batchUpdateOneClickAlarmsEnabledStateAsync(
@@ -511,13 +499,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateOneClickAlarmsEnabledStateRequest 请求对象
+     * @param request BatchUpdateOneClickAlarmsEnabledStateRequest 请求对象
      * @return AsyncInvoker<BatchUpdateOneClickAlarmsEnabledStateRequest, BatchUpdateOneClickAlarmsEnabledStateResponse>
      */
     public AsyncInvoker<BatchUpdateOneClickAlarmsEnabledStateRequest, BatchUpdateOneClickAlarmsEnabledStateResponse> batchUpdateOneClickAlarmsEnabledStateAsyncInvoker(
         BatchUpdateOneClickAlarmsEnabledStateRequest request) {
-        return new AsyncInvoker<BatchUpdateOneClickAlarmsEnabledStateRequest, BatchUpdateOneClickAlarmsEnabledStateResponse>(
-            request, CesMeta.batchUpdateOneClickAlarmsEnabledState, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchUpdateOneClickAlarmsEnabledState, hcClient);
     }
 
     /**
@@ -527,7 +514,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateWidgetsRequest 请求对象
+     * @param request BatchUpdateWidgetsRequest 请求对象
      * @return CompletableFuture<BatchUpdateWidgetsResponse>
      */
     public CompletableFuture<BatchUpdateWidgetsResponse> batchUpdateWidgetsAsync(BatchUpdateWidgetsRequest request) {
@@ -541,13 +528,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateWidgetsRequest 请求对象
+     * @param request BatchUpdateWidgetsRequest 请求对象
      * @return AsyncInvoker<BatchUpdateWidgetsRequest, BatchUpdateWidgetsResponse>
      */
     public AsyncInvoker<BatchUpdateWidgetsRequest, BatchUpdateWidgetsResponse> batchUpdateWidgetsAsyncInvoker(
         BatchUpdateWidgetsRequest request) {
-        return new AsyncInvoker<BatchUpdateWidgetsRequest, BatchUpdateWidgetsResponse>(request,
-            CesMeta.batchUpdateWidgets, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.batchUpdateWidgets, hcClient);
     }
 
     /**
@@ -557,7 +543,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlarmRulesRequest 请求对象
+     * @param request CreateAlarmRulesRequest 请求对象
      * @return CompletableFuture<CreateAlarmRulesResponse>
      */
     public CompletableFuture<CreateAlarmRulesResponse> createAlarmRulesAsync(CreateAlarmRulesRequest request) {
@@ -571,13 +557,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlarmRulesRequest 请求对象
+     * @param request CreateAlarmRulesRequest 请求对象
      * @return AsyncInvoker<CreateAlarmRulesRequest, CreateAlarmRulesResponse>
      */
     public AsyncInvoker<CreateAlarmRulesRequest, CreateAlarmRulesResponse> createAlarmRulesAsyncInvoker(
         CreateAlarmRulesRequest request) {
-        return new AsyncInvoker<CreateAlarmRulesRequest, CreateAlarmRulesResponse>(request, CesMeta.createAlarmRules,
-            hcClient);
+        return new AsyncInvoker<>(request, CesMeta.createAlarmRules, hcClient);
     }
 
     /**
@@ -587,7 +572,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlarmTemplateRequest 请求对象
+     * @param request CreateAlarmTemplateRequest 请求对象
      * @return CompletableFuture<CreateAlarmTemplateResponse>
      */
     public CompletableFuture<CreateAlarmTemplateResponse> createAlarmTemplateAsync(CreateAlarmTemplateRequest request) {
@@ -601,13 +586,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlarmTemplateRequest 请求对象
+     * @param request CreateAlarmTemplateRequest 请求对象
      * @return AsyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse>
      */
     public AsyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse> createAlarmTemplateAsyncInvoker(
         CreateAlarmTemplateRequest request) {
-        return new AsyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse>(request,
-            CesMeta.createAlarmTemplate, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.createAlarmTemplate, hcClient);
     }
 
     /**
@@ -617,7 +601,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDashboardWidgetsRequest 请求对象
+     * @param request CreateDashboardWidgetsRequest 请求对象
      * @return CompletableFuture<CreateDashboardWidgetsResponse>
      */
     public CompletableFuture<CreateDashboardWidgetsResponse> createDashboardWidgetsAsync(
@@ -632,13 +616,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDashboardWidgetsRequest 请求对象
+     * @param request CreateDashboardWidgetsRequest 请求对象
      * @return AsyncInvoker<CreateDashboardWidgetsRequest, CreateDashboardWidgetsResponse>
      */
     public AsyncInvoker<CreateDashboardWidgetsRequest, CreateDashboardWidgetsResponse> createDashboardWidgetsAsyncInvoker(
         CreateDashboardWidgetsRequest request) {
-        return new AsyncInvoker<CreateDashboardWidgetsRequest, CreateDashboardWidgetsResponse>(request,
-            CesMeta.createDashboardWidgets, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.createDashboardWidgets, hcClient);
     }
 
     /**
@@ -648,7 +631,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOneClickAlarmRequest 请求对象
+     * @param request CreateOneClickAlarmRequest 请求对象
      * @return CompletableFuture<CreateOneClickAlarmResponse>
      */
     public CompletableFuture<CreateOneClickAlarmResponse> createOneClickAlarmAsync(CreateOneClickAlarmRequest request) {
@@ -662,13 +645,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOneClickAlarmRequest 请求对象
+     * @param request CreateOneClickAlarmRequest 请求对象
      * @return AsyncInvoker<CreateOneClickAlarmRequest, CreateOneClickAlarmResponse>
      */
     public AsyncInvoker<CreateOneClickAlarmRequest, CreateOneClickAlarmResponse> createOneClickAlarmAsyncInvoker(
         CreateOneClickAlarmRequest request) {
-        return new AsyncInvoker<CreateOneClickAlarmRequest, CreateOneClickAlarmResponse>(request,
-            CesMeta.createOneClickAlarm, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.createOneClickAlarm, hcClient);
     }
 
     /**
@@ -678,7 +660,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOneDashboardRequest 请求对象
+     * @param request CreateOneDashboardRequest 请求对象
      * @return CompletableFuture<CreateOneDashboardResponse>
      */
     public CompletableFuture<CreateOneDashboardResponse> createOneDashboardAsync(CreateOneDashboardRequest request) {
@@ -692,13 +674,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOneDashboardRequest 请求对象
+     * @param request CreateOneDashboardRequest 请求对象
      * @return AsyncInvoker<CreateOneDashboardRequest, CreateOneDashboardResponse>
      */
     public AsyncInvoker<CreateOneDashboardRequest, CreateOneDashboardResponse> createOneDashboardAsyncInvoker(
         CreateOneDashboardRequest request) {
-        return new AsyncInvoker<CreateOneDashboardRequest, CreateOneDashboardResponse>(request,
-            CesMeta.createOneDashboard, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.createOneDashboard, hcClient);
     }
 
     /**
@@ -708,7 +689,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceGroupRequest 请求对象
+     * @param request CreateResourceGroupRequest 请求对象
      * @return CompletableFuture<CreateResourceGroupResponse>
      */
     public CompletableFuture<CreateResourceGroupResponse> createResourceGroupAsync(CreateResourceGroupRequest request) {
@@ -722,13 +703,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceGroupRequest 请求对象
+     * @param request CreateResourceGroupRequest 请求对象
      * @return AsyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse>
      */
     public AsyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse> createResourceGroupAsyncInvoker(
         CreateResourceGroupRequest request) {
-        return new AsyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse>(request,
-            CesMeta.createResourceGroup, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.createResourceGroup, hcClient);
     }
 
     /**
@@ -738,7 +718,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmRuleResourcesRequest 请求对象
+     * @param request DeleteAlarmRuleResourcesRequest 请求对象
      * @return CompletableFuture<DeleteAlarmRuleResourcesResponse>
      */
     public CompletableFuture<DeleteAlarmRuleResourcesResponse> deleteAlarmRuleResourcesAsync(
@@ -753,13 +733,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmRuleResourcesRequest 请求对象
+     * @param request DeleteAlarmRuleResourcesRequest 请求对象
      * @return AsyncInvoker<DeleteAlarmRuleResourcesRequest, DeleteAlarmRuleResourcesResponse>
      */
     public AsyncInvoker<DeleteAlarmRuleResourcesRequest, DeleteAlarmRuleResourcesResponse> deleteAlarmRuleResourcesAsyncInvoker(
         DeleteAlarmRuleResourcesRequest request) {
-        return new AsyncInvoker<DeleteAlarmRuleResourcesRequest, DeleteAlarmRuleResourcesResponse>(request,
-            CesMeta.deleteAlarmRuleResources, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.deleteAlarmRuleResources, hcClient);
     }
 
     /**
@@ -769,7 +748,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDashboardsRequest 请求对象
+     * @param request DeleteDashboardsRequest 请求对象
      * @return CompletableFuture<DeleteDashboardsResponse>
      */
     public CompletableFuture<DeleteDashboardsResponse> deleteDashboardsAsync(DeleteDashboardsRequest request) {
@@ -783,13 +762,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDashboardsRequest 请求对象
+     * @param request DeleteDashboardsRequest 请求对象
      * @return AsyncInvoker<DeleteDashboardsRequest, DeleteDashboardsResponse>
      */
     public AsyncInvoker<DeleteDashboardsRequest, DeleteDashboardsResponse> deleteDashboardsAsyncInvoker(
         DeleteDashboardsRequest request) {
-        return new AsyncInvoker<DeleteDashboardsRequest, DeleteDashboardsResponse>(request, CesMeta.deleteDashboards,
-            hcClient);
+        return new AsyncInvoker<>(request, CesMeta.deleteDashboards, hcClient);
     }
 
     /**
@@ -799,7 +777,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOneWidgetRequest 请求对象
+     * @param request DeleteOneWidgetRequest 请求对象
      * @return CompletableFuture<DeleteOneWidgetResponse>
      */
     public CompletableFuture<DeleteOneWidgetResponse> deleteOneWidgetAsync(DeleteOneWidgetRequest request) {
@@ -813,13 +791,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOneWidgetRequest 请求对象
+     * @param request DeleteOneWidgetRequest 请求对象
      * @return AsyncInvoker<DeleteOneWidgetRequest, DeleteOneWidgetResponse>
      */
     public AsyncInvoker<DeleteOneWidgetRequest, DeleteOneWidgetResponse> deleteOneWidgetAsyncInvoker(
         DeleteOneWidgetRequest request) {
-        return new AsyncInvoker<DeleteOneWidgetRequest, DeleteOneWidgetResponse>(request, CesMeta.deleteOneWidget,
-            hcClient);
+        return new AsyncInvoker<>(request, CesMeta.deleteOneWidget, hcClient);
     }
 
     /**
@@ -829,7 +806,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentDimensionInfoRequest 请求对象
+     * @param request ListAgentDimensionInfoRequest 请求对象
      * @return CompletableFuture<ListAgentDimensionInfoResponse>
      */
     public CompletableFuture<ListAgentDimensionInfoResponse> listAgentDimensionInfoAsync(
@@ -844,13 +821,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentDimensionInfoRequest 请求对象
+     * @param request ListAgentDimensionInfoRequest 请求对象
      * @return AsyncInvoker<ListAgentDimensionInfoRequest, ListAgentDimensionInfoResponse>
      */
     public AsyncInvoker<ListAgentDimensionInfoRequest, ListAgentDimensionInfoResponse> listAgentDimensionInfoAsyncInvoker(
         ListAgentDimensionInfoRequest request) {
-        return new AsyncInvoker<ListAgentDimensionInfoRequest, ListAgentDimensionInfoResponse>(request,
-            CesMeta.listAgentDimensionInfo, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listAgentDimensionInfo, hcClient);
     }
 
     /**
@@ -860,7 +836,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmHistoriesRequest 请求对象
+     * @param request ListAlarmHistoriesRequest 请求对象
      * @return CompletableFuture<ListAlarmHistoriesResponse>
      */
     public CompletableFuture<ListAlarmHistoriesResponse> listAlarmHistoriesAsync(ListAlarmHistoriesRequest request) {
@@ -874,13 +850,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmHistoriesRequest 请求对象
+     * @param request ListAlarmHistoriesRequest 请求对象
      * @return AsyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse>
      */
     public AsyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> listAlarmHistoriesAsyncInvoker(
         ListAlarmHistoriesRequest request) {
-        return new AsyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse>(request,
-            CesMeta.listAlarmHistories, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listAlarmHistories, hcClient);
     }
 
     /**
@@ -890,7 +865,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmRulePoliciesRequest 请求对象
+     * @param request ListAlarmRulePoliciesRequest 请求对象
      * @return CompletableFuture<ListAlarmRulePoliciesResponse>
      */
     public CompletableFuture<ListAlarmRulePoliciesResponse> listAlarmRulePoliciesAsync(
@@ -905,13 +880,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmRulePoliciesRequest 请求对象
+     * @param request ListAlarmRulePoliciesRequest 请求对象
      * @return AsyncInvoker<ListAlarmRulePoliciesRequest, ListAlarmRulePoliciesResponse>
      */
     public AsyncInvoker<ListAlarmRulePoliciesRequest, ListAlarmRulePoliciesResponse> listAlarmRulePoliciesAsyncInvoker(
         ListAlarmRulePoliciesRequest request) {
-        return new AsyncInvoker<ListAlarmRulePoliciesRequest, ListAlarmRulePoliciesResponse>(request,
-            CesMeta.listAlarmRulePolicies, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listAlarmRulePolicies, hcClient);
     }
 
     /**
@@ -921,7 +895,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmRuleResourcesRequest 请求对象
+     * @param request ListAlarmRuleResourcesRequest 请求对象
      * @return CompletableFuture<ListAlarmRuleResourcesResponse>
      */
     public CompletableFuture<ListAlarmRuleResourcesResponse> listAlarmRuleResourcesAsync(
@@ -936,13 +910,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmRuleResourcesRequest 请求对象
+     * @param request ListAlarmRuleResourcesRequest 请求对象
      * @return AsyncInvoker<ListAlarmRuleResourcesRequest, ListAlarmRuleResourcesResponse>
      */
     public AsyncInvoker<ListAlarmRuleResourcesRequest, ListAlarmRuleResourcesResponse> listAlarmRuleResourcesAsyncInvoker(
         ListAlarmRuleResourcesRequest request) {
-        return new AsyncInvoker<ListAlarmRuleResourcesRequest, ListAlarmRuleResourcesResponse>(request,
-            CesMeta.listAlarmRuleResources, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listAlarmRuleResources, hcClient);
     }
 
     /**
@@ -952,7 +925,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmRulesRequest 请求对象
+     * @param request ListAlarmRulesRequest 请求对象
      * @return CompletableFuture<ListAlarmRulesResponse>
      */
     public CompletableFuture<ListAlarmRulesResponse> listAlarmRulesAsync(ListAlarmRulesRequest request) {
@@ -966,13 +939,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmRulesRequest 请求对象
+     * @param request ListAlarmRulesRequest 请求对象
      * @return AsyncInvoker<ListAlarmRulesRequest, ListAlarmRulesResponse>
      */
     public AsyncInvoker<ListAlarmRulesRequest, ListAlarmRulesResponse> listAlarmRulesAsyncInvoker(
         ListAlarmRulesRequest request) {
-        return new AsyncInvoker<ListAlarmRulesRequest, ListAlarmRulesResponse>(request, CesMeta.listAlarmRules,
-            hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listAlarmRules, hcClient);
     }
 
     /**
@@ -982,7 +954,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmTemplateAssociationAlarmsRequest 请求对象
+     * @param request ListAlarmTemplateAssociationAlarmsRequest 请求对象
      * @return CompletableFuture<ListAlarmTemplateAssociationAlarmsResponse>
      */
     public CompletableFuture<ListAlarmTemplateAssociationAlarmsResponse> listAlarmTemplateAssociationAlarmsAsync(
@@ -997,13 +969,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmTemplateAssociationAlarmsRequest 请求对象
+     * @param request ListAlarmTemplateAssociationAlarmsRequest 请求对象
      * @return AsyncInvoker<ListAlarmTemplateAssociationAlarmsRequest, ListAlarmTemplateAssociationAlarmsResponse>
      */
     public AsyncInvoker<ListAlarmTemplateAssociationAlarmsRequest, ListAlarmTemplateAssociationAlarmsResponse> listAlarmTemplateAssociationAlarmsAsyncInvoker(
         ListAlarmTemplateAssociationAlarmsRequest request) {
-        return new AsyncInvoker<ListAlarmTemplateAssociationAlarmsRequest, ListAlarmTemplateAssociationAlarmsResponse>(
-            request, CesMeta.listAlarmTemplateAssociationAlarms, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listAlarmTemplateAssociationAlarms, hcClient);
     }
 
     /**
@@ -1013,7 +984,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmTemplatesRequest 请求对象
+     * @param request ListAlarmTemplatesRequest 请求对象
      * @return CompletableFuture<ListAlarmTemplatesResponse>
      */
     public CompletableFuture<ListAlarmTemplatesResponse> listAlarmTemplatesAsync(ListAlarmTemplatesRequest request) {
@@ -1027,13 +998,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmTemplatesRequest 请求对象
+     * @param request ListAlarmTemplatesRequest 请求对象
      * @return AsyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse>
      */
     public AsyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse> listAlarmTemplatesAsyncInvoker(
         ListAlarmTemplatesRequest request) {
-        return new AsyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse>(request,
-            CesMeta.listAlarmTemplates, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listAlarmTemplates, hcClient);
     }
 
     /**
@@ -1043,7 +1013,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCesTargetProjectTagsRequest 请求对象
+     * @param request ListCesTargetProjectTagsRequest 请求对象
      * @return CompletableFuture<ListCesTargetProjectTagsResponse>
      */
     public CompletableFuture<ListCesTargetProjectTagsResponse> listCesTargetProjectTagsAsync(
@@ -1058,13 +1028,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCesTargetProjectTagsRequest 请求对象
+     * @param request ListCesTargetProjectTagsRequest 请求对象
      * @return AsyncInvoker<ListCesTargetProjectTagsRequest, ListCesTargetProjectTagsResponse>
      */
     public AsyncInvoker<ListCesTargetProjectTagsRequest, ListCesTargetProjectTagsResponse> listCesTargetProjectTagsAsyncInvoker(
         ListCesTargetProjectTagsRequest request) {
-        return new AsyncInvoker<ListCesTargetProjectTagsRequest, ListCesTargetProjectTagsResponse>(request,
-            CesMeta.listCesTargetProjectTags, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listCesTargetProjectTags, hcClient);
     }
 
     /**
@@ -1074,7 +1043,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDashboardInfosRequest 请求对象
+     * @param request ListDashboardInfosRequest 请求对象
      * @return CompletableFuture<ListDashboardInfosResponse>
      */
     public CompletableFuture<ListDashboardInfosResponse> listDashboardInfosAsync(ListDashboardInfosRequest request) {
@@ -1088,13 +1057,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDashboardInfosRequest 请求对象
+     * @param request ListDashboardInfosRequest 请求对象
      * @return AsyncInvoker<ListDashboardInfosRequest, ListDashboardInfosResponse>
      */
     public AsyncInvoker<ListDashboardInfosRequest, ListDashboardInfosResponse> listDashboardInfosAsyncInvoker(
         ListDashboardInfosRequest request) {
-        return new AsyncInvoker<ListDashboardInfosRequest, ListDashboardInfosResponse>(request,
-            CesMeta.listDashboardInfos, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listDashboardInfos, hcClient);
     }
 
     /**
@@ -1104,7 +1072,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDashboardWidgetsRequest 请求对象
+     * @param request ListDashboardWidgetsRequest 请求对象
      * @return CompletableFuture<ListDashboardWidgetsResponse>
      */
     public CompletableFuture<ListDashboardWidgetsResponse> listDashboardWidgetsAsync(
@@ -1119,13 +1087,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDashboardWidgetsRequest 请求对象
+     * @param request ListDashboardWidgetsRequest 请求对象
      * @return AsyncInvoker<ListDashboardWidgetsRequest, ListDashboardWidgetsResponse>
      */
     public AsyncInvoker<ListDashboardWidgetsRequest, ListDashboardWidgetsResponse> listDashboardWidgetsAsyncInvoker(
         ListDashboardWidgetsRequest request) {
-        return new AsyncInvoker<ListDashboardWidgetsRequest, ListDashboardWidgetsResponse>(request,
-            CesMeta.listDashboardWidgets, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listDashboardWidgets, hcClient);
     }
 
     /**
@@ -1135,7 +1102,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationMaskResourcesRequest 请求对象
+     * @param request ListNotificationMaskResourcesRequest 请求对象
      * @return CompletableFuture<ListNotificationMaskResourcesResponse>
      */
     public CompletableFuture<ListNotificationMaskResourcesResponse> listNotificationMaskResourcesAsync(
@@ -1150,13 +1117,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationMaskResourcesRequest 请求对象
+     * @param request ListNotificationMaskResourcesRequest 请求对象
      * @return AsyncInvoker<ListNotificationMaskResourcesRequest, ListNotificationMaskResourcesResponse>
      */
     public AsyncInvoker<ListNotificationMaskResourcesRequest, ListNotificationMaskResourcesResponse> listNotificationMaskResourcesAsyncInvoker(
         ListNotificationMaskResourcesRequest request) {
-        return new AsyncInvoker<ListNotificationMaskResourcesRequest, ListNotificationMaskResourcesResponse>(request,
-            CesMeta.listNotificationMaskResources, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listNotificationMaskResources, hcClient);
     }
 
     /**
@@ -1166,7 +1132,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationMasksRequest 请求对象
+     * @param request ListNotificationMasksRequest 请求对象
      * @return CompletableFuture<ListNotificationMasksResponse>
      */
     public CompletableFuture<ListNotificationMasksResponse> listNotificationMasksAsync(
@@ -1181,13 +1147,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationMasksRequest 请求对象
+     * @param request ListNotificationMasksRequest 请求对象
      * @return AsyncInvoker<ListNotificationMasksRequest, ListNotificationMasksResponse>
      */
     public AsyncInvoker<ListNotificationMasksRequest, ListNotificationMasksResponse> listNotificationMasksAsyncInvoker(
         ListNotificationMasksRequest request) {
-        return new AsyncInvoker<ListNotificationMasksRequest, ListNotificationMasksResponse>(request,
-            CesMeta.listNotificationMasks, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listNotificationMasks, hcClient);
     }
 
     /**
@@ -1197,7 +1162,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOneClickAlarmRulesRequest 请求对象
+     * @param request ListOneClickAlarmRulesRequest 请求对象
      * @return CompletableFuture<ListOneClickAlarmRulesResponse>
      */
     public CompletableFuture<ListOneClickAlarmRulesResponse> listOneClickAlarmRulesAsync(
@@ -1212,13 +1177,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOneClickAlarmRulesRequest 请求对象
+     * @param request ListOneClickAlarmRulesRequest 请求对象
      * @return AsyncInvoker<ListOneClickAlarmRulesRequest, ListOneClickAlarmRulesResponse>
      */
     public AsyncInvoker<ListOneClickAlarmRulesRequest, ListOneClickAlarmRulesResponse> listOneClickAlarmRulesAsyncInvoker(
         ListOneClickAlarmRulesRequest request) {
-        return new AsyncInvoker<ListOneClickAlarmRulesRequest, ListOneClickAlarmRulesResponse>(request,
-            CesMeta.listOneClickAlarmRules, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listOneClickAlarmRules, hcClient);
     }
 
     /**
@@ -1228,7 +1192,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOneClickAlarmsRequest 请求对象
+     * @param request ListOneClickAlarmsRequest 请求对象
      * @return CompletableFuture<ListOneClickAlarmsResponse>
      */
     public CompletableFuture<ListOneClickAlarmsResponse> listOneClickAlarmsAsync(ListOneClickAlarmsRequest request) {
@@ -1242,13 +1206,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOneClickAlarmsRequest 请求对象
+     * @param request ListOneClickAlarmsRequest 请求对象
      * @return AsyncInvoker<ListOneClickAlarmsRequest, ListOneClickAlarmsResponse>
      */
     public AsyncInvoker<ListOneClickAlarmsRequest, ListOneClickAlarmsResponse> listOneClickAlarmsAsyncInvoker(
         ListOneClickAlarmsRequest request) {
-        return new AsyncInvoker<ListOneClickAlarmsRequest, ListOneClickAlarmsResponse>(request,
-            CesMeta.listOneClickAlarms, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listOneClickAlarms, hcClient);
     }
 
     /**
@@ -1258,7 +1221,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceGroupsRequest 请求对象
+     * @param request ListResourceGroupsRequest 请求对象
      * @return CompletableFuture<ListResourceGroupsResponse>
      */
     public CompletableFuture<ListResourceGroupsResponse> listResourceGroupsAsync(ListResourceGroupsRequest request) {
@@ -1272,13 +1235,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceGroupsRequest 请求对象
+     * @param request ListResourceGroupsRequest 请求对象
      * @return AsyncInvoker<ListResourceGroupsRequest, ListResourceGroupsResponse>
      */
     public AsyncInvoker<ListResourceGroupsRequest, ListResourceGroupsResponse> listResourceGroupsAsyncInvoker(
         ListResourceGroupsRequest request) {
-        return new AsyncInvoker<ListResourceGroupsRequest, ListResourceGroupsResponse>(request,
-            CesMeta.listResourceGroups, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listResourceGroups, hcClient);
     }
 
     /**
@@ -1288,7 +1250,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceGroupsServicesResourcesRequest 请求对象
+     * @param request ListResourceGroupsServicesResourcesRequest 请求对象
      * @return CompletableFuture<ListResourceGroupsServicesResourcesResponse>
      */
     public CompletableFuture<ListResourceGroupsServicesResourcesResponse> listResourceGroupsServicesResourcesAsync(
@@ -1303,13 +1265,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceGroupsServicesResourcesRequest 请求对象
+     * @param request ListResourceGroupsServicesResourcesRequest 请求对象
      * @return AsyncInvoker<ListResourceGroupsServicesResourcesRequest, ListResourceGroupsServicesResourcesResponse>
      */
     public AsyncInvoker<ListResourceGroupsServicesResourcesRequest, ListResourceGroupsServicesResourcesResponse> listResourceGroupsServicesResourcesAsyncInvoker(
         ListResourceGroupsServicesResourcesRequest request) {
-        return new AsyncInvoker<ListResourceGroupsServicesResourcesRequest, ListResourceGroupsServicesResourcesResponse>(
-            request, CesMeta.listResourceGroupsServicesResources, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.listResourceGroupsServicesResources, hcClient);
     }
 
     /**
@@ -1319,7 +1280,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlarmTemplateRequest 请求对象
+     * @param request ShowAlarmTemplateRequest 请求对象
      * @return CompletableFuture<ShowAlarmTemplateResponse>
      */
     public CompletableFuture<ShowAlarmTemplateResponse> showAlarmTemplateAsync(ShowAlarmTemplateRequest request) {
@@ -1333,13 +1294,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlarmTemplateRequest 请求对象
+     * @param request ShowAlarmTemplateRequest 请求对象
      * @return AsyncInvoker<ShowAlarmTemplateRequest, ShowAlarmTemplateResponse>
      */
     public AsyncInvoker<ShowAlarmTemplateRequest, ShowAlarmTemplateResponse> showAlarmTemplateAsyncInvoker(
         ShowAlarmTemplateRequest request) {
-        return new AsyncInvoker<ShowAlarmTemplateRequest, ShowAlarmTemplateResponse>(request, CesMeta.showAlarmTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, CesMeta.showAlarmTemplate, hcClient);
     }
 
     /**
@@ -1349,7 +1309,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceGroupRequest 请求对象
+     * @param request ShowResourceGroupRequest 请求对象
      * @return CompletableFuture<ShowResourceGroupResponse>
      */
     public CompletableFuture<ShowResourceGroupResponse> showResourceGroupAsync(ShowResourceGroupRequest request) {
@@ -1363,13 +1323,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceGroupRequest 请求对象
+     * @param request ShowResourceGroupRequest 请求对象
      * @return AsyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse>
      */
     public AsyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse> showResourceGroupAsyncInvoker(
         ShowResourceGroupRequest request) {
-        return new AsyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse>(request, CesMeta.showResourceGroup,
-            hcClient);
+        return new AsyncInvoker<>(request, CesMeta.showResourceGroup, hcClient);
     }
 
     /**
@@ -1379,7 +1338,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWidgetRequest 请求对象
+     * @param request ShowWidgetRequest 请求对象
      * @return CompletableFuture<ShowWidgetResponse>
      */
     public CompletableFuture<ShowWidgetResponse> showWidgetAsync(ShowWidgetRequest request) {
@@ -1393,11 +1352,11 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWidgetRequest 请求对象
+     * @param request ShowWidgetRequest 请求对象
      * @return AsyncInvoker<ShowWidgetRequest, ShowWidgetResponse>
      */
     public AsyncInvoker<ShowWidgetRequest, ShowWidgetResponse> showWidgetAsyncInvoker(ShowWidgetRequest request) {
-        return new AsyncInvoker<ShowWidgetRequest, ShowWidgetResponse>(request, CesMeta.showWidget, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.showWidget, hcClient);
     }
 
     /**
@@ -1407,7 +1366,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmNotificationsRequest 请求对象
+     * @param request UpdateAlarmNotificationsRequest 请求对象
      * @return CompletableFuture<UpdateAlarmNotificationsResponse>
      */
     public CompletableFuture<UpdateAlarmNotificationsResponse> updateAlarmNotificationsAsync(
@@ -1422,13 +1381,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmNotificationsRequest 请求对象
+     * @param request UpdateAlarmNotificationsRequest 请求对象
      * @return AsyncInvoker<UpdateAlarmNotificationsRequest, UpdateAlarmNotificationsResponse>
      */
     public AsyncInvoker<UpdateAlarmNotificationsRequest, UpdateAlarmNotificationsResponse> updateAlarmNotificationsAsyncInvoker(
         UpdateAlarmNotificationsRequest request) {
-        return new AsyncInvoker<UpdateAlarmNotificationsRequest, UpdateAlarmNotificationsResponse>(request,
-            CesMeta.updateAlarmNotifications, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.updateAlarmNotifications, hcClient);
     }
 
     /**
@@ -1438,7 +1396,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmRulePoliciesRequest 请求对象
+     * @param request UpdateAlarmRulePoliciesRequest 请求对象
      * @return CompletableFuture<UpdateAlarmRulePoliciesResponse>
      */
     public CompletableFuture<UpdateAlarmRulePoliciesResponse> updateAlarmRulePoliciesAsync(
@@ -1453,13 +1411,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmRulePoliciesRequest 请求对象
+     * @param request UpdateAlarmRulePoliciesRequest 请求对象
      * @return AsyncInvoker<UpdateAlarmRulePoliciesRequest, UpdateAlarmRulePoliciesResponse>
      */
     public AsyncInvoker<UpdateAlarmRulePoliciesRequest, UpdateAlarmRulePoliciesResponse> updateAlarmRulePoliciesAsyncInvoker(
         UpdateAlarmRulePoliciesRequest request) {
-        return new AsyncInvoker<UpdateAlarmRulePoliciesRequest, UpdateAlarmRulePoliciesResponse>(request,
-            CesMeta.updateAlarmRulePolicies, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.updateAlarmRulePolicies, hcClient);
     }
 
     /**
@@ -1469,7 +1426,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmTemplateRequest 请求对象
+     * @param request UpdateAlarmTemplateRequest 请求对象
      * @return CompletableFuture<UpdateAlarmTemplateResponse>
      */
     public CompletableFuture<UpdateAlarmTemplateResponse> updateAlarmTemplateAsync(UpdateAlarmTemplateRequest request) {
@@ -1483,13 +1440,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmTemplateRequest 请求对象
+     * @param request UpdateAlarmTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse>
      */
     public AsyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse> updateAlarmTemplateAsyncInvoker(
         UpdateAlarmTemplateRequest request) {
-        return new AsyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse>(request,
-            CesMeta.updateAlarmTemplate, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.updateAlarmTemplate, hcClient);
     }
 
     /**
@@ -1499,7 +1455,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDashboardRequest 请求对象
+     * @param request UpdateDashboardRequest 请求对象
      * @return CompletableFuture<UpdateDashboardResponse>
      */
     public CompletableFuture<UpdateDashboardResponse> updateDashboardAsync(UpdateDashboardRequest request) {
@@ -1513,13 +1469,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDashboardRequest 请求对象
+     * @param request UpdateDashboardRequest 请求对象
      * @return AsyncInvoker<UpdateDashboardRequest, UpdateDashboardResponse>
      */
     public AsyncInvoker<UpdateDashboardRequest, UpdateDashboardResponse> updateDashboardAsyncInvoker(
         UpdateDashboardRequest request) {
-        return new AsyncInvoker<UpdateDashboardRequest, UpdateDashboardResponse>(request, CesMeta.updateDashboard,
-            hcClient);
+        return new AsyncInvoker<>(request, CesMeta.updateDashboard, hcClient);
     }
 
     /**
@@ -1529,7 +1484,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotificationMaskRequest 请求对象
+     * @param request UpdateNotificationMaskRequest 请求对象
      * @return CompletableFuture<UpdateNotificationMaskResponse>
      */
     public CompletableFuture<UpdateNotificationMaskResponse> updateNotificationMaskAsync(
@@ -1544,13 +1499,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotificationMaskRequest 请求对象
+     * @param request UpdateNotificationMaskRequest 请求对象
      * @return AsyncInvoker<UpdateNotificationMaskRequest, UpdateNotificationMaskResponse>
      */
     public AsyncInvoker<UpdateNotificationMaskRequest, UpdateNotificationMaskResponse> updateNotificationMaskAsyncInvoker(
         UpdateNotificationMaskRequest request) {
-        return new AsyncInvoker<UpdateNotificationMaskRequest, UpdateNotificationMaskResponse>(request,
-            CesMeta.updateNotificationMask, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.updateNotificationMask, hcClient);
     }
 
     /**
@@ -1560,7 +1514,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateOneClickAlarmNotificationsRequest 请求对象
+     * @param request UpdateOneClickAlarmNotificationsRequest 请求对象
      * @return CompletableFuture<UpdateOneClickAlarmNotificationsResponse>
      */
     public CompletableFuture<UpdateOneClickAlarmNotificationsResponse> updateOneClickAlarmNotificationsAsync(
@@ -1575,13 +1529,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateOneClickAlarmNotificationsRequest 请求对象
+     * @param request UpdateOneClickAlarmNotificationsRequest 请求对象
      * @return AsyncInvoker<UpdateOneClickAlarmNotificationsRequest, UpdateOneClickAlarmNotificationsResponse>
      */
     public AsyncInvoker<UpdateOneClickAlarmNotificationsRequest, UpdateOneClickAlarmNotificationsResponse> updateOneClickAlarmNotificationsAsyncInvoker(
         UpdateOneClickAlarmNotificationsRequest request) {
-        return new AsyncInvoker<UpdateOneClickAlarmNotificationsRequest, UpdateOneClickAlarmNotificationsResponse>(
-            request, CesMeta.updateOneClickAlarmNotifications, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.updateOneClickAlarmNotifications, hcClient);
     }
 
     /**
@@ -1591,7 +1544,7 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceGroupRequest 请求对象
+     * @param request UpdateResourceGroupRequest 请求对象
      * @return CompletableFuture<UpdateResourceGroupResponse>
      */
     public CompletableFuture<UpdateResourceGroupResponse> updateResourceGroupAsync(UpdateResourceGroupRequest request) {
@@ -1605,13 +1558,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceGroupRequest 请求对象
+     * @param request UpdateResourceGroupRequest 请求对象
      * @return AsyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse>
      */
     public AsyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse> updateResourceGroupAsyncInvoker(
         UpdateResourceGroupRequest request) {
-        return new AsyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse>(request,
-            CesMeta.updateResourceGroup, hcClient);
+        return new AsyncInvoker<>(request, CesMeta.updateResourceGroup, hcClient);
     }
 
 }

@@ -51,9 +51,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class ClassroomMeta {
 
     public static final HttpRequestDef<ApplyJudgementRequest, ApplyJudgementResponse> applyJudgement =
-        genForapplyJudgement();
+        genForApplyJudgement();
 
-    private static HttpRequestDef<ApplyJudgementRequest, ApplyJudgementResponse> genForapplyJudgement() {
+    private static HttpRequestDef<ApplyJudgementRequest, ApplyJudgementResponse> genForApplyJudgement() {
         // basic
         HttpRequestDef.Builder<ApplyJudgementRequest, ApplyJudgementResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ApplyJudgementRequest.class, ApplyJudgementResponse.class)
@@ -66,9 +66,7 @@ public class ClassroomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JudgementTaskRequestBody.class),
-            f -> f.withMarshaller(ApplyJudgementRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ApplyJudgementRequest::getBody, ApplyJudgementRequest::setBody));
 
         // response
 
@@ -76,9 +74,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ShowJudgementDetailRequest, ShowJudgementDetailResponse> showJudgementDetail =
-        genForshowJudgementDetail();
+        genForShowJudgementDetail();
 
-    private static HttpRequestDef<ShowJudgementDetailRequest, ShowJudgementDetailResponse> genForshowJudgementDetail() {
+    private static HttpRequestDef<ShowJudgementDetailRequest, ShowJudgementDetailResponse> genForShowJudgementDetail() {
         // basic
         HttpRequestDef.Builder<ShowJudgementDetailRequest, ShowJudgementDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJudgementDetailRequest.class, ShowJudgementDetailResponse.class)
@@ -91,9 +89,8 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJudgementDetailRequest::getJudgementId, (req, v) -> {
-                req.setJudgementId(v);
-            }));
+            f -> f.withMarshaller(ShowJudgementDetailRequest::getJudgementId,
+                ShowJudgementDetailRequest::setJudgementId));
 
         // response
 
@@ -101,9 +98,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ShowJudgementFileRequest, ShowJudgementFileResponse> showJudgementFile =
-        genForshowJudgementFile();
+        genForShowJudgementFile();
 
-    private static HttpRequestDef<ShowJudgementFileRequest, ShowJudgementFileResponse> genForshowJudgementFile() {
+    private static HttpRequestDef<ShowJudgementFileRequest, ShowJudgementFileResponse> genForShowJudgementFile() {
         // basic
         HttpRequestDef.Builder<ShowJudgementFileRequest, ShowJudgementFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJudgementFileRequest.class, ShowJudgementFileResponse.class)
@@ -116,9 +113,7 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJudgementFileRequest::getFileId, (req, v) -> {
-                req.setFileId(v);
-            }));
+            f -> f.withMarshaller(ShowJudgementFileRequest::getFileId, ShowJudgementFileRequest::setFileId));
 
         // response
 
@@ -126,9 +121,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ExecuteExerciseRequest, ExecuteExerciseResponse> executeExercise =
-        genForexecuteExercise();
+        genForExecuteExercise();
 
-    private static HttpRequestDef<ExecuteExerciseRequest, ExecuteExerciseResponse> genForexecuteExercise() {
+    private static HttpRequestDef<ExecuteExerciseRequest, ExecuteExerciseResponse> genForExecuteExercise() {
         // basic
         HttpRequestDef.Builder<ExecuteExerciseRequest, ExecuteExerciseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExecuteExerciseRequest.class, ExecuteExerciseResponse.class)
@@ -141,23 +136,17 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteExerciseRequest::getExerciseId, (req, v) -> {
-                req.setExerciseId(v);
-            }));
+            f -> f.withMarshaller(ExecuteExerciseRequest::getExerciseId, ExecuteExerciseRequest::setExerciseId));
         builder.<String>withRequestField("user-token",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteExerciseRequest::getUserToken, (req, v) -> {
-                req.setUserToken(v);
-            }));
+            f -> f.withMarshaller(ExecuteExerciseRequest::getUserToken, ExecuteExerciseRequest::setUserToken));
         builder.<PackageExerciseJudgeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PackageExerciseJudgeRequestBody.class),
-            f -> f.withMarshaller(ExecuteExerciseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteExerciseRequest::getBody, ExecuteExerciseRequest::setBody));
 
         // response
 
@@ -165,9 +154,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ListExercisesRequest, ListExercisesResponse> listExercises =
-        genForlistExercises();
+        genForListExercises();
 
-    private static HttpRequestDef<ListExercisesRequest, ListExercisesResponse> genForlistExercises() {
+    private static HttpRequestDef<ListExercisesRequest, ListExercisesResponse> genForListExercises() {
         // basic
         HttpRequestDef.Builder<ListExercisesRequest, ListExercisesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListExercisesRequest.class, ListExercisesResponse.class)
@@ -180,25 +169,21 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExercisesRequest::getPackageId, (req, v) -> {
-                req.setPackageId(v);
-            }));
+            f -> f.withMarshaller(ListExercisesRequest::getPackageId, ListExercisesRequest::setPackageId));
         builder.<ExercisesListRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExercisesListRequestBody.class),
-            f -> f.withMarshaller(ListExercisesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListExercisesRequest::getBody, ListExercisesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPackagesRequest, ListPackagesResponse> listPackages = genForlistPackages();
+    public static final HttpRequestDef<ListPackagesRequest, ListPackagesResponse> listPackages = genForListPackages();
 
-    private static HttpRequestDef<ListPackagesRequest, ListPackagesResponse> genForlistPackages() {
+    private static HttpRequestDef<ListPackagesRequest, ListPackagesResponse> genForListPackages() {
         // basic
         HttpRequestDef.Builder<ListPackagesRequest, ListPackagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListPackagesRequest.class, ListPackagesResponse.class)
@@ -211,9 +196,7 @@ public class ClassroomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PackagesListRequestBody.class),
-            f -> f.withMarshaller(ListPackagesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListPackagesRequest::getBody, ListPackagesRequest::setBody));
 
         // response
 
@@ -221,9 +204,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ShowExerciseDetailRequest, ShowExerciseDetailResponse> showExerciseDetail =
-        genForshowExerciseDetail();
+        genForShowExerciseDetail();
 
-    private static HttpRequestDef<ShowExerciseDetailRequest, ShowExerciseDetailResponse> genForshowExerciseDetail() {
+    private static HttpRequestDef<ShowExerciseDetailRequest, ShowExerciseDetailResponse> genForShowExerciseDetail() {
         // basic
         HttpRequestDef.Builder<ShowExerciseDetailRequest, ShowExerciseDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowExerciseDetailRequest.class, ShowExerciseDetailResponse.class)
@@ -236,9 +219,7 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExerciseDetailRequest::getExerciseId, (req, v) -> {
-                req.setExerciseId(v);
-            }));
+            f -> f.withMarshaller(ShowExerciseDetailRequest::getExerciseId, ShowExerciseDetailRequest::setExerciseId));
 
         // response
 
@@ -246,9 +227,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ShowPackageDetailRequest, ShowPackageDetailResponse> showPackageDetail =
-        genForshowPackageDetail();
+        genForShowPackageDetail();
 
-    private static HttpRequestDef<ShowPackageDetailRequest, ShowPackageDetailResponse> genForshowPackageDetail() {
+    private static HttpRequestDef<ShowPackageDetailRequest, ShowPackageDetailResponse> genForShowPackageDetail() {
         // basic
         HttpRequestDef.Builder<ShowPackageDetailRequest, ShowPackageDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPackageDetailRequest.class, ShowPackageDetailResponse.class)
@@ -261,9 +242,7 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPackageDetailRequest::getPackageId, (req, v) -> {
-                req.setPackageId(v);
-            }));
+            f -> f.withMarshaller(ShowPackageDetailRequest::getPackageId, ShowPackageDetailRequest::setPackageId));
 
         // response
 
@@ -271,9 +250,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ListAllDifficultsRequest, ListAllDifficultsResponse> listAllDifficults =
-        genForlistAllDifficults();
+        genForListAllDifficults();
 
-    private static HttpRequestDef<ListAllDifficultsRequest, ListAllDifficultsResponse> genForlistAllDifficults() {
+    private static HttpRequestDef<ListAllDifficultsRequest, ListAllDifficultsResponse> genForListAllDifficults() {
         // basic
         HttpRequestDef.Builder<ListAllDifficultsRequest, ListAllDifficultsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllDifficultsRequest.class, ListAllDifficultsResponse.class)
@@ -289,9 +268,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse> listMyKnowledgePoints =
-        genForlistMyKnowledgePoints();
+        genForListMyKnowledgePoints();
 
-    private static HttpRequestDef<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse> genForlistMyKnowledgePoints() {
+    private static HttpRequestDef<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse> genForListMyKnowledgePoints() {
         // basic
         HttpRequestDef.Builder<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListMyKnowledgePointsRequest.class, ListMyKnowledgePointsResponse.class)
@@ -304,9 +283,7 @@ public class ClassroomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KnowledgePointsListRequestBody.class),
-            f -> f.withMarshaller(ListMyKnowledgePointsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListMyKnowledgePointsRequest::getBody, ListMyKnowledgePointsRequest::setBody));
 
         // response
 
@@ -314,9 +291,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ListClassroomMembersRequest, ListClassroomMembersResponse> listClassroomMembers =
-        genForlistClassroomMembers();
+        genForListClassroomMembers();
 
-    private static HttpRequestDef<ListClassroomMembersRequest, ListClassroomMembersResponse> genForlistClassroomMembers() {
+    private static HttpRequestDef<ListClassroomMembersRequest, ListClassroomMembersResponse> genForListClassroomMembers() {
         // basic
         HttpRequestDef.Builder<ListClassroomMembersRequest, ListClassroomMembersResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListClassroomMembersRequest.class, ListClassroomMembersResponse.class)
@@ -329,30 +306,23 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClassroomMembersRequest::getClassroomId, (req, v) -> {
-                req.setClassroomId(v);
-            }));
+            f -> f.withMarshaller(ListClassroomMembersRequest::getClassroomId,
+                ListClassroomMembersRequest::setClassroomId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClassroomMembersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListClassroomMembersRequest::getOffset, ListClassroomMembersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClassroomMembersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListClassroomMembersRequest::getLimit, ListClassroomMembersRequest::setLimit));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClassroomMembersRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListClassroomMembersRequest::getFilter, ListClassroomMembersRequest::setFilter));
 
         // response
 
@@ -360,9 +330,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ListClassroomsRequest, ListClassroomsResponse> listClassrooms =
-        genForlistClassrooms();
+        genForListClassrooms();
 
-    private static HttpRequestDef<ListClassroomsRequest, ListClassroomsResponse> genForlistClassrooms() {
+    private static HttpRequestDef<ListClassroomsRequest, ListClassroomsResponse> genForListClassrooms() {
         // basic
         HttpRequestDef.Builder<ListClassroomsRequest, ListClassroomsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClassroomsRequest.class, ListClassroomsResponse.class)
@@ -375,23 +345,17 @@ public class ClassroomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClassroomsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListClassroomsRequest::getOffset, ListClassroomsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClassroomsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListClassroomsRequest::getLimit, ListClassroomsRequest::setLimit));
         builder.<String>withRequestField("query_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClassroomsRequest::getQueryType, (req, v) -> {
-                req.setQueryType(v);
-            }));
+            f -> f.withMarshaller(ListClassroomsRequest::getQueryType, ListClassroomsRequest::setQueryType));
 
         // response
 
@@ -399,9 +363,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ShowClassroomDetailRequest, ShowClassroomDetailResponse> showClassroomDetail =
-        genForshowClassroomDetail();
+        genForShowClassroomDetail();
 
-    private static HttpRequestDef<ShowClassroomDetailRequest, ShowClassroomDetailResponse> genForshowClassroomDetail() {
+    private static HttpRequestDef<ShowClassroomDetailRequest, ShowClassroomDetailResponse> genForShowClassroomDetail() {
         // basic
         HttpRequestDef.Builder<ShowClassroomDetailRequest, ShowClassroomDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClassroomDetailRequest.class, ShowClassroomDetailResponse.class)
@@ -414,9 +378,8 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClassroomDetailRequest::getClassroomId, (req, v) -> {
-                req.setClassroomId(v);
-            }));
+            f -> f.withMarshaller(ShowClassroomDetailRequest::getClassroomId,
+                ShowClassroomDetailRequest::setClassroomId));
 
         // response
 
@@ -424,9 +387,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> listClassroomMemberJobs =
-        genForlistClassroomMemberJobs();
+        genForListClassroomMemberJobs();
 
-    private static HttpRequestDef<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> genForlistClassroomMemberJobs() {
+    private static HttpRequestDef<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> genForListClassroomMemberJobs() {
         // basic
         HttpRequestDef.Builder<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListClassroomMemberJobsRequest.class, ListClassroomMemberJobsResponse.class)
@@ -439,39 +402,34 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getClassroomId, (req, v) -> {
-                req.setClassroomId(v);
-            }));
+            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getClassroomId,
+                ListClassroomMemberJobsRequest::setClassroomId));
         builder.<String>withRequestField("member_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getMemberId,
+                ListClassroomMemberJobsRequest::setMemberId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getOffset,
+                ListClassroomMemberJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getLimit, ListClassroomMemberJobsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForlistJobs();
+    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForListJobs();
 
-    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForlistJobs() {
+    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForListJobs() {
         // basic
         HttpRequestDef.Builder<ListJobsRequest, ListJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobsRequest.class, ListJobsResponse.class)
@@ -484,30 +442,22 @@ public class ClassroomMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getSourceFrom, (req, v) -> {
-                req.setSourceFrom(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getSourceFrom, ListJobsRequest::setSourceFrom));
         builder.<String>withRequestField("source_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getSourceId, (req, v) -> {
-                req.setSourceId(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getSourceId, ListJobsRequest::setSourceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getOffset, ListJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getLimit, ListJobsRequest::setLimit));
 
         // response
 
@@ -515,9 +465,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> listMemberJobRecords =
-        genForlistMemberJobRecords();
+        genForListMemberJobRecords();
 
-    private static HttpRequestDef<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> genForlistMemberJobRecords() {
+    private static HttpRequestDef<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> genForListMemberJobRecords() {
         // basic
         HttpRequestDef.Builder<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMemberJobRecordsRequest.class, ListMemberJobRecordsResponse.class)
@@ -530,37 +480,28 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberJobRecordsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListMemberJobRecordsRequest::getJobId, ListMemberJobRecordsRequest::setJobId));
         builder.<String>withRequestField("exercise_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberJobRecordsRequest::getExerciseId, (req, v) -> {
-                req.setExerciseId(v);
-            }));
+            f -> f.withMarshaller(ListMemberJobRecordsRequest::getExerciseId,
+                ListMemberJobRecordsRequest::setExerciseId));
         builder.<String>withRequestField("member_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberJobRecordsRequest::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(ListMemberJobRecordsRequest::getMemberId, ListMemberJobRecordsRequest::setMemberId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMemberJobRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMemberJobRecordsRequest::getOffset, ListMemberJobRecordsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMemberJobRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMemberJobRecordsRequest::getLimit, ListMemberJobRecordsRequest::setLimit));
 
         // response
 
@@ -568,9 +509,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail =
-        genForshowJobDetail();
+        genForShowJobDetail();
 
-    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForshowJobDetail() {
+    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForShowJobDetail() {
         // basic
         HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
@@ -583,9 +524,7 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, ShowJobDetailRequest::setJobId));
 
         // response
 
@@ -593,9 +532,9 @@ public class ClassroomMeta {
     }
 
     public static final HttpRequestDef<ShowJobExercisesRequest, ShowJobExercisesResponse> showJobExercises =
-        genForshowJobExercises();
+        genForShowJobExercises();
 
-    private static HttpRequestDef<ShowJobExercisesRequest, ShowJobExercisesResponse> genForshowJobExercises() {
+    private static HttpRequestDef<ShowJobExercisesRequest, ShowJobExercisesResponse> genForShowJobExercises() {
         // basic
         HttpRequestDef.Builder<ShowJobExercisesRequest, ShowJobExercisesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobExercisesRequest.class, ShowJobExercisesResponse.class)
@@ -608,37 +547,27 @@ public class ClassroomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobExercisesRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobExercisesRequest::getJobId, ShowJobExercisesRequest::setJobId));
         builder.<String>withRequestField("source_from",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobExercisesRequest::getSourceFrom, (req, v) -> {
-                req.setSourceFrom(v);
-            }));
+            f -> f.withMarshaller(ShowJobExercisesRequest::getSourceFrom, ShowJobExercisesRequest::setSourceFrom));
         builder.<String>withRequestField("source_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobExercisesRequest::getSourceId, (req, v) -> {
-                req.setSourceId(v);
-            }));
+            f -> f.withMarshaller(ShowJobExercisesRequest::getSourceId, ShowJobExercisesRequest::setSourceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowJobExercisesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowJobExercisesRequest::getOffset, ShowJobExercisesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowJobExercisesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowJobExercisesRequest::getLimit, ShowJobExercisesRequest::setLimit));
 
         // response
 

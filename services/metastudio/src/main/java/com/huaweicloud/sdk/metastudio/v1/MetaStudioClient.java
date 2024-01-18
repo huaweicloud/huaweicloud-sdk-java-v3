@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardRequest;
@@ -29,6 +31,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoRequest;
@@ -37,6 +41,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobRequ
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingAdvanceJobRequest;
@@ -63,6 +71,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
@@ -91,6 +103,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListRobotRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsRequest;
@@ -129,6 +145,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
@@ -143,8 +165,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.StopSmartChatJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.StopSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
@@ -157,6 +183,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardReq
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptRequest;
@@ -176,6 +206,122 @@ public class MetaStudioClient {
     }
 
     /**
+     * 创建对话链接
+     *
+     * 该接口用于创建对话链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDialogUrlRequest 请求对象
+     * @return CreateDialogUrlResponse
+     */
+    public CreateDialogUrlResponse createDialogUrl(CreateDialogUrlRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createDialogUrl);
+    }
+
+    /**
+     * 创建对话链接
+     *
+     * 该接口用于创建对话链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDialogUrlRequest 请求对象
+     * @return SyncInvoker<CreateDialogUrlRequest, CreateDialogUrlResponse>
+     */
+    public SyncInvoker<CreateDialogUrlRequest, CreateDialogUrlResponse> createDialogUrlInvoker(
+        CreateDialogUrlRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createDialogUrl, hcClient);
+    }
+
+    /**
+     * 查询数字人智能交互任务
+     *
+     * 该接口用于查询数字人智能交互任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSmartChatJobRequest 请求对象
+     * @return ShowSmartChatJobResponse
+     */
+    public ShowSmartChatJobResponse showSmartChatJob(ShowSmartChatJobRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showSmartChatJob);
+    }
+
+    /**
+     * 查询数字人智能交互任务
+     *
+     * 该接口用于查询数字人智能交互任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSmartChatJobRequest 请求对象
+     * @return SyncInvoker<ShowSmartChatJobRequest, ShowSmartChatJobResponse>
+     */
+    public SyncInvoker<ShowSmartChatJobRequest, ShowSmartChatJobResponse> showSmartChatJobInvoker(
+        ShowSmartChatJobRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showSmartChatJob, hcClient);
+    }
+
+    /**
+     * 启动数字人智能交互任务
+     *
+     * 该接口用于启动数字人智能交互任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartSmartChatJobRequest 请求对象
+     * @return StartSmartChatJobResponse
+     */
+    public StartSmartChatJobResponse startSmartChatJob(StartSmartChatJobRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.startSmartChatJob);
+    }
+
+    /**
+     * 启动数字人智能交互任务
+     *
+     * 该接口用于启动数字人智能交互任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartSmartChatJobRequest 请求对象
+     * @return SyncInvoker<StartSmartChatJobRequest, StartSmartChatJobResponse>
+     */
+    public SyncInvoker<StartSmartChatJobRequest, StartSmartChatJobResponse> startSmartChatJobInvoker(
+        StartSmartChatJobRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.startSmartChatJob, hcClient);
+    }
+
+    /**
+     * 结束数字人智能交互任务
+     *
+     * 该接口用于结束数字人智能交互任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopSmartChatJobRequest 请求对象
+     * @return StopSmartChatJobResponse
+     */
+    public StopSmartChatJobResponse stopSmartChatJob(StopSmartChatJobRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.stopSmartChatJob);
+    }
+
+    /**
+     * 结束数字人智能交互任务
+     *
+     * 该接口用于结束数字人智能交互任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopSmartChatJobRequest 请求对象
+     * @return SyncInvoker<StopSmartChatJobRequest, StopSmartChatJobResponse>
+     */
+    public SyncInvoker<StopSmartChatJobRequest, StopSmartChatJobResponse> stopSmartChatJobInvoker(
+        StopSmartChatJobRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.stopSmartChatJob, hcClient);
+    }
+
+    /**
      * 创建资产
      *
      * 该接口用于在资产库中添加上传新的媒体资产。可上传的资产类型包括：分身数字人模型、背景图片、素材图片、素材视频、PPT等。
@@ -185,7 +331,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDigitalAssetRequest 请求对象
+     * @param request CreateDigitalAssetRequest 请求对象
      * @return CreateDigitalAssetResponse
      */
     public CreateDigitalAssetResponse createDigitalAsset(CreateDigitalAssetRequest request) {
@@ -202,13 +348,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDigitalAssetRequest 请求对象
+     * @param request CreateDigitalAssetRequest 请求对象
      * @return SyncInvoker<CreateDigitalAssetRequest, CreateDigitalAssetResponse>
      */
     public SyncInvoker<CreateDigitalAssetRequest, CreateDigitalAssetResponse> createDigitalAssetInvoker(
         CreateDigitalAssetRequest request) {
-        return new SyncInvoker<CreateDigitalAssetRequest, CreateDigitalAssetResponse>(request,
-            MetaStudioMeta.createDigitalAsset, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createDigitalAsset, hcClient);
     }
 
     /**
@@ -218,7 +363,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetRequest 请求对象
+     * @param request DeleteAssetRequest 请求对象
      * @return DeleteAssetResponse
      */
     public DeleteAssetResponse deleteAsset(DeleteAssetRequest request) {
@@ -232,11 +377,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetRequest 请求对象
+     * @param request DeleteAssetRequest 请求对象
      * @return SyncInvoker<DeleteAssetRequest, DeleteAssetResponse>
      */
     public SyncInvoker<DeleteAssetRequest, DeleteAssetResponse> deleteAssetInvoker(DeleteAssetRequest request) {
-        return new SyncInvoker<DeleteAssetRequest, DeleteAssetResponse>(request, MetaStudioMeta.deleteAsset, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteAsset, hcClient);
     }
 
     /**
@@ -246,7 +391,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetSummaryRequest 请求对象
+     * @param request ListAssetSummaryRequest 请求对象
      * @return ListAssetSummaryResponse
      */
     public ListAssetSummaryResponse listAssetSummary(ListAssetSummaryRequest request) {
@@ -260,13 +405,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetSummaryRequest 请求对象
+     * @param request ListAssetSummaryRequest 请求对象
      * @return SyncInvoker<ListAssetSummaryRequest, ListAssetSummaryResponse>
      */
     public SyncInvoker<ListAssetSummaryRequest, ListAssetSummaryResponse> listAssetSummaryInvoker(
         ListAssetSummaryRequest request) {
-        return new SyncInvoker<ListAssetSummaryRequest, ListAssetSummaryResponse>(request,
-            MetaStudioMeta.listAssetSummary, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listAssetSummary, hcClient);
     }
 
     /**
@@ -276,7 +420,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetsRequest 请求对象
+     * @param request ListAssetsRequest 请求对象
      * @return ListAssetsResponse
      */
     public ListAssetsResponse listAssets(ListAssetsRequest request) {
@@ -290,11 +434,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetsRequest 请求对象
+     * @param request ListAssetsRequest 请求对象
      * @return SyncInvoker<ListAssetsRequest, ListAssetsResponse>
      */
     public SyncInvoker<ListAssetsRequest, ListAssetsResponse> listAssetsInvoker(ListAssetsRequest request) {
-        return new SyncInvoker<ListAssetsRequest, ListAssetsResponse>(request, MetaStudioMeta.listAssets, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listAssets, hcClient);
     }
 
     /**
@@ -304,7 +448,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreAssetRequest 请求对象
+     * @param request RestoreAssetRequest 请求对象
      * @return RestoreAssetResponse
      */
     public RestoreAssetResponse restoreAsset(RestoreAssetRequest request) {
@@ -318,12 +462,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreAssetRequest 请求对象
+     * @param request RestoreAssetRequest 请求对象
      * @return SyncInvoker<RestoreAssetRequest, RestoreAssetResponse>
      */
     public SyncInvoker<RestoreAssetRequest, RestoreAssetResponse> restoreAssetInvoker(RestoreAssetRequest request) {
-        return new SyncInvoker<RestoreAssetRequest, RestoreAssetResponse>(request, MetaStudioMeta.restoreAsset,
-            hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.restoreAsset, hcClient);
     }
 
     /**
@@ -333,7 +476,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetRequest 请求对象
+     * @param request ShowAssetRequest 请求对象
      * @return ShowAssetResponse
      */
     public ShowAssetResponse showAsset(ShowAssetRequest request) {
@@ -347,11 +490,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetRequest 请求对象
+     * @param request ShowAssetRequest 请求对象
      * @return SyncInvoker<ShowAssetRequest, ShowAssetResponse>
      */
     public SyncInvoker<ShowAssetRequest, ShowAssetResponse> showAssetInvoker(ShowAssetRequest request) {
-        return new SyncInvoker<ShowAssetRequest, ShowAssetResponse>(request, MetaStudioMeta.showAsset, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showAsset, hcClient);
     }
 
     /**
@@ -361,7 +504,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDigitalAssetRequest 请求对象
+     * @param request UpdateDigitalAssetRequest 请求对象
      * @return UpdateDigitalAssetResponse
      */
     public UpdateDigitalAssetResponse updateDigitalAsset(UpdateDigitalAssetRequest request) {
@@ -375,13 +518,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDigitalAssetRequest 请求对象
+     * @param request UpdateDigitalAssetRequest 请求对象
      * @return SyncInvoker<UpdateDigitalAssetRequest, UpdateDigitalAssetResponse>
      */
     public SyncInvoker<UpdateDigitalAssetRequest, UpdateDigitalAssetResponse> updateDigitalAssetInvoker(
         UpdateDigitalAssetRequest request) {
-        return new SyncInvoker<UpdateDigitalAssetRequest, UpdateDigitalAssetResponse>(request,
-            MetaStudioMeta.updateDigitalAsset, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.updateDigitalAsset, hcClient);
     }
 
     /**
@@ -391,7 +533,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDigitalHumanBusinessCardRequest 请求对象
+     * @param request CreateDigitalHumanBusinessCardRequest 请求对象
      * @return CreateDigitalHumanBusinessCardResponse
      */
     public CreateDigitalHumanBusinessCardResponse createDigitalHumanBusinessCard(
@@ -406,13 +548,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDigitalHumanBusinessCardRequest 请求对象
+     * @param request CreateDigitalHumanBusinessCardRequest 请求对象
      * @return SyncInvoker<CreateDigitalHumanBusinessCardRequest, CreateDigitalHumanBusinessCardResponse>
      */
     public SyncInvoker<CreateDigitalHumanBusinessCardRequest, CreateDigitalHumanBusinessCardResponse> createDigitalHumanBusinessCardInvoker(
         CreateDigitalHumanBusinessCardRequest request) {
-        return new SyncInvoker<CreateDigitalHumanBusinessCardRequest, CreateDigitalHumanBusinessCardResponse>(request,
-            MetaStudioMeta.createDigitalHumanBusinessCard, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createDigitalHumanBusinessCard, hcClient);
     }
 
     /**
@@ -422,7 +563,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDigitalHumanBusinessCardRequest 请求对象
+     * @param request DeleteDigitalHumanBusinessCardRequest 请求对象
      * @return DeleteDigitalHumanBusinessCardResponse
      */
     public DeleteDigitalHumanBusinessCardResponse deleteDigitalHumanBusinessCard(
@@ -437,13 +578,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDigitalHumanBusinessCardRequest 请求对象
+     * @param request DeleteDigitalHumanBusinessCardRequest 请求对象
      * @return SyncInvoker<DeleteDigitalHumanBusinessCardRequest, DeleteDigitalHumanBusinessCardResponse>
      */
     public SyncInvoker<DeleteDigitalHumanBusinessCardRequest, DeleteDigitalHumanBusinessCardResponse> deleteDigitalHumanBusinessCardInvoker(
         DeleteDigitalHumanBusinessCardRequest request) {
-        return new SyncInvoker<DeleteDigitalHumanBusinessCardRequest, DeleteDigitalHumanBusinessCardResponse>(request,
-            MetaStudioMeta.deleteDigitalHumanBusinessCard, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteDigitalHumanBusinessCard, hcClient);
     }
 
     /**
@@ -453,7 +593,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDigitalHumanBusinessCardRequest 请求对象
+     * @param request ListDigitalHumanBusinessCardRequest 请求对象
      * @return ListDigitalHumanBusinessCardResponse
      */
     public ListDigitalHumanBusinessCardResponse listDigitalHumanBusinessCard(
@@ -468,13 +608,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDigitalHumanBusinessCardRequest 请求对象
+     * @param request ListDigitalHumanBusinessCardRequest 请求对象
      * @return SyncInvoker<ListDigitalHumanBusinessCardRequest, ListDigitalHumanBusinessCardResponse>
      */
     public SyncInvoker<ListDigitalHumanBusinessCardRequest, ListDigitalHumanBusinessCardResponse> listDigitalHumanBusinessCardInvoker(
         ListDigitalHumanBusinessCardRequest request) {
-        return new SyncInvoker<ListDigitalHumanBusinessCardRequest, ListDigitalHumanBusinessCardResponse>(request,
-            MetaStudioMeta.listDigitalHumanBusinessCard, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listDigitalHumanBusinessCard, hcClient);
     }
 
     /**
@@ -484,7 +623,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDigitalHumanBusinessCardRequest 请求对象
+     * @param request ShowDigitalHumanBusinessCardRequest 请求对象
      * @return ShowDigitalHumanBusinessCardResponse
      */
     public ShowDigitalHumanBusinessCardResponse showDigitalHumanBusinessCard(
@@ -499,13 +638,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDigitalHumanBusinessCardRequest 请求对象
+     * @param request ShowDigitalHumanBusinessCardRequest 请求对象
      * @return SyncInvoker<ShowDigitalHumanBusinessCardRequest, ShowDigitalHumanBusinessCardResponse>
      */
     public SyncInvoker<ShowDigitalHumanBusinessCardRequest, ShowDigitalHumanBusinessCardResponse> showDigitalHumanBusinessCardInvoker(
         ShowDigitalHumanBusinessCardRequest request) {
-        return new SyncInvoker<ShowDigitalHumanBusinessCardRequest, ShowDigitalHumanBusinessCardResponse>(request,
-            MetaStudioMeta.showDigitalHumanBusinessCard, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showDigitalHumanBusinessCard, hcClient);
     }
 
     /**
@@ -515,7 +653,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDigitalHumanBusinessCardRequest 请求对象
+     * @param request UpdateDigitalHumanBusinessCardRequest 请求对象
      * @return UpdateDigitalHumanBusinessCardResponse
      */
     public UpdateDigitalHumanBusinessCardResponse updateDigitalHumanBusinessCard(
@@ -530,13 +668,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDigitalHumanBusinessCardRequest 请求对象
+     * @param request UpdateDigitalHumanBusinessCardRequest 请求对象
      * @return SyncInvoker<UpdateDigitalHumanBusinessCardRequest, UpdateDigitalHumanBusinessCardResponse>
      */
     public SyncInvoker<UpdateDigitalHumanBusinessCardRequest, UpdateDigitalHumanBusinessCardResponse> updateDigitalHumanBusinessCardInvoker(
         UpdateDigitalHumanBusinessCardRequest request) {
-        return new SyncInvoker<UpdateDigitalHumanBusinessCardRequest, UpdateDigitalHumanBusinessCardResponse>(request,
-            MetaStudioMeta.updateDigitalHumanBusinessCard, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.updateDigitalHumanBusinessCard, hcClient);
     }
 
     /**
@@ -546,7 +683,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDigitalHumanVideoRequest 请求对象
+     * @param request ListDigitalHumanVideoRequest 请求对象
      * @return ListDigitalHumanVideoResponse
      */
     public ListDigitalHumanVideoResponse listDigitalHumanVideo(ListDigitalHumanVideoRequest request) {
@@ -560,13 +697,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDigitalHumanVideoRequest 请求对象
+     * @param request ListDigitalHumanVideoRequest 请求对象
      * @return SyncInvoker<ListDigitalHumanVideoRequest, ListDigitalHumanVideoResponse>
      */
     public SyncInvoker<ListDigitalHumanVideoRequest, ListDigitalHumanVideoResponse> listDigitalHumanVideoInvoker(
         ListDigitalHumanVideoRequest request) {
-        return new SyncInvoker<ListDigitalHumanVideoRequest, ListDigitalHumanVideoResponse>(request,
-            MetaStudioMeta.listDigitalHumanVideo, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listDigitalHumanVideo, hcClient);
     }
 
     /**
@@ -576,7 +712,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Cancel2DDigitalHumanVideoRequest 请求对象
+     * @param request Cancel2DDigitalHumanVideoRequest 请求对象
      * @return Cancel2DDigitalHumanVideoResponse
      */
     public Cancel2DDigitalHumanVideoResponse cancel2DDigitalHumanVideo(Cancel2DDigitalHumanVideoRequest request) {
@@ -590,13 +726,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Cancel2DDigitalHumanVideoRequest 请求对象
+     * @param request Cancel2DDigitalHumanVideoRequest 请求对象
      * @return SyncInvoker<Cancel2DDigitalHumanVideoRequest, Cancel2DDigitalHumanVideoResponse>
      */
     public SyncInvoker<Cancel2DDigitalHumanVideoRequest, Cancel2DDigitalHumanVideoResponse> cancel2DDigitalHumanVideoInvoker(
         Cancel2DDigitalHumanVideoRequest request) {
-        return new SyncInvoker<Cancel2DDigitalHumanVideoRequest, Cancel2DDigitalHumanVideoResponse>(request,
-            MetaStudioMeta.cancel2DDigitalHumanVideo, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.cancel2DDigitalHumanVideo, hcClient);
     }
 
     /**
@@ -606,7 +741,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Create2DDigitalHumanVideoRequest 请求对象
+     * @param request Create2DDigitalHumanVideoRequest 请求对象
      * @return Create2DDigitalHumanVideoResponse
      */
     public Create2DDigitalHumanVideoResponse create2DDigitalHumanVideo(Create2DDigitalHumanVideoRequest request) {
@@ -620,13 +755,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Create2DDigitalHumanVideoRequest 请求对象
+     * @param request Create2DDigitalHumanVideoRequest 请求对象
      * @return SyncInvoker<Create2DDigitalHumanVideoRequest, Create2DDigitalHumanVideoResponse>
      */
     public SyncInvoker<Create2DDigitalHumanVideoRequest, Create2DDigitalHumanVideoResponse> create2DDigitalHumanVideoInvoker(
         Create2DDigitalHumanVideoRequest request) {
-        return new SyncInvoker<Create2DDigitalHumanVideoRequest, Create2DDigitalHumanVideoResponse>(request,
-            MetaStudioMeta.create2DDigitalHumanVideo, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.create2DDigitalHumanVideo, hcClient);
     }
 
     /**
@@ -636,7 +770,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Show2DDigitalHumanVideoRequest 请求对象
+     * @param request Show2DDigitalHumanVideoRequest 请求对象
      * @return Show2DDigitalHumanVideoResponse
      */
     public Show2DDigitalHumanVideoResponse show2DDigitalHumanVideo(Show2DDigitalHumanVideoRequest request) {
@@ -650,13 +784,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Show2DDigitalHumanVideoRequest 请求对象
+     * @param request Show2DDigitalHumanVideoRequest 请求对象
      * @return SyncInvoker<Show2DDigitalHumanVideoRequest, Show2DDigitalHumanVideoResponse>
      */
     public SyncInvoker<Show2DDigitalHumanVideoRequest, Show2DDigitalHumanVideoResponse> show2DDigitalHumanVideoInvoker(
         Show2DDigitalHumanVideoRequest request) {
-        return new SyncInvoker<Show2DDigitalHumanVideoRequest, Show2DDigitalHumanVideoResponse>(request,
-            MetaStudioMeta.show2DDigitalHumanVideo, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.show2DDigitalHumanVideo, hcClient);
     }
 
     /**
@@ -666,7 +799,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelPhotoDigitalHumanVideoRequest 请求对象
+     * @param request CancelPhotoDigitalHumanVideoRequest 请求对象
      * @return CancelPhotoDigitalHumanVideoResponse
      */
     public CancelPhotoDigitalHumanVideoResponse cancelPhotoDigitalHumanVideo(
@@ -681,13 +814,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelPhotoDigitalHumanVideoRequest 请求对象
+     * @param request CancelPhotoDigitalHumanVideoRequest 请求对象
      * @return SyncInvoker<CancelPhotoDigitalHumanVideoRequest, CancelPhotoDigitalHumanVideoResponse>
      */
     public SyncInvoker<CancelPhotoDigitalHumanVideoRequest, CancelPhotoDigitalHumanVideoResponse> cancelPhotoDigitalHumanVideoInvoker(
         CancelPhotoDigitalHumanVideoRequest request) {
-        return new SyncInvoker<CancelPhotoDigitalHumanVideoRequest, CancelPhotoDigitalHumanVideoResponse>(request,
-            MetaStudioMeta.cancelPhotoDigitalHumanVideo, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.cancelPhotoDigitalHumanVideo, hcClient);
     }
 
     /**
@@ -697,7 +829,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePhotoDetectionRequest 请求对象
+     * @param request CreatePhotoDetectionRequest 请求对象
      * @return CreatePhotoDetectionResponse
      */
     public CreatePhotoDetectionResponse createPhotoDetection(CreatePhotoDetectionRequest request) {
@@ -711,13 +843,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePhotoDetectionRequest 请求对象
+     * @param request CreatePhotoDetectionRequest 请求对象
      * @return SyncInvoker<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse>
      */
     public SyncInvoker<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse> createPhotoDetectionInvoker(
         CreatePhotoDetectionRequest request) {
-        return new SyncInvoker<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse>(request,
-            MetaStudioMeta.createPhotoDetection, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createPhotoDetection, hcClient);
     }
 
     /**
@@ -727,7 +858,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePhotoDigitalHumanVideoRequest 请求对象
+     * @param request CreatePhotoDigitalHumanVideoRequest 请求对象
      * @return CreatePhotoDigitalHumanVideoResponse
      */
     public CreatePhotoDigitalHumanVideoResponse createPhotoDigitalHumanVideo(
@@ -742,13 +873,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePhotoDigitalHumanVideoRequest 请求对象
+     * @param request CreatePhotoDigitalHumanVideoRequest 请求对象
      * @return SyncInvoker<CreatePhotoDigitalHumanVideoRequest, CreatePhotoDigitalHumanVideoResponse>
      */
     public SyncInvoker<CreatePhotoDigitalHumanVideoRequest, CreatePhotoDigitalHumanVideoResponse> createPhotoDigitalHumanVideoInvoker(
         CreatePhotoDigitalHumanVideoRequest request) {
-        return new SyncInvoker<CreatePhotoDigitalHumanVideoRequest, CreatePhotoDigitalHumanVideoResponse>(request,
-            MetaStudioMeta.createPhotoDigitalHumanVideo, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createPhotoDigitalHumanVideo, hcClient);
     }
 
     /**
@@ -758,7 +888,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPhotoDetectionRequest 请求对象
+     * @param request ShowPhotoDetectionRequest 请求对象
      * @return ShowPhotoDetectionResponse
      */
     public ShowPhotoDetectionResponse showPhotoDetection(ShowPhotoDetectionRequest request) {
@@ -772,13 +902,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPhotoDetectionRequest 请求对象
+     * @param request ShowPhotoDetectionRequest 请求对象
      * @return SyncInvoker<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse>
      */
     public SyncInvoker<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse> showPhotoDetectionInvoker(
         ShowPhotoDetectionRequest request) {
-        return new SyncInvoker<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse>(request,
-            MetaStudioMeta.showPhotoDetection, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showPhotoDetection, hcClient);
     }
 
     /**
@@ -788,7 +917,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPhotoDigitalHumanVideoRequest 请求对象
+     * @param request ShowPhotoDigitalHumanVideoRequest 请求对象
      * @return ShowPhotoDigitalHumanVideoResponse
      */
     public ShowPhotoDigitalHumanVideoResponse showPhotoDigitalHumanVideo(ShowPhotoDigitalHumanVideoRequest request) {
@@ -802,13 +931,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPhotoDigitalHumanVideoRequest 请求对象
+     * @param request ShowPhotoDigitalHumanVideoRequest 请求对象
      * @return SyncInvoker<ShowPhotoDigitalHumanVideoRequest, ShowPhotoDigitalHumanVideoResponse>
      */
     public SyncInvoker<ShowPhotoDigitalHumanVideoRequest, ShowPhotoDigitalHumanVideoResponse> showPhotoDigitalHumanVideoInvoker(
         ShowPhotoDigitalHumanVideoRequest request) {
-        return new SyncInvoker<ShowPhotoDigitalHumanVideoRequest, ShowPhotoDigitalHumanVideoResponse>(request,
-            MetaStudioMeta.showPhotoDigitalHumanVideo, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showPhotoDigitalHumanVideo, hcClient);
     }
 
     /**
@@ -818,7 +946,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmFileUploadRequest 请求对象
+     * @param request ConfirmFileUploadRequest 请求对象
      * @return ConfirmFileUploadResponse
      */
     public ConfirmFileUploadResponse confirmFileUpload(ConfirmFileUploadRequest request) {
@@ -832,13 +960,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmFileUploadRequest 请求对象
+     * @param request ConfirmFileUploadRequest 请求对象
      * @return SyncInvoker<ConfirmFileUploadRequest, ConfirmFileUploadResponse>
      */
     public SyncInvoker<ConfirmFileUploadRequest, ConfirmFileUploadResponse> confirmFileUploadInvoker(
         ConfirmFileUploadRequest request) {
-        return new SyncInvoker<ConfirmFileUploadRequest, ConfirmFileUploadResponse>(request,
-            MetaStudioMeta.confirmFileUpload, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.confirmFileUpload, hcClient);
     }
 
     /**
@@ -848,7 +975,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFileRequest 请求对象
+     * @param request CreateFileRequest 请求对象
      * @return CreateFileResponse
      */
     public CreateFileResponse createFile(CreateFileRequest request) {
@@ -862,11 +989,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFileRequest 请求对象
+     * @param request CreateFileRequest 请求对象
      * @return SyncInvoker<CreateFileRequest, CreateFileResponse>
      */
     public SyncInvoker<CreateFileRequest, CreateFileResponse> createFileInvoker(CreateFileRequest request) {
-        return new SyncInvoker<CreateFileRequest, CreateFileResponse>(request, MetaStudioMeta.createFile, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createFile, hcClient);
     }
 
     /**
@@ -876,7 +1003,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFileRequest 请求对象
+     * @param request DeleteFileRequest 请求对象
      * @return DeleteFileResponse
      */
     public DeleteFileResponse deleteFile(DeleteFileRequest request) {
@@ -890,11 +1017,40 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFileRequest 请求对象
+     * @param request DeleteFileRequest 请求对象
      * @return SyncInvoker<DeleteFileRequest, DeleteFileResponse>
      */
     public SyncInvoker<DeleteFileRequest, DeleteFileResponse> deleteFileInvoker(DeleteFileRequest request) {
-        return new SyncInvoker<DeleteFileRequest, DeleteFileResponse>(request, MetaStudioMeta.deleteFile, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteFile, hcClient);
+    }
+
+    /**
+     * 创建一次性鉴权码
+     *
+     * 该接口用于创建一次性鉴权码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOnceCodeRequest 请求对象
+     * @return CreateOnceCodeResponse
+     */
+    public CreateOnceCodeResponse createOnceCode(CreateOnceCodeRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createOnceCode);
+    }
+
+    /**
+     * 创建一次性鉴权码
+     *
+     * 该接口用于创建一次性鉴权码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOnceCodeRequest 请求对象
+     * @return SyncInvoker<CreateOnceCodeRequest, CreateOnceCodeResponse>
+     */
+    public SyncInvoker<CreateOnceCodeRequest, CreateOnceCodeResponse> createOnceCodeInvoker(
+        CreateOnceCodeRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createOnceCode, hcClient);
     }
 
     /**
@@ -904,7 +1060,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePictureModelingByUrlJobRequest 请求对象
+     * @param request CreatePictureModelingByUrlJobRequest 请求对象
      * @return CreatePictureModelingByUrlJobResponse
      */
     public CreatePictureModelingByUrlJobResponse createPictureModelingByUrlJob(
@@ -919,13 +1075,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePictureModelingByUrlJobRequest 请求对象
+     * @param request CreatePictureModelingByUrlJobRequest 请求对象
      * @return SyncInvoker<CreatePictureModelingByUrlJobRequest, CreatePictureModelingByUrlJobResponse>
      */
     public SyncInvoker<CreatePictureModelingByUrlJobRequest, CreatePictureModelingByUrlJobResponse> createPictureModelingByUrlJobInvoker(
         CreatePictureModelingByUrlJobRequest request) {
-        return new SyncInvoker<CreatePictureModelingByUrlJobRequest, CreatePictureModelingByUrlJobResponse>(request,
-            MetaStudioMeta.createPictureModelingByUrlJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createPictureModelingByUrlJob, hcClient);
     }
 
     /**
@@ -935,7 +1090,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePictureModelingJobRequest 请求对象
+     * @param request CreatePictureModelingJobRequest 请求对象
      * @return CreatePictureModelingJobResponse
      */
     public CreatePictureModelingJobResponse createPictureModelingJob(CreatePictureModelingJobRequest request) {
@@ -949,13 +1104,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePictureModelingJobRequest 请求对象
+     * @param request CreatePictureModelingJobRequest 请求对象
      * @return SyncInvoker<CreatePictureModelingJobRequest, CreatePictureModelingJobResponse>
      */
     public SyncInvoker<CreatePictureModelingJobRequest, CreatePictureModelingJobResponse> createPictureModelingJobInvoker(
         CreatePictureModelingJobRequest request) {
-        return new SyncInvoker<CreatePictureModelingJobRequest, CreatePictureModelingJobResponse>(request,
-            MetaStudioMeta.createPictureModelingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createPictureModelingJob, hcClient);
     }
 
     /**
@@ -965,7 +1119,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPictureModelingJobsRequest 请求对象
+     * @param request ListPictureModelingJobsRequest 请求对象
      * @return ListPictureModelingJobsResponse
      */
     public ListPictureModelingJobsResponse listPictureModelingJobs(ListPictureModelingJobsRequest request) {
@@ -979,13 +1133,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPictureModelingJobsRequest 请求对象
+     * @param request ListPictureModelingJobsRequest 请求对象
      * @return SyncInvoker<ListPictureModelingJobsRequest, ListPictureModelingJobsResponse>
      */
     public SyncInvoker<ListPictureModelingJobsRequest, ListPictureModelingJobsResponse> listPictureModelingJobsInvoker(
         ListPictureModelingJobsRequest request) {
-        return new SyncInvoker<ListPictureModelingJobsRequest, ListPictureModelingJobsResponse>(request,
-            MetaStudioMeta.listPictureModelingJobs, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listPictureModelingJobs, hcClient);
     }
 
     /**
@@ -995,7 +1148,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPictureModelingJobRequest 请求对象
+     * @param request ShowPictureModelingJobRequest 请求对象
      * @return ShowPictureModelingJobResponse
      */
     public ShowPictureModelingJobResponse showPictureModelingJob(ShowPictureModelingJobRequest request) {
@@ -1009,13 +1162,297 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPictureModelingJobRequest 请求对象
+     * @param request ShowPictureModelingJobRequest 请求对象
      * @return SyncInvoker<ShowPictureModelingJobRequest, ShowPictureModelingJobResponse>
      */
     public SyncInvoker<ShowPictureModelingJobRequest, ShowPictureModelingJobResponse> showPictureModelingJobInvoker(
         ShowPictureModelingJobRequest request) {
-        return new SyncInvoker<ShowPictureModelingJobRequest, ShowPictureModelingJobResponse>(request,
-            MetaStudioMeta.showPictureModelingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showPictureModelingJob, hcClient);
+    }
+
+    /**
+     * 创建应用
+     *
+     * 该接口用于创建应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRobotRequest 请求对象
+     * @return CreateRobotResponse
+     */
+    public CreateRobotResponse createRobot(CreateRobotRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createRobot);
+    }
+
+    /**
+     * 创建应用
+     *
+     * 该接口用于创建应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRobotRequest 请求对象
+     * @return SyncInvoker<CreateRobotRequest, CreateRobotResponse>
+     */
+    public SyncInvoker<CreateRobotRequest, CreateRobotResponse> createRobotInvoker(CreateRobotRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createRobot, hcClient);
+    }
+
+    /**
+     * 删除应用
+     *
+     * 该接口用于删除应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRobotRequest 请求对象
+     * @return DeleteRobotResponse
+     */
+    public DeleteRobotResponse deleteRobot(DeleteRobotRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteRobot);
+    }
+
+    /**
+     * 删除应用
+     *
+     * 该接口用于删除应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRobotRequest 请求对象
+     * @return SyncInvoker<DeleteRobotRequest, DeleteRobotResponse>
+     */
+    public SyncInvoker<DeleteRobotRequest, DeleteRobotResponse> deleteRobotInvoker(DeleteRobotRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteRobot, hcClient);
+    }
+
+    /**
+     * 查询应用列表
+     *
+     * 该接口用于查询应用列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRobotRequest 请求对象
+     * @return ListRobotResponse
+     */
+    public ListRobotResponse listRobot(ListRobotRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listRobot);
+    }
+
+    /**
+     * 查询应用列表
+     *
+     * 该接口用于查询应用列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRobotRequest 请求对象
+     * @return SyncInvoker<ListRobotRequest, ListRobotResponse>
+     */
+    public SyncInvoker<ListRobotRequest, ListRobotResponse> listRobotInvoker(ListRobotRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listRobot, hcClient);
+    }
+
+    /**
+     * 查询应用详情
+     *
+     * 该接口用于查询应用详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRobotRequest 请求对象
+     * @return ShowRobotResponse
+     */
+    public ShowRobotResponse showRobot(ShowRobotRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showRobot);
+    }
+
+    /**
+     * 查询应用详情
+     *
+     * 该接口用于查询应用详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRobotRequest 请求对象
+     * @return SyncInvoker<ShowRobotRequest, ShowRobotResponse>
+     */
+    public SyncInvoker<ShowRobotRequest, ShowRobotResponse> showRobotInvoker(ShowRobotRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showRobot, hcClient);
+    }
+
+    /**
+     * 修改应用
+     *
+     * 该接口用于修改应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRobotRequest 请求对象
+     * @return UpdateRobotResponse
+     */
+    public UpdateRobotResponse updateRobot(UpdateRobotRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateRobot);
+    }
+
+    /**
+     * 修改应用
+     *
+     * 该接口用于修改应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRobotRequest 请求对象
+     * @return SyncInvoker<UpdateRobotRequest, UpdateRobotResponse>
+     */
+    public SyncInvoker<UpdateRobotRequest, UpdateRobotResponse> updateRobotInvoker(UpdateRobotRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateRobot, hcClient);
+    }
+
+    /**
+     * 创建智能交互对话直播间
+     *
+     * 该接口用于创建智能交互对话直播间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSmartChatRoomRequest 请求对象
+     * @return CreateSmartChatRoomResponse
+     */
+    public CreateSmartChatRoomResponse createSmartChatRoom(CreateSmartChatRoomRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createSmartChatRoom);
+    }
+
+    /**
+     * 创建智能交互对话直播间
+     *
+     * 该接口用于创建智能交互对话直播间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSmartChatRoomRequest 请求对象
+     * @return SyncInvoker<CreateSmartChatRoomRequest, CreateSmartChatRoomResponse>
+     */
+    public SyncInvoker<CreateSmartChatRoomRequest, CreateSmartChatRoomResponse> createSmartChatRoomInvoker(
+        CreateSmartChatRoomRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createSmartChatRoom, hcClient);
+    }
+
+    /**
+     * 删除智能交互对话直播间
+     *
+     * 该接口用于删除智能交互对话直播间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSmartChatRoomRequest 请求对象
+     * @return DeleteSmartChatRoomResponse
+     */
+    public DeleteSmartChatRoomResponse deleteSmartChatRoom(DeleteSmartChatRoomRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteSmartChatRoom);
+    }
+
+    /**
+     * 删除智能交互对话直播间
+     *
+     * 该接口用于删除智能交互对话直播间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSmartChatRoomRequest 请求对象
+     * @return SyncInvoker<DeleteSmartChatRoomRequest, DeleteSmartChatRoomResponse>
+     */
+    public SyncInvoker<DeleteSmartChatRoomRequest, DeleteSmartChatRoomResponse> deleteSmartChatRoomInvoker(
+        DeleteSmartChatRoomRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteSmartChatRoom, hcClient);
+    }
+
+    /**
+     * 查询智能交互对话直播间列表
+     *
+     * 该接口用于智能交互对话直播间列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSmartChatRoomsRequest 请求对象
+     * @return ListSmartChatRoomsResponse
+     */
+    public ListSmartChatRoomsResponse listSmartChatRooms(ListSmartChatRoomsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listSmartChatRooms);
+    }
+
+    /**
+     * 查询智能交互对话直播间列表
+     *
+     * 该接口用于智能交互对话直播间列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSmartChatRoomsRequest 请求对象
+     * @return SyncInvoker<ListSmartChatRoomsRequest, ListSmartChatRoomsResponse>
+     */
+    public SyncInvoker<ListSmartChatRoomsRequest, ListSmartChatRoomsResponse> listSmartChatRoomsInvoker(
+        ListSmartChatRoomsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listSmartChatRooms, hcClient);
+    }
+
+    /**
+     * 查询智能交互对话直播间详情
+     *
+     * 该接口用于查询智能交互对话直播间详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSmartChatRoomRequest 请求对象
+     * @return ShowSmartChatRoomResponse
+     */
+    public ShowSmartChatRoomResponse showSmartChatRoom(ShowSmartChatRoomRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showSmartChatRoom);
+    }
+
+    /**
+     * 查询智能交互对话直播间详情
+     *
+     * 该接口用于查询智能交互对话直播间详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSmartChatRoomRequest 请求对象
+     * @return SyncInvoker<ShowSmartChatRoomRequest, ShowSmartChatRoomResponse>
+     */
+    public SyncInvoker<ShowSmartChatRoomRequest, ShowSmartChatRoomResponse> showSmartChatRoomInvoker(
+        ShowSmartChatRoomRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showSmartChatRoom, hcClient);
+    }
+
+    /**
+     * 更新智能交互对话直播间信息
+     *
+     * 该接口用于智能交互对话直播间信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSmartChatRoomRequest 请求对象
+     * @return UpdateSmartChatRoomResponse
+     */
+    public UpdateSmartChatRoomResponse updateSmartChatRoom(UpdateSmartChatRoomRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateSmartChatRoom);
+    }
+
+    /**
+     * 更新智能交互对话直播间信息
+     *
+     * 该接口用于智能交互对话直播间信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSmartChatRoomRequest 请求对象
+     * @return SyncInvoker<UpdateSmartChatRoomRequest, UpdateSmartChatRoomResponse>
+     */
+    public SyncInvoker<UpdateSmartChatRoomRequest, UpdateSmartChatRoomResponse> updateSmartChatRoomInvoker(
+        UpdateSmartChatRoomRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateSmartChatRoom, hcClient);
     }
 
     /**
@@ -1025,7 +1462,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteSmartLiveCommandRequest 请求对象
+     * @param request ExecuteSmartLiveCommandRequest 请求对象
      * @return ExecuteSmartLiveCommandResponse
      */
     public ExecuteSmartLiveCommandResponse executeSmartLiveCommand(ExecuteSmartLiveCommandRequest request) {
@@ -1039,13 +1476,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteSmartLiveCommandRequest 请求对象
+     * @param request ExecuteSmartLiveCommandRequest 请求对象
      * @return SyncInvoker<ExecuteSmartLiveCommandRequest, ExecuteSmartLiveCommandResponse>
      */
     public SyncInvoker<ExecuteSmartLiveCommandRequest, ExecuteSmartLiveCommandResponse> executeSmartLiveCommandInvoker(
         ExecuteSmartLiveCommandRequest request) {
-        return new SyncInvoker<ExecuteSmartLiveCommandRequest, ExecuteSmartLiveCommandResponse>(request,
-            MetaStudioMeta.executeSmartLiveCommand, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.executeSmartLiveCommand, hcClient);
     }
 
     /**
@@ -1055,7 +1491,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSmartLiveRequest 请求对象
+     * @param request ListSmartLiveRequest 请求对象
      * @return ListSmartLiveResponse
      */
     public ListSmartLiveResponse listSmartLive(ListSmartLiveRequest request) {
@@ -1069,12 +1505,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSmartLiveRequest 请求对象
+     * @param request ListSmartLiveRequest 请求对象
      * @return SyncInvoker<ListSmartLiveRequest, ListSmartLiveResponse>
      */
     public SyncInvoker<ListSmartLiveRequest, ListSmartLiveResponse> listSmartLiveInvoker(ListSmartLiveRequest request) {
-        return new SyncInvoker<ListSmartLiveRequest, ListSmartLiveResponse>(request, MetaStudioMeta.listSmartLive,
-            hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listSmartLive, hcClient);
     }
 
     /**
@@ -1084,7 +1519,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LiveEventReportRequest 请求对象
+     * @param request LiveEventReportRequest 请求对象
      * @return LiveEventReportResponse
      */
     public LiveEventReportResponse liveEventReport(LiveEventReportRequest request) {
@@ -1098,13 +1533,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LiveEventReportRequest 请求对象
+     * @param request LiveEventReportRequest 请求对象
      * @return SyncInvoker<LiveEventReportRequest, LiveEventReportResponse>
      */
     public SyncInvoker<LiveEventReportRequest, LiveEventReportResponse> liveEventReportInvoker(
         LiveEventReportRequest request) {
-        return new SyncInvoker<LiveEventReportRequest, LiveEventReportResponse>(request, MetaStudioMeta.liveEventReport,
-            hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.liveEventReport, hcClient);
     }
 
     /**
@@ -1114,7 +1548,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSmartLiveRequest 请求对象
+     * @param request ShowSmartLiveRequest 请求对象
      * @return ShowSmartLiveResponse
      */
     public ShowSmartLiveResponse showSmartLive(ShowSmartLiveRequest request) {
@@ -1128,12 +1562,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSmartLiveRequest 请求对象
+     * @param request ShowSmartLiveRequest 请求对象
      * @return SyncInvoker<ShowSmartLiveRequest, ShowSmartLiveResponse>
      */
     public SyncInvoker<ShowSmartLiveRequest, ShowSmartLiveResponse> showSmartLiveInvoker(ShowSmartLiveRequest request) {
-        return new SyncInvoker<ShowSmartLiveRequest, ShowSmartLiveResponse>(request, MetaStudioMeta.showSmartLive,
-            hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showSmartLive, hcClient);
     }
 
     /**
@@ -1143,7 +1576,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartSmartLiveRequest 请求对象
+     * @param request StartSmartLiveRequest 请求对象
      * @return StartSmartLiveResponse
      */
     public StartSmartLiveResponse startSmartLive(StartSmartLiveRequest request) {
@@ -1157,13 +1590,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartSmartLiveRequest 请求对象
+     * @param request StartSmartLiveRequest 请求对象
      * @return SyncInvoker<StartSmartLiveRequest, StartSmartLiveResponse>
      */
     public SyncInvoker<StartSmartLiveRequest, StartSmartLiveResponse> startSmartLiveInvoker(
         StartSmartLiveRequest request) {
-        return new SyncInvoker<StartSmartLiveRequest, StartSmartLiveResponse>(request, MetaStudioMeta.startSmartLive,
-            hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.startSmartLive, hcClient);
     }
 
     /**
@@ -1173,7 +1605,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopSmartLiveRequest 请求对象
+     * @param request StopSmartLiveRequest 请求对象
      * @return StopSmartLiveResponse
      */
     public StopSmartLiveResponse stopSmartLive(StopSmartLiveRequest request) {
@@ -1187,12 +1619,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopSmartLiveRequest 请求对象
+     * @param request StopSmartLiveRequest 请求对象
      * @return SyncInvoker<StopSmartLiveRequest, StopSmartLiveResponse>
      */
     public SyncInvoker<StopSmartLiveRequest, StopSmartLiveResponse> stopSmartLiveInvoker(StopSmartLiveRequest request) {
-        return new SyncInvoker<StopSmartLiveRequest, StopSmartLiveResponse>(request, MetaStudioMeta.stopSmartLive,
-            hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.stopSmartLive, hcClient);
     }
 
     /**
@@ -1202,7 +1633,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTextLanguageRequest 请求对象
+     * @param request CheckTextLanguageRequest 请求对象
      * @return CheckTextLanguageResponse
      */
     public CheckTextLanguageResponse checkTextLanguage(CheckTextLanguageRequest request) {
@@ -1216,13 +1647,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTextLanguageRequest 请求对象
+     * @param request CheckTextLanguageRequest 请求对象
      * @return SyncInvoker<CheckTextLanguageRequest, CheckTextLanguageResponse>
      */
     public SyncInvoker<CheckTextLanguageRequest, CheckTextLanguageResponse> checkTextLanguageInvoker(
         CheckTextLanguageRequest request) {
-        return new SyncInvoker<CheckTextLanguageRequest, CheckTextLanguageResponse>(request,
-            MetaStudioMeta.checkTextLanguage, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.checkTextLanguage, hcClient);
     }
 
     /**
@@ -1232,7 +1662,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInteractionRuleGroupRequest 请求对象
+     * @param request CreateInteractionRuleGroupRequest 请求对象
      * @return CreateInteractionRuleGroupResponse
      */
     public CreateInteractionRuleGroupResponse createInteractionRuleGroup(CreateInteractionRuleGroupRequest request) {
@@ -1246,13 +1676,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInteractionRuleGroupRequest 请求对象
+     * @param request CreateInteractionRuleGroupRequest 请求对象
      * @return SyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse>
      */
     public SyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> createInteractionRuleGroupInvoker(
         CreateInteractionRuleGroupRequest request) {
-        return new SyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse>(request,
-            MetaStudioMeta.createInteractionRuleGroup, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createInteractionRuleGroup, hcClient);
     }
 
     /**
@@ -1262,7 +1691,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSmartLiveRoomRequest 请求对象
+     * @param request CreateSmartLiveRoomRequest 请求对象
      * @return CreateSmartLiveRoomResponse
      */
     public CreateSmartLiveRoomResponse createSmartLiveRoom(CreateSmartLiveRoomRequest request) {
@@ -1276,13 +1705,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSmartLiveRoomRequest 请求对象
+     * @param request CreateSmartLiveRoomRequest 请求对象
      * @return SyncInvoker<CreateSmartLiveRoomRequest, CreateSmartLiveRoomResponse>
      */
     public SyncInvoker<CreateSmartLiveRoomRequest, CreateSmartLiveRoomResponse> createSmartLiveRoomInvoker(
         CreateSmartLiveRoomRequest request) {
-        return new SyncInvoker<CreateSmartLiveRoomRequest, CreateSmartLiveRoomResponse>(request,
-            MetaStudioMeta.createSmartLiveRoom, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createSmartLiveRoom, hcClient);
     }
 
     /**
@@ -1292,7 +1720,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInteractionRuleGroupRequest 请求对象
+     * @param request DeleteInteractionRuleGroupRequest 请求对象
      * @return DeleteInteractionRuleGroupResponse
      */
     public DeleteInteractionRuleGroupResponse deleteInteractionRuleGroup(DeleteInteractionRuleGroupRequest request) {
@@ -1306,13 +1734,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInteractionRuleGroupRequest 请求对象
+     * @param request DeleteInteractionRuleGroupRequest 请求对象
      * @return SyncInvoker<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse>
      */
     public SyncInvoker<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> deleteInteractionRuleGroupInvoker(
         DeleteInteractionRuleGroupRequest request) {
-        return new SyncInvoker<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse>(request,
-            MetaStudioMeta.deleteInteractionRuleGroup, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteInteractionRuleGroup, hcClient);
     }
 
     /**
@@ -1322,7 +1749,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSmartLiveRoomRequest 请求对象
+     * @param request DeleteSmartLiveRoomRequest 请求对象
      * @return DeleteSmartLiveRoomResponse
      */
     public DeleteSmartLiveRoomResponse deleteSmartLiveRoom(DeleteSmartLiveRoomRequest request) {
@@ -1336,13 +1763,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSmartLiveRoomRequest 请求对象
+     * @param request DeleteSmartLiveRoomRequest 请求对象
      * @return SyncInvoker<DeleteSmartLiveRoomRequest, DeleteSmartLiveRoomResponse>
      */
     public SyncInvoker<DeleteSmartLiveRoomRequest, DeleteSmartLiveRoomResponse> deleteSmartLiveRoomInvoker(
         DeleteSmartLiveRoomRequest request) {
-        return new SyncInvoker<DeleteSmartLiveRoomRequest, DeleteSmartLiveRoomResponse>(request,
-            MetaStudioMeta.deleteSmartLiveRoom, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteSmartLiveRoom, hcClient);
     }
 
     /**
@@ -1352,7 +1778,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInteractionRuleGroupsRequest 请求对象
+     * @param request ListInteractionRuleGroupsRequest 请求对象
      * @return ListInteractionRuleGroupsResponse
      */
     public ListInteractionRuleGroupsResponse listInteractionRuleGroups(ListInteractionRuleGroupsRequest request) {
@@ -1366,13 +1792,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInteractionRuleGroupsRequest 请求对象
+     * @param request ListInteractionRuleGroupsRequest 请求对象
      * @return SyncInvoker<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse>
      */
     public SyncInvoker<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> listInteractionRuleGroupsInvoker(
         ListInteractionRuleGroupsRequest request) {
-        return new SyncInvoker<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse>(request,
-            MetaStudioMeta.listInteractionRuleGroups, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listInteractionRuleGroups, hcClient);
     }
 
     /**
@@ -1382,7 +1807,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSmartLiveRoomsRequest 请求对象
+     * @param request ListSmartLiveRoomsRequest 请求对象
      * @return ListSmartLiveRoomsResponse
      */
     public ListSmartLiveRoomsResponse listSmartLiveRooms(ListSmartLiveRoomsRequest request) {
@@ -1396,13 +1821,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSmartLiveRoomsRequest 请求对象
+     * @param request ListSmartLiveRoomsRequest 请求对象
      * @return SyncInvoker<ListSmartLiveRoomsRequest, ListSmartLiveRoomsResponse>
      */
     public SyncInvoker<ListSmartLiveRoomsRequest, ListSmartLiveRoomsResponse> listSmartLiveRoomsInvoker(
         ListSmartLiveRoomsRequest request) {
-        return new SyncInvoker<ListSmartLiveRoomsRequest, ListSmartLiveRoomsResponse>(request,
-            MetaStudioMeta.listSmartLiveRooms, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listSmartLiveRooms, hcClient);
     }
 
     /**
@@ -1412,7 +1836,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSmartLiveRoomRequest 请求对象
+     * @param request ShowSmartLiveRoomRequest 请求对象
      * @return ShowSmartLiveRoomResponse
      */
     public ShowSmartLiveRoomResponse showSmartLiveRoom(ShowSmartLiveRoomRequest request) {
@@ -1426,13 +1850,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSmartLiveRoomRequest 请求对象
+     * @param request ShowSmartLiveRoomRequest 请求对象
      * @return SyncInvoker<ShowSmartLiveRoomRequest, ShowSmartLiveRoomResponse>
      */
     public SyncInvoker<ShowSmartLiveRoomRequest, ShowSmartLiveRoomResponse> showSmartLiveRoomInvoker(
         ShowSmartLiveRoomRequest request) {
-        return new SyncInvoker<ShowSmartLiveRoomRequest, ShowSmartLiveRoomResponse>(request,
-            MetaStudioMeta.showSmartLiveRoom, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showSmartLiveRoom, hcClient);
     }
 
     /**
@@ -1442,7 +1865,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInteractionRuleGroupRequest 请求对象
+     * @param request UpdateInteractionRuleGroupRequest 请求对象
      * @return UpdateInteractionRuleGroupResponse
      */
     public UpdateInteractionRuleGroupResponse updateInteractionRuleGroup(UpdateInteractionRuleGroupRequest request) {
@@ -1456,13 +1879,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInteractionRuleGroupRequest 请求对象
+     * @param request UpdateInteractionRuleGroupRequest 请求对象
      * @return SyncInvoker<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse>
      */
     public SyncInvoker<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> updateInteractionRuleGroupInvoker(
         UpdateInteractionRuleGroupRequest request) {
-        return new SyncInvoker<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse>(request,
-            MetaStudioMeta.updateInteractionRuleGroup, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.updateInteractionRuleGroup, hcClient);
     }
 
     /**
@@ -1472,7 +1894,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSmartLiveRoomRequest 请求对象
+     * @param request UpdateSmartLiveRoomRequest 请求对象
      * @return UpdateSmartLiveRoomResponse
      */
     public UpdateSmartLiveRoomResponse updateSmartLiveRoom(UpdateSmartLiveRoomRequest request) {
@@ -1486,13 +1908,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSmartLiveRoomRequest 请求对象
+     * @param request UpdateSmartLiveRoomRequest 请求对象
      * @return SyncInvoker<UpdateSmartLiveRoomRequest, UpdateSmartLiveRoomResponse>
      */
     public SyncInvoker<UpdateSmartLiveRoomRequest, UpdateSmartLiveRoomResponse> updateSmartLiveRoomInvoker(
         UpdateSmartLiveRoomRequest request) {
-        return new SyncInvoker<UpdateSmartLiveRoomRequest, UpdateSmartLiveRoomResponse>(request,
-            MetaStudioMeta.updateSmartLiveRoom, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.updateSmartLiveRoom, hcClient);
     }
 
     /**
@@ -1502,7 +1923,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStylesRequest 请求对象
+     * @param request ListStylesRequest 请求对象
      * @return ListStylesResponse
      */
     public ListStylesResponse listStyles(ListStylesRequest request) {
@@ -1516,11 +1937,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStylesRequest 请求对象
+     * @param request ListStylesRequest 请求对象
      * @return SyncInvoker<ListStylesRequest, ListStylesResponse>
      */
     public SyncInvoker<ListStylesRequest, ListStylesResponse> listStylesInvoker(ListStylesRequest request) {
-        return new SyncInvoker<ListStylesRequest, ListStylesResponse>(request, MetaStudioMeta.listStyles, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listStyles, hcClient);
     }
 
     /**
@@ -1530,7 +1951,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitVoiceTrainingJobRequest 请求对象
+     * @param request CommitVoiceTrainingJobRequest 请求对象
      * @return CommitVoiceTrainingJobResponse
      */
     public CommitVoiceTrainingJobResponse commitVoiceTrainingJob(CommitVoiceTrainingJobRequest request) {
@@ -1544,13 +1965,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitVoiceTrainingJobRequest 请求对象
+     * @param request CommitVoiceTrainingJobRequest 请求对象
      * @return SyncInvoker<CommitVoiceTrainingJobRequest, CommitVoiceTrainingJobResponse>
      */
     public SyncInvoker<CommitVoiceTrainingJobRequest, CommitVoiceTrainingJobResponse> commitVoiceTrainingJobInvoker(
         CommitVoiceTrainingJobRequest request) {
-        return new SyncInvoker<CommitVoiceTrainingJobRequest, CommitVoiceTrainingJobResponse>(request,
-            MetaStudioMeta.commitVoiceTrainingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.commitVoiceTrainingJob, hcClient);
     }
 
     /**
@@ -1560,7 +1980,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmTrainingSegmentRequest 请求对象
+     * @param request ConfirmTrainingSegmentRequest 请求对象
      * @return ConfirmTrainingSegmentResponse
      */
     public ConfirmTrainingSegmentResponse confirmTrainingSegment(ConfirmTrainingSegmentRequest request) {
@@ -1574,13 +1994,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmTrainingSegmentRequest 请求对象
+     * @param request ConfirmTrainingSegmentRequest 请求对象
      * @return SyncInvoker<ConfirmTrainingSegmentRequest, ConfirmTrainingSegmentResponse>
      */
     public SyncInvoker<ConfirmTrainingSegmentRequest, ConfirmTrainingSegmentResponse> confirmTrainingSegmentInvoker(
         ConfirmTrainingSegmentRequest request) {
-        return new SyncInvoker<ConfirmTrainingSegmentRequest, ConfirmTrainingSegmentResponse>(request,
-            MetaStudioMeta.confirmTrainingSegment, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.confirmTrainingSegment, hcClient);
     }
 
     /**
@@ -1594,7 +2013,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrainingAdvanceJobRequest 请求对象
+     * @param request CreateTrainingAdvanceJobRequest 请求对象
      * @return CreateTrainingAdvanceJobResponse
      */
     public CreateTrainingAdvanceJobResponse createTrainingAdvanceJob(CreateTrainingAdvanceJobRequest request) {
@@ -1612,13 +2031,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrainingAdvanceJobRequest 请求对象
+     * @param request CreateTrainingAdvanceJobRequest 请求对象
      * @return SyncInvoker<CreateTrainingAdvanceJobRequest, CreateTrainingAdvanceJobResponse>
      */
     public SyncInvoker<CreateTrainingAdvanceJobRequest, CreateTrainingAdvanceJobResponse> createTrainingAdvanceJobInvoker(
         CreateTrainingAdvanceJobRequest request) {
-        return new SyncInvoker<CreateTrainingAdvanceJobRequest, CreateTrainingAdvanceJobResponse>(request,
-            MetaStudioMeta.createTrainingAdvanceJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createTrainingAdvanceJob, hcClient);
     }
 
     /**
@@ -1633,7 +2051,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrainingBasicJobRequest 请求对象
+     * @param request CreateTrainingBasicJobRequest 请求对象
      * @return CreateTrainingBasicJobResponse
      */
     public CreateTrainingBasicJobResponse createTrainingBasicJob(CreateTrainingBasicJobRequest request) {
@@ -1652,13 +2070,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrainingBasicJobRequest 请求对象
+     * @param request CreateTrainingBasicJobRequest 请求对象
      * @return SyncInvoker<CreateTrainingBasicJobRequest, CreateTrainingBasicJobResponse>
      */
     public SyncInvoker<CreateTrainingBasicJobRequest, CreateTrainingBasicJobResponse> createTrainingBasicJobInvoker(
         CreateTrainingBasicJobRequest request) {
-        return new SyncInvoker<CreateTrainingBasicJobRequest, CreateTrainingBasicJobResponse>(request,
-            MetaStudioMeta.createTrainingBasicJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createTrainingBasicJob, hcClient);
     }
 
     /**
@@ -1673,7 +2090,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrainingMiddleJobRequest 请求对象
+     * @param request CreateTrainingMiddleJobRequest 请求对象
      * @return CreateTrainingMiddleJobResponse
      */
     public CreateTrainingMiddleJobResponse createTrainingMiddleJob(CreateTrainingMiddleJobRequest request) {
@@ -1692,13 +2109,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrainingMiddleJobRequest 请求对象
+     * @param request CreateTrainingMiddleJobRequest 请求对象
      * @return SyncInvoker<CreateTrainingMiddleJobRequest, CreateTrainingMiddleJobResponse>
      */
     public SyncInvoker<CreateTrainingMiddleJobRequest, CreateTrainingMiddleJobResponse> createTrainingMiddleJobInvoker(
         CreateTrainingMiddleJobRequest request) {
-        return new SyncInvoker<CreateTrainingMiddleJobRequest, CreateTrainingMiddleJobResponse>(request,
-            MetaStudioMeta.createTrainingMiddleJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createTrainingMiddleJob, hcClient);
     }
 
     /**
@@ -1708,7 +2124,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVoiceTrainingJobRequest 请求对象
+     * @param request DeleteVoiceTrainingJobRequest 请求对象
      * @return DeleteVoiceTrainingJobResponse
      */
     public DeleteVoiceTrainingJobResponse deleteVoiceTrainingJob(DeleteVoiceTrainingJobRequest request) {
@@ -1722,13 +2138,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVoiceTrainingJobRequest 请求对象
+     * @param request DeleteVoiceTrainingJobRequest 请求对象
      * @return SyncInvoker<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse>
      */
     public SyncInvoker<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse> deleteVoiceTrainingJobInvoker(
         DeleteVoiceTrainingJobRequest request) {
-        return new SyncInvoker<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse>(request,
-            MetaStudioMeta.deleteVoiceTrainingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteVoiceTrainingJob, hcClient);
     }
 
     /**
@@ -1738,7 +2153,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVoiceTrainingJobRequest 请求对象
+     * @param request ListVoiceTrainingJobRequest 请求对象
      * @return ListVoiceTrainingJobResponse
      */
     public ListVoiceTrainingJobResponse listVoiceTrainingJob(ListVoiceTrainingJobRequest request) {
@@ -1752,13 +2167,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVoiceTrainingJobRequest 请求对象
+     * @param request ListVoiceTrainingJobRequest 请求对象
      * @return SyncInvoker<ListVoiceTrainingJobRequest, ListVoiceTrainingJobResponse>
      */
     public SyncInvoker<ListVoiceTrainingJobRequest, ListVoiceTrainingJobResponse> listVoiceTrainingJobInvoker(
         ListVoiceTrainingJobRequest request) {
-        return new SyncInvoker<ListVoiceTrainingJobRequest, ListVoiceTrainingJobResponse>(request,
-            MetaStudioMeta.listVoiceTrainingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listVoiceTrainingJob, hcClient);
     }
 
     /**
@@ -1768,7 +2182,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobAuditResultRequest 请求对象
+     * @param request ShowJobAuditResultRequest 请求对象
      * @return ShowJobAuditResultResponse
      */
     public ShowJobAuditResultResponse showJobAuditResult(ShowJobAuditResultRequest request) {
@@ -1782,13 +2196,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobAuditResultRequest 请求对象
+     * @param request ShowJobAuditResultRequest 请求对象
      * @return SyncInvoker<ShowJobAuditResultRequest, ShowJobAuditResultResponse>
      */
     public SyncInvoker<ShowJobAuditResultRequest, ShowJobAuditResultResponse> showJobAuditResultInvoker(
         ShowJobAuditResultRequest request) {
-        return new SyncInvoker<ShowJobAuditResultRequest, ShowJobAuditResultResponse>(request,
-            MetaStudioMeta.showJobAuditResult, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showJobAuditResult, hcClient);
     }
 
     /**
@@ -1798,7 +2211,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobUploadingAddressRequest 请求对象
+     * @param request ShowJobUploadingAddressRequest 请求对象
      * @return ShowJobUploadingAddressResponse
      */
     public ShowJobUploadingAddressResponse showJobUploadingAddress(ShowJobUploadingAddressRequest request) {
@@ -1812,13 +2225,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobUploadingAddressRequest 请求对象
+     * @param request ShowJobUploadingAddressRequest 请求对象
      * @return SyncInvoker<ShowJobUploadingAddressRequest, ShowJobUploadingAddressResponse>
      */
     public SyncInvoker<ShowJobUploadingAddressRequest, ShowJobUploadingAddressResponse> showJobUploadingAddressInvoker(
         ShowJobUploadingAddressRequest request) {
-        return new SyncInvoker<ShowJobUploadingAddressRequest, ShowJobUploadingAddressResponse>(request,
-            MetaStudioMeta.showJobUploadingAddress, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showJobUploadingAddress, hcClient);
     }
 
     /**
@@ -1828,7 +2240,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrainingSegmentInfoRequest 请求对象
+     * @param request ShowTrainingSegmentInfoRequest 请求对象
      * @return ShowTrainingSegmentInfoResponse
      */
     public ShowTrainingSegmentInfoResponse showTrainingSegmentInfo(ShowTrainingSegmentInfoRequest request) {
@@ -1842,13 +2254,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrainingSegmentInfoRequest 请求对象
+     * @param request ShowTrainingSegmentInfoRequest 请求对象
      * @return SyncInvoker<ShowTrainingSegmentInfoRequest, ShowTrainingSegmentInfoResponse>
      */
     public SyncInvoker<ShowTrainingSegmentInfoRequest, ShowTrainingSegmentInfoResponse> showTrainingSegmentInfoInvoker(
         ShowTrainingSegmentInfoRequest request) {
-        return new SyncInvoker<ShowTrainingSegmentInfoRequest, ShowTrainingSegmentInfoResponse>(request,
-            MetaStudioMeta.showTrainingSegmentInfo, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showTrainingSegmentInfo, hcClient);
     }
 
     /**
@@ -1858,7 +2269,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVoiceTrainingJobRequest 请求对象
+     * @param request ShowVoiceTrainingJobRequest 请求对象
      * @return ShowVoiceTrainingJobResponse
      */
     public ShowVoiceTrainingJobResponse showVoiceTrainingJob(ShowVoiceTrainingJobRequest request) {
@@ -1872,13 +2283,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVoiceTrainingJobRequest 请求对象
+     * @param request ShowVoiceTrainingJobRequest 请求对象
      * @return SyncInvoker<ShowVoiceTrainingJobRequest, ShowVoiceTrainingJobResponse>
      */
     public SyncInvoker<ShowVoiceTrainingJobRequest, ShowVoiceTrainingJobResponse> showVoiceTrainingJobInvoker(
         ShowVoiceTrainingJobRequest request) {
-        return new SyncInvoker<ShowVoiceTrainingJobRequest, ShowVoiceTrainingJobResponse>(request,
-            MetaStudioMeta.showVoiceTrainingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showVoiceTrainingJob, hcClient);
     }
 
     /**
@@ -1888,7 +2298,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Create2dModelTrainingJobRequest 请求对象
+     * @param request Create2dModelTrainingJobRequest 请求对象
      * @return Create2dModelTrainingJobResponse
      */
     public Create2dModelTrainingJobResponse create2dModelTrainingJob(Create2dModelTrainingJobRequest request) {
@@ -1902,13 +2312,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Create2dModelTrainingJobRequest 请求对象
+     * @param request Create2dModelTrainingJobRequest 请求对象
      * @return SyncInvoker<Create2dModelTrainingJobRequest, Create2dModelTrainingJobResponse>
      */
     public SyncInvoker<Create2dModelTrainingJobRequest, Create2dModelTrainingJobResponse> create2dModelTrainingJobInvoker(
         Create2dModelTrainingJobRequest request) {
-        return new SyncInvoker<Create2dModelTrainingJobRequest, Create2dModelTrainingJobResponse>(request,
-            MetaStudioMeta.create2dModelTrainingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.create2dModelTrainingJob, hcClient);
     }
 
     /**
@@ -1919,7 +2328,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Delete2dModelTrainingJobRequest 请求对象
+     * @param request Delete2dModelTrainingJobRequest 请求对象
      * @return Delete2dModelTrainingJobResponse
      */
     public Delete2dModelTrainingJobResponse delete2dModelTrainingJob(Delete2dModelTrainingJobRequest request) {
@@ -1934,13 +2343,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Delete2dModelTrainingJobRequest 请求对象
+     * @param request Delete2dModelTrainingJobRequest 请求对象
      * @return SyncInvoker<Delete2dModelTrainingJobRequest, Delete2dModelTrainingJobResponse>
      */
     public SyncInvoker<Delete2dModelTrainingJobRequest, Delete2dModelTrainingJobResponse> delete2dModelTrainingJobInvoker(
         Delete2dModelTrainingJobRequest request) {
-        return new SyncInvoker<Delete2dModelTrainingJobRequest, Delete2dModelTrainingJobResponse>(request,
-            MetaStudioMeta.delete2dModelTrainingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.delete2dModelTrainingJob, hcClient);
     }
 
     /**
@@ -1950,7 +2358,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Execute2dModelTrainingCommandByUserRequest 请求对象
+     * @param request Execute2dModelTrainingCommandByUserRequest 请求对象
      * @return Execute2dModelTrainingCommandByUserResponse
      */
     public Execute2dModelTrainingCommandByUserResponse execute2dModelTrainingCommandByUser(
@@ -1965,13 +2373,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Execute2dModelTrainingCommandByUserRequest 请求对象
+     * @param request Execute2dModelTrainingCommandByUserRequest 请求对象
      * @return SyncInvoker<Execute2dModelTrainingCommandByUserRequest, Execute2dModelTrainingCommandByUserResponse>
      */
     public SyncInvoker<Execute2dModelTrainingCommandByUserRequest, Execute2dModelTrainingCommandByUserResponse> execute2dModelTrainingCommandByUserInvoker(
         Execute2dModelTrainingCommandByUserRequest request) {
-        return new SyncInvoker<Execute2dModelTrainingCommandByUserRequest, Execute2dModelTrainingCommandByUserResponse>(
-            request, MetaStudioMeta.execute2dModelTrainingCommandByUser, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.execute2dModelTrainingCommandByUser, hcClient);
     }
 
     /**
@@ -1981,7 +2388,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param List2dModelTrainingJobRequest 请求对象
+     * @param request List2dModelTrainingJobRequest 请求对象
      * @return List2dModelTrainingJobResponse
      */
     public List2dModelTrainingJobResponse list2dModelTrainingJob(List2dModelTrainingJobRequest request) {
@@ -1995,13 +2402,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param List2dModelTrainingJobRequest 请求对象
+     * @param request List2dModelTrainingJobRequest 请求对象
      * @return SyncInvoker<List2dModelTrainingJobRequest, List2dModelTrainingJobResponse>
      */
     public SyncInvoker<List2dModelTrainingJobRequest, List2dModelTrainingJobResponse> list2dModelTrainingJobInvoker(
         List2dModelTrainingJobRequest request) {
-        return new SyncInvoker<List2dModelTrainingJobRequest, List2dModelTrainingJobResponse>(request,
-            MetaStudioMeta.list2dModelTrainingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.list2dModelTrainingJob, hcClient);
     }
 
     /**
@@ -2011,7 +2417,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Show2dModelTrainingJobRequest 请求对象
+     * @param request Show2dModelTrainingJobRequest 请求对象
      * @return Show2dModelTrainingJobResponse
      */
     public Show2dModelTrainingJobResponse show2dModelTrainingJob(Show2dModelTrainingJobRequest request) {
@@ -2025,13 +2431,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Show2dModelTrainingJobRequest 请求对象
+     * @param request Show2dModelTrainingJobRequest 请求对象
      * @return SyncInvoker<Show2dModelTrainingJobRequest, Show2dModelTrainingJobResponse>
      */
     public SyncInvoker<Show2dModelTrainingJobRequest, Show2dModelTrainingJobResponse> show2dModelTrainingJobInvoker(
         Show2dModelTrainingJobRequest request) {
-        return new SyncInvoker<Show2dModelTrainingJobRequest, Show2dModelTrainingJobResponse>(request,
-            MetaStudioMeta.show2dModelTrainingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.show2dModelTrainingJob, hcClient);
     }
 
     /**
@@ -2042,7 +2447,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Update2dModelTrainingJobRequest 请求对象
+     * @param request Update2dModelTrainingJobRequest 请求对象
      * @return Update2dModelTrainingJobResponse
      */
     public Update2dModelTrainingJobResponse update2dModelTrainingJob(Update2dModelTrainingJobRequest request) {
@@ -2057,13 +2462,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Update2dModelTrainingJobRequest 请求对象
+     * @param request Update2dModelTrainingJobRequest 请求对象
      * @return SyncInvoker<Update2dModelTrainingJobRequest, Update2dModelTrainingJobResponse>
      */
     public SyncInvoker<Update2dModelTrainingJobRequest, Update2dModelTrainingJobResponse> update2dModelTrainingJobInvoker(
         Update2dModelTrainingJobRequest request) {
-        return new SyncInvoker<Update2dModelTrainingJobRequest, Update2dModelTrainingJobResponse>(request,
-            MetaStudioMeta.update2dModelTrainingJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.update2dModelTrainingJob, hcClient);
     }
 
     /**
@@ -2073,7 +2477,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFacialAnimationsRequest 请求对象
+     * @param request CreateFacialAnimationsRequest 请求对象
      * @return CreateFacialAnimationsResponse
      */
     public CreateFacialAnimationsResponse createFacialAnimations(CreateFacialAnimationsRequest request) {
@@ -2087,13 +2491,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFacialAnimationsRequest 请求对象
+     * @param request CreateFacialAnimationsRequest 请求对象
      * @return SyncInvoker<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse>
      */
     public SyncInvoker<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse> createFacialAnimationsInvoker(
         CreateFacialAnimationsRequest request) {
-        return new SyncInvoker<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse>(request,
-            MetaStudioMeta.createFacialAnimations, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createFacialAnimations, hcClient);
     }
 
     /**
@@ -2103,7 +2506,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTtsaRequest 请求对象
+     * @param request CreateTtsaRequest 请求对象
      * @return CreateTtsaResponse
      */
     public CreateTtsaResponse createTtsa(CreateTtsaRequest request) {
@@ -2117,11 +2520,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTtsaRequest 请求对象
+     * @param request CreateTtsaRequest 请求对象
      * @return SyncInvoker<CreateTtsaRequest, CreateTtsaResponse>
      */
     public SyncInvoker<CreateTtsaRequest, CreateTtsaResponse> createTtsaInvoker(CreateTtsaRequest request) {
-        return new SyncInvoker<CreateTtsaRequest, CreateTtsaResponse>(request, MetaStudioMeta.createTtsa, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createTtsa, hcClient);
     }
 
     /**
@@ -2131,7 +2534,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFacialAnimationsDataRequest 请求对象
+     * @param request ListFacialAnimationsDataRequest 请求对象
      * @return ListFacialAnimationsDataResponse
      */
     public ListFacialAnimationsDataResponse listFacialAnimationsData(ListFacialAnimationsDataRequest request) {
@@ -2145,13 +2548,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFacialAnimationsDataRequest 请求对象
+     * @param request ListFacialAnimationsDataRequest 请求对象
      * @return SyncInvoker<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse>
      */
     public SyncInvoker<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse> listFacialAnimationsDataInvoker(
         ListFacialAnimationsDataRequest request) {
-        return new SyncInvoker<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse>(request,
-            MetaStudioMeta.listFacialAnimationsData, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listFacialAnimationsData, hcClient);
     }
 
     /**
@@ -2161,7 +2563,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTtsaDataRequest 请求对象
+     * @param request ListTtsaDataRequest 请求对象
      * @return ListTtsaDataResponse
      */
     public ListTtsaDataResponse listTtsaData(ListTtsaDataRequest request) {
@@ -2175,12 +2577,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTtsaDataRequest 请求对象
+     * @param request ListTtsaDataRequest 请求对象
      * @return SyncInvoker<ListTtsaDataRequest, ListTtsaDataResponse>
      */
     public SyncInvoker<ListTtsaDataRequest, ListTtsaDataResponse> listTtsaDataInvoker(ListTtsaDataRequest request) {
-        return new SyncInvoker<ListTtsaDataRequest, ListTtsaDataResponse>(request, MetaStudioMeta.listTtsaData,
-            hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listTtsaData, hcClient);
     }
 
     /**
@@ -2190,7 +2591,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTtsaJobsRequest 请求对象
+     * @param request ListTtsaJobsRequest 请求对象
      * @return ListTtsaJobsResponse
      */
     public ListTtsaJobsResponse listTtsaJobs(ListTtsaJobsRequest request) {
@@ -2204,12 +2605,11 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTtsaJobsRequest 请求对象
+     * @param request ListTtsaJobsRequest 请求对象
      * @return SyncInvoker<ListTtsaJobsRequest, ListTtsaJobsResponse>
      */
     public SyncInvoker<ListTtsaJobsRequest, ListTtsaJobsResponse> listTtsaJobsInvoker(ListTtsaJobsRequest request) {
-        return new SyncInvoker<ListTtsaJobsRequest, ListTtsaJobsResponse>(request, MetaStudioMeta.listTtsaJobs,
-            hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listTtsaJobs, hcClient);
     }
 
     /**
@@ -2219,7 +2619,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTtsAuditionRequest 请求对象
+     * @param request CreateTtsAuditionRequest 请求对象
      * @return CreateTtsAuditionResponse
      */
     public CreateTtsAuditionResponse createTtsAudition(CreateTtsAuditionRequest request) {
@@ -2233,13 +2633,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTtsAuditionRequest 请求对象
+     * @param request CreateTtsAuditionRequest 请求对象
      * @return SyncInvoker<CreateTtsAuditionRequest, CreateTtsAuditionResponse>
      */
     public SyncInvoker<CreateTtsAuditionRequest, CreateTtsAuditionResponse> createTtsAuditionInvoker(
         CreateTtsAuditionRequest request) {
-        return new SyncInvoker<CreateTtsAuditionRequest, CreateTtsAuditionResponse>(request,
-            MetaStudioMeta.createTtsAudition, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createTtsAudition, hcClient);
     }
 
     /**
@@ -2249,7 +2648,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTtsAuditionFileRequest 请求对象
+     * @param request ShowTtsAuditionFileRequest 请求对象
      * @return ShowTtsAuditionFileResponse
      */
     public ShowTtsAuditionFileResponse showTtsAuditionFile(ShowTtsAuditionFileRequest request) {
@@ -2263,13 +2662,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTtsAuditionFileRequest 请求对象
+     * @param request ShowTtsAuditionFileRequest 请求对象
      * @return SyncInvoker<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse>
      */
     public SyncInvoker<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> showTtsAuditionFileInvoker(
         ShowTtsAuditionFileRequest request) {
-        return new SyncInvoker<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse>(request,
-            MetaStudioMeta.showTtsAuditionFile, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showTtsAuditionFile, hcClient);
     }
 
     /**
@@ -2279,7 +2677,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVideoMotionCaptureJobRequest 请求对象
+     * @param request CreateVideoMotionCaptureJobRequest 请求对象
      * @return CreateVideoMotionCaptureJobResponse
      */
     public CreateVideoMotionCaptureJobResponse createVideoMotionCaptureJob(CreateVideoMotionCaptureJobRequest request) {
@@ -2293,13 +2691,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVideoMotionCaptureJobRequest 请求对象
+     * @param request CreateVideoMotionCaptureJobRequest 请求对象
      * @return SyncInvoker<CreateVideoMotionCaptureJobRequest, CreateVideoMotionCaptureJobResponse>
      */
     public SyncInvoker<CreateVideoMotionCaptureJobRequest, CreateVideoMotionCaptureJobResponse> createVideoMotionCaptureJobInvoker(
         CreateVideoMotionCaptureJobRequest request) {
-        return new SyncInvoker<CreateVideoMotionCaptureJobRequest, CreateVideoMotionCaptureJobResponse>(request,
-            MetaStudioMeta.createVideoMotionCaptureJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createVideoMotionCaptureJob, hcClient);
     }
 
     /**
@@ -2309,7 +2706,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteVideoMotionCaptureCommandRequest 请求对象
+     * @param request ExecuteVideoMotionCaptureCommandRequest 请求对象
      * @return ExecuteVideoMotionCaptureCommandResponse
      */
     public ExecuteVideoMotionCaptureCommandResponse executeVideoMotionCaptureCommand(
@@ -2324,13 +2721,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteVideoMotionCaptureCommandRequest 请求对象
+     * @param request ExecuteVideoMotionCaptureCommandRequest 请求对象
      * @return SyncInvoker<ExecuteVideoMotionCaptureCommandRequest, ExecuteVideoMotionCaptureCommandResponse>
      */
     public SyncInvoker<ExecuteVideoMotionCaptureCommandRequest, ExecuteVideoMotionCaptureCommandResponse> executeVideoMotionCaptureCommandInvoker(
         ExecuteVideoMotionCaptureCommandRequest request) {
-        return new SyncInvoker<ExecuteVideoMotionCaptureCommandRequest, ExecuteVideoMotionCaptureCommandResponse>(
-            request, MetaStudioMeta.executeVideoMotionCaptureCommand, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.executeVideoMotionCaptureCommand, hcClient);
     }
 
     /**
@@ -2340,7 +2736,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVideoMotionCaptureJobsRequest 请求对象
+     * @param request ListVideoMotionCaptureJobsRequest 请求对象
      * @return ListVideoMotionCaptureJobsResponse
      */
     public ListVideoMotionCaptureJobsResponse listVideoMotionCaptureJobs(ListVideoMotionCaptureJobsRequest request) {
@@ -2354,13 +2750,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVideoMotionCaptureJobsRequest 请求对象
+     * @param request ListVideoMotionCaptureJobsRequest 请求对象
      * @return SyncInvoker<ListVideoMotionCaptureJobsRequest, ListVideoMotionCaptureJobsResponse>
      */
     public SyncInvoker<ListVideoMotionCaptureJobsRequest, ListVideoMotionCaptureJobsResponse> listVideoMotionCaptureJobsInvoker(
         ListVideoMotionCaptureJobsRequest request) {
-        return new SyncInvoker<ListVideoMotionCaptureJobsRequest, ListVideoMotionCaptureJobsResponse>(request,
-            MetaStudioMeta.listVideoMotionCaptureJobs, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listVideoMotionCaptureJobs, hcClient);
     }
 
     /**
@@ -2370,7 +2765,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVideoMotionCaptureJobRequest 请求对象
+     * @param request ShowVideoMotionCaptureJobRequest 请求对象
      * @return ShowVideoMotionCaptureJobResponse
      */
     public ShowVideoMotionCaptureJobResponse showVideoMotionCaptureJob(ShowVideoMotionCaptureJobRequest request) {
@@ -2384,13 +2779,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVideoMotionCaptureJobRequest 请求对象
+     * @param request ShowVideoMotionCaptureJobRequest 请求对象
      * @return SyncInvoker<ShowVideoMotionCaptureJobRequest, ShowVideoMotionCaptureJobResponse>
      */
     public SyncInvoker<ShowVideoMotionCaptureJobRequest, ShowVideoMotionCaptureJobResponse> showVideoMotionCaptureJobInvoker(
         ShowVideoMotionCaptureJobRequest request) {
-        return new SyncInvoker<ShowVideoMotionCaptureJobRequest, ShowVideoMotionCaptureJobResponse>(request,
-            MetaStudioMeta.showVideoMotionCaptureJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showVideoMotionCaptureJob, hcClient);
     }
 
     /**
@@ -2400,7 +2794,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopVideoMotionCaptureJobRequest 请求对象
+     * @param request StopVideoMotionCaptureJobRequest 请求对象
      * @return StopVideoMotionCaptureJobResponse
      */
     public StopVideoMotionCaptureJobResponse stopVideoMotionCaptureJob(StopVideoMotionCaptureJobRequest request) {
@@ -2414,13 +2808,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopVideoMotionCaptureJobRequest 请求对象
+     * @param request StopVideoMotionCaptureJobRequest 请求对象
      * @return SyncInvoker<StopVideoMotionCaptureJobRequest, StopVideoMotionCaptureJobResponse>
      */
     public SyncInvoker<StopVideoMotionCaptureJobRequest, StopVideoMotionCaptureJobResponse> stopVideoMotionCaptureJobInvoker(
         StopVideoMotionCaptureJobRequest request) {
-        return new SyncInvoker<StopVideoMotionCaptureJobRequest, StopVideoMotionCaptureJobResponse>(request,
-            MetaStudioMeta.stopVideoMotionCaptureJob, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.stopVideoMotionCaptureJob, hcClient);
     }
 
     /**
@@ -2430,7 +2823,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVideoScriptsRequest 请求对象
+     * @param request CreateVideoScriptsRequest 请求对象
      * @return CreateVideoScriptsResponse
      */
     public CreateVideoScriptsResponse createVideoScripts(CreateVideoScriptsRequest request) {
@@ -2444,13 +2837,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVideoScriptsRequest 请求对象
+     * @param request CreateVideoScriptsRequest 请求对象
      * @return SyncInvoker<CreateVideoScriptsRequest, CreateVideoScriptsResponse>
      */
     public SyncInvoker<CreateVideoScriptsRequest, CreateVideoScriptsResponse> createVideoScriptsInvoker(
         CreateVideoScriptsRequest request) {
-        return new SyncInvoker<CreateVideoScriptsRequest, CreateVideoScriptsResponse>(request,
-            MetaStudioMeta.createVideoScripts, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.createVideoScripts, hcClient);
     }
 
     /**
@@ -2460,7 +2852,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVideoScriptRequest 请求对象
+     * @param request DeleteVideoScriptRequest 请求对象
      * @return DeleteVideoScriptResponse
      */
     public DeleteVideoScriptResponse deleteVideoScript(DeleteVideoScriptRequest request) {
@@ -2474,13 +2866,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVideoScriptRequest 请求对象
+     * @param request DeleteVideoScriptRequest 请求对象
      * @return SyncInvoker<DeleteVideoScriptRequest, DeleteVideoScriptResponse>
      */
     public SyncInvoker<DeleteVideoScriptRequest, DeleteVideoScriptResponse> deleteVideoScriptInvoker(
         DeleteVideoScriptRequest request) {
-        return new SyncInvoker<DeleteVideoScriptRequest, DeleteVideoScriptResponse>(request,
-            MetaStudioMeta.deleteVideoScript, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteVideoScript, hcClient);
     }
 
     /**
@@ -2490,7 +2881,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVideoScriptsRequest 请求对象
+     * @param request ListVideoScriptsRequest 请求对象
      * @return ListVideoScriptsResponse
      */
     public ListVideoScriptsResponse listVideoScripts(ListVideoScriptsRequest request) {
@@ -2504,13 +2895,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVideoScriptsRequest 请求对象
+     * @param request ListVideoScriptsRequest 请求对象
      * @return SyncInvoker<ListVideoScriptsRequest, ListVideoScriptsResponse>
      */
     public SyncInvoker<ListVideoScriptsRequest, ListVideoScriptsResponse> listVideoScriptsInvoker(
         ListVideoScriptsRequest request) {
-        return new SyncInvoker<ListVideoScriptsRequest, ListVideoScriptsResponse>(request,
-            MetaStudioMeta.listVideoScripts, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.listVideoScripts, hcClient);
     }
 
     /**
@@ -2520,7 +2910,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVideoScriptRequest 请求对象
+     * @param request ShowVideoScriptRequest 请求对象
      * @return ShowVideoScriptResponse
      */
     public ShowVideoScriptResponse showVideoScript(ShowVideoScriptRequest request) {
@@ -2534,13 +2924,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVideoScriptRequest 请求对象
+     * @param request ShowVideoScriptRequest 请求对象
      * @return SyncInvoker<ShowVideoScriptRequest, ShowVideoScriptResponse>
      */
     public SyncInvoker<ShowVideoScriptRequest, ShowVideoScriptResponse> showVideoScriptInvoker(
         ShowVideoScriptRequest request) {
-        return new SyncInvoker<ShowVideoScriptRequest, ShowVideoScriptResponse>(request, MetaStudioMeta.showVideoScript,
-            hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.showVideoScript, hcClient);
     }
 
     /**
@@ -2550,7 +2939,7 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVideoScriptRequest 请求对象
+     * @param request UpdateVideoScriptRequest 请求对象
      * @return UpdateVideoScriptResponse
      */
     public UpdateVideoScriptResponse updateVideoScript(UpdateVideoScriptRequest request) {
@@ -2564,13 +2953,12 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVideoScriptRequest 请求对象
+     * @param request UpdateVideoScriptRequest 请求对象
      * @return SyncInvoker<UpdateVideoScriptRequest, UpdateVideoScriptResponse>
      */
     public SyncInvoker<UpdateVideoScriptRequest, UpdateVideoScriptResponse> updateVideoScriptInvoker(
         UpdateVideoScriptRequest request) {
-        return new SyncInvoker<UpdateVideoScriptRequest, UpdateVideoScriptResponse>(request,
-            MetaStudioMeta.updateVideoScript, hcClient);
+        return new SyncInvoker<>(request, MetaStudioMeta.updateVideoScript, hcClient);
     }
 
 }

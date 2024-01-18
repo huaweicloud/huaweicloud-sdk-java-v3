@@ -7,8 +7,10 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CodeArtsArtifactRegion {
 
@@ -61,6 +63,10 @@ public class CodeArtsArtifactRegion {
         if (Objects.nonNull(result)) {
             return result;
         }
-        throw new IllegalArgumentException("Unexpected regionId: " + regionId);
+
+        throw new IllegalArgumentException(String.format(Locale.ROOT,
+            "region id '%s' is not in the following supported regions of service CodeArtsArtifact: [%s]",
+            regionId,
+            STATIC_FIELDS.keySet().stream().sorted().collect(Collectors.joining(", "))));
     }
 }

@@ -120,7 +120,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRouteTableRequest 请求对象
+     * @param request AssociateRouteTableRequest 请求对象
      * @return CompletableFuture<AssociateRouteTableResponse>
      */
     public CompletableFuture<AssociateRouteTableResponse> associateRouteTableAsync(AssociateRouteTableRequest request) {
@@ -134,13 +134,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRouteTableRequest 请求对象
+     * @param request AssociateRouteTableRequest 请求对象
      * @return AsyncInvoker<AssociateRouteTableRequest, AssociateRouteTableResponse>
      */
     public AsyncInvoker<AssociateRouteTableRequest, AssociateRouteTableResponse> associateRouteTableAsyncInvoker(
         AssociateRouteTableRequest request) {
-        return new AsyncInvoker<AssociateRouteTableRequest, AssociateRouteTableResponse>(request,
-            ErMeta.associateRouteTable, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.associateRouteTable, hcClient);
     }
 
     /**
@@ -150,7 +149,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateRouteTableRequest 请求对象
+     * @param request DisassociateRouteTableRequest 请求对象
      * @return CompletableFuture<DisassociateRouteTableResponse>
      */
     public CompletableFuture<DisassociateRouteTableResponse> disassociateRouteTableAsync(
@@ -165,13 +164,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateRouteTableRequest 请求对象
+     * @param request DisassociateRouteTableRequest 请求对象
      * @return AsyncInvoker<DisassociateRouteTableRequest, DisassociateRouteTableResponse>
      */
     public AsyncInvoker<DisassociateRouteTableRequest, DisassociateRouteTableResponse> disassociateRouteTableAsyncInvoker(
         DisassociateRouteTableRequest request) {
-        return new AsyncInvoker<DisassociateRouteTableRequest, DisassociateRouteTableResponse>(request,
-            ErMeta.disassociateRouteTable, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.disassociateRouteTable, hcClient);
     }
 
     /**
@@ -181,7 +179,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssociationsRequest 请求对象
+     * @param request ListAssociationsRequest 请求对象
      * @return CompletableFuture<ListAssociationsResponse>
      */
     public CompletableFuture<ListAssociationsResponse> listAssociationsAsync(ListAssociationsRequest request) {
@@ -195,13 +193,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssociationsRequest 请求对象
+     * @param request ListAssociationsRequest 请求对象
      * @return AsyncInvoker<ListAssociationsRequest, ListAssociationsResponse>
      */
     public AsyncInvoker<ListAssociationsRequest, ListAssociationsResponse> listAssociationsAsyncInvoker(
         ListAssociationsRequest request) {
-        return new AsyncInvoker<ListAssociationsRequest, ListAssociationsResponse>(request, ErMeta.listAssociations,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listAssociations, hcClient);
     }
 
     /**
@@ -211,7 +208,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptAttachmentRequest 请求对象
+     * @param request AcceptAttachmentRequest 请求对象
      * @return CompletableFuture<AcceptAttachmentResponse>
      */
     public CompletableFuture<AcceptAttachmentResponse> acceptAttachmentAsync(AcceptAttachmentRequest request) {
@@ -225,13 +222,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptAttachmentRequest 请求对象
+     * @param request AcceptAttachmentRequest 请求对象
      * @return AsyncInvoker<AcceptAttachmentRequest, AcceptAttachmentResponse>
      */
     public AsyncInvoker<AcceptAttachmentRequest, AcceptAttachmentResponse> acceptAttachmentAsyncInvoker(
         AcceptAttachmentRequest request) {
-        return new AsyncInvoker<AcceptAttachmentRequest, AcceptAttachmentResponse>(request, ErMeta.acceptAttachment,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.acceptAttachment, hcClient);
     }
 
     /**
@@ -241,7 +237,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttachmentsRequest 请求对象
+     * @param request ListAttachmentsRequest 请求对象
      * @return CompletableFuture<ListAttachmentsResponse>
      */
     public CompletableFuture<ListAttachmentsResponse> listAttachmentsAsync(ListAttachmentsRequest request) {
@@ -255,13 +251,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttachmentsRequest 请求对象
+     * @param request ListAttachmentsRequest 请求对象
      * @return AsyncInvoker<ListAttachmentsRequest, ListAttachmentsResponse>
      */
     public AsyncInvoker<ListAttachmentsRequest, ListAttachmentsResponse> listAttachmentsAsyncInvoker(
         ListAttachmentsRequest request) {
-        return new AsyncInvoker<ListAttachmentsRequest, ListAttachmentsResponse>(request, ErMeta.listAttachments,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listAttachments, hcClient);
     }
 
     /**
@@ -271,7 +266,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RejectAttachmentRequest 请求对象
+     * @param request RejectAttachmentRequest 请求对象
      * @return CompletableFuture<RejectAttachmentResponse>
      */
     public CompletableFuture<RejectAttachmentResponse> rejectAttachmentAsync(RejectAttachmentRequest request) {
@@ -285,13 +280,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RejectAttachmentRequest 请求对象
+     * @param request RejectAttachmentRequest 请求对象
      * @return AsyncInvoker<RejectAttachmentRequest, RejectAttachmentResponse>
      */
     public AsyncInvoker<RejectAttachmentRequest, RejectAttachmentResponse> rejectAttachmentAsyncInvoker(
         RejectAttachmentRequest request) {
-        return new AsyncInvoker<RejectAttachmentRequest, RejectAttachmentResponse>(request, ErMeta.rejectAttachment,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.rejectAttachment, hcClient);
     }
 
     /**
@@ -301,7 +295,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAttachmentRequest 请求对象
+     * @param request ShowAttachmentRequest 请求对象
      * @return CompletableFuture<ShowAttachmentResponse>
      */
     public CompletableFuture<ShowAttachmentResponse> showAttachmentAsync(ShowAttachmentRequest request) {
@@ -315,13 +309,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAttachmentRequest 请求对象
+     * @param request ShowAttachmentRequest 请求对象
      * @return AsyncInvoker<ShowAttachmentRequest, ShowAttachmentResponse>
      */
     public AsyncInvoker<ShowAttachmentRequest, ShowAttachmentResponse> showAttachmentAsyncInvoker(
         ShowAttachmentRequest request) {
-        return new AsyncInvoker<ShowAttachmentRequest, ShowAttachmentResponse>(request, ErMeta.showAttachment,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.showAttachment, hcClient);
     }
 
     /**
@@ -331,7 +324,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAttachmentRequest 请求对象
+     * @param request UpdateAttachmentRequest 请求对象
      * @return CompletableFuture<UpdateAttachmentResponse>
      */
     public CompletableFuture<UpdateAttachmentResponse> updateAttachmentAsync(UpdateAttachmentRequest request) {
@@ -345,13 +338,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAttachmentRequest 请求对象
+     * @param request UpdateAttachmentRequest 请求对象
      * @return AsyncInvoker<UpdateAttachmentRequest, UpdateAttachmentResponse>
      */
     public AsyncInvoker<UpdateAttachmentRequest, UpdateAttachmentResponse> updateAttachmentAsyncInvoker(
         UpdateAttachmentRequest request) {
-        return new AsyncInvoker<UpdateAttachmentRequest, UpdateAttachmentResponse>(request, ErMeta.updateAttachment,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.updateAttachment, hcClient);
     }
 
     /**
@@ -361,7 +353,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZoneRequest 请求对象
+     * @param request ListAvailabilityZoneRequest 请求对象
      * @return CompletableFuture<ListAvailabilityZoneResponse>
      */
     public CompletableFuture<ListAvailabilityZoneResponse> listAvailabilityZoneAsync(
@@ -376,13 +368,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailabilityZoneRequest 请求对象
+     * @param request ListAvailabilityZoneRequest 请求对象
      * @return AsyncInvoker<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse>
      */
     public AsyncInvoker<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse> listAvailabilityZoneAsyncInvoker(
         ListAvailabilityZoneRequest request) {
-        return new AsyncInvoker<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse>(request,
-            ErMeta.listAvailabilityZone, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listAvailabilityZone, hcClient);
     }
 
     /**
@@ -392,7 +383,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeAvailabilityZoneRequest 请求对象
+     * @param request ChangeAvailabilityZoneRequest 请求对象
      * @return CompletableFuture<ChangeAvailabilityZoneResponse>
      */
     public CompletableFuture<ChangeAvailabilityZoneResponse> changeAvailabilityZoneAsync(
@@ -407,13 +398,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeAvailabilityZoneRequest 请求对象
+     * @param request ChangeAvailabilityZoneRequest 请求对象
      * @return AsyncInvoker<ChangeAvailabilityZoneRequest, ChangeAvailabilityZoneResponse>
      */
     public AsyncInvoker<ChangeAvailabilityZoneRequest, ChangeAvailabilityZoneResponse> changeAvailabilityZoneAsyncInvoker(
         ChangeAvailabilityZoneRequest request) {
-        return new AsyncInvoker<ChangeAvailabilityZoneRequest, ChangeAvailabilityZoneResponse>(request,
-            ErMeta.changeAvailabilityZone, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.changeAvailabilityZone, hcClient);
     }
 
     /**
@@ -423,7 +413,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseRouterRequest 请求对象
+     * @param request CreateEnterpriseRouterRequest 请求对象
      * @return CompletableFuture<CreateEnterpriseRouterResponse>
      */
     public CompletableFuture<CreateEnterpriseRouterResponse> createEnterpriseRouterAsync(
@@ -438,13 +428,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnterpriseRouterRequest 请求对象
+     * @param request CreateEnterpriseRouterRequest 请求对象
      * @return AsyncInvoker<CreateEnterpriseRouterRequest, CreateEnterpriseRouterResponse>
      */
     public AsyncInvoker<CreateEnterpriseRouterRequest, CreateEnterpriseRouterResponse> createEnterpriseRouterAsyncInvoker(
         CreateEnterpriseRouterRequest request) {
-        return new AsyncInvoker<CreateEnterpriseRouterRequest, CreateEnterpriseRouterResponse>(request,
-            ErMeta.createEnterpriseRouter, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.createEnterpriseRouter, hcClient);
     }
 
     /**
@@ -454,7 +443,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnterpriseRouterRequest 请求对象
+     * @param request DeleteEnterpriseRouterRequest 请求对象
      * @return CompletableFuture<DeleteEnterpriseRouterResponse>
      */
     public CompletableFuture<DeleteEnterpriseRouterResponse> deleteEnterpriseRouterAsync(
@@ -469,13 +458,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnterpriseRouterRequest 请求对象
+     * @param request DeleteEnterpriseRouterRequest 请求对象
      * @return AsyncInvoker<DeleteEnterpriseRouterRequest, DeleteEnterpriseRouterResponse>
      */
     public AsyncInvoker<DeleteEnterpriseRouterRequest, DeleteEnterpriseRouterResponse> deleteEnterpriseRouterAsyncInvoker(
         DeleteEnterpriseRouterRequest request) {
-        return new AsyncInvoker<DeleteEnterpriseRouterRequest, DeleteEnterpriseRouterResponse>(request,
-            ErMeta.deleteEnterpriseRouter, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.deleteEnterpriseRouter, hcClient);
     }
 
     /**
@@ -485,7 +473,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseRoutersRequest 请求对象
+     * @param request ListEnterpriseRoutersRequest 请求对象
      * @return CompletableFuture<ListEnterpriseRoutersResponse>
      */
     public CompletableFuture<ListEnterpriseRoutersResponse> listEnterpriseRoutersAsync(
@@ -500,13 +488,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseRoutersRequest 请求对象
+     * @param request ListEnterpriseRoutersRequest 请求对象
      * @return AsyncInvoker<ListEnterpriseRoutersRequest, ListEnterpriseRoutersResponse>
      */
     public AsyncInvoker<ListEnterpriseRoutersRequest, ListEnterpriseRoutersResponse> listEnterpriseRoutersAsyncInvoker(
         ListEnterpriseRoutersRequest request) {
-        return new AsyncInvoker<ListEnterpriseRoutersRequest, ListEnterpriseRoutersResponse>(request,
-            ErMeta.listEnterpriseRouters, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listEnterpriseRouters, hcClient);
     }
 
     /**
@@ -516,7 +503,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnterpriseRouterRequest 请求对象
+     * @param request ShowEnterpriseRouterRequest 请求对象
      * @return CompletableFuture<ShowEnterpriseRouterResponse>
      */
     public CompletableFuture<ShowEnterpriseRouterResponse> showEnterpriseRouterAsync(
@@ -531,13 +518,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnterpriseRouterRequest 请求对象
+     * @param request ShowEnterpriseRouterRequest 请求对象
      * @return AsyncInvoker<ShowEnterpriseRouterRequest, ShowEnterpriseRouterResponse>
      */
     public AsyncInvoker<ShowEnterpriseRouterRequest, ShowEnterpriseRouterResponse> showEnterpriseRouterAsyncInvoker(
         ShowEnterpriseRouterRequest request) {
-        return new AsyncInvoker<ShowEnterpriseRouterRequest, ShowEnterpriseRouterResponse>(request,
-            ErMeta.showEnterpriseRouter, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.showEnterpriseRouter, hcClient);
     }
 
     /**
@@ -547,7 +533,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnterpriseRouterRequest 请求对象
+     * @param request UpdateEnterpriseRouterRequest 请求对象
      * @return CompletableFuture<UpdateEnterpriseRouterResponse>
      */
     public CompletableFuture<UpdateEnterpriseRouterResponse> updateEnterpriseRouterAsync(
@@ -562,13 +548,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnterpriseRouterRequest 请求对象
+     * @param request UpdateEnterpriseRouterRequest 请求对象
      * @return AsyncInvoker<UpdateEnterpriseRouterRequest, UpdateEnterpriseRouterResponse>
      */
     public AsyncInvoker<UpdateEnterpriseRouterRequest, UpdateEnterpriseRouterResponse> updateEnterpriseRouterAsyncInvoker(
         UpdateEnterpriseRouterRequest request) {
-        return new AsyncInvoker<UpdateEnterpriseRouterRequest, UpdateEnterpriseRouterResponse>(request,
-            ErMeta.updateEnterpriseRouter, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.updateEnterpriseRouter, hcClient);
     }
 
     /**
@@ -578,7 +563,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlowLogRequest 请求对象
+     * @param request CreateFlowLogRequest 请求对象
      * @return CompletableFuture<CreateFlowLogResponse>
      */
     public CompletableFuture<CreateFlowLogResponse> createFlowLogAsync(CreateFlowLogRequest request) {
@@ -592,12 +577,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlowLogRequest 请求对象
+     * @param request CreateFlowLogRequest 请求对象
      * @return AsyncInvoker<CreateFlowLogRequest, CreateFlowLogResponse>
      */
     public AsyncInvoker<CreateFlowLogRequest, CreateFlowLogResponse> createFlowLogAsyncInvoker(
         CreateFlowLogRequest request) {
-        return new AsyncInvoker<CreateFlowLogRequest, CreateFlowLogResponse>(request, ErMeta.createFlowLog, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.createFlowLog, hcClient);
     }
 
     /**
@@ -607,7 +592,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFlowLogRequest 请求对象
+     * @param request DeleteFlowLogRequest 请求对象
      * @return CompletableFuture<DeleteFlowLogResponse>
      */
     public CompletableFuture<DeleteFlowLogResponse> deleteFlowLogAsync(DeleteFlowLogRequest request) {
@@ -621,12 +606,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFlowLogRequest 请求对象
+     * @param request DeleteFlowLogRequest 请求对象
      * @return AsyncInvoker<DeleteFlowLogRequest, DeleteFlowLogResponse>
      */
     public AsyncInvoker<DeleteFlowLogRequest, DeleteFlowLogResponse> deleteFlowLogAsyncInvoker(
         DeleteFlowLogRequest request) {
-        return new AsyncInvoker<DeleteFlowLogRequest, DeleteFlowLogResponse>(request, ErMeta.deleteFlowLog, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.deleteFlowLog, hcClient);
     }
 
     /**
@@ -636,7 +621,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableFlowLogRequest 请求对象
+     * @param request DisableFlowLogRequest 请求对象
      * @return CompletableFuture<DisableFlowLogResponse>
      */
     public CompletableFuture<DisableFlowLogResponse> disableFlowLogAsync(DisableFlowLogRequest request) {
@@ -650,13 +635,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableFlowLogRequest 请求对象
+     * @param request DisableFlowLogRequest 请求对象
      * @return AsyncInvoker<DisableFlowLogRequest, DisableFlowLogResponse>
      */
     public AsyncInvoker<DisableFlowLogRequest, DisableFlowLogResponse> disableFlowLogAsyncInvoker(
         DisableFlowLogRequest request) {
-        return new AsyncInvoker<DisableFlowLogRequest, DisableFlowLogResponse>(request, ErMeta.disableFlowLog,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.disableFlowLog, hcClient);
     }
 
     /**
@@ -666,7 +650,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableFlowLogRequest 请求对象
+     * @param request EnableFlowLogRequest 请求对象
      * @return CompletableFuture<EnableFlowLogResponse>
      */
     public CompletableFuture<EnableFlowLogResponse> enableFlowLogAsync(EnableFlowLogRequest request) {
@@ -680,12 +664,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableFlowLogRequest 请求对象
+     * @param request EnableFlowLogRequest 请求对象
      * @return AsyncInvoker<EnableFlowLogRequest, EnableFlowLogResponse>
      */
     public AsyncInvoker<EnableFlowLogRequest, EnableFlowLogResponse> enableFlowLogAsyncInvoker(
         EnableFlowLogRequest request) {
-        return new AsyncInvoker<EnableFlowLogRequest, EnableFlowLogResponse>(request, ErMeta.enableFlowLog, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.enableFlowLog, hcClient);
     }
 
     /**
@@ -695,7 +679,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlowLogsRequest 请求对象
+     * @param request ListFlowLogsRequest 请求对象
      * @return CompletableFuture<ListFlowLogsResponse>
      */
     public CompletableFuture<ListFlowLogsResponse> listFlowLogsAsync(ListFlowLogsRequest request) {
@@ -709,12 +693,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlowLogsRequest 请求对象
+     * @param request ListFlowLogsRequest 请求对象
      * @return AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>
      */
     public AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogsAsyncInvoker(
         ListFlowLogsRequest request) {
-        return new AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>(request, ErMeta.listFlowLogs, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listFlowLogs, hcClient);
     }
 
     /**
@@ -724,7 +708,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlowLogRequest 请求对象
+     * @param request ShowFlowLogRequest 请求对象
      * @return CompletableFuture<ShowFlowLogResponse>
      */
     public CompletableFuture<ShowFlowLogResponse> showFlowLogAsync(ShowFlowLogRequest request) {
@@ -738,11 +722,11 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFlowLogRequest 请求对象
+     * @param request ShowFlowLogRequest 请求对象
      * @return AsyncInvoker<ShowFlowLogRequest, ShowFlowLogResponse>
      */
     public AsyncInvoker<ShowFlowLogRequest, ShowFlowLogResponse> showFlowLogAsyncInvoker(ShowFlowLogRequest request) {
-        return new AsyncInvoker<ShowFlowLogRequest, ShowFlowLogResponse>(request, ErMeta.showFlowLog, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.showFlowLog, hcClient);
     }
 
     /**
@@ -752,7 +736,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlowLogRequest 请求对象
+     * @param request UpdateFlowLogRequest 请求对象
      * @return CompletableFuture<UpdateFlowLogResponse>
      */
     public CompletableFuture<UpdateFlowLogResponse> updateFlowLogAsync(UpdateFlowLogRequest request) {
@@ -766,12 +750,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlowLogRequest 请求对象
+     * @param request UpdateFlowLogRequest 请求对象
      * @return AsyncInvoker<UpdateFlowLogRequest, UpdateFlowLogResponse>
      */
     public AsyncInvoker<UpdateFlowLogRequest, UpdateFlowLogResponse> updateFlowLogAsyncInvoker(
         UpdateFlowLogRequest request) {
-        return new AsyncInvoker<UpdateFlowLogRequest, UpdateFlowLogResponse>(request, ErMeta.updateFlowLog, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.updateFlowLog, hcClient);
     }
 
     /**
@@ -781,7 +765,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisablePropagationRequest 请求对象
+     * @param request DisablePropagationRequest 请求对象
      * @return CompletableFuture<DisablePropagationResponse>
      */
     public CompletableFuture<DisablePropagationResponse> disablePropagationAsync(DisablePropagationRequest request) {
@@ -795,13 +779,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisablePropagationRequest 请求对象
+     * @param request DisablePropagationRequest 请求对象
      * @return AsyncInvoker<DisablePropagationRequest, DisablePropagationResponse>
      */
     public AsyncInvoker<DisablePropagationRequest, DisablePropagationResponse> disablePropagationAsyncInvoker(
         DisablePropagationRequest request) {
-        return new AsyncInvoker<DisablePropagationRequest, DisablePropagationResponse>(request,
-            ErMeta.disablePropagation, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.disablePropagation, hcClient);
     }
 
     /**
@@ -811,7 +794,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnablePropagationRequest 请求对象
+     * @param request EnablePropagationRequest 请求对象
      * @return CompletableFuture<EnablePropagationResponse>
      */
     public CompletableFuture<EnablePropagationResponse> enablePropagationAsync(EnablePropagationRequest request) {
@@ -825,13 +808,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnablePropagationRequest 请求对象
+     * @param request EnablePropagationRequest 请求对象
      * @return AsyncInvoker<EnablePropagationRequest, EnablePropagationResponse>
      */
     public AsyncInvoker<EnablePropagationRequest, EnablePropagationResponse> enablePropagationAsyncInvoker(
         EnablePropagationRequest request) {
-        return new AsyncInvoker<EnablePropagationRequest, EnablePropagationResponse>(request, ErMeta.enablePropagation,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.enablePropagation, hcClient);
     }
 
     /**
@@ -841,7 +823,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPropagationsRequest 请求对象
+     * @param request ListPropagationsRequest 请求对象
      * @return CompletableFuture<ListPropagationsResponse>
      */
     public CompletableFuture<ListPropagationsResponse> listPropagationsAsync(ListPropagationsRequest request) {
@@ -855,13 +837,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPropagationsRequest 请求对象
+     * @param request ListPropagationsRequest 请求对象
      * @return AsyncInvoker<ListPropagationsRequest, ListPropagationsResponse>
      */
     public AsyncInvoker<ListPropagationsRequest, ListPropagationsResponse> listPropagationsAsyncInvoker(
         ListPropagationsRequest request) {
-        return new AsyncInvoker<ListPropagationsRequest, ListPropagationsResponse>(request, ErMeta.listPropagations,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listPropagations, hcClient);
     }
 
     /**
@@ -871,7 +852,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return CompletableFuture<ShowQuotasResponse>
      */
     public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
@@ -885,11 +866,11 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
      */
     public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
-        return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, ErMeta.showQuotas, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.showQuotas, hcClient);
     }
 
     /**
@@ -899,7 +880,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStaticRouteRequest 请求对象
+     * @param request CreateStaticRouteRequest 请求对象
      * @return CompletableFuture<CreateStaticRouteResponse>
      */
     public CompletableFuture<CreateStaticRouteResponse> createStaticRouteAsync(CreateStaticRouteRequest request) {
@@ -913,13 +894,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStaticRouteRequest 请求对象
+     * @param request CreateStaticRouteRequest 请求对象
      * @return AsyncInvoker<CreateStaticRouteRequest, CreateStaticRouteResponse>
      */
     public AsyncInvoker<CreateStaticRouteRequest, CreateStaticRouteResponse> createStaticRouteAsyncInvoker(
         CreateStaticRouteRequest request) {
-        return new AsyncInvoker<CreateStaticRouteRequest, CreateStaticRouteResponse>(request, ErMeta.createStaticRoute,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.createStaticRoute, hcClient);
     }
 
     /**
@@ -929,7 +909,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStaticRouteRequest 请求对象
+     * @param request DeleteStaticRouteRequest 请求对象
      * @return CompletableFuture<DeleteStaticRouteResponse>
      */
     public CompletableFuture<DeleteStaticRouteResponse> deleteStaticRouteAsync(DeleteStaticRouteRequest request) {
@@ -943,13 +923,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStaticRouteRequest 请求对象
+     * @param request DeleteStaticRouteRequest 请求对象
      * @return AsyncInvoker<DeleteStaticRouteRequest, DeleteStaticRouteResponse>
      */
     public AsyncInvoker<DeleteStaticRouteRequest, DeleteStaticRouteResponse> deleteStaticRouteAsyncInvoker(
         DeleteStaticRouteRequest request) {
-        return new AsyncInvoker<DeleteStaticRouteRequest, DeleteStaticRouteResponse>(request, ErMeta.deleteStaticRoute,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.deleteStaticRoute, hcClient);
     }
 
     /**
@@ -959,7 +938,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEffectiveRoutesRequest 请求对象
+     * @param request ListEffectiveRoutesRequest 请求对象
      * @return CompletableFuture<ListEffectiveRoutesResponse>
      */
     public CompletableFuture<ListEffectiveRoutesResponse> listEffectiveRoutesAsync(ListEffectiveRoutesRequest request) {
@@ -973,13 +952,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEffectiveRoutesRequest 请求对象
+     * @param request ListEffectiveRoutesRequest 请求对象
      * @return AsyncInvoker<ListEffectiveRoutesRequest, ListEffectiveRoutesResponse>
      */
     public AsyncInvoker<ListEffectiveRoutesRequest, ListEffectiveRoutesResponse> listEffectiveRoutesAsyncInvoker(
         ListEffectiveRoutesRequest request) {
-        return new AsyncInvoker<ListEffectiveRoutesRequest, ListEffectiveRoutesResponse>(request,
-            ErMeta.listEffectiveRoutes, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listEffectiveRoutes, hcClient);
     }
 
     /**
@@ -989,7 +967,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStaticRoutesRequest 请求对象
+     * @param request ListStaticRoutesRequest 请求对象
      * @return CompletableFuture<ListStaticRoutesResponse>
      */
     public CompletableFuture<ListStaticRoutesResponse> listStaticRoutesAsync(ListStaticRoutesRequest request) {
@@ -1003,13 +981,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStaticRoutesRequest 请求对象
+     * @param request ListStaticRoutesRequest 请求对象
      * @return AsyncInvoker<ListStaticRoutesRequest, ListStaticRoutesResponse>
      */
     public AsyncInvoker<ListStaticRoutesRequest, ListStaticRoutesResponse> listStaticRoutesAsyncInvoker(
         ListStaticRoutesRequest request) {
-        return new AsyncInvoker<ListStaticRoutesRequest, ListStaticRoutesResponse>(request, ErMeta.listStaticRoutes,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listStaticRoutes, hcClient);
     }
 
     /**
@@ -1019,7 +996,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStaticRouteRequest 请求对象
+     * @param request ShowStaticRouteRequest 请求对象
      * @return CompletableFuture<ShowStaticRouteResponse>
      */
     public CompletableFuture<ShowStaticRouteResponse> showStaticRouteAsync(ShowStaticRouteRequest request) {
@@ -1033,13 +1010,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStaticRouteRequest 请求对象
+     * @param request ShowStaticRouteRequest 请求对象
      * @return AsyncInvoker<ShowStaticRouteRequest, ShowStaticRouteResponse>
      */
     public AsyncInvoker<ShowStaticRouteRequest, ShowStaticRouteResponse> showStaticRouteAsyncInvoker(
         ShowStaticRouteRequest request) {
-        return new AsyncInvoker<ShowStaticRouteRequest, ShowStaticRouteResponse>(request, ErMeta.showStaticRoute,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.showStaticRoute, hcClient);
     }
 
     /**
@@ -1049,7 +1025,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStaticRouteRequest 请求对象
+     * @param request UpdateStaticRouteRequest 请求对象
      * @return CompletableFuture<UpdateStaticRouteResponse>
      */
     public CompletableFuture<UpdateStaticRouteResponse> updateStaticRouteAsync(UpdateStaticRouteRequest request) {
@@ -1063,13 +1039,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStaticRouteRequest 请求对象
+     * @param request UpdateStaticRouteRequest 请求对象
      * @return AsyncInvoker<UpdateStaticRouteRequest, UpdateStaticRouteResponse>
      */
     public AsyncInvoker<UpdateStaticRouteRequest, UpdateStaticRouteResponse> updateStaticRouteAsyncInvoker(
         UpdateStaticRouteRequest request) {
-        return new AsyncInvoker<UpdateStaticRouteRequest, UpdateStaticRouteResponse>(request, ErMeta.updateStaticRoute,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.updateStaticRoute, hcClient);
     }
 
     /**
@@ -1079,7 +1054,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRouteTableRequest 请求对象
+     * @param request CreateRouteTableRequest 请求对象
      * @return CompletableFuture<CreateRouteTableResponse>
      */
     public CompletableFuture<CreateRouteTableResponse> createRouteTableAsync(CreateRouteTableRequest request) {
@@ -1093,13 +1068,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRouteTableRequest 请求对象
+     * @param request CreateRouteTableRequest 请求对象
      * @return AsyncInvoker<CreateRouteTableRequest, CreateRouteTableResponse>
      */
     public AsyncInvoker<CreateRouteTableRequest, CreateRouteTableResponse> createRouteTableAsyncInvoker(
         CreateRouteTableRequest request) {
-        return new AsyncInvoker<CreateRouteTableRequest, CreateRouteTableResponse>(request, ErMeta.createRouteTable,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.createRouteTable, hcClient);
     }
 
     /**
@@ -1109,7 +1083,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRouteTableRequest 请求对象
+     * @param request DeleteRouteTableRequest 请求对象
      * @return CompletableFuture<DeleteRouteTableResponse>
      */
     public CompletableFuture<DeleteRouteTableResponse> deleteRouteTableAsync(DeleteRouteTableRequest request) {
@@ -1123,13 +1097,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRouteTableRequest 请求对象
+     * @param request DeleteRouteTableRequest 请求对象
      * @return AsyncInvoker<DeleteRouteTableRequest, DeleteRouteTableResponse>
      */
     public AsyncInvoker<DeleteRouteTableRequest, DeleteRouteTableResponse> deleteRouteTableAsyncInvoker(
         DeleteRouteTableRequest request) {
-        return new AsyncInvoker<DeleteRouteTableRequest, DeleteRouteTableResponse>(request, ErMeta.deleteRouteTable,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.deleteRouteTable, hcClient);
     }
 
     /**
@@ -1139,7 +1112,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRouteTablesRequest 请求对象
+     * @param request ListRouteTablesRequest 请求对象
      * @return CompletableFuture<ListRouteTablesResponse>
      */
     public CompletableFuture<ListRouteTablesResponse> listRouteTablesAsync(ListRouteTablesRequest request) {
@@ -1153,13 +1126,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRouteTablesRequest 请求对象
+     * @param request ListRouteTablesRequest 请求对象
      * @return AsyncInvoker<ListRouteTablesRequest, ListRouteTablesResponse>
      */
     public AsyncInvoker<ListRouteTablesRequest, ListRouteTablesResponse> listRouteTablesAsyncInvoker(
         ListRouteTablesRequest request) {
-        return new AsyncInvoker<ListRouteTablesRequest, ListRouteTablesResponse>(request, ErMeta.listRouteTables,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listRouteTables, hcClient);
     }
 
     /**
@@ -1169,7 +1141,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRouteTableRequest 请求对象
+     * @param request ShowRouteTableRequest 请求对象
      * @return CompletableFuture<ShowRouteTableResponse>
      */
     public CompletableFuture<ShowRouteTableResponse> showRouteTableAsync(ShowRouteTableRequest request) {
@@ -1183,13 +1155,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRouteTableRequest 请求对象
+     * @param request ShowRouteTableRequest 请求对象
      * @return AsyncInvoker<ShowRouteTableRequest, ShowRouteTableResponse>
      */
     public AsyncInvoker<ShowRouteTableRequest, ShowRouteTableResponse> showRouteTableAsyncInvoker(
         ShowRouteTableRequest request) {
-        return new AsyncInvoker<ShowRouteTableRequest, ShowRouteTableResponse>(request, ErMeta.showRouteTable,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.showRouteTable, hcClient);
     }
 
     /**
@@ -1199,7 +1170,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRouteTableRequest 请求对象
+     * @param request UpdateRouteTableRequest 请求对象
      * @return CompletableFuture<UpdateRouteTableResponse>
      */
     public CompletableFuture<UpdateRouteTableResponse> updateRouteTableAsync(UpdateRouteTableRequest request) {
@@ -1213,13 +1184,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRouteTableRequest 请求对象
+     * @param request UpdateRouteTableRequest 请求对象
      * @return AsyncInvoker<UpdateRouteTableRequest, UpdateRouteTableResponse>
      */
     public AsyncInvoker<UpdateRouteTableRequest, UpdateRouteTableResponse> updateRouteTableAsyncInvoker(
         UpdateRouteTableRequest request) {
-        return new AsyncInvoker<UpdateRouteTableRequest, UpdateRouteTableResponse>(request, ErMeta.updateRouteTable,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.updateRouteTable, hcClient);
     }
 
     /**
@@ -1231,7 +1201,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceTagsRequest 请求对象
+     * @param request BatchCreateResourceTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateResourceTagsResponse>
      */
     public CompletableFuture<BatchCreateResourceTagsResponse> batchCreateResourceTagsAsync(
@@ -1248,13 +1218,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceTagsRequest 请求对象
+     * @param request BatchCreateResourceTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>
      */
     public AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTagsAsyncInvoker(
         BatchCreateResourceTagsRequest request) {
-        return new AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>(request,
-            ErMeta.batchCreateResourceTags, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.batchCreateResourceTags, hcClient);
     }
 
     /**
@@ -1264,7 +1233,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagRequest 请求对象
+     * @param request CreateResourceTagRequest 请求对象
      * @return CompletableFuture<CreateResourceTagResponse>
      */
     public CompletableFuture<CreateResourceTagResponse> createResourceTagAsync(CreateResourceTagRequest request) {
@@ -1278,13 +1247,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagRequest 请求对象
+     * @param request CreateResourceTagRequest 请求对象
      * @return AsyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>
      */
     public AsyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTagAsyncInvoker(
         CreateResourceTagRequest request) {
-        return new AsyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>(request, ErMeta.createResourceTag,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.createResourceTag, hcClient);
     }
 
     /**
@@ -1294,7 +1262,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return CompletableFuture<DeleteResourceTagResponse>
      */
     public CompletableFuture<DeleteResourceTagResponse> deleteResourceTagAsync(DeleteResourceTagRequest request) {
@@ -1308,13 +1276,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
      */
     public AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTagAsyncInvoker(
         DeleteResourceTagRequest request) {
-        return new AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>(request, ErMeta.deleteResourceTag,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.deleteResourceTag, hcClient);
     }
 
     /**
@@ -1324,7 +1291,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return CompletableFuture<ListProjectTagsResponse>
      */
     public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
@@ -1338,13 +1305,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
     public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
         ListProjectTagsRequest request) {
-        return new AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, ErMeta.listProjectTags,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listProjectTags, hcClient);
     }
 
     /**
@@ -1354,7 +1320,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagRequest 请求对象
+     * @param request ShowResourceTagRequest 请求对象
      * @return CompletableFuture<ShowResourceTagResponse>
      */
     public CompletableFuture<ShowResourceTagResponse> showResourceTagAsync(ShowResourceTagRequest request) {
@@ -1368,13 +1334,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagRequest 请求对象
+     * @param request ShowResourceTagRequest 请求对象
      * @return AsyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>
      */
     public AsyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTagAsyncInvoker(
         ShowResourceTagRequest request) {
-        return new AsyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>(request, ErMeta.showResourceTag,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.showResourceTag, hcClient);
     }
 
     /**
@@ -1384,7 +1349,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcAttachmentRequest 请求对象
+     * @param request CreateVpcAttachmentRequest 请求对象
      * @return CompletableFuture<CreateVpcAttachmentResponse>
      */
     public CompletableFuture<CreateVpcAttachmentResponse> createVpcAttachmentAsync(CreateVpcAttachmentRequest request) {
@@ -1398,13 +1363,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcAttachmentRequest 请求对象
+     * @param request CreateVpcAttachmentRequest 请求对象
      * @return AsyncInvoker<CreateVpcAttachmentRequest, CreateVpcAttachmentResponse>
      */
     public AsyncInvoker<CreateVpcAttachmentRequest, CreateVpcAttachmentResponse> createVpcAttachmentAsyncInvoker(
         CreateVpcAttachmentRequest request) {
-        return new AsyncInvoker<CreateVpcAttachmentRequest, CreateVpcAttachmentResponse>(request,
-            ErMeta.createVpcAttachment, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.createVpcAttachment, hcClient);
     }
 
     /**
@@ -1414,7 +1378,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcAttachmentRequest 请求对象
+     * @param request DeleteVpcAttachmentRequest 请求对象
      * @return CompletableFuture<DeleteVpcAttachmentResponse>
      */
     public CompletableFuture<DeleteVpcAttachmentResponse> deleteVpcAttachmentAsync(DeleteVpcAttachmentRequest request) {
@@ -1428,13 +1392,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcAttachmentRequest 请求对象
+     * @param request DeleteVpcAttachmentRequest 请求对象
      * @return AsyncInvoker<DeleteVpcAttachmentRequest, DeleteVpcAttachmentResponse>
      */
     public AsyncInvoker<DeleteVpcAttachmentRequest, DeleteVpcAttachmentResponse> deleteVpcAttachmentAsyncInvoker(
         DeleteVpcAttachmentRequest request) {
-        return new AsyncInvoker<DeleteVpcAttachmentRequest, DeleteVpcAttachmentResponse>(request,
-            ErMeta.deleteVpcAttachment, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.deleteVpcAttachment, hcClient);
     }
 
     /**
@@ -1444,7 +1407,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcAttachmentsRequest 请求对象
+     * @param request ListVpcAttachmentsRequest 请求对象
      * @return CompletableFuture<ListVpcAttachmentsResponse>
      */
     public CompletableFuture<ListVpcAttachmentsResponse> listVpcAttachmentsAsync(ListVpcAttachmentsRequest request) {
@@ -1458,13 +1421,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcAttachmentsRequest 请求对象
+     * @param request ListVpcAttachmentsRequest 请求对象
      * @return AsyncInvoker<ListVpcAttachmentsRequest, ListVpcAttachmentsResponse>
      */
     public AsyncInvoker<ListVpcAttachmentsRequest, ListVpcAttachmentsResponse> listVpcAttachmentsAsyncInvoker(
         ListVpcAttachmentsRequest request) {
-        return new AsyncInvoker<ListVpcAttachmentsRequest, ListVpcAttachmentsResponse>(request,
-            ErMeta.listVpcAttachments, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.listVpcAttachments, hcClient);
     }
 
     /**
@@ -1474,7 +1436,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVpcAttachmentRequest 请求对象
+     * @param request ShowVpcAttachmentRequest 请求对象
      * @return CompletableFuture<ShowVpcAttachmentResponse>
      */
     public CompletableFuture<ShowVpcAttachmentResponse> showVpcAttachmentAsync(ShowVpcAttachmentRequest request) {
@@ -1488,13 +1450,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVpcAttachmentRequest 请求对象
+     * @param request ShowVpcAttachmentRequest 请求对象
      * @return AsyncInvoker<ShowVpcAttachmentRequest, ShowVpcAttachmentResponse>
      */
     public AsyncInvoker<ShowVpcAttachmentRequest, ShowVpcAttachmentResponse> showVpcAttachmentAsyncInvoker(
         ShowVpcAttachmentRequest request) {
-        return new AsyncInvoker<ShowVpcAttachmentRequest, ShowVpcAttachmentResponse>(request, ErMeta.showVpcAttachment,
-            hcClient);
+        return new AsyncInvoker<>(request, ErMeta.showVpcAttachment, hcClient);
     }
 
     /**
@@ -1504,7 +1465,7 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcAttachmentRequest 请求对象
+     * @param request UpdateVpcAttachmentRequest 请求对象
      * @return CompletableFuture<UpdateVpcAttachmentResponse>
      */
     public CompletableFuture<UpdateVpcAttachmentResponse> updateVpcAttachmentAsync(UpdateVpcAttachmentRequest request) {
@@ -1518,13 +1479,12 @@ public class ErAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcAttachmentRequest 请求对象
+     * @param request UpdateVpcAttachmentRequest 请求对象
      * @return AsyncInvoker<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResponse>
      */
     public AsyncInvoker<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResponse> updateVpcAttachmentAsyncInvoker(
         UpdateVpcAttachmentRequest request) {
-        return new AsyncInvoker<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResponse>(request,
-            ErMeta.updateVpcAttachment, hcClient);
+        return new AsyncInvoker<>(request, ErMeta.updateVpcAttachment, hcClient);
     }
 
 }

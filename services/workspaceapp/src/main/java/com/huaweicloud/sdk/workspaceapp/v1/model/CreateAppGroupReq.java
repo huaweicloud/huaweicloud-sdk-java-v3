@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 创建应用组,允许创建应用组之后再绑定应用服务器组
+ * 创建应用组,允许创建应用组之后再绑定应用服务器组。
  */
 public class CreateAppGroupReq {
 
@@ -41,7 +41,7 @@ public class CreateAppGroupReq {
     }
 
     /**
-     * 应用组名称,名称需满足如下规则: 1. 由中文，英文大小写，数字，_-组成 2. 长度范围1~64个字符
+     * 应用组名称,名称需满足如下规则: 1. 由中文，英文大小写，数字，_-组成。 2. 长度范围1~64个字符。
      * @return name
      */
     public String getName() {
@@ -58,7 +58,7 @@ public class CreateAppGroupReq {
     }
 
     /**
-     * 应用服务器组ID
+     * 应用服务器组ID。
      * @return appServerGroupId
      */
     public String getAppServerGroupId() {
@@ -75,7 +75,7 @@ public class CreateAppGroupReq {
     }
 
     /**
-     * 应用组描述
+     * 应用组描述。
      * @return description
      */
     public String getDescription() {

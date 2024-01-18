@@ -70,7 +70,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateUsingPostRequest 请求对象
+     * @param request BatchCreateUsingPostRequest 请求对象
      * @return BatchCreateUsingPostResponse
      */
     public BatchCreateUsingPostResponse batchCreateUsingPost(BatchCreateUsingPostRequest request) {
@@ -84,13 +84,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateUsingPostRequest 请求对象
+     * @param request BatchCreateUsingPostRequest 请求对象
      * @return SyncInvoker<BatchCreateUsingPostRequest, BatchCreateUsingPostResponse>
      */
     public SyncInvoker<BatchCreateUsingPostRequest, BatchCreateUsingPostResponse> batchCreateUsingPostInvoker(
         BatchCreateUsingPostRequest request) {
-        return new SyncInvoker<BatchCreateUsingPostRequest, BatchCreateUsingPostResponse>(request,
-            IDMEClassicAPIMeta.batchCreateUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchCreateUsingPost, hcClient);
     }
 
     /**
@@ -102,7 +101,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteLogicalUsingPostRequest 请求对象
+     * @param request BatchDeleteLogicalUsingPostRequest 请求对象
      * @return BatchDeleteLogicalUsingPostResponse
      */
     public BatchDeleteLogicalUsingPostResponse batchDeleteLogicalUsingPost(BatchDeleteLogicalUsingPostRequest request) {
@@ -118,13 +117,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteLogicalUsingPostRequest 请求对象
+     * @param request BatchDeleteLogicalUsingPostRequest 请求对象
      * @return SyncInvoker<BatchDeleteLogicalUsingPostRequest, BatchDeleteLogicalUsingPostResponse>
      */
     public SyncInvoker<BatchDeleteLogicalUsingPostRequest, BatchDeleteLogicalUsingPostResponse> batchDeleteLogicalUsingPostInvoker(
         BatchDeleteLogicalUsingPostRequest request) {
-        return new SyncInvoker<BatchDeleteLogicalUsingPostRequest, BatchDeleteLogicalUsingPostResponse>(request,
-            IDMEClassicAPIMeta.batchDeleteLogicalUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchDeleteLogicalUsingPost, hcClient);
     }
 
     /**
@@ -136,7 +134,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteUsingPostRequest 请求对象
+     * @param request BatchDeleteUsingPostRequest 请求对象
      * @return BatchDeleteUsingPostResponse
      */
     public BatchDeleteUsingPostResponse batchDeleteUsingPost(BatchDeleteUsingPostRequest request) {
@@ -152,13 +150,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteUsingPostRequest 请求对象
+     * @param request BatchDeleteUsingPostRequest 请求对象
      * @return SyncInvoker<BatchDeleteUsingPostRequest, BatchDeleteUsingPostResponse>
      */
     public SyncInvoker<BatchDeleteUsingPostRequest, BatchDeleteUsingPostResponse> batchDeleteUsingPostInvoker(
         BatchDeleteUsingPostRequest request) {
-        return new SyncInvoker<BatchDeleteUsingPostRequest, BatchDeleteUsingPostResponse>(request,
-            IDMEClassicAPIMeta.batchDeleteUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchDeleteUsingPost, hcClient);
     }
 
     /**
@@ -168,7 +165,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowGetUsingPostRequest 请求对象
+     * @param request BatchShowGetUsingPostRequest 请求对象
      * @return BatchShowGetUsingPostResponse
      */
     public BatchShowGetUsingPostResponse batchShowGetUsingPost(BatchShowGetUsingPostRequest request) {
@@ -182,13 +179,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowGetUsingPostRequest 请求对象
+     * @param request BatchShowGetUsingPostRequest 请求对象
      * @return SyncInvoker<BatchShowGetUsingPostRequest, BatchShowGetUsingPostResponse>
      */
     public SyncInvoker<BatchShowGetUsingPostRequest, BatchShowGetUsingPostResponse> batchShowGetUsingPostInvoker(
         BatchShowGetUsingPostRequest request) {
-        return new SyncInvoker<BatchShowGetUsingPostRequest, BatchShowGetUsingPostResponse>(request,
-            IDMEClassicAPIMeta.batchShowGetUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchShowGetUsingPost, hcClient);
     }
 
     /**
@@ -198,7 +194,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateUsingPostRequest 请求对象
+     * @param request BatchUpdateUsingPostRequest 请求对象
      * @return BatchUpdateUsingPostResponse
      */
     public BatchUpdateUsingPostResponse batchUpdateUsingPost(BatchUpdateUsingPostRequest request) {
@@ -212,13 +208,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateUsingPostRequest 请求对象
+     * @param request BatchUpdateUsingPostRequest 请求对象
      * @return SyncInvoker<BatchUpdateUsingPostRequest, BatchUpdateUsingPostResponse>
      */
     public SyncInvoker<BatchUpdateUsingPostRequest, BatchUpdateUsingPostResponse> batchUpdateUsingPostInvoker(
         BatchUpdateUsingPostRequest request) {
-        return new SyncInvoker<BatchUpdateUsingPostRequest, BatchUpdateUsingPostResponse>(request,
-            IDMEClassicAPIMeta.batchUpdateUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchUpdateUsingPost, hcClient);
     }
 
     /**
@@ -228,7 +223,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountUsingPostRequest 请求对象
+     * @param request CountUsingPostRequest 请求对象
      * @return CountUsingPostResponse
      */
     public CountUsingPostResponse countUsingPost(CountUsingPostRequest request) {
@@ -242,13 +237,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountUsingPostRequest 请求对象
+     * @param request CountUsingPostRequest 请求对象
      * @return SyncInvoker<CountUsingPostRequest, CountUsingPostResponse>
      */
     public SyncInvoker<CountUsingPostRequest, CountUsingPostResponse> countUsingPostInvoker(
         CountUsingPostRequest request) {
-        return new SyncInvoker<CountUsingPostRequest, CountUsingPostResponse>(request,
-            IDMEClassicAPIMeta.countUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.countUsingPost, hcClient);
     }
 
     /**
@@ -258,7 +252,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUsingPostRequest 请求对象
+     * @param request CreateUsingPostRequest 请求对象
      * @return CreateUsingPostResponse
      */
     public CreateUsingPostResponse createUsingPost(CreateUsingPostRequest request) {
@@ -272,13 +266,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUsingPostRequest 请求对象
+     * @param request CreateUsingPostRequest 请求对象
      * @return SyncInvoker<CreateUsingPostRequest, CreateUsingPostResponse>
      */
     public SyncInvoker<CreateUsingPostRequest, CreateUsingPostResponse> createUsingPostInvoker(
         CreateUsingPostRequest request) {
-        return new SyncInvoker<CreateUsingPostRequest, CreateUsingPostResponse>(request,
-            IDMEClassicAPIMeta.createUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.createUsingPost, hcClient);
     }
 
     /**
@@ -290,7 +283,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteByConditionUsingPostRequest 请求对象
+     * @param request DeleteByConditionUsingPostRequest 请求对象
      * @return DeleteByConditionUsingPostResponse
      */
     public DeleteByConditionUsingPostResponse deleteByConditionUsingPost(DeleteByConditionUsingPostRequest request) {
@@ -306,13 +299,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteByConditionUsingPostRequest 请求对象
+     * @param request DeleteByConditionUsingPostRequest 请求对象
      * @return SyncInvoker<DeleteByConditionUsingPostRequest, DeleteByConditionUsingPostResponse>
      */
     public SyncInvoker<DeleteByConditionUsingPostRequest, DeleteByConditionUsingPostResponse> deleteByConditionUsingPostInvoker(
         DeleteByConditionUsingPostRequest request) {
-        return new SyncInvoker<DeleteByConditionUsingPostRequest, DeleteByConditionUsingPostResponse>(request,
-            IDMEClassicAPIMeta.deleteByConditionUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.deleteByConditionUsingPost, hcClient);
     }
 
     /**
@@ -324,7 +316,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUsingPostRequest 请求对象
+     * @param request DeleteUsingPostRequest 请求对象
      * @return DeleteUsingPostResponse
      */
     public DeleteUsingPostResponse deleteUsingPost(DeleteUsingPostRequest request) {
@@ -340,13 +332,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUsingPostRequest 请求对象
+     * @param request DeleteUsingPostRequest 请求对象
      * @return SyncInvoker<DeleteUsingPostRequest, DeleteUsingPostResponse>
      */
     public SyncInvoker<DeleteUsingPostRequest, DeleteUsingPostResponse> deleteUsingPostInvoker(
         DeleteUsingPostRequest request) {
-        return new SyncInvoker<DeleteUsingPostRequest, DeleteUsingPostResponse>(request,
-            IDMEClassicAPIMeta.deleteUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.deleteUsingPost, hcClient);
     }
 
     /**
@@ -356,7 +347,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryUsingPostRequest 请求对象
+     * @param request ListQueryUsingPostRequest 请求对象
      * @return ListQueryUsingPostResponse
      */
     public ListQueryUsingPostResponse listQueryUsingPost(ListQueryUsingPostRequest request) {
@@ -370,13 +361,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryUsingPostRequest 请求对象
+     * @param request ListQueryUsingPostRequest 请求对象
      * @return SyncInvoker<ListQueryUsingPostRequest, ListQueryUsingPostResponse>
      */
     public SyncInvoker<ListQueryUsingPostRequest, ListQueryUsingPostResponse> listQueryUsingPostInvoker(
         ListQueryUsingPostRequest request) {
-        return new SyncInvoker<ListQueryUsingPostRequest, ListQueryUsingPostResponse>(request,
-            IDMEClassicAPIMeta.listQueryUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.listQueryUsingPost, hcClient);
     }
 
     /**
@@ -386,7 +376,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSelectUsingPostRequest 请求对象
+     * @param request ListSelectUsingPostRequest 请求对象
      * @return ListSelectUsingPostResponse
      */
     public ListSelectUsingPostResponse listSelectUsingPost(ListSelectUsingPostRequest request) {
@@ -400,13 +390,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSelectUsingPostRequest 请求对象
+     * @param request ListSelectUsingPostRequest 请求对象
      * @return SyncInvoker<ListSelectUsingPostRequest, ListSelectUsingPostResponse>
      */
     public SyncInvoker<ListSelectUsingPostRequest, ListSelectUsingPostResponse> listSelectUsingPostInvoker(
         ListSelectUsingPostRequest request) {
-        return new SyncInvoker<ListSelectUsingPostRequest, ListSelectUsingPostResponse>(request,
-            IDMEClassicAPIMeta.listSelectUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.listSelectUsingPost, hcClient);
     }
 
     /**
@@ -416,7 +405,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsingPostRequest 请求对象
+     * @param request ListUsingPostRequest 请求对象
      * @return ListUsingPostResponse
      */
     public ListUsingPostResponse listUsingPost(ListUsingPostRequest request) {
@@ -430,12 +419,11 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsingPostRequest 请求对象
+     * @param request ListUsingPostRequest 请求对象
      * @return SyncInvoker<ListUsingPostRequest, ListUsingPostResponse>
      */
     public SyncInvoker<ListUsingPostRequest, ListUsingPostResponse> listUsingPostInvoker(ListUsingPostRequest request) {
-        return new SyncInvoker<ListUsingPostRequest, ListUsingPostResponse>(request, IDMEClassicAPIMeta.listUsingPost,
-            hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.listUsingPost, hcClient);
     }
 
     /**
@@ -447,7 +435,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveAllUsingPostRequest 请求对象
+     * @param request SaveAllUsingPostRequest 请求对象
      * @return SaveAllUsingPostResponse
      */
     public SaveAllUsingPostResponse saveAllUsingPost(SaveAllUsingPostRequest request) {
@@ -463,13 +451,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveAllUsingPostRequest 请求对象
+     * @param request SaveAllUsingPostRequest 请求对象
      * @return SyncInvoker<SaveAllUsingPostRequest, SaveAllUsingPostResponse>
      */
     public SyncInvoker<SaveAllUsingPostRequest, SaveAllUsingPostResponse> saveAllUsingPostInvoker(
         SaveAllUsingPostRequest request) {
-        return new SyncInvoker<SaveAllUsingPostRequest, SaveAllUsingPostResponse>(request,
-            IDMEClassicAPIMeta.saveAllUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.saveAllUsingPost, hcClient);
     }
 
     /**
@@ -479,7 +466,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveAsUsingPostRequest 请求对象
+     * @param request SaveAsUsingPostRequest 请求对象
      * @return SaveAsUsingPostResponse
      */
     public SaveAsUsingPostResponse saveAsUsingPost(SaveAsUsingPostRequest request) {
@@ -493,13 +480,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveAsUsingPostRequest 请求对象
+     * @param request SaveAsUsingPostRequest 请求对象
      * @return SyncInvoker<SaveAsUsingPostRequest, SaveAsUsingPostResponse>
      */
     public SyncInvoker<SaveAsUsingPostRequest, SaveAsUsingPostResponse> saveAsUsingPostInvoker(
         SaveAsUsingPostRequest request) {
-        return new SyncInvoker<SaveAsUsingPostRequest, SaveAsUsingPostResponse>(request,
-            IDMEClassicAPIMeta.saveAsUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.saveAsUsingPost, hcClient);
     }
 
     /**
@@ -511,7 +497,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveUsingPostRequest 请求对象
+     * @param request SaveUsingPostRequest 请求对象
      * @return SaveUsingPostResponse
      */
     public SaveUsingPostResponse saveUsingPost(SaveUsingPostRequest request) {
@@ -527,12 +513,11 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveUsingPostRequest 请求对象
+     * @param request SaveUsingPostRequest 请求对象
      * @return SyncInvoker<SaveUsingPostRequest, SaveUsingPostResponse>
      */
     public SyncInvoker<SaveUsingPostRequest, SaveUsingPostResponse> saveUsingPostInvoker(SaveUsingPostRequest request) {
-        return new SyncInvoker<SaveUsingPostRequest, SaveUsingPostResponse>(request, IDMEClassicAPIMeta.saveUsingPost,
-            hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.saveUsingPost, hcClient);
     }
 
     /**
@@ -542,7 +527,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFindUsingPostRequest 请求对象
+     * @param request ShowFindUsingPostRequest 请求对象
      * @return ShowFindUsingPostResponse
      */
     public ShowFindUsingPostResponse showFindUsingPost(ShowFindUsingPostRequest request) {
@@ -556,13 +541,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFindUsingPostRequest 请求对象
+     * @param request ShowFindUsingPostRequest 请求对象
      * @return SyncInvoker<ShowFindUsingPostRequest, ShowFindUsingPostResponse>
      */
     public SyncInvoker<ShowFindUsingPostRequest, ShowFindUsingPostResponse> showFindUsingPostInvoker(
         ShowFindUsingPostRequest request) {
-        return new SyncInvoker<ShowFindUsingPostRequest, ShowFindUsingPostResponse>(request,
-            IDMEClassicAPIMeta.showFindUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.showFindUsingPost, hcClient);
     }
 
     /**
@@ -572,7 +556,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGetByUniqueKeyRequest 请求对象
+     * @param request ShowGetByUniqueKeyRequest 请求对象
      * @return ShowGetByUniqueKeyResponse
      */
     public ShowGetByUniqueKeyResponse showGetByUniqueKey(ShowGetByUniqueKeyRequest request) {
@@ -586,13 +570,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGetByUniqueKeyRequest 请求对象
+     * @param request ShowGetByUniqueKeyRequest 请求对象
      * @return SyncInvoker<ShowGetByUniqueKeyRequest, ShowGetByUniqueKeyResponse>
      */
     public SyncInvoker<ShowGetByUniqueKeyRequest, ShowGetByUniqueKeyResponse> showGetByUniqueKeyInvoker(
         ShowGetByUniqueKeyRequest request) {
-        return new SyncInvoker<ShowGetByUniqueKeyRequest, ShowGetByUniqueKeyResponse>(request,
-            IDMEClassicAPIMeta.showGetByUniqueKey, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.showGetByUniqueKey, hcClient);
     }
 
     /**
@@ -602,7 +585,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGetUsingPostRequest 请求对象
+     * @param request ShowGetUsingPostRequest 请求对象
      * @return ShowGetUsingPostResponse
      */
     public ShowGetUsingPostResponse showGetUsingPost(ShowGetUsingPostRequest request) {
@@ -616,13 +599,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGetUsingPostRequest 请求对象
+     * @param request ShowGetUsingPostRequest 请求对象
      * @return SyncInvoker<ShowGetUsingPostRequest, ShowGetUsingPostResponse>
      */
     public SyncInvoker<ShowGetUsingPostRequest, ShowGetUsingPostResponse> showGetUsingPostInvoker(
         ShowGetUsingPostRequest request) {
-        return new SyncInvoker<ShowGetUsingPostRequest, ShowGetUsingPostResponse>(request,
-            IDMEClassicAPIMeta.showGetUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.showGetUsingPost, hcClient);
     }
 
     /**
@@ -634,7 +616,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLogicalDeleteByConditionUsingPostRequest 请求对象
+     * @param request ShowLogicalDeleteByConditionUsingPostRequest 请求对象
      * @return ShowLogicalDeleteByConditionUsingPostResponse
      */
     public ShowLogicalDeleteByConditionUsingPostResponse showLogicalDeleteByConditionUsingPost(
@@ -651,13 +633,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLogicalDeleteByConditionUsingPostRequest 请求对象
+     * @param request ShowLogicalDeleteByConditionUsingPostRequest 请求对象
      * @return SyncInvoker<ShowLogicalDeleteByConditionUsingPostRequest, ShowLogicalDeleteByConditionUsingPostResponse>
      */
     public SyncInvoker<ShowLogicalDeleteByConditionUsingPostRequest, ShowLogicalDeleteByConditionUsingPostResponse> showLogicalDeleteByConditionUsingPostInvoker(
         ShowLogicalDeleteByConditionUsingPostRequest request) {
-        return new SyncInvoker<ShowLogicalDeleteByConditionUsingPostRequest, ShowLogicalDeleteByConditionUsingPostResponse>(
-            request, IDMEClassicAPIMeta.showLogicalDeleteByConditionUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.showLogicalDeleteByConditionUsingPost, hcClient);
     }
 
     /**
@@ -669,7 +650,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLogicalDeleteUsingPostRequest 请求对象
+     * @param request ShowLogicalDeleteUsingPostRequest 请求对象
      * @return ShowLogicalDeleteUsingPostResponse
      */
     public ShowLogicalDeleteUsingPostResponse showLogicalDeleteUsingPost(ShowLogicalDeleteUsingPostRequest request) {
@@ -685,13 +666,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLogicalDeleteUsingPostRequest 请求对象
+     * @param request ShowLogicalDeleteUsingPostRequest 请求对象
      * @return SyncInvoker<ShowLogicalDeleteUsingPostRequest, ShowLogicalDeleteUsingPostResponse>
      */
     public SyncInvoker<ShowLogicalDeleteUsingPostRequest, ShowLogicalDeleteUsingPostResponse> showLogicalDeleteUsingPostInvoker(
         ShowLogicalDeleteUsingPostRequest request) {
-        return new SyncInvoker<ShowLogicalDeleteUsingPostRequest, ShowLogicalDeleteUsingPostResponse>(request,
-            IDMEClassicAPIMeta.showLogicalDeleteUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.showLogicalDeleteUsingPost, hcClient);
     }
 
     /**
@@ -701,7 +681,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStaticsUsingPostRequest 请求对象
+     * @param request ShowStaticsUsingPostRequest 请求对象
      * @return ShowStaticsUsingPostResponse
      */
     public ShowStaticsUsingPostResponse showStaticsUsingPost(ShowStaticsUsingPostRequest request) {
@@ -715,13 +695,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStaticsUsingPostRequest 请求对象
+     * @param request ShowStaticsUsingPostRequest 请求对象
      * @return SyncInvoker<ShowStaticsUsingPostRequest, ShowStaticsUsingPostResponse>
      */
     public SyncInvoker<ShowStaticsUsingPostRequest, ShowStaticsUsingPostResponse> showStaticsUsingPostInvoker(
         ShowStaticsUsingPostRequest request) {
-        return new SyncInvoker<ShowStaticsUsingPostRequest, ShowStaticsUsingPostResponse>(request,
-            IDMEClassicAPIMeta.showStaticsUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.showStaticsUsingPost, hcClient);
     }
 
     /**
@@ -731,7 +710,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateByConditionUsingPostRequest 请求对象
+     * @param request UpdateByConditionUsingPostRequest 请求对象
      * @return UpdateByConditionUsingPostResponse
      */
     public UpdateByConditionUsingPostResponse updateByConditionUsingPost(UpdateByConditionUsingPostRequest request) {
@@ -745,13 +724,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateByConditionUsingPostRequest 请求对象
+     * @param request UpdateByConditionUsingPostRequest 请求对象
      * @return SyncInvoker<UpdateByConditionUsingPostRequest, UpdateByConditionUsingPostResponse>
      */
     public SyncInvoker<UpdateByConditionUsingPostRequest, UpdateByConditionUsingPostResponse> updateByConditionUsingPostInvoker(
         UpdateByConditionUsingPostRequest request) {
-        return new SyncInvoker<UpdateByConditionUsingPostRequest, UpdateByConditionUsingPostResponse>(request,
-            IDMEClassicAPIMeta.updateByConditionUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.updateByConditionUsingPost, hcClient);
     }
 
     /**
@@ -761,7 +739,7 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUsingPostRequest 请求对象
+     * @param request UpdateUsingPostRequest 请求对象
      * @return UpdateUsingPostResponse
      */
     public UpdateUsingPostResponse updateUsingPost(UpdateUsingPostRequest request) {
@@ -775,13 +753,12 @@ public class IDMEClassicAPIClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUsingPostRequest 请求对象
+     * @param request UpdateUsingPostRequest 请求对象
      * @return SyncInvoker<UpdateUsingPostRequest, UpdateUsingPostResponse>
      */
     public SyncInvoker<UpdateUsingPostRequest, UpdateUsingPostResponse> updateUsingPostInvoker(
         UpdateUsingPostRequest request) {
-        return new SyncInvoker<UpdateUsingPostRequest, UpdateUsingPostResponse>(request,
-            IDMEClassicAPIMeta.updateUsingPost, hcClient);
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.updateUsingPost, hcClient);
     }
 
 }

@@ -54,9 +54,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class AomMeta {
 
-    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForcreateApp();
+    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForCreateApp();
 
-    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForcreateApp() {
+    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForCreateApp() {
         // basic
         HttpRequestDef.Builder<CreateAppRequest, CreateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppRequest.class, CreateAppResponse.class)
@@ -69,26 +69,22 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BizAppParam.class),
-            f -> f.withMarshaller(CreateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getBody, CreateAppRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateAppResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateAppResponse::getBody, CreateAppResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateComponentRequest, CreateComponentResponse> createComponent =
-        genForcreateComponent();
+        genForCreateComponent();
 
-    private static HttpRequestDef<CreateComponentRequest, CreateComponentResponse> genForcreateComponent() {
+    private static HttpRequestDef<CreateComponentRequest, CreateComponentResponse> genForCreateComponent() {
         // basic
         HttpRequestDef.Builder<CreateComponentRequest, CreateComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateComponentRequest.class, CreateComponentResponse.class)
@@ -101,18 +97,16 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ComponentParam.class),
-            f -> f.withMarshaller(CreateComponentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateComponentRequest::getBody, CreateComponentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateEnvRequest, CreateEnvResponse> createEnv = genForcreateEnv();
+    public static final HttpRequestDef<CreateEnvRequest, CreateEnvResponse> createEnv = genForCreateEnv();
 
-    private static HttpRequestDef<CreateEnvRequest, CreateEnvResponse> genForcreateEnv() {
+    private static HttpRequestDef<CreateEnvRequest, CreateEnvResponse> genForCreateEnv() {
         // basic
         HttpRequestDef.Builder<CreateEnvRequest, CreateEnvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEnvRequest.class, CreateEnvResponse.class)
@@ -125,18 +119,16 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvParam.class),
-            f -> f.withMarshaller(CreateEnvRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEnvRequest::getBody, CreateEnvRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSubAppRequest, CreateSubAppResponse> createSubApp = genForcreateSubApp();
+    public static final HttpRequestDef<CreateSubAppRequest, CreateSubAppResponse> createSubApp = genForCreateSubApp();
 
-    private static HttpRequestDef<CreateSubAppRequest, CreateSubAppResponse> genForcreateSubApp() {
+    private static HttpRequestDef<CreateSubAppRequest, CreateSubAppResponse> genForCreateSubApp() {
         // basic
         HttpRequestDef.Builder<CreateSubAppRequest, CreateSubAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSubAppRequest.class, CreateSubAppResponse.class)
@@ -149,25 +141,21 @@ public class AomMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubAppCreateParam.class),
-            f -> f.withMarshaller(CreateSubAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSubAppRequest::getBody, CreateSubAppRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateSubAppResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateSubAppResponse::getBody, CreateSubAppResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genFordeleteApp();
+    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genForDeleteApp();
 
-    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genFordeleteApp() {
+    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genForDeleteApp() {
         // basic
         HttpRequestDef.Builder<DeleteAppRequest, DeleteAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppRequest.class, DeleteAppResponse.class)
@@ -180,26 +168,22 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getApplicationId, DeleteAppRequest::setApplicationId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAppResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteAppResponse::getBody, DeleteAppResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> deleteComponent =
-        genFordeleteComponent();
+        genForDeleteComponent();
 
-    private static HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> genFordeleteComponent() {
+    private static HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> genForDeleteComponent() {
         // basic
         HttpRequestDef.Builder<DeleteComponentRequest, DeleteComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteComponentRequest.class, DeleteComponentResponse.class)
@@ -212,25 +196,21 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(DeleteComponentRequest::getComponentId, DeleteComponentRequest::setComponentId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteComponentResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteComponentResponse::getBody, DeleteComponentResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteEnvRequest, DeleteEnvResponse> deleteEnv = genFordeleteEnv();
+    public static final HttpRequestDef<DeleteEnvRequest, DeleteEnvResponse> deleteEnv = genForDeleteEnv();
 
-    private static HttpRequestDef<DeleteEnvRequest, DeleteEnvResponse> genFordeleteEnv() {
+    private static HttpRequestDef<DeleteEnvRequest, DeleteEnvResponse> genForDeleteEnv() {
         // basic
         HttpRequestDef.Builder<DeleteEnvRequest, DeleteEnvResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvRequest.class, DeleteEnvResponse.class)
@@ -243,18 +223,16 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvRequest::getEnvironmentId, DeleteEnvRequest::setEnvironmentId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSubAppRequest, DeleteSubAppResponse> deleteSubApp = genFordeleteSubApp();
+    public static final HttpRequestDef<DeleteSubAppRequest, DeleteSubAppResponse> deleteSubApp = genForDeleteSubApp();
 
-    private static HttpRequestDef<DeleteSubAppRequest, DeleteSubAppResponse> genFordeleteSubApp() {
+    private static HttpRequestDef<DeleteSubAppRequest, DeleteSubAppResponse> genForDeleteSubApp() {
         // basic
         HttpRequestDef.Builder<DeleteSubAppRequest, DeleteSubAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubAppRequest.class, DeleteSubAppResponse.class)
@@ -267,26 +245,22 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSubAppRequest::getSubAppId, (req, v) -> {
-                req.setSubAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteSubAppRequest::getSubAppId, DeleteSubAppRequest::setSubAppId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteSubAppResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteSubAppResponse::getBody, DeleteSubAppResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> listResourceUnderNode =
-        genForlistResourceUnderNode();
+        genForListResourceUnderNode();
 
-    private static HttpRequestDef<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> genForlistResourceUnderNode() {
+    private static HttpRequestDef<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> genForListResourceUnderNode() {
         // basic
         HttpRequestDef.Builder<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListResourceUnderNodeRequest.class, ListResourceUnderNodeResponse.class)
@@ -299,32 +273,27 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUnderNodeRequest::getRfResourceType, (req, v) -> {
-                req.setRfResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceUnderNodeRequest::getRfResourceType,
+                ListResourceUnderNodeRequest::setRfResourceType));
         builder.<String>withRequestField("type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUnderNodeRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListResourceUnderNodeRequest::getType, ListResourceUnderNodeRequest::setType));
         builder.<PageResourceListParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PageResourceListParam.class),
-            f -> f.withMarshaller(ListResourceUnderNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceUnderNodeRequest::getBody, ListResourceUnderNodeRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForshowApp();
+    public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForShowApp();
 
-    private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForshowApp() {
+    private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForShowApp() {
         // basic
         HttpRequestDef.Builder<ShowAppRequest, ShowAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppRequest.class, ShowAppResponse.class)
@@ -337,9 +306,7 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ShowAppRequest::getApplicationId, ShowAppRequest::setApplicationId));
 
         // response
 
@@ -347,9 +314,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ShowAppByNameRequest, ShowAppByNameResponse> showAppByName =
-        genForshowAppByName();
+        genForShowAppByName();
 
-    private static HttpRequestDef<ShowAppByNameRequest, ShowAppByNameResponse> genForshowAppByName() {
+    private static HttpRequestDef<ShowAppByNameRequest, ShowAppByNameResponse> genForShowAppByName() {
         // basic
         HttpRequestDef.Builder<ShowAppByNameRequest, ShowAppByNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppByNameRequest.class, ShowAppByNameResponse.class)
@@ -362,16 +329,12 @@ public class AomMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppByNameRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowAppByNameRequest::getName, ShowAppByNameRequest::setName));
         builder.<String>withRequestField("display_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppByNameRequest::getDisplayName, (req, v) -> {
-                req.setDisplayName(v);
-            }));
+            f -> f.withMarshaller(ShowAppByNameRequest::getDisplayName, ShowAppByNameRequest::setDisplayName));
 
         // response
 
@@ -379,9 +342,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ShowComponentRequest, ShowComponentResponse> showComponent =
-        genForshowComponent();
+        genForShowComponent();
 
-    private static HttpRequestDef<ShowComponentRequest, ShowComponentResponse> genForshowComponent() {
+    private static HttpRequestDef<ShowComponentRequest, ShowComponentResponse> genForShowComponent() {
         // basic
         HttpRequestDef.Builder<ShowComponentRequest, ShowComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowComponentRequest.class, ShowComponentResponse.class)
@@ -394,9 +357,7 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ShowComponentRequest::getComponentId, ShowComponentRequest::setComponentId));
 
         // response
 
@@ -404,9 +365,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ShowComponentByNameRequest, ShowComponentByNameResponse> showComponentByName =
-        genForshowComponentByName();
+        genForShowComponentByName();
 
-    private static HttpRequestDef<ShowComponentByNameRequest, ShowComponentByNameResponse> genForshowComponentByName() {
+    private static HttpRequestDef<ShowComponentByNameRequest, ShowComponentByNameResponse> genForShowComponentByName() {
         // basic
         HttpRequestDef.Builder<ShowComponentByNameRequest, ShowComponentByNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowComponentByNameRequest.class, ShowComponentByNameResponse.class)
@@ -419,25 +380,23 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentByNameRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(ShowComponentByNameRequest::getApplicationId,
+                ShowComponentByNameRequest::setApplicationId));
         builder.<String>withRequestField("component_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentByNameRequest::getComponentName, (req, v) -> {
-                req.setComponentName(v);
-            }));
+            f -> f.withMarshaller(ShowComponentByNameRequest::getComponentName,
+                ShowComponentByNameRequest::setComponentName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEnvRequest, ShowEnvResponse> showEnv = genForshowEnv();
+    public static final HttpRequestDef<ShowEnvRequest, ShowEnvResponse> showEnv = genForShowEnv();
 
-    private static HttpRequestDef<ShowEnvRequest, ShowEnvResponse> genForshowEnv() {
+    private static HttpRequestDef<ShowEnvRequest, ShowEnvResponse> genForShowEnv() {
         // basic
         HttpRequestDef.Builder<ShowEnvRequest, ShowEnvResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEnvRequest.class, ShowEnvResponse.class)
@@ -450,9 +409,7 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnvRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEnvRequest::getEnvironmentId, ShowEnvRequest::setEnvironmentId));
 
         // response
 
@@ -460,9 +417,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<ShowEnvByNameRequest, ShowEnvByNameResponse> showEnvByName =
-        genForshowEnvByName();
+        genForShowEnvByName();
 
-    private static HttpRequestDef<ShowEnvByNameRequest, ShowEnvByNameResponse> genForshowEnvByName() {
+    private static HttpRequestDef<ShowEnvByNameRequest, ShowEnvByNameResponse> genForShowEnvByName() {
         // basic
         HttpRequestDef.Builder<ShowEnvByNameRequest, ShowEnvByNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEnvByNameRequest.class, ShowEnvByNameResponse.class)
@@ -475,32 +432,26 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnvByNameRequest::getEnvironmentName, (req, v) -> {
-                req.setEnvironmentName(v);
-            }));
+            f -> f.withMarshaller(ShowEnvByNameRequest::getEnvironmentName, ShowEnvByNameRequest::setEnvironmentName));
         builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnvByNameRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ShowEnvByNameRequest::getRegion, ShowEnvByNameRequest::setRegion));
         builder.<String>withRequestField("component_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnvByNameRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(ShowEnvByNameRequest::getComponentId, ShowEnvByNameRequest::setComponentId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForupdateApp();
+    public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForUpdateApp();
 
-    private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForupdateApp() {
+    private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForUpdateApp() {
         // basic
         HttpRequestDef.Builder<UpdateAppRequest, UpdateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppRequest.class, UpdateAppResponse.class)
@@ -513,16 +464,12 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getApplicationId, UpdateAppRequest::setApplicationId));
         builder.<BizAppParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BizAppParam.class),
-            f -> f.withMarshaller(UpdateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getBody, UpdateAppRequest::setBody));
 
         // response
 
@@ -530,9 +477,9 @@ public class AomMeta {
     }
 
     public static final HttpRequestDef<UpdateComponentRequest, UpdateComponentResponse> updateComponent =
-        genForupdateComponent();
+        genForUpdateComponent();
 
-    private static HttpRequestDef<UpdateComponentRequest, UpdateComponentResponse> genForupdateComponent() {
+    private static HttpRequestDef<UpdateComponentRequest, UpdateComponentResponse> genForUpdateComponent() {
         // basic
         HttpRequestDef.Builder<UpdateComponentRequest, UpdateComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateComponentRequest.class, UpdateComponentResponse.class)
@@ -545,25 +492,21 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateComponentRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
+            f -> f.withMarshaller(UpdateComponentRequest::getComponentId, UpdateComponentRequest::setComponentId));
         builder.<ComponentUpdateParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ComponentUpdateParam.class),
-            f -> f.withMarshaller(UpdateComponentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateComponentRequest::getBody, UpdateComponentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateEnvRequest, UpdateEnvResponse> updateEnv = genForupdateEnv();
+    public static final HttpRequestDef<UpdateEnvRequest, UpdateEnvResponse> updateEnv = genForUpdateEnv();
 
-    private static HttpRequestDef<UpdateEnvRequest, UpdateEnvResponse> genForupdateEnv() {
+    private static HttpRequestDef<UpdateEnvRequest, UpdateEnvResponse> genForUpdateEnv() {
         // basic
         HttpRequestDef.Builder<UpdateEnvRequest, UpdateEnvResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEnvRequest.class, UpdateEnvResponse.class)
@@ -576,25 +519,21 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnvRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvRequest::getEnvironmentId, UpdateEnvRequest::setEnvironmentId));
         builder.<EnvParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvParam.class),
-            f -> f.withMarshaller(UpdateEnvRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvRequest::getBody, UpdateEnvRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateSubAppRequest, UpdateSubAppResponse> updateSubApp = genForupdateSubApp();
+    public static final HttpRequestDef<UpdateSubAppRequest, UpdateSubAppResponse> updateSubApp = genForUpdateSubApp();
 
-    private static HttpRequestDef<UpdateSubAppRequest, UpdateSubAppResponse> genForupdateSubApp() {
+    private static HttpRequestDef<UpdateSubAppRequest, UpdateSubAppResponse> genForUpdateSubApp() {
         // basic
         HttpRequestDef.Builder<UpdateSubAppRequest, UpdateSubAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSubAppRequest.class, UpdateSubAppResponse.class)
@@ -607,16 +546,12 @@ public class AomMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSubAppRequest::getSubAppId, (req, v) -> {
-                req.setSubAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateSubAppRequest::getSubAppId, UpdateSubAppRequest::setSubAppId));
         builder.<SubAppUpdateParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubAppUpdateParam.class),
-            f -> f.withMarshaller(UpdateSubAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSubAppRequest::getBody, UpdateSubAppRequest::setBody));
 
         // response
 

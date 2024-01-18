@@ -30,7 +30,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentStatusRequest 请求对象
+     * @param request ListAgentStatusRequest 请求对象
      * @return ListAgentStatusResponse
      */
     public ListAgentStatusResponse listAgentStatus(ListAgentStatusRequest request) {
@@ -44,13 +44,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentStatusRequest 请求对象
+     * @param request ListAgentStatusRequest 请求对象
      * @return SyncInvoker<ListAgentStatusRequest, ListAgentStatusResponse>
      */
     public SyncInvoker<ListAgentStatusRequest, ListAgentStatusResponse> listAgentStatusInvoker(
         ListAgentStatusRequest request) {
-        return new SyncInvoker<ListAgentStatusRequest, ListAgentStatusResponse>(request, CesMeta.listAgentStatus,
-            hcClient);
+        return new SyncInvoker<>(request, CesMeta.listAgentStatus, hcClient);
     }
 
     /**
@@ -60,7 +59,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateAgentInvocationsRequest 请求对象
+     * @param request BatchCreateAgentInvocationsRequest 请求对象
      * @return BatchCreateAgentInvocationsResponse
      */
     public BatchCreateAgentInvocationsResponse batchCreateAgentInvocations(BatchCreateAgentInvocationsRequest request) {
@@ -74,13 +73,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateAgentInvocationsRequest 请求对象
+     * @param request BatchCreateAgentInvocationsRequest 请求对象
      * @return SyncInvoker<BatchCreateAgentInvocationsRequest, BatchCreateAgentInvocationsResponse>
      */
     public SyncInvoker<BatchCreateAgentInvocationsRequest, BatchCreateAgentInvocationsResponse> batchCreateAgentInvocationsInvoker(
         BatchCreateAgentInvocationsRequest request) {
-        return new SyncInvoker<BatchCreateAgentInvocationsRequest, BatchCreateAgentInvocationsResponse>(request,
-            CesMeta.batchCreateAgentInvocations, hcClient);
+        return new SyncInvoker<>(request, CesMeta.batchCreateAgentInvocations, hcClient);
     }
 
     /**
@@ -90,7 +88,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentInvocationsRequest 请求对象
+     * @param request ListAgentInvocationsRequest 请求对象
      * @return ListAgentInvocationsResponse
      */
     public ListAgentInvocationsResponse listAgentInvocations(ListAgentInvocationsRequest request) {
@@ -104,13 +102,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgentInvocationsRequest 请求对象
+     * @param request ListAgentInvocationsRequest 请求对象
      * @return SyncInvoker<ListAgentInvocationsRequest, ListAgentInvocationsResponse>
      */
     public SyncInvoker<ListAgentInvocationsRequest, ListAgentInvocationsResponse> listAgentInvocationsInvoker(
         ListAgentInvocationsRequest request) {
-        return new SyncInvoker<ListAgentInvocationsRequest, ListAgentInvocationsResponse>(request,
-            CesMeta.listAgentInvocations, hcClient);
+        return new SyncInvoker<>(request, CesMeta.listAgentInvocations, hcClient);
     }
 
 }

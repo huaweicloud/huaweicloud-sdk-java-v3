@@ -19,6 +19,11 @@ public class ResendReq {
     private String group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic")
+
+    private String topic;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_id")
 
     private String clientId;
@@ -43,6 +48,23 @@ public class ResendReq {
 
     public void setGroup(String group) {
         this.group = group;
+    }
+
+    public ResendReq withTopic(String topic) {
+        this.topic = topic;
+        return this;
+    }
+
+    /**
+     * 消息所属topic。
+     * @return topic
+     */
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
     public ResendReq withClientId(String clientId) {
@@ -104,13 +126,13 @@ public class ResendReq {
             return false;
         }
         ResendReq that = (ResendReq) obj;
-        return Objects.equals(this.group, that.group) && Objects.equals(this.clientId, that.clientId)
-            && Objects.equals(this.msgIdList, that.msgIdList);
+        return Objects.equals(this.group, that.group) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.clientId, that.clientId) && Objects.equals(this.msgIdList, that.msgIdList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(group, clientId, msgIdList);
+        return Objects.hash(group, topic, clientId, msgIdList);
     }
 
     @Override
@@ -118,6 +140,7 @@ public class ResendReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResendReq {\n");
         sb.append("    group: ").append(toIndentedString(group)).append("\n");
+        sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
         sb.append("    msgIdList: ").append(toIndentedString(msgIdList)).append("\n");
         sb.append("}");

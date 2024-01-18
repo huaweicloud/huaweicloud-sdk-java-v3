@@ -7,8 +7,10 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class EcsRegion {
 
@@ -63,6 +65,10 @@ public class EcsRegion {
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://ecs.eu-west-101.myhuaweicloud.eu");
 
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://ecs.cn-east-5.myhuaweicloud.com");
+
+    public static final Region EU_WEST_0 = new Region("eu-west-0", "https://ecs.eu-west-0.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("ECS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -92,6 +98,8 @@ public class EcsRegion {
         map.put("me-east-1", ME_EAST_1);
         map.put("ae-ad-1", AE_AD_1);
         map.put("eu-west-101", EU_WEST_101);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("eu-west-0", EU_WEST_0);
         return Collections.unmodifiableMap(map);
     }
 
@@ -109,6 +117,10 @@ public class EcsRegion {
         if (Objects.nonNull(result)) {
             return result;
         }
-        throw new IllegalArgumentException("Unexpected regionId: " + regionId);
+
+        throw new IllegalArgumentException(String.format(Locale.ROOT,
+            "region id '%s' is not in the following supported regions of service ECS: [%s]",
+            regionId,
+            STATIC_FIELDS.keySet().stream().sorted().collect(Collectors.joining(", "))));
     }
 }

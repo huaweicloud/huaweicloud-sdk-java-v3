@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 授权
+ * 授权。
  */
 public class UserAssignment {
 
@@ -26,7 +26,7 @@ public class UserAssignment {
     }
 
     /**
-     * 目标用户
+     * 目标用户。
      * @return attach
      */
     public String getAttach() {
@@ -43,7 +43,7 @@ public class UserAssignment {
     }
 
     /**
-     * 策略ID
+     * 策略ID。
      * @return policyStatementId
      */
     public String getPolicyStatementId() {

@@ -15,11 +15,6 @@ public class ShowOperationRequest {
 
     private String operationId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-
-    private String xSecurityToken;
-
     public ShowOperationRequest withOperationId(String operationId) {
         this.operationId = operationId;
         return this;
@@ -37,25 +32,6 @@ public class ShowOperationRequest {
         this.operationId = operationId;
     }
 
-    public ShowOperationRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-        return this;
-    }
-
-    /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
-    }
-
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -65,13 +41,12 @@ public class ShowOperationRequest {
             return false;
         }
         ShowOperationRequest that = (ShowOperationRequest) obj;
-        return Objects.equals(this.operationId, that.operationId)
-            && Objects.equals(this.xSecurityToken, that.xSecurityToken);
+        return Objects.equals(this.operationId, that.operationId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operationId, xSecurityToken);
+        return Objects.hash(operationId);
     }
 
     @Override
@@ -79,7 +54,6 @@ public class ShowOperationRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOperationRequest {\n");
         sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("}");
         return sb.toString();
     }

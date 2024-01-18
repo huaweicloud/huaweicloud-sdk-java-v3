@@ -120,9 +120,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CloudIDEMeta {
 
     public static final HttpRequestDef<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse> addExtensionEvaluation =
-        genForaddExtensionEvaluation();
+        genForAddExtensionEvaluation();
 
-    private static HttpRequestDef<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse> genForaddExtensionEvaluation() {
+    private static HttpRequestDef<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse> genForAddExtensionEvaluation() {
         // basic
         HttpRequestDef.Builder<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddExtensionEvaluationRequest.class, AddExtensionEvaluationResponse.class)
@@ -135,9 +135,7 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Evaluation.class),
-            f -> f.withMarshaller(AddExtensionEvaluationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddExtensionEvaluationRequest::getBody, AddExtensionEvaluationRequest::setBody));
 
         // response
 
@@ -145,9 +143,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse> addExtensionEvaluationReply =
-        genForaddExtensionEvaluationReply();
+        genForAddExtensionEvaluationReply();
 
-    private static HttpRequestDef<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse> genForaddExtensionEvaluationReply() {
+    private static HttpRequestDef<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse> genForAddExtensionEvaluationReply() {
         // basic
         HttpRequestDef.Builder<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse> builder =
             HttpRequestDef
@@ -163,9 +161,8 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EvaluationReply.class),
-            f -> f.withMarshaller(AddExtensionEvaluationReplyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddExtensionEvaluationReplyRequest::getBody,
+                AddExtensionEvaluationReplyRequest::setBody));
 
         // response
 
@@ -173,9 +170,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<AddExtensionStarRequest, AddExtensionStarResponse> addExtensionStar =
-        genForaddExtensionStar();
+        genForAddExtensionStar();
 
-    private static HttpRequestDef<AddExtensionStarRequest, AddExtensionStarResponse> genForaddExtensionStar() {
+    private static HttpRequestDef<AddExtensionStarRequest, AddExtensionStarResponse> genForAddExtensionStar() {
         // basic
         HttpRequestDef.Builder<AddExtensionStarRequest, AddExtensionStarResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddExtensionStarRequest.class, AddExtensionStarResponse.class)
@@ -188,9 +185,7 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExtensionStar.class),
-            f -> f.withMarshaller(AddExtensionStarRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddExtensionStarRequest::getBody, AddExtensionStarRequest::setBody));
 
         // response
 
@@ -198,9 +193,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse> checkMaliciousExtensionEvaluation =
-        genForcheckMaliciousExtensionEvaluation();
+        genForCheckMaliciousExtensionEvaluation();
 
-    private static HttpRequestDef<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse> genForcheckMaliciousExtensionEvaluation() {
+    private static HttpRequestDef<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse> genForCheckMaliciousExtensionEvaluation() {
         // basic
         HttpRequestDef.Builder<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse> builder =
             HttpRequestDef
@@ -216,9 +211,8 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EvaluationAccusation.class),
-            f -> f.withMarshaller(CheckMaliciousExtensionEvaluationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckMaliciousExtensionEvaluationRequest::getBody,
+                CheckMaliciousExtensionEvaluationRequest::setBody));
 
         // response
 
@@ -226,9 +220,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> createExtensionAuthorization =
-        genForcreateExtensionAuthorization();
+        genForCreateExtensionAuthorization();
 
-    private static HttpRequestDef<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> genForcreateExtensionAuthorization() {
+    private static HttpRequestDef<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> genForCreateExtensionAuthorization() {
         // basic
         HttpRequestDef.Builder<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> builder =
             HttpRequestDef
@@ -244,16 +238,14 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateExtensionAuthorizationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateExtensionAuthorizationRequest::getInstanceId,
+                CreateExtensionAuthorizationRequest::setInstanceId));
         builder.<ExtensionAuthorization>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExtensionAuthorization.class),
-            f -> f.withMarshaller(CreateExtensionAuthorizationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateExtensionAuthorizationRequest::getBody,
+                CreateExtensionAuthorizationRequest::setBody));
 
         // response
 
@@ -261,9 +253,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<DeleteEvaluationRequest, DeleteEvaluationResponse> deleteEvaluation =
-        genFordeleteEvaluation();
+        genForDeleteEvaluation();
 
-    private static HttpRequestDef<DeleteEvaluationRequest, DeleteEvaluationResponse> genFordeleteEvaluation() {
+    private static HttpRequestDef<DeleteEvaluationRequest, DeleteEvaluationResponse> genForDeleteEvaluation() {
         // basic
         HttpRequestDef.Builder<DeleteEvaluationRequest, DeleteEvaluationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEvaluationRequest.class, DeleteEvaluationResponse.class)
@@ -276,9 +268,7 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteEvaluationRequest::getEvaluationId, (req, v) -> {
-                req.setEvaluationId(v);
-            }));
+            f -> f.withMarshaller(DeleteEvaluationRequest::getEvaluationId, DeleteEvaluationRequest::setEvaluationId));
 
         // response
 
@@ -286,9 +276,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse> deleteEvaluationReply =
-        genFordeleteEvaluationReply();
+        genForDeleteEvaluationReply();
 
-    private static HttpRequestDef<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse> genFordeleteEvaluationReply() {
+    private static HttpRequestDef<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse> genForDeleteEvaluationReply() {
         // basic
         HttpRequestDef.Builder<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEvaluationReplyRequest.class, DeleteEvaluationReplyResponse.class)
@@ -301,9 +291,7 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteEvaluationReplyRequest::getReplyId, (req, v) -> {
-                req.setReplyId(v);
-            }));
+            f -> f.withMarshaller(DeleteEvaluationReplyRequest::getReplyId, DeleteEvaluationReplyRequest::setReplyId));
 
         // response
 
@@ -311,9 +299,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ListExtensionsRequest, ListExtensionsResponse> listExtensions =
-        genForlistExtensions();
+        genForListExtensions();
 
-    private static HttpRequestDef<ListExtensionsRequest, ListExtensionsResponse> genForlistExtensions() {
+    private static HttpRequestDef<ListExtensionsRequest, ListExtensionsResponse> genForListExtensions() {
         // basic
         HttpRequestDef.Builder<ListExtensionsRequest, ListExtensionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListExtensionsRequest.class, ListExtensionsResponse.class)
@@ -326,9 +314,7 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExtensionQueryParamSnake.class),
-            f -> f.withMarshaller(ListExtensionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListExtensionsRequest::getBody, ListExtensionsRequest::setBody));
 
         // response
 
@@ -336,9 +322,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ListProjectTemplatesRequest, ListProjectTemplatesResponse> listProjectTemplates =
-        genForlistProjectTemplates();
+        genForListProjectTemplates();
 
-    private static HttpRequestDef<ListProjectTemplatesRequest, ListProjectTemplatesResponse> genForlistProjectTemplates() {
+    private static HttpRequestDef<ListProjectTemplatesRequest, ListProjectTemplatesResponse> genForListProjectTemplates() {
         // basic
         HttpRequestDef.Builder<ListProjectTemplatesRequest, ListProjectTemplatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProjectTemplatesRequest.class, ListProjectTemplatesResponse.class)
@@ -351,16 +337,12 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectTemplatesRequest::getArch, (req, v) -> {
-                req.setArch(v);
-            }));
+            f -> f.withMarshaller(ListProjectTemplatesRequest::getArch, ListProjectTemplatesRequest::setArch));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectTemplatesRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(ListProjectTemplatesRequest::getStackId, ListProjectTemplatesRequest::setStackId));
 
         // response
 
@@ -368,9 +350,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ListPublisherRequest, ListPublisherResponse> listPublisher =
-        genForlistPublisher();
+        genForListPublisher();
 
-    private static HttpRequestDef<ListPublisherRequest, ListPublisherResponse> genForlistPublisher() {
+    private static HttpRequestDef<ListPublisherRequest, ListPublisherResponse> genForListPublisher() {
         // basic
         HttpRequestDef.Builder<ListPublisherRequest, ListPublisherResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublisherRequest.class, ListPublisherResponse.class)
@@ -383,18 +365,16 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublisherRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPublisherRequest::getName, ListPublisherRequest::setName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListStacksRequest, ListStacksResponse> listStacks = genForlistStacks();
+    public static final HttpRequestDef<ListStacksRequest, ListStacksResponse> listStacks = genForListStacks();
 
-    private static HttpRequestDef<ListStacksRequest, ListStacksResponse> genForlistStacks() {
+    private static HttpRequestDef<ListStacksRequest, ListStacksResponse> genForListStacks() {
         // basic
         HttpRequestDef.Builder<ListStacksRequest, ListStacksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStacksRequest.class, ListStacksResponse.class)
@@ -407,9 +387,7 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStacksRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListStacksRequest::getTags, ListStacksRequest::setTags));
 
         // response
 
@@ -417,9 +395,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<PublishExtensionRequest, PublishExtensionResponse> publishExtension =
-        genForpublishExtension();
+        genForPublishExtension();
 
-    private static HttpRequestDef<PublishExtensionRequest, PublishExtensionResponse> genForpublishExtension() {
+    private static HttpRequestDef<PublishExtensionRequest, PublishExtensionResponse> genForPublishExtension() {
         // basic
         HttpRequestDef.Builder<PublishExtensionRequest, PublishExtensionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishExtensionRequest.class, PublishExtensionResponse.class)
@@ -432,23 +410,18 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishExtensionRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(PublishExtensionRequest::getTaskId, PublishExtensionRequest::setTaskId));
         builder.<String>withRequestField("x-publisher-token",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishExtensionRequest::getXPublisherToken, (req, v) -> {
-                req.setXPublisherToken(v);
-            }));
+            f -> f.withMarshaller(PublishExtensionRequest::getXPublisherToken,
+                PublishExtensionRequest::setXPublisherToken));
         builder.<TaskModelMarketPlace>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaskModelMarketPlace.class),
-            f -> f.withMarshaller(PublishExtensionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PublishExtensionRequest::getBody, PublishExtensionRequest::setBody));
 
         // response
 
@@ -456,9 +429,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ShowAccountStatusRequest, ShowAccountStatusResponse> showAccountStatus =
-        genForshowAccountStatus();
+        genForShowAccountStatus();
 
-    private static HttpRequestDef<ShowAccountStatusRequest, ShowAccountStatusResponse> genForshowAccountStatus() {
+    private static HttpRequestDef<ShowAccountStatusRequest, ShowAccountStatusResponse> genForShowAccountStatus() {
         // basic
         HttpRequestDef.Builder<ShowAccountStatusRequest, ShowAccountStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAccountStatusRequest.class, ShowAccountStatusResponse.class)
@@ -474,9 +447,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ShowCategoryListRequest, ShowCategoryListResponse> showCategoryList =
-        genForshowCategoryList();
+        genForShowCategoryList();
 
-    private static HttpRequestDef<ShowCategoryListRequest, ShowCategoryListResponse> genForshowCategoryList() {
+    private static HttpRequestDef<ShowCategoryListRequest, ShowCategoryListResponse> genForShowCategoryList() {
         // basic
         HttpRequestDef.Builder<ShowCategoryListRequest, ShowCategoryListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCategoryListRequest.class, ShowCategoryListResponse.class)
@@ -489,37 +462,27 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowCategoryListRequest::getPageNum, (req, v) -> {
-                req.setPageNum(v);
-            }));
+            f -> f.withMarshaller(ShowCategoryListRequest::getPageNum, ShowCategoryListRequest::setPageNum));
         builder.<Long>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowCategoryListRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowCategoryListRequest::getPageSize, ShowCategoryListRequest::setPageSize));
         builder.<String>withRequestField("scene_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCategoryListRequest::getSceneName, (req, v) -> {
-                req.setSceneName(v);
-            }));
+            f -> f.withMarshaller(ShowCategoryListRequest::getSceneName, ShowCategoryListRequest::setSceneName));
         builder.<Integer>withRequestField("support_ide",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCategoryListRequest::getSupportIde, (req, v) -> {
-                req.setSupportIde(v);
-            }));
+            f -> f.withMarshaller(ShowCategoryListRequest::getSupportIde, ShowCategoryListRequest::setSupportIde));
         builder.<Integer>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCategoryListRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowCategoryListRequest::getType, ShowCategoryListRequest::setType));
 
         // response
 
@@ -527,9 +490,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> showExtensionAuthorization =
-        genForshowExtensionAuthorization();
+        genForShowExtensionAuthorization();
 
-    private static HttpRequestDef<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> genForshowExtensionAuthorization() {
+    private static HttpRequestDef<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> genForShowExtensionAuthorization() {
         // basic
         HttpRequestDef.Builder<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> builder =
             HttpRequestDef
@@ -545,23 +508,20 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExtensionAuthorizationRequest::getExtensionVersion, (req, v) -> {
-                req.setExtensionVersion(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionAuthorizationRequest::getExtensionVersion,
+                ShowExtensionAuthorizationRequest::setExtensionVersion));
         builder.<String>withRequestField("identifier",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExtensionAuthorizationRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionAuthorizationRequest::getIdentifier,
+                ShowExtensionAuthorizationRequest::setIdentifier));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExtensionAuthorizationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionAuthorizationRequest::getInstanceId,
+                ShowExtensionAuthorizationRequest::setInstanceId));
 
         // response
 
@@ -569,9 +529,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ShowExtensionDetailRequest, ShowExtensionDetailResponse> showExtensionDetail =
-        genForshowExtensionDetail();
+        genForShowExtensionDetail();
 
-    private static HttpRequestDef<ShowExtensionDetailRequest, ShowExtensionDetailResponse> genForshowExtensionDetail() {
+    private static HttpRequestDef<ShowExtensionDetailRequest, ShowExtensionDetailResponse> genForShowExtensionDetail() {
         // basic
         HttpRequestDef.Builder<ShowExtensionDetailRequest, ShowExtensionDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowExtensionDetailRequest.class, ShowExtensionDetailResponse.class)
@@ -584,9 +544,7 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExtensionSearchUserInputParamCustomizeForDetail.class),
-            f -> f.withMarshaller(ShowExtensionDetailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionDetailRequest::getBody, ShowExtensionDetailRequest::setBody));
 
         // response
 
@@ -594,9 +552,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse> showExtensionEvaluation =
-        genForshowExtensionEvaluation();
+        genForShowExtensionEvaluation();
 
-    private static HttpRequestDef<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse> genForshowExtensionEvaluation() {
+    private static HttpRequestDef<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse> genForShowExtensionEvaluation() {
         // basic
         HttpRequestDef.Builder<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowExtensionEvaluationRequest.class, ShowExtensionEvaluationResponse.class)
@@ -609,23 +567,19 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExtensionEvaluationRequest::getExtensionId, (req, v) -> {
-                req.setExtensionId(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionEvaluationRequest::getExtensionId,
+                ShowExtensionEvaluationRequest::setExtensionId));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowExtensionEvaluationRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionEvaluationRequest::getLimit, ShowExtensionEvaluationRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowExtensionEvaluationRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionEvaluationRequest::getOffset,
+                ShowExtensionEvaluationRequest::setOffset));
 
         // response
 
@@ -633,9 +587,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse> showExtensionEvaluationStar =
-        genForshowExtensionEvaluationStar();
+        genForShowExtensionEvaluationStar();
 
-    private static HttpRequestDef<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse> genForshowExtensionEvaluationStar() {
+    private static HttpRequestDef<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse> genForShowExtensionEvaluationStar() {
         // basic
         HttpRequestDef.Builder<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse> builder =
             HttpRequestDef
@@ -651,23 +605,20 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExtensionEvaluationStarRequest::getExtensionId, (req, v) -> {
-                req.setExtensionId(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionEvaluationStarRequest::getExtensionId,
+                ShowExtensionEvaluationStarRequest::setExtensionId));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowExtensionEvaluationStarRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionEvaluationStarRequest::getLimit,
+                ShowExtensionEvaluationStarRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowExtensionEvaluationStarRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionEvaluationStarRequest::getOffset,
+                ShowExtensionEvaluationStarRequest::setOffset));
 
         // response
 
@@ -675,9 +626,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse> showExtensionTestingResult =
-        genForshowExtensionTestingResult();
+        genForShowExtensionTestingResult();
 
-    private static HttpRequestDef<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse> genForshowExtensionTestingResult() {
+    private static HttpRequestDef<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse> genForShowExtensionTestingResult() {
         // basic
         HttpRequestDef.Builder<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse> builder =
             HttpRequestDef
@@ -693,25 +644,23 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExtensionTestingResultRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionTestingResultRequest::getTaskId,
+                ShowExtensionTestingResultRequest::setTaskId));
         builder.<String>withRequestField("x-publisher-token",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExtensionTestingResultRequest::getXPublisherToken, (req, v) -> {
-                req.setXPublisherToken(v);
-            }));
+            f -> f.withMarshaller(ShowExtensionTestingResultRequest::getXPublisherToken,
+                ShowExtensionTestingResultRequest::setXPublisherToken));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPriceRequest, ShowPriceResponse> showPrice = genForshowPrice();
+    public static final HttpRequestDef<ShowPriceRequest, ShowPriceResponse> showPrice = genForShowPrice();
 
-    private static HttpRequestDef<ShowPriceRequest, ShowPriceResponse> genForshowPrice() {
+    private static HttpRequestDef<ShowPriceRequest, ShowPriceResponse> genForShowPrice() {
         // basic
         HttpRequestDef.Builder<ShowPriceRequest, ShowPriceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPriceRequest.class, ShowPriceResponse.class)
@@ -727,9 +676,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<UploadExtensionFileRequest, UploadExtensionFileResponse> uploadExtensionFile =
-        genForuploadExtensionFile();
+        genForUploadExtensionFile();
 
-    private static HttpRequestDef<UploadExtensionFileRequest, UploadExtensionFileResponse> genForuploadExtensionFile() {
+    private static HttpRequestDef<UploadExtensionFileRequest, UploadExtensionFileResponse> genForUploadExtensionFile() {
         // basic
         HttpRequestDef.Builder<UploadExtensionFileRequest, UploadExtensionFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadExtensionFileRequest.class, UploadExtensionFileResponse.class)
@@ -742,16 +691,12 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadExtensionFileRequest::getOfficial, (req, v) -> {
-                req.setOfficial(v);
-            }));
+            f -> f.withMarshaller(UploadExtensionFileRequest::getOfficial, UploadExtensionFileRequest::setOfficial));
         builder.<UploadExtensionFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadExtensionFileRequestBody.class),
-            f -> f.withMarshaller(UploadExtensionFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadExtensionFileRequest::getBody, UploadExtensionFileRequest::setBody));
 
         // response
 
@@ -759,9 +704,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<UploadFilePublisherRequest, UploadFilePublisherResponse> uploadFilePublisher =
-        genForuploadFilePublisher();
+        genForUploadFilePublisher();
 
-    private static HttpRequestDef<UploadFilePublisherRequest, UploadFilePublisherResponse> genForuploadFilePublisher() {
+    private static HttpRequestDef<UploadFilePublisherRequest, UploadFilePublisherResponse> genForUploadFilePublisher() {
         // basic
         HttpRequestDef.Builder<UploadFilePublisherRequest, UploadFilePublisherResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadFilePublisherRequest.class, UploadFilePublisherResponse.class)
@@ -774,16 +719,13 @@ public class CloudIDEMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadFilePublisherRequest::getXPublisherToken, (req, v) -> {
-                req.setXPublisherToken(v);
-            }));
+            f -> f.withMarshaller(UploadFilePublisherRequest::getXPublisherToken,
+                UploadFilePublisherRequest::setXPublisherToken));
         builder.<UploadFilePublisherRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadFilePublisherRequestBody.class),
-            f -> f.withMarshaller(UploadFilePublisherRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadFilePublisherRequest::getBody, UploadFilePublisherRequest::setBody));
 
         // response
 
@@ -791,9 +733,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<CreateAcceptanceRequest, CreateAcceptanceResponse> createAcceptance =
-        genForcreateAcceptance();
+        genForCreateAcceptance();
 
-    private static HttpRequestDef<CreateAcceptanceRequest, CreateAcceptanceResponse> genForcreateAcceptance() {
+    private static HttpRequestDef<CreateAcceptanceRequest, CreateAcceptanceResponse> genForCreateAcceptance() {
         // basic
         HttpRequestDef.Builder<CreateAcceptanceRequest, CreateAcceptanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAcceptanceRequest.class, CreateAcceptanceResponse.class)
@@ -806,18 +748,16 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AcceptanceSchema.class),
-            f -> f.withMarshaller(CreateAcceptanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAcceptanceRequest::getBody, CreateAcceptanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateApplyRequest, CreateApplyResponse> createApply = genForcreateApply();
+    public static final HttpRequestDef<CreateApplyRequest, CreateApplyResponse> createApply = genForCreateApply();
 
-    private static HttpRequestDef<CreateApplyRequest, CreateApplyResponse> genForcreateApply() {
+    private static HttpRequestDef<CreateApplyRequest, CreateApplyResponse> genForCreateApply() {
         // basic
         HttpRequestDef.Builder<CreateApplyRequest, CreateApplyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApplyRequest.class, CreateApplyResponse.class)
@@ -830,18 +770,16 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JoinRequestSchema.class),
-            f -> f.withMarshaller(CreateApplyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApplyRequest::getBody, CreateApplyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateEventRequest, CreateEventResponse> createEvent = genForcreateEvent();
+    public static final HttpRequestDef<CreateEventRequest, CreateEventResponse> createEvent = genForCreateEvent();
 
-    private static HttpRequestDef<CreateEventRequest, CreateEventResponse> genForcreateEvent() {
+    private static HttpRequestDef<CreateEventRequest, CreateEventResponse> genForCreateEvent() {
         // basic
         HttpRequestDef.Builder<CreateEventRequest, CreateEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEventRequest.class, CreateEventResponse.class)
@@ -854,18 +792,16 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EventSchema.class),
-            f -> f.withMarshaller(CreateEventRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEventRequest::getBody, CreateEventRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateLoginRequest, CreateLoginResponse> createLogin = genForcreateLogin();
+    public static final HttpRequestDef<CreateLoginRequest, CreateLoginResponse> createLogin = genForCreateLogin();
 
-    private static HttpRequestDef<CreateLoginRequest, CreateLoginResponse> genForcreateLogin() {
+    private static HttpRequestDef<CreateLoginRequest, CreateLoginResponse> genForCreateLogin() {
         // basic
         HttpRequestDef.Builder<CreateLoginRequest, CreateLoginResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLoginRequest.class, CreateLoginResponse.class)
@@ -878,9 +814,7 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LoginSchema.class),
-            f -> f.withMarshaller(CreateLoginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLoginRequest::getBody, CreateLoginRequest::setBody));
 
         // response
 
@@ -888,9 +822,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<CreateRequestRequest, CreateRequestResponse> createRequest =
-        genForcreateRequest();
+        genForCreateRequest();
 
-    private static HttpRequestDef<CreateRequestRequest, CreateRequestResponse> genForcreateRequest() {
+    private static HttpRequestDef<CreateRequestRequest, CreateRequestResponse> genForCreateRequest() {
         // basic
         HttpRequestDef.Builder<CreateRequestRequest, CreateRequestResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRequestRequest.class, CreateRequestResponse.class)
@@ -903,53 +837,41 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateRequestRequest::getTopn, (req, v) -> {
-                req.setTopn(v);
-            }));
+            f -> f.withMarshaller(CreateRequestRequest::getTopn, CreateRequestRequest::setTopn));
         builder.<String>withRequestField("scenario",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRequestRequest::getScenario, (req, v) -> {
-                req.setScenario(v);
-            }));
+            f -> f.withMarshaller(CreateRequestRequest::getScenario, CreateRequestRequest::setScenario));
         builder.<Boolean>withRequestField("resubmit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(CreateRequestRequest::getResubmit, (req, v) -> {
-                req.setResubmit(v);
-            }));
+            f -> f.withMarshaller(CreateRequestRequest::getResubmit, CreateRequestRequest::setResubmit));
         builder.<String>withRequestField("model_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRequestRequest::getModelId, (req, v) -> {
-                req.setModelId(v);
-            }));
+            f -> f.withMarshaller(CreateRequestRequest::getModelId, CreateRequestRequest::setModelId));
         builder.<CreateRequestRequest.RequestTypeEnum>withRequestField("request_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateRequestRequest.RequestTypeEnum.class),
-            f -> f.withMarshaller(CreateRequestRequest::getRequestType, (req, v) -> {
-                req.setRequestType(v);
-            }));
+            f -> f.withMarshaller(CreateRequestRequest::getRequestType, CreateRequestRequest::setRequestType));
         builder.<PropertiesSchema>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PropertiesSchema.class),
-            f -> f.withMarshaller(CreateRequestRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRequestRequest::getBody, CreateRequestRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowResultRequest, ShowResultResponse> showResult = genForshowResult();
+    public static final HttpRequestDef<ShowResultRequest, ShowResultResponse> showResult = genForShowResult();
 
-    private static HttpRequestDef<ShowResultRequest, ShowResultResponse> genForshowResult() {
+    private static HttpRequestDef<ShowResultRequest, ShowResultResponse> genForShowResult() {
         // basic
         HttpRequestDef.Builder<ShowResultRequest, ShowResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResultRequest.class, ShowResultResponse.class)
@@ -962,18 +884,16 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResultRequest::getRequestId, (req, v) -> {
-                req.setRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowResultRequest::getRequestId, ShowResultRequest::setRequestId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartChatRequest, StartChatResponse> startChat = genForstartChat();
+    public static final HttpRequestDef<StartChatRequest, StartChatResponse> startChat = genForStartChat();
 
-    private static HttpRequestDef<StartChatRequest, StartChatResponse> genForstartChat() {
+    private static HttpRequestDef<StartChatRequest, StartChatResponse> genForStartChat() {
         // basic
         HttpRequestDef.Builder<StartChatRequest, StartChatResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartChatRequest.class, StartChatResponse.class)
@@ -986,18 +906,16 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartChatRequestMessage.class),
-            f -> f.withMarshaller(StartChatRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartChatRequest::getBody, StartChatRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SyncChatRequest, SyncChatResponse> syncChat = genForsyncChat();
+    public static final HttpRequestDef<SyncChatRequest, SyncChatResponse> syncChat = genForSyncChat();
 
-    private static HttpRequestDef<SyncChatRequest, SyncChatResponse> genForsyncChat() {
+    private static HttpRequestDef<SyncChatRequest, SyncChatResponse> genForSyncChat() {
         // basic
         HttpRequestDef.Builder<SyncChatRequest, SyncChatResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SyncChatRequest.class, SyncChatResponse.class)
@@ -1010,9 +928,7 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChatRequestMessage.class),
-            f -> f.withMarshaller(SyncChatRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SyncChatRequest::getBody, SyncChatRequest::setBody));
 
         // response
 
@@ -1020,9 +936,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<SyncGetChatResultRequest, SyncGetChatResultResponse> syncGetChatResult =
-        genForsyncGetChatResult();
+        genForSyncGetChatResult();
 
-    private static HttpRequestDef<SyncGetChatResultRequest, SyncGetChatResultResponse> genForsyncGetChatResult() {
+    private static HttpRequestDef<SyncGetChatResultRequest, SyncGetChatResultResponse> genForSyncGetChatResult() {
         // basic
         HttpRequestDef.Builder<SyncGetChatResultRequest, SyncGetChatResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SyncGetChatResultRequest.class, SyncGetChatResultResponse.class)
@@ -1035,9 +951,7 @@ public class CloudIDEMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChatResultRequestMessage.class),
-            f -> f.withMarshaller(SyncGetChatResultRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SyncGetChatResultRequest::getBody, SyncGetChatResultRequest::setBody));
 
         // response
 
@@ -1045,9 +959,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<CheckInstanceAccessRequest, CheckInstanceAccessResponse> checkInstanceAccess =
-        genForcheckInstanceAccess();
+        genForCheckInstanceAccess();
 
-    private static HttpRequestDef<CheckInstanceAccessRequest, CheckInstanceAccessResponse> genForcheckInstanceAccess() {
+    private static HttpRequestDef<CheckInstanceAccessRequest, CheckInstanceAccessResponse> genForCheckInstanceAccess() {
         // basic
         HttpRequestDef.Builder<CheckInstanceAccessRequest, CheckInstanceAccessResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckInstanceAccessRequest.class, CheckInstanceAccessResponse.class)
@@ -1060,18 +974,17 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckInstanceAccessRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckInstanceAccessRequest::getInstanceId,
+                CheckInstanceAccessRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckNameRequest, CheckNameResponse> checkName = genForcheckName();
+    public static final HttpRequestDef<CheckNameRequest, CheckNameResponse> checkName = genForCheckName();
 
-    private static HttpRequestDef<CheckNameRequest, CheckNameResponse> genForcheckName() {
+    private static HttpRequestDef<CheckNameRequest, CheckNameResponse> genForCheckName() {
         // basic
         HttpRequestDef.Builder<CheckNameRequest, CheckNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckNameRequest.class, CheckNameResponse.class)
@@ -1084,9 +997,7 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckNameRequest::getDisplayName, (req, v) -> {
-                req.setDisplayName(v);
-            }));
+            f -> f.withMarshaller(CheckNameRequest::getDisplayName, CheckNameRequest::setDisplayName));
 
         // response
 
@@ -1094,9 +1005,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
-        genForcreateInstance();
+        genForCreateInstance();
 
-    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForcreateInstance() {
+    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForCreateInstance() {
         // basic
         HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
@@ -1109,16 +1020,12 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInstanceRequest::getOrgId, (req, v) -> {
-                req.setOrgId(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceRequest::getOrgId, CreateInstanceRequest::setOrgId));
         builder.<InstanceParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceParam.class),
-            f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceRequest::getBody, CreateInstanceRequest::setBody));
 
         // response
 
@@ -1126,9 +1033,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse> createInstanceBy3rd =
-        genForcreateInstanceBy3rd();
+        genForCreateInstanceBy3rd();
 
-    private static HttpRequestDef<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse> genForcreateInstanceBy3rd() {
+    private static HttpRequestDef<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse> genForCreateInstanceBy3rd() {
         // basic
         HttpRequestDef.Builder<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceBy3rdRequest.class, CreateInstanceBy3rdResponse.class)
@@ -1141,16 +1048,13 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInstanceBy3rdRequest::getInstanceLabel, (req, v) -> {
-                req.setInstanceLabel(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceBy3rdRequest::getInstanceLabel,
+                CreateInstanceBy3rdRequest::setInstanceLabel));
         builder.<InstanceEdgeParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceEdgeParam.class),
-            f -> f.withMarshaller(CreateInstanceBy3rdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceBy3rdRequest::getBody, CreateInstanceBy3rdRequest::setBody));
 
         // response
 
@@ -1158,9 +1062,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
-        genFordeleteInstance();
+        genForDeleteInstance();
 
-    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genFordeleteInstance() {
+    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genForDeleteInstance() {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
@@ -1173,9 +1077,7 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
 
         // response
 
@@ -1183,9 +1085,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
-        genForlistInstances();
+        genForListInstances();
 
-    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
@@ -1198,51 +1100,37 @@ public class CloudIDEMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, ListInstancesRequest::setOffset));
         builder.<Boolean>withRequestField("is_temporary",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListInstancesRequest::getIsTemporary, (req, v) -> {
-                req.setIsTemporary(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getIsTemporary, ListInstancesRequest::setIsTemporary));
         builder.<String>withRequestField("label",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLabel, (req, v) -> {
-                req.setLabel(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLabel, ListInstancesRequest::setLabel));
         builder.<String>withRequestField("search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getSearch, (req, v) -> {
-                req.setSearch(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getSearch, ListInstancesRequest::setSearch));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getSortDir, ListInstancesRequest::setSortDir));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getSortKey, ListInstancesRequest::setSortKey));
 
         // response
 
@@ -1250,9 +1138,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ListOrgInstancesRequest, ListOrgInstancesResponse> listOrgInstances =
-        genForlistOrgInstances();
+        genForListOrgInstances();
 
-    private static HttpRequestDef<ListOrgInstancesRequest, ListOrgInstancesResponse> genForlistOrgInstances() {
+    private static HttpRequestDef<ListOrgInstancesRequest, ListOrgInstancesResponse> genForListOrgInstances() {
         // basic
         HttpRequestDef.Builder<ListOrgInstancesRequest, ListOrgInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOrgInstancesRequest.class, ListOrgInstancesResponse.class)
@@ -1265,46 +1153,36 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrgInstancesRequest::getOrgId, (req, v) -> {
-                req.setOrgId(v);
-            }));
+            f -> f.withMarshaller(ListOrgInstancesRequest::getOrgId, ListOrgInstancesRequest::setOrgId));
         builder.<Boolean>withRequestField("is_temporary",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListOrgInstancesRequest::getIsTemporary, (req, v) -> {
-                req.setIsTemporary(v);
-            }));
+            f -> f.withMarshaller(ListOrgInstancesRequest::getIsTemporary, ListOrgInstancesRequest::setIsTemporary));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListOrgInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListOrgInstancesRequest::getLimit, ListOrgInstancesRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListOrgInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListOrgInstancesRequest::getOffset, ListOrgInstancesRequest::setOffset));
         builder.<String>withRequestField("search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrgInstancesRequest::getSearch, (req, v) -> {
-                req.setSearch(v);
-            }));
+            f -> f.withMarshaller(ListOrgInstancesRequest::getSearch, ListOrgInstancesRequest::setSearch));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForshowInstance();
+    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForShowInstance();
 
-    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForshowInstance() {
+    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForShowInstance() {
         // basic
         HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
@@ -1317,9 +1195,7 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, ShowInstanceRequest::setInstanceId));
 
         // response
 
@@ -1327,9 +1203,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse> showInstanceStatusInfo =
-        genForshowInstanceStatusInfo();
+        genForShowInstanceStatusInfo();
 
-    private static HttpRequestDef<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse> genForshowInstanceStatusInfo() {
+    private static HttpRequestDef<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse> genForShowInstanceStatusInfo() {
         // basic
         HttpRequestDef.Builder<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowInstanceStatusInfoRequest.class, ShowInstanceStatusInfoResponse.class)
@@ -1342,9 +1218,8 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceStatusInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceStatusInfoRequest::getInstanceId,
+                ShowInstanceStatusInfoRequest::setInstanceId));
 
         // response
 
@@ -1352,9 +1227,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<StartInstanceRequest, StartInstanceResponse> startInstance =
-        genForstartInstance();
+        genForStartInstance();
 
-    private static HttpRequestDef<StartInstanceRequest, StartInstanceResponse> genForstartInstance() {
+    private static HttpRequestDef<StartInstanceRequest, StartInstanceResponse> genForStartInstance() {
         // basic
         HttpRequestDef.Builder<StartInstanceRequest, StartInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StartInstanceRequest.class, StartInstanceResponse.class)
@@ -1367,25 +1242,21 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(StartInstanceRequest::getInstanceId, StartInstanceRequest::setInstanceId));
         builder.<StartInstanceParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StartInstanceParam.class),
-            f -> f.withMarshaller(StartInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartInstanceRequest::getBody, StartInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopInstanceRequest, StopInstanceResponse> stopInstance = genForstopInstance();
+    public static final HttpRequestDef<StopInstanceRequest, StopInstanceResponse> stopInstance = genForStopInstance();
 
-    private static HttpRequestDef<StopInstanceRequest, StopInstanceResponse> genForstopInstance() {
+    private static HttpRequestDef<StopInstanceRequest, StopInstanceResponse> genForStopInstance() {
         // basic
         HttpRequestDef.Builder<StopInstanceRequest, StopInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, StopInstanceRequest.class, StopInstanceResponse.class)
@@ -1398,9 +1269,7 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(StopInstanceRequest::getInstanceId, StopInstanceRequest::setInstanceId));
 
         // response
 
@@ -1408,9 +1277,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
-        genForupdateInstance();
+        genForUpdateInstance();
 
-    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
+    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForUpdateInstance() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
@@ -1423,16 +1292,12 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, UpdateInstanceRequest::setInstanceId));
         builder.<InstanceUpdateParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceUpdateParam.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getBody, UpdateInstanceRequest::setBody));
 
         // response
 
@@ -1440,9 +1305,9 @@ public class CloudIDEMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> updateInstanceActivity =
-        genForupdateInstanceActivity();
+        genForUpdateInstanceActivity();
 
-    private static HttpRequestDef<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> genForupdateInstanceActivity() {
+    private static HttpRequestDef<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> genForUpdateInstanceActivity() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateInstanceActivityRequest.class, UpdateInstanceActivityResponse.class)
@@ -1455,9 +1320,8 @@ public class CloudIDEMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceActivityRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceActivityRequest::getInstanceId,
+                UpdateInstanceActivityRequest::setInstanceId));
 
         // response
 

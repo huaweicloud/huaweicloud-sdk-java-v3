@@ -234,7 +234,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyConfigurationRequest 请求对象
+     * @param request ApplyConfigurationRequest 请求对象
      * @return ApplyConfigurationResponse
      */
     public ApplyConfigurationResponse applyConfiguration(ApplyConfigurationRequest request) {
@@ -248,13 +248,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyConfigurationRequest 请求对象
+     * @param request ApplyConfigurationRequest 请求对象
      * @return SyncInvoker<ApplyConfigurationRequest, ApplyConfigurationResponse>
      */
     public SyncInvoker<ApplyConfigurationRequest, ApplyConfigurationResponse> applyConfigurationInvoker(
         ApplyConfigurationRequest request) {
-        return new SyncInvoker<ApplyConfigurationRequest, ApplyConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.applyConfiguration, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.applyConfiguration, hcClient);
     }
 
     /**
@@ -264,7 +263,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchTagActionRequest 请求对象
+     * @param request BatchTagActionRequest 请求对象
      * @return BatchTagActionResponse
      */
     public BatchTagActionResponse batchTagAction(BatchTagActionRequest request) {
@@ -278,13 +277,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchTagActionRequest 请求对象
+     * @param request BatchTagActionRequest 请求对象
      * @return SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
      */
     public SyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionInvoker(
         BatchTagActionRequest request) {
-        return new SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>(request,
-            GaussDBforNoSQLMeta.batchTagAction, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.batchTagAction, hcClient);
     }
 
     /**
@@ -295,7 +293,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDisasterRecoveryOperationRequest 请求对象
+     * @param request CheckDisasterRecoveryOperationRequest 请求对象
      * @return CheckDisasterRecoveryOperationResponse
      */
     public CheckDisasterRecoveryOperationResponse checkDisasterRecoveryOperation(
@@ -311,13 +309,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDisasterRecoveryOperationRequest 请求对象
+     * @param request CheckDisasterRecoveryOperationRequest 请求对象
      * @return SyncInvoker<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse>
      */
     public SyncInvoker<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse> checkDisasterRecoveryOperationInvoker(
         CheckDisasterRecoveryOperationRequest request) {
-        return new SyncInvoker<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse>(request,
-            GaussDBforNoSQLMeta.checkDisasterRecoveryOperation, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.checkDisasterRecoveryOperation, hcClient);
     }
 
     /**
@@ -327,7 +324,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckWeekPasswordRequest 请求对象
+     * @param request CheckWeekPasswordRequest 请求对象
      * @return CheckWeekPasswordResponse
      */
     public CheckWeekPasswordResponse checkWeekPassword(CheckWeekPasswordRequest request) {
@@ -341,13 +338,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckWeekPasswordRequest 请求对象
+     * @param request CheckWeekPasswordRequest 请求对象
      * @return SyncInvoker<CheckWeekPasswordRequest, CheckWeekPasswordResponse>
      */
     public SyncInvoker<CheckWeekPasswordRequest, CheckWeekPasswordResponse> checkWeekPasswordInvoker(
         CheckWeekPasswordRequest request) {
-        return new SyncInvoker<CheckWeekPasswordRequest, CheckWeekPasswordResponse>(request,
-            GaussDBforNoSQLMeta.checkWeekPassword, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.checkWeekPassword, hcClient);
     }
 
     /**
@@ -357,7 +353,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareConfigurationRequest 请求对象
+     * @param request CompareConfigurationRequest 请求对象
      * @return CompareConfigurationResponse
      */
     public CompareConfigurationResponse compareConfiguration(CompareConfigurationRequest request) {
@@ -371,13 +367,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareConfigurationRequest 请求对象
+     * @param request CompareConfigurationRequest 请求对象
      * @return SyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse>
      */
     public SyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse> compareConfigurationInvoker(
         CompareConfigurationRequest request) {
-        return new SyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.compareConfiguration, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.compareConfiguration, hcClient);
     }
 
     /**
@@ -387,7 +382,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyConfigurationRequest 请求对象
+     * @param request CopyConfigurationRequest 请求对象
      * @return CopyConfigurationResponse
      */
     public CopyConfigurationResponse copyConfiguration(CopyConfigurationRequest request) {
@@ -401,13 +396,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyConfigurationRequest 请求对象
+     * @param request CopyConfigurationRequest 请求对象
      * @return SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>
      */
     public SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse> copyConfigurationInvoker(
         CopyConfigurationRequest request) {
-        return new SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.copyConfiguration, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.copyConfiguration, hcClient);
     }
 
     /**
@@ -417,7 +411,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackRequest 请求对象
+     * @param request CreateBackRequest 请求对象
      * @return CreateBackResponse
      */
     public CreateBackResponse createBack(CreateBackRequest request) {
@@ -431,12 +425,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackRequest 请求对象
+     * @param request CreateBackRequest 请求对象
      * @return SyncInvoker<CreateBackRequest, CreateBackResponse>
      */
     public SyncInvoker<CreateBackRequest, CreateBackResponse> createBackInvoker(CreateBackRequest request) {
-        return new SyncInvoker<CreateBackRequest, CreateBackResponse>(request, GaussDBforNoSQLMeta.createBack,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.createBack, hcClient);
     }
 
     /**
@@ -446,7 +439,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateColdVolumeRequest 请求对象
+     * @param request CreateColdVolumeRequest 请求对象
      * @return CreateColdVolumeResponse
      */
     public CreateColdVolumeResponse createColdVolume(CreateColdVolumeRequest request) {
@@ -460,13 +453,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateColdVolumeRequest 请求对象
+     * @param request CreateColdVolumeRequest 请求对象
      * @return SyncInvoker<CreateColdVolumeRequest, CreateColdVolumeResponse>
      */
     public SyncInvoker<CreateColdVolumeRequest, CreateColdVolumeResponse> createColdVolumeInvoker(
         CreateColdVolumeRequest request) {
-        return new SyncInvoker<CreateColdVolumeRequest, CreateColdVolumeResponse>(request,
-            GaussDBforNoSQLMeta.createColdVolume, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.createColdVolume, hcClient);
     }
 
     /**
@@ -476,7 +468,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfigurationRequest 请求对象
+     * @param request CreateConfigurationRequest 请求对象
      * @return CreateConfigurationResponse
      */
     public CreateConfigurationResponse createConfiguration(CreateConfigurationRequest request) {
@@ -490,13 +482,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfigurationRequest 请求对象
+     * @param request CreateConfigurationRequest 请求对象
      * @return SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>
      */
     public SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse> createConfigurationInvoker(
         CreateConfigurationRequest request) {
-        return new SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.createConfiguration, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.createConfiguration, hcClient);
     }
 
     /**
@@ -506,7 +497,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDbUserRequest 请求对象
+     * @param request CreateDbUserRequest 请求对象
      * @return CreateDbUserResponse
      */
     public CreateDbUserResponse createDbUser(CreateDbUserRequest request) {
@@ -520,12 +511,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDbUserRequest 请求对象
+     * @param request CreateDbUserRequest 请求对象
      * @return SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>
      */
     public SyncInvoker<CreateDbUserRequest, CreateDbUserResponse> createDbUserInvoker(CreateDbUserRequest request) {
-        return new SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>(request, GaussDBforNoSQLMeta.createDbUser,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.createDbUser, hcClient);
     }
 
     /**
@@ -535,7 +525,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDisasterRecoveryRequest 请求对象
+     * @param request CreateDisasterRecoveryRequest 请求对象
      * @return CreateDisasterRecoveryResponse
      */
     public CreateDisasterRecoveryResponse createDisasterRecovery(CreateDisasterRecoveryRequest request) {
@@ -549,13 +539,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDisasterRecoveryRequest 请求对象
+     * @param request CreateDisasterRecoveryRequest 请求对象
      * @return SyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>
      */
     public SyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> createDisasterRecoveryInvoker(
         CreateDisasterRecoveryRequest request) {
-        return new SyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>(request,
-            GaussDBforNoSQLMeta.createDisasterRecovery, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.createDisasterRecovery, hcClient);
     }
 
     /**
@@ -565,7 +554,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
      */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
@@ -579,13 +568,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
     public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
         CreateInstanceRequest request) {
-        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request,
-            GaussDBforNoSQLMeta.createInstance, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.createInstance, hcClient);
     }
 
     /**
@@ -595,7 +583,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return DeleteBackupResponse
      */
     public DeleteBackupResponse deleteBackup(DeleteBackupRequest request) {
@@ -609,12 +597,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return SyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
      */
     public SyncInvoker<DeleteBackupRequest, DeleteBackupResponse> deleteBackupInvoker(DeleteBackupRequest request) {
-        return new SyncInvoker<DeleteBackupRequest, DeleteBackupResponse>(request, GaussDBforNoSQLMeta.deleteBackup,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteBackup, hcClient);
     }
 
     /**
@@ -624,7 +611,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConfigurationRequest 请求对象
+     * @param request DeleteConfigurationRequest 请求对象
      * @return DeleteConfigurationResponse
      */
     public DeleteConfigurationResponse deleteConfiguration(DeleteConfigurationRequest request) {
@@ -638,13 +625,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConfigurationRequest 请求对象
+     * @param request DeleteConfigurationRequest 请求对象
      * @return SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>
      */
     public SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfigurationInvoker(
         DeleteConfigurationRequest request) {
-        return new SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.deleteConfiguration, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteConfiguration, hcClient);
     }
 
     /**
@@ -654,7 +640,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDbUserRequest 请求对象
+     * @param request DeleteDbUserRequest 请求对象
      * @return DeleteDbUserResponse
      */
     public DeleteDbUserResponse deleteDbUser(DeleteDbUserRequest request) {
@@ -668,12 +654,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDbUserRequest 请求对象
+     * @param request DeleteDbUserRequest 请求对象
      * @return SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>
      */
     public SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUserInvoker(DeleteDbUserRequest request) {
-        return new SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>(request, GaussDBforNoSQLMeta.deleteDbUser,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteDbUser, hcClient);
     }
 
     /**
@@ -683,7 +668,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDisasterRecoveryRequest 请求对象
+     * @param request DeleteDisasterRecoveryRequest 请求对象
      * @return DeleteDisasterRecoveryResponse
      */
     public DeleteDisasterRecoveryResponse deleteDisasterRecovery(DeleteDisasterRecoveryRequest request) {
@@ -697,13 +682,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDisasterRecoveryRequest 请求对象
+     * @param request DeleteDisasterRecoveryRequest 请求对象
      * @return SyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>
      */
     public SyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecoveryInvoker(
         DeleteDisasterRecoveryRequest request) {
-        return new SyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>(request,
-            GaussDBforNoSQLMeta.deleteDisasterRecovery, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteDisasterRecovery, hcClient);
     }
 
     /**
@@ -713,7 +697,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnlargeFailNodeRequest 请求对象
+     * @param request DeleteEnlargeFailNodeRequest 请求对象
      * @return DeleteEnlargeFailNodeResponse
      */
     public DeleteEnlargeFailNodeResponse deleteEnlargeFailNode(DeleteEnlargeFailNodeRequest request) {
@@ -727,13 +711,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnlargeFailNodeRequest 请求对象
+     * @param request DeleteEnlargeFailNodeRequest 请求对象
      * @return SyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse>
      */
     public SyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> deleteEnlargeFailNodeInvoker(
         DeleteEnlargeFailNodeRequest request) {
-        return new SyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse>(request,
-            GaussDBforNoSQLMeta.deleteEnlargeFailNode, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteEnlargeFailNode, hcClient);
     }
 
     /**
@@ -743,7 +726,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
      */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
@@ -757,13 +740,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
         DeleteInstanceRequest request) {
-        return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request,
-            GaussDBforNoSQLMeta.deleteInstance, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -773,7 +755,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstancesSessionRequest 请求对象
+     * @param request DeleteInstancesSessionRequest 请求对象
      * @return DeleteInstancesSessionResponse
      */
     public DeleteInstancesSessionResponse deleteInstancesSession(DeleteInstancesSessionRequest request) {
@@ -787,13 +769,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstancesSessionRequest 请求对象
+     * @param request DeleteInstancesSessionRequest 请求对象
      * @return SyncInvoker<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse>
      */
     public SyncInvoker<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse> deleteInstancesSessionInvoker(
         DeleteInstancesSessionRequest request) {
-        return new SyncInvoker<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse>(request,
-            GaussDBforNoSQLMeta.deleteInstancesSession, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteInstancesSession, hcClient);
     }
 
     /**
@@ -803,7 +784,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLtsConfigsRequest 请求对象
+     * @param request DeleteLtsConfigsRequest 请求对象
      * @return DeleteLtsConfigsResponse
      */
     public DeleteLtsConfigsResponse deleteLtsConfigs(DeleteLtsConfigsRequest request) {
@@ -817,13 +798,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLtsConfigsRequest 请求对象
+     * @param request DeleteLtsConfigsRequest 请求对象
      * @return SyncInvoker<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse>
      */
     public SyncInvoker<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse> deleteLtsConfigsInvoker(
         DeleteLtsConfigsRequest request) {
-        return new SyncInvoker<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse>(request,
-            GaussDBforNoSQLMeta.deleteLtsConfigs, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteLtsConfigs, hcClient);
     }
 
     /**
@@ -833,7 +813,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandInstanceNodeRequest 请求对象
+     * @param request ExpandInstanceNodeRequest 请求对象
      * @return ExpandInstanceNodeResponse
      */
     public ExpandInstanceNodeResponse expandInstanceNode(ExpandInstanceNodeRequest request) {
@@ -847,13 +827,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandInstanceNodeRequest 请求对象
+     * @param request ExpandInstanceNodeRequest 请求对象
      * @return SyncInvoker<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse>
      */
     public SyncInvoker<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse> expandInstanceNodeInvoker(
         ExpandInstanceNodeRequest request) {
-        return new SyncInvoker<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse>(request,
-            GaussDBforNoSQLMeta.expandInstanceNode, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.expandInstanceNode, hcClient);
     }
 
     /**
@@ -863,7 +842,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableFlavorInfosRequest 请求对象
+     * @param request ListAvailableFlavorInfosRequest 请求对象
      * @return ListAvailableFlavorInfosResponse
      */
     public ListAvailableFlavorInfosResponse listAvailableFlavorInfos(ListAvailableFlavorInfosRequest request) {
@@ -877,13 +856,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableFlavorInfosRequest 请求对象
+     * @param request ListAvailableFlavorInfosRequest 请求对象
      * @return SyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse>
      */
     public SyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> listAvailableFlavorInfosInvoker(
         ListAvailableFlavorInfosRequest request) {
-        return new SyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse>(request,
-            GaussDBforNoSQLMeta.listAvailableFlavorInfos, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listAvailableFlavorInfos, hcClient);
     }
 
     /**
@@ -893,7 +871,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCassandraSlowLogsRequest 请求对象
+     * @param request ListCassandraSlowLogsRequest 请求对象
      * @return ListCassandraSlowLogsResponse
      */
     public ListCassandraSlowLogsResponse listCassandraSlowLogs(ListCassandraSlowLogsRequest request) {
@@ -907,13 +885,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCassandraSlowLogsRequest 请求对象
+     * @param request ListCassandraSlowLogsRequest 请求对象
      * @return SyncInvoker<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse>
      */
     public SyncInvoker<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse> listCassandraSlowLogsInvoker(
         ListCassandraSlowLogsRequest request) {
-        return new SyncInvoker<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse>(request,
-            GaussDBforNoSQLMeta.listCassandraSlowLogs, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listCassandraSlowLogs, hcClient);
     }
 
     /**
@@ -923,7 +900,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationDatastoresRequest 请求对象
+     * @param request ListConfigurationDatastoresRequest 请求对象
      * @return ListConfigurationDatastoresResponse
      */
     public ListConfigurationDatastoresResponse listConfigurationDatastores(ListConfigurationDatastoresRequest request) {
@@ -937,13 +914,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationDatastoresRequest 请求对象
+     * @param request ListConfigurationDatastoresRequest 请求对象
      * @return SyncInvoker<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse>
      */
     public SyncInvoker<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse> listConfigurationDatastoresInvoker(
         ListConfigurationDatastoresRequest request) {
-        return new SyncInvoker<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse>(request,
-            GaussDBforNoSQLMeta.listConfigurationDatastores, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listConfigurationDatastores, hcClient);
     }
 
     /**
@@ -953,7 +929,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationTemplatesRequest 请求对象
+     * @param request ListConfigurationTemplatesRequest 请求对象
      * @return ListConfigurationTemplatesResponse
      */
     public ListConfigurationTemplatesResponse listConfigurationTemplates(ListConfigurationTemplatesRequest request) {
@@ -967,13 +943,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationTemplatesRequest 请求对象
+     * @param request ListConfigurationTemplatesRequest 请求对象
      * @return SyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse>
      */
     public SyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse> listConfigurationTemplatesInvoker(
         ListConfigurationTemplatesRequest request) {
-        return new SyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse>(request,
-            GaussDBforNoSQLMeta.listConfigurationTemplates, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listConfigurationTemplates, hcClient);
     }
 
     /**
@@ -983,7 +958,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsRequest 请求对象
+     * @param request ListConfigurationsRequest 请求对象
      * @return ListConfigurationsResponse
      */
     public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
@@ -997,13 +972,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsRequest 请求对象
+     * @param request ListConfigurationsRequest 请求对象
      * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
      */
     public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(
         ListConfigurationsRequest request) {
-        return new SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request,
-            GaussDBforNoSQLMeta.listConfigurations, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listConfigurations, hcClient);
     }
 
     /**
@@ -1013,7 +987,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatastoresRequest 请求对象
+     * @param request ListDatastoresRequest 请求对象
      * @return ListDatastoresResponse
      */
     public ListDatastoresResponse listDatastores(ListDatastoresRequest request) {
@@ -1027,13 +1001,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatastoresRequest 请求对象
+     * @param request ListDatastoresRequest 请求对象
      * @return SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
      */
     public SyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresInvoker(
         ListDatastoresRequest request) {
-        return new SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request,
-            GaussDBforNoSQLMeta.listDatastores, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listDatastores, hcClient);
     }
 
     /**
@@ -1043,7 +1016,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDbUsersRequest 请求对象
+     * @param request ListDbUsersRequest 请求对象
      * @return ListDbUsersResponse
      */
     public ListDbUsersResponse listDbUsers(ListDbUsersRequest request) {
@@ -1057,12 +1030,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDbUsersRequest 请求对象
+     * @param request ListDbUsersRequest 请求对象
      * @return SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
      */
     public SyncInvoker<ListDbUsersRequest, ListDbUsersResponse> listDbUsersInvoker(ListDbUsersRequest request) {
-        return new SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>(request, GaussDBforNoSQLMeta.listDbUsers,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listDbUsers, hcClient);
     }
 
     /**
@@ -1072,7 +1044,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDedicatedResourcesRequest 请求对象
+     * @param request ListDedicatedResourcesRequest 请求对象
      * @return ListDedicatedResourcesResponse
      */
     public ListDedicatedResourcesResponse listDedicatedResources(ListDedicatedResourcesRequest request) {
@@ -1086,13 +1058,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDedicatedResourcesRequest 请求对象
+     * @param request ListDedicatedResourcesRequest 请求对象
      * @return SyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse>
      */
     public SyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> listDedicatedResourcesInvoker(
         ListDedicatedResourcesRequest request) {
-        return new SyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse>(request,
-            GaussDBforNoSQLMeta.listDedicatedResources, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listDedicatedResources, hcClient);
     }
 
     /**
@@ -1102,7 +1073,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEpsQuotasRequest 请求对象
+     * @param request ListEpsQuotasRequest 请求对象
      * @return ListEpsQuotasResponse
      */
     public ListEpsQuotasResponse listEpsQuotas(ListEpsQuotasRequest request) {
@@ -1116,12 +1087,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEpsQuotasRequest 请求对象
+     * @param request ListEpsQuotasRequest 请求对象
      * @return SyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse>
      */
     public SyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse> listEpsQuotasInvoker(ListEpsQuotasRequest request) {
-        return new SyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse>(request, GaussDBforNoSQLMeta.listEpsQuotas,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listEpsQuotas, hcClient);
     }
 
     /**
@@ -1131,7 +1101,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorInfosRequest 请求对象
+     * @param request ListFlavorInfosRequest 请求对象
      * @return ListFlavorInfosResponse
      */
     public ListFlavorInfosResponse listFlavorInfos(ListFlavorInfosRequest request) {
@@ -1145,13 +1115,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorInfosRequest 请求对象
+     * @param request ListFlavorInfosRequest 请求对象
      * @return SyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse>
      */
     public SyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse> listFlavorInfosInvoker(
         ListFlavorInfosRequest request) {
-        return new SyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse>(request,
-            GaussDBforNoSQLMeta.listFlavorInfos, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listFlavorInfos, hcClient);
     }
 
     /**
@@ -1161,7 +1130,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
      */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
@@ -1175,12 +1144,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
-        return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, GaussDBforNoSQLMeta.listFlavors,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listFlavors, hcClient);
     }
 
     /**
@@ -1190,7 +1158,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInfluxdbSlowLogsRequest 请求对象
+     * @param request ListInfluxdbSlowLogsRequest 请求对象
      * @return ListInfluxdbSlowLogsResponse
      */
     public ListInfluxdbSlowLogsResponse listInfluxdbSlowLogs(ListInfluxdbSlowLogsRequest request) {
@@ -1204,13 +1172,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInfluxdbSlowLogsRequest 请求对象
+     * @param request ListInfluxdbSlowLogsRequest 请求对象
      * @return SyncInvoker<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse>
      */
     public SyncInvoker<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse> listInfluxdbSlowLogsInvoker(
         ListInfluxdbSlowLogsRequest request) {
-        return new SyncInvoker<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse>(request,
-            GaussDBforNoSQLMeta.listInfluxdbSlowLogs, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInfluxdbSlowLogs, hcClient);
     }
 
     /**
@@ -1220,7 +1187,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceDatabasesRequest 请求对象
+     * @param request ListInstanceDatabasesRequest 请求对象
      * @return ListInstanceDatabasesResponse
      */
     public ListInstanceDatabasesResponse listInstanceDatabases(ListInstanceDatabasesRequest request) {
@@ -1234,13 +1201,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceDatabasesRequest 请求对象
+     * @param request ListInstanceDatabasesRequest 请求对象
      * @return SyncInvoker<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse>
      */
     public SyncInvoker<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> listInstanceDatabasesInvoker(
         ListInstanceDatabasesRequest request) {
-        return new SyncInvoker<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse>(request,
-            GaussDBforNoSQLMeta.listInstanceDatabases, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInstanceDatabases, hcClient);
     }
 
     /**
@@ -1250,7 +1216,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTagsRequest 请求对象
+     * @param request ListInstanceTagsRequest 请求对象
      * @return ListInstanceTagsResponse
      */
     public ListInstanceTagsResponse listInstanceTags(ListInstanceTagsRequest request) {
@@ -1264,13 +1230,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTagsRequest 请求对象
+     * @param request ListInstanceTagsRequest 请求对象
      * @return SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
      */
     public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(
         ListInstanceTagsRequest request) {
-        return new SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request,
-            GaussDBforNoSQLMeta.listInstanceTags, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInstanceTags, hcClient);
     }
 
     /**
@@ -1280,7 +1245,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return ListInstancesResponse
      */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
@@ -1294,12 +1259,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
-        return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, GaussDBforNoSQLMeta.listInstances,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInstances, hcClient);
     }
 
     /**
@@ -1309,7 +1273,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesByResourceTagsRequest 请求对象
+     * @param request ListInstancesByResourceTagsRequest 请求对象
      * @return ListInstancesByResourceTagsResponse
      */
     public ListInstancesByResourceTagsResponse listInstancesByResourceTags(ListInstancesByResourceTagsRequest request) {
@@ -1323,13 +1287,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesByResourceTagsRequest 请求对象
+     * @param request ListInstancesByResourceTagsRequest 请求对象
      * @return SyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse>
      */
     public SyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse> listInstancesByResourceTagsInvoker(
         ListInstancesByResourceTagsRequest request) {
-        return new SyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse>(request,
-            GaussDBforNoSQLMeta.listInstancesByResourceTags, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInstancesByResourceTags, hcClient);
     }
 
     /**
@@ -1339,7 +1302,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesByTagsRequest 请求对象
+     * @param request ListInstancesByTagsRequest 请求对象
      * @return ListInstancesByTagsResponse
      */
     public ListInstancesByTagsResponse listInstancesByTags(ListInstancesByTagsRequest request) {
@@ -1353,13 +1316,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesByTagsRequest 请求对象
+     * @param request ListInstancesByTagsRequest 请求对象
      * @return SyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse>
      */
     public SyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse> listInstancesByTagsInvoker(
         ListInstancesByTagsRequest request) {
-        return new SyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse>(request,
-            GaussDBforNoSQLMeta.listInstancesByTags, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInstancesByTags, hcClient);
     }
 
     /**
@@ -1369,7 +1331,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesSessionRequest 请求对象
+     * @param request ListInstancesSessionRequest 请求对象
      * @return ListInstancesSessionResponse
      */
     public ListInstancesSessionResponse listInstancesSession(ListInstancesSessionRequest request) {
@@ -1383,13 +1345,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesSessionRequest 请求对象
+     * @param request ListInstancesSessionRequest 请求对象
      * @return SyncInvoker<ListInstancesSessionRequest, ListInstancesSessionResponse>
      */
     public SyncInvoker<ListInstancesSessionRequest, ListInstancesSessionResponse> listInstancesSessionInvoker(
         ListInstancesSessionRequest request) {
-        return new SyncInvoker<ListInstancesSessionRequest, ListInstancesSessionResponse>(request,
-            GaussDBforNoSQLMeta.listInstancesSession, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInstancesSession, hcClient);
     }
 
     /**
@@ -1399,7 +1360,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesSessionStatisticsRequest 请求对象
+     * @param request ListInstancesSessionStatisticsRequest 请求对象
      * @return ListInstancesSessionStatisticsResponse
      */
     public ListInstancesSessionStatisticsResponse listInstancesSessionStatistics(
@@ -1414,13 +1375,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesSessionStatisticsRequest 请求对象
+     * @param request ListInstancesSessionStatisticsRequest 请求对象
      * @return SyncInvoker<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse>
      */
     public SyncInvoker<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse> listInstancesSessionStatisticsInvoker(
         ListInstancesSessionStatisticsRequest request) {
-        return new SyncInvoker<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse>(request,
-            GaussDBforNoSQLMeta.listInstancesSessionStatistics, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInstancesSessionStatistics, hcClient);
     }
 
     /**
@@ -1430,7 +1390,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return ListJobsResponse
      */
     public ListJobsResponse listJobs(ListJobsRequest request) {
@@ -1444,11 +1404,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return SyncInvoker<ListJobsRequest, ListJobsResponse>
      */
     public SyncInvoker<ListJobsRequest, ListJobsResponse> listJobsInvoker(ListJobsRequest request) {
-        return new SyncInvoker<ListJobsRequest, ListJobsResponse>(request, GaussDBforNoSQLMeta.listJobs, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listJobs, hcClient);
     }
 
     /**
@@ -1458,7 +1418,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLtsConfigsRequest 请求对象
+     * @param request ListLtsConfigsRequest 请求对象
      * @return ListLtsConfigsResponse
      */
     public ListLtsConfigsResponse listLtsConfigs(ListLtsConfigsRequest request) {
@@ -1472,13 +1432,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLtsConfigsRequest 请求对象
+     * @param request ListLtsConfigsRequest 请求对象
      * @return SyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse>
      */
     public SyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse> listLtsConfigsInvoker(
         ListLtsConfigsRequest request) {
-        return new SyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse>(request,
-            GaussDBforNoSQLMeta.listLtsConfigs, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listLtsConfigs, hcClient);
     }
 
     /**
@@ -1488,7 +1447,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMongodbErrorLogsRequest 请求对象
+     * @param request ListMongodbErrorLogsRequest 请求对象
      * @return ListMongodbErrorLogsResponse
      */
     public ListMongodbErrorLogsResponse listMongodbErrorLogs(ListMongodbErrorLogsRequest request) {
@@ -1502,13 +1461,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMongodbErrorLogsRequest 请求对象
+     * @param request ListMongodbErrorLogsRequest 请求对象
      * @return SyncInvoker<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse>
      */
     public SyncInvoker<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse> listMongodbErrorLogsInvoker(
         ListMongodbErrorLogsRequest request) {
-        return new SyncInvoker<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse>(request,
-            GaussDBforNoSQLMeta.listMongodbErrorLogs, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listMongodbErrorLogs, hcClient);
     }
 
     /**
@@ -1518,7 +1476,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMongodbSlowLogsRequest 请求对象
+     * @param request ListMongodbSlowLogsRequest 请求对象
      * @return ListMongodbSlowLogsResponse
      */
     public ListMongodbSlowLogsResponse listMongodbSlowLogs(ListMongodbSlowLogsRequest request) {
@@ -1532,13 +1490,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMongodbSlowLogsRequest 请求对象
+     * @param request ListMongodbSlowLogsRequest 请求对象
      * @return SyncInvoker<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse>
      */
     public SyncInvoker<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse> listMongodbSlowLogsInvoker(
         ListMongodbSlowLogsRequest request) {
-        return new SyncInvoker<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse>(request,
-            GaussDBforNoSQLMeta.listMongodbSlowLogs, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listMongodbSlowLogs, hcClient);
     }
 
     /**
@@ -1548,7 +1505,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return ListProjectTagsResponse
      */
     public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
@@ -1562,13 +1519,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
     public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
         ListProjectTagsRequest request) {
-        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request,
-            GaussDBforNoSQLMeta.listProjectTags, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listProjectTags, hcClient);
     }
 
     /**
@@ -1578,7 +1534,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecycleInstancesRequest 请求对象
+     * @param request ListRecycleInstancesRequest 请求对象
      * @return ListRecycleInstancesResponse
      */
     public ListRecycleInstancesResponse listRecycleInstances(ListRecycleInstancesRequest request) {
@@ -1592,13 +1548,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecycleInstancesRequest 请求对象
+     * @param request ListRecycleInstancesRequest 请求对象
      * @return SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>
      */
     public SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstancesInvoker(
         ListRecycleInstancesRequest request) {
-        return new SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>(request,
-            GaussDBforNoSQLMeta.listRecycleInstances, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listRecycleInstances, hcClient);
     }
 
     /**
@@ -1608,7 +1563,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRedisSlowLogsRequest 请求对象
+     * @param request ListRedisSlowLogsRequest 请求对象
      * @return ListRedisSlowLogsResponse
      */
     public ListRedisSlowLogsResponse listRedisSlowLogs(ListRedisSlowLogsRequest request) {
@@ -1622,13 +1577,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRedisSlowLogsRequest 请求对象
+     * @param request ListRedisSlowLogsRequest 请求对象
      * @return SyncInvoker<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse>
      */
     public SyncInvoker<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> listRedisSlowLogsInvoker(
         ListRedisSlowLogsRequest request) {
-        return new SyncInvoker<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse>(request,
-            GaussDBforNoSQLMeta.listRedisSlowLogs, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listRedisSlowLogs, hcClient);
     }
 
     /**
@@ -1638,7 +1592,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreDatabasesRequest 请求对象
+     * @param request ListRestoreDatabasesRequest 请求对象
      * @return ListRestoreDatabasesResponse
      */
     public ListRestoreDatabasesResponse listRestoreDatabases(ListRestoreDatabasesRequest request) {
@@ -1652,13 +1606,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreDatabasesRequest 请求对象
+     * @param request ListRestoreDatabasesRequest 请求对象
      * @return SyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse>
      */
     public SyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> listRestoreDatabasesInvoker(
         ListRestoreDatabasesRequest request) {
-        return new SyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse>(request,
-            GaussDBforNoSQLMeta.listRestoreDatabases, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listRestoreDatabases, hcClient);
     }
 
     /**
@@ -1668,7 +1621,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreTablesRequest 请求对象
+     * @param request ListRestoreTablesRequest 请求对象
      * @return ListRestoreTablesResponse
      */
     public ListRestoreTablesResponse listRestoreTables(ListRestoreTablesRequest request) {
@@ -1682,13 +1635,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreTablesRequest 请求对象
+     * @param request ListRestoreTablesRequest 请求对象
      * @return SyncInvoker<ListRestoreTablesRequest, ListRestoreTablesResponse>
      */
     public SyncInvoker<ListRestoreTablesRequest, ListRestoreTablesResponse> listRestoreTablesInvoker(
         ListRestoreTablesRequest request) {
-        return new SyncInvoker<ListRestoreTablesRequest, ListRestoreTablesResponse>(request,
-            GaussDBforNoSQLMeta.listRestoreTables, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listRestoreTables, hcClient);
     }
 
     /**
@@ -1698,7 +1650,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreTimeRequest 请求对象
+     * @param request ListRestoreTimeRequest 请求对象
      * @return ListRestoreTimeResponse
      */
     public ListRestoreTimeResponse listRestoreTime(ListRestoreTimeRequest request) {
@@ -1712,13 +1664,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreTimeRequest 请求对象
+     * @param request ListRestoreTimeRequest 请求对象
      * @return SyncInvoker<ListRestoreTimeRequest, ListRestoreTimeResponse>
      */
     public SyncInvoker<ListRestoreTimeRequest, ListRestoreTimeResponse> listRestoreTimeInvoker(
         ListRestoreTimeRequest request) {
-        return new SyncInvoker<ListRestoreTimeRequest, ListRestoreTimeResponse>(request,
-            GaussDBforNoSQLMeta.listRestoreTime, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listRestoreTime, hcClient);
     }
 
     /**
@@ -1728,7 +1679,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSlowLogsRequest 请求对象
+     * @param request ListSlowLogsRequest 请求对象
      * @return ListSlowLogsResponse
      */
     public ListSlowLogsResponse listSlowLogs(ListSlowLogsRequest request) {
@@ -1742,12 +1693,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSlowLogsRequest 请求对象
+     * @param request ListSlowLogsRequest 请求对象
      * @return SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>
      */
     public SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsInvoker(ListSlowLogsRequest request) {
-        return new SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>(request, GaussDBforNoSQLMeta.listSlowLogs,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listSlowLogs, hcClient);
     }
 
     /**
@@ -1757,7 +1707,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyDbUserPrivilegeRequest 请求对象
+     * @param request ModifyDbUserPrivilegeRequest 请求对象
      * @return ModifyDbUserPrivilegeResponse
      */
     public ModifyDbUserPrivilegeResponse modifyDbUserPrivilege(ModifyDbUserPrivilegeRequest request) {
@@ -1771,13 +1721,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyDbUserPrivilegeRequest 请求对象
+     * @param request ModifyDbUserPrivilegeRequest 请求对象
      * @return SyncInvoker<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse>
      */
     public SyncInvoker<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> modifyDbUserPrivilegeInvoker(
         ModifyDbUserPrivilegeRequest request) {
-        return new SyncInvoker<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse>(request,
-            GaussDBforNoSQLMeta.modifyDbUserPrivilege, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.modifyDbUserPrivilege, hcClient);
     }
 
     /**
@@ -1787,7 +1736,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyEpsQuotasRequest 请求对象
+     * @param request ModifyEpsQuotasRequest 请求对象
      * @return ModifyEpsQuotasResponse
      */
     public ModifyEpsQuotasResponse modifyEpsQuotas(ModifyEpsQuotasRequest request) {
@@ -1801,13 +1750,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyEpsQuotasRequest 请求对象
+     * @param request ModifyEpsQuotasRequest 请求对象
      * @return SyncInvoker<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse>
      */
     public SyncInvoker<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> modifyEpsQuotasInvoker(
         ModifyEpsQuotasRequest request) {
-        return new SyncInvoker<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse>(request,
-            GaussDBforNoSQLMeta.modifyEpsQuotas, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.modifyEpsQuotas, hcClient);
     }
 
     /**
@@ -1817,7 +1765,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyPortRequest 请求对象
+     * @param request ModifyPortRequest 请求对象
      * @return ModifyPortResponse
      */
     public ModifyPortResponse modifyPort(ModifyPortRequest request) {
@@ -1831,12 +1779,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyPortRequest 请求对象
+     * @param request ModifyPortRequest 请求对象
      * @return SyncInvoker<ModifyPortRequest, ModifyPortResponse>
      */
     public SyncInvoker<ModifyPortRequest, ModifyPortResponse> modifyPortInvoker(ModifyPortRequest request) {
-        return new SyncInvoker<ModifyPortRequest, ModifyPortResponse>(request, GaussDBforNoSQLMeta.modifyPort,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.modifyPort, hcClient);
     }
 
     /**
@@ -1846,7 +1793,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyPublicIpRequest 请求对象
+     * @param request ModifyPublicIpRequest 请求对象
      * @return ModifyPublicIpResponse
      */
     public ModifyPublicIpResponse modifyPublicIp(ModifyPublicIpRequest request) {
@@ -1860,13 +1807,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyPublicIpRequest 请求对象
+     * @param request ModifyPublicIpRequest 请求对象
      * @return SyncInvoker<ModifyPublicIpRequest, ModifyPublicIpResponse>
      */
     public SyncInvoker<ModifyPublicIpRequest, ModifyPublicIpResponse> modifyPublicIpInvoker(
         ModifyPublicIpRequest request) {
-        return new SyncInvoker<ModifyPublicIpRequest, ModifyPublicIpResponse>(request,
-            GaussDBforNoSQLMeta.modifyPublicIp, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.modifyPublicIp, hcClient);
     }
 
     /**
@@ -1876,7 +1822,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyVolumeRequest 请求对象
+     * @param request ModifyVolumeRequest 请求对象
      * @return ModifyVolumeResponse
      */
     public ModifyVolumeResponse modifyVolume(ModifyVolumeRequest request) {
@@ -1890,12 +1836,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyVolumeRequest 请求对象
+     * @param request ModifyVolumeRequest 请求对象
      * @return SyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse>
      */
     public SyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse> modifyVolumeInvoker(ModifyVolumeRequest request) {
-        return new SyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse>(request, GaussDBforNoSQLMeta.modifyVolume,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.modifyVolume, hcClient);
     }
 
     /**
@@ -1905,7 +1850,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param OfflineNodesRequest 请求对象
+     * @param request OfflineNodesRequest 请求对象
      * @return OfflineNodesResponse
      */
     public OfflineNodesResponse offlineNodes(OfflineNodesRequest request) {
@@ -1919,12 +1864,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param OfflineNodesRequest 请求对象
+     * @param request OfflineNodesRequest 请求对象
      * @return SyncInvoker<OfflineNodesRequest, OfflineNodesResponse>
      */
     public SyncInvoker<OfflineNodesRequest, OfflineNodesResponse> offlineNodesInvoker(OfflineNodesRequest request) {
-        return new SyncInvoker<OfflineNodesRequest, OfflineNodesResponse>(request, GaussDBforNoSQLMeta.offlineNodes,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.offlineNodes, hcClient);
     }
 
     /**
@@ -1936,7 +1880,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseResumeDataSynchronizationRequest 请求对象
+     * @param request PauseResumeDataSynchronizationRequest 请求对象
      * @return PauseResumeDataSynchronizationResponse
      */
     public PauseResumeDataSynchronizationResponse pauseResumeDataSynchronization(
@@ -1953,13 +1897,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PauseResumeDataSynchronizationRequest 请求对象
+     * @param request PauseResumeDataSynchronizationRequest 请求对象
      * @return SyncInvoker<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse>
      */
     public SyncInvoker<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse> pauseResumeDataSynchronizationInvoker(
         PauseResumeDataSynchronizationRequest request) {
-        return new SyncInvoker<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse>(request,
-            GaussDBforNoSQLMeta.pauseResumeDataSynchronization, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.pauseResumeDataSynchronization, hcClient);
     }
 
     /**
@@ -1969,7 +1912,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetDbUserPasswordRequest 请求对象
+     * @param request ResetDbUserPasswordRequest 请求对象
      * @return ResetDbUserPasswordResponse
      */
     public ResetDbUserPasswordResponse resetDbUserPassword(ResetDbUserPasswordRequest request) {
@@ -1983,13 +1926,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetDbUserPasswordRequest 请求对象
+     * @param request ResetDbUserPasswordRequest 请求对象
      * @return SyncInvoker<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse>
      */
     public SyncInvoker<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse> resetDbUserPasswordInvoker(
         ResetDbUserPasswordRequest request) {
-        return new SyncInvoker<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse>(request,
-            GaussDBforNoSQLMeta.resetDbUserPassword, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.resetDbUserPassword, hcClient);
     }
 
     /**
@@ -1999,7 +1941,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetParamGroupTemplateRequest 请求对象
+     * @param request ResetParamGroupTemplateRequest 请求对象
      * @return ResetParamGroupTemplateResponse
      */
     public ResetParamGroupTemplateResponse resetParamGroupTemplate(ResetParamGroupTemplateRequest request) {
@@ -2013,13 +1955,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetParamGroupTemplateRequest 请求对象
+     * @param request ResetParamGroupTemplateRequest 请求对象
      * @return SyncInvoker<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse>
      */
     public SyncInvoker<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse> resetParamGroupTemplateInvoker(
         ResetParamGroupTemplateRequest request) {
-        return new SyncInvoker<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse>(request,
-            GaussDBforNoSQLMeta.resetParamGroupTemplate, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.resetParamGroupTemplate, hcClient);
     }
 
     /**
@@ -2029,7 +1970,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
      */
     public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
@@ -2043,12 +1984,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
     public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
-        return new SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, GaussDBforNoSQLMeta.resetPassword,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.resetPassword, hcClient);
     }
 
     /**
@@ -2058,7 +1998,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeColdVolumeRequest 请求对象
+     * @param request ResizeColdVolumeRequest 请求对象
      * @return ResizeColdVolumeResponse
      */
     public ResizeColdVolumeResponse resizeColdVolume(ResizeColdVolumeRequest request) {
@@ -2072,13 +2012,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeColdVolumeRequest 请求对象
+     * @param request ResizeColdVolumeRequest 请求对象
      * @return SyncInvoker<ResizeColdVolumeRequest, ResizeColdVolumeResponse>
      */
     public SyncInvoker<ResizeColdVolumeRequest, ResizeColdVolumeResponse> resizeColdVolumeInvoker(
         ResizeColdVolumeRequest request) {
-        return new SyncInvoker<ResizeColdVolumeRequest, ResizeColdVolumeResponse>(request,
-            GaussDBforNoSQLMeta.resizeColdVolume, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.resizeColdVolume, hcClient);
     }
 
     /**
@@ -2088,7 +2027,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse
      */
     public ResizeInstanceResponse resizeInstance(ResizeInstanceRequest request) {
@@ -2102,13 +2041,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
      */
     public SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceInvoker(
         ResizeInstanceRequest request) {
-        return new SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request,
-            GaussDBforNoSQLMeta.resizeInstance, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.resizeInstance, hcClient);
     }
 
     /**
@@ -2118,7 +2056,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceVolumeRequest 请求对象
+     * @param request ResizeInstanceVolumeRequest 请求对象
      * @return ResizeInstanceVolumeResponse
      */
     public ResizeInstanceVolumeResponse resizeInstanceVolume(ResizeInstanceVolumeRequest request) {
@@ -2132,13 +2070,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceVolumeRequest 请求对象
+     * @param request ResizeInstanceVolumeRequest 请求对象
      * @return SyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse>
      */
     public SyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> resizeInstanceVolumeInvoker(
         ResizeInstanceVolumeRequest request) {
-        return new SyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse>(request,
-            GaussDBforNoSQLMeta.resizeInstanceVolume, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.resizeInstanceVolume, hcClient);
     }
 
     /**
@@ -2148,7 +2085,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartInstanceRequest 请求对象
+     * @param request RestartInstanceRequest 请求对象
      * @return RestartInstanceResponse
      */
     public RestartInstanceResponse restartInstance(RestartInstanceRequest request) {
@@ -2162,13 +2099,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartInstanceRequest 请求对象
+     * @param request RestartInstanceRequest 请求对象
      * @return SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
      */
     public SyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceInvoker(
         RestartInstanceRequest request) {
-        return new SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>(request,
-            GaussDBforNoSQLMeta.restartInstance, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.restartInstance, hcClient);
     }
 
     /**
@@ -2178,7 +2114,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreExistingInstanceRequest 请求对象
+     * @param request RestoreExistingInstanceRequest 请求对象
      * @return RestoreExistingInstanceResponse
      */
     public RestoreExistingInstanceResponse restoreExistingInstance(RestoreExistingInstanceRequest request) {
@@ -2192,13 +2128,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreExistingInstanceRequest 请求对象
+     * @param request RestoreExistingInstanceRequest 请求对象
      * @return SyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse>
      */
     public SyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> restoreExistingInstanceInvoker(
         RestoreExistingInstanceRequest request) {
-        return new SyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse>(request,
-            GaussDBforNoSQLMeta.restoreExistingInstance, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.restoreExistingInstance, hcClient);
     }
 
     /**
@@ -2210,7 +2145,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveLtsConfigsRequest 请求对象
+     * @param request SaveLtsConfigsRequest 请求对象
      * @return SaveLtsConfigsResponse
      */
     public SaveLtsConfigsResponse saveLtsConfigs(SaveLtsConfigsRequest request) {
@@ -2226,13 +2161,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveLtsConfigsRequest 请求对象
+     * @param request SaveLtsConfigsRequest 请求对象
      * @return SyncInvoker<SaveLtsConfigsRequest, SaveLtsConfigsResponse>
      */
     public SyncInvoker<SaveLtsConfigsRequest, SaveLtsConfigsResponse> saveLtsConfigsInvoker(
         SaveLtsConfigsRequest request) {
-        return new SyncInvoker<SaveLtsConfigsRequest, SaveLtsConfigsResponse>(request,
-            GaussDBforNoSQLMeta.saveLtsConfigs, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.saveLtsConfigs, hcClient);
     }
 
     /**
@@ -2242,7 +2176,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetAutoEnlargePolicyRequest 请求对象
+     * @param request SetAutoEnlargePolicyRequest 请求对象
      * @return SetAutoEnlargePolicyResponse
      */
     public SetAutoEnlargePolicyResponse setAutoEnlargePolicy(SetAutoEnlargePolicyRequest request) {
@@ -2256,13 +2190,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetAutoEnlargePolicyRequest 请求对象
+     * @param request SetAutoEnlargePolicyRequest 请求对象
      * @return SyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse>
      */
     public SyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> setAutoEnlargePolicyInvoker(
         SetAutoEnlargePolicyRequest request) {
-        return new SyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse>(request,
-            GaussDBforNoSQLMeta.setAutoEnlargePolicy, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.setAutoEnlargePolicy, hcClient);
     }
 
     /**
@@ -2272,7 +2205,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetBackupPolicyRequest 请求对象
+     * @param request SetBackupPolicyRequest 请求对象
      * @return SetBackupPolicyResponse
      */
     public SetBackupPolicyResponse setBackupPolicy(SetBackupPolicyRequest request) {
@@ -2286,13 +2219,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetBackupPolicyRequest 请求对象
+     * @param request SetBackupPolicyRequest 请求对象
      * @return SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>
      */
     public SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyInvoker(
         SetBackupPolicyRequest request) {
-        return new SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request,
-            GaussDBforNoSQLMeta.setBackupPolicy, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.setBackupPolicy, hcClient);
     }
 
     /**
@@ -2302,7 +2234,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRecyclePolicyRequest 请求对象
+     * @param request SetRecyclePolicyRequest 请求对象
      * @return SetRecyclePolicyResponse
      */
     public SetRecyclePolicyResponse setRecyclePolicy(SetRecyclePolicyRequest request) {
@@ -2316,13 +2248,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRecyclePolicyRequest 请求对象
+     * @param request SetRecyclePolicyRequest 请求对象
      * @return SyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>
      */
     public SyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicyInvoker(
         SetRecyclePolicyRequest request) {
-        return new SyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>(request,
-            GaussDBforNoSQLMeta.setRecyclePolicy, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.setRecyclePolicy, hcClient);
     }
 
     /**
@@ -2332,7 +2263,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllInstancesBackupsRequest 请求对象
+     * @param request ShowAllInstancesBackupsRequest 请求对象
      * @return ShowAllInstancesBackupsResponse
      */
     public ShowAllInstancesBackupsResponse showAllInstancesBackups(ShowAllInstancesBackupsRequest request) {
@@ -2346,13 +2277,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllInstancesBackupsRequest 请求对象
+     * @param request ShowAllInstancesBackupsRequest 请求对象
      * @return SyncInvoker<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse>
      */
     public SyncInvoker<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse> showAllInstancesBackupsInvoker(
         ShowAllInstancesBackupsRequest request) {
-        return new SyncInvoker<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse>(request,
-            GaussDBforNoSQLMeta.showAllInstancesBackups, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showAllInstancesBackups, hcClient);
     }
 
     /**
@@ -2362,7 +2292,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllInstancesBackupsNewRequest 请求对象
+     * @param request ShowAllInstancesBackupsNewRequest 请求对象
      * @return ShowAllInstancesBackupsNewResponse
      */
     public ShowAllInstancesBackupsNewResponse showAllInstancesBackupsNew(ShowAllInstancesBackupsNewRequest request) {
@@ -2376,13 +2306,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllInstancesBackupsNewRequest 请求对象
+     * @param request ShowAllInstancesBackupsNewRequest 请求对象
      * @return SyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse>
      */
     public SyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse> showAllInstancesBackupsNewInvoker(
         ShowAllInstancesBackupsNewRequest request) {
-        return new SyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse>(request,
-            GaussDBforNoSQLMeta.showAllInstancesBackupsNew, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showAllInstancesBackupsNew, hcClient);
     }
 
     /**
@@ -2392,7 +2321,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicableInstancesRequest 请求对象
+     * @param request ShowApplicableInstancesRequest 请求对象
      * @return ShowApplicableInstancesResponse
      */
     public ShowApplicableInstancesResponse showApplicableInstances(ShowApplicableInstancesRequest request) {
@@ -2406,13 +2335,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicableInstancesRequest 请求对象
+     * @param request ShowApplicableInstancesRequest 请求对象
      * @return SyncInvoker<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse>
      */
     public SyncInvoker<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse> showApplicableInstancesInvoker(
         ShowApplicableInstancesRequest request) {
-        return new SyncInvoker<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse>(request,
-            GaussDBforNoSQLMeta.showApplicableInstances, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showApplicableInstances, hcClient);
     }
 
     /**
@@ -2421,7 +2349,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplyHistoryRequest 请求对象
+     * @param request ShowApplyHistoryRequest 请求对象
      * @return ShowApplyHistoryResponse
      */
     public ShowApplyHistoryResponse showApplyHistory(ShowApplyHistoryRequest request) {
@@ -2434,13 +2362,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplyHistoryRequest 请求对象
+     * @param request ShowApplyHistoryRequest 请求对象
      * @return SyncInvoker<ShowApplyHistoryRequest, ShowApplyHistoryResponse>
      */
     public SyncInvoker<ShowApplyHistoryRequest, ShowApplyHistoryResponse> showApplyHistoryInvoker(
         ShowApplyHistoryRequest request) {
-        return new SyncInvoker<ShowApplyHistoryRequest, ShowApplyHistoryResponse>(request,
-            GaussDBforNoSQLMeta.showApplyHistory, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showApplyHistory, hcClient);
     }
 
     /**
@@ -2450,7 +2377,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoEnlargePolicyRequest 请求对象
+     * @param request ShowAutoEnlargePolicyRequest 请求对象
      * @return ShowAutoEnlargePolicyResponse
      */
     public ShowAutoEnlargePolicyResponse showAutoEnlargePolicy(ShowAutoEnlargePolicyRequest request) {
@@ -2464,13 +2391,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoEnlargePolicyRequest 请求对象
+     * @param request ShowAutoEnlargePolicyRequest 请求对象
      * @return SyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse>
      */
     public SyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyInvoker(
         ShowAutoEnlargePolicyRequest request) {
-        return new SyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse>(request,
-            GaussDBforNoSQLMeta.showAutoEnlargePolicy, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showAutoEnlargePolicy, hcClient);
     }
 
     /**
@@ -2480,7 +2406,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupPolicyRequest 请求对象
+     * @param request ShowBackupPolicyRequest 请求对象
      * @return ShowBackupPolicyResponse
      */
     public ShowBackupPolicyResponse showBackupPolicy(ShowBackupPolicyRequest request) {
@@ -2494,13 +2420,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupPolicyRequest 请求对象
+     * @param request ShowBackupPolicyRequest 请求对象
      * @return SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>
      */
     public SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyInvoker(
         ShowBackupPolicyRequest request) {
-        return new SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request,
-            GaussDBforNoSQLMeta.showBackupPolicy, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showBackupPolicy, hcClient);
     }
 
     /**
@@ -2510,7 +2435,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigurationDetailRequest 请求对象
+     * @param request ShowConfigurationDetailRequest 请求对象
      * @return ShowConfigurationDetailResponse
      */
     public ShowConfigurationDetailResponse showConfigurationDetail(ShowConfigurationDetailRequest request) {
@@ -2524,13 +2449,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigurationDetailRequest 请求对象
+     * @param request ShowConfigurationDetailRequest 请求对象
      * @return SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse>
      */
     public SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> showConfigurationDetailInvoker(
         ShowConfigurationDetailRequest request) {
-        return new SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse>(request,
-            GaussDBforNoSQLMeta.showConfigurationDetail, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showConfigurationDetail, hcClient);
     }
 
     /**
@@ -2540,7 +2464,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowElbIpGroupRequest 请求对象
+     * @param request ShowElbIpGroupRequest 请求对象
      * @return ShowElbIpGroupResponse
      */
     public ShowElbIpGroupResponse showElbIpGroup(ShowElbIpGroupRequest request) {
@@ -2554,13 +2478,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowElbIpGroupRequest 请求对象
+     * @param request ShowElbIpGroupRequest 请求对象
      * @return SyncInvoker<ShowElbIpGroupRequest, ShowElbIpGroupResponse>
      */
     public SyncInvoker<ShowElbIpGroupRequest, ShowElbIpGroupResponse> showElbIpGroupInvoker(
         ShowElbIpGroupRequest request) {
-        return new SyncInvoker<ShowElbIpGroupRequest, ShowElbIpGroupResponse>(request,
-            GaussDBforNoSQLMeta.showElbIpGroup, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showElbIpGroup, hcClient);
     }
 
     /**
@@ -2570,7 +2493,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowErrorLogRequest 请求对象
+     * @param request ShowErrorLogRequest 请求对象
      * @return ShowErrorLogResponse
      */
     public ShowErrorLogResponse showErrorLog(ShowErrorLogRequest request) {
@@ -2584,12 +2507,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowErrorLogRequest 请求对象
+     * @param request ShowErrorLogRequest 请求对象
      * @return SyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse>
      */
     public SyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse> showErrorLogInvoker(ShowErrorLogRequest request) {
-        return new SyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse>(request, GaussDBforNoSQLMeta.showErrorLog,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showErrorLog, hcClient);
     }
 
     /**
@@ -2599,7 +2521,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHighRiskCommandsRequest 请求对象
+     * @param request ShowHighRiskCommandsRequest 请求对象
      * @return ShowHighRiskCommandsResponse
      */
     public ShowHighRiskCommandsResponse showHighRiskCommands(ShowHighRiskCommandsRequest request) {
@@ -2613,13 +2535,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHighRiskCommandsRequest 请求对象
+     * @param request ShowHighRiskCommandsRequest 请求对象
      * @return SyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse>
      */
     public SyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> showHighRiskCommandsInvoker(
         ShowHighRiskCommandsRequest request) {
-        return new SyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse>(request,
-            GaussDBforNoSQLMeta.showHighRiskCommands, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showHighRiskCommands, hcClient);
     }
 
     /**
@@ -2629,7 +2550,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceBiactiveRegionsRequest 请求对象
+     * @param request ShowInstanceBiactiveRegionsRequest 请求对象
      * @return ShowInstanceBiactiveRegionsResponse
      */
     public ShowInstanceBiactiveRegionsResponse showInstanceBiactiveRegions(ShowInstanceBiactiveRegionsRequest request) {
@@ -2643,13 +2564,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceBiactiveRegionsRequest 请求对象
+     * @param request ShowInstanceBiactiveRegionsRequest 请求对象
      * @return SyncInvoker<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse>
      */
     public SyncInvoker<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse> showInstanceBiactiveRegionsInvoker(
         ShowInstanceBiactiveRegionsRequest request) {
-        return new SyncInvoker<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse>(request,
-            GaussDBforNoSQLMeta.showInstanceBiactiveRegions, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showInstanceBiactiveRegions, hcClient);
     }
 
     /**
@@ -2659,7 +2579,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceConfigurationRequest 请求对象
+     * @param request ShowInstanceConfigurationRequest 请求对象
      * @return ShowInstanceConfigurationResponse
      */
     public ShowInstanceConfigurationResponse showInstanceConfiguration(ShowInstanceConfigurationRequest request) {
@@ -2673,13 +2593,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceConfigurationRequest 请求对象
+     * @param request ShowInstanceConfigurationRequest 请求对象
      * @return SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
      */
     public SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationInvoker(
         ShowInstanceConfigurationRequest request) {
-        return new SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.showInstanceConfiguration, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showInstanceConfiguration, hcClient);
     }
 
     /**
@@ -2689,7 +2608,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRoleRequest 请求对象
+     * @param request ShowInstanceRoleRequest 请求对象
      * @return ShowInstanceRoleResponse
      */
     public ShowInstanceRoleResponse showInstanceRole(ShowInstanceRoleRequest request) {
@@ -2703,13 +2622,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRoleRequest 请求对象
+     * @param request ShowInstanceRoleRequest 请求对象
      * @return SyncInvoker<ShowInstanceRoleRequest, ShowInstanceRoleResponse>
      */
     public SyncInvoker<ShowInstanceRoleRequest, ShowInstanceRoleResponse> showInstanceRoleInvoker(
         ShowInstanceRoleRequest request) {
-        return new SyncInvoker<ShowInstanceRoleRequest, ShowInstanceRoleResponse>(request,
-            GaussDBforNoSQLMeta.showInstanceRole, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showInstanceRole, hcClient);
     }
 
     /**
@@ -2719,7 +2637,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpNumRequirementRequest 请求对象
+     * @param request ShowIpNumRequirementRequest 请求对象
      * @return ShowIpNumRequirementResponse
      */
     public ShowIpNumRequirementResponse showIpNumRequirement(ShowIpNumRequirementRequest request) {
@@ -2733,13 +2651,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpNumRequirementRequest 请求对象
+     * @param request ShowIpNumRequirementRequest 请求对象
      * @return SyncInvoker<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse>
      */
     public SyncInvoker<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse> showIpNumRequirementInvoker(
         ShowIpNumRequirementRequest request) {
-        return new SyncInvoker<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse>(request,
-            GaussDBforNoSQLMeta.showIpNumRequirement, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showIpNumRequirement, hcClient);
     }
 
     /**
@@ -2749,7 +2666,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowModifyHistoryRequest 请求对象
+     * @param request ShowModifyHistoryRequest 请求对象
      * @return ShowModifyHistoryResponse
      */
     public ShowModifyHistoryResponse showModifyHistory(ShowModifyHistoryRequest request) {
@@ -2763,13 +2680,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowModifyHistoryRequest 请求对象
+     * @param request ShowModifyHistoryRequest 请求对象
      * @return SyncInvoker<ShowModifyHistoryRequest, ShowModifyHistoryResponse>
      */
     public SyncInvoker<ShowModifyHistoryRequest, ShowModifyHistoryResponse> showModifyHistoryInvoker(
         ShowModifyHistoryRequest request) {
-        return new SyncInvoker<ShowModifyHistoryRequest, ShowModifyHistoryResponse>(request,
-            GaussDBforNoSQLMeta.showModifyHistory, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showModifyHistory, hcClient);
     }
 
     /**
@@ -2779,7 +2695,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPauseResumeStutusRequest 请求对象
+     * @param request ShowPauseResumeStutusRequest 请求对象
      * @return ShowPauseResumeStutusResponse
      */
     public ShowPauseResumeStutusResponse showPauseResumeStutus(ShowPauseResumeStutusRequest request) {
@@ -2793,13 +2709,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPauseResumeStutusRequest 请求对象
+     * @param request ShowPauseResumeStutusRequest 请求对象
      * @return SyncInvoker<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse>
      */
     public SyncInvoker<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> showPauseResumeStutusInvoker(
         ShowPauseResumeStutusRequest request) {
-        return new SyncInvoker<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse>(request,
-            GaussDBforNoSQLMeta.showPauseResumeStutus, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showPauseResumeStutus, hcClient);
     }
 
     /**
@@ -2809,7 +2724,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return ShowQuotasResponse
      */
     public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
@@ -2823,12 +2738,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
      */
     public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
-        return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, GaussDBforNoSQLMeta.showQuotas,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showQuotas, hcClient);
     }
 
     /**
@@ -2838,7 +2752,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecyclePolicyRequest 请求对象
+     * @param request ShowRecyclePolicyRequest 请求对象
      * @return ShowRecyclePolicyResponse
      */
     public ShowRecyclePolicyResponse showRecyclePolicy(ShowRecyclePolicyRequest request) {
@@ -2852,13 +2766,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecyclePolicyRequest 请求对象
+     * @param request ShowRecyclePolicyRequest 请求对象
      * @return SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>
      */
     public SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyInvoker(
         ShowRecyclePolicyRequest request) {
-        return new SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>(request,
-            GaussDBforNoSQLMeta.showRecyclePolicy, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showRecyclePolicy, hcClient);
     }
 
     /**
@@ -2868,7 +2781,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestorableListRequest 请求对象
+     * @param request ShowRestorableListRequest 请求对象
      * @return ShowRestorableListResponse
      */
     public ShowRestorableListResponse showRestorableList(ShowRestorableListRequest request) {
@@ -2882,13 +2795,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestorableListRequest 请求对象
+     * @param request ShowRestorableListRequest 请求对象
      * @return SyncInvoker<ShowRestorableListRequest, ShowRestorableListResponse>
      */
     public SyncInvoker<ShowRestorableListRequest, ShowRestorableListResponse> showRestorableListInvoker(
         ShowRestorableListRequest request) {
-        return new SyncInvoker<ShowRestorableListRequest, ShowRestorableListResponse>(request,
-            GaussDBforNoSQLMeta.showRestorableList, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showRestorableList, hcClient);
     }
 
     /**
@@ -2898,7 +2810,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSlowLogDesensitizationRequest 请求对象
+     * @param request ShowSlowLogDesensitizationRequest 请求对象
      * @return ShowSlowLogDesensitizationResponse
      */
     public ShowSlowLogDesensitizationResponse showSlowLogDesensitization(ShowSlowLogDesensitizationRequest request) {
@@ -2912,13 +2824,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSlowLogDesensitizationRequest 请求对象
+     * @param request ShowSlowLogDesensitizationRequest 请求对象
      * @return SyncInvoker<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse>
      */
     public SyncInvoker<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> showSlowLogDesensitizationInvoker(
         ShowSlowLogDesensitizationRequest request) {
-        return new SyncInvoker<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse>(request,
-            GaussDBforNoSQLMeta.showSlowLogDesensitization, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showSlowLogDesensitization, hcClient);
     }
 
     /**
@@ -2928,7 +2839,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShrinkInstanceNodeRequest 请求对象
+     * @param request ShrinkInstanceNodeRequest 请求对象
      * @return ShrinkInstanceNodeResponse
      */
     public ShrinkInstanceNodeResponse shrinkInstanceNode(ShrinkInstanceNodeRequest request) {
@@ -2942,13 +2853,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShrinkInstanceNodeRequest 请求对象
+     * @param request ShrinkInstanceNodeRequest 请求对象
      * @return SyncInvoker<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse>
      */
     public SyncInvoker<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse> shrinkInstanceNodeInvoker(
         ShrinkInstanceNodeRequest request) {
-        return new SyncInvoker<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse>(request,
-            GaussDBforNoSQLMeta.shrinkInstanceNode, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.shrinkInstanceNode, hcClient);
     }
 
     /**
@@ -2958,7 +2868,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchIpGroupRequest 请求对象
+     * @param request SwitchIpGroupRequest 请求对象
      * @return SwitchIpGroupResponse
      */
     public SwitchIpGroupResponse switchIpGroup(SwitchIpGroupRequest request) {
@@ -2972,12 +2882,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchIpGroupRequest 请求对象
+     * @param request SwitchIpGroupRequest 请求对象
      * @return SyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse>
      */
     public SyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse> switchIpGroupInvoker(SwitchIpGroupRequest request) {
-        return new SyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse>(request, GaussDBforNoSQLMeta.switchIpGroup,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.switchIpGroup, hcClient);
     }
 
     /**
@@ -2987,7 +2896,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchSlowlogDesensitizationRequest 请求对象
+     * @param request SwitchSlowlogDesensitizationRequest 请求对象
      * @return SwitchSlowlogDesensitizationResponse
      */
     public SwitchSlowlogDesensitizationResponse switchSlowlogDesensitization(
@@ -3002,13 +2911,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchSlowlogDesensitizationRequest 请求对象
+     * @param request SwitchSlowlogDesensitizationRequest 请求对象
      * @return SyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse>
      */
     public SyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> switchSlowlogDesensitizationInvoker(
         SwitchSlowlogDesensitizationRequest request) {
-        return new SyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse>(request,
-            GaussDBforNoSQLMeta.switchSlowlogDesensitization, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.switchSlowlogDesensitization, hcClient);
     }
 
     /**
@@ -3018,7 +2926,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchSslRequest 请求对象
+     * @param request SwitchSslRequest 请求对象
      * @return SwitchSslResponse
      */
     public SwitchSslResponse switchSsl(SwitchSslRequest request) {
@@ -3032,11 +2940,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchSslRequest 请求对象
+     * @param request SwitchSslRequest 请求对象
      * @return SyncInvoker<SwitchSslRequest, SwitchSslResponse>
      */
     public SyncInvoker<SwitchSslRequest, SwitchSslResponse> switchSslInvoker(SwitchSslRequest request) {
-        return new SyncInvoker<SwitchSslRequest, SwitchSslResponse>(request, GaussDBforNoSQLMeta.switchSsl, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.switchSsl, hcClient);
     }
 
     /**
@@ -3046,7 +2954,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchToMasterRequest 请求对象
+     * @param request SwitchToMasterRequest 请求对象
      * @return SwitchToMasterResponse
      */
     public SwitchToMasterResponse switchToMaster(SwitchToMasterRequest request) {
@@ -3060,13 +2968,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchToMasterRequest 请求对象
+     * @param request SwitchToMasterRequest 请求对象
      * @return SyncInvoker<SwitchToMasterRequest, SwitchToMasterResponse>
      */
     public SyncInvoker<SwitchToMasterRequest, SwitchToMasterResponse> switchToMasterInvoker(
         SwitchToMasterRequest request) {
-        return new SyncInvoker<SwitchToMasterRequest, SwitchToMasterResponse>(request,
-            GaussDBforNoSQLMeta.switchToMaster, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.switchToMaster, hcClient);
     }
 
     /**
@@ -3076,7 +2983,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchToSlaveRequest 请求对象
+     * @param request SwitchToSlaveRequest 请求对象
      * @return SwitchToSlaveResponse
      */
     public SwitchToSlaveResponse switchToSlave(SwitchToSlaveRequest request) {
@@ -3090,12 +2997,11 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchToSlaveRequest 请求对象
+     * @param request SwitchToSlaveRequest 请求对象
      * @return SyncInvoker<SwitchToSlaveRequest, SwitchToSlaveResponse>
      */
     public SyncInvoker<SwitchToSlaveRequest, SwitchToSlaveResponse> switchToSlaveInvoker(SwitchToSlaveRequest request) {
-        return new SyncInvoker<SwitchToSlaveRequest, SwitchToSlaveResponse>(request, GaussDBforNoSQLMeta.switchToSlave,
-            hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.switchToSlave, hcClient);
     }
 
     /**
@@ -3105,7 +3011,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClientNetworkRequest 请求对象
+     * @param request UpdateClientNetworkRequest 请求对象
      * @return UpdateClientNetworkResponse
      */
     public UpdateClientNetworkResponse updateClientNetwork(UpdateClientNetworkRequest request) {
@@ -3119,13 +3025,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClientNetworkRequest 请求对象
+     * @param request UpdateClientNetworkRequest 请求对象
      * @return SyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>
      */
     public SyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse> updateClientNetworkInvoker(
         UpdateClientNetworkRequest request) {
-        return new SyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>(request,
-            GaussDBforNoSQLMeta.updateClientNetwork, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.updateClientNetwork, hcClient);
     }
 
     /**
@@ -3135,7 +3040,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigurationRequest 请求对象
+     * @param request UpdateConfigurationRequest 请求对象
      * @return UpdateConfigurationResponse
      */
     public UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request) {
@@ -3149,13 +3054,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigurationRequest 请求对象
+     * @param request UpdateConfigurationRequest 请求对象
      * @return SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>
      */
     public SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfigurationInvoker(
         UpdateConfigurationRequest request) {
-        return new SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.updateConfiguration, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.updateConfiguration, hcClient);
     }
 
     /**
@@ -3165,7 +3069,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHighRiskCommandsRequest 请求对象
+     * @param request UpdateHighRiskCommandsRequest 请求对象
      * @return UpdateHighRiskCommandsResponse
      */
     public UpdateHighRiskCommandsResponse updateHighRiskCommands(UpdateHighRiskCommandsRequest request) {
@@ -3179,13 +3083,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHighRiskCommandsRequest 请求对象
+     * @param request UpdateHighRiskCommandsRequest 请求对象
      * @return SyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse>
      */
     public SyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> updateHighRiskCommandsInvoker(
         UpdateHighRiskCommandsRequest request) {
-        return new SyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse>(request,
-            GaussDBforNoSQLMeta.updateHighRiskCommands, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.updateHighRiskCommands, hcClient);
     }
 
     /**
@@ -3195,7 +3098,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConfigurationRequest 请求对象
+     * @param request UpdateInstanceConfigurationRequest 请求对象
      * @return UpdateInstanceConfigurationResponse
      */
     public UpdateInstanceConfigurationResponse updateInstanceConfiguration(UpdateInstanceConfigurationRequest request) {
@@ -3209,13 +3112,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConfigurationRequest 请求对象
+     * @param request UpdateInstanceConfigurationRequest 请求对象
      * @return SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
      */
     public SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfigurationInvoker(
         UpdateInstanceConfigurationRequest request) {
-        return new SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>(request,
-            GaussDBforNoSQLMeta.updateInstanceConfiguration, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.updateInstanceConfiguration, hcClient);
     }
 
     /**
@@ -3225,7 +3127,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceNameRequest 请求对象
+     * @param request UpdateInstanceNameRequest 请求对象
      * @return UpdateInstanceNameResponse
      */
     public UpdateInstanceNameResponse updateInstanceName(UpdateInstanceNameRequest request) {
@@ -3239,13 +3141,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceNameRequest 请求对象
+     * @param request UpdateInstanceNameRequest 请求对象
      * @return SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>
      */
     public SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceNameInvoker(
         UpdateInstanceNameRequest request) {
-        return new SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>(request,
-            GaussDBforNoSQLMeta.updateInstanceName, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.updateInstanceName, hcClient);
     }
 
     /**
@@ -3255,7 +3156,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecurityGroupRequest 请求对象
+     * @param request UpdateSecurityGroupRequest 请求对象
      * @return UpdateSecurityGroupResponse
      */
     public UpdateSecurityGroupResponse updateSecurityGroup(UpdateSecurityGroupRequest request) {
@@ -3269,13 +3170,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSecurityGroupRequest 请求对象
+     * @param request UpdateSecurityGroupRequest 请求对象
      * @return SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>
      */
     public SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroupInvoker(
         UpdateSecurityGroupRequest request) {
-        return new SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>(request,
-            GaussDBforNoSQLMeta.updateSecurityGroup, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.updateSecurityGroup, hcClient);
     }
 
     /**
@@ -3285,7 +3185,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeDbVersionRequest 请求对象
+     * @param request UpgradeDbVersionRequest 请求对象
      * @return UpgradeDbVersionResponse
      */
     public UpgradeDbVersionResponse upgradeDbVersion(UpgradeDbVersionRequest request) {
@@ -3299,13 +3199,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeDbVersionRequest 请求对象
+     * @param request UpgradeDbVersionRequest 请求对象
      * @return SyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>
      */
     public SyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse> upgradeDbVersionInvoker(
         UpgradeDbVersionRequest request) {
-        return new SyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>(request,
-            GaussDBforNoSQLMeta.upgradeDbVersion, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.upgradeDbVersion, hcClient);
     }
 
     /**
@@ -3315,7 +3214,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionRequest 请求对象
+     * @param request ListApiVersionRequest 请求对象
      * @return ListApiVersionResponse
      */
     public ListApiVersionResponse listApiVersion(ListApiVersionRequest request) {
@@ -3329,13 +3228,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionRequest 请求对象
+     * @param request ListApiVersionRequest 请求对象
      * @return SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>
      */
     public SyncInvoker<ListApiVersionRequest, ListApiVersionResponse> listApiVersionInvoker(
         ListApiVersionRequest request) {
-        return new SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>(request,
-            GaussDBforNoSQLMeta.listApiVersion, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listApiVersion, hcClient);
     }
 
     /**
@@ -3345,7 +3243,7 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return ShowApiVersionResponse
      */
     public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
@@ -3359,13 +3257,12 @@ public class GaussDBforNoSQLClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
      */
     public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(
         ShowApiVersionRequest request) {
-        return new SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request,
-            GaussDBforNoSQLMeta.showApiVersion, hcClient);
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showApiVersion, hcClient);
     }
 
 }

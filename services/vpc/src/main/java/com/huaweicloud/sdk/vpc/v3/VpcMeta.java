@@ -163,9 +163,9 @@ import java.util.List;
 public class VpcMeta {
 
     public static final HttpRequestDef<AddSecurityGroupsRequest, AddSecurityGroupsResponse> addSecurityGroups =
-        genForaddSecurityGroups();
+        genForAddSecurityGroups();
 
-    private static HttpRequestDef<AddSecurityGroupsRequest, AddSecurityGroupsResponse> genForaddSecurityGroups() {
+    private static HttpRequestDef<AddSecurityGroupsRequest, AddSecurityGroupsResponse> genForAddSecurityGroups() {
         // basic
         HttpRequestDef.Builder<AddSecurityGroupsRequest, AddSecurityGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AddSecurityGroupsRequest.class, AddSecurityGroupsResponse.class)
@@ -178,16 +178,12 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddSecurityGroupsRequest::getPortId, (req, v) -> {
-                req.setPortId(v);
-            }));
+            f -> f.withMarshaller(AddSecurityGroupsRequest::getPortId, AddSecurityGroupsRequest::setPortId));
         builder.<AddSecurityGroupsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddSecurityGroupsRequestBody.class),
-            f -> f.withMarshaller(AddSecurityGroupsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddSecurityGroupsRequest::getBody, AddSecurityGroupsRequest::setBody));
 
         // response
 
@@ -195,9 +191,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse> addSourcesToTrafficMirrorSession =
-        genForaddSourcesToTrafficMirrorSession();
+        genForAddSourcesToTrafficMirrorSession();
 
-    private static HttpRequestDef<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse> genForaddSourcesToTrafficMirrorSession() {
+    private static HttpRequestDef<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse> genForAddSourcesToTrafficMirrorSession() {
         // basic
         HttpRequestDef.Builder<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse> builder =
             HttpRequestDef
@@ -213,16 +209,14 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddSourcesToTrafficMirrorSessionRequest::getTrafficMirrorSessionId, (req, v) -> {
-                req.setTrafficMirrorSessionId(v);
-            }));
+            f -> f.withMarshaller(AddSourcesToTrafficMirrorSessionRequest::getTrafficMirrorSessionId,
+                AddSourcesToTrafficMirrorSessionRequest::setTrafficMirrorSessionId));
         builder.<AddSourcesToTrafficMirrorSessionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddSourcesToTrafficMirrorSessionRequestBody.class),
-            f -> f.withMarshaller(AddSourcesToTrafficMirrorSessionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddSourcesToTrafficMirrorSessionRequest::getBody,
+                AddSourcesToTrafficMirrorSessionRequest::setBody));
 
         // response
 
@@ -230,9 +224,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse> batchCreateSecurityGroupRules =
-        genForbatchCreateSecurityGroupRules();
+        genForBatchCreateSecurityGroupRules();
 
-    private static HttpRequestDef<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse> genForbatchCreateSecurityGroupRules() {
+    private static HttpRequestDef<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse> genForBatchCreateSecurityGroupRules() {
         // basic
         HttpRequestDef.Builder<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse> builder =
             HttpRequestDef
@@ -248,16 +242,14 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateSecurityGroupRulesRequest::getSecurityGroupId, (req, v) -> {
-                req.setSecurityGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateSecurityGroupRulesRequest::getSecurityGroupId,
+                BatchCreateSecurityGroupRulesRequest::setSecurityGroupId));
         builder.<BatchCreateSecurityGroupRulesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateSecurityGroupRulesRequestBody.class),
-            f -> f.withMarshaller(BatchCreateSecurityGroupRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateSecurityGroupRulesRequest::getBody,
+                BatchCreateSecurityGroupRulesRequest::setBody));
 
         // response
 
@@ -265,9 +257,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> batchCreateSubNetworkInterface =
-        genForbatchCreateSubNetworkInterface();
+        genForBatchCreateSubNetworkInterface();
 
-    private static HttpRequestDef<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> genForbatchCreateSubNetworkInterface() {
+    private static HttpRequestDef<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> genForBatchCreateSubNetworkInterface() {
         // basic
         HttpRequestDef.Builder<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> builder =
             HttpRequestDef
@@ -283,9 +275,8 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateSubNetworkInterfaceRequestBody.class),
-            f -> f.withMarshaller(BatchCreateSubNetworkInterfaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateSubNetworkInterfaceRequest::getBody,
+                BatchCreateSubNetworkInterfaceRequest::setBody));
 
         // response
 
@@ -293,9 +284,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<CreateSecurityGroupRequest, CreateSecurityGroupResponse> createSecurityGroup =
-        genForcreateSecurityGroup();
+        genForCreateSecurityGroup();
 
-    private static HttpRequestDef<CreateSecurityGroupRequest, CreateSecurityGroupResponse> genForcreateSecurityGroup() {
+    private static HttpRequestDef<CreateSecurityGroupRequest, CreateSecurityGroupResponse> genForCreateSecurityGroup() {
         // basic
         HttpRequestDef.Builder<CreateSecurityGroupRequest, CreateSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecurityGroupRequest.class, CreateSecurityGroupResponse.class)
@@ -308,9 +299,7 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSecurityGroupRequestBody.class),
-            f -> f.withMarshaller(CreateSecurityGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityGroupRequest::getBody, CreateSecurityGroupRequest::setBody));
 
         // response
 
@@ -318,9 +307,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> createSecurityGroupRule =
-        genForcreateSecurityGroupRule();
+        genForCreateSecurityGroupRule();
 
-    private static HttpRequestDef<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> genForcreateSecurityGroupRule() {
+    private static HttpRequestDef<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> genForCreateSecurityGroupRule() {
         // basic
         HttpRequestDef.Builder<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateSecurityGroupRuleRequest.class, CreateSecurityGroupRuleResponse.class)
@@ -333,9 +322,7 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSecurityGroupRuleRequestBody.class),
-            f -> f.withMarshaller(CreateSecurityGroupRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecurityGroupRuleRequest::getBody, CreateSecurityGroupRuleRequest::setBody));
 
         // response
 
@@ -343,9 +330,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<CreateSubNetworkInterfaceRequest, CreateSubNetworkInterfaceResponse> createSubNetworkInterface =
-        genForcreateSubNetworkInterface();
+        genForCreateSubNetworkInterface();
 
-    private static HttpRequestDef<CreateSubNetworkInterfaceRequest, CreateSubNetworkInterfaceResponse> genForcreateSubNetworkInterface() {
+    private static HttpRequestDef<CreateSubNetworkInterfaceRequest, CreateSubNetworkInterfaceResponse> genForCreateSubNetworkInterface() {
         // basic
         HttpRequestDef.Builder<CreateSubNetworkInterfaceRequest, CreateSubNetworkInterfaceResponse> builder =
             HttpRequestDef
@@ -361,9 +348,8 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSubNetworkInterfaceRequestBody.class),
-            f -> f.withMarshaller(CreateSubNetworkInterfaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSubNetworkInterfaceRequest::getBody,
+                CreateSubNetworkInterfaceRequest::setBody));
 
         // response
 
@@ -371,9 +357,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse> createTrafficMirrorFilter =
-        genForcreateTrafficMirrorFilter();
+        genForCreateTrafficMirrorFilter();
 
-    private static HttpRequestDef<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse> genForcreateTrafficMirrorFilter() {
+    private static HttpRequestDef<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse> genForCreateTrafficMirrorFilter() {
         // basic
         HttpRequestDef.Builder<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse> builder =
             HttpRequestDef
@@ -389,9 +375,8 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTrafficMirrorFilterRequestBody.class),
-            f -> f.withMarshaller(CreateTrafficMirrorFilterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTrafficMirrorFilterRequest::getBody,
+                CreateTrafficMirrorFilterRequest::setBody));
 
         // response
 
@@ -399,9 +384,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse> createTrafficMirrorFilterRule =
-        genForcreateTrafficMirrorFilterRule();
+        genForCreateTrafficMirrorFilterRule();
 
-    private static HttpRequestDef<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse> genForcreateTrafficMirrorFilterRule() {
+    private static HttpRequestDef<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse> genForCreateTrafficMirrorFilterRule() {
         // basic
         HttpRequestDef.Builder<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse> builder =
             HttpRequestDef
@@ -417,9 +402,8 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTrafficMirrorFilterRuleRequestBody.class),
-            f -> f.withMarshaller(CreateTrafficMirrorFilterRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTrafficMirrorFilterRuleRequest::getBody,
+                CreateTrafficMirrorFilterRuleRequest::setBody));
 
         // response
 
@@ -427,9 +411,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse> createTrafficMirrorSession =
-        genForcreateTrafficMirrorSession();
+        genForCreateTrafficMirrorSession();
 
-    private static HttpRequestDef<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse> genForcreateTrafficMirrorSession() {
+    private static HttpRequestDef<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse> genForCreateTrafficMirrorSession() {
         // basic
         HttpRequestDef.Builder<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse> builder =
             HttpRequestDef
@@ -445,9 +429,8 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTrafficMirrorSessionRequestBody.class),
-            f -> f.withMarshaller(CreateTrafficMirrorSessionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTrafficMirrorSessionRequest::getBody,
+                CreateTrafficMirrorSessionRequest::setBody));
 
         // response
 
@@ -455,9 +438,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroup =
-        genFordeleteSecurityGroup();
+        genForDeleteSecurityGroup();
 
-    private static HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> genFordeleteSecurityGroup() {
+    private static HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> genForDeleteSecurityGroup() {
         // basic
         HttpRequestDef.Builder<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteSecurityGroupRequest.class, DeleteSecurityGroupResponse.class)
@@ -470,9 +453,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
-                req.setSecurityGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteSecurityGroupRequest::getSecurityGroupId,
+                DeleteSecurityGroupRequest::setSecurityGroupId));
 
         // response
 
@@ -480,9 +462,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> deleteSecurityGroupRule =
-        genFordeleteSecurityGroupRule();
+        genForDeleteSecurityGroupRule();
 
-    private static HttpRequestDef<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> genFordeleteSecurityGroupRule() {
+    private static HttpRequestDef<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> genForDeleteSecurityGroupRule() {
         // basic
         HttpRequestDef.Builder<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteSecurityGroupRuleRequest.class, DeleteSecurityGroupRuleResponse.class)
@@ -495,9 +477,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
-                req.setSecurityGroupRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteSecurityGroupRuleRequest::getSecurityGroupRuleId,
+                DeleteSecurityGroupRuleRequest::setSecurityGroupRuleId));
 
         // response
 
@@ -505,9 +486,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<DeleteSubNetworkInterfaceRequest, DeleteSubNetworkInterfaceResponse> deleteSubNetworkInterface =
-        genFordeleteSubNetworkInterface();
+        genForDeleteSubNetworkInterface();
 
-    private static HttpRequestDef<DeleteSubNetworkInterfaceRequest, DeleteSubNetworkInterfaceResponse> genFordeleteSubNetworkInterface() {
+    private static HttpRequestDef<DeleteSubNetworkInterfaceRequest, DeleteSubNetworkInterfaceResponse> genForDeleteSubNetworkInterface() {
         // basic
         HttpRequestDef.Builder<DeleteSubNetworkInterfaceRequest, DeleteSubNetworkInterfaceResponse> builder =
             HttpRequestDef
@@ -523,9 +504,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSubNetworkInterfaceRequest::getSubNetworkInterfaceId, (req, v) -> {
-                req.setSubNetworkInterfaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSubNetworkInterfaceRequest::getSubNetworkInterfaceId,
+                DeleteSubNetworkInterfaceRequest::setSubNetworkInterfaceId));
 
         // response
 
@@ -533,9 +513,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse> deleteTrafficMirrorFilter =
-        genFordeleteTrafficMirrorFilter();
+        genForDeleteTrafficMirrorFilter();
 
-    private static HttpRequestDef<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse> genFordeleteTrafficMirrorFilter() {
+    private static HttpRequestDef<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse> genForDeleteTrafficMirrorFilter() {
         // basic
         HttpRequestDef.Builder<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse> builder =
             HttpRequestDef
@@ -551,9 +531,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTrafficMirrorFilterRequest::getTrafficMirrorFilterId, (req, v) -> {
-                req.setTrafficMirrorFilterId(v);
-            }));
+            f -> f.withMarshaller(DeleteTrafficMirrorFilterRequest::getTrafficMirrorFilterId,
+                DeleteTrafficMirrorFilterRequest::setTrafficMirrorFilterId));
 
         // response
 
@@ -561,9 +540,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse> deleteTrafficMirrorFilterRule =
-        genFordeleteTrafficMirrorFilterRule();
+        genForDeleteTrafficMirrorFilterRule();
 
-    private static HttpRequestDef<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse> genFordeleteTrafficMirrorFilterRule() {
+    private static HttpRequestDef<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse> genForDeleteTrafficMirrorFilterRule() {
         // basic
         HttpRequestDef.Builder<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse> builder =
             HttpRequestDef
@@ -579,9 +558,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTrafficMirrorFilterRuleRequest::getTrafficMirrorFilterRuleId, (req, v) -> {
-                req.setTrafficMirrorFilterRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteTrafficMirrorFilterRuleRequest::getTrafficMirrorFilterRuleId,
+                DeleteTrafficMirrorFilterRuleRequest::setTrafficMirrorFilterRuleId));
 
         // response
 
@@ -589,9 +567,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> deleteTrafficMirrorSession =
-        genFordeleteTrafficMirrorSession();
+        genForDeleteTrafficMirrorSession();
 
-    private static HttpRequestDef<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> genFordeleteTrafficMirrorSession() {
+    private static HttpRequestDef<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> genForDeleteTrafficMirrorSession() {
         // basic
         HttpRequestDef.Builder<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> builder =
             HttpRequestDef
@@ -607,9 +585,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTrafficMirrorSessionRequest::getTrafficMirrorSessionId, (req, v) -> {
-                req.setTrafficMirrorSessionId(v);
-            }));
+            f -> f.withMarshaller(DeleteTrafficMirrorSessionRequest::getTrafficMirrorSessionId,
+                DeleteTrafficMirrorSessionRequest::setTrafficMirrorSessionId));
 
         // response
 
@@ -617,9 +594,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> listSecurityGroupRules =
-        genForlistSecurityGroupRules();
+        genForListSecurityGroupRules();
 
-    private static HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> genForlistSecurityGroupRules() {
+    private static HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> genForListSecurityGroupRules() {
         // basic
         HttpRequestDef.Builder<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSecurityGroupRulesRequest.class, ListSecurityGroupRulesResponse.class)
@@ -632,72 +609,58 @@ public class VpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getLimit, ListSecurityGroupRulesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getMarker, ListSecurityGroupRulesRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getId, ListSecurityGroupRulesRequest::setId));
         builder.<List<String>>withRequestField("security_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getSecurityGroupId, (req, v) -> {
-                req.setSecurityGroupId(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getSecurityGroupId,
+                ListSecurityGroupRulesRequest::setSecurityGroupId));
         builder.<List<String>>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getProtocol,
+                ListSecurityGroupRulesRequest::setProtocol));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getDescription,
+                ListSecurityGroupRulesRequest::setDescription));
         builder.<List<String>>withRequestField("remote_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getRemoteGroupId, (req, v) -> {
-                req.setRemoteGroupId(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getRemoteGroupId,
+                ListSecurityGroupRulesRequest::setRemoteGroupId));
         builder.<String>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getDirection, (req, v) -> {
-                req.setDirection(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getDirection,
+                ListSecurityGroupRulesRequest::setDirection));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getAction, ListSecurityGroupRulesRequest::setAction));
         builder.<String>withRequestField("remote_ip_prefix",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getRemoteIpPrefix, (req, v) -> {
-                req.setRemoteIpPrefix(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getRemoteIpPrefix,
+                ListSecurityGroupRulesRequest::setRemoteIpPrefix));
 
         // response
 
@@ -705,9 +668,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> listSecurityGroups =
-        genForlistSecurityGroups();
+        genForListSecurityGroups();
 
-    private static HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> genForlistSecurityGroups() {
+    private static HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> genForListSecurityGroups() {
         // basic
         HttpRequestDef.Builder<ListSecurityGroupsRequest, ListSecurityGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecurityGroupsRequest.class, ListSecurityGroupsResponse.class)
@@ -720,44 +683,34 @@ public class VpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSecurityGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupsRequest::getLimit, ListSecurityGroupsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityGroupsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupsRequest::getMarker, ListSecurityGroupsRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSecurityGroupsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupsRequest::getId, ListSecurityGroupsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSecurityGroupsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupsRequest::getName, ListSecurityGroupsRequest::setName));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSecurityGroupsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupsRequest::getDescription,
+                ListSecurityGroupsRequest::setDescription));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecurityGroupsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListSecurityGroupsRequest::getEnterpriseProjectId,
+                ListSecurityGroupsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -765,9 +718,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse> listSubNetworkInterfaces =
-        genForlistSubNetworkInterfaces();
+        genForListSubNetworkInterfaces();
 
-    private static HttpRequestDef<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse> genForlistSubNetworkInterfaces() {
+    private static HttpRequestDef<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse> genForListSubNetworkInterfaces() {
         // basic
         HttpRequestDef.Builder<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse> builder =
             HttpRequestDef
@@ -781,65 +734,55 @@ public class VpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getLimit,
+                ListSubNetworkInterfacesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getMarker,
+                ListSubNetworkInterfacesRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getId, ListSubNetworkInterfacesRequest::setId));
         builder.<List<String>>withRequestField("virsubnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getVirsubnetId, (req, v) -> {
-                req.setVirsubnetId(v);
-            }));
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getVirsubnetId,
+                ListSubNetworkInterfacesRequest::setVirsubnetId));
         builder.<List<String>>withRequestField("private_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getPrivateIpAddress, (req, v) -> {
-                req.setPrivateIpAddress(v);
-            }));
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getPrivateIpAddress,
+                ListSubNetworkInterfacesRequest::setPrivateIpAddress));
         builder.<List<String>>withRequestField("mac_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getMacAddress, (req, v) -> {
-                req.setMacAddress(v);
-            }));
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getMacAddress,
+                ListSubNetworkInterfacesRequest::setMacAddress));
         builder.<List<String>>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getVpcId,
+                ListSubNetworkInterfacesRequest::setVpcId));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getDescription,
+                ListSubNetworkInterfacesRequest::setDescription));
         builder.<List<String>>withRequestField("parent_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getParentId, (req, v) -> {
-                req.setParentId(v);
-            }));
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getParentId,
+                ListSubNetworkInterfacesRequest::setParentId));
 
         // response
 
@@ -847,9 +790,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse> listTrafficMirrorFilterRules =
-        genForlistTrafficMirrorFilterRules();
+        genForListTrafficMirrorFilterRules();
 
-    private static HttpRequestDef<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse> genForlistTrafficMirrorFilterRules() {
+    private static HttpRequestDef<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse> genForListTrafficMirrorFilterRules() {
         // basic
         HttpRequestDef.Builder<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse> builder =
             HttpRequestDef
@@ -865,93 +808,80 @@ public class VpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getId,
+                ListTrafficMirrorFilterRulesRequest::setId));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDescription,
+                ListTrafficMirrorFilterRulesRequest::setDescription));
         builder.<String>withRequestField("traffic_mirror_filter_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getTrafficMirrorFilterId, (req, v) -> {
-                req.setTrafficMirrorFilterId(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getTrafficMirrorFilterId,
+                ListTrafficMirrorFilterRulesRequest::setTrafficMirrorFilterId));
         builder.<String>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDirection, (req, v) -> {
-                req.setDirection(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDirection,
+                ListTrafficMirrorFilterRulesRequest::setDirection));
         builder.<String>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getProtocol,
+                ListTrafficMirrorFilterRulesRequest::setProtocol));
         builder.<String>withRequestField("source_cidr_block",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getSourceCidrBlock, (req, v) -> {
-                req.setSourceCidrBlock(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getSourceCidrBlock,
+                ListTrafficMirrorFilterRulesRequest::setSourceCidrBlock));
         builder.<String>withRequestField("destination_cidr_block",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDestinationCidrBlock, (req, v) -> {
-                req.setDestinationCidrBlock(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDestinationCidrBlock,
+                ListTrafficMirrorFilterRulesRequest::setDestinationCidrBlock));
         builder.<String>withRequestField("source_port_range",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getSourcePortRange, (req, v) -> {
-                req.setSourcePortRange(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getSourcePortRange,
+                ListTrafficMirrorFilterRulesRequest::setSourcePortRange));
         builder.<String>withRequestField("destination_port_range",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDestinationPortRange, (req, v) -> {
-                req.setDestinationPortRange(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDestinationPortRange,
+                ListTrafficMirrorFilterRulesRequest::setDestinationPortRange));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getAction,
+                ListTrafficMirrorFilterRulesRequest::setAction));
         builder.<String>withRequestField("priority",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getPriority, (req, v) -> {
-                req.setPriority(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getPriority,
+                ListTrafficMirrorFilterRulesRequest::setPriority));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getLimit,
+                ListTrafficMirrorFilterRulesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getMarker,
+                ListTrafficMirrorFilterRulesRequest::setMarker));
 
         // response
 
@@ -959,9 +889,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse> listTrafficMirrorFilters =
-        genForlistTrafficMirrorFilters();
+        genForListTrafficMirrorFilters();
 
-    private static HttpRequestDef<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse> genForlistTrafficMirrorFilters() {
+    private static HttpRequestDef<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse> genForListTrafficMirrorFilters() {
         // basic
         HttpRequestDef.Builder<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse> builder =
             HttpRequestDef
@@ -975,51 +905,42 @@ public class VpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getId, ListTrafficMirrorFiltersRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getName, ListTrafficMirrorFiltersRequest::setName));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getDescription,
+                ListTrafficMirrorFiltersRequest::setDescription));
         builder.<String>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getCreatedAt, (req, v) -> {
-                req.setCreatedAt(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getCreatedAt,
+                ListTrafficMirrorFiltersRequest::setCreatedAt));
         builder.<String>withRequestField("updated_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getUpdatedAt, (req, v) -> {
-                req.setUpdatedAt(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getUpdatedAt,
+                ListTrafficMirrorFiltersRequest::setUpdatedAt));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getLimit,
+                ListTrafficMirrorFiltersRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getMarker,
+                ListTrafficMirrorFiltersRequest::setMarker));
 
         // response
 
@@ -1027,9 +948,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse> listTrafficMirrorSessions =
-        genForlistTrafficMirrorSessions();
+        genForListTrafficMirrorSessions();
 
-    private static HttpRequestDef<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse> genForlistTrafficMirrorSessions() {
+    private static HttpRequestDef<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse> genForListTrafficMirrorSessions() {
         // basic
         HttpRequestDef.Builder<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse> builder =
             HttpRequestDef
@@ -1045,107 +966,91 @@ public class VpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getId, ListTrafficMirrorSessionsRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getName,
+                ListTrafficMirrorSessionsRequest::setName));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getDescription,
+                ListTrafficMirrorSessionsRequest::setDescription));
         builder.<String>withRequestField("traffic_mirror_filter_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getTrafficMirrorFilterId, (req, v) -> {
-                req.setTrafficMirrorFilterId(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getTrafficMirrorFilterId,
+                ListTrafficMirrorSessionsRequest::setTrafficMirrorFilterId));
         builder.<String>withRequestField("traffic_mirror_target_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getTrafficMirrorTargetId, (req, v) -> {
-                req.setTrafficMirrorTargetId(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getTrafficMirrorTargetId,
+                ListTrafficMirrorSessionsRequest::setTrafficMirrorTargetId));
         builder.<String>withRequestField("traffic_mirror_target_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getTrafficMirrorTargetType, (req, v) -> {
-                req.setTrafficMirrorTargetType(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getTrafficMirrorTargetType,
+                ListTrafficMirrorSessionsRequest::setTrafficMirrorTargetType));
         builder.<String>withRequestField("virtual_network_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getVirtualNetworkId, (req, v) -> {
-                req.setVirtualNetworkId(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getVirtualNetworkId,
+                ListTrafficMirrorSessionsRequest::setVirtualNetworkId));
         builder.<String>withRequestField("packet_length",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getPacketLength, (req, v) -> {
-                req.setPacketLength(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getPacketLength,
+                ListTrafficMirrorSessionsRequest::setPacketLength));
         builder.<String>withRequestField("priority",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getPriority, (req, v) -> {
-                req.setPriority(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getPriority,
+                ListTrafficMirrorSessionsRequest::setPriority));
         builder.<String>withRequestField("enabled",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getEnabled, (req, v) -> {
-                req.setEnabled(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getEnabled,
+                ListTrafficMirrorSessionsRequest::setEnabled));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getType,
+                ListTrafficMirrorSessionsRequest::setType));
         builder.<String>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getCreatedAt, (req, v) -> {
-                req.setCreatedAt(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getCreatedAt,
+                ListTrafficMirrorSessionsRequest::setCreatedAt));
         builder.<String>withRequestField("updated_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getUpdatedAt, (req, v) -> {
-                req.setUpdatedAt(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getUpdatedAt,
+                ListTrafficMirrorSessionsRequest::setUpdatedAt));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getLimit,
+                ListTrafficMirrorSessionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getMarker,
+                ListTrafficMirrorSessionsRequest::setMarker));
 
         // response
 
@@ -1153,9 +1058,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> migrateSubNetworkInterface =
-        genFormigrateSubNetworkInterface();
+        genForMigrateSubNetworkInterface();
 
-    private static HttpRequestDef<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> genFormigrateSubNetworkInterface() {
+    private static HttpRequestDef<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> genForMigrateSubNetworkInterface() {
         // basic
         HttpRequestDef.Builder<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> builder =
             HttpRequestDef
@@ -1171,9 +1076,8 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MigrateSubNetworkInterfaceRequestBody.class),
-            f -> f.withMarshaller(MigrateSubNetworkInterfaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MigrateSubNetworkInterfaceRequest::getBody,
+                MigrateSubNetworkInterfaceRequest::setBody));
 
         // response
 
@@ -1181,9 +1085,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse> removeSecurityGroups =
-        genForremoveSecurityGroups();
+        genForRemoveSecurityGroups();
 
-    private static HttpRequestDef<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse> genForremoveSecurityGroups() {
+    private static HttpRequestDef<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse> genForRemoveSecurityGroups() {
         // basic
         HttpRequestDef.Builder<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, RemoveSecurityGroupsRequest.class, RemoveSecurityGroupsResponse.class)
@@ -1196,16 +1100,12 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveSecurityGroupsRequest::getPortId, (req, v) -> {
-                req.setPortId(v);
-            }));
+            f -> f.withMarshaller(RemoveSecurityGroupsRequest::getPortId, RemoveSecurityGroupsRequest::setPortId));
         builder.<RemoveSecurityGroupsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemoveSecurityGroupsRequestBody.class),
-            f -> f.withMarshaller(RemoveSecurityGroupsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RemoveSecurityGroupsRequest::getBody, RemoveSecurityGroupsRequest::setBody));
 
         // response
 
@@ -1213,9 +1113,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse> removeSourcesFromTrafficMirrorSession =
-        genForremoveSourcesFromTrafficMirrorSession();
+        genForRemoveSourcesFromTrafficMirrorSession();
 
-    private static HttpRequestDef<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse> genForremoveSourcesFromTrafficMirrorSession() {
+    private static HttpRequestDef<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse> genForRemoveSourcesFromTrafficMirrorSession() {
         // basic
         HttpRequestDef.Builder<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse> builder =
             HttpRequestDef
@@ -1231,16 +1131,14 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveSourcesFromTrafficMirrorSessionRequest::getTrafficMirrorSessionId, (req, v) -> {
-                req.setTrafficMirrorSessionId(v);
-            }));
+            f -> f.withMarshaller(RemoveSourcesFromTrafficMirrorSessionRequest::getTrafficMirrorSessionId,
+                RemoveSourcesFromTrafficMirrorSessionRequest::setTrafficMirrorSessionId));
         builder.<RemoveSourcesFromTrafficMirrorSessionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemoveSourcesFromTrafficMirrorSessionRequestBody.class),
-            f -> f.withMarshaller(RemoveSourcesFromTrafficMirrorSessionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RemoveSourcesFromTrafficMirrorSessionRequest::getBody,
+                RemoveSourcesFromTrafficMirrorSessionRequest::setBody));
 
         // response
 
@@ -1248,9 +1146,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> showSecurityGroup =
-        genForshowSecurityGroup();
+        genForShowSecurityGroup();
 
-    private static HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> genForshowSecurityGroup() {
+    private static HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> genForShowSecurityGroup() {
         // basic
         HttpRequestDef.Builder<ShowSecurityGroupRequest, ShowSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecurityGroupRequest.class, ShowSecurityGroupResponse.class)
@@ -1263,9 +1161,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
-                req.setSecurityGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowSecurityGroupRequest::getSecurityGroupId,
+                ShowSecurityGroupRequest::setSecurityGroupId));
 
         // response
 
@@ -1273,9 +1170,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> showSecurityGroupRule =
-        genForshowSecurityGroupRule();
+        genForShowSecurityGroupRule();
 
-    private static HttpRequestDef<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> genForshowSecurityGroupRule() {
+    private static HttpRequestDef<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> genForShowSecurityGroupRule() {
         // basic
         HttpRequestDef.Builder<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSecurityGroupRuleRequest.class, ShowSecurityGroupRuleResponse.class)
@@ -1288,9 +1185,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
-                req.setSecurityGroupRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowSecurityGroupRuleRequest::getSecurityGroupRuleId,
+                ShowSecurityGroupRuleRequest::setSecurityGroupRuleId));
 
         // response
 
@@ -1298,9 +1194,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ShowSubNetworkInterfaceRequest, ShowSubNetworkInterfaceResponse> showSubNetworkInterface =
-        genForshowSubNetworkInterface();
+        genForShowSubNetworkInterface();
 
-    private static HttpRequestDef<ShowSubNetworkInterfaceRequest, ShowSubNetworkInterfaceResponse> genForshowSubNetworkInterface() {
+    private static HttpRequestDef<ShowSubNetworkInterfaceRequest, ShowSubNetworkInterfaceResponse> genForShowSubNetworkInterface() {
         // basic
         HttpRequestDef.Builder<ShowSubNetworkInterfaceRequest, ShowSubNetworkInterfaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSubNetworkInterfaceRequest.class, ShowSubNetworkInterfaceResponse.class)
@@ -1313,9 +1209,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSubNetworkInterfaceRequest::getSubNetworkInterfaceId, (req, v) -> {
-                req.setSubNetworkInterfaceId(v);
-            }));
+            f -> f.withMarshaller(ShowSubNetworkInterfaceRequest::getSubNetworkInterfaceId,
+                ShowSubNetworkInterfaceRequest::setSubNetworkInterfaceId));
 
         // response
 
@@ -1323,9 +1218,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ShowSubNetworkInterfacesQuantityRequest, ShowSubNetworkInterfacesQuantityResponse> showSubNetworkInterfacesQuantity =
-        genForshowSubNetworkInterfacesQuantity();
+        genForShowSubNetworkInterfacesQuantity();
 
-    private static HttpRequestDef<ShowSubNetworkInterfacesQuantityRequest, ShowSubNetworkInterfacesQuantityResponse> genForshowSubNetworkInterfacesQuantity() {
+    private static HttpRequestDef<ShowSubNetworkInterfacesQuantityRequest, ShowSubNetworkInterfacesQuantityResponse> genForShowSubNetworkInterfacesQuantity() {
         // basic
         HttpRequestDef.Builder<ShowSubNetworkInterfacesQuantityRequest, ShowSubNetworkInterfacesQuantityResponse> builder =
             HttpRequestDef
@@ -1344,9 +1239,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse> showTrafficMirrorFilter =
-        genForshowTrafficMirrorFilter();
+        genForShowTrafficMirrorFilter();
 
-    private static HttpRequestDef<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse> genForshowTrafficMirrorFilter() {
+    private static HttpRequestDef<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse> genForShowTrafficMirrorFilter() {
         // basic
         HttpRequestDef.Builder<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowTrafficMirrorFilterRequest.class, ShowTrafficMirrorFilterResponse.class)
@@ -1359,9 +1254,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTrafficMirrorFilterRequest::getTrafficMirrorFilterId, (req, v) -> {
-                req.setTrafficMirrorFilterId(v);
-            }));
+            f -> f.withMarshaller(ShowTrafficMirrorFilterRequest::getTrafficMirrorFilterId,
+                ShowTrafficMirrorFilterRequest::setTrafficMirrorFilterId));
 
         // response
 
@@ -1369,9 +1263,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse> showTrafficMirrorFilterRule =
-        genForshowTrafficMirrorFilterRule();
+        genForShowTrafficMirrorFilterRule();
 
-    private static HttpRequestDef<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse> genForshowTrafficMirrorFilterRule() {
+    private static HttpRequestDef<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse> genForShowTrafficMirrorFilterRule() {
         // basic
         HttpRequestDef.Builder<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse> builder =
             HttpRequestDef
@@ -1387,9 +1281,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTrafficMirrorFilterRuleRequest::getTrafficMirrorFilterRuleId, (req, v) -> {
-                req.setTrafficMirrorFilterRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowTrafficMirrorFilterRuleRequest::getTrafficMirrorFilterRuleId,
+                ShowTrafficMirrorFilterRuleRequest::setTrafficMirrorFilterRuleId));
 
         // response
 
@@ -1397,9 +1290,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse> showTrafficMirrorSession =
-        genForshowTrafficMirrorSession();
+        genForShowTrafficMirrorSession();
 
-    private static HttpRequestDef<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse> genForshowTrafficMirrorSession() {
+    private static HttpRequestDef<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse> genForShowTrafficMirrorSession() {
         // basic
         HttpRequestDef.Builder<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse> builder =
             HttpRequestDef
@@ -1413,9 +1306,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTrafficMirrorSessionRequest::getTrafficMirrorSessionId, (req, v) -> {
-                req.setTrafficMirrorSessionId(v);
-            }));
+            f -> f.withMarshaller(ShowTrafficMirrorSessionRequest::getTrafficMirrorSessionId,
+                ShowTrafficMirrorSessionRequest::setTrafficMirrorSessionId));
 
         // response
 
@@ -1423,9 +1315,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroup =
-        genForupdateSecurityGroup();
+        genForUpdateSecurityGroup();
 
-    private static HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> genForupdateSecurityGroup() {
+    private static HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> genForUpdateSecurityGroup() {
         // basic
         HttpRequestDef.Builder<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSecurityGroupRequest.class, UpdateSecurityGroupResponse.class)
@@ -1438,16 +1330,13 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
-                req.setSecurityGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityGroupRequest::getSecurityGroupId,
+                UpdateSecurityGroupRequest::setSecurityGroupId));
         builder.<UpdateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecurityGroupRequestBody.class),
-            f -> f.withMarshaller(UpdateSecurityGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecurityGroupRequest::getBody, UpdateSecurityGroupRequest::setBody));
 
         // response
 
@@ -1455,9 +1344,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse> updateSubNetworkInterface =
-        genForupdateSubNetworkInterface();
+        genForUpdateSubNetworkInterface();
 
-    private static HttpRequestDef<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse> genForupdateSubNetworkInterface() {
+    private static HttpRequestDef<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse> genForUpdateSubNetworkInterface() {
         // basic
         HttpRequestDef.Builder<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse> builder =
             HttpRequestDef
@@ -1473,16 +1362,14 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSubNetworkInterfaceRequest::getSubNetworkInterfaceId, (req, v) -> {
-                req.setSubNetworkInterfaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSubNetworkInterfaceRequest::getSubNetworkInterfaceId,
+                UpdateSubNetworkInterfaceRequest::setSubNetworkInterfaceId));
         builder.<UpdateSubNetworkInterfaceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSubNetworkInterfaceRequestBody.class),
-            f -> f.withMarshaller(UpdateSubNetworkInterfaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSubNetworkInterfaceRequest::getBody,
+                UpdateSubNetworkInterfaceRequest::setBody));
 
         // response
 
@@ -1490,9 +1377,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse> updateTrafficMirrorFilter =
-        genForupdateTrafficMirrorFilter();
+        genForUpdateTrafficMirrorFilter();
 
-    private static HttpRequestDef<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse> genForupdateTrafficMirrorFilter() {
+    private static HttpRequestDef<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse> genForUpdateTrafficMirrorFilter() {
         // basic
         HttpRequestDef.Builder<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse> builder =
             HttpRequestDef
@@ -1508,16 +1395,14 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTrafficMirrorFilterRequest::getTrafficMirrorFilterId, (req, v) -> {
-                req.setTrafficMirrorFilterId(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficMirrorFilterRequest::getTrafficMirrorFilterId,
+                UpdateTrafficMirrorFilterRequest::setTrafficMirrorFilterId));
         builder.<UpdateTrafficMirrorFilterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTrafficMirrorFilterRequestBody.class),
-            f -> f.withMarshaller(UpdateTrafficMirrorFilterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficMirrorFilterRequest::getBody,
+                UpdateTrafficMirrorFilterRequest::setBody));
 
         // response
 
@@ -1525,9 +1410,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse> updateTrafficMirrorFilterRule =
-        genForupdateTrafficMirrorFilterRule();
+        genForUpdateTrafficMirrorFilterRule();
 
-    private static HttpRequestDef<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse> genForupdateTrafficMirrorFilterRule() {
+    private static HttpRequestDef<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse> genForUpdateTrafficMirrorFilterRule() {
         // basic
         HttpRequestDef.Builder<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse> builder =
             HttpRequestDef
@@ -1543,16 +1428,14 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTrafficMirrorFilterRuleRequest::getTrafficMirrorFilterRuleId, (req, v) -> {
-                req.setTrafficMirrorFilterRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficMirrorFilterRuleRequest::getTrafficMirrorFilterRuleId,
+                UpdateTrafficMirrorFilterRuleRequest::setTrafficMirrorFilterRuleId));
         builder.<UpdateTrafficMirrorFilterRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTrafficMirrorFilterRuleRequestBody.class),
-            f -> f.withMarshaller(UpdateTrafficMirrorFilterRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficMirrorFilterRuleRequest::getBody,
+                UpdateTrafficMirrorFilterRuleRequest::setBody));
 
         // response
 
@@ -1560,9 +1443,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse> updateTrafficMirrorSession =
-        genForupdateTrafficMirrorSession();
+        genForUpdateTrafficMirrorSession();
 
-    private static HttpRequestDef<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse> genForupdateTrafficMirrorSession() {
+    private static HttpRequestDef<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse> genForUpdateTrafficMirrorSession() {
         // basic
         HttpRequestDef.Builder<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse> builder =
             HttpRequestDef
@@ -1578,16 +1461,14 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTrafficMirrorSessionRequest::getTrafficMirrorSessionId, (req, v) -> {
-                req.setTrafficMirrorSessionId(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficMirrorSessionRequest::getTrafficMirrorSessionId,
+                UpdateTrafficMirrorSessionRequest::setTrafficMirrorSessionId));
         builder.<UpdateTrafficMirrorSessionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTrafficMirrorSessionRequestBody.class),
-            f -> f.withMarshaller(UpdateTrafficMirrorSessionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTrafficMirrorSessionRequest::getBody,
+                UpdateTrafficMirrorSessionRequest::setBody));
 
         // response
 
@@ -1595,9 +1476,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<AddFirewallRulesRequest, AddFirewallRulesResponse> addFirewallRules =
-        genForaddFirewallRules();
+        genForAddFirewallRules();
 
-    private static HttpRequestDef<AddFirewallRulesRequest, AddFirewallRulesResponse> genForaddFirewallRules() {
+    private static HttpRequestDef<AddFirewallRulesRequest, AddFirewallRulesResponse> genForAddFirewallRules() {
         // basic
         HttpRequestDef.Builder<AddFirewallRulesRequest, AddFirewallRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AddFirewallRulesRequest.class, AddFirewallRulesResponse.class)
@@ -1610,16 +1491,12 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddFirewallRulesRequest::getFirewallId, (req, v) -> {
-                req.setFirewallId(v);
-            }));
+            f -> f.withMarshaller(AddFirewallRulesRequest::getFirewallId, AddFirewallRulesRequest::setFirewallId));
         builder.<AddFirewallRulesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddFirewallRulesRequestBody.class),
-            f -> f.withMarshaller(AddFirewallRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddFirewallRulesRequest::getBody, AddFirewallRulesRequest::setBody));
 
         // response
 
@@ -1627,9 +1504,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse> associateSubnetFirewall =
-        genForassociateSubnetFirewall();
+        genForAssociateSubnetFirewall();
 
-    private static HttpRequestDef<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse> genForassociateSubnetFirewall() {
+    private static HttpRequestDef<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse> genForAssociateSubnetFirewall() {
         // basic
         HttpRequestDef.Builder<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, AssociateSubnetFirewallRequest.class, AssociateSubnetFirewallResponse.class)
@@ -1642,16 +1519,13 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateSubnetFirewallRequest::getFirewallId, (req, v) -> {
-                req.setFirewallId(v);
-            }));
+            f -> f.withMarshaller(AssociateSubnetFirewallRequest::getFirewallId,
+                AssociateSubnetFirewallRequest::setFirewallId));
         builder.<AssociateSubnetFirewallRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociateSubnetFirewallRequestBody.class),
-            f -> f.withMarshaller(AssociateSubnetFirewallRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateSubnetFirewallRequest::getBody, AssociateSubnetFirewallRequest::setBody));
 
         // response
 
@@ -1659,9 +1533,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> createFirewall =
-        genForcreateFirewall();
+        genForCreateFirewall();
 
-    private static HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> genForcreateFirewall() {
+    private static HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> genForCreateFirewall() {
         // basic
         HttpRequestDef.Builder<CreateFirewallRequest, CreateFirewallResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFirewallRequest.class, CreateFirewallResponse.class)
@@ -1674,9 +1548,7 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFirewallRequestBody.class),
-            f -> f.withMarshaller(CreateFirewallRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFirewallRequest::getBody, CreateFirewallRequest::setBody));
 
         // response
 
@@ -1684,9 +1556,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewall =
-        genFordeleteFirewall();
+        genForDeleteFirewall();
 
-    private static HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> genFordeleteFirewall() {
+    private static HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> genForDeleteFirewall() {
         // basic
         HttpRequestDef.Builder<DeleteFirewallRequest, DeleteFirewallResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFirewallRequest.class, DeleteFirewallResponse.class)
@@ -1699,9 +1571,7 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFirewallRequest::getFirewallId, (req, v) -> {
-                req.setFirewallId(v);
-            }));
+            f -> f.withMarshaller(DeleteFirewallRequest::getFirewallId, DeleteFirewallRequest::setFirewallId));
 
         // response
 
@@ -1709,9 +1579,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse> disassociateSubnetFirewall =
-        genFordisassociateSubnetFirewall();
+        genForDisassociateSubnetFirewall();
 
-    private static HttpRequestDef<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse> genFordisassociateSubnetFirewall() {
+    private static HttpRequestDef<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse> genForDisassociateSubnetFirewall() {
         // basic
         HttpRequestDef.Builder<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse> builder =
             HttpRequestDef
@@ -1727,25 +1597,23 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateSubnetFirewallRequest::getFirewallId, (req, v) -> {
-                req.setFirewallId(v);
-            }));
+            f -> f.withMarshaller(DisassociateSubnetFirewallRequest::getFirewallId,
+                DisassociateSubnetFirewallRequest::setFirewallId));
         builder.<DisassociateSubnetFirewallRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DisassociateSubnetFirewallRequestBody.class),
-            f -> f.withMarshaller(DisassociateSubnetFirewallRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateSubnetFirewallRequest::getBody,
+                DisassociateSubnetFirewallRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFirewallRequest, ListFirewallResponse> listFirewall = genForlistFirewall();
+    public static final HttpRequestDef<ListFirewallRequest, ListFirewallResponse> listFirewall = genForListFirewall();
 
-    private static HttpRequestDef<ListFirewallRequest, ListFirewallResponse> genForlistFirewall() {
+    private static HttpRequestDef<ListFirewallRequest, ListFirewallResponse> genForListFirewall() {
         // basic
         HttpRequestDef.Builder<ListFirewallRequest, ListFirewallResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFirewallRequest.class, ListFirewallResponse.class)
@@ -1758,51 +1626,38 @@ public class VpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFirewallRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFirewallRequest::getLimit, ListFirewallRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFirewallRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListFirewallRequest::getMarker, ListFirewallRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListFirewallRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListFirewallRequest::getId, ListFirewallRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListFirewallRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListFirewallRequest::getName, ListFirewallRequest::setName));
         builder.<ListFirewallRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFirewallRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListFirewallRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListFirewallRequest::getStatus, ListFirewallRequest::setStatus));
         builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListFirewallRequest::getAdminStateUp, (req, v) -> {
-                req.setAdminStateUp(v);
-            }));
+            f -> f.withMarshaller(ListFirewallRequest::getAdminStateUp, ListFirewallRequest::setAdminStateUp));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListFirewallRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListFirewallRequest::getEnterpriseProjectId,
+                ListFirewallRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1810,9 +1665,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse> removeFirewallRules =
-        genForremoveFirewallRules();
+        genForRemoveFirewallRules();
 
-    private static HttpRequestDef<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse> genForremoveFirewallRules() {
+    private static HttpRequestDef<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse> genForRemoveFirewallRules() {
         // basic
         HttpRequestDef.Builder<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RemoveFirewallRulesRequest.class, RemoveFirewallRulesResponse.class)
@@ -1825,25 +1680,22 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveFirewallRulesRequest::getFirewallId, (req, v) -> {
-                req.setFirewallId(v);
-            }));
+            f -> f.withMarshaller(RemoveFirewallRulesRequest::getFirewallId,
+                RemoveFirewallRulesRequest::setFirewallId));
         builder.<RemoveFirewallRulesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemoveFirewallRulesRequestBody.class),
-            f -> f.withMarshaller(RemoveFirewallRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RemoveFirewallRulesRequest::getBody, RemoveFirewallRulesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFirewallRequest, ShowFirewallResponse> showFirewall = genForshowFirewall();
+    public static final HttpRequestDef<ShowFirewallRequest, ShowFirewallResponse> showFirewall = genForShowFirewall();
 
-    private static HttpRequestDef<ShowFirewallRequest, ShowFirewallResponse> genForshowFirewall() {
+    private static HttpRequestDef<ShowFirewallRequest, ShowFirewallResponse> genForShowFirewall() {
         // basic
         HttpRequestDef.Builder<ShowFirewallRequest, ShowFirewallResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFirewallRequest.class, ShowFirewallResponse.class)
@@ -1856,9 +1708,7 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFirewallRequest::getFirewallId, (req, v) -> {
-                req.setFirewallId(v);
-            }));
+            f -> f.withMarshaller(ShowFirewallRequest::getFirewallId, ShowFirewallRequest::setFirewallId));
 
         // response
 
@@ -1866,9 +1716,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<UpdateFirewallRequest, UpdateFirewallResponse> updateFirewall =
-        genForupdateFirewall();
+        genForUpdateFirewall();
 
-    private static HttpRequestDef<UpdateFirewallRequest, UpdateFirewallResponse> genForupdateFirewall() {
+    private static HttpRequestDef<UpdateFirewallRequest, UpdateFirewallResponse> genForUpdateFirewall() {
         // basic
         HttpRequestDef.Builder<UpdateFirewallRequest, UpdateFirewallResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateFirewallRequest.class, UpdateFirewallResponse.class)
@@ -1881,16 +1731,12 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFirewallRequest::getFirewallId, (req, v) -> {
-                req.setFirewallId(v);
-            }));
+            f -> f.withMarshaller(UpdateFirewallRequest::getFirewallId, UpdateFirewallRequest::setFirewallId));
         builder.<UpdateFirewallRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFirewallRequestBody.class),
-            f -> f.withMarshaller(UpdateFirewallRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateFirewallRequest::getBody, UpdateFirewallRequest::setBody));
 
         // response
 
@@ -1898,9 +1744,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse> updateFirewallRules =
-        genForupdateFirewallRules();
+        genForUpdateFirewallRules();
 
-    private static HttpRequestDef<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse> genForupdateFirewallRules() {
+    private static HttpRequestDef<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse> genForUpdateFirewallRules() {
         // basic
         HttpRequestDef.Builder<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateFirewallRulesRequest.class, UpdateFirewallRulesResponse.class)
@@ -1913,16 +1759,13 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFirewallRulesRequest::getFirewallId, (req, v) -> {
-                req.setFirewallId(v);
-            }));
+            f -> f.withMarshaller(UpdateFirewallRulesRequest::getFirewallId,
+                UpdateFirewallRulesRequest::setFirewallId));
         builder.<UpdateFirewallRulesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFirewallRulesRequestBody.class),
-            f -> f.withMarshaller(UpdateFirewallRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateFirewallRulesRequest::getBody, UpdateFirewallRulesRequest::setBody));
 
         // response
 
@@ -1930,9 +1773,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<CreateAddressGroupRequest, CreateAddressGroupResponse> createAddressGroup =
-        genForcreateAddressGroup();
+        genForCreateAddressGroup();
 
-    private static HttpRequestDef<CreateAddressGroupRequest, CreateAddressGroupResponse> genForcreateAddressGroup() {
+    private static HttpRequestDef<CreateAddressGroupRequest, CreateAddressGroupResponse> genForCreateAddressGroup() {
         // basic
         HttpRequestDef.Builder<CreateAddressGroupRequest, CreateAddressGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAddressGroupRequest.class, CreateAddressGroupResponse.class)
@@ -1945,9 +1788,7 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAddressGroupRequestBody.class),
-            f -> f.withMarshaller(CreateAddressGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAddressGroupRequest::getBody, CreateAddressGroupRequest::setBody));
 
         // response
 
@@ -1955,9 +1796,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<DeleteAddressGroupRequest, DeleteAddressGroupResponse> deleteAddressGroup =
-        genFordeleteAddressGroup();
+        genForDeleteAddressGroup();
 
-    private static HttpRequestDef<DeleteAddressGroupRequest, DeleteAddressGroupResponse> genFordeleteAddressGroup() {
+    private static HttpRequestDef<DeleteAddressGroupRequest, DeleteAddressGroupResponse> genForDeleteAddressGroup() {
         // basic
         HttpRequestDef.Builder<DeleteAddressGroupRequest, DeleteAddressGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAddressGroupRequest.class, DeleteAddressGroupResponse.class)
@@ -1970,9 +1811,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAddressGroupRequest::getAddressGroupId, (req, v) -> {
-                req.setAddressGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteAddressGroupRequest::getAddressGroupId,
+                DeleteAddressGroupRequest::setAddressGroupId));
 
         // response
 
@@ -1980,9 +1820,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse> deleteIpAddressGroupForce =
-        genFordeleteIpAddressGroupForce();
+        genForDeleteIpAddressGroupForce();
 
-    private static HttpRequestDef<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse> genFordeleteIpAddressGroupForce() {
+    private static HttpRequestDef<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse> genForDeleteIpAddressGroupForce() {
         // basic
         HttpRequestDef.Builder<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse> builder =
             HttpRequestDef
@@ -1998,9 +1838,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteIpAddressGroupForceRequest::getAddressGroupId, (req, v) -> {
-                req.setAddressGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteIpAddressGroupForceRequest::getAddressGroupId,
+                DeleteIpAddressGroupForceRequest::setAddressGroupId));
 
         // response
 
@@ -2008,9 +1847,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ListAddressGroupRequest, ListAddressGroupResponse> listAddressGroup =
-        genForlistAddressGroup();
+        genForListAddressGroup();
 
-    private static HttpRequestDef<ListAddressGroupRequest, ListAddressGroupResponse> genForlistAddressGroup() {
+    private static HttpRequestDef<ListAddressGroupRequest, ListAddressGroupResponse> genForListAddressGroup() {
         // basic
         HttpRequestDef.Builder<ListAddressGroupRequest, ListAddressGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAddressGroupRequest.class, ListAddressGroupResponse.class)
@@ -2023,51 +1862,38 @@ public class VpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAddressGroupRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAddressGroupRequest::getLimit, ListAddressGroupRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressGroupRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAddressGroupRequest::getMarker, ListAddressGroupRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAddressGroupRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListAddressGroupRequest::getId, ListAddressGroupRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAddressGroupRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAddressGroupRequest::getName, ListAddressGroupRequest::setName));
         builder.<Integer>withRequestField("ip_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAddressGroupRequest::getIpVersion, (req, v) -> {
-                req.setIpVersion(v);
-            }));
+            f -> f.withMarshaller(ListAddressGroupRequest::getIpVersion, ListAddressGroupRequest::setIpVersion));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAddressGroupRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListAddressGroupRequest::getDescription, ListAddressGroupRequest::setDescription));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressGroupRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAddressGroupRequest::getEnterpriseProjectId,
+                ListAddressGroupRequest::setEnterpriseProjectId));
 
         // response
 
@@ -2075,9 +1901,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<ShowAddressGroupRequest, ShowAddressGroupResponse> showAddressGroup =
-        genForshowAddressGroup();
+        genForShowAddressGroup();
 
-    private static HttpRequestDef<ShowAddressGroupRequest, ShowAddressGroupResponse> genForshowAddressGroup() {
+    private static HttpRequestDef<ShowAddressGroupRequest, ShowAddressGroupResponse> genForShowAddressGroup() {
         // basic
         HttpRequestDef.Builder<ShowAddressGroupRequest, ShowAddressGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAddressGroupRequest.class, ShowAddressGroupResponse.class)
@@ -2090,9 +1916,8 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAddressGroupRequest::getAddressGroupId, (req, v) -> {
-                req.setAddressGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowAddressGroupRequest::getAddressGroupId,
+                ShowAddressGroupRequest::setAddressGroupId));
 
         // response
 
@@ -2100,9 +1925,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<UpdateAddressGroupRequest, UpdateAddressGroupResponse> updateAddressGroup =
-        genForupdateAddressGroup();
+        genForUpdateAddressGroup();
 
-    private static HttpRequestDef<UpdateAddressGroupRequest, UpdateAddressGroupResponse> genForupdateAddressGroup() {
+    private static HttpRequestDef<UpdateAddressGroupRequest, UpdateAddressGroupResponse> genForUpdateAddressGroup() {
         // basic
         HttpRequestDef.Builder<UpdateAddressGroupRequest, UpdateAddressGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAddressGroupRequest.class, UpdateAddressGroupResponse.class)
@@ -2115,16 +1940,13 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAddressGroupRequest::getAddressGroupId, (req, v) -> {
-                req.setAddressGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateAddressGroupRequest::getAddressGroupId,
+                UpdateAddressGroupRequest::setAddressGroupId));
         builder.<UpdateAddressGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAddressGroupRequestBody.class),
-            f -> f.withMarshaller(UpdateAddressGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAddressGroupRequest::getBody, UpdateAddressGroupRequest::setBody));
 
         // response
 
@@ -2132,9 +1954,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse> addVpcExtendCidr =
-        genForaddVpcExtendCidr();
+        genForAddVpcExtendCidr();
 
-    private static HttpRequestDef<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse> genForaddVpcExtendCidr() {
+    private static HttpRequestDef<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse> genForAddVpcExtendCidr() {
         // basic
         HttpRequestDef.Builder<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AddVpcExtendCidrRequest.class, AddVpcExtendCidrResponse.class)
@@ -2147,25 +1969,21 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddVpcExtendCidrRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(AddVpcExtendCidrRequest::getVpcId, AddVpcExtendCidrRequest::setVpcId));
         builder.<AddVpcExtendCidrRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddVpcExtendCidrRequestBody.class),
-            f -> f.withMarshaller(AddVpcExtendCidrRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddVpcExtendCidrRequest::getBody, AddVpcExtendCidrRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateVpcRequest, CreateVpcResponse> createVpc = genForcreateVpc();
+    public static final HttpRequestDef<CreateVpcRequest, CreateVpcResponse> createVpc = genForCreateVpc();
 
-    private static HttpRequestDef<CreateVpcRequest, CreateVpcResponse> genForcreateVpc() {
+    private static HttpRequestDef<CreateVpcRequest, CreateVpcResponse> genForCreateVpc() {
         // basic
         HttpRequestDef.Builder<CreateVpcRequest, CreateVpcResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVpcRequest.class, CreateVpcResponse.class)
@@ -2178,18 +1996,16 @@ public class VpcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVpcRequestBody.class),
-            f -> f.withMarshaller(CreateVpcRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVpcRequest::getBody, CreateVpcRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteVpcRequest, DeleteVpcResponse> deleteVpc = genFordeleteVpc();
+    public static final HttpRequestDef<DeleteVpcRequest, DeleteVpcResponse> deleteVpc = genForDeleteVpc();
 
-    private static HttpRequestDef<DeleteVpcRequest, DeleteVpcResponse> genFordeleteVpc() {
+    private static HttpRequestDef<DeleteVpcRequest, DeleteVpcResponse> genForDeleteVpc() {
         // basic
         HttpRequestDef.Builder<DeleteVpcRequest, DeleteVpcResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcRequest.class, DeleteVpcResponse.class)
@@ -2202,18 +2018,16 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVpcRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(DeleteVpcRequest::getVpcId, DeleteVpcRequest::setVpcId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListVpcsRequest, ListVpcsResponse> listVpcs = genForlistVpcs();
+    public static final HttpRequestDef<ListVpcsRequest, ListVpcsResponse> listVpcs = genForListVpcs();
 
-    private static HttpRequestDef<ListVpcsRequest, ListVpcsResponse> genForlistVpcs() {
+    private static HttpRequestDef<ListVpcsRequest, ListVpcsResponse> genForListVpcs() {
         // basic
         HttpRequestDef.Builder<ListVpcsRequest, ListVpcsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVpcsRequest.class, ListVpcsResponse.class)
@@ -2226,44 +2040,32 @@ public class VpcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVpcsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVpcsRequest::getLimit, ListVpcsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListVpcsRequest::getMarker, ListVpcsRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVpcsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListVpcsRequest::getId, ListVpcsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVpcsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListVpcsRequest::getName, ListVpcsRequest::setName));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVpcsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListVpcsRequest::getDescription, ListVpcsRequest::setDescription));
         builder.<List<String>>withRequestField("cidr",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVpcsRequest::getCidr, (req, v) -> {
-                req.setCidr(v);
-            }));
+            f -> f.withMarshaller(ListVpcsRequest::getCidr, ListVpcsRequest::setCidr));
 
         // response
 
@@ -2271,9 +2073,9 @@ public class VpcMeta {
     }
 
     public static final HttpRequestDef<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse> removeVpcExtendCidr =
-        genForremoveVpcExtendCidr();
+        genForRemoveVpcExtendCidr();
 
-    private static HttpRequestDef<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse> genForremoveVpcExtendCidr() {
+    private static HttpRequestDef<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse> genForRemoveVpcExtendCidr() {
         // basic
         HttpRequestDef.Builder<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RemoveVpcExtendCidrRequest.class, RemoveVpcExtendCidrResponse.class)
@@ -2286,25 +2088,21 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveVpcExtendCidrRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(RemoveVpcExtendCidrRequest::getVpcId, RemoveVpcExtendCidrRequest::setVpcId));
         builder.<RemoveVpcExtendCidrRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemoveVpcExtendCidrRequestBody.class),
-            f -> f.withMarshaller(RemoveVpcExtendCidrRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RemoveVpcExtendCidrRequest::getBody, RemoveVpcExtendCidrRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVpcRequest, ShowVpcResponse> showVpc = genForshowVpc();
+    public static final HttpRequestDef<ShowVpcRequest, ShowVpcResponse> showVpc = genForShowVpc();
 
-    private static HttpRequestDef<ShowVpcRequest, ShowVpcResponse> genForshowVpc() {
+    private static HttpRequestDef<ShowVpcRequest, ShowVpcResponse> genForShowVpc() {
         // basic
         HttpRequestDef.Builder<ShowVpcRequest, ShowVpcResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVpcRequest.class, ShowVpcResponse.class)
@@ -2317,18 +2115,16 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVpcRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ShowVpcRequest::getVpcId, ShowVpcRequest::setVpcId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateVpcRequest, UpdateVpcResponse> updateVpc = genForupdateVpc();
+    public static final HttpRequestDef<UpdateVpcRequest, UpdateVpcResponse> updateVpc = genForUpdateVpc();
 
-    private static HttpRequestDef<UpdateVpcRequest, UpdateVpcResponse> genForupdateVpc() {
+    private static HttpRequestDef<UpdateVpcRequest, UpdateVpcResponse> genForUpdateVpc() {
         // basic
         HttpRequestDef.Builder<UpdateVpcRequest, UpdateVpcResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVpcRequest.class, UpdateVpcResponse.class)
@@ -2341,16 +2137,12 @@ public class VpcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVpcRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcRequest::getVpcId, UpdateVpcRequest::setVpcId));
         builder.<UpdateVpcRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateVpcRequestBody.class),
-            f -> f.withMarshaller(UpdateVpcRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcRequest::getBody, UpdateVpcRequest::setBody));
 
         // response
 

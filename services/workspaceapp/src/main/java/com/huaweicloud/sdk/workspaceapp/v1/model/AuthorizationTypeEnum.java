@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 授权类型，基于应用(组)授权，默认为APP_GROUP授权。 * ~~&#x60;APP&#x60;~~ - 按照应用授权（***尚未支持***） * &#x60;APP_GROUP&#x60; - 按照应用组授权
+ * 授权类型，基于应用(组)授权，默认为APP_GROUP授权。 * &#x60;APP&#x60; - 按照应用授权（***尚未支持***）。 * &#x60;APP_GROUP&#x60; - 按照应用组授权。
  */
 public class AuthorizationTypeEnum {
 

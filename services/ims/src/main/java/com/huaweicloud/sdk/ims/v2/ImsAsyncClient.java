@@ -112,7 +112,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddImageTagRequest 请求对象
+     * @param request AddImageTagRequest 请求对象
      * @return CompletableFuture<AddImageTagResponse>
      */
     public CompletableFuture<AddImageTagResponse> addImageTagAsync(AddImageTagRequest request) {
@@ -126,11 +126,11 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddImageTagRequest 请求对象
+     * @param request AddImageTagRequest 请求对象
      * @return AsyncInvoker<AddImageTagRequest, AddImageTagResponse>
      */
     public AsyncInvoker<AddImageTagRequest, AddImageTagResponse> addImageTagAsyncInvoker(AddImageTagRequest request) {
-        return new AsyncInvoker<AddImageTagRequest, AddImageTagResponse>(request, ImsMeta.addImageTag, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.addImageTag, hcClient);
     }
 
     /**
@@ -141,7 +141,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddMembersRequest 请求对象
+     * @param request BatchAddMembersRequest 请求对象
      * @return CompletableFuture<BatchAddMembersResponse>
      */
     public CompletableFuture<BatchAddMembersResponse> batchAddMembersAsync(BatchAddMembersRequest request) {
@@ -156,13 +156,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddMembersRequest 请求对象
+     * @param request BatchAddMembersRequest 请求对象
      * @return AsyncInvoker<BatchAddMembersRequest, BatchAddMembersResponse>
      */
     public AsyncInvoker<BatchAddMembersRequest, BatchAddMembersResponse> batchAddMembersAsyncInvoker(
         BatchAddMembersRequest request) {
-        return new AsyncInvoker<BatchAddMembersRequest, BatchAddMembersResponse>(request, ImsMeta.batchAddMembers,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.batchAddMembers, hcClient);
     }
 
     /**
@@ -172,7 +171,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddOrDeleteTagsRequest 请求对象
+     * @param request BatchAddOrDeleteTagsRequest 请求对象
      * @return CompletableFuture<BatchAddOrDeleteTagsResponse>
      */
     public CompletableFuture<BatchAddOrDeleteTagsResponse> batchAddOrDeleteTagsAsync(
@@ -187,13 +186,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddOrDeleteTagsRequest 请求对象
+     * @param request BatchAddOrDeleteTagsRequest 请求对象
      * @return AsyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse>
      */
     public AsyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse> batchAddOrDeleteTagsAsyncInvoker(
         BatchAddOrDeleteTagsRequest request) {
-        return new AsyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse>(request,
-            ImsMeta.batchAddOrDeleteTags, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.batchAddOrDeleteTags, hcClient);
     }
 
     /**
@@ -204,7 +202,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMembersRequest 请求对象
+     * @param request BatchDeleteMembersRequest 请求对象
      * @return CompletableFuture<BatchDeleteMembersResponse>
      */
     public CompletableFuture<BatchDeleteMembersResponse> batchDeleteMembersAsync(BatchDeleteMembersRequest request) {
@@ -219,13 +217,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMembersRequest 请求对象
+     * @param request BatchDeleteMembersRequest 请求对象
      * @return AsyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse>
      */
     public AsyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse> batchDeleteMembersAsyncInvoker(
         BatchDeleteMembersRequest request) {
-        return new AsyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse>(request,
-            ImsMeta.batchDeleteMembers, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.batchDeleteMembers, hcClient);
     }
 
     /**
@@ -236,7 +233,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateMembersRequest 请求对象
+     * @param request BatchUpdateMembersRequest 请求对象
      * @return CompletableFuture<BatchUpdateMembersResponse>
      */
     public CompletableFuture<BatchUpdateMembersResponse> batchUpdateMembersAsync(BatchUpdateMembersRequest request) {
@@ -251,13 +248,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateMembersRequest 请求对象
+     * @param request BatchUpdateMembersRequest 请求对象
      * @return AsyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
      */
     public AsyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse> batchUpdateMembersAsyncInvoker(
         BatchUpdateMembersRequest request) {
-        return new AsyncInvoker<BatchUpdateMembersRequest, BatchUpdateMembersResponse>(request,
-            ImsMeta.batchUpdateMembers, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.batchUpdateMembers, hcClient);
     }
 
     /**
@@ -269,7 +265,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyImageCrossRegionRequest 请求对象
+     * @param request CopyImageCrossRegionRequest 请求对象
      * @return CompletableFuture<CopyImageCrossRegionResponse>
      */
     public CompletableFuture<CopyImageCrossRegionResponse> copyImageCrossRegionAsync(
@@ -286,13 +282,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyImageCrossRegionRequest 请求对象
+     * @param request CopyImageCrossRegionRequest 请求对象
      * @return AsyncInvoker<CopyImageCrossRegionRequest, CopyImageCrossRegionResponse>
      */
     public AsyncInvoker<CopyImageCrossRegionRequest, CopyImageCrossRegionResponse> copyImageCrossRegionAsyncInvoker(
         CopyImageCrossRegionRequest request) {
-        return new AsyncInvoker<CopyImageCrossRegionRequest, CopyImageCrossRegionResponse>(request,
-            ImsMeta.copyImageCrossRegion, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.copyImageCrossRegion, hcClient);
     }
 
     /**
@@ -303,7 +298,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyImageInRegionRequest 请求对象
+     * @param request CopyImageInRegionRequest 请求对象
      * @return CompletableFuture<CopyImageInRegionResponse>
      */
     public CompletableFuture<CopyImageInRegionResponse> copyImageInRegionAsync(CopyImageInRegionRequest request) {
@@ -318,13 +313,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyImageInRegionRequest 请求对象
+     * @param request CopyImageInRegionRequest 请求对象
      * @return AsyncInvoker<CopyImageInRegionRequest, CopyImageInRegionResponse>
      */
     public AsyncInvoker<CopyImageInRegionRequest, CopyImageInRegionResponse> copyImageInRegionAsyncInvoker(
         CopyImageInRegionRequest request) {
-        return new AsyncInvoker<CopyImageInRegionRequest, CopyImageInRegionResponse>(request, ImsMeta.copyImageInRegion,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.copyImageInRegion, hcClient);
     }
 
     /**
@@ -334,7 +328,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataImageRequest 请求对象
+     * @param request CreateDataImageRequest 请求对象
      * @return CompletableFuture<CreateDataImageResponse>
      */
     public CompletableFuture<CreateDataImageResponse> createDataImageAsync(CreateDataImageRequest request) {
@@ -348,13 +342,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataImageRequest 请求对象
+     * @param request CreateDataImageRequest 请求对象
      * @return AsyncInvoker<CreateDataImageRequest, CreateDataImageResponse>
      */
     public AsyncInvoker<CreateDataImageRequest, CreateDataImageResponse> createDataImageAsyncInvoker(
         CreateDataImageRequest request) {
-        return new AsyncInvoker<CreateDataImageRequest, CreateDataImageResponse>(request, ImsMeta.createDataImage,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.createDataImage, hcClient);
     }
 
     /**
@@ -375,7 +368,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageRequest 请求对象
+     * @param request CreateImageRequest 请求对象
      * @return CompletableFuture<CreateImageResponse>
      */
     public CompletableFuture<CreateImageResponse> createImageAsync(CreateImageRequest request) {
@@ -400,11 +393,11 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageRequest 请求对象
+     * @param request CreateImageRequest 请求对象
      * @return AsyncInvoker<CreateImageRequest, CreateImageResponse>
      */
     public AsyncInvoker<CreateImageRequest, CreateImageResponse> createImageAsyncInvoker(CreateImageRequest request) {
-        return new AsyncInvoker<CreateImageRequest, CreateImageResponse>(request, ImsMeta.createImage, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.createImage, hcClient);
     }
 
     /**
@@ -414,7 +407,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrUpdateTagsRequest 请求对象
+     * @param request CreateOrUpdateTagsRequest 请求对象
      * @return CompletableFuture<CreateOrUpdateTagsResponse>
      */
     public CompletableFuture<CreateOrUpdateTagsResponse> createOrUpdateTagsAsync(CreateOrUpdateTagsRequest request) {
@@ -428,13 +421,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrUpdateTagsRequest 请求对象
+     * @param request CreateOrUpdateTagsRequest 请求对象
      * @return AsyncInvoker<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse>
      */
     public AsyncInvoker<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse> createOrUpdateTagsAsyncInvoker(
         CreateOrUpdateTagsRequest request) {
-        return new AsyncInvoker<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse>(request,
-            ImsMeta.createOrUpdateTags, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.createOrUpdateTags, hcClient);
     }
 
     /**
@@ -444,7 +436,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWholeImageRequest 请求对象
+     * @param request CreateWholeImageRequest 请求对象
      * @return CompletableFuture<CreateWholeImageResponse>
      */
     public CompletableFuture<CreateWholeImageResponse> createWholeImageAsync(CreateWholeImageRequest request) {
@@ -458,13 +450,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWholeImageRequest 请求对象
+     * @param request CreateWholeImageRequest 请求对象
      * @return AsyncInvoker<CreateWholeImageRequest, CreateWholeImageResponse>
      */
     public AsyncInvoker<CreateWholeImageRequest, CreateWholeImageResponse> createWholeImageAsyncInvoker(
         CreateWholeImageRequest request) {
-        return new AsyncInvoker<CreateWholeImageRequest, CreateWholeImageResponse>(request, ImsMeta.createWholeImage,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.createWholeImage, hcClient);
     }
 
     /**
@@ -474,7 +465,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageTagRequest 请求对象
+     * @param request DeleteImageTagRequest 请求对象
      * @return CompletableFuture<DeleteImageTagResponse>
      */
     public CompletableFuture<DeleteImageTagResponse> deleteImageTagAsync(DeleteImageTagRequest request) {
@@ -488,13 +479,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageTagRequest 请求对象
+     * @param request DeleteImageTagRequest 请求对象
      * @return AsyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse>
      */
     public AsyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse> deleteImageTagAsyncInvoker(
         DeleteImageTagRequest request) {
-        return new AsyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse>(request, ImsMeta.deleteImageTag,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.deleteImageTag, hcClient);
     }
 
     /**
@@ -504,7 +494,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportImageRequest 请求对象
+     * @param request ExportImageRequest 请求对象
      * @return CompletableFuture<ExportImageResponse>
      */
     public CompletableFuture<ExportImageResponse> exportImageAsync(ExportImageRequest request) {
@@ -518,11 +508,11 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportImageRequest 请求对象
+     * @param request ExportImageRequest 请求对象
      * @return AsyncInvoker<ExportImageRequest, ExportImageResponse>
      */
     public AsyncInvoker<ExportImageRequest, ExportImageResponse> exportImageAsyncInvoker(ExportImageRequest request) {
-        return new AsyncInvoker<ExportImageRequest, ExportImageResponse>(request, ImsMeta.exportImage, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.exportImage, hcClient);
     }
 
     /**
@@ -534,7 +524,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportImageQuickRequest 请求对象
+     * @param request ImportImageQuickRequest 请求对象
      * @return CompletableFuture<ImportImageQuickResponse>
      */
     public CompletableFuture<ImportImageQuickResponse> importImageQuickAsync(ImportImageQuickRequest request) {
@@ -550,13 +540,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportImageQuickRequest 请求对象
+     * @param request ImportImageQuickRequest 请求对象
      * @return AsyncInvoker<ImportImageQuickRequest, ImportImageQuickResponse>
      */
     public AsyncInvoker<ImportImageQuickRequest, ImportImageQuickResponse> importImageQuickAsyncInvoker(
         ImportImageQuickRequest request) {
-        return new AsyncInvoker<ImportImageQuickRequest, ImportImageQuickResponse>(request, ImsMeta.importImageQuick,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.importImageQuick, hcClient);
     }
 
     /**
@@ -566,7 +555,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageByTagsRequest 请求对象
+     * @param request ListImageByTagsRequest 请求对象
      * @return CompletableFuture<ListImageByTagsResponse>
      */
     public CompletableFuture<ListImageByTagsResponse> listImageByTagsAsync(ListImageByTagsRequest request) {
@@ -580,13 +569,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageByTagsRequest 请求对象
+     * @param request ListImageByTagsRequest 请求对象
      * @return AsyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse>
      */
     public AsyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse> listImageByTagsAsyncInvoker(
         ListImageByTagsRequest request) {
-        return new AsyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse>(request, ImsMeta.listImageByTags,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.listImageByTags, hcClient);
     }
 
     /**
@@ -596,7 +584,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageTagsRequest 请求对象
+     * @param request ListImageTagsRequest 请求对象
      * @return CompletableFuture<ListImageTagsResponse>
      */
     public CompletableFuture<ListImageTagsResponse> listImageTagsAsync(ListImageTagsRequest request) {
@@ -610,12 +598,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageTagsRequest 请求对象
+     * @param request ListImageTagsRequest 请求对象
      * @return AsyncInvoker<ListImageTagsRequest, ListImageTagsResponse>
      */
     public AsyncInvoker<ListImageTagsRequest, ListImageTagsResponse> listImageTagsAsyncInvoker(
         ListImageTagsRequest request) {
-        return new AsyncInvoker<ListImageTagsRequest, ListImageTagsResponse>(request, ImsMeta.listImageTags, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.listImageTags, hcClient);
     }
 
     /**
@@ -626,7 +614,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImagesRequest 请求对象
+     * @param request ListImagesRequest 请求对象
      * @return CompletableFuture<ListImagesResponse>
      */
     public CompletableFuture<ListImagesResponse> listImagesAsync(ListImagesRequest request) {
@@ -641,11 +629,11 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImagesRequest 请求对象
+     * @param request ListImagesRequest 请求对象
      * @return AsyncInvoker<ListImagesRequest, ListImagesResponse>
      */
     public AsyncInvoker<ListImagesRequest, ListImagesResponse> listImagesAsyncInvoker(ListImagesRequest request) {
-        return new AsyncInvoker<ListImagesRequest, ListImagesResponse>(request, ImsMeta.listImages, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.listImages, hcClient);
     }
 
     /**
@@ -655,7 +643,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImagesTagsRequest 请求对象
+     * @param request ListImagesTagsRequest 请求对象
      * @return CompletableFuture<ListImagesTagsResponse>
      */
     public CompletableFuture<ListImagesTagsResponse> listImagesTagsAsync(ListImagesTagsRequest request) {
@@ -669,13 +657,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImagesTagsRequest 请求对象
+     * @param request ListImagesTagsRequest 请求对象
      * @return AsyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse>
      */
     public AsyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse> listImagesTagsAsyncInvoker(
         ListImagesTagsRequest request) {
-        return new AsyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse>(request, ImsMeta.listImagesTags,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.listImagesTags, hcClient);
     }
 
     /**
@@ -685,7 +672,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOsVersionsRequest 请求对象
+     * @param request ListOsVersionsRequest 请求对象
      * @return CompletableFuture<ListOsVersionsResponse>
      */
     public CompletableFuture<ListOsVersionsResponse> listOsVersionsAsync(ListOsVersionsRequest request) {
@@ -699,13 +686,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOsVersionsRequest 请求对象
+     * @param request ListOsVersionsRequest 请求对象
      * @return AsyncInvoker<ListOsVersionsRequest, ListOsVersionsResponse>
      */
     public AsyncInvoker<ListOsVersionsRequest, ListOsVersionsResponse> listOsVersionsAsyncInvoker(
         ListOsVersionsRequest request) {
-        return new AsyncInvoker<ListOsVersionsRequest, ListOsVersionsResponse>(request, ImsMeta.listOsVersions,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.listOsVersions, hcClient);
     }
 
     /**
@@ -715,7 +701,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return CompletableFuture<ListTagsResponse>
      */
     public CompletableFuture<ListTagsResponse> listTagsAsync(ListTagsRequest request) {
@@ -729,11 +715,11 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
      */
     public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
-        return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, ImsMeta.listTags, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.listTags, hcClient);
     }
 
     /**
@@ -749,7 +735,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterImageRequest 请求对象
+     * @param request RegisterImageRequest 请求对象
      * @return CompletableFuture<RegisterImageResponse>
      */
     public CompletableFuture<RegisterImageResponse> registerImageAsync(RegisterImageRequest request) {
@@ -769,12 +755,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterImageRequest 请求对象
+     * @param request RegisterImageRequest 请求对象
      * @return AsyncInvoker<RegisterImageRequest, RegisterImageResponse>
      */
     public AsyncInvoker<RegisterImageRequest, RegisterImageResponse> registerImageAsyncInvoker(
         RegisterImageRequest request) {
-        return new AsyncInvoker<RegisterImageRequest, RegisterImageResponse>(request, ImsMeta.registerImage, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.registerImage, hcClient);
     }
 
     /**
@@ -784,7 +770,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageQuotaRequest 请求对象
+     * @param request ShowImageQuotaRequest 请求对象
      * @return CompletableFuture<ShowImageQuotaResponse>
      */
     public CompletableFuture<ShowImageQuotaResponse> showImageQuotaAsync(ShowImageQuotaRequest request) {
@@ -798,13 +784,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageQuotaRequest 请求对象
+     * @param request ShowImageQuotaRequest 请求对象
      * @return AsyncInvoker<ShowImageQuotaRequest, ShowImageQuotaResponse>
      */
     public AsyncInvoker<ShowImageQuotaRequest, ShowImageQuotaResponse> showImageQuotaAsyncInvoker(
         ShowImageQuotaRequest request) {
-        return new AsyncInvoker<ShowImageQuotaRequest, ShowImageQuotaResponse>(request, ImsMeta.showImageQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.showImageQuota, hcClient);
     }
 
     /**
@@ -814,7 +799,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
      */
     public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
@@ -828,11 +813,11 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
-        return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, ImsMeta.showJob, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.showJob, hcClient);
     }
 
     /**
@@ -842,7 +827,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobProgressRequest 请求对象
+     * @param request ShowJobProgressRequest 请求对象
      * @return CompletableFuture<ShowJobProgressResponse>
      */
     public CompletableFuture<ShowJobProgressResponse> showJobProgressAsync(ShowJobProgressRequest request) {
@@ -856,13 +841,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobProgressRequest 请求对象
+     * @param request ShowJobProgressRequest 请求对象
      * @return AsyncInvoker<ShowJobProgressRequest, ShowJobProgressResponse>
      */
     public AsyncInvoker<ShowJobProgressRequest, ShowJobProgressResponse> showJobProgressAsyncInvoker(
         ShowJobProgressRequest request) {
-        return new AsyncInvoker<ShowJobProgressRequest, ShowJobProgressResponse>(request, ImsMeta.showJobProgress,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.showJobProgress, hcClient);
     }
 
     /**
@@ -872,7 +856,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateImageRequest 请求对象
+     * @param request UpdateImageRequest 请求对象
      * @return CompletableFuture<UpdateImageResponse>
      */
     public CompletableFuture<UpdateImageResponse> updateImageAsync(UpdateImageRequest request) {
@@ -886,11 +870,11 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateImageRequest 请求对象
+     * @param request UpdateImageRequest 请求对象
      * @return AsyncInvoker<UpdateImageRequest, UpdateImageResponse>
      */
     public AsyncInvoker<UpdateImageRequest, UpdateImageResponse> updateImageAsyncInvoker(UpdateImageRequest request) {
-        return new AsyncInvoker<UpdateImageRequest, UpdateImageResponse>(request, ImsMeta.updateImage, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.updateImage, hcClient);
     }
 
     /**
@@ -900,7 +884,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionsRequest 请求对象
+     * @param request ListVersionsRequest 请求对象
      * @return CompletableFuture<ListVersionsResponse>
      */
     public CompletableFuture<ListVersionsResponse> listVersionsAsync(ListVersionsRequest request) {
@@ -914,12 +898,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionsRequest 请求对象
+     * @param request ListVersionsRequest 请求对象
      * @return AsyncInvoker<ListVersionsRequest, ListVersionsResponse>
      */
     public AsyncInvoker<ListVersionsRequest, ListVersionsResponse> listVersionsAsyncInvoker(
         ListVersionsRequest request) {
-        return new AsyncInvoker<ListVersionsRequest, ListVersionsResponse>(request, ImsMeta.listVersions, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.listVersions, hcClient);
     }
 
     /**
@@ -929,7 +913,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return CompletableFuture<ShowVersionResponse>
      */
     public CompletableFuture<ShowVersionResponse> showVersionAsync(ShowVersionRequest request) {
@@ -943,11 +927,11 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionRequest 请求对象
+     * @param request ShowVersionRequest 请求对象
      * @return AsyncInvoker<ShowVersionRequest, ShowVersionResponse>
      */
     public AsyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionAsyncInvoker(ShowVersionRequest request) {
-        return new AsyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, ImsMeta.showVersion, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.showVersion, hcClient);
     }
 
     /**
@@ -957,7 +941,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceAddImageMemberRequest 请求对象
+     * @param request GlanceAddImageMemberRequest 请求对象
      * @return CompletableFuture<GlanceAddImageMemberResponse>
      */
     public CompletableFuture<GlanceAddImageMemberResponse> glanceAddImageMemberAsync(
@@ -972,13 +956,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceAddImageMemberRequest 请求对象
+     * @param request GlanceAddImageMemberRequest 请求对象
      * @return AsyncInvoker<GlanceAddImageMemberRequest, GlanceAddImageMemberResponse>
      */
     public AsyncInvoker<GlanceAddImageMemberRequest, GlanceAddImageMemberResponse> glanceAddImageMemberAsyncInvoker(
         GlanceAddImageMemberRequest request) {
-        return new AsyncInvoker<GlanceAddImageMemberRequest, GlanceAddImageMemberResponse>(request,
-            ImsMeta.glanceAddImageMember, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceAddImageMember, hcClient);
     }
 
     /**
@@ -988,7 +971,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceCreateImageMetadataRequest 请求对象
+     * @param request GlanceCreateImageMetadataRequest 请求对象
      * @return CompletableFuture<GlanceCreateImageMetadataResponse>
      */
     public CompletableFuture<GlanceCreateImageMetadataResponse> glanceCreateImageMetadataAsync(
@@ -1003,13 +986,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceCreateImageMetadataRequest 请求对象
+     * @param request GlanceCreateImageMetadataRequest 请求对象
      * @return AsyncInvoker<GlanceCreateImageMetadataRequest, GlanceCreateImageMetadataResponse>
      */
     public AsyncInvoker<GlanceCreateImageMetadataRequest, GlanceCreateImageMetadataResponse> glanceCreateImageMetadataAsyncInvoker(
         GlanceCreateImageMetadataRequest request) {
-        return new AsyncInvoker<GlanceCreateImageMetadataRequest, GlanceCreateImageMetadataResponse>(request,
-            ImsMeta.glanceCreateImageMetadata, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceCreateImageMetadata, hcClient);
     }
 
     /**
@@ -1019,7 +1001,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceCreateTagRequest 请求对象
+     * @param request GlanceCreateTagRequest 请求对象
      * @return CompletableFuture<GlanceCreateTagResponse>
      */
     public CompletableFuture<GlanceCreateTagResponse> glanceCreateTagAsync(GlanceCreateTagRequest request) {
@@ -1033,13 +1015,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceCreateTagRequest 请求对象
+     * @param request GlanceCreateTagRequest 请求对象
      * @return AsyncInvoker<GlanceCreateTagRequest, GlanceCreateTagResponse>
      */
     public AsyncInvoker<GlanceCreateTagRequest, GlanceCreateTagResponse> glanceCreateTagAsyncInvoker(
         GlanceCreateTagRequest request) {
-        return new AsyncInvoker<GlanceCreateTagRequest, GlanceCreateTagResponse>(request, ImsMeta.glanceCreateTag,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceCreateTag, hcClient);
     }
 
     /**
@@ -1049,7 +1030,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteImageRequest 请求对象
+     * @param request GlanceDeleteImageRequest 请求对象
      * @return CompletableFuture<GlanceDeleteImageResponse>
      */
     public CompletableFuture<GlanceDeleteImageResponse> glanceDeleteImageAsync(GlanceDeleteImageRequest request) {
@@ -1063,13 +1044,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteImageRequest 请求对象
+     * @param request GlanceDeleteImageRequest 请求对象
      * @return AsyncInvoker<GlanceDeleteImageRequest, GlanceDeleteImageResponse>
      */
     public AsyncInvoker<GlanceDeleteImageRequest, GlanceDeleteImageResponse> glanceDeleteImageAsyncInvoker(
         GlanceDeleteImageRequest request) {
-        return new AsyncInvoker<GlanceDeleteImageRequest, GlanceDeleteImageResponse>(request, ImsMeta.glanceDeleteImage,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceDeleteImage, hcClient);
     }
 
     /**
@@ -1079,7 +1059,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteImageMemberRequest 请求对象
+     * @param request GlanceDeleteImageMemberRequest 请求对象
      * @return CompletableFuture<GlanceDeleteImageMemberResponse>
      */
     public CompletableFuture<GlanceDeleteImageMemberResponse> glanceDeleteImageMemberAsync(
@@ -1094,13 +1074,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteImageMemberRequest 请求对象
+     * @param request GlanceDeleteImageMemberRequest 请求对象
      * @return AsyncInvoker<GlanceDeleteImageMemberRequest, GlanceDeleteImageMemberResponse>
      */
     public AsyncInvoker<GlanceDeleteImageMemberRequest, GlanceDeleteImageMemberResponse> glanceDeleteImageMemberAsyncInvoker(
         GlanceDeleteImageMemberRequest request) {
-        return new AsyncInvoker<GlanceDeleteImageMemberRequest, GlanceDeleteImageMemberResponse>(request,
-            ImsMeta.glanceDeleteImageMember, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceDeleteImageMember, hcClient);
     }
 
     /**
@@ -1110,7 +1089,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteTagRequest 请求对象
+     * @param request GlanceDeleteTagRequest 请求对象
      * @return CompletableFuture<GlanceDeleteTagResponse>
      */
     public CompletableFuture<GlanceDeleteTagResponse> glanceDeleteTagAsync(GlanceDeleteTagRequest request) {
@@ -1124,13 +1103,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceDeleteTagRequest 请求对象
+     * @param request GlanceDeleteTagRequest 请求对象
      * @return AsyncInvoker<GlanceDeleteTagRequest, GlanceDeleteTagResponse>
      */
     public AsyncInvoker<GlanceDeleteTagRequest, GlanceDeleteTagResponse> glanceDeleteTagAsyncInvoker(
         GlanceDeleteTagRequest request) {
-        return new AsyncInvoker<GlanceDeleteTagRequest, GlanceDeleteTagResponse>(request, ImsMeta.glanceDeleteTag,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceDeleteTag, hcClient);
     }
 
     /**
@@ -1140,7 +1118,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageMemberSchemasRequest 请求对象
+     * @param request GlanceListImageMemberSchemasRequest 请求对象
      * @return CompletableFuture<GlanceListImageMemberSchemasResponse>
      */
     public CompletableFuture<GlanceListImageMemberSchemasResponse> glanceListImageMemberSchemasAsync(
@@ -1155,13 +1133,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageMemberSchemasRequest 请求对象
+     * @param request GlanceListImageMemberSchemasRequest 请求对象
      * @return AsyncInvoker<GlanceListImageMemberSchemasRequest, GlanceListImageMemberSchemasResponse>
      */
     public AsyncInvoker<GlanceListImageMemberSchemasRequest, GlanceListImageMemberSchemasResponse> glanceListImageMemberSchemasAsyncInvoker(
         GlanceListImageMemberSchemasRequest request) {
-        return new AsyncInvoker<GlanceListImageMemberSchemasRequest, GlanceListImageMemberSchemasResponse>(request,
-            ImsMeta.glanceListImageMemberSchemas, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceListImageMemberSchemas, hcClient);
     }
 
     /**
@@ -1171,7 +1148,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageMembersRequest 请求对象
+     * @param request GlanceListImageMembersRequest 请求对象
      * @return CompletableFuture<GlanceListImageMembersResponse>
      */
     public CompletableFuture<GlanceListImageMembersResponse> glanceListImageMembersAsync(
@@ -1186,13 +1163,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageMembersRequest 请求对象
+     * @param request GlanceListImageMembersRequest 请求对象
      * @return AsyncInvoker<GlanceListImageMembersRequest, GlanceListImageMembersResponse>
      */
     public AsyncInvoker<GlanceListImageMembersRequest, GlanceListImageMembersResponse> glanceListImageMembersAsyncInvoker(
         GlanceListImageMembersRequest request) {
-        return new AsyncInvoker<GlanceListImageMembersRequest, GlanceListImageMembersResponse>(request,
-            ImsMeta.glanceListImageMembers, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceListImageMembers, hcClient);
     }
 
     /**
@@ -1202,7 +1178,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageSchemasRequest 请求对象
+     * @param request GlanceListImageSchemasRequest 请求对象
      * @return CompletableFuture<GlanceListImageSchemasResponse>
      */
     public CompletableFuture<GlanceListImageSchemasResponse> glanceListImageSchemasAsync(
@@ -1217,13 +1193,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImageSchemasRequest 请求对象
+     * @param request GlanceListImageSchemasRequest 请求对象
      * @return AsyncInvoker<GlanceListImageSchemasRequest, GlanceListImageSchemasResponse>
      */
     public AsyncInvoker<GlanceListImageSchemasRequest, GlanceListImageSchemasResponse> glanceListImageSchemasAsyncInvoker(
         GlanceListImageSchemasRequest request) {
-        return new AsyncInvoker<GlanceListImageSchemasRequest, GlanceListImageSchemasResponse>(request,
-            ImsMeta.glanceListImageSchemas, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceListImageSchemas, hcClient);
     }
 
     /**
@@ -1237,7 +1212,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImagesRequest 请求对象
+     * @param request GlanceListImagesRequest 请求对象
      * @return CompletableFuture<GlanceListImagesResponse>
      */
     public CompletableFuture<GlanceListImagesResponse> glanceListImagesAsync(GlanceListImagesRequest request) {
@@ -1255,13 +1230,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceListImagesRequest 请求对象
+     * @param request GlanceListImagesRequest 请求对象
      * @return AsyncInvoker<GlanceListImagesRequest, GlanceListImagesResponse>
      */
     public AsyncInvoker<GlanceListImagesRequest, GlanceListImagesResponse> glanceListImagesAsyncInvoker(
         GlanceListImagesRequest request) {
-        return new AsyncInvoker<GlanceListImagesRequest, GlanceListImagesResponse>(request, ImsMeta.glanceListImages,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceListImages, hcClient);
     }
 
     /**
@@ -1271,7 +1245,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageRequest 请求对象
+     * @param request GlanceShowImageRequest 请求对象
      * @return CompletableFuture<GlanceShowImageResponse>
      */
     public CompletableFuture<GlanceShowImageResponse> glanceShowImageAsync(GlanceShowImageRequest request) {
@@ -1285,13 +1259,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageRequest 请求对象
+     * @param request GlanceShowImageRequest 请求对象
      * @return AsyncInvoker<GlanceShowImageRequest, GlanceShowImageResponse>
      */
     public AsyncInvoker<GlanceShowImageRequest, GlanceShowImageResponse> glanceShowImageAsyncInvoker(
         GlanceShowImageRequest request) {
-        return new AsyncInvoker<GlanceShowImageRequest, GlanceShowImageResponse>(request, ImsMeta.glanceShowImage,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceShowImage, hcClient);
     }
 
     /**
@@ -1301,7 +1274,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageMemberRequest 请求对象
+     * @param request GlanceShowImageMemberRequest 请求对象
      * @return CompletableFuture<GlanceShowImageMemberResponse>
      */
     public CompletableFuture<GlanceShowImageMemberResponse> glanceShowImageMemberAsync(
@@ -1316,13 +1289,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageMemberRequest 请求对象
+     * @param request GlanceShowImageMemberRequest 请求对象
      * @return AsyncInvoker<GlanceShowImageMemberRequest, GlanceShowImageMemberResponse>
      */
     public AsyncInvoker<GlanceShowImageMemberRequest, GlanceShowImageMemberResponse> glanceShowImageMemberAsyncInvoker(
         GlanceShowImageMemberRequest request) {
-        return new AsyncInvoker<GlanceShowImageMemberRequest, GlanceShowImageMemberResponse>(request,
-            ImsMeta.glanceShowImageMember, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceShowImageMember, hcClient);
     }
 
     /**
@@ -1332,7 +1304,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageMemberSchemasRequest 请求对象
+     * @param request GlanceShowImageMemberSchemasRequest 请求对象
      * @return CompletableFuture<GlanceShowImageMemberSchemasResponse>
      */
     public CompletableFuture<GlanceShowImageMemberSchemasResponse> glanceShowImageMemberSchemasAsync(
@@ -1347,13 +1319,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageMemberSchemasRequest 请求对象
+     * @param request GlanceShowImageMemberSchemasRequest 请求对象
      * @return AsyncInvoker<GlanceShowImageMemberSchemasRequest, GlanceShowImageMemberSchemasResponse>
      */
     public AsyncInvoker<GlanceShowImageMemberSchemasRequest, GlanceShowImageMemberSchemasResponse> glanceShowImageMemberSchemasAsyncInvoker(
         GlanceShowImageMemberSchemasRequest request) {
-        return new AsyncInvoker<GlanceShowImageMemberSchemasRequest, GlanceShowImageMemberSchemasResponse>(request,
-            ImsMeta.glanceShowImageMemberSchemas, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceShowImageMemberSchemas, hcClient);
     }
 
     /**
@@ -1363,7 +1334,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageSchemasRequest 请求对象
+     * @param request GlanceShowImageSchemasRequest 请求对象
      * @return CompletableFuture<GlanceShowImageSchemasResponse>
      */
     public CompletableFuture<GlanceShowImageSchemasResponse> glanceShowImageSchemasAsync(
@@ -1378,13 +1349,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceShowImageSchemasRequest 请求对象
+     * @param request GlanceShowImageSchemasRequest 请求对象
      * @return AsyncInvoker<GlanceShowImageSchemasRequest, GlanceShowImageSchemasResponse>
      */
     public AsyncInvoker<GlanceShowImageSchemasRequest, GlanceShowImageSchemasResponse> glanceShowImageSchemasAsyncInvoker(
         GlanceShowImageSchemasRequest request) {
-        return new AsyncInvoker<GlanceShowImageSchemasRequest, GlanceShowImageSchemasResponse>(request,
-            ImsMeta.glanceShowImageSchemas, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceShowImageSchemas, hcClient);
     }
 
     /**
@@ -1394,7 +1364,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceUpdateImageRequest 请求对象
+     * @param request GlanceUpdateImageRequest 请求对象
      * @return CompletableFuture<GlanceUpdateImageResponse>
      */
     public CompletableFuture<GlanceUpdateImageResponse> glanceUpdateImageAsync(GlanceUpdateImageRequest request) {
@@ -1408,13 +1378,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceUpdateImageRequest 请求对象
+     * @param request GlanceUpdateImageRequest 请求对象
      * @return AsyncInvoker<GlanceUpdateImageRequest, GlanceUpdateImageResponse>
      */
     public AsyncInvoker<GlanceUpdateImageRequest, GlanceUpdateImageResponse> glanceUpdateImageAsyncInvoker(
         GlanceUpdateImageRequest request) {
-        return new AsyncInvoker<GlanceUpdateImageRequest, GlanceUpdateImageResponse>(request, ImsMeta.glanceUpdateImage,
-            hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceUpdateImage, hcClient);
     }
 
     /**
@@ -1424,7 +1393,7 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceUpdateImageMemberRequest 请求对象
+     * @param request GlanceUpdateImageMemberRequest 请求对象
      * @return CompletableFuture<GlanceUpdateImageMemberResponse>
      */
     public CompletableFuture<GlanceUpdateImageMemberResponse> glanceUpdateImageMemberAsync(
@@ -1439,13 +1408,12 @@ public class ImsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param GlanceUpdateImageMemberRequest 请求对象
+     * @param request GlanceUpdateImageMemberRequest 请求对象
      * @return AsyncInvoker<GlanceUpdateImageMemberRequest, GlanceUpdateImageMemberResponse>
      */
     public AsyncInvoker<GlanceUpdateImageMemberRequest, GlanceUpdateImageMemberResponse> glanceUpdateImageMemberAsyncInvoker(
         GlanceUpdateImageMemberRequest request) {
-        return new AsyncInvoker<GlanceUpdateImageMemberRequest, GlanceUpdateImageMemberResponse>(request,
-            ImsMeta.glanceUpdateImageMember, hcClient);
+        return new AsyncInvoker<>(request, ImsMeta.glanceUpdateImageMember, hcClient);
     }
 
 }

@@ -185,9 +185,9 @@ import java.util.List;
 public class GaussDBforopenGaussMeta {
 
     public static final HttpRequestDef<AddInstanceTagsRequest, AddInstanceTagsResponse> addInstanceTags =
-        genForaddInstanceTags();
+        genForAddInstanceTags();
 
-    private static HttpRequestDef<AddInstanceTagsRequest, AddInstanceTagsResponse> genForaddInstanceTags() {
+    private static HttpRequestDef<AddInstanceTagsRequest, AddInstanceTagsResponse> genForAddInstanceTags() {
         // basic
         HttpRequestDef.Builder<AddInstanceTagsRequest, AddInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddInstanceTagsRequest.class, AddInstanceTagsResponse.class)
@@ -200,23 +200,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddInstanceTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddInstanceTagsRequest::getInstanceId, AddInstanceTagsRequest::setInstanceId));
         builder.<AddInstanceTagsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AddInstanceTagsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(AddInstanceTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(AddInstanceTagsRequest::getXLanguage, AddInstanceTagsRequest::setXLanguage));
         builder.<AddTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddTagsRequestBody.class),
-            f -> f.withMarshaller(AddInstanceTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddInstanceTagsRequest::getBody, AddInstanceTagsRequest::setBody));
 
         // response
 
@@ -224,9 +218,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse> allowDbPrivileges =
-        genForallowDbPrivileges();
+        genForAllowDbPrivileges();
 
-    private static HttpRequestDef<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse> genForallowDbPrivileges() {
+    private static HttpRequestDef<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse> genForAllowDbPrivileges() {
         // basic
         HttpRequestDef.Builder<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AllowDbPrivilegesRequest.class, AllowDbPrivilegesResponse.class)
@@ -239,32 +233,26 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AllowDbPrivilegesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AllowDbPrivilegesRequest::getInstanceId, AllowDbPrivilegesRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AllowDbPrivilegesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(AllowDbPrivilegesRequest::getXLanguage, AllowDbPrivilegesRequest::setXLanguage));
         builder.<GaussDBforOpenGaussGrantRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GaussDBforOpenGaussGrantRequest.class),
-            f -> f.withMarshaller(AllowDbPrivilegesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AllowDbPrivilegesRequest::getBody, AllowDbPrivilegesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AttachEipRequest, AttachEipResponse> attachEip = genForattachEip();
+    public static final HttpRequestDef<AttachEipRequest, AttachEipResponse> attachEip = genForAttachEip();
 
-    private static HttpRequestDef<AttachEipRequest, AttachEipResponse> genForattachEip() {
+    private static HttpRequestDef<AttachEipRequest, AttachEipResponse> genForAttachEip() {
         // basic
         HttpRequestDef.Builder<AttachEipRequest, AttachEipResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AttachEipRequest.class, AttachEipResponse.class)
@@ -277,30 +265,22 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachEipRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AttachEipRequest::getInstanceId, AttachEipRequest::setInstanceId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachEipRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(AttachEipRequest::getNodeId, AttachEipRequest::setNodeId));
         builder.<AttachEipRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AttachEipRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(AttachEipRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(AttachEipRequest::getXLanguage, AttachEipRequest::setXLanguage));
         builder.<BindEIPRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BindEIPRequestBody.class),
-            f -> f.withMarshaller(AttachEipRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachEipRequest::getBody, AttachEipRequest::setBody));
 
         // response
 
@@ -308,9 +288,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> copyConfiguration =
-        genForcopyConfiguration();
+        genForCopyConfiguration();
 
-    private static HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> genForcopyConfiguration() {
+    private static HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> genForCopyConfiguration() {
         // basic
         HttpRequestDef.Builder<CopyConfigurationRequest, CopyConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyConfigurationRequest.class, CopyConfigurationResponse.class)
@@ -323,23 +303,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyConfigurationRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(CopyConfigurationRequest::getConfigId, CopyConfigurationRequest::setConfigId));
         builder.<CopyConfigurationRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CopyConfigurationRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CopyConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CopyConfigurationRequest::getXLanguage, CopyConfigurationRequest::setXLanguage));
         builder.<ParamGroupCopyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ParamGroupCopyRequestBody.class),
-            f -> f.withMarshaller(CopyConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CopyConfigurationRequest::getBody, CopyConfigurationRequest::setBody));
 
         // response
 
@@ -347,9 +321,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse> createConfigurationTemplate =
-        genForcreateConfigurationTemplate();
+        genForCreateConfigurationTemplate();
 
-    private static HttpRequestDef<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse> genForcreateConfigurationTemplate() {
+    private static HttpRequestDef<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse> genForCreateConfigurationTemplate() {
         // basic
         HttpRequestDef.Builder<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse> builder =
             HttpRequestDef
@@ -365,16 +339,14 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateConfigurationTemplateRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CreateConfigurationTemplateRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateConfigurationTemplateRequest::getXLanguage,
+                CreateConfigurationTemplateRequest::setXLanguage));
         builder.<CreateConfigurationTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateConfigurationTemplateRequestBody.class),
-            f -> f.withMarshaller(CreateConfigurationTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConfigurationTemplateRequest::getBody,
+                CreateConfigurationTemplateRequest::setBody));
 
         // response
 
@@ -382,9 +354,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> createDatabase =
-        genForcreateDatabase();
+        genForCreateDatabase();
 
-    private static HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> genForcreateDatabase() {
+    private static HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> genForCreateDatabase() {
         // basic
         HttpRequestDef.Builder<CreateDatabaseRequest, CreateDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDatabaseRequest.class, CreateDatabaseResponse.class)
@@ -397,23 +369,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseRequest::getInstanceId, CreateDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDatabaseRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseRequest::getXLanguage, CreateDatabaseRequest::setXLanguage));
         builder.<GaussDBforOpenDatabaseForCreation>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GaussDBforOpenDatabaseForCreation.class),
-            f -> f.withMarshaller(CreateDatabaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseRequest::getBody, CreateDatabaseRequest::setBody));
 
         // response
 
@@ -421,9 +387,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse> createDatabaseSchemas =
-        genForcreateDatabaseSchemas();
+        genForCreateDatabaseSchemas();
 
-    private static HttpRequestDef<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse> genForcreateDatabaseSchemas() {
+    private static HttpRequestDef<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse> genForCreateDatabaseSchemas() {
         // basic
         HttpRequestDef.Builder<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateDatabaseSchemasRequest.class, CreateDatabaseSchemasResponse.class)
@@ -436,23 +402,19 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDatabaseSchemasRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseSchemasRequest::getInstanceId,
+                CreateDatabaseSchemasRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDatabaseSchemasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseSchemasRequest::getXLanguage,
+                CreateDatabaseSchemasRequest::setXLanguage));
         builder.<GaussDBforOpenGaussDatabaseSchemaReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GaussDBforOpenGaussDatabaseSchemaReq.class),
-            f -> f.withMarshaller(CreateDatabaseSchemasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDatabaseSchemasRequest::getBody, CreateDatabaseSchemasRequest::setBody));
 
         // response
 
@@ -460,9 +422,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<CreateDbInstanceRequest, CreateDbInstanceResponse> createDbInstance =
-        genForcreateDbInstance();
+        genForCreateDbInstance();
 
-    private static HttpRequestDef<CreateDbInstanceRequest, CreateDbInstanceResponse> genForcreateDbInstance() {
+    private static HttpRequestDef<CreateDbInstanceRequest, CreateDbInstanceResponse> genForCreateDbInstance() {
         // basic
         HttpRequestDef.Builder<CreateDbInstanceRequest, CreateDbInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDbInstanceRequest.class, CreateDbInstanceResponse.class)
@@ -475,25 +437,21 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDbInstanceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateDbInstanceRequest::getXLanguage, CreateDbInstanceRequest::setXLanguage));
         builder.<OpenGaussInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenGaussInstanceRequestBody.class),
-            f -> f.withMarshaller(CreateDbInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDbInstanceRequest::getBody, CreateDbInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> createDbUser = genForcreateDbUser();
+    public static final HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> createDbUser = genForCreateDbUser();
 
-    private static HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> genForcreateDbUser() {
+    private static HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> genForCreateDbUser() {
         // basic
         HttpRequestDef.Builder<CreateDbUserRequest, CreateDbUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDbUserRequest.class, CreateDbUserResponse.class)
@@ -506,23 +464,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDbUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDbUserRequest::getInstanceId, CreateDbUserRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDbUserRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateDbUserRequest::getXLanguage, CreateDbUserRequest::setXLanguage));
         builder.<GaussDBforOpenGaussUserForCreation>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GaussDBforOpenGaussUserForCreation.class),
-            f -> f.withMarshaller(CreateDbUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDbUserRequest::getBody, CreateDbUserRequest::setBody));
 
         // response
 
@@ -530,9 +482,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
-        genForcreateInstance();
+        genForCreateInstance();
 
-    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForcreateInstance() {
+    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForCreateInstance() {
         // basic
         HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
@@ -545,16 +497,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInstanceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceRequest::getXLanguage, CreateInstanceRequest::setXLanguage));
         builder.<OpenGaussInstanceRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenGaussInstanceRequest.class),
-            f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceRequest::getBody, CreateInstanceRequest::setBody));
 
         // response
 
@@ -562,9 +510,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackup =
-        genForcreateManualBackup();
+        genForCreateManualBackup();
 
-    private static HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> genForcreateManualBackup() {
+    private static HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> genForCreateManualBackup() {
         // basic
         HttpRequestDef.Builder<CreateManualBackupRequest, CreateManualBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateManualBackupRequest.class, CreateManualBackupResponse.class)
@@ -577,16 +525,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateManualBackupRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateManualBackupRequest::getXLanguage, CreateManualBackupRequest::setXLanguage));
         builder.<CreateManualBackupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateManualBackupRequestBody.class),
-            f -> f.withMarshaller(CreateManualBackupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateManualBackupRequest::getBody, CreateManualBackupRequest::setBody));
 
         // response
 
@@ -594,9 +538,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> createRestoreInstance =
-        genForcreateRestoreInstance();
+        genForCreateRestoreInstance();
 
-    private static HttpRequestDef<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> genForcreateRestoreInstance() {
+    private static HttpRequestDef<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> genForCreateRestoreInstance() {
         // basic
         HttpRequestDef.Builder<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateRestoreInstanceRequest.class, CreateRestoreInstanceResponse.class)
@@ -609,16 +553,13 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateRestoreInstanceRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CreateRestoreInstanceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateRestoreInstanceRequest::getXLanguage,
+                CreateRestoreInstanceRequest::setXLanguage));
         builder.<OpengaussRestoreInstanceRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpengaussRestoreInstanceRequest.class),
-            f -> f.withMarshaller(CreateRestoreInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRestoreInstanceRequest::getBody, CreateRestoreInstanceRequest::setBody));
 
         // response
 
@@ -626,9 +567,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfiguration =
-        genFordeleteConfiguration();
+        genForDeleteConfiguration();
 
-    private static HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> genFordeleteConfiguration() {
+    private static HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> genForDeleteConfiguration() {
         // basic
         HttpRequestDef.Builder<DeleteConfigurationRequest, DeleteConfigurationResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteConfigurationRequest.class, DeleteConfigurationResponse.class)
@@ -641,16 +582,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConfigurationRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(DeleteConfigurationRequest::getConfigId, DeleteConfigurationRequest::setConfigId));
         builder.<DeleteConfigurationRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteConfigurationRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(DeleteConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteConfigurationRequest::getXLanguage, DeleteConfigurationRequest::setXLanguage));
 
         // response
 
@@ -658,9 +595,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabase =
-        genFordeleteDatabase();
+        genForDeleteDatabase();
 
-    private static HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> genFordeleteDatabase() {
+    private static HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> genForDeleteDatabase() {
         // basic
         HttpRequestDef.Builder<DeleteDatabaseRequest, DeleteDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabaseRequest.class, DeleteDatabaseResponse.class)
@@ -673,23 +610,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getInstanceId, DeleteDatabaseRequest::setInstanceId));
         builder.<String>withRequestField("database_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getDatabaseName, DeleteDatabaseRequest::setDatabaseName));
         builder.<DeleteDatabaseRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteDatabaseRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteDatabaseRequest::getXLanguage, DeleteDatabaseRequest::setXLanguage));
 
         // response
 
@@ -697,9 +628,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
-        genFordeleteInstance();
+        genForDeleteInstance();
 
-    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genFordeleteInstance() {
+    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genForDeleteInstance() {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
@@ -712,25 +643,21 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstanceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteInstanceRequest::getXLanguage, DeleteInstanceRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genFordeleteJob();
+    public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genForDeleteJob();
 
-    private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genFordeleteJob() {
+    private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genForDeleteJob() {
         // basic
         HttpRequestDef.Builder<DeleteJobRequest, DeleteJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobRequest.class, DeleteJobResponse.class)
@@ -743,16 +670,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteJobRequest::getJobId, DeleteJobRequest::setJobId));
         builder.<DeleteJobRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteJobRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(DeleteJobRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteJobRequest::getXLanguage, DeleteJobRequest::setXLanguage));
 
         // response
 
@@ -760,9 +683,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackup =
-        genFordeleteManualBackup();
+        genForDeleteManualBackup();
 
-    private static HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> genFordeleteManualBackup() {
+    private static HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> genForDeleteManualBackup() {
         // basic
         HttpRequestDef.Builder<DeleteManualBackupRequest, DeleteManualBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteManualBackupRequest.class, DeleteManualBackupResponse.class)
@@ -775,16 +698,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteManualBackupRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(DeleteManualBackupRequest::getBackupId, DeleteManualBackupRequest::setBackupId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteManualBackupRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteManualBackupRequest::getXLanguage, DeleteManualBackupRequest::setXLanguage));
 
         // response
 
@@ -792,9 +711,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<DownloadBackupRequest, DownloadBackupResponse> downloadBackup =
-        genFordownloadBackup();
+        genForDownloadBackup();
 
-    private static HttpRequestDef<DownloadBackupRequest, DownloadBackupResponse> genFordownloadBackup() {
+    private static HttpRequestDef<DownloadBackupRequest, DownloadBackupResponse> genForDownloadBackup() {
         // basic
         HttpRequestDef.Builder<DownloadBackupRequest, DownloadBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadBackupRequest.class, DownloadBackupResponse.class)
@@ -807,16 +726,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadBackupRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(DownloadBackupRequest::getBackupId, DownloadBackupRequest::setBackupId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadBackupRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DownloadBackupRequest::getXLanguage, DownloadBackupRequest::setXLanguage));
 
         // response
 
@@ -824,9 +739,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListApplicableInstancesRequest, ListApplicableInstancesResponse> listApplicableInstances =
-        genForlistApplicableInstances();
+        genForListApplicableInstances();
 
-    private static HttpRequestDef<ListApplicableInstancesRequest, ListApplicableInstancesResponse> genForlistApplicableInstances() {
+    private static HttpRequestDef<ListApplicableInstancesRequest, ListApplicableInstancesResponse> genForListApplicableInstances() {
         // basic
         HttpRequestDef.Builder<ListApplicableInstancesRequest, ListApplicableInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListApplicableInstancesRequest.class, ListApplicableInstancesResponse.class)
@@ -839,30 +754,25 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplicableInstancesRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ListApplicableInstancesRequest::getConfigId,
+                ListApplicableInstancesRequest::setConfigId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApplicableInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApplicableInstancesRequest::getOffset,
+                ListApplicableInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApplicableInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApplicableInstancesRequest::getLimit, ListApplicableInstancesRequest::setLimit));
         builder.<ListApplicableInstancesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApplicableInstancesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListApplicableInstancesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListApplicableInstancesRequest::getXLanguage,
+                ListApplicableInstancesRequest::setXLanguage));
 
         // response
 
@@ -870,9 +780,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListAppliedHistoriesRequest, ListAppliedHistoriesResponse> listAppliedHistories =
-        genForlistAppliedHistories();
+        genForListAppliedHistories();
 
-    private static HttpRequestDef<ListAppliedHistoriesRequest, ListAppliedHistoriesResponse> genForlistAppliedHistories() {
+    private static HttpRequestDef<ListAppliedHistoriesRequest, ListAppliedHistoriesResponse> genForListAppliedHistories() {
         // basic
         HttpRequestDef.Builder<ListAppliedHistoriesRequest, ListAppliedHistoriesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAppliedHistoriesRequest.class, ListAppliedHistoriesResponse.class)
@@ -885,30 +795,23 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppliedHistoriesRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ListAppliedHistoriesRequest::getConfigId, ListAppliedHistoriesRequest::setConfigId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppliedHistoriesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppliedHistoriesRequest::getOffset, ListAppliedHistoriesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppliedHistoriesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppliedHistoriesRequest::getLimit, ListAppliedHistoriesRequest::setLimit));
         builder.<ListAppliedHistoriesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAppliedHistoriesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListAppliedHistoriesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAppliedHistoriesRequest::getXLanguage,
+                ListAppliedHistoriesRequest::setXLanguage));
 
         // response
 
@@ -916,9 +819,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListAvailableFlavorsRequest, ListAvailableFlavorsResponse> listAvailableFlavors =
-        genForlistAvailableFlavors();
+        genForListAvailableFlavors();
 
-    private static HttpRequestDef<ListAvailableFlavorsRequest, ListAvailableFlavorsResponse> genForlistAvailableFlavors() {
+    private static HttpRequestDef<ListAvailableFlavorsRequest, ListAvailableFlavorsResponse> genForListAvailableFlavors() {
         // basic
         HttpRequestDef.Builder<ListAvailableFlavorsRequest, ListAvailableFlavorsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAvailableFlavorsRequest.class, ListAvailableFlavorsResponse.class)
@@ -931,39 +834,33 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAvailableFlavorsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAvailableFlavorsRequest::getInstanceId,
+                ListAvailableFlavorsRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAvailableFlavorsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAvailableFlavorsRequest::getOffset, ListAvailableFlavorsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAvailableFlavorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAvailableFlavorsRequest::getLimit, ListAvailableFlavorsRequest::setLimit));
         builder.<ListAvailableFlavorsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAvailableFlavorsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListAvailableFlavorsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAvailableFlavorsRequest::getXLanguage,
+                ListAvailableFlavorsRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBackupsRequest, ListBackupsResponse> listBackups = genForlistBackups();
+    public static final HttpRequestDef<ListBackupsRequest, ListBackupsResponse> listBackups = genForListBackups();
 
-    private static HttpRequestDef<ListBackupsRequest, ListBackupsResponse> genForlistBackups() {
+    private static HttpRequestDef<ListBackupsRequest, ListBackupsResponse> genForListBackups() {
         // basic
         HttpRequestDef.Builder<ListBackupsRequest, ListBackupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackupsRequest.class, ListBackupsResponse.class)
@@ -976,58 +873,42 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getInstanceId, ListBackupsRequest::setInstanceId));
         builder.<String>withRequestField("backup_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getBackupId, ListBackupsRequest::setBackupId));
         builder.<ListBackupsRequest.BackupTypeEnum>withRequestField("backup_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBackupsRequest.BackupTypeEnum.class),
-            f -> f.withMarshaller(ListBackupsRequest::getBackupType, (req, v) -> {
-                req.setBackupType(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getBackupType, ListBackupsRequest::setBackupType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getOffset, ListBackupsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getLimit, ListBackupsRequest::setLimit));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getBeginTime, ListBackupsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getEndTime, ListBackupsRequest::setEndTime));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListBackupsRequest::getXLanguage, ListBackupsRequest::setXLanguage));
 
         // response
 
@@ -1035,9 +916,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListBindedEipsRequest, ListBindedEipsResponse> listBindedEips =
-        genForlistBindedEips();
+        genForListBindedEips();
 
-    private static HttpRequestDef<ListBindedEipsRequest, ListBindedEipsResponse> genForlistBindedEips() {
+    private static HttpRequestDef<ListBindedEipsRequest, ListBindedEipsResponse> genForListBindedEips() {
         // basic
         HttpRequestDef.Builder<ListBindedEipsRequest, ListBindedEipsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBindedEipsRequest.class, ListBindedEipsResponse.class)
@@ -1050,30 +931,22 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBindedEipsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBindedEipsRequest::getInstanceId, ListBindedEipsRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBindedEipsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBindedEipsRequest::getOffset, ListBindedEipsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBindedEipsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBindedEipsRequest::getLimit, ListBindedEipsRequest::setLimit));
         builder.<ListBindedEipsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBindedEipsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListBindedEipsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListBindedEipsRequest::getXLanguage, ListBindedEipsRequest::setXLanguage));
 
         // response
 
@@ -1081,9 +954,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListComponentInfosRequest, ListComponentInfosResponse> listComponentInfos =
-        genForlistComponentInfos();
+        genForListComponentInfos();
 
-    private static HttpRequestDef<ListComponentInfosRequest, ListComponentInfosResponse> genForlistComponentInfos() {
+    private static HttpRequestDef<ListComponentInfosRequest, ListComponentInfosResponse> genForListComponentInfos() {
         // basic
         HttpRequestDef.Builder<ListComponentInfosRequest, ListComponentInfosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListComponentInfosRequest.class, ListComponentInfosResponse.class)
@@ -1096,44 +969,34 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentInfosRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListComponentInfosRequest::getInstanceId, ListComponentInfosRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListComponentInfosRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListComponentInfosRequest::getOffset, ListComponentInfosRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListComponentInfosRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListComponentInfosRequest::getLimit, ListComponentInfosRequest::setLimit));
         builder.<ListComponentInfosRequest.ComponentTypeEnum>withRequestField("component_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListComponentInfosRequest.ComponentTypeEnum.class),
-            f -> f.withMarshaller(ListComponentInfosRequest::getComponentType, (req, v) -> {
-                req.setComponentType(v);
-            }));
+            f -> f.withMarshaller(ListComponentInfosRequest::getComponentType,
+                ListComponentInfosRequest::setComponentType));
         builder.<String>withRequestField("availability_zone_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentInfosRequest::getAvailabilityZoneId, (req, v) -> {
-                req.setAvailabilityZoneId(v);
-            }));
+            f -> f.withMarshaller(ListComponentInfosRequest::getAvailabilityZoneId,
+                ListComponentInfosRequest::setAvailabilityZoneId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentInfosRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListComponentInfosRequest::getXLanguage, ListComponentInfosRequest::setXLanguage));
 
         // response
 
@@ -1141,9 +1004,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurations =
-        genForlistConfigurations();
+        genForListConfigurations();
 
-    private static HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> genForlistConfigurations() {
+    private static HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> genForListConfigurations() {
         // basic
         HttpRequestDef.Builder<ListConfigurationsRequest, ListConfigurationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConfigurationsRequest.class, ListConfigurationsResponse.class)
@@ -1156,23 +1019,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigurationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsRequest::getOffset, ListConfigurationsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigurationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsRequest::getLimit, ListConfigurationsRequest::setLimit));
         builder.<ListConfigurationsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListConfigurationsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListConfigurationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsRequest::getXLanguage, ListConfigurationsRequest::setXLanguage));
 
         // response
 
@@ -1180,9 +1037,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse> listConfigurationsDiff =
-        genForlistConfigurationsDiff();
+        genForListConfigurationsDiff();
 
-    private static HttpRequestDef<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse> genForlistConfigurationsDiff() {
+    private static HttpRequestDef<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse> genForListConfigurationsDiff() {
         // basic
         HttpRequestDef.Builder<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListConfigurationsDiffRequest.class, ListConfigurationsDiffResponse.class)
@@ -1195,16 +1052,13 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListConfigurationsDiffRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListConfigurationsDiffRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsDiffRequest::getXLanguage,
+                ListConfigurationsDiffRequest::setXLanguage));
         builder.<ParamGroupDiffRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ParamGroupDiffRequestBody.class),
-            f -> f.withMarshaller(ListConfigurationsDiffRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsDiffRequest::getBody, ListConfigurationsDiffRequest::setBody));
 
         // response
 
@@ -1212,9 +1066,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse> listDatabaseSchemas =
-        genForlistDatabaseSchemas();
+        genForListDatabaseSchemas();
 
-    private static HttpRequestDef<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse> genForlistDatabaseSchemas() {
+    private static HttpRequestDef<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse> genForListDatabaseSchemas() {
         // basic
         HttpRequestDef.Builder<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatabaseSchemasRequest.class, ListDatabaseSchemasResponse.class)
@@ -1227,37 +1081,28 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabaseSchemasRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDatabaseSchemasRequest::getInstanceId,
+                ListDatabaseSchemasRequest::setInstanceId));
         builder.<String>withRequestField("db_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabaseSchemasRequest::getDbName, (req, v) -> {
-                req.setDbName(v);
-            }));
+            f -> f.withMarshaller(ListDatabaseSchemasRequest::getDbName, ListDatabaseSchemasRequest::setDbName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatabaseSchemasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDatabaseSchemasRequest::getOffset, ListDatabaseSchemasRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatabaseSchemasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDatabaseSchemasRequest::getLimit, ListDatabaseSchemasRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabaseSchemasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListDatabaseSchemasRequest::getXLanguage, ListDatabaseSchemasRequest::setXLanguage));
 
         // response
 
@@ -1265,9 +1110,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> listDatabases =
-        genForlistDatabases();
+        genForListDatabases();
 
-    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForlistDatabases() {
+    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForListDatabases() {
         // basic
         HttpRequestDef.Builder<ListDatabasesRequest, ListDatabasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatabasesRequest.class, ListDatabasesResponse.class)
@@ -1280,30 +1125,22 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getInstanceId, ListDatabasesRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getOffset, ListDatabasesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getLimit, ListDatabasesRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListDatabasesRequest::getXLanguage, ListDatabasesRequest::setXLanguage));
 
         // response
 
@@ -1311,9 +1148,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListDatastoresRequest, ListDatastoresResponse> listDatastores =
-        genForlistDatastores();
+        genForListDatastores();
 
-    private static HttpRequestDef<ListDatastoresRequest, ListDatastoresResponse> genForlistDatastores() {
+    private static HttpRequestDef<ListDatastoresRequest, ListDatastoresResponse> genForListDatastores() {
         // basic
         HttpRequestDef.Builder<ListDatastoresRequest, ListDatastoresResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatastoresRequest.class, ListDatastoresResponse.class)
@@ -1326,9 +1163,7 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatastoresRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListDatastoresRequest::getXLanguage, ListDatastoresRequest::setXLanguage));
 
         // response
 
@@ -1336,9 +1171,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListDbBackupsRequest, ListDbBackupsResponse> listDbBackups =
-        genForlistDbBackups();
+        genForListDbBackups();
 
-    private static HttpRequestDef<ListDbBackupsRequest, ListDbBackupsResponse> genForlistDbBackups() {
+    private static HttpRequestDef<ListDbBackupsRequest, ListDbBackupsResponse> genForListDbBackups() {
         // basic
         HttpRequestDef.Builder<ListDbBackupsRequest, ListDbBackupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDbBackupsRequest.class, ListDbBackupsResponse.class)
@@ -1351,58 +1186,42 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbBackupsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDbBackupsRequest::getInstanceId, ListDbBackupsRequest::setInstanceId));
         builder.<String>withRequestField("backup_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbBackupsRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ListDbBackupsRequest::getBackupId, ListDbBackupsRequest::setBackupId));
         builder.<ListDbBackupsRequest.BackupTypeEnum>withRequestField("backup_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDbBackupsRequest.BackupTypeEnum.class),
-            f -> f.withMarshaller(ListDbBackupsRequest::getBackupType, (req, v) -> {
-                req.setBackupType(v);
-            }));
+            f -> f.withMarshaller(ListDbBackupsRequest::getBackupType, ListDbBackupsRequest::setBackupType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbBackupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDbBackupsRequest::getOffset, ListDbBackupsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbBackupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDbBackupsRequest::getLimit, ListDbBackupsRequest::setLimit));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbBackupsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListDbBackupsRequest::getBeginTime, ListDbBackupsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbBackupsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListDbBackupsRequest::getEndTime, ListDbBackupsRequest::setEndTime));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbBackupsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListDbBackupsRequest::getXLanguage, ListDbBackupsRequest::setXLanguage));
 
         // response
 
@@ -1410,9 +1229,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListDbFlavorsRequest, ListDbFlavorsResponse> listDbFlavors =
-        genForlistDbFlavors();
+        genForListDbFlavors();
 
-    private static HttpRequestDef<ListDbFlavorsRequest, ListDbFlavorsResponse> genForlistDbFlavors() {
+    private static HttpRequestDef<ListDbFlavorsRequest, ListDbFlavorsResponse> genForListDbFlavors() {
         // basic
         HttpRequestDef.Builder<ListDbFlavorsRequest, ListDbFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDbFlavorsRequest.class, ListDbFlavorsResponse.class)
@@ -1425,53 +1244,41 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbFlavorsRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ListDbFlavorsRequest::getVersion, ListDbFlavorsRequest::setVersion));
         builder.<String>withRequestField("spec_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbFlavorsRequest::getSpecCode, (req, v) -> {
-                req.setSpecCode(v);
-            }));
+            f -> f.withMarshaller(ListDbFlavorsRequest::getSpecCode, ListDbFlavorsRequest::setSpecCode));
         builder.<String>withRequestField("ha_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbFlavorsRequest::getHaMode, (req, v) -> {
-                req.setHaMode(v);
-            }));
+            f -> f.withMarshaller(ListDbFlavorsRequest::getHaMode, ListDbFlavorsRequest::setHaMode));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbFlavorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDbFlavorsRequest::getLimit, ListDbFlavorsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbFlavorsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDbFlavorsRequest::getOffset, ListDbFlavorsRequest::setOffset));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbFlavorsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListDbFlavorsRequest::getXLanguage, ListDbFlavorsRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> listDbUsers = genForlistDbUsers();
+    public static final HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> listDbUsers = genForListDbUsers();
 
-    private static HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> genForlistDbUsers() {
+    private static HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> genForListDbUsers() {
         // basic
         HttpRequestDef.Builder<ListDbUsersRequest, ListDbUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDbUsersRequest.class, ListDbUsersResponse.class)
@@ -1484,30 +1291,22 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getInstanceId, ListDbUsersRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getOffset, ListDbUsersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getLimit, ListDbUsersRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbUsersRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListDbUsersRequest::getXLanguage, ListDbUsersRequest::setXLanguage));
 
         // response
 
@@ -1515,9 +1314,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListEpsQuotasRequest, ListEpsQuotasResponse> listEpsQuotas =
-        genForlistEpsQuotas();
+        genForListEpsQuotas();
 
-    private static HttpRequestDef<ListEpsQuotasRequest, ListEpsQuotasResponse> genForlistEpsQuotas() {
+    private static HttpRequestDef<ListEpsQuotasRequest, ListEpsQuotasResponse> genForListEpsQuotas() {
         // basic
         HttpRequestDef.Builder<ListEpsQuotasRequest, ListEpsQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEpsQuotasRequest.class, ListEpsQuotasResponse.class)
@@ -1530,39 +1329,32 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEpsQuotasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEpsQuotasRequest::getOffset, ListEpsQuotasRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEpsQuotasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEpsQuotasRequest::getLimit, ListEpsQuotasRequest::setLimit));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEpsQuotasRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListEpsQuotasRequest::getEnterpriseProjectId,
+                ListEpsQuotasRequest::setEnterpriseProjectId));
         builder.<ListEpsQuotasRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEpsQuotasRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListEpsQuotasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListEpsQuotasRequest::getXLanguage, ListEpsQuotasRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
+    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForListFlavors();
 
-    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
+    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForListFlavors() {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
@@ -1575,44 +1367,32 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getVersion, ListFlavorsRequest::setVersion));
         builder.<String>withRequestField("spec_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getSpecCode, (req, v) -> {
-                req.setSpecCode(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getSpecCode, ListFlavorsRequest::setSpecCode));
         builder.<String>withRequestField("ha_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getHaMode, (req, v) -> {
-                req.setHaMode(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getHaMode, ListFlavorsRequest::setHaMode));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getLimit, ListFlavorsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getOffset, ListFlavorsRequest::setOffset));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getXLanguage, ListFlavorsRequest::setXLanguage));
 
         // response
 
@@ -1620,9 +1400,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse> listGaussDbDatastores =
-        genForlistGaussDbDatastores();
+        genForListGaussDbDatastores();
 
-    private static HttpRequestDef<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse> genForlistGaussDbDatastores() {
+    private static HttpRequestDef<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse> genForListGaussDbDatastores() {
         // basic
         HttpRequestDef.Builder<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListGaussDbDatastoresRequest.class, ListGaussDbDatastoresResponse.class)
@@ -1635,9 +1415,8 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListGaussDbDatastoresRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListGaussDbDatastoresRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListGaussDbDatastoresRequest::getXLanguage,
+                ListGaussDbDatastoresRequest::setXLanguage));
 
         // response
 
@@ -1645,9 +1424,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListHistoryOperationsRequest, ListHistoryOperationsResponse> listHistoryOperations =
-        genForlistHistoryOperations();
+        genForListHistoryOperations();
 
-    private static HttpRequestDef<ListHistoryOperationsRequest, ListHistoryOperationsResponse> genForlistHistoryOperations() {
+    private static HttpRequestDef<ListHistoryOperationsRequest, ListHistoryOperationsResponse> genForListHistoryOperations() {
         // basic
         HttpRequestDef.Builder<ListHistoryOperationsRequest, ListHistoryOperationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListHistoryOperationsRequest.class, ListHistoryOperationsResponse.class)
@@ -1660,30 +1439,24 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryOperationsRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperationsRequest::getConfigId,
+                ListHistoryOperationsRequest::setConfigId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryOperationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperationsRequest::getOffset, ListHistoryOperationsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryOperationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperationsRequest::getLimit, ListHistoryOperationsRequest::setLimit));
         builder.<ListHistoryOperationsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListHistoryOperationsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListHistoryOperationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperationsRequest::getXLanguage,
+                ListHistoryOperationsRequest::setXLanguage));
 
         // response
 
@@ -1691,9 +1464,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
-        genForlistInstanceTags();
+        genForListInstanceTags();
 
-    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForlistInstanceTags() {
+    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForListInstanceTags() {
         // basic
         HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
@@ -1706,16 +1479,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, ListInstanceTagsRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getXLanguage, ListInstanceTagsRequest::setXLanguage));
 
         // response
 
@@ -1723,9 +1492,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
-        genForlistInstances();
+        genForListInstances();
 
-    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
@@ -1738,79 +1507,57 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getId, ListInstancesRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getName, ListInstancesRequest::setName));
         builder.<ListInstancesRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getType, ListInstancesRequest::setType));
         builder.<ListInstancesRequest.DatastoreTypeEnum>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.DatastoreTypeEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getDatastoreType, ListInstancesRequest::setDatastoreType));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getVpcId, ListInstancesRequest::setVpcId));
         builder.<String>withRequestField("subnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getSubnetId, (req, v) -> {
-                req.setSubnetId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getSubnetId, ListInstancesRequest::setSubnetId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, ListInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
         builder.<List<String>>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListInstancesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getTags, ListInstancesRequest::setTags));
         builder.<ListInstancesRequest.ChargeModeEnum>withRequestField("charge_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.ChargeModeEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getChargeMode, (req, v) -> {
-                req.setChargeMode(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getChargeMode, ListInstancesRequest::setChargeMode));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getXLanguage, ListInstancesRequest::setXLanguage));
 
         // response
 
@@ -1818,9 +1565,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListInstancesDetailsRequest, ListInstancesDetailsResponse> listInstancesDetails =
-        genForlistInstancesDetails();
+        genForListInstancesDetails();
 
-    private static HttpRequestDef<ListInstancesDetailsRequest, ListInstancesDetailsResponse> genForlistInstancesDetails() {
+    private static HttpRequestDef<ListInstancesDetailsRequest, ListInstancesDetailsResponse> genForListInstancesDetails() {
         // basic
         HttpRequestDef.Builder<ListInstancesDetailsRequest, ListInstancesDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListInstancesDetailsRequest.class, ListInstancesDetailsResponse.class)
@@ -1833,79 +1580,60 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getId, ListInstancesDetailsRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getName, ListInstancesDetailsRequest::setName));
         builder.<ListInstancesDetailsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getType, ListInstancesDetailsRequest::setType));
         builder.<ListInstancesDetailsRequest.DatastoreTypeEnum>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.DatastoreTypeEnum.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getDatastoreType, (req, v) -> {
-                req.setDatastoreType(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getDatastoreType,
+                ListInstancesDetailsRequest::setDatastoreType));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getVpcId, ListInstancesDetailsRequest::setVpcId));
         builder.<String>withRequestField("subnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getSubnetId, (req, v) -> {
-                req.setSubnetId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getSubnetId, ListInstancesDetailsRequest::setSubnetId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getOffset, ListInstancesDetailsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getLimit, ListInstancesDetailsRequest::setLimit));
         builder.<List<String>>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getTags, ListInstancesDetailsRequest::setTags));
         builder.<ListInstancesDetailsRequest.ChargeModeEnum>withRequestField("charge_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.ChargeModeEnum.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getChargeMode, (req, v) -> {
-                req.setChargeMode(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getChargeMode,
+                ListInstancesDetailsRequest::setChargeMode));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesDetailsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getXLanguage,
+                ListInstancesDetailsRequest::setXLanguage));
 
         // response
 
@@ -1913,9 +1641,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse> listParamGroupTemplates =
-        genForlistParamGroupTemplates();
+        genForListParamGroupTemplates();
 
-    private static HttpRequestDef<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse> genForlistParamGroupTemplates() {
+    private static HttpRequestDef<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse> genForListParamGroupTemplates() {
         // basic
         HttpRequestDef.Builder<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListParamGroupTemplatesRequest.class, ListParamGroupTemplatesResponse.class)
@@ -1928,23 +1656,19 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListParamGroupTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListParamGroupTemplatesRequest::getOffset,
+                ListParamGroupTemplatesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListParamGroupTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListParamGroupTemplatesRequest::getLimit, ListParamGroupTemplatesRequest::setLimit));
         builder.<ListParamGroupTemplatesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListParamGroupTemplatesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListParamGroupTemplatesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListParamGroupTemplatesRequest::getXLanguage,
+                ListParamGroupTemplatesRequest::setXLanguage));
 
         // response
 
@@ -1952,9 +1676,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListPredefinedTagsRequest, ListPredefinedTagsResponse> listPredefinedTags =
-        genForlistPredefinedTags();
+        genForListPredefinedTags();
 
-    private static HttpRequestDef<ListPredefinedTagsRequest, ListPredefinedTagsResponse> genForlistPredefinedTags() {
+    private static HttpRequestDef<ListPredefinedTagsRequest, ListPredefinedTagsResponse> genForListPredefinedTags() {
         // basic
         HttpRequestDef.Builder<ListPredefinedTagsRequest, ListPredefinedTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPredefinedTagsRequest.class, ListPredefinedTagsResponse.class)
@@ -1967,9 +1691,7 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPredefinedTagsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListPredefinedTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListPredefinedTagsRequest::getXLanguage, ListPredefinedTagsRequest::setXLanguage));
 
         // response
 
@@ -1977,9 +1699,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
-        genForlistProjectTags();
+        genForListProjectTags();
 
-    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForListProjectTags() {
         // basic
         HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
@@ -1992,9 +1714,7 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getXLanguage, ListProjectTagsRequest::setXLanguage));
 
         // response
 
@@ -2002,9 +1722,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstances =
-        genForlistRecycleInstances();
+        genForListRecycleInstances();
 
-    private static HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> genForlistRecycleInstances() {
+    private static HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> genForListRecycleInstances() {
         // basic
         HttpRequestDef.Builder<ListRecycleInstancesRequest, ListRecycleInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRecycleInstancesRequest.class, ListRecycleInstancesResponse.class)
@@ -2017,30 +1737,24 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecycleInstancesRequest::getInstanceName, (req, v) -> {
-                req.setInstanceName(v);
-            }));
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getInstanceName,
+                ListRecycleInstancesRequest::setInstanceName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecycleInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getOffset, ListRecycleInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecycleInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getLimit, ListRecycleInstancesRequest::setLimit));
         builder.<ListRecycleInstancesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRecycleInstancesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListRecycleInstancesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getXLanguage,
+                ListRecycleInstancesRequest::setXLanguage));
 
         // response
 
@@ -2048,9 +1762,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListRestorableInstancesRequest, ListRestorableInstancesResponse> listRestorableInstances =
-        genForlistRestorableInstances();
+        genForListRestorableInstances();
 
-    private static HttpRequestDef<ListRestorableInstancesRequest, ListRestorableInstancesResponse> genForlistRestorableInstances() {
+    private static HttpRequestDef<ListRestorableInstancesRequest, ListRestorableInstancesResponse> genForListRestorableInstances() {
         // basic
         HttpRequestDef.Builder<ListRestorableInstancesRequest, ListRestorableInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRestorableInstancesRequest.class, ListRestorableInstancesResponse.class)
@@ -2063,44 +1777,37 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestorableInstancesRequest::getSourceInstanceId, (req, v) -> {
-                req.setSourceInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRestorableInstancesRequest::getSourceInstanceId,
+                ListRestorableInstancesRequest::setSourceInstanceId));
         builder.<String>withRequestField("backup_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestorableInstancesRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ListRestorableInstancesRequest::getBackupId,
+                ListRestorableInstancesRequest::setBackupId));
         builder.<String>withRequestField("restore_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestorableInstancesRequest::getRestoreTime, (req, v) -> {
-                req.setRestoreTime(v);
-            }));
+            f -> f.withMarshaller(ListRestorableInstancesRequest::getRestoreTime,
+                ListRestorableInstancesRequest::setRestoreTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRestorableInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRestorableInstancesRequest::getOffset,
+                ListRestorableInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRestorableInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRestorableInstancesRequest::getLimit, ListRestorableInstancesRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestorableInstancesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListRestorableInstancesRequest::getXLanguage,
+                ListRestorableInstancesRequest::setXLanguage));
 
         // response
 
@@ -2108,9 +1815,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimes =
-        genForlistRestoreTimes();
+        genForListRestoreTimes();
 
-    private static HttpRequestDef<ListRestoreTimesRequest, ListRestoreTimesResponse> genForlistRestoreTimes() {
+    private static HttpRequestDef<ListRestoreTimesRequest, ListRestoreTimesResponse> genForListRestoreTimes() {
         // basic
         HttpRequestDef.Builder<ListRestoreTimesRequest, ListRestoreTimesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRestoreTimesRequest.class, ListRestoreTimesResponse.class)
@@ -2123,23 +1830,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreTimesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTimesRequest::getInstanceId, ListRestoreTimesRequest::setInstanceId));
         builder.<String>withRequestField("date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreTimesRequest::getDate, (req, v) -> {
-                req.setDate(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTimesRequest::getDate, ListRestoreTimesRequest::setDate));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreTimesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListRestoreTimesRequest::getXLanguage, ListRestoreTimesRequest::setXLanguage));
 
         // response
 
@@ -2147,9 +1848,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypes =
-        genForlistStorageTypes();
+        genForListStorageTypes();
 
-    private static HttpRequestDef<ListStorageTypesRequest, ListStorageTypesResponse> genForlistStorageTypes() {
+    private static HttpRequestDef<ListStorageTypesRequest, ListStorageTypesResponse> genForListStorageTypes() {
         // basic
         HttpRequestDef.Builder<ListStorageTypesRequest, ListStorageTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStorageTypesRequest.class, ListStorageTypesResponse.class)
@@ -2162,32 +1863,26 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStorageTypesRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ListStorageTypesRequest::getVersion, ListStorageTypesRequest::setVersion));
         builder.<ListStorageTypesRequest.HaModeEnum>withRequestField("ha_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListStorageTypesRequest.HaModeEnum.class),
-            f -> f.withMarshaller(ListStorageTypesRequest::getHaMode, (req, v) -> {
-                req.setHaMode(v);
-            }));
+            f -> f.withMarshaller(ListStorageTypesRequest::getHaMode, ListStorageTypesRequest::setHaMode));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStorageTypesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListStorageTypesRequest::getXLanguage, ListStorageTypesRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForlistTasks();
+    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForListTasks();
 
-    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForlistTasks() {
+    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForListTasks() {
         // basic
         HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
@@ -2200,51 +1895,37 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTasksRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListTasksRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getStatus, ListTasksRequest::setStatus));
         builder.<ListTasksRequest.NameEnum>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTasksRequest.NameEnum.class),
-            f -> f.withMarshaller(ListTasksRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getName, ListTasksRequest::setName));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getStartTime, ListTasksRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getEndTime, ListTasksRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getOffset, ListTasksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getLimit, ListTasksRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getXLanguage, ListTasksRequest::setXLanguage));
 
         // response
 
@@ -2252,9 +1933,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ModifyEpsQuotaRequest, ModifyEpsQuotaResponse> modifyEpsQuota =
-        genFormodifyEpsQuota();
+        genForModifyEpsQuota();
 
-    private static HttpRequestDef<ModifyEpsQuotaRequest, ModifyEpsQuotaResponse> genFormodifyEpsQuota() {
+    private static HttpRequestDef<ModifyEpsQuotaRequest, ModifyEpsQuotaResponse> genForModifyEpsQuota() {
         // basic
         HttpRequestDef.Builder<ModifyEpsQuotaRequest, ModifyEpsQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyEpsQuotaRequest.class, ModifyEpsQuotaResponse.class)
@@ -2267,16 +1948,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ModifyEpsQuotaRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ModifyEpsQuotaRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ModifyEpsQuotaRequest::getXLanguage, ModifyEpsQuotaRequest::setXLanguage));
         builder.<ModifyEpsQuotaRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyEpsQuotaRequestBody.class),
-            f -> f.withMarshaller(ModifyEpsQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyEpsQuotaRequest::getBody, ModifyEpsQuotaRequest::setBody));
 
         // response
 
@@ -2284,9 +1961,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ResetConfigurationRequest, ResetConfigurationResponse> resetConfiguration =
-        genForresetConfiguration();
+        genForResetConfiguration();
 
-    private static HttpRequestDef<ResetConfigurationRequest, ResetConfigurationResponse> genForresetConfiguration() {
+    private static HttpRequestDef<ResetConfigurationRequest, ResetConfigurationResponse> genForResetConfiguration() {
         // basic
         HttpRequestDef.Builder<ResetConfigurationRequest, ResetConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetConfigurationRequest.class, ResetConfigurationResponse.class)
@@ -2299,32 +1976,26 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetConfigurationRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ResetConfigurationRequest::getConfigId, ResetConfigurationRequest::setConfigId));
         builder.<ResetConfigurationRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ResetConfigurationRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ResetConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ResetConfigurationRequest::getXLanguage, ResetConfigurationRequest::setXLanguage));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ResetConfigurationResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ResetConfigurationResponse::getBody, ResetConfigurationResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetPwdRequest, ResetPwdResponse> resetPwd = genForresetPwd();
+    public static final HttpRequestDef<ResetPwdRequest, ResetPwdResponse> resetPwd = genForResetPwd();
 
-    private static HttpRequestDef<ResetPwdRequest, ResetPwdResponse> genForresetPwd() {
+    private static HttpRequestDef<ResetPwdRequest, ResetPwdResponse> genForResetPwd() {
         // basic
         HttpRequestDef.Builder<ResetPwdRequest, ResetPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetPwdRequest.class, ResetPwdResponse.class)
@@ -2337,23 +2008,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPwdRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetPwdRequest::getInstanceId, ResetPwdRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPwdRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ResetPwdRequest::getXLanguage, ResetPwdRequest::setXLanguage));
         builder.<PwdResetRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PwdResetRequest.class),
-            f -> f.withMarshaller(ResetPwdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetPwdRequest::getBody, ResetPwdRequest::setBody));
 
         // response
 
@@ -2361,9 +2026,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse> resizeInstanceFlavor =
-        genForresizeInstanceFlavor();
+        genForResizeInstanceFlavor();
 
-    private static HttpRequestDef<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse> genForresizeInstanceFlavor() {
+    private static HttpRequestDef<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse> genForResizeInstanceFlavor() {
         // basic
         HttpRequestDef.Builder<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, ResizeInstanceFlavorRequest.class, ResizeInstanceFlavorResponse.class)
@@ -2376,23 +2041,19 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeInstanceFlavorRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceFlavorRequest::getInstanceId,
+                ResizeInstanceFlavorRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeInstanceFlavorRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceFlavorRequest::getXLanguage,
+                ResizeInstanceFlavorRequest::setXLanguage));
         builder.<OpenGaussResizeRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenGaussResizeRequest.class),
-            f -> f.withMarshaller(ResizeInstanceFlavorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceFlavorRequest::getBody, ResizeInstanceFlavorRequest::setBody));
 
         // response
 
@@ -2400,9 +2061,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> restartInstance =
-        genForrestartInstance();
+        genForRestartInstance();
 
-    private static HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> genForrestartInstance() {
+    private static HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> genForRestartInstance() {
         // basic
         HttpRequestDef.Builder<RestartInstanceRequest, RestartInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestartInstanceRequest.class, RestartInstanceResponse.class)
@@ -2415,16 +2076,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, RestartInstanceRequest::setInstanceId));
         builder.<RestartInstanceRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RestartInstanceRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(RestartInstanceRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(RestartInstanceRequest::getXLanguage, RestartInstanceRequest::setXLanguage));
 
         // response
 
@@ -2432,9 +2089,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<RunInstanceActionRequest, RunInstanceActionResponse> runInstanceAction =
-        genForrunInstanceAction();
+        genForRunInstanceAction();
 
-    private static HttpRequestDef<RunInstanceActionRequest, RunInstanceActionResponse> genForrunInstanceAction() {
+    private static HttpRequestDef<RunInstanceActionRequest, RunInstanceActionResponse> genForRunInstanceAction() {
         // basic
         HttpRequestDef.Builder<RunInstanceActionRequest, RunInstanceActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunInstanceActionRequest.class, RunInstanceActionResponse.class)
@@ -2447,23 +2104,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunInstanceActionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RunInstanceActionRequest::getInstanceId, RunInstanceActionRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunInstanceActionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(RunInstanceActionRequest::getXLanguage, RunInstanceActionRequest::setXLanguage));
         builder.<OpenGaussInstanceActionRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenGaussInstanceActionRequest.class),
-            f -> f.withMarshaller(RunInstanceActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunInstanceActionRequest::getBody, RunInstanceActionRequest::setBody));
 
         // response
 
@@ -2471,9 +2122,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicy =
-        genForsetBackupPolicy();
+        genForSetBackupPolicy();
 
-    private static HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> genForsetBackupPolicy() {
+    private static HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> genForSetBackupPolicy() {
         // basic
         HttpRequestDef.Builder<SetBackupPolicyRequest, SetBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetBackupPolicyRequest.class, SetBackupPolicyResponse.class)
@@ -2486,32 +2137,26 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetBackupPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SetBackupPolicyRequest::getInstanceId, SetBackupPolicyRequest::setInstanceId));
         builder.<SetBackupPolicyRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SetBackupPolicyRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(SetBackupPolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SetBackupPolicyRequest::getXLanguage, SetBackupPolicyRequest::setXLanguage));
         builder.<SetBackupPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetBackupPolicyRequestBody.class),
-            f -> f.withMarshaller(SetBackupPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetBackupPolicyRequest::getBody, SetBackupPolicyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetDbUserPwdRequest, SetDbUserPwdResponse> setDbUserPwd = genForsetDbUserPwd();
+    public static final HttpRequestDef<SetDbUserPwdRequest, SetDbUserPwdResponse> setDbUserPwd = genForSetDbUserPwd();
 
-    private static HttpRequestDef<SetDbUserPwdRequest, SetDbUserPwdResponse> genForsetDbUserPwd() {
+    private static HttpRequestDef<SetDbUserPwdRequest, SetDbUserPwdResponse> genForSetDbUserPwd() {
         // basic
         HttpRequestDef.Builder<SetDbUserPwdRequest, SetDbUserPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetDbUserPwdRequest.class, SetDbUserPwdResponse.class)
@@ -2524,23 +2169,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetDbUserPwdRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SetDbUserPwdRequest::getInstanceId, SetDbUserPwdRequest::setInstanceId));
         builder.<SetDbUserPwdRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SetDbUserPwdRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(SetDbUserPwdRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SetDbUserPwdRequest::getXLanguage, SetDbUserPwdRequest::setXLanguage));
         builder.<DbUserPwdRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DbUserPwdRequest.class),
-            f -> f.withMarshaller(SetDbUserPwdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetDbUserPwdRequest::getBody, SetDbUserPwdRequest::setBody));
 
         // response
 
@@ -2548,9 +2187,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicy =
-        genForsetRecyclePolicy();
+        genForSetRecyclePolicy();
 
-    private static HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> genForsetRecyclePolicy() {
+    private static HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> genForSetRecyclePolicy() {
         // basic
         HttpRequestDef.Builder<SetRecyclePolicyRequest, SetRecyclePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetRecyclePolicyRequest.class, SetRecyclePolicyResponse.class)
@@ -2563,9 +2202,7 @@ public class GaussDBforopenGaussMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecyclePolicyRequestBody.class),
-            f -> f.withMarshaller(SetRecyclePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetRecyclePolicyRequest::getBody, SetRecyclePolicyRequest::setBody));
 
         // response
 
@@ -2573,9 +2210,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicy =
-        genForshowBackupPolicy();
+        genForShowBackupPolicy();
 
-    private static HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> genForshowBackupPolicy() {
+    private static HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> genForShowBackupPolicy() {
         // basic
         HttpRequestDef.Builder<ShowBackupPolicyRequest, ShowBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackupPolicyRequest.class, ShowBackupPolicyResponse.class)
@@ -2588,16 +2225,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackupPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowBackupPolicyRequest::getInstanceId, ShowBackupPolicyRequest::setInstanceId));
         builder.<ShowBackupPolicyRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowBackupPolicyRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowBackupPolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowBackupPolicyRequest::getXLanguage, ShowBackupPolicyRequest::setXLanguage));
 
         // response
 
@@ -2605,9 +2238,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowBalanceStatusRequest, ShowBalanceStatusResponse> showBalanceStatus =
-        genForshowBalanceStatus();
+        genForShowBalanceStatus();
 
-    private static HttpRequestDef<ShowBalanceStatusRequest, ShowBalanceStatusResponse> genForshowBalanceStatus() {
+    private static HttpRequestDef<ShowBalanceStatusRequest, ShowBalanceStatusResponse> genForShowBalanceStatus() {
         // basic
         HttpRequestDef.Builder<ShowBalanceStatusRequest, ShowBalanceStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBalanceStatusRequest.class, ShowBalanceStatusResponse.class)
@@ -2620,16 +2253,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBalanceStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowBalanceStatusRequest::getInstanceId, ShowBalanceStatusRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBalanceStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowBalanceStatusRequest::getXLanguage, ShowBalanceStatusRequest::setXLanguage));
 
         // response
 
@@ -2637,9 +2266,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> showConfigurationDetail =
-        genForshowConfigurationDetail();
+        genForShowConfigurationDetail();
 
-    private static HttpRequestDef<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> genForshowConfigurationDetail() {
+    private static HttpRequestDef<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> genForShowConfigurationDetail() {
         // basic
         HttpRequestDef.Builder<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowConfigurationDetailRequest.class, ShowConfigurationDetailResponse.class)
@@ -2652,16 +2281,14 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigurationDetailRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(ShowConfigurationDetailRequest::getConfigId,
+                ShowConfigurationDetailRequest::setConfigId));
         builder.<ShowConfigurationDetailRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowConfigurationDetailRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowConfigurationDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowConfigurationDetailRequest::getXLanguage,
+                ShowConfigurationDetailRequest::setXLanguage));
 
         // response
 
@@ -2669,9 +2296,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowDeploymentFormRequest, ShowDeploymentFormResponse> showDeploymentForm =
-        genForshowDeploymentForm();
+        genForShowDeploymentForm();
 
-    private static HttpRequestDef<ShowDeploymentFormRequest, ShowDeploymentFormResponse> genForshowDeploymentForm() {
+    private static HttpRequestDef<ShowDeploymentFormRequest, ShowDeploymentFormResponse> genForShowDeploymentForm() {
         // basic
         HttpRequestDef.Builder<ShowDeploymentFormRequest, ShowDeploymentFormResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeploymentFormRequest.class, ShowDeploymentFormResponse.class)
@@ -2684,23 +2311,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDeploymentFormRequest.SolutionEnum.class),
-            f -> f.withMarshaller(ShowDeploymentFormRequest::getSolution, (req, v) -> {
-                req.setSolution(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentFormRequest::getSolution, ShowDeploymentFormRequest::setSolution));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentFormRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentFormRequest::getInstanceId, ShowDeploymentFormRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentFormRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentFormRequest::getXLanguage, ShowDeploymentFormRequest::setXLanguage));
 
         // response
 
@@ -2708,9 +2329,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfiguration =
-        genForshowInstanceConfiguration();
+        genForShowInstanceConfiguration();
 
-    private static HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> genForshowInstanceConfiguration() {
+    private static HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> genForShowInstanceConfiguration() {
         // basic
         HttpRequestDef.Builder<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> builder =
             HttpRequestDef
@@ -2726,16 +2347,14 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceConfigurationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceConfigurationRequest::getInstanceId,
+                ShowInstanceConfigurationRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceConfigurationRequest::getXLanguage,
+                ShowInstanceConfigurationRequest::setXLanguage));
 
         // response
 
@@ -2743,9 +2362,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceDiskRequest, ShowInstanceDiskResponse> showInstanceDisk =
-        genForshowInstanceDisk();
+        genForShowInstanceDisk();
 
-    private static HttpRequestDef<ShowInstanceDiskRequest, ShowInstanceDiskResponse> genForshowInstanceDisk() {
+    private static HttpRequestDef<ShowInstanceDiskRequest, ShowInstanceDiskResponse> genForShowInstanceDisk() {
         // basic
         HttpRequestDef.Builder<ShowInstanceDiskRequest, ShowInstanceDiskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceDiskRequest.class, ShowInstanceDiskResponse.class)
@@ -2758,16 +2377,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceDiskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceDiskRequest::getInstanceId, ShowInstanceDiskRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceDiskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceDiskRequest::getXLanguage, ShowInstanceDiskRequest::setXLanguage));
 
         // response
 
@@ -2775,9 +2390,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse> showInstanceParamGroup =
-        genForshowInstanceParamGroup();
+        genForShowInstanceParamGroup();
 
-    private static HttpRequestDef<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse> genForshowInstanceParamGroup() {
+    private static HttpRequestDef<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse> genForShowInstanceParamGroup() {
         // basic
         HttpRequestDef.Builder<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowInstanceParamGroupRequest.class, ShowInstanceParamGroupResponse.class)
@@ -2790,16 +2405,14 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceParamGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceParamGroupRequest::getInstanceId,
+                ShowInstanceParamGroupRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceParamGroupRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceParamGroupRequest::getXLanguage,
+                ShowInstanceParamGroupRequest::setXLanguage));
 
         // response
 
@@ -2807,9 +2420,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse> showInstanceSnapshot =
-        genForshowInstanceSnapshot();
+        genForShowInstanceSnapshot();
 
-    private static HttpRequestDef<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse> genForshowInstanceSnapshot() {
+    private static HttpRequestDef<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse> genForShowInstanceSnapshot() {
         // basic
         HttpRequestDef.Builder<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowInstanceSnapshotRequest.class, ShowInstanceSnapshotResponse.class)
@@ -2822,30 +2435,25 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceSnapshotRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceSnapshotRequest::getInstanceId,
+                ShowInstanceSnapshotRequest::setInstanceId));
         builder.<String>withRequestField("restore_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceSnapshotRequest::getRestoreTime, (req, v) -> {
-                req.setRestoreTime(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceSnapshotRequest::getRestoreTime,
+                ShowInstanceSnapshotRequest::setRestoreTime));
         builder.<String>withRequestField("backup_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceSnapshotRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceSnapshotRequest::getBackupId, ShowInstanceSnapshotRequest::setBackupId));
         builder.<ShowInstanceSnapshotRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowInstanceSnapshotRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowInstanceSnapshotRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceSnapshotRequest::getXLanguage,
+                ShowInstanceSnapshotRequest::setXLanguage));
 
         // response
 
@@ -2853,9 +2461,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail =
-        genForshowJobDetail();
+        genForShowJobDetail();
 
-    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForshowJobDetail() {
+    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForShowJobDetail() {
         // basic
         HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
@@ -2868,9 +2476,7 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getId, ShowJobDetailRequest::setId));
 
         // response
 
@@ -2878,9 +2484,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowProjectQuotasRequest, ShowProjectQuotasResponse> showProjectQuotas =
-        genForshowProjectQuotas();
+        genForShowProjectQuotas();
 
-    private static HttpRequestDef<ShowProjectQuotasRequest, ShowProjectQuotasResponse> genForshowProjectQuotas() {
+    private static HttpRequestDef<ShowProjectQuotasRequest, ShowProjectQuotasResponse> genForShowProjectQuotas() {
         // basic
         HttpRequestDef.Builder<ShowProjectQuotasRequest, ShowProjectQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectQuotasRequest.class, ShowProjectQuotasResponse.class)
@@ -2893,16 +2499,12 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowProjectQuotasRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowProjectQuotasRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowProjectQuotasRequest::getType, ShowProjectQuotasRequest::setType));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectQuotasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowProjectQuotasRequest::getXLanguage, ShowProjectQuotasRequest::setXLanguage));
 
         // response
 
@@ -2910,9 +2512,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicy =
-        genForshowRecyclePolicy();
+        genForShowRecyclePolicy();
 
-    private static HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> genForshowRecyclePolicy() {
+    private static HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> genForShowRecyclePolicy() {
         // basic
         HttpRequestDef.Builder<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecyclePolicyRequest.class, ShowRecyclePolicyResponse.class)
@@ -2925,9 +2527,7 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowRecyclePolicyRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowRecyclePolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowRecyclePolicyRequest::getXLanguage, ShowRecyclePolicyRequest::setXLanguage));
 
         // response
 
@@ -2935,9 +2535,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse> showSslCertDownloadLink =
-        genForshowSslCertDownloadLink();
+        genForShowSslCertDownloadLink();
 
-    private static HttpRequestDef<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse> genForshowSslCertDownloadLink() {
+    private static HttpRequestDef<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse> genForShowSslCertDownloadLink() {
         // basic
         HttpRequestDef.Builder<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSslCertDownloadLinkRequest.class, ShowSslCertDownloadLinkResponse.class)
@@ -2950,16 +2550,14 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSslCertDownloadLinkRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSslCertDownloadLinkRequest::getInstanceId,
+                ShowSslCertDownloadLinkRequest::setInstanceId));
         builder.<ShowSslCertDownloadLinkRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSslCertDownloadLinkRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowSslCertDownloadLinkRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSslCertDownloadLinkRequest::getXLanguage,
+                ShowSslCertDownloadLinkRequest::setXLanguage));
 
         // response
 
@@ -2967,9 +2565,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<SwitchConfigurationRequest, SwitchConfigurationResponse> switchConfiguration =
-        genForswitchConfiguration();
+        genForSwitchConfiguration();
 
-    private static HttpRequestDef<SwitchConfigurationRequest, SwitchConfigurationResponse> genForswitchConfiguration() {
+    private static HttpRequestDef<SwitchConfigurationRequest, SwitchConfigurationResponse> genForSwitchConfiguration() {
         // basic
         HttpRequestDef.Builder<SwitchConfigurationRequest, SwitchConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SwitchConfigurationRequest.class, SwitchConfigurationResponse.class)
@@ -2982,32 +2580,26 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchConfigurationRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            }));
+            f -> f.withMarshaller(SwitchConfigurationRequest::getConfigId, SwitchConfigurationRequest::setConfigId));
         builder.<SwitchConfigurationRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SwitchConfigurationRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(SwitchConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SwitchConfigurationRequest::getXLanguage, SwitchConfigurationRequest::setXLanguage));
         builder.<ApplyConfigurationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApplyConfigurationRequestBody.class),
-            f -> f.withMarshaller(SwitchConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchConfigurationRequest::getBody, SwitchConfigurationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SwitchShardRequest, SwitchShardResponse> switchShard = genForswitchShard();
+    public static final HttpRequestDef<SwitchShardRequest, SwitchShardResponse> switchShard = genForSwitchShard();
 
-    private static HttpRequestDef<SwitchShardRequest, SwitchShardResponse> genForswitchShard() {
+    private static HttpRequestDef<SwitchShardRequest, SwitchShardResponse> genForSwitchShard() {
         // basic
         HttpRequestDef.Builder<SwitchShardRequest, SwitchShardResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchShardRequest.class, SwitchShardResponse.class)
@@ -3020,23 +2612,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchShardRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SwitchShardRequest::getInstanceId, SwitchShardRequest::setInstanceId));
         builder.<SwitchShardRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SwitchShardRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(SwitchShardRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SwitchShardRequest::getXLanguage, SwitchShardRequest::setXLanguage));
         builder.<SwitchShardRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchShardRequestBody.class),
-            f -> f.withMarshaller(SwitchShardRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchShardRequest::getBody, SwitchShardRequest::setBody));
 
         // response
 
@@ -3044,9 +2630,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfiguration =
-        genForupdateInstanceConfiguration();
+        genForUpdateInstanceConfiguration();
 
-    private static HttpRequestDef<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> genForupdateInstanceConfiguration() {
+    private static HttpRequestDef<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> genForUpdateInstanceConfiguration() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> builder =
             HttpRequestDef
@@ -3062,23 +2648,20 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getInstanceId,
+                UpdateInstanceConfigurationRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getXLanguage,
+                UpdateInstanceConfigurationRequest::setXLanguage));
         builder.<OpenGaussModifyInstanceConfigurationRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenGaussModifyInstanceConfigurationRequest.class),
-            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getBody,
+                UpdateInstanceConfigurationRequest::setBody));
 
         // response
 
@@ -3086,9 +2669,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceName =
-        genForupdateInstanceName();
+        genForUpdateInstanceName();
 
-    private static HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> genForupdateInstanceName() {
+    private static HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> genForUpdateInstanceName() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceNameRequest, UpdateInstanceNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceNameRequest.class, UpdateInstanceNameResponse.class)
@@ -3101,23 +2684,17 @@ public class GaussDBforopenGaussMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceNameRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceNameRequest::getInstanceId, UpdateInstanceNameRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceNameRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceNameRequest::getXLanguage, UpdateInstanceNameRequest::setXLanguage));
         builder.<UpdateNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNameRequestBody.class),
-            f -> f.withMarshaller(UpdateInstanceNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceNameRequest::getBody, UpdateInstanceNameRequest::setBody));
 
         // response
 
@@ -3125,9 +2702,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ValidateParaGroupNameRequest, ValidateParaGroupNameResponse> validateParaGroupName =
-        genForvalidateParaGroupName();
+        genForValidateParaGroupName();
 
-    private static HttpRequestDef<ValidateParaGroupNameRequest, ValidateParaGroupNameResponse> genForvalidateParaGroupName() {
+    private static HttpRequestDef<ValidateParaGroupNameRequest, ValidateParaGroupNameResponse> genForValidateParaGroupName() {
         // basic
         HttpRequestDef.Builder<ValidateParaGroupNameRequest, ValidateParaGroupNameResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ValidateParaGroupNameRequest.class, ValidateParaGroupNameResponse.class)
@@ -3140,16 +2717,13 @@ public class GaussDBforopenGaussMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateParaGroupNameRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ValidateParaGroupNameRequest::getName, ValidateParaGroupNameRequest::setName));
         builder.<ValidateParaGroupNameRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ValidateParaGroupNameRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ValidateParaGroupNameRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ValidateParaGroupNameRequest::getXLanguage,
+                ValidateParaGroupNameRequest::setXLanguage));
 
         // response
 
@@ -3157,9 +2731,9 @@ public class GaussDBforopenGaussMeta {
     }
 
     public static final HttpRequestDef<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> validateWeakPassword =
-        genForvalidateWeakPassword();
+        genForValidateWeakPassword();
 
-    private static HttpRequestDef<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> genForvalidateWeakPassword() {
+    private static HttpRequestDef<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> genForValidateWeakPassword() {
         // basic
         HttpRequestDef.Builder<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ValidateWeakPasswordRequest.class, ValidateWeakPasswordResponse.class)
@@ -3172,16 +2746,13 @@ public class GaussDBforopenGaussMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ValidateWeakPasswordRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ValidateWeakPasswordRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ValidateWeakPasswordRequest::getXLanguage,
+                ValidateWeakPasswordRequest::setXLanguage));
         builder.<WeakPasswordRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WeakPasswordRequestBody.class),
-            f -> f.withMarshaller(ValidateWeakPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ValidateWeakPasswordRequest::getBody, ValidateWeakPasswordRequest::setBody));
 
         // response
 

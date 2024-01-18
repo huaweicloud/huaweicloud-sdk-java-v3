@@ -108,7 +108,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagsRequest 请求对象
+     * @param request BatchCreateTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateTagsResponse>
      */
     public CompletableFuture<BatchCreateTagsResponse> batchCreateTagsAsync(BatchCreateTagsRequest request) {
@@ -122,13 +122,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagsRequest 请求对象
+     * @param request BatchCreateTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
      */
     public AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTagsAsyncInvoker(
         BatchCreateTagsRequest request) {
-        return new AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>(request, CphMeta.batchCreateTags,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.batchCreateTags, hcClient);
     }
 
     /**
@@ -138,7 +137,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagsRequest 请求对象
+     * @param request BatchDeleteTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteTagsResponse>
      */
     public CompletableFuture<BatchDeleteTagsResponse> batchDeleteTagsAsync(BatchDeleteTagsRequest request) {
@@ -152,13 +151,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagsRequest 请求对象
+     * @param request BatchDeleteTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
      */
     public AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsAsyncInvoker(
         BatchDeleteTagsRequest request) {
-        return new AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>(request, CphMeta.batchDeleteTags,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.batchDeleteTags, hcClient);
     }
 
     /**
@@ -168,7 +166,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchExportCloudPhoneDataRequest 请求对象
+     * @param request BatchExportCloudPhoneDataRequest 请求对象
      * @return CompletableFuture<BatchExportCloudPhoneDataResponse>
      */
     public CompletableFuture<BatchExportCloudPhoneDataResponse> batchExportCloudPhoneDataAsync(
@@ -183,13 +181,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchExportCloudPhoneDataRequest 请求对象
+     * @param request BatchExportCloudPhoneDataRequest 请求对象
      * @return AsyncInvoker<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse>
      */
     public AsyncInvoker<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse> batchExportCloudPhoneDataAsyncInvoker(
         BatchExportCloudPhoneDataRequest request) {
-        return new AsyncInvoker<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse>(request,
-            CphMeta.batchExportCloudPhoneData, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.batchExportCloudPhoneData, hcClient);
     }
 
     /**
@@ -199,7 +196,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchImportCloudPhoneDataRequest 请求对象
+     * @param request BatchImportCloudPhoneDataRequest 请求对象
      * @return CompletableFuture<BatchImportCloudPhoneDataResponse>
      */
     public CompletableFuture<BatchImportCloudPhoneDataResponse> batchImportCloudPhoneDataAsync(
@@ -214,13 +211,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchImportCloudPhoneDataRequest 请求对象
+     * @param request BatchImportCloudPhoneDataRequest 请求对象
      * @return AsyncInvoker<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse>
      */
     public AsyncInvoker<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse> batchImportCloudPhoneDataAsyncInvoker(
         BatchImportCloudPhoneDataRequest request) {
-        return new AsyncInvoker<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse>(request,
-            CphMeta.batchImportCloudPhoneData, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.batchImportCloudPhoneData, hcClient);
     }
 
     /**
@@ -230,7 +226,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeCloudPhoneServerModelRequest 请求对象
+     * @param request ChangeCloudPhoneServerModelRequest 请求对象
      * @return CompletableFuture<ChangeCloudPhoneServerModelResponse>
      */
     public CompletableFuture<ChangeCloudPhoneServerModelResponse> changeCloudPhoneServerModelAsync(
@@ -245,13 +241,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeCloudPhoneServerModelRequest 请求对象
+     * @param request ChangeCloudPhoneServerModelRequest 请求对象
      * @return AsyncInvoker<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse>
      */
     public AsyncInvoker<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse> changeCloudPhoneServerModelAsyncInvoker(
         ChangeCloudPhoneServerModelRequest request) {
-        return new AsyncInvoker<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse>(request,
-            CphMeta.changeCloudPhoneServerModel, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.changeCloudPhoneServerModel, hcClient);
     }
 
     /**
@@ -265,7 +260,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNet2CloudPhoneServerRequest 请求对象
+     * @param request CreateNet2CloudPhoneServerRequest 请求对象
      * @return CompletableFuture<CreateNet2CloudPhoneServerResponse>
      */
     public CompletableFuture<CreateNet2CloudPhoneServerResponse> createNet2CloudPhoneServerAsync(
@@ -284,13 +279,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNet2CloudPhoneServerRequest 请求对象
+     * @param request CreateNet2CloudPhoneServerRequest 请求对象
      * @return AsyncInvoker<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse>
      */
     public AsyncInvoker<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse> createNet2CloudPhoneServerAsyncInvoker(
         CreateNet2CloudPhoneServerRequest request) {
-        return new AsyncInvoker<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse>(request,
-            CphMeta.createNet2CloudPhoneServer, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.createNet2CloudPhoneServer, hcClient);
     }
 
     /**
@@ -300,7 +294,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteShareAppsRequest 请求对象
+     * @param request DeleteShareAppsRequest 请求对象
      * @return CompletableFuture<DeleteShareAppsResponse>
      */
     public CompletableFuture<DeleteShareAppsResponse> deleteShareAppsAsync(DeleteShareAppsRequest request) {
@@ -314,13 +308,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteShareAppsRequest 请求对象
+     * @param request DeleteShareAppsRequest 请求对象
      * @return AsyncInvoker<DeleteShareAppsRequest, DeleteShareAppsResponse>
      */
     public AsyncInvoker<DeleteShareAppsRequest, DeleteShareAppsResponse> deleteShareAppsAsyncInvoker(
         DeleteShareAppsRequest request) {
-        return new AsyncInvoker<DeleteShareAppsRequest, DeleteShareAppsResponse>(request, CphMeta.deleteShareApps,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.deleteShareApps, hcClient);
     }
 
     /**
@@ -330,7 +323,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteShareFilesRequest 请求对象
+     * @param request DeleteShareFilesRequest 请求对象
      * @return CompletableFuture<DeleteShareFilesResponse>
      */
     public CompletableFuture<DeleteShareFilesResponse> deleteShareFilesAsync(DeleteShareFilesRequest request) {
@@ -344,13 +337,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteShareFilesRequest 请求对象
+     * @param request DeleteShareFilesRequest 请求对象
      * @return AsyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse>
      */
     public AsyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse> deleteShareFilesAsyncInvoker(
         DeleteShareFilesRequest request) {
-        return new AsyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse>(request, CphMeta.deleteShareFiles,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.deleteShareFiles, hcClient);
     }
 
     /**
@@ -360,7 +352,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportTrafficRequest 请求对象
+     * @param request ImportTrafficRequest 请求对象
      * @return CompletableFuture<ImportTrafficResponse>
      */
     public CompletableFuture<ImportTrafficResponse> importTrafficAsync(ImportTrafficRequest request) {
@@ -374,12 +366,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportTrafficRequest 请求对象
+     * @param request ImportTrafficRequest 请求对象
      * @return AsyncInvoker<ImportTrafficRequest, ImportTrafficResponse>
      */
     public AsyncInvoker<ImportTrafficRequest, ImportTrafficResponse> importTrafficAsyncInvoker(
         ImportTrafficRequest request) {
-        return new AsyncInvoker<ImportTrafficRequest, ImportTrafficResponse>(request, CphMeta.importTraffic, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.importTraffic, hcClient);
     }
 
     /**
@@ -389,7 +381,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneImagesRequest 请求对象
+     * @param request ListCloudPhoneImagesRequest 请求对象
      * @return CompletableFuture<ListCloudPhoneImagesResponse>
      */
     public CompletableFuture<ListCloudPhoneImagesResponse> listCloudPhoneImagesAsync(
@@ -404,13 +396,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneImagesRequest 请求对象
+     * @param request ListCloudPhoneImagesRequest 请求对象
      * @return AsyncInvoker<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse>
      */
     public AsyncInvoker<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse> listCloudPhoneImagesAsyncInvoker(
         ListCloudPhoneImagesRequest request) {
-        return new AsyncInvoker<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse>(request,
-            CphMeta.listCloudPhoneImages, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listCloudPhoneImages, hcClient);
     }
 
     /**
@@ -420,7 +411,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneModelsRequest 请求对象
+     * @param request ListCloudPhoneModelsRequest 请求对象
      * @return CompletableFuture<ListCloudPhoneModelsResponse>
      */
     public CompletableFuture<ListCloudPhoneModelsResponse> listCloudPhoneModelsAsync(
@@ -435,13 +426,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneModelsRequest 请求对象
+     * @param request ListCloudPhoneModelsRequest 请求对象
      * @return AsyncInvoker<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse>
      */
     public AsyncInvoker<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse> listCloudPhoneModelsAsyncInvoker(
         ListCloudPhoneModelsRequest request) {
-        return new AsyncInvoker<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse>(request,
-            CphMeta.listCloudPhoneModels, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listCloudPhoneModels, hcClient);
     }
 
     /**
@@ -451,7 +441,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneServerModelsRequest 请求对象
+     * @param request ListCloudPhoneServerModelsRequest 请求对象
      * @return CompletableFuture<ListCloudPhoneServerModelsResponse>
      */
     public CompletableFuture<ListCloudPhoneServerModelsResponse> listCloudPhoneServerModelsAsync(
@@ -466,13 +456,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneServerModelsRequest 请求对象
+     * @param request ListCloudPhoneServerModelsRequest 请求对象
      * @return AsyncInvoker<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse>
      */
     public AsyncInvoker<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse> listCloudPhoneServerModelsAsyncInvoker(
         ListCloudPhoneServerModelsRequest request) {
-        return new AsyncInvoker<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse>(request,
-            CphMeta.listCloudPhoneServerModels, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listCloudPhoneServerModels, hcClient);
     }
 
     /**
@@ -482,7 +471,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneServersRequest 请求对象
+     * @param request ListCloudPhoneServersRequest 请求对象
      * @return CompletableFuture<ListCloudPhoneServersResponse>
      */
     public CompletableFuture<ListCloudPhoneServersResponse> listCloudPhoneServersAsync(
@@ -497,13 +486,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhoneServersRequest 请求对象
+     * @param request ListCloudPhoneServersRequest 请求对象
      * @return AsyncInvoker<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse>
      */
     public AsyncInvoker<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse> listCloudPhoneServersAsyncInvoker(
         ListCloudPhoneServersRequest request) {
-        return new AsyncInvoker<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse>(request,
-            CphMeta.listCloudPhoneServers, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listCloudPhoneServers, hcClient);
     }
 
     /**
@@ -513,7 +501,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhonesRequest 请求对象
+     * @param request ListCloudPhonesRequest 请求对象
      * @return CompletableFuture<ListCloudPhonesResponse>
      */
     public CompletableFuture<ListCloudPhonesResponse> listCloudPhonesAsync(ListCloudPhonesRequest request) {
@@ -527,13 +515,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCloudPhonesRequest 请求对象
+     * @param request ListCloudPhonesRequest 请求对象
      * @return AsyncInvoker<ListCloudPhonesRequest, ListCloudPhonesResponse>
      */
     public AsyncInvoker<ListCloudPhonesRequest, ListCloudPhonesResponse> listCloudPhonesAsyncInvoker(
         ListCloudPhonesRequest request) {
-        return new AsyncInvoker<ListCloudPhonesRequest, ListCloudPhonesResponse>(request, CphMeta.listCloudPhones,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listCloudPhones, hcClient);
     }
 
     /**
@@ -543,7 +530,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEncodeServersRequest 请求对象
+     * @param request ListEncodeServersRequest 请求对象
      * @return CompletableFuture<ListEncodeServersResponse>
      */
     public CompletableFuture<ListEncodeServersResponse> listEncodeServersAsync(ListEncodeServersRequest request) {
@@ -557,13 +544,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEncodeServersRequest 请求对象
+     * @param request ListEncodeServersRequest 请求对象
      * @return AsyncInvoker<ListEncodeServersRequest, ListEncodeServersResponse>
      */
     public AsyncInvoker<ListEncodeServersRequest, ListEncodeServersResponse> listEncodeServersAsyncInvoker(
         ListEncodeServersRequest request) {
-        return new AsyncInvoker<ListEncodeServersRequest, ListEncodeServersResponse>(request, CphMeta.listEncodeServers,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listEncodeServers, hcClient);
     }
 
     /**
@@ -573,7 +559,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return CompletableFuture<ListJobsResponse>
      */
     public CompletableFuture<ListJobsResponse> listJobsAsync(ListJobsRequest request) {
@@ -587,11 +573,11 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return AsyncInvoker<ListJobsRequest, ListJobsResponse>
      */
     public AsyncInvoker<ListJobsRequest, ListJobsResponse> listJobsAsyncInvoker(ListJobsRequest request) {
-        return new AsyncInvoker<ListJobsRequest, ListJobsResponse>(request, CphMeta.listJobs, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listJobs, hcClient);
     }
 
     /**
@@ -601,7 +587,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return CompletableFuture<ListProjectTagsResponse>
      */
     public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
@@ -615,13 +601,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
     public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
         ListProjectTagsRequest request) {
-        return new AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, CphMeta.listProjectTags,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listProjectTags, hcClient);
     }
 
     /**
@@ -631,7 +616,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return CompletableFuture<ListResourceInstancesResponse>
      */
     public CompletableFuture<ListResourceInstancesResponse> listResourceInstancesAsync(
@@ -646,13 +631,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
      */
     public AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesAsyncInvoker(
         ListResourceInstancesRequest request) {
-        return new AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
-            CphMeta.listResourceInstances, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listResourceInstances, hcClient);
     }
 
     /**
@@ -662,7 +646,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTagsRequest 请求对象
+     * @param request ListResourceTagsRequest 请求对象
      * @return CompletableFuture<ListResourceTagsResponse>
      */
     public CompletableFuture<ListResourceTagsResponse> listResourceTagsAsync(ListResourceTagsRequest request) {
@@ -676,13 +660,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTagsRequest 请求对象
+     * @param request ListResourceTagsRequest 请求对象
      * @return AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
      */
     public AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsAsyncInvoker(
         ListResourceTagsRequest request) {
-        return new AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>(request, CphMeta.listResourceTags,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listResourceTags, hcClient);
     }
 
     /**
@@ -692,7 +675,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListShareFilesRequest 请求对象
+     * @param request ListShareFilesRequest 请求对象
      * @return CompletableFuture<ListShareFilesResponse>
      */
     public CompletableFuture<ListShareFilesResponse> listShareFilesAsync(ListShareFilesRequest request) {
@@ -706,13 +689,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListShareFilesRequest 请求对象
+     * @param request ListShareFilesRequest 请求对象
      * @return AsyncInvoker<ListShareFilesRequest, ListShareFilesResponse>
      */
     public AsyncInvoker<ListShareFilesRequest, ListShareFilesResponse> listShareFilesAsyncInvoker(
         ListShareFilesRequest request) {
-        return new AsyncInvoker<ListShareFilesRequest, ListShareFilesResponse>(request, CphMeta.listShareFiles,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.listShareFiles, hcClient);
     }
 
     /**
@@ -722,7 +704,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushShareAppsRequest 请求对象
+     * @param request PushShareAppsRequest 请求对象
      * @return CompletableFuture<PushShareAppsResponse>
      */
     public CompletableFuture<PushShareAppsResponse> pushShareAppsAsync(PushShareAppsRequest request) {
@@ -736,12 +718,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushShareAppsRequest 请求对象
+     * @param request PushShareAppsRequest 请求对象
      * @return AsyncInvoker<PushShareAppsRequest, PushShareAppsResponse>
      */
     public AsyncInvoker<PushShareAppsRequest, PushShareAppsResponse> pushShareAppsAsyncInvoker(
         PushShareAppsRequest request) {
-        return new AsyncInvoker<PushShareAppsRequest, PushShareAppsResponse>(request, CphMeta.pushShareApps, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.pushShareApps, hcClient);
     }
 
     /**
@@ -751,7 +733,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushShareFilesRequest 请求对象
+     * @param request PushShareFilesRequest 请求对象
      * @return CompletableFuture<PushShareFilesResponse>
      */
     public CompletableFuture<PushShareFilesResponse> pushShareFilesAsync(PushShareFilesRequest request) {
@@ -765,13 +747,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushShareFilesRequest 请求对象
+     * @param request PushShareFilesRequest 请求对象
      * @return AsyncInvoker<PushShareFilesRequest, PushShareFilesResponse>
      */
     public AsyncInvoker<PushShareFilesRequest, PushShareFilesResponse> pushShareFilesAsyncInvoker(
         PushShareFilesRequest request) {
-        return new AsyncInvoker<PushShareFilesRequest, PushShareFilesResponse>(request, CphMeta.pushShareFiles,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.pushShareFiles, hcClient);
     }
 
     /**
@@ -781,7 +762,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetCloudPhoneRequest 请求对象
+     * @param request ResetCloudPhoneRequest 请求对象
      * @return CompletableFuture<ResetCloudPhoneResponse>
      */
     public CompletableFuture<ResetCloudPhoneResponse> resetCloudPhoneAsync(ResetCloudPhoneRequest request) {
@@ -795,13 +776,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetCloudPhoneRequest 请求对象
+     * @param request ResetCloudPhoneRequest 请求对象
      * @return AsyncInvoker<ResetCloudPhoneRequest, ResetCloudPhoneResponse>
      */
     public AsyncInvoker<ResetCloudPhoneRequest, ResetCloudPhoneResponse> resetCloudPhoneAsyncInvoker(
         ResetCloudPhoneRequest request) {
-        return new AsyncInvoker<ResetCloudPhoneRequest, ResetCloudPhoneResponse>(request, CphMeta.resetCloudPhone,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.resetCloudPhone, hcClient);
     }
 
     /**
@@ -811,7 +791,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartCloudPhoneRequest 请求对象
+     * @param request RestartCloudPhoneRequest 请求对象
      * @return CompletableFuture<RestartCloudPhoneResponse>
      */
     public CompletableFuture<RestartCloudPhoneResponse> restartCloudPhoneAsync(RestartCloudPhoneRequest request) {
@@ -825,13 +805,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartCloudPhoneRequest 请求对象
+     * @param request RestartCloudPhoneRequest 请求对象
      * @return AsyncInvoker<RestartCloudPhoneRequest, RestartCloudPhoneResponse>
      */
     public AsyncInvoker<RestartCloudPhoneRequest, RestartCloudPhoneResponse> restartCloudPhoneAsyncInvoker(
         RestartCloudPhoneRequest request) {
-        return new AsyncInvoker<RestartCloudPhoneRequest, RestartCloudPhoneResponse>(request, CphMeta.restartCloudPhone,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.restartCloudPhone, hcClient);
     }
 
     /**
@@ -841,7 +820,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartCloudPhoneServerRequest 请求对象
+     * @param request RestartCloudPhoneServerRequest 请求对象
      * @return CompletableFuture<RestartCloudPhoneServerResponse>
      */
     public CompletableFuture<RestartCloudPhoneServerResponse> restartCloudPhoneServerAsync(
@@ -856,13 +835,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartCloudPhoneServerRequest 请求对象
+     * @param request RestartCloudPhoneServerRequest 请求对象
      * @return AsyncInvoker<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse>
      */
     public AsyncInvoker<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse> restartCloudPhoneServerAsyncInvoker(
         RestartCloudPhoneServerRequest request) {
-        return new AsyncInvoker<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse>(request,
-            CphMeta.restartCloudPhoneServer, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.restartCloudPhoneServer, hcClient);
     }
 
     /**
@@ -872,7 +850,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartEncodeServerRequest 请求对象
+     * @param request RestartEncodeServerRequest 请求对象
      * @return CompletableFuture<RestartEncodeServerResponse>
      */
     public CompletableFuture<RestartEncodeServerResponse> restartEncodeServerAsync(RestartEncodeServerRequest request) {
@@ -886,13 +864,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartEncodeServerRequest 请求对象
+     * @param request RestartEncodeServerRequest 请求对象
      * @return AsyncInvoker<RestartEncodeServerRequest, RestartEncodeServerResponse>
      */
     public AsyncInvoker<RestartEncodeServerRequest, RestartEncodeServerResponse> restartEncodeServerAsyncInvoker(
         RestartEncodeServerRequest request) {
-        return new AsyncInvoker<RestartEncodeServerRequest, RestartEncodeServerResponse>(request,
-            CphMeta.restartEncodeServer, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.restartEncodeServer, hcClient);
     }
 
     /**
@@ -902,7 +879,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBandwidthDetailRequest 请求对象
+     * @param request ShowBandwidthDetailRequest 请求对象
      * @return CompletableFuture<ShowBandwidthDetailResponse>
      */
     public CompletableFuture<ShowBandwidthDetailResponse> showBandwidthDetailAsync(ShowBandwidthDetailRequest request) {
@@ -916,13 +893,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBandwidthDetailRequest 请求对象
+     * @param request ShowBandwidthDetailRequest 请求对象
      * @return AsyncInvoker<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse>
      */
     public AsyncInvoker<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse> showBandwidthDetailAsyncInvoker(
         ShowBandwidthDetailRequest request) {
-        return new AsyncInvoker<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse>(request,
-            CphMeta.showBandwidthDetail, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.showBandwidthDetail, hcClient);
     }
 
     /**
@@ -932,7 +908,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCloudPhoneDetailRequest 请求对象
+     * @param request ShowCloudPhoneDetailRequest 请求对象
      * @return CompletableFuture<ShowCloudPhoneDetailResponse>
      */
     public CompletableFuture<ShowCloudPhoneDetailResponse> showCloudPhoneDetailAsync(
@@ -947,13 +923,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCloudPhoneDetailRequest 请求对象
+     * @param request ShowCloudPhoneDetailRequest 请求对象
      * @return AsyncInvoker<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse>
      */
     public AsyncInvoker<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse> showCloudPhoneDetailAsyncInvoker(
         ShowCloudPhoneDetailRequest request) {
-        return new AsyncInvoker<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse>(request,
-            CphMeta.showCloudPhoneDetail, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.showCloudPhoneDetail, hcClient);
     }
 
     /**
@@ -963,7 +938,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCloudPhoneServerDetailRequest 请求对象
+     * @param request ShowCloudPhoneServerDetailRequest 请求对象
      * @return CompletableFuture<ShowCloudPhoneServerDetailResponse>
      */
     public CompletableFuture<ShowCloudPhoneServerDetailResponse> showCloudPhoneServerDetailAsync(
@@ -978,13 +953,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCloudPhoneServerDetailRequest 请求对象
+     * @param request ShowCloudPhoneServerDetailRequest 请求对象
      * @return AsyncInvoker<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse>
      */
     public AsyncInvoker<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse> showCloudPhoneServerDetailAsyncInvoker(
         ShowCloudPhoneServerDetailRequest request) {
-        return new AsyncInvoker<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse>(request,
-            CphMeta.showCloudPhoneServerDetail, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.showCloudPhoneServerDetail, hcClient);
     }
 
     /**
@@ -994,7 +968,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
      */
     public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
@@ -1008,11 +982,11 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
-        return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, CphMeta.showJob, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.showJob, hcClient);
     }
 
     /**
@@ -1022,7 +996,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopCloudPhoneRequest 请求对象
+     * @param request StopCloudPhoneRequest 请求对象
      * @return CompletableFuture<StopCloudPhoneResponse>
      */
     public CompletableFuture<StopCloudPhoneResponse> stopCloudPhoneAsync(StopCloudPhoneRequest request) {
@@ -1036,13 +1010,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopCloudPhoneRequest 请求对象
+     * @param request StopCloudPhoneRequest 请求对象
      * @return AsyncInvoker<StopCloudPhoneRequest, StopCloudPhoneResponse>
      */
     public AsyncInvoker<StopCloudPhoneRequest, StopCloudPhoneResponse> stopCloudPhoneAsyncInvoker(
         StopCloudPhoneRequest request) {
-        return new AsyncInvoker<StopCloudPhoneRequest, StopCloudPhoneResponse>(request, CphMeta.stopCloudPhone,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.stopCloudPhone, hcClient);
     }
 
     /**
@@ -1052,7 +1025,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBandwidthRequest 请求对象
+     * @param request UpdateBandwidthRequest 请求对象
      * @return CompletableFuture<UpdateBandwidthResponse>
      */
     public CompletableFuture<UpdateBandwidthResponse> updateBandwidthAsync(UpdateBandwidthRequest request) {
@@ -1066,13 +1039,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBandwidthRequest 请求对象
+     * @param request UpdateBandwidthRequest 请求对象
      * @return AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>
      */
     public AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidthAsyncInvoker(
         UpdateBandwidthRequest request) {
-        return new AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>(request, CphMeta.updateBandwidth,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.updateBandwidth, hcClient);
     }
 
     /**
@@ -1082,7 +1054,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCloudPhonePropertyRequest 请求对象
+     * @param request UpdateCloudPhonePropertyRequest 请求对象
      * @return CompletableFuture<UpdateCloudPhonePropertyResponse>
      */
     public CompletableFuture<UpdateCloudPhonePropertyResponse> updateCloudPhonePropertyAsync(
@@ -1097,13 +1069,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCloudPhonePropertyRequest 请求对象
+     * @param request UpdateCloudPhonePropertyRequest 请求对象
      * @return AsyncInvoker<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse>
      */
     public AsyncInvoker<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse> updateCloudPhonePropertyAsyncInvoker(
         UpdateCloudPhonePropertyRequest request) {
-        return new AsyncInvoker<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse>(request,
-            CphMeta.updateCloudPhoneProperty, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.updateCloudPhoneProperty, hcClient);
     }
 
     /**
@@ -1113,7 +1084,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeypairRequest 请求对象
+     * @param request UpdateKeypairRequest 请求对象
      * @return CompletableFuture<UpdateKeypairResponse>
      */
     public CompletableFuture<UpdateKeypairResponse> updateKeypairAsync(UpdateKeypairRequest request) {
@@ -1127,12 +1098,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeypairRequest 请求对象
+     * @param request UpdateKeypairRequest 请求对象
      * @return AsyncInvoker<UpdateKeypairRequest, UpdateKeypairResponse>
      */
     public AsyncInvoker<UpdateKeypairRequest, UpdateKeypairResponse> updateKeypairAsyncInvoker(
         UpdateKeypairRequest request) {
-        return new AsyncInvoker<UpdateKeypairRequest, UpdateKeypairResponse>(request, CphMeta.updateKeypair, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.updateKeypair, hcClient);
     }
 
     /**
@@ -1142,7 +1113,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePhoneNameRequest 请求对象
+     * @param request UpdatePhoneNameRequest 请求对象
      * @return CompletableFuture<UpdatePhoneNameResponse>
      */
     public CompletableFuture<UpdatePhoneNameResponse> updatePhoneNameAsync(UpdatePhoneNameRequest request) {
@@ -1156,13 +1127,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePhoneNameRequest 请求对象
+     * @param request UpdatePhoneNameRequest 请求对象
      * @return AsyncInvoker<UpdatePhoneNameRequest, UpdatePhoneNameResponse>
      */
     public AsyncInvoker<UpdatePhoneNameRequest, UpdatePhoneNameResponse> updatePhoneNameAsyncInvoker(
         UpdatePhoneNameRequest request) {
-        return new AsyncInvoker<UpdatePhoneNameRequest, UpdatePhoneNameResponse>(request, CphMeta.updatePhoneName,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.updatePhoneName, hcClient);
     }
 
     /**
@@ -1172,7 +1142,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServerNameRequest 请求对象
+     * @param request UpdateServerNameRequest 请求对象
      * @return CompletableFuture<UpdateServerNameResponse>
      */
     public CompletableFuture<UpdateServerNameResponse> updateServerNameAsync(UpdateServerNameRequest request) {
@@ -1186,13 +1156,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServerNameRequest 请求对象
+     * @param request UpdateServerNameRequest 请求对象
      * @return AsyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse>
      */
     public AsyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse> updateServerNameAsyncInvoker(
         UpdateServerNameRequest request) {
-        return new AsyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse>(request, CphMeta.updateServerName,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.updateServerName, hcClient);
     }
 
     /**
@@ -1205,7 +1174,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallApkRequest 请求对象
+     * @param request InstallApkRequest 请求对象
      * @return CompletableFuture<InstallApkResponse>
      */
     public CompletableFuture<InstallApkResponse> installApkAsync(InstallApkRequest request) {
@@ -1222,11 +1191,11 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallApkRequest 请求对象
+     * @param request InstallApkRequest 请求对象
      * @return AsyncInvoker<InstallApkRequest, InstallApkResponse>
      */
     public AsyncInvoker<InstallApkRequest, InstallApkResponse> installApkAsyncInvoker(InstallApkRequest request) {
-        return new AsyncInvoker<InstallApkRequest, InstallApkResponse>(request, CphMeta.installApk, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.installApk, hcClient);
     }
 
     /**
@@ -1239,7 +1208,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushFileRequest 请求对象
+     * @param request PushFileRequest 请求对象
      * @return CompletableFuture<PushFileResponse>
      */
     public CompletableFuture<PushFileResponse> pushFileAsync(PushFileRequest request) {
@@ -1256,11 +1225,11 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushFileRequest 请求对象
+     * @param request PushFileRequest 请求对象
      * @return AsyncInvoker<PushFileRequest, PushFileResponse>
      */
     public AsyncInvoker<PushFileRequest, PushFileResponse> pushFileAsyncInvoker(PushFileRequest request) {
-        return new AsyncInvoker<PushFileRequest, PushFileResponse>(request, CphMeta.pushFile, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.pushFile, hcClient);
     }
 
     /**
@@ -1271,7 +1240,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunShellCommandRequest 请求对象
+     * @param request RunShellCommandRequest 请求对象
      * @return CompletableFuture<RunShellCommandResponse>
      */
     public CompletableFuture<RunShellCommandResponse> runShellCommandAsync(RunShellCommandRequest request) {
@@ -1286,13 +1255,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunShellCommandRequest 请求对象
+     * @param request RunShellCommandRequest 请求对象
      * @return AsyncInvoker<RunShellCommandRequest, RunShellCommandResponse>
      */
     public AsyncInvoker<RunShellCommandRequest, RunShellCommandResponse> runShellCommandAsyncInvoker(
         RunShellCommandRequest request) {
-        return new AsyncInvoker<RunShellCommandRequest, RunShellCommandResponse>(request, CphMeta.runShellCommand,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.runShellCommand, hcClient);
     }
 
     /**
@@ -1302,7 +1270,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSyncCommandRequest 请求对象
+     * @param request RunSyncCommandRequest 请求对象
      * @return CompletableFuture<RunSyncCommandResponse>
      */
     public CompletableFuture<RunSyncCommandResponse> runSyncCommandAsync(RunSyncCommandRequest request) {
@@ -1316,13 +1284,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSyncCommandRequest 请求对象
+     * @param request RunSyncCommandRequest 请求对象
      * @return AsyncInvoker<RunSyncCommandRequest, RunSyncCommandResponse>
      */
     public AsyncInvoker<RunSyncCommandRequest, RunSyncCommandResponse> runSyncCommandAsyncInvoker(
         RunSyncCommandRequest request) {
-        return new AsyncInvoker<RunSyncCommandRequest, RunSyncCommandResponse>(request, CphMeta.runSyncCommand,
-            hcClient);
+        return new AsyncInvoker<>(request, CphMeta.runSyncCommand, hcClient);
     }
 
     /**
@@ -1333,7 +1300,7 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallApkRequest 请求对象
+     * @param request UninstallApkRequest 请求对象
      * @return CompletableFuture<UninstallApkResponse>
      */
     public CompletableFuture<UninstallApkResponse> uninstallApkAsync(UninstallApkRequest request) {
@@ -1348,12 +1315,12 @@ public class CphAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallApkRequest 请求对象
+     * @param request UninstallApkRequest 请求对象
      * @return AsyncInvoker<UninstallApkRequest, UninstallApkResponse>
      */
     public AsyncInvoker<UninstallApkRequest, UninstallApkResponse> uninstallApkAsyncInvoker(
         UninstallApkRequest request) {
-        return new AsyncInvoker<UninstallApkRequest, UninstallApkResponse>(request, CphMeta.uninstallApk, hcClient);
+        return new AsyncInvoker<>(request, CphMeta.uninstallApk, hcClient);
     }
 
 }

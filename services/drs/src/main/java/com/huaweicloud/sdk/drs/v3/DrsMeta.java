@@ -110,9 +110,9 @@ import com.huaweicloud.sdk.drs.v3.model.UpdateTuningParamsResponse;
 public class DrsMeta {
 
     public static final HttpRequestDef<BatchChangeDataRequest, BatchChangeDataResponse> batchChangeData =
-        genForbatchChangeData();
+        genForBatchChangeData();
 
-    private static HttpRequestDef<BatchChangeDataRequest, BatchChangeDataResponse> genForbatchChangeData() {
+    private static HttpRequestDef<BatchChangeDataRequest, BatchChangeDataResponse> genForBatchChangeData() {
         // basic
         HttpRequestDef.Builder<BatchChangeDataRequest, BatchChangeDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchChangeDataRequest.class, BatchChangeDataResponse.class)
@@ -125,16 +125,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchChangeDataRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchChangeDataRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchChangeDataRequest::getXLanguage, BatchChangeDataRequest::setXLanguage));
         builder.<BatchDataTransformationReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDataTransformationReq.class),
-            f -> f.withMarshaller(BatchChangeDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchChangeDataRequest::getBody, BatchChangeDataRequest::setBody));
 
         // response
 
@@ -142,9 +138,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchCheckJobsRequest, BatchCheckJobsResponse> batchCheckJobs =
-        genForbatchCheckJobs();
+        genForBatchCheckJobs();
 
-    private static HttpRequestDef<BatchCheckJobsRequest, BatchCheckJobsResponse> genForbatchCheckJobs() {
+    private static HttpRequestDef<BatchCheckJobsRequest, BatchCheckJobsResponse> genForBatchCheckJobs() {
         // basic
         HttpRequestDef.Builder<BatchCheckJobsRequest, BatchCheckJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCheckJobsRequest.class, BatchCheckJobsResponse.class)
@@ -157,16 +153,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchCheckJobsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchCheckJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchCheckJobsRequest::getXLanguage, BatchCheckJobsRequest::setXLanguage));
         builder.<BatchPrecheckReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchPrecheckReq.class),
-            f -> f.withMarshaller(BatchCheckJobsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCheckJobsRequest::getBody, BatchCheckJobsRequest::setBody));
 
         // response
 
@@ -174,9 +166,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchCheckResultsRequest, BatchCheckResultsResponse> batchCheckResults =
-        genForbatchCheckResults();
+        genForBatchCheckResults();
 
-    private static HttpRequestDef<BatchCheckResultsRequest, BatchCheckResultsResponse> genForbatchCheckResults() {
+    private static HttpRequestDef<BatchCheckResultsRequest, BatchCheckResultsResponse> genForBatchCheckResults() {
         // basic
         HttpRequestDef.Builder<BatchCheckResultsRequest, BatchCheckResultsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCheckResultsRequest.class, BatchCheckResultsResponse.class)
@@ -189,16 +181,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchCheckResultsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchCheckResultsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchCheckResultsRequest::getXLanguage, BatchCheckResultsRequest::setXLanguage));
         builder.<BatchQueryPrecheckResultReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchQueryPrecheckResultReq.class),
-            f -> f.withMarshaller(BatchCheckResultsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCheckResultsRequest::getBody, BatchCheckResultsRequest::setBody));
 
         // response
 
@@ -206,9 +194,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchCreateJobsRequest, BatchCreateJobsResponse> batchCreateJobs =
-        genForbatchCreateJobs();
+        genForBatchCreateJobs();
 
-    private static HttpRequestDef<BatchCreateJobsRequest, BatchCreateJobsResponse> genForbatchCreateJobs() {
+    private static HttpRequestDef<BatchCreateJobsRequest, BatchCreateJobsResponse> genForBatchCreateJobs() {
         // basic
         HttpRequestDef.Builder<BatchCreateJobsRequest, BatchCreateJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateJobsRequest.class, BatchCreateJobsResponse.class)
@@ -221,16 +209,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchCreateJobsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchCreateJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchCreateJobsRequest::getXLanguage, BatchCreateJobsRequest::setXLanguage));
         builder.<BatchCreateJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateJobReq.class),
-            f -> f.withMarshaller(BatchCreateJobsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateJobsRequest::getBody, BatchCreateJobsRequest::setBody));
 
         // response
 
@@ -238,9 +222,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteJobsRequest, BatchDeleteJobsResponse> batchDeleteJobs =
-        genForbatchDeleteJobs();
+        genForBatchDeleteJobs();
 
-    private static HttpRequestDef<BatchDeleteJobsRequest, BatchDeleteJobsResponse> genForbatchDeleteJobs() {
+    private static HttpRequestDef<BatchDeleteJobsRequest, BatchDeleteJobsResponse> genForBatchDeleteJobs() {
         // basic
         HttpRequestDef.Builder<BatchDeleteJobsRequest, BatchDeleteJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteJobsRequest.class, BatchDeleteJobsResponse.class)
@@ -253,16 +237,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchDeleteJobsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchDeleteJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteJobsRequest::getXLanguage, BatchDeleteJobsRequest::setXLanguage));
         builder.<BatchDeleteJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteJobReq.class),
-            f -> f.withMarshaller(BatchDeleteJobsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteJobsRequest::getBody, BatchDeleteJobsRequest::setBody));
 
         // response
 
@@ -270,9 +250,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchListJobDetailsRequest, BatchListJobDetailsResponse> batchListJobDetails =
-        genForbatchListJobDetails();
+        genForBatchListJobDetails();
 
-    private static HttpRequestDef<BatchListJobDetailsRequest, BatchListJobDetailsResponse> genForbatchListJobDetails() {
+    private static HttpRequestDef<BatchListJobDetailsRequest, BatchListJobDetailsResponse> genForBatchListJobDetails() {
         // basic
         HttpRequestDef.Builder<BatchListJobDetailsRequest, BatchListJobDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListJobDetailsRequest.class, BatchListJobDetailsResponse.class)
@@ -285,16 +265,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListJobDetailsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchListJobDetailsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchListJobDetailsRequest::getXLanguage, BatchListJobDetailsRequest::setXLanguage));
         builder.<BatchQueryJobReqPage>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchQueryJobReqPage.class),
-            f -> f.withMarshaller(BatchListJobDetailsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchListJobDetailsRequest::getBody, BatchListJobDetailsRequest::setBody));
 
         // response
 
@@ -302,9 +278,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchListJobStatusRequest, BatchListJobStatusResponse> batchListJobStatus =
-        genForbatchListJobStatus();
+        genForBatchListJobStatus();
 
-    private static HttpRequestDef<BatchListJobStatusRequest, BatchListJobStatusResponse> genForbatchListJobStatus() {
+    private static HttpRequestDef<BatchListJobStatusRequest, BatchListJobStatusResponse> genForBatchListJobStatus() {
         // basic
         HttpRequestDef.Builder<BatchListJobStatusRequest, BatchListJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListJobStatusRequest.class, BatchListJobStatusResponse.class)
@@ -317,16 +293,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListJobStatusRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchListJobStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchListJobStatusRequest::getXLanguage, BatchListJobStatusRequest::setXLanguage));
         builder.<BatchQueryJobReqPage>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchQueryJobReqPage.class),
-            f -> f.withMarshaller(BatchListJobStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchListJobStatusRequest::getBody, BatchListJobStatusRequest::setBody));
 
         // response
 
@@ -334,9 +306,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchListProgressesRequest, BatchListProgressesResponse> batchListProgresses =
-        genForbatchListProgresses();
+        genForBatchListProgresses();
 
-    private static HttpRequestDef<BatchListProgressesRequest, BatchListProgressesResponse> genForbatchListProgresses() {
+    private static HttpRequestDef<BatchListProgressesRequest, BatchListProgressesResponse> genForBatchListProgresses() {
         // basic
         HttpRequestDef.Builder<BatchListProgressesRequest, BatchListProgressesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListProgressesRequest.class, BatchListProgressesResponse.class)
@@ -349,16 +321,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListProgressesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchListProgressesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchListProgressesRequest::getXLanguage, BatchListProgressesRequest::setXLanguage));
         builder.<BatchQueryProgressReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchQueryProgressReq.class),
-            f -> f.withMarshaller(BatchListProgressesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchListProgressesRequest::getBody, BatchListProgressesRequest::setBody));
 
         // response
 
@@ -366,9 +334,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchListRposAndRtosRequest, BatchListRposAndRtosResponse> batchListRposAndRtos =
-        genForbatchListRposAndRtos();
+        genForBatchListRposAndRtos();
 
-    private static HttpRequestDef<BatchListRposAndRtosRequest, BatchListRposAndRtosResponse> genForbatchListRposAndRtos() {
+    private static HttpRequestDef<BatchListRposAndRtosRequest, BatchListRposAndRtosResponse> genForBatchListRposAndRtos() {
         // basic
         HttpRequestDef.Builder<BatchListRposAndRtosRequest, BatchListRposAndRtosResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchListRposAndRtosRequest.class, BatchListRposAndRtosResponse.class)
@@ -381,16 +349,13 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListRposAndRtosRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchListRposAndRtosRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchListRposAndRtosRequest::getXLanguage,
+                BatchListRposAndRtosRequest::setXLanguage));
         builder.<BatchQueryRpoAndRtoReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchQueryRpoAndRtoReq.class),
-            f -> f.withMarshaller(BatchListRposAndRtosRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchListRposAndRtosRequest::getBody, BatchListRposAndRtosRequest::setBody));
 
         // response
 
@@ -398,9 +363,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchListStructDetailRequest, BatchListStructDetailResponse> batchListStructDetail =
-        genForbatchListStructDetail();
+        genForBatchListStructDetail();
 
-    private static HttpRequestDef<BatchListStructDetailRequest, BatchListStructDetailResponse> genForbatchListStructDetail() {
+    private static HttpRequestDef<BatchListStructDetailRequest, BatchListStructDetailResponse> genForBatchListStructDetail() {
         // basic
         HttpRequestDef.Builder<BatchListStructDetailRequest, BatchListStructDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchListStructDetailRequest.class, BatchListStructDetailResponse.class)
@@ -413,23 +378,18 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchListStructDetailRequest.TypeEnum.class),
-            f -> f.withMarshaller(BatchListStructDetailRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(BatchListStructDetailRequest::getType, BatchListStructDetailRequest::setType));
         builder.<BatchListStructDetailRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListStructDetailRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchListStructDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchListStructDetailRequest::getXLanguage,
+                BatchListStructDetailRequest::setXLanguage));
         builder.<BatchQueryJobReqPage>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchQueryJobReqPage.class),
-            f -> f.withMarshaller(BatchListStructDetailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchListStructDetailRequest::getBody, BatchListStructDetailRequest::setBody));
 
         // response
 
@@ -437,9 +397,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchListStructProcessRequest, BatchListStructProcessResponse> batchListStructProcess =
-        genForbatchListStructProcess();
+        genForBatchListStructProcess();
 
-    private static HttpRequestDef<BatchListStructProcessRequest, BatchListStructProcessResponse> genForbatchListStructProcess() {
+    private static HttpRequestDef<BatchListStructProcessRequest, BatchListStructProcessResponse> genForBatchListStructProcess() {
         // basic
         HttpRequestDef.Builder<BatchListStructProcessRequest, BatchListStructProcessResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchListStructProcessRequest.class, BatchListStructProcessResponse.class)
@@ -452,16 +412,13 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListStructProcessRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchListStructProcessRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchListStructProcessRequest::getXLanguage,
+                BatchListStructProcessRequest::setXLanguage));
         builder.<BatchQueryJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchQueryJobReq.class),
-            f -> f.withMarshaller(BatchListStructProcessRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchListStructProcessRequest::getBody, BatchListStructProcessRequest::setBody));
 
         // response
 
@@ -469,9 +426,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchResetPasswordRequest, BatchResetPasswordResponse> batchResetPassword =
-        genForbatchResetPassword();
+        genForBatchResetPassword();
 
-    private static HttpRequestDef<BatchResetPasswordRequest, BatchResetPasswordResponse> genForbatchResetPassword() {
+    private static HttpRequestDef<BatchResetPasswordRequest, BatchResetPasswordResponse> genForBatchResetPassword() {
         // basic
         HttpRequestDef.Builder<BatchResetPasswordRequest, BatchResetPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchResetPasswordRequest.class, BatchResetPasswordResponse.class)
@@ -484,16 +441,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchResetPasswordRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchResetPasswordRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchResetPasswordRequest::getXLanguage, BatchResetPasswordRequest::setXLanguage));
         builder.<BatchModifyPwdReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchModifyPwdReq.class),
-            f -> f.withMarshaller(BatchResetPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchResetPasswordRequest::getBody, BatchResetPasswordRequest::setBody));
 
         // response
 
@@ -501,9 +454,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchRestoreTaskRequest, BatchRestoreTaskResponse> batchRestoreTask =
-        genForbatchRestoreTask();
+        genForBatchRestoreTask();
 
-    private static HttpRequestDef<BatchRestoreTaskRequest, BatchRestoreTaskResponse> genForbatchRestoreTask() {
+    private static HttpRequestDef<BatchRestoreTaskRequest, BatchRestoreTaskResponse> genForBatchRestoreTask() {
         // basic
         HttpRequestDef.Builder<BatchRestoreTaskRequest, BatchRestoreTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchRestoreTaskRequest.class, BatchRestoreTaskResponse.class)
@@ -516,16 +469,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchRestoreTaskRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchRestoreTaskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchRestoreTaskRequest::getXLanguage, BatchRestoreTaskRequest::setXLanguage));
         builder.<BatchRetryReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchRetryReq.class),
-            f -> f.withMarshaller(BatchRestoreTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchRestoreTaskRequest::getBody, BatchRestoreTaskRequest::setBody));
 
         // response
 
@@ -533,9 +482,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchSetDefinerRequest, BatchSetDefinerResponse> batchSetDefiner =
-        genForbatchSetDefiner();
+        genForBatchSetDefiner();
 
-    private static HttpRequestDef<BatchSetDefinerRequest, BatchSetDefinerResponse> genForbatchSetDefiner() {
+    private static HttpRequestDef<BatchSetDefinerRequest, BatchSetDefinerResponse> genForBatchSetDefiner() {
         // basic
         HttpRequestDef.Builder<BatchSetDefinerRequest, BatchSetDefinerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSetDefinerRequest.class, BatchSetDefinerResponse.class)
@@ -548,16 +497,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchSetDefinerRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchSetDefinerRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchSetDefinerRequest::getXLanguage, BatchSetDefinerRequest::setXLanguage));
         builder.<BatchReplaceDefinerReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchReplaceDefinerReq.class),
-            f -> f.withMarshaller(BatchSetDefinerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchSetDefinerRequest::getBody, BatchSetDefinerRequest::setBody));
 
         // response
 
@@ -565,9 +510,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchSetObjectsRequest, BatchSetObjectsResponse> batchSetObjects =
-        genForbatchSetObjects();
+        genForBatchSetObjects();
 
-    private static HttpRequestDef<BatchSetObjectsRequest, BatchSetObjectsResponse> genForbatchSetObjects() {
+    private static HttpRequestDef<BatchSetObjectsRequest, BatchSetObjectsResponse> genForBatchSetObjects() {
         // basic
         HttpRequestDef.Builder<BatchSetObjectsRequest, BatchSetObjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchSetObjectsRequest.class, BatchSetObjectsResponse.class)
@@ -580,16 +525,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchSetObjectsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchSetObjectsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchSetObjectsRequest::getXLanguage, BatchSetObjectsRequest::setXLanguage));
         builder.<BatchUpdateDatabaseObjectReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateDatabaseObjectReq.class),
-            f -> f.withMarshaller(BatchSetObjectsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchSetObjectsRequest::getBody, BatchSetObjectsRequest::setBody));
 
         // response
 
@@ -597,9 +538,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchSetPolicyRequest, BatchSetPolicyResponse> batchSetPolicy =
-        genForbatchSetPolicy();
+        genForBatchSetPolicy();
 
-    private static HttpRequestDef<BatchSetPolicyRequest, BatchSetPolicyResponse> genForbatchSetPolicy() {
+    private static HttpRequestDef<BatchSetPolicyRequest, BatchSetPolicyResponse> genForBatchSetPolicy() {
         // basic
         HttpRequestDef.Builder<BatchSetPolicyRequest, BatchSetPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSetPolicyRequest.class, BatchSetPolicyResponse.class)
@@ -612,25 +553,21 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchSetPolicyRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchSetPolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchSetPolicyRequest::getXLanguage, BatchSetPolicyRequest::setXLanguage));
         builder.<BatchSetupSyncPolicyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchSetupSyncPolicyReq.class),
-            f -> f.withMarshaller(BatchSetPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchSetPolicyRequest::getBody, BatchSetPolicyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchSetSmnRequest, BatchSetSmnResponse> batchSetSmn = genForbatchSetSmn();
+    public static final HttpRequestDef<BatchSetSmnRequest, BatchSetSmnResponse> batchSetSmn = genForBatchSetSmn();
 
-    private static HttpRequestDef<BatchSetSmnRequest, BatchSetSmnResponse> genForbatchSetSmn() {
+    private static HttpRequestDef<BatchSetSmnRequest, BatchSetSmnResponse> genForBatchSetSmn() {
         // basic
         HttpRequestDef.Builder<BatchSetSmnRequest, BatchSetSmnResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSetSmnRequest.class, BatchSetSmnResponse.class)
@@ -643,16 +580,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchSetSmnRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchSetSmnRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchSetSmnRequest::getXLanguage, BatchSetSmnRequest::setXLanguage));
         builder.<BatchImportSmnInfoReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchImportSmnInfoReq.class),
-            f -> f.withMarshaller(BatchSetSmnRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchSetSmnRequest::getBody, BatchSetSmnRequest::setBody));
 
         // response
 
@@ -660,9 +593,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchSetSpeedRequest, BatchSetSpeedResponse> batchSetSpeed =
-        genForbatchSetSpeed();
+        genForBatchSetSpeed();
 
-    private static HttpRequestDef<BatchSetSpeedRequest, BatchSetSpeedResponse> genForbatchSetSpeed() {
+    private static HttpRequestDef<BatchSetSpeedRequest, BatchSetSpeedResponse> genForBatchSetSpeed() {
         // basic
         HttpRequestDef.Builder<BatchSetSpeedRequest, BatchSetSpeedResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchSetSpeedRequest.class, BatchSetSpeedResponse.class)
@@ -675,16 +608,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchSetSpeedRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchSetSpeedRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchSetSpeedRequest::getXLanguage, BatchSetSpeedRequest::setXLanguage));
         builder.<BatchLimitSpeedReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchLimitSpeedReq.class),
-            f -> f.withMarshaller(BatchSetSpeedRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchSetSpeedRequest::getBody, BatchSetSpeedRequest::setBody));
 
         // response
 
@@ -692,9 +621,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchShowParamsRequest, BatchShowParamsResponse> batchShowParams =
-        genForbatchShowParams();
+        genForBatchShowParams();
 
-    private static HttpRequestDef<BatchShowParamsRequest, BatchShowParamsResponse> genForbatchShowParams() {
+    private static HttpRequestDef<BatchShowParamsRequest, BatchShowParamsResponse> genForBatchShowParams() {
         // basic
         HttpRequestDef.Builder<BatchShowParamsRequest, BatchShowParamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchShowParamsRequest.class, BatchShowParamsResponse.class)
@@ -707,16 +636,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchShowParamsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchShowParamsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchShowParamsRequest::getXLanguage, BatchShowParamsRequest::setXLanguage));
         builder.<BatchQueryParamReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchQueryParamReq.class),
-            f -> f.withMarshaller(BatchShowParamsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchShowParamsRequest::getBody, BatchShowParamsRequest::setBody));
 
         // response
 
@@ -724,9 +649,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchStartJobsRequest, BatchStartJobsResponse> batchStartJobs =
-        genForbatchStartJobs();
+        genForBatchStartJobs();
 
-    private static HttpRequestDef<BatchStartJobsRequest, BatchStartJobsResponse> genForbatchStartJobs() {
+    private static HttpRequestDef<BatchStartJobsRequest, BatchStartJobsResponse> genForBatchStartJobs() {
         // basic
         HttpRequestDef.Builder<BatchStartJobsRequest, BatchStartJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStartJobsRequest.class, BatchStartJobsResponse.class)
@@ -739,16 +664,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchStartJobsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchStartJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchStartJobsRequest::getXLanguage, BatchStartJobsRequest::setXLanguage));
         builder.<BatchStartJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchStartJobReq.class),
-            f -> f.withMarshaller(BatchStartJobsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStartJobsRequest::getBody, BatchStartJobsRequest::setBody));
 
         // response
 
@@ -756,9 +677,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchStopJobsRequest, BatchStopJobsResponse> batchStopJobs =
-        genForbatchStopJobs();
+        genForBatchStopJobs();
 
-    private static HttpRequestDef<BatchStopJobsRequest, BatchStopJobsResponse> genForbatchStopJobs() {
+    private static HttpRequestDef<BatchStopJobsRequest, BatchStopJobsResponse> genForBatchStopJobs() {
         // basic
         HttpRequestDef.Builder<BatchStopJobsRequest, BatchStopJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStopJobsRequest.class, BatchStopJobsResponse.class)
@@ -771,16 +692,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchStopJobsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchStopJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchStopJobsRequest::getXLanguage, BatchStopJobsRequest::setXLanguage));
         builder.<BatchPauseJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchPauseJobReq.class),
-            f -> f.withMarshaller(BatchStopJobsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStopJobsRequest::getBody, BatchStopJobsRequest::setBody));
 
         // response
 
@@ -788,9 +705,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchSwitchoverRequest, BatchSwitchoverResponse> batchSwitchover =
-        genForbatchSwitchover();
+        genForBatchSwitchover();
 
-    private static HttpRequestDef<BatchSwitchoverRequest, BatchSwitchoverResponse> genForbatchSwitchover() {
+    private static HttpRequestDef<BatchSwitchoverRequest, BatchSwitchoverResponse> genForBatchSwitchover() {
         // basic
         HttpRequestDef.Builder<BatchSwitchoverRequest, BatchSwitchoverResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSwitchoverRequest.class, BatchSwitchoverResponse.class)
@@ -803,16 +720,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchSwitchoverRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchSwitchoverRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchSwitchoverRequest::getXLanguage, BatchSwitchoverRequest::setXLanguage));
         builder.<BatchSwitchoverReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchSwitchoverReq.class),
-            f -> f.withMarshaller(BatchSwitchoverRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchSwitchoverRequest::getBody, BatchSwitchoverRequest::setBody));
 
         // response
 
@@ -820,9 +733,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateJobRequest, BatchUpdateJobResponse> batchUpdateJob =
-        genForbatchUpdateJob();
+        genForBatchUpdateJob();
 
-    private static HttpRequestDef<BatchUpdateJobRequest, BatchUpdateJobResponse> genForbatchUpdateJob() {
+    private static HttpRequestDef<BatchUpdateJobRequest, BatchUpdateJobResponse> genForBatchUpdateJob() {
         // basic
         HttpRequestDef.Builder<BatchUpdateJobRequest, BatchUpdateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateJobRequest.class, BatchUpdateJobResponse.class)
@@ -835,16 +748,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchUpdateJobRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchUpdateJobRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateJobRequest::getXLanguage, BatchUpdateJobRequest::setXLanguage));
         builder.<BatchModifyJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchModifyJobReq.class),
-            f -> f.withMarshaller(BatchUpdateJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateJobRequest::getBody, BatchUpdateJobRequest::setBody));
 
         // response
 
@@ -852,9 +761,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateUserRequest, BatchUpdateUserResponse> batchUpdateUser =
-        genForbatchUpdateUser();
+        genForBatchUpdateUser();
 
-    private static HttpRequestDef<BatchUpdateUserRequest, BatchUpdateUserResponse> genForbatchUpdateUser() {
+    private static HttpRequestDef<BatchUpdateUserRequest, BatchUpdateUserResponse> genForBatchUpdateUser() {
         // basic
         HttpRequestDef.Builder<BatchUpdateUserRequest, BatchUpdateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateUserRequest.class, BatchUpdateUserResponse.class)
@@ -867,16 +776,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchUpdateUserRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchUpdateUserRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateUserRequest::getXLanguage, BatchUpdateUserRequest::setXLanguage));
         builder.<BatchUpdateSrcUserReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateSrcUserReq.class),
-            f -> f.withMarshaller(BatchUpdateUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateUserRequest::getBody, BatchUpdateUserRequest::setBody));
 
         // response
 
@@ -884,9 +789,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchValidateClustersConnectionsRequest, BatchValidateClustersConnectionsResponse> batchValidateClustersConnections =
-        genForbatchValidateClustersConnections();
+        genForBatchValidateClustersConnections();
 
-    private static HttpRequestDef<BatchValidateClustersConnectionsRequest, BatchValidateClustersConnectionsResponse> genForbatchValidateClustersConnections() {
+    private static HttpRequestDef<BatchValidateClustersConnectionsRequest, BatchValidateClustersConnectionsResponse> genForBatchValidateClustersConnections() {
         // basic
         HttpRequestDef.Builder<BatchValidateClustersConnectionsRequest, BatchValidateClustersConnectionsResponse> builder =
             HttpRequestDef
@@ -902,16 +807,14 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchValidateClustersConnectionsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchValidateClustersConnectionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchValidateClustersConnectionsRequest::getXLanguage,
+                BatchValidateClustersConnectionsRequest::setXLanguage));
         builder.<BatchSpecialTestConnectionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchSpecialTestConnectionReq.class),
-            f -> f.withMarshaller(BatchValidateClustersConnectionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchValidateClustersConnectionsRequest::getBody,
+                BatchValidateClustersConnectionsRequest::setBody));
 
         // response
 
@@ -919,9 +822,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse> batchValidateConnections =
-        genForbatchValidateConnections();
+        genForBatchValidateConnections();
 
-    private static HttpRequestDef<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse> genForbatchValidateConnections() {
+    private static HttpRequestDef<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse> genForBatchValidateConnections() {
         // basic
         HttpRequestDef.Builder<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse> builder =
             HttpRequestDef
@@ -935,16 +838,13 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchValidateConnectionsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchValidateConnectionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchValidateConnectionsRequest::getXLanguage,
+                BatchValidateConnectionsRequest::setXLanguage));
         builder.<BatchTestConnectionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchTestConnectionReq.class),
-            f -> f.withMarshaller(BatchValidateConnectionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchValidateConnectionsRequest::getBody, BatchValidateConnectionsRequest::setBody));
 
         // response
 
@@ -952,9 +852,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<CreateCompareTaskRequest, CreateCompareTaskResponse> createCompareTask =
-        genForcreateCompareTask();
+        genForCreateCompareTask();
 
-    private static HttpRequestDef<CreateCompareTaskRequest, CreateCompareTaskResponse> genForcreateCompareTask() {
+    private static HttpRequestDef<CreateCompareTaskRequest, CreateCompareTaskResponse> genForCreateCompareTask() {
         // basic
         HttpRequestDef.Builder<CreateCompareTaskRequest, CreateCompareTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCompareTaskRequest.class, CreateCompareTaskResponse.class)
@@ -967,16 +867,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateCompareTaskRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CreateCompareTaskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateCompareTaskRequest::getXLanguage, CreateCompareTaskRequest::setXLanguage));
         builder.<CreateCompareTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCompareTaskReq.class),
-            f -> f.withMarshaller(CreateCompareTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCompareTaskRequest::getBody, CreateCompareTaskRequest::setBody));
 
         // response
 
@@ -984,9 +880,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListAvailableZoneRequest, ListAvailableZoneResponse> listAvailableZone =
-        genForlistAvailableZone();
+        genForListAvailableZone();
 
-    private static HttpRequestDef<ListAvailableZoneRequest, ListAvailableZoneResponse> genForlistAvailableZone() {
+    private static HttpRequestDef<ListAvailableZoneRequest, ListAvailableZoneResponse> genForListAvailableZone() {
         // basic
         HttpRequestDef.Builder<ListAvailableZoneRequest, ListAvailableZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListAvailableZoneRequest.class, ListAvailableZoneResponse.class)
@@ -999,16 +895,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAvailableZoneRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListAvailableZoneRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAvailableZoneRequest::getXLanguage, ListAvailableZoneRequest::setXLanguage));
         builder.<QueryAvailableNodeTypeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryAvailableNodeTypeReq.class),
-            f -> f.withMarshaller(ListAvailableZoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAvailableZoneRequest::getBody, ListAvailableZoneRequest::setBody));
 
         // response
 
@@ -1016,9 +908,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListCompareResultRequest, ListCompareResultResponse> listCompareResult =
-        genForlistCompareResult();
+        genForListCompareResult();
 
-    private static HttpRequestDef<ListCompareResultRequest, ListCompareResultResponse> genForlistCompareResult() {
+    private static HttpRequestDef<ListCompareResultRequest, ListCompareResultResponse> genForListCompareResult() {
         // basic
         HttpRequestDef.Builder<ListCompareResultRequest, ListCompareResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListCompareResultRequest.class, ListCompareResultResponse.class)
@@ -1031,25 +923,21 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListCompareResultRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListCompareResultRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCompareResultRequest::getXLanguage, ListCompareResultRequest::setXLanguage));
         builder.<QueryCompareResultReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryCompareResultReq.class),
-            f -> f.withMarshaller(ListCompareResultRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListCompareResultRequest::getBody, ListCompareResultRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForlistUsers();
+    public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForListUsers();
 
-    private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForlistUsers() {
+    private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForListUsers() {
         // basic
         HttpRequestDef.Builder<ListUsersRequest, ListUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsersRequest.class, ListUsersResponse.class)
@@ -1062,25 +950,21 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getJobId, ListUsersRequest::setJobId));
         builder.<ListUsersRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListUsersRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListUsersRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListUsersRequest::getXLanguage, ListUsersRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobListRequest, ShowJobListResponse> showJobList = genForshowJobList();
+    public static final HttpRequestDef<ShowJobListRequest, ShowJobListResponse> showJobList = genForShowJobList();
 
-    private static HttpRequestDef<ShowJobListRequest, ShowJobListResponse> genForshowJobList() {
+    private static HttpRequestDef<ShowJobListRequest, ShowJobListResponse> genForShowJobList() {
         // basic
         HttpRequestDef.Builder<ShowJobListRequest, ShowJobListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowJobListRequest.class, ShowJobListResponse.class)
@@ -1093,16 +977,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowJobListRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowJobListRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowJobListRequest::getXLanguage, ShowJobListRequest::setXLanguage));
         builder.<QueryJobsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryJobsReq.class),
-            f -> f.withMarshaller(ShowJobListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowJobListRequest::getBody, ShowJobListRequest::setBody));
 
         // response
 
@@ -1110,9 +990,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowMonitoringDataRequest, ShowMonitoringDataResponse> showMonitoringData =
-        genForshowMonitoringData();
+        genForShowMonitoringData();
 
-    private static HttpRequestDef<ShowMonitoringDataRequest, ShowMonitoringDataResponse> genForshowMonitoringData() {
+    private static HttpRequestDef<ShowMonitoringDataRequest, ShowMonitoringDataResponse> genForShowMonitoringData() {
         // basic
         HttpRequestDef.Builder<ShowMonitoringDataRequest, ShowMonitoringDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowMonitoringDataRequest.class, ShowMonitoringDataResponse.class)
@@ -1125,25 +1005,21 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowMonitoringDataRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowMonitoringDataRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowMonitoringDataRequest::getXLanguage, ShowMonitoringDataRequest::setXLanguage));
         builder.<BatchQueryJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchQueryJobReq.class),
-            f -> f.withMarshaller(ShowMonitoringDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowMonitoringDataRequest::getBody, ShowMonitoringDataRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForShowQuotas();
 
-    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForShowQuotas() {
         // basic
         HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
@@ -1156,18 +1032,16 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowQuotasRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowQuotasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowQuotasRequest::getXLanguage, ShowQuotasRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateParamsRequest, UpdateParamsResponse> updateParams = genForupdateParams();
+    public static final HttpRequestDef<UpdateParamsRequest, UpdateParamsResponse> updateParams = genForUpdateParams();
 
-    private static HttpRequestDef<UpdateParamsRequest, UpdateParamsResponse> genForupdateParams() {
+    private static HttpRequestDef<UpdateParamsRequest, UpdateParamsResponse> genForUpdateParams() {
         // basic
         HttpRequestDef.Builder<UpdateParamsRequest, UpdateParamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateParamsRequest.class, UpdateParamsResponse.class)
@@ -1180,23 +1054,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateParamsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateParamsRequest::getJobId, UpdateParamsRequest::setJobId));
         builder.<UpdateParamsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateParamsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(UpdateParamsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateParamsRequest::getXLanguage, UpdateParamsRequest::setXLanguage));
         builder.<ModifyTargetParamsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyTargetParamsReq.class),
-            f -> f.withMarshaller(UpdateParamsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateParamsRequest::getBody, UpdateParamsRequest::setBody));
 
         // response
 
@@ -1204,9 +1072,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<UpdateTuningParamsRequest, UpdateTuningParamsResponse> updateTuningParams =
-        genForupdateTuningParams();
+        genForUpdateTuningParams();
 
-    private static HttpRequestDef<UpdateTuningParamsRequest, UpdateTuningParamsResponse> genForupdateTuningParams() {
+    private static HttpRequestDef<UpdateTuningParamsRequest, UpdateTuningParamsResponse> genForUpdateTuningParams() {
         // basic
         HttpRequestDef.Builder<UpdateTuningParamsRequest, UpdateTuningParamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTuningParamsRequest.class, UpdateTuningParamsResponse.class)
@@ -1219,23 +1087,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTuningParamsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateTuningParamsRequest::getJobId, UpdateTuningParamsRequest::setJobId));
         builder.<UpdateTuningParamsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateTuningParamsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(UpdateTuningParamsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateTuningParamsRequest::getXLanguage, UpdateTuningParamsRequest::setXLanguage));
         builder.<ModifyTuningParamsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyTuningParamsReq.class),
-            f -> f.withMarshaller(UpdateTuningParamsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTuningParamsRequest::getBody, UpdateTuningParamsRequest::setBody));
 
         // response
 

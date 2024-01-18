@@ -21,7 +21,7 @@ public class TempName {
     }
 
     /**
-     * name
+     * 名称
      * @return name
      */
     public String getName() {

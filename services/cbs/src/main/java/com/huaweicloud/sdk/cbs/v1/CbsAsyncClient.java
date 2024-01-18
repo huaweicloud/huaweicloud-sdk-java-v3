@@ -85,7 +85,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectHotQuestionsRequest 请求对象
+     * @param request CollectHotQuestionsRequest 请求对象
      * @return CompletableFuture<CollectHotQuestionsResponse>
      */
     public CompletableFuture<CollectHotQuestionsResponse> collectHotQuestionsAsync(CollectHotQuestionsRequest request) {
@@ -100,13 +100,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectHotQuestionsRequest 请求对象
+     * @param request CollectHotQuestionsRequest 请求对象
      * @return AsyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse>
      */
     public AsyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse> collectHotQuestionsAsyncInvoker(
         CollectHotQuestionsRequest request) {
-        return new AsyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse>(request,
-            CbsMeta.collectHotQuestions, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.collectHotQuestions, hcClient);
     }
 
     /**
@@ -116,7 +115,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectKeyWordsRequest 请求对象
+     * @param request CollectKeyWordsRequest 请求对象
      * @return CompletableFuture<CollectKeyWordsResponse>
      */
     public CompletableFuture<CollectKeyWordsResponse> collectKeyWordsAsync(CollectKeyWordsRequest request) {
@@ -130,13 +129,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectKeyWordsRequest 请求对象
+     * @param request CollectKeyWordsRequest 请求对象
      * @return AsyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse>
      */
     public AsyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse> collectKeyWordsAsyncInvoker(
         CollectKeyWordsRequest request) {
-        return new AsyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse>(request, CbsMeta.collectKeyWords,
-            hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.collectKeyWords, hcClient);
     }
 
     /**
@@ -147,7 +145,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectReplyRatesRequest 请求对象
+     * @param request CollectReplyRatesRequest 请求对象
      * @return CompletableFuture<CollectReplyRatesResponse>
      */
     public CompletableFuture<CollectReplyRatesResponse> collectReplyRatesAsync(CollectReplyRatesRequest request) {
@@ -162,13 +160,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectReplyRatesRequest 请求对象
+     * @param request CollectReplyRatesRequest 请求对象
      * @return AsyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse>
      */
     public AsyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse> collectReplyRatesAsyncInvoker(
         CollectReplyRatesRequest request) {
-        return new AsyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse>(request, CbsMeta.collectReplyRates,
-            hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.collectReplyRates, hcClient);
     }
 
     /**
@@ -178,7 +175,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectSessionStatsRequest 请求对象
+     * @param request CollectSessionStatsRequest 请求对象
      * @return CompletableFuture<CollectSessionStatsResponse>
      */
     public CompletableFuture<CollectSessionStatsResponse> collectSessionStatsAsync(CollectSessionStatsRequest request) {
@@ -192,13 +189,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectSessionStatsRequest 请求对象
+     * @param request CollectSessionStatsRequest 请求对象
      * @return AsyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse>
      */
     public AsyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse> collectSessionStatsAsyncInvoker(
         CollectSessionStatsRequest request) {
-        return new AsyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse>(request,
-            CbsMeta.collectSessionStats, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.collectSessionStats, hcClient);
     }
 
     /**
@@ -208,7 +204,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSessionRequest 请求对象
+     * @param request CreateSessionRequest 请求对象
      * @return CompletableFuture<CreateSessionResponse>
      */
     @Deprecated
@@ -223,13 +219,13 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSessionRequest 请求对象
+     * @param request CreateSessionRequest 请求对象
      * @return AsyncInvoker<CreateSessionRequest, CreateSessionResponse>
      */
     @Deprecated
     public AsyncInvoker<CreateSessionRequest, CreateSessionResponse> createSessionAsyncInvoker(
         CreateSessionRequest request) {
-        return new AsyncInvoker<CreateSessionRequest, CreateSessionResponse>(request, CbsMeta.createSession, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.createSession, hcClient);
     }
 
     /**
@@ -239,7 +235,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSessionRequest 请求对象
+     * @param request DeleteSessionRequest 请求对象
      * @return CompletableFuture<DeleteSessionResponse>
      */
     @Deprecated
@@ -254,13 +250,13 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSessionRequest 请求对象
+     * @param request DeleteSessionRequest 请求对象
      * @return AsyncInvoker<DeleteSessionRequest, DeleteSessionResponse>
      */
     @Deprecated
     public AsyncInvoker<DeleteSessionRequest, DeleteSessionResponse> deleteSessionAsyncInvoker(
         DeleteSessionRequest request) {
-        return new AsyncInvoker<DeleteSessionRequest, DeleteSessionResponse>(request, CbsMeta.deleteSession, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.deleteSession, hcClient);
     }
 
     /**
@@ -269,7 +265,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteComposeVideoRequest 请求对象
+     * @param request ExecuteComposeVideoRequest 请求对象
      * @return CompletableFuture<ExecuteComposeVideoResponse>
      */
     public CompletableFuture<ExecuteComposeVideoResponse> executeComposeVideoAsync(ExecuteComposeVideoRequest request) {
@@ -282,13 +278,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteComposeVideoRequest 请求对象
+     * @param request ExecuteComposeVideoRequest 请求对象
      * @return AsyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse>
      */
     public AsyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse> executeComposeVideoAsyncInvoker(
         ExecuteComposeVideoRequest request) {
-        return new AsyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse>(request,
-            CbsMeta.executeComposeVideo, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeComposeVideo, hcClient);
     }
 
     /**
@@ -297,7 +292,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteComposeVideoOndemandRequest 请求对象
+     * @param request ExecuteComposeVideoOndemandRequest 请求对象
      * @return CompletableFuture<ExecuteComposeVideoOndemandResponse>
      */
     public CompletableFuture<ExecuteComposeVideoOndemandResponse> executeComposeVideoOndemandAsync(
@@ -311,13 +306,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteComposeVideoOndemandRequest 请求对象
+     * @param request ExecuteComposeVideoOndemandRequest 请求对象
      * @return AsyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse>
      */
     public AsyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse> executeComposeVideoOndemandAsyncInvoker(
         ExecuteComposeVideoOndemandRequest request) {
-        return new AsyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse>(request,
-            CbsMeta.executeComposeVideoOndemand, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeComposeVideoOndemand, hcClient);
     }
 
     /**
@@ -326,7 +320,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteCreateVideoRequest 请求对象
+     * @param request ExecuteCreateVideoRequest 请求对象
      * @return CompletableFuture<ExecuteCreateVideoResponse>
      */
     public CompletableFuture<ExecuteCreateVideoResponse> executeCreateVideoAsync(ExecuteCreateVideoRequest request) {
@@ -339,13 +333,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteCreateVideoRequest 请求对象
+     * @param request ExecuteCreateVideoRequest 请求对象
      * @return AsyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse>
      */
     public AsyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse> executeCreateVideoAsyncInvoker(
         ExecuteCreateVideoRequest request) {
-        return new AsyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse>(request,
-            CbsMeta.executeCreateVideo, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeCreateVideo, hcClient);
     }
 
     /**
@@ -354,7 +347,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeleteVideoByIdRequest 请求对象
+     * @param request ExecuteDeleteVideoByIdRequest 请求对象
      * @return CompletableFuture<ExecuteDeleteVideoByIdResponse>
      */
     public CompletableFuture<ExecuteDeleteVideoByIdResponse> executeDeleteVideoByIdAsync(
@@ -368,13 +361,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeleteVideoByIdRequest 请求对象
+     * @param request ExecuteDeleteVideoByIdRequest 请求对象
      * @return AsyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse>
      */
     public AsyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse> executeDeleteVideoByIdAsyncInvoker(
         ExecuteDeleteVideoByIdRequest request) {
-        return new AsyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse>(request,
-            CbsMeta.executeDeleteVideoById, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeDeleteVideoById, hcClient);
     }
 
     /**
@@ -383,7 +375,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeleteimageByIdRequest 请求对象
+     * @param request ExecuteDeleteimageByIdRequest 请求对象
      * @return CompletableFuture<ExecuteDeleteimageByIdResponse>
      */
     public CompletableFuture<ExecuteDeleteimageByIdResponse> executeDeleteimageByIdAsync(
@@ -397,13 +389,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeleteimageByIdRequest 请求对象
+     * @param request ExecuteDeleteimageByIdRequest 请求对象
      * @return AsyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse>
      */
     public AsyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse> executeDeleteimageByIdAsyncInvoker(
         ExecuteDeleteimageByIdRequest request) {
-        return new AsyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse>(request,
-            CbsMeta.executeDeleteimageById, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeDeleteimageById, hcClient);
     }
 
     /**
@@ -412,7 +403,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetCharacterInfoByIdRequest 请求对象
+     * @param request ExecuteGetCharacterInfoByIdRequest 请求对象
      * @return CompletableFuture<ExecuteGetCharacterInfoByIdResponse>
      */
     public CompletableFuture<ExecuteGetCharacterInfoByIdResponse> executeGetCharacterInfoByIdAsync(
@@ -426,13 +417,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetCharacterInfoByIdRequest 请求对象
+     * @param request ExecuteGetCharacterInfoByIdRequest 请求对象
      * @return AsyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse>
      */
     public AsyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse> executeGetCharacterInfoByIdAsyncInvoker(
         ExecuteGetCharacterInfoByIdRequest request) {
-        return new AsyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse>(request,
-            CbsMeta.executeGetCharacterInfoById, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeGetCharacterInfoById, hcClient);
     }
 
     /**
@@ -444,7 +434,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetCharactersRequest 请求对象
+     * @param request ExecuteGetCharactersRequest 请求对象
      * @return CompletableFuture<ExecuteGetCharactersResponse>
      */
     public CompletableFuture<ExecuteGetCharactersResponse> executeGetCharactersAsync(
@@ -461,13 +451,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetCharactersRequest 请求对象
+     * @param request ExecuteGetCharactersRequest 请求对象
      * @return AsyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse>
      */
     public AsyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse> executeGetCharactersAsyncInvoker(
         ExecuteGetCharactersRequest request) {
-        return new AsyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse>(request,
-            CbsMeta.executeGetCharacters, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeGetCharacters, hcClient);
     }
 
     /**
@@ -477,7 +466,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetFramsListByImagesIdRequest 请求对象
+     * @param request ExecuteGetFramsListByImagesIdRequest 请求对象
      * @return CompletableFuture<ExecuteGetFramsListByImagesIdResponse>
      */
     public CompletableFuture<ExecuteGetFramsListByImagesIdResponse> executeGetFramsListByImagesIdAsync(
@@ -492,13 +481,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetFramsListByImagesIdRequest 请求对象
+     * @param request ExecuteGetFramsListByImagesIdRequest 请求对象
      * @return AsyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse>
      */
     public AsyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse> executeGetFramsListByImagesIdAsyncInvoker(
         ExecuteGetFramsListByImagesIdRequest request) {
-        return new AsyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse>(request,
-            CbsMeta.executeGetFramsListByImagesId, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeGetFramsListByImagesId, hcClient);
     }
 
     /**
@@ -507,7 +495,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetImagesListRequest 请求对象
+     * @param request ExecuteGetImagesListRequest 请求对象
      * @return CompletableFuture<ExecuteGetImagesListResponse>
      */
     public CompletableFuture<ExecuteGetImagesListResponse> executeGetImagesListAsync(
@@ -521,13 +509,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetImagesListRequest 请求对象
+     * @param request ExecuteGetImagesListRequest 请求对象
      * @return AsyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse>
      */
     public AsyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse> executeGetImagesListAsyncInvoker(
         ExecuteGetImagesListRequest request) {
-        return new AsyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse>(request,
-            CbsMeta.executeGetImagesList, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeGetImagesList, hcClient);
     }
 
     /**
@@ -536,7 +523,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetVideoInfoByIdRequest 请求对象
+     * @param request ExecuteGetVideoInfoByIdRequest 请求对象
      * @return CompletableFuture<ExecuteGetVideoInfoByIdResponse>
      */
     public CompletableFuture<ExecuteGetVideoInfoByIdResponse> executeGetVideoInfoByIdAsync(
@@ -550,13 +537,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetVideoInfoByIdRequest 请求对象
+     * @param request ExecuteGetVideoInfoByIdRequest 请求对象
      * @return AsyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse>
      */
     public AsyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse> executeGetVideoInfoByIdAsyncInvoker(
         ExecuteGetVideoInfoByIdRequest request) {
-        return new AsyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse>(request,
-            CbsMeta.executeGetVideoInfoById, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeGetVideoInfoById, hcClient);
     }
 
     /**
@@ -566,7 +552,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetVideosListRequest 请求对象
+     * @param request ExecuteGetVideosListRequest 请求对象
      * @return CompletableFuture<ExecuteGetVideosListResponse>
      */
     public CompletableFuture<ExecuteGetVideosListResponse> executeGetVideosListAsync(
@@ -581,13 +567,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetVideosListRequest 请求对象
+     * @param request ExecuteGetVideosListRequest 请求对象
      * @return AsyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse>
      */
     public AsyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse> executeGetVideosListAsyncInvoker(
         ExecuteGetVideosListRequest request) {
-        return new AsyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse>(request,
-            CbsMeta.executeGetVideosList, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeGetVideosList, hcClient);
     }
 
     /**
@@ -596,7 +581,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecutePostCreateImagesRequest 请求对象
+     * @param request ExecutePostCreateImagesRequest 请求对象
      * @return CompletableFuture<ExecutePostCreateImagesResponse>
      */
     public CompletableFuture<ExecutePostCreateImagesResponse> executePostCreateImagesAsync(
@@ -610,13 +595,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecutePostCreateImagesRequest 请求对象
+     * @param request ExecutePostCreateImagesRequest 请求对象
      * @return AsyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse>
      */
     public AsyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse> executePostCreateImagesAsyncInvoker(
         ExecutePostCreateImagesRequest request) {
-        return new AsyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse>(request,
-            CbsMeta.executePostCreateImages, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executePostCreateImages, hcClient);
     }
 
     /**
@@ -626,7 +610,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteQaChatRequest 请求对象
+     * @param request ExecuteQaChatRequest 请求对象
      * @return CompletableFuture<ExecuteQaChatResponse>
      */
     public CompletableFuture<ExecuteQaChatResponse> executeQaChatAsync(ExecuteQaChatRequest request) {
@@ -640,12 +624,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteQaChatRequest 请求对象
+     * @param request ExecuteQaChatRequest 请求对象
      * @return AsyncInvoker<ExecuteQaChatRequest, ExecuteQaChatResponse>
      */
     public AsyncInvoker<ExecuteQaChatRequest, ExecuteQaChatResponse> executeQaChatAsyncInvoker(
         ExecuteQaChatRequest request) {
-        return new AsyncInvoker<ExecuteQaChatRequest, ExecuteQaChatResponse>(request, CbsMeta.executeQaChat, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeQaChat, hcClient);
     }
 
     /**
@@ -655,7 +639,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteSessionRequest 请求对象
+     * @param request ExecuteSessionRequest 请求对象
      * @return CompletableFuture<ExecuteSessionResponse>
      */
     @Deprecated
@@ -670,14 +654,13 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteSessionRequest 请求对象
+     * @param request ExecuteSessionRequest 请求对象
      * @return AsyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>
      */
     @Deprecated
     public AsyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse> executeSessionAsyncInvoker(
         ExecuteSessionRequest request) {
-        return new AsyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>(request, CbsMeta.executeSession,
-            hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeSession, hcClient);
     }
 
     /**
@@ -686,7 +669,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateImageNameRequest 请求对象
+     * @param request ExecuteUpdateImageNameRequest 请求对象
      * @return CompletableFuture<ExecuteUpdateImageNameResponse>
      */
     public CompletableFuture<ExecuteUpdateImageNameResponse> executeUpdateImageNameAsync(
@@ -700,13 +683,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateImageNameRequest 请求对象
+     * @param request ExecuteUpdateImageNameRequest 请求对象
      * @return AsyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse>
      */
     public AsyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse> executeUpdateImageNameAsyncInvoker(
         ExecuteUpdateImageNameRequest request) {
-        return new AsyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse>(request,
-            CbsMeta.executeUpdateImageName, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeUpdateImageName, hcClient);
     }
 
     /**
@@ -715,7 +697,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateVideoByIdRequest 请求对象
+     * @param request ExecuteUpdateVideoByIdRequest 请求对象
      * @return CompletableFuture<ExecuteUpdateVideoByIdResponse>
      */
     public CompletableFuture<ExecuteUpdateVideoByIdResponse> executeUpdateVideoByIdAsync(
@@ -729,13 +711,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateVideoByIdRequest 请求对象
+     * @param request ExecuteUpdateVideoByIdRequest 请求对象
      * @return AsyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse>
      */
     public AsyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse> executeUpdateVideoByIdAsyncInvoker(
         ExecuteUpdateVideoByIdRequest request) {
-        return new AsyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse>(request,
-            CbsMeta.executeUpdateVideoById, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeUpdateVideoById, hcClient);
     }
 
     /**
@@ -745,7 +726,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateVideoInfoByIdRequest 请求对象
+     * @param request ExecuteUpdateVideoInfoByIdRequest 请求对象
      * @return CompletableFuture<ExecuteUpdateVideoInfoByIdResponse>
      */
     public CompletableFuture<ExecuteUpdateVideoInfoByIdResponse> executeUpdateVideoInfoByIdAsync(
@@ -760,13 +741,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateVideoInfoByIdRequest 请求对象
+     * @param request ExecuteUpdateVideoInfoByIdRequest 请求对象
      * @return AsyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse>
      */
     public AsyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse> executeUpdateVideoInfoByIdAsyncInvoker(
         ExecuteUpdateVideoInfoByIdRequest request) {
-        return new AsyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse>(request,
-            CbsMeta.executeUpdateVideoInfoById, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeUpdateVideoInfoById, hcClient);
     }
 
     /**
@@ -777,7 +757,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUploadImageRequest 请求对象
+     * @param request ExecuteUploadImageRequest 请求对象
      * @return CompletableFuture<ExecuteUploadImageResponse>
      */
     public CompletableFuture<ExecuteUploadImageResponse> executeUploadImageAsync(ExecuteUploadImageRequest request) {
@@ -792,13 +772,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUploadImageRequest 请求对象
+     * @param request ExecuteUploadImageRequest 请求对象
      * @return AsyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse>
      */
     public AsyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse> executeUploadImageAsyncInvoker(
         ExecuteUploadImageRequest request) {
-        return new AsyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse>(request,
-            CbsMeta.executeUploadImage, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeUploadImage, hcClient);
     }
 
     /**
@@ -810,7 +789,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUploadPptRequest 请求对象
+     * @param request ExecuteUploadPptRequest 请求对象
      * @return CompletableFuture<ExecuteUploadPptResponse>
      */
     public CompletableFuture<ExecuteUploadPptResponse> executeUploadPptAsync(ExecuteUploadPptRequest request) {
@@ -826,13 +805,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUploadPptRequest 请求对象
+     * @param request ExecuteUploadPptRequest 请求对象
      * @return AsyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse>
      */
     public AsyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse> executeUploadPptAsyncInvoker(
         ExecuteUploadPptRequest request) {
-        return new AsyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse>(request, CbsMeta.executeUploadPpt,
-            hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.executeUploadPpt, hcClient);
     }
 
     /**
@@ -842,7 +820,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSuggestionsRequest 请求对象
+     * @param request ListSuggestionsRequest 请求对象
      * @return CompletableFuture<ListSuggestionsResponse>
      */
     public CompletableFuture<ListSuggestionsResponse> listSuggestionsAsync(ListSuggestionsRequest request) {
@@ -856,13 +834,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSuggestionsRequest 请求对象
+     * @param request ListSuggestionsRequest 请求对象
      * @return AsyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse>
      */
     public AsyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse> listSuggestionsAsyncInvoker(
         ListSuggestionsRequest request) {
-        return new AsyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse>(request, CbsMeta.listSuggestions,
-            hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.listSuggestions, hcClient);
     }
 
     /**
@@ -872,7 +849,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagLaborRequest 请求对象
+     * @param request TagLaborRequest 请求对象
      * @return CompletableFuture<TagLaborResponse>
      */
     public CompletableFuture<TagLaborResponse> tagLaborAsync(TagLaborRequest request) {
@@ -886,11 +863,11 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagLaborRequest 请求对象
+     * @param request TagLaborRequest 请求对象
      * @return AsyncInvoker<TagLaborRequest, TagLaborResponse>
      */
     public AsyncInvoker<TagLaborRequest, TagLaborResponse> tagLaborAsyncInvoker(TagLaborRequest request) {
-        return new AsyncInvoker<TagLaborRequest, TagLaborResponse>(request, CbsMeta.tagLabor, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.tagLabor, hcClient);
     }
 
     /**
@@ -900,7 +877,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagSatisfactionRequest 请求对象
+     * @param request TagSatisfactionRequest 请求对象
      * @return CompletableFuture<TagSatisfactionResponse>
      */
     public CompletableFuture<TagSatisfactionResponse> tagSatisfactionAsync(TagSatisfactionRequest request) {
@@ -914,13 +891,12 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagSatisfactionRequest 请求对象
+     * @param request TagSatisfactionRequest 请求对象
      * @return AsyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse>
      */
     public AsyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse> tagSatisfactionAsyncInvoker(
         TagSatisfactionRequest request) {
-        return new AsyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse>(request, CbsMeta.tagSatisfaction,
-            hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.tagSatisfaction, hcClient);
     }
 
     /**
@@ -933,7 +909,7 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PostRequestsRequest 请求对象
+     * @param request PostRequestsRequest 请求对象
      * @return CompletableFuture<PostRequestsResponse>
      */
     @Deprecated
@@ -951,13 +927,13 @@ public class CbsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PostRequestsRequest 请求对象
+     * @param request PostRequestsRequest 请求对象
      * @return AsyncInvoker<PostRequestsRequest, PostRequestsResponse>
      */
     @Deprecated
     public AsyncInvoker<PostRequestsRequest, PostRequestsResponse> postRequestsAsyncInvoker(
         PostRequestsRequest request) {
-        return new AsyncInvoker<PostRequestsRequest, PostRequestsResponse>(request, CbsMeta.postRequests, hcClient);
+        return new AsyncInvoker<>(request, CbsMeta.postRequests, hcClient);
     }
 
 }

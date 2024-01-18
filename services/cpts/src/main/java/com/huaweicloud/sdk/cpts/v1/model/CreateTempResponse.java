@@ -32,7 +32,7 @@ public class CreateTempResponse extends SdkResponse {
     }
 
     /**
-     * code
+     * 响应码
      * @return code
      */
     public String getCode() {
@@ -49,7 +49,7 @@ public class CreateTempResponse extends SdkResponse {
     }
 
     /**
-     * tempId
+     * 事务id
      * minimum: 0
      * maximum: 2147483647
      * @return tempId
@@ -68,7 +68,7 @@ public class CreateTempResponse extends SdkResponse {
     }
 
     /**
-     * message
+     * 响应消息
      * @return message
      */
     public String getMessage() {

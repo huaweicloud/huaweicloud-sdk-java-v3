@@ -154,9 +154,9 @@ import java.util.List;
 public class VodMeta {
 
     public static final HttpRequestDef<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse> cancelAssetTranscodeTask =
-        genForcancelAssetTranscodeTask();
+        genForCancelAssetTranscodeTask();
 
-    private static HttpRequestDef<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse> genForcancelAssetTranscodeTask() {
+    private static HttpRequestDef<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse> genForCancelAssetTranscodeTask() {
         // basic
         HttpRequestDef.Builder<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse> builder =
             HttpRequestDef
@@ -172,16 +172,14 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getAssetId,
+                CancelAssetTranscodeTaskRequest::setAssetId));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getXSdkDate,
+                CancelAssetTranscodeTaskRequest::setXSdkDate));
 
         // response
 
@@ -189,9 +187,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse> cancelExtractAudioTask =
-        genForcancelExtractAudioTask();
+        genForCancelExtractAudioTask();
 
-    private static HttpRequestDef<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse> genForcancelExtractAudioTask() {
+    private static HttpRequestDef<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse> genForCancelExtractAudioTask() {
         // basic
         HttpRequestDef.Builder<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, CancelExtractAudioTaskRequest.class, CancelExtractAudioTaskResponse.class)
@@ -204,16 +202,14 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelExtractAudioTaskRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(CancelExtractAudioTaskRequest::getAssetId,
+                CancelExtractAudioTaskRequest::setAssetId));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelExtractAudioTaskRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CancelExtractAudioTaskRequest::getXSdkDate,
+                CancelExtractAudioTaskRequest::setXSdkDate));
 
         // response
 
@@ -221,9 +217,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CheckMd5DuplicationRequest, CheckMd5DuplicationResponse> checkMd5Duplication =
-        genForcheckMd5Duplication();
+        genForCheckMd5Duplication();
 
-    private static HttpRequestDef<CheckMd5DuplicationRequest, CheckMd5DuplicationResponse> genForcheckMd5Duplication() {
+    private static HttpRequestDef<CheckMd5DuplicationRequest, CheckMd5DuplicationResponse> genForCheckMd5Duplication() {
         // basic
         HttpRequestDef.Builder<CheckMd5DuplicationRequest, CheckMd5DuplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckMd5DuplicationRequest.class, CheckMd5DuplicationResponse.class)
@@ -236,23 +232,17 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(CheckMd5DuplicationRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(CheckMd5DuplicationRequest::getSize, CheckMd5DuplicationRequest::setSize));
         builder.<String>withRequestField("md5",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckMd5DuplicationRequest::getMd5, (req, v) -> {
-                req.setMd5(v);
-            }));
+            f -> f.withMarshaller(CheckMd5DuplicationRequest::getMd5, CheckMd5DuplicationRequest::setMd5));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckMd5DuplicationRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CheckMd5DuplicationRequest::getXSdkDate, CheckMd5DuplicationRequest::setXSdkDate));
 
         // response
 
@@ -260,9 +250,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse> confirmAssetUpload =
-        genForconfirmAssetUpload();
+        genForConfirmAssetUpload();
 
-    private static HttpRequestDef<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse> genForconfirmAssetUpload() {
+    private static HttpRequestDef<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse> genForConfirmAssetUpload() {
         // basic
         HttpRequestDef.Builder<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ConfirmAssetUploadRequest.class, ConfirmAssetUploadResponse.class)
@@ -275,16 +265,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmAssetUploadRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ConfirmAssetUploadRequest::getXSdkDate, ConfirmAssetUploadRequest::setXSdkDate));
         builder.<ConfirmAssetUploadReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfirmAssetUploadReq.class),
-            f -> f.withMarshaller(ConfirmAssetUploadRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ConfirmAssetUploadRequest::getBody, ConfirmAssetUploadRequest::setBody));
 
         // response
 
@@ -292,9 +278,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ConfirmImageUploadRequest, ConfirmImageUploadResponse> confirmImageUpload =
-        genForconfirmImageUpload();
+        genForConfirmImageUpload();
 
-    private static HttpRequestDef<ConfirmImageUploadRequest, ConfirmImageUploadResponse> genForconfirmImageUpload() {
+    private static HttpRequestDef<ConfirmImageUploadRequest, ConfirmImageUploadResponse> genForConfirmImageUpload() {
         // basic
         HttpRequestDef.Builder<ConfirmImageUploadRequest, ConfirmImageUploadResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ConfirmImageUploadRequest.class, ConfirmImageUploadResponse.class)
@@ -307,16 +293,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmImageUploadRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ConfirmImageUploadRequest::getXSdkDate, ConfirmImageUploadRequest::setXSdkDate));
         builder.<ConfirmImageUploadReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfirmImageUploadReq.class),
-            f -> f.withMarshaller(ConfirmImageUploadRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ConfirmImageUploadRequest::getBody, ConfirmImageUploadRequest::setBody));
 
         // response
 
@@ -324,9 +306,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse> createAssetByFileUpload =
-        genForcreateAssetByFileUpload();
+        genForCreateAssetByFileUpload();
 
-    private static HttpRequestDef<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse> genForcreateAssetByFileUpload() {
+    private static HttpRequestDef<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse> genForCreateAssetByFileUpload() {
         // basic
         HttpRequestDef.Builder<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateAssetByFileUploadRequest.class, CreateAssetByFileUploadResponse.class)
@@ -339,16 +321,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetByFileUploadRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateAssetByFileUploadRequest::getXSdkDate,
+                CreateAssetByFileUploadRequest::setXSdkDate));
         builder.<CreateAssetByFileUploadReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAssetByFileUploadReq.class),
-            f -> f.withMarshaller(CreateAssetByFileUploadRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAssetByFileUploadRequest::getBody, CreateAssetByFileUploadRequest::setBody));
 
         // response
 
@@ -356,9 +335,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreateAssetCategoryRequest, CreateAssetCategoryResponse> createAssetCategory =
-        genForcreateAssetCategory();
+        genForCreateAssetCategory();
 
-    private static HttpRequestDef<CreateAssetCategoryRequest, CreateAssetCategoryResponse> genForcreateAssetCategory() {
+    private static HttpRequestDef<CreateAssetCategoryRequest, CreateAssetCategoryResponse> genForCreateAssetCategory() {
         // basic
         HttpRequestDef.Builder<CreateAssetCategoryRequest, CreateAssetCategoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAssetCategoryRequest.class, CreateAssetCategoryResponse.class)
@@ -371,16 +350,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetCategoryRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateAssetCategoryRequest::getXSdkDate, CreateAssetCategoryRequest::setXSdkDate));
         builder.<CreateCategoryReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCategoryReq.class),
-            f -> f.withMarshaller(CreateAssetCategoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAssetCategoryRequest::getBody, CreateAssetCategoryRequest::setBody));
 
         // response
 
@@ -388,9 +363,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse> createAssetProcessTask =
-        genForcreateAssetProcessTask();
+        genForCreateAssetProcessTask();
 
-    private static HttpRequestDef<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse> genForcreateAssetProcessTask() {
+    private static HttpRequestDef<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse> genForCreateAssetProcessTask() {
         // basic
         HttpRequestDef.Builder<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateAssetProcessTaskRequest.class, CreateAssetProcessTaskResponse.class)
@@ -403,16 +378,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetProcessTaskRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateAssetProcessTaskRequest::getXSdkDate,
+                CreateAssetProcessTaskRequest::setXSdkDate));
         builder.<AssetProcessReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AssetProcessReq.class),
-            f -> f.withMarshaller(CreateAssetProcessTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAssetProcessTaskRequest::getBody, CreateAssetProcessTaskRequest::setBody));
 
         // response
 
@@ -420,9 +392,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse> createAssetReviewTask =
-        genForcreateAssetReviewTask();
+        genForCreateAssetReviewTask();
 
-    private static HttpRequestDef<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse> genForcreateAssetReviewTask() {
+    private static HttpRequestDef<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse> genForCreateAssetReviewTask() {
         // basic
         HttpRequestDef.Builder<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateAssetReviewTaskRequest.class, CreateAssetReviewTaskResponse.class)
@@ -435,16 +407,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetReviewTaskRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateAssetReviewTaskRequest::getXSdkDate,
+                CreateAssetReviewTaskRequest::setXSdkDate));
         builder.<AssetReviewReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssetReviewReq.class),
-            f -> f.withMarshaller(CreateAssetReviewTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAssetReviewTaskRequest::getBody, CreateAssetReviewTaskRequest::setBody));
 
         // response
 
@@ -452,9 +421,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> createExtractAudioTask =
-        genForcreateExtractAudioTask();
+        genForCreateExtractAudioTask();
 
-    private static HttpRequestDef<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> genForcreateExtractAudioTask() {
+    private static HttpRequestDef<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> genForCreateExtractAudioTask() {
         // basic
         HttpRequestDef.Builder<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateExtractAudioTaskRequest.class, CreateExtractAudioTaskResponse.class)
@@ -467,16 +436,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateExtractAudioTaskRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateExtractAudioTaskRequest::getXSdkDate,
+                CreateExtractAudioTaskRequest::setXSdkDate));
         builder.<ExtractAudioTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExtractAudioTaskReq.class),
-            f -> f.withMarshaller(CreateExtractAudioTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateExtractAudioTaskRequest::getBody, CreateExtractAudioTaskRequest::setBody));
 
         // response
 
@@ -484,9 +450,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> createPreheatingAsset =
-        genForcreatePreheatingAsset();
+        genForCreatePreheatingAsset();
 
-    private static HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> genForcreatePreheatingAsset() {
+    private static HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> genForCreatePreheatingAsset() {
         // basic
         HttpRequestDef.Builder<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePreheatingAssetRequest.class, CreatePreheatingAssetResponse.class)
@@ -499,16 +465,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePreheatingAssetRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreatePreheatingAssetRequest::getXSdkDate,
+                CreatePreheatingAssetRequest::setXSdkDate));
         builder.<CreatePreheatingAssetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePreheatingAssetReq.class),
-            f -> f.withMarshaller(CreatePreheatingAssetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePreheatingAssetRequest::getBody, CreatePreheatingAssetRequest::setBody));
 
         // response
 
@@ -516,9 +479,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> createTakeOverTask =
-        genForcreateTakeOverTask();
+        genForCreateTakeOverTask();
 
-    private static HttpRequestDef<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> genForcreateTakeOverTask() {
+    private static HttpRequestDef<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> genForCreateTakeOverTask() {
         // basic
         HttpRequestDef.Builder<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTakeOverTaskRequest.class, CreateTakeOverTaskResponse.class)
@@ -531,16 +494,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTakeOverTaskRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateTakeOverTaskRequest::getXSdkDate, CreateTakeOverTaskRequest::setXSdkDate));
         builder.<CreateTakeOverTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTakeOverTaskReq.class),
-            f -> f.withMarshaller(CreateTakeOverTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTakeOverTaskRequest::getBody, CreateTakeOverTaskRequest::setBody));
 
         // response
 
@@ -548,9 +507,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreateTemplateGroupRequest, CreateTemplateGroupResponse> createTemplateGroup =
-        genForcreateTemplateGroup();
+        genForCreateTemplateGroup();
 
-    private static HttpRequestDef<CreateTemplateGroupRequest, CreateTemplateGroupResponse> genForcreateTemplateGroup() {
+    private static HttpRequestDef<CreateTemplateGroupRequest, CreateTemplateGroupResponse> genForCreateTemplateGroup() {
         // basic
         HttpRequestDef.Builder<CreateTemplateGroupRequest, CreateTemplateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTemplateGroupRequest.class, CreateTemplateGroupResponse.class)
@@ -563,16 +522,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTemplateGroupRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateTemplateGroupRequest::getXSdkDate, CreateTemplateGroupRequest::setXSdkDate));
         builder.<TransTemplateGroup>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TransTemplateGroup.class),
-            f -> f.withMarshaller(CreateTemplateGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTemplateGroupRequest::getBody, CreateTemplateGroupRequest::setBody));
 
         // response
 
@@ -580,9 +535,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse> createTemplateGroupCollection =
-        genForcreateTemplateGroupCollection();
+        genForCreateTemplateGroupCollection();
 
-    private static HttpRequestDef<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse> genForcreateTemplateGroupCollection() {
+    private static HttpRequestDef<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse> genForCreateTemplateGroupCollection() {
         // basic
         HttpRequestDef.Builder<CreateTemplateGroupCollectionRequest, CreateTemplateGroupCollectionResponse> builder =
             HttpRequestDef
@@ -598,16 +553,14 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTemplateGroupCollectionRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateTemplateGroupCollectionRequest::getXSdkDate,
+                CreateTemplateGroupCollectionRequest::setXSdkDate));
         builder.<TransTemplateGroupCollection>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TransTemplateGroupCollection.class),
-            f -> f.withMarshaller(CreateTemplateGroupCollectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTemplateGroupCollectionRequest::getBody,
+                CreateTemplateGroupCollectionRequest::setBody));
 
         // response
 
@@ -615,9 +568,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse> createTranscodeTemplate =
-        genForcreateTranscodeTemplate();
+        genForCreateTranscodeTemplate();
 
-    private static HttpRequestDef<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse> genForcreateTranscodeTemplate() {
+    private static HttpRequestDef<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse> genForCreateTranscodeTemplate() {
         // basic
         HttpRequestDef.Builder<CreateTranscodeTemplateRequest, CreateTranscodeTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateTranscodeTemplateRequest.class, CreateTranscodeTemplateResponse.class)
@@ -630,16 +583,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTranscodeTemplateRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateTranscodeTemplateRequest::getXSdkDate,
+                CreateTranscodeTemplateRequest::setXSdkDate));
         builder.<CreateTranscodeTemplate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTranscodeTemplate.class),
-            f -> f.withMarshaller(CreateTranscodeTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTranscodeTemplateRequest::getBody, CreateTranscodeTemplateRequest::setBody));
 
         // response
 
@@ -647,9 +597,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> createWatermarkTemplate =
-        genForcreateWatermarkTemplate();
+        genForCreateWatermarkTemplate();
 
-    private static HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> genForcreateWatermarkTemplate() {
+    private static HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> genForCreateWatermarkTemplate() {
         // basic
         HttpRequestDef.Builder<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateWatermarkTemplateRequest.class, CreateWatermarkTemplateResponse.class)
@@ -662,16 +612,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(CreateWatermarkTemplateRequest::getXSdkDate,
+                CreateWatermarkTemplateRequest::setXSdkDate));
         builder.<CreateWatermarkTemplateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateWatermarkTemplateReq.class),
-            f -> f.withMarshaller(CreateWatermarkTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateWatermarkTemplateRequest::getBody, CreateWatermarkTemplateRequest::setBody));
 
         // response
 
@@ -679,9 +626,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse> deleteAssetCategory =
-        genFordeleteAssetCategory();
+        genForDeleteAssetCategory();
 
-    private static HttpRequestDef<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse> genFordeleteAssetCategory() {
+    private static HttpRequestDef<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse> genForDeleteAssetCategory() {
         // basic
         HttpRequestDef.Builder<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteAssetCategoryRequest.class, DeleteAssetCategoryResponse.class)
@@ -694,25 +641,21 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteAssetCategoryRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetCategoryRequest::getId, DeleteAssetCategoryRequest::setId));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAssetCategoryRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetCategoryRequest::getXSdkDate, DeleteAssetCategoryRequest::setXSdkDate));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAssetsRequest, DeleteAssetsResponse> deleteAssets = genFordeleteAssets();
+    public static final HttpRequestDef<DeleteAssetsRequest, DeleteAssetsResponse> deleteAssets = genForDeleteAssets();
 
-    private static HttpRequestDef<DeleteAssetsRequest, DeleteAssetsResponse> genFordeleteAssets() {
+    private static HttpRequestDef<DeleteAssetsRequest, DeleteAssetsResponse> genForDeleteAssets() {
         // basic
         HttpRequestDef.Builder<DeleteAssetsRequest, DeleteAssetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAssetsRequest.class, DeleteAssetsResponse.class)
@@ -725,23 +668,17 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteAssetsRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetsRequest::getAssetId, DeleteAssetsRequest::setAssetId));
         builder.<String>withRequestField("delete_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAssetsRequest::getDeleteType, (req, v) -> {
-                req.setDeleteType(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetsRequest::getDeleteType, DeleteAssetsRequest::setDeleteType));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAssetsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetsRequest::getXSdkDate, DeleteAssetsRequest::setXSdkDate));
 
         // response
 
@@ -749,9 +686,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> deleteTemplateGroup =
-        genFordeleteTemplateGroup();
+        genForDeleteTemplateGroup();
 
-    private static HttpRequestDef<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> genFordeleteTemplateGroup() {
+    private static HttpRequestDef<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> genForDeleteTemplateGroup() {
         // basic
         HttpRequestDef.Builder<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteTemplateGroupRequest.class, DeleteTemplateGroupResponse.class)
@@ -764,16 +701,12 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateGroupRequest::getGroupId, DeleteTemplateGroupRequest::setGroupId));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateGroupRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateGroupRequest::getXSdkDate, DeleteTemplateGroupRequest::setXSdkDate));
 
         // response
 
@@ -781,9 +714,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse> deleteTemplateGroupCollection =
-        genFordeleteTemplateGroupCollection();
+        genForDeleteTemplateGroupCollection();
 
-    private static HttpRequestDef<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse> genFordeleteTemplateGroupCollection() {
+    private static HttpRequestDef<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse> genForDeleteTemplateGroupCollection() {
         // basic
         HttpRequestDef.Builder<DeleteTemplateGroupCollectionRequest, DeleteTemplateGroupCollectionResponse> builder =
             HttpRequestDef
@@ -799,16 +732,14 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateGroupCollectionRequest::getGroupCollectionId, (req, v) -> {
-                req.setGroupCollectionId(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateGroupCollectionRequest::getGroupCollectionId,
+                DeleteTemplateGroupCollectionRequest::setGroupCollectionId));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateGroupCollectionRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateGroupCollectionRequest::getXSdkDate,
+                DeleteTemplateGroupCollectionRequest::setXSdkDate));
 
         // response
 
@@ -816,9 +747,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse> deleteTranscodeTemplate =
-        genFordeleteTranscodeTemplate();
+        genForDeleteTranscodeTemplate();
 
-    private static HttpRequestDef<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse> genFordeleteTranscodeTemplate() {
+    private static HttpRequestDef<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse> genForDeleteTranscodeTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteTranscodeTemplateRequest.class, DeleteTranscodeTemplateResponse.class)
@@ -831,16 +762,14 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTranscodeTemplateRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteTranscodeTemplateRequest::getGroupId,
+                DeleteTranscodeTemplateRequest::setGroupId));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTranscodeTemplateRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(DeleteTranscodeTemplateRequest::getXSdkDate,
+                DeleteTranscodeTemplateRequest::setXSdkDate));
 
         // response
 
@@ -848,9 +777,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> deleteWatermarkTemplate =
-        genFordeleteWatermarkTemplate();
+        genForDeleteWatermarkTemplate();
 
-    private static HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> genFordeleteWatermarkTemplate() {
+    private static HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> genForDeleteWatermarkTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteWatermarkTemplateRequest.class, DeleteWatermarkTemplateResponse.class)
@@ -863,16 +792,13 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getId, DeleteWatermarkTemplateRequest::setId));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getXSdkDate,
+                DeleteWatermarkTemplateRequest::setXSdkDate));
 
         // response
 
@@ -880,9 +806,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ListAssetCategoryRequest, ListAssetCategoryResponse> listAssetCategory =
-        genForlistAssetCategory();
+        genForListAssetCategory();
 
-    private static HttpRequestDef<ListAssetCategoryRequest, ListAssetCategoryResponse> genForlistAssetCategory() {
+    private static HttpRequestDef<ListAssetCategoryRequest, ListAssetCategoryResponse> genForListAssetCategory() {
         // basic
         HttpRequestDef.Builder<ListAssetCategoryRequest, ListAssetCategoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAssetCategoryRequest.class, ListAssetCategoryResponse.class)
@@ -895,33 +821,28 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssetCategoryRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListAssetCategoryRequest::getId, ListAssetCategoryRequest::setId));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetCategoryRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListAssetCategoryRequest::getXSdkDate, ListAssetCategoryRequest::setXSdkDate));
 
         // response
         builder.<List<QueryCategoryRsp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAssetCategoryResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(QueryCategoryRsp.class));
+            f -> f.withMarshaller(ListAssetCategoryResponse::getBody, ListAssetCategoryResponse::setBody)
+                .withInnerContainerType(QueryCategoryRsp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> listAssetDailySummaryLog =
-        genForlistAssetDailySummaryLog();
+        genForListAssetDailySummaryLog();
 
-    private static HttpRequestDef<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> genForlistAssetDailySummaryLog() {
+    private static HttpRequestDef<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> genForListAssetDailySummaryLog() {
         // basic
         HttpRequestDef.Builder<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> builder =
             HttpRequestDef
@@ -935,37 +856,32 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getStartTime,
+                ListAssetDailySummaryLogRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getEndTime,
+                ListAssetDailySummaryLogRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getOffset,
+                ListAssetDailySummaryLogRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getLimit,
+                ListAssetDailySummaryLogRequest::setLimit));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getXSdkDate,
+                ListAssetDailySummaryLogRequest::setXSdkDate));
 
         // response
 
@@ -973,9 +889,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ListAssetListRequest, ListAssetListResponse> listAssetList =
-        genForlistAssetList();
+        genForListAssetList();
 
-    private static HttpRequestDef<ListAssetListRequest, ListAssetListResponse> genForlistAssetList() {
+    private static HttpRequestDef<ListAssetListRequest, ListAssetListResponse> genForListAssetList() {
         // basic
         HttpRequestDef.Builder<ListAssetListRequest, ListAssetListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAssetListRequest.class, ListAssetListResponse.class)
@@ -988,86 +904,62 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAssetListRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getAssetId, ListAssetListRequest::setAssetId));
         builder.<List<ListAssetListRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAssetListRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getStatus, ListAssetListRequest::setStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetListRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getStartTime, ListAssetListRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetListRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getEndTime, ListAssetListRequest::setEndTime));
         builder.<Integer>withRequestField("category_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssetListRequest::getCategoryId, (req, v) -> {
-                req.setCategoryId(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getCategoryId, ListAssetListRequest::setCategoryId));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetListRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getTags, ListAssetListRequest::setTags));
         builder.<String>withRequestField("query_string",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetListRequest::getQueryString, (req, v) -> {
-                req.setQueryString(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getQueryString, ListAssetListRequest::setQueryString));
         builder.<List<String>>withRequestField("media_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAssetListRequest::getMediaType, (req, v) -> {
-                req.setMediaType(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getMediaType, ListAssetListRequest::setMediaType));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssetListRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getPage, ListAssetListRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAssetListRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getSize, ListAssetListRequest::setSize));
         builder.<ListAssetListRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAssetListRequest.OrderEnum.class),
-            f -> f.withMarshaller(ListAssetListRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getOrder, ListAssetListRequest::setOrder));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetListRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListAssetListRequest::getXSdkDate, ListAssetListRequest::setXSdkDate));
 
         // response
 
@@ -1075,9 +967,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ListDomainLogsRequest, ListDomainLogsResponse> listDomainLogs =
-        genForlistDomainLogs();
+        genForListDomainLogs();
 
-    private static HttpRequestDef<ListDomainLogsRequest, ListDomainLogsResponse> genForlistDomainLogs() {
+    private static HttpRequestDef<ListDomainLogsRequest, ListDomainLogsResponse> genForListDomainLogs() {
         // basic
         HttpRequestDef.Builder<ListDomainLogsRequest, ListDomainLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainLogsRequest.class, ListDomainLogsResponse.class)
@@ -1090,37 +982,27 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainLogsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListDomainLogsRequest::getDomainName, ListDomainLogsRequest::setDomainName));
         builder.<String>withRequestField("query_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainLogsRequest::getQueryDate, (req, v) -> {
-                req.setQueryDate(v);
-            }));
+            f -> f.withMarshaller(ListDomainLogsRequest::getQueryDate, ListDomainLogsRequest::setQueryDate));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainLogsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListDomainLogsRequest::getPageSize, ListDomainLogsRequest::setPageSize));
         builder.<Integer>withRequestField("page_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainLogsRequest::getPageNumber, (req, v) -> {
-                req.setPageNumber(v);
-            }));
+            f -> f.withMarshaller(ListDomainLogsRequest::getPageNumber, ListDomainLogsRequest::setPageNumber));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainLogsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListDomainLogsRequest::getXSdkDate, ListDomainLogsRequest::setXSdkDate));
 
         // response
 
@@ -1128,9 +1010,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ListTemplateGroupRequest, ListTemplateGroupResponse> listTemplateGroup =
-        genForlistTemplateGroup();
+        genForListTemplateGroup();
 
-    private static HttpRequestDef<ListTemplateGroupRequest, ListTemplateGroupResponse> genForlistTemplateGroup() {
+    private static HttpRequestDef<ListTemplateGroupRequest, ListTemplateGroupResponse> genForListTemplateGroup() {
         // basic
         HttpRequestDef.Builder<ListTemplateGroupRequest, ListTemplateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplateGroupRequest.class, ListTemplateGroupResponse.class)
@@ -1143,37 +1025,27 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupRequest::getGroupId, ListTemplateGroupRequest::setGroupId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateGroupRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupRequest::getStatus, ListTemplateGroupRequest::setStatus));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplateGroupRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupRequest::getPage, ListTemplateGroupRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplateGroupRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupRequest::getSize, ListTemplateGroupRequest::setSize));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateGroupRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupRequest::getXSdkDate, ListTemplateGroupRequest::setXSdkDate));
 
         // response
 
@@ -1181,9 +1053,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse> listTemplateGroupCollection =
-        genForlistTemplateGroupCollection();
+        genForListTemplateGroupCollection();
 
-    private static HttpRequestDef<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse> genForlistTemplateGroupCollection() {
+    private static HttpRequestDef<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse> genForListTemplateGroupCollection() {
         // basic
         HttpRequestDef.Builder<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse> builder =
             HttpRequestDef
@@ -1199,30 +1071,26 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getGroupCollectionId, (req, v) -> {
-                req.setGroupCollectionId(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getGroupCollectionId,
+                ListTemplateGroupCollectionRequest::setGroupCollectionId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getOffset,
+                ListTemplateGroupCollectionRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getLimit,
+                ListTemplateGroupCollectionRequest::setLimit));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getXSdkDate,
+                ListTemplateGroupCollectionRequest::setXSdkDate));
 
         // response
 
@@ -1230,9 +1098,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ListTopStatisticsRequest, ListTopStatisticsResponse> listTopStatistics =
-        genForlistTopStatistics();
+        genForListTopStatistics();
 
-    private static HttpRequestDef<ListTopStatisticsRequest, ListTopStatisticsResponse> genForlistTopStatistics() {
+    private static HttpRequestDef<ListTopStatisticsRequest, ListTopStatisticsResponse> genForListTopStatistics() {
         // basic
         HttpRequestDef.Builder<ListTopStatisticsRequest, ListTopStatisticsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTopStatisticsRequest.class, ListTopStatisticsResponse.class)
@@ -1245,23 +1113,17 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopStatisticsRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ListTopStatisticsRequest::getDomain, ListTopStatisticsRequest::setDomain));
         builder.<String>withRequestField("date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopStatisticsRequest::getDate, (req, v) -> {
-                req.setDate(v);
-            }));
+            f -> f.withMarshaller(ListTopStatisticsRequest::getDate, ListTopStatisticsRequest::setDate));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopStatisticsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListTopStatisticsRequest::getXSdkDate, ListTopStatisticsRequest::setXSdkDate));
 
         // response
 
@@ -1269,9 +1131,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse> listTranscodeTemplate =
-        genForlistTranscodeTemplate();
+        genForListTranscodeTemplate();
 
-    private static HttpRequestDef<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse> genForlistTranscodeTemplate() {
+    private static HttpRequestDef<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse> genForListTranscodeTemplate() {
         // basic
         HttpRequestDef.Builder<ListTranscodeTemplateRequest, ListTranscodeTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTranscodeTemplateRequest.class, ListTranscodeTemplateResponse.class)
@@ -1284,44 +1146,35 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeTemplateRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getGroupId, ListTranscodeTemplateRequest::setGroupId));
         builder.<Boolean>withRequestField("is_default",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListTranscodeTemplateRequest::getIsDefault, (req, v) -> {
-                req.setIsDefault(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getIsDefault,
+                ListTranscodeTemplateRequest::setIsDefault));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTranscodeTemplateRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getOffset, ListTranscodeTemplateRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTranscodeTemplateRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getLimit, ListTranscodeTemplateRequest::setLimit));
         builder.<String>withRequestField("query_string",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeTemplateRequest::getQueryString, (req, v) -> {
-                req.setQueryString(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getQueryString,
+                ListTranscodeTemplateRequest::setQueryString));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeTemplateRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListTranscodeTemplateRequest::getXSdkDate,
+                ListTranscodeTemplateRequest::setXSdkDate));
 
         // response
 
@@ -1329,9 +1182,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> listWatermarkTemplate =
-        genForlistWatermarkTemplate();
+        genForListWatermarkTemplate();
 
-    private static HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> genForlistWatermarkTemplate() {
+    private static HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> genForListWatermarkTemplate() {
         // basic
         HttpRequestDef.Builder<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListWatermarkTemplateRequest.class, ListWatermarkTemplateResponse.class)
@@ -1344,30 +1197,23 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListWatermarkTemplateRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getId, ListWatermarkTemplateRequest::setId));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWatermarkTemplateRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getPage, ListWatermarkTemplateRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWatermarkTemplateRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getSize, ListWatermarkTemplateRequest::setSize));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getXSdkDate,
+                ListWatermarkTemplateRequest::setXSdkDate));
 
         // response
 
@@ -1375,9 +1221,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<PublishAssetFromObsRequest, PublishAssetFromObsResponse> publishAssetFromObs =
-        genForpublishAssetFromObs();
+        genForPublishAssetFromObs();
 
-    private static HttpRequestDef<PublishAssetFromObsRequest, PublishAssetFromObsResponse> genForpublishAssetFromObs() {
+    private static HttpRequestDef<PublishAssetFromObsRequest, PublishAssetFromObsResponse> genForPublishAssetFromObs() {
         // basic
         HttpRequestDef.Builder<PublishAssetFromObsRequest, PublishAssetFromObsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishAssetFromObsRequest.class, PublishAssetFromObsResponse.class)
@@ -1390,16 +1236,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishAssetFromObsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(PublishAssetFromObsRequest::getXSdkDate, PublishAssetFromObsRequest::setXSdkDate));
         builder.<PublishAssetFromObsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PublishAssetFromObsReq.class),
-            f -> f.withMarshaller(PublishAssetFromObsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PublishAssetFromObsRequest::getBody, PublishAssetFromObsRequest::setBody));
 
         // response
 
@@ -1407,9 +1249,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<PublishAssetsRequest, PublishAssetsResponse> publishAssets =
-        genForpublishAssets();
+        genForPublishAssets();
 
-    private static HttpRequestDef<PublishAssetsRequest, PublishAssetsResponse> genForpublishAssets() {
+    private static HttpRequestDef<PublishAssetsRequest, PublishAssetsResponse> genForPublishAssets() {
         // basic
         HttpRequestDef.Builder<PublishAssetsRequest, PublishAssetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishAssetsRequest.class, PublishAssetsResponse.class)
@@ -1422,16 +1264,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishAssetsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(PublishAssetsRequest::getXSdkDate, PublishAssetsRequest::setXSdkDate));
         builder.<PublishAssetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PublishAssetReq.class),
-            f -> f.withMarshaller(PublishAssetsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PublishAssetsRequest::getBody, PublishAssetsRequest::setBody));
 
         // response
 
@@ -1439,9 +1277,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> showAssetCipher =
-        genForshowAssetCipher();
+        genForShowAssetCipher();
 
-    private static HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> genForshowAssetCipher() {
+    private static HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> genForShowAssetCipher() {
         // basic
         HttpRequestDef.Builder<ShowAssetCipherRequest, ShowAssetCipherResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAssetCipherRequest.class, ShowAssetCipherResponse.class)
@@ -1454,16 +1292,12 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetCipherRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(ShowAssetCipherRequest::getAssetId, ShowAssetCipherRequest::setAssetId));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetCipherRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowAssetCipherRequest::getXSdkDate, ShowAssetCipherRequest::setXSdkDate));
 
         // response
 
@@ -1471,9 +1305,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ShowAssetDetailRequest, ShowAssetDetailResponse> showAssetDetail =
-        genForshowAssetDetail();
+        genForShowAssetDetail();
 
-    private static HttpRequestDef<ShowAssetDetailRequest, ShowAssetDetailResponse> genForshowAssetDetail() {
+    private static HttpRequestDef<ShowAssetDetailRequest, ShowAssetDetailResponse> genForShowAssetDetail() {
         // basic
         HttpRequestDef.Builder<ShowAssetDetailRequest, ShowAssetDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAssetDetailRequest.class, ShowAssetDetailResponse.class)
@@ -1486,23 +1320,17 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetDetailRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(ShowAssetDetailRequest::getAssetId, ShowAssetDetailRequest::setAssetId));
         builder.<List<ShowAssetDetailRequest.CategoriesEnum>>withRequestField("categories",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAssetDetailRequest::getCategories, (req, v) -> {
-                req.setCategories(v);
-            }));
+            f -> f.withMarshaller(ShowAssetDetailRequest::getCategories, ShowAssetDetailRequest::setCategories));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetDetailRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowAssetDetailRequest::getXSdkDate, ShowAssetDetailRequest::setXSdkDate));
 
         // response
 
@@ -1510,9 +1338,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ShowAssetMetaRequest, ShowAssetMetaResponse> showAssetMeta =
-        genForshowAssetMeta();
+        genForShowAssetMeta();
 
-    private static HttpRequestDef<ShowAssetMetaRequest, ShowAssetMetaResponse> genForshowAssetMeta() {
+    private static HttpRequestDef<ShowAssetMetaRequest, ShowAssetMetaResponse> genForShowAssetMeta() {
         // basic
         HttpRequestDef.Builder<ShowAssetMetaRequest, ShowAssetMetaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAssetMetaRequest.class, ShowAssetMetaResponse.class)
@@ -1525,86 +1353,62 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getAssetId, ShowAssetMetaRequest::setAssetId));
         builder.<List<ShowAssetMetaRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getStatus, ShowAssetMetaRequest::setStatus));
         builder.<List<ShowAssetMetaRequest.TranscodeStatusEnum>>withRequestField("transcodeStatus",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getTranscodeStatus, (req, v) -> {
-                req.setTranscodeStatus(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getTranscodeStatus, ShowAssetMetaRequest::setTranscodeStatus));
         builder.<List<ShowAssetMetaRequest.AssetStatusEnum>>withRequestField("assetStatus",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getAssetStatus, (req, v) -> {
-                req.setAssetStatus(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getAssetStatus, ShowAssetMetaRequest::setAssetStatus));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getStartTime, ShowAssetMetaRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getEndTime, ShowAssetMetaRequest::setEndTime));
         builder.<Integer>withRequestField("category_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getCategoryId, (req, v) -> {
-                req.setCategoryId(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getCategoryId, ShowAssetMetaRequest::setCategoryId));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getTags, ShowAssetMetaRequest::setTags));
         builder.<String>withRequestField("query_string",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getQueryString, (req, v) -> {
-                req.setQueryString(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getQueryString, ShowAssetMetaRequest::setQueryString));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getPage, ShowAssetMetaRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getSize, ShowAssetMetaRequest::setSize));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowAssetMetaRequest::getXSdkDate, ShowAssetMetaRequest::setXSdkDate));
 
         // response
 
@@ -1612,9 +1416,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse> showAssetTempAuthority =
-        genForshowAssetTempAuthority();
+        genForShowAssetTempAuthority();
 
-    private static HttpRequestDef<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse> genForshowAssetTempAuthority() {
+    private static HttpRequestDef<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse> genForShowAssetTempAuthority() {
         // basic
         HttpRequestDef.Builder<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAssetTempAuthorityRequest.class, ShowAssetTempAuthorityResponse.class)
@@ -1627,58 +1431,49 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getHttpVerb, (req, v) -> {
-                req.setHttpVerb(v);
-            }));
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getHttpVerb,
+                ShowAssetTempAuthorityRequest::setHttpVerb));
         builder.<String>withRequestField("bucket",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getBucket, (req, v) -> {
-                req.setBucket(v);
-            }));
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getBucket, ShowAssetTempAuthorityRequest::setBucket));
         builder.<String>withRequestField("object_key",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getObjectKey, (req, v) -> {
-                req.setObjectKey(v);
-            }));
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getObjectKey,
+                ShowAssetTempAuthorityRequest::setObjectKey));
         builder.<String>withRequestField("content_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getContentType, (req, v) -> {
-                req.setContentType(v);
-            }));
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getContentType,
+                ShowAssetTempAuthorityRequest::setContentType));
         builder.<String>withRequestField("content_md5",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getContentMd5, (req, v) -> {
-                req.setContentMd5(v);
-            }));
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getContentMd5,
+                ShowAssetTempAuthorityRequest::setContentMd5));
         builder.<String>withRequestField("upload_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getUploadId, (req, v) -> {
-                req.setUploadId(v);
-            }));
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getUploadId,
+                ShowAssetTempAuthorityRequest::setUploadId));
         builder.<Integer>withRequestField("part_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getPartNumber, (req, v) -> {
-                req.setPartNumber(v);
-            }));
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getPartNumber,
+                ShowAssetTempAuthorityRequest::setPartNumber));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getXSdkDate,
+                ShowAssetTempAuthorityRequest::setXSdkDate));
 
         // response
 
@@ -1686,9 +1481,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ShowCdnStatisticsRequest, ShowCdnStatisticsResponse> showCdnStatistics =
-        genForshowCdnStatistics();
+        genForShowCdnStatistics();
 
-    private static HttpRequestDef<ShowCdnStatisticsRequest, ShowCdnStatisticsResponse> genForshowCdnStatistics() {
+    private static HttpRequestDef<ShowCdnStatisticsRequest, ShowCdnStatisticsResponse> genForShowCdnStatistics() {
         // basic
         HttpRequestDef.Builder<ShowCdnStatisticsRequest, ShowCdnStatisticsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCdnStatisticsRequest.class, ShowCdnStatisticsResponse.class)
@@ -1701,44 +1496,32 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCdnStatisticsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowCdnStatisticsRequest::getStartTime, ShowCdnStatisticsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCdnStatisticsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowCdnStatisticsRequest::getEndTime, ShowCdnStatisticsRequest::setEndTime));
         builder.<String>withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCdnStatisticsRequest::getStatType, (req, v) -> {
-                req.setStatType(v);
-            }));
+            f -> f.withMarshaller(ShowCdnStatisticsRequest::getStatType, ShowCdnStatisticsRequest::setStatType));
         builder.<String>withRequestField("domain",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCdnStatisticsRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ShowCdnStatisticsRequest::getDomain, ShowCdnStatisticsRequest::setDomain));
         builder.<Integer>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCdnStatisticsRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ShowCdnStatisticsRequest::getInterval, ShowCdnStatisticsRequest::setInterval));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCdnStatisticsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowCdnStatisticsRequest::getXSdkDate, ShowCdnStatisticsRequest::setXSdkDate));
 
         // response
 
@@ -1746,9 +1529,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> showPreheatingAsset =
-        genForshowPreheatingAsset();
+        genForShowPreheatingAsset();
 
-    private static HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> genForshowPreheatingAsset() {
+    private static HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> genForShowPreheatingAsset() {
         // basic
         HttpRequestDef.Builder<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPreheatingAssetRequest.class, ShowPreheatingAssetResponse.class)
@@ -1761,16 +1544,12 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPreheatingAssetRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowPreheatingAssetRequest::getTaskId, ShowPreheatingAssetRequest::setTaskId));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPreheatingAssetRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowPreheatingAssetRequest::getXSdkDate, ShowPreheatingAssetRequest::setXSdkDate));
 
         // response
 
@@ -1778,9 +1557,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ShowVodStatisticsRequest, ShowVodStatisticsResponse> showVodStatistics =
-        genForshowVodStatistics();
+        genForShowVodStatistics();
 
-    private static HttpRequestDef<ShowVodStatisticsRequest, ShowVodStatisticsResponse> genForshowVodStatistics() {
+    private static HttpRequestDef<ShowVodStatisticsRequest, ShowVodStatisticsResponse> genForShowVodStatistics() {
         // basic
         HttpRequestDef.Builder<ShowVodStatisticsRequest, ShowVodStatisticsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVodStatisticsRequest.class, ShowVodStatisticsResponse.class)
@@ -1793,30 +1572,22 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVodStatisticsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowVodStatisticsRequest::getStartTime, ShowVodStatisticsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVodStatisticsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowVodStatisticsRequest::getEndTime, ShowVodStatisticsRequest::setEndTime));
         builder.<Integer>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowVodStatisticsRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ShowVodStatisticsRequest::getInterval, ShowVodStatisticsRequest::setInterval));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVodStatisticsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowVodStatisticsRequest::getXSdkDate, ShowVodStatisticsRequest::setXSdkDate));
 
         // response
 
@@ -1824,9 +1595,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UnpublishAssetsRequest, UnpublishAssetsResponse> unpublishAssets =
-        genForunpublishAssets();
+        genForUnpublishAssets();
 
-    private static HttpRequestDef<UnpublishAssetsRequest, UnpublishAssetsResponse> genForunpublishAssets() {
+    private static HttpRequestDef<UnpublishAssetsRequest, UnpublishAssetsResponse> genForUnpublishAssets() {
         // basic
         HttpRequestDef.Builder<UnpublishAssetsRequest, UnpublishAssetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UnpublishAssetsRequest.class, UnpublishAssetsResponse.class)
@@ -1839,25 +1610,21 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnpublishAssetsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UnpublishAssetsRequest::getXSdkDate, UnpublishAssetsRequest::setXSdkDate));
         builder.<PublishAssetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PublishAssetReq.class),
-            f -> f.withMarshaller(UnpublishAssetsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UnpublishAssetsRequest::getBody, UnpublishAssetsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAssetRequest, UpdateAssetResponse> updateAsset = genForupdateAsset();
+    public static final HttpRequestDef<UpdateAssetRequest, UpdateAssetResponse> updateAsset = genForUpdateAsset();
 
-    private static HttpRequestDef<UpdateAssetRequest, UpdateAssetResponse> genForupdateAsset() {
+    private static HttpRequestDef<UpdateAssetRequest, UpdateAssetResponse> genForUpdateAsset() {
         // basic
         HttpRequestDef.Builder<UpdateAssetRequest, UpdateAssetResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAssetRequest.class, UpdateAssetResponse.class)
@@ -1870,16 +1637,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAssetRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetRequest::getXSdkDate, UpdateAssetRequest::setXSdkDate));
         builder.<UploadAssetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadAssetReq.class),
-            f -> f.withMarshaller(UpdateAssetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetRequest::getBody, UpdateAssetRequest::setBody));
 
         // response
 
@@ -1887,9 +1650,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse> updateAssetCategory =
-        genForupdateAssetCategory();
+        genForUpdateAssetCategory();
 
-    private static HttpRequestDef<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse> genForupdateAssetCategory() {
+    private static HttpRequestDef<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse> genForUpdateAssetCategory() {
         // basic
         HttpRequestDef.Builder<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAssetCategoryRequest.class, UpdateAssetCategoryResponse.class)
@@ -1902,16 +1665,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAssetCategoryRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetCategoryRequest::getXSdkDate, UpdateAssetCategoryRequest::setXSdkDate));
         builder.<UpdateCategoryReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCategoryReq.class),
-            f -> f.withMarshaller(UpdateAssetCategoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetCategoryRequest::getBody, UpdateAssetCategoryRequest::setBody));
 
         // response
 
@@ -1919,9 +1678,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UpdateAssetMetaRequest, UpdateAssetMetaResponse> updateAssetMeta =
-        genForupdateAssetMeta();
+        genForUpdateAssetMeta();
 
-    private static HttpRequestDef<UpdateAssetMetaRequest, UpdateAssetMetaResponse> genForupdateAssetMeta() {
+    private static HttpRequestDef<UpdateAssetMetaRequest, UpdateAssetMetaResponse> genForUpdateAssetMeta() {
         // basic
         HttpRequestDef.Builder<UpdateAssetMetaRequest, UpdateAssetMetaResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAssetMetaRequest.class, UpdateAssetMetaResponse.class)
@@ -1934,16 +1693,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAssetMetaRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetMetaRequest::getXSdkDate, UpdateAssetMetaRequest::setXSdkDate));
         builder.<UpdateAssetMetaReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateAssetMetaReq.class),
-            f -> f.withMarshaller(UpdateAssetMetaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAssetMetaRequest::getBody, UpdateAssetMetaRequest::setBody));
 
         // response
 
@@ -1951,9 +1706,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> updateBucketAuthorized =
-        genForupdateBucketAuthorized();
+        genForUpdateBucketAuthorized();
 
-    private static HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> genForupdateBucketAuthorized() {
+    private static HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> genForUpdateBucketAuthorized() {
         // basic
         HttpRequestDef.Builder<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateBucketAuthorizedRequest.class, UpdateBucketAuthorizedResponse.class)
@@ -1966,16 +1721,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getXSdkDate,
+                UpdateBucketAuthorizedRequest::setXSdkDate));
         builder.<UpdateBucketAuthorizedReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBucketAuthorizedReq.class),
-            f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getBody, UpdateBucketAuthorizedRequest::setBody));
 
         // response
 
@@ -1983,9 +1735,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> updateCoverByThumbnail =
-        genForupdateCoverByThumbnail();
+        genForUpdateCoverByThumbnail();
 
-    private static HttpRequestDef<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> genForupdateCoverByThumbnail() {
+    private static HttpRequestDef<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> genForUpdateCoverByThumbnail() {
         // basic
         HttpRequestDef.Builder<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateCoverByThumbnailRequest.class, UpdateCoverByThumbnailResponse.class)
@@ -1998,16 +1750,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getXSdkDate,
+                UpdateCoverByThumbnailRequest::setXSdkDate));
         builder.<UpdateCoverByThumbnailReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCoverByThumbnailReq.class),
-            f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getBody, UpdateCoverByThumbnailRequest::setBody));
 
         // response
 
@@ -2015,9 +1764,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> updateTemplateGroup =
-        genForupdateTemplateGroup();
+        genForUpdateTemplateGroup();
 
-    private static HttpRequestDef<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> genForupdateTemplateGroup() {
+    private static HttpRequestDef<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> genForUpdateTemplateGroup() {
         // basic
         HttpRequestDef.Builder<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTemplateGroupRequest.class, UpdateTemplateGroupResponse.class)
@@ -2030,16 +1779,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTemplateGroupRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateGroupRequest::getXSdkDate, UpdateTemplateGroupRequest::setXSdkDate));
         builder.<ModifyTransTemplateGroup>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyTransTemplateGroup.class),
-            f -> f.withMarshaller(UpdateTemplateGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateGroupRequest::getBody, UpdateTemplateGroupRequest::setBody));
 
         // response
 
@@ -2047,9 +1792,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse> updateTemplateGroupCollection =
-        genForupdateTemplateGroupCollection();
+        genForUpdateTemplateGroupCollection();
 
-    private static HttpRequestDef<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse> genForupdateTemplateGroupCollection() {
+    private static HttpRequestDef<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse> genForUpdateTemplateGroupCollection() {
         // basic
         HttpRequestDef.Builder<UpdateTemplateGroupCollectionRequest, UpdateTemplateGroupCollectionResponse> builder =
             HttpRequestDef
@@ -2065,16 +1810,14 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTemplateGroupCollectionRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateGroupCollectionRequest::getXSdkDate,
+                UpdateTemplateGroupCollectionRequest::setXSdkDate));
         builder.<ModifyTemplateGroupCollection>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyTemplateGroupCollection.class),
-            f -> f.withMarshaller(UpdateTemplateGroupCollectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateGroupCollectionRequest::getBody,
+                UpdateTemplateGroupCollectionRequest::setBody));
 
         // response
 
@@ -2082,9 +1825,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse> updateTranscodeTemplate =
-        genForupdateTranscodeTemplate();
+        genForUpdateTranscodeTemplate();
 
-    private static HttpRequestDef<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse> genForupdateTranscodeTemplate() {
+    private static HttpRequestDef<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse> genForUpdateTranscodeTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateTranscodeTemplateRequest, UpdateTranscodeTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateTranscodeTemplateRequest.class, UpdateTranscodeTemplateResponse.class)
@@ -2097,16 +1840,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTranscodeTemplateRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateTranscodeTemplateRequest::getXSdkDate,
+                UpdateTranscodeTemplateRequest::setXSdkDate));
         builder.<ModifyTransTemplate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyTransTemplate.class),
-            f -> f.withMarshaller(UpdateTranscodeTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTranscodeTemplateRequest::getBody, UpdateTranscodeTemplateRequest::setBody));
 
         // response
 
@@ -2114,9 +1854,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> updateWatermarkTemplate =
-        genForupdateWatermarkTemplate();
+        genForUpdateWatermarkTemplate();
 
-    private static HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> genForupdateWatermarkTemplate() {
+    private static HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> genForUpdateWatermarkTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateWatermarkTemplateRequest.class, UpdateWatermarkTemplateResponse.class)
@@ -2129,16 +1869,13 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getXSdkDate,
+                UpdateWatermarkTemplateRequest::setXSdkDate));
         builder.<UpdateWatermarkTemplateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateWatermarkTemplateReq.class),
-            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getBody, UpdateWatermarkTemplateRequest::setBody));
 
         // response
 
@@ -2146,9 +1883,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse> uploadMetaDataByUrl =
-        genForuploadMetaDataByUrl();
+        genForUploadMetaDataByUrl();
 
-    private static HttpRequestDef<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse> genForuploadMetaDataByUrl() {
+    private static HttpRequestDef<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse> genForUploadMetaDataByUrl() {
         // basic
         HttpRequestDef.Builder<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadMetaDataByUrlRequest.class, UploadMetaDataByUrlResponse.class)
@@ -2161,16 +1898,12 @@ public class VodMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadMetaDataByUrlRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(UploadMetaDataByUrlRequest::getXSdkDate, UploadMetaDataByUrlRequest::setXSdkDate));
         builder.<UploadMetaDataByUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadMetaDataByUrlReq.class),
-            f -> f.withMarshaller(UploadMetaDataByUrlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadMetaDataByUrlRequest::getBody, UploadMetaDataByUrlRequest::setBody));
 
         // response
 
@@ -2178,9 +1911,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ListTakeOverTaskRequest, ListTakeOverTaskResponse> listTakeOverTask =
-        genForlistTakeOverTask();
+        genForListTakeOverTask();
 
-    private static HttpRequestDef<ListTakeOverTaskRequest, ListTakeOverTaskResponse> genForlistTakeOverTask() {
+    private static HttpRequestDef<ListTakeOverTaskRequest, ListTakeOverTaskResponse> genForListTakeOverTask() {
         // basic
         HttpRequestDef.Builder<ListTakeOverTaskRequest, ListTakeOverTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTakeOverTaskRequest.class, ListTakeOverTaskResponse.class)
@@ -2193,37 +1926,27 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTakeOverTaskRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListTakeOverTaskRequest::getStatus, ListTakeOverTaskRequest::setStatus));
         builder.<String>withRequestField("task_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTakeOverTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListTakeOverTaskRequest::getTaskId, ListTakeOverTaskRequest::setTaskId));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTakeOverTaskRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ListTakeOverTaskRequest::getPage, ListTakeOverTaskRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTakeOverTaskRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ListTakeOverTaskRequest::getSize, ListTakeOverTaskRequest::setSize));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTakeOverTaskRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListTakeOverTaskRequest::getXSdkDate, ListTakeOverTaskRequest::setXSdkDate));
 
         // response
 
@@ -2231,9 +1954,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse> showTakeOverAssetDetails =
-        genForshowTakeOverAssetDetails();
+        genForShowTakeOverAssetDetails();
 
-    private static HttpRequestDef<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse> genForshowTakeOverAssetDetails() {
+    private static HttpRequestDef<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse> genForShowTakeOverAssetDetails() {
         // basic
         HttpRequestDef.Builder<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse> builder =
             HttpRequestDef
@@ -2247,23 +1970,20 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getSourceBucket, (req, v) -> {
-                req.setSourceBucket(v);
-            }));
+            f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getSourceBucket,
+                ShowTakeOverAssetDetailsRequest::setSourceBucket));
         builder.<String>withRequestField("source_object",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getSourceObject, (req, v) -> {
-                req.setSourceObject(v);
-            }));
+            f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getSourceObject,
+                ShowTakeOverAssetDetailsRequest::setSourceObject));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getXSdkDate,
+                ShowTakeOverAssetDetailsRequest::setXSdkDate));
 
         // response
 
@@ -2271,9 +1991,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> showTakeOverTaskDetails =
-        genForshowTakeOverTaskDetails();
+        genForShowTakeOverTaskDetails();
 
-    private static HttpRequestDef<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> genForshowTakeOverTaskDetails() {
+    private static HttpRequestDef<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> genForShowTakeOverTaskDetails() {
         // basic
         HttpRequestDef.Builder<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowTakeOverTaskDetailsRequest.class, ShowTakeOverTaskDetailsResponse.class)
@@ -2286,30 +2006,24 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getTaskId,
+                ShowTakeOverTaskDetailsRequest::setTaskId));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getPage, (req, v) -> {
-                req.setPage(v);
-            }));
+            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getPage, ShowTakeOverTaskDetailsRequest::setPage));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getSize, (req, v) -> {
-                req.setSize(v);
-            }));
+            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getSize, ShowTakeOverTaskDetailsRequest::setSize));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getXSdkDate,
+                ShowTakeOverTaskDetailsRequest::setXSdkDate));
 
         // response
 
@@ -2317,9 +2031,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ShowVodRetrievalRequest, ShowVodRetrievalResponse> showVodRetrieval =
-        genForshowVodRetrieval();
+        genForShowVodRetrieval();
 
-    private static HttpRequestDef<ShowVodRetrievalRequest, ShowVodRetrievalResponse> genForshowVodRetrieval() {
+    private static HttpRequestDef<ShowVodRetrievalRequest, ShowVodRetrievalResponse> genForShowVodRetrieval() {
         // basic
         HttpRequestDef.Builder<ShowVodRetrievalRequest, ShowVodRetrievalResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVodRetrievalRequest.class, ShowVodRetrievalResponse.class)
@@ -2332,23 +2046,17 @@ public class VodMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVodRetrievalRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowVodRetrievalRequest::getStartTime, ShowVodRetrievalRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVodRetrievalRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowVodRetrievalRequest::getEndTime, ShowVodRetrievalRequest::setEndTime));
         builder.<Integer>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowVodRetrievalRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ShowVodRetrievalRequest::getInterval, ShowVodRetrievalRequest::setInterval));
 
         // response
 
@@ -2356,9 +2064,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitle =
-        genFormodifySubtitle();
+        genForModifySubtitle();
 
-    private static HttpRequestDef<ModifySubtitleRequest, ModifySubtitleResponse> genFormodifySubtitle() {
+    private static HttpRequestDef<ModifySubtitleRequest, ModifySubtitleResponse> genForModifySubtitle() {
         // basic
         HttpRequestDef.Builder<ModifySubtitleRequest, ModifySubtitleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifySubtitleRequest.class, ModifySubtitleResponse.class)
@@ -2371,9 +2079,7 @@ public class VodMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubtitleModifyReq.class),
-            f -> f.withMarshaller(ModifySubtitleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifySubtitleRequest::getBody, ModifySubtitleRequest::setBody));
 
         // response
 
@@ -2381,9 +2087,9 @@ public class VodMeta {
     }
 
     public static final HttpRequestDef<UpdateStorageModeRequest, UpdateStorageModeResponse> updateStorageMode =
-        genForupdateStorageMode();
+        genForUpdateStorageMode();
 
-    private static HttpRequestDef<UpdateStorageModeRequest, UpdateStorageModeResponse> genForupdateStorageMode() {
+    private static HttpRequestDef<UpdateStorageModeRequest, UpdateStorageModeResponse> genForUpdateStorageMode() {
         // basic
         HttpRequestDef.Builder<UpdateStorageModeRequest, UpdateStorageModeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateStorageModeRequest.class, UpdateStorageModeResponse.class)
@@ -2396,9 +2102,7 @@ public class VodMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateStorageModeReq.class),
-            f -> f.withMarshaller(UpdateStorageModeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStorageModeRequest::getBody, UpdateStorageModeRequest::setBody));
 
         // response
 

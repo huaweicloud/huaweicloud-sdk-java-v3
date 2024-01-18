@@ -116,7 +116,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddSharedTagsRequest 请求对象
+     * @param request BatchAddSharedTagsRequest 请求对象
      * @return CompletableFuture<BatchAddSharedTagsResponse>
      */
     public CompletableFuture<BatchAddSharedTagsResponse> batchAddSharedTagsAsync(BatchAddSharedTagsRequest request) {
@@ -134,13 +134,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddSharedTagsRequest 请求对象
+     * @param request BatchAddSharedTagsRequest 请求对象
      * @return AsyncInvoker<BatchAddSharedTagsRequest, BatchAddSharedTagsResponse>
      */
     public AsyncInvoker<BatchAddSharedTagsRequest, BatchAddSharedTagsResponse> batchAddSharedTagsAsyncInvoker(
         BatchAddSharedTagsRequest request) {
-        return new AsyncInvoker<BatchAddSharedTagsRequest, BatchAddSharedTagsResponse>(request,
-            SFSTurboMeta.batchAddSharedTags, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.batchAddSharedTags, hcClient);
     }
 
     /**
@@ -150,7 +149,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeSecurityGroupRequest 请求对象
+     * @param request ChangeSecurityGroupRequest 请求对象
      * @return CompletableFuture<ChangeSecurityGroupResponse>
      */
     public CompletableFuture<ChangeSecurityGroupResponse> changeSecurityGroupAsync(ChangeSecurityGroupRequest request) {
@@ -164,13 +163,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeSecurityGroupRequest 请求对象
+     * @param request ChangeSecurityGroupRequest 请求对象
      * @return AsyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse>
      */
     public AsyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> changeSecurityGroupAsyncInvoker(
         ChangeSecurityGroupRequest request) {
-        return new AsyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse>(request,
-            SFSTurboMeta.changeSecurityGroup, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.changeSecurityGroup, hcClient);
     }
 
     /**
@@ -180,7 +178,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeShareNameRequest 请求对象
+     * @param request ChangeShareNameRequest 请求对象
      * @return CompletableFuture<ChangeShareNameResponse>
      */
     public CompletableFuture<ChangeShareNameResponse> changeShareNameAsync(ChangeShareNameRequest request) {
@@ -194,13 +192,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeShareNameRequest 请求对象
+     * @param request ChangeShareNameRequest 请求对象
      * @return AsyncInvoker<ChangeShareNameRequest, ChangeShareNameResponse>
      */
     public AsyncInvoker<ChangeShareNameRequest, ChangeShareNameResponse> changeShareNameAsyncInvoker(
         ChangeShareNameRequest request) {
-        return new AsyncInvoker<ChangeShareNameRequest, ChangeShareNameResponse>(request, SFSTurboMeta.changeShareName,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.changeShareName, hcClient);
     }
 
     /**
@@ -210,7 +207,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackendTargetRequest 请求对象
+     * @param request CreateBackendTargetRequest 请求对象
      * @return CompletableFuture<CreateBackendTargetResponse>
      */
     public CompletableFuture<CreateBackendTargetResponse> createBackendTargetAsync(CreateBackendTargetRequest request) {
@@ -224,13 +221,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackendTargetRequest 请求对象
+     * @param request CreateBackendTargetRequest 请求对象
      * @return AsyncInvoker<CreateBackendTargetRequest, CreateBackendTargetResponse>
      */
     public AsyncInvoker<CreateBackendTargetRequest, CreateBackendTargetResponse> createBackendTargetAsyncInvoker(
         CreateBackendTargetRequest request) {
-        return new AsyncInvoker<CreateBackendTargetRequest, CreateBackendTargetResponse>(request,
-            SFSTurboMeta.createBackendTarget, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.createBackendTarget, hcClient);
     }
 
     /**
@@ -240,7 +236,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFsDirRequest 请求对象
+     * @param request CreateFsDirRequest 请求对象
      * @return CompletableFuture<CreateFsDirResponse>
      */
     public CompletableFuture<CreateFsDirResponse> createFsDirAsync(CreateFsDirRequest request) {
@@ -254,11 +250,11 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFsDirRequest 请求对象
+     * @param request CreateFsDirRequest 请求对象
      * @return AsyncInvoker<CreateFsDirRequest, CreateFsDirResponse>
      */
     public AsyncInvoker<CreateFsDirRequest, CreateFsDirResponse> createFsDirAsyncInvoker(CreateFsDirRequest request) {
-        return new AsyncInvoker<CreateFsDirRequest, CreateFsDirResponse>(request, SFSTurboMeta.createFsDir, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.createFsDir, hcClient);
     }
 
     /**
@@ -268,7 +264,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFsDirQuotaRequest 请求对象
+     * @param request CreateFsDirQuotaRequest 请求对象
      * @return CompletableFuture<CreateFsDirQuotaResponse>
      */
     public CompletableFuture<CreateFsDirQuotaResponse> createFsDirQuotaAsync(CreateFsDirQuotaRequest request) {
@@ -282,13 +278,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFsDirQuotaRequest 请求对象
+     * @param request CreateFsDirQuotaRequest 请求对象
      * @return AsyncInvoker<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse>
      */
     public AsyncInvoker<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse> createFsDirQuotaAsyncInvoker(
         CreateFsDirQuotaRequest request) {
-        return new AsyncInvoker<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse>(request,
-            SFSTurboMeta.createFsDirQuota, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.createFsDirQuota, hcClient);
     }
 
     /**
@@ -298,7 +293,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFsTaskRequest 请求对象
+     * @param request CreateFsTaskRequest 请求对象
      * @return CompletableFuture<CreateFsTaskResponse>
      */
     public CompletableFuture<CreateFsTaskResponse> createFsTaskAsync(CreateFsTaskRequest request) {
@@ -312,13 +307,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFsTaskRequest 请求对象
+     * @param request CreateFsTaskRequest 请求对象
      * @return AsyncInvoker<CreateFsTaskRequest, CreateFsTaskResponse>
      */
     public AsyncInvoker<CreateFsTaskRequest, CreateFsTaskResponse> createFsTaskAsyncInvoker(
         CreateFsTaskRequest request) {
-        return new AsyncInvoker<CreateFsTaskRequest, CreateFsTaskResponse>(request, SFSTurboMeta.createFsTask,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.createFsTask, hcClient);
     }
 
     /**
@@ -328,7 +322,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHpcCacheTaskRequest 请求对象
+     * @param request CreateHpcCacheTaskRequest 请求对象
      * @return CompletableFuture<CreateHpcCacheTaskResponse>
      */
     public CompletableFuture<CreateHpcCacheTaskResponse> createHpcCacheTaskAsync(CreateHpcCacheTaskRequest request) {
@@ -342,13 +336,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHpcCacheTaskRequest 请求对象
+     * @param request CreateHpcCacheTaskRequest 请求对象
      * @return AsyncInvoker<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse>
      */
     public AsyncInvoker<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse> createHpcCacheTaskAsyncInvoker(
         CreateHpcCacheTaskRequest request) {
-        return new AsyncInvoker<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse>(request,
-            SFSTurboMeta.createHpcCacheTask, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.createHpcCacheTask, hcClient);
     }
 
     /**
@@ -358,7 +351,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLdapConfigRequest 请求对象
+     * @param request CreateLdapConfigRequest 请求对象
      * @return CompletableFuture<CreateLdapConfigResponse>
      */
     public CompletableFuture<CreateLdapConfigResponse> createLdapConfigAsync(CreateLdapConfigRequest request) {
@@ -372,13 +365,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLdapConfigRequest 请求对象
+     * @param request CreateLdapConfigRequest 请求对象
      * @return AsyncInvoker<CreateLdapConfigRequest, CreateLdapConfigResponse>
      */
     public AsyncInvoker<CreateLdapConfigRequest, CreateLdapConfigResponse> createLdapConfigAsyncInvoker(
         CreateLdapConfigRequest request) {
-        return new AsyncInvoker<CreateLdapConfigRequest, CreateLdapConfigResponse>(request,
-            SFSTurboMeta.createLdapConfig, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.createLdapConfig, hcClient);
     }
 
     /**
@@ -388,7 +380,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePermRuleRequest 请求对象
+     * @param request CreatePermRuleRequest 请求对象
      * @return CompletableFuture<CreatePermRuleResponse>
      */
     public CompletableFuture<CreatePermRuleResponse> createPermRuleAsync(CreatePermRuleRequest request) {
@@ -402,13 +394,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePermRuleRequest 请求对象
+     * @param request CreatePermRuleRequest 请求对象
      * @return AsyncInvoker<CreatePermRuleRequest, CreatePermRuleResponse>
      */
     public AsyncInvoker<CreatePermRuleRequest, CreatePermRuleResponse> createPermRuleAsyncInvoker(
         CreatePermRuleRequest request) {
-        return new AsyncInvoker<CreatePermRuleRequest, CreatePermRuleResponse>(request, SFSTurboMeta.createPermRule,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.createPermRule, hcClient);
     }
 
     /**
@@ -418,7 +409,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateShareRequest 请求对象
+     * @param request CreateShareRequest 请求对象
      * @return CompletableFuture<CreateShareResponse>
      */
     public CompletableFuture<CreateShareResponse> createShareAsync(CreateShareRequest request) {
@@ -432,11 +423,11 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateShareRequest 请求对象
+     * @param request CreateShareRequest 请求对象
      * @return AsyncInvoker<CreateShareRequest, CreateShareResponse>
      */
     public AsyncInvoker<CreateShareRequest, CreateShareResponse> createShareAsyncInvoker(CreateShareRequest request) {
-        return new AsyncInvoker<CreateShareRequest, CreateShareResponse>(request, SFSTurboMeta.createShare, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.createShare, hcClient);
     }
 
     /**
@@ -449,7 +440,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSharedTagRequest 请求对象
+     * @param request CreateSharedTagRequest 请求对象
      * @return CompletableFuture<CreateSharedTagResponse>
      */
     public CompletableFuture<CreateSharedTagResponse> createSharedTagAsync(CreateSharedTagRequest request) {
@@ -466,13 +457,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSharedTagRequest 请求对象
+     * @param request CreateSharedTagRequest 请求对象
      * @return AsyncInvoker<CreateSharedTagRequest, CreateSharedTagResponse>
      */
     public AsyncInvoker<CreateSharedTagRequest, CreateSharedTagResponse> createSharedTagAsyncInvoker(
         CreateSharedTagRequest request) {
-        return new AsyncInvoker<CreateSharedTagRequest, CreateSharedTagResponse>(request, SFSTurboMeta.createSharedTag,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.createSharedTag, hcClient);
     }
 
     /**
@@ -482,7 +472,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackendTargetRequest 请求对象
+     * @param request DeleteBackendTargetRequest 请求对象
      * @return CompletableFuture<DeleteBackendTargetResponse>
      */
     public CompletableFuture<DeleteBackendTargetResponse> deleteBackendTargetAsync(DeleteBackendTargetRequest request) {
@@ -496,13 +486,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackendTargetRequest 请求对象
+     * @param request DeleteBackendTargetRequest 请求对象
      * @return AsyncInvoker<DeleteBackendTargetRequest, DeleteBackendTargetResponse>
      */
     public AsyncInvoker<DeleteBackendTargetRequest, DeleteBackendTargetResponse> deleteBackendTargetAsyncInvoker(
         DeleteBackendTargetRequest request) {
-        return new AsyncInvoker<DeleteBackendTargetRequest, DeleteBackendTargetResponse>(request,
-            SFSTurboMeta.deleteBackendTarget, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.deleteBackendTarget, hcClient);
     }
 
     /**
@@ -512,7 +501,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFsDirRequest 请求对象
+     * @param request DeleteFsDirRequest 请求对象
      * @return CompletableFuture<DeleteFsDirResponse>
      */
     public CompletableFuture<DeleteFsDirResponse> deleteFsDirAsync(DeleteFsDirRequest request) {
@@ -526,11 +515,11 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFsDirRequest 请求对象
+     * @param request DeleteFsDirRequest 请求对象
      * @return AsyncInvoker<DeleteFsDirRequest, DeleteFsDirResponse>
      */
     public AsyncInvoker<DeleteFsDirRequest, DeleteFsDirResponse> deleteFsDirAsyncInvoker(DeleteFsDirRequest request) {
-        return new AsyncInvoker<DeleteFsDirRequest, DeleteFsDirResponse>(request, SFSTurboMeta.deleteFsDir, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.deleteFsDir, hcClient);
     }
 
     /**
@@ -540,7 +529,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFsDirQuotaRequest 请求对象
+     * @param request DeleteFsDirQuotaRequest 请求对象
      * @return CompletableFuture<DeleteFsDirQuotaResponse>
      */
     public CompletableFuture<DeleteFsDirQuotaResponse> deleteFsDirQuotaAsync(DeleteFsDirQuotaRequest request) {
@@ -554,13 +543,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFsDirQuotaRequest 请求对象
+     * @param request DeleteFsDirQuotaRequest 请求对象
      * @return AsyncInvoker<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse>
      */
     public AsyncInvoker<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse> deleteFsDirQuotaAsyncInvoker(
         DeleteFsDirQuotaRequest request) {
-        return new AsyncInvoker<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse>(request,
-            SFSTurboMeta.deleteFsDirQuota, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.deleteFsDirQuota, hcClient);
     }
 
     /**
@@ -570,7 +558,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFsTaskRequest 请求对象
+     * @param request DeleteFsTaskRequest 请求对象
      * @return CompletableFuture<DeleteFsTaskResponse>
      */
     public CompletableFuture<DeleteFsTaskResponse> deleteFsTaskAsync(DeleteFsTaskRequest request) {
@@ -584,13 +572,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFsTaskRequest 请求对象
+     * @param request DeleteFsTaskRequest 请求对象
      * @return AsyncInvoker<DeleteFsTaskRequest, DeleteFsTaskResponse>
      */
     public AsyncInvoker<DeleteFsTaskRequest, DeleteFsTaskResponse> deleteFsTaskAsyncInvoker(
         DeleteFsTaskRequest request) {
-        return new AsyncInvoker<DeleteFsTaskRequest, DeleteFsTaskResponse>(request, SFSTurboMeta.deleteFsTask,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.deleteFsTask, hcClient);
     }
 
     /**
@@ -600,7 +587,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLdapConfigRequest 请求对象
+     * @param request DeleteLdapConfigRequest 请求对象
      * @return CompletableFuture<DeleteLdapConfigResponse>
      */
     public CompletableFuture<DeleteLdapConfigResponse> deleteLdapConfigAsync(DeleteLdapConfigRequest request) {
@@ -614,13 +601,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLdapConfigRequest 请求对象
+     * @param request DeleteLdapConfigRequest 请求对象
      * @return AsyncInvoker<DeleteLdapConfigRequest, DeleteLdapConfigResponse>
      */
     public AsyncInvoker<DeleteLdapConfigRequest, DeleteLdapConfigResponse> deleteLdapConfigAsyncInvoker(
         DeleteLdapConfigRequest request) {
-        return new AsyncInvoker<DeleteLdapConfigRequest, DeleteLdapConfigResponse>(request,
-            SFSTurboMeta.deleteLdapConfig, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.deleteLdapConfig, hcClient);
     }
 
     /**
@@ -630,7 +616,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePermRuleRequest 请求对象
+     * @param request DeletePermRuleRequest 请求对象
      * @return CompletableFuture<DeletePermRuleResponse>
      */
     public CompletableFuture<DeletePermRuleResponse> deletePermRuleAsync(DeletePermRuleRequest request) {
@@ -644,13 +630,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePermRuleRequest 请求对象
+     * @param request DeletePermRuleRequest 请求对象
      * @return AsyncInvoker<DeletePermRuleRequest, DeletePermRuleResponse>
      */
     public AsyncInvoker<DeletePermRuleRequest, DeletePermRuleResponse> deletePermRuleAsyncInvoker(
         DeletePermRuleRequest request) {
-        return new AsyncInvoker<DeletePermRuleRequest, DeletePermRuleResponse>(request, SFSTurboMeta.deletePermRule,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.deletePermRule, hcClient);
     }
 
     /**
@@ -660,7 +645,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteShareRequest 请求对象
+     * @param request DeleteShareRequest 请求对象
      * @return CompletableFuture<DeleteShareResponse>
      */
     public CompletableFuture<DeleteShareResponse> deleteShareAsync(DeleteShareRequest request) {
@@ -674,11 +659,11 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteShareRequest 请求对象
+     * @param request DeleteShareRequest 请求对象
      * @return AsyncInvoker<DeleteShareRequest, DeleteShareResponse>
      */
     public AsyncInvoker<DeleteShareRequest, DeleteShareResponse> deleteShareAsyncInvoker(DeleteShareRequest request) {
-        return new AsyncInvoker<DeleteShareRequest, DeleteShareResponse>(request, SFSTurboMeta.deleteShare, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.deleteShare, hcClient);
     }
 
     /**
@@ -688,7 +673,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSharedTagRequest 请求对象
+     * @param request DeleteSharedTagRequest 请求对象
      * @return CompletableFuture<DeleteSharedTagResponse>
      */
     public CompletableFuture<DeleteSharedTagResponse> deleteSharedTagAsync(DeleteSharedTagRequest request) {
@@ -702,13 +687,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSharedTagRequest 请求对象
+     * @param request DeleteSharedTagRequest 请求对象
      * @return AsyncInvoker<DeleteSharedTagRequest, DeleteSharedTagResponse>
      */
     public AsyncInvoker<DeleteSharedTagRequest, DeleteSharedTagResponse> deleteSharedTagAsyncInvoker(
         DeleteSharedTagRequest request) {
-        return new AsyncInvoker<DeleteSharedTagRequest, DeleteSharedTagResponse>(request, SFSTurboMeta.deleteSharedTag,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.deleteSharedTag, hcClient);
     }
 
     /**
@@ -718,7 +702,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandShareRequest 请求对象
+     * @param request ExpandShareRequest 请求对象
      * @return CompletableFuture<ExpandShareResponse>
      */
     public CompletableFuture<ExpandShareResponse> expandShareAsync(ExpandShareRequest request) {
@@ -732,11 +716,11 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandShareRequest 请求对象
+     * @param request ExpandShareRequest 请求对象
      * @return AsyncInvoker<ExpandShareRequest, ExpandShareResponse>
      */
     public AsyncInvoker<ExpandShareRequest, ExpandShareResponse> expandShareAsyncInvoker(ExpandShareRequest request) {
-        return new AsyncInvoker<ExpandShareRequest, ExpandShareResponse>(request, SFSTurboMeta.expandShare, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.expandShare, hcClient);
     }
 
     /**
@@ -746,7 +730,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackendTargetsRequest 请求对象
+     * @param request ListBackendTargetsRequest 请求对象
      * @return CompletableFuture<ListBackendTargetsResponse>
      */
     public CompletableFuture<ListBackendTargetsResponse> listBackendTargetsAsync(ListBackendTargetsRequest request) {
@@ -760,13 +744,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackendTargetsRequest 请求对象
+     * @param request ListBackendTargetsRequest 请求对象
      * @return AsyncInvoker<ListBackendTargetsRequest, ListBackendTargetsResponse>
      */
     public AsyncInvoker<ListBackendTargetsRequest, ListBackendTargetsResponse> listBackendTargetsAsyncInvoker(
         ListBackendTargetsRequest request) {
-        return new AsyncInvoker<ListBackendTargetsRequest, ListBackendTargetsResponse>(request,
-            SFSTurboMeta.listBackendTargets, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.listBackendTargets, hcClient);
     }
 
     /**
@@ -776,7 +759,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFsTasksRequest 请求对象
+     * @param request ListFsTasksRequest 请求对象
      * @return CompletableFuture<ListFsTasksResponse>
      */
     public CompletableFuture<ListFsTasksResponse> listFsTasksAsync(ListFsTasksRequest request) {
@@ -790,11 +773,11 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFsTasksRequest 请求对象
+     * @param request ListFsTasksRequest 请求对象
      * @return AsyncInvoker<ListFsTasksRequest, ListFsTasksResponse>
      */
     public AsyncInvoker<ListFsTasksRequest, ListFsTasksResponse> listFsTasksAsyncInvoker(ListFsTasksRequest request) {
-        return new AsyncInvoker<ListFsTasksRequest, ListFsTasksResponse>(request, SFSTurboMeta.listFsTasks, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.listFsTasks, hcClient);
     }
 
     /**
@@ -804,7 +787,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHpcCacheTasksRequest 请求对象
+     * @param request ListHpcCacheTasksRequest 请求对象
      * @return CompletableFuture<ListHpcCacheTasksResponse>
      */
     public CompletableFuture<ListHpcCacheTasksResponse> listHpcCacheTasksAsync(ListHpcCacheTasksRequest request) {
@@ -818,13 +801,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHpcCacheTasksRequest 请求对象
+     * @param request ListHpcCacheTasksRequest 请求对象
      * @return AsyncInvoker<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse>
      */
     public AsyncInvoker<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse> listHpcCacheTasksAsyncInvoker(
         ListHpcCacheTasksRequest request) {
-        return new AsyncInvoker<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse>(request,
-            SFSTurboMeta.listHpcCacheTasks, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.listHpcCacheTasks, hcClient);
     }
 
     /**
@@ -834,7 +816,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermRulesRequest 请求对象
+     * @param request ListPermRulesRequest 请求对象
      * @return CompletableFuture<ListPermRulesResponse>
      */
     public CompletableFuture<ListPermRulesResponse> listPermRulesAsync(ListPermRulesRequest request) {
@@ -848,13 +830,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermRulesRequest 请求对象
+     * @param request ListPermRulesRequest 请求对象
      * @return AsyncInvoker<ListPermRulesRequest, ListPermRulesResponse>
      */
     public AsyncInvoker<ListPermRulesRequest, ListPermRulesResponse> listPermRulesAsyncInvoker(
         ListPermRulesRequest request) {
-        return new AsyncInvoker<ListPermRulesRequest, ListPermRulesResponse>(request, SFSTurboMeta.listPermRules,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.listPermRules, hcClient);
     }
 
     /**
@@ -864,7 +845,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSharedTagsRequest 请求对象
+     * @param request ListSharedTagsRequest 请求对象
      * @return CompletableFuture<ListSharedTagsResponse>
      */
     public CompletableFuture<ListSharedTagsResponse> listSharedTagsAsync(ListSharedTagsRequest request) {
@@ -878,13 +859,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSharedTagsRequest 请求对象
+     * @param request ListSharedTagsRequest 请求对象
      * @return AsyncInvoker<ListSharedTagsRequest, ListSharedTagsResponse>
      */
     public AsyncInvoker<ListSharedTagsRequest, ListSharedTagsResponse> listSharedTagsAsyncInvoker(
         ListSharedTagsRequest request) {
-        return new AsyncInvoker<ListSharedTagsRequest, ListSharedTagsResponse>(request, SFSTurboMeta.listSharedTags,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.listSharedTags, hcClient);
     }
 
     /**
@@ -894,7 +874,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSharesRequest 请求对象
+     * @param request ListSharesRequest 请求对象
      * @return CompletableFuture<ListSharesResponse>
      */
     public CompletableFuture<ListSharesResponse> listSharesAsync(ListSharesRequest request) {
@@ -908,11 +888,11 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSharesRequest 请求对象
+     * @param request ListSharesRequest 请求对象
      * @return AsyncInvoker<ListSharesRequest, ListSharesResponse>
      */
     public AsyncInvoker<ListSharesRequest, ListSharesResponse> listSharesAsyncInvoker(ListSharesRequest request) {
-        return new AsyncInvoker<ListSharesRequest, ListSharesResponse>(request, SFSTurboMeta.listShares, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.listShares, hcClient);
     }
 
     /**
@@ -922,7 +902,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetHpcCacheBackendRequest 请求对象
+     * @param request SetHpcCacheBackendRequest 请求对象
      * @return CompletableFuture<SetHpcCacheBackendResponse>
      */
     public CompletableFuture<SetHpcCacheBackendResponse> setHpcCacheBackendAsync(SetHpcCacheBackendRequest request) {
@@ -936,13 +916,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetHpcCacheBackendRequest 请求对象
+     * @param request SetHpcCacheBackendRequest 请求对象
      * @return AsyncInvoker<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse>
      */
     public AsyncInvoker<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse> setHpcCacheBackendAsyncInvoker(
         SetHpcCacheBackendRequest request) {
-        return new AsyncInvoker<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse>(request,
-            SFSTurboMeta.setHpcCacheBackend, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.setHpcCacheBackend, hcClient);
     }
 
     /**
@@ -952,7 +931,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackendTargetInfoRequest 请求对象
+     * @param request ShowBackendTargetInfoRequest 请求对象
      * @return CompletableFuture<ShowBackendTargetInfoResponse>
      */
     public CompletableFuture<ShowBackendTargetInfoResponse> showBackendTargetInfoAsync(
@@ -967,13 +946,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackendTargetInfoRequest 请求对象
+     * @param request ShowBackendTargetInfoRequest 请求对象
      * @return AsyncInvoker<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse>
      */
     public AsyncInvoker<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> showBackendTargetInfoAsyncInvoker(
         ShowBackendTargetInfoRequest request) {
-        return new AsyncInvoker<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse>(request,
-            SFSTurboMeta.showBackendTargetInfo, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showBackendTargetInfo, hcClient);
     }
 
     /**
@@ -983,7 +961,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFsDirRequest 请求对象
+     * @param request ShowFsDirRequest 请求对象
      * @return CompletableFuture<ShowFsDirResponse>
      */
     public CompletableFuture<ShowFsDirResponse> showFsDirAsync(ShowFsDirRequest request) {
@@ -997,11 +975,11 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFsDirRequest 请求对象
+     * @param request ShowFsDirRequest 请求对象
      * @return AsyncInvoker<ShowFsDirRequest, ShowFsDirResponse>
      */
     public AsyncInvoker<ShowFsDirRequest, ShowFsDirResponse> showFsDirAsyncInvoker(ShowFsDirRequest request) {
-        return new AsyncInvoker<ShowFsDirRequest, ShowFsDirResponse>(request, SFSTurboMeta.showFsDir, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showFsDir, hcClient);
     }
 
     /**
@@ -1011,7 +989,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFsDirQuotaRequest 请求对象
+     * @param request ShowFsDirQuotaRequest 请求对象
      * @return CompletableFuture<ShowFsDirQuotaResponse>
      */
     public CompletableFuture<ShowFsDirQuotaResponse> showFsDirQuotaAsync(ShowFsDirQuotaRequest request) {
@@ -1025,13 +1003,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFsDirQuotaRequest 请求对象
+     * @param request ShowFsDirQuotaRequest 请求对象
      * @return AsyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse>
      */
     public AsyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse> showFsDirQuotaAsyncInvoker(
         ShowFsDirQuotaRequest request) {
-        return new AsyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse>(request, SFSTurboMeta.showFsDirQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showFsDirQuota, hcClient);
     }
 
     /**
@@ -1041,7 +1018,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFsDirUsageRequest 请求对象
+     * @param request ShowFsDirUsageRequest 请求对象
      * @return CompletableFuture<ShowFsDirUsageResponse>
      */
     public CompletableFuture<ShowFsDirUsageResponse> showFsDirUsageAsync(ShowFsDirUsageRequest request) {
@@ -1055,13 +1032,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFsDirUsageRequest 请求对象
+     * @param request ShowFsDirUsageRequest 请求对象
      * @return AsyncInvoker<ShowFsDirUsageRequest, ShowFsDirUsageResponse>
      */
     public AsyncInvoker<ShowFsDirUsageRequest, ShowFsDirUsageResponse> showFsDirUsageAsyncInvoker(
         ShowFsDirUsageRequest request) {
-        return new AsyncInvoker<ShowFsDirUsageRequest, ShowFsDirUsageResponse>(request, SFSTurboMeta.showFsDirUsage,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showFsDirUsage, hcClient);
     }
 
     /**
@@ -1071,7 +1047,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFsTaskRequest 请求对象
+     * @param request ShowFsTaskRequest 请求对象
      * @return CompletableFuture<ShowFsTaskResponse>
      */
     public CompletableFuture<ShowFsTaskResponse> showFsTaskAsync(ShowFsTaskRequest request) {
@@ -1085,11 +1061,11 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFsTaskRequest 请求对象
+     * @param request ShowFsTaskRequest 请求对象
      * @return AsyncInvoker<ShowFsTaskRequest, ShowFsTaskResponse>
      */
     public AsyncInvoker<ShowFsTaskRequest, ShowFsTaskResponse> showFsTaskAsyncInvoker(ShowFsTaskRequest request) {
-        return new AsyncInvoker<ShowFsTaskRequest, ShowFsTaskResponse>(request, SFSTurboMeta.showFsTask, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showFsTask, hcClient);
     }
 
     /**
@@ -1099,7 +1075,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHpcCacheTaskRequest 请求对象
+     * @param request ShowHpcCacheTaskRequest 请求对象
      * @return CompletableFuture<ShowHpcCacheTaskResponse>
      */
     public CompletableFuture<ShowHpcCacheTaskResponse> showHpcCacheTaskAsync(ShowHpcCacheTaskRequest request) {
@@ -1113,13 +1089,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHpcCacheTaskRequest 请求对象
+     * @param request ShowHpcCacheTaskRequest 请求对象
      * @return AsyncInvoker<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse>
      */
     public AsyncInvoker<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse> showHpcCacheTaskAsyncInvoker(
         ShowHpcCacheTaskRequest request) {
-        return new AsyncInvoker<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse>(request,
-            SFSTurboMeta.showHpcCacheTask, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showHpcCacheTask, hcClient);
     }
 
     /**
@@ -1129,7 +1104,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobDetailRequest 请求对象
+     * @param request ShowJobDetailRequest 请求对象
      * @return CompletableFuture<ShowJobDetailResponse>
      */
     public CompletableFuture<ShowJobDetailResponse> showJobDetailAsync(ShowJobDetailRequest request) {
@@ -1143,13 +1118,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobDetailRequest 请求对象
+     * @param request ShowJobDetailRequest 请求对象
      * @return AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
      */
     public AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailAsyncInvoker(
         ShowJobDetailRequest request) {
-        return new AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, SFSTurboMeta.showJobDetail,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showJobDetail, hcClient);
     }
 
     /**
@@ -1159,7 +1133,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLdapConfigRequest 请求对象
+     * @param request ShowLdapConfigRequest 请求对象
      * @return CompletableFuture<ShowLdapConfigResponse>
      */
     public CompletableFuture<ShowLdapConfigResponse> showLdapConfigAsync(ShowLdapConfigRequest request) {
@@ -1173,13 +1147,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLdapConfigRequest 请求对象
+     * @param request ShowLdapConfigRequest 请求对象
      * @return AsyncInvoker<ShowLdapConfigRequest, ShowLdapConfigResponse>
      */
     public AsyncInvoker<ShowLdapConfigRequest, ShowLdapConfigResponse> showLdapConfigAsyncInvoker(
         ShowLdapConfigRequest request) {
-        return new AsyncInvoker<ShowLdapConfigRequest, ShowLdapConfigResponse>(request, SFSTurboMeta.showLdapConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showLdapConfig, hcClient);
     }
 
     /**
@@ -1189,7 +1162,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPermRuleRequest 请求对象
+     * @param request ShowPermRuleRequest 请求对象
      * @return CompletableFuture<ShowPermRuleResponse>
      */
     public CompletableFuture<ShowPermRuleResponse> showPermRuleAsync(ShowPermRuleRequest request) {
@@ -1203,13 +1176,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPermRuleRequest 请求对象
+     * @param request ShowPermRuleRequest 请求对象
      * @return AsyncInvoker<ShowPermRuleRequest, ShowPermRuleResponse>
      */
     public AsyncInvoker<ShowPermRuleRequest, ShowPermRuleResponse> showPermRuleAsyncInvoker(
         ShowPermRuleRequest request) {
-        return new AsyncInvoker<ShowPermRuleRequest, ShowPermRuleResponse>(request, SFSTurboMeta.showPermRule,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showPermRule, hcClient);
     }
 
     /**
@@ -1219,7 +1191,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowShareRequest 请求对象
+     * @param request ShowShareRequest 请求对象
      * @return CompletableFuture<ShowShareResponse>
      */
     public CompletableFuture<ShowShareResponse> showShareAsync(ShowShareRequest request) {
@@ -1233,11 +1205,11 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowShareRequest 请求对象
+     * @param request ShowShareRequest 请求对象
      * @return AsyncInvoker<ShowShareRequest, ShowShareResponse>
      */
     public AsyncInvoker<ShowShareRequest, ShowShareResponse> showShareAsyncInvoker(ShowShareRequest request) {
-        return new AsyncInvoker<ShowShareRequest, ShowShareResponse>(request, SFSTurboMeta.showShare, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showShare, hcClient);
     }
 
     /**
@@ -1247,7 +1219,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSharedTagsRequest 请求对象
+     * @param request ShowSharedTagsRequest 请求对象
      * @return CompletableFuture<ShowSharedTagsResponse>
      */
     public CompletableFuture<ShowSharedTagsResponse> showSharedTagsAsync(ShowSharedTagsRequest request) {
@@ -1261,13 +1233,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSharedTagsRequest 请求对象
+     * @param request ShowSharedTagsRequest 请求对象
      * @return AsyncInvoker<ShowSharedTagsRequest, ShowSharedTagsResponse>
      */
     public AsyncInvoker<ShowSharedTagsRequest, ShowSharedTagsResponse> showSharedTagsAsyncInvoker(
         ShowSharedTagsRequest request) {
-        return new AsyncInvoker<ShowSharedTagsRequest, ShowSharedTagsResponse>(request, SFSTurboMeta.showSharedTags,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.showSharedTags, hcClient);
     }
 
     /**
@@ -1277,7 +1248,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFsDirQuotaRequest 请求对象
+     * @param request UpdateFsDirQuotaRequest 请求对象
      * @return CompletableFuture<UpdateFsDirQuotaResponse>
      */
     public CompletableFuture<UpdateFsDirQuotaResponse> updateFsDirQuotaAsync(UpdateFsDirQuotaRequest request) {
@@ -1291,13 +1262,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFsDirQuotaRequest 请求对象
+     * @param request UpdateFsDirQuotaRequest 请求对象
      * @return AsyncInvoker<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse>
      */
     public AsyncInvoker<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse> updateFsDirQuotaAsyncInvoker(
         UpdateFsDirQuotaRequest request) {
-        return new AsyncInvoker<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse>(request,
-            SFSTurboMeta.updateFsDirQuota, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.updateFsDirQuota, hcClient);
     }
 
     /**
@@ -1307,7 +1277,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHpcShareRequest 请求对象
+     * @param request UpdateHpcShareRequest 请求对象
      * @return CompletableFuture<UpdateHpcShareResponse>
      */
     public CompletableFuture<UpdateHpcShareResponse> updateHpcShareAsync(UpdateHpcShareRequest request) {
@@ -1321,13 +1291,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHpcShareRequest 请求对象
+     * @param request UpdateHpcShareRequest 请求对象
      * @return AsyncInvoker<UpdateHpcShareRequest, UpdateHpcShareResponse>
      */
     public AsyncInvoker<UpdateHpcShareRequest, UpdateHpcShareResponse> updateHpcShareAsyncInvoker(
         UpdateHpcShareRequest request) {
-        return new AsyncInvoker<UpdateHpcShareRequest, UpdateHpcShareResponse>(request, SFSTurboMeta.updateHpcShare,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.updateHpcShare, hcClient);
     }
 
     /**
@@ -1337,7 +1306,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLdapConfigRequest 请求对象
+     * @param request UpdateLdapConfigRequest 请求对象
      * @return CompletableFuture<UpdateLdapConfigResponse>
      */
     public CompletableFuture<UpdateLdapConfigResponse> updateLdapConfigAsync(UpdateLdapConfigRequest request) {
@@ -1351,13 +1320,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLdapConfigRequest 请求对象
+     * @param request UpdateLdapConfigRequest 请求对象
      * @return AsyncInvoker<UpdateLdapConfigRequest, UpdateLdapConfigResponse>
      */
     public AsyncInvoker<UpdateLdapConfigRequest, UpdateLdapConfigResponse> updateLdapConfigAsyncInvoker(
         UpdateLdapConfigRequest request) {
-        return new AsyncInvoker<UpdateLdapConfigRequest, UpdateLdapConfigResponse>(request,
-            SFSTurboMeta.updateLdapConfig, hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.updateLdapConfig, hcClient);
     }
 
     /**
@@ -1367,7 +1335,7 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePermRuleRequest 请求对象
+     * @param request UpdatePermRuleRequest 请求对象
      * @return CompletableFuture<UpdatePermRuleResponse>
      */
     public CompletableFuture<UpdatePermRuleResponse> updatePermRuleAsync(UpdatePermRuleRequest request) {
@@ -1381,13 +1349,12 @@ public class SFSTurboAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePermRuleRequest 请求对象
+     * @param request UpdatePermRuleRequest 请求对象
      * @return AsyncInvoker<UpdatePermRuleRequest, UpdatePermRuleResponse>
      */
     public AsyncInvoker<UpdatePermRuleRequest, UpdatePermRuleResponse> updatePermRuleAsyncInvoker(
         UpdatePermRuleRequest request) {
-        return new AsyncInvoker<UpdatePermRuleRequest, UpdatePermRuleResponse>(request, SFSTurboMeta.updatePermRule,
-            hcClient);
+        return new AsyncInvoker<>(request, SFSTurboMeta.updatePermRule, hcClient);
     }
 
 }

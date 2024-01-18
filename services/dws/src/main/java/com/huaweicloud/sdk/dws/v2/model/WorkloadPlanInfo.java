@@ -16,7 +16,7 @@ public class WorkloadPlanInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -53,7 +53,7 @@ public class WorkloadPlanInfo {
 
     private List<PlanStage> stageList = null;
 
-    public WorkloadPlanInfo withStatus(String status) {
+    public WorkloadPlanInfo withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -62,11 +62,11 @@ public class WorkloadPlanInfo {
      * 计划状态。
      * @return status
      */
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

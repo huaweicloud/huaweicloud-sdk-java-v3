@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksBody;
 import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeInstanceStatusBody;
+import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyAsyncRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyAsyncResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceRequest;
@@ -279,9 +281,9 @@ import java.util.UUID;
 public class DcsMeta {
 
     public static final HttpRequestDef<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTags =
-        genForbatchCreateOrDeleteTags();
+        genForBatchCreateOrDeleteTags();
 
-    private static HttpRequestDef<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> genForbatchCreateOrDeleteTags() {
+    private static HttpRequestDef<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> genForBatchCreateOrDeleteTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateOrDeleteTagsRequest.class, BatchCreateOrDeleteTagsResponse.class)
@@ -294,16 +296,13 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getInstanceId,
+                BatchCreateOrDeleteTagsRequest::setInstanceId));
         builder.<CreateOrDeleteInstanceTags>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateOrDeleteInstanceTags.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getBody, BatchCreateOrDeleteTagsRequest::setBody));
 
         // response
 
@@ -311,9 +310,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> batchDeleteInstances =
-        genForbatchDeleteInstances();
+        genForBatchDeleteInstances();
 
-    private static HttpRequestDef<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> genForbatchDeleteInstances() {
+    private static HttpRequestDef<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> genForBatchDeleteInstances() {
         // basic
         HttpRequestDef.Builder<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, BatchDeleteInstancesRequest.class, BatchDeleteInstancesResponse.class)
@@ -326,16 +325,13 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(BatchDeleteInstancesRequest::getAllFailure, (req, v) -> {
-                req.setAllFailure(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteInstancesRequest::getAllFailure,
+                BatchDeleteInstancesRequest::setAllFailure));
         builder.<BatchDeleteBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchDeleteBody.class),
-            f -> f.withMarshaller(BatchDeleteInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteInstancesRequest::getBody, BatchDeleteInstancesRequest::setBody));
 
         // response
 
@@ -343,9 +339,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse> batchShowNodesInformation =
-        genForbatchShowNodesInformation();
+        genForBatchShowNodesInformation();
 
-    private static HttpRequestDef<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse> genForbatchShowNodesInformation() {
+    private static HttpRequestDef<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse> genForBatchShowNodesInformation() {
         // basic
         HttpRequestDef.Builder<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse> builder =
             HttpRequestDef
@@ -361,16 +357,14 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowNodesInformationRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(BatchShowNodesInformationRequest::getOffset,
+                BatchShowNodesInformationRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchShowNodesInformationRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(BatchShowNodesInformationRequest::getLimit,
+                BatchShowNodesInformationRequest::setLimit));
 
         // response
 
@@ -378,9 +372,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> batchStopMigrationTasks =
-        genForbatchStopMigrationTasks();
+        genForBatchStopMigrationTasks();
 
-    private static HttpRequestDef<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> genForbatchStopMigrationTasks() {
+    private static HttpRequestDef<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> genForBatchStopMigrationTasks() {
         // basic
         HttpRequestDef.Builder<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchStopMigrationTasksRequest.class, BatchStopMigrationTasksResponse.class)
@@ -393,9 +387,7 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchStopMigrationTasksBody.class),
-            f -> f.withMarshaller(BatchStopMigrationTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStopMigrationTasksRequest::getBody, BatchStopMigrationTasksRequest::setBody));
 
         // response
 
@@ -403,9 +395,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> changeMasterStandby =
-        genForchangeMasterStandby();
+        genForChangeMasterStandby();
 
-    private static HttpRequestDef<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> genForchangeMasterStandby() {
+    private static HttpRequestDef<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> genForChangeMasterStandby() {
         // basic
         HttpRequestDef.Builder<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ChangeMasterStandbyRequest.class, ChangeMasterStandbyResponse.class)
@@ -418,18 +410,42 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeMasterStandbyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeMasterStandbyRequest::getInstanceId,
+                ChangeMasterStandbyRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CopyInstanceRequest, CopyInstanceResponse> copyInstance = genForcopyInstance();
+    public static final HttpRequestDef<ChangeMasterStandbyAsyncRequest, ChangeMasterStandbyAsyncResponse> changeMasterStandbyAsync =
+        genForChangeMasterStandbyAsync();
 
-    private static HttpRequestDef<CopyInstanceRequest, CopyInstanceResponse> genForcopyInstance() {
+    private static HttpRequestDef<ChangeMasterStandbyAsyncRequest, ChangeMasterStandbyAsyncResponse> genForChangeMasterStandbyAsync() {
+        // basic
+        HttpRequestDef.Builder<ChangeMasterStandbyAsyncRequest, ChangeMasterStandbyAsyncResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, ChangeMasterStandbyAsyncRequest.class, ChangeMasterStandbyAsyncResponse.class)
+                .withName("ChangeMasterStandbyAsync")
+                .withUri("/v2/{project_id}/instances/{instance_id}/async-swap")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeMasterStandbyAsyncRequest::getInstanceId,
+                ChangeMasterStandbyAsyncRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CopyInstanceRequest, CopyInstanceResponse> copyInstance = genForCopyInstance();
+
+    private static HttpRequestDef<CopyInstanceRequest, CopyInstanceResponse> genForCopyInstance() {
         // basic
         HttpRequestDef.Builder<CopyInstanceRequest, CopyInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyInstanceRequest.class, CopyInstanceResponse.class)
@@ -442,16 +458,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CopyInstanceRequest::getInstanceId, CopyInstanceRequest::setInstanceId));
         builder.<BackupInstanceBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BackupInstanceBody.class),
-            f -> f.withMarshaller(CopyInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CopyInstanceRequest::getBody, CopyInstanceRequest::setBody));
 
         // response
 
@@ -459,9 +471,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateAclAccountRequest, CreateAclAccountResponse> createAclAccount =
-        genForcreateAclAccount();
+        genForCreateAclAccount();
 
-    private static HttpRequestDef<CreateAclAccountRequest, CreateAclAccountResponse> genForcreateAclAccount() {
+    private static HttpRequestDef<CreateAclAccountRequest, CreateAclAccountResponse> genForCreateAclAccount() {
         // basic
         HttpRequestDef.Builder<CreateAclAccountRequest, CreateAclAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAclAccountRequest.class, CreateAclAccountResponse.class)
@@ -474,16 +486,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAclAccountRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAclAccountRequest::getInstanceId, CreateAclAccountRequest::setInstanceId));
         builder.<CreateAclAccountRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAclAccountRequestBody.class),
-            f -> f.withMarshaller(CreateAclAccountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAclAccountRequest::getBody, CreateAclAccountRequest::setBody));
 
         // response
 
@@ -491,9 +499,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse> createAutoExpireScanTask =
-        genForcreateAutoExpireScanTask();
+        genForCreateAutoExpireScanTask();
 
-    private static HttpRequestDef<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse> genForcreateAutoExpireScanTask() {
+    private static HttpRequestDef<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse> genForCreateAutoExpireScanTask() {
         // basic
         HttpRequestDef.Builder<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse> builder =
             HttpRequestDef
@@ -507,9 +515,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAutoExpireScanTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAutoExpireScanTaskRequest::getInstanceId,
+                CreateAutoExpireScanTaskRequest::setInstanceId));
 
         // response
 
@@ -517,9 +524,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> createBigkeyScanTask =
-        genForcreateBigkeyScanTask();
+        genForCreateBigkeyScanTask();
 
-    private static HttpRequestDef<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> genForcreateBigkeyScanTask() {
+    private static HttpRequestDef<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> genForCreateBigkeyScanTask() {
         // basic
         HttpRequestDef.Builder<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateBigkeyScanTaskRequest.class, CreateBigkeyScanTaskResponse.class)
@@ -532,9 +539,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBigkeyScanTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateBigkeyScanTaskRequest::getInstanceId,
+                CreateBigkeyScanTaskRequest::setInstanceId));
 
         // response
 
@@ -542,9 +548,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateCustomTemplateRequest, CreateCustomTemplateResponse> createCustomTemplate =
-        genForcreateCustomTemplate();
+        genForCreateCustomTemplate();
 
-    private static HttpRequestDef<CreateCustomTemplateRequest, CreateCustomTemplateResponse> genForcreateCustomTemplate() {
+    private static HttpRequestDef<CreateCustomTemplateRequest, CreateCustomTemplateResponse> genForCreateCustomTemplate() {
         // basic
         HttpRequestDef.Builder<CreateCustomTemplateRequest, CreateCustomTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateCustomTemplateRequest.class, CreateCustomTemplateResponse.class)
@@ -557,9 +563,7 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCustomTemplateBody.class),
-            f -> f.withMarshaller(CreateCustomTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCustomTemplateRequest::getBody, CreateCustomTemplateRequest::setBody));
 
         // response
 
@@ -567,9 +571,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> createDiagnosisTask =
-        genForcreateDiagnosisTask();
+        genForCreateDiagnosisTask();
 
-    private static HttpRequestDef<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> genForcreateDiagnosisTask() {
+    private static HttpRequestDef<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> genForCreateDiagnosisTask() {
         // basic
         HttpRequestDef.Builder<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDiagnosisTaskRequest.class, CreateDiagnosisTaskResponse.class)
@@ -582,16 +586,13 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDiagnosisTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDiagnosisTaskRequest::getInstanceId,
+                CreateDiagnosisTaskRequest::setInstanceId));
         builder.<CreateDiagnosisTaskBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDiagnosisTaskBody.class),
-            f -> f.withMarshaller(CreateDiagnosisTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDiagnosisTaskRequest::getBody, CreateDiagnosisTaskRequest::setBody));
 
         // response
 
@@ -599,9 +600,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> createHotkeyScanTask =
-        genForcreateHotkeyScanTask();
+        genForCreateHotkeyScanTask();
 
-    private static HttpRequestDef<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> genForcreateHotkeyScanTask() {
+    private static HttpRequestDef<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> genForCreateHotkeyScanTask() {
         // basic
         HttpRequestDef.Builder<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateHotkeyScanTaskRequest.class, CreateHotkeyScanTaskResponse.class)
@@ -614,9 +615,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateHotkeyScanTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateHotkeyScanTaskRequest::getInstanceId,
+                CreateHotkeyScanTaskRequest::setInstanceId));
 
         // response
 
@@ -624,9 +624,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
-        genForcreateInstance();
+        genForCreateInstance();
 
-    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForcreateInstance() {
+    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForCreateInstance() {
         // basic
         HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
@@ -639,9 +639,7 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceBody.class),
-            f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceRequest::getBody, CreateInstanceRequest::setBody));
 
         // response
 
@@ -649,9 +647,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateMigrationTaskRequest, CreateMigrationTaskResponse> createMigrationTask =
-        genForcreateMigrationTask();
+        genForCreateMigrationTask();
 
-    private static HttpRequestDef<CreateMigrationTaskRequest, CreateMigrationTaskResponse> genForcreateMigrationTask() {
+    private static HttpRequestDef<CreateMigrationTaskRequest, CreateMigrationTaskResponse> genForCreateMigrationTask() {
         // basic
         HttpRequestDef.Builder<CreateMigrationTaskRequest, CreateMigrationTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMigrationTaskRequest.class, CreateMigrationTaskResponse.class)
@@ -664,9 +662,7 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMigrationTaskBody.class),
-            f -> f.withMarshaller(CreateMigrationTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMigrationTaskRequest::getBody, CreateMigrationTaskRequest::setBody));
 
         // response
 
@@ -674,9 +670,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse> createOnlineMigrationTask =
-        genForcreateOnlineMigrationTask();
+        genForCreateOnlineMigrationTask();
 
-    private static HttpRequestDef<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse> genForcreateOnlineMigrationTask() {
+    private static HttpRequestDef<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse> genForCreateOnlineMigrationTask() {
         // basic
         HttpRequestDef.Builder<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse> builder =
             HttpRequestDef
@@ -692,9 +688,8 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateOnlineMigrationTaskBody.class),
-            f -> f.withMarshaller(CreateOnlineMigrationTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOnlineMigrationTaskRequest::getBody,
+                CreateOnlineMigrationTaskRequest::setBody));
 
         // response
 
@@ -702,9 +697,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateRedislogRequest, CreateRedislogResponse> createRedislog =
-        genForcreateRedislog();
+        genForCreateRedislog();
 
-    private static HttpRequestDef<CreateRedislogRequest, CreateRedislogResponse> genForcreateRedislog() {
+    private static HttpRequestDef<CreateRedislogRequest, CreateRedislogResponse> genForCreateRedislog() {
         // basic
         HttpRequestDef.Builder<CreateRedislogRequest, CreateRedislogResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRedislogRequest.class, CreateRedislogResponse.class)
@@ -717,30 +712,22 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRedislogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRedislogRequest::getInstanceId, CreateRedislogRequest::setInstanceId));
         builder.<CreateRedislogRequest.QueryTimeEnum>withRequestField("query_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateRedislogRequest.QueryTimeEnum.class),
-            f -> f.withMarshaller(CreateRedislogRequest::getQueryTime, (req, v) -> {
-                req.setQueryTime(v);
-            }));
+            f -> f.withMarshaller(CreateRedislogRequest::getQueryTime, CreateRedislogRequest::setQueryTime));
         builder.<String>withRequestField("log_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRedislogRequest::getLogType, (req, v) -> {
-                req.setLogType(v);
-            }));
+            f -> f.withMarshaller(CreateRedislogRequest::getLogType, CreateRedislogRequest::setLogType));
         builder.<String>withRequestField("replication_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRedislogRequest::getReplicationId, (req, v) -> {
-                req.setReplicationId(v);
-            }));
+            f -> f.withMarshaller(CreateRedislogRequest::getReplicationId, CreateRedislogRequest::setReplicationId));
 
         // response
 
@@ -748,9 +735,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse> createRedislogDownloadLink =
-        genForcreateRedislogDownloadLink();
+        genForCreateRedislogDownloadLink();
 
-    private static HttpRequestDef<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse> genForcreateRedislogDownloadLink() {
+    private static HttpRequestDef<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse> genForCreateRedislogDownloadLink() {
         // basic
         HttpRequestDef.Builder<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse> builder =
             HttpRequestDef
@@ -766,16 +753,13 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRedislogDownloadLinkRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRedislogDownloadLinkRequest::getInstanceId,
+                CreateRedislogDownloadLinkRequest::setInstanceId));
         builder.<String>withRequestField("id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRedislogDownloadLinkRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(CreateRedislogDownloadLinkRequest::getId, CreateRedislogDownloadLinkRequest::setId));
 
         // response
 
@@ -783,9 +767,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<CreateResizeOrderRequest, CreateResizeOrderResponse> createResizeOrder =
-        genForcreateResizeOrder();
+        genForCreateResizeOrder();
 
-    private static HttpRequestDef<CreateResizeOrderRequest, CreateResizeOrderResponse> genForcreateResizeOrder() {
+    private static HttpRequestDef<CreateResizeOrderRequest, CreateResizeOrderResponse> genForCreateResizeOrder() {
         // basic
         HttpRequestDef.Builder<CreateResizeOrderRequest, CreateResizeOrderResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResizeOrderRequest.class, CreateResizeOrderResponse.class)
@@ -798,16 +782,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResizeOrderRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateResizeOrderRequest::getInstanceId, CreateResizeOrderRequest::setInstanceId));
         builder.<CreateResizeOrderRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateResizeOrderRequestBody.class),
-            f -> f.withMarshaller(CreateResizeOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResizeOrderRequest::getBody, CreateResizeOrderRequest::setBody));
 
         // response
 
@@ -815,9 +795,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteAclAccountRequest, DeleteAclAccountResponse> deleteAclAccount =
-        genFordeleteAclAccount();
+        genForDeleteAclAccount();
 
-    private static HttpRequestDef<DeleteAclAccountRequest, DeleteAclAccountResponse> genFordeleteAclAccount() {
+    private static HttpRequestDef<DeleteAclAccountRequest, DeleteAclAccountResponse> genForDeleteAclAccount() {
         // basic
         HttpRequestDef.Builder<DeleteAclAccountRequest, DeleteAclAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAclAccountRequest.class, DeleteAclAccountResponse.class)
@@ -830,16 +810,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclAccountRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclAccountRequest::getInstanceId, DeleteAclAccountRequest::setInstanceId));
         builder.<String>withRequestField("account_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclAccountRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclAccountRequest::getAccountId, DeleteAclAccountRequest::setAccountId));
 
         // response
 
@@ -847,9 +823,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask =
-        genFordeleteBackgroundTask();
+        genForDeleteBackgroundTask();
 
-    private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genFordeleteBackgroundTask() {
+    private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genForDeleteBackgroundTask() {
         // basic
         HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
@@ -862,16 +838,13 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getInstanceId,
+                DeleteBackgroundTaskRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, DeleteBackgroundTaskRequest::setTaskId));
 
         // response
 
@@ -879,9 +852,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteBackupFileRequest, DeleteBackupFileResponse> deleteBackupFile =
-        genFordeleteBackupFile();
+        genForDeleteBackupFile();
 
-    private static HttpRequestDef<DeleteBackupFileRequest, DeleteBackupFileResponse> genFordeleteBackupFile() {
+    private static HttpRequestDef<DeleteBackupFileRequest, DeleteBackupFileResponse> genForDeleteBackupFile() {
         // basic
         HttpRequestDef.Builder<DeleteBackupFileRequest, DeleteBackupFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackupFileRequest.class, DeleteBackupFileResponse.class)
@@ -894,16 +867,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackupFileRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackupFileRequest::getBackupId, DeleteBackupFileRequest::setBackupId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackupFileRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackupFileRequest::getInstanceId, DeleteBackupFileRequest::setInstanceId));
 
         // response
 
@@ -911,9 +880,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse> deleteBigkeyScanTask =
-        genFordeleteBigkeyScanTask();
+        genForDeleteBigkeyScanTask();
 
-    private static HttpRequestDef<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse> genFordeleteBigkeyScanTask() {
+    private static HttpRequestDef<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse> genForDeleteBigkeyScanTask() {
         // basic
         HttpRequestDef.Builder<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteBigkeyScanTaskRequest.class, DeleteBigkeyScanTaskResponse.class)
@@ -926,16 +895,13 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBigkeyScanTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteBigkeyScanTaskRequest::getInstanceId,
+                DeleteBigkeyScanTaskRequest::setInstanceId));
         builder.<String>withRequestField("bigkey_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBigkeyScanTaskRequest::getBigkeyId, (req, v) -> {
-                req.setBigkeyId(v);
-            }));
+            f -> f.withMarshaller(DeleteBigkeyScanTaskRequest::getBigkeyId, DeleteBigkeyScanTaskRequest::setBigkeyId));
 
         // response
 
@@ -943,9 +909,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteCenterTaskRequest, DeleteCenterTaskResponse> deleteCenterTask =
-        genFordeleteCenterTask();
+        genForDeleteCenterTask();
 
-    private static HttpRequestDef<DeleteCenterTaskRequest, DeleteCenterTaskResponse> genFordeleteCenterTask() {
+    private static HttpRequestDef<DeleteCenterTaskRequest, DeleteCenterTaskResponse> genForDeleteCenterTask() {
         // basic
         HttpRequestDef.Builder<DeleteCenterTaskRequest, DeleteCenterTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCenterTaskRequest.class, DeleteCenterTaskResponse.class)
@@ -958,16 +924,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCenterTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteCenterTaskRequest::getTaskId, DeleteCenterTaskRequest::setTaskId));
         builder.<DeleteCenterTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteCenterTaskRequestBody.class),
-            f -> f.withMarshaller(DeleteCenterTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteCenterTaskRequest::getBody, DeleteCenterTaskRequest::setBody));
 
         // response
 
@@ -975,9 +937,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse> deleteConfigTemplate =
-        genFordeleteConfigTemplate();
+        genForDeleteConfigTemplate();
 
-    private static HttpRequestDef<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse> genFordeleteConfigTemplate() {
+    private static HttpRequestDef<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse> genForDeleteConfigTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteConfigTemplateRequest.class, DeleteConfigTemplateResponse.class)
@@ -990,9 +952,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConfigTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeleteConfigTemplateRequest::getTemplateId,
+                DeleteConfigTemplateRequest::setTemplateId));
 
         // response
 
@@ -1000,9 +961,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse> deleteDiagnosisTask =
-        genFordeleteDiagnosisTask();
+        genForDeleteDiagnosisTask();
 
-    private static HttpRequestDef<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse> genFordeleteDiagnosisTask() {
+    private static HttpRequestDef<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse> genForDeleteDiagnosisTask() {
         // basic
         HttpRequestDef.Builder<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteDiagnosisTaskRequest.class, DeleteDiagnosisTaskResponse.class)
@@ -1015,16 +976,13 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDiagnosisTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDiagnosisTaskRequest::getInstanceId,
+                DeleteDiagnosisTaskRequest::setInstanceId));
         builder.<DeleteDiagnosisReportRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteDiagnosisReportRequest.class),
-            f -> f.withMarshaller(DeleteDiagnosisTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteDiagnosisTaskRequest::getBody, DeleteDiagnosisTaskRequest::setBody));
 
         // response
 
@@ -1032,9 +990,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse> deleteHotkeyScanTask =
-        genFordeleteHotkeyScanTask();
+        genForDeleteHotkeyScanTask();
 
-    private static HttpRequestDef<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse> genFordeleteHotkeyScanTask() {
+    private static HttpRequestDef<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse> genForDeleteHotkeyScanTask() {
         // basic
         HttpRequestDef.Builder<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteHotkeyScanTaskRequest.class, DeleteHotkeyScanTaskResponse.class)
@@ -1047,16 +1005,13 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteHotkeyScanTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteHotkeyScanTaskRequest::getInstanceId,
+                DeleteHotkeyScanTaskRequest::setInstanceId));
         builder.<String>withRequestField("hotkey_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteHotkeyScanTaskRequest::getHotkeyId, (req, v) -> {
-                req.setHotkeyId(v);
-            }));
+            f -> f.withMarshaller(DeleteHotkeyScanTaskRequest::getHotkeyId, DeleteHotkeyScanTaskRequest::setHotkeyId));
 
         // response
 
@@ -1064,9 +1019,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse> deleteIpFromDomainName =
-        genFordeleteIpFromDomainName();
+        genForDeleteIpFromDomainName();
 
-    private static HttpRequestDef<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse> genFordeleteIpFromDomainName() {
+    private static HttpRequestDef<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse> genForDeleteIpFromDomainName() {
         // basic
         HttpRequestDef.Builder<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteIpFromDomainNameRequest.class, DeleteIpFromDomainNameResponse.class)
@@ -1079,23 +1034,19 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteIpFromDomainNameRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteIpFromDomainNameRequest::getInstanceId,
+                DeleteIpFromDomainNameRequest::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteIpFromDomainNameRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteIpFromDomainNameRequest::getGroupId,
+                DeleteIpFromDomainNameRequest::setGroupId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteIpFromDomainNameRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteIpFromDomainNameRequest::getNodeId, DeleteIpFromDomainNameRequest::setNodeId));
 
         // response
 
@@ -1103,9 +1054,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse> deleteMigrationTask =
-        genFordeleteMigrationTask();
+        genForDeleteMigrationTask();
 
-    private static HttpRequestDef<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse> genFordeleteMigrationTask() {
+    private static HttpRequestDef<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse> genForDeleteMigrationTask() {
         // basic
         HttpRequestDef.Builder<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteMigrationTaskRequest.class, DeleteMigrationTaskResponse.class)
@@ -1118,9 +1069,7 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteMigrateTaskRequest.class),
-            f -> f.withMarshaller(DeleteMigrationTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteMigrationTaskRequest::getBody, DeleteMigrationTaskRequest::setBody));
 
         // response
 
@@ -1128,9 +1077,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> deleteSingleInstance =
-        genFordeleteSingleInstance();
+        genForDeleteSingleInstance();
 
-    private static HttpRequestDef<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> genFordeleteSingleInstance() {
+    private static HttpRequestDef<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> genForDeleteSingleInstance() {
         // basic
         HttpRequestDef.Builder<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteSingleInstanceRequest.class, DeleteSingleInstanceResponse.class)
@@ -1143,9 +1092,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSingleInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSingleInstanceRequest::getInstanceId,
+                DeleteSingleInstanceRequest::setInstanceId));
 
         // response
 
@@ -1153,9 +1101,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<DownloadSslCertRequest, DownloadSslCertResponse> downloadSslCert =
-        genFordownloadSslCert();
+        genForDownloadSslCert();
 
-    private static HttpRequestDef<DownloadSslCertRequest, DownloadSslCertResponse> genFordownloadSslCert() {
+    private static HttpRequestDef<DownloadSslCertRequest, DownloadSslCertResponse> genForDownloadSslCert() {
         // basic
         HttpRequestDef.Builder<DownloadSslCertRequest, DownloadSslCertResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DownloadSslCertRequest.class, DownloadSslCertResponse.class)
@@ -1168,9 +1116,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadSslCertRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DownloadSslCertRequest::getInstanceId, DownloadSslCertRequest::setInstanceId));
 
         // response
 
@@ -1178,9 +1124,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ExchangeInstanceIpRequest, ExchangeInstanceIpResponse> exchangeInstanceIp =
-        genForexchangeInstanceIp();
+        genForExchangeInstanceIp();
 
-    private static HttpRequestDef<ExchangeInstanceIpRequest, ExchangeInstanceIpResponse> genForexchangeInstanceIp() {
+    private static HttpRequestDef<ExchangeInstanceIpRequest, ExchangeInstanceIpResponse> genForExchangeInstanceIp() {
         // basic
         HttpRequestDef.Builder<ExchangeInstanceIpRequest, ExchangeInstanceIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExchangeInstanceIpRequest.class, ExchangeInstanceIpResponse.class)
@@ -1193,16 +1139,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExchangeInstanceIpRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ExchangeInstanceIpRequest::getTaskId, ExchangeInstanceIpRequest::setTaskId));
         builder.<IpExchangeRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(IpExchangeRequest.class),
-            f -> f.withMarshaller(ExchangeInstanceIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExchangeInstanceIpRequest::getBody, ExchangeInstanceIpRequest::setBody));
 
         // response
 
@@ -1210,9 +1152,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse> executeClusterSwitchover =
-        genForexecuteClusterSwitchover();
+        genForExecuteClusterSwitchover();
 
-    private static HttpRequestDef<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse> genForexecuteClusterSwitchover() {
+    private static HttpRequestDef<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse> genForExecuteClusterSwitchover() {
         // basic
         HttpRequestDef.Builder<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse> builder =
             HttpRequestDef
@@ -1227,23 +1169,20 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteClusterSwitchoverRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExecuteClusterSwitchoverRequest::getInstanceId,
+                ExecuteClusterSwitchoverRequest::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteClusterSwitchoverRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ExecuteClusterSwitchoverRequest::getGroupId,
+                ExecuteClusterSwitchoverRequest::setGroupId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteClusterSwitchoverRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ExecuteClusterSwitchoverRequest::getNodeId,
+                ExecuteClusterSwitchoverRequest::setNodeId));
 
         // response
 
@@ -1251,9 +1190,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ExecuteCommandMobilizationRequest, ExecuteCommandMobilizationResponse> executeCommandMobilization =
-        genForexecuteCommandMobilization();
+        genForExecuteCommandMobilization();
 
-    private static HttpRequestDef<ExecuteCommandMobilizationRequest, ExecuteCommandMobilizationResponse> genForexecuteCommandMobilization() {
+    private static HttpRequestDef<ExecuteCommandMobilizationRequest, ExecuteCommandMobilizationResponse> genForExecuteCommandMobilization() {
         // basic
         HttpRequestDef.Builder<ExecuteCommandMobilizationRequest, ExecuteCommandMobilizationResponse> builder =
             HttpRequestDef
@@ -1269,16 +1208,14 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteCommandMobilizationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExecuteCommandMobilizationRequest::getInstanceId,
+                ExecuteCommandMobilizationRequest::setInstanceId));
         builder.<ExecuteCommandRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExecuteCommandRequestBody.class),
-            f -> f.withMarshaller(ExecuteCommandMobilizationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteCommandMobilizationRequest::getBody,
+                ExecuteCommandMobilizationRequest::setBody));
 
         // response
 
@@ -1286,9 +1223,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ExportExcelJobRequest, ExportExcelJobResponse> exportExcelJob =
-        genForexportExcelJob();
+        genForExportExcelJob();
 
-    private static HttpRequestDef<ExportExcelJobRequest, ExportExcelJobResponse> genForexportExcelJob() {
+    private static HttpRequestDef<ExportExcelJobRequest, ExportExcelJobResponse> genForExportExcelJob() {
         // basic
         HttpRequestDef.Builder<ExportExcelJobRequest, ExportExcelJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ExportExcelJobRequest.class, ExportExcelJobResponse.class)
@@ -1301,9 +1238,7 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportExcelJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ExportExcelJobRequest::getJobId, ExportExcelJobRequest::setJobId));
 
         // response
 
@@ -1311,9 +1246,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ExportInstancesTaskRequest, ExportInstancesTaskResponse> exportInstancesTask =
-        genForexportInstancesTask();
+        genForExportInstancesTask();
 
-    private static HttpRequestDef<ExportInstancesTaskRequest, ExportInstancesTaskResponse> genForexportInstancesTask() {
+    private static HttpRequestDef<ExportInstancesTaskRequest, ExportInstancesTaskResponse> genForExportInstancesTask() {
         // basic
         HttpRequestDef.Builder<ExportInstancesTaskRequest, ExportInstancesTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportInstancesTaskRequest.class, ExportInstancesTaskResponse.class)
@@ -1326,9 +1261,7 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportInstancesTaskBody.class),
-            f -> f.withMarshaller(ExportInstancesTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExportInstancesTaskRequest::getBody, ExportInstancesTaskRequest::setBody));
 
         // response
 
@@ -1336,9 +1269,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListAclAccountsRequest, ListAclAccountsResponse> listAclAccounts =
-        genForlistAclAccounts();
+        genForListAclAccounts();
 
-    private static HttpRequestDef<ListAclAccountsRequest, ListAclAccountsResponse> genForlistAclAccounts() {
+    private static HttpRequestDef<ListAclAccountsRequest, ListAclAccountsResponse> genForListAclAccounts() {
         // basic
         HttpRequestDef.Builder<ListAclAccountsRequest, ListAclAccountsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAclAccountsRequest.class, ListAclAccountsResponse.class)
@@ -1351,9 +1284,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclAccountsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAclAccountsRequest::getInstanceId, ListAclAccountsRequest::setInstanceId));
 
         // response
 
@@ -1361,9 +1292,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones =
-        genForlistAvailableZones();
+        genForListAvailableZones();
 
-    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForlistAvailableZones() {
+    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForListAvailableZones() {
         // basic
         HttpRequestDef.Builder<ListAvailableZonesRequest, ListAvailableZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAvailableZonesRequest.class, ListAvailableZonesResponse.class)
@@ -1379,9 +1310,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListBackgroundTaskRequest, ListBackgroundTaskResponse> listBackgroundTask =
-        genForlistBackgroundTask();
+        genForListBackgroundTask();
 
-    private static HttpRequestDef<ListBackgroundTaskRequest, ListBackgroundTaskResponse> genForlistBackgroundTask() {
+    private static HttpRequestDef<ListBackgroundTaskRequest, ListBackgroundTaskResponse> genForListBackgroundTask() {
         // basic
         HttpRequestDef.Builder<ListBackgroundTaskRequest, ListBackgroundTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackgroundTaskRequest.class, ListBackgroundTaskResponse.class)
@@ -1394,37 +1325,27 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackgroundTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTaskRequest::getInstanceId, ListBackgroundTaskRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTaskRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTaskRequest::getOffset, ListBackgroundTaskRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTaskRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTaskRequest::getLimit, ListBackgroundTaskRequest::setLimit));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackgroundTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTaskRequest::getStartTime, ListBackgroundTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackgroundTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListBackgroundTaskRequest::getEndTime, ListBackgroundTaskRequest::setEndTime));
 
         // response
 
@@ -1432,9 +1353,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListBackupFileLinksRequest, ListBackupFileLinksResponse> listBackupFileLinks =
-        genForlistBackupFileLinks();
+        genForListBackupFileLinks();
 
-    private static HttpRequestDef<ListBackupFileLinksRequest, ListBackupFileLinksResponse> genForlistBackupFileLinks() {
+    private static HttpRequestDef<ListBackupFileLinksRequest, ListBackupFileLinksResponse> genForListBackupFileLinks() {
         // basic
         HttpRequestDef.Builder<ListBackupFileLinksRequest, ListBackupFileLinksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListBackupFileLinksRequest.class, ListBackupFileLinksResponse.class)
@@ -1447,23 +1368,18 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupFileLinksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBackupFileLinksRequest::getInstanceId,
+                ListBackupFileLinksRequest::setInstanceId));
         builder.<String>withRequestField("backup_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupFileLinksRequest::getBackupId, (req, v) -> {
-                req.setBackupId(v);
-            }));
+            f -> f.withMarshaller(ListBackupFileLinksRequest::getBackupId, ListBackupFileLinksRequest::setBackupId));
         builder.<DownloadBackupFilesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DownloadBackupFilesReq.class),
-            f -> f.withMarshaller(ListBackupFileLinksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListBackupFileLinksRequest::getBody, ListBackupFileLinksRequest::setBody));
 
         // response
 
@@ -1471,9 +1387,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListBackupRecordsRequest, ListBackupRecordsResponse> listBackupRecords =
-        genForlistBackupRecords();
+        genForListBackupRecords();
 
-    private static HttpRequestDef<ListBackupRecordsRequest, ListBackupRecordsResponse> genForlistBackupRecords() {
+    private static HttpRequestDef<ListBackupRecordsRequest, ListBackupRecordsResponse> genForListBackupRecords() {
         // basic
         HttpRequestDef.Builder<ListBackupRecordsRequest, ListBackupRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackupRecordsRequest.class, ListBackupRecordsResponse.class)
@@ -1486,37 +1402,27 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupRecordsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBackupRecordsRequest::getInstanceId, ListBackupRecordsRequest::setInstanceId));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupRecordsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListBackupRecordsRequest::getBeginTime, ListBackupRecordsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackupRecordsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListBackupRecordsRequest::getEndTime, ListBackupRecordsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackupRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackupRecordsRequest::getLimit, ListBackupRecordsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackupRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBackupRecordsRequest::getOffset, ListBackupRecordsRequest::setOffset));
 
         // response
 
@@ -1524,9 +1430,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse> listBigkeyScanTasks =
-        genForlistBigkeyScanTasks();
+        genForListBigkeyScanTasks();
 
-    private static HttpRequestDef<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse> genForlistBigkeyScanTasks() {
+    private static HttpRequestDef<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse> genForListBigkeyScanTasks() {
         // basic
         HttpRequestDef.Builder<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBigkeyScanTasksRequest.class, ListBigkeyScanTasksResponse.class)
@@ -1539,30 +1445,23 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getInstanceId,
+                ListBigkeyScanTasksRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getOffset, ListBigkeyScanTasksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getLimit, ListBigkeyScanTasksRequest::setLimit));
         builder.<ListBigkeyScanTasksRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBigkeyScanTasksRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getStatus, ListBigkeyScanTasksRequest::setStatus));
 
         // response
 
@@ -1570,9 +1469,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListCenterTaskRequest, ListCenterTaskResponse> listCenterTask =
-        genForlistCenterTask();
+        genForListCenterTask();
 
-    private static HttpRequestDef<ListCenterTaskRequest, ListCenterTaskResponse> genForlistCenterTask() {
+    private static HttpRequestDef<ListCenterTaskRequest, ListCenterTaskResponse> genForListCenterTask() {
         // basic
         HttpRequestDef.Builder<ListCenterTaskRequest, ListCenterTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCenterTaskRequest.class, ListCenterTaskResponse.class)
@@ -1585,30 +1484,22 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCenterTaskRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCenterTaskRequest::getOffset, ListCenterTaskRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCenterTaskRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCenterTaskRequest::getLimit, ListCenterTaskRequest::setLimit));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCenterTaskRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListCenterTaskRequest::getStartTime, ListCenterTaskRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCenterTaskRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListCenterTaskRequest::getEndTime, ListCenterTaskRequest::setEndTime));
 
         // response
 
@@ -1616,9 +1507,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListConfigHistoriesRequest, ListConfigHistoriesResponse> listConfigHistories =
-        genForlistConfigHistories();
+        genForListConfigHistories();
 
-    private static HttpRequestDef<ListConfigHistoriesRequest, ListConfigHistoriesResponse> genForlistConfigHistories() {
+    private static HttpRequestDef<ListConfigHistoriesRequest, ListConfigHistoriesResponse> genForListConfigHistories() {
         // basic
         HttpRequestDef.Builder<ListConfigHistoriesRequest, ListConfigHistoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConfigHistoriesRequest.class, ListConfigHistoriesResponse.class)
@@ -1631,23 +1522,18 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigHistoriesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListConfigHistoriesRequest::getInstanceId,
+                ListConfigHistoriesRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigHistoriesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConfigHistoriesRequest::getOffset, ListConfigHistoriesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigHistoriesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConfigHistoriesRequest::getLimit, ListConfigHistoriesRequest::setLimit));
 
         // response
 
@@ -1655,9 +1541,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListConfigTemplatesRequest, ListConfigTemplatesResponse> listConfigTemplates =
-        genForlistConfigTemplates();
+        genForListConfigTemplates();
 
-    private static HttpRequestDef<ListConfigTemplatesRequest, ListConfigTemplatesResponse> genForlistConfigTemplates() {
+    private static HttpRequestDef<ListConfigTemplatesRequest, ListConfigTemplatesResponse> genForListConfigTemplates() {
         // basic
         HttpRequestDef.Builder<ListConfigTemplatesRequest, ListConfigTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConfigTemplatesRequest.class, ListConfigTemplatesResponse.class)
@@ -1670,65 +1556,50 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigTemplatesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getName, ListConfigTemplatesRequest::setName));
         builder.<String>withRequestField("template_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigTemplatesRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getTemplateId,
+                ListConfigTemplatesRequest::setTemplateId));
         builder.<ListConfigTemplatesRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListConfigTemplatesRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListConfigTemplatesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getType, ListConfigTemplatesRequest::setType));
         builder.<String>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigTemplatesRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getEngine, ListConfigTemplatesRequest::setEngine));
         builder.<String>withRequestField("engine_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigTemplatesRequest::getEngineVersion, (req, v) -> {
-                req.setEngineVersion(v);
-            }));
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getEngineVersion,
+                ListConfigTemplatesRequest::setEngineVersion));
         builder.<String>withRequestField("cache_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigTemplatesRequest::getCacheMode, (req, v) -> {
-                req.setCacheMode(v);
-            }));
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getCacheMode, ListConfigTemplatesRequest::setCacheMode));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigTemplatesRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getDescription,
+                ListConfigTemplatesRequest::setDescription));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getOffset, ListConfigTemplatesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConfigTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getLimit, ListConfigTemplatesRequest::setLimit));
 
         // response
 
@@ -1736,9 +1607,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurations =
-        genForlistConfigurations();
+        genForListConfigurations();
 
-    private static HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> genForlistConfigurations() {
+    private static HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> genForListConfigurations() {
         // basic
         HttpRequestDef.Builder<ListConfigurationsRequest, ListConfigurationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConfigurationsRequest.class, ListConfigurationsResponse.class)
@@ -1751,9 +1622,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigurationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListConfigurationsRequest::getInstanceId, ListConfigurationsRequest::setInstanceId));
 
         // response
 
@@ -1761,9 +1630,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> listDiagnosisTasks =
-        genForlistDiagnosisTasks();
+        genForListDiagnosisTasks();
 
-    private static HttpRequestDef<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> genForlistDiagnosisTasks() {
+    private static HttpRequestDef<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> genForListDiagnosisTasks() {
         // basic
         HttpRequestDef.Builder<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDiagnosisTasksRequest.class, ListDiagnosisTasksResponse.class)
@@ -1776,32 +1645,26 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDiagnosisTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getInstanceId, ListDiagnosisTasksRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDiagnosisTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getLimit, ListDiagnosisTasksRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDiagnosisTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getOffset, ListDiagnosisTasksRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
+    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForListFlavors();
 
-    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
+    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForListFlavors() {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
@@ -1814,51 +1677,37 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getInstanceId, ListFlavorsRequest::setInstanceId));
         builder.<String>withRequestField("spec_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getSpecCode, (req, v) -> {
-                req.setSpecCode(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getSpecCode, ListFlavorsRequest::setSpecCode));
         builder.<String>withRequestField("cache_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getCacheMode, (req, v) -> {
-                req.setCacheMode(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getCacheMode, ListFlavorsRequest::setCacheMode));
         builder.<String>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getEngine, ListFlavorsRequest::setEngine));
         builder.<String>withRequestField("engine_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getEngineVersion, (req, v) -> {
-                req.setEngineVersion(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getEngineVersion, ListFlavorsRequest::setEngineVersion));
         builder.<ListFlavorsRequest.CpuTypeEnum>withRequestField("cpu_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFlavorsRequest.CpuTypeEnum.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getCpuType, (req, v) -> {
-                req.setCpuType(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getCpuType, ListFlavorsRequest::setCpuType));
         builder.<String>withRequestField("capacity",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getCapacity, (req, v) -> {
-                req.setCapacity(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getCapacity, ListFlavorsRequest::setCapacity));
 
         // response
 
@@ -1866,9 +1715,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse> listGroupReplicationInfo =
-        genForlistGroupReplicationInfo();
+        genForListGroupReplicationInfo();
 
-    private static HttpRequestDef<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse> genForlistGroupReplicationInfo() {
+    private static HttpRequestDef<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse> genForListGroupReplicationInfo() {
         // basic
         HttpRequestDef.Builder<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse> builder =
             HttpRequestDef
@@ -1882,9 +1731,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGroupReplicationInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListGroupReplicationInfoRequest::getInstanceId,
+                ListGroupReplicationInfoRequest::setInstanceId));
 
         // response
 
@@ -1892,9 +1740,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse> listHotKeyScanTasks =
-        genForlistHotKeyScanTasks();
+        genForListHotKeyScanTasks();
 
-    private static HttpRequestDef<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse> genForlistHotKeyScanTasks() {
+    private static HttpRequestDef<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse> genForListHotKeyScanTasks() {
         // basic
         HttpRequestDef.Builder<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHotKeyScanTasksRequest.class, ListHotKeyScanTasksResponse.class)
@@ -1907,30 +1755,23 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getInstanceId,
+                ListHotKeyScanTasksRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getOffset, ListHotKeyScanTasksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getLimit, ListHotKeyScanTasksRequest::setLimit));
         builder.<ListHotKeyScanTasksRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListHotKeyScanTasksRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getStatus, ListHotKeyScanTasksRequest::setStatus));
 
         // response
 
@@ -1938,9 +1779,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListInstanceOperationsRequest, ListInstanceOperationsResponse> listInstanceOperations =
-        genForlistInstanceOperations();
+        genForListInstanceOperations();
 
-    private static HttpRequestDef<ListInstanceOperationsRequest, ListInstanceOperationsResponse> genForlistInstanceOperations() {
+    private static HttpRequestDef<ListInstanceOperationsRequest, ListInstanceOperationsResponse> genForListInstanceOperations() {
         // basic
         HttpRequestDef.Builder<ListInstanceOperationsRequest, ListInstanceOperationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListInstanceOperationsRequest.class, ListInstanceOperationsResponse.class)
@@ -1953,16 +1794,14 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceOperationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceOperationsRequest::getInstanceId,
+                ListInstanceOperationsRequest::setInstanceId));
         builder.<ListInstanceOperationsRequest.OperationEnum>withRequestField("operation",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListInstanceOperationsRequest.OperationEnum.class),
-            f -> f.withMarshaller(ListInstanceOperationsRequest::getOperation, (req, v) -> {
-                req.setOperation(v);
-            }));
+            f -> f.withMarshaller(ListInstanceOperationsRequest::getOperation,
+                ListInstanceOperationsRequest::setOperation));
 
         // response
 
@@ -1970,9 +1809,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
-        genForlistInstances();
+        genForListInstances();
 
-    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
@@ -1985,72 +1824,52 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getInstanceId, ListInstancesRequest::setInstanceId));
         builder.<String>withRequestField("include_failure",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getIncludeFailure, (req, v) -> {
-                req.setIncludeFailure(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getIncludeFailure, ListInstancesRequest::setIncludeFailure));
         builder.<String>withRequestField("include_delete",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getIncludeDelete, (req, v) -> {
-                req.setIncludeDelete(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getIncludeDelete, ListInstancesRequest::setIncludeDelete));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getName, ListInstancesRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, ListInstancesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getStatus, ListInstancesRequest::setStatus));
         builder.<String>withRequestField("name_equal",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getNameEqual, (req, v) -> {
-                req.setNameEqual(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getNameEqual, ListInstancesRequest::setNameEqual));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getTags, ListInstancesRequest::setTags));
         builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getIp, ListInstancesRequest::setIp));
 
         // response
 
@@ -2058,9 +1877,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse> listMaintenanceWindows =
-        genForlistMaintenanceWindows();
+        genForListMaintenanceWindows();
 
-    private static HttpRequestDef<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse> genForlistMaintenanceWindows() {
+    private static HttpRequestDef<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse> genForListMaintenanceWindows() {
         // basic
         HttpRequestDef.Builder<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMaintenanceWindowsRequest.class, ListMaintenanceWindowsResponse.class)
@@ -2076,9 +1895,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListMigrationTaskRequest, ListMigrationTaskResponse> listMigrationTask =
-        genForlistMigrationTask();
+        genForListMigrationTask();
 
-    private static HttpRequestDef<ListMigrationTaskRequest, ListMigrationTaskResponse> genForlistMigrationTask() {
+    private static HttpRequestDef<ListMigrationTaskRequest, ListMigrationTaskResponse> genForListMigrationTask() {
         // basic
         HttpRequestDef.Builder<ListMigrationTaskRequest, ListMigrationTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMigrationTaskRequest.class, ListMigrationTaskResponse.class)
@@ -2091,23 +1910,17 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMigrationTaskRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMigrationTaskRequest::getOffset, ListMigrationTaskRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMigrationTaskRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMigrationTaskRequest::getLimit, ListMigrationTaskRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMigrationTaskRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListMigrationTaskRequest::getName, ListMigrationTaskRequest::setName));
 
         // response
 
@@ -2115,9 +1928,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListMigrationTaskLogsRequest, ListMigrationTaskLogsResponse> listMigrationTaskLogs =
-        genForlistMigrationTaskLogs();
+        genForListMigrationTaskLogs();
 
-    private static HttpRequestDef<ListMigrationTaskLogsRequest, ListMigrationTaskLogsResponse> genForlistMigrationTaskLogs() {
+    private static HttpRequestDef<ListMigrationTaskLogsRequest, ListMigrationTaskLogsResponse> genForListMigrationTaskLogs() {
         // basic
         HttpRequestDef.Builder<ListMigrationTaskLogsRequest, ListMigrationTaskLogsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMigrationTaskLogsRequest.class, ListMigrationTaskLogsResponse.class)
@@ -2130,30 +1943,23 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMigrationTaskLogsRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListMigrationTaskLogsRequest::getTaskId, ListMigrationTaskLogsRequest::setTaskId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMigrationTaskLogsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMigrationTaskLogsRequest::getOffset, ListMigrationTaskLogsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMigrationTaskLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMigrationTaskLogsRequest::getLimit, ListMigrationTaskLogsRequest::setLimit));
         builder.<String>withRequestField("log_level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMigrationTaskLogsRequest::getLogLevel, (req, v) -> {
-                req.setLogLevel(v);
-            }));
+            f -> f.withMarshaller(ListMigrationTaskLogsRequest::getLogLevel,
+                ListMigrationTaskLogsRequest::setLogLevel));
 
         // response
 
@@ -2161,9 +1967,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse> listMonitoredObjects =
-        genForlistMonitoredObjects();
+        genForListMonitoredObjects();
 
-    private static HttpRequestDef<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse> genForlistMonitoredObjects() {
+    private static HttpRequestDef<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse> genForListMonitoredObjects() {
         // basic
         HttpRequestDef.Builder<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMonitoredObjectsRequest.class, ListMonitoredObjectsResponse.class)
@@ -2176,23 +1982,17 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonitoredObjectsRequest::getDimName, (req, v) -> {
-                req.setDimName(v);
-            }));
+            f -> f.withMarshaller(ListMonitoredObjectsRequest::getDimName, ListMonitoredObjectsRequest::setDimName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMonitoredObjectsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMonitoredObjectsRequest::getOffset, ListMonitoredObjectsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMonitoredObjectsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMonitoredObjectsRequest::getLimit, ListMonitoredObjectsRequest::setLimit));
 
         // response
 
@@ -2200,9 +2000,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse> listMonitoredObjectsOfInstance =
-        genForlistMonitoredObjectsOfInstance();
+        genForListMonitoredObjectsOfInstance();
 
-    private static HttpRequestDef<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse> genForlistMonitoredObjectsOfInstance() {
+    private static HttpRequestDef<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse> genForListMonitoredObjectsOfInstance() {
         // basic
         HttpRequestDef.Builder<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse> builder =
             HttpRequestDef
@@ -2218,16 +2018,14 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonitoredObjectsOfInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMonitoredObjectsOfInstanceRequest::getInstanceId,
+                ListMonitoredObjectsOfInstanceRequest::setInstanceId));
         builder.<String>withRequestField("dim_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonitoredObjectsOfInstanceRequest::getDimName, (req, v) -> {
-                req.setDimName(v);
-            }));
+            f -> f.withMarshaller(ListMonitoredObjectsOfInstanceRequest::getDimName,
+                ListMonitoredObjectsOfInstanceRequest::setDimName));
 
         // response
 
@@ -2235,9 +2033,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse> listNumberOfInstancesInDifferentStatus =
-        genForlistNumberOfInstancesInDifferentStatus();
+        genForListNumberOfInstancesInDifferentStatus();
 
-    private static HttpRequestDef<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse> genForlistNumberOfInstancesInDifferentStatus() {
+    private static HttpRequestDef<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse> genForListNumberOfInstancesInDifferentStatus() {
         // basic
         HttpRequestDef.Builder<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse> builder =
             HttpRequestDef
@@ -2253,18 +2051,17 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNumberOfInstancesInDifferentStatusRequest::getIncludeFailure, (req, v) -> {
-                req.setIncludeFailure(v);
-            }));
+            f -> f.withMarshaller(ListNumberOfInstancesInDifferentStatusRequest::getIncludeFailure,
+                ListNumberOfInstancesInDifferentStatusRequest::setIncludeFailure));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRedislogRequest, ListRedislogResponse> listRedislog = genForlistRedislog();
+    public static final HttpRequestDef<ListRedislogRequest, ListRedislogResponse> listRedislog = genForListRedislog();
 
-    private static HttpRequestDef<ListRedislogRequest, ListRedislogResponse> genForlistRedislog() {
+    private static HttpRequestDef<ListRedislogRequest, ListRedislogResponse> genForListRedislog() {
         // basic
         HttpRequestDef.Builder<ListRedislogRequest, ListRedislogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRedislogRequest.class, ListRedislogResponse.class)
@@ -2277,30 +2074,22 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRedislogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRedislogRequest::getInstanceId, ListRedislogRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRedislogRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRedislogRequest::getOffset, ListRedislogRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRedislogRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRedislogRequest::getLimit, ListRedislogRequest::setLimit));
         builder.<String>withRequestField("log_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRedislogRequest::getLogType, (req, v) -> {
-                req.setLogType(v);
-            }));
+            f -> f.withMarshaller(ListRedislogRequest::getLogType, ListRedislogRequest::setLogType));
 
         // response
 
@@ -2308,9 +2097,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListRestoreRecordsRequest, ListRestoreRecordsResponse> listRestoreRecords =
-        genForlistRestoreRecords();
+        genForListRestoreRecords();
 
-    private static HttpRequestDef<ListRestoreRecordsRequest, ListRestoreRecordsResponse> genForlistRestoreRecords() {
+    private static HttpRequestDef<ListRestoreRecordsRequest, ListRestoreRecordsResponse> genForListRestoreRecords() {
         // basic
         HttpRequestDef.Builder<ListRestoreRecordsRequest, ListRestoreRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRestoreRecordsRequest.class, ListRestoreRecordsResponse.class)
@@ -2323,46 +2112,36 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreRecordsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRestoreRecordsRequest::getInstanceId, ListRestoreRecordsRequest::setInstanceId));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreRecordsRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListRestoreRecordsRequest::getBeginTime, ListRestoreRecordsRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRestoreRecordsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRestoreRecordsRequest::getEndTime, ListRestoreRecordsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRestoreRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRestoreRecordsRequest::getLimit, ListRestoreRecordsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRestoreRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRestoreRecordsRequest::getOffset, ListRestoreRecordsRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSlowlogRequest, ListSlowlogResponse> listSlowlog = genForlistSlowlog();
+    public static final HttpRequestDef<ListSlowlogRequest, ListSlowlogResponse> listSlowlog = genForListSlowlog();
 
-    private static HttpRequestDef<ListSlowlogRequest, ListSlowlogResponse> genForlistSlowlog() {
+    private static HttpRequestDef<ListSlowlogRequest, ListSlowlogResponse> genForListSlowlog() {
         // basic
         HttpRequestDef.Builder<ListSlowlogRequest, ListSlowlogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSlowlogRequest.class, ListSlowlogResponse.class)
@@ -2375,51 +2154,37 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowlogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSlowlogRequest::getInstanceId, ListSlowlogRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSlowlogRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSlowlogRequest::getOffset, ListSlowlogRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSlowlogRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSlowlogRequest::getLimit, ListSlowlogRequest::setLimit));
         builder.<ListSlowlogRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSlowlogRequest.SortKeyEnum.class),
-            f -> f.withMarshaller(ListSlowlogRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListSlowlogRequest::getSortKey, ListSlowlogRequest::setSortKey));
         builder.<ListSlowlogRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSlowlogRequest.SortDirEnum.class),
-            f -> f.withMarshaller(ListSlowlogRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListSlowlogRequest::getSortDir, ListSlowlogRequest::setSortDir));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowlogRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSlowlogRequest::getStartTime, ListSlowlogRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSlowlogRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSlowlogRequest::getEndTime, ListSlowlogRequest::setEndTime));
 
         // response
 
@@ -2427,9 +2192,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse> listStatisticsOfRunningInstances =
-        genForlistStatisticsOfRunningInstances();
+        genForListStatisticsOfRunningInstances();
 
-    private static HttpRequestDef<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse> genForlistStatisticsOfRunningInstances() {
+    private static HttpRequestDef<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse> genForListStatisticsOfRunningInstances() {
         // basic
         HttpRequestDef.Builder<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse> builder =
             HttpRequestDef
@@ -2448,9 +2213,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ListTagsOfTenantRequest, ListTagsOfTenantResponse> listTagsOfTenant =
-        genForlistTagsOfTenant();
+        genForListTagsOfTenant();
 
-    private static HttpRequestDef<ListTagsOfTenantRequest, ListTagsOfTenantResponse> genForlistTagsOfTenant() {
+    private static HttpRequestDef<ListTagsOfTenantRequest, ListTagsOfTenantResponse> genForListTagsOfTenant() {
         // basic
         HttpRequestDef.Builder<ListTagsOfTenantRequest, ListTagsOfTenantResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsOfTenantRequest.class, ListTagsOfTenantResponse.class)
@@ -2465,9 +2230,9 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<LoginWebCliRequest, LoginWebCliResponse> loginWebCli = genForloginWebCli();
+    public static final HttpRequestDef<LoginWebCliRequest, LoginWebCliResponse> loginWebCli = genForLoginWebCli();
 
-    private static HttpRequestDef<LoginWebCliRequest, LoginWebCliResponse> genForloginWebCli() {
+    private static HttpRequestDef<LoginWebCliRequest, LoginWebCliResponse> genForLoginWebCli() {
         // basic
         HttpRequestDef.Builder<LoginWebCliRequest, LoginWebCliResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, LoginWebCliRequest.class, LoginWebCliResponse.class)
@@ -2480,25 +2245,21 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(LoginWebCliRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(LoginWebCliRequest::getInstanceId, LoginWebCliRequest::setInstanceId));
         builder.<LoginWebCliBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LoginWebCliBody.class),
-            f -> f.withMarshaller(LoginWebCliRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(LoginWebCliRequest::getBody, LoginWebCliRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<LogoffWebCliRequest, LogoffWebCliResponse> logoffWebCli = genForlogoffWebCli();
+    public static final HttpRequestDef<LogoffWebCliRequest, LogoffWebCliResponse> logoffWebCli = genForLogoffWebCli();
 
-    private static HttpRequestDef<LogoffWebCliRequest, LogoffWebCliResponse> genForlogoffWebCli() {
+    private static HttpRequestDef<LogoffWebCliRequest, LogoffWebCliResponse> genForLogoffWebCli() {
         // basic
         HttpRequestDef.Builder<LogoffWebCliRequest, LogoffWebCliResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, LogoffWebCliRequest.class, LogoffWebCliResponse.class)
@@ -2511,16 +2272,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(LogoffWebCliRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(LogoffWebCliRequest::getInstanceId, LogoffWebCliRequest::setInstanceId));
         builder.<LogoutWebCliBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LogoutWebCliBody.class),
-            f -> f.withMarshaller(LogoffWebCliRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(LogoffWebCliRequest::getBody, LogoffWebCliRequest::setBody));
 
         // response
 
@@ -2528,9 +2285,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse> resetAclAccountPassWord =
-        genForresetAclAccountPassWord();
+        genForResetAclAccountPassWord();
 
-    private static HttpRequestDef<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse> genForresetAclAccountPassWord() {
+    private static HttpRequestDef<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse> genForResetAclAccountPassWord() {
         // basic
         HttpRequestDef.Builder<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, ResetAclAccountPassWordRequest.class, ResetAclAccountPassWordResponse.class)
@@ -2543,23 +2300,19 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetAclAccountPassWordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetAclAccountPassWordRequest::getInstanceId,
+                ResetAclAccountPassWordRequest::setInstanceId));
         builder.<String>withRequestField("account_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetAclAccountPassWordRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(ResetAclAccountPassWordRequest::getAccountId,
+                ResetAclAccountPassWordRequest::setAccountId));
         builder.<AclAccountResetPasswordBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AclAccountResetPasswordBody.class),
-            f -> f.withMarshaller(ResetAclAccountPassWordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetAclAccountPassWordRequest::getBody, ResetAclAccountPassWordRequest::setBody));
 
         // response
 
@@ -2567,9 +2320,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
-        genForresetPassword();
+        genForResetPassword();
 
-    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
+    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForResetPassword() {
         // basic
         HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetPasswordRequest.class, ResetPasswordResponse.class)
@@ -2582,16 +2335,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, ResetPasswordRequest::setInstanceId));
         builder.<ResetInstancePasswordBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ResetInstancePasswordBody.class),
-            f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetPasswordRequest::getBody, ResetPasswordRequest::setBody));
 
         // response
 
@@ -2599,9 +2348,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
-        genForresizeInstance();
+        genForResizeInstance();
 
-    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
+    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForResizeInstance() {
         // basic
         HttpRequestDef.Builder<ResizeInstanceRequest, ResizeInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeInstanceRequest.class, ResizeInstanceResponse.class)
@@ -2614,16 +2363,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, ResizeInstanceRequest::setInstanceId));
         builder.<ResizeInstanceBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeInstanceBody.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getBody, ResizeInstanceRequest::setBody));
 
         // response
 
@@ -2631,9 +2376,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> restartOrFlushInstances =
-        genForrestartOrFlushInstances();
+        genForRestartOrFlushInstances();
 
-    private static HttpRequestDef<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> genForrestartOrFlushInstances() {
+    private static HttpRequestDef<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> genForRestartOrFlushInstances() {
         // basic
         HttpRequestDef.Builder<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, RestartOrFlushInstancesRequest.class, RestartOrFlushInstancesResponse.class)
@@ -2646,9 +2391,7 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeInstanceStatusBody.class),
-            f -> f.withMarshaller(RestartOrFlushInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestartOrFlushInstancesRequest::getBody, RestartOrFlushInstancesRequest::setBody));
 
         // response
 
@@ -2656,9 +2399,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<RestoreInstanceRequest, RestoreInstanceResponse> restoreInstance =
-        genForrestoreInstance();
+        genForRestoreInstance();
 
-    private static HttpRequestDef<RestoreInstanceRequest, RestoreInstanceResponse> genForrestoreInstance() {
+    private static HttpRequestDef<RestoreInstanceRequest, RestoreInstanceResponse> genForRestoreInstance() {
         // basic
         HttpRequestDef.Builder<RestoreInstanceRequest, RestoreInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreInstanceRequest.class, RestoreInstanceResponse.class)
@@ -2671,16 +2414,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestoreInstanceRequest::getInstanceId, RestoreInstanceRequest::setInstanceId));
         builder.<RestoreInstanceBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RestoreInstanceBody.class),
-            f -> f.withMarshaller(RestoreInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestoreInstanceRequest::getBody, RestoreInstanceRequest::setBody));
 
         // response
 
@@ -2688,9 +2427,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ScanExpireKeyRequest, ScanExpireKeyResponse> scanExpireKey =
-        genForscanExpireKey();
+        genForScanExpireKey();
 
-    private static HttpRequestDef<ScanExpireKeyRequest, ScanExpireKeyResponse> genForscanExpireKey() {
+    private static HttpRequestDef<ScanExpireKeyRequest, ScanExpireKeyResponse> genForScanExpireKey() {
         // basic
         HttpRequestDef.Builder<ScanExpireKeyRequest, ScanExpireKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ScanExpireKeyRequest.class, ScanExpireKeyResponse.class)
@@ -2703,9 +2442,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ScanExpireKeyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ScanExpireKeyRequest::getInstanceId, ScanExpireKeyRequest::setInstanceId));
 
         // response
 
@@ -2713,9 +2450,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse> setOnlineMigrationTask =
-        genForsetOnlineMigrationTask();
+        genForSetOnlineMigrationTask();
 
-    private static HttpRequestDef<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse> genForsetOnlineMigrationTask() {
+    private static HttpRequestDef<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse> genForSetOnlineMigrationTask() {
         // basic
         HttpRequestDef.Builder<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SetOnlineMigrationTaskRequest.class, SetOnlineMigrationTaskResponse.class)
@@ -2728,16 +2465,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetOnlineMigrationTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(SetOnlineMigrationTaskRequest::getTaskId, SetOnlineMigrationTaskRequest::setTaskId));
         builder.<SetOnlineMigrationTaskBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetOnlineMigrationTaskBody.class),
-            f -> f.withMarshaller(SetOnlineMigrationTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetOnlineMigrationTaskRequest::getBody, SetOnlineMigrationTaskRequest::setBody));
 
         // response
 
@@ -2745,9 +2478,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> showBackgroundTaskProgress =
-        genForshowBackgroundTaskProgress();
+        genForShowBackgroundTaskProgress();
 
-    private static HttpRequestDef<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> genForshowBackgroundTaskProgress() {
+    private static HttpRequestDef<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> genForShowBackgroundTaskProgress() {
         // basic
         HttpRequestDef.Builder<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> builder =
             HttpRequestDef
@@ -2763,16 +2496,14 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackgroundTaskProgressRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowBackgroundTaskProgressRequest::getInstanceId,
+                ShowBackgroundTaskProgressRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackgroundTaskProgressRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowBackgroundTaskProgressRequest::getTaskId,
+                ShowBackgroundTaskProgressRequest::setTaskId));
 
         // response
 
@@ -2780,9 +2511,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> showBigkeyAutoscanConfig =
-        genForshowBigkeyAutoscanConfig();
+        genForShowBigkeyAutoscanConfig();
 
-    private static HttpRequestDef<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> genForshowBigkeyAutoscanConfig() {
+    private static HttpRequestDef<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> genForShowBigkeyAutoscanConfig() {
         // basic
         HttpRequestDef.Builder<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> builder =
             HttpRequestDef
@@ -2796,9 +2527,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBigkeyAutoscanConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowBigkeyAutoscanConfigRequest::getInstanceId,
+                ShowBigkeyAutoscanConfigRequest::setInstanceId));
 
         // response
 
@@ -2806,9 +2536,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> showBigkeyScanTaskDetails =
-        genForshowBigkeyScanTaskDetails();
+        genForShowBigkeyScanTaskDetails();
 
-    private static HttpRequestDef<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> genForshowBigkeyScanTaskDetails() {
+    private static HttpRequestDef<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> genForShowBigkeyScanTaskDetails() {
         // basic
         HttpRequestDef.Builder<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> builder =
             HttpRequestDef
@@ -2824,16 +2554,14 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBigkeyScanTaskDetailsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowBigkeyScanTaskDetailsRequest::getInstanceId,
+                ShowBigkeyScanTaskDetailsRequest::setInstanceId));
         builder.<String>withRequestField("bigkey_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBigkeyScanTaskDetailsRequest::getBigkeyId, (req, v) -> {
-                req.setBigkeyId(v);
-            }));
+            f -> f.withMarshaller(ShowBigkeyScanTaskDetailsRequest::getBigkeyId,
+                ShowBigkeyScanTaskDetailsRequest::setBigkeyId));
 
         // response
 
@@ -2841,9 +2569,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse> showConfigHistoryDetail =
-        genForshowConfigHistoryDetail();
+        genForShowConfigHistoryDetail();
 
-    private static HttpRequestDef<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse> genForshowConfigHistoryDetail() {
+    private static HttpRequestDef<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse> genForShowConfigHistoryDetail() {
         // basic
         HttpRequestDef.Builder<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowConfigHistoryDetailRequest.class, ShowConfigHistoryDetailResponse.class)
@@ -2856,33 +2584,29 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigHistoryDetailRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowConfigHistoryDetailRequest::getInstanceId,
+                ShowConfigHistoryDetailRequest::setInstanceId));
         builder.<String>withRequestField("history_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigHistoryDetailRequest::getHistoryId, (req, v) -> {
-                req.setHistoryId(v);
-            }));
+            f -> f.withMarshaller(ShowConfigHistoryDetailRequest::getHistoryId,
+                ShowConfigHistoryDetailRequest::setHistoryId));
 
         // response
         builder.<Object>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             Object.class,
-            f -> f.withMarshaller(ShowConfigHistoryDetailResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ShowConfigHistoryDetailResponse::getBody, ShowConfigHistoryDetailResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowConfigTemplateRequest, ShowConfigTemplateResponse> showConfigTemplate =
-        genForshowConfigTemplate();
+        genForShowConfigTemplate();
 
-    private static HttpRequestDef<ShowConfigTemplateRequest, ShowConfigTemplateResponse> genForshowConfigTemplate() {
+    private static HttpRequestDef<ShowConfigTemplateRequest, ShowConfigTemplateResponse> genForShowConfigTemplate() {
         // basic
         HttpRequestDef.Builder<ShowConfigTemplateRequest, ShowConfigTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConfigTemplateRequest.class, ShowConfigTemplateResponse.class)
@@ -2895,16 +2619,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowConfigTemplateRequest::getTemplateId, ShowConfigTemplateRequest::setTemplateId));
         builder.<ShowConfigTemplateRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowConfigTemplateRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowConfigTemplateRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowConfigTemplateRequest::getType, ShowConfigTemplateRequest::setType));
 
         // response
 
@@ -2912,9 +2632,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse> showDiagnosisTaskDetails =
-        genForshowDiagnosisTaskDetails();
+        genForShowDiagnosisTaskDetails();
 
-    private static HttpRequestDef<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse> genForshowDiagnosisTaskDetails() {
+    private static HttpRequestDef<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse> genForShowDiagnosisTaskDetails() {
         // basic
         HttpRequestDef.Builder<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse> builder =
             HttpRequestDef
@@ -2928,9 +2648,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDiagnosisTaskDetailsRequest::getReportId, (req, v) -> {
-                req.setReportId(v);
-            }));
+            f -> f.withMarshaller(ShowDiagnosisTaskDetailsRequest::getReportId,
+                ShowDiagnosisTaskDetailsRequest::setReportId));
 
         // response
 
@@ -2938,9 +2657,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse> showExpireAutoScanConfig =
-        genForshowExpireAutoScanConfig();
+        genForShowExpireAutoScanConfig();
 
-    private static HttpRequestDef<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse> genForshowExpireAutoScanConfig() {
+    private static HttpRequestDef<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse> genForShowExpireAutoScanConfig() {
         // basic
         HttpRequestDef.Builder<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse> builder =
             HttpRequestDef
@@ -2954,9 +2673,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExpireAutoScanConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowExpireAutoScanConfigRequest::getInstanceId,
+                ShowExpireAutoScanConfigRequest::setInstanceId));
 
         // response
 
@@ -2964,9 +2682,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowExpireKeyScanInfoRequest, ShowExpireKeyScanInfoResponse> showExpireKeyScanInfo =
-        genForshowExpireKeyScanInfo();
+        genForShowExpireKeyScanInfo();
 
-    private static HttpRequestDef<ShowExpireKeyScanInfoRequest, ShowExpireKeyScanInfoResponse> genForshowExpireKeyScanInfo() {
+    private static HttpRequestDef<ShowExpireKeyScanInfoRequest, ShowExpireKeyScanInfoResponse> genForShowExpireKeyScanInfo() {
         // basic
         HttpRequestDef.Builder<ShowExpireKeyScanInfoRequest, ShowExpireKeyScanInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowExpireKeyScanInfoRequest.class, ShowExpireKeyScanInfoResponse.class)
@@ -2979,30 +2697,23 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getInstanceId,
+                ShowExpireKeyScanInfoRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getOffset, ShowExpireKeyScanInfoRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getLimit, ShowExpireKeyScanInfoRequest::setLimit));
         builder.<ShowExpireKeyScanInfoRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowExpireKeyScanInfoRequest.StatusEnum.class),
-            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getStatus, ShowExpireKeyScanInfoRequest::setStatus));
 
         // response
 
@@ -3010,9 +2721,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> showHotkeyAutoscanConfig =
-        genForshowHotkeyAutoscanConfig();
+        genForShowHotkeyAutoscanConfig();
 
-    private static HttpRequestDef<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> genForshowHotkeyAutoscanConfig() {
+    private static HttpRequestDef<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> genForShowHotkeyAutoscanConfig() {
         // basic
         HttpRequestDef.Builder<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> builder =
             HttpRequestDef
@@ -3026,9 +2737,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHotkeyAutoscanConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowHotkeyAutoscanConfigRequest::getInstanceId,
+                ShowHotkeyAutoscanConfigRequest::setInstanceId));
 
         // response
 
@@ -3036,9 +2746,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse> showHotkeyTaskDetails =
-        genForshowHotkeyTaskDetails();
+        genForShowHotkeyTaskDetails();
 
-    private static HttpRequestDef<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse> genForshowHotkeyTaskDetails() {
+    private static HttpRequestDef<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse> genForShowHotkeyTaskDetails() {
         // basic
         HttpRequestDef.Builder<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowHotkeyTaskDetailsRequest.class, ShowHotkeyTaskDetailsResponse.class)
@@ -3051,25 +2761,23 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHotkeyTaskDetailsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowHotkeyTaskDetailsRequest::getInstanceId,
+                ShowHotkeyTaskDetailsRequest::setInstanceId));
         builder.<String>withRequestField("hotkey_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHotkeyTaskDetailsRequest::getHotkeyId, (req, v) -> {
-                req.setHotkeyId(v);
-            }));
+            f -> f.withMarshaller(ShowHotkeyTaskDetailsRequest::getHotkeyId,
+                ShowHotkeyTaskDetailsRequest::setHotkeyId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForshowInstance();
+    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForShowInstance();
 
-    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForshowInstance() {
+    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForShowInstance() {
         // basic
         HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
@@ -3082,9 +2790,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, ShowInstanceRequest::setInstanceId));
 
         // response
 
@@ -3092,9 +2798,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> showInstanceSslDetail =
-        genForshowInstanceSslDetail();
+        genForShowInstanceSslDetail();
 
-    private static HttpRequestDef<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> genForshowInstanceSslDetail() {
+    private static HttpRequestDef<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> genForShowInstanceSslDetail() {
         // basic
         HttpRequestDef.Builder<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowInstanceSslDetailRequest.class, ShowInstanceSslDetailResponse.class)
@@ -3107,18 +2813,17 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceSslDetailRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceSslDetailRequest::getInstanceId,
+                ShowInstanceSslDetailRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfo = genForshowJobInfo();
+    public static final HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfo = genForShowJobInfo();
 
-    private static HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> genForshowJobInfo() {
+    private static HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> genForShowJobInfo() {
         // basic
         HttpRequestDef.Builder<ShowJobInfoRequest, ShowJobInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobInfoRequest.class, ShowJobInfoResponse.class)
@@ -3131,9 +2836,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInfoRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobInfoRequest::getJobId, ShowJobInfoRequest::setJobId));
 
         // response
 
@@ -3141,9 +2844,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowMigrationTaskRequest, ShowMigrationTaskResponse> showMigrationTask =
-        genForshowMigrationTask();
+        genForShowMigrationTask();
 
-    private static HttpRequestDef<ShowMigrationTaskRequest, ShowMigrationTaskResponse> genForshowMigrationTask() {
+    private static HttpRequestDef<ShowMigrationTaskRequest, ShowMigrationTaskResponse> genForShowMigrationTask() {
         // basic
         HttpRequestDef.Builder<ShowMigrationTaskRequest, ShowMigrationTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMigrationTaskRequest.class, ShowMigrationTaskResponse.class)
@@ -3156,9 +2859,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMigrationTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowMigrationTaskRequest::getTaskId, ShowMigrationTaskRequest::setTaskId));
 
         // response
 
@@ -3166,9 +2867,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse> showMigrationTaskStats =
-        genForshowMigrationTaskStats();
+        genForShowMigrationTaskStats();
 
-    private static HttpRequestDef<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse> genForshowMigrationTaskStats() {
+    private static HttpRequestDef<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse> genForShowMigrationTaskStats() {
         // basic
         HttpRequestDef.Builder<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowMigrationTaskStatsRequest.class, ShowMigrationTaskStatsResponse.class)
@@ -3181,9 +2882,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMigrationTaskStatsRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowMigrationTaskStatsRequest::getTaskId, ShowMigrationTaskStatsRequest::setTaskId));
 
         // response
 
@@ -3191,9 +2890,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowNodesInformationRequest, ShowNodesInformationResponse> showNodesInformation =
-        genForshowNodesInformation();
+        genForShowNodesInformation();
 
-    private static HttpRequestDef<ShowNodesInformationRequest, ShowNodesInformationResponse> genForshowNodesInformation() {
+    private static HttpRequestDef<ShowNodesInformationRequest, ShowNodesInformationResponse> genForShowNodesInformation() {
         // basic
         HttpRequestDef.Builder<ShowNodesInformationRequest, ShowNodesInformationResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowNodesInformationRequest.class, ShowNodesInformationResponse.class)
@@ -3206,9 +2905,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodesInformationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowNodesInformationRequest::getInstanceId,
+                ShowNodesInformationRequest::setInstanceId));
 
         // response
 
@@ -3216,9 +2914,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse> showQuotaOfTenant =
-        genForshowQuotaOfTenant();
+        genForShowQuotaOfTenant();
 
-    private static HttpRequestDef<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse> genForshowQuotaOfTenant() {
+    private static HttpRequestDef<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse> genForShowQuotaOfTenant() {
         // basic
         HttpRequestDef.Builder<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotaOfTenantRequest.class, ShowQuotaOfTenantResponse.class)
@@ -3234,9 +2932,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowReplicationStatesRequest, ShowReplicationStatesResponse> showReplicationStates =
-        genForshowReplicationStates();
+        genForShowReplicationStates();
 
-    private static HttpRequestDef<ShowReplicationStatesRequest, ShowReplicationStatesResponse> genForshowReplicationStates() {
+    private static HttpRequestDef<ShowReplicationStatesRequest, ShowReplicationStatesResponse> genForShowReplicationStates() {
         // basic
         HttpRequestDef.Builder<ShowReplicationStatesRequest, ShowReplicationStatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowReplicationStatesRequest.class, ShowReplicationStatesResponse.class)
@@ -3249,32 +2947,28 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReplicationStatesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowReplicationStatesRequest::getInstanceId,
+                ShowReplicationStatesRequest::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReplicationStatesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowReplicationStatesRequest::getGroupId, ShowReplicationStatesRequest::setGroupId));
 
         // response
         builder.<List<InstanceReplicationListInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowReplicationStatesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(InstanceReplicationListInfo.class));
+            f -> f.withMarshaller(ShowReplicationStatesResponse::getBody, ShowReplicationStatesResponse::setBody)
+                .withInnerContainerType(InstanceReplicationListInfo.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForshowTags();
+    public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForShowTags();
 
-    private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForshowTags() {
+    private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForShowTags() {
         // basic
         HttpRequestDef.Builder<ShowTagsRequest, ShowTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTagsRequest.class, ShowTagsResponse.class)
@@ -3287,9 +2981,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowTagsRequest::getInstanceId, ShowTagsRequest::setInstanceId));
 
         // response
 
@@ -3297,9 +2989,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<StartInstanceResizeCheckJobRequest, StartInstanceResizeCheckJobResponse> startInstanceResizeCheckJob =
-        genForstartInstanceResizeCheckJob();
+        genForStartInstanceResizeCheckJob();
 
-    private static HttpRequestDef<StartInstanceResizeCheckJobRequest, StartInstanceResizeCheckJobResponse> genForstartInstanceResizeCheckJob() {
+    private static HttpRequestDef<StartInstanceResizeCheckJobRequest, StartInstanceResizeCheckJobResponse> genForStartInstanceResizeCheckJob() {
         // basic
         HttpRequestDef.Builder<StartInstanceResizeCheckJobRequest, StartInstanceResizeCheckJobResponse> builder =
             HttpRequestDef
@@ -3315,16 +3007,14 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartInstanceResizeCheckJobRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(StartInstanceResizeCheckJobRequest::getInstanceId,
+                StartInstanceResizeCheckJobRequest::setInstanceId));
         builder.<StartInstanceResizeCheckJobRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StartInstanceResizeCheckJobRequestBody.class),
-            f -> f.withMarshaller(StartInstanceResizeCheckJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartInstanceResizeCheckJobRequest::getBody,
+                StartInstanceResizeCheckJobRequest::setBody));
 
         // response
 
@@ -3332,9 +3022,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<StopMigrationTaskRequest, StopMigrationTaskResponse> stopMigrationTask =
-        genForstopMigrationTask();
+        genForStopMigrationTask();
 
-    private static HttpRequestDef<StopMigrationTaskRequest, StopMigrationTaskResponse> genForstopMigrationTask() {
+    private static HttpRequestDef<StopMigrationTaskRequest, StopMigrationTaskResponse> genForStopMigrationTask() {
         // basic
         HttpRequestDef.Builder<StopMigrationTaskRequest, StopMigrationTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopMigrationTaskRequest.class, StopMigrationTaskResponse.class)
@@ -3347,9 +3037,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopMigrationTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(StopMigrationTaskRequest::getTaskId, StopMigrationTaskRequest::setTaskId));
 
         // response
 
@@ -3357,9 +3045,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse> stopMigrationTaskSync =
-        genForstopMigrationTaskSync();
+        genForStopMigrationTaskSync();
 
-    private static HttpRequestDef<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse> genForstopMigrationTaskSync() {
+    private static HttpRequestDef<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse> genForStopMigrationTaskSync() {
         // basic
         HttpRequestDef.Builder<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, StopMigrationTaskSyncRequest.class, StopMigrationTaskSyncResponse.class)
@@ -3372,9 +3060,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopMigrationTaskSyncRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(StopMigrationTaskSyncRequest::getTaskId, StopMigrationTaskSyncRequest::setTaskId));
 
         // response
 
@@ -3382,9 +3068,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateAclAccountRequest, UpdateAclAccountResponse> updateAclAccount =
-        genForupdateAclAccount();
+        genForUpdateAclAccount();
 
-    private static HttpRequestDef<UpdateAclAccountRequest, UpdateAclAccountResponse> genForupdateAclAccount() {
+    private static HttpRequestDef<UpdateAclAccountRequest, UpdateAclAccountResponse> genForUpdateAclAccount() {
         // basic
         HttpRequestDef.Builder<UpdateAclAccountRequest, UpdateAclAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAclAccountRequest.class, UpdateAclAccountResponse.class)
@@ -3397,23 +3083,17 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclAccountRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclAccountRequest::getInstanceId, UpdateAclAccountRequest::setInstanceId));
         builder.<String>withRequestField("account_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclAccountRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclAccountRequest::getAccountId, UpdateAclAccountRequest::setAccountId));
         builder.<AclAccountRoleModifyBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AclAccountRoleModifyBody.class),
-            f -> f.withMarshaller(UpdateAclAccountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAclAccountRequest::getBody, UpdateAclAccountRequest::setBody));
 
         // response
 
@@ -3421,9 +3101,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse> updateAclAccountPassWord =
-        genForupdateAclAccountPassWord();
+        genForUpdateAclAccountPassWord();
 
-    private static HttpRequestDef<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse> genForupdateAclAccountPassWord() {
+    private static HttpRequestDef<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse> genForUpdateAclAccountPassWord() {
         // basic
         HttpRequestDef.Builder<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse> builder =
             HttpRequestDef
@@ -3437,23 +3117,19 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclAccountPassWordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclAccountPassWordRequest::getInstanceId,
+                UpdateAclAccountPassWordRequest::setInstanceId));
         builder.<String>withRequestField("account_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclAccountPassWordRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclAccountPassWordRequest::getAccountId,
+                UpdateAclAccountPassWordRequest::setAccountId));
         builder.<AclAccountModifyPasswordBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AclAccountModifyPasswordBody.class),
-            f -> f.withMarshaller(UpdateAclAccountPassWordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAclAccountPassWordRequest::getBody, UpdateAclAccountPassWordRequest::setBody));
 
         // response
 
@@ -3461,9 +3137,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse> updateAclAccountRemark =
-        genForupdateAclAccountRemark();
+        genForUpdateAclAccountRemark();
 
-    private static HttpRequestDef<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse> genForupdateAclAccountRemark() {
+    private static HttpRequestDef<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse> genForUpdateAclAccountRemark() {
         // basic
         HttpRequestDef.Builder<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateAclAccountRemarkRequest.class, UpdateAclAccountRemarkResponse.class)
@@ -3476,23 +3152,19 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclAccountRemarkRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclAccountRemarkRequest::getInstanceId,
+                UpdateAclAccountRemarkRequest::setInstanceId));
         builder.<String>withRequestField("account_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclAccountRemarkRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclAccountRemarkRequest::getAccountId,
+                UpdateAclAccountRemarkRequest::setAccountId));
         builder.<UpdateAclAccountRemarkRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateAclAccountRemarkRequestBody.class),
-            f -> f.withMarshaller(UpdateAclAccountRemarkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAclAccountRemarkRequest::getBody, UpdateAclAccountRemarkRequest::setBody));
 
         // response
 
@@ -3500,9 +3172,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> updateBigkeyAutoscanConfig =
-        genForupdateBigkeyAutoscanConfig();
+        genForUpdateBigkeyAutoscanConfig();
 
-    private static HttpRequestDef<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> genForupdateBigkeyAutoscanConfig() {
+    private static HttpRequestDef<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> genForUpdateBigkeyAutoscanConfig() {
         // basic
         HttpRequestDef.Builder<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> builder =
             HttpRequestDef
@@ -3518,16 +3190,14 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBigkeyAutoscanConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateBigkeyAutoscanConfigRequest::getInstanceId,
+                UpdateBigkeyAutoscanConfigRequest::setInstanceId));
         builder.<AutoscanConfigRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AutoscanConfigRequest.class),
-            f -> f.withMarshaller(UpdateBigkeyAutoscanConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBigkeyAutoscanConfigRequest::getBody,
+                UpdateBigkeyAutoscanConfigRequest::setBody));
 
         // response
 
@@ -3535,9 +3205,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse> updateClientIpTransparentTransmission =
-        genForupdateClientIpTransparentTransmission();
+        genForUpdateClientIpTransparentTransmission();
 
-    private static HttpRequestDef<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse> genForupdateClientIpTransparentTransmission() {
+    private static HttpRequestDef<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse> genForUpdateClientIpTransparentTransmission() {
         // basic
         HttpRequestDef.Builder<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse> builder =
             HttpRequestDef
@@ -3553,16 +3223,14 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateClientIpTransparentTransmissionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateClientIpTransparentTransmissionRequest::getInstanceId,
+                UpdateClientIpTransparentTransmissionRequest::setInstanceId));
         builder.<UpdateClientIpTransparentTransmissionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateClientIpTransparentTransmissionRequestBody.class),
-            f -> f.withMarshaller(UpdateClientIpTransparentTransmissionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateClientIpTransparentTransmissionRequest::getBody,
+                UpdateClientIpTransparentTransmissionRequest::setBody));
 
         // response
 
@@ -3570,9 +3238,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse> updateConfigTemplate =
-        genForupdateConfigTemplate();
+        genForUpdateConfigTemplate();
 
-    private static HttpRequestDef<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse> genForupdateConfigTemplate() {
+    private static HttpRequestDef<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse> genForUpdateConfigTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateConfigTemplateRequest.class, UpdateConfigTemplateResponse.class)
@@ -3585,16 +3253,13 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConfigTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigTemplateRequest::getTemplateId,
+                UpdateConfigTemplateRequest::setTemplateId));
         builder.<UpdateCustomTemplateBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCustomTemplateBody.class),
-            f -> f.withMarshaller(UpdateConfigTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigTemplateRequest::getBody, UpdateConfigTemplateRequest::setBody));
 
         // response
 
@@ -3602,9 +3267,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateConfigurationsRequest, UpdateConfigurationsResponse> updateConfigurations =
-        genForupdateConfigurations();
+        genForUpdateConfigurations();
 
-    private static HttpRequestDef<UpdateConfigurationsRequest, UpdateConfigurationsResponse> genForupdateConfigurations() {
+    private static HttpRequestDef<UpdateConfigurationsRequest, UpdateConfigurationsResponse> genForUpdateConfigurations() {
         // basic
         HttpRequestDef.Builder<UpdateConfigurationsRequest, UpdateConfigurationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateConfigurationsRequest.class, UpdateConfigurationsResponse.class)
@@ -3617,16 +3282,13 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConfigurationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigurationsRequest::getInstanceId,
+                UpdateConfigurationsRequest::setInstanceId));
         builder.<ModifyRedisConfigBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyRedisConfigBody.class),
-            f -> f.withMarshaller(UpdateConfigurationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigurationsRequest::getBody, UpdateConfigurationsRequest::setBody));
 
         // response
 
@@ -3634,9 +3296,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse> updateExpireAutoScanConfig =
-        genForupdateExpireAutoScanConfig();
+        genForUpdateExpireAutoScanConfig();
 
-    private static HttpRequestDef<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse> genForupdateExpireAutoScanConfig() {
+    private static HttpRequestDef<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse> genForUpdateExpireAutoScanConfig() {
         // basic
         HttpRequestDef.Builder<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse> builder =
             HttpRequestDef
@@ -3652,16 +3314,14 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateExpireAutoScanConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateExpireAutoScanConfigRequest::getInstanceId,
+                UpdateExpireAutoScanConfigRequest::setInstanceId));
         builder.<UpdateAutoScanConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAutoScanConfigRequestBody.class),
-            f -> f.withMarshaller(UpdateExpireAutoScanConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateExpireAutoScanConfigRequest::getBody,
+                UpdateExpireAutoScanConfigRequest::setBody));
 
         // response
 
@@ -3669,9 +3329,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> updateHotkeyAutoScanConfig =
-        genForupdateHotkeyAutoScanConfig();
+        genForUpdateHotkeyAutoScanConfig();
 
-    private static HttpRequestDef<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> genForupdateHotkeyAutoScanConfig() {
+    private static HttpRequestDef<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> genForUpdateHotkeyAutoScanConfig() {
         // basic
         HttpRequestDef.Builder<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> builder =
             HttpRequestDef
@@ -3687,16 +3347,14 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHotkeyAutoScanConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateHotkeyAutoScanConfigRequest::getInstanceId,
+                UpdateHotkeyAutoScanConfigRequest::setInstanceId));
         builder.<AutoscanConfigRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AutoscanConfigRequest.class),
-            f -> f.withMarshaller(UpdateHotkeyAutoScanConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateHotkeyAutoScanConfigRequest::getBody,
+                UpdateHotkeyAutoScanConfigRequest::setBody));
 
         // response
 
@@ -3704,9 +3362,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
-        genForupdateInstance();
+        genForUpdateInstance();
 
-    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
+    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForUpdateInstance() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
@@ -3719,16 +3377,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, UpdateInstanceRequest::setInstanceId));
         builder.<ModifyInstanceBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ModifyInstanceBody.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getBody, UpdateInstanceRequest::setBody));
 
         // response
 
@@ -3736,9 +3390,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse> updateInstanceBandwidth =
-        genForupdateInstanceBandwidth();
+        genForUpdateInstanceBandwidth();
 
-    private static HttpRequestDef<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse> genForupdateInstanceBandwidth() {
+    private static HttpRequestDef<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse> genForUpdateInstanceBandwidth() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateInstanceBandwidthRequest.class, UpdateInstanceBandwidthResponse.class)
@@ -3751,9 +3405,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceBandwidthRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceBandwidthRequest::getInstanceId,
+                UpdateInstanceBandwidthRequest::setInstanceId));
 
         // response
 
@@ -3761,9 +3414,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse> updateInstanceConfig =
-        genForupdateInstanceConfig();
+        genForUpdateInstanceConfig();
 
-    private static HttpRequestDef<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse> genForupdateInstanceConfig() {
+    private static HttpRequestDef<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse> genForUpdateInstanceConfig() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateInstanceConfigRequest.class, UpdateInstanceConfigResponse.class)
@@ -3776,16 +3429,13 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UUID.class),
-            f -> f.withMarshaller(UpdateInstanceConfigRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConfigRequest::getInstanceId,
+                UpdateInstanceConfigRequest::setInstanceId));
         builder.<ModifyRedisConfigBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyRedisConfigBody.class),
-            f -> f.withMarshaller(UpdateInstanceConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceConfigRequest::getBody, UpdateInstanceConfigRequest::setBody));
 
         // response
 
@@ -3793,9 +3443,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateMigrationTaskRequest, UpdateMigrationTaskResponse> updateMigrationTask =
-        genForupdateMigrationTask();
+        genForUpdateMigrationTask();
 
-    private static HttpRequestDef<UpdateMigrationTaskRequest, UpdateMigrationTaskResponse> genForupdateMigrationTask() {
+    private static HttpRequestDef<UpdateMigrationTaskRequest, UpdateMigrationTaskResponse> genForUpdateMigrationTask() {
         // basic
         HttpRequestDef.Builder<UpdateMigrationTaskRequest, UpdateMigrationTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMigrationTaskRequest.class, UpdateMigrationTaskResponse.class)
@@ -3808,33 +3458,27 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMigrationTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateMigrationTaskRequest::getTaskId, UpdateMigrationTaskRequest::setTaskId));
         builder.<MigrationUpdateRequestEntity>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MigrationUpdateRequestEntity.class),
-            f -> f.withMarshaller(UpdateMigrationTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMigrationTaskRequest::getBody, UpdateMigrationTaskRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateMigrationTaskResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateMigrationTaskResponse::getBody, UpdateMigrationTaskResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdatePasswordRequest, UpdatePasswordResponse> updatePassword =
-        genForupdatePassword();
+        genForUpdatePassword();
 
-    private static HttpRequestDef<UpdatePasswordRequest, UpdatePasswordResponse> genForupdatePassword() {
+    private static HttpRequestDef<UpdatePasswordRequest, UpdatePasswordResponse> genForUpdatePassword() {
         // basic
         HttpRequestDef.Builder<UpdatePasswordRequest, UpdatePasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePasswordRequest.class, UpdatePasswordResponse.class)
@@ -3847,16 +3491,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePasswordRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdatePasswordRequest::getInstanceId, UpdatePasswordRequest::setInstanceId));
         builder.<ModifyInstancePasswordBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ModifyInstancePasswordBody.class),
-            f -> f.withMarshaller(UpdatePasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePasswordRequest::getBody, UpdatePasswordRequest::setBody));
 
         // response
 
@@ -3864,9 +3504,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse> updateSlavePriority =
-        genForupdateSlavePriority();
+        genForUpdateSlavePriority();
 
-    private static HttpRequestDef<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse> genForupdateSlavePriority() {
+    private static HttpRequestDef<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse> genForUpdateSlavePriority() {
         // basic
         HttpRequestDef.Builder<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateSlavePriorityRequest.class, UpdateSlavePriorityResponse.class)
@@ -3880,30 +3520,23 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSlavePriorityRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSlavePriorityRequest::getInstanceId,
+                UpdateSlavePriorityRequest::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSlavePriorityRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateSlavePriorityRequest::getGroupId, UpdateSlavePriorityRequest::setGroupId));
         builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSlavePriorityRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateSlavePriorityRequest::getNodeId, UpdateSlavePriorityRequest::setNodeId));
         builder.<PriorityBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PriorityBody.class),
-            f -> f.withMarshaller(UpdateSlavePriorityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSlavePriorityRequest::getBody, UpdateSlavePriorityRequest::setBody));
 
         // response
 
@@ -3911,9 +3544,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateSslSwitchRequest, UpdateSslSwitchResponse> updateSslSwitch =
-        genForupdateSslSwitch();
+        genForUpdateSslSwitch();
 
-    private static HttpRequestDef<UpdateSslSwitchRequest, UpdateSslSwitchResponse> genForupdateSslSwitch() {
+    private static HttpRequestDef<UpdateSslSwitchRequest, UpdateSslSwitchResponse> genForUpdateSslSwitch() {
         // basic
         HttpRequestDef.Builder<UpdateSslSwitchRequest, UpdateSslSwitchResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSslSwitchRequest.class, UpdateSslSwitchResponse.class)
@@ -3926,16 +3559,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSslSwitchRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSslSwitchRequest::getInstanceId, UpdateSslSwitchRequest::setInstanceId));
         builder.<UpdateSSLSwitchRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSSLSwitchRequestBody.class),
-            f -> f.withMarshaller(UpdateSslSwitchRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSslSwitchRequest::getBody, UpdateSslSwitchRequest::setBody));
 
         // response
 
@@ -3943,9 +3572,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse> validateDeletableReplica =
-        genForvalidateDeletableReplica();
+        genForValidateDeletableReplica();
 
-    private static HttpRequestDef<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse> genForvalidateDeletableReplica() {
+    private static HttpRequestDef<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse> genForValidateDeletableReplica() {
         // basic
         HttpRequestDef.Builder<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse> builder =
             HttpRequestDef
@@ -3959,9 +3588,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateDeletableReplicaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ValidateDeletableReplicaRequest::getInstanceId,
+                ValidateDeletableReplicaRequest::setInstanceId));
 
         // response
 
@@ -3969,9 +3597,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<ShowIpWhitelistRequest, ShowIpWhitelistResponse> showIpWhitelist =
-        genForshowIpWhitelist();
+        genForShowIpWhitelist();
 
-    private static HttpRequestDef<ShowIpWhitelistRequest, ShowIpWhitelistResponse> genForshowIpWhitelist() {
+    private static HttpRequestDef<ShowIpWhitelistRequest, ShowIpWhitelistResponse> genForShowIpWhitelist() {
         // basic
         HttpRequestDef.Builder<ShowIpWhitelistRequest, ShowIpWhitelistResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowIpWhitelistRequest.class, ShowIpWhitelistResponse.class)
@@ -3984,9 +3612,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIpWhitelistRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowIpWhitelistRequest::getInstanceId, ShowIpWhitelistRequest::setInstanceId));
 
         // response
 
@@ -3994,9 +3620,9 @@ public class DcsMeta {
     }
 
     public static final HttpRequestDef<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse> updateIpWhitelist =
-        genForupdateIpWhitelist();
+        genForUpdateIpWhitelist();
 
-    private static HttpRequestDef<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse> genForupdateIpWhitelist() {
+    private static HttpRequestDef<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse> genForUpdateIpWhitelist() {
         // basic
         HttpRequestDef.Builder<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateIpWhitelistRequest.class, UpdateIpWhitelistResponse.class)
@@ -4009,16 +3635,12 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIpWhitelistRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateIpWhitelistRequest::getInstanceId, UpdateIpWhitelistRequest::setInstanceId));
         builder.<ModifyIpWhitelistBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyIpWhitelistBody.class),
-            f -> f.withMarshaller(UpdateIpWhitelistRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateIpWhitelistRequest::getBody, UpdateIpWhitelistRequest::setBody));
 
         // response
 

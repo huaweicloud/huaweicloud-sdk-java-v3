@@ -1,14 +1,11 @@
 package com.huaweicloud.sdk.vpn.v5.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -27,90 +24,20 @@ public class ResponseCustomerGateway {
 
     private String name;
 
-    /**
-     * 网关路由模式
-     */
-    public static final class RouteModeEnum {
-
-        /**
-         * Enum STATIC for value: "static"
-         */
-        public static final RouteModeEnum STATIC = new RouteModeEnum("static");
-
-        /**
-         * Enum BGP for value: "bgp"
-         */
-        public static final RouteModeEnum BGP = new RouteModeEnum("bgp");
-
-        private static final Map<String, RouteModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RouteModeEnum> createStaticFields() {
-            Map<String, RouteModeEnum> map = new HashMap<>();
-            map.put("static", STATIC);
-            map.put("bgp", BGP);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        RouteModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RouteModeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RouteModeEnum(value));
-        }
-
-        public static RouteModeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof RouteModeEnum) {
-                return this.value.equals(((RouteModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "route_mode")
-
-    private RouteModeEnum routeMode;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bgp_asn")
 
     private Long bgpAsn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip")
+    @JsonProperty(value = "id_type")
 
-    private String ip;
+    private String idType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id_value")
+
+    private String idValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ca_certificate")
@@ -126,6 +53,11 @@ public class ResponseCustomerGateway {
     @JsonProperty(value = "updated_at")
 
     private OffsetDateTime updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<VpnResourceTag> tags = null;
 
     public ResponseCustomerGateway withId(String id) {
         this.id = id;
@@ -161,23 +93,6 @@ public class ResponseCustomerGateway {
         this.name = name;
     }
 
-    public ResponseCustomerGateway withRouteMode(RouteModeEnum routeMode) {
-        this.routeMode = routeMode;
-        return this;
-    }
-
-    /**
-     * 网关路由模式
-     * @return routeMode
-     */
-    public RouteModeEnum getRouteMode() {
-        return routeMode;
-    }
-
-    public void setRouteMode(RouteModeEnum routeMode) {
-        this.routeMode = routeMode;
-    }
-
     public ResponseCustomerGateway withBgpAsn(Long bgpAsn) {
         this.bgpAsn = bgpAsn;
         return this;
@@ -195,21 +110,38 @@ public class ResponseCustomerGateway {
         this.bgpAsn = bgpAsn;
     }
 
-    public ResponseCustomerGateway withIp(String ip) {
-        this.ip = ip;
+    public ResponseCustomerGateway withIdType(String idType) {
+        this.idType = idType;
         return this;
     }
 
     /**
-     * 网关ip地址
-     * @return ip
+     * 对端网关标识类型
+     * @return idType
      */
-    public String getIp() {
-        return ip;
+    public String getIdType() {
+        return idType;
     }
 
-    public void setIp(String ip) {
-        this.ip = ip;
+    public void setIdType(String idType) {
+        this.idType = idType;
+    }
+
+    public ResponseCustomerGateway withIdValue(String idValue) {
+        this.idValue = idValue;
+        return this;
+    }
+
+    /**
+     * 对端网关标识值
+     * @return idValue
+     */
+    public String getIdValue() {
+        return idValue;
+    }
+
+    public void setIdValue(String idValue) {
+        this.idValue = idValue;
     }
 
     public ResponseCustomerGateway withCaCertificate(CaCertificate caCertificate) {
@@ -272,6 +204,39 @@ public class ResponseCustomerGateway {
         this.updatedAt = updatedAt;
     }
 
+    public ResponseCustomerGateway withTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ResponseCustomerGateway addTagsItem(VpnResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ResponseCustomerGateway withTags(Consumer<List<VpnResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<VpnResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -282,14 +247,15 @@ public class ResponseCustomerGateway {
         }
         ResponseCustomerGateway that = (ResponseCustomerGateway) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.routeMode, that.routeMode) && Objects.equals(this.bgpAsn, that.bgpAsn)
-            && Objects.equals(this.ip, that.ip) && Objects.equals(this.caCertificate, that.caCertificate)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.bgpAsn, that.bgpAsn) && Objects.equals(this.idType, that.idType)
+            && Objects.equals(this.idValue, that.idValue) && Objects.equals(this.caCertificate, that.caCertificate)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, routeMode, bgpAsn, ip, caCertificate, createdAt, updatedAt);
+        return Objects.hash(id, name, bgpAsn, idType, idValue, caCertificate, createdAt, updatedAt, tags);
     }
 
     @Override
@@ -298,12 +264,13 @@ public class ResponseCustomerGateway {
         sb.append("class ResponseCustomerGateway {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
         sb.append("    bgpAsn: ").append(toIndentedString(bgpAsn)).append("\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    idType: ").append(toIndentedString(idType)).append("\n");
+        sb.append("    idValue: ").append(toIndentedString(idValue)).append("\n");
         sb.append("    caCertificate: ").append(toIndentedString(caCertificate)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

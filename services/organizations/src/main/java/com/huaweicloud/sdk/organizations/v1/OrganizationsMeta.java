@@ -133,9 +133,9 @@ import java.util.List;
 public class OrganizationsMeta {
 
     public static final HttpRequestDef<InviteAccountRequest, InviteAccountResponse> inviteAccount =
-        genForinviteAccount();
+        genForInviteAccount();
 
-    private static HttpRequestDef<InviteAccountRequest, InviteAccountResponse> genForinviteAccount() {
+    private static HttpRequestDef<InviteAccountRequest, InviteAccountResponse> genForInviteAccount() {
         // basic
         HttpRequestDef.Builder<InviteAccountRequest, InviteAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, InviteAccountRequest.class, InviteAccountResponse.class)
@@ -148,18 +148,16 @@ public class OrganizationsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InviteAccountReqBody.class),
-            f -> f.withMarshaller(InviteAccountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InviteAccountRequest::getBody, InviteAccountRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAccountsRequest, ListAccountsResponse> listAccounts = genForlistAccounts();
+    public static final HttpRequestDef<ListAccountsRequest, ListAccountsResponse> listAccounts = genForListAccounts();
 
-    private static HttpRequestDef<ListAccountsRequest, ListAccountsResponse> genForlistAccounts() {
+    private static HttpRequestDef<ListAccountsRequest, ListAccountsResponse> genForListAccounts() {
         // basic
         HttpRequestDef.Builder<ListAccountsRequest, ListAccountsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAccountsRequest.class, ListAccountsResponse.class)
@@ -172,23 +170,17 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountsRequest::getParentId, (req, v) -> {
-                req.setParentId(v);
-            }));
+            f -> f.withMarshaller(ListAccountsRequest::getParentId, ListAccountsRequest::setParentId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccountsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAccountsRequest::getLimit, ListAccountsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAccountsRequest::getMarker, ListAccountsRequest::setMarker));
 
         // response
 
@@ -196,9 +188,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListCreateAccountStatusesRequest, ListCreateAccountStatusesResponse> listCreateAccountStatuses =
-        genForlistCreateAccountStatuses();
+        genForListCreateAccountStatuses();
 
-    private static HttpRequestDef<ListCreateAccountStatusesRequest, ListCreateAccountStatusesResponse> genForlistCreateAccountStatuses() {
+    private static HttpRequestDef<ListCreateAccountStatusesRequest, ListCreateAccountStatusesResponse> genForListCreateAccountStatuses() {
         // basic
         HttpRequestDef.Builder<ListCreateAccountStatusesRequest, ListCreateAccountStatusesResponse> builder =
             HttpRequestDef
@@ -214,32 +206,29 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCreateAccountStatusesRequest::getStates, (req, v) -> {
-                req.setStates(v);
-            }));
+            f -> f.withMarshaller(ListCreateAccountStatusesRequest::getStates,
+                ListCreateAccountStatusesRequest::setStates));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCreateAccountStatusesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCreateAccountStatusesRequest::getLimit,
+                ListCreateAccountStatusesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCreateAccountStatusesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCreateAccountStatusesRequest::getMarker,
+                ListCreateAccountStatusesRequest::setMarker));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<MoveAccountRequest, MoveAccountResponse> moveAccount = genFormoveAccount();
+    public static final HttpRequestDef<MoveAccountRequest, MoveAccountResponse> moveAccount = genForMoveAccount();
 
-    private static HttpRequestDef<MoveAccountRequest, MoveAccountResponse> genFormoveAccount() {
+    private static HttpRequestDef<MoveAccountRequest, MoveAccountResponse> genForMoveAccount() {
         // basic
         HttpRequestDef.Builder<MoveAccountRequest, MoveAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, MoveAccountRequest.class, MoveAccountResponse.class)
@@ -252,16 +241,12 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(MoveAccountRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(MoveAccountRequest::getAccountId, MoveAccountRequest::setAccountId));
         builder.<MoveAccountReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MoveAccountReqBody.class),
-            f -> f.withMarshaller(MoveAccountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(MoveAccountRequest::getBody, MoveAccountRequest::setBody));
 
         // response
 
@@ -269,9 +254,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<RemoveAccountRequest, RemoveAccountResponse> removeAccount =
-        genForremoveAccount();
+        genForRemoveAccount();
 
-    private static HttpRequestDef<RemoveAccountRequest, RemoveAccountResponse> genForremoveAccount() {
+    private static HttpRequestDef<RemoveAccountRequest, RemoveAccountResponse> genForRemoveAccount() {
         // basic
         HttpRequestDef.Builder<RemoveAccountRequest, RemoveAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RemoveAccountRequest.class, RemoveAccountResponse.class)
@@ -284,18 +269,16 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveAccountRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(RemoveAccountRequest::getAccountId, RemoveAccountRequest::setAccountId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAccountRequest, ShowAccountResponse> showAccount = genForshowAccount();
+    public static final HttpRequestDef<ShowAccountRequest, ShowAccountResponse> showAccount = genForShowAccount();
 
-    private static HttpRequestDef<ShowAccountRequest, ShowAccountResponse> genForshowAccount() {
+    private static HttpRequestDef<ShowAccountRequest, ShowAccountResponse> genForShowAccount() {
         // basic
         HttpRequestDef.Builder<ShowAccountRequest, ShowAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAccountRequest.class, ShowAccountResponse.class)
@@ -308,9 +291,7 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccountRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(ShowAccountRequest::getAccountId, ShowAccountRequest::setAccountId));
 
         // response
 
@@ -318,9 +299,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> showCreateAccountStatus =
-        genForshowCreateAccountStatus();
+        genForShowCreateAccountStatus();
 
-    private static HttpRequestDef<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> genForshowCreateAccountStatus() {
+    private static HttpRequestDef<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> genForShowCreateAccountStatus() {
         // basic
         HttpRequestDef.Builder<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowCreateAccountStatusRequest.class, ShowCreateAccountStatusResponse.class)
@@ -333,9 +314,8 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCreateAccountStatusRequest::getCreateAccountStatusId, (req, v) -> {
-                req.setCreateAccountStatusId(v);
-            }));
+            f -> f.withMarshaller(ShowCreateAccountStatusRequest::getCreateAccountStatusId,
+                ShowCreateAccountStatusRequest::setCreateAccountStatusId));
 
         // response
 
@@ -343,9 +323,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<DeregisterDelegatedAdministratorRequest, DeregisterDelegatedAdministratorResponse> deregisterDelegatedAdministrator =
-        genForderegisterDelegatedAdministrator();
+        genForDeregisterDelegatedAdministrator();
 
-    private static HttpRequestDef<DeregisterDelegatedAdministratorRequest, DeregisterDelegatedAdministratorResponse> genForderegisterDelegatedAdministrator() {
+    private static HttpRequestDef<DeregisterDelegatedAdministratorRequest, DeregisterDelegatedAdministratorResponse> genForDeregisterDelegatedAdministrator() {
         // basic
         HttpRequestDef.Builder<DeregisterDelegatedAdministratorRequest, DeregisterDelegatedAdministratorResponse> builder =
             HttpRequestDef
@@ -361,9 +341,8 @@ public class OrganizationsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DelegatedAdministratorReqBody.class),
-            f -> f.withMarshaller(DeregisterDelegatedAdministratorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeregisterDelegatedAdministratorRequest::getBody,
+                DeregisterDelegatedAdministratorRequest::setBody));
 
         // response
 
@@ -371,9 +350,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListDelegatedAdministratorsRequest, ListDelegatedAdministratorsResponse> listDelegatedAdministrators =
-        genForlistDelegatedAdministrators();
+        genForListDelegatedAdministrators();
 
-    private static HttpRequestDef<ListDelegatedAdministratorsRequest, ListDelegatedAdministratorsResponse> genForlistDelegatedAdministrators() {
+    private static HttpRequestDef<ListDelegatedAdministratorsRequest, ListDelegatedAdministratorsResponse> genForListDelegatedAdministrators() {
         // basic
         HttpRequestDef.Builder<ListDelegatedAdministratorsRequest, ListDelegatedAdministratorsResponse> builder =
             HttpRequestDef
@@ -389,23 +368,20 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDelegatedAdministratorsRequest::getServicePrincipal, (req, v) -> {
-                req.setServicePrincipal(v);
-            }));
+            f -> f.withMarshaller(ListDelegatedAdministratorsRequest::getServicePrincipal,
+                ListDelegatedAdministratorsRequest::setServicePrincipal));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDelegatedAdministratorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDelegatedAdministratorsRequest::getLimit,
+                ListDelegatedAdministratorsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDelegatedAdministratorsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListDelegatedAdministratorsRequest::getMarker,
+                ListDelegatedAdministratorsRequest::setMarker));
 
         // response
 
@@ -413,9 +389,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListDelegatedServicesRequest, ListDelegatedServicesResponse> listDelegatedServices =
-        genForlistDelegatedServices();
+        genForListDelegatedServices();
 
-    private static HttpRequestDef<ListDelegatedServicesRequest, ListDelegatedServicesResponse> genForlistDelegatedServices() {
+    private static HttpRequestDef<ListDelegatedServicesRequest, ListDelegatedServicesResponse> genForListDelegatedServices() {
         // basic
         HttpRequestDef.Builder<ListDelegatedServicesRequest, ListDelegatedServicesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListDelegatedServicesRequest.class, ListDelegatedServicesResponse.class)
@@ -428,23 +404,18 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDelegatedServicesRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(ListDelegatedServicesRequest::getAccountId,
+                ListDelegatedServicesRequest::setAccountId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDelegatedServicesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDelegatedServicesRequest::getLimit, ListDelegatedServicesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDelegatedServicesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListDelegatedServicesRequest::getMarker, ListDelegatedServicesRequest::setMarker));
 
         // response
 
@@ -452,9 +423,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<RegisterDelegatedAdministratorRequest, RegisterDelegatedAdministratorResponse> registerDelegatedAdministrator =
-        genForregisterDelegatedAdministrator();
+        genForRegisterDelegatedAdministrator();
 
-    private static HttpRequestDef<RegisterDelegatedAdministratorRequest, RegisterDelegatedAdministratorResponse> genForregisterDelegatedAdministrator() {
+    private static HttpRequestDef<RegisterDelegatedAdministratorRequest, RegisterDelegatedAdministratorResponse> genForRegisterDelegatedAdministrator() {
         // basic
         HttpRequestDef.Builder<RegisterDelegatedAdministratorRequest, RegisterDelegatedAdministratorResponse> builder =
             HttpRequestDef
@@ -470,9 +441,8 @@ public class OrganizationsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DelegatedAdministratorReqBody.class),
-            f -> f.withMarshaller(RegisterDelegatedAdministratorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RegisterDelegatedAdministratorRequest::getBody,
+                RegisterDelegatedAdministratorRequest::setBody));
 
         // response
 
@@ -480,9 +450,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<AcceptHandshakeRequest, AcceptHandshakeResponse> acceptHandshake =
-        genForacceptHandshake();
+        genForAcceptHandshake();
 
-    private static HttpRequestDef<AcceptHandshakeRequest, AcceptHandshakeResponse> genForacceptHandshake() {
+    private static HttpRequestDef<AcceptHandshakeRequest, AcceptHandshakeResponse> genForAcceptHandshake() {
         // basic
         HttpRequestDef.Builder<AcceptHandshakeRequest, AcceptHandshakeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AcceptHandshakeRequest.class, AcceptHandshakeResponse.class)
@@ -495,9 +465,7 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AcceptHandshakeRequest::getHandshakeId, (req, v) -> {
-                req.setHandshakeId(v);
-            }));
+            f -> f.withMarshaller(AcceptHandshakeRequest::getHandshakeId, AcceptHandshakeRequest::setHandshakeId));
 
         // response
 
@@ -505,9 +473,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<CancelHandshakeRequest, CancelHandshakeResponse> cancelHandshake =
-        genForcancelHandshake();
+        genForCancelHandshake();
 
-    private static HttpRequestDef<CancelHandshakeRequest, CancelHandshakeResponse> genForcancelHandshake() {
+    private static HttpRequestDef<CancelHandshakeRequest, CancelHandshakeResponse> genForCancelHandshake() {
         // basic
         HttpRequestDef.Builder<CancelHandshakeRequest, CancelHandshakeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CancelHandshakeRequest.class, CancelHandshakeResponse.class)
@@ -520,9 +488,7 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelHandshakeRequest::getHandshakeId, (req, v) -> {
-                req.setHandshakeId(v);
-            }));
+            f -> f.withMarshaller(CancelHandshakeRequest::getHandshakeId, CancelHandshakeRequest::setHandshakeId));
 
         // response
 
@@ -530,9 +496,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<DeclineHandshakeRequest, DeclineHandshakeResponse> declineHandshake =
-        genFordeclineHandshake();
+        genForDeclineHandshake();
 
-    private static HttpRequestDef<DeclineHandshakeRequest, DeclineHandshakeResponse> genFordeclineHandshake() {
+    private static HttpRequestDef<DeclineHandshakeRequest, DeclineHandshakeResponse> genForDeclineHandshake() {
         // basic
         HttpRequestDef.Builder<DeclineHandshakeRequest, DeclineHandshakeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeclineHandshakeRequest.class, DeclineHandshakeResponse.class)
@@ -545,9 +511,7 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeclineHandshakeRequest::getHandshakeId, (req, v) -> {
-                req.setHandshakeId(v);
-            }));
+            f -> f.withMarshaller(DeclineHandshakeRequest::getHandshakeId, DeclineHandshakeRequest::setHandshakeId));
 
         // response
 
@@ -555,9 +519,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListHandshakesRequest, ListHandshakesResponse> listHandshakes =
-        genForlistHandshakes();
+        genForListHandshakes();
 
-    private static HttpRequestDef<ListHandshakesRequest, ListHandshakesResponse> genForlistHandshakes() {
+    private static HttpRequestDef<ListHandshakesRequest, ListHandshakesResponse> genForListHandshakes() {
         // basic
         HttpRequestDef.Builder<ListHandshakesRequest, ListHandshakesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHandshakesRequest.class, ListHandshakesResponse.class)
@@ -570,16 +534,12 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHandshakesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHandshakesRequest::getLimit, ListHandshakesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHandshakesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListHandshakesRequest::getMarker, ListHandshakesRequest::setMarker));
 
         // response
 
@@ -587,9 +547,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListReceivedHandshakesRequest, ListReceivedHandshakesResponse> listReceivedHandshakes =
-        genForlistReceivedHandshakes();
+        genForListReceivedHandshakes();
 
-    private static HttpRequestDef<ListReceivedHandshakesRequest, ListReceivedHandshakesResponse> genForlistReceivedHandshakes() {
+    private static HttpRequestDef<ListReceivedHandshakesRequest, ListReceivedHandshakesResponse> genForListReceivedHandshakes() {
         // basic
         HttpRequestDef.Builder<ListReceivedHandshakesRequest, ListReceivedHandshakesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListReceivedHandshakesRequest.class, ListReceivedHandshakesResponse.class)
@@ -602,16 +562,12 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListReceivedHandshakesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListReceivedHandshakesRequest::getLimit, ListReceivedHandshakesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReceivedHandshakesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListReceivedHandshakesRequest::getMarker, ListReceivedHandshakesRequest::setMarker));
 
         // response
 
@@ -619,9 +575,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ShowHandshakeRequest, ShowHandshakeResponse> showHandshake =
-        genForshowHandshake();
+        genForShowHandshake();
 
-    private static HttpRequestDef<ShowHandshakeRequest, ShowHandshakeResponse> genForshowHandshake() {
+    private static HttpRequestDef<ShowHandshakeRequest, ShowHandshakeResponse> genForShowHandshake() {
         // basic
         HttpRequestDef.Builder<ShowHandshakeRequest, ShowHandshakeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHandshakeRequest.class, ShowHandshakeResponse.class)
@@ -634,18 +590,16 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHandshakeRequest::getHandshakeId, (req, v) -> {
-                req.setHandshakeId(v);
-            }));
+            f -> f.withMarshaller(ShowHandshakeRequest::getHandshakeId, ShowHandshakeRequest::setHandshakeId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEntitiesRequest, ListEntitiesResponse> listEntities = genForlistEntities();
+    public static final HttpRequestDef<ListEntitiesRequest, ListEntitiesResponse> listEntities = genForListEntities();
 
-    private static HttpRequestDef<ListEntitiesRequest, ListEntitiesResponse> genForlistEntities() {
+    private static HttpRequestDef<ListEntitiesRequest, ListEntitiesResponse> genForListEntities() {
         // basic
         HttpRequestDef.Builder<ListEntitiesRequest, ListEntitiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEntitiesRequest.class, ListEntitiesResponse.class)
@@ -658,39 +612,31 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEntitiesRequest::getParentId, (req, v) -> {
-                req.setParentId(v);
-            }));
+            f -> f.withMarshaller(ListEntitiesRequest::getParentId, ListEntitiesRequest::setParentId));
         builder.<String>withRequestField("child_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEntitiesRequest::getChildId, (req, v) -> {
-                req.setChildId(v);
-            }));
+            f -> f.withMarshaller(ListEntitiesRequest::getChildId, ListEntitiesRequest::setChildId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEntitiesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEntitiesRequest::getLimit, ListEntitiesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEntitiesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListEntitiesRequest::getMarker, ListEntitiesRequest::setMarker));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForListQuotas();
 
-    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForListQuotas() {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
@@ -705,9 +651,9 @@ public class OrganizationsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListServicesRequest, ListServicesResponse> listServices = genForlistServices();
+    public static final HttpRequestDef<ListServicesRequest, ListServicesResponse> listServices = genForListServices();
 
-    private static HttpRequestDef<ListServicesRequest, ListServicesResponse> genForlistServices() {
+    private static HttpRequestDef<ListServicesRequest, ListServicesResponse> genForListServices() {
         // basic
         HttpRequestDef.Builder<ListServicesRequest, ListServicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServicesRequest.class, ListServicesResponse.class)
@@ -723,9 +669,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse> listTagPolicyServices =
-        genForlistTagPolicyServices();
+        genForListTagPolicyServices();
 
-    private static HttpRequestDef<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse> genForlistTagPolicyServices() {
+    private static HttpRequestDef<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse> genForListTagPolicyServices() {
         // basic
         HttpRequestDef.Builder<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTagPolicyServicesRequest.class, ListTagPolicyServicesResponse.class)
@@ -741,9 +687,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse> showEffectivePolicies =
-        genForshowEffectivePolicies();
+        genForShowEffectivePolicies();
 
-    private static HttpRequestDef<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse> genForshowEffectivePolicies() {
+    private static HttpRequestDef<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse> genForShowEffectivePolicies() {
         // basic
         HttpRequestDef.Builder<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEffectivePoliciesRequest.class, ShowEffectivePoliciesResponse.class)
@@ -756,16 +702,14 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEffectivePoliciesRequest::getEntityId, (req, v) -> {
-                req.setEntityId(v);
-            }));
+            f -> f.withMarshaller(ShowEffectivePoliciesRequest::getEntityId,
+                ShowEffectivePoliciesRequest::setEntityId));
         builder.<ShowEffectivePoliciesRequest.PolicyTypeEnum>withRequestField("policy_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowEffectivePoliciesRequest.PolicyTypeEnum.class),
-            f -> f.withMarshaller(ShowEffectivePoliciesRequest::getPolicyType, (req, v) -> {
-                req.setPolicyType(v);
-            }));
+            f -> f.withMarshaller(ShowEffectivePoliciesRequest::getPolicyType,
+                ShowEffectivePoliciesRequest::setPolicyType));
 
         // response
 
@@ -773,9 +717,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<CreateOrganizationRequest, CreateOrganizationResponse> createOrganization =
-        genForcreateOrganization();
+        genForCreateOrganization();
 
-    private static HttpRequestDef<CreateOrganizationRequest, CreateOrganizationResponse> genForcreateOrganization() {
+    private static HttpRequestDef<CreateOrganizationRequest, CreateOrganizationResponse> genForCreateOrganization() {
         // basic
         HttpRequestDef.Builder<CreateOrganizationRequest, CreateOrganizationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateOrganizationRequest.class, CreateOrganizationResponse.class)
@@ -791,9 +735,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<DeleteOrganizationRequest, DeleteOrganizationResponse> deleteOrganization =
-        genFordeleteOrganization();
+        genForDeleteOrganization();
 
-    private static HttpRequestDef<DeleteOrganizationRequest, DeleteOrganizationResponse> genFordeleteOrganization() {
+    private static HttpRequestDef<DeleteOrganizationRequest, DeleteOrganizationResponse> genForDeleteOrganization() {
         // basic
         HttpRequestDef.Builder<DeleteOrganizationRequest, DeleteOrganizationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteOrganizationRequest.class, DeleteOrganizationResponse.class)
@@ -809,9 +753,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<LeaveOrganizationRequest, LeaveOrganizationResponse> leaveOrganization =
-        genForleaveOrganization();
+        genForLeaveOrganization();
 
-    private static HttpRequestDef<LeaveOrganizationRequest, LeaveOrganizationResponse> genForleaveOrganization() {
+    private static HttpRequestDef<LeaveOrganizationRequest, LeaveOrganizationResponse> genForLeaveOrganization() {
         // basic
         HttpRequestDef.Builder<LeaveOrganizationRequest, LeaveOrganizationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, LeaveOrganizationRequest.class, LeaveOrganizationResponse.class)
@@ -826,9 +770,9 @@ public class OrganizationsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRootsRequest, ListRootsResponse> listRoots = genForlistRoots();
+    public static final HttpRequestDef<ListRootsRequest, ListRootsResponse> listRoots = genForListRoots();
 
-    private static HttpRequestDef<ListRootsRequest, ListRootsResponse> genForlistRoots() {
+    private static HttpRequestDef<ListRootsRequest, ListRootsResponse> genForListRoots() {
         // basic
         HttpRequestDef.Builder<ListRootsRequest, ListRootsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRootsRequest.class, ListRootsResponse.class)
@@ -841,16 +785,12 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRootsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRootsRequest::getLimit, ListRootsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRootsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListRootsRequest::getMarker, ListRootsRequest::setMarker));
 
         // response
 
@@ -858,9 +798,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ShowOrganizationRequest, ShowOrganizationResponse> showOrganization =
-        genForshowOrganization();
+        genForShowOrganization();
 
-    private static HttpRequestDef<ShowOrganizationRequest, ShowOrganizationResponse> genForshowOrganization() {
+    private static HttpRequestDef<ShowOrganizationRequest, ShowOrganizationResponse> genForShowOrganization() {
         // basic
         HttpRequestDef.Builder<ShowOrganizationRequest, ShowOrganizationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOrganizationRequest.class, ShowOrganizationResponse.class)
@@ -876,9 +816,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<CreateOrganizationalUnitRequest, CreateOrganizationalUnitResponse> createOrganizationalUnit =
-        genForcreateOrganizationalUnit();
+        genForCreateOrganizationalUnit();
 
-    private static HttpRequestDef<CreateOrganizationalUnitRequest, CreateOrganizationalUnitResponse> genForcreateOrganizationalUnit() {
+    private static HttpRequestDef<CreateOrganizationalUnitRequest, CreateOrganizationalUnitResponse> genForCreateOrganizationalUnit() {
         // basic
         HttpRequestDef.Builder<CreateOrganizationalUnitRequest, CreateOrganizationalUnitResponse> builder =
             HttpRequestDef
@@ -892,9 +832,7 @@ public class OrganizationsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateOrganizationalUnitReqBody.class),
-            f -> f.withMarshaller(CreateOrganizationalUnitRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOrganizationalUnitRequest::getBody, CreateOrganizationalUnitRequest::setBody));
 
         // response
 
@@ -902,9 +840,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<DeleteOrganizationalUnitRequest, DeleteOrganizationalUnitResponse> deleteOrganizationalUnit =
-        genFordeleteOrganizationalUnit();
+        genForDeleteOrganizationalUnit();
 
-    private static HttpRequestDef<DeleteOrganizationalUnitRequest, DeleteOrganizationalUnitResponse> genFordeleteOrganizationalUnit() {
+    private static HttpRequestDef<DeleteOrganizationalUnitRequest, DeleteOrganizationalUnitResponse> genForDeleteOrganizationalUnit() {
         // basic
         HttpRequestDef.Builder<DeleteOrganizationalUnitRequest, DeleteOrganizationalUnitResponse> builder =
             HttpRequestDef
@@ -920,9 +858,8 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteOrganizationalUnitRequest::getOrganizationalUnitId, (req, v) -> {
-                req.setOrganizationalUnitId(v);
-            }));
+            f -> f.withMarshaller(DeleteOrganizationalUnitRequest::getOrganizationalUnitId,
+                DeleteOrganizationalUnitRequest::setOrganizationalUnitId));
 
         // response
 
@@ -930,9 +867,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListOrganizationalUnitsRequest, ListOrganizationalUnitsResponse> listOrganizationalUnits =
-        genForlistOrganizationalUnits();
+        genForListOrganizationalUnits();
 
-    private static HttpRequestDef<ListOrganizationalUnitsRequest, ListOrganizationalUnitsResponse> genForlistOrganizationalUnits() {
+    private static HttpRequestDef<ListOrganizationalUnitsRequest, ListOrganizationalUnitsResponse> genForListOrganizationalUnits() {
         // basic
         HttpRequestDef.Builder<ListOrganizationalUnitsRequest, ListOrganizationalUnitsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListOrganizationalUnitsRequest.class, ListOrganizationalUnitsResponse.class)
@@ -945,23 +882,19 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationalUnitsRequest::getParentId, (req, v) -> {
-                req.setParentId(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationalUnitsRequest::getParentId,
+                ListOrganizationalUnitsRequest::setParentId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOrganizationalUnitsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationalUnitsRequest::getLimit, ListOrganizationalUnitsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationalUnitsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListOrganizationalUnitsRequest::getMarker,
+                ListOrganizationalUnitsRequest::setMarker));
 
         // response
 
@@ -969,9 +902,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ShowOrganizationalUnitRequest, ShowOrganizationalUnitResponse> showOrganizationalUnit =
-        genForshowOrganizationalUnit();
+        genForShowOrganizationalUnit();
 
-    private static HttpRequestDef<ShowOrganizationalUnitRequest, ShowOrganizationalUnitResponse> genForshowOrganizationalUnit() {
+    private static HttpRequestDef<ShowOrganizationalUnitRequest, ShowOrganizationalUnitResponse> genForShowOrganizationalUnit() {
         // basic
         HttpRequestDef.Builder<ShowOrganizationalUnitRequest, ShowOrganizationalUnitResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowOrganizationalUnitRequest.class, ShowOrganizationalUnitResponse.class)
@@ -984,9 +917,8 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOrganizationalUnitRequest::getOrganizationalUnitId, (req, v) -> {
-                req.setOrganizationalUnitId(v);
-            }));
+            f -> f.withMarshaller(ShowOrganizationalUnitRequest::getOrganizationalUnitId,
+                ShowOrganizationalUnitRequest::setOrganizationalUnitId));
 
         // response
 
@@ -994,9 +926,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<UpdateOrganizationalUnitRequest, UpdateOrganizationalUnitResponse> updateOrganizationalUnit =
-        genForupdateOrganizationalUnit();
+        genForUpdateOrganizationalUnit();
 
-    private static HttpRequestDef<UpdateOrganizationalUnitRequest, UpdateOrganizationalUnitResponse> genForupdateOrganizationalUnit() {
+    private static HttpRequestDef<UpdateOrganizationalUnitRequest, UpdateOrganizationalUnitResponse> genForUpdateOrganizationalUnit() {
         // basic
         HttpRequestDef.Builder<UpdateOrganizationalUnitRequest, UpdateOrganizationalUnitResponse> builder =
             HttpRequestDef
@@ -1012,25 +944,22 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateOrganizationalUnitRequest::getOrganizationalUnitId, (req, v) -> {
-                req.setOrganizationalUnitId(v);
-            }));
+            f -> f.withMarshaller(UpdateOrganizationalUnitRequest::getOrganizationalUnitId,
+                UpdateOrganizationalUnitRequest::setOrganizationalUnitId));
         builder.<UpdateOrganizationalUnitReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateOrganizationalUnitReqBody.class),
-            f -> f.withMarshaller(UpdateOrganizationalUnitRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateOrganizationalUnitRequest::getBody, UpdateOrganizationalUnitRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AttachPolicyRequest, AttachPolicyResponse> attachPolicy = genForattachPolicy();
+    public static final HttpRequestDef<AttachPolicyRequest, AttachPolicyResponse> attachPolicy = genForAttachPolicy();
 
-    private static HttpRequestDef<AttachPolicyRequest, AttachPolicyResponse> genForattachPolicy() {
+    private static HttpRequestDef<AttachPolicyRequest, AttachPolicyResponse> genForAttachPolicy() {
         // basic
         HttpRequestDef.Builder<AttachPolicyRequest, AttachPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AttachPolicyRequest.class, AttachPolicyResponse.class)
@@ -1043,25 +972,21 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(AttachPolicyRequest::getPolicyId, AttachPolicyRequest::setPolicyId));
         builder.<PolicyTachReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PolicyTachReqBody.class),
-            f -> f.withMarshaller(AttachPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachPolicyRequest::getBody, AttachPolicyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForcreatePolicy();
+    public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForCreatePolicy();
 
-    private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForcreatePolicy() {
+    private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForCreatePolicy() {
         // basic
         HttpRequestDef.Builder<CreatePolicyRequest, CreatePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePolicyRequest.class, CreatePolicyResponse.class)
@@ -1074,25 +999,21 @@ public class OrganizationsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreatePolicyRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CreatePolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreatePolicyRequest::getXLanguage, CreatePolicyRequest::setXLanguage));
         builder.<CreatePolicyReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePolicyReqBody.class),
-            f -> f.withMarshaller(CreatePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePolicyRequest::getBody, CreatePolicyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> deletePolicy = genFordeletePolicy();
+    public static final HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> deletePolicy = genForDeletePolicy();
 
-    private static HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> genFordeletePolicy() {
+    private static HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> genForDeletePolicy() {
         // basic
         HttpRequestDef.Builder<DeletePolicyRequest, DeletePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePolicyRequest.class, DeletePolicyResponse.class)
@@ -1105,18 +1026,16 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, DeletePolicyRequest::setPolicyId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DetachPolicyRequest, DetachPolicyResponse> detachPolicy = genFordetachPolicy();
+    public static final HttpRequestDef<DetachPolicyRequest, DetachPolicyResponse> detachPolicy = genForDetachPolicy();
 
-    private static HttpRequestDef<DetachPolicyRequest, DetachPolicyResponse> genFordetachPolicy() {
+    private static HttpRequestDef<DetachPolicyRequest, DetachPolicyResponse> genForDetachPolicy() {
         // basic
         HttpRequestDef.Builder<DetachPolicyRequest, DetachPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DetachPolicyRequest.class, DetachPolicyResponse.class)
@@ -1129,16 +1048,12 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(DetachPolicyRequest::getPolicyId, DetachPolicyRequest::setPolicyId));
         builder.<PolicyTachReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PolicyTachReqBody.class),
-            f -> f.withMarshaller(DetachPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetachPolicyRequest::getBody, DetachPolicyRequest::setBody));
 
         // response
 
@@ -1146,9 +1061,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<DisablePolicyTypeRequest, DisablePolicyTypeResponse> disablePolicyType =
-        genFordisablePolicyType();
+        genForDisablePolicyType();
 
-    private static HttpRequestDef<DisablePolicyTypeRequest, DisablePolicyTypeResponse> genFordisablePolicyType() {
+    private static HttpRequestDef<DisablePolicyTypeRequest, DisablePolicyTypeResponse> genForDisablePolicyType() {
         // basic
         HttpRequestDef.Builder<DisablePolicyTypeRequest, DisablePolicyTypeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisablePolicyTypeRequest.class, DisablePolicyTypeResponse.class)
@@ -1161,9 +1076,7 @@ public class OrganizationsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PolicyTypeReqBody.class),
-            f -> f.withMarshaller(DisablePolicyTypeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisablePolicyTypeRequest::getBody, DisablePolicyTypeRequest::setBody));
 
         // response
 
@@ -1171,9 +1084,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<EnablePolicyTypeRequest, EnablePolicyTypeResponse> enablePolicyType =
-        genForenablePolicyType();
+        genForEnablePolicyType();
 
-    private static HttpRequestDef<EnablePolicyTypeRequest, EnablePolicyTypeResponse> genForenablePolicyType() {
+    private static HttpRequestDef<EnablePolicyTypeRequest, EnablePolicyTypeResponse> genForEnablePolicyType() {
         // basic
         HttpRequestDef.Builder<EnablePolicyTypeRequest, EnablePolicyTypeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnablePolicyTypeRequest.class, EnablePolicyTypeResponse.class)
@@ -1186,9 +1099,7 @@ public class OrganizationsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PolicyTypeReqBody.class),
-            f -> f.withMarshaller(EnablePolicyTypeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EnablePolicyTypeRequest::getBody, EnablePolicyTypeRequest::setBody));
 
         // response
 
@@ -1196,9 +1107,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResponse> listEntitiesForPolicy =
-        genForlistEntitiesForPolicy();
+        genForListEntitiesForPolicy();
 
-    private static HttpRequestDef<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResponse> genForlistEntitiesForPolicy() {
+    private static HttpRequestDef<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResponse> genForListEntitiesForPolicy() {
         // basic
         HttpRequestDef.Builder<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEntitiesForPolicyRequest.class, ListEntitiesForPolicyResponse.class)
@@ -1211,32 +1122,27 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEntitiesForPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(ListEntitiesForPolicyRequest::getPolicyId,
+                ListEntitiesForPolicyRequest::setPolicyId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEntitiesForPolicyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEntitiesForPolicyRequest::getLimit, ListEntitiesForPolicyRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEntitiesForPolicyRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListEntitiesForPolicyRequest::getMarker, ListEntitiesForPolicyRequest::setMarker));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> listPolicies = genForlistPolicies();
+    public static final HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> listPolicies = genForListPolicies();
 
-    private static HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> genForlistPolicies() {
+    private static HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> genForListPolicies() {
         // basic
         HttpRequestDef.Builder<ListPoliciesRequest, ListPoliciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPoliciesRequest.class, ListPoliciesResponse.class)
@@ -1249,39 +1155,31 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoliciesRequest::getAttachedEntityId, (req, v) -> {
-                req.setAttachedEntityId(v);
-            }));
+            f -> f.withMarshaller(ListPoliciesRequest::getAttachedEntityId, ListPoliciesRequest::setAttachedEntityId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPoliciesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPoliciesRequest::getLimit, ListPoliciesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoliciesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPoliciesRequest::getMarker, ListPoliciesRequest::setMarker));
         builder.<ListPoliciesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPoliciesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListPoliciesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListPoliciesRequest::getXLanguage, ListPoliciesRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> showPolicy = genForshowPolicy();
+    public static final HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> showPolicy = genForShowPolicy();
 
-    private static HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> genForshowPolicy() {
+    private static HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> genForShowPolicy() {
         // basic
         HttpRequestDef.Builder<ShowPolicyRequest, ShowPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPolicyRequest.class, ShowPolicyResponse.class)
@@ -1294,25 +1192,21 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(ShowPolicyRequest::getPolicyId, ShowPolicyRequest::setPolicyId));
         builder.<ShowPolicyRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowPolicyRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowPolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowPolicyRequest::getXLanguage, ShowPolicyRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicy = genForupdatePolicy();
+    public static final HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicy = genForUpdatePolicy();
 
-    private static HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> genForupdatePolicy() {
+    private static HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> genForUpdatePolicy() {
         // basic
         HttpRequestDef.Builder<UpdatePolicyRequest, UpdatePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdatePolicyRequest.class, UpdatePolicyResponse.class)
@@ -1325,23 +1219,17 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyRequest::getPolicyId, UpdatePolicyRequest::setPolicyId));
         builder.<UpdatePolicyRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdatePolicyRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(UpdatePolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyRequest::getXLanguage, UpdatePolicyRequest::setXLanguage));
         builder.<UpdatePolicyReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePolicyReqBody.class),
-            f -> f.withMarshaller(UpdatePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePolicyRequest::getBody, UpdatePolicyRequest::setBody));
 
         // response
 
@@ -1349,9 +1237,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<CreateTagResourceRequest, CreateTagResourceResponse> createTagResource =
-        genForcreateTagResource();
+        genForCreateTagResource();
 
-    private static HttpRequestDef<CreateTagResourceRequest, CreateTagResourceResponse> genForcreateTagResource() {
+    private static HttpRequestDef<CreateTagResourceRequest, CreateTagResourceResponse> genForCreateTagResource() {
         // basic
         HttpRequestDef.Builder<CreateTagResourceRequest, CreateTagResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTagResourceRequest.class, CreateTagResourceResponse.class)
@@ -1364,23 +1252,18 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTagResourceRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(CreateTagResourceRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CreateTagResourceRequest::getResourceType,
+                CreateTagResourceRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagResourceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateTagResourceRequest::getResourceId, CreateTagResourceRequest::setResourceId));
         builder.<TagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagResourceReqBody.class),
-            f -> f.withMarshaller(CreateTagResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTagResourceRequest::getBody, CreateTagResourceRequest::setBody));
 
         // response
 
@@ -1388,9 +1271,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<DeleteTagResourceRequest, DeleteTagResourceResponse> deleteTagResource =
-        genFordeleteTagResource();
+        genForDeleteTagResource();
 
-    private static HttpRequestDef<DeleteTagResourceRequest, DeleteTagResourceResponse> genFordeleteTagResource() {
+    private static HttpRequestDef<DeleteTagResourceRequest, DeleteTagResourceResponse> genForDeleteTagResource() {
         // basic
         HttpRequestDef.Builder<DeleteTagResourceRequest, DeleteTagResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteTagResourceRequest.class, DeleteTagResourceResponse.class)
@@ -1403,23 +1286,18 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteTagResourceRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(DeleteTagResourceRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(DeleteTagResourceRequest::getResourceType,
+                DeleteTagResourceRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagResourceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTagResourceRequest::getResourceId, DeleteTagResourceRequest::setResourceId));
         builder.<TagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagResourceReqBody.class),
-            f -> f.withMarshaller(DeleteTagResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteTagResourceRequest::getBody, DeleteTagResourceRequest::setBody));
 
         // response
 
@@ -1427,9 +1305,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstances =
-        genForlistResourceInstances();
+        genForListResourceInstances();
 
-    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForlistResourceInstances() {
+    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForListResourceInstances() {
         // basic
         HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
@@ -1442,30 +1320,23 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceInstancesRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType,
+                ListResourceInstancesRequest::setResourceType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getLimit, ListResourceInstancesRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getOffset, ListResourceInstancesRequest::setOffset));
         builder.<ResourceInstanceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceInstanceReqBody.class),
-            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, ListResourceInstancesRequest::setBody));
 
         // response
 
@@ -1473,9 +1344,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTags =
-        genForlistResourceTags();
+        genForListResourceTags();
 
-    private static HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> genForlistResourceTags() {
+    private static HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> genForListResourceTags() {
         // basic
         HttpRequestDef.Builder<ListResourceTagsRequest, ListResourceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceTagsRequest.class, ListResourceTagsResponse.class)
@@ -1488,9 +1359,7 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceTagsRequest::getResourceType, ListResourceTagsRequest::setResourceType));
 
         // response
 
@@ -1498,9 +1367,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListTagResourcesRequest, ListTagResourcesResponse> listTagResources =
-        genForlistTagResources();
+        genForListTagResources();
 
-    private static HttpRequestDef<ListTagResourcesRequest, ListTagResourcesResponse> genForlistTagResources() {
+    private static HttpRequestDef<ListTagResourcesRequest, ListTagResourcesResponse> genForListTagResources() {
         // basic
         HttpRequestDef.Builder<ListTagResourcesRequest, ListTagResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagResourcesRequest.class, ListTagResourcesResponse.class)
@@ -1513,30 +1382,22 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTagResourcesRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListTagResourcesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListTagResourcesRequest::getResourceType, ListTagResourcesRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagResourcesRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListTagResourcesRequest::getResourceId, ListTagResourcesRequest::setResourceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTagResourcesRequest::getLimit, ListTagResourcesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagResourcesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTagResourcesRequest::getMarker, ListTagResourcesRequest::setMarker));
 
         // response
 
@@ -1544,9 +1405,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListTagsForResourceRequest, ListTagsForResourceResponse> listTagsForResource =
-        genForlistTagsForResource();
+        genForListTagsForResource();
 
-    private static HttpRequestDef<ListTagsForResourceRequest, ListTagsForResourceResponse> genForlistTagsForResource() {
+    private static HttpRequestDef<ListTagsForResourceRequest, ListTagsForResourceResponse> genForListTagsForResource() {
         // basic
         HttpRequestDef.Builder<ListTagsForResourceRequest, ListTagsForResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsForResourceRequest.class, ListTagsForResourceResponse.class)
@@ -1559,23 +1420,18 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsForResourceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListTagsForResourceRequest::getResourceId,
+                ListTagsForResourceRequest::setResourceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagsForResourceRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTagsForResourceRequest::getLimit, ListTagsForResourceRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsForResourceRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTagsForResourceRequest::getMarker, ListTagsForResourceRequest::setMarker));
 
         // response
 
@@ -1583,9 +1439,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse> showResourceInstancesCount =
-        genForshowResourceInstancesCount();
+        genForShowResourceInstancesCount();
 
-    private static HttpRequestDef<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse> genForshowResourceInstancesCount() {
+    private static HttpRequestDef<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse> genForShowResourceInstancesCount() {
         // basic
         HttpRequestDef.Builder<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse> builder =
             HttpRequestDef
@@ -1601,25 +1457,23 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowResourceInstancesCountRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ShowResourceInstancesCountRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ShowResourceInstancesCountRequest::getResourceType,
+                ShowResourceInstancesCountRequest::setResourceType));
         builder.<ResourceInstanceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceInstanceReqBody.class),
-            f -> f.withMarshaller(ShowResourceInstancesCountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowResourceInstancesCountRequest::getBody,
+                ShowResourceInstancesCountRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<TagResourceRequest, TagResourceResponse> tagResource = genFortagResource();
+    public static final HttpRequestDef<TagResourceRequest, TagResourceResponse> tagResource = genForTagResource();
 
-    private static HttpRequestDef<TagResourceRequest, TagResourceResponse> genFortagResource() {
+    private static HttpRequestDef<TagResourceRequest, TagResourceResponse> genForTagResource() {
         // basic
         HttpRequestDef.Builder<TagResourceRequest, TagResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, TagResourceRequest.class, TagResourceResponse.class)
@@ -1632,16 +1486,12 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(TagResourceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(TagResourceRequest::getResourceId, TagResourceRequest::setResourceId));
         builder.<TagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagResourceReqBody.class),
-            f -> f.withMarshaller(TagResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(TagResourceRequest::getBody, TagResourceRequest::setBody));
 
         // response
 
@@ -1649,9 +1499,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<UntagResourceRequest, UntagResourceResponse> untagResource =
-        genForuntagResource();
+        genForUntagResource();
 
-    private static HttpRequestDef<UntagResourceRequest, UntagResourceResponse> genForuntagResource() {
+    private static HttpRequestDef<UntagResourceRequest, UntagResourceResponse> genForUntagResource() {
         // basic
         HttpRequestDef.Builder<UntagResourceRequest, UntagResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UntagResourceRequest.class, UntagResourceResponse.class)
@@ -1664,16 +1514,12 @@ public class OrganizationsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UntagResourceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(UntagResourceRequest::getResourceId, UntagResourceRequest::setResourceId));
         builder.<UntagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UntagResourceReqBody.class),
-            f -> f.withMarshaller(UntagResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UntagResourceRequest::getBody, UntagResourceRequest::setBody));
 
         // response
 
@@ -1681,9 +1527,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<DisableTrustedServiceRequest, DisableTrustedServiceResponse> disableTrustedService =
-        genFordisableTrustedService();
+        genForDisableTrustedService();
 
-    private static HttpRequestDef<DisableTrustedServiceRequest, DisableTrustedServiceResponse> genFordisableTrustedService() {
+    private static HttpRequestDef<DisableTrustedServiceRequest, DisableTrustedServiceResponse> genForDisableTrustedService() {
         // basic
         HttpRequestDef.Builder<DisableTrustedServiceRequest, DisableTrustedServiceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DisableTrustedServiceRequest.class, DisableTrustedServiceResponse.class)
@@ -1696,9 +1542,7 @@ public class OrganizationsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TrustedServiceReqBody.class),
-            f -> f.withMarshaller(DisableTrustedServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisableTrustedServiceRequest::getBody, DisableTrustedServiceRequest::setBody));
 
         // response
 
@@ -1706,9 +1550,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<EnableTrustedServiceRequest, EnableTrustedServiceResponse> enableTrustedService =
-        genForenableTrustedService();
+        genForEnableTrustedService();
 
-    private static HttpRequestDef<EnableTrustedServiceRequest, EnableTrustedServiceResponse> genForenableTrustedService() {
+    private static HttpRequestDef<EnableTrustedServiceRequest, EnableTrustedServiceResponse> genForEnableTrustedService() {
         // basic
         HttpRequestDef.Builder<EnableTrustedServiceRequest, EnableTrustedServiceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, EnableTrustedServiceRequest.class, EnableTrustedServiceResponse.class)
@@ -1721,9 +1565,7 @@ public class OrganizationsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TrustedServiceReqBody.class),
-            f -> f.withMarshaller(EnableTrustedServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EnableTrustedServiceRequest::getBody, EnableTrustedServiceRequest::setBody));
 
         // response
 
@@ -1731,9 +1573,9 @@ public class OrganizationsMeta {
     }
 
     public static final HttpRequestDef<ListTrustedServicesRequest, ListTrustedServicesResponse> listTrustedServices =
-        genForlistTrustedServices();
+        genForListTrustedServices();
 
-    private static HttpRequestDef<ListTrustedServicesRequest, ListTrustedServicesResponse> genForlistTrustedServices() {
+    private static HttpRequestDef<ListTrustedServicesRequest, ListTrustedServicesResponse> genForListTrustedServices() {
         // basic
         HttpRequestDef.Builder<ListTrustedServicesRequest, ListTrustedServicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTrustedServicesRequest.class, ListTrustedServicesResponse.class)
@@ -1746,16 +1588,12 @@ public class OrganizationsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTrustedServicesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTrustedServicesRequest::getLimit, ListTrustedServicesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrustedServicesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListTrustedServicesRequest::getMarker, ListTrustedServicesRequest::setMarker));
 
         // response
 

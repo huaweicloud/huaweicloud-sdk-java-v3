@@ -83,7 +83,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectHotQuestionsRequest 请求对象
+     * @param request CollectHotQuestionsRequest 请求对象
      * @return CollectHotQuestionsResponse
      */
     public CollectHotQuestionsResponse collectHotQuestions(CollectHotQuestionsRequest request) {
@@ -98,13 +98,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectHotQuestionsRequest 请求对象
+     * @param request CollectHotQuestionsRequest 请求对象
      * @return SyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse>
      */
     public SyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse> collectHotQuestionsInvoker(
         CollectHotQuestionsRequest request) {
-        return new SyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse>(request,
-            CbsMeta.collectHotQuestions, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.collectHotQuestions, hcClient);
     }
 
     /**
@@ -114,7 +113,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectKeyWordsRequest 请求对象
+     * @param request CollectKeyWordsRequest 请求对象
      * @return CollectKeyWordsResponse
      */
     public CollectKeyWordsResponse collectKeyWords(CollectKeyWordsRequest request) {
@@ -128,13 +127,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectKeyWordsRequest 请求对象
+     * @param request CollectKeyWordsRequest 请求对象
      * @return SyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse>
      */
     public SyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse> collectKeyWordsInvoker(
         CollectKeyWordsRequest request) {
-        return new SyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse>(request, CbsMeta.collectKeyWords,
-            hcClient);
+        return new SyncInvoker<>(request, CbsMeta.collectKeyWords, hcClient);
     }
 
     /**
@@ -145,7 +143,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectReplyRatesRequest 请求对象
+     * @param request CollectReplyRatesRequest 请求对象
      * @return CollectReplyRatesResponse
      */
     public CollectReplyRatesResponse collectReplyRates(CollectReplyRatesRequest request) {
@@ -160,13 +158,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectReplyRatesRequest 请求对象
+     * @param request CollectReplyRatesRequest 请求对象
      * @return SyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse>
      */
     public SyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse> collectReplyRatesInvoker(
         CollectReplyRatesRequest request) {
-        return new SyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse>(request, CbsMeta.collectReplyRates,
-            hcClient);
+        return new SyncInvoker<>(request, CbsMeta.collectReplyRates, hcClient);
     }
 
     /**
@@ -176,7 +173,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectSessionStatsRequest 请求对象
+     * @param request CollectSessionStatsRequest 请求对象
      * @return CollectSessionStatsResponse
      */
     public CollectSessionStatsResponse collectSessionStats(CollectSessionStatsRequest request) {
@@ -190,13 +187,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectSessionStatsRequest 请求对象
+     * @param request CollectSessionStatsRequest 请求对象
      * @return SyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse>
      */
     public SyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse> collectSessionStatsInvoker(
         CollectSessionStatsRequest request) {
-        return new SyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse>(request,
-            CbsMeta.collectSessionStats, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.collectSessionStats, hcClient);
     }
 
     /**
@@ -206,7 +202,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSessionRequest 请求对象
+     * @param request CreateSessionRequest 请求对象
      * @return CreateSessionResponse
      */
     @Deprecated
@@ -221,12 +217,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSessionRequest 请求对象
+     * @param request CreateSessionRequest 请求对象
      * @return SyncInvoker<CreateSessionRequest, CreateSessionResponse>
      */
     @Deprecated
     public SyncInvoker<CreateSessionRequest, CreateSessionResponse> createSessionInvoker(CreateSessionRequest request) {
-        return new SyncInvoker<CreateSessionRequest, CreateSessionResponse>(request, CbsMeta.createSession, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.createSession, hcClient);
     }
 
     /**
@@ -236,7 +232,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSessionRequest 请求对象
+     * @param request DeleteSessionRequest 请求对象
      * @return DeleteSessionResponse
      */
     @Deprecated
@@ -251,12 +247,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSessionRequest 请求对象
+     * @param request DeleteSessionRequest 请求对象
      * @return SyncInvoker<DeleteSessionRequest, DeleteSessionResponse>
      */
     @Deprecated
     public SyncInvoker<DeleteSessionRequest, DeleteSessionResponse> deleteSessionInvoker(DeleteSessionRequest request) {
-        return new SyncInvoker<DeleteSessionRequest, DeleteSessionResponse>(request, CbsMeta.deleteSession, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.deleteSession, hcClient);
     }
 
     /**
@@ -265,7 +261,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteComposeVideoRequest 请求对象
+     * @param request ExecuteComposeVideoRequest 请求对象
      * @return ExecuteComposeVideoResponse
      */
     public ExecuteComposeVideoResponse executeComposeVideo(ExecuteComposeVideoRequest request) {
@@ -278,13 +274,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteComposeVideoRequest 请求对象
+     * @param request ExecuteComposeVideoRequest 请求对象
      * @return SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse>
      */
     public SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse> executeComposeVideoInvoker(
         ExecuteComposeVideoRequest request) {
-        return new SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse>(request,
-            CbsMeta.executeComposeVideo, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeComposeVideo, hcClient);
     }
 
     /**
@@ -293,7 +288,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteComposeVideoOndemandRequest 请求对象
+     * @param request ExecuteComposeVideoOndemandRequest 请求对象
      * @return ExecuteComposeVideoOndemandResponse
      */
     public ExecuteComposeVideoOndemandResponse executeComposeVideoOndemand(ExecuteComposeVideoOndemandRequest request) {
@@ -306,13 +301,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteComposeVideoOndemandRequest 请求对象
+     * @param request ExecuteComposeVideoOndemandRequest 请求对象
      * @return SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse>
      */
     public SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse> executeComposeVideoOndemandInvoker(
         ExecuteComposeVideoOndemandRequest request) {
-        return new SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse>(request,
-            CbsMeta.executeComposeVideoOndemand, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeComposeVideoOndemand, hcClient);
     }
 
     /**
@@ -321,7 +315,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteCreateVideoRequest 请求对象
+     * @param request ExecuteCreateVideoRequest 请求对象
      * @return ExecuteCreateVideoResponse
      */
     public ExecuteCreateVideoResponse executeCreateVideo(ExecuteCreateVideoRequest request) {
@@ -334,13 +328,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteCreateVideoRequest 请求对象
+     * @param request ExecuteCreateVideoRequest 请求对象
      * @return SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse>
      */
     public SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse> executeCreateVideoInvoker(
         ExecuteCreateVideoRequest request) {
-        return new SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse>(request,
-            CbsMeta.executeCreateVideo, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeCreateVideo, hcClient);
     }
 
     /**
@@ -349,7 +342,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeleteVideoByIdRequest 请求对象
+     * @param request ExecuteDeleteVideoByIdRequest 请求对象
      * @return ExecuteDeleteVideoByIdResponse
      */
     public ExecuteDeleteVideoByIdResponse executeDeleteVideoById(ExecuteDeleteVideoByIdRequest request) {
@@ -362,13 +355,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeleteVideoByIdRequest 请求对象
+     * @param request ExecuteDeleteVideoByIdRequest 请求对象
      * @return SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse>
      */
     public SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse> executeDeleteVideoByIdInvoker(
         ExecuteDeleteVideoByIdRequest request) {
-        return new SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse>(request,
-            CbsMeta.executeDeleteVideoById, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeDeleteVideoById, hcClient);
     }
 
     /**
@@ -377,7 +369,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeleteimageByIdRequest 请求对象
+     * @param request ExecuteDeleteimageByIdRequest 请求对象
      * @return ExecuteDeleteimageByIdResponse
      */
     public ExecuteDeleteimageByIdResponse executeDeleteimageById(ExecuteDeleteimageByIdRequest request) {
@@ -390,13 +382,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteDeleteimageByIdRequest 请求对象
+     * @param request ExecuteDeleteimageByIdRequest 请求对象
      * @return SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse>
      */
     public SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse> executeDeleteimageByIdInvoker(
         ExecuteDeleteimageByIdRequest request) {
-        return new SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse>(request,
-            CbsMeta.executeDeleteimageById, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeDeleteimageById, hcClient);
     }
 
     /**
@@ -405,7 +396,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetCharacterInfoByIdRequest 请求对象
+     * @param request ExecuteGetCharacterInfoByIdRequest 请求对象
      * @return ExecuteGetCharacterInfoByIdResponse
      */
     public ExecuteGetCharacterInfoByIdResponse executeGetCharacterInfoById(ExecuteGetCharacterInfoByIdRequest request) {
@@ -418,13 +409,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetCharacterInfoByIdRequest 请求对象
+     * @param request ExecuteGetCharacterInfoByIdRequest 请求对象
      * @return SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse>
      */
     public SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse> executeGetCharacterInfoByIdInvoker(
         ExecuteGetCharacterInfoByIdRequest request) {
-        return new SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse>(request,
-            CbsMeta.executeGetCharacterInfoById, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeGetCharacterInfoById, hcClient);
     }
 
     /**
@@ -436,7 +426,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetCharactersRequest 请求对象
+     * @param request ExecuteGetCharactersRequest 请求对象
      * @return ExecuteGetCharactersResponse
      */
     public ExecuteGetCharactersResponse executeGetCharacters(ExecuteGetCharactersRequest request) {
@@ -452,13 +442,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetCharactersRequest 请求对象
+     * @param request ExecuteGetCharactersRequest 请求对象
      * @return SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse>
      */
     public SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse> executeGetCharactersInvoker(
         ExecuteGetCharactersRequest request) {
-        return new SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse>(request,
-            CbsMeta.executeGetCharacters, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeGetCharacters, hcClient);
     }
 
     /**
@@ -468,7 +457,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetFramsListByImagesIdRequest 请求对象
+     * @param request ExecuteGetFramsListByImagesIdRequest 请求对象
      * @return ExecuteGetFramsListByImagesIdResponse
      */
     public ExecuteGetFramsListByImagesIdResponse executeGetFramsListByImagesId(
@@ -483,13 +472,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetFramsListByImagesIdRequest 请求对象
+     * @param request ExecuteGetFramsListByImagesIdRequest 请求对象
      * @return SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse>
      */
     public SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse> executeGetFramsListByImagesIdInvoker(
         ExecuteGetFramsListByImagesIdRequest request) {
-        return new SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse>(request,
-            CbsMeta.executeGetFramsListByImagesId, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeGetFramsListByImagesId, hcClient);
     }
 
     /**
@@ -498,7 +486,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetImagesListRequest 请求对象
+     * @param request ExecuteGetImagesListRequest 请求对象
      * @return ExecuteGetImagesListResponse
      */
     public ExecuteGetImagesListResponse executeGetImagesList(ExecuteGetImagesListRequest request) {
@@ -511,13 +499,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetImagesListRequest 请求对象
+     * @param request ExecuteGetImagesListRequest 请求对象
      * @return SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse>
      */
     public SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse> executeGetImagesListInvoker(
         ExecuteGetImagesListRequest request) {
-        return new SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse>(request,
-            CbsMeta.executeGetImagesList, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeGetImagesList, hcClient);
     }
 
     /**
@@ -526,7 +513,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetVideoInfoByIdRequest 请求对象
+     * @param request ExecuteGetVideoInfoByIdRequest 请求对象
      * @return ExecuteGetVideoInfoByIdResponse
      */
     public ExecuteGetVideoInfoByIdResponse executeGetVideoInfoById(ExecuteGetVideoInfoByIdRequest request) {
@@ -539,13 +526,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetVideoInfoByIdRequest 请求对象
+     * @param request ExecuteGetVideoInfoByIdRequest 请求对象
      * @return SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse>
      */
     public SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse> executeGetVideoInfoByIdInvoker(
         ExecuteGetVideoInfoByIdRequest request) {
-        return new SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse>(request,
-            CbsMeta.executeGetVideoInfoById, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeGetVideoInfoById, hcClient);
     }
 
     /**
@@ -555,7 +541,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetVideosListRequest 请求对象
+     * @param request ExecuteGetVideosListRequest 请求对象
      * @return ExecuteGetVideosListResponse
      */
     public ExecuteGetVideosListResponse executeGetVideosList(ExecuteGetVideosListRequest request) {
@@ -569,13 +555,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteGetVideosListRequest 请求对象
+     * @param request ExecuteGetVideosListRequest 请求对象
      * @return SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse>
      */
     public SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse> executeGetVideosListInvoker(
         ExecuteGetVideosListRequest request) {
-        return new SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse>(request,
-            CbsMeta.executeGetVideosList, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeGetVideosList, hcClient);
     }
 
     /**
@@ -584,7 +569,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecutePostCreateImagesRequest 请求对象
+     * @param request ExecutePostCreateImagesRequest 请求对象
      * @return ExecutePostCreateImagesResponse
      */
     public ExecutePostCreateImagesResponse executePostCreateImages(ExecutePostCreateImagesRequest request) {
@@ -597,13 +582,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecutePostCreateImagesRequest 请求对象
+     * @param request ExecutePostCreateImagesRequest 请求对象
      * @return SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse>
      */
     public SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse> executePostCreateImagesInvoker(
         ExecutePostCreateImagesRequest request) {
-        return new SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse>(request,
-            CbsMeta.executePostCreateImages, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executePostCreateImages, hcClient);
     }
 
     /**
@@ -613,7 +597,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteQaChatRequest 请求对象
+     * @param request ExecuteQaChatRequest 请求对象
      * @return ExecuteQaChatResponse
      */
     public ExecuteQaChatResponse executeQaChat(ExecuteQaChatRequest request) {
@@ -627,11 +611,11 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteQaChatRequest 请求对象
+     * @param request ExecuteQaChatRequest 请求对象
      * @return SyncInvoker<ExecuteQaChatRequest, ExecuteQaChatResponse>
      */
     public SyncInvoker<ExecuteQaChatRequest, ExecuteQaChatResponse> executeQaChatInvoker(ExecuteQaChatRequest request) {
-        return new SyncInvoker<ExecuteQaChatRequest, ExecuteQaChatResponse>(request, CbsMeta.executeQaChat, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeQaChat, hcClient);
     }
 
     /**
@@ -641,7 +625,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteSessionRequest 请求对象
+     * @param request ExecuteSessionRequest 请求对象
      * @return ExecuteSessionResponse
      */
     @Deprecated
@@ -656,14 +640,13 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteSessionRequest 请求对象
+     * @param request ExecuteSessionRequest 请求对象
      * @return SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>
      */
     @Deprecated
     public SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse> executeSessionInvoker(
         ExecuteSessionRequest request) {
-        return new SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>(request, CbsMeta.executeSession,
-            hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeSession, hcClient);
     }
 
     /**
@@ -672,7 +655,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateImageNameRequest 请求对象
+     * @param request ExecuteUpdateImageNameRequest 请求对象
      * @return ExecuteUpdateImageNameResponse
      */
     public ExecuteUpdateImageNameResponse executeUpdateImageName(ExecuteUpdateImageNameRequest request) {
@@ -685,13 +668,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateImageNameRequest 请求对象
+     * @param request ExecuteUpdateImageNameRequest 请求对象
      * @return SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse>
      */
     public SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse> executeUpdateImageNameInvoker(
         ExecuteUpdateImageNameRequest request) {
-        return new SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse>(request,
-            CbsMeta.executeUpdateImageName, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeUpdateImageName, hcClient);
     }
 
     /**
@@ -700,7 +682,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateVideoByIdRequest 请求对象
+     * @param request ExecuteUpdateVideoByIdRequest 请求对象
      * @return ExecuteUpdateVideoByIdResponse
      */
     public ExecuteUpdateVideoByIdResponse executeUpdateVideoById(ExecuteUpdateVideoByIdRequest request) {
@@ -713,13 +695,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateVideoByIdRequest 请求对象
+     * @param request ExecuteUpdateVideoByIdRequest 请求对象
      * @return SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse>
      */
     public SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse> executeUpdateVideoByIdInvoker(
         ExecuteUpdateVideoByIdRequest request) {
-        return new SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse>(request,
-            CbsMeta.executeUpdateVideoById, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeUpdateVideoById, hcClient);
     }
 
     /**
@@ -729,7 +710,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateVideoInfoByIdRequest 请求对象
+     * @param request ExecuteUpdateVideoInfoByIdRequest 请求对象
      * @return ExecuteUpdateVideoInfoByIdResponse
      */
     public ExecuteUpdateVideoInfoByIdResponse executeUpdateVideoInfoById(ExecuteUpdateVideoInfoByIdRequest request) {
@@ -743,13 +724,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUpdateVideoInfoByIdRequest 请求对象
+     * @param request ExecuteUpdateVideoInfoByIdRequest 请求对象
      * @return SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse>
      */
     public SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse> executeUpdateVideoInfoByIdInvoker(
         ExecuteUpdateVideoInfoByIdRequest request) {
-        return new SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse>(request,
-            CbsMeta.executeUpdateVideoInfoById, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeUpdateVideoInfoById, hcClient);
     }
 
     /**
@@ -760,7 +740,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUploadImageRequest 请求对象
+     * @param request ExecuteUploadImageRequest 请求对象
      * @return ExecuteUploadImageResponse
      */
     public ExecuteUploadImageResponse executeUploadImage(ExecuteUploadImageRequest request) {
@@ -775,13 +755,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUploadImageRequest 请求对象
+     * @param request ExecuteUploadImageRequest 请求对象
      * @return SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse>
      */
     public SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse> executeUploadImageInvoker(
         ExecuteUploadImageRequest request) {
-        return new SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse>(request,
-            CbsMeta.executeUploadImage, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeUploadImage, hcClient);
     }
 
     /**
@@ -793,7 +772,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUploadPptRequest 请求对象
+     * @param request ExecuteUploadPptRequest 请求对象
      * @return ExecuteUploadPptResponse
      */
     public ExecuteUploadPptResponse executeUploadPpt(ExecuteUploadPptRequest request) {
@@ -809,13 +788,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteUploadPptRequest 请求对象
+     * @param request ExecuteUploadPptRequest 请求对象
      * @return SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse>
      */
     public SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse> executeUploadPptInvoker(
         ExecuteUploadPptRequest request) {
-        return new SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse>(request, CbsMeta.executeUploadPpt,
-            hcClient);
+        return new SyncInvoker<>(request, CbsMeta.executeUploadPpt, hcClient);
     }
 
     /**
@@ -825,7 +803,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSuggestionsRequest 请求对象
+     * @param request ListSuggestionsRequest 请求对象
      * @return ListSuggestionsResponse
      */
     public ListSuggestionsResponse listSuggestions(ListSuggestionsRequest request) {
@@ -839,13 +817,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSuggestionsRequest 请求对象
+     * @param request ListSuggestionsRequest 请求对象
      * @return SyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse>
      */
     public SyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse> listSuggestionsInvoker(
         ListSuggestionsRequest request) {
-        return new SyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse>(request, CbsMeta.listSuggestions,
-            hcClient);
+        return new SyncInvoker<>(request, CbsMeta.listSuggestions, hcClient);
     }
 
     /**
@@ -855,7 +832,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagLaborRequest 请求对象
+     * @param request TagLaborRequest 请求对象
      * @return TagLaborResponse
      */
     public TagLaborResponse tagLabor(TagLaborRequest request) {
@@ -869,11 +846,11 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagLaborRequest 请求对象
+     * @param request TagLaborRequest 请求对象
      * @return SyncInvoker<TagLaborRequest, TagLaborResponse>
      */
     public SyncInvoker<TagLaborRequest, TagLaborResponse> tagLaborInvoker(TagLaborRequest request) {
-        return new SyncInvoker<TagLaborRequest, TagLaborResponse>(request, CbsMeta.tagLabor, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.tagLabor, hcClient);
     }
 
     /**
@@ -883,7 +860,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagSatisfactionRequest 请求对象
+     * @param request TagSatisfactionRequest 请求对象
      * @return TagSatisfactionResponse
      */
     public TagSatisfactionResponse tagSatisfaction(TagSatisfactionRequest request) {
@@ -897,13 +874,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagSatisfactionRequest 请求对象
+     * @param request TagSatisfactionRequest 请求对象
      * @return SyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse>
      */
     public SyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse> tagSatisfactionInvoker(
         TagSatisfactionRequest request) {
-        return new SyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse>(request, CbsMeta.tagSatisfaction,
-            hcClient);
+        return new SyncInvoker<>(request, CbsMeta.tagSatisfaction, hcClient);
     }
 
     /**
@@ -916,7 +892,7 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PostRequestsRequest 请求对象
+     * @param request PostRequestsRequest 请求对象
      * @return PostRequestsResponse
      */
     @Deprecated
@@ -934,12 +910,12 @@ public class CbsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PostRequestsRequest 请求对象
+     * @param request PostRequestsRequest 请求对象
      * @return SyncInvoker<PostRequestsRequest, PostRequestsResponse>
      */
     @Deprecated
     public SyncInvoker<PostRequestsRequest, PostRequestsResponse> postRequestsInvoker(PostRequestsRequest request) {
-        return new SyncInvoker<PostRequestsRequest, PostRequestsResponse>(request, CbsMeta.postRequests, hcClient);
+        return new SyncInvoker<>(request, CbsMeta.postRequests, hcClient);
     }
 
 }

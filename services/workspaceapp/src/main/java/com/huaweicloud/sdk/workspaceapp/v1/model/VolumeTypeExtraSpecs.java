@@ -43,7 +43,7 @@ public class VolumeTypeExtraSpecs {
     }
 
     /**
-     * 已售罄的磁盘可用区
+     * 已售罄的磁盘可用区。
      * @return soldOutAvailabilityZone
      */
     public String getSoldOutAvailabilityZone() {

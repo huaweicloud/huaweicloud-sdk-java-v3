@@ -44,7 +44,7 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectTranscriberJobRequest 请求对象
+     * @param request CollectTranscriberJobRequest 请求对象
      * @return CollectTranscriberJobResponse
      */
     public CollectTranscriberJobResponse collectTranscriberJob(CollectTranscriberJobRequest request) {
@@ -58,13 +58,12 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectTranscriberJobRequest 请求对象
+     * @param request CollectTranscriberJobRequest 请求对象
      * @return SyncInvoker<CollectTranscriberJobRequest, CollectTranscriberJobResponse>
      */
     public SyncInvoker<CollectTranscriberJobRequest, CollectTranscriberJobResponse> collectTranscriberJobInvoker(
         CollectTranscriberJobRequest request) {
-        return new SyncInvoker<CollectTranscriberJobRequest, CollectTranscriberJobResponse>(request,
-            SisMeta.collectTranscriberJob, hcClient);
+        return new SyncInvoker<>(request, SisMeta.collectTranscriberJob, hcClient);
     }
 
     /**
@@ -74,7 +73,7 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVocabularyRequest 请求对象
+     * @param request CreateVocabularyRequest 请求对象
      * @return CreateVocabularyResponse
      */
     public CreateVocabularyResponse createVocabulary(CreateVocabularyRequest request) {
@@ -88,13 +87,12 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVocabularyRequest 请求对象
+     * @param request CreateVocabularyRequest 请求对象
      * @return SyncInvoker<CreateVocabularyRequest, CreateVocabularyResponse>
      */
     public SyncInvoker<CreateVocabularyRequest, CreateVocabularyResponse> createVocabularyInvoker(
         CreateVocabularyRequest request) {
-        return new SyncInvoker<CreateVocabularyRequest, CreateVocabularyResponse>(request, SisMeta.createVocabulary,
-            hcClient);
+        return new SyncInvoker<>(request, SisMeta.createVocabulary, hcClient);
     }
 
     /**
@@ -104,7 +102,7 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVocabularyRequest 请求对象
+     * @param request DeleteVocabularyRequest 请求对象
      * @return DeleteVocabularyResponse
      */
     public DeleteVocabularyResponse deleteVocabulary(DeleteVocabularyRequest request) {
@@ -118,13 +116,12 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVocabularyRequest 请求对象
+     * @param request DeleteVocabularyRequest 请求对象
      * @return SyncInvoker<DeleteVocabularyRequest, DeleteVocabularyResponse>
      */
     public SyncInvoker<DeleteVocabularyRequest, DeleteVocabularyResponse> deleteVocabularyInvoker(
         DeleteVocabularyRequest request) {
-        return new SyncInvoker<DeleteVocabularyRequest, DeleteVocabularyResponse>(request, SisMeta.deleteVocabulary,
-            hcClient);
+        return new SyncInvoker<>(request, SisMeta.deleteVocabulary, hcClient);
     }
 
     /**
@@ -143,7 +140,7 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushTranscriberJobsRequest 请求对象
+     * @param request PushTranscriberJobsRequest 请求对象
      * @return PushTranscriberJobsResponse
      */
     public PushTranscriberJobsResponse pushTranscriberJobs(PushTranscriberJobsRequest request) {
@@ -166,13 +163,12 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushTranscriberJobsRequest 请求对象
+     * @param request PushTranscriberJobsRequest 请求对象
      * @return SyncInvoker<PushTranscriberJobsRequest, PushTranscriberJobsResponse>
      */
     public SyncInvoker<PushTranscriberJobsRequest, PushTranscriberJobsResponse> pushTranscriberJobsInvoker(
         PushTranscriberJobsRequest request) {
-        return new SyncInvoker<PushTranscriberJobsRequest, PushTranscriberJobsResponse>(request,
-            SisMeta.pushTranscriberJobs, hcClient);
+        return new SyncInvoker<>(request, SisMeta.pushTranscriberJobs, hcClient);
     }
 
     /**
@@ -183,7 +179,7 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeFlashAsrRequest 请求对象
+     * @param request RecognizeFlashAsrRequest 请求对象
      * @return RecognizeFlashAsrResponse
      */
     public RecognizeFlashAsrResponse recognizeFlashAsr(RecognizeFlashAsrRequest request) {
@@ -198,13 +194,12 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeFlashAsrRequest 请求对象
+     * @param request RecognizeFlashAsrRequest 请求对象
      * @return SyncInvoker<RecognizeFlashAsrRequest, RecognizeFlashAsrResponse>
      */
     public SyncInvoker<RecognizeFlashAsrRequest, RecognizeFlashAsrResponse> recognizeFlashAsrInvoker(
         RecognizeFlashAsrRequest request) {
-        return new SyncInvoker<RecognizeFlashAsrRequest, RecognizeFlashAsrResponse>(request, SisMeta.recognizeFlashAsr,
-            hcClient);
+        return new SyncInvoker<>(request, SisMeta.recognizeFlashAsr, hcClient);
     }
 
     /**
@@ -214,7 +209,7 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeShortAudioRequest 请求对象
+     * @param request RecognizeShortAudioRequest 请求对象
      * @return RecognizeShortAudioResponse
      */
     public RecognizeShortAudioResponse recognizeShortAudio(RecognizeShortAudioRequest request) {
@@ -228,13 +223,12 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeShortAudioRequest 请求对象
+     * @param request RecognizeShortAudioRequest 请求对象
      * @return SyncInvoker<RecognizeShortAudioRequest, RecognizeShortAudioResponse>
      */
     public SyncInvoker<RecognizeShortAudioRequest, RecognizeShortAudioResponse> recognizeShortAudioInvoker(
         RecognizeShortAudioRequest request) {
-        return new SyncInvoker<RecognizeShortAudioRequest, RecognizeShortAudioResponse>(request,
-            SisMeta.recognizeShortAudio, hcClient);
+        return new SyncInvoker<>(request, SisMeta.recognizeShortAudio, hcClient);
     }
 
     /**
@@ -244,7 +238,7 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTtsRequest 请求对象
+     * @param request RunTtsRequest 请求对象
      * @return RunTtsResponse
      */
     public RunTtsResponse runTts(RunTtsRequest request) {
@@ -258,11 +252,11 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTtsRequest 请求对象
+     * @param request RunTtsRequest 请求对象
      * @return SyncInvoker<RunTtsRequest, RunTtsResponse>
      */
     public SyncInvoker<RunTtsRequest, RunTtsResponse> runTtsInvoker(RunTtsRequest request) {
-        return new SyncInvoker<RunTtsRequest, RunTtsResponse>(request, SisMeta.runTts, hcClient);
+        return new SyncInvoker<>(request, SisMeta.runTts, hcClient);
     }
 
     /**
@@ -272,7 +266,7 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVocabulariesRequest 请求对象
+     * @param request ShowVocabulariesRequest 请求对象
      * @return ShowVocabulariesResponse
      */
     public ShowVocabulariesResponse showVocabularies(ShowVocabulariesRequest request) {
@@ -286,13 +280,12 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVocabulariesRequest 请求对象
+     * @param request ShowVocabulariesRequest 请求对象
      * @return SyncInvoker<ShowVocabulariesRequest, ShowVocabulariesResponse>
      */
     public SyncInvoker<ShowVocabulariesRequest, ShowVocabulariesResponse> showVocabulariesInvoker(
         ShowVocabulariesRequest request) {
-        return new SyncInvoker<ShowVocabulariesRequest, ShowVocabulariesResponse>(request, SisMeta.showVocabularies,
-            hcClient);
+        return new SyncInvoker<>(request, SisMeta.showVocabularies, hcClient);
     }
 
     /**
@@ -302,7 +295,7 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVocabularyRequest 请求对象
+     * @param request ShowVocabularyRequest 请求对象
      * @return ShowVocabularyResponse
      */
     public ShowVocabularyResponse showVocabulary(ShowVocabularyRequest request) {
@@ -316,13 +309,12 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVocabularyRequest 请求对象
+     * @param request ShowVocabularyRequest 请求对象
      * @return SyncInvoker<ShowVocabularyRequest, ShowVocabularyResponse>
      */
     public SyncInvoker<ShowVocabularyRequest, ShowVocabularyResponse> showVocabularyInvoker(
         ShowVocabularyRequest request) {
-        return new SyncInvoker<ShowVocabularyRequest, ShowVocabularyResponse>(request, SisMeta.showVocabulary,
-            hcClient);
+        return new SyncInvoker<>(request, SisMeta.showVocabulary, hcClient);
     }
 
     /**
@@ -332,7 +324,7 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVocabularyRequest 请求对象
+     * @param request UpdateVocabularyRequest 请求对象
      * @return UpdateVocabularyResponse
      */
     public UpdateVocabularyResponse updateVocabulary(UpdateVocabularyRequest request) {
@@ -346,13 +338,12 @@ public class SisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVocabularyRequest 请求对象
+     * @param request UpdateVocabularyRequest 请求对象
      * @return SyncInvoker<UpdateVocabularyRequest, UpdateVocabularyResponse>
      */
     public SyncInvoker<UpdateVocabularyRequest, UpdateVocabularyResponse> updateVocabularyInvoker(
         UpdateVocabularyRequest request) {
-        return new SyncInvoker<UpdateVocabularyRequest, UpdateVocabularyResponse>(request, SisMeta.updateVocabulary,
-            hcClient);
+        return new SyncInvoker<>(request, SisMeta.updateVocabulary, hcClient);
     }
 
 }

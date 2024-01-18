@@ -27,7 +27,7 @@ public class UnpublishAppRequest {
     }
 
     /**
-     * 应用组ID
+     * 应用组ID。
      * @return appGroupId
      */
     public String getAppGroupId() {

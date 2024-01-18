@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 用户登录记录信息
+ * 用户登录记录信息。
  */
 public class UserConnectionInfo {
 
@@ -132,7 +132,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 主键
+     * 主键。
      * @return id
      */
     public String getId() {
@@ -149,7 +149,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 连接类型
+     * 连接类型。
      * @return connectType
      */
     public String getConnectType() {
@@ -166,7 +166,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 登录用户
+     * 登录用户。
      * @return userName
      */
     public String getUserName() {
@@ -183,7 +183,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 桌面组名
+     * 桌面组名。
      * @return desktopGroupName
      */
     public String getDesktopGroupName() {
@@ -200,7 +200,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 预连接时间
+     * 预连接时间。
      * @return preConnTime
      */
     public OffsetDateTime getPreConnTime() {
@@ -217,7 +217,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public OffsetDateTime getStartTime() {
@@ -234,7 +234,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 结束时间
+     * 结束时间。
      * @return endTime
      */
     public OffsetDateTime getEndTime() {
@@ -251,7 +251,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 应用服务器sid
+     * 应用服务器sid。
      * @return machineSid
      */
     public String getMachineSid() {
@@ -268,7 +268,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 应用服务器名称
+     * 应用服务器名称。
      * @return machineName
      */
     public String getMachineName() {
@@ -285,7 +285,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 连接失败原因
+     * 连接失败原因。
      * @return failedReason
      */
     public String getFailedReason() {
@@ -302,7 +302,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 连接失败状态码
+     * 连接失败状态码。
      * @return failedCode
      */
     public String getFailedCode() {
@@ -319,7 +319,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 客户端Mac
+     * 客户端Mac。
      * @return clientMac
      */
     public String getClientMac() {
@@ -336,7 +336,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 客户端名称
+     * 客户端名称。
      * @return clientName
      */
     public String getClientName() {
@@ -353,7 +353,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 客户端ip
+     * 客户端ip。
      * @return clientIp
      */
     public String getClientIp() {
@@ -370,7 +370,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 客户端版本
+     * 客户端版本。
      * @return clientVersion
      */
     public String getClientVersion() {
@@ -387,7 +387,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 客户端操作系统类型
+     * 客户端操作系统类型。
      * @return clientType
      */
     public String getClientType() {
@@ -404,7 +404,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * aps hda版本
+     * aps hda版本。
      * @return agentVersion
      */
     public String getAgentVersion() {
@@ -421,7 +421,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 应用服务器ip
+     * 应用服务器ip。
      * @return vmIp
      */
     public String getVmIp() {
@@ -438,7 +438,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 连接标志
+     * 连接标志。
      * @return connectFlag
      */
     public String getConnectFlag() {
@@ -455,7 +455,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 连接IP
+     * 连接IP。
      * @return wiIp
      */
     public String getWiIp() {
@@ -472,7 +472,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -489,7 +489,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 租户id
+     * 租户id。
      * @return tenantId
      */
     public String getTenantId() {
@@ -506,7 +506,7 @@ public class UserConnectionInfo {
     }
 
     /**
-     * 会话虚拟ip
+     * 会话虚拟ip。
      * @return virtualIp
      */
     public String getVirtualIp() {

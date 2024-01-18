@@ -164,7 +164,7 @@ public class ResponseEip {
     }
 
     /**
-     * 功能说明: 公网IP版本号
+     * 功能说明: 公网IP版本号  取值范围：4, 6
      * @return ipVersion
      */
     public Integer getIpVersion() {

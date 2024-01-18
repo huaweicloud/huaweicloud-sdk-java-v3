@@ -30,7 +30,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeviceAlarmsRequest 请求对象
+     * @param request ListDeviceAlarmsRequest 请求对象
      * @return CompletableFuture<ListDeviceAlarmsResponse>
      */
     public CompletableFuture<ListDeviceAlarmsResponse> listDeviceAlarmsAsync(ListDeviceAlarmsRequest request) {
@@ -44,13 +44,12 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeviceAlarmsRequest 请求对象
+     * @param request ListDeviceAlarmsRequest 请求对象
      * @return AsyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse>
      */
     public AsyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse> listDeviceAlarmsAsyncInvoker(
         ListDeviceAlarmsRequest request) {
-        return new AsyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse>(request, HiLensMeta.listDeviceAlarms,
-            hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.listDeviceAlarms, hcClient);
     }
 
     /**
@@ -60,7 +59,7 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesRequest 请求对象
+     * @param request ListDevicesRequest 请求对象
      * @return CompletableFuture<ListDevicesResponse>
      */
     public CompletableFuture<ListDevicesResponse> listDevicesAsync(ListDevicesRequest request) {
@@ -74,11 +73,11 @@ public class HiLensAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesRequest 请求对象
+     * @param request ListDevicesRequest 请求对象
      * @return AsyncInvoker<ListDevicesRequest, ListDevicesResponse>
      */
     public AsyncInvoker<ListDevicesRequest, ListDevicesResponse> listDevicesAsyncInvoker(ListDevicesRequest request) {
-        return new AsyncInvoker<ListDevicesRequest, ListDevicesResponse>(request, HiLensMeta.listDevices, hcClient);
+        return new AsyncInvoker<>(request, HiLensMeta.listDevices, hcClient);
     }
 
 }

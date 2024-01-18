@@ -51,9 +51,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CodeArtsInspectorMeta {
 
     public static final HttpRequestDef<DownloadTaskReportRequest, DownloadTaskReportResponse> downloadTaskReport =
-        genFordownloadTaskReport();
+        genForDownloadTaskReport();
 
-    private static HttpRequestDef<DownloadTaskReportRequest, DownloadTaskReportResponse> genFordownloadTaskReport() {
+    private static HttpRequestDef<DownloadTaskReportRequest, DownloadTaskReportResponse> genForDownloadTaskReport() {
         // basic
         HttpRequestDef.Builder<DownloadTaskReportRequest, DownloadTaskReportResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadTaskReportRequest.class, DownloadTaskReportResponse.class)
@@ -66,9 +66,7 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadTaskReportRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DownloadTaskReportRequest::getTaskId, DownloadTaskReportRequest::setTaskId));
 
         // response
 
@@ -76,9 +74,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse> executeGenerateReport =
-        genForexecuteGenerateReport();
+        genForExecuteGenerateReport();
 
-    private static HttpRequestDef<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse> genForexecuteGenerateReport() {
+    private static HttpRequestDef<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse> genForExecuteGenerateReport() {
         // basic
         HttpRequestDef.Builder<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ExecuteGenerateReportRequest.class, ExecuteGenerateReportResponse.class)
@@ -91,9 +89,7 @@ public class CodeArtsInspectorMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExecuteGenerateReportRequestBody.class),
-            f -> f.withMarshaller(ExecuteGenerateReportRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteGenerateReportRequest::getBody, ExecuteGenerateReportRequest::setBody));
 
         // response
 
@@ -101,9 +97,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<ListBusinessRisksRequest, ListBusinessRisksResponse> listBusinessRisks =
-        genForlistBusinessRisks();
+        genForListBusinessRisks();
 
-    private static HttpRequestDef<ListBusinessRisksRequest, ListBusinessRisksResponse> genForlistBusinessRisks() {
+    private static HttpRequestDef<ListBusinessRisksRequest, ListBusinessRisksResponse> genForListBusinessRisks() {
         // basic
         HttpRequestDef.Builder<ListBusinessRisksRequest, ListBusinessRisksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBusinessRisksRequest.class, ListBusinessRisksResponse.class)
@@ -116,23 +112,17 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBusinessRisksRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListBusinessRisksRequest::getTaskId, ListBusinessRisksRequest::setTaskId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBusinessRisksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBusinessRisksRequest::getOffset, ListBusinessRisksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBusinessRisksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBusinessRisksRequest::getLimit, ListBusinessRisksRequest::setLimit));
 
         // response
 
@@ -140,9 +130,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<ListPortResultsRequest, ListPortResultsResponse> listPortResults =
-        genForlistPortResults();
+        genForListPortResults();
 
-    private static HttpRequestDef<ListPortResultsRequest, ListPortResultsResponse> genForlistPortResults() {
+    private static HttpRequestDef<ListPortResultsRequest, ListPortResultsResponse> genForListPortResults() {
         // basic
         HttpRequestDef.Builder<ListPortResultsRequest, ListPortResultsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPortResultsRequest.class, ListPortResultsResponse.class)
@@ -155,23 +145,17 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPortResultsRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListPortResultsRequest::getTaskId, ListPortResultsRequest::setTaskId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPortResultsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPortResultsRequest::getOffset, ListPortResultsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPortResultsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPortResultsRequest::getLimit, ListPortResultsRequest::setLimit));
 
         // response
 
@@ -179,9 +163,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<ShowReportStatusRequest, ShowReportStatusResponse> showReportStatus =
-        genForshowReportStatus();
+        genForShowReportStatus();
 
-    private static HttpRequestDef<ShowReportStatusRequest, ShowReportStatusResponse> genForshowReportStatus() {
+    private static HttpRequestDef<ShowReportStatusRequest, ShowReportStatusResponse> genForShowReportStatus() {
         // basic
         HttpRequestDef.Builder<ShowReportStatusRequest, ShowReportStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowReportStatusRequest.class, ShowReportStatusResponse.class)
@@ -194,18 +178,16 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReportStatusRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowReportStatusRequest::getTaskId, ShowReportStatusRequest::setTaskId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowResultsRequest, ShowResultsResponse> showResults = genForshowResults();
+    public static final HttpRequestDef<ShowResultsRequest, ShowResultsResponse> showResults = genForShowResults();
 
-    private static HttpRequestDef<ShowResultsRequest, ShowResultsResponse> genForshowResults() {
+    private static HttpRequestDef<ShowResultsRequest, ShowResultsResponse> genForShowResults() {
         // basic
         HttpRequestDef.Builder<ShowResultsRequest, ShowResultsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResultsRequest.class, ShowResultsResponse.class)
@@ -218,23 +200,17 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResultsRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowResultsRequest::getTaskId, ShowResultsRequest::setTaskId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResultsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowResultsRequest::getOffset, ShowResultsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResultsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowResultsRequest::getLimit, ShowResultsRequest::setLimit));
 
         // response
 
@@ -242,9 +218,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse> updateFalsePositive =
-        genForupdateFalsePositive();
+        genForUpdateFalsePositive();
 
-    private static HttpRequestDef<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse> genForupdateFalsePositive() {
+    private static HttpRequestDef<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse> genForUpdateFalsePositive() {
         // basic
         HttpRequestDef.Builder<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateFalsePositiveRequest.class, UpdateFalsePositiveResponse.class)
@@ -257,18 +233,16 @@ public class CodeArtsInspectorMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFalsePositiveRequestBody.class),
-            f -> f.withMarshaller(UpdateFalsePositiveRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateFalsePositiveRequest::getBody, UpdateFalsePositiveRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CancelTasksRequest, CancelTasksResponse> cancelTasks = genForcancelTasks();
+    public static final HttpRequestDef<CancelTasksRequest, CancelTasksResponse> cancelTasks = genForCancelTasks();
 
-    private static HttpRequestDef<CancelTasksRequest, CancelTasksResponse> genForcancelTasks() {
+    private static HttpRequestDef<CancelTasksRequest, CancelTasksResponse> genForCancelTasks() {
         // basic
         HttpRequestDef.Builder<CancelTasksRequest, CancelTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CancelTasksRequest.class, CancelTasksResponse.class)
@@ -281,18 +255,16 @@ public class CodeArtsInspectorMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CancelTasksRequestBody.class),
-            f -> f.withMarshaller(CancelTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CancelTasksRequest::getBody, CancelTasksRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTasksRequest, CreateTasksResponse> createTasks = genForcreateTasks();
+    public static final HttpRequestDef<CreateTasksRequest, CreateTasksResponse> createTasks = genForCreateTasks();
 
-    private static HttpRequestDef<CreateTasksRequest, CreateTasksResponse> genForcreateTasks() {
+    private static HttpRequestDef<CreateTasksRequest, CreateTasksResponse> genForCreateTasks() {
         // basic
         HttpRequestDef.Builder<CreateTasksRequest, CreateTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTasksRequest.class, CreateTasksResponse.class)
@@ -305,16 +277,12 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(CreateTasksRequest::getUpgrade, (req, v) -> {
-                req.setUpgrade(v);
-            }));
+            f -> f.withMarshaller(CreateTasksRequest::getUpgrade, CreateTasksRequest::setUpgrade));
         builder.<CreateTasksRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTasksRequestBody.class),
-            f -> f.withMarshaller(CreateTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTasksRequest::getBody, CreateTasksRequest::setBody));
 
         // response
 
@@ -322,9 +290,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<ListTaskHistoriesRequest, ListTaskHistoriesResponse> listTaskHistories =
-        genForlistTaskHistories();
+        genForListTaskHistories();
 
-    private static HttpRequestDef<ListTaskHistoriesRequest, ListTaskHistoriesResponse> genForlistTaskHistories() {
+    private static HttpRequestDef<ListTaskHistoriesRequest, ListTaskHistoriesResponse> genForListTaskHistories() {
         // basic
         HttpRequestDef.Builder<ListTaskHistoriesRequest, ListTaskHistoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTaskHistoriesRequest.class, ListTaskHistoriesResponse.class)
@@ -337,32 +305,26 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTaskHistoriesRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListTaskHistoriesRequest::getDomainId, ListTaskHistoriesRequest::setDomainId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskHistoriesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTaskHistoriesRequest::getOffset, ListTaskHistoriesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskHistoriesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTaskHistoriesRequest::getLimit, ListTaskHistoriesRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTasksRequest, ShowTasksResponse> showTasks = genForshowTasks();
+    public static final HttpRequestDef<ShowTasksRequest, ShowTasksResponse> showTasks = genForShowTasks();
 
-    private static HttpRequestDef<ShowTasksRequest, ShowTasksResponse> genForshowTasks() {
+    private static HttpRequestDef<ShowTasksRequest, ShowTasksResponse> genForShowTasks() {
         // basic
         HttpRequestDef.Builder<ShowTasksRequest, ShowTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTasksRequest.class, ShowTasksResponse.class)
@@ -375,9 +337,7 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTasksRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowTasksRequest::getTaskId, ShowTasksRequest::setTaskId));
 
         // response
 
@@ -385,9 +345,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<AuthorizeDomainsRequest, AuthorizeDomainsResponse> authorizeDomains =
-        genForauthorizeDomains();
+        genForAuthorizeDomains();
 
-    private static HttpRequestDef<AuthorizeDomainsRequest, AuthorizeDomainsResponse> genForauthorizeDomains() {
+    private static HttpRequestDef<AuthorizeDomainsRequest, AuthorizeDomainsResponse> genForAuthorizeDomains() {
         // basic
         HttpRequestDef.Builder<AuthorizeDomainsRequest, AuthorizeDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AuthorizeDomainsRequest.class, AuthorizeDomainsResponse.class)
@@ -400,9 +360,7 @@ public class CodeArtsInspectorMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AuthorizeDomainsRequestBody.class),
-            f -> f.withMarshaller(AuthorizeDomainsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AuthorizeDomainsRequest::getBody, AuthorizeDomainsRequest::setBody));
 
         // response
 
@@ -410,9 +368,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<CreateDomainsRequest, CreateDomainsResponse> createDomains =
-        genForcreateDomains();
+        genForCreateDomains();
 
-    private static HttpRequestDef<CreateDomainsRequest, CreateDomainsResponse> genForcreateDomains() {
+    private static HttpRequestDef<CreateDomainsRequest, CreateDomainsResponse> genForCreateDomains() {
         // basic
         HttpRequestDef.Builder<CreateDomainsRequest, CreateDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDomainsRequest.class, CreateDomainsResponse.class)
@@ -425,9 +383,7 @@ public class CodeArtsInspectorMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDomainsRequestBody.class),
-            f -> f.withMarshaller(CreateDomainsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDomainsRequest::getBody, CreateDomainsRequest::setBody));
 
         // response
 
@@ -435,9 +391,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<DeleteDomainsRequest, DeleteDomainsResponse> deleteDomains =
-        genFordeleteDomains();
+        genForDeleteDomains();
 
-    private static HttpRequestDef<DeleteDomainsRequest, DeleteDomainsResponse> genFordeleteDomains() {
+    private static HttpRequestDef<DeleteDomainsRequest, DeleteDomainsResponse> genForDeleteDomains() {
         // basic
         HttpRequestDef.Builder<DeleteDomainsRequest, DeleteDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainsRequest.class, DeleteDomainsResponse.class)
@@ -450,18 +406,16 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainsRequest::getDomainName, DeleteDomainsRequest::setDomainName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDomainsRequest, ListDomainsResponse> listDomains = genForlistDomains();
+    public static final HttpRequestDef<ListDomainsRequest, ListDomainsResponse> listDomains = genForListDomains();
 
-    private static HttpRequestDef<ListDomainsRequest, ListDomainsResponse> genForlistDomains() {
+    private static HttpRequestDef<ListDomainsRequest, ListDomainsResponse> genForListDomains() {
         // basic
         HttpRequestDef.Builder<ListDomainsRequest, ListDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainsRequest.class, ListDomainsResponse.class)
@@ -474,30 +428,22 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getDomainId, ListDomainsRequest::setDomainId));
         builder.<ListDomainsRequest.AuthStatusEnum>withRequestField("auth_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDomainsRequest.AuthStatusEnum.class),
-            f -> f.withMarshaller(ListDomainsRequest::getAuthStatus, (req, v) -> {
-                req.setAuthStatus(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getAuthStatus, ListDomainsRequest::setAuthStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getOffset, ListDomainsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getLimit, ListDomainsRequest::setLimit));
 
         // response
 
@@ -505,9 +451,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<ShowDomainSettingsRequest, ShowDomainSettingsResponse> showDomainSettings =
-        genForshowDomainSettings();
+        genForShowDomainSettings();
 
-    private static HttpRequestDef<ShowDomainSettingsRequest, ShowDomainSettingsResponse> genForshowDomainSettings() {
+    private static HttpRequestDef<ShowDomainSettingsRequest, ShowDomainSettingsResponse> genForShowDomainSettings() {
         // basic
         HttpRequestDef.Builder<ShowDomainSettingsRequest, ShowDomainSettingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainSettingsRequest.class, ShowDomainSettingsResponse.class)
@@ -520,9 +466,7 @@ public class CodeArtsInspectorMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainSettingsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainSettingsRequest::getDomainId, ShowDomainSettingsRequest::setDomainId));
 
         // response
 
@@ -530,9 +474,9 @@ public class CodeArtsInspectorMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> updateDomainSettings =
-        genForupdateDomainSettings();
+        genForUpdateDomainSettings();
 
-    private static HttpRequestDef<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> genForupdateDomainSettings() {
+    private static HttpRequestDef<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> genForUpdateDomainSettings() {
         // basic
         HttpRequestDef.Builder<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateDomainSettingsRequest.class, UpdateDomainSettingsResponse.class)
@@ -545,9 +489,7 @@ public class CodeArtsInspectorMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDomainSettingsRequestBody.class),
-            f -> f.withMarshaller(UpdateDomainSettingsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainSettingsRequest::getBody, UpdateDomainSettingsRequest::setBody));
 
         // response
 

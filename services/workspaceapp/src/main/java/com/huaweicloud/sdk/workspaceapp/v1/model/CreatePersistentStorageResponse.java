@@ -49,7 +49,7 @@ public class CreatePersistentStorageResponse extends SdkResponse {
     }
 
     /**
-     * WKS存储ID
+     * WKS存储ID。
      * @return id
      */
     public String getId() {
@@ -66,7 +66,7 @@ public class CreatePersistentStorageResponse extends SdkResponse {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -109,7 +109,7 @@ public class CreatePersistentStorageResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -126,7 +126,7 @@ public class CreatePersistentStorageResponse extends SdkResponse {
     }
 
     /**
-     * 个人目录声明数量
+     * 个人目录声明数量。
      * @return userClaimCount
      */
     public Integer getUserClaimCount() {
@@ -143,7 +143,7 @@ public class CreatePersistentStorageResponse extends SdkResponse {
     }
 
     /**
-     * 共享目录声明数量
+     * 共享目录声明数量。
      * @return shareClaimCount
      */
     public Integer getShareClaimCount() {

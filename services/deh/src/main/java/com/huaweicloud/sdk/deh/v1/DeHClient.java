@@ -50,7 +50,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDedicatedHostTagsRequest 请求对象
+     * @param request BatchCreateDedicatedHostTagsRequest 请求对象
      * @return BatchCreateDedicatedHostTagsResponse
      */
     public BatchCreateDedicatedHostTagsResponse batchCreateDedicatedHostTags(
@@ -67,13 +67,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDedicatedHostTagsRequest 请求对象
+     * @param request BatchCreateDedicatedHostTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateDedicatedHostTagsRequest, BatchCreateDedicatedHostTagsResponse>
      */
     public SyncInvoker<BatchCreateDedicatedHostTagsRequest, BatchCreateDedicatedHostTagsResponse> batchCreateDedicatedHostTagsInvoker(
         BatchCreateDedicatedHostTagsRequest request) {
-        return new SyncInvoker<BatchCreateDedicatedHostTagsRequest, BatchCreateDedicatedHostTagsResponse>(request,
-            DeHMeta.batchCreateDedicatedHostTags, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.batchCreateDedicatedHostTags, hcClient);
     }
 
     /**
@@ -85,7 +84,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDedicatedHostTagsRequest 请求对象
+     * @param request BatchDeleteDedicatedHostTagsRequest 请求对象
      * @return BatchDeleteDedicatedHostTagsResponse
      */
     public BatchDeleteDedicatedHostTagsResponse batchDeleteDedicatedHostTags(
@@ -102,13 +101,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDedicatedHostTagsRequest 请求对象
+     * @param request BatchDeleteDedicatedHostTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteDedicatedHostTagsRequest, BatchDeleteDedicatedHostTagsResponse>
      */
     public SyncInvoker<BatchDeleteDedicatedHostTagsRequest, BatchDeleteDedicatedHostTagsResponse> batchDeleteDedicatedHostTagsInvoker(
         BatchDeleteDedicatedHostTagsRequest request) {
-        return new SyncInvoker<BatchDeleteDedicatedHostTagsRequest, BatchDeleteDedicatedHostTagsResponse>(request,
-            DeHMeta.batchDeleteDedicatedHostTags, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.batchDeleteDedicatedHostTags, hcClient);
     }
 
     /**
@@ -118,7 +116,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDedicatedHostRequest 请求对象
+     * @param request CreateDedicatedHostRequest 请求对象
      * @return CreateDedicatedHostResponse
      */
     public CreateDedicatedHostResponse createDedicatedHost(CreateDedicatedHostRequest request) {
@@ -132,13 +130,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDedicatedHostRequest 请求对象
+     * @param request CreateDedicatedHostRequest 请求对象
      * @return SyncInvoker<CreateDedicatedHostRequest, CreateDedicatedHostResponse>
      */
     public SyncInvoker<CreateDedicatedHostRequest, CreateDedicatedHostResponse> createDedicatedHostInvoker(
         CreateDedicatedHostRequest request) {
-        return new SyncInvoker<CreateDedicatedHostRequest, CreateDedicatedHostResponse>(request,
-            DeHMeta.createDedicatedHost, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.createDedicatedHost, hcClient);
     }
 
     /**
@@ -148,7 +145,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDedicatedHostRequest 请求对象
+     * @param request DeleteDedicatedHostRequest 请求对象
      * @return DeleteDedicatedHostResponse
      */
     public DeleteDedicatedHostResponse deleteDedicatedHost(DeleteDedicatedHostRequest request) {
@@ -162,13 +159,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDedicatedHostRequest 请求对象
+     * @param request DeleteDedicatedHostRequest 请求对象
      * @return SyncInvoker<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse>
      */
     public SyncInvoker<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse> deleteDedicatedHostInvoker(
         DeleteDedicatedHostRequest request) {
-        return new SyncInvoker<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse>(request,
-            DeHMeta.deleteDedicatedHost, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.deleteDedicatedHost, hcClient);
     }
 
     /**
@@ -178,7 +174,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDedicatedHostTypesRequest 请求对象
+     * @param request ListDedicatedHostTypesRequest 请求对象
      * @return ListDedicatedHostTypesResponse
      */
     public ListDedicatedHostTypesResponse listDedicatedHostTypes(ListDedicatedHostTypesRequest request) {
@@ -192,13 +188,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDedicatedHostTypesRequest 请求对象
+     * @param request ListDedicatedHostTypesRequest 请求对象
      * @return SyncInvoker<ListDedicatedHostTypesRequest, ListDedicatedHostTypesResponse>
      */
     public SyncInvoker<ListDedicatedHostTypesRequest, ListDedicatedHostTypesResponse> listDedicatedHostTypesInvoker(
         ListDedicatedHostTypesRequest request) {
-        return new SyncInvoker<ListDedicatedHostTypesRequest, ListDedicatedHostTypesResponse>(request,
-            DeHMeta.listDedicatedHostTypes, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.listDedicatedHostTypes, hcClient);
     }
 
     /**
@@ -208,7 +203,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDedicatedHostsRequest 请求对象
+     * @param request ListDedicatedHostsRequest 请求对象
      * @return ListDedicatedHostsResponse
      */
     public ListDedicatedHostsResponse listDedicatedHosts(ListDedicatedHostsRequest request) {
@@ -222,13 +217,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDedicatedHostsRequest 请求对象
+     * @param request ListDedicatedHostsRequest 请求对象
      * @return SyncInvoker<ListDedicatedHostsRequest, ListDedicatedHostsResponse>
      */
     public SyncInvoker<ListDedicatedHostsRequest, ListDedicatedHostsResponse> listDedicatedHostsInvoker(
         ListDedicatedHostsRequest request) {
-        return new SyncInvoker<ListDedicatedHostsRequest, ListDedicatedHostsResponse>(request,
-            DeHMeta.listDedicatedHosts, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.listDedicatedHosts, hcClient);
     }
 
     /**
@@ -240,7 +234,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDedicatedHostsByTagsRequest 请求对象
+     * @param request ListDedicatedHostsByTagsRequest 请求对象
      * @return ListDedicatedHostsByTagsResponse
      */
     public ListDedicatedHostsByTagsResponse listDedicatedHostsByTags(ListDedicatedHostsByTagsRequest request) {
@@ -256,13 +250,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDedicatedHostsByTagsRequest 请求对象
+     * @param request ListDedicatedHostsByTagsRequest 请求对象
      * @return SyncInvoker<ListDedicatedHostsByTagsRequest, ListDedicatedHostsByTagsResponse>
      */
     public SyncInvoker<ListDedicatedHostsByTagsRequest, ListDedicatedHostsByTagsResponse> listDedicatedHostsByTagsInvoker(
         ListDedicatedHostsByTagsRequest request) {
-        return new SyncInvoker<ListDedicatedHostsByTagsRequest, ListDedicatedHostsByTagsResponse>(request,
-            DeHMeta.listDedicatedHostsByTags, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.listDedicatedHostsByTags, hcClient);
     }
 
     /**
@@ -272,7 +265,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServersDedicatedHostRequest 请求对象
+     * @param request ListServersDedicatedHostRequest 请求对象
      * @return ListServersDedicatedHostResponse
      */
     public ListServersDedicatedHostResponse listServersDedicatedHost(ListServersDedicatedHostRequest request) {
@@ -286,13 +279,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServersDedicatedHostRequest 请求对象
+     * @param request ListServersDedicatedHostRequest 请求对象
      * @return SyncInvoker<ListServersDedicatedHostRequest, ListServersDedicatedHostResponse>
      */
     public SyncInvoker<ListServersDedicatedHostRequest, ListServersDedicatedHostResponse> listServersDedicatedHostInvoker(
         ListServersDedicatedHostRequest request) {
-        return new SyncInvoker<ListServersDedicatedHostRequest, ListServersDedicatedHostResponse>(request,
-            DeHMeta.listServersDedicatedHost, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.listServersDedicatedHost, hcClient);
     }
 
     /**
@@ -302,7 +294,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDedicatedHostRequest 请求对象
+     * @param request ShowDedicatedHostRequest 请求对象
      * @return ShowDedicatedHostResponse
      */
     public ShowDedicatedHostResponse showDedicatedHost(ShowDedicatedHostRequest request) {
@@ -316,13 +308,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDedicatedHostRequest 请求对象
+     * @param request ShowDedicatedHostRequest 请求对象
      * @return SyncInvoker<ShowDedicatedHostRequest, ShowDedicatedHostResponse>
      */
     public SyncInvoker<ShowDedicatedHostRequest, ShowDedicatedHostResponse> showDedicatedHostInvoker(
         ShowDedicatedHostRequest request) {
-        return new SyncInvoker<ShowDedicatedHostRequest, ShowDedicatedHostResponse>(request, DeHMeta.showDedicatedHost,
-            hcClient);
+        return new SyncInvoker<>(request, DeHMeta.showDedicatedHost, hcClient);
     }
 
     /**
@@ -334,7 +325,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDedicatedHostTagsRequest 请求对象
+     * @param request ShowDedicatedHostTagsRequest 请求对象
      * @return ShowDedicatedHostTagsResponse
      */
     public ShowDedicatedHostTagsResponse showDedicatedHostTags(ShowDedicatedHostTagsRequest request) {
@@ -350,13 +341,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDedicatedHostTagsRequest 请求对象
+     * @param request ShowDedicatedHostTagsRequest 请求对象
      * @return SyncInvoker<ShowDedicatedHostTagsRequest, ShowDedicatedHostTagsResponse>
      */
     public SyncInvoker<ShowDedicatedHostTagsRequest, ShowDedicatedHostTagsResponse> showDedicatedHostTagsInvoker(
         ShowDedicatedHostTagsRequest request) {
-        return new SyncInvoker<ShowDedicatedHostTagsRequest, ShowDedicatedHostTagsResponse>(request,
-            DeHMeta.showDedicatedHostTags, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.showDedicatedHostTags, hcClient);
     }
 
     /**
@@ -366,7 +356,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotaSetsRequest 请求对象
+     * @param request ShowQuotaSetsRequest 请求对象
      * @return ShowQuotaSetsResponse
      */
     public ShowQuotaSetsResponse showQuotaSets(ShowQuotaSetsRequest request) {
@@ -380,11 +370,11 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotaSetsRequest 请求对象
+     * @param request ShowQuotaSetsRequest 请求对象
      * @return SyncInvoker<ShowQuotaSetsRequest, ShowQuotaSetsResponse>
      */
     public SyncInvoker<ShowQuotaSetsRequest, ShowQuotaSetsResponse> showQuotaSetsInvoker(ShowQuotaSetsRequest request) {
-        return new SyncInvoker<ShowQuotaSetsRequest, ShowQuotaSetsResponse>(request, DeHMeta.showQuotaSets, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.showQuotaSets, hcClient);
     }
 
     /**
@@ -394,7 +384,7 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDedicatedHostRequest 请求对象
+     * @param request UpdateDedicatedHostRequest 请求对象
      * @return UpdateDedicatedHostResponse
      */
     public UpdateDedicatedHostResponse updateDedicatedHost(UpdateDedicatedHostRequest request) {
@@ -408,13 +398,12 @@ public class DeHClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDedicatedHostRequest 请求对象
+     * @param request UpdateDedicatedHostRequest 请求对象
      * @return SyncInvoker<UpdateDedicatedHostRequest, UpdateDedicatedHostResponse>
      */
     public SyncInvoker<UpdateDedicatedHostRequest, UpdateDedicatedHostResponse> updateDedicatedHostInvoker(
         UpdateDedicatedHostRequest request) {
-        return new SyncInvoker<UpdateDedicatedHostRequest, UpdateDedicatedHostResponse>(request,
-            DeHMeta.updateDedicatedHost, hcClient);
+        return new SyncInvoker<>(request, DeHMeta.updateDedicatedHost, hcClient);
     }
 
 }

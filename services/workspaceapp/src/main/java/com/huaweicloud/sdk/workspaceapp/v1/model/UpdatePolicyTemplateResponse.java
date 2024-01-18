@@ -22,7 +22,7 @@ public class UpdatePolicyTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 被修改策略模板主键
+     * 被修改策略模板主键。
      * @return id
      */
     public String getId() {

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -19,6 +20,11 @@ public class StartJobRequest {
     @JsonProperty(value = "job_name")
 
     private String jobName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private CdmStartJobReq body;
 
     public StartJobRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -54,6 +60,32 @@ public class StartJobRequest {
         this.jobName = jobName;
     }
 
+    public StartJobRequest withBody(CdmStartJobReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public StartJobRequest withBody(Consumer<CdmStartJobReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new CdmStartJobReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public CdmStartJobReq getBody() {
+        return body;
+    }
+
+    public void setBody(CdmStartJobReq body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +95,13 @@ public class StartJobRequest {
             return false;
         }
         StartJobRequest that = (StartJobRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.jobName, that.jobName);
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, jobName);
+        return Objects.hash(clusterId, jobName, body);
     }
 
     @Override
@@ -77,6 +110,7 @@ public class StartJobRequest {
         sb.append("class StartJobRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

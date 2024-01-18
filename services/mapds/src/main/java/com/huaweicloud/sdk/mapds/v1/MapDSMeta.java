@@ -22,9 +22,9 @@ import com.huaweicloud.sdk.mapds.v1.model.ShowMapTileResponse;
 public class MapDSMeta {
 
     public static final HttpRequestDef<CreateCredentialRequest, CreateCredentialResponse> createCredential =
-        genForcreateCredential();
+        genForCreateCredential();
 
-    private static HttpRequestDef<CreateCredentialRequest, CreateCredentialResponse> genForcreateCredential() {
+    private static HttpRequestDef<CreateCredentialRequest, CreateCredentialResponse> genForCreateCredential() {
         // basic
         HttpRequestDef.Builder<CreateCredentialRequest, CreateCredentialResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCredentialRequest.class, CreateCredentialResponse.class)
@@ -37,9 +37,7 @@ public class MapDSMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateCredentialRequestBody.class),
-            f -> f.withMarshaller(CreateCredentialRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCredentialRequest::getBody, CreateCredentialRequest::setBody));
 
         // response
 
@@ -47,9 +45,9 @@ public class MapDSMeta {
     }
 
     public static final HttpRequestDef<CreateSasTokenRequest, CreateSasTokenResponse> createSasToken =
-        genForcreateSasToken();
+        genForCreateSasToken();
 
-    private static HttpRequestDef<CreateSasTokenRequest, CreateSasTokenResponse> genForcreateSasToken() {
+    private static HttpRequestDef<CreateSasTokenRequest, CreateSasTokenResponse> genForCreateSasToken() {
         // basic
         HttpRequestDef.Builder<CreateSasTokenRequest, CreateSasTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSasTokenRequest.class, CreateSasTokenResponse.class)
@@ -62,9 +60,7 @@ public class MapDSMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSasTokenRequestBody.class),
-            f -> f.withMarshaller(CreateSasTokenRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSasTokenRequest::getBody, CreateSasTokenRequest::setBody));
 
         // response
 
@@ -72,9 +68,9 @@ public class MapDSMeta {
     }
 
     public static final HttpRequestDef<DeleteCedentialRequest, DeleteCedentialResponse> deleteCedential =
-        genFordeleteCedential();
+        genForDeleteCedential();
 
-    private static HttpRequestDef<DeleteCedentialRequest, DeleteCedentialResponse> genFordeleteCedential() {
+    private static HttpRequestDef<DeleteCedentialRequest, DeleteCedentialResponse> genForDeleteCedential() {
         // basic
         HttpRequestDef.Builder<DeleteCedentialRequest, DeleteCedentialResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCedentialRequest.class, DeleteCedentialResponse.class)
@@ -87,9 +83,7 @@ public class MapDSMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCedentialRequest::getClientid, (req, v) -> {
-                req.setClientid(v);
-            }));
+            f -> f.withMarshaller(DeleteCedentialRequest::getClientid, DeleteCedentialRequest::setClientid));
 
         // response
 
@@ -97,9 +91,9 @@ public class MapDSMeta {
     }
 
     public static final HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> showCredential =
-        genForshowCredential();
+        genForShowCredential();
 
-    private static HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> genForshowCredential() {
+    private static HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> genForShowCredential() {
         // basic
         HttpRequestDef.Builder<ShowCredentialRequest, ShowCredentialResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCredentialRequest.class, ShowCredentialResponse.class)
@@ -114,9 +108,9 @@ public class MapDSMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMapTileRequest, ShowMapTileResponse> showMapTile = genForshowMapTile();
+    public static final HttpRequestDef<ShowMapTileRequest, ShowMapTileResponse> showMapTile = genForShowMapTile();
 
-    private static HttpRequestDef<ShowMapTileRequest, ShowMapTileResponse> genForshowMapTile() {
+    private static HttpRequestDef<ShowMapTileRequest, ShowMapTileResponse> genForShowMapTile() {
         // basic
         HttpRequestDef.Builder<ShowMapTileRequest, ShowMapTileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMapTileRequest.class, ShowMapTileResponse.class)
@@ -129,30 +123,22 @@ public class MapDSMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMapTileRequest::getZ, (req, v) -> {
-                req.setZ(v);
-            }));
+            f -> f.withMarshaller(ShowMapTileRequest::getZ, ShowMapTileRequest::setZ));
         builder.<Integer>withRequestField("x",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMapTileRequest::getX, (req, v) -> {
-                req.setX(v);
-            }));
+            f -> f.withMarshaller(ShowMapTileRequest::getX, ShowMapTileRequest::setX));
         builder.<Integer>withRequestField("y",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMapTileRequest::getY, (req, v) -> {
-                req.setY(v);
-            }));
+            f -> f.withMarshaller(ShowMapTileRequest::getY, ShowMapTileRequest::setY));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMapTileRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ShowMapTileRequest::getAuthorization, ShowMapTileRequest::setAuthorization));
 
         // response
 

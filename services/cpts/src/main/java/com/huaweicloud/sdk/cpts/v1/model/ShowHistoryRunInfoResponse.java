@@ -35,7 +35,7 @@ public class ShowHistoryRunInfoResponse extends SdkResponse {
     }
 
     /**
-     * code
+     * 响应码
      * @return code
      */
     public String getCode() {
@@ -52,7 +52,7 @@ public class ShowHistoryRunInfoResponse extends SdkResponse {
     }
 
     /**
-     * message
+     * 响应消息
      * @return message
      */
     public String getMessage() {
@@ -85,7 +85,7 @@ public class ShowHistoryRunInfoResponse extends SdkResponse {
     }
 
     /**
-     * log_list
+     * 报告列表
      * @return logList
      */
     public List<HistoryRunInfo> getLogList() {

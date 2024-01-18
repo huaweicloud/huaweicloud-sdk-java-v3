@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 子任务信息
+ * 子任务信息。
  */
 public class SubJobInfo {
 
@@ -65,7 +65,7 @@ public class SubJobInfo {
     }
 
     /**
-     * 子job标识
+     * 子job标识。
      * @return jobId
      */
     public String getJobId() {
@@ -82,7 +82,7 @@ public class SubJobInfo {
     }
 
     /**
-     * 任务类型，固定值2：子Job
+     * 任务类型，固定值2：子Job。
      * @return jobType
      */
     public Integer getJobType() {
@@ -149,7 +149,7 @@ public class SubJobInfo {
     }
 
     /**
-     * 任务开始时间
+     * 任务开始时间。
      * @return beginTime
      */
     public OffsetDateTime getBeginTime() {
@@ -166,7 +166,7 @@ public class SubJobInfo {
     }
 
     /**
-     * 任务结束时间
+     * 任务结束时间。
      * @return endTime
      */
     public OffsetDateTime getEndTime() {
@@ -200,7 +200,7 @@ public class SubJobInfo {
     }
 
     /**
-     * Job执行结果码
+     * Job执行结果码。
      * @return executeCode
      */
     public String getExecuteCode() {
@@ -217,7 +217,7 @@ public class SubJobInfo {
     }
 
     /**
-     * Job执行结果描述，以及每个SubJob的执行结果描述
+     * Job执行结果描述，以及每个SubJob的执行结果描述。
      * @return executeMessage
      */
     public String getExecuteMessage() {

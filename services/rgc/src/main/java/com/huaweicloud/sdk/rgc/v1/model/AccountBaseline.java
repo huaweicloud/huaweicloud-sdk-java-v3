@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 账号基本信息。
+ * 纳管账号基本信息。
  */
 public class AccountBaseline {
 
@@ -19,6 +19,11 @@ public class AccountBaseline {
     @JsonProperty(value = "account_name")
 
     private String accountName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_id")
+
+    private String accountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
@@ -31,7 +36,7 @@ public class AccountBaseline {
     private String accountEmail;
 
     /**
-     * 账号类型logging,security。 * LOGGING - 日志账号 * SECURITY - 安全账号 * CUSTOM - 自定义账号
+     * 纳管账号类型。类型包括LOGGING，SECURITY和CUSTOM。
      */
     public static final class AccountTypeEnum {
 
@@ -117,7 +122,7 @@ public class AccountBaseline {
     }
 
     /**
-     * 账号名称。
+     * 纳管账号名称。
      * @return accountName
      */
     public String getAccountName() {
@@ -126,6 +131,23 @@ public class AccountBaseline {
 
     public void setAccountName(String accountName) {
         this.accountName = accountName;
+    }
+
+    public AccountBaseline withAccountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    /**
+     * 纳管帐号的唯一标识符（ID）。
+     * @return accountId
+     */
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
     public AccountBaseline withPhone(String phone) {
@@ -151,7 +173,7 @@ public class AccountBaseline {
     }
 
     /**
-     * 账号邮箱。
+     * 纳管账号邮箱。
      * @return accountEmail
      */
     public String getAccountEmail() {
@@ -168,7 +190,7 @@ public class AccountBaseline {
     }
 
     /**
-     * 账号类型logging,security。 * LOGGING - 日志账号 * SECURITY - 安全账号 * CUSTOM - 自定义账号
+     * 纳管账号类型。类型包括LOGGING，SECURITY和CUSTOM。
      * @return accountType
      */
     public AccountTypeEnum getAccountType() {
@@ -188,14 +210,14 @@ public class AccountBaseline {
             return false;
         }
         AccountBaseline that = (AccountBaseline) obj;
-        return Objects.equals(this.accountName, that.accountName) && Objects.equals(this.phone, that.phone)
-            && Objects.equals(this.accountEmail, that.accountEmail)
+        return Objects.equals(this.accountName, that.accountName) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.accountEmail, that.accountEmail)
             && Objects.equals(this.accountType, that.accountType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountName, phone, accountEmail, accountType);
+        return Objects.hash(accountName, accountId, phone, accountEmail, accountType);
     }
 
     @Override
@@ -203,6 +225,7 @@ public class AccountBaseline {
         StringBuilder sb = new StringBuilder();
         sb.append("class AccountBaseline {\n");
         sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
+        sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    accountEmail: ").append(toIndentedString(accountEmail)).append("\n");
         sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");

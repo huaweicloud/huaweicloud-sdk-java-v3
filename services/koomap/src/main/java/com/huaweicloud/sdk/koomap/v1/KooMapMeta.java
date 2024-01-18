@@ -95,9 +95,9 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class KooMapMeta {
 
-    public static final HttpRequestDef<AddSpurPointRequest, AddSpurPointResponse> addSpurPoint = genForaddSpurPoint();
+    public static final HttpRequestDef<AddSpurPointRequest, AddSpurPointResponse> addSpurPoint = genForAddSpurPoint();
 
-    private static HttpRequestDef<AddSpurPointRequest, AddSpurPointResponse> genForaddSpurPoint() {
+    private static HttpRequestDef<AddSpurPointRequest, AddSpurPointResponse> genForAddSpurPoint() {
         // basic
         HttpRequestDef.Builder<AddSpurPointRequest, AddSpurPointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddSpurPointRequest.class, AddSpurPointResponse.class)
@@ -110,9 +110,7 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SpurInfo.class),
-            f -> f.withMarshaller(AddSpurPointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddSpurPointRequest::getBody, AddSpurPointRequest::setBody));
 
         // response
 
@@ -120,9 +118,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<CreateCommonWorkspaceRequest, CreateCommonWorkspaceResponse> createCommonWorkspace =
-        genForcreateCommonWorkspace();
+        genForCreateCommonWorkspace();
 
-    private static HttpRequestDef<CreateCommonWorkspaceRequest, CreateCommonWorkspaceResponse> genForcreateCommonWorkspace() {
+    private static HttpRequestDef<CreateCommonWorkspaceRequest, CreateCommonWorkspaceResponse> genForCreateCommonWorkspace() {
         // basic
         HttpRequestDef.Builder<CreateCommonWorkspaceRequest, CreateCommonWorkspaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateCommonWorkspaceRequest.class, CreateCommonWorkspaceResponse.class)
@@ -135,9 +133,7 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateWorkspaceDto.class),
-            f -> f.withMarshaller(CreateCommonWorkspaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCommonWorkspaceRequest::getBody, CreateCommonWorkspaceRequest::setBody));
 
         // response
 
@@ -145,9 +141,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<CreateMarkerInfoRequest, CreateMarkerInfoResponse> createMarkerInfo =
-        genForcreateMarkerInfo();
+        genForCreateMarkerInfo();
 
-    private static HttpRequestDef<CreateMarkerInfoRequest, CreateMarkerInfoResponse> genForcreateMarkerInfo() {
+    private static HttpRequestDef<CreateMarkerInfoRequest, CreateMarkerInfoResponse> genForCreateMarkerInfo() {
         // basic
         HttpRequestDef.Builder<CreateMarkerInfoRequest, CreateMarkerInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMarkerInfoRequest.class, CreateMarkerInfoResponse.class)
@@ -160,26 +156,22 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMarkerInfoRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(CreateMarkerInfoRequest::getTaskId, CreateMarkerInfoRequest::setTaskId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateMarkerInfoResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateMarkerInfoResponse::getBody, CreateMarkerInfoResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateReal3DTaskRequest, CreateReal3DTaskResponse> createReal3DTask =
-        genForcreateReal3DTask();
+        genForCreateReal3DTask();
 
-    private static HttpRequestDef<CreateReal3DTaskRequest, CreateReal3DTaskResponse> genForcreateReal3DTask() {
+    private static HttpRequestDef<CreateReal3DTaskRequest, CreateReal3DTaskResponse> genForCreateReal3DTask() {
         // basic
         HttpRequestDef.Builder<CreateReal3DTaskRequest, CreateReal3DTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateReal3DTaskRequest.class, CreateReal3DTaskResponse.class)
@@ -192,25 +184,21 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateReal3DTaskRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(CreateReal3DTaskRequest::getWorkspaceId, CreateReal3DTaskRequest::setWorkspaceId));
         builder.<CreateReal3DTaskDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateReal3DTaskDto.class),
-            f -> f.withMarshaller(CreateReal3DTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateReal3DTaskRequest::getBody, CreateReal3DTaskRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForcreateTask();
+    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForCreateTask();
 
-    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForcreateTask() {
+    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForCreateTask() {
         // basic
         HttpRequestDef.Builder<CreateTaskRequest, CreateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskRequest.class, CreateTaskResponse.class)
@@ -223,9 +211,7 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTaskDto.class),
-            f -> f.withMarshaller(CreateTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getBody, CreateTaskRequest::setBody));
 
         // response
 
@@ -233,9 +219,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<DeleteCommonWorkspaceRequest, DeleteCommonWorkspaceResponse> deleteCommonWorkspace =
-        genFordeleteCommonWorkspace();
+        genForDeleteCommonWorkspace();
 
-    private static HttpRequestDef<DeleteCommonWorkspaceRequest, DeleteCommonWorkspaceResponse> genFordeleteCommonWorkspace() {
+    private static HttpRequestDef<DeleteCommonWorkspaceRequest, DeleteCommonWorkspaceResponse> genForDeleteCommonWorkspace() {
         // basic
         HttpRequestDef.Builder<DeleteCommonWorkspaceRequest, DeleteCommonWorkspaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteCommonWorkspaceRequest.class, DeleteCommonWorkspaceResponse.class)
@@ -248,33 +234,28 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCommonWorkspaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteCommonWorkspaceRequest::getWorkspaceId,
+                DeleteCommonWorkspaceRequest::setWorkspaceId));
         builder.<Object>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Object.class),
-            f -> f.withMarshaller(DeleteCommonWorkspaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteCommonWorkspaceRequest::getBody, DeleteCommonWorkspaceRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteCommonWorkspaceResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteCommonWorkspaceResponse::getBody, DeleteCommonWorkspaceResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteReal3DProductRequest, DeleteReal3DProductResponse> deleteReal3DProduct =
-        genFordeleteReal3DProduct();
+        genForDeleteReal3DProduct();
 
-    private static HttpRequestDef<DeleteReal3DProductRequest, DeleteReal3DProductResponse> genFordeleteReal3DProduct() {
+    private static HttpRequestDef<DeleteReal3DProductRequest, DeleteReal3DProductResponse> genForDeleteReal3DProduct() {
         // basic
         HttpRequestDef.Builder<DeleteReal3DProductRequest, DeleteReal3DProductResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteReal3DProductRequest.class, DeleteReal3DProductResponse.class)
@@ -287,33 +268,27 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteReal3DProductRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(DeleteReal3DProductRequest::getProductId, DeleteReal3DProductRequest::setProductId));
         builder.<Object>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Object.class),
-            f -> f.withMarshaller(DeleteReal3DProductRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteReal3DProductRequest::getBody, DeleteReal3DProductRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteReal3DProductResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteReal3DProductResponse::getBody, DeleteReal3DProductResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteReal3DTaskRequest, DeleteReal3DTaskResponse> deleteReal3DTask =
-        genFordeleteReal3DTask();
+        genForDeleteReal3DTask();
 
-    private static HttpRequestDef<DeleteReal3DTaskRequest, DeleteReal3DTaskResponse> genFordeleteReal3DTask() {
+    private static HttpRequestDef<DeleteReal3DTaskRequest, DeleteReal3DTaskResponse> genForDeleteReal3DTask() {
         // basic
         HttpRequestDef.Builder<DeleteReal3DTaskRequest, DeleteReal3DTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteReal3DTaskRequest.class, DeleteReal3DTaskResponse.class)
@@ -326,40 +301,32 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteReal3DTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteReal3DTaskRequest::getTaskId, DeleteReal3DTaskRequest::setTaskId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteReal3DTaskRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteReal3DTaskRequest::getWorkspaceId, DeleteReal3DTaskRequest::setWorkspaceId));
         builder.<Object>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Object.class),
-            f -> f.withMarshaller(DeleteReal3DTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteReal3DTaskRequest::getBody, DeleteReal3DTaskRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteReal3DTaskResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteReal3DTaskResponse::getBody, DeleteReal3DTaskResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteSpurPointRequest, DeleteSpurPointResponse> deleteSpurPoint =
-        genFordeleteSpurPoint();
+        genForDeleteSpurPoint();
 
-    private static HttpRequestDef<DeleteSpurPointRequest, DeleteSpurPointResponse> genFordeleteSpurPoint() {
+    private static HttpRequestDef<DeleteSpurPointRequest, DeleteSpurPointResponse> genForDeleteSpurPoint() {
         // basic
         HttpRequestDef.Builder<DeleteSpurPointRequest, DeleteSpurPointResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSpurPointRequest.class, DeleteSpurPointResponse.class)
@@ -372,25 +339,21 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeletedSpurInfo.class),
-            f -> f.withMarshaller(DeleteSpurPointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteSpurPointRequest::getBody, DeleteSpurPointRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteSpurPointResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteSpurPointResponse::getBody, DeleteSpurPointResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
+    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genForDeleteTask();
 
-    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
+    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genForDeleteTask() {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
@@ -403,26 +366,22 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdDto.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getBody, DeleteTaskRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteTaskResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteTaskResponse::getBody, DeleteTaskResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListCommonWorkspaceRequest, ListCommonWorkspaceResponse> listCommonWorkspace =
-        genForlistCommonWorkspace();
+        genForListCommonWorkspace();
 
-    private static HttpRequestDef<ListCommonWorkspaceRequest, ListCommonWorkspaceResponse> genForlistCommonWorkspace() {
+    private static HttpRequestDef<ListCommonWorkspaceRequest, ListCommonWorkspaceResponse> genForListCommonWorkspace() {
         // basic
         HttpRequestDef.Builder<ListCommonWorkspaceRequest, ListCommonWorkspaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCommonWorkspaceRequest.class, ListCommonWorkspaceResponse.class)
@@ -435,81 +394,67 @@ public class KooMapMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommonWorkspaceRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCommonWorkspaceRequest::getOffset, ListCommonWorkspaceRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommonWorkspaceRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCommonWorkspaceRequest::getLimit, ListCommonWorkspaceRequest::setLimit));
         builder.<List<String>>withRequestField("workspace_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCommonWorkspaceRequest::getWorkspaceIds, (req, v) -> {
-                req.setWorkspaceIds(v);
-            }));
+            f -> f.withMarshaller(ListCommonWorkspaceRequest::getWorkspaceIds,
+                ListCommonWorkspaceRequest::setWorkspaceIds));
         builder.<String>withRequestField("workspace_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommonWorkspaceRequest::getWorkspaceName, (req, v) -> {
-                req.setWorkspaceName(v);
-            }));
+            f -> f.withMarshaller(ListCommonWorkspaceRequest::getWorkspaceName,
+                ListCommonWorkspaceRequest::setWorkspaceName));
         builder.<Boolean>withRequestField("star",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCommonWorkspaceRequest::getStar, (req, v) -> {
-                req.setStar(v);
-            }));
+            f -> f.withMarshaller(ListCommonWorkspaceRequest::getStar, ListCommonWorkspaceRequest::setStar));
         builder.<String>withRequestField("create_time_from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommonWorkspaceRequest::getCreateTimeFrom, (req, v) -> {
-                req.setCreateTimeFrom(v);
-            }));
+            f -> f.withMarshaller(ListCommonWorkspaceRequest::getCreateTimeFrom,
+                ListCommonWorkspaceRequest::setCreateTimeFrom));
         builder.<String>withRequestField("create_time_to",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommonWorkspaceRequest::getCreateTimeTo, (req, v) -> {
-                req.setCreateTimeTo(v);
-            }));
+            f -> f.withMarshaller(ListCommonWorkspaceRequest::getCreateTimeTo,
+                ListCommonWorkspaceRequest::setCreateTimeTo));
         builder.<String>withRequestField("update_time_from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommonWorkspaceRequest::getUpdateTimeFrom, (req, v) -> {
-                req.setUpdateTimeFrom(v);
-            }));
+            f -> f.withMarshaller(ListCommonWorkspaceRequest::getUpdateTimeFrom,
+                ListCommonWorkspaceRequest::setUpdateTimeFrom));
         builder.<String>withRequestField("update_time_to",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommonWorkspaceRequest::getUpdateTimeTo, (req, v) -> {
-                req.setUpdateTimeTo(v);
-            }));
+            f -> f.withMarshaller(ListCommonWorkspaceRequest::getUpdateTimeTo,
+                ListCommonWorkspaceRequest::setUpdateTimeTo));
         builder.<String>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommonWorkspaceRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListCommonWorkspaceRequest::getOrderBy, ListCommonWorkspaceRequest::setOrderBy));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFolderRequest, ListFolderResponse> listFolder = genForlistFolder();
+    public static final HttpRequestDef<ListFolderRequest, ListFolderResponse> listFolder = genForListFolder();
 
-    private static HttpRequestDef<ListFolderRequest, ListFolderResponse> genForlistFolder() {
+    private static HttpRequestDef<ListFolderRequest, ListFolderResponse> genForListFolder() {
         // basic
         HttpRequestDef.Builder<ListFolderRequest, ListFolderResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFolderRequest.class, ListFolderResponse.class)
@@ -522,9 +467,7 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryFolderReq.class),
-            f -> f.withMarshaller(ListFolderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListFolderRequest::getBody, ListFolderRequest::setBody));
 
         // response
 
@@ -532,9 +475,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<ListImageBaseInfoRequest, ListImageBaseInfoResponse> listImageBaseInfo =
-        genForlistImageBaseInfo();
+        genForListImageBaseInfo();
 
-    private static HttpRequestDef<ListImageBaseInfoRequest, ListImageBaseInfoResponse> genForlistImageBaseInfo() {
+    private static HttpRequestDef<ListImageBaseInfoRequest, ListImageBaseInfoResponse> genForListImageBaseInfo() {
         // basic
         HttpRequestDef.Builder<ListImageBaseInfoRequest, ListImageBaseInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListImageBaseInfoRequest.class, ListImageBaseInfoResponse.class)
@@ -547,9 +490,7 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListImageBaseInfoRequestBody.class),
-            f -> f.withMarshaller(ListImageBaseInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListImageBaseInfoRequest::getBody, ListImageBaseInfoRequest::setBody));
 
         // response
 
@@ -557,9 +498,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<ListReal3DProductsRequest, ListReal3DProductsResponse> listReal3DProducts =
-        genForlistReal3DProducts();
+        genForListReal3DProducts();
 
-    private static HttpRequestDef<ListReal3DProductsRequest, ListReal3DProductsResponse> genForlistReal3DProducts() {
+    private static HttpRequestDef<ListReal3DProductsRequest, ListReal3DProductsResponse> genForListReal3DProducts() {
         // basic
         HttpRequestDef.Builder<ListReal3DProductsRequest, ListReal3DProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListReal3DProductsRequest.class, ListReal3DProductsResponse.class)
@@ -572,30 +513,23 @@ public class KooMapMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListReal3DProductsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListReal3DProductsRequest::getOffset, ListReal3DProductsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListReal3DProductsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListReal3DProductsRequest::getLimit, ListReal3DProductsRequest::setLimit));
         builder.<String>withRequestField("product_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReal3DProductsRequest::getProductName, (req, v) -> {
-                req.setProductName(v);
-            }));
+            f -> f.withMarshaller(ListReal3DProductsRequest::getProductName,
+                ListReal3DProductsRequest::setProductName));
         builder.<String>withRequestField("product_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReal3DProductsRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ListReal3DProductsRequest::getProductId, ListReal3DProductsRequest::setProductId));
 
         // response
 
@@ -603,9 +537,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<ListSpurPointsRequest, ListSpurPointsResponse> listSpurPoints =
-        genForlistSpurPoints();
+        genForListSpurPoints();
 
-    private static HttpRequestDef<ListSpurPointsRequest, ListSpurPointsResponse> genForlistSpurPoints() {
+    private static HttpRequestDef<ListSpurPointsRequest, ListSpurPointsResponse> genForListSpurPoints() {
         // basic
         HttpRequestDef.Builder<ListSpurPointsRequest, ListSpurPointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListSpurPointsRequest.class, ListSpurPointsResponse.class)
@@ -618,18 +552,16 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SpurQueryParaInfo.class),
-            f -> f.withMarshaller(ListSpurPointsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListSpurPointsRequest::getBody, ListSpurPointsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTaskInfoRequest, ListTaskInfoResponse> listTaskInfo = genForlistTaskInfo();
+    public static final HttpRequestDef<ListTaskInfoRequest, ListTaskInfoResponse> listTaskInfo = genForListTaskInfo();
 
-    private static HttpRequestDef<ListTaskInfoRequest, ListTaskInfoResponse> genForlistTaskInfo() {
+    private static HttpRequestDef<ListTaskInfoRequest, ListTaskInfoResponse> genForListTaskInfo() {
         // basic
         HttpRequestDef.Builder<ListTaskInfoRequest, ListTaskInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTaskInfoRequest.class, ListTaskInfoResponse.class)
@@ -642,51 +574,37 @@ public class KooMapMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTaskInfoRequest::getTaskName, (req, v) -> {
-                req.setTaskName(v);
-            }));
+            f -> f.withMarshaller(ListTaskInfoRequest::getTaskName, ListTaskInfoRequest::setTaskName));
         builder.<String>withRequestField("workspace_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTaskInfoRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListTaskInfoRequest::getWorkspaceId, ListTaskInfoRequest::setWorkspaceId));
         builder.<List<String>>withRequestField("task_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTaskInfoRequest::getTaskStatus, (req, v) -> {
-                req.setTaskStatus(v);
-            }));
+            f -> f.withMarshaller(ListTaskInfoRequest::getTaskStatus, ListTaskInfoRequest::setTaskStatus));
         builder.<String>withRequestField("create_time_start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTaskInfoRequest::getCreateTimeStart, (req, v) -> {
-                req.setCreateTimeStart(v);
-            }));
+            f -> f.withMarshaller(ListTaskInfoRequest::getCreateTimeStart, ListTaskInfoRequest::setCreateTimeStart));
         builder.<String>withRequestField("create_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTaskInfoRequest::getCreateTimeEnd, (req, v) -> {
-                req.setCreateTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListTaskInfoRequest::getCreateTimeEnd, ListTaskInfoRequest::setCreateTimeEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTaskInfoRequest::getOffset, ListTaskInfoRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTaskInfoRequest::getLimit, ListTaskInfoRequest::setLimit));
 
         // response
 
@@ -694,9 +612,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<ListTasksInWorkspaceRequest, ListTasksInWorkspaceResponse> listTasksInWorkspace =
-        genForlistTasksInWorkspace();
+        genForListTasksInWorkspace();
 
-    private static HttpRequestDef<ListTasksInWorkspaceRequest, ListTasksInWorkspaceResponse> genForlistTasksInWorkspace() {
+    private static HttpRequestDef<ListTasksInWorkspaceRequest, ListTasksInWorkspaceResponse> genForListTasksInWorkspace() {
         // basic
         HttpRequestDef.Builder<ListTasksInWorkspaceRequest, ListTasksInWorkspaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTasksInWorkspaceRequest.class, ListTasksInWorkspaceResponse.class)
@@ -709,86 +627,69 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getWorkspaceId,
+                ListTasksInWorkspaceRequest::setWorkspaceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getOffset, ListTasksInWorkspaceRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getLimit, ListTasksInWorkspaceRequest::setLimit));
         builder.<String>withRequestField("task_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getTaskName, (req, v) -> {
-                req.setTaskName(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getTaskName, ListTasksInWorkspaceRequest::setTaskName));
         builder.<List<String>>withRequestField("task_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getTaskType, (req, v) -> {
-                req.setTaskType(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getTaskType, ListTasksInWorkspaceRequest::setTaskType));
         builder.<String>withRequestField("modeling_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getModelingType, (req, v) -> {
-                req.setModelingType(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getModelingType,
+                ListTasksInWorkspaceRequest::setModelingType));
         builder.<String>withRequestField("create_time_from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getCreateTimeFrom, (req, v) -> {
-                req.setCreateTimeFrom(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getCreateTimeFrom,
+                ListTasksInWorkspaceRequest::setCreateTimeFrom));
         builder.<String>withRequestField("create_time_to",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getCreateTimeTo, (req, v) -> {
-                req.setCreateTimeTo(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getCreateTimeTo,
+                ListTasksInWorkspaceRequest::setCreateTimeTo));
         builder.<String>withRequestField("update_time_from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getUpdateTimeFrom, (req, v) -> {
-                req.setUpdateTimeFrom(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getUpdateTimeFrom,
+                ListTasksInWorkspaceRequest::setUpdateTimeFrom));
         builder.<String>withRequestField("update_time_to",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getUpdateTimeTo, (req, v) -> {
-                req.setUpdateTimeTo(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getUpdateTimeTo,
+                ListTasksInWorkspaceRequest::setUpdateTimeTo));
         builder.<List<String>>withRequestField("task_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getTaskIds, (req, v) -> {
-                req.setTaskIds(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getTaskIds, ListTasksInWorkspaceRequest::setTaskIds));
         builder.<List<String>>withRequestField("task_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getTaskStatus, (req, v) -> {
-                req.setTaskStatus(v);
-            }));
+            f -> f.withMarshaller(ListTasksInWorkspaceRequest::getTaskStatus,
+                ListTasksInWorkspaceRequest::setTaskStatus));
 
         // response
 
@@ -796,9 +697,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<ListUsageInfoRequest, ListUsageInfoResponse> listUsageInfo =
-        genForlistUsageInfo();
+        genForListUsageInfo();
 
-    private static HttpRequestDef<ListUsageInfoRequest, ListUsageInfoResponse> genForlistUsageInfo() {
+    private static HttpRequestDef<ListUsageInfoRequest, ListUsageInfoResponse> genForListUsageInfo() {
         // basic
         HttpRequestDef.Builder<ListUsageInfoRequest, ListUsageInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsageInfoRequest.class, ListUsageInfoResponse.class)
@@ -811,23 +712,17 @@ public class KooMapMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsageInfoRequest::getUsageType, (req, v) -> {
-                req.setUsageType(v);
-            }));
+            f -> f.withMarshaller(ListUsageInfoRequest::getUsageType, ListUsageInfoRequest::setUsageType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsageInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListUsageInfoRequest::getLimit, ListUsageInfoRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsageInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListUsageInfoRequest::getOffset, ListUsageInfoRequest::setOffset));
 
         // response
 
@@ -835,9 +730,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<ShowReal3DUsageRequest, ShowReal3DUsageResponse> showReal3DUsage =
-        genForshowReal3DUsage();
+        genForShowReal3DUsage();
 
-    private static HttpRequestDef<ShowReal3DUsageRequest, ShowReal3DUsageResponse> genForshowReal3DUsage() {
+    private static HttpRequestDef<ShowReal3DUsageRequest, ShowReal3DUsageResponse> genForShowReal3DUsage() {
         // basic
         HttpRequestDef.Builder<ShowReal3DUsageRequest, ShowReal3DUsageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowReal3DUsageRequest.class, ShowReal3DUsageResponse.class)
@@ -850,9 +745,7 @@ public class KooMapMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReal3DUsageRequest::getUsageType, (req, v) -> {
-                req.setUsageType(v);
-            }));
+            f -> f.withMarshaller(ShowReal3DUsageRequest::getUsageType, ShowReal3DUsageRequest::setUsageType));
 
         // response
 
@@ -860,9 +753,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<ShowSpurCountRequest, ShowSpurCountResponse> showSpurCount =
-        genForshowSpurCount();
+        genForShowSpurCount();
 
-    private static HttpRequestDef<ShowSpurCountRequest, ShowSpurCountResponse> genForshowSpurCount() {
+    private static HttpRequestDef<ShowSpurCountRequest, ShowSpurCountResponse> genForShowSpurCount() {
         // basic
         HttpRequestDef.Builder<ShowSpurCountRequest, ShowSpurCountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowSpurCountRequest.class, ShowSpurCountResponse.class)
@@ -875,9 +768,7 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SpurCountQueryParaInfo.class),
-            f -> f.withMarshaller(ShowSpurCountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowSpurCountRequest::getBody, ShowSpurCountRequest::setBody));
 
         // response
 
@@ -885,9 +776,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<ShowTaskOverviewRequest, ShowTaskOverviewResponse> showTaskOverview =
-        genForshowTaskOverview();
+        genForShowTaskOverview();
 
-    private static HttpRequestDef<ShowTaskOverviewRequest, ShowTaskOverviewResponse> genForshowTaskOverview() {
+    private static HttpRequestDef<ShowTaskOverviewRequest, ShowTaskOverviewResponse> genForShowTaskOverview() {
         // basic
         HttpRequestDef.Builder<ShowTaskOverviewRequest, ShowTaskOverviewResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskOverviewRequest.class, ShowTaskOverviewResponse.class)
@@ -900,9 +791,7 @@ public class KooMapMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskOverviewRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskOverviewRequest::getWorkspaceId, ShowTaskOverviewRequest::setWorkspaceId));
 
         // response
 
@@ -910,9 +799,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<ShowTaskOverviewInWorkspaceRequest, ShowTaskOverviewInWorkspaceResponse> showTaskOverviewInWorkspace =
-        genForshowTaskOverviewInWorkspace();
+        genForShowTaskOverviewInWorkspace();
 
-    private static HttpRequestDef<ShowTaskOverviewInWorkspaceRequest, ShowTaskOverviewInWorkspaceResponse> genForshowTaskOverviewInWorkspace() {
+    private static HttpRequestDef<ShowTaskOverviewInWorkspaceRequest, ShowTaskOverviewInWorkspaceResponse> genForShowTaskOverviewInWorkspace() {
         // basic
         HttpRequestDef.Builder<ShowTaskOverviewInWorkspaceRequest, ShowTaskOverviewInWorkspaceResponse> builder =
             HttpRequestDef
@@ -928,18 +817,17 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskOverviewInWorkspaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskOverviewInWorkspaceRequest::getWorkspaceId,
+                ShowTaskOverviewInWorkspaceRequest::setWorkspaceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartNaviRequest, StartNaviResponse> startNavi = genForstartNavi();
+    public static final HttpRequestDef<StartNaviRequest, StartNaviResponse> startNavi = genForStartNavi();
 
-    private static HttpRequestDef<StartNaviRequest, StartNaviResponse> genForstartNavi() {
+    private static HttpRequestDef<StartNaviRequest, StartNaviResponse> genForStartNavi() {
         // basic
         HttpRequestDef.Builder<StartNaviRequest, StartNaviResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartNaviRequest.class, StartNaviResponse.class)
@@ -952,37 +840,27 @@ public class KooMapMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartNaviRequest::getXTraceId, (req, v) -> {
-                req.setXTraceId(v);
-            }));
+            f -> f.withMarshaller(StartNaviRequest::getXTraceId, StartNaviRequest::setXTraceId));
         builder.<String>withRequestField("App-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartNaviRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(StartNaviRequest::getAppId, StartNaviRequest::setAppId));
         builder.<String>withRequestField("Uuid",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartNaviRequest::getUuid, (req, v) -> {
-                req.setUuid(v);
-            }));
+            f -> f.withMarshaller(StartNaviRequest::getUuid, StartNaviRequest::setUuid));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartNaviRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(StartNaviRequest::getAuthorization, StartNaviRequest::setAuthorization));
         builder.<NaviServiceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NaviServiceReq.class),
-            f -> f.withMarshaller(StartNaviRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartNaviRequest::getBody, StartNaviRequest::setBody));
 
         // response
 
@@ -995,9 +873,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<StartReal3DTaskRequest, StartReal3DTaskResponse> startReal3DTask =
-        genForstartReal3DTask();
+        genForStartReal3DTask();
 
-    private static HttpRequestDef<StartReal3DTaskRequest, StartReal3DTaskResponse> genForstartReal3DTask() {
+    private static HttpRequestDef<StartReal3DTaskRequest, StartReal3DTaskResponse> genForStartReal3DTask() {
         // basic
         HttpRequestDef.Builder<StartReal3DTaskRequest, StartReal3DTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartReal3DTaskRequest.class, StartReal3DTaskResponse.class)
@@ -1010,32 +888,26 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartReal3DTaskRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(StartReal3DTaskRequest::getWorkspaceId, StartReal3DTaskRequest::setWorkspaceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartReal3DTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(StartReal3DTaskRequest::getTaskId, StartReal3DTaskRequest::setTaskId));
         builder.<StartReal3DTaskBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartReal3DTaskBody.class),
-            f -> f.withMarshaller(StartReal3DTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartReal3DTaskRequest::getBody, StartReal3DTaskRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartTaskRequest, StartTaskResponse> startTask = genForstartTask();
+    public static final HttpRequestDef<StartTaskRequest, StartTaskResponse> startTask = genForStartTask();
 
-    private static HttpRequestDef<StartTaskRequest, StartTaskResponse> genForstartTask() {
+    private static HttpRequestDef<StartTaskRequest, StartTaskResponse> genForStartTask() {
         // basic
         HttpRequestDef.Builder<StartTaskRequest, StartTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartTaskRequest.class, StartTaskResponse.class)
@@ -1048,25 +920,21 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdDto.class),
-            f -> f.withMarshaller(StartTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartTaskRequest::getBody, StartTaskRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(StartTaskResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(StartTaskResponse::getBody, StartTaskResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartVpsRequest, StartVpsResponse> startVps = genForstartVps();
+    public static final HttpRequestDef<StartVpsRequest, StartVpsResponse> startVps = genForStartVps();
 
-    private static HttpRequestDef<StartVpsRequest, StartVpsResponse> genForstartVps() {
+    private static HttpRequestDef<StartVpsRequest, StartVpsResponse> genForStartVps() {
         // basic
         HttpRequestDef.Builder<StartVpsRequest, StartVpsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartVpsRequest.class, StartVpsResponse.class)
@@ -1079,37 +947,27 @@ public class KooMapMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartVpsRequest::getXTraceId, (req, v) -> {
-                req.setXTraceId(v);
-            }));
+            f -> f.withMarshaller(StartVpsRequest::getXTraceId, StartVpsRequest::setXTraceId));
         builder.<String>withRequestField("App-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartVpsRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(StartVpsRequest::getAppId, StartVpsRequest::setAppId));
         builder.<String>withRequestField("Uuid",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartVpsRequest::getUuid, (req, v) -> {
-                req.setUuid(v);
-            }));
+            f -> f.withMarshaller(StartVpsRequest::getUuid, StartVpsRequest::setUuid));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartVpsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(StartVpsRequest::getAuthorization, StartVpsRequest::setAuthorization));
         builder.<VpsServiceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpsServiceReq.class),
-            f -> f.withMarshaller(StartVpsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartVpsRequest::getBody, StartVpsRequest::setBody));
 
         // response
 
@@ -1122,9 +980,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<StopReal3DTaskRequest, StopReal3DTaskResponse> stopReal3DTask =
-        genForstopReal3DTask();
+        genForStopReal3DTask();
 
-    private static HttpRequestDef<StopReal3DTaskRequest, StopReal3DTaskResponse> genForstopReal3DTask() {
+    private static HttpRequestDef<StopReal3DTaskRequest, StopReal3DTaskResponse> genForStopReal3DTask() {
         // basic
         HttpRequestDef.Builder<StopReal3DTaskRequest, StopReal3DTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopReal3DTaskRequest.class, StopReal3DTaskResponse.class)
@@ -1137,39 +995,31 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopReal3DTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(StopReal3DTaskRequest::getTaskId, StopReal3DTaskRequest::setTaskId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopReal3DTaskRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(StopReal3DTaskRequest::getWorkspaceId, StopReal3DTaskRequest::setWorkspaceId));
         builder.<Object>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Object.class),
-            f -> f.withMarshaller(StopReal3DTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StopReal3DTaskRequest::getBody, StopReal3DTaskRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(StopReal3DTaskResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(StopReal3DTaskResponse::getBody, StopReal3DTaskResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopTaskRequest, StopTaskResponse> stopTask = genForstopTask();
+    public static final HttpRequestDef<StopTaskRequest, StopTaskResponse> stopTask = genForStopTask();
 
-    private static HttpRequestDef<StopTaskRequest, StopTaskResponse> genForstopTask() {
+    private static HttpRequestDef<StopTaskRequest, StopTaskResponse> genForStopTask() {
         // basic
         HttpRequestDef.Builder<StopTaskRequest, StopTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopTaskRequest.class, StopTaskResponse.class)
@@ -1182,26 +1032,22 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdDto.class),
-            f -> f.withMarshaller(StopTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StopTaskRequest::getBody, StopTaskRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(StopTaskResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(StopTaskResponse::getBody, StopTaskResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<UpdateCommonWorkspaceRequest, UpdateCommonWorkspaceResponse> updateCommonWorkspace =
-        genForupdateCommonWorkspace();
+        genForUpdateCommonWorkspace();
 
-    private static HttpRequestDef<UpdateCommonWorkspaceRequest, UpdateCommonWorkspaceResponse> genForupdateCommonWorkspace() {
+    private static HttpRequestDef<UpdateCommonWorkspaceRequest, UpdateCommonWorkspaceResponse> genForUpdateCommonWorkspace() {
         // basic
         HttpRequestDef.Builder<UpdateCommonWorkspaceRequest, UpdateCommonWorkspaceResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateCommonWorkspaceRequest.class, UpdateCommonWorkspaceResponse.class)
@@ -1214,16 +1060,13 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCommonWorkspaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateCommonWorkspaceRequest::getWorkspaceId,
+                UpdateCommonWorkspaceRequest::setWorkspaceId));
         builder.<UpdateWorkspaceDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateWorkspaceDto.class),
-            f -> f.withMarshaller(UpdateCommonWorkspaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCommonWorkspaceRequest::getBody, UpdateCommonWorkspaceRequest::setBody));
 
         // response
 
@@ -1231,9 +1074,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<UpdateReal3DTaskRequest, UpdateReal3DTaskResponse> updateReal3DTask =
-        genForupdateReal3DTask();
+        genForUpdateReal3DTask();
 
-    private static HttpRequestDef<UpdateReal3DTaskRequest, UpdateReal3DTaskResponse> genForupdateReal3DTask() {
+    private static HttpRequestDef<UpdateReal3DTaskRequest, UpdateReal3DTaskResponse> genForUpdateReal3DTask() {
         // basic
         HttpRequestDef.Builder<UpdateReal3DTaskRequest, UpdateReal3DTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateReal3DTaskRequest.class, UpdateReal3DTaskResponse.class)
@@ -1246,23 +1089,17 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReal3DTaskRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateReal3DTaskRequest::getWorkspaceId, UpdateReal3DTaskRequest::setWorkspaceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReal3DTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateReal3DTaskRequest::getTaskId, UpdateReal3DTaskRequest::setTaskId));
         builder.<UpdateReal3DTaskDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateReal3DTaskDto.class),
-            f -> f.withMarshaller(UpdateReal3DTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateReal3DTaskRequest::getBody, UpdateReal3DTaskRequest::setBody));
 
         // response
 
@@ -1270,9 +1107,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<UpdateReal3DTaskArchivedStatusRequest, UpdateReal3DTaskArchivedStatusResponse> updateReal3DTaskArchivedStatus =
-        genForupdateReal3DTaskArchivedStatus();
+        genForUpdateReal3DTaskArchivedStatus();
 
-    private static HttpRequestDef<UpdateReal3DTaskArchivedStatusRequest, UpdateReal3DTaskArchivedStatusResponse> genForupdateReal3DTaskArchivedStatus() {
+    private static HttpRequestDef<UpdateReal3DTaskArchivedStatusRequest, UpdateReal3DTaskArchivedStatusResponse> genForUpdateReal3DTaskArchivedStatus() {
         // basic
         HttpRequestDef.Builder<UpdateReal3DTaskArchivedStatusRequest, UpdateReal3DTaskArchivedStatusResponse> builder =
             HttpRequestDef
@@ -1288,23 +1125,20 @@ public class KooMapMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReal3DTaskArchivedStatusRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateReal3DTaskArchivedStatusRequest::getTaskId,
+                UpdateReal3DTaskArchivedStatusRequest::setTaskId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReal3DTaskArchivedStatusRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateReal3DTaskArchivedStatusRequest::getWorkspaceId,
+                UpdateReal3DTaskArchivedStatusRequest::setWorkspaceId));
         builder.<ArchiveReal3DTaskBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ArchiveReal3DTaskBody.class),
-            f -> f.withMarshaller(UpdateReal3DTaskArchivedStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateReal3DTaskArchivedStatusRequest::getBody,
+                UpdateReal3DTaskArchivedStatusRequest::setBody));
 
         // response
 
@@ -1312,9 +1146,9 @@ public class KooMapMeta {
     }
 
     public static final HttpRequestDef<UpdateTaskArchivedStatusRequest, UpdateTaskArchivedStatusResponse> updateTaskArchivedStatus =
-        genForupdateTaskArchivedStatus();
+        genForUpdateTaskArchivedStatus();
 
-    private static HttpRequestDef<UpdateTaskArchivedStatusRequest, UpdateTaskArchivedStatusResponse> genForupdateTaskArchivedStatus() {
+    private static HttpRequestDef<UpdateTaskArchivedStatusRequest, UpdateTaskArchivedStatusResponse> genForUpdateTaskArchivedStatus() {
         // basic
         HttpRequestDef.Builder<UpdateTaskArchivedStatusRequest, UpdateTaskArchivedStatusResponse> builder =
             HttpRequestDef
@@ -1328,33 +1162,29 @@ public class KooMapMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(UpdateTaskArchivedStatusRequest::getArchived, (req, v) -> {
-                req.setArchived(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskArchivedStatusRequest::getArchived,
+                UpdateTaskArchivedStatusRequest::setArchived));
         builder.<IdDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdDto.class),
-            f -> f.withMarshaller(UpdateTaskArchivedStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskArchivedStatusRequest::getBody, UpdateTaskArchivedStatusRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateTaskArchivedStatusResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateTaskArchivedStatusResponse::getBody,
+                UpdateTaskArchivedStatusResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ValidateImageRequest, ValidateImageResponse> validateImage =
-        genForvalidateImage();
+        genForValidateImage();
 
-    private static HttpRequestDef<ValidateImageRequest, ValidateImageResponse> genForvalidateImage() {
+    private static HttpRequestDef<ValidateImageRequest, ValidateImageResponse> genForValidateImage() {
         // basic
         HttpRequestDef.Builder<ValidateImageRequest, ValidateImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ValidateImageRequest.class, ValidateImageResponse.class)
@@ -1367,18 +1197,15 @@ public class KooMapMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckImageDataDto.class),
-            f -> f.withMarshaller(ValidateImageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ValidateImageRequest::getBody, ValidateImageRequest::setBody));
 
         // response
         builder.<List<CheckImageResultDto>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ValidateImageResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(CheckImageResultDto.class));
+            f -> f.withMarshaller(ValidateImageResponse::getBody, ValidateImageResponse::setBody)
+                .withInnerContainerType(CheckImageResultDto.class));
 
         return builder.build();
     }

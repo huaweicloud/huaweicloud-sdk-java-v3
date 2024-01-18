@@ -52,7 +52,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeSiteRequest 请求对象
+     * @param request CreateEdgeSiteRequest 请求对象
      * @return CompletableFuture<CreateEdgeSiteResponse>
      */
     public CompletableFuture<CreateEdgeSiteResponse> createEdgeSiteAsync(CreateEdgeSiteRequest request) {
@@ -67,13 +67,12 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeSiteRequest 请求对象
+     * @param request CreateEdgeSiteRequest 请求对象
      * @return AsyncInvoker<CreateEdgeSiteRequest, CreateEdgeSiteResponse>
      */
     public AsyncInvoker<CreateEdgeSiteRequest, CreateEdgeSiteResponse> createEdgeSiteAsyncInvoker(
         CreateEdgeSiteRequest request) {
-        return new AsyncInvoker<CreateEdgeSiteRequest, CreateEdgeSiteResponse>(request, CloudPondMeta.createEdgeSite,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.createEdgeSite, hcClient);
     }
 
     /**
@@ -83,7 +82,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeSiteRequest 请求对象
+     * @param request DeleteEdgeSiteRequest 请求对象
      * @return CompletableFuture<DeleteEdgeSiteResponse>
      */
     public CompletableFuture<DeleteEdgeSiteResponse> deleteEdgeSiteAsync(DeleteEdgeSiteRequest request) {
@@ -97,13 +96,12 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeSiteRequest 请求对象
+     * @param request DeleteEdgeSiteRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse>
      */
     public AsyncInvoker<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse> deleteEdgeSiteAsyncInvoker(
         DeleteEdgeSiteRequest request) {
-        return new AsyncInvoker<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse>(request, CloudPondMeta.deleteEdgeSite,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.deleteEdgeSite, hcClient);
     }
 
     /**
@@ -113,7 +111,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSitesRequest 请求对象
+     * @param request ListEdgeSitesRequest 请求对象
      * @return CompletableFuture<ListEdgeSitesResponse>
      */
     public CompletableFuture<ListEdgeSitesResponse> listEdgeSitesAsync(ListEdgeSitesRequest request) {
@@ -127,13 +125,12 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSitesRequest 请求对象
+     * @param request ListEdgeSitesRequest 请求对象
      * @return AsyncInvoker<ListEdgeSitesRequest, ListEdgeSitesResponse>
      */
     public AsyncInvoker<ListEdgeSitesRequest, ListEdgeSitesResponse> listEdgeSitesAsyncInvoker(
         ListEdgeSitesRequest request) {
-        return new AsyncInvoker<ListEdgeSitesRequest, ListEdgeSitesResponse>(request, CloudPondMeta.listEdgeSites,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.listEdgeSites, hcClient);
     }
 
     /**
@@ -143,7 +140,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeSiteRequest 请求对象
+     * @param request ShowEdgeSiteRequest 请求对象
      * @return CompletableFuture<ShowEdgeSiteResponse>
      */
     public CompletableFuture<ShowEdgeSiteResponse> showEdgeSiteAsync(ShowEdgeSiteRequest request) {
@@ -157,13 +154,12 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeSiteRequest 请求对象
+     * @param request ShowEdgeSiteRequest 请求对象
      * @return AsyncInvoker<ShowEdgeSiteRequest, ShowEdgeSiteResponse>
      */
     public AsyncInvoker<ShowEdgeSiteRequest, ShowEdgeSiteResponse> showEdgeSiteAsyncInvoker(
         ShowEdgeSiteRequest request) {
-        return new AsyncInvoker<ShowEdgeSiteRequest, ShowEdgeSiteResponse>(request, CloudPondMeta.showEdgeSite,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.showEdgeSite, hcClient);
     }
 
     /**
@@ -174,7 +170,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeSiteRequest 请求对象
+     * @param request UpdateEdgeSiteRequest 请求对象
      * @return CompletableFuture<UpdateEdgeSiteResponse>
      */
     public CompletableFuture<UpdateEdgeSiteResponse> updateEdgeSiteAsync(UpdateEdgeSiteRequest request) {
@@ -189,13 +185,12 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeSiteRequest 请求对象
+     * @param request UpdateEdgeSiteRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse>
      */
     public AsyncInvoker<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse> updateEdgeSiteAsyncInvoker(
         UpdateEdgeSiteRequest request) {
-        return new AsyncInvoker<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse>(request, CloudPondMeta.updateEdgeSite,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.updateEdgeSite, hcClient);
     }
 
     /**
@@ -205,7 +200,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSiteMetricsRequest 请求对象
+     * @param request ListEdgeSiteMetricsRequest 请求对象
      * @return CompletableFuture<ListEdgeSiteMetricsResponse>
      */
     public CompletableFuture<ListEdgeSiteMetricsResponse> listEdgeSiteMetricsAsync(ListEdgeSiteMetricsRequest request) {
@@ -219,13 +214,12 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSiteMetricsRequest 请求对象
+     * @param request ListEdgeSiteMetricsRequest 请求对象
      * @return AsyncInvoker<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse>
      */
     public AsyncInvoker<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse> listEdgeSiteMetricsAsyncInvoker(
         ListEdgeSiteMetricsRequest request) {
-        return new AsyncInvoker<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse>(request,
-            CloudPondMeta.listEdgeSiteMetrics, hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.listEdgeSiteMetrics, hcClient);
     }
 
     /**
@@ -235,7 +229,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return CompletableFuture<ListQuotasResponse>
      */
     public CompletableFuture<ListQuotasResponse> listQuotasAsync(ListQuotasRequest request) {
@@ -249,11 +243,11 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
-        return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, CloudPondMeta.listQuotas, hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.listQuotas, hcClient);
     }
 
     /**
@@ -263,7 +257,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRacksRequest 请求对象
+     * @param request ListRacksRequest 请求对象
      * @return CompletableFuture<ListRacksResponse>
      */
     public CompletableFuture<ListRacksResponse> listRacksAsync(ListRacksRequest request) {
@@ -277,11 +271,11 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRacksRequest 请求对象
+     * @param request ListRacksRequest 请求对象
      * @return AsyncInvoker<ListRacksRequest, ListRacksResponse>
      */
     public AsyncInvoker<ListRacksRequest, ListRacksResponse> listRacksAsyncInvoker(ListRacksRequest request) {
-        return new AsyncInvoker<ListRacksRequest, ListRacksResponse>(request, CloudPondMeta.listRacks, hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.listRacks, hcClient);
     }
 
     /**
@@ -291,7 +285,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRackRequest 请求对象
+     * @param request ShowRackRequest 请求对象
      * @return CompletableFuture<ShowRackResponse>
      */
     public CompletableFuture<ShowRackResponse> showRackAsync(ShowRackRequest request) {
@@ -305,11 +299,11 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRackRequest 请求对象
+     * @param request ShowRackRequest 请求对象
      * @return AsyncInvoker<ShowRackRequest, ShowRackResponse>
      */
     public AsyncInvoker<ShowRackRequest, ShowRackResponse> showRackAsyncInvoker(ShowRackRequest request) {
-        return new AsyncInvoker<ShowRackRequest, ShowRackResponse>(request, CloudPondMeta.showRack, hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.showRack, hcClient);
     }
 
     /**
@@ -319,7 +313,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSupportedRegionsRequest 请求对象
+     * @param request ListSupportedRegionsRequest 请求对象
      * @return CompletableFuture<ListSupportedRegionsResponse>
      */
     public CompletableFuture<ListSupportedRegionsResponse> listSupportedRegionsAsync(
@@ -334,13 +328,12 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSupportedRegionsRequest 请求对象
+     * @param request ListSupportedRegionsRequest 请求对象
      * @return AsyncInvoker<ListSupportedRegionsRequest, ListSupportedRegionsResponse>
      */
     public AsyncInvoker<ListSupportedRegionsRequest, ListSupportedRegionsResponse> listSupportedRegionsAsyncInvoker(
         ListSupportedRegionsRequest request) {
-        return new AsyncInvoker<ListSupportedRegionsRequest, ListSupportedRegionsResponse>(request,
-            CloudPondMeta.listSupportedRegions, hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.listSupportedRegions, hcClient);
     }
 
     /**
@@ -350,7 +343,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoragePoolsRequest 请求对象
+     * @param request ListStoragePoolsRequest 请求对象
      * @return CompletableFuture<ListStoragePoolsResponse>
      */
     public CompletableFuture<ListStoragePoolsResponse> listStoragePoolsAsync(ListStoragePoolsRequest request) {
@@ -364,13 +357,12 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoragePoolsRequest 请求对象
+     * @param request ListStoragePoolsRequest 请求对象
      * @return AsyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse>
      */
     public AsyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse> listStoragePoolsAsyncInvoker(
         ListStoragePoolsRequest request) {
-        return new AsyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse>(request,
-            CloudPondMeta.listStoragePools, hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.listStoragePools, hcClient);
     }
 
     /**
@@ -380,7 +372,7 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStoragePoolRequest 请求对象
+     * @param request ShowStoragePoolRequest 请求对象
      * @return CompletableFuture<ShowStoragePoolResponse>
      */
     public CompletableFuture<ShowStoragePoolResponse> showStoragePoolAsync(ShowStoragePoolRequest request) {
@@ -394,13 +386,12 @@ public class CloudPondAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStoragePoolRequest 请求对象
+     * @param request ShowStoragePoolRequest 请求对象
      * @return AsyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse>
      */
     public AsyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse> showStoragePoolAsyncInvoker(
         ShowStoragePoolRequest request) {
-        return new AsyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse>(request, CloudPondMeta.showStoragePool,
-            hcClient);
+        return new AsyncInvoker<>(request, CloudPondMeta.showStoragePool, hcClient);
     }
 
 }

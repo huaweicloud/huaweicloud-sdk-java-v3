@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * job类型 * &#x60;CREATE_SERVER&#x60; - 创建服务器 * &#x60;DELETE_SERVER&#x60; - 删除服务器 * &#x60;UPDATE_FREEZE_STATUS&#x60; - 修改服务器冻结状态 * &#x60;CREATE_SERVER_IMAGE&#x60; - 构建镜像 * &#x60;REINSTALL_OS&#x60; - 重装操作系统 * &#x60;CHANGE_SERVER_IMAGE&#x60; - 更换镜像 * &#x60;REJOIN_DOMAIN&#x60; - 重新加域 * &#x60;MIGRATE_SERVER&#x60; - 迁移服务器 * &#x60;UPGRADE_ACCESS_AGENT&#x60; - hda升级 * &#x60;UPDATE_SERVER_TSVI&#x60; - 更新虚拟会话IP * &#x60;SCHEDULED_TASK&#x60; - 定时任务job * &#x60;COLLECT_APS_LOG&#x60; - 收集aps日志
+ * job类型： * &#x60;CREATE_SERVER&#x60; - 创建服务器 * &#x60;DELETE_SERVER&#x60; - 删除服务器 * &#x60;UPDATE_FREEZE_STATUS&#x60; - 修改服务器冻结状态 * &#x60;CREATE_SERVER_IMAGE&#x60; - 构建镜像 * &#x60;REINSTALL_OS&#x60; - 重装操作系统 * &#x60;CHANGE_SERVER_IMAGE&#x60; - 更换镜像 * &#x60;REJOIN_DOMAIN&#x60; - 重新加域 * &#x60;MIGRATE_SERVER&#x60; - 迁移服务器 * &#x60;UPGRADE_ACCESS_AGENT&#x60; - hda升级 * &#x60;UPDATE_SERVER_TSVI&#x60; - 更新虚拟会话IP * &#x60;SCHEDULED_TASK&#x60; - 定时任务job * &#x60;COLLECT_HDA_LOG&#x60; - 收集hda日志 * &#x60;COLLECT_APS_LOG&#x60; - 收集aps日志
  */
 public class JobType {
 
@@ -68,6 +68,11 @@ public class JobType {
     public static final JobType SCHEDULED_TASK = new JobType("SCHEDULED_TASK");
 
     /**
+     * Enum COLLECT_HDA_LOG for value: "COLLECT_HDA_LOG"
+     */
+    public static final JobType COLLECT_HDA_LOG = new JobType("COLLECT_HDA_LOG");
+
+    /**
      * Enum COLLECT_APS_LOG for value: "COLLECT_APS_LOG"
      */
     public static final JobType COLLECT_APS_LOG = new JobType("COLLECT_APS_LOG");
@@ -87,6 +92,7 @@ public class JobType {
         map.put("UPGRADE_ACCESS_AGENT", UPGRADE_ACCESS_AGENT);
         map.put("UPDATE_SERVER_TSVI", UPDATE_SERVER_TSVI);
         map.put("SCHEDULED_TASK", SCHEDULED_TASK);
+        map.put("COLLECT_HDA_LOG", COLLECT_HDA_LOG);
         map.put("COLLECT_APS_LOG", COLLECT_APS_LOG);
         return Collections.unmodifiableMap(map);
     }

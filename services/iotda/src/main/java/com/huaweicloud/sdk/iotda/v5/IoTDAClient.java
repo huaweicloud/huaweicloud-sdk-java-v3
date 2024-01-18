@@ -192,7 +192,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccessCodeRequest 请求对象
+     * @param request CreateAccessCodeRequest 请求对象
      * @return CreateAccessCodeResponse
      */
     public CreateAccessCodeResponse createAccessCode(CreateAccessCodeRequest request) {
@@ -206,13 +206,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccessCodeRequest 请求对象
+     * @param request CreateAccessCodeRequest 请求对象
      * @return SyncInvoker<CreateAccessCodeRequest, CreateAccessCodeResponse>
      */
     public SyncInvoker<CreateAccessCodeRequest, CreateAccessCodeResponse> createAccessCodeInvoker(
         CreateAccessCodeRequest request) {
-        return new SyncInvoker<CreateAccessCodeRequest, CreateAccessCodeResponse>(request, IoTDAMeta.createAccessCode,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createAccessCode, hcClient);
     }
 
     /**
@@ -222,7 +221,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddQueueRequest 请求对象
+     * @param request AddQueueRequest 请求对象
      * @return AddQueueResponse
      */
     public AddQueueResponse addQueue(AddQueueRequest request) {
@@ -236,11 +235,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddQueueRequest 请求对象
+     * @param request AddQueueRequest 请求对象
      * @return SyncInvoker<AddQueueRequest, AddQueueResponse>
      */
     public SyncInvoker<AddQueueRequest, AddQueueResponse> addQueueInvoker(AddQueueRequest request) {
-        return new SyncInvoker<AddQueueRequest, AddQueueResponse>(request, IoTDAMeta.addQueue, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.addQueue, hcClient);
     }
 
     /**
@@ -250,7 +249,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowQueueRequest 请求对象
+     * @param request BatchShowQueueRequest 请求对象
      * @return BatchShowQueueResponse
      */
     public BatchShowQueueResponse batchShowQueue(BatchShowQueueRequest request) {
@@ -264,13 +263,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowQueueRequest 请求对象
+     * @param request BatchShowQueueRequest 请求对象
      * @return SyncInvoker<BatchShowQueueRequest, BatchShowQueueResponse>
      */
     public SyncInvoker<BatchShowQueueRequest, BatchShowQueueResponse> batchShowQueueInvoker(
         BatchShowQueueRequest request) {
-        return new SyncInvoker<BatchShowQueueRequest, BatchShowQueueResponse>(request, IoTDAMeta.batchShowQueue,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.batchShowQueue, hcClient);
     }
 
     /**
@@ -280,7 +278,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQueueRequest 请求对象
+     * @param request DeleteQueueRequest 请求对象
      * @return DeleteQueueResponse
      */
     public DeleteQueueResponse deleteQueue(DeleteQueueRequest request) {
@@ -294,11 +292,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQueueRequest 请求对象
+     * @param request DeleteQueueRequest 请求对象
      * @return SyncInvoker<DeleteQueueRequest, DeleteQueueResponse>
      */
     public SyncInvoker<DeleteQueueRequest, DeleteQueueResponse> deleteQueueInvoker(DeleteQueueRequest request) {
-        return new SyncInvoker<DeleteQueueRequest, DeleteQueueResponse>(request, IoTDAMeta.deleteQueue, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteQueue, hcClient);
     }
 
     /**
@@ -308,7 +306,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQueueRequest 请求对象
+     * @param request ShowQueueRequest 请求对象
      * @return ShowQueueResponse
      */
     public ShowQueueResponse showQueue(ShowQueueRequest request) {
@@ -322,11 +320,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQueueRequest 请求对象
+     * @param request ShowQueueRequest 请求对象
      * @return SyncInvoker<ShowQueueRequest, ShowQueueResponse>
      */
     public SyncInvoker<ShowQueueRequest, ShowQueueResponse> showQueueInvoker(ShowQueueRequest request) {
-        return new SyncInvoker<ShowQueueRequest, ShowQueueResponse>(request, IoTDAMeta.showQueue, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showQueue, hcClient);
     }
 
     /**
@@ -336,7 +334,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddApplicationRequest 请求对象
+     * @param request AddApplicationRequest 请求对象
      * @return AddApplicationResponse
      */
     public AddApplicationResponse addApplication(AddApplicationRequest request) {
@@ -350,13 +348,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddApplicationRequest 请求对象
+     * @param request AddApplicationRequest 请求对象
      * @return SyncInvoker<AddApplicationRequest, AddApplicationResponse>
      */
     public SyncInvoker<AddApplicationRequest, AddApplicationResponse> addApplicationInvoker(
         AddApplicationRequest request) {
-        return new SyncInvoker<AddApplicationRequest, AddApplicationResponse>(request, IoTDAMeta.addApplication,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.addApplication, hcClient);
     }
 
     /**
@@ -366,7 +363,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationRequest 请求对象
+     * @param request DeleteApplicationRequest 请求对象
      * @return DeleteApplicationResponse
      */
     public DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request) {
@@ -380,13 +377,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationRequest 请求对象
+     * @param request DeleteApplicationRequest 请求对象
      * @return SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
      */
     public SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplicationInvoker(
         DeleteApplicationRequest request) {
-        return new SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>(request,
-            IoTDAMeta.deleteApplication, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteApplication, hcClient);
     }
 
     /**
@@ -396,7 +392,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationRequest 请求对象
+     * @param request ShowApplicationRequest 请求对象
      * @return ShowApplicationResponse
      */
     public ShowApplicationResponse showApplication(ShowApplicationRequest request) {
@@ -410,13 +406,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationRequest 请求对象
+     * @param request ShowApplicationRequest 请求对象
      * @return SyncInvoker<ShowApplicationRequest, ShowApplicationResponse>
      */
     public SyncInvoker<ShowApplicationRequest, ShowApplicationResponse> showApplicationInvoker(
         ShowApplicationRequest request) {
-        return new SyncInvoker<ShowApplicationRequest, ShowApplicationResponse>(request, IoTDAMeta.showApplication,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showApplication, hcClient);
     }
 
     /**
@@ -426,7 +421,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationsRequest 请求对象
+     * @param request ShowApplicationsRequest 请求对象
      * @return ShowApplicationsResponse
      */
     public ShowApplicationsResponse showApplications(ShowApplicationsRequest request) {
@@ -440,13 +435,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationsRequest 请求对象
+     * @param request ShowApplicationsRequest 请求对象
      * @return SyncInvoker<ShowApplicationsRequest, ShowApplicationsResponse>
      */
     public SyncInvoker<ShowApplicationsRequest, ShowApplicationsResponse> showApplicationsInvoker(
         ShowApplicationsRequest request) {
-        return new SyncInvoker<ShowApplicationsRequest, ShowApplicationsResponse>(request, IoTDAMeta.showApplications,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showApplications, hcClient);
     }
 
     /**
@@ -459,7 +453,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAsyncCommandRequest 请求对象
+     * @param request CreateAsyncCommandRequest 请求对象
      * @return CreateAsyncCommandResponse
      */
     public CreateAsyncCommandResponse createAsyncCommand(CreateAsyncCommandRequest request) {
@@ -476,13 +470,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAsyncCommandRequest 请求对象
+     * @param request CreateAsyncCommandRequest 请求对象
      * @return SyncInvoker<CreateAsyncCommandRequest, CreateAsyncCommandResponse>
      */
     public SyncInvoker<CreateAsyncCommandRequest, CreateAsyncCommandResponse> createAsyncCommandInvoker(
         CreateAsyncCommandRequest request) {
-        return new SyncInvoker<CreateAsyncCommandRequest, CreateAsyncCommandResponse>(request,
-            IoTDAMeta.createAsyncCommand, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createAsyncCommand, hcClient);
     }
 
     /**
@@ -492,7 +485,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAsyncDeviceCommandRequest 请求对象
+     * @param request ShowAsyncDeviceCommandRequest 请求对象
      * @return ShowAsyncDeviceCommandResponse
      */
     public ShowAsyncDeviceCommandResponse showAsyncDeviceCommand(ShowAsyncDeviceCommandRequest request) {
@@ -506,13 +499,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAsyncDeviceCommandRequest 请求对象
+     * @param request ShowAsyncDeviceCommandRequest 请求对象
      * @return SyncInvoker<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse>
      */
     public SyncInvoker<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> showAsyncDeviceCommandInvoker(
         ShowAsyncDeviceCommandRequest request) {
-        return new SyncInvoker<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse>(request,
-            IoTDAMeta.showAsyncDeviceCommand, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showAsyncDeviceCommand, hcClient);
     }
 
     /**
@@ -522,7 +514,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBatchTaskRequest 请求对象
+     * @param request CreateBatchTaskRequest 请求对象
      * @return CreateBatchTaskResponse
      */
     public CreateBatchTaskResponse createBatchTask(CreateBatchTaskRequest request) {
@@ -536,13 +528,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBatchTaskRequest 请求对象
+     * @param request CreateBatchTaskRequest 请求对象
      * @return SyncInvoker<CreateBatchTaskRequest, CreateBatchTaskResponse>
      */
     public SyncInvoker<CreateBatchTaskRequest, CreateBatchTaskResponse> createBatchTaskInvoker(
         CreateBatchTaskRequest request) {
-        return new SyncInvoker<CreateBatchTaskRequest, CreateBatchTaskResponse>(request, IoTDAMeta.createBatchTask,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createBatchTask, hcClient);
     }
 
     /**
@@ -552,7 +543,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBatchTaskRequest 请求对象
+     * @param request DeleteBatchTaskRequest 请求对象
      * @return DeleteBatchTaskResponse
      */
     public DeleteBatchTaskResponse deleteBatchTask(DeleteBatchTaskRequest request) {
@@ -566,13 +557,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBatchTaskRequest 请求对象
+     * @param request DeleteBatchTaskRequest 请求对象
      * @return SyncInvoker<DeleteBatchTaskRequest, DeleteBatchTaskResponse>
      */
     public SyncInvoker<DeleteBatchTaskRequest, DeleteBatchTaskResponse> deleteBatchTaskInvoker(
         DeleteBatchTaskRequest request) {
-        return new SyncInvoker<DeleteBatchTaskRequest, DeleteBatchTaskResponse>(request, IoTDAMeta.deleteBatchTask,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteBatchTask, hcClient);
     }
 
     /**
@@ -582,7 +572,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBatchTasksRequest 请求对象
+     * @param request ListBatchTasksRequest 请求对象
      * @return ListBatchTasksResponse
      */
     public ListBatchTasksResponse listBatchTasks(ListBatchTasksRequest request) {
@@ -596,13 +586,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBatchTasksRequest 请求对象
+     * @param request ListBatchTasksRequest 请求对象
      * @return SyncInvoker<ListBatchTasksRequest, ListBatchTasksResponse>
      */
     public SyncInvoker<ListBatchTasksRequest, ListBatchTasksResponse> listBatchTasksInvoker(
         ListBatchTasksRequest request) {
-        return new SyncInvoker<ListBatchTasksRequest, ListBatchTasksResponse>(request, IoTDAMeta.listBatchTasks,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listBatchTasks, hcClient);
     }
 
     /**
@@ -612,7 +601,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryBatchTaskRequest 请求对象
+     * @param request RetryBatchTaskRequest 请求对象
      * @return RetryBatchTaskResponse
      */
     public RetryBatchTaskResponse retryBatchTask(RetryBatchTaskRequest request) {
@@ -626,13 +615,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryBatchTaskRequest 请求对象
+     * @param request RetryBatchTaskRequest 请求对象
      * @return SyncInvoker<RetryBatchTaskRequest, RetryBatchTaskResponse>
      */
     public SyncInvoker<RetryBatchTaskRequest, RetryBatchTaskResponse> retryBatchTaskInvoker(
         RetryBatchTaskRequest request) {
-        return new SyncInvoker<RetryBatchTaskRequest, RetryBatchTaskResponse>(request, IoTDAMeta.retryBatchTask,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.retryBatchTask, hcClient);
     }
 
     /**
@@ -642,7 +630,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBatchTaskRequest 请求对象
+     * @param request ShowBatchTaskRequest 请求对象
      * @return ShowBatchTaskResponse
      */
     public ShowBatchTaskResponse showBatchTask(ShowBatchTaskRequest request) {
@@ -656,11 +644,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBatchTaskRequest 请求对象
+     * @param request ShowBatchTaskRequest 请求对象
      * @return SyncInvoker<ShowBatchTaskRequest, ShowBatchTaskResponse>
      */
     public SyncInvoker<ShowBatchTaskRequest, ShowBatchTaskResponse> showBatchTaskInvoker(ShowBatchTaskRequest request) {
-        return new SyncInvoker<ShowBatchTaskRequest, ShowBatchTaskResponse>(request, IoTDAMeta.showBatchTask, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showBatchTask, hcClient);
     }
 
     /**
@@ -670,7 +658,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopBatchTaskRequest 请求对象
+     * @param request StopBatchTaskRequest 请求对象
      * @return StopBatchTaskResponse
      */
     public StopBatchTaskResponse stopBatchTask(StopBatchTaskRequest request) {
@@ -684,11 +672,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopBatchTaskRequest 请求对象
+     * @param request StopBatchTaskRequest 请求对象
      * @return SyncInvoker<StopBatchTaskRequest, StopBatchTaskResponse>
      */
     public SyncInvoker<StopBatchTaskRequest, StopBatchTaskResponse> stopBatchTaskInvoker(StopBatchTaskRequest request) {
-        return new SyncInvoker<StopBatchTaskRequest, StopBatchTaskResponse>(request, IoTDAMeta.stopBatchTask, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.stopBatchTask, hcClient);
     }
 
     /**
@@ -698,7 +686,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBatchTaskFileRequest 请求对象
+     * @param request DeleteBatchTaskFileRequest 请求对象
      * @return DeleteBatchTaskFileResponse
      */
     public DeleteBatchTaskFileResponse deleteBatchTaskFile(DeleteBatchTaskFileRequest request) {
@@ -712,13 +700,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBatchTaskFileRequest 请求对象
+     * @param request DeleteBatchTaskFileRequest 请求对象
      * @return SyncInvoker<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse>
      */
     public SyncInvoker<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse> deleteBatchTaskFileInvoker(
         DeleteBatchTaskFileRequest request) {
-        return new SyncInvoker<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse>(request,
-            IoTDAMeta.deleteBatchTaskFile, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteBatchTaskFile, hcClient);
     }
 
     /**
@@ -728,7 +715,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBatchTaskFilesRequest 请求对象
+     * @param request ListBatchTaskFilesRequest 请求对象
      * @return ListBatchTaskFilesResponse
      */
     public ListBatchTaskFilesResponse listBatchTaskFiles(ListBatchTaskFilesRequest request) {
@@ -742,13 +729,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBatchTaskFilesRequest 请求对象
+     * @param request ListBatchTaskFilesRequest 请求对象
      * @return SyncInvoker<ListBatchTaskFilesRequest, ListBatchTaskFilesResponse>
      */
     public SyncInvoker<ListBatchTaskFilesRequest, ListBatchTaskFilesResponse> listBatchTaskFilesInvoker(
         ListBatchTaskFilesRequest request) {
-        return new SyncInvoker<ListBatchTaskFilesRequest, ListBatchTaskFilesResponse>(request,
-            IoTDAMeta.listBatchTaskFiles, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listBatchTaskFiles, hcClient);
     }
 
     /**
@@ -768,7 +754,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadBatchTaskFileRequest 请求对象
+     * @param request UploadBatchTaskFileRequest 请求对象
      * @return UploadBatchTaskFileResponse
      */
     public UploadBatchTaskFileResponse uploadBatchTaskFile(UploadBatchTaskFileRequest request) {
@@ -792,13 +778,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadBatchTaskFileRequest 请求对象
+     * @param request UploadBatchTaskFileRequest 请求对象
      * @return SyncInvoker<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse>
      */
     public SyncInvoker<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse> uploadBatchTaskFileInvoker(
         UploadBatchTaskFileRequest request) {
-        return new SyncInvoker<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse>(request,
-            IoTDAMeta.uploadBatchTaskFile, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.uploadBatchTaskFile, hcClient);
     }
 
     /**
@@ -810,7 +795,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BroadcastMessageRequest 请求对象
+     * @param request BroadcastMessageRequest 请求对象
      * @return BroadcastMessageResponse
      */
     public BroadcastMessageResponse broadcastMessage(BroadcastMessageRequest request) {
@@ -826,13 +811,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BroadcastMessageRequest 请求对象
+     * @param request BroadcastMessageRequest 请求对象
      * @return SyncInvoker<BroadcastMessageRequest, BroadcastMessageResponse>
      */
     public SyncInvoker<BroadcastMessageRequest, BroadcastMessageResponse> broadcastMessageInvoker(
         BroadcastMessageRequest request) {
-        return new SyncInvoker<BroadcastMessageRequest, BroadcastMessageResponse>(request, IoTDAMeta.broadcastMessage,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.broadcastMessage, hcClient);
     }
 
     /**
@@ -842,7 +826,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCertificateRequest 请求对象
+     * @param request AddCertificateRequest 请求对象
      * @return AddCertificateResponse
      */
     public AddCertificateResponse addCertificate(AddCertificateRequest request) {
@@ -856,13 +840,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCertificateRequest 请求对象
+     * @param request AddCertificateRequest 请求对象
      * @return SyncInvoker<AddCertificateRequest, AddCertificateResponse>
      */
     public SyncInvoker<AddCertificateRequest, AddCertificateResponse> addCertificateInvoker(
         AddCertificateRequest request) {
-        return new SyncInvoker<AddCertificateRequest, AddCertificateResponse>(request, IoTDAMeta.addCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.addCertificate, hcClient);
     }
 
     /**
@@ -872,7 +855,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckCertificateRequest 请求对象
+     * @param request CheckCertificateRequest 请求对象
      * @return CheckCertificateResponse
      */
     public CheckCertificateResponse checkCertificate(CheckCertificateRequest request) {
@@ -886,13 +869,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckCertificateRequest 请求对象
+     * @param request CheckCertificateRequest 请求对象
      * @return SyncInvoker<CheckCertificateRequest, CheckCertificateResponse>
      */
     public SyncInvoker<CheckCertificateRequest, CheckCertificateResponse> checkCertificateInvoker(
         CheckCertificateRequest request) {
-        return new SyncInvoker<CheckCertificateRequest, CheckCertificateResponse>(request, IoTDAMeta.checkCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.checkCertificate, hcClient);
     }
 
     /**
@@ -902,7 +884,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return DeleteCertificateResponse
      */
     public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
@@ -916,13 +898,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
      */
     public SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateInvoker(
         DeleteCertificateRequest request) {
-        return new SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request,
-            IoTDAMeta.deleteCertificate, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteCertificate, hcClient);
     }
 
     /**
@@ -932,7 +913,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return ListCertificatesResponse
      */
     public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
@@ -946,13 +927,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
      */
     public SyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesInvoker(
         ListCertificatesRequest request) {
-        return new SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request, IoTDAMeta.listCertificates,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listCertificates, hcClient);
     }
 
     /**
@@ -965,7 +945,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCommandRequest 请求对象
+     * @param request CreateCommandRequest 请求对象
      * @return CreateCommandResponse
      */
     public CreateCommandResponse createCommand(CreateCommandRequest request) {
@@ -982,11 +962,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCommandRequest 请求对象
+     * @param request CreateCommandRequest 请求对象
      * @return SyncInvoker<CreateCommandRequest, CreateCommandResponse>
      */
     public SyncInvoker<CreateCommandRequest, CreateCommandResponse> createCommandInvoker(CreateCommandRequest request) {
-        return new SyncInvoker<CreateCommandRequest, CreateCommandResponse>(request, IoTDAMeta.createCommand, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createCommand, hcClient);
     }
 
     /**
@@ -996,7 +976,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeviceGroupRequest 请求对象
+     * @param request AddDeviceGroupRequest 请求对象
      * @return AddDeviceGroupResponse
      */
     public AddDeviceGroupResponse addDeviceGroup(AddDeviceGroupRequest request) {
@@ -1010,13 +990,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeviceGroupRequest 请求对象
+     * @param request AddDeviceGroupRequest 请求对象
      * @return SyncInvoker<AddDeviceGroupRequest, AddDeviceGroupResponse>
      */
     public SyncInvoker<AddDeviceGroupRequest, AddDeviceGroupResponse> addDeviceGroupInvoker(
         AddDeviceGroupRequest request) {
-        return new SyncInvoker<AddDeviceGroupRequest, AddDeviceGroupResponse>(request, IoTDAMeta.addDeviceGroup,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.addDeviceGroup, hcClient);
     }
 
     /**
@@ -1026,7 +1005,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrDeleteDeviceInGroupRequest 请求对象
+     * @param request CreateOrDeleteDeviceInGroupRequest 请求对象
      * @return CreateOrDeleteDeviceInGroupResponse
      */
     public CreateOrDeleteDeviceInGroupResponse createOrDeleteDeviceInGroup(CreateOrDeleteDeviceInGroupRequest request) {
@@ -1040,13 +1019,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrDeleteDeviceInGroupRequest 请求对象
+     * @param request CreateOrDeleteDeviceInGroupRequest 请求对象
      * @return SyncInvoker<CreateOrDeleteDeviceInGroupRequest, CreateOrDeleteDeviceInGroupResponse>
      */
     public SyncInvoker<CreateOrDeleteDeviceInGroupRequest, CreateOrDeleteDeviceInGroupResponse> createOrDeleteDeviceInGroupInvoker(
         CreateOrDeleteDeviceInGroupRequest request) {
-        return new SyncInvoker<CreateOrDeleteDeviceInGroupRequest, CreateOrDeleteDeviceInGroupResponse>(request,
-            IoTDAMeta.createOrDeleteDeviceInGroup, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createOrDeleteDeviceInGroup, hcClient);
     }
 
     /**
@@ -1056,7 +1034,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceGroupRequest 请求对象
+     * @param request DeleteDeviceGroupRequest 请求对象
      * @return DeleteDeviceGroupResponse
      */
     public DeleteDeviceGroupResponse deleteDeviceGroup(DeleteDeviceGroupRequest request) {
@@ -1070,13 +1048,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceGroupRequest 请求对象
+     * @param request DeleteDeviceGroupRequest 请求对象
      * @return SyncInvoker<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse>
      */
     public SyncInvoker<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> deleteDeviceGroupInvoker(
         DeleteDeviceGroupRequest request) {
-        return new SyncInvoker<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse>(request,
-            IoTDAMeta.deleteDeviceGroup, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteDeviceGroup, hcClient);
     }
 
     /**
@@ -1086,7 +1063,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeviceGroupsRequest 请求对象
+     * @param request ListDeviceGroupsRequest 请求对象
      * @return ListDeviceGroupsResponse
      */
     public ListDeviceGroupsResponse listDeviceGroups(ListDeviceGroupsRequest request) {
@@ -1100,13 +1077,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeviceGroupsRequest 请求对象
+     * @param request ListDeviceGroupsRequest 请求对象
      * @return SyncInvoker<ListDeviceGroupsRequest, ListDeviceGroupsResponse>
      */
     public SyncInvoker<ListDeviceGroupsRequest, ListDeviceGroupsResponse> listDeviceGroupsInvoker(
         ListDeviceGroupsRequest request) {
-        return new SyncInvoker<ListDeviceGroupsRequest, ListDeviceGroupsResponse>(request, IoTDAMeta.listDeviceGroups,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listDeviceGroups, hcClient);
     }
 
     /**
@@ -1116,7 +1092,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceGroupRequest 请求对象
+     * @param request ShowDeviceGroupRequest 请求对象
      * @return ShowDeviceGroupResponse
      */
     public ShowDeviceGroupResponse showDeviceGroup(ShowDeviceGroupRequest request) {
@@ -1130,13 +1106,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceGroupRequest 请求对象
+     * @param request ShowDeviceGroupRequest 请求对象
      * @return SyncInvoker<ShowDeviceGroupRequest, ShowDeviceGroupResponse>
      */
     public SyncInvoker<ShowDeviceGroupRequest, ShowDeviceGroupResponse> showDeviceGroupInvoker(
         ShowDeviceGroupRequest request) {
-        return new SyncInvoker<ShowDeviceGroupRequest, ShowDeviceGroupResponse>(request, IoTDAMeta.showDeviceGroup,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showDeviceGroup, hcClient);
     }
 
     /**
@@ -1146,7 +1121,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDevicesInGroupRequest 请求对象
+     * @param request ShowDevicesInGroupRequest 请求对象
      * @return ShowDevicesInGroupResponse
      */
     public ShowDevicesInGroupResponse showDevicesInGroup(ShowDevicesInGroupRequest request) {
@@ -1160,13 +1135,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDevicesInGroupRequest 请求对象
+     * @param request ShowDevicesInGroupRequest 请求对象
      * @return SyncInvoker<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse>
      */
     public SyncInvoker<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> showDevicesInGroupInvoker(
         ShowDevicesInGroupRequest request) {
-        return new SyncInvoker<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse>(request,
-            IoTDAMeta.showDevicesInGroup, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showDevicesInGroup, hcClient);
     }
 
     /**
@@ -1176,7 +1150,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceGroupRequest 请求对象
+     * @param request UpdateDeviceGroupRequest 请求对象
      * @return UpdateDeviceGroupResponse
      */
     public UpdateDeviceGroupResponse updateDeviceGroup(UpdateDeviceGroupRequest request) {
@@ -1190,13 +1164,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceGroupRequest 请求对象
+     * @param request UpdateDeviceGroupRequest 请求对象
      * @return SyncInvoker<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse>
      */
     public SyncInvoker<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> updateDeviceGroupInvoker(
         UpdateDeviceGroupRequest request) {
-        return new SyncInvoker<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse>(request,
-            IoTDAMeta.updateDeviceGroup, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.updateDeviceGroup, hcClient);
     }
 
     /**
@@ -1211,7 +1184,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeviceRequest 请求对象
+     * @param request AddDeviceRequest 请求对象
      * @return AddDeviceResponse
      */
     public AddDeviceResponse addDevice(AddDeviceRequest request) {
@@ -1230,11 +1203,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeviceRequest 请求对象
+     * @param request AddDeviceRequest 请求对象
      * @return SyncInvoker<AddDeviceRequest, AddDeviceResponse>
      */
     public SyncInvoker<AddDeviceRequest, AddDeviceResponse> addDeviceInvoker(AddDeviceRequest request) {
-        return new SyncInvoker<AddDeviceRequest, AddDeviceResponse>(request, IoTDAMeta.addDevice, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.addDevice, hcClient);
     }
 
     /**
@@ -1244,7 +1217,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceRequest 请求对象
+     * @param request DeleteDeviceRequest 请求对象
      * @return DeleteDeviceResponse
      */
     public DeleteDeviceResponse deleteDevice(DeleteDeviceRequest request) {
@@ -1258,11 +1231,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceRequest 请求对象
+     * @param request DeleteDeviceRequest 请求对象
      * @return SyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>
      */
     public SyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse> deleteDeviceInvoker(DeleteDeviceRequest request) {
-        return new SyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>(request, IoTDAMeta.deleteDevice, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteDevice, hcClient);
     }
 
     /**
@@ -1272,7 +1245,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param FreezeDeviceRequest 请求对象
+     * @param request FreezeDeviceRequest 请求对象
      * @return FreezeDeviceResponse
      */
     public FreezeDeviceResponse freezeDevice(FreezeDeviceRequest request) {
@@ -1286,11 +1259,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param FreezeDeviceRequest 请求对象
+     * @param request FreezeDeviceRequest 请求对象
      * @return SyncInvoker<FreezeDeviceRequest, FreezeDeviceResponse>
      */
     public SyncInvoker<FreezeDeviceRequest, FreezeDeviceResponse> freezeDeviceInvoker(FreezeDeviceRequest request) {
-        return new SyncInvoker<FreezeDeviceRequest, FreezeDeviceResponse>(request, IoTDAMeta.freezeDevice, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.freezeDevice, hcClient);
     }
 
     /**
@@ -1300,7 +1273,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesRequest 请求对象
+     * @param request ListDevicesRequest 请求对象
      * @return ListDevicesResponse
      */
     public ListDevicesResponse listDevices(ListDevicesRequest request) {
@@ -1314,11 +1287,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesRequest 请求对象
+     * @param request ListDevicesRequest 请求对象
      * @return SyncInvoker<ListDevicesRequest, ListDevicesResponse>
      */
     public SyncInvoker<ListDevicesRequest, ListDevicesResponse> listDevicesInvoker(ListDevicesRequest request) {
-        return new SyncInvoker<ListDevicesRequest, ListDevicesResponse>(request, IoTDAMeta.listDevices, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listDevices, hcClient);
     }
 
     /**
@@ -1328,7 +1301,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetDeviceSecretRequest 请求对象
+     * @param request ResetDeviceSecretRequest 请求对象
      * @return ResetDeviceSecretResponse
      */
     public ResetDeviceSecretResponse resetDeviceSecret(ResetDeviceSecretRequest request) {
@@ -1342,13 +1315,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetDeviceSecretRequest 请求对象
+     * @param request ResetDeviceSecretRequest 请求对象
      * @return SyncInvoker<ResetDeviceSecretRequest, ResetDeviceSecretResponse>
      */
     public SyncInvoker<ResetDeviceSecretRequest, ResetDeviceSecretResponse> resetDeviceSecretInvoker(
         ResetDeviceSecretRequest request) {
-        return new SyncInvoker<ResetDeviceSecretRequest, ResetDeviceSecretResponse>(request,
-            IoTDAMeta.resetDeviceSecret, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.resetDeviceSecret, hcClient);
     }
 
     /**
@@ -1358,7 +1330,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetFingerprintRequest 请求对象
+     * @param request ResetFingerprintRequest 请求对象
      * @return ResetFingerprintResponse
      */
     public ResetFingerprintResponse resetFingerprint(ResetFingerprintRequest request) {
@@ -1372,13 +1344,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetFingerprintRequest 请求对象
+     * @param request ResetFingerprintRequest 请求对象
      * @return SyncInvoker<ResetFingerprintRequest, ResetFingerprintResponse>
      */
     public SyncInvoker<ResetFingerprintRequest, ResetFingerprintResponse> resetFingerprintInvoker(
         ResetFingerprintRequest request) {
-        return new SyncInvoker<ResetFingerprintRequest, ResetFingerprintResponse>(request, IoTDAMeta.resetFingerprint,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.resetFingerprint, hcClient);
     }
 
     /**
@@ -1502,7 +1473,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchDevicesRequest 请求对象
+     * @param request SearchDevicesRequest 请求对象
      * @return SearchDevicesResponse
      */
     public SearchDevicesResponse searchDevices(SearchDevicesRequest request) {
@@ -1630,11 +1601,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchDevicesRequest 请求对象
+     * @param request SearchDevicesRequest 请求对象
      * @return SyncInvoker<SearchDevicesRequest, SearchDevicesResponse>
      */
     public SyncInvoker<SearchDevicesRequest, SearchDevicesResponse> searchDevicesInvoker(SearchDevicesRequest request) {
-        return new SyncInvoker<SearchDevicesRequest, SearchDevicesResponse>(request, IoTDAMeta.searchDevices, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.searchDevices, hcClient);
     }
 
     /**
@@ -1644,7 +1615,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceRequest 请求对象
+     * @param request ShowDeviceRequest 请求对象
      * @return ShowDeviceResponse
      */
     public ShowDeviceResponse showDevice(ShowDeviceRequest request) {
@@ -1658,11 +1629,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceRequest 请求对象
+     * @param request ShowDeviceRequest 请求对象
      * @return SyncInvoker<ShowDeviceRequest, ShowDeviceResponse>
      */
     public SyncInvoker<ShowDeviceRequest, ShowDeviceResponse> showDeviceInvoker(ShowDeviceRequest request) {
-        return new SyncInvoker<ShowDeviceRequest, ShowDeviceResponse>(request, IoTDAMeta.showDevice, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showDevice, hcClient);
     }
 
     /**
@@ -1672,7 +1643,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnfreezeDeviceRequest 请求对象
+     * @param request UnfreezeDeviceRequest 请求对象
      * @return UnfreezeDeviceResponse
      */
     public UnfreezeDeviceResponse unfreezeDevice(UnfreezeDeviceRequest request) {
@@ -1686,13 +1657,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnfreezeDeviceRequest 请求对象
+     * @param request UnfreezeDeviceRequest 请求对象
      * @return SyncInvoker<UnfreezeDeviceRequest, UnfreezeDeviceResponse>
      */
     public SyncInvoker<UnfreezeDeviceRequest, UnfreezeDeviceResponse> unfreezeDeviceInvoker(
         UnfreezeDeviceRequest request) {
-        return new SyncInvoker<UnfreezeDeviceRequest, UnfreezeDeviceResponse>(request, IoTDAMeta.unfreezeDevice,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.unfreezeDevice, hcClient);
     }
 
     /**
@@ -1702,7 +1672,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceRequest 请求对象
+     * @param request UpdateDeviceRequest 请求对象
      * @return UpdateDeviceResponse
      */
     public UpdateDeviceResponse updateDevice(UpdateDeviceRequest request) {
@@ -1716,11 +1686,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceRequest 请求对象
+     * @param request UpdateDeviceRequest 请求对象
      * @return SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
      */
     public SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse> updateDeviceInvoker(UpdateDeviceRequest request) {
-        return new SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>(request, IoTDAMeta.updateDevice, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.updateDevice, hcClient);
     }
 
     /**
@@ -1740,7 +1710,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceShadowRequest 请求对象
+     * @param request ShowDeviceShadowRequest 请求对象
      * @return ShowDeviceShadowResponse
      */
     public ShowDeviceShadowResponse showDeviceShadow(ShowDeviceShadowRequest request) {
@@ -1764,13 +1734,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceShadowRequest 请求对象
+     * @param request ShowDeviceShadowRequest 请求对象
      * @return SyncInvoker<ShowDeviceShadowRequest, ShowDeviceShadowResponse>
      */
     public SyncInvoker<ShowDeviceShadowRequest, ShowDeviceShadowResponse> showDeviceShadowInvoker(
         ShowDeviceShadowRequest request) {
-        return new SyncInvoker<ShowDeviceShadowRequest, ShowDeviceShadowResponse>(request, IoTDAMeta.showDeviceShadow,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showDeviceShadow, hcClient);
     }
 
     /**
@@ -1791,7 +1760,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceShadowDesiredDataRequest 请求对象
+     * @param request UpdateDeviceShadowDesiredDataRequest 请求对象
      * @return UpdateDeviceShadowDesiredDataResponse
      */
     public UpdateDeviceShadowDesiredDataResponse updateDeviceShadowDesiredData(
@@ -1817,13 +1786,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceShadowDesiredDataRequest 请求对象
+     * @param request UpdateDeviceShadowDesiredDataRequest 请求对象
      * @return SyncInvoker<UpdateDeviceShadowDesiredDataRequest, UpdateDeviceShadowDesiredDataResponse>
      */
     public SyncInvoker<UpdateDeviceShadowDesiredDataRequest, UpdateDeviceShadowDesiredDataResponse> updateDeviceShadowDesiredDataInvoker(
         UpdateDeviceShadowDesiredDataRequest request) {
-        return new SyncInvoker<UpdateDeviceShadowDesiredDataRequest, UpdateDeviceShadowDesiredDataResponse>(request,
-            IoTDAMeta.updateDeviceShadowDesiredData, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.updateDeviceShadowDesiredData, hcClient);
     }
 
     /**
@@ -1836,7 +1804,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMessageRequest 请求对象
+     * @param request CreateMessageRequest 请求对象
      * @return CreateMessageResponse
      */
     public CreateMessageResponse createMessage(CreateMessageRequest request) {
@@ -1853,11 +1821,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMessageRequest 请求对象
+     * @param request CreateMessageRequest 请求对象
      * @return SyncInvoker<CreateMessageRequest, CreateMessageResponse>
      */
     public SyncInvoker<CreateMessageRequest, CreateMessageResponse> createMessageInvoker(CreateMessageRequest request) {
-        return new SyncInvoker<CreateMessageRequest, CreateMessageResponse>(request, IoTDAMeta.createMessage, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createMessage, hcClient);
     }
 
     /**
@@ -1867,7 +1835,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeviceMessagesRequest 请求对象
+     * @param request ListDeviceMessagesRequest 请求对象
      * @return ListDeviceMessagesResponse
      */
     public ListDeviceMessagesResponse listDeviceMessages(ListDeviceMessagesRequest request) {
@@ -1881,13 +1849,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeviceMessagesRequest 请求对象
+     * @param request ListDeviceMessagesRequest 请求对象
      * @return SyncInvoker<ListDeviceMessagesRequest, ListDeviceMessagesResponse>
      */
     public SyncInvoker<ListDeviceMessagesRequest, ListDeviceMessagesResponse> listDeviceMessagesInvoker(
         ListDeviceMessagesRequest request) {
-        return new SyncInvoker<ListDeviceMessagesRequest, ListDeviceMessagesResponse>(request,
-            IoTDAMeta.listDeviceMessages, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listDeviceMessages, hcClient);
     }
 
     /**
@@ -1897,7 +1864,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceMessageRequest 请求对象
+     * @param request ShowDeviceMessageRequest 请求对象
      * @return ShowDeviceMessageResponse
      */
     public ShowDeviceMessageResponse showDeviceMessage(ShowDeviceMessageRequest request) {
@@ -1911,13 +1878,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceMessageRequest 请求对象
+     * @param request ShowDeviceMessageRequest 请求对象
      * @return SyncInvoker<ShowDeviceMessageRequest, ShowDeviceMessageResponse>
      */
     public SyncInvoker<ShowDeviceMessageRequest, ShowDeviceMessageResponse> showDeviceMessageInvoker(
         ShowDeviceMessageRequest request) {
-        return new SyncInvoker<ShowDeviceMessageRequest, ShowDeviceMessageResponse>(request,
-            IoTDAMeta.showDeviceMessage, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showDeviceMessage, hcClient);
     }
 
     /**
@@ -1928,7 +1894,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOtaPackageRequest 请求对象
+     * @param request CreateOtaPackageRequest 请求对象
      * @return CreateOtaPackageResponse
      */
     public CreateOtaPackageResponse createOtaPackage(CreateOtaPackageRequest request) {
@@ -1943,13 +1909,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOtaPackageRequest 请求对象
+     * @param request CreateOtaPackageRequest 请求对象
      * @return SyncInvoker<CreateOtaPackageRequest, CreateOtaPackageResponse>
      */
     public SyncInvoker<CreateOtaPackageRequest, CreateOtaPackageResponse> createOtaPackageInvoker(
         CreateOtaPackageRequest request) {
-        return new SyncInvoker<CreateOtaPackageRequest, CreateOtaPackageResponse>(request, IoTDAMeta.createOtaPackage,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createOtaPackage, hcClient);
     }
 
     /**
@@ -1960,7 +1925,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOtaPackageRequest 请求对象
+     * @param request DeleteOtaPackageRequest 请求对象
      * @return DeleteOtaPackageResponse
      */
     public DeleteOtaPackageResponse deleteOtaPackage(DeleteOtaPackageRequest request) {
@@ -1975,13 +1940,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOtaPackageRequest 请求对象
+     * @param request DeleteOtaPackageRequest 请求对象
      * @return SyncInvoker<DeleteOtaPackageRequest, DeleteOtaPackageResponse>
      */
     public SyncInvoker<DeleteOtaPackageRequest, DeleteOtaPackageResponse> deleteOtaPackageInvoker(
         DeleteOtaPackageRequest request) {
-        return new SyncInvoker<DeleteOtaPackageRequest, DeleteOtaPackageResponse>(request, IoTDAMeta.deleteOtaPackage,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteOtaPackage, hcClient);
     }
 
     /**
@@ -1992,7 +1956,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOtaPackageInfoRequest 请求对象
+     * @param request ListOtaPackageInfoRequest 请求对象
      * @return ListOtaPackageInfoResponse
      */
     public ListOtaPackageInfoResponse listOtaPackageInfo(ListOtaPackageInfoRequest request) {
@@ -2007,13 +1971,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOtaPackageInfoRequest 请求对象
+     * @param request ListOtaPackageInfoRequest 请求对象
      * @return SyncInvoker<ListOtaPackageInfoRequest, ListOtaPackageInfoResponse>
      */
     public SyncInvoker<ListOtaPackageInfoRequest, ListOtaPackageInfoResponse> listOtaPackageInfoInvoker(
         ListOtaPackageInfoRequest request) {
-        return new SyncInvoker<ListOtaPackageInfoRequest, ListOtaPackageInfoResponse>(request,
-            IoTDAMeta.listOtaPackageInfo, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listOtaPackageInfo, hcClient);
     }
 
     /**
@@ -2024,7 +1987,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOtaPackageRequest 请求对象
+     * @param request ShowOtaPackageRequest 请求对象
      * @return ShowOtaPackageResponse
      */
     public ShowOtaPackageResponse showOtaPackage(ShowOtaPackageRequest request) {
@@ -2039,13 +2002,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOtaPackageRequest 请求对象
+     * @param request ShowOtaPackageRequest 请求对象
      * @return SyncInvoker<ShowOtaPackageRequest, ShowOtaPackageResponse>
      */
     public SyncInvoker<ShowOtaPackageRequest, ShowOtaPackageResponse> showOtaPackageInvoker(
         ShowOtaPackageRequest request) {
-        return new SyncInvoker<ShowOtaPackageRequest, ShowOtaPackageResponse>(request, IoTDAMeta.showOtaPackage,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showOtaPackage, hcClient);
     }
 
     /**
@@ -2055,7 +2017,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProductRequest 请求对象
+     * @param request CreateProductRequest 请求对象
      * @return CreateProductResponse
      */
     public CreateProductResponse createProduct(CreateProductRequest request) {
@@ -2069,11 +2031,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProductRequest 请求对象
+     * @param request CreateProductRequest 请求对象
      * @return SyncInvoker<CreateProductRequest, CreateProductResponse>
      */
     public SyncInvoker<CreateProductRequest, CreateProductResponse> createProductInvoker(CreateProductRequest request) {
-        return new SyncInvoker<CreateProductRequest, CreateProductResponse>(request, IoTDAMeta.createProduct, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createProduct, hcClient);
     }
 
     /**
@@ -2083,7 +2045,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProductRequest 请求对象
+     * @param request DeleteProductRequest 请求对象
      * @return DeleteProductResponse
      */
     public DeleteProductResponse deleteProduct(DeleteProductRequest request) {
@@ -2097,11 +2059,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProductRequest 请求对象
+     * @param request DeleteProductRequest 请求对象
      * @return SyncInvoker<DeleteProductRequest, DeleteProductResponse>
      */
     public SyncInvoker<DeleteProductRequest, DeleteProductResponse> deleteProductInvoker(DeleteProductRequest request) {
-        return new SyncInvoker<DeleteProductRequest, DeleteProductResponse>(request, IoTDAMeta.deleteProduct, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteProduct, hcClient);
     }
 
     /**
@@ -2111,7 +2073,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return ListProductsResponse
      */
     public ListProductsResponse listProducts(ListProductsRequest request) {
@@ -2125,11 +2087,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return SyncInvoker<ListProductsRequest, ListProductsResponse>
      */
     public SyncInvoker<ListProductsRequest, ListProductsResponse> listProductsInvoker(ListProductsRequest request) {
-        return new SyncInvoker<ListProductsRequest, ListProductsResponse>(request, IoTDAMeta.listProducts, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listProducts, hcClient);
     }
 
     /**
@@ -2139,7 +2101,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProductRequest 请求对象
+     * @param request ShowProductRequest 请求对象
      * @return ShowProductResponse
      */
     public ShowProductResponse showProduct(ShowProductRequest request) {
@@ -2153,11 +2115,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProductRequest 请求对象
+     * @param request ShowProductRequest 请求对象
      * @return SyncInvoker<ShowProductRequest, ShowProductResponse>
      */
     public SyncInvoker<ShowProductRequest, ShowProductResponse> showProductInvoker(ShowProductRequest request) {
-        return new SyncInvoker<ShowProductRequest, ShowProductResponse>(request, IoTDAMeta.showProduct, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showProduct, hcClient);
     }
 
     /**
@@ -2167,7 +2129,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProductRequest 请求对象
+     * @param request UpdateProductRequest 请求对象
      * @return UpdateProductResponse
      */
     public UpdateProductResponse updateProduct(UpdateProductRequest request) {
@@ -2181,11 +2143,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProductRequest 请求对象
+     * @param request UpdateProductRequest 请求对象
      * @return SyncInvoker<UpdateProductRequest, UpdateProductResponse>
      */
     public SyncInvoker<UpdateProductRequest, UpdateProductResponse> updateProductInvoker(UpdateProductRequest request) {
-        return new SyncInvoker<UpdateProductRequest, UpdateProductResponse>(request, IoTDAMeta.updateProduct, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.updateProduct, hcClient);
     }
 
     /**
@@ -2196,7 +2158,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPropertiesRequest 请求对象
+     * @param request ListPropertiesRequest 请求对象
      * @return ListPropertiesResponse
      */
     public ListPropertiesResponse listProperties(ListPropertiesRequest request) {
@@ -2211,13 +2173,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPropertiesRequest 请求对象
+     * @param request ListPropertiesRequest 请求对象
      * @return SyncInvoker<ListPropertiesRequest, ListPropertiesResponse>
      */
     public SyncInvoker<ListPropertiesRequest, ListPropertiesResponse> listPropertiesInvoker(
         ListPropertiesRequest request) {
-        return new SyncInvoker<ListPropertiesRequest, ListPropertiesResponse>(request, IoTDAMeta.listProperties,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listProperties, hcClient);
     }
 
     /**
@@ -2228,7 +2189,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePropertiesRequest 请求对象
+     * @param request UpdatePropertiesRequest 请求对象
      * @return UpdatePropertiesResponse
      */
     public UpdatePropertiesResponse updateProperties(UpdatePropertiesRequest request) {
@@ -2243,13 +2204,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePropertiesRequest 请求对象
+     * @param request UpdatePropertiesRequest 请求对象
      * @return SyncInvoker<UpdatePropertiesRequest, UpdatePropertiesResponse>
      */
     public SyncInvoker<UpdatePropertiesRequest, UpdatePropertiesResponse> updatePropertiesInvoker(
         UpdatePropertiesRequest request) {
-        return new SyncInvoker<UpdatePropertiesRequest, UpdatePropertiesResponse>(request, IoTDAMeta.updateProperties,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.updateProperties, hcClient);
     }
 
     /**
@@ -2259,7 +2219,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRoutingRuleRequest 请求对象
+     * @param request CreateRoutingRuleRequest 请求对象
      * @return CreateRoutingRuleResponse
      */
     public CreateRoutingRuleResponse createRoutingRule(CreateRoutingRuleRequest request) {
@@ -2273,13 +2233,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRoutingRuleRequest 请求对象
+     * @param request CreateRoutingRuleRequest 请求对象
      * @return SyncInvoker<CreateRoutingRuleRequest, CreateRoutingRuleResponse>
      */
     public SyncInvoker<CreateRoutingRuleRequest, CreateRoutingRuleResponse> createRoutingRuleInvoker(
         CreateRoutingRuleRequest request) {
-        return new SyncInvoker<CreateRoutingRuleRequest, CreateRoutingRuleResponse>(request,
-            IoTDAMeta.createRoutingRule, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createRoutingRule, hcClient);
     }
 
     /**
@@ -2289,7 +2248,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRuleActionRequest 请求对象
+     * @param request CreateRuleActionRequest 请求对象
      * @return CreateRuleActionResponse
      */
     public CreateRuleActionResponse createRuleAction(CreateRuleActionRequest request) {
@@ -2303,13 +2262,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRuleActionRequest 请求对象
+     * @param request CreateRuleActionRequest 请求对象
      * @return SyncInvoker<CreateRuleActionRequest, CreateRuleActionResponse>
      */
     public SyncInvoker<CreateRuleActionRequest, CreateRuleActionResponse> createRuleActionInvoker(
         CreateRuleActionRequest request) {
-        return new SyncInvoker<CreateRuleActionRequest, CreateRuleActionResponse>(request, IoTDAMeta.createRuleAction,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createRuleAction, hcClient);
     }
 
     /**
@@ -2319,7 +2277,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRoutingRuleRequest 请求对象
+     * @param request DeleteRoutingRuleRequest 请求对象
      * @return DeleteRoutingRuleResponse
      */
     public DeleteRoutingRuleResponse deleteRoutingRule(DeleteRoutingRuleRequest request) {
@@ -2333,13 +2291,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRoutingRuleRequest 请求对象
+     * @param request DeleteRoutingRuleRequest 请求对象
      * @return SyncInvoker<DeleteRoutingRuleRequest, DeleteRoutingRuleResponse>
      */
     public SyncInvoker<DeleteRoutingRuleRequest, DeleteRoutingRuleResponse> deleteRoutingRuleInvoker(
         DeleteRoutingRuleRequest request) {
-        return new SyncInvoker<DeleteRoutingRuleRequest, DeleteRoutingRuleResponse>(request,
-            IoTDAMeta.deleteRoutingRule, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteRoutingRule, hcClient);
     }
 
     /**
@@ -2349,7 +2306,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleActionRequest 请求对象
+     * @param request DeleteRuleActionRequest 请求对象
      * @return DeleteRuleActionResponse
      */
     public DeleteRuleActionResponse deleteRuleAction(DeleteRuleActionRequest request) {
@@ -2363,13 +2320,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleActionRequest 请求对象
+     * @param request DeleteRuleActionRequest 请求对象
      * @return SyncInvoker<DeleteRuleActionRequest, DeleteRuleActionResponse>
      */
     public SyncInvoker<DeleteRuleActionRequest, DeleteRuleActionResponse> deleteRuleActionInvoker(
         DeleteRuleActionRequest request) {
-        return new SyncInvoker<DeleteRuleActionRequest, DeleteRuleActionResponse>(request, IoTDAMeta.deleteRuleAction,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteRuleAction, hcClient);
     }
 
     /**
@@ -2379,7 +2335,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRoutingRulesRequest 请求对象
+     * @param request ListRoutingRulesRequest 请求对象
      * @return ListRoutingRulesResponse
      */
     public ListRoutingRulesResponse listRoutingRules(ListRoutingRulesRequest request) {
@@ -2393,13 +2349,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRoutingRulesRequest 请求对象
+     * @param request ListRoutingRulesRequest 请求对象
      * @return SyncInvoker<ListRoutingRulesRequest, ListRoutingRulesResponse>
      */
     public SyncInvoker<ListRoutingRulesRequest, ListRoutingRulesResponse> listRoutingRulesInvoker(
         ListRoutingRulesRequest request) {
-        return new SyncInvoker<ListRoutingRulesRequest, ListRoutingRulesResponse>(request, IoTDAMeta.listRoutingRules,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listRoutingRules, hcClient);
     }
 
     /**
@@ -2409,7 +2364,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRuleActionsRequest 请求对象
+     * @param request ListRuleActionsRequest 请求对象
      * @return ListRuleActionsResponse
      */
     public ListRuleActionsResponse listRuleActions(ListRuleActionsRequest request) {
@@ -2423,13 +2378,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRuleActionsRequest 请求对象
+     * @param request ListRuleActionsRequest 请求对象
      * @return SyncInvoker<ListRuleActionsRequest, ListRuleActionsResponse>
      */
     public SyncInvoker<ListRuleActionsRequest, ListRuleActionsResponse> listRuleActionsInvoker(
         ListRuleActionsRequest request) {
-        return new SyncInvoker<ListRuleActionsRequest, ListRuleActionsResponse>(request, IoTDAMeta.listRuleActions,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listRuleActions, hcClient);
     }
 
     /**
@@ -2439,7 +2393,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRoutingRuleRequest 请求对象
+     * @param request ShowRoutingRuleRequest 请求对象
      * @return ShowRoutingRuleResponse
      */
     public ShowRoutingRuleResponse showRoutingRule(ShowRoutingRuleRequest request) {
@@ -2453,13 +2407,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRoutingRuleRequest 请求对象
+     * @param request ShowRoutingRuleRequest 请求对象
      * @return SyncInvoker<ShowRoutingRuleRequest, ShowRoutingRuleResponse>
      */
     public SyncInvoker<ShowRoutingRuleRequest, ShowRoutingRuleResponse> showRoutingRuleInvoker(
         ShowRoutingRuleRequest request) {
-        return new SyncInvoker<ShowRoutingRuleRequest, ShowRoutingRuleResponse>(request, IoTDAMeta.showRoutingRule,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showRoutingRule, hcClient);
     }
 
     /**
@@ -2469,7 +2422,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRuleActionRequest 请求对象
+     * @param request ShowRuleActionRequest 请求对象
      * @return ShowRuleActionResponse
      */
     public ShowRuleActionResponse showRuleAction(ShowRuleActionRequest request) {
@@ -2483,13 +2436,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRuleActionRequest 请求对象
+     * @param request ShowRuleActionRequest 请求对象
      * @return SyncInvoker<ShowRuleActionRequest, ShowRuleActionResponse>
      */
     public SyncInvoker<ShowRuleActionRequest, ShowRuleActionResponse> showRuleActionInvoker(
         ShowRuleActionRequest request) {
-        return new SyncInvoker<ShowRuleActionRequest, ShowRuleActionResponse>(request, IoTDAMeta.showRuleAction,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showRuleAction, hcClient);
     }
 
     /**
@@ -2499,7 +2451,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoutingRuleRequest 请求对象
+     * @param request UpdateRoutingRuleRequest 请求对象
      * @return UpdateRoutingRuleResponse
      */
     public UpdateRoutingRuleResponse updateRoutingRule(UpdateRoutingRuleRequest request) {
@@ -2513,13 +2465,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoutingRuleRequest 请求对象
+     * @param request UpdateRoutingRuleRequest 请求对象
      * @return SyncInvoker<UpdateRoutingRuleRequest, UpdateRoutingRuleResponse>
      */
     public SyncInvoker<UpdateRoutingRuleRequest, UpdateRoutingRuleResponse> updateRoutingRuleInvoker(
         UpdateRoutingRuleRequest request) {
-        return new SyncInvoker<UpdateRoutingRuleRequest, UpdateRoutingRuleResponse>(request,
-            IoTDAMeta.updateRoutingRule, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.updateRoutingRule, hcClient);
     }
 
     /**
@@ -2529,7 +2480,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRuleActionRequest 请求对象
+     * @param request UpdateRuleActionRequest 请求对象
      * @return UpdateRuleActionResponse
      */
     public UpdateRuleActionResponse updateRuleAction(UpdateRuleActionRequest request) {
@@ -2543,13 +2494,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRuleActionRequest 请求对象
+     * @param request UpdateRuleActionRequest 请求对象
      * @return SyncInvoker<UpdateRuleActionRequest, UpdateRuleActionResponse>
      */
     public SyncInvoker<UpdateRuleActionRequest, UpdateRuleActionResponse> updateRuleActionInvoker(
         UpdateRuleActionRequest request) {
-        return new SyncInvoker<UpdateRuleActionRequest, UpdateRuleActionResponse>(request, IoTDAMeta.updateRuleAction,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.updateRuleAction, hcClient);
     }
 
     /**
@@ -2559,7 +2509,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeRuleStatusRequest 请求对象
+     * @param request ChangeRuleStatusRequest 请求对象
      * @return ChangeRuleStatusResponse
      */
     public ChangeRuleStatusResponse changeRuleStatus(ChangeRuleStatusRequest request) {
@@ -2573,13 +2523,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeRuleStatusRequest 请求对象
+     * @param request ChangeRuleStatusRequest 请求对象
      * @return SyncInvoker<ChangeRuleStatusRequest, ChangeRuleStatusResponse>
      */
     public SyncInvoker<ChangeRuleStatusRequest, ChangeRuleStatusResponse> changeRuleStatusInvoker(
         ChangeRuleStatusRequest request) {
-        return new SyncInvoker<ChangeRuleStatusRequest, ChangeRuleStatusResponse>(request, IoTDAMeta.changeRuleStatus,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.changeRuleStatus, hcClient);
     }
 
     /**
@@ -2589,7 +2538,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRuleRequest 请求对象
+     * @param request CreateRuleRequest 请求对象
      * @return CreateRuleResponse
      */
     public CreateRuleResponse createRule(CreateRuleRequest request) {
@@ -2603,11 +2552,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRuleRequest 请求对象
+     * @param request CreateRuleRequest 请求对象
      * @return SyncInvoker<CreateRuleRequest, CreateRuleResponse>
      */
     public SyncInvoker<CreateRuleRequest, CreateRuleResponse> createRuleInvoker(CreateRuleRequest request) {
-        return new SyncInvoker<CreateRuleRequest, CreateRuleResponse>(request, IoTDAMeta.createRule, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.createRule, hcClient);
     }
 
     /**
@@ -2617,7 +2566,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleRequest 请求对象
+     * @param request DeleteRuleRequest 请求对象
      * @return DeleteRuleResponse
      */
     public DeleteRuleResponse deleteRule(DeleteRuleRequest request) {
@@ -2631,11 +2580,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleRequest 请求对象
+     * @param request DeleteRuleRequest 请求对象
      * @return SyncInvoker<DeleteRuleRequest, DeleteRuleResponse>
      */
     public SyncInvoker<DeleteRuleRequest, DeleteRuleResponse> deleteRuleInvoker(DeleteRuleRequest request) {
-        return new SyncInvoker<DeleteRuleRequest, DeleteRuleResponse>(request, IoTDAMeta.deleteRule, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteRule, hcClient);
     }
 
     /**
@@ -2645,7 +2594,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRulesRequest 请求对象
+     * @param request ListRulesRequest 请求对象
      * @return ListRulesResponse
      */
     public ListRulesResponse listRules(ListRulesRequest request) {
@@ -2659,11 +2608,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRulesRequest 请求对象
+     * @param request ListRulesRequest 请求对象
      * @return SyncInvoker<ListRulesRequest, ListRulesResponse>
      */
     public SyncInvoker<ListRulesRequest, ListRulesResponse> listRulesInvoker(ListRulesRequest request) {
-        return new SyncInvoker<ListRulesRequest, ListRulesResponse>(request, IoTDAMeta.listRules, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listRules, hcClient);
     }
 
     /**
@@ -2673,7 +2622,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRuleRequest 请求对象
+     * @param request ShowRuleRequest 请求对象
      * @return ShowRuleResponse
      */
     public ShowRuleResponse showRule(ShowRuleRequest request) {
@@ -2687,11 +2636,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRuleRequest 请求对象
+     * @param request ShowRuleRequest 请求对象
      * @return SyncInvoker<ShowRuleRequest, ShowRuleResponse>
      */
     public SyncInvoker<ShowRuleRequest, ShowRuleResponse> showRuleInvoker(ShowRuleRequest request) {
-        return new SyncInvoker<ShowRuleRequest, ShowRuleResponse>(request, IoTDAMeta.showRule, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showRule, hcClient);
     }
 
     /**
@@ -2701,7 +2650,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRuleRequest 请求对象
+     * @param request UpdateRuleRequest 请求对象
      * @return UpdateRuleResponse
      */
     public UpdateRuleResponse updateRule(UpdateRuleRequest request) {
@@ -2715,11 +2664,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRuleRequest 请求对象
+     * @param request UpdateRuleRequest 请求对象
      * @return SyncInvoker<UpdateRuleRequest, UpdateRuleResponse>
      */
     public SyncInvoker<UpdateRuleRequest, UpdateRuleResponse> updateRuleInvoker(UpdateRuleRequest request) {
-        return new SyncInvoker<UpdateRuleRequest, UpdateRuleResponse>(request, IoTDAMeta.updateRule, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.updateRule, hcClient);
     }
 
     /**
@@ -2729,7 +2678,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesByTagsRequest 请求对象
+     * @param request ListResourcesByTagsRequest 请求对象
      * @return ListResourcesByTagsResponse
      */
     public ListResourcesByTagsResponse listResourcesByTags(ListResourcesByTagsRequest request) {
@@ -2743,13 +2692,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesByTagsRequest 请求对象
+     * @param request ListResourcesByTagsRequest 请求对象
      * @return SyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse>
      */
     public SyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse> listResourcesByTagsInvoker(
         ListResourcesByTagsRequest request) {
-        return new SyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse>(request,
-            IoTDAMeta.listResourcesByTags, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listResourcesByTags, hcClient);
     }
 
     /**
@@ -2759,7 +2707,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagDeviceRequest 请求对象
+     * @param request TagDeviceRequest 请求对象
      * @return TagDeviceResponse
      */
     public TagDeviceResponse tagDevice(TagDeviceRequest request) {
@@ -2773,11 +2721,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagDeviceRequest 请求对象
+     * @param request TagDeviceRequest 请求对象
      * @return SyncInvoker<TagDeviceRequest, TagDeviceResponse>
      */
     public SyncInvoker<TagDeviceRequest, TagDeviceResponse> tagDeviceInvoker(TagDeviceRequest request) {
-        return new SyncInvoker<TagDeviceRequest, TagDeviceResponse>(request, IoTDAMeta.tagDevice, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.tagDevice, hcClient);
     }
 
     /**
@@ -2787,7 +2735,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UntagDeviceRequest 请求对象
+     * @param request UntagDeviceRequest 请求对象
      * @return UntagDeviceResponse
      */
     public UntagDeviceResponse untagDevice(UntagDeviceRequest request) {
@@ -2801,11 +2749,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UntagDeviceRequest 请求对象
+     * @param request UntagDeviceRequest 请求对象
      * @return SyncInvoker<UntagDeviceRequest, UntagDeviceResponse>
      */
     public SyncInvoker<UntagDeviceRequest, UntagDeviceResponse> untagDeviceInvoker(UntagDeviceRequest request) {
-        return new SyncInvoker<UntagDeviceRequest, UntagDeviceResponse>(request, IoTDAMeta.untagDevice, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.untagDevice, hcClient);
     }
 
     /**
@@ -2820,7 +2768,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddTunnelRequest 请求对象
+     * @param request AddTunnelRequest 请求对象
      * @return AddTunnelResponse
      */
     public AddTunnelResponse addTunnel(AddTunnelRequest request) {
@@ -2839,11 +2787,11 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddTunnelRequest 请求对象
+     * @param request AddTunnelRequest 请求对象
      * @return SyncInvoker<AddTunnelRequest, AddTunnelResponse>
      */
     public SyncInvoker<AddTunnelRequest, AddTunnelResponse> addTunnelInvoker(AddTunnelRequest request) {
-        return new SyncInvoker<AddTunnelRequest, AddTunnelResponse>(request, IoTDAMeta.addTunnel, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.addTunnel, hcClient);
     }
 
     /**
@@ -2855,7 +2803,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CloseDeviceTunnelRequest 请求对象
+     * @param request CloseDeviceTunnelRequest 请求对象
      * @return CloseDeviceTunnelResponse
      */
     public CloseDeviceTunnelResponse closeDeviceTunnel(CloseDeviceTunnelRequest request) {
@@ -2871,13 +2819,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CloseDeviceTunnelRequest 请求对象
+     * @param request CloseDeviceTunnelRequest 请求对象
      * @return SyncInvoker<CloseDeviceTunnelRequest, CloseDeviceTunnelResponse>
      */
     public SyncInvoker<CloseDeviceTunnelRequest, CloseDeviceTunnelResponse> closeDeviceTunnelInvoker(
         CloseDeviceTunnelRequest request) {
-        return new SyncInvoker<CloseDeviceTunnelRequest, CloseDeviceTunnelResponse>(request,
-            IoTDAMeta.closeDeviceTunnel, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.closeDeviceTunnel, hcClient);
     }
 
     /**
@@ -2889,7 +2836,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceTunnelRequest 请求对象
+     * @param request DeleteDeviceTunnelRequest 请求对象
      * @return DeleteDeviceTunnelResponse
      */
     public DeleteDeviceTunnelResponse deleteDeviceTunnel(DeleteDeviceTunnelRequest request) {
@@ -2905,13 +2852,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceTunnelRequest 请求对象
+     * @param request DeleteDeviceTunnelRequest 请求对象
      * @return SyncInvoker<DeleteDeviceTunnelRequest, DeleteDeviceTunnelResponse>
      */
     public SyncInvoker<DeleteDeviceTunnelRequest, DeleteDeviceTunnelResponse> deleteDeviceTunnelInvoker(
         DeleteDeviceTunnelRequest request) {
-        return new SyncInvoker<DeleteDeviceTunnelRequest, DeleteDeviceTunnelResponse>(request,
-            IoTDAMeta.deleteDeviceTunnel, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.deleteDeviceTunnel, hcClient);
     }
 
     /**
@@ -2923,7 +2869,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeviceTunnelsRequest 请求对象
+     * @param request ListDeviceTunnelsRequest 请求对象
      * @return ListDeviceTunnelsResponse
      */
     public ListDeviceTunnelsResponse listDeviceTunnels(ListDeviceTunnelsRequest request) {
@@ -2939,13 +2885,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDeviceTunnelsRequest 请求对象
+     * @param request ListDeviceTunnelsRequest 请求对象
      * @return SyncInvoker<ListDeviceTunnelsRequest, ListDeviceTunnelsResponse>
      */
     public SyncInvoker<ListDeviceTunnelsRequest, ListDeviceTunnelsResponse> listDeviceTunnelsInvoker(
         ListDeviceTunnelsRequest request) {
-        return new SyncInvoker<ListDeviceTunnelsRequest, ListDeviceTunnelsResponse>(request,
-            IoTDAMeta.listDeviceTunnels, hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.listDeviceTunnels, hcClient);
     }
 
     /**
@@ -2957,7 +2902,7 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceTunnelRequest 请求对象
+     * @param request ShowDeviceTunnelRequest 请求对象
      * @return ShowDeviceTunnelResponse
      */
     public ShowDeviceTunnelResponse showDeviceTunnel(ShowDeviceTunnelRequest request) {
@@ -2973,13 +2918,12 @@ public class IoTDAClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceTunnelRequest 请求对象
+     * @param request ShowDeviceTunnelRequest 请求对象
      * @return SyncInvoker<ShowDeviceTunnelRequest, ShowDeviceTunnelResponse>
      */
     public SyncInvoker<ShowDeviceTunnelRequest, ShowDeviceTunnelResponse> showDeviceTunnelInvoker(
         ShowDeviceTunnelRequest request) {
-        return new SyncInvoker<ShowDeviceTunnelRequest, ShowDeviceTunnelResponse>(request, IoTDAMeta.showDeviceTunnel,
-            hcClient);
+        return new SyncInvoker<>(request, IoTDAMeta.showDeviceTunnel, hcClient);
     }
 
 }

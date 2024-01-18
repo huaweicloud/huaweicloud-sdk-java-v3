@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * API列表查询响应  **⚠ 警告: 此Model不生成java代码，允许其它Model中引用，请勿直接作为Model使用**
+ * API列表查询响应。  **⚠ 警告: 此Model不生成java代码，允许其它Model中引用，请勿直接作为Model使用**
  */
 public class PageResp {
 
@@ -21,7 +21,7 @@ public class PageResp {
     }
 
     /**
-     * 总数
+     * 总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count

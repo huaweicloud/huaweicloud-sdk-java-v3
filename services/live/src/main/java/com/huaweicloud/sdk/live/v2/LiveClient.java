@@ -68,7 +68,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAreaDetailRequest 请求对象
+     * @param request ListAreaDetailRequest 请求对象
      * @return ListAreaDetailResponse
      */
     public ListAreaDetailResponse listAreaDetail(ListAreaDetailRequest request) {
@@ -90,13 +90,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAreaDetailRequest 请求对象
+     * @param request ListAreaDetailRequest 请求对象
      * @return SyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse>
      */
     public SyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse> listAreaDetailInvoker(
         ListAreaDetailRequest request) {
-        return new SyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse>(request, LiveMeta.listAreaDetail,
-            hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listAreaDetail, hcClient);
     }
 
     /**
@@ -112,7 +111,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthDetailRequest 请求对象
+     * @param request ListBandwidthDetailRequest 请求对象
      * @return ListBandwidthDetailResponse
      */
     public ListBandwidthDetailResponse listBandwidthDetail(ListBandwidthDetailRequest request) {
@@ -132,13 +131,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthDetailRequest 请求对象
+     * @param request ListBandwidthDetailRequest 请求对象
      * @return SyncInvoker<ListBandwidthDetailRequest, ListBandwidthDetailResponse>
      */
     public SyncInvoker<ListBandwidthDetailRequest, ListBandwidthDetailResponse> listBandwidthDetailInvoker(
         ListBandwidthDetailRequest request) {
-        return new SyncInvoker<ListBandwidthDetailRequest, ListBandwidthDetailResponse>(request,
-            LiveMeta.listBandwidthDetail, hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listBandwidthDetail, hcClient);
     }
 
     /**
@@ -154,7 +152,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainBandwidthPeakRequest 请求对象
+     * @param request ListDomainBandwidthPeakRequest 请求对象
      * @return ListDomainBandwidthPeakResponse
      */
     public ListDomainBandwidthPeakResponse listDomainBandwidthPeak(ListDomainBandwidthPeakRequest request) {
@@ -174,13 +172,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainBandwidthPeakRequest 请求对象
+     * @param request ListDomainBandwidthPeakRequest 请求对象
      * @return SyncInvoker<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse>
      */
     public SyncInvoker<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse> listDomainBandwidthPeakInvoker(
         ListDomainBandwidthPeakRequest request) {
-        return new SyncInvoker<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse>(request,
-            LiveMeta.listDomainBandwidthPeak, hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listDomainBandwidthPeak, hcClient);
     }
 
     /**
@@ -196,7 +193,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTrafficDetailRequest 请求对象
+     * @param request ListDomainTrafficDetailRequest 请求对象
      * @return ListDomainTrafficDetailResponse
      */
     public ListDomainTrafficDetailResponse listDomainTrafficDetail(ListDomainTrafficDetailRequest request) {
@@ -216,13 +213,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTrafficDetailRequest 请求对象
+     * @param request ListDomainTrafficDetailRequest 请求对象
      * @return SyncInvoker<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse>
      */
     public SyncInvoker<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse> listDomainTrafficDetailInvoker(
         ListDomainTrafficDetailRequest request) {
-        return new SyncInvoker<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse>(request,
-            LiveMeta.listDomainTrafficDetail, hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listDomainTrafficDetail, hcClient);
     }
 
     /**
@@ -238,7 +234,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTrafficSummaryRequest 请求对象
+     * @param request ListDomainTrafficSummaryRequest 请求对象
      * @return ListDomainTrafficSummaryResponse
      */
     public ListDomainTrafficSummaryResponse listDomainTrafficSummary(ListDomainTrafficSummaryRequest request) {
@@ -258,13 +254,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTrafficSummaryRequest 请求对象
+     * @param request ListDomainTrafficSummaryRequest 请求对象
      * @return SyncInvoker<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse>
      */
     public SyncInvoker<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse> listDomainTrafficSummaryInvoker(
         ListDomainTrafficSummaryRequest request) {
-        return new SyncInvoker<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse>(request,
-            LiveMeta.listDomainTrafficSummary, hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listDomainTrafficSummary, hcClient);
     }
 
     /**
@@ -278,7 +273,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryStreamsRequest 请求对象
+     * @param request ListHistoryStreamsRequest 请求对象
      * @return ListHistoryStreamsResponse
      */
     public ListHistoryStreamsResponse listHistoryStreams(ListHistoryStreamsRequest request) {
@@ -296,13 +291,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryStreamsRequest 请求对象
+     * @param request ListHistoryStreamsRequest 请求对象
      * @return SyncInvoker<ListHistoryStreamsRequest, ListHistoryStreamsResponse>
      */
     public SyncInvoker<ListHistoryStreamsRequest, ListHistoryStreamsResponse> listHistoryStreamsInvoker(
         ListHistoryStreamsRequest request) {
-        return new SyncInvoker<ListHistoryStreamsRequest, ListHistoryStreamsResponse>(request,
-            LiveMeta.listHistoryStreams, hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listHistoryStreams, hcClient);
     }
 
     /**
@@ -312,7 +306,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryHttpCodeRequest 请求对象
+     * @param request ListQueryHttpCodeRequest 请求对象
      * @return ListQueryHttpCodeResponse
      */
     public ListQueryHttpCodeResponse listQueryHttpCode(ListQueryHttpCodeRequest request) {
@@ -326,13 +320,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryHttpCodeRequest 请求对象
+     * @param request ListQueryHttpCodeRequest 请求对象
      * @return SyncInvoker<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse>
      */
     public SyncInvoker<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse> listQueryHttpCodeInvoker(
         ListQueryHttpCodeRequest request) {
-        return new SyncInvoker<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse>(request, LiveMeta.listQueryHttpCode,
-            hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listQueryHttpCode, hcClient);
     }
 
     /**
@@ -342,7 +335,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordDataRequest 请求对象
+     * @param request ListRecordDataRequest 请求对象
      * @return ListRecordDataResponse
      */
     public ListRecordDataResponse listRecordData(ListRecordDataRequest request) {
@@ -356,13 +349,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordDataRequest 请求对象
+     * @param request ListRecordDataRequest 请求对象
      * @return SyncInvoker<ListRecordDataRequest, ListRecordDataResponse>
      */
     public SyncInvoker<ListRecordDataRequest, ListRecordDataResponse> listRecordDataInvoker(
         ListRecordDataRequest request) {
-        return new SyncInvoker<ListRecordDataRequest, ListRecordDataResponse>(request, LiveMeta.listRecordData,
-            hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listRecordData, hcClient);
     }
 
     /**
@@ -372,7 +364,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotDataRequest 请求对象
+     * @param request ListSnapshotDataRequest 请求对象
      * @return ListSnapshotDataResponse
      */
     public ListSnapshotDataResponse listSnapshotData(ListSnapshotDataRequest request) {
@@ -386,13 +378,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSnapshotDataRequest 请求对象
+     * @param request ListSnapshotDataRequest 请求对象
      * @return SyncInvoker<ListSnapshotDataRequest, ListSnapshotDataResponse>
      */
     public SyncInvoker<ListSnapshotDataRequest, ListSnapshotDataResponse> listSnapshotDataInvoker(
         ListSnapshotDataRequest request) {
-        return new SyncInvoker<ListSnapshotDataRequest, ListSnapshotDataResponse>(request, LiveMeta.listSnapshotData,
-            hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listSnapshotData, hcClient);
     }
 
     /**
@@ -402,7 +393,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTranscodeDataRequest 请求对象
+     * @param request ListTranscodeDataRequest 请求对象
      * @return ListTranscodeDataResponse
      */
     public ListTranscodeDataResponse listTranscodeData(ListTranscodeDataRequest request) {
@@ -416,13 +407,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTranscodeDataRequest 请求对象
+     * @param request ListTranscodeDataRequest 请求对象
      * @return SyncInvoker<ListTranscodeDataRequest, ListTranscodeDataResponse>
      */
     public SyncInvoker<ListTranscodeDataRequest, ListTranscodeDataResponse> listTranscodeDataInvoker(
         ListTranscodeDataRequest request) {
-        return new SyncInvoker<ListTranscodeDataRequest, ListTranscodeDataResponse>(request, LiveMeta.listTranscodeData,
-            hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listTranscodeData, hcClient);
     }
 
     /**
@@ -432,7 +422,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersOfStreamRequest 请求对象
+     * @param request ListUsersOfStreamRequest 请求对象
      * @return ListUsersOfStreamResponse
      */
     public ListUsersOfStreamResponse listUsersOfStream(ListUsersOfStreamRequest request) {
@@ -446,13 +436,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersOfStreamRequest 请求对象
+     * @param request ListUsersOfStreamRequest 请求对象
      * @return SyncInvoker<ListUsersOfStreamRequest, ListUsersOfStreamResponse>
      */
     public SyncInvoker<ListUsersOfStreamRequest, ListUsersOfStreamResponse> listUsersOfStreamInvoker(
         ListUsersOfStreamRequest request) {
-        return new SyncInvoker<ListUsersOfStreamRequest, ListUsersOfStreamResponse>(request, LiveMeta.listUsersOfStream,
-            hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listUsersOfStream, hcClient);
     }
 
     /**
@@ -462,7 +451,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamCountRequest 请求对象
+     * @param request ShowStreamCountRequest 请求对象
      * @return ShowStreamCountResponse
      */
     public ShowStreamCountResponse showStreamCount(ShowStreamCountRequest request) {
@@ -476,13 +465,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamCountRequest 请求对象
+     * @param request ShowStreamCountRequest 请求对象
      * @return SyncInvoker<ShowStreamCountRequest, ShowStreamCountResponse>
      */
     public SyncInvoker<ShowStreamCountRequest, ShowStreamCountResponse> showStreamCountInvoker(
         ShowStreamCountRequest request) {
-        return new SyncInvoker<ShowStreamCountRequest, ShowStreamCountResponse>(request, LiveMeta.showStreamCount,
-            hcClient);
+        return new SyncInvoker<>(request, LiveMeta.showStreamCount, hcClient);
     }
 
     /**
@@ -493,7 +481,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamPortraitRequest 请求对象
+     * @param request ShowStreamPortraitRequest 请求对象
      * @return ShowStreamPortraitResponse
      */
     public ShowStreamPortraitResponse showStreamPortrait(ShowStreamPortraitRequest request) {
@@ -508,13 +496,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamPortraitRequest 请求对象
+     * @param request ShowStreamPortraitRequest 请求对象
      * @return SyncInvoker<ShowStreamPortraitRequest, ShowStreamPortraitResponse>
      */
     public SyncInvoker<ShowStreamPortraitRequest, ShowStreamPortraitResponse> showStreamPortraitInvoker(
         ShowStreamPortraitRequest request) {
-        return new SyncInvoker<ShowStreamPortraitRequest, ShowStreamPortraitResponse>(request,
-            LiveMeta.showStreamPortrait, hcClient);
+        return new SyncInvoker<>(request, LiveMeta.showStreamPortrait, hcClient);
     }
 
     /**
@@ -524,7 +511,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUpBandwidthRequest 请求对象
+     * @param request ShowUpBandwidthRequest 请求对象
      * @return ShowUpBandwidthResponse
      */
     public ShowUpBandwidthResponse showUpBandwidth(ShowUpBandwidthRequest request) {
@@ -538,13 +525,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUpBandwidthRequest 请求对象
+     * @param request ShowUpBandwidthRequest 请求对象
      * @return SyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse>
      */
     public SyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse> showUpBandwidthInvoker(
         ShowUpBandwidthRequest request) {
-        return new SyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse>(request, LiveMeta.showUpBandwidth,
-            hcClient);
+        return new SyncInvoker<>(request, LiveMeta.showUpBandwidth, hcClient);
     }
 
     /**
@@ -558,7 +544,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamBitrateRequest 请求对象
+     * @param request ListSingleStreamBitrateRequest 请求对象
      * @return ListSingleStreamBitrateResponse
      */
     public ListSingleStreamBitrateResponse listSingleStreamBitrate(ListSingleStreamBitrateRequest request) {
@@ -576,13 +562,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamBitrateRequest 请求对象
+     * @param request ListSingleStreamBitrateRequest 请求对象
      * @return SyncInvoker<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse>
      */
     public SyncInvoker<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse> listSingleStreamBitrateInvoker(
         ListSingleStreamBitrateRequest request) {
-        return new SyncInvoker<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse>(request,
-            LiveMeta.listSingleStreamBitrate, hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listSingleStreamBitrate, hcClient);
     }
 
     /**
@@ -596,7 +581,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamDetailRequest 请求对象
+     * @param request ListSingleStreamDetailRequest 请求对象
      * @return ListSingleStreamDetailResponse
      */
     public ListSingleStreamDetailResponse listSingleStreamDetail(ListSingleStreamDetailRequest request) {
@@ -614,13 +599,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamDetailRequest 请求对象
+     * @param request ListSingleStreamDetailRequest 请求对象
      * @return SyncInvoker<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse>
      */
     public SyncInvoker<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse> listSingleStreamDetailInvoker(
         ListSingleStreamDetailRequest request) {
-        return new SyncInvoker<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse>(request,
-            LiveMeta.listSingleStreamDetail, hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listSingleStreamDetail, hcClient);
     }
 
     /**
@@ -634,7 +618,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamFramerateRequest 请求对象
+     * @param request ListSingleStreamFramerateRequest 请求对象
      * @return ListSingleStreamFramerateResponse
      */
     public ListSingleStreamFramerateResponse listSingleStreamFramerate(ListSingleStreamFramerateRequest request) {
@@ -652,13 +636,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSingleStreamFramerateRequest 请求对象
+     * @param request ListSingleStreamFramerateRequest 请求对象
      * @return SyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse>
      */
     public SyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> listSingleStreamFramerateInvoker(
         ListSingleStreamFramerateRequest request) {
-        return new SyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse>(request,
-            LiveMeta.listSingleStreamFramerate, hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listSingleStreamFramerate, hcClient);
     }
 
     /**
@@ -672,7 +655,7 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpStreamDetailRequest 请求对象
+     * @param request ListUpStreamDetailRequest 请求对象
      * @return ListUpStreamDetailResponse
      */
     public ListUpStreamDetailResponse listUpStreamDetail(ListUpStreamDetailRequest request) {
@@ -690,13 +673,12 @@ public class LiveClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpStreamDetailRequest 请求对象
+     * @param request ListUpStreamDetailRequest 请求对象
      * @return SyncInvoker<ListUpStreamDetailRequest, ListUpStreamDetailResponse>
      */
     public SyncInvoker<ListUpStreamDetailRequest, ListUpStreamDetailResponse> listUpStreamDetailInvoker(
         ListUpStreamDetailRequest request) {
-        return new SyncInvoker<ListUpStreamDetailRequest, ListUpStreamDetailResponse>(request,
-            LiveMeta.listUpStreamDetail, hcClient);
+        return new SyncInvoker<>(request, LiveMeta.listUpStreamDetail, hcClient);
     }
 
 }

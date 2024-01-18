@@ -27,6 +27,16 @@ public class AvailabilityZones {
     private VpnGatewayAvailabilityZones professional2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Professional1-NonFixedIP")
+
+    private VpnGatewayAvailabilityZones professional1NonFixedIP;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Professional2-NonFixedIP")
+
+    private VpnGatewayAvailabilityZones professional2NonFixedIP;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gm")
 
     private VpnGatewayAvailabilityZones gm;
@@ -109,6 +119,60 @@ public class AvailabilityZones {
         this.professional2 = professional2;
     }
 
+    public AvailabilityZones withProfessional1NonFixedIP(VpnGatewayAvailabilityZones professional1NonFixedIP) {
+        this.professional1NonFixedIP = professional1NonFixedIP;
+        return this;
+    }
+
+    public AvailabilityZones withProfessional1NonFixedIP(
+        Consumer<VpnGatewayAvailabilityZones> professional1NonFixedIPSetter) {
+        if (this.professional1NonFixedIP == null) {
+            this.professional1NonFixedIP = new VpnGatewayAvailabilityZones();
+            professional1NonFixedIPSetter.accept(this.professional1NonFixedIP);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get professional1NonFixedIP
+     * @return professional1NonFixedIP
+     */
+    public VpnGatewayAvailabilityZones getProfessional1NonFixedIP() {
+        return professional1NonFixedIP;
+    }
+
+    public void setProfessional1NonFixedIP(VpnGatewayAvailabilityZones professional1NonFixedIP) {
+        this.professional1NonFixedIP = professional1NonFixedIP;
+    }
+
+    public AvailabilityZones withProfessional2NonFixedIP(VpnGatewayAvailabilityZones professional2NonFixedIP) {
+        this.professional2NonFixedIP = professional2NonFixedIP;
+        return this;
+    }
+
+    public AvailabilityZones withProfessional2NonFixedIP(
+        Consumer<VpnGatewayAvailabilityZones> professional2NonFixedIPSetter) {
+        if (this.professional2NonFixedIP == null) {
+            this.professional2NonFixedIP = new VpnGatewayAvailabilityZones();
+            professional2NonFixedIPSetter.accept(this.professional2NonFixedIP);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get professional2NonFixedIP
+     * @return professional2NonFixedIP
+     */
+    public VpnGatewayAvailabilityZones getProfessional2NonFixedIP() {
+        return professional2NonFixedIP;
+    }
+
+    public void setProfessional2NonFixedIP(VpnGatewayAvailabilityZones professional2NonFixedIP) {
+        this.professional2NonFixedIP = professional2NonFixedIP;
+    }
+
     public AvailabilityZones withGm(VpnGatewayAvailabilityZones gm) {
         this.gm = gm;
         return this;
@@ -145,12 +209,15 @@ public class AvailabilityZones {
         }
         AvailabilityZones that = (AvailabilityZones) obj;
         return Objects.equals(this.basic, that.basic) && Objects.equals(this.professional1, that.professional1)
-            && Objects.equals(this.professional2, that.professional2) && Objects.equals(this.gm, that.gm);
+            && Objects.equals(this.professional2, that.professional2)
+            && Objects.equals(this.professional1NonFixedIP, that.professional1NonFixedIP)
+            && Objects.equals(this.professional2NonFixedIP, that.professional2NonFixedIP)
+            && Objects.equals(this.gm, that.gm);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basic, professional1, professional2, gm);
+        return Objects.hash(basic, professional1, professional2, professional1NonFixedIP, professional2NonFixedIP, gm);
     }
 
     @Override
@@ -160,6 +227,8 @@ public class AvailabilityZones {
         sb.append("    basic: ").append(toIndentedString(basic)).append("\n");
         sb.append("    professional1: ").append(toIndentedString(professional1)).append("\n");
         sb.append("    professional2: ").append(toIndentedString(professional2)).append("\n");
+        sb.append("    professional1NonFixedIP: ").append(toIndentedString(professional1NonFixedIP)).append("\n");
+        sb.append("    professional2NonFixedIP: ").append(toIndentedString(professional2NonFixedIP)).append("\n");
         sb.append("    gm: ").append(toIndentedString(gm)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -197,7 +197,7 @@ public class AppServer {
     }
 
     /**
-     * aps实例的唯一标识
+     * aps实例的唯一标识。
      * @return id
      */
     public String getId() {
@@ -214,7 +214,7 @@ public class AppServer {
     }
 
     /**
-     * 服务器名称
+     * 服务器名称。
      * @return name
      */
     public String getName() {
@@ -231,7 +231,7 @@ public class AppServer {
     }
 
     /**
-     * 计算机名称
+     * 计算机名称。
      * @return machineName
      */
     public String getMachineName() {
@@ -248,7 +248,7 @@ public class AppServer {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -265,7 +265,7 @@ public class AppServer {
     }
 
     /**
-     * 服务器组ID
+     * 服务器组ID。
      * @return serverGroupId
      */
     public String getServerGroupId() {
@@ -325,7 +325,7 @@ public class AppServer {
     }
 
     /**
-     * 服务器创建时间
+     * 服务器创建时间。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -342,7 +342,7 @@ public class AppServer {
     }
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -359,7 +359,7 @@ public class AppServer {
     }
 
     /**
-     * 镜像ID
+     * 镜像ID。
      * @return imageId
      */
     public String getImageId() {
@@ -376,7 +376,7 @@ public class AppServer {
     }
 
     /**
-     * 服务器可用分区
+     * 服务器可用分区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -393,7 +393,7 @@ public class AppServer {
     }
 
     /**
-     * 域
+     * 域。
      * @return domain
      */
     public String getDomain() {
@@ -410,7 +410,7 @@ public class AppServer {
     }
 
     /**
-     * 组织名称
+     * 组织名称。
      * @return ouName
      */
     public String getOuName() {
@@ -427,7 +427,7 @@ public class AppServer {
     }
 
     /**
-     * 实例的SID
+     * 实例的SID。
      * @return sid
      */
     public String getSid() {
@@ -444,7 +444,7 @@ public class AppServer {
     }
 
     /**
-     * 实例的ID
+     * 实例的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -461,7 +461,7 @@ public class AppServer {
     }
 
     /**
-     * 服务器系统版本
+     * 服务器系统版本。
      * @return osVersion
      */
     public String getOsVersion() {
@@ -478,7 +478,7 @@ public class AppServer {
     }
 
     /**
-     * 操作系统类型，当前仅支持Windows - Linux - Windows - Other
+     * 操作系统类型，当前仅支持Windows： - Linux - Windows - Other
      * @return osType
      */
     public String getOsType() {
@@ -495,7 +495,7 @@ public class AppServer {
     }
 
     /**
-     * 包周期产品的订单ID
+     * 包周期产品的订单ID。
      * @return orderId
      */
     public String getOrderId() {
@@ -512,7 +512,7 @@ public class AppServer {
     }
 
     /**
-     * 是否维护状态
+     * 是否维护状态。
      * @return maintainStatus
      */
     public Boolean getMaintainStatus() {
@@ -529,7 +529,7 @@ public class AppServer {
     }
 
     /**
-     * 配置弹性伸缩策略时，服务自动创建的实例。 - true : 通过弹性伸缩创建 - false: 不是通过弹性伸缩创建
+     * 配置弹性伸缩策略时，服务自动创建的实例。 - true : 通过弹性伸缩创建。 - false: 不是通过弹性伸缩创建。
      * @return scalingAutoCreate
      */
     public Boolean getScalingAutoCreate() {
@@ -546,7 +546,7 @@ public class AppServer {
     }
 
     /**
-     * 上一次执行job的id
+     * 上一次执行job的id。
      * @return jobId
      */
     public String getJobId() {
@@ -597,7 +597,7 @@ public class AppServer {
     }
 
     /**
-     * 上一次执行job的执行时间
+     * 上一次执行job的执行时间。
      * @return jobTime
      */
     public OffsetDateTime getJobTime() {
@@ -614,7 +614,7 @@ public class AppServer {
     }
 
     /**
-     * 资源池ID
+     * 资源池ID。
      * @return resourcePoolId
      */
     public String getResourcePoolId() {
@@ -631,7 +631,7 @@ public class AppServer {
     }
 
     /**
-     * 资源池类型 - private：私有资源池 - public: 工作资源池
+     * 资源池类型： - private：私有资源池。 - public: 工作资源池。
      * @return resourcePoolType
      */
     public String getResourcePoolType() {
@@ -648,7 +648,7 @@ public class AppServer {
     }
 
     /**
-     * 云专属主机id
+     * 云专属主机id。
      * @return hostId
      */
     public String getHostId() {
@@ -665,7 +665,7 @@ public class AppServer {
     }
 
     /**
-     * 服务器组名称
+     * 服务器组名称。
      * @return serverGroupName
      */
     public String getServerGroupName() {
@@ -741,7 +741,7 @@ public class AppServer {
     }
 
     /**
-     * 会话数量
+     * 会话数量。
      * @return sessionCount
      */
     public Integer getSessionCount() {
@@ -808,7 +808,7 @@ public class AppServer {
     }
 
     /**
-     * 冻结信息
+     * 冻结信息。
      * @return freeze
      */
     public List<CbcFreezeInfo> getFreeze() {
@@ -841,7 +841,7 @@ public class AppServer {
     }
 
     /**
-     * vpc和子网信息
+     * vpc和子网信息。
      * @return hostAddress
      */
     public List<EcsNetWork> getHostAddress() {

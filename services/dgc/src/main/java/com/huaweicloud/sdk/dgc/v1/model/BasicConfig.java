@@ -16,6 +16,16 @@ public class BasicConfig {
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency")
+
+    private String agency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isIgnoreWaiting")
+
+    private Integer isIgnoreWaiting;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
     private Integer priority;
@@ -50,6 +60,40 @@ public class BasicConfig {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public BasicConfig withAgency(String agency) {
+        this.agency = agency;
+        return this;
+    }
+
+    /**
+     * 作业委托的名称
+     * @return agency
+     */
+    public String getAgency() {
+        return agency;
+    }
+
+    public void setAgency(String agency) {
+        this.agency = agency;
+    }
+
+    public BasicConfig withIsIgnoreWaiting(Integer isIgnoreWaiting) {
+        this.isIgnoreWaiting = isIgnoreWaiting;
+        return this;
+    }
+
+    /**
+     * 实例超时是否忽略等待时间, 取值范围为0和1, 0：表示实例超时不忽略等待时间1：表示实例超时忽略等待时间
+     * @return isIgnoreWaiting
+     */
+    public Integer getIsIgnoreWaiting() {
+        return isIgnoreWaiting;
+    }
+
+    public void setIsIgnoreWaiting(Integer isIgnoreWaiting) {
+        this.isIgnoreWaiting = isIgnoreWaiting;
     }
 
     public BasicConfig withPriority(Integer priority) {
@@ -129,15 +173,16 @@ public class BasicConfig {
             return false;
         }
         BasicConfig that = (BasicConfig) obj;
-        return Objects.equals(this.owner, that.owner) && Objects.equals(this.priority, that.priority)
-            && Objects.equals(this.executeUser, that.executeUser)
+        return Objects.equals(this.owner, that.owner) && Objects.equals(this.agency, that.agency)
+            && Objects.equals(this.isIgnoreWaiting, that.isIgnoreWaiting)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.executeUser, that.executeUser)
             && Objects.equals(this.instanceTimeout, that.instanceTimeout)
             && Objects.equals(this.customFields, that.customFields);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(owner, priority, executeUser, instanceTimeout, customFields);
+        return Objects.hash(owner, agency, isIgnoreWaiting, priority, executeUser, instanceTimeout, customFields);
     }
 
     @Override
@@ -145,6 +190,8 @@ public class BasicConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("class BasicConfig {\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
+        sb.append("    isIgnoreWaiting: ").append(toIndentedString(isIgnoreWaiting)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    executeUser: ").append(toIndentedString(executeUser)).append("\n");
         sb.append("    instanceTimeout: ").append(toIndentedString(instanceTimeout)).append("\n");

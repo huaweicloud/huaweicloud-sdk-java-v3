@@ -15,9 +15,9 @@ import com.huaweicloud.sdk.expert.v1.model.Papers;
 public class ExpertMeta {
 
     public static final HttpRequestDef<ListRecordsCountRequest, ListRecordsCountResponse> listRecordsCount =
-        genForlistRecordsCount();
+        genForListRecordsCount();
 
-    private static HttpRequestDef<ListRecordsCountRequest, ListRecordsCountResponse> genForlistRecordsCount() {
+    private static HttpRequestDef<ListRecordsCountRequest, ListRecordsCountResponse> genForListRecordsCount() {
         // basic
         HttpRequestDef.Builder<ListRecordsCountRequest, ListRecordsCountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListRecordsCountRequest.class, ListRecordsCountResponse.class)
@@ -30,18 +30,16 @@ public class ExpertMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Papers.class),
-            f -> f.withMarshaller(ListRecordsCountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListRecordsCountRequest::getBody, ListRecordsCountRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListUsersKeyRequest, ListUsersKeyResponse> listUsersKey = genForlistUsersKey();
+    public static final HttpRequestDef<ListUsersKeyRequest, ListUsersKeyResponse> listUsersKey = genForListUsersKey();
 
-    private static HttpRequestDef<ListUsersKeyRequest, ListUsersKeyResponse> genForlistUsersKey() {
+    private static HttpRequestDef<ListUsersKeyRequest, ListUsersKeyResponse> genForListUsersKey() {
         // basic
         HttpRequestDef.Builder<ListUsersKeyRequest, ListUsersKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsersKeyRequest.class, ListUsersKeyResponse.class)
@@ -54,30 +52,22 @@ public class ExpertMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersKeyRequest::getAppletKey, (req, v) -> {
-                req.setAppletKey(v);
-            }));
+            f -> f.withMarshaller(ListUsersKeyRequest::getAppletKey, ListUsersKeyRequest::setAppletKey));
         builder.<String>withRequestField("paper_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersKeyRequest::getPaperId, (req, v) -> {
-                req.setPaperId(v);
-            }));
+            f -> f.withMarshaller(ListUsersKeyRequest::getPaperId, ListUsersKeyRequest::setPaperId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsersKeyRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListUsersKeyRequest::getOffset, ListUsersKeyRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsersKeyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListUsersKeyRequest::getLimit, ListUsersKeyRequest::setLimit));
 
         // response
 

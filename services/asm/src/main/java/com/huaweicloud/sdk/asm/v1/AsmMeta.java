@@ -18,9 +18,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class AsmMeta {
 
-    public static final HttpRequestDef<CreateMeshRequest, CreateMeshResponse> createMesh = genForcreateMesh();
+    public static final HttpRequestDef<CreateMeshRequest, CreateMeshResponse> createMesh = genForCreateMesh();
 
-    private static HttpRequestDef<CreateMeshRequest, CreateMeshResponse> genForcreateMesh() {
+    private static HttpRequestDef<CreateMeshRequest, CreateMeshResponse> genForCreateMesh() {
         // basic
         HttpRequestDef.Builder<CreateMeshRequest, CreateMeshResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMeshRequest.class, CreateMeshResponse.class)
@@ -33,25 +33,21 @@ public class AsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMeshRequest::getXApplyProjectID, (req, v) -> {
-                req.setXApplyProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateMeshRequest::getXApplyProjectID, CreateMeshRequest::setXApplyProjectID));
         builder.<Mesh>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Mesh.class),
-            f -> f.withMarshaller(CreateMeshRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMeshRequest::getBody, CreateMeshRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteMeshRequest, DeleteMeshResponse> deleteMesh = genFordeleteMesh();
+    public static final HttpRequestDef<DeleteMeshRequest, DeleteMeshResponse> deleteMesh = genForDeleteMesh();
 
-    private static HttpRequestDef<DeleteMeshRequest, DeleteMeshResponse> genFordeleteMesh() {
+    private static HttpRequestDef<DeleteMeshRequest, DeleteMeshResponse> genForDeleteMesh() {
         // basic
         HttpRequestDef.Builder<DeleteMeshRequest, DeleteMeshResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMeshRequest.class, DeleteMeshResponse.class)
@@ -64,25 +60,21 @@ public class AsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMeshRequest::getMeshId, (req, v) -> {
-                req.setMeshId(v);
-            }));
+            f -> f.withMarshaller(DeleteMeshRequest::getMeshId, DeleteMeshRequest::setMeshId));
         builder.<String>withRequestField("X-Apply-ProjectID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMeshRequest::getXApplyProjectID, (req, v) -> {
-                req.setXApplyProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteMeshRequest::getXApplyProjectID, DeleteMeshRequest::setXApplyProjectID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMeshesRequest, ListMeshesResponse> listMeshes = genForlistMeshes();
+    public static final HttpRequestDef<ListMeshesRequest, ListMeshesResponse> listMeshes = genForListMeshes();
 
-    private static HttpRequestDef<ListMeshesRequest, ListMeshesResponse> genForlistMeshes() {
+    private static HttpRequestDef<ListMeshesRequest, ListMeshesResponse> genForListMeshes() {
         // basic
         HttpRequestDef.Builder<ListMeshesRequest, ListMeshesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMeshesRequest.class, ListMeshesResponse.class)
@@ -95,18 +87,16 @@ public class AsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMeshesRequest::getXApplyProjectID, (req, v) -> {
-                req.setXApplyProjectID(v);
-            }));
+            f -> f.withMarshaller(ListMeshesRequest::getXApplyProjectID, ListMeshesRequest::setXApplyProjectID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMeshRequest, ShowMeshResponse> showMesh = genForshowMesh();
+    public static final HttpRequestDef<ShowMeshRequest, ShowMeshResponse> showMesh = genForShowMesh();
 
-    private static HttpRequestDef<ShowMeshRequest, ShowMeshResponse> genForshowMesh() {
+    private static HttpRequestDef<ShowMeshRequest, ShowMeshResponse> genForShowMesh() {
         // basic
         HttpRequestDef.Builder<ShowMeshRequest, ShowMeshResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMeshRequest.class, ShowMeshResponse.class)
@@ -119,16 +109,12 @@ public class AsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeshRequest::getMeshId, (req, v) -> {
-                req.setMeshId(v);
-            }));
+            f -> f.withMarshaller(ShowMeshRequest::getMeshId, ShowMeshRequest::setMeshId));
         builder.<String>withRequestField("X-Apply-ProjectID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeshRequest::getXApplyProjectID, (req, v) -> {
-                req.setXApplyProjectID(v);
-            }));
+            f -> f.withMarshaller(ShowMeshRequest::getXApplyProjectID, ShowMeshRequest::setXApplyProjectID));
 
         // response
 

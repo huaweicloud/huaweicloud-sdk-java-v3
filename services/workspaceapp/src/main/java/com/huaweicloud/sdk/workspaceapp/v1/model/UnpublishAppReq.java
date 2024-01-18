@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 删除应用
+ * 删除应用。
  */
 public class UnpublishAppReq {
 
@@ -40,7 +40,7 @@ public class UnpublishAppReq {
     }
 
     /**
-     * 应用ID列表,单次最多允许操作50个应用
+     * 应用ID列表,单次最多允许操作50个应用。
      * @return ids
      */
     public List<String> getIds() {

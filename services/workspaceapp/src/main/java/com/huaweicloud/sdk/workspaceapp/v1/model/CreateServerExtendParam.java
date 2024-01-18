@@ -58,7 +58,7 @@ public class CreateServerExtendParam {
     }
 
     /**
-     * 周期类型 2：包月；3：包年* chargingMode为prePaid时生效且为必选值;
+     * 周期类型 2：包月；3：包年* chargingMode为prePaid时生效且为必选值。
      * minimum: 0
      * maximum: 10
      * @return periodType
@@ -77,7 +77,7 @@ public class CreateServerExtendParam {
     }
 
     /**
-     * 订购周期数，chargingMode为prePaid时生效且为必选值；periodNum为正整数。取值范围： > - periodType=2（周期类型为月）时，取值为[1，9]； > - periodType=3（周期类型为年）时，取值为[1，3]；
+     * 订购周期数，chargingMode为prePaid时生效且为必选值，periodNum为正整数，取值范围： > - periodType=2（周期类型为月）时，取值为[1，9]。 > - periodType=3（周期类型为年）时，取值为[1，3]。
      * minimum: 1
      * maximum: 1024
      * @return periodNum
@@ -96,7 +96,7 @@ public class CreateServerExtendParam {
     }
 
     /**
-     * 是否是自动续订，默认不填为false >- false 不自动续订 >- true 自动续订
+     * 是否是自动续订，默认不填为false。 >- false 不自动续订。 >- true 自动续订。
      * @return isAutoRenew
      */
     public Boolean getIsAutoRenew() {
@@ -113,7 +113,7 @@ public class CreateServerExtendParam {
     }
 
     /**
-     * 下单订购后，是否自动从客户的账户中支付，而不需要客户手动去进行支付。chargingMode为prePaid时生效，不传该字段时默认为客户手动支付。 > - true ：是（自动支付） > - false：否（需要客户手动支付）
+     * 下单订购后，是否自动从客户的账户中支付，而不需要客户手动去进行支付。chargingMode为prePaid时生效，不传该字段时默认为客户手动支付。 > - true ：是（自动支付）。 > - false：否（需要客户手动支付）。
      * @return isAutoPay
      */
     public Boolean getIsAutoPay() {

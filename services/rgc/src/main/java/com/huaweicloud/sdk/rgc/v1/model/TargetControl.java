@@ -81,7 +81,7 @@ public class TargetControl {
     }
 
     /**
-     * 管理账号ID。
+     * 管理纳管账号ID。
      * @return manageAccountId
      */
     public String getManageAccountId() {
@@ -217,7 +217,7 @@ public class TargetControl {
     }
 
     /**
-     * 账号的创建来源，包括CUSTOM和RGC。
+     * 纳管账号的创建来源，包括CUSTOM和RGC。
      * @return owner
      */
     public String getOwner() {
@@ -234,7 +234,7 @@ public class TargetControl {
     }
 
     /**
-     * regional/global。
+     * 区域选项，取值有两种分别是：区域的regional和全局的global。
      * @return regionalPreference
      */
     public String getRegionalPreference() {
@@ -285,7 +285,7 @@ public class TargetControl {
     }
 
     /**
-     * 业务控制策略（SCP），配置规则。
+     * 服务控制策略（SCP），配置规则。
      * @return implementation
      */
     public String getImplementation() {

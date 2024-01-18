@@ -676,7 +676,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSubsetsToGatewayRequest 请求对象
+     * @param request AddSubsetsToGatewayRequest 请求对象
      * @return CompletableFuture<AddSubsetsToGatewayResponse>
      */
     public CompletableFuture<AddSubsetsToGatewayResponse> addSubsetsToGatewayAsync(AddSubsetsToGatewayRequest request) {
@@ -690,13 +690,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddSubsetsToGatewayRequest 请求对象
+     * @param request AddSubsetsToGatewayRequest 请求对象
      * @return AsyncInvoker<AddSubsetsToGatewayRequest, AddSubsetsToGatewayResponse>
      */
     public AsyncInvoker<AddSubsetsToGatewayRequest, AddSubsetsToGatewayResponse> addSubsetsToGatewayAsyncInvoker(
         AddSubsetsToGatewayRequest request) {
-        return new AsyncInvoker<AddSubsetsToGatewayRequest, AddSubsetsToGatewayResponse>(request,
-            RomaMeta.addSubsetsToGateway, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.addSubsetsToGateway, hcClient);
     }
 
     /**
@@ -706,7 +705,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAppsForAppQuotaRequest 请求对象
+     * @param request AssociateAppsForAppQuotaRequest 请求对象
      * @return CompletableFuture<AssociateAppsForAppQuotaResponse>
      */
     public CompletableFuture<AssociateAppsForAppQuotaResponse> associateAppsForAppQuotaAsync(
@@ -721,13 +720,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAppsForAppQuotaRequest 请求对象
+     * @param request AssociateAppsForAppQuotaRequest 请求对象
      * @return AsyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse>
      */
     public AsyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> associateAppsForAppQuotaAsyncInvoker(
         AssociateAppsForAppQuotaRequest request) {
-        return new AsyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse>(request,
-            RomaMeta.associateAppsForAppQuota, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.associateAppsForAppQuota, hcClient);
     }
 
     /**
@@ -738,7 +736,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateCertificateV2Request 请求对象
+     * @param request AssociateCertificateV2Request 请求对象
      * @return CompletableFuture<AssociateCertificateV2Response>
      */
     public CompletableFuture<AssociateCertificateV2Response> associateCertificateV2Async(
@@ -754,13 +752,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateCertificateV2Request 请求对象
+     * @param request AssociateCertificateV2Request 请求对象
      * @return AsyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response>
      */
     public AsyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response> associateCertificateV2AsyncInvoker(
         AssociateCertificateV2Request request) {
-        return new AsyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response>(request,
-            RomaMeta.associateCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.associateCertificateV2, hcClient);
     }
 
     /**
@@ -771,7 +768,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateDomainV2Request 请求对象
+     * @param request AssociateDomainV2Request 请求对象
      * @return CompletableFuture<AssociateDomainV2Response>
      */
     public CompletableFuture<AssociateDomainV2Response> associateDomainV2Async(AssociateDomainV2Request request) {
@@ -786,13 +783,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateDomainV2Request 请求对象
+     * @param request AssociateDomainV2Request 请求对象
      * @return AsyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>
      */
     public AsyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response> associateDomainV2AsyncInvoker(
         AssociateDomainV2Request request) {
-        return new AsyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>(request,
-            RomaMeta.associateDomainV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.associateDomainV2, hcClient);
     }
 
     /**
@@ -808,7 +804,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateSignatureKeyV2Request 请求对象
+     * @param request AssociateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<AssociateSignatureKeyV2Response>
      */
     public CompletableFuture<AssociateSignatureKeyV2Response> associateSignatureKeyV2Async(
@@ -829,13 +825,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateSignatureKeyV2Request 请求对象
+     * @param request AssociateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response>
      */
     public AsyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> associateSignatureKeyV2AsyncInvoker(
         AssociateSignatureKeyV2Request request) {
-        return new AsyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response>(request,
-            RomaMeta.associateSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.associateSignatureKeyV2, hcClient);
     }
 
     /**
@@ -849,7 +844,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachApiToPluginRequest 请求对象
+     * @param request AttachApiToPluginRequest 请求对象
      * @return CompletableFuture<AttachApiToPluginResponse>
      */
     public CompletableFuture<AttachApiToPluginResponse> attachApiToPluginAsync(AttachApiToPluginRequest request) {
@@ -867,13 +862,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachApiToPluginRequest 请求对象
+     * @param request AttachApiToPluginRequest 请求对象
      * @return AsyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>
      */
     public AsyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse> attachApiToPluginAsyncInvoker(
         AttachApiToPluginRequest request) {
-        return new AsyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>(request,
-            RomaMeta.attachApiToPlugin, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.attachApiToPlugin, hcClient);
     }
 
     /**
@@ -887,7 +881,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachPluginToApiRequest 请求对象
+     * @param request AttachPluginToApiRequest 请求对象
      * @return CompletableFuture<AttachPluginToApiResponse>
      */
     public CompletableFuture<AttachPluginToApiResponse> attachPluginToApiAsync(AttachPluginToApiRequest request) {
@@ -905,13 +899,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachPluginToApiRequest 请求对象
+     * @param request AttachPluginToApiRequest 请求对象
      * @return AsyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>
      */
     public AsyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse> attachPluginToApiAsyncInvoker(
         AttachPluginToApiRequest request) {
-        return new AsyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>(request,
-            RomaMeta.attachPluginToApi, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.attachPluginToApi, hcClient);
     }
 
     /**
@@ -921,7 +914,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddDeviceToGroupRequest 请求对象
+     * @param request BatchAddDeviceToGroupRequest 请求对象
      * @return CompletableFuture<BatchAddDeviceToGroupResponse>
      */
     public CompletableFuture<BatchAddDeviceToGroupResponse> batchAddDeviceToGroupAsync(
@@ -936,13 +929,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddDeviceToGroupRequest 请求对象
+     * @param request BatchAddDeviceToGroupRequest 请求对象
      * @return AsyncInvoker<BatchAddDeviceToGroupRequest, BatchAddDeviceToGroupResponse>
      */
     public AsyncInvoker<BatchAddDeviceToGroupRequest, BatchAddDeviceToGroupResponse> batchAddDeviceToGroupAsyncInvoker(
         BatchAddDeviceToGroupRequest request) {
-        return new AsyncInvoker<BatchAddDeviceToGroupRequest, BatchAddDeviceToGroupResponse>(request,
-            RomaMeta.batchAddDeviceToGroup, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchAddDeviceToGroup, hcClient);
     }
 
     /**
@@ -952,7 +944,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDevicesRequest 请求对象
+     * @param request BatchDeleteDevicesRequest 请求对象
      * @return CompletableFuture<BatchDeleteDevicesResponse>
      */
     public CompletableFuture<BatchDeleteDevicesResponse> batchDeleteDevicesAsync(BatchDeleteDevicesRequest request) {
@@ -966,13 +958,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDevicesRequest 请求对象
+     * @param request BatchDeleteDevicesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse>
      */
     public AsyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> batchDeleteDevicesAsyncInvoker(
         BatchDeleteDevicesRequest request) {
-        return new AsyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse>(request,
-            RomaMeta.batchDeleteDevices, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchDeleteDevices, hcClient);
     }
 
     /**
@@ -982,7 +973,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMqsInstanceTopicRequest 请求对象
+     * @param request BatchDeleteMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<BatchDeleteMqsInstanceTopicResponse>
      */
     public CompletableFuture<BatchDeleteMqsInstanceTopicResponse> batchDeleteMqsInstanceTopicAsync(
@@ -997,13 +988,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMqsInstanceTopicRequest 请求对象
+     * @param request BatchDeleteMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse>
      */
     public AsyncInvoker<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse> batchDeleteMqsInstanceTopicAsyncInvoker(
         BatchDeleteMqsInstanceTopicRequest request) {
-        return new AsyncInvoker<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse>(request,
-            RomaMeta.batchDeleteMqsInstanceTopic, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchDeleteMqsInstanceTopic, hcClient);
     }
 
     /**
@@ -1013,7 +1003,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteRulesRequest 请求对象
+     * @param request BatchDeleteRulesRequest 请求对象
      * @return CompletableFuture<BatchDeleteRulesResponse>
      */
     public CompletableFuture<BatchDeleteRulesResponse> batchDeleteRulesAsync(BatchDeleteRulesRequest request) {
@@ -1027,13 +1017,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteRulesRequest 请求对象
+     * @param request BatchDeleteRulesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteRulesRequest, BatchDeleteRulesResponse>
      */
     public AsyncInvoker<BatchDeleteRulesRequest, BatchDeleteRulesResponse> batchDeleteRulesAsyncInvoker(
         BatchDeleteRulesRequest request) {
-        return new AsyncInvoker<BatchDeleteRulesRequest, BatchDeleteRulesResponse>(request, RomaMeta.batchDeleteRules,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchDeleteRules, hcClient);
     }
 
     /**
@@ -1043,7 +1032,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchFreezeDevicesRequest 请求对象
+     * @param request BatchFreezeDevicesRequest 请求对象
      * @return CompletableFuture<BatchFreezeDevicesResponse>
      */
     public CompletableFuture<BatchFreezeDevicesResponse> batchFreezeDevicesAsync(BatchFreezeDevicesRequest request) {
@@ -1057,13 +1046,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchFreezeDevicesRequest 请求对象
+     * @param request BatchFreezeDevicesRequest 请求对象
      * @return AsyncInvoker<BatchFreezeDevicesRequest, BatchFreezeDevicesResponse>
      */
     public AsyncInvoker<BatchFreezeDevicesRequest, BatchFreezeDevicesResponse> batchFreezeDevicesAsyncInvoker(
         BatchFreezeDevicesRequest request) {
-        return new AsyncInvoker<BatchFreezeDevicesRequest, BatchFreezeDevicesResponse>(request,
-            RomaMeta.batchFreezeDevices, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchFreezeDevices, hcClient);
     }
 
     /**
@@ -1073,7 +1061,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartOrStopTasksRequest 请求对象
+     * @param request BatchStartOrStopTasksRequest 请求对象
      * @return CompletableFuture<BatchStartOrStopTasksResponse>
      */
     public CompletableFuture<BatchStartOrStopTasksResponse> batchStartOrStopTasksAsync(
@@ -1088,13 +1076,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartOrStopTasksRequest 请求对象
+     * @param request BatchStartOrStopTasksRequest 请求对象
      * @return AsyncInvoker<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse>
      */
     public AsyncInvoker<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse> batchStartOrStopTasksAsyncInvoker(
         BatchStartOrStopTasksRequest request) {
-        return new AsyncInvoker<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse>(request,
-            RomaMeta.batchStartOrStopTasks, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchStartOrStopTasks, hcClient);
     }
 
     /**
@@ -1104,7 +1091,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckLivedataApisV2Request 请求对象
+     * @param request CheckLivedataApisV2Request 请求对象
      * @return CompletableFuture<CheckLivedataApisV2Response>
      */
     public CompletableFuture<CheckLivedataApisV2Response> checkLivedataApisV2Async(CheckLivedataApisV2Request request) {
@@ -1118,13 +1105,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckLivedataApisV2Request 请求对象
+     * @param request CheckLivedataApisV2Request 请求对象
      * @return AsyncInvoker<CheckLivedataApisV2Request, CheckLivedataApisV2Response>
      */
     public AsyncInvoker<CheckLivedataApisV2Request, CheckLivedataApisV2Response> checkLivedataApisV2AsyncInvoker(
         CheckLivedataApisV2Request request) {
-        return new AsyncInvoker<CheckLivedataApisV2Request, CheckLivedataApisV2Response>(request,
-            RomaMeta.checkLivedataApisV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.checkLivedataApisV2, hcClient);
     }
 
     /**
@@ -1134,7 +1120,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountDevicesRequest 请求对象
+     * @param request CountDevicesRequest 请求对象
      * @return CompletableFuture<CountDevicesResponse>
      */
     public CompletableFuture<CountDevicesResponse> countDevicesAsync(CountDevicesRequest request) {
@@ -1148,12 +1134,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountDevicesRequest 请求对象
+     * @param request CountDevicesRequest 请求对象
      * @return AsyncInvoker<CountDevicesRequest, CountDevicesResponse>
      */
     public AsyncInvoker<CountDevicesRequest, CountDevicesResponse> countDevicesAsyncInvoker(
         CountDevicesRequest request) {
-        return new AsyncInvoker<CountDevicesRequest, CountDevicesResponse>(request, RomaMeta.countDevices, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.countDevices, hcClient);
     }
 
     /**
@@ -1163,7 +1149,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountTasksRequest 请求对象
+     * @param request CountTasksRequest 请求对象
      * @return CompletableFuture<CountTasksResponse>
      */
     public CompletableFuture<CountTasksResponse> countTasksAsync(CountTasksRequest request) {
@@ -1177,11 +1163,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountTasksRequest 请求对象
+     * @param request CountTasksRequest 请求对象
      * @return AsyncInvoker<CountTasksRequest, CountTasksResponse>
      */
     public AsyncInvoker<CountTasksRequest, CountTasksResponse> countTasksAsyncInvoker(CountTasksRequest request) {
-        return new AsyncInvoker<CountTasksRequest, CountTasksResponse>(request, RomaMeta.countTasks, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.countTasks, hcClient);
     }
 
     /**
@@ -1191,7 +1177,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeAutoV2Request 请求对象
+     * @param request CreateAppCodeAutoV2Request 请求对象
      * @return CompletableFuture<CreateAppCodeAutoV2Response>
      */
     public CompletableFuture<CreateAppCodeAutoV2Response> createAppCodeAutoV2Async(CreateAppCodeAutoV2Request request) {
@@ -1205,13 +1191,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeAutoV2Request 请求对象
+     * @param request CreateAppCodeAutoV2Request 请求对象
      * @return AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>
      */
     public AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2AsyncInvoker(
         CreateAppCodeAutoV2Request request) {
-        return new AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>(request,
-            RomaMeta.createAppCodeAutoV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createAppCodeAutoV2, hcClient);
     }
 
     /**
@@ -1221,7 +1206,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeV2Request 请求对象
+     * @param request CreateAppCodeV2Request 请求对象
      * @return CompletableFuture<CreateAppCodeV2Response>
      */
     public CompletableFuture<CreateAppCodeV2Response> createAppCodeV2Async(CreateAppCodeV2Request request) {
@@ -1235,13 +1220,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeV2Request 请求对象
+     * @param request CreateAppCodeV2Request 请求对象
      * @return AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>
      */
     public AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2AsyncInvoker(
         CreateAppCodeV2Request request) {
-        return new AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>(request, RomaMeta.createAppCodeV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createAppCodeV2, hcClient);
     }
 
     /**
@@ -1251,7 +1235,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppConfigV2Request 请求对象
+     * @param request CreateAppConfigV2Request 请求对象
      * @return CompletableFuture<CreateAppConfigV2Response>
      */
     public CompletableFuture<CreateAppConfigV2Response> createAppConfigV2Async(CreateAppConfigV2Request request) {
@@ -1265,13 +1249,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppConfigV2Request 请求对象
+     * @param request CreateAppConfigV2Request 请求对象
      * @return AsyncInvoker<CreateAppConfigV2Request, CreateAppConfigV2Response>
      */
     public AsyncInvoker<CreateAppConfigV2Request, CreateAppConfigV2Response> createAppConfigV2AsyncInvoker(
         CreateAppConfigV2Request request) {
-        return new AsyncInvoker<CreateAppConfigV2Request, CreateAppConfigV2Response>(request,
-            RomaMeta.createAppConfigV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createAppConfigV2, hcClient);
     }
 
     /**
@@ -1281,7 +1264,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppQuotaRequest 请求对象
+     * @param request CreateAppQuotaRequest 请求对象
      * @return CompletableFuture<CreateAppQuotaResponse>
      */
     public CompletableFuture<CreateAppQuotaResponse> createAppQuotaAsync(CreateAppQuotaRequest request) {
@@ -1295,13 +1278,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppQuotaRequest 请求对象
+     * @param request CreateAppQuotaRequest 请求对象
      * @return AsyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse>
      */
     public AsyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse> createAppQuotaAsyncInvoker(
         CreateAppQuotaRequest request) {
-        return new AsyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse>(request, RomaMeta.createAppQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createAppQuota, hcClient);
     }
 
     /**
@@ -1311,7 +1293,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCommandRequest 请求对象
+     * @param request CreateCommandRequest 请求对象
      * @return CompletableFuture<CreateCommandResponse>
      */
     public CompletableFuture<CreateCommandResponse> createCommandAsync(CreateCommandRequest request) {
@@ -1325,12 +1307,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCommandRequest 请求对象
+     * @param request CreateCommandRequest 请求对象
      * @return AsyncInvoker<CreateCommandRequest, CreateCommandResponse>
      */
     public AsyncInvoker<CreateCommandRequest, CreateCommandResponse> createCommandAsyncInvoker(
         CreateCommandRequest request) {
-        return new AsyncInvoker<CreateCommandRequest, CreateCommandResponse>(request, RomaMeta.createCommand, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createCommand, hcClient);
     }
 
     /**
@@ -1340,7 +1322,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCommonTaskRequest 请求对象
+     * @param request CreateCommonTaskRequest 请求对象
      * @return CompletableFuture<CreateCommonTaskResponse>
      */
     public CompletableFuture<CreateCommonTaskResponse> createCommonTaskAsync(CreateCommonTaskRequest request) {
@@ -1354,13 +1336,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCommonTaskRequest 请求对象
+     * @param request CreateCommonTaskRequest 请求对象
      * @return AsyncInvoker<CreateCommonTaskRequest, CreateCommonTaskResponse>
      */
     public AsyncInvoker<CreateCommonTaskRequest, CreateCommonTaskResponse> createCommonTaskAsyncInvoker(
         CreateCommonTaskRequest request) {
-        return new AsyncInvoker<CreateCommonTaskRequest, CreateCommonTaskResponse>(request, RomaMeta.createCommonTask,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createCommonTask, hcClient);
     }
 
     /**
@@ -1370,7 +1351,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomAuthorizerV2Request 请求对象
+     * @param request CreateCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<CreateCustomAuthorizerV2Response>
      */
     public CompletableFuture<CreateCustomAuthorizerV2Response> createCustomAuthorizerV2Async(
@@ -1385,13 +1366,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomAuthorizerV2Request 请求对象
+     * @param request CreateCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>
      */
     public AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2AsyncInvoker(
         CreateCustomAuthorizerV2Request request) {
-        return new AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>(request,
-            RomaMeta.createCustomAuthorizerV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createCustomAuthorizerV2, hcClient);
     }
 
     /**
@@ -1401,7 +1381,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatasourceInfoRequest 请求对象
+     * @param request CreateDatasourceInfoRequest 请求对象
      * @return CompletableFuture<CreateDatasourceInfoResponse>
      */
     public CompletableFuture<CreateDatasourceInfoResponse> createDatasourceInfoAsync(
@@ -1416,13 +1396,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatasourceInfoRequest 请求对象
+     * @param request CreateDatasourceInfoRequest 请求对象
      * @return AsyncInvoker<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse>
      */
     public AsyncInvoker<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse> createDatasourceInfoAsyncInvoker(
         CreateDatasourceInfoRequest request) {
-        return new AsyncInvoker<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse>(request,
-            RomaMeta.createDatasourceInfo, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createDatasourceInfo, hcClient);
     }
 
     /**
@@ -1432,7 +1411,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDestinationRequest 请求对象
+     * @param request CreateDestinationRequest 请求对象
      * @return CompletableFuture<CreateDestinationResponse>
      */
     public CompletableFuture<CreateDestinationResponse> createDestinationAsync(CreateDestinationRequest request) {
@@ -1446,13 +1425,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDestinationRequest 请求对象
+     * @param request CreateDestinationRequest 请求对象
      * @return AsyncInvoker<CreateDestinationRequest, CreateDestinationResponse>
      */
     public AsyncInvoker<CreateDestinationRequest, CreateDestinationResponse> createDestinationAsyncInvoker(
         CreateDestinationRequest request) {
-        return new AsyncInvoker<CreateDestinationRequest, CreateDestinationResponse>(request,
-            RomaMeta.createDestination, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createDestination, hcClient);
     }
 
     /**
@@ -1462,7 +1440,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeviceRequest 请求对象
+     * @param request CreateDeviceRequest 请求对象
      * @return CompletableFuture<CreateDeviceResponse>
      */
     public CompletableFuture<CreateDeviceResponse> createDeviceAsync(CreateDeviceRequest request) {
@@ -1476,12 +1454,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeviceRequest 请求对象
+     * @param request CreateDeviceRequest 请求对象
      * @return AsyncInvoker<CreateDeviceRequest, CreateDeviceResponse>
      */
     public AsyncInvoker<CreateDeviceRequest, CreateDeviceResponse> createDeviceAsyncInvoker(
         CreateDeviceRequest request) {
-        return new AsyncInvoker<CreateDeviceRequest, CreateDeviceResponse>(request, RomaMeta.createDevice, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createDevice, hcClient);
     }
 
     /**
@@ -1491,7 +1469,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeviceGroupRequest 请求对象
+     * @param request CreateDeviceGroupRequest 请求对象
      * @return CompletableFuture<CreateDeviceGroupResponse>
      */
     public CompletableFuture<CreateDeviceGroupResponse> createDeviceGroupAsync(CreateDeviceGroupRequest request) {
@@ -1505,13 +1483,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeviceGroupRequest 请求对象
+     * @param request CreateDeviceGroupRequest 请求对象
      * @return AsyncInvoker<CreateDeviceGroupRequest, CreateDeviceGroupResponse>
      */
     public AsyncInvoker<CreateDeviceGroupRequest, CreateDeviceGroupResponse> createDeviceGroupAsyncInvoker(
         CreateDeviceGroupRequest request) {
-        return new AsyncInvoker<CreateDeviceGroupRequest, CreateDeviceGroupResponse>(request,
-            RomaMeta.createDeviceGroup, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createDeviceGroup, hcClient);
     }
 
     /**
@@ -1521,7 +1498,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDispatchesRequest 请求对象
+     * @param request CreateDispatchesRequest 请求对象
      * @return CompletableFuture<CreateDispatchesResponse>
      */
     public CompletableFuture<CreateDispatchesResponse> createDispatchesAsync(CreateDispatchesRequest request) {
@@ -1535,13 +1512,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDispatchesRequest 请求对象
+     * @param request CreateDispatchesRequest 请求对象
      * @return AsyncInvoker<CreateDispatchesRequest, CreateDispatchesResponse>
      */
     public AsyncInvoker<CreateDispatchesRequest, CreateDispatchesResponse> createDispatchesAsyncInvoker(
         CreateDispatchesRequest request) {
-        return new AsyncInvoker<CreateDispatchesRequest, CreateDispatchesResponse>(request, RomaMeta.createDispatches,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createDispatches, hcClient);
     }
 
     /**
@@ -1557,7 +1533,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentV2Request 请求对象
+     * @param request CreateEnvironmentV2Request 请求对象
      * @return CompletableFuture<CreateEnvironmentV2Response>
      */
     public CompletableFuture<CreateEnvironmentV2Response> createEnvironmentV2Async(CreateEnvironmentV2Request request) {
@@ -1577,13 +1553,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentV2Request 请求对象
+     * @param request CreateEnvironmentV2Request 请求对象
      * @return AsyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response>
      */
     public AsyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response> createEnvironmentV2AsyncInvoker(
         CreateEnvironmentV2Request request) {
-        return new AsyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response>(request,
-            RomaMeta.createEnvironmentV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createEnvironmentV2, hcClient);
     }
 
     /**
@@ -1604,7 +1579,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentVariableV2Request 请求对象
+     * @param request CreateEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<CreateEnvironmentVariableV2Response>
      */
     public CompletableFuture<CreateEnvironmentVariableV2Response> createEnvironmentVariableV2Async(
@@ -1630,13 +1605,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentVariableV2Request 请求对象
+     * @param request CreateEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response>
      */
     public AsyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> createEnvironmentVariableV2AsyncInvoker(
         CreateEnvironmentVariableV2Request request) {
-        return new AsyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response>(request,
-            RomaMeta.createEnvironmentVariableV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -1648,7 +1622,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFeatureV2Request 请求对象
+     * @param request CreateFeatureV2Request 请求对象
      * @return CompletableFuture<CreateFeatureV2Response>
      */
     public CompletableFuture<CreateFeatureV2Response> createFeatureV2Async(CreateFeatureV2Request request) {
@@ -1664,13 +1638,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFeatureV2Request 请求对象
+     * @param request CreateFeatureV2Request 请求对象
      * @return AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response>
      */
     public AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response> createFeatureV2AsyncInvoker(
         CreateFeatureV2Request request) {
-        return new AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response>(request, RomaMeta.createFeatureV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createFeatureV2, hcClient);
     }
 
     /**
@@ -1680,7 +1653,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLiveDataApiScriptV2Request 请求对象
+     * @param request CreateLiveDataApiScriptV2Request 请求对象
      * @return CompletableFuture<CreateLiveDataApiScriptV2Response>
      */
     public CompletableFuture<CreateLiveDataApiScriptV2Response> createLiveDataApiScriptV2Async(
@@ -1695,13 +1668,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLiveDataApiScriptV2Request 请求对象
+     * @param request CreateLiveDataApiScriptV2Request 请求对象
      * @return AsyncInvoker<CreateLiveDataApiScriptV2Request, CreateLiveDataApiScriptV2Response>
      */
     public AsyncInvoker<CreateLiveDataApiScriptV2Request, CreateLiveDataApiScriptV2Response> createLiveDataApiScriptV2AsyncInvoker(
         CreateLiveDataApiScriptV2Request request) {
-        return new AsyncInvoker<CreateLiveDataApiScriptV2Request, CreateLiveDataApiScriptV2Response>(request,
-            RomaMeta.createLiveDataApiScriptV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createLiveDataApiScriptV2, hcClient);
     }
 
     /**
@@ -1711,7 +1683,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLiveDataApiV2Request 请求对象
+     * @param request CreateLiveDataApiV2Request 请求对象
      * @return CompletableFuture<CreateLiveDataApiV2Response>
      */
     public CompletableFuture<CreateLiveDataApiV2Response> createLiveDataApiV2Async(CreateLiveDataApiV2Request request) {
@@ -1725,13 +1697,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLiveDataApiV2Request 请求对象
+     * @param request CreateLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<CreateLiveDataApiV2Request, CreateLiveDataApiV2Response>
      */
     public AsyncInvoker<CreateLiveDataApiV2Request, CreateLiveDataApiV2Response> createLiveDataApiV2AsyncInvoker(
         CreateLiveDataApiV2Request request) {
-        return new AsyncInvoker<CreateLiveDataApiV2Request, CreateLiveDataApiV2Response>(request,
-            RomaMeta.createLiveDataApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createLiveDataApiV2, hcClient);
     }
 
     /**
@@ -1741,7 +1712,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMqsInstanceTopicRequest 请求对象
+     * @param request CreateMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<CreateMqsInstanceTopicResponse>
      */
     public CompletableFuture<CreateMqsInstanceTopicResponse> createMqsInstanceTopicAsync(
@@ -1756,13 +1727,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMqsInstanceTopicRequest 请求对象
+     * @param request CreateMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse>
      */
     public AsyncInvoker<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse> createMqsInstanceTopicAsyncInvoker(
         CreateMqsInstanceTopicRequest request) {
-        return new AsyncInvoker<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse>(request,
-            RomaMeta.createMqsInstanceTopic, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createMqsInstanceTopic, hcClient);
     }
 
     /**
@@ -1772,7 +1742,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMultiTaskMappingsRequest 请求对象
+     * @param request CreateMultiTaskMappingsRequest 请求对象
      * @return CompletableFuture<CreateMultiTaskMappingsResponse>
      */
     public CompletableFuture<CreateMultiTaskMappingsResponse> createMultiTaskMappingsAsync(
@@ -1787,13 +1757,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMultiTaskMappingsRequest 请求对象
+     * @param request CreateMultiTaskMappingsRequest 请求对象
      * @return AsyncInvoker<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse>
      */
     public AsyncInvoker<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse> createMultiTaskMappingsAsyncInvoker(
         CreateMultiTaskMappingsRequest request) {
-        return new AsyncInvoker<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse>(request,
-            RomaMeta.createMultiTaskMappings, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createMultiTaskMappings, hcClient);
     }
 
     /**
@@ -1803,7 +1772,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMultiTasksRequest 请求对象
+     * @param request CreateMultiTasksRequest 请求对象
      * @return CompletableFuture<CreateMultiTasksResponse>
      */
     public CompletableFuture<CreateMultiTasksResponse> createMultiTasksAsync(CreateMultiTasksRequest request) {
@@ -1817,13 +1786,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMultiTasksRequest 请求对象
+     * @param request CreateMultiTasksRequest 请求对象
      * @return AsyncInvoker<CreateMultiTasksRequest, CreateMultiTasksResponse>
      */
     public AsyncInvoker<CreateMultiTasksRequest, CreateMultiTasksResponse> createMultiTasksAsyncInvoker(
         CreateMultiTasksRequest request) {
-        return new AsyncInvoker<CreateMultiTasksRequest, CreateMultiTasksResponse>(request, RomaMeta.createMultiTasks,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createMultiTasks, hcClient);
     }
 
     /**
@@ -1833,7 +1801,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNotificationRequest 请求对象
+     * @param request CreateNotificationRequest 请求对象
      * @return CompletableFuture<CreateNotificationResponse>
      */
     public CompletableFuture<CreateNotificationResponse> createNotificationAsync(CreateNotificationRequest request) {
@@ -1847,13 +1815,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNotificationRequest 请求对象
+     * @param request CreateNotificationRequest 请求对象
      * @return AsyncInvoker<CreateNotificationRequest, CreateNotificationResponse>
      */
     public AsyncInvoker<CreateNotificationRequest, CreateNotificationResponse> createNotificationAsyncInvoker(
         CreateNotificationRequest request) {
-        return new AsyncInvoker<CreateNotificationRequest, CreateNotificationResponse>(request,
-            RomaMeta.createNotification, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createNotification, hcClient);
     }
 
     /**
@@ -1865,7 +1832,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePluginRequest 请求对象
+     * @param request CreatePluginRequest 请求对象
      * @return CompletableFuture<CreatePluginResponse>
      */
     public CompletableFuture<CreatePluginResponse> createPluginAsync(CreatePluginRequest request) {
@@ -1881,12 +1848,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePluginRequest 请求对象
+     * @param request CreatePluginRequest 请求对象
      * @return AsyncInvoker<CreatePluginRequest, CreatePluginResponse>
      */
     public AsyncInvoker<CreatePluginRequest, CreatePluginResponse> createPluginAsyncInvoker(
         CreatePluginRequest request) {
-        return new AsyncInvoker<CreatePluginRequest, CreatePluginResponse>(request, RomaMeta.createPlugin, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createPlugin, hcClient);
     }
 
     /**
@@ -1896,7 +1863,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProductRequest 请求对象
+     * @param request CreateProductRequest 请求对象
      * @return CompletableFuture<CreateProductResponse>
      */
     public CompletableFuture<CreateProductResponse> createProductAsync(CreateProductRequest request) {
@@ -1910,12 +1877,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProductRequest 请求对象
+     * @param request CreateProductRequest 请求对象
      * @return AsyncInvoker<CreateProductRequest, CreateProductResponse>
      */
     public AsyncInvoker<CreateProductRequest, CreateProductResponse> createProductAsyncInvoker(
         CreateProductRequest request) {
-        return new AsyncInvoker<CreateProductRequest, CreateProductResponse>(request, RomaMeta.createProduct, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createProduct, hcClient);
     }
 
     /**
@@ -1925,7 +1892,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProductTemplateRequest 请求对象
+     * @param request CreateProductTemplateRequest 请求对象
      * @return CompletableFuture<CreateProductTemplateResponse>
      */
     public CompletableFuture<CreateProductTemplateResponse> createProductTemplateAsync(
@@ -1940,13 +1907,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProductTemplateRequest 请求对象
+     * @param request CreateProductTemplateRequest 请求对象
      * @return AsyncInvoker<CreateProductTemplateRequest, CreateProductTemplateResponse>
      */
     public AsyncInvoker<CreateProductTemplateRequest, CreateProductTemplateResponse> createProductTemplateAsyncInvoker(
         CreateProductTemplateRequest request) {
-        return new AsyncInvoker<CreateProductTemplateRequest, CreateProductTemplateResponse>(request,
-            RomaMeta.createProductTemplate, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createProductTemplate, hcClient);
     }
 
     /**
@@ -1956,7 +1922,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProductTopicRequest 请求对象
+     * @param request CreateProductTopicRequest 请求对象
      * @return CompletableFuture<CreateProductTopicResponse>
      */
     public CompletableFuture<CreateProductTopicResponse> createProductTopicAsync(CreateProductTopicRequest request) {
@@ -1970,13 +1936,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProductTopicRequest 请求对象
+     * @param request CreateProductTopicRequest 请求对象
      * @return AsyncInvoker<CreateProductTopicRequest, CreateProductTopicResponse>
      */
     public AsyncInvoker<CreateProductTopicRequest, CreateProductTopicResponse> createProductTopicAsyncInvoker(
         CreateProductTopicRequest request) {
-        return new AsyncInvoker<CreateProductTopicRequest, CreateProductTopicResponse>(request,
-            RomaMeta.createProductTopic, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createProductTopic, hcClient);
     }
 
     /**
@@ -1986,7 +1951,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePropertyRequest 请求对象
+     * @param request CreatePropertyRequest 请求对象
      * @return CompletableFuture<CreatePropertyResponse>
      */
     public CompletableFuture<CreatePropertyResponse> createPropertyAsync(CreatePropertyRequest request) {
@@ -2000,13 +1965,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePropertyRequest 请求对象
+     * @param request CreatePropertyRequest 请求对象
      * @return AsyncInvoker<CreatePropertyRequest, CreatePropertyResponse>
      */
     public AsyncInvoker<CreatePropertyRequest, CreatePropertyResponse> createPropertyAsyncInvoker(
         CreatePropertyRequest request) {
-        return new AsyncInvoker<CreatePropertyRequest, CreatePropertyResponse>(request, RomaMeta.createProperty,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createProperty, hcClient);
     }
 
     /**
@@ -2016,7 +1980,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestPropertyRequest 请求对象
+     * @param request CreateRequestPropertyRequest 请求对象
      * @return CompletableFuture<CreateRequestPropertyResponse>
      */
     public CompletableFuture<CreateRequestPropertyResponse> createRequestPropertyAsync(
@@ -2031,13 +1995,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestPropertyRequest 请求对象
+     * @param request CreateRequestPropertyRequest 请求对象
      * @return AsyncInvoker<CreateRequestPropertyRequest, CreateRequestPropertyResponse>
      */
     public AsyncInvoker<CreateRequestPropertyRequest, CreateRequestPropertyResponse> createRequestPropertyAsyncInvoker(
         CreateRequestPropertyRequest request) {
-        return new AsyncInvoker<CreateRequestPropertyRequest, CreateRequestPropertyResponse>(request,
-            RomaMeta.createRequestProperty, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createRequestProperty, hcClient);
     }
 
     /**
@@ -2048,7 +2011,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestThrottlingPolicyV2Request 请求对象
+     * @param request CreateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<CreateRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<CreateRequestThrottlingPolicyV2Response> createRequestThrottlingPolicyV2Async(
@@ -2064,13 +2027,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestThrottlingPolicyV2Request 请求对象
+     * @param request CreateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> createRequestThrottlingPolicyV2AsyncInvoker(
         CreateRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response>(
-            request, RomaMeta.createRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -2080,7 +2042,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResponsePropertyRequest 请求对象
+     * @param request CreateResponsePropertyRequest 请求对象
      * @return CompletableFuture<CreateResponsePropertyResponse>
      */
     public CompletableFuture<CreateResponsePropertyResponse> createResponsePropertyAsync(
@@ -2095,13 +2057,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResponsePropertyRequest 请求对象
+     * @param request CreateResponsePropertyRequest 请求对象
      * @return AsyncInvoker<CreateResponsePropertyRequest, CreateResponsePropertyResponse>
      */
     public AsyncInvoker<CreateResponsePropertyRequest, CreateResponsePropertyResponse> createResponsePropertyAsyncInvoker(
         CreateResponsePropertyRequest request) {
-        return new AsyncInvoker<CreateResponsePropertyRequest, CreateResponsePropertyResponse>(request,
-            RomaMeta.createResponseProperty, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createResponseProperty, hcClient);
     }
 
     /**
@@ -2111,7 +2072,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRuleRequest 请求对象
+     * @param request CreateRuleRequest 请求对象
      * @return CompletableFuture<CreateRuleResponse>
      */
     public CompletableFuture<CreateRuleResponse> createRuleAsync(CreateRuleRequest request) {
@@ -2125,11 +2086,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRuleRequest 请求对象
+     * @param request CreateRuleRequest 请求对象
      * @return AsyncInvoker<CreateRuleRequest, CreateRuleResponse>
      */
     public AsyncInvoker<CreateRuleRequest, CreateRuleResponse> createRuleAsyncInvoker(CreateRuleRequest request) {
-        return new AsyncInvoker<CreateRuleRequest, CreateRuleResponse>(request, RomaMeta.createRule, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createRule, hcClient);
     }
 
     /**
@@ -2139,7 +2100,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateServiceRequest 请求对象
+     * @param request CreateServiceRequest 请求对象
      * @return CompletableFuture<CreateServiceResponse>
      */
     public CompletableFuture<CreateServiceResponse> createServiceAsync(CreateServiceRequest request) {
@@ -2153,12 +2114,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateServiceRequest 请求对象
+     * @param request CreateServiceRequest 请求对象
      * @return AsyncInvoker<CreateServiceRequest, CreateServiceResponse>
      */
     public AsyncInvoker<CreateServiceRequest, CreateServiceResponse> createServiceAsyncInvoker(
         CreateServiceRequest request) {
-        return new AsyncInvoker<CreateServiceRequest, CreateServiceResponse>(request, RomaMeta.createService, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createService, hcClient);
     }
 
     /**
@@ -2172,7 +2133,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSignatureKeyV2Request 请求对象
+     * @param request CreateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<CreateSignatureKeyV2Response>
      */
     public CompletableFuture<CreateSignatureKeyV2Response> createSignatureKeyV2Async(
@@ -2191,13 +2152,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSignatureKeyV2Request 请求对象
+     * @param request CreateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response>
      */
     public AsyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> createSignatureKeyV2AsyncInvoker(
         CreateSignatureKeyV2Request request) {
-        return new AsyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response>(request,
-            RomaMeta.createSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createSignatureKeyV2, hcClient);
     }
 
     /**
@@ -2207,7 +2167,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSourceRequest 请求对象
+     * @param request CreateSourceRequest 请求对象
      * @return CompletableFuture<CreateSourceResponse>
      */
     public CompletableFuture<CreateSourceResponse> createSourceAsync(CreateSourceRequest request) {
@@ -2221,12 +2181,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSourceRequest 请求对象
+     * @param request CreateSourceRequest 请求对象
      * @return AsyncInvoker<CreateSourceRequest, CreateSourceResponse>
      */
     public AsyncInvoker<CreateSourceRequest, CreateSourceResponse> createSourceAsyncInvoker(
         CreateSourceRequest request) {
-        return new AsyncInvoker<CreateSourceRequest, CreateSourceResponse>(request, RomaMeta.createSource, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createSource, hcClient);
     }
 
     /**
@@ -2240,7 +2200,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<CreateSpecialThrottlingConfigurationV2Response>
      */
     public CompletableFuture<CreateSpecialThrottlingConfigurationV2Response> createSpecialThrottlingConfigurationV2Async(
@@ -2259,13 +2219,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response>
      */
     public AsyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> createSpecialThrottlingConfigurationV2AsyncInvoker(
         CreateSpecialThrottlingConfigurationV2Request request) {
-        return new AsyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response>(
-            request, RomaMeta.createSpecialThrottlingConfigurationV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createSpecialThrottlingConfigurationV2, hcClient);
     }
 
     /**
@@ -2275,7 +2234,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DebugLiveDataApiV2Request 请求对象
+     * @param request DebugLiveDataApiV2Request 请求对象
      * @return CompletableFuture<DebugLiveDataApiV2Response>
      */
     public CompletableFuture<DebugLiveDataApiV2Response> debugLiveDataApiV2Async(DebugLiveDataApiV2Request request) {
@@ -2289,13 +2248,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DebugLiveDataApiV2Request 请求对象
+     * @param request DebugLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<DebugLiveDataApiV2Request, DebugLiveDataApiV2Response>
      */
     public AsyncInvoker<DebugLiveDataApiV2Request, DebugLiveDataApiV2Response> debugLiveDataApiV2AsyncInvoker(
         DebugLiveDataApiV2Request request) {
-        return new AsyncInvoker<DebugLiveDataApiV2Request, DebugLiveDataApiV2Response>(request,
-            RomaMeta.debugLiveDataApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.debugLiveDataApiV2, hcClient);
     }
 
     /**
@@ -2305,7 +2263,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DebugRuleRequest 请求对象
+     * @param request DebugRuleRequest 请求对象
      * @return CompletableFuture<DebugRuleResponse>
      */
     public CompletableFuture<DebugRuleResponse> debugRuleAsync(DebugRuleRequest request) {
@@ -2319,11 +2277,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DebugRuleRequest 请求对象
+     * @param request DebugRuleRequest 请求对象
      * @return AsyncInvoker<DebugRuleRequest, DebugRuleResponse>
      */
     public AsyncInvoker<DebugRuleRequest, DebugRuleResponse> debugRuleAsyncInvoker(DebugRuleRequest request) {
-        return new AsyncInvoker<DebugRuleRequest, DebugRuleResponse>(request, RomaMeta.debugRule, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.debugRule, hcClient);
     }
 
     /**
@@ -2333,7 +2291,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppAclRequest 请求对象
+     * @param request DeleteAppAclRequest 请求对象
      * @return CompletableFuture<DeleteAppAclResponse>
      */
     public CompletableFuture<DeleteAppAclResponse> deleteAppAclAsync(DeleteAppAclRequest request) {
@@ -2347,12 +2305,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppAclRequest 请求对象
+     * @param request DeleteAppAclRequest 请求对象
      * @return AsyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse>
      */
     public AsyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse> deleteAppAclAsyncInvoker(
         DeleteAppAclRequest request) {
-        return new AsyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse>(request, RomaMeta.deleteAppAcl, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteAppAcl, hcClient);
     }
 
     /**
@@ -2362,7 +2320,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppCodeV2Request 请求对象
+     * @param request DeleteAppCodeV2Request 请求对象
      * @return CompletableFuture<DeleteAppCodeV2Response>
      */
     public CompletableFuture<DeleteAppCodeV2Response> deleteAppCodeV2Async(DeleteAppCodeV2Request request) {
@@ -2376,13 +2334,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppCodeV2Request 请求对象
+     * @param request DeleteAppCodeV2Request 请求对象
      * @return AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>
      */
     public AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2AsyncInvoker(
         DeleteAppCodeV2Request request) {
-        return new AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>(request, RomaMeta.deleteAppCodeV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteAppCodeV2, hcClient);
     }
 
     /**
@@ -2392,7 +2349,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppConfigV2Request 请求对象
+     * @param request DeleteAppConfigV2Request 请求对象
      * @return CompletableFuture<DeleteAppConfigV2Response>
      */
     public CompletableFuture<DeleteAppConfigV2Response> deleteAppConfigV2Async(DeleteAppConfigV2Request request) {
@@ -2406,13 +2363,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppConfigV2Request 请求对象
+     * @param request DeleteAppConfigV2Request 请求对象
      * @return AsyncInvoker<DeleteAppConfigV2Request, DeleteAppConfigV2Response>
      */
     public AsyncInvoker<DeleteAppConfigV2Request, DeleteAppConfigV2Response> deleteAppConfigV2AsyncInvoker(
         DeleteAppConfigV2Request request) {
-        return new AsyncInvoker<DeleteAppConfigV2Request, DeleteAppConfigV2Response>(request,
-            RomaMeta.deleteAppConfigV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteAppConfigV2, hcClient);
     }
 
     /**
@@ -2422,7 +2378,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppQuotaRequest 请求对象
+     * @param request DeleteAppQuotaRequest 请求对象
      * @return CompletableFuture<DeleteAppQuotaResponse>
      */
     public CompletableFuture<DeleteAppQuotaResponse> deleteAppQuotaAsync(DeleteAppQuotaRequest request) {
@@ -2436,13 +2392,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppQuotaRequest 请求对象
+     * @param request DeleteAppQuotaRequest 请求对象
      * @return AsyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse>
      */
     public AsyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse> deleteAppQuotaAsyncInvoker(
         DeleteAppQuotaRequest request) {
-        return new AsyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse>(request, RomaMeta.deleteAppQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteAppQuota, hcClient);
     }
 
     /**
@@ -2452,7 +2407,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCommandRequest 请求对象
+     * @param request DeleteCommandRequest 请求对象
      * @return CompletableFuture<DeleteCommandResponse>
      */
     public CompletableFuture<DeleteCommandResponse> deleteCommandAsync(DeleteCommandRequest request) {
@@ -2466,12 +2421,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCommandRequest 请求对象
+     * @param request DeleteCommandRequest 请求对象
      * @return AsyncInvoker<DeleteCommandRequest, DeleteCommandResponse>
      */
     public AsyncInvoker<DeleteCommandRequest, DeleteCommandResponse> deleteCommandAsyncInvoker(
         DeleteCommandRequest request) {
-        return new AsyncInvoker<DeleteCommandRequest, DeleteCommandResponse>(request, RomaMeta.deleteCommand, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteCommand, hcClient);
     }
 
     /**
@@ -2481,7 +2436,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomAuthorizerV2Request 请求对象
+     * @param request DeleteCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<DeleteCustomAuthorizerV2Response>
      */
     public CompletableFuture<DeleteCustomAuthorizerV2Response> deleteCustomAuthorizerV2Async(
@@ -2496,13 +2451,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomAuthorizerV2Request 请求对象
+     * @param request DeleteCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>
      */
     public AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> deleteCustomAuthorizerV2AsyncInvoker(
         DeleteCustomAuthorizerV2Request request) {
-        return new AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>(request,
-            RomaMeta.deleteCustomAuthorizerV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteCustomAuthorizerV2, hcClient);
     }
 
     /**
@@ -2512,7 +2466,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatasourceInfoByIdRequest 请求对象
+     * @param request DeleteDatasourceInfoByIdRequest 请求对象
      * @return CompletableFuture<DeleteDatasourceInfoByIdResponse>
      */
     public CompletableFuture<DeleteDatasourceInfoByIdResponse> deleteDatasourceInfoByIdAsync(
@@ -2527,13 +2481,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatasourceInfoByIdRequest 请求对象
+     * @param request DeleteDatasourceInfoByIdRequest 请求对象
      * @return AsyncInvoker<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse>
      */
     public AsyncInvoker<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse> deleteDatasourceInfoByIdAsyncInvoker(
         DeleteDatasourceInfoByIdRequest request) {
-        return new AsyncInvoker<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse>(request,
-            RomaMeta.deleteDatasourceInfoById, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteDatasourceInfoById, hcClient);
     }
 
     /**
@@ -2543,7 +2496,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDestinationRequest 请求对象
+     * @param request DeleteDestinationRequest 请求对象
      * @return CompletableFuture<DeleteDestinationResponse>
      */
     public CompletableFuture<DeleteDestinationResponse> deleteDestinationAsync(DeleteDestinationRequest request) {
@@ -2557,13 +2510,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDestinationRequest 请求对象
+     * @param request DeleteDestinationRequest 请求对象
      * @return AsyncInvoker<DeleteDestinationRequest, DeleteDestinationResponse>
      */
     public AsyncInvoker<DeleteDestinationRequest, DeleteDestinationResponse> deleteDestinationAsyncInvoker(
         DeleteDestinationRequest request) {
-        return new AsyncInvoker<DeleteDestinationRequest, DeleteDestinationResponse>(request,
-            RomaMeta.deleteDestination, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteDestination, hcClient);
     }
 
     /**
@@ -2573,7 +2525,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceRequest 请求对象
+     * @param request DeleteDeviceRequest 请求对象
      * @return CompletableFuture<DeleteDeviceResponse>
      */
     public CompletableFuture<DeleteDeviceResponse> deleteDeviceAsync(DeleteDeviceRequest request) {
@@ -2587,12 +2539,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceRequest 请求对象
+     * @param request DeleteDeviceRequest 请求对象
      * @return AsyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>
      */
     public AsyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse> deleteDeviceAsyncInvoker(
         DeleteDeviceRequest request) {
-        return new AsyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>(request, RomaMeta.deleteDevice, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteDevice, hcClient);
     }
 
     /**
@@ -2602,7 +2554,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceFromGroupRequest 请求对象
+     * @param request DeleteDeviceFromGroupRequest 请求对象
      * @return CompletableFuture<DeleteDeviceFromGroupResponse>
      */
     public CompletableFuture<DeleteDeviceFromGroupResponse> deleteDeviceFromGroupAsync(
@@ -2617,13 +2569,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceFromGroupRequest 请求对象
+     * @param request DeleteDeviceFromGroupRequest 请求对象
      * @return AsyncInvoker<DeleteDeviceFromGroupRequest, DeleteDeviceFromGroupResponse>
      */
     public AsyncInvoker<DeleteDeviceFromGroupRequest, DeleteDeviceFromGroupResponse> deleteDeviceFromGroupAsyncInvoker(
         DeleteDeviceFromGroupRequest request) {
-        return new AsyncInvoker<DeleteDeviceFromGroupRequest, DeleteDeviceFromGroupResponse>(request,
-            RomaMeta.deleteDeviceFromGroup, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteDeviceFromGroup, hcClient);
     }
 
     /**
@@ -2633,7 +2584,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceGroupRequest 请求对象
+     * @param request DeleteDeviceGroupRequest 请求对象
      * @return CompletableFuture<DeleteDeviceGroupResponse>
      */
     public CompletableFuture<DeleteDeviceGroupResponse> deleteDeviceGroupAsync(DeleteDeviceGroupRequest request) {
@@ -2647,13 +2598,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDeviceGroupRequest 请求对象
+     * @param request DeleteDeviceGroupRequest 请求对象
      * @return AsyncInvoker<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse>
      */
     public AsyncInvoker<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> deleteDeviceGroupAsyncInvoker(
         DeleteDeviceGroupRequest request) {
-        return new AsyncInvoker<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse>(request,
-            RomaMeta.deleteDeviceGroup, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteDeviceGroup, hcClient);
     }
 
     /**
@@ -2664,7 +2614,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentV2Request 请求对象
+     * @param request DeleteEnvironmentV2Request 请求对象
      * @return CompletableFuture<DeleteEnvironmentV2Response>
      */
     public CompletableFuture<DeleteEnvironmentV2Response> deleteEnvironmentV2Async(DeleteEnvironmentV2Request request) {
@@ -2679,13 +2629,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentV2Request 请求对象
+     * @param request DeleteEnvironmentV2Request 请求对象
      * @return AsyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>
      */
     public AsyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> deleteEnvironmentV2AsyncInvoker(
         DeleteEnvironmentV2Request request) {
-        return new AsyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>(request,
-            RomaMeta.deleteEnvironmentV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteEnvironmentV2, hcClient);
     }
 
     /**
@@ -2695,7 +2644,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentVariableV2Request 请求对象
+     * @param request DeleteEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<DeleteEnvironmentVariableV2Response>
      */
     public CompletableFuture<DeleteEnvironmentVariableV2Response> deleteEnvironmentVariableV2Async(
@@ -2710,13 +2659,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentVariableV2Request 请求对象
+     * @param request DeleteEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response>
      */
     public AsyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> deleteEnvironmentVariableV2AsyncInvoker(
         DeleteEnvironmentVariableV2Request request) {
-        return new AsyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response>(request,
-            RomaMeta.deleteEnvironmentVariableV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -2726,7 +2674,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLiveDataApiV2Request 请求对象
+     * @param request DeleteLiveDataApiV2Request 请求对象
      * @return CompletableFuture<DeleteLiveDataApiV2Response>
      */
     public CompletableFuture<DeleteLiveDataApiV2Response> deleteLiveDataApiV2Async(DeleteLiveDataApiV2Request request) {
@@ -2740,13 +2688,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLiveDataApiV2Request 请求对象
+     * @param request DeleteLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<DeleteLiveDataApiV2Request, DeleteLiveDataApiV2Response>
      */
     public AsyncInvoker<DeleteLiveDataApiV2Request, DeleteLiveDataApiV2Response> deleteLiveDataApiV2AsyncInvoker(
         DeleteLiveDataApiV2Request request) {
-        return new AsyncInvoker<DeleteLiveDataApiV2Request, DeleteLiveDataApiV2Response>(request,
-            RomaMeta.deleteLiveDataApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteLiveDataApiV2, hcClient);
     }
 
     /**
@@ -2756,7 +2703,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMqsInstanceTopicRequest 请求对象
+     * @param request DeleteMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<DeleteMqsInstanceTopicResponse>
      */
     public CompletableFuture<DeleteMqsInstanceTopicResponse> deleteMqsInstanceTopicAsync(
@@ -2771,13 +2718,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMqsInstanceTopicRequest 请求对象
+     * @param request DeleteMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse>
      */
     public AsyncInvoker<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse> deleteMqsInstanceTopicAsyncInvoker(
         DeleteMqsInstanceTopicRequest request) {
-        return new AsyncInvoker<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse>(request,
-            RomaMeta.deleteMqsInstanceTopic, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteMqsInstanceTopic, hcClient);
     }
 
     /**
@@ -2787,7 +2733,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMultiTaskMappingRequest 请求对象
+     * @param request DeleteMultiTaskMappingRequest 请求对象
      * @return CompletableFuture<DeleteMultiTaskMappingResponse>
      */
     public CompletableFuture<DeleteMultiTaskMappingResponse> deleteMultiTaskMappingAsync(
@@ -2802,13 +2748,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMultiTaskMappingRequest 请求对象
+     * @param request DeleteMultiTaskMappingRequest 请求对象
      * @return AsyncInvoker<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse>
      */
     public AsyncInvoker<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse> deleteMultiTaskMappingAsyncInvoker(
         DeleteMultiTaskMappingRequest request) {
-        return new AsyncInvoker<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse>(request,
-            RomaMeta.deleteMultiTaskMapping, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteMultiTaskMapping, hcClient);
     }
 
     /**
@@ -2818,7 +2763,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNotificationRequest 请求对象
+     * @param request DeleteNotificationRequest 请求对象
      * @return CompletableFuture<DeleteNotificationResponse>
      */
     public CompletableFuture<DeleteNotificationResponse> deleteNotificationAsync(DeleteNotificationRequest request) {
@@ -2832,13 +2777,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNotificationRequest 请求对象
+     * @param request DeleteNotificationRequest 请求对象
      * @return AsyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse>
      */
     public AsyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse> deleteNotificationAsyncInvoker(
         DeleteNotificationRequest request) {
-        return new AsyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse>(request,
-            RomaMeta.deleteNotification, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteNotification, hcClient);
     }
 
     /**
@@ -2849,7 +2793,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePluginRequest 请求对象
+     * @param request DeletePluginRequest 请求对象
      * @return CompletableFuture<DeletePluginResponse>
      */
     public CompletableFuture<DeletePluginResponse> deletePluginAsync(DeletePluginRequest request) {
@@ -2864,12 +2808,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePluginRequest 请求对象
+     * @param request DeletePluginRequest 请求对象
      * @return AsyncInvoker<DeletePluginRequest, DeletePluginResponse>
      */
     public AsyncInvoker<DeletePluginRequest, DeletePluginResponse> deletePluginAsyncInvoker(
         DeletePluginRequest request) {
-        return new AsyncInvoker<DeletePluginRequest, DeletePluginResponse>(request, RomaMeta.deletePlugin, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deletePlugin, hcClient);
     }
 
     /**
@@ -2879,7 +2823,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProductRequest 请求对象
+     * @param request DeleteProductRequest 请求对象
      * @return CompletableFuture<DeleteProductResponse>
      */
     public CompletableFuture<DeleteProductResponse> deleteProductAsync(DeleteProductRequest request) {
@@ -2893,12 +2837,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProductRequest 请求对象
+     * @param request DeleteProductRequest 请求对象
      * @return AsyncInvoker<DeleteProductRequest, DeleteProductResponse>
      */
     public AsyncInvoker<DeleteProductRequest, DeleteProductResponse> deleteProductAsyncInvoker(
         DeleteProductRequest request) {
-        return new AsyncInvoker<DeleteProductRequest, DeleteProductResponse>(request, RomaMeta.deleteProduct, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteProduct, hcClient);
     }
 
     /**
@@ -2908,7 +2852,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProductTemplateRequest 请求对象
+     * @param request DeleteProductTemplateRequest 请求对象
      * @return CompletableFuture<DeleteProductTemplateResponse>
      */
     public CompletableFuture<DeleteProductTemplateResponse> deleteProductTemplateAsync(
@@ -2923,13 +2867,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProductTemplateRequest 请求对象
+     * @param request DeleteProductTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteProductTemplateRequest, DeleteProductTemplateResponse>
      */
     public AsyncInvoker<DeleteProductTemplateRequest, DeleteProductTemplateResponse> deleteProductTemplateAsyncInvoker(
         DeleteProductTemplateRequest request) {
-        return new AsyncInvoker<DeleteProductTemplateRequest, DeleteProductTemplateResponse>(request,
-            RomaMeta.deleteProductTemplate, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteProductTemplate, hcClient);
     }
 
     /**
@@ -2939,7 +2882,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProductTopicRequest 请求对象
+     * @param request DeleteProductTopicRequest 请求对象
      * @return CompletableFuture<DeleteProductTopicResponse>
      */
     public CompletableFuture<DeleteProductTopicResponse> deleteProductTopicAsync(DeleteProductTopicRequest request) {
@@ -2953,13 +2896,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProductTopicRequest 请求对象
+     * @param request DeleteProductTopicRequest 请求对象
      * @return AsyncInvoker<DeleteProductTopicRequest, DeleteProductTopicResponse>
      */
     public AsyncInvoker<DeleteProductTopicRequest, DeleteProductTopicResponse> deleteProductTopicAsyncInvoker(
         DeleteProductTopicRequest request) {
-        return new AsyncInvoker<DeleteProductTopicRequest, DeleteProductTopicResponse>(request,
-            RomaMeta.deleteProductTopic, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteProductTopic, hcClient);
     }
 
     /**
@@ -2969,7 +2911,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePropertyRequest 请求对象
+     * @param request DeletePropertyRequest 请求对象
      * @return CompletableFuture<DeletePropertyResponse>
      */
     public CompletableFuture<DeletePropertyResponse> deletePropertyAsync(DeletePropertyRequest request) {
@@ -2983,13 +2925,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePropertyRequest 请求对象
+     * @param request DeletePropertyRequest 请求对象
      * @return AsyncInvoker<DeletePropertyRequest, DeletePropertyResponse>
      */
     public AsyncInvoker<DeletePropertyRequest, DeletePropertyResponse> deletePropertyAsyncInvoker(
         DeletePropertyRequest request) {
-        return new AsyncInvoker<DeletePropertyRequest, DeletePropertyResponse>(request, RomaMeta.deleteProperty,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteProperty, hcClient);
     }
 
     /**
@@ -2999,7 +2940,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRequestPropertyRequest 请求对象
+     * @param request DeleteRequestPropertyRequest 请求对象
      * @return CompletableFuture<DeleteRequestPropertyResponse>
      */
     public CompletableFuture<DeleteRequestPropertyResponse> deleteRequestPropertyAsync(
@@ -3014,13 +2955,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRequestPropertyRequest 请求对象
+     * @param request DeleteRequestPropertyRequest 请求对象
      * @return AsyncInvoker<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse>
      */
     public AsyncInvoker<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse> deleteRequestPropertyAsyncInvoker(
         DeleteRequestPropertyRequest request) {
-        return new AsyncInvoker<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse>(request,
-            RomaMeta.deleteRequestProperty, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteRequestProperty, hcClient);
     }
 
     /**
@@ -3030,7 +2970,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRequestThrottlingPolicyV2Request 请求对象
+     * @param request DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<DeleteRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<DeleteRequestThrottlingPolicyV2Response> deleteRequestThrottlingPolicyV2Async(
@@ -3045,13 +2985,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRequestThrottlingPolicyV2Request 请求对象
+     * @param request DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> deleteRequestThrottlingPolicyV2AsyncInvoker(
         DeleteRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response>(
-            request, RomaMeta.deleteRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -3061,7 +3000,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResponsePropertyRequest 请求对象
+     * @param request DeleteResponsePropertyRequest 请求对象
      * @return CompletableFuture<DeleteResponsePropertyResponse>
      */
     public CompletableFuture<DeleteResponsePropertyResponse> deleteResponsePropertyAsync(
@@ -3076,13 +3015,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResponsePropertyRequest 请求对象
+     * @param request DeleteResponsePropertyRequest 请求对象
      * @return AsyncInvoker<DeleteResponsePropertyRequest, DeleteResponsePropertyResponse>
      */
     public AsyncInvoker<DeleteResponsePropertyRequest, DeleteResponsePropertyResponse> deleteResponsePropertyAsyncInvoker(
         DeleteResponsePropertyRequest request) {
-        return new AsyncInvoker<DeleteResponsePropertyRequest, DeleteResponsePropertyResponse>(request,
-            RomaMeta.deleteResponseProperty, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteResponseProperty, hcClient);
     }
 
     /**
@@ -3092,7 +3030,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleRequest 请求对象
+     * @param request DeleteRuleRequest 请求对象
      * @return CompletableFuture<DeleteRuleResponse>
      */
     public CompletableFuture<DeleteRuleResponse> deleteRuleAsync(DeleteRuleRequest request) {
@@ -3106,11 +3044,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRuleRequest 请求对象
+     * @param request DeleteRuleRequest 请求对象
      * @return AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse>
      */
     public AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse> deleteRuleAsyncInvoker(DeleteRuleRequest request) {
-        return new AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse>(request, RomaMeta.deleteRule, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteRule, hcClient);
     }
 
     /**
@@ -3120,7 +3058,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServiceRequest 请求对象
+     * @param request DeleteServiceRequest 请求对象
      * @return CompletableFuture<DeleteServiceResponse>
      */
     public CompletableFuture<DeleteServiceResponse> deleteServiceAsync(DeleteServiceRequest request) {
@@ -3134,12 +3072,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteServiceRequest 请求对象
+     * @param request DeleteServiceRequest 请求对象
      * @return AsyncInvoker<DeleteServiceRequest, DeleteServiceResponse>
      */
     public AsyncInvoker<DeleteServiceRequest, DeleteServiceResponse> deleteServiceAsyncInvoker(
         DeleteServiceRequest request) {
-        return new AsyncInvoker<DeleteServiceRequest, DeleteServiceResponse>(request, RomaMeta.deleteService, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteService, hcClient);
     }
 
     /**
@@ -3149,7 +3087,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSignatureKeyV2Request 请求对象
+     * @param request DeleteSignatureKeyV2Request 请求对象
      * @return CompletableFuture<DeleteSignatureKeyV2Response>
      */
     public CompletableFuture<DeleteSignatureKeyV2Response> deleteSignatureKeyV2Async(
@@ -3164,13 +3102,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSignatureKeyV2Request 请求对象
+     * @param request DeleteSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response>
      */
     public AsyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> deleteSignatureKeyV2AsyncInvoker(
         DeleteSignatureKeyV2Request request) {
-        return new AsyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response>(request,
-            RomaMeta.deleteSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteSignatureKeyV2, hcClient);
     }
 
     /**
@@ -3180,7 +3117,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSourceRequest 请求对象
+     * @param request DeleteSourceRequest 请求对象
      * @return CompletableFuture<DeleteSourceResponse>
      */
     public CompletableFuture<DeleteSourceResponse> deleteSourceAsync(DeleteSourceRequest request) {
@@ -3194,12 +3131,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSourceRequest 请求对象
+     * @param request DeleteSourceRequest 请求对象
      * @return AsyncInvoker<DeleteSourceRequest, DeleteSourceResponse>
      */
     public AsyncInvoker<DeleteSourceRequest, DeleteSourceResponse> deleteSourceAsyncInvoker(
         DeleteSourceRequest request) {
-        return new AsyncInvoker<DeleteSourceRequest, DeleteSourceResponse>(request, RomaMeta.deleteSource, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteSource, hcClient);
     }
 
     /**
@@ -3209,7 +3146,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<DeleteSpecialThrottlingConfigurationV2Response>
      */
     public CompletableFuture<DeleteSpecialThrottlingConfigurationV2Response> deleteSpecialThrottlingConfigurationV2Async(
@@ -3224,13 +3161,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response>
      */
     public AsyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> deleteSpecialThrottlingConfigurationV2AsyncInvoker(
         DeleteSpecialThrottlingConfigurationV2Request request) {
-        return new AsyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response>(
-            request, RomaMeta.deleteSpecialThrottlingConfigurationV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteSpecialThrottlingConfigurationV2, hcClient);
     }
 
     /**
@@ -3240,7 +3176,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
      */
     public CompletableFuture<DeleteTaskResponse> deleteTaskAsync(DeleteTaskRequest request) {
@@ -3254,11 +3190,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
-        return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, RomaMeta.deleteTask, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteTask, hcClient);
     }
 
     /**
@@ -3269,7 +3205,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachApiFromPluginRequest 请求对象
+     * @param request DetachApiFromPluginRequest 请求对象
      * @return CompletableFuture<DetachApiFromPluginResponse>
      */
     public CompletableFuture<DetachApiFromPluginResponse> detachApiFromPluginAsync(DetachApiFromPluginRequest request) {
@@ -3284,13 +3220,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachApiFromPluginRequest 请求对象
+     * @param request DetachApiFromPluginRequest 请求对象
      * @return AsyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>
      */
     public AsyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse> detachApiFromPluginAsyncInvoker(
         DetachApiFromPluginRequest request) {
-        return new AsyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>(request,
-            RomaMeta.detachApiFromPlugin, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.detachApiFromPlugin, hcClient);
     }
 
     /**
@@ -3301,7 +3236,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachPluginFromApiRequest 请求对象
+     * @param request DetachPluginFromApiRequest 请求对象
      * @return CompletableFuture<DetachPluginFromApiResponse>
      */
     public CompletableFuture<DetachPluginFromApiResponse> detachPluginFromApiAsync(DetachPluginFromApiRequest request) {
@@ -3316,13 +3251,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachPluginFromApiRequest 请求对象
+     * @param request DetachPluginFromApiRequest 请求对象
      * @return AsyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>
      */
     public AsyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse> detachPluginFromApiAsyncInvoker(
         DetachPluginFromApiRequest request) {
-        return new AsyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>(request,
-            RomaMeta.detachPluginFromApi, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.detachPluginFromApi, hcClient);
     }
 
     /**
@@ -3332,7 +3266,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateAppQuotaWithAppRequest 请求对象
+     * @param request DisassociateAppQuotaWithAppRequest 请求对象
      * @return CompletableFuture<DisassociateAppQuotaWithAppResponse>
      */
     public CompletableFuture<DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithAppAsync(
@@ -3347,13 +3281,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateAppQuotaWithAppRequest 请求对象
+     * @param request DisassociateAppQuotaWithAppRequest 请求对象
      * @return AsyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse>
      */
     public AsyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithAppAsyncInvoker(
         DisassociateAppQuotaWithAppRequest request) {
-        return new AsyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse>(request,
-            RomaMeta.disassociateAppQuotaWithApp, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.disassociateAppQuotaWithApp, hcClient);
     }
 
     /**
@@ -3363,7 +3296,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateCertificateV2Request 请求对象
+     * @param request DisassociateCertificateV2Request 请求对象
      * @return CompletableFuture<DisassociateCertificateV2Response>
      */
     public CompletableFuture<DisassociateCertificateV2Response> disassociateCertificateV2Async(
@@ -3378,13 +3311,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateCertificateV2Request 请求对象
+     * @param request DisassociateCertificateV2Request 请求对象
      * @return AsyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response>
      */
     public AsyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response> disassociateCertificateV2AsyncInvoker(
         DisassociateCertificateV2Request request) {
-        return new AsyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response>(request,
-            RomaMeta.disassociateCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.disassociateCertificateV2, hcClient);
     }
 
     /**
@@ -3394,7 +3326,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateDomainV2Request 请求对象
+     * @param request DisassociateDomainV2Request 请求对象
      * @return CompletableFuture<DisassociateDomainV2Response>
      */
     public CompletableFuture<DisassociateDomainV2Response> disassociateDomainV2Async(
@@ -3409,13 +3341,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateDomainV2Request 请求对象
+     * @param request DisassociateDomainV2Request 请求对象
      * @return AsyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response>
      */
     public AsyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response> disassociateDomainV2AsyncInvoker(
         DisassociateDomainV2Request request) {
-        return new AsyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response>(request,
-            RomaMeta.disassociateDomainV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.disassociateDomainV2, hcClient);
     }
 
     /**
@@ -3425,7 +3356,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateSignatureKeyV2Request 请求对象
+     * @param request DisassociateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<DisassociateSignatureKeyV2Response>
      */
     public CompletableFuture<DisassociateSignatureKeyV2Response> disassociateSignatureKeyV2Async(
@@ -3440,13 +3371,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateSignatureKeyV2Request 请求对象
+     * @param request DisassociateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response>
      */
     public AsyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> disassociateSignatureKeyV2AsyncInvoker(
         DisassociateSignatureKeyV2Request request) {
-        return new AsyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response>(request,
-            RomaMeta.disassociateSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.disassociateSignatureKeyV2, hcClient);
     }
 
     /**
@@ -3456,7 +3386,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadProductsRequest 请求对象
+     * @param request DownloadProductsRequest 请求对象
      * @return CompletableFuture<DownloadProductsResponse>
      */
     public CompletableFuture<DownloadProductsResponse> downloadProductsAsync(DownloadProductsRequest request) {
@@ -3470,13 +3400,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadProductsRequest 请求对象
+     * @param request DownloadProductsRequest 请求对象
      * @return AsyncInvoker<DownloadProductsRequest, DownloadProductsResponse>
      */
     public AsyncInvoker<DownloadProductsRequest, DownloadProductsResponse> downloadProductsAsyncInvoker(
         DownloadProductsRequest request) {
-        return new AsyncInvoker<DownloadProductsRequest, DownloadProductsResponse>(request, RomaMeta.downloadProducts,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.downloadProducts, hcClient);
     }
 
     /**
@@ -3486,7 +3415,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportMqsInstanceTopicRequest 请求对象
+     * @param request ExportMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<ExportMqsInstanceTopicResponse>
      */
     public CompletableFuture<ExportMqsInstanceTopicResponse> exportMqsInstanceTopicAsync(
@@ -3501,13 +3430,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportMqsInstanceTopicRequest 请求对象
+     * @param request ExportMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<ExportMqsInstanceTopicRequest, ExportMqsInstanceTopicResponse>
      */
     public AsyncInvoker<ExportMqsInstanceTopicRequest, ExportMqsInstanceTopicResponse> exportMqsInstanceTopicAsyncInvoker(
         ExportMqsInstanceTopicRequest request) {
-        return new AsyncInvoker<ExportMqsInstanceTopicRequest, ExportMqsInstanceTopicResponse>(request,
-            RomaMeta.exportMqsInstanceTopic, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.exportMqsInstanceTopic, hcClient);
     }
 
     /**
@@ -3517,7 +3445,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportMqsInstanceTopicRequest 请求对象
+     * @param request ImportMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<ImportMqsInstanceTopicResponse>
      */
     public CompletableFuture<ImportMqsInstanceTopicResponse> importMqsInstanceTopicAsync(
@@ -3532,13 +3460,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportMqsInstanceTopicRequest 请求对象
+     * @param request ImportMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse>
      */
     public AsyncInvoker<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse> importMqsInstanceTopicAsyncInvoker(
         ImportMqsInstanceTopicRequest request) {
-        return new AsyncInvoker<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse>(request,
-            RomaMeta.importMqsInstanceTopic, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.importMqsInstanceTopic, hcClient);
     }
 
     /**
@@ -3548,7 +3475,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallMultiTasksRequest 请求对象
+     * @param request InstallMultiTasksRequest 请求对象
      * @return CompletableFuture<InstallMultiTasksResponse>
      */
     public CompletableFuture<InstallMultiTasksResponse> installMultiTasksAsync(InstallMultiTasksRequest request) {
@@ -3562,13 +3489,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallMultiTasksRequest 请求对象
+     * @param request InstallMultiTasksRequest 请求对象
      * @return AsyncInvoker<InstallMultiTasksRequest, InstallMultiTasksResponse>
      */
     public AsyncInvoker<InstallMultiTasksRequest, InstallMultiTasksResponse> installMultiTasksAsyncInvoker(
         InstallMultiTasksRequest request) {
-        return new AsyncInvoker<InstallMultiTasksRequest, InstallMultiTasksResponse>(request,
-            RomaMeta.installMultiTasks, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.installMultiTasks, hcClient);
     }
 
     /**
@@ -3580,7 +3506,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachablePluginsRequest 请求对象
+     * @param request ListApiAttachablePluginsRequest 请求对象
      * @return CompletableFuture<ListApiAttachablePluginsResponse>
      */
     public CompletableFuture<ListApiAttachablePluginsResponse> listApiAttachablePluginsAsync(
@@ -3597,13 +3523,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachablePluginsRequest 请求对象
+     * @param request ListApiAttachablePluginsRequest 请求对象
      * @return AsyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>
      */
     public AsyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> listApiAttachablePluginsAsyncInvoker(
         ListApiAttachablePluginsRequest request) {
-        return new AsyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>(request,
-            RomaMeta.listApiAttachablePlugins, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApiAttachablePlugins, hcClient);
     }
 
     /**
@@ -3616,7 +3541,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachedPluginsRequest 请求对象
+     * @param request ListApiAttachedPluginsRequest 请求对象
      * @return CompletableFuture<ListApiAttachedPluginsResponse>
      */
     public CompletableFuture<ListApiAttachedPluginsResponse> listApiAttachedPluginsAsync(
@@ -3634,13 +3559,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachedPluginsRequest 请求对象
+     * @param request ListApiAttachedPluginsRequest 请求对象
      * @return AsyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>
      */
     public AsyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> listApiAttachedPluginsAsyncInvoker(
         ListApiAttachedPluginsRequest request) {
-        return new AsyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>(request,
-            RomaMeta.listApiAttachedPlugins, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApiAttachedPlugins, hcClient);
     }
 
     /**
@@ -3650,7 +3574,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToSignatureKeyV2Request 请求对象
+     * @param request ListApisBindedToSignatureKeyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToSignatureKeyV2Response>
      */
     public CompletableFuture<ListApisBindedToSignatureKeyV2Response> listApisBindedToSignatureKeyV2Async(
@@ -3665,13 +3589,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToSignatureKeyV2Request 请求对象
+     * @param request ListApisBindedToSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response>
      */
     public AsyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> listApisBindedToSignatureKeyV2AsyncInvoker(
         ListApisBindedToSignatureKeyV2Request request) {
-        return new AsyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response>(request,
-            RomaMeta.listApisBindedToSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApisBindedToSignatureKeyV2, hcClient);
     }
 
     /**
@@ -3681,7 +3604,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
+     * @param request ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return CompletableFuture<ListApisNotBoundWithSignatureKeyV2Response>
      */
     public CompletableFuture<ListApisNotBoundWithSignatureKeyV2Response> listApisNotBoundWithSignatureKeyV2Async(
@@ -3696,13 +3619,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
+     * @param request ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response>
      */
     public AsyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> listApisNotBoundWithSignatureKeyV2AsyncInvoker(
         ListApisNotBoundWithSignatureKeyV2Request request) {
-        return new AsyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response>(
-            request, RomaMeta.listApisNotBoundWithSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApisNotBoundWithSignatureKeyV2, hcClient);
     }
 
     /**
@@ -3712,7 +3634,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppCodesV2Request 请求对象
+     * @param request ListAppCodesV2Request 请求对象
      * @return CompletableFuture<ListAppCodesV2Response>
      */
     public CompletableFuture<ListAppCodesV2Response> listAppCodesV2Async(ListAppCodesV2Request request) {
@@ -3726,13 +3648,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppCodesV2Request 请求对象
+     * @param request ListAppCodesV2Request 请求对象
      * @return AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>
      */
     public AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2AsyncInvoker(
         ListAppCodesV2Request request) {
-        return new AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>(request, RomaMeta.listAppCodesV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listAppCodesV2, hcClient);
     }
 
     /**
@@ -3742,7 +3663,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppConfigsV2Request 请求对象
+     * @param request ListAppConfigsV2Request 请求对象
      * @return CompletableFuture<ListAppConfigsV2Response>
      */
     public CompletableFuture<ListAppConfigsV2Response> listAppConfigsV2Async(ListAppConfigsV2Request request) {
@@ -3756,13 +3677,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppConfigsV2Request 请求对象
+     * @param request ListAppConfigsV2Request 请求对象
      * @return AsyncInvoker<ListAppConfigsV2Request, ListAppConfigsV2Response>
      */
     public AsyncInvoker<ListAppConfigsV2Request, ListAppConfigsV2Response> listAppConfigsV2AsyncInvoker(
         ListAppConfigsV2Request request) {
-        return new AsyncInvoker<ListAppConfigsV2Request, ListAppConfigsV2Response>(request, RomaMeta.listAppConfigsV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listAppConfigsV2, hcClient);
     }
 
     /**
@@ -3772,7 +3692,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBindableAppsRequest 请求对象
+     * @param request ListAppQuotaBindableAppsRequest 请求对象
      * @return CompletableFuture<ListAppQuotaBindableAppsResponse>
      */
     public CompletableFuture<ListAppQuotaBindableAppsResponse> listAppQuotaBindableAppsAsync(
@@ -3787,13 +3707,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBindableAppsRequest 请求对象
+     * @param request ListAppQuotaBindableAppsRequest 请求对象
      * @return AsyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse>
      */
     public AsyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> listAppQuotaBindableAppsAsyncInvoker(
         ListAppQuotaBindableAppsRequest request) {
-        return new AsyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse>(request,
-            RomaMeta.listAppQuotaBindableApps, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listAppQuotaBindableApps, hcClient);
     }
 
     /**
@@ -3803,7 +3722,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBoundAppsRequest 请求对象
+     * @param request ListAppQuotaBoundAppsRequest 请求对象
      * @return CompletableFuture<ListAppQuotaBoundAppsResponse>
      */
     public CompletableFuture<ListAppQuotaBoundAppsResponse> listAppQuotaBoundAppsAsync(
@@ -3818,13 +3737,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBoundAppsRequest 请求对象
+     * @param request ListAppQuotaBoundAppsRequest 请求对象
      * @return AsyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse>
      */
     public AsyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> listAppQuotaBoundAppsAsyncInvoker(
         ListAppQuotaBoundAppsRequest request) {
-        return new AsyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse>(request,
-            RomaMeta.listAppQuotaBoundApps, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listAppQuotaBoundApps, hcClient);
     }
 
     /**
@@ -3834,7 +3752,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotasRequest 请求对象
+     * @param request ListAppQuotasRequest 请求对象
      * @return CompletableFuture<ListAppQuotasResponse>
      */
     public CompletableFuture<ListAppQuotasResponse> listAppQuotasAsync(ListAppQuotasRequest request) {
@@ -3848,12 +3766,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotasRequest 请求对象
+     * @param request ListAppQuotasRequest 请求对象
      * @return AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>
      */
     public AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse> listAppQuotasAsyncInvoker(
         ListAppQuotasRequest request) {
-        return new AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>(request, RomaMeta.listAppQuotas, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listAppQuotas, hcClient);
     }
 
     /**
@@ -3863,7 +3781,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsV2Request 请求对象
+     * @param request ListAppsV2Request 请求对象
      * @return CompletableFuture<ListAppsV2Response>
      */
     public CompletableFuture<ListAppsV2Response> listAppsV2Async(ListAppsV2Request request) {
@@ -3877,11 +3795,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsV2Request 请求对象
+     * @param request ListAppsV2Request 请求对象
      * @return AsyncInvoker<ListAppsV2Request, ListAppsV2Response>
      */
     public AsyncInvoker<ListAppsV2Request, ListAppsV2Response> listAppsV2AsyncInvoker(ListAppsV2Request request) {
-        return new AsyncInvoker<ListAppsV2Request, ListAppsV2Response>(request, RomaMeta.listAppsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listAppsV2, hcClient);
     }
 
     /**
@@ -3891,7 +3809,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCommandsRequest 请求对象
+     * @param request ListCommandsRequest 请求对象
      * @return CompletableFuture<ListCommandsResponse>
      */
     public CompletableFuture<ListCommandsResponse> listCommandsAsync(ListCommandsRequest request) {
@@ -3905,12 +3823,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCommandsRequest 请求对象
+     * @param request ListCommandsRequest 请求对象
      * @return AsyncInvoker<ListCommandsRequest, ListCommandsResponse>
      */
     public AsyncInvoker<ListCommandsRequest, ListCommandsResponse> listCommandsAsyncInvoker(
         ListCommandsRequest request) {
-        return new AsyncInvoker<ListCommandsRequest, ListCommandsResponse>(request, RomaMeta.listCommands, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listCommands, hcClient);
     }
 
     /**
@@ -3920,7 +3838,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomAuthorizersV2Request 请求对象
+     * @param request ListCustomAuthorizersV2Request 请求对象
      * @return CompletableFuture<ListCustomAuthorizersV2Response>
      */
     public CompletableFuture<ListCustomAuthorizersV2Response> listCustomAuthorizersV2Async(
@@ -3935,13 +3853,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomAuthorizersV2Request 请求对象
+     * @param request ListCustomAuthorizersV2Request 请求对象
      * @return AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>
      */
     public AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> listCustomAuthorizersV2AsyncInvoker(
         ListCustomAuthorizersV2Request request) {
-        return new AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>(request,
-            RomaMeta.listCustomAuthorizersV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listCustomAuthorizersV2, hcClient);
     }
 
     /**
@@ -3951,7 +3868,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatasourceColumnsRequest 请求对象
+     * @param request ListDatasourceColumnsRequest 请求对象
      * @return CompletableFuture<ListDatasourceColumnsResponse>
      */
     public CompletableFuture<ListDatasourceColumnsResponse> listDatasourceColumnsAsync(
@@ -3966,13 +3883,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatasourceColumnsRequest 请求对象
+     * @param request ListDatasourceColumnsRequest 请求对象
      * @return AsyncInvoker<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse>
      */
     public AsyncInvoker<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse> listDatasourceColumnsAsyncInvoker(
         ListDatasourceColumnsRequest request) {
-        return new AsyncInvoker<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse>(request,
-            RomaMeta.listDatasourceColumns, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listDatasourceColumns, hcClient);
     }
 
     /**
@@ -3982,7 +3898,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatasourceTablesRequest 请求对象
+     * @param request ListDatasourceTablesRequest 请求对象
      * @return CompletableFuture<ListDatasourceTablesResponse>
      */
     public CompletableFuture<ListDatasourceTablesResponse> listDatasourceTablesAsync(
@@ -3997,13 +3913,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatasourceTablesRequest 请求对象
+     * @param request ListDatasourceTablesRequest 请求对象
      * @return AsyncInvoker<ListDatasourceTablesRequest, ListDatasourceTablesResponse>
      */
     public AsyncInvoker<ListDatasourceTablesRequest, ListDatasourceTablesResponse> listDatasourceTablesAsyncInvoker(
         ListDatasourceTablesRequest request) {
-        return new AsyncInvoker<ListDatasourceTablesRequest, ListDatasourceTablesResponse>(request,
-            RomaMeta.listDatasourceTables, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listDatasourceTables, hcClient);
     }
 
     /**
@@ -4013,7 +3928,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatasourcesRequest 请求对象
+     * @param request ListDatasourcesRequest 请求对象
      * @return CompletableFuture<ListDatasourcesResponse>
      */
     public CompletableFuture<ListDatasourcesResponse> listDatasourcesAsync(ListDatasourcesRequest request) {
@@ -4027,13 +3942,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatasourcesRequest 请求对象
+     * @param request ListDatasourcesRequest 请求对象
      * @return AsyncInvoker<ListDatasourcesRequest, ListDatasourcesResponse>
      */
     public AsyncInvoker<ListDatasourcesRequest, ListDatasourcesResponse> listDatasourcesAsyncInvoker(
         ListDatasourcesRequest request) {
-        return new AsyncInvoker<ListDatasourcesRequest, ListDatasourcesResponse>(request, RomaMeta.listDatasources,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listDatasources, hcClient);
     }
 
     /**
@@ -4043,7 +3957,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDestinationsRequest 请求对象
+     * @param request ListDestinationsRequest 请求对象
      * @return CompletableFuture<ListDestinationsResponse>
      */
     public CompletableFuture<ListDestinationsResponse> listDestinationsAsync(ListDestinationsRequest request) {
@@ -4057,13 +3971,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDestinationsRequest 请求对象
+     * @param request ListDestinationsRequest 请求对象
      * @return AsyncInvoker<ListDestinationsRequest, ListDestinationsResponse>
      */
     public AsyncInvoker<ListDestinationsRequest, ListDestinationsResponse> listDestinationsAsyncInvoker(
         ListDestinationsRequest request) {
-        return new AsyncInvoker<ListDestinationsRequest, ListDestinationsResponse>(request, RomaMeta.listDestinations,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listDestinations, hcClient);
     }
 
     /**
@@ -4073,7 +3986,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesRequest 请求对象
+     * @param request ListDevicesRequest 请求对象
      * @return CompletableFuture<ListDevicesResponse>
      */
     public CompletableFuture<ListDevicesResponse> listDevicesAsync(ListDevicesRequest request) {
@@ -4087,11 +4000,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesRequest 请求对象
+     * @param request ListDevicesRequest 请求对象
      * @return AsyncInvoker<ListDevicesRequest, ListDevicesResponse>
      */
     public AsyncInvoker<ListDevicesRequest, ListDevicesResponse> listDevicesAsyncInvoker(ListDevicesRequest request) {
-        return new AsyncInvoker<ListDevicesRequest, ListDevicesResponse>(request, RomaMeta.listDevices, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listDevices, hcClient);
     }
 
     /**
@@ -4101,7 +4014,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesInProductRequest 请求对象
+     * @param request ListDevicesInProductRequest 请求对象
      * @return CompletableFuture<ListDevicesInProductResponse>
      */
     public CompletableFuture<ListDevicesInProductResponse> listDevicesInProductAsync(
@@ -4116,13 +4029,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDevicesInProductRequest 请求对象
+     * @param request ListDevicesInProductRequest 请求对象
      * @return AsyncInvoker<ListDevicesInProductRequest, ListDevicesInProductResponse>
      */
     public AsyncInvoker<ListDevicesInProductRequest, ListDevicesInProductResponse> listDevicesInProductAsyncInvoker(
         ListDevicesInProductRequest request) {
-        return new AsyncInvoker<ListDevicesInProductRequest, ListDevicesInProductResponse>(request,
-            RomaMeta.listDevicesInProduct, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listDevicesInProduct, hcClient);
     }
 
     /**
@@ -4132,7 +4044,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentVariablesV2Request 请求对象
+     * @param request ListEnvironmentVariablesV2Request 请求对象
      * @return CompletableFuture<ListEnvironmentVariablesV2Response>
      */
     public CompletableFuture<ListEnvironmentVariablesV2Response> listEnvironmentVariablesV2Async(
@@ -4147,13 +4059,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentVariablesV2Request 请求对象
+     * @param request ListEnvironmentVariablesV2Request 请求对象
      * @return AsyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response>
      */
     public AsyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> listEnvironmentVariablesV2AsyncInvoker(
         ListEnvironmentVariablesV2Request request) {
-        return new AsyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response>(request,
-            RomaMeta.listEnvironmentVariablesV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listEnvironmentVariablesV2, hcClient);
     }
 
     /**
@@ -4163,7 +4074,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentsV2Request 请求对象
+     * @param request ListEnvironmentsV2Request 请求对象
      * @return CompletableFuture<ListEnvironmentsV2Response>
      */
     public CompletableFuture<ListEnvironmentsV2Response> listEnvironmentsV2Async(ListEnvironmentsV2Request request) {
@@ -4177,13 +4088,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentsV2Request 请求对象
+     * @param request ListEnvironmentsV2Request 请求对象
      * @return AsyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response>
      */
     public AsyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response> listEnvironmentsV2AsyncInvoker(
         ListEnvironmentsV2Request request) {
-        return new AsyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response>(request,
-            RomaMeta.listEnvironmentsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listEnvironmentsV2, hcClient);
     }
 
     /**
@@ -4195,7 +4105,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFeaturesV2Request 请求对象
+     * @param request ListFeaturesV2Request 请求对象
      * @return CompletableFuture<ListFeaturesV2Response>
      */
     public CompletableFuture<ListFeaturesV2Response> listFeaturesV2Async(ListFeaturesV2Request request) {
@@ -4211,13 +4121,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFeaturesV2Request 请求对象
+     * @param request ListFeaturesV2Request 请求对象
      * @return AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response>
      */
     public AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response> listFeaturesV2AsyncInvoker(
         ListFeaturesV2Request request) {
-        return new AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response>(request, RomaMeta.listFeaturesV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listFeaturesV2, hcClient);
     }
 
     /**
@@ -4228,7 +4137,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLatelyApiStatisticsV2Request 请求对象
+     * @param request ListLatelyApiStatisticsV2Request 请求对象
      * @return CompletableFuture<ListLatelyApiStatisticsV2Response>
      */
     public CompletableFuture<ListLatelyApiStatisticsV2Response> listLatelyApiStatisticsV2Async(
@@ -4244,13 +4153,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLatelyApiStatisticsV2Request 请求对象
+     * @param request ListLatelyApiStatisticsV2Request 请求对象
      * @return AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response>
      */
     public AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> listLatelyApiStatisticsV2AsyncInvoker(
         ListLatelyApiStatisticsV2Request request) {
-        return new AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response>(request,
-            RomaMeta.listLatelyApiStatisticsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listLatelyApiStatisticsV2, hcClient);
     }
 
     /**
@@ -4260,7 +4168,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveDataApiDeploymentHistoryV2Request 请求对象
+     * @param request ListLiveDataApiDeploymentHistoryV2Request 请求对象
      * @return CompletableFuture<ListLiveDataApiDeploymentHistoryV2Response>
      */
     public CompletableFuture<ListLiveDataApiDeploymentHistoryV2Response> listLiveDataApiDeploymentHistoryV2Async(
@@ -4275,13 +4183,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveDataApiDeploymentHistoryV2Request 请求对象
+     * @param request ListLiveDataApiDeploymentHistoryV2Request 请求对象
      * @return AsyncInvoker<ListLiveDataApiDeploymentHistoryV2Request, ListLiveDataApiDeploymentHistoryV2Response>
      */
     public AsyncInvoker<ListLiveDataApiDeploymentHistoryV2Request, ListLiveDataApiDeploymentHistoryV2Response> listLiveDataApiDeploymentHistoryV2AsyncInvoker(
         ListLiveDataApiDeploymentHistoryV2Request request) {
-        return new AsyncInvoker<ListLiveDataApiDeploymentHistoryV2Request, ListLiveDataApiDeploymentHistoryV2Response>(
-            request, RomaMeta.listLiveDataApiDeploymentHistoryV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listLiveDataApiDeploymentHistoryV2, hcClient);
     }
 
     /**
@@ -4291,7 +4198,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveDataApiTestHistoryV2Request 请求对象
+     * @param request ListLiveDataApiTestHistoryV2Request 请求对象
      * @return CompletableFuture<ListLiveDataApiTestHistoryV2Response>
      */
     public CompletableFuture<ListLiveDataApiTestHistoryV2Response> listLiveDataApiTestHistoryV2Async(
@@ -4306,13 +4213,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveDataApiTestHistoryV2Request 请求对象
+     * @param request ListLiveDataApiTestHistoryV2Request 请求对象
      * @return AsyncInvoker<ListLiveDataApiTestHistoryV2Request, ListLiveDataApiTestHistoryV2Response>
      */
     public AsyncInvoker<ListLiveDataApiTestHistoryV2Request, ListLiveDataApiTestHistoryV2Response> listLiveDataApiTestHistoryV2AsyncInvoker(
         ListLiveDataApiTestHistoryV2Request request) {
-        return new AsyncInvoker<ListLiveDataApiTestHistoryV2Request, ListLiveDataApiTestHistoryV2Response>(request,
-            RomaMeta.listLiveDataApiTestHistoryV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listLiveDataApiTestHistoryV2, hcClient);
     }
 
     /**
@@ -4322,7 +4228,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveDataApiV2Request 请求对象
+     * @param request ListLiveDataApiV2Request 请求对象
      * @return CompletableFuture<ListLiveDataApiV2Response>
      */
     public CompletableFuture<ListLiveDataApiV2Response> listLiveDataApiV2Async(ListLiveDataApiV2Request request) {
@@ -4336,13 +4242,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveDataApiV2Request 请求对象
+     * @param request ListLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<ListLiveDataApiV2Request, ListLiveDataApiV2Response>
      */
     public AsyncInvoker<ListLiveDataApiV2Request, ListLiveDataApiV2Response> listLiveDataApiV2AsyncInvoker(
         ListLiveDataApiV2Request request) {
-        return new AsyncInvoker<ListLiveDataApiV2Request, ListLiveDataApiV2Response>(request,
-            RomaMeta.listLiveDataApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listLiveDataApiV2, hcClient);
     }
 
     /**
@@ -4352,7 +4257,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveDataDataSourcesV2Request 请求对象
+     * @param request ListLiveDataDataSourcesV2Request 请求对象
      * @return CompletableFuture<ListLiveDataDataSourcesV2Response>
      */
     public CompletableFuture<ListLiveDataDataSourcesV2Response> listLiveDataDataSourcesV2Async(
@@ -4367,13 +4272,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveDataDataSourcesV2Request 请求对象
+     * @param request ListLiveDataDataSourcesV2Request 请求对象
      * @return AsyncInvoker<ListLiveDataDataSourcesV2Request, ListLiveDataDataSourcesV2Response>
      */
     public AsyncInvoker<ListLiveDataDataSourcesV2Request, ListLiveDataDataSourcesV2Response> listLiveDataDataSourcesV2AsyncInvoker(
         ListLiveDataDataSourcesV2Request request) {
-        return new AsyncInvoker<ListLiveDataDataSourcesV2Request, ListLiveDataDataSourcesV2Response>(request,
-            RomaMeta.listLiveDataDataSourcesV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listLiveDataDataSourcesV2, hcClient);
     }
 
     /**
@@ -4383,7 +4287,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveDataQuotaV2Request 请求对象
+     * @param request ListLiveDataQuotaV2Request 请求对象
      * @return CompletableFuture<ListLiveDataQuotaV2Response>
      */
     public CompletableFuture<ListLiveDataQuotaV2Response> listLiveDataQuotaV2Async(ListLiveDataQuotaV2Request request) {
@@ -4397,13 +4301,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLiveDataQuotaV2Request 请求对象
+     * @param request ListLiveDataQuotaV2Request 请求对象
      * @return AsyncInvoker<ListLiveDataQuotaV2Request, ListLiveDataQuotaV2Response>
      */
     public AsyncInvoker<ListLiveDataQuotaV2Request, ListLiveDataQuotaV2Response> listLiveDataQuotaV2AsyncInvoker(
         ListLiveDataQuotaV2Request request) {
-        return new AsyncInvoker<ListLiveDataQuotaV2Request, ListLiveDataQuotaV2Response>(request,
-            RomaMeta.listLiveDataQuotaV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listLiveDataQuotaV2, hcClient);
     }
 
     /**
@@ -4413,7 +4316,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitorInfosRequest 请求对象
+     * @param request ListMonitorInfosRequest 请求对象
      * @return CompletableFuture<ListMonitorInfosResponse>
      */
     public CompletableFuture<ListMonitorInfosResponse> listMonitorInfosAsync(ListMonitorInfosRequest request) {
@@ -4427,13 +4330,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitorInfosRequest 请求对象
+     * @param request ListMonitorInfosRequest 请求对象
      * @return AsyncInvoker<ListMonitorInfosRequest, ListMonitorInfosResponse>
      */
     public AsyncInvoker<ListMonitorInfosRequest, ListMonitorInfosResponse> listMonitorInfosAsyncInvoker(
         ListMonitorInfosRequest request) {
-        return new AsyncInvoker<ListMonitorInfosRequest, ListMonitorInfosResponse>(request, RomaMeta.listMonitorInfos,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listMonitorInfos, hcClient);
     }
 
     /**
@@ -4443,7 +4345,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitorLogRequest 请求对象
+     * @param request ListMonitorLogRequest 请求对象
      * @return CompletableFuture<ListMonitorLogResponse>
      */
     public CompletableFuture<ListMonitorLogResponse> listMonitorLogAsync(ListMonitorLogRequest request) {
@@ -4457,13 +4359,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitorLogRequest 请求对象
+     * @param request ListMonitorLogRequest 请求对象
      * @return AsyncInvoker<ListMonitorLogRequest, ListMonitorLogResponse>
      */
     public AsyncInvoker<ListMonitorLogRequest, ListMonitorLogResponse> listMonitorLogAsyncInvoker(
         ListMonitorLogRequest request) {
-        return new AsyncInvoker<ListMonitorLogRequest, ListMonitorLogResponse>(request, RomaMeta.listMonitorLog,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listMonitorLog, hcClient);
     }
 
     /**
@@ -4473,7 +4374,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMqsInstanceTopicsRequest 请求对象
+     * @param request ListMqsInstanceTopicsRequest 请求对象
      * @return CompletableFuture<ListMqsInstanceTopicsResponse>
      */
     public CompletableFuture<ListMqsInstanceTopicsResponse> listMqsInstanceTopicsAsync(
@@ -4488,13 +4389,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMqsInstanceTopicsRequest 请求对象
+     * @param request ListMqsInstanceTopicsRequest 请求对象
      * @return AsyncInvoker<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse>
      */
     public AsyncInvoker<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse> listMqsInstanceTopicsAsyncInvoker(
         ListMqsInstanceTopicsRequest request) {
-        return new AsyncInvoker<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse>(request,
-            RomaMeta.listMqsInstanceTopics, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listMqsInstanceTopics, hcClient);
     }
 
     /**
@@ -4504,7 +4404,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationRequest 请求对象
+     * @param request ListNotificationRequest 请求对象
      * @return CompletableFuture<ListNotificationResponse>
      */
     public CompletableFuture<ListNotificationResponse> listNotificationAsync(ListNotificationRequest request) {
@@ -4518,13 +4418,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationRequest 请求对象
+     * @param request ListNotificationRequest 请求对象
      * @return AsyncInvoker<ListNotificationRequest, ListNotificationResponse>
      */
     public AsyncInvoker<ListNotificationRequest, ListNotificationResponse> listNotificationAsyncInvoker(
         ListNotificationRequest request) {
-        return new AsyncInvoker<ListNotificationRequest, ListNotificationResponse>(request, RomaMeta.listNotification,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listNotification, hcClient);
     }
 
     /**
@@ -4537,7 +4436,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachableApisRequest 请求对象
+     * @param request ListPluginAttachableApisRequest 请求对象
      * @return CompletableFuture<ListPluginAttachableApisResponse>
      */
     public CompletableFuture<ListPluginAttachableApisResponse> listPluginAttachableApisAsync(
@@ -4555,13 +4454,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachableApisRequest 请求对象
+     * @param request ListPluginAttachableApisRequest 请求对象
      * @return AsyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>
      */
     public AsyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> listPluginAttachableApisAsyncInvoker(
         ListPluginAttachableApisRequest request) {
-        return new AsyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>(request,
-            RomaMeta.listPluginAttachableApis, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listPluginAttachableApis, hcClient);
     }
 
     /**
@@ -4575,7 +4473,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachedApisRequest 请求对象
+     * @param request ListPluginAttachedApisRequest 请求对象
      * @return CompletableFuture<ListPluginAttachedApisResponse>
      */
     public CompletableFuture<ListPluginAttachedApisResponse> listPluginAttachedApisAsync(
@@ -4594,13 +4492,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachedApisRequest 请求对象
+     * @param request ListPluginAttachedApisRequest 请求对象
      * @return AsyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>
      */
     public AsyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> listPluginAttachedApisAsyncInvoker(
         ListPluginAttachedApisRequest request) {
-        return new AsyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>(request,
-            RomaMeta.listPluginAttachedApis, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listPluginAttachedApis, hcClient);
     }
 
     /**
@@ -4617,7 +4514,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return CompletableFuture<ListPluginsResponse>
      */
     public CompletableFuture<ListPluginsResponse> listPluginsAsync(ListPluginsRequest request) {
@@ -4638,11 +4535,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return AsyncInvoker<ListPluginsRequest, ListPluginsResponse>
      */
     public AsyncInvoker<ListPluginsRequest, ListPluginsResponse> listPluginsAsyncInvoker(ListPluginsRequest request) {
-        return new AsyncInvoker<ListPluginsRequest, ListPluginsResponse>(request, RomaMeta.listPlugins, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listPlugins, hcClient);
     }
 
     /**
@@ -4652,7 +4549,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductTemplatesRequest 请求对象
+     * @param request ListProductTemplatesRequest 请求对象
      * @return CompletableFuture<ListProductTemplatesResponse>
      */
     public CompletableFuture<ListProductTemplatesResponse> listProductTemplatesAsync(
@@ -4667,13 +4564,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductTemplatesRequest 请求对象
+     * @param request ListProductTemplatesRequest 请求对象
      * @return AsyncInvoker<ListProductTemplatesRequest, ListProductTemplatesResponse>
      */
     public AsyncInvoker<ListProductTemplatesRequest, ListProductTemplatesResponse> listProductTemplatesAsyncInvoker(
         ListProductTemplatesRequest request) {
-        return new AsyncInvoker<ListProductTemplatesRequest, ListProductTemplatesResponse>(request,
-            RomaMeta.listProductTemplates, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listProductTemplates, hcClient);
     }
 
     /**
@@ -4683,7 +4579,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductTopicsRequest 请求对象
+     * @param request ListProductTopicsRequest 请求对象
      * @return CompletableFuture<ListProductTopicsResponse>
      */
     public CompletableFuture<ListProductTopicsResponse> listProductTopicsAsync(ListProductTopicsRequest request) {
@@ -4697,13 +4593,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductTopicsRequest 请求对象
+     * @param request ListProductTopicsRequest 请求对象
      * @return AsyncInvoker<ListProductTopicsRequest, ListProductTopicsResponse>
      */
     public AsyncInvoker<ListProductTopicsRequest, ListProductTopicsResponse> listProductTopicsAsyncInvoker(
         ListProductTopicsRequest request) {
-        return new AsyncInvoker<ListProductTopicsRequest, ListProductTopicsResponse>(request,
-            RomaMeta.listProductTopics, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listProductTopics, hcClient);
     }
 
     /**
@@ -4713,7 +4608,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return CompletableFuture<ListProductsResponse>
      */
     public CompletableFuture<ListProductsResponse> listProductsAsync(ListProductsRequest request) {
@@ -4727,12 +4622,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return AsyncInvoker<ListProductsRequest, ListProductsResponse>
      */
     public AsyncInvoker<ListProductsRequest, ListProductsResponse> listProductsAsyncInvoker(
         ListProductsRequest request) {
-        return new AsyncInvoker<ListProductsRequest, ListProductsResponse>(request, RomaMeta.listProducts, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listProducts, hcClient);
     }
 
     /**
@@ -4742,7 +4637,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectCofigsV2Request 请求对象
+     * @param request ListProjectCofigsV2Request 请求对象
      * @return CompletableFuture<ListProjectCofigsV2Response>
      */
     public CompletableFuture<ListProjectCofigsV2Response> listProjectCofigsV2Async(ListProjectCofigsV2Request request) {
@@ -4756,13 +4651,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectCofigsV2Request 请求对象
+     * @param request ListProjectCofigsV2Request 请求对象
      * @return AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>
      */
     public AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response> listProjectCofigsV2AsyncInvoker(
         ListProjectCofigsV2Request request) {
-        return new AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>(request,
-            RomaMeta.listProjectCofigsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listProjectCofigsV2, hcClient);
     }
 
     /**
@@ -4772,7 +4666,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPropertiesRequest 请求对象
+     * @param request ListPropertiesRequest 请求对象
      * @return CompletableFuture<ListPropertiesResponse>
      */
     public CompletableFuture<ListPropertiesResponse> listPropertiesAsync(ListPropertiesRequest request) {
@@ -4786,13 +4680,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPropertiesRequest 请求对象
+     * @param request ListPropertiesRequest 请求对象
      * @return AsyncInvoker<ListPropertiesRequest, ListPropertiesResponse>
      */
     public AsyncInvoker<ListPropertiesRequest, ListPropertiesResponse> listPropertiesAsyncInvoker(
         ListPropertiesRequest request) {
-        return new AsyncInvoker<ListPropertiesRequest, ListPropertiesResponse>(request, RomaMeta.listProperties,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listProperties, hcClient);
     }
 
     /**
@@ -4802,7 +4695,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestPropertiesRequest 请求对象
+     * @param request ListRequestPropertiesRequest 请求对象
      * @return CompletableFuture<ListRequestPropertiesResponse>
      */
     public CompletableFuture<ListRequestPropertiesResponse> listRequestPropertiesAsync(
@@ -4817,13 +4710,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestPropertiesRequest 请求对象
+     * @param request ListRequestPropertiesRequest 请求对象
      * @return AsyncInvoker<ListRequestPropertiesRequest, ListRequestPropertiesResponse>
      */
     public AsyncInvoker<ListRequestPropertiesRequest, ListRequestPropertiesResponse> listRequestPropertiesAsyncInvoker(
         ListRequestPropertiesRequest request) {
-        return new AsyncInvoker<ListRequestPropertiesRequest, ListRequestPropertiesResponse>(request,
-            RomaMeta.listRequestProperties, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listRequestProperties, hcClient);
     }
 
     /**
@@ -4833,7 +4725,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<ListRequestThrottlingPolicyV2Response> listRequestThrottlingPolicyV2Async(
@@ -4848,13 +4740,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> listRequestThrottlingPolicyV2AsyncInvoker(
         ListRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response>(request,
-            RomaMeta.listRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -4864,7 +4755,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResponsePropertiesRequest 请求对象
+     * @param request ListResponsePropertiesRequest 请求对象
      * @return CompletableFuture<ListResponsePropertiesResponse>
      */
     public CompletableFuture<ListResponsePropertiesResponse> listResponsePropertiesAsync(
@@ -4879,13 +4770,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResponsePropertiesRequest 请求对象
+     * @param request ListResponsePropertiesRequest 请求对象
      * @return AsyncInvoker<ListResponsePropertiesRequest, ListResponsePropertiesResponse>
      */
     public AsyncInvoker<ListResponsePropertiesRequest, ListResponsePropertiesResponse> listResponsePropertiesAsyncInvoker(
         ListResponsePropertiesRequest request) {
-        return new AsyncInvoker<ListResponsePropertiesRequest, ListResponsePropertiesResponse>(request,
-            RomaMeta.listResponseProperties, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listResponseProperties, hcClient);
     }
 
     /**
@@ -4895,7 +4785,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRulesRequest 请求对象
+     * @param request ListRulesRequest 请求对象
      * @return CompletableFuture<ListRulesResponse>
      */
     public CompletableFuture<ListRulesResponse> listRulesAsync(ListRulesRequest request) {
@@ -4909,11 +4799,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRulesRequest 请求对象
+     * @param request ListRulesRequest 请求对象
      * @return AsyncInvoker<ListRulesRequest, ListRulesResponse>
      */
     public AsyncInvoker<ListRulesRequest, ListRulesResponse> listRulesAsyncInvoker(ListRulesRequest request) {
-        return new AsyncInvoker<ListRulesRequest, ListRulesResponse>(request, RomaMeta.listRules, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listRules, hcClient);
     }
 
     /**
@@ -4923,7 +4813,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServicesRequest 请求对象
+     * @param request ListServicesRequest 请求对象
      * @return CompletableFuture<ListServicesResponse>
      */
     public CompletableFuture<ListServicesResponse> listServicesAsync(ListServicesRequest request) {
@@ -4937,12 +4827,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServicesRequest 请求对象
+     * @param request ListServicesRequest 请求对象
      * @return AsyncInvoker<ListServicesRequest, ListServicesResponse>
      */
     public AsyncInvoker<ListServicesRequest, ListServicesResponse> listServicesAsyncInvoker(
         ListServicesRequest request) {
-        return new AsyncInvoker<ListServicesRequest, ListServicesResponse>(request, RomaMeta.listServices, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listServices, hcClient);
     }
 
     /**
@@ -4952,7 +4842,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListShadowsRequest 请求对象
+     * @param request ListShadowsRequest 请求对象
      * @return CompletableFuture<ListShadowsResponse>
      */
     public CompletableFuture<ListShadowsResponse> listShadowsAsync(ListShadowsRequest request) {
@@ -4966,11 +4856,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListShadowsRequest 请求对象
+     * @param request ListShadowsRequest 请求对象
      * @return AsyncInvoker<ListShadowsRequest, ListShadowsResponse>
      */
     public AsyncInvoker<ListShadowsRequest, ListShadowsResponse> listShadowsAsyncInvoker(ListShadowsRequest request) {
-        return new AsyncInvoker<ListShadowsRequest, ListShadowsResponse>(request, RomaMeta.listShadows, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listShadows, hcClient);
     }
 
     /**
@@ -4980,7 +4870,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysBindedToApiV2Request 请求对象
+     * @param request ListSignatureKeysBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListSignatureKeysBindedToApiV2Response>
      */
     public CompletableFuture<ListSignatureKeysBindedToApiV2Response> listSignatureKeysBindedToApiV2Async(
@@ -4995,13 +4885,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysBindedToApiV2Request 请求对象
+     * @param request ListSignatureKeysBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response>
      */
     public AsyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> listSignatureKeysBindedToApiV2AsyncInvoker(
         ListSignatureKeysBindedToApiV2Request request) {
-        return new AsyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response>(request,
-            RomaMeta.listSignatureKeysBindedToApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listSignatureKeysBindedToApiV2, hcClient);
     }
 
     /**
@@ -5011,7 +4900,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysV2Request 请求对象
+     * @param request ListSignatureKeysV2Request 请求对象
      * @return CompletableFuture<ListSignatureKeysV2Response>
      */
     public CompletableFuture<ListSignatureKeysV2Response> listSignatureKeysV2Async(ListSignatureKeysV2Request request) {
@@ -5025,13 +4914,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysV2Request 请求对象
+     * @param request ListSignatureKeysV2Request 请求对象
      * @return AsyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response>
      */
     public AsyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response> listSignatureKeysV2AsyncInvoker(
         ListSignatureKeysV2Request request) {
-        return new AsyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response>(request,
-            RomaMeta.listSignatureKeysV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listSignatureKeysV2, hcClient);
     }
 
     /**
@@ -5041,7 +4929,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSourcesRequest 请求对象
+     * @param request ListSourcesRequest 请求对象
      * @return CompletableFuture<ListSourcesResponse>
      */
     public CompletableFuture<ListSourcesResponse> listSourcesAsync(ListSourcesRequest request) {
@@ -5055,11 +4943,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSourcesRequest 请求对象
+     * @param request ListSourcesRequest 请求对象
      * @return AsyncInvoker<ListSourcesRequest, ListSourcesResponse>
      */
     public AsyncInvoker<ListSourcesRequest, ListSourcesResponse> listSourcesAsyncInvoker(ListSourcesRequest request) {
-        return new AsyncInvoker<ListSourcesRequest, ListSourcesResponse>(request, RomaMeta.listSources, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listSources, hcClient);
     }
 
     /**
@@ -5069,7 +4957,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
+     * @param request ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return CompletableFuture<ListSpecialThrottlingConfigurationsV2Response>
      */
     public CompletableFuture<ListSpecialThrottlingConfigurationsV2Response> listSpecialThrottlingConfigurationsV2Async(
@@ -5084,13 +4972,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
+     * @param request ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return AsyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response>
      */
     public AsyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> listSpecialThrottlingConfigurationsV2AsyncInvoker(
         ListSpecialThrottlingConfigurationsV2Request request) {
-        return new AsyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response>(
-            request, RomaMeta.listSpecialThrottlingConfigurationsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listSpecialThrottlingConfigurationsV2, hcClient);
     }
 
     /**
@@ -5100,7 +4987,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatisticsApiRequest 请求对象
+     * @param request ListStatisticsApiRequest 请求对象
      * @return CompletableFuture<ListStatisticsApiResponse>
      */
     public CompletableFuture<ListStatisticsApiResponse> listStatisticsApiAsync(ListStatisticsApiRequest request) {
@@ -5114,13 +5001,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatisticsApiRequest 请求对象
+     * @param request ListStatisticsApiRequest 请求对象
      * @return AsyncInvoker<ListStatisticsApiRequest, ListStatisticsApiResponse>
      */
     public AsyncInvoker<ListStatisticsApiRequest, ListStatisticsApiResponse> listStatisticsApiAsyncInvoker(
         ListStatisticsApiRequest request) {
-        return new AsyncInvoker<ListStatisticsApiRequest, ListStatisticsApiResponse>(request,
-            RomaMeta.listStatisticsApi, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listStatisticsApi, hcClient);
     }
 
     /**
@@ -5130,7 +5016,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubsetsRequest 请求对象
+     * @param request ListSubsetsRequest 请求对象
      * @return CompletableFuture<ListSubsetsResponse>
      */
     public CompletableFuture<ListSubsetsResponse> listSubsetsAsync(ListSubsetsRequest request) {
@@ -5144,11 +5030,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubsetsRequest 请求对象
+     * @param request ListSubsetsRequest 请求对象
      * @return AsyncInvoker<ListSubsetsRequest, ListSubsetsResponse>
      */
     public AsyncInvoker<ListSubsetsRequest, ListSubsetsResponse> listSubsetsAsyncInvoker(ListSubsetsRequest request) {
-        return new AsyncInvoker<ListSubsetsRequest, ListSubsetsResponse>(request, RomaMeta.listSubsets, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listSubsets, hcClient);
     }
 
     /**
@@ -5158,7 +5044,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsV2Request 请求对象
+     * @param request ListTagsV2Request 请求对象
      * @return CompletableFuture<ListTagsV2Response>
      */
     public CompletableFuture<ListTagsV2Response> listTagsV2Async(ListTagsV2Request request) {
@@ -5172,11 +5058,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsV2Request 请求对象
+     * @param request ListTagsV2Request 请求对象
      * @return AsyncInvoker<ListTagsV2Request, ListTagsV2Response>
      */
     public AsyncInvoker<ListTagsV2Request, ListTagsV2Response> listTagsV2AsyncInvoker(ListTagsV2Request request) {
-        return new AsyncInvoker<ListTagsV2Request, ListTagsV2Response>(request, RomaMeta.listTagsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listTagsV2, hcClient);
     }
 
     /**
@@ -5186,7 +5072,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksRequest 请求对象
+     * @param request ListTasksRequest 请求对象
      * @return CompletableFuture<ListTasksResponse>
      */
     public CompletableFuture<ListTasksResponse> listTasksAsync(ListTasksRequest request) {
@@ -5200,11 +5086,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTasksRequest 请求对象
+     * @param request ListTasksRequest 请求对象
      * @return AsyncInvoker<ListTasksRequest, ListTasksResponse>
      */
     public AsyncInvoker<ListTasksRequest, ListTasksResponse> listTasksAsyncInvoker(ListTasksRequest request) {
-        return new AsyncInvoker<ListTasksRequest, ListTasksResponse>(request, RomaMeta.listTasks, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listTasks, hcClient);
     }
 
     /**
@@ -5214,7 +5100,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicsRequest 请求对象
+     * @param request ListTopicsRequest 请求对象
      * @return CompletableFuture<ListTopicsResponse>
      */
     public CompletableFuture<ListTopicsResponse> listTopicsAsync(ListTopicsRequest request) {
@@ -5228,11 +5114,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicsRequest 请求对象
+     * @param request ListTopicsRequest 请求对象
      * @return AsyncInvoker<ListTopicsRequest, ListTopicsResponse>
      */
     public AsyncInvoker<ListTopicsRequest, ListTopicsResponse> listTopicsAsyncInvoker(ListTopicsRequest request) {
-        return new AsyncInvoker<ListTopicsRequest, ListTopicsResponse>(request, RomaMeta.listTopics, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listTopics, hcClient);
     }
 
     /**
@@ -5242,7 +5128,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishLiveDataApiV2Request 请求对象
+     * @param request PublishLiveDataApiV2Request 请求对象
      * @return CompletableFuture<PublishLiveDataApiV2Response>
      */
     public CompletableFuture<PublishLiveDataApiV2Response> publishLiveDataApiV2Async(
@@ -5257,13 +5143,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishLiveDataApiV2Request 请求对象
+     * @param request PublishLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<PublishLiveDataApiV2Request, PublishLiveDataApiV2Response>
      */
     public AsyncInvoker<PublishLiveDataApiV2Request, PublishLiveDataApiV2Response> publishLiveDataApiV2AsyncInvoker(
         PublishLiveDataApiV2Request request) {
-        return new AsyncInvoker<PublishLiveDataApiV2Request, PublishLiveDataApiV2Response>(request,
-            RomaMeta.publishLiveDataApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.publishLiveDataApiV2, hcClient);
     }
 
     /**
@@ -5273,7 +5158,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetAuthenticationRequest 请求对象
+     * @param request ResetAuthenticationRequest 请求对象
      * @return CompletableFuture<ResetAuthenticationResponse>
      */
     public CompletableFuture<ResetAuthenticationResponse> resetAuthenticationAsync(ResetAuthenticationRequest request) {
@@ -5287,13 +5172,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetAuthenticationRequest 请求对象
+     * @param request ResetAuthenticationRequest 请求对象
      * @return AsyncInvoker<ResetAuthenticationRequest, ResetAuthenticationResponse>
      */
     public AsyncInvoker<ResetAuthenticationRequest, ResetAuthenticationResponse> resetAuthenticationAsyncInvoker(
         ResetAuthenticationRequest request) {
-        return new AsyncInvoker<ResetAuthenticationRequest, ResetAuthenticationResponse>(request,
-            RomaMeta.resetAuthentication, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.resetAuthentication, hcClient);
     }
 
     /**
@@ -5303,7 +5187,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMessagesRequest 请求对象
+     * @param request ResetMessagesRequest 请求对象
      * @return CompletableFuture<ResetMessagesResponse>
      */
     public CompletableFuture<ResetMessagesResponse> resetMessagesAsync(ResetMessagesRequest request) {
@@ -5317,12 +5201,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMessagesRequest 请求对象
+     * @param request ResetMessagesRequest 请求对象
      * @return AsyncInvoker<ResetMessagesRequest, ResetMessagesResponse>
      */
     public AsyncInvoker<ResetMessagesRequest, ResetMessagesResponse> resetMessagesAsyncInvoker(
         ResetMessagesRequest request) {
-        return new AsyncInvoker<ResetMessagesRequest, ResetMessagesResponse>(request, RomaMeta.resetMessages, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.resetMessages, hcClient);
     }
 
     /**
@@ -5332,7 +5216,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMultiTaskOffsetRequest 请求对象
+     * @param request ResetMultiTaskOffsetRequest 请求对象
      * @return CompletableFuture<ResetMultiTaskOffsetResponse>
      */
     public CompletableFuture<ResetMultiTaskOffsetResponse> resetMultiTaskOffsetAsync(
@@ -5347,13 +5231,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMultiTaskOffsetRequest 请求对象
+     * @param request ResetMultiTaskOffsetRequest 请求对象
      * @return AsyncInvoker<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse>
      */
     public AsyncInvoker<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse> resetMultiTaskOffsetAsyncInvoker(
         ResetMultiTaskOffsetRequest request) {
-        return new AsyncInvoker<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse>(request,
-            RomaMeta.resetMultiTaskOffset, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.resetMultiTaskOffset, hcClient);
     }
 
     /**
@@ -5363,7 +5246,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetProductAuthenticationRequest 请求对象
+     * @param request ResetProductAuthenticationRequest 请求对象
      * @return CompletableFuture<ResetProductAuthenticationResponse>
      */
     public CompletableFuture<ResetProductAuthenticationResponse> resetProductAuthenticationAsync(
@@ -5378,13 +5261,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetProductAuthenticationRequest 请求对象
+     * @param request ResetProductAuthenticationRequest 请求对象
      * @return AsyncInvoker<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse>
      */
     public AsyncInvoker<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse> resetProductAuthenticationAsyncInvoker(
         ResetProductAuthenticationRequest request) {
-        return new AsyncInvoker<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse>(request,
-            RomaMeta.resetProductAuthentication, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.resetProductAuthentication, hcClient);
     }
 
     /**
@@ -5394,7 +5276,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTaskRequest 请求对象
+     * @param request RunTaskRequest 请求对象
      * @return CompletableFuture<RunTaskResponse>
      */
     public CompletableFuture<RunTaskResponse> runTaskAsync(RunTaskRequest request) {
@@ -5408,11 +5290,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTaskRequest 请求对象
+     * @param request RunTaskRequest 请求对象
      * @return AsyncInvoker<RunTaskRequest, RunTaskResponse>
      */
     public AsyncInvoker<RunTaskRequest, RunTaskResponse> runTaskAsyncInvoker(RunTaskRequest request) {
-        return new AsyncInvoker<RunTaskRequest, RunTaskResponse>(request, RomaMeta.runTask, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.runTask, hcClient);
     }
 
     /**
@@ -5422,7 +5304,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendCommandRequest 请求对象
+     * @param request SendCommandRequest 请求对象
      * @return CompletableFuture<SendCommandResponse>
      */
     public CompletableFuture<SendCommandResponse> sendCommandAsync(SendCommandRequest request) {
@@ -5436,11 +5318,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendCommandRequest 请求对象
+     * @param request SendCommandRequest 请求对象
      * @return AsyncInvoker<SendCommandRequest, SendCommandResponse>
      */
     public AsyncInvoker<SendCommandRequest, SendCommandResponse> sendCommandAsyncInvoker(SendCommandRequest request) {
-        return new AsyncInvoker<SendCommandRequest, SendCommandResponse>(request, RomaMeta.sendCommand, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.sendCommand, hcClient);
     }
 
     /**
@@ -5450,7 +5332,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppBoundAppQuotaRequest 请求对象
+     * @param request ShowAppBoundAppQuotaRequest 请求对象
      * @return CompletableFuture<ShowAppBoundAppQuotaResponse>
      */
     public CompletableFuture<ShowAppBoundAppQuotaResponse> showAppBoundAppQuotaAsync(
@@ -5465,13 +5347,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppBoundAppQuotaRequest 请求对象
+     * @param request ShowAppBoundAppQuotaRequest 请求对象
      * @return AsyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse>
      */
     public AsyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> showAppBoundAppQuotaAsyncInvoker(
         ShowAppBoundAppQuotaRequest request) {
-        return new AsyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse>(request,
-            RomaMeta.showAppBoundAppQuota, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showAppBoundAppQuota, hcClient);
     }
 
     /**
@@ -5481,7 +5362,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppQuotaRequest 请求对象
+     * @param request ShowAppQuotaRequest 请求对象
      * @return CompletableFuture<ShowAppQuotaResponse>
      */
     public CompletableFuture<ShowAppQuotaResponse> showAppQuotaAsync(ShowAppQuotaRequest request) {
@@ -5495,12 +5376,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppQuotaRequest 请求对象
+     * @param request ShowAppQuotaRequest 请求对象
      * @return AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse>
      */
     public AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse> showAppQuotaAsyncInvoker(
         ShowAppQuotaRequest request) {
-        return new AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse>(request, RomaMeta.showAppQuota, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showAppQuota, hcClient);
     }
 
     /**
@@ -5510,7 +5391,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuthenticationRequest 请求对象
+     * @param request ShowAuthenticationRequest 请求对象
      * @return CompletableFuture<ShowAuthenticationResponse>
      */
     public CompletableFuture<ShowAuthenticationResponse> showAuthenticationAsync(ShowAuthenticationRequest request) {
@@ -5524,13 +5405,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuthenticationRequest 请求对象
+     * @param request ShowAuthenticationRequest 请求对象
      * @return AsyncInvoker<ShowAuthenticationRequest, ShowAuthenticationResponse>
      */
     public AsyncInvoker<ShowAuthenticationRequest, ShowAuthenticationResponse> showAuthenticationAsyncInvoker(
         ShowAuthenticationRequest request) {
-        return new AsyncInvoker<ShowAuthenticationRequest, ShowAuthenticationResponse>(request,
-            RomaMeta.showAuthentication, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showAuthentication, hcClient);
     }
 
     /**
@@ -5540,7 +5420,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCommandRequest 请求对象
+     * @param request ShowCommandRequest 请求对象
      * @return CompletableFuture<ShowCommandResponse>
      */
     public CompletableFuture<ShowCommandResponse> showCommandAsync(ShowCommandRequest request) {
@@ -5554,11 +5434,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCommandRequest 请求对象
+     * @param request ShowCommandRequest 请求对象
      * @return AsyncInvoker<ShowCommandRequest, ShowCommandResponse>
      */
     public AsyncInvoker<ShowCommandRequest, ShowCommandResponse> showCommandAsyncInvoker(ShowCommandRequest request) {
-        return new AsyncInvoker<ShowCommandRequest, ShowCommandResponse>(request, RomaMeta.showCommand, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showCommand, hcClient);
     }
 
     /**
@@ -5568,7 +5448,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataourceDetailRequest 请求对象
+     * @param request ShowDataourceDetailRequest 请求对象
      * @return CompletableFuture<ShowDataourceDetailResponse>
      */
     public CompletableFuture<ShowDataourceDetailResponse> showDataourceDetailAsync(ShowDataourceDetailRequest request) {
@@ -5582,13 +5462,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataourceDetailRequest 请求对象
+     * @param request ShowDataourceDetailRequest 请求对象
      * @return AsyncInvoker<ShowDataourceDetailRequest, ShowDataourceDetailResponse>
      */
     public AsyncInvoker<ShowDataourceDetailRequest, ShowDataourceDetailResponse> showDataourceDetailAsyncInvoker(
         ShowDataourceDetailRequest request) {
-        return new AsyncInvoker<ShowDataourceDetailRequest, ShowDataourceDetailResponse>(request,
-            RomaMeta.showDataourceDetail, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDataourceDetail, hcClient);
     }
 
     /**
@@ -5598,7 +5477,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppAclRequest 请求对象
+     * @param request ShowDetailsOfAppAclRequest 请求对象
      * @return CompletableFuture<ShowDetailsOfAppAclResponse>
      */
     public CompletableFuture<ShowDetailsOfAppAclResponse> showDetailsOfAppAclAsync(ShowDetailsOfAppAclRequest request) {
@@ -5612,13 +5491,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppAclRequest 请求对象
+     * @param request ShowDetailsOfAppAclRequest 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse>
      */
     public AsyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> showDetailsOfAppAclAsyncInvoker(
         ShowDetailsOfAppAclRequest request) {
-        return new AsyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse>(request,
-            RomaMeta.showDetailsOfAppAcl, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfAppAcl, hcClient);
     }
 
     /**
@@ -5628,7 +5506,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppCodeV2Request 请求对象
+     * @param request ShowDetailsOfAppCodeV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAppCodeV2Response>
      */
     public CompletableFuture<ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2Async(
@@ -5643,13 +5521,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppCodeV2Request 请求对象
+     * @param request ShowDetailsOfAppCodeV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>
      */
     public AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2AsyncInvoker(
         ShowDetailsOfAppCodeV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>(request,
-            RomaMeta.showDetailsOfAppCodeV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfAppCodeV2, hcClient);
     }
 
     /**
@@ -5659,7 +5536,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppConfigV2Request 请求对象
+     * @param request ShowDetailsOfAppConfigV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAppConfigV2Response>
      */
     public CompletableFuture<ShowDetailsOfAppConfigV2Response> showDetailsOfAppConfigV2Async(
@@ -5674,13 +5551,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppConfigV2Request 请求对象
+     * @param request ShowDetailsOfAppConfigV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppConfigV2Request, ShowDetailsOfAppConfigV2Response>
      */
     public AsyncInvoker<ShowDetailsOfAppConfigV2Request, ShowDetailsOfAppConfigV2Response> showDetailsOfAppConfigV2AsyncInvoker(
         ShowDetailsOfAppConfigV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfAppConfigV2Request, ShowDetailsOfAppConfigV2Response>(request,
-            RomaMeta.showDetailsOfAppConfigV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfAppConfigV2, hcClient);
     }
 
     /**
@@ -5690,7 +5566,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppV2Request 请求对象
+     * @param request ShowDetailsOfAppV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAppV2Response>
      */
     public CompletableFuture<ShowDetailsOfAppV2Response> showDetailsOfAppV2Async(ShowDetailsOfAppV2Request request) {
@@ -5704,13 +5580,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppV2Request 请求对象
+     * @param request ShowDetailsOfAppV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>
      */
     public AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> showDetailsOfAppV2AsyncInvoker(
         ShowDetailsOfAppV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>(request,
-            RomaMeta.showDetailsOfAppV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfAppV2, hcClient);
     }
 
     /**
@@ -5720,7 +5595,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
+     * @param request ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfCustomAuthorizersV2Response>
      */
     public CompletableFuture<ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2Async(
@@ -5735,13 +5610,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
+     * @param request ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response>
      */
     public AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2AsyncInvoker(
         ShowDetailsOfCustomAuthorizersV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response>(
-            request, RomaMeta.showDetailsOfCustomAuthorizersV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfCustomAuthorizersV2, hcClient);
     }
 
     /**
@@ -5751,7 +5625,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
+     * @param request ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfDomainNameCertificateV2Response>
      */
     public CompletableFuture<ShowDetailsOfDomainNameCertificateV2Response> showDetailsOfDomainNameCertificateV2Async(
@@ -5766,13 +5640,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
+     * @param request ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response>
      */
     public AsyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> showDetailsOfDomainNameCertificateV2AsyncInvoker(
         ShowDetailsOfDomainNameCertificateV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response>(
-            request, RomaMeta.showDetailsOfDomainNameCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfDomainNameCertificateV2, hcClient);
     }
 
     /**
@@ -5782,7 +5655,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
+     * @param request ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfEnvironmentVariableV2Response>
      */
     public CompletableFuture<ShowDetailsOfEnvironmentVariableV2Response> showDetailsOfEnvironmentVariableV2Async(
@@ -5797,13 +5670,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
+     * @param request ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response>
      */
     public AsyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> showDetailsOfEnvironmentVariableV2AsyncInvoker(
         ShowDetailsOfEnvironmentVariableV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response>(
-            request, RomaMeta.showDetailsOfEnvironmentVariableV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -5813,7 +5685,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfInstanceV2Request 请求对象
+     * @param request ShowDetailsOfInstanceV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfInstanceV2Response>
      */
     public CompletableFuture<ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2Async(
@@ -5828,13 +5700,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfInstanceV2Request 请求对象
+     * @param request ShowDetailsOfInstanceV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>
      */
     public AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2AsyncInvoker(
         ShowDetailsOfInstanceV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>(request,
-            RomaMeta.showDetailsOfInstanceV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfInstanceV2, hcClient);
     }
 
     /**
@@ -5844,7 +5715,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
+     * @param request ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2Async(
@@ -5859,13 +5730,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
+     * @param request ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2AsyncInvoker(
         ShowDetailsOfRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response>(
-            request, RomaMeta.showDetailsOfRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -5875,7 +5745,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceRequest 请求对象
+     * @param request ShowDeviceRequest 请求对象
      * @return CompletableFuture<ShowDeviceResponse>
      */
     public CompletableFuture<ShowDeviceResponse> showDeviceAsync(ShowDeviceRequest request) {
@@ -5889,11 +5759,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceRequest 请求对象
+     * @param request ShowDeviceRequest 请求对象
      * @return AsyncInvoker<ShowDeviceRequest, ShowDeviceResponse>
      */
     public AsyncInvoker<ShowDeviceRequest, ShowDeviceResponse> showDeviceAsyncInvoker(ShowDeviceRequest request) {
-        return new AsyncInvoker<ShowDeviceRequest, ShowDeviceResponse>(request, RomaMeta.showDevice, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDevice, hcClient);
     }
 
     /**
@@ -5903,7 +5773,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceGroupRequest 请求对象
+     * @param request ShowDeviceGroupRequest 请求对象
      * @return CompletableFuture<ShowDeviceGroupResponse>
      */
     public CompletableFuture<ShowDeviceGroupResponse> showDeviceGroupAsync(ShowDeviceGroupRequest request) {
@@ -5917,13 +5787,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceGroupRequest 请求对象
+     * @param request ShowDeviceGroupRequest 请求对象
      * @return AsyncInvoker<ShowDeviceGroupRequest, ShowDeviceGroupResponse>
      */
     public AsyncInvoker<ShowDeviceGroupRequest, ShowDeviceGroupResponse> showDeviceGroupAsyncInvoker(
         ShowDeviceGroupRequest request) {
-        return new AsyncInvoker<ShowDeviceGroupRequest, ShowDeviceGroupResponse>(request, RomaMeta.showDeviceGroup,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDeviceGroup, hcClient);
     }
 
     /**
@@ -5933,7 +5802,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceGroupTreeRequest 请求对象
+     * @param request ShowDeviceGroupTreeRequest 请求对象
      * @return CompletableFuture<ShowDeviceGroupTreeResponse>
      */
     public CompletableFuture<ShowDeviceGroupTreeResponse> showDeviceGroupTreeAsync(ShowDeviceGroupTreeRequest request) {
@@ -5947,13 +5816,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceGroupTreeRequest 请求对象
+     * @param request ShowDeviceGroupTreeRequest 请求对象
      * @return AsyncInvoker<ShowDeviceGroupTreeRequest, ShowDeviceGroupTreeResponse>
      */
     public AsyncInvoker<ShowDeviceGroupTreeRequest, ShowDeviceGroupTreeResponse> showDeviceGroupTreeAsyncInvoker(
         ShowDeviceGroupTreeRequest request) {
-        return new AsyncInvoker<ShowDeviceGroupTreeRequest, ShowDeviceGroupTreeResponse>(request,
-            RomaMeta.showDeviceGroupTree, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDeviceGroupTree, hcClient);
     }
 
     /**
@@ -5963,7 +5831,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDevicesInGroupRequest 请求对象
+     * @param request ShowDevicesInGroupRequest 请求对象
      * @return CompletableFuture<ShowDevicesInGroupResponse>
      */
     public CompletableFuture<ShowDevicesInGroupResponse> showDevicesInGroupAsync(ShowDevicesInGroupRequest request) {
@@ -5977,13 +5845,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDevicesInGroupRequest 请求对象
+     * @param request ShowDevicesInGroupRequest 请求对象
      * @return AsyncInvoker<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse>
      */
     public AsyncInvoker<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> showDevicesInGroupAsyncInvoker(
         ShowDevicesInGroupRequest request) {
-        return new AsyncInvoker<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse>(request,
-            RomaMeta.showDevicesInGroup, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDevicesInGroup, hcClient);
     }
 
     /**
@@ -5993,7 +5860,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDispatchesRequest 请求对象
+     * @param request ShowDispatchesRequest 请求对象
      * @return CompletableFuture<ShowDispatchesResponse>
      */
     public CompletableFuture<ShowDispatchesResponse> showDispatchesAsync(ShowDispatchesRequest request) {
@@ -6007,13 +5874,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDispatchesRequest 请求对象
+     * @param request ShowDispatchesRequest 请求对象
      * @return AsyncInvoker<ShowDispatchesRequest, ShowDispatchesResponse>
      */
     public AsyncInvoker<ShowDispatchesRequest, ShowDispatchesResponse> showDispatchesAsyncInvoker(
         ShowDispatchesRequest request) {
-        return new AsyncInvoker<ShowDispatchesRequest, ShowDispatchesResponse>(request, RomaMeta.showDispatches,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDispatches, hcClient);
     }
 
     /**
@@ -6023,7 +5889,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLiveDataApiV2Request 请求对象
+     * @param request ShowLiveDataApiV2Request 请求对象
      * @return CompletableFuture<ShowLiveDataApiV2Response>
      */
     public CompletableFuture<ShowLiveDataApiV2Response> showLiveDataApiV2Async(ShowLiveDataApiV2Request request) {
@@ -6037,13 +5903,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLiveDataApiV2Request 请求对象
+     * @param request ShowLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response>
      */
     public AsyncInvoker<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response> showLiveDataApiV2AsyncInvoker(
         ShowLiveDataApiV2Request request) {
-        return new AsyncInvoker<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response>(request,
-            RomaMeta.showLiveDataApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showLiveDataApiV2, hcClient);
     }
 
     /**
@@ -6054,7 +5919,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMqsInstanceMessagesRequest 请求对象
+     * @param request ShowMqsInstanceMessagesRequest 请求对象
      * @return CompletableFuture<ShowMqsInstanceMessagesResponse>
      */
     public CompletableFuture<ShowMqsInstanceMessagesResponse> showMqsInstanceMessagesAsync(
@@ -6070,13 +5935,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMqsInstanceMessagesRequest 请求对象
+     * @param request ShowMqsInstanceMessagesRequest 请求对象
      * @return AsyncInvoker<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse>
      */
     public AsyncInvoker<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse> showMqsInstanceMessagesAsyncInvoker(
         ShowMqsInstanceMessagesRequest request) {
-        return new AsyncInvoker<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse>(request,
-            RomaMeta.showMqsInstanceMessages, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showMqsInstanceMessages, hcClient);
     }
 
     /**
@@ -6086,7 +5950,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMqsInstanceTopicAccessPolicyRequest 请求对象
+     * @param request ShowMqsInstanceTopicAccessPolicyRequest 请求对象
      * @return CompletableFuture<ShowMqsInstanceTopicAccessPolicyResponse>
      */
     public CompletableFuture<ShowMqsInstanceTopicAccessPolicyResponse> showMqsInstanceTopicAccessPolicyAsync(
@@ -6101,13 +5965,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMqsInstanceTopicAccessPolicyRequest 请求对象
+     * @param request ShowMqsInstanceTopicAccessPolicyRequest 请求对象
      * @return AsyncInvoker<ShowMqsInstanceTopicAccessPolicyRequest, ShowMqsInstanceTopicAccessPolicyResponse>
      */
     public AsyncInvoker<ShowMqsInstanceTopicAccessPolicyRequest, ShowMqsInstanceTopicAccessPolicyResponse> showMqsInstanceTopicAccessPolicyAsyncInvoker(
         ShowMqsInstanceTopicAccessPolicyRequest request) {
-        return new AsyncInvoker<ShowMqsInstanceTopicAccessPolicyRequest, ShowMqsInstanceTopicAccessPolicyResponse>(
-            request, RomaMeta.showMqsInstanceTopicAccessPolicy, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showMqsInstanceTopicAccessPolicy, hcClient);
     }
 
     /**
@@ -6117,7 +5980,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginRequest 请求对象
+     * @param request ShowPluginRequest 请求对象
      * @return CompletableFuture<ShowPluginResponse>
      */
     public CompletableFuture<ShowPluginResponse> showPluginAsync(ShowPluginRequest request) {
@@ -6131,11 +5994,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginRequest 请求对象
+     * @param request ShowPluginRequest 请求对象
      * @return AsyncInvoker<ShowPluginRequest, ShowPluginResponse>
      */
     public AsyncInvoker<ShowPluginRequest, ShowPluginResponse> showPluginAsyncInvoker(ShowPluginRequest request) {
-        return new AsyncInvoker<ShowPluginRequest, ShowPluginResponse>(request, RomaMeta.showPlugin, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showPlugin, hcClient);
     }
 
     /**
@@ -6145,7 +6008,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProductRequest 请求对象
+     * @param request ShowProductRequest 请求对象
      * @return CompletableFuture<ShowProductResponse>
      */
     public CompletableFuture<ShowProductResponse> showProductAsync(ShowProductRequest request) {
@@ -6159,11 +6022,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProductRequest 请求对象
+     * @param request ShowProductRequest 请求对象
      * @return AsyncInvoker<ShowProductRequest, ShowProductResponse>
      */
     public AsyncInvoker<ShowProductRequest, ShowProductResponse> showProductAsyncInvoker(ShowProductRequest request) {
-        return new AsyncInvoker<ShowProductRequest, ShowProductResponse>(request, RomaMeta.showProduct, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showProduct, hcClient);
     }
 
     /**
@@ -6173,7 +6036,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProductAuthenticationRequest 请求对象
+     * @param request ShowProductAuthenticationRequest 请求对象
      * @return CompletableFuture<ShowProductAuthenticationResponse>
      */
     public CompletableFuture<ShowProductAuthenticationResponse> showProductAuthenticationAsync(
@@ -6188,13 +6051,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProductAuthenticationRequest 请求对象
+     * @param request ShowProductAuthenticationRequest 请求对象
      * @return AsyncInvoker<ShowProductAuthenticationRequest, ShowProductAuthenticationResponse>
      */
     public AsyncInvoker<ShowProductAuthenticationRequest, ShowProductAuthenticationResponse> showProductAuthenticationAsyncInvoker(
         ShowProductAuthenticationRequest request) {
-        return new AsyncInvoker<ShowProductAuthenticationRequest, ShowProductAuthenticationResponse>(request,
-            RomaMeta.showProductAuthentication, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showProductAuthentication, hcClient);
     }
 
     /**
@@ -6204,7 +6066,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProductTemplateRequest 请求对象
+     * @param request ShowProductTemplateRequest 请求对象
      * @return CompletableFuture<ShowProductTemplateResponse>
      */
     public CompletableFuture<ShowProductTemplateResponse> showProductTemplateAsync(ShowProductTemplateRequest request) {
@@ -6218,13 +6080,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProductTemplateRequest 请求对象
+     * @param request ShowProductTemplateRequest 请求对象
      * @return AsyncInvoker<ShowProductTemplateRequest, ShowProductTemplateResponse>
      */
     public AsyncInvoker<ShowProductTemplateRequest, ShowProductTemplateResponse> showProductTemplateAsyncInvoker(
         ShowProductTemplateRequest request) {
-        return new AsyncInvoker<ShowProductTemplateRequest, ShowProductTemplateResponse>(request,
-            RomaMeta.showProductTemplate, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showProductTemplate, hcClient);
     }
 
     /**
@@ -6234,7 +6095,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPropertyRequest 请求对象
+     * @param request ShowPropertyRequest 请求对象
      * @return CompletableFuture<ShowPropertyResponse>
      */
     public CompletableFuture<ShowPropertyResponse> showPropertyAsync(ShowPropertyRequest request) {
@@ -6248,12 +6109,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPropertyRequest 请求对象
+     * @param request ShowPropertyRequest 请求对象
      * @return AsyncInvoker<ShowPropertyRequest, ShowPropertyResponse>
      */
     public AsyncInvoker<ShowPropertyRequest, ShowPropertyResponse> showPropertyAsyncInvoker(
         ShowPropertyRequest request) {
-        return new AsyncInvoker<ShowPropertyRequest, ShowPropertyResponse>(request, RomaMeta.showProperty, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showProperty, hcClient);
     }
 
     /**
@@ -6263,7 +6124,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRequestPropertyRequest 请求对象
+     * @param request ShowRequestPropertyRequest 请求对象
      * @return CompletableFuture<ShowRequestPropertyResponse>
      */
     public CompletableFuture<ShowRequestPropertyResponse> showRequestPropertyAsync(ShowRequestPropertyRequest request) {
@@ -6277,13 +6138,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRequestPropertyRequest 请求对象
+     * @param request ShowRequestPropertyRequest 请求对象
      * @return AsyncInvoker<ShowRequestPropertyRequest, ShowRequestPropertyResponse>
      */
     public AsyncInvoker<ShowRequestPropertyRequest, ShowRequestPropertyResponse> showRequestPropertyAsyncInvoker(
         ShowRequestPropertyRequest request) {
-        return new AsyncInvoker<ShowRequestPropertyRequest, ShowRequestPropertyResponse>(request,
-            RomaMeta.showRequestProperty, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showRequestProperty, hcClient);
     }
 
     /**
@@ -6293,7 +6153,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResponsePropertyRequest 请求对象
+     * @param request ShowResponsePropertyRequest 请求对象
      * @return CompletableFuture<ShowResponsePropertyResponse>
      */
     public CompletableFuture<ShowResponsePropertyResponse> showResponsePropertyAsync(
@@ -6308,13 +6168,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResponsePropertyRequest 请求对象
+     * @param request ShowResponsePropertyRequest 请求对象
      * @return AsyncInvoker<ShowResponsePropertyRequest, ShowResponsePropertyResponse>
      */
     public AsyncInvoker<ShowResponsePropertyRequest, ShowResponsePropertyResponse> showResponsePropertyAsyncInvoker(
         ShowResponsePropertyRequest request) {
-        return new AsyncInvoker<ShowResponsePropertyRequest, ShowResponsePropertyResponse>(request,
-            RomaMeta.showResponseProperty, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showResponseProperty, hcClient);
     }
 
     /**
@@ -6324,7 +6183,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @param request ShowRestrictionOfInstanceV2Request 请求对象
      * @return CompletableFuture<ShowRestrictionOfInstanceV2Response>
      */
     public CompletableFuture<ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2Async(
@@ -6339,13 +6198,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @param request ShowRestrictionOfInstanceV2Request 请求对象
      * @return AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>
      */
     public AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2AsyncInvoker(
         ShowRestrictionOfInstanceV2Request request) {
-        return new AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>(request,
-            RomaMeta.showRestrictionOfInstanceV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showRestrictionOfInstanceV2, hcClient);
     }
 
     /**
@@ -6355,7 +6213,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRuleRequest 请求对象
+     * @param request ShowRuleRequest 请求对象
      * @return CompletableFuture<ShowRuleResponse>
      */
     public CompletableFuture<ShowRuleResponse> showRuleAsync(ShowRuleRequest request) {
@@ -6369,11 +6227,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRuleRequest 请求对象
+     * @param request ShowRuleRequest 请求对象
      * @return AsyncInvoker<ShowRuleRequest, ShowRuleResponse>
      */
     public AsyncInvoker<ShowRuleRequest, ShowRuleResponse> showRuleAsyncInvoker(ShowRuleRequest request) {
-        return new AsyncInvoker<ShowRuleRequest, ShowRuleResponse>(request, RomaMeta.showRule, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showRule, hcClient);
     }
 
     /**
@@ -6383,7 +6241,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowServiceRequest 请求对象
+     * @param request ShowServiceRequest 请求对象
      * @return CompletableFuture<ShowServiceResponse>
      */
     public CompletableFuture<ShowServiceResponse> showServiceAsync(ShowServiceRequest request) {
@@ -6397,11 +6255,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowServiceRequest 请求对象
+     * @param request ShowServiceRequest 请求对象
      * @return AsyncInvoker<ShowServiceRequest, ShowServiceResponse>
      */
     public AsyncInvoker<ShowServiceRequest, ShowServiceResponse> showServiceAsyncInvoker(ShowServiceRequest request) {
-        return new AsyncInvoker<ShowServiceRequest, ShowServiceResponse>(request, RomaMeta.showService, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showService, hcClient);
     }
 
     /**
@@ -6411,7 +6269,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return CompletableFuture<ShowTaskResponse>
      */
     public CompletableFuture<ShowTaskResponse> showTaskAsync(ShowTaskRequest request) {
@@ -6425,11 +6283,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
      */
     public AsyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskAsyncInvoker(ShowTaskRequest request) {
-        return new AsyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, RomaMeta.showTask, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showTask, hcClient);
     }
 
     /**
@@ -6439,7 +6297,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTestDatasourceRequest 请求对象
+     * @param request StartTestDatasourceRequest 请求对象
      * @return CompletableFuture<StartTestDatasourceResponse>
      */
     public CompletableFuture<StartTestDatasourceResponse> startTestDatasourceAsync(StartTestDatasourceRequest request) {
@@ -6453,13 +6311,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartTestDatasourceRequest 请求对象
+     * @param request StartTestDatasourceRequest 请求对象
      * @return AsyncInvoker<StartTestDatasourceRequest, StartTestDatasourceResponse>
      */
     public AsyncInvoker<StartTestDatasourceRequest, StartTestDatasourceResponse> startTestDatasourceAsyncInvoker(
         StartTestDatasourceRequest request) {
-        return new AsyncInvoker<StartTestDatasourceRequest, StartTestDatasourceResponse>(request,
-            RomaMeta.startTestDatasource, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.startTestDatasource, hcClient);
     }
 
     /**
@@ -6469,7 +6326,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskRequest 请求对象
+     * @param request StopTaskRequest 请求对象
      * @return CompletableFuture<StopTaskResponse>
      */
     public CompletableFuture<StopTaskResponse> stopTaskAsync(StopTaskRequest request) {
@@ -6483,11 +6340,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopTaskRequest 请求对象
+     * @param request StopTaskRequest 请求对象
      * @return AsyncInvoker<StopTaskRequest, StopTaskResponse>
      */
     public AsyncInvoker<StopTaskRequest, StopTaskResponse> stopTaskAsyncInvoker(StopTaskRequest request) {
-        return new AsyncInvoker<StopTaskRequest, StopTaskResponse>(request, RomaMeta.stopTask, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.stopTask, hcClient);
     }
 
     /**
@@ -6497,7 +6354,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnpublishLiveDataApiV2Request 请求对象
+     * @param request UnpublishLiveDataApiV2Request 请求对象
      * @return CompletableFuture<UnpublishLiveDataApiV2Response>
      */
     public CompletableFuture<UnpublishLiveDataApiV2Response> unpublishLiveDataApiV2Async(
@@ -6512,13 +6369,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnpublishLiveDataApiV2Request 请求对象
+     * @param request UnpublishLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response>
      */
     public AsyncInvoker<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response> unpublishLiveDataApiV2AsyncInvoker(
         UnpublishLiveDataApiV2Request request) {
-        return new AsyncInvoker<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response>(request,
-            RomaMeta.unpublishLiveDataApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.unpublishLiveDataApiV2, hcClient);
     }
 
     /**
@@ -6528,7 +6384,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppAclRequest 请求对象
+     * @param request UpdateAppAclRequest 请求对象
      * @return CompletableFuture<UpdateAppAclResponse>
      */
     public CompletableFuture<UpdateAppAclResponse> updateAppAclAsync(UpdateAppAclRequest request) {
@@ -6542,12 +6398,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppAclRequest 请求对象
+     * @param request UpdateAppAclRequest 请求对象
      * @return AsyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse>
      */
     public AsyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse> updateAppAclAsyncInvoker(
         UpdateAppAclRequest request) {
-        return new AsyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse>(request, RomaMeta.updateAppAcl, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateAppAcl, hcClient);
     }
 
     /**
@@ -6557,7 +6413,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppConfigV2Request 请求对象
+     * @param request UpdateAppConfigV2Request 请求对象
      * @return CompletableFuture<UpdateAppConfigV2Response>
      */
     public CompletableFuture<UpdateAppConfigV2Response> updateAppConfigV2Async(UpdateAppConfigV2Request request) {
@@ -6571,13 +6427,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppConfigV2Request 请求对象
+     * @param request UpdateAppConfigV2Request 请求对象
      * @return AsyncInvoker<UpdateAppConfigV2Request, UpdateAppConfigV2Response>
      */
     public AsyncInvoker<UpdateAppConfigV2Request, UpdateAppConfigV2Response> updateAppConfigV2AsyncInvoker(
         UpdateAppConfigV2Request request) {
-        return new AsyncInvoker<UpdateAppConfigV2Request, UpdateAppConfigV2Response>(request,
-            RomaMeta.updateAppConfigV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateAppConfigV2, hcClient);
     }
 
     /**
@@ -6587,7 +6442,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppQuotaRequest 请求对象
+     * @param request UpdateAppQuotaRequest 请求对象
      * @return CompletableFuture<UpdateAppQuotaResponse>
      */
     public CompletableFuture<UpdateAppQuotaResponse> updateAppQuotaAsync(UpdateAppQuotaRequest request) {
@@ -6601,13 +6456,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppQuotaRequest 请求对象
+     * @param request UpdateAppQuotaRequest 请求对象
      * @return AsyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse>
      */
     public AsyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse> updateAppQuotaAsyncInvoker(
         UpdateAppQuotaRequest request) {
-        return new AsyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse>(request, RomaMeta.updateAppQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateAppQuota, hcClient);
     }
 
     /**
@@ -6617,7 +6471,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCommandRequest 请求对象
+     * @param request UpdateCommandRequest 请求对象
      * @return CompletableFuture<UpdateCommandResponse>
      */
     public CompletableFuture<UpdateCommandResponse> updateCommandAsync(UpdateCommandRequest request) {
@@ -6631,12 +6485,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCommandRequest 请求对象
+     * @param request UpdateCommandRequest 请求对象
      * @return AsyncInvoker<UpdateCommandRequest, UpdateCommandResponse>
      */
     public AsyncInvoker<UpdateCommandRequest, UpdateCommandResponse> updateCommandAsyncInvoker(
         UpdateCommandRequest request) {
-        return new AsyncInvoker<UpdateCommandRequest, UpdateCommandResponse>(request, RomaMeta.updateCommand, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateCommand, hcClient);
     }
 
     /**
@@ -6646,7 +6500,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomAuthorizerV2Request 请求对象
+     * @param request UpdateCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<UpdateCustomAuthorizerV2Response>
      */
     public CompletableFuture<UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2Async(
@@ -6661,13 +6515,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomAuthorizerV2Request 请求对象
+     * @param request UpdateCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response>
      */
     public AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2AsyncInvoker(
         UpdateCustomAuthorizerV2Request request) {
-        return new AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response>(request,
-            RomaMeta.updateCustomAuthorizerV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateCustomAuthorizerV2, hcClient);
     }
 
     /**
@@ -6677,7 +6530,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatasourceInfoRequest 请求对象
+     * @param request UpdateDatasourceInfoRequest 请求对象
      * @return CompletableFuture<UpdateDatasourceInfoResponse>
      */
     public CompletableFuture<UpdateDatasourceInfoResponse> updateDatasourceInfoAsync(
@@ -6692,13 +6545,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatasourceInfoRequest 请求对象
+     * @param request UpdateDatasourceInfoRequest 请求对象
      * @return AsyncInvoker<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse>
      */
     public AsyncInvoker<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse> updateDatasourceInfoAsyncInvoker(
         UpdateDatasourceInfoRequest request) {
-        return new AsyncInvoker<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse>(request,
-            RomaMeta.updateDatasourceInfo, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateDatasourceInfo, hcClient);
     }
 
     /**
@@ -6708,7 +6560,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceRequest 请求对象
+     * @param request UpdateDeviceRequest 请求对象
      * @return CompletableFuture<UpdateDeviceResponse>
      */
     public CompletableFuture<UpdateDeviceResponse> updateDeviceAsync(UpdateDeviceRequest request) {
@@ -6722,12 +6574,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceRequest 请求对象
+     * @param request UpdateDeviceRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
      */
     public AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse> updateDeviceAsyncInvoker(
         UpdateDeviceRequest request) {
-        return new AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>(request, RomaMeta.updateDevice, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateDevice, hcClient);
     }
 
     /**
@@ -6737,7 +6589,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceGroupRequest 请求对象
+     * @param request UpdateDeviceGroupRequest 请求对象
      * @return CompletableFuture<UpdateDeviceGroupResponse>
      */
     public CompletableFuture<UpdateDeviceGroupResponse> updateDeviceGroupAsync(UpdateDeviceGroupRequest request) {
@@ -6751,13 +6603,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceGroupRequest 请求对象
+     * @param request UpdateDeviceGroupRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse>
      */
     public AsyncInvoker<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> updateDeviceGroupAsyncInvoker(
         UpdateDeviceGroupRequest request) {
-        return new AsyncInvoker<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse>(request,
-            RomaMeta.updateDeviceGroup, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateDeviceGroup, hcClient);
     }
 
     /**
@@ -6767,7 +6618,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDispatchesRequest 请求对象
+     * @param request UpdateDispatchesRequest 请求对象
      * @return CompletableFuture<UpdateDispatchesResponse>
      */
     public CompletableFuture<UpdateDispatchesResponse> updateDispatchesAsync(UpdateDispatchesRequest request) {
@@ -6781,13 +6632,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDispatchesRequest 请求对象
+     * @param request UpdateDispatchesRequest 请求对象
      * @return AsyncInvoker<UpdateDispatchesRequest, UpdateDispatchesResponse>
      */
     public AsyncInvoker<UpdateDispatchesRequest, UpdateDispatchesResponse> updateDispatchesAsyncInvoker(
         UpdateDispatchesRequest request) {
-        return new AsyncInvoker<UpdateDispatchesRequest, UpdateDispatchesResponse>(request, RomaMeta.updateDispatches,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateDispatches, hcClient);
     }
 
     /**
@@ -6797,7 +6647,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainV2Request 请求对象
+     * @param request UpdateDomainV2Request 请求对象
      * @return CompletableFuture<UpdateDomainV2Response>
      */
     public CompletableFuture<UpdateDomainV2Response> updateDomainV2Async(UpdateDomainV2Request request) {
@@ -6811,13 +6661,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainV2Request 请求对象
+     * @param request UpdateDomainV2Request 请求对象
      * @return AsyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>
      */
     public AsyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response> updateDomainV2AsyncInvoker(
         UpdateDomainV2Request request) {
-        return new AsyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>(request, RomaMeta.updateDomainV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateDomainV2, hcClient);
     }
 
     /**
@@ -6827,7 +6676,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentV2Request 请求对象
+     * @param request UpdateEnvironmentV2Request 请求对象
      * @return CompletableFuture<UpdateEnvironmentV2Response>
      */
     public CompletableFuture<UpdateEnvironmentV2Response> updateEnvironmentV2Async(UpdateEnvironmentV2Request request) {
@@ -6841,13 +6690,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentV2Request 请求对象
+     * @param request UpdateEnvironmentV2Request 请求对象
      * @return AsyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>
      */
     public AsyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> updateEnvironmentV2AsyncInvoker(
         UpdateEnvironmentV2Request request) {
-        return new AsyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>(request,
-            RomaMeta.updateEnvironmentV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateEnvironmentV2, hcClient);
     }
 
     /**
@@ -6857,7 +6705,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentVariableV2Request 请求对象
+     * @param request UpdateEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<UpdateEnvironmentVariableV2Response>
      */
     public CompletableFuture<UpdateEnvironmentVariableV2Response> updateEnvironmentVariableV2Async(
@@ -6872,13 +6720,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentVariableV2Request 请求对象
+     * @param request UpdateEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response>
      */
     public AsyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> updateEnvironmentVariableV2AsyncInvoker(
         UpdateEnvironmentVariableV2Request request) {
-        return new AsyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response>(request,
-            RomaMeta.updateEnvironmentVariableV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -6888,7 +6735,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLiveDataApiV2Request 请求对象
+     * @param request UpdateLiveDataApiV2Request 请求对象
      * @return CompletableFuture<UpdateLiveDataApiV2Response>
      */
     public CompletableFuture<UpdateLiveDataApiV2Response> updateLiveDataApiV2Async(UpdateLiveDataApiV2Request request) {
@@ -6902,13 +6749,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLiveDataApiV2Request 请求对象
+     * @param request UpdateLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<UpdateLiveDataApiV2Request, UpdateLiveDataApiV2Response>
      */
     public AsyncInvoker<UpdateLiveDataApiV2Request, UpdateLiveDataApiV2Response> updateLiveDataApiV2AsyncInvoker(
         UpdateLiveDataApiV2Request request) {
-        return new AsyncInvoker<UpdateLiveDataApiV2Request, UpdateLiveDataApiV2Response>(request,
-            RomaMeta.updateLiveDataApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateLiveDataApiV2, hcClient);
     }
 
     /**
@@ -6918,7 +6764,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMqsInstanceTopicRequest 请求对象
+     * @param request UpdateMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<UpdateMqsInstanceTopicResponse>
      */
     public CompletableFuture<UpdateMqsInstanceTopicResponse> updateMqsInstanceTopicAsync(
@@ -6933,13 +6779,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMqsInstanceTopicRequest 请求对象
+     * @param request UpdateMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse>
      */
     public AsyncInvoker<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse> updateMqsInstanceTopicAsyncInvoker(
         UpdateMqsInstanceTopicRequest request) {
-        return new AsyncInvoker<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse>(request,
-            RomaMeta.updateMqsInstanceTopic, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateMqsInstanceTopic, hcClient);
     }
 
     /**
@@ -6949,7 +6794,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMultiTasksRequest 请求对象
+     * @param request UpdateMultiTasksRequest 请求对象
      * @return CompletableFuture<UpdateMultiTasksResponse>
      */
     public CompletableFuture<UpdateMultiTasksResponse> updateMultiTasksAsync(UpdateMultiTasksRequest request) {
@@ -6963,13 +6808,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMultiTasksRequest 请求对象
+     * @param request UpdateMultiTasksRequest 请求对象
      * @return AsyncInvoker<UpdateMultiTasksRequest, UpdateMultiTasksResponse>
      */
     public AsyncInvoker<UpdateMultiTasksRequest, UpdateMultiTasksResponse> updateMultiTasksAsyncInvoker(
         UpdateMultiTasksRequest request) {
-        return new AsyncInvoker<UpdateMultiTasksRequest, UpdateMultiTasksResponse>(request, RomaMeta.updateMultiTasks,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateMultiTasks, hcClient);
     }
 
     /**
@@ -6979,7 +6823,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotificationRequest 请求对象
+     * @param request UpdateNotificationRequest 请求对象
      * @return CompletableFuture<UpdateNotificationResponse>
      */
     public CompletableFuture<UpdateNotificationResponse> updateNotificationAsync(UpdateNotificationRequest request) {
@@ -6993,13 +6837,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotificationRequest 请求对象
+     * @param request UpdateNotificationRequest 请求对象
      * @return AsyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse>
      */
     public AsyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse> updateNotificationAsyncInvoker(
         UpdateNotificationRequest request) {
-        return new AsyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse>(request,
-            RomaMeta.updateNotification, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateNotification, hcClient);
     }
 
     /**
@@ -7011,7 +6854,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginRequest 请求对象
+     * @param request UpdatePluginRequest 请求对象
      * @return CompletableFuture<UpdatePluginResponse>
      */
     public CompletableFuture<UpdatePluginResponse> updatePluginAsync(UpdatePluginRequest request) {
@@ -7027,12 +6870,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginRequest 请求对象
+     * @param request UpdatePluginRequest 请求对象
      * @return AsyncInvoker<UpdatePluginRequest, UpdatePluginResponse>
      */
     public AsyncInvoker<UpdatePluginRequest, UpdatePluginResponse> updatePluginAsyncInvoker(
         UpdatePluginRequest request) {
-        return new AsyncInvoker<UpdatePluginRequest, UpdatePluginResponse>(request, RomaMeta.updatePlugin, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updatePlugin, hcClient);
     }
 
     /**
@@ -7042,7 +6885,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProductRequest 请求对象
+     * @param request UpdateProductRequest 请求对象
      * @return CompletableFuture<UpdateProductResponse>
      */
     public CompletableFuture<UpdateProductResponse> updateProductAsync(UpdateProductRequest request) {
@@ -7056,12 +6899,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProductRequest 请求对象
+     * @param request UpdateProductRequest 请求对象
      * @return AsyncInvoker<UpdateProductRequest, UpdateProductResponse>
      */
     public AsyncInvoker<UpdateProductRequest, UpdateProductResponse> updateProductAsyncInvoker(
         UpdateProductRequest request) {
-        return new AsyncInvoker<UpdateProductRequest, UpdateProductResponse>(request, RomaMeta.updateProduct, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateProduct, hcClient);
     }
 
     /**
@@ -7071,7 +6914,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProductTemplateRequest 请求对象
+     * @param request UpdateProductTemplateRequest 请求对象
      * @return CompletableFuture<UpdateProductTemplateResponse>
      */
     public CompletableFuture<UpdateProductTemplateResponse> updateProductTemplateAsync(
@@ -7086,13 +6929,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProductTemplateRequest 请求对象
+     * @param request UpdateProductTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateProductTemplateRequest, UpdateProductTemplateResponse>
      */
     public AsyncInvoker<UpdateProductTemplateRequest, UpdateProductTemplateResponse> updateProductTemplateAsyncInvoker(
         UpdateProductTemplateRequest request) {
-        return new AsyncInvoker<UpdateProductTemplateRequest, UpdateProductTemplateResponse>(request,
-            RomaMeta.updateProductTemplate, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateProductTemplate, hcClient);
     }
 
     /**
@@ -7102,7 +6944,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProductTopicRequest 请求对象
+     * @param request UpdateProductTopicRequest 请求对象
      * @return CompletableFuture<UpdateProductTopicResponse>
      */
     public CompletableFuture<UpdateProductTopicResponse> updateProductTopicAsync(UpdateProductTopicRequest request) {
@@ -7116,13 +6958,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProductTopicRequest 请求对象
+     * @param request UpdateProductTopicRequest 请求对象
      * @return AsyncInvoker<UpdateProductTopicRequest, UpdateProductTopicResponse>
      */
     public AsyncInvoker<UpdateProductTopicRequest, UpdateProductTopicResponse> updateProductTopicAsyncInvoker(
         UpdateProductTopicRequest request) {
-        return new AsyncInvoker<UpdateProductTopicRequest, UpdateProductTopicResponse>(request,
-            RomaMeta.updateProductTopic, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateProductTopic, hcClient);
     }
 
     /**
@@ -7132,7 +6973,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePropertyRequest 请求对象
+     * @param request UpdatePropertyRequest 请求对象
      * @return CompletableFuture<UpdatePropertyResponse>
      */
     public CompletableFuture<UpdatePropertyResponse> updatePropertyAsync(UpdatePropertyRequest request) {
@@ -7146,13 +6987,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePropertyRequest 请求对象
+     * @param request UpdatePropertyRequest 请求对象
      * @return AsyncInvoker<UpdatePropertyRequest, UpdatePropertyResponse>
      */
     public AsyncInvoker<UpdatePropertyRequest, UpdatePropertyResponse> updatePropertyAsyncInvoker(
         UpdatePropertyRequest request) {
-        return new AsyncInvoker<UpdatePropertyRequest, UpdatePropertyResponse>(request, RomaMeta.updateProperty,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateProperty, hcClient);
     }
 
     /**
@@ -7162,7 +7002,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRequestPropertyRequest 请求对象
+     * @param request UpdateRequestPropertyRequest 请求对象
      * @return CompletableFuture<UpdateRequestPropertyResponse>
      */
     public CompletableFuture<UpdateRequestPropertyResponse> updateRequestPropertyAsync(
@@ -7177,13 +7017,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRequestPropertyRequest 请求对象
+     * @param request UpdateRequestPropertyRequest 请求对象
      * @return AsyncInvoker<UpdateRequestPropertyRequest, UpdateRequestPropertyResponse>
      */
     public AsyncInvoker<UpdateRequestPropertyRequest, UpdateRequestPropertyResponse> updateRequestPropertyAsyncInvoker(
         UpdateRequestPropertyRequest request) {
-        return new AsyncInvoker<UpdateRequestPropertyRequest, UpdateRequestPropertyResponse>(request,
-            RomaMeta.updateRequestProperty, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateRequestProperty, hcClient);
     }
 
     /**
@@ -7193,7 +7032,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRequestThrottlingPolicyV2Request 请求对象
+     * @param request UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<UpdateRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<UpdateRequestThrottlingPolicyV2Response> updateRequestThrottlingPolicyV2Async(
@@ -7208,13 +7047,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRequestThrottlingPolicyV2Request 请求对象
+     * @param request UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> updateRequestThrottlingPolicyV2AsyncInvoker(
         UpdateRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response>(
-            request, RomaMeta.updateRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -7224,7 +7062,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResponsePropertyRequest 请求对象
+     * @param request UpdateResponsePropertyRequest 请求对象
      * @return CompletableFuture<UpdateResponsePropertyResponse>
      */
     public CompletableFuture<UpdateResponsePropertyResponse> updateResponsePropertyAsync(
@@ -7239,13 +7077,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResponsePropertyRequest 请求对象
+     * @param request UpdateResponsePropertyRequest 请求对象
      * @return AsyncInvoker<UpdateResponsePropertyRequest, UpdateResponsePropertyResponse>
      */
     public AsyncInvoker<UpdateResponsePropertyRequest, UpdateResponsePropertyResponse> updateResponsePropertyAsyncInvoker(
         UpdateResponsePropertyRequest request) {
-        return new AsyncInvoker<UpdateResponsePropertyRequest, UpdateResponsePropertyResponse>(request,
-            RomaMeta.updateResponseProperty, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateResponseProperty, hcClient);
     }
 
     /**
@@ -7255,7 +7092,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRuleRequest 请求对象
+     * @param request UpdateRuleRequest 请求对象
      * @return CompletableFuture<UpdateRuleResponse>
      */
     public CompletableFuture<UpdateRuleResponse> updateRuleAsync(UpdateRuleRequest request) {
@@ -7269,11 +7106,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRuleRequest 请求对象
+     * @param request UpdateRuleRequest 请求对象
      * @return AsyncInvoker<UpdateRuleRequest, UpdateRuleResponse>
      */
     public AsyncInvoker<UpdateRuleRequest, UpdateRuleResponse> updateRuleAsyncInvoker(UpdateRuleRequest request) {
-        return new AsyncInvoker<UpdateRuleRequest, UpdateRuleResponse>(request, RomaMeta.updateRule, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateRule, hcClient);
     }
 
     /**
@@ -7283,7 +7120,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServiceRequest 请求对象
+     * @param request UpdateServiceRequest 请求对象
      * @return CompletableFuture<UpdateServiceResponse>
      */
     public CompletableFuture<UpdateServiceResponse> updateServiceAsync(UpdateServiceRequest request) {
@@ -7297,12 +7134,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateServiceRequest 请求对象
+     * @param request UpdateServiceRequest 请求对象
      * @return AsyncInvoker<UpdateServiceRequest, UpdateServiceResponse>
      */
     public AsyncInvoker<UpdateServiceRequest, UpdateServiceResponse> updateServiceAsyncInvoker(
         UpdateServiceRequest request) {
-        return new AsyncInvoker<UpdateServiceRequest, UpdateServiceResponse>(request, RomaMeta.updateService, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateService, hcClient);
     }
 
     /**
@@ -7312,7 +7149,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSignatureKeyV2Request 请求对象
+     * @param request UpdateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<UpdateSignatureKeyV2Response>
      */
     public CompletableFuture<UpdateSignatureKeyV2Response> updateSignatureKeyV2Async(
@@ -7327,13 +7164,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSignatureKeyV2Request 请求对象
+     * @param request UpdateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response>
      */
     public AsyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> updateSignatureKeyV2AsyncInvoker(
         UpdateSignatureKeyV2Request request) {
-        return new AsyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response>(request,
-            RomaMeta.updateSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateSignatureKeyV2, hcClient);
     }
 
     /**
@@ -7343,7 +7179,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<UpdateSpecialThrottlingConfigurationV2Response>
      */
     public CompletableFuture<UpdateSpecialThrottlingConfigurationV2Response> updateSpecialThrottlingConfigurationV2Async(
@@ -7358,13 +7194,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response>
      */
     public AsyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> updateSpecialThrottlingConfigurationV2AsyncInvoker(
         UpdateSpecialThrottlingConfigurationV2Request request) {
-        return new AsyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response>(
-            request, RomaMeta.updateSpecialThrottlingConfigurationV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateSpecialThrottlingConfigurationV2, hcClient);
     }
 
     /**
@@ -7374,7 +7209,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskRequest 请求对象
+     * @param request UpdateTaskRequest 请求对象
      * @return CompletableFuture<UpdateTaskResponse>
      */
     public CompletableFuture<UpdateTaskResponse> updateTaskAsync(UpdateTaskRequest request) {
@@ -7388,11 +7223,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTaskRequest 请求对象
+     * @param request UpdateTaskRequest 请求对象
      * @return AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
      */
     public AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse> updateTaskAsyncInvoker(UpdateTaskRequest request) {
-        return new AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>(request, RomaMeta.updateTask, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateTask, hcClient);
     }
 
     /**
@@ -7402,7 +7237,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicAccessPolicyRequest 请求对象
+     * @param request UpdateTopicAccessPolicyRequest 请求对象
      * @return CompletableFuture<UpdateTopicAccessPolicyResponse>
      */
     public CompletableFuture<UpdateTopicAccessPolicyResponse> updateTopicAccessPolicyAsync(
@@ -7417,13 +7252,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicAccessPolicyRequest 请求对象
+     * @param request UpdateTopicAccessPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>
      */
     public AsyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicyAsyncInvoker(
         UpdateTopicAccessPolicyRequest request) {
-        return new AsyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>(request,
-            RomaMeta.updateTopicAccessPolicy, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateTopicAccessPolicy, hcClient);
     }
 
     /**
@@ -7433,7 +7267,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadProductRequest 请求对象
+     * @param request UploadProductRequest 请求对象
      * @return CompletableFuture<UploadProductResponse>
      */
     public CompletableFuture<UploadProductResponse> uploadProductAsync(UploadProductRequest request) {
@@ -7447,12 +7281,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadProductRequest 请求对象
+     * @param request UploadProductRequest 请求对象
      * @return AsyncInvoker<UploadProductRequest, UploadProductResponse>
      */
     public AsyncInvoker<UploadProductRequest, UploadProductResponse> uploadProductAsyncInvoker(
         UploadProductRequest request) {
-        return new AsyncInvoker<UploadProductRequest, UploadProductResponse>(request, RomaMeta.uploadProduct, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.uploadProduct, hcClient);
     }
 
     /**
@@ -7464,7 +7298,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAclV2Request 请求对象
+     * @param request BatchDeleteAclV2Request 请求对象
      * @return CompletableFuture<BatchDeleteAclV2Response>
      */
     public CompletableFuture<BatchDeleteAclV2Response> batchDeleteAclV2Async(BatchDeleteAclV2Request request) {
@@ -7480,13 +7314,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAclV2Request 请求对象
+     * @param request BatchDeleteAclV2Request 请求对象
      * @return AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response>
      */
     public AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response> batchDeleteAclV2AsyncInvoker(
         BatchDeleteAclV2Request request) {
-        return new AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response>(request, RomaMeta.batchDeleteAclV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchDeleteAclV2, hcClient);
     }
 
     /**
@@ -7496,7 +7329,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAclStrategyV2Request 请求对象
+     * @param request CreateAclStrategyV2Request 请求对象
      * @return CompletableFuture<CreateAclStrategyV2Response>
      */
     public CompletableFuture<CreateAclStrategyV2Response> createAclStrategyV2Async(CreateAclStrategyV2Request request) {
@@ -7510,13 +7343,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAclStrategyV2Request 请求对象
+     * @param request CreateAclStrategyV2Request 请求对象
      * @return AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response>
      */
     public AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response> createAclStrategyV2AsyncInvoker(
         CreateAclStrategyV2Request request) {
-        return new AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response>(request,
-            RomaMeta.createAclStrategyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createAclStrategyV2, hcClient);
     }
 
     /**
@@ -7526,7 +7358,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAclV2Request 请求对象
+     * @param request DeleteAclV2Request 请求对象
      * @return CompletableFuture<DeleteAclV2Response>
      */
     public CompletableFuture<DeleteAclV2Response> deleteAclV2Async(DeleteAclV2Request request) {
@@ -7540,11 +7372,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAclV2Request 请求对象
+     * @param request DeleteAclV2Request 请求对象
      * @return AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response>
      */
     public AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response> deleteAclV2AsyncInvoker(DeleteAclV2Request request) {
-        return new AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response>(request, RomaMeta.deleteAclV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteAclV2, hcClient);
     }
 
     /**
@@ -7554,7 +7386,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclStrategiesV2Request 请求对象
+     * @param request ListAclStrategiesV2Request 请求对象
      * @return CompletableFuture<ListAclStrategiesV2Response>
      */
     public CompletableFuture<ListAclStrategiesV2Response> listAclStrategiesV2Async(ListAclStrategiesV2Request request) {
@@ -7568,13 +7400,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclStrategiesV2Request 请求对象
+     * @param request ListAclStrategiesV2Request 请求对象
      * @return AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response>
      */
     public AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response> listAclStrategiesV2AsyncInvoker(
         ListAclStrategiesV2Request request) {
-        return new AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response>(request,
-            RomaMeta.listAclStrategiesV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listAclStrategiesV2, hcClient);
     }
 
     /**
@@ -7584,7 +7415,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAclPolicyV2Request 请求对象
+     * @param request ShowDetailsOfAclPolicyV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAclPolicyV2Response>
      */
     public CompletableFuture<ShowDetailsOfAclPolicyV2Response> showDetailsOfAclPolicyV2Async(
@@ -7599,13 +7430,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAclPolicyV2Request 请求对象
+     * @param request ShowDetailsOfAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response>
      */
     public AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> showDetailsOfAclPolicyV2AsyncInvoker(
         ShowDetailsOfAclPolicyV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response>(request,
-            RomaMeta.showDetailsOfAclPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfAclPolicyV2, hcClient);
     }
 
     /**
@@ -7615,7 +7445,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclStrategyV2Request 请求对象
+     * @param request UpdateAclStrategyV2Request 请求对象
      * @return CompletableFuture<UpdateAclStrategyV2Response>
      */
     public CompletableFuture<UpdateAclStrategyV2Response> updateAclStrategyV2Async(UpdateAclStrategyV2Request request) {
@@ -7629,13 +7459,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclStrategyV2Request 请求对象
+     * @param request UpdateAclStrategyV2Request 请求对象
      * @return AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response>
      */
     public AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> updateAclStrategyV2AsyncInvoker(
         UpdateAclStrategyV2Request request) {
-        return new AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response>(request,
-            RomaMeta.updateAclStrategyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateAclStrategyV2, hcClient);
     }
 
     /**
@@ -7651,7 +7480,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<AssociateRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<AssociateRequestThrottlingPolicyV2Response> associateRequestThrottlingPolicyV2Async(
@@ -7672,13 +7501,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> associateRequestThrottlingPolicyV2AsyncInvoker(
         AssociateRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response>(
-            request, RomaMeta.associateRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.associateRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -7688,7 +7516,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
+     * @param request BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<BatchDisassociateThrottlingPolicyV2Response>
      */
     public CompletableFuture<BatchDisassociateThrottlingPolicyV2Response> batchDisassociateThrottlingPolicyV2Async(
@@ -7703,13 +7531,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
+     * @param request BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response>
      */
     public AsyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> batchDisassociateThrottlingPolicyV2AsyncInvoker(
         BatchDisassociateThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response>(
-            request, RomaMeta.batchDisassociateThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchDisassociateThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -7721,7 +7548,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPublishOrOfflineApiV2Request 请求对象
+     * @param request BatchPublishOrOfflineApiV2Request 请求对象
      * @return CompletableFuture<BatchPublishOrOfflineApiV2Response>
      */
     public CompletableFuture<BatchPublishOrOfflineApiV2Response> batchPublishOrOfflineApiV2Async(
@@ -7738,13 +7565,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPublishOrOfflineApiV2Request 请求对象
+     * @param request BatchPublishOrOfflineApiV2Request 请求对象
      * @return AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>
      */
     public AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> batchPublishOrOfflineApiV2AsyncInvoker(
         BatchPublishOrOfflineApiV2Request request) {
-        return new AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>(request,
-            RomaMeta.batchPublishOrOfflineApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchPublishOrOfflineApiV2, hcClient);
     }
 
     /**
@@ -7756,7 +7582,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeApiVersionV2Request 请求对象
+     * @param request ChangeApiVersionV2Request 请求对象
      * @return CompletableFuture<ChangeApiVersionV2Response>
      */
     public CompletableFuture<ChangeApiVersionV2Response> changeApiVersionV2Async(ChangeApiVersionV2Request request) {
@@ -7772,13 +7598,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeApiVersionV2Request 请求对象
+     * @param request ChangeApiVersionV2Request 请求对象
      * @return AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>
      */
     public AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response> changeApiVersionV2AsyncInvoker(
         ChangeApiVersionV2Request request) {
-        return new AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>(request,
-            RomaMeta.changeApiVersionV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.changeApiVersionV2, hcClient);
     }
 
     /**
@@ -7788,7 +7613,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApiGroupsV2Request 请求对象
+     * @param request CheckApiGroupsV2Request 请求对象
      * @return CompletableFuture<CheckApiGroupsV2Response>
      */
     public CompletableFuture<CheckApiGroupsV2Response> checkApiGroupsV2Async(CheckApiGroupsV2Request request) {
@@ -7802,13 +7627,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApiGroupsV2Request 请求对象
+     * @param request CheckApiGroupsV2Request 请求对象
      * @return AsyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response>
      */
     public AsyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response> checkApiGroupsV2AsyncInvoker(
         CheckApiGroupsV2Request request) {
-        return new AsyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response>(request, RomaMeta.checkApiGroupsV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.checkApiGroupsV2, hcClient);
     }
 
     /**
@@ -7818,7 +7642,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApisV2Request 请求对象
+     * @param request CheckApisV2Request 请求对象
      * @return CompletableFuture<CheckApisV2Response>
      */
     public CompletableFuture<CheckApisV2Response> checkApisV2Async(CheckApisV2Request request) {
@@ -7832,11 +7656,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApisV2Request 请求对象
+     * @param request CheckApisV2Request 请求对象
      * @return AsyncInvoker<CheckApisV2Request, CheckApisV2Response>
      */
     public AsyncInvoker<CheckApisV2Request, CheckApisV2Response> checkApisV2AsyncInvoker(CheckApisV2Request request) {
-        return new AsyncInvoker<CheckApisV2Request, CheckApisV2Response>(request, RomaMeta.checkApisV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.checkApisV2, hcClient);
     }
 
     /**
@@ -7846,7 +7670,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiGroupV2Request 请求对象
+     * @param request CreateApiGroupV2Request 请求对象
      * @return CompletableFuture<CreateApiGroupV2Response>
      */
     public CompletableFuture<CreateApiGroupV2Response> createApiGroupV2Async(CreateApiGroupV2Request request) {
@@ -7860,13 +7684,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiGroupV2Request 请求对象
+     * @param request CreateApiGroupV2Request 请求对象
      * @return AsyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response>
      */
     public AsyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response> createApiGroupV2AsyncInvoker(
         CreateApiGroupV2Request request) {
-        return new AsyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response>(request, RomaMeta.createApiGroupV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createApiGroupV2, hcClient);
     }
 
     /**
@@ -7877,7 +7700,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiV2Request 请求对象
+     * @param request CreateApiV2Request 请求对象
      * @return CompletableFuture<CreateApiV2Response>
      */
     public CompletableFuture<CreateApiV2Response> createApiV2Async(CreateApiV2Request request) {
@@ -7892,11 +7715,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiV2Request 请求对象
+     * @param request CreateApiV2Request 请求对象
      * @return AsyncInvoker<CreateApiV2Request, CreateApiV2Response>
      */
     public AsyncInvoker<CreateApiV2Request, CreateApiV2Response> createApiV2AsyncInvoker(CreateApiV2Request request) {
-        return new AsyncInvoker<CreateApiV2Request, CreateApiV2Response>(request, RomaMeta.createApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createApiV2, hcClient);
     }
 
     /**
@@ -7910,7 +7733,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
+     * @param request CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return CompletableFuture<CreateOrDeletePublishRecordForApiV2Response>
      */
     public CompletableFuture<CreateOrDeletePublishRecordForApiV2Response> createOrDeletePublishRecordForApiV2Async(
@@ -7929,13 +7752,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
+     * @param request CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return AsyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response>
      */
     public AsyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> createOrDeletePublishRecordForApiV2AsyncInvoker(
         CreateOrDeletePublishRecordForApiV2Request request) {
-        return new AsyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response>(
-            request, RomaMeta.createOrDeletePublishRecordForApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createOrDeletePublishRecordForApiV2, hcClient);
     }
 
     /**
@@ -7945,7 +7767,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DebugApiV2Request 请求对象
+     * @param request DebugApiV2Request 请求对象
      * @return CompletableFuture<DebugApiV2Response>
      */
     public CompletableFuture<DebugApiV2Response> debugApiV2Async(DebugApiV2Request request) {
@@ -7959,11 +7781,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DebugApiV2Request 请求对象
+     * @param request DebugApiV2Request 请求对象
      * @return AsyncInvoker<DebugApiV2Request, DebugApiV2Response>
      */
     public AsyncInvoker<DebugApiV2Request, DebugApiV2Response> debugApiV2AsyncInvoker(DebugApiV2Request request) {
-        return new AsyncInvoker<DebugApiV2Request, DebugApiV2Response>(request, RomaMeta.debugApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.debugApiV2, hcClient);
     }
 
     /**
@@ -7973,7 +7795,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiByVersionIdV2Request 请求对象
+     * @param request DeleteApiByVersionIdV2Request 请求对象
      * @return CompletableFuture<DeleteApiByVersionIdV2Response>
      */
     public CompletableFuture<DeleteApiByVersionIdV2Response> deleteApiByVersionIdV2Async(
@@ -7988,13 +7810,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiByVersionIdV2Request 请求对象
+     * @param request DeleteApiByVersionIdV2Request 请求对象
      * @return AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>
      */
     public AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> deleteApiByVersionIdV2AsyncInvoker(
         DeleteApiByVersionIdV2Request request) {
-        return new AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>(request,
-            RomaMeta.deleteApiByVersionIdV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteApiByVersionIdV2, hcClient);
     }
 
     /**
@@ -8008,7 +7829,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiGroupV2Request 请求对象
+     * @param request DeleteApiGroupV2Request 请求对象
      * @return CompletableFuture<DeleteApiGroupV2Response>
      */
     public CompletableFuture<DeleteApiGroupV2Response> deleteApiGroupV2Async(DeleteApiGroupV2Request request) {
@@ -8026,13 +7847,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiGroupV2Request 请求对象
+     * @param request DeleteApiGroupV2Request 请求对象
      * @return AsyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response>
      */
     public AsyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response> deleteApiGroupV2AsyncInvoker(
         DeleteApiGroupV2Request request) {
-        return new AsyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response>(request, RomaMeta.deleteApiGroupV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteApiGroupV2, hcClient);
     }
 
     /**
@@ -8044,7 +7864,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiV2Request 请求对象
+     * @param request DeleteApiV2Request 请求对象
      * @return CompletableFuture<DeleteApiV2Response>
      */
     public CompletableFuture<DeleteApiV2Response> deleteApiV2Async(DeleteApiV2Request request) {
@@ -8060,11 +7880,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiV2Request 请求对象
+     * @param request DeleteApiV2Request 请求对象
      * @return AsyncInvoker<DeleteApiV2Request, DeleteApiV2Response>
      */
     public AsyncInvoker<DeleteApiV2Request, DeleteApiV2Response> deleteApiV2AsyncInvoker(DeleteApiV2Request request) {
-        return new AsyncInvoker<DeleteApiV2Request, DeleteApiV2Response>(request, RomaMeta.deleteApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteApiV2, hcClient);
     }
 
     /**
@@ -8074,7 +7894,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<DisassociateRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<DisassociateRequestThrottlingPolicyV2Response> disassociateRequestThrottlingPolicyV2Async(
@@ -8089,13 +7909,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> disassociateRequestThrottlingPolicyV2AsyncInvoker(
         DisassociateRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response>(
-            request, RomaMeta.disassociateRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.disassociateRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -8107,7 +7926,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiGroupsV2Request 请求对象
+     * @param request ListApiGroupsV2Request 请求对象
      * @return CompletableFuture<ListApiGroupsV2Response>
      */
     public CompletableFuture<ListApiGroupsV2Response> listApiGroupsV2Async(ListApiGroupsV2Request request) {
@@ -8123,13 +7942,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiGroupsV2Request 请求对象
+     * @param request ListApiGroupsV2Request 请求对象
      * @return AsyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response>
      */
     public AsyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response> listApiGroupsV2AsyncInvoker(
         ListApiGroupsV2Request request) {
-        return new AsyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response>(request, RomaMeta.listApiGroupsV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApiGroupsV2, hcClient);
     }
 
     /**
@@ -8145,7 +7963,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiRuntimeDefinitionV2Request 请求对象
+     * @param request ListApiRuntimeDefinitionV2Request 请求对象
      * @return CompletableFuture<ListApiRuntimeDefinitionV2Response>
      */
     public CompletableFuture<ListApiRuntimeDefinitionV2Response> listApiRuntimeDefinitionV2Async(
@@ -8166,13 +7984,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiRuntimeDefinitionV2Request 请求对象
+     * @param request ListApiRuntimeDefinitionV2Request 请求对象
      * @return AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response>
      */
     public AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> listApiRuntimeDefinitionV2AsyncInvoker(
         ListApiRuntimeDefinitionV2Request request) {
-        return new AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response>(request,
-            RomaMeta.listApiRuntimeDefinitionV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApiRuntimeDefinitionV2, hcClient);
     }
 
     /**
@@ -8182,7 +7999,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionDetailV2Request 请求对象
+     * @param request ListApiVersionDetailV2Request 请求对象
      * @return CompletableFuture<ListApiVersionDetailV2Response>
      */
     public CompletableFuture<ListApiVersionDetailV2Response> listApiVersionDetailV2Async(
@@ -8197,13 +8014,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionDetailV2Request 请求对象
+     * @param request ListApiVersionDetailV2Request 请求对象
      * @return AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response>
      */
     public AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> listApiVersionDetailV2AsyncInvoker(
         ListApiVersionDetailV2Request request) {
-        return new AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response>(request,
-            RomaMeta.listApiVersionDetailV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApiVersionDetailV2, hcClient);
     }
 
     /**
@@ -8213,7 +8029,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsV2Request 请求对象
+     * @param request ListApiVersionsV2Request 请求对象
      * @return CompletableFuture<ListApiVersionsV2Response>
      */
     public CompletableFuture<ListApiVersionsV2Response> listApiVersionsV2Async(ListApiVersionsV2Request request) {
@@ -8227,13 +8043,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsV2Request 请求对象
+     * @param request ListApiVersionsV2Request 请求对象
      * @return AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response>
      */
     public AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response> listApiVersionsV2AsyncInvoker(
         ListApiVersionsV2Request request) {
-        return new AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response>(request,
-            RomaMeta.listApiVersionsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApiVersionsV2, hcClient);
     }
 
     /**
@@ -8243,7 +8058,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<ListApisBindedToRequestThrottlingPolicyV2Response> listApisBindedToRequestThrottlingPolicyV2Async(
@@ -8258,13 +8073,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> listApisBindedToRequestThrottlingPolicyV2AsyncInvoker(
         ListApisBindedToRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response>(
-            request, RomaMeta.listApisBindedToRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApisBindedToRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -8274,7 +8088,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<ListApisUnbindedToRequestThrottlingPolicyV2Response> listApisUnbindedToRequestThrottlingPolicyV2Async(
@@ -8289,13 +8103,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> listApisUnbindedToRequestThrottlingPolicyV2AsyncInvoker(
         ListApisUnbindedToRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response>(
-            request, RomaMeta.listApisUnbindedToRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApisUnbindedToRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -8305,7 +8118,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisV2Request 请求对象
+     * @param request ListApisV2Request 请求对象
      * @return CompletableFuture<ListApisV2Response>
      */
     public CompletableFuture<ListApisV2Response> listApisV2Async(ListApisV2Request request) {
@@ -8319,11 +8132,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisV2Request 请求对象
+     * @param request ListApisV2Request 请求对象
      * @return AsyncInvoker<ListApisV2Request, ListApisV2Response>
      */
     public AsyncInvoker<ListApisV2Request, ListApisV2Response> listApisV2AsyncInvoker(ListApisV2Request request) {
-        return new AsyncInvoker<ListApisV2Request, ListApisV2Response>(request, RomaMeta.listApisV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApisV2, hcClient);
     }
 
     /**
@@ -8333,7 +8146,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
+     * @param request ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListRequestThrottlingPoliciesBindedToApiV2Response>
      */
     public CompletableFuture<ListRequestThrottlingPoliciesBindedToApiV2Response> listRequestThrottlingPoliciesBindedToApiV2Async(
@@ -8348,13 +8161,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
+     * @param request ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response>
      */
     public AsyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> listRequestThrottlingPoliciesBindedToApiV2AsyncInvoker(
         ListRequestThrottlingPoliciesBindedToApiV2Request request) {
-        return new AsyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response>(
-            request, RomaMeta.listRequestThrottlingPoliciesBindedToApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listRequestThrottlingPoliciesBindedToApiV2, hcClient);
     }
 
     /**
@@ -8364,7 +8176,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiGroupV2Request 请求对象
+     * @param request ShowDetailsOfApiGroupV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfApiGroupV2Response>
      */
     public CompletableFuture<ShowDetailsOfApiGroupV2Response> showDetailsOfApiGroupV2Async(
@@ -8379,13 +8191,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiGroupV2Request 请求对象
+     * @param request ShowDetailsOfApiGroupV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response>
      */
     public AsyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> showDetailsOfApiGroupV2AsyncInvoker(
         ShowDetailsOfApiGroupV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response>(request,
-            RomaMeta.showDetailsOfApiGroupV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfApiGroupV2, hcClient);
     }
 
     /**
@@ -8395,7 +8206,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiV2Request 请求对象
+     * @param request ShowDetailsOfApiV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfApiV2Response>
      */
     public CompletableFuture<ShowDetailsOfApiV2Response> showDetailsOfApiV2Async(ShowDetailsOfApiV2Request request) {
@@ -8409,13 +8220,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiV2Request 请求对象
+     * @param request ShowDetailsOfApiV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response>
      */
     public AsyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> showDetailsOfApiV2AsyncInvoker(
         ShowDetailsOfApiV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response>(request,
-            RomaMeta.showDetailsOfApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfApiV2, hcClient);
     }
 
     /**
@@ -8425,7 +8235,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiGroupV2Request 请求对象
+     * @param request UpdateApiGroupV2Request 请求对象
      * @return CompletableFuture<UpdateApiGroupV2Response>
      */
     public CompletableFuture<UpdateApiGroupV2Response> updateApiGroupV2Async(UpdateApiGroupV2Request request) {
@@ -8439,13 +8249,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiGroupV2Request 请求对象
+     * @param request UpdateApiGroupV2Request 请求对象
      * @return AsyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response>
      */
     public AsyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response> updateApiGroupV2AsyncInvoker(
         UpdateApiGroupV2Request request) {
-        return new AsyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response>(request, RomaMeta.updateApiGroupV2,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateApiGroupV2, hcClient);
     }
 
     /**
@@ -8455,7 +8264,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiV2Request 请求对象
+     * @param request UpdateApiV2Request 请求对象
      * @return CompletableFuture<UpdateApiV2Response>
      */
     public CompletableFuture<UpdateApiV2Response> updateApiV2Async(UpdateApiV2Request request) {
@@ -8469,11 +8278,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiV2Request 请求对象
+     * @param request UpdateApiV2Request 请求对象
      * @return AsyncInvoker<UpdateApiV2Request, UpdateApiV2Response>
      */
     public AsyncInvoker<UpdateApiV2Request, UpdateApiV2Response> updateApiV2AsyncInvoker(UpdateApiV2Request request) {
-        return new AsyncInvoker<UpdateApiV2Request, UpdateApiV2Response>(request, RomaMeta.updateApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateApiV2, hcClient);
     }
 
     /**
@@ -8483,7 +8292,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteApiAclBindingV2Request 请求对象
+     * @param request BatchDeleteApiAclBindingV2Request 请求对象
      * @return CompletableFuture<BatchDeleteApiAclBindingV2Response>
      */
     public CompletableFuture<BatchDeleteApiAclBindingV2Response> batchDeleteApiAclBindingV2Async(
@@ -8498,13 +8307,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteApiAclBindingV2Request 请求对象
+     * @param request BatchDeleteApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response>
      */
     public AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> batchDeleteApiAclBindingV2AsyncInvoker(
         BatchDeleteApiAclBindingV2Request request) {
-        return new AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response>(request,
-            RomaMeta.batchDeleteApiAclBindingV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchDeleteApiAclBindingV2, hcClient);
     }
 
     /**
@@ -8516,7 +8324,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiAclBindingV2Request 请求对象
+     * @param request CreateApiAclBindingV2Request 请求对象
      * @return CompletableFuture<CreateApiAclBindingV2Response>
      */
     public CompletableFuture<CreateApiAclBindingV2Response> createApiAclBindingV2Async(
@@ -8533,13 +8341,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiAclBindingV2Request 请求对象
+     * @param request CreateApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response>
      */
     public AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> createApiAclBindingV2AsyncInvoker(
         CreateApiAclBindingV2Request request) {
-        return new AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response>(request,
-            RomaMeta.createApiAclBindingV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createApiAclBindingV2, hcClient);
     }
 
     /**
@@ -8549,7 +8356,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiAclBindingV2Request 请求对象
+     * @param request DeleteApiAclBindingV2Request 请求对象
      * @return CompletableFuture<DeleteApiAclBindingV2Response>
      */
     public CompletableFuture<DeleteApiAclBindingV2Response> deleteApiAclBindingV2Async(
@@ -8564,13 +8371,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiAclBindingV2Request 请求对象
+     * @param request DeleteApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response>
      */
     public AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> deleteApiAclBindingV2AsyncInvoker(
         DeleteApiAclBindingV2Request request) {
-        return new AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response>(request,
-            RomaMeta.deleteApiAclBindingV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteApiAclBindingV2, hcClient);
     }
 
     /**
@@ -8580,7 +8386,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclPolicyBindedToApiV2Request 请求对象
+     * @param request ListAclPolicyBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListAclPolicyBindedToApiV2Response>
      */
     public CompletableFuture<ListAclPolicyBindedToApiV2Response> listAclPolicyBindedToApiV2Async(
@@ -8595,13 +8401,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclPolicyBindedToApiV2Request 请求对象
+     * @param request ListAclPolicyBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response>
      */
     public AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> listAclPolicyBindedToApiV2AsyncInvoker(
         ListAclPolicyBindedToApiV2Request request) {
-        return new AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response>(request,
-            RomaMeta.listAclPolicyBindedToApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listAclPolicyBindedToApiV2, hcClient);
     }
 
     /**
@@ -8611,7 +8416,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAclPolicyV2Request 请求对象
+     * @param request ListApisBindedToAclPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToAclPolicyV2Response>
      */
     public CompletableFuture<ListApisBindedToAclPolicyV2Response> listApisBindedToAclPolicyV2Async(
@@ -8626,13 +8431,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAclPolicyV2Request 请求对象
+     * @param request ListApisBindedToAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response>
      */
     public AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> listApisBindedToAclPolicyV2AsyncInvoker(
         ListApisBindedToAclPolicyV2Request request) {
-        return new AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response>(request,
-            RomaMeta.listApisBindedToAclPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApisBindedToAclPolicyV2, hcClient);
     }
 
     /**
@@ -8642,7 +8446,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAclPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToAclPolicyV2Response>
      */
     public CompletableFuture<ListApisUnbindedToAclPolicyV2Response> listApisUnbindedToAclPolicyV2Async(
@@ -8657,13 +8461,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAclPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response>
      */
     public AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> listApisUnbindedToAclPolicyV2AsyncInvoker(
         ListApisUnbindedToAclPolicyV2Request request) {
-        return new AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response>(request,
-            RomaMeta.listApisUnbindedToAclPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApisUnbindedToAclPolicyV2, hcClient);
     }
 
     /**
@@ -8673,7 +8476,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelingAuthorizationV2Request 请求对象
+     * @param request CancelingAuthorizationV2Request 请求对象
      * @return CompletableFuture<CancelingAuthorizationV2Response>
      */
     public CompletableFuture<CancelingAuthorizationV2Response> cancelingAuthorizationV2Async(
@@ -8688,13 +8491,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelingAuthorizationV2Request 请求对象
+     * @param request CancelingAuthorizationV2Request 请求对象
      * @return AsyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response>
      */
     public AsyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> cancelingAuthorizationV2AsyncInvoker(
         CancelingAuthorizationV2Request request) {
-        return new AsyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response>(request,
-            RomaMeta.cancelingAuthorizationV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.cancelingAuthorizationV2, hcClient);
     }
 
     /**
@@ -8704,7 +8506,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAuthorizingAppsV2Request 请求对象
+     * @param request CreateAuthorizingAppsV2Request 请求对象
      * @return CompletableFuture<CreateAuthorizingAppsV2Response>
      */
     public CompletableFuture<CreateAuthorizingAppsV2Response> createAuthorizingAppsV2Async(
@@ -8719,13 +8521,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAuthorizingAppsV2Request 请求对象
+     * @param request CreateAuthorizingAppsV2Request 请求对象
      * @return AsyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>
      */
     public AsyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> createAuthorizingAppsV2AsyncInvoker(
         CreateAuthorizingAppsV2Request request) {
-        return new AsyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>(request,
-            RomaMeta.createAuthorizingAppsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createAuthorizingAppsV2, hcClient);
     }
 
     /**
@@ -8735,7 +8536,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAppV2Request 请求对象
+     * @param request ListApisBindedToAppV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToAppV2Response>
      */
     public CompletableFuture<ListApisBindedToAppV2Response> listApisBindedToAppV2Async(
@@ -8750,13 +8551,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAppV2Request 请求对象
+     * @param request ListApisBindedToAppV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response>
      */
     public AsyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> listApisBindedToAppV2AsyncInvoker(
         ListApisBindedToAppV2Request request) {
-        return new AsyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response>(request,
-            RomaMeta.listApisBindedToAppV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApisBindedToAppV2, hcClient);
     }
 
     /**
@@ -8766,7 +8566,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAppV2Request 请求对象
+     * @param request ListApisUnbindedToAppV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToAppV2Response>
      */
     public CompletableFuture<ListApisUnbindedToAppV2Response> listApisUnbindedToAppV2Async(
@@ -8781,13 +8581,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAppV2Request 请求对象
+     * @param request ListApisUnbindedToAppV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response>
      */
     public AsyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> listApisUnbindedToAppV2AsyncInvoker(
         ListApisUnbindedToAppV2Request request) {
-        return new AsyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response>(request,
-            RomaMeta.listApisUnbindedToAppV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listApisUnbindedToAppV2, hcClient);
     }
 
     /**
@@ -8797,7 +8596,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsBindedToApiV2Request 请求对象
+     * @param request ListAppsBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListAppsBindedToApiV2Response>
      */
     public CompletableFuture<ListAppsBindedToApiV2Response> listAppsBindedToApiV2Async(
@@ -8812,13 +8611,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsBindedToApiV2Request 请求对象
+     * @param request ListAppsBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response>
      */
     public AsyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> listAppsBindedToApiV2AsyncInvoker(
         ListAppsBindedToApiV2Request request) {
-        return new AsyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response>(request,
-            RomaMeta.listAppsBindedToApiV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listAppsBindedToApiV2, hcClient);
     }
 
     /**
@@ -8828,7 +8626,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDuplicateApisForAppV2Request 请求对象
+     * @param request ListDuplicateApisForAppV2Request 请求对象
      * @return CompletableFuture<ListDuplicateApisForAppV2Response>
      */
     public CompletableFuture<ListDuplicateApisForAppV2Response> listDuplicateApisForAppV2Async(
@@ -8843,13 +8641,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDuplicateApisForAppV2Request 请求对象
+     * @param request ListDuplicateApisForAppV2Request 请求对象
      * @return AsyncInvoker<ListDuplicateApisForAppV2Request, ListDuplicateApisForAppV2Response>
      */
     public AsyncInvoker<ListDuplicateApisForAppV2Request, ListDuplicateApisForAppV2Response> listDuplicateApisForAppV2AsyncInvoker(
         ListDuplicateApisForAppV2Request request) {
-        return new AsyncInvoker<ListDuplicateApisForAppV2Request, ListDuplicateApisForAppV2Response>(request,
-            RomaMeta.listDuplicateApisForAppV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listDuplicateApisForAppV2, hcClient);
     }
 
     /**
@@ -8860,7 +8657,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddUserToAppRequest 请求对象
+     * @param request AddUserToAppRequest 请求对象
      * @return CompletableFuture<AddUserToAppResponse>
      */
     public CompletableFuture<AddUserToAppResponse> addUserToAppAsync(AddUserToAppRequest request) {
@@ -8875,12 +8672,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddUserToAppRequest 请求对象
+     * @param request AddUserToAppRequest 请求对象
      * @return AsyncInvoker<AddUserToAppRequest, AddUserToAppResponse>
      */
     public AsyncInvoker<AddUserToAppRequest, AddUserToAppResponse> addUserToAppAsyncInvoker(
         AddUserToAppRequest request) {
-        return new AsyncInvoker<AddUserToAppRequest, AddUserToAppResponse>(request, RomaMeta.addUserToApp, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.addUserToApp, hcClient);
     }
 
     /**
@@ -8890,7 +8687,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAuthUsersOfAppRequest 请求对象
+     * @param request CheckAuthUsersOfAppRequest 请求对象
      * @return CompletableFuture<CheckAuthUsersOfAppResponse>
      */
     public CompletableFuture<CheckAuthUsersOfAppResponse> checkAuthUsersOfAppAsync(CheckAuthUsersOfAppRequest request) {
@@ -8904,13 +8701,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAuthUsersOfAppRequest 请求对象
+     * @param request CheckAuthUsersOfAppRequest 请求对象
      * @return AsyncInvoker<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse>
      */
     public AsyncInvoker<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse> checkAuthUsersOfAppAsyncInvoker(
         CheckAuthUsersOfAppRequest request) {
-        return new AsyncInvoker<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse>(request,
-            RomaMeta.checkAuthUsersOfApp, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.checkAuthUsersOfApp, hcClient);
     }
 
     /**
@@ -8920,7 +8716,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckCanAuthUsersOfAppRequest 请求对象
+     * @param request CheckCanAuthUsersOfAppRequest 请求对象
      * @return CompletableFuture<CheckCanAuthUsersOfAppResponse>
      */
     public CompletableFuture<CheckCanAuthUsersOfAppResponse> checkCanAuthUsersOfAppAsync(
@@ -8935,13 +8731,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckCanAuthUsersOfAppRequest 请求对象
+     * @param request CheckCanAuthUsersOfAppRequest 请求对象
      * @return AsyncInvoker<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse>
      */
     public AsyncInvoker<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse> checkCanAuthUsersOfAppAsyncInvoker(
         CheckCanAuthUsersOfAppRequest request) {
-        return new AsyncInvoker<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse>(request,
-            RomaMeta.checkCanAuthUsersOfApp, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.checkCanAuthUsersOfApp, hcClient);
     }
 
     /**
@@ -8951,7 +8746,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRomaAppDetailsRequest 请求对象
+     * @param request CheckRomaAppDetailsRequest 请求对象
      * @return CompletableFuture<CheckRomaAppDetailsResponse>
      */
     public CompletableFuture<CheckRomaAppDetailsResponse> checkRomaAppDetailsAsync(CheckRomaAppDetailsRequest request) {
@@ -8965,13 +8760,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRomaAppDetailsRequest 请求对象
+     * @param request CheckRomaAppDetailsRequest 请求对象
      * @return AsyncInvoker<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse>
      */
     public AsyncInvoker<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse> checkRomaAppDetailsAsyncInvoker(
         CheckRomaAppDetailsRequest request) {
-        return new AsyncInvoker<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse>(request,
-            RomaMeta.checkRomaAppDetails, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.checkRomaAppDetails, hcClient);
     }
 
     /**
@@ -8981,7 +8775,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRomaAppSecretRequest 请求对象
+     * @param request CheckRomaAppSecretRequest 请求对象
      * @return CompletableFuture<CheckRomaAppSecretResponse>
      */
     public CompletableFuture<CheckRomaAppSecretResponse> checkRomaAppSecretAsync(CheckRomaAppSecretRequest request) {
@@ -8995,13 +8789,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRomaAppSecretRequest 请求对象
+     * @param request CheckRomaAppSecretRequest 请求对象
      * @return AsyncInvoker<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse>
      */
     public AsyncInvoker<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse> checkRomaAppSecretAsyncInvoker(
         CheckRomaAppSecretRequest request) {
-        return new AsyncInvoker<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse>(request,
-            RomaMeta.checkRomaAppSecret, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.checkRomaAppSecret, hcClient);
     }
 
     /**
@@ -9011,7 +8804,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRomaAppRequest 请求对象
+     * @param request CreateRomaAppRequest 请求对象
      * @return CompletableFuture<CreateRomaAppResponse>
      */
     public CompletableFuture<CreateRomaAppResponse> createRomaAppAsync(CreateRomaAppRequest request) {
@@ -9025,12 +8818,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRomaAppRequest 请求对象
+     * @param request CreateRomaAppRequest 请求对象
      * @return AsyncInvoker<CreateRomaAppRequest, CreateRomaAppResponse>
      */
     public AsyncInvoker<CreateRomaAppRequest, CreateRomaAppResponse> createRomaAppAsyncInvoker(
         CreateRomaAppRequest request) {
-        return new AsyncInvoker<CreateRomaAppRequest, CreateRomaAppResponse>(request, RomaMeta.createRomaApp, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createRomaApp, hcClient);
     }
 
     /**
@@ -9040,7 +8833,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRomaAppRequest 请求对象
+     * @param request DeleteRomaAppRequest 请求对象
      * @return CompletableFuture<DeleteRomaAppResponse>
      */
     public CompletableFuture<DeleteRomaAppResponse> deleteRomaAppAsync(DeleteRomaAppRequest request) {
@@ -9054,12 +8847,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRomaAppRequest 请求对象
+     * @param request DeleteRomaAppRequest 请求对象
      * @return AsyncInvoker<DeleteRomaAppRequest, DeleteRomaAppResponse>
      */
     public AsyncInvoker<DeleteRomaAppRequest, DeleteRomaAppResponse> deleteRomaAppAsyncInvoker(
         DeleteRomaAppRequest request) {
-        return new AsyncInvoker<DeleteRomaAppRequest, DeleteRomaAppResponse>(request, RomaMeta.deleteRomaApp, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteRomaApp, hcClient);
     }
 
     /**
@@ -9069,7 +8862,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRomaAppRequest 请求对象
+     * @param request ListRomaAppRequest 请求对象
      * @return CompletableFuture<ListRomaAppResponse>
      */
     public CompletableFuture<ListRomaAppResponse> listRomaAppAsync(ListRomaAppRequest request) {
@@ -9083,11 +8876,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRomaAppRequest 请求对象
+     * @param request ListRomaAppRequest 请求对象
      * @return AsyncInvoker<ListRomaAppRequest, ListRomaAppResponse>
      */
     public AsyncInvoker<ListRomaAppRequest, ListRomaAppResponse> listRomaAppAsyncInvoker(ListRomaAppRequest request) {
-        return new AsyncInvoker<ListRomaAppRequest, ListRomaAppResponse>(request, RomaMeta.listRomaApp, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listRomaApp, hcClient);
     }
 
     /**
@@ -9097,7 +8890,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetRomaAppSecretRequest 请求对象
+     * @param request ResetRomaAppSecretRequest 请求对象
      * @return CompletableFuture<ResetRomaAppSecretResponse>
      */
     public CompletableFuture<ResetRomaAppSecretResponse> resetRomaAppSecretAsync(ResetRomaAppSecretRequest request) {
@@ -9111,13 +8904,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetRomaAppSecretRequest 请求对象
+     * @param request ResetRomaAppSecretRequest 请求对象
      * @return AsyncInvoker<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse>
      */
     public AsyncInvoker<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse> resetRomaAppSecretAsyncInvoker(
         ResetRomaAppSecretRequest request) {
-        return new AsyncInvoker<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse>(request,
-            RomaMeta.resetRomaAppSecret, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.resetRomaAppSecret, hcClient);
     }
 
     /**
@@ -9127,7 +8919,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRomaAppRequest 请求对象
+     * @param request UpdateRomaAppRequest 请求对象
      * @return CompletableFuture<UpdateRomaAppResponse>
      */
     public CompletableFuture<UpdateRomaAppResponse> updateRomaAppAsync(UpdateRomaAppRequest request) {
@@ -9141,12 +8933,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRomaAppRequest 请求对象
+     * @param request UpdateRomaAppRequest 请求对象
      * @return AsyncInvoker<UpdateRomaAppRequest, UpdateRomaAppResponse>
      */
     public AsyncInvoker<UpdateRomaAppRequest, UpdateRomaAppResponse> updateRomaAppAsyncInvoker(
         UpdateRomaAppRequest request) {
-        return new AsyncInvoker<UpdateRomaAppRequest, UpdateRomaAppResponse>(request, RomaMeta.updateRomaApp, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateRomaApp, hcClient);
     }
 
     /**
@@ -9156,7 +8948,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateRomaAppRequest 请求对象
+     * @param request ValidateRomaAppRequest 请求对象
      * @return CompletableFuture<ValidateRomaAppResponse>
      */
     public CompletableFuture<ValidateRomaAppResponse> validateRomaAppAsync(ValidateRomaAppRequest request) {
@@ -9170,13 +8962,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateRomaAppRequest 请求对象
+     * @param request ValidateRomaAppRequest 请求对象
      * @return AsyncInvoker<ValidateRomaAppRequest, ValidateRomaAppResponse>
      */
     public AsyncInvoker<ValidateRomaAppRequest, ValidateRomaAppResponse> validateRomaAppAsyncInvoker(
         ValidateRomaAppRequest request) {
-        return new AsyncInvoker<ValidateRomaAppRequest, ValidateRomaAppResponse>(request, RomaMeta.validateRomaApp,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.validateRomaApp, hcClient);
     }
 
     /**
@@ -9186,7 +8977,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAssetJobStatusRequest 请求对象
+     * @param request CheckAssetJobStatusRequest 请求对象
      * @return CompletableFuture<CheckAssetJobStatusResponse>
      */
     public CompletableFuture<CheckAssetJobStatusResponse> checkAssetJobStatusAsync(CheckAssetJobStatusRequest request) {
@@ -9200,13 +8991,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAssetJobStatusRequest 请求对象
+     * @param request CheckAssetJobStatusRequest 请求对象
      * @return AsyncInvoker<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse>
      */
     public AsyncInvoker<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse> checkAssetJobStatusAsyncInvoker(
         CheckAssetJobStatusRequest request) {
-        return new AsyncInvoker<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse>(request,
-            RomaMeta.checkAssetJobStatus, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.checkAssetJobStatus, hcClient);
     }
 
     /**
@@ -9219,7 +9009,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetRequest 请求对象
+     * @param request DeleteAssetRequest 请求对象
      * @return CompletableFuture<DeleteAssetResponse>
      */
     public CompletableFuture<DeleteAssetResponse> deleteAssetAsync(DeleteAssetRequest request) {
@@ -9236,11 +9026,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetRequest 请求对象
+     * @param request DeleteAssetRequest 请求对象
      * @return AsyncInvoker<DeleteAssetRequest, DeleteAssetResponse>
      */
     public AsyncInvoker<DeleteAssetRequest, DeleteAssetResponse> deleteAssetAsyncInvoker(DeleteAssetRequest request) {
-        return new AsyncInvoker<DeleteAssetRequest, DeleteAssetResponse>(request, RomaMeta.deleteAsset, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteAsset, hcClient);
     }
 
     /**
@@ -9251,7 +9041,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadAssetArchiveRequest 请求对象
+     * @param request DownloadAssetArchiveRequest 请求对象
      * @return CompletableFuture<DownloadAssetArchiveResponse>
      */
     public CompletableFuture<DownloadAssetArchiveResponse> downloadAssetArchiveAsync(
@@ -9267,13 +9057,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadAssetArchiveRequest 请求对象
+     * @param request DownloadAssetArchiveRequest 请求对象
      * @return AsyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse>
      */
     public AsyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> downloadAssetArchiveAsyncInvoker(
         DownloadAssetArchiveRequest request) {
-        return new AsyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse>(request,
-            RomaMeta.downloadAssetArchive, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.downloadAssetArchive, hcClient);
     }
 
     /**
@@ -9286,7 +9075,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportAssetRequest 请求对象
+     * @param request ExportAssetRequest 请求对象
      * @return CompletableFuture<ExportAssetResponse>
      */
     public CompletableFuture<ExportAssetResponse> exportAssetAsync(ExportAssetRequest request) {
@@ -9303,11 +9092,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportAssetRequest 请求对象
+     * @param request ExportAssetRequest 请求对象
      * @return AsyncInvoker<ExportAssetRequest, ExportAssetResponse>
      */
     public AsyncInvoker<ExportAssetRequest, ExportAssetResponse> exportAssetAsyncInvoker(ExportAssetRequest request) {
-        return new AsyncInvoker<ExportAssetRequest, ExportAssetResponse>(request, RomaMeta.exportAsset, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.exportAsset, hcClient);
     }
 
     /**
@@ -9319,7 +9108,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportAssetRequest 请求对象
+     * @param request ImportAssetRequest 请求对象
      * @return CompletableFuture<ImportAssetResponse>
      */
     public CompletableFuture<ImportAssetResponse> importAssetAsync(ImportAssetRequest request) {
@@ -9335,11 +9124,11 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportAssetRequest 请求对象
+     * @param request ImportAssetRequest 请求对象
      * @return AsyncInvoker<ImportAssetRequest, ImportAssetResponse>
      */
     public AsyncInvoker<ImportAssetRequest, ImportAssetResponse> importAssetAsyncInvoker(ImportAssetRequest request) {
-        return new AsyncInvoker<ImportAssetRequest, ImportAssetResponse>(request, RomaMeta.importAsset, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.importAsset, hcClient);
     }
 
     /**
@@ -9349,7 +9138,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDictionaryRequest 请求对象
+     * @param request CheckDictionaryRequest 请求对象
      * @return CompletableFuture<CheckDictionaryResponse>
      */
     public CompletableFuture<CheckDictionaryResponse> checkDictionaryAsync(CheckDictionaryRequest request) {
@@ -9363,13 +9152,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDictionaryRequest 请求对象
+     * @param request CheckDictionaryRequest 请求对象
      * @return AsyncInvoker<CheckDictionaryRequest, CheckDictionaryResponse>
      */
     public AsyncInvoker<CheckDictionaryRequest, CheckDictionaryResponse> checkDictionaryAsyncInvoker(
         CheckDictionaryRequest request) {
-        return new AsyncInvoker<CheckDictionaryRequest, CheckDictionaryResponse>(request, RomaMeta.checkDictionary,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.checkDictionary, hcClient);
     }
 
     /**
@@ -9379,7 +9167,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDictionaryRequest 请求对象
+     * @param request CreateDictionaryRequest 请求对象
      * @return CompletableFuture<CreateDictionaryResponse>
      */
     public CompletableFuture<CreateDictionaryResponse> createDictionaryAsync(CreateDictionaryRequest request) {
@@ -9393,13 +9181,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDictionaryRequest 请求对象
+     * @param request CreateDictionaryRequest 请求对象
      * @return AsyncInvoker<CreateDictionaryRequest, CreateDictionaryResponse>
      */
     public AsyncInvoker<CreateDictionaryRequest, CreateDictionaryResponse> createDictionaryAsyncInvoker(
         CreateDictionaryRequest request) {
-        return new AsyncInvoker<CreateDictionaryRequest, CreateDictionaryResponse>(request, RomaMeta.createDictionary,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createDictionary, hcClient);
     }
 
     /**
@@ -9409,7 +9196,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDictionaryRequest 请求对象
+     * @param request DeleteDictionaryRequest 请求对象
      * @return CompletableFuture<DeleteDictionaryResponse>
      */
     public CompletableFuture<DeleteDictionaryResponse> deleteDictionaryAsync(DeleteDictionaryRequest request) {
@@ -9423,13 +9210,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDictionaryRequest 请求对象
+     * @param request DeleteDictionaryRequest 请求对象
      * @return AsyncInvoker<DeleteDictionaryRequest, DeleteDictionaryResponse>
      */
     public AsyncInvoker<DeleteDictionaryRequest, DeleteDictionaryResponse> deleteDictionaryAsyncInvoker(
         DeleteDictionaryRequest request) {
-        return new AsyncInvoker<DeleteDictionaryRequest, DeleteDictionaryResponse>(request, RomaMeta.deleteDictionary,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteDictionary, hcClient);
     }
 
     /**
@@ -9439,7 +9225,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDictionaryRequest 请求对象
+     * @param request ListDictionaryRequest 请求对象
      * @return CompletableFuture<ListDictionaryResponse>
      */
     public CompletableFuture<ListDictionaryResponse> listDictionaryAsync(ListDictionaryRequest request) {
@@ -9453,13 +9239,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDictionaryRequest 请求对象
+     * @param request ListDictionaryRequest 请求对象
      * @return AsyncInvoker<ListDictionaryRequest, ListDictionaryResponse>
      */
     public AsyncInvoker<ListDictionaryRequest, ListDictionaryResponse> listDictionaryAsyncInvoker(
         ListDictionaryRequest request) {
-        return new AsyncInvoker<ListDictionaryRequest, ListDictionaryResponse>(request, RomaMeta.listDictionary,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listDictionary, hcClient);
     }
 
     /**
@@ -9469,7 +9254,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDictionaryRequest 请求对象
+     * @param request UpdateDictionaryRequest 请求对象
      * @return CompletableFuture<UpdateDictionaryResponse>
      */
     public CompletableFuture<UpdateDictionaryResponse> updateDictionaryAsync(UpdateDictionaryRequest request) {
@@ -9483,13 +9268,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDictionaryRequest 请求对象
+     * @param request UpdateDictionaryRequest 请求对象
      * @return AsyncInvoker<UpdateDictionaryRequest, UpdateDictionaryResponse>
      */
     public AsyncInvoker<UpdateDictionaryRequest, UpdateDictionaryResponse> updateDictionaryAsyncInvoker(
         UpdateDictionaryRequest request) {
-        return new AsyncInvoker<UpdateDictionaryRequest, UpdateDictionaryResponse>(request, RomaMeta.updateDictionary,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateDictionary, hcClient);
     }
 
     /**
@@ -9499,7 +9283,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateDictionaryRequest 请求对象
+     * @param request ValidateDictionaryRequest 请求对象
      * @return CompletableFuture<ValidateDictionaryResponse>
      */
     public CompletableFuture<ValidateDictionaryResponse> validateDictionaryAsync(ValidateDictionaryRequest request) {
@@ -9513,13 +9297,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateDictionaryRequest 请求对象
+     * @param request ValidateDictionaryRequest 请求对象
      * @return AsyncInvoker<ValidateDictionaryRequest, ValidateDictionaryResponse>
      */
     public AsyncInvoker<ValidateDictionaryRequest, ValidateDictionaryResponse> validateDictionaryAsyncInvoker(
         ValidateDictionaryRequest request) {
-        return new AsyncInvoker<ValidateDictionaryRequest, ValidateDictionaryResponse>(request,
-            RomaMeta.validateDictionary, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.validateDictionary, hcClient);
     }
 
     /**
@@ -9529,7 +9312,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRomaInstanceListV2Request 请求对象
+     * @param request CheckRomaInstanceListV2Request 请求对象
      * @return CompletableFuture<CheckRomaInstanceListV2Response>
      */
     public CompletableFuture<CheckRomaInstanceListV2Response> checkRomaInstanceListV2Async(
@@ -9544,13 +9327,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckRomaInstanceListV2Request 请求对象
+     * @param request CheckRomaInstanceListV2Request 请求对象
      * @return AsyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response>
      */
     public AsyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> checkRomaInstanceListV2AsyncInvoker(
         CheckRomaInstanceListV2Request request) {
-        return new AsyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response>(request,
-            RomaMeta.checkRomaInstanceListV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.checkRomaInstanceListV2, hcClient);
     }
 
     /**
@@ -9560,7 +9342,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMqsInstanceRequest 请求对象
+     * @param request ListMqsInstanceRequest 请求对象
      * @return CompletableFuture<ListMqsInstanceResponse>
      */
     public CompletableFuture<ListMqsInstanceResponse> listMqsInstanceAsync(ListMqsInstanceRequest request) {
@@ -9574,13 +9356,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMqsInstanceRequest 请求对象
+     * @param request ListMqsInstanceRequest 请求对象
      * @return AsyncInvoker<ListMqsInstanceRequest, ListMqsInstanceResponse>
      */
     public AsyncInvoker<ListMqsInstanceRequest, ListMqsInstanceResponse> listMqsInstanceAsyncInvoker(
         ListMqsInstanceRequest request) {
-        return new AsyncInvoker<ListMqsInstanceRequest, ListMqsInstanceResponse>(request, RomaMeta.listMqsInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listMqsInstance, hcClient);
     }
 
     /**
@@ -9590,7 +9371,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMqsInstanceRequest 请求对象
+     * @param request ShowMqsInstanceRequest 请求对象
      * @return CompletableFuture<ShowMqsInstanceResponse>
      */
     public CompletableFuture<ShowMqsInstanceResponse> showMqsInstanceAsync(ShowMqsInstanceRequest request) {
@@ -9604,13 +9385,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMqsInstanceRequest 请求对象
+     * @param request ShowMqsInstanceRequest 请求对象
      * @return AsyncInvoker<ShowMqsInstanceRequest, ShowMqsInstanceResponse>
      */
     public AsyncInvoker<ShowMqsInstanceRequest, ShowMqsInstanceResponse> showMqsInstanceAsyncInvoker(
         ShowMqsInstanceRequest request) {
-        return new AsyncInvoker<ShowMqsInstanceRequest, ShowMqsInstanceResponse>(request, RomaMeta.showMqsInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showMqsInstance, hcClient);
     }
 
     /**
@@ -9620,7 +9400,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportApiDefinitionsV2Request 请求对象
+     * @param request ExportApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ExportApiDefinitionsV2Response>
      */
     public CompletableFuture<ExportApiDefinitionsV2Response> exportApiDefinitionsV2Async(
@@ -9635,13 +9415,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportApiDefinitionsV2Request 请求对象
+     * @param request ExportApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response>
      */
     public AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> exportApiDefinitionsV2AsyncInvoker(
         ExportApiDefinitionsV2Request request) {
-        return new AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response>(request,
-            RomaMeta.exportApiDefinitionsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.exportApiDefinitionsV2, hcClient);
     }
 
     /**
@@ -9651,7 +9430,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportLiveDataApiDefinitionsV2Request 请求对象
+     * @param request ExportLiveDataApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ExportLiveDataApiDefinitionsV2Response>
      */
     public CompletableFuture<ExportLiveDataApiDefinitionsV2Response> exportLiveDataApiDefinitionsV2Async(
@@ -9666,13 +9445,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportLiveDataApiDefinitionsV2Request 请求对象
+     * @param request ExportLiveDataApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ExportLiveDataApiDefinitionsV2Request, ExportLiveDataApiDefinitionsV2Response>
      */
     public AsyncInvoker<ExportLiveDataApiDefinitionsV2Request, ExportLiveDataApiDefinitionsV2Response> exportLiveDataApiDefinitionsV2AsyncInvoker(
         ExportLiveDataApiDefinitionsV2Request request) {
-        return new AsyncInvoker<ExportLiveDataApiDefinitionsV2Request, ExportLiveDataApiDefinitionsV2Response>(request,
-            RomaMeta.exportLiveDataApiDefinitionsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.exportLiveDataApiDefinitionsV2, hcClient);
     }
 
     /**
@@ -9682,7 +9460,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportApiDefinitionsV2Request 请求对象
+     * @param request ImportApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ImportApiDefinitionsV2Response>
      */
     public CompletableFuture<ImportApiDefinitionsV2Response> importApiDefinitionsV2Async(
@@ -9697,13 +9475,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportApiDefinitionsV2Request 请求对象
+     * @param request ImportApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>
      */
     public AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> importApiDefinitionsV2AsyncInvoker(
         ImportApiDefinitionsV2Request request) {
-        return new AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>(request,
-            RomaMeta.importApiDefinitionsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.importApiDefinitionsV2, hcClient);
     }
 
     /**
@@ -9713,7 +9490,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportLiveDataApiDefinitionsV2Request 请求对象
+     * @param request ImportLiveDataApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ImportLiveDataApiDefinitionsV2Response>
      */
     public CompletableFuture<ImportLiveDataApiDefinitionsV2Response> importLiveDataApiDefinitionsV2Async(
@@ -9728,13 +9505,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportLiveDataApiDefinitionsV2Request 请求对象
+     * @param request ImportLiveDataApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response>
      */
     public AsyncInvoker<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response> importLiveDataApiDefinitionsV2AsyncInvoker(
         ImportLiveDataApiDefinitionsV2Request request) {
-        return new AsyncInvoker<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response>(request,
-            RomaMeta.importLiveDataApiDefinitionsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.importLiveDataApiDefinitionsV2, hcClient);
     }
 
     /**
@@ -9744,7 +9520,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateCertsV2Request 请求对象
+     * @param request BatchAssociateCertsV2Request 请求对象
      * @return CompletableFuture<BatchAssociateCertsV2Response>
      */
     public CompletableFuture<BatchAssociateCertsV2Response> batchAssociateCertsV2Async(
@@ -9759,13 +9535,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateCertsV2Request 请求对象
+     * @param request BatchAssociateCertsV2Request 请求对象
      * @return AsyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response>
      */
     public AsyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> batchAssociateCertsV2AsyncInvoker(
         BatchAssociateCertsV2Request request) {
-        return new AsyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response>(request,
-            RomaMeta.batchAssociateCertsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchAssociateCertsV2, hcClient);
     }
 
     /**
@@ -9775,7 +9550,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateDomainsV2Request 请求对象
+     * @param request BatchAssociateDomainsV2Request 请求对象
      * @return CompletableFuture<BatchAssociateDomainsV2Response>
      */
     public CompletableFuture<BatchAssociateDomainsV2Response> batchAssociateDomainsV2Async(
@@ -9790,13 +9565,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateDomainsV2Request 请求对象
+     * @param request BatchAssociateDomainsV2Request 请求对象
      * @return AsyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response>
      */
     public AsyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> batchAssociateDomainsV2AsyncInvoker(
         BatchAssociateDomainsV2Request request) {
-        return new AsyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response>(request,
-            RomaMeta.batchAssociateDomainsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchAssociateDomainsV2, hcClient);
     }
 
     /**
@@ -9806,7 +9580,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateCertsV2Request 请求对象
+     * @param request BatchDisassociateCertsV2Request 请求对象
      * @return CompletableFuture<BatchDisassociateCertsV2Response>
      */
     public CompletableFuture<BatchDisassociateCertsV2Response> batchDisassociateCertsV2Async(
@@ -9821,13 +9595,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateCertsV2Request 请求对象
+     * @param request BatchDisassociateCertsV2Request 请求对象
      * @return AsyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response>
      */
     public AsyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> batchDisassociateCertsV2AsyncInvoker(
         BatchDisassociateCertsV2Request request) {
-        return new AsyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response>(request,
-            RomaMeta.batchDisassociateCertsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchDisassociateCertsV2, hcClient);
     }
 
     /**
@@ -9837,7 +9610,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateDomainsV2Request 请求对象
+     * @param request BatchDisassociateDomainsV2Request 请求对象
      * @return CompletableFuture<BatchDisassociateDomainsV2Response>
      */
     public CompletableFuture<BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2Async(
@@ -9852,13 +9625,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateDomainsV2Request 请求对象
+     * @param request BatchDisassociateDomainsV2Request 请求对象
      * @return AsyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response>
      */
     public AsyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2AsyncInvoker(
         BatchDisassociateDomainsV2Request request) {
-        return new AsyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response>(request,
-            RomaMeta.batchDisassociateDomainsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchDisassociateDomainsV2, hcClient);
     }
 
     /**
@@ -9868,7 +9640,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateV2Request 请求对象
+     * @param request CreateCertificateV2Request 请求对象
      * @return CompletableFuture<CreateCertificateV2Response>
      */
     public CompletableFuture<CreateCertificateV2Response> createCertificateV2Async(CreateCertificateV2Request request) {
@@ -9882,13 +9654,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateV2Request 请求对象
+     * @param request CreateCertificateV2Request 请求对象
      * @return AsyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response>
      */
     public AsyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response> createCertificateV2AsyncInvoker(
         CreateCertificateV2Request request) {
-        return new AsyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response>(request,
-            RomaMeta.createCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createCertificateV2, hcClient);
     }
 
     /**
@@ -9898,7 +9669,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateV2Request 请求对象
+     * @param request DeleteCertificateV2Request 请求对象
      * @return CompletableFuture<DeleteCertificateV2Response>
      */
     public CompletableFuture<DeleteCertificateV2Response> deleteCertificateV2Async(DeleteCertificateV2Request request) {
@@ -9912,13 +9683,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateV2Request 请求对象
+     * @param request DeleteCertificateV2Request 请求对象
      * @return AsyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response>
      */
     public AsyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response> deleteCertificateV2AsyncInvoker(
         DeleteCertificateV2Request request) {
-        return new AsyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response>(request,
-            RomaMeta.deleteCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteCertificateV2, hcClient);
     }
 
     /**
@@ -9928,7 +9698,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttachedDomainsV2Request 请求对象
+     * @param request ListAttachedDomainsV2Request 请求对象
      * @return CompletableFuture<ListAttachedDomainsV2Response>
      */
     public CompletableFuture<ListAttachedDomainsV2Response> listAttachedDomainsV2Async(
@@ -9943,13 +9713,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttachedDomainsV2Request 请求对象
+     * @param request ListAttachedDomainsV2Request 请求对象
      * @return AsyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response>
      */
     public AsyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> listAttachedDomainsV2AsyncInvoker(
         ListAttachedDomainsV2Request request) {
-        return new AsyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response>(request,
-            RomaMeta.listAttachedDomainsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listAttachedDomainsV2, hcClient);
     }
 
     /**
@@ -9959,7 +9728,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesV2Request 请求对象
+     * @param request ListCertificatesV2Request 请求对象
      * @return CompletableFuture<ListCertificatesV2Response>
      */
     public CompletableFuture<ListCertificatesV2Response> listCertificatesV2Async(ListCertificatesV2Request request) {
@@ -9973,13 +9742,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesV2Request 请求对象
+     * @param request ListCertificatesV2Request 请求对象
      * @return AsyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response>
      */
     public AsyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response> listCertificatesV2AsyncInvoker(
         ListCertificatesV2Request request) {
-        return new AsyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response>(request,
-            RomaMeta.listCertificatesV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listCertificatesV2, hcClient);
     }
 
     /**
@@ -9989,7 +9757,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCertificateV2Request 请求对象
+     * @param request ShowDetailsOfCertificateV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfCertificateV2Response>
      */
     public CompletableFuture<ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2Async(
@@ -10004,13 +9772,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCertificateV2Request 请求对象
+     * @param request ShowDetailsOfCertificateV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response>
      */
     public AsyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2AsyncInvoker(
         ShowDetailsOfCertificateV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response>(request,
-            RomaMeta.showDetailsOfCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfCertificateV2, hcClient);
     }
 
     /**
@@ -10020,7 +9787,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateV2Request 请求对象
+     * @param request UpdateCertificateV2Request 请求对象
      * @return CompletableFuture<UpdateCertificateV2Response>
      */
     public CompletableFuture<UpdateCertificateV2Response> updateCertificateV2Async(UpdateCertificateV2Request request) {
@@ -10034,13 +9801,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateV2Request 请求对象
+     * @param request UpdateCertificateV2Request 请求对象
      * @return AsyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response>
      */
     public AsyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response> updateCertificateV2AsyncInvoker(
         UpdateCertificateV2Request request) {
-        return new AsyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response>(request,
-            RomaMeta.updateCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateCertificateV2, hcClient);
     }
 
     /**
@@ -10052,7 +9818,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddingBackendInstancesV2Request 请求对象
+     * @param request AddingBackendInstancesV2Request 请求对象
      * @return CompletableFuture<AddingBackendInstancesV2Response>
      */
     public CompletableFuture<AddingBackendInstancesV2Response> addingBackendInstancesV2Async(
@@ -10069,13 +9835,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddingBackendInstancesV2Request 请求对象
+     * @param request AddingBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response>
      */
     public AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> addingBackendInstancesV2AsyncInvoker(
         AddingBackendInstancesV2Request request) {
-        return new AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response>(request,
-            RomaMeta.addingBackendInstancesV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.addingBackendInstancesV2, hcClient);
     }
 
     /**
@@ -10085,7 +9850,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisableMembersRequest 请求对象
+     * @param request BatchDisableMembersRequest 请求对象
      * @return CompletableFuture<BatchDisableMembersResponse>
      */
     public CompletableFuture<BatchDisableMembersResponse> batchDisableMembersAsync(BatchDisableMembersRequest request) {
@@ -10099,13 +9864,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisableMembersRequest 请求对象
+     * @param request BatchDisableMembersRequest 请求对象
      * @return AsyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse>
      */
     public AsyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse> batchDisableMembersAsyncInvoker(
         BatchDisableMembersRequest request) {
-        return new AsyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse>(request,
-            RomaMeta.batchDisableMembers, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchDisableMembers, hcClient);
     }
 
     /**
@@ -10115,7 +9879,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchEnableMembersRequest 请求对象
+     * @param request BatchEnableMembersRequest 请求对象
      * @return CompletableFuture<BatchEnableMembersResponse>
      */
     public CompletableFuture<BatchEnableMembersResponse> batchEnableMembersAsync(BatchEnableMembersRequest request) {
@@ -10129,13 +9893,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchEnableMembersRequest 请求对象
+     * @param request BatchEnableMembersRequest 请求对象
      * @return AsyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse>
      */
     public AsyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse> batchEnableMembersAsyncInvoker(
         BatchEnableMembersRequest request) {
-        return new AsyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse>(request,
-            RomaMeta.batchEnableMembers, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.batchEnableMembers, hcClient);
     }
 
     /**
@@ -10147,7 +9910,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMemberGroupRequest 请求对象
+     * @param request CreateMemberGroupRequest 请求对象
      * @return CompletableFuture<CreateMemberGroupResponse>
      */
     public CompletableFuture<CreateMemberGroupResponse> createMemberGroupAsync(CreateMemberGroupRequest request) {
@@ -10163,13 +9926,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMemberGroupRequest 请求对象
+     * @param request CreateMemberGroupRequest 请求对象
      * @return AsyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse>
      */
     public AsyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse> createMemberGroupAsyncInvoker(
         CreateMemberGroupRequest request) {
-        return new AsyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse>(request,
-            RomaMeta.createMemberGroup, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createMemberGroup, hcClient);
     }
 
     /**
@@ -10179,7 +9941,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectVpcChannelRequest 请求对象
+     * @param request CreateProjectVpcChannelRequest 请求对象
      * @return CompletableFuture<CreateProjectVpcChannelResponse>
      */
     public CompletableFuture<CreateProjectVpcChannelResponse> createProjectVpcChannelAsync(
@@ -10194,13 +9956,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectVpcChannelRequest 请求对象
+     * @param request CreateProjectVpcChannelRequest 请求对象
      * @return AsyncInvoker<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse>
      */
     public AsyncInvoker<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse> createProjectVpcChannelAsyncInvoker(
         CreateProjectVpcChannelRequest request) {
-        return new AsyncInvoker<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse>(request,
-            RomaMeta.createProjectVpcChannel, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createProjectVpcChannel, hcClient);
     }
 
     /**
@@ -10210,7 +9971,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectVpcChannelSyncsRequest 请求对象
+     * @param request CreateProjectVpcChannelSyncsRequest 请求对象
      * @return CompletableFuture<CreateProjectVpcChannelSyncsResponse>
      */
     public CompletableFuture<CreateProjectVpcChannelSyncsResponse> createProjectVpcChannelSyncsAsync(
@@ -10225,13 +9986,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectVpcChannelSyncsRequest 请求对象
+     * @param request CreateProjectVpcChannelSyncsRequest 请求对象
      * @return AsyncInvoker<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse>
      */
     public AsyncInvoker<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse> createProjectVpcChannelSyncsAsyncInvoker(
         CreateProjectVpcChannelSyncsRequest request) {
-        return new AsyncInvoker<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse>(request,
-            RomaMeta.createProjectVpcChannelSyncs, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createProjectVpcChannelSyncs, hcClient);
     }
 
     /**
@@ -10242,7 +10002,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcChannelV2Request 请求对象
+     * @param request CreateVpcChannelV2Request 请求对象
      * @return CompletableFuture<CreateVpcChannelV2Response>
      */
     public CompletableFuture<CreateVpcChannelV2Response> createVpcChannelV2Async(CreateVpcChannelV2Request request) {
@@ -10257,13 +10017,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcChannelV2Request 请求对象
+     * @param request CreateVpcChannelV2Request 请求对象
      * @return AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response>
      */
     public AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response> createVpcChannelV2AsyncInvoker(
         CreateVpcChannelV2Request request) {
-        return new AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response>(request,
-            RomaMeta.createVpcChannelV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.createVpcChannelV2, hcClient);
     }
 
     /**
@@ -10273,7 +10032,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackendInstanceV2Request 请求对象
+     * @param request DeleteBackendInstanceV2Request 请求对象
      * @return CompletableFuture<DeleteBackendInstanceV2Response>
      */
     public CompletableFuture<DeleteBackendInstanceV2Response> deleteBackendInstanceV2Async(
@@ -10288,13 +10047,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackendInstanceV2Request 请求对象
+     * @param request DeleteBackendInstanceV2Request 请求对象
      * @return AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>
      */
     public AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> deleteBackendInstanceV2AsyncInvoker(
         DeleteBackendInstanceV2Request request) {
-        return new AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>(request,
-            RomaMeta.deleteBackendInstanceV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteBackendInstanceV2, hcClient);
     }
 
     /**
@@ -10304,7 +10062,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberGroupRequest 请求对象
+     * @param request DeleteMemberGroupRequest 请求对象
      * @return CompletableFuture<DeleteMemberGroupResponse>
      */
     public CompletableFuture<DeleteMemberGroupResponse> deleteMemberGroupAsync(DeleteMemberGroupRequest request) {
@@ -10318,13 +10076,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberGroupRequest 请求对象
+     * @param request DeleteMemberGroupRequest 请求对象
      * @return AsyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse>
      */
     public AsyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse> deleteMemberGroupAsyncInvoker(
         DeleteMemberGroupRequest request) {
-        return new AsyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse>(request,
-            RomaMeta.deleteMemberGroup, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteMemberGroup, hcClient);
     }
 
     /**
@@ -10334,7 +10091,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcChannelV2Request 请求对象
+     * @param request DeleteVpcChannelV2Request 请求对象
      * @return CompletableFuture<DeleteVpcChannelV2Response>
      */
     public CompletableFuture<DeleteVpcChannelV2Response> deleteVpcChannelV2Async(DeleteVpcChannelV2Request request) {
@@ -10348,13 +10105,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcChannelV2Request 请求对象
+     * @param request DeleteVpcChannelV2Request 请求对象
      * @return AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response>
      */
     public AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> deleteVpcChannelV2AsyncInvoker(
         DeleteVpcChannelV2Request request) {
-        return new AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response>(request,
-            RomaMeta.deleteVpcChannelV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.deleteVpcChannelV2, hcClient);
     }
 
     /**
@@ -10364,7 +10120,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackendInstancesV2Request 请求对象
+     * @param request ListBackendInstancesV2Request 请求对象
      * @return CompletableFuture<ListBackendInstancesV2Response>
      */
     public CompletableFuture<ListBackendInstancesV2Response> listBackendInstancesV2Async(
@@ -10379,13 +10135,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackendInstancesV2Request 请求对象
+     * @param request ListBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>
      */
     public AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response> listBackendInstancesV2AsyncInvoker(
         ListBackendInstancesV2Request request) {
-        return new AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>(request,
-            RomaMeta.listBackendInstancesV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listBackendInstancesV2, hcClient);
     }
 
     /**
@@ -10395,7 +10150,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMemberGroupsRequest 请求对象
+     * @param request ListMemberGroupsRequest 请求对象
      * @return CompletableFuture<ListMemberGroupsResponse>
      */
     public CompletableFuture<ListMemberGroupsResponse> listMemberGroupsAsync(ListMemberGroupsRequest request) {
@@ -10409,13 +10164,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMemberGroupsRequest 请求对象
+     * @param request ListMemberGroupsRequest 请求对象
      * @return AsyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse>
      */
     public AsyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse> listMemberGroupsAsyncInvoker(
         ListMemberGroupsRequest request) {
-        return new AsyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse>(request, RomaMeta.listMemberGroups,
-            hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listMemberGroups, hcClient);
     }
 
     /**
@@ -10425,7 +10179,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectVpcChannelsV2Request 请求对象
+     * @param request ListProjectVpcChannelsV2Request 请求对象
      * @return CompletableFuture<ListProjectVpcChannelsV2Response>
      */
     public CompletableFuture<ListProjectVpcChannelsV2Response> listProjectVpcChannelsV2Async(
@@ -10440,13 +10194,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectVpcChannelsV2Request 请求对象
+     * @param request ListProjectVpcChannelsV2Request 请求对象
      * @return AsyncInvoker<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response>
      */
     public AsyncInvoker<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response> listProjectVpcChannelsV2AsyncInvoker(
         ListProjectVpcChannelsV2Request request) {
-        return new AsyncInvoker<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response>(request,
-            RomaMeta.listProjectVpcChannelsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listProjectVpcChannelsV2, hcClient);
     }
 
     /**
@@ -10456,7 +10209,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcChannelsV2Request 请求对象
+     * @param request ListVpcChannelsV2Request 请求对象
      * @return CompletableFuture<ListVpcChannelsV2Response>
      */
     public CompletableFuture<ListVpcChannelsV2Response> listVpcChannelsV2Async(ListVpcChannelsV2Request request) {
@@ -10470,13 +10223,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcChannelsV2Request 请求对象
+     * @param request ListVpcChannelsV2Request 请求对象
      * @return AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response>
      */
     public AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response> listVpcChannelsV2AsyncInvoker(
         ListVpcChannelsV2Request request) {
-        return new AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response>(request,
-            RomaMeta.listVpcChannelsV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.listVpcChannelsV2, hcClient);
     }
 
     /**
@@ -10486,7 +10238,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfMemberGroupRequest 请求对象
+     * @param request ShowDetailsOfMemberGroupRequest 请求对象
      * @return CompletableFuture<ShowDetailsOfMemberGroupResponse>
      */
     public CompletableFuture<ShowDetailsOfMemberGroupResponse> showDetailsOfMemberGroupAsync(
@@ -10501,13 +10253,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfMemberGroupRequest 请求对象
+     * @param request ShowDetailsOfMemberGroupRequest 请求对象
      * @return AsyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse>
      */
     public AsyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> showDetailsOfMemberGroupAsyncInvoker(
         ShowDetailsOfMemberGroupRequest request) {
-        return new AsyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse>(request,
-            RomaMeta.showDetailsOfMemberGroup, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfMemberGroup, hcClient);
     }
 
     /**
@@ -10517,7 +10268,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfVpcChannelV2Request 请求对象
+     * @param request ShowDetailsOfVpcChannelV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfVpcChannelV2Response>
      */
     public CompletableFuture<ShowDetailsOfVpcChannelV2Response> showDetailsOfVpcChannelV2Async(
@@ -10532,13 +10283,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfVpcChannelV2Request 请求对象
+     * @param request ShowDetailsOfVpcChannelV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response>
      */
     public AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> showDetailsOfVpcChannelV2AsyncInvoker(
         ShowDetailsOfVpcChannelV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response>(request,
-            RomaMeta.showDetailsOfVpcChannelV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.showDetailsOfVpcChannelV2, hcClient);
     }
 
     /**
@@ -10548,7 +10298,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackendInstancesV2Request 请求对象
+     * @param request UpdateBackendInstancesV2Request 请求对象
      * @return CompletableFuture<UpdateBackendInstancesV2Response>
      */
     public CompletableFuture<UpdateBackendInstancesV2Response> updateBackendInstancesV2Async(
@@ -10563,13 +10313,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackendInstancesV2Request 请求对象
+     * @param request UpdateBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response>
      */
     public AsyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> updateBackendInstancesV2AsyncInvoker(
         UpdateBackendInstancesV2Request request) {
-        return new AsyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response>(request,
-            RomaMeta.updateBackendInstancesV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateBackendInstancesV2, hcClient);
     }
 
     /**
@@ -10579,7 +10328,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthCheckRequest 请求对象
+     * @param request UpdateHealthCheckRequest 请求对象
      * @return CompletableFuture<UpdateHealthCheckResponse>
      */
     public CompletableFuture<UpdateHealthCheckResponse> updateHealthCheckAsync(UpdateHealthCheckRequest request) {
@@ -10593,13 +10342,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthCheckRequest 请求对象
+     * @param request UpdateHealthCheckRequest 请求对象
      * @return AsyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>
      */
     public AsyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse> updateHealthCheckAsyncInvoker(
         UpdateHealthCheckRequest request) {
-        return new AsyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>(request,
-            RomaMeta.updateHealthCheck, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateHealthCheck, hcClient);
     }
 
     /**
@@ -10609,7 +10357,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberGroupRequest 请求对象
+     * @param request UpdateMemberGroupRequest 请求对象
      * @return CompletableFuture<UpdateMemberGroupResponse>
      */
     public CompletableFuture<UpdateMemberGroupResponse> updateMemberGroupAsync(UpdateMemberGroupRequest request) {
@@ -10623,13 +10371,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberGroupRequest 请求对象
+     * @param request UpdateMemberGroupRequest 请求对象
      * @return AsyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse>
      */
     public AsyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse> updateMemberGroupAsyncInvoker(
         UpdateMemberGroupRequest request) {
-        return new AsyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse>(request,
-            RomaMeta.updateMemberGroup, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateMemberGroup, hcClient);
     }
 
     /**
@@ -10639,7 +10386,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectVpcChannelRequest 请求对象
+     * @param request UpdateProjectVpcChannelRequest 请求对象
      * @return CompletableFuture<UpdateProjectVpcChannelResponse>
      */
     public CompletableFuture<UpdateProjectVpcChannelResponse> updateProjectVpcChannelAsync(
@@ -10654,13 +10401,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectVpcChannelRequest 请求对象
+     * @param request UpdateProjectVpcChannelRequest 请求对象
      * @return AsyncInvoker<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse>
      */
     public AsyncInvoker<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse> updateProjectVpcChannelAsyncInvoker(
         UpdateProjectVpcChannelRequest request) {
-        return new AsyncInvoker<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse>(request,
-            RomaMeta.updateProjectVpcChannel, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateProjectVpcChannel, hcClient);
     }
 
     /**
@@ -10674,7 +10420,7 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcChannelV2Request 请求对象
+     * @param request UpdateVpcChannelV2Request 请求对象
      * @return CompletableFuture<UpdateVpcChannelV2Response>
      */
     public CompletableFuture<UpdateVpcChannelV2Response> updateVpcChannelV2Async(UpdateVpcChannelV2Request request) {
@@ -10692,13 +10438,12 @@ public class RomaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcChannelV2Request 请求对象
+     * @param request UpdateVpcChannelV2Request 请求对象
      * @return AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response>
      */
     public AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> updateVpcChannelV2AsyncInvoker(
         UpdateVpcChannelV2Request request) {
-        return new AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response>(request,
-            RomaMeta.updateVpcChannelV2, hcClient);
+        return new AsyncInvoker<>(request, RomaMeta.updateVpcChannelV2, hcClient);
     }
 
 }

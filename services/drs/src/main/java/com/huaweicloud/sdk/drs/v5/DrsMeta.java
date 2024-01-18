@@ -175,9 +175,9 @@ import java.util.List;
 public class DrsMeta {
 
     public static final HttpRequestDef<BatchCreateJobsAsyncRequest, BatchCreateJobsAsyncResponse> batchCreateJobsAsync =
-        genForbatchCreateJobsAsync();
+        genForBatchCreateJobsAsync();
 
-    private static HttpRequestDef<BatchCreateJobsAsyncRequest, BatchCreateJobsAsyncResponse> genForbatchCreateJobsAsync() {
+    private static HttpRequestDef<BatchCreateJobsAsyncRequest, BatchCreateJobsAsyncResponse> genForBatchCreateJobsAsync() {
         // basic
         HttpRequestDef.Builder<BatchCreateJobsAsyncRequest, BatchCreateJobsAsyncResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateJobsAsyncRequest.class, BatchCreateJobsAsyncResponse.class)
@@ -190,16 +190,13 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchCreateJobsAsyncRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchCreateJobsAsyncRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchCreateJobsAsyncRequest::getXLanguage,
+                BatchCreateJobsAsyncRequest::setXLanguage));
         builder.<BatchAsyncCreateJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAsyncCreateJobReq.class),
-            f -> f.withMarshaller(BatchCreateJobsAsyncRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateJobsAsyncRequest::getBody, BatchCreateJobsAsyncRequest::setBody));
 
         // response
 
@@ -207,9 +204,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTags =
-        genForbatchCreateTags();
+        genForBatchCreateTags();
 
-    private static HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> genForbatchCreateTags() {
+    private static HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> genForBatchCreateTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateTagsRequest, BatchCreateTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateTagsRequest.class, BatchCreateTagsResponse.class)
@@ -222,30 +219,22 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceType, BatchCreateTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceId, BatchCreateTagsRequest::setResourceId));
         builder.<BatchCreateTagsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchCreateTagsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchCreateTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagsRequest::getXLanguage, BatchCreateTagsRequest::setXLanguage));
         builder.<BatchAddTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAddTagReq.class),
-            f -> f.withMarshaller(BatchCreateTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagsRequest::getBody, BatchCreateTagsRequest::setBody));
 
         // response
 
@@ -253,9 +242,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteJobsByIdRequest, BatchDeleteJobsByIdResponse> batchDeleteJobsById =
-        genForbatchDeleteJobsById();
+        genForBatchDeleteJobsById();
 
-    private static HttpRequestDef<BatchDeleteJobsByIdRequest, BatchDeleteJobsByIdResponse> genForbatchDeleteJobsById() {
+    private static HttpRequestDef<BatchDeleteJobsByIdRequest, BatchDeleteJobsByIdResponse> genForBatchDeleteJobsById() {
         // basic
         HttpRequestDef.Builder<BatchDeleteJobsByIdRequest, BatchDeleteJobsByIdResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, BatchDeleteJobsByIdRequest.class, BatchDeleteJobsByIdResponse.class)
@@ -268,16 +257,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchDeleteJobsByIdRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchDeleteJobsByIdRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteJobsByIdRequest::getXLanguage, BatchDeleteJobsByIdRequest::setXLanguage));
         builder.<BatchDeleteJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteJobReq.class),
-            f -> f.withMarshaller(BatchDeleteJobsByIdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteJobsByIdRequest::getBody, BatchDeleteJobsByIdRequest::setBody));
 
         // response
 
@@ -285,9 +270,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTags =
-        genForbatchDeleteTags();
+        genForBatchDeleteTags();
 
-    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForbatchDeleteTags() {
+    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForBatchDeleteTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteTagsRequest, BatchDeleteTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTagsRequest.class, BatchDeleteTagsResponse.class)
@@ -300,30 +285,22 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceType, BatchDeleteTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceId, BatchDeleteTagsRequest::setResourceId));
         builder.<BatchDeleteTagsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchDeleteTagsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getXLanguage, BatchDeleteTagsRequest::setXLanguage));
         builder.<BatchDeleteTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteTagReq.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, BatchDeleteTagsRequest::setBody));
 
         // response
 
@@ -331,9 +308,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchExecuteJobActionsRequest, BatchExecuteJobActionsResponse> batchExecuteJobActions =
-        genForbatchExecuteJobActions();
+        genForBatchExecuteJobActions();
 
-    private static HttpRequestDef<BatchExecuteJobActionsRequest, BatchExecuteJobActionsResponse> genForbatchExecuteJobActions() {
+    private static HttpRequestDef<BatchExecuteJobActionsRequest, BatchExecuteJobActionsResponse> genForBatchExecuteJobActions() {
         // basic
         HttpRequestDef.Builder<BatchExecuteJobActionsRequest, BatchExecuteJobActionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchExecuteJobActionsRequest.class, BatchExecuteJobActionsResponse.class)
@@ -346,16 +323,13 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchExecuteJobActionsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchExecuteJobActionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchExecuteJobActionsRequest::getXLanguage,
+                BatchExecuteJobActionsRequest::setXLanguage));
         builder.<BatchJobActionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchJobActionReq.class),
-            f -> f.withMarshaller(BatchExecuteJobActionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchExecuteJobActionsRequest::getBody, BatchExecuteJobActionsRequest::setBody));
 
         // response
 
@@ -363,9 +337,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchStopJobsActionRequest, BatchStopJobsActionResponse> batchStopJobsAction =
-        genForbatchStopJobsAction();
+        genForBatchStopJobsAction();
 
-    private static HttpRequestDef<BatchStopJobsActionRequest, BatchStopJobsActionResponse> genForbatchStopJobsAction() {
+    private static HttpRequestDef<BatchStopJobsActionRequest, BatchStopJobsActionResponse> genForBatchStopJobsAction() {
         // basic
         HttpRequestDef.Builder<BatchStopJobsActionRequest, BatchStopJobsActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStopJobsActionRequest.class, BatchStopJobsActionResponse.class)
@@ -378,16 +352,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchStopJobsActionRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchStopJobsActionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchStopJobsActionRequest::getXLanguage, BatchStopJobsActionRequest::setXLanguage));
         builder.<BatchStopJobActionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchStopJobActionReq.class),
-            f -> f.withMarshaller(BatchStopJobsActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStopJobsActionRequest::getBody, BatchStopJobsActionRequest::setBody));
 
         // response
 
@@ -395,9 +365,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> batchTagAction =
-        genForbatchTagAction();
+        genForBatchTagAction();
 
-    private static HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> genForbatchTagAction() {
+    private static HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> genForBatchTagAction() {
         // basic
         HttpRequestDef.Builder<BatchTagActionRequest, BatchTagActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchTagActionRequest.class, BatchTagActionResponse.class)
@@ -410,30 +380,22 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchTagActionRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchTagActionRequest::getResourceType, BatchTagActionRequest::setResourceType));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchTagActionRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(BatchTagActionRequest::getJobId, BatchTagActionRequest::setJobId));
         builder.<BatchTagActionRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchTagActionRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(BatchTagActionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(BatchTagActionRequest::getXLanguage, BatchTagActionRequest::setXLanguage));
         builder.<BatchDealResourceTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDealResourceTagReq.class),
-            f -> f.withMarshaller(BatchTagActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchTagActionRequest::getBody, BatchTagActionRequest::setBody));
 
         // response
 
@@ -441,9 +403,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<CheckDataFilterRequest, CheckDataFilterResponse> checkDataFilter =
-        genForcheckDataFilter();
+        genForCheckDataFilter();
 
-    private static HttpRequestDef<CheckDataFilterRequest, CheckDataFilterResponse> genForcheckDataFilter() {
+    private static HttpRequestDef<CheckDataFilterRequest, CheckDataFilterResponse> genForCheckDataFilter() {
         // basic
         HttpRequestDef.Builder<CheckDataFilterRequest, CheckDataFilterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckDataFilterRequest.class, CheckDataFilterResponse.class)
@@ -456,23 +418,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckDataFilterRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(CheckDataFilterRequest::getJobId, CheckDataFilterRequest::setJobId));
         builder.<CheckDataFilterRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CheckDataFilterRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CheckDataFilterRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CheckDataFilterRequest::getXLanguage, CheckDataFilterRequest::setXLanguage));
         builder.<DataProcessReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DataProcessReq.class),
-            f -> f.withMarshaller(CheckDataFilterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckDataFilterRequest::getBody, CheckDataFilterRequest::setBody));
 
         // response
 
@@ -480,9 +436,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<CollectColumnsRequest, CollectColumnsResponse> collectColumns =
-        genForcollectColumns();
+        genForCollectColumns();
 
-    private static HttpRequestDef<CollectColumnsRequest, CollectColumnsResponse> genForcollectColumns() {
+    private static HttpRequestDef<CollectColumnsRequest, CollectColumnsResponse> genForCollectColumns() {
         // basic
         HttpRequestDef.Builder<CollectColumnsRequest, CollectColumnsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CollectColumnsRequest.class, CollectColumnsResponse.class)
@@ -495,23 +451,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CollectColumnsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(CollectColumnsRequest::getJobId, CollectColumnsRequest::setJobId));
         builder.<CollectColumnsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CollectColumnsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CollectColumnsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CollectColumnsRequest::getXLanguage, CollectColumnsRequest::setXLanguage));
         builder.<QueryColumnReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryColumnReq.class),
-            f -> f.withMarshaller(CollectColumnsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CollectColumnsRequest::getBody, CollectColumnsRequest::setBody));
 
         // response
 
@@ -519,9 +469,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse> collectDbObjectsAsync =
-        genForcollectDbObjectsAsync();
+        genForCollectDbObjectsAsync();
 
-    private static HttpRequestDef<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse> genForcollectDbObjectsAsync() {
+    private static HttpRequestDef<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse> genForCollectDbObjectsAsync() {
         // basic
         HttpRequestDef.Builder<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CollectDbObjectsAsyncRequest.class, CollectDbObjectsAsyncResponse.class)
@@ -534,51 +484,39 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getJobId, CollectDbObjectsAsyncRequest::setJobId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getOffset, CollectDbObjectsAsyncRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getLimit, CollectDbObjectsAsyncRequest::setLimit));
         builder.<CollectDbObjectsAsyncRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CollectDbObjectsAsyncRequest.TypeEnum.class),
-            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getType, CollectDbObjectsAsyncRequest::setType));
         builder.<Boolean>withRequestField("is_refresh",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getIsRefresh, (req, v) -> {
-                req.setIsRefresh(v);
-            }));
+            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getIsRefresh,
+                CollectDbObjectsAsyncRequest::setIsRefresh));
         builder.<List<String>>withRequestField("db_names",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getDbNames, (req, v) -> {
-                req.setDbNames(v);
-            }));
+            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getDbNames, CollectDbObjectsAsyncRequest::setDbNames));
         builder.<CollectDbObjectsAsyncRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CollectDbObjectsAsyncRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CollectDbObjectsAsyncRequest::getXLanguage,
+                CollectDbObjectsAsyncRequest::setXLanguage));
 
         // response
 
@@ -586,9 +524,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<CollectDbObjectsInfoRequest, CollectDbObjectsInfoResponse> collectDbObjectsInfo =
-        genForcollectDbObjectsInfo();
+        genForCollectDbObjectsInfo();
 
-    private static HttpRequestDef<CollectDbObjectsInfoRequest, CollectDbObjectsInfoResponse> genForcollectDbObjectsInfo() {
+    private static HttpRequestDef<CollectDbObjectsInfoRequest, CollectDbObjectsInfoResponse> genForCollectDbObjectsInfo() {
         // basic
         HttpRequestDef.Builder<CollectDbObjectsInfoRequest, CollectDbObjectsInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CollectDbObjectsInfoRequest.class, CollectDbObjectsInfoResponse.class)
@@ -601,23 +539,18 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CollectDbObjectsInfoRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(CollectDbObjectsInfoRequest::getJobId, CollectDbObjectsInfoRequest::setJobId));
         builder.<CollectDbObjectsInfoRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CollectDbObjectsInfoRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CollectDbObjectsInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CollectDbObjectsInfoRequest::getXLanguage,
+                CollectDbObjectsInfoRequest::setXLanguage));
         builder.<QuerySelectObjectInfoReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QuerySelectObjectInfoReq.class),
-            f -> f.withMarshaller(CollectDbObjectsInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CollectDbObjectsInfoRequest::getBody, CollectDbObjectsInfoRequest::setBody));
 
         // response
 
@@ -625,9 +558,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<CollectPositionAsyncRequest, CollectPositionAsyncResponse> collectPositionAsync =
-        genForcollectPositionAsync();
+        genForCollectPositionAsync();
 
-    private static HttpRequestDef<CollectPositionAsyncRequest, CollectPositionAsyncResponse> genForcollectPositionAsync() {
+    private static HttpRequestDef<CollectPositionAsyncRequest, CollectPositionAsyncResponse> genForCollectPositionAsync() {
         // basic
         HttpRequestDef.Builder<CollectPositionAsyncRequest, CollectPositionAsyncResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CollectPositionAsyncRequest.class, CollectPositionAsyncResponse.class)
@@ -640,23 +573,18 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CollectPositionAsyncRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(CollectPositionAsyncRequest::getJobId, CollectPositionAsyncRequest::setJobId));
         builder.<CollectPositionAsyncRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CollectPositionAsyncRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CollectPositionAsyncRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CollectPositionAsyncRequest::getXLanguage,
+                CollectPositionAsyncRequest::setXLanguage));
         builder.<QueryDbPositionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryDbPositionReq.class),
-            f -> f.withMarshaller(CollectPositionAsyncRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CollectPositionAsyncRequest::getBody, CollectPositionAsyncRequest::setBody));
 
         // response
 
@@ -664,9 +592,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<CommitAsyncJobRequest, CommitAsyncJobResponse> commitAsyncJob =
-        genForcommitAsyncJob();
+        genForCommitAsyncJob();
 
-    private static HttpRequestDef<CommitAsyncJobRequest, CommitAsyncJobResponse> genForcommitAsyncJob() {
+    private static HttpRequestDef<CommitAsyncJobRequest, CommitAsyncJobResponse> genForCommitAsyncJob() {
         // basic
         HttpRequestDef.Builder<CommitAsyncJobRequest, CommitAsyncJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CommitAsyncJobRequest.class, CommitAsyncJobResponse.class)
@@ -679,25 +607,21 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CommitAsyncJobRequest::getAsyncJobId, (req, v) -> {
-                req.setAsyncJobId(v);
-            }));
+            f -> f.withMarshaller(CommitAsyncJobRequest::getAsyncJobId, CommitAsyncJobRequest::setAsyncJobId));
         builder.<CommitAsyncJobRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CommitAsyncJobRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CommitAsyncJobRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CommitAsyncJobRequest::getXLanguage, CommitAsyncJobRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CopyJobRequest, CopyJobResponse> copyJob = genForcopyJob();
+    public static final HttpRequestDef<CopyJobRequest, CopyJobResponse> copyJob = genForCopyJob();
 
-    private static HttpRequestDef<CopyJobRequest, CopyJobResponse> genForcopyJob() {
+    private static HttpRequestDef<CopyJobRequest, CopyJobResponse> genForCopyJob() {
         // basic
         HttpRequestDef.Builder<CopyJobRequest, CopyJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyJobRequest.class, CopyJobResponse.class)
@@ -710,16 +634,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CopyJobRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CopyJobRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CopyJobRequest::getXLanguage, CopyJobRequest::setXLanguage));
         builder.<CloneJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CloneJobReq.class),
-            f -> f.withMarshaller(CopyJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CopyJobRequest::getBody, CopyJobRequest::setBody));
 
         // response
 
@@ -727,9 +647,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<CountInstanceByTagsRequest, CountInstanceByTagsResponse> countInstanceByTags =
-        genForcountInstanceByTags();
+        genForCountInstanceByTags();
 
-    private static HttpRequestDef<CountInstanceByTagsRequest, CountInstanceByTagsResponse> genForcountInstanceByTags() {
+    private static HttpRequestDef<CountInstanceByTagsRequest, CountInstanceByTagsResponse> genForCountInstanceByTags() {
         // basic
         HttpRequestDef.Builder<CountInstanceByTagsRequest, CountInstanceByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CountInstanceByTagsRequest.class, CountInstanceByTagsResponse.class)
@@ -742,32 +662,27 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CountInstanceByTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(CountInstanceByTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CountInstanceByTagsRequest::getResourceType,
+                CountInstanceByTagsRequest::setResourceType));
         builder.<CountInstanceByTagsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CountInstanceByTagsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CountInstanceByTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CountInstanceByTagsRequest::getXLanguage, CountInstanceByTagsRequest::setXLanguage));
         builder.<QueryInstanceByTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryInstanceByTagReq.class),
-            f -> f.withMarshaller(CountInstanceByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CountInstanceByTagsRequest::getBody, CountInstanceByTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateJobRequest, CreateJobResponse> createJob = genForcreateJob();
+    public static final HttpRequestDef<CreateJobRequest, CreateJobResponse> createJob = genForCreateJob();
 
-    private static HttpRequestDef<CreateJobRequest, CreateJobResponse> genForcreateJob() {
+    private static HttpRequestDef<CreateJobRequest, CreateJobResponse> genForCreateJob() {
         // basic
         HttpRequestDef.Builder<CreateJobRequest, CreateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateJobRequest.class, CreateJobResponse.class)
@@ -780,16 +695,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateJobRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CreateJobRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateJobRequest::getXLanguage, CreateJobRequest::setXLanguage));
         builder.<SingleCreateJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SingleCreateJobReq.class),
-            f -> f.withMarshaller(CreateJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateJobRequest::getBody, CreateJobRequest::setBody));
 
         // response
 
@@ -797,9 +708,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<DeleteJdbcDriverRequest, DeleteJdbcDriverResponse> deleteJdbcDriver =
-        genFordeleteJdbcDriver();
+        genForDeleteJdbcDriver();
 
-    private static HttpRequestDef<DeleteJdbcDriverRequest, DeleteJdbcDriverResponse> genFordeleteJdbcDriver() {
+    private static HttpRequestDef<DeleteJdbcDriverRequest, DeleteJdbcDriverResponse> genForDeleteJdbcDriver() {
         // basic
         HttpRequestDef.Builder<DeleteJdbcDriverRequest, DeleteJdbcDriverResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteJdbcDriverRequest.class, DeleteJdbcDriverResponse.class)
@@ -812,25 +723,21 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteJdbcDriverRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(DeleteJdbcDriverRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteJdbcDriverRequest::getXLanguage, DeleteJdbcDriverRequest::setXLanguage));
         builder.<DeleteDriverReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteDriverReq.class),
-            f -> f.withMarshaller(DeleteJdbcDriverRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteJdbcDriverRequest::getBody, DeleteJdbcDriverRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genFordeleteJob();
+    public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genForDeleteJob();
 
-    private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genFordeleteJob() {
+    private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genForDeleteJob() {
         // basic
         HttpRequestDef.Builder<DeleteJobRequest, DeleteJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobRequest.class, DeleteJobResponse.class)
@@ -843,16 +750,12 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteJobRequest::getJobId, DeleteJobRequest::setJobId));
         builder.<DeleteJobRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteJobRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(DeleteJobRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteJobRequest::getXLanguage, DeleteJobRequest::setXLanguage));
 
         // response
 
@@ -860,9 +763,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<DownloadBatchCreateTemplateRequest, DownloadBatchCreateTemplateResponse> downloadBatchCreateTemplate =
-        genFordownloadBatchCreateTemplate();
+        genForDownloadBatchCreateTemplate();
 
-    private static HttpRequestDef<DownloadBatchCreateTemplateRequest, DownloadBatchCreateTemplateResponse> genFordownloadBatchCreateTemplate() {
+    private static HttpRequestDef<DownloadBatchCreateTemplateRequest, DownloadBatchCreateTemplateResponse> genForDownloadBatchCreateTemplate() {
         // basic
         HttpRequestDef.Builder<DownloadBatchCreateTemplateRequest, DownloadBatchCreateTemplateResponse> builder =
             HttpRequestDef
@@ -878,9 +781,8 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DownloadBatchCreateTemplateRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(DownloadBatchCreateTemplateRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DownloadBatchCreateTemplateRequest::getXLanguage,
+                DownloadBatchCreateTemplateRequest::setXLanguage));
 
         // response
 
@@ -888,9 +790,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<DownloadDbObjectTemplateRequest, DownloadDbObjectTemplateResponse> downloadDbObjectTemplate =
-        genFordownloadDbObjectTemplate();
+        genForDownloadDbObjectTemplate();
 
-    private static HttpRequestDef<DownloadDbObjectTemplateRequest, DownloadDbObjectTemplateResponse> genFordownloadDbObjectTemplate() {
+    private static HttpRequestDef<DownloadDbObjectTemplateRequest, DownloadDbObjectTemplateResponse> genForDownloadDbObjectTemplate() {
         // basic
         HttpRequestDef.Builder<DownloadDbObjectTemplateRequest, DownloadDbObjectTemplateResponse> builder =
             HttpRequestDef
@@ -904,23 +806,20 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadDbObjectTemplateRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DownloadDbObjectTemplateRequest::getJobId,
+                DownloadDbObjectTemplateRequest::setJobId));
         builder.<DownloadDbObjectTemplateRequest.FileImportDbLevelEnum>withRequestField("file_import_db_level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DownloadDbObjectTemplateRequest.FileImportDbLevelEnum.class),
-            f -> f.withMarshaller(DownloadDbObjectTemplateRequest::getFileImportDbLevel, (req, v) -> {
-                req.setFileImportDbLevel(v);
-            }));
+            f -> f.withMarshaller(DownloadDbObjectTemplateRequest::getFileImportDbLevel,
+                DownloadDbObjectTemplateRequest::setFileImportDbLevel));
         builder.<DownloadDbObjectTemplateRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DownloadDbObjectTemplateRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(DownloadDbObjectTemplateRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DownloadDbObjectTemplateRequest::getXLanguage,
+                DownloadDbObjectTemplateRequest::setXLanguage));
 
         // response
 
@@ -928,9 +827,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ExecuteJobActionRequest, ExecuteJobActionResponse> executeJobAction =
-        genForexecuteJobAction();
+        genForExecuteJobAction();
 
-    private static HttpRequestDef<ExecuteJobActionRequest, ExecuteJobActionResponse> genForexecuteJobAction() {
+    private static HttpRequestDef<ExecuteJobActionRequest, ExecuteJobActionResponse> genForExecuteJobAction() {
         // basic
         HttpRequestDef.Builder<ExecuteJobActionRequest, ExecuteJobActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExecuteJobActionRequest.class, ExecuteJobActionResponse.class)
@@ -943,23 +842,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteJobActionRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ExecuteJobActionRequest::getJobId, ExecuteJobActionRequest::setJobId));
         builder.<ExecuteJobActionRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExecuteJobActionRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ExecuteJobActionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ExecuteJobActionRequest::getXLanguage, ExecuteJobActionRequest::setXLanguage));
         builder.<JobActionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JobActionReq.class),
-            f -> f.withMarshaller(ExecuteJobActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteJobActionRequest::getBody, ExecuteJobActionRequest::setBody));
 
         // response
 
@@ -967,9 +860,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ExportOperationInfoRequest, ExportOperationInfoResponse> exportOperationInfo =
-        genForexportOperationInfo();
+        genForExportOperationInfo();
 
-    private static HttpRequestDef<ExportOperationInfoRequest, ExportOperationInfoResponse> genForexportOperationInfo() {
+    private static HttpRequestDef<ExportOperationInfoRequest, ExportOperationInfoResponse> genForExportOperationInfo() {
         // basic
         HttpRequestDef.Builder<ExportOperationInfoRequest, ExportOperationInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportOperationInfoRequest.class, ExportOperationInfoResponse.class)
@@ -982,33 +875,27 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportOperationInfoRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ExportOperationInfoRequest::getJobId, ExportOperationInfoRequest::setJobId));
         builder.<ExportOperationInfoRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportOperationInfoRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ExportOperationInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ExportOperationInfoRequest::getXLanguage, ExportOperationInfoRequest::setXLanguage));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ExportOperationInfoResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ExportOperationInfoResponse::getBody, ExportOperationInfoResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ImportBatchCreateJobsRequest, ImportBatchCreateJobsResponse> importBatchCreateJobs =
-        genForimportBatchCreateJobs();
+        genForImportBatchCreateJobs();
 
-    private static HttpRequestDef<ImportBatchCreateJobsRequest, ImportBatchCreateJobsResponse> genForimportBatchCreateJobs() {
+    private static HttpRequestDef<ImportBatchCreateJobsRequest, ImportBatchCreateJobsResponse> genForImportBatchCreateJobs() {
         // basic
         HttpRequestDef.Builder<ImportBatchCreateJobsRequest, ImportBatchCreateJobsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ImportBatchCreateJobsRequest.class, ImportBatchCreateJobsResponse.class)
@@ -1021,16 +908,13 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ImportBatchCreateJobsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ImportBatchCreateJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ImportBatchCreateJobsRequest::getXLanguage,
+                ImportBatchCreateJobsRequest::setXLanguage));
         builder.<ImportBatchCreateJobsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportBatchCreateJobsRequestBody.class),
-            f -> f.withMarshaller(ImportBatchCreateJobsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportBatchCreateJobsRequest::getBody, ImportBatchCreateJobsRequest::setBody));
 
         // response
 
@@ -1038,9 +922,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListAsyncJobDetailRequest, ListAsyncJobDetailResponse> listAsyncJobDetail =
-        genForlistAsyncJobDetail();
+        genForListAsyncJobDetail();
 
-    private static HttpRequestDef<ListAsyncJobDetailRequest, ListAsyncJobDetailResponse> genForlistAsyncJobDetail() {
+    private static HttpRequestDef<ListAsyncJobDetailRequest, ListAsyncJobDetailResponse> genForListAsyncJobDetail() {
         // basic
         HttpRequestDef.Builder<ListAsyncJobDetailRequest, ListAsyncJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAsyncJobDetailRequest.class, ListAsyncJobDetailResponse.class)
@@ -1053,30 +937,22 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAsyncJobDetailRequest::getAsyncJobId, (req, v) -> {
-                req.setAsyncJobId(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobDetailRequest::getAsyncJobId, ListAsyncJobDetailRequest::setAsyncJobId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAsyncJobDetailRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobDetailRequest::getOffset, ListAsyncJobDetailRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAsyncJobDetailRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobDetailRequest::getLimit, ListAsyncJobDetailRequest::setLimit));
         builder.<ListAsyncJobDetailRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAsyncJobDetailRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListAsyncJobDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobDetailRequest::getXLanguage, ListAsyncJobDetailRequest::setXLanguage));
 
         // response
 
@@ -1084,9 +960,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListAsyncJobsRequest, ListAsyncJobsResponse> listAsyncJobs =
-        genForlistAsyncJobs();
+        genForListAsyncJobs();
 
-    private static HttpRequestDef<ListAsyncJobsRequest, ListAsyncJobsResponse> genForlistAsyncJobs() {
+    private static HttpRequestDef<ListAsyncJobsRequest, ListAsyncJobsResponse> genForListAsyncJobs() {
         // basic
         HttpRequestDef.Builder<ListAsyncJobsRequest, ListAsyncJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAsyncJobsRequest.class, ListAsyncJobsResponse.class)
@@ -1099,65 +975,47 @@ public class DrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAsyncJobsRequest::getAsyncJobId, (req, v) -> {
-                req.setAsyncJobId(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobsRequest::getAsyncJobId, ListAsyncJobsRequest::setAsyncJobId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAsyncJobsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobsRequest::getStatus, ListAsyncJobsRequest::setStatus));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAsyncJobsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobsRequest::getDomainName, ListAsyncJobsRequest::setDomainName));
         builder.<String>withRequestField("user_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAsyncJobsRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobsRequest::getUserName, ListAsyncJobsRequest::setUserName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAsyncJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobsRequest::getOffset, ListAsyncJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAsyncJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobsRequest::getLimit, ListAsyncJobsRequest::setLimit));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAsyncJobsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobsRequest::getSortKey, ListAsyncJobsRequest::setSortKey));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAsyncJobsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobsRequest::getSortDir, ListAsyncJobsRequest::setSortDir));
         builder.<ListAsyncJobsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAsyncJobsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListAsyncJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAsyncJobsRequest::getXLanguage, ListAsyncJobsRequest::setXLanguage));
 
         // response
 
@@ -1165,9 +1023,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListDbObjectsRequest, ListDbObjectsResponse> listDbObjects =
-        genForlistDbObjects();
+        genForListDbObjects();
 
-    private static HttpRequestDef<ListDbObjectsRequest, ListDbObjectsResponse> genForlistDbObjects() {
+    private static HttpRequestDef<ListDbObjectsRequest, ListDbObjectsResponse> genForListDbObjects() {
         // basic
         HttpRequestDef.Builder<ListDbObjectsRequest, ListDbObjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDbObjectsRequest.class, ListDbObjectsResponse.class)
@@ -1180,44 +1038,32 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbObjectsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListDbObjectsRequest::getJobId, ListDbObjectsRequest::setJobId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbObjectsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDbObjectsRequest::getOffset, ListDbObjectsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDbObjectsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDbObjectsRequest::getLimit, ListDbObjectsRequest::setLimit));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDbObjectsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListDbObjectsRequest::getType, ListDbObjectsRequest::setType));
         builder.<List<String>>withRequestField("db_names",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDbObjectsRequest::getDbNames, (req, v) -> {
-                req.setDbNames(v);
-            }));
+            f -> f.withMarshaller(ListDbObjectsRequest::getDbNames, ListDbObjectsRequest::setDbNames));
         builder.<ListDbObjectsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDbObjectsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListDbObjectsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListDbObjectsRequest::getXLanguage, ListDbObjectsRequest::setXLanguage));
 
         // response
 
@@ -1225,9 +1071,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListInstanceByTagsRequest, ListInstanceByTagsResponse> listInstanceByTags =
-        genForlistInstanceByTags();
+        genForListInstanceByTags();
 
-    private static HttpRequestDef<ListInstanceByTagsRequest, ListInstanceByTagsResponse> genForlistInstanceByTags() {
+    private static HttpRequestDef<ListInstanceByTagsRequest, ListInstanceByTagsResponse> genForListInstanceByTags() {
         // basic
         HttpRequestDef.Builder<ListInstanceByTagsRequest, ListInstanceByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListInstanceByTagsRequest.class, ListInstanceByTagsResponse.class)
@@ -1240,37 +1086,28 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListInstanceByTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListInstanceByTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListInstanceByTagsRequest::getResourceType,
+                ListInstanceByTagsRequest::setResourceType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceByTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstanceByTagsRequest::getLimit, ListInstanceByTagsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceByTagsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstanceByTagsRequest::getOffset, ListInstanceByTagsRequest::setOffset));
         builder.<ListInstanceByTagsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstanceByTagsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListInstanceByTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListInstanceByTagsRequest::getXLanguage, ListInstanceByTagsRequest::setXLanguage));
         builder.<QueryInstanceByTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryInstanceByTagReq.class),
-            f -> f.withMarshaller(ListInstanceByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListInstanceByTagsRequest::getBody, ListInstanceByTagsRequest::setBody));
 
         // response
 
@@ -1278,9 +1115,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
-        genForlistInstanceTags();
+        genForListInstanceTags();
 
-    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForlistInstanceTags() {
+    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForListInstanceTags() {
         // basic
         HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
@@ -1293,23 +1130,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListInstanceTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getResourceType, ListInstanceTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getResourceId, ListInstanceTagsRequest::setResourceId));
         builder.<ListInstanceTagsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstanceTagsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListInstanceTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListInstanceTagsRequest::getXLanguage, ListInstanceTagsRequest::setXLanguage));
 
         // response
 
@@ -1317,9 +1148,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListJdbcDriversRequest, ListJdbcDriversResponse> listJdbcDrivers =
-        genForlistJdbcDrivers();
+        genForListJdbcDrivers();
 
-    private static HttpRequestDef<ListJdbcDriversRequest, ListJdbcDriversResponse> genForlistJdbcDrivers() {
+    private static HttpRequestDef<ListJdbcDriversRequest, ListJdbcDriversResponse> genForListJdbcDrivers() {
         // basic
         HttpRequestDef.Builder<ListJdbcDriversRequest, ListJdbcDriversResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJdbcDriversRequest.class, ListJdbcDriversResponse.class)
@@ -1332,23 +1163,17 @@ public class DrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJdbcDriversRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListJdbcDriversRequest::getLimit, ListJdbcDriversRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJdbcDriversRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListJdbcDriversRequest::getOffset, ListJdbcDriversRequest::setOffset));
         builder.<ListJdbcDriversRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListJdbcDriversRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListJdbcDriversRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListJdbcDriversRequest::getXLanguage, ListJdbcDriversRequest::setXLanguage));
 
         // response
 
@@ -1356,9 +1181,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListJobHistoryParametersRequest, ListJobHistoryParametersResponse> listJobHistoryParameters =
-        genForlistJobHistoryParameters();
+        genForListJobHistoryParameters();
 
-    private static HttpRequestDef<ListJobHistoryParametersRequest, ListJobHistoryParametersResponse> genForlistJobHistoryParameters() {
+    private static HttpRequestDef<ListJobHistoryParametersRequest, ListJobHistoryParametersResponse> genForListJobHistoryParameters() {
         // basic
         HttpRequestDef.Builder<ListJobHistoryParametersRequest, ListJobHistoryParametersResponse> builder =
             HttpRequestDef
@@ -1372,51 +1197,43 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobHistoryParametersRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getJobId,
+                ListJobHistoryParametersRequest::setJobId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobHistoryParametersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getOffset,
+                ListJobHistoryParametersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobHistoryParametersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getLimit,
+                ListJobHistoryParametersRequest::setLimit));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobHistoryParametersRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getBeginTime,
+                ListJobHistoryParametersRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobHistoryParametersRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getEndTime,
+                ListJobHistoryParametersRequest::setEndTime));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobHistoryParametersRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getName, ListJobHistoryParametersRequest::setName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobHistoryParametersRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListJobHistoryParametersRequest::getXLanguage,
+                ListJobHistoryParametersRequest::setXLanguage));
 
         // response
 
@@ -1424,9 +1241,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListJobParametersRequest, ListJobParametersResponse> listJobParameters =
-        genForlistJobParameters();
+        genForListJobParameters();
 
-    private static HttpRequestDef<ListJobParametersRequest, ListJobParametersResponse> genForlistJobParameters() {
+    private static HttpRequestDef<ListJobParametersRequest, ListJobParametersResponse> genForListJobParameters() {
         // basic
         HttpRequestDef.Builder<ListJobParametersRequest, ListJobParametersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobParametersRequest.class, ListJobParametersResponse.class)
@@ -1439,46 +1256,36 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobParametersRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListJobParametersRequest::getJobId, ListJobParametersRequest::setJobId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobParametersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListJobParametersRequest::getOffset, ListJobParametersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobParametersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListJobParametersRequest::getLimit, ListJobParametersRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobParametersRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListJobParametersRequest::getName, ListJobParametersRequest::setName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobParametersRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListJobParametersRequest::getXLanguage, ListJobParametersRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForlistJobs();
+    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForListJobs();
 
-    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForlistJobs() {
+    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForListJobs() {
         // basic
         HttpRequestDef.Builder<ListJobsRequest, ListJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobsRequest.class, ListJobsResponse.class)
@@ -1491,102 +1298,76 @@ public class DrsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListJobsRequest.JobTypeEnum.class),
-            f -> f.withMarshaller(ListJobsRequest::getJobType, (req, v) -> {
-                req.setJobType(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getJobType, ListJobsRequest::setJobType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getName, ListJobsRequest::setName));
         builder.<ListJobsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListJobsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListJobsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getStatus, ListJobsRequest::setStatus));
         builder.<ListJobsRequest.EngineTypeEnum>withRequestField("engine_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListJobsRequest.EngineTypeEnum.class),
-            f -> f.withMarshaller(ListJobsRequest::getEngineType, (req, v) -> {
-                req.setEngineType(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getEngineType, ListJobsRequest::setEngineType));
         builder.<ListJobsRequest.NetTypeEnum>withRequestField("net_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListJobsRequest.NetTypeEnum.class),
-            f -> f.withMarshaller(ListJobsRequest::getNetType, (req, v) -> {
-                req.setNetType(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getNetType, ListJobsRequest::setNetType));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getEnterpriseProjectId, ListJobsRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getOffset, ListJobsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getLimit, ListJobsRequest::setLimit));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getSortKey, ListJobsRequest::setSortKey));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getSortDir, ListJobsRequest::setSortDir));
         builder.<List<String>>withRequestField("instance_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListJobsRequest::getInstanceIds, (req, v) -> {
-                req.setInstanceIds(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getInstanceIds, ListJobsRequest::setInstanceIds));
         builder.<String>withRequestField("instance_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getInstanceIp, (req, v) -> {
-                req.setInstanceIp(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getInstanceIp, ListJobsRequest::setInstanceIp));
         builder.<ListJobsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListJobsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getXLanguage, ListJobsRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListLinksRequest, ListLinksResponse> listLinks = genForlistLinks();
+    public static final HttpRequestDef<ListLinksRequest, ListLinksResponse> listLinks = genForListLinks();
 
-    private static HttpRequestDef<ListLinksRequest, ListLinksResponse> genForlistLinks() {
+    private static HttpRequestDef<ListLinksRequest, ListLinksResponse> genForListLinks() {
         // basic
         HttpRequestDef.Builder<ListLinksRequest, ListLinksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLinksRequest.class, ListLinksResponse.class)
@@ -1599,30 +1380,22 @@ public class DrsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListLinksRequest.JobTypeEnum.class),
-            f -> f.withMarshaller(ListLinksRequest::getJobType, (req, v) -> {
-                req.setJobType(v);
-            }));
+            f -> f.withMarshaller(ListLinksRequest::getJobType, ListLinksRequest::setJobType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLinksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLinksRequest::getOffset, ListLinksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLinksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLinksRequest::getLimit, ListLinksRequest::setLimit));
         builder.<ListLinksRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListLinksRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListLinksRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListLinksRequest::getXLanguage, ListLinksRequest::setXLanguage));
 
         // response
 
@@ -1630,9 +1403,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
-        genForlistProjectTags();
+        genForListProjectTags();
 
-    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForListProjectTags() {
         // basic
         HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
@@ -1645,25 +1418,21 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListProjectTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, ListProjectTagsRequest::setResourceType));
         builder.<ListProjectTagsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProjectTagsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListProjectTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListProjectTagsRequest::getXLanguage, ListProjectTagsRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
 
-    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
         // basic
         HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
@@ -1676,25 +1445,21 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getResourceType, ListTagsRequest::setResourceType));
         builder.<ListTagsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTagsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ListTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getXLanguage, ListTagsRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowActionsRequest, ShowActionsResponse> showActions = genForshowActions();
+    public static final HttpRequestDef<ShowActionsRequest, ShowActionsResponse> showActions = genForShowActions();
 
-    private static HttpRequestDef<ShowActionsRequest, ShowActionsResponse> genForshowActions() {
+    private static HttpRequestDef<ShowActionsRequest, ShowActionsResponse> genForShowActions() {
         // basic
         HttpRequestDef.Builder<ShowActionsRequest, ShowActionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowActionsRequest.class, ShowActionsResponse.class)
@@ -1707,16 +1472,12 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowActionsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowActionsRequest::getJobId, ShowActionsRequest::setJobId));
         builder.<ShowActionsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowActionsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowActionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowActionsRequest::getXLanguage, ShowActionsRequest::setXLanguage));
 
         // response
 
@@ -1724,9 +1485,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowColumnInfoResultRequest, ShowColumnInfoResultResponse> showColumnInfoResult =
-        genForshowColumnInfoResult();
+        genForShowColumnInfoResult();
 
-    private static HttpRequestDef<ShowColumnInfoResultRequest, ShowColumnInfoResultResponse> genForshowColumnInfoResult() {
+    private static HttpRequestDef<ShowColumnInfoResultRequest, ShowColumnInfoResultResponse> genForShowColumnInfoResult() {
         // basic
         HttpRequestDef.Builder<ShowColumnInfoResultRequest, ShowColumnInfoResultResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowColumnInfoResultRequest.class, ShowColumnInfoResultResponse.class)
@@ -1739,37 +1500,28 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowColumnInfoResultRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowColumnInfoResultRequest::getJobId, ShowColumnInfoResultRequest::setJobId));
         builder.<String>withRequestField("query_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowColumnInfoResultRequest::getQueryId, (req, v) -> {
-                req.setQueryId(v);
-            }));
+            f -> f.withMarshaller(ShowColumnInfoResultRequest::getQueryId, ShowColumnInfoResultRequest::setQueryId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowColumnInfoResultRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowColumnInfoResultRequest::getOffset, ShowColumnInfoResultRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowColumnInfoResultRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowColumnInfoResultRequest::getLimit, ShowColumnInfoResultRequest::setLimit));
         builder.<ShowColumnInfoResultRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowColumnInfoResultRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowColumnInfoResultRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowColumnInfoResultRequest::getXLanguage,
+                ShowColumnInfoResultRequest::setXLanguage));
 
         // response
 
@@ -1777,9 +1529,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowComparePolicyRequest, ShowComparePolicyResponse> showComparePolicy =
-        genForshowComparePolicy();
+        genForShowComparePolicy();
 
-    private static HttpRequestDef<ShowComparePolicyRequest, ShowComparePolicyResponse> genForshowComparePolicy() {
+    private static HttpRequestDef<ShowComparePolicyRequest, ShowComparePolicyResponse> genForShowComparePolicy() {
         // basic
         HttpRequestDef.Builder<ShowComparePolicyRequest, ShowComparePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowComparePolicyRequest.class, ShowComparePolicyResponse.class)
@@ -1792,16 +1544,12 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComparePolicyRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowComparePolicyRequest::getJobId, ShowComparePolicyRequest::setJobId));
         builder.<ShowComparePolicyRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowComparePolicyRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowComparePolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowComparePolicyRequest::getXLanguage, ShowComparePolicyRequest::setXLanguage));
 
         // response
 
@@ -1809,9 +1557,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowDataFilteringResultRequest, ShowDataFilteringResultResponse> showDataFilteringResult =
-        genForshowDataFilteringResult();
+        genForShowDataFilteringResult();
 
-    private static HttpRequestDef<ShowDataFilteringResultRequest, ShowDataFilteringResultResponse> genForshowDataFilteringResult() {
+    private static HttpRequestDef<ShowDataFilteringResultRequest, ShowDataFilteringResultResponse> genForShowDataFilteringResult() {
         // basic
         HttpRequestDef.Builder<ShowDataFilteringResultRequest, ShowDataFilteringResultResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDataFilteringResultRequest.class, ShowDataFilteringResultResponse.class)
@@ -1824,23 +1572,19 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataFilteringResultRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowDataFilteringResultRequest::getJobId, ShowDataFilteringResultRequest::setJobId));
         builder.<String>withRequestField("query_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataFilteringResultRequest::getQueryId, (req, v) -> {
-                req.setQueryId(v);
-            }));
+            f -> f.withMarshaller(ShowDataFilteringResultRequest::getQueryId,
+                ShowDataFilteringResultRequest::setQueryId));
         builder.<ShowDataFilteringResultRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDataFilteringResultRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowDataFilteringResultRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDataFilteringResultRequest::getXLanguage,
+                ShowDataFilteringResultRequest::setXLanguage));
 
         // response
 
@@ -1848,9 +1592,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowDataProcessingRulesResultRequest, ShowDataProcessingRulesResultResponse> showDataProcessingRulesResult =
-        genForshowDataProcessingRulesResult();
+        genForShowDataProcessingRulesResult();
 
-    private static HttpRequestDef<ShowDataProcessingRulesResultRequest, ShowDataProcessingRulesResultResponse> genForshowDataProcessingRulesResult() {
+    private static HttpRequestDef<ShowDataProcessingRulesResultRequest, ShowDataProcessingRulesResultResponse> genForShowDataProcessingRulesResult() {
         // basic
         HttpRequestDef.Builder<ShowDataProcessingRulesResultRequest, ShowDataProcessingRulesResultResponse> builder =
             HttpRequestDef
@@ -1866,23 +1610,20 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataProcessingRulesResultRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowDataProcessingRulesResultRequest::getJobId,
+                ShowDataProcessingRulesResultRequest::setJobId));
         builder.<String>withRequestField("query_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataProcessingRulesResultRequest::getQueryId, (req, v) -> {
-                req.setQueryId(v);
-            }));
+            f -> f.withMarshaller(ShowDataProcessingRulesResultRequest::getQueryId,
+                ShowDataProcessingRulesResultRequest::setQueryId));
         builder.<ShowDataProcessingRulesResultRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDataProcessingRulesResultRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowDataProcessingRulesResultRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDataProcessingRulesResultRequest::getXLanguage,
+                ShowDataProcessingRulesResultRequest::setXLanguage));
 
         // response
 
@@ -1890,9 +1631,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowDataProgressRequest, ShowDataProgressResponse> showDataProgress =
-        genForshowDataProgress();
+        genForShowDataProgress();
 
-    private static HttpRequestDef<ShowDataProgressRequest, ShowDataProgressResponse> genForshowDataProgress() {
+    private static HttpRequestDef<ShowDataProgressRequest, ShowDataProgressResponse> genForShowDataProgress() {
         // basic
         HttpRequestDef.Builder<ShowDataProgressRequest, ShowDataProgressResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDataProgressRequest.class, ShowDataProgressResponse.class)
@@ -1905,30 +1646,22 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataProgressRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowDataProgressRequest::getJobId, ShowDataProgressRequest::setJobId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDataProgressRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowDataProgressRequest::getOffset, ShowDataProgressRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDataProgressRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowDataProgressRequest::getLimit, ShowDataProgressRequest::setLimit));
         builder.<ShowDataProgressRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDataProgressRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowDataProgressRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDataProgressRequest::getXLanguage, ShowDataProgressRequest::setXLanguage));
 
         // response
 
@@ -1936,9 +1669,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowDbObjectCollectionStatusRequest, ShowDbObjectCollectionStatusResponse> showDbObjectCollectionStatus =
-        genForshowDbObjectCollectionStatus();
+        genForShowDbObjectCollectionStatus();
 
-    private static HttpRequestDef<ShowDbObjectCollectionStatusRequest, ShowDbObjectCollectionStatusResponse> genForshowDbObjectCollectionStatus() {
+    private static HttpRequestDef<ShowDbObjectCollectionStatusRequest, ShowDbObjectCollectionStatusResponse> genForShowDbObjectCollectionStatus() {
         // basic
         HttpRequestDef.Builder<ShowDbObjectCollectionStatusRequest, ShowDbObjectCollectionStatusResponse> builder =
             HttpRequestDef
@@ -1954,23 +1687,20 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDbObjectCollectionStatusRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectCollectionStatusRequest::getJobId,
+                ShowDbObjectCollectionStatusRequest::setJobId));
         builder.<String>withRequestField("query_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDbObjectCollectionStatusRequest::getQueryId, (req, v) -> {
-                req.setQueryId(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectCollectionStatusRequest::getQueryId,
+                ShowDbObjectCollectionStatusRequest::setQueryId));
         builder.<ShowDbObjectCollectionStatusRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDbObjectCollectionStatusRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowDbObjectCollectionStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectCollectionStatusRequest::getXLanguage,
+                ShowDbObjectCollectionStatusRequest::setXLanguage));
 
         // response
 
@@ -1978,9 +1708,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowDbObjectTemplateProgressRequest, ShowDbObjectTemplateProgressResponse> showDbObjectTemplateProgress =
-        genForshowDbObjectTemplateProgress();
+        genForShowDbObjectTemplateProgress();
 
-    private static HttpRequestDef<ShowDbObjectTemplateProgressRequest, ShowDbObjectTemplateProgressResponse> genForshowDbObjectTemplateProgress() {
+    private static HttpRequestDef<ShowDbObjectTemplateProgressRequest, ShowDbObjectTemplateProgressResponse> genForShowDbObjectTemplateProgress() {
         // basic
         HttpRequestDef.Builder<ShowDbObjectTemplateProgressRequest, ShowDbObjectTemplateProgressResponse> builder =
             HttpRequestDef
@@ -1996,30 +1726,26 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDbObjectTemplateProgressRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectTemplateProgressRequest::getJobId,
+                ShowDbObjectTemplateProgressRequest::setJobId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDbObjectTemplateProgressRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectTemplateProgressRequest::getOffset,
+                ShowDbObjectTemplateProgressRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDbObjectTemplateProgressRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectTemplateProgressRequest::getLimit,
+                ShowDbObjectTemplateProgressRequest::setLimit));
         builder.<ShowDbObjectTemplateProgressRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDbObjectTemplateProgressRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowDbObjectTemplateProgressRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectTemplateProgressRequest::getXLanguage,
+                ShowDbObjectTemplateProgressRequest::setXLanguage));
 
         // response
 
@@ -2027,9 +1753,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowDbObjectTemplateResultRequest, ShowDbObjectTemplateResultResponse> showDbObjectTemplateResult =
-        genForshowDbObjectTemplateResult();
+        genForShowDbObjectTemplateResult();
 
-    private static HttpRequestDef<ShowDbObjectTemplateResultRequest, ShowDbObjectTemplateResultResponse> genForshowDbObjectTemplateResult() {
+    private static HttpRequestDef<ShowDbObjectTemplateResultRequest, ShowDbObjectTemplateResultResponse> genForShowDbObjectTemplateResult() {
         // basic
         HttpRequestDef.Builder<ShowDbObjectTemplateResultRequest, ShowDbObjectTemplateResultResponse> builder =
             HttpRequestDef
@@ -2045,23 +1771,20 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDbObjectTemplateResultRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectTemplateResultRequest::getJobId,
+                ShowDbObjectTemplateResultRequest::setJobId));
         builder.<ShowDbObjectTemplateResultRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowDbObjectTemplateResultRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowDbObjectTemplateResultRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectTemplateResultRequest::getType,
+                ShowDbObjectTemplateResultRequest::setType));
         builder.<ShowDbObjectTemplateResultRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDbObjectTemplateResultRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowDbObjectTemplateResultRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectTemplateResultRequest::getXLanguage,
+                ShowDbObjectTemplateResultRequest::setXLanguage));
 
         // response
 
@@ -2069,9 +1792,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowDbObjectsListRequest, ShowDbObjectsListResponse> showDbObjectsList =
-        genForshowDbObjectsList();
+        genForShowDbObjectsList();
 
-    private static HttpRequestDef<ShowDbObjectsListRequest, ShowDbObjectsListResponse> genForshowDbObjectsList() {
+    private static HttpRequestDef<ShowDbObjectsListRequest, ShowDbObjectsListResponse> genForShowDbObjectsList() {
         // basic
         HttpRequestDef.Builder<ShowDbObjectsListRequest, ShowDbObjectsListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDbObjectsListRequest.class, ShowDbObjectsListResponse.class)
@@ -2084,23 +1807,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDbObjectsListRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectsListRequest::getJobId, ShowDbObjectsListRequest::setJobId));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDbObjectsListRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectsListRequest::getType, ShowDbObjectsListRequest::setType));
         builder.<ShowDbObjectsListRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDbObjectsListRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowDbObjectsListRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDbObjectsListRequest::getXLanguage, ShowDbObjectsListRequest::setXLanguage));
 
         // response
 
@@ -2108,9 +1825,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowDirtyDataRequest, ShowDirtyDataResponse> showDirtyData =
-        genForshowDirtyData();
+        genForShowDirtyData();
 
-    private static HttpRequestDef<ShowDirtyDataRequest, ShowDirtyDataResponse> genForshowDirtyData() {
+    private static HttpRequestDef<ShowDirtyDataRequest, ShowDirtyDataResponse> genForShowDirtyData() {
         // basic
         HttpRequestDef.Builder<ShowDirtyDataRequest, ShowDirtyDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDirtyDataRequest.class, ShowDirtyDataResponse.class)
@@ -2123,44 +1840,32 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDirtyDataRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowDirtyDataRequest::getJobId, ShowDirtyDataRequest::setJobId));
         builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDirtyDataRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ShowDirtyDataRequest::getBeginTime, ShowDirtyDataRequest::setBeginTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDirtyDataRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowDirtyDataRequest::getEndTime, ShowDirtyDataRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDirtyDataRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowDirtyDataRequest::getOffset, ShowDirtyDataRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDirtyDataRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowDirtyDataRequest::getLimit, ShowDirtyDataRequest::setLimit));
         builder.<ShowDirtyDataRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDirtyDataRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowDirtyDataRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowDirtyDataRequest::getXLanguage, ShowDirtyDataRequest::setXLanguage));
 
         // response
 
@@ -2168,9 +1873,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> showEnterpriseProject =
-        genForshowEnterpriseProject();
+        genForShowEnterpriseProject();
 
-    private static HttpRequestDef<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> genForshowEnterpriseProject() {
+    private static HttpRequestDef<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> genForShowEnterpriseProject() {
         // basic
         HttpRequestDef.Builder<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEnterpriseProjectRequest.class, ShowEnterpriseProjectResponse.class)
@@ -2183,37 +1888,29 @@ public class DrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getOffset, ShowEnterpriseProjectRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getLimit, ShowEnterpriseProjectRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getName, ShowEnterpriseProjectRequest::setName));
         builder.<String>withRequestField("domain_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getDomainId,
+                ShowEnterpriseProjectRequest::setDomainId));
         builder.<ShowEnterpriseProjectRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowEnterpriseProjectRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getXLanguage,
+                ShowEnterpriseProjectRequest::setXLanguage));
 
         // response
 
@@ -2221,9 +1918,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowHealthCompareJobListRequest, ShowHealthCompareJobListResponse> showHealthCompareJobList =
-        genForshowHealthCompareJobList();
+        genForShowHealthCompareJobList();
 
-    private static HttpRequestDef<ShowHealthCompareJobListRequest, ShowHealthCompareJobListResponse> genForshowHealthCompareJobList() {
+    private static HttpRequestDef<ShowHealthCompareJobListRequest, ShowHealthCompareJobListResponse> genForShowHealthCompareJobList() {
         // basic
         HttpRequestDef.Builder<ShowHealthCompareJobListRequest, ShowHealthCompareJobListResponse> builder =
             HttpRequestDef
@@ -2237,37 +1934,32 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHealthCompareJobListRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowHealthCompareJobListRequest::getJobId,
+                ShowHealthCompareJobListRequest::setJobId));
         builder.<ShowHealthCompareJobListRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowHealthCompareJobListRequest.StatusEnum.class),
-            f -> f.withMarshaller(ShowHealthCompareJobListRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowHealthCompareJobListRequest::getStatus,
+                ShowHealthCompareJobListRequest::setStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHealthCompareJobListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowHealthCompareJobListRequest::getOffset,
+                ShowHealthCompareJobListRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHealthCompareJobListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowHealthCompareJobListRequest::getLimit,
+                ShowHealthCompareJobListRequest::setLimit));
         builder.<ShowHealthCompareJobListRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowHealthCompareJobListRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowHealthCompareJobListRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowHealthCompareJobListRequest::getXLanguage,
+                ShowHealthCompareJobListRequest::setXLanguage));
 
         // response
 
@@ -2275,9 +1967,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowIncrementComponentsDetailRequest, ShowIncrementComponentsDetailResponse> showIncrementComponentsDetail =
-        genForshowIncrementComponentsDetail();
+        genForShowIncrementComponentsDetail();
 
-    private static HttpRequestDef<ShowIncrementComponentsDetailRequest, ShowIncrementComponentsDetailResponse> genForshowIncrementComponentsDetail() {
+    private static HttpRequestDef<ShowIncrementComponentsDetailRequest, ShowIncrementComponentsDetailResponse> genForShowIncrementComponentsDetail() {
         // basic
         HttpRequestDef.Builder<ShowIncrementComponentsDetailRequest, ShowIncrementComponentsDetailResponse> builder =
             HttpRequestDef
@@ -2293,16 +1985,14 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIncrementComponentsDetailRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowIncrementComponentsDetailRequest::getJobId,
+                ShowIncrementComponentsDetailRequest::setJobId));
         builder.<ShowIncrementComponentsDetailRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowIncrementComponentsDetailRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowIncrementComponentsDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowIncrementComponentsDetailRequest::getXLanguage,
+                ShowIncrementComponentsDetailRequest::setXLanguage));
 
         // response
 
@@ -2310,9 +2000,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowInstanceTagsRequest, ShowInstanceTagsResponse> showInstanceTags =
-        genForshowInstanceTags();
+        genForShowInstanceTags();
 
-    private static HttpRequestDef<ShowInstanceTagsRequest, ShowInstanceTagsResponse> genForshowInstanceTags() {
+    private static HttpRequestDef<ShowInstanceTagsRequest, ShowInstanceTagsResponse> genForShowInstanceTags() {
         // basic
         HttpRequestDef.Builder<ShowInstanceTagsRequest, ShowInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceTagsRequest.class, ShowInstanceTagsResponse.class)
@@ -2325,23 +2015,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowInstanceTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ShowInstanceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceTagsRequest::getResourceType, ShowInstanceTagsRequest::setResourceType));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceTagsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceTagsRequest::getJobId, ShowInstanceTagsRequest::setJobId));
         builder.<ShowInstanceTagsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowInstanceTagsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowInstanceTagsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceTagsRequest::getXLanguage, ShowInstanceTagsRequest::setXLanguage));
 
         // response
 
@@ -2349,9 +2033,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail =
-        genForshowJobDetail();
+        genForShowJobDetail();
 
-    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForshowJobDetail() {
+    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForShowJobDetail() {
         // basic
         HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
@@ -2364,102 +2048,77 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, ShowJobDetailRequest::setJobId));
         builder.<ShowJobDetailRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowJobDetailRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getType, ShowJobDetailRequest::setType));
         builder.<String>withRequestField("query_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getQueryId, (req, v) -> {
-                req.setQueryId(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getQueryId, ShowJobDetailRequest::setQueryId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getOffset, ShowJobDetailRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getLimit, ShowJobDetailRequest::setLimit));
         builder.<ShowJobDetailRequest.CompareTypeEnum>withRequestField("compare_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowJobDetailRequest.CompareTypeEnum.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getCompareType, (req, v) -> {
-                req.setCompareType(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getCompareType, ShowJobDetailRequest::setCompareType));
         builder.<ShowJobDetailRequest.QueryTypeEnum>withRequestField("query_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowJobDetailRequest.QueryTypeEnum.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getQueryType, (req, v) -> {
-                req.setQueryType(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getQueryType, ShowJobDetailRequest::setQueryType));
         builder.<ShowJobDetailRequest.ObjectTypeEnum>withRequestField("object_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowJobDetailRequest.ObjectTypeEnum.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getObjectType, (req, v) -> {
-                req.setObjectType(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getObjectType, ShowJobDetailRequest::setObjectType));
         builder.<String>withRequestField("compare_task_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getCompareTaskId, (req, v) -> {
-                req.setCompareTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getCompareTaskId, ShowJobDetailRequest::setCompareTaskId));
         builder.<String>withRequestField("source_db_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getSourceDbName, (req, v) -> {
-                req.setSourceDbName(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getSourceDbName, ShowJobDetailRequest::setSourceDbName));
         builder.<String>withRequestField("target_db_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getTargetDbName, (req, v) -> {
-                req.setTargetDbName(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getTargetDbName, ShowJobDetailRequest::setTargetDbName));
         builder.<ShowJobDetailRequest.CompareDetailTypeEnum>withRequestField("compare_detail_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowJobDetailRequest.CompareDetailTypeEnum.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getCompareDetailType, (req, v) -> {
-                req.setCompareDetailType(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getCompareDetailType,
+                ShowJobDetailRequest::setCompareDetailType));
         builder.<ShowJobDetailRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowJobDetailRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getXLanguage, ShowJobDetailRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMeteringRequest, ShowMeteringResponse> showMetering = genForshowMetering();
+    public static final HttpRequestDef<ShowMeteringRequest, ShowMeteringResponse> showMetering = genForShowMetering();
 
-    private static HttpRequestDef<ShowMeteringRequest, ShowMeteringResponse> genForshowMetering() {
+    private static HttpRequestDef<ShowMeteringRequest, ShowMeteringResponse> genForShowMetering() {
         // basic
         HttpRequestDef.Builder<ShowMeteringRequest, ShowMeteringResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMeteringRequest.class, ShowMeteringResponse.class)
@@ -2472,16 +2131,12 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeteringRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowMeteringRequest::getJobId, ShowMeteringRequest::setJobId));
         builder.<ShowMeteringRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowMeteringRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowMeteringRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowMeteringRequest::getXLanguage, ShowMeteringRequest::setXLanguage));
 
         // response
 
@@ -2489,9 +2144,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowMonitorDataRequest, ShowMonitorDataResponse> showMonitorData =
-        genForshowMonitorData();
+        genForShowMonitorData();
 
-    private static HttpRequestDef<ShowMonitorDataRequest, ShowMonitorDataResponse> genForshowMonitorData() {
+    private static HttpRequestDef<ShowMonitorDataRequest, ShowMonitorDataResponse> genForShowMonitorData() {
         // basic
         HttpRequestDef.Builder<ShowMonitorDataRequest, ShowMonitorDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMonitorDataRequest.class, ShowMonitorDataResponse.class)
@@ -2504,16 +2159,12 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMonitorDataRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowMonitorDataRequest::getJobId, ShowMonitorDataRequest::setJobId));
         builder.<ShowMonitorDataRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowMonitorDataRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowMonitorDataRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowMonitorDataRequest::getXLanguage, ShowMonitorDataRequest::setXLanguage));
 
         // response
 
@@ -2521,9 +2172,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowObjectMappingRequest, ShowObjectMappingResponse> showObjectMapping =
-        genForshowObjectMapping();
+        genForShowObjectMapping();
 
-    private static HttpRequestDef<ShowObjectMappingRequest, ShowObjectMappingResponse> genForshowObjectMapping() {
+    private static HttpRequestDef<ShowObjectMappingRequest, ShowObjectMappingResponse> genForShowObjectMapping() {
         // basic
         HttpRequestDef.Builder<ShowObjectMappingRequest, ShowObjectMappingResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowObjectMappingRequest.class, ShowObjectMappingResponse.class)
@@ -2536,23 +2187,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowObjectMappingRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowObjectMappingRequest::getJobId, ShowObjectMappingRequest::setJobId));
         builder.<ShowObjectMappingRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowObjectMappingRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowObjectMappingRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowObjectMappingRequest::getXLanguage, ShowObjectMappingRequest::setXLanguage));
         builder.<QueryUserSelectedObjectInfoReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryUserSelectedObjectInfoReq.class),
-            f -> f.withMarshaller(ShowObjectMappingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowObjectMappingRequest::getBody, ShowObjectMappingRequest::setBody));
 
         // response
 
@@ -2560,9 +2205,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowPositionResultRequest, ShowPositionResultResponse> showPositionResult =
-        genForshowPositionResult();
+        genForShowPositionResult();
 
-    private static HttpRequestDef<ShowPositionResultRequest, ShowPositionResultResponse> genForshowPositionResult() {
+    private static HttpRequestDef<ShowPositionResultRequest, ShowPositionResultResponse> genForShowPositionResult() {
         // basic
         HttpRequestDef.Builder<ShowPositionResultRequest, ShowPositionResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPositionResultRequest.class, ShowPositionResultResponse.class)
@@ -2575,23 +2220,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPositionResultRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowPositionResultRequest::getJobId, ShowPositionResultRequest::setJobId));
         builder.<String>withRequestField("query_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPositionResultRequest::getQueryId, (req, v) -> {
-                req.setQueryId(v);
-            }));
+            f -> f.withMarshaller(ShowPositionResultRequest::getQueryId, ShowPositionResultRequest::setQueryId));
         builder.<ShowPositionResultRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowPositionResultRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowPositionResultRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowPositionResultRequest::getXLanguage, ShowPositionResultRequest::setXLanguage));
 
         // response
 
@@ -2599,9 +2238,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowProgressDataRequest, ShowProgressDataResponse> showProgressData =
-        genForshowProgressData();
+        genForShowProgressData();
 
-    private static HttpRequestDef<ShowProgressDataRequest, ShowProgressDataResponse> genForshowProgressData() {
+    private static HttpRequestDef<ShowProgressDataRequest, ShowProgressDataResponse> genForShowProgressData() {
         // basic
         HttpRequestDef.Builder<ShowProgressDataRequest, ShowProgressDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProgressDataRequest.class, ShowProgressDataResponse.class)
@@ -2614,37 +2253,27 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProgressDataRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowProgressDataRequest::getJobId, ShowProgressDataRequest::setJobId));
         builder.<String>withRequestField("type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProgressDataRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowProgressDataRequest::getType, ShowProgressDataRequest::setType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProgressDataRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowProgressDataRequest::getOffset, ShowProgressDataRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProgressDataRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowProgressDataRequest::getLimit, ShowProgressDataRequest::setLimit));
         builder.<ShowProgressDataRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowProgressDataRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowProgressDataRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowProgressDataRequest::getXLanguage, ShowProgressDataRequest::setXLanguage));
 
         // response
 
@@ -2652,9 +2281,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowSupportObjectTypeRequest, ShowSupportObjectTypeResponse> showSupportObjectType =
-        genForshowSupportObjectType();
+        genForShowSupportObjectType();
 
-    private static HttpRequestDef<ShowSupportObjectTypeRequest, ShowSupportObjectTypeResponse> genForshowSupportObjectType() {
+    private static HttpRequestDef<ShowSupportObjectTypeRequest, ShowSupportObjectTypeResponse> genForShowSupportObjectType() {
         // basic
         HttpRequestDef.Builder<ShowSupportObjectTypeRequest, ShowSupportObjectTypeResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSupportObjectTypeRequest.class, ShowSupportObjectTypeResponse.class)
@@ -2667,16 +2296,13 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSupportObjectTypeRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowSupportObjectTypeRequest::getJobId, ShowSupportObjectTypeRequest::setJobId));
         builder.<ShowSupportObjectTypeRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSupportObjectTypeRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowSupportObjectTypeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSupportObjectTypeRequest::getXLanguage,
+                ShowSupportObjectTypeRequest::setXLanguage));
 
         // response
 
@@ -2684,9 +2310,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ShowUpdateObjectSavingStatusRequest, ShowUpdateObjectSavingStatusResponse> showUpdateObjectSavingStatus =
-        genForshowUpdateObjectSavingStatus();
+        genForShowUpdateObjectSavingStatus();
 
-    private static HttpRequestDef<ShowUpdateObjectSavingStatusRequest, ShowUpdateObjectSavingStatusResponse> genForshowUpdateObjectSavingStatus() {
+    private static HttpRequestDef<ShowUpdateObjectSavingStatusRequest, ShowUpdateObjectSavingStatusResponse> genForShowUpdateObjectSavingStatus() {
         // basic
         HttpRequestDef.Builder<ShowUpdateObjectSavingStatusRequest, ShowUpdateObjectSavingStatusResponse> builder =
             HttpRequestDef
@@ -2702,23 +2328,20 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpdateObjectSavingStatusRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowUpdateObjectSavingStatusRequest::getJobId,
+                ShowUpdateObjectSavingStatusRequest::setJobId));
         builder.<String>withRequestField("query_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpdateObjectSavingStatusRequest::getQueryId, (req, v) -> {
-                req.setQueryId(v);
-            }));
+            f -> f.withMarshaller(ShowUpdateObjectSavingStatusRequest::getQueryId,
+                ShowUpdateObjectSavingStatusRequest::setQueryId));
         builder.<ShowUpdateObjectSavingStatusRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowUpdateObjectSavingStatusRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ShowUpdateObjectSavingStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowUpdateObjectSavingStatusRequest::getXLanguage,
+                ShowUpdateObjectSavingStatusRequest::setXLanguage));
 
         // response
 
@@ -2726,9 +2349,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<StopJobActionRequest, StopJobActionResponse> stopJobAction =
-        genForstopJobAction();
+        genForStopJobAction();
 
-    private static HttpRequestDef<StopJobActionRequest, StopJobActionResponse> genForstopJobAction() {
+    private static HttpRequestDef<StopJobActionRequest, StopJobActionResponse> genForStopJobAction() {
         // basic
         HttpRequestDef.Builder<StopJobActionRequest, StopJobActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopJobActionRequest.class, StopJobActionResponse.class)
@@ -2741,23 +2364,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopJobActionRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(StopJobActionRequest::getJobId, StopJobActionRequest::setJobId));
         builder.<StopJobActionRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StopJobActionRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(StopJobActionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(StopJobActionRequest::getXLanguage, StopJobActionRequest::setXLanguage));
         builder.<StopJobActionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StopJobActionReq.class),
-            f -> f.withMarshaller(StopJobActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StopJobActionRequest::getBody, StopJobActionRequest::setBody));
 
         // response
 
@@ -2765,9 +2382,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<SyncJdbcDriverRequest, SyncJdbcDriverResponse> syncJdbcDriver =
-        genForsyncJdbcDriver();
+        genForSyncJdbcDriver();
 
-    private static HttpRequestDef<SyncJdbcDriverRequest, SyncJdbcDriverResponse> genForsyncJdbcDriver() {
+    private static HttpRequestDef<SyncJdbcDriverRequest, SyncJdbcDriverResponse> genForSyncJdbcDriver() {
         // basic
         HttpRequestDef.Builder<SyncJdbcDriverRequest, SyncJdbcDriverResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SyncJdbcDriverRequest.class, SyncJdbcDriverResponse.class)
@@ -2780,23 +2397,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SyncJdbcDriverRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(SyncJdbcDriverRequest::getJobId, SyncJdbcDriverRequest::setJobId));
         builder.<SyncJdbcDriverRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SyncJdbcDriverRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(SyncJdbcDriverRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SyncJdbcDriverRequest::getXLanguage, SyncJdbcDriverRequest::setXLanguage));
         builder.<UpdateDriverReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDriverReq.class),
-            f -> f.withMarshaller(SyncJdbcDriverRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SyncJdbcDriverRequest::getBody, SyncJdbcDriverRequest::setBody));
 
         // response
 
@@ -2804,9 +2415,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<UpdateBatchAsyncJobsRequest, UpdateBatchAsyncJobsResponse> updateBatchAsyncJobs =
-        genForupdateBatchAsyncJobs();
+        genForUpdateBatchAsyncJobs();
 
-    private static HttpRequestDef<UpdateBatchAsyncJobsRequest, UpdateBatchAsyncJobsResponse> genForupdateBatchAsyncJobs() {
+    private static HttpRequestDef<UpdateBatchAsyncJobsRequest, UpdateBatchAsyncJobsResponse> genForUpdateBatchAsyncJobs() {
         // basic
         HttpRequestDef.Builder<UpdateBatchAsyncJobsRequest, UpdateBatchAsyncJobsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateBatchAsyncJobsRequest.class, UpdateBatchAsyncJobsResponse.class)
@@ -2819,23 +2430,19 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBatchAsyncJobsRequest::getAsyncJobId, (req, v) -> {
-                req.setAsyncJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateBatchAsyncJobsRequest::getAsyncJobId,
+                UpdateBatchAsyncJobsRequest::setAsyncJobId));
         builder.<UpdateBatchAsyncJobsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateBatchAsyncJobsRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(UpdateBatchAsyncJobsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateBatchAsyncJobsRequest::getXLanguage,
+                UpdateBatchAsyncJobsRequest::setXLanguage));
         builder.<BatchAsyncUpdateJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAsyncUpdateJobReq.class),
-            f -> f.withMarshaller(UpdateBatchAsyncJobsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBatchAsyncJobsRequest::getBody, UpdateBatchAsyncJobsRequest::setBody));
 
         // response
 
@@ -2843,9 +2450,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<UpdateDataProgressRequest, UpdateDataProgressResponse> updateDataProgress =
-        genForupdateDataProgress();
+        genForUpdateDataProgress();
 
-    private static HttpRequestDef<UpdateDataProgressRequest, UpdateDataProgressResponse> genForupdateDataProgress() {
+    private static HttpRequestDef<UpdateDataProgressRequest, UpdateDataProgressResponse> genForUpdateDataProgress() {
         // basic
         HttpRequestDef.Builder<UpdateDataProgressRequest, UpdateDataProgressResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDataProgressRequest.class, UpdateDataProgressResponse.class)
@@ -2858,32 +2465,26 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDataProgressRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateDataProgressRequest::getJobId, UpdateDataProgressRequest::setJobId));
         builder.<UpdateDataProgressRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateDataProgressRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(UpdateDataProgressRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateDataProgressRequest::getXLanguage, UpdateDataProgressRequest::setXLanguage));
         builder.<DataProcessReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DataProcessReq.class),
-            f -> f.withMarshaller(UpdateDataProgressRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDataProgressRequest::getBody, UpdateDataProgressRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateJobRequest, UpdateJobResponse> updateJob = genForupdateJob();
+    public static final HttpRequestDef<UpdateJobRequest, UpdateJobResponse> updateJob = genForUpdateJob();
 
-    private static HttpRequestDef<UpdateJobRequest, UpdateJobResponse> genForupdateJob() {
+    private static HttpRequestDef<UpdateJobRequest, UpdateJobResponse> genForUpdateJob() {
         // basic
         HttpRequestDef.Builder<UpdateJobRequest, UpdateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateJobRequest.class, UpdateJobResponse.class)
@@ -2896,23 +2497,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateJobRequest::getJobId, UpdateJobRequest::setJobId));
         builder.<UpdateJobRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateJobRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(UpdateJobRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateJobRequest::getXLanguage, UpdateJobRequest::setXLanguage));
         builder.<SingleUpdateJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SingleUpdateJobReq.class),
-            f -> f.withMarshaller(UpdateJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateJobRequest::getBody, UpdateJobRequest::setBody));
 
         // response
 
@@ -2920,9 +2515,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<UpdateJobConfigurationsRequest, UpdateJobConfigurationsResponse> updateJobConfigurations =
-        genForupdateJobConfigurations();
+        genForUpdateJobConfigurations();
 
-    private static HttpRequestDef<UpdateJobConfigurationsRequest, UpdateJobConfigurationsResponse> genForupdateJobConfigurations() {
+    private static HttpRequestDef<UpdateJobConfigurationsRequest, UpdateJobConfigurationsResponse> genForUpdateJobConfigurations() {
         // basic
         HttpRequestDef.Builder<UpdateJobConfigurationsRequest, UpdateJobConfigurationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateJobConfigurationsRequest.class, UpdateJobConfigurationsResponse.class)
@@ -2935,23 +2530,18 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateJobConfigurationsRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateJobConfigurationsRequest::getJobId, UpdateJobConfigurationsRequest::setJobId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateJobConfigurationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateJobConfigurationsRequest::getXLanguage,
+                UpdateJobConfigurationsRequest::setXLanguage));
         builder.<ModifyParameterReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyParameterReq.class),
-            f -> f.withMarshaller(UpdateJobConfigurationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateJobConfigurationsRequest::getBody, UpdateJobConfigurationsRequest::setBody));
 
         // response
 
@@ -2959,9 +2549,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<UpdateStartPositionRequest, UpdateStartPositionResponse> updateStartPosition =
-        genForupdateStartPosition();
+        genForUpdateStartPosition();
 
-    private static HttpRequestDef<UpdateStartPositionRequest, UpdateStartPositionResponse> genForupdateStartPosition() {
+    private static HttpRequestDef<UpdateStartPositionRequest, UpdateStartPositionResponse> genForUpdateStartPosition() {
         // basic
         HttpRequestDef.Builder<UpdateStartPositionRequest, UpdateStartPositionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateStartPositionRequest.class, UpdateStartPositionResponse.class)
@@ -2974,23 +2564,17 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStartPositionRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateStartPositionRequest::getJobId, UpdateStartPositionRequest::setJobId));
         builder.<UpdateStartPositionRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateStartPositionRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(UpdateStartPositionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateStartPositionRequest::getXLanguage, UpdateStartPositionRequest::setXLanguage));
         builder.<ModifyStartPositionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyStartPositionReq.class),
-            f -> f.withMarshaller(UpdateStartPositionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStartPositionRequest::getBody, UpdateStartPositionRequest::setBody));
 
         // response
 
@@ -2998,9 +2582,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<UploadDbObjectTemplateRequest, UploadDbObjectTemplateResponse> uploadDbObjectTemplate =
-        genForuploadDbObjectTemplate();
+        genForUploadDbObjectTemplate();
 
-    private static HttpRequestDef<UploadDbObjectTemplateRequest, UploadDbObjectTemplateResponse> genForuploadDbObjectTemplate() {
+    private static HttpRequestDef<UploadDbObjectTemplateRequest, UploadDbObjectTemplateResponse> genForUploadDbObjectTemplate() {
         // basic
         HttpRequestDef.Builder<UploadDbObjectTemplateRequest, UploadDbObjectTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UploadDbObjectTemplateRequest.class, UploadDbObjectTemplateResponse.class)
@@ -3013,30 +2597,24 @@ public class DrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadDbObjectTemplateRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UploadDbObjectTemplateRequest::getJobId, UploadDbObjectTemplateRequest::setJobId));
         builder.<UploadDbObjectTemplateRequest.FileImportDbLevelEnum>withRequestField("file_import_db_level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UploadDbObjectTemplateRequest.FileImportDbLevelEnum.class),
-            f -> f.withMarshaller(UploadDbObjectTemplateRequest::getFileImportDbLevel, (req, v) -> {
-                req.setFileImportDbLevel(v);
-            }));
+            f -> f.withMarshaller(UploadDbObjectTemplateRequest::getFileImportDbLevel,
+                UploadDbObjectTemplateRequest::setFileImportDbLevel));
         builder.<UploadDbObjectTemplateRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UploadDbObjectTemplateRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(UploadDbObjectTemplateRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UploadDbObjectTemplateRequest::getXLanguage,
+                UploadDbObjectTemplateRequest::setXLanguage));
         builder.<UploadDbObjectTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadDbObjectTemplateRequestBody.class),
-            f -> f.withMarshaller(UploadDbObjectTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadDbObjectTemplateRequest::getBody, UploadDbObjectTemplateRequest::setBody));
 
         // response
 
@@ -3044,9 +2622,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<UploadJdbcDriverRequest, UploadJdbcDriverResponse> uploadJdbcDriver =
-        genForuploadJdbcDriver();
+        genForUploadJdbcDriver();
 
-    private static HttpRequestDef<UploadJdbcDriverRequest, UploadJdbcDriverResponse> genForuploadJdbcDriver() {
+    private static HttpRequestDef<UploadJdbcDriverRequest, UploadJdbcDriverResponse> genForUploadJdbcDriver() {
         // basic
         HttpRequestDef.Builder<UploadJdbcDriverRequest, UploadJdbcDriverResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadJdbcDriverRequest.class, UploadJdbcDriverResponse.class)
@@ -3059,16 +2637,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UploadJdbcDriverRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(UploadJdbcDriverRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UploadJdbcDriverRequest::getXLanguage, UploadJdbcDriverRequest::setXLanguage));
         builder.<UploadJdbcDriverRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadJdbcDriverRequestBody.class),
-            f -> f.withMarshaller(UploadJdbcDriverRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadJdbcDriverRequest::getBody, UploadJdbcDriverRequest::setBody));
 
         // response
 
@@ -3076,9 +2650,9 @@ public class DrsMeta {
     }
 
     public static final HttpRequestDef<ValidateJobNameRequest, ValidateJobNameResponse> validateJobName =
-        genForvalidateJobName();
+        genForValidateJobName();
 
-    private static HttpRequestDef<ValidateJobNameRequest, ValidateJobNameResponse> genForvalidateJobName() {
+    private static HttpRequestDef<ValidateJobNameRequest, ValidateJobNameResponse> genForValidateJobName() {
         // basic
         HttpRequestDef.Builder<ValidateJobNameRequest, ValidateJobNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ValidateJobNameRequest.class, ValidateJobNameResponse.class)
@@ -3091,16 +2665,12 @@ public class DrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ValidateJobNameRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ValidateJobNameRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ValidateJobNameRequest::getXLanguage, ValidateJobNameRequest::setXLanguage));
         builder.<CheckJobNameReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckJobNameReq.class),
-            f -> f.withMarshaller(ValidateJobNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ValidateJobNameRequest::getBody, ValidateJobNameRequest::setBody));
 
         // response
 

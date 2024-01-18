@@ -16,9 +16,9 @@ import java.util.function.Consumer;
 public class ShowManagedAccountResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "phone")
+    @JsonProperty(value = "landing_zone_version")
 
-    private String phone;
+    private String landingZoneVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manage_account_id")
@@ -34,11 +34,6 @@ public class ShowManagedAccountResponse extends SdkResponse {
     @JsonProperty(value = "account_name")
 
     private String accountName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "account_email")
-
-    private String accountEmail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_type")
@@ -76,11 +71,6 @@ public class ShowManagedAccountResponse extends SdkResponse {
     private String identityStoreUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "identity_store_email_name")
-
-    private String identityStoreEmailName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blueprint_product_id")
 
     private String blueprintProductId;
@@ -110,21 +100,21 @@ public class ShowManagedAccountResponse extends SdkResponse {
 
     private OffsetDateTime updatedAt;
 
-    public ShowManagedAccountResponse withPhone(String phone) {
-        this.phone = phone;
+    public ShowManagedAccountResponse withLandingZoneVersion(String landingZoneVersion) {
+        this.landingZoneVersion = landingZoneVersion;
         return this;
     }
 
     /**
-     * 手机号码。
-     * @return phone
+     * Landing Zone版本。
+     * @return landingZoneVersion
      */
-    public String getPhone() {
-        return phone;
+    public String getLandingZoneVersion() {
+        return landingZoneVersion;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setLandingZoneVersion(String landingZoneVersion) {
+        this.landingZoneVersion = landingZoneVersion;
     }
 
     public ShowManagedAccountResponse withManageAccountId(String manageAccountId) {
@@ -133,7 +123,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 管理账号ID。
+     * 管理纳管账号ID。
      * @return manageAccountId
      */
     public String getManageAccountId() {
@@ -150,7 +140,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 账号ID。
+     * 纳管账号ID。
      * @return accountId
      */
     public String getAccountId() {
@@ -167,7 +157,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 账号名称。
+     * 纳管账号名称。
      * @return accountName
      */
     public String getAccountName() {
@@ -178,30 +168,13 @@ public class ShowManagedAccountResponse extends SdkResponse {
         this.accountName = accountName;
     }
 
-    public ShowManagedAccountResponse withAccountEmail(String accountEmail) {
-        this.accountEmail = accountEmail;
-        return this;
-    }
-
-    /**
-     * 账号email。
-     * @return accountEmail
-     */
-    public String getAccountEmail() {
-        return accountEmail;
-    }
-
-    public void setAccountEmail(String accountEmail) {
-        this.accountEmail = accountEmail;
-    }
-
     public ShowManagedAccountResponse withAccountType(String accountType) {
         this.accountType = accountType;
         return this;
     }
 
     /**
-     * 账号类型。
+     * 纳管账号类型。
      * @return accountType
      */
     public String getAccountType() {
@@ -218,7 +191,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 账号的创建来源，包括CUSTOM和RGC。
+     * 纳管账号的创建来源，包括CUSTOM和RGC。
      * @return owner
      */
     public String getOwner() {
@@ -235,7 +208,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 账号状态。
+     * 纳管账号状态。
      * @return state
      */
     public String getState() {
@@ -269,7 +242,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 父OU ID。
+     * 父注册OU ID。
      * @return parentOrganizationUnitId
      */
     public String getParentOrganizationUnitId() {
@@ -286,7 +259,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 父OU名称。
+     * 父注册OU名称。
      * @return parentOrganizationUnitName
      */
     public String getParentOrganizationUnitName() {
@@ -314,30 +287,13 @@ public class ShowManagedAccountResponse extends SdkResponse {
         this.identityStoreUserName = identityStoreUserName;
     }
 
-    public ShowManagedAccountResponse withIdentityStoreEmailName(String identityStoreEmailName) {
-        this.identityStoreEmailName = identityStoreEmailName;
-        return this;
-    }
-
-    /**
-     * Identity Center邮箱。
-     * @return identityStoreEmailName
-     */
-    public String getIdentityStoreEmailName() {
-        return identityStoreEmailName;
-    }
-
-    public void setIdentityStoreEmailName(String identityStoreEmailName) {
-        this.identityStoreEmailName = identityStoreEmailName;
-    }
-
     public ShowManagedAccountResponse withBlueprintProductId(String blueprintProductId) {
         this.blueprintProductId = blueprintProductId;
         return this;
     }
 
     /**
-     * 蓝图ID。
+     * 模板ID。
      * @return blueprintProductId
      */
     public String getBlueprintProductId() {
@@ -354,7 +310,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 蓝图版本。
+     * 模板版本。
      * @return blueprintProductVersion
      */
     public String getBlueprintProductVersion() {
@@ -371,7 +327,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 蓝图部署状态，包括error, active, in_progress。
+     * 模板部署状态，包括失败, 完成, 进行中。
      * @return blueprintStatus
      */
     public String getBlueprintStatus() {
@@ -404,7 +360,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * region信息。
+     * 区域信息。
      * @return regions
      */
     public List<RegionManagedList> getRegions() {
@@ -421,7 +377,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 被创建的时间。
+     * 组织里某个注册OU下的纳管账号被创建的时间。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -438,7 +394,7 @@ public class ShowManagedAccountResponse extends SdkResponse {
     }
 
     /**
-     * 最后一次更新的时间。
+     * 组织里某个注册OU下的纳管账号最后一次更新的时间。
      * @return updatedAt
      */
     public OffsetDateTime getUpdatedAt() {
@@ -458,15 +414,14 @@ public class ShowManagedAccountResponse extends SdkResponse {
             return false;
         }
         ShowManagedAccountResponse that = (ShowManagedAccountResponse) obj;
-        return Objects.equals(this.phone, that.phone) && Objects.equals(this.manageAccountId, that.manageAccountId)
+        return Objects.equals(this.landingZoneVersion, that.landingZoneVersion)
+            && Objects.equals(this.manageAccountId, that.manageAccountId)
             && Objects.equals(this.accountId, that.accountId) && Objects.equals(this.accountName, that.accountName)
-            && Objects.equals(this.accountEmail, that.accountEmail)
             && Objects.equals(this.accountType, that.accountType) && Objects.equals(this.owner, that.owner)
             && Objects.equals(this.state, that.state) && Objects.equals(this.message, that.message)
             && Objects.equals(this.parentOrganizationUnitId, that.parentOrganizationUnitId)
             && Objects.equals(this.parentOrganizationUnitName, that.parentOrganizationUnitName)
             && Objects.equals(this.identityStoreUserName, that.identityStoreUserName)
-            && Objects.equals(this.identityStoreEmailName, that.identityStoreEmailName)
             && Objects.equals(this.blueprintProductId, that.blueprintProductId)
             && Objects.equals(this.blueprintProductVersion, that.blueprintProductVersion)
             && Objects.equals(this.blueprintStatus, that.blueprintStatus) && Objects.equals(this.regions, that.regions)
@@ -475,11 +430,10 @@ public class ShowManagedAccountResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(phone,
+        return Objects.hash(landingZoneVersion,
             manageAccountId,
             accountId,
             accountName,
-            accountEmail,
             accountType,
             owner,
             state,
@@ -487,7 +441,6 @@ public class ShowManagedAccountResponse extends SdkResponse {
             parentOrganizationUnitId,
             parentOrganizationUnitName,
             identityStoreUserName,
-            identityStoreEmailName,
             blueprintProductId,
             blueprintProductVersion,
             blueprintStatus,
@@ -500,11 +453,10 @@ public class ShowManagedAccountResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowManagedAccountResponse {\n");
-        sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+        sb.append("    landingZoneVersion: ").append(toIndentedString(landingZoneVersion)).append("\n");
         sb.append("    manageAccountId: ").append(toIndentedString(manageAccountId)).append("\n");
         sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
-        sb.append("    accountEmail: ").append(toIndentedString(accountEmail)).append("\n");
         sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
@@ -512,7 +464,6 @@ public class ShowManagedAccountResponse extends SdkResponse {
         sb.append("    parentOrganizationUnitId: ").append(toIndentedString(parentOrganizationUnitId)).append("\n");
         sb.append("    parentOrganizationUnitName: ").append(toIndentedString(parentOrganizationUnitName)).append("\n");
         sb.append("    identityStoreUserName: ").append(toIndentedString(identityStoreUserName)).append("\n");
-        sb.append("    identityStoreEmailName: ").append(toIndentedString(identityStoreEmailName)).append("\n");
         sb.append("    blueprintProductId: ").append(toIndentedString(blueprintProductId)).append("\n");
         sb.append("    blueprintProductVersion: ").append(toIndentedString(blueprintProductVersion)).append("\n");
         sb.append("    blueprintStatus: ").append(toIndentedString(blueprintStatus)).append("\n");

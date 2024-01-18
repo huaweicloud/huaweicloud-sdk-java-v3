@@ -85,7 +85,7 @@ public class ListProductResponse extends SdkResponse {
     }
 
     /**
-     * 产品列表
+     * 产品列表。
      * @return products
      */
     public List<ProductInfo> getProducts() {

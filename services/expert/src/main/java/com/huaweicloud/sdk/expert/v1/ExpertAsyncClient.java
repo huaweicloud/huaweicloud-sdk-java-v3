@@ -30,7 +30,7 @@ public class ExpertAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordsCountRequest 请求对象
+     * @param request ListRecordsCountRequest 请求对象
      * @return CompletableFuture<ListRecordsCountResponse>
      */
     public CompletableFuture<ListRecordsCountResponse> listRecordsCountAsync(ListRecordsCountRequest request) {
@@ -44,13 +44,12 @@ public class ExpertAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRecordsCountRequest 请求对象
+     * @param request ListRecordsCountRequest 请求对象
      * @return AsyncInvoker<ListRecordsCountRequest, ListRecordsCountResponse>
      */
     public AsyncInvoker<ListRecordsCountRequest, ListRecordsCountResponse> listRecordsCountAsyncInvoker(
         ListRecordsCountRequest request) {
-        return new AsyncInvoker<ListRecordsCountRequest, ListRecordsCountResponse>(request, ExpertMeta.listRecordsCount,
-            hcClient);
+        return new AsyncInvoker<>(request, ExpertMeta.listRecordsCount, hcClient);
     }
 
     /**
@@ -60,7 +59,7 @@ public class ExpertAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersKeyRequest 请求对象
+     * @param request ListUsersKeyRequest 请求对象
      * @return CompletableFuture<ListUsersKeyResponse>
      */
     public CompletableFuture<ListUsersKeyResponse> listUsersKeyAsync(ListUsersKeyRequest request) {
@@ -74,12 +73,12 @@ public class ExpertAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersKeyRequest 请求对象
+     * @param request ListUsersKeyRequest 请求对象
      * @return AsyncInvoker<ListUsersKeyRequest, ListUsersKeyResponse>
      */
     public AsyncInvoker<ListUsersKeyRequest, ListUsersKeyResponse> listUsersKeyAsyncInvoker(
         ListUsersKeyRequest request) {
-        return new AsyncInvoker<ListUsersKeyRequest, ListUsersKeyResponse>(request, ExpertMeta.listUsersKey, hcClient);
+        return new AsyncInvoker<>(request, ExpertMeta.listUsersKey, hcClient);
     }
 
 }

@@ -31,7 +31,7 @@ public class DebugCaseResultHeader {
     }
 
     /**
-     * Connection
+     * 连接
      * @return connection
      */
     public String getConnection() {
@@ -48,7 +48,7 @@ public class DebugCaseResultHeader {
     }
 
     /**
-     * Content-Type
+     * 内容类型
      * @return contentType
      */
     public String getContentType() {
@@ -65,7 +65,7 @@ public class DebugCaseResultHeader {
     }
 
     /**
-     * Host
+     * 主机
      * @return host
      */
     public String getHost() {

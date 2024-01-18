@@ -53,9 +53,19 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "landing_zone_version")
+
+    private String landingZoneVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
     private OffsetDateTime updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
 
     public ShowManagedOrganizationalUnitResponse withManageAccountId(String manageAccountId) {
         this.manageAccountId = manageAccountId;
@@ -63,7 +73,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * 管理账号ID。
+     * 管理纳管账号ID。
      * @return manageAccountId
      */
     public String getManageAccountId() {
@@ -80,7 +90,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * OU ID。
+     * 注册OU ID。
      * @return organizationUnitId
      */
     public String getOrganizationUnitId() {
@@ -97,7 +107,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * OU名称。
+     * 注册OU名称。
      * @return organizationUnitName
      */
     public String getOrganizationUnitName() {
@@ -114,7 +124,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * OU状态。
+     * 注册OU状态。
      * @return organizationUnitStatus
      */
     public String getOrganizationUnitStatus() {
@@ -148,7 +158,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * 父OU ID。
+     * 父注册OU ID。
      * @return parentOrganizationUnitId
      */
     public String getParentOrganizationUnitId() {
@@ -165,7 +175,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * 父OU名称。
+     * 父注册OU名称。
      * @return parentOrganizationUnitName
      */
     public String getParentOrganizationUnitName() {
@@ -182,7 +192,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * 被创建的时间。
+     * 组织里某个注册OU下的纳管账号被创建的时间。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -193,13 +203,30 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    public ShowManagedOrganizationalUnitResponse withLandingZoneVersion(String landingZoneVersion) {
+        this.landingZoneVersion = landingZoneVersion;
+        return this;
+    }
+
+    /**
+     * Landing Zone版本。
+     * @return landingZoneVersion
+     */
+    public String getLandingZoneVersion() {
+        return landingZoneVersion;
+    }
+
+    public void setLandingZoneVersion(String landingZoneVersion) {
+        this.landingZoneVersion = landingZoneVersion;
+    }
+
     public ShowManagedOrganizationalUnitResponse withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
     /**
-     * 最后一次更新的时间。
+     * 组织里某个注册OU下的纳管账号最后一次更新的时间。
      * @return updatedAt
      */
     public OffsetDateTime getUpdatedAt() {
@@ -208,6 +235,23 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
 
     public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public ShowManagedOrganizationalUnitResponse withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * 错误信息描述。
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     @Override
@@ -226,7 +270,9 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
             && Objects.equals(this.organizationUnitType, that.organizationUnitType)
             && Objects.equals(this.parentOrganizationUnitId, that.parentOrganizationUnitId)
             && Objects.equals(this.parentOrganizationUnitName, that.parentOrganizationUnitName)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.landingZoneVersion, that.landingZoneVersion)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.message, that.message);
     }
 
     @Override
@@ -239,7 +285,9 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
             parentOrganizationUnitId,
             parentOrganizationUnitName,
             createdAt,
-            updatedAt);
+            landingZoneVersion,
+            updatedAt,
+            message);
     }
 
     @Override
@@ -254,7 +302,9 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
         sb.append("    parentOrganizationUnitId: ").append(toIndentedString(parentOrganizationUnitId)).append("\n");
         sb.append("    parentOrganizationUnitName: ").append(toIndentedString(parentOrganizationUnitName)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    landingZoneVersion: ").append(toIndentedString(landingZoneVersion)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("}");
         return sb.toString();
     }

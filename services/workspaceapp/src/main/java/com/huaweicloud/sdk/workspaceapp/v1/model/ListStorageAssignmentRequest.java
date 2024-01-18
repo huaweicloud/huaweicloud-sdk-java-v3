@@ -51,7 +51,7 @@ public class ListStorageAssignmentRequest {
     }
 
     /**
-     * 查询的偏移量
+     * 查询的偏移量。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -70,7 +70,7 @@ public class ListStorageAssignmentRequest {
     }
 
     /**
-     * 单次查询的大小[1-100]
+     * 单次查询的大小[1-100]。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -89,7 +89,7 @@ public class ListStorageAssignmentRequest {
     }
 
     /**
-     * WKS存储ID
+     * WKS存储ID。
      * @return storageId
      */
     public String getStorageId() {
@@ -106,7 +106,7 @@ public class ListStorageAssignmentRequest {
     }
 
     /**
-     * 存储声明的类型,claim_mode为share时,storage_claim_id必填 * `USER` -  用户目录 * `SHARE` - 共享目录
+     * 存储声明的类型，claim_mode为share时，storage_claim_id必填。 * `USER` -  用户目录 * `SHARE` - 共享目录
      * @return claimMode
      */
     public String getClaimMode() {
@@ -123,7 +123,7 @@ public class ListStorageAssignmentRequest {
     }
 
     /**
-     * WKS存储目录声明ID
+     * WKS存储目录声明ID。
      * @return storageClaimId
      */
     public String getStorageClaimId() {
@@ -140,7 +140,7 @@ public class ListStorageAssignmentRequest {
     }
 
     /**
-     * 成员
+     * 成员。
      * @return attach
      */
     public String getAttach() {
@@ -157,7 +157,7 @@ public class ListStorageAssignmentRequest {
     }
 
     /**
-     * 关联对象类型 * `USER` -  用户 * `USER_GROUP` - 用户组
+     * 关联对象类型： * `USER` -  用户 * `USER_GROUP` - 用户组
      * @return attachType
      */
     public String getAttachType() {

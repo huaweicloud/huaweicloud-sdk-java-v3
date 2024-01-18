@@ -41,7 +41,7 @@ public class ListVolumeTypeResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘列表
+     * 磁盘列表。
      * @return volumeTypes
      */
     public List<VolumeTypeInfo> getVolumeTypes() {

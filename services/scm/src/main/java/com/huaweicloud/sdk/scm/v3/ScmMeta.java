@@ -30,9 +30,9 @@ import com.huaweicloud.sdk.scm.v3.model.ShowCertificateResponse;
 public class ScmMeta {
 
     public static final HttpRequestDef<BatchPushCertificateRequest, BatchPushCertificateResponse> batchPushCertificate =
-        genForbatchPushCertificate();
+        genForBatchPushCertificate();
 
-    private static HttpRequestDef<BatchPushCertificateRequest, BatchPushCertificateResponse> genForbatchPushCertificate() {
+    private static HttpRequestDef<BatchPushCertificateRequest, BatchPushCertificateResponse> genForBatchPushCertificate() {
         // basic
         HttpRequestDef.Builder<BatchPushCertificateRequest, BatchPushCertificateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchPushCertificateRequest.class, BatchPushCertificateResponse.class)
@@ -45,16 +45,13 @@ public class ScmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchPushCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(BatchPushCertificateRequest::getCertificateId,
+                BatchPushCertificateRequest::setCertificateId));
         builder.<BatchPushCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchPushCertificateRequestBody.class),
-            f -> f.withMarshaller(BatchPushCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchPushCertificateRequest::getBody, BatchPushCertificateRequest::setBody));
 
         // response
 
@@ -62,9 +59,9 @@ public class ScmMeta {
     }
 
     public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate =
-        genFordeleteCertificate();
+        genForDeleteCertificate();
 
-    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genFordeleteCertificate() {
+    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genForDeleteCertificate() {
         // basic
         HttpRequestDef.Builder<DeleteCertificateRequest, DeleteCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCertificateRequest.class, DeleteCertificateResponse.class)
@@ -77,9 +74,8 @@ public class ScmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId,
+                DeleteCertificateRequest::setCertificateId));
 
         // response
 
@@ -87,9 +83,9 @@ public class ScmMeta {
     }
 
     public static final HttpRequestDef<DeployCertificateRequest, DeployCertificateResponse> deployCertificate =
-        genFordeployCertificate();
+        genForDeployCertificate();
 
-    private static HttpRequestDef<DeployCertificateRequest, DeployCertificateResponse> genFordeployCertificate() {
+    private static HttpRequestDef<DeployCertificateRequest, DeployCertificateResponse> genForDeployCertificate() {
         // basic
         HttpRequestDef.Builder<DeployCertificateRequest, DeployCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeployCertificateRequest.class, DeployCertificateResponse.class)
@@ -102,16 +98,13 @@ public class ScmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeployCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(DeployCertificateRequest::getCertificateId,
+                DeployCertificateRequest::setCertificateId));
         builder.<DeployCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeployCertificateRequestBody.class),
-            f -> f.withMarshaller(DeployCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeployCertificateRequest::getBody, DeployCertificateRequest::setBody));
 
         // response
 
@@ -119,9 +112,9 @@ public class ScmMeta {
     }
 
     public static final HttpRequestDef<ExportCertificateRequest, ExportCertificateResponse> exportCertificate =
-        genForexportCertificate();
+        genForExportCertificate();
 
-    private static HttpRequestDef<ExportCertificateRequest, ExportCertificateResponse> genForexportCertificate() {
+    private static HttpRequestDef<ExportCertificateRequest, ExportCertificateResponse> genForExportCertificate() {
         // basic
         HttpRequestDef.Builder<ExportCertificateRequest, ExportCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportCertificateRequest.class, ExportCertificateResponse.class)
@@ -134,9 +127,8 @@ public class ScmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ExportCertificateRequest::getCertificateId,
+                ExportCertificateRequest::setCertificateId));
 
         // response
 
@@ -144,9 +136,9 @@ public class ScmMeta {
     }
 
     public static final HttpRequestDef<ImportCertificateRequest, ImportCertificateResponse> importCertificate =
-        genForimportCertificate();
+        genForImportCertificate();
 
-    private static HttpRequestDef<ImportCertificateRequest, ImportCertificateResponse> genForimportCertificate() {
+    private static HttpRequestDef<ImportCertificateRequest, ImportCertificateResponse> genForImportCertificate() {
         // basic
         HttpRequestDef.Builder<ImportCertificateRequest, ImportCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportCertificateRequest.class, ImportCertificateResponse.class)
@@ -159,9 +151,7 @@ public class ScmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportCertificateRequestBody.class),
-            f -> f.withMarshaller(ImportCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportCertificateRequest::getBody, ImportCertificateRequest::setBody));
 
         // response
 
@@ -169,9 +159,9 @@ public class ScmMeta {
     }
 
     public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates =
-        genForlistCertificates();
+        genForListCertificates();
 
-    private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForlistCertificates() {
+    private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForListCertificates() {
         // basic
         HttpRequestDef.Builder<ListCertificatesRequest, ListCertificatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertificatesRequest.class, ListCertificatesResponse.class)
@@ -184,51 +174,39 @@ public class ScmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getLimit, ListCertificatesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getOffset, ListCertificatesRequest::setOffset));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getSortDir, ListCertificatesRequest::setSortDir));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getSortKey, ListCertificatesRequest::setSortKey));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getStatus, ListCertificatesRequest::setStatus));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getEnterpriseProjectId,
+                ListCertificatesRequest::setEnterpriseProjectId));
         builder.<Boolean>withRequestField("deploy_support",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getDeploySupport, (req, v) -> {
-                req.setDeploySupport(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getDeploySupport,
+                ListCertificatesRequest::setDeploySupport));
 
         // response
 
@@ -236,9 +214,9 @@ public class ScmMeta {
     }
 
     public static final HttpRequestDef<PushCertificateRequest, PushCertificateResponse> pushCertificate =
-        genForpushCertificate();
+        genForPushCertificate();
 
-    private static HttpRequestDef<PushCertificateRequest, PushCertificateResponse> genForpushCertificate() {
+    private static HttpRequestDef<PushCertificateRequest, PushCertificateResponse> genForPushCertificate() {
         // basic
         HttpRequestDef.Builder<PushCertificateRequest, PushCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PushCertificateRequest.class, PushCertificateResponse.class)
@@ -251,16 +229,12 @@ public class ScmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PushCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(PushCertificateRequest::getCertificateId, PushCertificateRequest::setCertificateId));
         builder.<PushCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PushCertificateRequestBody.class),
-            f -> f.withMarshaller(PushCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PushCertificateRequest::getBody, PushCertificateRequest::setBody));
 
         // response
 
@@ -268,9 +242,9 @@ public class ScmMeta {
     }
 
     public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate =
-        genForshowCertificate();
+        genForShowCertificate();
 
-    private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForshowCertificate() {
+    private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForShowCertificate() {
         // basic
         HttpRequestDef.Builder<ShowCertificateRequest, ShowCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCertificateRequest.class, ShowCertificateResponse.class)
@@ -283,9 +257,7 @@ public class ScmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, ShowCertificateRequest::setCertificateId));
 
         // response
 

@@ -112,7 +112,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionEvaluationRequest 请求对象
+     * @param request AddExtensionEvaluationRequest 请求对象
      * @return AddExtensionEvaluationResponse
      */
     public AddExtensionEvaluationResponse addExtensionEvaluation(AddExtensionEvaluationRequest request) {
@@ -126,13 +126,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionEvaluationRequest 请求对象
+     * @param request AddExtensionEvaluationRequest 请求对象
      * @return SyncInvoker<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse>
      */
     public SyncInvoker<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse> addExtensionEvaluationInvoker(
         AddExtensionEvaluationRequest request) {
-        return new SyncInvoker<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse>(request,
-            CloudIDEMeta.addExtensionEvaluation, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.addExtensionEvaluation, hcClient);
     }
 
     /**
@@ -142,7 +141,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionEvaluationReplyRequest 请求对象
+     * @param request AddExtensionEvaluationReplyRequest 请求对象
      * @return AddExtensionEvaluationReplyResponse
      */
     public AddExtensionEvaluationReplyResponse addExtensionEvaluationReply(AddExtensionEvaluationReplyRequest request) {
@@ -156,13 +155,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionEvaluationReplyRequest 请求对象
+     * @param request AddExtensionEvaluationReplyRequest 请求对象
      * @return SyncInvoker<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse>
      */
     public SyncInvoker<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse> addExtensionEvaluationReplyInvoker(
         AddExtensionEvaluationReplyRequest request) {
-        return new SyncInvoker<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse>(request,
-            CloudIDEMeta.addExtensionEvaluationReply, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.addExtensionEvaluationReply, hcClient);
     }
 
     /**
@@ -172,7 +170,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionStarRequest 请求对象
+     * @param request AddExtensionStarRequest 请求对象
      * @return AddExtensionStarResponse
      */
     public AddExtensionStarResponse addExtensionStar(AddExtensionStarRequest request) {
@@ -186,13 +184,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddExtensionStarRequest 请求对象
+     * @param request AddExtensionStarRequest 请求对象
      * @return SyncInvoker<AddExtensionStarRequest, AddExtensionStarResponse>
      */
     public SyncInvoker<AddExtensionStarRequest, AddExtensionStarResponse> addExtensionStarInvoker(
         AddExtensionStarRequest request) {
-        return new SyncInvoker<AddExtensionStarRequest, AddExtensionStarResponse>(request,
-            CloudIDEMeta.addExtensionStar, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.addExtensionStar, hcClient);
     }
 
     /**
@@ -202,7 +199,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckMaliciousExtensionEvaluationRequest 请求对象
+     * @param request CheckMaliciousExtensionEvaluationRequest 请求对象
      * @return CheckMaliciousExtensionEvaluationResponse
      */
     public CheckMaliciousExtensionEvaluationResponse checkMaliciousExtensionEvaluation(
@@ -217,13 +214,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckMaliciousExtensionEvaluationRequest 请求对象
+     * @param request CheckMaliciousExtensionEvaluationRequest 请求对象
      * @return SyncInvoker<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse>
      */
     public SyncInvoker<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse> checkMaliciousExtensionEvaluationInvoker(
         CheckMaliciousExtensionEvaluationRequest request) {
-        return new SyncInvoker<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse>(
-            request, CloudIDEMeta.checkMaliciousExtensionEvaluation, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.checkMaliciousExtensionEvaluation, hcClient);
     }
 
     /**
@@ -233,7 +229,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExtensionAuthorizationRequest 请求对象
+     * @param request CreateExtensionAuthorizationRequest 请求对象
      * @return CreateExtensionAuthorizationResponse
      */
     public CreateExtensionAuthorizationResponse createExtensionAuthorization(
@@ -248,13 +244,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExtensionAuthorizationRequest 请求对象
+     * @param request CreateExtensionAuthorizationRequest 请求对象
      * @return SyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse>
      */
     public SyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse> createExtensionAuthorizationInvoker(
         CreateExtensionAuthorizationRequest request) {
-        return new SyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse>(request,
-            CloudIDEMeta.createExtensionAuthorization, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.createExtensionAuthorization, hcClient);
     }
 
     /**
@@ -264,7 +259,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvaluationRequest 请求对象
+     * @param request DeleteEvaluationRequest 请求对象
      * @return DeleteEvaluationResponse
      */
     public DeleteEvaluationResponse deleteEvaluation(DeleteEvaluationRequest request) {
@@ -278,13 +273,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvaluationRequest 请求对象
+     * @param request DeleteEvaluationRequest 请求对象
      * @return SyncInvoker<DeleteEvaluationRequest, DeleteEvaluationResponse>
      */
     public SyncInvoker<DeleteEvaluationRequest, DeleteEvaluationResponse> deleteEvaluationInvoker(
         DeleteEvaluationRequest request) {
-        return new SyncInvoker<DeleteEvaluationRequest, DeleteEvaluationResponse>(request,
-            CloudIDEMeta.deleteEvaluation, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.deleteEvaluation, hcClient);
     }
 
     /**
@@ -294,7 +288,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvaluationReplyRequest 请求对象
+     * @param request DeleteEvaluationReplyRequest 请求对象
      * @return DeleteEvaluationReplyResponse
      */
     public DeleteEvaluationReplyResponse deleteEvaluationReply(DeleteEvaluationReplyRequest request) {
@@ -308,13 +302,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvaluationReplyRequest 请求对象
+     * @param request DeleteEvaluationReplyRequest 请求对象
      * @return SyncInvoker<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse>
      */
     public SyncInvoker<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse> deleteEvaluationReplyInvoker(
         DeleteEvaluationReplyRequest request) {
-        return new SyncInvoker<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse>(request,
-            CloudIDEMeta.deleteEvaluationReply, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.deleteEvaluationReply, hcClient);
     }
 
     /**
@@ -324,7 +317,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExtensionsRequest 请求对象
+     * @param request ListExtensionsRequest 请求对象
      * @return ListExtensionsResponse
      */
     public ListExtensionsResponse listExtensions(ListExtensionsRequest request) {
@@ -338,13 +331,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExtensionsRequest 请求对象
+     * @param request ListExtensionsRequest 请求对象
      * @return SyncInvoker<ListExtensionsRequest, ListExtensionsResponse>
      */
     public SyncInvoker<ListExtensionsRequest, ListExtensionsResponse> listExtensionsInvoker(
         ListExtensionsRequest request) {
-        return new SyncInvoker<ListExtensionsRequest, ListExtensionsResponse>(request, CloudIDEMeta.listExtensions,
-            hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.listExtensions, hcClient);
     }
 
     /**
@@ -354,7 +346,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTemplatesRequest 请求对象
+     * @param request ListProjectTemplatesRequest 请求对象
      * @return ListProjectTemplatesResponse
      */
     public ListProjectTemplatesResponse listProjectTemplates(ListProjectTemplatesRequest request) {
@@ -368,13 +360,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTemplatesRequest 请求对象
+     * @param request ListProjectTemplatesRequest 请求对象
      * @return SyncInvoker<ListProjectTemplatesRequest, ListProjectTemplatesResponse>
      */
     public SyncInvoker<ListProjectTemplatesRequest, ListProjectTemplatesResponse> listProjectTemplatesInvoker(
         ListProjectTemplatesRequest request) {
-        return new SyncInvoker<ListProjectTemplatesRequest, ListProjectTemplatesResponse>(request,
-            CloudIDEMeta.listProjectTemplates, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.listProjectTemplates, hcClient);
     }
 
     /**
@@ -384,7 +375,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublisherRequest 请求对象
+     * @param request ListPublisherRequest 请求对象
      * @return ListPublisherResponse
      */
     public ListPublisherResponse listPublisher(ListPublisherRequest request) {
@@ -398,12 +389,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPublisherRequest 请求对象
+     * @param request ListPublisherRequest 请求对象
      * @return SyncInvoker<ListPublisherRequest, ListPublisherResponse>
      */
     public SyncInvoker<ListPublisherRequest, ListPublisherResponse> listPublisherInvoker(ListPublisherRequest request) {
-        return new SyncInvoker<ListPublisherRequest, ListPublisherResponse>(request, CloudIDEMeta.listPublisher,
-            hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.listPublisher, hcClient);
     }
 
     /**
@@ -413,7 +403,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStacksRequest 请求对象
+     * @param request ListStacksRequest 请求对象
      * @return ListStacksResponse
      */
     public ListStacksResponse listStacks(ListStacksRequest request) {
@@ -427,11 +417,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStacksRequest 请求对象
+     * @param request ListStacksRequest 请求对象
      * @return SyncInvoker<ListStacksRequest, ListStacksResponse>
      */
     public SyncInvoker<ListStacksRequest, ListStacksResponse> listStacksInvoker(ListStacksRequest request) {
-        return new SyncInvoker<ListStacksRequest, ListStacksResponse>(request, CloudIDEMeta.listStacks, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.listStacks, hcClient);
     }
 
     /**
@@ -441,7 +431,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishExtensionRequest 请求对象
+     * @param request PublishExtensionRequest 请求对象
      * @return PublishExtensionResponse
      */
     public PublishExtensionResponse publishExtension(PublishExtensionRequest request) {
@@ -455,13 +445,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishExtensionRequest 请求对象
+     * @param request PublishExtensionRequest 请求对象
      * @return SyncInvoker<PublishExtensionRequest, PublishExtensionResponse>
      */
     public SyncInvoker<PublishExtensionRequest, PublishExtensionResponse> publishExtensionInvoker(
         PublishExtensionRequest request) {
-        return new SyncInvoker<PublishExtensionRequest, PublishExtensionResponse>(request,
-            CloudIDEMeta.publishExtension, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.publishExtension, hcClient);
     }
 
     /**
@@ -471,7 +460,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAccountStatusRequest 请求对象
+     * @param request ShowAccountStatusRequest 请求对象
      * @return ShowAccountStatusResponse
      */
     public ShowAccountStatusResponse showAccountStatus(ShowAccountStatusRequest request) {
@@ -485,13 +474,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAccountStatusRequest 请求对象
+     * @param request ShowAccountStatusRequest 请求对象
      * @return SyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse>
      */
     public SyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse> showAccountStatusInvoker(
         ShowAccountStatusRequest request) {
-        return new SyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse>(request,
-            CloudIDEMeta.showAccountStatus, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showAccountStatus, hcClient);
     }
 
     /**
@@ -501,7 +489,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCategoryListRequest 请求对象
+     * @param request ShowCategoryListRequest 请求对象
      * @return ShowCategoryListResponse
      */
     public ShowCategoryListResponse showCategoryList(ShowCategoryListRequest request) {
@@ -515,13 +503,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCategoryListRequest 请求对象
+     * @param request ShowCategoryListRequest 请求对象
      * @return SyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse>
      */
     public SyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse> showCategoryListInvoker(
         ShowCategoryListRequest request) {
-        return new SyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse>(request,
-            CloudIDEMeta.showCategoryList, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showCategoryList, hcClient);
     }
 
     /**
@@ -531,7 +518,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionAuthorizationRequest 请求对象
+     * @param request ShowExtensionAuthorizationRequest 请求对象
      * @return ShowExtensionAuthorizationResponse
      */
     public ShowExtensionAuthorizationResponse showExtensionAuthorization(ShowExtensionAuthorizationRequest request) {
@@ -545,13 +532,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionAuthorizationRequest 请求对象
+     * @param request ShowExtensionAuthorizationRequest 请求对象
      * @return SyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse>
      */
     public SyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse> showExtensionAuthorizationInvoker(
         ShowExtensionAuthorizationRequest request) {
-        return new SyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse>(request,
-            CloudIDEMeta.showExtensionAuthorization, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showExtensionAuthorization, hcClient);
     }
 
     /**
@@ -561,7 +547,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionDetailRequest 请求对象
+     * @param request ShowExtensionDetailRequest 请求对象
      * @return ShowExtensionDetailResponse
      */
     public ShowExtensionDetailResponse showExtensionDetail(ShowExtensionDetailRequest request) {
@@ -575,13 +561,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionDetailRequest 请求对象
+     * @param request ShowExtensionDetailRequest 请求对象
      * @return SyncInvoker<ShowExtensionDetailRequest, ShowExtensionDetailResponse>
      */
     public SyncInvoker<ShowExtensionDetailRequest, ShowExtensionDetailResponse> showExtensionDetailInvoker(
         ShowExtensionDetailRequest request) {
-        return new SyncInvoker<ShowExtensionDetailRequest, ShowExtensionDetailResponse>(request,
-            CloudIDEMeta.showExtensionDetail, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showExtensionDetail, hcClient);
     }
 
     /**
@@ -591,7 +576,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionEvaluationRequest 请求对象
+     * @param request ShowExtensionEvaluationRequest 请求对象
      * @return ShowExtensionEvaluationResponse
      */
     public ShowExtensionEvaluationResponse showExtensionEvaluation(ShowExtensionEvaluationRequest request) {
@@ -605,13 +590,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionEvaluationRequest 请求对象
+     * @param request ShowExtensionEvaluationRequest 请求对象
      * @return SyncInvoker<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse>
      */
     public SyncInvoker<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse> showExtensionEvaluationInvoker(
         ShowExtensionEvaluationRequest request) {
-        return new SyncInvoker<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse>(request,
-            CloudIDEMeta.showExtensionEvaluation, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showExtensionEvaluation, hcClient);
     }
 
     /**
@@ -621,7 +605,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionEvaluationStarRequest 请求对象
+     * @param request ShowExtensionEvaluationStarRequest 请求对象
      * @return ShowExtensionEvaluationStarResponse
      */
     public ShowExtensionEvaluationStarResponse showExtensionEvaluationStar(ShowExtensionEvaluationStarRequest request) {
@@ -635,13 +619,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionEvaluationStarRequest 请求对象
+     * @param request ShowExtensionEvaluationStarRequest 请求对象
      * @return SyncInvoker<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse>
      */
     public SyncInvoker<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse> showExtensionEvaluationStarInvoker(
         ShowExtensionEvaluationStarRequest request) {
-        return new SyncInvoker<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse>(request,
-            CloudIDEMeta.showExtensionEvaluationStar, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showExtensionEvaluationStar, hcClient);
     }
 
     /**
@@ -651,7 +634,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionTestingResultRequest 请求对象
+     * @param request ShowExtensionTestingResultRequest 请求对象
      * @return ShowExtensionTestingResultResponse
      */
     public ShowExtensionTestingResultResponse showExtensionTestingResult(ShowExtensionTestingResultRequest request) {
@@ -665,13 +648,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtensionTestingResultRequest 请求对象
+     * @param request ShowExtensionTestingResultRequest 请求对象
      * @return SyncInvoker<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse>
      */
     public SyncInvoker<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse> showExtensionTestingResultInvoker(
         ShowExtensionTestingResultRequest request) {
-        return new SyncInvoker<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse>(request,
-            CloudIDEMeta.showExtensionTestingResult, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showExtensionTestingResult, hcClient);
     }
 
     /**
@@ -681,7 +663,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPriceRequest 请求对象
+     * @param request ShowPriceRequest 请求对象
      * @return ShowPriceResponse
      */
     public ShowPriceResponse showPrice(ShowPriceRequest request) {
@@ -695,11 +677,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPriceRequest 请求对象
+     * @param request ShowPriceRequest 请求对象
      * @return SyncInvoker<ShowPriceRequest, ShowPriceResponse>
      */
     public SyncInvoker<ShowPriceRequest, ShowPriceResponse> showPriceInvoker(ShowPriceRequest request) {
-        return new SyncInvoker<ShowPriceRequest, ShowPriceResponse>(request, CloudIDEMeta.showPrice, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showPrice, hcClient);
     }
 
     /**
@@ -709,7 +691,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadExtensionFileRequest 请求对象
+     * @param request UploadExtensionFileRequest 请求对象
      * @return UploadExtensionFileResponse
      */
     public UploadExtensionFileResponse uploadExtensionFile(UploadExtensionFileRequest request) {
@@ -723,13 +705,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadExtensionFileRequest 请求对象
+     * @param request UploadExtensionFileRequest 请求对象
      * @return SyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse>
      */
     public SyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse> uploadExtensionFileInvoker(
         UploadExtensionFileRequest request) {
-        return new SyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse>(request,
-            CloudIDEMeta.uploadExtensionFile, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.uploadExtensionFile, hcClient);
     }
 
     /**
@@ -739,7 +720,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFilePublisherRequest 请求对象
+     * @param request UploadFilePublisherRequest 请求对象
      * @return UploadFilePublisherResponse
      */
     public UploadFilePublisherResponse uploadFilePublisher(UploadFilePublisherRequest request) {
@@ -753,13 +734,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFilePublisherRequest 请求对象
+     * @param request UploadFilePublisherRequest 请求对象
      * @return SyncInvoker<UploadFilePublisherRequest, UploadFilePublisherResponse>
      */
     public SyncInvoker<UploadFilePublisherRequest, UploadFilePublisherResponse> uploadFilePublisherInvoker(
         UploadFilePublisherRequest request) {
-        return new SyncInvoker<UploadFilePublisherRequest, UploadFilePublisherResponse>(request,
-            CloudIDEMeta.uploadFilePublisher, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.uploadFilePublisher, hcClient);
     }
 
     /**
@@ -769,7 +749,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAcceptanceRequest 请求对象
+     * @param request CreateAcceptanceRequest 请求对象
      * @return CreateAcceptanceResponse
      */
     public CreateAcceptanceResponse createAcceptance(CreateAcceptanceRequest request) {
@@ -783,13 +763,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAcceptanceRequest 请求对象
+     * @param request CreateAcceptanceRequest 请求对象
      * @return SyncInvoker<CreateAcceptanceRequest, CreateAcceptanceResponse>
      */
     public SyncInvoker<CreateAcceptanceRequest, CreateAcceptanceResponse> createAcceptanceInvoker(
         CreateAcceptanceRequest request) {
-        return new SyncInvoker<CreateAcceptanceRequest, CreateAcceptanceResponse>(request,
-            CloudIDEMeta.createAcceptance, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.createAcceptance, hcClient);
     }
 
     /**
@@ -799,7 +778,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApplyRequest 请求对象
+     * @param request CreateApplyRequest 请求对象
      * @return CreateApplyResponse
      */
     public CreateApplyResponse createApply(CreateApplyRequest request) {
@@ -813,11 +792,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApplyRequest 请求对象
+     * @param request CreateApplyRequest 请求对象
      * @return SyncInvoker<CreateApplyRequest, CreateApplyResponse>
      */
     public SyncInvoker<CreateApplyRequest, CreateApplyResponse> createApplyInvoker(CreateApplyRequest request) {
-        return new SyncInvoker<CreateApplyRequest, CreateApplyResponse>(request, CloudIDEMeta.createApply, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.createApply, hcClient);
     }
 
     /**
@@ -827,7 +806,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventRequest 请求对象
+     * @param request CreateEventRequest 请求对象
      * @return CreateEventResponse
      */
     public CreateEventResponse createEvent(CreateEventRequest request) {
@@ -841,11 +820,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventRequest 请求对象
+     * @param request CreateEventRequest 请求对象
      * @return SyncInvoker<CreateEventRequest, CreateEventResponse>
      */
     public SyncInvoker<CreateEventRequest, CreateEventResponse> createEventInvoker(CreateEventRequest request) {
-        return new SyncInvoker<CreateEventRequest, CreateEventResponse>(request, CloudIDEMeta.createEvent, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.createEvent, hcClient);
     }
 
     /**
@@ -855,7 +834,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLoginRequest 请求对象
+     * @param request CreateLoginRequest 请求对象
      * @return CreateLoginResponse
      */
     public CreateLoginResponse createLogin(CreateLoginRequest request) {
@@ -869,11 +848,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLoginRequest 请求对象
+     * @param request CreateLoginRequest 请求对象
      * @return SyncInvoker<CreateLoginRequest, CreateLoginResponse>
      */
     public SyncInvoker<CreateLoginRequest, CreateLoginResponse> createLoginInvoker(CreateLoginRequest request) {
-        return new SyncInvoker<CreateLoginRequest, CreateLoginResponse>(request, CloudIDEMeta.createLogin, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.createLogin, hcClient);
     }
 
     /**
@@ -890,7 +869,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestRequest 请求对象
+     * @param request CreateRequestRequest 请求对象
      * @return CreateRequestResponse
      */
     public CreateRequestResponse createRequest(CreateRequestRequest request) {
@@ -911,12 +890,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestRequest 请求对象
+     * @param request CreateRequestRequest 请求对象
      * @return SyncInvoker<CreateRequestRequest, CreateRequestResponse>
      */
     public SyncInvoker<CreateRequestRequest, CreateRequestResponse> createRequestInvoker(CreateRequestRequest request) {
-        return new SyncInvoker<CreateRequestRequest, CreateRequestResponse>(request, CloudIDEMeta.createRequest,
-            hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.createRequest, hcClient);
     }
 
     /**
@@ -926,7 +904,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResultRequest 请求对象
+     * @param request ShowResultRequest 请求对象
      * @return ShowResultResponse
      */
     public ShowResultResponse showResult(ShowResultRequest request) {
@@ -940,11 +918,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResultRequest 请求对象
+     * @param request ShowResultRequest 请求对象
      * @return SyncInvoker<ShowResultRequest, ShowResultResponse>
      */
     public SyncInvoker<ShowResultRequest, ShowResultResponse> showResultInvoker(ShowResultRequest request) {
-        return new SyncInvoker<ShowResultRequest, ShowResultResponse>(request, CloudIDEMeta.showResult, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showResult, hcClient);
     }
 
     /**
@@ -956,7 +934,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartChatRequest 请求对象
+     * @param request StartChatRequest 请求对象
      * @return StartChatResponse
      */
     public StartChatResponse startChat(StartChatRequest request) {
@@ -972,11 +950,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartChatRequest 请求对象
+     * @param request StartChatRequest 请求对象
      * @return SyncInvoker<StartChatRequest, StartChatResponse>
      */
     public SyncInvoker<StartChatRequest, StartChatResponse> startChatInvoker(StartChatRequest request) {
-        return new SyncInvoker<StartChatRequest, StartChatResponse>(request, CloudIDEMeta.startChat, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.startChat, hcClient);
     }
 
     /**
@@ -988,7 +966,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncChatRequest 请求对象
+     * @param request SyncChatRequest 请求对象
      * @return SyncChatResponse
      */
     public SyncChatResponse syncChat(SyncChatRequest request) {
@@ -1004,11 +982,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncChatRequest 请求对象
+     * @param request SyncChatRequest 请求对象
      * @return SyncInvoker<SyncChatRequest, SyncChatResponse>
      */
     public SyncInvoker<SyncChatRequest, SyncChatResponse> syncChatInvoker(SyncChatRequest request) {
-        return new SyncInvoker<SyncChatRequest, SyncChatResponse>(request, CloudIDEMeta.syncChat, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.syncChat, hcClient);
     }
 
     /**
@@ -1018,7 +996,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncGetChatResultRequest 请求对象
+     * @param request SyncGetChatResultRequest 请求对象
      * @return SyncGetChatResultResponse
      */
     public SyncGetChatResultResponse syncGetChatResult(SyncGetChatResultRequest request) {
@@ -1032,13 +1010,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SyncGetChatResultRequest 请求对象
+     * @param request SyncGetChatResultRequest 请求对象
      * @return SyncInvoker<SyncGetChatResultRequest, SyncGetChatResultResponse>
      */
     public SyncInvoker<SyncGetChatResultRequest, SyncGetChatResultResponse> syncGetChatResultInvoker(
         SyncGetChatResultRequest request) {
-        return new SyncInvoker<SyncGetChatResultRequest, SyncGetChatResultResponse>(request,
-            CloudIDEMeta.syncGetChatResult, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.syncGetChatResult, hcClient);
     }
 
     /**
@@ -1048,7 +1025,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckInstanceAccessRequest 请求对象
+     * @param request CheckInstanceAccessRequest 请求对象
      * @return CheckInstanceAccessResponse
      */
     public CheckInstanceAccessResponse checkInstanceAccess(CheckInstanceAccessRequest request) {
@@ -1062,13 +1039,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckInstanceAccessRequest 请求对象
+     * @param request CheckInstanceAccessRequest 请求对象
      * @return SyncInvoker<CheckInstanceAccessRequest, CheckInstanceAccessResponse>
      */
     public SyncInvoker<CheckInstanceAccessRequest, CheckInstanceAccessResponse> checkInstanceAccessInvoker(
         CheckInstanceAccessRequest request) {
-        return new SyncInvoker<CheckInstanceAccessRequest, CheckInstanceAccessResponse>(request,
-            CloudIDEMeta.checkInstanceAccess, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.checkInstanceAccess, hcClient);
     }
 
     /**
@@ -1078,7 +1054,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckNameRequest 请求对象
+     * @param request CheckNameRequest 请求对象
      * @return CheckNameResponse
      */
     public CheckNameResponse checkName(CheckNameRequest request) {
@@ -1092,11 +1068,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckNameRequest 请求对象
+     * @param request CheckNameRequest 请求对象
      * @return SyncInvoker<CheckNameRequest, CheckNameResponse>
      */
     public SyncInvoker<CheckNameRequest, CheckNameResponse> checkNameInvoker(CheckNameRequest request) {
-        return new SyncInvoker<CheckNameRequest, CheckNameResponse>(request, CloudIDEMeta.checkName, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.checkName, hcClient);
     }
 
     /**
@@ -1106,7 +1082,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
      */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
@@ -1120,13 +1096,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
     public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
         CreateInstanceRequest request) {
-        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, CloudIDEMeta.createInstance,
-            hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.createInstance, hcClient);
     }
 
     /**
@@ -1136,7 +1111,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceBy3rdRequest 请求对象
+     * @param request CreateInstanceBy3rdRequest 请求对象
      * @return CreateInstanceBy3rdResponse
      */
     public CreateInstanceBy3rdResponse createInstanceBy3rd(CreateInstanceBy3rdRequest request) {
@@ -1150,13 +1125,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceBy3rdRequest 请求对象
+     * @param request CreateInstanceBy3rdRequest 请求对象
      * @return SyncInvoker<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse>
      */
     public SyncInvoker<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse> createInstanceBy3rdInvoker(
         CreateInstanceBy3rdRequest request) {
-        return new SyncInvoker<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse>(request,
-            CloudIDEMeta.createInstanceBy3rd, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.createInstanceBy3rd, hcClient);
     }
 
     /**
@@ -1166,7 +1140,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
      */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
@@ -1180,13 +1154,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
         DeleteInstanceRequest request) {
-        return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, CloudIDEMeta.deleteInstance,
-            hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -1196,7 +1169,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return ListInstancesResponse
      */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
@@ -1210,12 +1183,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
-        return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, CloudIDEMeta.listInstances,
-            hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.listInstances, hcClient);
     }
 
     /**
@@ -1225,7 +1197,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrgInstancesRequest 请求对象
+     * @param request ListOrgInstancesRequest 请求对象
      * @return ListOrgInstancesResponse
      */
     public ListOrgInstancesResponse listOrgInstances(ListOrgInstancesRequest request) {
@@ -1239,13 +1211,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrgInstancesRequest 请求对象
+     * @param request ListOrgInstancesRequest 请求对象
      * @return SyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse>
      */
     public SyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse> listOrgInstancesInvoker(
         ListOrgInstancesRequest request) {
-        return new SyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse>(request,
-            CloudIDEMeta.listOrgInstances, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.listOrgInstances, hcClient);
     }
 
     /**
@@ -1255,7 +1226,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
      */
     public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
@@ -1269,11 +1240,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
-        return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, CloudIDEMeta.showInstance, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showInstance, hcClient);
     }
 
     /**
@@ -1283,7 +1254,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceStatusInfoRequest 请求对象
+     * @param request ShowInstanceStatusInfoRequest 请求对象
      * @return ShowInstanceStatusInfoResponse
      */
     public ShowInstanceStatusInfoResponse showInstanceStatusInfo(ShowInstanceStatusInfoRequest request) {
@@ -1297,13 +1268,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceStatusInfoRequest 请求对象
+     * @param request ShowInstanceStatusInfoRequest 请求对象
      * @return SyncInvoker<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse>
      */
     public SyncInvoker<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse> showInstanceStatusInfoInvoker(
         ShowInstanceStatusInfoRequest request) {
-        return new SyncInvoker<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse>(request,
-            CloudIDEMeta.showInstanceStatusInfo, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.showInstanceStatusInfo, hcClient);
     }
 
     /**
@@ -1313,7 +1283,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartInstanceRequest 请求对象
+     * @param request StartInstanceRequest 请求对象
      * @return StartInstanceResponse
      */
     public StartInstanceResponse startInstance(StartInstanceRequest request) {
@@ -1327,12 +1297,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartInstanceRequest 请求对象
+     * @param request StartInstanceRequest 请求对象
      * @return SyncInvoker<StartInstanceRequest, StartInstanceResponse>
      */
     public SyncInvoker<StartInstanceRequest, StartInstanceResponse> startInstanceInvoker(StartInstanceRequest request) {
-        return new SyncInvoker<StartInstanceRequest, StartInstanceResponse>(request, CloudIDEMeta.startInstance,
-            hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.startInstance, hcClient);
     }
 
     /**
@@ -1342,7 +1311,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopInstanceRequest 请求对象
+     * @param request StopInstanceRequest 请求对象
      * @return StopInstanceResponse
      */
     public StopInstanceResponse stopInstance(StopInstanceRequest request) {
@@ -1356,11 +1325,11 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopInstanceRequest 请求对象
+     * @param request StopInstanceRequest 请求对象
      * @return SyncInvoker<StopInstanceRequest, StopInstanceResponse>
      */
     public SyncInvoker<StopInstanceRequest, StopInstanceResponse> stopInstanceInvoker(StopInstanceRequest request) {
-        return new SyncInvoker<StopInstanceRequest, StopInstanceResponse>(request, CloudIDEMeta.stopInstance, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.stopInstance, hcClient);
     }
 
     /**
@@ -1370,7 +1339,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
      */
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
@@ -1384,13 +1353,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
      */
     public SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceInvoker(
         UpdateInstanceRequest request) {
-        return new SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, CloudIDEMeta.updateInstance,
-            hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.updateInstance, hcClient);
     }
 
     /**
@@ -1400,7 +1368,7 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceActivityRequest 请求对象
+     * @param request UpdateInstanceActivityRequest 请求对象
      * @return UpdateInstanceActivityResponse
      */
     public UpdateInstanceActivityResponse updateInstanceActivity(UpdateInstanceActivityRequest request) {
@@ -1414,13 +1382,12 @@ public class CloudIDEClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceActivityRequest 请求对象
+     * @param request UpdateInstanceActivityRequest 请求对象
      * @return SyncInvoker<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse>
      */
     public SyncInvoker<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse> updateInstanceActivityInvoker(
         UpdateInstanceActivityRequest request) {
-        return new SyncInvoker<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse>(request,
-            CloudIDEMeta.updateInstanceActivity, hcClient);
+        return new SyncInvoker<>(request, CloudIDEMeta.updateInstanceActivity, hcClient);
     }
 
 }

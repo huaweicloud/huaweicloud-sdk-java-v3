@@ -66,9 +66,9 @@ import com.huaweicloud.sdk.identitycenter.v1.model.UpdatePermissionSetResponse;
 public class IdentityCenterMeta {
 
     public static final HttpRequestDef<CreateAccountAssignmentRequest, CreateAccountAssignmentResponse> createAccountAssignment =
-        genForcreateAccountAssignment();
+        genForCreateAccountAssignment();
 
-    private static HttpRequestDef<CreateAccountAssignmentRequest, CreateAccountAssignmentResponse> genForcreateAccountAssignment() {
+    private static HttpRequestDef<CreateAccountAssignmentRequest, CreateAccountAssignmentResponse> genForCreateAccountAssignment() {
         // basic
         HttpRequestDef.Builder<CreateAccountAssignmentRequest, CreateAccountAssignmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateAccountAssignmentRequest.class, CreateAccountAssignmentResponse.class)
@@ -81,16 +81,13 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAccountAssignmentRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAccountAssignmentRequest::getInstanceId,
+                CreateAccountAssignmentRequest::setInstanceId));
         builder.<CreateAccountAssignmentReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAccountAssignmentReqBody.class),
-            f -> f.withMarshaller(CreateAccountAssignmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAccountAssignmentRequest::getBody, CreateAccountAssignmentRequest::setBody));
 
         // response
 
@@ -98,9 +95,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<DeleteAccountAssignmentRequest, DeleteAccountAssignmentResponse> deleteAccountAssignment =
-        genFordeleteAccountAssignment();
+        genForDeleteAccountAssignment();
 
-    private static HttpRequestDef<DeleteAccountAssignmentRequest, DeleteAccountAssignmentResponse> genFordeleteAccountAssignment() {
+    private static HttpRequestDef<DeleteAccountAssignmentRequest, DeleteAccountAssignmentResponse> genForDeleteAccountAssignment() {
         // basic
         HttpRequestDef.Builder<DeleteAccountAssignmentRequest, DeleteAccountAssignmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DeleteAccountAssignmentRequest.class, DeleteAccountAssignmentResponse.class)
@@ -113,16 +110,13 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAccountAssignmentRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAccountAssignmentRequest::getInstanceId,
+                DeleteAccountAssignmentRequest::setInstanceId));
         builder.<DeleteAccountAssignmentReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteAccountAssignmentReqBody.class),
-            f -> f.withMarshaller(DeleteAccountAssignmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteAccountAssignmentRequest::getBody, DeleteAccountAssignmentRequest::setBody));
 
         // response
 
@@ -130,9 +124,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<DescribeAccountAssignmentCreationStatusRequest, DescribeAccountAssignmentCreationStatusResponse> describeAccountAssignmentCreationStatus =
-        genFordescribeAccountAssignmentCreationStatus();
+        genForDescribeAccountAssignmentCreationStatus();
 
-    private static HttpRequestDef<DescribeAccountAssignmentCreationStatusRequest, DescribeAccountAssignmentCreationStatusResponse> genFordescribeAccountAssignmentCreationStatus() {
+    private static HttpRequestDef<DescribeAccountAssignmentCreationStatusRequest, DescribeAccountAssignmentCreationStatusResponse> genForDescribeAccountAssignmentCreationStatus() {
         // basic
         HttpRequestDef.Builder<DescribeAccountAssignmentCreationStatusRequest, DescribeAccountAssignmentCreationStatusResponse> builder =
             HttpRequestDef
@@ -148,16 +142,14 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeAccountAssignmentCreationStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DescribeAccountAssignmentCreationStatusRequest::getInstanceId,
+                DescribeAccountAssignmentCreationStatusRequest::setInstanceId));
         builder.<String>withRequestField("request_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeAccountAssignmentCreationStatusRequest::getRequestId, (req, v) -> {
-                req.setRequestId(v);
-            }));
+            f -> f.withMarshaller(DescribeAccountAssignmentCreationStatusRequest::getRequestId,
+                DescribeAccountAssignmentCreationStatusRequest::setRequestId));
 
         // response
 
@@ -165,9 +157,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResponse> describeAccountAssignmentDeletionStatus =
-        genFordescribeAccountAssignmentDeletionStatus();
+        genForDescribeAccountAssignmentDeletionStatus();
 
-    private static HttpRequestDef<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResponse> genFordescribeAccountAssignmentDeletionStatus() {
+    private static HttpRequestDef<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResponse> genForDescribeAccountAssignmentDeletionStatus() {
         // basic
         HttpRequestDef.Builder<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResponse> builder =
             HttpRequestDef
@@ -183,16 +175,14 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeAccountAssignmentDeletionStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DescribeAccountAssignmentDeletionStatusRequest::getInstanceId,
+                DescribeAccountAssignmentDeletionStatusRequest::setInstanceId));
         builder.<String>withRequestField("request_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeAccountAssignmentDeletionStatusRequest::getRequestId, (req, v) -> {
-                req.setRequestId(v);
-            }));
+            f -> f.withMarshaller(DescribeAccountAssignmentDeletionStatusRequest::getRequestId,
+                DescribeAccountAssignmentDeletionStatusRequest::setRequestId));
 
         // response
 
@@ -200,9 +190,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListAccountAssignmentCreationStatusRequest, ListAccountAssignmentCreationStatusResponse> listAccountAssignmentCreationStatus =
-        genForlistAccountAssignmentCreationStatus();
+        genForListAccountAssignmentCreationStatus();
 
-    private static HttpRequestDef<ListAccountAssignmentCreationStatusRequest, ListAccountAssignmentCreationStatusResponse> genForlistAccountAssignmentCreationStatus() {
+    private static HttpRequestDef<ListAccountAssignmentCreationStatusRequest, ListAccountAssignmentCreationStatusResponse> genForListAccountAssignmentCreationStatus() {
         // basic
         HttpRequestDef.Builder<ListAccountAssignmentCreationStatusRequest, ListAccountAssignmentCreationStatusResponse> builder =
             HttpRequestDef
@@ -218,30 +208,26 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountAssignmentCreationStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentCreationStatusRequest::getInstanceId,
+                ListAccountAssignmentCreationStatusRequest::setInstanceId));
         builder.<ListAccountAssignmentCreationStatusRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAccountAssignmentCreationStatusRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListAccountAssignmentCreationStatusRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentCreationStatusRequest::getStatus,
+                ListAccountAssignmentCreationStatusRequest::setStatus));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccountAssignmentCreationStatusRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentCreationStatusRequest::getLimit,
+                ListAccountAssignmentCreationStatusRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountAssignmentCreationStatusRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentCreationStatusRequest::getMarker,
+                ListAccountAssignmentCreationStatusRequest::setMarker));
 
         // response
 
@@ -249,9 +235,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListAccountAssignmentDeletionStatusRequest, ListAccountAssignmentDeletionStatusResponse> listAccountAssignmentDeletionStatus =
-        genForlistAccountAssignmentDeletionStatus();
+        genForListAccountAssignmentDeletionStatus();
 
-    private static HttpRequestDef<ListAccountAssignmentDeletionStatusRequest, ListAccountAssignmentDeletionStatusResponse> genForlistAccountAssignmentDeletionStatus() {
+    private static HttpRequestDef<ListAccountAssignmentDeletionStatusRequest, ListAccountAssignmentDeletionStatusResponse> genForListAccountAssignmentDeletionStatus() {
         // basic
         HttpRequestDef.Builder<ListAccountAssignmentDeletionStatusRequest, ListAccountAssignmentDeletionStatusResponse> builder =
             HttpRequestDef
@@ -267,30 +253,26 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountAssignmentDeletionStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentDeletionStatusRequest::getInstanceId,
+                ListAccountAssignmentDeletionStatusRequest::setInstanceId));
         builder.<ListAccountAssignmentDeletionStatusRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAccountAssignmentDeletionStatusRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListAccountAssignmentDeletionStatusRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentDeletionStatusRequest::getStatus,
+                ListAccountAssignmentDeletionStatusRequest::setStatus));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccountAssignmentDeletionStatusRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentDeletionStatusRequest::getLimit,
+                ListAccountAssignmentDeletionStatusRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountAssignmentDeletionStatusRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentDeletionStatusRequest::getMarker,
+                ListAccountAssignmentDeletionStatusRequest::setMarker));
 
         // response
 
@@ -298,9 +280,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListAccountAssignmentsRequest, ListAccountAssignmentsResponse> listAccountAssignments =
-        genForlistAccountAssignments();
+        genForListAccountAssignments();
 
-    private static HttpRequestDef<ListAccountAssignmentsRequest, ListAccountAssignmentsResponse> genForlistAccountAssignments() {
+    private static HttpRequestDef<ListAccountAssignmentsRequest, ListAccountAssignmentsResponse> genForListAccountAssignments() {
         // basic
         HttpRequestDef.Builder<ListAccountAssignmentsRequest, ListAccountAssignmentsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAccountAssignmentsRequest.class, ListAccountAssignmentsResponse.class)
@@ -313,37 +295,30 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountAssignmentsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentsRequest::getInstanceId,
+                ListAccountAssignmentsRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccountAssignmentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentsRequest::getLimit, ListAccountAssignmentsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountAssignmentsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentsRequest::getMarker, ListAccountAssignmentsRequest::setMarker));
         builder.<String>withRequestField("account_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountAssignmentsRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentsRequest::getAccountId,
+                ListAccountAssignmentsRequest::setAccountId));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountAssignmentsRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(ListAccountAssignmentsRequest::getPermissionSetId,
+                ListAccountAssignmentsRequest::setPermissionSetId));
 
         // response
 
@@ -351,9 +326,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListProfileAssociationsRequest, ListProfileAssociationsResponse> listProfileAssociations =
-        genForlistProfileAssociations();
+        genForListProfileAssociations();
 
-    private static HttpRequestDef<ListProfileAssociationsRequest, ListProfileAssociationsResponse> genForlistProfileAssociations() {
+    private static HttpRequestDef<ListProfileAssociationsRequest, ListProfileAssociationsResponse> genForListProfileAssociations() {
         // basic
         HttpRequestDef.Builder<ListProfileAssociationsRequest, ListProfileAssociationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProfileAssociationsRequest.class, ListProfileAssociationsResponse.class)
@@ -366,16 +341,14 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProfileAssociationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListProfileAssociationsRequest::getInstanceId,
+                ListProfileAssociationsRequest::setInstanceId));
         builder.<String>withRequestField("profile_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProfileAssociationsRequest::getProfileId, (req, v) -> {
-                req.setProfileId(v);
-            }));
+            f -> f.withMarshaller(ListProfileAssociationsRequest::getProfileId,
+                ListProfileAssociationsRequest::setProfileId));
 
         // response
 
@@ -383,9 +356,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
-        genForlistInstances();
+        genForListInstances();
 
-    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
@@ -398,16 +371,12 @@ public class IdentityCenterMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getMarker, ListInstancesRequest::setMarker));
 
         // response
 
@@ -415,9 +384,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<AttachCustomerManagedPolicyToPermissionSetRequest, AttachCustomerManagedPolicyToPermissionSetResponse> attachCustomerManagedPolicyToPermissionSet =
-        genForattachCustomerManagedPolicyToPermissionSet();
+        genForAttachCustomerManagedPolicyToPermissionSet();
 
-    private static HttpRequestDef<AttachCustomerManagedPolicyToPermissionSetRequest, AttachCustomerManagedPolicyToPermissionSetResponse> genForattachCustomerManagedPolicyToPermissionSet() {
+    private static HttpRequestDef<AttachCustomerManagedPolicyToPermissionSetRequest, AttachCustomerManagedPolicyToPermissionSetResponse> genForAttachCustomerManagedPolicyToPermissionSet() {
         // basic
         HttpRequestDef.Builder<AttachCustomerManagedPolicyToPermissionSetRequest, AttachCustomerManagedPolicyToPermissionSetResponse> builder =
             HttpRequestDef
@@ -434,23 +403,20 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachCustomerManagedPolicyToPermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(AttachCustomerManagedPolicyToPermissionSetRequest::getPermissionSetId,
+                AttachCustomerManagedPolicyToPermissionSetRequest::setPermissionSetId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachCustomerManagedPolicyToPermissionSetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AttachCustomerManagedPolicyToPermissionSetRequest::getInstanceId,
+                AttachCustomerManagedPolicyToPermissionSetRequest::setInstanceId));
         builder.<AttachCustomerManagedPolicyToPermissionSetReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachCustomerManagedPolicyToPermissionSetReqBody.class),
-            f -> f.withMarshaller(AttachCustomerManagedPolicyToPermissionSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachCustomerManagedPolicyToPermissionSetRequest::getBody,
+                AttachCustomerManagedPolicyToPermissionSetRequest::setBody));
 
         // response
 
@@ -458,9 +424,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<AttachManagedPolicyToPermissionSetRequest, AttachManagedPolicyToPermissionSetResponse> attachManagedPolicyToPermissionSet =
-        genForattachManagedPolicyToPermissionSet();
+        genForAttachManagedPolicyToPermissionSet();
 
-    private static HttpRequestDef<AttachManagedPolicyToPermissionSetRequest, AttachManagedPolicyToPermissionSetResponse> genForattachManagedPolicyToPermissionSet() {
+    private static HttpRequestDef<AttachManagedPolicyToPermissionSetRequest, AttachManagedPolicyToPermissionSetResponse> genForAttachManagedPolicyToPermissionSet() {
         // basic
         HttpRequestDef.Builder<AttachManagedPolicyToPermissionSetRequest, AttachManagedPolicyToPermissionSetResponse> builder =
             HttpRequestDef
@@ -476,23 +442,20 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachManagedPolicyToPermissionSetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AttachManagedPolicyToPermissionSetRequest::getInstanceId,
+                AttachManagedPolicyToPermissionSetRequest::setInstanceId));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachManagedPolicyToPermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(AttachManagedPolicyToPermissionSetRequest::getPermissionSetId,
+                AttachManagedPolicyToPermissionSetRequest::setPermissionSetId));
         builder.<AttachManagedPolicyToPermissionSetReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachManagedPolicyToPermissionSetReqBody.class),
-            f -> f.withMarshaller(AttachManagedPolicyToPermissionSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachManagedPolicyToPermissionSetRequest::getBody,
+                AttachManagedPolicyToPermissionSetRequest::setBody));
 
         // response
 
@@ -500,9 +463,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<CreatePermissionSetRequest, CreatePermissionSetResponse> createPermissionSet =
-        genForcreatePermissionSet();
+        genForCreatePermissionSet();
 
-    private static HttpRequestDef<CreatePermissionSetRequest, CreatePermissionSetResponse> genForcreatePermissionSet() {
+    private static HttpRequestDef<CreatePermissionSetRequest, CreatePermissionSetResponse> genForCreatePermissionSet() {
         // basic
         HttpRequestDef.Builder<CreatePermissionSetRequest, CreatePermissionSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePermissionSetRequest.class, CreatePermissionSetResponse.class)
@@ -515,16 +478,13 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePermissionSetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreatePermissionSetRequest::getInstanceId,
+                CreatePermissionSetRequest::setInstanceId));
         builder.<CreatePermissionSetReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePermissionSetReqBody.class),
-            f -> f.withMarshaller(CreatePermissionSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePermissionSetRequest::getBody, CreatePermissionSetRequest::setBody));
 
         // response
 
@@ -532,9 +492,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<DeletePermissionSetRequest, DeletePermissionSetResponse> deletePermissionSet =
-        genFordeletePermissionSet();
+        genForDeletePermissionSet();
 
-    private static HttpRequestDef<DeletePermissionSetRequest, DeletePermissionSetResponse> genFordeletePermissionSet() {
+    private static HttpRequestDef<DeletePermissionSetRequest, DeletePermissionSetResponse> genForDeletePermissionSet() {
         // basic
         HttpRequestDef.Builder<DeletePermissionSetRequest, DeletePermissionSetResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeletePermissionSetRequest.class, DeletePermissionSetResponse.class)
@@ -547,16 +507,14 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePermissionSetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeletePermissionSetRequest::getInstanceId,
+                DeletePermissionSetRequest::setInstanceId));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(DeletePermissionSetRequest::getPermissionSetId,
+                DeletePermissionSetRequest::setPermissionSetId));
 
         // response
 
@@ -564,9 +522,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<DescribePermissionSetRequest, DescribePermissionSetResponse> describePermissionSet =
-        genFordescribePermissionSet();
+        genForDescribePermissionSet();
 
-    private static HttpRequestDef<DescribePermissionSetRequest, DescribePermissionSetResponse> genFordescribePermissionSet() {
+    private static HttpRequestDef<DescribePermissionSetRequest, DescribePermissionSetResponse> genForDescribePermissionSet() {
         // basic
         HttpRequestDef.Builder<DescribePermissionSetRequest, DescribePermissionSetResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, DescribePermissionSetRequest.class, DescribePermissionSetResponse.class)
@@ -579,16 +537,14 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribePermissionSetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DescribePermissionSetRequest::getInstanceId,
+                DescribePermissionSetRequest::setInstanceId));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribePermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(DescribePermissionSetRequest::getPermissionSetId,
+                DescribePermissionSetRequest::setPermissionSetId));
 
         // response
 
@@ -596,9 +552,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<DescribePermissionSetProvisioningStatusRequest, DescribePermissionSetProvisioningStatusResponse> describePermissionSetProvisioningStatus =
-        genFordescribePermissionSetProvisioningStatus();
+        genForDescribePermissionSetProvisioningStatus();
 
-    private static HttpRequestDef<DescribePermissionSetProvisioningStatusRequest, DescribePermissionSetProvisioningStatusResponse> genFordescribePermissionSetProvisioningStatus() {
+    private static HttpRequestDef<DescribePermissionSetProvisioningStatusRequest, DescribePermissionSetProvisioningStatusResponse> genForDescribePermissionSetProvisioningStatus() {
         // basic
         HttpRequestDef.Builder<DescribePermissionSetProvisioningStatusRequest, DescribePermissionSetProvisioningStatusResponse> builder =
             HttpRequestDef
@@ -614,16 +570,14 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribePermissionSetProvisioningStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DescribePermissionSetProvisioningStatusRequest::getInstanceId,
+                DescribePermissionSetProvisioningStatusRequest::setInstanceId));
         builder.<String>withRequestField("request_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribePermissionSetProvisioningStatusRequest::getRequestId, (req, v) -> {
-                req.setRequestId(v);
-            }));
+            f -> f.withMarshaller(DescribePermissionSetProvisioningStatusRequest::getRequestId,
+                DescribePermissionSetProvisioningStatusRequest::setRequestId));
 
         // response
 
@@ -631,9 +585,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest, DetachCustomerManagedPolicyReferenceFromPermissionSetResponse> detachCustomerManagedPolicyReferenceFromPermissionSet =
-        genFordetachCustomerManagedPolicyReferenceFromPermissionSet();
+        genForDetachCustomerManagedPolicyReferenceFromPermissionSet();
 
-    private static HttpRequestDef<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest, DetachCustomerManagedPolicyReferenceFromPermissionSetResponse> genFordetachCustomerManagedPolicyReferenceFromPermissionSet() {
+    private static HttpRequestDef<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest, DetachCustomerManagedPolicyReferenceFromPermissionSetResponse> genForDetachCustomerManagedPolicyReferenceFromPermissionSet() {
         // basic
         HttpRequestDef.Builder<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest, DetachCustomerManagedPolicyReferenceFromPermissionSetResponse> builder =
             HttpRequestDef
@@ -651,24 +605,19 @@ public class IdentityCenterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::getInstanceId,
-                (req, v) -> {
-                    req.setInstanceId(v);
-                }));
+                DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::setInstanceId));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::getPermissionSetId,
-                (req, v) -> {
-                    req.setPermissionSetId(v);
-                }));
+                DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::setPermissionSetId));
         builder.<DetachCustomerManagedPolicyReferenceFromPermissionSetReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DetachCustomerManagedPolicyReferenceFromPermissionSetReqBody.class),
-            f -> f.withMarshaller(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::getBody,
+                DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::setBody));
 
         // response
 
@@ -676,9 +625,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<DetachManagedPolicyFromPermissionSetRequest, DetachManagedPolicyFromPermissionSetResponse> detachManagedPolicyFromPermissionSet =
-        genFordetachManagedPolicyFromPermissionSet();
+        genForDetachManagedPolicyFromPermissionSet();
 
-    private static HttpRequestDef<DetachManagedPolicyFromPermissionSetRequest, DetachManagedPolicyFromPermissionSetResponse> genFordetachManagedPolicyFromPermissionSet() {
+    private static HttpRequestDef<DetachManagedPolicyFromPermissionSetRequest, DetachManagedPolicyFromPermissionSetResponse> genForDetachManagedPolicyFromPermissionSet() {
         // basic
         HttpRequestDef.Builder<DetachManagedPolicyFromPermissionSetRequest, DetachManagedPolicyFromPermissionSetResponse> builder =
             HttpRequestDef
@@ -694,23 +643,20 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachManagedPolicyFromPermissionSetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DetachManagedPolicyFromPermissionSetRequest::getInstanceId,
+                DetachManagedPolicyFromPermissionSetRequest::setInstanceId));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachManagedPolicyFromPermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(DetachManagedPolicyFromPermissionSetRequest::getPermissionSetId,
+                DetachManagedPolicyFromPermissionSetRequest::setPermissionSetId));
         builder.<DetachManagedPolicyFromPermissionSetReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DetachManagedPolicyFromPermissionSetReqBody.class),
-            f -> f.withMarshaller(DetachManagedPolicyFromPermissionSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetachManagedPolicyFromPermissionSetRequest::getBody,
+                DetachManagedPolicyFromPermissionSetRequest::setBody));
 
         // response
 
@@ -718,9 +664,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResponse> listAccountsForProvisionedPermissionSet =
-        genForlistAccountsForProvisionedPermissionSet();
+        genForListAccountsForProvisionedPermissionSet();
 
-    private static HttpRequestDef<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResponse> genForlistAccountsForProvisionedPermissionSet() {
+    private static HttpRequestDef<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResponse> genForListAccountsForProvisionedPermissionSet() {
         // basic
         HttpRequestDef.Builder<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResponse> builder =
             HttpRequestDef
@@ -736,38 +682,33 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountsForProvisionedPermissionSetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAccountsForProvisionedPermissionSetRequest::getInstanceId,
+                ListAccountsForProvisionedPermissionSetRequest::setInstanceId));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountsForProvisionedPermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(ListAccountsForProvisionedPermissionSetRequest::getPermissionSetId,
+                ListAccountsForProvisionedPermissionSetRequest::setPermissionSetId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccountsForProvisionedPermissionSetRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAccountsForProvisionedPermissionSetRequest::getLimit,
+                ListAccountsForProvisionedPermissionSetRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountsForProvisionedPermissionSetRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAccountsForProvisionedPermissionSetRequest::getMarker,
+                ListAccountsForProvisionedPermissionSetRequest::setMarker));
         builder.<ListAccountsForProvisionedPermissionSetRequest.ProvisioningStatusEnum>withRequestField(
             "provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAccountsForProvisionedPermissionSetRequest.ProvisioningStatusEnum.class),
-            f -> f.withMarshaller(ListAccountsForProvisionedPermissionSetRequest::getProvisioningStatus, (req, v) -> {
-                req.setProvisioningStatus(v);
-            }));
+            f -> f.withMarshaller(ListAccountsForProvisionedPermissionSetRequest::getProvisioningStatus,
+                ListAccountsForProvisionedPermissionSetRequest::setProvisioningStatus));
 
         // response
 
@@ -775,9 +716,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListCustomerManagedPolicyReferencesInPermissionSetRequest, ListCustomerManagedPolicyReferencesInPermissionSetResponse> listCustomerManagedPolicyReferencesInPermissionSet =
-        genForlistCustomerManagedPolicyReferencesInPermissionSet();
+        genForListCustomerManagedPolicyReferencesInPermissionSet();
 
-    private static HttpRequestDef<ListCustomerManagedPolicyReferencesInPermissionSetRequest, ListCustomerManagedPolicyReferencesInPermissionSetResponse> genForlistCustomerManagedPolicyReferencesInPermissionSet() {
+    private static HttpRequestDef<ListCustomerManagedPolicyReferencesInPermissionSetRequest, ListCustomerManagedPolicyReferencesInPermissionSetResponse> genForListCustomerManagedPolicyReferencesInPermissionSet() {
         // basic
         HttpRequestDef.Builder<ListCustomerManagedPolicyReferencesInPermissionSetRequest, ListCustomerManagedPolicyReferencesInPermissionSetResponse> builder =
             HttpRequestDef
@@ -794,31 +735,25 @@ public class IdentityCenterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCustomerManagedPolicyReferencesInPermissionSetRequest::getInstanceId,
-                (req, v) -> {
-                    req.setInstanceId(v);
-                }));
+                ListCustomerManagedPolicyReferencesInPermissionSetRequest::setInstanceId));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCustomerManagedPolicyReferencesInPermissionSetRequest::getPermissionSetId,
-                (req, v) -> {
-                    req.setPermissionSetId(v);
-                }));
+                ListCustomerManagedPolicyReferencesInPermissionSetRequest::setPermissionSetId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerManagedPolicyReferencesInPermissionSetRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCustomerManagedPolicyReferencesInPermissionSetRequest::getLimit,
+                ListCustomerManagedPolicyReferencesInPermissionSetRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerManagedPolicyReferencesInPermissionSetRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCustomerManagedPolicyReferencesInPermissionSetRequest::getMarker,
+                ListCustomerManagedPolicyReferencesInPermissionSetRequest::setMarker));
 
         // response
 
@@ -826,9 +761,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListManagedPoliciesInPermissionSetRequest, ListManagedPoliciesInPermissionSetResponse> listManagedPoliciesInPermissionSet =
-        genForlistManagedPoliciesInPermissionSet();
+        genForListManagedPoliciesInPermissionSet();
 
-    private static HttpRequestDef<ListManagedPoliciesInPermissionSetRequest, ListManagedPoliciesInPermissionSetResponse> genForlistManagedPoliciesInPermissionSet() {
+    private static HttpRequestDef<ListManagedPoliciesInPermissionSetRequest, ListManagedPoliciesInPermissionSetResponse> genForListManagedPoliciesInPermissionSet() {
         // basic
         HttpRequestDef.Builder<ListManagedPoliciesInPermissionSetRequest, ListManagedPoliciesInPermissionSetResponse> builder =
             HttpRequestDef
@@ -844,30 +779,26 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedPoliciesInPermissionSetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListManagedPoliciesInPermissionSetRequest::getInstanceId,
+                ListManagedPoliciesInPermissionSetRequest::setInstanceId));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedPoliciesInPermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(ListManagedPoliciesInPermissionSetRequest::getPermissionSetId,
+                ListManagedPoliciesInPermissionSetRequest::setPermissionSetId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListManagedPoliciesInPermissionSetRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListManagedPoliciesInPermissionSetRequest::getLimit,
+                ListManagedPoliciesInPermissionSetRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedPoliciesInPermissionSetRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListManagedPoliciesInPermissionSetRequest::getMarker,
+                ListManagedPoliciesInPermissionSetRequest::setMarker));
 
         // response
 
@@ -875,9 +806,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListPermissionSetProvisioningStatusRequest, ListPermissionSetProvisioningStatusResponse> listPermissionSetProvisioningStatus =
-        genForlistPermissionSetProvisioningStatus();
+        genForListPermissionSetProvisioningStatus();
 
-    private static HttpRequestDef<ListPermissionSetProvisioningStatusRequest, ListPermissionSetProvisioningStatusResponse> genForlistPermissionSetProvisioningStatus() {
+    private static HttpRequestDef<ListPermissionSetProvisioningStatusRequest, ListPermissionSetProvisioningStatusResponse> genForListPermissionSetProvisioningStatus() {
         // basic
         HttpRequestDef.Builder<ListPermissionSetProvisioningStatusRequest, ListPermissionSetProvisioningStatusResponse> builder =
             HttpRequestDef
@@ -893,30 +824,26 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionSetProvisioningStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetProvisioningStatusRequest::getInstanceId,
+                ListPermissionSetProvisioningStatusRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPermissionSetProvisioningStatusRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetProvisioningStatusRequest::getLimit,
+                ListPermissionSetProvisioningStatusRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionSetProvisioningStatusRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetProvisioningStatusRequest::getMarker,
+                ListPermissionSetProvisioningStatusRequest::setMarker));
         builder.<ListPermissionSetProvisioningStatusRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPermissionSetProvisioningStatusRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListPermissionSetProvisioningStatusRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetProvisioningStatusRequest::getStatus,
+                ListPermissionSetProvisioningStatusRequest::setStatus));
 
         // response
 
@@ -924,9 +851,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListPermissionSetsRequest, ListPermissionSetsResponse> listPermissionSets =
-        genForlistPermissionSets();
+        genForListPermissionSets();
 
-    private static HttpRequestDef<ListPermissionSetsRequest, ListPermissionSetsResponse> genForlistPermissionSets() {
+    private static HttpRequestDef<ListPermissionSetsRequest, ListPermissionSetsResponse> genForListPermissionSets() {
         // basic
         HttpRequestDef.Builder<ListPermissionSetsRequest, ListPermissionSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPermissionSetsRequest.class, ListPermissionSetsResponse.class)
@@ -939,44 +866,34 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionSetsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsRequest::getInstanceId, ListPermissionSetsRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPermissionSetsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsRequest::getLimit, ListPermissionSetsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionSetsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsRequest::getMarker, ListPermissionSetsRequest::setMarker));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionSetsRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsRequest::getPermissionSetId,
+                ListPermissionSetsRequest::setPermissionSetId));
         builder.<String>withRequestField("permission_urn",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionSetsRequest::getPermissionUrn, (req, v) -> {
-                req.setPermissionUrn(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsRequest::getPermissionUrn,
+                ListPermissionSetsRequest::setPermissionUrn));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionSetsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsRequest::getName, ListPermissionSetsRequest::setName));
 
         // response
 
@@ -984,9 +901,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<ListPermissionSetsProvisionedToAccountRequest, ListPermissionSetsProvisionedToAccountResponse> listPermissionSetsProvisionedToAccount =
-        genForlistPermissionSetsProvisionedToAccount();
+        genForListPermissionSetsProvisionedToAccount();
 
-    private static HttpRequestDef<ListPermissionSetsProvisionedToAccountRequest, ListPermissionSetsProvisionedToAccountResponse> genForlistPermissionSetsProvisionedToAccount() {
+    private static HttpRequestDef<ListPermissionSetsProvisionedToAccountRequest, ListPermissionSetsProvisionedToAccountResponse> genForListPermissionSetsProvisionedToAccount() {
         // basic
         HttpRequestDef.Builder<ListPermissionSetsProvisionedToAccountRequest, ListPermissionSetsProvisionedToAccountResponse> builder =
             HttpRequestDef
@@ -1002,38 +919,33 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionSetsProvisionedToAccountRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsProvisionedToAccountRequest::getInstanceId,
+                ListPermissionSetsProvisionedToAccountRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPermissionSetsProvisionedToAccountRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsProvisionedToAccountRequest::getLimit,
+                ListPermissionSetsProvisionedToAccountRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionSetsProvisionedToAccountRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsProvisionedToAccountRequest::getMarker,
+                ListPermissionSetsProvisionedToAccountRequest::setMarker));
         builder.<String>withRequestField("account_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionSetsProvisionedToAccountRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsProvisionedToAccountRequest::getAccountId,
+                ListPermissionSetsProvisionedToAccountRequest::setAccountId));
         builder.<ListPermissionSetsProvisionedToAccountRequest.ProvisioningStatusEnum>withRequestField(
             "provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPermissionSetsProvisionedToAccountRequest.ProvisioningStatusEnum.class),
-            f -> f.withMarshaller(ListPermissionSetsProvisionedToAccountRequest::getProvisioningStatus, (req, v) -> {
-                req.setProvisioningStatus(v);
-            }));
+            f -> f.withMarshaller(ListPermissionSetsProvisionedToAccountRequest::getProvisioningStatus,
+                ListPermissionSetsProvisionedToAccountRequest::setProvisioningStatus));
 
         // response
 
@@ -1041,9 +953,9 @@ public class IdentityCenterMeta {
     }
 
     public static final HttpRequestDef<UpdatePermissionSetRequest, UpdatePermissionSetResponse> updatePermissionSet =
-        genForupdatePermissionSet();
+        genForUpdatePermissionSet();
 
-    private static HttpRequestDef<UpdatePermissionSetRequest, UpdatePermissionSetResponse> genForupdatePermissionSet() {
+    private static HttpRequestDef<UpdatePermissionSetRequest, UpdatePermissionSetResponse> genForUpdatePermissionSet() {
         // basic
         HttpRequestDef.Builder<UpdatePermissionSetRequest, UpdatePermissionSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePermissionSetRequest.class, UpdatePermissionSetResponse.class)
@@ -1056,23 +968,19 @@ public class IdentityCenterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePermissionSetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdatePermissionSetRequest::getInstanceId,
+                UpdatePermissionSetRequest::setInstanceId));
         builder.<String>withRequestField("permission_set_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePermissionSetRequest::getPermissionSetId, (req, v) -> {
-                req.setPermissionSetId(v);
-            }));
+            f -> f.withMarshaller(UpdatePermissionSetRequest::getPermissionSetId,
+                UpdatePermissionSetRequest::setPermissionSetId));
         builder.<UpdatePermissionSetReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePermissionSetReqBody.class),
-            f -> f.withMarshaller(UpdatePermissionSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePermissionSetRequest::getBody, UpdatePermissionSetRequest::setBody));
 
         // response
 

@@ -49,9 +49,9 @@ import com.huaweicloud.sdk.cts.v3.model.UpdateTrackerResponse;
 public class CtsMeta {
 
     public static final HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTags =
-        genForbatchCreateResourceTags();
+        genForBatchCreateResourceTags();
 
-    private static HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> genForbatchCreateResourceTags() {
+    private static HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> genForBatchCreateResourceTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateResourceTagsRequest.class, BatchCreateResourceTagsResponse.class)
@@ -64,23 +64,19 @@ public class CtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceId,
+                BatchCreateResourceTagsRequest::setResourceId));
         builder.<BatchCreateResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceType,
+                BatchCreateResourceTagsRequest::setResourceType));
         builder.<BatchCreateResourceTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, BatchCreateResourceTagsRequest::setBody));
 
         // response
 
@@ -88,9 +84,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> batchDeleteResourceTags =
-        genForbatchDeleteResourceTags();
+        genForBatchDeleteResourceTags();
 
-    private static HttpRequestDef<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> genForbatchDeleteResourceTags() {
+    private static HttpRequestDef<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> genForBatchDeleteResourceTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, BatchDeleteResourceTagsRequest.class, BatchDeleteResourceTagsResponse.class)
@@ -103,23 +99,19 @@ public class CtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getResourceId,
+                BatchDeleteResourceTagsRequest::setResourceId));
         builder.<BatchDeleteResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteResourceTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getResourceType,
+                BatchDeleteResourceTagsRequest::setResourceType));
         builder.<BatchDeleteResourceTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteResourceTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getBody, BatchDeleteResourceTagsRequest::setBody));
 
         // response
 
@@ -127,9 +119,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<CheckObsBucketsRequest, CheckObsBucketsResponse> checkObsBuckets =
-        genForcheckObsBuckets();
+        genForCheckObsBuckets();
 
-    private static HttpRequestDef<CheckObsBucketsRequest, CheckObsBucketsResponse> genForcheckObsBuckets() {
+    private static HttpRequestDef<CheckObsBucketsRequest, CheckObsBucketsResponse> genForCheckObsBuckets() {
         // basic
         HttpRequestDef.Builder<CheckObsBucketsRequest, CheckObsBucketsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckObsBucketsRequest.class, CheckObsBucketsResponse.class)
@@ -142,16 +134,12 @@ public class CtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckObsBucketsRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(CheckObsBucketsRequest::getDomainId, CheckObsBucketsRequest::setDomainId));
         builder.<CheckObsBucketsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckObsBucketsRequestBody.class),
-            f -> f.withMarshaller(CheckObsBucketsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckObsBucketsRequest::getBody, CheckObsBucketsRequest::setBody));
 
         // response
 
@@ -159,9 +147,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> createNotification =
-        genForcreateNotification();
+        genForCreateNotification();
 
-    private static HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> genForcreateNotification() {
+    private static HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> genForCreateNotification() {
         // basic
         HttpRequestDef.Builder<CreateNotificationRequest, CreateNotificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNotificationRequest.class, CreateNotificationResponse.class)
@@ -174,9 +162,7 @@ public class CtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNotificationRequestBody.class),
-            f -> f.withMarshaller(CreateNotificationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNotificationRequest::getBody, CreateNotificationRequest::setBody));
 
         // response
 
@@ -184,9 +170,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<CreateTrackerRequest, CreateTrackerResponse> createTracker =
-        genForcreateTracker();
+        genForCreateTracker();
 
-    private static HttpRequestDef<CreateTrackerRequest, CreateTrackerResponse> genForcreateTracker() {
+    private static HttpRequestDef<CreateTrackerRequest, CreateTrackerResponse> genForCreateTracker() {
         // basic
         HttpRequestDef.Builder<CreateTrackerRequest, CreateTrackerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTrackerRequest.class, CreateTrackerResponse.class)
@@ -199,9 +185,7 @@ public class CtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTrackerRequestBody.class),
-            f -> f.withMarshaller(CreateTrackerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTrackerRequest::getBody, CreateTrackerRequest::setBody));
 
         // response
 
@@ -209,9 +193,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> deleteNotification =
-        genFordeleteNotification();
+        genForDeleteNotification();
 
-    private static HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> genFordeleteNotification() {
+    private static HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> genForDeleteNotification() {
         // basic
         HttpRequestDef.Builder<DeleteNotificationRequest, DeleteNotificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNotificationRequest.class, DeleteNotificationResponse.class)
@@ -224,9 +208,8 @@ public class CtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNotificationRequest::getNotificationId, (req, v) -> {
-                req.setNotificationId(v);
-            }));
+            f -> f.withMarshaller(DeleteNotificationRequest::getNotificationId,
+                DeleteNotificationRequest::setNotificationId));
 
         // response
 
@@ -234,9 +217,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<DeleteTrackerRequest, DeleteTrackerResponse> deleteTracker =
-        genFordeleteTracker();
+        genForDeleteTracker();
 
-    private static HttpRequestDef<DeleteTrackerRequest, DeleteTrackerResponse> genFordeleteTracker() {
+    private static HttpRequestDef<DeleteTrackerRequest, DeleteTrackerResponse> genForDeleteTracker() {
         // basic
         HttpRequestDef.Builder<DeleteTrackerRequest, DeleteTrackerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTrackerRequest.class, DeleteTrackerResponse.class)
@@ -249,16 +232,12 @@ public class CtsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTrackerRequest::getTrackerName, (req, v) -> {
-                req.setTrackerName(v);
-            }));
+            f -> f.withMarshaller(DeleteTrackerRequest::getTrackerName, DeleteTrackerRequest::setTrackerName));
         builder.<DeleteTrackerRequest.TrackerTypeEnum>withRequestField("tracker_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteTrackerRequest.TrackerTypeEnum.class),
-            f -> f.withMarshaller(DeleteTrackerRequest::getTrackerType, (req, v) -> {
-                req.setTrackerType(v);
-            }));
+            f -> f.withMarshaller(DeleteTrackerRequest::getTrackerType, DeleteTrackerRequest::setTrackerType));
 
         // response
 
@@ -266,9 +245,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> listNotifications =
-        genForlistNotifications();
+        genForListNotifications();
 
-    private static HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> genForlistNotifications() {
+    private static HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> genForListNotifications() {
         // basic
         HttpRequestDef.Builder<ListNotificationsRequest, ListNotificationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNotificationsRequest.class, ListNotificationsResponse.class)
@@ -281,16 +260,14 @@ public class CtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListNotificationsRequest.NotificationTypeEnum.class),
-            f -> f.withMarshaller(ListNotificationsRequest::getNotificationType, (req, v) -> {
-                req.setNotificationType(v);
-            }));
+            f -> f.withMarshaller(ListNotificationsRequest::getNotificationType,
+                ListNotificationsRequest::setNotificationType));
         builder.<String>withRequestField("notification_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNotificationsRequest::getNotificationName, (req, v) -> {
-                req.setNotificationName(v);
-            }));
+            f -> f.withMarshaller(ListNotificationsRequest::getNotificationName,
+                ListNotificationsRequest::setNotificationName));
 
         // response
 
@@ -298,9 +275,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<ListOperationsRequest, ListOperationsResponse> listOperations =
-        genForlistOperations();
+        genForListOperations();
 
-    private static HttpRequestDef<ListOperationsRequest, ListOperationsResponse> genForlistOperations() {
+    private static HttpRequestDef<ListOperationsRequest, ListOperationsResponse> genForListOperations() {
         // basic
         HttpRequestDef.Builder<ListOperationsRequest, ListOperationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOperationsRequest.class, ListOperationsResponse.class)
@@ -313,25 +290,21 @@ public class CtsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOperationsRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListOperationsRequest::getServiceType, ListOperationsRequest::setServiceType));
         builder.<String>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOperationsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListOperationsRequest::getResourceType, ListOperationsRequest::setResourceType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForListQuotas();
 
-    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForListQuotas() {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
@@ -347,9 +320,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<ListTraceResourcesRequest, ListTraceResourcesResponse> listTraceResources =
-        genForlistTraceResources();
+        genForListTraceResources();
 
-    private static HttpRequestDef<ListTraceResourcesRequest, ListTraceResourcesResponse> genForlistTraceResources() {
+    private static HttpRequestDef<ListTraceResourcesRequest, ListTraceResourcesResponse> genForListTraceResources() {
         // basic
         HttpRequestDef.Builder<ListTraceResourcesRequest, ListTraceResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTraceResourcesRequest.class, ListTraceResourcesResponse.class)
@@ -362,18 +335,16 @@ public class CtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTraceResourcesRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ListTraceResourcesRequest::getDomainId, ListTraceResourcesRequest::setDomainId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTracesRequest, ListTracesResponse> listTraces = genForlistTraces();
+    public static final HttpRequestDef<ListTracesRequest, ListTracesResponse> listTraces = genForListTraces();
 
-    private static HttpRequestDef<ListTracesRequest, ListTracesResponse> genForlistTraces() {
+    private static HttpRequestDef<ListTracesRequest, ListTracesResponse> genForListTraces() {
         // basic
         HttpRequestDef.Builder<ListTracesRequest, ListTracesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTracesRequest.class, ListTracesResponse.class)
@@ -386,109 +357,81 @@ public class CtsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTracesRequest.TraceTypeEnum.class),
-            f -> f.withMarshaller(ListTracesRequest::getTraceType, (req, v) -> {
-                req.setTraceType(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getTraceType, ListTracesRequest::setTraceType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTracesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getLimit, ListTracesRequest::setLimit));
         builder.<Long>withRequestField("from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTracesRequest::getFrom, (req, v) -> {
-                req.setFrom(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getFrom, ListTracesRequest::setFrom));
         builder.<String>withRequestField("next",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracesRequest::getNext, (req, v) -> {
-                req.setNext(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getNext, ListTracesRequest::setNext));
         builder.<Long>withRequestField("to",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTracesRequest::getTo, (req, v) -> {
-                req.setTo(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getTo, ListTracesRequest::setTo));
         builder.<String>withRequestField("tracker_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracesRequest::getTrackerName, (req, v) -> {
-                req.setTrackerName(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getTrackerName, ListTracesRequest::setTrackerName));
         builder.<String>withRequestField("service_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracesRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getServiceType, ListTracesRequest::setServiceType));
         builder.<String>withRequestField("user",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracesRequest::getUser, (req, v) -> {
-                req.setUser(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getUser, ListTracesRequest::setUser));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracesRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getResourceId, ListTracesRequest::setResourceId));
         builder.<String>withRequestField("resource_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracesRequest::getResourceName, (req, v) -> {
-                req.setResourceName(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getResourceName, ListTracesRequest::setResourceName));
         builder.<String>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getResourceType, ListTracesRequest::setResourceType));
         builder.<String>withRequestField("trace_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracesRequest::getTraceId, (req, v) -> {
-                req.setTraceId(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getTraceId, ListTracesRequest::setTraceId));
         builder.<String>withRequestField("trace_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTracesRequest::getTraceName, (req, v) -> {
-                req.setTraceName(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getTraceName, ListTracesRequest::setTraceName));
         builder.<ListTracesRequest.TraceRatingEnum>withRequestField("trace_rating",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTracesRequest.TraceRatingEnum.class),
-            f -> f.withMarshaller(ListTracesRequest::getTraceRating, (req, v) -> {
-                req.setTraceRating(v);
-            }));
+            f -> f.withMarshaller(ListTracesRequest::getTraceRating, ListTracesRequest::setTraceRating));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTrackersRequest, ListTrackersResponse> listTrackers = genForlistTrackers();
+    public static final HttpRequestDef<ListTrackersRequest, ListTrackersResponse> listTrackers = genForListTrackers();
 
-    private static HttpRequestDef<ListTrackersRequest, ListTrackersResponse> genForlistTrackers() {
+    private static HttpRequestDef<ListTrackersRequest, ListTrackersResponse> genForListTrackers() {
         // basic
         HttpRequestDef.Builder<ListTrackersRequest, ListTrackersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTrackersRequest.class, ListTrackersResponse.class)
@@ -501,16 +444,12 @@ public class CtsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTrackersRequest::getTrackerName, (req, v) -> {
-                req.setTrackerName(v);
-            }));
+            f -> f.withMarshaller(ListTrackersRequest::getTrackerName, ListTrackersRequest::setTrackerName));
         builder.<ListTrackersRequest.TrackerTypeEnum>withRequestField("tracker_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTrackersRequest.TrackerTypeEnum.class),
-            f -> f.withMarshaller(ListTrackersRequest::getTrackerType, (req, v) -> {
-                req.setTrackerType(v);
-            }));
+            f -> f.withMarshaller(ListTrackersRequest::getTrackerType, ListTrackersRequest::setTrackerType));
 
         // response
 
@@ -518,9 +457,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<ListUserResourcesRequest, ListUserResourcesResponse> listUserResources =
-        genForlistUserResources();
+        genForListUserResources();
 
-    private static HttpRequestDef<ListUserResourcesRequest, ListUserResourcesResponse> genForlistUserResources() {
+    private static HttpRequestDef<ListUserResourcesRequest, ListUserResourcesResponse> genForListUserResources() {
         // basic
         HttpRequestDef.Builder<ListUserResourcesRequest, ListUserResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUserResourcesRequest.class, ListUserResourcesResponse.class)
@@ -536,9 +475,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<UpdateNotificationRequest, UpdateNotificationResponse> updateNotification =
-        genForupdateNotification();
+        genForUpdateNotification();
 
-    private static HttpRequestDef<UpdateNotificationRequest, UpdateNotificationResponse> genForupdateNotification() {
+    private static HttpRequestDef<UpdateNotificationRequest, UpdateNotificationResponse> genForUpdateNotification() {
         // basic
         HttpRequestDef.Builder<UpdateNotificationRequest, UpdateNotificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNotificationRequest.class, UpdateNotificationResponse.class)
@@ -551,9 +490,7 @@ public class CtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNotificationRequestBody.class),
-            f -> f.withMarshaller(UpdateNotificationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNotificationRequest::getBody, UpdateNotificationRequest::setBody));
 
         // response
 
@@ -561,9 +498,9 @@ public class CtsMeta {
     }
 
     public static final HttpRequestDef<UpdateTrackerRequest, UpdateTrackerResponse> updateTracker =
-        genForupdateTracker();
+        genForUpdateTracker();
 
-    private static HttpRequestDef<UpdateTrackerRequest, UpdateTrackerResponse> genForupdateTracker() {
+    private static HttpRequestDef<UpdateTrackerRequest, UpdateTrackerResponse> genForUpdateTracker() {
         // basic
         HttpRequestDef.Builder<UpdateTrackerRequest, UpdateTrackerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTrackerRequest.class, UpdateTrackerResponse.class)
@@ -576,9 +513,7 @@ public class CtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTrackerRequestBody.class),
-            f -> f.withMarshaller(UpdateTrackerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTrackerRequest::getBody, UpdateTrackerRequest::setBody));
 
         // response
 

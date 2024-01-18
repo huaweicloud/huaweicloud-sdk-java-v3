@@ -35,6 +35,26 @@ public class ListAuthedRequest {
 
     private String xWorkspaceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auth_name")
+
+    private String authName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_dir")
+
+    private String sortDir;
+
     public ListAuthedRequest withAuthLevel(String authLevel) {
         this.authLevel = authLevel;
         return this;
@@ -122,6 +142,78 @@ public class ListAuthedRequest {
         this.xWorkspaceId = xWorkspaceId;
     }
 
+    public ListAuthedRequest withAuthName(String authName) {
+        this.authName = authName;
+        return this;
+    }
+
+    /**
+     * 授权主体名称
+     * @return authName
+     */
+    public String getAuthName() {
+        return authName;
+    }
+
+    public void setAuthName(String authName) {
+        this.authName = authName;
+    }
+
+    public ListAuthedRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 分页大小
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListAuthedRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量
+     * minimum: 0
+     * maximum: 1000
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListAuthedRequest withSortDir(String sortDir) {
+        this.sortDir = sortDir;
+        return this;
+    }
+
+    /**
+     * asc: 升序， desc: 降序
+     * @return sortDir
+     */
+    public String getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(String sortDir) {
+        this.sortDir = sortDir;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -133,12 +225,15 @@ public class ListAuthedRequest {
         ListAuthedRequest that = (ListAuthedRequest) obj;
         return Objects.equals(this.authLevel, that.authLevel) && Objects.equals(this.filterAuthed, that.filterAuthed)
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.xWorkspaceId, that.xWorkspaceId);
+            && Objects.equals(this.xWorkspaceId, that.xWorkspaceId) && Objects.equals(this.authName, that.authName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authLevel, filterAuthed, resourceId, resourceType, xWorkspaceId);
+        return Objects
+            .hash(authLevel, filterAuthed, resourceId, resourceType, xWorkspaceId, authName, limit, offset, sortDir);
     }
 
     @Override
@@ -150,6 +245,10 @@ public class ListAuthedRequest {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    xWorkspaceId: ").append(toIndentedString(xWorkspaceId)).append("\n");
+        sb.append("    authName: ").append(toIndentedString(authName)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("}");
         return sb.toString();
     }

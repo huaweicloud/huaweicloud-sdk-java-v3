@@ -104,9 +104,9 @@ import com.huaweicloud.sdk.frs.v2.model.UpdateFaceResponse;
 public class FrsMeta {
 
     public static final HttpRequestDef<AddFacesByBase64Request, AddFacesByBase64Response> addFacesByBase64 =
-        genForaddFacesByBase64();
+        genForAddFacesByBase64();
 
-    private static HttpRequestDef<AddFacesByBase64Request, AddFacesByBase64Response> genForaddFacesByBase64() {
+    private static HttpRequestDef<AddFacesByBase64Request, AddFacesByBase64Response> genForAddFacesByBase64() {
         // basic
         HttpRequestDef.Builder<AddFacesByBase64Request, AddFacesByBase64Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddFacesByBase64Request.class, AddFacesByBase64Response.class)
@@ -119,23 +119,18 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddFacesByBase64Request::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(AddFacesByBase64Request::getFaceSetName, AddFacesByBase64Request::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddFacesByBase64Request::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddFacesByBase64Request::getEnterpriseProjectId,
+                AddFacesByBase64Request::setEnterpriseProjectId));
         builder.<AddFacesBase64Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddFacesBase64Req.class),
-            f -> f.withMarshaller(AddFacesByBase64Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddFacesByBase64Request::getBody, AddFacesByBase64Request::setBody));
 
         // response
 
@@ -148,9 +143,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<AddFacesByFileRequest, AddFacesByFileResponse> addFacesByFile =
-        genForaddFacesByFile();
+        genForAddFacesByFile();
 
-    private static HttpRequestDef<AddFacesByFileRequest, AddFacesByFileResponse> genForaddFacesByFile() {
+    private static HttpRequestDef<AddFacesByFileRequest, AddFacesByFileResponse> genForAddFacesByFile() {
         // basic
         HttpRequestDef.Builder<AddFacesByFileRequest, AddFacesByFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddFacesByFileRequest.class, AddFacesByFileResponse.class)
@@ -163,23 +158,18 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddFacesByFileRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(AddFacesByFileRequest::getFaceSetName, AddFacesByFileRequest::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddFacesByFileRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddFacesByFileRequest::getEnterpriseProjectId,
+                AddFacesByFileRequest::setEnterpriseProjectId));
         builder.<AddFacesByFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddFacesByFileRequestBody.class),
-            f -> f.withMarshaller(AddFacesByFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddFacesByFileRequest::getBody, AddFacesByFileRequest::setBody));
 
         // response
 
@@ -192,9 +182,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<AddFacesByUrlRequest, AddFacesByUrlResponse> addFacesByUrl =
-        genForaddFacesByUrl();
+        genForAddFacesByUrl();
 
-    private static HttpRequestDef<AddFacesByUrlRequest, AddFacesByUrlResponse> genForaddFacesByUrl() {
+    private static HttpRequestDef<AddFacesByUrlRequest, AddFacesByUrlResponse> genForAddFacesByUrl() {
         // basic
         HttpRequestDef.Builder<AddFacesByUrlRequest, AddFacesByUrlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddFacesByUrlRequest.class, AddFacesByUrlResponse.class)
@@ -207,23 +197,18 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddFacesByUrlRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(AddFacesByUrlRequest::getFaceSetName, AddFacesByUrlRequest::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddFacesByUrlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddFacesByUrlRequest::getEnterpriseProjectId,
+                AddFacesByUrlRequest::setEnterpriseProjectId));
         builder.<AddFacesUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddFacesUrlReq.class),
-            f -> f.withMarshaller(AddFacesByUrlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddFacesByUrlRequest::getBody, AddFacesByUrlRequest::setBody));
 
         // response
 
@@ -236,9 +221,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteFacesRequest, BatchDeleteFacesResponse> batchDeleteFaces =
-        genForbatchDeleteFaces();
+        genForBatchDeleteFaces();
 
-    private static HttpRequestDef<BatchDeleteFacesRequest, BatchDeleteFacesResponse> genForbatchDeleteFaces() {
+    private static HttpRequestDef<BatchDeleteFacesRequest, BatchDeleteFacesResponse> genForBatchDeleteFaces() {
         // basic
         HttpRequestDef.Builder<BatchDeleteFacesRequest, BatchDeleteFacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteFacesRequest.class, BatchDeleteFacesResponse.class)
@@ -251,23 +236,18 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteFacesRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteFacesRequest::getFaceSetName, BatchDeleteFacesRequest::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteFacesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteFacesRequest::getEnterpriseProjectId,
+                BatchDeleteFacesRequest::setEnterpriseProjectId));
         builder.<DeleteFacesBatchReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteFacesBatchReq.class),
-            f -> f.withMarshaller(BatchDeleteFacesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteFacesRequest::getBody, BatchDeleteFacesRequest::setBody));
 
         // response
 
@@ -280,9 +260,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<CompareFaceByBase64Request, CompareFaceByBase64Response> compareFaceByBase64 =
-        genForcompareFaceByBase64();
+        genForCompareFaceByBase64();
 
-    private static HttpRequestDef<CompareFaceByBase64Request, CompareFaceByBase64Response> genForcompareFaceByBase64() {
+    private static HttpRequestDef<CompareFaceByBase64Request, CompareFaceByBase64Response> genForCompareFaceByBase64() {
         // basic
         HttpRequestDef.Builder<CompareFaceByBase64Request, CompareFaceByBase64Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CompareFaceByBase64Request.class, CompareFaceByBase64Response.class)
@@ -295,16 +275,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CompareFaceByBase64Request::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(CompareFaceByBase64Request::getEnterpriseProjectId,
+                CompareFaceByBase64Request::setEnterpriseProjectId));
         builder.<FaceCompareBase64Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FaceCompareBase64Req.class),
-            f -> f.withMarshaller(CompareFaceByBase64Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CompareFaceByBase64Request::getBody, CompareFaceByBase64Request::setBody));
 
         // response
 
@@ -318,9 +295,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<CompareFaceByFileRequest, CompareFaceByFileResponse> compareFaceByFile =
-        genForcompareFaceByFile();
+        genForCompareFaceByFile();
 
-    private static HttpRequestDef<CompareFaceByFileRequest, CompareFaceByFileResponse> genForcompareFaceByFile() {
+    private static HttpRequestDef<CompareFaceByFileRequest, CompareFaceByFileResponse> genForCompareFaceByFile() {
         // basic
         HttpRequestDef.Builder<CompareFaceByFileRequest, CompareFaceByFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CompareFaceByFileRequest.class, CompareFaceByFileResponse.class)
@@ -333,16 +310,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CompareFaceByFileRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(CompareFaceByFileRequest::getEnterpriseProjectId,
+                CompareFaceByFileRequest::setEnterpriseProjectId));
         builder.<CompareFaceByFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CompareFaceByFileRequestBody.class),
-            f -> f.withMarshaller(CompareFaceByFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CompareFaceByFileRequest::getBody, CompareFaceByFileRequest::setBody));
 
         // response
 
@@ -355,9 +329,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<CompareFaceByUrlRequest, CompareFaceByUrlResponse> compareFaceByUrl =
-        genForcompareFaceByUrl();
+        genForCompareFaceByUrl();
 
-    private static HttpRequestDef<CompareFaceByUrlRequest, CompareFaceByUrlResponse> genForcompareFaceByUrl() {
+    private static HttpRequestDef<CompareFaceByUrlRequest, CompareFaceByUrlResponse> genForCompareFaceByUrl() {
         // basic
         HttpRequestDef.Builder<CompareFaceByUrlRequest, CompareFaceByUrlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CompareFaceByUrlRequest.class, CompareFaceByUrlResponse.class)
@@ -370,16 +344,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CompareFaceByUrlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(CompareFaceByUrlRequest::getEnterpriseProjectId,
+                CompareFaceByUrlRequest::setEnterpriseProjectId));
         builder.<FaceCompareUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FaceCompareUrlReq.class),
-            f -> f.withMarshaller(CompareFaceByUrlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CompareFaceByUrlRequest::getBody, CompareFaceByUrlRequest::setBody));
 
         // response
 
@@ -392,9 +363,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<CreateFaceSetRequest, CreateFaceSetResponse> createFaceSet =
-        genForcreateFaceSet();
+        genForCreateFaceSet();
 
-    private static HttpRequestDef<CreateFaceSetRequest, CreateFaceSetResponse> genForcreateFaceSet() {
+    private static HttpRequestDef<CreateFaceSetRequest, CreateFaceSetResponse> genForCreateFaceSet() {
         // basic
         HttpRequestDef.Builder<CreateFaceSetRequest, CreateFaceSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFaceSetRequest.class, CreateFaceSetResponse.class)
@@ -407,16 +378,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFaceSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(CreateFaceSetRequest::getEnterpriseProjectId,
+                CreateFaceSetRequest::setEnterpriseProjectId));
         builder.<CreateFaceSetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFaceSetReq.class),
-            f -> f.withMarshaller(CreateFaceSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFaceSetRequest::getBody, CreateFaceSetRequest::setBody));
 
         // response
 
@@ -429,9 +397,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DeleteFaceByExternalImageIdRequest, DeleteFaceByExternalImageIdResponse> deleteFaceByExternalImageId =
-        genFordeleteFaceByExternalImageId();
+        genForDeleteFaceByExternalImageId();
 
-    private static HttpRequestDef<DeleteFaceByExternalImageIdRequest, DeleteFaceByExternalImageIdResponse> genFordeleteFaceByExternalImageId() {
+    private static HttpRequestDef<DeleteFaceByExternalImageIdRequest, DeleteFaceByExternalImageIdResponse> genForDeleteFaceByExternalImageId() {
         // basic
         HttpRequestDef.Builder<DeleteFaceByExternalImageIdRequest, DeleteFaceByExternalImageIdResponse> builder =
             HttpRequestDef
@@ -447,23 +415,20 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFaceByExternalImageIdRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(DeleteFaceByExternalImageIdRequest::getFaceSetName,
+                DeleteFaceByExternalImageIdRequest::setFaceSetName));
         builder.<String>withRequestField("external_image_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFaceByExternalImageIdRequest::getExternalImageId, (req, v) -> {
-                req.setExternalImageId(v);
-            }));
+            f -> f.withMarshaller(DeleteFaceByExternalImageIdRequest::getExternalImageId,
+                DeleteFaceByExternalImageIdRequest::setExternalImageId));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFaceByExternalImageIdRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteFaceByExternalImageIdRequest::getEnterpriseProjectId,
+                DeleteFaceByExternalImageIdRequest::setEnterpriseProjectId));
 
         // response
 
@@ -477,9 +442,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DeleteFaceByFaceIdRequest, DeleteFaceByFaceIdResponse> deleteFaceByFaceId =
-        genFordeleteFaceByFaceId();
+        genForDeleteFaceByFaceId();
 
-    private static HttpRequestDef<DeleteFaceByFaceIdRequest, DeleteFaceByFaceIdResponse> genFordeleteFaceByFaceId() {
+    private static HttpRequestDef<DeleteFaceByFaceIdRequest, DeleteFaceByFaceIdResponse> genForDeleteFaceByFaceId() {
         // basic
         HttpRequestDef.Builder<DeleteFaceByFaceIdRequest, DeleteFaceByFaceIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFaceByFaceIdRequest.class, DeleteFaceByFaceIdResponse.class)
@@ -492,23 +457,19 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFaceByFaceIdRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(DeleteFaceByFaceIdRequest::getFaceSetName,
+                DeleteFaceByFaceIdRequest::setFaceSetName));
         builder.<String>withRequestField("face_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFaceByFaceIdRequest::getFaceId, (req, v) -> {
-                req.setFaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteFaceByFaceIdRequest::getFaceId, DeleteFaceByFaceIdRequest::setFaceId));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFaceByFaceIdRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteFaceByFaceIdRequest::getEnterpriseProjectId,
+                DeleteFaceByFaceIdRequest::setEnterpriseProjectId));
 
         // response
 
@@ -522,9 +483,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DeleteFaceSetRequest, DeleteFaceSetResponse> deleteFaceSet =
-        genFordeleteFaceSet();
+        genForDeleteFaceSet();
 
-    private static HttpRequestDef<DeleteFaceSetRequest, DeleteFaceSetResponse> genFordeleteFaceSet() {
+    private static HttpRequestDef<DeleteFaceSetRequest, DeleteFaceSetResponse> genForDeleteFaceSet() {
         // basic
         HttpRequestDef.Builder<DeleteFaceSetRequest, DeleteFaceSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFaceSetRequest.class, DeleteFaceSetResponse.class)
@@ -537,16 +498,13 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFaceSetRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(DeleteFaceSetRequest::getFaceSetName, DeleteFaceSetRequest::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFaceSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteFaceSetRequest::getEnterpriseProjectId,
+                DeleteFaceSetRequest::setEnterpriseProjectId));
 
         // response
 
@@ -559,9 +517,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectFaceByBase64Request, DetectFaceByBase64Response> detectFaceByBase64 =
-        genFordetectFaceByBase64();
+        genForDetectFaceByBase64();
 
-    private static HttpRequestDef<DetectFaceByBase64Request, DetectFaceByBase64Response> genFordetectFaceByBase64() {
+    private static HttpRequestDef<DetectFaceByBase64Request, DetectFaceByBase64Response> genForDetectFaceByBase64() {
         // basic
         HttpRequestDef.Builder<DetectFaceByBase64Request, DetectFaceByBase64Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, DetectFaceByBase64Request.class, DetectFaceByBase64Response.class)
@@ -574,16 +532,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectFaceByBase64Request::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByBase64Request::getEnterpriseProjectId,
+                DetectFaceByBase64Request::setEnterpriseProjectId));
         builder.<FaceDetectBase64Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FaceDetectBase64Req.class),
-            f -> f.withMarshaller(DetectFaceByBase64Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByBase64Request::getBody, DetectFaceByBase64Request::setBody));
 
         // response
 
@@ -597,9 +552,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse> detectFaceByBase64Intl =
-        genFordetectFaceByBase64Intl();
+        genForDetectFaceByBase64Intl();
 
-    private static HttpRequestDef<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse> genFordetectFaceByBase64Intl() {
+    private static HttpRequestDef<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse> genForDetectFaceByBase64Intl() {
         // basic
         HttpRequestDef.Builder<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DetectFaceByBase64IntlRequest.class, DetectFaceByBase64IntlResponse.class)
@@ -612,16 +567,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectFaceByBase64IntlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByBase64IntlRequest::getEnterpriseProjectId,
+                DetectFaceByBase64IntlRequest::setEnterpriseProjectId));
         builder.<FaceDetectBase64Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FaceDetectBase64Req.class),
-            f -> f.withMarshaller(DetectFaceByBase64IntlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByBase64IntlRequest::getBody, DetectFaceByBase64IntlRequest::setBody));
 
         // response
 
@@ -635,9 +587,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectFaceByFileRequest, DetectFaceByFileResponse> detectFaceByFile =
-        genFordetectFaceByFile();
+        genForDetectFaceByFile();
 
-    private static HttpRequestDef<DetectFaceByFileRequest, DetectFaceByFileResponse> genFordetectFaceByFile() {
+    private static HttpRequestDef<DetectFaceByFileRequest, DetectFaceByFileResponse> genForDetectFaceByFile() {
         // basic
         HttpRequestDef.Builder<DetectFaceByFileRequest, DetectFaceByFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DetectFaceByFileRequest.class, DetectFaceByFileResponse.class)
@@ -650,16 +602,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectFaceByFileRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByFileRequest::getEnterpriseProjectId,
+                DetectFaceByFileRequest::setEnterpriseProjectId));
         builder.<DetectFaceByFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DetectFaceByFileRequestBody.class),
-            f -> f.withMarshaller(DetectFaceByFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByFileRequest::getBody, DetectFaceByFileRequest::setBody));
 
         // response
 
@@ -672,9 +621,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse> detectFaceByFileIntl =
-        genFordetectFaceByFileIntl();
+        genForDetectFaceByFileIntl();
 
-    private static HttpRequestDef<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse> genFordetectFaceByFileIntl() {
+    private static HttpRequestDef<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse> genForDetectFaceByFileIntl() {
         // basic
         HttpRequestDef.Builder<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DetectFaceByFileIntlRequest.class, DetectFaceByFileIntlResponse.class)
@@ -687,16 +636,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectFaceByFileIntlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByFileIntlRequest::getEnterpriseProjectId,
+                DetectFaceByFileIntlRequest::setEnterpriseProjectId));
         builder.<DetectFaceByFileIntlRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DetectFaceByFileIntlRequestBody.class),
-            f -> f.withMarshaller(DetectFaceByFileIntlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByFileIntlRequest::getBody, DetectFaceByFileIntlRequest::setBody));
 
         // response
 
@@ -710,9 +656,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectFaceByUrlRequest, DetectFaceByUrlResponse> detectFaceByUrl =
-        genFordetectFaceByUrl();
+        genForDetectFaceByUrl();
 
-    private static HttpRequestDef<DetectFaceByUrlRequest, DetectFaceByUrlResponse> genFordetectFaceByUrl() {
+    private static HttpRequestDef<DetectFaceByUrlRequest, DetectFaceByUrlResponse> genForDetectFaceByUrl() {
         // basic
         HttpRequestDef.Builder<DetectFaceByUrlRequest, DetectFaceByUrlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DetectFaceByUrlRequest.class, DetectFaceByUrlResponse.class)
@@ -725,16 +671,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectFaceByUrlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByUrlRequest::getEnterpriseProjectId,
+                DetectFaceByUrlRequest::setEnterpriseProjectId));
         builder.<FaceDetectUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FaceDetectUrlReq.class),
-            f -> f.withMarshaller(DetectFaceByUrlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByUrlRequest::getBody, DetectFaceByUrlRequest::setBody));
 
         // response
 
@@ -747,9 +690,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse> detectFaceByUrlIntl =
-        genFordetectFaceByUrlIntl();
+        genForDetectFaceByUrlIntl();
 
-    private static HttpRequestDef<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse> genFordetectFaceByUrlIntl() {
+    private static HttpRequestDef<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse> genForDetectFaceByUrlIntl() {
         // basic
         HttpRequestDef.Builder<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DetectFaceByUrlIntlRequest.class, DetectFaceByUrlIntlResponse.class)
@@ -762,16 +705,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectFaceByUrlIntlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByUrlIntlRequest::getEnterpriseProjectId,
+                DetectFaceByUrlIntlRequest::setEnterpriseProjectId));
         builder.<FaceDetectUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FaceDetectUrlReq.class),
-            f -> f.withMarshaller(DetectFaceByUrlIntlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectFaceByUrlIntlRequest::getBody, DetectFaceByUrlIntlRequest::setBody));
 
         // response
 
@@ -785,9 +725,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectLiveByBase64Request, DetectLiveByBase64Response> detectLiveByBase64 =
-        genFordetectLiveByBase64();
+        genForDetectLiveByBase64();
 
-    private static HttpRequestDef<DetectLiveByBase64Request, DetectLiveByBase64Response> genFordetectLiveByBase64() {
+    private static HttpRequestDef<DetectLiveByBase64Request, DetectLiveByBase64Response> genForDetectLiveByBase64() {
         // basic
         HttpRequestDef.Builder<DetectLiveByBase64Request, DetectLiveByBase64Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, DetectLiveByBase64Request.class, DetectLiveByBase64Response.class)
@@ -800,16 +740,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectLiveByBase64Request::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByBase64Request::getEnterpriseProjectId,
+                DetectLiveByBase64Request::setEnterpriseProjectId));
         builder.<LiveDetectBase64Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDetectBase64Req.class),
-            f -> f.withMarshaller(DetectLiveByBase64Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByBase64Request::getBody, DetectLiveByBase64Request::setBody));
 
         // response
 
@@ -823,9 +760,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse> detectLiveByBase64Intl =
-        genFordetectLiveByBase64Intl();
+        genForDetectLiveByBase64Intl();
 
-    private static HttpRequestDef<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse> genFordetectLiveByBase64Intl() {
+    private static HttpRequestDef<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse> genForDetectLiveByBase64Intl() {
         // basic
         HttpRequestDef.Builder<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DetectLiveByBase64IntlRequest.class, DetectLiveByBase64IntlResponse.class)
@@ -838,16 +775,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectLiveByBase64IntlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByBase64IntlRequest::getEnterpriseProjectId,
+                DetectLiveByBase64IntlRequest::setEnterpriseProjectId));
         builder.<LiveDetectBase64Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDetectBase64Req.class),
-            f -> f.withMarshaller(DetectLiveByBase64IntlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByBase64IntlRequest::getBody, DetectLiveByBase64IntlRequest::setBody));
 
         // response
 
@@ -861,9 +795,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectLiveByFileRequest, DetectLiveByFileResponse> detectLiveByFile =
-        genFordetectLiveByFile();
+        genForDetectLiveByFile();
 
-    private static HttpRequestDef<DetectLiveByFileRequest, DetectLiveByFileResponse> genFordetectLiveByFile() {
+    private static HttpRequestDef<DetectLiveByFileRequest, DetectLiveByFileResponse> genForDetectLiveByFile() {
         // basic
         HttpRequestDef.Builder<DetectLiveByFileRequest, DetectLiveByFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DetectLiveByFileRequest.class, DetectLiveByFileResponse.class)
@@ -876,16 +810,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectLiveByFileRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByFileRequest::getEnterpriseProjectId,
+                DetectLiveByFileRequest::setEnterpriseProjectId));
         builder.<DetectLiveByFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DetectLiveByFileRequestBody.class),
-            f -> f.withMarshaller(DetectLiveByFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByFileRequest::getBody, DetectLiveByFileRequest::setBody));
 
         // response
 
@@ -898,9 +829,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse> detectLiveByFileIntl =
-        genFordetectLiveByFileIntl();
+        genForDetectLiveByFileIntl();
 
-    private static HttpRequestDef<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse> genFordetectLiveByFileIntl() {
+    private static HttpRequestDef<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse> genForDetectLiveByFileIntl() {
         // basic
         HttpRequestDef.Builder<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DetectLiveByFileIntlRequest.class, DetectLiveByFileIntlResponse.class)
@@ -913,16 +844,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectLiveByFileIntlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByFileIntlRequest::getEnterpriseProjectId,
+                DetectLiveByFileIntlRequest::setEnterpriseProjectId));
         builder.<DetectLiveByFileIntlRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DetectLiveByFileIntlRequestBody.class),
-            f -> f.withMarshaller(DetectLiveByFileIntlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByFileIntlRequest::getBody, DetectLiveByFileIntlRequest::setBody));
 
         // response
 
@@ -936,9 +864,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectLiveByUrlRequest, DetectLiveByUrlResponse> detectLiveByUrl =
-        genFordetectLiveByUrl();
+        genForDetectLiveByUrl();
 
-    private static HttpRequestDef<DetectLiveByUrlRequest, DetectLiveByUrlResponse> genFordetectLiveByUrl() {
+    private static HttpRequestDef<DetectLiveByUrlRequest, DetectLiveByUrlResponse> genForDetectLiveByUrl() {
         // basic
         HttpRequestDef.Builder<DetectLiveByUrlRequest, DetectLiveByUrlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DetectLiveByUrlRequest.class, DetectLiveByUrlResponse.class)
@@ -951,16 +879,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectLiveByUrlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByUrlRequest::getEnterpriseProjectId,
+                DetectLiveByUrlRequest::setEnterpriseProjectId));
         builder.<LiveDetectUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDetectUrlReq.class),
-            f -> f.withMarshaller(DetectLiveByUrlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByUrlRequest::getBody, DetectLiveByUrlRequest::setBody));
 
         // response
 
@@ -973,9 +898,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse> detectLiveByUrlIntl =
-        genFordetectLiveByUrlIntl();
+        genForDetectLiveByUrlIntl();
 
-    private static HttpRequestDef<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse> genFordetectLiveByUrlIntl() {
+    private static HttpRequestDef<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse> genForDetectLiveByUrlIntl() {
         // basic
         HttpRequestDef.Builder<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DetectLiveByUrlIntlRequest.class, DetectLiveByUrlIntlResponse.class)
@@ -988,16 +913,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectLiveByUrlIntlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByUrlIntlRequest::getEnterpriseProjectId,
+                DetectLiveByUrlIntlRequest::setEnterpriseProjectId));
         builder.<LiveDetectUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDetectUrlReq.class),
-            f -> f.withMarshaller(DetectLiveByUrlIntlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectLiveByUrlIntlRequest::getBody, DetectLiveByUrlIntlRequest::setBody));
 
         // response
 
@@ -1011,9 +933,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> detectLiveFaceByBase64 =
-        genFordetectLiveFaceByBase64();
+        genForDetectLiveFaceByBase64();
 
-    private static HttpRequestDef<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> genFordetectLiveFaceByBase64() {
+    private static HttpRequestDef<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> genForDetectLiveFaceByBase64() {
         // basic
         HttpRequestDef.Builder<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, DetectLiveFaceByBase64Request.class, DetectLiveFaceByBase64Response.class)
@@ -1026,16 +948,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectLiveFaceByBase64Request::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectLiveFaceByBase64Request::getEnterpriseProjectId,
+                DetectLiveFaceByBase64Request::setEnterpriseProjectId));
         builder.<LiveDetectFaceBase64Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDetectFaceBase64Req.class),
-            f -> f.withMarshaller(DetectLiveFaceByBase64Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectLiveFaceByBase64Request::getBody, DetectLiveFaceByBase64Request::setBody));
 
         // response
 
@@ -1049,9 +968,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> detectLiveFaceByFile =
-        genFordetectLiveFaceByFile();
+        genForDetectLiveFaceByFile();
 
-    private static HttpRequestDef<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> genFordetectLiveFaceByFile() {
+    private static HttpRequestDef<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> genForDetectLiveFaceByFile() {
         // basic
         HttpRequestDef.Builder<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, DetectLiveFaceByFileRequest.class, DetectLiveFaceByFileResponse.class)
@@ -1064,16 +983,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectLiveFaceByFileRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectLiveFaceByFileRequest::getEnterpriseProjectId,
+                DetectLiveFaceByFileRequest::setEnterpriseProjectId));
         builder.<DetectLiveFaceByFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DetectLiveFaceByFileRequestBody.class),
-            f -> f.withMarshaller(DetectLiveFaceByFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectLiveFaceByFileRequest::getBody, DetectLiveFaceByFileRequest::setBody));
 
         // response
 
@@ -1087,9 +1003,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> detectLiveFaceByUrl =
-        genFordetectLiveFaceByUrl();
+        genForDetectLiveFaceByUrl();
 
-    private static HttpRequestDef<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> genFordetectLiveFaceByUrl() {
+    private static HttpRequestDef<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> genForDetectLiveFaceByUrl() {
         // basic
         HttpRequestDef.Builder<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DetectLiveFaceByUrlRequest.class, DetectLiveFaceByUrlResponse.class)
@@ -1102,16 +1018,13 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetectLiveFaceByUrlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DetectLiveFaceByUrlRequest::getEnterpriseProjectId,
+                DetectLiveFaceByUrlRequest::setEnterpriseProjectId));
         builder.<LiveDetectFaceUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDetectFaceUrlReq.class),
-            f -> f.withMarshaller(DetectLiveFaceByUrlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetectLiveFaceByUrlRequest::getBody, DetectLiveFaceByUrlRequest::setBody));
 
         // response
 
@@ -1125,9 +1038,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<SearchFaceByBase64Request, SearchFaceByBase64Response> searchFaceByBase64 =
-        genForsearchFaceByBase64();
+        genForSearchFaceByBase64();
 
-    private static HttpRequestDef<SearchFaceByBase64Request, SearchFaceByBase64Response> genForsearchFaceByBase64() {
+    private static HttpRequestDef<SearchFaceByBase64Request, SearchFaceByBase64Response> genForSearchFaceByBase64() {
         // basic
         HttpRequestDef.Builder<SearchFaceByBase64Request, SearchFaceByBase64Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, SearchFaceByBase64Request.class, SearchFaceByBase64Response.class)
@@ -1140,23 +1053,19 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchFaceByBase64Request::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByBase64Request::getFaceSetName,
+                SearchFaceByBase64Request::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchFaceByBase64Request::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByBase64Request::getEnterpriseProjectId,
+                SearchFaceByBase64Request::setEnterpriseProjectId));
         builder.<FaceSearchBase64Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FaceSearchBase64Req.class),
-            f -> f.withMarshaller(SearchFaceByBase64Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByBase64Request::getBody, SearchFaceByBase64Request::setBody));
 
         // response
 
@@ -1170,9 +1079,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<SearchFaceByFaceIdRequest, SearchFaceByFaceIdResponse> searchFaceByFaceId =
-        genForsearchFaceByFaceId();
+        genForSearchFaceByFaceId();
 
-    private static HttpRequestDef<SearchFaceByFaceIdRequest, SearchFaceByFaceIdResponse> genForsearchFaceByFaceId() {
+    private static HttpRequestDef<SearchFaceByFaceIdRequest, SearchFaceByFaceIdResponse> genForSearchFaceByFaceId() {
         // basic
         HttpRequestDef.Builder<SearchFaceByFaceIdRequest, SearchFaceByFaceIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SearchFaceByFaceIdRequest.class, SearchFaceByFaceIdResponse.class)
@@ -1185,23 +1094,19 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchFaceByFaceIdRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByFaceIdRequest::getFaceSetName,
+                SearchFaceByFaceIdRequest::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchFaceByFaceIdRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByFaceIdRequest::getEnterpriseProjectId,
+                SearchFaceByFaceIdRequest::setEnterpriseProjectId));
         builder.<FaceSearchFaceIdReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FaceSearchFaceIdReq.class),
-            f -> f.withMarshaller(SearchFaceByFaceIdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByFaceIdRequest::getBody, SearchFaceByFaceIdRequest::setBody));
 
         // response
 
@@ -1215,9 +1120,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<SearchFaceByFileRequest, SearchFaceByFileResponse> searchFaceByFile =
-        genForsearchFaceByFile();
+        genForSearchFaceByFile();
 
-    private static HttpRequestDef<SearchFaceByFileRequest, SearchFaceByFileResponse> genForsearchFaceByFile() {
+    private static HttpRequestDef<SearchFaceByFileRequest, SearchFaceByFileResponse> genForSearchFaceByFile() {
         // basic
         HttpRequestDef.Builder<SearchFaceByFileRequest, SearchFaceByFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SearchFaceByFileRequest.class, SearchFaceByFileResponse.class)
@@ -1230,23 +1135,18 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchFaceByFileRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByFileRequest::getFaceSetName, SearchFaceByFileRequest::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchFaceByFileRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByFileRequest::getEnterpriseProjectId,
+                SearchFaceByFileRequest::setEnterpriseProjectId));
         builder.<SearchFaceByFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchFaceByFileRequestBody.class),
-            f -> f.withMarshaller(SearchFaceByFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByFileRequest::getBody, SearchFaceByFileRequest::setBody));
 
         // response
 
@@ -1259,9 +1159,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<SearchFaceByUrlRequest, SearchFaceByUrlResponse> searchFaceByUrl =
-        genForsearchFaceByUrl();
+        genForSearchFaceByUrl();
 
-    private static HttpRequestDef<SearchFaceByUrlRequest, SearchFaceByUrlResponse> genForsearchFaceByUrl() {
+    private static HttpRequestDef<SearchFaceByUrlRequest, SearchFaceByUrlResponse> genForSearchFaceByUrl() {
         // basic
         HttpRequestDef.Builder<SearchFaceByUrlRequest, SearchFaceByUrlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SearchFaceByUrlRequest.class, SearchFaceByUrlResponse.class)
@@ -1274,23 +1174,18 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchFaceByUrlRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByUrlRequest::getFaceSetName, SearchFaceByUrlRequest::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SearchFaceByUrlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByUrlRequest::getEnterpriseProjectId,
+                SearchFaceByUrlRequest::setEnterpriseProjectId));
         builder.<FaceSearchUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FaceSearchUrlReq.class),
-            f -> f.withMarshaller(SearchFaceByUrlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SearchFaceByUrlRequest::getBody, SearchFaceByUrlRequest::setBody));
 
         // response
 
@@ -1303,9 +1198,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<ShowAllFaceSetsRequest, ShowAllFaceSetsResponse> showAllFaceSets =
-        genForshowAllFaceSets();
+        genForShowAllFaceSets();
 
-    private static HttpRequestDef<ShowAllFaceSetsRequest, ShowAllFaceSetsResponse> genForshowAllFaceSets() {
+    private static HttpRequestDef<ShowAllFaceSetsRequest, ShowAllFaceSetsResponse> genForShowAllFaceSets() {
         // basic
         HttpRequestDef.Builder<ShowAllFaceSetsRequest, ShowAllFaceSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAllFaceSetsRequest.class, ShowAllFaceSetsResponse.class)
@@ -1318,9 +1213,8 @@ public class FrsMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAllFaceSetsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowAllFaceSetsRequest::getEnterpriseProjectId,
+                ShowAllFaceSetsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1332,9 +1226,9 @@ public class FrsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFaceSetRequest, ShowFaceSetResponse> showFaceSet = genForshowFaceSet();
+    public static final HttpRequestDef<ShowFaceSetRequest, ShowFaceSetResponse> showFaceSet = genForShowFaceSet();
 
-    private static HttpRequestDef<ShowFaceSetRequest, ShowFaceSetResponse> genForshowFaceSet() {
+    private static HttpRequestDef<ShowFaceSetRequest, ShowFaceSetResponse> genForShowFaceSet() {
         // basic
         HttpRequestDef.Builder<ShowFaceSetRequest, ShowFaceSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFaceSetRequest.class, ShowFaceSetResponse.class)
@@ -1347,16 +1241,13 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFaceSetRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(ShowFaceSetRequest::getFaceSetName, ShowFaceSetRequest::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFaceSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowFaceSetRequest::getEnterpriseProjectId,
+                ShowFaceSetRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1369,9 +1260,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<ShowFacesByFaceIdRequest, ShowFacesByFaceIdResponse> showFacesByFaceId =
-        genForshowFacesByFaceId();
+        genForShowFacesByFaceId();
 
-    private static HttpRequestDef<ShowFacesByFaceIdRequest, ShowFacesByFaceIdResponse> genForshowFacesByFaceId() {
+    private static HttpRequestDef<ShowFacesByFaceIdRequest, ShowFacesByFaceIdResponse> genForShowFacesByFaceId() {
         // basic
         HttpRequestDef.Builder<ShowFacesByFaceIdRequest, ShowFacesByFaceIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFacesByFaceIdRequest.class, ShowFacesByFaceIdResponse.class)
@@ -1384,23 +1275,18 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFacesByFaceIdRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(ShowFacesByFaceIdRequest::getFaceSetName, ShowFacesByFaceIdRequest::setFaceSetName));
         builder.<String>withRequestField("face_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFacesByFaceIdRequest::getFaceId, (req, v) -> {
-                req.setFaceId(v);
-            }));
+            f -> f.withMarshaller(ShowFacesByFaceIdRequest::getFaceId, ShowFacesByFaceIdRequest::setFaceId));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFacesByFaceIdRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowFacesByFaceIdRequest::getEnterpriseProjectId,
+                ShowFacesByFaceIdRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1413,9 +1299,9 @@ public class FrsMeta {
     }
 
     public static final HttpRequestDef<ShowFacesByLimitRequest, ShowFacesByLimitResponse> showFacesByLimit =
-        genForshowFacesByLimit();
+        genForShowFacesByLimit();
 
-    private static HttpRequestDef<ShowFacesByLimitRequest, ShowFacesByLimitResponse> genForshowFacesByLimit() {
+    private static HttpRequestDef<ShowFacesByLimitRequest, ShowFacesByLimitResponse> genForShowFacesByLimit() {
         // basic
         HttpRequestDef.Builder<ShowFacesByLimitRequest, ShowFacesByLimitResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFacesByLimitRequest.class, ShowFacesByLimitResponse.class)
@@ -1428,30 +1314,23 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFacesByLimitRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(ShowFacesByLimitRequest::getFaceSetName, ShowFacesByLimitRequest::setFaceSetName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFacesByLimitRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowFacesByLimitRequest::getOffset, ShowFacesByLimitRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFacesByLimitRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowFacesByLimitRequest::getLimit, ShowFacesByLimitRequest::setLimit));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFacesByLimitRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowFacesByLimitRequest::getEnterpriseProjectId,
+                ShowFacesByLimitRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1463,9 +1342,9 @@ public class FrsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateFaceRequest, UpdateFaceResponse> updateFace = genForupdateFace();
+    public static final HttpRequestDef<UpdateFaceRequest, UpdateFaceResponse> updateFace = genForUpdateFace();
 
-    private static HttpRequestDef<UpdateFaceRequest, UpdateFaceResponse> genForupdateFace() {
+    private static HttpRequestDef<UpdateFaceRequest, UpdateFaceResponse> genForUpdateFace() {
         // basic
         HttpRequestDef.Builder<UpdateFaceRequest, UpdateFaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateFaceRequest.class, UpdateFaceResponse.class)
@@ -1478,23 +1357,18 @@ public class FrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFaceRequest::getFaceSetName, (req, v) -> {
-                req.setFaceSetName(v);
-            }));
+            f -> f.withMarshaller(UpdateFaceRequest::getFaceSetName, UpdateFaceRequest::setFaceSetName));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFaceRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateFaceRequest::getEnterpriseProjectId,
+                UpdateFaceRequest::setEnterpriseProjectId));
         builder.<UpdateFaceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFaceReq.class),
-            f -> f.withMarshaller(UpdateFaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateFaceRequest::getBody, UpdateFaceRequest::setBody));
 
         // response
 

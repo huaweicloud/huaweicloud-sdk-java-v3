@@ -41,7 +41,7 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPushCertificateRequest 请求对象
+     * @param request BatchPushCertificateRequest 请求对象
      * @return BatchPushCertificateResponse
      */
     public BatchPushCertificateResponse batchPushCertificate(BatchPushCertificateRequest request) {
@@ -55,13 +55,12 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPushCertificateRequest 请求对象
+     * @param request BatchPushCertificateRequest 请求对象
      * @return SyncInvoker<BatchPushCertificateRequest, BatchPushCertificateResponse>
      */
     public SyncInvoker<BatchPushCertificateRequest, BatchPushCertificateResponse> batchPushCertificateInvoker(
         BatchPushCertificateRequest request) {
-        return new SyncInvoker<BatchPushCertificateRequest, BatchPushCertificateResponse>(request,
-            ScmMeta.batchPushCertificate, hcClient);
+        return new SyncInvoker<>(request, ScmMeta.batchPushCertificate, hcClient);
     }
 
     /**
@@ -71,7 +70,7 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return DeleteCertificateResponse
      */
     public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
@@ -85,13 +84,12 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
      */
     public SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateInvoker(
         DeleteCertificateRequest request) {
-        return new SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, ScmMeta.deleteCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, ScmMeta.deleteCertificate, hcClient);
     }
 
     /**
@@ -101,7 +99,7 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeployCertificateRequest 请求对象
+     * @param request DeployCertificateRequest 请求对象
      * @return DeployCertificateResponse
      */
     public DeployCertificateResponse deployCertificate(DeployCertificateRequest request) {
@@ -115,13 +113,12 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeployCertificateRequest 请求对象
+     * @param request DeployCertificateRequest 请求对象
      * @return SyncInvoker<DeployCertificateRequest, DeployCertificateResponse>
      */
     public SyncInvoker<DeployCertificateRequest, DeployCertificateResponse> deployCertificateInvoker(
         DeployCertificateRequest request) {
-        return new SyncInvoker<DeployCertificateRequest, DeployCertificateResponse>(request, ScmMeta.deployCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, ScmMeta.deployCertificate, hcClient);
     }
 
     /**
@@ -131,7 +128,7 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportCertificateRequest 请求对象
+     * @param request ExportCertificateRequest 请求对象
      * @return ExportCertificateResponse
      */
     public ExportCertificateResponse exportCertificate(ExportCertificateRequest request) {
@@ -145,13 +142,12 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportCertificateRequest 请求对象
+     * @param request ExportCertificateRequest 请求对象
      * @return SyncInvoker<ExportCertificateRequest, ExportCertificateResponse>
      */
     public SyncInvoker<ExportCertificateRequest, ExportCertificateResponse> exportCertificateInvoker(
         ExportCertificateRequest request) {
-        return new SyncInvoker<ExportCertificateRequest, ExportCertificateResponse>(request, ScmMeta.exportCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, ScmMeta.exportCertificate, hcClient);
     }
 
     /**
@@ -161,7 +157,7 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportCertificateRequest 请求对象
+     * @param request ImportCertificateRequest 请求对象
      * @return ImportCertificateResponse
      */
     public ImportCertificateResponse importCertificate(ImportCertificateRequest request) {
@@ -175,13 +171,12 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportCertificateRequest 请求对象
+     * @param request ImportCertificateRequest 请求对象
      * @return SyncInvoker<ImportCertificateRequest, ImportCertificateResponse>
      */
     public SyncInvoker<ImportCertificateRequest, ImportCertificateResponse> importCertificateInvoker(
         ImportCertificateRequest request) {
-        return new SyncInvoker<ImportCertificateRequest, ImportCertificateResponse>(request, ScmMeta.importCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, ScmMeta.importCertificate, hcClient);
     }
 
     /**
@@ -191,7 +186,7 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return ListCertificatesResponse
      */
     public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
@@ -205,13 +200,12 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
      */
     public SyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesInvoker(
         ListCertificatesRequest request) {
-        return new SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request, ScmMeta.listCertificates,
-            hcClient);
+        return new SyncInvoker<>(request, ScmMeta.listCertificates, hcClient);
     }
 
     /**
@@ -221,7 +215,7 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushCertificateRequest 请求对象
+     * @param request PushCertificateRequest 请求对象
      * @return PushCertificateResponse
      */
     public PushCertificateResponse pushCertificate(PushCertificateRequest request) {
@@ -235,13 +229,12 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PushCertificateRequest 请求对象
+     * @param request PushCertificateRequest 请求对象
      * @return SyncInvoker<PushCertificateRequest, PushCertificateResponse>
      */
     public SyncInvoker<PushCertificateRequest, PushCertificateResponse> pushCertificateInvoker(
         PushCertificateRequest request) {
-        return new SyncInvoker<PushCertificateRequest, PushCertificateResponse>(request, ScmMeta.pushCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, ScmMeta.pushCertificate, hcClient);
     }
 
     /**
@@ -251,7 +244,7 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return ShowCertificateResponse
      */
     public ShowCertificateResponse showCertificate(ShowCertificateRequest request) {
@@ -265,13 +258,12 @@ public class ScmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
      */
     public SyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateInvoker(
         ShowCertificateRequest request) {
-        return new SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>(request, ScmMeta.showCertificate,
-            hcClient);
+        return new SyncInvoker<>(request, ScmMeta.showCertificate, hcClient);
     }
 
 }

@@ -40,7 +40,7 @@ public class VusersBrokens {
     }
 
     /**
-     * vusers
+     * 虚拟用户数
      * @return vusers
      */
     public List<Double> getVusers() {

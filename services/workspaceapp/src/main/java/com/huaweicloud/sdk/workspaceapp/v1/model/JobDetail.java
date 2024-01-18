@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Job信息详情
+ * Job信息详情。
  */
 public class JobDetail {
 
@@ -65,7 +65,7 @@ public class JobDetail {
     }
 
     /**
-     * 任务ID
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -82,7 +82,7 @@ public class JobDetail {
     }
 
     /**
-     * job类型,固定值1
+     * job类型，固定值1。
      * @return jobType
      */
     public Integer getJobType() {
@@ -99,7 +99,7 @@ public class JobDetail {
     }
 
     /**
-     * job执行状态 - 0：失败。（如果是开通失败，云运营查询到失败状态，直接退费给客户。如果是变更失败，当前是发运维工单，暂时还不是直接退费给客户） - 1：成功。（处理结果成功） - 2：处理中。 - 3：正在初始化。
+     * job执行状态 - 0：失败。（如果是开通失败，云运营查询到失败状态，直接退费给客户。如果是变更失败，当前是发运维工单，暂时还不是直接退费给客户。） - 1：成功。（处理结果成功。） - 2：处理中。 - 3：正在初始化。
      * @return jobStatus
      */
     public Integer getJobStatus() {
@@ -132,7 +132,7 @@ public class JobDetail {
     }
 
     /**
-     * 子任务信息
+     * 子任务信息。
      * @return subJobs
      */
     public List<SubJobInfo> getSubJobs() {
@@ -149,7 +149,7 @@ public class JobDetail {
     }
 
     /**
-     * Job处理开始时间
+     * Job处理开始时间。
      * @return beginTime
      */
     public OffsetDateTime getBeginTime() {
@@ -166,7 +166,7 @@ public class JobDetail {
     }
 
     /**
-     * job处理结束时间
+     * job处理结束时间。
      * @return endTime
      */
     public OffsetDateTime getEndTime() {
@@ -183,7 +183,7 @@ public class JobDetail {
     }
 
     /**
-     * 云服务预估的Job处理结束时间，只针对job有效，针对子job无效
+     * 云服务预估的Job处理结束时间，只针对job有效，针对子job无效。
      * @return expectedEndTime
      */
     public OffsetDateTime getExpectedEndTime() {
@@ -217,7 +217,7 @@ public class JobDetail {
     }
 
     /**
-     * Job执行结果描述，以及每个SubJob的执行结果描述
+     * Job执行结果描述，以及每个SubJob的执行结果描述。
      * @return executeMessage
      */
     public String getExecuteMessage() {

@@ -116,9 +116,9 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleResponse;
 public class SFSTurboMeta {
 
     public static final HttpRequestDef<BatchAddSharedTagsRequest, BatchAddSharedTagsResponse> batchAddSharedTags =
-        genForbatchAddSharedTags();
+        genForBatchAddSharedTags();
 
-    private static HttpRequestDef<BatchAddSharedTagsRequest, BatchAddSharedTagsResponse> genForbatchAddSharedTags() {
+    private static HttpRequestDef<BatchAddSharedTagsRequest, BatchAddSharedTagsResponse> genForBatchAddSharedTags() {
         // basic
         HttpRequestDef.Builder<BatchAddSharedTagsRequest, BatchAddSharedTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchAddSharedTagsRequest.class, BatchAddSharedTagsResponse.class)
@@ -131,16 +131,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddSharedTagsRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(BatchAddSharedTagsRequest::getShareId, BatchAddSharedTagsRequest::setShareId));
         builder.<BatchAddSharedTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAddSharedTagsRequestBody.class),
-            f -> f.withMarshaller(BatchAddSharedTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddSharedTagsRequest::getBody, BatchAddSharedTagsRequest::setBody));
 
         // response
 
@@ -148,9 +144,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> changeSecurityGroup =
-        genForchangeSecurityGroup();
+        genForChangeSecurityGroup();
 
-    private static HttpRequestDef<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> genForchangeSecurityGroup() {
+    private static HttpRequestDef<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> genForChangeSecurityGroup() {
         // basic
         HttpRequestDef.Builder<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ChangeSecurityGroupRequest.class, ChangeSecurityGroupResponse.class)
@@ -163,16 +159,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeSecurityGroupRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ChangeSecurityGroupRequest::getShareId, ChangeSecurityGroupRequest::setShareId));
         builder.<ChangeSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeSecurityGroupRequestBody.class),
-            f -> f.withMarshaller(ChangeSecurityGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeSecurityGroupRequest::getBody, ChangeSecurityGroupRequest::setBody));
 
         // response
 
@@ -180,9 +172,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ChangeShareNameRequest, ChangeShareNameResponse> changeShareName =
-        genForchangeShareName();
+        genForChangeShareName();
 
-    private static HttpRequestDef<ChangeShareNameRequest, ChangeShareNameResponse> genForchangeShareName() {
+    private static HttpRequestDef<ChangeShareNameRequest, ChangeShareNameResponse> genForChangeShareName() {
         // basic
         HttpRequestDef.Builder<ChangeShareNameRequest, ChangeShareNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ChangeShareNameRequest.class, ChangeShareNameResponse.class)
@@ -195,16 +187,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeShareNameRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ChangeShareNameRequest::getShareId, ChangeShareNameRequest::setShareId));
         builder.<ChangeShareNameReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeShareNameReq.class),
-            f -> f.withMarshaller(ChangeShareNameRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeShareNameRequest::getBody, ChangeShareNameRequest::setBody));
 
         // response
 
@@ -212,9 +200,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<CreateBackendTargetRequest, CreateBackendTargetResponse> createBackendTarget =
-        genForcreateBackendTarget();
+        genForCreateBackendTarget();
 
-    private static HttpRequestDef<CreateBackendTargetRequest, CreateBackendTargetResponse> genForcreateBackendTarget() {
+    private static HttpRequestDef<CreateBackendTargetRequest, CreateBackendTargetResponse> genForCreateBackendTarget() {
         // basic
         HttpRequestDef.Builder<CreateBackendTargetRequest, CreateBackendTargetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateBackendTargetRequest.class, CreateBackendTargetResponse.class)
@@ -227,16 +215,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBackendTargetRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(CreateBackendTargetRequest::getShareId, CreateBackendTargetRequest::setShareId));
         builder.<CreateBackendTargetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateBackendTargetRequestBody.class),
-            f -> f.withMarshaller(CreateBackendTargetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBackendTargetRequest::getBody, CreateBackendTargetRequest::setBody));
 
         // response
 
@@ -249,9 +233,9 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateFsDirRequest, CreateFsDirResponse> createFsDir = genForcreateFsDir();
+    public static final HttpRequestDef<CreateFsDirRequest, CreateFsDirResponse> createFsDir = genForCreateFsDir();
 
-    private static HttpRequestDef<CreateFsDirRequest, CreateFsDirResponse> genForcreateFsDir() {
+    private static HttpRequestDef<CreateFsDirRequest, CreateFsDirResponse> genForCreateFsDir() {
         // basic
         HttpRequestDef.Builder<CreateFsDirRequest, CreateFsDirResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFsDirRequest.class, CreateFsDirResponse.class)
@@ -264,16 +248,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFsDirRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(CreateFsDirRequest::getShareId, CreateFsDirRequest::setShareId));
         builder.<CreateFsDirRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFsDirRequestBody.class),
-            f -> f.withMarshaller(CreateFsDirRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFsDirRequest::getBody, CreateFsDirRequest::setBody));
 
         // response
 
@@ -281,9 +261,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse> createFsDirQuota =
-        genForcreateFsDirQuota();
+        genForCreateFsDirQuota();
 
-    private static HttpRequestDef<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse> genForcreateFsDirQuota() {
+    private static HttpRequestDef<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse> genForCreateFsDirQuota() {
         // basic
         HttpRequestDef.Builder<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFsDirQuotaRequest.class, CreateFsDirQuotaResponse.class)
@@ -296,25 +276,21 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFsDirQuotaRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(CreateFsDirQuotaRequest::getShareId, CreateFsDirQuotaRequest::setShareId));
         builder.<CreateFsDirQuotaRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFsDirQuotaRequestBody.class),
-            f -> f.withMarshaller(CreateFsDirQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFsDirQuotaRequest::getBody, CreateFsDirQuotaRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateFsTaskRequest, CreateFsTaskResponse> createFsTask = genForcreateFsTask();
+    public static final HttpRequestDef<CreateFsTaskRequest, CreateFsTaskResponse> createFsTask = genForCreateFsTask();
 
-    private static HttpRequestDef<CreateFsTaskRequest, CreateFsTaskResponse> genForcreateFsTask() {
+    private static HttpRequestDef<CreateFsTaskRequest, CreateFsTaskResponse> genForCreateFsTask() {
         // basic
         HttpRequestDef.Builder<CreateFsTaskRequest, CreateFsTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFsTaskRequest.class, CreateFsTaskResponse.class)
@@ -327,23 +303,17 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFsTaskRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(CreateFsTaskRequest::getShareId, CreateFsTaskRequest::setShareId));
         builder.<String>withRequestField("feature",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFsTaskRequest::getFeature, (req, v) -> {
-                req.setFeature(v);
-            }));
+            f -> f.withMarshaller(CreateFsTaskRequest::getFeature, CreateFsTaskRequest::setFeature));
         builder.<FsDirReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(FsDirReq.class),
-            f -> f.withMarshaller(CreateFsTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFsTaskRequest::getBody, CreateFsTaskRequest::setBody));
 
         // response
 
@@ -351,9 +321,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse> createHpcCacheTask =
-        genForcreateHpcCacheTask();
+        genForCreateHpcCacheTask();
 
-    private static HttpRequestDef<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse> genForcreateHpcCacheTask() {
+    private static HttpRequestDef<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse> genForCreateHpcCacheTask() {
         // basic
         HttpRequestDef.Builder<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateHpcCacheTaskRequest.class, CreateHpcCacheTaskResponse.class)
@@ -366,16 +336,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateHpcCacheTaskRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(CreateHpcCacheTaskRequest::getShareId, CreateHpcCacheTaskRequest::setShareId));
         builder.<CreateHpcCacheTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateHpcCacheTaskReq.class),
-            f -> f.withMarshaller(CreateHpcCacheTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateHpcCacheTaskRequest::getBody, CreateHpcCacheTaskRequest::setBody));
 
         // response
 
@@ -389,9 +355,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<CreateLdapConfigRequest, CreateLdapConfigResponse> createLdapConfig =
-        genForcreateLdapConfig();
+        genForCreateLdapConfig();
 
-    private static HttpRequestDef<CreateLdapConfigRequest, CreateLdapConfigResponse> genForcreateLdapConfig() {
+    private static HttpRequestDef<CreateLdapConfigRequest, CreateLdapConfigResponse> genForCreateLdapConfig() {
         // basic
         HttpRequestDef.Builder<CreateLdapConfigRequest, CreateLdapConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLdapConfigRequest.class, CreateLdapConfigResponse.class)
@@ -404,16 +370,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLdapConfigRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(CreateLdapConfigRequest::getShareId, CreateLdapConfigRequest::setShareId));
         builder.<CreateLdapConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLdapConfigRequestBody.class),
-            f -> f.withMarshaller(CreateLdapConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLdapConfigRequest::getBody, CreateLdapConfigRequest::setBody));
 
         // response
 
@@ -421,9 +383,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<CreatePermRuleRequest, CreatePermRuleResponse> createPermRule =
-        genForcreatePermRule();
+        genForCreatePermRule();
 
-    private static HttpRequestDef<CreatePermRuleRequest, CreatePermRuleResponse> genForcreatePermRule() {
+    private static HttpRequestDef<CreatePermRuleRequest, CreatePermRuleResponse> genForCreatePermRule() {
         // basic
         HttpRequestDef.Builder<CreatePermRuleRequest, CreatePermRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePermRuleRequest.class, CreatePermRuleResponse.class)
@@ -436,25 +398,21 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePermRuleRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(CreatePermRuleRequest::getShareId, CreatePermRuleRequest::setShareId));
         builder.<CreatePermRulesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePermRulesRequestBody.class),
-            f -> f.withMarshaller(CreatePermRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePermRuleRequest::getBody, CreatePermRuleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateShareRequest, CreateShareResponse> createShare = genForcreateShare();
+    public static final HttpRequestDef<CreateShareRequest, CreateShareResponse> createShare = genForCreateShare();
 
-    private static HttpRequestDef<CreateShareRequest, CreateShareResponse> genForcreateShare() {
+    private static HttpRequestDef<CreateShareRequest, CreateShareResponse> genForCreateShare() {
         // basic
         HttpRequestDef.Builder<CreateShareRequest, CreateShareResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateShareRequest.class, CreateShareResponse.class)
@@ -467,9 +425,7 @@ public class SFSTurboMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateShareRequestBody.class),
-            f -> f.withMarshaller(CreateShareRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateShareRequest::getBody, CreateShareRequest::setBody));
 
         // response
 
@@ -477,9 +433,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<CreateSharedTagRequest, CreateSharedTagResponse> createSharedTag =
-        genForcreateSharedTag();
+        genForCreateSharedTag();
 
-    private static HttpRequestDef<CreateSharedTagRequest, CreateSharedTagResponse> genForcreateSharedTag() {
+    private static HttpRequestDef<CreateSharedTagRequest, CreateSharedTagResponse> genForCreateSharedTag() {
         // basic
         HttpRequestDef.Builder<CreateSharedTagRequest, CreateSharedTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSharedTagRequest.class, CreateSharedTagResponse.class)
@@ -492,16 +448,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSharedTagRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(CreateSharedTagRequest::getShareId, CreateSharedTagRequest::setShareId));
         builder.<CreateSharedTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSharedTagRequestBody.class),
-            f -> f.withMarshaller(CreateSharedTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSharedTagRequest::getBody, CreateSharedTagRequest::setBody));
 
         // response
 
@@ -509,9 +461,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<DeleteBackendTargetRequest, DeleteBackendTargetResponse> deleteBackendTarget =
-        genFordeleteBackendTarget();
+        genForDeleteBackendTarget();
 
-    private static HttpRequestDef<DeleteBackendTargetRequest, DeleteBackendTargetResponse> genFordeleteBackendTarget() {
+    private static HttpRequestDef<DeleteBackendTargetRequest, DeleteBackendTargetResponse> genForDeleteBackendTarget() {
         // basic
         HttpRequestDef.Builder<DeleteBackendTargetRequest, DeleteBackendTargetResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteBackendTargetRequest.class, DeleteBackendTargetResponse.class)
@@ -524,23 +476,18 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackendTargetRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackendTargetRequest::getShareId, DeleteBackendTargetRequest::setShareId));
         builder.<String>withRequestField("target_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackendTargetRequest::getTargetId, (req, v) -> {
-                req.setTargetId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackendTargetRequest::getTargetId, DeleteBackendTargetRequest::setTargetId));
         builder.<Boolean>withRequestField("delete_data_in_file_system",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteBackendTargetRequest::getDeleteDataInFileSystem, (req, v) -> {
-                req.setDeleteDataInFileSystem(v);
-            }));
+            f -> f.withMarshaller(DeleteBackendTargetRequest::getDeleteDataInFileSystem,
+                DeleteBackendTargetRequest::setDeleteDataInFileSystem));
 
         // response
 
@@ -553,9 +500,9 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteFsDirRequest, DeleteFsDirResponse> deleteFsDir = genFordeleteFsDir();
+    public static final HttpRequestDef<DeleteFsDirRequest, DeleteFsDirResponse> deleteFsDir = genForDeleteFsDir();
 
-    private static HttpRequestDef<DeleteFsDirRequest, DeleteFsDirResponse> genFordeleteFsDir() {
+    private static HttpRequestDef<DeleteFsDirRequest, DeleteFsDirResponse> genForDeleteFsDir() {
         // basic
         HttpRequestDef.Builder<DeleteFsDirRequest, DeleteFsDirResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFsDirRequest.class, DeleteFsDirResponse.class)
@@ -568,16 +515,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFsDirRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(DeleteFsDirRequest::getShareId, DeleteFsDirRequest::setShareId));
         builder.<DeleteFsDirRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteFsDirRequestBody.class),
-            f -> f.withMarshaller(DeleteFsDirRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteFsDirRequest::getBody, DeleteFsDirRequest::setBody));
 
         // response
 
@@ -585,9 +528,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse> deleteFsDirQuota =
-        genFordeleteFsDirQuota();
+        genForDeleteFsDirQuota();
 
-    private static HttpRequestDef<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse> genFordeleteFsDirQuota() {
+    private static HttpRequestDef<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse> genForDeleteFsDirQuota() {
         // basic
         HttpRequestDef.Builder<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFsDirQuotaRequest.class, DeleteFsDirQuotaResponse.class)
@@ -600,25 +543,21 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFsDirQuotaRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(DeleteFsDirQuotaRequest::getShareId, DeleteFsDirQuotaRequest::setShareId));
         builder.<DeleteFsDirQuotaRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteFsDirQuotaRequestBody.class),
-            f -> f.withMarshaller(DeleteFsDirQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteFsDirQuotaRequest::getBody, DeleteFsDirQuotaRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteFsTaskRequest, DeleteFsTaskResponse> deleteFsTask = genFordeleteFsTask();
+    public static final HttpRequestDef<DeleteFsTaskRequest, DeleteFsTaskResponse> deleteFsTask = genForDeleteFsTask();
 
-    private static HttpRequestDef<DeleteFsTaskRequest, DeleteFsTaskResponse> genFordeleteFsTask() {
+    private static HttpRequestDef<DeleteFsTaskRequest, DeleteFsTaskResponse> genForDeleteFsTask() {
         // basic
         HttpRequestDef.Builder<DeleteFsTaskRequest, DeleteFsTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFsTaskRequest.class, DeleteFsTaskResponse.class)
@@ -631,23 +570,17 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFsTaskRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(DeleteFsTaskRequest::getShareId, DeleteFsTaskRequest::setShareId));
         builder.<String>withRequestField("feature",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFsTaskRequest::getFeature, (req, v) -> {
-                req.setFeature(v);
-            }));
+            f -> f.withMarshaller(DeleteFsTaskRequest::getFeature, DeleteFsTaskRequest::setFeature));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFsTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteFsTaskRequest::getTaskId, DeleteFsTaskRequest::setTaskId));
 
         // response
 
@@ -655,9 +588,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<DeleteLdapConfigRequest, DeleteLdapConfigResponse> deleteLdapConfig =
-        genFordeleteLdapConfig();
+        genForDeleteLdapConfig();
 
-    private static HttpRequestDef<DeleteLdapConfigRequest, DeleteLdapConfigResponse> genFordeleteLdapConfig() {
+    private static HttpRequestDef<DeleteLdapConfigRequest, DeleteLdapConfigResponse> genForDeleteLdapConfig() {
         // basic
         HttpRequestDef.Builder<DeleteLdapConfigRequest, DeleteLdapConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLdapConfigRequest.class, DeleteLdapConfigResponse.class)
@@ -670,9 +603,7 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLdapConfigRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(DeleteLdapConfigRequest::getShareId, DeleteLdapConfigRequest::setShareId));
 
         // response
 
@@ -680,9 +611,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<DeletePermRuleRequest, DeletePermRuleResponse> deletePermRule =
-        genFordeletePermRule();
+        genForDeletePermRule();
 
-    private static HttpRequestDef<DeletePermRuleRequest, DeletePermRuleResponse> genFordeletePermRule() {
+    private static HttpRequestDef<DeletePermRuleRequest, DeletePermRuleResponse> genForDeletePermRule() {
         // basic
         HttpRequestDef.Builder<DeletePermRuleRequest, DeletePermRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePermRuleRequest.class, DeletePermRuleResponse.class)
@@ -695,25 +626,21 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePermRuleRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(DeletePermRuleRequest::getShareId, DeletePermRuleRequest::setShareId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePermRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(DeletePermRuleRequest::getRuleId, DeletePermRuleRequest::setRuleId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteShareRequest, DeleteShareResponse> deleteShare = genFordeleteShare();
+    public static final HttpRequestDef<DeleteShareRequest, DeleteShareResponse> deleteShare = genForDeleteShare();
 
-    private static HttpRequestDef<DeleteShareRequest, DeleteShareResponse> genFordeleteShare() {
+    private static HttpRequestDef<DeleteShareRequest, DeleteShareResponse> genForDeleteShare() {
         // basic
         HttpRequestDef.Builder<DeleteShareRequest, DeleteShareResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteShareRequest.class, DeleteShareResponse.class)
@@ -726,9 +653,7 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteShareRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(DeleteShareRequest::getShareId, DeleteShareRequest::setShareId));
 
         // response
 
@@ -736,9 +661,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<DeleteSharedTagRequest, DeleteSharedTagResponse> deleteSharedTag =
-        genFordeleteSharedTag();
+        genForDeleteSharedTag();
 
-    private static HttpRequestDef<DeleteSharedTagRequest, DeleteSharedTagResponse> genFordeleteSharedTag() {
+    private static HttpRequestDef<DeleteSharedTagRequest, DeleteSharedTagResponse> genForDeleteSharedTag() {
         // basic
         HttpRequestDef.Builder<DeleteSharedTagRequest, DeleteSharedTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSharedTagRequest.class, DeleteSharedTagResponse.class)
@@ -751,25 +676,21 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSharedTagRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(DeleteSharedTagRequest::getShareId, DeleteSharedTagRequest::setShareId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSharedTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteSharedTagRequest::getKey, DeleteSharedTagRequest::setKey));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExpandShareRequest, ExpandShareResponse> expandShare = genForexpandShare();
+    public static final HttpRequestDef<ExpandShareRequest, ExpandShareResponse> expandShare = genForExpandShare();
 
-    private static HttpRequestDef<ExpandShareRequest, ExpandShareResponse> genForexpandShare() {
+    private static HttpRequestDef<ExpandShareRequest, ExpandShareResponse> genForExpandShare() {
         // basic
         HttpRequestDef.Builder<ExpandShareRequest, ExpandShareResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExpandShareRequest.class, ExpandShareResponse.class)
@@ -782,16 +703,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandShareRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ExpandShareRequest::getShareId, ExpandShareRequest::setShareId));
         builder.<ExpandShareRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExpandShareRequestBody.class),
-            f -> f.withMarshaller(ExpandShareRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExpandShareRequest::getBody, ExpandShareRequest::setBody));
 
         // response
 
@@ -799,9 +716,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ListBackendTargetsRequest, ListBackendTargetsResponse> listBackendTargets =
-        genForlistBackendTargets();
+        genForListBackendTargets();
 
-    private static HttpRequestDef<ListBackendTargetsRequest, ListBackendTargetsResponse> genForlistBackendTargets() {
+    private static HttpRequestDef<ListBackendTargetsRequest, ListBackendTargetsResponse> genForListBackendTargets() {
         // basic
         HttpRequestDef.Builder<ListBackendTargetsRequest, ListBackendTargetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackendTargetsRequest.class, ListBackendTargetsResponse.class)
@@ -814,23 +731,17 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendTargetsRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ListBackendTargetsRequest::getShareId, ListBackendTargetsRequest::setShareId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackendTargetsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackendTargetsRequest::getLimit, ListBackendTargetsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendTargetsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListBackendTargetsRequest::getMarker, ListBackendTargetsRequest::setMarker));
 
         // response
 
@@ -843,9 +754,9 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFsTasksRequest, ListFsTasksResponse> listFsTasks = genForlistFsTasks();
+    public static final HttpRequestDef<ListFsTasksRequest, ListFsTasksResponse> listFsTasks = genForListFsTasks();
 
-    private static HttpRequestDef<ListFsTasksRequest, ListFsTasksResponse> genForlistFsTasks() {
+    private static HttpRequestDef<ListFsTasksRequest, ListFsTasksResponse> genForListFsTasks() {
         // basic
         HttpRequestDef.Builder<ListFsTasksRequest, ListFsTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFsTasksRequest.class, ListFsTasksResponse.class)
@@ -858,30 +769,22 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFsTasksRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ListFsTasksRequest::getShareId, ListFsTasksRequest::setShareId));
         builder.<String>withRequestField("feature",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFsTasksRequest::getFeature, (req, v) -> {
-                req.setFeature(v);
-            }));
+            f -> f.withMarshaller(ListFsTasksRequest::getFeature, ListFsTasksRequest::setFeature));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFsTasksRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListFsTasksRequest::getMarker, ListFsTasksRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFsTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFsTasksRequest::getLimit, ListFsTasksRequest::setLimit));
 
         // response
 
@@ -889,9 +792,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse> listHpcCacheTasks =
-        genForlistHpcCacheTasks();
+        genForListHpcCacheTasks();
 
-    private static HttpRequestDef<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse> genForlistHpcCacheTasks() {
+    private static HttpRequestDef<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse> genForListHpcCacheTasks() {
         // basic
         HttpRequestDef.Builder<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHpcCacheTasksRequest.class, ListHpcCacheTasksResponse.class)
@@ -904,37 +807,27 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHpcCacheTasksRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getShareId, ListHpcCacheTasksRequest::setShareId));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHpcCacheTasksRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getType, ListHpcCacheTasksRequest::setType));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHpcCacheTasksRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getStatus, ListHpcCacheTasksRequest::setStatus));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListHpcCacheTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getOffset, ListHpcCacheTasksRequest::setOffset));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListHpcCacheTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getLimit, ListHpcCacheTasksRequest::setLimit));
 
         // response
 
@@ -947,9 +840,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ListPermRulesRequest, ListPermRulesResponse> listPermRules =
-        genForlistPermRules();
+        genForListPermRules();
 
-    private static HttpRequestDef<ListPermRulesRequest, ListPermRulesResponse> genForlistPermRules() {
+    private static HttpRequestDef<ListPermRulesRequest, ListPermRulesResponse> genForListPermRules() {
         // basic
         HttpRequestDef.Builder<ListPermRulesRequest, ListPermRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPermRulesRequest.class, ListPermRulesResponse.class)
@@ -962,9 +855,7 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermRulesRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ListPermRulesRequest::getShareId, ListPermRulesRequest::setShareId));
 
         // response
 
@@ -972,9 +863,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ListSharedTagsRequest, ListSharedTagsResponse> listSharedTags =
-        genForlistSharedTags();
+        genForListSharedTags();
 
-    private static HttpRequestDef<ListSharedTagsRequest, ListSharedTagsResponse> genForlistSharedTags() {
+    private static HttpRequestDef<ListSharedTagsRequest, ListSharedTagsResponse> genForListSharedTags() {
         // basic
         HttpRequestDef.Builder<ListSharedTagsRequest, ListSharedTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSharedTagsRequest.class, ListSharedTagsResponse.class)
@@ -989,9 +880,9 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSharesRequest, ListSharesResponse> listShares = genForlistShares();
+    public static final HttpRequestDef<ListSharesRequest, ListSharesResponse> listShares = genForListShares();
 
-    private static HttpRequestDef<ListSharesRequest, ListSharesResponse> genForlistShares() {
+    private static HttpRequestDef<ListSharesRequest, ListSharesResponse> genForListShares() {
         // basic
         HttpRequestDef.Builder<ListSharesRequest, ListSharesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSharesRequest.class, ListSharesResponse.class)
@@ -1004,16 +895,12 @@ public class SFSTurboMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSharesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSharesRequest::getLimit, ListSharesRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSharesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSharesRequest::getOffset, ListSharesRequest::setOffset));
 
         // response
 
@@ -1021,9 +908,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse> setHpcCacheBackend =
-        genForsetHpcCacheBackend();
+        genForSetHpcCacheBackend();
 
-    private static HttpRequestDef<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse> genForsetHpcCacheBackend() {
+    private static HttpRequestDef<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse> genForSetHpcCacheBackend() {
         // basic
         HttpRequestDef.Builder<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SetHpcCacheBackendRequest.class, SetHpcCacheBackendResponse.class)
@@ -1036,16 +923,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetHpcCacheBackendRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(SetHpcCacheBackendRequest::getShareId, SetHpcCacheBackendRequest::setShareId));
         builder.<ReqConfigHpcCacheBackend>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqConfigHpcCacheBackend.class),
-            f -> f.withMarshaller(SetHpcCacheBackendRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetHpcCacheBackendRequest::getBody, SetHpcCacheBackendRequest::setBody));
 
         // response
 
@@ -1059,9 +942,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> showBackendTargetInfo =
-        genForshowBackendTargetInfo();
+        genForShowBackendTargetInfo();
 
-    private static HttpRequestDef<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> genForshowBackendTargetInfo() {
+    private static HttpRequestDef<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> genForShowBackendTargetInfo() {
         // basic
         HttpRequestDef.Builder<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowBackendTargetInfoRequest.class, ShowBackendTargetInfoResponse.class)
@@ -1074,16 +957,13 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackendTargetInfoRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ShowBackendTargetInfoRequest::getShareId, ShowBackendTargetInfoRequest::setShareId));
         builder.<String>withRequestField("target_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackendTargetInfoRequest::getTargetId, (req, v) -> {
-                req.setTargetId(v);
-            }));
+            f -> f.withMarshaller(ShowBackendTargetInfoRequest::getTargetId,
+                ShowBackendTargetInfoRequest::setTargetId));
 
         // response
 
@@ -1096,9 +976,9 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFsDirRequest, ShowFsDirResponse> showFsDir = genForshowFsDir();
+    public static final HttpRequestDef<ShowFsDirRequest, ShowFsDirResponse> showFsDir = genForShowFsDir();
 
-    private static HttpRequestDef<ShowFsDirRequest, ShowFsDirResponse> genForshowFsDir() {
+    private static HttpRequestDef<ShowFsDirRequest, ShowFsDirResponse> genForShowFsDir() {
         // basic
         HttpRequestDef.Builder<ShowFsDirRequest, ShowFsDirResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFsDirRequest.class, ShowFsDirResponse.class)
@@ -1111,16 +991,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFsDirRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ShowFsDirRequest::getShareId, ShowFsDirRequest::setShareId));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFsDirRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ShowFsDirRequest::getPath, ShowFsDirRequest::setPath));
 
         // response
 
@@ -1128,9 +1004,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse> showFsDirQuota =
-        genForshowFsDirQuota();
+        genForShowFsDirQuota();
 
-    private static HttpRequestDef<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse> genForshowFsDirQuota() {
+    private static HttpRequestDef<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse> genForShowFsDirQuota() {
         // basic
         HttpRequestDef.Builder<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFsDirQuotaRequest.class, ShowFsDirQuotaResponse.class)
@@ -1143,16 +1019,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFsDirQuotaRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ShowFsDirQuotaRequest::getShareId, ShowFsDirQuotaRequest::setShareId));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFsDirQuotaRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ShowFsDirQuotaRequest::getPath, ShowFsDirQuotaRequest::setPath));
 
         // response
 
@@ -1160,9 +1032,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ShowFsDirUsageRequest, ShowFsDirUsageResponse> showFsDirUsage =
-        genForshowFsDirUsage();
+        genForShowFsDirUsage();
 
-    private static HttpRequestDef<ShowFsDirUsageRequest, ShowFsDirUsageResponse> genForshowFsDirUsage() {
+    private static HttpRequestDef<ShowFsDirUsageRequest, ShowFsDirUsageResponse> genForShowFsDirUsage() {
         // basic
         HttpRequestDef.Builder<ShowFsDirUsageRequest, ShowFsDirUsageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFsDirUsageRequest.class, ShowFsDirUsageResponse.class)
@@ -1175,16 +1047,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFsDirUsageRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ShowFsDirUsageRequest::getShareId, ShowFsDirUsageRequest::setShareId));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFsDirUsageRequest::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ShowFsDirUsageRequest::getPath, ShowFsDirUsageRequest::setPath));
 
         // response
 
@@ -1196,9 +1064,9 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFsTaskRequest, ShowFsTaskResponse> showFsTask = genForshowFsTask();
+    public static final HttpRequestDef<ShowFsTaskRequest, ShowFsTaskResponse> showFsTask = genForShowFsTask();
 
-    private static HttpRequestDef<ShowFsTaskRequest, ShowFsTaskResponse> genForshowFsTask() {
+    private static HttpRequestDef<ShowFsTaskRequest, ShowFsTaskResponse> genForShowFsTask() {
         // basic
         HttpRequestDef.Builder<ShowFsTaskRequest, ShowFsTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFsTaskRequest.class, ShowFsTaskResponse.class)
@@ -1211,23 +1079,17 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFsTaskRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ShowFsTaskRequest::getShareId, ShowFsTaskRequest::setShareId));
         builder.<String>withRequestField("feature",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFsTaskRequest::getFeature, (req, v) -> {
-                req.setFeature(v);
-            }));
+            f -> f.withMarshaller(ShowFsTaskRequest::getFeature, ShowFsTaskRequest::setFeature));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFsTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowFsTaskRequest::getTaskId, ShowFsTaskRequest::setTaskId));
 
         // response
 
@@ -1235,9 +1097,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse> showHpcCacheTask =
-        genForshowHpcCacheTask();
+        genForShowHpcCacheTask();
 
-    private static HttpRequestDef<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse> genForshowHpcCacheTask() {
+    private static HttpRequestDef<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse> genForShowHpcCacheTask() {
         // basic
         HttpRequestDef.Builder<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHpcCacheTaskRequest.class, ShowHpcCacheTaskResponse.class)
@@ -1250,16 +1112,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHpcCacheTaskRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ShowHpcCacheTaskRequest::getShareId, ShowHpcCacheTaskRequest::setShareId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHpcCacheTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowHpcCacheTaskRequest::getTaskId, ShowHpcCacheTaskRequest::setTaskId));
 
         // response
 
@@ -1272,9 +1130,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail =
-        genForshowJobDetail();
+        genForShowJobDetail();
 
-    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForshowJobDetail() {
+    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForShowJobDetail() {
         // basic
         HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
@@ -1287,9 +1145,7 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, ShowJobDetailRequest::setJobId));
 
         // response
 
@@ -1302,9 +1158,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ShowLdapConfigRequest, ShowLdapConfigResponse> showLdapConfig =
-        genForshowLdapConfig();
+        genForShowLdapConfig();
 
-    private static HttpRequestDef<ShowLdapConfigRequest, ShowLdapConfigResponse> genForshowLdapConfig() {
+    private static HttpRequestDef<ShowLdapConfigRequest, ShowLdapConfigResponse> genForShowLdapConfig() {
         // basic
         HttpRequestDef.Builder<ShowLdapConfigRequest, ShowLdapConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLdapConfigRequest.class, ShowLdapConfigResponse.class)
@@ -1317,18 +1173,16 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLdapConfigRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ShowLdapConfigRequest::getShareId, ShowLdapConfigRequest::setShareId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPermRuleRequest, ShowPermRuleResponse> showPermRule = genForshowPermRule();
+    public static final HttpRequestDef<ShowPermRuleRequest, ShowPermRuleResponse> showPermRule = genForShowPermRule();
 
-    private static HttpRequestDef<ShowPermRuleRequest, ShowPermRuleResponse> genForshowPermRule() {
+    private static HttpRequestDef<ShowPermRuleRequest, ShowPermRuleResponse> genForShowPermRule() {
         // basic
         HttpRequestDef.Builder<ShowPermRuleRequest, ShowPermRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPermRuleRequest.class, ShowPermRuleResponse.class)
@@ -1341,25 +1195,21 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPermRuleRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ShowPermRuleRequest::getShareId, ShowPermRuleRequest::setShareId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPermRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowPermRuleRequest::getRuleId, ShowPermRuleRequest::setRuleId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowShareRequest, ShowShareResponse> showShare = genForshowShare();
+    public static final HttpRequestDef<ShowShareRequest, ShowShareResponse> showShare = genForShowShare();
 
-    private static HttpRequestDef<ShowShareRequest, ShowShareResponse> genForshowShare() {
+    private static HttpRequestDef<ShowShareRequest, ShowShareResponse> genForShowShare() {
         // basic
         HttpRequestDef.Builder<ShowShareRequest, ShowShareResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowShareRequest.class, ShowShareResponse.class)
@@ -1372,9 +1222,7 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowShareRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ShowShareRequest::getShareId, ShowShareRequest::setShareId));
 
         // response
 
@@ -1382,9 +1230,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<ShowSharedTagsRequest, ShowSharedTagsResponse> showSharedTags =
-        genForshowSharedTags();
+        genForShowSharedTags();
 
-    private static HttpRequestDef<ShowSharedTagsRequest, ShowSharedTagsResponse> genForshowSharedTags() {
+    private static HttpRequestDef<ShowSharedTagsRequest, ShowSharedTagsResponse> genForShowSharedTags() {
         // basic
         HttpRequestDef.Builder<ShowSharedTagsRequest, ShowSharedTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSharedTagsRequest.class, ShowSharedTagsResponse.class)
@@ -1397,9 +1245,7 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSharedTagsRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(ShowSharedTagsRequest::getShareId, ShowSharedTagsRequest::setShareId));
 
         // response
 
@@ -1407,9 +1253,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse> updateFsDirQuota =
-        genForupdateFsDirQuota();
+        genForUpdateFsDirQuota();
 
-    private static HttpRequestDef<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse> genForupdateFsDirQuota() {
+    private static HttpRequestDef<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse> genForUpdateFsDirQuota() {
         // basic
         HttpRequestDef.Builder<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateFsDirQuotaRequest.class, UpdateFsDirQuotaResponse.class)
@@ -1422,16 +1268,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFsDirQuotaRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(UpdateFsDirQuotaRequest::getShareId, UpdateFsDirQuotaRequest::setShareId));
         builder.<UpdateFsDirQuotaRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFsDirQuotaRequestBody.class),
-            f -> f.withMarshaller(UpdateFsDirQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateFsDirQuotaRequest::getBody, UpdateFsDirQuotaRequest::setBody));
 
         // response
 
@@ -1439,9 +1281,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<UpdateHpcShareRequest, UpdateHpcShareResponse> updateHpcShare =
-        genForupdateHpcShare();
+        genForUpdateHpcShare();
 
-    private static HttpRequestDef<UpdateHpcShareRequest, UpdateHpcShareResponse> genForupdateHpcShare() {
+    private static HttpRequestDef<UpdateHpcShareRequest, UpdateHpcShareResponse> genForUpdateHpcShare() {
         // basic
         HttpRequestDef.Builder<UpdateHpcShareRequest, UpdateHpcShareResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateHpcShareRequest.class, UpdateHpcShareResponse.class)
@@ -1454,16 +1296,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHpcShareRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(UpdateHpcShareRequest::getShareId, UpdateHpcShareRequest::setShareId));
         builder.<UpdateHpcShareRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateHpcShareRequestBody.class),
-            f -> f.withMarshaller(UpdateHpcShareRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateHpcShareRequest::getBody, UpdateHpcShareRequest::setBody));
 
         // response
 
@@ -1476,9 +1314,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<UpdateLdapConfigRequest, UpdateLdapConfigResponse> updateLdapConfig =
-        genForupdateLdapConfig();
+        genForUpdateLdapConfig();
 
-    private static HttpRequestDef<UpdateLdapConfigRequest, UpdateLdapConfigResponse> genForupdateLdapConfig() {
+    private static HttpRequestDef<UpdateLdapConfigRequest, UpdateLdapConfigResponse> genForUpdateLdapConfig() {
         // basic
         HttpRequestDef.Builder<UpdateLdapConfigRequest, UpdateLdapConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLdapConfigRequest.class, UpdateLdapConfigResponse.class)
@@ -1491,16 +1329,12 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLdapConfigRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(UpdateLdapConfigRequest::getShareId, UpdateLdapConfigRequest::setShareId));
         builder.<UpdateLdapConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLdapConfigRequestBody.class),
-            f -> f.withMarshaller(UpdateLdapConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLdapConfigRequest::getBody, UpdateLdapConfigRequest::setBody));
 
         // response
 
@@ -1508,9 +1342,9 @@ public class SFSTurboMeta {
     }
 
     public static final HttpRequestDef<UpdatePermRuleRequest, UpdatePermRuleResponse> updatePermRule =
-        genForupdatePermRule();
+        genForUpdatePermRule();
 
-    private static HttpRequestDef<UpdatePermRuleRequest, UpdatePermRuleResponse> genForupdatePermRule() {
+    private static HttpRequestDef<UpdatePermRuleRequest, UpdatePermRuleResponse> genForUpdatePermRule() {
         // basic
         HttpRequestDef.Builder<UpdatePermRuleRequest, UpdatePermRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePermRuleRequest.class, UpdatePermRuleResponse.class)
@@ -1523,23 +1357,17 @@ public class SFSTurboMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePermRuleRequest::getShareId, (req, v) -> {
-                req.setShareId(v);
-            }));
+            f -> f.withMarshaller(UpdatePermRuleRequest::getShareId, UpdatePermRuleRequest::setShareId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePermRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdatePermRuleRequest::getRuleId, UpdatePermRuleRequest::setRuleId));
         builder.<OnePermRuleRequestInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OnePermRuleRequestInfo.class),
-            f -> f.withMarshaller(UpdatePermRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePermRuleRequest::getBody, UpdatePermRuleRequest::setBody));
 
         // response
 

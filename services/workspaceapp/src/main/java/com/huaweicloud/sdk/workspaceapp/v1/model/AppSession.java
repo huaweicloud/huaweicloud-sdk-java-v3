@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 根据用户名查询当前会话-会话信息
+ * 根据用户名查询当前会话-会话信息。
  */
 public class AppSession {
 
@@ -151,7 +151,7 @@ public class AppSession {
     }
 
     /**
-     * 主键ID
+     * 主键ID。
      * @return id
      */
     public String getId() {
@@ -168,7 +168,7 @@ public class AppSession {
     }
 
     /**
-     * 会话标识
+     * 会话标识。
      * @return sessionStamp
      */
     public String getSessionStamp() {
@@ -185,7 +185,7 @@ public class AppSession {
     }
 
     /**
-     * 会话在hda的os中会话id
+     * 会话在hda的os中会话id。
      * @return osSessionId
      */
     public String getOsSessionId() {
@@ -202,7 +202,7 @@ public class AppSession {
     }
 
     /**
-     * 协议类型
+     * 协议类型。
      * @return protocolType
      */
     public String getProtocolType() {
@@ -219,7 +219,7 @@ public class AppSession {
     }
 
     /**
-     * 当前会话的登录用户
+     * 当前会话的登录用户。
      * @return loginUser
      */
     public String getLoginUser() {
@@ -236,7 +236,7 @@ public class AppSession {
     }
 
     /**
-     * 会话类型，1表示共享桌面，2表示应用
+     * 会话类型，1表示共享桌面，2表示应用。
      * @return sessionType
      */
     public String getSessionType() {
@@ -253,7 +253,7 @@ public class AppSession {
     }
 
     /**
-     * App组ID
+     * App组ID。
      * @return appGroupId
      */
     public String getAppGroupId() {
@@ -270,7 +270,7 @@ public class AppSession {
     }
 
     /**
-     * AppServer组ID
+     * AppServer组ID。
      * @return appServerGroupId
      */
     public String getAppServerGroupId() {
@@ -287,7 +287,7 @@ public class AppSession {
     }
 
     /**
-     * 预连接时间
+     * 预连接时间。
      * @return preConnTime
      */
     public String getPreConnTime() {
@@ -304,7 +304,7 @@ public class AppSession {
     }
 
     /**
-     * 会话开始时间
+     * 会话开始时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -321,7 +321,7 @@ public class AppSession {
     }
 
     /**
-     * 会话结束时间
+     * 会话结束时间。
      * @return endTime
      */
     public String getEndTime() {
@@ -338,7 +338,7 @@ public class AppSession {
     }
 
     /**
-     * 状态持续时间
+     * 状态持续时间。
      * @return statusContinueTime
      */
     public String getStatusContinueTime() {
@@ -355,7 +355,7 @@ public class AppSession {
     }
 
     /**
-     * 服务器SID
+     * 服务器SID。。
      * @return machineSid
      */
     public String getMachineSid() {
@@ -372,7 +372,7 @@ public class AppSession {
     }
 
     /**
-     * 服务器名称
+     * 服务器名称。
      * @return machineName
      */
     public String getMachineName() {
@@ -389,7 +389,7 @@ public class AppSession {
     }
 
     /**
-     * 会话状态
+     * 会话状态。
      * @return sessionState
      */
     public String getSessionState() {
@@ -406,7 +406,7 @@ public class AppSession {
     }
 
     /**
-     * 会话中的应用名称
+     * 会话中的应用名称。
      * @return appName
      */
     public String getAppName() {
@@ -423,7 +423,7 @@ public class AppSession {
     }
 
     /**
-     * 客户端Mac地址
+     * 客户端Mac地址。
      * @return clientMac
      */
     public String getClientMac() {
@@ -440,7 +440,7 @@ public class AppSession {
     }
 
     /**
-     * 客户端名称
+     * 客户端名称。
      * @return clientName
      */
     public String getClientName() {
@@ -457,7 +457,7 @@ public class AppSession {
     }
 
     /**
-     * 客户端IP
+     * 客户端IP。
      * @return clientIp
      */
     public String getClientIp() {
@@ -474,7 +474,7 @@ public class AppSession {
     }
 
     /**
-     * 客户端版本
+     * 客户端版本。
      * @return clientVersion
      */
     public String getClientVersion() {
@@ -491,7 +491,7 @@ public class AppSession {
     }
 
     /**
-     * 客户端类型
+     * 客户端类型。
      * @return clientType
      */
     public String getClientType() {
@@ -508,7 +508,7 @@ public class AppSession {
     }
 
     /**
-     * agent版本
+     * agent版本。
      * @return agentVersion
      */
     public String getAgentVersion() {
@@ -525,7 +525,7 @@ public class AppSession {
     }
 
     /**
-     * 服务器IP
+     * 服务器IP。
      * @return vmIp
      */
     public String getVmIp() {
@@ -542,7 +542,7 @@ public class AppSession {
     }
 
     /**
-     * 错误原因消息
+     * 错误原因消息。
      * @return failedReason
      */
     public String getFailedReason() {
@@ -559,7 +559,7 @@ public class AppSession {
     }
 
     /**
-     * 错误原因码
+     * 错误原因码。
      * @return failedCode
      */
     public String getFailedCode() {
@@ -576,7 +576,7 @@ public class AppSession {
     }
 
     /**
-     * 状态最后变化时间
+     * 状态最后变化时间。
      * @return lastUpdateStatusTime
      */
     public String getLastUpdateStatusTime() {

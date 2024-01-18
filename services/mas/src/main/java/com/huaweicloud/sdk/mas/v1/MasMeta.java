@@ -15,9 +15,9 @@ import java.util.List;
 public class MasMeta {
 
     public static final HttpRequestDef<ShowNameSpaceListRequest, ShowNameSpaceListResponse> showNameSpaceList =
-        genForshowNameSpaceList();
+        genForShowNameSpaceList();
 
-    private static HttpRequestDef<ShowNameSpaceListRequest, ShowNameSpaceListResponse> genForshowNameSpaceList() {
+    private static HttpRequestDef<ShowNameSpaceListRequest, ShowNameSpaceListResponse> genForShowNameSpaceList() {
         // basic
         HttpRequestDef.Builder<ShowNameSpaceListRequest, ShowNameSpaceListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNameSpaceListRequest.class, ShowNameSpaceListResponse.class)
@@ -30,53 +30,41 @@ public class MasMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNameSpaceListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowNameSpaceListRequest::getOffset, ShowNameSpaceListRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNameSpaceListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowNameSpaceListRequest::getLimit, ShowNameSpaceListRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNameSpaceListRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowNameSpaceListRequest::getName, ShowNameSpaceListRequest::setName));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNameSpaceListRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowNameSpaceListRequest::getType, ShowNameSpaceListRequest::setType));
         builder.<String>withRequestField("is_used",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNameSpaceListRequest::getIsUsed, (req, v) -> {
-                req.setIsUsed(v);
-            }));
+            f -> f.withMarshaller(ShowNameSpaceListRequest::getIsUsed, ShowNameSpaceListRequest::setIsUsed));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNameSpaceListRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowNameSpaceListRequest::getEnterpriseProjectId,
+                ShowNameSpaceListRequest::setEnterpriseProjectId));
 
         // response
         builder.<List<NamespaceVo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowNameSpaceListResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(NamespaceVo.class));
+            f -> f.withMarshaller(ShowNameSpaceListResponse::getBody, ShowNameSpaceListResponse::setBody)
+                .withInnerContainerType(NamespaceVo.class));
 
         return builder.build();
     }

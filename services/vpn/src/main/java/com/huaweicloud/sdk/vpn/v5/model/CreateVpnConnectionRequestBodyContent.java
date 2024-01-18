@@ -234,6 +234,11 @@ public class CreateVpnConnectionRequestBodyContent {
 
     private HaRoleEnum haRole;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<VpnResourceTag> tags = null;
+
     public CreateVpnConnectionRequestBodyContent withName(String name) {
         this.name = name;
         return this;
@@ -522,6 +527,39 @@ public class CreateVpnConnectionRequestBodyContent {
         this.haRole = haRole;
     }
 
+    public CreateVpnConnectionRequestBodyContent withTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateVpnConnectionRequestBodyContent addTagsItem(VpnResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateVpnConnectionRequestBodyContent withTags(Consumer<List<VpnResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<VpnResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -538,7 +576,8 @@ public class CreateVpnConnectionRequestBodyContent {
             && Objects.equals(this.tunnelPeerAddress, that.tunnelPeerAddress)
             && Objects.equals(this.enableNqa, that.enableNqa) && Objects.equals(this.psk, that.psk)
             && Objects.equals(this.policyRules, that.policyRules) && Objects.equals(this.ikepolicy, that.ikepolicy)
-            && Objects.equals(this.ipsecpolicy, that.ipsecpolicy) && Objects.equals(this.haRole, that.haRole);
+            && Objects.equals(this.ipsecpolicy, that.ipsecpolicy) && Objects.equals(this.haRole, that.haRole)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -556,7 +595,8 @@ public class CreateVpnConnectionRequestBodyContent {
             policyRules,
             ikepolicy,
             ipsecpolicy,
-            haRole);
+            haRole,
+            tags);
     }
 
     @Override
@@ -577,6 +617,7 @@ public class CreateVpnConnectionRequestBodyContent {
         sb.append("    ikepolicy: ").append(toIndentedString(ikepolicy)).append("\n");
         sb.append("    ipsecpolicy: ").append(toIndentedString(ipsecpolicy)).append("\n");
         sb.append("    haRole: ").append(toIndentedString(haRole)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

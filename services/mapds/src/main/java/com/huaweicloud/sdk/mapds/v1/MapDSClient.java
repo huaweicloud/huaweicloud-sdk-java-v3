@@ -34,7 +34,7 @@ public class MapDSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCredentialRequest 请求对象
+     * @param request CreateCredentialRequest 请求对象
      * @return CreateCredentialResponse
      */
     public CreateCredentialResponse createCredential(CreateCredentialRequest request) {
@@ -48,13 +48,12 @@ public class MapDSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCredentialRequest 请求对象
+     * @param request CreateCredentialRequest 请求对象
      * @return SyncInvoker<CreateCredentialRequest, CreateCredentialResponse>
      */
     public SyncInvoker<CreateCredentialRequest, CreateCredentialResponse> createCredentialInvoker(
         CreateCredentialRequest request) {
-        return new SyncInvoker<CreateCredentialRequest, CreateCredentialResponse>(request, MapDSMeta.createCredential,
-            hcClient);
+        return new SyncInvoker<>(request, MapDSMeta.createCredential, hcClient);
     }
 
     /**
@@ -64,7 +63,7 @@ public class MapDSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSasTokenRequest 请求对象
+     * @param request CreateSasTokenRequest 请求对象
      * @return CreateSasTokenResponse
      */
     public CreateSasTokenResponse createSasToken(CreateSasTokenRequest request) {
@@ -78,13 +77,12 @@ public class MapDSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSasTokenRequest 请求对象
+     * @param request CreateSasTokenRequest 请求对象
      * @return SyncInvoker<CreateSasTokenRequest, CreateSasTokenResponse>
      */
     public SyncInvoker<CreateSasTokenRequest, CreateSasTokenResponse> createSasTokenInvoker(
         CreateSasTokenRequest request) {
-        return new SyncInvoker<CreateSasTokenRequest, CreateSasTokenResponse>(request, MapDSMeta.createSasToken,
-            hcClient);
+        return new SyncInvoker<>(request, MapDSMeta.createSasToken, hcClient);
     }
 
     /**
@@ -94,7 +92,7 @@ public class MapDSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCedentialRequest 请求对象
+     * @param request DeleteCedentialRequest 请求对象
      * @return DeleteCedentialResponse
      */
     public DeleteCedentialResponse deleteCedential(DeleteCedentialRequest request) {
@@ -108,13 +106,12 @@ public class MapDSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCedentialRequest 请求对象
+     * @param request DeleteCedentialRequest 请求对象
      * @return SyncInvoker<DeleteCedentialRequest, DeleteCedentialResponse>
      */
     public SyncInvoker<DeleteCedentialRequest, DeleteCedentialResponse> deleteCedentialInvoker(
         DeleteCedentialRequest request) {
-        return new SyncInvoker<DeleteCedentialRequest, DeleteCedentialResponse>(request, MapDSMeta.deleteCedential,
-            hcClient);
+        return new SyncInvoker<>(request, MapDSMeta.deleteCedential, hcClient);
     }
 
     /**
@@ -124,7 +121,7 @@ public class MapDSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCredentialRequest 请求对象
+     * @param request ShowCredentialRequest 请求对象
      * @return ShowCredentialResponse
      */
     public ShowCredentialResponse showCredential(ShowCredentialRequest request) {
@@ -138,13 +135,12 @@ public class MapDSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCredentialRequest 请求对象
+     * @param request ShowCredentialRequest 请求对象
      * @return SyncInvoker<ShowCredentialRequest, ShowCredentialResponse>
      */
     public SyncInvoker<ShowCredentialRequest, ShowCredentialResponse> showCredentialInvoker(
         ShowCredentialRequest request) {
-        return new SyncInvoker<ShowCredentialRequest, ShowCredentialResponse>(request, MapDSMeta.showCredential,
-            hcClient);
+        return new SyncInvoker<>(request, MapDSMeta.showCredential, hcClient);
     }
 
     /**
@@ -154,7 +150,7 @@ public class MapDSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMapTileRequest 请求对象
+     * @param request ShowMapTileRequest 请求对象
      * @return ShowMapTileResponse
      */
     public ShowMapTileResponse showMapTile(ShowMapTileRequest request) {
@@ -168,11 +164,11 @@ public class MapDSClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMapTileRequest 请求对象
+     * @param request ShowMapTileRequest 请求对象
      * @return SyncInvoker<ShowMapTileRequest, ShowMapTileResponse>
      */
     public SyncInvoker<ShowMapTileRequest, ShowMapTileResponse> showMapTileInvoker(ShowMapTileRequest request) {
-        return new SyncInvoker<ShowMapTileRequest, ShowMapTileResponse>(request, MapDSMeta.showMapTile, hcClient);
+        return new SyncInvoker<>(request, MapDSMeta.showMapTile, hcClient);
     }
 
 }

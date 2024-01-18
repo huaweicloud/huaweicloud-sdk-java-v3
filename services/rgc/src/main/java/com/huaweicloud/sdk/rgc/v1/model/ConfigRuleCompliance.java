@@ -87,7 +87,7 @@ public class ConfigRuleCompliance {
     }
 
     /**
-     * 控制策略Id。
+     * 控制策略ID。
      * @return controlId
      */
     public String getControlId() {

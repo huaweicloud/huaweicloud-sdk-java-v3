@@ -414,7 +414,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptOrRejectEndpointConnectionsRequest 请求对象
+     * @param request AcceptOrRejectEndpointConnectionsRequest 请求对象
      * @return AcceptOrRejectEndpointConnectionsResponse
      */
     public AcceptOrRejectEndpointConnectionsResponse acceptOrRejectEndpointConnections(
@@ -429,13 +429,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptOrRejectEndpointConnectionsRequest 请求对象
+     * @param request AcceptOrRejectEndpointConnectionsRequest 请求对象
      * @return SyncInvoker<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse>
      */
     public SyncInvoker<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse> acceptOrRejectEndpointConnectionsInvoker(
         AcceptOrRejectEndpointConnectionsRequest request) {
-        return new SyncInvoker<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse>(
-            request, ApigMeta.acceptOrRejectEndpointConnections, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.acceptOrRejectEndpointConnections, hcClient);
     }
 
     /**
@@ -445,7 +444,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEipV2Request 请求对象
+     * @param request AddEipV2Request 请求对象
      * @return AddEipV2Response
      */
     public AddEipV2Response addEipV2(AddEipV2Request request) {
@@ -459,11 +458,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEipV2Request 请求对象
+     * @param request AddEipV2Request 请求对象
      * @return SyncInvoker<AddEipV2Request, AddEipV2Response>
      */
     public SyncInvoker<AddEipV2Request, AddEipV2Response> addEipV2Invoker(AddEipV2Request request) {
-        return new SyncInvoker<AddEipV2Request, AddEipV2Response>(request, ApigMeta.addEipV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.addEipV2, hcClient);
     }
 
     /**
@@ -473,7 +472,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEndpointPermissionsRequest 请求对象
+     * @param request AddEndpointPermissionsRequest 请求对象
      * @return AddEndpointPermissionsResponse
      */
     public AddEndpointPermissionsResponse addEndpointPermissions(AddEndpointPermissionsRequest request) {
@@ -487,13 +486,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEndpointPermissionsRequest 请求对象
+     * @param request AddEndpointPermissionsRequest 请求对象
      * @return SyncInvoker<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse>
      */
     public SyncInvoker<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse> addEndpointPermissionsInvoker(
         AddEndpointPermissionsRequest request) {
-        return new SyncInvoker<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse>(request,
-            ApigMeta.addEndpointPermissions, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.addEndpointPermissions, hcClient);
     }
 
     /**
@@ -503,7 +501,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEngressEipV2Request 请求对象
+     * @param request AddEngressEipV2Request 请求对象
      * @return AddEngressEipV2Response
      */
     public AddEngressEipV2Response addEngressEipV2(AddEngressEipV2Request request) {
@@ -517,13 +515,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEngressEipV2Request 请求对象
+     * @param request AddEngressEipV2Request 请求对象
      * @return SyncInvoker<AddEngressEipV2Request, AddEngressEipV2Response>
      */
     public SyncInvoker<AddEngressEipV2Request, AddEngressEipV2Response> addEngressEipV2Invoker(
         AddEngressEipV2Request request) {
-        return new SyncInvoker<AddEngressEipV2Request, AddEngressEipV2Response>(request, ApigMeta.addEngressEipV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.addEngressEipV2, hcClient);
     }
 
     /**
@@ -533,7 +530,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddIngressEipV2Request 请求对象
+     * @param request AddIngressEipV2Request 请求对象
      * @return AddIngressEipV2Response
      */
     public AddIngressEipV2Response addIngressEipV2(AddIngressEipV2Request request) {
@@ -547,13 +544,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddIngressEipV2Request 请求对象
+     * @param request AddIngressEipV2Request 请求对象
      * @return SyncInvoker<AddIngressEipV2Request, AddIngressEipV2Response>
      */
     public SyncInvoker<AddIngressEipV2Request, AddIngressEipV2Response> addIngressEipV2Invoker(
         AddIngressEipV2Request request) {
-        return new SyncInvoker<AddIngressEipV2Request, AddIngressEipV2Response>(request, ApigMeta.addIngressEipV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.addIngressEipV2, hcClient);
     }
 
     /**
@@ -563,7 +559,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAppsForAppQuotaRequest 请求对象
+     * @param request AssociateAppsForAppQuotaRequest 请求对象
      * @return AssociateAppsForAppQuotaResponse
      */
     public AssociateAppsForAppQuotaResponse associateAppsForAppQuota(AssociateAppsForAppQuotaRequest request) {
@@ -577,13 +573,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAppsForAppQuotaRequest 请求对象
+     * @param request AssociateAppsForAppQuotaRequest 请求对象
      * @return SyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse>
      */
     public SyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> associateAppsForAppQuotaInvoker(
         AssociateAppsForAppQuotaRequest request) {
-        return new SyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse>(request,
-            ApigMeta.associateAppsForAppQuota, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.associateAppsForAppQuota, hcClient);
     }
 
     /**
@@ -594,7 +589,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateCertificateV2Request 请求对象
+     * @param request AssociateCertificateV2Request 请求对象
      * @return AssociateCertificateV2Response
      */
     public AssociateCertificateV2Response associateCertificateV2(AssociateCertificateV2Request request) {
@@ -609,13 +604,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateCertificateV2Request 请求对象
+     * @param request AssociateCertificateV2Request 请求对象
      * @return SyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response>
      */
     public SyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response> associateCertificateV2Invoker(
         AssociateCertificateV2Request request) {
-        return new SyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response>(request,
-            ApigMeta.associateCertificateV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.associateCertificateV2, hcClient);
     }
 
     /**
@@ -627,7 +621,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateDomainV2Request 请求对象
+     * @param request AssociateDomainV2Request 请求对象
      * @return AssociateDomainV2Response
      */
     public AssociateDomainV2Response associateDomainV2(AssociateDomainV2Request request) {
@@ -643,13 +637,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateDomainV2Request 请求对象
+     * @param request AssociateDomainV2Request 请求对象
      * @return SyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>
      */
     public SyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response> associateDomainV2Invoker(
         AssociateDomainV2Request request) {
-        return new SyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>(request, ApigMeta.associateDomainV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.associateDomainV2, hcClient);
     }
 
     /**
@@ -665,7 +658,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateSignatureKeyV2Request 请求对象
+     * @param request AssociateSignatureKeyV2Request 请求对象
      * @return AssociateSignatureKeyV2Response
      */
     public AssociateSignatureKeyV2Response associateSignatureKeyV2(AssociateSignatureKeyV2Request request) {
@@ -685,13 +678,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateSignatureKeyV2Request 请求对象
+     * @param request AssociateSignatureKeyV2Request 请求对象
      * @return SyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response>
      */
     public SyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> associateSignatureKeyV2Invoker(
         AssociateSignatureKeyV2Request request) {
-        return new SyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response>(request,
-            ApigMeta.associateSignatureKeyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.associateSignatureKeyV2, hcClient);
     }
 
     /**
@@ -705,7 +697,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachApiToPluginRequest 请求对象
+     * @param request AttachApiToPluginRequest 请求对象
      * @return AttachApiToPluginResponse
      */
     public AttachApiToPluginResponse attachApiToPlugin(AttachApiToPluginRequest request) {
@@ -723,13 +715,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachApiToPluginRequest 请求对象
+     * @param request AttachApiToPluginRequest 请求对象
      * @return SyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>
      */
     public SyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse> attachApiToPluginInvoker(
         AttachApiToPluginRequest request) {
-        return new SyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>(request, ApigMeta.attachApiToPlugin,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.attachApiToPlugin, hcClient);
     }
 
     /**
@@ -743,7 +734,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachPluginToApiRequest 请求对象
+     * @param request AttachPluginToApiRequest 请求对象
      * @return AttachPluginToApiResponse
      */
     public AttachPluginToApiResponse attachPluginToApi(AttachPluginToApiRequest request) {
@@ -761,13 +752,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachPluginToApiRequest 请求对象
+     * @param request AttachPluginToApiRequest 请求对象
      * @return SyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>
      */
     public SyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse> attachPluginToApiInvoker(
         AttachPluginToApiRequest request) {
-        return new SyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>(request, ApigMeta.attachPluginToApi,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.attachPluginToApi, hcClient);
     }
 
     /**
@@ -777,7 +767,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteInstanceTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteInstanceTagsRequest 请求对象
      * @return BatchCreateOrDeleteInstanceTagsResponse
      */
     public BatchCreateOrDeleteInstanceTagsResponse batchCreateOrDeleteInstanceTags(
@@ -792,13 +782,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteInstanceTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteInstanceTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse>
      */
     public SyncInvoker<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse> batchCreateOrDeleteInstanceTagsInvoker(
         BatchCreateOrDeleteInstanceTagsRequest request) {
-        return new SyncInvoker<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse>(request,
-            ApigMeta.batchCreateOrDeleteInstanceTags, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchCreateOrDeleteInstanceTags, hcClient);
     }
 
     /**
@@ -809,7 +798,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAppV2Request 请求对象
+     * @param request CheckAppV2Request 请求对象
      * @return CheckAppV2Response
      */
     public CheckAppV2Response checkAppV2(CheckAppV2Request request) {
@@ -824,11 +813,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAppV2Request 请求对象
+     * @param request CheckAppV2Request 请求对象
      * @return SyncInvoker<CheckAppV2Request, CheckAppV2Response>
      */
     public SyncInvoker<CheckAppV2Request, CheckAppV2Response> checkAppV2Invoker(CheckAppV2Request request) {
-        return new SyncInvoker<CheckAppV2Request, CheckAppV2Response>(request, ApigMeta.checkAppV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.checkAppV2, hcClient);
     }
 
     /**
@@ -839,7 +828,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnAppV2Request 请求对象
+     * @param request CreateAnAppV2Request 请求对象
      * @return CreateAnAppV2Response
      */
     public CreateAnAppV2Response createAnAppV2(CreateAnAppV2Request request) {
@@ -854,11 +843,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnAppV2Request 请求对象
+     * @param request CreateAnAppV2Request 请求对象
      * @return SyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response>
      */
     public SyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response> createAnAppV2Invoker(CreateAnAppV2Request request) {
-        return new SyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response>(request, ApigMeta.createAnAppV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createAnAppV2, hcClient);
     }
 
     /**
@@ -868,7 +857,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeAutoV2Request 请求对象
+     * @param request CreateAppCodeAutoV2Request 请求对象
      * @return CreateAppCodeAutoV2Response
      */
     public CreateAppCodeAutoV2Response createAppCodeAutoV2(CreateAppCodeAutoV2Request request) {
@@ -882,13 +871,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeAutoV2Request 请求对象
+     * @param request CreateAppCodeAutoV2Request 请求对象
      * @return SyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>
      */
     public SyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2Invoker(
         CreateAppCodeAutoV2Request request) {
-        return new SyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>(request,
-            ApigMeta.createAppCodeAutoV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createAppCodeAutoV2, hcClient);
     }
 
     /**
@@ -898,7 +886,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeV2Request 请求对象
+     * @param request CreateAppCodeV2Request 请求对象
      * @return CreateAppCodeV2Response
      */
     public CreateAppCodeV2Response createAppCodeV2(CreateAppCodeV2Request request) {
@@ -912,13 +900,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeV2Request 请求对象
+     * @param request CreateAppCodeV2Request 请求对象
      * @return SyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>
      */
     public SyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2Invoker(
         CreateAppCodeV2Request request) {
-        return new SyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>(request, ApigMeta.createAppCodeV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createAppCodeV2, hcClient);
     }
 
     /**
@@ -928,7 +915,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppQuotaRequest 请求对象
+     * @param request CreateAppQuotaRequest 请求对象
      * @return CreateAppQuotaResponse
      */
     public CreateAppQuotaResponse createAppQuota(CreateAppQuotaRequest request) {
@@ -942,13 +929,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppQuotaRequest 请求对象
+     * @param request CreateAppQuotaRequest 请求对象
      * @return SyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse>
      */
     public SyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse> createAppQuotaInvoker(
         CreateAppQuotaRequest request) {
-        return new SyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse>(request, ApigMeta.createAppQuota,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createAppQuota, hcClient);
     }
 
     /**
@@ -958,7 +944,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomAuthorizerV2Request 请求对象
+     * @param request CreateCustomAuthorizerV2Request 请求对象
      * @return CreateCustomAuthorizerV2Response
      */
     public CreateCustomAuthorizerV2Response createCustomAuthorizerV2(CreateCustomAuthorizerV2Request request) {
@@ -972,13 +958,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomAuthorizerV2Request 请求对象
+     * @param request CreateCustomAuthorizerV2Request 请求对象
      * @return SyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>
      */
     public SyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2Invoker(
         CreateCustomAuthorizerV2Request request) {
-        return new SyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>(request,
-            ApigMeta.createCustomAuthorizerV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createCustomAuthorizerV2, hcClient);
     }
 
     /**
@@ -994,7 +979,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentV2Request 请求对象
+     * @param request CreateEnvironmentV2Request 请求对象
      * @return CreateEnvironmentV2Response
      */
     public CreateEnvironmentV2Response createEnvironmentV2(CreateEnvironmentV2Request request) {
@@ -1014,13 +999,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentV2Request 请求对象
+     * @param request CreateEnvironmentV2Request 请求对象
      * @return SyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response>
      */
     public SyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response> createEnvironmentV2Invoker(
         CreateEnvironmentV2Request request) {
-        return new SyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response>(request,
-            ApigMeta.createEnvironmentV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createEnvironmentV2, hcClient);
     }
 
     /**
@@ -1041,7 +1025,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentVariableV2Request 请求对象
+     * @param request CreateEnvironmentVariableV2Request 请求对象
      * @return CreateEnvironmentVariableV2Response
      */
     public CreateEnvironmentVariableV2Response createEnvironmentVariableV2(CreateEnvironmentVariableV2Request request) {
@@ -1066,13 +1050,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentVariableV2Request 请求对象
+     * @param request CreateEnvironmentVariableV2Request 请求对象
      * @return SyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response>
      */
     public SyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> createEnvironmentVariableV2Invoker(
         CreateEnvironmentVariableV2Request request) {
-        return new SyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response>(request,
-            ApigMeta.createEnvironmentVariableV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -1084,7 +1067,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFeatureV2Request 请求对象
+     * @param request CreateFeatureV2Request 请求对象
      * @return CreateFeatureV2Response
      */
     public CreateFeatureV2Response createFeatureV2(CreateFeatureV2Request request) {
@@ -1100,13 +1083,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFeatureV2Request 请求对象
+     * @param request CreateFeatureV2Request 请求对象
      * @return SyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response>
      */
     public SyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response> createFeatureV2Invoker(
         CreateFeatureV2Request request) {
-        return new SyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response>(request, ApigMeta.createFeatureV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createFeatureV2, hcClient);
     }
 
     /**
@@ -1116,7 +1098,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGatewayResponseV2Request 请求对象
+     * @param request CreateGatewayResponseV2Request 请求对象
      * @return CreateGatewayResponseV2Response
      */
     public CreateGatewayResponseV2Response createGatewayResponseV2(CreateGatewayResponseV2Request request) {
@@ -1130,13 +1112,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGatewayResponseV2Request 请求对象
+     * @param request CreateGatewayResponseV2Request 请求对象
      * @return SyncInvoker<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response>
      */
     public SyncInvoker<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> createGatewayResponseV2Invoker(
         CreateGatewayResponseV2Request request) {
-        return new SyncInvoker<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response>(request,
-            ApigMeta.createGatewayResponseV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createGatewayResponseV2, hcClient);
     }
 
     /**
@@ -1146,7 +1127,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceV2Request 请求对象
+     * @param request CreateInstanceV2Request 请求对象
      * @return CreateInstanceV2Response
      */
     public CreateInstanceV2Response createInstanceV2(CreateInstanceV2Request request) {
@@ -1160,13 +1141,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceV2Request 请求对象
+     * @param request CreateInstanceV2Request 请求对象
      * @return SyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response>
      */
     public SyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response> createInstanceV2Invoker(
         CreateInstanceV2Request request) {
-        return new SyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response>(request, ApigMeta.createInstanceV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createInstanceV2, hcClient);
     }
 
     /**
@@ -1176,7 +1156,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrderRequest 请求对象
+     * @param request CreateOrderRequest 请求对象
      * @return CreateOrderResponse
      */
     public CreateOrderResponse createOrder(CreateOrderRequest request) {
@@ -1190,11 +1170,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrderRequest 请求对象
+     * @param request CreateOrderRequest 请求对象
      * @return SyncInvoker<CreateOrderRequest, CreateOrderResponse>
      */
     public SyncInvoker<CreateOrderRequest, CreateOrderResponse> createOrderInvoker(CreateOrderRequest request) {
-        return new SyncInvoker<CreateOrderRequest, CreateOrderResponse>(request, ApigMeta.createOrder, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createOrder, hcClient);
     }
 
     /**
@@ -1206,7 +1186,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePluginRequest 请求对象
+     * @param request CreatePluginRequest 请求对象
      * @return CreatePluginResponse
      */
     public CreatePluginResponse createPlugin(CreatePluginRequest request) {
@@ -1222,11 +1202,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePluginRequest 请求对象
+     * @param request CreatePluginRequest 请求对象
      * @return SyncInvoker<CreatePluginRequest, CreatePluginResponse>
      */
     public SyncInvoker<CreatePluginRequest, CreatePluginResponse> createPluginInvoker(CreatePluginRequest request) {
-        return new SyncInvoker<CreatePluginRequest, CreatePluginResponse>(request, ApigMeta.createPlugin, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createPlugin, hcClient);
     }
 
     /**
@@ -1236,7 +1216,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPayResizeOrderRequest 请求对象
+     * @param request CreatePostPayResizeOrderRequest 请求对象
      * @return CreatePostPayResizeOrderResponse
      */
     public CreatePostPayResizeOrderResponse createPostPayResizeOrder(CreatePostPayResizeOrderRequest request) {
@@ -1250,13 +1230,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPayResizeOrderRequest 请求对象
+     * @param request CreatePostPayResizeOrderRequest 请求对象
      * @return SyncInvoker<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse>
      */
     public SyncInvoker<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse> createPostPayResizeOrderInvoker(
         CreatePostPayResizeOrderRequest request) {
-        return new SyncInvoker<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse>(request,
-            ApigMeta.createPostPayResizeOrder, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createPostPayResizeOrder, hcClient);
     }
 
     /**
@@ -1266,7 +1245,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrepayResizeRequest 请求对象
+     * @param request CreatePrepayResizeRequest 请求对象
      * @return CreatePrepayResizeResponse
      */
     public CreatePrepayResizeResponse createPrepayResize(CreatePrepayResizeRequest request) {
@@ -1280,13 +1259,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrepayResizeRequest 请求对象
+     * @param request CreatePrepayResizeRequest 请求对象
      * @return SyncInvoker<CreatePrepayResizeRequest, CreatePrepayResizeResponse>
      */
     public SyncInvoker<CreatePrepayResizeRequest, CreatePrepayResizeResponse> createPrepayResizeInvoker(
         CreatePrepayResizeRequest request) {
-        return new SyncInvoker<CreatePrepayResizeRequest, CreatePrepayResizeResponse>(request,
-            ApigMeta.createPrepayResize, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createPrepayResize, hcClient);
     }
 
     /**
@@ -1297,7 +1275,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestThrottlingPolicyV2Request 请求对象
+     * @param request CreateRequestThrottlingPolicyV2Request 请求对象
      * @return CreateRequestThrottlingPolicyV2Response
      */
     public CreateRequestThrottlingPolicyV2Response createRequestThrottlingPolicyV2(
@@ -1313,13 +1291,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestThrottlingPolicyV2Request 请求对象
+     * @param request CreateRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response>
      */
     public SyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> createRequestThrottlingPolicyV2Invoker(
         CreateRequestThrottlingPolicyV2Request request) {
-        return new SyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response>(request,
-            ApigMeta.createRequestThrottlingPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -1335,7 +1312,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSignatureKeyV2Request 请求对象
+     * @param request CreateSignatureKeyV2Request 请求对象
      * @return CreateSignatureKeyV2Response
      */
     public CreateSignatureKeyV2Response createSignatureKeyV2(CreateSignatureKeyV2Request request) {
@@ -1355,13 +1332,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSignatureKeyV2Request 请求对象
+     * @param request CreateSignatureKeyV2Request 请求对象
      * @return SyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response>
      */
     public SyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> createSignatureKeyV2Invoker(
         CreateSignatureKeyV2Request request) {
-        return new SyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response>(request,
-            ApigMeta.createSignatureKeyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createSignatureKeyV2, hcClient);
     }
 
     /**
@@ -1375,7 +1351,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return CreateSpecialThrottlingConfigurationV2Response
      */
     public CreateSpecialThrottlingConfigurationV2Response createSpecialThrottlingConfigurationV2(
@@ -1394,13 +1370,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return SyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response>
      */
     public SyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> createSpecialThrottlingConfigurationV2Invoker(
         CreateSpecialThrottlingConfigurationV2Request request) {
-        return new SyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response>(
-            request, ApigMeta.createSpecialThrottlingConfigurationV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createSpecialThrottlingConfigurationV2, hcClient);
     }
 
     /**
@@ -1410,7 +1385,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppAclRequest 请求对象
+     * @param request DeleteAppAclRequest 请求对象
      * @return DeleteAppAclResponse
      */
     public DeleteAppAclResponse deleteAppAcl(DeleteAppAclRequest request) {
@@ -1424,11 +1399,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppAclRequest 请求对象
+     * @param request DeleteAppAclRequest 请求对象
      * @return SyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse>
      */
     public SyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse> deleteAppAclInvoker(DeleteAppAclRequest request) {
-        return new SyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse>(request, ApigMeta.deleteAppAcl, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteAppAcl, hcClient);
     }
 
     /**
@@ -1438,7 +1413,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppCodeV2Request 请求对象
+     * @param request DeleteAppCodeV2Request 请求对象
      * @return DeleteAppCodeV2Response
      */
     public DeleteAppCodeV2Response deleteAppCodeV2(DeleteAppCodeV2Request request) {
@@ -1452,13 +1427,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppCodeV2Request 请求对象
+     * @param request DeleteAppCodeV2Request 请求对象
      * @return SyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>
      */
     public SyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2Invoker(
         DeleteAppCodeV2Request request) {
-        return new SyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>(request, ApigMeta.deleteAppCodeV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteAppCodeV2, hcClient);
     }
 
     /**
@@ -1468,7 +1442,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppQuotaRequest 请求对象
+     * @param request DeleteAppQuotaRequest 请求对象
      * @return DeleteAppQuotaResponse
      */
     public DeleteAppQuotaResponse deleteAppQuota(DeleteAppQuotaRequest request) {
@@ -1482,13 +1456,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppQuotaRequest 请求对象
+     * @param request DeleteAppQuotaRequest 请求对象
      * @return SyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse>
      */
     public SyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse> deleteAppQuotaInvoker(
         DeleteAppQuotaRequest request) {
-        return new SyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse>(request, ApigMeta.deleteAppQuota,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteAppQuota, hcClient);
     }
 
     /**
@@ -1499,7 +1472,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppV2Request 请求对象
+     * @param request DeleteAppV2Request 请求对象
      * @return DeleteAppV2Response
      */
     public DeleteAppV2Response deleteAppV2(DeleteAppV2Request request) {
@@ -1514,11 +1487,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppV2Request 请求对象
+     * @param request DeleteAppV2Request 请求对象
      * @return SyncInvoker<DeleteAppV2Request, DeleteAppV2Response>
      */
     public SyncInvoker<DeleteAppV2Request, DeleteAppV2Response> deleteAppV2Invoker(DeleteAppV2Request request) {
-        return new SyncInvoker<DeleteAppV2Request, DeleteAppV2Response>(request, ApigMeta.deleteAppV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteAppV2, hcClient);
     }
 
     /**
@@ -1528,7 +1501,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomAuthorizerV2Request 请求对象
+     * @param request DeleteCustomAuthorizerV2Request 请求对象
      * @return DeleteCustomAuthorizerV2Response
      */
     public DeleteCustomAuthorizerV2Response deleteCustomAuthorizerV2(DeleteCustomAuthorizerV2Request request) {
@@ -1542,13 +1515,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomAuthorizerV2Request 请求对象
+     * @param request DeleteCustomAuthorizerV2Request 请求对象
      * @return SyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>
      */
     public SyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> deleteCustomAuthorizerV2Invoker(
         DeleteCustomAuthorizerV2Request request) {
-        return new SyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>(request,
-            ApigMeta.deleteCustomAuthorizerV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteCustomAuthorizerV2, hcClient);
     }
 
     /**
@@ -1558,7 +1530,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointPermissionsRequest 请求对象
+     * @param request DeleteEndpointPermissionsRequest 请求对象
      * @return DeleteEndpointPermissionsResponse
      */
     public DeleteEndpointPermissionsResponse deleteEndpointPermissions(DeleteEndpointPermissionsRequest request) {
@@ -1572,13 +1544,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointPermissionsRequest 请求对象
+     * @param request DeleteEndpointPermissionsRequest 请求对象
      * @return SyncInvoker<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse>
      */
     public SyncInvoker<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse> deleteEndpointPermissionsInvoker(
         DeleteEndpointPermissionsRequest request) {
-        return new SyncInvoker<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse>(request,
-            ApigMeta.deleteEndpointPermissions, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteEndpointPermissions, hcClient);
     }
 
     /**
@@ -1592,7 +1563,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentV2Request 请求对象
+     * @param request DeleteEnvironmentV2Request 请求对象
      * @return DeleteEnvironmentV2Response
      */
     public DeleteEnvironmentV2Response deleteEnvironmentV2(DeleteEnvironmentV2Request request) {
@@ -1610,13 +1581,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentV2Request 请求对象
+     * @param request DeleteEnvironmentV2Request 请求对象
      * @return SyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>
      */
     public SyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> deleteEnvironmentV2Invoker(
         DeleteEnvironmentV2Request request) {
-        return new SyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>(request,
-            ApigMeta.deleteEnvironmentV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteEnvironmentV2, hcClient);
     }
 
     /**
@@ -1626,7 +1596,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentVariableV2Request 请求对象
+     * @param request DeleteEnvironmentVariableV2Request 请求对象
      * @return DeleteEnvironmentVariableV2Response
      */
     public DeleteEnvironmentVariableV2Response deleteEnvironmentVariableV2(DeleteEnvironmentVariableV2Request request) {
@@ -1640,13 +1610,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentVariableV2Request 请求对象
+     * @param request DeleteEnvironmentVariableV2Request 请求对象
      * @return SyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response>
      */
     public SyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> deleteEnvironmentVariableV2Invoker(
         DeleteEnvironmentVariableV2Request request) {
-        return new SyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response>(request,
-            ApigMeta.deleteEnvironmentVariableV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -1656,7 +1625,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGatewayResponseTypeV2Request 请求对象
+     * @param request DeleteGatewayResponseTypeV2Request 请求对象
      * @return DeleteGatewayResponseTypeV2Response
      */
     public DeleteGatewayResponseTypeV2Response deleteGatewayResponseTypeV2(DeleteGatewayResponseTypeV2Request request) {
@@ -1670,13 +1639,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGatewayResponseTypeV2Request 请求对象
+     * @param request DeleteGatewayResponseTypeV2Request 请求对象
      * @return SyncInvoker<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response>
      */
     public SyncInvoker<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> deleteGatewayResponseTypeV2Invoker(
         DeleteGatewayResponseTypeV2Request request) {
-        return new SyncInvoker<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response>(request,
-            ApigMeta.deleteGatewayResponseTypeV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteGatewayResponseTypeV2, hcClient);
     }
 
     /**
@@ -1686,7 +1654,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGatewayResponseV2Request 请求对象
+     * @param request DeleteGatewayResponseV2Request 请求对象
      * @return DeleteGatewayResponseV2Response
      */
     public DeleteGatewayResponseV2Response deleteGatewayResponseV2(DeleteGatewayResponseV2Request request) {
@@ -1700,13 +1668,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGatewayResponseV2Request 请求对象
+     * @param request DeleteGatewayResponseV2Request 请求对象
      * @return SyncInvoker<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response>
      */
     public SyncInvoker<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> deleteGatewayResponseV2Invoker(
         DeleteGatewayResponseV2Request request) {
-        return new SyncInvoker<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response>(request,
-            ApigMeta.deleteGatewayResponseV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteGatewayResponseV2, hcClient);
     }
 
     /**
@@ -1716,7 +1683,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstancesV2Request 请求对象
+     * @param request DeleteInstancesV2Request 请求对象
      * @return DeleteInstancesV2Response
      */
     public DeleteInstancesV2Response deleteInstancesV2(DeleteInstancesV2Request request) {
@@ -1730,13 +1697,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstancesV2Request 请求对象
+     * @param request DeleteInstancesV2Request 请求对象
      * @return SyncInvoker<DeleteInstancesV2Request, DeleteInstancesV2Response>
      */
     public SyncInvoker<DeleteInstancesV2Request, DeleteInstancesV2Response> deleteInstancesV2Invoker(
         DeleteInstancesV2Request request) {
-        return new SyncInvoker<DeleteInstancesV2Request, DeleteInstancesV2Response>(request, ApigMeta.deleteInstancesV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteInstancesV2, hcClient);
     }
 
     /**
@@ -1747,7 +1713,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePluginRequest 请求对象
+     * @param request DeletePluginRequest 请求对象
      * @return DeletePluginResponse
      */
     public DeletePluginResponse deletePlugin(DeletePluginRequest request) {
@@ -1762,11 +1728,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePluginRequest 请求对象
+     * @param request DeletePluginRequest 请求对象
      * @return SyncInvoker<DeletePluginRequest, DeletePluginResponse>
      */
     public SyncInvoker<DeletePluginRequest, DeletePluginResponse> deletePluginInvoker(DeletePluginRequest request) {
-        return new SyncInvoker<DeletePluginRequest, DeletePluginResponse>(request, ApigMeta.deletePlugin, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deletePlugin, hcClient);
     }
 
     /**
@@ -1776,7 +1742,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRequestThrottlingPolicyV2Request 请求对象
+     * @param request DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return DeleteRequestThrottlingPolicyV2Response
      */
     public DeleteRequestThrottlingPolicyV2Response deleteRequestThrottlingPolicyV2(
@@ -1791,13 +1757,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRequestThrottlingPolicyV2Request 请求对象
+     * @param request DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response>
      */
     public SyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> deleteRequestThrottlingPolicyV2Invoker(
         DeleteRequestThrottlingPolicyV2Request request) {
-        return new SyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response>(request,
-            ApigMeta.deleteRequestThrottlingPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -1807,7 +1772,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSignatureKeyV2Request 请求对象
+     * @param request DeleteSignatureKeyV2Request 请求对象
      * @return DeleteSignatureKeyV2Response
      */
     public DeleteSignatureKeyV2Response deleteSignatureKeyV2(DeleteSignatureKeyV2Request request) {
@@ -1821,13 +1786,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSignatureKeyV2Request 请求对象
+     * @param request DeleteSignatureKeyV2Request 请求对象
      * @return SyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response>
      */
     public SyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> deleteSignatureKeyV2Invoker(
         DeleteSignatureKeyV2Request request) {
-        return new SyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response>(request,
-            ApigMeta.deleteSignatureKeyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteSignatureKeyV2, hcClient);
     }
 
     /**
@@ -1837,7 +1801,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return DeleteSpecialThrottlingConfigurationV2Response
      */
     public DeleteSpecialThrottlingConfigurationV2Response deleteSpecialThrottlingConfigurationV2(
@@ -1852,13 +1816,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return SyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response>
      */
     public SyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> deleteSpecialThrottlingConfigurationV2Invoker(
         DeleteSpecialThrottlingConfigurationV2Request request) {
-        return new SyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response>(
-            request, ApigMeta.deleteSpecialThrottlingConfigurationV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteSpecialThrottlingConfigurationV2, hcClient);
     }
 
     /**
@@ -1869,7 +1832,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachApiFromPluginRequest 请求对象
+     * @param request DetachApiFromPluginRequest 请求对象
      * @return DetachApiFromPluginResponse
      */
     public DetachApiFromPluginResponse detachApiFromPlugin(DetachApiFromPluginRequest request) {
@@ -1884,13 +1847,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachApiFromPluginRequest 请求对象
+     * @param request DetachApiFromPluginRequest 请求对象
      * @return SyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>
      */
     public SyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse> detachApiFromPluginInvoker(
         DetachApiFromPluginRequest request) {
-        return new SyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>(request,
-            ApigMeta.detachApiFromPlugin, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.detachApiFromPlugin, hcClient);
     }
 
     /**
@@ -1901,7 +1863,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachPluginFromApiRequest 请求对象
+     * @param request DetachPluginFromApiRequest 请求对象
      * @return DetachPluginFromApiResponse
      */
     public DetachPluginFromApiResponse detachPluginFromApi(DetachPluginFromApiRequest request) {
@@ -1916,13 +1878,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachPluginFromApiRequest 请求对象
+     * @param request DetachPluginFromApiRequest 请求对象
      * @return SyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>
      */
     public SyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse> detachPluginFromApiInvoker(
         DetachPluginFromApiRequest request) {
-        return new SyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>(request,
-            ApigMeta.detachPluginFromApi, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.detachPluginFromApi, hcClient);
     }
 
     /**
@@ -1932,7 +1893,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateAppQuotaWithAppRequest 请求对象
+     * @param request DisassociateAppQuotaWithAppRequest 请求对象
      * @return DisassociateAppQuotaWithAppResponse
      */
     public DisassociateAppQuotaWithAppResponse disassociateAppQuotaWithApp(DisassociateAppQuotaWithAppRequest request) {
@@ -1946,13 +1907,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateAppQuotaWithAppRequest 请求对象
+     * @param request DisassociateAppQuotaWithAppRequest 请求对象
      * @return SyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse>
      */
     public SyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithAppInvoker(
         DisassociateAppQuotaWithAppRequest request) {
-        return new SyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse>(request,
-            ApigMeta.disassociateAppQuotaWithApp, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.disassociateAppQuotaWithApp, hcClient);
     }
 
     /**
@@ -1962,7 +1922,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateCertificateV2Request 请求对象
+     * @param request DisassociateCertificateV2Request 请求对象
      * @return DisassociateCertificateV2Response
      */
     public DisassociateCertificateV2Response disassociateCertificateV2(DisassociateCertificateV2Request request) {
@@ -1976,13 +1936,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateCertificateV2Request 请求对象
+     * @param request DisassociateCertificateV2Request 请求对象
      * @return SyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response>
      */
     public SyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response> disassociateCertificateV2Invoker(
         DisassociateCertificateV2Request request) {
-        return new SyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response>(request,
-            ApigMeta.disassociateCertificateV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.disassociateCertificateV2, hcClient);
     }
 
     /**
@@ -1992,7 +1951,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateDomainV2Request 请求对象
+     * @param request DisassociateDomainV2Request 请求对象
      * @return DisassociateDomainV2Response
      */
     public DisassociateDomainV2Response disassociateDomainV2(DisassociateDomainV2Request request) {
@@ -2006,13 +1965,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateDomainV2Request 请求对象
+     * @param request DisassociateDomainV2Request 请求对象
      * @return SyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response>
      */
     public SyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response> disassociateDomainV2Invoker(
         DisassociateDomainV2Request request) {
-        return new SyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response>(request,
-            ApigMeta.disassociateDomainV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.disassociateDomainV2, hcClient);
     }
 
     /**
@@ -2022,7 +1980,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateSignatureKeyV2Request 请求对象
+     * @param request DisassociateSignatureKeyV2Request 请求对象
      * @return DisassociateSignatureKeyV2Response
      */
     public DisassociateSignatureKeyV2Response disassociateSignatureKeyV2(DisassociateSignatureKeyV2Request request) {
@@ -2036,13 +1994,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateSignatureKeyV2Request 请求对象
+     * @param request DisassociateSignatureKeyV2Request 请求对象
      * @return SyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response>
      */
     public SyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> disassociateSignatureKeyV2Invoker(
         DisassociateSignatureKeyV2Request request) {
-        return new SyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response>(request,
-            ApigMeta.disassociateSignatureKeyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.disassociateSignatureKeyV2, hcClient);
     }
 
     /**
@@ -2052,7 +2009,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportMicroserviceRequest 请求对象
+     * @param request ImportMicroserviceRequest 请求对象
      * @return ImportMicroserviceResponse
      */
     public ImportMicroserviceResponse importMicroservice(ImportMicroserviceRequest request) {
@@ -2066,13 +2023,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportMicroserviceRequest 请求对象
+     * @param request ImportMicroserviceRequest 请求对象
      * @return SyncInvoker<ImportMicroserviceRequest, ImportMicroserviceResponse>
      */
     public SyncInvoker<ImportMicroserviceRequest, ImportMicroserviceResponse> importMicroserviceInvoker(
         ImportMicroserviceRequest request) {
-        return new SyncInvoker<ImportMicroserviceRequest, ImportMicroserviceResponse>(request,
-            ApigMeta.importMicroservice, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.importMicroservice, hcClient);
     }
 
     /**
@@ -2084,7 +2040,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachablePluginsRequest 请求对象
+     * @param request ListApiAttachablePluginsRequest 请求对象
      * @return ListApiAttachablePluginsResponse
      */
     public ListApiAttachablePluginsResponse listApiAttachablePlugins(ListApiAttachablePluginsRequest request) {
@@ -2100,13 +2056,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachablePluginsRequest 请求对象
+     * @param request ListApiAttachablePluginsRequest 请求对象
      * @return SyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>
      */
     public SyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> listApiAttachablePluginsInvoker(
         ListApiAttachablePluginsRequest request) {
-        return new SyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>(request,
-            ApigMeta.listApiAttachablePlugins, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApiAttachablePlugins, hcClient);
     }
 
     /**
@@ -2119,7 +2074,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachedPluginsRequest 请求对象
+     * @param request ListApiAttachedPluginsRequest 请求对象
      * @return ListApiAttachedPluginsResponse
      */
     public ListApiAttachedPluginsResponse listApiAttachedPlugins(ListApiAttachedPluginsRequest request) {
@@ -2136,13 +2091,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachedPluginsRequest 请求对象
+     * @param request ListApiAttachedPluginsRequest 请求对象
      * @return SyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>
      */
     public SyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> listApiAttachedPluginsInvoker(
         ListApiAttachedPluginsRequest request) {
-        return new SyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>(request,
-            ApigMeta.listApiAttachedPlugins, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApiAttachedPlugins, hcClient);
     }
 
     /**
@@ -2152,7 +2106,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiGroupsQuantitiesV2Request 请求对象
+     * @param request ListApiGroupsQuantitiesV2Request 请求对象
      * @return ListApiGroupsQuantitiesV2Response
      */
     public ListApiGroupsQuantitiesV2Response listApiGroupsQuantitiesV2(ListApiGroupsQuantitiesV2Request request) {
@@ -2166,13 +2120,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiGroupsQuantitiesV2Request 请求对象
+     * @param request ListApiGroupsQuantitiesV2Request 请求对象
      * @return SyncInvoker<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response>
      */
     public SyncInvoker<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response> listApiGroupsQuantitiesV2Invoker(
         ListApiGroupsQuantitiesV2Request request) {
-        return new SyncInvoker<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response>(request,
-            ApigMeta.listApiGroupsQuantitiesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApiGroupsQuantitiesV2, hcClient);
     }
 
     /**
@@ -2182,7 +2135,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiQuantitiesV2Request 请求对象
+     * @param request ListApiQuantitiesV2Request 请求对象
      * @return ListApiQuantitiesV2Response
      */
     public ListApiQuantitiesV2Response listApiQuantitiesV2(ListApiQuantitiesV2Request request) {
@@ -2196,13 +2149,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiQuantitiesV2Request 请求对象
+     * @param request ListApiQuantitiesV2Request 请求对象
      * @return SyncInvoker<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response>
      */
     public SyncInvoker<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response> listApiQuantitiesV2Invoker(
         ListApiQuantitiesV2Request request) {
-        return new SyncInvoker<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response>(request,
-            ApigMeta.listApiQuantitiesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApiQuantitiesV2, hcClient);
     }
 
     /**
@@ -2212,7 +2164,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToSignatureKeyV2Request 请求对象
+     * @param request ListApisBindedToSignatureKeyV2Request 请求对象
      * @return ListApisBindedToSignatureKeyV2Response
      */
     public ListApisBindedToSignatureKeyV2Response listApisBindedToSignatureKeyV2(
@@ -2227,13 +2179,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToSignatureKeyV2Request 请求对象
+     * @param request ListApisBindedToSignatureKeyV2Request 请求对象
      * @return SyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response>
      */
     public SyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> listApisBindedToSignatureKeyV2Invoker(
         ListApisBindedToSignatureKeyV2Request request) {
-        return new SyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response>(request,
-            ApigMeta.listApisBindedToSignatureKeyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApisBindedToSignatureKeyV2, hcClient);
     }
 
     /**
@@ -2243,7 +2194,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
+     * @param request ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return ListApisNotBoundWithSignatureKeyV2Response
      */
     public ListApisNotBoundWithSignatureKeyV2Response listApisNotBoundWithSignatureKeyV2(
@@ -2258,13 +2209,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
+     * @param request ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return SyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response>
      */
     public SyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> listApisNotBoundWithSignatureKeyV2Invoker(
         ListApisNotBoundWithSignatureKeyV2Request request) {
-        return new SyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response>(
-            request, ApigMeta.listApisNotBoundWithSignatureKeyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApisNotBoundWithSignatureKeyV2, hcClient);
     }
 
     /**
@@ -2274,7 +2224,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppCodesV2Request 请求对象
+     * @param request ListAppCodesV2Request 请求对象
      * @return ListAppCodesV2Response
      */
     public ListAppCodesV2Response listAppCodesV2(ListAppCodesV2Request request) {
@@ -2288,13 +2238,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppCodesV2Request 请求对象
+     * @param request ListAppCodesV2Request 请求对象
      * @return SyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>
      */
     public SyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2Invoker(
         ListAppCodesV2Request request) {
-        return new SyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>(request, ApigMeta.listAppCodesV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAppCodesV2, hcClient);
     }
 
     /**
@@ -2304,7 +2253,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuantitiesV2Request 请求对象
+     * @param request ListAppQuantitiesV2Request 请求对象
      * @return ListAppQuantitiesV2Response
      */
     public ListAppQuantitiesV2Response listAppQuantitiesV2(ListAppQuantitiesV2Request request) {
@@ -2318,13 +2267,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuantitiesV2Request 请求对象
+     * @param request ListAppQuantitiesV2Request 请求对象
      * @return SyncInvoker<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response>
      */
     public SyncInvoker<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response> listAppQuantitiesV2Invoker(
         ListAppQuantitiesV2Request request) {
-        return new SyncInvoker<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response>(request,
-            ApigMeta.listAppQuantitiesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAppQuantitiesV2, hcClient);
     }
 
     /**
@@ -2334,7 +2282,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBindableAppsRequest 请求对象
+     * @param request ListAppQuotaBindableAppsRequest 请求对象
      * @return ListAppQuotaBindableAppsResponse
      */
     public ListAppQuotaBindableAppsResponse listAppQuotaBindableApps(ListAppQuotaBindableAppsRequest request) {
@@ -2348,13 +2296,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBindableAppsRequest 请求对象
+     * @param request ListAppQuotaBindableAppsRequest 请求对象
      * @return SyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse>
      */
     public SyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> listAppQuotaBindableAppsInvoker(
         ListAppQuotaBindableAppsRequest request) {
-        return new SyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse>(request,
-            ApigMeta.listAppQuotaBindableApps, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAppQuotaBindableApps, hcClient);
     }
 
     /**
@@ -2364,7 +2311,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBoundAppsRequest 请求对象
+     * @param request ListAppQuotaBoundAppsRequest 请求对象
      * @return ListAppQuotaBoundAppsResponse
      */
     public ListAppQuotaBoundAppsResponse listAppQuotaBoundApps(ListAppQuotaBoundAppsRequest request) {
@@ -2378,13 +2325,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBoundAppsRequest 请求对象
+     * @param request ListAppQuotaBoundAppsRequest 请求对象
      * @return SyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse>
      */
     public SyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> listAppQuotaBoundAppsInvoker(
         ListAppQuotaBoundAppsRequest request) {
-        return new SyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse>(request,
-            ApigMeta.listAppQuotaBoundApps, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAppQuotaBoundApps, hcClient);
     }
 
     /**
@@ -2394,7 +2340,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotasRequest 请求对象
+     * @param request ListAppQuotasRequest 请求对象
      * @return ListAppQuotasResponse
      */
     public ListAppQuotasResponse listAppQuotas(ListAppQuotasRequest request) {
@@ -2408,11 +2354,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotasRequest 请求对象
+     * @param request ListAppQuotasRequest 请求对象
      * @return SyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>
      */
     public SyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse> listAppQuotasInvoker(ListAppQuotasRequest request) {
-        return new SyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>(request, ApigMeta.listAppQuotas, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAppQuotas, hcClient);
     }
 
     /**
@@ -2422,7 +2368,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsV2Request 请求对象
+     * @param request ListAppsV2Request 请求对象
      * @return ListAppsV2Response
      */
     public ListAppsV2Response listAppsV2(ListAppsV2Request request) {
@@ -2436,11 +2382,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsV2Request 请求对象
+     * @param request ListAppsV2Request 请求对象
      * @return SyncInvoker<ListAppsV2Request, ListAppsV2Response>
      */
     public SyncInvoker<ListAppsV2Request, ListAppsV2Response> listAppsV2Invoker(ListAppsV2Request request) {
-        return new SyncInvoker<ListAppsV2Request, ListAppsV2Response>(request, ApigMeta.listAppsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAppsV2, hcClient);
     }
 
     /**
@@ -2450,7 +2396,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesV2Request 请求对象
+     * @param request ListAvailableZonesV2Request 请求对象
      * @return ListAvailableZonesV2Response
      */
     public ListAvailableZonesV2Response listAvailableZonesV2(ListAvailableZonesV2Request request) {
@@ -2464,13 +2410,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesV2Request 请求对象
+     * @param request ListAvailableZonesV2Request 请求对象
      * @return SyncInvoker<ListAvailableZonesV2Request, ListAvailableZonesV2Response>
      */
     public SyncInvoker<ListAvailableZonesV2Request, ListAvailableZonesV2Response> listAvailableZonesV2Invoker(
         ListAvailableZonesV2Request request) {
-        return new SyncInvoker<ListAvailableZonesV2Request, ListAvailableZonesV2Response>(request,
-            ApigMeta.listAvailableZonesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAvailableZonesV2, hcClient);
     }
 
     /**
@@ -2480,7 +2425,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomAuthorizersV2Request 请求对象
+     * @param request ListCustomAuthorizersV2Request 请求对象
      * @return ListCustomAuthorizersV2Response
      */
     public ListCustomAuthorizersV2Response listCustomAuthorizersV2(ListCustomAuthorizersV2Request request) {
@@ -2494,13 +2439,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomAuthorizersV2Request 请求对象
+     * @param request ListCustomAuthorizersV2Request 请求对象
      * @return SyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>
      */
     public SyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> listCustomAuthorizersV2Invoker(
         ListCustomAuthorizersV2Request request) {
-        return new SyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>(request,
-            ApigMeta.listCustomAuthorizersV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listCustomAuthorizersV2, hcClient);
     }
 
     /**
@@ -2510,7 +2454,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointConnectionsRequest 请求对象
+     * @param request ListEndpointConnectionsRequest 请求对象
      * @return ListEndpointConnectionsResponse
      */
     public ListEndpointConnectionsResponse listEndpointConnections(ListEndpointConnectionsRequest request) {
@@ -2524,13 +2468,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointConnectionsRequest 请求对象
+     * @param request ListEndpointConnectionsRequest 请求对象
      * @return SyncInvoker<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse>
      */
     public SyncInvoker<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse> listEndpointConnectionsInvoker(
         ListEndpointConnectionsRequest request) {
-        return new SyncInvoker<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse>(request,
-            ApigMeta.listEndpointConnections, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listEndpointConnections, hcClient);
     }
 
     /**
@@ -2540,7 +2483,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointPermissionsRequest 请求对象
+     * @param request ListEndpointPermissionsRequest 请求对象
      * @return ListEndpointPermissionsResponse
      */
     public ListEndpointPermissionsResponse listEndpointPermissions(ListEndpointPermissionsRequest request) {
@@ -2554,13 +2497,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointPermissionsRequest 请求对象
+     * @param request ListEndpointPermissionsRequest 请求对象
      * @return SyncInvoker<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse>
      */
     public SyncInvoker<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse> listEndpointPermissionsInvoker(
         ListEndpointPermissionsRequest request) {
-        return new SyncInvoker<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse>(request,
-            ApigMeta.listEndpointPermissions, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listEndpointPermissions, hcClient);
     }
 
     /**
@@ -2570,7 +2512,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentVariablesV2Request 请求对象
+     * @param request ListEnvironmentVariablesV2Request 请求对象
      * @return ListEnvironmentVariablesV2Response
      */
     public ListEnvironmentVariablesV2Response listEnvironmentVariablesV2(ListEnvironmentVariablesV2Request request) {
@@ -2584,13 +2526,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentVariablesV2Request 请求对象
+     * @param request ListEnvironmentVariablesV2Request 请求对象
      * @return SyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response>
      */
     public SyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> listEnvironmentVariablesV2Invoker(
         ListEnvironmentVariablesV2Request request) {
-        return new SyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response>(request,
-            ApigMeta.listEnvironmentVariablesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listEnvironmentVariablesV2, hcClient);
     }
 
     /**
@@ -2600,7 +2541,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentsV2Request 请求对象
+     * @param request ListEnvironmentsV2Request 请求对象
      * @return ListEnvironmentsV2Response
      */
     public ListEnvironmentsV2Response listEnvironmentsV2(ListEnvironmentsV2Request request) {
@@ -2614,13 +2555,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentsV2Request 请求对象
+     * @param request ListEnvironmentsV2Request 请求对象
      * @return SyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response>
      */
     public SyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response> listEnvironmentsV2Invoker(
         ListEnvironmentsV2Request request) {
-        return new SyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response>(request,
-            ApigMeta.listEnvironmentsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listEnvironmentsV2, hcClient);
     }
 
     /**
@@ -2632,7 +2572,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFeaturesV2Request 请求对象
+     * @param request ListFeaturesV2Request 请求对象
      * @return ListFeaturesV2Response
      */
     public ListFeaturesV2Response listFeaturesV2(ListFeaturesV2Request request) {
@@ -2648,13 +2588,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFeaturesV2Request 请求对象
+     * @param request ListFeaturesV2Request 请求对象
      * @return SyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response>
      */
     public SyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response> listFeaturesV2Invoker(
         ListFeaturesV2Request request) {
-        return new SyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response>(request, ApigMeta.listFeaturesV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listFeaturesV2, hcClient);
     }
 
     /**
@@ -2664,7 +2603,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGatewayResponsesV2Request 请求对象
+     * @param request ListGatewayResponsesV2Request 请求对象
      * @return ListGatewayResponsesV2Response
      */
     public ListGatewayResponsesV2Response listGatewayResponsesV2(ListGatewayResponsesV2Request request) {
@@ -2678,13 +2617,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGatewayResponsesV2Request 请求对象
+     * @param request ListGatewayResponsesV2Request 请求对象
      * @return SyncInvoker<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response>
      */
     public SyncInvoker<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> listGatewayResponsesV2Invoker(
         ListGatewayResponsesV2Request request) {
-        return new SyncInvoker<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response>(request,
-            ApigMeta.listGatewayResponsesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listGatewayResponsesV2, hcClient);
     }
 
     /**
@@ -2694,7 +2632,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConfigsV2Request 请求对象
+     * @param request ListInstanceConfigsV2Request 请求对象
      * @return ListInstanceConfigsV2Response
      */
     public ListInstanceConfigsV2Response listInstanceConfigsV2(ListInstanceConfigsV2Request request) {
@@ -2708,13 +2646,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConfigsV2Request 请求对象
+     * @param request ListInstanceConfigsV2Request 请求对象
      * @return SyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response>
      */
     public SyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response> listInstanceConfigsV2Invoker(
         ListInstanceConfigsV2Request request) {
-        return new SyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response>(request,
-            ApigMeta.listInstanceConfigsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listInstanceConfigsV2, hcClient);
     }
 
     /**
@@ -2724,7 +2661,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTagsRequest 请求对象
+     * @param request ListInstanceTagsRequest 请求对象
      * @return ListInstanceTagsResponse
      */
     public ListInstanceTagsResponse listInstanceTags(ListInstanceTagsRequest request) {
@@ -2738,13 +2675,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTagsRequest 请求对象
+     * @param request ListInstanceTagsRequest 请求对象
      * @return SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
      */
     public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(
         ListInstanceTagsRequest request) {
-        return new SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, ApigMeta.listInstanceTags,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listInstanceTags, hcClient);
     }
 
     /**
@@ -2754,7 +2690,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesV2Request 请求对象
+     * @param request ListInstancesV2Request 请求对象
      * @return ListInstancesV2Response
      */
     public ListInstancesV2Response listInstancesV2(ListInstancesV2Request request) {
@@ -2768,13 +2704,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesV2Request 请求对象
+     * @param request ListInstancesV2Request 请求对象
      * @return SyncInvoker<ListInstancesV2Request, ListInstancesV2Response>
      */
     public SyncInvoker<ListInstancesV2Request, ListInstancesV2Response> listInstancesV2Invoker(
         ListInstancesV2Request request) {
-        return new SyncInvoker<ListInstancesV2Request, ListInstancesV2Response>(request, ApigMeta.listInstancesV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listInstancesV2, hcClient);
     }
 
     /**
@@ -2785,7 +2720,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLatelyApiStatisticsV2Request 请求对象
+     * @param request ListLatelyApiStatisticsV2Request 请求对象
      * @return ListLatelyApiStatisticsV2Response
      */
     public ListLatelyApiStatisticsV2Response listLatelyApiStatisticsV2(ListLatelyApiStatisticsV2Request request) {
@@ -2800,13 +2735,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLatelyApiStatisticsV2Request 请求对象
+     * @param request ListLatelyApiStatisticsV2Request 请求对象
      * @return SyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response>
      */
     public SyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> listLatelyApiStatisticsV2Invoker(
         ListLatelyApiStatisticsV2Request request) {
-        return new SyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response>(request,
-            ApigMeta.listLatelyApiStatisticsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listLatelyApiStatisticsV2, hcClient);
     }
 
     /**
@@ -2817,7 +2751,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLatelyGroupStatisticsV2Request 请求对象
+     * @param request ListLatelyGroupStatisticsV2Request 请求对象
      * @return ListLatelyGroupStatisticsV2Response
      */
     public ListLatelyGroupStatisticsV2Response listLatelyGroupStatisticsV2(ListLatelyGroupStatisticsV2Request request) {
@@ -2832,13 +2766,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLatelyGroupStatisticsV2Request 请求对象
+     * @param request ListLatelyGroupStatisticsV2Request 请求对象
      * @return SyncInvoker<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response>
      */
     public SyncInvoker<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> listLatelyGroupStatisticsV2Invoker(
         ListLatelyGroupStatisticsV2Request request) {
-        return new SyncInvoker<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response>(request,
-            ApigMeta.listLatelyGroupStatisticsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listLatelyGroupStatisticsV2, hcClient);
     }
 
     /**
@@ -2848,7 +2781,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetricDataRequest 请求对象
+     * @param request ListMetricDataRequest 请求对象
      * @return ListMetricDataResponse
      */
     public ListMetricDataResponse listMetricData(ListMetricDataRequest request) {
@@ -2862,13 +2795,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetricDataRequest 请求对象
+     * @param request ListMetricDataRequest 请求对象
      * @return SyncInvoker<ListMetricDataRequest, ListMetricDataResponse>
      */
     public SyncInvoker<ListMetricDataRequest, ListMetricDataResponse> listMetricDataInvoker(
         ListMetricDataRequest request) {
-        return new SyncInvoker<ListMetricDataRequest, ListMetricDataResponse>(request, ApigMeta.listMetricData,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listMetricData, hcClient);
     }
 
     /**
@@ -2881,7 +2813,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachableApisRequest 请求对象
+     * @param request ListPluginAttachableApisRequest 请求对象
      * @return ListPluginAttachableApisResponse
      */
     public ListPluginAttachableApisResponse listPluginAttachableApis(ListPluginAttachableApisRequest request) {
@@ -2898,13 +2830,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachableApisRequest 请求对象
+     * @param request ListPluginAttachableApisRequest 请求对象
      * @return SyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>
      */
     public SyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> listPluginAttachableApisInvoker(
         ListPluginAttachableApisRequest request) {
-        return new SyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>(request,
-            ApigMeta.listPluginAttachableApis, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listPluginAttachableApis, hcClient);
     }
 
     /**
@@ -2918,7 +2849,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachedApisRequest 请求对象
+     * @param request ListPluginAttachedApisRequest 请求对象
      * @return ListPluginAttachedApisResponse
      */
     public ListPluginAttachedApisResponse listPluginAttachedApis(ListPluginAttachedApisRequest request) {
@@ -2936,13 +2867,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachedApisRequest 请求对象
+     * @param request ListPluginAttachedApisRequest 请求对象
      * @return SyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>
      */
     public SyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> listPluginAttachedApisInvoker(
         ListPluginAttachedApisRequest request) {
-        return new SyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>(request,
-            ApigMeta.listPluginAttachedApis, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listPluginAttachedApis, hcClient);
     }
 
     /**
@@ -2957,7 +2887,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return ListPluginsResponse
      */
     public ListPluginsResponse listPlugins(ListPluginsRequest request) {
@@ -2976,11 +2906,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return SyncInvoker<ListPluginsRequest, ListPluginsResponse>
      */
     public SyncInvoker<ListPluginsRequest, ListPluginsResponse> listPluginsInvoker(ListPluginsRequest request) {
-        return new SyncInvoker<ListPluginsRequest, ListPluginsResponse>(request, ApigMeta.listPlugins, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listPlugins, hcClient);
     }
 
     /**
@@ -2990,7 +2920,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectCofigsV2Request 请求对象
+     * @param request ListProjectCofigsV2Request 请求对象
      * @return ListProjectCofigsV2Response
      */
     public ListProjectCofigsV2Response listProjectCofigsV2(ListProjectCofigsV2Request request) {
@@ -3004,13 +2934,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectCofigsV2Request 请求对象
+     * @param request ListProjectCofigsV2Request 请求对象
      * @return SyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>
      */
     public SyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response> listProjectCofigsV2Invoker(
         ListProjectCofigsV2Request request) {
-        return new SyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>(request,
-            ApigMeta.listProjectCofigsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listProjectCofigsV2, hcClient);
     }
 
     /**
@@ -3020,7 +2949,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectInstanceTagsRequest 请求对象
+     * @param request ListProjectInstanceTagsRequest 请求对象
      * @return ListProjectInstanceTagsResponse
      */
     public ListProjectInstanceTagsResponse listProjectInstanceTags(ListProjectInstanceTagsRequest request) {
@@ -3034,13 +2963,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectInstanceTagsRequest 请求对象
+     * @param request ListProjectInstanceTagsRequest 请求对象
      * @return SyncInvoker<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse>
      */
     public SyncInvoker<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse> listProjectInstanceTagsInvoker(
         ListProjectInstanceTagsRequest request) {
-        return new SyncInvoker<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse>(request,
-            ApigMeta.listProjectInstanceTags, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listProjectInstanceTags, hcClient);
     }
 
     /**
@@ -3050,7 +2978,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListRequestThrottlingPolicyV2Request 请求对象
      * @return ListRequestThrottlingPolicyV2Response
      */
     public ListRequestThrottlingPolicyV2Response listRequestThrottlingPolicyV2(
@@ -3065,13 +2993,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response>
      */
     public SyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> listRequestThrottlingPolicyV2Invoker(
         ListRequestThrottlingPolicyV2Request request) {
-        return new SyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response>(request,
-            ApigMeta.listRequestThrottlingPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -3081,7 +3008,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysBindedToApiV2Request 请求对象
+     * @param request ListSignatureKeysBindedToApiV2Request 请求对象
      * @return ListSignatureKeysBindedToApiV2Response
      */
     public ListSignatureKeysBindedToApiV2Response listSignatureKeysBindedToApiV2(
@@ -3096,13 +3023,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysBindedToApiV2Request 请求对象
+     * @param request ListSignatureKeysBindedToApiV2Request 请求对象
      * @return SyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response>
      */
     public SyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> listSignatureKeysBindedToApiV2Invoker(
         ListSignatureKeysBindedToApiV2Request request) {
-        return new SyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response>(request,
-            ApigMeta.listSignatureKeysBindedToApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listSignatureKeysBindedToApiV2, hcClient);
     }
 
     /**
@@ -3112,7 +3038,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysV2Request 请求对象
+     * @param request ListSignatureKeysV2Request 请求对象
      * @return ListSignatureKeysV2Response
      */
     public ListSignatureKeysV2Response listSignatureKeysV2(ListSignatureKeysV2Request request) {
@@ -3126,13 +3052,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysV2Request 请求对象
+     * @param request ListSignatureKeysV2Request 请求对象
      * @return SyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response>
      */
     public SyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response> listSignatureKeysV2Invoker(
         ListSignatureKeysV2Request request) {
-        return new SyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response>(request,
-            ApigMeta.listSignatureKeysV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listSignatureKeysV2, hcClient);
     }
 
     /**
@@ -3142,7 +3067,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
+     * @param request ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return ListSpecialThrottlingConfigurationsV2Response
      */
     public ListSpecialThrottlingConfigurationsV2Response listSpecialThrottlingConfigurationsV2(
@@ -3157,13 +3082,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
+     * @param request ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return SyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response>
      */
     public SyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> listSpecialThrottlingConfigurationsV2Invoker(
         ListSpecialThrottlingConfigurationsV2Request request) {
-        return new SyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response>(
-            request, ApigMeta.listSpecialThrottlingConfigurationsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listSpecialThrottlingConfigurationsV2, hcClient);
     }
 
     /**
@@ -3173,7 +3097,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsV2Request 请求对象
+     * @param request ListTagsV2Request 请求对象
      * @return ListTagsV2Response
      */
     public ListTagsV2Response listTagsV2(ListTagsV2Request request) {
@@ -3187,11 +3111,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsV2Request 请求对象
+     * @param request ListTagsV2Request 请求对象
      * @return SyncInvoker<ListTagsV2Request, ListTagsV2Response>
      */
     public SyncInvoker<ListTagsV2Request, ListTagsV2Response> listTagsV2Invoker(ListTagsV2Request request) {
-        return new SyncInvoker<ListTagsV2Request, ListTagsV2Response>(request, ApigMeta.listTagsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listTagsV2, hcClient);
     }
 
     /**
@@ -3201,7 +3125,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveEipV2Request 请求对象
+     * @param request RemoveEipV2Request 请求对象
      * @return RemoveEipV2Response
      */
     public RemoveEipV2Response removeEipV2(RemoveEipV2Request request) {
@@ -3215,11 +3139,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveEipV2Request 请求对象
+     * @param request RemoveEipV2Request 请求对象
      * @return SyncInvoker<RemoveEipV2Request, RemoveEipV2Response>
      */
     public SyncInvoker<RemoveEipV2Request, RemoveEipV2Response> removeEipV2Invoker(RemoveEipV2Request request) {
-        return new SyncInvoker<RemoveEipV2Request, RemoveEipV2Response>(request, ApigMeta.removeEipV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.removeEipV2, hcClient);
     }
 
     /**
@@ -3229,7 +3153,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveEngressEipV2Request 请求对象
+     * @param request RemoveEngressEipV2Request 请求对象
      * @return RemoveEngressEipV2Response
      */
     public RemoveEngressEipV2Response removeEngressEipV2(RemoveEngressEipV2Request request) {
@@ -3243,13 +3167,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveEngressEipV2Request 请求对象
+     * @param request RemoveEngressEipV2Request 请求对象
      * @return SyncInvoker<RemoveEngressEipV2Request, RemoveEngressEipV2Response>
      */
     public SyncInvoker<RemoveEngressEipV2Request, RemoveEngressEipV2Response> removeEngressEipV2Invoker(
         RemoveEngressEipV2Request request) {
-        return new SyncInvoker<RemoveEngressEipV2Request, RemoveEngressEipV2Response>(request,
-            ApigMeta.removeEngressEipV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.removeEngressEipV2, hcClient);
     }
 
     /**
@@ -3259,7 +3182,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveIngressEipV2Request 请求对象
+     * @param request RemoveIngressEipV2Request 请求对象
      * @return RemoveIngressEipV2Response
      */
     public RemoveIngressEipV2Response removeIngressEipV2(RemoveIngressEipV2Request request) {
@@ -3273,13 +3196,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveIngressEipV2Request 请求对象
+     * @param request RemoveIngressEipV2Request 请求对象
      * @return SyncInvoker<RemoveIngressEipV2Request, RemoveIngressEipV2Response>
      */
     public SyncInvoker<RemoveIngressEipV2Request, RemoveIngressEipV2Response> removeIngressEipV2Invoker(
         RemoveIngressEipV2Request request) {
-        return new SyncInvoker<RemoveIngressEipV2Request, RemoveIngressEipV2Response>(request,
-            ApigMeta.removeIngressEipV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.removeIngressEipV2, hcClient);
     }
 
     /**
@@ -3289,7 +3211,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResettingAppSecretV2Request 请求对象
+     * @param request ResettingAppSecretV2Request 请求对象
      * @return ResettingAppSecretV2Response
      */
     public ResettingAppSecretV2Response resettingAppSecretV2(ResettingAppSecretV2Request request) {
@@ -3303,13 +3225,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResettingAppSecretV2Request 请求对象
+     * @param request ResettingAppSecretV2Request 请求对象
      * @return SyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response>
      */
     public SyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response> resettingAppSecretV2Invoker(
         ResettingAppSecretV2Request request) {
-        return new SyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response>(request,
-            ApigMeta.resettingAppSecretV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.resettingAppSecretV2, hcClient);
     }
 
     /**
@@ -3319,7 +3240,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppBoundAppQuotaRequest 请求对象
+     * @param request ShowAppBoundAppQuotaRequest 请求对象
      * @return ShowAppBoundAppQuotaResponse
      */
     public ShowAppBoundAppQuotaResponse showAppBoundAppQuota(ShowAppBoundAppQuotaRequest request) {
@@ -3333,13 +3254,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppBoundAppQuotaRequest 请求对象
+     * @param request ShowAppBoundAppQuotaRequest 请求对象
      * @return SyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse>
      */
     public SyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> showAppBoundAppQuotaInvoker(
         ShowAppBoundAppQuotaRequest request) {
-        return new SyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse>(request,
-            ApigMeta.showAppBoundAppQuota, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showAppBoundAppQuota, hcClient);
     }
 
     /**
@@ -3349,7 +3269,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppQuotaRequest 请求对象
+     * @param request ShowAppQuotaRequest 请求对象
      * @return ShowAppQuotaResponse
      */
     public ShowAppQuotaResponse showAppQuota(ShowAppQuotaRequest request) {
@@ -3363,11 +3283,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppQuotaRequest 请求对象
+     * @param request ShowAppQuotaRequest 请求对象
      * @return SyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse>
      */
     public SyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse> showAppQuotaInvoker(ShowAppQuotaRequest request) {
-        return new SyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse>(request, ApigMeta.showAppQuota, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showAppQuota, hcClient);
     }
 
     /**
@@ -3377,7 +3297,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppAclRequest 请求对象
+     * @param request ShowDetailsOfAppAclRequest 请求对象
      * @return ShowDetailsOfAppAclResponse
      */
     public ShowDetailsOfAppAclResponse showDetailsOfAppAcl(ShowDetailsOfAppAclRequest request) {
@@ -3391,13 +3311,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppAclRequest 请求对象
+     * @param request ShowDetailsOfAppAclRequest 请求对象
      * @return SyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse>
      */
     public SyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> showDetailsOfAppAclInvoker(
         ShowDetailsOfAppAclRequest request) {
-        return new SyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse>(request,
-            ApigMeta.showDetailsOfAppAcl, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfAppAcl, hcClient);
     }
 
     /**
@@ -3407,7 +3326,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppCodeV2Request 请求对象
+     * @param request ShowDetailsOfAppCodeV2Request 请求对象
      * @return ShowDetailsOfAppCodeV2Response
      */
     public ShowDetailsOfAppCodeV2Response showDetailsOfAppCodeV2(ShowDetailsOfAppCodeV2Request request) {
@@ -3421,13 +3340,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppCodeV2Request 请求对象
+     * @param request ShowDetailsOfAppCodeV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>
      */
     public SyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2Invoker(
         ShowDetailsOfAppCodeV2Request request) {
-        return new SyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>(request,
-            ApigMeta.showDetailsOfAppCodeV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfAppCodeV2, hcClient);
     }
 
     /**
@@ -3437,7 +3355,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppV2Request 请求对象
+     * @param request ShowDetailsOfAppV2Request 请求对象
      * @return ShowDetailsOfAppV2Response
      */
     public ShowDetailsOfAppV2Response showDetailsOfAppV2(ShowDetailsOfAppV2Request request) {
@@ -3451,13 +3369,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppV2Request 请求对象
+     * @param request ShowDetailsOfAppV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>
      */
     public SyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> showDetailsOfAppV2Invoker(
         ShowDetailsOfAppV2Request request) {
-        return new SyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>(request,
-            ApigMeta.showDetailsOfAppV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfAppV2, hcClient);
     }
 
     /**
@@ -3467,7 +3384,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
+     * @param request ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return ShowDetailsOfCustomAuthorizersV2Response
      */
     public ShowDetailsOfCustomAuthorizersV2Response showDetailsOfCustomAuthorizersV2(
@@ -3482,13 +3399,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
+     * @param request ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response>
      */
     public SyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2Invoker(
         ShowDetailsOfCustomAuthorizersV2Request request) {
-        return new SyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response>(
-            request, ApigMeta.showDetailsOfCustomAuthorizersV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfCustomAuthorizersV2, hcClient);
     }
 
     /**
@@ -3498,7 +3414,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
+     * @param request ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return ShowDetailsOfDomainNameCertificateV2Response
      */
     public ShowDetailsOfDomainNameCertificateV2Response showDetailsOfDomainNameCertificateV2(
@@ -3513,13 +3429,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
+     * @param request ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response>
      */
     public SyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> showDetailsOfDomainNameCertificateV2Invoker(
         ShowDetailsOfDomainNameCertificateV2Request request) {
-        return new SyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response>(
-            request, ApigMeta.showDetailsOfDomainNameCertificateV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfDomainNameCertificateV2, hcClient);
     }
 
     /**
@@ -3529,7 +3444,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
+     * @param request ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return ShowDetailsOfEnvironmentVariableV2Response
      */
     public ShowDetailsOfEnvironmentVariableV2Response showDetailsOfEnvironmentVariableV2(
@@ -3544,13 +3459,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
+     * @param request ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response>
      */
     public SyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> showDetailsOfEnvironmentVariableV2Invoker(
         ShowDetailsOfEnvironmentVariableV2Request request) {
-        return new SyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response>(
-            request, ApigMeta.showDetailsOfEnvironmentVariableV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -3560,7 +3474,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfGatewayResponseTypeV2Request 请求对象
+     * @param request ShowDetailsOfGatewayResponseTypeV2Request 请求对象
      * @return ShowDetailsOfGatewayResponseTypeV2Response
      */
     public ShowDetailsOfGatewayResponseTypeV2Response showDetailsOfGatewayResponseTypeV2(
@@ -3575,13 +3489,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfGatewayResponseTypeV2Request 请求对象
+     * @param request ShowDetailsOfGatewayResponseTypeV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response>
      */
     public SyncInvoker<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> showDetailsOfGatewayResponseTypeV2Invoker(
         ShowDetailsOfGatewayResponseTypeV2Request request) {
-        return new SyncInvoker<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response>(
-            request, ApigMeta.showDetailsOfGatewayResponseTypeV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfGatewayResponseTypeV2, hcClient);
     }
 
     /**
@@ -3591,7 +3504,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfGatewayResponseV2Request 请求对象
+     * @param request ShowDetailsOfGatewayResponseV2Request 请求对象
      * @return ShowDetailsOfGatewayResponseV2Response
      */
     public ShowDetailsOfGatewayResponseV2Response showDetailsOfGatewayResponseV2(
@@ -3606,13 +3519,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfGatewayResponseV2Request 请求对象
+     * @param request ShowDetailsOfGatewayResponseV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response>
      */
     public SyncInvoker<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> showDetailsOfGatewayResponseV2Invoker(
         ShowDetailsOfGatewayResponseV2Request request) {
-        return new SyncInvoker<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response>(request,
-            ApigMeta.showDetailsOfGatewayResponseV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfGatewayResponseV2, hcClient);
     }
 
     /**
@@ -3622,7 +3534,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfInstanceProgressV2Request 请求对象
+     * @param request ShowDetailsOfInstanceProgressV2Request 请求对象
      * @return ShowDetailsOfInstanceProgressV2Response
      */
     public ShowDetailsOfInstanceProgressV2Response showDetailsOfInstanceProgressV2(
@@ -3637,13 +3549,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfInstanceProgressV2Request 请求对象
+     * @param request ShowDetailsOfInstanceProgressV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response>
      */
     public SyncInvoker<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> showDetailsOfInstanceProgressV2Invoker(
         ShowDetailsOfInstanceProgressV2Request request) {
-        return new SyncInvoker<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response>(request,
-            ApigMeta.showDetailsOfInstanceProgressV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfInstanceProgressV2, hcClient);
     }
 
     /**
@@ -3653,7 +3564,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfInstanceV2Request 请求对象
+     * @param request ShowDetailsOfInstanceV2Request 请求对象
      * @return ShowDetailsOfInstanceV2Response
      */
     public ShowDetailsOfInstanceV2Response showDetailsOfInstanceV2(ShowDetailsOfInstanceV2Request request) {
@@ -3667,13 +3578,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfInstanceV2Request 请求对象
+     * @param request ShowDetailsOfInstanceV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>
      */
     public SyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2Invoker(
         ShowDetailsOfInstanceV2Request request) {
-        return new SyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>(request,
-            ApigMeta.showDetailsOfInstanceV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfInstanceV2, hcClient);
     }
 
     /**
@@ -3683,7 +3593,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
+     * @param request ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return ShowDetailsOfRequestThrottlingPolicyV2Response
      */
     public ShowDetailsOfRequestThrottlingPolicyV2Response showDetailsOfRequestThrottlingPolicyV2(
@@ -3698,13 +3608,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
+     * @param request ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response>
      */
     public SyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2Invoker(
         ShowDetailsOfRequestThrottlingPolicyV2Request request) {
-        return new SyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.showDetailsOfRequestThrottlingPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -3714,7 +3623,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginRequest 请求对象
+     * @param request ShowPluginRequest 请求对象
      * @return ShowPluginResponse
      */
     public ShowPluginResponse showPlugin(ShowPluginRequest request) {
@@ -3728,11 +3637,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginRequest 请求对象
+     * @param request ShowPluginRequest 请求对象
      * @return SyncInvoker<ShowPluginRequest, ShowPluginResponse>
      */
     public SyncInvoker<ShowPluginRequest, ShowPluginResponse> showPluginInvoker(ShowPluginRequest request) {
-        return new SyncInvoker<ShowPluginRequest, ShowPluginResponse>(request, ApigMeta.showPlugin, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showPlugin, hcClient);
     }
 
     /**
@@ -3742,7 +3651,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @param request ShowRestrictionOfInstanceV2Request 请求对象
      * @return ShowRestrictionOfInstanceV2Response
      */
     public ShowRestrictionOfInstanceV2Response showRestrictionOfInstanceV2(ShowRestrictionOfInstanceV2Request request) {
@@ -3756,13 +3665,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @param request ShowRestrictionOfInstanceV2Request 请求对象
      * @return SyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>
      */
     public SyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2Invoker(
         ShowRestrictionOfInstanceV2Request request) {
-        return new SyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>(request,
-            ApigMeta.showRestrictionOfInstanceV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showRestrictionOfInstanceV2, hcClient);
     }
 
     /**
@@ -3772,7 +3680,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppAclRequest 请求对象
+     * @param request UpdateAppAclRequest 请求对象
      * @return UpdateAppAclResponse
      */
     public UpdateAppAclResponse updateAppAcl(UpdateAppAclRequest request) {
@@ -3786,11 +3694,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppAclRequest 请求对象
+     * @param request UpdateAppAclRequest 请求对象
      * @return SyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse>
      */
     public SyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse> updateAppAclInvoker(UpdateAppAclRequest request) {
-        return new SyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse>(request, ApigMeta.updateAppAcl, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateAppAcl, hcClient);
     }
 
     /**
@@ -3800,7 +3708,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppQuotaRequest 请求对象
+     * @param request UpdateAppQuotaRequest 请求对象
      * @return UpdateAppQuotaResponse
      */
     public UpdateAppQuotaResponse updateAppQuota(UpdateAppQuotaRequest request) {
@@ -3814,13 +3722,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppQuotaRequest 请求对象
+     * @param request UpdateAppQuotaRequest 请求对象
      * @return SyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse>
      */
     public SyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse> updateAppQuotaInvoker(
         UpdateAppQuotaRequest request) {
-        return new SyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse>(request, ApigMeta.updateAppQuota,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateAppQuota, hcClient);
     }
 
     /**
@@ -3830,7 +3737,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppV2Request 请求对象
+     * @param request UpdateAppV2Request 请求对象
      * @return UpdateAppV2Response
      */
     public UpdateAppV2Response updateAppV2(UpdateAppV2Request request) {
@@ -3844,11 +3751,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppV2Request 请求对象
+     * @param request UpdateAppV2Request 请求对象
      * @return SyncInvoker<UpdateAppV2Request, UpdateAppV2Response>
      */
     public SyncInvoker<UpdateAppV2Request, UpdateAppV2Response> updateAppV2Invoker(UpdateAppV2Request request) {
-        return new SyncInvoker<UpdateAppV2Request, UpdateAppV2Response>(request, ApigMeta.updateAppV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateAppV2, hcClient);
     }
 
     /**
@@ -3858,7 +3765,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomAuthorizerV2Request 请求对象
+     * @param request UpdateCustomAuthorizerV2Request 请求对象
      * @return UpdateCustomAuthorizerV2Response
      */
     public UpdateCustomAuthorizerV2Response updateCustomAuthorizerV2(UpdateCustomAuthorizerV2Request request) {
@@ -3872,13 +3779,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomAuthorizerV2Request 请求对象
+     * @param request UpdateCustomAuthorizerV2Request 请求对象
      * @return SyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response>
      */
     public SyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2Invoker(
         UpdateCustomAuthorizerV2Request request) {
-        return new SyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response>(request,
-            ApigMeta.updateCustomAuthorizerV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateCustomAuthorizerV2, hcClient);
     }
 
     /**
@@ -3888,7 +3794,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainV2Request 请求对象
+     * @param request UpdateDomainV2Request 请求对象
      * @return UpdateDomainV2Response
      */
     public UpdateDomainV2Response updateDomainV2(UpdateDomainV2Request request) {
@@ -3902,13 +3808,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainV2Request 请求对象
+     * @param request UpdateDomainV2Request 请求对象
      * @return SyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>
      */
     public SyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response> updateDomainV2Invoker(
         UpdateDomainV2Request request) {
-        return new SyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>(request, ApigMeta.updateDomainV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateDomainV2, hcClient);
     }
 
     /**
@@ -3918,7 +3823,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEngressEipV2Request 请求对象
+     * @param request UpdateEngressEipV2Request 请求对象
      * @return UpdateEngressEipV2Response
      */
     public UpdateEngressEipV2Response updateEngressEipV2(UpdateEngressEipV2Request request) {
@@ -3932,13 +3837,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEngressEipV2Request 请求对象
+     * @param request UpdateEngressEipV2Request 请求对象
      * @return SyncInvoker<UpdateEngressEipV2Request, UpdateEngressEipV2Response>
      */
     public SyncInvoker<UpdateEngressEipV2Request, UpdateEngressEipV2Response> updateEngressEipV2Invoker(
         UpdateEngressEipV2Request request) {
-        return new SyncInvoker<UpdateEngressEipV2Request, UpdateEngressEipV2Response>(request,
-            ApigMeta.updateEngressEipV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateEngressEipV2, hcClient);
     }
 
     /**
@@ -3948,7 +3852,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentV2Request 请求对象
+     * @param request UpdateEnvironmentV2Request 请求对象
      * @return UpdateEnvironmentV2Response
      */
     public UpdateEnvironmentV2Response updateEnvironmentV2(UpdateEnvironmentV2Request request) {
@@ -3962,13 +3866,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentV2Request 请求对象
+     * @param request UpdateEnvironmentV2Request 请求对象
      * @return SyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>
      */
     public SyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> updateEnvironmentV2Invoker(
         UpdateEnvironmentV2Request request) {
-        return new SyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>(request,
-            ApigMeta.updateEnvironmentV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateEnvironmentV2, hcClient);
     }
 
     /**
@@ -3978,7 +3881,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentVariableV2Request 请求对象
+     * @param request UpdateEnvironmentVariableV2Request 请求对象
      * @return UpdateEnvironmentVariableV2Response
      */
     public UpdateEnvironmentVariableV2Response updateEnvironmentVariableV2(UpdateEnvironmentVariableV2Request request) {
@@ -3992,13 +3895,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentVariableV2Request 请求对象
+     * @param request UpdateEnvironmentVariableV2Request 请求对象
      * @return SyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response>
      */
     public SyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> updateEnvironmentVariableV2Invoker(
         UpdateEnvironmentVariableV2Request request) {
-        return new SyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response>(request,
-            ApigMeta.updateEnvironmentVariableV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -4008,7 +3910,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGatewayResponseTypeV2Request 请求对象
+     * @param request UpdateGatewayResponseTypeV2Request 请求对象
      * @return UpdateGatewayResponseTypeV2Response
      */
     public UpdateGatewayResponseTypeV2Response updateGatewayResponseTypeV2(UpdateGatewayResponseTypeV2Request request) {
@@ -4022,13 +3924,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGatewayResponseTypeV2Request 请求对象
+     * @param request UpdateGatewayResponseTypeV2Request 请求对象
      * @return SyncInvoker<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response>
      */
     public SyncInvoker<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> updateGatewayResponseTypeV2Invoker(
         UpdateGatewayResponseTypeV2Request request) {
-        return new SyncInvoker<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response>(request,
-            ApigMeta.updateGatewayResponseTypeV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateGatewayResponseTypeV2, hcClient);
     }
 
     /**
@@ -4038,7 +3939,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGatewayResponseV2Request 请求对象
+     * @param request UpdateGatewayResponseV2Request 请求对象
      * @return UpdateGatewayResponseV2Response
      */
     public UpdateGatewayResponseV2Response updateGatewayResponseV2(UpdateGatewayResponseV2Request request) {
@@ -4052,13 +3953,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGatewayResponseV2Request 请求对象
+     * @param request UpdateGatewayResponseV2Request 请求对象
      * @return SyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response>
      */
     public SyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> updateGatewayResponseV2Invoker(
         UpdateGatewayResponseV2Request request) {
-        return new SyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response>(request,
-            ApigMeta.updateGatewayResponseV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateGatewayResponseV2, hcClient);
     }
 
     /**
@@ -4068,7 +3968,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIngressEipV2Request 请求对象
+     * @param request UpdateIngressEipV2Request 请求对象
      * @return UpdateIngressEipV2Response
      */
     public UpdateIngressEipV2Response updateIngressEipV2(UpdateIngressEipV2Request request) {
@@ -4082,13 +3982,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIngressEipV2Request 请求对象
+     * @param request UpdateIngressEipV2Request 请求对象
      * @return SyncInvoker<UpdateIngressEipV2Request, UpdateIngressEipV2Response>
      */
     public SyncInvoker<UpdateIngressEipV2Request, UpdateIngressEipV2Response> updateIngressEipV2Invoker(
         UpdateIngressEipV2Request request) {
-        return new SyncInvoker<UpdateIngressEipV2Request, UpdateIngressEipV2Response>(request,
-            ApigMeta.updateIngressEipV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateIngressEipV2, hcClient);
     }
 
     /**
@@ -4098,7 +3997,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceV2Request 请求对象
+     * @param request UpdateInstanceV2Request 请求对象
      * @return UpdateInstanceV2Response
      */
     public UpdateInstanceV2Response updateInstanceV2(UpdateInstanceV2Request request) {
@@ -4112,13 +4011,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceV2Request 请求对象
+     * @param request UpdateInstanceV2Request 请求对象
      * @return SyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response>
      */
     public SyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response> updateInstanceV2Invoker(
         UpdateInstanceV2Request request) {
-        return new SyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response>(request, ApigMeta.updateInstanceV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateInstanceV2, hcClient);
     }
 
     /**
@@ -4130,7 +4028,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginRequest 请求对象
+     * @param request UpdatePluginRequest 请求对象
      * @return UpdatePluginResponse
      */
     public UpdatePluginResponse updatePlugin(UpdatePluginRequest request) {
@@ -4146,11 +4044,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginRequest 请求对象
+     * @param request UpdatePluginRequest 请求对象
      * @return SyncInvoker<UpdatePluginRequest, UpdatePluginResponse>
      */
     public SyncInvoker<UpdatePluginRequest, UpdatePluginResponse> updatePluginInvoker(UpdatePluginRequest request) {
-        return new SyncInvoker<UpdatePluginRequest, UpdatePluginResponse>(request, ApigMeta.updatePlugin, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updatePlugin, hcClient);
     }
 
     /**
@@ -4160,7 +4058,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRequestThrottlingPolicyV2Request 请求对象
+     * @param request UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return UpdateRequestThrottlingPolicyV2Response
      */
     public UpdateRequestThrottlingPolicyV2Response updateRequestThrottlingPolicyV2(
@@ -4175,13 +4073,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRequestThrottlingPolicyV2Request 请求对象
+     * @param request UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response>
      */
     public SyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> updateRequestThrottlingPolicyV2Invoker(
         UpdateRequestThrottlingPolicyV2Request request) {
-        return new SyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response>(request,
-            ApigMeta.updateRequestThrottlingPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -4191,7 +4088,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSignatureKeyV2Request 请求对象
+     * @param request UpdateSignatureKeyV2Request 请求对象
      * @return UpdateSignatureKeyV2Response
      */
     public UpdateSignatureKeyV2Response updateSignatureKeyV2(UpdateSignatureKeyV2Request request) {
@@ -4205,13 +4102,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSignatureKeyV2Request 请求对象
+     * @param request UpdateSignatureKeyV2Request 请求对象
      * @return SyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response>
      */
     public SyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> updateSignatureKeyV2Invoker(
         UpdateSignatureKeyV2Request request) {
-        return new SyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response>(request,
-            ApigMeta.updateSignatureKeyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateSignatureKeyV2, hcClient);
     }
 
     /**
@@ -4221,7 +4117,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return UpdateSpecialThrottlingConfigurationV2Response
      */
     public UpdateSpecialThrottlingConfigurationV2Response updateSpecialThrottlingConfigurationV2(
@@ -4236,13 +4132,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return SyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response>
      */
     public SyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> updateSpecialThrottlingConfigurationV2Invoker(
         UpdateSpecialThrottlingConfigurationV2Request request) {
-        return new SyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response>(
-            request, ApigMeta.updateSpecialThrottlingConfigurationV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateSpecialThrottlingConfigurationV2, hcClient);
     }
 
     /**
@@ -4254,7 +4149,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAclV2Request 请求对象
+     * @param request BatchDeleteAclV2Request 请求对象
      * @return BatchDeleteAclV2Response
      */
     public BatchDeleteAclV2Response batchDeleteAclV2(BatchDeleteAclV2Request request) {
@@ -4270,13 +4165,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAclV2Request 请求对象
+     * @param request BatchDeleteAclV2Request 请求对象
      * @return SyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response>
      */
     public SyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response> batchDeleteAclV2Invoker(
         BatchDeleteAclV2Request request) {
-        return new SyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response>(request, ApigMeta.batchDeleteAclV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchDeleteAclV2, hcClient);
     }
 
     /**
@@ -4286,7 +4180,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAclStrategyV2Request 请求对象
+     * @param request CreateAclStrategyV2Request 请求对象
      * @return CreateAclStrategyV2Response
      */
     public CreateAclStrategyV2Response createAclStrategyV2(CreateAclStrategyV2Request request) {
@@ -4300,13 +4194,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAclStrategyV2Request 请求对象
+     * @param request CreateAclStrategyV2Request 请求对象
      * @return SyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response>
      */
     public SyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response> createAclStrategyV2Invoker(
         CreateAclStrategyV2Request request) {
-        return new SyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response>(request,
-            ApigMeta.createAclStrategyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createAclStrategyV2, hcClient);
     }
 
     /**
@@ -4316,7 +4209,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAclV2Request 请求对象
+     * @param request DeleteAclV2Request 请求对象
      * @return DeleteAclV2Response
      */
     public DeleteAclV2Response deleteAclV2(DeleteAclV2Request request) {
@@ -4330,11 +4223,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAclV2Request 请求对象
+     * @param request DeleteAclV2Request 请求对象
      * @return SyncInvoker<DeleteAclV2Request, DeleteAclV2Response>
      */
     public SyncInvoker<DeleteAclV2Request, DeleteAclV2Response> deleteAclV2Invoker(DeleteAclV2Request request) {
-        return new SyncInvoker<DeleteAclV2Request, DeleteAclV2Response>(request, ApigMeta.deleteAclV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteAclV2, hcClient);
     }
 
     /**
@@ -4344,7 +4237,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclStrategiesV2Request 请求对象
+     * @param request ListAclStrategiesV2Request 请求对象
      * @return ListAclStrategiesV2Response
      */
     public ListAclStrategiesV2Response listAclStrategiesV2(ListAclStrategiesV2Request request) {
@@ -4358,13 +4251,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclStrategiesV2Request 请求对象
+     * @param request ListAclStrategiesV2Request 请求对象
      * @return SyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response>
      */
     public SyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response> listAclStrategiesV2Invoker(
         ListAclStrategiesV2Request request) {
-        return new SyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response>(request,
-            ApigMeta.listAclStrategiesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAclStrategiesV2, hcClient);
     }
 
     /**
@@ -4374,7 +4266,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAclPolicyV2Request 请求对象
+     * @param request ShowDetailsOfAclPolicyV2Request 请求对象
      * @return ShowDetailsOfAclPolicyV2Response
      */
     public ShowDetailsOfAclPolicyV2Response showDetailsOfAclPolicyV2(ShowDetailsOfAclPolicyV2Request request) {
@@ -4388,13 +4280,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAclPolicyV2Request 请求对象
+     * @param request ShowDetailsOfAclPolicyV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response>
      */
     public SyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> showDetailsOfAclPolicyV2Invoker(
         ShowDetailsOfAclPolicyV2Request request) {
-        return new SyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response>(request,
-            ApigMeta.showDetailsOfAclPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfAclPolicyV2, hcClient);
     }
 
     /**
@@ -4404,7 +4295,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclStrategyV2Request 请求对象
+     * @param request UpdateAclStrategyV2Request 请求对象
      * @return UpdateAclStrategyV2Response
      */
     public UpdateAclStrategyV2Response updateAclStrategyV2(UpdateAclStrategyV2Request request) {
@@ -4418,13 +4309,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclStrategyV2Request 请求对象
+     * @param request UpdateAclStrategyV2Request 请求对象
      * @return SyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response>
      */
     public SyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> updateAclStrategyV2Invoker(
         UpdateAclStrategyV2Request request) {
-        return new SyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response>(request,
-            ApigMeta.updateAclStrategyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateAclStrategyV2, hcClient);
     }
 
     /**
@@ -4440,7 +4330,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return AssociateRequestThrottlingPolicyV2Response
      */
     public AssociateRequestThrottlingPolicyV2Response associateRequestThrottlingPolicyV2(
@@ -4461,13 +4351,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response>
      */
     public SyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> associateRequestThrottlingPolicyV2Invoker(
         AssociateRequestThrottlingPolicyV2Request request) {
-        return new SyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.associateRequestThrottlingPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.associateRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -4477,7 +4366,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
+     * @param request BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return BatchDisassociateThrottlingPolicyV2Response
      */
     public BatchDisassociateThrottlingPolicyV2Response batchDisassociateThrottlingPolicyV2(
@@ -4492,13 +4381,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
+     * @param request BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response>
      */
     public SyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> batchDisassociateThrottlingPolicyV2Invoker(
         BatchDisassociateThrottlingPolicyV2Request request) {
-        return new SyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response>(
-            request, ApigMeta.batchDisassociateThrottlingPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchDisassociateThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -4508,7 +4396,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPublishOrOfflineApiV2Request 请求对象
+     * @param request BatchPublishOrOfflineApiV2Request 请求对象
      * @return BatchPublishOrOfflineApiV2Response
      */
     public BatchPublishOrOfflineApiV2Response batchPublishOrOfflineApiV2(BatchPublishOrOfflineApiV2Request request) {
@@ -4522,13 +4410,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPublishOrOfflineApiV2Request 请求对象
+     * @param request BatchPublishOrOfflineApiV2Request 请求对象
      * @return SyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>
      */
     public SyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> batchPublishOrOfflineApiV2Invoker(
         BatchPublishOrOfflineApiV2Request request) {
-        return new SyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>(request,
-            ApigMeta.batchPublishOrOfflineApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchPublishOrOfflineApiV2, hcClient);
     }
 
     /**
@@ -4540,7 +4427,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeApiVersionV2Request 请求对象
+     * @param request ChangeApiVersionV2Request 请求对象
      * @return ChangeApiVersionV2Response
      */
     public ChangeApiVersionV2Response changeApiVersionV2(ChangeApiVersionV2Request request) {
@@ -4556,13 +4443,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeApiVersionV2Request 请求对象
+     * @param request ChangeApiVersionV2Request 请求对象
      * @return SyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>
      */
     public SyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response> changeApiVersionV2Invoker(
         ChangeApiVersionV2Request request) {
-        return new SyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>(request,
-            ApigMeta.changeApiVersionV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.changeApiVersionV2, hcClient);
     }
 
     /**
@@ -4572,7 +4458,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApiGroupsV2Request 请求对象
+     * @param request CheckApiGroupsV2Request 请求对象
      * @return CheckApiGroupsV2Response
      */
     public CheckApiGroupsV2Response checkApiGroupsV2(CheckApiGroupsV2Request request) {
@@ -4586,13 +4472,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApiGroupsV2Request 请求对象
+     * @param request CheckApiGroupsV2Request 请求对象
      * @return SyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response>
      */
     public SyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response> checkApiGroupsV2Invoker(
         CheckApiGroupsV2Request request) {
-        return new SyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response>(request, ApigMeta.checkApiGroupsV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.checkApiGroupsV2, hcClient);
     }
 
     /**
@@ -4602,7 +4487,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApisV2Request 请求对象
+     * @param request CheckApisV2Request 请求对象
      * @return CheckApisV2Response
      */
     public CheckApisV2Response checkApisV2(CheckApisV2Request request) {
@@ -4616,11 +4501,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApisV2Request 请求对象
+     * @param request CheckApisV2Request 请求对象
      * @return SyncInvoker<CheckApisV2Request, CheckApisV2Response>
      */
     public SyncInvoker<CheckApisV2Request, CheckApisV2Response> checkApisV2Invoker(CheckApisV2Request request) {
-        return new SyncInvoker<CheckApisV2Request, CheckApisV2Response>(request, ApigMeta.checkApisV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.checkApisV2, hcClient);
     }
 
     /**
@@ -4630,7 +4515,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiGroupV2Request 请求对象
+     * @param request CreateApiGroupV2Request 请求对象
      * @return CreateApiGroupV2Response
      */
     public CreateApiGroupV2Response createApiGroupV2(CreateApiGroupV2Request request) {
@@ -4644,13 +4529,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiGroupV2Request 请求对象
+     * @param request CreateApiGroupV2Request 请求对象
      * @return SyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response>
      */
     public SyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response> createApiGroupV2Invoker(
         CreateApiGroupV2Request request) {
-        return new SyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response>(request, ApigMeta.createApiGroupV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createApiGroupV2, hcClient);
     }
 
     /**
@@ -4663,7 +4547,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiV2Request 请求对象
+     * @param request CreateApiV2Request 请求对象
      * @return CreateApiV2Response
      */
     public CreateApiV2Response createApiV2(CreateApiV2Request request) {
@@ -4680,11 +4564,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiV2Request 请求对象
+     * @param request CreateApiV2Request 请求对象
      * @return SyncInvoker<CreateApiV2Request, CreateApiV2Response>
      */
     public SyncInvoker<CreateApiV2Request, CreateApiV2Response> createApiV2Invoker(CreateApiV2Request request) {
-        return new SyncInvoker<CreateApiV2Request, CreateApiV2Response>(request, ApigMeta.createApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createApiV2, hcClient);
     }
 
     /**
@@ -4698,7 +4582,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
+     * @param request CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return CreateOrDeletePublishRecordForApiV2Response
      */
     public CreateOrDeletePublishRecordForApiV2Response createOrDeletePublishRecordForApiV2(
@@ -4717,13 +4601,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
+     * @param request CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return SyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response>
      */
     public SyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> createOrDeletePublishRecordForApiV2Invoker(
         CreateOrDeletePublishRecordForApiV2Request request) {
-        return new SyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response>(
-            request, ApigMeta.createOrDeletePublishRecordForApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createOrDeletePublishRecordForApiV2, hcClient);
     }
 
     /**
@@ -4733,7 +4616,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DebugApiV2Request 请求对象
+     * @param request DebugApiV2Request 请求对象
      * @return DebugApiV2Response
      */
     public DebugApiV2Response debugApiV2(DebugApiV2Request request) {
@@ -4747,11 +4630,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DebugApiV2Request 请求对象
+     * @param request DebugApiV2Request 请求对象
      * @return SyncInvoker<DebugApiV2Request, DebugApiV2Response>
      */
     public SyncInvoker<DebugApiV2Request, DebugApiV2Response> debugApiV2Invoker(DebugApiV2Request request) {
-        return new SyncInvoker<DebugApiV2Request, DebugApiV2Response>(request, ApigMeta.debugApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.debugApiV2, hcClient);
     }
 
     /**
@@ -4761,7 +4644,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiByVersionIdV2Request 请求对象
+     * @param request DeleteApiByVersionIdV2Request 请求对象
      * @return DeleteApiByVersionIdV2Response
      */
     public DeleteApiByVersionIdV2Response deleteApiByVersionIdV2(DeleteApiByVersionIdV2Request request) {
@@ -4775,13 +4658,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiByVersionIdV2Request 请求对象
+     * @param request DeleteApiByVersionIdV2Request 请求对象
      * @return SyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>
      */
     public SyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> deleteApiByVersionIdV2Invoker(
         DeleteApiByVersionIdV2Request request) {
-        return new SyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>(request,
-            ApigMeta.deleteApiByVersionIdV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteApiByVersionIdV2, hcClient);
     }
 
     /**
@@ -4795,7 +4677,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiGroupV2Request 请求对象
+     * @param request DeleteApiGroupV2Request 请求对象
      * @return DeleteApiGroupV2Response
      */
     public DeleteApiGroupV2Response deleteApiGroupV2(DeleteApiGroupV2Request request) {
@@ -4813,13 +4695,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiGroupV2Request 请求对象
+     * @param request DeleteApiGroupV2Request 请求对象
      * @return SyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response>
      */
     public SyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response> deleteApiGroupV2Invoker(
         DeleteApiGroupV2Request request) {
-        return new SyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response>(request, ApigMeta.deleteApiGroupV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteApiGroupV2, hcClient);
     }
 
     /**
@@ -4831,7 +4712,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiV2Request 请求对象
+     * @param request DeleteApiV2Request 请求对象
      * @return DeleteApiV2Response
      */
     public DeleteApiV2Response deleteApiV2(DeleteApiV2Request request) {
@@ -4847,11 +4728,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiV2Request 请求对象
+     * @param request DeleteApiV2Request 请求对象
      * @return SyncInvoker<DeleteApiV2Request, DeleteApiV2Response>
      */
     public SyncInvoker<DeleteApiV2Request, DeleteApiV2Response> deleteApiV2Invoker(DeleteApiV2Request request) {
-        return new SyncInvoker<DeleteApiV2Request, DeleteApiV2Response>(request, ApigMeta.deleteApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteApiV2, hcClient);
     }
 
     /**
@@ -4861,7 +4742,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return DisassociateRequestThrottlingPolicyV2Response
      */
     public DisassociateRequestThrottlingPolicyV2Response disassociateRequestThrottlingPolicyV2(
@@ -4876,13 +4757,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response>
      */
     public SyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> disassociateRequestThrottlingPolicyV2Invoker(
         DisassociateRequestThrottlingPolicyV2Request request) {
-        return new SyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.disassociateRequestThrottlingPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.disassociateRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -4894,7 +4774,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiGroupsV2Request 请求对象
+     * @param request ListApiGroupsV2Request 请求对象
      * @return ListApiGroupsV2Response
      */
     public ListApiGroupsV2Response listApiGroupsV2(ListApiGroupsV2Request request) {
@@ -4910,13 +4790,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiGroupsV2Request 请求对象
+     * @param request ListApiGroupsV2Request 请求对象
      * @return SyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response>
      */
     public SyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response> listApiGroupsV2Invoker(
         ListApiGroupsV2Request request) {
-        return new SyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response>(request, ApigMeta.listApiGroupsV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApiGroupsV2, hcClient);
     }
 
     /**
@@ -4932,7 +4811,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiRuntimeDefinitionV2Request 请求对象
+     * @param request ListApiRuntimeDefinitionV2Request 请求对象
      * @return ListApiRuntimeDefinitionV2Response
      */
     public ListApiRuntimeDefinitionV2Response listApiRuntimeDefinitionV2(ListApiRuntimeDefinitionV2Request request) {
@@ -4952,13 +4831,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiRuntimeDefinitionV2Request 请求对象
+     * @param request ListApiRuntimeDefinitionV2Request 请求对象
      * @return SyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response>
      */
     public SyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> listApiRuntimeDefinitionV2Invoker(
         ListApiRuntimeDefinitionV2Request request) {
-        return new SyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response>(request,
-            ApigMeta.listApiRuntimeDefinitionV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApiRuntimeDefinitionV2, hcClient);
     }
 
     /**
@@ -4968,7 +4846,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionDetailV2Request 请求对象
+     * @param request ListApiVersionDetailV2Request 请求对象
      * @return ListApiVersionDetailV2Response
      */
     public ListApiVersionDetailV2Response listApiVersionDetailV2(ListApiVersionDetailV2Request request) {
@@ -4982,13 +4860,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionDetailV2Request 请求对象
+     * @param request ListApiVersionDetailV2Request 请求对象
      * @return SyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response>
      */
     public SyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> listApiVersionDetailV2Invoker(
         ListApiVersionDetailV2Request request) {
-        return new SyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response>(request,
-            ApigMeta.listApiVersionDetailV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApiVersionDetailV2, hcClient);
     }
 
     /**
@@ -4998,7 +4875,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsV2Request 请求对象
+     * @param request ListApiVersionsV2Request 请求对象
      * @return ListApiVersionsV2Response
      */
     public ListApiVersionsV2Response listApiVersionsV2(ListApiVersionsV2Request request) {
@@ -5012,13 +4889,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsV2Request 请求对象
+     * @param request ListApiVersionsV2Request 请求对象
      * @return SyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response>
      */
     public SyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response> listApiVersionsV2Invoker(
         ListApiVersionsV2Request request) {
-        return new SyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response>(request, ApigMeta.listApiVersionsV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApiVersionsV2, hcClient);
     }
 
     /**
@@ -5028,7 +4904,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return ListApisBindedToRequestThrottlingPolicyV2Response
      */
     public ListApisBindedToRequestThrottlingPolicyV2Response listApisBindedToRequestThrottlingPolicyV2(
@@ -5043,13 +4919,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response>
      */
     public SyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> listApisBindedToRequestThrottlingPolicyV2Invoker(
         ListApisBindedToRequestThrottlingPolicyV2Request request) {
-        return new SyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.listApisBindedToRequestThrottlingPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApisBindedToRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -5059,7 +4934,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return ListApisUnbindedToRequestThrottlingPolicyV2Response
      */
     public ListApisUnbindedToRequestThrottlingPolicyV2Response listApisUnbindedToRequestThrottlingPolicyV2(
@@ -5074,13 +4949,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response>
      */
     public SyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> listApisUnbindedToRequestThrottlingPolicyV2Invoker(
         ListApisUnbindedToRequestThrottlingPolicyV2Request request) {
-        return new SyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.listApisUnbindedToRequestThrottlingPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApisUnbindedToRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -5090,7 +4964,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisV2Request 请求对象
+     * @param request ListApisV2Request 请求对象
      * @return ListApisV2Response
      */
     public ListApisV2Response listApisV2(ListApisV2Request request) {
@@ -5104,11 +4978,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisV2Request 请求对象
+     * @param request ListApisV2Request 请求对象
      * @return SyncInvoker<ListApisV2Request, ListApisV2Response>
      */
     public SyncInvoker<ListApisV2Request, ListApisV2Response> listApisV2Invoker(ListApisV2Request request) {
-        return new SyncInvoker<ListApisV2Request, ListApisV2Response>(request, ApigMeta.listApisV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApisV2, hcClient);
     }
 
     /**
@@ -5118,7 +4992,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
+     * @param request ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return ListRequestThrottlingPoliciesBindedToApiV2Response
      */
     public ListRequestThrottlingPoliciesBindedToApiV2Response listRequestThrottlingPoliciesBindedToApiV2(
@@ -5133,13 +5007,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
+     * @param request ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return SyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response>
      */
     public SyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> listRequestThrottlingPoliciesBindedToApiV2Invoker(
         ListRequestThrottlingPoliciesBindedToApiV2Request request) {
-        return new SyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response>(
-            request, ApigMeta.listRequestThrottlingPoliciesBindedToApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listRequestThrottlingPoliciesBindedToApiV2, hcClient);
     }
 
     /**
@@ -5149,7 +5022,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiGroupV2Request 请求对象
+     * @param request ShowDetailsOfApiGroupV2Request 请求对象
      * @return ShowDetailsOfApiGroupV2Response
      */
     public ShowDetailsOfApiGroupV2Response showDetailsOfApiGroupV2(ShowDetailsOfApiGroupV2Request request) {
@@ -5163,13 +5036,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiGroupV2Request 请求对象
+     * @param request ShowDetailsOfApiGroupV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response>
      */
     public SyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> showDetailsOfApiGroupV2Invoker(
         ShowDetailsOfApiGroupV2Request request) {
-        return new SyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response>(request,
-            ApigMeta.showDetailsOfApiGroupV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfApiGroupV2, hcClient);
     }
 
     /**
@@ -5179,7 +5051,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiV2Request 请求对象
+     * @param request ShowDetailsOfApiV2Request 请求对象
      * @return ShowDetailsOfApiV2Response
      */
     public ShowDetailsOfApiV2Response showDetailsOfApiV2(ShowDetailsOfApiV2Request request) {
@@ -5193,13 +5065,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiV2Request 请求对象
+     * @param request ShowDetailsOfApiV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response>
      */
     public SyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> showDetailsOfApiV2Invoker(
         ShowDetailsOfApiV2Request request) {
-        return new SyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response>(request,
-            ApigMeta.showDetailsOfApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfApiV2, hcClient);
     }
 
     /**
@@ -5209,7 +5080,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiGroupV2Request 请求对象
+     * @param request UpdateApiGroupV2Request 请求对象
      * @return UpdateApiGroupV2Response
      */
     public UpdateApiGroupV2Response updateApiGroupV2(UpdateApiGroupV2Request request) {
@@ -5223,13 +5094,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiGroupV2Request 请求对象
+     * @param request UpdateApiGroupV2Request 请求对象
      * @return SyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response>
      */
     public SyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response> updateApiGroupV2Invoker(
         UpdateApiGroupV2Request request) {
-        return new SyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response>(request, ApigMeta.updateApiGroupV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateApiGroupV2, hcClient);
     }
 
     /**
@@ -5239,7 +5109,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiV2Request 请求对象
+     * @param request UpdateApiV2Request 请求对象
      * @return UpdateApiV2Response
      */
     public UpdateApiV2Response updateApiV2(UpdateApiV2Request request) {
@@ -5253,11 +5123,11 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiV2Request 请求对象
+     * @param request UpdateApiV2Request 请求对象
      * @return SyncInvoker<UpdateApiV2Request, UpdateApiV2Response>
      */
     public SyncInvoker<UpdateApiV2Request, UpdateApiV2Response> updateApiV2Invoker(UpdateApiV2Request request) {
-        return new SyncInvoker<UpdateApiV2Request, UpdateApiV2Response>(request, ApigMeta.updateApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateApiV2, hcClient);
     }
 
     /**
@@ -5267,7 +5137,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteApiAclBindingV2Request 请求对象
+     * @param request BatchDeleteApiAclBindingV2Request 请求对象
      * @return BatchDeleteApiAclBindingV2Response
      */
     public BatchDeleteApiAclBindingV2Response batchDeleteApiAclBindingV2(BatchDeleteApiAclBindingV2Request request) {
@@ -5281,13 +5151,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteApiAclBindingV2Request 请求对象
+     * @param request BatchDeleteApiAclBindingV2Request 请求对象
      * @return SyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response>
      */
     public SyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> batchDeleteApiAclBindingV2Invoker(
         BatchDeleteApiAclBindingV2Request request) {
-        return new SyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response>(request,
-            ApigMeta.batchDeleteApiAclBindingV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchDeleteApiAclBindingV2, hcClient);
     }
 
     /**
@@ -5299,7 +5168,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiAclBindingV2Request 请求对象
+     * @param request CreateApiAclBindingV2Request 请求对象
      * @return CreateApiAclBindingV2Response
      */
     public CreateApiAclBindingV2Response createApiAclBindingV2(CreateApiAclBindingV2Request request) {
@@ -5315,13 +5184,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiAclBindingV2Request 请求对象
+     * @param request CreateApiAclBindingV2Request 请求对象
      * @return SyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response>
      */
     public SyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> createApiAclBindingV2Invoker(
         CreateApiAclBindingV2Request request) {
-        return new SyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response>(request,
-            ApigMeta.createApiAclBindingV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createApiAclBindingV2, hcClient);
     }
 
     /**
@@ -5331,7 +5199,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiAclBindingV2Request 请求对象
+     * @param request DeleteApiAclBindingV2Request 请求对象
      * @return DeleteApiAclBindingV2Response
      */
     public DeleteApiAclBindingV2Response deleteApiAclBindingV2(DeleteApiAclBindingV2Request request) {
@@ -5345,13 +5213,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiAclBindingV2Request 请求对象
+     * @param request DeleteApiAclBindingV2Request 请求对象
      * @return SyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response>
      */
     public SyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> deleteApiAclBindingV2Invoker(
         DeleteApiAclBindingV2Request request) {
-        return new SyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response>(request,
-            ApigMeta.deleteApiAclBindingV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteApiAclBindingV2, hcClient);
     }
 
     /**
@@ -5361,7 +5228,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclPolicyBindedToApiV2Request 请求对象
+     * @param request ListAclPolicyBindedToApiV2Request 请求对象
      * @return ListAclPolicyBindedToApiV2Response
      */
     public ListAclPolicyBindedToApiV2Response listAclPolicyBindedToApiV2(ListAclPolicyBindedToApiV2Request request) {
@@ -5375,13 +5242,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclPolicyBindedToApiV2Request 请求对象
+     * @param request ListAclPolicyBindedToApiV2Request 请求对象
      * @return SyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response>
      */
     public SyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> listAclPolicyBindedToApiV2Invoker(
         ListAclPolicyBindedToApiV2Request request) {
-        return new SyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response>(request,
-            ApigMeta.listAclPolicyBindedToApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAclPolicyBindedToApiV2, hcClient);
     }
 
     /**
@@ -5391,7 +5257,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAclPolicyV2Request 请求对象
+     * @param request ListApisBindedToAclPolicyV2Request 请求对象
      * @return ListApisBindedToAclPolicyV2Response
      */
     public ListApisBindedToAclPolicyV2Response listApisBindedToAclPolicyV2(ListApisBindedToAclPolicyV2Request request) {
@@ -5405,13 +5271,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAclPolicyV2Request 请求对象
+     * @param request ListApisBindedToAclPolicyV2Request 请求对象
      * @return SyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response>
      */
     public SyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> listApisBindedToAclPolicyV2Invoker(
         ListApisBindedToAclPolicyV2Request request) {
-        return new SyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response>(request,
-            ApigMeta.listApisBindedToAclPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApisBindedToAclPolicyV2, hcClient);
     }
 
     /**
@@ -5421,7 +5286,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAclPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return ListApisUnbindedToAclPolicyV2Response
      */
     public ListApisUnbindedToAclPolicyV2Response listApisUnbindedToAclPolicyV2(
@@ -5436,13 +5301,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAclPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return SyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response>
      */
     public SyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> listApisUnbindedToAclPolicyV2Invoker(
         ListApisUnbindedToAclPolicyV2Request request) {
-        return new SyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response>(request,
-            ApigMeta.listApisUnbindedToAclPolicyV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApisUnbindedToAclPolicyV2, hcClient);
     }
 
     /**
@@ -5452,7 +5316,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelingAuthorizationV2Request 请求对象
+     * @param request CancelingAuthorizationV2Request 请求对象
      * @return CancelingAuthorizationV2Response
      */
     public CancelingAuthorizationV2Response cancelingAuthorizationV2(CancelingAuthorizationV2Request request) {
@@ -5466,13 +5330,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelingAuthorizationV2Request 请求对象
+     * @param request CancelingAuthorizationV2Request 请求对象
      * @return SyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response>
      */
     public SyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> cancelingAuthorizationV2Invoker(
         CancelingAuthorizationV2Request request) {
-        return new SyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response>(request,
-            ApigMeta.cancelingAuthorizationV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.cancelingAuthorizationV2, hcClient);
     }
 
     /**
@@ -5482,7 +5345,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAuthorizingAppsV2Request 请求对象
+     * @param request CreateAuthorizingAppsV2Request 请求对象
      * @return CreateAuthorizingAppsV2Response
      */
     public CreateAuthorizingAppsV2Response createAuthorizingAppsV2(CreateAuthorizingAppsV2Request request) {
@@ -5496,13 +5359,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAuthorizingAppsV2Request 请求对象
+     * @param request CreateAuthorizingAppsV2Request 请求对象
      * @return SyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>
      */
     public SyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> createAuthorizingAppsV2Invoker(
         CreateAuthorizingAppsV2Request request) {
-        return new SyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>(request,
-            ApigMeta.createAuthorizingAppsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createAuthorizingAppsV2, hcClient);
     }
 
     /**
@@ -5512,7 +5374,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAppV2Request 请求对象
+     * @param request ListApisBindedToAppV2Request 请求对象
      * @return ListApisBindedToAppV2Response
      */
     public ListApisBindedToAppV2Response listApisBindedToAppV2(ListApisBindedToAppV2Request request) {
@@ -5526,13 +5388,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAppV2Request 请求对象
+     * @param request ListApisBindedToAppV2Request 请求对象
      * @return SyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response>
      */
     public SyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> listApisBindedToAppV2Invoker(
         ListApisBindedToAppV2Request request) {
-        return new SyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response>(request,
-            ApigMeta.listApisBindedToAppV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApisBindedToAppV2, hcClient);
     }
 
     /**
@@ -5542,7 +5403,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAppV2Request 请求对象
+     * @param request ListApisUnbindedToAppV2Request 请求对象
      * @return ListApisUnbindedToAppV2Response
      */
     public ListApisUnbindedToAppV2Response listApisUnbindedToAppV2(ListApisUnbindedToAppV2Request request) {
@@ -5556,13 +5417,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAppV2Request 请求对象
+     * @param request ListApisUnbindedToAppV2Request 请求对象
      * @return SyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response>
      */
     public SyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> listApisUnbindedToAppV2Invoker(
         ListApisUnbindedToAppV2Request request) {
-        return new SyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response>(request,
-            ApigMeta.listApisUnbindedToAppV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listApisUnbindedToAppV2, hcClient);
     }
 
     /**
@@ -5572,7 +5432,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsBindedToApiV2Request 请求对象
+     * @param request ListAppsBindedToApiV2Request 请求对象
      * @return ListAppsBindedToApiV2Response
      */
     public ListAppsBindedToApiV2Response listAppsBindedToApiV2(ListAppsBindedToApiV2Request request) {
@@ -5586,13 +5446,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsBindedToApiV2Request 请求对象
+     * @param request ListAppsBindedToApiV2Request 请求对象
      * @return SyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response>
      */
     public SyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> listAppsBindedToApiV2Invoker(
         ListAppsBindedToApiV2Request request) {
-        return new SyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response>(request,
-            ApigMeta.listAppsBindedToApiV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAppsBindedToApiV2, hcClient);
     }
 
     /**
@@ -5602,7 +5461,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportApiDefinitionsV2Request 请求对象
+     * @param request ExportApiDefinitionsV2Request 请求对象
      * @return ExportApiDefinitionsV2Response
      */
     public ExportApiDefinitionsV2Response exportApiDefinitionsV2(ExportApiDefinitionsV2Request request) {
@@ -5616,13 +5475,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportApiDefinitionsV2Request 请求对象
+     * @param request ExportApiDefinitionsV2Request 请求对象
      * @return SyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response>
      */
     public SyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> exportApiDefinitionsV2Invoker(
         ExportApiDefinitionsV2Request request) {
-        return new SyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response>(request,
-            ApigMeta.exportApiDefinitionsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.exportApiDefinitionsV2, hcClient);
     }
 
     /**
@@ -5632,7 +5490,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportApiDefinitionsV2Request 请求对象
+     * @param request ImportApiDefinitionsV2Request 请求对象
      * @return ImportApiDefinitionsV2Response
      */
     public ImportApiDefinitionsV2Response importApiDefinitionsV2(ImportApiDefinitionsV2Request request) {
@@ -5646,13 +5504,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportApiDefinitionsV2Request 请求对象
+     * @param request ImportApiDefinitionsV2Request 请求对象
      * @return SyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>
      */
     public SyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> importApiDefinitionsV2Invoker(
         ImportApiDefinitionsV2Request request) {
-        return new SyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>(request,
-            ApigMeta.importApiDefinitionsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.importApiDefinitionsV2, hcClient);
     }
 
     /**
@@ -5662,7 +5519,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateCertsV2Request 请求对象
+     * @param request BatchAssociateCertsV2Request 请求对象
      * @return BatchAssociateCertsV2Response
      */
     public BatchAssociateCertsV2Response batchAssociateCertsV2(BatchAssociateCertsV2Request request) {
@@ -5676,13 +5533,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateCertsV2Request 请求对象
+     * @param request BatchAssociateCertsV2Request 请求对象
      * @return SyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response>
      */
     public SyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> batchAssociateCertsV2Invoker(
         BatchAssociateCertsV2Request request) {
-        return new SyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response>(request,
-            ApigMeta.batchAssociateCertsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchAssociateCertsV2, hcClient);
     }
 
     /**
@@ -5692,7 +5548,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateDomainsV2Request 请求对象
+     * @param request BatchAssociateDomainsV2Request 请求对象
      * @return BatchAssociateDomainsV2Response
      */
     public BatchAssociateDomainsV2Response batchAssociateDomainsV2(BatchAssociateDomainsV2Request request) {
@@ -5706,13 +5562,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateDomainsV2Request 请求对象
+     * @param request BatchAssociateDomainsV2Request 请求对象
      * @return SyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response>
      */
     public SyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> batchAssociateDomainsV2Invoker(
         BatchAssociateDomainsV2Request request) {
-        return new SyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response>(request,
-            ApigMeta.batchAssociateDomainsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchAssociateDomainsV2, hcClient);
     }
 
     /**
@@ -5722,7 +5577,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateCertsV2Request 请求对象
+     * @param request BatchDisassociateCertsV2Request 请求对象
      * @return BatchDisassociateCertsV2Response
      */
     public BatchDisassociateCertsV2Response batchDisassociateCertsV2(BatchDisassociateCertsV2Request request) {
@@ -5736,13 +5591,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateCertsV2Request 请求对象
+     * @param request BatchDisassociateCertsV2Request 请求对象
      * @return SyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response>
      */
     public SyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> batchDisassociateCertsV2Invoker(
         BatchDisassociateCertsV2Request request) {
-        return new SyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response>(request,
-            ApigMeta.batchDisassociateCertsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchDisassociateCertsV2, hcClient);
     }
 
     /**
@@ -5752,7 +5606,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateDomainsV2Request 请求对象
+     * @param request BatchDisassociateDomainsV2Request 请求对象
      * @return BatchDisassociateDomainsV2Response
      */
     public BatchDisassociateDomainsV2Response batchDisassociateDomainsV2(BatchDisassociateDomainsV2Request request) {
@@ -5766,13 +5620,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateDomainsV2Request 请求对象
+     * @param request BatchDisassociateDomainsV2Request 请求对象
      * @return SyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response>
      */
     public SyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2Invoker(
         BatchDisassociateDomainsV2Request request) {
-        return new SyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response>(request,
-            ApigMeta.batchDisassociateDomainsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchDisassociateDomainsV2, hcClient);
     }
 
     /**
@@ -5782,7 +5635,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateV2Request 请求对象
+     * @param request CreateCertificateV2Request 请求对象
      * @return CreateCertificateV2Response
      */
     public CreateCertificateV2Response createCertificateV2(CreateCertificateV2Request request) {
@@ -5796,13 +5649,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateV2Request 请求对象
+     * @param request CreateCertificateV2Request 请求对象
      * @return SyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response>
      */
     public SyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response> createCertificateV2Invoker(
         CreateCertificateV2Request request) {
-        return new SyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response>(request,
-            ApigMeta.createCertificateV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createCertificateV2, hcClient);
     }
 
     /**
@@ -5812,7 +5664,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateV2Request 请求对象
+     * @param request DeleteCertificateV2Request 请求对象
      * @return DeleteCertificateV2Response
      */
     public DeleteCertificateV2Response deleteCertificateV2(DeleteCertificateV2Request request) {
@@ -5826,13 +5678,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateV2Request 请求对象
+     * @param request DeleteCertificateV2Request 请求对象
      * @return SyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response>
      */
     public SyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response> deleteCertificateV2Invoker(
         DeleteCertificateV2Request request) {
-        return new SyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response>(request,
-            ApigMeta.deleteCertificateV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteCertificateV2, hcClient);
     }
 
     /**
@@ -5842,7 +5693,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttachedDomainsV2Request 请求对象
+     * @param request ListAttachedDomainsV2Request 请求对象
      * @return ListAttachedDomainsV2Response
      */
     public ListAttachedDomainsV2Response listAttachedDomainsV2(ListAttachedDomainsV2Request request) {
@@ -5856,13 +5707,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttachedDomainsV2Request 请求对象
+     * @param request ListAttachedDomainsV2Request 请求对象
      * @return SyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response>
      */
     public SyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> listAttachedDomainsV2Invoker(
         ListAttachedDomainsV2Request request) {
-        return new SyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response>(request,
-            ApigMeta.listAttachedDomainsV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listAttachedDomainsV2, hcClient);
     }
 
     /**
@@ -5872,7 +5722,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesV2Request 请求对象
+     * @param request ListCertificatesV2Request 请求对象
      * @return ListCertificatesV2Response
      */
     public ListCertificatesV2Response listCertificatesV2(ListCertificatesV2Request request) {
@@ -5886,13 +5736,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesV2Request 请求对象
+     * @param request ListCertificatesV2Request 请求对象
      * @return SyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response>
      */
     public SyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response> listCertificatesV2Invoker(
         ListCertificatesV2Request request) {
-        return new SyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response>(request,
-            ApigMeta.listCertificatesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listCertificatesV2, hcClient);
     }
 
     /**
@@ -5902,7 +5751,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCertificateV2Request 请求对象
+     * @param request ShowDetailsOfCertificateV2Request 请求对象
      * @return ShowDetailsOfCertificateV2Response
      */
     public ShowDetailsOfCertificateV2Response showDetailsOfCertificateV2(ShowDetailsOfCertificateV2Request request) {
@@ -5916,13 +5765,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCertificateV2Request 请求对象
+     * @param request ShowDetailsOfCertificateV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response>
      */
     public SyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2Invoker(
         ShowDetailsOfCertificateV2Request request) {
-        return new SyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response>(request,
-            ApigMeta.showDetailsOfCertificateV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfCertificateV2, hcClient);
     }
 
     /**
@@ -5932,7 +5780,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateV2Request 请求对象
+     * @param request UpdateCertificateV2Request 请求对象
      * @return UpdateCertificateV2Response
      */
     public UpdateCertificateV2Response updateCertificateV2(UpdateCertificateV2Request request) {
@@ -5946,13 +5794,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateV2Request 请求对象
+     * @param request UpdateCertificateV2Request 请求对象
      * @return SyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response>
      */
     public SyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response> updateCertificateV2Invoker(
         UpdateCertificateV2Request request) {
-        return new SyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response>(request,
-            ApigMeta.updateCertificateV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateCertificateV2, hcClient);
     }
 
     /**
@@ -5964,7 +5811,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddingBackendInstancesV2Request 请求对象
+     * @param request AddingBackendInstancesV2Request 请求对象
      * @return AddingBackendInstancesV2Response
      */
     public AddingBackendInstancesV2Response addingBackendInstancesV2(AddingBackendInstancesV2Request request) {
@@ -5980,13 +5827,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddingBackendInstancesV2Request 请求对象
+     * @param request AddingBackendInstancesV2Request 请求对象
      * @return SyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response>
      */
     public SyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> addingBackendInstancesV2Invoker(
         AddingBackendInstancesV2Request request) {
-        return new SyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response>(request,
-            ApigMeta.addingBackendInstancesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.addingBackendInstancesV2, hcClient);
     }
 
     /**
@@ -5996,7 +5842,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisableMembersRequest 请求对象
+     * @param request BatchDisableMembersRequest 请求对象
      * @return BatchDisableMembersResponse
      */
     public BatchDisableMembersResponse batchDisableMembers(BatchDisableMembersRequest request) {
@@ -6010,13 +5856,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisableMembersRequest 请求对象
+     * @param request BatchDisableMembersRequest 请求对象
      * @return SyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse>
      */
     public SyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse> batchDisableMembersInvoker(
         BatchDisableMembersRequest request) {
-        return new SyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse>(request,
-            ApigMeta.batchDisableMembers, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchDisableMembers, hcClient);
     }
 
     /**
@@ -6026,7 +5871,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchEnableMembersRequest 请求对象
+     * @param request BatchEnableMembersRequest 请求对象
      * @return BatchEnableMembersResponse
      */
     public BatchEnableMembersResponse batchEnableMembers(BatchEnableMembersRequest request) {
@@ -6040,13 +5885,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchEnableMembersRequest 请求对象
+     * @param request BatchEnableMembersRequest 请求对象
      * @return SyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse>
      */
     public SyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse> batchEnableMembersInvoker(
         BatchEnableMembersRequest request) {
-        return new SyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse>(request,
-            ApigMeta.batchEnableMembers, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.batchEnableMembers, hcClient);
     }
 
     /**
@@ -6058,7 +5902,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMemberGroupRequest 请求对象
+     * @param request CreateMemberGroupRequest 请求对象
      * @return CreateMemberGroupResponse
      */
     public CreateMemberGroupResponse createMemberGroup(CreateMemberGroupRequest request) {
@@ -6074,13 +5918,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMemberGroupRequest 请求对象
+     * @param request CreateMemberGroupRequest 请求对象
      * @return SyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse>
      */
     public SyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse> createMemberGroupInvoker(
         CreateMemberGroupRequest request) {
-        return new SyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse>(request, ApigMeta.createMemberGroup,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createMemberGroup, hcClient);
     }
 
     /**
@@ -6091,7 +5934,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcChannelV2Request 请求对象
+     * @param request CreateVpcChannelV2Request 请求对象
      * @return CreateVpcChannelV2Response
      */
     public CreateVpcChannelV2Response createVpcChannelV2(CreateVpcChannelV2Request request) {
@@ -6106,13 +5949,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcChannelV2Request 请求对象
+     * @param request CreateVpcChannelV2Request 请求对象
      * @return SyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response>
      */
     public SyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response> createVpcChannelV2Invoker(
         CreateVpcChannelV2Request request) {
-        return new SyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response>(request,
-            ApigMeta.createVpcChannelV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.createVpcChannelV2, hcClient);
     }
 
     /**
@@ -6122,7 +5964,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackendInstanceV2Request 请求对象
+     * @param request DeleteBackendInstanceV2Request 请求对象
      * @return DeleteBackendInstanceV2Response
      */
     public DeleteBackendInstanceV2Response deleteBackendInstanceV2(DeleteBackendInstanceV2Request request) {
@@ -6136,13 +5978,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackendInstanceV2Request 请求对象
+     * @param request DeleteBackendInstanceV2Request 请求对象
      * @return SyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>
      */
     public SyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> deleteBackendInstanceV2Invoker(
         DeleteBackendInstanceV2Request request) {
-        return new SyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>(request,
-            ApigMeta.deleteBackendInstanceV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteBackendInstanceV2, hcClient);
     }
 
     /**
@@ -6152,7 +5993,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberGroupRequest 请求对象
+     * @param request DeleteMemberGroupRequest 请求对象
      * @return DeleteMemberGroupResponse
      */
     public DeleteMemberGroupResponse deleteMemberGroup(DeleteMemberGroupRequest request) {
@@ -6166,13 +6007,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberGroupRequest 请求对象
+     * @param request DeleteMemberGroupRequest 请求对象
      * @return SyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse>
      */
     public SyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse> deleteMemberGroupInvoker(
         DeleteMemberGroupRequest request) {
-        return new SyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse>(request, ApigMeta.deleteMemberGroup,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteMemberGroup, hcClient);
     }
 
     /**
@@ -6182,7 +6022,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcChannelV2Request 请求对象
+     * @param request DeleteVpcChannelV2Request 请求对象
      * @return DeleteVpcChannelV2Response
      */
     public DeleteVpcChannelV2Response deleteVpcChannelV2(DeleteVpcChannelV2Request request) {
@@ -6196,13 +6036,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcChannelV2Request 请求对象
+     * @param request DeleteVpcChannelV2Request 请求对象
      * @return SyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response>
      */
     public SyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> deleteVpcChannelV2Invoker(
         DeleteVpcChannelV2Request request) {
-        return new SyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response>(request,
-            ApigMeta.deleteVpcChannelV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.deleteVpcChannelV2, hcClient);
     }
 
     /**
@@ -6212,7 +6051,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackendInstancesV2Request 请求对象
+     * @param request ListBackendInstancesV2Request 请求对象
      * @return ListBackendInstancesV2Response
      */
     public ListBackendInstancesV2Response listBackendInstancesV2(ListBackendInstancesV2Request request) {
@@ -6226,13 +6065,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackendInstancesV2Request 请求对象
+     * @param request ListBackendInstancesV2Request 请求对象
      * @return SyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>
      */
     public SyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response> listBackendInstancesV2Invoker(
         ListBackendInstancesV2Request request) {
-        return new SyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>(request,
-            ApigMeta.listBackendInstancesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listBackendInstancesV2, hcClient);
     }
 
     /**
@@ -6242,7 +6080,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMemberGroupsRequest 请求对象
+     * @param request ListMemberGroupsRequest 请求对象
      * @return ListMemberGroupsResponse
      */
     public ListMemberGroupsResponse listMemberGroups(ListMemberGroupsRequest request) {
@@ -6256,13 +6094,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMemberGroupsRequest 请求对象
+     * @param request ListMemberGroupsRequest 请求对象
      * @return SyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse>
      */
     public SyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse> listMemberGroupsInvoker(
         ListMemberGroupsRequest request) {
-        return new SyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse>(request, ApigMeta.listMemberGroups,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listMemberGroups, hcClient);
     }
 
     /**
@@ -6272,7 +6109,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcChannelsV2Request 请求对象
+     * @param request ListVpcChannelsV2Request 请求对象
      * @return ListVpcChannelsV2Response
      */
     public ListVpcChannelsV2Response listVpcChannelsV2(ListVpcChannelsV2Request request) {
@@ -6286,13 +6123,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcChannelsV2Request 请求对象
+     * @param request ListVpcChannelsV2Request 请求对象
      * @return SyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response>
      */
     public SyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response> listVpcChannelsV2Invoker(
         ListVpcChannelsV2Request request) {
-        return new SyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response>(request, ApigMeta.listVpcChannelsV2,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.listVpcChannelsV2, hcClient);
     }
 
     /**
@@ -6302,7 +6138,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfMemberGroupRequest 请求对象
+     * @param request ShowDetailsOfMemberGroupRequest 请求对象
      * @return ShowDetailsOfMemberGroupResponse
      */
     public ShowDetailsOfMemberGroupResponse showDetailsOfMemberGroup(ShowDetailsOfMemberGroupRequest request) {
@@ -6316,13 +6152,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfMemberGroupRequest 请求对象
+     * @param request ShowDetailsOfMemberGroupRequest 请求对象
      * @return SyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse>
      */
     public SyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> showDetailsOfMemberGroupInvoker(
         ShowDetailsOfMemberGroupRequest request) {
-        return new SyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse>(request,
-            ApigMeta.showDetailsOfMemberGroup, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfMemberGroup, hcClient);
     }
 
     /**
@@ -6332,7 +6167,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfVpcChannelV2Request 请求对象
+     * @param request ShowDetailsOfVpcChannelV2Request 请求对象
      * @return ShowDetailsOfVpcChannelV2Response
      */
     public ShowDetailsOfVpcChannelV2Response showDetailsOfVpcChannelV2(ShowDetailsOfVpcChannelV2Request request) {
@@ -6346,13 +6181,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfVpcChannelV2Request 请求对象
+     * @param request ShowDetailsOfVpcChannelV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response>
      */
     public SyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> showDetailsOfVpcChannelV2Invoker(
         ShowDetailsOfVpcChannelV2Request request) {
-        return new SyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response>(request,
-            ApigMeta.showDetailsOfVpcChannelV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.showDetailsOfVpcChannelV2, hcClient);
     }
 
     /**
@@ -6362,7 +6196,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackendInstancesV2Request 请求对象
+     * @param request UpdateBackendInstancesV2Request 请求对象
      * @return UpdateBackendInstancesV2Response
      */
     public UpdateBackendInstancesV2Response updateBackendInstancesV2(UpdateBackendInstancesV2Request request) {
@@ -6376,13 +6210,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackendInstancesV2Request 请求对象
+     * @param request UpdateBackendInstancesV2Request 请求对象
      * @return SyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response>
      */
     public SyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> updateBackendInstancesV2Invoker(
         UpdateBackendInstancesV2Request request) {
-        return new SyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response>(request,
-            ApigMeta.updateBackendInstancesV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateBackendInstancesV2, hcClient);
     }
 
     /**
@@ -6392,7 +6225,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthCheckRequest 请求对象
+     * @param request UpdateHealthCheckRequest 请求对象
      * @return UpdateHealthCheckResponse
      */
     public UpdateHealthCheckResponse updateHealthCheck(UpdateHealthCheckRequest request) {
@@ -6406,13 +6239,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthCheckRequest 请求对象
+     * @param request UpdateHealthCheckRequest 请求对象
      * @return SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>
      */
     public SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse> updateHealthCheckInvoker(
         UpdateHealthCheckRequest request) {
-        return new SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>(request, ApigMeta.updateHealthCheck,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateHealthCheck, hcClient);
     }
 
     /**
@@ -6422,7 +6254,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberGroupRequest 请求对象
+     * @param request UpdateMemberGroupRequest 请求对象
      * @return UpdateMemberGroupResponse
      */
     public UpdateMemberGroupResponse updateMemberGroup(UpdateMemberGroupRequest request) {
@@ -6436,13 +6268,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberGroupRequest 请求对象
+     * @param request UpdateMemberGroupRequest 请求对象
      * @return SyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse>
      */
     public SyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse> updateMemberGroupInvoker(
         UpdateMemberGroupRequest request) {
-        return new SyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse>(request, ApigMeta.updateMemberGroup,
-            hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateMemberGroup, hcClient);
     }
 
     /**
@@ -6456,7 +6287,7 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcChannelV2Request 请求对象
+     * @param request UpdateVpcChannelV2Request 请求对象
      * @return UpdateVpcChannelV2Response
      */
     public UpdateVpcChannelV2Response updateVpcChannelV2(UpdateVpcChannelV2Request request) {
@@ -6474,13 +6305,12 @@ public class ApigClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcChannelV2Request 请求对象
+     * @param request UpdateVpcChannelV2Request 请求对象
      * @return SyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response>
      */
     public SyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> updateVpcChannelV2Invoker(
         UpdateVpcChannelV2Request request) {
-        return new SyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response>(request,
-            ApigMeta.updateVpcChannelV2, hcClient);
+        return new SyncInvoker<>(request, ApigMeta.updateVpcChannelV2, hcClient);
     }
 
 }

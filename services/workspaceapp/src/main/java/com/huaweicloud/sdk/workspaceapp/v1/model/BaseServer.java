@@ -153,7 +153,7 @@ public class BaseServer {
     }
 
     /**
-     * aps实例的唯一标识
+     * aps实例的唯一标识。
      * @return id
      */
     public String getId() {
@@ -170,7 +170,7 @@ public class BaseServer {
     }
 
     /**
-     * 服务器名称
+     * 服务器名称。
      * @return name
      */
     public String getName() {
@@ -187,7 +187,7 @@ public class BaseServer {
     }
 
     /**
-     * 计算机名称
+     * 计算机名称。
      * @return machineName
      */
     public String getMachineName() {
@@ -204,7 +204,7 @@ public class BaseServer {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -221,7 +221,7 @@ public class BaseServer {
     }
 
     /**
-     * 服务器组ID
+     * 服务器组ID。
      * @return serverGroupId
      */
     public String getServerGroupId() {
@@ -281,7 +281,7 @@ public class BaseServer {
     }
 
     /**
-     * 服务器创建时间
+     * 服务器创建时间。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -298,7 +298,7 @@ public class BaseServer {
     }
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -315,7 +315,7 @@ public class BaseServer {
     }
 
     /**
-     * 镜像ID
+     * 镜像ID。
      * @return imageId
      */
     public String getImageId() {
@@ -332,7 +332,7 @@ public class BaseServer {
     }
 
     /**
-     * 服务器可用分区
+     * 服务器可用分区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -349,7 +349,7 @@ public class BaseServer {
     }
 
     /**
-     * 域
+     * 域。
      * @return domain
      */
     public String getDomain() {
@@ -366,7 +366,7 @@ public class BaseServer {
     }
 
     /**
-     * 组织名称
+     * 组织名称。
      * @return ouName
      */
     public String getOuName() {
@@ -383,7 +383,7 @@ public class BaseServer {
     }
 
     /**
-     * 实例的SID
+     * 实例的SID。
      * @return sid
      */
     public String getSid() {
@@ -400,7 +400,7 @@ public class BaseServer {
     }
 
     /**
-     * 实例的ID
+     * 实例的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -417,7 +417,7 @@ public class BaseServer {
     }
 
     /**
-     * 服务器系统版本
+     * 服务器系统版本。
      * @return osVersion
      */
     public String getOsVersion() {
@@ -434,7 +434,7 @@ public class BaseServer {
     }
 
     /**
-     * 操作系统类型，当前仅支持Windows - Linux - Windows - Other
+     * 操作系统类型，当前仅支持Windows： - Linux - Windows - Other
      * @return osType
      */
     public String getOsType() {
@@ -451,7 +451,7 @@ public class BaseServer {
     }
 
     /**
-     * 包周期产品的订单ID
+     * 包周期产品的订单ID。
      * @return orderId
      */
     public String getOrderId() {
@@ -468,7 +468,7 @@ public class BaseServer {
     }
 
     /**
-     * 是否维护状态
+     * 是否维护状态。
      * @return maintainStatus
      */
     public Boolean getMaintainStatus() {
@@ -485,7 +485,7 @@ public class BaseServer {
     }
 
     /**
-     * 配置弹性伸缩策略时，服务自动创建的实例。 - true : 通过弹性伸缩创建 - false: 不是通过弹性伸缩创建
+     * 配置弹性伸缩策略时，服务自动创建的实例。 - true : 通过弹性伸缩创建。 - false: 不是通过弹性伸缩创建。
      * @return scalingAutoCreate
      */
     public Boolean getScalingAutoCreate() {
@@ -502,7 +502,7 @@ public class BaseServer {
     }
 
     /**
-     * 上一次执行job的id
+     * 上一次执行job的id。
      * @return jobId
      */
     public String getJobId() {
@@ -553,7 +553,7 @@ public class BaseServer {
     }
 
     /**
-     * 上一次执行job的执行时间
+     * 上一次执行job的执行时间。
      * @return jobTime
      */
     public OffsetDateTime getJobTime() {
@@ -570,7 +570,7 @@ public class BaseServer {
     }
 
     /**
-     * 资源池ID
+     * 资源池ID。
      * @return resourcePoolId
      */
     public String getResourcePoolId() {
@@ -587,7 +587,7 @@ public class BaseServer {
     }
 
     /**
-     * 资源池类型 - private：私有资源池 - public: 工作资源池
+     * 资源池类型： - private：私有资源池。 - public: 工作资源池。
      * @return resourcePoolType
      */
     public String getResourcePoolType() {
@@ -604,7 +604,7 @@ public class BaseServer {
     }
 
     /**
-     * 云专属主机id
+     * 云专属主机id。
      * @return hostId
      */
     public String getHostId() {

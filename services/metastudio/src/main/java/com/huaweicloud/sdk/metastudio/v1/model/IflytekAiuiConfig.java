@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.aom.v2.model;
+package com.huaweicloud.sdk.metastudio.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ApplicationModel
+ * 科大讯飞AIUI应用配置
  */
-public class ApplicationModel {
+public class IflytekAiuiConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
@@ -16,22 +16,22 @@ public class ApplicationModel {
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_name")
+    @JsonProperty(value = "app_key")
 
-    private String appName;
+    private String appKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_type")
+    @JsonProperty(value = "api_secret")
 
-    private String appType;
+    private String apiSecret;
 
-    public ApplicationModel withAppId(String appId) {
+    public IflytekAiuiConfig withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
     /**
-     * 应用id。
+     * AIUI应用ID。
      * @return appId
      */
     public String getAppId() {
@@ -42,38 +42,38 @@ public class ApplicationModel {
         this.appId = appId;
     }
 
-    public ApplicationModel withAppName(String appName) {
-        this.appName = appName;
+    public IflytekAiuiConfig withAppKey(String appKey) {
+        this.appKey = appKey;
         return this;
     }
 
     /**
-     * 应用名称。
-     * @return appName
+     * AIUI应用密钥。
+     * @return appKey
      */
-    public String getAppName() {
-        return appName;
+    public String getAppKey() {
+        return appKey;
     }
 
-    public void setAppName(String appName) {
-        this.appName = appName;
+    public void setAppKey(String appKey) {
+        this.appKey = appKey;
     }
 
-    public ApplicationModel withAppType(String appType) {
-        this.appType = appType;
+    public IflytekAiuiConfig withApiSecret(String apiSecret) {
+        this.apiSecret = apiSecret;
         return this;
     }
 
     /**
-     * 应用来源。
-     * @return appType
+     * AIUI API密钥。
+     * @return apiSecret
      */
-    public String getAppType() {
-        return appType;
+    public String getApiSecret() {
+        return apiSecret;
     }
 
-    public void setAppType(String appType) {
-        this.appType = appType;
+    public void setApiSecret(String apiSecret) {
+        this.apiSecret = apiSecret;
     }
 
     @Override
@@ -84,23 +84,23 @@ public class ApplicationModel {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationModel that = (ApplicationModel) obj;
-        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
-            && Objects.equals(this.appType, that.appType);
+        IflytekAiuiConfig that = (IflytekAiuiConfig) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.apiSecret, that.apiSecret);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, appName, appType);
+        return Objects.hash(appId, appKey, apiSecret);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ApplicationModel {\n");
+        sb.append("class IflytekAiuiConfig {\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
-        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
+        sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
+        sb.append("    apiSecret: ").append(toIndentedString(apiSecret)).append("\n");
         sb.append("}");
         return sb.toString();
     }

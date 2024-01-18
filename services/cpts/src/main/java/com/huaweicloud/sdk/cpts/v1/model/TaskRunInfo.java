@@ -26,7 +26,7 @@ public class TaskRunInfo {
     }
 
     /**
-     * id
+     * 任务id
      * minimum: 0
      * maximum: 2147483647
      * @return id
@@ -45,7 +45,7 @@ public class TaskRunInfo {
     }
 
     /**
-     * run_type
+     * 任务类型（0：旧版本任务；1：新版本任务）
      * minimum: 0
      * maximum: 2147483647
      * @return runType

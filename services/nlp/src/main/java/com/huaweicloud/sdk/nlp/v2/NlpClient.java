@@ -79,7 +79,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAspectSentimentRequest 请求对象
+     * @param request RunAspectSentimentRequest 请求对象
      * @return RunAspectSentimentResponse
      */
     public RunAspectSentimentResponse runAspectSentiment(RunAspectSentimentRequest request) {
@@ -94,13 +94,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAspectSentimentRequest 请求对象
+     * @param request RunAspectSentimentRequest 请求对象
      * @return SyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse>
      */
     public SyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse> runAspectSentimentInvoker(
         RunAspectSentimentRequest request) {
-        return new SyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse>(request,
-            NlpMeta.runAspectSentiment, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runAspectSentiment, hcClient);
     }
 
     /**
@@ -111,7 +110,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAspectSentimentAdvanceRequest 请求对象
+     * @param request RunAspectSentimentAdvanceRequest 请求对象
      * @return RunAspectSentimentAdvanceResponse
      */
     public RunAspectSentimentAdvanceResponse runAspectSentimentAdvance(RunAspectSentimentAdvanceRequest request) {
@@ -126,13 +125,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAspectSentimentAdvanceRequest 请求对象
+     * @param request RunAspectSentimentAdvanceRequest 请求对象
      * @return SyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse>
      */
     public SyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse> runAspectSentimentAdvanceInvoker(
         RunAspectSentimentAdvanceRequest request) {
-        return new SyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse>(request,
-            NlpMeta.runAspectSentimentAdvance, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runAspectSentimentAdvance, hcClient);
     }
 
     /**
@@ -143,7 +141,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunClassificationRequest 请求对象
+     * @param request RunClassificationRequest 请求对象
      * @return RunClassificationResponse
      */
     public RunClassificationResponse runClassification(RunClassificationRequest request) {
@@ -158,13 +156,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunClassificationRequest 请求对象
+     * @param request RunClassificationRequest 请求对象
      * @return SyncInvoker<RunClassificationRequest, RunClassificationResponse>
      */
     public SyncInvoker<RunClassificationRequest, RunClassificationResponse> runClassificationInvoker(
         RunClassificationRequest request) {
-        return new SyncInvoker<RunClassificationRequest, RunClassificationResponse>(request, NlpMeta.runClassification,
-            hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runClassification, hcClient);
     }
 
     /**
@@ -175,7 +172,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunConstituencyParserRequest 请求对象
+     * @param request RunConstituencyParserRequest 请求对象
      * @return RunConstituencyParserResponse
      */
     public RunConstituencyParserResponse runConstituencyParser(RunConstituencyParserRequest request) {
@@ -190,13 +187,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunConstituencyParserRequest 请求对象
+     * @param request RunConstituencyParserRequest 请求对象
      * @return SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>
      */
     public SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse> runConstituencyParserInvoker(
         RunConstituencyParserRequest request) {
-        return new SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>(request,
-            NlpMeta.runConstituencyParser, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runConstituencyParser, hcClient);
     }
 
     /**
@@ -207,7 +203,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDependencyParserRequest 请求对象
+     * @param request RunDependencyParserRequest 请求对象
      * @return RunDependencyParserResponse
      */
     public RunDependencyParserResponse runDependencyParser(RunDependencyParserRequest request) {
@@ -222,13 +218,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDependencyParserRequest 请求对象
+     * @param request RunDependencyParserRequest 请求对象
      * @return SyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse>
      */
     public SyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse> runDependencyParserInvoker(
         RunDependencyParserRequest request) {
-        return new SyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse>(request,
-            NlpMeta.runDependencyParser, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runDependencyParser, hcClient);
     }
 
     /**
@@ -239,7 +234,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDocClassificationRequest 请求对象
+     * @param request RunDocClassificationRequest 请求对象
      * @return RunDocClassificationResponse
      */
     public RunDocClassificationResponse runDocClassification(RunDocClassificationRequest request) {
@@ -254,13 +249,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDocClassificationRequest 请求对象
+     * @param request RunDocClassificationRequest 请求对象
      * @return SyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse>
      */
     public SyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse> runDocClassificationInvoker(
         RunDocClassificationRequest request) {
-        return new SyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse>(request,
-            NlpMeta.runDocClassification, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runDocClassification, hcClient);
     }
 
     /**
@@ -271,7 +265,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDomainSentimentRequest 请求对象
+     * @param request RunDomainSentimentRequest 请求对象
      * @return RunDomainSentimentResponse
      */
     public RunDomainSentimentResponse runDomainSentiment(RunDomainSentimentRequest request) {
@@ -286,13 +280,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDomainSentimentRequest 请求对象
+     * @param request RunDomainSentimentRequest 请求对象
      * @return SyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse>
      */
     public SyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse> runDomainSentimentInvoker(
         RunDomainSentimentRequest request) {
-        return new SyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse>(request,
-            NlpMeta.runDomainSentiment, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runDomainSentiment, hcClient);
     }
 
     /**
@@ -303,7 +296,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunEntityLinkingRequest 请求对象
+     * @param request RunEntityLinkingRequest 请求对象
      * @return RunEntityLinkingResponse
      */
     public RunEntityLinkingResponse runEntityLinking(RunEntityLinkingRequest request) {
@@ -318,13 +311,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunEntityLinkingRequest 请求对象
+     * @param request RunEntityLinkingRequest 请求对象
      * @return SyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse>
      */
     public SyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse> runEntityLinkingInvoker(
         RunEntityLinkingRequest request) {
-        return new SyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse>(request, NlpMeta.runEntityLinking,
-            hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runEntityLinking, hcClient);
     }
 
     /**
@@ -335,7 +327,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunEntitySentimentRequest 请求对象
+     * @param request RunEntitySentimentRequest 请求对象
      * @return RunEntitySentimentResponse
      */
     public RunEntitySentimentResponse runEntitySentiment(RunEntitySentimentRequest request) {
@@ -350,13 +342,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunEntitySentimentRequest 请求对象
+     * @param request RunEntitySentimentRequest 请求对象
      * @return SyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse>
      */
     public SyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse> runEntitySentimentInvoker(
         RunEntitySentimentRequest request) {
-        return new SyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse>(request,
-            NlpMeta.runEntitySentiment, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runEntitySentiment, hcClient);
     }
 
     /**
@@ -368,7 +359,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunEventExtractionRequest 请求对象
+     * @param request RunEventExtractionRequest 请求对象
      * @return RunEventExtractionResponse
      */
     public RunEventExtractionResponse runEventExtraction(RunEventExtractionRequest request) {
@@ -384,13 +375,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunEventExtractionRequest 请求对象
+     * @param request RunEventExtractionRequest 请求对象
      * @return SyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse>
      */
     public SyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse> runEventExtractionInvoker(
         RunEventExtractionRequest request) {
-        return new SyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse>(request,
-            NlpMeta.runEventExtraction, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runEventExtraction, hcClient);
     }
 
     /**
@@ -401,7 +391,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunFileTranslationRequest 请求对象
+     * @param request RunFileTranslationRequest 请求对象
      * @return RunFileTranslationResponse
      */
     public RunFileTranslationResponse runFileTranslation(RunFileTranslationRequest request) {
@@ -416,13 +406,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunFileTranslationRequest 请求对象
+     * @param request RunFileTranslationRequest 请求对象
      * @return SyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse>
      */
     public SyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse> runFileTranslationInvoker(
         RunFileTranslationRequest request) {
-        return new SyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse>(request,
-            NlpMeta.runFileTranslation, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runFileTranslation, hcClient);
     }
 
     /**
@@ -432,7 +421,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunGetFileTranslationResultRequest 请求对象
+     * @param request RunGetFileTranslationResultRequest 请求对象
      * @return RunGetFileTranslationResultResponse
      */
     public RunGetFileTranslationResultResponse runGetFileTranslationResult(RunGetFileTranslationResultRequest request) {
@@ -446,13 +435,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunGetFileTranslationResultRequest 请求对象
+     * @param request RunGetFileTranslationResultRequest 请求对象
      * @return SyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse>
      */
     public SyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse> runGetFileTranslationResultInvoker(
         RunGetFileTranslationResultRequest request) {
-        return new SyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse>(request,
-            NlpMeta.runGetFileTranslationResult, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runGetFileTranslationResult, hcClient);
     }
 
     /**
@@ -463,7 +451,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunKeywordExtractRequest 请求对象
+     * @param request RunKeywordExtractRequest 请求对象
      * @return RunKeywordExtractResponse
      */
     public RunKeywordExtractResponse runKeywordExtract(RunKeywordExtractRequest request) {
@@ -478,13 +466,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunKeywordExtractRequest 请求对象
+     * @param request RunKeywordExtractRequest 请求对象
      * @return SyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse>
      */
     public SyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse> runKeywordExtractInvoker(
         RunKeywordExtractRequest request) {
-        return new SyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse>(request, NlpMeta.runKeywordExtract,
-            hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runKeywordExtract, hcClient);
     }
 
     /**
@@ -495,7 +482,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunLanguageDetectionRequest 请求对象
+     * @param request RunLanguageDetectionRequest 请求对象
      * @return RunLanguageDetectionResponse
      */
     public RunLanguageDetectionResponse runLanguageDetection(RunLanguageDetectionRequest request) {
@@ -510,13 +497,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunLanguageDetectionRequest 请求对象
+     * @param request RunLanguageDetectionRequest 请求对象
      * @return SyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse>
      */
     public SyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse> runLanguageDetectionInvoker(
         RunLanguageDetectionRequest request) {
-        return new SyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse>(request,
-            NlpMeta.runLanguageDetection, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runLanguageDetection, hcClient);
     }
 
     /**
@@ -527,7 +513,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunMultiGrainedSegmentRequest 请求对象
+     * @param request RunMultiGrainedSegmentRequest 请求对象
      * @return RunMultiGrainedSegmentResponse
      */
     public RunMultiGrainedSegmentResponse runMultiGrainedSegment(RunMultiGrainedSegmentRequest request) {
@@ -542,13 +528,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunMultiGrainedSegmentRequest 请求对象
+     * @param request RunMultiGrainedSegmentRequest 请求对象
      * @return SyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse>
      */
     public SyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse> runMultiGrainedSegmentInvoker(
         RunMultiGrainedSegmentRequest request) {
-        return new SyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse>(request,
-            NlpMeta.runMultiGrainedSegment, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runMultiGrainedSegment, hcClient);
     }
 
     /**
@@ -559,7 +544,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunNerRequest 请求对象
+     * @param request RunNerRequest 请求对象
      * @return RunNerResponse
      */
     public RunNerResponse runNer(RunNerRequest request) {
@@ -574,11 +559,11 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunNerRequest 请求对象
+     * @param request RunNerRequest 请求对象
      * @return SyncInvoker<RunNerRequest, RunNerResponse>
      */
     public SyncInvoker<RunNerRequest, RunNerResponse> runNerInvoker(RunNerRequest request) {
-        return new SyncInvoker<RunNerRequest, RunNerResponse>(request, NlpMeta.runNer, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runNer, hcClient);
     }
 
     /**
@@ -589,7 +574,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunNerDomainRequest 请求对象
+     * @param request RunNerDomainRequest 请求对象
      * @return RunNerDomainResponse
      */
     public RunNerDomainResponse runNerDomain(RunNerDomainRequest request) {
@@ -604,11 +589,11 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunNerDomainRequest 请求对象
+     * @param request RunNerDomainRequest 请求对象
      * @return SyncInvoker<RunNerDomainRequest, RunNerDomainResponse>
      */
     public SyncInvoker<RunNerDomainRequest, RunNerDomainResponse> runNerDomainInvoker(RunNerDomainRequest request) {
-        return new SyncInvoker<RunNerDomainRequest, RunNerDomainResponse>(request, NlpMeta.runNerDomain, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runNerDomain, hcClient);
     }
 
     /**
@@ -619,7 +604,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunPoemRequest 请求对象
+     * @param request RunPoemRequest 请求对象
      * @return RunPoemResponse
      */
     public RunPoemResponse runPoem(RunPoemRequest request) {
@@ -634,11 +619,11 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunPoemRequest 请求对象
+     * @param request RunPoemRequest 请求对象
      * @return SyncInvoker<RunPoemRequest, RunPoemResponse>
      */
     public SyncInvoker<RunPoemRequest, RunPoemResponse> runPoemInvoker(RunPoemRequest request) {
-        return new SyncInvoker<RunPoemRequest, RunPoemResponse>(request, NlpMeta.runPoem, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runPoem, hcClient);
     }
 
     /**
@@ -649,7 +634,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSegmentRequest 请求对象
+     * @param request RunSegmentRequest 请求对象
      * @return RunSegmentResponse
      */
     public RunSegmentResponse runSegment(RunSegmentRequest request) {
@@ -664,11 +649,11 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSegmentRequest 请求对象
+     * @param request RunSegmentRequest 请求对象
      * @return SyncInvoker<RunSegmentRequest, RunSegmentResponse>
      */
     public SyncInvoker<RunSegmentRequest, RunSegmentResponse> runSegmentInvoker(RunSegmentRequest request) {
-        return new SyncInvoker<RunSegmentRequest, RunSegmentResponse>(request, NlpMeta.runSegment, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runSegment, hcClient);
     }
 
     /**
@@ -679,7 +664,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSemanticParserRequest 请求对象
+     * @param request RunSemanticParserRequest 请求对象
      * @return RunSemanticParserResponse
      */
     public RunSemanticParserResponse runSemanticParser(RunSemanticParserRequest request) {
@@ -694,13 +679,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSemanticParserRequest 请求对象
+     * @param request RunSemanticParserRequest 请求对象
      * @return SyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse>
      */
     public SyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse> runSemanticParserInvoker(
         RunSemanticParserRequest request) {
-        return new SyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse>(request, NlpMeta.runSemanticParser,
-            hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runSemanticParser, hcClient);
     }
 
     /**
@@ -711,7 +695,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSentenceEmbeddingRequest 请求对象
+     * @param request RunSentenceEmbeddingRequest 请求对象
      * @return RunSentenceEmbeddingResponse
      */
     public RunSentenceEmbeddingResponse runSentenceEmbedding(RunSentenceEmbeddingRequest request) {
@@ -726,13 +710,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSentenceEmbeddingRequest 请求对象
+     * @param request RunSentenceEmbeddingRequest 请求对象
      * @return SyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse>
      */
     public SyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse> runSentenceEmbeddingInvoker(
         RunSentenceEmbeddingRequest request) {
-        return new SyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse>(request,
-            NlpMeta.runSentenceEmbedding, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runSentenceEmbedding, hcClient);
     }
 
     /**
@@ -743,7 +726,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSentimentRequest 请求对象
+     * @param request RunSentimentRequest 请求对象
      * @return RunSentimentResponse
      */
     public RunSentimentResponse runSentiment(RunSentimentRequest request) {
@@ -758,11 +741,11 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSentimentRequest 请求对象
+     * @param request RunSentimentRequest 请求对象
      * @return SyncInvoker<RunSentimentRequest, RunSentimentResponse>
      */
     public SyncInvoker<RunSentimentRequest, RunSentimentResponse> runSentimentInvoker(RunSentimentRequest request) {
-        return new SyncInvoker<RunSentimentRequest, RunSentimentResponse>(request, NlpMeta.runSentiment, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runSentiment, hcClient);
     }
 
     /**
@@ -773,7 +756,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSummaryRequest 请求对象
+     * @param request RunSummaryRequest 请求对象
      * @return RunSummaryResponse
      */
     public RunSummaryResponse runSummary(RunSummaryRequest request) {
@@ -788,11 +771,11 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSummaryRequest 请求对象
+     * @param request RunSummaryRequest 请求对象
      * @return SyncInvoker<RunSummaryRequest, RunSummaryResponse>
      */
     public SyncInvoker<RunSummaryRequest, RunSummaryResponse> runSummaryInvoker(RunSummaryRequest request) {
-        return new SyncInvoker<RunSummaryRequest, RunSummaryResponse>(request, NlpMeta.runSummary, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runSummary, hcClient);
     }
 
     /**
@@ -803,7 +786,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSummaryDomainRequest 请求对象
+     * @param request RunSummaryDomainRequest 请求对象
      * @return RunSummaryDomainResponse
      */
     public RunSummaryDomainResponse runSummaryDomain(RunSummaryDomainRequest request) {
@@ -818,13 +801,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSummaryDomainRequest 请求对象
+     * @param request RunSummaryDomainRequest 请求对象
      * @return SyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse>
      */
     public SyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse> runSummaryDomainInvoker(
         RunSummaryDomainRequest request) {
-        return new SyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse>(request, NlpMeta.runSummaryDomain,
-            hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runSummaryDomain, hcClient);
     }
 
     /**
@@ -835,7 +817,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTextSimilarityRequest 请求对象
+     * @param request RunTextSimilarityRequest 请求对象
      * @return RunTextSimilarityResponse
      */
     public RunTextSimilarityResponse runTextSimilarity(RunTextSimilarityRequest request) {
@@ -850,13 +832,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTextSimilarityRequest 请求对象
+     * @param request RunTextSimilarityRequest 请求对象
      * @return SyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse>
      */
     public SyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse> runTextSimilarityInvoker(
         RunTextSimilarityRequest request) {
-        return new SyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse>(request, NlpMeta.runTextSimilarity,
-            hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runTextSimilarity, hcClient);
     }
 
     /**
@@ -867,7 +848,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTextSimilarityAdvanceRequest 请求对象
+     * @param request RunTextSimilarityAdvanceRequest 请求对象
      * @return RunTextSimilarityAdvanceResponse
      */
     public RunTextSimilarityAdvanceResponse runTextSimilarityAdvance(RunTextSimilarityAdvanceRequest request) {
@@ -882,13 +863,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTextSimilarityAdvanceRequest 请求对象
+     * @param request RunTextSimilarityAdvanceRequest 请求对象
      * @return SyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse>
      */
     public SyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse> runTextSimilarityAdvanceInvoker(
         RunTextSimilarityAdvanceRequest request) {
-        return new SyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse>(request,
-            NlpMeta.runTextSimilarityAdvance, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runTextSimilarityAdvance, hcClient);
     }
 
     /**
@@ -899,7 +879,7 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTextTranslationRequest 请求对象
+     * @param request RunTextTranslationRequest 请求对象
      * @return RunTextTranslationResponse
      */
     public RunTextTranslationResponse runTextTranslation(RunTextTranslationRequest request) {
@@ -914,13 +894,12 @@ public class NlpClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTextTranslationRequest 请求对象
+     * @param request RunTextTranslationRequest 请求对象
      * @return SyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse>
      */
     public SyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse> runTextTranslationInvoker(
         RunTextTranslationRequest request) {
-        return new SyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse>(request,
-            NlpMeta.runTextTranslation, hcClient);
+        return new SyncInvoker<>(request, NlpMeta.runTextTranslation, hcClient);
     }
 
 }

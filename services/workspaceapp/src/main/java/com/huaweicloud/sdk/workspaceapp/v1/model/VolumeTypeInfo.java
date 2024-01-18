@@ -55,7 +55,7 @@ public class VolumeTypeInfo {
     }
 
     /**
-     * 资源规格编码
+     * 资源规格编码。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -72,7 +72,7 @@ public class VolumeTypeInfo {
     }
 
     /**
-     * 磁盘类型
+     * 磁盘类型。
      * @return volumeType
      */
     public String getVolumeType() {
@@ -89,7 +89,7 @@ public class VolumeTypeInfo {
     }
 
     /**
-     * 磁盘产品类型
+     * 磁盘产品类型。
      * @return volumeProductType
      */
     public String getVolumeProductType() {
@@ -106,7 +106,7 @@ public class VolumeTypeInfo {
     }
 
     /**
-     * 资源类型字段
+     * 资源类型字段。
      * @return resourceType
      */
     public String getResourceType() {
@@ -123,7 +123,7 @@ public class VolumeTypeInfo {
     }
 
     /**
-     * 资源所属云服务类型编码
+     * 资源所属云服务类型编码。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -156,7 +156,7 @@ public class VolumeTypeInfo {
     }
 
     /**
-     * 磁盘中英文名称
+     * 磁盘中英文名称。
      * @return name
      */
     public List<Map<String, String>> getName() {

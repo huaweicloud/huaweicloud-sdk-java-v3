@@ -174,7 +174,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddHostsGroupRequest 请求对象
+     * @param request AddHostsGroupRequest 请求对象
      * @return AddHostsGroupResponse
      */
     public AddHostsGroupResponse addHostsGroup(AddHostsGroupRequest request) {
@@ -188,11 +188,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddHostsGroupRequest 请求对象
+     * @param request AddHostsGroupRequest 请求对象
      * @return SyncInvoker<AddHostsGroupRequest, AddHostsGroupResponse>
      */
     public SyncInvoker<AddHostsGroupRequest, AddHostsGroupResponse> addHostsGroupInvoker(AddHostsGroupRequest request) {
-        return new SyncInvoker<AddHostsGroupRequest, AddHostsGroupResponse>(request, HssMeta.addHostsGroup, hcClient);
+        return new SyncInvoker<>(request, HssMeta.addHostsGroup, hcClient);
     }
 
     /**
@@ -202,7 +202,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociatePolicyGroupRequest 请求对象
+     * @param request AssociatePolicyGroupRequest 请求对象
      * @return AssociatePolicyGroupResponse
      */
     public AssociatePolicyGroupResponse associatePolicyGroup(AssociatePolicyGroupRequest request) {
@@ -216,13 +216,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociatePolicyGroupRequest 请求对象
+     * @param request AssociatePolicyGroupRequest 请求对象
      * @return SyncInvoker<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse>
      */
     public SyncInvoker<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse> associatePolicyGroupInvoker(
         AssociatePolicyGroupRequest request) {
-        return new SyncInvoker<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse>(request,
-            HssMeta.associatePolicyGroup, hcClient);
+        return new SyncInvoker<>(request, HssMeta.associatePolicyGroup, hcClient);
     }
 
     /**
@@ -232,7 +231,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagsRequest 请求对象
+     * @param request BatchCreateTagsRequest 请求对象
      * @return BatchCreateTagsResponse
      */
     public BatchCreateTagsResponse batchCreateTags(BatchCreateTagsRequest request) {
@@ -246,13 +245,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagsRequest 请求对象
+     * @param request BatchCreateTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
      */
     public SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTagsInvoker(
         BatchCreateTagsRequest request) {
-        return new SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>(request, HssMeta.batchCreateTags,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.batchCreateTags, hcClient);
     }
 
     /**
@@ -262,7 +260,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchScanSwrImageRequest 请求对象
+     * @param request BatchScanSwrImageRequest 请求对象
      * @return BatchScanSwrImageResponse
      */
     public BatchScanSwrImageResponse batchScanSwrImage(BatchScanSwrImageRequest request) {
@@ -276,13 +274,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchScanSwrImageRequest 请求对象
+     * @param request BatchScanSwrImageRequest 请求对象
      * @return SyncInvoker<BatchScanSwrImageRequest, BatchScanSwrImageResponse>
      */
     public SyncInvoker<BatchScanSwrImageRequest, BatchScanSwrImageResponse> batchScanSwrImageInvoker(
         BatchScanSwrImageRequest request) {
-        return new SyncInvoker<BatchScanSwrImageRequest, BatchScanSwrImageResponse>(request, HssMeta.batchScanSwrImage,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.batchScanSwrImage, hcClient);
     }
 
     /**
@@ -292,7 +289,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBlockedIpRequest 请求对象
+     * @param request ChangeBlockedIpRequest 请求对象
      * @return ChangeBlockedIpResponse
      */
     public ChangeBlockedIpResponse changeBlockedIp(ChangeBlockedIpRequest request) {
@@ -306,13 +303,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeBlockedIpRequest 请求对象
+     * @param request ChangeBlockedIpRequest 请求对象
      * @return SyncInvoker<ChangeBlockedIpRequest, ChangeBlockedIpResponse>
      */
     public SyncInvoker<ChangeBlockedIpRequest, ChangeBlockedIpResponse> changeBlockedIpInvoker(
         ChangeBlockedIpRequest request) {
-        return new SyncInvoker<ChangeBlockedIpRequest, ChangeBlockedIpResponse>(request, HssMeta.changeBlockedIp,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.changeBlockedIp, hcClient);
     }
 
     /**
@@ -322,7 +318,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeCheckRuleActionRequest 请求对象
+     * @param request ChangeCheckRuleActionRequest 请求对象
      * @return ChangeCheckRuleActionResponse
      */
     public ChangeCheckRuleActionResponse changeCheckRuleAction(ChangeCheckRuleActionRequest request) {
@@ -336,13 +332,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeCheckRuleActionRequest 请求对象
+     * @param request ChangeCheckRuleActionRequest 请求对象
      * @return SyncInvoker<ChangeCheckRuleActionRequest, ChangeCheckRuleActionResponse>
      */
     public SyncInvoker<ChangeCheckRuleActionRequest, ChangeCheckRuleActionResponse> changeCheckRuleActionInvoker(
         ChangeCheckRuleActionRequest request) {
-        return new SyncInvoker<ChangeCheckRuleActionRequest, ChangeCheckRuleActionResponse>(request,
-            HssMeta.changeCheckRuleAction, hcClient);
+        return new SyncInvoker<>(request, HssMeta.changeCheckRuleAction, hcClient);
     }
 
     /**
@@ -352,7 +347,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeEventRequest 请求对象
+     * @param request ChangeEventRequest 请求对象
      * @return ChangeEventResponse
      */
     public ChangeEventResponse changeEvent(ChangeEventRequest request) {
@@ -366,11 +361,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeEventRequest 请求对象
+     * @param request ChangeEventRequest 请求对象
      * @return SyncInvoker<ChangeEventRequest, ChangeEventResponse>
      */
     public SyncInvoker<ChangeEventRequest, ChangeEventResponse> changeEventInvoker(ChangeEventRequest request) {
-        return new SyncInvoker<ChangeEventRequest, ChangeEventResponse>(request, HssMeta.changeEvent, hcClient);
+        return new SyncInvoker<>(request, HssMeta.changeEvent, hcClient);
     }
 
     /**
@@ -380,7 +375,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeHostsGroupRequest 请求对象
+     * @param request ChangeHostsGroupRequest 请求对象
      * @return ChangeHostsGroupResponse
      */
     public ChangeHostsGroupResponse changeHostsGroup(ChangeHostsGroupRequest request) {
@@ -394,13 +389,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeHostsGroupRequest 请求对象
+     * @param request ChangeHostsGroupRequest 请求对象
      * @return SyncInvoker<ChangeHostsGroupRequest, ChangeHostsGroupResponse>
      */
     public SyncInvoker<ChangeHostsGroupRequest, ChangeHostsGroupResponse> changeHostsGroupInvoker(
         ChangeHostsGroupRequest request) {
-        return new SyncInvoker<ChangeHostsGroupRequest, ChangeHostsGroupResponse>(request, HssMeta.changeHostsGroup,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.changeHostsGroup, hcClient);
     }
 
     /**
@@ -410,7 +404,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeIsolatedFileRequest 请求对象
+     * @param request ChangeIsolatedFileRequest 请求对象
      * @return ChangeIsolatedFileResponse
      */
     public ChangeIsolatedFileResponse changeIsolatedFile(ChangeIsolatedFileRequest request) {
@@ -424,13 +418,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeIsolatedFileRequest 请求对象
+     * @param request ChangeIsolatedFileRequest 请求对象
      * @return SyncInvoker<ChangeIsolatedFileRequest, ChangeIsolatedFileResponse>
      */
     public SyncInvoker<ChangeIsolatedFileRequest, ChangeIsolatedFileResponse> changeIsolatedFileInvoker(
         ChangeIsolatedFileRequest request) {
-        return new SyncInvoker<ChangeIsolatedFileRequest, ChangeIsolatedFileResponse>(request,
-            HssMeta.changeIsolatedFile, hcClient);
+        return new SyncInvoker<>(request, HssMeta.changeIsolatedFile, hcClient);
     }
 
     /**
@@ -440,7 +433,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeVulScanPolicyRequest 请求对象
+     * @param request ChangeVulScanPolicyRequest 请求对象
      * @return ChangeVulScanPolicyResponse
      */
     public ChangeVulScanPolicyResponse changeVulScanPolicy(ChangeVulScanPolicyRequest request) {
@@ -454,13 +447,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeVulScanPolicyRequest 请求对象
+     * @param request ChangeVulScanPolicyRequest 请求对象
      * @return SyncInvoker<ChangeVulScanPolicyRequest, ChangeVulScanPolicyResponse>
      */
     public SyncInvoker<ChangeVulScanPolicyRequest, ChangeVulScanPolicyResponse> changeVulScanPolicyInvoker(
         ChangeVulScanPolicyRequest request) {
-        return new SyncInvoker<ChangeVulScanPolicyRequest, ChangeVulScanPolicyResponse>(request,
-            HssMeta.changeVulScanPolicy, hcClient);
+        return new SyncInvoker<>(request, HssMeta.changeVulScanPolicy, hcClient);
     }
 
     /**
@@ -470,7 +462,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeVulStatusRequest 请求对象
+     * @param request ChangeVulStatusRequest 请求对象
      * @return ChangeVulStatusResponse
      */
     public ChangeVulStatusResponse changeVulStatus(ChangeVulStatusRequest request) {
@@ -484,13 +476,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeVulStatusRequest 请求对象
+     * @param request ChangeVulStatusRequest 请求对象
      * @return SyncInvoker<ChangeVulStatusRequest, ChangeVulStatusResponse>
      */
     public SyncInvoker<ChangeVulStatusRequest, ChangeVulStatusResponse> changeVulStatusInvoker(
         ChangeVulStatusRequest request) {
-        return new SyncInvoker<ChangeVulStatusRequest, ChangeVulStatusResponse>(request, HssMeta.changeVulStatus,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.changeVulStatus, hcClient);
     }
 
     /**
@@ -500,7 +491,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVulnerabilityScanTaskRequest 请求对象
+     * @param request CreateVulnerabilityScanTaskRequest 请求对象
      * @return CreateVulnerabilityScanTaskResponse
      */
     public CreateVulnerabilityScanTaskResponse createVulnerabilityScanTask(CreateVulnerabilityScanTaskRequest request) {
@@ -514,13 +505,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVulnerabilityScanTaskRequest 请求对象
+     * @param request CreateVulnerabilityScanTaskRequest 请求对象
      * @return SyncInvoker<CreateVulnerabilityScanTaskRequest, CreateVulnerabilityScanTaskResponse>
      */
     public SyncInvoker<CreateVulnerabilityScanTaskRequest, CreateVulnerabilityScanTaskResponse> createVulnerabilityScanTaskInvoker(
         CreateVulnerabilityScanTaskRequest request) {
-        return new SyncInvoker<CreateVulnerabilityScanTaskRequest, CreateVulnerabilityScanTaskResponse>(request,
-            HssMeta.createVulnerabilityScanTask, hcClient);
+        return new SyncInvoker<>(request, HssMeta.createVulnerabilityScanTask, hcClient);
     }
 
     /**
@@ -530,7 +520,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHostsGroupRequest 请求对象
+     * @param request DeleteHostsGroupRequest 请求对象
      * @return DeleteHostsGroupResponse
      */
     public DeleteHostsGroupResponse deleteHostsGroup(DeleteHostsGroupRequest request) {
@@ -544,13 +534,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHostsGroupRequest 请求对象
+     * @param request DeleteHostsGroupRequest 请求对象
      * @return SyncInvoker<DeleteHostsGroupRequest, DeleteHostsGroupResponse>
      */
     public SyncInvoker<DeleteHostsGroupRequest, DeleteHostsGroupResponse> deleteHostsGroupInvoker(
         DeleteHostsGroupRequest request) {
-        return new SyncInvoker<DeleteHostsGroupRequest, DeleteHostsGroupResponse>(request, HssMeta.deleteHostsGroup,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.deleteHostsGroup, hcClient);
     }
 
     /**
@@ -560,7 +549,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceInstanceTagRequest 请求对象
+     * @param request DeleteResourceInstanceTagRequest 请求对象
      * @return DeleteResourceInstanceTagResponse
      */
     public DeleteResourceInstanceTagResponse deleteResourceInstanceTag(DeleteResourceInstanceTagRequest request) {
@@ -574,13 +563,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceInstanceTagRequest 请求对象
+     * @param request DeleteResourceInstanceTagRequest 请求对象
      * @return SyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse>
      */
     public SyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse> deleteResourceInstanceTagInvoker(
         DeleteResourceInstanceTagRequest request) {
-        return new SyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse>(request,
-            HssMeta.deleteResourceInstanceTag, hcClient);
+        return new SyncInvoker<>(request, HssMeta.deleteResourceInstanceTag, hcClient);
     }
 
     /**
@@ -590,7 +578,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmWhiteListRequest 请求对象
+     * @param request ListAlarmWhiteListRequest 请求对象
      * @return ListAlarmWhiteListResponse
      */
     public ListAlarmWhiteListResponse listAlarmWhiteList(ListAlarmWhiteListRequest request) {
@@ -604,13 +592,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmWhiteListRequest 请求对象
+     * @param request ListAlarmWhiteListRequest 请求对象
      * @return SyncInvoker<ListAlarmWhiteListRequest, ListAlarmWhiteListResponse>
      */
     public SyncInvoker<ListAlarmWhiteListRequest, ListAlarmWhiteListResponse> listAlarmWhiteListInvoker(
         ListAlarmWhiteListRequest request) {
-        return new SyncInvoker<ListAlarmWhiteListRequest, ListAlarmWhiteListResponse>(request,
-            HssMeta.listAlarmWhiteList, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listAlarmWhiteList, hcClient);
     }
 
     /**
@@ -620,7 +607,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppChangeHistoriesRequest 请求对象
+     * @param request ListAppChangeHistoriesRequest 请求对象
      * @return ListAppChangeHistoriesResponse
      */
     public ListAppChangeHistoriesResponse listAppChangeHistories(ListAppChangeHistoriesRequest request) {
@@ -634,13 +621,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppChangeHistoriesRequest 请求对象
+     * @param request ListAppChangeHistoriesRequest 请求对象
      * @return SyncInvoker<ListAppChangeHistoriesRequest, ListAppChangeHistoriesResponse>
      */
     public SyncInvoker<ListAppChangeHistoriesRequest, ListAppChangeHistoriesResponse> listAppChangeHistoriesInvoker(
         ListAppChangeHistoriesRequest request) {
-        return new SyncInvoker<ListAppChangeHistoriesRequest, ListAppChangeHistoriesResponse>(request,
-            HssMeta.listAppChangeHistories, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listAppChangeHistories, hcClient);
     }
 
     /**
@@ -650,7 +636,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppStatisticsRequest 请求对象
+     * @param request ListAppStatisticsRequest 请求对象
      * @return ListAppStatisticsResponse
      */
     public ListAppStatisticsResponse listAppStatistics(ListAppStatisticsRequest request) {
@@ -664,13 +650,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppStatisticsRequest 请求对象
+     * @param request ListAppStatisticsRequest 请求对象
      * @return SyncInvoker<ListAppStatisticsRequest, ListAppStatisticsResponse>
      */
     public SyncInvoker<ListAppStatisticsRequest, ListAppStatisticsResponse> listAppStatisticsInvoker(
         ListAppStatisticsRequest request) {
-        return new SyncInvoker<ListAppStatisticsRequest, ListAppStatisticsResponse>(request, HssMeta.listAppStatistics,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.listAppStatistics, hcClient);
     }
 
     /**
@@ -680,7 +665,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsRequest 请求对象
+     * @param request ListAppsRequest 请求对象
      * @return ListAppsResponse
      */
     public ListAppsResponse listApps(ListAppsRequest request) {
@@ -694,11 +679,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsRequest 请求对象
+     * @param request ListAppsRequest 请求对象
      * @return SyncInvoker<ListAppsRequest, ListAppsResponse>
      */
     public SyncInvoker<ListAppsRequest, ListAppsResponse> listAppsInvoker(ListAppsRequest request) {
-        return new SyncInvoker<ListAppsRequest, ListAppsResponse>(request, HssMeta.listApps, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listApps, hcClient);
     }
 
     /**
@@ -708,7 +693,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoLaunchChangeHistoriesRequest 请求对象
+     * @param request ListAutoLaunchChangeHistoriesRequest 请求对象
      * @return ListAutoLaunchChangeHistoriesResponse
      */
     public ListAutoLaunchChangeHistoriesResponse listAutoLaunchChangeHistories(
@@ -723,13 +708,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoLaunchChangeHistoriesRequest 请求对象
+     * @param request ListAutoLaunchChangeHistoriesRequest 请求对象
      * @return SyncInvoker<ListAutoLaunchChangeHistoriesRequest, ListAutoLaunchChangeHistoriesResponse>
      */
     public SyncInvoker<ListAutoLaunchChangeHistoriesRequest, ListAutoLaunchChangeHistoriesResponse> listAutoLaunchChangeHistoriesInvoker(
         ListAutoLaunchChangeHistoriesRequest request) {
-        return new SyncInvoker<ListAutoLaunchChangeHistoriesRequest, ListAutoLaunchChangeHistoriesResponse>(request,
-            HssMeta.listAutoLaunchChangeHistories, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listAutoLaunchChangeHistories, hcClient);
     }
 
     /**
@@ -739,7 +723,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoLaunchStatisticsRequest 请求对象
+     * @param request ListAutoLaunchStatisticsRequest 请求对象
      * @return ListAutoLaunchStatisticsResponse
      */
     public ListAutoLaunchStatisticsResponse listAutoLaunchStatistics(ListAutoLaunchStatisticsRequest request) {
@@ -753,13 +737,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoLaunchStatisticsRequest 请求对象
+     * @param request ListAutoLaunchStatisticsRequest 请求对象
      * @return SyncInvoker<ListAutoLaunchStatisticsRequest, ListAutoLaunchStatisticsResponse>
      */
     public SyncInvoker<ListAutoLaunchStatisticsRequest, ListAutoLaunchStatisticsResponse> listAutoLaunchStatisticsInvoker(
         ListAutoLaunchStatisticsRequest request) {
-        return new SyncInvoker<ListAutoLaunchStatisticsRequest, ListAutoLaunchStatisticsResponse>(request,
-            HssMeta.listAutoLaunchStatistics, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listAutoLaunchStatistics, hcClient);
     }
 
     /**
@@ -769,7 +752,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoLaunchsRequest 请求对象
+     * @param request ListAutoLaunchsRequest 请求对象
      * @return ListAutoLaunchsResponse
      */
     public ListAutoLaunchsResponse listAutoLaunchs(ListAutoLaunchsRequest request) {
@@ -783,13 +766,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoLaunchsRequest 请求对象
+     * @param request ListAutoLaunchsRequest 请求对象
      * @return SyncInvoker<ListAutoLaunchsRequest, ListAutoLaunchsResponse>
      */
     public SyncInvoker<ListAutoLaunchsRequest, ListAutoLaunchsResponse> listAutoLaunchsInvoker(
         ListAutoLaunchsRequest request) {
-        return new SyncInvoker<ListAutoLaunchsRequest, ListAutoLaunchsResponse>(request, HssMeta.listAutoLaunchs,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.listAutoLaunchs, hcClient);
     }
 
     /**
@@ -799,7 +781,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBlockedIpRequest 请求对象
+     * @param request ListBlockedIpRequest 请求对象
      * @return ListBlockedIpResponse
      */
     public ListBlockedIpResponse listBlockedIp(ListBlockedIpRequest request) {
@@ -813,11 +795,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBlockedIpRequest 请求对象
+     * @param request ListBlockedIpRequest 请求对象
      * @return SyncInvoker<ListBlockedIpRequest, ListBlockedIpResponse>
      */
     public SyncInvoker<ListBlockedIpRequest, ListBlockedIpResponse> listBlockedIpInvoker(ListBlockedIpRequest request) {
-        return new SyncInvoker<ListBlockedIpRequest, ListBlockedIpResponse>(request, HssMeta.listBlockedIp, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listBlockedIp, hcClient);
     }
 
     /**
@@ -827,7 +809,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListContainerNodesRequest 请求对象
+     * @param request ListContainerNodesRequest 请求对象
      * @return ListContainerNodesResponse
      */
     public ListContainerNodesResponse listContainerNodes(ListContainerNodesRequest request) {
@@ -841,13 +823,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListContainerNodesRequest 请求对象
+     * @param request ListContainerNodesRequest 请求对象
      * @return SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse>
      */
     public SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse> listContainerNodesInvoker(
         ListContainerNodesRequest request) {
-        return new SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse>(request,
-            HssMeta.listContainerNodes, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listContainerNodes, hcClient);
     }
 
     /**
@@ -857,7 +838,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostGroupsRequest 请求对象
+     * @param request ListHostGroupsRequest 请求对象
      * @return ListHostGroupsResponse
      */
     public ListHostGroupsResponse listHostGroups(ListHostGroupsRequest request) {
@@ -871,13 +852,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostGroupsRequest 请求对象
+     * @param request ListHostGroupsRequest 请求对象
      * @return SyncInvoker<ListHostGroupsRequest, ListHostGroupsResponse>
      */
     public SyncInvoker<ListHostGroupsRequest, ListHostGroupsResponse> listHostGroupsInvoker(
         ListHostGroupsRequest request) {
-        return new SyncInvoker<ListHostGroupsRequest, ListHostGroupsResponse>(request, HssMeta.listHostGroups,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.listHostGroups, hcClient);
     }
 
     /**
@@ -887,7 +867,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostProtectHistoryInfoRequest 请求对象
+     * @param request ListHostProtectHistoryInfoRequest 请求对象
      * @return ListHostProtectHistoryInfoResponse
      */
     public ListHostProtectHistoryInfoResponse listHostProtectHistoryInfo(ListHostProtectHistoryInfoRequest request) {
@@ -901,13 +881,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostProtectHistoryInfoRequest 请求对象
+     * @param request ListHostProtectHistoryInfoRequest 请求对象
      * @return SyncInvoker<ListHostProtectHistoryInfoRequest, ListHostProtectHistoryInfoResponse>
      */
     public SyncInvoker<ListHostProtectHistoryInfoRequest, ListHostProtectHistoryInfoResponse> listHostProtectHistoryInfoInvoker(
         ListHostProtectHistoryInfoRequest request) {
-        return new SyncInvoker<ListHostProtectHistoryInfoRequest, ListHostProtectHistoryInfoResponse>(request,
-            HssMeta.listHostProtectHistoryInfo, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listHostProtectHistoryInfo, hcClient);
     }
 
     /**
@@ -917,7 +896,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostRaspProtectHistoryInfoRequest 请求对象
+     * @param request ListHostRaspProtectHistoryInfoRequest 请求对象
      * @return ListHostRaspProtectHistoryInfoResponse
      */
     public ListHostRaspProtectHistoryInfoResponse listHostRaspProtectHistoryInfo(
@@ -932,13 +911,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostRaspProtectHistoryInfoRequest 请求对象
+     * @param request ListHostRaspProtectHistoryInfoRequest 请求对象
      * @return SyncInvoker<ListHostRaspProtectHistoryInfoRequest, ListHostRaspProtectHistoryInfoResponse>
      */
     public SyncInvoker<ListHostRaspProtectHistoryInfoRequest, ListHostRaspProtectHistoryInfoResponse> listHostRaspProtectHistoryInfoInvoker(
         ListHostRaspProtectHistoryInfoRequest request) {
-        return new SyncInvoker<ListHostRaspProtectHistoryInfoRequest, ListHostRaspProtectHistoryInfoResponse>(request,
-            HssMeta.listHostRaspProtectHistoryInfo, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listHostRaspProtectHistoryInfo, hcClient);
     }
 
     /**
@@ -948,7 +926,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostStatusRequest 请求对象
+     * @param request ListHostStatusRequest 请求对象
      * @return ListHostStatusResponse
      */
     public ListHostStatusResponse listHostStatus(ListHostStatusRequest request) {
@@ -962,13 +940,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostStatusRequest 请求对象
+     * @param request ListHostStatusRequest 请求对象
      * @return SyncInvoker<ListHostStatusRequest, ListHostStatusResponse>
      */
     public SyncInvoker<ListHostStatusRequest, ListHostStatusResponse> listHostStatusInvoker(
         ListHostStatusRequest request) {
-        return new SyncInvoker<ListHostStatusRequest, ListHostStatusResponse>(request, HssMeta.listHostStatus,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.listHostStatus, hcClient);
     }
 
     /**
@@ -978,7 +955,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostVulsRequest 请求对象
+     * @param request ListHostVulsRequest 请求对象
      * @return ListHostVulsResponse
      */
     public ListHostVulsResponse listHostVuls(ListHostVulsRequest request) {
@@ -992,11 +969,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostVulsRequest 请求对象
+     * @param request ListHostVulsRequest 请求对象
      * @return SyncInvoker<ListHostVulsRequest, ListHostVulsResponse>
      */
     public SyncInvoker<ListHostVulsRequest, ListHostVulsResponse> listHostVulsInvoker(ListHostVulsRequest request) {
-        return new SyncInvoker<ListHostVulsRequest, ListHostVulsResponse>(request, HssMeta.listHostVuls, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listHostVuls, hcClient);
     }
 
     /**
@@ -1006,7 +983,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageRiskConfigRulesRequest 请求对象
+     * @param request ListImageRiskConfigRulesRequest 请求对象
      * @return ListImageRiskConfigRulesResponse
      */
     public ListImageRiskConfigRulesResponse listImageRiskConfigRules(ListImageRiskConfigRulesRequest request) {
@@ -1020,13 +997,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageRiskConfigRulesRequest 请求对象
+     * @param request ListImageRiskConfigRulesRequest 请求对象
      * @return SyncInvoker<ListImageRiskConfigRulesRequest, ListImageRiskConfigRulesResponse>
      */
     public SyncInvoker<ListImageRiskConfigRulesRequest, ListImageRiskConfigRulesResponse> listImageRiskConfigRulesInvoker(
         ListImageRiskConfigRulesRequest request) {
-        return new SyncInvoker<ListImageRiskConfigRulesRequest, ListImageRiskConfigRulesResponse>(request,
-            HssMeta.listImageRiskConfigRules, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listImageRiskConfigRules, hcClient);
     }
 
     /**
@@ -1036,7 +1012,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageRiskConfigsRequest 请求对象
+     * @param request ListImageRiskConfigsRequest 请求对象
      * @return ListImageRiskConfigsResponse
      */
     public ListImageRiskConfigsResponse listImageRiskConfigs(ListImageRiskConfigsRequest request) {
@@ -1050,13 +1026,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageRiskConfigsRequest 请求对象
+     * @param request ListImageRiskConfigsRequest 请求对象
      * @return SyncInvoker<ListImageRiskConfigsRequest, ListImageRiskConfigsResponse>
      */
     public SyncInvoker<ListImageRiskConfigsRequest, ListImageRiskConfigsResponse> listImageRiskConfigsInvoker(
         ListImageRiskConfigsRequest request) {
-        return new SyncInvoker<ListImageRiskConfigsRequest, ListImageRiskConfigsResponse>(request,
-            HssMeta.listImageRiskConfigs, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listImageRiskConfigs, hcClient);
     }
 
     /**
@@ -1066,7 +1041,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageVulnerabilitiesRequest 请求对象
+     * @param request ListImageVulnerabilitiesRequest 请求对象
      * @return ListImageVulnerabilitiesResponse
      */
     public ListImageVulnerabilitiesResponse listImageVulnerabilities(ListImageVulnerabilitiesRequest request) {
@@ -1080,13 +1055,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageVulnerabilitiesRequest 请求对象
+     * @param request ListImageVulnerabilitiesRequest 请求对象
      * @return SyncInvoker<ListImageVulnerabilitiesRequest, ListImageVulnerabilitiesResponse>
      */
     public SyncInvoker<ListImageVulnerabilitiesRequest, ListImageVulnerabilitiesResponse> listImageVulnerabilitiesInvoker(
         ListImageVulnerabilitiesRequest request) {
-        return new SyncInvoker<ListImageVulnerabilitiesRequest, ListImageVulnerabilitiesResponse>(request,
-            HssMeta.listImageVulnerabilities, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listImageVulnerabilities, hcClient);
     }
 
     /**
@@ -1096,7 +1070,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIsolatedFileRequest 请求对象
+     * @param request ListIsolatedFileRequest 请求对象
      * @return ListIsolatedFileResponse
      */
     public ListIsolatedFileResponse listIsolatedFile(ListIsolatedFileRequest request) {
@@ -1110,13 +1084,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIsolatedFileRequest 请求对象
+     * @param request ListIsolatedFileRequest 请求对象
      * @return SyncInvoker<ListIsolatedFileRequest, ListIsolatedFileResponse>
      */
     public SyncInvoker<ListIsolatedFileRequest, ListIsolatedFileResponse> listIsolatedFileInvoker(
         ListIsolatedFileRequest request) {
-        return new SyncInvoker<ListIsolatedFileRequest, ListIsolatedFileResponse>(request, HssMeta.listIsolatedFile,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.listIsolatedFile, hcClient);
     }
 
     /**
@@ -1126,7 +1099,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJarPackageHostInfoRequest 请求对象
+     * @param request ListJarPackageHostInfoRequest 请求对象
      * @return ListJarPackageHostInfoResponse
      */
     public ListJarPackageHostInfoResponse listJarPackageHostInfo(ListJarPackageHostInfoRequest request) {
@@ -1140,13 +1113,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJarPackageHostInfoRequest 请求对象
+     * @param request ListJarPackageHostInfoRequest 请求对象
      * @return SyncInvoker<ListJarPackageHostInfoRequest, ListJarPackageHostInfoResponse>
      */
     public SyncInvoker<ListJarPackageHostInfoRequest, ListJarPackageHostInfoResponse> listJarPackageHostInfoInvoker(
         ListJarPackageHostInfoRequest request) {
-        return new SyncInvoker<ListJarPackageHostInfoRequest, ListJarPackageHostInfoResponse>(request,
-            HssMeta.listJarPackageHostInfo, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listJarPackageHostInfo, hcClient);
     }
 
     /**
@@ -1156,7 +1128,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJarPackageStatisticsRequest 请求对象
+     * @param request ListJarPackageStatisticsRequest 请求对象
      * @return ListJarPackageStatisticsResponse
      */
     public ListJarPackageStatisticsResponse listJarPackageStatistics(ListJarPackageStatisticsRequest request) {
@@ -1170,13 +1142,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJarPackageStatisticsRequest 请求对象
+     * @param request ListJarPackageStatisticsRequest 请求对象
      * @return SyncInvoker<ListJarPackageStatisticsRequest, ListJarPackageStatisticsResponse>
      */
     public SyncInvoker<ListJarPackageStatisticsRequest, ListJarPackageStatisticsResponse> listJarPackageStatisticsInvoker(
         ListJarPackageStatisticsRequest request) {
-        return new SyncInvoker<ListJarPackageStatisticsRequest, ListJarPackageStatisticsResponse>(request,
-            HssMeta.listJarPackageStatistics, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listJarPackageStatistics, hcClient);
     }
 
     /**
@@ -1186,7 +1157,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPasswordComplexityRequest 请求对象
+     * @param request ListPasswordComplexityRequest 请求对象
      * @return ListPasswordComplexityResponse
      */
     public ListPasswordComplexityResponse listPasswordComplexity(ListPasswordComplexityRequest request) {
@@ -1200,13 +1171,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPasswordComplexityRequest 请求对象
+     * @param request ListPasswordComplexityRequest 请求对象
      * @return SyncInvoker<ListPasswordComplexityRequest, ListPasswordComplexityResponse>
      */
     public SyncInvoker<ListPasswordComplexityRequest, ListPasswordComplexityResponse> listPasswordComplexityInvoker(
         ListPasswordComplexityRequest request) {
-        return new SyncInvoker<ListPasswordComplexityRequest, ListPasswordComplexityResponse>(request,
-            HssMeta.listPasswordComplexity, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listPasswordComplexity, hcClient);
     }
 
     /**
@@ -1216,7 +1186,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyGroupRequest 请求对象
+     * @param request ListPolicyGroupRequest 请求对象
      * @return ListPolicyGroupResponse
      */
     public ListPolicyGroupResponse listPolicyGroup(ListPolicyGroupRequest request) {
@@ -1230,13 +1200,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyGroupRequest 请求对象
+     * @param request ListPolicyGroupRequest 请求对象
      * @return SyncInvoker<ListPolicyGroupRequest, ListPolicyGroupResponse>
      */
     public SyncInvoker<ListPolicyGroupRequest, ListPolicyGroupResponse> listPolicyGroupInvoker(
         ListPolicyGroupRequest request) {
-        return new SyncInvoker<ListPolicyGroupRequest, ListPolicyGroupResponse>(request, HssMeta.listPolicyGroup,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.listPolicyGroup, hcClient);
     }
 
     /**
@@ -1246,7 +1215,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortHostRequest 请求对象
+     * @param request ListPortHostRequest 请求对象
      * @return ListPortHostResponse
      */
     public ListPortHostResponse listPortHost(ListPortHostRequest request) {
@@ -1260,11 +1229,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortHostRequest 请求对象
+     * @param request ListPortHostRequest 请求对象
      * @return SyncInvoker<ListPortHostRequest, ListPortHostResponse>
      */
     public SyncInvoker<ListPortHostRequest, ListPortHostResponse> listPortHostInvoker(ListPortHostRequest request) {
-        return new SyncInvoker<ListPortHostRequest, ListPortHostResponse>(request, HssMeta.listPortHost, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listPortHost, hcClient);
     }
 
     /**
@@ -1274,7 +1243,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortStatisticsRequest 请求对象
+     * @param request ListPortStatisticsRequest 请求对象
      * @return ListPortStatisticsResponse
      */
     public ListPortStatisticsResponse listPortStatistics(ListPortStatisticsRequest request) {
@@ -1288,13 +1257,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortStatisticsRequest 请求对象
+     * @param request ListPortStatisticsRequest 请求对象
      * @return SyncInvoker<ListPortStatisticsRequest, ListPortStatisticsResponse>
      */
     public SyncInvoker<ListPortStatisticsRequest, ListPortStatisticsResponse> listPortStatisticsInvoker(
         ListPortStatisticsRequest request) {
-        return new SyncInvoker<ListPortStatisticsRequest, ListPortStatisticsResponse>(request,
-            HssMeta.listPortStatistics, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listPortStatistics, hcClient);
     }
 
     /**
@@ -1304,7 +1272,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortsRequest 请求对象
+     * @param request ListPortsRequest 请求对象
      * @return ListPortsResponse
      */
     public ListPortsResponse listPorts(ListPortsRequest request) {
@@ -1318,11 +1286,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPortsRequest 请求对象
+     * @param request ListPortsRequest 请求对象
      * @return SyncInvoker<ListPortsRequest, ListPortsResponse>
      */
     public SyncInvoker<ListPortsRequest, ListPortsResponse> listPortsInvoker(ListPortsRequest request) {
-        return new SyncInvoker<ListPortsRequest, ListPortsResponse>(request, HssMeta.listPorts, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listPorts, hcClient);
     }
 
     /**
@@ -1332,7 +1300,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProcessStatisticsRequest 请求对象
+     * @param request ListProcessStatisticsRequest 请求对象
      * @return ListProcessStatisticsResponse
      */
     public ListProcessStatisticsResponse listProcessStatistics(ListProcessStatisticsRequest request) {
@@ -1346,13 +1314,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProcessStatisticsRequest 请求对象
+     * @param request ListProcessStatisticsRequest 请求对象
      * @return SyncInvoker<ListProcessStatisticsRequest, ListProcessStatisticsResponse>
      */
     public SyncInvoker<ListProcessStatisticsRequest, ListProcessStatisticsResponse> listProcessStatisticsInvoker(
         ListProcessStatisticsRequest request) {
-        return new SyncInvoker<ListProcessStatisticsRequest, ListProcessStatisticsResponse>(request,
-            HssMeta.listProcessStatistics, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listProcessStatistics, hcClient);
     }
 
     /**
@@ -1362,7 +1329,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProcessesHostRequest 请求对象
+     * @param request ListProcessesHostRequest 请求对象
      * @return ListProcessesHostResponse
      */
     public ListProcessesHostResponse listProcessesHost(ListProcessesHostRequest request) {
@@ -1376,13 +1343,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProcessesHostRequest 请求对象
+     * @param request ListProcessesHostRequest 请求对象
      * @return SyncInvoker<ListProcessesHostRequest, ListProcessesHostResponse>
      */
     public SyncInvoker<ListProcessesHostRequest, ListProcessesHostResponse> listProcessesHostInvoker(
         ListProcessesHostRequest request) {
-        return new SyncInvoker<ListProcessesHostRequest, ListProcessesHostResponse>(request, HssMeta.listProcessesHost,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.listProcessesHost, hcClient);
     }
 
     /**
@@ -1392,7 +1358,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProtectionPolicyRequest 请求对象
+     * @param request ListProtectionPolicyRequest 请求对象
      * @return ListProtectionPolicyResponse
      */
     public ListProtectionPolicyResponse listProtectionPolicy(ListProtectionPolicyRequest request) {
@@ -1406,13 +1372,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProtectionPolicyRequest 请求对象
+     * @param request ListProtectionPolicyRequest 请求对象
      * @return SyncInvoker<ListProtectionPolicyRequest, ListProtectionPolicyResponse>
      */
     public SyncInvoker<ListProtectionPolicyRequest, ListProtectionPolicyResponse> listProtectionPolicyInvoker(
         ListProtectionPolicyRequest request) {
-        return new SyncInvoker<ListProtectionPolicyRequest, ListProtectionPolicyResponse>(request,
-            HssMeta.listProtectionPolicy, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listProtectionPolicy, hcClient);
     }
 
     /**
@@ -1422,7 +1387,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProtectionServerRequest 请求对象
+     * @param request ListProtectionServerRequest 请求对象
      * @return ListProtectionServerResponse
      */
     public ListProtectionServerResponse listProtectionServer(ListProtectionServerRequest request) {
@@ -1436,13 +1401,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProtectionServerRequest 请求对象
+     * @param request ListProtectionServerRequest 请求对象
      * @return SyncInvoker<ListProtectionServerRequest, ListProtectionServerResponse>
      */
     public SyncInvoker<ListProtectionServerRequest, ListProtectionServerResponse> listProtectionServerInvoker(
         ListProtectionServerRequest request) {
-        return new SyncInvoker<ListProtectionServerRequest, ListProtectionServerResponse>(request,
-            HssMeta.listProtectionServer, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listProtectionServer, hcClient);
     }
 
     /**
@@ -1452,7 +1416,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasDetailRequest 请求对象
+     * @param request ListQuotasDetailRequest 请求对象
      * @return ListQuotasDetailResponse
      */
     public ListQuotasDetailResponse listQuotasDetail(ListQuotasDetailRequest request) {
@@ -1466,13 +1430,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasDetailRequest 请求对象
+     * @param request ListQuotasDetailRequest 请求对象
      * @return SyncInvoker<ListQuotasDetailRequest, ListQuotasDetailResponse>
      */
     public SyncInvoker<ListQuotasDetailRequest, ListQuotasDetailResponse> listQuotasDetailInvoker(
         ListQuotasDetailRequest request) {
-        return new SyncInvoker<ListQuotasDetailRequest, ListQuotasDetailResponse>(request, HssMeta.listQuotasDetail,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.listQuotasDetail, hcClient);
     }
 
     /**
@@ -1482,7 +1445,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRiskConfigCheckRulesRequest 请求对象
+     * @param request ListRiskConfigCheckRulesRequest 请求对象
      * @return ListRiskConfigCheckRulesResponse
      */
     public ListRiskConfigCheckRulesResponse listRiskConfigCheckRules(ListRiskConfigCheckRulesRequest request) {
@@ -1496,13 +1459,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRiskConfigCheckRulesRequest 请求对象
+     * @param request ListRiskConfigCheckRulesRequest 请求对象
      * @return SyncInvoker<ListRiskConfigCheckRulesRequest, ListRiskConfigCheckRulesResponse>
      */
     public SyncInvoker<ListRiskConfigCheckRulesRequest, ListRiskConfigCheckRulesResponse> listRiskConfigCheckRulesInvoker(
         ListRiskConfigCheckRulesRequest request) {
-        return new SyncInvoker<ListRiskConfigCheckRulesRequest, ListRiskConfigCheckRulesResponse>(request,
-            HssMeta.listRiskConfigCheckRules, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listRiskConfigCheckRules, hcClient);
     }
 
     /**
@@ -1512,7 +1474,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRiskConfigHostsRequest 请求对象
+     * @param request ListRiskConfigHostsRequest 请求对象
      * @return ListRiskConfigHostsResponse
      */
     public ListRiskConfigHostsResponse listRiskConfigHosts(ListRiskConfigHostsRequest request) {
@@ -1526,13 +1488,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRiskConfigHostsRequest 请求对象
+     * @param request ListRiskConfigHostsRequest 请求对象
      * @return SyncInvoker<ListRiskConfigHostsRequest, ListRiskConfigHostsResponse>
      */
     public SyncInvoker<ListRiskConfigHostsRequest, ListRiskConfigHostsResponse> listRiskConfigHostsInvoker(
         ListRiskConfigHostsRequest request) {
-        return new SyncInvoker<ListRiskConfigHostsRequest, ListRiskConfigHostsResponse>(request,
-            HssMeta.listRiskConfigHosts, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listRiskConfigHosts, hcClient);
     }
 
     /**
@@ -1542,7 +1503,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRiskConfigsRequest 请求对象
+     * @param request ListRiskConfigsRequest 请求对象
      * @return ListRiskConfigsResponse
      */
     public ListRiskConfigsResponse listRiskConfigs(ListRiskConfigsRequest request) {
@@ -1556,13 +1517,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRiskConfigsRequest 请求对象
+     * @param request ListRiskConfigsRequest 请求对象
      * @return SyncInvoker<ListRiskConfigsRequest, ListRiskConfigsResponse>
      */
     public SyncInvoker<ListRiskConfigsRequest, ListRiskConfigsResponse> listRiskConfigsInvoker(
         ListRiskConfigsRequest request) {
-        return new SyncInvoker<ListRiskConfigsRequest, ListRiskConfigsResponse>(request, HssMeta.listRiskConfigs,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.listRiskConfigs, hcClient);
     }
 
     /**
@@ -1572,7 +1532,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityEventsRequest 请求对象
+     * @param request ListSecurityEventsRequest 请求对象
      * @return ListSecurityEventsResponse
      */
     public ListSecurityEventsResponse listSecurityEvents(ListSecurityEventsRequest request) {
@@ -1586,13 +1546,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSecurityEventsRequest 请求对象
+     * @param request ListSecurityEventsRequest 请求对象
      * @return SyncInvoker<ListSecurityEventsRequest, ListSecurityEventsResponse>
      */
     public SyncInvoker<ListSecurityEventsRequest, ListSecurityEventsResponse> listSecurityEventsInvoker(
         ListSecurityEventsRequest request) {
-        return new SyncInvoker<ListSecurityEventsRequest, ListSecurityEventsResponse>(request,
-            HssMeta.listSecurityEvents, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listSecurityEvents, hcClient);
     }
 
     /**
@@ -1602,7 +1561,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSwrImageRepositoryRequest 请求对象
+     * @param request ListSwrImageRepositoryRequest 请求对象
      * @return ListSwrImageRepositoryResponse
      */
     public ListSwrImageRepositoryResponse listSwrImageRepository(ListSwrImageRepositoryRequest request) {
@@ -1616,13 +1575,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSwrImageRepositoryRequest 请求对象
+     * @param request ListSwrImageRepositoryRequest 请求对象
      * @return SyncInvoker<ListSwrImageRepositoryRequest, ListSwrImageRepositoryResponse>
      */
     public SyncInvoker<ListSwrImageRepositoryRequest, ListSwrImageRepositoryResponse> listSwrImageRepositoryInvoker(
         ListSwrImageRepositoryRequest request) {
-        return new SyncInvoker<ListSwrImageRepositoryRequest, ListSwrImageRepositoryResponse>(request,
-            HssMeta.listSwrImageRepository, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listSwrImageRepository, hcClient);
     }
 
     /**
@@ -1632,7 +1590,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserChangeHistoriesRequest 请求对象
+     * @param request ListUserChangeHistoriesRequest 请求对象
      * @return ListUserChangeHistoriesResponse
      */
     public ListUserChangeHistoriesResponse listUserChangeHistories(ListUserChangeHistoriesRequest request) {
@@ -1646,13 +1604,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserChangeHistoriesRequest 请求对象
+     * @param request ListUserChangeHistoriesRequest 请求对象
      * @return SyncInvoker<ListUserChangeHistoriesRequest, ListUserChangeHistoriesResponse>
      */
     public SyncInvoker<ListUserChangeHistoriesRequest, ListUserChangeHistoriesResponse> listUserChangeHistoriesInvoker(
         ListUserChangeHistoriesRequest request) {
-        return new SyncInvoker<ListUserChangeHistoriesRequest, ListUserChangeHistoriesResponse>(request,
-            HssMeta.listUserChangeHistories, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listUserChangeHistories, hcClient);
     }
 
     /**
@@ -1662,7 +1619,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserStatisticsRequest 请求对象
+     * @param request ListUserStatisticsRequest 请求对象
      * @return ListUserStatisticsResponse
      */
     public ListUserStatisticsResponse listUserStatistics(ListUserStatisticsRequest request) {
@@ -1676,13 +1633,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserStatisticsRequest 请求对象
+     * @param request ListUserStatisticsRequest 请求对象
      * @return SyncInvoker<ListUserStatisticsRequest, ListUserStatisticsResponse>
      */
     public SyncInvoker<ListUserStatisticsRequest, ListUserStatisticsResponse> listUserStatisticsInvoker(
         ListUserStatisticsRequest request) {
-        return new SyncInvoker<ListUserStatisticsRequest, ListUserStatisticsResponse>(request,
-            HssMeta.listUserStatistics, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listUserStatistics, hcClient);
     }
 
     /**
@@ -1692,7 +1648,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersRequest 请求对象
+     * @param request ListUsersRequest 请求对象
      * @return ListUsersResponse
      */
     public ListUsersResponse listUsers(ListUsersRequest request) {
@@ -1706,11 +1662,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersRequest 请求对象
+     * @param request ListUsersRequest 请求对象
      * @return SyncInvoker<ListUsersRequest, ListUsersResponse>
      */
     public SyncInvoker<ListUsersRequest, ListUsersResponse> listUsersInvoker(ListUsersRequest request) {
-        return new SyncInvoker<ListUsersRequest, ListUsersResponse>(request, HssMeta.listUsers, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listUsers, hcClient);
     }
 
     /**
@@ -1720,7 +1676,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVulHostsRequest 请求对象
+     * @param request ListVulHostsRequest 请求对象
      * @return ListVulHostsResponse
      */
     public ListVulHostsResponse listVulHosts(ListVulHostsRequest request) {
@@ -1734,11 +1690,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVulHostsRequest 请求对象
+     * @param request ListVulHostsRequest 请求对象
      * @return SyncInvoker<ListVulHostsRequest, ListVulHostsResponse>
      */
     public SyncInvoker<ListVulHostsRequest, ListVulHostsResponse> listVulHostsInvoker(ListVulHostsRequest request) {
-        return new SyncInvoker<ListVulHostsRequest, ListVulHostsResponse>(request, HssMeta.listVulHosts, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listVulHosts, hcClient);
     }
 
     /**
@@ -1748,7 +1704,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVulScanTaskRequest 请求对象
+     * @param request ListVulScanTaskRequest 请求对象
      * @return ListVulScanTaskResponse
      */
     public ListVulScanTaskResponse listVulScanTask(ListVulScanTaskRequest request) {
@@ -1762,13 +1718,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVulScanTaskRequest 请求对象
+     * @param request ListVulScanTaskRequest 请求对象
      * @return SyncInvoker<ListVulScanTaskRequest, ListVulScanTaskResponse>
      */
     public SyncInvoker<ListVulScanTaskRequest, ListVulScanTaskResponse> listVulScanTaskInvoker(
         ListVulScanTaskRequest request) {
-        return new SyncInvoker<ListVulScanTaskRequest, ListVulScanTaskResponse>(request, HssMeta.listVulScanTask,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.listVulScanTask, hcClient);
     }
 
     /**
@@ -1778,7 +1733,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVulScanTaskHostRequest 请求对象
+     * @param request ListVulScanTaskHostRequest 请求对象
      * @return ListVulScanTaskHostResponse
      */
     public ListVulScanTaskHostResponse listVulScanTaskHost(ListVulScanTaskHostRequest request) {
@@ -1792,13 +1747,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVulScanTaskHostRequest 请求对象
+     * @param request ListVulScanTaskHostRequest 请求对象
      * @return SyncInvoker<ListVulScanTaskHostRequest, ListVulScanTaskHostResponse>
      */
     public SyncInvoker<ListVulScanTaskHostRequest, ListVulScanTaskHostResponse> listVulScanTaskHostInvoker(
         ListVulScanTaskHostRequest request) {
-        return new SyncInvoker<ListVulScanTaskHostRequest, ListVulScanTaskHostResponse>(request,
-            HssMeta.listVulScanTaskHost, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listVulScanTaskHost, hcClient);
     }
 
     /**
@@ -1808,7 +1762,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVulnerabilitiesRequest 请求对象
+     * @param request ListVulnerabilitiesRequest 请求对象
      * @return ListVulnerabilitiesResponse
      */
     public ListVulnerabilitiesResponse listVulnerabilities(ListVulnerabilitiesRequest request) {
@@ -1822,13 +1776,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVulnerabilitiesRequest 请求对象
+     * @param request ListVulnerabilitiesRequest 请求对象
      * @return SyncInvoker<ListVulnerabilitiesRequest, ListVulnerabilitiesResponse>
      */
     public SyncInvoker<ListVulnerabilitiesRequest, ListVulnerabilitiesResponse> listVulnerabilitiesInvoker(
         ListVulnerabilitiesRequest request) {
-        return new SyncInvoker<ListVulnerabilitiesRequest, ListVulnerabilitiesResponse>(request,
-            HssMeta.listVulnerabilities, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listVulnerabilities, hcClient);
     }
 
     /**
@@ -1838,7 +1791,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVulnerabilityCveRequest 请求对象
+     * @param request ListVulnerabilityCveRequest 请求对象
      * @return ListVulnerabilityCveResponse
      */
     public ListVulnerabilityCveResponse listVulnerabilityCve(ListVulnerabilityCveRequest request) {
@@ -1852,13 +1805,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVulnerabilityCveRequest 请求对象
+     * @param request ListVulnerabilityCveRequest 请求对象
      * @return SyncInvoker<ListVulnerabilityCveRequest, ListVulnerabilityCveResponse>
      */
     public SyncInvoker<ListVulnerabilityCveRequest, ListVulnerabilityCveResponse> listVulnerabilityCveInvoker(
         ListVulnerabilityCveRequest request) {
-        return new SyncInvoker<ListVulnerabilityCveRequest, ListVulnerabilityCveResponse>(request,
-            HssMeta.listVulnerabilityCve, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listVulnerabilityCve, hcClient);
     }
 
     /**
@@ -1868,7 +1820,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWeakPasswordUsersRequest 请求对象
+     * @param request ListWeakPasswordUsersRequest 请求对象
      * @return ListWeakPasswordUsersResponse
      */
     public ListWeakPasswordUsersResponse listWeakPasswordUsers(ListWeakPasswordUsersRequest request) {
@@ -1882,13 +1834,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWeakPasswordUsersRequest 请求对象
+     * @param request ListWeakPasswordUsersRequest 请求对象
      * @return SyncInvoker<ListWeakPasswordUsersRequest, ListWeakPasswordUsersResponse>
      */
     public SyncInvoker<ListWeakPasswordUsersRequest, ListWeakPasswordUsersResponse> listWeakPasswordUsersInvoker(
         ListWeakPasswordUsersRequest request) {
-        return new SyncInvoker<ListWeakPasswordUsersRequest, ListWeakPasswordUsersResponse>(request,
-            HssMeta.listWeakPasswordUsers, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listWeakPasswordUsers, hcClient);
     }
 
     /**
@@ -1898,7 +1849,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWtpProtectHostRequest 请求对象
+     * @param request ListWtpProtectHostRequest 请求对象
      * @return ListWtpProtectHostResponse
      */
     public ListWtpProtectHostResponse listWtpProtectHost(ListWtpProtectHostRequest request) {
@@ -1912,13 +1863,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWtpProtectHostRequest 请求对象
+     * @param request ListWtpProtectHostRequest 请求对象
      * @return SyncInvoker<ListWtpProtectHostRequest, ListWtpProtectHostResponse>
      */
     public SyncInvoker<ListWtpProtectHostRequest, ListWtpProtectHostResponse> listWtpProtectHostInvoker(
         ListWtpProtectHostRequest request) {
-        return new SyncInvoker<ListWtpProtectHostRequest, ListWtpProtectHostResponse>(request,
-            HssMeta.listWtpProtectHost, hcClient);
+        return new SyncInvoker<>(request, HssMeta.listWtpProtectHost, hcClient);
     }
 
     /**
@@ -1928,7 +1878,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunImageSynchronizeRequest 请求对象
+     * @param request RunImageSynchronizeRequest 请求对象
      * @return RunImageSynchronizeResponse
      */
     public RunImageSynchronizeResponse runImageSynchronize(RunImageSynchronizeRequest request) {
@@ -1942,13 +1892,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunImageSynchronizeRequest 请求对象
+     * @param request RunImageSynchronizeRequest 请求对象
      * @return SyncInvoker<RunImageSynchronizeRequest, RunImageSynchronizeResponse>
      */
     public SyncInvoker<RunImageSynchronizeRequest, RunImageSynchronizeResponse> runImageSynchronizeInvoker(
         RunImageSynchronizeRequest request) {
-        return new SyncInvoker<RunImageSynchronizeRequest, RunImageSynchronizeResponse>(request,
-            HssMeta.runImageSynchronize, hcClient);
+        return new SyncInvoker<>(request, HssMeta.runImageSynchronize, hcClient);
     }
 
     /**
@@ -1958,7 +1907,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRaspSwitchRequest 请求对象
+     * @param request SetRaspSwitchRequest 请求对象
      * @return SetRaspSwitchResponse
      */
     public SetRaspSwitchResponse setRaspSwitch(SetRaspSwitchRequest request) {
@@ -1972,11 +1921,11 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRaspSwitchRequest 请求对象
+     * @param request SetRaspSwitchRequest 请求对象
      * @return SyncInvoker<SetRaspSwitchRequest, SetRaspSwitchResponse>
      */
     public SyncInvoker<SetRaspSwitchRequest, SetRaspSwitchResponse> setRaspSwitchInvoker(SetRaspSwitchRequest request) {
-        return new SyncInvoker<SetRaspSwitchRequest, SetRaspSwitchResponse>(request, HssMeta.setRaspSwitch, hcClient);
+        return new SyncInvoker<>(request, HssMeta.setRaspSwitch, hcClient);
     }
 
     /**
@@ -1986,7 +1935,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetWtpProtectionStatusInfoRequest 请求对象
+     * @param request SetWtpProtectionStatusInfoRequest 请求对象
      * @return SetWtpProtectionStatusInfoResponse
      */
     public SetWtpProtectionStatusInfoResponse setWtpProtectionStatusInfo(SetWtpProtectionStatusInfoRequest request) {
@@ -2000,13 +1949,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetWtpProtectionStatusInfoRequest 请求对象
+     * @param request SetWtpProtectionStatusInfoRequest 请求对象
      * @return SyncInvoker<SetWtpProtectionStatusInfoRequest, SetWtpProtectionStatusInfoResponse>
      */
     public SyncInvoker<SetWtpProtectionStatusInfoRequest, SetWtpProtectionStatusInfoResponse> setWtpProtectionStatusInfoInvoker(
         SetWtpProtectionStatusInfoRequest request) {
-        return new SyncInvoker<SetWtpProtectionStatusInfoRequest, SetWtpProtectionStatusInfoResponse>(request,
-            HssMeta.setWtpProtectionStatusInfo, hcClient);
+        return new SyncInvoker<>(request, HssMeta.setWtpProtectionStatusInfo, hcClient);
     }
 
     /**
@@ -2016,7 +1964,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetStatisticRequest 请求对象
+     * @param request ShowAssetStatisticRequest 请求对象
      * @return ShowAssetStatisticResponse
      */
     public ShowAssetStatisticResponse showAssetStatistic(ShowAssetStatisticRequest request) {
@@ -2030,13 +1978,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetStatisticRequest 请求对象
+     * @param request ShowAssetStatisticRequest 请求对象
      * @return SyncInvoker<ShowAssetStatisticRequest, ShowAssetStatisticResponse>
      */
     public SyncInvoker<ShowAssetStatisticRequest, ShowAssetStatisticResponse> showAssetStatisticInvoker(
         ShowAssetStatisticRequest request) {
-        return new SyncInvoker<ShowAssetStatisticRequest, ShowAssetStatisticResponse>(request,
-            HssMeta.showAssetStatistic, hcClient);
+        return new SyncInvoker<>(request, HssMeta.showAssetStatistic, hcClient);
     }
 
     /**
@@ -2046,7 +1993,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupPolicyInfoRequest 请求对象
+     * @param request ShowBackupPolicyInfoRequest 请求对象
      * @return ShowBackupPolicyInfoResponse
      */
     public ShowBackupPolicyInfoResponse showBackupPolicyInfo(ShowBackupPolicyInfoRequest request) {
@@ -2060,13 +2007,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupPolicyInfoRequest 请求对象
+     * @param request ShowBackupPolicyInfoRequest 请求对象
      * @return SyncInvoker<ShowBackupPolicyInfoRequest, ShowBackupPolicyInfoResponse>
      */
     public SyncInvoker<ShowBackupPolicyInfoRequest, ShowBackupPolicyInfoResponse> showBackupPolicyInfoInvoker(
         ShowBackupPolicyInfoRequest request) {
-        return new SyncInvoker<ShowBackupPolicyInfoRequest, ShowBackupPolicyInfoResponse>(request,
-            HssMeta.showBackupPolicyInfo, hcClient);
+        return new SyncInvoker<>(request, HssMeta.showBackupPolicyInfo, hcClient);
     }
 
     /**
@@ -2076,7 +2022,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckRuleDetailRequest 请求对象
+     * @param request ShowCheckRuleDetailRequest 请求对象
      * @return ShowCheckRuleDetailResponse
      */
     public ShowCheckRuleDetailResponse showCheckRuleDetail(ShowCheckRuleDetailRequest request) {
@@ -2090,13 +2036,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckRuleDetailRequest 请求对象
+     * @param request ShowCheckRuleDetailRequest 请求对象
      * @return SyncInvoker<ShowCheckRuleDetailRequest, ShowCheckRuleDetailResponse>
      */
     public SyncInvoker<ShowCheckRuleDetailRequest, ShowCheckRuleDetailResponse> showCheckRuleDetailInvoker(
         ShowCheckRuleDetailRequest request) {
-        return new SyncInvoker<ShowCheckRuleDetailRequest, ShowCheckRuleDetailResponse>(request,
-            HssMeta.showCheckRuleDetail, hcClient);
+        return new SyncInvoker<>(request, HssMeta.showCheckRuleDetail, hcClient);
     }
 
     /**
@@ -2106,7 +2051,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageCheckRuleDetailRequest 请求对象
+     * @param request ShowImageCheckRuleDetailRequest 请求对象
      * @return ShowImageCheckRuleDetailResponse
      */
     public ShowImageCheckRuleDetailResponse showImageCheckRuleDetail(ShowImageCheckRuleDetailRequest request) {
@@ -2120,13 +2065,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowImageCheckRuleDetailRequest 请求对象
+     * @param request ShowImageCheckRuleDetailRequest 请求对象
      * @return SyncInvoker<ShowImageCheckRuleDetailRequest, ShowImageCheckRuleDetailResponse>
      */
     public SyncInvoker<ShowImageCheckRuleDetailRequest, ShowImageCheckRuleDetailResponse> showImageCheckRuleDetailInvoker(
         ShowImageCheckRuleDetailRequest request) {
-        return new SyncInvoker<ShowImageCheckRuleDetailRequest, ShowImageCheckRuleDetailResponse>(request,
-            HssMeta.showImageCheckRuleDetail, hcClient);
+        return new SyncInvoker<>(request, HssMeta.showImageCheckRuleDetail, hcClient);
     }
 
     /**
@@ -2136,7 +2080,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceQuotasRequest 请求对象
+     * @param request ShowResourceQuotasRequest 请求对象
      * @return ShowResourceQuotasResponse
      */
     public ShowResourceQuotasResponse showResourceQuotas(ShowResourceQuotasRequest request) {
@@ -2150,13 +2094,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceQuotasRequest 请求对象
+     * @param request ShowResourceQuotasRequest 请求对象
      * @return SyncInvoker<ShowResourceQuotasRequest, ShowResourceQuotasResponse>
      */
     public SyncInvoker<ShowResourceQuotasRequest, ShowResourceQuotasResponse> showResourceQuotasInvoker(
         ShowResourceQuotasRequest request) {
-        return new SyncInvoker<ShowResourceQuotasRequest, ShowResourceQuotasResponse>(request,
-            HssMeta.showResourceQuotas, hcClient);
+        return new SyncInvoker<>(request, HssMeta.showResourceQuotas, hcClient);
     }
 
     /**
@@ -2166,7 +2109,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRiskConfigDetailRequest 请求对象
+     * @param request ShowRiskConfigDetailRequest 请求对象
      * @return ShowRiskConfigDetailResponse
      */
     public ShowRiskConfigDetailResponse showRiskConfigDetail(ShowRiskConfigDetailRequest request) {
@@ -2180,13 +2123,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRiskConfigDetailRequest 请求对象
+     * @param request ShowRiskConfigDetailRequest 请求对象
      * @return SyncInvoker<ShowRiskConfigDetailRequest, ShowRiskConfigDetailResponse>
      */
     public SyncInvoker<ShowRiskConfigDetailRequest, ShowRiskConfigDetailResponse> showRiskConfigDetailInvoker(
         ShowRiskConfigDetailRequest request) {
-        return new SyncInvoker<ShowRiskConfigDetailRequest, ShowRiskConfigDetailResponse>(request,
-            HssMeta.showRiskConfigDetail, hcClient);
+        return new SyncInvoker<>(request, HssMeta.showRiskConfigDetail, hcClient);
     }
 
     /**
@@ -2196,7 +2138,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVulScanPolicyRequest 请求对象
+     * @param request ShowVulScanPolicyRequest 请求对象
      * @return ShowVulScanPolicyResponse
      */
     public ShowVulScanPolicyResponse showVulScanPolicy(ShowVulScanPolicyRequest request) {
@@ -2210,13 +2152,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVulScanPolicyRequest 请求对象
+     * @param request ShowVulScanPolicyRequest 请求对象
      * @return SyncInvoker<ShowVulScanPolicyRequest, ShowVulScanPolicyResponse>
      */
     public SyncInvoker<ShowVulScanPolicyRequest, ShowVulScanPolicyResponse> showVulScanPolicyInvoker(
         ShowVulScanPolicyRequest request) {
-        return new SyncInvoker<ShowVulScanPolicyRequest, ShowVulScanPolicyResponse>(request, HssMeta.showVulScanPolicy,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.showVulScanPolicy, hcClient);
     }
 
     /**
@@ -2226,7 +2167,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVulStaticsRequest 请求对象
+     * @param request ShowVulStaticsRequest 请求对象
      * @return ShowVulStaticsResponse
      */
     public ShowVulStaticsResponse showVulStatics(ShowVulStaticsRequest request) {
@@ -2240,13 +2181,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVulStaticsRequest 请求对象
+     * @param request ShowVulStaticsRequest 请求对象
      * @return SyncInvoker<ShowVulStaticsRequest, ShowVulStaticsResponse>
      */
     public SyncInvoker<ShowVulStaticsRequest, ShowVulStaticsResponse> showVulStaticsInvoker(
         ShowVulStaticsRequest request) {
-        return new SyncInvoker<ShowVulStaticsRequest, ShowVulStaticsResponse>(request, HssMeta.showVulStatics,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.showVulStatics, hcClient);
     }
 
     /**
@@ -2256,7 +2196,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartProtectionRequest 请求对象
+     * @param request StartProtectionRequest 请求对象
      * @return StartProtectionResponse
      */
     public StartProtectionResponse startProtection(StartProtectionRequest request) {
@@ -2270,13 +2210,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartProtectionRequest 请求对象
+     * @param request StartProtectionRequest 请求对象
      * @return SyncInvoker<StartProtectionRequest, StartProtectionResponse>
      */
     public SyncInvoker<StartProtectionRequest, StartProtectionResponse> startProtectionInvoker(
         StartProtectionRequest request) {
-        return new SyncInvoker<StartProtectionRequest, StartProtectionResponse>(request, HssMeta.startProtection,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.startProtection, hcClient);
     }
 
     /**
@@ -2286,7 +2225,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopProtectionRequest 请求对象
+     * @param request StopProtectionRequest 请求对象
      * @return StopProtectionResponse
      */
     public StopProtectionResponse stopProtection(StopProtectionRequest request) {
@@ -2300,13 +2239,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopProtectionRequest 请求对象
+     * @param request StopProtectionRequest 请求对象
      * @return SyncInvoker<StopProtectionRequest, StopProtectionResponse>
      */
     public SyncInvoker<StopProtectionRequest, StopProtectionResponse> stopProtectionInvoker(
         StopProtectionRequest request) {
-        return new SyncInvoker<StopProtectionRequest, StopProtectionResponse>(request, HssMeta.stopProtection,
-            hcClient);
+        return new SyncInvoker<>(request, HssMeta.stopProtection, hcClient);
     }
 
     /**
@@ -2316,7 +2254,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchHostsProtectStatusRequest 请求对象
+     * @param request SwitchHostsProtectStatusRequest 请求对象
      * @return SwitchHostsProtectStatusResponse
      */
     public SwitchHostsProtectStatusResponse switchHostsProtectStatus(SwitchHostsProtectStatusRequest request) {
@@ -2330,13 +2268,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchHostsProtectStatusRequest 请求对象
+     * @param request SwitchHostsProtectStatusRequest 请求对象
      * @return SyncInvoker<SwitchHostsProtectStatusRequest, SwitchHostsProtectStatusResponse>
      */
     public SyncInvoker<SwitchHostsProtectStatusRequest, SwitchHostsProtectStatusResponse> switchHostsProtectStatusInvoker(
         SwitchHostsProtectStatusRequest request) {
-        return new SyncInvoker<SwitchHostsProtectStatusRequest, SwitchHostsProtectStatusResponse>(request,
-            HssMeta.switchHostsProtectStatus, hcClient);
+        return new SyncInvoker<>(request, HssMeta.switchHostsProtectStatus, hcClient);
     }
 
     /**
@@ -2346,7 +2283,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackupPolicyInfoRequest 请求对象
+     * @param request UpdateBackupPolicyInfoRequest 请求对象
      * @return UpdateBackupPolicyInfoResponse
      */
     public UpdateBackupPolicyInfoResponse updateBackupPolicyInfo(UpdateBackupPolicyInfoRequest request) {
@@ -2360,13 +2297,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackupPolicyInfoRequest 请求对象
+     * @param request UpdateBackupPolicyInfoRequest 请求对象
      * @return SyncInvoker<UpdateBackupPolicyInfoRequest, UpdateBackupPolicyInfoResponse>
      */
     public SyncInvoker<UpdateBackupPolicyInfoRequest, UpdateBackupPolicyInfoResponse> updateBackupPolicyInfoInvoker(
         UpdateBackupPolicyInfoRequest request) {
-        return new SyncInvoker<UpdateBackupPolicyInfoRequest, UpdateBackupPolicyInfoResponse>(request,
-            HssMeta.updateBackupPolicyInfo, hcClient);
+        return new SyncInvoker<>(request, HssMeta.updateBackupPolicyInfo, hcClient);
     }
 
     /**
@@ -2376,7 +2312,7 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProtectionPolicyRequest 请求对象
+     * @param request UpdateProtectionPolicyRequest 请求对象
      * @return UpdateProtectionPolicyResponse
      */
     public UpdateProtectionPolicyResponse updateProtectionPolicy(UpdateProtectionPolicyRequest request) {
@@ -2390,13 +2326,12 @@ public class HssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProtectionPolicyRequest 请求对象
+     * @param request UpdateProtectionPolicyRequest 请求对象
      * @return SyncInvoker<UpdateProtectionPolicyRequest, UpdateProtectionPolicyResponse>
      */
     public SyncInvoker<UpdateProtectionPolicyRequest, UpdateProtectionPolicyResponse> updateProtectionPolicyInvoker(
         UpdateProtectionPolicyRequest request) {
-        return new SyncInvoker<UpdateProtectionPolicyRequest, UpdateProtectionPolicyResponse>(request,
-            HssMeta.updateProtectionPolicy, hcClient);
+        return new SyncInvoker<>(request, HssMeta.updateProtectionPolicy, hcClient);
     }
 
 }

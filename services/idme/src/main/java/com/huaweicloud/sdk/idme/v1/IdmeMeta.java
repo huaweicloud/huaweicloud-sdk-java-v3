@@ -27,9 +27,9 @@ import com.huaweicloud.sdk.idme.v1.model.UninstallResponse;
 public class IdmeMeta {
 
     public static final HttpRequestDef<CreateXdmApplicationRequest, CreateXdmApplicationResponse> createXdmApplication =
-        genForcreateXdmApplication();
+        genForCreateXdmApplication();
 
-    private static HttpRequestDef<CreateXdmApplicationRequest, CreateXdmApplicationResponse> genForcreateXdmApplication() {
+    private static HttpRequestDef<CreateXdmApplicationRequest, CreateXdmApplicationResponse> genForCreateXdmApplication() {
         // basic
         HttpRequestDef.Builder<CreateXdmApplicationRequest, CreateXdmApplicationResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateXdmApplicationRequest.class, CreateXdmApplicationResponse.class)
@@ -42,9 +42,7 @@ public class IdmeMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateXdmApplicationRequestBody.class),
-            f -> f.withMarshaller(CreateXdmApplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateXdmApplicationRequest::getBody, CreateXdmApplicationRequest::setBody));
 
         // response
 
@@ -52,9 +50,9 @@ public class IdmeMeta {
     }
 
     public static final HttpRequestDef<DeleteXdmApplicationRequest, DeleteXdmApplicationResponse> deleteXdmApplication =
-        genFordeleteXdmApplication();
+        genForDeleteXdmApplication();
 
-    private static HttpRequestDef<DeleteXdmApplicationRequest, DeleteXdmApplicationResponse> genFordeleteXdmApplication() {
+    private static HttpRequestDef<DeleteXdmApplicationRequest, DeleteXdmApplicationResponse> genForDeleteXdmApplication() {
         // basic
         HttpRequestDef.Builder<DeleteXdmApplicationRequest, DeleteXdmApplicationResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteXdmApplicationRequest.class, DeleteXdmApplicationResponse.class)
@@ -67,9 +65,7 @@ public class IdmeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteXdmApplicationRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteXdmApplicationRequest::getAppId, DeleteXdmApplicationRequest::setAppId));
 
         // response
 
@@ -77,9 +73,9 @@ public class IdmeMeta {
     }
 
     public static final HttpRequestDef<DeployApplicationRequest, DeployApplicationResponse> deployApplication =
-        genFordeployApplication();
+        genForDeployApplication();
 
-    private static HttpRequestDef<DeployApplicationRequest, DeployApplicationResponse> genFordeployApplication() {
+    private static HttpRequestDef<DeployApplicationRequest, DeployApplicationResponse> genForDeployApplication() {
         // basic
         HttpRequestDef.Builder<DeployApplicationRequest, DeployApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeployApplicationRequest.class, DeployApplicationResponse.class)
@@ -92,32 +88,26 @@ public class IdmeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeployApplicationRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(DeployApplicationRequest::getEnvId, DeployApplicationRequest::setEnvId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeployApplicationRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeployApplicationRequest::getAppId, DeployApplicationRequest::setAppId));
         builder.<DeployApplicationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeployApplicationRequestBody.class),
-            f -> f.withMarshaller(DeployApplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeployApplicationRequest::getBody, DeployApplicationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForlistApps();
+    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForListApps();
 
-    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForlistApps() {
+    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForListApps() {
         // basic
         HttpRequestDef.Builder<ListAppsRequest, ListAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsRequest.class, ListAppsResponse.class)
@@ -132,9 +122,9 @@ public class IdmeMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEnvsRequest, ListEnvsResponse> listEnvs = genForlistEnvs();
+    public static final HttpRequestDef<ListEnvsRequest, ListEnvsResponse> listEnvs = genForListEnvs();
 
-    private static HttpRequestDef<ListEnvsRequest, ListEnvsResponse> genForlistEnvs() {
+    private static HttpRequestDef<ListEnvsRequest, ListEnvsResponse> genForListEnvs() {
         // basic
         HttpRequestDef.Builder<ListEnvsRequest, ListEnvsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnvsRequest.class, ListEnvsResponse.class)
@@ -150,9 +140,9 @@ public class IdmeMeta {
     }
 
     public static final HttpRequestDef<ModifyApplicationRequest, ModifyApplicationResponse> modifyApplication =
-        genFormodifyApplication();
+        genForModifyApplication();
 
-    private static HttpRequestDef<ModifyApplicationRequest, ModifyApplicationResponse> genFormodifyApplication() {
+    private static HttpRequestDef<ModifyApplicationRequest, ModifyApplicationResponse> genForModifyApplication() {
         // basic
         HttpRequestDef.Builder<ModifyApplicationRequest, ModifyApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyApplicationRequest.class, ModifyApplicationResponse.class)
@@ -165,25 +155,21 @@ public class IdmeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyApplicationRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ModifyApplicationRequest::getAppId, ModifyApplicationRequest::setAppId));
         builder.<ModifyApplicationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyApplicationRequestBody.class),
-            f -> f.withMarshaller(ModifyApplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ModifyApplicationRequest::getBody, ModifyApplicationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UninstallRequest, UninstallResponse> uninstall = genForuninstall();
+    public static final HttpRequestDef<UninstallRequest, UninstallResponse> uninstall = genForUninstall();
 
-    private static HttpRequestDef<UninstallRequest, UninstallResponse> genForuninstall() {
+    private static HttpRequestDef<UninstallRequest, UninstallResponse> genForUninstall() {
         // basic
         HttpRequestDef.Builder<UninstallRequest, UninstallResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, UninstallRequest.class, UninstallResponse.class)
@@ -196,25 +182,19 @@ public class IdmeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UninstallRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(UninstallRequest::getEnvId, UninstallRequest::setEnvId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UninstallRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UninstallRequest::getAppId, UninstallRequest::setAppId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UninstallResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UninstallResponse::getBody, UninstallResponse::setBody));
 
         return builder.build();
     }

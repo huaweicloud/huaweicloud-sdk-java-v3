@@ -111,9 +111,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CdnMeta {
 
     public static final HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTags =
-        genForbatchDeleteTags();
+        genForBatchDeleteTags();
 
-    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForbatchDeleteTags() {
+    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForBatchDeleteTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteTagsRequest, BatchDeleteTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTagsRequest.class, BatchDeleteTagsResponse.class)
@@ -126,18 +126,16 @@ public class CdnMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, BatchDeleteTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForcreateDomain();
+    public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForCreateDomain();
 
-    private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForcreateDomain() {
+    private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForCreateDomain() {
         // basic
         HttpRequestDef.Builder<CreateDomainRequest, CreateDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDomainRequest.class, CreateDomainResponse.class)
@@ -150,9 +148,7 @@ public class CdnMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDomainRequestBody.class),
-            f -> f.withMarshaller(CreateDomainRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDomainRequest::getBody, CreateDomainRequest::setBody));
 
         // response
 
@@ -160,9 +156,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> createPreheatingTasks =
-        genForcreatePreheatingTasks();
+        genForCreatePreheatingTasks();
 
-    private static HttpRequestDef<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> genForcreatePreheatingTasks() {
+    private static HttpRequestDef<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> genForCreatePreheatingTasks() {
         // basic
         HttpRequestDef.Builder<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePreheatingTasksRequest.class, CreatePreheatingTasksResponse.class)
@@ -175,16 +171,13 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePreheatingTasksRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(CreatePreheatingTasksRequest::getEnterpriseProjectId,
+                CreatePreheatingTasksRequest::setEnterpriseProjectId));
         builder.<PreheatingTaskRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PreheatingTaskRequest.class),
-            f -> f.withMarshaller(CreatePreheatingTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePreheatingTasksRequest::getBody, CreatePreheatingTasksRequest::setBody));
 
         // response
 
@@ -192,9 +185,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<CreateRefreshTasksRequest, CreateRefreshTasksResponse> createRefreshTasks =
-        genForcreateRefreshTasks();
+        genForCreateRefreshTasks();
 
-    private static HttpRequestDef<CreateRefreshTasksRequest, CreateRefreshTasksResponse> genForcreateRefreshTasks() {
+    private static HttpRequestDef<CreateRefreshTasksRequest, CreateRefreshTasksResponse> genForCreateRefreshTasks() {
         // basic
         HttpRequestDef.Builder<CreateRefreshTasksRequest, CreateRefreshTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRefreshTasksRequest.class, CreateRefreshTasksResponse.class)
@@ -207,25 +200,22 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRefreshTasksRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(CreateRefreshTasksRequest::getEnterpriseProjectId,
+                CreateRefreshTasksRequest::setEnterpriseProjectId));
         builder.<RefreshTaskRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RefreshTaskRequest.class),
-            f -> f.withMarshaller(CreateRefreshTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRefreshTasksRequest::getBody, CreateRefreshTasksRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForcreateTags();
+    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForCreateTags();
 
-    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForcreateTags() {
+    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForCreateTags() {
         // basic
         HttpRequestDef.Builder<CreateTagsRequest, CreateTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTagsRequest.class, CreateTagsResponse.class)
@@ -238,18 +228,16 @@ public class CdnMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTagsRequestBody.class),
-            f -> f.withMarshaller(CreateTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTagsRequest::getBody, CreateTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genFordeleteDomain();
+    public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genForDeleteDomain();
 
-    private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genFordeleteDomain() {
+    private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genForDeleteDomain() {
         // basic
         HttpRequestDef.Builder<DeleteDomainRequest, DeleteDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainRequest.class, DeleteDomainResponse.class)
@@ -262,16 +250,13 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainRequest::getDomainId, DeleteDomainRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainRequest::getEnterpriseProjectId,
+                DeleteDomainRequest::setEnterpriseProjectId));
 
         // response
 
@@ -279,9 +264,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<DisableDomainRequest, DisableDomainResponse> disableDomain =
-        genFordisableDomain();
+        genForDisableDomain();
 
-    private static HttpRequestDef<DisableDomainRequest, DisableDomainResponse> genFordisableDomain() {
+    private static HttpRequestDef<DisableDomainRequest, DisableDomainResponse> genForDisableDomain() {
         // basic
         HttpRequestDef.Builder<DisableDomainRequest, DisableDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, DisableDomainRequest.class, DisableDomainResponse.class)
@@ -294,25 +279,22 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableDomainRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DisableDomainRequest::getDomainId, DisableDomainRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableDomainRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DisableDomainRequest::getEnterpriseProjectId,
+                DisableDomainRequest::setEnterpriseProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<EnableDomainRequest, EnableDomainResponse> enableDomain = genForenableDomain();
+    public static final HttpRequestDef<EnableDomainRequest, EnableDomainResponse> enableDomain = genForEnableDomain();
 
-    private static HttpRequestDef<EnableDomainRequest, EnableDomainResponse> genForenableDomain() {
+    private static HttpRequestDef<EnableDomainRequest, EnableDomainResponse> genForEnableDomain() {
         // basic
         HttpRequestDef.Builder<EnableDomainRequest, EnableDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, EnableDomainRequest.class, EnableDomainResponse.class)
@@ -325,25 +307,22 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableDomainRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(EnableDomainRequest::getDomainId, EnableDomainRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableDomainRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(EnableDomainRequest::getEnterpriseProjectId,
+                EnableDomainRequest::setEnterpriseProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDomainsRequest, ListDomainsResponse> listDomains = genForlistDomains();
+    public static final HttpRequestDef<ListDomainsRequest, ListDomainsResponse> listDomains = genForListDomains();
 
-    private static HttpRequestDef<ListDomainsRequest, ListDomainsResponse> genForlistDomains() {
+    private static HttpRequestDef<ListDomainsRequest, ListDomainsResponse> genForListDomains() {
         // basic
         HttpRequestDef.Builder<ListDomainsRequest, ListDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainsRequest.class, ListDomainsResponse.class)
@@ -356,65 +335,48 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getDomainName, ListDomainsRequest::setDomainName));
         builder.<ListDomainsRequest.BusinessTypeEnum>withRequestField("business_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDomainsRequest.BusinessTypeEnum.class),
-            f -> f.withMarshaller(ListDomainsRequest::getBusinessType, (req, v) -> {
-                req.setBusinessType(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getBusinessType, ListDomainsRequest::setBusinessType));
         builder.<ListDomainsRequest.DomainStatusEnum>withRequestField("domain_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDomainsRequest.DomainStatusEnum.class),
-            f -> f.withMarshaller(ListDomainsRequest::getDomainStatus, (req, v) -> {
-                req.setDomainStatus(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getDomainStatus, ListDomainsRequest::setDomainStatus));
         builder.<ListDomainsRequest.ServiceAreaEnum>withRequestField("service_area",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDomainsRequest.ServiceAreaEnum.class),
-            f -> f.withMarshaller(ListDomainsRequest::getServiceArea, (req, v) -> {
-                req.setServiceArea(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getServiceArea, ListDomainsRequest::setServiceArea));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getPageSize, ListDomainsRequest::setPageSize));
         builder.<Integer>withRequestField("page_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainsRequest::getPageNumber, (req, v) -> {
-                req.setPageNumber(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getPageNumber, ListDomainsRequest::setPageNumber));
         builder.<Boolean>withRequestField("show_tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListDomainsRequest::getShowTags, (req, v) -> {
-                req.setShowTags(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getShowTags, ListDomainsRequest::setShowTags));
         builder.<Boolean>withRequestField("exact_match",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListDomainsRequest::getExactMatch, (req, v) -> {
-                req.setExactMatch(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getExactMatch, ListDomainsRequest::setExactMatch));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getEnterpriseProjectId,
+                ListDomainsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -422,9 +384,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowBlackWhiteListRequest, ShowBlackWhiteListResponse> showBlackWhiteList =
-        genForshowBlackWhiteList();
+        genForShowBlackWhiteList();
 
-    private static HttpRequestDef<ShowBlackWhiteListRequest, ShowBlackWhiteListResponse> genForshowBlackWhiteList() {
+    private static HttpRequestDef<ShowBlackWhiteListRequest, ShowBlackWhiteListResponse> genForShowBlackWhiteList() {
         // basic
         HttpRequestDef.Builder<ShowBlackWhiteListRequest, ShowBlackWhiteListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBlackWhiteListRequest.class, ShowBlackWhiteListResponse.class)
@@ -437,16 +399,13 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBlackWhiteListRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowBlackWhiteListRequest::getDomainId, ShowBlackWhiteListRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBlackWhiteListRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowBlackWhiteListRequest::getEnterpriseProjectId,
+                ShowBlackWhiteListRequest::setEnterpriseProjectId));
 
         // response
 
@@ -454,9 +413,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowCacheRulesRequest, ShowCacheRulesResponse> showCacheRules =
-        genForshowCacheRules();
+        genForShowCacheRules();
 
-    private static HttpRequestDef<ShowCacheRulesRequest, ShowCacheRulesResponse> genForshowCacheRules() {
+    private static HttpRequestDef<ShowCacheRulesRequest, ShowCacheRulesResponse> genForShowCacheRules() {
         // basic
         HttpRequestDef.Builder<ShowCacheRulesRequest, ShowCacheRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCacheRulesRequest.class, ShowCacheRulesResponse.class)
@@ -469,16 +428,13 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCacheRulesRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowCacheRulesRequest::getDomainId, ShowCacheRulesRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCacheRulesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowCacheRulesRequest::getEnterpriseProjectId,
+                ShowCacheRulesRequest::setEnterpriseProjectId));
 
         // response
 
@@ -486,9 +442,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse> showCertificatesHttpsInfo =
-        genForshowCertificatesHttpsInfo();
+        genForShowCertificatesHttpsInfo();
 
-    private static HttpRequestDef<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse> genForshowCertificatesHttpsInfo() {
+    private static HttpRequestDef<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse> genForShowCertificatesHttpsInfo() {
         // basic
         HttpRequestDef.Builder<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse> builder =
             HttpRequestDef
@@ -504,37 +460,32 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getPageSize,
+                ShowCertificatesHttpsInfoRequest::setPageSize));
         builder.<Integer>withRequestField("page_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getPageNumber, (req, v) -> {
-                req.setPageNumber(v);
-            }));
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getPageNumber,
+                ShowCertificatesHttpsInfoRequest::setPageNumber));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getDomainName,
+                ShowCertificatesHttpsInfoRequest::setDomainName));
         builder.<String>withRequestField("user_domain_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getUserDomainId, (req, v) -> {
-                req.setUserDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getUserDomainId,
+                ShowCertificatesHttpsInfoRequest::setUserDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getEnterpriseProjectId,
+                ShowCertificatesHttpsInfoRequest::setEnterpriseProjectId));
 
         // response
 
@@ -542,9 +493,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowDomainDetailRequest, ShowDomainDetailResponse> showDomainDetail =
-        genForshowDomainDetail();
+        genForShowDomainDetail();
 
-    private static HttpRequestDef<ShowDomainDetailRequest, ShowDomainDetailResponse> genForshowDomainDetail() {
+    private static HttpRequestDef<ShowDomainDetailRequest, ShowDomainDetailResponse> genForShowDomainDetail() {
         // basic
         HttpRequestDef.Builder<ShowDomainDetailRequest, ShowDomainDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainDetailRequest.class, ShowDomainDetailResponse.class)
@@ -557,16 +508,13 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainDetailRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainDetailRequest::getDomainId, ShowDomainDetailRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainDetailRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainDetailRequest::getEnterpriseProjectId,
+                ShowDomainDetailRequest::setEnterpriseProjectId));
 
         // response
 
@@ -574,9 +522,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> showDomainFullConfig =
-        genForshowDomainFullConfig();
+        genForShowDomainFullConfig();
 
-    private static HttpRequestDef<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> genForshowDomainFullConfig() {
+    private static HttpRequestDef<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> genForShowDomainFullConfig() {
         // basic
         HttpRequestDef.Builder<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDomainFullConfigRequest.class, ShowDomainFullConfigResponse.class)
@@ -589,16 +537,14 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainFullConfigRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ShowDomainFullConfigRequest::getDomainName,
+                ShowDomainFullConfigRequest::setDomainName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainFullConfigRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainFullConfigRequest::getEnterpriseProjectId,
+                ShowDomainFullConfigRequest::setEnterpriseProjectId));
 
         // response
 
@@ -606,9 +552,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse> showDomainItemDetails =
-        genForshowDomainItemDetails();
+        genForShowDomainItemDetails();
 
-    private static HttpRequestDef<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse> genForshowDomainItemDetails() {
+    private static HttpRequestDef<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse> genForShowDomainItemDetails() {
         // basic
         HttpRequestDef.Builder<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDomainItemDetailsRequest.class, ShowDomainItemDetailsResponse.class)
@@ -621,44 +567,37 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getEnterpriseProjectId,
+                ShowDomainItemDetailsRequest::setEnterpriseProjectId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getStartTime,
+                ShowDomainItemDetailsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getEndTime, ShowDomainItemDetailsRequest::setEndTime));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getDomainName,
+                ShowDomainItemDetailsRequest::setDomainName));
         builder.<String>withRequestField("service_area",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getServiceArea, (req, v) -> {
-                req.setServiceArea(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getServiceArea,
+                ShowDomainItemDetailsRequest::setServiceArea));
         builder.<String>withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getStatType, (req, v) -> {
-                req.setStatType(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getStatType,
+                ShowDomainItemDetailsRequest::setStatType));
 
         // response
 
@@ -666,9 +605,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse> showDomainItemLocationDetails =
-        genForshowDomainItemLocationDetails();
+        genForShowDomainItemLocationDetails();
 
-    private static HttpRequestDef<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse> genForshowDomainItemLocationDetails() {
+    private static HttpRequestDef<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse> genForShowDomainItemLocationDetails() {
         // basic
         HttpRequestDef.Builder<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse> builder =
             HttpRequestDef
@@ -684,51 +623,44 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getEnterpriseProjectId,
+                ShowDomainItemLocationDetailsRequest::setEnterpriseProjectId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getStartTime,
+                ShowDomainItemLocationDetailsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getEndTime,
+                ShowDomainItemLocationDetailsRequest::setEndTime));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getDomainName,
+                ShowDomainItemLocationDetailsRequest::setDomainName));
         builder.<String>withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getStatType, (req, v) -> {
-                req.setStatType(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getStatType,
+                ShowDomainItemLocationDetailsRequest::setStatType));
         builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getRegion,
+                ShowDomainItemLocationDetailsRequest::setRegion));
         builder.<String>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ShowDomainItemLocationDetailsRequest::getIsp,
+                ShowDomainItemLocationDetailsRequest::setIsp));
 
         // response
 
@@ -736,9 +668,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> showDomainLocationStats =
-        genForshowDomainLocationStats();
+        genForShowDomainLocationStats();
 
-    private static HttpRequestDef<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> genForshowDomainLocationStats() {
+    private static HttpRequestDef<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> genForShowDomainLocationStats() {
         // basic
         HttpRequestDef.Builder<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDomainLocationStatsRequest.class, ShowDomainLocationStatsResponse.class)
@@ -751,79 +683,67 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getAction,
+                ShowDomainLocationStatsRequest::setAction));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getStartTime,
+                ShowDomainLocationStatsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getEndTime,
+                ShowDomainLocationStatsRequest::setEndTime));
         builder.<Long>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getInterval,
+                ShowDomainLocationStatsRequest::setInterval));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getDomainName,
+                ShowDomainLocationStatsRequest::setDomainName));
         builder.<String>withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getStatType, (req, v) -> {
-                req.setStatType(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getStatType,
+                ShowDomainLocationStatsRequest::setStatType));
         builder.<String>withRequestField("group_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getGroupBy, (req, v) -> {
-                req.setGroupBy(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getGroupBy,
+                ShowDomainLocationStatsRequest::setGroupBy));
         builder.<String>withRequestField("country",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getCountry, (req, v) -> {
-                req.setCountry(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getCountry,
+                ShowDomainLocationStatsRequest::setCountry));
         builder.<String>withRequestField("province",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getProvince, (req, v) -> {
-                req.setProvince(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getProvince,
+                ShowDomainLocationStatsRequest::setProvince));
         builder.<String>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getIsp, ShowDomainLocationStatsRequest::setIsp));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getEnterpriseProjectId,
+                ShowDomainLocationStatsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -831,9 +751,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowDomainStatsRequest, ShowDomainStatsResponse> showDomainStats =
-        genForshowDomainStats();
+        genForShowDomainStats();
 
-    private static HttpRequestDef<ShowDomainStatsRequest, ShowDomainStatsResponse> genForshowDomainStats() {
+    private static HttpRequestDef<ShowDomainStatsRequest, ShowDomainStatsResponse> genForShowDomainStats() {
         // basic
         HttpRequestDef.Builder<ShowDomainStatsRequest, ShowDomainStatsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainStatsRequest.class, ShowDomainStatsResponse.class)
@@ -846,65 +766,48 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(ShowDomainStatsRequest::getAction, ShowDomainStatsRequest::setAction));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowDomainStatsRequest::getStartTime, ShowDomainStatsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowDomainStatsRequest::getEndTime, ShowDomainStatsRequest::setEndTime));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ShowDomainStatsRequest::getDomainName, ShowDomainStatsRequest::setDomainName));
         builder.<String>withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getStatType, (req, v) -> {
-                req.setStatType(v);
-            }));
+            f -> f.withMarshaller(ShowDomainStatsRequest::getStatType, ShowDomainStatsRequest::setStatType));
         builder.<Long>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getInterval, (req, v) -> {
-                req.setInterval(v);
-            }));
+            f -> f.withMarshaller(ShowDomainStatsRequest::getInterval, ShowDomainStatsRequest::setInterval));
         builder.<String>withRequestField("group_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getGroupBy, (req, v) -> {
-                req.setGroupBy(v);
-            }));
+            f -> f.withMarshaller(ShowDomainStatsRequest::getGroupBy, ShowDomainStatsRequest::setGroupBy));
         builder.<String>withRequestField("service_area",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getServiceArea, (req, v) -> {
-                req.setServiceArea(v);
-            }));
+            f -> f.withMarshaller(ShowDomainStatsRequest::getServiceArea, ShowDomainStatsRequest::setServiceArea));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainStatsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainStatsRequest::getEnterpriseProjectId,
+                ShowDomainStatsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -912,9 +815,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> showHistoryTaskDetails =
-        genForshowHistoryTaskDetails();
+        genForShowHistoryTaskDetails();
 
-    private static HttpRequestDef<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> genForshowHistoryTaskDetails() {
+    private static HttpRequestDef<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> genForShowHistoryTaskDetails() {
         // basic
         HttpRequestDef.Builder<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowHistoryTaskDetailsRequest.class, ShowHistoryTaskDetailsResponse.class)
@@ -927,51 +830,42 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getHistoryTasksId, (req, v) -> {
-                req.setHistoryTasksId(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getHistoryTasksId,
+                ShowHistoryTaskDetailsRequest::setHistoryTasksId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getEnterpriseProjectId,
+                ShowHistoryTaskDetailsRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getPageSize,
+                ShowHistoryTaskDetailsRequest::setPageSize));
         builder.<Integer>withRequestField("page_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getPageNumber, (req, v) -> {
-                req.setPageNumber(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getPageNumber,
+                ShowHistoryTaskDetailsRequest::setPageNumber));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getStatus, ShowHistoryTaskDetailsRequest::setStatus));
         builder.<String>withRequestField("url",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getUrl, (req, v) -> {
-                req.setUrl(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getUrl, ShowHistoryTaskDetailsRequest::setUrl));
         builder.<Long>withRequestField("create_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getCreateTime, (req, v) -> {
-                req.setCreateTime(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getCreateTime,
+                ShowHistoryTaskDetailsRequest::setCreateTime));
 
         // response
 
@@ -979,9 +873,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowHistoryTasksRequest, ShowHistoryTasksResponse> showHistoryTasks =
-        genForshowHistoryTasks();
+        genForShowHistoryTasks();
 
-    private static HttpRequestDef<ShowHistoryTasksRequest, ShowHistoryTasksResponse> genForshowHistoryTasks() {
+    private static HttpRequestDef<ShowHistoryTasksRequest, ShowHistoryTasksResponse> genForShowHistoryTasks() {
         // basic
         HttpRequestDef.Builder<ShowHistoryTasksRequest, ShowHistoryTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHistoryTasksRequest.class, ShowHistoryTasksResponse.class)
@@ -994,81 +888,62 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getEnterpriseProjectId,
+                ShowHistoryTasksRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getPageSize, ShowHistoryTasksRequest::setPageSize));
         builder.<Integer>withRequestField("page_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getPageNumber, (req, v) -> {
-                req.setPageNumber(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getPageNumber, ShowHistoryTasksRequest::setPageNumber));
         builder.<ShowHistoryTasksRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowHistoryTasksRequest.StatusEnum.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getStatus, ShowHistoryTasksRequest::setStatus));
         builder.<Long>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getStartDate, ShowHistoryTasksRequest::setStartDate));
         builder.<Long>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getEndDate, ShowHistoryTasksRequest::setEndDate));
         builder.<String>withRequestField("order_field",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getOrderField, (req, v) -> {
-                req.setOrderField(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getOrderField, ShowHistoryTasksRequest::setOrderField));
         builder.<String>withRequestField("order_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getOrderType, (req, v) -> {
-                req.setOrderType(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getOrderType, ShowHistoryTasksRequest::setOrderType));
         builder.<ShowHistoryTasksRequest.FileTypeEnum>withRequestField("file_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowHistoryTasksRequest.FileTypeEnum.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getFileType, (req, v) -> {
-                req.setFileType(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getFileType, ShowHistoryTasksRequest::setFileType));
         builder.<ShowHistoryTasksRequest.TaskTypeEnum>withRequestField("task_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowHistoryTasksRequest.TaskTypeEnum.class),
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getTaskType, (req, v) -> {
-                req.setTaskType(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getTaskType, ShowHistoryTasksRequest::setTaskType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowHttpInfoRequest, ShowHttpInfoResponse> showHttpInfo = genForshowHttpInfo();
+    public static final HttpRequestDef<ShowHttpInfoRequest, ShowHttpInfoResponse> showHttpInfo = genForShowHttpInfo();
 
-    private static HttpRequestDef<ShowHttpInfoRequest, ShowHttpInfoResponse> genForshowHttpInfo() {
+    private static HttpRequestDef<ShowHttpInfoRequest, ShowHttpInfoResponse> genForShowHttpInfo() {
         // basic
         HttpRequestDef.Builder<ShowHttpInfoRequest, ShowHttpInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHttpInfoRequest.class, ShowHttpInfoResponse.class)
@@ -1081,25 +956,22 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHttpInfoRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowHttpInfoRequest::getDomainId, ShowHttpInfoRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHttpInfoRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowHttpInfoRequest::getEnterpriseProjectId,
+                ShowHttpInfoRequest::setEnterpriseProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowIpInfoRequest, ShowIpInfoResponse> showIpInfo = genForshowIpInfo();
+    public static final HttpRequestDef<ShowIpInfoRequest, ShowIpInfoResponse> showIpInfo = genForShowIpInfo();
 
-    private static HttpRequestDef<ShowIpInfoRequest, ShowIpInfoResponse> genForshowIpInfo() {
+    private static HttpRequestDef<ShowIpInfoRequest, ShowIpInfoResponse> genForShowIpInfo() {
         // basic
         HttpRequestDef.Builder<ShowIpInfoRequest, ShowIpInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowIpInfoRequest.class, ShowIpInfoResponse.class)
@@ -1112,25 +984,22 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIpInfoRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowIpInfoRequest::getEnterpriseProjectId,
+                ShowIpInfoRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("ips",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIpInfoRequest::getIps, (req, v) -> {
-                req.setIps(v);
-            }));
+            f -> f.withMarshaller(ShowIpInfoRequest::getIps, ShowIpInfoRequest::setIps));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowLogsRequest, ShowLogsResponse> showLogs = genForshowLogs();
+    public static final HttpRequestDef<ShowLogsRequest, ShowLogsResponse> showLogs = genForShowLogs();
 
-    private static HttpRequestDef<ShowLogsRequest, ShowLogsResponse> genForshowLogs() {
+    private static HttpRequestDef<ShowLogsRequest, ShowLogsResponse> genForShowLogs() {
         // basic
         HttpRequestDef.Builder<ShowLogsRequest, ShowLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLogsRequest.class, ShowLogsResponse.class)
@@ -1143,44 +1012,32 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLogsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ShowLogsRequest::getDomainName, ShowLogsRequest::setDomainName));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowLogsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowLogsRequest::getStartTime, ShowLogsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowLogsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowLogsRequest::getEndTime, ShowLogsRequest::setEndTime));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowLogsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowLogsRequest::getPageSize, ShowLogsRequest::setPageSize));
         builder.<Integer>withRequestField("page_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowLogsRequest::getPageNumber, (req, v) -> {
-                req.setPageNumber(v);
-            }));
+            f -> f.withMarshaller(ShowLogsRequest::getPageNumber, ShowLogsRequest::setPageNumber));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLogsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowLogsRequest::getEnterpriseProjectId, ShowLogsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1188,9 +1045,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowOriginHostRequest, ShowOriginHostResponse> showOriginHost =
-        genForshowOriginHost();
+        genForShowOriginHost();
 
-    private static HttpRequestDef<ShowOriginHostRequest, ShowOriginHostResponse> genForshowOriginHost() {
+    private static HttpRequestDef<ShowOriginHostRequest, ShowOriginHostResponse> genForShowOriginHost() {
         // basic
         HttpRequestDef.Builder<ShowOriginHostRequest, ShowOriginHostResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOriginHostRequest.class, ShowOriginHostResponse.class)
@@ -1203,25 +1060,22 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOriginHostRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowOriginHostRequest::getDomainId, ShowOriginHostRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOriginHostRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowOriginHostRequest::getEnterpriseProjectId,
+                ShowOriginHostRequest::setEnterpriseProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForshowQuota();
+    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForShowQuota();
 
-    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForshowQuota() {
+    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForShowQuota() {
         // basic
         HttpRequestDef.Builder<ShowQuotaRequest, ShowQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
@@ -1236,9 +1090,9 @@ public class CdnMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowReferRequest, ShowReferResponse> showRefer = genForshowRefer();
+    public static final HttpRequestDef<ShowReferRequest, ShowReferResponse> showRefer = genForShowRefer();
 
-    private static HttpRequestDef<ShowReferRequest, ShowReferResponse> genForshowRefer() {
+    private static HttpRequestDef<ShowReferRequest, ShowReferResponse> genForShowRefer() {
         // basic
         HttpRequestDef.Builder<ShowReferRequest, ShowReferResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowReferRequest.class, ShowReferResponse.class)
@@ -1251,16 +1105,12 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReferRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowReferRequest::getDomainId, ShowReferRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowReferRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowReferRequest::getEnterpriseProjectId, ShowReferRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1268,9 +1118,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowResponseHeaderRequest, ShowResponseHeaderResponse> showResponseHeader =
-        genForshowResponseHeader();
+        genForShowResponseHeader();
 
-    private static HttpRequestDef<ShowResponseHeaderRequest, ShowResponseHeaderResponse> genForshowResponseHeader() {
+    private static HttpRequestDef<ShowResponseHeaderRequest, ShowResponseHeaderResponse> genForShowResponseHeader() {
         // basic
         HttpRequestDef.Builder<ShowResponseHeaderRequest, ShowResponseHeaderResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResponseHeaderRequest.class, ShowResponseHeaderResponse.class)
@@ -1283,25 +1133,22 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResponseHeaderRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowResponseHeaderRequest::getDomainId, ShowResponseHeaderRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResponseHeaderRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowResponseHeaderRequest::getEnterpriseProjectId,
+                ShowResponseHeaderRequest::setEnterpriseProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForshowTags();
+    public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForShowTags();
 
-    private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForshowTags() {
+    private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForShowTags() {
         // basic
         HttpRequestDef.Builder<ShowTagsRequest, ShowTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTagsRequest.class, ShowTagsResponse.class)
@@ -1314,18 +1161,16 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowTagsRequest::getResourceId, ShowTagsRequest::setResourceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTopUrlRequest, ShowTopUrlResponse> showTopUrl = genForshowTopUrl();
+    public static final HttpRequestDef<ShowTopUrlRequest, ShowTopUrlResponse> showTopUrl = genForShowTopUrl();
 
-    private static HttpRequestDef<ShowTopUrlRequest, ShowTopUrlResponse> genForshowTopUrl() {
+    private static HttpRequestDef<ShowTopUrlRequest, ShowTopUrlResponse> genForShowTopUrl() {
         // basic
         HttpRequestDef.Builder<ShowTopUrlRequest, ShowTopUrlResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTopUrlRequest.class, ShowTopUrlResponse.class)
@@ -1338,44 +1183,33 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTopUrlRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowTopUrlRequest::getEnterpriseProjectId,
+                ShowTopUrlRequest::setEnterpriseProjectId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowTopUrlRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowTopUrlRequest::getStartTime, ShowTopUrlRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowTopUrlRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowTopUrlRequest::getEndTime, ShowTopUrlRequest::setEndTime));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTopUrlRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ShowTopUrlRequest::getDomainName, ShowTopUrlRequest::setDomainName));
         builder.<ShowTopUrlRequest.ServiceAreaEnum>withRequestField("service_area",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowTopUrlRequest.ServiceAreaEnum.class),
-            f -> f.withMarshaller(ShowTopUrlRequest::getServiceArea, (req, v) -> {
-                req.setServiceArea(v);
-            }));
+            f -> f.withMarshaller(ShowTopUrlRequest::getServiceArea, ShowTopUrlRequest::setServiceArea));
         builder.<ShowTopUrlRequest.StatTypeEnum>withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowTopUrlRequest.StatTypeEnum.class),
-            f -> f.withMarshaller(ShowTopUrlRequest::getStatType, (req, v) -> {
-                req.setStatType(v);
-            }));
+            f -> f.withMarshaller(ShowTopUrlRequest::getStatType, ShowTopUrlRequest::setStatType));
 
         // response
 
@@ -1383,9 +1217,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> showUrlTaskInfo =
-        genForshowUrlTaskInfo();
+        genForShowUrlTaskInfo();
 
-    private static HttpRequestDef<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> genForshowUrlTaskInfo() {
+    private static HttpRequestDef<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> genForShowUrlTaskInfo() {
         // basic
         HttpRequestDef.Builder<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUrlTaskInfoRequest.class, ShowUrlTaskInfoResponse.class)
@@ -1398,58 +1232,42 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getStartTime, ShowUrlTaskInfoRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getEndTime, ShowUrlTaskInfoRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getOffset, ShowUrlTaskInfoRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getLimit, ShowUrlTaskInfoRequest::setLimit));
         builder.<String>withRequestField("url",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getUrl, (req, v) -> {
-                req.setUrl(v);
-            }));
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getUrl, ShowUrlTaskInfoRequest::setUrl));
         builder.<String>withRequestField("task_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getTaskType, (req, v) -> {
-                req.setTaskType(v);
-            }));
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getTaskType, ShowUrlTaskInfoRequest::setTaskType));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getStatus, ShowUrlTaskInfoRequest::setStatus));
         builder.<String>withRequestField("file_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getFileType, (req, v) -> {
-                req.setFileType(v);
-            }));
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getFileType, ShowUrlTaskInfoRequest::setFileType));
 
         // response
 
@@ -1462,9 +1280,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> updateBlackWhiteList =
-        genForupdateBlackWhiteList();
+        genForUpdateBlackWhiteList();
 
-    private static HttpRequestDef<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> genForupdateBlackWhiteList() {
+    private static HttpRequestDef<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> genForUpdateBlackWhiteList() {
         // basic
         HttpRequestDef.Builder<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateBlackWhiteListRequest.class, UpdateBlackWhiteListResponse.class)
@@ -1477,23 +1295,18 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getDomainId, UpdateBlackWhiteListRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getEnterpriseProjectId,
+                UpdateBlackWhiteListRequest::setEnterpriseProjectId));
         builder.<BlackWhiteListBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BlackWhiteListBody.class),
-            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getBody, UpdateBlackWhiteListRequest::setBody));
 
         // response
 
@@ -1501,9 +1314,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdateCacheRulesRequest, UpdateCacheRulesResponse> updateCacheRules =
-        genForupdateCacheRules();
+        genForUpdateCacheRules();
 
-    private static HttpRequestDef<UpdateCacheRulesRequest, UpdateCacheRulesResponse> genForupdateCacheRules() {
+    private static HttpRequestDef<UpdateCacheRulesRequest, UpdateCacheRulesResponse> genForUpdateCacheRules() {
         // basic
         HttpRequestDef.Builder<UpdateCacheRulesRequest, UpdateCacheRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCacheRulesRequest.class, UpdateCacheRulesResponse.class)
@@ -1516,23 +1329,18 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCacheRulesRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateCacheRulesRequest::getDomainId, UpdateCacheRulesRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCacheRulesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateCacheRulesRequest::getEnterpriseProjectId,
+                UpdateCacheRulesRequest::setEnterpriseProjectId));
         builder.<CacheConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CacheConfigRequestBody.class),
-            f -> f.withMarshaller(UpdateCacheRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCacheRulesRequest::getBody, UpdateCacheRulesRequest::setBody));
 
         // response
 
@@ -1540,9 +1348,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> updateDomainFullConfig =
-        genForupdateDomainFullConfig();
+        genForUpdateDomainFullConfig();
 
-    private static HttpRequestDef<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> genForupdateDomainFullConfig() {
+    private static HttpRequestDef<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> genForUpdateDomainFullConfig() {
         // basic
         HttpRequestDef.Builder<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateDomainFullConfigRequest.class, UpdateDomainFullConfigResponse.class)
@@ -1555,23 +1363,19 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainFullConfigRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainFullConfigRequest::getDomainName,
+                UpdateDomainFullConfigRequest::setDomainName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainFullConfigRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainFullConfigRequest::getEnterpriseProjectId,
+                UpdateDomainFullConfigRequest::setEnterpriseProjectId));
         builder.<ModifyDomainConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyDomainConfigRequestBody.class),
-            f -> f.withMarshaller(UpdateDomainFullConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainFullConfigRequest::getBody, UpdateDomainFullConfigRequest::setBody));
 
         // response
 
@@ -1579,9 +1383,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> updateDomainMultiCertificates =
-        genForupdateDomainMultiCertificates();
+        genForUpdateDomainMultiCertificates();
 
-    private static HttpRequestDef<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> genForupdateDomainMultiCertificates() {
+    private static HttpRequestDef<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> genForUpdateDomainMultiCertificates() {
         // basic
         HttpRequestDef.Builder<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> builder =
             HttpRequestDef
@@ -1597,16 +1401,14 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainMultiCertificatesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainMultiCertificatesRequest::getEnterpriseProjectId,
+                UpdateDomainMultiCertificatesRequest::setEnterpriseProjectId));
         builder.<UpdateDomainMultiCertificatesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateDomainMultiCertificatesRequestBody.class),
-            f -> f.withMarshaller(UpdateDomainMultiCertificatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainMultiCertificatesRequest::getBody,
+                UpdateDomainMultiCertificatesRequest::setBody));
 
         // response
 
@@ -1614,9 +1416,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainOriginRequest, UpdateDomainOriginResponse> updateDomainOrigin =
-        genForupdateDomainOrigin();
+        genForUpdateDomainOrigin();
 
-    private static HttpRequestDef<UpdateDomainOriginRequest, UpdateDomainOriginResponse> genForupdateDomainOrigin() {
+    private static HttpRequestDef<UpdateDomainOriginRequest, UpdateDomainOriginResponse> genForUpdateDomainOrigin() {
         // basic
         HttpRequestDef.Builder<UpdateDomainOriginRequest, UpdateDomainOriginResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainOriginRequest.class, UpdateDomainOriginResponse.class)
@@ -1629,23 +1431,18 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainOriginRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainOriginRequest::getDomainId, UpdateDomainOriginRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainOriginRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainOriginRequest::getEnterpriseProjectId,
+                UpdateDomainOriginRequest::setEnterpriseProjectId));
         builder.<OriginRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OriginRequest.class),
-            f -> f.withMarshaller(UpdateDomainOriginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainOriginRequest::getBody, UpdateDomainOriginRequest::setBody));
 
         // response
 
@@ -1653,9 +1450,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdateFollow302SwitchRequest, UpdateFollow302SwitchResponse> updateFollow302Switch =
-        genForupdateFollow302Switch();
+        genForUpdateFollow302Switch();
 
-    private static HttpRequestDef<UpdateFollow302SwitchRequest, UpdateFollow302SwitchResponse> genForupdateFollow302Switch() {
+    private static HttpRequestDef<UpdateFollow302SwitchRequest, UpdateFollow302SwitchResponse> genForUpdateFollow302Switch() {
         // basic
         HttpRequestDef.Builder<UpdateFollow302SwitchRequest, UpdateFollow302SwitchResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateFollow302SwitchRequest.class, UpdateFollow302SwitchResponse.class)
@@ -1668,23 +1465,19 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFollow302SwitchRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateFollow302SwitchRequest::getDomainId,
+                UpdateFollow302SwitchRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFollow302SwitchRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateFollow302SwitchRequest::getEnterpriseProjectId,
+                UpdateFollow302SwitchRequest::setEnterpriseProjectId));
         builder.<Follow302StatusRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Follow302StatusRequest.class),
-            f -> f.withMarshaller(UpdateFollow302SwitchRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateFollow302SwitchRequest::getBody, UpdateFollow302SwitchRequest::setBody));
 
         // response
 
@@ -1692,9 +1485,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdateHttpsInfoRequest, UpdateHttpsInfoResponse> updateHttpsInfo =
-        genForupdateHttpsInfo();
+        genForUpdateHttpsInfo();
 
-    private static HttpRequestDef<UpdateHttpsInfoRequest, UpdateHttpsInfoResponse> genForupdateHttpsInfo() {
+    private static HttpRequestDef<UpdateHttpsInfoRequest, UpdateHttpsInfoResponse> genForUpdateHttpsInfo() {
         // basic
         HttpRequestDef.Builder<UpdateHttpsInfoRequest, UpdateHttpsInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateHttpsInfoRequest.class, UpdateHttpsInfoResponse.class)
@@ -1707,23 +1500,18 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHttpsInfoRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateHttpsInfoRequest::getDomainId, UpdateHttpsInfoRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHttpsInfoRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateHttpsInfoRequest::getEnterpriseProjectId,
+                UpdateHttpsInfoRequest::setEnterpriseProjectId));
         builder.<HttpInfoRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HttpInfoRequest.class),
-            f -> f.withMarshaller(UpdateHttpsInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateHttpsInfoRequest::getBody, UpdateHttpsInfoRequest::setBody));
 
         // response
 
@@ -1731,9 +1519,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdateOriginHostRequest, UpdateOriginHostResponse> updateOriginHost =
-        genForupdateOriginHost();
+        genForUpdateOriginHost();
 
-    private static HttpRequestDef<UpdateOriginHostRequest, UpdateOriginHostResponse> genForupdateOriginHost() {
+    private static HttpRequestDef<UpdateOriginHostRequest, UpdateOriginHostResponse> genForUpdateOriginHost() {
         // basic
         HttpRequestDef.Builder<UpdateOriginHostRequest, UpdateOriginHostResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateOriginHostRequest.class, UpdateOriginHostResponse.class)
@@ -1746,23 +1534,18 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateOriginHostRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateOriginHostRequest::getDomainId, UpdateOriginHostRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateOriginHostRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateOriginHostRequest::getEnterpriseProjectId,
+                UpdateOriginHostRequest::setEnterpriseProjectId));
         builder.<OriginHostRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OriginHostRequest.class),
-            f -> f.withMarshaller(UpdateOriginHostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateOriginHostRequest::getBody, UpdateOriginHostRequest::setBody));
 
         // response
 
@@ -1770,9 +1553,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> updatePrivateBucketAccess =
-        genForupdatePrivateBucketAccess();
+        genForUpdatePrivateBucketAccess();
 
-    private static HttpRequestDef<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> genForupdatePrivateBucketAccess() {
+    private static HttpRequestDef<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> genForUpdatePrivateBucketAccess() {
         // basic
         HttpRequestDef.Builder<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> builder =
             HttpRequestDef
@@ -1788,23 +1571,20 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getDomainId,
+                UpdatePrivateBucketAccessRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getEnterpriseProjectId,
+                UpdatePrivateBucketAccessRequest::setEnterpriseProjectId));
         builder.<UpdatePrivateBucketAccessBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdatePrivateBucketAccessBody.class),
-            f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getBody,
+                UpdatePrivateBucketAccessRequest::setBody));
 
         // response
 
@@ -1812,9 +1592,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdateRangeSwitchRequest, UpdateRangeSwitchResponse> updateRangeSwitch =
-        genForupdateRangeSwitch();
+        genForUpdateRangeSwitch();
 
-    private static HttpRequestDef<UpdateRangeSwitchRequest, UpdateRangeSwitchResponse> genForupdateRangeSwitch() {
+    private static HttpRequestDef<UpdateRangeSwitchRequest, UpdateRangeSwitchResponse> genForUpdateRangeSwitch() {
         // basic
         HttpRequestDef.Builder<UpdateRangeSwitchRequest, UpdateRangeSwitchResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRangeSwitchRequest.class, UpdateRangeSwitchResponse.class)
@@ -1827,32 +1607,27 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRangeSwitchRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateRangeSwitchRequest::getDomainId, UpdateRangeSwitchRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRangeSwitchRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateRangeSwitchRequest::getEnterpriseProjectId,
+                UpdateRangeSwitchRequest::setEnterpriseProjectId));
         builder.<RangeStatusRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RangeStatusRequest.class),
-            f -> f.withMarshaller(UpdateRangeSwitchRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRangeSwitchRequest::getBody, UpdateRangeSwitchRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateReferRequest, UpdateReferResponse> updateRefer = genForupdateRefer();
+    public static final HttpRequestDef<UpdateReferRequest, UpdateReferResponse> updateRefer = genForUpdateRefer();
 
-    private static HttpRequestDef<UpdateReferRequest, UpdateReferResponse> genForupdateRefer() {
+    private static HttpRequestDef<UpdateReferRequest, UpdateReferResponse> genForUpdateRefer() {
         // basic
         HttpRequestDef.Builder<UpdateReferRequest, UpdateReferResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateReferRequest.class, UpdateReferResponse.class)
@@ -1865,23 +1640,18 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReferRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateReferRequest::getDomainId, UpdateReferRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateReferRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateReferRequest::getEnterpriseProjectId,
+                UpdateReferRequest::setEnterpriseProjectId));
         builder.<RefererBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RefererBody.class),
-            f -> f.withMarshaller(UpdateReferRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateReferRequest::getBody, UpdateReferRequest::setBody));
 
         // response
 
@@ -1889,9 +1659,9 @@ public class CdnMeta {
     }
 
     public static final HttpRequestDef<UpdateResponseHeaderRequest, UpdateResponseHeaderResponse> updateResponseHeader =
-        genForupdateResponseHeader();
+        genForUpdateResponseHeader();
 
-    private static HttpRequestDef<UpdateResponseHeaderRequest, UpdateResponseHeaderResponse> genForupdateResponseHeader() {
+    private static HttpRequestDef<UpdateResponseHeaderRequest, UpdateResponseHeaderResponse> genForUpdateResponseHeader() {
         // basic
         HttpRequestDef.Builder<UpdateResponseHeaderRequest, UpdateResponseHeaderResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateResponseHeaderRequest.class, UpdateResponseHeaderResponse.class)
@@ -1904,23 +1674,18 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResponseHeaderRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateResponseHeaderRequest::getDomainId, UpdateResponseHeaderRequest::setDomainId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResponseHeaderRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateResponseHeaderRequest::getEnterpriseProjectId,
+                UpdateResponseHeaderRequest::setEnterpriseProjectId));
         builder.<HeaderBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HeaderBody.class),
-            f -> f.withMarshaller(UpdateResponseHeaderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResponseHeaderRequest::getBody, UpdateResponseHeaderRequest::setBody));
 
         // response
 

@@ -50,7 +50,7 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 
 ### 整个SDK包：
 
-可以只添加一个依赖包导入所有支持的服务(3.0.40-rc版本后)：
+支持只添加一个依赖包导入所有支持的服务(3.0.40-rc及以上版本)：
 
 ```xml
 
@@ -63,7 +63,7 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 
 ### 整个SDK Bundle包：
 
-当出现第三方库冲突的时候，可以引入如下bundle包(3.0.40-rc版本后)，该包包含所有支持的服务和重定向了SDK依赖的第三方软件，避免和业务自身依赖的库产生冲突：
+当出现第三方库冲突的时候，可以引入如下bundle包(3.0.40-rc及以上版本)，该包包含所有支持的服务和重定向了SDK依赖的第三方软件，避免和业务自身依赖的库产生冲突：
 
 ```xml
 
@@ -87,7 +87,7 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
     <artifactId>huaweicloud-sdk-core</artifactId>
     <version>${version}</version>
 </dependency>
-<!-- 引入core包，会覆盖掉bundle包中的ecs服务包，请删除此依赖 -->
+<!-- 引入ecs包，会覆盖掉bundle包中的ecs服务包，请删除此依赖 -->
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-ecs</artifactId>
@@ -333,6 +333,7 @@ HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
     .withProxyHost("proxy.huaweicloud.com")
     .withProxyPort(8080)
     // 如果代理需要认证，请配置用户名和密码
+    // 本示例中的账号和密码保存在环境变量中，运行本示例前请先在本地环境中配置环境变量PROXY_USERNAME和PROXY_PASSWORD
     .withProxyUsername(System.getenv("PROXY_USERNAME"))
     .withProxyPassword(System.getenv("PROXY_PASSWORD"));
 
@@ -867,7 +868,22 @@ BasicCredentials credentials = new BasicCredentials()
 
 ##### 3.3.2 Region配置 [:top:](#用户手册-top)
 
-###### 3.3.2.1 环境变量 [:top:](#用户手册-top)
+###### 3.3.2.1 代码配置  [:top:](#用户手册-top)
+
+```java
+import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.ecs.v2.EcsClient;
+
+// 使用自定义的regionId和endpoint创建一个region
+Region region = new Region("cn-north-9", "https://ecs.cn-north-9.myhuaweicloud.com");
+
+EcsClient client = EcsClient.newBuilder()
+    .withCredential(auth)
+    .withRegion(region)
+    .build();
+```
+
+###### 3.3.2.2 环境变量 [:top:](#用户手册-top)
 
 通过环境变量配置，格式为`HUAWEICLOUD_SDK_REGION_{SERVICE_NAME}_{REGION_ID}={endpoint}`
 
@@ -889,7 +905,7 @@ set HUAWEICLOUD_SDK_REGION_IOTDA_AP_SOUTHEAST_1=https://iotda.ap-southwest-1.myh
 
 格式为`HUAWEICLOUD_SDK_REGION_{SERVICE_NAME}_{REGION_ID}={endpoint1},{endpoint2}`, 多个endpoint之间用英文逗号隔开, 比如`HUAWEICLOUD_SDK_REGION_ECS_CN_NORTH_9=https://ecs.cn-north-9.myhuaweicloud.com,https://ecs.cn-north-9.myhuaweicloud.cn`
 
-###### 3.3.2.2 文件配置 [:top:](#用户手册-top)
+###### 3.3.2.3 文件配置 [:top:](#用户手册-top)
 
 通过yaml文件配置，默认会从用户主目录下读取region配置文件，linux为`~/.huaweicloud/regions.yaml`，windows为`C:\Users\USER_NAME\.huaweicloud\regions.yaml`，默认配置文件可以不存在，但是如果配置文件存在且内容格式不对会解析错误抛出异常。
 
@@ -919,9 +935,9 @@ ECS:
       - 'https://ecs.cn-north-1.myhuaweicloud.cn'
 ```
 
-###### 3.3.2.3 Region提供链 [:top:](#用户手册-top)
+###### 3.3.2.4 Region提供链 [:top:](#用户手册-top)
 
-默认查找顺序为 **环境变量 -> 配置文件 -> SDK中已定义Region**，以上方式都找不到region会抛出异常，获取region示例：
+**Region.valueOf(regionId)** 方法默认查找顺序为 **环境变量 -> 配置文件 -> SDK中已定义Region**，以上方式都找不到region会抛出异常 **IllegalArgumentException**，获取region示例：
 
 ```java
 import com.huaweicloud.sdk.core.region.Region;
@@ -1052,15 +1068,15 @@ SDK支持的slf4j与对应的日志实现的版本关系，如下表所示：
 SDK 默认会打印访问日志，每次请求都会有一条记录：
 
 ``` text
-16:53:04.905 [main] INFO HuaweiCloud-SDK-Access - "GET https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/detail?offset=1&limit=25" 200 2251 deabe20c14f997a0291fc451a4da16a4
-16:53:06.212 [main] INFO HuaweiCloud-SDK-Access - "PUT https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/1aeac6fb-a2f2-48dc-9052-36637d119dd3" 200 880 f16f70e3fe245c11ab741760f8689a01
-17:02:37.734 [main] INFO HuaweiCloud-SDK-Access - "GET https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/detail?offset=1&limit=-1" 400 165 8c3c8b6fed4482d28e1929a78dc93f04
+16:53:04.905 [main] INFO HuaweiCloud-SDK-Access - "GET https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/detail?offset=1&limit=25" 200 2251 deabe20c14f997a0291fc451a4da16a4 233
+16:53:06.212 [main] INFO HuaweiCloud-SDK-Access - "PUT https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/1aeac6fb-a2f2-48dc-9052-36637d119dd3" 200 880 f16f70e3fe245c11ab741760f8689a01 234
+17:02:37.734 [main] INFO HuaweiCloud-SDK-Access - "GET https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/detail?offset=1&limit=-1" 400 165 8c3c8b6fed4482d28e1929a78dc93f04 235
 ```
 
 日志名称为 "HuaweiCloud-SDK-Access" , 日志格式为：
 
 ``` text
-"{httpMethod} {uri}" {httpStatusCode} {responseContentLength} {requestId}
+"{httpMethod} {uri}" {httpStatusCode} {responseContentLength} {requestId} {durationMs}
 ```
 
 其中 requestId 是华为云 API Gateway 返回的请求 ID ，可以用于用户报障或者问题跟踪。

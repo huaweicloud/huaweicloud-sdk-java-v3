@@ -44,7 +44,7 @@ public class InstanceCreateReqV2 {
     private String instanceId;
 
     /**
-     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - PLATINUM_X2：铂金版 x2实例 - PLATINUM_X3：铂金版 x3实例 - PLATINUM_X4：铂金版 x4实例 - PLATINUM_X5：铂金版 x5实例 - PLATINUM_X6：铂金版 x6实例 - PLATINUM_X7：铂金版 x7实例 - PLATINUM_X8：铂金版 x8实例  当前仅部分region支持铂金版 x2、铂金版 x3、铂金版 x4、铂金版 x5、铂金版 x6、铂金版 x7、铂金版 x8
+     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 - PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例 - PLATINUM_X2：铂金版 x2实例 - PLATINUM_X3：铂金版 x3实例 - PLATINUM_X4：铂金版 x4实例 - PLATINUM_X5：铂金版 x5实例 - PLATINUM_X6：铂金版 x6实例 - PLATINUM_X7：铂金版 x7实例 - PLATINUM_X8：铂金版 x8实例  当前仅部分region支持铂金版 x2、铂金版 x3、铂金版 x4、铂金版 x5、铂金版 x6、铂金版 x7、铂金版 x8
      */
     public static final class SpecIdEnum {
 
@@ -67,6 +67,26 @@ public class InstanceCreateReqV2 {
          * Enum PLATINUM for value: "PLATINUM"
          */
         public static final SpecIdEnum PLATINUM = new SpecIdEnum("PLATINUM");
+
+        /**
+         * Enum BASIC_IPV6 for value: "BASIC_IPV6"
+         */
+        public static final SpecIdEnum BASIC_IPV6 = new SpecIdEnum("BASIC_IPV6");
+
+        /**
+         * Enum PROFESSIONAL_IPV6 for value: "PROFESSIONAL_IPV6"
+         */
+        public static final SpecIdEnum PROFESSIONAL_IPV6 = new SpecIdEnum("PROFESSIONAL_IPV6");
+
+        /**
+         * Enum ENTERPRISE_IPV6 for value: "ENTERPRISE_IPV6"
+         */
+        public static final SpecIdEnum ENTERPRISE_IPV6 = new SpecIdEnum("ENTERPRISE_IPV6");
+
+        /**
+         * Enum PLATINUM_IPV6 for value: "PLATINUM_IPV6"
+         */
+        public static final SpecIdEnum PLATINUM_IPV6 = new SpecIdEnum("PLATINUM_IPV6");
 
         /**
          * Enum PLATINUM_X2 for value: "PLATINUM_X2"
@@ -111,6 +131,10 @@ public class InstanceCreateReqV2 {
             map.put("PROFESSIONAL", PROFESSIONAL);
             map.put("ENTERPRISE", ENTERPRISE);
             map.put("PLATINUM", PLATINUM);
+            map.put("BASIC_IPV6", BASIC_IPV6);
+            map.put("PROFESSIONAL_IPV6", PROFESSIONAL_IPV6);
+            map.put("ENTERPRISE_IPV6", ENTERPRISE_IPV6);
+            map.put("PLATINUM_IPV6", PLATINUM_IPV6);
             map.put("PLATINUM_X2", PLATINUM_X2);
             map.put("PLATINUM_X3", PLATINUM_X3);
             map.put("PLATINUM_X4", PLATINUM_X4);
@@ -545,7 +569,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - PLATINUM_X2：铂金版 x2实例 - PLATINUM_X3：铂金版 x3实例 - PLATINUM_X4：铂金版 x4实例 - PLATINUM_X5：铂金版 x5实例 - PLATINUM_X6：铂金版 x6实例 - PLATINUM_X7：铂金版 x7实例 - PLATINUM_X8：铂金版 x8实例  当前仅部分region支持铂金版 x2、铂金版 x3、铂金版 x4、铂金版 x5、铂金版 x6、铂金版 x7、铂金版 x8
+     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 - PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例 - PLATINUM_X2：铂金版 x2实例 - PLATINUM_X3：铂金版 x3实例 - PLATINUM_X4：铂金版 x4实例 - PLATINUM_X5：铂金版 x5实例 - PLATINUM_X6：铂金版 x6实例 - PLATINUM_X7：铂金版 x7实例 - PLATINUM_X8：铂金版 x8实例  当前仅部分region支持铂金版 x2、铂金版 x3、铂金版 x4、铂金版 x5、铂金版 x6、铂金版 x7、铂金版 x8
      * @return specId
      */
     public SpecIdEnum getSpecId() {
@@ -714,7 +738,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 实例是否支持IPv6。  当前仅部分region部分可用区支持IPv6
+     * 公网访问是否支持IPv6。  当前仅部分region部分可用区支持IPv6
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {

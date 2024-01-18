@@ -72,7 +72,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateClusterTagsRequest 请求对象
+     * @param request BatchCreateClusterTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateClusterTagsResponse>
      */
     public CompletableFuture<BatchCreateClusterTagsResponse> batchCreateClusterTagsAsync(
@@ -93,13 +93,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateClusterTagsRequest 请求对象
+     * @param request BatchCreateClusterTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse>
      */
     public AsyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> batchCreateClusterTagsAsyncInvoker(
         BatchCreateClusterTagsRequest request) {
-        return new AsyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse>(request,
-            MrsMeta.batchCreateClusterTags, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.batchCreateClusterTags, hcClient);
     }
 
     /**
@@ -116,7 +115,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteClusterTagsRequest 请求对象
+     * @param request BatchDeleteClusterTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteClusterTagsResponse>
      */
     public CompletableFuture<BatchDeleteClusterTagsResponse> batchDeleteClusterTagsAsync(
@@ -138,13 +137,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteClusterTagsRequest 请求对象
+     * @param request BatchDeleteClusterTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse>
      */
     public AsyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> batchDeleteClusterTagsAsyncInvoker(
         BatchDeleteClusterTagsRequest request) {
-        return new AsyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse>(request,
-            MrsMeta.batchDeleteClusterTags, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.batchDeleteClusterTags, hcClient);
     }
 
     /**
@@ -156,7 +154,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAndExecuteJobRequest 请求对象
+     * @param request CreateAndExecuteJobRequest 请求对象
      * @return CompletableFuture<CreateAndExecuteJobResponse>
      */
     @Deprecated
@@ -173,14 +171,13 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAndExecuteJobRequest 请求对象
+     * @param request CreateAndExecuteJobRequest 请求对象
      * @return AsyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse>
      */
     @Deprecated
     public AsyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse> createAndExecuteJobAsyncInvoker(
         CreateAndExecuteJobRequest request) {
-        return new AsyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse>(request,
-            MrsMeta.createAndExecuteJob, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.createAndExecuteJob, hcClient);
     }
 
     /**
@@ -196,7 +193,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return CompletableFuture<CreateClusterResponse>
      */
     public CompletableFuture<CreateClusterResponse> createClusterAsync(CreateClusterRequest request) {
@@ -216,12 +213,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return AsyncInvoker<CreateClusterRequest, CreateClusterResponse>
      */
     public AsyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterAsyncInvoker(
         CreateClusterRequest request) {
-        return new AsyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, MrsMeta.createCluster, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.createCluster, hcClient);
     }
 
     /**
@@ -232,7 +229,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterTagRequest 请求对象
+     * @param request CreateClusterTagRequest 请求对象
      * @return CompletableFuture<CreateClusterTagResponse>
      */
     public CompletableFuture<CreateClusterTagResponse> createClusterTagAsync(CreateClusterTagRequest request) {
@@ -247,13 +244,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterTagRequest 请求对象
+     * @param request CreateClusterTagRequest 请求对象
      * @return AsyncInvoker<CreateClusterTagRequest, CreateClusterTagResponse>
      */
     public AsyncInvoker<CreateClusterTagRequest, CreateClusterTagResponse> createClusterTagAsyncInvoker(
         CreateClusterTagRequest request) {
-        return new AsyncInvoker<CreateClusterTagRequest, CreateClusterTagResponse>(request, MrsMeta.createClusterTag,
-            hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.createClusterTag, hcClient);
     }
 
     /**
@@ -265,7 +261,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingPolicyRequest 请求对象
+     * @param request CreateScalingPolicyRequest 请求对象
      * @return CompletableFuture<CreateScalingPolicyResponse>
      */
     public CompletableFuture<CreateScalingPolicyResponse> createScalingPolicyAsync(CreateScalingPolicyRequest request) {
@@ -281,13 +277,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScalingPolicyRequest 请求对象
+     * @param request CreateScalingPolicyRequest 请求对象
      * @return AsyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse>
      */
     public AsyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse> createScalingPolicyAsyncInvoker(
         CreateScalingPolicyRequest request) {
-        return new AsyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse>(request,
-            MrsMeta.createScalingPolicy, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.createScalingPolicy, hcClient);
     }
 
     /**
@@ -305,7 +300,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterRequest 请求对象
+     * @param request DeleteClusterRequest 请求对象
      * @return CompletableFuture<DeleteClusterResponse>
      */
     public CompletableFuture<DeleteClusterResponse> deleteClusterAsync(DeleteClusterRequest request) {
@@ -327,12 +322,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterRequest 请求对象
+     * @param request DeleteClusterRequest 请求对象
      * @return AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
      */
     public AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse> deleteClusterAsyncInvoker(
         DeleteClusterRequest request) {
-        return new AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse>(request, MrsMeta.deleteCluster, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.deleteCluster, hcClient);
     }
 
     /**
@@ -342,7 +337,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterTagRequest 请求对象
+     * @param request DeleteClusterTagRequest 请求对象
      * @return CompletableFuture<DeleteClusterTagResponse>
      */
     public CompletableFuture<DeleteClusterTagResponse> deleteClusterTagAsync(DeleteClusterTagRequest request) {
@@ -356,13 +351,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterTagRequest 请求对象
+     * @param request DeleteClusterTagRequest 请求对象
      * @return AsyncInvoker<DeleteClusterTagRequest, DeleteClusterTagResponse>
      */
     public AsyncInvoker<DeleteClusterTagRequest, DeleteClusterTagResponse> deleteClusterTagAsyncInvoker(
         DeleteClusterTagRequest request) {
-        return new AsyncInvoker<DeleteClusterTagRequest, DeleteClusterTagResponse>(request, MrsMeta.deleteClusterTag,
-            hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.deleteClusterTag, hcClient);
     }
 
     /**
@@ -373,7 +367,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobExecutionRequest 请求对象
+     * @param request DeleteJobExecutionRequest 请求对象
      * @return CompletableFuture<DeleteJobExecutionResponse>
      */
     @Deprecated
@@ -389,14 +383,13 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobExecutionRequest 请求对象
+     * @param request DeleteJobExecutionRequest 请求对象
      * @return AsyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse>
      */
     @Deprecated
     public AsyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse> deleteJobExecutionAsyncInvoker(
         DeleteJobExecutionRequest request) {
-        return new AsyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse>(request,
-            MrsMeta.deleteJobExecution, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.deleteJobExecution, hcClient);
     }
 
     /**
@@ -406,7 +399,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllTagsRequest 请求对象
+     * @param request ListAllTagsRequest 请求对象
      * @return CompletableFuture<ListAllTagsResponse>
      */
     public CompletableFuture<ListAllTagsResponse> listAllTagsAsync(ListAllTagsRequest request) {
@@ -420,11 +413,11 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllTagsRequest 请求对象
+     * @param request ListAllTagsRequest 请求对象
      * @return AsyncInvoker<ListAllTagsRequest, ListAllTagsResponse>
      */
     public AsyncInvoker<ListAllTagsRequest, ListAllTagsResponse> listAllTagsAsyncInvoker(ListAllTagsRequest request) {
-        return new AsyncInvoker<ListAllTagsRequest, ListAllTagsResponse>(request, MrsMeta.listAllTags, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.listAllTags, hcClient);
     }
 
     /**
@@ -434,7 +427,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterTagsRequest 请求对象
+     * @param request ListClusterTagsRequest 请求对象
      * @return CompletableFuture<ListClusterTagsResponse>
      */
     public CompletableFuture<ListClusterTagsResponse> listClusterTagsAsync(ListClusterTagsRequest request) {
@@ -448,13 +441,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterTagsRequest 请求对象
+     * @param request ListClusterTagsRequest 请求对象
      * @return AsyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse>
      */
     public AsyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse> listClusterTagsAsyncInvoker(
         ListClusterTagsRequest request) {
-        return new AsyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse>(request, MrsMeta.listClusterTags,
-            hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.listClusterTags, hcClient);
     }
 
     /**
@@ -464,7 +456,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersRequest 请求对象
+     * @param request ListClustersRequest 请求对象
      * @return CompletableFuture<ListClustersResponse>
      */
     public CompletableFuture<ListClustersResponse> listClustersAsync(ListClustersRequest request) {
@@ -478,12 +470,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersRequest 请求对象
+     * @param request ListClustersRequest 请求对象
      * @return AsyncInvoker<ListClustersRequest, ListClustersResponse>
      */
     public AsyncInvoker<ListClustersRequest, ListClustersResponse> listClustersAsyncInvoker(
         ListClustersRequest request) {
-        return new AsyncInvoker<ListClustersRequest, ListClustersResponse>(request, MrsMeta.listClusters, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.listClusters, hcClient);
     }
 
     /**
@@ -495,7 +487,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersByTagsRequest 请求对象
+     * @param request ListClustersByTagsRequest 请求对象
      * @return CompletableFuture<ListClustersByTagsResponse>
      */
     public CompletableFuture<ListClustersByTagsResponse> listClustersByTagsAsync(ListClustersByTagsRequest request) {
@@ -511,13 +503,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersByTagsRequest 请求对象
+     * @param request ListClustersByTagsRequest 请求对象
      * @return AsyncInvoker<ListClustersByTagsRequest, ListClustersByTagsResponse>
      */
     public AsyncInvoker<ListClustersByTagsRequest, ListClustersByTagsResponse> listClustersByTagsAsyncInvoker(
         ListClustersByTagsRequest request) {
-        return new AsyncInvoker<ListClustersByTagsRequest, ListClustersByTagsResponse>(request,
-            MrsMeta.listClustersByTags, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.listClustersByTags, hcClient);
     }
 
     /**
@@ -528,7 +519,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExecuteJobRequest 请求对象
+     * @param request ListExecuteJobRequest 请求对象
      * @return CompletableFuture<ListExecuteJobResponse>
      */
     @Deprecated
@@ -544,14 +535,13 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExecuteJobRequest 请求对象
+     * @param request ListExecuteJobRequest 请求对象
      * @return AsyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse>
      */
     @Deprecated
     public AsyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse> listExecuteJobAsyncInvoker(
         ListExecuteJobRequest request) {
-        return new AsyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse>(request, MrsMeta.listExecuteJob,
-            hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.listExecuteJob, hcClient);
     }
 
     /**
@@ -561,7 +551,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostsRequest 请求对象
+     * @param request ListHostsRequest 请求对象
      * @return CompletableFuture<ListHostsResponse>
      */
     public CompletableFuture<ListHostsResponse> listHostsAsync(ListHostsRequest request) {
@@ -575,11 +565,11 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostsRequest 请求对象
+     * @param request ListHostsRequest 请求对象
      * @return AsyncInvoker<ListHostsRequest, ListHostsResponse>
      */
     public AsyncInvoker<ListHostsRequest, ListHostsResponse> listHostsAsyncInvoker(ListHostsRequest request) {
-        return new AsyncInvoker<ListHostsRequest, ListHostsResponse>(request, MrsMeta.listHosts, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.listHosts, hcClient);
     }
 
     /**
@@ -589,7 +579,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterDetailsRequest 请求对象
+     * @param request ShowClusterDetailsRequest 请求对象
      * @return CompletableFuture<ShowClusterDetailsResponse>
      */
     public CompletableFuture<ShowClusterDetailsResponse> showClusterDetailsAsync(ShowClusterDetailsRequest request) {
@@ -603,13 +593,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterDetailsRequest 请求对象
+     * @param request ShowClusterDetailsRequest 请求对象
      * @return AsyncInvoker<ShowClusterDetailsRequest, ShowClusterDetailsResponse>
      */
     public AsyncInvoker<ShowClusterDetailsRequest, ShowClusterDetailsResponse> showClusterDetailsAsyncInvoker(
         ShowClusterDetailsRequest request) {
-        return new AsyncInvoker<ShowClusterDetailsRequest, ShowClusterDetailsResponse>(request,
-            MrsMeta.showClusterDetails, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.showClusterDetails, hcClient);
     }
 
     /**
@@ -620,7 +609,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobExesRequest 请求对象
+     * @param request ShowJobExesRequest 请求对象
      * @return CompletableFuture<ShowJobExesResponse>
      */
     @Deprecated
@@ -636,12 +625,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobExesRequest 请求对象
+     * @param request ShowJobExesRequest 请求对象
      * @return AsyncInvoker<ShowJobExesRequest, ShowJobExesResponse>
      */
     @Deprecated
     public AsyncInvoker<ShowJobExesRequest, ShowJobExesResponse> showJobExesAsyncInvoker(ShowJobExesRequest request) {
-        return new AsyncInvoker<ShowJobExesRequest, ShowJobExesResponse>(request, MrsMeta.showJobExes, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.showJobExes, hcClient);
     }
 
     /**
@@ -652,7 +641,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterScalingRequest 请求对象
+     * @param request UpdateClusterScalingRequest 请求对象
      * @return CompletableFuture<UpdateClusterScalingResponse>
      */
     public CompletableFuture<UpdateClusterScalingResponse> updateClusterScalingAsync(
@@ -668,13 +657,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterScalingRequest 请求对象
+     * @param request UpdateClusterScalingRequest 请求对象
      * @return AsyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse>
      */
     public AsyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse> updateClusterScalingAsyncInvoker(
         UpdateClusterScalingRequest request) {
-        return new AsyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse>(request,
-            MrsMeta.updateClusterScaling, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.updateClusterScaling, hcClient);
     }
 
     /**
@@ -684,7 +672,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return CompletableFuture<ListAvailableZonesResponse>
      */
     public CompletableFuture<ListAvailableZonesResponse> listAvailableZonesAsync(ListAvailableZonesRequest request) {
@@ -698,13 +686,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
      */
     public AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesAsyncInvoker(
         ListAvailableZonesRequest request) {
-        return new AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request,
-            MrsMeta.listAvailableZones, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.listAvailableZones, hcClient);
     }
 
     /**
@@ -714,7 +701,7 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMrsVersionMetadataRequest 请求对象
+     * @param request ShowMrsVersionMetadataRequest 请求对象
      * @return CompletableFuture<ShowMrsVersionMetadataResponse>
      */
     public CompletableFuture<ShowMrsVersionMetadataResponse> showMrsVersionMetadataAsync(
@@ -729,13 +716,12 @@ public class MrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMrsVersionMetadataRequest 请求对象
+     * @param request ShowMrsVersionMetadataRequest 请求对象
      * @return AsyncInvoker<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse>
      */
     public AsyncInvoker<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse> showMrsVersionMetadataAsyncInvoker(
         ShowMrsVersionMetadataRequest request) {
-        return new AsyncInvoker<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse>(request,
-            MrsMeta.showMrsVersionMetadata, hcClient);
+        return new AsyncInvoker<>(request, MrsMeta.showMrsVersionMetadata, hcClient);
     }
 
 }

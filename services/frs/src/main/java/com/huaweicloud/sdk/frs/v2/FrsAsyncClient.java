@@ -96,7 +96,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByBase64Request 请求对象
+     * @param request AddFacesByBase64Request 请求对象
      * @return CompletableFuture<AddFacesByBase64Response>
      */
     public CompletableFuture<AddFacesByBase64Response> addFacesByBase64Async(AddFacesByBase64Request request) {
@@ -110,13 +110,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByBase64Request 请求对象
+     * @param request AddFacesByBase64Request 请求对象
      * @return AsyncInvoker<AddFacesByBase64Request, AddFacesByBase64Response>
      */
     public AsyncInvoker<AddFacesByBase64Request, AddFacesByBase64Response> addFacesByBase64AsyncInvoker(
         AddFacesByBase64Request request) {
-        return new AsyncInvoker<AddFacesByBase64Request, AddFacesByBase64Response>(request, FrsMeta.addFacesByBase64,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.addFacesByBase64, hcClient);
     }
 
     /**
@@ -126,7 +125,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByFileRequest 请求对象
+     * @param request AddFacesByFileRequest 请求对象
      * @return CompletableFuture<AddFacesByFileResponse>
      */
     public CompletableFuture<AddFacesByFileResponse> addFacesByFileAsync(AddFacesByFileRequest request) {
@@ -140,13 +139,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByFileRequest 请求对象
+     * @param request AddFacesByFileRequest 请求对象
      * @return AsyncInvoker<AddFacesByFileRequest, AddFacesByFileResponse>
      */
     public AsyncInvoker<AddFacesByFileRequest, AddFacesByFileResponse> addFacesByFileAsyncInvoker(
         AddFacesByFileRequest request) {
-        return new AsyncInvoker<AddFacesByFileRequest, AddFacesByFileResponse>(request, FrsMeta.addFacesByFile,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.addFacesByFile, hcClient);
     }
 
     /**
@@ -156,7 +154,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByUrlRequest 请求对象
+     * @param request AddFacesByUrlRequest 请求对象
      * @return CompletableFuture<AddFacesByUrlResponse>
      */
     public CompletableFuture<AddFacesByUrlResponse> addFacesByUrlAsync(AddFacesByUrlRequest request) {
@@ -170,12 +168,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByUrlRequest 请求对象
+     * @param request AddFacesByUrlRequest 请求对象
      * @return AsyncInvoker<AddFacesByUrlRequest, AddFacesByUrlResponse>
      */
     public AsyncInvoker<AddFacesByUrlRequest, AddFacesByUrlResponse> addFacesByUrlAsyncInvoker(
         AddFacesByUrlRequest request) {
-        return new AsyncInvoker<AddFacesByUrlRequest, AddFacesByUrlResponse>(request, FrsMeta.addFacesByUrl, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.addFacesByUrl, hcClient);
     }
 
     /**
@@ -185,7 +183,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteFacesRequest 请求对象
+     * @param request BatchDeleteFacesRequest 请求对象
      * @return CompletableFuture<BatchDeleteFacesResponse>
      */
     public CompletableFuture<BatchDeleteFacesResponse> batchDeleteFacesAsync(BatchDeleteFacesRequest request) {
@@ -199,13 +197,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteFacesRequest 请求对象
+     * @param request BatchDeleteFacesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteFacesRequest, BatchDeleteFacesResponse>
      */
     public AsyncInvoker<BatchDeleteFacesRequest, BatchDeleteFacesResponse> batchDeleteFacesAsyncInvoker(
         BatchDeleteFacesRequest request) {
-        return new AsyncInvoker<BatchDeleteFacesRequest, BatchDeleteFacesResponse>(request, FrsMeta.batchDeleteFaces,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.batchDeleteFaces, hcClient);
     }
 
     /**
@@ -215,7 +212,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByBase64Request 请求对象
+     * @param request CompareFaceByBase64Request 请求对象
      * @return CompletableFuture<CompareFaceByBase64Response>
      */
     public CompletableFuture<CompareFaceByBase64Response> compareFaceByBase64Async(CompareFaceByBase64Request request) {
@@ -229,13 +226,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByBase64Request 请求对象
+     * @param request CompareFaceByBase64Request 请求对象
      * @return AsyncInvoker<CompareFaceByBase64Request, CompareFaceByBase64Response>
      */
     public AsyncInvoker<CompareFaceByBase64Request, CompareFaceByBase64Response> compareFaceByBase64AsyncInvoker(
         CompareFaceByBase64Request request) {
-        return new AsyncInvoker<CompareFaceByBase64Request, CompareFaceByBase64Response>(request,
-            FrsMeta.compareFaceByBase64, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.compareFaceByBase64, hcClient);
     }
 
     /**
@@ -245,7 +241,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByFileRequest 请求对象
+     * @param request CompareFaceByFileRequest 请求对象
      * @return CompletableFuture<CompareFaceByFileResponse>
      */
     public CompletableFuture<CompareFaceByFileResponse> compareFaceByFileAsync(CompareFaceByFileRequest request) {
@@ -259,13 +255,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByFileRequest 请求对象
+     * @param request CompareFaceByFileRequest 请求对象
      * @return AsyncInvoker<CompareFaceByFileRequest, CompareFaceByFileResponse>
      */
     public AsyncInvoker<CompareFaceByFileRequest, CompareFaceByFileResponse> compareFaceByFileAsyncInvoker(
         CompareFaceByFileRequest request) {
-        return new AsyncInvoker<CompareFaceByFileRequest, CompareFaceByFileResponse>(request, FrsMeta.compareFaceByFile,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.compareFaceByFile, hcClient);
     }
 
     /**
@@ -275,7 +270,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByUrlRequest 请求对象
+     * @param request CompareFaceByUrlRequest 请求对象
      * @return CompletableFuture<CompareFaceByUrlResponse>
      */
     public CompletableFuture<CompareFaceByUrlResponse> compareFaceByUrlAsync(CompareFaceByUrlRequest request) {
@@ -289,13 +284,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByUrlRequest 请求对象
+     * @param request CompareFaceByUrlRequest 请求对象
      * @return AsyncInvoker<CompareFaceByUrlRequest, CompareFaceByUrlResponse>
      */
     public AsyncInvoker<CompareFaceByUrlRequest, CompareFaceByUrlResponse> compareFaceByUrlAsyncInvoker(
         CompareFaceByUrlRequest request) {
-        return new AsyncInvoker<CompareFaceByUrlRequest, CompareFaceByUrlResponse>(request, FrsMeta.compareFaceByUrl,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.compareFaceByUrl, hcClient);
     }
 
     /**
@@ -305,7 +299,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFaceSetRequest 请求对象
+     * @param request CreateFaceSetRequest 请求对象
      * @return CompletableFuture<CreateFaceSetResponse>
      */
     public CompletableFuture<CreateFaceSetResponse> createFaceSetAsync(CreateFaceSetRequest request) {
@@ -319,12 +313,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFaceSetRequest 请求对象
+     * @param request CreateFaceSetRequest 请求对象
      * @return AsyncInvoker<CreateFaceSetRequest, CreateFaceSetResponse>
      */
     public AsyncInvoker<CreateFaceSetRequest, CreateFaceSetResponse> createFaceSetAsyncInvoker(
         CreateFaceSetRequest request) {
-        return new AsyncInvoker<CreateFaceSetRequest, CreateFaceSetResponse>(request, FrsMeta.createFaceSet, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.createFaceSet, hcClient);
     }
 
     /**
@@ -334,7 +328,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceByExternalImageIdRequest 请求对象
+     * @param request DeleteFaceByExternalImageIdRequest 请求对象
      * @return CompletableFuture<DeleteFaceByExternalImageIdResponse>
      */
     public CompletableFuture<DeleteFaceByExternalImageIdResponse> deleteFaceByExternalImageIdAsync(
@@ -349,13 +343,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceByExternalImageIdRequest 请求对象
+     * @param request DeleteFaceByExternalImageIdRequest 请求对象
      * @return AsyncInvoker<DeleteFaceByExternalImageIdRequest, DeleteFaceByExternalImageIdResponse>
      */
     public AsyncInvoker<DeleteFaceByExternalImageIdRequest, DeleteFaceByExternalImageIdResponse> deleteFaceByExternalImageIdAsyncInvoker(
         DeleteFaceByExternalImageIdRequest request) {
-        return new AsyncInvoker<DeleteFaceByExternalImageIdRequest, DeleteFaceByExternalImageIdResponse>(request,
-            FrsMeta.deleteFaceByExternalImageId, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.deleteFaceByExternalImageId, hcClient);
     }
 
     /**
@@ -365,7 +358,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceByFaceIdRequest 请求对象
+     * @param request DeleteFaceByFaceIdRequest 请求对象
      * @return CompletableFuture<DeleteFaceByFaceIdResponse>
      */
     public CompletableFuture<DeleteFaceByFaceIdResponse> deleteFaceByFaceIdAsync(DeleteFaceByFaceIdRequest request) {
@@ -379,13 +372,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceByFaceIdRequest 请求对象
+     * @param request DeleteFaceByFaceIdRequest 请求对象
      * @return AsyncInvoker<DeleteFaceByFaceIdRequest, DeleteFaceByFaceIdResponse>
      */
     public AsyncInvoker<DeleteFaceByFaceIdRequest, DeleteFaceByFaceIdResponse> deleteFaceByFaceIdAsyncInvoker(
         DeleteFaceByFaceIdRequest request) {
-        return new AsyncInvoker<DeleteFaceByFaceIdRequest, DeleteFaceByFaceIdResponse>(request,
-            FrsMeta.deleteFaceByFaceId, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.deleteFaceByFaceId, hcClient);
     }
 
     /**
@@ -395,7 +387,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceSetRequest 请求对象
+     * @param request DeleteFaceSetRequest 请求对象
      * @return CompletableFuture<DeleteFaceSetResponse>
      */
     public CompletableFuture<DeleteFaceSetResponse> deleteFaceSetAsync(DeleteFaceSetRequest request) {
@@ -409,12 +401,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceSetRequest 请求对象
+     * @param request DeleteFaceSetRequest 请求对象
      * @return AsyncInvoker<DeleteFaceSetRequest, DeleteFaceSetResponse>
      */
     public AsyncInvoker<DeleteFaceSetRequest, DeleteFaceSetResponse> deleteFaceSetAsyncInvoker(
         DeleteFaceSetRequest request) {
-        return new AsyncInvoker<DeleteFaceSetRequest, DeleteFaceSetResponse>(request, FrsMeta.deleteFaceSet, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.deleteFaceSet, hcClient);
     }
 
     /**
@@ -424,7 +416,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByBase64Request 请求对象
+     * @param request DetectFaceByBase64Request 请求对象
      * @return CompletableFuture<DetectFaceByBase64Response>
      */
     public CompletableFuture<DetectFaceByBase64Response> detectFaceByBase64Async(DetectFaceByBase64Request request) {
@@ -438,13 +430,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByBase64Request 请求对象
+     * @param request DetectFaceByBase64Request 请求对象
      * @return AsyncInvoker<DetectFaceByBase64Request, DetectFaceByBase64Response>
      */
     public AsyncInvoker<DetectFaceByBase64Request, DetectFaceByBase64Response> detectFaceByBase64AsyncInvoker(
         DetectFaceByBase64Request request) {
-        return new AsyncInvoker<DetectFaceByBase64Request, DetectFaceByBase64Response>(request,
-            FrsMeta.detectFaceByBase64, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectFaceByBase64, hcClient);
     }
 
     /**
@@ -454,7 +445,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByBase64IntlRequest 请求对象
+     * @param request DetectFaceByBase64IntlRequest 请求对象
      * @return CompletableFuture<DetectFaceByBase64IntlResponse>
      */
     public CompletableFuture<DetectFaceByBase64IntlResponse> detectFaceByBase64IntlAsync(
@@ -469,13 +460,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByBase64IntlRequest 请求对象
+     * @param request DetectFaceByBase64IntlRequest 请求对象
      * @return AsyncInvoker<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse>
      */
     public AsyncInvoker<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse> detectFaceByBase64IntlAsyncInvoker(
         DetectFaceByBase64IntlRequest request) {
-        return new AsyncInvoker<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse>(request,
-            FrsMeta.detectFaceByBase64Intl, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectFaceByBase64Intl, hcClient);
     }
 
     /**
@@ -485,7 +475,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByFileRequest 请求对象
+     * @param request DetectFaceByFileRequest 请求对象
      * @return CompletableFuture<DetectFaceByFileResponse>
      */
     public CompletableFuture<DetectFaceByFileResponse> detectFaceByFileAsync(DetectFaceByFileRequest request) {
@@ -499,13 +489,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByFileRequest 请求对象
+     * @param request DetectFaceByFileRequest 请求对象
      * @return AsyncInvoker<DetectFaceByFileRequest, DetectFaceByFileResponse>
      */
     public AsyncInvoker<DetectFaceByFileRequest, DetectFaceByFileResponse> detectFaceByFileAsyncInvoker(
         DetectFaceByFileRequest request) {
-        return new AsyncInvoker<DetectFaceByFileRequest, DetectFaceByFileResponse>(request, FrsMeta.detectFaceByFile,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectFaceByFile, hcClient);
     }
 
     /**
@@ -515,7 +504,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByFileIntlRequest 请求对象
+     * @param request DetectFaceByFileIntlRequest 请求对象
      * @return CompletableFuture<DetectFaceByFileIntlResponse>
      */
     public CompletableFuture<DetectFaceByFileIntlResponse> detectFaceByFileIntlAsync(
@@ -530,13 +519,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByFileIntlRequest 请求对象
+     * @param request DetectFaceByFileIntlRequest 请求对象
      * @return AsyncInvoker<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse>
      */
     public AsyncInvoker<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse> detectFaceByFileIntlAsyncInvoker(
         DetectFaceByFileIntlRequest request) {
-        return new AsyncInvoker<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse>(request,
-            FrsMeta.detectFaceByFileIntl, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectFaceByFileIntl, hcClient);
     }
 
     /**
@@ -546,7 +534,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByUrlRequest 请求对象
+     * @param request DetectFaceByUrlRequest 请求对象
      * @return CompletableFuture<DetectFaceByUrlResponse>
      */
     public CompletableFuture<DetectFaceByUrlResponse> detectFaceByUrlAsync(DetectFaceByUrlRequest request) {
@@ -560,13 +548,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByUrlRequest 请求对象
+     * @param request DetectFaceByUrlRequest 请求对象
      * @return AsyncInvoker<DetectFaceByUrlRequest, DetectFaceByUrlResponse>
      */
     public AsyncInvoker<DetectFaceByUrlRequest, DetectFaceByUrlResponse> detectFaceByUrlAsyncInvoker(
         DetectFaceByUrlRequest request) {
-        return new AsyncInvoker<DetectFaceByUrlRequest, DetectFaceByUrlResponse>(request, FrsMeta.detectFaceByUrl,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectFaceByUrl, hcClient);
     }
 
     /**
@@ -576,7 +563,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByUrlIntlRequest 请求对象
+     * @param request DetectFaceByUrlIntlRequest 请求对象
      * @return CompletableFuture<DetectFaceByUrlIntlResponse>
      */
     public CompletableFuture<DetectFaceByUrlIntlResponse> detectFaceByUrlIntlAsync(DetectFaceByUrlIntlRequest request) {
@@ -590,13 +577,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByUrlIntlRequest 请求对象
+     * @param request DetectFaceByUrlIntlRequest 请求对象
      * @return AsyncInvoker<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse>
      */
     public AsyncInvoker<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse> detectFaceByUrlIntlAsyncInvoker(
         DetectFaceByUrlIntlRequest request) {
-        return new AsyncInvoker<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse>(request,
-            FrsMeta.detectFaceByUrlIntl, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectFaceByUrlIntl, hcClient);
     }
 
     /**
@@ -606,7 +592,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByBase64Request 请求对象
+     * @param request DetectLiveByBase64Request 请求对象
      * @return CompletableFuture<DetectLiveByBase64Response>
      */
     public CompletableFuture<DetectLiveByBase64Response> detectLiveByBase64Async(DetectLiveByBase64Request request) {
@@ -620,13 +606,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByBase64Request 请求对象
+     * @param request DetectLiveByBase64Request 请求对象
      * @return AsyncInvoker<DetectLiveByBase64Request, DetectLiveByBase64Response>
      */
     public AsyncInvoker<DetectLiveByBase64Request, DetectLiveByBase64Response> detectLiveByBase64AsyncInvoker(
         DetectLiveByBase64Request request) {
-        return new AsyncInvoker<DetectLiveByBase64Request, DetectLiveByBase64Response>(request,
-            FrsMeta.detectLiveByBase64, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectLiveByBase64, hcClient);
     }
 
     /**
@@ -636,7 +621,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByBase64IntlRequest 请求对象
+     * @param request DetectLiveByBase64IntlRequest 请求对象
      * @return CompletableFuture<DetectLiveByBase64IntlResponse>
      */
     public CompletableFuture<DetectLiveByBase64IntlResponse> detectLiveByBase64IntlAsync(
@@ -651,13 +636,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByBase64IntlRequest 请求对象
+     * @param request DetectLiveByBase64IntlRequest 请求对象
      * @return AsyncInvoker<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse>
      */
     public AsyncInvoker<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse> detectLiveByBase64IntlAsyncInvoker(
         DetectLiveByBase64IntlRequest request) {
-        return new AsyncInvoker<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse>(request,
-            FrsMeta.detectLiveByBase64Intl, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectLiveByBase64Intl, hcClient);
     }
 
     /**
@@ -667,7 +651,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByFileRequest 请求对象
+     * @param request DetectLiveByFileRequest 请求对象
      * @return CompletableFuture<DetectLiveByFileResponse>
      */
     public CompletableFuture<DetectLiveByFileResponse> detectLiveByFileAsync(DetectLiveByFileRequest request) {
@@ -681,13 +665,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByFileRequest 请求对象
+     * @param request DetectLiveByFileRequest 请求对象
      * @return AsyncInvoker<DetectLiveByFileRequest, DetectLiveByFileResponse>
      */
     public AsyncInvoker<DetectLiveByFileRequest, DetectLiveByFileResponse> detectLiveByFileAsyncInvoker(
         DetectLiveByFileRequest request) {
-        return new AsyncInvoker<DetectLiveByFileRequest, DetectLiveByFileResponse>(request, FrsMeta.detectLiveByFile,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectLiveByFile, hcClient);
     }
 
     /**
@@ -697,7 +680,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByFileIntlRequest 请求对象
+     * @param request DetectLiveByFileIntlRequest 请求对象
      * @return CompletableFuture<DetectLiveByFileIntlResponse>
      */
     public CompletableFuture<DetectLiveByFileIntlResponse> detectLiveByFileIntlAsync(
@@ -712,13 +695,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByFileIntlRequest 请求对象
+     * @param request DetectLiveByFileIntlRequest 请求对象
      * @return AsyncInvoker<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse>
      */
     public AsyncInvoker<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse> detectLiveByFileIntlAsyncInvoker(
         DetectLiveByFileIntlRequest request) {
-        return new AsyncInvoker<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse>(request,
-            FrsMeta.detectLiveByFileIntl, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectLiveByFileIntl, hcClient);
     }
 
     /**
@@ -728,7 +710,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByUrlRequest 请求对象
+     * @param request DetectLiveByUrlRequest 请求对象
      * @return CompletableFuture<DetectLiveByUrlResponse>
      */
     public CompletableFuture<DetectLiveByUrlResponse> detectLiveByUrlAsync(DetectLiveByUrlRequest request) {
@@ -742,13 +724,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByUrlRequest 请求对象
+     * @param request DetectLiveByUrlRequest 请求对象
      * @return AsyncInvoker<DetectLiveByUrlRequest, DetectLiveByUrlResponse>
      */
     public AsyncInvoker<DetectLiveByUrlRequest, DetectLiveByUrlResponse> detectLiveByUrlAsyncInvoker(
         DetectLiveByUrlRequest request) {
-        return new AsyncInvoker<DetectLiveByUrlRequest, DetectLiveByUrlResponse>(request, FrsMeta.detectLiveByUrl,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectLiveByUrl, hcClient);
     }
 
     /**
@@ -758,7 +739,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByUrlIntlRequest 请求对象
+     * @param request DetectLiveByUrlIntlRequest 请求对象
      * @return CompletableFuture<DetectLiveByUrlIntlResponse>
      */
     public CompletableFuture<DetectLiveByUrlIntlResponse> detectLiveByUrlIntlAsync(DetectLiveByUrlIntlRequest request) {
@@ -772,13 +753,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByUrlIntlRequest 请求对象
+     * @param request DetectLiveByUrlIntlRequest 请求对象
      * @return AsyncInvoker<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse>
      */
     public AsyncInvoker<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse> detectLiveByUrlIntlAsyncInvoker(
         DetectLiveByUrlIntlRequest request) {
-        return new AsyncInvoker<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse>(request,
-            FrsMeta.detectLiveByUrlIntl, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectLiveByUrlIntl, hcClient);
     }
 
     /**
@@ -788,7 +768,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByBase64Request 请求对象
+     * @param request DetectLiveFaceByBase64Request 请求对象
      * @return CompletableFuture<DetectLiveFaceByBase64Response>
      */
     public CompletableFuture<DetectLiveFaceByBase64Response> detectLiveFaceByBase64Async(
@@ -803,13 +783,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByBase64Request 请求对象
+     * @param request DetectLiveFaceByBase64Request 请求对象
      * @return AsyncInvoker<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response>
      */
     public AsyncInvoker<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> detectLiveFaceByBase64AsyncInvoker(
         DetectLiveFaceByBase64Request request) {
-        return new AsyncInvoker<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response>(request,
-            FrsMeta.detectLiveFaceByBase64, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectLiveFaceByBase64, hcClient);
     }
 
     /**
@@ -819,7 +798,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByFileRequest 请求对象
+     * @param request DetectLiveFaceByFileRequest 请求对象
      * @return CompletableFuture<DetectLiveFaceByFileResponse>
      */
     public CompletableFuture<DetectLiveFaceByFileResponse> detectLiveFaceByFileAsync(
@@ -834,13 +813,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByFileRequest 请求对象
+     * @param request DetectLiveFaceByFileRequest 请求对象
      * @return AsyncInvoker<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse>
      */
     public AsyncInvoker<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> detectLiveFaceByFileAsyncInvoker(
         DetectLiveFaceByFileRequest request) {
-        return new AsyncInvoker<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse>(request,
-            FrsMeta.detectLiveFaceByFile, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectLiveFaceByFile, hcClient);
     }
 
     /**
@@ -850,7 +828,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByUrlRequest 请求对象
+     * @param request DetectLiveFaceByUrlRequest 请求对象
      * @return CompletableFuture<DetectLiveFaceByUrlResponse>
      */
     public CompletableFuture<DetectLiveFaceByUrlResponse> detectLiveFaceByUrlAsync(DetectLiveFaceByUrlRequest request) {
@@ -864,13 +842,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByUrlRequest 请求对象
+     * @param request DetectLiveFaceByUrlRequest 请求对象
      * @return AsyncInvoker<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse>
      */
     public AsyncInvoker<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> detectLiveFaceByUrlAsyncInvoker(
         DetectLiveFaceByUrlRequest request) {
-        return new AsyncInvoker<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse>(request,
-            FrsMeta.detectLiveFaceByUrl, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.detectLiveFaceByUrl, hcClient);
     }
 
     /**
@@ -881,7 +858,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByBase64Request 请求对象
+     * @param request SearchFaceByBase64Request 请求对象
      * @return CompletableFuture<SearchFaceByBase64Response>
      */
     public CompletableFuture<SearchFaceByBase64Response> searchFaceByBase64Async(SearchFaceByBase64Request request) {
@@ -896,13 +873,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByBase64Request 请求对象
+     * @param request SearchFaceByBase64Request 请求对象
      * @return AsyncInvoker<SearchFaceByBase64Request, SearchFaceByBase64Response>
      */
     public AsyncInvoker<SearchFaceByBase64Request, SearchFaceByBase64Response> searchFaceByBase64AsyncInvoker(
         SearchFaceByBase64Request request) {
-        return new AsyncInvoker<SearchFaceByBase64Request, SearchFaceByBase64Response>(request,
-            FrsMeta.searchFaceByBase64, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.searchFaceByBase64, hcClient);
     }
 
     /**
@@ -913,7 +889,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByFaceIdRequest 请求对象
+     * @param request SearchFaceByFaceIdRequest 请求对象
      * @return CompletableFuture<SearchFaceByFaceIdResponse>
      */
     public CompletableFuture<SearchFaceByFaceIdResponse> searchFaceByFaceIdAsync(SearchFaceByFaceIdRequest request) {
@@ -928,13 +904,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByFaceIdRequest 请求对象
+     * @param request SearchFaceByFaceIdRequest 请求对象
      * @return AsyncInvoker<SearchFaceByFaceIdRequest, SearchFaceByFaceIdResponse>
      */
     public AsyncInvoker<SearchFaceByFaceIdRequest, SearchFaceByFaceIdResponse> searchFaceByFaceIdAsyncInvoker(
         SearchFaceByFaceIdRequest request) {
-        return new AsyncInvoker<SearchFaceByFaceIdRequest, SearchFaceByFaceIdResponse>(request,
-            FrsMeta.searchFaceByFaceId, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.searchFaceByFaceId, hcClient);
     }
 
     /**
@@ -945,7 +920,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByFileRequest 请求对象
+     * @param request SearchFaceByFileRequest 请求对象
      * @return CompletableFuture<SearchFaceByFileResponse>
      */
     public CompletableFuture<SearchFaceByFileResponse> searchFaceByFileAsync(SearchFaceByFileRequest request) {
@@ -960,13 +935,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByFileRequest 请求对象
+     * @param request SearchFaceByFileRequest 请求对象
      * @return AsyncInvoker<SearchFaceByFileRequest, SearchFaceByFileResponse>
      */
     public AsyncInvoker<SearchFaceByFileRequest, SearchFaceByFileResponse> searchFaceByFileAsyncInvoker(
         SearchFaceByFileRequest request) {
-        return new AsyncInvoker<SearchFaceByFileRequest, SearchFaceByFileResponse>(request, FrsMeta.searchFaceByFile,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.searchFaceByFile, hcClient);
     }
 
     /**
@@ -977,7 +951,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByUrlRequest 请求对象
+     * @param request SearchFaceByUrlRequest 请求对象
      * @return CompletableFuture<SearchFaceByUrlResponse>
      */
     public CompletableFuture<SearchFaceByUrlResponse> searchFaceByUrlAsync(SearchFaceByUrlRequest request) {
@@ -992,13 +966,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByUrlRequest 请求对象
+     * @param request SearchFaceByUrlRequest 请求对象
      * @return AsyncInvoker<SearchFaceByUrlRequest, SearchFaceByUrlResponse>
      */
     public AsyncInvoker<SearchFaceByUrlRequest, SearchFaceByUrlResponse> searchFaceByUrlAsyncInvoker(
         SearchFaceByUrlRequest request) {
-        return new AsyncInvoker<SearchFaceByUrlRequest, SearchFaceByUrlResponse>(request, FrsMeta.searchFaceByUrl,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.searchFaceByUrl, hcClient);
     }
 
     /**
@@ -1008,7 +981,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllFaceSetsRequest 请求对象
+     * @param request ShowAllFaceSetsRequest 请求对象
      * @return CompletableFuture<ShowAllFaceSetsResponse>
      */
     public CompletableFuture<ShowAllFaceSetsResponse> showAllFaceSetsAsync(ShowAllFaceSetsRequest request) {
@@ -1022,13 +995,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllFaceSetsRequest 请求对象
+     * @param request ShowAllFaceSetsRequest 请求对象
      * @return AsyncInvoker<ShowAllFaceSetsRequest, ShowAllFaceSetsResponse>
      */
     public AsyncInvoker<ShowAllFaceSetsRequest, ShowAllFaceSetsResponse> showAllFaceSetsAsyncInvoker(
         ShowAllFaceSetsRequest request) {
-        return new AsyncInvoker<ShowAllFaceSetsRequest, ShowAllFaceSetsResponse>(request, FrsMeta.showAllFaceSets,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.showAllFaceSets, hcClient);
     }
 
     /**
@@ -1038,7 +1010,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFaceSetRequest 请求对象
+     * @param request ShowFaceSetRequest 请求对象
      * @return CompletableFuture<ShowFaceSetResponse>
      */
     public CompletableFuture<ShowFaceSetResponse> showFaceSetAsync(ShowFaceSetRequest request) {
@@ -1052,11 +1024,11 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFaceSetRequest 请求对象
+     * @param request ShowFaceSetRequest 请求对象
      * @return AsyncInvoker<ShowFaceSetRequest, ShowFaceSetResponse>
      */
     public AsyncInvoker<ShowFaceSetRequest, ShowFaceSetResponse> showFaceSetAsyncInvoker(ShowFaceSetRequest request) {
-        return new AsyncInvoker<ShowFaceSetRequest, ShowFaceSetResponse>(request, FrsMeta.showFaceSet, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.showFaceSet, hcClient);
     }
 
     /**
@@ -1066,7 +1038,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFacesByFaceIdRequest 请求对象
+     * @param request ShowFacesByFaceIdRequest 请求对象
      * @return CompletableFuture<ShowFacesByFaceIdResponse>
      */
     public CompletableFuture<ShowFacesByFaceIdResponse> showFacesByFaceIdAsync(ShowFacesByFaceIdRequest request) {
@@ -1080,13 +1052,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFacesByFaceIdRequest 请求对象
+     * @param request ShowFacesByFaceIdRequest 请求对象
      * @return AsyncInvoker<ShowFacesByFaceIdRequest, ShowFacesByFaceIdResponse>
      */
     public AsyncInvoker<ShowFacesByFaceIdRequest, ShowFacesByFaceIdResponse> showFacesByFaceIdAsyncInvoker(
         ShowFacesByFaceIdRequest request) {
-        return new AsyncInvoker<ShowFacesByFaceIdRequest, ShowFacesByFaceIdResponse>(request, FrsMeta.showFacesByFaceId,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.showFacesByFaceId, hcClient);
     }
 
     /**
@@ -1096,7 +1067,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFacesByLimitRequest 请求对象
+     * @param request ShowFacesByLimitRequest 请求对象
      * @return CompletableFuture<ShowFacesByLimitResponse>
      */
     public CompletableFuture<ShowFacesByLimitResponse> showFacesByLimitAsync(ShowFacesByLimitRequest request) {
@@ -1110,13 +1081,12 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFacesByLimitRequest 请求对象
+     * @param request ShowFacesByLimitRequest 请求对象
      * @return AsyncInvoker<ShowFacesByLimitRequest, ShowFacesByLimitResponse>
      */
     public AsyncInvoker<ShowFacesByLimitRequest, ShowFacesByLimitResponse> showFacesByLimitAsyncInvoker(
         ShowFacesByLimitRequest request) {
-        return new AsyncInvoker<ShowFacesByLimitRequest, ShowFacesByLimitResponse>(request, FrsMeta.showFacesByLimit,
-            hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.showFacesByLimit, hcClient);
     }
 
     /**
@@ -1126,7 +1096,7 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFaceRequest 请求对象
+     * @param request UpdateFaceRequest 请求对象
      * @return CompletableFuture<UpdateFaceResponse>
      */
     public CompletableFuture<UpdateFaceResponse> updateFaceAsync(UpdateFaceRequest request) {
@@ -1140,11 +1110,11 @@ public class FrsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFaceRequest 请求对象
+     * @param request UpdateFaceRequest 请求对象
      * @return AsyncInvoker<UpdateFaceRequest, UpdateFaceResponse>
      */
     public AsyncInvoker<UpdateFaceRequest, UpdateFaceResponse> updateFaceAsyncInvoker(UpdateFaceRequest request) {
-        return new AsyncInvoker<UpdateFaceRequest, UpdateFaceResponse>(request, FrsMeta.updateFace, hcClient);
+        return new AsyncInvoker<>(request, FrsMeta.updateFace, hcClient);
     }
 
 }

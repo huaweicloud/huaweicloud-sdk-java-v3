@@ -32,7 +32,7 @@ public class AsmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMeshRequest 请求对象
+     * @param request CreateMeshRequest 请求对象
      * @return CreateMeshResponse
      */
     public CreateMeshResponse createMesh(CreateMeshRequest request) {
@@ -46,11 +46,11 @@ public class AsmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMeshRequest 请求对象
+     * @param request CreateMeshRequest 请求对象
      * @return SyncInvoker<CreateMeshRequest, CreateMeshResponse>
      */
     public SyncInvoker<CreateMeshRequest, CreateMeshResponse> createMeshInvoker(CreateMeshRequest request) {
-        return new SyncInvoker<CreateMeshRequest, CreateMeshResponse>(request, AsmMeta.createMesh, hcClient);
+        return new SyncInvoker<>(request, AsmMeta.createMesh, hcClient);
     }
 
     /**
@@ -60,7 +60,7 @@ public class AsmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMeshRequest 请求对象
+     * @param request DeleteMeshRequest 请求对象
      * @return DeleteMeshResponse
      */
     public DeleteMeshResponse deleteMesh(DeleteMeshRequest request) {
@@ -74,11 +74,11 @@ public class AsmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMeshRequest 请求对象
+     * @param request DeleteMeshRequest 请求对象
      * @return SyncInvoker<DeleteMeshRequest, DeleteMeshResponse>
      */
     public SyncInvoker<DeleteMeshRequest, DeleteMeshResponse> deleteMeshInvoker(DeleteMeshRequest request) {
-        return new SyncInvoker<DeleteMeshRequest, DeleteMeshResponse>(request, AsmMeta.deleteMesh, hcClient);
+        return new SyncInvoker<>(request, AsmMeta.deleteMesh, hcClient);
     }
 
     /**
@@ -88,7 +88,7 @@ public class AsmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMeshesRequest 请求对象
+     * @param request ListMeshesRequest 请求对象
      * @return ListMeshesResponse
      */
     public ListMeshesResponse listMeshes(ListMeshesRequest request) {
@@ -102,11 +102,11 @@ public class AsmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMeshesRequest 请求对象
+     * @param request ListMeshesRequest 请求对象
      * @return SyncInvoker<ListMeshesRequest, ListMeshesResponse>
      */
     public SyncInvoker<ListMeshesRequest, ListMeshesResponse> listMeshesInvoker(ListMeshesRequest request) {
-        return new SyncInvoker<ListMeshesRequest, ListMeshesResponse>(request, AsmMeta.listMeshes, hcClient);
+        return new SyncInvoker<>(request, AsmMeta.listMeshes, hcClient);
     }
 
     /**
@@ -116,7 +116,7 @@ public class AsmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeshRequest 请求对象
+     * @param request ShowMeshRequest 请求对象
      * @return ShowMeshResponse
      */
     public ShowMeshResponse showMesh(ShowMeshRequest request) {
@@ -130,11 +130,11 @@ public class AsmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeshRequest 请求对象
+     * @param request ShowMeshRequest 请求对象
      * @return SyncInvoker<ShowMeshRequest, ShowMeshResponse>
      */
     public SyncInvoker<ShowMeshRequest, ShowMeshResponse> showMeshInvoker(ShowMeshRequest request) {
-        return new SyncInvoker<ShowMeshRequest, ShowMeshResponse>(request, AsmMeta.showMesh, hcClient);
+        return new SyncInvoker<>(request, AsmMeta.showMesh, hcClient);
     }
 
 }

@@ -139,7 +139,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 服务器组的唯一标识
+     * 服务器组的唯一标识。
      * @return id
      */
     public String getId() {
@@ -156,7 +156,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 服务器组名称
+     * 服务器组名称。
      * @return name
      */
     public String getName() {
@@ -173,7 +173,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 服务器组描述
+     * 服务器组描述。
      * @return description
      */
     public String getDescription() {
@@ -190,7 +190,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 服务器组关联的镜像ID，用于创建对应组下的云服务器
+     * 服务器组关联的镜像ID，用于创建对应组下的云服务器。
      * @return imageId
      */
     public String getImageId() {
@@ -224,7 +224,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 产品id
+     * 产品id。
      * @return productId
      */
     public String getProductId() {
@@ -241,7 +241,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 网卡对应的子网ID
+     * 网卡对应的子网ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -275,7 +275,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘容量，单位GB
+     * 磁盘容量，单位GB。
      * @return systemDiskSize
      */
     public Integer getSystemDiskSize() {
@@ -292,7 +292,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 是否为vdi单会话模式
+     * 是否为vdi单会话模式。
      * @return isVdi
      */
     public Boolean getIsVdi() {
@@ -326,7 +326,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 付费会话个数
+     * 付费会话个数。
      * @return extraSessionSize
      */
     public Integer getExtraSessionSize() {
@@ -411,7 +411,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 服务器配置总数量
+     * 服务器配置总数量。
      * @return appServerFlavorCount
      */
     public Integer getAppServerFlavorCount() {
@@ -428,7 +428,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 服务器总数量
+     * 服务器总数量。
      * @return appServerCount
      */
     public Integer getAppServerCount() {
@@ -445,7 +445,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 关联应用组的总数量
+     * 关联应用组的总数量。
      * @return appGroupCount
      */
     public Integer getAppGroupCount() {
@@ -462,7 +462,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 镜像名称
+     * 镜像名称。
      * @return imageName
      */
     public String getImageName() {
@@ -505,7 +505,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 子网名称
+     * 子网名称。
      * @return subnetName
      */
     public String getSubnetName() {
@@ -548,7 +548,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 默认组织名称
+     * 默认组织名称。
      * @return ouName
      */
     public String getOuName() {

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 存储声明的类型 * &#x60;USER&#x60; -  用户目录 * &#x60;SHARE&#x60; - 共享目录
+ * 存储声明的类型： * &#x60;USER&#x60; -  用户目录 * &#x60;SHARE&#x60; - 共享目录
  */
 public class ClaimMode {
 

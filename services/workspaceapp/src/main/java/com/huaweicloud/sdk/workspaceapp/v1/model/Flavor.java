@@ -29,7 +29,7 @@ public class Flavor {
     }
 
     /**
-     * 服务器对应的规格ID
+     * 服务器对应的规格ID。
      * @return id
      */
     public String getId() {
@@ -62,7 +62,7 @@ public class Flavor {
     }
 
     /**
-     * 服务器对应规格的相关标记快捷链接信息
+     * 服务器对应规格的相关标记快捷链接信息。
      * @return links
      */
     public List<FlavorLink> getLinks() {

@@ -16,9 +16,9 @@ import com.huaweicloud.sdk.pangulargemodels.v1.model.TextCompletionReq;
 public class PanguLargeModelsMeta {
 
     public static final HttpRequestDef<ExecuteChatCompletionRequest, ExecuteChatCompletionResponse> executeChatCompletion =
-        genForexecuteChatCompletion();
+        genForExecuteChatCompletion();
 
-    private static HttpRequestDef<ExecuteChatCompletionRequest, ExecuteChatCompletionResponse> genForexecuteChatCompletion() {
+    private static HttpRequestDef<ExecuteChatCompletionRequest, ExecuteChatCompletionResponse> genForExecuteChatCompletion() {
         // basic
         HttpRequestDef.Builder<ExecuteChatCompletionRequest, ExecuteChatCompletionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ExecuteChatCompletionRequest.class, ExecuteChatCompletionResponse.class)
@@ -31,16 +31,13 @@ public class PanguLargeModelsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteChatCompletionRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(ExecuteChatCompletionRequest::getDeploymentId,
+                ExecuteChatCompletionRequest::setDeploymentId));
         builder.<ChatCompletionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChatCompletionReq.class),
-            f -> f.withMarshaller(ExecuteChatCompletionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteChatCompletionRequest::getBody, ExecuteChatCompletionRequest::setBody));
 
         // response
 
@@ -48,9 +45,9 @@ public class PanguLargeModelsMeta {
     }
 
     public static final HttpRequestDef<ExecuteTextCompletionRequest, ExecuteTextCompletionResponse> executeTextCompletion =
-        genForexecuteTextCompletion();
+        genForExecuteTextCompletion();
 
-    private static HttpRequestDef<ExecuteTextCompletionRequest, ExecuteTextCompletionResponse> genForexecuteTextCompletion() {
+    private static HttpRequestDef<ExecuteTextCompletionRequest, ExecuteTextCompletionResponse> genForExecuteTextCompletion() {
         // basic
         HttpRequestDef.Builder<ExecuteTextCompletionRequest, ExecuteTextCompletionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ExecuteTextCompletionRequest.class, ExecuteTextCompletionResponse.class)
@@ -63,16 +60,13 @@ public class PanguLargeModelsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteTextCompletionRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(ExecuteTextCompletionRequest::getDeploymentId,
+                ExecuteTextCompletionRequest::setDeploymentId));
         builder.<TextCompletionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TextCompletionReq.class),
-            f -> f.withMarshaller(ExecuteTextCompletionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteTextCompletionRequest::getBody, ExecuteTextCompletionRequest::setBody));
 
         // response
 

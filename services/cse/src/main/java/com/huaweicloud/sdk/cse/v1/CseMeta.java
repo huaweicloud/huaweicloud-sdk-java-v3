@@ -73,9 +73,9 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CseMeta {
 
-    public static final HttpRequestDef<CreateEngineRequest, CreateEngineResponse> createEngine = genForcreateEngine();
+    public static final HttpRequestDef<CreateEngineRequest, CreateEngineResponse> createEngine = genForCreateEngine();
 
-    private static HttpRequestDef<CreateEngineRequest, CreateEngineResponse> genForcreateEngine() {
+    private static HttpRequestDef<CreateEngineRequest, CreateEngineResponse> genForCreateEngine() {
         // basic
         HttpRequestDef.Builder<CreateEngineRequest, CreateEngineResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEngineRequest.class, CreateEngineResponse.class)
@@ -88,16 +88,13 @@ public class CseMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEngineRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateEngineRequest::getXEnterpriseProjectID,
+                CreateEngineRequest::setXEnterpriseProjectID));
         builder.<EngineCreateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EngineCreateReq.class),
-            f -> f.withMarshaller(CreateEngineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEngineRequest::getBody, CreateEngineRequest::setBody));
 
         // response
 
@@ -105,9 +102,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<CreateGovernancePolicyRequest, CreateGovernancePolicyResponse> createGovernancePolicy =
-        genForcreateGovernancePolicy();
+        genForCreateGovernancePolicy();
 
-    private static HttpRequestDef<CreateGovernancePolicyRequest, CreateGovernancePolicyResponse> genForcreateGovernancePolicy() {
+    private static HttpRequestDef<CreateGovernancePolicyRequest, CreateGovernancePolicyResponse> genForCreateGovernancePolicy() {
         // basic
         HttpRequestDef.Builder<CreateGovernancePolicyRequest, CreateGovernancePolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateGovernancePolicyRequest.class, CreateGovernancePolicyResponse.class)
@@ -120,37 +117,30 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGovernancePolicyRequest::getKind, (req, v) -> {
-                req.setKind(v);
-            }));
+            f -> f.withMarshaller(CreateGovernancePolicyRequest::getKind, CreateGovernancePolicyRequest::setKind));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGovernancePolicyRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(CreateGovernancePolicyRequest::getXEngineId,
+                CreateGovernancePolicyRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGovernancePolicyRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateGovernancePolicyRequest::getXEnterpriseProjectID,
+                CreateGovernancePolicyRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("x-environment",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGovernancePolicyRequest::getXEnvironment, (req, v) -> {
-                req.setXEnvironment(v);
-            }));
+            f -> f.withMarshaller(CreateGovernancePolicyRequest::getXEnvironment,
+                CreateGovernancePolicyRequest::setXEnvironment));
         builder.<CreateGovPolicy>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateGovPolicy.class),
-            f -> f.withMarshaller(CreateGovernancePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateGovernancePolicyRequest::getBody, CreateGovernancePolicyRequest::setBody));
 
         // response
 
@@ -158,9 +148,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<CreateMicroserviceRouteRuleRequest, CreateMicroserviceRouteRuleResponse> createMicroserviceRouteRule =
-        genForcreateMicroserviceRouteRule();
+        genForCreateMicroserviceRouteRule();
 
-    private static HttpRequestDef<CreateMicroserviceRouteRuleRequest, CreateMicroserviceRouteRuleResponse> genForcreateMicroserviceRouteRule() {
+    private static HttpRequestDef<CreateMicroserviceRouteRuleRequest, CreateMicroserviceRouteRuleResponse> genForCreateMicroserviceRouteRule() {
         // basic
         HttpRequestDef.Builder<CreateMicroserviceRouteRuleRequest, CreateMicroserviceRouteRuleResponse> builder =
             HttpRequestDef
@@ -176,53 +166,49 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getServiceName,
+                CreateMicroserviceRouteRuleRequest::setServiceName));
         builder.<String>withRequestField("environment",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getEnvironment, (req, v) -> {
-                req.setEnvironment(v);
-            }));
+            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getEnvironment,
+                CreateMicroserviceRouteRuleRequest::setEnvironment));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getAppId,
+                CreateMicroserviceRouteRuleRequest::setAppId));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getXEngineId,
+                CreateMicroserviceRouteRuleRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getXEnterpriseProjectID,
+                CreateMicroserviceRouteRuleRequest::setXEnterpriseProjectID));
         builder.<List<CreateRules>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateMicroserviceRouteRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(CreateRules.class));
+            f -> f
+                .withMarshaller(CreateMicroserviceRouteRuleRequest::getBody,
+                    CreateMicroserviceRouteRuleRequest::setBody)
+                .withInnerContainerType(CreateRules.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteEngineRequest, DeleteEngineResponse> deleteEngine = genFordeleteEngine();
+    public static final HttpRequestDef<DeleteEngineRequest, DeleteEngineResponse> deleteEngine = genForDeleteEngine();
 
-    private static HttpRequestDef<DeleteEngineRequest, DeleteEngineResponse> genFordeleteEngine() {
+    private static HttpRequestDef<DeleteEngineRequest, DeleteEngineResponse> genForDeleteEngine() {
         // basic
         HttpRequestDef.Builder<DeleteEngineRequest, DeleteEngineResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEngineRequest.class, DeleteEngineResponse.class)
@@ -235,16 +221,13 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEngineRequest::getEngineId, (req, v) -> {
-                req.setEngineId(v);
-            }));
+            f -> f.withMarshaller(DeleteEngineRequest::getEngineId, DeleteEngineRequest::setEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEngineRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteEngineRequest::getXEnterpriseProjectID,
+                DeleteEngineRequest::setXEnterpriseProjectID));
 
         // response
 
@@ -252,9 +235,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<DeleteGovernancePolicyRequest, DeleteGovernancePolicyResponse> deleteGovernancePolicy =
-        genFordeleteGovernancePolicy();
+        genForDeleteGovernancePolicy();
 
-    private static HttpRequestDef<DeleteGovernancePolicyRequest, DeleteGovernancePolicyResponse> genFordeleteGovernancePolicy() {
+    private static HttpRequestDef<DeleteGovernancePolicyRequest, DeleteGovernancePolicyResponse> genForDeleteGovernancePolicy() {
         // basic
         HttpRequestDef.Builder<DeleteGovernancePolicyRequest, DeleteGovernancePolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteGovernancePolicyRequest.class, DeleteGovernancePolicyResponse.class)
@@ -267,37 +250,31 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGovernancePolicyRequest::getKind, (req, v) -> {
-                req.setKind(v);
-            }));
+            f -> f.withMarshaller(DeleteGovernancePolicyRequest::getKind, DeleteGovernancePolicyRequest::setKind));
         builder.<String>withRequestField("policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGovernancePolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(DeleteGovernancePolicyRequest::getPolicyId,
+                DeleteGovernancePolicyRequest::setPolicyId));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGovernancePolicyRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(DeleteGovernancePolicyRequest::getXEngineId,
+                DeleteGovernancePolicyRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGovernancePolicyRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteGovernancePolicyRequest::getXEnterpriseProjectID,
+                DeleteGovernancePolicyRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("x-environment",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGovernancePolicyRequest::getXEnvironment, (req, v) -> {
-                req.setXEnvironment(v);
-            }));
+            f -> f.withMarshaller(DeleteGovernancePolicyRequest::getXEnvironment,
+                DeleteGovernancePolicyRequest::setXEnvironment));
 
         // response
 
@@ -305,9 +282,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<DeleteMicroserviceRouteRuleRequest, DeleteMicroserviceRouteRuleResponse> deleteMicroserviceRouteRule =
-        genFordeleteMicroserviceRouteRule();
+        genForDeleteMicroserviceRouteRule();
 
-    private static HttpRequestDef<DeleteMicroserviceRouteRuleRequest, DeleteMicroserviceRouteRuleResponse> genFordeleteMicroserviceRouteRule() {
+    private static HttpRequestDef<DeleteMicroserviceRouteRuleRequest, DeleteMicroserviceRouteRuleResponse> genForDeleteMicroserviceRouteRule() {
         // basic
         HttpRequestDef.Builder<DeleteMicroserviceRouteRuleRequest, DeleteMicroserviceRouteRuleResponse> builder =
             HttpRequestDef
@@ -323,46 +300,41 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMicroserviceRouteRuleRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(DeleteMicroserviceRouteRuleRequest::getServiceName,
+                DeleteMicroserviceRouteRuleRequest::setServiceName));
         builder.<String>withRequestField("environment",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMicroserviceRouteRuleRequest::getEnvironment, (req, v) -> {
-                req.setEnvironment(v);
-            }));
+            f -> f.withMarshaller(DeleteMicroserviceRouteRuleRequest::getEnvironment,
+                DeleteMicroserviceRouteRuleRequest::setEnvironment));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMicroserviceRouteRuleRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteMicroserviceRouteRuleRequest::getAppId,
+                DeleteMicroserviceRouteRuleRequest::setAppId));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMicroserviceRouteRuleRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(DeleteMicroserviceRouteRuleRequest::getXEngineId,
+                DeleteMicroserviceRouteRuleRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMicroserviceRouteRuleRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteMicroserviceRouteRuleRequest::getXEnterpriseProjectID,
+                DeleteMicroserviceRouteRuleRequest::setXEnterpriseProjectID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DownloadKieRequest, DownloadKieResponse> downloadKie = genFordownloadKie();
+    public static final HttpRequestDef<DownloadKieRequest, DownloadKieResponse> downloadKie = genForDownloadKie();
 
-    private static HttpRequestDef<DownloadKieRequest, DownloadKieResponse> genFordownloadKie() {
+    private static HttpRequestDef<DownloadKieRequest, DownloadKieResponse> genForDownloadKie() {
         // basic
         HttpRequestDef.Builder<DownloadKieRequest, DownloadKieResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DownloadKieRequest.class, DownloadKieResponse.class)
@@ -375,46 +347,37 @@ public class CseMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadKieRequest::getLabel, (req, v) -> {
-                req.setLabel(v);
-            }));
+            f -> f.withMarshaller(DownloadKieRequest::getLabel, DownloadKieRequest::setLabel));
         builder.<DownloadKieRequest.MatchEnum>withRequestField("match",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DownloadKieRequest.MatchEnum.class),
-            f -> f.withMarshaller(DownloadKieRequest::getMatch, (req, v) -> {
-                req.setMatch(v);
-            }));
+            f -> f.withMarshaller(DownloadKieRequest::getMatch, DownloadKieRequest::setMatch));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadKieRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DownloadKieRequest::getXEnterpriseProjectID,
+                DownloadKieRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadKieRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(DownloadKieRequest::getXEngineId, DownloadKieRequest::setXEngineId));
         builder.<DownloadKieReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DownloadKieReqBody.class),
-            f -> f.withMarshaller(DownloadKieRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DownloadKieRequest::getBody, DownloadKieRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEnginesRequest, ListEnginesResponse> listEngines = genForlistEngines();
+    public static final HttpRequestDef<ListEnginesRequest, ListEnginesResponse> listEngines = genForListEngines();
 
-    private static HttpRequestDef<ListEnginesRequest, ListEnginesResponse> genForlistEngines() {
+    private static HttpRequestDef<ListEnginesRequest, ListEnginesResponse> genForListEngines() {
         // basic
         HttpRequestDef.Builder<ListEnginesRequest, ListEnginesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnginesRequest.class, ListEnginesResponse.class)
@@ -427,25 +390,21 @@ public class CseMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnginesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEnginesRequest::getOffset, ListEnginesRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnginesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnginesRequest::getLimit, ListEnginesRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
+    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForListFlavors();
 
-    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
+    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForListFlavors() {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
@@ -458,9 +417,7 @@ public class CseMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlavorsRequest::getSpecType, (req, v) -> {
-                req.setSpecType(v);
-            }));
+            f -> f.withMarshaller(ListFlavorsRequest::getSpecType, ListFlavorsRequest::setSpecType));
 
         // response
 
@@ -468,9 +425,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<ListGovernancePolicyRequest, ListGovernancePolicyResponse> listGovernancePolicy =
-        genForlistGovernancePolicy();
+        genForListGovernancePolicy();
 
-    private static HttpRequestDef<ListGovernancePolicyRequest, ListGovernancePolicyResponse> genForlistGovernancePolicy() {
+    private static HttpRequestDef<ListGovernancePolicyRequest, ListGovernancePolicyResponse> genForListGovernancePolicy() {
         // basic
         HttpRequestDef.Builder<ListGovernancePolicyRequest, ListGovernancePolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListGovernancePolicyRequest.class, ListGovernancePolicyResponse.class)
@@ -483,47 +440,41 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicyRequest::getKind, (req, v) -> {
-                req.setKind(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicyRequest::getKind, ListGovernancePolicyRequest::setKind));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicyRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicyRequest::getXEngineId,
+                ListGovernancePolicyRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicyRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicyRequest::getXEnterpriseProjectID,
+                ListGovernancePolicyRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("x-environment",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicyRequest::getXEnvironment, (req, v) -> {
-                req.setXEnvironment(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicyRequest::getXEnvironment,
+                ListGovernancePolicyRequest::setXEnvironment));
 
         // response
         builder.<List<GovPolicyDetail>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListGovernancePolicyResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(GovPolicyDetail.class));
+            f -> f.withMarshaller(ListGovernancePolicyResponse::getBody, ListGovernancePolicyResponse::setBody)
+                .withInnerContainerType(GovPolicyDetail.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListGovernancePolicyByPolicyIdRequest, ListGovernancePolicyByPolicyIdResponse> listGovernancePolicyByPolicyId =
-        genForlistGovernancePolicyByPolicyId();
+        genForListGovernancePolicyByPolicyId();
 
-    private static HttpRequestDef<ListGovernancePolicyByPolicyIdRequest, ListGovernancePolicyByPolicyIdResponse> genForlistGovernancePolicyByPolicyId() {
+    private static HttpRequestDef<ListGovernancePolicyByPolicyIdRequest, ListGovernancePolicyByPolicyIdResponse> genForListGovernancePolicyByPolicyId() {
         // basic
         HttpRequestDef.Builder<ListGovernancePolicyByPolicyIdRequest, ListGovernancePolicyByPolicyIdResponse> builder =
             HttpRequestDef
@@ -539,37 +490,32 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicyByPolicyIdRequest::getKind, (req, v) -> {
-                req.setKind(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicyByPolicyIdRequest::getKind,
+                ListGovernancePolicyByPolicyIdRequest::setKind));
         builder.<String>withRequestField("policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicyByPolicyIdRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicyByPolicyIdRequest::getPolicyId,
+                ListGovernancePolicyByPolicyIdRequest::setPolicyId));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicyByPolicyIdRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicyByPolicyIdRequest::getXEngineId,
+                ListGovernancePolicyByPolicyIdRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicyByPolicyIdRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicyByPolicyIdRequest::getXEnterpriseProjectID,
+                ListGovernancePolicyByPolicyIdRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("x-environment",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicyByPolicyIdRequest::getXEnvironment, (req, v) -> {
-                req.setXEnvironment(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicyByPolicyIdRequest::getXEnvironment,
+                ListGovernancePolicyByPolicyIdRequest::setXEnvironment));
 
         // response
 
@@ -577,9 +523,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<ListGovernancePolicysRequest, ListGovernancePolicysResponse> listGovernancePolicys =
-        genForlistGovernancePolicys();
+        genForListGovernancePolicys();
 
-    private static HttpRequestDef<ListGovernancePolicysRequest, ListGovernancePolicysResponse> genForlistGovernancePolicys() {
+    private static HttpRequestDef<ListGovernancePolicysRequest, ListGovernancePolicysResponse> genForListGovernancePolicys() {
         // basic
         HttpRequestDef.Builder<ListGovernancePolicysRequest, ListGovernancePolicysResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListGovernancePolicysRequest.class, ListGovernancePolicysResponse.class)
@@ -592,47 +538,41 @@ public class CseMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicysRequest::getEnvironment, (req, v) -> {
-                req.setEnvironment(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicysRequest::getEnvironment,
+                ListGovernancePolicysRequest::setEnvironment));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicysRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicysRequest::getApp, ListGovernancePolicysRequest::setApp));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicysRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicysRequest::getXEngineId,
+                ListGovernancePolicysRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGovernancePolicysRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListGovernancePolicysRequest::getXEnterpriseProjectID,
+                ListGovernancePolicysRequest::setXEnterpriseProjectID));
 
         // response
         builder.<List<GovPolicyDetail>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListGovernancePolicysResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(GovPolicyDetail.class));
+            f -> f.withMarshaller(ListGovernancePolicysResponse::getBody, ListGovernancePolicysResponse::setBody)
+                .withInnerContainerType(GovPolicyDetail.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListMicroserviceRouteRuleRequest, ListMicroserviceRouteRuleResponse> listMicroserviceRouteRule =
-        genForlistMicroserviceRouteRule();
+        genForListMicroserviceRouteRule();
 
-    private static HttpRequestDef<ListMicroserviceRouteRuleRequest, ListMicroserviceRouteRuleResponse> genForlistMicroserviceRouteRule() {
+    private static HttpRequestDef<ListMicroserviceRouteRuleRequest, ListMicroserviceRouteRuleResponse> genForListMicroserviceRouteRule() {
         // basic
         HttpRequestDef.Builder<ListMicroserviceRouteRuleRequest, ListMicroserviceRouteRuleResponse> builder =
             HttpRequestDef
@@ -648,46 +588,41 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMicroserviceRouteRuleRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(ListMicroserviceRouteRuleRequest::getServiceName,
+                ListMicroserviceRouteRuleRequest::setServiceName));
         builder.<String>withRequestField("environment",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMicroserviceRouteRuleRequest::getEnvironment, (req, v) -> {
-                req.setEnvironment(v);
-            }));
+            f -> f.withMarshaller(ListMicroserviceRouteRuleRequest::getEnvironment,
+                ListMicroserviceRouteRuleRequest::setEnvironment));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMicroserviceRouteRuleRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListMicroserviceRouteRuleRequest::getAppId,
+                ListMicroserviceRouteRuleRequest::setAppId));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMicroserviceRouteRuleRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(ListMicroserviceRouteRuleRequest::getXEngineId,
+                ListMicroserviceRouteRuleRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMicroserviceRouteRuleRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListMicroserviceRouteRuleRequest::getXEnterpriseProjectID,
+                ListMicroserviceRouteRuleRequest::setXEnterpriseProjectID));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizeEngineRequest, ResizeEngineResponse> resizeEngine = genForresizeEngine();
+    public static final HttpRequestDef<ResizeEngineRequest, ResizeEngineResponse> resizeEngine = genForResizeEngine();
 
-    private static HttpRequestDef<ResizeEngineRequest, ResizeEngineResponse> genForresizeEngine() {
+    private static HttpRequestDef<ResizeEngineRequest, ResizeEngineResponse> genForResizeEngine() {
         // basic
         HttpRequestDef.Builder<ResizeEngineRequest, ResizeEngineResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResizeEngineRequest.class, ResizeEngineResponse.class)
@@ -700,39 +635,32 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeEngineRequest::getEngineId, (req, v) -> {
-                req.setEngineId(v);
-            }));
+            f -> f.withMarshaller(ResizeEngineRequest::getEngineId, ResizeEngineRequest::setEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeEngineRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ResizeEngineRequest::getXEnterpriseProjectID,
+                ResizeEngineRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("Accept",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeEngineRequest::getAccept, (req, v) -> {
-                req.setAccept(v);
-            }));
+            f -> f.withMarshaller(ResizeEngineRequest::getAccept, ResizeEngineRequest::setAccept));
         builder.<EngineModifyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EngineModifyReq.class),
-            f -> f.withMarshaller(ResizeEngineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeEngineRequest::getBody, ResizeEngineRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RetryEngineRequest, RetryEngineResponse> retryEngine = genForretryEngine();
+    public static final HttpRequestDef<RetryEngineRequest, RetryEngineResponse> retryEngine = genForRetryEngine();
 
-    private static HttpRequestDef<RetryEngineRequest, RetryEngineResponse> genForretryEngine() {
+    private static HttpRequestDef<RetryEngineRequest, RetryEngineResponse> genForRetryEngine() {
         // basic
         HttpRequestDef.Builder<RetryEngineRequest, RetryEngineResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RetryEngineRequest.class, RetryEngineResponse.class)
@@ -745,32 +673,27 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryEngineRequest::getEngineId, (req, v) -> {
-                req.setEngineId(v);
-            }));
+            f -> f.withMarshaller(RetryEngineRequest::getEngineId, RetryEngineRequest::setEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryEngineRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(RetryEngineRequest::getXEnterpriseProjectID,
+                RetryEngineRequest::setXEnterpriseProjectID));
         builder.<EngineAdditionalActionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EngineAdditionalActionReq.class),
-            f -> f.withMarshaller(RetryEngineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RetryEngineRequest::getBody, RetryEngineRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEngineRequest, ShowEngineResponse> showEngine = genForshowEngine();
+    public static final HttpRequestDef<ShowEngineRequest, ShowEngineResponse> showEngine = genForShowEngine();
 
-    private static HttpRequestDef<ShowEngineRequest, ShowEngineResponse> genForshowEngine() {
+    private static HttpRequestDef<ShowEngineRequest, ShowEngineResponse> genForShowEngine() {
         // basic
         HttpRequestDef.Builder<ShowEngineRequest, ShowEngineResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEngineRequest.class, ShowEngineResponse.class)
@@ -783,16 +706,13 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEngineRequest::getEngineId, (req, v) -> {
-                req.setEngineId(v);
-            }));
+            f -> f.withMarshaller(ShowEngineRequest::getEngineId, ShowEngineRequest::setEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEngineRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ShowEngineRequest::getXEnterpriseProjectID,
+                ShowEngineRequest::setXEnterpriseProjectID));
 
         // response
 
@@ -800,9 +720,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<ShowEngineJobRequest, ShowEngineJobResponse> showEngineJob =
-        genForshowEngineJob();
+        genForShowEngineJob();
 
-    private static HttpRequestDef<ShowEngineJobRequest, ShowEngineJobResponse> genForshowEngineJob() {
+    private static HttpRequestDef<ShowEngineJobRequest, ShowEngineJobResponse> genForShowEngineJob() {
         // basic
         HttpRequestDef.Builder<ShowEngineJobRequest, ShowEngineJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEngineJobRequest.class, ShowEngineJobResponse.class)
@@ -815,23 +735,18 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEngineJobRequest::getEngineId, (req, v) -> {
-                req.setEngineId(v);
-            }));
+            f -> f.withMarshaller(ShowEngineJobRequest::getEngineId, ShowEngineJobRequest::setEngineId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEngineJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowEngineJobRequest::getJobId, ShowEngineJobRequest::setJobId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEngineJobRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ShowEngineJobRequest::getXEnterpriseProjectID,
+                ShowEngineJobRequest::setXEnterpriseProjectID));
 
         // response
 
@@ -839,9 +754,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<ShowEngineQuotasRequest, ShowEngineQuotasResponse> showEngineQuotas =
-        genForshowEngineQuotas();
+        genForShowEngineQuotas();
 
-    private static HttpRequestDef<ShowEngineQuotasRequest, ShowEngineQuotasResponse> genForshowEngineQuotas() {
+    private static HttpRequestDef<ShowEngineQuotasRequest, ShowEngineQuotasResponse> genForShowEngineQuotas() {
         // basic
         HttpRequestDef.Builder<ShowEngineQuotasRequest, ShowEngineQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEngineQuotasRequest.class, ShowEngineQuotasResponse.class)
@@ -857,9 +772,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<UpdateGovernancePolicyRequest, UpdateGovernancePolicyResponse> updateGovernancePolicy =
-        genForupdateGovernancePolicy();
+        genForUpdateGovernancePolicy();
 
-    private static HttpRequestDef<UpdateGovernancePolicyRequest, UpdateGovernancePolicyResponse> genForupdateGovernancePolicy() {
+    private static HttpRequestDef<UpdateGovernancePolicyRequest, UpdateGovernancePolicyResponse> genForUpdateGovernancePolicy() {
         // basic
         HttpRequestDef.Builder<UpdateGovernancePolicyRequest, UpdateGovernancePolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateGovernancePolicyRequest.class, UpdateGovernancePolicyResponse.class)
@@ -872,44 +787,36 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getKind, (req, v) -> {
-                req.setKind(v);
-            }));
+            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getKind, UpdateGovernancePolicyRequest::setKind));
         builder.<String>withRequestField("policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getPolicyId,
+                UpdateGovernancePolicyRequest::setPolicyId));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getXEngineId,
+                UpdateGovernancePolicyRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getXEnterpriseProjectID,
+                UpdateGovernancePolicyRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("x-environment",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getXEnvironment, (req, v) -> {
-                req.setXEnvironment(v);
-            }));
+            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getXEnvironment,
+                UpdateGovernancePolicyRequest::setXEnvironment));
         builder.<CreateGovPolicy>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateGovPolicy.class),
-            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateGovernancePolicyRequest::getBody, UpdateGovernancePolicyRequest::setBody));
 
         // response
 
@@ -917,9 +824,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<UpgradeEngineRequest, UpgradeEngineResponse> upgradeEngine =
-        genForupgradeEngine();
+        genForUpgradeEngine();
 
-    private static HttpRequestDef<UpgradeEngineRequest, UpgradeEngineResponse> genForupgradeEngine() {
+    private static HttpRequestDef<UpgradeEngineRequest, UpgradeEngineResponse> genForUpgradeEngine() {
         // basic
         HttpRequestDef.Builder<UpgradeEngineRequest, UpgradeEngineResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpgradeEngineRequest.class, UpgradeEngineResponse.class)
@@ -932,23 +839,18 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeEngineRequest::getEngineId, (req, v) -> {
-                req.setEngineId(v);
-            }));
+            f -> f.withMarshaller(UpgradeEngineRequest::getEngineId, UpgradeEngineRequest::setEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeEngineRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(UpgradeEngineRequest::getXEnterpriseProjectID,
+                UpgradeEngineRequest::setXEnterpriseProjectID));
         builder.<EngineUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EngineUpdateReq.class),
-            f -> f.withMarshaller(UpgradeEngineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpgradeEngineRequest::getBody, UpgradeEngineRequest::setBody));
 
         // response
 
@@ -956,9 +858,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<UpgradeEngineConfigRequest, UpgradeEngineConfigResponse> upgradeEngineConfig =
-        genForupgradeEngineConfig();
+        genForUpgradeEngineConfig();
 
-    private static HttpRequestDef<UpgradeEngineConfigRequest, UpgradeEngineConfigResponse> genForupgradeEngineConfig() {
+    private static HttpRequestDef<UpgradeEngineConfigRequest, UpgradeEngineConfigResponse> genForUpgradeEngineConfig() {
         // basic
         HttpRequestDef.Builder<UpgradeEngineConfigRequest, UpgradeEngineConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpgradeEngineConfigRequest.class, UpgradeEngineConfigResponse.class)
@@ -971,32 +873,27 @@ public class CseMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeEngineConfigRequest::getEngineId, (req, v) -> {
-                req.setEngineId(v);
-            }));
+            f -> f.withMarshaller(UpgradeEngineConfigRequest::getEngineId, UpgradeEngineConfigRequest::setEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeEngineConfigRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(UpgradeEngineConfigRequest::getXEnterpriseProjectID,
+                UpgradeEngineConfigRequest::setXEnterpriseProjectID));
         builder.<EngineConfigureReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EngineConfigureReq.class),
-            f -> f.withMarshaller(UpgradeEngineConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpgradeEngineConfigRequest::getBody, UpgradeEngineConfigRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UploadKieRequest, UploadKieResponse> uploadKie = genForuploadKie();
+    public static final HttpRequestDef<UploadKieRequest, UploadKieResponse> uploadKie = genForUploadKie();
 
-    private static HttpRequestDef<UploadKieRequest, UploadKieResponse> genForuploadKie() {
+    private static HttpRequestDef<UploadKieRequest, UploadKieResponse> genForUploadKie() {
         // basic
         HttpRequestDef.Builder<UploadKieRequest, UploadKieResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadKieRequest.class, UploadKieResponse.class)
@@ -1009,37 +906,28 @@ public class CseMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadKieRequest.OverrideEnum.class),
-            f -> f.withMarshaller(UploadKieRequest::getOverride, (req, v) -> {
-                req.setOverride(v);
-            }));
+            f -> f.withMarshaller(UploadKieRequest::getOverride, UploadKieRequest::setOverride));
         builder.<String>withRequestField("label",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadKieRequest::getLabel, (req, v) -> {
-                req.setLabel(v);
-            }));
+            f -> f.withMarshaller(UploadKieRequest::getLabel, UploadKieRequest::setLabel));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadKieRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(UploadKieRequest::getXEnterpriseProjectID,
+                UploadKieRequest::setXEnterpriseProjectID));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadKieRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(UploadKieRequest::getXEngineId, UploadKieRequest::setXEngineId));
         builder.<UploadKieRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadKieRequestBody.class),
-            f -> f.withMarshaller(UploadKieRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadKieRequest::getBody, UploadKieRequest::setBody));
 
         // response
 
@@ -1047,9 +935,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<CreateNacosNamespacesRequest, CreateNacosNamespacesResponse> createNacosNamespaces =
-        genForcreateNacosNamespaces();
+        genForCreateNacosNamespaces();
 
-    private static HttpRequestDef<CreateNacosNamespacesRequest, CreateNacosNamespacesResponse> genForcreateNacosNamespaces() {
+    private static HttpRequestDef<CreateNacosNamespacesRequest, CreateNacosNamespacesResponse> genForCreateNacosNamespaces() {
         // basic
         HttpRequestDef.Builder<CreateNacosNamespacesRequest, CreateNacosNamespacesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateNacosNamespacesRequest.class, CreateNacosNamespacesResponse.class)
@@ -1062,37 +950,32 @@ public class CseMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNacosNamespacesRequest::getCustomNamespaceId, (req, v) -> {
-                req.setCustomNamespaceId(v);
-            }));
+            f -> f.withMarshaller(CreateNacosNamespacesRequest::getCustomNamespaceId,
+                CreateNacosNamespacesRequest::setCustomNamespaceId));
         builder.<String>withRequestField("namespace_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNacosNamespacesRequest::getNamespaceName, (req, v) -> {
-                req.setNamespaceName(v);
-            }));
+            f -> f.withMarshaller(CreateNacosNamespacesRequest::getNamespaceName,
+                CreateNacosNamespacesRequest::setNamespaceName));
         builder.<String>withRequestField("namespace_desc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNacosNamespacesRequest::getNamespaceDesc, (req, v) -> {
-                req.setNamespaceDesc(v);
-            }));
+            f -> f.withMarshaller(CreateNacosNamespacesRequest::getNamespaceDesc,
+                CreateNacosNamespacesRequest::setNamespaceDesc));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNacosNamespacesRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(CreateNacosNamespacesRequest::getXEngineId,
+                CreateNacosNamespacesRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNacosNamespacesRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(CreateNacosNamespacesRequest::getXEnterpriseProjectID,
+                CreateNacosNamespacesRequest::setXEnterpriseProjectID));
 
         // response
 
@@ -1100,9 +983,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<DeleteNacosNamespacesRequest, DeleteNacosNamespacesResponse> deleteNacosNamespaces =
-        genFordeleteNacosNamespaces();
+        genForDeleteNacosNamespaces();
 
-    private static HttpRequestDef<DeleteNacosNamespacesRequest, DeleteNacosNamespacesResponse> genFordeleteNacosNamespaces() {
+    private static HttpRequestDef<DeleteNacosNamespacesRequest, DeleteNacosNamespacesResponse> genForDeleteNacosNamespaces() {
         // basic
         HttpRequestDef.Builder<DeleteNacosNamespacesRequest, DeleteNacosNamespacesResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteNacosNamespacesRequest.class, DeleteNacosNamespacesResponse.class)
@@ -1115,23 +998,20 @@ public class CseMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNacosNamespacesRequest::getNamespaceId, (req, v) -> {
-                req.setNamespaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteNacosNamespacesRequest::getNamespaceId,
+                DeleteNacosNamespacesRequest::setNamespaceId));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNacosNamespacesRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(DeleteNacosNamespacesRequest::getXEngineId,
+                DeleteNacosNamespacesRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNacosNamespacesRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(DeleteNacosNamespacesRequest::getXEnterpriseProjectID,
+                DeleteNacosNamespacesRequest::setXEnterpriseProjectID));
 
         // response
 
@@ -1139,9 +1019,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<ListNacosNamespacesRequest, ListNacosNamespacesResponse> listNacosNamespaces =
-        genForlistNacosNamespaces();
+        genForListNacosNamespaces();
 
-    private static HttpRequestDef<ListNacosNamespacesRequest, ListNacosNamespacesResponse> genForlistNacosNamespaces() {
+    private static HttpRequestDef<ListNacosNamespacesRequest, ListNacosNamespacesResponse> genForListNacosNamespaces() {
         // basic
         HttpRequestDef.Builder<ListNacosNamespacesRequest, ListNacosNamespacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNacosNamespacesRequest.class, ListNacosNamespacesResponse.class)
@@ -1154,30 +1034,23 @@ public class CseMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNacosNamespacesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListNacosNamespacesRequest::getOffset, ListNacosNamespacesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNacosNamespacesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNacosNamespacesRequest::getLimit, ListNacosNamespacesRequest::setLimit));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNacosNamespacesRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(ListNacosNamespacesRequest::getXEngineId, ListNacosNamespacesRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNacosNamespacesRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(ListNacosNamespacesRequest::getXEnterpriseProjectID,
+                ListNacosNamespacesRequest::setXEnterpriseProjectID));
 
         // response
 
@@ -1185,9 +1058,9 @@ public class CseMeta {
     }
 
     public static final HttpRequestDef<UpdateNacosNamespacesRequest, UpdateNacosNamespacesResponse> updateNacosNamespaces =
-        genForupdateNacosNamespaces();
+        genForUpdateNacosNamespaces();
 
-    private static HttpRequestDef<UpdateNacosNamespacesRequest, UpdateNacosNamespacesResponse> genForupdateNacosNamespaces() {
+    private static HttpRequestDef<UpdateNacosNamespacesRequest, UpdateNacosNamespacesResponse> genForUpdateNacosNamespaces() {
         // basic
         HttpRequestDef.Builder<UpdateNacosNamespacesRequest, UpdateNacosNamespacesResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateNacosNamespacesRequest.class, UpdateNacosNamespacesResponse.class)
@@ -1200,37 +1073,32 @@ public class CseMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNacosNamespacesRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(UpdateNacosNamespacesRequest::getNamespace,
+                UpdateNacosNamespacesRequest::setNamespace));
         builder.<String>withRequestField("namespace_show_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNacosNamespacesRequest::getNamespaceShowName, (req, v) -> {
-                req.setNamespaceShowName(v);
-            }));
+            f -> f.withMarshaller(UpdateNacosNamespacesRequest::getNamespaceShowName,
+                UpdateNacosNamespacesRequest::setNamespaceShowName));
         builder.<String>withRequestField("namespace_desc",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNacosNamespacesRequest::getNamespaceDesc, (req, v) -> {
-                req.setNamespaceDesc(v);
-            }));
+            f -> f.withMarshaller(UpdateNacosNamespacesRequest::getNamespaceDesc,
+                UpdateNacosNamespacesRequest::setNamespaceDesc));
         builder.<String>withRequestField("x-engine-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNacosNamespacesRequest::getXEngineId, (req, v) -> {
-                req.setXEngineId(v);
-            }));
+            f -> f.withMarshaller(UpdateNacosNamespacesRequest::getXEngineId,
+                UpdateNacosNamespacesRequest::setXEngineId));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNacosNamespacesRequest::getXEnterpriseProjectID, (req, v) -> {
-                req.setXEnterpriseProjectID(v);
-            }));
+            f -> f.withMarshaller(UpdateNacosNamespacesRequest::getXEnterpriseProjectID,
+                UpdateNacosNamespacesRequest::setXEnterpriseProjectID));
 
         // response
 

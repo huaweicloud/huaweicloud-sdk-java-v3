@@ -30,7 +30,7 @@ public class OaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckItemListRequest 请求对象
+     * @param request ShowCheckItemListRequest 请求对象
      * @return ShowCheckItemListResponse
      */
     public ShowCheckItemListResponse showCheckItemList(ShowCheckItemListRequest request) {
@@ -44,13 +44,12 @@ public class OaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckItemListRequest 请求对象
+     * @param request ShowCheckItemListRequest 请求对象
      * @return SyncInvoker<ShowCheckItemListRequest, ShowCheckItemListResponse>
      */
     public SyncInvoker<ShowCheckItemListRequest, ShowCheckItemListResponse> showCheckItemListInvoker(
         ShowCheckItemListRequest request) {
-        return new SyncInvoker<ShowCheckItemListRequest, ShowCheckItemListResponse>(request, OaMeta.showCheckItemList,
-            hcClient);
+        return new SyncInvoker<>(request, OaMeta.showCheckItemList, hcClient);
     }
 
     /**
@@ -60,7 +59,7 @@ public class OaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckItemResultRequest 请求对象
+     * @param request ShowCheckItemResultRequest 请求对象
      * @return ShowCheckItemResultResponse
      */
     public ShowCheckItemResultResponse showCheckItemResult(ShowCheckItemResultRequest request) {
@@ -74,13 +73,12 @@ public class OaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckItemResultRequest 请求对象
+     * @param request ShowCheckItemResultRequest 请求对象
      * @return SyncInvoker<ShowCheckItemResultRequest, ShowCheckItemResultResponse>
      */
     public SyncInvoker<ShowCheckItemResultRequest, ShowCheckItemResultResponse> showCheckItemResultInvoker(
         ShowCheckItemResultRequest request) {
-        return new SyncInvoker<ShowCheckItemResultRequest, ShowCheckItemResultResponse>(request,
-            OaMeta.showCheckItemResult, hcClient);
+        return new SyncInvoker<>(request, OaMeta.showCheckItemResult, hcClient);
     }
 
     /**
@@ -90,7 +88,7 @@ public class OaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartItemCheckRequest 请求对象
+     * @param request StartItemCheckRequest 请求对象
      * @return StartItemCheckResponse
      */
     public StartItemCheckResponse startItemCheck(StartItemCheckRequest request) {
@@ -104,12 +102,12 @@ public class OaClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartItemCheckRequest 请求对象
+     * @param request StartItemCheckRequest 请求对象
      * @return SyncInvoker<StartItemCheckRequest, StartItemCheckResponse>
      */
     public SyncInvoker<StartItemCheckRequest, StartItemCheckResponse> startItemCheckInvoker(
         StartItemCheckRequest request) {
-        return new SyncInvoker<StartItemCheckRequest, StartItemCheckResponse>(request, OaMeta.startItemCheck, hcClient);
+        return new SyncInvoker<>(request, OaMeta.startItemCheck, hcClient);
     }
 
 }

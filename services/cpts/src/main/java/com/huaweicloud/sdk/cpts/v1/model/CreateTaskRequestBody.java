@@ -44,7 +44,7 @@ public class CreateTaskRequestBody {
     }
 
     /**
-     * name
+     * 名称
      * @return name
      */
     public String getName() {
@@ -61,7 +61,7 @@ public class CreateTaskRequestBody {
     }
 
     /**
-     * project_id
+     * 工程id
      * minimum: 0
      * maximum: 2147483647
      * @return projectId
@@ -96,7 +96,7 @@ public class CreateTaskRequestBody {
     }
 
     /**
-     * temps
+     * 事务信息
      * @return temps
      */
     public List<String> getTemps() {
@@ -113,7 +113,7 @@ public class CreateTaskRequestBody {
     }
 
     /**
-     * operate_mode
+     * 压力阶段模式，0：时长模式；1：次数模式；2：混合模式
      * minimum: 0
      * maximum: 2147483647
      * @return operateMode
@@ -132,7 +132,7 @@ public class CreateTaskRequestBody {
     }
 
     /**
-     * bench_concurrent
+     * 基准并发
      * minimum: 0
      * maximum: 2147483647
      * @return benchConcurrent

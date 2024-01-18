@@ -90,6 +90,11 @@ public class RecycleInstsanceV3 {
 
     private String recycleStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_serverless")
+
+    private Boolean isServerless;
+
     public RecycleInstsanceV3 withId(String id) {
         this.id = id;
         return this;
@@ -362,6 +367,23 @@ public class RecycleInstsanceV3 {
         this.recycleStatus = recycleStatus;
     }
 
+    public RecycleInstsanceV3 withIsServerless(Boolean isServerless) {
+        this.isServerless = isServerless;
+        return this;
+    }
+
+    /**
+     * 是否为serverless实例 - false 不是serverless实例 - true 是serverless实例
+     * @return isServerless
+     */
+    public Boolean getIsServerless() {
+        return isServerless;
+    }
+
+    public void setIsServerless(Boolean isServerless) {
+        this.isServerless = isServerless;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -380,7 +402,8 @@ public class RecycleInstsanceV3 {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.retainedUntil, that.retainedUntil)
             && Objects.equals(this.recycleBackupId, that.recycleBackupId)
-            && Objects.equals(this.recycleStatus, that.recycleStatus);
+            && Objects.equals(this.recycleStatus, that.recycleStatus)
+            && Objects.equals(this.isServerless, that.isServerless);
     }
 
     @Override
@@ -400,7 +423,8 @@ public class RecycleInstsanceV3 {
             enterpriseProjectId,
             retainedUntil,
             recycleBackupId,
-            recycleStatus);
+            recycleStatus,
+            isServerless);
     }
 
     @Override
@@ -423,6 +447,7 @@ public class RecycleInstsanceV3 {
         sb.append("    retainedUntil: ").append(toIndentedString(retainedUntil)).append("\n");
         sb.append("    recycleBackupId: ").append(toIndentedString(recycleBackupId)).append("\n");
         sb.append("    recycleStatus: ").append(toIndentedString(recycleStatus)).append("\n");
+        sb.append("    isServerless: ").append(toIndentedString(isServerless)).append("\n");
         sb.append("}");
         return sb.toString();
     }

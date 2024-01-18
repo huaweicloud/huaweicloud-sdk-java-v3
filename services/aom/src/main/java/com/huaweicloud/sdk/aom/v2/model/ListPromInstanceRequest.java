@@ -21,7 +21,7 @@ public class ListPromInstanceRequest {
     private String promId;
 
     /**
-     * Prometheus实例类型。
+     * Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
      */
     public static final class PromTypeEnum {
 
@@ -212,21 +212,27 @@ public class ListPromInstanceRequest {
     public static final class PromStatusEnum {
 
         /**
-         * Enum TRUE for value: "true"
+         * Enum DELETED for value: "DELETED"
          */
-        public static final PromStatusEnum TRUE = new PromStatusEnum("true");
+        public static final PromStatusEnum DELETED = new PromStatusEnum("DELETED");
 
         /**
-         * Enum FALSE for value: "false"
+         * Enum NORMAL for value: "NORMAL"
          */
-        public static final PromStatusEnum FALSE = new PromStatusEnum("false");
+        public static final PromStatusEnum NORMAL = new PromStatusEnum("NORMAL");
+
+        /**
+         * Enum ALL for value: "ALL"
+         */
+        public static final PromStatusEnum ALL = new PromStatusEnum("ALL");
 
         private static final Map<String, PromStatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PromStatusEnum> createStaticFields() {
             Map<String, PromStatusEnum> map = new HashMap<>();
-            map.put("true", TRUE);
-            map.put("false", FALSE);
+            map.put("DELETED", DELETED);
+            map.put("NORMAL", NORMAL);
+            map.put("ALL", ALL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -287,7 +293,7 @@ public class ListPromInstanceRequest {
     }
 
     /**
-     * Prometheus实例id。
+     * Prometheus实例id(prom_id与prom_type同时存在时，仅prom_id生效)。
      * @return promId
      */
     public String getPromId() {
@@ -304,7 +310,7 @@ public class ListPromInstanceRequest {
     }
 
     /**
-     * Prometheus实例类型。
+     * Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
      * @return promType
      */
     public PromTypeEnum getPromType() {

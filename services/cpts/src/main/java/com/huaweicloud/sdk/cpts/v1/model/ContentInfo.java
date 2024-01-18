@@ -124,7 +124,7 @@ public class ContentInfo {
     }
 
     /**
-     * body_type
+     * body类型（0：字符串；1：form-data格式；3：x-www-form-urlencoded格式）
      * minimum: 0
      * maximum: 2147483647
      * @return bodyType
@@ -227,7 +227,7 @@ public class ContentInfo {
     }
 
     /**
-     * connect_timeout
+     * 超时时间
      * minimum: 0
      * maximum: 2147483647
      * @return connectTimeout
@@ -246,7 +246,7 @@ public class ContentInfo {
     }
 
     /**
-     * connect_type
+     * 连接设置，当前版本已未使用
      * minimum: 0
      * maximum: 2147483647
      * @return connectType
@@ -281,7 +281,7 @@ public class ContentInfo {
     }
 
     /**
-     * headers
+     * 请求头
      * @return headers
      */
     public List<ContentHeader> getHeaders() {
@@ -298,7 +298,7 @@ public class ContentInfo {
     }
 
     /**
-     * http_version
+     * HTTP版本
      * @return httpVersion
      */
     public String getHttpVersion() {
@@ -315,7 +315,7 @@ public class ContentInfo {
     }
 
     /**
-     * method
+     * HTTP方法
      * @return method
      */
     public String getMethod() {
@@ -332,7 +332,7 @@ public class ContentInfo {
     }
 
     /**
-     * name
+     * 用例名称
      * @return name
      */
     public String getName() {
@@ -349,7 +349,7 @@ public class ContentInfo {
     }
 
     /**
-     * protocol_type
+     * 协议类型（1：HTTP；2：HTTPS；3：TCP；4：UDP；7：HLS/RTMP；9：WebSocket；10：HTTP-FLV）
      * minimum: 0
      * maximum: 2147483647
      * @return protocolType
@@ -368,7 +368,7 @@ public class ContentInfo {
     }
 
     /**
-     * return_timeout
+     * 响应超时
      * minimum: 0
      * maximum: 2147483647
      * @return returnTimeout
@@ -387,7 +387,7 @@ public class ContentInfo {
     }
 
     /**
-     * return_timeout_param
+     * 响应超时参数
      * @return returnTimeoutParam
      */
     public String getReturnTimeoutParam() {
@@ -404,7 +404,7 @@ public class ContentInfo {
     }
 
     /**
-     * url
+     * 请求地址
      * @return url
      */
     public String getUrl() {
@@ -474,7 +474,7 @@ public class ContentInfo {
     }
 
     /**
-     * duration
+     * 持续时间
      * minimum: 0
      * maximum: 2147483647
      * @return duration

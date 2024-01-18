@@ -32,9 +32,9 @@ import java.util.List;
 public class VcmMeta {
 
     public static final HttpRequestDef<CheckAudioJobRequest, CheckAudioJobResponse> checkAudioJob =
-        genForcheckAudioJob();
+        genForCheckAudioJob();
 
-    private static HttpRequestDef<CheckAudioJobRequest, CheckAudioJobResponse> genForcheckAudioJob() {
+    private static HttpRequestDef<CheckAudioJobRequest, CheckAudioJobResponse> genForCheckAudioJob() {
         // basic
         HttpRequestDef.Builder<CheckAudioJobRequest, CheckAudioJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckAudioJobRequest.class, CheckAudioJobResponse.class)
@@ -47,9 +47,7 @@ public class VcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAudioJobRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(CheckAudioJobRequest::getTaskId, CheckAudioJobRequest::setTaskId));
 
         // response
 
@@ -57,9 +55,9 @@ public class VcmMeta {
     }
 
     public static final HttpRequestDef<CheckVideoJobRequest, CheckVideoJobResponse> checkVideoJob =
-        genForcheckVideoJob();
+        genForCheckVideoJob();
 
-    private static HttpRequestDef<CheckVideoJobRequest, CheckVideoJobResponse> genForcheckVideoJob() {
+    private static HttpRequestDef<CheckVideoJobRequest, CheckVideoJobResponse> genForCheckVideoJob() {
         // basic
         HttpRequestDef.Builder<CheckVideoJobRequest, CheckVideoJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckVideoJobRequest.class, CheckVideoJobResponse.class)
@@ -72,9 +70,7 @@ public class VcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckVideoJobRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(CheckVideoJobRequest::getTaskId, CheckVideoJobRequest::setTaskId));
 
         // response
 
@@ -82,9 +78,9 @@ public class VcmMeta {
     }
 
     public static final HttpRequestDef<CreateAudioJobRequest, CreateAudioJobResponse> createAudioJob =
-        genForcreateAudioJob();
+        genForCreateAudioJob();
 
-    private static HttpRequestDef<CreateAudioJobRequest, CreateAudioJobResponse> genForcreateAudioJob() {
+    private static HttpRequestDef<CreateAudioJobRequest, CreateAudioJobResponse> genForCreateAudioJob() {
         // basic
         HttpRequestDef.Builder<CreateAudioJobRequest, CreateAudioJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAudioJobRequest.class, CreateAudioJobResponse.class)
@@ -97,26 +93,23 @@ public class VcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAudioJobRequestBody.class),
-            f -> f.withMarshaller(CreateAudioJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAudioJobRequest::getBody, CreateAudioJobRequest::setBody));
 
         // response
         builder.<List<CreateAudioJobResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateAudioJobResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(CreateAudioJobResponseBody.class));
+            f -> f.withMarshaller(CreateAudioJobResponse::getBody, CreateAudioJobResponse::setBody)
+                .withInnerContainerType(CreateAudioJobResponseBody.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateVideoJobRequest, CreateVideoJobResponse> createVideoJob =
-        genForcreateVideoJob();
+        genForCreateVideoJob();
 
-    private static HttpRequestDef<CreateVideoJobRequest, CreateVideoJobResponse> genForcreateVideoJob() {
+    private static HttpRequestDef<CreateVideoJobRequest, CreateVideoJobResponse> genForCreateVideoJob() {
         // basic
         HttpRequestDef.Builder<CreateVideoJobRequest, CreateVideoJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVideoJobRequest.class, CreateVideoJobResponse.class)
@@ -129,26 +122,23 @@ public class VcmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVideoJobReq.class),
-            f -> f.withMarshaller(CreateVideoJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVideoJobRequest::getBody, CreateVideoJobRequest::setBody));
 
         // response
         builder.<List<CreateVideoJobResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateVideoJobResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(CreateVideoJobResponseBody.class));
+            f -> f.withMarshaller(CreateVideoJobResponse::getBody, CreateVideoJobResponse::setBody)
+                .withInnerContainerType(CreateVideoJobResponseBody.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteDemoInfoRequest, DeleteDemoInfoResponse> deleteDemoInfo =
-        genFordeleteDemoInfo();
+        genForDeleteDemoInfo();
 
-    private static HttpRequestDef<DeleteDemoInfoRequest, DeleteDemoInfoResponse> genFordeleteDemoInfo() {
+    private static HttpRequestDef<DeleteDemoInfoRequest, DeleteDemoInfoResponse> genForDeleteDemoInfo() {
         // basic
         HttpRequestDef.Builder<DeleteDemoInfoRequest, DeleteDemoInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDemoInfoRequest.class, DeleteDemoInfoResponse.class)
@@ -161,9 +151,7 @@ public class VcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDemoInfoRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteDemoInfoRequest::getTaskId, DeleteDemoInfoRequest::setTaskId));
 
         // response
 
@@ -171,9 +159,9 @@ public class VcmMeta {
     }
 
     public static final HttpRequestDef<DeleteVideoJobRequest, DeleteVideoJobResponse> deleteVideoJob =
-        genFordeleteVideoJob();
+        genForDeleteVideoJob();
 
-    private static HttpRequestDef<DeleteVideoJobRequest, DeleteVideoJobResponse> genFordeleteVideoJob() {
+    private static HttpRequestDef<DeleteVideoJobRequest, DeleteVideoJobResponse> genForDeleteVideoJob() {
         // basic
         HttpRequestDef.Builder<DeleteVideoJobRequest, DeleteVideoJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVideoJobRequest.class, DeleteVideoJobResponse.class)
@@ -186,9 +174,7 @@ public class VcmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVideoJobRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteVideoJobRequest::getTaskId, DeleteVideoJobRequest::setTaskId));
 
         // response
 
@@ -196,9 +182,9 @@ public class VcmMeta {
     }
 
     public static final HttpRequestDef<ListAudioJobsRequest, ListAudioJobsResponse> listAudioJobs =
-        genForlistAudioJobs();
+        genForListAudioJobs();
 
-    private static HttpRequestDef<ListAudioJobsRequest, ListAudioJobsResponse> genForlistAudioJobs() {
+    private static HttpRequestDef<ListAudioJobsRequest, ListAudioJobsResponse> genForListAudioJobs() {
         // basic
         HttpRequestDef.Builder<ListAudioJobsRequest, ListAudioJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAudioJobsRequest.class, ListAudioJobsResponse.class)
@@ -214,9 +200,9 @@ public class VcmMeta {
     }
 
     public static final HttpRequestDef<ListVideoJobsRequest, ListVideoJobsResponse> listVideoJobs =
-        genForlistVideoJobs();
+        genForListVideoJobs();
 
-    private static HttpRequestDef<ListVideoJobsRequest, ListVideoJobsResponse> genForlistVideoJobs() {
+    private static HttpRequestDef<ListVideoJobsRequest, ListVideoJobsResponse> genForListVideoJobs() {
         // basic
         HttpRequestDef.Builder<ListVideoJobsRequest, ListVideoJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVideoJobsRequest.class, ListVideoJobsResponse.class)

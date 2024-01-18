@@ -188,7 +188,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccessConfigRequest 请求对象
+     * @param request CreateAccessConfigRequest 请求对象
      * @return CreateAccessConfigResponse
      */
     public CreateAccessConfigResponse createAccessConfig(CreateAccessConfigRequest request) {
@@ -202,13 +202,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccessConfigRequest 请求对象
+     * @param request CreateAccessConfigRequest 请求对象
      * @return SyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse>
      */
     public SyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse> createAccessConfigInvoker(
         CreateAccessConfigRequest request) {
-        return new SyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse>(request,
-            LtsMeta.createAccessConfig, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createAccessConfig, hcClient);
     }
 
     /**
@@ -218,7 +217,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgencyAccessRequest 请求对象
+     * @param request CreateAgencyAccessRequest 请求对象
      * @return CreateAgencyAccessResponse
      */
     public CreateAgencyAccessResponse createAgencyAccess(CreateAgencyAccessRequest request) {
@@ -232,13 +231,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgencyAccessRequest 请求对象
+     * @param request CreateAgencyAccessRequest 请求对象
      * @return SyncInvoker<CreateAgencyAccessRequest, CreateAgencyAccessResponse>
      */
     public SyncInvoker<CreateAgencyAccessRequest, CreateAgencyAccessResponse> createAgencyAccessInvoker(
         CreateAgencyAccessRequest request) {
-        return new SyncInvoker<CreateAgencyAccessRequest, CreateAgencyAccessResponse>(request,
-            LtsMeta.createAgencyAccess, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createAgencyAccess, hcClient);
     }
 
     /**
@@ -248,7 +246,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDashBoardRequest 请求对象
+     * @param request CreateDashBoardRequest 请求对象
      * @return CreateDashBoardResponse
      */
     public CreateDashBoardResponse createDashBoard(CreateDashBoardRequest request) {
@@ -262,13 +260,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDashBoardRequest 请求对象
+     * @param request CreateDashBoardRequest 请求对象
      * @return SyncInvoker<CreateDashBoardRequest, CreateDashBoardResponse>
      */
     public SyncInvoker<CreateDashBoardRequest, CreateDashBoardResponse> createDashBoardInvoker(
         CreateDashBoardRequest request) {
-        return new SyncInvoker<CreateDashBoardRequest, CreateDashBoardResponse>(request, LtsMeta.createDashBoard,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createDashBoard, hcClient);
     }
 
     /**
@@ -278,7 +275,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDashboardGroupRequest 请求对象
+     * @param request CreateDashboardGroupRequest 请求对象
      * @return CreateDashboardGroupResponse
      */
     public CreateDashboardGroupResponse createDashboardGroup(CreateDashboardGroupRequest request) {
@@ -292,13 +289,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDashboardGroupRequest 请求对象
+     * @param request CreateDashboardGroupRequest 请求对象
      * @return SyncInvoker<CreateDashboardGroupRequest, CreateDashboardGroupResponse>
      */
     public SyncInvoker<CreateDashboardGroupRequest, CreateDashboardGroupResponse> createDashboardGroupInvoker(
         CreateDashboardGroupRequest request) {
-        return new SyncInvoker<CreateDashboardGroupRequest, CreateDashboardGroupResponse>(request,
-            LtsMeta.createDashboardGroup, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createDashboardGroup, hcClient);
     }
 
     /**
@@ -308,7 +304,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHostGroupRequest 请求对象
+     * @param request CreateHostGroupRequest 请求对象
      * @return CreateHostGroupResponse
      */
     public CreateHostGroupResponse createHostGroup(CreateHostGroupRequest request) {
@@ -322,13 +318,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHostGroupRequest 请求对象
+     * @param request CreateHostGroupRequest 请求对象
      * @return SyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse>
      */
     public SyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse> createHostGroupInvoker(
         CreateHostGroupRequest request) {
-        return new SyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse>(request, LtsMeta.createHostGroup,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createHostGroup, hcClient);
     }
 
     /**
@@ -338,7 +333,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKeywordsAlarmRuleRequest 请求对象
+     * @param request CreateKeywordsAlarmRuleRequest 请求对象
      * @return CreateKeywordsAlarmRuleResponse
      */
     public CreateKeywordsAlarmRuleResponse createKeywordsAlarmRule(CreateKeywordsAlarmRuleRequest request) {
@@ -352,13 +347,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKeywordsAlarmRuleRequest 请求对象
+     * @param request CreateKeywordsAlarmRuleRequest 请求对象
      * @return SyncInvoker<CreateKeywordsAlarmRuleRequest, CreateKeywordsAlarmRuleResponse>
      */
     public SyncInvoker<CreateKeywordsAlarmRuleRequest, CreateKeywordsAlarmRuleResponse> createKeywordsAlarmRuleInvoker(
         CreateKeywordsAlarmRuleRequest request) {
-        return new SyncInvoker<CreateKeywordsAlarmRuleRequest, CreateKeywordsAlarmRuleResponse>(request,
-            LtsMeta.createKeywordsAlarmRule, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createKeywordsAlarmRule, hcClient);
     }
 
     /**
@@ -368,7 +362,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogDumpObsRequest 请求对象
+     * @param request CreateLogDumpObsRequest 请求对象
      * @return CreateLogDumpObsResponse
      */
     public CreateLogDumpObsResponse createLogDumpObs(CreateLogDumpObsRequest request) {
@@ -382,13 +376,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogDumpObsRequest 请求对象
+     * @param request CreateLogDumpObsRequest 请求对象
      * @return SyncInvoker<CreateLogDumpObsRequest, CreateLogDumpObsResponse>
      */
     public SyncInvoker<CreateLogDumpObsRequest, CreateLogDumpObsResponse> createLogDumpObsInvoker(
         CreateLogDumpObsRequest request) {
-        return new SyncInvoker<CreateLogDumpObsRequest, CreateLogDumpObsResponse>(request, LtsMeta.createLogDumpObs,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createLogDumpObs, hcClient);
     }
 
     /**
@@ -398,7 +391,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogGroupRequest 请求对象
+     * @param request CreateLogGroupRequest 请求对象
      * @return CreateLogGroupResponse
      */
     public CreateLogGroupResponse createLogGroup(CreateLogGroupRequest request) {
@@ -412,13 +405,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogGroupRequest 请求对象
+     * @param request CreateLogGroupRequest 请求对象
      * @return SyncInvoker<CreateLogGroupRequest, CreateLogGroupResponse>
      */
     public SyncInvoker<CreateLogGroupRequest, CreateLogGroupResponse> createLogGroupInvoker(
         CreateLogGroupRequest request) {
-        return new SyncInvoker<CreateLogGroupRequest, CreateLogGroupResponse>(request, LtsMeta.createLogGroup,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createLogGroup, hcClient);
     }
 
     /**
@@ -428,7 +420,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogStreamRequest 请求对象
+     * @param request CreateLogStreamRequest 请求对象
      * @return CreateLogStreamResponse
      */
     public CreateLogStreamResponse createLogStream(CreateLogStreamRequest request) {
@@ -442,13 +434,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogStreamRequest 请求对象
+     * @param request CreateLogStreamRequest 请求对象
      * @return SyncInvoker<CreateLogStreamRequest, CreateLogStreamResponse>
      */
     public SyncInvoker<CreateLogStreamRequest, CreateLogStreamResponse> createLogStreamInvoker(
         CreateLogStreamRequest request) {
-        return new SyncInvoker<CreateLogStreamRequest, CreateLogStreamResponse>(request, LtsMeta.createLogStream,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createLogStream, hcClient);
     }
 
     /**
@@ -458,7 +449,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogStreamIndexRequest 请求对象
+     * @param request CreateLogStreamIndexRequest 请求对象
      * @return CreateLogStreamIndexResponse
      */
     public CreateLogStreamIndexResponse createLogStreamIndex(CreateLogStreamIndexRequest request) {
@@ -472,13 +463,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLogStreamIndexRequest 请求对象
+     * @param request CreateLogStreamIndexRequest 请求对象
      * @return SyncInvoker<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse>
      */
     public SyncInvoker<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse> createLogStreamIndexInvoker(
         CreateLogStreamIndexRequest request) {
-        return new SyncInvoker<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse>(request,
-            LtsMeta.createLogStreamIndex, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createLogStreamIndex, hcClient);
     }
 
     /**
@@ -488,7 +478,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNotificationTemplateRequest 请求对象
+     * @param request CreateNotificationTemplateRequest 请求对象
      * @return CreateNotificationTemplateResponse
      */
     public CreateNotificationTemplateResponse createNotificationTemplate(CreateNotificationTemplateRequest request) {
@@ -502,13 +492,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNotificationTemplateRequest 请求对象
+     * @param request CreateNotificationTemplateRequest 请求对象
      * @return SyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse>
      */
     public SyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> createNotificationTemplateInvoker(
         CreateNotificationTemplateRequest request) {
-        return new SyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse>(request,
-            LtsMeta.createNotificationTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createNotificationTemplate, hcClient);
     }
 
     /**
@@ -518,7 +507,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSearchCriteriasRequest 请求对象
+     * @param request CreateSearchCriteriasRequest 请求对象
      * @return CreateSearchCriteriasResponse
      */
     public CreateSearchCriteriasResponse createSearchCriterias(CreateSearchCriteriasRequest request) {
@@ -532,13 +521,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSearchCriteriasRequest 请求对象
+     * @param request CreateSearchCriteriasRequest 请求对象
      * @return SyncInvoker<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse>
      */
     public SyncInvoker<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse> createSearchCriteriasInvoker(
         CreateSearchCriteriasRequest request) {
-        return new SyncInvoker<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse>(request,
-            LtsMeta.createSearchCriterias, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createSearchCriterias, hcClient);
     }
 
     /**
@@ -548,7 +536,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStructConfigRequest 请求对象
+     * @param request CreateStructConfigRequest 请求对象
      * @return CreateStructConfigResponse
      */
     public CreateStructConfigResponse createStructConfig(CreateStructConfigRequest request) {
@@ -562,13 +550,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStructConfigRequest 请求对象
+     * @param request CreateStructConfigRequest 请求对象
      * @return SyncInvoker<CreateStructConfigRequest, CreateStructConfigResponse>
      */
     public SyncInvoker<CreateStructConfigRequest, CreateStructConfigResponse> createStructConfigInvoker(
         CreateStructConfigRequest request) {
-        return new SyncInvoker<CreateStructConfigRequest, CreateStructConfigResponse>(request,
-            LtsMeta.createStructConfig, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createStructConfig, hcClient);
     }
 
     /**
@@ -578,7 +565,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStructTemplateRequest 请求对象
+     * @param request CreateStructTemplateRequest 请求对象
      * @return CreateStructTemplateResponse
      */
     public CreateStructTemplateResponse createStructTemplate(CreateStructTemplateRequest request) {
@@ -592,13 +579,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStructTemplateRequest 请求对象
+     * @param request CreateStructTemplateRequest 请求对象
      * @return SyncInvoker<CreateStructTemplateRequest, CreateStructTemplateResponse>
      */
     public SyncInvoker<CreateStructTemplateRequest, CreateStructTemplateResponse> createStructTemplateInvoker(
         CreateStructTemplateRequest request) {
-        return new SyncInvoker<CreateStructTemplateRequest, CreateStructTemplateResponse>(request,
-            LtsMeta.createStructTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createStructTemplate, hcClient);
     }
 
     /**
@@ -608,7 +594,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagsRequest 请求对象
+     * @param request CreateTagsRequest 请求对象
      * @return CreateTagsResponse
      */
     public CreateTagsResponse createTags(CreateTagsRequest request) {
@@ -622,11 +608,11 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagsRequest 请求对象
+     * @param request CreateTagsRequest 请求对象
      * @return SyncInvoker<CreateTagsRequest, CreateTagsResponse>
      */
     public SyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsInvoker(CreateTagsRequest request) {
-        return new SyncInvoker<CreateTagsRequest, CreateTagsResponse>(request, LtsMeta.createTags, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createTags, hcClient);
     }
 
     /**
@@ -636,7 +622,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTransferRequest 请求对象
+     * @param request CreateTransferRequest 请求对象
      * @return CreateTransferResponse
      */
     public CreateTransferResponse createTransfer(CreateTransferRequest request) {
@@ -650,13 +636,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTransferRequest 请求对象
+     * @param request CreateTransferRequest 请求对象
      * @return SyncInvoker<CreateTransferRequest, CreateTransferResponse>
      */
     public SyncInvoker<CreateTransferRequest, CreateTransferResponse> createTransferInvoker(
         CreateTransferRequest request) {
-        return new SyncInvoker<CreateTransferRequest, CreateTransferResponse>(request, LtsMeta.createTransfer,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createTransfer, hcClient);
     }
 
     /**
@@ -666,7 +651,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatefavoriteRequest 请求对象
+     * @param request CreatefavoriteRequest 请求对象
      * @return CreatefavoriteResponse
      */
     public CreatefavoriteResponse createfavorite(CreatefavoriteRequest request) {
@@ -680,13 +665,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatefavoriteRequest 请求对象
+     * @param request CreatefavoriteRequest 请求对象
      * @return SyncInvoker<CreatefavoriteRequest, CreatefavoriteResponse>
      */
     public SyncInvoker<CreatefavoriteRequest, CreatefavoriteResponse> createfavoriteInvoker(
         CreatefavoriteRequest request) {
-        return new SyncInvoker<CreatefavoriteRequest, CreatefavoriteResponse>(request, LtsMeta.createfavorite,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createfavorite, hcClient);
     }
 
     /**
@@ -696,7 +680,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAccessConfigRequest 请求对象
+     * @param request DeleteAccessConfigRequest 请求对象
      * @return DeleteAccessConfigResponse
      */
     public DeleteAccessConfigResponse deleteAccessConfig(DeleteAccessConfigRequest request) {
@@ -710,13 +694,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAccessConfigRequest 请求对象
+     * @param request DeleteAccessConfigRequest 请求对象
      * @return SyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse>
      */
     public SyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse> deleteAccessConfigInvoker(
         DeleteAccessConfigRequest request) {
-        return new SyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse>(request,
-            LtsMeta.deleteAccessConfig, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteAccessConfig, hcClient);
     }
 
     /**
@@ -726,7 +709,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteActiveAlarmsRequest 请求对象
+     * @param request DeleteActiveAlarmsRequest 请求对象
      * @return DeleteActiveAlarmsResponse
      */
     public DeleteActiveAlarmsResponse deleteActiveAlarms(DeleteActiveAlarmsRequest request) {
@@ -740,13 +723,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteActiveAlarmsRequest 请求对象
+     * @param request DeleteActiveAlarmsRequest 请求对象
      * @return SyncInvoker<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse>
      */
     public SyncInvoker<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse> deleteActiveAlarmsInvoker(
         DeleteActiveAlarmsRequest request) {
-        return new SyncInvoker<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse>(request,
-            LtsMeta.deleteActiveAlarms, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteActiveAlarms, hcClient);
     }
 
     /**
@@ -756,7 +738,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDashboardRequest 请求对象
+     * @param request DeleteDashboardRequest 请求对象
      * @return DeleteDashboardResponse
      */
     public DeleteDashboardResponse deleteDashboard(DeleteDashboardRequest request) {
@@ -770,13 +752,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDashboardRequest 请求对象
+     * @param request DeleteDashboardRequest 请求对象
      * @return SyncInvoker<DeleteDashboardRequest, DeleteDashboardResponse>
      */
     public SyncInvoker<DeleteDashboardRequest, DeleteDashboardResponse> deleteDashboardInvoker(
         DeleteDashboardRequest request) {
-        return new SyncInvoker<DeleteDashboardRequest, DeleteDashboardResponse>(request, LtsMeta.deleteDashboard,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteDashboard, hcClient);
     }
 
     /**
@@ -786,7 +767,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHostGroupRequest 请求对象
+     * @param request DeleteHostGroupRequest 请求对象
      * @return DeleteHostGroupResponse
      */
     public DeleteHostGroupResponse deleteHostGroup(DeleteHostGroupRequest request) {
@@ -800,13 +781,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHostGroupRequest 请求对象
+     * @param request DeleteHostGroupRequest 请求对象
      * @return SyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse>
      */
     public SyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse> deleteHostGroupInvoker(
         DeleteHostGroupRequest request) {
-        return new SyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse>(request, LtsMeta.deleteHostGroup,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteHostGroup, hcClient);
     }
 
     /**
@@ -816,7 +796,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKeywordsAlarmRuleRequest 请求对象
+     * @param request DeleteKeywordsAlarmRuleRequest 请求对象
      * @return DeleteKeywordsAlarmRuleResponse
      */
     public DeleteKeywordsAlarmRuleResponse deleteKeywordsAlarmRule(DeleteKeywordsAlarmRuleRequest request) {
@@ -830,13 +810,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKeywordsAlarmRuleRequest 请求对象
+     * @param request DeleteKeywordsAlarmRuleRequest 请求对象
      * @return SyncInvoker<DeleteKeywordsAlarmRuleRequest, DeleteKeywordsAlarmRuleResponse>
      */
     public SyncInvoker<DeleteKeywordsAlarmRuleRequest, DeleteKeywordsAlarmRuleResponse> deleteKeywordsAlarmRuleInvoker(
         DeleteKeywordsAlarmRuleRequest request) {
-        return new SyncInvoker<DeleteKeywordsAlarmRuleRequest, DeleteKeywordsAlarmRuleResponse>(request,
-            LtsMeta.deleteKeywordsAlarmRule, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteKeywordsAlarmRule, hcClient);
     }
 
     /**
@@ -846,7 +825,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogGroupRequest 请求对象
+     * @param request DeleteLogGroupRequest 请求对象
      * @return DeleteLogGroupResponse
      */
     public DeleteLogGroupResponse deleteLogGroup(DeleteLogGroupRequest request) {
@@ -860,13 +839,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogGroupRequest 请求对象
+     * @param request DeleteLogGroupRequest 请求对象
      * @return SyncInvoker<DeleteLogGroupRequest, DeleteLogGroupResponse>
      */
     public SyncInvoker<DeleteLogGroupRequest, DeleteLogGroupResponse> deleteLogGroupInvoker(
         DeleteLogGroupRequest request) {
-        return new SyncInvoker<DeleteLogGroupRequest, DeleteLogGroupResponse>(request, LtsMeta.deleteLogGroup,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteLogGroup, hcClient);
     }
 
     /**
@@ -876,7 +854,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogStreamRequest 请求对象
+     * @param request DeleteLogStreamRequest 请求对象
      * @return DeleteLogStreamResponse
      */
     public DeleteLogStreamResponse deleteLogStream(DeleteLogStreamRequest request) {
@@ -890,13 +868,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLogStreamRequest 请求对象
+     * @param request DeleteLogStreamRequest 请求对象
      * @return SyncInvoker<DeleteLogStreamRequest, DeleteLogStreamResponse>
      */
     public SyncInvoker<DeleteLogStreamRequest, DeleteLogStreamResponse> deleteLogStreamInvoker(
         DeleteLogStreamRequest request) {
-        return new SyncInvoker<DeleteLogStreamRequest, DeleteLogStreamResponse>(request, LtsMeta.deleteLogStream,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteLogStream, hcClient);
     }
 
     /**
@@ -906,7 +883,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNotificationTemplateRequest 请求对象
+     * @param request DeleteNotificationTemplateRequest 请求对象
      * @return DeleteNotificationTemplateResponse
      */
     public DeleteNotificationTemplateResponse deleteNotificationTemplate(DeleteNotificationTemplateRequest request) {
@@ -920,13 +897,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNotificationTemplateRequest 请求对象
+     * @param request DeleteNotificationTemplateRequest 请求对象
      * @return SyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse>
      */
     public SyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> deleteNotificationTemplateInvoker(
         DeleteNotificationTemplateRequest request) {
-        return new SyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse>(request,
-            LtsMeta.deleteNotificationTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteNotificationTemplate, hcClient);
     }
 
     /**
@@ -936,7 +912,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSearchCriteriasRequest 请求对象
+     * @param request DeleteSearchCriteriasRequest 请求对象
      * @return DeleteSearchCriteriasResponse
      */
     public DeleteSearchCriteriasResponse deleteSearchCriterias(DeleteSearchCriteriasRequest request) {
@@ -950,13 +926,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSearchCriteriasRequest 请求对象
+     * @param request DeleteSearchCriteriasRequest 请求对象
      * @return SyncInvoker<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse>
      */
     public SyncInvoker<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse> deleteSearchCriteriasInvoker(
         DeleteSearchCriteriasRequest request) {
-        return new SyncInvoker<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse>(request,
-            LtsMeta.deleteSearchCriterias, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteSearchCriterias, hcClient);
     }
 
     /**
@@ -966,7 +941,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStructTemplateRequest 请求对象
+     * @param request DeleteStructTemplateRequest 请求对象
      * @return DeleteStructTemplateResponse
      */
     public DeleteStructTemplateResponse deleteStructTemplate(DeleteStructTemplateRequest request) {
@@ -980,13 +955,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStructTemplateRequest 请求对象
+     * @param request DeleteStructTemplateRequest 请求对象
      * @return SyncInvoker<DeleteStructTemplateRequest, DeleteStructTemplateResponse>
      */
     public SyncInvoker<DeleteStructTemplateRequest, DeleteStructTemplateResponse> deleteStructTemplateInvoker(
         DeleteStructTemplateRequest request) {
-        return new SyncInvoker<DeleteStructTemplateRequest, DeleteStructTemplateResponse>(request,
-            LtsMeta.deleteStructTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteStructTemplate, hcClient);
     }
 
     /**
@@ -996,7 +970,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTransferRequest 请求对象
+     * @param request DeleteTransferRequest 请求对象
      * @return DeleteTransferResponse
      */
     public DeleteTransferResponse deleteTransfer(DeleteTransferRequest request) {
@@ -1010,13 +984,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTransferRequest 请求对象
+     * @param request DeleteTransferRequest 请求对象
      * @return SyncInvoker<DeleteTransferRequest, DeleteTransferResponse>
      */
     public SyncInvoker<DeleteTransferRequest, DeleteTransferResponse> deleteTransferInvoker(
         DeleteTransferRequest request) {
-        return new SyncInvoker<DeleteTransferRequest, DeleteTransferResponse>(request, LtsMeta.deleteTransfer,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteTransfer, hcClient);
     }
 
     /**
@@ -1026,7 +999,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletefavoriteRequest 请求对象
+     * @param request DeletefavoriteRequest 请求对象
      * @return DeletefavoriteResponse
      */
     public DeletefavoriteResponse deletefavorite(DeletefavoriteRequest request) {
@@ -1040,13 +1013,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletefavoriteRequest 请求对象
+     * @param request DeletefavoriteRequest 请求对象
      * @return SyncInvoker<DeletefavoriteRequest, DeletefavoriteResponse>
      */
     public SyncInvoker<DeletefavoriteRequest, DeletefavoriteResponse> deletefavoriteInvoker(
         DeletefavoriteRequest request) {
-        return new SyncInvoker<DeletefavoriteRequest, DeletefavoriteResponse>(request, LtsMeta.deletefavorite,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deletefavorite, hcClient);
     }
 
     /**
@@ -1056,7 +1028,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableLogCollectionRequest 请求对象
+     * @param request DisableLogCollectionRequest 请求对象
      * @return DisableLogCollectionResponse
      */
     public DisableLogCollectionResponse disableLogCollection(DisableLogCollectionRequest request) {
@@ -1070,13 +1042,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableLogCollectionRequest 请求对象
+     * @param request DisableLogCollectionRequest 请求对象
      * @return SyncInvoker<DisableLogCollectionRequest, DisableLogCollectionResponse>
      */
     public SyncInvoker<DisableLogCollectionRequest, DisableLogCollectionResponse> disableLogCollectionInvoker(
         DisableLogCollectionRequest request) {
-        return new SyncInvoker<DisableLogCollectionRequest, DisableLogCollectionResponse>(request,
-            LtsMeta.disableLogCollection, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.disableLogCollection, hcClient);
     }
 
     /**
@@ -1086,7 +1057,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableLogCollectionRequest 请求对象
+     * @param request EnableLogCollectionRequest 请求对象
      * @return EnableLogCollectionResponse
      */
     public EnableLogCollectionResponse enableLogCollection(EnableLogCollectionRequest request) {
@@ -1100,13 +1071,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableLogCollectionRequest 请求对象
+     * @param request EnableLogCollectionRequest 请求对象
      * @return SyncInvoker<EnableLogCollectionRequest, EnableLogCollectionResponse>
      */
     public SyncInvoker<EnableLogCollectionRequest, EnableLogCollectionResponse> enableLogCollectionInvoker(
         EnableLogCollectionRequest request) {
-        return new SyncInvoker<EnableLogCollectionRequest, EnableLogCollectionResponse>(request,
-            LtsMeta.enableLogCollection, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.enableLogCollection, hcClient);
     }
 
     /**
@@ -1116,7 +1086,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccessConfigRequest 请求对象
+     * @param request ListAccessConfigRequest 请求对象
      * @return ListAccessConfigResponse
      */
     public ListAccessConfigResponse listAccessConfig(ListAccessConfigRequest request) {
@@ -1130,13 +1100,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccessConfigRequest 请求对象
+     * @param request ListAccessConfigRequest 请求对象
      * @return SyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse>
      */
     public SyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse> listAccessConfigInvoker(
         ListAccessConfigRequest request) {
-        return new SyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse>(request, LtsMeta.listAccessConfig,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listAccessConfig, hcClient);
     }
 
     /**
@@ -1146,7 +1115,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListActiveOrHistoryAlarmsRequest 请求对象
+     * @param request ListActiveOrHistoryAlarmsRequest 请求对象
      * @return ListActiveOrHistoryAlarmsResponse
      */
     public ListActiveOrHistoryAlarmsResponse listActiveOrHistoryAlarms(ListActiveOrHistoryAlarmsRequest request) {
@@ -1160,13 +1129,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListActiveOrHistoryAlarmsRequest 请求对象
+     * @param request ListActiveOrHistoryAlarmsRequest 请求对象
      * @return SyncInvoker<ListActiveOrHistoryAlarmsRequest, ListActiveOrHistoryAlarmsResponse>
      */
     public SyncInvoker<ListActiveOrHistoryAlarmsRequest, ListActiveOrHistoryAlarmsResponse> listActiveOrHistoryAlarmsInvoker(
         ListActiveOrHistoryAlarmsRequest request) {
-        return new SyncInvoker<ListActiveOrHistoryAlarmsRequest, ListActiveOrHistoryAlarmsResponse>(request,
-            LtsMeta.listActiveOrHistoryAlarms, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listActiveOrHistoryAlarms, hcClient);
     }
 
     /**
@@ -1176,7 +1144,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBreifStructTemplateRequest 请求对象
+     * @param request ListBreifStructTemplateRequest 请求对象
      * @return ListBreifStructTemplateResponse
      */
     public ListBreifStructTemplateResponse listBreifStructTemplate(ListBreifStructTemplateRequest request) {
@@ -1190,13 +1158,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBreifStructTemplateRequest 请求对象
+     * @param request ListBreifStructTemplateRequest 请求对象
      * @return SyncInvoker<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse>
      */
     public SyncInvoker<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse> listBreifStructTemplateInvoker(
         ListBreifStructTemplateRequest request) {
-        return new SyncInvoker<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse>(request,
-            LtsMeta.listBreifStructTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listBreifStructTemplate, hcClient);
     }
 
     /**
@@ -1206,7 +1173,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListChartsRequest 请求对象
+     * @param request ListChartsRequest 请求对象
      * @return ListChartsResponse
      */
     public ListChartsResponse listCharts(ListChartsRequest request) {
@@ -1220,11 +1187,11 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListChartsRequest 请求对象
+     * @param request ListChartsRequest 请求对象
      * @return SyncInvoker<ListChartsRequest, ListChartsResponse>
      */
     public SyncInvoker<ListChartsRequest, ListChartsResponse> listChartsInvoker(ListChartsRequest request) {
-        return new SyncInvoker<ListChartsRequest, ListChartsResponse>(request, LtsMeta.listCharts, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listCharts, hcClient);
     }
 
     /**
@@ -1234,7 +1201,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCriteriasRequest 请求对象
+     * @param request ListCriteriasRequest 请求对象
      * @return ListCriteriasResponse
      */
     public ListCriteriasResponse listCriterias(ListCriteriasRequest request) {
@@ -1248,11 +1215,11 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCriteriasRequest 请求对象
+     * @param request ListCriteriasRequest 请求对象
      * @return SyncInvoker<ListCriteriasRequest, ListCriteriasResponse>
      */
     public SyncInvoker<ListCriteriasRequest, ListCriteriasResponse> listCriteriasInvoker(ListCriteriasRequest request) {
-        return new SyncInvoker<ListCriteriasRequest, ListCriteriasResponse>(request, LtsMeta.listCriterias, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listCriterias, hcClient);
     }
 
     /**
@@ -1262,7 +1229,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistorySqlRequest 请求对象
+     * @param request ListHistorySqlRequest 请求对象
      * @return ListHistorySqlResponse
      */
     public ListHistorySqlResponse listHistorySql(ListHistorySqlRequest request) {
@@ -1276,13 +1243,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistorySqlRequest 请求对象
+     * @param request ListHistorySqlRequest 请求对象
      * @return SyncInvoker<ListHistorySqlRequest, ListHistorySqlResponse>
      */
     public SyncInvoker<ListHistorySqlRequest, ListHistorySqlResponse> listHistorySqlInvoker(
         ListHistorySqlRequest request) {
-        return new SyncInvoker<ListHistorySqlRequest, ListHistorySqlResponse>(request, LtsMeta.listHistorySql,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listHistorySql, hcClient);
     }
 
     /**
@@ -1292,7 +1258,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostRequest 请求对象
+     * @param request ListHostRequest 请求对象
      * @return ListHostResponse
      */
     public ListHostResponse listHost(ListHostRequest request) {
@@ -1306,11 +1272,11 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostRequest 请求对象
+     * @param request ListHostRequest 请求对象
      * @return SyncInvoker<ListHostRequest, ListHostResponse>
      */
     public SyncInvoker<ListHostRequest, ListHostResponse> listHostInvoker(ListHostRequest request) {
-        return new SyncInvoker<ListHostRequest, ListHostResponse>(request, LtsMeta.listHost, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listHost, hcClient);
     }
 
     /**
@@ -1320,7 +1286,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostGroupRequest 请求对象
+     * @param request ListHostGroupRequest 请求对象
      * @return ListHostGroupResponse
      */
     public ListHostGroupResponse listHostGroup(ListHostGroupRequest request) {
@@ -1334,11 +1300,11 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostGroupRequest 请求对象
+     * @param request ListHostGroupRequest 请求对象
      * @return SyncInvoker<ListHostGroupRequest, ListHostGroupResponse>
      */
     public SyncInvoker<ListHostGroupRequest, ListHostGroupResponse> listHostGroupInvoker(ListHostGroupRequest request) {
-        return new SyncInvoker<ListHostGroupRequest, ListHostGroupResponse>(request, LtsMeta.listHostGroup, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listHostGroup, hcClient);
     }
 
     /**
@@ -1348,7 +1314,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeywordsAlarmRulesRequest 请求对象
+     * @param request ListKeywordsAlarmRulesRequest 请求对象
      * @return ListKeywordsAlarmRulesResponse
      */
     public ListKeywordsAlarmRulesResponse listKeywordsAlarmRules(ListKeywordsAlarmRulesRequest request) {
@@ -1362,13 +1328,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeywordsAlarmRulesRequest 请求对象
+     * @param request ListKeywordsAlarmRulesRequest 请求对象
      * @return SyncInvoker<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse>
      */
     public SyncInvoker<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse> listKeywordsAlarmRulesInvoker(
         ListKeywordsAlarmRulesRequest request) {
-        return new SyncInvoker<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse>(request,
-            LtsMeta.listKeywordsAlarmRules, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listKeywordsAlarmRules, hcClient);
     }
 
     /**
@@ -1378,7 +1343,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogGroupsRequest 请求对象
+     * @param request ListLogGroupsRequest 请求对象
      * @return ListLogGroupsResponse
      */
     public ListLogGroupsResponse listLogGroups(ListLogGroupsRequest request) {
@@ -1392,11 +1357,11 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogGroupsRequest 请求对象
+     * @param request ListLogGroupsRequest 请求对象
      * @return SyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse>
      */
     public SyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse> listLogGroupsInvoker(ListLogGroupsRequest request) {
-        return new SyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse>(request, LtsMeta.listLogGroups, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listLogGroups, hcClient);
     }
 
     /**
@@ -1406,7 +1371,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogHistogramRequest 请求对象
+     * @param request ListLogHistogramRequest 请求对象
      * @return ListLogHistogramResponse
      */
     public ListLogHistogramResponse listLogHistogram(ListLogHistogramRequest request) {
@@ -1420,13 +1385,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogHistogramRequest 请求对象
+     * @param request ListLogHistogramRequest 请求对象
      * @return SyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse>
      */
     public SyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse> listLogHistogramInvoker(
         ListLogHistogramRequest request) {
-        return new SyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse>(request, LtsMeta.listLogHistogram,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listLogHistogram, hcClient);
     }
 
     /**
@@ -1436,7 +1400,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogStreamRequest 请求对象
+     * @param request ListLogStreamRequest 请求对象
      * @return ListLogStreamResponse
      */
     public ListLogStreamResponse listLogStream(ListLogStreamRequest request) {
@@ -1450,11 +1414,11 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogStreamRequest 请求对象
+     * @param request ListLogStreamRequest 请求对象
      * @return SyncInvoker<ListLogStreamRequest, ListLogStreamResponse>
      */
     public SyncInvoker<ListLogStreamRequest, ListLogStreamResponse> listLogStreamInvoker(ListLogStreamRequest request) {
-        return new SyncInvoker<ListLogStreamRequest, ListLogStreamResponse>(request, LtsMeta.listLogStream, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listLogStream, hcClient);
     }
 
     /**
@@ -1464,7 +1428,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogStreamsRequest 请求对象
+     * @param request ListLogStreamsRequest 请求对象
      * @return ListLogStreamsResponse
      */
     public ListLogStreamsResponse listLogStreams(ListLogStreamsRequest request) {
@@ -1478,13 +1442,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogStreamsRequest 请求对象
+     * @param request ListLogStreamsRequest 请求对象
      * @return SyncInvoker<ListLogStreamsRequest, ListLogStreamsResponse>
      */
     public SyncInvoker<ListLogStreamsRequest, ListLogStreamsResponse> listLogStreamsInvoker(
         ListLogStreamsRequest request) {
-        return new SyncInvoker<ListLogStreamsRequest, ListLogStreamsResponse>(request, LtsMeta.listLogStreams,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listLogStreams, hcClient);
     }
 
     /**
@@ -1494,7 +1457,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogsRequest 请求对象
+     * @param request ListLogsRequest 请求对象
      * @return ListLogsResponse
      */
     public ListLogsResponse listLogs(ListLogsRequest request) {
@@ -1508,11 +1471,11 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLogsRequest 请求对象
+     * @param request ListLogsRequest 请求对象
      * @return SyncInvoker<ListLogsRequest, ListLogsResponse>
      */
     public SyncInvoker<ListLogsRequest, ListLogsResponse> listLogsInvoker(ListLogsRequest request) {
-        return new SyncInvoker<ListLogsRequest, ListLogsResponse>(request, LtsMeta.listLogs, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listLogs, hcClient);
     }
 
     /**
@@ -1522,7 +1485,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationTemplateRequest 请求对象
+     * @param request ListNotificationTemplateRequest 请求对象
      * @return ListNotificationTemplateResponse
      */
     public ListNotificationTemplateResponse listNotificationTemplate(ListNotificationTemplateRequest request) {
@@ -1536,13 +1499,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationTemplateRequest 请求对象
+     * @param request ListNotificationTemplateRequest 请求对象
      * @return SyncInvoker<ListNotificationTemplateRequest, ListNotificationTemplateResponse>
      */
     public SyncInvoker<ListNotificationTemplateRequest, ListNotificationTemplateResponse> listNotificationTemplateInvoker(
         ListNotificationTemplateRequest request) {
-        return new SyncInvoker<ListNotificationTemplateRequest, ListNotificationTemplateResponse>(request,
-            LtsMeta.listNotificationTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listNotificationTemplate, hcClient);
     }
 
     /**
@@ -1552,7 +1514,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationTemplatesRequest 请求对象
+     * @param request ListNotificationTemplatesRequest 请求对象
      * @return ListNotificationTemplatesResponse
      */
     public ListNotificationTemplatesResponse listNotificationTemplates(ListNotificationTemplatesRequest request) {
@@ -1566,13 +1528,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationTemplatesRequest 请求对象
+     * @param request ListNotificationTemplatesRequest 请求对象
      * @return SyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse>
      */
     public SyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> listNotificationTemplatesInvoker(
         ListNotificationTemplatesRequest request) {
-        return new SyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse>(request,
-            LtsMeta.listNotificationTemplates, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listNotificationTemplates, hcClient);
     }
 
     /**
@@ -1582,7 +1543,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationTopicsRequest 请求对象
+     * @param request ListNotificationTopicsRequest 请求对象
      * @return ListNotificationTopicsResponse
      */
     public ListNotificationTopicsResponse listNotificationTopics(ListNotificationTopicsRequest request) {
@@ -1596,13 +1557,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationTopicsRequest 请求对象
+     * @param request ListNotificationTopicsRequest 请求对象
      * @return SyncInvoker<ListNotificationTopicsRequest, ListNotificationTopicsResponse>
      */
     public SyncInvoker<ListNotificationTopicsRequest, ListNotificationTopicsResponse> listNotificationTopicsInvoker(
         ListNotificationTopicsRequest request) {
-        return new SyncInvoker<ListNotificationTopicsRequest, ListNotificationTopicsResponse>(request,
-            LtsMeta.listNotificationTopics, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listNotificationTopics, hcClient);
     }
 
     /**
@@ -1612,7 +1572,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryAllSearchCriteriasRequest 请求对象
+     * @param request ListQueryAllSearchCriteriasRequest 请求对象
      * @return ListQueryAllSearchCriteriasResponse
      */
     public ListQueryAllSearchCriteriasResponse listQueryAllSearchCriterias(ListQueryAllSearchCriteriasRequest request) {
@@ -1626,13 +1586,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryAllSearchCriteriasRequest 请求对象
+     * @param request ListQueryAllSearchCriteriasRequest 请求对象
      * @return SyncInvoker<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse>
      */
     public SyncInvoker<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse> listQueryAllSearchCriteriasInvoker(
         ListQueryAllSearchCriteriasRequest request) {
-        return new SyncInvoker<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse>(request,
-            LtsMeta.listQueryAllSearchCriterias, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listQueryAllSearchCriterias, hcClient);
     }
 
     /**
@@ -1642,7 +1601,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryStructuredLogsRequest 请求对象
+     * @param request ListQueryStructuredLogsRequest 请求对象
      * @return ListQueryStructuredLogsResponse
      */
     public ListQueryStructuredLogsResponse listQueryStructuredLogs(ListQueryStructuredLogsRequest request) {
@@ -1656,13 +1615,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryStructuredLogsRequest 请求对象
+     * @param request ListQueryStructuredLogsRequest 请求对象
      * @return SyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse>
      */
     public SyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> listQueryStructuredLogsInvoker(
         ListQueryStructuredLogsRequest request) {
-        return new SyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse>(request,
-            LtsMeta.listQueryStructuredLogs, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listQueryStructuredLogs, hcClient);
     }
 
     /**
@@ -1672,7 +1630,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStructTemplateRequest 请求对象
+     * @param request ListStructTemplateRequest 请求对象
      * @return ListStructTemplateResponse
      */
     public ListStructTemplateResponse listStructTemplate(ListStructTemplateRequest request) {
@@ -1686,13 +1644,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStructTemplateRequest 请求对象
+     * @param request ListStructTemplateRequest 请求对象
      * @return SyncInvoker<ListStructTemplateRequest, ListStructTemplateResponse>
      */
     public SyncInvoker<ListStructTemplateRequest, ListStructTemplateResponse> listStructTemplateInvoker(
         ListStructTemplateRequest request) {
-        return new SyncInvoker<ListStructTemplateRequest, ListStructTemplateResponse>(request,
-            LtsMeta.listStructTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listStructTemplate, hcClient);
     }
 
     /**
@@ -1702,7 +1659,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStructuredLogsWithTimeRangeRequest 请求对象
+     * @param request ListStructuredLogsWithTimeRangeRequest 请求对象
      * @return ListStructuredLogsWithTimeRangeResponse
      */
     public ListStructuredLogsWithTimeRangeResponse listStructuredLogsWithTimeRange(
@@ -1717,13 +1674,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStructuredLogsWithTimeRangeRequest 请求对象
+     * @param request ListStructuredLogsWithTimeRangeRequest 请求对象
      * @return SyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse>
      */
     public SyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> listStructuredLogsWithTimeRangeInvoker(
         ListStructuredLogsWithTimeRangeRequest request) {
-        return new SyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse>(request,
-            LtsMeta.listStructuredLogsWithTimeRange, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listStructuredLogsWithTimeRange, hcClient);
     }
 
     /**
@@ -1733,7 +1689,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTimeLineTrafficStatisticsRequest 请求对象
+     * @param request ListTimeLineTrafficStatisticsRequest 请求对象
      * @return ListTimeLineTrafficStatisticsResponse
      */
     public ListTimeLineTrafficStatisticsResponse listTimeLineTrafficStatistics(
@@ -1748,13 +1704,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTimeLineTrafficStatisticsRequest 请求对象
+     * @param request ListTimeLineTrafficStatisticsRequest 请求对象
      * @return SyncInvoker<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse>
      */
     public SyncInvoker<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse> listTimeLineTrafficStatisticsInvoker(
         ListTimeLineTrafficStatisticsRequest request) {
-        return new SyncInvoker<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse>(request,
-            LtsMeta.listTimeLineTrafficStatistics, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listTimeLineTrafficStatistics, hcClient);
     }
 
     /**
@@ -1764,7 +1719,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopnTrafficStatisticsRequest 请求对象
+     * @param request ListTopnTrafficStatisticsRequest 请求对象
      * @return ListTopnTrafficStatisticsResponse
      */
     public ListTopnTrafficStatisticsResponse listTopnTrafficStatistics(ListTopnTrafficStatisticsRequest request) {
@@ -1778,13 +1733,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopnTrafficStatisticsRequest 请求对象
+     * @param request ListTopnTrafficStatisticsRequest 请求对象
      * @return SyncInvoker<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse>
      */
     public SyncInvoker<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse> listTopnTrafficStatisticsInvoker(
         ListTopnTrafficStatisticsRequest request) {
-        return new SyncInvoker<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse>(request,
-            LtsMeta.listTopnTrafficStatistics, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listTopnTrafficStatistics, hcClient);
     }
 
     /**
@@ -1794,7 +1748,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransfersRequest 请求对象
+     * @param request ListTransfersRequest 请求对象
      * @return ListTransfersResponse
      */
     public ListTransfersResponse listTransfers(ListTransfersRequest request) {
@@ -1808,11 +1762,11 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransfersRequest 请求对象
+     * @param request ListTransfersRequest 请求对象
      * @return SyncInvoker<ListTransfersRequest, ListTransfersResponse>
      */
     public SyncInvoker<ListTransfersRequest, ListTransfersResponse> listTransfersInvoker(ListTransfersRequest request) {
-        return new SyncInvoker<ListTransfersRequest, ListTransfersResponse>(request, LtsMeta.listTransfers, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listTransfers, hcClient);
     }
 
     /**
@@ -1822,7 +1776,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterDmsKafkaInstanceRequest 请求对象
+     * @param request RegisterDmsKafkaInstanceRequest 请求对象
      * @return RegisterDmsKafkaInstanceResponse
      */
     public RegisterDmsKafkaInstanceResponse registerDmsKafkaInstance(RegisterDmsKafkaInstanceRequest request) {
@@ -1836,13 +1790,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterDmsKafkaInstanceRequest 请求对象
+     * @param request RegisterDmsKafkaInstanceRequest 请求对象
      * @return SyncInvoker<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse>
      */
     public SyncInvoker<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse> registerDmsKafkaInstanceInvoker(
         RegisterDmsKafkaInstanceRequest request) {
-        return new SyncInvoker<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse>(request,
-            LtsMeta.registerDmsKafkaInstance, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.registerDmsKafkaInstance, hcClient);
     }
 
     /**
@@ -1852,7 +1805,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdminConfigRequest 请求对象
+     * @param request ShowAdminConfigRequest 请求对象
      * @return ShowAdminConfigResponse
      */
     public ShowAdminConfigResponse showAdminConfig(ShowAdminConfigRequest request) {
@@ -1866,13 +1819,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdminConfigRequest 请求对象
+     * @param request ShowAdminConfigRequest 请求对象
      * @return SyncInvoker<ShowAdminConfigRequest, ShowAdminConfigResponse>
      */
     public SyncInvoker<ShowAdminConfigRequest, ShowAdminConfigResponse> showAdminConfigInvoker(
         ShowAdminConfigRequest request) {
-        return new SyncInvoker<ShowAdminConfigRequest, ShowAdminConfigResponse>(request, LtsMeta.showAdminConfig,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.showAdminConfig, hcClient);
     }
 
     /**
@@ -1882,7 +1834,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLogConvergeConfigRequest 请求对象
+     * @param request ShowLogConvergeConfigRequest 请求对象
      * @return ShowLogConvergeConfigResponse
      */
     public ShowLogConvergeConfigResponse showLogConvergeConfig(ShowLogConvergeConfigRequest request) {
@@ -1896,13 +1848,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLogConvergeConfigRequest 请求对象
+     * @param request ShowLogConvergeConfigRequest 请求对象
      * @return SyncInvoker<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse>
      */
     public SyncInvoker<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse> showLogConvergeConfigInvoker(
         ShowLogConvergeConfigRequest request) {
-        return new SyncInvoker<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse>(request,
-            LtsMeta.showLogConvergeConfig, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.showLogConvergeConfig, hcClient);
     }
 
     /**
@@ -1912,7 +1863,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMemberGroupAndStreamRequest 请求对象
+     * @param request ShowMemberGroupAndStreamRequest 请求对象
      * @return ShowMemberGroupAndStreamResponse
      */
     public ShowMemberGroupAndStreamResponse showMemberGroupAndStream(ShowMemberGroupAndStreamRequest request) {
@@ -1926,13 +1877,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMemberGroupAndStreamRequest 请求对象
+     * @param request ShowMemberGroupAndStreamRequest 请求对象
      * @return SyncInvoker<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse>
      */
     public SyncInvoker<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse> showMemberGroupAndStreamInvoker(
         ShowMemberGroupAndStreamRequest request) {
-        return new SyncInvoker<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse>(request,
-            LtsMeta.showMemberGroupAndStream, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.showMemberGroupAndStream, hcClient);
     }
 
     /**
@@ -1942,7 +1892,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNotificationTemplateRequest 请求对象
+     * @param request ShowNotificationTemplateRequest 请求对象
      * @return ShowNotificationTemplateResponse
      */
     public ShowNotificationTemplateResponse showNotificationTemplate(ShowNotificationTemplateRequest request) {
@@ -1956,13 +1906,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNotificationTemplateRequest 请求对象
+     * @param request ShowNotificationTemplateRequest 请求对象
      * @return SyncInvoker<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse>
      */
     public SyncInvoker<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse> showNotificationTemplateInvoker(
         ShowNotificationTemplateRequest request) {
-        return new SyncInvoker<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse>(request,
-            LtsMeta.showNotificationTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.showNotificationTemplate, hcClient);
     }
 
     /**
@@ -1972,7 +1921,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStructTemplateRequest 请求对象
+     * @param request ShowStructTemplateRequest 请求对象
      * @return ShowStructTemplateResponse
      */
     public ShowStructTemplateResponse showStructTemplate(ShowStructTemplateRequest request) {
@@ -1986,13 +1935,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStructTemplateRequest 请求对象
+     * @param request ShowStructTemplateRequest 请求对象
      * @return SyncInvoker<ShowStructTemplateRequest, ShowStructTemplateResponse>
      */
     public SyncInvoker<ShowStructTemplateRequest, ShowStructTemplateResponse> showStructTemplateInvoker(
         ShowStructTemplateRequest request) {
-        return new SyncInvoker<ShowStructTemplateRequest, ShowStructTemplateResponse>(request,
-            LtsMeta.showStructTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.showStructTemplate, hcClient);
     }
 
     /**
@@ -2002,7 +1950,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAccessConfigRequest 请求对象
+     * @param request UpdateAccessConfigRequest 请求对象
      * @return UpdateAccessConfigResponse
      */
     public UpdateAccessConfigResponse updateAccessConfig(UpdateAccessConfigRequest request) {
@@ -2016,13 +1964,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAccessConfigRequest 请求对象
+     * @param request UpdateAccessConfigRequest 请求对象
      * @return SyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse>
      */
     public SyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse> updateAccessConfigInvoker(
         UpdateAccessConfigRequest request) {
-        return new SyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse>(request,
-            LtsMeta.updateAccessConfig, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateAccessConfig, hcClient);
     }
 
     /**
@@ -2032,7 +1979,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHostGroupRequest 请求对象
+     * @param request UpdateHostGroupRequest 请求对象
      * @return UpdateHostGroupResponse
      */
     public UpdateHostGroupResponse updateHostGroup(UpdateHostGroupRequest request) {
@@ -2046,13 +1993,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHostGroupRequest 请求对象
+     * @param request UpdateHostGroupRequest 请求对象
      * @return SyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse>
      */
     public SyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse> updateHostGroupInvoker(
         UpdateHostGroupRequest request) {
-        return new SyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse>(request, LtsMeta.updateHostGroup,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateHostGroup, hcClient);
     }
 
     /**
@@ -2062,7 +2008,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeywordsAlarmRuleRequest 请求对象
+     * @param request UpdateKeywordsAlarmRuleRequest 请求对象
      * @return UpdateKeywordsAlarmRuleResponse
      */
     public UpdateKeywordsAlarmRuleResponse updateKeywordsAlarmRule(UpdateKeywordsAlarmRuleRequest request) {
@@ -2076,13 +2022,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeywordsAlarmRuleRequest 请求对象
+     * @param request UpdateKeywordsAlarmRuleRequest 请求对象
      * @return SyncInvoker<UpdateKeywordsAlarmRuleRequest, UpdateKeywordsAlarmRuleResponse>
      */
     public SyncInvoker<UpdateKeywordsAlarmRuleRequest, UpdateKeywordsAlarmRuleResponse> updateKeywordsAlarmRuleInvoker(
         UpdateKeywordsAlarmRuleRequest request) {
-        return new SyncInvoker<UpdateKeywordsAlarmRuleRequest, UpdateKeywordsAlarmRuleResponse>(request,
-            LtsMeta.updateKeywordsAlarmRule, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateKeywordsAlarmRule, hcClient);
     }
 
     /**
@@ -2092,7 +2037,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogConvergeConfigRequest 请求对象
+     * @param request UpdateLogConvergeConfigRequest 请求对象
      * @return UpdateLogConvergeConfigResponse
      */
     public UpdateLogConvergeConfigResponse updateLogConvergeConfig(UpdateLogConvergeConfigRequest request) {
@@ -2106,13 +2051,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogConvergeConfigRequest 请求对象
+     * @param request UpdateLogConvergeConfigRequest 请求对象
      * @return SyncInvoker<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse>
      */
     public SyncInvoker<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse> updateLogConvergeConfigInvoker(
         UpdateLogConvergeConfigRequest request) {
-        return new SyncInvoker<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse>(request,
-            LtsMeta.updateLogConvergeConfig, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateLogConvergeConfig, hcClient);
     }
 
     /**
@@ -2122,7 +2066,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogGroupRequest 请求对象
+     * @param request UpdateLogGroupRequest 请求对象
      * @return UpdateLogGroupResponse
      */
     public UpdateLogGroupResponse updateLogGroup(UpdateLogGroupRequest request) {
@@ -2136,13 +2080,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogGroupRequest 请求对象
+     * @param request UpdateLogGroupRequest 请求对象
      * @return SyncInvoker<UpdateLogGroupRequest, UpdateLogGroupResponse>
      */
     public SyncInvoker<UpdateLogGroupRequest, UpdateLogGroupResponse> updateLogGroupInvoker(
         UpdateLogGroupRequest request) {
-        return new SyncInvoker<UpdateLogGroupRequest, UpdateLogGroupResponse>(request, LtsMeta.updateLogGroup,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateLogGroup, hcClient);
     }
 
     /**
@@ -2152,7 +2095,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogStreamRequest 请求对象
+     * @param request UpdateLogStreamRequest 请求对象
      * @return UpdateLogStreamResponse
      */
     public UpdateLogStreamResponse updateLogStream(UpdateLogStreamRequest request) {
@@ -2166,13 +2109,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLogStreamRequest 请求对象
+     * @param request UpdateLogStreamRequest 请求对象
      * @return SyncInvoker<UpdateLogStreamRequest, UpdateLogStreamResponse>
      */
     public SyncInvoker<UpdateLogStreamRequest, UpdateLogStreamResponse> updateLogStreamInvoker(
         UpdateLogStreamRequest request) {
-        return new SyncInvoker<UpdateLogStreamRequest, UpdateLogStreamResponse>(request, LtsMeta.updateLogStream,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateLogStream, hcClient);
     }
 
     /**
@@ -2182,7 +2124,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotificationTemplateRequest 请求对象
+     * @param request UpdateNotificationTemplateRequest 请求对象
      * @return UpdateNotificationTemplateResponse
      */
     public UpdateNotificationTemplateResponse updateNotificationTemplate(UpdateNotificationTemplateRequest request) {
@@ -2196,13 +2138,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotificationTemplateRequest 请求对象
+     * @param request UpdateNotificationTemplateRequest 请求对象
      * @return SyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse>
      */
     public SyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> updateNotificationTemplateInvoker(
         UpdateNotificationTemplateRequest request) {
-        return new SyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse>(request,
-            LtsMeta.updateNotificationTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateNotificationTemplate, hcClient);
     }
 
     /**
@@ -2212,7 +2153,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStructConfigRequest 请求对象
+     * @param request UpdateStructConfigRequest 请求对象
      * @return UpdateStructConfigResponse
      */
     public UpdateStructConfigResponse updateStructConfig(UpdateStructConfigRequest request) {
@@ -2226,13 +2167,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStructConfigRequest 请求对象
+     * @param request UpdateStructConfigRequest 请求对象
      * @return SyncInvoker<UpdateStructConfigRequest, UpdateStructConfigResponse>
      */
     public SyncInvoker<UpdateStructConfigRequest, UpdateStructConfigResponse> updateStructConfigInvoker(
         UpdateStructConfigRequest request) {
-        return new SyncInvoker<UpdateStructConfigRequest, UpdateStructConfigResponse>(request,
-            LtsMeta.updateStructConfig, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateStructConfig, hcClient);
     }
 
     /**
@@ -2242,7 +2182,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStructTemplateRequest 请求对象
+     * @param request UpdateStructTemplateRequest 请求对象
      * @return UpdateStructTemplateResponse
      */
     public UpdateStructTemplateResponse updateStructTemplate(UpdateStructTemplateRequest request) {
@@ -2256,13 +2196,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStructTemplateRequest 请求对象
+     * @param request UpdateStructTemplateRequest 请求对象
      * @return SyncInvoker<UpdateStructTemplateRequest, UpdateStructTemplateResponse>
      */
     public SyncInvoker<UpdateStructTemplateRequest, UpdateStructTemplateResponse> updateStructTemplateInvoker(
         UpdateStructTemplateRequest request) {
-        return new SyncInvoker<UpdateStructTemplateRequest, UpdateStructTemplateResponse>(request,
-            LtsMeta.updateStructTemplate, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateStructTemplate, hcClient);
     }
 
     /**
@@ -2272,7 +2211,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSwitchRequest 请求对象
+     * @param request UpdateSwitchRequest 请求对象
      * @return UpdateSwitchResponse
      */
     public UpdateSwitchResponse updateSwitch(UpdateSwitchRequest request) {
@@ -2286,11 +2225,11 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSwitchRequest 请求对象
+     * @param request UpdateSwitchRequest 请求对象
      * @return SyncInvoker<UpdateSwitchRequest, UpdateSwitchResponse>
      */
     public SyncInvoker<UpdateSwitchRequest, UpdateSwitchResponse> updateSwitchInvoker(UpdateSwitchRequest request) {
-        return new SyncInvoker<UpdateSwitchRequest, UpdateSwitchResponse>(request, LtsMeta.updateSwitch, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateSwitch, hcClient);
     }
 
     /**
@@ -2300,7 +2239,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTransferRequest 请求对象
+     * @param request UpdateTransferRequest 请求对象
      * @return UpdateTransferResponse
      */
     public UpdateTransferResponse updateTransfer(UpdateTransferRequest request) {
@@ -2314,13 +2253,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTransferRequest 请求对象
+     * @param request UpdateTransferRequest 请求对象
      * @return SyncInvoker<UpdateTransferRequest, UpdateTransferResponse>
      */
     public SyncInvoker<UpdateTransferRequest, UpdateTransferResponse> updateTransferInvoker(
         UpdateTransferRequest request) {
-        return new SyncInvoker<UpdateTransferRequest, UpdateTransferResponse>(request, LtsMeta.updateTransfer,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateTransfer, hcClient);
     }
 
     /**
@@ -2330,7 +2268,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAomMappingRulesRequest 请求对象
+     * @param request CreateAomMappingRulesRequest 请求对象
      * @return CreateAomMappingRulesResponse
      */
     public CreateAomMappingRulesResponse createAomMappingRules(CreateAomMappingRulesRequest request) {
@@ -2344,13 +2282,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAomMappingRulesRequest 请求对象
+     * @param request CreateAomMappingRulesRequest 请求对象
      * @return SyncInvoker<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse>
      */
     public SyncInvoker<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse> createAomMappingRulesInvoker(
         CreateAomMappingRulesRequest request) {
-        return new SyncInvoker<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse>(request,
-            LtsMeta.createAomMappingRules, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createAomMappingRules, hcClient);
     }
 
     /**
@@ -2360,7 +2297,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAomMappingRulesRequest 请求对象
+     * @param request DeleteAomMappingRulesRequest 请求对象
      * @return DeleteAomMappingRulesResponse
      */
     public DeleteAomMappingRulesResponse deleteAomMappingRules(DeleteAomMappingRulesRequest request) {
@@ -2374,13 +2311,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAomMappingRulesRequest 请求对象
+     * @param request DeleteAomMappingRulesRequest 请求对象
      * @return SyncInvoker<DeleteAomMappingRulesRequest, DeleteAomMappingRulesResponse>
      */
     public SyncInvoker<DeleteAomMappingRulesRequest, DeleteAomMappingRulesResponse> deleteAomMappingRulesInvoker(
         DeleteAomMappingRulesRequest request) {
-        return new SyncInvoker<DeleteAomMappingRulesRequest, DeleteAomMappingRulesResponse>(request,
-            LtsMeta.deleteAomMappingRules, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteAomMappingRules, hcClient);
     }
 
     /**
@@ -2390,7 +2326,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAomMappingRuleRequest 请求对象
+     * @param request ShowAomMappingRuleRequest 请求对象
      * @return ShowAomMappingRuleResponse
      */
     public ShowAomMappingRuleResponse showAomMappingRule(ShowAomMappingRuleRequest request) {
@@ -2404,13 +2340,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAomMappingRuleRequest 请求对象
+     * @param request ShowAomMappingRuleRequest 请求对象
      * @return SyncInvoker<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse>
      */
     public SyncInvoker<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse> showAomMappingRuleInvoker(
         ShowAomMappingRuleRequest request) {
-        return new SyncInvoker<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse>(request,
-            LtsMeta.showAomMappingRule, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.showAomMappingRule, hcClient);
     }
 
     /**
@@ -2420,7 +2355,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAomMappingRulesRequest 请求对象
+     * @param request ShowAomMappingRulesRequest 请求对象
      * @return ShowAomMappingRulesResponse
      */
     public ShowAomMappingRulesResponse showAomMappingRules(ShowAomMappingRulesRequest request) {
@@ -2434,13 +2369,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAomMappingRulesRequest 请求对象
+     * @param request ShowAomMappingRulesRequest 请求对象
      * @return SyncInvoker<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse>
      */
     public SyncInvoker<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse> showAomMappingRulesInvoker(
         ShowAomMappingRulesRequest request) {
-        return new SyncInvoker<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse>(request,
-            LtsMeta.showAomMappingRules, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.showAomMappingRules, hcClient);
     }
 
     /**
@@ -2450,7 +2384,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAomMappingRulesRequest 请求对象
+     * @param request UpdateAomMappingRulesRequest 请求对象
      * @return UpdateAomMappingRulesResponse
      */
     public UpdateAomMappingRulesResponse updateAomMappingRules(UpdateAomMappingRulesRequest request) {
@@ -2464,13 +2398,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAomMappingRulesRequest 请求对象
+     * @param request UpdateAomMappingRulesRequest 请求对象
      * @return SyncInvoker<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse>
      */
     public SyncInvoker<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse> updateAomMappingRulesInvoker(
         UpdateAomMappingRulesRequest request) {
-        return new SyncInvoker<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse>(request,
-            LtsMeta.updateAomMappingRules, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateAomMappingRules, hcClient);
     }
 
     /**
@@ -2480,7 +2413,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSqlAlarmRuleRequest 请求对象
+     * @param request CreateSqlAlarmRuleRequest 请求对象
      * @return CreateSqlAlarmRuleResponse
      */
     public CreateSqlAlarmRuleResponse createSqlAlarmRule(CreateSqlAlarmRuleRequest request) {
@@ -2494,13 +2427,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSqlAlarmRuleRequest 请求对象
+     * @param request CreateSqlAlarmRuleRequest 请求对象
      * @return SyncInvoker<CreateSqlAlarmRuleRequest, CreateSqlAlarmRuleResponse>
      */
     public SyncInvoker<CreateSqlAlarmRuleRequest, CreateSqlAlarmRuleResponse> createSqlAlarmRuleInvoker(
         CreateSqlAlarmRuleRequest request) {
-        return new SyncInvoker<CreateSqlAlarmRuleRequest, CreateSqlAlarmRuleResponse>(request,
-            LtsMeta.createSqlAlarmRule, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.createSqlAlarmRule, hcClient);
     }
 
     /**
@@ -2510,7 +2442,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSqlAlarmRuleRequest 请求对象
+     * @param request DeleteSqlAlarmRuleRequest 请求对象
      * @return DeleteSqlAlarmRuleResponse
      */
     public DeleteSqlAlarmRuleResponse deleteSqlAlarmRule(DeleteSqlAlarmRuleRequest request) {
@@ -2524,13 +2456,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSqlAlarmRuleRequest 请求对象
+     * @param request DeleteSqlAlarmRuleRequest 请求对象
      * @return SyncInvoker<DeleteSqlAlarmRuleRequest, DeleteSqlAlarmRuleResponse>
      */
     public SyncInvoker<DeleteSqlAlarmRuleRequest, DeleteSqlAlarmRuleResponse> deleteSqlAlarmRuleInvoker(
         DeleteSqlAlarmRuleRequest request) {
-        return new SyncInvoker<DeleteSqlAlarmRuleRequest, DeleteSqlAlarmRuleResponse>(request,
-            LtsMeta.deleteSqlAlarmRule, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.deleteSqlAlarmRule, hcClient);
     }
 
     /**
@@ -2540,7 +2471,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlAlarmRulesRequest 请求对象
+     * @param request ListSqlAlarmRulesRequest 请求对象
      * @return ListSqlAlarmRulesResponse
      */
     public ListSqlAlarmRulesResponse listSqlAlarmRules(ListSqlAlarmRulesRequest request) {
@@ -2554,13 +2485,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSqlAlarmRulesRequest 请求对象
+     * @param request ListSqlAlarmRulesRequest 请求对象
      * @return SyncInvoker<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse>
      */
     public SyncInvoker<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse> listSqlAlarmRulesInvoker(
         ListSqlAlarmRulesRequest request) {
-        return new SyncInvoker<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse>(request, LtsMeta.listSqlAlarmRules,
-            hcClient);
+        return new SyncInvoker<>(request, LtsMeta.listSqlAlarmRules, hcClient);
     }
 
     /**
@@ -2570,7 +2500,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmRuleStatusRequest 请求对象
+     * @param request UpdateAlarmRuleStatusRequest 请求对象
      * @return UpdateAlarmRuleStatusResponse
      */
     public UpdateAlarmRuleStatusResponse updateAlarmRuleStatus(UpdateAlarmRuleStatusRequest request) {
@@ -2584,13 +2514,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmRuleStatusRequest 请求对象
+     * @param request UpdateAlarmRuleStatusRequest 请求对象
      * @return SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse>
      */
     public SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse> updateAlarmRuleStatusInvoker(
         UpdateAlarmRuleStatusRequest request) {
-        return new SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse>(request,
-            LtsMeta.updateAlarmRuleStatus, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateAlarmRuleStatus, hcClient);
     }
 
     /**
@@ -2600,7 +2529,7 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSqlAlarmRuleRequest 请求对象
+     * @param request UpdateSqlAlarmRuleRequest 请求对象
      * @return UpdateSqlAlarmRuleResponse
      */
     public UpdateSqlAlarmRuleResponse updateSqlAlarmRule(UpdateSqlAlarmRuleRequest request) {
@@ -2614,13 +2543,12 @@ public class LtsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSqlAlarmRuleRequest 请求对象
+     * @param request UpdateSqlAlarmRuleRequest 请求对象
      * @return SyncInvoker<UpdateSqlAlarmRuleRequest, UpdateSqlAlarmRuleResponse>
      */
     public SyncInvoker<UpdateSqlAlarmRuleRequest, UpdateSqlAlarmRuleResponse> updateSqlAlarmRuleInvoker(
         UpdateSqlAlarmRuleRequest request) {
-        return new SyncInvoker<UpdateSqlAlarmRuleRequest, UpdateSqlAlarmRuleResponse>(request,
-            LtsMeta.updateSqlAlarmRule, hcClient);
+        return new SyncInvoker<>(request, LtsMeta.updateSqlAlarmRule, hcClient);
     }
 
 }

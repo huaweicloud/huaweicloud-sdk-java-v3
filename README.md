@@ -332,6 +332,7 @@ HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
     .withProxyHost("proxy.huaweicloud.com")
     .withProxyPort(8080)
     // Configure the username and password if the proxy requires authentication
+    // In this example, username and password are stored in environment variables. Please configure the environment variables PROXY_USERNAME and PROXY_PASSWORD before running this example.
     .withProxyUsername(System.getenv("PROXY_USERNAME"))
     .withProxyPassword(System.getenv("PROXY_PASSWORD"));
 
@@ -557,8 +558,8 @@ Getting Authentication from providers is supported since `v3.0.97`
 
 | Environment Variables  |  Notice |
 | ------------ | ------------ |
-| HUAWEICLOUD_SDK_AK  | Required，AccessKey  |
-| HUAWEICLOUD_SDK_SK  |  Required，SecretKey |
+| HUAWEICLOUD_SDK_AK  | Required, AccessKey  |
+| HUAWEICLOUD_SDK_SK  |  Required, SecretKey |
 | HUAWEICLOUD_SDK_SECURITY_TOKEN  | Optional, this parameter needs to be specified when using temporary ak/sk  |
 | HUAWEICLOUD_SDK_PROJECT_ID  | Optional, used for regional services, required in multi-ProjectId scenarios  |
 | HUAWEICLOUD_SDK_DOMAIN_ID  | Optional, used for global services  |
@@ -638,8 +639,8 @@ The profile will be read from the user's home directory by default, linux`~/.hua
 
 | Configuration Parameters  |  Notice |
 | ------------ | ------------ |
-| ak  | Required，AccessKey  |
-| sk  |  Required，SecretKey |
+| ak  | Required, AccessKey  |
+| sk  |  Required, SecretKey |
 | security_token  | Optional, this parameter needs to be specified when using temporary ak/sk  |
 | project_id  | Optional, used for regional services, required in multi-ProjectId scenarios  |
 | domain_id  | Optional, used for global services  |
@@ -870,7 +871,22 @@ BasicCredentials credentials = new BasicCredentials()
 
 ##### 3.3.2 Region configuration [:top:](#user-manual-top)
 
-###### 3.3.2.1 Environment variable [:top:](#user-manual-top)
+###### 3.3.2.1 Code [:top:](#user-manual-top)
+
+```java
+import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.ecs.v2.EcsClient;
+
+// Create a region with custom region id and endpoint
+Region region = new Region("cn-north-9", "https://ecs.cn-north-9.myhuaweicloud.com");
+
+EcsClient client = EcsClient.newBuilder()
+    .withCredential(auth)
+    .withRegion(region)
+    .build();
+```
+
+###### 3.3.2.2 Environment variable [:top:](#user-manual-top)
 
 Specified by environment variable, the format is `HUAWEICLOUD_SDK_REGION_{SERVICE_NAME}_{REGION_ID}={endpoint}`
 
@@ -892,7 +908,7 @@ A region corresponding to multiple endpoints is supported since **v3.1.60**, if 
 
 The format is `HUAWEICLOUD_SDK_REGION_{SERVICE_NAME}_{REGION_ID}={endpoint1},{endpoint2}`, separate multiple endpoints with commas, such as `HUAWEICLOUD_SDK_REGION_ECS_CN_NORTH_9=https://ecs.cn-north-9.myhuaweicloud.com,https://ecs.cn-north-9.myhuaweicloud.cn`
 
-###### 3.3.2.2 Profile [:top:](#user-manual-top)
+###### 3.3.2.3 Profile [:top:](#user-manual-top)
 
 The profile will be read from the user's home directory by default, linux`~/.huaweicloud/regions.yaml`,windows`C:\Users\USER_NAME\.huaweicloud\regions.yaml`,the default file may not exist, but if the file exists and the content format is incorrect, an exception will be thrown for parsing errors.
 
@@ -901,7 +917,7 @@ The path to the profile can be modified by configuring the environment variable 
 The file content format is as follows:
 
 ```yaml
-# Serivce name is case-insensitive
+# Service name is case-insensitive
 ECS:
   - id: 'cn-north-1'
     endpoint: 'https://ecs.cn-north-1.myhuaweicloud.com'
@@ -922,9 +938,9 @@ ECS:
       - 'https://ecs.cn-north-1.myhuaweicloud.cn'
 ```
 
-###### 3.3.2.3 Region supply chain [:top:](#user-manual-top)
+###### 3.3.2.4 Region supply chain [:top:](#user-manual-top)
 
-The default order is **environment variables -> profile -> region defined in SDK**, if the region is not found in the above ways, an exception will be thrown.
+The default lookup order is **environment variables -> profile -> region defined in SDK** of method **Region.valueOf(regionId)**, if the region is not found in the above ways, an exception **IllegalArgumentException** will be thrown.
 
 ```java
 import com.huaweicloud.sdk.core.region.Region;
@@ -1057,15 +1073,15 @@ example, you can add one of the following dependency to your **pom.xml** file:
 The SDK will print the access log by default, every request will be recorded to the console like:
 
 ``` shell
-16:53:04.905 [main] INFO HuaweiCloud-SDK-Access - "GET https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/detail?offset=1&limit=25" 200 2251 deabe20c14f997a0291fc451a4da16a4
-16:53:06.212 [main] INFO HuaweiCloud-SDK-Access - "PUT https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/1aeac6fb-a2f2-48dc-9052-36637d119dd3" 200 880 f16f70e3fe245c11ab741760f8689a01
-17:02:37.734 [main] INFO HuaweiCloud-SDK-Access - "GET https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/detail?offset=1&limit=-1" 400 165 8c3c8b6fed4482d28e1929a78dc93f04
+16:53:04.905 [main] INFO HuaweiCloud-SDK-Access - "GET https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/detail?offset=1&limit=25" 200 2251 deabe20c14f997a0291fc451a4da16a4 233
+16:53:06.212 [main] INFO HuaweiCloud-SDK-Access - "PUT https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/1aeac6fb-a2f2-48dc-9052-36637d119dd3" 200 880 f16f70e3fe245c11ab741760f8689a01 234
+17:02:37.734 [main] INFO HuaweiCloud-SDK-Access - "GET https://ecs.cn-southwest-2.myhuaweicloud.com/v1/077d6a6c19000fdd2f3bc00150080291/cloudservers/detail?offset=1&limit=-1" 400 165 8c3c8b6fed4482d28e1929a78dc93f04 235
 ```
 
 SDK access log name is "HuaweiCloud-SDK-Access", and out log format is:
 
 ``` text
-"{httpMethod} {uri}" {httpStatusCode} {responseContentLength} {requestId}
+"{httpMethod} {uri}" {httpStatusCode} {responseContentLength} {requestId} {durationMs}
 ```
 
 **Where:**

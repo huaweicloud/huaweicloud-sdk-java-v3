@@ -10,6 +10,8 @@ import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesRequest;
@@ -63,7 +65,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCopyDomainRequest 请求对象
+     * @param request BatchCopyDomainRequest 请求对象
      * @return BatchCopyDomainResponse
      */
     public BatchCopyDomainResponse batchCopyDomain(BatchCopyDomainRequest request) {
@@ -78,13 +80,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCopyDomainRequest 请求对象
+     * @param request BatchCopyDomainRequest 请求对象
      * @return SyncInvoker<BatchCopyDomainRequest, BatchCopyDomainResponse>
      */
     public SyncInvoker<BatchCopyDomainRequest, BatchCopyDomainResponse> batchCopyDomainInvoker(
         BatchCopyDomainRequest request) {
-        return new SyncInvoker<BatchCopyDomainRequest, BatchCopyDomainResponse>(request, CdnMeta.batchCopyDomain,
-            hcClient);
+        return new SyncInvoker<>(request, CdnMeta.batchCopyDomain, hcClient);
     }
 
     /**
@@ -94,7 +95,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePreheatingTasksRequest 请求对象
+     * @param request CreatePreheatingTasksRequest 请求对象
      * @return CreatePreheatingTasksResponse
      */
     public CreatePreheatingTasksResponse createPreheatingTasks(CreatePreheatingTasksRequest request) {
@@ -108,13 +109,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePreheatingTasksRequest 请求对象
+     * @param request CreatePreheatingTasksRequest 请求对象
      * @return SyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse>
      */
     public SyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> createPreheatingTasksInvoker(
         CreatePreheatingTasksRequest request) {
-        return new SyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse>(request,
-            CdnMeta.createPreheatingTasks, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.createPreheatingTasks, hcClient);
     }
 
     /**
@@ -124,7 +124,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRefreshTasksRequest 请求对象
+     * @param request CreateRefreshTasksRequest 请求对象
      * @return CreateRefreshTasksResponse
      */
     public CreateRefreshTasksResponse createRefreshTasks(CreateRefreshTasksRequest request) {
@@ -138,13 +138,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRefreshTasksRequest 请求对象
+     * @param request CreateRefreshTasksRequest 请求对象
      * @return SyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse>
      */
     public SyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse> createRefreshTasksInvoker(
         CreateRefreshTasksRequest request) {
-        return new SyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse>(request,
-            CdnMeta.createRefreshTasks, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.createRefreshTasks, hcClient);
     }
 
     /**
@@ -164,7 +163,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadRegionCarrierExcelRequest 请求对象
+     * @param request DownloadRegionCarrierExcelRequest 请求对象
      * @return DownloadRegionCarrierExcelResponse
      */
     @Deprecated
@@ -189,14 +188,13 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadRegionCarrierExcelRequest 请求对象
+     * @param request DownloadRegionCarrierExcelRequest 请求对象
      * @return SyncInvoker<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse>
      */
     @Deprecated
     public SyncInvoker<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse> downloadRegionCarrierExcelInvoker(
         DownloadRegionCarrierExcelRequest request) {
-        return new SyncInvoker<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse>(request,
-            CdnMeta.downloadRegionCarrierExcel, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.downloadRegionCarrierExcel, hcClient);
     }
 
     /**
@@ -216,7 +214,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadStatisticsExcelRequest 请求对象
+     * @param request DownloadStatisticsExcelRequest 请求对象
      * @return DownloadStatisticsExcelResponse
      */
     @Deprecated
@@ -241,14 +239,54 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadStatisticsExcelRequest 请求对象
+     * @param request DownloadStatisticsExcelRequest 请求对象
      * @return SyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse>
      */
     @Deprecated
     public SyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse> downloadStatisticsExcelInvoker(
         DownloadStatisticsExcelRequest request) {
-        return new SyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse>(request,
-            CdnMeta.downloadStatisticsExcel, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.downloadStatisticsExcel, hcClient);
+    }
+
+    /**
+     * 查询统计TOP100 referer数据明细
+     *
+     * - 查询TOP100 referer数据。
+     * 
+     * - 支持查询90天内的数据。
+     * 
+     * - 查询跨度不能超过31天。
+     * 
+     * - 单租户调用频率：2次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnDomainTopRefersRequest 请求对象
+     * @return ListCdnDomainTopRefersResponse
+     */
+    public ListCdnDomainTopRefersResponse listCdnDomainTopRefers(ListCdnDomainTopRefersRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.listCdnDomainTopRefers);
+    }
+
+    /**
+     * 查询统计TOP100 referer数据明细
+     *
+     * - 查询TOP100 referer数据。
+     * 
+     * - 支持查询90天内的数据。
+     * 
+     * - 查询跨度不能超过31天。
+     * 
+     * - 单租户调用频率：2次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnDomainTopRefersRequest 请求对象
+     * @return SyncInvoker<ListCdnDomainTopRefersRequest, ListCdnDomainTopRefersResponse>
+     */
+    public SyncInvoker<ListCdnDomainTopRefersRequest, ListCdnDomainTopRefersResponse> listCdnDomainTopRefersInvoker(
+        ListCdnDomainTopRefersRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.listCdnDomainTopRefers, hcClient);
     }
 
     /**
@@ -258,7 +296,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainsRequest 请求对象
+     * @param request ListDomainsRequest 请求对象
      * @return ListDomainsResponse
      */
     public ListDomainsResponse listDomains(ListDomainsRequest request) {
@@ -272,11 +310,11 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainsRequest 请求对象
+     * @param request ListDomainsRequest 请求对象
      * @return SyncInvoker<ListDomainsRequest, ListDomainsResponse>
      */
     public SyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsInvoker(ListDomainsRequest request) {
-        return new SyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, CdnMeta.listDomains, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.listDomains, hcClient);
     }
 
     /**
@@ -294,7 +332,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetChargeModesRequest 请求对象
+     * @param request SetChargeModesRequest 请求对象
      * @return SetChargeModesResponse
      */
     public SetChargeModesResponse setChargeModes(SetChargeModesRequest request) {
@@ -316,13 +354,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetChargeModesRequest 请求对象
+     * @param request SetChargeModesRequest 请求对象
      * @return SyncInvoker<SetChargeModesRequest, SetChargeModesResponse>
      */
     public SyncInvoker<SetChargeModesRequest, SetChargeModesResponse> setChargeModesInvoker(
         SetChargeModesRequest request) {
-        return new SyncInvoker<SetChargeModesRequest, SetChargeModesResponse>(request, CdnMeta.setChargeModes,
-            hcClient);
+        return new SyncInvoker<>(request, CdnMeta.setChargeModes, hcClient);
     }
 
     /**
@@ -344,7 +381,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBandwidthCalcRequest 请求对象
+     * @param request ShowBandwidthCalcRequest 请求对象
      * @return ShowBandwidthCalcResponse
      */
     @Deprecated
@@ -371,14 +408,13 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBandwidthCalcRequest 请求对象
+     * @param request ShowBandwidthCalcRequest 请求对象
      * @return SyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse>
      */
     @Deprecated
     public SyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse> showBandwidthCalcInvoker(
         ShowBandwidthCalcRequest request) {
-        return new SyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse>(request, CdnMeta.showBandwidthCalc,
-            hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showBandwidthCalc, hcClient);
     }
 
     /**
@@ -396,7 +432,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowChargeModesRequest 请求对象
+     * @param request ShowChargeModesRequest 请求对象
      * @return ShowChargeModesResponse
      */
     public ShowChargeModesResponse showChargeModes(ShowChargeModesRequest request) {
@@ -418,13 +454,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowChargeModesRequest 请求对象
+     * @param request ShowChargeModesRequest 请求对象
      * @return SyncInvoker<ShowChargeModesRequest, ShowChargeModesResponse>
      */
     public SyncInvoker<ShowChargeModesRequest, ShowChargeModesResponse> showChargeModesInvoker(
         ShowChargeModesRequest request) {
-        return new SyncInvoker<ShowChargeModesRequest, ShowChargeModesResponse>(request, CdnMeta.showChargeModes,
-            hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showChargeModes, hcClient);
     }
 
     /**
@@ -434,7 +469,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainDetailByNameRequest 请求对象
+     * @param request ShowDomainDetailByNameRequest 请求对象
      * @return ShowDomainDetailByNameResponse
      */
     public ShowDomainDetailByNameResponse showDomainDetailByName(ShowDomainDetailByNameRequest request) {
@@ -448,13 +483,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainDetailByNameRequest 请求对象
+     * @param request ShowDomainDetailByNameRequest 请求对象
      * @return SyncInvoker<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse>
      */
     public SyncInvoker<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse> showDomainDetailByNameInvoker(
         ShowDomainDetailByNameRequest request) {
-        return new SyncInvoker<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse>(request,
-            CdnMeta.showDomainDetailByName, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showDomainDetailByName, hcClient);
     }
 
     /**
@@ -464,7 +498,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainFullConfigRequest 请求对象
+     * @param request ShowDomainFullConfigRequest 请求对象
      * @return ShowDomainFullConfigResponse
      */
     public ShowDomainFullConfigResponse showDomainFullConfig(ShowDomainFullConfigRequest request) {
@@ -478,13 +512,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainFullConfigRequest 请求对象
+     * @param request ShowDomainFullConfigRequest 请求对象
      * @return SyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse>
      */
     public SyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> showDomainFullConfigInvoker(
         ShowDomainFullConfigRequest request) {
-        return new SyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse>(request,
-            CdnMeta.showDomainFullConfig, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showDomainFullConfig, hcClient);
     }
 
     /**
@@ -506,7 +539,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainLocationStatsRequest 请求对象
+     * @param request ShowDomainLocationStatsRequest 请求对象
      * @return ShowDomainLocationStatsResponse
      */
     public ShowDomainLocationStatsResponse showDomainLocationStats(ShowDomainLocationStatsRequest request) {
@@ -532,13 +565,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainLocationStatsRequest 请求对象
+     * @param request ShowDomainLocationStatsRequest 请求对象
      * @return SyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse>
      */
     public SyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> showDomainLocationStatsInvoker(
         ShowDomainLocationStatsRequest request) {
-        return new SyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse>(request,
-            CdnMeta.showDomainLocationStats, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showDomainLocationStats, hcClient);
     }
 
     /**
@@ -560,7 +592,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainStatsRequest 请求对象
+     * @param request ShowDomainStatsRequest 请求对象
      * @return ShowDomainStatsResponse
      */
     public ShowDomainStatsResponse showDomainStats(ShowDomainStatsRequest request) {
@@ -586,13 +618,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDomainStatsRequest 请求对象
+     * @param request ShowDomainStatsRequest 请求对象
      * @return SyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse>
      */
     public SyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse> showDomainStatsInvoker(
         ShowDomainStatsRequest request) {
-        return new SyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse>(request, CdnMeta.showDomainStats,
-            hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showDomainStats, hcClient);
     }
 
     /**
@@ -602,7 +633,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHistoryTaskDetailsRequest 请求对象
+     * @param request ShowHistoryTaskDetailsRequest 请求对象
      * @return ShowHistoryTaskDetailsResponse
      */
     public ShowHistoryTaskDetailsResponse showHistoryTaskDetails(ShowHistoryTaskDetailsRequest request) {
@@ -616,13 +647,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHistoryTaskDetailsRequest 请求对象
+     * @param request ShowHistoryTaskDetailsRequest 请求对象
      * @return SyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse>
      */
     public SyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> showHistoryTaskDetailsInvoker(
         ShowHistoryTaskDetailsRequest request) {
-        return new SyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse>(request,
-            CdnMeta.showHistoryTaskDetails, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showHistoryTaskDetails, hcClient);
     }
 
     /**
@@ -632,7 +662,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHistoryTasksRequest 请求对象
+     * @param request ShowHistoryTasksRequest 请求对象
      * @return ShowHistoryTasksResponse
      */
     public ShowHistoryTasksResponse showHistoryTasks(ShowHistoryTasksRequest request) {
@@ -646,13 +676,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHistoryTasksRequest 请求对象
+     * @param request ShowHistoryTasksRequest 请求对象
      * @return SyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse>
      */
     public SyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse> showHistoryTasksInvoker(
         ShowHistoryTasksRequest request) {
-        return new SyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse>(request, CdnMeta.showHistoryTasks,
-            hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showHistoryTasks, hcClient);
     }
 
     /**
@@ -674,7 +703,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopDomainNamesRequest 请求对象
+     * @param request ShowTopDomainNamesRequest 请求对象
      * @return ShowTopDomainNamesResponse
      */
     @Deprecated
@@ -701,14 +730,13 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopDomainNamesRequest 请求对象
+     * @param request ShowTopDomainNamesRequest 请求对象
      * @return SyncInvoker<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse>
      */
     @Deprecated
     public SyncInvoker<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse> showTopDomainNamesInvoker(
         ShowTopDomainNamesRequest request) {
-        return new SyncInvoker<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse>(request,
-            CdnMeta.showTopDomainNames, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showTopDomainNames, hcClient);
     }
 
     /**
@@ -730,7 +758,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopUrlRequest 请求对象
+     * @param request ShowTopUrlRequest 请求对象
      * @return ShowTopUrlResponse
      */
     public ShowTopUrlResponse showTopUrl(ShowTopUrlRequest request) {
@@ -756,11 +784,11 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopUrlRequest 请求对象
+     * @param request ShowTopUrlRequest 请求对象
      * @return SyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse>
      */
     public SyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse> showTopUrlInvoker(ShowTopUrlRequest request) {
-        return new SyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse>(request, CdnMeta.showTopUrl, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showTopUrl, hcClient);
     }
 
     /**
@@ -770,7 +798,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUrlTaskInfoRequest 请求对象
+     * @param request ShowUrlTaskInfoRequest 请求对象
      * @return ShowUrlTaskInfoResponse
      */
     public ShowUrlTaskInfoResponse showUrlTaskInfo(ShowUrlTaskInfoRequest request) {
@@ -784,13 +812,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUrlTaskInfoRequest 请求对象
+     * @param request ShowUrlTaskInfoRequest 请求对象
      * @return SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse>
      */
     public SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> showUrlTaskInfoInvoker(
         ShowUrlTaskInfoRequest request) {
-        return new SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse>(request, CdnMeta.showUrlTaskInfo,
-            hcClient);
+        return new SyncInvoker<>(request, CdnMeta.showUrlTaskInfo, hcClient);
     }
 
     /**
@@ -800,7 +827,7 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainFullConfigRequest 请求对象
+     * @param request UpdateDomainFullConfigRequest 请求对象
      * @return UpdateDomainFullConfigResponse
      */
     public UpdateDomainFullConfigResponse updateDomainFullConfig(UpdateDomainFullConfigRequest request) {
@@ -814,13 +841,12 @@ public class CdnClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainFullConfigRequest 请求对象
+     * @param request UpdateDomainFullConfigRequest 请求对象
      * @return SyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse>
      */
     public SyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> updateDomainFullConfigInvoker(
         UpdateDomainFullConfigRequest request) {
-        return new SyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse>(request,
-            CdnMeta.updateDomainFullConfig, hcClient);
+        return new SyncInvoker<>(request, CdnMeta.updateDomainFullConfig, hcClient);
     }
 
 }

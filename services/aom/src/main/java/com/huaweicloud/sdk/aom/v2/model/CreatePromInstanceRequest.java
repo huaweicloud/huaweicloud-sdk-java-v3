@@ -14,16 +14,16 @@ public class CreatePromInstanceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private PromInstanceEpsModel body;
+    private PromInstanceRequestModel body;
 
-    public CreatePromInstanceRequest withBody(PromInstanceEpsModel body) {
+    public CreatePromInstanceRequest withBody(PromInstanceRequestModel body) {
         this.body = body;
         return this;
     }
 
-    public CreatePromInstanceRequest withBody(Consumer<PromInstanceEpsModel> bodySetter) {
+    public CreatePromInstanceRequest withBody(Consumer<PromInstanceRequestModel> bodySetter) {
         if (this.body == null) {
-            this.body = new PromInstanceEpsModel();
+            this.body = new PromInstanceRequestModel();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreatePromInstanceRequest {
      * Get body
      * @return body
      */
-    public PromInstanceEpsModel getBody() {
+    public PromInstanceRequestModel getBody() {
         return body;
     }
 
-    public void setBody(PromInstanceEpsModel body) {
+    public void setBody(PromInstanceRequestModel body) {
         this.body = body;
     }
 

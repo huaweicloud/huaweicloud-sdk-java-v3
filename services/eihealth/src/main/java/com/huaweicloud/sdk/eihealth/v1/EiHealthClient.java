@@ -618,7 +618,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCancelJobRequest 请求对象
+     * @param request BatchCancelJobRequest 请求对象
      * @return BatchCancelJobResponse
      */
     public BatchCancelJobResponse batchCancelJob(BatchCancelJobRequest request) {
@@ -632,13 +632,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCancelJobRequest 请求对象
+     * @param request BatchCancelJobRequest 请求对象
      * @return SyncInvoker<BatchCancelJobRequest, BatchCancelJobResponse>
      */
     public SyncInvoker<BatchCancelJobRequest, BatchCancelJobResponse> batchCancelJobInvoker(
         BatchCancelJobRequest request) {
-        return new SyncInvoker<BatchCancelJobRequest, BatchCancelJobResponse>(request, EiHealthMeta.batchCancelJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchCancelJob, hcClient);
     }
 
     /**
@@ -648,7 +647,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDataRequest 请求对象
+     * @param request BatchDeleteDataRequest 请求对象
      * @return BatchDeleteDataResponse
      */
     public BatchDeleteDataResponse batchDeleteData(BatchDeleteDataRequest request) {
@@ -662,13 +661,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDataRequest 请求对象
+     * @param request BatchDeleteDataRequest 请求对象
      * @return SyncInvoker<BatchDeleteDataRequest, BatchDeleteDataResponse>
      */
     public SyncInvoker<BatchDeleteDataRequest, BatchDeleteDataResponse> batchDeleteDataInvoker(
         BatchDeleteDataRequest request) {
-        return new SyncInvoker<BatchDeleteDataRequest, BatchDeleteDataResponse>(request, EiHealthMeta.batchDeleteData,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchDeleteData, hcClient);
     }
 
     /**
@@ -678,7 +676,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteJobRequest 请求对象
+     * @param request BatchDeleteJobRequest 请求对象
      * @return BatchDeleteJobResponse
      */
     public BatchDeleteJobResponse batchDeleteJob(BatchDeleteJobRequest request) {
@@ -692,13 +690,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteJobRequest 请求对象
+     * @param request BatchDeleteJobRequest 请求对象
      * @return SyncInvoker<BatchDeleteJobRequest, BatchDeleteJobResponse>
      */
     public SyncInvoker<BatchDeleteJobRequest, BatchDeleteJobResponse> batchDeleteJobInvoker(
         BatchDeleteJobRequest request) {
-        return new SyncInvoker<BatchDeleteJobRequest, BatchDeleteJobResponse>(request, EiHealthMeta.batchDeleteJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchDeleteJob, hcClient);
     }
 
     /**
@@ -708,7 +705,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteLabelRequest 请求对象
+     * @param request BatchDeleteLabelRequest 请求对象
      * @return BatchDeleteLabelResponse
      */
     public BatchDeleteLabelResponse batchDeleteLabel(BatchDeleteLabelRequest request) {
@@ -722,13 +719,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteLabelRequest 请求对象
+     * @param request BatchDeleteLabelRequest 请求对象
      * @return SyncInvoker<BatchDeleteLabelRequest, BatchDeleteLabelResponse>
      */
     public SyncInvoker<BatchDeleteLabelRequest, BatchDeleteLabelResponse> batchDeleteLabelInvoker(
         BatchDeleteLabelRequest request) {
-        return new SyncInvoker<BatchDeleteLabelRequest, BatchDeleteLabelResponse>(request,
-            EiHealthMeta.batchDeleteLabel, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchDeleteLabel, hcClient);
     }
 
     /**
@@ -738,7 +734,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMemberRequest 请求对象
+     * @param request BatchDeleteMemberRequest 请求对象
      * @return BatchDeleteMemberResponse
      */
     public BatchDeleteMemberResponse batchDeleteMember(BatchDeleteMemberRequest request) {
@@ -752,13 +748,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMemberRequest 请求对象
+     * @param request BatchDeleteMemberRequest 请求对象
      * @return SyncInvoker<BatchDeleteMemberRequest, BatchDeleteMemberResponse>
      */
     public SyncInvoker<BatchDeleteMemberRequest, BatchDeleteMemberResponse> batchDeleteMemberInvoker(
         BatchDeleteMemberRequest request) {
-        return new SyncInvoker<BatchDeleteMemberRequest, BatchDeleteMemberResponse>(request,
-            EiHealthMeta.batchDeleteMember, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchDeleteMember, hcClient);
     }
 
     /**
@@ -768,7 +763,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteNoticeRequest 请求对象
+     * @param request BatchDeleteNoticeRequest 请求对象
      * @return BatchDeleteNoticeResponse
      */
     public BatchDeleteNoticeResponse batchDeleteNotice(BatchDeleteNoticeRequest request) {
@@ -782,13 +777,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteNoticeRequest 请求对象
+     * @param request BatchDeleteNoticeRequest 请求对象
      * @return SyncInvoker<BatchDeleteNoticeRequest, BatchDeleteNoticeResponse>
      */
     public SyncInvoker<BatchDeleteNoticeRequest, BatchDeleteNoticeResponse> batchDeleteNoticeInvoker(
         BatchDeleteNoticeRequest request) {
-        return new SyncInvoker<BatchDeleteNoticeRequest, BatchDeleteNoticeResponse>(request,
-            EiHealthMeta.batchDeleteNotice, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchDeleteNotice, hcClient);
     }
 
     /**
@@ -798,7 +792,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagRequest 请求对象
+     * @param request BatchDeleteTagRequest 请求对象
      * @return BatchDeleteTagResponse
      */
     public BatchDeleteTagResponse batchDeleteTag(BatchDeleteTagRequest request) {
@@ -812,13 +806,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagRequest 请求对象
+     * @param request BatchDeleteTagRequest 请求对象
      * @return SyncInvoker<BatchDeleteTagRequest, BatchDeleteTagResponse>
      */
     public SyncInvoker<BatchDeleteTagRequest, BatchDeleteTagResponse> batchDeleteTagInvoker(
         BatchDeleteTagRequest request) {
-        return new SyncInvoker<BatchDeleteTagRequest, BatchDeleteTagResponse>(request, EiHealthMeta.batchDeleteTag,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchDeleteTag, hcClient);
     }
 
     /**
@@ -828,7 +821,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDownloadResourceStatDataRequest 请求对象
+     * @param request BatchDownloadResourceStatDataRequest 请求对象
      * @return BatchDownloadResourceStatDataResponse
      */
     public BatchDownloadResourceStatDataResponse batchDownloadResourceStatData(
@@ -843,13 +836,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDownloadResourceStatDataRequest 请求对象
+     * @param request BatchDownloadResourceStatDataRequest 请求对象
      * @return SyncInvoker<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse>
      */
     public SyncInvoker<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse> batchDownloadResourceStatDataInvoker(
         BatchDownloadResourceStatDataRequest request) {
-        return new SyncInvoker<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse>(request,
-            EiHealthMeta.batchDownloadResourceStatData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchDownloadResourceStatData, hcClient);
     }
 
     /**
@@ -859,7 +851,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchImportAppRequest 请求对象
+     * @param request BatchImportAppRequest 请求对象
      * @return BatchImportAppResponse
      */
     public BatchImportAppResponse batchImportApp(BatchImportAppRequest request) {
@@ -873,13 +865,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchImportAppRequest 请求对象
+     * @param request BatchImportAppRequest 请求对象
      * @return SyncInvoker<BatchImportAppRequest, BatchImportAppResponse>
      */
     public SyncInvoker<BatchImportAppRequest, BatchImportAppResponse> batchImportAppInvoker(
         BatchImportAppRequest request) {
-        return new SyncInvoker<BatchImportAppRequest, BatchImportAppResponse>(request, EiHealthMeta.batchImportApp,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchImportApp, hcClient);
     }
 
     /**
@@ -889,7 +880,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRetryJobRequest 请求对象
+     * @param request BatchRetryJobRequest 请求对象
      * @return BatchRetryJobResponse
      */
     public BatchRetryJobResponse batchRetryJob(BatchRetryJobRequest request) {
@@ -903,12 +894,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRetryJobRequest 请求对象
+     * @param request BatchRetryJobRequest 请求对象
      * @return SyncInvoker<BatchRetryJobRequest, BatchRetryJobResponse>
      */
     public SyncInvoker<BatchRetryJobRequest, BatchRetryJobResponse> batchRetryJobInvoker(BatchRetryJobRequest request) {
-        return new SyncInvoker<BatchRetryJobRequest, BatchRetryJobResponse>(request, EiHealthMeta.batchRetryJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchRetryJob, hcClient);
     }
 
     /**
@@ -918,7 +908,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNodeLabelRequest 请求对象
+     * @param request BatchUpdateNodeLabelRequest 请求对象
      * @return BatchUpdateNodeLabelResponse
      */
     public BatchUpdateNodeLabelResponse batchUpdateNodeLabel(BatchUpdateNodeLabelRequest request) {
@@ -932,13 +922,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNodeLabelRequest 请求对象
+     * @param request BatchUpdateNodeLabelRequest 请求对象
      * @return SyncInvoker<BatchUpdateNodeLabelRequest, BatchUpdateNodeLabelResponse>
      */
     public SyncInvoker<BatchUpdateNodeLabelRequest, BatchUpdateNodeLabelResponse> batchUpdateNodeLabelInvoker(
         BatchUpdateNodeLabelRequest request) {
-        return new SyncInvoker<BatchUpdateNodeLabelRequest, BatchUpdateNodeLabelResponse>(request,
-            EiHealthMeta.batchUpdateNodeLabel, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchUpdateNodeLabel, hcClient);
     }
 
     /**
@@ -948,7 +937,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNoticeRequest 请求对象
+     * @param request BatchUpdateNoticeRequest 请求对象
      * @return BatchUpdateNoticeResponse
      */
     public BatchUpdateNoticeResponse batchUpdateNotice(BatchUpdateNoticeRequest request) {
@@ -962,13 +951,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateNoticeRequest 请求对象
+     * @param request BatchUpdateNoticeRequest 请求对象
      * @return SyncInvoker<BatchUpdateNoticeRequest, BatchUpdateNoticeResponse>
      */
     public SyncInvoker<BatchUpdateNoticeRequest, BatchUpdateNoticeResponse> batchUpdateNoticeInvoker(
         BatchUpdateNoticeRequest request) {
-        return new SyncInvoker<BatchUpdateNoticeRequest, BatchUpdateNoticeResponse>(request,
-            EiHealthMeta.batchUpdateNotice, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.batchUpdateNotice, hcClient);
     }
 
     /**
@@ -978,7 +966,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelDataJobRequest 请求对象
+     * @param request CancelDataJobRequest 请求对象
      * @return CancelDataJobResponse
      */
     public CancelDataJobResponse cancelDataJob(CancelDataJobRequest request) {
@@ -992,12 +980,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelDataJobRequest 请求对象
+     * @param request CancelDataJobRequest 请求对象
      * @return SyncInvoker<CancelDataJobRequest, CancelDataJobResponse>
      */
     public SyncInvoker<CancelDataJobRequest, CancelDataJobResponse> cancelDataJobInvoker(CancelDataJobRequest request) {
-        return new SyncInvoker<CancelDataJobRequest, CancelDataJobResponse>(request, EiHealthMeta.cancelDataJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.cancelDataJob, hcClient);
     }
 
     /**
@@ -1007,7 +994,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelDrugJobRequest 请求对象
+     * @param request CancelDrugJobRequest 请求对象
      * @return CancelDrugJobResponse
      */
     public CancelDrugJobResponse cancelDrugJob(CancelDrugJobRequest request) {
@@ -1021,12 +1008,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelDrugJobRequest 请求对象
+     * @param request CancelDrugJobRequest 请求对象
      * @return SyncInvoker<CancelDrugJobRequest, CancelDrugJobResponse>
      */
     public SyncInvoker<CancelDrugJobRequest, CancelDrugJobResponse> cancelDrugJobInvoker(CancelDrugJobRequest request) {
-        return new SyncInvoker<CancelDrugJobRequest, CancelDrugJobResponse>(request, EiHealthMeta.cancelDrugJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.cancelDrugJob, hcClient);
     }
 
     /**
@@ -1036,7 +1022,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelJobRequest 请求对象
+     * @param request CancelJobRequest 请求对象
      * @return CancelJobResponse
      */
     public CancelJobResponse cancelJob(CancelJobRequest request) {
@@ -1050,11 +1036,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelJobRequest 请求对象
+     * @param request CancelJobRequest 请求对象
      * @return SyncInvoker<CancelJobRequest, CancelJobResponse>
      */
     public SyncInvoker<CancelJobRequest, CancelJobResponse> cancelJobInvoker(CancelJobRequest request) {
-        return new SyncInvoker<CancelJobRequest, CancelJobResponse>(request, EiHealthMeta.cancelJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.cancelJob, hcClient);
     }
 
     /**
@@ -1064,7 +1050,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePasswordRequest 请求对象
+     * @param request ChangePasswordRequest 请求对象
      * @return ChangePasswordResponse
      */
     public ChangePasswordResponse changePassword(ChangePasswordRequest request) {
@@ -1078,13 +1064,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePasswordRequest 请求对象
+     * @param request ChangePasswordRequest 请求对象
      * @return SyncInvoker<ChangePasswordRequest, ChangePasswordResponse>
      */
     public SyncInvoker<ChangePasswordRequest, ChangePasswordResponse> changePasswordInvoker(
         ChangePasswordRequest request) {
-        return new SyncInvoker<ChangePasswordRequest, ChangePasswordResponse>(request, EiHealthMeta.changePassword,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.changePassword, hcClient);
     }
 
     /**
@@ -1094,7 +1079,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckEmailConnectionRequest 请求对象
+     * @param request CheckEmailConnectionRequest 请求对象
      * @return CheckEmailConnectionResponse
      */
     public CheckEmailConnectionResponse checkEmailConnection(CheckEmailConnectionRequest request) {
@@ -1108,13 +1093,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckEmailConnectionRequest 请求对象
+     * @param request CheckEmailConnectionRequest 请求对象
      * @return SyncInvoker<CheckEmailConnectionRequest, CheckEmailConnectionResponse>
      */
     public SyncInvoker<CheckEmailConnectionRequest, CheckEmailConnectionResponse> checkEmailConnectionInvoker(
         CheckEmailConnectionRequest request) {
-        return new SyncInvoker<CheckEmailConnectionRequest, CheckEmailConnectionResponse>(request,
-            EiHealthMeta.checkEmailConnection, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.checkEmailConnection, hcClient);
     }
 
     /**
@@ -1124,7 +1108,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTokenVerificationRequest 请求对象
+     * @param request CheckTokenVerificationRequest 请求对象
      * @return CheckTokenVerificationResponse
      */
     public CheckTokenVerificationResponse checkTokenVerification(CheckTokenVerificationRequest request) {
@@ -1138,13 +1122,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTokenVerificationRequest 请求对象
+     * @param request CheckTokenVerificationRequest 请求对象
      * @return SyncInvoker<CheckTokenVerificationRequest, CheckTokenVerificationResponse>
      */
     public SyncInvoker<CheckTokenVerificationRequest, CheckTokenVerificationResponse> checkTokenVerificationInvoker(
         CheckTokenVerificationRequest request) {
-        return new SyncInvoker<CheckTokenVerificationRequest, CheckTokenVerificationResponse>(request,
-            EiHealthMeta.checkTokenVerification, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.checkTokenVerification, hcClient);
     }
 
     /**
@@ -1154,7 +1137,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyDataRequest 请求对象
+     * @param request CopyDataRequest 请求对象
      * @return CopyDataResponse
      */
     public CopyDataResponse copyData(CopyDataRequest request) {
@@ -1168,11 +1151,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyDataRequest 请求对象
+     * @param request CopyDataRequest 请求对象
      * @return SyncInvoker<CopyDataRequest, CopyDataResponse>
      */
     public SyncInvoker<CopyDataRequest, CopyDataResponse> copyDataInvoker(CopyDataRequest request) {
-        return new SyncInvoker<CopyDataRequest, CopyDataResponse>(request, EiHealthMeta.copyData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.copyData, hcClient);
     }
 
     /**
@@ -1182,7 +1165,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAdmetJobRequest 请求对象
+     * @param request CreateAdmetJobRequest 请求对象
      * @return CreateAdmetJobResponse
      */
     public CreateAdmetJobResponse createAdmetJob(CreateAdmetJobRequest request) {
@@ -1196,13 +1179,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAdmetJobRequest 请求对象
+     * @param request CreateAdmetJobRequest 请求对象
      * @return SyncInvoker<CreateAdmetJobRequest, CreateAdmetJobResponse>
      */
     public SyncInvoker<CreateAdmetJobRequest, CreateAdmetJobResponse> createAdmetJobInvoker(
         CreateAdmetJobRequest request) {
-        return new SyncInvoker<CreateAdmetJobRequest, CreateAdmetJobResponse>(request, EiHealthMeta.createAdmetJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createAdmetJob, hcClient);
     }
 
     /**
@@ -1212,7 +1194,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return CreateAppResponse
      */
     public CreateAppResponse createApp(CreateAppRequest request) {
@@ -1226,11 +1208,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return SyncInvoker<CreateAppRequest, CreateAppResponse>
      */
     public SyncInvoker<CreateAppRequest, CreateAppResponse> createAppInvoker(CreateAppRequest request) {
-        return new SyncInvoker<CreateAppRequest, CreateAppResponse>(request, EiHealthMeta.createApp, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createApp, hcClient);
     }
 
     /**
@@ -1240,7 +1222,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAutoJobRequest 请求对象
+     * @param request CreateAutoJobRequest 请求对象
      * @return CreateAutoJobResponse
      */
     public CreateAutoJobResponse createAutoJob(CreateAutoJobRequest request) {
@@ -1254,12 +1236,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAutoJobRequest 请求对象
+     * @param request CreateAutoJobRequest 请求对象
      * @return SyncInvoker<CreateAutoJobRequest, CreateAutoJobResponse>
      */
     public SyncInvoker<CreateAutoJobRequest, CreateAutoJobResponse> createAutoJobInvoker(CreateAutoJobRequest request) {
-        return new SyncInvoker<CreateAutoJobRequest, CreateAutoJobResponse>(request, EiHealthMeta.createAutoJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createAutoJob, hcClient);
     }
 
     /**
@@ -1269,7 +1250,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackupRequest 请求对象
+     * @param request CreateBackupRequest 请求对象
      * @return CreateBackupResponse
      */
     public CreateBackupResponse createBackup(CreateBackupRequest request) {
@@ -1283,11 +1264,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBackupRequest 请求对象
+     * @param request CreateBackupRequest 请求对象
      * @return SyncInvoker<CreateBackupRequest, CreateBackupResponse>
      */
     public SyncInvoker<CreateBackupRequest, CreateBackupResponse> createBackupInvoker(CreateBackupRequest request) {
-        return new SyncInvoker<CreateBackupRequest, CreateBackupResponse>(request, EiHealthMeta.createBackup, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createBackup, hcClient);
     }
 
     /**
@@ -1297,7 +1278,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCodeRequest 请求对象
+     * @param request CreateCodeRequest 请求对象
      * @return CreateCodeResponse
      */
     public CreateCodeResponse createCode(CreateCodeRequest request) {
@@ -1311,11 +1292,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCodeRequest 请求对象
+     * @param request CreateCodeRequest 请求对象
      * @return SyncInvoker<CreateCodeRequest, CreateCodeResponse>
      */
     public SyncInvoker<CreateCodeRequest, CreateCodeResponse> createCodeInvoker(CreateCodeRequest request) {
-        return new SyncInvoker<CreateCodeRequest, CreateCodeResponse>(request, EiHealthMeta.createCode, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createCode, hcClient);
     }
 
     /**
@@ -1325,7 +1306,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateComputingResourceRequest 请求对象
+     * @param request CreateComputingResourceRequest 请求对象
      * @return CreateComputingResourceResponse
      */
     public CreateComputingResourceResponse createComputingResource(CreateComputingResourceRequest request) {
@@ -1339,13 +1320,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateComputingResourceRequest 请求对象
+     * @param request CreateComputingResourceRequest 请求对象
      * @return SyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse>
      */
     public SyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse> createComputingResourceInvoker(
         CreateComputingResourceRequest request) {
-        return new SyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse>(request,
-            EiHealthMeta.createComputingResource, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createComputingResource, hcClient);
     }
 
     /**
@@ -1355,7 +1335,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataRequest 请求对象
+     * @param request CreateDataRequest 请求对象
      * @return CreateDataResponse
      */
     public CreateDataResponse createData(CreateDataRequest request) {
@@ -1369,11 +1349,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataRequest 请求对象
+     * @param request CreateDataRequest 请求对象
      * @return SyncInvoker<CreateDataRequest, CreateDataResponse>
      */
     public SyncInvoker<CreateDataRequest, CreateDataResponse> createDataInvoker(CreateDataRequest request) {
-        return new SyncInvoker<CreateDataRequest, CreateDataResponse>(request, EiHealthMeta.createData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createData, hcClient);
     }
 
     /**
@@ -1383,7 +1363,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseDataRequest 请求对象
+     * @param request CreateDatabaseDataRequest 请求对象
      * @return CreateDatabaseDataResponse
      */
     public CreateDatabaseDataResponse createDatabaseData(CreateDatabaseDataRequest request) {
@@ -1397,13 +1377,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseDataRequest 请求对象
+     * @param request CreateDatabaseDataRequest 请求对象
      * @return SyncInvoker<CreateDatabaseDataRequest, CreateDatabaseDataResponse>
      */
     public SyncInvoker<CreateDatabaseDataRequest, CreateDatabaseDataResponse> createDatabaseDataInvoker(
         CreateDatabaseDataRequest request) {
-        return new SyncInvoker<CreateDatabaseDataRequest, CreateDatabaseDataResponse>(request,
-            EiHealthMeta.createDatabaseData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createDatabaseData, hcClient);
     }
 
     /**
@@ -1413,7 +1392,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseResourceRequest 请求对象
+     * @param request CreateDatabaseResourceRequest 请求对象
      * @return CreateDatabaseResourceResponse
      */
     public CreateDatabaseResourceResponse createDatabaseResource(CreateDatabaseResourceRequest request) {
@@ -1427,13 +1406,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseResourceRequest 请求对象
+     * @param request CreateDatabaseResourceRequest 请求对象
      * @return SyncInvoker<CreateDatabaseResourceRequest, CreateDatabaseResourceResponse>
      */
     public SyncInvoker<CreateDatabaseResourceRequest, CreateDatabaseResourceResponse> createDatabaseResourceInvoker(
         CreateDatabaseResourceRequest request) {
-        return new SyncInvoker<CreateDatabaseResourceRequest, CreateDatabaseResourceResponse>(request,
-            EiHealthMeta.createDatabaseResource, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createDatabaseResource, hcClient);
     }
 
     /**
@@ -1443,7 +1421,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDockingJobRequest 请求对象
+     * @param request CreateDockingJobRequest 请求对象
      * @return CreateDockingJobResponse
      */
     public CreateDockingJobResponse createDockingJob(CreateDockingJobRequest request) {
@@ -1457,13 +1435,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDockingJobRequest 请求对象
+     * @param request CreateDockingJobRequest 请求对象
      * @return SyncInvoker<CreateDockingJobRequest, CreateDockingJobResponse>
      */
     public SyncInvoker<CreateDockingJobRequest, CreateDockingJobResponse> createDockingJobInvoker(
         CreateDockingJobRequest request) {
-        return new SyncInvoker<CreateDockingJobRequest, CreateDockingJobResponse>(request,
-            EiHealthMeta.createDockingJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createDockingJob, hcClient);
     }
 
     /**
@@ -1473,7 +1450,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugModelRequest 请求对象
+     * @param request CreateDrugModelRequest 请求对象
      * @return CreateDrugModelResponse
      */
     public CreateDrugModelResponse createDrugModel(CreateDrugModelRequest request) {
@@ -1487,13 +1464,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugModelRequest 请求对象
+     * @param request CreateDrugModelRequest 请求对象
      * @return SyncInvoker<CreateDrugModelRequest, CreateDrugModelResponse>
      */
     public SyncInvoker<CreateDrugModelRequest, CreateDrugModelResponse> createDrugModelInvoker(
         CreateDrugModelRequest request) {
-        return new SyncInvoker<CreateDrugModelRequest, CreateDrugModelResponse>(request, EiHealthMeta.createDrugModel,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createDrugModel, hcClient);
     }
 
     /**
@@ -1503,7 +1479,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFepJobRequest 请求对象
+     * @param request CreateFepJobRequest 请求对象
      * @return CreateFepJobResponse
      */
     public CreateFepJobResponse createFepJob(CreateFepJobRequest request) {
@@ -1517,11 +1493,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFepJobRequest 请求对象
+     * @param request CreateFepJobRequest 请求对象
      * @return SyncInvoker<CreateFepJobRequest, CreateFepJobResponse>
      */
     public SyncInvoker<CreateFepJobRequest, CreateFepJobResponse> createFepJobInvoker(CreateFepJobRequest request) {
-        return new SyncInvoker<CreateFepJobRequest, CreateFepJobResponse>(request, EiHealthMeta.createFepJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createFepJob, hcClient);
     }
 
     /**
@@ -1531,7 +1507,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageRequest 请求对象
+     * @param request CreateImageRequest 请求对象
      * @return CreateImageResponse
      */
     public CreateImageResponse createImage(CreateImageRequest request) {
@@ -1545,11 +1521,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateImageRequest 请求对象
+     * @param request CreateImageRequest 请求对象
      * @return SyncInvoker<CreateImageRequest, CreateImageResponse>
      */
     public SyncInvoker<CreateImageRequest, CreateImageResponse> createImageInvoker(CreateImageRequest request) {
-        return new SyncInvoker<CreateImageRequest, CreateImageResponse>(request, EiHealthMeta.createImage, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createImage, hcClient);
     }
 
     /**
@@ -1559,7 +1535,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
      */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
@@ -1573,13 +1549,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
     public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
         CreateInstanceRequest request) {
-        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, EiHealthMeta.createInstance,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createInstance, hcClient);
     }
 
     /**
@@ -1589,7 +1564,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLabelRequest 请求对象
+     * @param request CreateLabelRequest 请求对象
      * @return CreateLabelResponse
      */
     public CreateLabelResponse createLabel(CreateLabelRequest request) {
@@ -1603,11 +1578,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLabelRequest 请求对象
+     * @param request CreateLabelRequest 请求对象
      * @return SyncInvoker<CreateLabelRequest, CreateLabelResponse>
      */
     public SyncInvoker<CreateLabelRequest, CreateLabelResponse> createLabelInvoker(CreateLabelRequest request) {
-        return new SyncInvoker<CreateLabelRequest, CreateLabelResponse>(request, EiHealthMeta.createLabel, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createLabel, hcClient);
     }
 
     /**
@@ -1617,7 +1592,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLabelPageRequest 请求对象
+     * @param request CreateLabelPageRequest 请求对象
      * @return CreateLabelPageResponse
      */
     public CreateLabelPageResponse createLabelPage(CreateLabelPageRequest request) {
@@ -1631,13 +1606,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateLabelPageRequest 请求对象
+     * @param request CreateLabelPageRequest 请求对象
      * @return SyncInvoker<CreateLabelPageRequest, CreateLabelPageResponse>
      */
     public SyncInvoker<CreateLabelPageRequest, CreateLabelPageResponse> createLabelPageInvoker(
         CreateLabelPageRequest request) {
-        return new SyncInvoker<CreateLabelPageRequest, CreateLabelPageResponse>(request, EiHealthMeta.createLabelPage,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createLabelPage, hcClient);
     }
 
     /**
@@ -1647,7 +1621,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOptmJobRequest 请求对象
+     * @param request CreateOptmJobRequest 请求对象
      * @return CreateOptmJobResponse
      */
     public CreateOptmJobResponse createOptmJob(CreateOptmJobRequest request) {
@@ -1661,12 +1635,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOptmJobRequest 请求对象
+     * @param request CreateOptmJobRequest 请求对象
      * @return SyncInvoker<CreateOptmJobRequest, CreateOptmJobResponse>
      */
     public SyncInvoker<CreateOptmJobRequest, CreateOptmJobResponse> createOptmJobInvoker(CreateOptmJobRequest request) {
-        return new SyncInvoker<CreateOptmJobRequest, CreateOptmJobResponse>(request, EiHealthMeta.createOptmJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createOptmJob, hcClient);
     }
 
     /**
@@ -1676,7 +1649,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePerformanceResourceRequest 请求对象
+     * @param request CreatePerformanceResourceRequest 请求对象
      * @return CreatePerformanceResourceResponse
      */
     public CreatePerformanceResourceResponse createPerformanceResource(CreatePerformanceResourceRequest request) {
@@ -1690,13 +1663,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePerformanceResourceRequest 请求对象
+     * @param request CreatePerformanceResourceRequest 请求对象
      * @return SyncInvoker<CreatePerformanceResourceRequest, CreatePerformanceResourceResponse>
      */
     public SyncInvoker<CreatePerformanceResourceRequest, CreatePerformanceResourceResponse> createPerformanceResourceInvoker(
         CreatePerformanceResourceRequest request) {
-        return new SyncInvoker<CreatePerformanceResourceRequest, CreatePerformanceResourceResponse>(request,
-            EiHealthMeta.createPerformanceResource, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createPerformanceResource, hcClient);
     }
 
     /**
@@ -1706,7 +1678,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePocketDetectionJobRequest 请求对象
+     * @param request CreatePocketDetectionJobRequest 请求对象
      * @return CreatePocketDetectionJobResponse
      */
     public CreatePocketDetectionJobResponse createPocketDetectionJob(CreatePocketDetectionJobRequest request) {
@@ -1720,13 +1692,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePocketDetectionJobRequest 请求对象
+     * @param request CreatePocketDetectionJobRequest 请求对象
      * @return SyncInvoker<CreatePocketDetectionJobRequest, CreatePocketDetectionJobResponse>
      */
     public SyncInvoker<CreatePocketDetectionJobRequest, CreatePocketDetectionJobResponse> createPocketDetectionJobInvoker(
         CreatePocketDetectionJobRequest request) {
-        return new SyncInvoker<CreatePocketDetectionJobRequest, CreatePocketDetectionJobResponse>(request,
-            EiHealthMeta.createPocketDetectionJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createPocketDetectionJob, hcClient);
     }
 
     /**
@@ -1736,7 +1707,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePocketMolDesignJobRequest 请求对象
+     * @param request CreatePocketMolDesignJobRequest 请求对象
      * @return CreatePocketMolDesignJobResponse
      */
     public CreatePocketMolDesignJobResponse createPocketMolDesignJob(CreatePocketMolDesignJobRequest request) {
@@ -1750,13 +1721,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePocketMolDesignJobRequest 请求对象
+     * @param request CreatePocketMolDesignJobRequest 请求对象
      * @return SyncInvoker<CreatePocketMolDesignJobRequest, CreatePocketMolDesignJobResponse>
      */
     public SyncInvoker<CreatePocketMolDesignJobRequest, CreatePocketMolDesignJobResponse> createPocketMolDesignJobInvoker(
         CreatePocketMolDesignJobRequest request) {
-        return new SyncInvoker<CreatePocketMolDesignJobRequest, CreatePocketMolDesignJobResponse>(request,
-            EiHealthMeta.createPocketMolDesignJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createPocketMolDesignJob, hcClient);
     }
 
     /**
@@ -1766,7 +1736,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectRequest 请求对象
+     * @param request CreateProjectRequest 请求对象
      * @return CreateProjectResponse
      */
     public CreateProjectResponse createProject(CreateProjectRequest request) {
@@ -1780,12 +1750,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateProjectRequest 请求对象
+     * @param request CreateProjectRequest 请求对象
      * @return SyncInvoker<CreateProjectRequest, CreateProjectResponse>
      */
     public SyncInvoker<CreateProjectRequest, CreateProjectResponse> createProjectInvoker(CreateProjectRequest request) {
-        return new SyncInvoker<CreateProjectRequest, CreateProjectResponse>(request, EiHealthMeta.createProject,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createProject, hcClient);
     }
 
     /**
@@ -1795,7 +1764,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScaleOutPolicyRequest 请求对象
+     * @param request CreateScaleOutPolicyRequest 请求对象
      * @return CreateScaleOutPolicyResponse
      */
     public CreateScaleOutPolicyResponse createScaleOutPolicy(CreateScaleOutPolicyRequest request) {
@@ -1809,13 +1778,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScaleOutPolicyRequest 请求对象
+     * @param request CreateScaleOutPolicyRequest 请求对象
      * @return SyncInvoker<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse>
      */
     public SyncInvoker<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse> createScaleOutPolicyInvoker(
         CreateScaleOutPolicyRequest request) {
-        return new SyncInvoker<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse>(request,
-            EiHealthMeta.createScaleOutPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createScaleOutPolicy, hcClient);
     }
 
     /**
@@ -1825,7 +1793,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStudyRequest 请求对象
+     * @param request CreateStudyRequest 请求对象
      * @return CreateStudyResponse
      */
     public CreateStudyResponse createStudy(CreateStudyRequest request) {
@@ -1839,11 +1807,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStudyRequest 请求对象
+     * @param request CreateStudyRequest 请求对象
      * @return SyncInvoker<CreateStudyRequest, CreateStudyResponse>
      */
     public SyncInvoker<CreateStudyRequest, CreateStudyResponse> createStudyInvoker(CreateStudyRequest request) {
-        return new SyncInvoker<CreateStudyRequest, CreateStudyResponse>(request, EiHealthMeta.createStudy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createStudy, hcClient);
     }
 
     /**
@@ -1853,7 +1821,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStudyJobRequest 请求对象
+     * @param request CreateStudyJobRequest 请求对象
      * @return CreateStudyJobResponse
      */
     public CreateStudyJobResponse createStudyJob(CreateStudyJobRequest request) {
@@ -1867,13 +1835,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStudyJobRequest 请求对象
+     * @param request CreateStudyJobRequest 请求对象
      * @return SyncInvoker<CreateStudyJobRequest, CreateStudyJobResponse>
      */
     public SyncInvoker<CreateStudyJobRequest, CreateStudyJobResponse> createStudyJobInvoker(
         CreateStudyJobRequest request) {
-        return new SyncInvoker<CreateStudyJobRequest, CreateStudyJobResponse>(request, EiHealthMeta.createStudyJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createStudyJob, hcClient);
     }
 
     /**
@@ -1883,7 +1850,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSynthesisJobRequest 请求对象
+     * @param request CreateSynthesisJobRequest 请求对象
      * @return CreateSynthesisJobResponse
      */
     public CreateSynthesisJobResponse createSynthesisJob(CreateSynthesisJobRequest request) {
@@ -1897,13 +1864,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSynthesisJobRequest 请求对象
+     * @param request CreateSynthesisJobRequest 请求对象
      * @return SyncInvoker<CreateSynthesisJobRequest, CreateSynthesisJobResponse>
      */
     public SyncInvoker<CreateSynthesisJobRequest, CreateSynthesisJobResponse> createSynthesisJobInvoker(
         CreateSynthesisJobRequest request) {
-        return new SyncInvoker<CreateSynthesisJobRequest, CreateSynthesisJobResponse>(request,
-            EiHealthMeta.createSynthesisJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createSynthesisJob, hcClient);
     }
 
     /**
@@ -1913,7 +1879,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateRequest 请求对象
+     * @param request CreateTemplateRequest 请求对象
      * @return CreateTemplateResponse
      */
     public CreateTemplateResponse createTemplate(CreateTemplateRequest request) {
@@ -1927,13 +1893,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateRequest 请求对象
+     * @param request CreateTemplateRequest 请求对象
      * @return SyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
      */
     public SyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateInvoker(
         CreateTemplateRequest request) {
-        return new SyncInvoker<CreateTemplateRequest, CreateTemplateResponse>(request, EiHealthMeta.createTemplate,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createTemplate, hcClient);
     }
 
     /**
@@ -1943,7 +1908,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUserRequest 请求对象
+     * @param request CreateUserRequest 请求对象
      * @return CreateUserResponse
      */
     public CreateUserResponse createUser(CreateUserRequest request) {
@@ -1957,11 +1922,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUserRequest 请求对象
+     * @param request CreateUserRequest 请求对象
      * @return SyncInvoker<CreateUserRequest, CreateUserResponse>
      */
     public SyncInvoker<CreateUserRequest, CreateUserResponse> createUserInvoker(CreateUserRequest request) {
-        return new SyncInvoker<CreateUserRequest, CreateUserResponse>(request, EiHealthMeta.createUser, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createUser, hcClient);
     }
 
     /**
@@ -1971,7 +1936,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowRequest 请求对象
+     * @param request CreateWorkflowRequest 请求对象
      * @return CreateWorkflowResponse
      */
     public CreateWorkflowResponse createWorkflow(CreateWorkflowRequest request) {
@@ -1985,13 +1950,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowRequest 请求对象
+     * @param request CreateWorkflowRequest 请求对象
      * @return SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
      */
     public SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowInvoker(
         CreateWorkflowRequest request) {
-        return new SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request, EiHealthMeta.createWorkflow,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createWorkflow, hcClient);
     }
 
     /**
@@ -2001,7 +1965,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return DeleteAppResponse
      */
     public DeleteAppResponse deleteApp(DeleteAppRequest request) {
@@ -2015,11 +1979,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return SyncInvoker<DeleteAppRequest, DeleteAppResponse>
      */
     public SyncInvoker<DeleteAppRequest, DeleteAppResponse> deleteAppInvoker(DeleteAppRequest request) {
-        return new SyncInvoker<DeleteAppRequest, DeleteAppResponse>(request, EiHealthMeta.deleteApp, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteApp, hcClient);
     }
 
     /**
@@ -2029,7 +1993,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetVersionRequest 请求对象
+     * @param request DeleteAssetVersionRequest 请求对象
      * @return DeleteAssetVersionResponse
      */
     public DeleteAssetVersionResponse deleteAssetVersion(DeleteAssetVersionRequest request) {
@@ -2043,13 +2007,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAssetVersionRequest 请求对象
+     * @param request DeleteAssetVersionRequest 请求对象
      * @return SyncInvoker<DeleteAssetVersionRequest, DeleteAssetVersionResponse>
      */
     public SyncInvoker<DeleteAssetVersionRequest, DeleteAssetVersionResponse> deleteAssetVersionInvoker(
         DeleteAssetVersionRequest request) {
-        return new SyncInvoker<DeleteAssetVersionRequest, DeleteAssetVersionResponse>(request,
-            EiHealthMeta.deleteAssetVersion, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteAssetVersion, hcClient);
     }
 
     /**
@@ -2059,7 +2022,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAutoJobRequest 请求对象
+     * @param request DeleteAutoJobRequest 请求对象
      * @return DeleteAutoJobResponse
      */
     public DeleteAutoJobResponse deleteAutoJob(DeleteAutoJobRequest request) {
@@ -2073,12 +2036,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAutoJobRequest 请求对象
+     * @param request DeleteAutoJobRequest 请求对象
      * @return SyncInvoker<DeleteAutoJobRequest, DeleteAutoJobResponse>
      */
     public SyncInvoker<DeleteAutoJobRequest, DeleteAutoJobResponse> deleteAutoJobInvoker(DeleteAutoJobRequest request) {
-        return new SyncInvoker<DeleteAutoJobRequest, DeleteAutoJobResponse>(request, EiHealthMeta.deleteAutoJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteAutoJob, hcClient);
     }
 
     /**
@@ -2088,7 +2050,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return DeleteBackupResponse
      */
     public DeleteBackupResponse deleteBackup(DeleteBackupRequest request) {
@@ -2102,11 +2064,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupRequest 请求对象
+     * @param request DeleteBackupRequest 请求对象
      * @return SyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
      */
     public SyncInvoker<DeleteBackupRequest, DeleteBackupResponse> deleteBackupInvoker(DeleteBackupRequest request) {
-        return new SyncInvoker<DeleteBackupRequest, DeleteBackupResponse>(request, EiHealthMeta.deleteBackup, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteBackup, hcClient);
     }
 
     /**
@@ -2116,7 +2078,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteComputingResourceRequest 请求对象
+     * @param request DeleteComputingResourceRequest 请求对象
      * @return DeleteComputingResourceResponse
      */
     public DeleteComputingResourceResponse deleteComputingResource(DeleteComputingResourceRequest request) {
@@ -2130,13 +2092,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteComputingResourceRequest 请求对象
+     * @param request DeleteComputingResourceRequest 请求对象
      * @return SyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse>
      */
     public SyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse> deleteComputingResourceInvoker(
         DeleteComputingResourceRequest request) {
-        return new SyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse>(request,
-            EiHealthMeta.deleteComputingResource, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteComputingResource, hcClient);
     }
 
     /**
@@ -2146,7 +2107,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataJobRequest 请求对象
+     * @param request DeleteDataJobRequest 请求对象
      * @return DeleteDataJobResponse
      */
     public DeleteDataJobResponse deleteDataJob(DeleteDataJobRequest request) {
@@ -2160,12 +2121,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataJobRequest 请求对象
+     * @param request DeleteDataJobRequest 请求对象
      * @return SyncInvoker<DeleteDataJobRequest, DeleteDataJobResponse>
      */
     public SyncInvoker<DeleteDataJobRequest, DeleteDataJobResponse> deleteDataJobInvoker(DeleteDataJobRequest request) {
-        return new SyncInvoker<DeleteDataJobRequest, DeleteDataJobResponse>(request, EiHealthMeta.deleteDataJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteDataJob, hcClient);
     }
 
     /**
@@ -2175,7 +2135,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseDataRequest 请求对象
+     * @param request DeleteDatabaseDataRequest 请求对象
      * @return DeleteDatabaseDataResponse
      */
     public DeleteDatabaseDataResponse deleteDatabaseData(DeleteDatabaseDataRequest request) {
@@ -2189,13 +2149,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseDataRequest 请求对象
+     * @param request DeleteDatabaseDataRequest 请求对象
      * @return SyncInvoker<DeleteDatabaseDataRequest, DeleteDatabaseDataResponse>
      */
     public SyncInvoker<DeleteDatabaseDataRequest, DeleteDatabaseDataResponse> deleteDatabaseDataInvoker(
         DeleteDatabaseDataRequest request) {
-        return new SyncInvoker<DeleteDatabaseDataRequest, DeleteDatabaseDataResponse>(request,
-            EiHealthMeta.deleteDatabaseData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteDatabaseData, hcClient);
     }
 
     /**
@@ -2205,7 +2164,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseResourceRequest 请求对象
+     * @param request DeleteDatabaseResourceRequest 请求对象
      * @return DeleteDatabaseResourceResponse
      */
     public DeleteDatabaseResourceResponse deleteDatabaseResource(DeleteDatabaseResourceRequest request) {
@@ -2219,13 +2178,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseResourceRequest 请求对象
+     * @param request DeleteDatabaseResourceRequest 请求对象
      * @return SyncInvoker<DeleteDatabaseResourceRequest, DeleteDatabaseResourceResponse>
      */
     public SyncInvoker<DeleteDatabaseResourceRequest, DeleteDatabaseResourceResponse> deleteDatabaseResourceInvoker(
         DeleteDatabaseResourceRequest request) {
-        return new SyncInvoker<DeleteDatabaseResourceRequest, DeleteDatabaseResourceResponse>(request,
-            EiHealthMeta.deleteDatabaseResource, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteDatabaseResource, hcClient);
     }
 
     /**
@@ -2235,7 +2193,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugJobRequest 请求对象
+     * @param request DeleteDrugJobRequest 请求对象
      * @return DeleteDrugJobResponse
      */
     public DeleteDrugJobResponse deleteDrugJob(DeleteDrugJobRequest request) {
@@ -2249,12 +2207,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugJobRequest 请求对象
+     * @param request DeleteDrugJobRequest 请求对象
      * @return SyncInvoker<DeleteDrugJobRequest, DeleteDrugJobResponse>
      */
     public SyncInvoker<DeleteDrugJobRequest, DeleteDrugJobResponse> deleteDrugJobInvoker(DeleteDrugJobRequest request) {
-        return new SyncInvoker<DeleteDrugJobRequest, DeleteDrugJobResponse>(request, EiHealthMeta.deleteDrugJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteDrugJob, hcClient);
     }
 
     /**
@@ -2264,7 +2221,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugModelRequest 请求对象
+     * @param request DeleteDrugModelRequest 请求对象
      * @return DeleteDrugModelResponse
      */
     public DeleteDrugModelResponse deleteDrugModel(DeleteDrugModelRequest request) {
@@ -2278,13 +2235,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugModelRequest 请求对象
+     * @param request DeleteDrugModelRequest 请求对象
      * @return SyncInvoker<DeleteDrugModelRequest, DeleteDrugModelResponse>
      */
     public SyncInvoker<DeleteDrugModelRequest, DeleteDrugModelResponse> deleteDrugModelInvoker(
         DeleteDrugModelRequest request) {
-        return new SyncInvoker<DeleteDrugModelRequest, DeleteDrugModelResponse>(request, EiHealthMeta.deleteDrugModel,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteDrugModel, hcClient);
     }
 
     /**
@@ -2294,7 +2250,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageRequest 请求对象
+     * @param request DeleteImageRequest 请求对象
      * @return DeleteImageResponse
      */
     public DeleteImageResponse deleteImage(DeleteImageRequest request) {
@@ -2308,11 +2264,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteImageRequest 请求对象
+     * @param request DeleteImageRequest 请求对象
      * @return SyncInvoker<DeleteImageRequest, DeleteImageResponse>
      */
     public SyncInvoker<DeleteImageRequest, DeleteImageResponse> deleteImageInvoker(DeleteImageRequest request) {
-        return new SyncInvoker<DeleteImageRequest, DeleteImageResponse>(request, EiHealthMeta.deleteImage, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteImage, hcClient);
     }
 
     /**
@@ -2322,7 +2278,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
      */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
@@ -2336,13 +2292,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
         DeleteInstanceRequest request) {
-        return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, EiHealthMeta.deleteInstance,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -2352,7 +2307,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobRequest 请求对象
+     * @param request DeleteJobRequest 请求对象
      * @return DeleteJobResponse
      */
     public DeleteJobResponse deleteJob(DeleteJobRequest request) {
@@ -2366,11 +2321,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobRequest 请求对象
+     * @param request DeleteJobRequest 请求对象
      * @return SyncInvoker<DeleteJobRequest, DeleteJobResponse>
      */
     public SyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobInvoker(DeleteJobRequest request) {
-        return new SyncInvoker<DeleteJobRequest, DeleteJobResponse>(request, EiHealthMeta.deleteJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteJob, hcClient);
     }
 
     /**
@@ -2380,7 +2335,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLabelRequest 请求对象
+     * @param request DeleteLabelRequest 请求对象
      * @return DeleteLabelResponse
      */
     public DeleteLabelResponse deleteLabel(DeleteLabelRequest request) {
@@ -2394,11 +2349,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLabelRequest 请求对象
+     * @param request DeleteLabelRequest 请求对象
      * @return SyncInvoker<DeleteLabelRequest, DeleteLabelResponse>
      */
     public SyncInvoker<DeleteLabelRequest, DeleteLabelResponse> deleteLabelInvoker(DeleteLabelRequest request) {
-        return new SyncInvoker<DeleteLabelRequest, DeleteLabelResponse>(request, EiHealthMeta.deleteLabel, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteLabel, hcClient);
     }
 
     /**
@@ -2408,7 +2363,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLabelPageRequest 请求对象
+     * @param request DeleteLabelPageRequest 请求对象
      * @return DeleteLabelPageResponse
      */
     public DeleteLabelPageResponse deleteLabelPage(DeleteLabelPageRequest request) {
@@ -2422,13 +2377,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLabelPageRequest 请求对象
+     * @param request DeleteLabelPageRequest 请求对象
      * @return SyncInvoker<DeleteLabelPageRequest, DeleteLabelPageResponse>
      */
     public SyncInvoker<DeleteLabelPageRequest, DeleteLabelPageResponse> deleteLabelPageInvoker(
         DeleteLabelPageRequest request) {
-        return new SyncInvoker<DeleteLabelPageRequest, DeleteLabelPageResponse>(request, EiHealthMeta.deleteLabelPage,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteLabelPage, hcClient);
     }
 
     /**
@@ -2438,7 +2392,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberRequest 请求对象
+     * @param request DeleteMemberRequest 请求对象
      * @return DeleteMemberResponse
      */
     public DeleteMemberResponse deleteMember(DeleteMemberRequest request) {
@@ -2452,11 +2406,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberRequest 请求对象
+     * @param request DeleteMemberRequest 请求对象
      * @return SyncInvoker<DeleteMemberRequest, DeleteMemberResponse>
      */
     public SyncInvoker<DeleteMemberRequest, DeleteMemberResponse> deleteMemberInvoker(DeleteMemberRequest request) {
-        return new SyncInvoker<DeleteMemberRequest, DeleteMemberResponse>(request, EiHealthMeta.deleteMember, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteMember, hcClient);
     }
 
     /**
@@ -2466,7 +2420,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMessageEmailConfigRequest 请求对象
+     * @param request DeleteMessageEmailConfigRequest 请求对象
      * @return DeleteMessageEmailConfigResponse
      */
     public DeleteMessageEmailConfigResponse deleteMessageEmailConfig(DeleteMessageEmailConfigRequest request) {
@@ -2480,13 +2434,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMessageEmailConfigRequest 请求对象
+     * @param request DeleteMessageEmailConfigRequest 请求对象
      * @return SyncInvoker<DeleteMessageEmailConfigRequest, DeleteMessageEmailConfigResponse>
      */
     public SyncInvoker<DeleteMessageEmailConfigRequest, DeleteMessageEmailConfigResponse> deleteMessageEmailConfigInvoker(
         DeleteMessageEmailConfigRequest request) {
-        return new SyncInvoker<DeleteMessageEmailConfigRequest, DeleteMessageEmailConfigResponse>(request,
-            EiHealthMeta.deleteMessageEmailConfig, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteMessageEmailConfig, hcClient);
     }
 
     /**
@@ -2496,7 +2449,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePerformanceResourceRequest 请求对象
+     * @param request DeletePerformanceResourceRequest 请求对象
      * @return DeletePerformanceResourceResponse
      */
     public DeletePerformanceResourceResponse deletePerformanceResource(DeletePerformanceResourceRequest request) {
@@ -2510,13 +2463,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePerformanceResourceRequest 请求对象
+     * @param request DeletePerformanceResourceRequest 请求对象
      * @return SyncInvoker<DeletePerformanceResourceRequest, DeletePerformanceResourceResponse>
      */
     public SyncInvoker<DeletePerformanceResourceRequest, DeletePerformanceResourceResponse> deletePerformanceResourceInvoker(
         DeletePerformanceResourceRequest request) {
-        return new SyncInvoker<DeletePerformanceResourceRequest, DeletePerformanceResourceResponse>(request,
-            EiHealthMeta.deletePerformanceResource, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deletePerformanceResource, hcClient);
     }
 
     /**
@@ -2526,7 +2478,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProjectRequest 请求对象
+     * @param request DeleteProjectRequest 请求对象
      * @return DeleteProjectResponse
      */
     public DeleteProjectResponse deleteProject(DeleteProjectRequest request) {
@@ -2540,12 +2492,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteProjectRequest 请求对象
+     * @param request DeleteProjectRequest 请求对象
      * @return SyncInvoker<DeleteProjectRequest, DeleteProjectResponse>
      */
     public SyncInvoker<DeleteProjectRequest, DeleteProjectResponse> deleteProjectInvoker(DeleteProjectRequest request) {
-        return new SyncInvoker<DeleteProjectRequest, DeleteProjectResponse>(request, EiHealthMeta.deleteProject,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteProject, hcClient);
     }
 
     /**
@@ -2555,7 +2506,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScaleOutPolicyRequest 请求对象
+     * @param request DeleteScaleOutPolicyRequest 请求对象
      * @return DeleteScaleOutPolicyResponse
      */
     public DeleteScaleOutPolicyResponse deleteScaleOutPolicy(DeleteScaleOutPolicyRequest request) {
@@ -2569,13 +2520,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScaleOutPolicyRequest 请求对象
+     * @param request DeleteScaleOutPolicyRequest 请求对象
      * @return SyncInvoker<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse>
      */
     public SyncInvoker<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse> deleteScaleOutPolicyInvoker(
         DeleteScaleOutPolicyRequest request) {
-        return new SyncInvoker<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse>(request,
-            EiHealthMeta.deleteScaleOutPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteScaleOutPolicy, hcClient);
     }
 
     /**
@@ -2585,7 +2535,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStarRequest 请求对象
+     * @param request DeleteStarRequest 请求对象
      * @return DeleteStarResponse
      */
     public DeleteStarResponse deleteStar(DeleteStarRequest request) {
@@ -2599,11 +2549,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStarRequest 请求对象
+     * @param request DeleteStarRequest 请求对象
      * @return SyncInvoker<DeleteStarRequest, DeleteStarResponse>
      */
     public SyncInvoker<DeleteStarRequest, DeleteStarResponse> deleteStarInvoker(DeleteStarRequest request) {
-        return new SyncInvoker<DeleteStarRequest, DeleteStarResponse>(request, EiHealthMeta.deleteStar, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteStar, hcClient);
     }
 
     /**
@@ -2613,7 +2563,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStudyRequest 请求对象
+     * @param request DeleteStudyRequest 请求对象
      * @return DeleteStudyResponse
      */
     public DeleteStudyResponse deleteStudy(DeleteStudyRequest request) {
@@ -2627,11 +2577,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStudyRequest 请求对象
+     * @param request DeleteStudyRequest 请求对象
      * @return SyncInvoker<DeleteStudyRequest, DeleteStudyResponse>
      */
     public SyncInvoker<DeleteStudyRequest, DeleteStudyResponse> deleteStudyInvoker(DeleteStudyRequest request) {
-        return new SyncInvoker<DeleteStudyRequest, DeleteStudyResponse>(request, EiHealthMeta.deleteStudy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteStudy, hcClient);
     }
 
     /**
@@ -2641,7 +2591,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return DeleteTagResponse
      */
     public DeleteTagResponse deleteTag(DeleteTagRequest request) {
@@ -2655,11 +2605,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return SyncInvoker<DeleteTagRequest, DeleteTagResponse>
      */
     public SyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagInvoker(DeleteTagRequest request) {
-        return new SyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, EiHealthMeta.deleteTag, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteTag, hcClient);
     }
 
     /**
@@ -2669,7 +2619,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return DeleteTemplateResponse
      */
     public DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request) {
@@ -2683,13 +2633,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
      */
     public SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateInvoker(
         DeleteTemplateRequest request) {
-        return new SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>(request, EiHealthMeta.deleteTemplate,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteTemplate, hcClient);
     }
 
     /**
@@ -2699,7 +2648,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserRequest 请求对象
+     * @param request DeleteUserRequest 请求对象
      * @return DeleteUserResponse
      */
     public DeleteUserResponse deleteUser(DeleteUserRequest request) {
@@ -2713,11 +2662,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserRequest 请求对象
+     * @param request DeleteUserRequest 请求对象
      * @return SyncInvoker<DeleteUserRequest, DeleteUserResponse>
      */
     public SyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserInvoker(DeleteUserRequest request) {
-        return new SyncInvoker<DeleteUserRequest, DeleteUserResponse>(request, EiHealthMeta.deleteUser, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteUser, hcClient);
     }
 
     /**
@@ -2727,7 +2676,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkflowRequest 请求对象
+     * @param request DeleteWorkflowRequest 请求对象
      * @return DeleteWorkflowResponse
      */
     public DeleteWorkflowResponse deleteWorkflow(DeleteWorkflowRequest request) {
@@ -2741,13 +2690,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWorkflowRequest 请求对象
+     * @param request DeleteWorkflowRequest 请求对象
      * @return SyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse>
      */
     public SyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse> deleteWorkflowInvoker(
         DeleteWorkflowRequest request) {
-        return new SyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse>(request, EiHealthMeta.deleteWorkflow,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteWorkflow, hcClient);
     }
 
     /**
@@ -2757,7 +2705,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataJobLogRequest 请求对象
+     * @param request DownloadDataJobLogRequest 请求对象
      * @return DownloadDataJobLogResponse
      */
     public DownloadDataJobLogResponse downloadDataJobLog(DownloadDataJobLogRequest request) {
@@ -2771,13 +2719,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataJobLogRequest 请求对象
+     * @param request DownloadDataJobLogRequest 请求对象
      * @return SyncInvoker<DownloadDataJobLogRequest, DownloadDataJobLogResponse>
      */
     public SyncInvoker<DownloadDataJobLogRequest, DownloadDataJobLogResponse> downloadDataJobLogInvoker(
         DownloadDataJobLogRequest request) {
-        return new SyncInvoker<DownloadDataJobLogRequest, DownloadDataJobLogResponse>(request,
-            EiHealthMeta.downloadDataJobLog, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.downloadDataJobLog, hcClient);
     }
 
     /**
@@ -2787,7 +2734,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataTraceRequest 请求对象
+     * @param request DownloadDataTraceRequest 请求对象
      * @return DownloadDataTraceResponse
      */
     public DownloadDataTraceResponse downloadDataTrace(DownloadDataTraceRequest request) {
@@ -2801,13 +2748,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataTraceRequest 请求对象
+     * @param request DownloadDataTraceRequest 请求对象
      * @return SyncInvoker<DownloadDataTraceRequest, DownloadDataTraceResponse>
      */
     public SyncInvoker<DownloadDataTraceRequest, DownloadDataTraceResponse> downloadDataTraceInvoker(
         DownloadDataTraceRequest request) {
-        return new SyncInvoker<DownloadDataTraceRequest, DownloadDataTraceResponse>(request,
-            EiHealthMeta.downloadDataTrace, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.downloadDataTrace, hcClient);
     }
 
     /**
@@ -2817,7 +2763,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteAssetActionRequest 请求对象
+     * @param request ExecuteAssetActionRequest 请求对象
      * @return ExecuteAssetActionResponse
      */
     public ExecuteAssetActionResponse executeAssetAction(ExecuteAssetActionRequest request) {
@@ -2831,13 +2777,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteAssetActionRequest 请求对象
+     * @param request ExecuteAssetActionRequest 请求对象
      * @return SyncInvoker<ExecuteAssetActionRequest, ExecuteAssetActionResponse>
      */
     public SyncInvoker<ExecuteAssetActionRequest, ExecuteAssetActionResponse> executeAssetActionInvoker(
         ExecuteAssetActionRequest request) {
-        return new SyncInvoker<ExecuteAssetActionRequest, ExecuteAssetActionResponse>(request,
-            EiHealthMeta.executeAssetAction, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.executeAssetAction, hcClient);
     }
 
     /**
@@ -2847,7 +2792,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteJobRequest 请求对象
+     * @param request ExecuteJobRequest 请求对象
      * @return ExecuteJobResponse
      */
     public ExecuteJobResponse executeJob(ExecuteJobRequest request) {
@@ -2861,11 +2806,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteJobRequest 请求对象
+     * @param request ExecuteJobRequest 请求对象
      * @return SyncInvoker<ExecuteJobRequest, ExecuteJobResponse>
      */
     public SyncInvoker<ExecuteJobRequest, ExecuteJobResponse> executeJobInvoker(ExecuteJobRequest request) {
-        return new SyncInvoker<ExecuteJobRequest, ExecuteJobResponse>(request, EiHealthMeta.executeJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.executeJob, hcClient);
     }
 
     /**
@@ -2875,7 +2820,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportDataRequest 请求对象
+     * @param request ImportDataRequest 请求对象
      * @return ImportDataResponse
      */
     public ImportDataResponse importData(ImportDataRequest request) {
@@ -2889,11 +2834,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportDataRequest 请求对象
+     * @param request ImportDataRequest 请求对象
      * @return SyncInvoker<ImportDataRequest, ImportDataResponse>
      */
     public SyncInvoker<ImportDataRequest, ImportDataResponse> importDataInvoker(ImportDataRequest request) {
-        return new SyncInvoker<ImportDataRequest, ImportDataResponse>(request, EiHealthMeta.importData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.importData, hcClient);
     }
 
     /**
@@ -2903,7 +2848,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportDatabaseDataRequest 请求对象
+     * @param request ImportDatabaseDataRequest 请求对象
      * @return ImportDatabaseDataResponse
      */
     public ImportDatabaseDataResponse importDatabaseData(ImportDatabaseDataRequest request) {
@@ -2917,13 +2862,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportDatabaseDataRequest 请求对象
+     * @param request ImportDatabaseDataRequest 请求对象
      * @return SyncInvoker<ImportDatabaseDataRequest, ImportDatabaseDataResponse>
      */
     public SyncInvoker<ImportDatabaseDataRequest, ImportDatabaseDataResponse> importDatabaseDataInvoker(
         ImportDatabaseDataRequest request) {
-        return new SyncInvoker<ImportDatabaseDataRequest, ImportDatabaseDataResponse>(request,
-            EiHealthMeta.importDatabaseData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.importDatabaseData, hcClient);
     }
 
     /**
@@ -2933,7 +2877,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportImageRequest 请求对象
+     * @param request ImportImageRequest 请求对象
      * @return ImportImageResponse
      */
     public ImportImageResponse importImage(ImportImageRequest request) {
@@ -2947,11 +2891,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportImageRequest 请求对象
+     * @param request ImportImageRequest 请求对象
      * @return SyncInvoker<ImportImageRequest, ImportImageResponse>
      */
     public SyncInvoker<ImportImageRequest, ImportImageResponse> importImageInvoker(ImportImageRequest request) {
-        return new SyncInvoker<ImportImageRequest, ImportImageResponse>(request, EiHealthMeta.importImage, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.importImage, hcClient);
     }
 
     /**
@@ -2961,7 +2905,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportNetworkDataRequest 请求对象
+     * @param request ImportNetworkDataRequest 请求对象
      * @return ImportNetworkDataResponse
      */
     public ImportNetworkDataResponse importNetworkData(ImportNetworkDataRequest request) {
@@ -2975,13 +2919,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportNetworkDataRequest 请求对象
+     * @param request ImportNetworkDataRequest 请求对象
      * @return SyncInvoker<ImportNetworkDataRequest, ImportNetworkDataResponse>
      */
     public SyncInvoker<ImportNetworkDataRequest, ImportNetworkDataResponse> importNetworkDataInvoker(
         ImportNetworkDataRequest request) {
-        return new SyncInvoker<ImportNetworkDataRequest, ImportNetworkDataResponse>(request,
-            EiHealthMeta.importNetworkData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.importNetworkData, hcClient);
     }
 
     /**
@@ -2991,7 +2934,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportTemplateRequest 请求对象
+     * @param request ImportTemplateRequest 请求对象
      * @return ImportTemplateResponse
      */
     public ImportTemplateResponse importTemplate(ImportTemplateRequest request) {
@@ -3005,13 +2948,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportTemplateRequest 请求对象
+     * @param request ImportTemplateRequest 请求对象
      * @return SyncInvoker<ImportTemplateRequest, ImportTemplateResponse>
      */
     public SyncInvoker<ImportTemplateRequest, ImportTemplateResponse> importTemplateInvoker(
         ImportTemplateRequest request) {
-        return new SyncInvoker<ImportTemplateRequest, ImportTemplateResponse>(request, EiHealthMeta.importTemplate,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.importTemplate, hcClient);
     }
 
     /**
@@ -3021,7 +2963,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportUserRequest 请求对象
+     * @param request ImportUserRequest 请求对象
      * @return ImportUserResponse
      */
     public ImportUserResponse importUser(ImportUserRequest request) {
@@ -3035,11 +2977,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportUserRequest 请求对象
+     * @param request ImportUserRequest 请求对象
      * @return SyncInvoker<ImportUserRequest, ImportUserResponse>
      */
     public SyncInvoker<ImportUserRequest, ImportUserResponse> importUserInvoker(ImportUserRequest request) {
-        return new SyncInvoker<ImportUserRequest, ImportUserResponse>(request, EiHealthMeta.importUser, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.importUser, hcClient);
     }
 
     /**
@@ -3049,7 +2991,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportWorkflowRequest 请求对象
+     * @param request ImportWorkflowRequest 请求对象
      * @return ImportWorkflowResponse
      */
     public ImportWorkflowResponse importWorkflow(ImportWorkflowRequest request) {
@@ -3063,13 +3005,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportWorkflowRequest 请求对象
+     * @param request ImportWorkflowRequest 请求对象
      * @return SyncInvoker<ImportWorkflowRequest, ImportWorkflowResponse>
      */
     public SyncInvoker<ImportWorkflowRequest, ImportWorkflowResponse> importWorkflowInvoker(
         ImportWorkflowRequest request) {
-        return new SyncInvoker<ImportWorkflowRequest, ImportWorkflowResponse>(request, EiHealthMeta.importWorkflow,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.importWorkflow, hcClient);
     }
 
     /**
@@ -3079,7 +3020,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppRequest 请求对象
+     * @param request ListAppRequest 请求对象
      * @return ListAppResponse
      */
     public ListAppResponse listApp(ListAppRequest request) {
@@ -3093,11 +3034,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppRequest 请求对象
+     * @param request ListAppRequest 请求对象
      * @return SyncInvoker<ListAppRequest, ListAppResponse>
      */
     public SyncInvoker<ListAppRequest, ListAppResponse> listAppInvoker(ListAppRequest request) {
-        return new SyncInvoker<ListAppRequest, ListAppResponse>(request, EiHealthMeta.listApp, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listApp, hcClient);
     }
 
     /**
@@ -3107,7 +3048,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListArchiveConfigsRequest 请求对象
+     * @param request ListArchiveConfigsRequest 请求对象
      * @return ListArchiveConfigsResponse
      */
     public ListArchiveConfigsResponse listArchiveConfigs(ListArchiveConfigsRequest request) {
@@ -3121,13 +3062,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListArchiveConfigsRequest 请求对象
+     * @param request ListArchiveConfigsRequest 请求对象
      * @return SyncInvoker<ListArchiveConfigsRequest, ListArchiveConfigsResponse>
      */
     public SyncInvoker<ListArchiveConfigsRequest, ListArchiveConfigsResponse> listArchiveConfigsInvoker(
         ListArchiveConfigsRequest request) {
-        return new SyncInvoker<ListArchiveConfigsRequest, ListArchiveConfigsResponse>(request,
-            EiHealthMeta.listArchiveConfigs, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listArchiveConfigs, hcClient);
     }
 
     /**
@@ -3137,7 +3077,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetRequest 请求对象
+     * @param request ListAssetRequest 请求对象
      * @return ListAssetResponse
      */
     public ListAssetResponse listAsset(ListAssetRequest request) {
@@ -3151,11 +3091,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAssetRequest 请求对象
+     * @param request ListAssetRequest 请求对象
      * @return SyncInvoker<ListAssetRequest, ListAssetResponse>
      */
     public SyncInvoker<ListAssetRequest, ListAssetResponse> listAssetInvoker(ListAssetRequest request) {
-        return new SyncInvoker<ListAssetRequest, ListAssetResponse>(request, EiHealthMeta.listAsset, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listAsset, hcClient);
     }
 
     /**
@@ -3165,7 +3105,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoJobRequest 请求对象
+     * @param request ListAutoJobRequest 请求对象
      * @return ListAutoJobResponse
      */
     public ListAutoJobResponse listAutoJob(ListAutoJobRequest request) {
@@ -3179,11 +3119,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoJobRequest 请求对象
+     * @param request ListAutoJobRequest 请求对象
      * @return SyncInvoker<ListAutoJobRequest, ListAutoJobResponse>
      */
     public SyncInvoker<ListAutoJobRequest, ListAutoJobResponse> listAutoJobInvoker(ListAutoJobRequest request) {
-        return new SyncInvoker<ListAutoJobRequest, ListAutoJobResponse>(request, EiHealthMeta.listAutoJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listAutoJob, hcClient);
     }
 
     /**
@@ -3193,7 +3133,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupRequest 请求对象
+     * @param request ListBackupRequest 请求对象
      * @return ListBackupResponse
      */
     public ListBackupResponse listBackup(ListBackupRequest request) {
@@ -3207,11 +3147,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupRequest 请求对象
+     * @param request ListBackupRequest 请求对象
      * @return SyncInvoker<ListBackupRequest, ListBackupResponse>
      */
     public SyncInvoker<ListBackupRequest, ListBackupResponse> listBackupInvoker(ListBackupRequest request) {
-        return new SyncInvoker<ListBackupRequest, ListBackupResponse>(request, EiHealthMeta.listBackup, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listBackup, hcClient);
     }
 
     /**
@@ -3221,7 +3161,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBucketRequest 请求对象
+     * @param request ListBucketRequest 请求对象
      * @return ListBucketResponse
      */
     public ListBucketResponse listBucket(ListBucketRequest request) {
@@ -3235,11 +3175,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBucketRequest 请求对象
+     * @param request ListBucketRequest 请求对象
      * @return SyncInvoker<ListBucketRequest, ListBucketResponse>
      */
     public SyncInvoker<ListBucketRequest, ListBucketResponse> listBucketInvoker(ListBucketRequest request) {
-        return new SyncInvoker<ListBucketRequest, ListBucketResponse>(request, EiHealthMeta.listBucket, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listBucket, hcClient);
     }
 
     /**
@@ -3249,7 +3189,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCheckpointRequest 请求对象
+     * @param request ListCheckpointRequest 请求对象
      * @return ListCheckpointResponse
      */
     public ListCheckpointResponse listCheckpoint(ListCheckpointRequest request) {
@@ -3263,13 +3203,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCheckpointRequest 请求对象
+     * @param request ListCheckpointRequest 请求对象
      * @return SyncInvoker<ListCheckpointRequest, ListCheckpointResponse>
      */
     public SyncInvoker<ListCheckpointRequest, ListCheckpointResponse> listCheckpointInvoker(
         ListCheckpointRequest request) {
-        return new SyncInvoker<ListCheckpointRequest, ListCheckpointResponse>(request, EiHealthMeta.listCheckpoint,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listCheckpoint, hcClient);
     }
 
     /**
@@ -3279,7 +3218,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterAllNodeLabelRequest 请求对象
+     * @param request ListClusterAllNodeLabelRequest 请求对象
      * @return ListClusterAllNodeLabelResponse
      */
     public ListClusterAllNodeLabelResponse listClusterAllNodeLabel(ListClusterAllNodeLabelRequest request) {
@@ -3293,13 +3232,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClusterAllNodeLabelRequest 请求对象
+     * @param request ListClusterAllNodeLabelRequest 请求对象
      * @return SyncInvoker<ListClusterAllNodeLabelRequest, ListClusterAllNodeLabelResponse>
      */
     public SyncInvoker<ListClusterAllNodeLabelRequest, ListClusterAllNodeLabelResponse> listClusterAllNodeLabelInvoker(
         ListClusterAllNodeLabelRequest request) {
-        return new SyncInvoker<ListClusterAllNodeLabelRequest, ListClusterAllNodeLabelResponse>(request,
-            EiHealthMeta.listClusterAllNodeLabel, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listClusterAllNodeLabel, hcClient);
     }
 
     /**
@@ -3309,7 +3247,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListComputingResourceFlavorsRequest 请求对象
+     * @param request ListComputingResourceFlavorsRequest 请求对象
      * @return ListComputingResourceFlavorsResponse
      */
     public ListComputingResourceFlavorsResponse listComputingResourceFlavors(
@@ -3324,13 +3262,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListComputingResourceFlavorsRequest 请求对象
+     * @param request ListComputingResourceFlavorsRequest 请求对象
      * @return SyncInvoker<ListComputingResourceFlavorsRequest, ListComputingResourceFlavorsResponse>
      */
     public SyncInvoker<ListComputingResourceFlavorsRequest, ListComputingResourceFlavorsResponse> listComputingResourceFlavorsInvoker(
         ListComputingResourceFlavorsRequest request) {
-        return new SyncInvoker<ListComputingResourceFlavorsRequest, ListComputingResourceFlavorsResponse>(request,
-            EiHealthMeta.listComputingResourceFlavors, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listComputingResourceFlavors, hcClient);
     }
 
     /**
@@ -3340,7 +3277,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListComputingResourcesRequest 请求对象
+     * @param request ListComputingResourcesRequest 请求对象
      * @return ListComputingResourcesResponse
      */
     public ListComputingResourcesResponse listComputingResources(ListComputingResourcesRequest request) {
@@ -3354,13 +3291,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListComputingResourcesRequest 请求对象
+     * @param request ListComputingResourcesRequest 请求对象
      * @return SyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse>
      */
     public SyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse> listComputingResourcesInvoker(
         ListComputingResourcesRequest request) {
-        return new SyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse>(request,
-            EiHealthMeta.listComputingResources, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listComputingResources, hcClient);
     }
 
     /**
@@ -3370,7 +3306,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataRequest 请求对象
+     * @param request ListDataRequest 请求对象
      * @return ListDataResponse
      */
     public ListDataResponse listData(ListDataRequest request) {
@@ -3384,11 +3320,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataRequest 请求对象
+     * @param request ListDataRequest 请求对象
      * @return SyncInvoker<ListDataRequest, ListDataResponse>
      */
     public SyncInvoker<ListDataRequest, ListDataResponse> listDataInvoker(ListDataRequest request) {
-        return new SyncInvoker<ListDataRequest, ListDataResponse>(request, EiHealthMeta.listData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listData, hcClient);
     }
 
     /**
@@ -3398,7 +3334,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataJobRequest 请求对象
+     * @param request ListDataJobRequest 请求对象
      * @return ListDataJobResponse
      */
     public ListDataJobResponse listDataJob(ListDataJobRequest request) {
@@ -3412,11 +3348,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataJobRequest 请求对象
+     * @param request ListDataJobRequest 请求对象
      * @return SyncInvoker<ListDataJobRequest, ListDataJobResponse>
      */
     public SyncInvoker<ListDataJobRequest, ListDataJobResponse> listDataJobInvoker(ListDataJobRequest request) {
-        return new SyncInvoker<ListDataJobRequest, ListDataJobResponse>(request, EiHealthMeta.listDataJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listDataJob, hcClient);
     }
 
     /**
@@ -3426,7 +3362,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseDataRequest 请求对象
+     * @param request ListDatabaseDataRequest 请求对象
      * @return ListDatabaseDataResponse
      */
     public ListDatabaseDataResponse listDatabaseData(ListDatabaseDataRequest request) {
@@ -3440,13 +3376,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseDataRequest 请求对象
+     * @param request ListDatabaseDataRequest 请求对象
      * @return SyncInvoker<ListDatabaseDataRequest, ListDatabaseDataResponse>
      */
     public SyncInvoker<ListDatabaseDataRequest, ListDatabaseDataResponse> listDatabaseDataInvoker(
         ListDatabaseDataRequest request) {
-        return new SyncInvoker<ListDatabaseDataRequest, ListDatabaseDataResponse>(request,
-            EiHealthMeta.listDatabaseData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listDatabaseData, hcClient);
     }
 
     /**
@@ -3456,7 +3391,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseResourceRequest 请求对象
+     * @param request ListDatabaseResourceRequest 请求对象
      * @return ListDatabaseResourceResponse
      */
     public ListDatabaseResourceResponse listDatabaseResource(ListDatabaseResourceRequest request) {
@@ -3470,13 +3405,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseResourceRequest 请求对象
+     * @param request ListDatabaseResourceRequest 请求对象
      * @return SyncInvoker<ListDatabaseResourceRequest, ListDatabaseResourceResponse>
      */
     public SyncInvoker<ListDatabaseResourceRequest, ListDatabaseResourceResponse> listDatabaseResourceInvoker(
         ListDatabaseResourceRequest request) {
-        return new SyncInvoker<ListDatabaseResourceRequest, ListDatabaseResourceResponse>(request,
-            EiHealthMeta.listDatabaseResource, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listDatabaseResource, hcClient);
     }
 
     /**
@@ -3486,7 +3420,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseResourceFlavorRequest 请求对象
+     * @param request ListDatabaseResourceFlavorRequest 请求对象
      * @return ListDatabaseResourceFlavorResponse
      */
     public ListDatabaseResourceFlavorResponse listDatabaseResourceFlavor(ListDatabaseResourceFlavorRequest request) {
@@ -3500,13 +3434,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabaseResourceFlavorRequest 请求对象
+     * @param request ListDatabaseResourceFlavorRequest 请求对象
      * @return SyncInvoker<ListDatabaseResourceFlavorRequest, ListDatabaseResourceFlavorResponse>
      */
     public SyncInvoker<ListDatabaseResourceFlavorRequest, ListDatabaseResourceFlavorResponse> listDatabaseResourceFlavorInvoker(
         ListDatabaseResourceFlavorRequest request) {
-        return new SyncInvoker<ListDatabaseResourceFlavorRequest, ListDatabaseResourceFlavorResponse>(request,
-            EiHealthMeta.listDatabaseResourceFlavor, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listDatabaseResourceFlavor, hcClient);
     }
 
     /**
@@ -3516,7 +3449,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDrugJobRequest 请求对象
+     * @param request ListDrugJobRequest 请求对象
      * @return ListDrugJobResponse
      */
     public ListDrugJobResponse listDrugJob(ListDrugJobRequest request) {
@@ -3530,11 +3463,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDrugJobRequest 请求对象
+     * @param request ListDrugJobRequest 请求对象
      * @return SyncInvoker<ListDrugJobRequest, ListDrugJobResponse>
      */
     public SyncInvoker<ListDrugJobRequest, ListDrugJobResponse> listDrugJobInvoker(ListDrugJobRequest request) {
-        return new SyncInvoker<ListDrugJobRequest, ListDrugJobResponse>(request, EiHealthMeta.listDrugJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listDrugJob, hcClient);
     }
 
     /**
@@ -3544,7 +3477,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDrugModelRequest 请求对象
+     * @param request ListDrugModelRequest 请求对象
      * @return ListDrugModelResponse
      */
     public ListDrugModelResponse listDrugModel(ListDrugModelRequest request) {
@@ -3558,12 +3491,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDrugModelRequest 请求对象
+     * @param request ListDrugModelRequest 请求对象
      * @return SyncInvoker<ListDrugModelRequest, ListDrugModelResponse>
      */
     public SyncInvoker<ListDrugModelRequest, ListDrugModelResponse> listDrugModelInvoker(ListDrugModelRequest request) {
-        return new SyncInvoker<ListDrugModelRequest, ListDrugModelResponse>(request, EiHealthMeta.listDrugModel,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listDrugModel, hcClient);
     }
 
     /**
@@ -3573,7 +3505,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGlobalWorkflowStatisticRequest 请求对象
+     * @param request ListGlobalWorkflowStatisticRequest 请求对象
      * @return ListGlobalWorkflowStatisticResponse
      */
     public ListGlobalWorkflowStatisticResponse listGlobalWorkflowStatistic(ListGlobalWorkflowStatisticRequest request) {
@@ -3587,13 +3519,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGlobalWorkflowStatisticRequest 请求对象
+     * @param request ListGlobalWorkflowStatisticRequest 请求对象
      * @return SyncInvoker<ListGlobalWorkflowStatisticRequest, ListGlobalWorkflowStatisticResponse>
      */
     public SyncInvoker<ListGlobalWorkflowStatisticRequest, ListGlobalWorkflowStatisticResponse> listGlobalWorkflowStatisticInvoker(
         ListGlobalWorkflowStatisticRequest request) {
-        return new SyncInvoker<ListGlobalWorkflowStatisticRequest, ListGlobalWorkflowStatisticResponse>(request,
-            EiHealthMeta.listGlobalWorkflowStatistic, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listGlobalWorkflowStatistic, hcClient);
     }
 
     /**
@@ -3603,7 +3534,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamGroupUsersRequest 请求对象
+     * @param request ListIamGroupUsersRequest 请求对象
      * @return ListIamGroupUsersResponse
      */
     public ListIamGroupUsersResponse listIamGroupUsers(ListIamGroupUsersRequest request) {
@@ -3617,13 +3548,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamGroupUsersRequest 请求对象
+     * @param request ListIamGroupUsersRequest 请求对象
      * @return SyncInvoker<ListIamGroupUsersRequest, ListIamGroupUsersResponse>
      */
     public SyncInvoker<ListIamGroupUsersRequest, ListIamGroupUsersResponse> listIamGroupUsersInvoker(
         ListIamGroupUsersRequest request) {
-        return new SyncInvoker<ListIamGroupUsersRequest, ListIamGroupUsersResponse>(request,
-            EiHealthMeta.listIamGroupUsers, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listIamGroupUsers, hcClient);
     }
 
     /**
@@ -3633,7 +3563,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamGroupsRequest 请求对象
+     * @param request ListIamGroupsRequest 请求对象
      * @return ListIamGroupsResponse
      */
     public ListIamGroupsResponse listIamGroups(ListIamGroupsRequest request) {
@@ -3647,12 +3577,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamGroupsRequest 请求对象
+     * @param request ListIamGroupsRequest 请求对象
      * @return SyncInvoker<ListIamGroupsRequest, ListIamGroupsResponse>
      */
     public SyncInvoker<ListIamGroupsRequest, ListIamGroupsResponse> listIamGroupsInvoker(ListIamGroupsRequest request) {
-        return new SyncInvoker<ListIamGroupsRequest, ListIamGroupsResponse>(request, EiHealthMeta.listIamGroups,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listIamGroups, hcClient);
     }
 
     /**
@@ -3662,7 +3591,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamUsersRequest 请求对象
+     * @param request ListIamUsersRequest 请求对象
      * @return ListIamUsersResponse
      */
     public ListIamUsersResponse listIamUsers(ListIamUsersRequest request) {
@@ -3676,11 +3605,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIamUsersRequest 请求对象
+     * @param request ListIamUsersRequest 请求对象
      * @return SyncInvoker<ListIamUsersRequest, ListIamUsersResponse>
      */
     public SyncInvoker<ListIamUsersRequest, ListIamUsersResponse> listIamUsersInvoker(ListIamUsersRequest request) {
-        return new SyncInvoker<ListIamUsersRequest, ListIamUsersResponse>(request, EiHealthMeta.listIamUsers, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listIamUsers, hcClient);
     }
 
     /**
@@ -3690,7 +3619,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageRequest 请求对象
+     * @param request ListImageRequest 请求对象
      * @return ListImageResponse
      */
     public ListImageResponse listImage(ListImageRequest request) {
@@ -3704,11 +3633,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageRequest 请求对象
+     * @param request ListImageRequest 请求对象
      * @return SyncInvoker<ListImageRequest, ListImageResponse>
      */
     public SyncInvoker<ListImageRequest, ListImageResponse> listImageInvoker(ListImageRequest request) {
-        return new SyncInvoker<ListImageRequest, ListImageResponse>(request, EiHealthMeta.listImage, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listImage, hcClient);
     }
 
     /**
@@ -3718,7 +3647,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageTagRequest 请求对象
+     * @param request ListImageTagRequest 请求对象
      * @return ListImageTagResponse
      */
     public ListImageTagResponse listImageTag(ListImageTagRequest request) {
@@ -3732,11 +3661,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImageTagRequest 请求对象
+     * @param request ListImageTagRequest 请求对象
      * @return SyncInvoker<ListImageTagRequest, ListImageTagResponse>
      */
     public SyncInvoker<ListImageTagRequest, ListImageTagResponse> listImageTagInvoker(ListImageTagRequest request) {
-        return new SyncInvoker<ListImageTagRequest, ListImageTagResponse>(request, EiHealthMeta.listImageTag, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listImageTag, hcClient);
     }
 
     /**
@@ -3746,7 +3675,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceRequest 请求对象
+     * @param request ListInstanceRequest 请求对象
      * @return ListInstanceResponse
      */
     public ListInstanceResponse listInstance(ListInstanceRequest request) {
@@ -3760,11 +3689,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceRequest 请求对象
+     * @param request ListInstanceRequest 请求对象
      * @return SyncInvoker<ListInstanceRequest, ListInstanceResponse>
      */
     public SyncInvoker<ListInstanceRequest, ListInstanceResponse> listInstanceInvoker(ListInstanceRequest request) {
-        return new SyncInvoker<ListInstanceRequest, ListInstanceResponse>(request, EiHealthMeta.listInstance, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listInstance, hcClient);
     }
 
     /**
@@ -3774,7 +3703,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobRequest 请求对象
+     * @param request ListJobRequest 请求对象
      * @return ListJobResponse
      */
     public ListJobResponse listJob(ListJobRequest request) {
@@ -3788,11 +3717,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobRequest 请求对象
+     * @param request ListJobRequest 请求对象
      * @return SyncInvoker<ListJobRequest, ListJobResponse>
      */
     public SyncInvoker<ListJobRequest, ListJobResponse> listJobInvoker(ListJobRequest request) {
-        return new SyncInvoker<ListJobRequest, ListJobResponse>(request, EiHealthMeta.listJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listJob, hcClient);
     }
 
     /**
@@ -3802,7 +3731,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelRequest 请求对象
+     * @param request ListLabelRequest 请求对象
      * @return ListLabelResponse
      */
     public ListLabelResponse listLabel(ListLabelRequest request) {
@@ -3816,11 +3745,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelRequest 请求对象
+     * @param request ListLabelRequest 请求对象
      * @return SyncInvoker<ListLabelRequest, ListLabelResponse>
      */
     public SyncInvoker<ListLabelRequest, ListLabelResponse> listLabelInvoker(ListLabelRequest request) {
-        return new SyncInvoker<ListLabelRequest, ListLabelResponse>(request, EiHealthMeta.listLabel, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listLabel, hcClient);
     }
 
     /**
@@ -3830,7 +3759,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelPageRequest 请求对象
+     * @param request ListLabelPageRequest 请求对象
      * @return ListLabelPageResponse
      */
     public ListLabelPageResponse listLabelPage(ListLabelPageRequest request) {
@@ -3844,12 +3773,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLabelPageRequest 请求对象
+     * @param request ListLabelPageRequest 请求对象
      * @return SyncInvoker<ListLabelPageRequest, ListLabelPageResponse>
      */
     public SyncInvoker<ListLabelPageRequest, ListLabelPageResponse> listLabelPageInvoker(ListLabelPageRequest request) {
-        return new SyncInvoker<ListLabelPageRequest, ListLabelPageResponse>(request, EiHealthMeta.listLabelPage,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listLabelPage, hcClient);
     }
 
     /**
@@ -3859,7 +3787,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageRequest 请求对象
+     * @param request ListMessageRequest 请求对象
      * @return ListMessageResponse
      */
     public ListMessageResponse listMessage(ListMessageRequest request) {
@@ -3873,11 +3801,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageRequest 请求对象
+     * @param request ListMessageRequest 请求对象
      * @return SyncInvoker<ListMessageRequest, ListMessageResponse>
      */
     public SyncInvoker<ListMessageRequest, ListMessageResponse> listMessageInvoker(ListMessageRequest request) {
-        return new SyncInvoker<ListMessageRequest, ListMessageResponse>(request, EiHealthMeta.listMessage, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listMessage, hcClient);
     }
 
     /**
@@ -3887,7 +3815,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageStatisticsRequest 请求对象
+     * @param request ListMessageStatisticsRequest 请求对象
      * @return ListMessageStatisticsResponse
      */
     public ListMessageStatisticsResponse listMessageStatistics(ListMessageStatisticsRequest request) {
@@ -3901,13 +3829,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMessageStatisticsRequest 请求对象
+     * @param request ListMessageStatisticsRequest 请求对象
      * @return SyncInvoker<ListMessageStatisticsRequest, ListMessageStatisticsResponse>
      */
     public SyncInvoker<ListMessageStatisticsRequest, ListMessageStatisticsResponse> listMessageStatisticsInvoker(
         ListMessageStatisticsRequest request) {
-        return new SyncInvoker<ListMessageStatisticsRequest, ListMessageStatisticsResponse>(request,
-            EiHealthMeta.listMessageStatistics, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listMessageStatistics, hcClient);
     }
 
     /**
@@ -3917,7 +3844,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMfaRequest 请求对象
+     * @param request ListMfaRequest 请求对象
      * @return ListMfaResponse
      */
     public ListMfaResponse listMfa(ListMfaRequest request) {
@@ -3931,11 +3858,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMfaRequest 请求对象
+     * @param request ListMfaRequest 请求对象
      * @return SyncInvoker<ListMfaRequest, ListMfaResponse>
      */
     public SyncInvoker<ListMfaRequest, ListMfaResponse> listMfaInvoker(ListMfaRequest request) {
-        return new SyncInvoker<ListMfaRequest, ListMfaResponse>(request, EiHealthMeta.listMfa, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listMfa, hcClient);
     }
 
     /**
@@ -3945,7 +3872,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodeLabelRequest 请求对象
+     * @param request ListNodeLabelRequest 请求对象
      * @return ListNodeLabelResponse
      */
     public ListNodeLabelResponse listNodeLabel(ListNodeLabelRequest request) {
@@ -3959,12 +3886,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodeLabelRequest 请求对象
+     * @param request ListNodeLabelRequest 请求对象
      * @return SyncInvoker<ListNodeLabelRequest, ListNodeLabelResponse>
      */
     public SyncInvoker<ListNodeLabelRequest, ListNodeLabelResponse> listNodeLabelInvoker(ListNodeLabelRequest request) {
-        return new SyncInvoker<ListNodeLabelRequest, ListNodeLabelResponse>(request, EiHealthMeta.listNodeLabel,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listNodeLabel, hcClient);
     }
 
     /**
@@ -3974,7 +3900,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodesRequest 请求对象
+     * @param request ListNodesRequest 请求对象
      * @return ListNodesResponse
      */
     public ListNodesResponse listNodes(ListNodesRequest request) {
@@ -3988,11 +3914,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodesRequest 请求对象
+     * @param request ListNodesRequest 请求对象
      * @return SyncInvoker<ListNodesRequest, ListNodesResponse>
      */
     public SyncInvoker<ListNodesRequest, ListNodesResponse> listNodesInvoker(ListNodesRequest request) {
-        return new SyncInvoker<ListNodesRequest, ListNodesResponse>(request, EiHealthMeta.listNodes, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listNodes, hcClient);
     }
 
     /**
@@ -4002,7 +3928,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNoticeRequest 请求对象
+     * @param request ListNoticeRequest 请求对象
      * @return ListNoticeResponse
      */
     public ListNoticeResponse listNotice(ListNoticeRequest request) {
@@ -4016,11 +3942,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNoticeRequest 请求对象
+     * @param request ListNoticeRequest 请求对象
      * @return SyncInvoker<ListNoticeRequest, ListNoticeResponse>
      */
     public SyncInvoker<ListNoticeRequest, ListNoticeResponse> listNoticeInvoker(ListNoticeRequest request) {
-        return new SyncInvoker<ListNoticeRequest, ListNoticeResponse>(request, EiHealthMeta.listNotice, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listNotice, hcClient);
     }
 
     /**
@@ -4030,7 +3956,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPerformanceResourceStatRequest 请求对象
+     * @param request ListPerformanceResourceStatRequest 请求对象
      * @return ListPerformanceResourceStatResponse
      */
     public ListPerformanceResourceStatResponse listPerformanceResourceStat(ListPerformanceResourceStatRequest request) {
@@ -4044,13 +3970,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPerformanceResourceStatRequest 请求对象
+     * @param request ListPerformanceResourceStatRequest 请求对象
      * @return SyncInvoker<ListPerformanceResourceStatRequest, ListPerformanceResourceStatResponse>
      */
     public SyncInvoker<ListPerformanceResourceStatRequest, ListPerformanceResourceStatResponse> listPerformanceResourceStatInvoker(
         ListPerformanceResourceStatRequest request) {
-        return new SyncInvoker<ListPerformanceResourceStatRequest, ListPerformanceResourceStatResponse>(request,
-            EiHealthMeta.listPerformanceResourceStat, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listPerformanceResourceStat, hcClient);
     }
 
     /**
@@ -4060,7 +3985,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPerformanceResourcesRequest 请求对象
+     * @param request ListPerformanceResourcesRequest 请求对象
      * @return ListPerformanceResourcesResponse
      */
     public ListPerformanceResourcesResponse listPerformanceResources(ListPerformanceResourcesRequest request) {
@@ -4074,13 +3999,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPerformanceResourcesRequest 请求对象
+     * @param request ListPerformanceResourcesRequest 请求对象
      * @return SyncInvoker<ListPerformanceResourcesRequest, ListPerformanceResourcesResponse>
      */
     public SyncInvoker<ListPerformanceResourcesRequest, ListPerformanceResourcesResponse> listPerformanceResourcesInvoker(
         ListPerformanceResourcesRequest request) {
-        return new SyncInvoker<ListPerformanceResourcesRequest, ListPerformanceResourcesResponse>(request,
-            EiHealthMeta.listPerformanceResources, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listPerformanceResources, hcClient);
     }
 
     /**
@@ -4090,7 +4014,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyEventsRequest 请求对象
+     * @param request ListPolicyEventsRequest 请求对象
      * @return ListPolicyEventsResponse
      */
     public ListPolicyEventsResponse listPolicyEvents(ListPolicyEventsRequest request) {
@@ -4104,13 +4028,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyEventsRequest 请求对象
+     * @param request ListPolicyEventsRequest 请求对象
      * @return SyncInvoker<ListPolicyEventsRequest, ListPolicyEventsResponse>
      */
     public SyncInvoker<ListPolicyEventsRequest, ListPolicyEventsResponse> listPolicyEventsInvoker(
         ListPolicyEventsRequest request) {
-        return new SyncInvoker<ListPolicyEventsRequest, ListPolicyEventsResponse>(request,
-            EiHealthMeta.listPolicyEvents, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listPolicyEvents, hcClient);
     }
 
     /**
@@ -4120,7 +4043,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPresetLabelRequest 请求对象
+     * @param request ListPresetLabelRequest 请求对象
      * @return ListPresetLabelResponse
      */
     public ListPresetLabelResponse listPresetLabel(ListPresetLabelRequest request) {
@@ -4134,13 +4057,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPresetLabelRequest 请求对象
+     * @param request ListPresetLabelRequest 请求对象
      * @return SyncInvoker<ListPresetLabelRequest, ListPresetLabelResponse>
      */
     public SyncInvoker<ListPresetLabelRequest, ListPresetLabelResponse> listPresetLabelInvoker(
         ListPresetLabelRequest request) {
-        return new SyncInvoker<ListPresetLabelRequest, ListPresetLabelResponse>(request, EiHealthMeta.listPresetLabel,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listPresetLabel, hcClient);
     }
 
     /**
@@ -4150,7 +4072,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectRequest 请求对象
+     * @param request ListProjectRequest 请求对象
      * @return ListProjectResponse
      */
     public ListProjectResponse listProject(ListProjectRequest request) {
@@ -4164,11 +4086,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectRequest 请求对象
+     * @param request ListProjectRequest 请求对象
      * @return SyncInvoker<ListProjectRequest, ListProjectResponse>
      */
     public SyncInvoker<ListProjectRequest, ListProjectResponse> listProjectInvoker(ListProjectRequest request) {
-        return new SyncInvoker<ListProjectRequest, ListProjectResponse>(request, EiHealthMeta.listProject, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listProject, hcClient);
     }
 
     /**
@@ -4178,7 +4100,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPropertyRequest 请求对象
+     * @param request ListPropertyRequest 请求对象
      * @return ListPropertyResponse
      */
     public ListPropertyResponse listProperty(ListPropertyRequest request) {
@@ -4192,11 +4114,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPropertyRequest 请求对象
+     * @param request ListPropertyRequest 请求对象
      * @return SyncInvoker<ListPropertyRequest, ListPropertyResponse>
      */
     public SyncInvoker<ListPropertyRequest, ListPropertyResponse> listPropertyInvoker(ListPropertyRequest request) {
-        return new SyncInvoker<ListPropertyRequest, ListPropertyResponse>(request, EiHealthMeta.listProperty, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listProperty, hcClient);
     }
 
     /**
@@ -4206,7 +4128,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaRequest 请求对象
+     * @param request ListQuotaRequest 请求对象
      * @return ListQuotaResponse
      */
     public ListQuotaResponse listQuota(ListQuotaRequest request) {
@@ -4220,11 +4142,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaRequest 请求对象
+     * @param request ListQuotaRequest 请求对象
      * @return SyncInvoker<ListQuotaRequest, ListQuotaResponse>
      */
     public SyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaInvoker(ListQuotaRequest request) {
-        return new SyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, EiHealthMeta.listQuota, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listQuota, hcClient);
     }
 
     /**
@@ -4234,7 +4156,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScaleOutPolicyRequest 请求对象
+     * @param request ListScaleOutPolicyRequest 请求对象
      * @return ListScaleOutPolicyResponse
      */
     public ListScaleOutPolicyResponse listScaleOutPolicy(ListScaleOutPolicyRequest request) {
@@ -4248,13 +4170,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScaleOutPolicyRequest 请求对象
+     * @param request ListScaleOutPolicyRequest 请求对象
      * @return SyncInvoker<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse>
      */
     public SyncInvoker<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse> listScaleOutPolicyInvoker(
         ListScaleOutPolicyRequest request) {
-        return new SyncInvoker<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse>(request,
-            EiHealthMeta.listScaleOutPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listScaleOutPolicy, hcClient);
     }
 
     /**
@@ -4264,7 +4185,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingHistoryRequest 请求对象
+     * @param request ListScalingHistoryRequest 请求对象
      * @return ListScalingHistoryResponse
      */
     public ListScalingHistoryResponse listScalingHistory(ListScalingHistoryRequest request) {
@@ -4278,13 +4199,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScalingHistoryRequest 请求对象
+     * @param request ListScalingHistoryRequest 请求对象
      * @return SyncInvoker<ListScalingHistoryRequest, ListScalingHistoryResponse>
      */
     public SyncInvoker<ListScalingHistoryRequest, ListScalingHistoryResponse> listScalingHistoryInvoker(
         ListScalingHistoryRequest request) {
-        return new SyncInvoker<ListScalingHistoryRequest, ListScalingHistoryResponse>(request,
-            EiHealthMeta.listScalingHistory, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listScalingHistory, hcClient);
     }
 
     /**
@@ -4294,7 +4214,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStarRequest 请求对象
+     * @param request ListStarRequest 请求对象
      * @return ListStarResponse
      */
     public ListStarResponse listStar(ListStarRequest request) {
@@ -4308,11 +4228,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStarRequest 请求对象
+     * @param request ListStarRequest 请求对象
      * @return SyncInvoker<ListStarRequest, ListStarResponse>
      */
     public SyncInvoker<ListStarRequest, ListStarResponse> listStarInvoker(ListStarRequest request) {
-        return new SyncInvoker<ListStarRequest, ListStarResponse>(request, EiHealthMeta.listStar, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listStar, hcClient);
     }
 
     /**
@@ -4322,7 +4242,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStorageResourcesRequest 请求对象
+     * @param request ListStorageResourcesRequest 请求对象
      * @return ListStorageResourcesResponse
      */
     public ListStorageResourcesResponse listStorageResources(ListStorageResourcesRequest request) {
@@ -4336,13 +4256,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStorageResourcesRequest 请求对象
+     * @param request ListStorageResourcesRequest 请求对象
      * @return SyncInvoker<ListStorageResourcesRequest, ListStorageResourcesResponse>
      */
     public SyncInvoker<ListStorageResourcesRequest, ListStorageResourcesResponse> listStorageResourcesInvoker(
         ListStorageResourcesRequest request) {
-        return new SyncInvoker<ListStorageResourcesRequest, ListStorageResourcesResponse>(request,
-            EiHealthMeta.listStorageResources, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listStorageResources, hcClient);
     }
 
     /**
@@ -4352,7 +4271,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStudyRequest 请求对象
+     * @param request ListStudyRequest 请求对象
      * @return ListStudyResponse
      */
     public ListStudyResponse listStudy(ListStudyRequest request) {
@@ -4366,11 +4285,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStudyRequest 请求对象
+     * @param request ListStudyRequest 请求对象
      * @return SyncInvoker<ListStudyRequest, ListStudyResponse>
      */
     public SyncInvoker<ListStudyRequest, ListStudyResponse> listStudyInvoker(ListStudyRequest request) {
-        return new SyncInvoker<ListStudyRequest, ListStudyResponse>(request, EiHealthMeta.listStudy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listStudy, hcClient);
     }
 
     /**
@@ -4380,7 +4299,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStudyJobRequest 请求对象
+     * @param request ListStudyJobRequest 请求对象
      * @return ListStudyJobResponse
      */
     public ListStudyJobResponse listStudyJob(ListStudyJobRequest request) {
@@ -4394,11 +4313,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStudyJobRequest 请求对象
+     * @param request ListStudyJobRequest 请求对象
      * @return SyncInvoker<ListStudyJobRequest, ListStudyJobResponse>
      */
     public SyncInvoker<ListStudyJobRequest, ListStudyJobResponse> listStudyJobInvoker(ListStudyJobRequest request) {
-        return new SyncInvoker<ListStudyJobRequest, ListStudyJobResponse>(request, EiHealthMeta.listStudyJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listStudyJob, hcClient);
     }
 
     /**
@@ -4408,7 +4327,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateRequest 请求对象
+     * @param request ListTemplateRequest 请求对象
      * @return ListTemplateResponse
      */
     public ListTemplateResponse listTemplate(ListTemplateRequest request) {
@@ -4422,11 +4341,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateRequest 请求对象
+     * @param request ListTemplateRequest 请求对象
      * @return SyncInvoker<ListTemplateRequest, ListTemplateResponse>
      */
     public SyncInvoker<ListTemplateRequest, ListTemplateResponse> listTemplateInvoker(ListTemplateRequest request) {
-        return new SyncInvoker<ListTemplateRequest, ListTemplateResponse>(request, EiHealthMeta.listTemplate, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listTemplate, hcClient);
     }
 
     /**
@@ -4436,7 +4355,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserRequest 请求对象
+     * @param request ListUserRequest 请求对象
      * @return ListUserResponse
      */
     public ListUserResponse listUser(ListUserRequest request) {
@@ -4450,11 +4369,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUserRequest 请求对象
+     * @param request ListUserRequest 请求对象
      * @return SyncInvoker<ListUserRequest, ListUserResponse>
      */
     public SyncInvoker<ListUserRequest, ListUserResponse> listUserInvoker(ListUserRequest request) {
-        return new SyncInvoker<ListUserRequest, ListUserResponse>(request, EiHealthMeta.listUser, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listUser, hcClient);
     }
 
     /**
@@ -4464,7 +4383,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVendorRequest 请求对象
+     * @param request ListVendorRequest 请求对象
      * @return ListVendorResponse
      */
     public ListVendorResponse listVendor(ListVendorRequest request) {
@@ -4478,11 +4397,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVendorRequest 请求对象
+     * @param request ListVendorRequest 请求对象
      * @return SyncInvoker<ListVendorRequest, ListVendorResponse>
      */
     public SyncInvoker<ListVendorRequest, ListVendorResponse> listVendorInvoker(ListVendorRequest request) {
-        return new SyncInvoker<ListVendorRequest, ListVendorResponse>(request, EiHealthMeta.listVendor, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listVendor, hcClient);
     }
 
     /**
@@ -4492,7 +4411,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowRequest 请求对象
+     * @param request ListWorkflowRequest 请求对象
      * @return ListWorkflowResponse
      */
     public ListWorkflowResponse listWorkflow(ListWorkflowRequest request) {
@@ -4506,11 +4425,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowRequest 请求对象
+     * @param request ListWorkflowRequest 请求对象
      * @return SyncInvoker<ListWorkflowRequest, ListWorkflowResponse>
      */
     public SyncInvoker<ListWorkflowRequest, ListWorkflowResponse> listWorkflowInvoker(ListWorkflowRequest request) {
-        return new SyncInvoker<ListWorkflowRequest, ListWorkflowResponse>(request, EiHealthMeta.listWorkflow, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listWorkflow, hcClient);
     }
 
     /**
@@ -4520,7 +4439,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowStatisticRequest 请求对象
+     * @param request ListWorkflowStatisticRequest 请求对象
      * @return ListWorkflowStatisticResponse
      */
     public ListWorkflowStatisticResponse listWorkflowStatistic(ListWorkflowStatisticRequest request) {
@@ -4534,13 +4453,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowStatisticRequest 请求对象
+     * @param request ListWorkflowStatisticRequest 请求对象
      * @return SyncInvoker<ListWorkflowStatisticRequest, ListWorkflowStatisticResponse>
      */
     public SyncInvoker<ListWorkflowStatisticRequest, ListWorkflowStatisticResponse> listWorkflowStatisticInvoker(
         ListWorkflowStatisticRequest request) {
-        return new SyncInvoker<ListWorkflowStatisticRequest, ListWorkflowStatisticResponse>(request,
-            EiHealthMeta.listWorkflowStatistic, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listWorkflowStatistic, hcClient);
     }
 
     /**
@@ -4550,7 +4468,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAppRequest 请求对象
+     * @param request PublishAppRequest 请求对象
      * @return PublishAppResponse
      */
     public PublishAppResponse publishApp(PublishAppRequest request) {
@@ -4564,11 +4482,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishAppRequest 请求对象
+     * @param request PublishAppRequest 请求对象
      * @return SyncInvoker<PublishAppRequest, PublishAppResponse>
      */
     public SyncInvoker<PublishAppRequest, PublishAppResponse> publishAppInvoker(PublishAppRequest request) {
-        return new SyncInvoker<PublishAppRequest, PublishAppResponse>(request, EiHealthMeta.publishApp, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.publishApp, hcClient);
     }
 
     /**
@@ -4578,7 +4496,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishDataRequest 请求对象
+     * @param request PublishDataRequest 请求对象
      * @return PublishDataResponse
      */
     public PublishDataResponse publishData(PublishDataRequest request) {
@@ -4592,11 +4510,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishDataRequest 请求对象
+     * @param request PublishDataRequest 请求对象
      * @return SyncInvoker<PublishDataRequest, PublishDataResponse>
      */
     public SyncInvoker<PublishDataRequest, PublishDataResponse> publishDataInvoker(PublishDataRequest request) {
-        return new SyncInvoker<PublishDataRequest, PublishDataResponse>(request, EiHealthMeta.publishData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.publishData, hcClient);
     }
 
     /**
@@ -4606,7 +4524,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishImageRequest 请求对象
+     * @param request PublishImageRequest 请求对象
      * @return PublishImageResponse
      */
     public PublishImageResponse publishImage(PublishImageRequest request) {
@@ -4620,11 +4538,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishImageRequest 请求对象
+     * @param request PublishImageRequest 请求对象
      * @return SyncInvoker<PublishImageRequest, PublishImageResponse>
      */
     public SyncInvoker<PublishImageRequest, PublishImageResponse> publishImageInvoker(PublishImageRequest request) {
-        return new SyncInvoker<PublishImageRequest, PublishImageResponse>(request, EiHealthMeta.publishImage, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.publishImage, hcClient);
     }
 
     /**
@@ -4634,7 +4552,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishWorkflowRequest 请求对象
+     * @param request PublishWorkflowRequest 请求对象
      * @return PublishWorkflowResponse
      */
     public PublishWorkflowResponse publishWorkflow(PublishWorkflowRequest request) {
@@ -4648,13 +4566,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PublishWorkflowRequest 请求对象
+     * @param request PublishWorkflowRequest 请求对象
      * @return SyncInvoker<PublishWorkflowRequest, PublishWorkflowResponse>
      */
     public SyncInvoker<PublishWorkflowRequest, PublishWorkflowResponse> publishWorkflowInvoker(
         PublishWorkflowRequest request) {
-        return new SyncInvoker<PublishWorkflowRequest, PublishWorkflowResponse>(request, EiHealthMeta.publishWorkflow,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.publishWorkflow, hcClient);
     }
 
     /**
@@ -4664,7 +4581,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param QuoteDataRequest 请求对象
+     * @param request QuoteDataRequest 请求对象
      * @return QuoteDataResponse
      */
     public QuoteDataResponse quoteData(QuoteDataRequest request) {
@@ -4678,11 +4595,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param QuoteDataRequest 请求对象
+     * @param request QuoteDataRequest 请求对象
      * @return SyncInvoker<QuoteDataRequest, QuoteDataResponse>
      */
     public SyncInvoker<QuoteDataRequest, QuoteDataResponse> quoteDataInvoker(QuoteDataRequest request) {
-        return new SyncInvoker<QuoteDataRequest, QuoteDataResponse>(request, EiHealthMeta.quoteData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.quoteData, hcClient);
     }
 
     /**
@@ -4692,7 +4609,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param QuoteInstanceRequest 请求对象
+     * @param request QuoteInstanceRequest 请求对象
      * @return QuoteInstanceResponse
      */
     public QuoteInstanceResponse quoteInstance(QuoteInstanceRequest request) {
@@ -4706,12 +4623,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param QuoteInstanceRequest 请求对象
+     * @param request QuoteInstanceRequest 请求对象
      * @return SyncInvoker<QuoteInstanceRequest, QuoteInstanceResponse>
      */
     public SyncInvoker<QuoteInstanceRequest, QuoteInstanceResponse> quoteInstanceInvoker(QuoteInstanceRequest request) {
-        return new SyncInvoker<QuoteInstanceRequest, QuoteInstanceResponse>(request, EiHealthMeta.quoteInstance,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.quoteInstance, hcClient);
     }
 
     /**
@@ -4721,7 +4637,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RebootNodeRequest 请求对象
+     * @param request RebootNodeRequest 请求对象
      * @return RebootNodeResponse
      */
     public RebootNodeResponse rebootNode(RebootNodeRequest request) {
@@ -4735,11 +4651,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RebootNodeRequest 请求对象
+     * @param request RebootNodeRequest 请求对象
      * @return SyncInvoker<RebootNodeRequest, RebootNodeResponse>
      */
     public SyncInvoker<RebootNodeRequest, RebootNodeResponse> rebootNodeInvoker(RebootNodeRequest request) {
-        return new SyncInvoker<RebootNodeRequest, RebootNodeResponse>(request, EiHealthMeta.rebootNode, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.rebootNode, hcClient);
     }
 
     /**
@@ -4749,7 +4665,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreBackupRequest 请求对象
+     * @param request RestoreBackupRequest 请求对象
      * @return RestoreBackupResponse
      */
     public RestoreBackupResponse restoreBackup(RestoreBackupRequest request) {
@@ -4763,12 +4679,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreBackupRequest 请求对象
+     * @param request RestoreBackupRequest 请求对象
      * @return SyncInvoker<RestoreBackupRequest, RestoreBackupResponse>
      */
     public SyncInvoker<RestoreBackupRequest, RestoreBackupResponse> restoreBackupInvoker(RestoreBackupRequest request) {
-        return new SyncInvoker<RestoreBackupRequest, RestoreBackupResponse>(request, EiHealthMeta.restoreBackup,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.restoreBackup, hcClient);
     }
 
     /**
@@ -4778,7 +4693,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryDataJobRequest 请求对象
+     * @param request RetryDataJobRequest 请求对象
      * @return RetryDataJobResponse
      */
     public RetryDataJobResponse retryDataJob(RetryDataJobRequest request) {
@@ -4792,11 +4707,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryDataJobRequest 请求对象
+     * @param request RetryDataJobRequest 请求对象
      * @return SyncInvoker<RetryDataJobRequest, RetryDataJobResponse>
      */
     public SyncInvoker<RetryDataJobRequest, RetryDataJobResponse> retryDataJobInvoker(RetryDataJobRequest request) {
-        return new SyncInvoker<RetryDataJobRequest, RetryDataJobResponse>(request, EiHealthMeta.retryDataJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.retryDataJob, hcClient);
     }
 
     /**
@@ -4806,7 +4721,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryJobRequest 请求对象
+     * @param request RetryJobRequest 请求对象
      * @return RetryJobResponse
      */
     public RetryJobResponse retryJob(RetryJobRequest request) {
@@ -4820,11 +4735,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryJobRequest 请求对象
+     * @param request RetryJobRequest 请求对象
      * @return SyncInvoker<RetryJobRequest, RetryJobResponse>
      */
     public SyncInvoker<RetryJobRequest, RetryJobResponse> retryJobInvoker(RetryJobRequest request) {
-        return new SyncInvoker<RetryJobRequest, RetryJobResponse>(request, EiHealthMeta.retryJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.retryJob, hcClient);
     }
 
     /**
@@ -4834,7 +4749,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Show3dStructureContentRequest 请求对象
+     * @param request Show3dStructureContentRequest 请求对象
      * @return Show3dStructureContentResponse
      */
     public Show3dStructureContentResponse show3dStructureContent(Show3dStructureContentRequest request) {
@@ -4848,13 +4763,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param Show3dStructureContentRequest 请求对象
+     * @param request Show3dStructureContentRequest 请求对象
      * @return SyncInvoker<Show3dStructureContentRequest, Show3dStructureContentResponse>
      */
     public SyncInvoker<Show3dStructureContentRequest, Show3dStructureContentResponse> show3dStructureContentInvoker(
         Show3dStructureContentRequest request) {
-        return new SyncInvoker<Show3dStructureContentRequest, Show3dStructureContentResponse>(request,
-            EiHealthMeta.show3dStructureContent, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.show3dStructureContent, hcClient);
     }
 
     /**
@@ -4864,7 +4778,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetJobRequest 请求对象
+     * @param request ShowAdmetJobRequest 请求对象
      * @return ShowAdmetJobResponse
      */
     public ShowAdmetJobResponse showAdmetJob(ShowAdmetJobRequest request) {
@@ -4878,11 +4792,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetJobRequest 请求对象
+     * @param request ShowAdmetJobRequest 请求对象
      * @return SyncInvoker<ShowAdmetJobRequest, ShowAdmetJobResponse>
      */
     public SyncInvoker<ShowAdmetJobRequest, ShowAdmetJobResponse> showAdmetJobInvoker(ShowAdmetJobRequest request) {
-        return new SyncInvoker<ShowAdmetJobRequest, ShowAdmetJobResponse>(request, EiHealthMeta.showAdmetJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showAdmetJob, hcClient);
     }
 
     /**
@@ -4892,7 +4806,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return ShowAppResponse
      */
     public ShowAppResponse showApp(ShowAppRequest request) {
@@ -4906,11 +4820,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return SyncInvoker<ShowAppRequest, ShowAppResponse>
      */
     public SyncInvoker<ShowAppRequest, ShowAppResponse> showAppInvoker(ShowAppRequest request) {
-        return new SyncInvoker<ShowAppRequest, ShowAppResponse>(request, EiHealthMeta.showApp, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showApp, hcClient);
     }
 
     /**
@@ -4920,7 +4834,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetRequest 请求对象
+     * @param request ShowAssetRequest 请求对象
      * @return ShowAssetResponse
      */
     public ShowAssetResponse showAsset(ShowAssetRequest request) {
@@ -4934,11 +4848,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetRequest 请求对象
+     * @param request ShowAssetRequest 请求对象
      * @return SyncInvoker<ShowAssetRequest, ShowAssetResponse>
      */
     public SyncInvoker<ShowAssetRequest, ShowAssetResponse> showAssetInvoker(ShowAssetRequest request) {
-        return new SyncInvoker<ShowAssetRequest, ShowAssetResponse>(request, EiHealthMeta.showAsset, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showAsset, hcClient);
     }
 
     /**
@@ -4948,7 +4862,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetVersionRequest 请求对象
+     * @param request ShowAssetVersionRequest 请求对象
      * @return ShowAssetVersionResponse
      */
     public ShowAssetVersionResponse showAssetVersion(ShowAssetVersionRequest request) {
@@ -4962,13 +4876,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAssetVersionRequest 请求对象
+     * @param request ShowAssetVersionRequest 请求对象
      * @return SyncInvoker<ShowAssetVersionRequest, ShowAssetVersionResponse>
      */
     public SyncInvoker<ShowAssetVersionRequest, ShowAssetVersionResponse> showAssetVersionInvoker(
         ShowAssetVersionRequest request) {
-        return new SyncInvoker<ShowAssetVersionRequest, ShowAssetVersionResponse>(request,
-            EiHealthMeta.showAssetVersion, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showAssetVersion, hcClient);
     }
 
     /**
@@ -4978,7 +4891,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoJobRequest 请求对象
+     * @param request ShowAutoJobRequest 请求对象
      * @return ShowAutoJobResponse
      */
     public ShowAutoJobResponse showAutoJob(ShowAutoJobRequest request) {
@@ -4992,11 +4905,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoJobRequest 请求对象
+     * @param request ShowAutoJobRequest 请求对象
      * @return SyncInvoker<ShowAutoJobRequest, ShowAutoJobResponse>
      */
     public SyncInvoker<ShowAutoJobRequest, ShowAutoJobResponse> showAutoJobInvoker(ShowAutoJobRequest request) {
-        return new SyncInvoker<ShowAutoJobRequest, ShowAutoJobResponse>(request, EiHealthMeta.showAutoJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showAutoJob, hcClient);
     }
 
     /**
@@ -5006,7 +4919,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupPathRequest 请求对象
+     * @param request ShowBackupPathRequest 请求对象
      * @return ShowBackupPathResponse
      */
     public ShowBackupPathResponse showBackupPath(ShowBackupPathRequest request) {
@@ -5020,13 +4933,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupPathRequest 请求对象
+     * @param request ShowBackupPathRequest 请求对象
      * @return SyncInvoker<ShowBackupPathRequest, ShowBackupPathResponse>
      */
     public SyncInvoker<ShowBackupPathRequest, ShowBackupPathResponse> showBackupPathInvoker(
         ShowBackupPathRequest request) {
-        return new SyncInvoker<ShowBackupPathRequest, ShowBackupPathResponse>(request, EiHealthMeta.showBackupPath,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showBackupPath, hcClient);
     }
 
     /**
@@ -5036,7 +4948,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBmsDevicesRequest 请求对象
+     * @param request ShowBmsDevicesRequest 请求对象
      * @return ShowBmsDevicesResponse
      */
     public ShowBmsDevicesResponse showBmsDevices(ShowBmsDevicesRequest request) {
@@ -5050,13 +4962,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBmsDevicesRequest 请求对象
+     * @param request ShowBmsDevicesRequest 请求对象
      * @return SyncInvoker<ShowBmsDevicesRequest, ShowBmsDevicesResponse>
      */
     public SyncInvoker<ShowBmsDevicesRequest, ShowBmsDevicesResponse> showBmsDevicesInvoker(
         ShowBmsDevicesRequest request) {
-        return new SyncInvoker<ShowBmsDevicesRequest, ShowBmsDevicesResponse>(request, EiHealthMeta.showBmsDevices,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showBmsDevices, hcClient);
     }
 
     /**
@@ -5066,7 +4977,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBucketStorageRequest 请求对象
+     * @param request ShowBucketStorageRequest 请求对象
      * @return ShowBucketStorageResponse
      */
     public ShowBucketStorageResponse showBucketStorage(ShowBucketStorageRequest request) {
@@ -5080,13 +4991,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBucketStorageRequest 请求对象
+     * @param request ShowBucketStorageRequest 请求对象
      * @return SyncInvoker<ShowBucketStorageRequest, ShowBucketStorageResponse>
      */
     public SyncInvoker<ShowBucketStorageRequest, ShowBucketStorageResponse> showBucketStorageInvoker(
         ShowBucketStorageRequest request) {
-        return new SyncInvoker<ShowBucketStorageRequest, ShowBucketStorageResponse>(request,
-            EiHealthMeta.showBucketStorage, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showBucketStorage, hcClient);
     }
 
     /**
@@ -5096,7 +5006,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataRequest 请求对象
+     * @param request ShowDataRequest 请求对象
      * @return ShowDataResponse
      */
     public ShowDataResponse showData(ShowDataRequest request) {
@@ -5110,11 +5020,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataRequest 请求对象
+     * @param request ShowDataRequest 请求对象
      * @return SyncInvoker<ShowDataRequest, ShowDataResponse>
      */
     public SyncInvoker<ShowDataRequest, ShowDataResponse> showDataInvoker(ShowDataRequest request) {
-        return new SyncInvoker<ShowDataRequest, ShowDataResponse>(request, EiHealthMeta.showData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showData, hcClient);
     }
 
     /**
@@ -5124,7 +5034,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataJobRequest 请求对象
+     * @param request ShowDataJobRequest 请求对象
      * @return ShowDataJobResponse
      */
     public ShowDataJobResponse showDataJob(ShowDataJobRequest request) {
@@ -5138,11 +5048,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataJobRequest 请求对象
+     * @param request ShowDataJobRequest 请求对象
      * @return SyncInvoker<ShowDataJobRequest, ShowDataJobResponse>
      */
     public SyncInvoker<ShowDataJobRequest, ShowDataJobResponse> showDataJobInvoker(ShowDataJobRequest request) {
-        return new SyncInvoker<ShowDataJobRequest, ShowDataJobResponse>(request, EiHealthMeta.showDataJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showDataJob, hcClient);
     }
 
     /**
@@ -5152,7 +5062,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataPolicyRequest 请求对象
+     * @param request ShowDataPolicyRequest 请求对象
      * @return ShowDataPolicyResponse
      */
     public ShowDataPolicyResponse showDataPolicy(ShowDataPolicyRequest request) {
@@ -5166,13 +5076,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataPolicyRequest 请求对象
+     * @param request ShowDataPolicyRequest 请求对象
      * @return SyncInvoker<ShowDataPolicyRequest, ShowDataPolicyResponse>
      */
     public SyncInvoker<ShowDataPolicyRequest, ShowDataPolicyResponse> showDataPolicyInvoker(
         ShowDataPolicyRequest request) {
-        return new SyncInvoker<ShowDataPolicyRequest, ShowDataPolicyResponse>(request, EiHealthMeta.showDataPolicy,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showDataPolicy, hcClient);
     }
 
     /**
@@ -5182,7 +5091,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDockerLoginRequest 请求对象
+     * @param request ShowDockerLoginRequest 请求对象
      * @return ShowDockerLoginResponse
      */
     public ShowDockerLoginResponse showDockerLogin(ShowDockerLoginRequest request) {
@@ -5196,13 +5105,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDockerLoginRequest 请求对象
+     * @param request ShowDockerLoginRequest 请求对象
      * @return SyncInvoker<ShowDockerLoginRequest, ShowDockerLoginResponse>
      */
     public SyncInvoker<ShowDockerLoginRequest, ShowDockerLoginResponse> showDockerLoginInvoker(
         ShowDockerLoginRequest request) {
-        return new SyncInvoker<ShowDockerLoginRequest, ShowDockerLoginResponse>(request, EiHealthMeta.showDockerLogin,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showDockerLogin, hcClient);
     }
 
     /**
@@ -5212,7 +5120,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDockingJobRequest 请求对象
+     * @param request ShowDockingJobRequest 请求对象
      * @return ShowDockingJobResponse
      */
     public ShowDockingJobResponse showDockingJob(ShowDockingJobRequest request) {
@@ -5226,13 +5134,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDockingJobRequest 请求对象
+     * @param request ShowDockingJobRequest 请求对象
      * @return SyncInvoker<ShowDockingJobRequest, ShowDockingJobResponse>
      */
     public SyncInvoker<ShowDockingJobRequest, ShowDockingJobResponse> showDockingJobInvoker(
         ShowDockingJobRequest request) {
-        return new SyncInvoker<ShowDockingJobRequest, ShowDockingJobResponse>(request, EiHealthMeta.showDockingJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showDockingJob, hcClient);
     }
 
     /**
@@ -5242,7 +5149,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvRequest 请求对象
+     * @param request ShowEnvRequest 请求对象
      * @return ShowEnvResponse
      */
     public ShowEnvResponse showEnv(ShowEnvRequest request) {
@@ -5256,11 +5163,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvRequest 请求对象
+     * @param request ShowEnvRequest 请求对象
      * @return SyncInvoker<ShowEnvRequest, ShowEnvResponse>
      */
     public SyncInvoker<ShowEnvRequest, ShowEnvResponse> showEnvInvoker(ShowEnvRequest request) {
-        return new SyncInvoker<ShowEnvRequest, ShowEnvResponse>(request, EiHealthMeta.showEnv, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showEnv, hcClient);
     }
 
     /**
@@ -5270,7 +5177,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEvsQuotaRequest 请求对象
+     * @param request ShowEvsQuotaRequest 请求对象
      * @return ShowEvsQuotaResponse
      */
     public ShowEvsQuotaResponse showEvsQuota(ShowEvsQuotaRequest request) {
@@ -5284,11 +5191,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEvsQuotaRequest 请求对象
+     * @param request ShowEvsQuotaRequest 请求对象
      * @return SyncInvoker<ShowEvsQuotaRequest, ShowEvsQuotaResponse>
      */
     public SyncInvoker<ShowEvsQuotaRequest, ShowEvsQuotaResponse> showEvsQuotaInvoker(ShowEvsQuotaRequest request) {
-        return new SyncInvoker<ShowEvsQuotaRequest, ShowEvsQuotaResponse>(request, EiHealthMeta.showEvsQuota, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showEvsQuota, hcClient);
     }
 
     /**
@@ -5298,7 +5205,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtremumInfoRequest 请求对象
+     * @param request ShowExtremumInfoRequest 请求对象
      * @return ShowExtremumInfoResponse
      */
     public ShowExtremumInfoResponse showExtremumInfo(ShowExtremumInfoRequest request) {
@@ -5312,13 +5219,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExtremumInfoRequest 请求对象
+     * @param request ShowExtremumInfoRequest 请求对象
      * @return SyncInvoker<ShowExtremumInfoRequest, ShowExtremumInfoResponse>
      */
     public SyncInvoker<ShowExtremumInfoRequest, ShowExtremumInfoResponse> showExtremumInfoInvoker(
         ShowExtremumInfoRequest request) {
-        return new SyncInvoker<ShowExtremumInfoRequest, ShowExtremumInfoResponse>(request,
-            EiHealthMeta.showExtremumInfo, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showExtremumInfo, hcClient);
     }
 
     /**
@@ -5328,7 +5234,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFepJobRequest 请求对象
+     * @param request ShowFepJobRequest 请求对象
      * @return ShowFepJobResponse
      */
     public ShowFepJobResponse showFepJob(ShowFepJobRequest request) {
@@ -5342,11 +5248,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFepJobRequest 请求对象
+     * @param request ShowFepJobRequest 请求对象
      * @return SyncInvoker<ShowFepJobRequest, ShowFepJobResponse>
      */
     public SyncInvoker<ShowFepJobRequest, ShowFepJobResponse> showFepJobInvoker(ShowFepJobRequest request) {
-        return new SyncInvoker<ShowFepJobRequest, ShowFepJobResponse>(request, EiHealthMeta.showFepJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showFepJob, hcClient);
     }
 
     /**
@@ -5356,7 +5262,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
      */
     public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
@@ -5370,11 +5276,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
-        return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, EiHealthMeta.showInstance, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showInstance, hcClient);
     }
 
     /**
@@ -5384,7 +5290,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return ShowJobResponse
      */
     public ShowJobResponse showJob(ShowJobRequest request) {
@@ -5398,11 +5304,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public SyncInvoker<ShowJobRequest, ShowJobResponse> showJobInvoker(ShowJobRequest request) {
-        return new SyncInvoker<ShowJobRequest, ShowJobResponse>(request, EiHealthMeta.showJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showJob, hcClient);
     }
 
     /**
@@ -5412,7 +5318,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobConfigRequest 请求对象
+     * @param request ShowJobConfigRequest 请求对象
      * @return ShowJobConfigResponse
      */
     public ShowJobConfigResponse showJobConfig(ShowJobConfigRequest request) {
@@ -5426,12 +5332,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobConfigRequest 请求对象
+     * @param request ShowJobConfigRequest 请求对象
      * @return SyncInvoker<ShowJobConfigRequest, ShowJobConfigResponse>
      */
     public SyncInvoker<ShowJobConfigRequest, ShowJobConfigResponse> showJobConfigInvoker(ShowJobConfigRequest request) {
-        return new SyncInvoker<ShowJobConfigRequest, ShowJobConfigResponse>(request, EiHealthMeta.showJobConfig,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showJobConfig, hcClient);
     }
 
     /**
@@ -5441,7 +5346,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobEventRequest 请求对象
+     * @param request ShowJobEventRequest 请求对象
      * @return ShowJobEventResponse
      */
     public ShowJobEventResponse showJobEvent(ShowJobEventRequest request) {
@@ -5455,11 +5360,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobEventRequest 请求对象
+     * @param request ShowJobEventRequest 请求对象
      * @return SyncInvoker<ShowJobEventRequest, ShowJobEventResponse>
      */
     public SyncInvoker<ShowJobEventRequest, ShowJobEventResponse> showJobEventInvoker(ShowJobEventRequest request) {
-        return new SyncInvoker<ShowJobEventRequest, ShowJobEventResponse>(request, EiHealthMeta.showJobEvent, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showJobEvent, hcClient);
     }
 
     /**
@@ -5469,7 +5374,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobLogRequest 请求对象
+     * @param request ShowJobLogRequest 请求对象
      * @return ShowJobLogResponse
      */
     public ShowJobLogResponse showJobLog(ShowJobLogRequest request) {
@@ -5483,11 +5388,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobLogRequest 请求对象
+     * @param request ShowJobLogRequest 请求对象
      * @return SyncInvoker<ShowJobLogRequest, ShowJobLogResponse>
      */
     public SyncInvoker<ShowJobLogRequest, ShowJobLogResponse> showJobLogInvoker(ShowJobLogRequest request) {
-        return new SyncInvoker<ShowJobLogRequest, ShowJobLogResponse>(request, EiHealthMeta.showJobLog, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showJobLog, hcClient);
     }
 
     /**
@@ -5497,7 +5402,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLeftQuotaRequest 请求对象
+     * @param request ShowLeftQuotaRequest 请求对象
      * @return ShowLeftQuotaResponse
      */
     public ShowLeftQuotaResponse showLeftQuota(ShowLeftQuotaRequest request) {
@@ -5511,12 +5416,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLeftQuotaRequest 请求对象
+     * @param request ShowLeftQuotaRequest 请求对象
      * @return SyncInvoker<ShowLeftQuotaRequest, ShowLeftQuotaResponse>
      */
     public SyncInvoker<ShowLeftQuotaRequest, ShowLeftQuotaResponse> showLeftQuotaInvoker(ShowLeftQuotaRequest request) {
-        return new SyncInvoker<ShowLeftQuotaRequest, ShowLeftQuotaResponse>(request, EiHealthMeta.showLeftQuota,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showLeftQuota, hcClient);
     }
 
     /**
@@ -5526,7 +5430,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageClearRuleRequest 请求对象
+     * @param request ShowMessageClearRuleRequest 请求对象
      * @return ShowMessageClearRuleResponse
      */
     public ShowMessageClearRuleResponse showMessageClearRule(ShowMessageClearRuleRequest request) {
@@ -5540,13 +5444,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageClearRuleRequest 请求对象
+     * @param request ShowMessageClearRuleRequest 请求对象
      * @return SyncInvoker<ShowMessageClearRuleRequest, ShowMessageClearRuleResponse>
      */
     public SyncInvoker<ShowMessageClearRuleRequest, ShowMessageClearRuleResponse> showMessageClearRuleInvoker(
         ShowMessageClearRuleRequest request) {
-        return new SyncInvoker<ShowMessageClearRuleRequest, ShowMessageClearRuleResponse>(request,
-            EiHealthMeta.showMessageClearRule, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showMessageClearRule, hcClient);
     }
 
     /**
@@ -5556,7 +5459,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageEmailConfigRequest 请求对象
+     * @param request ShowMessageEmailConfigRequest 请求对象
      * @return ShowMessageEmailConfigResponse
      */
     public ShowMessageEmailConfigResponse showMessageEmailConfig(ShowMessageEmailConfigRequest request) {
@@ -5570,13 +5473,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageEmailConfigRequest 请求对象
+     * @param request ShowMessageEmailConfigRequest 请求对象
      * @return SyncInvoker<ShowMessageEmailConfigRequest, ShowMessageEmailConfigResponse>
      */
     public SyncInvoker<ShowMessageEmailConfigRequest, ShowMessageEmailConfigResponse> showMessageEmailConfigInvoker(
         ShowMessageEmailConfigRequest request) {
-        return new SyncInvoker<ShowMessageEmailConfigRequest, ShowMessageEmailConfigResponse>(request,
-            EiHealthMeta.showMessageEmailConfig, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showMessageEmailConfig, hcClient);
     }
 
     /**
@@ -5586,7 +5488,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageReceiveConfigRequest 请求对象
+     * @param request ShowMessageReceiveConfigRequest 请求对象
      * @return ShowMessageReceiveConfigResponse
      */
     public ShowMessageReceiveConfigResponse showMessageReceiveConfig(ShowMessageReceiveConfigRequest request) {
@@ -5600,13 +5502,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessageReceiveConfigRequest 请求对象
+     * @param request ShowMessageReceiveConfigRequest 请求对象
      * @return SyncInvoker<ShowMessageReceiveConfigRequest, ShowMessageReceiveConfigResponse>
      */
     public SyncInvoker<ShowMessageReceiveConfigRequest, ShowMessageReceiveConfigResponse> showMessageReceiveConfigInvoker(
         ShowMessageReceiveConfigRequest request) {
-        return new SyncInvoker<ShowMessageReceiveConfigRequest, ShowMessageReceiveConfigResponse>(request,
-            EiHealthMeta.showMessageReceiveConfig, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showMessageReceiveConfig, hcClient);
     }
 
     /**
@@ -5616,7 +5517,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOptmJobRequest 请求对象
+     * @param request ShowOptmJobRequest 请求对象
      * @return ShowOptmJobResponse
      */
     public ShowOptmJobResponse showOptmJob(ShowOptmJobRequest request) {
@@ -5630,11 +5531,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOptmJobRequest 请求对象
+     * @param request ShowOptmJobRequest 请求对象
      * @return SyncInvoker<ShowOptmJobRequest, ShowOptmJobResponse>
      */
     public SyncInvoker<ShowOptmJobRequest, ShowOptmJobResponse> showOptmJobInvoker(ShowOptmJobRequest request) {
-        return new SyncInvoker<ShowOptmJobRequest, ShowOptmJobResponse>(request, EiHealthMeta.showOptmJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showOptmJob, hcClient);
     }
 
     /**
@@ -5644,7 +5545,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPocketDetectionJobRequest 请求对象
+     * @param request ShowPocketDetectionJobRequest 请求对象
      * @return ShowPocketDetectionJobResponse
      */
     public ShowPocketDetectionJobResponse showPocketDetectionJob(ShowPocketDetectionJobRequest request) {
@@ -5658,13 +5559,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPocketDetectionJobRequest 请求对象
+     * @param request ShowPocketDetectionJobRequest 请求对象
      * @return SyncInvoker<ShowPocketDetectionJobRequest, ShowPocketDetectionJobResponse>
      */
     public SyncInvoker<ShowPocketDetectionJobRequest, ShowPocketDetectionJobResponse> showPocketDetectionJobInvoker(
         ShowPocketDetectionJobRequest request) {
-        return new SyncInvoker<ShowPocketDetectionJobRequest, ShowPocketDetectionJobResponse>(request,
-            EiHealthMeta.showPocketDetectionJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showPocketDetectionJob, hcClient);
     }
 
     /**
@@ -5674,7 +5574,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPocketMolDesignJobRequest 请求对象
+     * @param request ShowPocketMolDesignJobRequest 请求对象
      * @return ShowPocketMolDesignJobResponse
      */
     public ShowPocketMolDesignJobResponse showPocketMolDesignJob(ShowPocketMolDesignJobRequest request) {
@@ -5688,13 +5588,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPocketMolDesignJobRequest 请求对象
+     * @param request ShowPocketMolDesignJobRequest 请求对象
      * @return SyncInvoker<ShowPocketMolDesignJobRequest, ShowPocketMolDesignJobResponse>
      */
     public SyncInvoker<ShowPocketMolDesignJobRequest, ShowPocketMolDesignJobResponse> showPocketMolDesignJobInvoker(
         ShowPocketMolDesignJobRequest request) {
-        return new SyncInvoker<ShowPocketMolDesignJobRequest, ShowPocketMolDesignJobResponse>(request,
-            EiHealthMeta.showPocketMolDesignJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showPocketMolDesignJob, hcClient);
     }
 
     /**
@@ -5704,7 +5603,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectRequest 请求对象
+     * @param request ShowProjectRequest 请求对象
      * @return ShowProjectResponse
      */
     public ShowProjectResponse showProject(ShowProjectRequest request) {
@@ -5718,11 +5617,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectRequest 请求对象
+     * @param request ShowProjectRequest 请求对象
      * @return SyncInvoker<ShowProjectRequest, ShowProjectResponse>
      */
     public SyncInvoker<ShowProjectRequest, ShowProjectResponse> showProjectInvoker(ShowProjectRequest request) {
-        return new SyncInvoker<ShowProjectRequest, ShowProjectResponse>(request, EiHealthMeta.showProject, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showProject, hcClient);
     }
 
     /**
@@ -5732,7 +5631,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTraceRequest 请求对象
+     * @param request ShowProjectTraceRequest 请求对象
      * @return ShowProjectTraceResponse
      */
     public ShowProjectTraceResponse showProjectTrace(ShowProjectTraceRequest request) {
@@ -5746,13 +5645,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTraceRequest 请求对象
+     * @param request ShowProjectTraceRequest 请求对象
      * @return SyncInvoker<ShowProjectTraceRequest, ShowProjectTraceResponse>
      */
     public SyncInvoker<ShowProjectTraceRequest, ShowProjectTraceResponse> showProjectTraceInvoker(
         ShowProjectTraceRequest request) {
-        return new SyncInvoker<ShowProjectTraceRequest, ShowProjectTraceResponse>(request,
-            EiHealthMeta.showProjectTrace, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showProjectTrace, hcClient);
     }
 
     /**
@@ -5762,7 +5660,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTraceDataRequest 请求对象
+     * @param request ShowProjectTraceDataRequest 请求对象
      * @return ShowProjectTraceDataResponse
      */
     public ShowProjectTraceDataResponse showProjectTraceData(ShowProjectTraceDataRequest request) {
@@ -5776,13 +5674,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTraceDataRequest 请求对象
+     * @param request ShowProjectTraceDataRequest 请求对象
      * @return SyncInvoker<ShowProjectTraceDataRequest, ShowProjectTraceDataResponse>
      */
     public SyncInvoker<ShowProjectTraceDataRequest, ShowProjectTraceDataResponse> showProjectTraceDataInvoker(
         ShowProjectTraceDataRequest request) {
-        return new SyncInvoker<ShowProjectTraceDataRequest, ShowProjectTraceDataResponse>(request,
-            EiHealthMeta.showProjectTraceData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showProjectTraceData, hcClient);
     }
 
     /**
@@ -5792,7 +5689,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTrackerRequest 请求对象
+     * @param request ShowProjectTrackerRequest 请求对象
      * @return ShowProjectTrackerResponse
      */
     public ShowProjectTrackerResponse showProjectTracker(ShowProjectTrackerRequest request) {
@@ -5806,13 +5703,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProjectTrackerRequest 请求对象
+     * @param request ShowProjectTrackerRequest 请求对象
      * @return SyncInvoker<ShowProjectTrackerRequest, ShowProjectTrackerResponse>
      */
     public SyncInvoker<ShowProjectTrackerRequest, ShowProjectTrackerResponse> showProjectTrackerInvoker(
         ShowProjectTrackerRequest request) {
-        return new SyncInvoker<ShowProjectTrackerRequest, ShowProjectTrackerResponse>(request,
-            EiHealthMeta.showProjectTracker, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showProjectTracker, hcClient);
     }
 
     /**
@@ -5822,7 +5718,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceMetricDataRequest 请求对象
+     * @param request ShowResourceMetricDataRequest 请求对象
      * @return ShowResourceMetricDataResponse
      */
     public ShowResourceMetricDataResponse showResourceMetricData(ShowResourceMetricDataRequest request) {
@@ -5836,13 +5732,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceMetricDataRequest 请求对象
+     * @param request ShowResourceMetricDataRequest 请求对象
      * @return SyncInvoker<ShowResourceMetricDataRequest, ShowResourceMetricDataResponse>
      */
     public SyncInvoker<ShowResourceMetricDataRequest, ShowResourceMetricDataResponse> showResourceMetricDataInvoker(
         ShowResourceMetricDataRequest request) {
-        return new SyncInvoker<ShowResourceMetricDataRequest, ShowResourceMetricDataResponse>(request,
-            EiHealthMeta.showResourceMetricData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showResourceMetricData, hcClient);
     }
 
     /**
@@ -5852,7 +5747,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScaleInPolicyRequest 请求对象
+     * @param request ShowScaleInPolicyRequest 请求对象
      * @return ShowScaleInPolicyResponse
      */
     public ShowScaleInPolicyResponse showScaleInPolicy(ShowScaleInPolicyRequest request) {
@@ -5866,13 +5761,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScaleInPolicyRequest 请求对象
+     * @param request ShowScaleInPolicyRequest 请求对象
      * @return SyncInvoker<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse>
      */
     public SyncInvoker<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse> showScaleInPolicyInvoker(
         ShowScaleInPolicyRequest request) {
-        return new SyncInvoker<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse>(request,
-            EiHealthMeta.showScaleInPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showScaleInPolicy, hcClient);
     }
 
     /**
@@ -5882,7 +5776,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScaleOutPolicyRequest 请求对象
+     * @param request ShowScaleOutPolicyRequest 请求对象
      * @return ShowScaleOutPolicyResponse
      */
     public ShowScaleOutPolicyResponse showScaleOutPolicy(ShowScaleOutPolicyRequest request) {
@@ -5896,13 +5790,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScaleOutPolicyRequest 请求对象
+     * @param request ShowScaleOutPolicyRequest 请求对象
      * @return SyncInvoker<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse>
      */
     public SyncInvoker<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse> showScaleOutPolicyInvoker(
         ShowScaleOutPolicyRequest request) {
-        return new SyncInvoker<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse>(request,
-            EiHealthMeta.showScaleOutPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showScaleOutPolicy, hcClient);
     }
 
     /**
@@ -5912,7 +5805,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScheduleRequest 请求对象
+     * @param request ShowScheduleRequest 请求对象
      * @return ShowScheduleResponse
      */
     public ShowScheduleResponse showSchedule(ShowScheduleRequest request) {
@@ -5926,11 +5819,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScheduleRequest 请求对象
+     * @param request ShowScheduleRequest 请求对象
      * @return SyncInvoker<ShowScheduleRequest, ShowScheduleResponse>
      */
     public SyncInvoker<ShowScheduleRequest, ShowScheduleResponse> showScheduleInvoker(ShowScheduleRequest request) {
-        return new SyncInvoker<ShowScheduleRequest, ShowScheduleResponse>(request, EiHealthMeta.showSchedule, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showSchedule, hcClient);
     }
 
     /**
@@ -5940,7 +5833,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSynthesisJobRequest 请求对象
+     * @param request ShowSynthesisJobRequest 请求对象
      * @return ShowSynthesisJobResponse
      */
     public ShowSynthesisJobResponse showSynthesisJob(ShowSynthesisJobRequest request) {
@@ -5954,13 +5847,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSynthesisJobRequest 请求对象
+     * @param request ShowSynthesisJobRequest 请求对象
      * @return SyncInvoker<ShowSynthesisJobRequest, ShowSynthesisJobResponse>
      */
     public SyncInvoker<ShowSynthesisJobRequest, ShowSynthesisJobResponse> showSynthesisJobInvoker(
         ShowSynthesisJobRequest request) {
-        return new SyncInvoker<ShowSynthesisJobRequest, ShowSynthesisJobResponse>(request,
-            EiHealthMeta.showSynthesisJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showSynthesisJob, hcClient);
     }
 
     /**
@@ -5970,7 +5862,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskEventsRequest 请求对象
+     * @param request ShowTaskEventsRequest 请求对象
      * @return ShowTaskEventsResponse
      */
     public ShowTaskEventsResponse showTaskEvents(ShowTaskEventsRequest request) {
@@ -5984,13 +5876,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskEventsRequest 请求对象
+     * @param request ShowTaskEventsRequest 请求对象
      * @return SyncInvoker<ShowTaskEventsRequest, ShowTaskEventsResponse>
      */
     public SyncInvoker<ShowTaskEventsRequest, ShowTaskEventsResponse> showTaskEventsInvoker(
         ShowTaskEventsRequest request) {
-        return new SyncInvoker<ShowTaskEventsRequest, ShowTaskEventsResponse>(request, EiHealthMeta.showTaskEvents,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showTaskEvents, hcClient);
     }
 
     /**
@@ -6000,7 +5891,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstanceEventsRequest 请求对象
+     * @param request ShowTaskInstanceEventsRequest 请求对象
      * @return ShowTaskInstanceEventsResponse
      */
     public ShowTaskInstanceEventsResponse showTaskInstanceEvents(ShowTaskInstanceEventsRequest request) {
@@ -6014,13 +5905,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstanceEventsRequest 请求对象
+     * @param request ShowTaskInstanceEventsRequest 请求对象
      * @return SyncInvoker<ShowTaskInstanceEventsRequest, ShowTaskInstanceEventsResponse>
      */
     public SyncInvoker<ShowTaskInstanceEventsRequest, ShowTaskInstanceEventsResponse> showTaskInstanceEventsInvoker(
         ShowTaskInstanceEventsRequest request) {
-        return new SyncInvoker<ShowTaskInstanceEventsRequest, ShowTaskInstanceEventsResponse>(request,
-            EiHealthMeta.showTaskInstanceEvents, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showTaskInstanceEvents, hcClient);
     }
 
     /**
@@ -6030,7 +5920,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstanceMetricDataRequest 请求对象
+     * @param request ShowTaskInstanceMetricDataRequest 请求对象
      * @return ShowTaskInstanceMetricDataResponse
      */
     public ShowTaskInstanceMetricDataResponse showTaskInstanceMetricData(ShowTaskInstanceMetricDataRequest request) {
@@ -6044,13 +5934,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstanceMetricDataRequest 请求对象
+     * @param request ShowTaskInstanceMetricDataRequest 请求对象
      * @return SyncInvoker<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse>
      */
     public SyncInvoker<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse> showTaskInstanceMetricDataInvoker(
         ShowTaskInstanceMetricDataRequest request) {
-        return new SyncInvoker<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse>(request,
-            EiHealthMeta.showTaskInstanceMetricData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showTaskInstanceMetricData, hcClient);
     }
 
     /**
@@ -6060,7 +5949,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstancePodRequest 请求对象
+     * @param request ShowTaskInstancePodRequest 请求对象
      * @return ShowTaskInstancePodResponse
      */
     public ShowTaskInstancePodResponse showTaskInstancePod(ShowTaskInstancePodRequest request) {
@@ -6074,13 +5963,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstancePodRequest 请求对象
+     * @param request ShowTaskInstancePodRequest 请求对象
      * @return SyncInvoker<ShowTaskInstancePodRequest, ShowTaskInstancePodResponse>
      */
     public SyncInvoker<ShowTaskInstancePodRequest, ShowTaskInstancePodResponse> showTaskInstancePodInvoker(
         ShowTaskInstancePodRequest request) {
-        return new SyncInvoker<ShowTaskInstancePodRequest, ShowTaskInstancePodResponse>(request,
-            EiHealthMeta.showTaskInstancePod, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showTaskInstancePod, hcClient);
     }
 
     /**
@@ -6090,7 +5978,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstancesRequest 请求对象
+     * @param request ShowTaskInstancesRequest 请求对象
      * @return ShowTaskInstancesResponse
      */
     public ShowTaskInstancesResponse showTaskInstances(ShowTaskInstancesRequest request) {
@@ -6104,13 +5992,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskInstancesRequest 请求对象
+     * @param request ShowTaskInstancesRequest 请求对象
      * @return SyncInvoker<ShowTaskInstancesRequest, ShowTaskInstancesResponse>
      */
     public SyncInvoker<ShowTaskInstancesRequest, ShowTaskInstancesResponse> showTaskInstancesInvoker(
         ShowTaskInstancesRequest request) {
-        return new SyncInvoker<ShowTaskInstancesRequest, ShowTaskInstancesResponse>(request,
-            EiHealthMeta.showTaskInstances, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showTaskInstances, hcClient);
     }
 
     /**
@@ -6120,7 +6007,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateRequest 请求对象
+     * @param request ShowTemplateRequest 请求对象
      * @return ShowTemplateResponse
      */
     public ShowTemplateResponse showTemplate(ShowTemplateRequest request) {
@@ -6134,11 +6021,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateRequest 请求对象
+     * @param request ShowTemplateRequest 请求对象
      * @return SyncInvoker<ShowTemplateRequest, ShowTemplateResponse>
      */
     public SyncInvoker<ShowTemplateRequest, ShowTemplateResponse> showTemplateInvoker(ShowTemplateRequest request) {
-        return new SyncInvoker<ShowTemplateRequest, ShowTemplateResponse>(request, EiHealthMeta.showTemplate, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showTemplate, hcClient);
     }
 
     /**
@@ -6148,7 +6035,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserRequest 请求对象
+     * @param request ShowUserRequest 请求对象
      * @return ShowUserResponse
      */
     public ShowUserResponse showUser(ShowUserRequest request) {
@@ -6162,11 +6049,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserRequest 请求对象
+     * @param request ShowUserRequest 请求对象
      * @return SyncInvoker<ShowUserRequest, ShowUserResponse>
      */
     public SyncInvoker<ShowUserRequest, ShowUserResponse> showUserInvoker(ShowUserRequest request) {
-        return new SyncInvoker<ShowUserRequest, ShowUserResponse>(request, EiHealthMeta.showUser, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showUser, hcClient);
     }
 
     /**
@@ -6176,7 +6063,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserSettingRequest 请求对象
+     * @param request ShowUserSettingRequest 请求对象
      * @return ShowUserSettingResponse
      */
     public ShowUserSettingResponse showUserSetting(ShowUserSettingRequest request) {
@@ -6190,13 +6077,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserSettingRequest 请求对象
+     * @param request ShowUserSettingRequest 请求对象
      * @return SyncInvoker<ShowUserSettingRequest, ShowUserSettingResponse>
      */
     public SyncInvoker<ShowUserSettingRequest, ShowUserSettingResponse> showUserSettingInvoker(
         ShowUserSettingRequest request) {
-        return new SyncInvoker<ShowUserSettingRequest, ShowUserSettingResponse>(request, EiHealthMeta.showUserSetting,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showUserSetting, hcClient);
     }
 
     /**
@@ -6206,7 +6092,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVendorRequest 请求对象
+     * @param request ShowVendorRequest 请求对象
      * @return ShowVendorResponse
      */
     public ShowVendorResponse showVendor(ShowVendorRequest request) {
@@ -6220,11 +6106,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVendorRequest 请求对象
+     * @param request ShowVendorRequest 请求对象
      * @return SyncInvoker<ShowVendorRequest, ShowVendorResponse>
      */
     public SyncInvoker<ShowVendorRequest, ShowVendorResponse> showVendorInvoker(ShowVendorRequest request) {
-        return new SyncInvoker<ShowVendorRequest, ShowVendorResponse>(request, EiHealthMeta.showVendor, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showVendor, hcClient);
     }
 
     /**
@@ -6234,7 +6120,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowRequest 请求对象
+     * @param request ShowWorkflowRequest 请求对象
      * @return ShowWorkflowResponse
      */
     public ShowWorkflowResponse showWorkflow(ShowWorkflowRequest request) {
@@ -6248,11 +6134,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWorkflowRequest 请求对象
+     * @param request ShowWorkflowRequest 请求对象
      * @return SyncInvoker<ShowWorkflowRequest, ShowWorkflowResponse>
      */
     public SyncInvoker<ShowWorkflowRequest, ShowWorkflowResponse> showWorkflowInvoker(ShowWorkflowRequest request) {
-        return new SyncInvoker<ShowWorkflowRequest, ShowWorkflowResponse>(request, EiHealthMeta.showWorkflow, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showWorkflow, hcClient);
     }
 
     /**
@@ -6262,7 +6148,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAutoJobRequest 请求对象
+     * @param request StartAutoJobRequest 请求对象
      * @return StartAutoJobResponse
      */
     public StartAutoJobResponse startAutoJob(StartAutoJobRequest request) {
@@ -6276,11 +6162,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAutoJobRequest 请求对象
+     * @param request StartAutoJobRequest 请求对象
      * @return SyncInvoker<StartAutoJobRequest, StartAutoJobResponse>
      */
     public SyncInvoker<StartAutoJobRequest, StartAutoJobResponse> startAutoJobInvoker(StartAutoJobRequest request) {
-        return new SyncInvoker<StartAutoJobRequest, StartAutoJobResponse>(request, EiHealthMeta.startAutoJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.startAutoJob, hcClient);
     }
 
     /**
@@ -6290,7 +6176,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartNodeRequest 请求对象
+     * @param request StartNodeRequest 请求对象
      * @return StartNodeResponse
      */
     public StartNodeResponse startNode(StartNodeRequest request) {
@@ -6304,11 +6190,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartNodeRequest 请求对象
+     * @param request StartNodeRequest 请求对象
      * @return SyncInvoker<StartNodeRequest, StartNodeResponse>
      */
     public SyncInvoker<StartNodeRequest, StartNodeResponse> startNodeInvoker(StartNodeRequest request) {
-        return new SyncInvoker<StartNodeRequest, StartNodeResponse>(request, EiHealthMeta.startNode, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.startNode, hcClient);
     }
 
     /**
@@ -6318,7 +6204,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartScaleOutPolicyRequest 请求对象
+     * @param request StartScaleOutPolicyRequest 请求对象
      * @return StartScaleOutPolicyResponse
      */
     public StartScaleOutPolicyResponse startScaleOutPolicy(StartScaleOutPolicyRequest request) {
@@ -6332,13 +6218,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartScaleOutPolicyRequest 请求对象
+     * @param request StartScaleOutPolicyRequest 请求对象
      * @return SyncInvoker<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse>
      */
     public SyncInvoker<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse> startScaleOutPolicyInvoker(
         StartScaleOutPolicyRequest request) {
-        return new SyncInvoker<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse>(request,
-            EiHealthMeta.startScaleOutPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.startScaleOutPolicy, hcClient);
     }
 
     /**
@@ -6348,7 +6233,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopAutoJobRequest 请求对象
+     * @param request StopAutoJobRequest 请求对象
      * @return StopAutoJobResponse
      */
     public StopAutoJobResponse stopAutoJob(StopAutoJobRequest request) {
@@ -6362,11 +6247,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopAutoJobRequest 请求对象
+     * @param request StopAutoJobRequest 请求对象
      * @return SyncInvoker<StopAutoJobRequest, StopAutoJobResponse>
      */
     public SyncInvoker<StopAutoJobRequest, StopAutoJobResponse> stopAutoJobInvoker(StopAutoJobRequest request) {
-        return new SyncInvoker<StopAutoJobRequest, StopAutoJobResponse>(request, EiHealthMeta.stopAutoJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.stopAutoJob, hcClient);
     }
 
     /**
@@ -6376,7 +6261,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopNodeRequest 请求对象
+     * @param request StopNodeRequest 请求对象
      * @return StopNodeResponse
      */
     public StopNodeResponse stopNode(StopNodeRequest request) {
@@ -6390,11 +6275,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopNodeRequest 请求对象
+     * @param request StopNodeRequest 请求对象
      * @return SyncInvoker<StopNodeRequest, StopNodeResponse>
      */
     public SyncInvoker<StopNodeRequest, StopNodeResponse> stopNodeInvoker(StopNodeRequest request) {
-        return new SyncInvoker<StopNodeRequest, StopNodeResponse>(request, EiHealthMeta.stopNode, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.stopNode, hcClient);
     }
 
     /**
@@ -6404,7 +6289,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopScaleOutPolicyRequest 请求对象
+     * @param request StopScaleOutPolicyRequest 请求对象
      * @return StopScaleOutPolicyResponse
      */
     public StopScaleOutPolicyResponse stopScaleOutPolicy(StopScaleOutPolicyRequest request) {
@@ -6418,13 +6303,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopScaleOutPolicyRequest 请求对象
+     * @param request StopScaleOutPolicyRequest 请求对象
      * @return SyncInvoker<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse>
      */
     public SyncInvoker<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse> stopScaleOutPolicyInvoker(
         StopScaleOutPolicyRequest request) {
-        return new SyncInvoker<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse>(request,
-            EiHealthMeta.stopScaleOutPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.stopScaleOutPolicy, hcClient);
     }
 
     /**
@@ -6434,7 +6318,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeAppRequest 请求对象
+     * @param request SubscribeAppRequest 请求对象
      * @return SubscribeAppResponse
      */
     public SubscribeAppResponse subscribeApp(SubscribeAppRequest request) {
@@ -6448,11 +6332,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeAppRequest 请求对象
+     * @param request SubscribeAppRequest 请求对象
      * @return SyncInvoker<SubscribeAppRequest, SubscribeAppResponse>
      */
     public SyncInvoker<SubscribeAppRequest, SubscribeAppResponse> subscribeAppInvoker(SubscribeAppRequest request) {
-        return new SyncInvoker<SubscribeAppRequest, SubscribeAppResponse>(request, EiHealthMeta.subscribeApp, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.subscribeApp, hcClient);
     }
 
     /**
@@ -6462,7 +6346,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeDataRequest 请求对象
+     * @param request SubscribeDataRequest 请求对象
      * @return SubscribeDataResponse
      */
     public SubscribeDataResponse subscribeData(SubscribeDataRequest request) {
@@ -6476,12 +6360,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeDataRequest 请求对象
+     * @param request SubscribeDataRequest 请求对象
      * @return SyncInvoker<SubscribeDataRequest, SubscribeDataResponse>
      */
     public SyncInvoker<SubscribeDataRequest, SubscribeDataResponse> subscribeDataInvoker(SubscribeDataRequest request) {
-        return new SyncInvoker<SubscribeDataRequest, SubscribeDataResponse>(request, EiHealthMeta.subscribeData,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.subscribeData, hcClient);
     }
 
     /**
@@ -6491,7 +6374,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeImageRequest 请求对象
+     * @param request SubscribeImageRequest 请求对象
      * @return SubscribeImageResponse
      */
     public SubscribeImageResponse subscribeImage(SubscribeImageRequest request) {
@@ -6505,13 +6388,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeImageRequest 请求对象
+     * @param request SubscribeImageRequest 请求对象
      * @return SyncInvoker<SubscribeImageRequest, SubscribeImageResponse>
      */
     public SyncInvoker<SubscribeImageRequest, SubscribeImageResponse> subscribeImageInvoker(
         SubscribeImageRequest request) {
-        return new SyncInvoker<SubscribeImageRequest, SubscribeImageResponse>(request, EiHealthMeta.subscribeImage,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.subscribeImage, hcClient);
     }
 
     /**
@@ -6521,7 +6403,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeWorkflowRequest 请求对象
+     * @param request SubscribeWorkflowRequest 请求对象
      * @return SubscribeWorkflowResponse
      */
     public SubscribeWorkflowResponse subscribeWorkflow(SubscribeWorkflowRequest request) {
@@ -6535,13 +6417,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SubscribeWorkflowRequest 请求对象
+     * @param request SubscribeWorkflowRequest 请求对象
      * @return SyncInvoker<SubscribeWorkflowRequest, SubscribeWorkflowResponse>
      */
     public SyncInvoker<SubscribeWorkflowRequest, SubscribeWorkflowResponse> subscribeWorkflowInvoker(
         SubscribeWorkflowRequest request) {
-        return new SyncInvoker<SubscribeWorkflowRequest, SubscribeWorkflowResponse>(request,
-            EiHealthMeta.subscribeWorkflow, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.subscribeWorkflow, hcClient);
     }
 
     /**
@@ -6551,7 +6432,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TransferProjectRequest 请求对象
+     * @param request TransferProjectRequest 请求对象
      * @return TransferProjectResponse
      */
     public TransferProjectResponse transferProject(TransferProjectRequest request) {
@@ -6565,13 +6446,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TransferProjectRequest 请求对象
+     * @param request TransferProjectRequest 请求对象
      * @return SyncInvoker<TransferProjectRequest, TransferProjectResponse>
      */
     public SyncInvoker<TransferProjectRequest, TransferProjectResponse> transferProjectInvoker(
         TransferProjectRequest request) {
-        return new SyncInvoker<TransferProjectRequest, TransferProjectResponse>(request, EiHealthMeta.transferProject,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.transferProject, hcClient);
     }
 
     /**
@@ -6581,7 +6461,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return UpdateAppResponse
      */
     public UpdateAppResponse updateApp(UpdateAppRequest request) {
@@ -6595,11 +6475,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return SyncInvoker<UpdateAppRequest, UpdateAppResponse>
      */
     public SyncInvoker<UpdateAppRequest, UpdateAppResponse> updateAppInvoker(UpdateAppRequest request) {
-        return new SyncInvoker<UpdateAppRequest, UpdateAppResponse>(request, EiHealthMeta.updateApp, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateApp, hcClient);
     }
 
     /**
@@ -6609,7 +6489,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateArchiveConfigRequest 请求对象
+     * @param request UpdateArchiveConfigRequest 请求对象
      * @return UpdateArchiveConfigResponse
      */
     public UpdateArchiveConfigResponse updateArchiveConfig(UpdateArchiveConfigRequest request) {
@@ -6623,13 +6503,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateArchiveConfigRequest 请求对象
+     * @param request UpdateArchiveConfigRequest 请求对象
      * @return SyncInvoker<UpdateArchiveConfigRequest, UpdateArchiveConfigResponse>
      */
     public SyncInvoker<UpdateArchiveConfigRequest, UpdateArchiveConfigResponse> updateArchiveConfigInvoker(
         UpdateArchiveConfigRequest request) {
-        return new SyncInvoker<UpdateArchiveConfigRequest, UpdateArchiveConfigResponse>(request,
-            EiHealthMeta.updateArchiveConfig, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateArchiveConfig, hcClient);
     }
 
     /**
@@ -6639,7 +6518,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetVersionRequest 请求对象
+     * @param request UpdateAssetVersionRequest 请求对象
      * @return UpdateAssetVersionResponse
      */
     public UpdateAssetVersionResponse updateAssetVersion(UpdateAssetVersionRequest request) {
@@ -6653,13 +6532,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAssetVersionRequest 请求对象
+     * @param request UpdateAssetVersionRequest 请求对象
      * @return SyncInvoker<UpdateAssetVersionRequest, UpdateAssetVersionResponse>
      */
     public SyncInvoker<UpdateAssetVersionRequest, UpdateAssetVersionResponse> updateAssetVersionInvoker(
         UpdateAssetVersionRequest request) {
-        return new SyncInvoker<UpdateAssetVersionRequest, UpdateAssetVersionResponse>(request,
-            EiHealthMeta.updateAssetVersion, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateAssetVersion, hcClient);
     }
 
     /**
@@ -6669,7 +6547,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAutoJobRequest 请求对象
+     * @param request UpdateAutoJobRequest 请求对象
      * @return UpdateAutoJobResponse
      */
     public UpdateAutoJobResponse updateAutoJob(UpdateAutoJobRequest request) {
@@ -6683,12 +6561,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAutoJobRequest 请求对象
+     * @param request UpdateAutoJobRequest 请求对象
      * @return SyncInvoker<UpdateAutoJobRequest, UpdateAutoJobResponse>
      */
     public SyncInvoker<UpdateAutoJobRequest, UpdateAutoJobResponse> updateAutoJobInvoker(UpdateAutoJobRequest request) {
-        return new SyncInvoker<UpdateAutoJobRequest, UpdateAutoJobResponse>(request, EiHealthMeta.updateAutoJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateAutoJob, hcClient);
     }
 
     /**
@@ -6698,7 +6575,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataPathPolicyRequest 请求对象
+     * @param request UpdateDataPathPolicyRequest 请求对象
      * @return UpdateDataPathPolicyResponse
      */
     public UpdateDataPathPolicyResponse updateDataPathPolicy(UpdateDataPathPolicyRequest request) {
@@ -6712,13 +6589,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataPathPolicyRequest 请求对象
+     * @param request UpdateDataPathPolicyRequest 请求对象
      * @return SyncInvoker<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse>
      */
     public SyncInvoker<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse> updateDataPathPolicyInvoker(
         UpdateDataPathPolicyRequest request) {
-        return new SyncInvoker<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse>(request,
-            EiHealthMeta.updateDataPathPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateDataPathPolicy, hcClient);
     }
 
     /**
@@ -6728,7 +6604,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataPolicyRequest 请求对象
+     * @param request UpdateDataPolicyRequest 请求对象
      * @return UpdateDataPolicyResponse
      */
     public UpdateDataPolicyResponse updateDataPolicy(UpdateDataPolicyRequest request) {
@@ -6742,13 +6618,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataPolicyRequest 请求对象
+     * @param request UpdateDataPolicyRequest 请求对象
      * @return SyncInvoker<UpdateDataPolicyRequest, UpdateDataPolicyResponse>
      */
     public SyncInvoker<UpdateDataPolicyRequest, UpdateDataPolicyResponse> updateDataPolicyInvoker(
         UpdateDataPolicyRequest request) {
-        return new SyncInvoker<UpdateDataPolicyRequest, UpdateDataPolicyResponse>(request,
-            EiHealthMeta.updateDataPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateDataPolicy, hcClient);
     }
 
     /**
@@ -6758,7 +6633,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseDataRequest 请求对象
+     * @param request UpdateDatabaseDataRequest 请求对象
      * @return UpdateDatabaseDataResponse
      */
     public UpdateDatabaseDataResponse updateDatabaseData(UpdateDatabaseDataRequest request) {
@@ -6772,13 +6647,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseDataRequest 请求对象
+     * @param request UpdateDatabaseDataRequest 请求对象
      * @return SyncInvoker<UpdateDatabaseDataRequest, UpdateDatabaseDataResponse>
      */
     public SyncInvoker<UpdateDatabaseDataRequest, UpdateDatabaseDataResponse> updateDatabaseDataInvoker(
         UpdateDatabaseDataRequest request) {
-        return new SyncInvoker<UpdateDatabaseDataRequest, UpdateDatabaseDataResponse>(request,
-            EiHealthMeta.updateDatabaseData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateDatabaseData, hcClient);
     }
 
     /**
@@ -6788,7 +6662,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDrugModelRequest 请求对象
+     * @param request UpdateDrugModelRequest 请求对象
      * @return UpdateDrugModelResponse
      */
     public UpdateDrugModelResponse updateDrugModel(UpdateDrugModelRequest request) {
@@ -6802,13 +6676,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDrugModelRequest 请求对象
+     * @param request UpdateDrugModelRequest 请求对象
      * @return SyncInvoker<UpdateDrugModelRequest, UpdateDrugModelResponse>
      */
     public SyncInvoker<UpdateDrugModelRequest, UpdateDrugModelResponse> updateDrugModelInvoker(
         UpdateDrugModelRequest request) {
-        return new SyncInvoker<UpdateDrugModelRequest, UpdateDrugModelResponse>(request, EiHealthMeta.updateDrugModel,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateDrugModel, hcClient);
     }
 
     /**
@@ -6818,7 +6691,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateImageRequest 请求对象
+     * @param request UpdateImageRequest 请求对象
      * @return UpdateImageResponse
      */
     public UpdateImageResponse updateImage(UpdateImageRequest request) {
@@ -6832,11 +6705,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateImageRequest 请求对象
+     * @param request UpdateImageRequest 请求对象
      * @return SyncInvoker<UpdateImageRequest, UpdateImageResponse>
      */
     public SyncInvoker<UpdateImageRequest, UpdateImageResponse> updateImageInvoker(UpdateImageRequest request) {
-        return new SyncInvoker<UpdateImageRequest, UpdateImageResponse>(request, EiHealthMeta.updateImage, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateImage, hcClient);
     }
 
     /**
@@ -6846,7 +6719,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInitPasswordRequest 请求对象
+     * @param request UpdateInitPasswordRequest 请求对象
      * @return UpdateInitPasswordResponse
      */
     public UpdateInitPasswordResponse updateInitPassword(UpdateInitPasswordRequest request) {
@@ -6860,13 +6733,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInitPasswordRequest 请求对象
+     * @param request UpdateInitPasswordRequest 请求对象
      * @return SyncInvoker<UpdateInitPasswordRequest, UpdateInitPasswordResponse>
      */
     public SyncInvoker<UpdateInitPasswordRequest, UpdateInitPasswordResponse> updateInitPasswordInvoker(
         UpdateInitPasswordRequest request) {
-        return new SyncInvoker<UpdateInitPasswordRequest, UpdateInitPasswordResponse>(request,
-            EiHealthMeta.updateInitPassword, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateInitPassword, hcClient);
     }
 
     /**
@@ -6876,7 +6748,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobRequest 请求对象
+     * @param request UpdateJobRequest 请求对象
      * @return UpdateJobResponse
      */
     public UpdateJobResponse updateJob(UpdateJobRequest request) {
@@ -6890,11 +6762,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobRequest 请求对象
+     * @param request UpdateJobRequest 请求对象
      * @return SyncInvoker<UpdateJobRequest, UpdateJobResponse>
      */
     public SyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobInvoker(UpdateJobRequest request) {
-        return new SyncInvoker<UpdateJobRequest, UpdateJobResponse>(request, EiHealthMeta.updateJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateJob, hcClient);
     }
 
     /**
@@ -6904,7 +6776,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobConfigRequest 请求对象
+     * @param request UpdateJobConfigRequest 请求对象
      * @return UpdateJobConfigResponse
      */
     public UpdateJobConfigResponse updateJobConfig(UpdateJobConfigRequest request) {
@@ -6918,13 +6790,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobConfigRequest 请求对象
+     * @param request UpdateJobConfigRequest 请求对象
      * @return SyncInvoker<UpdateJobConfigRequest, UpdateJobConfigResponse>
      */
     public SyncInvoker<UpdateJobConfigRequest, UpdateJobConfigResponse> updateJobConfigInvoker(
         UpdateJobConfigRequest request) {
-        return new SyncInvoker<UpdateJobConfigRequest, UpdateJobConfigResponse>(request, EiHealthMeta.updateJobConfig,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateJobConfig, hcClient);
     }
 
     /**
@@ -6934,7 +6805,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberRequest 请求对象
+     * @param request UpdateMemberRequest 请求对象
      * @return UpdateMemberResponse
      */
     public UpdateMemberResponse updateMember(UpdateMemberRequest request) {
@@ -6948,11 +6819,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberRequest 请求对象
+     * @param request UpdateMemberRequest 请求对象
      * @return SyncInvoker<UpdateMemberRequest, UpdateMemberResponse>
      */
     public SyncInvoker<UpdateMemberRequest, UpdateMemberResponse> updateMemberInvoker(UpdateMemberRequest request) {
-        return new SyncInvoker<UpdateMemberRequest, UpdateMemberResponse>(request, EiHealthMeta.updateMember, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateMember, hcClient);
     }
 
     /**
@@ -6962,7 +6833,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageClearRuleRequestBodyRequest 请求对象
+     * @param request UpdateMessageClearRuleRequestBodyRequest 请求对象
      * @return UpdateMessageClearRuleRequestBodyResponse
      */
     public UpdateMessageClearRuleRequestBodyResponse updateMessageClearRuleRequestBody(
@@ -6977,13 +6848,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageClearRuleRequestBodyRequest 请求对象
+     * @param request UpdateMessageClearRuleRequestBodyRequest 请求对象
      * @return SyncInvoker<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse>
      */
     public SyncInvoker<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse> updateMessageClearRuleRequestBodyInvoker(
         UpdateMessageClearRuleRequestBodyRequest request) {
-        return new SyncInvoker<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse>(
-            request, EiHealthMeta.updateMessageClearRuleRequestBody, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateMessageClearRuleRequestBody, hcClient);
     }
 
     /**
@@ -6993,7 +6863,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageEmailConfigRequest 请求对象
+     * @param request UpdateMessageEmailConfigRequest 请求对象
      * @return UpdateMessageEmailConfigResponse
      */
     public UpdateMessageEmailConfigResponse updateMessageEmailConfig(UpdateMessageEmailConfigRequest request) {
@@ -7007,13 +6877,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageEmailConfigRequest 请求对象
+     * @param request UpdateMessageEmailConfigRequest 请求对象
      * @return SyncInvoker<UpdateMessageEmailConfigRequest, UpdateMessageEmailConfigResponse>
      */
     public SyncInvoker<UpdateMessageEmailConfigRequest, UpdateMessageEmailConfigResponse> updateMessageEmailConfigInvoker(
         UpdateMessageEmailConfigRequest request) {
-        return new SyncInvoker<UpdateMessageEmailConfigRequest, UpdateMessageEmailConfigResponse>(request,
-            EiHealthMeta.updateMessageEmailConfig, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateMessageEmailConfig, hcClient);
     }
 
     /**
@@ -7023,7 +6892,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageReceiveConfigRequest 请求对象
+     * @param request UpdateMessageReceiveConfigRequest 请求对象
      * @return UpdateMessageReceiveConfigResponse
      */
     public UpdateMessageReceiveConfigResponse updateMessageReceiveConfig(UpdateMessageReceiveConfigRequest request) {
@@ -7037,13 +6906,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageReceiveConfigRequest 请求对象
+     * @param request UpdateMessageReceiveConfigRequest 请求对象
      * @return SyncInvoker<UpdateMessageReceiveConfigRequest, UpdateMessageReceiveConfigResponse>
      */
     public SyncInvoker<UpdateMessageReceiveConfigRequest, UpdateMessageReceiveConfigResponse> updateMessageReceiveConfigInvoker(
         UpdateMessageReceiveConfigRequest request) {
-        return new SyncInvoker<UpdateMessageReceiveConfigRequest, UpdateMessageReceiveConfigResponse>(request,
-            EiHealthMeta.updateMessageReceiveConfig, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateMessageReceiveConfig, hcClient);
     }
 
     /**
@@ -7053,7 +6921,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePerformanceResourceRequest 请求对象
+     * @param request UpdatePerformanceResourceRequest 请求对象
      * @return UpdatePerformanceResourceResponse
      */
     public UpdatePerformanceResourceResponse updatePerformanceResource(UpdatePerformanceResourceRequest request) {
@@ -7067,13 +6935,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePerformanceResourceRequest 请求对象
+     * @param request UpdatePerformanceResourceRequest 请求对象
      * @return SyncInvoker<UpdatePerformanceResourceRequest, UpdatePerformanceResourceResponse>
      */
     public SyncInvoker<UpdatePerformanceResourceRequest, UpdatePerformanceResourceResponse> updatePerformanceResourceInvoker(
         UpdatePerformanceResourceRequest request) {
-        return new SyncInvoker<UpdatePerformanceResourceRequest, UpdatePerformanceResourceResponse>(request,
-            EiHealthMeta.updatePerformanceResource, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updatePerformanceResource, hcClient);
     }
 
     /**
@@ -7083,7 +6950,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectRequest 请求对象
+     * @param request UpdateProjectRequest 请求对象
      * @return UpdateProjectResponse
      */
     public UpdateProjectResponse updateProject(UpdateProjectRequest request) {
@@ -7097,12 +6964,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectRequest 请求对象
+     * @param request UpdateProjectRequest 请求对象
      * @return SyncInvoker<UpdateProjectRequest, UpdateProjectResponse>
      */
     public SyncInvoker<UpdateProjectRequest, UpdateProjectResponse> updateProjectInvoker(UpdateProjectRequest request) {
-        return new SyncInvoker<UpdateProjectRequest, UpdateProjectResponse>(request, EiHealthMeta.updateProject,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateProject, hcClient);
     }
 
     /**
@@ -7112,7 +6978,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectTrackerRequest 请求对象
+     * @param request UpdateProjectTrackerRequest 请求对象
      * @return UpdateProjectTrackerResponse
      */
     public UpdateProjectTrackerResponse updateProjectTracker(UpdateProjectTrackerRequest request) {
@@ -7126,13 +6992,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProjectTrackerRequest 请求对象
+     * @param request UpdateProjectTrackerRequest 请求对象
      * @return SyncInvoker<UpdateProjectTrackerRequest, UpdateProjectTrackerResponse>
      */
     public SyncInvoker<UpdateProjectTrackerRequest, UpdateProjectTrackerResponse> updateProjectTrackerInvoker(
         UpdateProjectTrackerRequest request) {
-        return new SyncInvoker<UpdateProjectTrackerRequest, UpdateProjectTrackerResponse>(request,
-            EiHealthMeta.updateProjectTracker, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateProjectTracker, hcClient);
     }
 
     /**
@@ -7142,7 +7007,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScaleInPolicyRequest 请求对象
+     * @param request UpdateScaleInPolicyRequest 请求对象
      * @return UpdateScaleInPolicyResponse
      */
     public UpdateScaleInPolicyResponse updateScaleInPolicy(UpdateScaleInPolicyRequest request) {
@@ -7156,13 +7021,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScaleInPolicyRequest 请求对象
+     * @param request UpdateScaleInPolicyRequest 请求对象
      * @return SyncInvoker<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse>
      */
     public SyncInvoker<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse> updateScaleInPolicyInvoker(
         UpdateScaleInPolicyRequest request) {
-        return new SyncInvoker<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse>(request,
-            EiHealthMeta.updateScaleInPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateScaleInPolicy, hcClient);
     }
 
     /**
@@ -7172,7 +7036,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScaleOutPolicyRequest 请求对象
+     * @param request UpdateScaleOutPolicyRequest 请求对象
      * @return UpdateScaleOutPolicyResponse
      */
     public UpdateScaleOutPolicyResponse updateScaleOutPolicy(UpdateScaleOutPolicyRequest request) {
@@ -7186,13 +7050,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScaleOutPolicyRequest 请求对象
+     * @param request UpdateScaleOutPolicyRequest 请求对象
      * @return SyncInvoker<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse>
      */
     public SyncInvoker<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse> updateScaleOutPolicyInvoker(
         UpdateScaleOutPolicyRequest request) {
-        return new SyncInvoker<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse>(request,
-            EiHealthMeta.updateScaleOutPolicy, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateScaleOutPolicy, hcClient);
     }
 
     /**
@@ -7202,7 +7065,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScheduleRequest 请求对象
+     * @param request UpdateScheduleRequest 请求对象
      * @return UpdateScheduleResponse
      */
     public UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request) {
@@ -7216,13 +7079,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScheduleRequest 请求对象
+     * @param request UpdateScheduleRequest 请求对象
      * @return SyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse>
      */
     public SyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse> updateScheduleInvoker(
         UpdateScheduleRequest request) {
-        return new SyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse>(request, EiHealthMeta.updateSchedule,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateSchedule, hcClient);
     }
 
     /**
@@ -7232,7 +7094,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStarRequest 请求对象
+     * @param request UpdateStarRequest 请求对象
      * @return UpdateStarResponse
      */
     public UpdateStarResponse updateStar(UpdateStarRequest request) {
@@ -7246,11 +7108,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStarRequest 请求对象
+     * @param request UpdateStarRequest 请求对象
      * @return SyncInvoker<UpdateStarRequest, UpdateStarResponse>
      */
     public SyncInvoker<UpdateStarRequest, UpdateStarResponse> updateStarInvoker(UpdateStarRequest request) {
-        return new SyncInvoker<UpdateStarRequest, UpdateStarResponse>(request, EiHealthMeta.updateStar, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateStar, hcClient);
     }
 
     /**
@@ -7260,7 +7122,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return UpdateUserResponse
      */
     public UpdateUserResponse updateUser(UpdateUserRequest request) {
@@ -7274,11 +7136,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return SyncInvoker<UpdateUserRequest, UpdateUserResponse>
      */
     public SyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserInvoker(UpdateUserRequest request) {
-        return new SyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, EiHealthMeta.updateUser, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateUser, hcClient);
     }
 
     /**
@@ -7288,7 +7150,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserByDomainRequest 请求对象
+     * @param request UpdateUserByDomainRequest 请求对象
      * @return UpdateUserByDomainResponse
      */
     public UpdateUserByDomainResponse updateUserByDomain(UpdateUserByDomainRequest request) {
@@ -7302,13 +7164,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserByDomainRequest 请求对象
+     * @param request UpdateUserByDomainRequest 请求对象
      * @return SyncInvoker<UpdateUserByDomainRequest, UpdateUserByDomainResponse>
      */
     public SyncInvoker<UpdateUserByDomainRequest, UpdateUserByDomainResponse> updateUserByDomainInvoker(
         UpdateUserByDomainRequest request) {
-        return new SyncInvoker<UpdateUserByDomainRequest, UpdateUserByDomainResponse>(request,
-            EiHealthMeta.updateUserByDomain, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateUserByDomain, hcClient);
     }
 
     /**
@@ -7318,7 +7179,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRoleRequest 请求对象
+     * @param request UpdateUserRoleRequest 请求对象
      * @return UpdateUserRoleResponse
      */
     public UpdateUserRoleResponse updateUserRole(UpdateUserRoleRequest request) {
@@ -7332,13 +7193,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRoleRequest 请求对象
+     * @param request UpdateUserRoleRequest 请求对象
      * @return SyncInvoker<UpdateUserRoleRequest, UpdateUserRoleResponse>
      */
     public SyncInvoker<UpdateUserRoleRequest, UpdateUserRoleResponse> updateUserRoleInvoker(
         UpdateUserRoleRequest request) {
-        return new SyncInvoker<UpdateUserRoleRequest, UpdateUserRoleResponse>(request, EiHealthMeta.updateUserRole,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateUserRole, hcClient);
     }
 
     /**
@@ -7348,7 +7208,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserSettingRequest 请求对象
+     * @param request UpdateUserSettingRequest 请求对象
      * @return UpdateUserSettingResponse
      */
     public UpdateUserSettingResponse updateUserSetting(UpdateUserSettingRequest request) {
@@ -7362,13 +7222,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserSettingRequest 请求对象
+     * @param request UpdateUserSettingRequest 请求对象
      * @return SyncInvoker<UpdateUserSettingRequest, UpdateUserSettingResponse>
      */
     public SyncInvoker<UpdateUserSettingRequest, UpdateUserSettingResponse> updateUserSettingInvoker(
         UpdateUserSettingRequest request) {
-        return new SyncInvoker<UpdateUserSettingRequest, UpdateUserSettingResponse>(request,
-            EiHealthMeta.updateUserSetting, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateUserSetting, hcClient);
     }
 
     /**
@@ -7378,7 +7237,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVendorRequest 请求对象
+     * @param request UpdateVendorRequest 请求对象
      * @return UpdateVendorResponse
      */
     public UpdateVendorResponse updateVendor(UpdateVendorRequest request) {
@@ -7392,11 +7251,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVendorRequest 请求对象
+     * @param request UpdateVendorRequest 请求对象
      * @return SyncInvoker<UpdateVendorRequest, UpdateVendorResponse>
      */
     public SyncInvoker<UpdateVendorRequest, UpdateVendorResponse> updateVendorInvoker(UpdateVendorRequest request) {
-        return new SyncInvoker<UpdateVendorRequest, UpdateVendorResponse>(request, EiHealthMeta.updateVendor, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateVendor, hcClient);
     }
 
     /**
@@ -7406,7 +7265,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkflowRequest 请求对象
+     * @param request UpdateWorkflowRequest 请求对象
      * @return UpdateWorkflowResponse
      */
     public UpdateWorkflowResponse updateWorkflow(UpdateWorkflowRequest request) {
@@ -7420,13 +7279,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkflowRequest 请求对象
+     * @param request UpdateWorkflowRequest 请求对象
      * @return SyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse>
      */
     public SyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse> updateWorkflowInvoker(
         UpdateWorkflowRequest request) {
-        return new SyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse>(request, EiHealthMeta.updateWorkflow,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateWorkflow, hcClient);
     }
 
     /**
@@ -7436,7 +7294,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadDataRequest 请求对象
+     * @param request UploadDataRequest 请求对象
      * @return UploadDataResponse
      */
     public UploadDataResponse uploadData(UploadDataRequest request) {
@@ -7450,11 +7308,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadDataRequest 请求对象
+     * @param request UploadDataRequest 请求对象
      * @return SyncInvoker<UploadDataRequest, UploadDataResponse>
      */
     public SyncInvoker<UploadDataRequest, UploadDataResponse> uploadDataInvoker(UploadDataRequest request) {
-        return new SyncInvoker<UploadDataRequest, UploadDataResponse>(request, EiHealthMeta.uploadData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.uploadData, hcClient);
     }
 
     /**
@@ -7464,7 +7322,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadTemplateRequest 请求对象
+     * @param request UploadTemplateRequest 请求对象
      * @return UploadTemplateResponse
      */
     public UploadTemplateResponse uploadTemplate(UploadTemplateRequest request) {
@@ -7478,13 +7336,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadTemplateRequest 请求对象
+     * @param request UploadTemplateRequest 请求对象
      * @return SyncInvoker<UploadTemplateRequest, UploadTemplateResponse>
      */
     public SyncInvoker<UploadTemplateRequest, UploadTemplateResponse> uploadTemplateInvoker(
         UploadTemplateRequest request) {
-        return new SyncInvoker<UploadTemplateRequest, UploadTemplateResponse>(request, EiHealthMeta.uploadTemplate,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.uploadTemplate, hcClient);
     }
 
     /**
@@ -7494,7 +7351,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateCodeRequest 请求对象
+     * @param request ValidateCodeRequest 请求对象
      * @return ValidateCodeResponse
      */
     public ValidateCodeResponse validateCode(ValidateCodeRequest request) {
@@ -7508,11 +7365,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateCodeRequest 请求对象
+     * @param request ValidateCodeRequest 请求对象
      * @return SyncInvoker<ValidateCodeRequest, ValidateCodeResponse>
      */
     public SyncInvoker<ValidateCodeRequest, ValidateCodeResponse> validateCodeInvoker(ValidateCodeRequest request) {
-        return new SyncInvoker<ValidateCodeRequest, ValidateCodeResponse>(request, EiHealthMeta.validateCode, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.validateCode, hcClient);
     }
 
     /**
@@ -7522,7 +7379,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetPropertiesRequest 请求对象
+     * @param request ShowAdmetPropertiesRequest 请求对象
      * @return ShowAdmetPropertiesResponse
      */
     public ShowAdmetPropertiesResponse showAdmetProperties(ShowAdmetPropertiesRequest request) {
@@ -7536,13 +7393,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetPropertiesRequest 请求对象
+     * @param request ShowAdmetPropertiesRequest 请求对象
      * @return SyncInvoker<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse>
      */
     public SyncInvoker<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse> showAdmetPropertiesInvoker(
         ShowAdmetPropertiesRequest request) {
-        return new SyncInvoker<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse>(request,
-            EiHealthMeta.showAdmetProperties, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showAdmetProperties, hcClient);
     }
 
     /**
@@ -7552,7 +7408,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCpiTaskRequest 请求对象
+     * @param request CreateCpiTaskRequest 请求对象
      * @return CreateCpiTaskResponse
      */
     public CreateCpiTaskResponse createCpiTask(CreateCpiTaskRequest request) {
@@ -7566,12 +7422,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCpiTaskRequest 请求对象
+     * @param request CreateCpiTaskRequest 请求对象
      * @return SyncInvoker<CreateCpiTaskRequest, CreateCpiTaskResponse>
      */
     public SyncInvoker<CreateCpiTaskRequest, CreateCpiTaskResponse> createCpiTaskInvoker(CreateCpiTaskRequest request) {
-        return new SyncInvoker<CreateCpiTaskRequest, CreateCpiTaskResponse>(request, EiHealthMeta.createCpiTask,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createCpiTask, hcClient);
     }
 
     /**
@@ -7581,7 +7436,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCpiTaskResultRequest 请求对象
+     * @param request ShowCpiTaskResultRequest 请求对象
      * @return ShowCpiTaskResultResponse
      */
     public ShowCpiTaskResultResponse showCpiTaskResult(ShowCpiTaskResultRequest request) {
@@ -7595,13 +7450,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCpiTaskResultRequest 请求对象
+     * @param request ShowCpiTaskResultRequest 请求对象
      * @return SyncInvoker<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse>
      */
     public SyncInvoker<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse> showCpiTaskResultInvoker(
         ShowCpiTaskResultRequest request) {
-        return new SyncInvoker<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse>(request,
-            EiHealthMeta.showCpiTaskResult, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showCpiTaskResult, hcClient);
     }
 
     /**
@@ -7611,7 +7465,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomPropsTaskRequest 请求对象
+     * @param request CreateCustomPropsTaskRequest 请求对象
      * @return CreateCustomPropsTaskResponse
      */
     public CreateCustomPropsTaskResponse createCustomPropsTask(CreateCustomPropsTaskRequest request) {
@@ -7625,13 +7479,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomPropsTaskRequest 请求对象
+     * @param request CreateCustomPropsTaskRequest 请求对象
      * @return SyncInvoker<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse>
      */
     public SyncInvoker<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse> createCustomPropsTaskInvoker(
         CreateCustomPropsTaskRequest request) {
-        return new SyncInvoker<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse>(request,
-            EiHealthMeta.createCustomPropsTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createCustomPropsTask, hcClient);
     }
 
     /**
@@ -7641,7 +7494,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomPropsTaskResultRequest 请求对象
+     * @param request ShowCustomPropsTaskResultRequest 请求对象
      * @return ShowCustomPropsTaskResultResponse
      */
     public ShowCustomPropsTaskResultResponse showCustomPropsTaskResult(ShowCustomPropsTaskResultRequest request) {
@@ -7655,13 +7508,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomPropsTaskResultRequest 请求对象
+     * @param request ShowCustomPropsTaskResultRequest 请求对象
      * @return SyncInvoker<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse>
      */
     public SyncInvoker<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse> showCustomPropsTaskResultInvoker(
         ShowCustomPropsTaskResultRequest request) {
-        return new SyncInvoker<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse>(request,
-            EiHealthMeta.showCustomPropsTaskResult, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showCustomPropsTaskResult, hcClient);
     }
 
     /**
@@ -7671,7 +7523,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGenerationTaskRequest 请求对象
+     * @param request CreateGenerationTaskRequest 请求对象
      * @return CreateGenerationTaskResponse
      */
     public CreateGenerationTaskResponse createGenerationTask(CreateGenerationTaskRequest request) {
@@ -7685,13 +7537,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGenerationTaskRequest 请求对象
+     * @param request CreateGenerationTaskRequest 请求对象
      * @return SyncInvoker<CreateGenerationTaskRequest, CreateGenerationTaskResponse>
      */
     public SyncInvoker<CreateGenerationTaskRequest, CreateGenerationTaskResponse> createGenerationTaskInvoker(
         CreateGenerationTaskRequest request) {
-        return new SyncInvoker<CreateGenerationTaskRequest, CreateGenerationTaskResponse>(request,
-            EiHealthMeta.createGenerationTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createGenerationTask, hcClient);
     }
 
     /**
@@ -7701,7 +7552,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGenerationTaskResultRequest 请求对象
+     * @param request ShowGenerationTaskResultRequest 请求对象
      * @return ShowGenerationTaskResultResponse
      */
     public ShowGenerationTaskResultResponse showGenerationTaskResult(ShowGenerationTaskResultRequest request) {
@@ -7715,13 +7566,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGenerationTaskResultRequest 请求对象
+     * @param request ShowGenerationTaskResultRequest 请求对象
      * @return SyncInvoker<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse>
      */
     public SyncInvoker<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse> showGenerationTaskResultInvoker(
         ShowGenerationTaskResultRequest request) {
-        return new SyncInvoker<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse>(request,
-            EiHealthMeta.showGenerationTaskResult, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showGenerationTaskResult, hcClient);
     }
 
     /**
@@ -7731,7 +7581,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDrugLigandDifferenceRequest 请求对象
+     * @param request CheckDrugLigandDifferenceRequest 请求对象
      * @return CheckDrugLigandDifferenceResponse
      */
     public CheckDrugLigandDifferenceResponse checkDrugLigandDifference(CheckDrugLigandDifferenceRequest request) {
@@ -7745,13 +7595,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckDrugLigandDifferenceRequest 请求对象
+     * @param request CheckDrugLigandDifferenceRequest 请求对象
      * @return SyncInvoker<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse>
      */
     public SyncInvoker<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse> checkDrugLigandDifferenceInvoker(
         CheckDrugLigandDifferenceRequest request) {
-        return new SyncInvoker<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse>(request,
-            EiHealthMeta.checkDrugLigandDifference, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.checkDrugLigandDifference, hcClient);
     }
 
     /**
@@ -7761,7 +7610,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandInteraction2dSvgRequest 请求对象
+     * @param request CreateDrugLigandInteraction2dSvgRequest 请求对象
      * @return CreateDrugLigandInteraction2dSvgResponse
      */
     public CreateDrugLigandInteraction2dSvgResponse createDrugLigandInteraction2dSvg(
@@ -7776,13 +7625,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandInteraction2dSvgRequest 请求对象
+     * @param request CreateDrugLigandInteraction2dSvgRequest 请求对象
      * @return SyncInvoker<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse>
      */
     public SyncInvoker<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse> createDrugLigandInteraction2dSvgInvoker(
         CreateDrugLigandInteraction2dSvgRequest request) {
-        return new SyncInvoker<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse>(
-            request, EiHealthMeta.createDrugLigandInteraction2dSvg, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createDrugLigandInteraction2dSvg, hcClient);
     }
 
     /**
@@ -7792,7 +7640,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandPreviewTaskRequest 请求对象
+     * @param request CreateDrugLigandPreviewTaskRequest 请求对象
      * @return CreateDrugLigandPreviewTaskResponse
      */
     public CreateDrugLigandPreviewTaskResponse createDrugLigandPreviewTask(CreateDrugLigandPreviewTaskRequest request) {
@@ -7806,13 +7654,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandPreviewTaskRequest 请求对象
+     * @param request CreateDrugLigandPreviewTaskRequest 请求对象
      * @return SyncInvoker<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse>
      */
     public SyncInvoker<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse> createDrugLigandPreviewTaskInvoker(
         CreateDrugLigandPreviewTaskRequest request) {
-        return new SyncInvoker<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse>(request,
-            EiHealthMeta.createDrugLigandPreviewTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createDrugLigandPreviewTask, hcClient);
     }
 
     /**
@@ -7822,7 +7669,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSdfRequest 请求对象
+     * @param request CreateDrugLigandSdfRequest 请求对象
      * @return CreateDrugLigandSdfResponse
      */
     public CreateDrugLigandSdfResponse createDrugLigandSdf(CreateDrugLigandSdfRequest request) {
@@ -7836,13 +7683,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSdfRequest 请求对象
+     * @param request CreateDrugLigandSdfRequest 请求对象
      * @return SyncInvoker<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse>
      */
     public SyncInvoker<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse> createDrugLigandSdfInvoker(
         CreateDrugLigandSdfRequest request) {
-        return new SyncInvoker<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse>(request,
-            EiHealthMeta.createDrugLigandSdf, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createDrugLigandSdf, hcClient);
     }
 
     /**
@@ -7852,7 +7698,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request CreateDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return CreateDrugLigandSimilarityGraphTaskResponse
      */
     public CreateDrugLigandSimilarityGraphTaskResponse createDrugLigandSimilarityGraphTask(
@@ -7867,13 +7713,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request CreateDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return SyncInvoker<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse>
      */
     public SyncInvoker<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse> createDrugLigandSimilarityGraphTaskInvoker(
         CreateDrugLigandSimilarityGraphTaskRequest request) {
-        return new SyncInvoker<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse>(
-            request, EiHealthMeta.createDrugLigandSimilarityGraphTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createDrugLigandSimilarityGraphTask, hcClient);
     }
 
     /**
@@ -7883,7 +7728,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSvgRequest 请求对象
+     * @param request CreateDrugLigandSvgRequest 请求对象
      * @return CreateDrugLigandSvgResponse
      */
     public CreateDrugLigandSvgResponse createDrugLigandSvg(CreateDrugLigandSvgRequest request) {
@@ -7897,13 +7742,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDrugLigandSvgRequest 请求对象
+     * @param request CreateDrugLigandSvgRequest 请求对象
      * @return SyncInvoker<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse>
      */
     public SyncInvoker<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse> createDrugLigandSvgInvoker(
         CreateDrugLigandSvgRequest request) {
-        return new SyncInvoker<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse>(request,
-            EiHealthMeta.createDrugLigandSvg, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createDrugLigandSvg, hcClient);
     }
 
     /**
@@ -7913,7 +7757,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugLigandPreviewTaskRequest 请求对象
+     * @param request DeleteDrugLigandPreviewTaskRequest 请求对象
      * @return DeleteDrugLigandPreviewTaskResponse
      */
     public DeleteDrugLigandPreviewTaskResponse deleteDrugLigandPreviewTask(DeleteDrugLigandPreviewTaskRequest request) {
@@ -7927,13 +7771,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugLigandPreviewTaskRequest 请求对象
+     * @param request DeleteDrugLigandPreviewTaskRequest 请求对象
      * @return SyncInvoker<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse>
      */
     public SyncInvoker<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse> deleteDrugLigandPreviewTaskInvoker(
         DeleteDrugLigandPreviewTaskRequest request) {
-        return new SyncInvoker<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse>(request,
-            EiHealthMeta.deleteDrugLigandPreviewTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteDrugLigandPreviewTask, hcClient);
     }
 
     /**
@@ -7943,7 +7786,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request DeleteDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return DeleteDrugLigandSimilarityGraphTaskResponse
      */
     public DeleteDrugLigandSimilarityGraphTaskResponse deleteDrugLigandSimilarityGraphTask(
@@ -7958,13 +7801,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request DeleteDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return SyncInvoker<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse>
      */
     public SyncInvoker<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse> deleteDrugLigandSimilarityGraphTaskInvoker(
         DeleteDrugLigandSimilarityGraphTaskRequest request) {
-        return new SyncInvoker<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse>(
-            request, EiHealthMeta.deleteDrugLigandSimilarityGraphTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteDrugLigandSimilarityGraphTask, hcClient);
     }
 
     /**
@@ -7974,7 +7816,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ParseDrugReceptorInfoRequest 请求对象
+     * @param request ParseDrugReceptorInfoRequest 请求对象
      * @return ParseDrugReceptorInfoResponse
      */
     public ParseDrugReceptorInfoResponse parseDrugReceptorInfo(ParseDrugReceptorInfoRequest request) {
@@ -7988,13 +7830,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ParseDrugReceptorInfoRequest 请求对象
+     * @param request ParseDrugReceptorInfoRequest 请求对象
      * @return SyncInvoker<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse>
      */
     public SyncInvoker<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse> parseDrugReceptorInfoInvoker(
         ParseDrugReceptorInfoRequest request) {
-        return new SyncInvoker<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse>(request,
-            EiHealthMeta.parseDrugReceptorInfo, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.parseDrugReceptorInfo, hcClient);
     }
 
     /**
@@ -8004,7 +7845,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeDrugReceptorPocketRequest 请求对象
+     * @param request RecognizeDrugReceptorPocketRequest 请求对象
      * @return RecognizeDrugReceptorPocketResponse
      */
     public RecognizeDrugReceptorPocketResponse recognizeDrugReceptorPocket(RecognizeDrugReceptorPocketRequest request) {
@@ -8018,13 +7859,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecognizeDrugReceptorPocketRequest 请求对象
+     * @param request RecognizeDrugReceptorPocketRequest 请求对象
      * @return SyncInvoker<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse>
      */
     public SyncInvoker<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse> recognizeDrugReceptorPocketInvoker(
         RecognizeDrugReceptorPocketRequest request) {
-        return new SyncInvoker<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse>(request,
-            EiHealthMeta.recognizeDrugReceptorPocket, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.recognizeDrugReceptorPocket, hcClient);
     }
 
     /**
@@ -8034,7 +7874,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDrugLigandToSmilesConversionRequest 请求对象
+     * @param request RunDrugLigandToSmilesConversionRequest 请求对象
      * @return RunDrugLigandToSmilesConversionResponse
      */
     public RunDrugLigandToSmilesConversionResponse runDrugLigandToSmilesConversion(
@@ -8049,13 +7889,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDrugLigandToSmilesConversionRequest 请求对象
+     * @param request RunDrugLigandToSmilesConversionRequest 请求对象
      * @return SyncInvoker<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse>
      */
     public SyncInvoker<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse> runDrugLigandToSmilesConversionInvoker(
         RunDrugLigandToSmilesConversionRequest request) {
-        return new SyncInvoker<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse>(request,
-            EiHealthMeta.runDrugLigandToSmilesConversion, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.runDrugLigandToSmilesConversion, hcClient);
     }
 
     /**
@@ -8065,7 +7904,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDrugReceptorPreprocessRequest 请求对象
+     * @param request RunDrugReceptorPreprocessRequest 请求对象
      * @return RunDrugReceptorPreprocessResponse
      */
     public RunDrugReceptorPreprocessResponse runDrugReceptorPreprocess(RunDrugReceptorPreprocessRequest request) {
@@ -8079,13 +7918,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunDrugReceptorPreprocessRequest 请求对象
+     * @param request RunDrugReceptorPreprocessRequest 请求对象
      * @return SyncInvoker<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse>
      */
     public SyncInvoker<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse> runDrugReceptorPreprocessInvoker(
         RunDrugReceptorPreprocessRequest request) {
-        return new SyncInvoker<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse>(request,
-            EiHealthMeta.runDrugReceptorPreprocess, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.runDrugReceptorPreprocess, hcClient);
     }
 
     /**
@@ -8095,7 +7933,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDrugLigandPreviewTaskRequest 请求对象
+     * @param request ShowDrugLigandPreviewTaskRequest 请求对象
      * @return ShowDrugLigandPreviewTaskResponse
      */
     public ShowDrugLigandPreviewTaskResponse showDrugLigandPreviewTask(ShowDrugLigandPreviewTaskRequest request) {
@@ -8109,13 +7947,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDrugLigandPreviewTaskRequest 请求对象
+     * @param request ShowDrugLigandPreviewTaskRequest 请求对象
      * @return SyncInvoker<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse>
      */
     public SyncInvoker<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse> showDrugLigandPreviewTaskInvoker(
         ShowDrugLigandPreviewTaskRequest request) {
-        return new SyncInvoker<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse>(request,
-            EiHealthMeta.showDrugLigandPreviewTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showDrugLigandPreviewTask, hcClient);
     }
 
     /**
@@ -8125,7 +7962,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request ShowDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return ShowDrugLigandSimilarityGraphTaskResponse
      */
     public ShowDrugLigandSimilarityGraphTaskResponse showDrugLigandSimilarityGraphTask(
@@ -8140,13 +7977,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @param request ShowDrugLigandSimilarityGraphTaskRequest 请求对象
      * @return SyncInvoker<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse>
      */
     public SyncInvoker<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse> showDrugLigandSimilarityGraphTaskInvoker(
         ShowDrugLigandSimilarityGraphTaskRequest request) {
-        return new SyncInvoker<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse>(
-            request, EiHealthMeta.showDrugLigandSimilarityGraphTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showDrugLigandSimilarityGraphTask, hcClient);
     }
 
     /**
@@ -8156,7 +7992,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataRequest 请求对象
+     * @param request DownloadDataRequest 请求对象
      * @return DownloadDataResponse
      */
     public DownloadDataResponse downloadData(DownloadDataRequest request) {
@@ -8170,11 +8006,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadDataRequest 请求对象
+     * @param request DownloadDataRequest 请求对象
      * @return SyncInvoker<DownloadDataRequest, DownloadDataResponse>
      */
     public SyncInvoker<DownloadDataRequest, DownloadDataResponse> downloadDataInvoker(DownloadDataRequest request) {
-        return new SyncInvoker<DownloadDataRequest, DownloadDataResponse>(request, EiHealthMeta.downloadData, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.downloadData, hcClient);
     }
 
     /**
@@ -8184,7 +8020,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOverviewRequest 请求对象
+     * @param request ShowOverviewRequest 请求对象
      * @return ShowOverviewResponse
      */
     public ShowOverviewResponse showOverview(ShowOverviewRequest request) {
@@ -8198,11 +8034,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOverviewRequest 请求对象
+     * @param request ShowOverviewRequest 请求对象
      * @return SyncInvoker<ShowOverviewRequest, ShowOverviewResponse>
      */
     public SyncInvoker<ShowOverviewRequest, ShowOverviewResponse> showOverviewInvoker(ShowOverviewRequest request) {
-        return new SyncInvoker<ShowOverviewRequest, ShowOverviewResponse>(request, EiHealthMeta.showOverview, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showOverview, hcClient);
     }
 
     /**
@@ -8212,7 +8048,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CleanNextflowCacheRequest 请求对象
+     * @param request CleanNextflowCacheRequest 请求对象
      * @return CleanNextflowCacheResponse
      */
     public CleanNextflowCacheResponse cleanNextflowCache(CleanNextflowCacheRequest request) {
@@ -8226,13 +8062,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CleanNextflowCacheRequest 请求对象
+     * @param request CleanNextflowCacheRequest 请求对象
      * @return SyncInvoker<CleanNextflowCacheRequest, CleanNextflowCacheResponse>
      */
     public SyncInvoker<CleanNextflowCacheRequest, CleanNextflowCacheResponse> cleanNextflowCacheInvoker(
         CleanNextflowCacheRequest request) {
-        return new SyncInvoker<CleanNextflowCacheRequest, CleanNextflowCacheResponse>(request,
-            EiHealthMeta.cleanNextflowCache, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.cleanNextflowCache, hcClient);
     }
 
     /**
@@ -8242,7 +8077,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNextflowJobRequest 请求对象
+     * @param request CreateNextflowJobRequest 请求对象
      * @return CreateNextflowJobResponse
      */
     public CreateNextflowJobResponse createNextflowJob(CreateNextflowJobRequest request) {
@@ -8256,13 +8091,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNextflowJobRequest 请求对象
+     * @param request CreateNextflowJobRequest 请求对象
      * @return SyncInvoker<CreateNextflowJobRequest, CreateNextflowJobResponse>
      */
     public SyncInvoker<CreateNextflowJobRequest, CreateNextflowJobResponse> createNextflowJobInvoker(
         CreateNextflowJobRequest request) {
-        return new SyncInvoker<CreateNextflowJobRequest, CreateNextflowJobResponse>(request,
-            EiHealthMeta.createNextflowJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createNextflowJob, hcClient);
     }
 
     /**
@@ -8272,7 +8106,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNextflowWorkflowRequest 请求对象
+     * @param request CreateNextflowWorkflowRequest 请求对象
      * @return CreateNextflowWorkflowResponse
      */
     public CreateNextflowWorkflowResponse createNextflowWorkflow(CreateNextflowWorkflowRequest request) {
@@ -8286,13 +8120,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNextflowWorkflowRequest 请求对象
+     * @param request CreateNextflowWorkflowRequest 请求对象
      * @return SyncInvoker<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse>
      */
     public SyncInvoker<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse> createNextflowWorkflowInvoker(
         CreateNextflowWorkflowRequest request) {
-        return new SyncInvoker<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse>(request,
-            EiHealthMeta.createNextflowWorkflow, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createNextflowWorkflow, hcClient);
     }
 
     /**
@@ -8302,7 +8135,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNextflowJobRequest 请求对象
+     * @param request DeleteNextflowJobRequest 请求对象
      * @return DeleteNextflowJobResponse
      */
     public DeleteNextflowJobResponse deleteNextflowJob(DeleteNextflowJobRequest request) {
@@ -8316,13 +8149,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNextflowJobRequest 请求对象
+     * @param request DeleteNextflowJobRequest 请求对象
      * @return SyncInvoker<DeleteNextflowJobRequest, DeleteNextflowJobResponse>
      */
     public SyncInvoker<DeleteNextflowJobRequest, DeleteNextflowJobResponse> deleteNextflowJobInvoker(
         DeleteNextflowJobRequest request) {
-        return new SyncInvoker<DeleteNextflowJobRequest, DeleteNextflowJobResponse>(request,
-            EiHealthMeta.deleteNextflowJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteNextflowJob, hcClient);
     }
 
     /**
@@ -8332,7 +8164,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNextflowWorkflowRequest 请求对象
+     * @param request DeleteNextflowWorkflowRequest 请求对象
      * @return DeleteNextflowWorkflowResponse
      */
     public DeleteNextflowWorkflowResponse deleteNextflowWorkflow(DeleteNextflowWorkflowRequest request) {
@@ -8346,13 +8178,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNextflowWorkflowRequest 请求对象
+     * @param request DeleteNextflowWorkflowRequest 请求对象
      * @return SyncInvoker<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse>
      */
     public SyncInvoker<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse> deleteNextflowWorkflowInvoker(
         DeleteNextflowWorkflowRequest request) {
-        return new SyncInvoker<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse>(request,
-            EiHealthMeta.deleteNextflowWorkflow, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteNextflowWorkflow, hcClient);
     }
 
     /**
@@ -8362,7 +8193,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallNextflowRequest 请求对象
+     * @param request InstallNextflowRequest 请求对象
      * @return InstallNextflowResponse
      */
     public InstallNextflowResponse installNextflow(InstallNextflowRequest request) {
@@ -8376,13 +8207,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallNextflowRequest 请求对象
+     * @param request InstallNextflowRequest 请求对象
      * @return SyncInvoker<InstallNextflowRequest, InstallNextflowResponse>
      */
     public SyncInvoker<InstallNextflowRequest, InstallNextflowResponse> installNextflowInvoker(
         InstallNextflowRequest request) {
-        return new SyncInvoker<InstallNextflowRequest, InstallNextflowResponse>(request, EiHealthMeta.installNextflow,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.installNextflow, hcClient);
     }
 
     /**
@@ -8392,7 +8222,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowJobRequest 请求对象
+     * @param request ListNextflowJobRequest 请求对象
      * @return ListNextflowJobResponse
      */
     public ListNextflowJobResponse listNextflowJob(ListNextflowJobRequest request) {
@@ -8406,13 +8236,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowJobRequest 请求对象
+     * @param request ListNextflowJobRequest 请求对象
      * @return SyncInvoker<ListNextflowJobRequest, ListNextflowJobResponse>
      */
     public SyncInvoker<ListNextflowJobRequest, ListNextflowJobResponse> listNextflowJobInvoker(
         ListNextflowJobRequest request) {
-        return new SyncInvoker<ListNextflowJobRequest, ListNextflowJobResponse>(request, EiHealthMeta.listNextflowJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listNextflowJob, hcClient);
     }
 
     /**
@@ -8422,7 +8251,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowTaskRequest 请求对象
+     * @param request ListNextflowTaskRequest 请求对象
      * @return ListNextflowTaskResponse
      */
     public ListNextflowTaskResponse listNextflowTask(ListNextflowTaskRequest request) {
@@ -8436,13 +8265,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowTaskRequest 请求对象
+     * @param request ListNextflowTaskRequest 请求对象
      * @return SyncInvoker<ListNextflowTaskRequest, ListNextflowTaskResponse>
      */
     public SyncInvoker<ListNextflowTaskRequest, ListNextflowTaskResponse> listNextflowTaskInvoker(
         ListNextflowTaskRequest request) {
-        return new SyncInvoker<ListNextflowTaskRequest, ListNextflowTaskResponse>(request,
-            EiHealthMeta.listNextflowTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listNextflowTask, hcClient);
     }
 
     /**
@@ -8452,7 +8280,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowVersionRequest 请求对象
+     * @param request ListNextflowVersionRequest 请求对象
      * @return ListNextflowVersionResponse
      */
     public ListNextflowVersionResponse listNextflowVersion(ListNextflowVersionRequest request) {
@@ -8466,13 +8294,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowVersionRequest 请求对象
+     * @param request ListNextflowVersionRequest 请求对象
      * @return SyncInvoker<ListNextflowVersionRequest, ListNextflowVersionResponse>
      */
     public SyncInvoker<ListNextflowVersionRequest, ListNextflowVersionResponse> listNextflowVersionInvoker(
         ListNextflowVersionRequest request) {
-        return new SyncInvoker<ListNextflowVersionRequest, ListNextflowVersionResponse>(request,
-            EiHealthMeta.listNextflowVersion, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listNextflowVersion, hcClient);
     }
 
     /**
@@ -8482,7 +8309,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowWorkflowRequest 请求对象
+     * @param request ListNextflowWorkflowRequest 请求对象
      * @return ListNextflowWorkflowResponse
      */
     public ListNextflowWorkflowResponse listNextflowWorkflow(ListNextflowWorkflowRequest request) {
@@ -8496,13 +8323,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNextflowWorkflowRequest 请求对象
+     * @param request ListNextflowWorkflowRequest 请求对象
      * @return SyncInvoker<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse>
      */
     public SyncInvoker<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse> listNextflowWorkflowInvoker(
         ListNextflowWorkflowRequest request) {
-        return new SyncInvoker<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse>(request,
-            EiHealthMeta.listNextflowWorkflow, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listNextflowWorkflow, hcClient);
     }
 
     /**
@@ -8512,7 +8338,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryNextflowJobRequest 请求对象
+     * @param request RetryNextflowJobRequest 请求对象
      * @return RetryNextflowJobResponse
      */
     public RetryNextflowJobResponse retryNextflowJob(RetryNextflowJobRequest request) {
@@ -8526,13 +8352,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryNextflowJobRequest 请求对象
+     * @param request RetryNextflowJobRequest 请求对象
      * @return SyncInvoker<RetryNextflowJobRequest, RetryNextflowJobResponse>
      */
     public SyncInvoker<RetryNextflowJobRequest, RetryNextflowJobResponse> retryNextflowJobInvoker(
         RetryNextflowJobRequest request) {
-        return new SyncInvoker<RetryNextflowJobRequest, RetryNextflowJobResponse>(request,
-            EiHealthMeta.retryNextflowJob, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.retryNextflowJob, hcClient);
     }
 
     /**
@@ -8542,7 +8367,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowRequest 请求对象
+     * @param request ShowNextflowRequest 请求对象
      * @return ShowNextflowResponse
      */
     public ShowNextflowResponse showNextflow(ShowNextflowRequest request) {
@@ -8556,11 +8381,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowRequest 请求对象
+     * @param request ShowNextflowRequest 请求对象
      * @return SyncInvoker<ShowNextflowRequest, ShowNextflowResponse>
      */
     public SyncInvoker<ShowNextflowRequest, ShowNextflowResponse> showNextflowInvoker(ShowNextflowRequest request) {
-        return new SyncInvoker<ShowNextflowRequest, ShowNextflowResponse>(request, EiHealthMeta.showNextflow, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showNextflow, hcClient);
     }
 
     /**
@@ -8570,7 +8395,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobRequest 请求对象
+     * @param request ShowNextflowJobRequest 请求对象
      * @return ShowNextflowJobResponse
      */
     public ShowNextflowJobResponse showNextflowJob(ShowNextflowJobRequest request) {
@@ -8584,13 +8409,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobRequest 请求对象
+     * @param request ShowNextflowJobRequest 请求对象
      * @return SyncInvoker<ShowNextflowJobRequest, ShowNextflowJobResponse>
      */
     public SyncInvoker<ShowNextflowJobRequest, ShowNextflowJobResponse> showNextflowJobInvoker(
         ShowNextflowJobRequest request) {
-        return new SyncInvoker<ShowNextflowJobRequest, ShowNextflowJobResponse>(request, EiHealthMeta.showNextflowJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showNextflowJob, hcClient);
     }
 
     /**
@@ -8600,7 +8424,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobLogRequest 请求对象
+     * @param request ShowNextflowJobLogRequest 请求对象
      * @return ShowNextflowJobLogResponse
      */
     public ShowNextflowJobLogResponse showNextflowJobLog(ShowNextflowJobLogRequest request) {
@@ -8614,13 +8438,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobLogRequest 请求对象
+     * @param request ShowNextflowJobLogRequest 请求对象
      * @return SyncInvoker<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse>
      */
     public SyncInvoker<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse> showNextflowJobLogInvoker(
         ShowNextflowJobLogRequest request) {
-        return new SyncInvoker<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse>(request,
-            EiHealthMeta.showNextflowJobLog, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showNextflowJobLog, hcClient);
     }
 
     /**
@@ -8630,7 +8453,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobReportsRequest 请求对象
+     * @param request ShowNextflowJobReportsRequest 请求对象
      * @return ShowNextflowJobReportsResponse
      */
     public ShowNextflowJobReportsResponse showNextflowJobReports(ShowNextflowJobReportsRequest request) {
@@ -8644,13 +8467,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowJobReportsRequest 请求对象
+     * @param request ShowNextflowJobReportsRequest 请求对象
      * @return SyncInvoker<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse>
      */
     public SyncInvoker<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse> showNextflowJobReportsInvoker(
         ShowNextflowJobReportsRequest request) {
-        return new SyncInvoker<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse>(request,
-            EiHealthMeta.showNextflowJobReports, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showNextflowJobReports, hcClient);
     }
 
     /**
@@ -8660,7 +8482,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowTaskDetailRequest 请求对象
+     * @param request ShowNextflowTaskDetailRequest 请求对象
      * @return ShowNextflowTaskDetailResponse
      */
     public ShowNextflowTaskDetailResponse showNextflowTaskDetail(ShowNextflowTaskDetailRequest request) {
@@ -8674,13 +8496,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowTaskDetailRequest 请求对象
+     * @param request ShowNextflowTaskDetailRequest 请求对象
      * @return SyncInvoker<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse>
      */
     public SyncInvoker<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse> showNextflowTaskDetailInvoker(
         ShowNextflowTaskDetailRequest request) {
-        return new SyncInvoker<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse>(request,
-            EiHealthMeta.showNextflowTaskDetail, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showNextflowTaskDetail, hcClient);
     }
 
     /**
@@ -8690,7 +8511,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowTaskLogRequest 请求对象
+     * @param request ShowNextflowTaskLogRequest 请求对象
      * @return ShowNextflowTaskLogResponse
      */
     public ShowNextflowTaskLogResponse showNextflowTaskLog(ShowNextflowTaskLogRequest request) {
@@ -8704,13 +8525,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowTaskLogRequest 请求对象
+     * @param request ShowNextflowTaskLogRequest 请求对象
      * @return SyncInvoker<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse>
      */
     public SyncInvoker<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse> showNextflowTaskLogInvoker(
         ShowNextflowTaskLogRequest request) {
-        return new SyncInvoker<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse>(request,
-            EiHealthMeta.showNextflowTaskLog, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showNextflowTaskLog, hcClient);
     }
 
     /**
@@ -8720,7 +8540,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowWorkflowRequest 请求对象
+     * @param request ShowNextflowWorkflowRequest 请求对象
      * @return ShowNextflowWorkflowResponse
      */
     public ShowNextflowWorkflowResponse showNextflowWorkflow(ShowNextflowWorkflowRequest request) {
@@ -8734,13 +8554,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNextflowWorkflowRequest 请求对象
+     * @param request ShowNextflowWorkflowRequest 请求对象
      * @return SyncInvoker<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse>
      */
     public SyncInvoker<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse> showNextflowWorkflowInvoker(
         ShowNextflowWorkflowRequest request) {
-        return new SyncInvoker<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse>(request,
-            EiHealthMeta.showNextflowWorkflow, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showNextflowWorkflow, hcClient);
     }
 
     /**
@@ -8750,7 +8569,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopNextflowJobRequest 请求对象
+     * @param request StopNextflowJobRequest 请求对象
      * @return StopNextflowJobResponse
      */
     public StopNextflowJobResponse stopNextflowJob(StopNextflowJobRequest request) {
@@ -8764,13 +8583,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopNextflowJobRequest 请求对象
+     * @param request StopNextflowJobRequest 请求对象
      * @return SyncInvoker<StopNextflowJobRequest, StopNextflowJobResponse>
      */
     public SyncInvoker<StopNextflowJobRequest, StopNextflowJobResponse> stopNextflowJobInvoker(
         StopNextflowJobRequest request) {
-        return new SyncInvoker<StopNextflowJobRequest, StopNextflowJobResponse>(request, EiHealthMeta.stopNextflowJob,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.stopNextflowJob, hcClient);
     }
 
     /**
@@ -8780,7 +8598,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallNextflowRequest 请求对象
+     * @param request UninstallNextflowRequest 请求对象
      * @return UninstallNextflowResponse
      */
     public UninstallNextflowResponse uninstallNextflow(UninstallNextflowRequest request) {
@@ -8794,13 +8612,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallNextflowRequest 请求对象
+     * @param request UninstallNextflowRequest 请求对象
      * @return SyncInvoker<UninstallNextflowRequest, UninstallNextflowResponse>
      */
     public SyncInvoker<UninstallNextflowRequest, UninstallNextflowResponse> uninstallNextflowInvoker(
         UninstallNextflowRequest request) {
-        return new SyncInvoker<UninstallNextflowRequest, UninstallNextflowResponse>(request,
-            EiHealthMeta.uninstallNextflow, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.uninstallNextflow, hcClient);
     }
 
     /**
@@ -8810,7 +8627,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNextflowWorkflowRequest 请求对象
+     * @param request UpdateNextflowWorkflowRequest 请求对象
      * @return UpdateNextflowWorkflowResponse
      */
     public UpdateNextflowWorkflowResponse updateNextflowWorkflow(UpdateNextflowWorkflowRequest request) {
@@ -8824,13 +8641,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNextflowWorkflowRequest 请求对象
+     * @param request UpdateNextflowWorkflowRequest 请求对象
      * @return SyncInvoker<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse>
      */
     public SyncInvoker<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse> updateNextflowWorkflowInvoker(
         UpdateNextflowWorkflowRequest request) {
-        return new SyncInvoker<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse>(request,
-            EiHealthMeta.updateNextflowWorkflow, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateNextflowWorkflow, hcClient);
     }
 
     /**
@@ -8840,7 +8656,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNotebookRequest 请求对象
+     * @param request CreateNotebookRequest 请求对象
      * @return CreateNotebookResponse
      */
     public CreateNotebookResponse createNotebook(CreateNotebookRequest request) {
@@ -8854,13 +8670,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNotebookRequest 请求对象
+     * @param request CreateNotebookRequest 请求对象
      * @return SyncInvoker<CreateNotebookRequest, CreateNotebookResponse>
      */
     public SyncInvoker<CreateNotebookRequest, CreateNotebookResponse> createNotebookInvoker(
         CreateNotebookRequest request) {
-        return new SyncInvoker<CreateNotebookRequest, CreateNotebookResponse>(request, EiHealthMeta.createNotebook,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createNotebook, hcClient);
     }
 
     /**
@@ -8870,7 +8685,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNotebookRequest 请求对象
+     * @param request DeleteNotebookRequest 请求对象
      * @return DeleteNotebookResponse
      */
     public DeleteNotebookResponse deleteNotebook(DeleteNotebookRequest request) {
@@ -8884,13 +8699,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNotebookRequest 请求对象
+     * @param request DeleteNotebookRequest 请求对象
      * @return SyncInvoker<DeleteNotebookRequest, DeleteNotebookResponse>
      */
     public SyncInvoker<DeleteNotebookRequest, DeleteNotebookResponse> deleteNotebookInvoker(
         DeleteNotebookRequest request) {
-        return new SyncInvoker<DeleteNotebookRequest, DeleteNotebookResponse>(request, EiHealthMeta.deleteNotebook,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.deleteNotebook, hcClient);
     }
 
     /**
@@ -8900,7 +8714,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotebookRequest 请求对象
+     * @param request ListNotebookRequest 请求对象
      * @return ListNotebookResponse
      */
     public ListNotebookResponse listNotebook(ListNotebookRequest request) {
@@ -8914,11 +8728,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotebookRequest 请求对象
+     * @param request ListNotebookRequest 请求对象
      * @return SyncInvoker<ListNotebookRequest, ListNotebookResponse>
      */
     public SyncInvoker<ListNotebookRequest, ListNotebookResponse> listNotebookInvoker(ListNotebookRequest request) {
-        return new SyncInvoker<ListNotebookRequest, ListNotebookResponse>(request, EiHealthMeta.listNotebook, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listNotebook, hcClient);
     }
 
     /**
@@ -8928,7 +8742,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotebookToolRequest 请求对象
+     * @param request ListNotebookToolRequest 请求对象
      * @return ListNotebookToolResponse
      */
     public ListNotebookToolResponse listNotebookTool(ListNotebookToolRequest request) {
@@ -8942,13 +8756,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotebookToolRequest 请求对象
+     * @param request ListNotebookToolRequest 请求对象
      * @return SyncInvoker<ListNotebookToolRequest, ListNotebookToolResponse>
      */
     public SyncInvoker<ListNotebookToolRequest, ListNotebookToolResponse> listNotebookToolInvoker(
         ListNotebookToolRequest request) {
-        return new SyncInvoker<ListNotebookToolRequest, ListNotebookToolResponse>(request,
-            EiHealthMeta.listNotebookTool, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listNotebookTool, hcClient);
     }
 
     /**
@@ -8958,7 +8771,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNotebookRequest 请求对象
+     * @param request ShowNotebookRequest 请求对象
      * @return ShowNotebookResponse
      */
     public ShowNotebookResponse showNotebook(ShowNotebookRequest request) {
@@ -8972,11 +8785,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNotebookRequest 请求对象
+     * @param request ShowNotebookRequest 请求对象
      * @return SyncInvoker<ShowNotebookRequest, ShowNotebookResponse>
      */
     public SyncInvoker<ShowNotebookRequest, ShowNotebookResponse> showNotebookInvoker(ShowNotebookRequest request) {
-        return new SyncInvoker<ShowNotebookRequest, ShowNotebookResponse>(request, EiHealthMeta.showNotebook, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showNotebook, hcClient);
     }
 
     /**
@@ -8986,7 +8799,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNotebookTokenRequest 请求对象
+     * @param request ShowNotebookTokenRequest 请求对象
      * @return ShowNotebookTokenResponse
      */
     public ShowNotebookTokenResponse showNotebookToken(ShowNotebookTokenRequest request) {
@@ -9000,13 +8813,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNotebookTokenRequest 请求对象
+     * @param request ShowNotebookTokenRequest 请求对象
      * @return SyncInvoker<ShowNotebookTokenRequest, ShowNotebookTokenResponse>
      */
     public SyncInvoker<ShowNotebookTokenRequest, ShowNotebookTokenResponse> showNotebookTokenInvoker(
         ShowNotebookTokenRequest request) {
-        return new SyncInvoker<ShowNotebookTokenRequest, ShowNotebookTokenResponse>(request,
-            EiHealthMeta.showNotebookToken, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showNotebookToken, hcClient);
     }
 
     /**
@@ -9016,7 +8828,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopOrStartNotebookRequest 请求对象
+     * @param request StopOrStartNotebookRequest 请求对象
      * @return StopOrStartNotebookResponse
      */
     public StopOrStartNotebookResponse stopOrStartNotebook(StopOrStartNotebookRequest request) {
@@ -9030,13 +8842,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopOrStartNotebookRequest 请求对象
+     * @param request StopOrStartNotebookRequest 请求对象
      * @return SyncInvoker<StopOrStartNotebookRequest, StopOrStartNotebookResponse>
      */
     public SyncInvoker<StopOrStartNotebookRequest, StopOrStartNotebookResponse> stopOrStartNotebookInvoker(
         StopOrStartNotebookRequest request) {
-        return new SyncInvoker<StopOrStartNotebookRequest, StopOrStartNotebookResponse>(request,
-            EiHealthMeta.stopOrStartNotebook, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.stopOrStartNotebook, hcClient);
     }
 
     /**
@@ -9046,7 +8857,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotebookRequest 请求对象
+     * @param request UpdateNotebookRequest 请求对象
      * @return UpdateNotebookResponse
      */
     public UpdateNotebookResponse updateNotebook(UpdateNotebookRequest request) {
@@ -9060,13 +8871,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotebookRequest 请求对象
+     * @param request UpdateNotebookRequest 请求对象
      * @return SyncInvoker<UpdateNotebookRequest, UpdateNotebookResponse>
      */
     public SyncInvoker<UpdateNotebookRequest, UpdateNotebookResponse> updateNotebookInvoker(
         UpdateNotebookRequest request) {
-        return new SyncInvoker<UpdateNotebookRequest, UpdateNotebookResponse>(request, EiHealthMeta.updateNotebook,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.updateNotebook, hcClient);
     }
 
     /**
@@ -9076,7 +8886,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketRequest 请求对象
+     * @param request ListObsBucketRequest 请求对象
      * @return ListObsBucketResponse
      */
     public ListObsBucketResponse listObsBucket(ListObsBucketRequest request) {
@@ -9090,12 +8900,11 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketRequest 请求对象
+     * @param request ListObsBucketRequest 请求对象
      * @return SyncInvoker<ListObsBucketRequest, ListObsBucketResponse>
      */
     public SyncInvoker<ListObsBucketRequest, ListObsBucketResponse> listObsBucketInvoker(ListObsBucketRequest request) {
-        return new SyncInvoker<ListObsBucketRequest, ListObsBucketResponse>(request, EiHealthMeta.listObsBucket,
-            hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listObsBucket, hcClient);
     }
 
     /**
@@ -9105,7 +8914,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketObjectRequest 请求对象
+     * @param request ListObsBucketObjectRequest 请求对象
      * @return ListObsBucketObjectResponse
      */
     public ListObsBucketObjectResponse listObsBucketObject(ListObsBucketObjectRequest request) {
@@ -9119,13 +8928,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketObjectRequest 请求对象
+     * @param request ListObsBucketObjectRequest 请求对象
      * @return SyncInvoker<ListObsBucketObjectRequest, ListObsBucketObjectResponse>
      */
     public SyncInvoker<ListObsBucketObjectRequest, ListObsBucketObjectResponse> listObsBucketObjectInvoker(
         ListObsBucketObjectRequest request) {
-        return new SyncInvoker<ListObsBucketObjectRequest, ListObsBucketObjectResponse>(request,
-            EiHealthMeta.listObsBucketObject, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.listObsBucketObject, hcClient);
     }
 
     /**
@@ -9135,7 +8943,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOptimizationTaskRequest 请求对象
+     * @param request CreateOptimizationTaskRequest 请求对象
      * @return CreateOptimizationTaskResponse
      */
     public CreateOptimizationTaskResponse createOptimizationTask(CreateOptimizationTaskRequest request) {
@@ -9149,13 +8957,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOptimizationTaskRequest 请求对象
+     * @param request CreateOptimizationTaskRequest 请求对象
      * @return SyncInvoker<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse>
      */
     public SyncInvoker<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse> createOptimizationTaskInvoker(
         CreateOptimizationTaskRequest request) {
-        return new SyncInvoker<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse>(request,
-            EiHealthMeta.createOptimizationTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createOptimizationTask, hcClient);
     }
 
     /**
@@ -9165,7 +8972,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOptimizationTaskResultRequest 请求对象
+     * @param request ShowOptimizationTaskResultRequest 请求对象
      * @return ShowOptimizationTaskResultResponse
      */
     public ShowOptimizationTaskResultResponse showOptimizationTaskResult(ShowOptimizationTaskResultRequest request) {
@@ -9179,13 +8986,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOptimizationTaskResultRequest 请求对象
+     * @param request ShowOptimizationTaskResultRequest 请求对象
      * @return SyncInvoker<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse>
      */
     public SyncInvoker<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse> showOptimizationTaskResultInvoker(
         ShowOptimizationTaskResultRequest request) {
-        return new SyncInvoker<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse>(request,
-            EiHealthMeta.showOptimizationTaskResult, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showOptimizationTaskResult, hcClient);
     }
 
     /**
@@ -9195,7 +9001,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSearchTaskRequest 请求对象
+     * @param request CreateSearchTaskRequest 请求对象
      * @return CreateSearchTaskResponse
      */
     public CreateSearchTaskResponse createSearchTask(CreateSearchTaskRequest request) {
@@ -9209,13 +9015,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSearchTaskRequest 请求对象
+     * @param request CreateSearchTaskRequest 请求对象
      * @return SyncInvoker<CreateSearchTaskRequest, CreateSearchTaskResponse>
      */
     public SyncInvoker<CreateSearchTaskRequest, CreateSearchTaskResponse> createSearchTaskInvoker(
         CreateSearchTaskRequest request) {
-        return new SyncInvoker<CreateSearchTaskRequest, CreateSearchTaskResponse>(request,
-            EiHealthMeta.createSearchTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createSearchTask, hcClient);
     }
 
     /**
@@ -9225,7 +9030,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSearchTaskResultRequest 请求对象
+     * @param request ShowSearchTaskResultRequest 请求对象
      * @return ShowSearchTaskResultResponse
      */
     public ShowSearchTaskResultResponse showSearchTaskResult(ShowSearchTaskResultRequest request) {
@@ -9239,13 +9044,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSearchTaskResultRequest 请求对象
+     * @param request ShowSearchTaskResultRequest 请求对象
      * @return SyncInvoker<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse>
      */
     public SyncInvoker<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse> showSearchTaskResultInvoker(
         ShowSearchTaskResultRequest request) {
-        return new SyncInvoker<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse>(request,
-            EiHealthMeta.showSearchTaskResult, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showSearchTaskResult, hcClient);
     }
 
     /**
@@ -9255,7 +9059,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSynthesisTaskRequest 请求对象
+     * @param request CreateSynthesisTaskRequest 请求对象
      * @return CreateSynthesisTaskResponse
      */
     public CreateSynthesisTaskResponse createSynthesisTask(CreateSynthesisTaskRequest request) {
@@ -9269,13 +9073,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSynthesisTaskRequest 请求对象
+     * @param request CreateSynthesisTaskRequest 请求对象
      * @return SyncInvoker<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse>
      */
     public SyncInvoker<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse> createSynthesisTaskInvoker(
         CreateSynthesisTaskRequest request) {
-        return new SyncInvoker<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse>(request,
-            EiHealthMeta.createSynthesisTask, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.createSynthesisTask, hcClient);
     }
 
     /**
@@ -9285,7 +9088,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSynthesisTaskResultRequest 请求对象
+     * @param request ShowSynthesisTaskResultRequest 请求对象
      * @return ShowSynthesisTaskResultResponse
      */
     public ShowSynthesisTaskResultResponse showSynthesisTaskResult(ShowSynthesisTaskResultRequest request) {
@@ -9299,13 +9102,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSynthesisTaskResultRequest 请求对象
+     * @param request ShowSynthesisTaskResultRequest 请求对象
      * @return SyncInvoker<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse>
      */
     public SyncInvoker<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse> showSynthesisTaskResultInvoker(
         ShowSynthesisTaskResultRequest request) {
-        return new SyncInvoker<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse>(request,
-            EiHealthMeta.showSynthesisTaskResult, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showSynthesisTaskResult, hcClient);
     }
 
 }

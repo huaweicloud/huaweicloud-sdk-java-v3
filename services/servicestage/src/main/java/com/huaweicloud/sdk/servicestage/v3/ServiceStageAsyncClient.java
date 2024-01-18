@@ -78,7 +78,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApplicationRequest 请求对象
+     * @param request CreateApplicationRequest 请求对象
      * @return CompletableFuture<CreateApplicationResponse>
      */
     public CompletableFuture<CreateApplicationResponse> createApplicationAsync(CreateApplicationRequest request) {
@@ -94,13 +94,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApplicationRequest 请求对象
+     * @param request CreateApplicationRequest 请求对象
      * @return AsyncInvoker<CreateApplicationRequest, CreateApplicationResponse>
      */
     public AsyncInvoker<CreateApplicationRequest, CreateApplicationResponse> createApplicationAsyncInvoker(
         CreateApplicationRequest request) {
-        return new AsyncInvoker<CreateApplicationRequest, CreateApplicationResponse>(request,
-            ServiceStageMeta.createApplication, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.createApplication, hcClient);
     }
 
     /**
@@ -110,7 +109,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationRequest 请求对象
+     * @param request DeleteApplicationRequest 请求对象
      * @return CompletableFuture<DeleteApplicationResponse>
      */
     public CompletableFuture<DeleteApplicationResponse> deleteApplicationAsync(DeleteApplicationRequest request) {
@@ -124,13 +123,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationRequest 请求对象
+     * @param request DeleteApplicationRequest 请求对象
      * @return AsyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
      */
     public AsyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplicationAsyncInvoker(
         DeleteApplicationRequest request) {
-        return new AsyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>(request,
-            ServiceStageMeta.deleteApplication, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.deleteApplication, hcClient);
     }
 
     /**
@@ -140,7 +138,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationConfigurationRequest 请求对象
+     * @param request DeleteApplicationConfigurationRequest 请求对象
      * @return CompletableFuture<DeleteApplicationConfigurationResponse>
      */
     public CompletableFuture<DeleteApplicationConfigurationResponse> deleteApplicationConfigurationAsync(
@@ -155,13 +153,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApplicationConfigurationRequest 请求对象
+     * @param request DeleteApplicationConfigurationRequest 请求对象
      * @return AsyncInvoker<DeleteApplicationConfigurationRequest, DeleteApplicationConfigurationResponse>
      */
     public AsyncInvoker<DeleteApplicationConfigurationRequest, DeleteApplicationConfigurationResponse> deleteApplicationConfigurationAsyncInvoker(
         DeleteApplicationConfigurationRequest request) {
-        return new AsyncInvoker<DeleteApplicationConfigurationRequest, DeleteApplicationConfigurationResponse>(request,
-            ServiceStageMeta.deleteApplicationConfiguration, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.deleteApplicationConfiguration, hcClient);
     }
 
     /**
@@ -171,7 +168,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyApplicationRequest 请求对象
+     * @param request ModifyApplicationRequest 请求对象
      * @return CompletableFuture<ModifyApplicationResponse>
      */
     public CompletableFuture<ModifyApplicationResponse> modifyApplicationAsync(ModifyApplicationRequest request) {
@@ -185,13 +182,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyApplicationRequest 请求对象
+     * @param request ModifyApplicationRequest 请求对象
      * @return AsyncInvoker<ModifyApplicationRequest, ModifyApplicationResponse>
      */
     public AsyncInvoker<ModifyApplicationRequest, ModifyApplicationResponse> modifyApplicationAsyncInvoker(
         ModifyApplicationRequest request) {
-        return new AsyncInvoker<ModifyApplicationRequest, ModifyApplicationResponse>(request,
-            ServiceStageMeta.modifyApplication, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.modifyApplication, hcClient);
     }
 
     /**
@@ -201,7 +197,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyApplicationConfigurationRequest 请求对象
+     * @param request ModifyApplicationConfigurationRequest 请求对象
      * @return CompletableFuture<ModifyApplicationConfigurationResponse>
      */
     public CompletableFuture<ModifyApplicationConfigurationResponse> modifyApplicationConfigurationAsync(
@@ -216,13 +212,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyApplicationConfigurationRequest 请求对象
+     * @param request ModifyApplicationConfigurationRequest 请求对象
      * @return AsyncInvoker<ModifyApplicationConfigurationRequest, ModifyApplicationConfigurationResponse>
      */
     public AsyncInvoker<ModifyApplicationConfigurationRequest, ModifyApplicationConfigurationResponse> modifyApplicationConfigurationAsyncInvoker(
         ModifyApplicationConfigurationRequest request) {
-        return new AsyncInvoker<ModifyApplicationConfigurationRequest, ModifyApplicationConfigurationResponse>(request,
-            ServiceStageMeta.modifyApplicationConfiguration, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.modifyApplicationConfiguration, hcClient);
     }
 
     /**
@@ -232,7 +227,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationConfigurationRequest 请求对象
+     * @param request ShowApplicationConfigurationRequest 请求对象
      * @return CompletableFuture<ShowApplicationConfigurationResponse>
      */
     public CompletableFuture<ShowApplicationConfigurationResponse> showApplicationConfigurationAsync(
@@ -247,13 +242,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationConfigurationRequest 请求对象
+     * @param request ShowApplicationConfigurationRequest 请求对象
      * @return AsyncInvoker<ShowApplicationConfigurationRequest, ShowApplicationConfigurationResponse>
      */
     public AsyncInvoker<ShowApplicationConfigurationRequest, ShowApplicationConfigurationResponse> showApplicationConfigurationAsyncInvoker(
         ShowApplicationConfigurationRequest request) {
-        return new AsyncInvoker<ShowApplicationConfigurationRequest, ShowApplicationConfigurationResponse>(request,
-            ServiceStageMeta.showApplicationConfiguration, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showApplicationConfiguration, hcClient);
     }
 
     /**
@@ -263,7 +257,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationInfoRequest 请求对象
+     * @param request ShowApplicationInfoRequest 请求对象
      * @return CompletableFuture<ShowApplicationInfoResponse>
      */
     public CompletableFuture<ShowApplicationInfoResponse> showApplicationInfoAsync(ShowApplicationInfoRequest request) {
@@ -277,13 +271,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationInfoRequest 请求对象
+     * @param request ShowApplicationInfoRequest 请求对象
      * @return AsyncInvoker<ShowApplicationInfoRequest, ShowApplicationInfoResponse>
      */
     public AsyncInvoker<ShowApplicationInfoRequest, ShowApplicationInfoResponse> showApplicationInfoAsyncInvoker(
         ShowApplicationInfoRequest request) {
-        return new AsyncInvoker<ShowApplicationInfoRequest, ShowApplicationInfoResponse>(request,
-            ServiceStageMeta.showApplicationInfo, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showApplicationInfo, hcClient);
     }
 
     /**
@@ -293,7 +286,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationsRequest 请求对象
+     * @param request ShowApplicationsRequest 请求对象
      * @return CompletableFuture<ShowApplicationsResponse>
      */
     public CompletableFuture<ShowApplicationsResponse> showApplicationsAsync(ShowApplicationsRequest request) {
@@ -307,13 +300,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApplicationsRequest 请求对象
+     * @param request ShowApplicationsRequest 请求对象
      * @return AsyncInvoker<ShowApplicationsRequest, ShowApplicationsResponse>
      */
     public AsyncInvoker<ShowApplicationsRequest, ShowApplicationsResponse> showApplicationsAsyncInvoker(
         ShowApplicationsRequest request) {
-        return new AsyncInvoker<ShowApplicationsRequest, ShowApplicationsResponse>(request,
-            ServiceStageMeta.showApplications, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showApplications, hcClient);
     }
 
     /**
@@ -323,7 +315,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateComponentRequest 请求对象
+     * @param request CreateComponentRequest 请求对象
      * @return CompletableFuture<CreateComponentResponse>
      */
     public CompletableFuture<CreateComponentResponse> createComponentAsync(CreateComponentRequest request) {
@@ -337,13 +329,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateComponentRequest 请求对象
+     * @param request CreateComponentRequest 请求对象
      * @return AsyncInvoker<CreateComponentRequest, CreateComponentResponse>
      */
     public AsyncInvoker<CreateComponentRequest, CreateComponentResponse> createComponentAsyncInvoker(
         CreateComponentRequest request) {
-        return new AsyncInvoker<CreateComponentRequest, CreateComponentResponse>(request,
-            ServiceStageMeta.createComponent, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.createComponent, hcClient);
     }
 
     /**
@@ -353,7 +344,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteComponentRequest 请求对象
+     * @param request DeleteComponentRequest 请求对象
      * @return CompletableFuture<DeleteComponentResponse>
      */
     public CompletableFuture<DeleteComponentResponse> deleteComponentAsync(DeleteComponentRequest request) {
@@ -367,13 +358,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteComponentRequest 请求对象
+     * @param request DeleteComponentRequest 请求对象
      * @return AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>
      */
     public AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse> deleteComponentAsyncInvoker(
         DeleteComponentRequest request) {
-        return new AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>(request,
-            ServiceStageMeta.deleteComponent, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.deleteComponent, hcClient);
     }
 
     /**
@@ -383,7 +373,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyComponentRequest 请求对象
+     * @param request ModifyComponentRequest 请求对象
      * @return CompletableFuture<ModifyComponentResponse>
      */
     public CompletableFuture<ModifyComponentResponse> modifyComponentAsync(ModifyComponentRequest request) {
@@ -397,13 +387,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyComponentRequest 请求对象
+     * @param request ModifyComponentRequest 请求对象
      * @return AsyncInvoker<ModifyComponentRequest, ModifyComponentResponse>
      */
     public AsyncInvoker<ModifyComponentRequest, ModifyComponentResponse> modifyComponentAsyncInvoker(
         ModifyComponentRequest request) {
-        return new AsyncInvoker<ModifyComponentRequest, ModifyComponentResponse>(request,
-            ServiceStageMeta.modifyComponent, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.modifyComponent, hcClient);
     }
 
     /**
@@ -413,7 +402,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentInfoRequest 请求对象
+     * @param request ShowComponentInfoRequest 请求对象
      * @return CompletableFuture<ShowComponentInfoResponse>
      */
     public CompletableFuture<ShowComponentInfoResponse> showComponentInfoAsync(ShowComponentInfoRequest request) {
@@ -427,13 +416,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentInfoRequest 请求对象
+     * @param request ShowComponentInfoRequest 请求对象
      * @return AsyncInvoker<ShowComponentInfoRequest, ShowComponentInfoResponse>
      */
     public AsyncInvoker<ShowComponentInfoRequest, ShowComponentInfoResponse> showComponentInfoAsyncInvoker(
         ShowComponentInfoRequest request) {
-        return new AsyncInvoker<ShowComponentInfoRequest, ShowComponentInfoResponse>(request,
-            ServiceStageMeta.showComponentInfo, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showComponentInfo, hcClient);
     }
 
     /**
@@ -443,7 +431,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentRecordsRequest 请求对象
+     * @param request ShowComponentRecordsRequest 请求对象
      * @return CompletableFuture<ShowComponentRecordsResponse>
      */
     public CompletableFuture<ShowComponentRecordsResponse> showComponentRecordsAsync(
@@ -458,13 +446,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentRecordsRequest 请求对象
+     * @param request ShowComponentRecordsRequest 请求对象
      * @return AsyncInvoker<ShowComponentRecordsRequest, ShowComponentRecordsResponse>
      */
     public AsyncInvoker<ShowComponentRecordsRequest, ShowComponentRecordsResponse> showComponentRecordsAsyncInvoker(
         ShowComponentRecordsRequest request) {
-        return new AsyncInvoker<ShowComponentRecordsRequest, ShowComponentRecordsResponse>(request,
-            ServiceStageMeta.showComponentRecords, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showComponentRecords, hcClient);
     }
 
     /**
@@ -474,7 +461,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentsRequest 请求对象
+     * @param request ShowComponentsRequest 请求对象
      * @return CompletableFuture<ShowComponentsResponse>
      */
     public CompletableFuture<ShowComponentsResponse> showComponentsAsync(ShowComponentsRequest request) {
@@ -488,13 +475,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentsRequest 请求对象
+     * @param request ShowComponentsRequest 请求对象
      * @return AsyncInvoker<ShowComponentsRequest, ShowComponentsResponse>
      */
     public AsyncInvoker<ShowComponentsRequest, ShowComponentsResponse> showComponentsAsyncInvoker(
         ShowComponentsRequest request) {
-        return new AsyncInvoker<ShowComponentsRequest, ShowComponentsResponse>(request, ServiceStageMeta.showComponents,
-            hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showComponents, hcClient);
     }
 
     /**
@@ -504,7 +490,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentsInApplicationRequest 请求对象
+     * @param request ShowComponentsInApplicationRequest 请求对象
      * @return CompletableFuture<ShowComponentsInApplicationResponse>
      */
     public CompletableFuture<ShowComponentsInApplicationResponse> showComponentsInApplicationAsync(
@@ -519,13 +505,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentsInApplicationRequest 请求对象
+     * @param request ShowComponentsInApplicationRequest 请求对象
      * @return AsyncInvoker<ShowComponentsInApplicationRequest, ShowComponentsInApplicationResponse>
      */
     public AsyncInvoker<ShowComponentsInApplicationRequest, ShowComponentsInApplicationResponse> showComponentsInApplicationAsyncInvoker(
         ShowComponentsInApplicationRequest request) {
-        return new AsyncInvoker<ShowComponentsInApplicationRequest, ShowComponentsInApplicationResponse>(request,
-            ServiceStageMeta.showComponentsInApplication, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showComponentsInApplication, hcClient);
     }
 
     /**
@@ -535,7 +520,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateComponentActionRequest 请求对象
+     * @param request UpdateComponentActionRequest 请求对象
      * @return CompletableFuture<UpdateComponentActionResponse>
      */
     public CompletableFuture<UpdateComponentActionResponse> updateComponentActionAsync(
@@ -550,13 +535,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateComponentActionRequest 请求对象
+     * @param request UpdateComponentActionRequest 请求对象
      * @return AsyncInvoker<UpdateComponentActionRequest, UpdateComponentActionResponse>
      */
     public AsyncInvoker<UpdateComponentActionRequest, UpdateComponentActionResponse> updateComponentActionAsyncInvoker(
         UpdateComponentActionRequest request) {
-        return new AsyncInvoker<UpdateComponentActionRequest, UpdateComponentActionResponse>(request,
-            ServiceStageMeta.updateComponentAction, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.updateComponentAction, hcClient);
     }
 
     /**
@@ -568,7 +552,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentRequest 请求对象
+     * @param request CreateEnvironmentRequest 请求对象
      * @return CompletableFuture<CreateEnvironmentResponse>
      */
     public CompletableFuture<CreateEnvironmentResponse> createEnvironmentAsync(CreateEnvironmentRequest request) {
@@ -584,13 +568,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentRequest 请求对象
+     * @param request CreateEnvironmentRequest 请求对象
      * @return AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse>
      */
     public AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse> createEnvironmentAsyncInvoker(
         CreateEnvironmentRequest request) {
-        return new AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse>(request,
-            ServiceStageMeta.createEnvironment, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.createEnvironment, hcClient);
     }
 
     /**
@@ -600,7 +583,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentRequest 请求对象
+     * @param request DeleteEnvironmentRequest 请求对象
      * @return CompletableFuture<DeleteEnvironmentResponse>
      */
     public CompletableFuture<DeleteEnvironmentResponse> deleteEnvironmentAsync(DeleteEnvironmentRequest request) {
@@ -614,13 +597,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentRequest 请求对象
+     * @param request DeleteEnvironmentRequest 请求对象
      * @return AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse>
      */
     public AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse> deleteEnvironmentAsyncInvoker(
         DeleteEnvironmentRequest request) {
-        return new AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse>(request,
-            ServiceStageMeta.deleteEnvironment, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.deleteEnvironment, hcClient);
     }
 
     /**
@@ -630,7 +612,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyEnvironmentRequest 请求对象
+     * @param request ModifyEnvironmentRequest 请求对象
      * @return CompletableFuture<ModifyEnvironmentResponse>
      */
     public CompletableFuture<ModifyEnvironmentResponse> modifyEnvironmentAsync(ModifyEnvironmentRequest request) {
@@ -644,13 +626,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyEnvironmentRequest 请求对象
+     * @param request ModifyEnvironmentRequest 请求对象
      * @return AsyncInvoker<ModifyEnvironmentRequest, ModifyEnvironmentResponse>
      */
     public AsyncInvoker<ModifyEnvironmentRequest, ModifyEnvironmentResponse> modifyEnvironmentAsyncInvoker(
         ModifyEnvironmentRequest request) {
-        return new AsyncInvoker<ModifyEnvironmentRequest, ModifyEnvironmentResponse>(request,
-            ServiceStageMeta.modifyEnvironment, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.modifyEnvironment, hcClient);
     }
 
     /**
@@ -660,7 +641,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyResourceInEnvironmentRequest 请求对象
+     * @param request ModifyResourceInEnvironmentRequest 请求对象
      * @return CompletableFuture<ModifyResourceInEnvironmentResponse>
      */
     public CompletableFuture<ModifyResourceInEnvironmentResponse> modifyResourceInEnvironmentAsync(
@@ -675,13 +656,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyResourceInEnvironmentRequest 请求对象
+     * @param request ModifyResourceInEnvironmentRequest 请求对象
      * @return AsyncInvoker<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse>
      */
     public AsyncInvoker<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> modifyResourceInEnvironmentAsyncInvoker(
         ModifyResourceInEnvironmentRequest request) {
-        return new AsyncInvoker<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse>(request,
-            ServiceStageMeta.modifyResourceInEnvironment, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.modifyResourceInEnvironment, hcClient);
     }
 
     /**
@@ -691,7 +671,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvironmentInfoRequest 请求对象
+     * @param request ShowEnvironmentInfoRequest 请求对象
      * @return CompletableFuture<ShowEnvironmentInfoResponse>
      */
     public CompletableFuture<ShowEnvironmentInfoResponse> showEnvironmentInfoAsync(ShowEnvironmentInfoRequest request) {
@@ -705,13 +685,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvironmentInfoRequest 请求对象
+     * @param request ShowEnvironmentInfoRequest 请求对象
      * @return AsyncInvoker<ShowEnvironmentInfoRequest, ShowEnvironmentInfoResponse>
      */
     public AsyncInvoker<ShowEnvironmentInfoRequest, ShowEnvironmentInfoResponse> showEnvironmentInfoAsyncInvoker(
         ShowEnvironmentInfoRequest request) {
-        return new AsyncInvoker<ShowEnvironmentInfoRequest, ShowEnvironmentInfoResponse>(request,
-            ServiceStageMeta.showEnvironmentInfo, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showEnvironmentInfo, hcClient);
     }
 
     /**
@@ -721,7 +700,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvironmentResourcesRequest 请求对象
+     * @param request ShowEnvironmentResourcesRequest 请求对象
      * @return CompletableFuture<ShowEnvironmentResourcesResponse>
      */
     public CompletableFuture<ShowEnvironmentResourcesResponse> showEnvironmentResourcesAsync(
@@ -736,13 +715,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvironmentResourcesRequest 请求对象
+     * @param request ShowEnvironmentResourcesRequest 请求对象
      * @return AsyncInvoker<ShowEnvironmentResourcesRequest, ShowEnvironmentResourcesResponse>
      */
     public AsyncInvoker<ShowEnvironmentResourcesRequest, ShowEnvironmentResourcesResponse> showEnvironmentResourcesAsyncInvoker(
         ShowEnvironmentResourcesRequest request) {
-        return new AsyncInvoker<ShowEnvironmentResourcesRequest, ShowEnvironmentResourcesResponse>(request,
-            ServiceStageMeta.showEnvironmentResources, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showEnvironmentResources, hcClient);
     }
 
     /**
@@ -752,7 +730,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvironmentsRequest 请求对象
+     * @param request ShowEnvironmentsRequest 请求对象
      * @return CompletableFuture<ShowEnvironmentsResponse>
      */
     public CompletableFuture<ShowEnvironmentsResponse> showEnvironmentsAsync(ShowEnvironmentsRequest request) {
@@ -766,13 +744,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEnvironmentsRequest 请求对象
+     * @param request ShowEnvironmentsRequest 请求对象
      * @return AsyncInvoker<ShowEnvironmentsRequest, ShowEnvironmentsResponse>
      */
     public AsyncInvoker<ShowEnvironmentsRequest, ShowEnvironmentsResponse> showEnvironmentsAsyncInvoker(
         ShowEnvironmentsRequest request) {
-        return new AsyncInvoker<ShowEnvironmentsRequest, ShowEnvironmentsResponse>(request,
-            ServiceStageMeta.showEnvironments, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showEnvironments, hcClient);
     }
 
     /**
@@ -781,7 +758,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInfoRequest 请求对象
+     * @param request ShowJobInfoRequest 请求对象
      * @return CompletableFuture<ShowJobInfoResponse>
      */
     public CompletableFuture<ShowJobInfoResponse> showJobInfoAsync(ShowJobInfoRequest request) {
@@ -794,12 +771,11 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInfoRequest 请求对象
+     * @param request ShowJobInfoRequest 请求对象
      * @return AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>
      */
     public AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfoAsyncInvoker(ShowJobInfoRequest request) {
-        return new AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>(request, ServiceStageMeta.showJobInfo,
-            hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showJobInfo, hcClient);
     }
 
     /**
@@ -809,7 +785,7 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRuntimeStacksRequest 请求对象
+     * @param request ShowRuntimeStacksRequest 请求对象
      * @return CompletableFuture<ShowRuntimeStacksResponse>
      */
     public CompletableFuture<ShowRuntimeStacksResponse> showRuntimeStacksAsync(ShowRuntimeStacksRequest request) {
@@ -823,13 +799,12 @@ public class ServiceStageAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRuntimeStacksRequest 请求对象
+     * @param request ShowRuntimeStacksRequest 请求对象
      * @return AsyncInvoker<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse>
      */
     public AsyncInvoker<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> showRuntimeStacksAsyncInvoker(
         ShowRuntimeStacksRequest request) {
-        return new AsyncInvoker<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse>(request,
-            ServiceStageMeta.showRuntimeStacks, hcClient);
+        return new AsyncInvoker<>(request, ServiceStageMeta.showRuntimeStacks, hcClient);
     }
 
 }

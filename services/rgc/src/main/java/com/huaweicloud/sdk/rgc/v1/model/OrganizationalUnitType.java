@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * OU类型。 * CORE - 核心OU * CUSTOM - 自定义OU * ROOT - 根OU
+ * 组织单元类型。 * CORE - 基础组织单元 * CUSTOM - 组织单元 * ROOT - ROOT
  */
 public class OrganizationalUnitType {
 

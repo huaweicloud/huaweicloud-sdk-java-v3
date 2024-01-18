@@ -31,7 +31,7 @@ public class CreateCaseRequestBody {
     }
 
     /**
-     * name
+     * 名称
      * @return name
      */
     public String getName() {
@@ -67,7 +67,7 @@ public class CreateCaseRequestBody {
     }
 
     /**
-     * task_id
+     * 所属任务id
      * minimum: 0
      * maximum: 2147483647
      * @return taskId

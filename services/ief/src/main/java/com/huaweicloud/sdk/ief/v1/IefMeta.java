@@ -269,9 +269,9 @@ import java.util.List;
 public class IefMeta {
 
     public static final HttpRequestDef<BatchAddDeleteTagsRequest, BatchAddDeleteTagsResponse> batchAddDeleteTags =
-        genForbatchAddDeleteTags();
+        genForBatchAddDeleteTags();
 
-    private static HttpRequestDef<BatchAddDeleteTagsRequest, BatchAddDeleteTagsResponse> genForbatchAddDeleteTags() {
+    private static HttpRequestDef<BatchAddDeleteTagsRequest, BatchAddDeleteTagsResponse> genForBatchAddDeleteTags() {
         // basic
         HttpRequestDef.Builder<BatchAddDeleteTagsRequest, BatchAddDeleteTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchAddDeleteTagsRequest.class, BatchAddDeleteTagsResponse.class)
@@ -284,46 +284,38 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddDeleteTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchAddDeleteTagsRequest::getResourceType,
+                BatchAddDeleteTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddDeleteTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchAddDeleteTagsRequest::getResourceId, BatchAddDeleteTagsRequest::setResourceId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddDeleteTagsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchAddDeleteTagsRequest::getIefInstanceId,
+                BatchAddDeleteTagsRequest::setIefInstanceId));
         builder.<BachTags>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BachTags.class),
-            f -> f.withMarshaller(BatchAddDeleteTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddDeleteTagsRequest::getBody, BatchAddDeleteTagsRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(BatchAddDeleteTagsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(BatchAddDeleteTagsResponse::getBody, BatchAddDeleteTagsResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForcreateApp();
+    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForCreateApp();
 
-    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForcreateApp() {
+    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForCreateApp() {
         // basic
         HttpRequestDef.Builder<CreateAppRequest, CreateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppRequest.class, CreateAppResponse.class)
@@ -336,16 +328,12 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getIefInstanceId, CreateAppRequest::setIefInstanceId));
         builder.<App>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(App.class),
-            f -> f.withMarshaller(CreateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getBody, CreateAppRequest::setBody));
 
         // response
 
@@ -353,9 +341,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateAppVersionsRequest, CreateAppVersionsResponse> createAppVersions =
-        genForcreateAppVersions();
+        genForCreateAppVersions();
 
-    private static HttpRequestDef<CreateAppVersionsRequest, CreateAppVersionsResponse> genForcreateAppVersions() {
+    private static HttpRequestDef<CreateAppVersionsRequest, CreateAppVersionsResponse> genForCreateAppVersions() {
         // basic
         HttpRequestDef.Builder<CreateAppVersionsRequest, CreateAppVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppVersionsRequest.class, CreateAppVersionsResponse.class)
@@ -368,23 +356,18 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppVersionsRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateAppVersionsRequest::getAppId, CreateAppVersionsRequest::setAppId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppVersionsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAppVersionsRequest::getIefInstanceId,
+                CreateAppVersionsRequest::setIefInstanceId));
         builder.<Version>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Version.class),
-            f -> f.withMarshaller(CreateAppVersionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppVersionsRequest::getBody, CreateAppVersionsRequest::setBody));
 
         // response
 
@@ -392,9 +375,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateBatchJobRequest, CreateBatchJobResponse> createBatchJob =
-        genForcreateBatchJob();
+        genForCreateBatchJob();
 
-    private static HttpRequestDef<CreateBatchJobRequest, CreateBatchJobResponse> genForcreateBatchJob() {
+    private static HttpRequestDef<CreateBatchJobRequest, CreateBatchJobResponse> genForCreateBatchJob() {
         // basic
         HttpRequestDef.Builder<CreateBatchJobRequest, CreateBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateBatchJobRequest.class, CreateBatchJobResponse.class)
@@ -407,16 +390,12 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBatchJobRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateBatchJobRequest::getIefInstanceId, CreateBatchJobRequest::setIefInstanceId));
         builder.<BatchJobRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchJobRequest.class),
-            f -> f.withMarshaller(CreateBatchJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBatchJobRequest::getBody, CreateBatchJobRequest::setBody));
 
         // response
 
@@ -424,9 +403,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateConfigMapRequest, CreateConfigMapResponse> createConfigMap =
-        genForcreateConfigMap();
+        genForCreateConfigMap();
 
-    private static HttpRequestDef<CreateConfigMapRequest, CreateConfigMapResponse> genForcreateConfigMap() {
+    private static HttpRequestDef<CreateConfigMapRequest, CreateConfigMapResponse> genForCreateConfigMap() {
         // basic
         HttpRequestDef.Builder<CreateConfigMapRequest, CreateConfigMapResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConfigMapRequest.class, CreateConfigMapResponse.class)
@@ -439,16 +418,12 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConfigMapRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateConfigMapRequest::getIefInstanceId, CreateConfigMapRequest::setIefInstanceId));
         builder.<ConfigMaps>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfigMaps.class),
-            f -> f.withMarshaller(CreateConfigMapRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConfigMapRequest::getBody, CreateConfigMapRequest::setBody));
 
         // response
 
@@ -456,9 +431,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateDeploymentsRequest, CreateDeploymentsResponse> createDeployments =
-        genForcreateDeployments();
+        genForCreateDeployments();
 
-    private static HttpRequestDef<CreateDeploymentsRequest, CreateDeploymentsResponse> genForcreateDeployments() {
+    private static HttpRequestDef<CreateDeploymentsRequest, CreateDeploymentsResponse> genForCreateDeployments() {
         // basic
         HttpRequestDef.Builder<CreateDeploymentsRequest, CreateDeploymentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDeploymentsRequest.class, CreateDeploymentsResponse.class)
@@ -471,25 +446,22 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDeploymentsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDeploymentsRequest::getIefInstanceId,
+                CreateDeploymentsRequest::setIefInstanceId));
         builder.<Deployment>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Deployment.class),
-            f -> f.withMarshaller(CreateDeploymentsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDeploymentsRequest::getBody, CreateDeploymentsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDeviceRequest, CreateDeviceResponse> createDevice = genForcreateDevice();
+    public static final HttpRequestDef<CreateDeviceRequest, CreateDeviceResponse> createDevice = genForCreateDevice();
 
-    private static HttpRequestDef<CreateDeviceRequest, CreateDeviceResponse> genForcreateDevice() {
+    private static HttpRequestDef<CreateDeviceRequest, CreateDeviceResponse> genForCreateDevice() {
         // basic
         HttpRequestDef.Builder<CreateDeviceRequest, CreateDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDeviceRequest.class, CreateDeviceResponse.class)
@@ -502,16 +474,12 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDeviceRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDeviceRequest::getIefInstanceId, CreateDeviceRequest::setIefInstanceId));
         builder.<EdgemgrDevices>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EdgemgrDevices.class),
-            f -> f.withMarshaller(CreateDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDeviceRequest::getBody, CreateDeviceRequest::setBody));
 
         // response
 
@@ -519,9 +487,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateDeviceTemplateRequest, CreateDeviceTemplateResponse> createDeviceTemplate =
-        genForcreateDeviceTemplate();
+        genForCreateDeviceTemplate();
 
-    private static HttpRequestDef<CreateDeviceTemplateRequest, CreateDeviceTemplateResponse> genForcreateDeviceTemplate() {
+    private static HttpRequestDef<CreateDeviceTemplateRequest, CreateDeviceTemplateResponse> genForCreateDeviceTemplate() {
         // basic
         HttpRequestDef.Builder<CreateDeviceTemplateRequest, CreateDeviceTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateDeviceTemplateRequest.class, CreateDeviceTemplateResponse.class)
@@ -534,16 +502,13 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDeviceTemplateRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDeviceTemplateRequest::getIefInstanceId,
+                CreateDeviceTemplateRequest::setIefInstanceId));
         builder.<DeviceTemplate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeviceTemplate.class),
-            f -> f.withMarshaller(CreateDeviceTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDeviceTemplateRequest::getBody, CreateDeviceTemplateRequest::setBody));
 
         // response
 
@@ -551,9 +516,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateEdgeGroupRequest, CreateEdgeGroupResponse> createEdgeGroup =
-        genForcreateEdgeGroup();
+        genForCreateEdgeGroup();
 
-    private static HttpRequestDef<CreateEdgeGroupRequest, CreateEdgeGroupResponse> genForcreateEdgeGroup() {
+    private static HttpRequestDef<CreateEdgeGroupRequest, CreateEdgeGroupResponse> genForCreateEdgeGroup() {
         // basic
         HttpRequestDef.Builder<CreateEdgeGroupRequest, CreateEdgeGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEdgeGroupRequest.class, CreateEdgeGroupResponse.class)
@@ -566,16 +531,12 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEdgeGroupRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeGroupRequest::getIefInstanceId, CreateEdgeGroupRequest::setIefInstanceId));
         builder.<EdgeGroupRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EdgeGroupRequest.class),
-            f -> f.withMarshaller(CreateEdgeGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeGroupRequest::getBody, CreateEdgeGroupRequest::setBody));
 
         // response
 
@@ -583,9 +544,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateEdgeGroupCertRequest, CreateEdgeGroupCertResponse> createEdgeGroupCert =
-        genForcreateEdgeGroupCert();
+        genForCreateEdgeGroupCert();
 
-    private static HttpRequestDef<CreateEdgeGroupCertRequest, CreateEdgeGroupCertResponse> genForcreateEdgeGroupCert() {
+    private static HttpRequestDef<CreateEdgeGroupCertRequest, CreateEdgeGroupCertResponse> genForCreateEdgeGroupCert() {
         // basic
         HttpRequestDef.Builder<CreateEdgeGroupCertRequest, CreateEdgeGroupCertResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEdgeGroupCertRequest.class, CreateEdgeGroupCertResponse.class)
@@ -598,23 +559,18 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEdgeGroupCertRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeGroupCertRequest::getGroupId, CreateEdgeGroupCertRequest::setGroupId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEdgeGroupCertRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeGroupCertRequest::getIefInstanceId,
+                CreateEdgeGroupCertRequest::setIefInstanceId));
         builder.<EdgeGroupCertRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EdgeGroupCertRequest.class),
-            f -> f.withMarshaller(CreateEdgeGroupCertRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeGroupCertRequest::getBody, CreateEdgeGroupCertRequest::setBody));
 
         // response
 
@@ -622,9 +578,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateEdgeNodeRequest, CreateEdgeNodeResponse> createEdgeNode =
-        genForcreateEdgeNode();
+        genForCreateEdgeNode();
 
-    private static HttpRequestDef<CreateEdgeNodeRequest, CreateEdgeNodeResponse> genForcreateEdgeNode() {
+    private static HttpRequestDef<CreateEdgeNodeRequest, CreateEdgeNodeResponse> genForCreateEdgeNode() {
         // basic
         HttpRequestDef.Builder<CreateEdgeNodeRequest, CreateEdgeNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEdgeNodeRequest.class, CreateEdgeNodeResponse.class)
@@ -637,16 +593,12 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEdgeNodeRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeNodeRequest::getIefInstanceId, CreateEdgeNodeRequest::setIefInstanceId));
         builder.<Node>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Node.class),
-            f -> f.withMarshaller(CreateEdgeNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeNodeRequest::getBody, CreateEdgeNodeRequest::setBody));
 
         // response
 
@@ -654,9 +606,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateEdgeNodeCertsRequest, CreateEdgeNodeCertsResponse> createEdgeNodeCerts =
-        genForcreateEdgeNodeCerts();
+        genForCreateEdgeNodeCerts();
 
-    private static HttpRequestDef<CreateEdgeNodeCertsRequest, CreateEdgeNodeCertsResponse> genForcreateEdgeNodeCerts() {
+    private static HttpRequestDef<CreateEdgeNodeCertsRequest, CreateEdgeNodeCertsResponse> genForCreateEdgeNodeCerts() {
         // basic
         HttpRequestDef.Builder<CreateEdgeNodeCertsRequest, CreateEdgeNodeCertsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEdgeNodeCertsRequest.class, CreateEdgeNodeCertsResponse.class)
@@ -669,23 +621,18 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEdgeNodeCertsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeNodeCertsRequest::getNodeId, CreateEdgeNodeCertsRequest::setNodeId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEdgeNodeCertsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeNodeCertsRequest::getIefInstanceId,
+                CreateEdgeNodeCertsRequest::setIefInstanceId));
         builder.<Cert>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Cert.class),
-            f -> f.withMarshaller(CreateEdgeNodeCertsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEdgeNodeCertsRequest::getBody, CreateEdgeNodeCertsRequest::setBody));
 
         // response
 
@@ -693,9 +640,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateEncryptdatasRequest, CreateEncryptdatasResponse> createEncryptdatas =
-        genForcreateEncryptdatas();
+        genForCreateEncryptdatas();
 
-    private static HttpRequestDef<CreateEncryptdatasRequest, CreateEncryptdatasResponse> genForcreateEncryptdatas() {
+    private static HttpRequestDef<CreateEncryptdatasRequest, CreateEncryptdatasResponse> genForCreateEncryptdatas() {
         // basic
         HttpRequestDef.Builder<CreateEncryptdatasRequest, CreateEncryptdatasResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEncryptdatasRequest.class, CreateEncryptdatasResponse.class)
@@ -708,16 +655,13 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEncryptdatasRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEncryptdatasRequest::getIefInstanceId,
+                CreateEncryptdatasRequest::setIefInstanceId));
         builder.<EncryptDataReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EncryptDataReq.class),
-            f -> f.withMarshaller(CreateEncryptdatasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEncryptdatasRequest::getBody, CreateEncryptdatasRequest::setBody));
 
         // response
 
@@ -725,9 +669,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> createEndpoint =
-        genForcreateEndpoint();
+        genForCreateEndpoint();
 
-    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForcreateEndpoint() {
+    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForCreateEndpoint() {
         // basic
         HttpRequestDef.Builder<CreateEndpointRequest, CreateEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEndpointRequest.class, CreateEndpointResponse.class)
@@ -740,16 +684,12 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEndpointRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEndpointRequest::getIefInstanceId, CreateEndpointRequest::setIefInstanceId));
         builder.<Endpoint>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Endpoint.class),
-            f -> f.withMarshaller(CreateEndpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEndpointRequest::getBody, CreateEndpointRequest::setBody));
 
         // response
 
@@ -757,9 +697,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse> createNodeEncryptdatas =
-        genForcreateNodeEncryptdatas();
+        genForCreateNodeEncryptdatas();
 
-    private static HttpRequestDef<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse> genForcreateNodeEncryptdatas() {
+    private static HttpRequestDef<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse> genForCreateNodeEncryptdatas() {
         // basic
         HttpRequestDef.Builder<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateNodeEncryptdatasRequest.class, CreateNodeEncryptdatasResponse.class)
@@ -772,23 +712,18 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNodeEncryptdatasRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(CreateNodeEncryptdatasRequest::getNodeId, CreateNodeEncryptdatasRequest::setNodeId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNodeEncryptdatasRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateNodeEncryptdatasRequest::getIefInstanceId,
+                CreateNodeEncryptdatasRequest::setIefInstanceId));
         builder.<EncryptDataNodeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EncryptDataNodeReq.class),
-            f -> f.withMarshaller(CreateNodeEncryptdatasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNodeEncryptdatasRequest::getBody, CreateNodeEncryptdatasRequest::setBody));
 
         // response
 
@@ -796,9 +731,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateProductRequest, CreateProductResponse> createProduct =
-        genForcreateProduct();
+        genForCreateProduct();
 
-    private static HttpRequestDef<CreateProductRequest, CreateProductResponse> genForcreateProduct() {
+    private static HttpRequestDef<CreateProductRequest, CreateProductResponse> genForCreateProduct() {
         // basic
         HttpRequestDef.Builder<CreateProductRequest, CreateProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateProductRequest.class, CreateProductResponse.class)
@@ -811,25 +746,21 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateProductRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateProductRequest::getIefInstanceId, CreateProductRequest::setIefInstanceId));
         builder.<ProductCreateRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ProductCreateRequest.class),
-            f -> f.withMarshaller(CreateProductRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProductRequest::getBody, CreateProductRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRuleRequest, CreateRuleResponse> createRule = genForcreateRule();
+    public static final HttpRequestDef<CreateRuleRequest, CreateRuleResponse> createRule = genForCreateRule();
 
-    private static HttpRequestDef<CreateRuleRequest, CreateRuleResponse> genForcreateRule() {
+    private static HttpRequestDef<CreateRuleRequest, CreateRuleResponse> genForCreateRule() {
         // basic
         HttpRequestDef.Builder<CreateRuleRequest, CreateRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRuleRequest.class, CreateRuleResponse.class)
@@ -842,25 +773,21 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRuleRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRuleRequest::getIefInstanceId, CreateRuleRequest::setIefInstanceId));
         builder.<RuleDetail>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RuleDetail.class),
-            f -> f.withMarshaller(CreateRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRuleRequest::getBody, CreateRuleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForcreateSecret();
+    public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForCreateSecret();
 
-    private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForcreateSecret() {
+    private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForCreateSecret() {
         // basic
         HttpRequestDef.Builder<CreateSecretRequest, CreateSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecretRequest.class, CreateSecretResponse.class)
@@ -873,16 +800,12 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecretRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateSecretRequest::getIefInstanceId, CreateSecretRequest::setIefInstanceId));
         builder.<Secret>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Secret.class),
-            f -> f.withMarshaller(CreateSecretRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSecretRequest::getBody, CreateSecretRequest::setBody));
 
         // response
 
@@ -890,9 +813,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateServiceRequest, CreateServiceResponse> createService =
-        genForcreateService();
+        genForCreateService();
 
-    private static HttpRequestDef<CreateServiceRequest, CreateServiceResponse> genForcreateService() {
+    private static HttpRequestDef<CreateServiceRequest, CreateServiceResponse> genForCreateService() {
         // basic
         HttpRequestDef.Builder<CreateServiceRequest, CreateServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateServiceRequest.class, CreateServiceResponse.class)
@@ -905,16 +828,12 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateServiceRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateServiceRequest::getIefInstanceId, CreateServiceRequest::setIefInstanceId));
         builder.<Service>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Service.class),
-            f -> f.withMarshaller(CreateServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateServiceRequest::getBody, CreateServiceRequest::setBody));
 
         // response
 
@@ -922,9 +841,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<CreateSystemEventRequest, CreateSystemEventResponse> createSystemEvent =
-        genForcreateSystemEvent();
+        genForCreateSystemEvent();
 
-    private static HttpRequestDef<CreateSystemEventRequest, CreateSystemEventResponse> genForcreateSystemEvent() {
+    private static HttpRequestDef<CreateSystemEventRequest, CreateSystemEventResponse> genForCreateSystemEvent() {
         // basic
         HttpRequestDef.Builder<CreateSystemEventRequest, CreateSystemEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSystemEventRequest.class, CreateSystemEventResponse.class)
@@ -937,25 +856,22 @@ public class IefMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSystemEventRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateSystemEventRequest::getIefInstanceId,
+                CreateSystemEventRequest::setIefInstanceId));
         builder.<EventCreateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EventCreateReq.class),
-            f -> f.withMarshaller(CreateSystemEventRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSystemEventRequest::getBody, CreateSystemEventRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForcreateTag();
+    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForCreateTag();
 
-    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForcreateTag() {
+    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForCreateTag() {
         // basic
         HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
@@ -968,46 +884,36 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getResourceId, CreateTagRequest::setResourceId));
         builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getResourceType, CreateTagRequest::setResourceType));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getIefInstanceId, CreateTagRequest::setIefInstanceId));
         builder.<CreateTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTagRequestBody.class),
-            f -> f.withMarshaller(CreateTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getBody, CreateTagRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateTagResponse::getBody, CreateTagResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genFordeleteApp();
+    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genForDeleteApp();
 
-    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genFordeleteApp() {
+    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genForDeleteApp() {
         // basic
         HttpRequestDef.Builder<DeleteAppRequest, DeleteAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppRequest.class, DeleteAppResponse.class)
@@ -1020,16 +926,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getAppId, DeleteAppRequest::setAppId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getIefInstanceId, DeleteAppRequest::setIefInstanceId));
 
         // response
 
@@ -1037,9 +939,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteAppVersionRequest, DeleteAppVersionResponse> deleteAppVersion =
-        genFordeleteAppVersion();
+        genForDeleteAppVersion();
 
-    private static HttpRequestDef<DeleteAppVersionRequest, DeleteAppVersionResponse> genFordeleteAppVersion() {
+    private static HttpRequestDef<DeleteAppVersionRequest, DeleteAppVersionResponse> genForDeleteAppVersion() {
         // basic
         HttpRequestDef.Builder<DeleteAppVersionRequest, DeleteAppVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppVersionRequest.class, DeleteAppVersionResponse.class)
@@ -1052,23 +954,18 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppVersionRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppVersionRequest::getAppId, DeleteAppVersionRequest::setAppId));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppVersionRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppVersionRequest::getVersionId, DeleteAppVersionRequest::setVersionId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppVersionRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppVersionRequest::getIefInstanceId,
+                DeleteAppVersionRequest::setIefInstanceId));
 
         // response
 
@@ -1076,9 +973,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteBatchJobRequest, DeleteBatchJobResponse> deleteBatchJob =
-        genFordeleteBatchJob();
+        genForDeleteBatchJob();
 
-    private static HttpRequestDef<DeleteBatchJobRequest, DeleteBatchJobResponse> genFordeleteBatchJob() {
+    private static HttpRequestDef<DeleteBatchJobRequest, DeleteBatchJobResponse> genForDeleteBatchJob() {
         // basic
         HttpRequestDef.Builder<DeleteBatchJobRequest, DeleteBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBatchJobRequest.class, DeleteBatchJobResponse.class)
@@ -1091,16 +988,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBatchJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteBatchJobRequest::getJobId, DeleteBatchJobRequest::setJobId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBatchJobRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteBatchJobRequest::getIefInstanceId, DeleteBatchJobRequest::setIefInstanceId));
 
         // response
 
@@ -1108,9 +1001,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteConfigMapRequest, DeleteConfigMapResponse> deleteConfigMap =
-        genFordeleteConfigMap();
+        genForDeleteConfigMap();
 
-    private static HttpRequestDef<DeleteConfigMapRequest, DeleteConfigMapResponse> genFordeleteConfigMap() {
+    private static HttpRequestDef<DeleteConfigMapRequest, DeleteConfigMapResponse> genForDeleteConfigMap() {
         // basic
         HttpRequestDef.Builder<DeleteConfigMapRequest, DeleteConfigMapResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteConfigMapRequest.class, DeleteConfigMapResponse.class)
@@ -1123,16 +1016,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConfigMapRequest::getConfigmapId, (req, v) -> {
-                req.setConfigmapId(v);
-            }));
+            f -> f.withMarshaller(DeleteConfigMapRequest::getConfigmapId, DeleteConfigMapRequest::setConfigmapId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConfigMapRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteConfigMapRequest::getIefInstanceId, DeleteConfigMapRequest::setIefInstanceId));
 
         // response
 
@@ -1140,9 +1029,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteDeploymentRequest, DeleteDeploymentResponse> deleteDeployment =
-        genFordeleteDeployment();
+        genForDeleteDeployment();
 
-    private static HttpRequestDef<DeleteDeploymentRequest, DeleteDeploymentResponse> genFordeleteDeployment() {
+    private static HttpRequestDef<DeleteDeploymentRequest, DeleteDeploymentResponse> genForDeleteDeployment() {
         // basic
         HttpRequestDef.Builder<DeleteDeploymentRequest, DeleteDeploymentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeploymentRequest.class, DeleteDeploymentResponse.class)
@@ -1155,32 +1044,27 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeploymentRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeploymentRequest::getDeploymentId, DeleteDeploymentRequest::setDeploymentId));
         builder.<String>withRequestField("force_delete",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeploymentRequest::getForceDelete, (req, v) -> {
-                req.setForceDelete(v);
-            }));
+            f -> f.withMarshaller(DeleteDeploymentRequest::getForceDelete, DeleteDeploymentRequest::setForceDelete));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeploymentRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeploymentRequest::getIefInstanceId,
+                DeleteDeploymentRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> deleteDevice = genFordeleteDevice();
+    public static final HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> deleteDevice = genForDeleteDevice();
 
-    private static HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> genFordeleteDevice() {
+    private static HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> genForDeleteDevice() {
         // basic
         HttpRequestDef.Builder<DeleteDeviceRequest, DeleteDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceRequest.class, DeleteDeviceResponse.class)
@@ -1193,16 +1077,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeviceRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceRequest::getDeviceId, DeleteDeviceRequest::setDeviceId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeviceRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceRequest::getIefInstanceId, DeleteDeviceRequest::setIefInstanceId));
 
         // response
 
@@ -1210,9 +1090,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteDeviceTemplateRequest, DeleteDeviceTemplateResponse> deleteDeviceTemplate =
-        genFordeleteDeviceTemplate();
+        genForDeleteDeviceTemplate();
 
-    private static HttpRequestDef<DeleteDeviceTemplateRequest, DeleteDeviceTemplateResponse> genFordeleteDeviceTemplate() {
+    private static HttpRequestDef<DeleteDeviceTemplateRequest, DeleteDeviceTemplateResponse> genForDeleteDeviceTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteDeviceTemplateRequest, DeleteDeviceTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteDeviceTemplateRequest.class, DeleteDeviceTemplateResponse.class)
@@ -1225,16 +1105,14 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeviceTemplateRequest::getDeviceTemplateId, (req, v) -> {
-                req.setDeviceTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceTemplateRequest::getDeviceTemplateId,
+                DeleteDeviceTemplateRequest::setDeviceTemplateId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeviceTemplateRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceTemplateRequest::getIefInstanceId,
+                DeleteDeviceTemplateRequest::setIefInstanceId));
 
         // response
 
@@ -1242,9 +1120,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeGroupRequest, DeleteEdgeGroupResponse> deleteEdgeGroup =
-        genFordeleteEdgeGroup();
+        genForDeleteEdgeGroup();
 
-    private static HttpRequestDef<DeleteEdgeGroupRequest, DeleteEdgeGroupResponse> genFordeleteEdgeGroup() {
+    private static HttpRequestDef<DeleteEdgeGroupRequest, DeleteEdgeGroupResponse> genForDeleteEdgeGroup() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeGroupRequest, DeleteEdgeGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEdgeGroupRequest.class, DeleteEdgeGroupResponse.class)
@@ -1257,16 +1135,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeGroupRequest::getGroupId, DeleteEdgeGroupRequest::setGroupId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeGroupRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeGroupRequest::getIefInstanceId, DeleteEdgeGroupRequest::setIefInstanceId));
 
         // response
 
@@ -1274,9 +1148,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeGroupCertRequest, DeleteEdgeGroupCertResponse> deleteEdgeGroupCert =
-        genFordeleteEdgeGroupCert();
+        genForDeleteEdgeGroupCert();
 
-    private static HttpRequestDef<DeleteEdgeGroupCertRequest, DeleteEdgeGroupCertResponse> genFordeleteEdgeGroupCert() {
+    private static HttpRequestDef<DeleteEdgeGroupCertRequest, DeleteEdgeGroupCertResponse> genForDeleteEdgeGroupCert() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeGroupCertRequest, DeleteEdgeGroupCertResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEdgeGroupCertRequest.class, DeleteEdgeGroupCertResponse.class)
@@ -1289,23 +1163,19 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeGroupCertRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeGroupCertRequest::getGroupId, DeleteEdgeGroupCertRequest::setGroupId));
         builder.<String>withRequestField("group_cert_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeGroupCertRequest::getGroupCertId, (req, v) -> {
-                req.setGroupCertId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeGroupCertRequest::getGroupCertId,
+                DeleteEdgeGroupCertRequest::setGroupCertId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeGroupCertRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeGroupCertRequest::getIefInstanceId,
+                DeleteEdgeGroupCertRequest::setIefInstanceId));
 
         // response
 
@@ -1313,9 +1183,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> deleteEdgeNode =
-        genFordeleteEdgeNode();
+        genForDeleteEdgeNode();
 
-    private static HttpRequestDef<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> genFordeleteEdgeNode() {
+    private static HttpRequestDef<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> genForDeleteEdgeNode() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEdgeNodeRequest.class, DeleteEdgeNodeResponse.class)
@@ -1328,16 +1198,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeNodeRequest::getNodeId, DeleteEdgeNodeRequest::setNodeId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeNodeRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeNodeRequest::getIefInstanceId, DeleteEdgeNodeRequest::setIefInstanceId));
 
         // response
 
@@ -1345,9 +1211,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteEdgeNodeCertsRequest, DeleteEdgeNodeCertsResponse> deleteEdgeNodeCerts =
-        genFordeleteEdgeNodeCerts();
+        genForDeleteEdgeNodeCerts();
 
-    private static HttpRequestDef<DeleteEdgeNodeCertsRequest, DeleteEdgeNodeCertsResponse> genFordeleteEdgeNodeCerts() {
+    private static HttpRequestDef<DeleteEdgeNodeCertsRequest, DeleteEdgeNodeCertsResponse> genForDeleteEdgeNodeCerts() {
         // basic
         HttpRequestDef.Builder<DeleteEdgeNodeCertsRequest, DeleteEdgeNodeCertsResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEdgeNodeCertsRequest.class, DeleteEdgeNodeCertsResponse.class)
@@ -1360,23 +1226,18 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeNodeCertsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeNodeCertsRequest::getNodeId, DeleteEdgeNodeCertsRequest::setNodeId));
         builder.<String>withRequestField("cert_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeNodeCertsRequest::getCertId, (req, v) -> {
-                req.setCertId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeNodeCertsRequest::getCertId, DeleteEdgeNodeCertsRequest::setCertId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEdgeNodeCertsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEdgeNodeCertsRequest::getIefInstanceId,
+                DeleteEdgeNodeCertsRequest::setIefInstanceId));
 
         // response
 
@@ -1384,9 +1245,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse> deleteEncryptdatas =
-        genFordeleteEncryptdatas();
+        genForDeleteEncryptdatas();
 
-    private static HttpRequestDef<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse> genFordeleteEncryptdatas() {
+    private static HttpRequestDef<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse> genForDeleteEncryptdatas() {
         // basic
         HttpRequestDef.Builder<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEncryptdatasRequest.class, DeleteEncryptdatasResponse.class)
@@ -1399,16 +1260,14 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEncryptdatasRequest::getEncryptdataId, (req, v) -> {
-                req.setEncryptdataId(v);
-            }));
+            f -> f.withMarshaller(DeleteEncryptdatasRequest::getEncryptdataId,
+                DeleteEncryptdatasRequest::setEncryptdataId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEncryptdatasRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEncryptdatasRequest::getIefInstanceId,
+                DeleteEncryptdatasRequest::setIefInstanceId));
 
         // response
 
@@ -1416,9 +1275,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteEndPointRequest, DeleteEndPointResponse> deleteEndPoint =
-        genFordeleteEndPoint();
+        genForDeleteEndPoint();
 
-    private static HttpRequestDef<DeleteEndPointRequest, DeleteEndPointResponse> genFordeleteEndPoint() {
+    private static HttpRequestDef<DeleteEndPointRequest, DeleteEndPointResponse> genForDeleteEndPoint() {
         // basic
         HttpRequestDef.Builder<DeleteEndPointRequest, DeleteEndPointResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEndPointRequest.class, DeleteEndPointResponse.class)
@@ -1431,16 +1290,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEndPointRequest::getEndpointId, (req, v) -> {
-                req.setEndpointId(v);
-            }));
+            f -> f.withMarshaller(DeleteEndPointRequest::getEndpointId, DeleteEndPointRequest::setEndpointId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEndPointRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEndPointRequest::getIefInstanceId, DeleteEndPointRequest::setIefInstanceId));
 
         // response
 
@@ -1448,9 +1303,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse> deleteNodeEncryptdatas =
-        genFordeleteNodeEncryptdatas();
+        genForDeleteNodeEncryptdatas();
 
-    private static HttpRequestDef<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse> genFordeleteNodeEncryptdatas() {
+    private static HttpRequestDef<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse> genForDeleteNodeEncryptdatas() {
         // basic
         HttpRequestDef.Builder<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteNodeEncryptdatasRequest.class, DeleteNodeEncryptdatasResponse.class)
@@ -1463,23 +1318,19 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNodeEncryptdatasRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteNodeEncryptdatasRequest::getNodeId, DeleteNodeEncryptdatasRequest::setNodeId));
         builder.<String>withRequestField("encryptdata_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNodeEncryptdatasRequest::getEncryptdataId, (req, v) -> {
-                req.setEncryptdataId(v);
-            }));
+            f -> f.withMarshaller(DeleteNodeEncryptdatasRequest::getEncryptdataId,
+                DeleteNodeEncryptdatasRequest::setEncryptdataId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNodeEncryptdatasRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteNodeEncryptdatasRequest::getIefInstanceId,
+                DeleteNodeEncryptdatasRequest::setIefInstanceId));
 
         // response
 
@@ -1487,9 +1338,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteProductRequest, DeleteProductResponse> deleteProduct =
-        genFordeleteProduct();
+        genForDeleteProduct();
 
-    private static HttpRequestDef<DeleteProductRequest, DeleteProductResponse> genFordeleteProduct() {
+    private static HttpRequestDef<DeleteProductRequest, DeleteProductResponse> genForDeleteProduct() {
         // basic
         HttpRequestDef.Builder<DeleteProductRequest, DeleteProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteProductRequest.class, DeleteProductResponse.class)
@@ -1502,16 +1353,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProductRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(DeleteProductRequest::getProductId, DeleteProductRequest::setProductId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProductRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteProductRequest::getIefInstanceId, DeleteProductRequest::setIefInstanceId));
 
         // response
 
@@ -1519,9 +1366,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTag =
-        genFordeleteResourceTag();
+        genForDeleteResourceTag();
 
-    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genFordeleteResourceTag() {
+    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genForDeleteResourceTag() {
         // basic
         HttpRequestDef.Builder<DeleteResourceTagRequest, DeleteResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceTagRequest.class, DeleteResourceTagResponse.class)
@@ -1534,39 +1381,33 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceType,
+                DeleteResourceTagRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getResourceId, DeleteResourceTagRequest::setResourceId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getKey, DeleteResourceTagRequest::setKey));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceTagRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceTagRequest::getIefInstanceId,
+                DeleteResourceTagRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> deleteRule = genFordeleteRule();
+    public static final HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> deleteRule = genForDeleteRule();
 
-    private static HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> genFordeleteRule() {
+    private static HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> genForDeleteRule() {
         // basic
         HttpRequestDef.Builder<DeleteRuleRequest, DeleteRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRuleRequest.class, DeleteRuleResponse.class)
@@ -1579,25 +1420,21 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteRuleRequest::getRuleId, DeleteRuleRequest::setRuleId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRuleRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRuleRequest::getIefInstanceId, DeleteRuleRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> deleteSecret = genFordeleteSecret();
+    public static final HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> deleteSecret = genForDeleteSecret();
 
-    private static HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> genFordeleteSecret() {
+    private static HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> genForDeleteSecret() {
         // basic
         HttpRequestDef.Builder<DeleteSecretRequest, DeleteSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretRequest.class, DeleteSecretResponse.class)
@@ -1610,16 +1447,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretRequest::getSecretId, DeleteSecretRequest::setSecretId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSecretRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSecretRequest::getIefInstanceId, DeleteSecretRequest::setIefInstanceId));
 
         // response
 
@@ -1627,9 +1460,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteServiceRequest, DeleteServiceResponse> deleteService =
-        genFordeleteService();
+        genForDeleteService();
 
-    private static HttpRequestDef<DeleteServiceRequest, DeleteServiceResponse> genFordeleteService() {
+    private static HttpRequestDef<DeleteServiceRequest, DeleteServiceResponse> genForDeleteService() {
         // basic
         HttpRequestDef.Builder<DeleteServiceRequest, DeleteServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServiceRequest.class, DeleteServiceResponse.class)
@@ -1642,16 +1475,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceRequest::getServiceId, DeleteServiceRequest::setServiceId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceRequest::getIefInstanceId, DeleteServiceRequest::setIefInstanceId));
 
         // response
 
@@ -1659,9 +1488,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<DeleteSystemEventRequest, DeleteSystemEventResponse> deleteSystemEvent =
-        genFordeleteSystemEvent();
+        genForDeleteSystemEvent();
 
-    private static HttpRequestDef<DeleteSystemEventRequest, DeleteSystemEventResponse> genFordeleteSystemEvent() {
+    private static HttpRequestDef<DeleteSystemEventRequest, DeleteSystemEventResponse> genForDeleteSystemEvent() {
         // basic
         HttpRequestDef.Builder<DeleteSystemEventRequest, DeleteSystemEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSystemEventRequest.class, DeleteSystemEventResponse.class)
@@ -1674,16 +1503,13 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSystemEventRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(DeleteSystemEventRequest::getEventId, DeleteSystemEventRequest::setEventId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSystemEventRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSystemEventRequest::getIefInstanceId,
+                DeleteSystemEventRequest::setIefInstanceId));
 
         // response
 
@@ -1691,9 +1517,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<EnableDisableEdgeNodesRequest, EnableDisableEdgeNodesResponse> enableDisableEdgeNodes =
-        genForenableDisableEdgeNodes();
+        genForEnableDisableEdgeNodes();
 
-    private static HttpRequestDef<EnableDisableEdgeNodesRequest, EnableDisableEdgeNodesResponse> genForenableDisableEdgeNodes() {
+    private static HttpRequestDef<EnableDisableEdgeNodesRequest, EnableDisableEdgeNodesResponse> genForEnableDisableEdgeNodes() {
         // basic
         HttpRequestDef.Builder<EnableDisableEdgeNodesRequest, EnableDisableEdgeNodesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, EnableDisableEdgeNodesRequest.class, EnableDisableEdgeNodesResponse.class)
@@ -1706,23 +1532,18 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableDisableEdgeNodesRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(EnableDisableEdgeNodesRequest::getNodeId, EnableDisableEdgeNodesRequest::setNodeId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableDisableEdgeNodesRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(EnableDisableEdgeNodesRequest::getIefInstanceId,
+                EnableDisableEdgeNodesRequest::setIefInstanceId));
         builder.<NodeAction>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NodeAction.class),
-            f -> f.withMarshaller(EnableDisableEdgeNodesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EnableDisableEdgeNodesRequest::getBody, EnableDisableEdgeNodesRequest::setBody));
 
         // response
 
@@ -1730,9 +1551,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListAppVersionsRequest, ListAppVersionsResponse> listAppVersions =
-        genForlistAppVersions();
+        genForListAppVersions();
 
-    private static HttpRequestDef<ListAppVersionsRequest, ListAppVersionsResponse> genForlistAppVersions() {
+    private static HttpRequestDef<ListAppVersionsRequest, ListAppVersionsResponse> genForListAppVersions() {
         // basic
         HttpRequestDef.Builder<ListAppVersionsRequest, ListAppVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppVersionsRequest.class, ListAppVersionsResponse.class)
@@ -1745,39 +1566,31 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppVersionsRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAppVersionsRequest::getAppId, ListAppVersionsRequest::setAppId));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppVersionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppVersionsRequest::getLimit, ListAppVersionsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppVersionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppVersionsRequest::getOffset, ListAppVersionsRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppVersionsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppVersionsRequest::getIefInstanceId, ListAppVersionsRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForlistApps();
+    public static final HttpRequestDef<ListAppsRequest, ListAppsResponse> listApps = genForListApps();
 
-    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForlistApps() {
+    private static HttpRequestDef<ListAppsRequest, ListAppsResponse> genForListApps() {
         // basic
         HttpRequestDef.Builder<ListAppsRequest, ListAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsRequest.class, ListAppsResponse.class)
@@ -1790,53 +1603,41 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getName, ListAppsRequest::setName));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getLimit, ListAppsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getOffset, ListAppsRequest::setOffset));
         builder.<String>withRequestField("alias",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getAlias, (req, v) -> {
-                req.setAlias(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getAlias, ListAppsRequest::setAlias));
         builder.<String>withRequestField("visibility",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getVisibility, (req, v) -> {
-                req.setVisibility(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getVisibility, ListAppsRequest::setVisibility));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppsRequest::getIefInstanceId, ListAppsRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBatchJobRequest, ListBatchJobResponse> listBatchJob = genForlistBatchJob();
+    public static final HttpRequestDef<ListBatchJobRequest, ListBatchJobResponse> listBatchJob = genForListBatchJob();
 
-    private static HttpRequestDef<ListBatchJobRequest, ListBatchJobResponse> genForlistBatchJob() {
+    private static HttpRequestDef<ListBatchJobRequest, ListBatchJobResponse> genForListBatchJob() {
         // basic
         HttpRequestDef.Builder<ListBatchJobRequest, ListBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBatchJobRequest.class, ListBatchJobResponse.class)
@@ -1849,37 +1650,27 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchJobRequest::getJobType, (req, v) -> {
-                req.setJobType(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobRequest::getJobType, ListBatchJobRequest::setJobType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBatchJobRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobRequest::getLimit, ListBatchJobRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBatchJobRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobRequest::getOffset, ListBatchJobRequest::setOffset));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchJobRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobRequest::getSort, ListBatchJobRequest::setSort));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchJobRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBatchJobRequest::getIefInstanceId, ListBatchJobRequest::setIefInstanceId));
 
         // response
 
@@ -1887,9 +1678,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListConfigMapsRequest, ListConfigMapsResponse> listConfigMaps =
-        genForlistConfigMaps();
+        genForListConfigMaps();
 
-    private static HttpRequestDef<ListConfigMapsRequest, ListConfigMapsResponse> genForlistConfigMaps() {
+    private static HttpRequestDef<ListConfigMapsRequest, ListConfigMapsResponse> genForListConfigMaps() {
         // basic
         HttpRequestDef.Builder<ListConfigMapsRequest, ListConfigMapsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConfigMapsRequest.class, ListConfigMapsResponse.class)
@@ -1902,30 +1693,22 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getName, ListConfigMapsRequest::setName));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getLimit, ListConfigMapsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getOffset, ListConfigMapsRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigMapsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListConfigMapsRequest::getIefInstanceId, ListConfigMapsRequest::setIefInstanceId));
 
         // response
 
@@ -1933,9 +1716,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListDeploymentsRequest, ListDeploymentsResponse> listDeployments =
-        genForlistDeployments();
+        genForListDeployments();
 
-    private static HttpRequestDef<ListDeploymentsRequest, ListDeploymentsResponse> genForlistDeployments() {
+    private static HttpRequestDef<ListDeploymentsRequest, ListDeploymentsResponse> genForListDeployments() {
         // basic
         HttpRequestDef.Builder<ListDeploymentsRequest, ListDeploymentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDeploymentsRequest.class, ListDeploymentsResponse.class)
@@ -1948,51 +1731,37 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDeploymentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDeploymentsRequest::getLimit, ListDeploymentsRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDeploymentsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDeploymentsRequest::getOffset, ListDeploymentsRequest::setOffset));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDeploymentsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListDeploymentsRequest::getSort, ListDeploymentsRequest::setSort));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDeploymentsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDeploymentsRequest::getName, ListDeploymentsRequest::setName));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDeploymentsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListDeploymentsRequest::getNodeId, ListDeploymentsRequest::setNodeId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDeploymentsRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListDeploymentsRequest::getGroupId, ListDeploymentsRequest::setGroupId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDeploymentsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDeploymentsRequest::getIefInstanceId, ListDeploymentsRequest::setIefInstanceId));
 
         // response
 
@@ -2000,9 +1769,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListDeviceTemplatesRequest, ListDeviceTemplatesResponse> listDeviceTemplates =
-        genForlistDeviceTemplates();
+        genForListDeviceTemplates();
 
-    private static HttpRequestDef<ListDeviceTemplatesRequest, ListDeviceTemplatesResponse> genForlistDeviceTemplates() {
+    private static HttpRequestDef<ListDeviceTemplatesRequest, ListDeviceTemplatesResponse> genForListDeviceTemplates() {
         // basic
         HttpRequestDef.Builder<ListDeviceTemplatesRequest, ListDeviceTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDeviceTemplatesRequest.class, ListDeviceTemplatesResponse.class)
@@ -2015,39 +1784,32 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDeviceTemplatesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDeviceTemplatesRequest::getName, ListDeviceTemplatesRequest::setName));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDeviceTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDeviceTemplatesRequest::getOffset, ListDeviceTemplatesRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDeviceTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDeviceTemplatesRequest::getLimit, ListDeviceTemplatesRequest::setLimit));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDeviceTemplatesRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDeviceTemplatesRequest::getIefInstanceId,
+                ListDeviceTemplatesRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDevicesRequest, ListDevicesResponse> listDevices = genForlistDevices();
+    public static final HttpRequestDef<ListDevicesRequest, ListDevicesResponse> listDevices = genForListDevices();
 
-    private static HttpRequestDef<ListDevicesRequest, ListDevicesResponse> genForlistDevices() {
+    private static HttpRequestDef<ListDevicesRequest, ListDevicesResponse> genForListDevices() {
         // basic
         HttpRequestDef.Builder<ListDevicesRequest, ListDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDevicesRequest.class, ListDevicesResponse.class)
@@ -2060,51 +1822,37 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getName, ListDevicesRequest::setName));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getNodeId, ListDevicesRequest::setNodeId));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getLimit, ListDevicesRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getOffset, ListDevicesRequest::setOffset));
         builder.<String>withRequestField("is_binding",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getIsBinding, (req, v) -> {
-                req.setIsBinding(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getIsBinding, ListDevicesRequest::setIsBinding));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getTags, ListDevicesRequest::setTags));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getIefInstanceId, ListDevicesRequest::setIefInstanceId));
 
         // response
 
@@ -2112,9 +1860,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListEdgeGroupCertsRequest, ListEdgeGroupCertsResponse> listEdgeGroupCerts =
-        genForlistEdgeGroupCerts();
+        genForListEdgeGroupCerts();
 
-    private static HttpRequestDef<ListEdgeGroupCertsRequest, ListEdgeGroupCertsResponse> genForlistEdgeGroupCerts() {
+    private static HttpRequestDef<ListEdgeGroupCertsRequest, ListEdgeGroupCertsResponse> genForListEdgeGroupCerts() {
         // basic
         HttpRequestDef.Builder<ListEdgeGroupCertsRequest, ListEdgeGroupCertsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEdgeGroupCertsRequest.class, ListEdgeGroupCertsResponse.class)
@@ -2127,47 +1875,39 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getGroupId, ListEdgeGroupCertsRequest::setGroupId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getLimit, ListEdgeGroupCertsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getOffset, ListEdgeGroupCertsRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getIefInstanceId,
+                ListEdgeGroupCertsRequest::setIefInstanceId));
 
         // response
         builder.<List<EdgeGroupCertListResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEdgeGroupCertsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(EdgeGroupCertListResp.class));
+            f -> f.withMarshaller(ListEdgeGroupCertsResponse::getBody, ListEdgeGroupCertsResponse::setBody)
+                .withInnerContainerType(EdgeGroupCertListResp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListEdgeGroupsRequest, ListEdgeGroupsResponse> listEdgeGroups =
-        genForlistEdgeGroups();
+        genForListEdgeGroups();
 
-    private static HttpRequestDef<ListEdgeGroupsRequest, ListEdgeGroupsResponse> genForlistEdgeGroups() {
+    private static HttpRequestDef<ListEdgeGroupsRequest, ListEdgeGroupsResponse> genForListEdgeGroups() {
         // basic
         HttpRequestDef.Builder<ListEdgeGroupsRequest, ListEdgeGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEdgeGroupsRequest.class, ListEdgeGroupsResponse.class)
@@ -2180,37 +1920,27 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeGroupsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEdgeGroupsRequest::getName, ListEdgeGroupsRequest::setName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEdgeGroupsRequest::getLimit, ListEdgeGroupsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEdgeGroupsRequest::getOffset, ListEdgeGroupsRequest::setOffset));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeGroupsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListEdgeGroupsRequest::getSort, ListEdgeGroupsRequest::setSort));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeGroupsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeGroupsRequest::getIefInstanceId, ListEdgeGroupsRequest::setIefInstanceId));
 
         // response
 
@@ -2218,9 +1948,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListEdgeNodeCertsRequest, ListEdgeNodeCertsResponse> listEdgeNodeCerts =
-        genForlistEdgeNodeCerts();
+        genForListEdgeNodeCerts();
 
-    private static HttpRequestDef<ListEdgeNodeCertsRequest, ListEdgeNodeCertsResponse> genForlistEdgeNodeCerts() {
+    private static HttpRequestDef<ListEdgeNodeCertsRequest, ListEdgeNodeCertsResponse> genForListEdgeNodeCerts() {
         // basic
         HttpRequestDef.Builder<ListEdgeNodeCertsRequest, ListEdgeNodeCertsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEdgeNodeCertsRequest.class, ListEdgeNodeCertsResponse.class)
@@ -2233,30 +1963,23 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodeCertsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodeCertsRequest::getNodeId, ListEdgeNodeCertsRequest::setNodeId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeNodeCertsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodeCertsRequest::getLimit, ListEdgeNodeCertsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeNodeCertsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodeCertsRequest::getOffset, ListEdgeNodeCertsRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodeCertsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodeCertsRequest::getIefInstanceId,
+                ListEdgeNodeCertsRequest::setIefInstanceId));
 
         // response
 
@@ -2264,9 +1987,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListEdgeNodesRequest, ListEdgeNodesResponse> listEdgeNodes =
-        genForlistEdgeNodes();
+        genForListEdgeNodes();
 
-    private static HttpRequestDef<ListEdgeNodesRequest, ListEdgeNodesResponse> genForlistEdgeNodes() {
+    private static HttpRequestDef<ListEdgeNodesRequest, ListEdgeNodesResponse> genForListEdgeNodes() {
         // basic
         HttpRequestDef.Builder<ListEdgeNodesRequest, ListEdgeNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEdgeNodesRequest.class, ListEdgeNodesResponse.class)
@@ -2279,79 +2002,57 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getName, ListEdgeNodesRequest::setName));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getLimit, ListEdgeNodesRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getOffset, ListEdgeNodesRequest::setOffset));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getSort, ListEdgeNodesRequest::setSort));
         builder.<String>withRequestField("device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getDeviceId, ListEdgeNodesRequest::setDeviceId));
         builder.<String>withRequestField("device_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getDeviceName, (req, v) -> {
-                req.setDeviceName(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getDeviceName, ListEdgeNodesRequest::setDeviceName));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getAppName, ListEdgeNodesRequest::setAppName));
         builder.<ListEdgeNodesRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEdgeNodesRequest.StateEnum.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getState, ListEdgeNodesRequest::setState));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getTags, ListEdgeNodesRequest::setTags));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getGroupId, ListEdgeNodesRequest::setGroupId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeNodesRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEdgeNodesRequest::getIefInstanceId, ListEdgeNodesRequest::setIefInstanceId));
 
         // response
 
@@ -2359,9 +2060,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse> listEncryptdataNodes =
-        genForlistEncryptdataNodes();
+        genForListEncryptdataNodes();
 
-    private static HttpRequestDef<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse> genForlistEncryptdataNodes() {
+    private static HttpRequestDef<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse> genForListEncryptdataNodes() {
         // basic
         HttpRequestDef.Builder<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEncryptdataNodesRequest.class, ListEncryptdataNodesResponse.class)
@@ -2374,30 +2075,24 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEncryptdataNodesRequest::getEncryptdataId, (req, v) -> {
-                req.setEncryptdataId(v);
-            }));
+            f -> f.withMarshaller(ListEncryptdataNodesRequest::getEncryptdataId,
+                ListEncryptdataNodesRequest::setEncryptdataId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncryptdataNodesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEncryptdataNodesRequest::getLimit, ListEncryptdataNodesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncryptdataNodesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEncryptdataNodesRequest::getOffset, ListEncryptdataNodesRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEncryptdataNodesRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEncryptdataNodesRequest::getIefInstanceId,
+                ListEncryptdataNodesRequest::setIefInstanceId));
 
         // response
 
@@ -2405,9 +2100,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListEncryptdatasRequest, ListEncryptdatasResponse> listEncryptdatas =
-        genForlistEncryptdatas();
+        genForListEncryptdatas();
 
-    private static HttpRequestDef<ListEncryptdatasRequest, ListEncryptdatasResponse> genForlistEncryptdatas() {
+    private static HttpRequestDef<ListEncryptdatasRequest, ListEncryptdatasResponse> genForListEncryptdatas() {
         // basic
         HttpRequestDef.Builder<ListEncryptdatasRequest, ListEncryptdatasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEncryptdatasRequest.class, ListEncryptdatasResponse.class)
@@ -2420,30 +2115,23 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEncryptdatasRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEncryptdatasRequest::getName, ListEncryptdatasRequest::setName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncryptdatasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEncryptdatasRequest::getLimit, ListEncryptdatasRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncryptdatasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEncryptdatasRequest::getOffset, ListEncryptdatasRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEncryptdatasRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEncryptdatasRequest::getIefInstanceId,
+                ListEncryptdatasRequest::setIefInstanceId));
 
         // response
 
@@ -2451,9 +2139,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> listEndpoints =
-        genForlistEndpoints();
+        genForListEndpoints();
 
-    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForlistEndpoints() {
+    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForListEndpoints() {
         // basic
         HttpRequestDef.Builder<ListEndpointsRequest, ListEndpointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEndpointsRequest.class, ListEndpointsResponse.class)
@@ -2466,44 +2154,32 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getName, ListEndpointsRequest::setName));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getType, ListEndpointsRequest::setType));
         builder.<String>withRequestField("is_shared",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getIsShared, (req, v) -> {
-                req.setIsShared(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getIsShared, ListEndpointsRequest::setIsShared));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getLimit, ListEndpointsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getOffset, ListEndpointsRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEndpointsRequest::getIefInstanceId, ListEndpointsRequest::setIefInstanceId));
 
         // response
 
@@ -2511,9 +2187,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse> listNodeEncryptdatas =
-        genForlistNodeEncryptdatas();
+        genForListNodeEncryptdatas();
 
-    private static HttpRequestDef<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse> genForlistNodeEncryptdatas() {
+    private static HttpRequestDef<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse> genForListNodeEncryptdatas() {
         // basic
         HttpRequestDef.Builder<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListNodeEncryptdatasRequest.class, ListNodeEncryptdatasResponse.class)
@@ -2526,39 +2202,32 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getNodeId, ListNodeEncryptdatasRequest::setNodeId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getLimit, ListNodeEncryptdatasRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getOffset, ListNodeEncryptdatasRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListNodeEncryptdatasRequest::getIefInstanceId,
+                ListNodeEncryptdatasRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPodsRequest, ListPodsResponse> listPods = genForlistPods();
+    public static final HttpRequestDef<ListPodsRequest, ListPodsResponse> listPods = genForListPods();
 
-    private static HttpRequestDef<ListPodsRequest, ListPodsResponse> genForlistPods() {
+    private static HttpRequestDef<ListPodsRequest, ListPodsResponse> genForListPods() {
         // basic
         HttpRequestDef.Builder<ListPodsRequest, ListPodsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPodsRequest.class, ListPodsResponse.class)
@@ -2571,67 +2240,51 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPodsRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListPodsRequest::getNodeId, ListPodsRequest::setNodeId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPodsRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListPodsRequest::getGroupId, ListPodsRequest::setGroupId));
         builder.<String>withRequestField("deployment_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPodsRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(ListPodsRequest::getDeploymentId, ListPodsRequest::setDeploymentId));
         builder.<String>withRequestField("deployment_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPodsRequest::getDeploymentIds, (req, v) -> {
-                req.setDeploymentIds(v);
-            }));
+            f -> f.withMarshaller(ListPodsRequest::getDeploymentIds, ListPodsRequest::setDeploymentIds));
         builder.<String>withRequestField("plugin_instance_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPodsRequest::getPluginInstanceName, (req, v) -> {
-                req.setPluginInstanceName(v);
-            }));
+            f -> f.withMarshaller(ListPodsRequest::getPluginInstanceName, ListPodsRequest::setPluginInstanceName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPodsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPodsRequest::getLimit, ListPodsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPodsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPodsRequest::getOffset, ListPodsRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPodsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPodsRequest::getIefInstanceId, ListPodsRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForlistProducts();
+    public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForListProducts();
 
-    private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForlistProducts() {
+    private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForListProducts() {
         // basic
         HttpRequestDef.Builder<ListProductsRequest, ListProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductsRequest.class, ListProductsResponse.class)
@@ -2644,30 +2297,22 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getLimit, ListProductsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getOffset, ListProductsRequest::setOffset));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getSort, ListProductsRequest::setSort));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getIefInstanceId, ListProductsRequest::setIefInstanceId));
 
         // response
 
@@ -2675,9 +2320,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListResourceByTagsRequest, ListResourceByTagsResponse> listResourceByTags =
-        genForlistResourceByTags();
+        genForListResourceByTags();
 
-    private static HttpRequestDef<ListResourceByTagsRequest, ListResourceByTagsResponse> genForlistResourceByTags() {
+    private static HttpRequestDef<ListResourceByTagsRequest, ListResourceByTagsResponse> genForListResourceByTags() {
         // basic
         HttpRequestDef.Builder<ListResourceByTagsRequest, ListResourceByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListResourceByTagsRequest.class, ListResourceByTagsResponse.class)
@@ -2690,23 +2335,19 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceByTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceByTagsRequest::getResourceType,
+                ListResourceByTagsRequest::setResourceType));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceByTagsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListResourceByTagsRequest::getIefInstanceId,
+                ListResourceByTagsRequest::setIefInstanceId));
         builder.<Tags>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Tags.class),
-            f -> f.withMarshaller(ListResourceByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceByTagsRequest::getBody, ListResourceByTagsRequest::setBody));
 
         // response
 
@@ -2714,9 +2355,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListRuleErrorsRequest, ListRuleErrorsResponse> listRuleErrors =
-        genForlistRuleErrors();
+        genForListRuleErrors();
 
-    private static HttpRequestDef<ListRuleErrorsRequest, ListRuleErrorsResponse> genForlistRuleErrors() {
+    private static HttpRequestDef<ListRuleErrorsRequest, ListRuleErrorsResponse> genForListRuleErrors() {
         // basic
         HttpRequestDef.Builder<ListRuleErrorsRequest, ListRuleErrorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRuleErrorsRequest.class, ListRuleErrorsResponse.class)
@@ -2729,39 +2370,31 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRuleErrorsRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(ListRuleErrorsRequest::getRuleId, ListRuleErrorsRequest::setRuleId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRuleErrorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRuleErrorsRequest::getLimit, ListRuleErrorsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRuleErrorsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRuleErrorsRequest::getOffset, ListRuleErrorsRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRuleErrorsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRuleErrorsRequest::getIefInstanceId, ListRuleErrorsRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRulesRequest, ListRulesResponse> listRules = genForlistRules();
+    public static final HttpRequestDef<ListRulesRequest, ListRulesResponse> listRules = genForListRules();
 
-    private static HttpRequestDef<ListRulesRequest, ListRulesResponse> genForlistRules() {
+    private static HttpRequestDef<ListRulesRequest, ListRulesResponse> genForListRules() {
         // basic
         HttpRequestDef.Builder<ListRulesRequest, ListRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRulesRequest.class, ListRulesResponse.class)
@@ -2774,39 +2407,31 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRulesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRulesRequest::getName, ListRulesRequest::setName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRulesRequest::getLimit, ListRulesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRulesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRulesRequest::getOffset, ListRulesRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRulesRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRulesRequest::getIefInstanceId, ListRulesRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSecretsRequest, ListSecretsResponse> listSecrets = genForlistSecrets();
+    public static final HttpRequestDef<ListSecretsRequest, ListSecretsResponse> listSecrets = genForListSecrets();
 
-    private static HttpRequestDef<ListSecretsRequest, ListSecretsResponse> genForlistSecrets() {
+    private static HttpRequestDef<ListSecretsRequest, ListSecretsResponse> genForListSecrets() {
         // basic
         HttpRequestDef.Builder<ListSecretsRequest, ListSecretsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecretsRequest.class, ListSecretsResponse.class)
@@ -2819,46 +2444,36 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getName, ListSecretsRequest::setName));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getLimit, ListSecretsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getOffset, ListSecretsRequest::setOffset));
         builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getSort, ListSecretsRequest::setSort));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSecretsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSecretsRequest::getIefInstanceId, ListSecretsRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListServicesRequest, ListServicesResponse> listServices = genForlistServices();
+    public static final HttpRequestDef<ListServicesRequest, ListServicesResponse> listServices = genForListServices();
 
-    private static HttpRequestDef<ListServicesRequest, ListServicesResponse> genForlistServices() {
+    private static HttpRequestDef<ListServicesRequest, ListServicesResponse> genForListServices() {
         // basic
         HttpRequestDef.Builder<ListServicesRequest, ListServicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServicesRequest.class, ListServicesResponse.class)
@@ -2871,44 +2486,32 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListServicesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getLimit, ListServicesRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListServicesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getOffset, ListServicesRequest::setOffset));
         builder.<String>withRequestField("sorted",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicesRequest::getSorted, (req, v) -> {
-                req.setSorted(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getSorted, ListServicesRequest::setSorted));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getName, ListServicesRequest::setName));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicesRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getApp, ListServicesRequest::setApp));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicesRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getIefInstanceId, ListServicesRequest::setIefInstanceId));
 
         // response
 
@@ -2916,9 +2519,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListSystemEventsRequest, ListSystemEventsResponse> listSystemEvents =
-        genForlistSystemEvents();
+        genForListSystemEvents();
 
-    private static HttpRequestDef<ListSystemEventsRequest, ListSystemEventsResponse> genForlistSystemEvents() {
+    private static HttpRequestDef<ListSystemEventsRequest, ListSystemEventsResponse> genForListSystemEvents() {
         // basic
         HttpRequestDef.Builder<ListSystemEventsRequest, ListSystemEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSystemEventsRequest.class, ListSystemEventsResponse.class)
@@ -2931,39 +2534,32 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSystemEventsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSystemEventsRequest::getName, ListSystemEventsRequest::setName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSystemEventsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSystemEventsRequest::getLimit, ListSystemEventsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSystemEventsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSystemEventsRequest::getOffset, ListSystemEventsRequest::setOffset));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSystemEventsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSystemEventsRequest::getIefInstanceId,
+                ListSystemEventsRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
 
-    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
         // basic
         HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
@@ -2976,23 +2572,17 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getResourceId, ListTagsRequest::setResourceId));
         builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getResourceType, ListTagsRequest::setResourceType));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getIefInstanceId, ListTagsRequest::setIefInstanceId));
 
         // response
 
@@ -3000,9 +2590,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ListTagsByResourceTypeRequest, ListTagsByResourceTypeResponse> listTagsByResourceType =
-        genForlistTagsByResourceType();
+        genForListTagsByResourceType();
 
-    private static HttpRequestDef<ListTagsByResourceTypeRequest, ListTagsByResourceTypeResponse> genForlistTagsByResourceType() {
+    private static HttpRequestDef<ListTagsByResourceTypeRequest, ListTagsByResourceTypeResponse> genForListTagsByResourceType() {
         // basic
         HttpRequestDef.Builder<ListTagsByResourceTypeRequest, ListTagsByResourceTypeResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTagsByResourceTypeRequest.class, ListTagsByResourceTypeResponse.class)
@@ -3015,16 +2605,14 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsByResourceTypeRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListTagsByResourceTypeRequest::getResourceType,
+                ListTagsByResourceTypeRequest::setResourceType));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsByResourceTypeRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTagsByResourceTypeRequest::getIefInstanceId,
+                ListTagsByResourceTypeRequest::setIefInstanceId));
 
         // response
 
@@ -3032,9 +2620,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse> restartDeploymentsPod =
-        genForrestartDeploymentsPod();
+        genForRestartDeploymentsPod();
 
-    private static HttpRequestDef<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse> genForrestartDeploymentsPod() {
+    private static HttpRequestDef<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse> genForRestartDeploymentsPod() {
         // basic
         HttpRequestDef.Builder<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RestartDeploymentsPodRequest.class, RestartDeploymentsPodResponse.class)
@@ -3047,40 +2635,34 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartDeploymentsPodRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(RestartDeploymentsPodRequest::getDeploymentId,
+                RestartDeploymentsPodRequest::setDeploymentId));
         builder.<String>withRequestField("pod_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartDeploymentsPodRequest::getPodName, (req, v) -> {
-                req.setPodName(v);
-            }));
+            f -> f.withMarshaller(RestartDeploymentsPodRequest::getPodName, RestartDeploymentsPodRequest::setPodName));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartDeploymentsPodRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestartDeploymentsPodRequest::getIefInstanceId,
+                RestartDeploymentsPodRequest::setIefInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(RestartDeploymentsPodResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(RestartDeploymentsPodResponse::getBody, RestartDeploymentsPodResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<RestoreBatchJobRequest, RestoreBatchJobResponse> restoreBatchJob =
-        genForrestoreBatchJob();
+        genForRestoreBatchJob();
 
-    private static HttpRequestDef<RestoreBatchJobRequest, RestoreBatchJobResponse> genForrestoreBatchJob() {
+    private static HttpRequestDef<RestoreBatchJobRequest, RestoreBatchJobResponse> genForRestoreBatchJob() {
         // basic
         HttpRequestDef.Builder<RestoreBatchJobRequest, RestoreBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreBatchJobRequest.class, RestoreBatchJobResponse.class)
@@ -3093,33 +2675,27 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreBatchJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(RestoreBatchJobRequest::getJobId, RestoreBatchJobRequest::setJobId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreBatchJobRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestoreBatchJobRequest::getIefInstanceId, RestoreBatchJobRequest::setIefInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(RestoreBatchJobResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(RestoreBatchJobResponse::getBody, RestoreBatchJobResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<RetryBatchJobRequest, RetryBatchJobResponse> retryBatchJob =
-        genForretryBatchJob();
+        genForRetryBatchJob();
 
-    private static HttpRequestDef<RetryBatchJobRequest, RetryBatchJobResponse> genForretryBatchJob() {
+    private static HttpRequestDef<RetryBatchJobRequest, RetryBatchJobResponse> genForRetryBatchJob() {
         // basic
         HttpRequestDef.Builder<RetryBatchJobRequest, RetryBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RetryBatchJobRequest.class, RetryBatchJobResponse.class)
@@ -3132,33 +2708,27 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryBatchJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(RetryBatchJobRequest::getJobId, RetryBatchJobRequest::setJobId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RetryBatchJobRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(RetryBatchJobRequest::getIefInstanceId, RetryBatchJobRequest::setIefInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(RetryBatchJobResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(RetryBatchJobResponse::getBody, RetryBatchJobResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowAppDetailRequest, ShowAppDetailResponse> showAppDetail =
-        genForshowAppDetail();
+        genForShowAppDetail();
 
-    private static HttpRequestDef<ShowAppDetailRequest, ShowAppDetailResponse> genForshowAppDetail() {
+    private static HttpRequestDef<ShowAppDetailRequest, ShowAppDetailResponse> genForShowAppDetail() {
         // basic
         HttpRequestDef.Builder<ShowAppDetailRequest, ShowAppDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppDetailRequest.class, ShowAppDetailResponse.class)
@@ -3171,16 +2741,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppDetailRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowAppDetailRequest::getAppId, ShowAppDetailRequest::setAppId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppDetailRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAppDetailRequest::getIefInstanceId, ShowAppDetailRequest::setIefInstanceId));
 
         // response
 
@@ -3188,9 +2754,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowAppVersionDetailRequest, ShowAppVersionDetailResponse> showAppVersionDetail =
-        genForshowAppVersionDetail();
+        genForShowAppVersionDetail();
 
-    private static HttpRequestDef<ShowAppVersionDetailRequest, ShowAppVersionDetailResponse> genForshowAppVersionDetail() {
+    private static HttpRequestDef<ShowAppVersionDetailRequest, ShowAppVersionDetailResponse> genForShowAppVersionDetail() {
         // basic
         HttpRequestDef.Builder<ShowAppVersionDetailRequest, ShowAppVersionDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAppVersionDetailRequest.class, ShowAppVersionDetailResponse.class)
@@ -3203,32 +2769,28 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppVersionDetailRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowAppVersionDetailRequest::getAppId, ShowAppVersionDetailRequest::setAppId));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppVersionDetailRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(ShowAppVersionDetailRequest::getVersionId,
+                ShowAppVersionDetailRequest::setVersionId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppVersionDetailRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAppVersionDetailRequest::getIefInstanceId,
+                ShowAppVersionDetailRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBatchJobRequest, ShowBatchJobResponse> showBatchJob = genForshowBatchJob();
+    public static final HttpRequestDef<ShowBatchJobRequest, ShowBatchJobResponse> showBatchJob = genForShowBatchJob();
 
-    private static HttpRequestDef<ShowBatchJobRequest, ShowBatchJobResponse> genForshowBatchJob() {
+    private static HttpRequestDef<ShowBatchJobRequest, ShowBatchJobResponse> genForShowBatchJob() {
         // basic
         HttpRequestDef.Builder<ShowBatchJobRequest, ShowBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBatchJobRequest.class, ShowBatchJobResponse.class)
@@ -3241,16 +2803,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBatchJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowBatchJobRequest::getJobId, ShowBatchJobRequest::setJobId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBatchJobRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowBatchJobRequest::getIefInstanceId, ShowBatchJobRequest::setIefInstanceId));
 
         // response
 
@@ -3258,9 +2816,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowConfigMapRequest, ShowConfigMapResponse> showConfigMap =
-        genForshowConfigMap();
+        genForShowConfigMap();
 
-    private static HttpRequestDef<ShowConfigMapRequest, ShowConfigMapResponse> genForshowConfigMap() {
+    private static HttpRequestDef<ShowConfigMapRequest, ShowConfigMapResponse> genForShowConfigMap() {
         // basic
         HttpRequestDef.Builder<ShowConfigMapRequest, ShowConfigMapResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConfigMapRequest.class, ShowConfigMapResponse.class)
@@ -3273,16 +2831,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigMapRequest::getConfigmapId, (req, v) -> {
-                req.setConfigmapId(v);
-            }));
+            f -> f.withMarshaller(ShowConfigMapRequest::getConfigmapId, ShowConfigMapRequest::setConfigmapId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigMapRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowConfigMapRequest::getIefInstanceId, ShowConfigMapRequest::setIefInstanceId));
 
         // response
 
@@ -3290,9 +2844,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowDeploymentRequest, ShowDeploymentResponse> showDeployment =
-        genForshowDeployment();
+        genForShowDeployment();
 
-    private static HttpRequestDef<ShowDeploymentRequest, ShowDeploymentResponse> genForshowDeployment() {
+    private static HttpRequestDef<ShowDeploymentRequest, ShowDeploymentResponse> genForShowDeployment() {
         // basic
         HttpRequestDef.Builder<ShowDeploymentRequest, ShowDeploymentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeploymentRequest.class, ShowDeploymentResponse.class)
@@ -3305,25 +2859,21 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentRequest::getDeploymentId, ShowDeploymentRequest::setDeploymentId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeploymentRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeploymentRequest::getIefInstanceId, ShowDeploymentRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> showDevice = genForshowDevice();
+    public static final HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> showDevice = genForShowDevice();
 
-    private static HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> genForshowDevice() {
+    private static HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> genForShowDevice() {
         // basic
         HttpRequestDef.Builder<ShowDeviceRequest, ShowDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceRequest.class, ShowDeviceResponse.class)
@@ -3336,16 +2886,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceRequest::getDeviceId, ShowDeviceRequest::setDeviceId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceRequest::getIefInstanceId, ShowDeviceRequest::setIefInstanceId));
 
         // response
 
@@ -3353,9 +2899,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowDeviceTemplateRequest, ShowDeviceTemplateResponse> showDeviceTemplate =
-        genForshowDeviceTemplate();
+        genForShowDeviceTemplate();
 
-    private static HttpRequestDef<ShowDeviceTemplateRequest, ShowDeviceTemplateResponse> genForshowDeviceTemplate() {
+    private static HttpRequestDef<ShowDeviceTemplateRequest, ShowDeviceTemplateResponse> genForShowDeviceTemplate() {
         // basic
         HttpRequestDef.Builder<ShowDeviceTemplateRequest, ShowDeviceTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceTemplateRequest.class, ShowDeviceTemplateResponse.class)
@@ -3368,16 +2914,14 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceTemplateRequest::getDeviceTemplateId, (req, v) -> {
-                req.setDeviceTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceTemplateRequest::getDeviceTemplateId,
+                ShowDeviceTemplateRequest::setDeviceTemplateId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceTemplateRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceTemplateRequest::getIefInstanceId,
+                ShowDeviceTemplateRequest::setIefInstanceId));
 
         // response
 
@@ -3385,9 +2929,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowDeviceTwinRequest, ShowDeviceTwinResponse> showDeviceTwin =
-        genForshowDeviceTwin();
+        genForShowDeviceTwin();
 
-    private static HttpRequestDef<ShowDeviceTwinRequest, ShowDeviceTwinResponse> genForshowDeviceTwin() {
+    private static HttpRequestDef<ShowDeviceTwinRequest, ShowDeviceTwinResponse> genForShowDeviceTwin() {
         // basic
         HttpRequestDef.Builder<ShowDeviceTwinRequest, ShowDeviceTwinResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceTwinRequest.class, ShowDeviceTwinResponse.class)
@@ -3400,16 +2944,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceTwinRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceTwinRequest::getDeviceId, ShowDeviceTwinRequest::setDeviceId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceTwinRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceTwinRequest::getIefInstanceId, ShowDeviceTwinRequest::setIefInstanceId));
 
         // response
 
@@ -3417,9 +2957,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowEdgeGroupCertDetailRequest, ShowEdgeGroupCertDetailResponse> showEdgeGroupCertDetail =
-        genForshowEdgeGroupCertDetail();
+        genForShowEdgeGroupCertDetail();
 
-    private static HttpRequestDef<ShowEdgeGroupCertDetailRequest, ShowEdgeGroupCertDetailResponse> genForshowEdgeGroupCertDetail() {
+    private static HttpRequestDef<ShowEdgeGroupCertDetailRequest, ShowEdgeGroupCertDetailResponse> genForShowEdgeGroupCertDetail() {
         // basic
         HttpRequestDef.Builder<ShowEdgeGroupCertDetailRequest, ShowEdgeGroupCertDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEdgeGroupCertDetailRequest.class, ShowEdgeGroupCertDetailResponse.class)
@@ -3432,23 +2972,20 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeGroupCertDetailRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeGroupCertDetailRequest::getGroupId,
+                ShowEdgeGroupCertDetailRequest::setGroupId));
         builder.<String>withRequestField("group_cert_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeGroupCertDetailRequest::getGroupCertId, (req, v) -> {
-                req.setGroupCertId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeGroupCertDetailRequest::getGroupCertId,
+                ShowEdgeGroupCertDetailRequest::setGroupCertId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeGroupCertDetailRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeGroupCertDetailRequest::getIefInstanceId,
+                ShowEdgeGroupCertDetailRequest::setIefInstanceId));
 
         // response
 
@@ -3456,9 +2993,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowEdgeGroupDetailRequest, ShowEdgeGroupDetailResponse> showEdgeGroupDetail =
-        genForshowEdgeGroupDetail();
+        genForShowEdgeGroupDetail();
 
-    private static HttpRequestDef<ShowEdgeGroupDetailRequest, ShowEdgeGroupDetailResponse> genForshowEdgeGroupDetail() {
+    private static HttpRequestDef<ShowEdgeGroupDetailRequest, ShowEdgeGroupDetailResponse> genForShowEdgeGroupDetail() {
         // basic
         HttpRequestDef.Builder<ShowEdgeGroupDetailRequest, ShowEdgeGroupDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEdgeGroupDetailRequest.class, ShowEdgeGroupDetailResponse.class)
@@ -3471,16 +3008,13 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeGroupDetailRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeGroupDetailRequest::getGroupId, ShowEdgeGroupDetailRequest::setGroupId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeGroupDetailRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeGroupDetailRequest::getIefInstanceId,
+                ShowEdgeGroupDetailRequest::setIefInstanceId));
 
         // response
 
@@ -3488,9 +3022,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowEdgeNodeDetailRequest, ShowEdgeNodeDetailResponse> showEdgeNodeDetail =
-        genForshowEdgeNodeDetail();
+        genForShowEdgeNodeDetail();
 
-    private static HttpRequestDef<ShowEdgeNodeDetailRequest, ShowEdgeNodeDetailResponse> genForshowEdgeNodeDetail() {
+    private static HttpRequestDef<ShowEdgeNodeDetailRequest, ShowEdgeNodeDetailResponse> genForShowEdgeNodeDetail() {
         // basic
         HttpRequestDef.Builder<ShowEdgeNodeDetailRequest, ShowEdgeNodeDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEdgeNodeDetailRequest.class, ShowEdgeNodeDetailResponse.class)
@@ -3503,16 +3037,13 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeNodeDetailRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeNodeDetailRequest::getNodeId, ShowEdgeNodeDetailRequest::setNodeId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEdgeNodeDetailRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowEdgeNodeDetailRequest::getIefInstanceId,
+                ShowEdgeNodeDetailRequest::setIefInstanceId));
 
         // response
 
@@ -3520,9 +3051,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowEncryptdatasRequest, ShowEncryptdatasResponse> showEncryptdatas =
-        genForshowEncryptdatas();
+        genForShowEncryptdatas();
 
-    private static HttpRequestDef<ShowEncryptdatasRequest, ShowEncryptdatasResponse> genForshowEncryptdatas() {
+    private static HttpRequestDef<ShowEncryptdatasRequest, ShowEncryptdatasResponse> genForShowEncryptdatas() {
         // basic
         HttpRequestDef.Builder<ShowEncryptdatasRequest, ShowEncryptdatasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEncryptdatasRequest.class, ShowEncryptdatasResponse.class)
@@ -3535,16 +3066,14 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEncryptdatasRequest::getEncryptdataId, (req, v) -> {
-                req.setEncryptdataId(v);
-            }));
+            f -> f.withMarshaller(ShowEncryptdatasRequest::getEncryptdataId,
+                ShowEncryptdatasRequest::setEncryptdataId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEncryptdatasRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowEncryptdatasRequest::getIefInstanceId,
+                ShowEncryptdatasRequest::setIefInstanceId));
 
         // response
 
@@ -3552,9 +3081,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowEndPointDetailRequest, ShowEndPointDetailResponse> showEndPointDetail =
-        genForshowEndPointDetail();
+        genForShowEndPointDetail();
 
-    private static HttpRequestDef<ShowEndPointDetailRequest, ShowEndPointDetailResponse> genForshowEndPointDetail() {
+    private static HttpRequestDef<ShowEndPointDetailRequest, ShowEndPointDetailResponse> genForShowEndPointDetail() {
         // basic
         HttpRequestDef.Builder<ShowEndPointDetailRequest, ShowEndPointDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEndPointDetailRequest.class, ShowEndPointDetailResponse.class)
@@ -3567,16 +3096,13 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEndPointDetailRequest::getEndpointId, (req, v) -> {
-                req.setEndpointId(v);
-            }));
+            f -> f.withMarshaller(ShowEndPointDetailRequest::getEndpointId, ShowEndPointDetailRequest::setEndpointId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEndPointDetailRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowEndPointDetailRequest::getIefInstanceId,
+                ShowEndPointDetailRequest::setIefInstanceId));
 
         // response
 
@@ -3584,9 +3110,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowProductDetailRequest, ShowProductDetailResponse> showProductDetail =
-        genForshowProductDetail();
+        genForShowProductDetail();
 
-    private static HttpRequestDef<ShowProductDetailRequest, ShowProductDetailResponse> genForshowProductDetail() {
+    private static HttpRequestDef<ShowProductDetailRequest, ShowProductDetailResponse> genForShowProductDetail() {
         // basic
         HttpRequestDef.Builder<ShowProductDetailRequest, ShowProductDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProductDetailRequest.class, ShowProductDetailResponse.class)
@@ -3599,25 +3125,22 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProductDetailRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ShowProductDetailRequest::getProductId, ShowProductDetailRequest::setProductId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProductDetailRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowProductDetailRequest::getIefInstanceId,
+                ShowProductDetailRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForshowQuota();
+    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForShowQuota();
 
-    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForshowQuota() {
+    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForShowQuota() {
         // basic
         HttpRequestDef.Builder<ShowQuotaRequest, ShowQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
@@ -3630,9 +3153,7 @@ public class IefMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQuotaRequest::getTypes, (req, v) -> {
-                req.setTypes(v);
-            }));
+            f -> f.withMarshaller(ShowQuotaRequest::getTypes, ShowQuotaRequest::setTypes));
 
         // response
 
@@ -3640,9 +3161,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowRuleDetailRequest, ShowRuleDetailResponse> showRuleDetail =
-        genForshowRuleDetail();
+        genForShowRuleDetail();
 
-    private static HttpRequestDef<ShowRuleDetailRequest, ShowRuleDetailResponse> genForshowRuleDetail() {
+    private static HttpRequestDef<ShowRuleDetailRequest, ShowRuleDetailResponse> genForShowRuleDetail() {
         // basic
         HttpRequestDef.Builder<ShowRuleDetailRequest, ShowRuleDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRuleDetailRequest.class, ShowRuleDetailResponse.class)
@@ -3655,25 +3176,21 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRuleDetailRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowRuleDetailRequest::getRuleId, ShowRuleDetailRequest::setRuleId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRuleDetailRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRuleDetailRequest::getIefInstanceId, ShowRuleDetailRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSecretRequest, ShowSecretResponse> showSecret = genForshowSecret();
+    public static final HttpRequestDef<ShowSecretRequest, ShowSecretResponse> showSecret = genForShowSecret();
 
-    private static HttpRequestDef<ShowSecretRequest, ShowSecretResponse> genForshowSecret() {
+    private static HttpRequestDef<ShowSecretRequest, ShowSecretResponse> genForShowSecret() {
         // basic
         HttpRequestDef.Builder<ShowSecretRequest, ShowSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecretRequest.class, ShowSecretResponse.class)
@@ -3686,16 +3203,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecretRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
+            f -> f.withMarshaller(ShowSecretRequest::getSecretId, ShowSecretRequest::setSecretId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSecretRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSecretRequest::getIefInstanceId, ShowSecretRequest::setIefInstanceId));
 
         // response
 
@@ -3703,9 +3216,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowServiceDetailRequest, ShowServiceDetailResponse> showServiceDetail =
-        genForshowServiceDetail();
+        genForShowServiceDetail();
 
-    private static HttpRequestDef<ShowServiceDetailRequest, ShowServiceDetailResponse> genForshowServiceDetail() {
+    private static HttpRequestDef<ShowServiceDetailRequest, ShowServiceDetailResponse> genForShowServiceDetail() {
         // basic
         HttpRequestDef.Builder<ShowServiceDetailRequest, ShowServiceDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServiceDetailRequest.class, ShowServiceDetailResponse.class)
@@ -3718,16 +3231,13 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServiceDetailRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ShowServiceDetailRequest::getServiceId, ShowServiceDetailRequest::setServiceId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServiceDetailRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowServiceDetailRequest::getIefInstanceId,
+                ShowServiceDetailRequest::setIefInstanceId));
 
         // response
 
@@ -3735,9 +3245,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<ShowSystemEventDetailRequest, ShowSystemEventDetailResponse> showSystemEventDetail =
-        genForshowSystemEventDetail();
+        genForShowSystemEventDetail();
 
-    private static HttpRequestDef<ShowSystemEventDetailRequest, ShowSystemEventDetailResponse> genForshowSystemEventDetail() {
+    private static HttpRequestDef<ShowSystemEventDetailRequest, ShowSystemEventDetailResponse> genForShowSystemEventDetail() {
         // basic
         HttpRequestDef.Builder<ShowSystemEventDetailRequest, ShowSystemEventDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowSystemEventDetailRequest.class, ShowSystemEventDetailResponse.class)
@@ -3750,25 +3260,22 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSystemEventDetailRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(ShowSystemEventDetailRequest::getEventId, ShowSystemEventDetailRequest::setEventId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSystemEventDetailRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowSystemEventDetailRequest::getIefInstanceId,
+                ShowSystemEventDetailRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartRuleRequest, StartRuleResponse> startRule = genForstartRule();
+    public static final HttpRequestDef<StartRuleRequest, StartRuleResponse> startRule = genForStartRule();
 
-    private static HttpRequestDef<StartRuleRequest, StartRuleResponse> genForstartRule() {
+    private static HttpRequestDef<StartRuleRequest, StartRuleResponse> genForStartRule() {
         // basic
         HttpRequestDef.Builder<StartRuleRequest, StartRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartRuleRequest.class, StartRuleResponse.class)
@@ -3781,16 +3288,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(StartRuleRequest::getRuleId, StartRuleRequest::setRuleId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartRuleRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(StartRuleRequest::getIefInstanceId, StartRuleRequest::setIefInstanceId));
 
         // response
 
@@ -3798,9 +3301,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<StartSystemEventRequest, StartSystemEventResponse> startSystemEvent =
-        genForstartSystemEvent();
+        genForStartSystemEvent();
 
-    private static HttpRequestDef<StartSystemEventRequest, StartSystemEventResponse> genForstartSystemEvent() {
+    private static HttpRequestDef<StartSystemEventRequest, StartSystemEventResponse> genForStartSystemEvent() {
         // basic
         HttpRequestDef.Builder<StartSystemEventRequest, StartSystemEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartSystemEventRequest.class, StartSystemEventResponse.class)
@@ -3813,25 +3316,22 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartSystemEventRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(StartSystemEventRequest::getEventId, StartSystemEventRequest::setEventId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartSystemEventRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(StartSystemEventRequest::getIefInstanceId,
+                StartSystemEventRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopBatchJobRequest, StopBatchJobResponse> stopBatchJob = genForstopBatchJob();
+    public static final HttpRequestDef<StopBatchJobRequest, StopBatchJobResponse> stopBatchJob = genForStopBatchJob();
 
-    private static HttpRequestDef<StopBatchJobRequest, StopBatchJobResponse> genForstopBatchJob() {
+    private static HttpRequestDef<StopBatchJobRequest, StopBatchJobResponse> genForStopBatchJob() {
         // basic
         HttpRequestDef.Builder<StopBatchJobRequest, StopBatchJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopBatchJobRequest.class, StopBatchJobResponse.class)
@@ -3844,32 +3344,26 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopBatchJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(StopBatchJobRequest::getJobId, StopBatchJobRequest::setJobId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopBatchJobRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(StopBatchJobRequest::getIefInstanceId, StopBatchJobRequest::setIefInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(StopBatchJobResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(StopBatchJobResponse::getBody, StopBatchJobResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopRuleRequest, StopRuleResponse> stopRule = genForstopRule();
+    public static final HttpRequestDef<StopRuleRequest, StopRuleResponse> stopRule = genForStopRule();
 
-    private static HttpRequestDef<StopRuleRequest, StopRuleResponse> genForstopRule() {
+    private static HttpRequestDef<StopRuleRequest, StopRuleResponse> genForStopRule() {
         // basic
         HttpRequestDef.Builder<StopRuleRequest, StopRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopRuleRequest.class, StopRuleResponse.class)
@@ -3882,16 +3376,12 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(StopRuleRequest::getRuleId, StopRuleRequest::setRuleId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopRuleRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(StopRuleRequest::getIefInstanceId, StopRuleRequest::setIefInstanceId));
 
         // response
 
@@ -3899,9 +3389,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<StopSystemEventRequest, StopSystemEventResponse> stopSystemEvent =
-        genForstopSystemEvent();
+        genForStopSystemEvent();
 
-    private static HttpRequestDef<StopSystemEventRequest, StopSystemEventResponse> genForstopSystemEvent() {
+    private static HttpRequestDef<StopSystemEventRequest, StopSystemEventResponse> genForStopSystemEvent() {
         // basic
         HttpRequestDef.Builder<StopSystemEventRequest, StopSystemEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopSystemEventRequest.class, StopSystemEventResponse.class)
@@ -3914,25 +3404,21 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopSystemEventRequest::getEventId, (req, v) -> {
-                req.setEventId(v);
-            }));
+            f -> f.withMarshaller(StopSystemEventRequest::getEventId, StopSystemEventRequest::setEventId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopSystemEventRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(StopSystemEventRequest::getIefInstanceId, StopSystemEventRequest::setIefInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForupdateApp();
+    public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForUpdateApp();
 
-    private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForupdateApp() {
+    private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForUpdateApp() {
         // basic
         HttpRequestDef.Builder<UpdateAppRequest, UpdateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppRequest.class, UpdateAppResponse.class)
@@ -3945,23 +3431,17 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getAppId, UpdateAppRequest::setAppId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getIefInstanceId, UpdateAppRequest::setIefInstanceId));
         builder.<UpdateAppBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAppBody.class),
-            f -> f.withMarshaller(UpdateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getBody, UpdateAppRequest::setBody));
 
         // response
 
@@ -3969,9 +3449,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateAppVersionRequest, UpdateAppVersionResponse> updateAppVersion =
-        genForupdateAppVersion();
+        genForUpdateAppVersion();
 
-    private static HttpRequestDef<UpdateAppVersionRequest, UpdateAppVersionResponse> genForupdateAppVersion() {
+    private static HttpRequestDef<UpdateAppVersionRequest, UpdateAppVersionResponse> genForUpdateAppVersion() {
         // basic
         HttpRequestDef.Builder<UpdateAppVersionRequest, UpdateAppVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppVersionRequest.class, UpdateAppVersionResponse.class)
@@ -3984,30 +3464,23 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppVersionRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppVersionRequest::getAppId, UpdateAppVersionRequest::setAppId));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppVersionRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppVersionRequest::getVersionId, UpdateAppVersionRequest::setVersionId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppVersionRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppVersionRequest::getIefInstanceId,
+                UpdateAppVersionRequest::setIefInstanceId));
         builder.<UpdataAppVersionBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdataAppVersionBody.class),
-            f -> f.withMarshaller(UpdateAppVersionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppVersionRequest::getBody, UpdateAppVersionRequest::setBody));
 
         // response
 
@@ -4015,9 +3488,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateConfigMapRequest, UpdateConfigMapResponse> updateConfigMap =
-        genForupdateConfigMap();
+        genForUpdateConfigMap();
 
-    private static HttpRequestDef<UpdateConfigMapRequest, UpdateConfigMapResponse> genForupdateConfigMap() {
+    private static HttpRequestDef<UpdateConfigMapRequest, UpdateConfigMapResponse> genForUpdateConfigMap() {
         // basic
         HttpRequestDef.Builder<UpdateConfigMapRequest, UpdateConfigMapResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateConfigMapRequest.class, UpdateConfigMapResponse.class)
@@ -4030,23 +3503,17 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConfigMapRequest::getConfigmapId, (req, v) -> {
-                req.setConfigmapId(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigMapRequest::getConfigmapId, UpdateConfigMapRequest::setConfigmapId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConfigMapRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigMapRequest::getIefInstanceId, UpdateConfigMapRequest::setIefInstanceId));
         builder.<UpdateConfigMaps>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateConfigMaps.class),
-            f -> f.withMarshaller(UpdateConfigMapRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateConfigMapRequest::getBody, UpdateConfigMapRequest::setBody));
 
         // response
 
@@ -4054,9 +3521,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateDeploymentRequest, UpdateDeploymentResponse> updateDeployment =
-        genForupdateDeployment();
+        genForUpdateDeployment();
 
-    private static HttpRequestDef<UpdateDeploymentRequest, UpdateDeploymentResponse> genForupdateDeployment() {
+    private static HttpRequestDef<UpdateDeploymentRequest, UpdateDeploymentResponse> genForUpdateDeployment() {
         // basic
         HttpRequestDef.Builder<UpdateDeploymentRequest, UpdateDeploymentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeploymentRequest.class, UpdateDeploymentResponse.class)
@@ -4069,32 +3536,27 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeploymentRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeploymentRequest::getDeploymentId, UpdateDeploymentRequest::setDeploymentId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeploymentRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeploymentRequest::getIefInstanceId,
+                UpdateDeploymentRequest::setIefInstanceId));
         builder.<UpdateDeployment>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDeployment.class),
-            f -> f.withMarshaller(UpdateDeploymentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDeploymentRequest::getBody, UpdateDeploymentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> updateDevice = genForupdateDevice();
+    public static final HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> updateDevice = genForUpdateDevice();
 
-    private static HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> genForupdateDevice() {
+    private static HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> genForUpdateDevice() {
         // basic
         HttpRequestDef.Builder<UpdateDeviceRequest, UpdateDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceRequest.class, UpdateDeviceResponse.class)
@@ -4107,23 +3569,17 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getDeviceId, UpdateDeviceRequest::setDeviceId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getIefInstanceId, UpdateDeviceRequest::setIefInstanceId));
         builder.<EdgemgrDevicesUpdate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EdgemgrDevicesUpdate.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getBody, UpdateDeviceRequest::setBody));
 
         // response
 
@@ -4131,9 +3587,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateDeviceTemplateByIdRequest, UpdateDeviceTemplateByIdResponse> updateDeviceTemplateById =
-        genForupdateDeviceTemplateById();
+        genForUpdateDeviceTemplateById();
 
-    private static HttpRequestDef<UpdateDeviceTemplateByIdRequest, UpdateDeviceTemplateByIdResponse> genForupdateDeviceTemplateById() {
+    private static HttpRequestDef<UpdateDeviceTemplateByIdRequest, UpdateDeviceTemplateByIdResponse> genForUpdateDeviceTemplateById() {
         // basic
         HttpRequestDef.Builder<UpdateDeviceTemplateByIdRequest, UpdateDeviceTemplateByIdResponse> builder =
             HttpRequestDef
@@ -4147,23 +3603,19 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceTemplateByIdRequest::getDeviceTemplateId, (req, v) -> {
-                req.setDeviceTemplateId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceTemplateByIdRequest::getDeviceTemplateId,
+                UpdateDeviceTemplateByIdRequest::setDeviceTemplateId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceTemplateByIdRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceTemplateByIdRequest::getIefInstanceId,
+                UpdateDeviceTemplateByIdRequest::setIefInstanceId));
         builder.<DeviceTemplateUpdate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeviceTemplateUpdate.class),
-            f -> f.withMarshaller(UpdateDeviceTemplateByIdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceTemplateByIdRequest::getBody, UpdateDeviceTemplateByIdRequest::setBody));
 
         // response
 
@@ -4171,9 +3623,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateDeviceTwinRequest, UpdateDeviceTwinResponse> updateDeviceTwin =
-        genForupdateDeviceTwin();
+        genForUpdateDeviceTwin();
 
-    private static HttpRequestDef<UpdateDeviceTwinRequest, UpdateDeviceTwinResponse> genForupdateDeviceTwin() {
+    private static HttpRequestDef<UpdateDeviceTwinRequest, UpdateDeviceTwinResponse> genForUpdateDeviceTwin() {
         // basic
         HttpRequestDef.Builder<UpdateDeviceTwinRequest, UpdateDeviceTwinResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceTwinRequest.class, UpdateDeviceTwinResponse.class)
@@ -4186,23 +3638,18 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceTwinRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceTwinRequest::getDeviceId, UpdateDeviceTwinRequest::setDeviceId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceTwinRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceTwinRequest::getIefInstanceId,
+                UpdateDeviceTwinRequest::setIefInstanceId));
         builder.<TwinUpdateDetail>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(TwinUpdateDetail.class),
-            f -> f.withMarshaller(UpdateDeviceTwinRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceTwinRequest::getBody, UpdateDeviceTwinRequest::setBody));
 
         // response
 
@@ -4210,9 +3657,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeGroupRequest, UpdateEdgeGroupResponse> updateEdgeGroup =
-        genForupdateEdgeGroup();
+        genForUpdateEdgeGroup();
 
-    private static HttpRequestDef<UpdateEdgeGroupRequest, UpdateEdgeGroupResponse> genForupdateEdgeGroup() {
+    private static HttpRequestDef<UpdateEdgeGroupRequest, UpdateEdgeGroupResponse> genForUpdateEdgeGroup() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeGroupRequest, UpdateEdgeGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEdgeGroupRequest.class, UpdateEdgeGroupResponse.class)
@@ -4225,23 +3672,17 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeGroupRequest::getGroupId, UpdateEdgeGroupRequest::setGroupId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeGroupRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeGroupRequest::getIefInstanceId, UpdateEdgeGroupRequest::setIefInstanceId));
         builder.<EdgeGroupUpdateRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EdgeGroupUpdateRequest.class),
-            f -> f.withMarshaller(UpdateEdgeGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeGroupRequest::getBody, UpdateEdgeGroupRequest::setBody));
 
         // response
 
@@ -4249,9 +3690,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeGroupNodeBindingRequest, UpdateEdgeGroupNodeBindingResponse> updateEdgeGroupNodeBinding =
-        genForupdateEdgeGroupNodeBinding();
+        genForUpdateEdgeGroupNodeBinding();
 
-    private static HttpRequestDef<UpdateEdgeGroupNodeBindingRequest, UpdateEdgeGroupNodeBindingResponse> genForupdateEdgeGroupNodeBinding() {
+    private static HttpRequestDef<UpdateEdgeGroupNodeBindingRequest, UpdateEdgeGroupNodeBindingResponse> genForUpdateEdgeGroupNodeBinding() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeGroupNodeBindingRequest, UpdateEdgeGroupNodeBindingResponse> builder =
             HttpRequestDef
@@ -4267,23 +3708,20 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeGroupNodeBindingRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeGroupNodeBindingRequest::getGroupId,
+                UpdateEdgeGroupNodeBindingRequest::setGroupId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeGroupNodeBindingRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeGroupNodeBindingRequest::getIefInstanceId,
+                UpdateEdgeGroupNodeBindingRequest::setIefInstanceId));
         builder.<UpdateGroupNodeBindingRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateGroupNodeBindingRequest.class),
-            f -> f.withMarshaller(UpdateEdgeGroupNodeBindingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeGroupNodeBindingRequest::getBody,
+                UpdateEdgeGroupNodeBindingRequest::setBody));
 
         // response
 
@@ -4291,9 +3729,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse> updateEdgeNode =
-        genForupdateEdgeNode();
+        genForUpdateEdgeNode();
 
-    private static HttpRequestDef<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse> genForupdateEdgeNode() {
+    private static HttpRequestDef<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse> genForUpdateEdgeNode() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEdgeNodeRequest.class, UpdateEdgeNodeResponse.class)
@@ -4306,23 +3744,17 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeNodeRequest::getNodeId, UpdateEdgeNodeRequest::setNodeId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeNodeRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeNodeRequest::getIefInstanceId, UpdateEdgeNodeRequest::setIefInstanceId));
         builder.<UpdateEdgeNodeBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateEdgeNodeBody.class),
-            f -> f.withMarshaller(UpdateEdgeNodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeNodeRequest::getBody, UpdateEdgeNodeRequest::setBody));
 
         // response
 
@@ -4330,9 +3762,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateEdgeNodeDeviceRequest, UpdateEdgeNodeDeviceResponse> updateEdgeNodeDevice =
-        genForupdateEdgeNodeDevice();
+        genForUpdateEdgeNodeDevice();
 
-    private static HttpRequestDef<UpdateEdgeNodeDeviceRequest, UpdateEdgeNodeDeviceResponse> genForupdateEdgeNodeDevice() {
+    private static HttpRequestDef<UpdateEdgeNodeDeviceRequest, UpdateEdgeNodeDeviceResponse> genForUpdateEdgeNodeDevice() {
         // basic
         HttpRequestDef.Builder<UpdateEdgeNodeDeviceRequest, UpdateEdgeNodeDeviceResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEdgeNodeDeviceRequest.class, UpdateEdgeNodeDeviceResponse.class)
@@ -4345,23 +3777,18 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeNodeDeviceRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeNodeDeviceRequest::getNodeId, UpdateEdgeNodeDeviceRequest::setNodeId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEdgeNodeDeviceRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeNodeDeviceRequest::getIefInstanceId,
+                UpdateEdgeNodeDeviceRequest::setIefInstanceId));
         builder.<Devices>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Devices.class),
-            f -> f.withMarshaller(UpdateEdgeNodeDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEdgeNodeDeviceRequest::getBody, UpdateEdgeNodeDeviceRequest::setBody));
 
         // response
 
@@ -4369,9 +3796,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse> updateEncryptdatas =
-        genForupdateEncryptdatas();
+        genForUpdateEncryptdatas();
 
-    private static HttpRequestDef<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse> genForupdateEncryptdatas() {
+    private static HttpRequestDef<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse> genForUpdateEncryptdatas() {
         // basic
         HttpRequestDef.Builder<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEncryptdatasRequest.class, UpdateEncryptdatasResponse.class)
@@ -4384,23 +3811,19 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEncryptdatasRequest::getEncryptdataId, (req, v) -> {
-                req.setEncryptdataId(v);
-            }));
+            f -> f.withMarshaller(UpdateEncryptdatasRequest::getEncryptdataId,
+                UpdateEncryptdatasRequest::setEncryptdataId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEncryptdatasRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEncryptdatasRequest::getIefInstanceId,
+                UpdateEncryptdatasRequest::setIefInstanceId));
         builder.<EncryptDataReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EncryptDataReq.class),
-            f -> f.withMarshaller(UpdateEncryptdatasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEncryptdatasRequest::getBody, UpdateEncryptdatasRequest::setBody));
 
         // response
 
@@ -4408,9 +3831,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateNodeByDeviceIdRequest, UpdateNodeByDeviceIdResponse> updateNodeByDeviceId =
-        genForupdateNodeByDeviceId();
+        genForUpdateNodeByDeviceId();
 
-    private static HttpRequestDef<UpdateNodeByDeviceIdRequest, UpdateNodeByDeviceIdResponse> genForupdateNodeByDeviceId() {
+    private static HttpRequestDef<UpdateNodeByDeviceIdRequest, UpdateNodeByDeviceIdResponse> genForUpdateNodeByDeviceId() {
         // basic
         HttpRequestDef.Builder<UpdateNodeByDeviceIdRequest, UpdateNodeByDeviceIdResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateNodeByDeviceIdRequest.class, UpdateNodeByDeviceIdResponse.class)
@@ -4423,32 +3846,27 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodeByDeviceIdRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeByDeviceIdRequest::getDeviceId, UpdateNodeByDeviceIdRequest::setDeviceId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNodeByDeviceIdRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeByDeviceIdRequest::getIefInstanceId,
+                UpdateNodeByDeviceIdRequest::setIefInstanceId));
         builder.<EdgeNodeUpdateByDevice>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EdgeNodeUpdateByDevice.class),
-            f -> f.withMarshaller(UpdateNodeByDeviceIdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNodeByDeviceIdRequest::getBody, UpdateNodeByDeviceIdRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> updateSecret = genForupdateSecret();
+    public static final HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> updateSecret = genForUpdateSecret();
 
-    private static HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> genForupdateSecret() {
+    private static HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> genForUpdateSecret() {
         // basic
         HttpRequestDef.Builder<UpdateSecretRequest, UpdateSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSecretRequest.class, UpdateSecretResponse.class)
@@ -4461,23 +3879,17 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecretRequest::getSecretId, (req, v) -> {
-                req.setSecretId(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretRequest::getSecretId, UpdateSecretRequest::setSecretId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSecretRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretRequest::getIefInstanceId, UpdateSecretRequest::setIefInstanceId));
         builder.<UpdateSecret>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecret.class),
-            f -> f.withMarshaller(UpdateSecretRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSecretRequest::getBody, UpdateSecretRequest::setBody));
 
         // response
 
@@ -4485,9 +3897,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpdateServiceRequest, UpdateServiceResponse> updateService =
-        genForupdateService();
+        genForUpdateService();
 
-    private static HttpRequestDef<UpdateServiceRequest, UpdateServiceResponse> genForupdateService() {
+    private static HttpRequestDef<UpdateServiceRequest, UpdateServiceResponse> genForUpdateService() {
         // basic
         HttpRequestDef.Builder<UpdateServiceRequest, UpdateServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateServiceRequest.class, UpdateServiceResponse.class)
@@ -4500,23 +3912,17 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServiceRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(UpdateServiceRequest::getServiceId, UpdateServiceRequest::setServiceId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServiceRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateServiceRequest::getIefInstanceId, UpdateServiceRequest::setIefInstanceId));
         builder.<Service>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Service.class),
-            f -> f.withMarshaller(UpdateServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateServiceRequest::getBody, UpdateServiceRequest::setBody));
 
         // response
 
@@ -4524,9 +3930,9 @@ public class IefMeta {
     }
 
     public static final HttpRequestDef<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse> upgradeEdgeNode =
-        genForupgradeEdgeNode();
+        genForUpgradeEdgeNode();
 
-    private static HttpRequestDef<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse> genForupgradeEdgeNode() {
+    private static HttpRequestDef<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse> genForUpgradeEdgeNode() {
         // basic
         HttpRequestDef.Builder<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpgradeEdgeNodeRequest.class, UpgradeEdgeNodeResponse.class)
@@ -4539,25 +3945,19 @@ public class IefMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeEdgeNodeRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(UpgradeEdgeNodeRequest::getNodeId, UpgradeEdgeNodeRequest::setNodeId));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpgradeEdgeNodeRequest::getIefInstanceId, (req, v) -> {
-                req.setIefInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpgradeEdgeNodeRequest::getIefInstanceId, UpgradeEdgeNodeRequest::setIefInstanceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpgradeEdgeNodeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpgradeEdgeNodeResponse::getBody, UpgradeEdgeNodeResponse::setBody));
 
         return builder.build();
     }

@@ -52,7 +52,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePredefineTagsRequest 请求对象
+     * @param request CreatePredefineTagsRequest 请求对象
      * @return CreatePredefineTagsResponse
      */
     public CreatePredefineTagsResponse createPredefineTags(CreatePredefineTagsRequest request) {
@@ -66,13 +66,12 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePredefineTagsRequest 请求对象
+     * @param request CreatePredefineTagsRequest 请求对象
      * @return SyncInvoker<CreatePredefineTagsRequest, CreatePredefineTagsResponse>
      */
     public SyncInvoker<CreatePredefineTagsRequest, CreatePredefineTagsResponse> createPredefineTagsInvoker(
         CreatePredefineTagsRequest request) {
-        return new SyncInvoker<CreatePredefineTagsRequest, CreatePredefineTagsResponse>(request,
-            TmsMeta.createPredefineTags, hcClient);
+        return new SyncInvoker<>(request, TmsMeta.createPredefineTags, hcClient);
     }
 
     /**
@@ -82,7 +81,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagRequest 请求对象
+     * @param request CreateResourceTagRequest 请求对象
      * @return CreateResourceTagResponse
      */
     public CreateResourceTagResponse createResourceTag(CreateResourceTagRequest request) {
@@ -96,13 +95,12 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceTagRequest 请求对象
+     * @param request CreateResourceTagRequest 请求对象
      * @return SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>
      */
     public SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTagInvoker(
         CreateResourceTagRequest request) {
-        return new SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>(request, TmsMeta.createResourceTag,
-            hcClient);
+        return new SyncInvoker<>(request, TmsMeta.createResourceTag, hcClient);
     }
 
     /**
@@ -112,7 +110,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePredefineTagsRequest 请求对象
+     * @param request DeletePredefineTagsRequest 请求对象
      * @return DeletePredefineTagsResponse
      */
     public DeletePredefineTagsResponse deletePredefineTags(DeletePredefineTagsRequest request) {
@@ -126,13 +124,12 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePredefineTagsRequest 请求对象
+     * @param request DeletePredefineTagsRequest 请求对象
      * @return SyncInvoker<DeletePredefineTagsRequest, DeletePredefineTagsResponse>
      */
     public SyncInvoker<DeletePredefineTagsRequest, DeletePredefineTagsResponse> deletePredefineTagsInvoker(
         DeletePredefineTagsRequest request) {
-        return new SyncInvoker<DeletePredefineTagsRequest, DeletePredefineTagsResponse>(request,
-            TmsMeta.deletePredefineTags, hcClient);
+        return new SyncInvoker<>(request, TmsMeta.deletePredefineTags, hcClient);
     }
 
     /**
@@ -142,7 +139,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return DeleteResourceTagResponse
      */
     public DeleteResourceTagResponse deleteResourceTag(DeleteResourceTagRequest request) {
@@ -156,13 +153,12 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceTagRequest 请求对象
+     * @param request DeleteResourceTagRequest 请求对象
      * @return SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
      */
     public SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTagInvoker(
         DeleteResourceTagRequest request) {
-        return new SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>(request, TmsMeta.deleteResourceTag,
-            hcClient);
+        return new SyncInvoker<>(request, TmsMeta.deleteResourceTag, hcClient);
     }
 
     /**
@@ -172,7 +168,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
      */
     public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
@@ -186,13 +182,12 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsInvoker(
         ListApiVersionsRequest request) {
-        return new SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, TmsMeta.listApiVersions,
-            hcClient);
+        return new SyncInvoker<>(request, TmsMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -202,7 +197,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPredefineTagsRequest 请求对象
+     * @param request ListPredefineTagsRequest 请求对象
      * @return ListPredefineTagsResponse
      */
     public ListPredefineTagsResponse listPredefineTags(ListPredefineTagsRequest request) {
@@ -216,13 +211,12 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPredefineTagsRequest 请求对象
+     * @param request ListPredefineTagsRequest 请求对象
      * @return SyncInvoker<ListPredefineTagsRequest, ListPredefineTagsResponse>
      */
     public SyncInvoker<ListPredefineTagsRequest, ListPredefineTagsResponse> listPredefineTagsInvoker(
         ListPredefineTagsRequest request) {
-        return new SyncInvoker<ListPredefineTagsRequest, ListPredefineTagsResponse>(request, TmsMeta.listPredefineTags,
-            hcClient);
+        return new SyncInvoker<>(request, TmsMeta.listPredefineTags, hcClient);
     }
 
     /**
@@ -232,7 +226,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProvidersRequest 请求对象
+     * @param request ListProvidersRequest 请求对象
      * @return ListProvidersResponse
      */
     public ListProvidersResponse listProviders(ListProvidersRequest request) {
@@ -246,11 +240,11 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProvidersRequest 请求对象
+     * @param request ListProvidersRequest 请求对象
      * @return SyncInvoker<ListProvidersRequest, ListProvidersResponse>
      */
     public SyncInvoker<ListProvidersRequest, ListProvidersResponse> listProvidersInvoker(ListProvidersRequest request) {
-        return new SyncInvoker<ListProvidersRequest, ListProvidersResponse>(request, TmsMeta.listProviders, hcClient);
+        return new SyncInvoker<>(request, TmsMeta.listProviders, hcClient);
     }
 
     /**
@@ -260,7 +254,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceRequest 请求对象
+     * @param request ListResourceRequest 请求对象
      * @return ListResourceResponse
      */
     public ListResourceResponse listResource(ListResourceRequest request) {
@@ -274,11 +268,11 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceRequest 请求对象
+     * @param request ListResourceRequest 请求对象
      * @return SyncInvoker<ListResourceRequest, ListResourceResponse>
      */
     public SyncInvoker<ListResourceRequest, ListResourceResponse> listResourceInvoker(ListResourceRequest request) {
-        return new SyncInvoker<ListResourceRequest, ListResourceResponse>(request, TmsMeta.listResource, hcClient);
+        return new SyncInvoker<>(request, TmsMeta.listResource, hcClient);
     }
 
     /**
@@ -288,7 +282,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagKeysRequest 请求对象
+     * @param request ListTagKeysRequest 请求对象
      * @return ListTagKeysResponse
      */
     public ListTagKeysResponse listTagKeys(ListTagKeysRequest request) {
@@ -302,11 +296,11 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagKeysRequest 请求对象
+     * @param request ListTagKeysRequest 请求对象
      * @return SyncInvoker<ListTagKeysRequest, ListTagKeysResponse>
      */
     public SyncInvoker<ListTagKeysRequest, ListTagKeysResponse> listTagKeysInvoker(ListTagKeysRequest request) {
-        return new SyncInvoker<ListTagKeysRequest, ListTagKeysResponse>(request, TmsMeta.listTagKeys, hcClient);
+        return new SyncInvoker<>(request, TmsMeta.listTagKeys, hcClient);
     }
 
     /**
@@ -316,7 +310,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagValuesRequest 请求对象
+     * @param request ListTagValuesRequest 请求对象
      * @return ListTagValuesResponse
      */
     public ListTagValuesResponse listTagValues(ListTagValuesRequest request) {
@@ -330,11 +324,11 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagValuesRequest 请求对象
+     * @param request ListTagValuesRequest 请求对象
      * @return SyncInvoker<ListTagValuesRequest, ListTagValuesResponse>
      */
     public SyncInvoker<ListTagValuesRequest, ListTagValuesResponse> listTagValuesInvoker(ListTagValuesRequest request) {
-        return new SyncInvoker<ListTagValuesRequest, ListTagValuesResponse>(request, TmsMeta.listTagValues, hcClient);
+        return new SyncInvoker<>(request, TmsMeta.listTagValues, hcClient);
     }
 
     /**
@@ -344,7 +338,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return ShowApiVersionResponse
      */
     public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
@@ -358,13 +352,12 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionRequest 请求对象
+     * @param request ShowApiVersionRequest 请求对象
      * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
      */
     public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(
         ShowApiVersionRequest request) {
-        return new SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, TmsMeta.showApiVersion,
-            hcClient);
+        return new SyncInvoker<>(request, TmsMeta.showApiVersion, hcClient);
     }
 
     /**
@@ -374,7 +367,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagRequest 请求对象
+     * @param request ShowResourceTagRequest 请求对象
      * @return ShowResourceTagResponse
      */
     public ShowResourceTagResponse showResourceTag(ShowResourceTagRequest request) {
@@ -388,13 +381,12 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceTagRequest 请求对象
+     * @param request ShowResourceTagRequest 请求对象
      * @return SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>
      */
     public SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTagInvoker(
         ShowResourceTagRequest request) {
-        return new SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>(request, TmsMeta.showResourceTag,
-            hcClient);
+        return new SyncInvoker<>(request, TmsMeta.showResourceTag, hcClient);
     }
 
     /**
@@ -404,7 +396,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTagQuotaRequest 请求对象
+     * @param request ShowTagQuotaRequest 请求对象
      * @return ShowTagQuotaResponse
      */
     public ShowTagQuotaResponse showTagQuota(ShowTagQuotaRequest request) {
@@ -418,11 +410,11 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTagQuotaRequest 请求对象
+     * @param request ShowTagQuotaRequest 请求对象
      * @return SyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse>
      */
     public SyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse> showTagQuotaInvoker(ShowTagQuotaRequest request) {
-        return new SyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse>(request, TmsMeta.showTagQuota, hcClient);
+        return new SyncInvoker<>(request, TmsMeta.showTagQuota, hcClient);
     }
 
     /**
@@ -432,7 +424,7 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePredefineTagsRequest 请求对象
+     * @param request UpdatePredefineTagsRequest 请求对象
      * @return UpdatePredefineTagsResponse
      */
     public UpdatePredefineTagsResponse updatePredefineTags(UpdatePredefineTagsRequest request) {
@@ -446,13 +438,12 @@ public class TmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePredefineTagsRequest 请求对象
+     * @param request UpdatePredefineTagsRequest 请求对象
      * @return SyncInvoker<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse>
      */
     public SyncInvoker<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse> updatePredefineTagsInvoker(
         UpdatePredefineTagsRequest request) {
-        return new SyncInvoker<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse>(request,
-            TmsMeta.updatePredefineTags, hcClient);
+        return new SyncInvoker<>(request, TmsMeta.updatePredefineTags, hcClient);
     }
 
 }

@@ -178,7 +178,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteKafkaTagRequest 请求对象
+     * @param request BatchCreateOrDeleteKafkaTagRequest 请求对象
      * @return CompletableFuture<BatchCreateOrDeleteKafkaTagResponse>
      */
     public CompletableFuture<BatchCreateOrDeleteKafkaTagResponse> batchCreateOrDeleteKafkaTagAsync(
@@ -193,13 +193,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteKafkaTagRequest 请求对象
+     * @param request BatchCreateOrDeleteKafkaTagRequest 请求对象
      * @return AsyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse>
      */
     public AsyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> batchCreateOrDeleteKafkaTagAsyncInvoker(
         BatchCreateOrDeleteKafkaTagRequest request) {
-        return new AsyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse>(request,
-            KafkaMeta.batchCreateOrDeleteKafkaTag, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.batchCreateOrDeleteKafkaTag, hcClient);
     }
 
     /**
@@ -209,7 +208,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteGroupRequest 请求对象
+     * @param request BatchDeleteGroupRequest 请求对象
      * @return CompletableFuture<BatchDeleteGroupResponse>
      */
     public CompletableFuture<BatchDeleteGroupResponse> batchDeleteGroupAsync(BatchDeleteGroupRequest request) {
@@ -223,13 +222,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteGroupRequest 请求对象
+     * @param request BatchDeleteGroupRequest 请求对象
      * @return AsyncInvoker<BatchDeleteGroupRequest, BatchDeleteGroupResponse>
      */
     public AsyncInvoker<BatchDeleteGroupRequest, BatchDeleteGroupResponse> batchDeleteGroupAsyncInvoker(
         BatchDeleteGroupRequest request) {
-        return new AsyncInvoker<BatchDeleteGroupRequest, BatchDeleteGroupResponse>(request, KafkaMeta.batchDeleteGroup,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.batchDeleteGroup, hcClient);
     }
 
     /**
@@ -239,7 +237,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceTopicRequest 请求对象
+     * @param request BatchDeleteInstanceTopicRequest 请求对象
      * @return CompletableFuture<BatchDeleteInstanceTopicResponse>
      */
     public CompletableFuture<BatchDeleteInstanceTopicResponse> batchDeleteInstanceTopicAsync(
@@ -254,13 +252,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceTopicRequest 请求对象
+     * @param request BatchDeleteInstanceTopicRequest 请求对象
      * @return AsyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse>
      */
     public AsyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> batchDeleteInstanceTopicAsyncInvoker(
         BatchDeleteInstanceTopicRequest request) {
-        return new AsyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse>(request,
-            KafkaMeta.batchDeleteInstanceTopic, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.batchDeleteInstanceTopic, hcClient);
     }
 
     /**
@@ -270,7 +267,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceUsersRequest 请求对象
+     * @param request BatchDeleteInstanceUsersRequest 请求对象
      * @return CompletableFuture<BatchDeleteInstanceUsersResponse>
      */
     public CompletableFuture<BatchDeleteInstanceUsersResponse> batchDeleteInstanceUsersAsync(
@@ -285,13 +282,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstanceUsersRequest 请求对象
+     * @param request BatchDeleteInstanceUsersRequest 请求对象
      * @return AsyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse>
      */
     public AsyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> batchDeleteInstanceUsersAsyncInvoker(
         BatchDeleteInstanceUsersRequest request) {
-        return new AsyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse>(request,
-            KafkaMeta.batchDeleteInstanceUsers, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.batchDeleteInstanceUsers, hcClient);
     }
 
     /**
@@ -305,7 +301,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRestartOrDeleteInstancesRequest 请求对象
+     * @param request BatchRestartOrDeleteInstancesRequest 请求对象
      * @return CompletableFuture<BatchRestartOrDeleteInstancesResponse>
      */
     public CompletableFuture<BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstancesAsync(
@@ -324,13 +320,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRestartOrDeleteInstancesRequest 请求对象
+     * @param request BatchRestartOrDeleteInstancesRequest 请求对象
      * @return AsyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse>
      */
     public AsyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstancesAsyncInvoker(
         BatchRestartOrDeleteInstancesRequest request) {
-        return new AsyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse>(request,
-            KafkaMeta.batchRestartOrDeleteInstances, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.batchRestartOrDeleteInstances, hcClient);
     }
 
     /**
@@ -340,7 +335,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CloseKafkaManagerRequest 请求对象
+     * @param request CloseKafkaManagerRequest 请求对象
      * @return CompletableFuture<CloseKafkaManagerResponse>
      */
     public CompletableFuture<CloseKafkaManagerResponse> closeKafkaManagerAsync(CloseKafkaManagerRequest request) {
@@ -354,13 +349,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CloseKafkaManagerRequest 请求对象
+     * @param request CloseKafkaManagerRequest 请求对象
      * @return AsyncInvoker<CloseKafkaManagerRequest, CloseKafkaManagerResponse>
      */
     public AsyncInvoker<CloseKafkaManagerRequest, CloseKafkaManagerResponse> closeKafkaManagerAsyncInvoker(
         CloseKafkaManagerRequest request) {
-        return new AsyncInvoker<CloseKafkaManagerRequest, CloseKafkaManagerResponse>(request,
-            KafkaMeta.closeKafkaManager, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.closeKafkaManager, hcClient);
     }
 
     /**
@@ -372,7 +366,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectorRequest 请求对象
+     * @param request CreateConnectorRequest 请求对象
      * @return CompletableFuture<CreateConnectorResponse>
      */
     public CompletableFuture<CreateConnectorResponse> createConnectorAsync(CreateConnectorRequest request) {
@@ -388,13 +382,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectorRequest 请求对象
+     * @param request CreateConnectorRequest 请求对象
      * @return AsyncInvoker<CreateConnectorRequest, CreateConnectorResponse>
      */
     public AsyncInvoker<CreateConnectorRequest, CreateConnectorResponse> createConnectorAsyncInvoker(
         CreateConnectorRequest request) {
-        return new AsyncInvoker<CreateConnectorRequest, CreateConnectorResponse>(request, KafkaMeta.createConnector,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createConnector, hcClient);
     }
 
     /**
@@ -404,7 +397,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeleteConnectorOrderRequest 请求对象
+     * @param request CreateDeleteConnectorOrderRequest 请求对象
      * @return CompletableFuture<CreateDeleteConnectorOrderResponse>
      */
     public CompletableFuture<CreateDeleteConnectorOrderResponse> createDeleteConnectorOrderAsync(
@@ -419,13 +412,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDeleteConnectorOrderRequest 请求对象
+     * @param request CreateDeleteConnectorOrderRequest 请求对象
      * @return AsyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse>
      */
     public AsyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> createDeleteConnectorOrderAsyncInvoker(
         CreateDeleteConnectorOrderRequest request) {
-        return new AsyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse>(request,
-            KafkaMeta.createDeleteConnectorOrder, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createDeleteConnectorOrder, hcClient);
     }
 
     /**
@@ -437,7 +429,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceByEngineRequest 请求对象
+     * @param request CreateInstanceByEngineRequest 请求对象
      * @return CompletableFuture<CreateInstanceByEngineResponse>
      */
     public CompletableFuture<CreateInstanceByEngineResponse> createInstanceByEngineAsync(
@@ -454,13 +446,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceByEngineRequest 请求对象
+     * @param request CreateInstanceByEngineRequest 请求对象
      * @return AsyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse>
      */
     public AsyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> createInstanceByEngineAsyncInvoker(
         CreateInstanceByEngineRequest request) {
-        return new AsyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse>(request,
-            KafkaMeta.createInstanceByEngine, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createInstanceByEngine, hcClient);
     }
 
     /**
@@ -470,7 +461,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceTopicRequest 请求对象
+     * @param request CreateInstanceTopicRequest 请求对象
      * @return CompletableFuture<CreateInstanceTopicResponse>
      */
     public CompletableFuture<CreateInstanceTopicResponse> createInstanceTopicAsync(CreateInstanceTopicRequest request) {
@@ -484,13 +475,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceTopicRequest 请求对象
+     * @param request CreateInstanceTopicRequest 请求对象
      * @return AsyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse>
      */
     public AsyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse> createInstanceTopicAsyncInvoker(
         CreateInstanceTopicRequest request) {
-        return new AsyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse>(request,
-            KafkaMeta.createInstanceTopic, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createInstanceTopic, hcClient);
     }
 
     /**
@@ -500,7 +490,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceUserRequest 请求对象
+     * @param request CreateInstanceUserRequest 请求对象
      * @return CompletableFuture<CreateInstanceUserResponse>
      */
     public CompletableFuture<CreateInstanceUserResponse> createInstanceUserAsync(CreateInstanceUserRequest request) {
@@ -514,13 +504,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceUserRequest 请求对象
+     * @param request CreateInstanceUserRequest 请求对象
      * @return AsyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse>
      */
     public AsyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse> createInstanceUserAsyncInvoker(
         CreateInstanceUserRequest request) {
-        return new AsyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse>(request,
-            KafkaMeta.createInstanceUser, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createInstanceUser, hcClient);
     }
 
     /**
@@ -530,7 +519,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKafkaConsumerGroupRequest 请求对象
+     * @param request CreateKafkaConsumerGroupRequest 请求对象
      * @return CompletableFuture<CreateKafkaConsumerGroupResponse>
      */
     public CompletableFuture<CreateKafkaConsumerGroupResponse> createKafkaConsumerGroupAsync(
@@ -545,13 +534,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKafkaConsumerGroupRequest 请求对象
+     * @param request CreateKafkaConsumerGroupRequest 请求对象
      * @return AsyncInvoker<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse>
      */
     public AsyncInvoker<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse> createKafkaConsumerGroupAsyncInvoker(
         CreateKafkaConsumerGroupRequest request) {
-        return new AsyncInvoker<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse>(request,
-            KafkaMeta.createKafkaConsumerGroup, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createKafkaConsumerGroup, hcClient);
     }
 
     /**
@@ -561,7 +549,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request CreateKafkaUserClientQuotaTaskRequest 请求对象
      * @return CompletableFuture<CreateKafkaUserClientQuotaTaskResponse>
      */
     public CompletableFuture<CreateKafkaUserClientQuotaTaskResponse> createKafkaUserClientQuotaTaskAsync(
@@ -576,13 +564,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request CreateKafkaUserClientQuotaTaskRequest 请求对象
      * @return AsyncInvoker<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse>
      */
     public AsyncInvoker<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse> createKafkaUserClientQuotaTaskAsyncInvoker(
         CreateKafkaUserClientQuotaTaskRequest request) {
-        return new AsyncInvoker<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse>(request,
-            KafkaMeta.createKafkaUserClientQuotaTask, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createKafkaUserClientQuotaTask, hcClient);
     }
 
     /**
@@ -592,7 +579,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceRequest 请求对象
+     * @param request CreatePostPaidInstanceRequest 请求对象
      * @return CompletableFuture<CreatePostPaidInstanceResponse>
      */
     public CompletableFuture<CreatePostPaidInstanceResponse> createPostPaidInstanceAsync(
@@ -607,13 +594,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceRequest 请求对象
+     * @param request CreatePostPaidInstanceRequest 请求对象
      * @return AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>
      */
     public AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstanceAsyncInvoker(
         CreatePostPaidInstanceRequest request) {
-        return new AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>(request,
-            KafkaMeta.createPostPaidInstance, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createPostPaidInstance, hcClient);
     }
 
     /**
@@ -623,7 +609,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateReassignmentTaskRequest 请求对象
+     * @param request CreateReassignmentTaskRequest 请求对象
      * @return CompletableFuture<CreateReassignmentTaskResponse>
      */
     public CompletableFuture<CreateReassignmentTaskResponse> createReassignmentTaskAsync(
@@ -638,13 +624,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateReassignmentTaskRequest 请求对象
+     * @param request CreateReassignmentTaskRequest 请求对象
      * @return AsyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse>
      */
     public AsyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> createReassignmentTaskAsyncInvoker(
         CreateReassignmentTaskRequest request) {
-        return new AsyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse>(request,
-            KafkaMeta.createReassignmentTask, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createReassignmentTask, hcClient);
     }
 
     /**
@@ -654,7 +639,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateShrinkageJobRequest 请求对象
+     * @param request CreateShrinkageJobRequest 请求对象
      * @return CompletableFuture<CreateShrinkageJobResponse>
      */
     public CompletableFuture<CreateShrinkageJobResponse> createShrinkageJobAsync(CreateShrinkageJobRequest request) {
@@ -668,13 +653,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateShrinkageJobRequest 请求对象
+     * @param request CreateShrinkageJobRequest 请求对象
      * @return AsyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse>
      */
     public AsyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse> createShrinkageJobAsyncInvoker(
         CreateShrinkageJobRequest request) {
-        return new AsyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse>(request,
-            KafkaMeta.createShrinkageJob, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createShrinkageJob, hcClient);
     }
 
     /**
@@ -684,7 +668,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSinkTaskRequest 请求对象
+     * @param request CreateSinkTaskRequest 请求对象
      * @return CompletableFuture<CreateSinkTaskResponse>
      */
     public CompletableFuture<CreateSinkTaskResponse> createSinkTaskAsync(CreateSinkTaskRequest request) {
@@ -698,13 +682,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSinkTaskRequest 请求对象
+     * @param request CreateSinkTaskRequest 请求对象
      * @return AsyncInvoker<CreateSinkTaskRequest, CreateSinkTaskResponse>
      */
     public AsyncInvoker<CreateSinkTaskRequest, CreateSinkTaskResponse> createSinkTaskAsyncInvoker(
         CreateSinkTaskRequest request) {
-        return new AsyncInvoker<CreateSinkTaskRequest, CreateSinkTaskResponse>(request, KafkaMeta.createSinkTask,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.createSinkTask, hcClient);
     }
 
     /**
@@ -714,7 +697,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackgroundTaskRequest 请求对象
+     * @param request DeleteBackgroundTaskRequest 请求对象
      * @return CompletableFuture<DeleteBackgroundTaskResponse>
      */
     public CompletableFuture<DeleteBackgroundTaskResponse> deleteBackgroundTaskAsync(
@@ -729,13 +712,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackgroundTaskRequest 请求对象
+     * @param request DeleteBackgroundTaskRequest 请求对象
      * @return AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>
      */
     public AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTaskAsyncInvoker(
         DeleteBackgroundTaskRequest request) {
-        return new AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>(request,
-            KafkaMeta.deleteBackgroundTask, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.deleteBackgroundTask, hcClient);
     }
 
     /**
@@ -745,7 +727,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectorRequest 请求对象
+     * @param request DeleteConnectorRequest 请求对象
      * @return CompletableFuture<DeleteConnectorResponse>
      */
     public CompletableFuture<DeleteConnectorResponse> deleteConnectorAsync(DeleteConnectorRequest request) {
@@ -759,13 +741,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectorRequest 请求对象
+     * @param request DeleteConnectorRequest 请求对象
      * @return AsyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse>
      */
     public AsyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse> deleteConnectorAsyncInvoker(
         DeleteConnectorRequest request) {
-        return new AsyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse>(request, KafkaMeta.deleteConnector,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.deleteConnector, hcClient);
     }
 
     /**
@@ -775,7 +756,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
      */
     public CompletableFuture<DeleteInstanceResponse> deleteInstanceAsync(DeleteInstanceRequest request) {
@@ -789,13 +770,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
-        return new AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, KafkaMeta.deleteInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -805,7 +785,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request DeleteKafkaUserClientQuotaTaskRequest 请求对象
      * @return CompletableFuture<DeleteKafkaUserClientQuotaTaskResponse>
      */
     public CompletableFuture<DeleteKafkaUserClientQuotaTaskResponse> deleteKafkaUserClientQuotaTaskAsync(
@@ -820,13 +800,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request DeleteKafkaUserClientQuotaTaskRequest 请求对象
      * @return AsyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse>
      */
     public AsyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> deleteKafkaUserClientQuotaTaskAsyncInvoker(
         DeleteKafkaUserClientQuotaTaskRequest request) {
-        return new AsyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse>(request,
-            KafkaMeta.deleteKafkaUserClientQuotaTask, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.deleteKafkaUserClientQuotaTask, hcClient);
     }
 
     /**
@@ -836,7 +815,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSinkTaskRequest 请求对象
+     * @param request DeleteSinkTaskRequest 请求对象
      * @return CompletableFuture<DeleteSinkTaskResponse>
      */
     public CompletableFuture<DeleteSinkTaskResponse> deleteSinkTaskAsync(DeleteSinkTaskRequest request) {
@@ -850,13 +829,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSinkTaskRequest 请求对象
+     * @param request DeleteSinkTaskRequest 请求对象
      * @return AsyncInvoker<DeleteSinkTaskRequest, DeleteSinkTaskResponse>
      */
     public AsyncInvoker<DeleteSinkTaskRequest, DeleteSinkTaskResponse> deleteSinkTaskAsyncInvoker(
         DeleteSinkTaskRequest request) {
-        return new AsyncInvoker<DeleteSinkTaskRequest, DeleteSinkTaskResponse>(request, KafkaMeta.deleteSinkTask,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.deleteSinkTask, hcClient);
     }
 
     /**
@@ -866,7 +844,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return CompletableFuture<ListAvailableZonesResponse>
      */
     public CompletableFuture<ListAvailableZonesResponse> listAvailableZonesAsync(ListAvailableZonesRequest request) {
@@ -880,13 +858,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
      */
     public AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesAsyncInvoker(
         ListAvailableZonesRequest request) {
-        return new AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request,
-            KafkaMeta.listAvailableZones, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.listAvailableZones, hcClient);
     }
 
     /**
@@ -896,7 +873,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackgroundTasksRequest 请求对象
+     * @param request ListBackgroundTasksRequest 请求对象
      * @return CompletableFuture<ListBackgroundTasksResponse>
      */
     public CompletableFuture<ListBackgroundTasksResponse> listBackgroundTasksAsync(ListBackgroundTasksRequest request) {
@@ -910,13 +887,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackgroundTasksRequest 请求对象
+     * @param request ListBackgroundTasksRequest 请求对象
      * @return AsyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse>
      */
     public AsyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasksAsyncInvoker(
         ListBackgroundTasksRequest request) {
-        return new AsyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse>(request,
-            KafkaMeta.listBackgroundTasks, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.listBackgroundTasks, hcClient);
     }
 
     /**
@@ -926,7 +902,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEngineProductsRequest 请求对象
+     * @param request ListEngineProductsRequest 请求对象
      * @return CompletableFuture<ListEngineProductsResponse>
      */
     public CompletableFuture<ListEngineProductsResponse> listEngineProductsAsync(ListEngineProductsRequest request) {
@@ -940,13 +916,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEngineProductsRequest 请求对象
+     * @param request ListEngineProductsRequest 请求对象
      * @return AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>
      */
     public AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProductsAsyncInvoker(
         ListEngineProductsRequest request) {
-        return new AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>(request,
-            KafkaMeta.listEngineProducts, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.listEngineProducts, hcClient);
     }
 
     /**
@@ -956,7 +931,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConsumerGroupsRequest 请求对象
+     * @param request ListInstanceConsumerGroupsRequest 请求对象
      * @return CompletableFuture<ListInstanceConsumerGroupsResponse>
      */
     public CompletableFuture<ListInstanceConsumerGroupsResponse> listInstanceConsumerGroupsAsync(
@@ -971,13 +946,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConsumerGroupsRequest 请求对象
+     * @param request ListInstanceConsumerGroupsRequest 请求对象
      * @return AsyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>
      */
     public AsyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> listInstanceConsumerGroupsAsyncInvoker(
         ListInstanceConsumerGroupsRequest request) {
-        return new AsyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>(request,
-            KafkaMeta.listInstanceConsumerGroups, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.listInstanceConsumerGroups, hcClient);
     }
 
     /**
@@ -987,7 +961,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTopicsRequest 请求对象
+     * @param request ListInstanceTopicsRequest 请求对象
      * @return CompletableFuture<ListInstanceTopicsResponse>
      */
     public CompletableFuture<ListInstanceTopicsResponse> listInstanceTopicsAsync(ListInstanceTopicsRequest request) {
@@ -1001,13 +975,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTopicsRequest 请求对象
+     * @param request ListInstanceTopicsRequest 请求对象
      * @return AsyncInvoker<ListInstanceTopicsRequest, ListInstanceTopicsResponse>
      */
     public AsyncInvoker<ListInstanceTopicsRequest, ListInstanceTopicsResponse> listInstanceTopicsAsyncInvoker(
         ListInstanceTopicsRequest request) {
-        return new AsyncInvoker<ListInstanceTopicsRequest, ListInstanceTopicsResponse>(request,
-            KafkaMeta.listInstanceTopics, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.listInstanceTopics, hcClient);
     }
 
     /**
@@ -1017,7 +990,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
      */
     public CompletableFuture<ListInstancesResponse> listInstancesAsync(ListInstancesRequest request) {
@@ -1031,13 +1004,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
-        return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, KafkaMeta.listInstances,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.listInstances, hcClient);
     }
 
     /**
@@ -1053,7 +1025,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return CompletableFuture<ListProductsResponse>
      */
     public CompletableFuture<ListProductsResponse> listProductsAsync(ListProductsRequest request) {
@@ -1073,12 +1045,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return AsyncInvoker<ListProductsRequest, ListProductsResponse>
      */
     public AsyncInvoker<ListProductsRequest, ListProductsResponse> listProductsAsyncInvoker(
         ListProductsRequest request) {
-        return new AsyncInvoker<ListProductsRequest, ListProductsResponse>(request, KafkaMeta.listProducts, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.listProducts, hcClient);
     }
 
     /**
@@ -1088,7 +1060,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSinkTasksRequest 请求对象
+     * @param request ListSinkTasksRequest 请求对象
      * @return CompletableFuture<ListSinkTasksResponse>
      */
     public CompletableFuture<ListSinkTasksResponse> listSinkTasksAsync(ListSinkTasksRequest request) {
@@ -1102,13 +1074,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSinkTasksRequest 请求对象
+     * @param request ListSinkTasksRequest 请求对象
      * @return AsyncInvoker<ListSinkTasksRequest, ListSinkTasksResponse>
      */
     public AsyncInvoker<ListSinkTasksRequest, ListSinkTasksResponse> listSinkTasksAsyncInvoker(
         ListSinkTasksRequest request) {
-        return new AsyncInvoker<ListSinkTasksRequest, ListSinkTasksResponse>(request, KafkaMeta.listSinkTasks,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.listSinkTasks, hcClient);
     }
 
     /**
@@ -1118,7 +1089,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicPartitionsRequest 请求对象
+     * @param request ListTopicPartitionsRequest 请求对象
      * @return CompletableFuture<ListTopicPartitionsResponse>
      */
     public CompletableFuture<ListTopicPartitionsResponse> listTopicPartitionsAsync(ListTopicPartitionsRequest request) {
@@ -1132,13 +1103,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicPartitionsRequest 请求对象
+     * @param request ListTopicPartitionsRequest 请求对象
      * @return AsyncInvoker<ListTopicPartitionsRequest, ListTopicPartitionsResponse>
      */
     public AsyncInvoker<ListTopicPartitionsRequest, ListTopicPartitionsResponse> listTopicPartitionsAsyncInvoker(
         ListTopicPartitionsRequest request) {
-        return new AsyncInvoker<ListTopicPartitionsRequest, ListTopicPartitionsResponse>(request,
-            KafkaMeta.listTopicPartitions, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.listTopicPartitions, hcClient);
     }
 
     /**
@@ -1148,7 +1118,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicProducersRequest 请求对象
+     * @param request ListTopicProducersRequest 请求对象
      * @return CompletableFuture<ListTopicProducersResponse>
      */
     public CompletableFuture<ListTopicProducersResponse> listTopicProducersAsync(ListTopicProducersRequest request) {
@@ -1162,13 +1132,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopicProducersRequest 请求对象
+     * @param request ListTopicProducersRequest 请求对象
      * @return AsyncInvoker<ListTopicProducersRequest, ListTopicProducersResponse>
      */
     public AsyncInvoker<ListTopicProducersRequest, ListTopicProducersResponse> listTopicProducersAsyncInvoker(
         ListTopicProducersRequest request) {
-        return new AsyncInvoker<ListTopicProducersRequest, ListTopicProducersResponse>(request,
-            KafkaMeta.listTopicProducers, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.listTopicProducers, hcClient);
     }
 
     /**
@@ -1178,7 +1147,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyInstanceConfigsRequest 请求对象
+     * @param request ModifyInstanceConfigsRequest 请求对象
      * @return CompletableFuture<ModifyInstanceConfigsResponse>
      */
     public CompletableFuture<ModifyInstanceConfigsResponse> modifyInstanceConfigsAsync(
@@ -1193,13 +1162,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyInstanceConfigsRequest 请求对象
+     * @param request ModifyInstanceConfigsRequest 请求对象
      * @return AsyncInvoker<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse>
      */
     public AsyncInvoker<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> modifyInstanceConfigsAsyncInvoker(
         ModifyInstanceConfigsRequest request) {
-        return new AsyncInvoker<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse>(request,
-            KafkaMeta.modifyInstanceConfigs, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.modifyInstanceConfigs, hcClient);
     }
 
     /**
@@ -1209,7 +1177,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetManagerPasswordRequest 请求对象
+     * @param request ResetManagerPasswordRequest 请求对象
      * @return CompletableFuture<ResetManagerPasswordResponse>
      */
     public CompletableFuture<ResetManagerPasswordResponse> resetManagerPasswordAsync(
@@ -1224,13 +1192,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetManagerPasswordRequest 请求对象
+     * @param request ResetManagerPasswordRequest 请求对象
      * @return AsyncInvoker<ResetManagerPasswordRequest, ResetManagerPasswordResponse>
      */
     public AsyncInvoker<ResetManagerPasswordRequest, ResetManagerPasswordResponse> resetManagerPasswordAsyncInvoker(
         ResetManagerPasswordRequest request) {
-        return new AsyncInvoker<ResetManagerPasswordRequest, ResetManagerPasswordResponse>(request,
-            KafkaMeta.resetManagerPassword, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.resetManagerPassword, hcClient);
     }
 
     /**
@@ -1242,7 +1209,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMessageOffsetRequest 请求对象
+     * @param request ResetMessageOffsetRequest 请求对象
      * @return CompletableFuture<ResetMessageOffsetResponse>
      */
     public CompletableFuture<ResetMessageOffsetResponse> resetMessageOffsetAsync(ResetMessageOffsetRequest request) {
@@ -1258,13 +1225,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMessageOffsetRequest 请求对象
+     * @param request ResetMessageOffsetRequest 请求对象
      * @return AsyncInvoker<ResetMessageOffsetRequest, ResetMessageOffsetResponse>
      */
     public AsyncInvoker<ResetMessageOffsetRequest, ResetMessageOffsetResponse> resetMessageOffsetAsyncInvoker(
         ResetMessageOffsetRequest request) {
-        return new AsyncInvoker<ResetMessageOffsetRequest, ResetMessageOffsetResponse>(request,
-            KafkaMeta.resetMessageOffset, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.resetMessageOffset, hcClient);
     }
 
     /**
@@ -1276,7 +1242,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMessageOffsetWithEngineRequest 请求对象
+     * @param request ResetMessageOffsetWithEngineRequest 请求对象
      * @return CompletableFuture<ResetMessageOffsetWithEngineResponse>
      */
     public CompletableFuture<ResetMessageOffsetWithEngineResponse> resetMessageOffsetWithEngineAsync(
@@ -1293,13 +1259,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetMessageOffsetWithEngineRequest 请求对象
+     * @param request ResetMessageOffsetWithEngineRequest 请求对象
      * @return AsyncInvoker<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse>
      */
     public AsyncInvoker<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse> resetMessageOffsetWithEngineAsyncInvoker(
         ResetMessageOffsetWithEngineRequest request) {
-        return new AsyncInvoker<ResetMessageOffsetWithEngineRequest, ResetMessageOffsetWithEngineResponse>(request,
-            KafkaMeta.resetMessageOffsetWithEngine, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.resetMessageOffsetWithEngine, hcClient);
     }
 
     /**
@@ -1309,7 +1274,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return CompletableFuture<ResetPasswordResponse>
      */
     public CompletableFuture<ResetPasswordResponse> resetPasswordAsync(ResetPasswordRequest request) {
@@ -1323,13 +1288,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
     public AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordAsyncInvoker(
         ResetPasswordRequest request) {
-        return new AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, KafkaMeta.resetPassword,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.resetPassword, hcClient);
     }
 
     /**
@@ -1339,7 +1303,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetUserPasswrodRequest 请求对象
+     * @param request ResetUserPasswrodRequest 请求对象
      * @return CompletableFuture<ResetUserPasswrodResponse>
      */
     public CompletableFuture<ResetUserPasswrodResponse> resetUserPasswrodAsync(ResetUserPasswrodRequest request) {
@@ -1353,13 +1317,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetUserPasswrodRequest 请求对象
+     * @param request ResetUserPasswrodRequest 请求对象
      * @return AsyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse>
      */
     public AsyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse> resetUserPasswrodAsyncInvoker(
         ResetUserPasswrodRequest request) {
-        return new AsyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse>(request,
-            KafkaMeta.resetUserPasswrod, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.resetUserPasswrod, hcClient);
     }
 
     /**
@@ -1369,7 +1332,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeEngineInstanceRequest 请求对象
+     * @param request ResizeEngineInstanceRequest 请求对象
      * @return CompletableFuture<ResizeEngineInstanceResponse>
      */
     public CompletableFuture<ResizeEngineInstanceResponse> resizeEngineInstanceAsync(
@@ -1384,13 +1347,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeEngineInstanceRequest 请求对象
+     * @param request ResizeEngineInstanceRequest 请求对象
      * @return AsyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>
      */
     public AsyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstanceAsyncInvoker(
         ResizeEngineInstanceRequest request) {
-        return new AsyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>(request,
-            KafkaMeta.resizeEngineInstance, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.resizeEngineInstance, hcClient);
     }
 
     /**
@@ -1400,7 +1362,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return CompletableFuture<ResizeInstanceResponse>
      */
     public CompletableFuture<ResizeInstanceResponse> resizeInstanceAsync(ResizeInstanceRequest request) {
@@ -1414,13 +1376,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
      */
     public AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceAsyncInvoker(
         ResizeInstanceRequest request) {
-        return new AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request, KafkaMeta.resizeInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.resizeInstance, hcClient);
     }
 
     /**
@@ -1430,7 +1391,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartManagerRequest 请求对象
+     * @param request RestartManagerRequest 请求对象
      * @return CompletableFuture<RestartManagerResponse>
      */
     public CompletableFuture<RestartManagerResponse> restartManagerAsync(RestartManagerRequest request) {
@@ -1444,13 +1405,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartManagerRequest 请求对象
+     * @param request RestartManagerRequest 请求对象
      * @return AsyncInvoker<RestartManagerRequest, RestartManagerResponse>
      */
     public AsyncInvoker<RestartManagerRequest, RestartManagerResponse> restartManagerAsyncInvoker(
         RestartManagerRequest request) {
-        return new AsyncInvoker<RestartManagerRequest, RestartManagerResponse>(request, KafkaMeta.restartManager,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.restartManager, hcClient);
     }
 
     /**
@@ -1460,7 +1420,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendKafkaMessageRequest 请求对象
+     * @param request SendKafkaMessageRequest 请求对象
      * @return CompletableFuture<SendKafkaMessageResponse>
      */
     public CompletableFuture<SendKafkaMessageResponse> sendKafkaMessageAsync(SendKafkaMessageRequest request) {
@@ -1474,13 +1434,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendKafkaMessageRequest 请求对象
+     * @param request SendKafkaMessageRequest 请求对象
      * @return AsyncInvoker<SendKafkaMessageRequest, SendKafkaMessageResponse>
      */
     public AsyncInvoker<SendKafkaMessageRequest, SendKafkaMessageResponse> sendKafkaMessageAsyncInvoker(
         SendKafkaMessageRequest request) {
-        return new AsyncInvoker<SendKafkaMessageRequest, SendKafkaMessageResponse>(request, KafkaMeta.sendKafkaMessage,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.sendKafkaMessage, hcClient);
     }
 
     /**
@@ -1490,7 +1449,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackgroundTaskRequest 请求对象
+     * @param request ShowBackgroundTaskRequest 请求对象
      * @return CompletableFuture<ShowBackgroundTaskResponse>
      */
     public CompletableFuture<ShowBackgroundTaskResponse> showBackgroundTaskAsync(ShowBackgroundTaskRequest request) {
@@ -1504,13 +1463,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackgroundTaskRequest 请求对象
+     * @param request ShowBackgroundTaskRequest 请求对象
      * @return AsyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>
      */
     public AsyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTaskAsyncInvoker(
         ShowBackgroundTaskRequest request) {
-        return new AsyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>(request,
-            KafkaMeta.showBackgroundTask, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showBackgroundTask, hcClient);
     }
 
     /**
@@ -1520,7 +1478,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCesHierarchyRequest 请求对象
+     * @param request ShowCesHierarchyRequest 请求对象
      * @return CompletableFuture<ShowCesHierarchyResponse>
      */
     public CompletableFuture<ShowCesHierarchyResponse> showCesHierarchyAsync(ShowCesHierarchyRequest request) {
@@ -1534,13 +1492,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCesHierarchyRequest 请求对象
+     * @param request ShowCesHierarchyRequest 请求对象
      * @return AsyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>
      */
     public AsyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchyAsyncInvoker(
         ShowCesHierarchyRequest request) {
-        return new AsyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>(request, KafkaMeta.showCesHierarchy,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showCesHierarchy, hcClient);
     }
 
     /**
@@ -1550,7 +1507,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterRequest 请求对象
+     * @param request ShowClusterRequest 请求对象
      * @return CompletableFuture<ShowClusterResponse>
      */
     public CompletableFuture<ShowClusterResponse> showClusterAsync(ShowClusterRequest request) {
@@ -1564,11 +1521,11 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterRequest 请求对象
+     * @param request ShowClusterRequest 请求对象
      * @return AsyncInvoker<ShowClusterRequest, ShowClusterResponse>
      */
     public AsyncInvoker<ShowClusterRequest, ShowClusterResponse> showClusterAsyncInvoker(ShowClusterRequest request) {
-        return new AsyncInvoker<ShowClusterRequest, ShowClusterResponse>(request, KafkaMeta.showCluster, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showCluster, hcClient);
     }
 
     /**
@@ -1578,7 +1535,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCoordinatorsRequest 请求对象
+     * @param request ShowCoordinatorsRequest 请求对象
      * @return CompletableFuture<ShowCoordinatorsResponse>
      */
     public CompletableFuture<ShowCoordinatorsResponse> showCoordinatorsAsync(ShowCoordinatorsRequest request) {
@@ -1592,13 +1549,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCoordinatorsRequest 请求对象
+     * @param request ShowCoordinatorsRequest 请求对象
      * @return AsyncInvoker<ShowCoordinatorsRequest, ShowCoordinatorsResponse>
      */
     public AsyncInvoker<ShowCoordinatorsRequest, ShowCoordinatorsResponse> showCoordinatorsAsyncInvoker(
         ShowCoordinatorsRequest request) {
-        return new AsyncInvoker<ShowCoordinatorsRequest, ShowCoordinatorsResponse>(request, KafkaMeta.showCoordinators,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showCoordinators, hcClient);
     }
 
     /**
@@ -1608,7 +1564,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowEngineInstanceExtendProductInfoRequest 请求对象
      * @return CompletableFuture<ShowEngineInstanceExtendProductInfoResponse>
      */
     public CompletableFuture<ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsync(
@@ -1623,13 +1579,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowEngineInstanceExtendProductInfoRequest 请求对象
      * @return AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>
      */
     public AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsyncInvoker(
         ShowEngineInstanceExtendProductInfoRequest request) {
-        return new AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>(
-            request, KafkaMeta.showEngineInstanceExtendProductInfo, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showEngineInstanceExtendProductInfo, hcClient);
     }
 
     /**
@@ -1639,7 +1594,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGroupsRequest 请求对象
+     * @param request ShowGroupsRequest 请求对象
      * @return CompletableFuture<ShowGroupsResponse>
      */
     public CompletableFuture<ShowGroupsResponse> showGroupsAsync(ShowGroupsRequest request) {
@@ -1653,11 +1608,11 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGroupsRequest 请求对象
+     * @param request ShowGroupsRequest 请求对象
      * @return AsyncInvoker<ShowGroupsRequest, ShowGroupsResponse>
      */
     public AsyncInvoker<ShowGroupsRequest, ShowGroupsResponse> showGroupsAsyncInvoker(ShowGroupsRequest request) {
-        return new AsyncInvoker<ShowGroupsRequest, ShowGroupsResponse>(request, KafkaMeta.showGroups, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showGroups, hcClient);
     }
 
     /**
@@ -1667,7 +1622,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
      */
     public CompletableFuture<ShowInstanceResponse> showInstanceAsync(ShowInstanceRequest request) {
@@ -1681,12 +1636,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(
         ShowInstanceRequest request) {
-        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, KafkaMeta.showInstance, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showInstance, hcClient);
     }
 
     /**
@@ -1696,7 +1651,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceConfigsRequest 请求对象
+     * @param request ShowInstanceConfigsRequest 请求对象
      * @return CompletableFuture<ShowInstanceConfigsResponse>
      */
     public CompletableFuture<ShowInstanceConfigsResponse> showInstanceConfigsAsync(ShowInstanceConfigsRequest request) {
@@ -1710,13 +1665,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceConfigsRequest 请求对象
+     * @param request ShowInstanceConfigsRequest 请求对象
      * @return AsyncInvoker<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse>
      */
     public AsyncInvoker<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse> showInstanceConfigsAsyncInvoker(
         ShowInstanceConfigsRequest request) {
-        return new AsyncInvoker<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse>(request,
-            KafkaMeta.showInstanceConfigs, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showInstanceConfigs, hcClient);
     }
 
     /**
@@ -1726,7 +1680,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowInstanceExtendProductInfoRequest 请求对象
      * @return CompletableFuture<ShowInstanceExtendProductInfoResponse>
      */
     public CompletableFuture<ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfoAsync(
@@ -1741,13 +1695,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowInstanceExtendProductInfoRequest 请求对象
      * @return AsyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>
      */
     public AsyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfoAsyncInvoker(
         ShowInstanceExtendProductInfoRequest request) {
-        return new AsyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>(request,
-            KafkaMeta.showInstanceExtendProductInfo, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showInstanceExtendProductInfo, hcClient);
     }
 
     /**
@@ -1758,7 +1711,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceMessagesRequest 请求对象
+     * @param request ShowInstanceMessagesRequest 请求对象
      * @return CompletableFuture<ShowInstanceMessagesResponse>
      */
     public CompletableFuture<ShowInstanceMessagesResponse> showInstanceMessagesAsync(
@@ -1774,13 +1727,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceMessagesRequest 请求对象
+     * @param request ShowInstanceMessagesRequest 请求对象
      * @return AsyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse>
      */
     public AsyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> showInstanceMessagesAsyncInvoker(
         ShowInstanceMessagesRequest request) {
-        return new AsyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse>(request,
-            KafkaMeta.showInstanceMessages, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showInstanceMessages, hcClient);
     }
 
     /**
@@ -1790,7 +1742,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceTopicDetailRequest 请求对象
+     * @param request ShowInstanceTopicDetailRequest 请求对象
      * @return CompletableFuture<ShowInstanceTopicDetailResponse>
      */
     public CompletableFuture<ShowInstanceTopicDetailResponse> showInstanceTopicDetailAsync(
@@ -1805,13 +1757,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceTopicDetailRequest 请求对象
+     * @param request ShowInstanceTopicDetailRequest 请求对象
      * @return AsyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse>
      */
     public AsyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> showInstanceTopicDetailAsyncInvoker(
         ShowInstanceTopicDetailRequest request) {
-        return new AsyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse>(request,
-            KafkaMeta.showInstanceTopicDetail, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showInstanceTopicDetail, hcClient);
     }
 
     /**
@@ -1823,7 +1774,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceUsersRequest 请求对象
+     * @param request ShowInstanceUsersRequest 请求对象
      * @return CompletableFuture<ShowInstanceUsersResponse>
      */
     public CompletableFuture<ShowInstanceUsersResponse> showInstanceUsersAsync(ShowInstanceUsersRequest request) {
@@ -1839,13 +1790,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceUsersRequest 请求对象
+     * @param request ShowInstanceUsersRequest 请求对象
      * @return AsyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse>
      */
     public AsyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse> showInstanceUsersAsyncInvoker(
         ShowInstanceUsersRequest request) {
-        return new AsyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse>(request,
-            KafkaMeta.showInstanceUsers, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showInstanceUsers, hcClient);
     }
 
     /**
@@ -1855,7 +1805,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaProjectTagsRequest 请求对象
+     * @param request ShowKafkaProjectTagsRequest 请求对象
      * @return CompletableFuture<ShowKafkaProjectTagsResponse>
      */
     public CompletableFuture<ShowKafkaProjectTagsResponse> showKafkaProjectTagsAsync(
@@ -1870,13 +1820,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaProjectTagsRequest 请求对象
+     * @param request ShowKafkaProjectTagsRequest 请求对象
      * @return AsyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse>
      */
     public AsyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> showKafkaProjectTagsAsyncInvoker(
         ShowKafkaProjectTagsRequest request) {
-        return new AsyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse>(request,
-            KafkaMeta.showKafkaProjectTags, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaProjectTags, hcClient);
     }
 
     /**
@@ -1886,7 +1835,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaTagsRequest 请求对象
+     * @param request ShowKafkaTagsRequest 请求对象
      * @return CompletableFuture<ShowKafkaTagsResponse>
      */
     public CompletableFuture<ShowKafkaTagsResponse> showKafkaTagsAsync(ShowKafkaTagsRequest request) {
@@ -1900,13 +1849,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaTagsRequest 请求对象
+     * @param request ShowKafkaTagsRequest 请求对象
      * @return AsyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse>
      */
     public AsyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse> showKafkaTagsAsyncInvoker(
         ShowKafkaTagsRequest request) {
-        return new AsyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse>(request, KafkaMeta.showKafkaTags,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaTags, hcClient);
     }
 
     /**
@@ -1916,7 +1864,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaTopicPartitionDiskusageRequest 请求对象
+     * @param request ShowKafkaTopicPartitionDiskusageRequest 请求对象
      * @return CompletableFuture<ShowKafkaTopicPartitionDiskusageResponse>
      */
     public CompletableFuture<ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusageAsync(
@@ -1931,13 +1879,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaTopicPartitionDiskusageRequest 请求对象
+     * @param request ShowKafkaTopicPartitionDiskusageRequest 请求对象
      * @return AsyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse>
      */
     public AsyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusageAsyncInvoker(
         ShowKafkaTopicPartitionDiskusageRequest request) {
-        return new AsyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse>(
-            request, KafkaMeta.showKafkaTopicPartitionDiskusage, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaTopicPartitionDiskusage, hcClient);
     }
 
     /**
@@ -1947,7 +1894,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaUserClientQuotaRequest 请求对象
+     * @param request ShowKafkaUserClientQuotaRequest 请求对象
      * @return CompletableFuture<ShowKafkaUserClientQuotaResponse>
      */
     public CompletableFuture<ShowKafkaUserClientQuotaResponse> showKafkaUserClientQuotaAsync(
@@ -1962,13 +1909,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowKafkaUserClientQuotaRequest 请求对象
+     * @param request ShowKafkaUserClientQuotaRequest 请求对象
      * @return AsyncInvoker<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse>
      */
     public AsyncInvoker<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse> showKafkaUserClientQuotaAsyncInvoker(
         ShowKafkaUserClientQuotaRequest request) {
-        return new AsyncInvoker<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse>(request,
-            KafkaMeta.showKafkaUserClientQuota, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaUserClientQuota, hcClient);
     }
 
     /**
@@ -1978,7 +1924,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMaintainWindowsRequest 请求对象
+     * @param request ShowMaintainWindowsRequest 请求对象
      * @return CompletableFuture<ShowMaintainWindowsResponse>
      */
     public CompletableFuture<ShowMaintainWindowsResponse> showMaintainWindowsAsync(ShowMaintainWindowsRequest request) {
@@ -1992,13 +1938,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMaintainWindowsRequest 请求对象
+     * @param request ShowMaintainWindowsRequest 请求对象
      * @return AsyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>
      */
     public AsyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindowsAsyncInvoker(
         ShowMaintainWindowsRequest request) {
-        return new AsyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>(request,
-            KafkaMeta.showMaintainWindows, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showMaintainWindows, hcClient);
     }
 
     /**
@@ -2008,7 +1953,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessagesRequest 请求对象
+     * @param request ShowMessagesRequest 请求对象
      * @return CompletableFuture<ShowMessagesResponse>
      */
     public CompletableFuture<ShowMessagesResponse> showMessagesAsync(ShowMessagesRequest request) {
@@ -2022,12 +1967,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMessagesRequest 请求对象
+     * @param request ShowMessagesRequest 请求对象
      * @return AsyncInvoker<ShowMessagesRequest, ShowMessagesResponse>
      */
     public AsyncInvoker<ShowMessagesRequest, ShowMessagesResponse> showMessagesAsyncInvoker(
         ShowMessagesRequest request) {
-        return new AsyncInvoker<ShowMessagesRequest, ShowMessagesResponse>(request, KafkaMeta.showMessages, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showMessages, hcClient);
     }
 
     /**
@@ -2037,7 +1982,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionBeginningMessageRequest 请求对象
+     * @param request ShowPartitionBeginningMessageRequest 请求对象
      * @return CompletableFuture<ShowPartitionBeginningMessageResponse>
      */
     public CompletableFuture<ShowPartitionBeginningMessageResponse> showPartitionBeginningMessageAsync(
@@ -2052,13 +1997,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionBeginningMessageRequest 请求对象
+     * @param request ShowPartitionBeginningMessageRequest 请求对象
      * @return AsyncInvoker<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse>
      */
     public AsyncInvoker<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> showPartitionBeginningMessageAsyncInvoker(
         ShowPartitionBeginningMessageRequest request) {
-        return new AsyncInvoker<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse>(request,
-            KafkaMeta.showPartitionBeginningMessage, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showPartitionBeginningMessage, hcClient);
     }
 
     /**
@@ -2068,7 +2012,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionEndMessageRequest 请求对象
+     * @param request ShowPartitionEndMessageRequest 请求对象
      * @return CompletableFuture<ShowPartitionEndMessageResponse>
      */
     public CompletableFuture<ShowPartitionEndMessageResponse> showPartitionEndMessageAsync(
@@ -2083,13 +2027,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionEndMessageRequest 请求对象
+     * @param request ShowPartitionEndMessageRequest 请求对象
      * @return AsyncInvoker<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse>
      */
     public AsyncInvoker<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> showPartitionEndMessageAsyncInvoker(
         ShowPartitionEndMessageRequest request) {
-        return new AsyncInvoker<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse>(request,
-            KafkaMeta.showPartitionEndMessage, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showPartitionEndMessage, hcClient);
     }
 
     /**
@@ -2099,7 +2042,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionMessageRequest 请求对象
+     * @param request ShowPartitionMessageRequest 请求对象
      * @return CompletableFuture<ShowPartitionMessageResponse>
      */
     public CompletableFuture<ShowPartitionMessageResponse> showPartitionMessageAsync(
@@ -2114,13 +2057,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionMessageRequest 请求对象
+     * @param request ShowPartitionMessageRequest 请求对象
      * @return AsyncInvoker<ShowPartitionMessageRequest, ShowPartitionMessageResponse>
      */
     public AsyncInvoker<ShowPartitionMessageRequest, ShowPartitionMessageResponse> showPartitionMessageAsyncInvoker(
         ShowPartitionMessageRequest request) {
-        return new AsyncInvoker<ShowPartitionMessageRequest, ShowPartitionMessageResponse>(request,
-            KafkaMeta.showPartitionMessage, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showPartitionMessage, hcClient);
     }
 
     /**
@@ -2130,7 +2072,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowShrinkCheckResultRequest 请求对象
+     * @param request ShowShrinkCheckResultRequest 请求对象
      * @return CompletableFuture<ShowShrinkCheckResultResponse>
      */
     public CompletableFuture<ShowShrinkCheckResultResponse> showShrinkCheckResultAsync(
@@ -2145,13 +2087,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowShrinkCheckResultRequest 请求对象
+     * @param request ShowShrinkCheckResultRequest 请求对象
      * @return AsyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse>
      */
     public AsyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> showShrinkCheckResultAsyncInvoker(
         ShowShrinkCheckResultRequest request) {
-        return new AsyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse>(request,
-            KafkaMeta.showShrinkCheckResult, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showShrinkCheckResult, hcClient);
     }
 
     /**
@@ -2161,7 +2102,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSinkTaskDetailRequest 请求对象
+     * @param request ShowSinkTaskDetailRequest 请求对象
      * @return CompletableFuture<ShowSinkTaskDetailResponse>
      */
     public CompletableFuture<ShowSinkTaskDetailResponse> showSinkTaskDetailAsync(ShowSinkTaskDetailRequest request) {
@@ -2175,13 +2116,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSinkTaskDetailRequest 请求对象
+     * @param request ShowSinkTaskDetailRequest 请求对象
      * @return AsyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse>
      */
     public AsyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetailAsyncInvoker(
         ShowSinkTaskDetailRequest request) {
-        return new AsyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse>(request,
-            KafkaMeta.showSinkTaskDetail, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showSinkTaskDetail, hcClient);
     }
 
     /**
@@ -2193,7 +2133,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopicAccessPolicyRequest 请求对象
+     * @param request ShowTopicAccessPolicyRequest 请求对象
      * @return CompletableFuture<ShowTopicAccessPolicyResponse>
      */
     public CompletableFuture<ShowTopicAccessPolicyResponse> showTopicAccessPolicyAsync(
@@ -2210,13 +2150,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTopicAccessPolicyRequest 请求对象
+     * @param request ShowTopicAccessPolicyRequest 请求对象
      * @return AsyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse>
      */
     public AsyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicyAsyncInvoker(
         ShowTopicAccessPolicyRequest request) {
-        return new AsyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse>(request,
-            KafkaMeta.showTopicAccessPolicy, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.showTopicAccessPolicy, hcClient);
     }
 
     /**
@@ -2226,7 +2165,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return CompletableFuture<UpdateInstanceResponse>
      */
     public CompletableFuture<UpdateInstanceResponse> updateInstanceAsync(UpdateInstanceRequest request) {
@@ -2240,13 +2179,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
      */
     public AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceAsyncInvoker(
         UpdateInstanceRequest request) {
-        return new AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, KafkaMeta.updateInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.updateInstance, hcClient);
     }
 
     /**
@@ -2256,7 +2194,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceAutoCreateTopicRequest 请求对象
+     * @param request UpdateInstanceAutoCreateTopicRequest 请求对象
      * @return CompletableFuture<UpdateInstanceAutoCreateTopicResponse>
      */
     public CompletableFuture<UpdateInstanceAutoCreateTopicResponse> updateInstanceAutoCreateTopicAsync(
@@ -2271,13 +2209,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceAutoCreateTopicRequest 请求对象
+     * @param request UpdateInstanceAutoCreateTopicRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse>
      */
     public AsyncInvoker<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> updateInstanceAutoCreateTopicAsyncInvoker(
         UpdateInstanceAutoCreateTopicRequest request) {
-        return new AsyncInvoker<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse>(request,
-            KafkaMeta.updateInstanceAutoCreateTopic, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.updateInstanceAutoCreateTopic, hcClient);
     }
 
     /**
@@ -2287,7 +2224,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConsumerGroupRequest 请求对象
+     * @param request UpdateInstanceConsumerGroupRequest 请求对象
      * @return CompletableFuture<UpdateInstanceConsumerGroupResponse>
      */
     public CompletableFuture<UpdateInstanceConsumerGroupResponse> updateInstanceConsumerGroupAsync(
@@ -2302,13 +2239,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConsumerGroupRequest 请求对象
+     * @param request UpdateInstanceConsumerGroupRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse>
      */
     public AsyncInvoker<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse> updateInstanceConsumerGroupAsyncInvoker(
         UpdateInstanceConsumerGroupRequest request) {
-        return new AsyncInvoker<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse>(request,
-            KafkaMeta.updateInstanceConsumerGroup, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.updateInstanceConsumerGroup, hcClient);
     }
 
     /**
@@ -2318,7 +2254,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceCrossVpcIpRequest 请求对象
+     * @param request UpdateInstanceCrossVpcIpRequest 请求对象
      * @return CompletableFuture<UpdateInstanceCrossVpcIpResponse>
      */
     public CompletableFuture<UpdateInstanceCrossVpcIpResponse> updateInstanceCrossVpcIpAsync(
@@ -2333,13 +2269,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceCrossVpcIpRequest 请求对象
+     * @param request UpdateInstanceCrossVpcIpRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse>
      */
     public AsyncInvoker<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> updateInstanceCrossVpcIpAsyncInvoker(
         UpdateInstanceCrossVpcIpRequest request) {
-        return new AsyncInvoker<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse>(request,
-            KafkaMeta.updateInstanceCrossVpcIp, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.updateInstanceCrossVpcIp, hcClient);
     }
 
     /**
@@ -2349,7 +2284,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceTopicRequest 请求对象
+     * @param request UpdateInstanceTopicRequest 请求对象
      * @return CompletableFuture<UpdateInstanceTopicResponse>
      */
     public CompletableFuture<UpdateInstanceTopicResponse> updateInstanceTopicAsync(UpdateInstanceTopicRequest request) {
@@ -2363,13 +2298,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceTopicRequest 请求对象
+     * @param request UpdateInstanceTopicRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse>
      */
     public AsyncInvoker<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> updateInstanceTopicAsyncInvoker(
         UpdateInstanceTopicRequest request) {
-        return new AsyncInvoker<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse>(request,
-            KafkaMeta.updateInstanceTopic, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.updateInstanceTopic, hcClient);
     }
 
     /**
@@ -2379,7 +2313,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceUserRequest 请求对象
+     * @param request UpdateInstanceUserRequest 请求对象
      * @return CompletableFuture<UpdateInstanceUserResponse>
      */
     public CompletableFuture<UpdateInstanceUserResponse> updateInstanceUserAsync(UpdateInstanceUserRequest request) {
@@ -2393,13 +2327,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceUserRequest 请求对象
+     * @param request UpdateInstanceUserRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse>
      */
     public AsyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse> updateInstanceUserAsyncInvoker(
         UpdateInstanceUserRequest request) {
-        return new AsyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse>(request,
-            KafkaMeta.updateInstanceUser, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.updateInstanceUser, hcClient);
     }
 
     /**
@@ -2409,7 +2342,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request UpdateKafkaUserClientQuotaTaskRequest 请求对象
      * @return CompletableFuture<UpdateKafkaUserClientQuotaTaskResponse>
      */
     public CompletableFuture<UpdateKafkaUserClientQuotaTaskResponse> updateKafkaUserClientQuotaTaskAsync(
@@ -2424,13 +2357,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKafkaUserClientQuotaTaskRequest 请求对象
+     * @param request UpdateKafkaUserClientQuotaTaskRequest 请求对象
      * @return AsyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse>
      */
     public AsyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> updateKafkaUserClientQuotaTaskAsyncInvoker(
         UpdateKafkaUserClientQuotaTaskRequest request) {
-        return new AsyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse>(request,
-            KafkaMeta.updateKafkaUserClientQuotaTask, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.updateKafkaUserClientQuotaTask, hcClient);
     }
 
     /**
@@ -2442,7 +2374,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSinkTaskQuotaRequest 请求对象
+     * @param request UpdateSinkTaskQuotaRequest 请求对象
      * @return CompletableFuture<UpdateSinkTaskQuotaResponse>
      */
     public CompletableFuture<UpdateSinkTaskQuotaResponse> updateSinkTaskQuotaAsync(UpdateSinkTaskQuotaRequest request) {
@@ -2458,13 +2390,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSinkTaskQuotaRequest 请求对象
+     * @param request UpdateSinkTaskQuotaRequest 请求对象
      * @return AsyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse>
      */
     public AsyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> updateSinkTaskQuotaAsyncInvoker(
         UpdateSinkTaskQuotaRequest request) {
-        return new AsyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse>(request,
-            KafkaMeta.updateSinkTaskQuota, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.updateSinkTaskQuota, hcClient);
     }
 
     /**
@@ -2476,7 +2407,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicAccessPolicyRequest 请求对象
+     * @param request UpdateTopicAccessPolicyRequest 请求对象
      * @return CompletableFuture<UpdateTopicAccessPolicyResponse>
      */
     public CompletableFuture<UpdateTopicAccessPolicyResponse> updateTopicAccessPolicyAsync(
@@ -2493,13 +2424,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicAccessPolicyRequest 请求对象
+     * @param request UpdateTopicAccessPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>
      */
     public AsyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicyAsyncInvoker(
         UpdateTopicAccessPolicyRequest request) {
-        return new AsyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>(request,
-            KafkaMeta.updateTopicAccessPolicy, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.updateTopicAccessPolicy, hcClient);
     }
 
     /**
@@ -2509,7 +2439,7 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicReplicaRequest 请求对象
+     * @param request UpdateTopicReplicaRequest 请求对象
      * @return CompletableFuture<UpdateTopicReplicaResponse>
      */
     public CompletableFuture<UpdateTopicReplicaResponse> updateTopicReplicaAsync(UpdateTopicReplicaRequest request) {
@@ -2523,13 +2453,12 @@ public class KafkaAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTopicReplicaRequest 请求对象
+     * @param request UpdateTopicReplicaRequest 请求对象
      * @return AsyncInvoker<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse>
      */
     public AsyncInvoker<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> updateTopicReplicaAsyncInvoker(
         UpdateTopicReplicaRequest request) {
-        return new AsyncInvoker<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse>(request,
-            KafkaMeta.updateTopicReplica, hcClient);
+        return new AsyncInvoker<>(request, KafkaMeta.updateTopicReplica, hcClient);
     }
 
 }

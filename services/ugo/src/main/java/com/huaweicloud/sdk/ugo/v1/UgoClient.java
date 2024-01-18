@@ -68,7 +68,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckPermissionRequest 请求对象
+     * @param request CheckPermissionRequest 请求对象
      * @return CheckPermissionResponse
      */
     public CheckPermissionResponse checkPermission(CheckPermissionRequest request) {
@@ -82,13 +82,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckPermissionRequest 请求对象
+     * @param request CheckPermissionRequest 请求对象
      * @return SyncInvoker<CheckPermissionRequest, CheckPermissionResponse>
      */
     public SyncInvoker<CheckPermissionRequest, CheckPermissionResponse> checkPermissionInvoker(
         CheckPermissionRequest request) {
-        return new SyncInvoker<CheckPermissionRequest, CheckPermissionResponse>(request, UgoMeta.checkPermission,
-            hcClient);
+        return new SyncInvoker<>(request, UgoMeta.checkPermission, hcClient);
     }
 
     /**
@@ -98,7 +97,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitSyntaxConversionRequest 请求对象
+     * @param request CommitSyntaxConversionRequest 请求对象
      * @return CommitSyntaxConversionResponse
      */
     public CommitSyntaxConversionResponse commitSyntaxConversion(CommitSyntaxConversionRequest request) {
@@ -112,13 +111,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitSyntaxConversionRequest 请求对象
+     * @param request CommitSyntaxConversionRequest 请求对象
      * @return SyncInvoker<CommitSyntaxConversionRequest, CommitSyntaxConversionResponse>
      */
     public SyncInvoker<CommitSyntaxConversionRequest, CommitSyntaxConversionResponse> commitSyntaxConversionInvoker(
         CommitSyntaxConversionRequest request) {
-        return new SyncInvoker<CommitSyntaxConversionRequest, CommitSyntaxConversionResponse>(request,
-            UgoMeta.commitSyntaxConversion, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.commitSyntaxConversion, hcClient);
     }
 
     /**
@@ -128,7 +126,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitVerificationRequest 请求对象
+     * @param request CommitVerificationRequest 请求对象
      * @return CommitVerificationResponse
      */
     public CommitVerificationResponse commitVerification(CommitVerificationRequest request) {
@@ -142,13 +140,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitVerificationRequest 请求对象
+     * @param request CommitVerificationRequest 请求对象
      * @return SyncInvoker<CommitVerificationRequest, CommitVerificationResponse>
      */
     public SyncInvoker<CommitVerificationRequest, CommitVerificationResponse> commitVerificationInvoker(
         CommitVerificationRequest request) {
-        return new SyncInvoker<CommitVerificationRequest, CommitVerificationResponse>(request,
-            UgoMeta.commitVerification, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.commitVerification, hcClient);
     }
 
     /**
@@ -158,7 +155,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmTargetDbTypeRequest 请求对象
+     * @param request ConfirmTargetDbTypeRequest 请求对象
      * @return ConfirmTargetDbTypeResponse
      */
     public ConfirmTargetDbTypeResponse confirmTargetDbType(ConfirmTargetDbTypeRequest request) {
@@ -172,13 +169,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConfirmTargetDbTypeRequest 请求对象
+     * @param request ConfirmTargetDbTypeRequest 请求对象
      * @return SyncInvoker<ConfirmTargetDbTypeRequest, ConfirmTargetDbTypeResponse>
      */
     public SyncInvoker<ConfirmTargetDbTypeRequest, ConfirmTargetDbTypeResponse> confirmTargetDbTypeInvoker(
         ConfirmTargetDbTypeRequest request) {
-        return new SyncInvoker<ConfirmTargetDbTypeRequest, ConfirmTargetDbTypeResponse>(request,
-            UgoMeta.confirmTargetDbType, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.confirmTargetDbType, hcClient);
     }
 
     /**
@@ -188,7 +184,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEvaluationProjectRequest 请求对象
+     * @param request CreateEvaluationProjectRequest 请求对象
      * @return CreateEvaluationProjectResponse
      */
     public CreateEvaluationProjectResponse createEvaluationProject(CreateEvaluationProjectRequest request) {
@@ -202,13 +198,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEvaluationProjectRequest 请求对象
+     * @param request CreateEvaluationProjectRequest 请求对象
      * @return SyncInvoker<CreateEvaluationProjectRequest, CreateEvaluationProjectResponse>
      */
     public SyncInvoker<CreateEvaluationProjectRequest, CreateEvaluationProjectResponse> createEvaluationProjectInvoker(
         CreateEvaluationProjectRequest request) {
-        return new SyncInvoker<CreateEvaluationProjectRequest, CreateEvaluationProjectResponse>(request,
-            UgoMeta.createEvaluationProject, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.createEvaluationProject, hcClient);
     }
 
     /**
@@ -218,7 +213,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMigrationProjectRequest 请求对象
+     * @param request CreateMigrationProjectRequest 请求对象
      * @return CreateMigrationProjectResponse
      */
     public CreateMigrationProjectResponse createMigrationProject(CreateMigrationProjectRequest request) {
@@ -232,13 +227,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMigrationProjectRequest 请求对象
+     * @param request CreateMigrationProjectRequest 请求对象
      * @return SyncInvoker<CreateMigrationProjectRequest, CreateMigrationProjectResponse>
      */
     public SyncInvoker<CreateMigrationProjectRequest, CreateMigrationProjectResponse> createMigrationProjectInvoker(
         CreateMigrationProjectRequest request) {
-        return new SyncInvoker<CreateMigrationProjectRequest, CreateMigrationProjectResponse>(request,
-            UgoMeta.createMigrationProject, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.createMigrationProject, hcClient);
     }
 
     /**
@@ -248,7 +242,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvaluationProjectRequest 请求对象
+     * @param request DeleteEvaluationProjectRequest 请求对象
      * @return DeleteEvaluationProjectResponse
      */
     public DeleteEvaluationProjectResponse deleteEvaluationProject(DeleteEvaluationProjectRequest request) {
@@ -262,13 +256,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEvaluationProjectRequest 请求对象
+     * @param request DeleteEvaluationProjectRequest 请求对象
      * @return SyncInvoker<DeleteEvaluationProjectRequest, DeleteEvaluationProjectResponse>
      */
     public SyncInvoker<DeleteEvaluationProjectRequest, DeleteEvaluationProjectResponse> deleteEvaluationProjectInvoker(
         DeleteEvaluationProjectRequest request) {
-        return new SyncInvoker<DeleteEvaluationProjectRequest, DeleteEvaluationProjectResponse>(request,
-            UgoMeta.deleteEvaluationProject, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.deleteEvaluationProject, hcClient);
     }
 
     /**
@@ -278,7 +271,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMigrationProjectRequest 请求对象
+     * @param request DeleteMigrationProjectRequest 请求对象
      * @return DeleteMigrationProjectResponse
      */
     public DeleteMigrationProjectResponse deleteMigrationProject(DeleteMigrationProjectRequest request) {
@@ -292,13 +285,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMigrationProjectRequest 请求对象
+     * @param request DeleteMigrationProjectRequest 请求对象
      * @return SyncInvoker<DeleteMigrationProjectRequest, DeleteMigrationProjectResponse>
      */
     public SyncInvoker<DeleteMigrationProjectRequest, DeleteMigrationProjectResponse> deleteMigrationProjectInvoker(
         DeleteMigrationProjectRequest request) {
-        return new SyncInvoker<DeleteMigrationProjectRequest, DeleteMigrationProjectResponse>(request,
-            UgoMeta.deleteMigrationProject, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.deleteMigrationProject, hcClient);
     }
 
     /**
@@ -308,7 +300,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadFailureReportRequest 请求对象
+     * @param request DownloadFailureReportRequest 请求对象
      * @return DownloadFailureReportResponse
      */
     public DownloadFailureReportResponse downloadFailureReport(DownloadFailureReportRequest request) {
@@ -322,13 +314,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadFailureReportRequest 请求对象
+     * @param request DownloadFailureReportRequest 请求对象
      * @return SyncInvoker<DownloadFailureReportRequest, DownloadFailureReportResponse>
      */
     public SyncInvoker<DownloadFailureReportRequest, DownloadFailureReportResponse> downloadFailureReportInvoker(
         DownloadFailureReportRequest request) {
-        return new SyncInvoker<DownloadFailureReportRequest, DownloadFailureReportResponse>(request,
-            UgoMeta.downloadFailureReport, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.downloadFailureReport, hcClient);
     }
 
     /**
@@ -338,7 +329,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEvaluationProjectsRequest 请求对象
+     * @param request ListEvaluationProjectsRequest 请求对象
      * @return ListEvaluationProjectsResponse
      */
     public ListEvaluationProjectsResponse listEvaluationProjects(ListEvaluationProjectsRequest request) {
@@ -352,13 +343,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEvaluationProjectsRequest 请求对象
+     * @param request ListEvaluationProjectsRequest 请求对象
      * @return SyncInvoker<ListEvaluationProjectsRequest, ListEvaluationProjectsResponse>
      */
     public SyncInvoker<ListEvaluationProjectsRequest, ListEvaluationProjectsResponse> listEvaluationProjectsInvoker(
         ListEvaluationProjectsRequest request) {
-        return new SyncInvoker<ListEvaluationProjectsRequest, ListEvaluationProjectsResponse>(request,
-            UgoMeta.listEvaluationProjects, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.listEvaluationProjects, hcClient);
     }
 
     /**
@@ -368,7 +358,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMigrationProjectsRequest 请求对象
+     * @param request ListMigrationProjectsRequest 请求对象
      * @return ListMigrationProjectsResponse
      */
     public ListMigrationProjectsResponse listMigrationProjects(ListMigrationProjectsRequest request) {
@@ -382,13 +372,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMigrationProjectsRequest 请求对象
+     * @param request ListMigrationProjectsRequest 请求对象
      * @return SyncInvoker<ListMigrationProjectsRequest, ListMigrationProjectsResponse>
      */
     public SyncInvoker<ListMigrationProjectsRequest, ListMigrationProjectsResponse> listMigrationProjectsInvoker(
         ListMigrationProjectsRequest request) {
-        return new SyncInvoker<ListMigrationProjectsRequest, ListMigrationProjectsResponse>(request,
-            UgoMeta.listMigrationProjects, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.listMigrationProjects, hcClient);
     }
 
     /**
@@ -398,7 +387,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionCheckResultRequest 请求对象
+     * @param request ListPermissionCheckResultRequest 请求对象
      * @return ListPermissionCheckResultResponse
      */
     public ListPermissionCheckResultResponse listPermissionCheckResult(ListPermissionCheckResultRequest request) {
@@ -412,13 +401,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionCheckResultRequest 请求对象
+     * @param request ListPermissionCheckResultRequest 请求对象
      * @return SyncInvoker<ListPermissionCheckResultRequest, ListPermissionCheckResultResponse>
      */
     public SyncInvoker<ListPermissionCheckResultRequest, ListPermissionCheckResultResponse> listPermissionCheckResultInvoker(
         ListPermissionCheckResultRequest request) {
-        return new SyncInvoker<ListPermissionCheckResultRequest, ListPermissionCheckResultResponse>(request,
-            UgoMeta.listPermissionCheckResult, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.listPermissionCheckResult, hcClient);
     }
 
     /**
@@ -428,7 +416,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return ListQuotasResponse
      */
     public ListQuotasResponse listQuotas(ListQuotasRequest request) {
@@ -442,11 +430,11 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
-        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, UgoMeta.listQuotas, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.listQuotas, hcClient);
     }
 
     /**
@@ -456,7 +444,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSyntaxConversionProgressRequest 请求对象
+     * @param request ListSyntaxConversionProgressRequest 请求对象
      * @return ListSyntaxConversionProgressResponse
      */
     public ListSyntaxConversionProgressResponse listSyntaxConversionProgress(
@@ -471,13 +459,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSyntaxConversionProgressRequest 请求对象
+     * @param request ListSyntaxConversionProgressRequest 请求对象
      * @return SyncInvoker<ListSyntaxConversionProgressRequest, ListSyntaxConversionProgressResponse>
      */
     public SyncInvoker<ListSyntaxConversionProgressRequest, ListSyntaxConversionProgressResponse> listSyntaxConversionProgressInvoker(
         ListSyntaxConversionProgressRequest request) {
-        return new SyncInvoker<ListSyntaxConversionProgressRequest, ListSyntaxConversionProgressResponse>(request,
-            UgoMeta.listSyntaxConversionProgress, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.listSyntaxConversionProgress, hcClient);
     }
 
     /**
@@ -487,7 +474,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVerificationProgressRequest 请求对象
+     * @param request ListVerificationProgressRequest 请求对象
      * @return ListVerificationProgressResponse
      */
     public ListVerificationProgressResponse listVerificationProgress(ListVerificationProgressRequest request) {
@@ -501,13 +488,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVerificationProgressRequest 请求对象
+     * @param request ListVerificationProgressRequest 请求对象
      * @return SyncInvoker<ListVerificationProgressRequest, ListVerificationProgressResponse>
      */
     public SyncInvoker<ListVerificationProgressRequest, ListVerificationProgressResponse> listVerificationProgressInvoker(
         ListVerificationProgressRequest request) {
-        return new SyncInvoker<ListVerificationProgressRequest, ListVerificationProgressResponse>(request,
-            UgoMeta.listVerificationProgress, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.listVerificationProgress, hcClient);
     }
 
     /**
@@ -517,7 +503,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEvaluationProjectDetailRequest 请求对象
+     * @param request ShowEvaluationProjectDetailRequest 请求对象
      * @return ShowEvaluationProjectDetailResponse
      */
     public ShowEvaluationProjectDetailResponse showEvaluationProjectDetail(ShowEvaluationProjectDetailRequest request) {
@@ -531,13 +517,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEvaluationProjectDetailRequest 请求对象
+     * @param request ShowEvaluationProjectDetailRequest 请求对象
      * @return SyncInvoker<ShowEvaluationProjectDetailRequest, ShowEvaluationProjectDetailResponse>
      */
     public SyncInvoker<ShowEvaluationProjectDetailRequest, ShowEvaluationProjectDetailResponse> showEvaluationProjectDetailInvoker(
         ShowEvaluationProjectDetailRequest request) {
-        return new SyncInvoker<ShowEvaluationProjectDetailRequest, ShowEvaluationProjectDetailResponse>(request,
-            UgoMeta.showEvaluationProjectDetail, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.showEvaluationProjectDetail, hcClient);
     }
 
     /**
@@ -547,7 +532,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEvaluationProjectStatusRequest 请求对象
+     * @param request ShowEvaluationProjectStatusRequest 请求对象
      * @return ShowEvaluationProjectStatusResponse
      */
     public ShowEvaluationProjectStatusResponse showEvaluationProjectStatus(ShowEvaluationProjectStatusRequest request) {
@@ -561,13 +546,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEvaluationProjectStatusRequest 请求对象
+     * @param request ShowEvaluationProjectStatusRequest 请求对象
      * @return SyncInvoker<ShowEvaluationProjectStatusRequest, ShowEvaluationProjectStatusResponse>
      */
     public SyncInvoker<ShowEvaluationProjectStatusRequest, ShowEvaluationProjectStatusResponse> showEvaluationProjectStatusInvoker(
         ShowEvaluationProjectStatusRequest request) {
-        return new SyncInvoker<ShowEvaluationProjectStatusRequest, ShowEvaluationProjectStatusResponse>(request,
-            UgoMeta.showEvaluationProjectStatus, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.showEvaluationProjectStatus, hcClient);
     }
 
     /**
@@ -577,7 +561,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMigrationProjectDetailRequest 请求对象
+     * @param request ShowMigrationProjectDetailRequest 请求对象
      * @return ShowMigrationProjectDetailResponse
      */
     public ShowMigrationProjectDetailResponse showMigrationProjectDetail(ShowMigrationProjectDetailRequest request) {
@@ -591,13 +575,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMigrationProjectDetailRequest 请求对象
+     * @param request ShowMigrationProjectDetailRequest 请求对象
      * @return SyncInvoker<ShowMigrationProjectDetailRequest, ShowMigrationProjectDetailResponse>
      */
     public SyncInvoker<ShowMigrationProjectDetailRequest, ShowMigrationProjectDetailResponse> showMigrationProjectDetailInvoker(
         ShowMigrationProjectDetailRequest request) {
-        return new SyncInvoker<ShowMigrationProjectDetailRequest, ShowMigrationProjectDetailResponse>(request,
-            UgoMeta.showMigrationProjectDetail, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.showMigrationProjectDetail, hcClient);
     }
 
     /**
@@ -607,7 +590,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMigrationProjectStatusRequest 请求对象
+     * @param request ShowMigrationProjectStatusRequest 请求对象
      * @return ShowMigrationProjectStatusResponse
      */
     public ShowMigrationProjectStatusResponse showMigrationProjectStatus(ShowMigrationProjectStatusRequest request) {
@@ -621,13 +604,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMigrationProjectStatusRequest 请求对象
+     * @param request ShowMigrationProjectStatusRequest 请求对象
      * @return SyncInvoker<ShowMigrationProjectStatusRequest, ShowMigrationProjectStatusResponse>
      */
     public SyncInvoker<ShowMigrationProjectStatusRequest, ShowMigrationProjectStatusResponse> showMigrationProjectStatusInvoker(
         ShowMigrationProjectStatusRequest request) {
-        return new SyncInvoker<ShowMigrationProjectStatusRequest, ShowMigrationProjectStatusResponse>(request,
-            UgoMeta.showMigrationProjectStatus, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.showMigrationProjectStatus, hcClient);
     }
 
     /**
@@ -637,7 +619,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
      */
     public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
@@ -651,13 +633,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsInvoker(
         ListApiVersionsRequest request) {
-        return new SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, UgoMeta.listApiVersions,
-            hcClient);
+        return new SyncInvoker<>(request, UgoMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -667,7 +648,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionInfoRequest 请求对象
+     * @param request ShowApiVersionInfoRequest 请求对象
      * @return ShowApiVersionInfoResponse
      */
     public ShowApiVersionInfoResponse showApiVersionInfo(ShowApiVersionInfoRequest request) {
@@ -681,13 +662,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowApiVersionInfoRequest 请求对象
+     * @param request ShowApiVersionInfoRequest 请求对象
      * @return SyncInvoker<ShowApiVersionInfoRequest, ShowApiVersionInfoResponse>
      */
     public SyncInvoker<ShowApiVersionInfoRequest, ShowApiVersionInfoResponse> showApiVersionInfoInvoker(
         ShowApiVersionInfoRequest request) {
-        return new SyncInvoker<ShowApiVersionInfoRequest, ShowApiVersionInfoResponse>(request,
-            UgoMeta.showApiVersionInfo, hcClient);
+        return new SyncInvoker<>(request, UgoMeta.showApiVersionInfo, hcClient);
     }
 
     /**
@@ -697,7 +677,7 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSqlConversionRequest 请求对象
+     * @param request RunSqlConversionRequest 请求对象
      * @return RunSqlConversionResponse
      */
     public RunSqlConversionResponse runSqlConversion(RunSqlConversionRequest request) {
@@ -711,13 +691,12 @@ public class UgoClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunSqlConversionRequest 请求对象
+     * @param request RunSqlConversionRequest 请求对象
      * @return SyncInvoker<RunSqlConversionRequest, RunSqlConversionResponse>
      */
     public SyncInvoker<RunSqlConversionRequest, RunSqlConversionResponse> runSqlConversionInvoker(
         RunSqlConversionRequest request) {
-        return new SyncInvoker<RunSqlConversionRequest, RunSqlConversionResponse>(request, UgoMeta.runSqlConversion,
-            hcClient);
+        return new SyncInvoker<>(request, UgoMeta.runSqlConversion, hcClient);
     }
 
 }

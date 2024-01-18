@@ -64,7 +64,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return CreateAppResponse
      */
     public CreateAppResponse createApp(CreateAppRequest request) {
@@ -78,11 +78,11 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return SyncInvoker<CreateAppRequest, CreateAppResponse>
      */
     public SyncInvoker<CreateAppRequest, CreateAppResponse> createAppInvoker(CreateAppRequest request) {
-        return new SyncInvoker<CreateAppRequest, CreateAppResponse>(request, MsgsmsMeta.createApp, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.createApp, hcClient);
     }
 
     /**
@@ -92,7 +92,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppDetailsRequest 请求对象
+     * @param request ListAppDetailsRequest 请求对象
      * @return ListAppDetailsResponse
      */
     public ListAppDetailsResponse listAppDetails(ListAppDetailsRequest request) {
@@ -106,13 +106,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppDetailsRequest 请求对象
+     * @param request ListAppDetailsRequest 请求对象
      * @return SyncInvoker<ListAppDetailsRequest, ListAppDetailsResponse>
      */
     public SyncInvoker<ListAppDetailsRequest, ListAppDetailsResponse> listAppDetailsInvoker(
         ListAppDetailsRequest request) {
-        return new SyncInvoker<ListAppDetailsRequest, ListAppDetailsResponse>(request, MsgsmsMeta.listAppDetails,
-            hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.listAppDetails, hcClient);
     }
 
     /**
@@ -122,7 +121,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return ShowAppResponse
      */
     public ShowAppResponse showApp(ShowAppRequest request) {
@@ -136,11 +135,11 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return SyncInvoker<ShowAppRequest, ShowAppResponse>
      */
     public SyncInvoker<ShowAppRequest, ShowAppResponse> showAppInvoker(ShowAppRequest request) {
-        return new SyncInvoker<ShowAppRequest, ShowAppResponse>(request, MsgsmsMeta.showApp, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.showApp, hcClient);
     }
 
     /**
@@ -150,7 +149,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppCountRequest 请求对象
+     * @param request ShowAppCountRequest 请求对象
      * @return ShowAppCountResponse
      */
     public ShowAppCountResponse showAppCount(ShowAppCountRequest request) {
@@ -164,11 +163,11 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppCountRequest 请求对象
+     * @param request ShowAppCountRequest 请求对象
      * @return SyncInvoker<ShowAppCountRequest, ShowAppCountResponse>
      */
     public SyncInvoker<ShowAppCountRequest, ShowAppCountResponse> showAppCountInvoker(ShowAppCountRequest request) {
-        return new SyncInvoker<ShowAppCountRequest, ShowAppCountResponse>(request, MsgsmsMeta.showAppCount, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.showAppCount, hcClient);
     }
 
     /**
@@ -178,7 +177,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return UpdateAppResponse
      */
     public UpdateAppResponse updateApp(UpdateAppRequest request) {
@@ -192,11 +191,11 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return SyncInvoker<UpdateAppRequest, UpdateAppResponse>
      */
     public SyncInvoker<UpdateAppRequest, UpdateAppResponse> updateAppInvoker(UpdateAppRequest request) {
-        return new SyncInvoker<UpdateAppRequest, UpdateAppResponse>(request, MsgsmsMeta.updateApp, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.updateApp, hcClient);
     }
 
     /**
@@ -206,7 +205,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSignatureRequest 请求对象
+     * @param request CreateSignatureRequest 请求对象
      * @return CreateSignatureResponse
      */
     public CreateSignatureResponse createSignature(CreateSignatureRequest request) {
@@ -220,13 +219,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSignatureRequest 请求对象
+     * @param request CreateSignatureRequest 请求对象
      * @return SyncInvoker<CreateSignatureRequest, CreateSignatureResponse>
      */
     public SyncInvoker<CreateSignatureRequest, CreateSignatureResponse> createSignatureInvoker(
         CreateSignatureRequest request) {
-        return new SyncInvoker<CreateSignatureRequest, CreateSignatureResponse>(request, MsgsmsMeta.createSignature,
-            hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.createSignature, hcClient);
     }
 
     /**
@@ -236,7 +234,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSignatureRequest 请求对象
+     * @param request DeleteSignatureRequest 请求对象
      * @return DeleteSignatureResponse
      */
     public DeleteSignatureResponse deleteSignature(DeleteSignatureRequest request) {
@@ -250,13 +248,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSignatureRequest 请求对象
+     * @param request DeleteSignatureRequest 请求对象
      * @return SyncInvoker<DeleteSignatureRequest, DeleteSignatureResponse>
      */
     public SyncInvoker<DeleteSignatureRequest, DeleteSignatureResponse> deleteSignatureInvoker(
         DeleteSignatureRequest request) {
-        return new SyncInvoker<DeleteSignatureRequest, DeleteSignatureResponse>(request, MsgsmsMeta.deleteSignature,
-            hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.deleteSignature, hcClient);
     }
 
     /**
@@ -266,7 +263,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableSignatureRequest 请求对象
+     * @param request EnableSignatureRequest 请求对象
      * @return EnableSignatureResponse
      */
     public EnableSignatureResponse enableSignature(EnableSignatureRequest request) {
@@ -280,13 +277,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableSignatureRequest 请求对象
+     * @param request EnableSignatureRequest 请求对象
      * @return SyncInvoker<EnableSignatureRequest, EnableSignatureResponse>
      */
     public SyncInvoker<EnableSignatureRequest, EnableSignatureResponse> enableSignatureInvoker(
         EnableSignatureRequest request) {
-        return new SyncInvoker<EnableSignatureRequest, EnableSignatureResponse>(request, MsgsmsMeta.enableSignature,
-            hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.enableSignature, hcClient);
     }
 
     /**
@@ -296,7 +292,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureDetailsRequest 请求对象
+     * @param request ListSignatureDetailsRequest 请求对象
      * @return ListSignatureDetailsResponse
      */
     public ListSignatureDetailsResponse listSignatureDetails(ListSignatureDetailsRequest request) {
@@ -310,13 +306,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureDetailsRequest 请求对象
+     * @param request ListSignatureDetailsRequest 请求对象
      * @return SyncInvoker<ListSignatureDetailsRequest, ListSignatureDetailsResponse>
      */
     public SyncInvoker<ListSignatureDetailsRequest, ListSignatureDetailsResponse> listSignatureDetailsInvoker(
         ListSignatureDetailsRequest request) {
-        return new SyncInvoker<ListSignatureDetailsRequest, ListSignatureDetailsResponse>(request,
-            MsgsmsMeta.listSignatureDetails, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.listSignatureDetails, hcClient);
     }
 
     /**
@@ -326,7 +321,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSignatureRequest 请求对象
+     * @param request ShowSignatureRequest 请求对象
      * @return ShowSignatureResponse
      */
     public ShowSignatureResponse showSignature(ShowSignatureRequest request) {
@@ -340,12 +335,11 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSignatureRequest 请求对象
+     * @param request ShowSignatureRequest 请求对象
      * @return SyncInvoker<ShowSignatureRequest, ShowSignatureResponse>
      */
     public SyncInvoker<ShowSignatureRequest, ShowSignatureResponse> showSignatureInvoker(ShowSignatureRequest request) {
-        return new SyncInvoker<ShowSignatureRequest, ShowSignatureResponse>(request, MsgsmsMeta.showSignature,
-            hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.showSignature, hcClient);
     }
 
     /**
@@ -355,7 +349,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSignatureFileRequest 请求对象
+     * @param request ShowSignatureFileRequest 请求对象
      * @return ShowSignatureFileResponse
      */
     public ShowSignatureFileResponse showSignatureFile(ShowSignatureFileRequest request) {
@@ -369,13 +363,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSignatureFileRequest 请求对象
+     * @param request ShowSignatureFileRequest 请求对象
      * @return SyncInvoker<ShowSignatureFileRequest, ShowSignatureFileResponse>
      */
     public SyncInvoker<ShowSignatureFileRequest, ShowSignatureFileResponse> showSignatureFileInvoker(
         ShowSignatureFileRequest request) {
-        return new SyncInvoker<ShowSignatureFileRequest, ShowSignatureFileResponse>(request,
-            MsgsmsMeta.showSignatureFile, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.showSignatureFile, hcClient);
     }
 
     /**
@@ -385,7 +378,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSignatureRequest 请求对象
+     * @param request UpdateSignatureRequest 请求对象
      * @return UpdateSignatureResponse
      */
     public UpdateSignatureResponse updateSignature(UpdateSignatureRequest request) {
@@ -399,13 +392,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSignatureRequest 请求对象
+     * @param request UpdateSignatureRequest 请求对象
      * @return SyncInvoker<UpdateSignatureRequest, UpdateSignatureResponse>
      */
     public SyncInvoker<UpdateSignatureRequest, UpdateSignatureResponse> updateSignatureInvoker(
         UpdateSignatureRequest request) {
-        return new SyncInvoker<UpdateSignatureRequest, UpdateSignatureResponse>(request, MsgsmsMeta.updateSignature,
-            hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.updateSignature, hcClient);
     }
 
     /**
@@ -415,7 +407,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadSignatureFileRequest 请求对象
+     * @param request UploadSignatureFileRequest 请求对象
      * @return UploadSignatureFileResponse
      */
     public UploadSignatureFileResponse uploadSignatureFile(UploadSignatureFileRequest request) {
@@ -429,13 +421,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadSignatureFileRequest 请求对象
+     * @param request UploadSignatureFileRequest 请求对象
      * @return SyncInvoker<UploadSignatureFileRequest, UploadSignatureFileResponse>
      */
     public SyncInvoker<UploadSignatureFileRequest, UploadSignatureFileResponse> uploadSignatureFileInvoker(
         UploadSignatureFileRequest request) {
-        return new SyncInvoker<UploadSignatureFileRequest, UploadSignatureFileResponse>(request,
-            MsgsmsMeta.uploadSignatureFile, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.uploadSignatureFile, hcClient);
     }
 
     /**
@@ -445,7 +436,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateRequest 请求对象
+     * @param request CreateTemplateRequest 请求对象
      * @return CreateTemplateResponse
      */
     public CreateTemplateResponse createTemplate(CreateTemplateRequest request) {
@@ -459,13 +450,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateRequest 请求对象
+     * @param request CreateTemplateRequest 请求对象
      * @return SyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
      */
     public SyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateInvoker(
         CreateTemplateRequest request) {
-        return new SyncInvoker<CreateTemplateRequest, CreateTemplateResponse>(request, MsgsmsMeta.createTemplate,
-            hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.createTemplate, hcClient);
     }
 
     /**
@@ -475,7 +465,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return DeleteTemplateResponse
      */
     public DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request) {
@@ -489,13 +479,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
      */
     public SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateInvoker(
         DeleteTemplateRequest request) {
-        return new SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>(request, MsgsmsMeta.deleteTemplate,
-            hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.deleteTemplate, hcClient);
     }
 
     /**
@@ -505,7 +494,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSendCountryDetailsRequest 请求对象
+     * @param request ListSendCountryDetailsRequest 请求对象
      * @return ListSendCountryDetailsResponse
      */
     public ListSendCountryDetailsResponse listSendCountryDetails(ListSendCountryDetailsRequest request) {
@@ -519,13 +508,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSendCountryDetailsRequest 请求对象
+     * @param request ListSendCountryDetailsRequest 请求对象
      * @return SyncInvoker<ListSendCountryDetailsRequest, ListSendCountryDetailsResponse>
      */
     public SyncInvoker<ListSendCountryDetailsRequest, ListSendCountryDetailsResponse> listSendCountryDetailsInvoker(
         ListSendCountryDetailsRequest request) {
-        return new SyncInvoker<ListSendCountryDetailsRequest, ListSendCountryDetailsResponse>(request,
-            MsgsmsMeta.listSendCountryDetails, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.listSendCountryDetails, hcClient);
     }
 
     /**
@@ -535,7 +523,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateDetailsRequest 请求对象
+     * @param request ListTemplateDetailsRequest 请求对象
      * @return ListTemplateDetailsResponse
      */
     public ListTemplateDetailsResponse listTemplateDetails(ListTemplateDetailsRequest request) {
@@ -549,13 +537,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateDetailsRequest 请求对象
+     * @param request ListTemplateDetailsRequest 请求对象
      * @return SyncInvoker<ListTemplateDetailsRequest, ListTemplateDetailsResponse>
      */
     public SyncInvoker<ListTemplateDetailsRequest, ListTemplateDetailsResponse> listTemplateDetailsInvoker(
         ListTemplateDetailsRequest request) {
-        return new SyncInvoker<ListTemplateDetailsRequest, ListTemplateDetailsResponse>(request,
-            MsgsmsMeta.listTemplateDetails, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.listTemplateDetails, hcClient);
     }
 
     /**
@@ -565,7 +552,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateVarilableDetailsRequest 请求对象
+     * @param request ListTemplateVarilableDetailsRequest 请求对象
      * @return ListTemplateVarilableDetailsResponse
      */
     public ListTemplateVarilableDetailsResponse listTemplateVarilableDetails(
@@ -580,13 +567,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateVarilableDetailsRequest 请求对象
+     * @param request ListTemplateVarilableDetailsRequest 请求对象
      * @return SyncInvoker<ListTemplateVarilableDetailsRequest, ListTemplateVarilableDetailsResponse>
      */
     public SyncInvoker<ListTemplateVarilableDetailsRequest, ListTemplateVarilableDetailsResponse> listTemplateVarilableDetailsInvoker(
         ListTemplateVarilableDetailsRequest request) {
-        return new SyncInvoker<ListTemplateVarilableDetailsRequest, ListTemplateVarilableDetailsResponse>(request,
-            MsgsmsMeta.listTemplateVarilableDetails, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.listTemplateVarilableDetails, hcClient);
     }
 
     /**
@@ -596,7 +582,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateRequest 请求对象
+     * @param request ShowTemplateRequest 请求对象
      * @return ShowTemplateResponse
      */
     public ShowTemplateResponse showTemplate(ShowTemplateRequest request) {
@@ -610,11 +596,11 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateRequest 请求对象
+     * @param request ShowTemplateRequest 请求对象
      * @return SyncInvoker<ShowTemplateRequest, ShowTemplateResponse>
      */
     public SyncInvoker<ShowTemplateRequest, ShowTemplateResponse> showTemplateInvoker(ShowTemplateRequest request) {
-        return new SyncInvoker<ShowTemplateRequest, ShowTemplateResponse>(request, MsgsmsMeta.showTemplate, hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.showTemplate, hcClient);
     }
 
     /**
@@ -624,7 +610,7 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateRequest 请求对象
+     * @param request UpdateTemplateRequest 请求对象
      * @return UpdateTemplateResponse
      */
     public UpdateTemplateResponse updateTemplate(UpdateTemplateRequest request) {
@@ -638,13 +624,12 @@ public class MsgsmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateRequest 请求对象
+     * @param request UpdateTemplateRequest 请求对象
      * @return SyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>
      */
     public SyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplateInvoker(
         UpdateTemplateRequest request) {
-        return new SyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>(request, MsgsmsMeta.updateTemplate,
-            hcClient);
+        return new SyncInvoker<>(request, MsgsmsMeta.updateTemplate, hcClient);
     }
 
 }

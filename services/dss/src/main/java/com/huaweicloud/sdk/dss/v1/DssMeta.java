@@ -17,9 +17,9 @@ import com.huaweicloud.sdk.dss.v1.model.ShowVersionsResponse;
 @SuppressWarnings("unchecked")
 public class DssMeta {
 
-    public static final HttpRequestDef<ListPoolsRequest, ListPoolsResponse> listPools = genForlistPools();
+    public static final HttpRequestDef<ListPoolsRequest, ListPoolsResponse> listPools = genForListPools();
 
-    private static HttpRequestDef<ListPoolsRequest, ListPoolsResponse> genForlistPools() {
+    private static HttpRequestDef<ListPoolsRequest, ListPoolsResponse> genForListPools() {
         // basic
         HttpRequestDef.Builder<ListPoolsRequest, ListPoolsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPoolsRequest.class, ListPoolsResponse.class)
@@ -32,46 +32,36 @@ public class DssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPoolsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getLimit, ListPoolsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPoolsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getOffset, ListPoolsRequest::setOffset));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getStatus, ListPoolsRequest::setStatus));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getName, ListPoolsRequest::setName));
         builder.<Boolean>withRequestField("usage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPoolsRequest::getUsage, (req, v) -> {
-                req.setUsage(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getUsage, ListPoolsRequest::setUsage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListVersionRequest, ListVersionResponse> listVersion = genForlistVersion();
+    public static final HttpRequestDef<ListVersionRequest, ListVersionResponse> listVersion = genForListVersion();
 
-    private static HttpRequestDef<ListVersionRequest, ListVersionResponse> genForlistVersion() {
+    private static HttpRequestDef<ListVersionRequest, ListVersionResponse> genForListVersion() {
         // basic
         HttpRequestDef.Builder<ListVersionRequest, ListVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVersionRequest.class, ListVersionResponse.class)
@@ -86,9 +76,9 @@ public class DssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPoolRequest, ShowPoolResponse> showPool = genForshowPool();
+    public static final HttpRequestDef<ShowPoolRequest, ShowPoolResponse> showPool = genForShowPool();
 
-    private static HttpRequestDef<ShowPoolRequest, ShowPoolResponse> genForshowPool() {
+    private static HttpRequestDef<ShowPoolRequest, ShowPoolResponse> genForShowPool() {
         // basic
         HttpRequestDef.Builder<ShowPoolRequest, ShowPoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPoolRequest.class, ShowPoolResponse.class)
@@ -101,25 +91,21 @@ public class DssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPoolRequest::getDssId, (req, v) -> {
-                req.setDssId(v);
-            }));
+            f -> f.withMarshaller(ShowPoolRequest::getDssId, ShowPoolRequest::setDssId));
         builder.<Boolean>withRequestField("usage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowPoolRequest::getUsage, (req, v) -> {
-                req.setUsage(v);
-            }));
+            f -> f.withMarshaller(ShowPoolRequest::getUsage, ShowPoolRequest::setUsage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVersionsRequest, ShowVersionsResponse> showVersions = genForshowVersions();
+    public static final HttpRequestDef<ShowVersionsRequest, ShowVersionsResponse> showVersions = genForShowVersions();
 
-    private static HttpRequestDef<ShowVersionsRequest, ShowVersionsResponse> genForshowVersions() {
+    private static HttpRequestDef<ShowVersionsRequest, ShowVersionsResponse> genForShowVersions() {
         // basic
         HttpRequestDef.Builder<ShowVersionsRequest, ShowVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionsRequest.class, ShowVersionsResponse.class)
@@ -132,9 +118,7 @@ public class DssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVersionsRequest::getApiVersion, (req, v) -> {
-                req.setApiVersion(v);
-            }));
+            f -> f.withMarshaller(ShowVersionsRequest::getApiVersion, ShowVersionsRequest::setApiVersion));
 
         // response
 

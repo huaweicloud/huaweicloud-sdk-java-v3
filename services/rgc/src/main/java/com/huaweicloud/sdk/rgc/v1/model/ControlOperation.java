@@ -11,9 +11,9 @@ import java.util.Objects;
 public class ControlOperation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "control_operate_request_id")
+    @JsonProperty(value = "operation_control_status_id")
 
-    private String controlOperateRequestId;
+    private String operationControlStatusId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_type")
@@ -40,21 +40,21 @@ public class ControlOperation {
 
     private String endTime;
 
-    public ControlOperation withControlOperateRequestId(String controlOperateRequestId) {
-        this.controlOperateRequestId = controlOperateRequestId;
+    public ControlOperation withOperationControlStatusId(String operationControlStatusId) {
+        this.operationControlStatusId = operationControlStatusId;
         return this;
     }
 
     /**
      * 本次操作控制策略的ID。
-     * @return controlOperateRequestId
+     * @return operationControlStatusId
      */
-    public String getControlOperateRequestId() {
-        return controlOperateRequestId;
+    public String getOperationControlStatusId() {
+        return operationControlStatusId;
     }
 
-    public void setControlOperateRequestId(String controlOperateRequestId) {
-        this.controlOperateRequestId = controlOperateRequestId;
+    public void setOperationControlStatusId(String operationControlStatusId) {
+        this.operationControlStatusId = operationControlStatusId;
     }
 
     public ControlOperation withOperationType(String operationType) {
@@ -151,7 +151,7 @@ public class ControlOperation {
             return false;
         }
         ControlOperation that = (ControlOperation) obj;
-        return Objects.equals(this.controlOperateRequestId, that.controlOperateRequestId)
+        return Objects.equals(this.operationControlStatusId, that.operationControlStatusId)
             && Objects.equals(this.operationType, that.operationType) && Objects.equals(this.status, that.status)
             && Objects.equals(this.message, that.message) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime);
@@ -159,14 +159,14 @@ public class ControlOperation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(controlOperateRequestId, operationType, status, message, startTime, endTime);
+        return Objects.hash(operationControlStatusId, operationType, status, message, startTime, endTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ControlOperation {\n");
-        sb.append("    controlOperateRequestId: ").append(toIndentedString(controlOperateRequestId)).append("\n");
+        sb.append("    operationControlStatusId: ").append(toIndentedString(operationControlStatusId)).append("\n");
         sb.append("    operationType: ").append(toIndentedString(operationType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");

@@ -56,7 +56,7 @@ public class EnabledControl {
     }
 
     /**
-     * 管理账号ID。
+     * 管理纳管账号ID。
      * @return manageAccountId
      */
     public String getManageAccountId() {
@@ -158,7 +158,7 @@ public class EnabledControl {
     }
 
     /**
-     * 账号的创建来源，包括CUSTOM和RGC。
+     * 纳管账号的创建来源，包括CUSTOM和RGC。
      * @return owner
      */
     public String getOwner() {
@@ -175,7 +175,7 @@ public class EnabledControl {
     }
 
     /**
-     * regional/global。
+     * 区域选项，取值有两种分别是：区域的regional和全局的global。
      * @return regionalPreference
      */
     public String getRegionalPreference() {

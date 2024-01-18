@@ -142,7 +142,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataChannelRequest 请求对象
+     * @param request CreateDataChannelRequest 请求对象
      * @return CompletableFuture<CreateDataChannelResponse>
      */
     public CompletableFuture<CreateDataChannelResponse> createDataChannelAsync(CreateDataChannelRequest request) {
@@ -156,13 +156,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataChannelRequest 请求对象
+     * @param request CreateDataChannelRequest 请求对象
      * @return AsyncInvoker<CreateDataChannelRequest, CreateDataChannelResponse>
      */
     public AsyncInvoker<CreateDataChannelRequest, CreateDataChannelResponse> createDataChannelAsyncInvoker(
         CreateDataChannelRequest request) {
-        return new AsyncInvoker<CreateDataChannelRequest, CreateDataChannelResponse>(request,
-            DrisMeta.createDataChannel, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.createDataChannel, hcClient);
     }
 
     /**
@@ -172,7 +171,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataChannelRequest 请求对象
+     * @param request DeleteDataChannelRequest 请求对象
      * @return CompletableFuture<DeleteDataChannelResponse>
      */
     public CompletableFuture<DeleteDataChannelResponse> deleteDataChannelAsync(DeleteDataChannelRequest request) {
@@ -186,13 +185,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataChannelRequest 请求对象
+     * @param request DeleteDataChannelRequest 请求对象
      * @return AsyncInvoker<DeleteDataChannelRequest, DeleteDataChannelResponse>
      */
     public AsyncInvoker<DeleteDataChannelRequest, DeleteDataChannelResponse> deleteDataChannelAsyncInvoker(
         DeleteDataChannelRequest request) {
-        return new AsyncInvoker<DeleteDataChannelRequest, DeleteDataChannelResponse>(request,
-            DrisMeta.deleteDataChannel, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteDataChannel, hcClient);
     }
 
     /**
@@ -202,7 +200,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataChannelRequest 请求对象
+     * @param request ShowDataChannelRequest 请求对象
      * @return CompletableFuture<ShowDataChannelResponse>
      */
     public CompletableFuture<ShowDataChannelResponse> showDataChannelAsync(ShowDataChannelRequest request) {
@@ -216,13 +214,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDataChannelRequest 请求对象
+     * @param request ShowDataChannelRequest 请求对象
      * @return AsyncInvoker<ShowDataChannelRequest, ShowDataChannelResponse>
      */
     public AsyncInvoker<ShowDataChannelRequest, ShowDataChannelResponse> showDataChannelAsyncInvoker(
         ShowDataChannelRequest request) {
-        return new AsyncInvoker<ShowDataChannelRequest, ShowDataChannelResponse>(request, DrisMeta.showDataChannel,
-            hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showDataChannel, hcClient);
     }
 
     /**
@@ -232,7 +229,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataChannelRequest 请求对象
+     * @param request UpdateDataChannelRequest 请求对象
      * @return CompletableFuture<UpdateDataChannelResponse>
      */
     public CompletableFuture<UpdateDataChannelResponse> updateDataChannelAsync(UpdateDataChannelRequest request) {
@@ -246,13 +243,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDataChannelRequest 请求对象
+     * @param request UpdateDataChannelRequest 请求对象
      * @return AsyncInvoker<UpdateDataChannelRequest, UpdateDataChannelResponse>
      */
     public AsyncInvoker<UpdateDataChannelRequest, UpdateDataChannelResponse> updateDataChannelAsyncInvoker(
         UpdateDataChannelRequest request) {
-        return new AsyncInvoker<UpdateDataChannelRequest, UpdateDataChannelResponse>(request,
-            DrisMeta.updateDataChannel, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateDataChannel, hcClient);
     }
 
     /**
@@ -262,7 +258,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateV2xEdgeRequest 请求对象
+     * @param request CreateV2xEdgeRequest 请求对象
      * @return CompletableFuture<CreateV2xEdgeResponse>
      */
     public CompletableFuture<CreateV2xEdgeResponse> createV2xEdgeAsync(CreateV2xEdgeRequest request) {
@@ -276,12 +272,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateV2xEdgeRequest 请求对象
+     * @param request CreateV2xEdgeRequest 请求对象
      * @return AsyncInvoker<CreateV2xEdgeRequest, CreateV2xEdgeResponse>
      */
     public AsyncInvoker<CreateV2xEdgeRequest, CreateV2xEdgeResponse> createV2xEdgeAsyncInvoker(
         CreateV2xEdgeRequest request) {
-        return new AsyncInvoker<CreateV2xEdgeRequest, CreateV2xEdgeResponse>(request, DrisMeta.createV2xEdge, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.createV2xEdge, hcClient);
     }
 
     /**
@@ -291,7 +287,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteV2XEdgeByV2xEdgeIdRequest 请求对象
+     * @param request DeleteV2XEdgeByV2xEdgeIdRequest 请求对象
      * @return CompletableFuture<DeleteV2XEdgeByV2xEdgeIdResponse>
      */
     public CompletableFuture<DeleteV2XEdgeByV2xEdgeIdResponse> deleteV2XEdgeByV2xEdgeIdAsync(
@@ -306,13 +302,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteV2XEdgeByV2xEdgeIdRequest 请求对象
+     * @param request DeleteV2XEdgeByV2xEdgeIdRequest 请求对象
      * @return AsyncInvoker<DeleteV2XEdgeByV2xEdgeIdRequest, DeleteV2XEdgeByV2xEdgeIdResponse>
      */
     public AsyncInvoker<DeleteV2XEdgeByV2xEdgeIdRequest, DeleteV2XEdgeByV2xEdgeIdResponse> deleteV2XEdgeByV2xEdgeIdAsyncInvoker(
         DeleteV2XEdgeByV2xEdgeIdRequest request) {
-        return new AsyncInvoker<DeleteV2XEdgeByV2xEdgeIdRequest, DeleteV2XEdgeByV2xEdgeIdResponse>(request,
-            DrisMeta.deleteV2XEdgeByV2xEdgeId, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteV2XEdgeByV2xEdgeId, hcClient);
     }
 
     /**
@@ -322,7 +317,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListV2xEdgesRequest 请求对象
+     * @param request ListV2xEdgesRequest 请求对象
      * @return CompletableFuture<ListV2xEdgesResponse>
      */
     public CompletableFuture<ListV2xEdgesResponse> listV2xEdgesAsync(ListV2xEdgesRequest request) {
@@ -336,12 +331,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListV2xEdgesRequest 请求对象
+     * @param request ListV2xEdgesRequest 请求对象
      * @return AsyncInvoker<ListV2xEdgesRequest, ListV2xEdgesResponse>
      */
     public AsyncInvoker<ListV2xEdgesRequest, ListV2xEdgesResponse> listV2xEdgesAsyncInvoker(
         ListV2xEdgesRequest request) {
-        return new AsyncInvoker<ListV2xEdgesRequest, ListV2xEdgesResponse>(request, DrisMeta.listV2xEdges, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.listV2xEdges, hcClient);
     }
 
     /**
@@ -351,7 +346,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentCodeRequest 请求对象
+     * @param request ShowDeploymentCodeRequest 请求对象
      * @return CompletableFuture<ShowDeploymentCodeResponse>
      */
     public CompletableFuture<ShowDeploymentCodeResponse> showDeploymentCodeAsync(ShowDeploymentCodeRequest request) {
@@ -365,13 +360,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeploymentCodeRequest 请求对象
+     * @param request ShowDeploymentCodeRequest 请求对象
      * @return AsyncInvoker<ShowDeploymentCodeRequest, ShowDeploymentCodeResponse>
      */
     public AsyncInvoker<ShowDeploymentCodeRequest, ShowDeploymentCodeResponse> showDeploymentCodeAsyncInvoker(
         ShowDeploymentCodeRequest request) {
-        return new AsyncInvoker<ShowDeploymentCodeRequest, ShowDeploymentCodeResponse>(request,
-            DrisMeta.showDeploymentCode, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showDeploymentCode, hcClient);
     }
 
     /**
@@ -381,7 +375,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowV2xEdgeDetailRequest 请求对象
+     * @param request ShowV2xEdgeDetailRequest 请求对象
      * @return CompletableFuture<ShowV2xEdgeDetailResponse>
      */
     public CompletableFuture<ShowV2xEdgeDetailResponse> showV2xEdgeDetailAsync(ShowV2xEdgeDetailRequest request) {
@@ -395,13 +389,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowV2xEdgeDetailRequest 请求对象
+     * @param request ShowV2xEdgeDetailRequest 请求对象
      * @return AsyncInvoker<ShowV2xEdgeDetailRequest, ShowV2xEdgeDetailResponse>
      */
     public AsyncInvoker<ShowV2xEdgeDetailRequest, ShowV2xEdgeDetailResponse> showV2xEdgeDetailAsyncInvoker(
         ShowV2xEdgeDetailRequest request) {
-        return new AsyncInvoker<ShowV2xEdgeDetailRequest, ShowV2xEdgeDetailResponse>(request,
-            DrisMeta.showV2xEdgeDetail, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showV2xEdgeDetail, hcClient);
     }
 
     /**
@@ -411,7 +404,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateV2xEdgeRequest 请求对象
+     * @param request UpdateV2xEdgeRequest 请求对象
      * @return CompletableFuture<UpdateV2xEdgeResponse>
      */
     public CompletableFuture<UpdateV2xEdgeResponse> updateV2xEdgeAsync(UpdateV2xEdgeRequest request) {
@@ -425,12 +418,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateV2xEdgeRequest 请求对象
+     * @param request UpdateV2xEdgeRequest 请求对象
      * @return AsyncInvoker<UpdateV2xEdgeRequest, UpdateV2xEdgeResponse>
      */
     public AsyncInvoker<UpdateV2xEdgeRequest, UpdateV2xEdgeResponse> updateV2xEdgeAsyncInvoker(
         UpdateV2xEdgeRequest request) {
-        return new AsyncInvoker<UpdateV2xEdgeRequest, UpdateV2xEdgeResponse>(request, DrisMeta.updateV2xEdge, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateV2xEdge, hcClient);
     }
 
     /**
@@ -440,7 +433,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddForwardingConfigsRequest 请求对象
+     * @param request AddForwardingConfigsRequest 请求对象
      * @return CompletableFuture<AddForwardingConfigsResponse>
      */
     public CompletableFuture<AddForwardingConfigsResponse> addForwardingConfigsAsync(
@@ -455,13 +448,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddForwardingConfigsRequest 请求对象
+     * @param request AddForwardingConfigsRequest 请求对象
      * @return AsyncInvoker<AddForwardingConfigsRequest, AddForwardingConfigsResponse>
      */
     public AsyncInvoker<AddForwardingConfigsRequest, AddForwardingConfigsResponse> addForwardingConfigsAsyncInvoker(
         AddForwardingConfigsRequest request) {
-        return new AsyncInvoker<AddForwardingConfigsRequest, AddForwardingConfigsResponse>(request,
-            DrisMeta.addForwardingConfigs, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.addForwardingConfigs, hcClient);
     }
 
     /**
@@ -471,7 +463,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteForwardingConfigRequest 请求对象
+     * @param request DeleteForwardingConfigRequest 请求对象
      * @return CompletableFuture<DeleteForwardingConfigResponse>
      */
     public CompletableFuture<DeleteForwardingConfigResponse> deleteForwardingConfigAsync(
@@ -486,13 +478,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteForwardingConfigRequest 请求对象
+     * @param request DeleteForwardingConfigRequest 请求对象
      * @return AsyncInvoker<DeleteForwardingConfigRequest, DeleteForwardingConfigResponse>
      */
     public AsyncInvoker<DeleteForwardingConfigRequest, DeleteForwardingConfigResponse> deleteForwardingConfigAsyncInvoker(
         DeleteForwardingConfigRequest request) {
-        return new AsyncInvoker<DeleteForwardingConfigRequest, DeleteForwardingConfigResponse>(request,
-            DrisMeta.deleteForwardingConfig, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteForwardingConfig, hcClient);
     }
 
     /**
@@ -502,7 +493,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowForwardingConfigRequest 请求对象
+     * @param request ShowForwardingConfigRequest 请求对象
      * @return CompletableFuture<ShowForwardingConfigResponse>
      */
     public CompletableFuture<ShowForwardingConfigResponse> showForwardingConfigAsync(
@@ -517,13 +508,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowForwardingConfigRequest 请求对象
+     * @param request ShowForwardingConfigRequest 请求对象
      * @return AsyncInvoker<ShowForwardingConfigRequest, ShowForwardingConfigResponse>
      */
     public AsyncInvoker<ShowForwardingConfigRequest, ShowForwardingConfigResponse> showForwardingConfigAsyncInvoker(
         ShowForwardingConfigRequest request) {
-        return new AsyncInvoker<ShowForwardingConfigRequest, ShowForwardingConfigResponse>(request,
-            DrisMeta.showForwardingConfig, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showForwardingConfig, hcClient);
     }
 
     /**
@@ -533,7 +523,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowForwardingConfigsRequest 请求对象
+     * @param request ShowForwardingConfigsRequest 请求对象
      * @return CompletableFuture<ShowForwardingConfigsResponse>
      */
     public CompletableFuture<ShowForwardingConfigsResponse> showForwardingConfigsAsync(
@@ -548,13 +538,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowForwardingConfigsRequest 请求对象
+     * @param request ShowForwardingConfigsRequest 请求对象
      * @return AsyncInvoker<ShowForwardingConfigsRequest, ShowForwardingConfigsResponse>
      */
     public AsyncInvoker<ShowForwardingConfigsRequest, ShowForwardingConfigsResponse> showForwardingConfigsAsyncInvoker(
         ShowForwardingConfigsRequest request) {
-        return new AsyncInvoker<ShowForwardingConfigsRequest, ShowForwardingConfigsResponse>(request,
-            DrisMeta.showForwardingConfigs, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showForwardingConfigs, hcClient);
     }
 
     /**
@@ -564,7 +553,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateForwardingConfigRequest 请求对象
+     * @param request UpdateForwardingConfigRequest 请求对象
      * @return CompletableFuture<UpdateForwardingConfigResponse>
      */
     public CompletableFuture<UpdateForwardingConfigResponse> updateForwardingConfigAsync(
@@ -579,13 +568,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateForwardingConfigRequest 请求对象
+     * @param request UpdateForwardingConfigRequest 请求对象
      * @return AsyncInvoker<UpdateForwardingConfigRequest, UpdateForwardingConfigResponse>
      */
     public AsyncInvoker<UpdateForwardingConfigRequest, UpdateForwardingConfigResponse> updateForwardingConfigAsyncInvoker(
         UpdateForwardingConfigRequest request) {
-        return new AsyncInvoker<UpdateForwardingConfigRequest, UpdateForwardingConfigResponse>(request,
-            DrisMeta.updateForwardingConfig, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateForwardingConfig, hcClient);
     }
 
     /**
@@ -595,7 +583,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeFlowsRequest 请求对象
+     * @param request ListEdgeFlowsRequest 请求对象
      * @return CompletableFuture<ListEdgeFlowsResponse>
      */
     public CompletableFuture<ListEdgeFlowsResponse> listEdgeFlowsAsync(ListEdgeFlowsRequest request) {
@@ -609,12 +597,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeFlowsRequest 请求对象
+     * @param request ListEdgeFlowsRequest 请求对象
      * @return AsyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>
      */
     public AsyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse> listEdgeFlowsAsyncInvoker(
         ListEdgeFlowsRequest request) {
-        return new AsyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>(request, DrisMeta.listEdgeFlows, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.listEdgeFlows, hcClient);
     }
 
     /**
@@ -624,7 +612,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHistoryTrafficEventsRequest 请求对象
+     * @param request ShowHistoryTrafficEventsRequest 请求对象
      * @return CompletableFuture<ShowHistoryTrafficEventsResponse>
      */
     public CompletableFuture<ShowHistoryTrafficEventsResponse> showHistoryTrafficEventsAsync(
@@ -639,13 +627,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHistoryTrafficEventsRequest 请求对象
+     * @param request ShowHistoryTrafficEventsRequest 请求对象
      * @return AsyncInvoker<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse>
      */
     public AsyncInvoker<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse> showHistoryTrafficEventsAsyncInvoker(
         ShowHistoryTrafficEventsRequest request) {
-        return new AsyncInvoker<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse>(request,
-            DrisMeta.showHistoryTrafficEvents, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showHistoryTrafficEvents, hcClient);
     }
 
     /**
@@ -655,7 +642,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowIpcsRequest 请求对象
+     * @param request BatchShowIpcsRequest 请求对象
      * @return CompletableFuture<BatchShowIpcsResponse>
      */
     public CompletableFuture<BatchShowIpcsResponse> batchShowIpcsAsync(BatchShowIpcsRequest request) {
@@ -669,12 +656,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowIpcsRequest 请求对象
+     * @param request BatchShowIpcsRequest 请求对象
      * @return AsyncInvoker<BatchShowIpcsRequest, BatchShowIpcsResponse>
      */
     public AsyncInvoker<BatchShowIpcsRequest, BatchShowIpcsResponse> batchShowIpcsAsyncInvoker(
         BatchShowIpcsRequest request) {
-        return new AsyncInvoker<BatchShowIpcsRequest, BatchShowIpcsResponse>(request, DrisMeta.batchShowIpcs, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.batchShowIpcs, hcClient);
     }
 
     /**
@@ -684,7 +671,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpcRequest 请求对象
+     * @param request ShowIpcRequest 请求对象
      * @return CompletableFuture<ShowIpcResponse>
      */
     public CompletableFuture<ShowIpcResponse> showIpcAsync(ShowIpcRequest request) {
@@ -698,11 +685,11 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpcRequest 请求对象
+     * @param request ShowIpcRequest 请求对象
      * @return AsyncInvoker<ShowIpcRequest, ShowIpcResponse>
      */
     public AsyncInvoker<ShowIpcRequest, ShowIpcResponse> showIpcAsyncInvoker(ShowIpcRequest request) {
-        return new AsyncInvoker<ShowIpcRequest, ShowIpcResponse>(request, DrisMeta.showIpc, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showIpc, hcClient);
     }
 
     /**
@@ -712,7 +699,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowRadarsRequest 请求对象
+     * @param request BatchShowRadarsRequest 请求对象
      * @return CompletableFuture<BatchShowRadarsResponse>
      */
     public CompletableFuture<BatchShowRadarsResponse> batchShowRadarsAsync(BatchShowRadarsRequest request) {
@@ -726,13 +713,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowRadarsRequest 请求对象
+     * @param request BatchShowRadarsRequest 请求对象
      * @return AsyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse>
      */
     public AsyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse> batchShowRadarsAsyncInvoker(
         BatchShowRadarsRequest request) {
-        return new AsyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse>(request, DrisMeta.batchShowRadars,
-            hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.batchShowRadars, hcClient);
     }
 
     /**
@@ -742,7 +728,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowRsusRequest 请求对象
+     * @param request BatchShowRsusRequest 请求对象
      * @return CompletableFuture<BatchShowRsusResponse>
      */
     public CompletableFuture<BatchShowRsusResponse> batchShowRsusAsync(BatchShowRsusRequest request) {
@@ -756,12 +742,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowRsusRequest 请求对象
+     * @param request BatchShowRsusRequest 请求对象
      * @return AsyncInvoker<BatchShowRsusRequest, BatchShowRsusResponse>
      */
     public AsyncInvoker<BatchShowRsusRequest, BatchShowRsusResponse> batchShowRsusAsyncInvoker(
         BatchShowRsusRequest request) {
-        return new AsyncInvoker<BatchShowRsusRequest, BatchShowRsusResponse>(request, DrisMeta.batchShowRsus, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.batchShowRsus, hcClient);
     }
 
     /**
@@ -771,7 +757,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRsuRequest 请求对象
+     * @param request CreateRsuRequest 请求对象
      * @return CompletableFuture<CreateRsuResponse>
      */
     public CompletableFuture<CreateRsuResponse> createRsuAsync(CreateRsuRequest request) {
@@ -785,11 +771,11 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRsuRequest 请求对象
+     * @param request CreateRsuRequest 请求对象
      * @return AsyncInvoker<CreateRsuRequest, CreateRsuResponse>
      */
     public AsyncInvoker<CreateRsuRequest, CreateRsuResponse> createRsuAsyncInvoker(CreateRsuRequest request) {
-        return new AsyncInvoker<CreateRsuRequest, CreateRsuResponse>(request, DrisMeta.createRsu, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.createRsu, hcClient);
     }
 
     /**
@@ -799,7 +785,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRsuRequest 请求对象
+     * @param request DeleteRsuRequest 请求对象
      * @return CompletableFuture<DeleteRsuResponse>
      */
     public CompletableFuture<DeleteRsuResponse> deleteRsuAsync(DeleteRsuRequest request) {
@@ -813,11 +799,11 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRsuRequest 请求对象
+     * @param request DeleteRsuRequest 请求对象
      * @return AsyncInvoker<DeleteRsuRequest, DeleteRsuResponse>
      */
     public AsyncInvoker<DeleteRsuRequest, DeleteRsuResponse> deleteRsuAsyncInvoker(DeleteRsuRequest request) {
-        return new AsyncInvoker<DeleteRsuRequest, DeleteRsuResponse>(request, DrisMeta.deleteRsu, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteRsu, hcClient);
     }
 
     /**
@@ -827,7 +813,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRsuRequest 请求对象
+     * @param request UpdateRsuRequest 请求对象
      * @return CompletableFuture<UpdateRsuResponse>
      */
     public CompletableFuture<UpdateRsuResponse> updateRsuAsync(UpdateRsuRequest request) {
@@ -841,11 +827,11 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRsuRequest 请求对象
+     * @param request UpdateRsuRequest 请求对象
      * @return AsyncInvoker<UpdateRsuRequest, UpdateRsuResponse>
      */
     public AsyncInvoker<UpdateRsuRequest, UpdateRsuResponse> updateRsuAsyncInvoker(UpdateRsuRequest request) {
-        return new AsyncInvoker<UpdateRsuRequest, UpdateRsuResponse>(request, DrisMeta.updateRsu, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateRsu, hcClient);
     }
 
     /**
@@ -855,7 +841,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendImmediateEventRequest 请求对象
+     * @param request SendImmediateEventRequest 请求对象
      * @return CompletableFuture<SendImmediateEventResponse>
      */
     public CompletableFuture<SendImmediateEventResponse> sendImmediateEventAsync(SendImmediateEventRequest request) {
@@ -869,13 +855,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendImmediateEventRequest 请求对象
+     * @param request SendImmediateEventRequest 请求对象
      * @return AsyncInvoker<SendImmediateEventRequest, SendImmediateEventResponse>
      */
     public AsyncInvoker<SendImmediateEventRequest, SendImmediateEventResponse> sendImmediateEventAsyncInvoker(
         SendImmediateEventRequest request) {
-        return new AsyncInvoker<SendImmediateEventRequest, SendImmediateEventResponse>(request,
-            DrisMeta.sendImmediateEvent, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.sendImmediateEvent, hcClient);
     }
 
     /**
@@ -885,7 +870,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowTrafficControllersRequest 请求对象
+     * @param request BatchShowTrafficControllersRequest 请求对象
      * @return CompletableFuture<BatchShowTrafficControllersResponse>
      */
     public CompletableFuture<BatchShowTrafficControllersResponse> batchShowTrafficControllersAsync(
@@ -900,13 +885,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowTrafficControllersRequest 请求对象
+     * @param request BatchShowTrafficControllersRequest 请求对象
      * @return AsyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse>
      */
     public AsyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> batchShowTrafficControllersAsyncInvoker(
         BatchShowTrafficControllersRequest request) {
-        return new AsyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse>(request,
-            DrisMeta.batchShowTrafficControllers, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.batchShowTrafficControllers, hcClient);
     }
 
     /**
@@ -916,7 +900,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficControllerRequest 请求对象
+     * @param request CreateTrafficControllerRequest 请求对象
      * @return CompletableFuture<CreateTrafficControllerResponse>
      */
     public CompletableFuture<CreateTrafficControllerResponse> createTrafficControllerAsync(
@@ -931,13 +915,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficControllerRequest 请求对象
+     * @param request CreateTrafficControllerRequest 请求对象
      * @return AsyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse>
      */
     public AsyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse> createTrafficControllerAsyncInvoker(
         CreateTrafficControllerRequest request) {
-        return new AsyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse>(request,
-            DrisMeta.createTrafficController, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.createTrafficController, hcClient);
     }
 
     /**
@@ -947,7 +930,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficControllerRequest 请求对象
+     * @param request DeleteTrafficControllerRequest 请求对象
      * @return CompletableFuture<DeleteTrafficControllerResponse>
      */
     public CompletableFuture<DeleteTrafficControllerResponse> deleteTrafficControllerAsync(
@@ -962,13 +945,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficControllerRequest 请求对象
+     * @param request DeleteTrafficControllerRequest 请求对象
      * @return AsyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse>
      */
     public AsyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> deleteTrafficControllerAsyncInvoker(
         DeleteTrafficControllerRequest request) {
-        return new AsyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse>(request,
-            DrisMeta.deleteTrafficController, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteTrafficController, hcClient);
     }
 
     /**
@@ -978,7 +960,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficControllerRequest 请求对象
+     * @param request UpdateTrafficControllerRequest 请求对象
      * @return CompletableFuture<UpdateTrafficControllerResponse>
      */
     public CompletableFuture<UpdateTrafficControllerResponse> updateTrafficControllerAsync(
@@ -993,13 +975,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficControllerRequest 请求对象
+     * @param request UpdateTrafficControllerRequest 请求对象
      * @return AsyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse>
      */
     public AsyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> updateTrafficControllerAsyncInvoker(
         UpdateTrafficControllerRequest request) {
-        return new AsyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse>(request,
-            DrisMeta.updateTrafficController, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateTrafficController, hcClient);
     }
 
     /**
@@ -1009,7 +990,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowTrafficEventsRequest 请求对象
+     * @param request BatchShowTrafficEventsRequest 请求对象
      * @return CompletableFuture<BatchShowTrafficEventsResponse>
      */
     public CompletableFuture<BatchShowTrafficEventsResponse> batchShowTrafficEventsAsync(
@@ -1024,13 +1005,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowTrafficEventsRequest 请求对象
+     * @param request BatchShowTrafficEventsRequest 请求对象
      * @return AsyncInvoker<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse>
      */
     public AsyncInvoker<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse> batchShowTrafficEventsAsyncInvoker(
         BatchShowTrafficEventsRequest request) {
-        return new AsyncInvoker<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse>(request,
-            DrisMeta.batchShowTrafficEvents, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.batchShowTrafficEvents, hcClient);
     }
 
     /**
@@ -1040,7 +1020,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficEventRequest 请求对象
+     * @param request CreateTrafficEventRequest 请求对象
      * @return CompletableFuture<CreateTrafficEventResponse>
      */
     public CompletableFuture<CreateTrafficEventResponse> createTrafficEventAsync(CreateTrafficEventRequest request) {
@@ -1054,13 +1034,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrafficEventRequest 请求对象
+     * @param request CreateTrafficEventRequest 请求对象
      * @return AsyncInvoker<CreateTrafficEventRequest, CreateTrafficEventResponse>
      */
     public AsyncInvoker<CreateTrafficEventRequest, CreateTrafficEventResponse> createTrafficEventAsyncInvoker(
         CreateTrafficEventRequest request) {
-        return new AsyncInvoker<CreateTrafficEventRequest, CreateTrafficEventResponse>(request,
-            DrisMeta.createTrafficEvent, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.createTrafficEvent, hcClient);
     }
 
     /**
@@ -1070,7 +1049,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficEventRequest 请求对象
+     * @param request DeleteTrafficEventRequest 请求对象
      * @return CompletableFuture<DeleteTrafficEventResponse>
      */
     public CompletableFuture<DeleteTrafficEventResponse> deleteTrafficEventAsync(DeleteTrafficEventRequest request) {
@@ -1084,13 +1063,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrafficEventRequest 请求对象
+     * @param request DeleteTrafficEventRequest 请求对象
      * @return AsyncInvoker<DeleteTrafficEventRequest, DeleteTrafficEventResponse>
      */
     public AsyncInvoker<DeleteTrafficEventRequest, DeleteTrafficEventResponse> deleteTrafficEventAsyncInvoker(
         DeleteTrafficEventRequest request) {
-        return new AsyncInvoker<DeleteTrafficEventRequest, DeleteTrafficEventResponse>(request,
-            DrisMeta.deleteTrafficEvent, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteTrafficEvent, hcClient);
     }
 
     /**
@@ -1100,7 +1078,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrafficEventRequest 请求对象
+     * @param request ShowTrafficEventRequest 请求对象
      * @return CompletableFuture<ShowTrafficEventResponse>
      */
     public CompletableFuture<ShowTrafficEventResponse> showTrafficEventAsync(ShowTrafficEventRequest request) {
@@ -1114,13 +1092,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrafficEventRequest 请求对象
+     * @param request ShowTrafficEventRequest 请求对象
      * @return AsyncInvoker<ShowTrafficEventRequest, ShowTrafficEventResponse>
      */
     public AsyncInvoker<ShowTrafficEventRequest, ShowTrafficEventResponse> showTrafficEventAsyncInvoker(
         ShowTrafficEventRequest request) {
-        return new AsyncInvoker<ShowTrafficEventRequest, ShowTrafficEventResponse>(request, DrisMeta.showTrafficEvent,
-            hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showTrafficEvent, hcClient);
     }
 
     /**
@@ -1130,7 +1107,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficEventRequest 请求对象
+     * @param request UpdateTrafficEventRequest 请求对象
      * @return CompletableFuture<UpdateTrafficEventResponse>
      */
     public CompletableFuture<UpdateTrafficEventResponse> updateTrafficEventAsync(UpdateTrafficEventRequest request) {
@@ -1144,13 +1121,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTrafficEventRequest 请求对象
+     * @param request UpdateTrafficEventRequest 请求对象
      * @return AsyncInvoker<UpdateTrafficEventRequest, UpdateTrafficEventResponse>
      */
     public AsyncInvoker<UpdateTrafficEventRequest, UpdateTrafficEventResponse> updateTrafficEventAsyncInvoker(
         UpdateTrafficEventRequest request) {
-        return new AsyncInvoker<UpdateTrafficEventRequest, UpdateTrafficEventResponse>(request,
-            DrisMeta.updateTrafficEvent, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateTrafficEvent, hcClient);
     }
 
     /**
@@ -1170,7 +1146,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateV2xEdgeAppRequest 请求对象
+     * @param request CreateV2xEdgeAppRequest 请求对象
      * @return CompletableFuture<CreateV2xEdgeAppResponse>
      */
     public CompletableFuture<CreateV2xEdgeAppResponse> createV2xEdgeAppAsync(CreateV2xEdgeAppRequest request) {
@@ -1194,13 +1170,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateV2xEdgeAppRequest 请求对象
+     * @param request CreateV2xEdgeAppRequest 请求对象
      * @return AsyncInvoker<CreateV2xEdgeAppRequest, CreateV2xEdgeAppResponse>
      */
     public AsyncInvoker<CreateV2xEdgeAppRequest, CreateV2xEdgeAppResponse> createV2xEdgeAppAsyncInvoker(
         CreateV2xEdgeAppRequest request) {
-        return new AsyncInvoker<CreateV2xEdgeAppRequest, CreateV2xEdgeAppResponse>(request, DrisMeta.createV2xEdgeApp,
-            hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.createV2xEdgeApp, hcClient);
     }
 
     /**
@@ -1210,7 +1185,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteV2XEdgeAppByEdgeAppIdRequest 请求对象
+     * @param request DeleteV2XEdgeAppByEdgeAppIdRequest 请求对象
      * @return CompletableFuture<DeleteV2XEdgeAppByEdgeAppIdResponse>
      */
     public CompletableFuture<DeleteV2XEdgeAppByEdgeAppIdResponse> deleteV2XEdgeAppByEdgeAppIdAsync(
@@ -1225,13 +1200,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteV2XEdgeAppByEdgeAppIdRequest 请求对象
+     * @param request DeleteV2XEdgeAppByEdgeAppIdRequest 请求对象
      * @return AsyncInvoker<DeleteV2XEdgeAppByEdgeAppIdRequest, DeleteV2XEdgeAppByEdgeAppIdResponse>
      */
     public AsyncInvoker<DeleteV2XEdgeAppByEdgeAppIdRequest, DeleteV2XEdgeAppByEdgeAppIdResponse> deleteV2XEdgeAppByEdgeAppIdAsyncInvoker(
         DeleteV2XEdgeAppByEdgeAppIdRequest request) {
-        return new AsyncInvoker<DeleteV2XEdgeAppByEdgeAppIdRequest, DeleteV2XEdgeAppByEdgeAppIdResponse>(request,
-            DrisMeta.deleteV2XEdgeAppByEdgeAppId, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteV2XEdgeAppByEdgeAppId, hcClient);
     }
 
     /**
@@ -1241,7 +1215,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListV2xEdgeAppRequest 请求对象
+     * @param request ListV2xEdgeAppRequest 请求对象
      * @return CompletableFuture<ListV2xEdgeAppResponse>
      */
     public CompletableFuture<ListV2xEdgeAppResponse> listV2xEdgeAppAsync(ListV2xEdgeAppRequest request) {
@@ -1255,13 +1229,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListV2xEdgeAppRequest 请求对象
+     * @param request ListV2xEdgeAppRequest 请求对象
      * @return AsyncInvoker<ListV2xEdgeAppRequest, ListV2xEdgeAppResponse>
      */
     public AsyncInvoker<ListV2xEdgeAppRequest, ListV2xEdgeAppResponse> listV2xEdgeAppAsyncInvoker(
         ListV2xEdgeAppRequest request) {
-        return new AsyncInvoker<ListV2xEdgeAppRequest, ListV2xEdgeAppResponse>(request, DrisMeta.listV2xEdgeApp,
-            hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.listV2xEdgeApp, hcClient);
     }
 
     /**
@@ -1271,7 +1244,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowV2XEdgeAppDetailByEdgeAppIdRequest 请求对象
+     * @param request ShowV2XEdgeAppDetailByEdgeAppIdRequest 请求对象
      * @return CompletableFuture<ShowV2XEdgeAppDetailByEdgeAppIdResponse>
      */
     public CompletableFuture<ShowV2XEdgeAppDetailByEdgeAppIdResponse> showV2XEdgeAppDetailByEdgeAppIdAsync(
@@ -1286,13 +1259,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowV2XEdgeAppDetailByEdgeAppIdRequest 请求对象
+     * @param request ShowV2XEdgeAppDetailByEdgeAppIdRequest 请求对象
      * @return AsyncInvoker<ShowV2XEdgeAppDetailByEdgeAppIdRequest, ShowV2XEdgeAppDetailByEdgeAppIdResponse>
      */
     public AsyncInvoker<ShowV2XEdgeAppDetailByEdgeAppIdRequest, ShowV2XEdgeAppDetailByEdgeAppIdResponse> showV2XEdgeAppDetailByEdgeAppIdAsyncInvoker(
         ShowV2XEdgeAppDetailByEdgeAppIdRequest request) {
-        return new AsyncInvoker<ShowV2XEdgeAppDetailByEdgeAppIdRequest, ShowV2XEdgeAppDetailByEdgeAppIdResponse>(
-            request, DrisMeta.showV2XEdgeAppDetailByEdgeAppId, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showV2XEdgeAppDetailByEdgeAppId, hcClient);
     }
 
     /**
@@ -1312,7 +1284,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateV2xEdgeAppRequest 请求对象
+     * @param request UpdateV2xEdgeAppRequest 请求对象
      * @return CompletableFuture<UpdateV2xEdgeAppResponse>
      */
     public CompletableFuture<UpdateV2xEdgeAppResponse> updateV2xEdgeAppAsync(UpdateV2xEdgeAppRequest request) {
@@ -1336,13 +1308,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateV2xEdgeAppRequest 请求对象
+     * @param request UpdateV2xEdgeAppRequest 请求对象
      * @return AsyncInvoker<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse>
      */
     public AsyncInvoker<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse> updateV2xEdgeAppAsyncInvoker(
         UpdateV2xEdgeAppRequest request) {
-        return new AsyncInvoker<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse>(request, DrisMeta.updateV2xEdgeApp,
-            hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateV2xEdgeApp, hcClient);
     }
 
     /**
@@ -1352,7 +1323,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowVehiclesRequest 请求对象
+     * @param request BatchShowVehiclesRequest 请求对象
      * @return CompletableFuture<BatchShowVehiclesResponse>
      */
     public CompletableFuture<BatchShowVehiclesResponse> batchShowVehiclesAsync(BatchShowVehiclesRequest request) {
@@ -1366,13 +1337,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowVehiclesRequest 请求对象
+     * @param request BatchShowVehiclesRequest 请求对象
      * @return AsyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse>
      */
     public AsyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse> batchShowVehiclesAsyncInvoker(
         BatchShowVehiclesRequest request) {
-        return new AsyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse>(request,
-            DrisMeta.batchShowVehicles, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.batchShowVehicles, hcClient);
     }
 
     /**
@@ -1382,7 +1352,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVehicleRequest 请求对象
+     * @param request CreateVehicleRequest 请求对象
      * @return CompletableFuture<CreateVehicleResponse>
      */
     public CompletableFuture<CreateVehicleResponse> createVehicleAsync(CreateVehicleRequest request) {
@@ -1396,12 +1366,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVehicleRequest 请求对象
+     * @param request CreateVehicleRequest 请求对象
      * @return AsyncInvoker<CreateVehicleRequest, CreateVehicleResponse>
      */
     public AsyncInvoker<CreateVehicleRequest, CreateVehicleResponse> createVehicleAsyncInvoker(
         CreateVehicleRequest request) {
-        return new AsyncInvoker<CreateVehicleRequest, CreateVehicleResponse>(request, DrisMeta.createVehicle, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.createVehicle, hcClient);
     }
 
     /**
@@ -1411,7 +1381,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVehicleRequest 请求对象
+     * @param request DeleteVehicleRequest 请求对象
      * @return CompletableFuture<DeleteVehicleResponse>
      */
     public CompletableFuture<DeleteVehicleResponse> deleteVehicleAsync(DeleteVehicleRequest request) {
@@ -1425,12 +1395,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVehicleRequest 请求对象
+     * @param request DeleteVehicleRequest 请求对象
      * @return AsyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse>
      */
     public AsyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse> deleteVehicleAsyncInvoker(
         DeleteVehicleRequest request) {
-        return new AsyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse>(request, DrisMeta.deleteVehicle, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteVehicle, hcClient);
     }
 
     /**
@@ -1440,7 +1410,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVehicleRequest 请求对象
+     * @param request UpdateVehicleRequest 请求对象
      * @return CompletableFuture<UpdateVehicleResponse>
      */
     public CompletableFuture<UpdateVehicleResponse> updateVehicleAsync(UpdateVehicleRequest request) {
@@ -1454,12 +1424,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVehicleRequest 请求对象
+     * @param request UpdateVehicleRequest 请求对象
      * @return AsyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse>
      */
     public AsyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse> updateVehicleAsyncInvoker(
         UpdateVehicleRequest request) {
-        return new AsyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse>(request, DrisMeta.updateVehicle, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateVehicle, hcClient);
     }
 
     /**
@@ -1469,7 +1439,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowEdgeAppsRequest 请求对象
+     * @param request BatchShowEdgeAppsRequest 请求对象
      * @return CompletableFuture<BatchShowEdgeAppsResponse>
      */
     public CompletableFuture<BatchShowEdgeAppsResponse> batchShowEdgeAppsAsync(BatchShowEdgeAppsRequest request) {
@@ -1483,13 +1453,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowEdgeAppsRequest 请求对象
+     * @param request BatchShowEdgeAppsRequest 请求对象
      * @return AsyncInvoker<BatchShowEdgeAppsRequest, BatchShowEdgeAppsResponse>
      */
     public AsyncInvoker<BatchShowEdgeAppsRequest, BatchShowEdgeAppsResponse> batchShowEdgeAppsAsyncInvoker(
         BatchShowEdgeAppsRequest request) {
-        return new AsyncInvoker<BatchShowEdgeAppsRequest, BatchShowEdgeAppsResponse>(request,
-            DrisMeta.batchShowEdgeApps, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.batchShowEdgeApps, hcClient);
     }
 
     /**
@@ -1499,7 +1468,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeAppRequest 请求对象
+     * @param request CreateEdgeAppRequest 请求对象
      * @return CompletableFuture<CreateEdgeAppResponse>
      */
     public CompletableFuture<CreateEdgeAppResponse> createEdgeAppAsync(CreateEdgeAppRequest request) {
@@ -1513,12 +1482,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeAppRequest 请求对象
+     * @param request CreateEdgeAppRequest 请求对象
      * @return AsyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>
      */
     public AsyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse> createEdgeAppAsyncInvoker(
         CreateEdgeAppRequest request) {
-        return new AsyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>(request, DrisMeta.createEdgeApp, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.createEdgeApp, hcClient);
     }
 
     /**
@@ -1528,7 +1497,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeAppRequest 请求对象
+     * @param request DeleteEdgeAppRequest 请求对象
      * @return CompletableFuture<DeleteEdgeAppResponse>
      */
     public CompletableFuture<DeleteEdgeAppResponse> deleteEdgeAppAsync(DeleteEdgeAppRequest request) {
@@ -1542,12 +1511,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeAppRequest 请求对象
+     * @param request DeleteEdgeAppRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>
      */
     public AsyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse> deleteEdgeAppAsyncInvoker(
         DeleteEdgeAppRequest request) {
-        return new AsyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>(request, DrisMeta.deleteEdgeApp, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteEdgeApp, hcClient);
     }
 
     /**
@@ -1557,7 +1526,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeAppRequest 请求对象
+     * @param request UpdateEdgeAppRequest 请求对象
      * @return CompletableFuture<UpdateEdgeAppResponse>
      */
     public CompletableFuture<UpdateEdgeAppResponse> updateEdgeAppAsync(UpdateEdgeAppRequest request) {
@@ -1571,12 +1540,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeAppRequest 请求对象
+     * @param request UpdateEdgeAppRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeAppRequest, UpdateEdgeAppResponse>
      */
     public AsyncInvoker<UpdateEdgeAppRequest, UpdateEdgeAppResponse> updateEdgeAppAsyncInvoker(
         UpdateEdgeAppRequest request) {
-        return new AsyncInvoker<UpdateEdgeAppRequest, UpdateEdgeAppResponse>(request, DrisMeta.updateEdgeApp, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateEdgeApp, hcClient);
     }
 
     /**
@@ -1586,7 +1555,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowEdgeAppVersionsRequest 请求对象
+     * @param request BatchShowEdgeAppVersionsRequest 请求对象
      * @return CompletableFuture<BatchShowEdgeAppVersionsResponse>
      */
     public CompletableFuture<BatchShowEdgeAppVersionsResponse> batchShowEdgeAppVersionsAsync(
@@ -1601,13 +1570,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowEdgeAppVersionsRequest 请求对象
+     * @param request BatchShowEdgeAppVersionsRequest 请求对象
      * @return AsyncInvoker<BatchShowEdgeAppVersionsRequest, BatchShowEdgeAppVersionsResponse>
      */
     public AsyncInvoker<BatchShowEdgeAppVersionsRequest, BatchShowEdgeAppVersionsResponse> batchShowEdgeAppVersionsAsyncInvoker(
         BatchShowEdgeAppVersionsRequest request) {
-        return new AsyncInvoker<BatchShowEdgeAppVersionsRequest, BatchShowEdgeAppVersionsResponse>(request,
-            DrisMeta.batchShowEdgeAppVersions, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.batchShowEdgeAppVersions, hcClient);
     }
 
     /**
@@ -1617,7 +1585,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeApplicationVersionRequest 请求对象
+     * @param request CreateEdgeApplicationVersionRequest 请求对象
      * @return CompletableFuture<CreateEdgeApplicationVersionResponse>
      */
     public CompletableFuture<CreateEdgeApplicationVersionResponse> createEdgeApplicationVersionAsync(
@@ -1632,13 +1600,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeApplicationVersionRequest 请求对象
+     * @param request CreateEdgeApplicationVersionRequest 请求对象
      * @return AsyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>
      */
     public AsyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> createEdgeApplicationVersionAsyncInvoker(
         CreateEdgeApplicationVersionRequest request) {
-        return new AsyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>(request,
-            DrisMeta.createEdgeApplicationVersion, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.createEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -1648,7 +1615,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeApplicationVersionRequest 请求对象
+     * @param request DeleteEdgeApplicationVersionRequest 请求对象
      * @return CompletableFuture<DeleteEdgeApplicationVersionResponse>
      */
     public CompletableFuture<DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersionAsync(
@@ -1663,13 +1630,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeApplicationVersionRequest 请求对象
+     * @param request DeleteEdgeApplicationVersionRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>
      */
     public AsyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersionAsyncInvoker(
         DeleteEdgeApplicationVersionRequest request) {
-        return new AsyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>(request,
-            DrisMeta.deleteEdgeApplicationVersion, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -1679,7 +1645,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeApplicationVersionRequest 请求对象
+     * @param request ShowEdgeApplicationVersionRequest 请求对象
      * @return CompletableFuture<ShowEdgeApplicationVersionResponse>
      */
     public CompletableFuture<ShowEdgeApplicationVersionResponse> showEdgeApplicationVersionAsync(
@@ -1694,13 +1660,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeApplicationVersionRequest 请求对象
+     * @param request ShowEdgeApplicationVersionRequest 请求对象
      * @return AsyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>
      */
     public AsyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> showEdgeApplicationVersionAsyncInvoker(
         ShowEdgeApplicationVersionRequest request) {
-        return new AsyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>(request,
-            DrisMeta.showEdgeApplicationVersion, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -1710,7 +1675,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionRequest 请求对象
      * @return CompletableFuture<UpdateEdgeApplicationVersionResponse>
      */
     public CompletableFuture<UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersionAsync(
@@ -1725,13 +1690,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>
      */
     public AsyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersionAsyncInvoker(
         UpdateEdgeApplicationVersionRequest request) {
-        return new AsyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>(request,
-            DrisMeta.updateEdgeApplicationVersion, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -1741,7 +1705,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionStateRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return CompletableFuture<UpdateEdgeApplicationVersionStateResponse>
      */
     public CompletableFuture<UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionStateAsync(
@@ -1756,13 +1720,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeApplicationVersionStateRequest 请求对象
+     * @param request UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>
      */
     public AsyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionStateAsyncInvoker(
         UpdateEdgeApplicationVersionStateRequest request) {
-        return new AsyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>(
-            request, DrisMeta.updateEdgeApplicationVersionState, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateEdgeApplicationVersionState, hcClient);
     }
 
     /**
@@ -1772,7 +1735,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRsuModelRequest 请求对象
+     * @param request CreateRsuModelRequest 请求对象
      * @return CompletableFuture<CreateRsuModelResponse>
      */
     public CompletableFuture<CreateRsuModelResponse> createRsuModelAsync(CreateRsuModelRequest request) {
@@ -1786,13 +1749,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRsuModelRequest 请求对象
+     * @param request CreateRsuModelRequest 请求对象
      * @return AsyncInvoker<CreateRsuModelRequest, CreateRsuModelResponse>
      */
     public AsyncInvoker<CreateRsuModelRequest, CreateRsuModelResponse> createRsuModelAsyncInvoker(
         CreateRsuModelRequest request) {
-        return new AsyncInvoker<CreateRsuModelRequest, CreateRsuModelResponse>(request, DrisMeta.createRsuModel,
-            hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.createRsuModel, hcClient);
     }
 
     /**
@@ -1802,7 +1764,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRsuModelRequest 请求对象
+     * @param request DeleteRsuModelRequest 请求对象
      * @return CompletableFuture<DeleteRsuModelResponse>
      */
     public CompletableFuture<DeleteRsuModelResponse> deleteRsuModelAsync(DeleteRsuModelRequest request) {
@@ -1816,13 +1778,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRsuModelRequest 请求对象
+     * @param request DeleteRsuModelRequest 请求对象
      * @return AsyncInvoker<DeleteRsuModelRequest, DeleteRsuModelResponse>
      */
     public AsyncInvoker<DeleteRsuModelRequest, DeleteRsuModelResponse> deleteRsuModelAsyncInvoker(
         DeleteRsuModelRequest request) {
-        return new AsyncInvoker<DeleteRsuModelRequest, DeleteRsuModelResponse>(request, DrisMeta.deleteRsuModel,
-            hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.deleteRsuModel, hcClient);
     }
 
     /**
@@ -1832,7 +1793,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRsuModelsRequest 请求对象
+     * @param request ListRsuModelsRequest 请求对象
      * @return CompletableFuture<ListRsuModelsResponse>
      */
     public CompletableFuture<ListRsuModelsResponse> listRsuModelsAsync(ListRsuModelsRequest request) {
@@ -1846,12 +1807,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRsuModelsRequest 请求对象
+     * @param request ListRsuModelsRequest 请求对象
      * @return AsyncInvoker<ListRsuModelsRequest, ListRsuModelsResponse>
      */
     public AsyncInvoker<ListRsuModelsRequest, ListRsuModelsResponse> listRsuModelsAsyncInvoker(
         ListRsuModelsRequest request) {
-        return new AsyncInvoker<ListRsuModelsRequest, ListRsuModelsResponse>(request, DrisMeta.listRsuModels, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.listRsuModels, hcClient);
     }
 
     /**
@@ -1861,7 +1822,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRsuModelRequest 请求对象
+     * @param request ShowRsuModelRequest 请求对象
      * @return CompletableFuture<ShowRsuModelResponse>
      */
     public CompletableFuture<ShowRsuModelResponse> showRsuModelAsync(ShowRsuModelRequest request) {
@@ -1875,12 +1836,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRsuModelRequest 请求对象
+     * @param request ShowRsuModelRequest 请求对象
      * @return AsyncInvoker<ShowRsuModelRequest, ShowRsuModelResponse>
      */
     public AsyncInvoker<ShowRsuModelRequest, ShowRsuModelResponse> showRsuModelAsyncInvoker(
         ShowRsuModelRequest request) {
-        return new AsyncInvoker<ShowRsuModelRequest, ShowRsuModelResponse>(request, DrisMeta.showRsuModel, hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.showRsuModel, hcClient);
     }
 
     /**
@@ -1890,7 +1851,7 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRsuModelRequest 请求对象
+     * @param request UpdateRsuModelRequest 请求对象
      * @return CompletableFuture<UpdateRsuModelResponse>
      */
     public CompletableFuture<UpdateRsuModelResponse> updateRsuModelAsync(UpdateRsuModelRequest request) {
@@ -1904,13 +1865,12 @@ public class DrisAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRsuModelRequest 请求对象
+     * @param request UpdateRsuModelRequest 请求对象
      * @return AsyncInvoker<UpdateRsuModelRequest, UpdateRsuModelResponse>
      */
     public AsyncInvoker<UpdateRsuModelRequest, UpdateRsuModelResponse> updateRsuModelAsyncInvoker(
         UpdateRsuModelRequest request) {
-        return new AsyncInvoker<UpdateRsuModelRequest, UpdateRsuModelResponse>(request, DrisMeta.updateRsuModel,
-            hcClient);
+        return new AsyncInvoker<>(request, DrisMeta.updateRsuModel, hcClient);
     }
 
 }

@@ -54,7 +54,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFastExecuteScriptRequest 请求对象
+     * @param request CreateFastExecuteScriptRequest 请求对象
      * @return CompletableFuture<CreateFastExecuteScriptResponse>
      */
     public CompletableFuture<CreateFastExecuteScriptResponse> createFastExecuteScriptAsync(
@@ -69,13 +69,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFastExecuteScriptRequest 请求对象
+     * @param request CreateFastExecuteScriptRequest 请求对象
      * @return AsyncInvoker<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse>
      */
     public AsyncInvoker<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> createFastExecuteScriptAsyncInvoker(
         CreateFastExecuteScriptRequest request) {
-        return new AsyncInvoker<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse>(request,
-            AomMeta.createFastExecuteScript, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.createFastExecuteScript, hcClient);
     }
 
     /**
@@ -85,7 +84,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowRequest 请求对象
+     * @param request CreateWorkflowRequest 请求对象
      * @return CompletableFuture<CreateWorkflowResponse>
      */
     public CompletableFuture<CreateWorkflowResponse> createWorkflowAsync(CreateWorkflowRequest request) {
@@ -99,13 +98,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWorkflowRequest 请求对象
+     * @param request CreateWorkflowRequest 请求对象
      * @return AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
      */
     public AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowAsyncInvoker(
         CreateWorkflowRequest request) {
-        return new AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request, AomMeta.createWorkflow,
-            hcClient);
+        return new AsyncInvoker<>(request, AomMeta.createWorkflow, hcClient);
     }
 
     /**
@@ -115,7 +113,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteWorkflowRequest 请求对象
+     * @param request ExecuteWorkflowRequest 请求对象
      * @return CompletableFuture<ExecuteWorkflowResponse>
      */
     public CompletableFuture<ExecuteWorkflowResponse> executeWorkflowAsync(ExecuteWorkflowRequest request) {
@@ -129,13 +127,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteWorkflowRequest 请求对象
+     * @param request ExecuteWorkflowRequest 请求对象
      * @return AsyncInvoker<ExecuteWorkflowRequest, ExecuteWorkflowResponse>
      */
     public AsyncInvoker<ExecuteWorkflowRequest, ExecuteWorkflowResponse> executeWorkflowAsyncInvoker(
         ExecuteWorkflowRequest request) {
-        return new AsyncInvoker<ExecuteWorkflowRequest, ExecuteWorkflowResponse>(request, AomMeta.executeWorkflow,
-            hcClient);
+        return new AsyncInvoker<>(request, AomMeta.executeWorkflow, hcClient);
     }
 
     /**
@@ -145,7 +142,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllJobByNameRequest 请求对象
+     * @param request ListAllJobByNameRequest 请求对象
      * @return CompletableFuture<ListAllJobByNameResponse>
      */
     public CompletableFuture<ListAllJobByNameResponse> listAllJobByNameAsync(ListAllJobByNameRequest request) {
@@ -159,13 +156,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllJobByNameRequest 请求对象
+     * @param request ListAllJobByNameRequest 请求对象
      * @return AsyncInvoker<ListAllJobByNameRequest, ListAllJobByNameResponse>
      */
     public AsyncInvoker<ListAllJobByNameRequest, ListAllJobByNameResponse> listAllJobByNameAsyncInvoker(
         ListAllJobByNameRequest request) {
-        return new AsyncInvoker<ListAllJobByNameRequest, ListAllJobByNameResponse>(request, AomMeta.listAllJobByName,
-            hcClient);
+        return new AsyncInvoker<>(request, AomMeta.listAllJobByName, hcClient);
     }
 
     /**
@@ -175,7 +171,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllScriptByNameRequest 请求对象
+     * @param request ListAllScriptByNameRequest 请求对象
      * @return CompletableFuture<ListAllScriptByNameResponse>
      */
     public CompletableFuture<ListAllScriptByNameResponse> listAllScriptByNameAsync(ListAllScriptByNameRequest request) {
@@ -189,13 +185,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllScriptByNameRequest 请求对象
+     * @param request ListAllScriptByNameRequest 请求对象
      * @return AsyncInvoker<ListAllScriptByNameRequest, ListAllScriptByNameResponse>
      */
     public AsyncInvoker<ListAllScriptByNameRequest, ListAllScriptByNameResponse> listAllScriptByNameAsyncInvoker(
         ListAllScriptByNameRequest request) {
-        return new AsyncInvoker<ListAllScriptByNameRequest, ListAllScriptByNameResponse>(request,
-            AomMeta.listAllScriptByName, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.listAllScriptByName, hcClient);
     }
 
     /**
@@ -205,7 +200,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllVersionByVersionIdRequest 请求对象
+     * @param request ListAllVersionByVersionIdRequest 请求对象
      * @return CompletableFuture<ListAllVersionByVersionIdResponse>
      */
     public CompletableFuture<ListAllVersionByVersionIdResponse> listAllVersionByVersionIdAsync(
@@ -220,13 +215,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllVersionByVersionIdRequest 请求对象
+     * @param request ListAllVersionByVersionIdRequest 请求对象
      * @return AsyncInvoker<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse>
      */
     public AsyncInvoker<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse> listAllVersionByVersionIdAsyncInvoker(
         ListAllVersionByVersionIdRequest request) {
-        return new AsyncInvoker<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse>(request,
-            AomMeta.listAllVersionByVersionId, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.listAllVersionByVersionId, hcClient);
     }
 
     /**
@@ -236,7 +230,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateByJobIdRequest 请求对象
+     * @param request ListTemplateByJobIdRequest 请求对象
      * @return CompletableFuture<ListTemplateByJobIdResponse>
      */
     public CompletableFuture<ListTemplateByJobIdResponse> listTemplateByJobIdAsync(ListTemplateByJobIdRequest request) {
@@ -250,13 +244,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateByJobIdRequest 请求对象
+     * @param request ListTemplateByJobIdRequest 请求对象
      * @return AsyncInvoker<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse>
      */
     public AsyncInvoker<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse> listTemplateByJobIdAsyncInvoker(
         ListTemplateByJobIdRequest request) {
-        return new AsyncInvoker<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse>(request,
-            AomMeta.listTemplateByJobId, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.listTemplateByJobId, hcClient);
     }
 
     /**
@@ -266,7 +259,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowRequest 请求对象
+     * @param request ListWorkflowRequest 请求对象
      * @return CompletableFuture<ListWorkflowResponse>
      */
     public CompletableFuture<ListWorkflowResponse> listWorkflowAsync(ListWorkflowRequest request) {
@@ -280,12 +273,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowRequest 请求对象
+     * @param request ListWorkflowRequest 请求对象
      * @return AsyncInvoker<ListWorkflowRequest, ListWorkflowResponse>
      */
     public AsyncInvoker<ListWorkflowRequest, ListWorkflowResponse> listWorkflowAsyncInvoker(
         ListWorkflowRequest request) {
-        return new AsyncInvoker<ListWorkflowRequest, ListWorkflowResponse>(request, AomMeta.listWorkflow, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.listWorkflow, hcClient);
     }
 
     /**
@@ -295,7 +288,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowExecutionsRequest 请求对象
+     * @param request ListWorkflowExecutionsRequest 请求对象
      * @return CompletableFuture<ListWorkflowExecutionsResponse>
      */
     public CompletableFuture<ListWorkflowExecutionsResponse> listWorkflowExecutionsAsync(
@@ -310,13 +303,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowExecutionsRequest 请求对象
+     * @param request ListWorkflowExecutionsRequest 请求对象
      * @return AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>
      */
     public AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsAsyncInvoker(
         ListWorkflowExecutionsRequest request) {
-        return new AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>(request,
-            AomMeta.listWorkflowExecutions, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.listWorkflowExecutions, hcClient);
     }
 
     /**
@@ -326,7 +318,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchTemplateByIdRequest 请求对象
+     * @param request SearchTemplateByIdRequest 请求对象
      * @return CompletableFuture<SearchTemplateByIdResponse>
      */
     public CompletableFuture<SearchTemplateByIdResponse> searchTemplateByIdAsync(SearchTemplateByIdRequest request) {
@@ -340,13 +332,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchTemplateByIdRequest 请求对象
+     * @param request SearchTemplateByIdRequest 请求对象
      * @return AsyncInvoker<SearchTemplateByIdRequest, SearchTemplateByIdResponse>
      */
     public AsyncInvoker<SearchTemplateByIdRequest, SearchTemplateByIdResponse> searchTemplateByIdAsyncInvoker(
         SearchTemplateByIdRequest request) {
-        return new AsyncInvoker<SearchTemplateByIdRequest, SearchTemplateByIdResponse>(request,
-            AomMeta.searchTemplateById, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.searchTemplateById, hcClient);
     }
 
     /**
@@ -356,7 +347,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchWorkflowExecutionDetailRequest 请求对象
+     * @param request SearchWorkflowExecutionDetailRequest 请求对象
      * @return CompletableFuture<SearchWorkflowExecutionDetailResponse>
      */
     public CompletableFuture<SearchWorkflowExecutionDetailResponse> searchWorkflowExecutionDetailAsync(
@@ -371,13 +362,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchWorkflowExecutionDetailRequest 请求对象
+     * @param request SearchWorkflowExecutionDetailRequest 请求对象
      * @return AsyncInvoker<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse>
      */
     public AsyncInvoker<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse> searchWorkflowExecutionDetailAsyncInvoker(
         SearchWorkflowExecutionDetailRequest request) {
-        return new AsyncInvoker<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse>(request,
-            AomMeta.searchWorkflowExecutionDetail, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.searchWorkflowExecutionDetail, hcClient);
     }
 
     /**
@@ -387,7 +377,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartPausingWorkflowExecutionsRequest 请求对象
+     * @param request StartPausingWorkflowExecutionsRequest 请求对象
      * @return CompletableFuture<StartPausingWorkflowExecutionsResponse>
      */
     public CompletableFuture<StartPausingWorkflowExecutionsResponse> startPausingWorkflowExecutionsAsync(
@@ -402,13 +392,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartPausingWorkflowExecutionsRequest 请求对象
+     * @param request StartPausingWorkflowExecutionsRequest 请求对象
      * @return AsyncInvoker<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse>
      */
     public AsyncInvoker<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse> startPausingWorkflowExecutionsAsyncInvoker(
         StartPausingWorkflowExecutionsRequest request) {
-        return new AsyncInvoker<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse>(request,
-            AomMeta.startPausingWorkflowExecutions, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.startPausingWorkflowExecutions, hcClient);
     }
 
     /**
@@ -418,7 +407,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopExecutionRequest 请求对象
+     * @param request StopExecutionRequest 请求对象
      * @return CompletableFuture<StopExecutionResponse>
      */
     public CompletableFuture<StopExecutionResponse> stopExecutionAsync(StopExecutionRequest request) {
@@ -432,12 +421,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopExecutionRequest 请求对象
+     * @param request StopExecutionRequest 请求对象
      * @return AsyncInvoker<StopExecutionRequest, StopExecutionResponse>
      */
     public AsyncInvoker<StopExecutionRequest, StopExecutionResponse> stopExecutionAsyncInvoker(
         StopExecutionRequest request) {
-        return new AsyncInvoker<StopExecutionRequest, StopExecutionResponse>(request, AomMeta.stopExecution, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.stopExecution, hcClient);
     }
 
     /**
@@ -447,7 +436,7 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkflowTriggerStatusRequest 请求对象
+     * @param request UpdateWorkflowTriggerStatusRequest 请求对象
      * @return CompletableFuture<UpdateWorkflowTriggerStatusResponse>
      */
     public CompletableFuture<UpdateWorkflowTriggerStatusResponse> updateWorkflowTriggerStatusAsync(
@@ -462,13 +451,12 @@ public class AomAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWorkflowTriggerStatusRequest 请求对象
+     * @param request UpdateWorkflowTriggerStatusRequest 请求对象
      * @return AsyncInvoker<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse>
      */
     public AsyncInvoker<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse> updateWorkflowTriggerStatusAsyncInvoker(
         UpdateWorkflowTriggerStatusRequest request) {
-        return new AsyncInvoker<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse>(request,
-            AomMeta.updateWorkflowTriggerStatus, hcClient);
+        return new AsyncInvoker<>(request, AomMeta.updateWorkflowTriggerStatus, hcClient);
     }
 
 }

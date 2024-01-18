@@ -66,7 +66,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return CompletableFuture<CreateAppResponse>
      */
     public CompletableFuture<CreateAppResponse> createAppAsync(CreateAppRequest request) {
@@ -80,11 +80,11 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return AsyncInvoker<CreateAppRequest, CreateAppResponse>
      */
     public AsyncInvoker<CreateAppRequest, CreateAppResponse> createAppAsyncInvoker(CreateAppRequest request) {
-        return new AsyncInvoker<CreateAppRequest, CreateAppResponse>(request, MsgsmsMeta.createApp, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.createApp, hcClient);
     }
 
     /**
@@ -94,7 +94,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppDetailsRequest 请求对象
+     * @param request ListAppDetailsRequest 请求对象
      * @return CompletableFuture<ListAppDetailsResponse>
      */
     public CompletableFuture<ListAppDetailsResponse> listAppDetailsAsync(ListAppDetailsRequest request) {
@@ -108,13 +108,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppDetailsRequest 请求对象
+     * @param request ListAppDetailsRequest 请求对象
      * @return AsyncInvoker<ListAppDetailsRequest, ListAppDetailsResponse>
      */
     public AsyncInvoker<ListAppDetailsRequest, ListAppDetailsResponse> listAppDetailsAsyncInvoker(
         ListAppDetailsRequest request) {
-        return new AsyncInvoker<ListAppDetailsRequest, ListAppDetailsResponse>(request, MsgsmsMeta.listAppDetails,
-            hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.listAppDetails, hcClient);
     }
 
     /**
@@ -124,7 +123,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return CompletableFuture<ShowAppResponse>
      */
     public CompletableFuture<ShowAppResponse> showAppAsync(ShowAppRequest request) {
@@ -138,11 +137,11 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return AsyncInvoker<ShowAppRequest, ShowAppResponse>
      */
     public AsyncInvoker<ShowAppRequest, ShowAppResponse> showAppAsyncInvoker(ShowAppRequest request) {
-        return new AsyncInvoker<ShowAppRequest, ShowAppResponse>(request, MsgsmsMeta.showApp, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.showApp, hcClient);
     }
 
     /**
@@ -152,7 +151,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppCountRequest 请求对象
+     * @param request ShowAppCountRequest 请求对象
      * @return CompletableFuture<ShowAppCountResponse>
      */
     public CompletableFuture<ShowAppCountResponse> showAppCountAsync(ShowAppCountRequest request) {
@@ -166,12 +165,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppCountRequest 请求对象
+     * @param request ShowAppCountRequest 请求对象
      * @return AsyncInvoker<ShowAppCountRequest, ShowAppCountResponse>
      */
     public AsyncInvoker<ShowAppCountRequest, ShowAppCountResponse> showAppCountAsyncInvoker(
         ShowAppCountRequest request) {
-        return new AsyncInvoker<ShowAppCountRequest, ShowAppCountResponse>(request, MsgsmsMeta.showAppCount, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.showAppCount, hcClient);
     }
 
     /**
@@ -181,7 +180,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return CompletableFuture<UpdateAppResponse>
      */
     public CompletableFuture<UpdateAppResponse> updateAppAsync(UpdateAppRequest request) {
@@ -195,11 +194,11 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppRequest 请求对象
+     * @param request UpdateAppRequest 请求对象
      * @return AsyncInvoker<UpdateAppRequest, UpdateAppResponse>
      */
     public AsyncInvoker<UpdateAppRequest, UpdateAppResponse> updateAppAsyncInvoker(UpdateAppRequest request) {
-        return new AsyncInvoker<UpdateAppRequest, UpdateAppResponse>(request, MsgsmsMeta.updateApp, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.updateApp, hcClient);
     }
 
     /**
@@ -209,7 +208,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSignatureRequest 请求对象
+     * @param request CreateSignatureRequest 请求对象
      * @return CompletableFuture<CreateSignatureResponse>
      */
     public CompletableFuture<CreateSignatureResponse> createSignatureAsync(CreateSignatureRequest request) {
@@ -223,13 +222,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSignatureRequest 请求对象
+     * @param request CreateSignatureRequest 请求对象
      * @return AsyncInvoker<CreateSignatureRequest, CreateSignatureResponse>
      */
     public AsyncInvoker<CreateSignatureRequest, CreateSignatureResponse> createSignatureAsyncInvoker(
         CreateSignatureRequest request) {
-        return new AsyncInvoker<CreateSignatureRequest, CreateSignatureResponse>(request, MsgsmsMeta.createSignature,
-            hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.createSignature, hcClient);
     }
 
     /**
@@ -239,7 +237,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSignatureRequest 请求对象
+     * @param request DeleteSignatureRequest 请求对象
      * @return CompletableFuture<DeleteSignatureResponse>
      */
     public CompletableFuture<DeleteSignatureResponse> deleteSignatureAsync(DeleteSignatureRequest request) {
@@ -253,13 +251,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSignatureRequest 请求对象
+     * @param request DeleteSignatureRequest 请求对象
      * @return AsyncInvoker<DeleteSignatureRequest, DeleteSignatureResponse>
      */
     public AsyncInvoker<DeleteSignatureRequest, DeleteSignatureResponse> deleteSignatureAsyncInvoker(
         DeleteSignatureRequest request) {
-        return new AsyncInvoker<DeleteSignatureRequest, DeleteSignatureResponse>(request, MsgsmsMeta.deleteSignature,
-            hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.deleteSignature, hcClient);
     }
 
     /**
@@ -269,7 +266,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableSignatureRequest 请求对象
+     * @param request EnableSignatureRequest 请求对象
      * @return CompletableFuture<EnableSignatureResponse>
      */
     public CompletableFuture<EnableSignatureResponse> enableSignatureAsync(EnableSignatureRequest request) {
@@ -283,13 +280,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableSignatureRequest 请求对象
+     * @param request EnableSignatureRequest 请求对象
      * @return AsyncInvoker<EnableSignatureRequest, EnableSignatureResponse>
      */
     public AsyncInvoker<EnableSignatureRequest, EnableSignatureResponse> enableSignatureAsyncInvoker(
         EnableSignatureRequest request) {
-        return new AsyncInvoker<EnableSignatureRequest, EnableSignatureResponse>(request, MsgsmsMeta.enableSignature,
-            hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.enableSignature, hcClient);
     }
 
     /**
@@ -299,7 +295,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureDetailsRequest 请求对象
+     * @param request ListSignatureDetailsRequest 请求对象
      * @return CompletableFuture<ListSignatureDetailsResponse>
      */
     public CompletableFuture<ListSignatureDetailsResponse> listSignatureDetailsAsync(
@@ -314,13 +310,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureDetailsRequest 请求对象
+     * @param request ListSignatureDetailsRequest 请求对象
      * @return AsyncInvoker<ListSignatureDetailsRequest, ListSignatureDetailsResponse>
      */
     public AsyncInvoker<ListSignatureDetailsRequest, ListSignatureDetailsResponse> listSignatureDetailsAsyncInvoker(
         ListSignatureDetailsRequest request) {
-        return new AsyncInvoker<ListSignatureDetailsRequest, ListSignatureDetailsResponse>(request,
-            MsgsmsMeta.listSignatureDetails, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.listSignatureDetails, hcClient);
     }
 
     /**
@@ -330,7 +325,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSignatureRequest 请求对象
+     * @param request ShowSignatureRequest 请求对象
      * @return CompletableFuture<ShowSignatureResponse>
      */
     public CompletableFuture<ShowSignatureResponse> showSignatureAsync(ShowSignatureRequest request) {
@@ -344,13 +339,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSignatureRequest 请求对象
+     * @param request ShowSignatureRequest 请求对象
      * @return AsyncInvoker<ShowSignatureRequest, ShowSignatureResponse>
      */
     public AsyncInvoker<ShowSignatureRequest, ShowSignatureResponse> showSignatureAsyncInvoker(
         ShowSignatureRequest request) {
-        return new AsyncInvoker<ShowSignatureRequest, ShowSignatureResponse>(request, MsgsmsMeta.showSignature,
-            hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.showSignature, hcClient);
     }
 
     /**
@@ -360,7 +354,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSignatureFileRequest 请求对象
+     * @param request ShowSignatureFileRequest 请求对象
      * @return CompletableFuture<ShowSignatureFileResponse>
      */
     public CompletableFuture<ShowSignatureFileResponse> showSignatureFileAsync(ShowSignatureFileRequest request) {
@@ -374,13 +368,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSignatureFileRequest 请求对象
+     * @param request ShowSignatureFileRequest 请求对象
      * @return AsyncInvoker<ShowSignatureFileRequest, ShowSignatureFileResponse>
      */
     public AsyncInvoker<ShowSignatureFileRequest, ShowSignatureFileResponse> showSignatureFileAsyncInvoker(
         ShowSignatureFileRequest request) {
-        return new AsyncInvoker<ShowSignatureFileRequest, ShowSignatureFileResponse>(request,
-            MsgsmsMeta.showSignatureFile, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.showSignatureFile, hcClient);
     }
 
     /**
@@ -390,7 +383,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSignatureRequest 请求对象
+     * @param request UpdateSignatureRequest 请求对象
      * @return CompletableFuture<UpdateSignatureResponse>
      */
     public CompletableFuture<UpdateSignatureResponse> updateSignatureAsync(UpdateSignatureRequest request) {
@@ -404,13 +397,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSignatureRequest 请求对象
+     * @param request UpdateSignatureRequest 请求对象
      * @return AsyncInvoker<UpdateSignatureRequest, UpdateSignatureResponse>
      */
     public AsyncInvoker<UpdateSignatureRequest, UpdateSignatureResponse> updateSignatureAsyncInvoker(
         UpdateSignatureRequest request) {
-        return new AsyncInvoker<UpdateSignatureRequest, UpdateSignatureResponse>(request, MsgsmsMeta.updateSignature,
-            hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.updateSignature, hcClient);
     }
 
     /**
@@ -420,7 +412,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadSignatureFileRequest 请求对象
+     * @param request UploadSignatureFileRequest 请求对象
      * @return CompletableFuture<UploadSignatureFileResponse>
      */
     public CompletableFuture<UploadSignatureFileResponse> uploadSignatureFileAsync(UploadSignatureFileRequest request) {
@@ -434,13 +426,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadSignatureFileRequest 请求对象
+     * @param request UploadSignatureFileRequest 请求对象
      * @return AsyncInvoker<UploadSignatureFileRequest, UploadSignatureFileResponse>
      */
     public AsyncInvoker<UploadSignatureFileRequest, UploadSignatureFileResponse> uploadSignatureFileAsyncInvoker(
         UploadSignatureFileRequest request) {
-        return new AsyncInvoker<UploadSignatureFileRequest, UploadSignatureFileResponse>(request,
-            MsgsmsMeta.uploadSignatureFile, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.uploadSignatureFile, hcClient);
     }
 
     /**
@@ -450,7 +441,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateRequest 请求对象
+     * @param request CreateTemplateRequest 请求对象
      * @return CompletableFuture<CreateTemplateResponse>
      */
     public CompletableFuture<CreateTemplateResponse> createTemplateAsync(CreateTemplateRequest request) {
@@ -464,13 +455,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateRequest 请求对象
+     * @param request CreateTemplateRequest 请求对象
      * @return AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
      */
     public AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateAsyncInvoker(
         CreateTemplateRequest request) {
-        return new AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>(request, MsgsmsMeta.createTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.createTemplate, hcClient);
     }
 
     /**
@@ -480,7 +470,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return CompletableFuture<DeleteTemplateResponse>
      */
     public CompletableFuture<DeleteTemplateResponse> deleteTemplateAsync(DeleteTemplateRequest request) {
@@ -494,13 +484,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
      */
     public AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateAsyncInvoker(
         DeleteTemplateRequest request) {
-        return new AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>(request, MsgsmsMeta.deleteTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.deleteTemplate, hcClient);
     }
 
     /**
@@ -510,7 +499,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSendCountryDetailsRequest 请求对象
+     * @param request ListSendCountryDetailsRequest 请求对象
      * @return CompletableFuture<ListSendCountryDetailsResponse>
      */
     public CompletableFuture<ListSendCountryDetailsResponse> listSendCountryDetailsAsync(
@@ -525,13 +514,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSendCountryDetailsRequest 请求对象
+     * @param request ListSendCountryDetailsRequest 请求对象
      * @return AsyncInvoker<ListSendCountryDetailsRequest, ListSendCountryDetailsResponse>
      */
     public AsyncInvoker<ListSendCountryDetailsRequest, ListSendCountryDetailsResponse> listSendCountryDetailsAsyncInvoker(
         ListSendCountryDetailsRequest request) {
-        return new AsyncInvoker<ListSendCountryDetailsRequest, ListSendCountryDetailsResponse>(request,
-            MsgsmsMeta.listSendCountryDetails, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.listSendCountryDetails, hcClient);
     }
 
     /**
@@ -541,7 +529,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateDetailsRequest 请求对象
+     * @param request ListTemplateDetailsRequest 请求对象
      * @return CompletableFuture<ListTemplateDetailsResponse>
      */
     public CompletableFuture<ListTemplateDetailsResponse> listTemplateDetailsAsync(ListTemplateDetailsRequest request) {
@@ -555,13 +543,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateDetailsRequest 请求对象
+     * @param request ListTemplateDetailsRequest 请求对象
      * @return AsyncInvoker<ListTemplateDetailsRequest, ListTemplateDetailsResponse>
      */
     public AsyncInvoker<ListTemplateDetailsRequest, ListTemplateDetailsResponse> listTemplateDetailsAsyncInvoker(
         ListTemplateDetailsRequest request) {
-        return new AsyncInvoker<ListTemplateDetailsRequest, ListTemplateDetailsResponse>(request,
-            MsgsmsMeta.listTemplateDetails, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.listTemplateDetails, hcClient);
     }
 
     /**
@@ -571,7 +558,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateVarilableDetailsRequest 请求对象
+     * @param request ListTemplateVarilableDetailsRequest 请求对象
      * @return CompletableFuture<ListTemplateVarilableDetailsResponse>
      */
     public CompletableFuture<ListTemplateVarilableDetailsResponse> listTemplateVarilableDetailsAsync(
@@ -586,13 +573,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateVarilableDetailsRequest 请求对象
+     * @param request ListTemplateVarilableDetailsRequest 请求对象
      * @return AsyncInvoker<ListTemplateVarilableDetailsRequest, ListTemplateVarilableDetailsResponse>
      */
     public AsyncInvoker<ListTemplateVarilableDetailsRequest, ListTemplateVarilableDetailsResponse> listTemplateVarilableDetailsAsyncInvoker(
         ListTemplateVarilableDetailsRequest request) {
-        return new AsyncInvoker<ListTemplateVarilableDetailsRequest, ListTemplateVarilableDetailsResponse>(request,
-            MsgsmsMeta.listTemplateVarilableDetails, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.listTemplateVarilableDetails, hcClient);
     }
 
     /**
@@ -602,7 +588,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateRequest 请求对象
+     * @param request ShowTemplateRequest 请求对象
      * @return CompletableFuture<ShowTemplateResponse>
      */
     public CompletableFuture<ShowTemplateResponse> showTemplateAsync(ShowTemplateRequest request) {
@@ -616,12 +602,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTemplateRequest 请求对象
+     * @param request ShowTemplateRequest 请求对象
      * @return AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse>
      */
     public AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse> showTemplateAsyncInvoker(
         ShowTemplateRequest request) {
-        return new AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse>(request, MsgsmsMeta.showTemplate, hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.showTemplate, hcClient);
     }
 
     /**
@@ -631,7 +617,7 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateRequest 请求对象
+     * @param request UpdateTemplateRequest 请求对象
      * @return CompletableFuture<UpdateTemplateResponse>
      */
     public CompletableFuture<UpdateTemplateResponse> updateTemplateAsync(UpdateTemplateRequest request) {
@@ -645,13 +631,12 @@ public class MsgsmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateRequest 请求对象
+     * @param request UpdateTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>
      */
     public AsyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplateAsyncInvoker(
         UpdateTemplateRequest request) {
-        return new AsyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>(request, MsgsmsMeta.updateTemplate,
-            hcClient);
+        return new AsyncInvoker<>(request, MsgsmsMeta.updateTemplate, hcClient);
     }
 
 }

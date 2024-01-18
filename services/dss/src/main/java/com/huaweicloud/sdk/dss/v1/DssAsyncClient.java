@@ -34,7 +34,7 @@ public class DssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoolsRequest 请求对象
+     * @param request ListPoolsRequest 请求对象
      * @return CompletableFuture<ListPoolsResponse>
      */
     public CompletableFuture<ListPoolsResponse> listPoolsAsync(ListPoolsRequest request) {
@@ -48,11 +48,11 @@ public class DssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoolsRequest 请求对象
+     * @param request ListPoolsRequest 请求对象
      * @return AsyncInvoker<ListPoolsRequest, ListPoolsResponse>
      */
     public AsyncInvoker<ListPoolsRequest, ListPoolsResponse> listPoolsAsyncInvoker(ListPoolsRequest request) {
-        return new AsyncInvoker<ListPoolsRequest, ListPoolsResponse>(request, DssMeta.listPools, hcClient);
+        return new AsyncInvoker<>(request, DssMeta.listPools, hcClient);
     }
 
     /**
@@ -62,7 +62,7 @@ public class DssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionRequest 请求对象
+     * @param request ListVersionRequest 请求对象
      * @return CompletableFuture<ListVersionResponse>
      */
     public CompletableFuture<ListVersionResponse> listVersionAsync(ListVersionRequest request) {
@@ -76,11 +76,11 @@ public class DssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionRequest 请求对象
+     * @param request ListVersionRequest 请求对象
      * @return AsyncInvoker<ListVersionRequest, ListVersionResponse>
      */
     public AsyncInvoker<ListVersionRequest, ListVersionResponse> listVersionAsyncInvoker(ListVersionRequest request) {
-        return new AsyncInvoker<ListVersionRequest, ListVersionResponse>(request, DssMeta.listVersion, hcClient);
+        return new AsyncInvoker<>(request, DssMeta.listVersion, hcClient);
     }
 
     /**
@@ -90,7 +90,7 @@ public class DssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPoolRequest 请求对象
+     * @param request ShowPoolRequest 请求对象
      * @return CompletableFuture<ShowPoolResponse>
      */
     public CompletableFuture<ShowPoolResponse> showPoolAsync(ShowPoolRequest request) {
@@ -104,11 +104,11 @@ public class DssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPoolRequest 请求对象
+     * @param request ShowPoolRequest 请求对象
      * @return AsyncInvoker<ShowPoolRequest, ShowPoolResponse>
      */
     public AsyncInvoker<ShowPoolRequest, ShowPoolResponse> showPoolAsyncInvoker(ShowPoolRequest request) {
-        return new AsyncInvoker<ShowPoolRequest, ShowPoolResponse>(request, DssMeta.showPool, hcClient);
+        return new AsyncInvoker<>(request, DssMeta.showPool, hcClient);
     }
 
     /**
@@ -118,7 +118,7 @@ public class DssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionsRequest 请求对象
+     * @param request ShowVersionsRequest 请求对象
      * @return CompletableFuture<ShowVersionsResponse>
      */
     public CompletableFuture<ShowVersionsResponse> showVersionsAsync(ShowVersionsRequest request) {
@@ -132,12 +132,12 @@ public class DssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowVersionsRequest 请求对象
+     * @param request ShowVersionsRequest 请求对象
      * @return AsyncInvoker<ShowVersionsRequest, ShowVersionsResponse>
      */
     public AsyncInvoker<ShowVersionsRequest, ShowVersionsResponse> showVersionsAsyncInvoker(
         ShowVersionsRequest request) {
-        return new AsyncInvoker<ShowVersionsRequest, ShowVersionsResponse>(request, DssMeta.showVersions, hcClient);
+        return new AsyncInvoker<>(request, DssMeta.showVersions, hcClient);
     }
 
 }

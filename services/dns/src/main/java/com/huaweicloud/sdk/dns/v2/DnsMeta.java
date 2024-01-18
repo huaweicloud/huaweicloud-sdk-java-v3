@@ -150,9 +150,9 @@ import com.huaweicloud.sdk.dns.v2.model.UpdateRecordSetsResponse;
 public class DnsMeta {
 
     public static final HttpRequestDef<CreateCustomLineRequest, CreateCustomLineResponse> createCustomLine =
-        genForcreateCustomLine();
+        genForCreateCustomLine();
 
-    private static HttpRequestDef<CreateCustomLineRequest, CreateCustomLineResponse> genForcreateCustomLine() {
+    private static HttpRequestDef<CreateCustomLineRequest, CreateCustomLineResponse> genForCreateCustomLine() {
         // basic
         HttpRequestDef.Builder<CreateCustomLineRequest, CreateCustomLineResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCustomLineRequest.class, CreateCustomLineResponse.class)
@@ -165,9 +165,7 @@ public class DnsMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateCustomLines.class),
-            f -> f.withMarshaller(CreateCustomLineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCustomLineRequest::getBody, CreateCustomLineRequest::setBody));
 
         // response
 
@@ -175,9 +173,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<CreateLineGroupRequest, CreateLineGroupResponse> createLineGroup =
-        genForcreateLineGroup();
+        genForCreateLineGroup();
 
-    private static HttpRequestDef<CreateLineGroupRequest, CreateLineGroupResponse> genForcreateLineGroup() {
+    private static HttpRequestDef<CreateLineGroupRequest, CreateLineGroupResponse> genForCreateLineGroup() {
         // basic
         HttpRequestDef.Builder<CreateLineGroupRequest, CreateLineGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLineGroupRequest.class, CreateLineGroupResponse.class)
@@ -190,9 +188,7 @@ public class DnsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLineGroupsReq.class),
-            f -> f.withMarshaller(CreateLineGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLineGroupRequest::getBody, CreateLineGroupRequest::setBody));
 
         // response
 
@@ -200,9 +196,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<DeleteCustomLineRequest, DeleteCustomLineResponse> deleteCustomLine =
-        genFordeleteCustomLine();
+        genForDeleteCustomLine();
 
-    private static HttpRequestDef<DeleteCustomLineRequest, DeleteCustomLineResponse> genFordeleteCustomLine() {
+    private static HttpRequestDef<DeleteCustomLineRequest, DeleteCustomLineResponse> genForDeleteCustomLine() {
         // basic
         HttpRequestDef.Builder<DeleteCustomLineRequest, DeleteCustomLineResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCustomLineRequest.class, DeleteCustomLineResponse.class)
@@ -215,9 +211,7 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCustomLineRequest::getLineId, (req, v) -> {
-                req.setLineId(v);
-            }));
+            f -> f.withMarshaller(DeleteCustomLineRequest::getLineId, DeleteCustomLineRequest::setLineId));
 
         // response
 
@@ -225,9 +219,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<DeleteLineGroupRequest, DeleteLineGroupResponse> deleteLineGroup =
-        genFordeleteLineGroup();
+        genForDeleteLineGroup();
 
-    private static HttpRequestDef<DeleteLineGroupRequest, DeleteLineGroupResponse> genFordeleteLineGroup() {
+    private static HttpRequestDef<DeleteLineGroupRequest, DeleteLineGroupResponse> genForDeleteLineGroup() {
         // basic
         HttpRequestDef.Builder<DeleteLineGroupRequest, DeleteLineGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLineGroupRequest.class, DeleteLineGroupResponse.class)
@@ -240,9 +234,7 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLineGroupRequest::getLinegroupId, (req, v) -> {
-                req.setLinegroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteLineGroupRequest::getLinegroupId, DeleteLineGroupRequest::setLinegroupId));
 
         // response
 
@@ -250,9 +242,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForlistApiVersions();
+        genForListApiVersions();
 
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
@@ -268,9 +260,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ListCustomLineRequest, ListCustomLineResponse> listCustomLine =
-        genForlistCustomLine();
+        genForListCustomLine();
 
-    private static HttpRequestDef<ListCustomLineRequest, ListCustomLineResponse> genForlistCustomLine() {
+    private static HttpRequestDef<ListCustomLineRequest, ListCustomLineResponse> genForListCustomLine() {
         // basic
         HttpRequestDef.Builder<ListCustomLineRequest, ListCustomLineResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCustomLineRequest.class, ListCustomLineResponse.class)
@@ -283,37 +275,27 @@ public class DnsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getLineId, (req, v) -> {
-                req.setLineId(v);
-            }));
+            f -> f.withMarshaller(ListCustomLineRequest::getLineId, ListCustomLineRequest::setLineId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCustomLineRequest::getName, ListCustomLineRequest::setName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCustomLineRequest::getLimit, ListCustomLineRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCustomLineRequest::getOffset, ListCustomLineRequest::setOffset));
         builder.<Boolean>withRequestField("show_detail",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getShowDetail, (req, v) -> {
-                req.setShowDetail(v);
-            }));
+            f -> f.withMarshaller(ListCustomLineRequest::getShowDetail, ListCustomLineRequest::setShowDetail));
 
         // response
 
@@ -321,9 +303,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ListLineGroupsRequest, ListLineGroupsResponse> listLineGroups =
-        genForlistLineGroups();
+        genForListLineGroups();
 
-    private static HttpRequestDef<ListLineGroupsRequest, ListLineGroupsResponse> genForlistLineGroups() {
+    private static HttpRequestDef<ListLineGroupsRequest, ListLineGroupsResponse> genForListLineGroups() {
         // basic
         HttpRequestDef.Builder<ListLineGroupsRequest, ListLineGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLineGroupsRequest.class, ListLineGroupsResponse.class)
@@ -336,30 +318,22 @@ public class DnsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLineGroupsRequest::getLineId, (req, v) -> {
-                req.setLineId(v);
-            }));
+            f -> f.withMarshaller(ListLineGroupsRequest::getLineId, ListLineGroupsRequest::setLineId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLineGroupsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListLineGroupsRequest::getName, ListLineGroupsRequest::setName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLineGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLineGroupsRequest::getLimit, ListLineGroupsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLineGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLineGroupsRequest::getOffset, ListLineGroupsRequest::setOffset));
 
         // response
 
@@ -367,9 +341,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ListNameServersRequest, ListNameServersResponse> listNameServers =
-        genForlistNameServers();
+        genForListNameServers();
 
-    private static HttpRequestDef<ListNameServersRequest, ListNameServersResponse> genForlistNameServers() {
+    private static HttpRequestDef<ListNameServersRequest, ListNameServersResponse> genForListNameServers() {
         // basic
         HttpRequestDef.Builder<ListNameServersRequest, ListNameServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNameServersRequest.class, ListNameServersResponse.class)
@@ -382,25 +356,21 @@ public class DnsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNameServersRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListNameServersRequest::getType, ListNameServersRequest::setType));
         builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNameServersRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListNameServersRequest::getRegion, ListNameServersRequest::setRegion));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfo = genForshowApiInfo();
+    public static final HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfo = genForShowApiInfo();
 
-    private static HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> genForshowApiInfo() {
+    private static HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> genForShowApiInfo() {
         // basic
         HttpRequestDef.Builder<ShowApiInfoRequest, ShowApiInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiInfoRequest.class, ShowApiInfoResponse.class)
@@ -413,9 +383,7 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiInfoRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ShowApiInfoRequest::getVersion, ShowApiInfoRequest::setVersion));
 
         // response
 
@@ -423,9 +391,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuota =
-        genForshowDomainQuota();
+        genForShowDomainQuota();
 
-    private static HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> genForshowDomainQuota() {
+    private static HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> genForShowDomainQuota() {
         // basic
         HttpRequestDef.Builder<ShowDomainQuotaRequest, ShowDomainQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainQuotaRequest.class, ShowDomainQuotaResponse.class)
@@ -438,9 +406,7 @@ public class DnsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainQuotaRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDomainQuotaRequest::getDomainId, ShowDomainQuotaRequest::setDomainId));
 
         // response
 
@@ -448,9 +414,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowLineGroupRequest, ShowLineGroupResponse> showLineGroup =
-        genForshowLineGroup();
+        genForShowLineGroup();
 
-    private static HttpRequestDef<ShowLineGroupRequest, ShowLineGroupResponse> genForshowLineGroup() {
+    private static HttpRequestDef<ShowLineGroupRequest, ShowLineGroupResponse> genForShowLineGroup() {
         // basic
         HttpRequestDef.Builder<ShowLineGroupRequest, ShowLineGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLineGroupRequest.class, ShowLineGroupResponse.class)
@@ -463,9 +429,7 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLineGroupRequest::getLinegroupId, (req, v) -> {
-                req.setLinegroupId(v);
-            }));
+            f -> f.withMarshaller(ShowLineGroupRequest::getLinegroupId, ShowLineGroupRequest::setLinegroupId));
 
         // response
 
@@ -473,9 +437,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<UpdateCustomLineRequest, UpdateCustomLineResponse> updateCustomLine =
-        genForupdateCustomLine();
+        genForUpdateCustomLine();
 
-    private static HttpRequestDef<UpdateCustomLineRequest, UpdateCustomLineResponse> genForupdateCustomLine() {
+    private static HttpRequestDef<UpdateCustomLineRequest, UpdateCustomLineResponse> genForUpdateCustomLine() {
         // basic
         HttpRequestDef.Builder<UpdateCustomLineRequest, UpdateCustomLineResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCustomLineRequest.class, UpdateCustomLineResponse.class)
@@ -488,16 +452,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCustomLineRequest::getLineId, (req, v) -> {
-                req.setLineId(v);
-            }));
+            f -> f.withMarshaller(UpdateCustomLineRequest::getLineId, UpdateCustomLineRequest::setLineId));
         builder.<UpdateCustomsLineReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateCustomsLineReq.class),
-            f -> f.withMarshaller(UpdateCustomLineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCustomLineRequest::getBody, UpdateCustomLineRequest::setBody));
 
         // response
 
@@ -505,9 +465,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<UpdateLineGroupsRequest, UpdateLineGroupsResponse> updateLineGroups =
-        genForupdateLineGroups();
+        genForUpdateLineGroups();
 
-    private static HttpRequestDef<UpdateLineGroupsRequest, UpdateLineGroupsResponse> genForupdateLineGroups() {
+    private static HttpRequestDef<UpdateLineGroupsRequest, UpdateLineGroupsResponse> genForUpdateLineGroups() {
         // basic
         HttpRequestDef.Builder<UpdateLineGroupsRequest, UpdateLineGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLineGroupsRequest.class, UpdateLineGroupsResponse.class)
@@ -520,16 +480,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLineGroupsRequest::getLinegroupId, (req, v) -> {
-                req.setLinegroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateLineGroupsRequest::getLinegroupId, UpdateLineGroupsRequest::setLinegroupId));
         builder.<UpdateLineGroupsBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLineGroupsBody.class),
-            f -> f.withMarshaller(UpdateLineGroupsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLineGroupsRequest::getBody, UpdateLineGroupsRequest::setBody));
 
         // response
 
@@ -537,9 +493,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<CreateEipRecordSetRequest, CreateEipRecordSetResponse> createEipRecordSet =
-        genForcreateEipRecordSet();
+        genForCreateEipRecordSet();
 
-    private static HttpRequestDef<CreateEipRecordSetRequest, CreateEipRecordSetResponse> genForcreateEipRecordSet() {
+    private static HttpRequestDef<CreateEipRecordSetRequest, CreateEipRecordSetResponse> genForCreateEipRecordSet() {
         // basic
         HttpRequestDef.Builder<CreateEipRecordSetRequest, CreateEipRecordSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, CreateEipRecordSetRequest.class, CreateEipRecordSetResponse.class)
@@ -552,23 +508,18 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEipRecordSetRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(CreateEipRecordSetRequest::getRegion, CreateEipRecordSetRequest::setRegion));
         builder.<String>withRequestField("floatingip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEipRecordSetRequest::getFloatingipId, (req, v) -> {
-                req.setFloatingipId(v);
-            }));
+            f -> f.withMarshaller(CreateEipRecordSetRequest::getFloatingipId,
+                CreateEipRecordSetRequest::setFloatingipId));
         builder.<CreatePtrReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePtrReq.class),
-            f -> f.withMarshaller(CreateEipRecordSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEipRecordSetRequest::getBody, CreateEipRecordSetRequest::setBody));
 
         // response
 
@@ -576,9 +527,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ListPtrRecordsRequest, ListPtrRecordsResponse> listPtrRecords =
-        genForlistPtrRecords();
+        genForListPtrRecords();
 
-    private static HttpRequestDef<ListPtrRecordsRequest, ListPtrRecordsResponse> genForlistPtrRecords() {
+    private static HttpRequestDef<ListPtrRecordsRequest, ListPtrRecordsResponse> genForListPtrRecords() {
         // basic
         HttpRequestDef.Builder<ListPtrRecordsRequest, ListPtrRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPtrRecordsRequest.class, ListPtrRecordsResponse.class)
@@ -591,44 +542,33 @@ public class DnsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPtrRecordsRequest::getMarker, ListPtrRecordsRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPtrRecordsRequest::getLimit, ListPtrRecordsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPtrRecordsRequest::getOffset, ListPtrRecordsRequest::setOffset));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPtrRecordsRequest::getEnterpriseProjectId,
+                ListPtrRecordsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListPtrRecordsRequest::getTags, ListPtrRecordsRequest::setTags));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListPtrRecordsRequest::getStatus, ListPtrRecordsRequest::setStatus));
 
         // response
 
@@ -636,9 +576,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<RestorePtrRecordRequest, RestorePtrRecordResponse> restorePtrRecord =
-        genForrestorePtrRecord();
+        genForRestorePtrRecord();
 
-    private static HttpRequestDef<RestorePtrRecordRequest, RestorePtrRecordResponse> genForrestorePtrRecord() {
+    private static HttpRequestDef<RestorePtrRecordRequest, RestorePtrRecordResponse> genForRestorePtrRecord() {
         // basic
         HttpRequestDef.Builder<RestorePtrRecordRequest, RestorePtrRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, RestorePtrRecordRequest.class, RestorePtrRecordResponse.class)
@@ -651,23 +591,17 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestorePtrRecordRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(RestorePtrRecordRequest::getRegion, RestorePtrRecordRequest::setRegion));
         builder.<String>withRequestField("floatingip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestorePtrRecordRequest::getFloatingipId, (req, v) -> {
-                req.setFloatingipId(v);
-            }));
+            f -> f.withMarshaller(RestorePtrRecordRequest::getFloatingipId, RestorePtrRecordRequest::setFloatingipId));
         builder.<RestorePtrReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RestorePtrReq.class),
-            f -> f.withMarshaller(RestorePtrRecordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RestorePtrRecordRequest::getBody, RestorePtrRecordRequest::setBody));
 
         // response
 
@@ -675,9 +609,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> showPtrRecordSet =
-        genForshowPtrRecordSet();
+        genForShowPtrRecordSet();
 
-    private static HttpRequestDef<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> genForshowPtrRecordSet() {
+    private static HttpRequestDef<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> genForShowPtrRecordSet() {
         // basic
         HttpRequestDef.Builder<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPtrRecordSetRequest.class, ShowPtrRecordSetResponse.class)
@@ -690,16 +624,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPtrRecordSetRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ShowPtrRecordSetRequest::getRegion, ShowPtrRecordSetRequest::setRegion));
         builder.<String>withRequestField("floatingip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPtrRecordSetRequest::getFloatingipId, (req, v) -> {
-                req.setFloatingipId(v);
-            }));
+            f -> f.withMarshaller(ShowPtrRecordSetRequest::getFloatingipId, ShowPtrRecordSetRequest::setFloatingipId));
 
         // response
 
@@ -707,9 +637,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<UpdatePtrRecordRequest, UpdatePtrRecordResponse> updatePtrRecord =
-        genForupdatePtrRecord();
+        genForUpdatePtrRecord();
 
-    private static HttpRequestDef<UpdatePtrRecordRequest, UpdatePtrRecordResponse> genForupdatePtrRecord() {
+    private static HttpRequestDef<UpdatePtrRecordRequest, UpdatePtrRecordResponse> genForUpdatePtrRecord() {
         // basic
         HttpRequestDef.Builder<UpdatePtrRecordRequest, UpdatePtrRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdatePtrRecordRequest.class, UpdatePtrRecordResponse.class)
@@ -722,23 +652,17 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePtrRecordRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(UpdatePtrRecordRequest::getRegion, UpdatePtrRecordRequest::setRegion));
         builder.<String>withRequestField("floatingip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePtrRecordRequest::getFloatingipId, (req, v) -> {
-                req.setFloatingipId(v);
-            }));
+            f -> f.withMarshaller(UpdatePtrRecordRequest::getFloatingipId, UpdatePtrRecordRequest::setFloatingipId));
         builder.<UpdatePtrReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdatePtrReq.class),
-            f -> f.withMarshaller(UpdatePtrRecordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePtrRecordRequest::getBody, UpdatePtrRecordRequest::setBody));
 
         // response
 
@@ -746,9 +670,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<AssociateHealthCheckRequest, AssociateHealthCheckResponse> associateHealthCheck =
-        genForassociateHealthCheck();
+        genForAssociateHealthCheck();
 
-    private static HttpRequestDef<AssociateHealthCheckRequest, AssociateHealthCheckResponse> genForassociateHealthCheck() {
+    private static HttpRequestDef<AssociateHealthCheckRequest, AssociateHealthCheckResponse> genForAssociateHealthCheck() {
         // basic
         HttpRequestDef.Builder<AssociateHealthCheckRequest, AssociateHealthCheckResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AssociateHealthCheckRequest.class, AssociateHealthCheckResponse.class)
@@ -761,16 +685,13 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateHealthCheckRequest::getRecordsetId, (req, v) -> {
-                req.setRecordsetId(v);
-            }));
+            f -> f.withMarshaller(AssociateHealthCheckRequest::getRecordsetId,
+                AssociateHealthCheckRequest::setRecordsetId));
         builder.<AssociateHealthCheckReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociateHealthCheckReq.class),
-            f -> f.withMarshaller(AssociateHealthCheckRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateHealthCheckRequest::getBody, AssociateHealthCheckRequest::setBody));
 
         // response
 
@@ -778,9 +699,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLine =
-        genForbatchDeleteRecordSetWithLine();
+        genForBatchDeleteRecordSetWithLine();
 
-    private static HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> genForbatchDeleteRecordSetWithLine() {
+    private static HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> genForBatchDeleteRecordSetWithLine() {
         // basic
         HttpRequestDef.Builder<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> builder =
             HttpRequestDef
@@ -796,16 +717,14 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getZoneId,
+                BatchDeleteRecordSetWithLineRequest::setZoneId));
         builder.<BatchDeleteRecordSetWithLineRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteRecordSetWithLineRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getBody,
+                BatchDeleteRecordSetWithLineRequest::setBody));
 
         // response
 
@@ -813,9 +732,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLine =
-        genForbatchUpdateRecordSetWithLine();
+        genForBatchUpdateRecordSetWithLine();
 
-    private static HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> genForbatchUpdateRecordSetWithLine() {
+    private static HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> genForBatchUpdateRecordSetWithLine() {
         // basic
         HttpRequestDef.Builder<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> builder =
             HttpRequestDef
@@ -831,16 +750,14 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getZoneId,
+                BatchUpdateRecordSetWithLineRequest::setZoneId));
         builder.<BatchUpdateRecordSetWithLineReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateRecordSetWithLineReq.class),
-            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getBody,
+                BatchUpdateRecordSetWithLineRequest::setBody));
 
         // response
 
@@ -848,9 +765,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<CreateRecordSetRequest, CreateRecordSetResponse> createRecordSet =
-        genForcreateRecordSet();
+        genForCreateRecordSet();
 
-    private static HttpRequestDef<CreateRecordSetRequest, CreateRecordSetResponse> genForcreateRecordSet() {
+    private static HttpRequestDef<CreateRecordSetRequest, CreateRecordSetResponse> genForCreateRecordSet() {
         // basic
         HttpRequestDef.Builder<CreateRecordSetRequest, CreateRecordSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRecordSetRequest.class, CreateRecordSetResponse.class)
@@ -863,16 +780,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecordSetRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(CreateRecordSetRequest::getZoneId, CreateRecordSetRequest::setZoneId));
         builder.<CreateRecordSetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRecordSetRequestBody.class),
-            f -> f.withMarshaller(CreateRecordSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRecordSetRequest::getBody, CreateRecordSetRequest::setBody));
 
         // response
 
@@ -880,9 +793,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> createRecordSetWithBatchLines =
-        genForcreateRecordSetWithBatchLines();
+        genForCreateRecordSetWithBatchLines();
 
-    private static HttpRequestDef<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> genForcreateRecordSetWithBatchLines() {
+    private static HttpRequestDef<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> genForCreateRecordSetWithBatchLines() {
         // basic
         HttpRequestDef.Builder<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> builder =
             HttpRequestDef
@@ -898,16 +811,14 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecordSetWithBatchLinesRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(CreateRecordSetWithBatchLinesRequest::getZoneId,
+                CreateRecordSetWithBatchLinesRequest::setZoneId));
         builder.<CreateRSetBatchLinesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRSetBatchLinesReq.class),
-            f -> f.withMarshaller(CreateRecordSetWithBatchLinesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRecordSetWithBatchLinesRequest::getBody,
+                CreateRecordSetWithBatchLinesRequest::setBody));
 
         // response
 
@@ -915,9 +826,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse> createRecordSetWithLine =
-        genForcreateRecordSetWithLine();
+        genForCreateRecordSetWithLine();
 
-    private static HttpRequestDef<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse> genForcreateRecordSetWithLine() {
+    private static HttpRequestDef<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse> genForCreateRecordSetWithLine() {
         // basic
         HttpRequestDef.Builder<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateRecordSetWithLineRequest.class, CreateRecordSetWithLineResponse.class)
@@ -930,16 +841,13 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecordSetWithLineRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(CreateRecordSetWithLineRequest::getZoneId,
+                CreateRecordSetWithLineRequest::setZoneId));
         builder.<CreateRecordSetWithLineRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRecordSetWithLineRequestBody.class),
-            f -> f.withMarshaller(CreateRecordSetWithLineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRecordSetWithLineRequest::getBody, CreateRecordSetWithLineRequest::setBody));
 
         // response
 
@@ -947,9 +855,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<DeleteRecordSetRequest, DeleteRecordSetResponse> deleteRecordSet =
-        genFordeleteRecordSet();
+        genForDeleteRecordSet();
 
-    private static HttpRequestDef<DeleteRecordSetRequest, DeleteRecordSetResponse> genFordeleteRecordSet() {
+    private static HttpRequestDef<DeleteRecordSetRequest, DeleteRecordSetResponse> genForDeleteRecordSet() {
         // basic
         HttpRequestDef.Builder<DeleteRecordSetRequest, DeleteRecordSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordSetRequest.class, DeleteRecordSetResponse.class)
@@ -962,16 +870,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordSetRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordSetRequest::getZoneId, DeleteRecordSetRequest::setZoneId));
         builder.<String>withRequestField("recordset_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordSetRequest::getRecordsetId, (req, v) -> {
-                req.setRecordsetId(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordSetRequest::getRecordsetId, DeleteRecordSetRequest::setRecordsetId));
 
         // response
 
@@ -979,9 +883,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<DeleteRecordSetsRequest, DeleteRecordSetsResponse> deleteRecordSets =
-        genFordeleteRecordSets();
+        genForDeleteRecordSets();
 
-    private static HttpRequestDef<DeleteRecordSetsRequest, DeleteRecordSetsResponse> genFordeleteRecordSets() {
+    private static HttpRequestDef<DeleteRecordSetsRequest, DeleteRecordSetsResponse> genForDeleteRecordSets() {
         // basic
         HttpRequestDef.Builder<DeleteRecordSetsRequest, DeleteRecordSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordSetsRequest.class, DeleteRecordSetsResponse.class)
@@ -994,16 +898,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordSetsRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordSetsRequest::getZoneId, DeleteRecordSetsRequest::setZoneId));
         builder.<String>withRequestField("recordset_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRecordSetsRequest::getRecordsetId, (req, v) -> {
-                req.setRecordsetId(v);
-            }));
+            f -> f.withMarshaller(DeleteRecordSetsRequest::getRecordsetId, DeleteRecordSetsRequest::setRecordsetId));
 
         // response
 
@@ -1011,9 +911,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> disassociateHealthCheck =
-        genFordisassociateHealthCheck();
+        genForDisassociateHealthCheck();
 
-    private static HttpRequestDef<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> genFordisassociateHealthCheck() {
+    private static HttpRequestDef<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> genForDisassociateHealthCheck() {
         // basic
         HttpRequestDef.Builder<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DisassociateHealthCheckRequest.class, DisassociateHealthCheckResponse.class)
@@ -1026,16 +926,13 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateHealthCheckRequest::getRecordsetId, (req, v) -> {
-                req.setRecordsetId(v);
-            }));
+            f -> f.withMarshaller(DisassociateHealthCheckRequest::getRecordsetId,
+                DisassociateHealthCheckRequest::setRecordsetId));
         builder.<AssociateHealthCheckReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociateHealthCheckReq.class),
-            f -> f.withMarshaller(DisassociateHealthCheckRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateHealthCheckRequest::getBody, DisassociateHealthCheckRequest::setBody));
 
         // response
 
@@ -1043,9 +940,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ListRecordSetsRequest, ListRecordSetsResponse> listRecordSets =
-        genForlistRecordSets();
+        genForListRecordSets();
 
-    private static HttpRequestDef<ListRecordSetsRequest, ListRecordSetsResponse> genForlistRecordSets() {
+    private static HttpRequestDef<ListRecordSetsRequest, ListRecordSetsResponse> genForListRecordSets() {
         // basic
         HttpRequestDef.Builder<ListRecordSetsRequest, ListRecordSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRecordSetsRequest.class, ListRecordSetsResponse.class)
@@ -1058,93 +955,67 @@ public class DnsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getZoneType, (req, v) -> {
-                req.setZoneType(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getZoneType, ListRecordSetsRequest::setZoneType));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getMarker, ListRecordSetsRequest::setMarker));
         builder.<String>withRequestField("search_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getSearchMode, (req, v) -> {
-                req.setSearchMode(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getSearchMode, ListRecordSetsRequest::setSearchMode));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getLimit, ListRecordSetsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getOffset, ListRecordSetsRequest::setOffset));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getTags, ListRecordSetsRequest::setTags));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getStatus, ListRecordSetsRequest::setStatus));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getType, ListRecordSetsRequest::setType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getName, ListRecordSetsRequest::setName));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getId, ListRecordSetsRequest::setId));
         builder.<String>withRequestField("records",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getRecords, (req, v) -> {
-                req.setRecords(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getRecords, ListRecordSetsRequest::setRecords));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getSortKey, ListRecordSetsRequest::setSortKey));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsRequest::getSortDir, ListRecordSetsRequest::setSortDir));
 
         // response
 
@@ -1152,9 +1023,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse> listRecordSetsByZone =
-        genForlistRecordSetsByZone();
+        genForListRecordSetsByZone();
 
-    private static HttpRequestDef<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse> genForlistRecordSetsByZone() {
+    private static HttpRequestDef<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse> genForListRecordSetsByZone() {
         // basic
         HttpRequestDef.Builder<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRecordSetsByZoneRequest.class, ListRecordSetsByZoneResponse.class)
@@ -1167,86 +1038,63 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getZoneId, ListRecordSetsByZoneRequest::setZoneId));
         builder.<String>withRequestField("search_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getSearchMode, (req, v) -> {
-                req.setSearchMode(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getSearchMode,
+                ListRecordSetsByZoneRequest::setSearchMode));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getMarker, ListRecordSetsByZoneRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getLimit, ListRecordSetsByZoneRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getOffset, ListRecordSetsByZoneRequest::setOffset));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getTags, ListRecordSetsByZoneRequest::setTags));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getStatus, ListRecordSetsByZoneRequest::setStatus));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getType, ListRecordSetsByZoneRequest::setType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getName, ListRecordSetsByZoneRequest::setName));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getId, ListRecordSetsByZoneRequest::setId));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getSortKey, ListRecordSetsByZoneRequest::setSortKey));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getSortDir, ListRecordSetsByZoneRequest::setSortDir));
 
         // response
 
@@ -1254,9 +1102,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse> listRecordSetsWithLine =
-        genForlistRecordSetsWithLine();
+        genForListRecordSetsWithLine();
 
-    private static HttpRequestDef<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse> genForlistRecordSetsWithLine() {
+    private static HttpRequestDef<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse> genForListRecordSetsWithLine() {
         // basic
         HttpRequestDef.Builder<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRecordSetsWithLineRequest.class, ListRecordSetsWithLineResponse.class)
@@ -1269,107 +1117,83 @@ public class DnsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getZoneType, (req, v) -> {
-                req.setZoneType(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getZoneType,
+                ListRecordSetsWithLineRequest::setZoneType));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getMarker, ListRecordSetsWithLineRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getLimit, ListRecordSetsWithLineRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getOffset, ListRecordSetsWithLineRequest::setOffset));
         builder.<String>withRequestField("line_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getLineId, (req, v) -> {
-                req.setLineId(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getLineId, ListRecordSetsWithLineRequest::setLineId));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getTags, ListRecordSetsWithLineRequest::setTags));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getStatus, ListRecordSetsWithLineRequest::setStatus));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getType, ListRecordSetsWithLineRequest::setType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getName, ListRecordSetsWithLineRequest::setName));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getId, ListRecordSetsWithLineRequest::setId));
         builder.<String>withRequestField("records",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getRecords, (req, v) -> {
-                req.setRecords(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getRecords,
+                ListRecordSetsWithLineRequest::setRecords));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getSortKey,
+                ListRecordSetsWithLineRequest::setSortKey));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getSortDir,
+                ListRecordSetsWithLineRequest::setSortDir));
         builder.<String>withRequestField("health_check_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getHealthCheckId, (req, v) -> {
-                req.setHealthCheckId(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getHealthCheckId,
+                ListRecordSetsWithLineRequest::setHealthCheckId));
         builder.<String>withRequestField("search_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getSearchMode, (req, v) -> {
-                req.setSearchMode(v);
-            }));
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getSearchMode,
+                ListRecordSetsWithLineRequest::setSearchMode));
 
         // response
 
@@ -1377,9 +1201,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse> setRecordSetsStatus =
-        genForsetRecordSetsStatus();
+        genForSetRecordSetsStatus();
 
-    private static HttpRequestDef<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse> genForsetRecordSetsStatus() {
+    private static HttpRequestDef<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse> genForSetRecordSetsStatus() {
         // basic
         HttpRequestDef.Builder<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetRecordSetsStatusRequest.class, SetRecordSetsStatusResponse.class)
@@ -1392,16 +1216,13 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetRecordSetsStatusRequest::getRecordsetId, (req, v) -> {
-                req.setRecordsetId(v);
-            }));
+            f -> f.withMarshaller(SetRecordSetsStatusRequest::getRecordsetId,
+                SetRecordSetsStatusRequest::setRecordsetId));
         builder.<SetRecordSetsStatusReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SetRecordSetsStatusReq.class),
-            f -> f.withMarshaller(SetRecordSetsStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetRecordSetsStatusRequest::getBody, SetRecordSetsStatusRequest::setBody));
 
         // response
 
@@ -1409,9 +1230,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowRecordSetRequest, ShowRecordSetResponse> showRecordSet =
-        genForshowRecordSet();
+        genForShowRecordSet();
 
-    private static HttpRequestDef<ShowRecordSetRequest, ShowRecordSetResponse> genForshowRecordSet() {
+    private static HttpRequestDef<ShowRecordSetRequest, ShowRecordSetResponse> genForShowRecordSet() {
         // basic
         HttpRequestDef.Builder<ShowRecordSetRequest, ShowRecordSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecordSetRequest.class, ShowRecordSetResponse.class)
@@ -1424,16 +1245,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetRequest::getZoneId, ShowRecordSetRequest::setZoneId));
         builder.<String>withRequestField("recordset_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetRequest::getRecordsetId, (req, v) -> {
-                req.setRecordsetId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetRequest::getRecordsetId, ShowRecordSetRequest::setRecordsetId));
 
         // response
 
@@ -1441,9 +1258,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse> showRecordSetByZone =
-        genForshowRecordSetByZone();
+        genForShowRecordSetByZone();
 
-    private static HttpRequestDef<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse> genForshowRecordSetByZone() {
+    private static HttpRequestDef<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse> genForShowRecordSetByZone() {
         // basic
         HttpRequestDef.Builder<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecordSetByZoneRequest.class, ShowRecordSetByZoneResponse.class)
@@ -1456,93 +1273,68 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getZoneId, ShowRecordSetByZoneRequest::setZoneId));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getMarker, ShowRecordSetByZoneRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getLimit, ShowRecordSetByZoneRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getOffset, ShowRecordSetByZoneRequest::setOffset));
         builder.<String>withRequestField("line_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getLineId, (req, v) -> {
-                req.setLineId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getLineId, ShowRecordSetByZoneRequest::setLineId));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getTags, ShowRecordSetByZoneRequest::setTags));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getStatus, ShowRecordSetByZoneRequest::setStatus));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getType, ShowRecordSetByZoneRequest::setType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getName, ShowRecordSetByZoneRequest::setName));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getId, ShowRecordSetByZoneRequest::setId));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getSortKey, ShowRecordSetByZoneRequest::setSortKey));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getSortDir, ShowRecordSetByZoneRequest::setSortDir));
         builder.<String>withRequestField("search_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getSearchMode, (req, v) -> {
-                req.setSearchMode(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetByZoneRequest::getSearchMode,
+                ShowRecordSetByZoneRequest::setSearchMode));
 
         // response
 
@@ -1550,9 +1342,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse> showRecordSetWithLine =
-        genForshowRecordSetWithLine();
+        genForShowRecordSetWithLine();
 
-    private static HttpRequestDef<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse> genForshowRecordSetWithLine() {
+    private static HttpRequestDef<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse> genForShowRecordSetWithLine() {
         // basic
         HttpRequestDef.Builder<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowRecordSetWithLineRequest.class, ShowRecordSetWithLineResponse.class)
@@ -1565,16 +1357,13 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetWithLineRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetWithLineRequest::getZoneId, ShowRecordSetWithLineRequest::setZoneId));
         builder.<String>withRequestField("recordset_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecordSetWithLineRequest::getRecordsetId, (req, v) -> {
-                req.setRecordsetId(v);
-            }));
+            f -> f.withMarshaller(ShowRecordSetWithLineRequest::getRecordsetId,
+                ShowRecordSetWithLineRequest::setRecordsetId));
 
         // response
 
@@ -1582,9 +1371,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<UpdateRecordSetRequest, UpdateRecordSetResponse> updateRecordSet =
-        genForupdateRecordSet();
+        genForUpdateRecordSet();
 
-    private static HttpRequestDef<UpdateRecordSetRequest, UpdateRecordSetResponse> genForupdateRecordSet() {
+    private static HttpRequestDef<UpdateRecordSetRequest, UpdateRecordSetResponse> genForUpdateRecordSet() {
         // basic
         HttpRequestDef.Builder<UpdateRecordSetRequest, UpdateRecordSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRecordSetRequest.class, UpdateRecordSetResponse.class)
@@ -1597,23 +1386,17 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordSetRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordSetRequest::getZoneId, UpdateRecordSetRequest::setZoneId));
         builder.<String>withRequestField("recordset_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordSetRequest::getRecordsetId, (req, v) -> {
-                req.setRecordsetId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordSetRequest::getRecordsetId, UpdateRecordSetRequest::setRecordsetId));
         builder.<UpdateRecordSetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateRecordSetReq.class),
-            f -> f.withMarshaller(UpdateRecordSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordSetRequest::getBody, UpdateRecordSetRequest::setBody));
 
         // response
 
@@ -1621,9 +1404,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<UpdateRecordSetsRequest, UpdateRecordSetsResponse> updateRecordSets =
-        genForupdateRecordSets();
+        genForUpdateRecordSets();
 
-    private static HttpRequestDef<UpdateRecordSetsRequest, UpdateRecordSetsResponse> genForupdateRecordSets() {
+    private static HttpRequestDef<UpdateRecordSetsRequest, UpdateRecordSetsResponse> genForUpdateRecordSets() {
         // basic
         HttpRequestDef.Builder<UpdateRecordSetsRequest, UpdateRecordSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRecordSetsRequest.class, UpdateRecordSetsResponse.class)
@@ -1636,23 +1419,17 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordSetsRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordSetsRequest::getZoneId, UpdateRecordSetsRequest::setZoneId));
         builder.<String>withRequestField("recordset_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRecordSetsRequest::getRecordsetId, (req, v) -> {
-                req.setRecordsetId(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordSetsRequest::getRecordsetId, UpdateRecordSetsRequest::setRecordsetId));
         builder.<UpdateRecordSetsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateRecordSetsReq.class),
-            f -> f.withMarshaller(UpdateRecordSetsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRecordSetsRequest::getBody, UpdateRecordSetsRequest::setBody));
 
         // response
 
@@ -1660,9 +1437,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<BatchCreateTagRequest, BatchCreateTagResponse> batchCreateTag =
-        genForbatchCreateTag();
+        genForBatchCreateTag();
 
-    private static HttpRequestDef<BatchCreateTagRequest, BatchCreateTagResponse> genForbatchCreateTag() {
+    private static HttpRequestDef<BatchCreateTagRequest, BatchCreateTagResponse> genForBatchCreateTag() {
         // basic
         HttpRequestDef.Builder<BatchCreateTagRequest, BatchCreateTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateTagRequest.class, BatchCreateTagResponse.class)
@@ -1675,32 +1452,26 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagRequest::getResourceType, BatchCreateTagRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagRequest::getResourceId, BatchCreateTagRequest::setResourceId));
         builder.<BatchHandTags>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchHandTags.class),
-            f -> f.withMarshaller(BatchCreateTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagRequest::getBody, BatchCreateTagRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForcreateTag();
+    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForCreateTag();
 
-    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForcreateTag() {
+    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForCreateTag() {
         // basic
         HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
@@ -1713,32 +1484,26 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getResourceType, CreateTagRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getResourceId, CreateTagRequest::setResourceId));
         builder.<CreateTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateTagReq.class),
-            f -> f.withMarshaller(CreateTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getBody, CreateTagRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genFordeleteTag();
+    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genForDeleteTag();
 
-    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genFordeleteTag() {
+    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genForDeleteTag() {
         // basic
         HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
@@ -1751,32 +1516,26 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getResourceType, DeleteTagRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getResourceId, DeleteTagRequest::setResourceId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getKey, DeleteTagRequest::setKey));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTagRequest, ListTagResponse> listTag = genForlistTag();
+    public static final HttpRequestDef<ListTagRequest, ListTagResponse> listTag = genForListTag();
 
-    private static HttpRequestDef<ListTagRequest, ListTagResponse> genForlistTag() {
+    private static HttpRequestDef<ListTagRequest, ListTagResponse> genForListTag() {
         // basic
         HttpRequestDef.Builder<ListTagRequest, ListTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListTagRequest.class, ListTagResponse.class)
@@ -1789,25 +1548,21 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListTagRequest::getResourceType, ListTagRequest::setResourceType));
         builder.<ListTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTagReq.class),
-            f -> f.withMarshaller(ListTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListTagRequest::getBody, ListTagRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
 
-    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
         // basic
         HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
@@ -1820,9 +1575,7 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getResourceType, ListTagsRequest::setResourceType));
 
         // response
 
@@ -1830,9 +1583,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTag =
-        genForshowResourceTag();
+        genForShowResourceTag();
 
-    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForshowResourceTag() {
+    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForShowResourceTag() {
         // basic
         HttpRequestDef.Builder<ShowResourceTagRequest, ShowResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagRequest.class, ShowResourceTagResponse.class)
@@ -1845,16 +1598,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, ShowResourceTagRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, ShowResourceTagRequest::setResourceId));
 
         // response
 
@@ -1862,9 +1611,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<AssociateRouterRequest, AssociateRouterResponse> associateRouter =
-        genForassociateRouter();
+        genForAssociateRouter();
 
-    private static HttpRequestDef<AssociateRouterRequest, AssociateRouterResponse> genForassociateRouter() {
+    private static HttpRequestDef<AssociateRouterRequest, AssociateRouterResponse> genForAssociateRouter() {
         // basic
         HttpRequestDef.Builder<AssociateRouterRequest, AssociateRouterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateRouterRequest.class, AssociateRouterResponse.class)
@@ -1877,16 +1626,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRouterRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(AssociateRouterRequest::getZoneId, AssociateRouterRequest::setZoneId));
         builder.<AssociateRouterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociateRouterRequestBody.class),
-            f -> f.withMarshaller(AssociateRouterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateRouterRequest::getBody, AssociateRouterRequest::setBody));
 
         // response
 
@@ -1894,9 +1639,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<CreatePrivateZoneRequest, CreatePrivateZoneResponse> createPrivateZone =
-        genForcreatePrivateZone();
+        genForCreatePrivateZone();
 
-    private static HttpRequestDef<CreatePrivateZoneRequest, CreatePrivateZoneResponse> genForcreatePrivateZone() {
+    private static HttpRequestDef<CreatePrivateZoneRequest, CreatePrivateZoneResponse> genForCreatePrivateZone() {
         // basic
         HttpRequestDef.Builder<CreatePrivateZoneRequest, CreatePrivateZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePrivateZoneRequest.class, CreatePrivateZoneResponse.class)
@@ -1909,9 +1654,7 @@ public class DnsMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreatePrivateZoneReq.class),
-            f -> f.withMarshaller(CreatePrivateZoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePrivateZoneRequest::getBody, CreatePrivateZoneRequest::setBody));
 
         // response
 
@@ -1919,9 +1662,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<CreatePublicZoneRequest, CreatePublicZoneResponse> createPublicZone =
-        genForcreatePublicZone();
+        genForCreatePublicZone();
 
-    private static HttpRequestDef<CreatePublicZoneRequest, CreatePublicZoneResponse> genForcreatePublicZone() {
+    private static HttpRequestDef<CreatePublicZoneRequest, CreatePublicZoneResponse> genForCreatePublicZone() {
         // basic
         HttpRequestDef.Builder<CreatePublicZoneRequest, CreatePublicZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePublicZoneRequest.class, CreatePublicZoneResponse.class)
@@ -1934,9 +1677,7 @@ public class DnsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePublicZoneReq.class),
-            f -> f.withMarshaller(CreatePublicZoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePublicZoneRequest::getBody, CreatePublicZoneRequest::setBody));
 
         // response
 
@@ -1944,9 +1685,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<DeletePrivateZoneRequest, DeletePrivateZoneResponse> deletePrivateZone =
-        genFordeletePrivateZone();
+        genForDeletePrivateZone();
 
-    private static HttpRequestDef<DeletePrivateZoneRequest, DeletePrivateZoneResponse> genFordeletePrivateZone() {
+    private static HttpRequestDef<DeletePrivateZoneRequest, DeletePrivateZoneResponse> genForDeletePrivateZone() {
         // basic
         HttpRequestDef.Builder<DeletePrivateZoneRequest, DeletePrivateZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePrivateZoneRequest.class, DeletePrivateZoneResponse.class)
@@ -1959,9 +1700,7 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePrivateZoneRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(DeletePrivateZoneRequest::getZoneId, DeletePrivateZoneRequest::setZoneId));
 
         // response
 
@@ -1969,9 +1708,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<DeletePublicZoneRequest, DeletePublicZoneResponse> deletePublicZone =
-        genFordeletePublicZone();
+        genForDeletePublicZone();
 
-    private static HttpRequestDef<DeletePublicZoneRequest, DeletePublicZoneResponse> genFordeletePublicZone() {
+    private static HttpRequestDef<DeletePublicZoneRequest, DeletePublicZoneResponse> genForDeletePublicZone() {
         // basic
         HttpRequestDef.Builder<DeletePublicZoneRequest, DeletePublicZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePublicZoneRequest.class, DeletePublicZoneResponse.class)
@@ -1984,9 +1723,7 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePublicZoneRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(DeletePublicZoneRequest::getZoneId, DeletePublicZoneRequest::setZoneId));
 
         // response
 
@@ -1994,9 +1731,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<DisassociateRouterRequest, DisassociateRouterResponse> disassociateRouter =
-        genFordisassociateRouter();
+        genForDisassociateRouter();
 
-    private static HttpRequestDef<DisassociateRouterRequest, DisassociateRouterResponse> genFordisassociateRouter() {
+    private static HttpRequestDef<DisassociateRouterRequest, DisassociateRouterResponse> genForDisassociateRouter() {
         // basic
         HttpRequestDef.Builder<DisassociateRouterRequest, DisassociateRouterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisassociateRouterRequest.class, DisassociateRouterResponse.class)
@@ -2009,16 +1746,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateRouterRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(DisassociateRouterRequest::getZoneId, DisassociateRouterRequest::setZoneId));
         builder.<DisassociaterouterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DisassociaterouterRequestBody.class),
-            f -> f.withMarshaller(DisassociateRouterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateRouterRequest::getBody, DisassociateRouterRequest::setBody));
 
         // response
 
@@ -2026,9 +1759,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ListPrivateZonesRequest, ListPrivateZonesResponse> listPrivateZones =
-        genForlistPrivateZones();
+        genForListPrivateZones();
 
-    private static HttpRequestDef<ListPrivateZonesRequest, ListPrivateZonesResponse> genForlistPrivateZones() {
+    private static HttpRequestDef<ListPrivateZonesRequest, ListPrivateZonesResponse> genForListPrivateZones() {
         // basic
         HttpRequestDef.Builder<ListPrivateZonesRequest, ListPrivateZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrivateZonesRequest.class, ListPrivateZonesResponse.class)
@@ -2041,65 +1774,48 @@ public class DnsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListPrivateZonesRequest::getType, ListPrivateZonesRequest::setType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPrivateZonesRequest::getLimit, ListPrivateZonesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPrivateZonesRequest::getMarker, ListPrivateZonesRequest::setMarker));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPrivateZonesRequest::getOffset, ListPrivateZonesRequest::setOffset));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListPrivateZonesRequest::getTags, ListPrivateZonesRequest::setTags));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPrivateZonesRequest::getName, ListPrivateZonesRequest::setName));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListPrivateZonesRequest::getStatus, ListPrivateZonesRequest::setStatus));
         builder.<String>withRequestField("search_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getSearchMode, (req, v) -> {
-                req.setSearchMode(v);
-            }));
+            f -> f.withMarshaller(ListPrivateZonesRequest::getSearchMode, ListPrivateZonesRequest::setSearchMode));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPrivateZonesRequest::getEnterpriseProjectId,
+                ListPrivateZonesRequest::setEnterpriseProjectId));
 
         // response
 
@@ -2107,9 +1823,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ListPublicZonesRequest, ListPublicZonesResponse> listPublicZones =
-        genForlistPublicZones();
+        genForListPublicZones();
 
-    private static HttpRequestDef<ListPublicZonesRequest, ListPublicZonesResponse> genForlistPublicZones() {
+    private static HttpRequestDef<ListPublicZonesRequest, ListPublicZonesResponse> genForListPublicZones() {
         // basic
         HttpRequestDef.Builder<ListPublicZonesRequest, ListPublicZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublicZonesRequest.class, ListPublicZonesResponse.class)
@@ -2122,65 +1838,48 @@ public class DnsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListPublicZonesRequest::getType, ListPublicZonesRequest::setType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPublicZonesRequest::getLimit, ListPublicZonesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPublicZonesRequest::getMarker, ListPublicZonesRequest::setMarker));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPublicZonesRequest::getOffset, ListPublicZonesRequest::setOffset));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListPublicZonesRequest::getTags, ListPublicZonesRequest::setTags));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPublicZonesRequest::getName, ListPublicZonesRequest::setName));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListPublicZonesRequest::getStatus, ListPublicZonesRequest::setStatus));
         builder.<String>withRequestField("search_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getSearchMode, (req, v) -> {
-                req.setSearchMode(v);
-            }));
+            f -> f.withMarshaller(ListPublicZonesRequest::getSearchMode, ListPublicZonesRequest::setSearchMode));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPublicZonesRequest::getEnterpriseProjectId,
+                ListPublicZonesRequest::setEnterpriseProjectId));
 
         // response
 
@@ -2188,9 +1887,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowPrivateZoneRequest, ShowPrivateZoneResponse> showPrivateZone =
-        genForshowPrivateZone();
+        genForShowPrivateZone();
 
-    private static HttpRequestDef<ShowPrivateZoneRequest, ShowPrivateZoneResponse> genForshowPrivateZone() {
+    private static HttpRequestDef<ShowPrivateZoneRequest, ShowPrivateZoneResponse> genForShowPrivateZone() {
         // basic
         HttpRequestDef.Builder<ShowPrivateZoneRequest, ShowPrivateZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPrivateZoneRequest.class, ShowPrivateZoneResponse.class)
@@ -2203,9 +1902,7 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPrivateZoneRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(ShowPrivateZoneRequest::getZoneId, ShowPrivateZoneRequest::setZoneId));
 
         // response
 
@@ -2213,9 +1910,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> showPrivateZoneNameServer =
-        genForshowPrivateZoneNameServer();
+        genForShowPrivateZoneNameServer();
 
-    private static HttpRequestDef<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> genForshowPrivateZoneNameServer() {
+    private static HttpRequestDef<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> genForShowPrivateZoneNameServer() {
         // basic
         HttpRequestDef.Builder<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> builder =
             HttpRequestDef
@@ -2231,9 +1928,8 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPrivateZoneNameServerRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(ShowPrivateZoneNameServerRequest::getZoneId,
+                ShowPrivateZoneNameServerRequest::setZoneId));
 
         // response
 
@@ -2241,9 +1937,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowPublicZoneRequest, ShowPublicZoneResponse> showPublicZone =
-        genForshowPublicZone();
+        genForShowPublicZone();
 
-    private static HttpRequestDef<ShowPublicZoneRequest, ShowPublicZoneResponse> genForshowPublicZone() {
+    private static HttpRequestDef<ShowPublicZoneRequest, ShowPublicZoneResponse> genForShowPublicZone() {
         // basic
         HttpRequestDef.Builder<ShowPublicZoneRequest, ShowPublicZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPublicZoneRequest.class, ShowPublicZoneResponse.class)
@@ -2256,9 +1952,7 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicZoneRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(ShowPublicZoneRequest::getZoneId, ShowPublicZoneRequest::setZoneId));
 
         // response
 
@@ -2266,9 +1960,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> showPublicZoneNameServer =
-        genForshowPublicZoneNameServer();
+        genForShowPublicZoneNameServer();
 
-    private static HttpRequestDef<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> genForshowPublicZoneNameServer() {
+    private static HttpRequestDef<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> genForShowPublicZoneNameServer() {
         // basic
         HttpRequestDef.Builder<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> builder =
             HttpRequestDef
@@ -2282,9 +1976,8 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicZoneNameServerRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(ShowPublicZoneNameServerRequest::getZoneId,
+                ShowPublicZoneNameServerRequest::setZoneId));
 
         // response
 
@@ -2292,9 +1985,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> updatePrivateZone =
-        genForupdatePrivateZone();
+        genForUpdatePrivateZone();
 
-    private static HttpRequestDef<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> genForupdatePrivateZone() {
+    private static HttpRequestDef<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> genForUpdatePrivateZone() {
         // basic
         HttpRequestDef.Builder<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdatePrivateZoneRequest.class, UpdatePrivateZoneResponse.class)
@@ -2307,16 +2000,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePrivateZoneRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateZoneRequest::getZoneId, UpdatePrivateZoneRequest::setZoneId));
         builder.<UpdatePrivateZoneInfoReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePrivateZoneInfoReq.class),
-            f -> f.withMarshaller(UpdatePrivateZoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePrivateZoneRequest::getBody, UpdatePrivateZoneRequest::setBody));
 
         // response
 
@@ -2324,9 +2013,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<UpdatePublicZoneRequest, UpdatePublicZoneResponse> updatePublicZone =
-        genForupdatePublicZone();
+        genForUpdatePublicZone();
 
-    private static HttpRequestDef<UpdatePublicZoneRequest, UpdatePublicZoneResponse> genForupdatePublicZone() {
+    private static HttpRequestDef<UpdatePublicZoneRequest, UpdatePublicZoneResponse> genForUpdatePublicZone() {
         // basic
         HttpRequestDef.Builder<UpdatePublicZoneRequest, UpdatePublicZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdatePublicZoneRequest.class, UpdatePublicZoneResponse.class)
@@ -2339,16 +2028,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePublicZoneRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(UpdatePublicZoneRequest::getZoneId, UpdatePublicZoneRequest::setZoneId));
         builder.<UpdatePublicZoneInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePublicZoneInfo.class),
-            f -> f.withMarshaller(UpdatePublicZoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePublicZoneRequest::getBody, UpdatePublicZoneRequest::setBody));
 
         // response
 
@@ -2356,9 +2041,9 @@ public class DnsMeta {
     }
 
     public static final HttpRequestDef<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> updatePublicZoneStatus =
-        genForupdatePublicZoneStatus();
+        genForUpdatePublicZoneStatus();
 
-    private static HttpRequestDef<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> genForupdatePublicZoneStatus() {
+    private static HttpRequestDef<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> genForUpdatePublicZoneStatus() {
         // basic
         HttpRequestDef.Builder<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdatePublicZoneStatusRequest.class, UpdatePublicZoneStatusResponse.class)
@@ -2371,16 +2056,12 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePublicZoneStatusRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            }));
+            f -> f.withMarshaller(UpdatePublicZoneStatusRequest::getZoneId, UpdatePublicZoneStatusRequest::setZoneId));
         builder.<UpdatePublicZoneStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePublicZoneStatusRequestBody.class),
-            f -> f.withMarshaller(UpdatePublicZoneStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePublicZoneStatusRequest::getBody, UpdatePublicZoneStatusRequest::setBody));
 
         // response
 

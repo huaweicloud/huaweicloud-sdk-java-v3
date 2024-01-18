@@ -49,9 +49,9 @@ import com.huaweicloud.sdk.kps.v3.model.UpdateKeypairDescriptionResponse;
 public class KpsMeta {
 
     public static final HttpRequestDef<AssociateKeypairRequest, AssociateKeypairResponse> associateKeypair =
-        genForassociateKeypair();
+        genForAssociateKeypair();
 
-    private static HttpRequestDef<AssociateKeypairRequest, AssociateKeypairResponse> genForassociateKeypair() {
+    private static HttpRequestDef<AssociateKeypairRequest, AssociateKeypairResponse> genForAssociateKeypair() {
         // basic
         HttpRequestDef.Builder<AssociateKeypairRequest, AssociateKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateKeypairRequest.class, AssociateKeypairResponse.class)
@@ -64,9 +64,7 @@ public class KpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociateKeypairRequestBody.class),
-            f -> f.withMarshaller(AssociateKeypairRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateKeypairRequest::getBody, AssociateKeypairRequest::setBody));
 
         // response
 
@@ -74,9 +72,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse> batchAssociateKeypair =
-        genForbatchAssociateKeypair();
+        genForBatchAssociateKeypair();
 
-    private static HttpRequestDef<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse> genForbatchAssociateKeypair() {
+    private static HttpRequestDef<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse> genForBatchAssociateKeypair() {
         // basic
         HttpRequestDef.Builder<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchAssociateKeypairRequest.class, BatchAssociateKeypairResponse.class)
@@ -89,9 +87,7 @@ public class KpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAssociateKeypairRequestBody.class),
-            f -> f.withMarshaller(BatchAssociateKeypairRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateKeypairRequest::getBody, BatchAssociateKeypairRequest::setBody));
 
         // response
 
@@ -99,9 +95,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<ClearPrivateKeyRequest, ClearPrivateKeyResponse> clearPrivateKey =
-        genForclearPrivateKey();
+        genForClearPrivateKey();
 
-    private static HttpRequestDef<ClearPrivateKeyRequest, ClearPrivateKeyResponse> genForclearPrivateKey() {
+    private static HttpRequestDef<ClearPrivateKeyRequest, ClearPrivateKeyResponse> genForClearPrivateKey() {
         // basic
         HttpRequestDef.Builder<ClearPrivateKeyRequest, ClearPrivateKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, ClearPrivateKeyRequest.class, ClearPrivateKeyResponse.class)
@@ -114,26 +110,22 @@ public class KpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ClearPrivateKeyRequest::getKeypairName, (req, v) -> {
-                req.setKeypairName(v);
-            }));
+            f -> f.withMarshaller(ClearPrivateKeyRequest::getKeypairName, ClearPrivateKeyRequest::setKeypairName));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ClearPrivateKeyResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ClearPrivateKeyResponse::getBody, ClearPrivateKeyResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateKeypairRequest, CreateKeypairResponse> createKeypair =
-        genForcreateKeypair();
+        genForCreateKeypair();
 
-    private static HttpRequestDef<CreateKeypairRequest, CreateKeypairResponse> genForcreateKeypair() {
+    private static HttpRequestDef<CreateKeypairRequest, CreateKeypairResponse> genForCreateKeypair() {
         // basic
         HttpRequestDef.Builder<CreateKeypairRequest, CreateKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateKeypairRequest.class, CreateKeypairResponse.class)
@@ -146,9 +138,7 @@ public class KpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateKeypairRequestBody.class),
-            f -> f.withMarshaller(CreateKeypairRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateKeypairRequest::getBody, CreateKeypairRequest::setBody));
 
         // response
 
@@ -156,9 +146,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<DeleteAllFailedTaskRequest, DeleteAllFailedTaskResponse> deleteAllFailedTask =
-        genFordeleteAllFailedTask();
+        genForDeleteAllFailedTask();
 
-    private static HttpRequestDef<DeleteAllFailedTaskRequest, DeleteAllFailedTaskResponse> genFordeleteAllFailedTask() {
+    private static HttpRequestDef<DeleteAllFailedTaskRequest, DeleteAllFailedTaskResponse> genForDeleteAllFailedTask() {
         // basic
         HttpRequestDef.Builder<DeleteAllFailedTaskRequest, DeleteAllFailedTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteAllFailedTaskRequest.class, DeleteAllFailedTaskResponse.class)
@@ -174,9 +164,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<DeleteFailedTaskRequest, DeleteFailedTaskResponse> deleteFailedTask =
-        genFordeleteFailedTask();
+        genForDeleteFailedTask();
 
-    private static HttpRequestDef<DeleteFailedTaskRequest, DeleteFailedTaskResponse> genFordeleteFailedTask() {
+    private static HttpRequestDef<DeleteFailedTaskRequest, DeleteFailedTaskResponse> genForDeleteFailedTask() {
         // basic
         HttpRequestDef.Builder<DeleteFailedTaskRequest, DeleteFailedTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFailedTaskRequest.class, DeleteFailedTaskResponse.class)
@@ -189,9 +179,7 @@ public class KpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFailedTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteFailedTaskRequest::getTaskId, DeleteFailedTaskRequest::setTaskId));
 
         // response
 
@@ -199,9 +187,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<DeleteKeypairRequest, DeleteKeypairResponse> deleteKeypair =
-        genFordeleteKeypair();
+        genForDeleteKeypair();
 
-    private static HttpRequestDef<DeleteKeypairRequest, DeleteKeypairResponse> genFordeleteKeypair() {
+    private static HttpRequestDef<DeleteKeypairRequest, DeleteKeypairResponse> genForDeleteKeypair() {
         // basic
         HttpRequestDef.Builder<DeleteKeypairRequest, DeleteKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteKeypairRequest.class, DeleteKeypairResponse.class)
@@ -214,9 +202,7 @@ public class KpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteKeypairRequest::getKeypairName, (req, v) -> {
-                req.setKeypairName(v);
-            }));
+            f -> f.withMarshaller(DeleteKeypairRequest::getKeypairName, DeleteKeypairRequest::setKeypairName));
 
         // response
 
@@ -224,9 +210,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<DisassociateKeypairRequest, DisassociateKeypairResponse> disassociateKeypair =
-        genFordisassociateKeypair();
+        genForDisassociateKeypair();
 
-    private static HttpRequestDef<DisassociateKeypairRequest, DisassociateKeypairResponse> genFordisassociateKeypair() {
+    private static HttpRequestDef<DisassociateKeypairRequest, DisassociateKeypairResponse> genForDisassociateKeypair() {
         // basic
         HttpRequestDef.Builder<DisassociateKeypairRequest, DisassociateKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisassociateKeypairRequest.class, DisassociateKeypairResponse.class)
@@ -239,9 +225,7 @@ public class KpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DisassociateKeypairRequestBody.class),
-            f -> f.withMarshaller(DisassociateKeypairRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateKeypairRequest::getBody, DisassociateKeypairRequest::setBody));
 
         // response
 
@@ -249,9 +233,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<ExportPrivateKeyRequest, ExportPrivateKeyResponse> exportPrivateKey =
-        genForexportPrivateKey();
+        genForExportPrivateKey();
 
-    private static HttpRequestDef<ExportPrivateKeyRequest, ExportPrivateKeyResponse> genForexportPrivateKey() {
+    private static HttpRequestDef<ExportPrivateKeyRequest, ExportPrivateKeyResponse> genForExportPrivateKey() {
         // basic
         HttpRequestDef.Builder<ExportPrivateKeyRequest, ExportPrivateKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportPrivateKeyRequest.class, ExportPrivateKeyResponse.class)
@@ -264,9 +248,7 @@ public class KpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportPrivateKeyRequestBody.class),
-            f -> f.withMarshaller(ExportPrivateKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExportPrivateKeyRequest::getBody, ExportPrivateKeyRequest::setBody));
 
         // response
 
@@ -274,9 +256,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<ImportPrivateKeyRequest, ImportPrivateKeyResponse> importPrivateKey =
-        genForimportPrivateKey();
+        genForImportPrivateKey();
 
-    private static HttpRequestDef<ImportPrivateKeyRequest, ImportPrivateKeyResponse> genForimportPrivateKey() {
+    private static HttpRequestDef<ImportPrivateKeyRequest, ImportPrivateKeyResponse> genForImportPrivateKey() {
         // basic
         HttpRequestDef.Builder<ImportPrivateKeyRequest, ImportPrivateKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportPrivateKeyRequest.class, ImportPrivateKeyResponse.class)
@@ -289,9 +271,7 @@ public class KpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportPrivateKeyRequestBody.class),
-            f -> f.withMarshaller(ImportPrivateKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportPrivateKeyRequest::getBody, ImportPrivateKeyRequest::setBody));
 
         // response
 
@@ -299,9 +279,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<ListFailedTaskRequest, ListFailedTaskResponse> listFailedTask =
-        genForlistFailedTask();
+        genForListFailedTask();
 
-    private static HttpRequestDef<ListFailedTaskRequest, ListFailedTaskResponse> genForlistFailedTask() {
+    private static HttpRequestDef<ListFailedTaskRequest, ListFailedTaskResponse> genForListFailedTask() {
         // basic
         HttpRequestDef.Builder<ListFailedTaskRequest, ListFailedTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFailedTaskRequest.class, ListFailedTaskResponse.class)
@@ -314,16 +294,12 @@ public class KpsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFailedTaskRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFailedTaskRequest::getLimit, ListFailedTaskRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFailedTaskRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFailedTaskRequest::getOffset, ListFailedTaskRequest::setOffset));
 
         // response
 
@@ -331,9 +307,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<ListKeypairDetailRequest, ListKeypairDetailResponse> listKeypairDetail =
-        genForlistKeypairDetail();
+        genForListKeypairDetail();
 
-    private static HttpRequestDef<ListKeypairDetailRequest, ListKeypairDetailResponse> genForlistKeypairDetail() {
+    private static HttpRequestDef<ListKeypairDetailRequest, ListKeypairDetailResponse> genForListKeypairDetail() {
         // basic
         HttpRequestDef.Builder<ListKeypairDetailRequest, ListKeypairDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListKeypairDetailRequest.class, ListKeypairDetailResponse.class)
@@ -346,9 +322,7 @@ public class KpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListKeypairDetailRequest::getKeypairName, (req, v) -> {
-                req.setKeypairName(v);
-            }));
+            f -> f.withMarshaller(ListKeypairDetailRequest::getKeypairName, ListKeypairDetailRequest::setKeypairName));
 
         // response
 
@@ -356,9 +330,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<ListKeypairTaskRequest, ListKeypairTaskResponse> listKeypairTask =
-        genForlistKeypairTask();
+        genForListKeypairTask();
 
-    private static HttpRequestDef<ListKeypairTaskRequest, ListKeypairTaskResponse> genForlistKeypairTask() {
+    private static HttpRequestDef<ListKeypairTaskRequest, ListKeypairTaskResponse> genForListKeypairTask() {
         // basic
         HttpRequestDef.Builder<ListKeypairTaskRequest, ListKeypairTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListKeypairTaskRequest.class, ListKeypairTaskResponse.class)
@@ -371,18 +345,16 @@ public class KpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListKeypairTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListKeypairTaskRequest::getTaskId, ListKeypairTaskRequest::setTaskId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListKeypairsRequest, ListKeypairsResponse> listKeypairs = genForlistKeypairs();
+    public static final HttpRequestDef<ListKeypairsRequest, ListKeypairsResponse> listKeypairs = genForListKeypairs();
 
-    private static HttpRequestDef<ListKeypairsRequest, ListKeypairsResponse> genForlistKeypairs() {
+    private static HttpRequestDef<ListKeypairsRequest, ListKeypairsResponse> genForListKeypairs() {
         // basic
         HttpRequestDef.Builder<ListKeypairsRequest, ListKeypairsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListKeypairsRequest.class, ListKeypairsResponse.class)
@@ -395,16 +367,12 @@ public class KpsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListKeypairsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListKeypairsRequest::getLimit, ListKeypairsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListKeypairsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListKeypairsRequest::getMarker, ListKeypairsRequest::setMarker));
 
         // response
 
@@ -412,9 +380,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<ListRunningTaskRequest, ListRunningTaskResponse> listRunningTask =
-        genForlistRunningTask();
+        genForListRunningTask();
 
-    private static HttpRequestDef<ListRunningTaskRequest, ListRunningTaskResponse> genForlistRunningTask() {
+    private static HttpRequestDef<ListRunningTaskRequest, ListRunningTaskResponse> genForListRunningTask() {
         // basic
         HttpRequestDef.Builder<ListRunningTaskRequest, ListRunningTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRunningTaskRequest.class, ListRunningTaskResponse.class)
@@ -427,16 +395,12 @@ public class KpsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRunningTaskRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRunningTaskRequest::getLimit, ListRunningTaskRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRunningTaskRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRunningTaskRequest::getOffset, ListRunningTaskRequest::setOffset));
 
         // response
 
@@ -444,9 +408,9 @@ public class KpsMeta {
     }
 
     public static final HttpRequestDef<UpdateKeypairDescriptionRequest, UpdateKeypairDescriptionResponse> updateKeypairDescription =
-        genForupdateKeypairDescription();
+        genForUpdateKeypairDescription();
 
-    private static HttpRequestDef<UpdateKeypairDescriptionRequest, UpdateKeypairDescriptionResponse> genForupdateKeypairDescription() {
+    private static HttpRequestDef<UpdateKeypairDescriptionRequest, UpdateKeypairDescriptionResponse> genForUpdateKeypairDescription() {
         // basic
         HttpRequestDef.Builder<UpdateKeypairDescriptionRequest, UpdateKeypairDescriptionResponse> builder =
             HttpRequestDef
@@ -460,16 +424,13 @@ public class KpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateKeypairDescriptionRequest::getKeypairName, (req, v) -> {
-                req.setKeypairName(v);
-            }));
+            f -> f.withMarshaller(UpdateKeypairDescriptionRequest::getKeypairName,
+                UpdateKeypairDescriptionRequest::setKeypairName));
         builder.<UpdateKeypairDescriptionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateKeypairDescriptionRequestBody.class),
-            f -> f.withMarshaller(UpdateKeypairDescriptionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateKeypairDescriptionRequest::getBody, UpdateKeypairDescriptionRequest::setBody));
 
         // response
 

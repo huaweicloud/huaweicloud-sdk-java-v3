@@ -141,7 +141,7 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     /**
-     * 子任务总数
+     * 子任务总数。
      * @return subJobsTotal
      */
     public Integer getSubJobsTotal() {
@@ -174,7 +174,7 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     /**
-     * 子任务列表
+     * 子任务列表。
      * @return subJobs
      */
     public List<JobDetailInfo> getSubJobs() {

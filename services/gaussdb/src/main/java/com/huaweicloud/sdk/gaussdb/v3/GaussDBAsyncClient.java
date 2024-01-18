@@ -264,7 +264,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDatabasePermissionRequest 请求对象
+     * @param request AddDatabasePermissionRequest 请求对象
      * @return CompletableFuture<AddDatabasePermissionResponse>
      */
     public CompletableFuture<AddDatabasePermissionResponse> addDatabasePermissionAsync(
@@ -279,13 +279,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDatabasePermissionRequest 请求对象
+     * @param request AddDatabasePermissionRequest 请求对象
      * @return AsyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse>
      */
     public AsyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse> addDatabasePermissionAsyncInvoker(
         AddDatabasePermissionRequest request) {
-        return new AsyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse>(request,
-            GaussDBMeta.addDatabasePermission, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.addDatabasePermission, hcClient);
     }
 
     /**
@@ -295,7 +294,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchTagActionRequest 请求对象
+     * @param request BatchTagActionRequest 请求对象
      * @return CompletableFuture<BatchTagActionResponse>
      */
     public CompletableFuture<BatchTagActionResponse> batchTagActionAsync(BatchTagActionRequest request) {
@@ -309,13 +308,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchTagActionRequest 请求对象
+     * @param request BatchTagActionRequest 请求对象
      * @return AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
      */
     public AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionAsyncInvoker(
         BatchTagActionRequest request) {
-        return new AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse>(request, GaussDBMeta.batchTagAction,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.batchTagAction, hcClient);
     }
 
     /**
@@ -325,7 +323,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelGaussMySqlInstanceEipRequest 请求对象
+     * @param request CancelGaussMySqlInstanceEipRequest 请求对象
      * @return CompletableFuture<CancelGaussMySqlInstanceEipResponse>
      */
     public CompletableFuture<CancelGaussMySqlInstanceEipResponse> cancelGaussMySqlInstanceEipAsync(
@@ -340,13 +338,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelGaussMySqlInstanceEipRequest 请求对象
+     * @param request CancelGaussMySqlInstanceEipRequest 请求对象
      * @return AsyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse>
      */
     public AsyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse> cancelGaussMySqlInstanceEipAsyncInvoker(
         CancelGaussMySqlInstanceEipRequest request) {
-        return new AsyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse>(request,
-            GaussDBMeta.cancelGaussMySqlInstanceEip, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.cancelGaussMySqlInstanceEip, hcClient);
     }
 
     /**
@@ -356,7 +353,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelScheduleTaskRequest 请求对象
+     * @param request CancelScheduleTaskRequest 请求对象
      * @return CompletableFuture<CancelScheduleTaskResponse>
      */
     public CompletableFuture<CancelScheduleTaskResponse> cancelScheduleTaskAsync(CancelScheduleTaskRequest request) {
@@ -370,13 +367,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelScheduleTaskRequest 请求对象
+     * @param request CancelScheduleTaskRequest 请求对象
      * @return AsyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse>
      */
     public AsyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse> cancelScheduleTaskAsyncInvoker(
         CancelScheduleTaskRequest request) {
-        return new AsyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse>(request,
-            GaussDBMeta.cancelScheduleTask, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.cancelScheduleTask, hcClient);
     }
 
     /**
@@ -386,7 +382,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeGaussMySqlInstanceSpecificationRequest 请求对象
+     * @param request ChangeGaussMySqlInstanceSpecificationRequest 请求对象
      * @return CompletableFuture<ChangeGaussMySqlInstanceSpecificationResponse>
      */
     public CompletableFuture<ChangeGaussMySqlInstanceSpecificationResponse> changeGaussMySqlInstanceSpecificationAsync(
@@ -401,13 +397,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeGaussMySqlInstanceSpecificationRequest 请求对象
+     * @param request ChangeGaussMySqlInstanceSpecificationRequest 请求对象
      * @return AsyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse>
      */
     public AsyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse> changeGaussMySqlInstanceSpecificationAsyncInvoker(
         ChangeGaussMySqlInstanceSpecificationRequest request) {
-        return new AsyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse>(
-            request, GaussDBMeta.changeGaussMySqlInstanceSpecification, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.changeGaussMySqlInstanceSpecification, hcClient);
     }
 
     /**
@@ -417,7 +412,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeGaussMySqlProxySpecificationRequest 请求对象
+     * @param request ChangeGaussMySqlProxySpecificationRequest 请求对象
      * @return CompletableFuture<ChangeGaussMySqlProxySpecificationResponse>
      */
     public CompletableFuture<ChangeGaussMySqlProxySpecificationResponse> changeGaussMySqlProxySpecificationAsync(
@@ -432,13 +427,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeGaussMySqlProxySpecificationRequest 请求对象
+     * @param request ChangeGaussMySqlProxySpecificationRequest 请求对象
      * @return AsyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse>
      */
     public AsyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> changeGaussMySqlProxySpecificationAsyncInvoker(
         ChangeGaussMySqlProxySpecificationRequest request) {
-        return new AsyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse>(
-            request, GaussDBMeta.changeGaussMySqlProxySpecification, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.changeGaussMySqlProxySpecification, hcClient);
     }
 
     /**
@@ -448,7 +442,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckResourceRequest 请求对象
+     * @param request CheckResourceRequest 请求对象
      * @return CompletableFuture<CheckResourceResponse>
      */
     public CompletableFuture<CheckResourceResponse> checkResourceAsync(CheckResourceRequest request) {
@@ -462,13 +456,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckResourceRequest 请求对象
+     * @param request CheckResourceRequest 请求对象
      * @return AsyncInvoker<CheckResourceRequest, CheckResourceResponse>
      */
     public AsyncInvoker<CheckResourceRequest, CheckResourceResponse> checkResourceAsyncInvoker(
         CheckResourceRequest request) {
-        return new AsyncInvoker<CheckResourceRequest, CheckResourceResponse>(request, GaussDBMeta.checkResource,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.checkResource, hcClient);
     }
 
     /**
@@ -478,7 +471,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyConfigurationsRequest 请求对象
+     * @param request CopyConfigurationsRequest 请求对象
      * @return CompletableFuture<CopyConfigurationsResponse>
      */
     public CompletableFuture<CopyConfigurationsResponse> copyConfigurationsAsync(CopyConfigurationsRequest request) {
@@ -492,13 +485,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyConfigurationsRequest 请求对象
+     * @param request CopyConfigurationsRequest 请求对象
      * @return AsyncInvoker<CopyConfigurationsRequest, CopyConfigurationsResponse>
      */
     public AsyncInvoker<CopyConfigurationsRequest, CopyConfigurationsResponse> copyConfigurationsAsyncInvoker(
         CopyConfigurationsRequest request) {
-        return new AsyncInvoker<CopyConfigurationsRequest, CopyConfigurationsResponse>(request,
-            GaussDBMeta.copyConfigurations, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.copyConfigurations, hcClient);
     }
 
     /**
@@ -508,7 +500,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyInstanceConfigurationsRequest 请求对象
+     * @param request CopyInstanceConfigurationsRequest 请求对象
      * @return CompletableFuture<CopyInstanceConfigurationsResponse>
      */
     public CompletableFuture<CopyInstanceConfigurationsResponse> copyInstanceConfigurationsAsync(
@@ -523,13 +515,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyInstanceConfigurationsRequest 请求对象
+     * @param request CopyInstanceConfigurationsRequest 请求对象
      * @return AsyncInvoker<CopyInstanceConfigurationsRequest, CopyInstanceConfigurationsResponse>
      */
     public AsyncInvoker<CopyInstanceConfigurationsRequest, CopyInstanceConfigurationsResponse> copyInstanceConfigurationsAsyncInvoker(
         CopyInstanceConfigurationsRequest request) {
-        return new AsyncInvoker<CopyInstanceConfigurationsRequest, CopyInstanceConfigurationsResponse>(request,
-            GaussDBMeta.copyInstanceConfigurations, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.copyInstanceConfigurations, hcClient);
     }
 
     /**
@@ -539,7 +530,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccessControlRequest 请求对象
+     * @param request CreateAccessControlRequest 请求对象
      * @return CompletableFuture<CreateAccessControlResponse>
      */
     public CompletableFuture<CreateAccessControlResponse> createAccessControlAsync(CreateAccessControlRequest request) {
@@ -553,13 +544,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccessControlRequest 请求对象
+     * @param request CreateAccessControlRequest 请求对象
      * @return AsyncInvoker<CreateAccessControlRequest, CreateAccessControlResponse>
      */
     public AsyncInvoker<CreateAccessControlRequest, CreateAccessControlResponse> createAccessControlAsyncInvoker(
         CreateAccessControlRequest request) {
-        return new AsyncInvoker<CreateAccessControlRequest, CreateAccessControlResponse>(request,
-            GaussDBMeta.createAccessControl, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.createAccessControl, hcClient);
     }
 
     /**
@@ -569,7 +559,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlBackupRequest 请求对象
+     * @param request CreateGaussMySqlBackupRequest 请求对象
      * @return CompletableFuture<CreateGaussMySqlBackupResponse>
      */
     public CompletableFuture<CreateGaussMySqlBackupResponse> createGaussMySqlBackupAsync(
@@ -584,13 +574,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlBackupRequest 请求对象
+     * @param request CreateGaussMySqlBackupRequest 请求对象
      * @return AsyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse>
      */
     public AsyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> createGaussMySqlBackupAsyncInvoker(
         CreateGaussMySqlBackupRequest request) {
-        return new AsyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse>(request,
-            GaussDBMeta.createGaussMySqlBackup, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.createGaussMySqlBackup, hcClient);
     }
 
     /**
@@ -600,7 +589,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlConfigurationRequest 请求对象
+     * @param request CreateGaussMySqlConfigurationRequest 请求对象
      * @return CompletableFuture<CreateGaussMySqlConfigurationResponse>
      */
     public CompletableFuture<CreateGaussMySqlConfigurationResponse> createGaussMySqlConfigurationAsync(
@@ -615,13 +604,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlConfigurationRequest 请求对象
+     * @param request CreateGaussMySqlConfigurationRequest 请求对象
      * @return AsyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse>
      */
     public AsyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse> createGaussMySqlConfigurationAsyncInvoker(
         CreateGaussMySqlConfigurationRequest request) {
-        return new AsyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse>(request,
-            GaussDBMeta.createGaussMySqlConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.createGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -631,7 +619,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlDatabaseRequest 请求对象
+     * @param request CreateGaussMySqlDatabaseRequest 请求对象
      * @return CompletableFuture<CreateGaussMySqlDatabaseResponse>
      */
     public CompletableFuture<CreateGaussMySqlDatabaseResponse> createGaussMySqlDatabaseAsync(
@@ -646,13 +634,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlDatabaseRequest 请求对象
+     * @param request CreateGaussMySqlDatabaseRequest 请求对象
      * @return AsyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse>
      */
     public AsyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> createGaussMySqlDatabaseAsyncInvoker(
         CreateGaussMySqlDatabaseRequest request) {
-        return new AsyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse>(request,
-            GaussDBMeta.createGaussMySqlDatabase, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.createGaussMySqlDatabase, hcClient);
     }
 
     /**
@@ -662,7 +649,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlDatabaseUserRequest 请求对象
+     * @param request CreateGaussMySqlDatabaseUserRequest 请求对象
      * @return CompletableFuture<CreateGaussMySqlDatabaseUserResponse>
      */
     public CompletableFuture<CreateGaussMySqlDatabaseUserResponse> createGaussMySqlDatabaseUserAsync(
@@ -677,13 +664,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlDatabaseUserRequest 请求对象
+     * @param request CreateGaussMySqlDatabaseUserRequest 请求对象
      * @return AsyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse>
      */
     public AsyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> createGaussMySqlDatabaseUserAsyncInvoker(
         CreateGaussMySqlDatabaseUserRequest request) {
-        return new AsyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse>(request,
-            GaussDBMeta.createGaussMySqlDatabaseUser, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.createGaussMySqlDatabaseUser, hcClient);
     }
 
     /**
@@ -693,7 +679,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlInstanceRequest 请求对象
+     * @param request CreateGaussMySqlInstanceRequest 请求对象
      * @return CompletableFuture<CreateGaussMySqlInstanceResponse>
      */
     public CompletableFuture<CreateGaussMySqlInstanceResponse> createGaussMySqlInstanceAsync(
@@ -708,13 +694,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlInstanceRequest 请求对象
+     * @param request CreateGaussMySqlInstanceRequest 请求对象
      * @return AsyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse>
      */
     public AsyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse> createGaussMySqlInstanceAsyncInvoker(
         CreateGaussMySqlInstanceRequest request) {
-        return new AsyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse>(request,
-            GaussDBMeta.createGaussMySqlInstance, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.createGaussMySqlInstance, hcClient);
     }
 
     /**
@@ -724,7 +709,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlProxyRequest 请求对象
+     * @param request CreateGaussMySqlProxyRequest 请求对象
      * @return CompletableFuture<CreateGaussMySqlProxyResponse>
      */
     public CompletableFuture<CreateGaussMySqlProxyResponse> createGaussMySqlProxyAsync(
@@ -739,13 +724,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlProxyRequest 请求对象
+     * @param request CreateGaussMySqlProxyRequest 请求对象
      * @return AsyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse>
      */
     public AsyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse> createGaussMySqlProxyAsyncInvoker(
         CreateGaussMySqlProxyRequest request) {
-        return new AsyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse>(request,
-            GaussDBMeta.createGaussMySqlProxy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.createGaussMySqlProxy, hcClient);
     }
 
     /**
@@ -755,7 +739,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlReadonlyNodeRequest 请求对象
+     * @param request CreateGaussMySqlReadonlyNodeRequest 请求对象
      * @return CompletableFuture<CreateGaussMySqlReadonlyNodeResponse>
      */
     public CompletableFuture<CreateGaussMySqlReadonlyNodeResponse> createGaussMySqlReadonlyNodeAsync(
@@ -770,13 +754,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMySqlReadonlyNodeRequest 请求对象
+     * @param request CreateGaussMySqlReadonlyNodeRequest 请求对象
      * @return AsyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse>
      */
     public AsyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse> createGaussMySqlReadonlyNodeAsyncInvoker(
         CreateGaussMySqlReadonlyNodeRequest request) {
-        return new AsyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse>(request,
-            GaussDBMeta.createGaussMySqlReadonlyNode, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.createGaussMySqlReadonlyNode, hcClient);
     }
 
     /**
@@ -786,7 +769,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMysqlDnsRequest 请求对象
+     * @param request CreateGaussMysqlDnsRequest 请求对象
      * @return CompletableFuture<CreateGaussMysqlDnsResponse>
      */
     public CompletableFuture<CreateGaussMysqlDnsResponse> createGaussMysqlDnsAsync(CreateGaussMysqlDnsRequest request) {
@@ -800,13 +783,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGaussMysqlDnsRequest 请求对象
+     * @param request CreateGaussMysqlDnsRequest 请求对象
      * @return AsyncInvoker<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse>
      */
     public AsyncInvoker<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse> createGaussMysqlDnsAsyncInvoker(
         CreateGaussMysqlDnsRequest request) {
-        return new AsyncInvoker<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse>(request,
-            GaussDBMeta.createGaussMysqlDns, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.createGaussMysqlDns, hcClient);
     }
 
     /**
@@ -816,7 +798,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRestoreTablesRequest 请求对象
+     * @param request CreateRestoreTablesRequest 请求对象
      * @return CompletableFuture<CreateRestoreTablesResponse>
      */
     public CompletableFuture<CreateRestoreTablesResponse> createRestoreTablesAsync(CreateRestoreTablesRequest request) {
@@ -830,13 +812,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRestoreTablesRequest 请求对象
+     * @param request CreateRestoreTablesRequest 请求对象
      * @return AsyncInvoker<CreateRestoreTablesRequest, CreateRestoreTablesResponse>
      */
     public AsyncInvoker<CreateRestoreTablesRequest, CreateRestoreTablesResponse> createRestoreTablesAsyncInvoker(
         CreateRestoreTablesRequest request) {
-        return new AsyncInvoker<CreateRestoreTablesRequest, CreateRestoreTablesResponse>(request,
-            GaussDBMeta.createRestoreTables, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.createRestoreTables, hcClient);
     }
 
     /**
@@ -846,7 +827,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabasePermissionRequest 请求对象
+     * @param request DeleteDatabasePermissionRequest 请求对象
      * @return CompletableFuture<DeleteDatabasePermissionResponse>
      */
     public CompletableFuture<DeleteDatabasePermissionResponse> deleteDatabasePermissionAsync(
@@ -861,13 +842,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabasePermissionRequest 请求对象
+     * @param request DeleteDatabasePermissionRequest 请求对象
      * @return AsyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse>
      */
     public AsyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> deleteDatabasePermissionAsyncInvoker(
         DeleteDatabasePermissionRequest request) {
-        return new AsyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse>(request,
-            GaussDBMeta.deleteDatabasePermission, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteDatabasePermission, hcClient);
     }
 
     /**
@@ -877,7 +857,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlBackupRequest 请求对象
+     * @param request DeleteGaussMySqlBackupRequest 请求对象
      * @return CompletableFuture<DeleteGaussMySqlBackupResponse>
      */
     public CompletableFuture<DeleteGaussMySqlBackupResponse> deleteGaussMySqlBackupAsync(
@@ -892,13 +872,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlBackupRequest 请求对象
+     * @param request DeleteGaussMySqlBackupRequest 请求对象
      * @return AsyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse>
      */
     public AsyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse> deleteGaussMySqlBackupAsyncInvoker(
         DeleteGaussMySqlBackupRequest request) {
-        return new AsyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse>(request,
-            GaussDBMeta.deleteGaussMySqlBackup, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteGaussMySqlBackup, hcClient);
     }
 
     /**
@@ -908,7 +887,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlConfigurationRequest 请求对象
+     * @param request DeleteGaussMySqlConfigurationRequest 请求对象
      * @return CompletableFuture<DeleteGaussMySqlConfigurationResponse>
      */
     public CompletableFuture<DeleteGaussMySqlConfigurationResponse> deleteGaussMySqlConfigurationAsync(
@@ -923,13 +902,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlConfigurationRequest 请求对象
+     * @param request DeleteGaussMySqlConfigurationRequest 请求对象
      * @return AsyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse>
      */
     public AsyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse> deleteGaussMySqlConfigurationAsyncInvoker(
         DeleteGaussMySqlConfigurationRequest request) {
-        return new AsyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse>(request,
-            GaussDBMeta.deleteGaussMySqlConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -939,7 +917,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlDatabaseRequest 请求对象
+     * @param request DeleteGaussMySqlDatabaseRequest 请求对象
      * @return CompletableFuture<DeleteGaussMySqlDatabaseResponse>
      */
     public CompletableFuture<DeleteGaussMySqlDatabaseResponse> deleteGaussMySqlDatabaseAsync(
@@ -954,13 +932,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlDatabaseRequest 请求对象
+     * @param request DeleteGaussMySqlDatabaseRequest 请求对象
      * @return AsyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse>
      */
     public AsyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> deleteGaussMySqlDatabaseAsyncInvoker(
         DeleteGaussMySqlDatabaseRequest request) {
-        return new AsyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse>(request,
-            GaussDBMeta.deleteGaussMySqlDatabase, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteGaussMySqlDatabase, hcClient);
     }
 
     /**
@@ -970,7 +947,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlDatabaseUserRequest 请求对象
+     * @param request DeleteGaussMySqlDatabaseUserRequest 请求对象
      * @return CompletableFuture<DeleteGaussMySqlDatabaseUserResponse>
      */
     public CompletableFuture<DeleteGaussMySqlDatabaseUserResponse> deleteGaussMySqlDatabaseUserAsync(
@@ -985,13 +962,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlDatabaseUserRequest 请求对象
+     * @param request DeleteGaussMySqlDatabaseUserRequest 请求对象
      * @return AsyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse>
      */
     public AsyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> deleteGaussMySqlDatabaseUserAsyncInvoker(
         DeleteGaussMySqlDatabaseUserRequest request) {
-        return new AsyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse>(request,
-            GaussDBMeta.deleteGaussMySqlDatabaseUser, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteGaussMySqlDatabaseUser, hcClient);
     }
 
     /**
@@ -1001,7 +977,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlInstanceRequest 请求对象
+     * @param request DeleteGaussMySqlInstanceRequest 请求对象
      * @return CompletableFuture<DeleteGaussMySqlInstanceResponse>
      */
     public CompletableFuture<DeleteGaussMySqlInstanceResponse> deleteGaussMySqlInstanceAsync(
@@ -1016,13 +992,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlInstanceRequest 请求对象
+     * @param request DeleteGaussMySqlInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse>
      */
     public AsyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse> deleteGaussMySqlInstanceAsyncInvoker(
         DeleteGaussMySqlInstanceRequest request) {
-        return new AsyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse>(request,
-            GaussDBMeta.deleteGaussMySqlInstance, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteGaussMySqlInstance, hcClient);
     }
 
     /**
@@ -1032,7 +1007,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlProxyRequest 请求对象
+     * @param request DeleteGaussMySqlProxyRequest 请求对象
      * @return CompletableFuture<DeleteGaussMySqlProxyResponse>
      */
     public CompletableFuture<DeleteGaussMySqlProxyResponse> deleteGaussMySqlProxyAsync(
@@ -1047,13 +1022,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlProxyRequest 请求对象
+     * @param request DeleteGaussMySqlProxyRequest 请求对象
      * @return AsyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse>
      */
     public AsyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse> deleteGaussMySqlProxyAsyncInvoker(
         DeleteGaussMySqlProxyRequest request) {
-        return new AsyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse>(request,
-            GaussDBMeta.deleteGaussMySqlProxy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteGaussMySqlProxy, hcClient);
     }
 
     /**
@@ -1063,7 +1037,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlReadonlyNodeRequest 请求对象
+     * @param request DeleteGaussMySqlReadonlyNodeRequest 请求对象
      * @return CompletableFuture<DeleteGaussMySqlReadonlyNodeResponse>
      */
     public CompletableFuture<DeleteGaussMySqlReadonlyNodeResponse> deleteGaussMySqlReadonlyNodeAsync(
@@ -1078,13 +1052,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGaussMySqlReadonlyNodeRequest 请求对象
+     * @param request DeleteGaussMySqlReadonlyNodeRequest 请求对象
      * @return AsyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse>
      */
     public AsyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse> deleteGaussMySqlReadonlyNodeAsyncInvoker(
         DeleteGaussMySqlReadonlyNodeRequest request) {
-        return new AsyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse>(request,
-            GaussDBMeta.deleteGaussMySqlReadonlyNode, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteGaussMySqlReadonlyNode, hcClient);
     }
 
     /**
@@ -1094,7 +1067,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScheduleTasKRequest 请求对象
+     * @param request DeleteScheduleTasKRequest 请求对象
      * @return CompletableFuture<DeleteScheduleTasKResponse>
      */
     public CompletableFuture<DeleteScheduleTasKResponse> deleteScheduleTasKAsync(DeleteScheduleTasKRequest request) {
@@ -1108,13 +1081,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScheduleTasKRequest 请求对象
+     * @param request DeleteScheduleTasKRequest 请求对象
      * @return AsyncInvoker<DeleteScheduleTasKRequest, DeleteScheduleTasKResponse>
      */
     public AsyncInvoker<DeleteScheduleTasKRequest, DeleteScheduleTasKResponse> deleteScheduleTasKAsyncInvoker(
         DeleteScheduleTasKRequest request) {
-        return new AsyncInvoker<DeleteScheduleTasKRequest, DeleteScheduleTasKResponse>(request,
-            GaussDBMeta.deleteScheduleTasK, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteScheduleTasK, hcClient);
     }
 
     /**
@@ -1124,7 +1096,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRecordRequest 请求对象
+     * @param request DeleteTaskRecordRequest 请求对象
      * @return CompletableFuture<DeleteTaskRecordResponse>
      */
     public CompletableFuture<DeleteTaskRecordResponse> deleteTaskRecordAsync(DeleteTaskRecordRequest request) {
@@ -1138,13 +1110,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRecordRequest 请求对象
+     * @param request DeleteTaskRecordRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse>
      */
     public AsyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse> deleteTaskRecordAsyncInvoker(
         DeleteTaskRecordRequest request) {
-        return new AsyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse>(request,
-            GaussDBMeta.deleteTaskRecord, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteTaskRecord, hcClient);
     }
 
     /**
@@ -1154,7 +1125,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribeBackupEncryptStatusRequest 请求对象
+     * @param request DescribeBackupEncryptStatusRequest 请求对象
      * @return CompletableFuture<DescribeBackupEncryptStatusResponse>
      */
     public CompletableFuture<DescribeBackupEncryptStatusResponse> describeBackupEncryptStatusAsync(
@@ -1169,13 +1140,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribeBackupEncryptStatusRequest 请求对象
+     * @param request DescribeBackupEncryptStatusRequest 请求对象
      * @return AsyncInvoker<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse>
      */
     public AsyncInvoker<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse> describeBackupEncryptStatusAsyncInvoker(
         DescribeBackupEncryptStatusRequest request) {
-        return new AsyncInvoker<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse>(request,
-            GaussDBMeta.describeBackupEncryptStatus, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.describeBackupEncryptStatus, hcClient);
     }
 
     /**
@@ -1185,7 +1155,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandGaussMySqlInstanceVolumeRequest 请求对象
+     * @param request ExpandGaussMySqlInstanceVolumeRequest 请求对象
      * @return CompletableFuture<ExpandGaussMySqlInstanceVolumeResponse>
      */
     public CompletableFuture<ExpandGaussMySqlInstanceVolumeResponse> expandGaussMySqlInstanceVolumeAsync(
@@ -1200,13 +1170,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandGaussMySqlInstanceVolumeRequest 请求对象
+     * @param request ExpandGaussMySqlInstanceVolumeRequest 请求对象
      * @return AsyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse>
      */
     public AsyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse> expandGaussMySqlInstanceVolumeAsyncInvoker(
         ExpandGaussMySqlInstanceVolumeRequest request) {
-        return new AsyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse>(request,
-            GaussDBMeta.expandGaussMySqlInstanceVolume, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.expandGaussMySqlInstanceVolume, hcClient);
     }
 
     /**
@@ -1217,7 +1186,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandGaussMySqlProxyRequest 请求对象
+     * @param request ExpandGaussMySqlProxyRequest 请求对象
      * @return CompletableFuture<ExpandGaussMySqlProxyResponse>
      */
     public CompletableFuture<ExpandGaussMySqlProxyResponse> expandGaussMySqlProxyAsync(
@@ -1233,13 +1202,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandGaussMySqlProxyRequest 请求对象
+     * @param request ExpandGaussMySqlProxyRequest 请求对象
      * @return AsyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse>
      */
     public AsyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse> expandGaussMySqlProxyAsyncInvoker(
         ExpandGaussMySqlProxyRequest request) {
-        return new AsyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse>(request,
-            GaussDBMeta.expandGaussMySqlProxy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.expandGaussMySqlProxy, hcClient);
     }
 
     /**
@@ -1249,7 +1217,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InvokeGaussMySqlInstanceSwitchOverRequest 请求对象
+     * @param request InvokeGaussMySqlInstanceSwitchOverRequest 请求对象
      * @return CompletableFuture<InvokeGaussMySqlInstanceSwitchOverResponse>
      */
     public CompletableFuture<InvokeGaussMySqlInstanceSwitchOverResponse> invokeGaussMySqlInstanceSwitchOverAsync(
@@ -1264,13 +1232,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InvokeGaussMySqlInstanceSwitchOverRequest 请求对象
+     * @param request InvokeGaussMySqlInstanceSwitchOverRequest 请求对象
      * @return AsyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse>
      */
     public AsyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse> invokeGaussMySqlInstanceSwitchOverAsyncInvoker(
         InvokeGaussMySqlInstanceSwitchOverRequest request) {
-        return new AsyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse>(
-            request, GaussDBMeta.invokeGaussMySqlInstanceSwitchOver, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.invokeGaussMySqlInstanceSwitchOver, hcClient);
     }
 
     /**
@@ -1280,7 +1247,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditLogDownloadLinkRequest 请求对象
+     * @param request ListAuditLogDownloadLinkRequest 请求对象
      * @return CompletableFuture<ListAuditLogDownloadLinkResponse>
      */
     public CompletableFuture<ListAuditLogDownloadLinkResponse> listAuditLogDownloadLinkAsync(
@@ -1295,13 +1262,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAuditLogDownloadLinkRequest 请求对象
+     * @param request ListAuditLogDownloadLinkRequest 请求对象
      * @return AsyncInvoker<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse>
      */
     public AsyncInvoker<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse> listAuditLogDownloadLinkAsyncInvoker(
         ListAuditLogDownloadLinkRequest request) {
-        return new AsyncInvoker<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse>(request,
-            GaussDBMeta.listAuditLogDownloadLink, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listAuditLogDownloadLink, hcClient);
     }
 
     /**
@@ -1311,7 +1277,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsDifferencesRequest 请求对象
+     * @param request ListConfigurationsDifferencesRequest 请求对象
      * @return CompletableFuture<ListConfigurationsDifferencesResponse>
      */
     public CompletableFuture<ListConfigurationsDifferencesResponse> listConfigurationsDifferencesAsync(
@@ -1326,13 +1292,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsDifferencesRequest 请求对象
+     * @param request ListConfigurationsDifferencesRequest 请求对象
      * @return AsyncInvoker<ListConfigurationsDifferencesRequest, ListConfigurationsDifferencesResponse>
      */
     public AsyncInvoker<ListConfigurationsDifferencesRequest, ListConfigurationsDifferencesResponse> listConfigurationsDifferencesAsyncInvoker(
         ListConfigurationsDifferencesRequest request) {
-        return new AsyncInvoker<ListConfigurationsDifferencesRequest, ListConfigurationsDifferencesResponse>(request,
-            GaussDBMeta.listConfigurationsDifferences, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listConfigurationsDifferences, hcClient);
     }
 
     /**
@@ -1342,7 +1307,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsInstancesRequest 请求对象
+     * @param request ListConfigurationsInstancesRequest 请求对象
      * @return CompletableFuture<ListConfigurationsInstancesResponse>
      */
     public CompletableFuture<ListConfigurationsInstancesResponse> listConfigurationsInstancesAsync(
@@ -1357,13 +1322,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsInstancesRequest 请求对象
+     * @param request ListConfigurationsInstancesRequest 请求对象
      * @return AsyncInvoker<ListConfigurationsInstancesRequest, ListConfigurationsInstancesResponse>
      */
     public AsyncInvoker<ListConfigurationsInstancesRequest, ListConfigurationsInstancesResponse> listConfigurationsInstancesAsyncInvoker(
         ListConfigurationsInstancesRequest request) {
-        return new AsyncInvoker<ListConfigurationsInstancesRequest, ListConfigurationsInstancesResponse>(request,
-            GaussDBMeta.listConfigurationsInstances, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listConfigurationsInstances, hcClient);
     }
 
     /**
@@ -1373,7 +1337,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseProjectsRequest 请求对象
+     * @param request ListEnterpriseProjectsRequest 请求对象
      * @return CompletableFuture<ListEnterpriseProjectsResponse>
      */
     public CompletableFuture<ListEnterpriseProjectsResponse> listEnterpriseProjectsAsync(
@@ -1388,13 +1352,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnterpriseProjectsRequest 请求对象
+     * @param request ListEnterpriseProjectsRequest 请求对象
      * @return AsyncInvoker<ListEnterpriseProjectsRequest, ListEnterpriseProjectsResponse>
      */
     public AsyncInvoker<ListEnterpriseProjectsRequest, ListEnterpriseProjectsResponse> listEnterpriseProjectsAsyncInvoker(
         ListEnterpriseProjectsRequest request) {
-        return new AsyncInvoker<ListEnterpriseProjectsRequest, ListEnterpriseProjectsResponse>(request,
-            GaussDBMeta.listEnterpriseProjects, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listEnterpriseProjects, hcClient);
     }
 
     /**
@@ -1404,7 +1367,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlConfigurationsRequest 请求对象
+     * @param request ListGaussMySqlConfigurationsRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlConfigurationsResponse>
      */
     public CompletableFuture<ListGaussMySqlConfigurationsResponse> listGaussMySqlConfigurationsAsync(
@@ -1419,13 +1382,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlConfigurationsRequest 请求对象
+     * @param request ListGaussMySqlConfigurationsRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse>
      */
     public AsyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse> listGaussMySqlConfigurationsAsyncInvoker(
         ListGaussMySqlConfigurationsRequest request) {
-        return new AsyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse>(request,
-            GaussDBMeta.listGaussMySqlConfigurations, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlConfigurations, hcClient);
     }
 
     /**
@@ -1435,7 +1397,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlDatabaseRequest 请求对象
+     * @param request ListGaussMySqlDatabaseRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlDatabaseResponse>
      */
     public CompletableFuture<ListGaussMySqlDatabaseResponse> listGaussMySqlDatabaseAsync(
@@ -1450,13 +1412,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlDatabaseRequest 请求对象
+     * @param request ListGaussMySqlDatabaseRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse>
      */
     public AsyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> listGaussMySqlDatabaseAsyncInvoker(
         ListGaussMySqlDatabaseRequest request) {
-        return new AsyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse>(request,
-            GaussDBMeta.listGaussMySqlDatabase, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlDatabase, hcClient);
     }
 
     /**
@@ -1466,7 +1427,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlDatabaseCharsetsRequest 请求对象
+     * @param request ListGaussMySqlDatabaseCharsetsRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlDatabaseCharsetsResponse>
      */
     public CompletableFuture<ListGaussMySqlDatabaseCharsetsResponse> listGaussMySqlDatabaseCharsetsAsync(
@@ -1481,13 +1442,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlDatabaseCharsetsRequest 请求对象
+     * @param request ListGaussMySqlDatabaseCharsetsRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse>
      */
     public AsyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> listGaussMySqlDatabaseCharsetsAsyncInvoker(
         ListGaussMySqlDatabaseCharsetsRequest request) {
-        return new AsyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse>(request,
-            GaussDBMeta.listGaussMySqlDatabaseCharsets, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlDatabaseCharsets, hcClient);
     }
 
     /**
@@ -1497,7 +1457,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlDatabaseUserRequest 请求对象
+     * @param request ListGaussMySqlDatabaseUserRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlDatabaseUserResponse>
      */
     public CompletableFuture<ListGaussMySqlDatabaseUserResponse> listGaussMySqlDatabaseUserAsync(
@@ -1512,13 +1472,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlDatabaseUserRequest 请求对象
+     * @param request ListGaussMySqlDatabaseUserRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse>
      */
     public AsyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> listGaussMySqlDatabaseUserAsyncInvoker(
         ListGaussMySqlDatabaseUserRequest request) {
-        return new AsyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse>(request,
-            GaussDBMeta.listGaussMySqlDatabaseUser, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlDatabaseUser, hcClient);
     }
 
     /**
@@ -1528,7 +1487,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlDedicatedResourcesRequest 请求对象
+     * @param request ListGaussMySqlDedicatedResourcesRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlDedicatedResourcesResponse>
      */
     public CompletableFuture<ListGaussMySqlDedicatedResourcesResponse> listGaussMySqlDedicatedResourcesAsync(
@@ -1543,13 +1502,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlDedicatedResourcesRequest 请求对象
+     * @param request ListGaussMySqlDedicatedResourcesRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse>
      */
     public AsyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse> listGaussMySqlDedicatedResourcesAsyncInvoker(
         ListGaussMySqlDedicatedResourcesRequest request) {
-        return new AsyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse>(
-            request, GaussDBMeta.listGaussMySqlDedicatedResources, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlDedicatedResources, hcClient);
     }
 
     /**
@@ -1559,7 +1517,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlInstanceDetailInfoRequest 请求对象
+     * @param request ListGaussMySqlInstanceDetailInfoRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlInstanceDetailInfoResponse>
      */
     public CompletableFuture<ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfoAsync(
@@ -1574,13 +1532,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlInstanceDetailInfoRequest 请求对象
+     * @param request ListGaussMySqlInstanceDetailInfoRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse>
      */
     public AsyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfoAsyncInvoker(
         ListGaussMySqlInstanceDetailInfoRequest request) {
-        return new AsyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse>(
-            request, GaussDBMeta.listGaussMySqlInstanceDetailInfo, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlInstanceDetailInfo, hcClient);
     }
 
     /**
@@ -1590,7 +1547,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlInstanceDetailInfoUnifyStatusRequest 请求对象
+     * @param request ListGaussMySqlInstanceDetailInfoUnifyStatusRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlInstanceDetailInfoUnifyStatusResponse>
      */
     public CompletableFuture<ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> listGaussMySqlInstanceDetailInfoUnifyStatusAsync(
@@ -1605,13 +1562,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlInstanceDetailInfoUnifyStatusRequest 请求对象
+     * @param request ListGaussMySqlInstanceDetailInfoUnifyStatusRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse>
      */
     public AsyncInvoker<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> listGaussMySqlInstanceDetailInfoUnifyStatusAsyncInvoker(
         ListGaussMySqlInstanceDetailInfoUnifyStatusRequest request) {
-        return new AsyncInvoker<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse>(
-            request, GaussDBMeta.listGaussMySqlInstanceDetailInfoUnifyStatus, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlInstanceDetailInfoUnifyStatus, hcClient);
     }
 
     /**
@@ -1621,7 +1577,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlInstancesRequest 请求对象
+     * @param request ListGaussMySqlInstancesRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlInstancesResponse>
      */
     public CompletableFuture<ListGaussMySqlInstancesResponse> listGaussMySqlInstancesAsync(
@@ -1636,13 +1592,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlInstancesRequest 请求对象
+     * @param request ListGaussMySqlInstancesRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>
      */
     public AsyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> listGaussMySqlInstancesAsyncInvoker(
         ListGaussMySqlInstancesRequest request) {
-        return new AsyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>(request,
-            GaussDBMeta.listGaussMySqlInstances, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlInstances, hcClient);
     }
 
     /**
@@ -1652,7 +1607,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlInstancesUnifyStatusRequest 请求对象
+     * @param request ListGaussMySqlInstancesUnifyStatusRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlInstancesUnifyStatusResponse>
      */
     public CompletableFuture<ListGaussMySqlInstancesUnifyStatusResponse> listGaussMySqlInstancesUnifyStatusAsync(
@@ -1667,13 +1622,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGaussMySqlInstancesUnifyStatusRequest 请求对象
+     * @param request ListGaussMySqlInstancesUnifyStatusRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse>
      */
     public AsyncInvoker<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse> listGaussMySqlInstancesUnifyStatusAsyncInvoker(
         ListGaussMySqlInstancesUnifyStatusRequest request) {
-        return new AsyncInvoker<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse>(
-            request, GaussDBMeta.listGaussMySqlInstancesUnifyStatus, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlInstancesUnifyStatus, hcClient);
     }
 
     /**
@@ -1683,7 +1637,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImmediateJobsRequest 请求对象
+     * @param request ListImmediateJobsRequest 请求对象
      * @return CompletableFuture<ListImmediateJobsResponse>
      */
     public CompletableFuture<ListImmediateJobsResponse> listImmediateJobsAsync(ListImmediateJobsRequest request) {
@@ -1697,13 +1651,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListImmediateJobsRequest 请求对象
+     * @param request ListImmediateJobsRequest 请求对象
      * @return AsyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse>
      */
     public AsyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse> listImmediateJobsAsyncInvoker(
         ListImmediateJobsRequest request) {
-        return new AsyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse>(request,
-            GaussDBMeta.listImmediateJobs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listImmediateJobs, hcClient);
     }
 
     /**
@@ -1713,7 +1666,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConfigurationsRequest 请求对象
+     * @param request ListInstanceConfigurationsRequest 请求对象
      * @return CompletableFuture<ListInstanceConfigurationsResponse>
      */
     public CompletableFuture<ListInstanceConfigurationsResponse> listInstanceConfigurationsAsync(
@@ -1728,13 +1681,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConfigurationsRequest 请求对象
+     * @param request ListInstanceConfigurationsRequest 请求对象
      * @return AsyncInvoker<ListInstanceConfigurationsRequest, ListInstanceConfigurationsResponse>
      */
     public AsyncInvoker<ListInstanceConfigurationsRequest, ListInstanceConfigurationsResponse> listInstanceConfigurationsAsyncInvoker(
         ListInstanceConfigurationsRequest request) {
-        return new AsyncInvoker<ListInstanceConfigurationsRequest, ListInstanceConfigurationsResponse>(request,
-            GaussDBMeta.listInstanceConfigurations, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listInstanceConfigurations, hcClient);
     }
 
     /**
@@ -1744,7 +1696,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTagsRequest 请求对象
+     * @param request ListInstanceTagsRequest 请求对象
      * @return CompletableFuture<ListInstanceTagsResponse>
      */
     public CompletableFuture<ListInstanceTagsResponse> listInstanceTagsAsync(ListInstanceTagsRequest request) {
@@ -1758,13 +1710,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTagsRequest 请求对象
+     * @param request ListInstanceTagsRequest 请求对象
      * @return AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
      */
     public AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsAsyncInvoker(
         ListInstanceTagsRequest request) {
-        return new AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request,
-            GaussDBMeta.listInstanceTags, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listInstanceTags, hcClient);
     }
 
     /**
@@ -1774,7 +1725,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLtsErrorLogDetailsRequest 请求对象
+     * @param request ListLtsErrorLogDetailsRequest 请求对象
      * @return CompletableFuture<ListLtsErrorLogDetailsResponse>
      */
     public CompletableFuture<ListLtsErrorLogDetailsResponse> listLtsErrorLogDetailsAsync(
@@ -1789,13 +1740,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLtsErrorLogDetailsRequest 请求对象
+     * @param request ListLtsErrorLogDetailsRequest 请求对象
      * @return AsyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse>
      */
     public AsyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse> listLtsErrorLogDetailsAsyncInvoker(
         ListLtsErrorLogDetailsRequest request) {
-        return new AsyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse>(request,
-            GaussDBMeta.listLtsErrorLogDetails, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listLtsErrorLogDetails, hcClient);
     }
 
     /**
@@ -1805,7 +1755,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLtsSlowlogDetailsRequest 请求对象
+     * @param request ListLtsSlowlogDetailsRequest 请求对象
      * @return CompletableFuture<ListLtsSlowlogDetailsResponse>
      */
     public CompletableFuture<ListLtsSlowlogDetailsResponse> listLtsSlowlogDetailsAsync(
@@ -1820,13 +1770,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLtsSlowlogDetailsRequest 请求对象
+     * @param request ListLtsSlowlogDetailsRequest 请求对象
      * @return AsyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse>
      */
     public AsyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse> listLtsSlowlogDetailsAsyncInvoker(
         ListLtsSlowlogDetailsRequest request) {
-        return new AsyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse>(request,
-            GaussDBMeta.listLtsSlowlogDetails, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listLtsSlowlogDetails, hcClient);
     }
 
     /**
@@ -1836,7 +1785,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListModifyHistoryRequest 请求对象
+     * @param request ListModifyHistoryRequest 请求对象
      * @return CompletableFuture<ListModifyHistoryResponse>
      */
     public CompletableFuture<ListModifyHistoryResponse> listModifyHistoryAsync(ListModifyHistoryRequest request) {
@@ -1850,13 +1799,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListModifyHistoryRequest 请求对象
+     * @param request ListModifyHistoryRequest 请求对象
      * @return AsyncInvoker<ListModifyHistoryRequest, ListModifyHistoryResponse>
      */
     public AsyncInvoker<ListModifyHistoryRequest, ListModifyHistoryResponse> listModifyHistoryAsyncInvoker(
         ListModifyHistoryRequest request) {
-        return new AsyncInvoker<ListModifyHistoryRequest, ListModifyHistoryResponse>(request,
-            GaussDBMeta.listModifyHistory, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listModifyHistory, hcClient);
     }
 
     /**
@@ -1866,7 +1814,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return CompletableFuture<ListProjectTagsResponse>
      */
     public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
@@ -1880,13 +1828,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectTagsRequest 请求对象
+     * @param request ListProjectTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
     public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
         ListProjectTagsRequest request) {
-        return new AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, GaussDBMeta.listProjectTags,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listProjectTags, hcClient);
     }
 
     /**
@@ -1896,7 +1843,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScheduleJobsRequest 请求对象
+     * @param request ListScheduleJobsRequest 请求对象
      * @return CompletableFuture<ListScheduleJobsResponse>
      */
     public CompletableFuture<ListScheduleJobsResponse> listScheduleJobsAsync(ListScheduleJobsRequest request) {
@@ -1910,13 +1857,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScheduleJobsRequest 请求对象
+     * @param request ListScheduleJobsRequest 请求对象
      * @return AsyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse>
      */
     public AsyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse> listScheduleJobsAsyncInvoker(
         ListScheduleJobsRequest request) {
-        return new AsyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse>(request,
-            GaussDBMeta.listScheduleJobs, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.listScheduleJobs, hcClient);
     }
 
     /**
@@ -1926,7 +1872,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyBackupEncryptStatusRequest 请求对象
+     * @param request ModifyBackupEncryptStatusRequest 请求对象
      * @return CompletableFuture<ModifyBackupEncryptStatusResponse>
      */
     public CompletableFuture<ModifyBackupEncryptStatusResponse> modifyBackupEncryptStatusAsync(
@@ -1941,13 +1887,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyBackupEncryptStatusRequest 请求对象
+     * @param request ModifyBackupEncryptStatusRequest 请求对象
      * @return AsyncInvoker<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse>
      */
     public AsyncInvoker<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> modifyBackupEncryptStatusAsyncInvoker(
         ModifyBackupEncryptStatusRequest request) {
-        return new AsyncInvoker<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse>(request,
-            GaussDBMeta.modifyBackupEncryptStatus, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.modifyBackupEncryptStatus, hcClient);
     }
 
     /**
@@ -1957,7 +1902,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyGaussMySqlProxyRouteModeRequest 请求对象
+     * @param request ModifyGaussMySqlProxyRouteModeRequest 请求对象
      * @return CompletableFuture<ModifyGaussMySqlProxyRouteModeResponse>
      */
     public CompletableFuture<ModifyGaussMySqlProxyRouteModeResponse> modifyGaussMySqlProxyRouteModeAsync(
@@ -1972,13 +1917,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyGaussMySqlProxyRouteModeRequest 请求对象
+     * @param request ModifyGaussMySqlProxyRouteModeRequest 请求对象
      * @return AsyncInvoker<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse>
      */
     public AsyncInvoker<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse> modifyGaussMySqlProxyRouteModeAsyncInvoker(
         ModifyGaussMySqlProxyRouteModeRequest request) {
-        return new AsyncInvoker<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse>(request,
-            GaussDBMeta.modifyGaussMySqlProxyRouteMode, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.modifyGaussMySqlProxyRouteMode, hcClient);
     }
 
     /**
@@ -1988,7 +1932,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyGaussMysqlDnsRequest 请求对象
+     * @param request ModifyGaussMysqlDnsRequest 请求对象
      * @return CompletableFuture<ModifyGaussMysqlDnsResponse>
      */
     public CompletableFuture<ModifyGaussMysqlDnsResponse> modifyGaussMysqlDnsAsync(ModifyGaussMysqlDnsRequest request) {
@@ -2002,13 +1946,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ModifyGaussMysqlDnsRequest 请求对象
+     * @param request ModifyGaussMysqlDnsRequest 请求对象
      * @return AsyncInvoker<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse>
      */
     public AsyncInvoker<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse> modifyGaussMysqlDnsAsyncInvoker(
         ModifyGaussMysqlDnsRequest request) {
-        return new AsyncInvoker<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse>(request,
-            GaussDBMeta.modifyGaussMysqlDns, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.modifyGaussMysqlDns, hcClient);
     }
 
     /**
@@ -2018,7 +1961,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetGaussMySqlDatabasePasswordRequest 请求对象
+     * @param request ResetGaussMySqlDatabasePasswordRequest 请求对象
      * @return CompletableFuture<ResetGaussMySqlDatabasePasswordResponse>
      */
     public CompletableFuture<ResetGaussMySqlDatabasePasswordResponse> resetGaussMySqlDatabasePasswordAsync(
@@ -2033,13 +1976,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetGaussMySqlDatabasePasswordRequest 请求对象
+     * @param request ResetGaussMySqlDatabasePasswordRequest 请求对象
      * @return AsyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse>
      */
     public AsyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> resetGaussMySqlDatabasePasswordAsyncInvoker(
         ResetGaussMySqlDatabasePasswordRequest request) {
-        return new AsyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse>(
-            request, GaussDBMeta.resetGaussMySqlDatabasePassword, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.resetGaussMySqlDatabasePassword, hcClient);
     }
 
     /**
@@ -2049,7 +1991,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetGaussMySqlPasswordRequest 请求对象
+     * @param request ResetGaussMySqlPasswordRequest 请求对象
      * @return CompletableFuture<ResetGaussMySqlPasswordResponse>
      */
     public CompletableFuture<ResetGaussMySqlPasswordResponse> resetGaussMySqlPasswordAsync(
@@ -2064,13 +2006,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetGaussMySqlPasswordRequest 请求对象
+     * @param request ResetGaussMySqlPasswordRequest 请求对象
      * @return AsyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse>
      */
     public AsyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse> resetGaussMySqlPasswordAsyncInvoker(
         ResetGaussMySqlPasswordRequest request) {
-        return new AsyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse>(request,
-            GaussDBMeta.resetGaussMySqlPassword, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.resetGaussMySqlPassword, hcClient);
     }
 
     /**
@@ -2080,7 +2021,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartGaussMySqlInstanceRequest 请求对象
+     * @param request RestartGaussMySqlInstanceRequest 请求对象
      * @return CompletableFuture<RestartGaussMySqlInstanceResponse>
      */
     public CompletableFuture<RestartGaussMySqlInstanceResponse> restartGaussMySqlInstanceAsync(
@@ -2095,13 +2036,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartGaussMySqlInstanceRequest 请求对象
+     * @param request RestartGaussMySqlInstanceRequest 请求对象
      * @return AsyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse>
      */
     public AsyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse> restartGaussMySqlInstanceAsyncInvoker(
         RestartGaussMySqlInstanceRequest request) {
-        return new AsyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse>(request,
-            GaussDBMeta.restartGaussMySqlInstance, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.restartGaussMySqlInstance, hcClient);
     }
 
     /**
@@ -2111,7 +2051,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartGaussMySqlNodeRequest 请求对象
+     * @param request RestartGaussMySqlNodeRequest 请求对象
      * @return CompletableFuture<RestartGaussMySqlNodeResponse>
      */
     public CompletableFuture<RestartGaussMySqlNodeResponse> restartGaussMySqlNodeAsync(
@@ -2126,13 +2066,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartGaussMySqlNodeRequest 请求对象
+     * @param request RestartGaussMySqlNodeRequest 请求对象
      * @return AsyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse>
      */
     public AsyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse> restartGaussMySqlNodeAsyncInvoker(
         RestartGaussMySqlNodeRequest request) {
-        return new AsyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse>(request,
-            GaussDBMeta.restartGaussMySqlNode, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.restartGaussMySqlNode, hcClient);
     }
 
     /**
@@ -2142,7 +2081,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreOldInstanceRequest 请求对象
+     * @param request RestoreOldInstanceRequest 请求对象
      * @return CompletableFuture<RestoreOldInstanceResponse>
      */
     public CompletableFuture<RestoreOldInstanceResponse> restoreOldInstanceAsync(RestoreOldInstanceRequest request) {
@@ -2156,13 +2095,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreOldInstanceRequest 请求对象
+     * @param request RestoreOldInstanceRequest 请求对象
      * @return AsyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse>
      */
     public AsyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse> restoreOldInstanceAsyncInvoker(
         RestoreOldInstanceRequest request) {
-        return new AsyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse>(request,
-            GaussDBMeta.restoreOldInstance, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.restoreOldInstance, hcClient);
     }
 
     /**
@@ -2172,7 +2110,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetGaussMySqlProxyWeightRequest 请求对象
+     * @param request SetGaussMySqlProxyWeightRequest 请求对象
      * @return CompletableFuture<SetGaussMySqlProxyWeightResponse>
      */
     public CompletableFuture<SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeightAsync(
@@ -2187,13 +2125,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetGaussMySqlProxyWeightRequest 请求对象
+     * @param request SetGaussMySqlProxyWeightRequest 请求对象
      * @return AsyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse>
      */
     public AsyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeightAsyncInvoker(
         SetGaussMySqlProxyWeightRequest request) {
-        return new AsyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse>(request,
-            GaussDBMeta.setGaussMySqlProxyWeight, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.setGaussMySqlProxyWeight, hcClient);
     }
 
     /**
@@ -2203,7 +2140,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetGaussMySqlQuotasRequest 请求对象
+     * @param request SetGaussMySqlQuotasRequest 请求对象
      * @return CompletableFuture<SetGaussMySqlQuotasResponse>
      */
     public CompletableFuture<SetGaussMySqlQuotasResponse> setGaussMySqlQuotasAsync(SetGaussMySqlQuotasRequest request) {
@@ -2217,13 +2154,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetGaussMySqlQuotasRequest 请求对象
+     * @param request SetGaussMySqlQuotasRequest 请求对象
      * @return AsyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse>
      */
     public AsyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse> setGaussMySqlQuotasAsyncInvoker(
         SetGaussMySqlQuotasRequest request) {
-        return new AsyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse>(request,
-            GaussDBMeta.setGaussMySqlQuotas, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.setGaussMySqlQuotas, hcClient);
     }
 
     /**
@@ -2233,7 +2169,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuditLogRequest 请求对象
+     * @param request ShowAuditLogRequest 请求对象
      * @return CompletableFuture<ShowAuditLogResponse>
      */
     public CompletableFuture<ShowAuditLogResponse> showAuditLogAsync(ShowAuditLogRequest request) {
@@ -2247,12 +2183,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuditLogRequest 请求对象
+     * @param request ShowAuditLogRequest 请求对象
      * @return AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>
      */
     public AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLogAsyncInvoker(
         ShowAuditLogRequest request) {
-        return new AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>(request, GaussDBMeta.showAuditLog, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showAuditLog, hcClient);
     }
 
     /**
@@ -2262,7 +2198,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoScalingPolicyRequest 请求对象
+     * @param request ShowAutoScalingPolicyRequest 请求对象
      * @return CompletableFuture<ShowAutoScalingPolicyResponse>
      */
     public CompletableFuture<ShowAutoScalingPolicyResponse> showAutoScalingPolicyAsync(
@@ -2277,13 +2213,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoScalingPolicyRequest 请求对象
+     * @param request ShowAutoScalingPolicyRequest 请求对象
      * @return AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse>
      */
     public AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> showAutoScalingPolicyAsyncInvoker(
         ShowAutoScalingPolicyRequest request) {
-        return new AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse>(request,
-            GaussDBMeta.showAutoScalingPolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showAutoScalingPolicy, hcClient);
     }
 
     /**
@@ -2293,7 +2228,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupRestoreTimeRequest 请求对象
+     * @param request ShowBackupRestoreTimeRequest 请求对象
      * @return CompletableFuture<ShowBackupRestoreTimeResponse>
      */
     public CompletableFuture<ShowBackupRestoreTimeResponse> showBackupRestoreTimeAsync(
@@ -2308,13 +2243,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackupRestoreTimeRequest 请求对象
+     * @param request ShowBackupRestoreTimeRequest 请求对象
      * @return AsyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse>
      */
     public AsyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> showBackupRestoreTimeAsyncInvoker(
         ShowBackupRestoreTimeRequest request) {
-        return new AsyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse>(request,
-            GaussDBMeta.showBackupRestoreTime, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showBackupRestoreTime, hcClient);
     }
 
     /**
@@ -2324,7 +2258,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDedicatedResourceInfoRequest 请求对象
+     * @param request ShowDedicatedResourceInfoRequest 请求对象
      * @return CompletableFuture<ShowDedicatedResourceInfoResponse>
      */
     public CompletableFuture<ShowDedicatedResourceInfoResponse> showDedicatedResourceInfoAsync(
@@ -2339,13 +2273,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDedicatedResourceInfoRequest 请求对象
+     * @param request ShowDedicatedResourceInfoRequest 请求对象
      * @return AsyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse>
      */
     public AsyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> showDedicatedResourceInfoAsyncInvoker(
         ShowDedicatedResourceInfoRequest request) {
-        return new AsyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse>(request,
-            GaussDBMeta.showDedicatedResourceInfo, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showDedicatedResourceInfo, hcClient);
     }
 
     /**
@@ -2355,7 +2288,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlBackupListRequest 请求对象
+     * @param request ShowGaussMySqlBackupListRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlBackupListResponse>
      */
     public CompletableFuture<ShowGaussMySqlBackupListResponse> showGaussMySqlBackupListAsync(
@@ -2370,13 +2303,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlBackupListRequest 请求对象
+     * @param request ShowGaussMySqlBackupListRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse>
      */
     public AsyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse> showGaussMySqlBackupListAsyncInvoker(
         ShowGaussMySqlBackupListRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse>(request,
-            GaussDBMeta.showGaussMySqlBackupList, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlBackupList, hcClient);
     }
 
     /**
@@ -2386,7 +2318,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlBackupPolicyRequest 请求对象
+     * @param request ShowGaussMySqlBackupPolicyRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlBackupPolicyResponse>
      */
     public CompletableFuture<ShowGaussMySqlBackupPolicyResponse> showGaussMySqlBackupPolicyAsync(
@@ -2401,13 +2333,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlBackupPolicyRequest 请求对象
+     * @param request ShowGaussMySqlBackupPolicyRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse>
      */
     public AsyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse> showGaussMySqlBackupPolicyAsyncInvoker(
         ShowGaussMySqlBackupPolicyRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse>(request,
-            GaussDBMeta.showGaussMySqlBackupPolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlBackupPolicy, hcClient);
     }
 
     /**
@@ -2417,7 +2348,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlConfigurationRequest 请求对象
+     * @param request ShowGaussMySqlConfigurationRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlConfigurationResponse>
      */
     public CompletableFuture<ShowGaussMySqlConfigurationResponse> showGaussMySqlConfigurationAsync(
@@ -2432,13 +2363,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlConfigurationRequest 请求对象
+     * @param request ShowGaussMySqlConfigurationRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse>
      */
     public AsyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse> showGaussMySqlConfigurationAsyncInvoker(
         ShowGaussMySqlConfigurationRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse>(request,
-            GaussDBMeta.showGaussMySqlConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -2448,7 +2378,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlEngineVersionRequest 请求对象
+     * @param request ShowGaussMySqlEngineVersionRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlEngineVersionResponse>
      */
     public CompletableFuture<ShowGaussMySqlEngineVersionResponse> showGaussMySqlEngineVersionAsync(
@@ -2463,13 +2393,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlEngineVersionRequest 请求对象
+     * @param request ShowGaussMySqlEngineVersionRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse>
      */
     public AsyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse> showGaussMySqlEngineVersionAsyncInvoker(
         ShowGaussMySqlEngineVersionRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse>(request,
-            GaussDBMeta.showGaussMySqlEngineVersion, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlEngineVersion, hcClient);
     }
 
     /**
@@ -2479,7 +2408,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlFlavorsRequest 请求对象
+     * @param request ShowGaussMySqlFlavorsRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlFlavorsResponse>
      */
     public CompletableFuture<ShowGaussMySqlFlavorsResponse> showGaussMySqlFlavorsAsync(
@@ -2494,13 +2423,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlFlavorsRequest 请求对象
+     * @param request ShowGaussMySqlFlavorsRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse>
      */
     public AsyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse> showGaussMySqlFlavorsAsyncInvoker(
         ShowGaussMySqlFlavorsRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse>(request,
-            GaussDBMeta.showGaussMySqlFlavors, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlFlavors, hcClient);
     }
 
     /**
@@ -2510,7 +2438,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlIncrementalBackupListRequest 请求对象
+     * @param request ShowGaussMySqlIncrementalBackupListRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlIncrementalBackupListResponse>
      */
     public CompletableFuture<ShowGaussMySqlIncrementalBackupListResponse> showGaussMySqlIncrementalBackupListAsync(
@@ -2525,13 +2453,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlIncrementalBackupListRequest 请求对象
+     * @param request ShowGaussMySqlIncrementalBackupListRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlIncrementalBackupListRequest, ShowGaussMySqlIncrementalBackupListResponse>
      */
     public AsyncInvoker<ShowGaussMySqlIncrementalBackupListRequest, ShowGaussMySqlIncrementalBackupListResponse> showGaussMySqlIncrementalBackupListAsyncInvoker(
         ShowGaussMySqlIncrementalBackupListRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlIncrementalBackupListRequest, ShowGaussMySqlIncrementalBackupListResponse>(
-            request, GaussDBMeta.showGaussMySqlIncrementalBackupList, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlIncrementalBackupList, hcClient);
     }
 
     /**
@@ -2541,7 +2468,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlInstanceInfoRequest 请求对象
+     * @param request ShowGaussMySqlInstanceInfoRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlInstanceInfoResponse>
      */
     public CompletableFuture<ShowGaussMySqlInstanceInfoResponse> showGaussMySqlInstanceInfoAsync(
@@ -2556,13 +2483,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlInstanceInfoRequest 请求对象
+     * @param request ShowGaussMySqlInstanceInfoRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse>
      */
     public AsyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse> showGaussMySqlInstanceInfoAsyncInvoker(
         ShowGaussMySqlInstanceInfoRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse>(request,
-            GaussDBMeta.showGaussMySqlInstanceInfo, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlInstanceInfo, hcClient);
     }
 
     /**
@@ -2572,7 +2498,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlInstanceInfoUnifyStatusRequest 请求对象
+     * @param request ShowGaussMySqlInstanceInfoUnifyStatusRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlInstanceInfoUnifyStatusResponse>
      */
     public CompletableFuture<ShowGaussMySqlInstanceInfoUnifyStatusResponse> showGaussMySqlInstanceInfoUnifyStatusAsync(
@@ -2587,13 +2513,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlInstanceInfoUnifyStatusRequest 请求对象
+     * @param request ShowGaussMySqlInstanceInfoUnifyStatusRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse>
      */
     public AsyncInvoker<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse> showGaussMySqlInstanceInfoUnifyStatusAsyncInvoker(
         ShowGaussMySqlInstanceInfoUnifyStatusRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse>(
-            request, GaussDBMeta.showGaussMySqlInstanceInfoUnifyStatus, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlInstanceInfoUnifyStatus, hcClient);
     }
 
     /**
@@ -2603,7 +2528,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlJobInfoRequest 请求对象
+     * @param request ShowGaussMySqlJobInfoRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlJobInfoResponse>
      */
     public CompletableFuture<ShowGaussMySqlJobInfoResponse> showGaussMySqlJobInfoAsync(
@@ -2618,13 +2543,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlJobInfoRequest 请求对象
+     * @param request ShowGaussMySqlJobInfoRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse>
      */
     public AsyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse> showGaussMySqlJobInfoAsyncInvoker(
         ShowGaussMySqlJobInfoRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse>(request,
-            GaussDBMeta.showGaussMySqlJobInfo, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlJobInfo, hcClient);
     }
 
     /**
@@ -2634,7 +2558,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlProjectQuotasRequest 请求对象
+     * @param request ShowGaussMySqlProjectQuotasRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlProjectQuotasResponse>
      */
     public CompletableFuture<ShowGaussMySqlProjectQuotasResponse> showGaussMySqlProjectQuotasAsync(
@@ -2649,13 +2573,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlProjectQuotasRequest 请求对象
+     * @param request ShowGaussMySqlProjectQuotasRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse>
      */
     public AsyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse> showGaussMySqlProjectQuotasAsyncInvoker(
         ShowGaussMySqlProjectQuotasRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse>(request,
-            GaussDBMeta.showGaussMySqlProjectQuotas, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlProjectQuotas, hcClient);
     }
 
     /**
@@ -2665,7 +2588,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlProxyFlavorsRequest 请求对象
+     * @param request ShowGaussMySqlProxyFlavorsRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlProxyFlavorsResponse>
      */
     public CompletableFuture<ShowGaussMySqlProxyFlavorsResponse> showGaussMySqlProxyFlavorsAsync(
@@ -2680,13 +2603,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlProxyFlavorsRequest 请求对象
+     * @param request ShowGaussMySqlProxyFlavorsRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse>
      */
     public AsyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse> showGaussMySqlProxyFlavorsAsyncInvoker(
         ShowGaussMySqlProxyFlavorsRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse>(request,
-            GaussDBMeta.showGaussMySqlProxyFlavors, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlProxyFlavors, hcClient);
     }
 
     /**
@@ -2696,7 +2618,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlProxyListRequest 请求对象
+     * @param request ShowGaussMySqlProxyListRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlProxyListResponse>
      */
     public CompletableFuture<ShowGaussMySqlProxyListResponse> showGaussMySqlProxyListAsync(
@@ -2711,13 +2633,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlProxyListRequest 请求对象
+     * @param request ShowGaussMySqlProxyListRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse>
      */
     public AsyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> showGaussMySqlProxyListAsyncInvoker(
         ShowGaussMySqlProxyListRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse>(request,
-            GaussDBMeta.showGaussMySqlProxyList, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlProxyList, hcClient);
     }
 
     /**
@@ -2727,7 +2648,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlQuotasRequest 请求对象
+     * @param request ShowGaussMySqlQuotasRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlQuotasResponse>
      */
     public CompletableFuture<ShowGaussMySqlQuotasResponse> showGaussMySqlQuotasAsync(
@@ -2742,13 +2663,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGaussMySqlQuotasRequest 请求对象
+     * @param request ShowGaussMySqlQuotasRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse>
      */
     public AsyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse> showGaussMySqlQuotasAsyncInvoker(
         ShowGaussMySqlQuotasRequest request) {
-        return new AsyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse>(request,
-            GaussDBMeta.showGaussMySqlQuotas, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlQuotas, hcClient);
     }
 
     /**
@@ -2758,7 +2678,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceDatabaseVersionRequest 请求对象
+     * @param request ShowInstanceDatabaseVersionRequest 请求对象
      * @return CompletableFuture<ShowInstanceDatabaseVersionResponse>
      */
     public CompletableFuture<ShowInstanceDatabaseVersionResponse> showInstanceDatabaseVersionAsync(
@@ -2773,13 +2693,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceDatabaseVersionRequest 请求对象
+     * @param request ShowInstanceDatabaseVersionRequest 请求对象
      * @return AsyncInvoker<ShowInstanceDatabaseVersionRequest, ShowInstanceDatabaseVersionResponse>
      */
     public AsyncInvoker<ShowInstanceDatabaseVersionRequest, ShowInstanceDatabaseVersionResponse> showInstanceDatabaseVersionAsyncInvoker(
         ShowInstanceDatabaseVersionRequest request) {
-        return new AsyncInvoker<ShowInstanceDatabaseVersionRequest, ShowInstanceDatabaseVersionResponse>(request,
-            GaussDBMeta.showInstanceDatabaseVersion, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showInstanceDatabaseVersion, hcClient);
     }
 
     /**
@@ -2789,7 +2708,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceMonitorExtendRequest 请求对象
+     * @param request ShowInstanceMonitorExtendRequest 请求对象
      * @return CompletableFuture<ShowInstanceMonitorExtendResponse>
      */
     public CompletableFuture<ShowInstanceMonitorExtendResponse> showInstanceMonitorExtendAsync(
@@ -2804,13 +2723,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceMonitorExtendRequest 请求对象
+     * @param request ShowInstanceMonitorExtendRequest 请求对象
      * @return AsyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>
      */
     public AsyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> showInstanceMonitorExtendAsyncInvoker(
         ShowInstanceMonitorExtendRequest request) {
-        return new AsyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>(request,
-            GaussDBMeta.showInstanceMonitorExtend, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showInstanceMonitorExtend, hcClient);
     }
 
     /**
@@ -2820,7 +2738,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest 请求对象
+     * @param request ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest 请求对象
      * @return CompletableFuture<ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse>
      */
     public CompletableFuture<ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse> showIntelligentDiagnosisAbnormalCountOfInstancesAsync(
@@ -2835,13 +2753,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest 请求对象
+     * @param request ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest 请求对象
      * @return AsyncInvoker<ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest, ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse>
      */
     public AsyncInvoker<ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest, ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse> showIntelligentDiagnosisAbnormalCountOfInstancesAsyncInvoker(
         ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest request) {
-        return new AsyncInvoker<ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest, ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse>(
-            request, GaussDBMeta.showIntelligentDiagnosisAbnormalCountOfInstances, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showIntelligentDiagnosisAbnormalCountOfInstances, hcClient);
     }
 
     /**
@@ -2851,7 +2768,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIntelligentDiagnosisInstanceInfosPerMetricRequest 请求对象
+     * @param request ShowIntelligentDiagnosisInstanceInfosPerMetricRequest 请求对象
      * @return CompletableFuture<ShowIntelligentDiagnosisInstanceInfosPerMetricResponse>
      */
     public CompletableFuture<ShowIntelligentDiagnosisInstanceInfosPerMetricResponse> showIntelligentDiagnosisInstanceInfosPerMetricAsync(
@@ -2866,13 +2783,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIntelligentDiagnosisInstanceInfosPerMetricRequest 请求对象
+     * @param request ShowIntelligentDiagnosisInstanceInfosPerMetricRequest 请求对象
      * @return AsyncInvoker<ShowIntelligentDiagnosisInstanceInfosPerMetricRequest, ShowIntelligentDiagnosisInstanceInfosPerMetricResponse>
      */
     public AsyncInvoker<ShowIntelligentDiagnosisInstanceInfosPerMetricRequest, ShowIntelligentDiagnosisInstanceInfosPerMetricResponse> showIntelligentDiagnosisInstanceInfosPerMetricAsyncInvoker(
         ShowIntelligentDiagnosisInstanceInfosPerMetricRequest request) {
-        return new AsyncInvoker<ShowIntelligentDiagnosisInstanceInfosPerMetricRequest, ShowIntelligentDiagnosisInstanceInfosPerMetricResponse>(
-            request, GaussDBMeta.showIntelligentDiagnosisInstanceInfosPerMetric, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showIntelligentDiagnosisInstanceInfosPerMetric, hcClient);
     }
 
     /**
@@ -2882,7 +2798,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestoreTablesRequest 请求对象
+     * @param request ShowRestoreTablesRequest 请求对象
      * @return CompletableFuture<ShowRestoreTablesResponse>
      */
     public CompletableFuture<ShowRestoreTablesResponse> showRestoreTablesAsync(ShowRestoreTablesRequest request) {
@@ -2896,13 +2812,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestoreTablesRequest 请求对象
+     * @param request ShowRestoreTablesRequest 请求对象
      * @return AsyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse>
      */
     public AsyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTablesAsyncInvoker(
         ShowRestoreTablesRequest request) {
-        return new AsyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse>(request,
-            GaussDBMeta.showRestoreTables, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showRestoreTables, hcClient);
     }
 
     /**
@@ -2913,7 +2828,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShrinkGaussMySqlProxyRequest 请求对象
+     * @param request ShrinkGaussMySqlProxyRequest 请求对象
      * @return CompletableFuture<ShrinkGaussMySqlProxyResponse>
      */
     public CompletableFuture<ShrinkGaussMySqlProxyResponse> shrinkGaussMySqlProxyAsync(
@@ -2929,13 +2844,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShrinkGaussMySqlProxyRequest 请求对象
+     * @param request ShrinkGaussMySqlProxyRequest 请求对象
      * @return AsyncInvoker<ShrinkGaussMySqlProxyRequest, ShrinkGaussMySqlProxyResponse>
      */
     public AsyncInvoker<ShrinkGaussMySqlProxyRequest, ShrinkGaussMySqlProxyResponse> shrinkGaussMySqlProxyAsyncInvoker(
         ShrinkGaussMySqlProxyRequest request) {
-        return new AsyncInvoker<ShrinkGaussMySqlProxyRequest, ShrinkGaussMySqlProxyResponse>(request,
-            GaussDBMeta.shrinkGaussMySqlProxy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.shrinkGaussMySqlProxy, hcClient);
     }
 
     /**
@@ -2945,7 +2859,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchAccessControlRequest 请求对象
+     * @param request SwitchAccessControlRequest 请求对象
      * @return CompletableFuture<SwitchAccessControlResponse>
      */
     public CompletableFuture<SwitchAccessControlResponse> switchAccessControlAsync(SwitchAccessControlRequest request) {
@@ -2959,13 +2873,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchAccessControlRequest 请求对象
+     * @param request SwitchAccessControlRequest 请求对象
      * @return AsyncInvoker<SwitchAccessControlRequest, SwitchAccessControlResponse>
      */
     public AsyncInvoker<SwitchAccessControlRequest, SwitchAccessControlResponse> switchAccessControlAsyncInvoker(
         SwitchAccessControlRequest request) {
-        return new AsyncInvoker<SwitchAccessControlRequest, SwitchAccessControlResponse>(request,
-            GaussDBMeta.switchAccessControl, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.switchAccessControl, hcClient);
     }
 
     /**
@@ -2975,7 +2888,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchGaussMySqlConfigurationRequest 请求对象
+     * @param request SwitchGaussMySqlConfigurationRequest 请求对象
      * @return CompletableFuture<SwitchGaussMySqlConfigurationResponse>
      */
     public CompletableFuture<SwitchGaussMySqlConfigurationResponse> switchGaussMySqlConfigurationAsync(
@@ -2990,13 +2903,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchGaussMySqlConfigurationRequest 请求对象
+     * @param request SwitchGaussMySqlConfigurationRequest 请求对象
      * @return AsyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse>
      */
     public AsyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse> switchGaussMySqlConfigurationAsyncInvoker(
         SwitchGaussMySqlConfigurationRequest request) {
-        return new AsyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse>(request,
-            GaussDBMeta.switchGaussMySqlConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.switchGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -3006,7 +2918,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchGaussMySqlInstanceSslRequest 请求对象
+     * @param request SwitchGaussMySqlInstanceSslRequest 请求对象
      * @return CompletableFuture<SwitchGaussMySqlInstanceSslResponse>
      */
     public CompletableFuture<SwitchGaussMySqlInstanceSslResponse> switchGaussMySqlInstanceSslAsync(
@@ -3021,13 +2933,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchGaussMySqlInstanceSslRequest 请求对象
+     * @param request SwitchGaussMySqlInstanceSslRequest 请求对象
      * @return AsyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse>
      */
     public AsyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse> switchGaussMySqlInstanceSslAsyncInvoker(
         SwitchGaussMySqlInstanceSslRequest request) {
-        return new AsyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse>(request,
-            GaussDBMeta.switchGaussMySqlInstanceSsl, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.switchGaussMySqlInstanceSsl, hcClient);
     }
 
     /**
@@ -3037,7 +2948,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchGaussMySqlProxySslRequest 请求对象
+     * @param request SwitchGaussMySqlProxySslRequest 请求对象
      * @return CompletableFuture<SwitchGaussMySqlProxySslResponse>
      */
     public CompletableFuture<SwitchGaussMySqlProxySslResponse> switchGaussMySqlProxySslAsync(
@@ -3052,13 +2963,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchGaussMySqlProxySslRequest 请求对象
+     * @param request SwitchGaussMySqlProxySslRequest 请求对象
      * @return AsyncInvoker<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse>
      */
     public AsyncInvoker<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse> switchGaussMySqlProxySslAsyncInvoker(
         SwitchGaussMySqlProxySslRequest request) {
-        return new AsyncInvoker<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse>(request,
-            GaussDBMeta.switchGaussMySqlProxySsl, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.switchGaussMySqlProxySsl, hcClient);
     }
 
     /**
@@ -3068,7 +2978,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAuditLogRequest 请求对象
+     * @param request UpdateAuditLogRequest 请求对象
      * @return CompletableFuture<UpdateAuditLogResponse>
      */
     public CompletableFuture<UpdateAuditLogResponse> updateAuditLogAsync(UpdateAuditLogRequest request) {
@@ -3082,13 +2992,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAuditLogRequest 请求对象
+     * @param request UpdateAuditLogRequest 请求对象
      * @return AsyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse>
      */
     public AsyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse> updateAuditLogAsyncInvoker(
         UpdateAuditLogRequest request) {
-        return new AsyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse>(request, GaussDBMeta.updateAuditLog,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateAuditLog, hcClient);
     }
 
     /**
@@ -3098,7 +3007,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAutoScalingPolicyRequest 请求对象
+     * @param request UpdateAutoScalingPolicyRequest 请求对象
      * @return CompletableFuture<UpdateAutoScalingPolicyResponse>
      */
     public CompletableFuture<UpdateAutoScalingPolicyResponse> updateAutoScalingPolicyAsync(
@@ -3113,13 +3022,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAutoScalingPolicyRequest 请求对象
+     * @param request UpdateAutoScalingPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse>
      */
     public AsyncInvoker<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse> updateAutoScalingPolicyAsyncInvoker(
         UpdateAutoScalingPolicyRequest request) {
-        return new AsyncInvoker<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse>(request,
-            GaussDBMeta.updateAutoScalingPolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateAutoScalingPolicy, hcClient);
     }
 
     /**
@@ -3129,7 +3037,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackupOffsitePolicyRequest 请求对象
+     * @param request UpdateBackupOffsitePolicyRequest 请求对象
      * @return CompletableFuture<UpdateBackupOffsitePolicyResponse>
      */
     public CompletableFuture<UpdateBackupOffsitePolicyResponse> updateBackupOffsitePolicyAsync(
@@ -3144,13 +3052,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackupOffsitePolicyRequest 请求对象
+     * @param request UpdateBackupOffsitePolicyRequest 请求对象
      * @return AsyncInvoker<UpdateBackupOffsitePolicyRequest, UpdateBackupOffsitePolicyResponse>
      */
     public AsyncInvoker<UpdateBackupOffsitePolicyRequest, UpdateBackupOffsitePolicyResponse> updateBackupOffsitePolicyAsyncInvoker(
         UpdateBackupOffsitePolicyRequest request) {
-        return new AsyncInvoker<UpdateBackupOffsitePolicyRequest, UpdateBackupOffsitePolicyResponse>(request,
-            GaussDBMeta.updateBackupOffsitePolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateBackupOffsitePolicy, hcClient);
     }
 
     /**
@@ -3160,7 +3067,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlBackupPolicyRequest 请求对象
+     * @param request UpdateGaussMySqlBackupPolicyRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlBackupPolicyResponse>
      */
     public CompletableFuture<UpdateGaussMySqlBackupPolicyResponse> updateGaussMySqlBackupPolicyAsync(
@@ -3175,13 +3082,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlBackupPolicyRequest 请求对象
+     * @param request UpdateGaussMySqlBackupPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse> updateGaussMySqlBackupPolicyAsyncInvoker(
         UpdateGaussMySqlBackupPolicyRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse>(request,
-            GaussDBMeta.updateGaussMySqlBackupPolicy, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlBackupPolicy, hcClient);
     }
 
     /**
@@ -3191,7 +3097,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlConfigurationRequest 请求对象
+     * @param request UpdateGaussMySqlConfigurationRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlConfigurationResponse>
      */
     public CompletableFuture<UpdateGaussMySqlConfigurationResponse> updateGaussMySqlConfigurationAsync(
@@ -3206,13 +3112,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlConfigurationRequest 请求对象
+     * @param request UpdateGaussMySqlConfigurationRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse> updateGaussMySqlConfigurationAsyncInvoker(
         UpdateGaussMySqlConfigurationRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse>(request,
-            GaussDBMeta.updateGaussMySqlConfiguration, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -3222,7 +3127,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlDatabaseCommentRequest 请求对象
+     * @param request UpdateGaussMySqlDatabaseCommentRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlDatabaseCommentResponse>
      */
     public CompletableFuture<UpdateGaussMySqlDatabaseCommentResponse> updateGaussMySqlDatabaseCommentAsync(
@@ -3237,13 +3142,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlDatabaseCommentRequest 请求对象
+     * @param request UpdateGaussMySqlDatabaseCommentRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse> updateGaussMySqlDatabaseCommentAsyncInvoker(
         UpdateGaussMySqlDatabaseCommentRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse>(
-            request, GaussDBMeta.updateGaussMySqlDatabaseComment, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlDatabaseComment, hcClient);
     }
 
     /**
@@ -3253,7 +3157,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlDatabaseUserCommentRequest 请求对象
+     * @param request UpdateGaussMySqlDatabaseUserCommentRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlDatabaseUserCommentResponse>
      */
     public CompletableFuture<UpdateGaussMySqlDatabaseUserCommentResponse> updateGaussMySqlDatabaseUserCommentAsync(
@@ -3268,13 +3172,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlDatabaseUserCommentRequest 请求对象
+     * @param request UpdateGaussMySqlDatabaseUserCommentRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse> updateGaussMySqlDatabaseUserCommentAsyncInvoker(
         UpdateGaussMySqlDatabaseUserCommentRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse>(
-            request, GaussDBMeta.updateGaussMySqlDatabaseUserComment, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlDatabaseUserComment, hcClient);
     }
 
     /**
@@ -3284,7 +3187,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceAliasRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceAliasRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlInstanceAliasResponse>
      */
     public CompletableFuture<UpdateGaussMySqlInstanceAliasResponse> updateGaussMySqlInstanceAliasAsync(
@@ -3299,13 +3202,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceAliasRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceAliasRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse> updateGaussMySqlInstanceAliasAsyncInvoker(
         UpdateGaussMySqlInstanceAliasRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse>(request,
-            GaussDBMeta.updateGaussMySqlInstanceAlias, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlInstanceAlias, hcClient);
     }
 
     /**
@@ -3315,7 +3217,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceEipRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceEipRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlInstanceEipResponse>
      */
     public CompletableFuture<UpdateGaussMySqlInstanceEipResponse> updateGaussMySqlInstanceEipAsync(
@@ -3330,13 +3232,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceEipRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceEipRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse> updateGaussMySqlInstanceEipAsyncInvoker(
         UpdateGaussMySqlInstanceEipRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse>(request,
-            GaussDBMeta.updateGaussMySqlInstanceEip, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlInstanceEip, hcClient);
     }
 
     /**
@@ -3346,7 +3247,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceInternalIpRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceInternalIpRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlInstanceInternalIpResponse>
      */
     public CompletableFuture<UpdateGaussMySqlInstanceInternalIpResponse> updateGaussMySqlInstanceInternalIpAsync(
@@ -3361,13 +3262,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceInternalIpRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceInternalIpRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse> updateGaussMySqlInstanceInternalIpAsyncInvoker(
         UpdateGaussMySqlInstanceInternalIpRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse>(
-            request, GaussDBMeta.updateGaussMySqlInstanceInternalIp, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlInstanceInternalIp, hcClient);
     }
 
     /**
@@ -3377,7 +3277,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceNameRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceNameRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlInstanceNameResponse>
      */
     public CompletableFuture<UpdateGaussMySqlInstanceNameResponse> updateGaussMySqlInstanceNameAsync(
@@ -3392,13 +3292,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceNameRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceNameRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse> updateGaussMySqlInstanceNameAsyncInvoker(
         UpdateGaussMySqlInstanceNameRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse>(request,
-            GaussDBMeta.updateGaussMySqlInstanceName, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlInstanceName, hcClient);
     }
 
     /**
@@ -3408,7 +3307,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceOpsWindowRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceOpsWindowRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlInstanceOpsWindowResponse>
      */
     public CompletableFuture<UpdateGaussMySqlInstanceOpsWindowResponse> updateGaussMySqlInstanceOpsWindowAsync(
@@ -3423,13 +3322,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceOpsWindowRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceOpsWindowRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse> updateGaussMySqlInstanceOpsWindowAsyncInvoker(
         UpdateGaussMySqlInstanceOpsWindowRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse>(
-            request, GaussDBMeta.updateGaussMySqlInstanceOpsWindow, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlInstanceOpsWindow, hcClient);
     }
 
     /**
@@ -3439,7 +3337,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstancePortRequest 请求对象
+     * @param request UpdateGaussMySqlInstancePortRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlInstancePortResponse>
      */
     public CompletableFuture<UpdateGaussMySqlInstancePortResponse> updateGaussMySqlInstancePortAsync(
@@ -3454,13 +3352,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstancePortRequest 请求对象
+     * @param request UpdateGaussMySqlInstancePortRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse> updateGaussMySqlInstancePortAsyncInvoker(
         UpdateGaussMySqlInstancePortRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse>(request,
-            GaussDBMeta.updateGaussMySqlInstancePort, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlInstancePort, hcClient);
     }
 
     /**
@@ -3470,7 +3367,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceSecurityGroupRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceSecurityGroupRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlInstanceSecurityGroupResponse>
      */
     public CompletableFuture<UpdateGaussMySqlInstanceSecurityGroupResponse> updateGaussMySqlInstanceSecurityGroupAsync(
@@ -3485,13 +3382,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlInstanceSecurityGroupRequest 请求对象
+     * @param request UpdateGaussMySqlInstanceSecurityGroupRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse> updateGaussMySqlInstanceSecurityGroupAsyncInvoker(
         UpdateGaussMySqlInstanceSecurityGroupRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse>(
-            request, GaussDBMeta.updateGaussMySqlInstanceSecurityGroup, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlInstanceSecurityGroup, hcClient);
     }
 
     /**
@@ -3501,7 +3397,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlQuotasRequest 请求对象
+     * @param request UpdateGaussMySqlQuotasRequest 请求对象
      * @return CompletableFuture<UpdateGaussMySqlQuotasResponse>
      */
     public CompletableFuture<UpdateGaussMySqlQuotasResponse> updateGaussMySqlQuotasAsync(
@@ -3516,13 +3412,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGaussMySqlQuotasRequest 请求对象
+     * @param request UpdateGaussMySqlQuotasRequest 请求对象
      * @return AsyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse>
      */
     public AsyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse> updateGaussMySqlQuotasAsyncInvoker(
         UpdateGaussMySqlQuotasRequest request) {
-        return new AsyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse>(request,
-            GaussDBMeta.updateGaussMySqlQuotas, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateGaussMySqlQuotas, hcClient);
     }
 
     /**
@@ -3532,7 +3427,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConfigurationsRequest 请求对象
+     * @param request UpdateInstanceConfigurationsRequest 请求对象
      * @return CompletableFuture<UpdateInstanceConfigurationsResponse>
      */
     public CompletableFuture<UpdateInstanceConfigurationsResponse> updateInstanceConfigurationsAsync(
@@ -3547,13 +3442,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConfigurationsRequest 请求对象
+     * @param request UpdateInstanceConfigurationsRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse>
      */
     public AsyncInvoker<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse> updateInstanceConfigurationsAsyncInvoker(
         UpdateInstanceConfigurationsRequest request) {
-        return new AsyncInvoker<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse>(request,
-            GaussDBMeta.updateInstanceConfigurations, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateInstanceConfigurations, hcClient);
     }
 
     /**
@@ -3563,7 +3457,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceMonitorRequest 请求对象
+     * @param request UpdateInstanceMonitorRequest 请求对象
      * @return CompletableFuture<UpdateInstanceMonitorResponse>
      */
     public CompletableFuture<UpdateInstanceMonitorResponse> updateInstanceMonitorAsync(
@@ -3578,13 +3472,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceMonitorRequest 请求对象
+     * @param request UpdateInstanceMonitorRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>
      */
     public AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> updateInstanceMonitorAsyncInvoker(
         UpdateInstanceMonitorRequest request) {
-        return new AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>(request,
-            GaussDBMeta.updateInstanceMonitor, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateInstanceMonitor, hcClient);
     }
 
     /**
@@ -3594,7 +3487,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProxyConnectionPoolTypeRequest 请求对象
+     * @param request UpdateProxyConnectionPoolTypeRequest 请求对象
      * @return CompletableFuture<UpdateProxyConnectionPoolTypeResponse>
      */
     public CompletableFuture<UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolTypeAsync(
@@ -3609,13 +3502,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProxyConnectionPoolTypeRequest 请求对象
+     * @param request UpdateProxyConnectionPoolTypeRequest 请求对象
      * @return AsyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse>
      */
     public AsyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolTypeAsyncInvoker(
         UpdateProxyConnectionPoolTypeRequest request) {
-        return new AsyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse>(request,
-            GaussDBMeta.updateProxyConnectionPoolType, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateProxyConnectionPoolType, hcClient);
     }
 
     /**
@@ -3625,7 +3517,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProxyNewConfigurationsRequest 请求对象
+     * @param request UpdateProxyNewConfigurationsRequest 请求对象
      * @return CompletableFuture<UpdateProxyNewConfigurationsResponse>
      */
     public CompletableFuture<UpdateProxyNewConfigurationsResponse> updateProxyNewConfigurationsAsync(
@@ -3640,13 +3532,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProxyNewConfigurationsRequest 请求对象
+     * @param request UpdateProxyNewConfigurationsRequest 请求对象
      * @return AsyncInvoker<UpdateProxyNewConfigurationsRequest, UpdateProxyNewConfigurationsResponse>
      */
     public AsyncInvoker<UpdateProxyNewConfigurationsRequest, UpdateProxyNewConfigurationsResponse> updateProxyNewConfigurationsAsyncInvoker(
         UpdateProxyNewConfigurationsRequest request) {
-        return new AsyncInvoker<UpdateProxyNewConfigurationsRequest, UpdateProxyNewConfigurationsResponse>(request,
-            GaussDBMeta.updateProxyNewConfigurations, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateProxyNewConfigurations, hcClient);
     }
 
     /**
@@ -3656,7 +3547,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProxyPortRequest 请求对象
+     * @param request UpdateProxyPortRequest 请求对象
      * @return CompletableFuture<UpdateProxyPortResponse>
      */
     public CompletableFuture<UpdateProxyPortResponse> updateProxyPortAsync(UpdateProxyPortRequest request) {
@@ -3670,13 +3561,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProxyPortRequest 请求对象
+     * @param request UpdateProxyPortRequest 请求对象
      * @return AsyncInvoker<UpdateProxyPortRequest, UpdateProxyPortResponse>
      */
     public AsyncInvoker<UpdateProxyPortRequest, UpdateProxyPortResponse> updateProxyPortAsyncInvoker(
         UpdateProxyPortRequest request) {
-        return new AsyncInvoker<UpdateProxyPortRequest, UpdateProxyPortResponse>(request, GaussDBMeta.updateProxyPort,
-            hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateProxyPort, hcClient);
     }
 
     /**
@@ -3686,7 +3576,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProxySessionConsistenceRequest 请求对象
+     * @param request UpdateProxySessionConsistenceRequest 请求对象
      * @return CompletableFuture<UpdateProxySessionConsistenceResponse>
      */
     public CompletableFuture<UpdateProxySessionConsistenceResponse> updateProxySessionConsistenceAsync(
@@ -3701,13 +3591,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProxySessionConsistenceRequest 请求对象
+     * @param request UpdateProxySessionConsistenceRequest 请求对象
      * @return AsyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse>
      */
     public AsyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse> updateProxySessionConsistenceAsyncInvoker(
         UpdateProxySessionConsistenceRequest request) {
-        return new AsyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse>(request,
-            GaussDBMeta.updateProxySessionConsistence, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateProxySessionConsistence, hcClient);
     }
 
     /**
@@ -3717,7 +3606,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTransactionSplitStatusRequest 请求对象
+     * @param request UpdateTransactionSplitStatusRequest 请求对象
      * @return CompletableFuture<UpdateTransactionSplitStatusResponse>
      */
     public CompletableFuture<UpdateTransactionSplitStatusResponse> updateTransactionSplitStatusAsync(
@@ -3732,13 +3621,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTransactionSplitStatusRequest 请求对象
+     * @param request UpdateTransactionSplitStatusRequest 请求对象
      * @return AsyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse>
      */
     public AsyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> updateTransactionSplitStatusAsyncInvoker(
         UpdateTransactionSplitStatusRequest request) {
-        return new AsyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse>(request,
-            GaussDBMeta.updateTransactionSplitStatus, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateTransactionSplitStatus, hcClient);
     }
 
     /**
@@ -3748,7 +3636,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeGaussMySqlInstanceDatabaseRequest 请求对象
+     * @param request UpgradeGaussMySqlInstanceDatabaseRequest 请求对象
      * @return CompletableFuture<UpgradeGaussMySqlInstanceDatabaseResponse>
      */
     public CompletableFuture<UpgradeGaussMySqlInstanceDatabaseResponse> upgradeGaussMySqlInstanceDatabaseAsync(
@@ -3763,13 +3651,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeGaussMySqlInstanceDatabaseRequest 请求对象
+     * @param request UpgradeGaussMySqlInstanceDatabaseRequest 请求对象
      * @return AsyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse>
      */
     public AsyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse> upgradeGaussMySqlInstanceDatabaseAsyncInvoker(
         UpgradeGaussMySqlInstanceDatabaseRequest request) {
-        return new AsyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse>(
-            request, GaussDBMeta.upgradeGaussMySqlInstanceDatabase, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.upgradeGaussMySqlInstanceDatabase, hcClient);
     }
 
     /**
@@ -3779,7 +3666,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSqlFilterRuleRequest 请求对象
+     * @param request DeleteSqlFilterRuleRequest 请求对象
      * @return CompletableFuture<DeleteSqlFilterRuleResponse>
      */
     public CompletableFuture<DeleteSqlFilterRuleResponse> deleteSqlFilterRuleAsync(DeleteSqlFilterRuleRequest request) {
@@ -3793,13 +3680,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSqlFilterRuleRequest 请求对象
+     * @param request DeleteSqlFilterRuleRequest 请求对象
      * @return AsyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>
      */
     public AsyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRuleAsyncInvoker(
         DeleteSqlFilterRuleRequest request) {
-        return new AsyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>(request,
-            GaussDBMeta.deleteSqlFilterRule, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.deleteSqlFilterRule, hcClient);
     }
 
     /**
@@ -3809,7 +3695,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetSqlFilterRuleRequest 请求对象
+     * @param request SetSqlFilterRuleRequest 请求对象
      * @return CompletableFuture<SetSqlFilterRuleResponse>
      */
     public CompletableFuture<SetSqlFilterRuleResponse> setSqlFilterRuleAsync(SetSqlFilterRuleRequest request) {
@@ -3823,13 +3709,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetSqlFilterRuleRequest 请求对象
+     * @param request SetSqlFilterRuleRequest 请求对象
      * @return AsyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>
      */
     public AsyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRuleAsyncInvoker(
         SetSqlFilterRuleRequest request) {
-        return new AsyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>(request,
-            GaussDBMeta.setSqlFilterRule, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.setSqlFilterRule, hcClient);
     }
 
     /**
@@ -3839,7 +3724,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlFilterControlRequest 请求对象
+     * @param request ShowSqlFilterControlRequest 请求对象
      * @return CompletableFuture<ShowSqlFilterControlResponse>
      */
     public CompletableFuture<ShowSqlFilterControlResponse> showSqlFilterControlAsync(
@@ -3854,13 +3739,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlFilterControlRequest 请求对象
+     * @param request ShowSqlFilterControlRequest 请求对象
      * @return AsyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>
      */
     public AsyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControlAsyncInvoker(
         ShowSqlFilterControlRequest request) {
-        return new AsyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>(request,
-            GaussDBMeta.showSqlFilterControl, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showSqlFilterControl, hcClient);
     }
 
     /**
@@ -3870,7 +3754,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlFilterRuleRequest 请求对象
+     * @param request ShowSqlFilterRuleRequest 请求对象
      * @return CompletableFuture<ShowSqlFilterRuleResponse>
      */
     public CompletableFuture<ShowSqlFilterRuleResponse> showSqlFilterRuleAsync(ShowSqlFilterRuleRequest request) {
@@ -3884,13 +3768,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSqlFilterRuleRequest 请求对象
+     * @param request ShowSqlFilterRuleRequest 请求对象
      * @return AsyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>
      */
     public AsyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRuleAsyncInvoker(
         ShowSqlFilterRuleRequest request) {
-        return new AsyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>(request,
-            GaussDBMeta.showSqlFilterRule, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.showSqlFilterRule, hcClient);
     }
 
     /**
@@ -3900,7 +3783,7 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSqlFilterControlRequest 请求对象
+     * @param request UpdateSqlFilterControlRequest 请求对象
      * @return CompletableFuture<UpdateSqlFilterControlResponse>
      */
     public CompletableFuture<UpdateSqlFilterControlResponse> updateSqlFilterControlAsync(
@@ -3915,13 +3798,12 @@ public class GaussDBAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSqlFilterControlRequest 请求对象
+     * @param request UpdateSqlFilterControlRequest 请求对象
      * @return AsyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>
      */
     public AsyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControlAsyncInvoker(
         UpdateSqlFilterControlRequest request) {
-        return new AsyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>(request,
-            GaussDBMeta.updateSqlFilterControl, hcClient);
+        return new AsyncInvoker<>(request, GaussDBMeta.updateSqlFilterControl, hcClient);
     }
 
 }

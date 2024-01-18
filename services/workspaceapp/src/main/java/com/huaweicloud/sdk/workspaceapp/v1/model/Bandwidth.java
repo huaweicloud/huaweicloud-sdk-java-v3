@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class Bandwidth {
 
     /**
-     * 智能显示传输。取值为：DISABLE：表示关闭。ENABLE：表示开启。DIAGNOSTIC：诊断模式
+     * 智能显示传输。取值为：DISABLE：表示关闭。ENABLE：表示开启。DIAGNOSTIC：诊断模式。
      */
     public static final class IntelligentDataTransportFlagEnum {
 
@@ -235,7 +235,7 @@ public class Bandwidth {
     }
 
     /**
-     * 智能显示传输。取值为：DISABLE：表示关闭。ENABLE：表示开启。DIAGNOSTIC：诊断模式
+     * 智能显示传输。取值为：DISABLE：表示关闭。ENABLE：表示开启。DIAGNOSTIC：诊断模式。
      * @return intelligentDataTransportFlag
      */
     public IntelligentDataTransportFlagEnum getIntelligentDataTransportFlag() {

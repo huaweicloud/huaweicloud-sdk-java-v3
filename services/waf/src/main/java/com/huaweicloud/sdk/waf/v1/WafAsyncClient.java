@@ -254,7 +254,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyCertificateToHostRequest 请求对象
+     * @param request ApplyCertificateToHostRequest 请求对象
      * @return CompletableFuture<ApplyCertificateToHostResponse>
      */
     public CompletableFuture<ApplyCertificateToHostResponse> applyCertificateToHostAsync(
@@ -269,13 +269,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyCertificateToHostRequest 请求对象
+     * @param request ApplyCertificateToHostRequest 请求对象
      * @return AsyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse>
      */
     public AsyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse> applyCertificateToHostAsyncInvoker(
         ApplyCertificateToHostRequest request) {
-        return new AsyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse>(request,
-            WafMeta.applyCertificateToHost, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.applyCertificateToHost, hcClient);
     }
 
     /**
@@ -288,7 +287,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePrepaidCloudWafRequest 请求对象
+     * @param request ChangePrepaidCloudWafRequest 请求对象
      * @return CompletableFuture<ChangePrepaidCloudWafResponse>
      */
     public CompletableFuture<ChangePrepaidCloudWafResponse> changePrepaidCloudWafAsync(
@@ -306,13 +305,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePrepaidCloudWafRequest 请求对象
+     * @param request ChangePrepaidCloudWafRequest 请求对象
      * @return AsyncInvoker<ChangePrepaidCloudWafRequest, ChangePrepaidCloudWafResponse>
      */
     public AsyncInvoker<ChangePrepaidCloudWafRequest, ChangePrepaidCloudWafResponse> changePrepaidCloudWafAsyncInvoker(
         ChangePrepaidCloudWafRequest request) {
-        return new AsyncInvoker<ChangePrepaidCloudWafRequest, ChangePrepaidCloudWafResponse>(request,
-            WafMeta.changePrepaidCloudWaf, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.changePrepaidCloudWaf, hcClient);
     }
 
     /**
@@ -322,7 +320,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAntiTamperRuleRequest 请求对象
+     * @param request CreateAntiTamperRuleRequest 请求对象
      * @return CompletableFuture<CreateAntiTamperRuleResponse>
      */
     public CompletableFuture<CreateAntiTamperRuleResponse> createAntiTamperRuleAsync(
@@ -337,13 +335,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAntiTamperRuleRequest 请求对象
+     * @param request CreateAntiTamperRuleRequest 请求对象
      * @return AsyncInvoker<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse>
      */
     public AsyncInvoker<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse> createAntiTamperRuleAsyncInvoker(
         CreateAntiTamperRuleRequest request) {
-        return new AsyncInvoker<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse>(request,
-            WafMeta.createAntiTamperRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createAntiTamperRule, hcClient);
     }
 
     /**
@@ -353,7 +350,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnticrawlerRuleRequest 请求对象
+     * @param request CreateAnticrawlerRuleRequest 请求对象
      * @return CompletableFuture<CreateAnticrawlerRuleResponse>
      */
     public CompletableFuture<CreateAnticrawlerRuleResponse> createAnticrawlerRuleAsync(
@@ -368,13 +365,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnticrawlerRuleRequest 请求对象
+     * @param request CreateAnticrawlerRuleRequest 请求对象
      * @return AsyncInvoker<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse>
      */
     public AsyncInvoker<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse> createAnticrawlerRuleAsyncInvoker(
         CreateAnticrawlerRuleRequest request) {
-        return new AsyncInvoker<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse>(request,
-            WafMeta.createAnticrawlerRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createAnticrawlerRule, hcClient);
     }
 
     /**
@@ -384,7 +380,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAntileakageRuleRequest 请求对象
+     * @param request CreateAntileakageRuleRequest 请求对象
      * @return CompletableFuture<CreateAntileakageRuleResponse>
      */
     public CompletableFuture<CreateAntileakageRuleResponse> createAntileakageRuleAsync(
@@ -399,13 +395,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAntileakageRuleRequest 请求对象
+     * @param request CreateAntileakageRuleRequest 请求对象
      * @return AsyncInvoker<CreateAntileakageRuleRequest, CreateAntileakageRuleResponse>
      */
     public AsyncInvoker<CreateAntileakageRuleRequest, CreateAntileakageRuleResponse> createAntileakageRuleAsyncInvoker(
         CreateAntileakageRuleRequest request) {
-        return new AsyncInvoker<CreateAntileakageRuleRequest, CreateAntileakageRuleResponse>(request,
-            WafMeta.createAntileakageRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createAntileakageRule, hcClient);
     }
 
     /**
@@ -415,7 +410,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCcRuleRequest 请求对象
+     * @param request CreateCcRuleRequest 请求对象
      * @return CompletableFuture<CreateCcRuleResponse>
      */
     public CompletableFuture<CreateCcRuleResponse> createCcRuleAsync(CreateCcRuleRequest request) {
@@ -429,12 +424,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCcRuleRequest 请求对象
+     * @param request CreateCcRuleRequest 请求对象
      * @return AsyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse>
      */
     public AsyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse> createCcRuleAsyncInvoker(
         CreateCcRuleRequest request) {
-        return new AsyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse>(request, WafMeta.createCcRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createCcRule, hcClient);
     }
 
     /**
@@ -444,7 +439,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return CompletableFuture<CreateCertificateResponse>
      */
     public CompletableFuture<CreateCertificateResponse> createCertificateAsync(CreateCertificateRequest request) {
@@ -458,13 +453,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
      */
     public AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateAsyncInvoker(
         CreateCertificateRequest request) {
-        return new AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request, WafMeta.createCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createCertificate, hcClient);
     }
 
     /**
@@ -474,7 +468,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCloudWafPostPaidResourceRequest 请求对象
+     * @param request CreateCloudWafPostPaidResourceRequest 请求对象
      * @return CompletableFuture<CreateCloudWafPostPaidResourceResponse>
      */
     public CompletableFuture<CreateCloudWafPostPaidResourceResponse> createCloudWafPostPaidResourceAsync(
@@ -489,13 +483,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCloudWafPostPaidResourceRequest 请求对象
+     * @param request CreateCloudWafPostPaidResourceRequest 请求对象
      * @return AsyncInvoker<CreateCloudWafPostPaidResourceRequest, CreateCloudWafPostPaidResourceResponse>
      */
     public AsyncInvoker<CreateCloudWafPostPaidResourceRequest, CreateCloudWafPostPaidResourceResponse> createCloudWafPostPaidResourceAsyncInvoker(
         CreateCloudWafPostPaidResourceRequest request) {
-        return new AsyncInvoker<CreateCloudWafPostPaidResourceRequest, CreateCloudWafPostPaidResourceResponse>(request,
-            WafMeta.createCloudWafPostPaidResource, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createCloudWafPostPaidResource, hcClient);
     }
 
     /**
@@ -505,7 +498,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomRuleRequest 请求对象
+     * @param request CreateCustomRuleRequest 请求对象
      * @return CompletableFuture<CreateCustomRuleResponse>
      */
     public CompletableFuture<CreateCustomRuleResponse> createCustomRuleAsync(CreateCustomRuleRequest request) {
@@ -519,13 +512,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomRuleRequest 请求对象
+     * @param request CreateCustomRuleRequest 请求对象
      * @return AsyncInvoker<CreateCustomRuleRequest, CreateCustomRuleResponse>
      */
     public AsyncInvoker<CreateCustomRuleRequest, CreateCustomRuleResponse> createCustomRuleAsyncInvoker(
         CreateCustomRuleRequest request) {
-        return new AsyncInvoker<CreateCustomRuleRequest, CreateCustomRuleResponse>(request, WafMeta.createCustomRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createCustomRule, hcClient);
     }
 
     /**
@@ -535,7 +527,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGeoipRuleRequest 请求对象
+     * @param request CreateGeoipRuleRequest 请求对象
      * @return CompletableFuture<CreateGeoipRuleResponse>
      */
     public CompletableFuture<CreateGeoipRuleResponse> createGeoipRuleAsync(CreateGeoipRuleRequest request) {
@@ -549,13 +541,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGeoipRuleRequest 请求对象
+     * @param request CreateGeoipRuleRequest 请求对象
      * @return AsyncInvoker<CreateGeoipRuleRequest, CreateGeoipRuleResponse>
      */
     public AsyncInvoker<CreateGeoipRuleRequest, CreateGeoipRuleResponse> createGeoipRuleAsyncInvoker(
         CreateGeoipRuleRequest request) {
-        return new AsyncInvoker<CreateGeoipRuleRequest, CreateGeoipRuleResponse>(request, WafMeta.createGeoipRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createGeoipRule, hcClient);
     }
 
     /**
@@ -565,7 +556,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHostRequest 请求对象
+     * @param request CreateHostRequest 请求对象
      * @return CompletableFuture<CreateHostResponse>
      */
     public CompletableFuture<CreateHostResponse> createHostAsync(CreateHostRequest request) {
@@ -579,11 +570,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHostRequest 请求对象
+     * @param request CreateHostRequest 请求对象
      * @return AsyncInvoker<CreateHostRequest, CreateHostResponse>
      */
     public AsyncInvoker<CreateHostRequest, CreateHostResponse> createHostAsyncInvoker(CreateHostRequest request) {
-        return new AsyncInvoker<CreateHostRequest, CreateHostResponse>(request, WafMeta.createHost, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createHost, hcClient);
     }
 
     /**
@@ -593,7 +584,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIgnoreRuleRequest 请求对象
+     * @param request CreateIgnoreRuleRequest 请求对象
      * @return CompletableFuture<CreateIgnoreRuleResponse>
      */
     public CompletableFuture<CreateIgnoreRuleResponse> createIgnoreRuleAsync(CreateIgnoreRuleRequest request) {
@@ -607,13 +598,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIgnoreRuleRequest 请求对象
+     * @param request CreateIgnoreRuleRequest 请求对象
      * @return AsyncInvoker<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse>
      */
     public AsyncInvoker<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse> createIgnoreRuleAsyncInvoker(
         CreateIgnoreRuleRequest request) {
-        return new AsyncInvoker<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse>(request, WafMeta.createIgnoreRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createIgnoreRule, hcClient);
     }
 
     /**
@@ -623,7 +613,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
      */
     public CompletableFuture<CreateInstanceResponse> createInstanceAsync(CreateInstanceRequest request) {
@@ -637,13 +627,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
     public AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceAsyncInvoker(
         CreateInstanceRequest request) {
-        return new AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, WafMeta.createInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createInstance, hcClient);
     }
 
     /**
@@ -653,7 +642,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIpGroupRequest 请求对象
+     * @param request CreateIpGroupRequest 请求对象
      * @return CompletableFuture<CreateIpGroupResponse>
      */
     public CompletableFuture<CreateIpGroupResponse> createIpGroupAsync(CreateIpGroupRequest request) {
@@ -667,12 +656,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIpGroupRequest 请求对象
+     * @param request CreateIpGroupRequest 请求对象
      * @return AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>
      */
     public AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroupAsyncInvoker(
         CreateIpGroupRequest request) {
-        return new AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>(request, WafMeta.createIpGroup, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createIpGroup, hcClient);
     }
 
     /**
@@ -682,7 +671,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return CompletableFuture<CreatePolicyResponse>
      */
     public CompletableFuture<CreatePolicyResponse> createPolicyAsync(CreatePolicyRequest request) {
@@ -696,12 +685,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>
      */
     public AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse> createPolicyAsyncInvoker(
         CreatePolicyRequest request) {
-        return new AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>(request, WafMeta.createPolicy, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createPolicy, hcClient);
     }
 
     /**
@@ -711,7 +700,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePremiumHostRequest 请求对象
+     * @param request CreatePremiumHostRequest 请求对象
      * @return CompletableFuture<CreatePremiumHostResponse>
      */
     public CompletableFuture<CreatePremiumHostResponse> createPremiumHostAsync(CreatePremiumHostRequest request) {
@@ -725,13 +714,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePremiumHostRequest 请求对象
+     * @param request CreatePremiumHostRequest 请求对象
      * @return AsyncInvoker<CreatePremiumHostRequest, CreatePremiumHostResponse>
      */
     public AsyncInvoker<CreatePremiumHostRequest, CreatePremiumHostResponse> createPremiumHostAsyncInvoker(
         CreatePremiumHostRequest request) {
-        return new AsyncInvoker<CreatePremiumHostRequest, CreatePremiumHostResponse>(request, WafMeta.createPremiumHost,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createPremiumHost, hcClient);
     }
 
     /**
@@ -741,7 +729,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrepaidCloudWafRequest 请求对象
+     * @param request CreatePrepaidCloudWafRequest 请求对象
      * @return CompletableFuture<CreatePrepaidCloudWafResponse>
      */
     public CompletableFuture<CreatePrepaidCloudWafResponse> createPrepaidCloudWafAsync(
@@ -756,13 +744,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrepaidCloudWafRequest 请求对象
+     * @param request CreatePrepaidCloudWafRequest 请求对象
      * @return AsyncInvoker<CreatePrepaidCloudWafRequest, CreatePrepaidCloudWafResponse>
      */
     public AsyncInvoker<CreatePrepaidCloudWafRequest, CreatePrepaidCloudWafResponse> createPrepaidCloudWafAsyncInvoker(
         CreatePrepaidCloudWafRequest request) {
-        return new AsyncInvoker<CreatePrepaidCloudWafRequest, CreatePrepaidCloudWafResponse>(request,
-            WafMeta.createPrepaidCloudWaf, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createPrepaidCloudWaf, hcClient);
     }
 
     /**
@@ -772,7 +759,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivacyRuleRequest 请求对象
+     * @param request CreatePrivacyRuleRequest 请求对象
      * @return CompletableFuture<CreatePrivacyRuleResponse>
      */
     public CompletableFuture<CreatePrivacyRuleResponse> createPrivacyRuleAsync(CreatePrivacyRuleRequest request) {
@@ -786,13 +773,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrivacyRuleRequest 请求对象
+     * @param request CreatePrivacyRuleRequest 请求对象
      * @return AsyncInvoker<CreatePrivacyRuleRequest, CreatePrivacyRuleResponse>
      */
     public AsyncInvoker<CreatePrivacyRuleRequest, CreatePrivacyRuleResponse> createPrivacyRuleAsyncInvoker(
         CreatePrivacyRuleRequest request) {
-        return new AsyncInvoker<CreatePrivacyRuleRequest, CreatePrivacyRuleResponse>(request, WafMeta.createPrivacyRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createPrivacyRule, hcClient);
     }
 
     /**
@@ -802,7 +788,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePunishmentRuleRequest 请求对象
+     * @param request CreatePunishmentRuleRequest 请求对象
      * @return CompletableFuture<CreatePunishmentRuleResponse>
      */
     public CompletableFuture<CreatePunishmentRuleResponse> createPunishmentRuleAsync(
@@ -817,13 +803,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePunishmentRuleRequest 请求对象
+     * @param request CreatePunishmentRuleRequest 请求对象
      * @return AsyncInvoker<CreatePunishmentRuleRequest, CreatePunishmentRuleResponse>
      */
     public AsyncInvoker<CreatePunishmentRuleRequest, CreatePunishmentRuleResponse> createPunishmentRuleAsyncInvoker(
         CreatePunishmentRuleRequest request) {
-        return new AsyncInvoker<CreatePunishmentRuleRequest, CreatePunishmentRuleResponse>(request,
-            WafMeta.createPunishmentRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createPunishmentRule, hcClient);
     }
 
     /**
@@ -833,7 +818,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateValueListRequest 请求对象
+     * @param request CreateValueListRequest 请求对象
      * @return CompletableFuture<CreateValueListResponse>
      */
     public CompletableFuture<CreateValueListResponse> createValueListAsync(CreateValueListRequest request) {
@@ -847,13 +832,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateValueListRequest 请求对象
+     * @param request CreateValueListRequest 请求对象
      * @return AsyncInvoker<CreateValueListRequest, CreateValueListResponse>
      */
     public AsyncInvoker<CreateValueListRequest, CreateValueListResponse> createValueListAsyncInvoker(
         CreateValueListRequest request) {
-        return new AsyncInvoker<CreateValueListRequest, CreateValueListResponse>(request, WafMeta.createValueList,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createValueList, hcClient);
     }
 
     /**
@@ -863,7 +847,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWhiteblackipRuleRequest 请求对象
+     * @param request CreateWhiteblackipRuleRequest 请求对象
      * @return CompletableFuture<CreateWhiteblackipRuleResponse>
      */
     public CompletableFuture<CreateWhiteblackipRuleResponse> createWhiteblackipRuleAsync(
@@ -878,13 +862,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWhiteblackipRuleRequest 请求对象
+     * @param request CreateWhiteblackipRuleRequest 请求对象
      * @return AsyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse>
      */
     public AsyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse> createWhiteblackipRuleAsyncInvoker(
         CreateWhiteblackipRuleRequest request) {
-        return new AsyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse>(request,
-            WafMeta.createWhiteblackipRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.createWhiteblackipRule, hcClient);
     }
 
     /**
@@ -894,7 +877,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAnticrawlerRuleRequest 请求对象
+     * @param request DeleteAnticrawlerRuleRequest 请求对象
      * @return CompletableFuture<DeleteAnticrawlerRuleResponse>
      */
     public CompletableFuture<DeleteAnticrawlerRuleResponse> deleteAnticrawlerRuleAsync(
@@ -909,13 +892,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAnticrawlerRuleRequest 请求对象
+     * @param request DeleteAnticrawlerRuleRequest 请求对象
      * @return AsyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse>
      */
     public AsyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> deleteAnticrawlerRuleAsyncInvoker(
         DeleteAnticrawlerRuleRequest request) {
-        return new AsyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse>(request,
-            WafMeta.deleteAnticrawlerRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteAnticrawlerRule, hcClient);
     }
 
     /**
@@ -925,7 +907,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAntileakageRuleRequest 请求对象
+     * @param request DeleteAntileakageRuleRequest 请求对象
      * @return CompletableFuture<DeleteAntileakageRuleResponse>
      */
     public CompletableFuture<DeleteAntileakageRuleResponse> deleteAntileakageRuleAsync(
@@ -940,13 +922,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAntileakageRuleRequest 请求对象
+     * @param request DeleteAntileakageRuleRequest 请求对象
      * @return AsyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse>
      */
     public AsyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse> deleteAntileakageRuleAsyncInvoker(
         DeleteAntileakageRuleRequest request) {
-        return new AsyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse>(request,
-            WafMeta.deleteAntileakageRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteAntileakageRule, hcClient);
     }
 
     /**
@@ -956,7 +937,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAntitamperRuleRequest 请求对象
+     * @param request DeleteAntitamperRuleRequest 请求对象
      * @return CompletableFuture<DeleteAntitamperRuleResponse>
      */
     public CompletableFuture<DeleteAntitamperRuleResponse> deleteAntitamperRuleAsync(
@@ -971,13 +952,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAntitamperRuleRequest 请求对象
+     * @param request DeleteAntitamperRuleRequest 请求对象
      * @return AsyncInvoker<DeleteAntitamperRuleRequest, DeleteAntitamperRuleResponse>
      */
     public AsyncInvoker<DeleteAntitamperRuleRequest, DeleteAntitamperRuleResponse> deleteAntitamperRuleAsyncInvoker(
         DeleteAntitamperRuleRequest request) {
-        return new AsyncInvoker<DeleteAntitamperRuleRequest, DeleteAntitamperRuleResponse>(request,
-            WafMeta.deleteAntitamperRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteAntitamperRule, hcClient);
     }
 
     /**
@@ -987,7 +967,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCcRuleRequest 请求对象
+     * @param request DeleteCcRuleRequest 请求对象
      * @return CompletableFuture<DeleteCcRuleResponse>
      */
     public CompletableFuture<DeleteCcRuleResponse> deleteCcRuleAsync(DeleteCcRuleRequest request) {
@@ -1001,12 +981,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCcRuleRequest 请求对象
+     * @param request DeleteCcRuleRequest 请求对象
      * @return AsyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse>
      */
     public AsyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse> deleteCcRuleAsyncInvoker(
         DeleteCcRuleRequest request) {
-        return new AsyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse>(request, WafMeta.deleteCcRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteCcRule, hcClient);
     }
 
     /**
@@ -1016,7 +996,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return CompletableFuture<DeleteCertificateResponse>
      */
     public CompletableFuture<DeleteCertificateResponse> deleteCertificateAsync(DeleteCertificateRequest request) {
@@ -1030,13 +1010,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
      */
     public AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateAsyncInvoker(
         DeleteCertificateRequest request) {
-        return new AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, WafMeta.deleteCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteCertificate, hcClient);
     }
 
     /**
@@ -1046,7 +1025,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCloudWafPostPaidResourceRequest 请求对象
+     * @param request DeleteCloudWafPostPaidResourceRequest 请求对象
      * @return CompletableFuture<DeleteCloudWafPostPaidResourceResponse>
      */
     public CompletableFuture<DeleteCloudWafPostPaidResourceResponse> deleteCloudWafPostPaidResourceAsync(
@@ -1061,13 +1040,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCloudWafPostPaidResourceRequest 请求对象
+     * @param request DeleteCloudWafPostPaidResourceRequest 请求对象
      * @return AsyncInvoker<DeleteCloudWafPostPaidResourceRequest, DeleteCloudWafPostPaidResourceResponse>
      */
     public AsyncInvoker<DeleteCloudWafPostPaidResourceRequest, DeleteCloudWafPostPaidResourceResponse> deleteCloudWafPostPaidResourceAsyncInvoker(
         DeleteCloudWafPostPaidResourceRequest request) {
-        return new AsyncInvoker<DeleteCloudWafPostPaidResourceRequest, DeleteCloudWafPostPaidResourceResponse>(request,
-            WafMeta.deleteCloudWafPostPaidResource, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteCloudWafPostPaidResource, hcClient);
     }
 
     /**
@@ -1077,7 +1055,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomRuleRequest 请求对象
+     * @param request DeleteCustomRuleRequest 请求对象
      * @return CompletableFuture<DeleteCustomRuleResponse>
      */
     public CompletableFuture<DeleteCustomRuleResponse> deleteCustomRuleAsync(DeleteCustomRuleRequest request) {
@@ -1091,13 +1069,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomRuleRequest 请求对象
+     * @param request DeleteCustomRuleRequest 请求对象
      * @return AsyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse>
      */
     public AsyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse> deleteCustomRuleAsyncInvoker(
         DeleteCustomRuleRequest request) {
-        return new AsyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse>(request, WafMeta.deleteCustomRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteCustomRule, hcClient);
     }
 
     /**
@@ -1107,7 +1084,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGeoipRuleRequest 请求对象
+     * @param request DeleteGeoipRuleRequest 请求对象
      * @return CompletableFuture<DeleteGeoipRuleResponse>
      */
     public CompletableFuture<DeleteGeoipRuleResponse> deleteGeoipRuleAsync(DeleteGeoipRuleRequest request) {
@@ -1121,13 +1098,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGeoipRuleRequest 请求对象
+     * @param request DeleteGeoipRuleRequest 请求对象
      * @return AsyncInvoker<DeleteGeoipRuleRequest, DeleteGeoipRuleResponse>
      */
     public AsyncInvoker<DeleteGeoipRuleRequest, DeleteGeoipRuleResponse> deleteGeoipRuleAsyncInvoker(
         DeleteGeoipRuleRequest request) {
-        return new AsyncInvoker<DeleteGeoipRuleRequest, DeleteGeoipRuleResponse>(request, WafMeta.deleteGeoipRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteGeoipRule, hcClient);
     }
 
     /**
@@ -1137,7 +1113,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHostRequest 请求对象
+     * @param request DeleteHostRequest 请求对象
      * @return CompletableFuture<DeleteHostResponse>
      */
     public CompletableFuture<DeleteHostResponse> deleteHostAsync(DeleteHostRequest request) {
@@ -1151,11 +1127,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHostRequest 请求对象
+     * @param request DeleteHostRequest 请求对象
      * @return AsyncInvoker<DeleteHostRequest, DeleteHostResponse>
      */
     public AsyncInvoker<DeleteHostRequest, DeleteHostResponse> deleteHostAsyncInvoker(DeleteHostRequest request) {
-        return new AsyncInvoker<DeleteHostRequest, DeleteHostResponse>(request, WafMeta.deleteHost, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteHost, hcClient);
     }
 
     /**
@@ -1165,7 +1141,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIgnoreRuleRequest 请求对象
+     * @param request DeleteIgnoreRuleRequest 请求对象
      * @return CompletableFuture<DeleteIgnoreRuleResponse>
      */
     public CompletableFuture<DeleteIgnoreRuleResponse> deleteIgnoreRuleAsync(DeleteIgnoreRuleRequest request) {
@@ -1179,13 +1155,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIgnoreRuleRequest 请求对象
+     * @param request DeleteIgnoreRuleRequest 请求对象
      * @return AsyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse>
      */
     public AsyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse> deleteIgnoreRuleAsyncInvoker(
         DeleteIgnoreRuleRequest request) {
-        return new AsyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse>(request, WafMeta.deleteIgnoreRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteIgnoreRule, hcClient);
     }
 
     /**
@@ -1195,7 +1170,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
      */
     public CompletableFuture<DeleteInstanceResponse> deleteInstanceAsync(DeleteInstanceRequest request) {
@@ -1209,13 +1184,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
-        return new AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, WafMeta.deleteInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -1225,7 +1199,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpGroupRequest 请求对象
+     * @param request DeleteIpGroupRequest 请求对象
      * @return CompletableFuture<DeleteIpGroupResponse>
      */
     public CompletableFuture<DeleteIpGroupResponse> deleteIpGroupAsync(DeleteIpGroupRequest request) {
@@ -1239,12 +1213,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpGroupRequest 请求对象
+     * @param request DeleteIpGroupRequest 请求对象
      * @return AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>
      */
     public AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse> deleteIpGroupAsyncInvoker(
         DeleteIpGroupRequest request) {
-        return new AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>(request, WafMeta.deleteIpGroup, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteIpGroup, hcClient);
     }
 
     /**
@@ -1254,7 +1228,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return CompletableFuture<DeletePolicyResponse>
      */
     public CompletableFuture<DeletePolicyResponse> deletePolicyAsync(DeletePolicyRequest request) {
@@ -1268,12 +1242,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse>
      */
     public AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse> deletePolicyAsyncInvoker(
         DeletePolicyRequest request) {
-        return new AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse>(request, WafMeta.deletePolicy, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deletePolicy, hcClient);
     }
 
     /**
@@ -1283,7 +1257,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePremiumHostRequest 请求对象
+     * @param request DeletePremiumHostRequest 请求对象
      * @return CompletableFuture<DeletePremiumHostResponse>
      */
     public CompletableFuture<DeletePremiumHostResponse> deletePremiumHostAsync(DeletePremiumHostRequest request) {
@@ -1297,13 +1271,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePremiumHostRequest 请求对象
+     * @param request DeletePremiumHostRequest 请求对象
      * @return AsyncInvoker<DeletePremiumHostRequest, DeletePremiumHostResponse>
      */
     public AsyncInvoker<DeletePremiumHostRequest, DeletePremiumHostResponse> deletePremiumHostAsyncInvoker(
         DeletePremiumHostRequest request) {
-        return new AsyncInvoker<DeletePremiumHostRequest, DeletePremiumHostResponse>(request, WafMeta.deletePremiumHost,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deletePremiumHost, hcClient);
     }
 
     /**
@@ -1313,7 +1286,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivacyRuleRequest 请求对象
+     * @param request DeletePrivacyRuleRequest 请求对象
      * @return CompletableFuture<DeletePrivacyRuleResponse>
      */
     public CompletableFuture<DeletePrivacyRuleResponse> deletePrivacyRuleAsync(DeletePrivacyRuleRequest request) {
@@ -1327,13 +1300,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePrivacyRuleRequest 请求对象
+     * @param request DeletePrivacyRuleRequest 请求对象
      * @return AsyncInvoker<DeletePrivacyRuleRequest, DeletePrivacyRuleResponse>
      */
     public AsyncInvoker<DeletePrivacyRuleRequest, DeletePrivacyRuleResponse> deletePrivacyRuleAsyncInvoker(
         DeletePrivacyRuleRequest request) {
-        return new AsyncInvoker<DeletePrivacyRuleRequest, DeletePrivacyRuleResponse>(request, WafMeta.deletePrivacyRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deletePrivacyRule, hcClient);
     }
 
     /**
@@ -1343,7 +1315,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePunishmentRuleRequest 请求对象
+     * @param request DeletePunishmentRuleRequest 请求对象
      * @return CompletableFuture<DeletePunishmentRuleResponse>
      */
     public CompletableFuture<DeletePunishmentRuleResponse> deletePunishmentRuleAsync(
@@ -1358,13 +1330,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePunishmentRuleRequest 请求对象
+     * @param request DeletePunishmentRuleRequest 请求对象
      * @return AsyncInvoker<DeletePunishmentRuleRequest, DeletePunishmentRuleResponse>
      */
     public AsyncInvoker<DeletePunishmentRuleRequest, DeletePunishmentRuleResponse> deletePunishmentRuleAsyncInvoker(
         DeletePunishmentRuleRequest request) {
-        return new AsyncInvoker<DeletePunishmentRuleRequest, DeletePunishmentRuleResponse>(request,
-            WafMeta.deletePunishmentRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deletePunishmentRule, hcClient);
     }
 
     /**
@@ -1374,7 +1345,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteValueListRequest 请求对象
+     * @param request DeleteValueListRequest 请求对象
      * @return CompletableFuture<DeleteValueListResponse>
      */
     public CompletableFuture<DeleteValueListResponse> deleteValueListAsync(DeleteValueListRequest request) {
@@ -1388,13 +1359,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteValueListRequest 请求对象
+     * @param request DeleteValueListRequest 请求对象
      * @return AsyncInvoker<DeleteValueListRequest, DeleteValueListResponse>
      */
     public AsyncInvoker<DeleteValueListRequest, DeleteValueListResponse> deleteValueListAsyncInvoker(
         DeleteValueListRequest request) {
-        return new AsyncInvoker<DeleteValueListRequest, DeleteValueListResponse>(request, WafMeta.deleteValueList,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteValueList, hcClient);
     }
 
     /**
@@ -1404,7 +1374,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWhiteBlackIpRuleRequest 请求对象
+     * @param request DeleteWhiteBlackIpRuleRequest 请求对象
      * @return CompletableFuture<DeleteWhiteBlackIpRuleResponse>
      */
     public CompletableFuture<DeleteWhiteBlackIpRuleResponse> deleteWhiteBlackIpRuleAsync(
@@ -1419,13 +1389,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWhiteBlackIpRuleRequest 请求对象
+     * @param request DeleteWhiteBlackIpRuleRequest 请求对象
      * @return AsyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse>
      */
     public AsyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse> deleteWhiteBlackIpRuleAsyncInvoker(
         DeleteWhiteBlackIpRuleRequest request) {
-        return new AsyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse>(request,
-            WafMeta.deleteWhiteBlackIpRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.deleteWhiteBlackIpRule, hcClient);
     }
 
     /**
@@ -1435,7 +1404,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAnticrawlerRulesRequest 请求对象
+     * @param request ListAnticrawlerRulesRequest 请求对象
      * @return CompletableFuture<ListAnticrawlerRulesResponse>
      */
     public CompletableFuture<ListAnticrawlerRulesResponse> listAnticrawlerRulesAsync(
@@ -1450,13 +1419,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAnticrawlerRulesRequest 请求对象
+     * @param request ListAnticrawlerRulesRequest 请求对象
      * @return AsyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse>
      */
     public AsyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> listAnticrawlerRulesAsyncInvoker(
         ListAnticrawlerRulesRequest request) {
-        return new AsyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse>(request,
-            WafMeta.listAnticrawlerRules, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listAnticrawlerRules, hcClient);
     }
 
     /**
@@ -1466,7 +1434,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAntileakageRulesRequest 请求对象
+     * @param request ListAntileakageRulesRequest 请求对象
      * @return CompletableFuture<ListAntileakageRulesResponse>
      */
     public CompletableFuture<ListAntileakageRulesResponse> listAntileakageRulesAsync(
@@ -1481,13 +1449,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAntileakageRulesRequest 请求对象
+     * @param request ListAntileakageRulesRequest 请求对象
      * @return AsyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse>
      */
     public AsyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse> listAntileakageRulesAsyncInvoker(
         ListAntileakageRulesRequest request) {
-        return new AsyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse>(request,
-            WafMeta.listAntileakageRules, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listAntileakageRules, hcClient);
     }
 
     /**
@@ -1497,7 +1464,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAntitamperRuleRequest 请求对象
+     * @param request ListAntitamperRuleRequest 请求对象
      * @return CompletableFuture<ListAntitamperRuleResponse>
      */
     public CompletableFuture<ListAntitamperRuleResponse> listAntitamperRuleAsync(ListAntitamperRuleRequest request) {
@@ -1511,13 +1478,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAntitamperRuleRequest 请求对象
+     * @param request ListAntitamperRuleRequest 请求对象
      * @return AsyncInvoker<ListAntitamperRuleRequest, ListAntitamperRuleResponse>
      */
     public AsyncInvoker<ListAntitamperRuleRequest, ListAntitamperRuleResponse> listAntitamperRuleAsyncInvoker(
         ListAntitamperRuleRequest request) {
-        return new AsyncInvoker<ListAntitamperRuleRequest, ListAntitamperRuleResponse>(request,
-            WafMeta.listAntitamperRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listAntitamperRule, hcClient);
     }
 
     /**
@@ -1527,7 +1493,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthTimelineRequest 请求对象
+     * @param request ListBandwidthTimelineRequest 请求对象
      * @return CompletableFuture<ListBandwidthTimelineResponse>
      */
     public CompletableFuture<ListBandwidthTimelineResponse> listBandwidthTimelineAsync(
@@ -1542,13 +1508,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBandwidthTimelineRequest 请求对象
+     * @param request ListBandwidthTimelineRequest 请求对象
      * @return AsyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse>
      */
     public AsyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> listBandwidthTimelineAsyncInvoker(
         ListBandwidthTimelineRequest request) {
-        return new AsyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse>(request,
-            WafMeta.listBandwidthTimeline, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listBandwidthTimeline, hcClient);
     }
 
     /**
@@ -1558,7 +1523,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCcRulesRequest 请求对象
+     * @param request ListCcRulesRequest 请求对象
      * @return CompletableFuture<ListCcRulesResponse>
      */
     public CompletableFuture<ListCcRulesResponse> listCcRulesAsync(ListCcRulesRequest request) {
@@ -1572,11 +1537,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCcRulesRequest 请求对象
+     * @param request ListCcRulesRequest 请求对象
      * @return AsyncInvoker<ListCcRulesRequest, ListCcRulesResponse>
      */
     public AsyncInvoker<ListCcRulesRequest, ListCcRulesResponse> listCcRulesAsyncInvoker(ListCcRulesRequest request) {
-        return new AsyncInvoker<ListCcRulesRequest, ListCcRulesResponse>(request, WafMeta.listCcRules, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listCcRules, hcClient);
     }
 
     /**
@@ -1586,7 +1551,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return CompletableFuture<ListCertificatesResponse>
      */
     public CompletableFuture<ListCertificatesResponse> listCertificatesAsync(ListCertificatesRequest request) {
@@ -1600,13 +1565,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
      */
     public AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesAsyncInvoker(
         ListCertificatesRequest request) {
-        return new AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request, WafMeta.listCertificates,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listCertificates, hcClient);
     }
 
     /**
@@ -1616,7 +1580,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCompositeHostsRequest 请求对象
+     * @param request ListCompositeHostsRequest 请求对象
      * @return CompletableFuture<ListCompositeHostsResponse>
      */
     public CompletableFuture<ListCompositeHostsResponse> listCompositeHostsAsync(ListCompositeHostsRequest request) {
@@ -1630,13 +1594,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCompositeHostsRequest 请求对象
+     * @param request ListCompositeHostsRequest 请求对象
      * @return AsyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse>
      */
     public AsyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse> listCompositeHostsAsyncInvoker(
         ListCompositeHostsRequest request) {
-        return new AsyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse>(request,
-            WafMeta.listCompositeHosts, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listCompositeHosts, hcClient);
     }
 
     /**
@@ -1646,7 +1609,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomRulesRequest 请求对象
+     * @param request ListCustomRulesRequest 请求对象
      * @return CompletableFuture<ListCustomRulesResponse>
      */
     public CompletableFuture<ListCustomRulesResponse> listCustomRulesAsync(ListCustomRulesRequest request) {
@@ -1660,13 +1623,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomRulesRequest 请求对象
+     * @param request ListCustomRulesRequest 请求对象
      * @return AsyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse>
      */
     public AsyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse> listCustomRulesAsyncInvoker(
         ListCustomRulesRequest request) {
-        return new AsyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse>(request, WafMeta.listCustomRules,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listCustomRules, hcClient);
     }
 
     /**
@@ -1676,7 +1638,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventRequest 请求对象
+     * @param request ListEventRequest 请求对象
      * @return CompletableFuture<ListEventResponse>
      */
     public CompletableFuture<ListEventResponse> listEventAsync(ListEventRequest request) {
@@ -1690,11 +1652,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventRequest 请求对象
+     * @param request ListEventRequest 请求对象
      * @return AsyncInvoker<ListEventRequest, ListEventResponse>
      */
     public AsyncInvoker<ListEventRequest, ListEventResponse> listEventAsyncInvoker(ListEventRequest request) {
-        return new AsyncInvoker<ListEventRequest, ListEventResponse>(request, WafMeta.listEvent, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listEvent, hcClient);
     }
 
     /**
@@ -1704,7 +1666,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGeoipRuleRequest 请求对象
+     * @param request ListGeoipRuleRequest 请求对象
      * @return CompletableFuture<ListGeoipRuleResponse>
      */
     public CompletableFuture<ListGeoipRuleResponse> listGeoipRuleAsync(ListGeoipRuleRequest request) {
@@ -1718,12 +1680,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGeoipRuleRequest 请求对象
+     * @param request ListGeoipRuleRequest 请求对象
      * @return AsyncInvoker<ListGeoipRuleRequest, ListGeoipRuleResponse>
      */
     public AsyncInvoker<ListGeoipRuleRequest, ListGeoipRuleResponse> listGeoipRuleAsyncInvoker(
         ListGeoipRuleRequest request) {
-        return new AsyncInvoker<ListGeoipRuleRequest, ListGeoipRuleResponse>(request, WafMeta.listGeoipRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listGeoipRule, hcClient);
     }
 
     /**
@@ -1733,7 +1695,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostRequest 请求对象
+     * @param request ListHostRequest 请求对象
      * @return CompletableFuture<ListHostResponse>
      */
     public CompletableFuture<ListHostResponse> listHostAsync(ListHostRequest request) {
@@ -1747,11 +1709,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostRequest 请求对象
+     * @param request ListHostRequest 请求对象
      * @return AsyncInvoker<ListHostRequest, ListHostResponse>
      */
     public AsyncInvoker<ListHostRequest, ListHostResponse> listHostAsyncInvoker(ListHostRequest request) {
-        return new AsyncInvoker<ListHostRequest, ListHostResponse>(request, WafMeta.listHost, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listHost, hcClient);
     }
 
     /**
@@ -1761,7 +1723,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostRouteRequest 请求对象
+     * @param request ListHostRouteRequest 请求对象
      * @return CompletableFuture<ListHostRouteResponse>
      */
     public CompletableFuture<ListHostRouteResponse> listHostRouteAsync(ListHostRouteRequest request) {
@@ -1775,12 +1737,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHostRouteRequest 请求对象
+     * @param request ListHostRouteRequest 请求对象
      * @return AsyncInvoker<ListHostRouteRequest, ListHostRouteResponse>
      */
     public AsyncInvoker<ListHostRouteRequest, ListHostRouteResponse> listHostRouteAsyncInvoker(
         ListHostRouteRequest request) {
-        return new AsyncInvoker<ListHostRouteRequest, ListHostRouteResponse>(request, WafMeta.listHostRoute, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listHostRoute, hcClient);
     }
 
     /**
@@ -1790,7 +1752,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIgnoreRuleRequest 请求对象
+     * @param request ListIgnoreRuleRequest 请求对象
      * @return CompletableFuture<ListIgnoreRuleResponse>
      */
     public CompletableFuture<ListIgnoreRuleResponse> listIgnoreRuleAsync(ListIgnoreRuleRequest request) {
@@ -1804,13 +1766,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIgnoreRuleRequest 请求对象
+     * @param request ListIgnoreRuleRequest 请求对象
      * @return AsyncInvoker<ListIgnoreRuleRequest, ListIgnoreRuleResponse>
      */
     public AsyncInvoker<ListIgnoreRuleRequest, ListIgnoreRuleResponse> listIgnoreRuleAsyncInvoker(
         ListIgnoreRuleRequest request) {
-        return new AsyncInvoker<ListIgnoreRuleRequest, ListIgnoreRuleResponse>(request, WafMeta.listIgnoreRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listIgnoreRule, hcClient);
     }
 
     /**
@@ -1820,7 +1781,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceRequest 请求对象
+     * @param request ListInstanceRequest 请求对象
      * @return CompletableFuture<ListInstanceResponse>
      */
     public CompletableFuture<ListInstanceResponse> listInstanceAsync(ListInstanceRequest request) {
@@ -1834,12 +1795,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceRequest 请求对象
+     * @param request ListInstanceRequest 请求对象
      * @return AsyncInvoker<ListInstanceRequest, ListInstanceResponse>
      */
     public AsyncInvoker<ListInstanceRequest, ListInstanceResponse> listInstanceAsyncInvoker(
         ListInstanceRequest request) {
-        return new AsyncInvoker<ListInstanceRequest, ListInstanceResponse>(request, WafMeta.listInstance, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listInstance, hcClient);
     }
 
     /**
@@ -1849,7 +1810,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIpGroupRequest 请求对象
+     * @param request ListIpGroupRequest 请求对象
      * @return CompletableFuture<ListIpGroupResponse>
      */
     public CompletableFuture<ListIpGroupResponse> listIpGroupAsync(ListIpGroupRequest request) {
@@ -1863,11 +1824,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIpGroupRequest 请求对象
+     * @param request ListIpGroupRequest 请求对象
      * @return AsyncInvoker<ListIpGroupRequest, ListIpGroupResponse>
      */
     public AsyncInvoker<ListIpGroupRequest, ListIpGroupResponse> listIpGroupAsyncInvoker(ListIpGroupRequest request) {
-        return new AsyncInvoker<ListIpGroupRequest, ListIpGroupResponse>(request, WafMeta.listIpGroup, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listIpGroup, hcClient);
     }
 
     /**
@@ -1877,7 +1838,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNoticeConfigsRequest 请求对象
+     * @param request ListNoticeConfigsRequest 请求对象
      * @return CompletableFuture<ListNoticeConfigsResponse>
      */
     public CompletableFuture<ListNoticeConfigsResponse> listNoticeConfigsAsync(ListNoticeConfigsRequest request) {
@@ -1891,13 +1852,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNoticeConfigsRequest 请求对象
+     * @param request ListNoticeConfigsRequest 请求对象
      * @return AsyncInvoker<ListNoticeConfigsRequest, ListNoticeConfigsResponse>
      */
     public AsyncInvoker<ListNoticeConfigsRequest, ListNoticeConfigsResponse> listNoticeConfigsAsyncInvoker(
         ListNoticeConfigsRequest request) {
-        return new AsyncInvoker<ListNoticeConfigsRequest, ListNoticeConfigsResponse>(request, WafMeta.listNoticeConfigs,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listNoticeConfigs, hcClient);
     }
 
     /**
@@ -1907,7 +1867,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOverviewsClassificationRequest 请求对象
+     * @param request ListOverviewsClassificationRequest 请求对象
      * @return CompletableFuture<ListOverviewsClassificationResponse>
      */
     public CompletableFuture<ListOverviewsClassificationResponse> listOverviewsClassificationAsync(
@@ -1922,13 +1882,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOverviewsClassificationRequest 请求对象
+     * @param request ListOverviewsClassificationRequest 请求对象
      * @return AsyncInvoker<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse>
      */
     public AsyncInvoker<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse> listOverviewsClassificationAsyncInvoker(
         ListOverviewsClassificationRequest request) {
-        return new AsyncInvoker<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse>(request,
-            WafMeta.listOverviewsClassification, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listOverviewsClassification, hcClient);
     }
 
     /**
@@ -1938,7 +1897,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyRequest 请求对象
+     * @param request ListPolicyRequest 请求对象
      * @return CompletableFuture<ListPolicyResponse>
      */
     public CompletableFuture<ListPolicyResponse> listPolicyAsync(ListPolicyRequest request) {
@@ -1952,11 +1911,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyRequest 请求对象
+     * @param request ListPolicyRequest 请求对象
      * @return AsyncInvoker<ListPolicyRequest, ListPolicyResponse>
      */
     public AsyncInvoker<ListPolicyRequest, ListPolicyResponse> listPolicyAsyncInvoker(ListPolicyRequest request) {
-        return new AsyncInvoker<ListPolicyRequest, ListPolicyResponse>(request, WafMeta.listPolicy, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listPolicy, hcClient);
     }
 
     /**
@@ -1966,7 +1925,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPremiumHostRequest 请求对象
+     * @param request ListPremiumHostRequest 请求对象
      * @return CompletableFuture<ListPremiumHostResponse>
      */
     public CompletableFuture<ListPremiumHostResponse> listPremiumHostAsync(ListPremiumHostRequest request) {
@@ -1980,13 +1939,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPremiumHostRequest 请求对象
+     * @param request ListPremiumHostRequest 请求对象
      * @return AsyncInvoker<ListPremiumHostRequest, ListPremiumHostResponse>
      */
     public AsyncInvoker<ListPremiumHostRequest, ListPremiumHostResponse> listPremiumHostAsyncInvoker(
         ListPremiumHostRequest request) {
-        return new AsyncInvoker<ListPremiumHostRequest, ListPremiumHostResponse>(request, WafMeta.listPremiumHost,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listPremiumHost, hcClient);
     }
 
     /**
@@ -1996,7 +1954,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivacyRuleRequest 请求对象
+     * @param request ListPrivacyRuleRequest 请求对象
      * @return CompletableFuture<ListPrivacyRuleResponse>
      */
     public CompletableFuture<ListPrivacyRuleResponse> listPrivacyRuleAsync(ListPrivacyRuleRequest request) {
@@ -2010,13 +1968,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPrivacyRuleRequest 请求对象
+     * @param request ListPrivacyRuleRequest 请求对象
      * @return AsyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse>
      */
     public AsyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse> listPrivacyRuleAsyncInvoker(
         ListPrivacyRuleRequest request) {
-        return new AsyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse>(request, WafMeta.listPrivacyRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listPrivacyRule, hcClient);
     }
 
     /**
@@ -2026,7 +1983,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPunishmentRulesRequest 请求对象
+     * @param request ListPunishmentRulesRequest 请求对象
      * @return CompletableFuture<ListPunishmentRulesResponse>
      */
     public CompletableFuture<ListPunishmentRulesResponse> listPunishmentRulesAsync(ListPunishmentRulesRequest request) {
@@ -2040,13 +1997,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPunishmentRulesRequest 请求对象
+     * @param request ListPunishmentRulesRequest 请求对象
      * @return AsyncInvoker<ListPunishmentRulesRequest, ListPunishmentRulesResponse>
      */
     public AsyncInvoker<ListPunishmentRulesRequest, ListPunishmentRulesResponse> listPunishmentRulesAsyncInvoker(
         ListPunishmentRulesRequest request) {
-        return new AsyncInvoker<ListPunishmentRulesRequest, ListPunishmentRulesResponse>(request,
-            WafMeta.listPunishmentRules, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listPunishmentRules, hcClient);
     }
 
     /**
@@ -2056,7 +2012,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQpsTimelineRequest 请求对象
+     * @param request ListQpsTimelineRequest 请求对象
      * @return CompletableFuture<ListQpsTimelineResponse>
      */
     public CompletableFuture<ListQpsTimelineResponse> listQpsTimelineAsync(ListQpsTimelineRequest request) {
@@ -2070,13 +2026,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQpsTimelineRequest 请求对象
+     * @param request ListQpsTimelineRequest 请求对象
      * @return AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse>
      */
     public AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse> listQpsTimelineAsyncInvoker(
         ListQpsTimelineRequest request) {
-        return new AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse>(request, WafMeta.listQpsTimeline,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listQpsTimeline, hcClient);
     }
 
     /**
@@ -2086,7 +2041,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestTimelineRequest 请求对象
+     * @param request ListRequestTimelineRequest 请求对象
      * @return CompletableFuture<ListRequestTimelineResponse>
      */
     public CompletableFuture<ListRequestTimelineResponse> listRequestTimelineAsync(ListRequestTimelineRequest request) {
@@ -2100,13 +2055,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestTimelineRequest 请求对象
+     * @param request ListRequestTimelineRequest 请求对象
      * @return AsyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse>
      */
     public AsyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse> listRequestTimelineAsyncInvoker(
         ListRequestTimelineRequest request) {
-        return new AsyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse>(request,
-            WafMeta.listRequestTimeline, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listRequestTimeline, hcClient);
     }
 
     /**
@@ -2116,7 +2070,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatisticsRequest 请求对象
+     * @param request ListStatisticsRequest 请求对象
      * @return CompletableFuture<ListStatisticsResponse>
      */
     public CompletableFuture<ListStatisticsResponse> listStatisticsAsync(ListStatisticsRequest request) {
@@ -2130,13 +2084,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatisticsRequest 请求对象
+     * @param request ListStatisticsRequest 请求对象
      * @return AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse>
      */
     public AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse> listStatisticsAsyncInvoker(
         ListStatisticsRequest request) {
-        return new AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse>(request, WafMeta.listStatistics,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listStatistics, hcClient);
     }
 
     /**
@@ -2146,7 +2099,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopAbnormalRequest 请求对象
+     * @param request ListTopAbnormalRequest 请求对象
      * @return CompletableFuture<ListTopAbnormalResponse>
      */
     public CompletableFuture<ListTopAbnormalResponse> listTopAbnormalAsync(ListTopAbnormalRequest request) {
@@ -2160,13 +2113,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTopAbnormalRequest 请求对象
+     * @param request ListTopAbnormalRequest 请求对象
      * @return AsyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse>
      */
     public AsyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse> listTopAbnormalAsyncInvoker(
         ListTopAbnormalRequest request) {
-        return new AsyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse>(request, WafMeta.listTopAbnormal,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listTopAbnormal, hcClient);
     }
 
     /**
@@ -2176,7 +2128,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListValueListRequest 请求对象
+     * @param request ListValueListRequest 请求对象
      * @return CompletableFuture<ListValueListResponse>
      */
     public CompletableFuture<ListValueListResponse> listValueListAsync(ListValueListRequest request) {
@@ -2190,12 +2142,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListValueListRequest 请求对象
+     * @param request ListValueListRequest 请求对象
      * @return AsyncInvoker<ListValueListRequest, ListValueListResponse>
      */
     public AsyncInvoker<ListValueListRequest, ListValueListResponse> listValueListAsyncInvoker(
         ListValueListRequest request) {
-        return new AsyncInvoker<ListValueListRequest, ListValueListResponse>(request, WafMeta.listValueList, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listValueList, hcClient);
     }
 
     /**
@@ -2205,7 +2157,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWhiteblackipRuleRequest 请求对象
+     * @param request ListWhiteblackipRuleRequest 请求对象
      * @return CompletableFuture<ListWhiteblackipRuleResponse>
      */
     public CompletableFuture<ListWhiteblackipRuleResponse> listWhiteblackipRuleAsync(
@@ -2220,13 +2172,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWhiteblackipRuleRequest 请求对象
+     * @param request ListWhiteblackipRuleRequest 请求对象
      * @return AsyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse>
      */
     public AsyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse> listWhiteblackipRuleAsyncInvoker(
         ListWhiteblackipRuleRequest request) {
-        return new AsyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse>(request,
-            WafMeta.listWhiteblackipRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.listWhiteblackipRule, hcClient);
     }
 
     /**
@@ -2236,7 +2187,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateCompositeHostsRequest 请求对象
+     * @param request MigrateCompositeHostsRequest 请求对象
      * @return CompletableFuture<MigrateCompositeHostsResponse>
      */
     public CompletableFuture<MigrateCompositeHostsResponse> migrateCompositeHostsAsync(
@@ -2251,13 +2202,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MigrateCompositeHostsRequest 请求对象
+     * @param request MigrateCompositeHostsRequest 请求对象
      * @return AsyncInvoker<MigrateCompositeHostsRequest, MigrateCompositeHostsResponse>
      */
     public AsyncInvoker<MigrateCompositeHostsRequest, MigrateCompositeHostsResponse> migrateCompositeHostsAsyncInvoker(
         MigrateCompositeHostsRequest request) {
-        return new AsyncInvoker<MigrateCompositeHostsRequest, MigrateCompositeHostsResponse>(request,
-            WafMeta.migrateCompositeHosts, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.migrateCompositeHosts, hcClient);
     }
 
     /**
@@ -2267,7 +2217,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenameInstanceRequest 请求对象
+     * @param request RenameInstanceRequest 请求对象
      * @return CompletableFuture<RenameInstanceResponse>
      */
     public CompletableFuture<RenameInstanceResponse> renameInstanceAsync(RenameInstanceRequest request) {
@@ -2281,13 +2231,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenameInstanceRequest 请求对象
+     * @param request RenameInstanceRequest 请求对象
      * @return AsyncInvoker<RenameInstanceRequest, RenameInstanceResponse>
      */
     public AsyncInvoker<RenameInstanceRequest, RenameInstanceResponse> renameInstanceAsyncInvoker(
         RenameInstanceRequest request) {
-        return new AsyncInvoker<RenameInstanceRequest, RenameInstanceResponse>(request, WafMeta.renameInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.renameInstance, hcClient);
     }
 
     /**
@@ -2297,7 +2246,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAnticrawlerRuleRequest 请求对象
+     * @param request ShowAnticrawlerRuleRequest 请求对象
      * @return CompletableFuture<ShowAnticrawlerRuleResponse>
      */
     public CompletableFuture<ShowAnticrawlerRuleResponse> showAnticrawlerRuleAsync(ShowAnticrawlerRuleRequest request) {
@@ -2311,13 +2260,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAnticrawlerRuleRequest 请求对象
+     * @param request ShowAnticrawlerRuleRequest 请求对象
      * @return AsyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse>
      */
     public AsyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> showAnticrawlerRuleAsyncInvoker(
         ShowAnticrawlerRuleRequest request) {
-        return new AsyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse>(request,
-            WafMeta.showAnticrawlerRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showAnticrawlerRule, hcClient);
     }
 
     /**
@@ -2327,7 +2275,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAntileakageRuleRequest 请求对象
+     * @param request ShowAntileakageRuleRequest 请求对象
      * @return CompletableFuture<ShowAntileakageRuleResponse>
      */
     public CompletableFuture<ShowAntileakageRuleResponse> showAntileakageRuleAsync(ShowAntileakageRuleRequest request) {
@@ -2341,13 +2289,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAntileakageRuleRequest 请求对象
+     * @param request ShowAntileakageRuleRequest 请求对象
      * @return AsyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse>
      */
     public AsyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse> showAntileakageRuleAsyncInvoker(
         ShowAntileakageRuleRequest request) {
-        return new AsyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse>(request,
-            WafMeta.showAntileakageRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showAntileakageRule, hcClient);
     }
 
     /**
@@ -2357,7 +2304,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAntitamperRuleRequest 请求对象
+     * @param request ShowAntitamperRuleRequest 请求对象
      * @return CompletableFuture<ShowAntitamperRuleResponse>
      */
     public CompletableFuture<ShowAntitamperRuleResponse> showAntitamperRuleAsync(ShowAntitamperRuleRequest request) {
@@ -2371,13 +2318,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAntitamperRuleRequest 请求对象
+     * @param request ShowAntitamperRuleRequest 请求对象
      * @return AsyncInvoker<ShowAntitamperRuleRequest, ShowAntitamperRuleResponse>
      */
     public AsyncInvoker<ShowAntitamperRuleRequest, ShowAntitamperRuleResponse> showAntitamperRuleAsyncInvoker(
         ShowAntitamperRuleRequest request) {
-        return new AsyncInvoker<ShowAntitamperRuleRequest, ShowAntitamperRuleResponse>(request,
-            WafMeta.showAntitamperRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showAntitamperRule, hcClient);
     }
 
     /**
@@ -2387,7 +2333,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCcRuleRequest 请求对象
+     * @param request ShowCcRuleRequest 请求对象
      * @return CompletableFuture<ShowCcRuleResponse>
      */
     public CompletableFuture<ShowCcRuleResponse> showCcRuleAsync(ShowCcRuleRequest request) {
@@ -2401,11 +2347,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCcRuleRequest 请求对象
+     * @param request ShowCcRuleRequest 请求对象
      * @return AsyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse>
      */
     public AsyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse> showCcRuleAsyncInvoker(ShowCcRuleRequest request) {
-        return new AsyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse>(request, WafMeta.showCcRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showCcRule, hcClient);
     }
 
     /**
@@ -2415,7 +2361,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return CompletableFuture<ShowCertificateResponse>
      */
     public CompletableFuture<ShowCertificateResponse> showCertificateAsync(ShowCertificateRequest request) {
@@ -2429,13 +2375,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
      */
     public AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateAsyncInvoker(
         ShowCertificateRequest request) {
-        return new AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse>(request, WafMeta.showCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showCertificate, hcClient);
     }
 
     /**
@@ -2445,7 +2390,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCompositeHostRequest 请求对象
+     * @param request ShowCompositeHostRequest 请求对象
      * @return CompletableFuture<ShowCompositeHostResponse>
      */
     public CompletableFuture<ShowCompositeHostResponse> showCompositeHostAsync(ShowCompositeHostRequest request) {
@@ -2459,13 +2404,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCompositeHostRequest 请求对象
+     * @param request ShowCompositeHostRequest 请求对象
      * @return AsyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse>
      */
     public AsyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse> showCompositeHostAsyncInvoker(
         ShowCompositeHostRequest request) {
-        return new AsyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse>(request, WafMeta.showCompositeHost,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showCompositeHost, hcClient);
     }
 
     /**
@@ -2475,7 +2419,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConsoleConfigRequest 请求对象
+     * @param request ShowConsoleConfigRequest 请求对象
      * @return CompletableFuture<ShowConsoleConfigResponse>
      */
     public CompletableFuture<ShowConsoleConfigResponse> showConsoleConfigAsync(ShowConsoleConfigRequest request) {
@@ -2489,13 +2433,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConsoleConfigRequest 请求对象
+     * @param request ShowConsoleConfigRequest 请求对象
      * @return AsyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse>
      */
     public AsyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse> showConsoleConfigAsyncInvoker(
         ShowConsoleConfigRequest request) {
-        return new AsyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse>(request, WafMeta.showConsoleConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showConsoleConfig, hcClient);
     }
 
     /**
@@ -2505,7 +2448,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomRuleRequest 请求对象
+     * @param request ShowCustomRuleRequest 请求对象
      * @return CompletableFuture<ShowCustomRuleResponse>
      */
     public CompletableFuture<ShowCustomRuleResponse> showCustomRuleAsync(ShowCustomRuleRequest request) {
@@ -2519,13 +2462,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomRuleRequest 请求对象
+     * @param request ShowCustomRuleRequest 请求对象
      * @return AsyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse>
      */
     public AsyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse> showCustomRuleAsyncInvoker(
         ShowCustomRuleRequest request) {
-        return new AsyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse>(request, WafMeta.showCustomRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showCustomRule, hcClient);
     }
 
     /**
@@ -2535,7 +2477,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventRequest 请求对象
+     * @param request ShowEventRequest 请求对象
      * @return CompletableFuture<ShowEventResponse>
      */
     public CompletableFuture<ShowEventResponse> showEventAsync(ShowEventRequest request) {
@@ -2549,11 +2491,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventRequest 请求对象
+     * @param request ShowEventRequest 请求对象
      * @return AsyncInvoker<ShowEventRequest, ShowEventResponse>
      */
     public AsyncInvoker<ShowEventRequest, ShowEventResponse> showEventAsyncInvoker(ShowEventRequest request) {
-        return new AsyncInvoker<ShowEventRequest, ShowEventResponse>(request, WafMeta.showEvent, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showEvent, hcClient);
     }
 
     /**
@@ -2563,7 +2505,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGeoipRuleRequest 请求对象
+     * @param request ShowGeoipRuleRequest 请求对象
      * @return CompletableFuture<ShowGeoipRuleResponse>
      */
     public CompletableFuture<ShowGeoipRuleResponse> showGeoipRuleAsync(ShowGeoipRuleRequest request) {
@@ -2577,12 +2519,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowGeoipRuleRequest 请求对象
+     * @param request ShowGeoipRuleRequest 请求对象
      * @return AsyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse>
      */
     public AsyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse> showGeoipRuleAsyncInvoker(
         ShowGeoipRuleRequest request) {
-        return new AsyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse>(request, WafMeta.showGeoipRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showGeoipRule, hcClient);
     }
 
     /**
@@ -2592,7 +2534,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHostRequest 请求对象
+     * @param request ShowHostRequest 请求对象
      * @return CompletableFuture<ShowHostResponse>
      */
     public CompletableFuture<ShowHostResponse> showHostAsync(ShowHostRequest request) {
@@ -2606,11 +2548,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHostRequest 请求对象
+     * @param request ShowHostRequest 请求对象
      * @return AsyncInvoker<ShowHostRequest, ShowHostResponse>
      */
     public AsyncInvoker<ShowHostRequest, ShowHostResponse> showHostAsyncInvoker(ShowHostRequest request) {
-        return new AsyncInvoker<ShowHostRequest, ShowHostResponse>(request, WafMeta.showHost, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showHost, hcClient);
     }
 
     /**
@@ -2620,7 +2562,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIgnoreRuleRequest 请求对象
+     * @param request ShowIgnoreRuleRequest 请求对象
      * @return CompletableFuture<ShowIgnoreRuleResponse>
      */
     public CompletableFuture<ShowIgnoreRuleResponse> showIgnoreRuleAsync(ShowIgnoreRuleRequest request) {
@@ -2634,13 +2576,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIgnoreRuleRequest 请求对象
+     * @param request ShowIgnoreRuleRequest 请求对象
      * @return AsyncInvoker<ShowIgnoreRuleRequest, ShowIgnoreRuleResponse>
      */
     public AsyncInvoker<ShowIgnoreRuleRequest, ShowIgnoreRuleResponse> showIgnoreRuleAsyncInvoker(
         ShowIgnoreRuleRequest request) {
-        return new AsyncInvoker<ShowIgnoreRuleRequest, ShowIgnoreRuleResponse>(request, WafMeta.showIgnoreRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showIgnoreRule, hcClient);
     }
 
     /**
@@ -2650,7 +2591,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
      */
     public CompletableFuture<ShowInstanceResponse> showInstanceAsync(ShowInstanceRequest request) {
@@ -2664,12 +2605,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(
         ShowInstanceRequest request) {
-        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, WafMeta.showInstance, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showInstance, hcClient);
     }
 
     /**
@@ -2679,7 +2620,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpGroupRequest 请求对象
+     * @param request ShowIpGroupRequest 请求对象
      * @return CompletableFuture<ShowIpGroupResponse>
      */
     public CompletableFuture<ShowIpGroupResponse> showIpGroupAsync(ShowIpGroupRequest request) {
@@ -2693,11 +2634,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpGroupRequest 请求对象
+     * @param request ShowIpGroupRequest 请求对象
      * @return AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>
      */
     public AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroupAsyncInvoker(ShowIpGroupRequest request) {
-        return new AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>(request, WafMeta.showIpGroup, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showIpGroup, hcClient);
     }
 
     /**
@@ -2707,7 +2648,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLtsInfoConfigRequest 请求对象
+     * @param request ShowLtsInfoConfigRequest 请求对象
      * @return CompletableFuture<ShowLtsInfoConfigResponse>
      */
     public CompletableFuture<ShowLtsInfoConfigResponse> showLtsInfoConfigAsync(ShowLtsInfoConfigRequest request) {
@@ -2721,13 +2662,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLtsInfoConfigRequest 请求对象
+     * @param request ShowLtsInfoConfigRequest 请求对象
      * @return AsyncInvoker<ShowLtsInfoConfigRequest, ShowLtsInfoConfigResponse>
      */
     public AsyncInvoker<ShowLtsInfoConfigRequest, ShowLtsInfoConfigResponse> showLtsInfoConfigAsyncInvoker(
         ShowLtsInfoConfigRequest request) {
-        return new AsyncInvoker<ShowLtsInfoConfigRequest, ShowLtsInfoConfigResponse>(request, WafMeta.showLtsInfoConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showLtsInfoConfig, hcClient);
     }
 
     /**
@@ -2737,7 +2677,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyRequest 请求对象
+     * @param request ShowPolicyRequest 请求对象
      * @return CompletableFuture<ShowPolicyResponse>
      */
     public CompletableFuture<ShowPolicyResponse> showPolicyAsync(ShowPolicyRequest request) {
@@ -2751,11 +2691,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyRequest 请求对象
+     * @param request ShowPolicyRequest 请求对象
      * @return AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse>
      */
     public AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse> showPolicyAsyncInvoker(ShowPolicyRequest request) {
-        return new AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse>(request, WafMeta.showPolicy, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showPolicy, hcClient);
     }
 
     /**
@@ -2765,7 +2705,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPremiumHostRequest 请求对象
+     * @param request ShowPremiumHostRequest 请求对象
      * @return CompletableFuture<ShowPremiumHostResponse>
      */
     public CompletableFuture<ShowPremiumHostResponse> showPremiumHostAsync(ShowPremiumHostRequest request) {
@@ -2779,13 +2719,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPremiumHostRequest 请求对象
+     * @param request ShowPremiumHostRequest 请求对象
      * @return AsyncInvoker<ShowPremiumHostRequest, ShowPremiumHostResponse>
      */
     public AsyncInvoker<ShowPremiumHostRequest, ShowPremiumHostResponse> showPremiumHostAsyncInvoker(
         ShowPremiumHostRequest request) {
-        return new AsyncInvoker<ShowPremiumHostRequest, ShowPremiumHostResponse>(request, WafMeta.showPremiumHost,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showPremiumHost, hcClient);
     }
 
     /**
@@ -2795,7 +2734,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivacyRuleRequest 请求对象
+     * @param request ShowPrivacyRuleRequest 请求对象
      * @return CompletableFuture<ShowPrivacyRuleResponse>
      */
     public CompletableFuture<ShowPrivacyRuleResponse> showPrivacyRuleAsync(ShowPrivacyRuleRequest request) {
@@ -2809,13 +2748,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPrivacyRuleRequest 请求对象
+     * @param request ShowPrivacyRuleRequest 请求对象
      * @return AsyncInvoker<ShowPrivacyRuleRequest, ShowPrivacyRuleResponse>
      */
     public AsyncInvoker<ShowPrivacyRuleRequest, ShowPrivacyRuleResponse> showPrivacyRuleAsyncInvoker(
         ShowPrivacyRuleRequest request) {
-        return new AsyncInvoker<ShowPrivacyRuleRequest, ShowPrivacyRuleResponse>(request, WafMeta.showPrivacyRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showPrivacyRule, hcClient);
     }
 
     /**
@@ -2825,7 +2763,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPunishmentRuleRequest 请求对象
+     * @param request ShowPunishmentRuleRequest 请求对象
      * @return CompletableFuture<ShowPunishmentRuleResponse>
      */
     public CompletableFuture<ShowPunishmentRuleResponse> showPunishmentRuleAsync(ShowPunishmentRuleRequest request) {
@@ -2839,13 +2777,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPunishmentRuleRequest 请求对象
+     * @param request ShowPunishmentRuleRequest 请求对象
      * @return AsyncInvoker<ShowPunishmentRuleRequest, ShowPunishmentRuleResponse>
      */
     public AsyncInvoker<ShowPunishmentRuleRequest, ShowPunishmentRuleResponse> showPunishmentRuleAsyncInvoker(
         ShowPunishmentRuleRequest request) {
-        return new AsyncInvoker<ShowPunishmentRuleRequest, ShowPunishmentRuleResponse>(request,
-            WafMeta.showPunishmentRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showPunishmentRule, hcClient);
     }
 
     /**
@@ -2855,7 +2792,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSourceIpRequest 请求对象
+     * @param request ShowSourceIpRequest 请求对象
      * @return CompletableFuture<ShowSourceIpResponse>
      */
     public CompletableFuture<ShowSourceIpResponse> showSourceIpAsync(ShowSourceIpRequest request) {
@@ -2869,12 +2806,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSourceIpRequest 请求对象
+     * @param request ShowSourceIpRequest 请求对象
      * @return AsyncInvoker<ShowSourceIpRequest, ShowSourceIpResponse>
      */
     public AsyncInvoker<ShowSourceIpRequest, ShowSourceIpResponse> showSourceIpAsyncInvoker(
         ShowSourceIpRequest request) {
-        return new AsyncInvoker<ShowSourceIpRequest, ShowSourceIpResponse>(request, WafMeta.showSourceIp, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showSourceIp, hcClient);
     }
 
     /**
@@ -2884,7 +2821,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubscriptionInfoRequest 请求对象
+     * @param request ShowSubscriptionInfoRequest 请求对象
      * @return CompletableFuture<ShowSubscriptionInfoResponse>
      */
     public CompletableFuture<ShowSubscriptionInfoResponse> showSubscriptionInfoAsync(
@@ -2899,13 +2836,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSubscriptionInfoRequest 请求对象
+     * @param request ShowSubscriptionInfoRequest 请求对象
      * @return AsyncInvoker<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse>
      */
     public AsyncInvoker<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse> showSubscriptionInfoAsyncInvoker(
         ShowSubscriptionInfoRequest request) {
-        return new AsyncInvoker<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse>(request,
-            WafMeta.showSubscriptionInfo, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showSubscriptionInfo, hcClient);
     }
 
     /**
@@ -2915,7 +2851,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowValueListRequest 请求对象
+     * @param request ShowValueListRequest 请求对象
      * @return CompletableFuture<ShowValueListResponse>
      */
     public CompletableFuture<ShowValueListResponse> showValueListAsync(ShowValueListRequest request) {
@@ -2929,12 +2865,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowValueListRequest 请求对象
+     * @param request ShowValueListRequest 请求对象
      * @return AsyncInvoker<ShowValueListRequest, ShowValueListResponse>
      */
     public AsyncInvoker<ShowValueListRequest, ShowValueListResponse> showValueListAsyncInvoker(
         ShowValueListRequest request) {
-        return new AsyncInvoker<ShowValueListRequest, ShowValueListResponse>(request, WafMeta.showValueList, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showValueList, hcClient);
     }
 
     /**
@@ -2944,7 +2880,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWhiteBlackIpRuleRequest 请求对象
+     * @param request ShowWhiteBlackIpRuleRequest 请求对象
      * @return CompletableFuture<ShowWhiteBlackIpRuleResponse>
      */
     public CompletableFuture<ShowWhiteBlackIpRuleResponse> showWhiteBlackIpRuleAsync(
@@ -2959,13 +2895,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWhiteBlackIpRuleRequest 请求对象
+     * @param request ShowWhiteBlackIpRuleRequest 请求对象
      * @return AsyncInvoker<ShowWhiteBlackIpRuleRequest, ShowWhiteBlackIpRuleResponse>
      */
     public AsyncInvoker<ShowWhiteBlackIpRuleRequest, ShowWhiteBlackIpRuleResponse> showWhiteBlackIpRuleAsyncInvoker(
         ShowWhiteBlackIpRuleRequest request) {
-        return new AsyncInvoker<ShowWhiteBlackIpRuleRequest, ShowWhiteBlackIpRuleResponse>(request,
-            WafMeta.showWhiteBlackIpRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.showWhiteBlackIpRule, hcClient);
     }
 
     /**
@@ -2975,7 +2910,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlertNoticeConfigRequest 请求对象
+     * @param request UpdateAlertNoticeConfigRequest 请求对象
      * @return CompletableFuture<UpdateAlertNoticeConfigResponse>
      */
     public CompletableFuture<UpdateAlertNoticeConfigResponse> updateAlertNoticeConfigAsync(
@@ -2990,13 +2925,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlertNoticeConfigRequest 请求对象
+     * @param request UpdateAlertNoticeConfigRequest 请求对象
      * @return AsyncInvoker<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse>
      */
     public AsyncInvoker<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse> updateAlertNoticeConfigAsyncInvoker(
         UpdateAlertNoticeConfigRequest request) {
-        return new AsyncInvoker<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse>(request,
-            WafMeta.updateAlertNoticeConfig, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateAlertNoticeConfig, hcClient);
     }
 
     /**
@@ -3006,7 +2940,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAntiTamperRuleRefreshRequest 请求对象
+     * @param request UpdateAntiTamperRuleRefreshRequest 请求对象
      * @return CompletableFuture<UpdateAntiTamperRuleRefreshResponse>
      */
     public CompletableFuture<UpdateAntiTamperRuleRefreshResponse> updateAntiTamperRuleRefreshAsync(
@@ -3021,13 +2955,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAntiTamperRuleRefreshRequest 请求对象
+     * @param request UpdateAntiTamperRuleRefreshRequest 请求对象
      * @return AsyncInvoker<UpdateAntiTamperRuleRefreshRequest, UpdateAntiTamperRuleRefreshResponse>
      */
     public AsyncInvoker<UpdateAntiTamperRuleRefreshRequest, UpdateAntiTamperRuleRefreshResponse> updateAntiTamperRuleRefreshAsyncInvoker(
         UpdateAntiTamperRuleRefreshRequest request) {
-        return new AsyncInvoker<UpdateAntiTamperRuleRefreshRequest, UpdateAntiTamperRuleRefreshResponse>(request,
-            WafMeta.updateAntiTamperRuleRefresh, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateAntiTamperRuleRefresh, hcClient);
     }
 
     /**
@@ -3037,7 +2970,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAnticrawlerRuleRequest 请求对象
+     * @param request UpdateAnticrawlerRuleRequest 请求对象
      * @return CompletableFuture<UpdateAnticrawlerRuleResponse>
      */
     public CompletableFuture<UpdateAnticrawlerRuleResponse> updateAnticrawlerRuleAsync(
@@ -3052,13 +2985,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAnticrawlerRuleRequest 请求对象
+     * @param request UpdateAnticrawlerRuleRequest 请求对象
      * @return AsyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse>
      */
     public AsyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> updateAnticrawlerRuleAsyncInvoker(
         UpdateAnticrawlerRuleRequest request) {
-        return new AsyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse>(request,
-            WafMeta.updateAnticrawlerRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateAnticrawlerRule, hcClient);
     }
 
     /**
@@ -3068,7 +3000,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAnticrawlerRuleTypeRequest 请求对象
+     * @param request UpdateAnticrawlerRuleTypeRequest 请求对象
      * @return CompletableFuture<UpdateAnticrawlerRuleTypeResponse>
      */
     public CompletableFuture<UpdateAnticrawlerRuleTypeResponse> updateAnticrawlerRuleTypeAsync(
@@ -3083,13 +3015,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAnticrawlerRuleTypeRequest 请求对象
+     * @param request UpdateAnticrawlerRuleTypeRequest 请求对象
      * @return AsyncInvoker<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse>
      */
     public AsyncInvoker<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse> updateAnticrawlerRuleTypeAsyncInvoker(
         UpdateAnticrawlerRuleTypeRequest request) {
-        return new AsyncInvoker<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse>(request,
-            WafMeta.updateAnticrawlerRuleType, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateAnticrawlerRuleType, hcClient);
     }
 
     /**
@@ -3099,7 +3030,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAntileakageRuleRequest 请求对象
+     * @param request UpdateAntileakageRuleRequest 请求对象
      * @return CompletableFuture<UpdateAntileakageRuleResponse>
      */
     public CompletableFuture<UpdateAntileakageRuleResponse> updateAntileakageRuleAsync(
@@ -3114,13 +3045,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAntileakageRuleRequest 请求对象
+     * @param request UpdateAntileakageRuleRequest 请求对象
      * @return AsyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse>
      */
     public AsyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse> updateAntileakageRuleAsyncInvoker(
         UpdateAntileakageRuleRequest request) {
-        return new AsyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse>(request,
-            WafMeta.updateAntileakageRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateAntileakageRule, hcClient);
     }
 
     /**
@@ -3130,7 +3060,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCcRuleRequest 请求对象
+     * @param request UpdateCcRuleRequest 请求对象
      * @return CompletableFuture<UpdateCcRuleResponse>
      */
     public CompletableFuture<UpdateCcRuleResponse> updateCcRuleAsync(UpdateCcRuleRequest request) {
@@ -3144,12 +3074,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCcRuleRequest 请求对象
+     * @param request UpdateCcRuleRequest 请求对象
      * @return AsyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse>
      */
     public AsyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse> updateCcRuleAsyncInvoker(
         UpdateCcRuleRequest request) {
-        return new AsyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse>(request, WafMeta.updateCcRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateCcRule, hcClient);
     }
 
     /**
@@ -3159,7 +3089,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateRequest 请求对象
+     * @param request UpdateCertificateRequest 请求对象
      * @return CompletableFuture<UpdateCertificateResponse>
      */
     public CompletableFuture<UpdateCertificateResponse> updateCertificateAsync(UpdateCertificateRequest request) {
@@ -3173,13 +3103,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateRequest 请求对象
+     * @param request UpdateCertificateRequest 请求对象
      * @return AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>
      */
     public AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateAsyncInvoker(
         UpdateCertificateRequest request) {
-        return new AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>(request, WafMeta.updateCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateCertificate, hcClient);
     }
 
     /**
@@ -3189,7 +3118,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomRuleRequest 请求对象
+     * @param request UpdateCustomRuleRequest 请求对象
      * @return CompletableFuture<UpdateCustomRuleResponse>
      */
     public CompletableFuture<UpdateCustomRuleResponse> updateCustomRuleAsync(UpdateCustomRuleRequest request) {
@@ -3203,13 +3132,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomRuleRequest 请求对象
+     * @param request UpdateCustomRuleRequest 请求对象
      * @return AsyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse>
      */
     public AsyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse> updateCustomRuleAsyncInvoker(
         UpdateCustomRuleRequest request) {
-        return new AsyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse>(request, WafMeta.updateCustomRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateCustomRule, hcClient);
     }
 
     /**
@@ -3219,7 +3147,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGeoipRuleRequest 请求对象
+     * @param request UpdateGeoipRuleRequest 请求对象
      * @return CompletableFuture<UpdateGeoipRuleResponse>
      */
     public CompletableFuture<UpdateGeoipRuleResponse> updateGeoipRuleAsync(UpdateGeoipRuleRequest request) {
@@ -3233,13 +3161,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGeoipRuleRequest 请求对象
+     * @param request UpdateGeoipRuleRequest 请求对象
      * @return AsyncInvoker<UpdateGeoipRuleRequest, UpdateGeoipRuleResponse>
      */
     public AsyncInvoker<UpdateGeoipRuleRequest, UpdateGeoipRuleResponse> updateGeoipRuleAsyncInvoker(
         UpdateGeoipRuleRequest request) {
-        return new AsyncInvoker<UpdateGeoipRuleRequest, UpdateGeoipRuleResponse>(request, WafMeta.updateGeoipRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateGeoipRule, hcClient);
     }
 
     /**
@@ -3249,7 +3176,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHostRequest 请求对象
+     * @param request UpdateHostRequest 请求对象
      * @return CompletableFuture<UpdateHostResponse>
      */
     public CompletableFuture<UpdateHostResponse> updateHostAsync(UpdateHostRequest request) {
@@ -3263,11 +3190,11 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHostRequest 请求对象
+     * @param request UpdateHostRequest 请求对象
      * @return AsyncInvoker<UpdateHostRequest, UpdateHostResponse>
      */
     public AsyncInvoker<UpdateHostRequest, UpdateHostResponse> updateHostAsyncInvoker(UpdateHostRequest request) {
-        return new AsyncInvoker<UpdateHostRequest, UpdateHostResponse>(request, WafMeta.updateHost, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateHost, hcClient);
     }
 
     /**
@@ -3277,7 +3204,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHostProtectStatusRequest 请求对象
+     * @param request UpdateHostProtectStatusRequest 请求对象
      * @return CompletableFuture<UpdateHostProtectStatusResponse>
      */
     public CompletableFuture<UpdateHostProtectStatusResponse> updateHostProtectStatusAsync(
@@ -3292,13 +3219,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHostProtectStatusRequest 请求对象
+     * @param request UpdateHostProtectStatusRequest 请求对象
      * @return AsyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse>
      */
     public AsyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse> updateHostProtectStatusAsyncInvoker(
         UpdateHostProtectStatusRequest request) {
-        return new AsyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse>(request,
-            WafMeta.updateHostProtectStatus, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateHostProtectStatus, hcClient);
     }
 
     /**
@@ -3308,7 +3234,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIgnoreRuleRequest 请求对象
+     * @param request UpdateIgnoreRuleRequest 请求对象
      * @return CompletableFuture<UpdateIgnoreRuleResponse>
      */
     public CompletableFuture<UpdateIgnoreRuleResponse> updateIgnoreRuleAsync(UpdateIgnoreRuleRequest request) {
@@ -3322,13 +3248,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIgnoreRuleRequest 请求对象
+     * @param request UpdateIgnoreRuleRequest 请求对象
      * @return AsyncInvoker<UpdateIgnoreRuleRequest, UpdateIgnoreRuleResponse>
      */
     public AsyncInvoker<UpdateIgnoreRuleRequest, UpdateIgnoreRuleResponse> updateIgnoreRuleAsyncInvoker(
         UpdateIgnoreRuleRequest request) {
-        return new AsyncInvoker<UpdateIgnoreRuleRequest, UpdateIgnoreRuleResponse>(request, WafMeta.updateIgnoreRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateIgnoreRule, hcClient);
     }
 
     /**
@@ -3338,7 +3263,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpGroupRequest 请求对象
+     * @param request UpdateIpGroupRequest 请求对象
      * @return CompletableFuture<UpdateIpGroupResponse>
      */
     public CompletableFuture<UpdateIpGroupResponse> updateIpGroupAsync(UpdateIpGroupRequest request) {
@@ -3352,12 +3277,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpGroupRequest 请求对象
+     * @param request UpdateIpGroupRequest 请求对象
      * @return AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>
      */
     public AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroupAsyncInvoker(
         UpdateIpGroupRequest request) {
-        return new AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>(request, WafMeta.updateIpGroup, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateIpGroup, hcClient);
     }
 
     /**
@@ -3367,7 +3292,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLtsInfoConfigRequest 请求对象
+     * @param request UpdateLtsInfoConfigRequest 请求对象
      * @return CompletableFuture<UpdateLtsInfoConfigResponse>
      */
     public CompletableFuture<UpdateLtsInfoConfigResponse> updateLtsInfoConfigAsync(UpdateLtsInfoConfigRequest request) {
@@ -3381,13 +3306,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateLtsInfoConfigRequest 请求对象
+     * @param request UpdateLtsInfoConfigRequest 请求对象
      * @return AsyncInvoker<UpdateLtsInfoConfigRequest, UpdateLtsInfoConfigResponse>
      */
     public AsyncInvoker<UpdateLtsInfoConfigRequest, UpdateLtsInfoConfigResponse> updateLtsInfoConfigAsyncInvoker(
         UpdateLtsInfoConfigRequest request) {
-        return new AsyncInvoker<UpdateLtsInfoConfigRequest, UpdateLtsInfoConfigResponse>(request,
-            WafMeta.updateLtsInfoConfig, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateLtsInfoConfig, hcClient);
     }
 
     /**
@@ -3397,7 +3321,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRequest 请求对象
+     * @param request UpdatePolicyRequest 请求对象
      * @return CompletableFuture<UpdatePolicyResponse>
      */
     public CompletableFuture<UpdatePolicyResponse> updatePolicyAsync(UpdatePolicyRequest request) {
@@ -3411,12 +3335,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRequest 请求对象
+     * @param request UpdatePolicyRequest 请求对象
      * @return AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>
      */
     public AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicyAsyncInvoker(
         UpdatePolicyRequest request) {
-        return new AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>(request, WafMeta.updatePolicy, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updatePolicy, hcClient);
     }
 
     /**
@@ -3426,7 +3350,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyProtectHostRequest 请求对象
+     * @param request UpdatePolicyProtectHostRequest 请求对象
      * @return CompletableFuture<UpdatePolicyProtectHostResponse>
      */
     public CompletableFuture<UpdatePolicyProtectHostResponse> updatePolicyProtectHostAsync(
@@ -3441,13 +3365,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyProtectHostRequest 请求对象
+     * @param request UpdatePolicyProtectHostRequest 请求对象
      * @return AsyncInvoker<UpdatePolicyProtectHostRequest, UpdatePolicyProtectHostResponse>
      */
     public AsyncInvoker<UpdatePolicyProtectHostRequest, UpdatePolicyProtectHostResponse> updatePolicyProtectHostAsyncInvoker(
         UpdatePolicyProtectHostRequest request) {
-        return new AsyncInvoker<UpdatePolicyProtectHostRequest, UpdatePolicyProtectHostResponse>(request,
-            WafMeta.updatePolicyProtectHost, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updatePolicyProtectHost, hcClient);
     }
 
     /**
@@ -3457,7 +3380,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRuleStatusRequest 请求对象
+     * @param request UpdatePolicyRuleStatusRequest 请求对象
      * @return CompletableFuture<UpdatePolicyRuleStatusResponse>
      */
     public CompletableFuture<UpdatePolicyRuleStatusResponse> updatePolicyRuleStatusAsync(
@@ -3472,13 +3395,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRuleStatusRequest 请求对象
+     * @param request UpdatePolicyRuleStatusRequest 请求对象
      * @return AsyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse>
      */
     public AsyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse> updatePolicyRuleStatusAsyncInvoker(
         UpdatePolicyRuleStatusRequest request) {
-        return new AsyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse>(request,
-            WafMeta.updatePolicyRuleStatus, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updatePolicyRuleStatus, hcClient);
     }
 
     /**
@@ -3488,7 +3410,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePremiumHostRequest 请求对象
+     * @param request UpdatePremiumHostRequest 请求对象
      * @return CompletableFuture<UpdatePremiumHostResponse>
      */
     public CompletableFuture<UpdatePremiumHostResponse> updatePremiumHostAsync(UpdatePremiumHostRequest request) {
@@ -3502,13 +3424,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePremiumHostRequest 请求对象
+     * @param request UpdatePremiumHostRequest 请求对象
      * @return AsyncInvoker<UpdatePremiumHostRequest, UpdatePremiumHostResponse>
      */
     public AsyncInvoker<UpdatePremiumHostRequest, UpdatePremiumHostResponse> updatePremiumHostAsyncInvoker(
         UpdatePremiumHostRequest request) {
-        return new AsyncInvoker<UpdatePremiumHostRequest, UpdatePremiumHostResponse>(request, WafMeta.updatePremiumHost,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updatePremiumHost, hcClient);
     }
 
     /**
@@ -3518,7 +3439,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePremiumHostProtectStatusRequest 请求对象
+     * @param request UpdatePremiumHostProtectStatusRequest 请求对象
      * @return CompletableFuture<UpdatePremiumHostProtectStatusResponse>
      */
     public CompletableFuture<UpdatePremiumHostProtectStatusResponse> updatePremiumHostProtectStatusAsync(
@@ -3533,13 +3454,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePremiumHostProtectStatusRequest 请求对象
+     * @param request UpdatePremiumHostProtectStatusRequest 请求对象
      * @return AsyncInvoker<UpdatePremiumHostProtectStatusRequest, UpdatePremiumHostProtectStatusResponse>
      */
     public AsyncInvoker<UpdatePremiumHostProtectStatusRequest, UpdatePremiumHostProtectStatusResponse> updatePremiumHostProtectStatusAsyncInvoker(
         UpdatePremiumHostProtectStatusRequest request) {
-        return new AsyncInvoker<UpdatePremiumHostProtectStatusRequest, UpdatePremiumHostProtectStatusResponse>(request,
-            WafMeta.updatePremiumHostProtectStatus, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updatePremiumHostProtectStatus, hcClient);
     }
 
     /**
@@ -3549,7 +3469,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrivacyRuleRequest 请求对象
+     * @param request UpdatePrivacyRuleRequest 请求对象
      * @return CompletableFuture<UpdatePrivacyRuleResponse>
      */
     public CompletableFuture<UpdatePrivacyRuleResponse> updatePrivacyRuleAsync(UpdatePrivacyRuleRequest request) {
@@ -3563,13 +3483,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePrivacyRuleRequest 请求对象
+     * @param request UpdatePrivacyRuleRequest 请求对象
      * @return AsyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse>
      */
     public AsyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse> updatePrivacyRuleAsyncInvoker(
         UpdatePrivacyRuleRequest request) {
-        return new AsyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse>(request, WafMeta.updatePrivacyRule,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updatePrivacyRule, hcClient);
     }
 
     /**
@@ -3579,7 +3498,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePunishmentRuleRequest 请求对象
+     * @param request UpdatePunishmentRuleRequest 请求对象
      * @return CompletableFuture<UpdatePunishmentRuleResponse>
      */
     public CompletableFuture<UpdatePunishmentRuleResponse> updatePunishmentRuleAsync(
@@ -3594,13 +3513,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePunishmentRuleRequest 请求对象
+     * @param request UpdatePunishmentRuleRequest 请求对象
      * @return AsyncInvoker<UpdatePunishmentRuleRequest, UpdatePunishmentRuleResponse>
      */
     public AsyncInvoker<UpdatePunishmentRuleRequest, UpdatePunishmentRuleResponse> updatePunishmentRuleAsyncInvoker(
         UpdatePunishmentRuleRequest request) {
-        return new AsyncInvoker<UpdatePunishmentRuleRequest, UpdatePunishmentRuleResponse>(request,
-            WafMeta.updatePunishmentRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updatePunishmentRule, hcClient);
     }
 
     /**
@@ -3610,7 +3528,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateValueListRequest 请求对象
+     * @param request UpdateValueListRequest 请求对象
      * @return CompletableFuture<UpdateValueListResponse>
      */
     public CompletableFuture<UpdateValueListResponse> updateValueListAsync(UpdateValueListRequest request) {
@@ -3624,13 +3542,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateValueListRequest 请求对象
+     * @param request UpdateValueListRequest 请求对象
      * @return AsyncInvoker<UpdateValueListRequest, UpdateValueListResponse>
      */
     public AsyncInvoker<UpdateValueListRequest, UpdateValueListResponse> updateValueListAsyncInvoker(
         UpdateValueListRequest request) {
-        return new AsyncInvoker<UpdateValueListRequest, UpdateValueListResponse>(request, WafMeta.updateValueList,
-            hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateValueList, hcClient);
     }
 
     /**
@@ -3640,7 +3557,7 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWhiteblackipRuleRequest 请求对象
+     * @param request UpdateWhiteblackipRuleRequest 请求对象
      * @return CompletableFuture<UpdateWhiteblackipRuleResponse>
      */
     public CompletableFuture<UpdateWhiteblackipRuleResponse> updateWhiteblackipRuleAsync(
@@ -3655,13 +3572,12 @@ public class WafAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWhiteblackipRuleRequest 请求对象
+     * @param request UpdateWhiteblackipRuleRequest 请求对象
      * @return AsyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse>
      */
     public AsyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse> updateWhiteblackipRuleAsyncInvoker(
         UpdateWhiteblackipRuleRequest request) {
-        return new AsyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse>(request,
-            WafMeta.updateWhiteblackipRule, hcClient);
+        return new AsyncInvoker<>(request, WafMeta.updateWhiteblackipRule, hcClient);
     }
 
 }

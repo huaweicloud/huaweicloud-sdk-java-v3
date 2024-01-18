@@ -30,7 +30,7 @@ public class CheckQuotaResponse extends SdkResponse {
     }
 
     /**
-     * 配额是否足够true：足够 false：不足
+     * 配额是否足够true：足够 false：不足。
      * @return isEnough
      */
     public Boolean getIsEnough() {
@@ -63,7 +63,7 @@ public class CheckQuotaResponse extends SdkResponse {
     }
 
     /**
-     * 配额剩余数量信息
+     * 配额剩余数量信息。
      * @return quotaRemainder
      */
     public List<QuotaRemainderData> getQuotaRemainder() {

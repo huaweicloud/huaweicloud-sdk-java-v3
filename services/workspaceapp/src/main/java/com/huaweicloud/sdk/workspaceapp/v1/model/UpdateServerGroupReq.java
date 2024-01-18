@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新服务器组请求
+ * 更新服务器组请求。
  */
 public class UpdateServerGroupReq {
 
@@ -72,7 +72,7 @@ public class UpdateServerGroupReq {
     }
 
     /**
-     * 服务器组名称，名称需满足如下规则: 1. 由中文，英文大小写，数字，_-空格组成，不能全为空格, 首位不为空 2. 长度范围1~64个字符
+     * 服务器组名称，名称需满足如下规则: 1. 由中文，英文大小写，数字，_-组成，不能有空格。 2. 长度范围1~64个字符。
      * @return name
      */
     public String getName() {
@@ -89,7 +89,7 @@ public class UpdateServerGroupReq {
     }
 
     /**
-     * 服务器组描述
+     * 服务器组描述。
      * @return description
      */
     public String getDescription() {
@@ -149,7 +149,7 @@ public class UpdateServerGroupReq {
     }
 
     /**
-     * 服务器组关联的镜像ID，更新镜像ID只对组下新创建的云服务器生效
+     * 服务器组关联的镜像ID，更新镜像ID只对组下新创建的云服务器生效。
      * @return imageId
      */
     public String getImageId() {
@@ -166,7 +166,7 @@ public class UpdateServerGroupReq {
     }
 
     /**
-     * 服务器组的镜像的productId
+     * 服务器组的镜像的productId。
      * @return imageProductId
      */
     public String getImageProductId() {
@@ -217,7 +217,7 @@ public class UpdateServerGroupReq {
     }
 
     /**
-     * 磁盘容量，单位GB
+     * 磁盘容量，单位GB。
      * minimum: 10
      * maximum: 32768
      * @return systemDiskSize
@@ -236,7 +236,7 @@ public class UpdateServerGroupReq {
     }
 
     /**
-     * 默认组织名称
+     * 默认组织名称。
      * @return ouName
      */
     public String getOuName() {

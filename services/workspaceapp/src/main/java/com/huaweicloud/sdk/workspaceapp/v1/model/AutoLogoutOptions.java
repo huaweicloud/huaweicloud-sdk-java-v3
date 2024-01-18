@@ -21,7 +21,7 @@ public class AutoLogoutOptions {
     }
 
     /**
-     * 会话断连保留时长（分钟）
+     * 会话断连保留时长（分钟）。
      * minimum: 1
      * maximum: 86400
      * @return sbcLogoutWaitingTime

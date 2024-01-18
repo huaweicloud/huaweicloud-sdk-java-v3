@@ -16,9 +16,9 @@ import com.huaweicloud.sdk.sa.v1.model.ProductInfo;
 public class SaMeta {
 
     public static final HttpRequestDef<CheckProductHealthyRequest, CheckProductHealthyResponse> checkProductHealthy =
-        genForcheckProductHealthy();
+        genForCheckProductHealthy();
 
-    private static HttpRequestDef<CheckProductHealthyRequest, CheckProductHealthyResponse> genForcheckProductHealthy() {
+    private static HttpRequestDef<CheckProductHealthyRequest, CheckProductHealthyResponse> genForCheckProductHealthy() {
         // basic
         HttpRequestDef.Builder<CheckProductHealthyRequest, CheckProductHealthyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckProductHealthyRequest.class, CheckProductHealthyResponse.class)
@@ -31,25 +31,21 @@ public class SaMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckProductHealthyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CheckProductHealthyRequest::getXLanguage, CheckProductHealthyRequest::setXLanguage));
         builder.<ProductInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProductInfo.class),
-            f -> f.withMarshaller(CheckProductHealthyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckProductHealthyRequest::getBody, CheckProductHealthyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportEventsRequest, ImportEventsResponse> importEvents = genForimportEvents();
+    public static final HttpRequestDef<ImportEventsRequest, ImportEventsResponse> importEvents = genForImportEvents();
 
-    private static HttpRequestDef<ImportEventsRequest, ImportEventsResponse> genForimportEvents() {
+    private static HttpRequestDef<ImportEventsRequest, ImportEventsResponse> genForImportEvents() {
         // basic
         HttpRequestDef.Builder<ImportEventsRequest, ImportEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportEventsRequest.class, ImportEventsResponse.class)
@@ -62,16 +58,12 @@ public class SaMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportEventsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ImportEventsRequest::getXLanguage, ImportEventsRequest::setXLanguage));
         builder.<Events>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Events.class),
-            f -> f.withMarshaller(ImportEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportEventsRequest::getBody, ImportEventsRequest::setBody));
 
         // response
 

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 存储定义元数据
+ * 存储定义元数据。
  */
 public class Storage {
 
@@ -26,7 +26,7 @@ public class Storage {
     }
 
     /**
-     * SFS文件系统名称
+     * SFS文件系统名称。
      * @return storageHandle
      */
     public String getStorageHandle() {
@@ -43,7 +43,7 @@ public class Storage {
     }
 
     /**
-     * 存储类型 * `sfs` - sfs3.0存储
+     * 存储类型： * `sfs` - sfs3.0存储。
      * @return storageClass
      */
     public String getStorageClass() {

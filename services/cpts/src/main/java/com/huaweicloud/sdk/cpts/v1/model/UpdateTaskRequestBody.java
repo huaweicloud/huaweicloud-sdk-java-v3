@@ -74,7 +74,7 @@ public class UpdateTaskRequestBody {
     }
 
     /**
-     * id
+     * 任务id
      * minimum: 0
      * maximum: 2147483647
      * @return id
@@ -93,7 +93,7 @@ public class UpdateTaskRequestBody {
     }
 
     /**
-     * name
+     * 任务名称
      * @return name
      */
     public String getName() {
@@ -110,7 +110,7 @@ public class UpdateTaskRequestBody {
     }
 
     /**
-     * description
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -127,7 +127,7 @@ public class UpdateTaskRequestBody {
     }
 
     /**
-     * project_id
+     * 工程id
      * minimum: 0
      * maximum: 2147483647
      * @return projectId
@@ -146,7 +146,7 @@ public class UpdateTaskRequestBody {
     }
 
     /**
-     * run_status
+     * 任务运行状态（9：等待运行；0：运行中；1：暂停；2：结束； 3：异常中止；4：用户主动终止（完成状态）；5：用户主动终止）
      * minimum: 0
      * maximum: 2147483647
      * @return runStatus
@@ -165,7 +165,7 @@ public class UpdateTaskRequestBody {
     }
 
     /**
-     * run_type
+     * 任务类型（0：旧版本任务；1：融合版本任务）
      * minimum: 0
      * maximum: 2147483647
      * @return runType
@@ -226,7 +226,7 @@ public class UpdateTaskRequestBody {
     }
 
     /**
-     * case_list
+     * 用例信息
      * @return caseList
      */
     public List<CaseInfoDetail> getCaseList() {
@@ -243,7 +243,7 @@ public class UpdateTaskRequestBody {
     }
 
     /**
-     * operate_mode
+     * 压力阶段模式，0：时长模式；1：次数模式
      * minimum: 0
      * maximum: 2147483647
      * @return operateMode
@@ -262,7 +262,7 @@ public class UpdateTaskRequestBody {
     }
 
     /**
-     * bench_concurrent
+     * 基准并发
      * minimum: 0
      * maximum: 2147483647
      * @return benchConcurrent
@@ -298,7 +298,7 @@ public class UpdateTaskRequestBody {
     }
 
     /**
-     * related_temp_running_data
+     * 最近一次运行的报告简略信息
      * @return relatedTempRunningData
      */
     public List<RelatedTempRunningData> getRelatedTempRunningData() {

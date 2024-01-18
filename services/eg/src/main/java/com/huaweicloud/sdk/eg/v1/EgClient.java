@@ -128,7 +128,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckPutEventsRequest 请求对象
+     * @param request CheckPutEventsRequest 请求对象
      * @return CheckPutEventsResponse
      */
     public CheckPutEventsResponse checkPutEvents(CheckPutEventsRequest request) {
@@ -142,12 +142,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckPutEventsRequest 请求对象
+     * @param request CheckPutEventsRequest 请求对象
      * @return SyncInvoker<CheckPutEventsRequest, CheckPutEventsResponse>
      */
     public SyncInvoker<CheckPutEventsRequest, CheckPutEventsResponse> checkPutEventsInvoker(
         CheckPutEventsRequest request) {
-        return new SyncInvoker<CheckPutEventsRequest, CheckPutEventsResponse>(request, EgMeta.checkPutEvents, hcClient);
+        return new SyncInvoker<>(request, EgMeta.checkPutEvents, hcClient);
     }
 
     /**
@@ -157,7 +157,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgenciesRequest 请求对象
+     * @param request CreateAgenciesRequest 请求对象
      * @return CreateAgenciesResponse
      */
     public CreateAgenciesResponse createAgencies(CreateAgenciesRequest request) {
@@ -171,12 +171,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgenciesRequest 请求对象
+     * @param request CreateAgenciesRequest 请求对象
      * @return SyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse>
      */
     public SyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse> createAgenciesInvoker(
         CreateAgenciesRequest request) {
-        return new SyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse>(request, EgMeta.createAgencies, hcClient);
+        return new SyncInvoker<>(request, EgMeta.createAgencies, hcClient);
     }
 
     /**
@@ -186,7 +186,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateChannelRequest 请求对象
+     * @param request CreateChannelRequest 请求对象
      * @return CreateChannelResponse
      */
     public CreateChannelResponse createChannel(CreateChannelRequest request) {
@@ -200,11 +200,11 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateChannelRequest 请求对象
+     * @param request CreateChannelRequest 请求对象
      * @return SyncInvoker<CreateChannelRequest, CreateChannelResponse>
      */
     public SyncInvoker<CreateChannelRequest, CreateChannelResponse> createChannelInvoker(CreateChannelRequest request) {
-        return new SyncInvoker<CreateChannelRequest, CreateChannelResponse>(request, EgMeta.createChannel, hcClient);
+        return new SyncInvoker<>(request, EgMeta.createChannel, hcClient);
     }
 
     /**
@@ -214,7 +214,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionRequest 请求对象
+     * @param request CreateConnectionRequest 请求对象
      * @return CreateConnectionResponse
      */
     public CreateConnectionResponse createConnection(CreateConnectionRequest request) {
@@ -228,13 +228,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionRequest 请求对象
+     * @param request CreateConnectionRequest 请求对象
      * @return SyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
      */
     public SyncInvoker<CreateConnectionRequest, CreateConnectionResponse> createConnectionInvoker(
         CreateConnectionRequest request) {
-        return new SyncInvoker<CreateConnectionRequest, CreateConnectionResponse>(request, EgMeta.createConnection,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.createConnection, hcClient);
     }
 
     /**
@@ -244,7 +243,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointRequest 请求对象
+     * @param request CreateEndpointRequest 请求对象
      * @return CreateEndpointResponse
      */
     public CreateEndpointResponse createEndpoint(CreateEndpointRequest request) {
@@ -258,12 +257,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointRequest 请求对象
+     * @param request CreateEndpointRequest 请求对象
      * @return SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
      */
     public SyncInvoker<CreateEndpointRequest, CreateEndpointResponse> createEndpointInvoker(
         CreateEndpointRequest request) {
-        return new SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>(request, EgMeta.createEndpoint, hcClient);
+        return new SyncInvoker<>(request, EgMeta.createEndpoint, hcClient);
     }
 
     /**
@@ -273,7 +272,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventSourceRequest 请求对象
+     * @param request CreateEventSourceRequest 请求对象
      * @return CreateEventSourceResponse
      */
     public CreateEventSourceResponse createEventSource(CreateEventSourceRequest request) {
@@ -287,13 +286,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventSourceRequest 请求对象
+     * @param request CreateEventSourceRequest 请求对象
      * @return SyncInvoker<CreateEventSourceRequest, CreateEventSourceResponse>
      */
     public SyncInvoker<CreateEventSourceRequest, CreateEventSourceResponse> createEventSourceInvoker(
         CreateEventSourceRequest request) {
-        return new SyncInvoker<CreateEventSourceRequest, CreateEventSourceResponse>(request, EgMeta.createEventSource,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.createEventSource, hcClient);
     }
 
     /**
@@ -303,7 +301,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventStreamingRequest 请求对象
+     * @param request CreateEventStreamingRequest 请求对象
      * @return CreateEventStreamingResponse
      */
     public CreateEventStreamingResponse createEventStreaming(CreateEventStreamingRequest request) {
@@ -317,13 +315,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventStreamingRequest 请求对象
+     * @param request CreateEventStreamingRequest 请求对象
      * @return SyncInvoker<CreateEventStreamingRequest, CreateEventStreamingResponse>
      */
     public SyncInvoker<CreateEventStreamingRequest, CreateEventStreamingResponse> createEventStreamingInvoker(
         CreateEventStreamingRequest request) {
-        return new SyncInvoker<CreateEventStreamingRequest, CreateEventStreamingResponse>(request,
-            EgMeta.createEventStreaming, hcClient);
+        return new SyncInvoker<>(request, EgMeta.createEventStreaming, hcClient);
     }
 
     /**
@@ -333,7 +330,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubscriptionRequest 请求对象
+     * @param request CreateSubscriptionRequest 请求对象
      * @return CreateSubscriptionResponse
      */
     public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest request) {
@@ -347,13 +344,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubscriptionRequest 请求对象
+     * @param request CreateSubscriptionRequest 请求对象
      * @return SyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse>
      */
     public SyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse> createSubscriptionInvoker(
         CreateSubscriptionRequest request) {
-        return new SyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse>(request,
-            EgMeta.createSubscription, hcClient);
+        return new SyncInvoker<>(request, EgMeta.createSubscription, hcClient);
     }
 
     /**
@@ -363,7 +359,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubscriptionTargetRequest 请求对象
+     * @param request CreateSubscriptionTargetRequest 请求对象
      * @return CreateSubscriptionTargetResponse
      */
     public CreateSubscriptionTargetResponse createSubscriptionTarget(CreateSubscriptionTargetRequest request) {
@@ -377,13 +373,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSubscriptionTargetRequest 请求对象
+     * @param request CreateSubscriptionTargetRequest 请求对象
      * @return SyncInvoker<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse>
      */
     public SyncInvoker<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse> createSubscriptionTargetInvoker(
         CreateSubscriptionTargetRequest request) {
-        return new SyncInvoker<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse>(request,
-            EgMeta.createSubscriptionTarget, hcClient);
+        return new SyncInvoker<>(request, EgMeta.createSubscriptionTarget, hcClient);
     }
 
     /**
@@ -393,7 +388,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteChannelRequest 请求对象
+     * @param request DeleteChannelRequest 请求对象
      * @return DeleteChannelResponse
      */
     public DeleteChannelResponse deleteChannel(DeleteChannelRequest request) {
@@ -407,11 +402,11 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteChannelRequest 请求对象
+     * @param request DeleteChannelRequest 请求对象
      * @return SyncInvoker<DeleteChannelRequest, DeleteChannelResponse>
      */
     public SyncInvoker<DeleteChannelRequest, DeleteChannelResponse> deleteChannelInvoker(DeleteChannelRequest request) {
-        return new SyncInvoker<DeleteChannelRequest, DeleteChannelResponse>(request, EgMeta.deleteChannel, hcClient);
+        return new SyncInvoker<>(request, EgMeta.deleteChannel, hcClient);
     }
 
     /**
@@ -421,7 +416,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectionRequest 请求对象
+     * @param request DeleteConnectionRequest 请求对象
      * @return DeleteConnectionResponse
      */
     public DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request) {
@@ -435,13 +430,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectionRequest 请求对象
+     * @param request DeleteConnectionRequest 请求对象
      * @return SyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse>
      */
     public SyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse> deleteConnectionInvoker(
         DeleteConnectionRequest request) {
-        return new SyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse>(request, EgMeta.deleteConnection,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.deleteConnection, hcClient);
     }
 
     /**
@@ -451,7 +445,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointRequest 请求对象
+     * @param request DeleteEndpointRequest 请求对象
      * @return DeleteEndpointResponse
      */
     public DeleteEndpointResponse deleteEndpoint(DeleteEndpointRequest request) {
@@ -465,12 +459,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointRequest 请求对象
+     * @param request DeleteEndpointRequest 请求对象
      * @return SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>
      */
     public SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpointInvoker(
         DeleteEndpointRequest request) {
-        return new SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>(request, EgMeta.deleteEndpoint, hcClient);
+        return new SyncInvoker<>(request, EgMeta.deleteEndpoint, hcClient);
     }
 
     /**
@@ -480,7 +474,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventSourceRequest 请求对象
+     * @param request DeleteEventSourceRequest 请求对象
      * @return DeleteEventSourceResponse
      */
     public DeleteEventSourceResponse deleteEventSource(DeleteEventSourceRequest request) {
@@ -494,13 +488,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventSourceRequest 请求对象
+     * @param request DeleteEventSourceRequest 请求对象
      * @return SyncInvoker<DeleteEventSourceRequest, DeleteEventSourceResponse>
      */
     public SyncInvoker<DeleteEventSourceRequest, DeleteEventSourceResponse> deleteEventSourceInvoker(
         DeleteEventSourceRequest request) {
-        return new SyncInvoker<DeleteEventSourceRequest, DeleteEventSourceResponse>(request, EgMeta.deleteEventSource,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.deleteEventSource, hcClient);
     }
 
     /**
@@ -510,7 +503,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventStreamingRequest 请求对象
+     * @param request DeleteEventStreamingRequest 请求对象
      * @return DeleteEventStreamingResponse
      */
     public DeleteEventStreamingResponse deleteEventStreaming(DeleteEventStreamingRequest request) {
@@ -524,13 +517,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEventStreamingRequest 请求对象
+     * @param request DeleteEventStreamingRequest 请求对象
      * @return SyncInvoker<DeleteEventStreamingRequest, DeleteEventStreamingResponse>
      */
     public SyncInvoker<DeleteEventStreamingRequest, DeleteEventStreamingResponse> deleteEventStreamingInvoker(
         DeleteEventStreamingRequest request) {
-        return new SyncInvoker<DeleteEventStreamingRequest, DeleteEventStreamingResponse>(request,
-            EgMeta.deleteEventStreaming, hcClient);
+        return new SyncInvoker<>(request, EgMeta.deleteEventStreaming, hcClient);
     }
 
     /**
@@ -540,7 +532,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubscriptionRequest 请求对象
+     * @param request DeleteSubscriptionRequest 请求对象
      * @return DeleteSubscriptionResponse
      */
     public DeleteSubscriptionResponse deleteSubscription(DeleteSubscriptionRequest request) {
@@ -554,13 +546,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubscriptionRequest 请求对象
+     * @param request DeleteSubscriptionRequest 请求对象
      * @return SyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse>
      */
     public SyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse> deleteSubscriptionInvoker(
         DeleteSubscriptionRequest request) {
-        return new SyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse>(request,
-            EgMeta.deleteSubscription, hcClient);
+        return new SyncInvoker<>(request, EgMeta.deleteSubscription, hcClient);
     }
 
     /**
@@ -570,7 +561,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubscriptionTargetRequest 请求对象
+     * @param request DeleteSubscriptionTargetRequest 请求对象
      * @return DeleteSubscriptionTargetResponse
      */
     public DeleteSubscriptionTargetResponse deleteSubscriptionTarget(DeleteSubscriptionTargetRequest request) {
@@ -584,13 +575,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSubscriptionTargetRequest 请求对象
+     * @param request DeleteSubscriptionTargetRequest 请求对象
      * @return SyncInvoker<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse>
      */
     public SyncInvoker<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse> deleteSubscriptionTargetInvoker(
         DeleteSubscriptionTargetRequest request) {
-        return new SyncInvoker<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse>(request,
-            EgMeta.deleteSubscriptionTarget, hcClient);
+        return new SyncInvoker<>(request, EgMeta.deleteSubscriptionTarget, hcClient);
     }
 
     /**
@@ -600,7 +590,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgenciesRequest 请求对象
+     * @param request ListAgenciesRequest 请求对象
      * @return ListAgenciesResponse
      */
     public ListAgenciesResponse listAgencies(ListAgenciesRequest request) {
@@ -614,11 +604,11 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAgenciesRequest 请求对象
+     * @param request ListAgenciesRequest 请求对象
      * @return SyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
      */
     public SyncInvoker<ListAgenciesRequest, ListAgenciesResponse> listAgenciesInvoker(ListAgenciesRequest request) {
-        return new SyncInvoker<ListAgenciesRequest, ListAgenciesResponse>(request, EgMeta.listAgencies, hcClient);
+        return new SyncInvoker<>(request, EgMeta.listAgencies, hcClient);
     }
 
     /**
@@ -628,7 +618,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListChannelsRequest 请求对象
+     * @param request ListChannelsRequest 请求对象
      * @return ListChannelsResponse
      */
     public ListChannelsResponse listChannels(ListChannelsRequest request) {
@@ -642,11 +632,11 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListChannelsRequest 请求对象
+     * @param request ListChannelsRequest 请求对象
      * @return SyncInvoker<ListChannelsRequest, ListChannelsResponse>
      */
     public SyncInvoker<ListChannelsRequest, ListChannelsResponse> listChannelsInvoker(ListChannelsRequest request) {
-        return new SyncInvoker<ListChannelsRequest, ListChannelsResponse>(request, EgMeta.listChannels, hcClient);
+        return new SyncInvoker<>(request, EgMeta.listChannels, hcClient);
     }
 
     /**
@@ -656,7 +646,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectionsRequest 请求对象
+     * @param request ListConnectionsRequest 请求对象
      * @return ListConnectionsResponse
      */
     public ListConnectionsResponse listConnections(ListConnectionsRequest request) {
@@ -670,13 +660,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectionsRequest 请求对象
+     * @param request ListConnectionsRequest 请求对象
      * @return SyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
      */
     public SyncInvoker<ListConnectionsRequest, ListConnectionsResponse> listConnectionsInvoker(
         ListConnectionsRequest request) {
-        return new SyncInvoker<ListConnectionsRequest, ListConnectionsResponse>(request, EgMeta.listConnections,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.listConnections, hcClient);
     }
 
     /**
@@ -686,7 +675,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointsRequest 请求对象
+     * @param request ListEndpointsRequest 请求对象
      * @return ListEndpointsResponse
      */
     public ListEndpointsResponse listEndpoints(ListEndpointsRequest request) {
@@ -700,11 +689,11 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointsRequest 请求对象
+     * @param request ListEndpointsRequest 请求对象
      * @return SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
      */
     public SyncInvoker<ListEndpointsRequest, ListEndpointsResponse> listEndpointsInvoker(ListEndpointsRequest request) {
-        return new SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>(request, EgMeta.listEndpoints, hcClient);
+        return new SyncInvoker<>(request, EgMeta.listEndpoints, hcClient);
     }
 
     /**
@@ -714,7 +703,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventSourcesRequest 请求对象
+     * @param request ListEventSourcesRequest 请求对象
      * @return ListEventSourcesResponse
      */
     public ListEventSourcesResponse listEventSources(ListEventSourcesRequest request) {
@@ -728,13 +717,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventSourcesRequest 请求对象
+     * @param request ListEventSourcesRequest 请求对象
      * @return SyncInvoker<ListEventSourcesRequest, ListEventSourcesResponse>
      */
     public SyncInvoker<ListEventSourcesRequest, ListEventSourcesResponse> listEventSourcesInvoker(
         ListEventSourcesRequest request) {
-        return new SyncInvoker<ListEventSourcesRequest, ListEventSourcesResponse>(request, EgMeta.listEventSources,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.listEventSources, hcClient);
     }
 
     /**
@@ -744,7 +732,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventStreamingRequest 请求对象
+     * @param request ListEventStreamingRequest 请求对象
      * @return ListEventStreamingResponse
      */
     public ListEventStreamingResponse listEventStreaming(ListEventStreamingRequest request) {
@@ -758,13 +746,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventStreamingRequest 请求对象
+     * @param request ListEventStreamingRequest 请求对象
      * @return SyncInvoker<ListEventStreamingRequest, ListEventStreamingResponse>
      */
     public SyncInvoker<ListEventStreamingRequest, ListEventStreamingResponse> listEventStreamingInvoker(
         ListEventStreamingRequest request) {
-        return new SyncInvoker<ListEventStreamingRequest, ListEventStreamingResponse>(request,
-            EgMeta.listEventStreaming, hcClient);
+        return new SyncInvoker<>(request, EgMeta.listEventStreaming, hcClient);
     }
 
     /**
@@ -774,7 +761,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventTargetRequest 请求对象
+     * @param request ListEventTargetRequest 请求对象
      * @return ListEventTargetResponse
      */
     public ListEventTargetResponse listEventTarget(ListEventTargetRequest request) {
@@ -788,13 +775,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventTargetRequest 请求对象
+     * @param request ListEventTargetRequest 请求对象
      * @return SyncInvoker<ListEventTargetRequest, ListEventTargetResponse>
      */
     public SyncInvoker<ListEventTargetRequest, ListEventTargetResponse> listEventTargetInvoker(
         ListEventTargetRequest request) {
-        return new SyncInvoker<ListEventTargetRequest, ListEventTargetResponse>(request, EgMeta.listEventTarget,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.listEventTarget, hcClient);
     }
 
     /**
@@ -804,7 +790,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPubMetricsRequest 请求对象
+     * @param request ListPubMetricsRequest 请求对象
      * @return ListPubMetricsResponse
      */
     public ListPubMetricsResponse listPubMetrics(ListPubMetricsRequest request) {
@@ -818,12 +804,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPubMetricsRequest 请求对象
+     * @param request ListPubMetricsRequest 请求对象
      * @return SyncInvoker<ListPubMetricsRequest, ListPubMetricsResponse>
      */
     public SyncInvoker<ListPubMetricsRequest, ListPubMetricsResponse> listPubMetricsInvoker(
         ListPubMetricsRequest request) {
-        return new SyncInvoker<ListPubMetricsRequest, ListPubMetricsResponse>(request, EgMeta.listPubMetrics, hcClient);
+        return new SyncInvoker<>(request, EgMeta.listPubMetrics, hcClient);
     }
 
     /**
@@ -833,7 +819,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return ListQuotasResponse
      */
     public ListQuotasResponse listQuotas(ListQuotasRequest request) {
@@ -847,11 +833,11 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
-        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, EgMeta.listQuotas, hcClient);
+        return new SyncInvoker<>(request, EgMeta.listQuotas, hcClient);
     }
 
     /**
@@ -861,7 +847,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubMetricsRequest 请求对象
+     * @param request ListSubMetricsRequest 请求对象
      * @return ListSubMetricsResponse
      */
     public ListSubMetricsResponse listSubMetrics(ListSubMetricsRequest request) {
@@ -875,12 +861,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubMetricsRequest 请求对象
+     * @param request ListSubMetricsRequest 请求对象
      * @return SyncInvoker<ListSubMetricsRequest, ListSubMetricsResponse>
      */
     public SyncInvoker<ListSubMetricsRequest, ListSubMetricsResponse> listSubMetricsInvoker(
         ListSubMetricsRequest request) {
-        return new SyncInvoker<ListSubMetricsRequest, ListSubMetricsResponse>(request, EgMeta.listSubMetrics, hcClient);
+        return new SyncInvoker<>(request, EgMeta.listSubMetrics, hcClient);
     }
 
     /**
@@ -890,7 +876,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubscriptionsRequest 请求对象
+     * @param request ListSubscriptionsRequest 请求对象
      * @return ListSubscriptionsResponse
      */
     public ListSubscriptionsResponse listSubscriptions(ListSubscriptionsRequest request) {
@@ -904,13 +890,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSubscriptionsRequest 请求对象
+     * @param request ListSubscriptionsRequest 请求对象
      * @return SyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>
      */
     public SyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptionsInvoker(
         ListSubscriptionsRequest request) {
-        return new SyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>(request, EgMeta.listSubscriptions,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.listSubscriptions, hcClient);
     }
 
     /**
@@ -920,7 +905,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTracedEventsRequest 请求对象
+     * @param request ListTracedEventsRequest 请求对象
      * @return ListTracedEventsResponse
      */
     public ListTracedEventsResponse listTracedEvents(ListTracedEventsRequest request) {
@@ -934,13 +919,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTracedEventsRequest 请求对象
+     * @param request ListTracedEventsRequest 请求对象
      * @return SyncInvoker<ListTracedEventsRequest, ListTracedEventsResponse>
      */
     public SyncInvoker<ListTracedEventsRequest, ListTracedEventsResponse> listTracedEventsInvoker(
         ListTracedEventsRequest request) {
-        return new SyncInvoker<ListTracedEventsRequest, ListTracedEventsResponse>(request, EgMeta.listTracedEvents,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.listTracedEvents, hcClient);
     }
 
     /**
@@ -950,7 +934,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTriggersRequest 请求对象
+     * @param request ListTriggersRequest 请求对象
      * @return ListTriggersResponse
      */
     public ListTriggersResponse listTriggers(ListTriggersRequest request) {
@@ -964,11 +948,11 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTriggersRequest 请求对象
+     * @param request ListTriggersRequest 请求对象
      * @return SyncInvoker<ListTriggersRequest, ListTriggersResponse>
      */
     public SyncInvoker<ListTriggersRequest, ListTriggersResponse> listTriggersInvoker(ListTriggersRequest request) {
-        return new SyncInvoker<ListTriggersRequest, ListTriggersResponse>(request, EgMeta.listTriggers, hcClient);
+        return new SyncInvoker<>(request, EgMeta.listTriggers, hcClient);
     }
 
     /**
@@ -978,7 +962,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowTriggersRequest 请求对象
+     * @param request ListWorkflowTriggersRequest 请求对象
      * @return ListWorkflowTriggersResponse
      */
     public ListWorkflowTriggersResponse listWorkflowTriggers(ListWorkflowTriggersRequest request) {
@@ -992,13 +976,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowTriggersRequest 请求对象
+     * @param request ListWorkflowTriggersRequest 请求对象
      * @return SyncInvoker<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse>
      */
     public SyncInvoker<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> listWorkflowTriggersInvoker(
         ListWorkflowTriggersRequest request) {
-        return new SyncInvoker<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse>(request,
-            EgMeta.listWorkflowTriggers, hcClient);
+        return new SyncInvoker<>(request, EgMeta.listWorkflowTriggers, hcClient);
     }
 
     /**
@@ -1008,7 +991,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param OperateSubscriptionRequest 请求对象
+     * @param request OperateSubscriptionRequest 请求对象
      * @return OperateSubscriptionResponse
      */
     public OperateSubscriptionResponse operateSubscription(OperateSubscriptionRequest request) {
@@ -1022,13 +1005,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param OperateSubscriptionRequest 请求对象
+     * @param request OperateSubscriptionRequest 请求对象
      * @return SyncInvoker<OperateSubscriptionRequest, OperateSubscriptionResponse>
      */
     public SyncInvoker<OperateSubscriptionRequest, OperateSubscriptionResponse> operateSubscriptionInvoker(
         OperateSubscriptionRequest request) {
-        return new SyncInvoker<OperateSubscriptionRequest, OperateSubscriptionResponse>(request,
-            EgMeta.operateSubscription, hcClient);
+        return new SyncInvoker<>(request, EgMeta.operateSubscription, hcClient);
     }
 
     /**
@@ -1038,7 +1020,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutEventsRequest 请求对象
+     * @param request PutEventsRequest 请求对象
      * @return PutEventsResponse
      */
     public PutEventsResponse putEvents(PutEventsRequest request) {
@@ -1052,11 +1034,11 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutEventsRequest 请求对象
+     * @param request PutEventsRequest 请求对象
      * @return SyncInvoker<PutEventsRequest, PutEventsResponse>
      */
     public SyncInvoker<PutEventsRequest, PutEventsResponse> putEventsInvoker(PutEventsRequest request) {
-        return new SyncInvoker<PutEventsRequest, PutEventsResponse>(request, EgMeta.putEvents, hcClient);
+        return new SyncInvoker<>(request, EgMeta.putEvents, hcClient);
     }
 
     /**
@@ -1066,7 +1048,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutOfficialEventsRequest 请求对象
+     * @param request PutOfficialEventsRequest 请求对象
      * @return PutOfficialEventsResponse
      */
     public PutOfficialEventsResponse putOfficialEvents(PutOfficialEventsRequest request) {
@@ -1080,13 +1062,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutOfficialEventsRequest 请求对象
+     * @param request PutOfficialEventsRequest 请求对象
      * @return SyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>
      */
     public SyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse> putOfficialEventsInvoker(
         PutOfficialEventsRequest request) {
-        return new SyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>(request, EgMeta.putOfficialEvents,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.putOfficialEvents, hcClient);
     }
 
     /**
@@ -1096,7 +1077,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeEventStreamingRequest 请求对象
+     * @param request ResumeEventStreamingRequest 请求对象
      * @return ResumeEventStreamingResponse
      */
     public ResumeEventStreamingResponse resumeEventStreaming(ResumeEventStreamingRequest request) {
@@ -1110,13 +1091,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeEventStreamingRequest 请求对象
+     * @param request ResumeEventStreamingRequest 请求对象
      * @return SyncInvoker<ResumeEventStreamingRequest, ResumeEventStreamingResponse>
      */
     public SyncInvoker<ResumeEventStreamingRequest, ResumeEventStreamingResponse> resumeEventStreamingInvoker(
         ResumeEventStreamingRequest request) {
-        return new SyncInvoker<ResumeEventStreamingRequest, ResumeEventStreamingResponse>(request,
-            EgMeta.resumeEventStreaming, hcClient);
+        return new SyncInvoker<>(request, EgMeta.resumeEventStreaming, hcClient);
     }
 
     /**
@@ -1126,7 +1106,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfChannelRequest 请求对象
+     * @param request ShowDetailOfChannelRequest 请求对象
      * @return ShowDetailOfChannelResponse
      */
     public ShowDetailOfChannelResponse showDetailOfChannel(ShowDetailOfChannelRequest request) {
@@ -1140,13 +1120,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfChannelRequest 请求对象
+     * @param request ShowDetailOfChannelRequest 请求对象
      * @return SyncInvoker<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse>
      */
     public SyncInvoker<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse> showDetailOfChannelInvoker(
         ShowDetailOfChannelRequest request) {
-        return new SyncInvoker<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse>(request,
-            EgMeta.showDetailOfChannel, hcClient);
+        return new SyncInvoker<>(request, EgMeta.showDetailOfChannel, hcClient);
     }
 
     /**
@@ -1156,7 +1135,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfConnectionRequest 请求对象
+     * @param request ShowDetailOfConnectionRequest 请求对象
      * @return ShowDetailOfConnectionResponse
      */
     public ShowDetailOfConnectionResponse showDetailOfConnection(ShowDetailOfConnectionRequest request) {
@@ -1170,13 +1149,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfConnectionRequest 请求对象
+     * @param request ShowDetailOfConnectionRequest 请求对象
      * @return SyncInvoker<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse>
      */
     public SyncInvoker<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse> showDetailOfConnectionInvoker(
         ShowDetailOfConnectionRequest request) {
-        return new SyncInvoker<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse>(request,
-            EgMeta.showDetailOfConnection, hcClient);
+        return new SyncInvoker<>(request, EgMeta.showDetailOfConnection, hcClient);
     }
 
     /**
@@ -1186,7 +1164,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventRequest 请求对象
+     * @param request ShowDetailOfEventRequest 请求对象
      * @return ShowDetailOfEventResponse
      */
     public ShowDetailOfEventResponse showDetailOfEvent(ShowDetailOfEventRequest request) {
@@ -1200,13 +1178,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventRequest 请求对象
+     * @param request ShowDetailOfEventRequest 请求对象
      * @return SyncInvoker<ShowDetailOfEventRequest, ShowDetailOfEventResponse>
      */
     public SyncInvoker<ShowDetailOfEventRequest, ShowDetailOfEventResponse> showDetailOfEventInvoker(
         ShowDetailOfEventRequest request) {
-        return new SyncInvoker<ShowDetailOfEventRequest, ShowDetailOfEventResponse>(request, EgMeta.showDetailOfEvent,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.showDetailOfEvent, hcClient);
     }
 
     /**
@@ -1216,7 +1193,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventSourceRequest 请求对象
+     * @param request ShowDetailOfEventSourceRequest 请求对象
      * @return ShowDetailOfEventSourceResponse
      */
     public ShowDetailOfEventSourceResponse showDetailOfEventSource(ShowDetailOfEventSourceRequest request) {
@@ -1230,13 +1207,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventSourceRequest 请求对象
+     * @param request ShowDetailOfEventSourceRequest 请求对象
      * @return SyncInvoker<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse>
      */
     public SyncInvoker<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse> showDetailOfEventSourceInvoker(
         ShowDetailOfEventSourceRequest request) {
-        return new SyncInvoker<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse>(request,
-            EgMeta.showDetailOfEventSource, hcClient);
+        return new SyncInvoker<>(request, EgMeta.showDetailOfEventSource, hcClient);
     }
 
     /**
@@ -1246,7 +1222,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventTraceRequest 请求对象
+     * @param request ShowDetailOfEventTraceRequest 请求对象
      * @return ShowDetailOfEventTraceResponse
      */
     public ShowDetailOfEventTraceResponse showDetailOfEventTrace(ShowDetailOfEventTraceRequest request) {
@@ -1260,13 +1236,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventTraceRequest 请求对象
+     * @param request ShowDetailOfEventTraceRequest 请求对象
      * @return SyncInvoker<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse>
      */
     public SyncInvoker<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse> showDetailOfEventTraceInvoker(
         ShowDetailOfEventTraceRequest request) {
-        return new SyncInvoker<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse>(request,
-            EgMeta.showDetailOfEventTrace, hcClient);
+        return new SyncInvoker<>(request, EgMeta.showDetailOfEventTrace, hcClient);
     }
 
     /**
@@ -1276,7 +1251,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfSubscriptionRequest 请求对象
+     * @param request ShowDetailOfSubscriptionRequest 请求对象
      * @return ShowDetailOfSubscriptionResponse
      */
     public ShowDetailOfSubscriptionResponse showDetailOfSubscription(ShowDetailOfSubscriptionRequest request) {
@@ -1290,13 +1265,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfSubscriptionRequest 请求对象
+     * @param request ShowDetailOfSubscriptionRequest 请求对象
      * @return SyncInvoker<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse>
      */
     public SyncInvoker<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse> showDetailOfSubscriptionInvoker(
         ShowDetailOfSubscriptionRequest request) {
-        return new SyncInvoker<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse>(request,
-            EgMeta.showDetailOfSubscription, hcClient);
+        return new SyncInvoker<>(request, EgMeta.showDetailOfSubscription, hcClient);
     }
 
     /**
@@ -1306,7 +1280,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfSubscriptionTargetRequest 请求对象
+     * @param request ShowDetailOfSubscriptionTargetRequest 请求对象
      * @return ShowDetailOfSubscriptionTargetResponse
      */
     public ShowDetailOfSubscriptionTargetResponse showDetailOfSubscriptionTarget(
@@ -1321,13 +1295,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfSubscriptionTargetRequest 请求对象
+     * @param request ShowDetailOfSubscriptionTargetRequest 请求对象
      * @return SyncInvoker<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse>
      */
     public SyncInvoker<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse> showDetailOfSubscriptionTargetInvoker(
         ShowDetailOfSubscriptionTargetRequest request) {
-        return new SyncInvoker<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse>(request,
-            EgMeta.showDetailOfSubscriptionTarget, hcClient);
+        return new SyncInvoker<>(request, EgMeta.showDetailOfSubscriptionTarget, hcClient);
     }
 
     /**
@@ -1337,7 +1310,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventStreamingRequest 请求对象
+     * @param request ShowEventStreamingRequest 请求对象
      * @return ShowEventStreamingResponse
      */
     public ShowEventStreamingResponse showEventStreaming(ShowEventStreamingRequest request) {
@@ -1351,13 +1324,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventStreamingRequest 请求对象
+     * @param request ShowEventStreamingRequest 请求对象
      * @return SyncInvoker<ShowEventStreamingRequest, ShowEventStreamingResponse>
      */
     public SyncInvoker<ShowEventStreamingRequest, ShowEventStreamingResponse> showEventStreamingInvoker(
         ShowEventStreamingRequest request) {
-        return new SyncInvoker<ShowEventStreamingRequest, ShowEventStreamingResponse>(request,
-            EgMeta.showEventStreaming, hcClient);
+        return new SyncInvoker<>(request, EgMeta.showEventStreaming, hcClient);
     }
 
     /**
@@ -1367,7 +1339,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateChannelRequest 请求对象
+     * @param request UpdateChannelRequest 请求对象
      * @return UpdateChannelResponse
      */
     public UpdateChannelResponse updateChannel(UpdateChannelRequest request) {
@@ -1381,11 +1353,11 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateChannelRequest 请求对象
+     * @param request UpdateChannelRequest 请求对象
      * @return SyncInvoker<UpdateChannelRequest, UpdateChannelResponse>
      */
     public SyncInvoker<UpdateChannelRequest, UpdateChannelResponse> updateChannelInvoker(UpdateChannelRequest request) {
-        return new SyncInvoker<UpdateChannelRequest, UpdateChannelResponse>(request, EgMeta.updateChannel, hcClient);
+        return new SyncInvoker<>(request, EgMeta.updateChannel, hcClient);
     }
 
     /**
@@ -1395,7 +1367,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionRequest 请求对象
+     * @param request UpdateConnectionRequest 请求对象
      * @return UpdateConnectionResponse
      */
     public UpdateConnectionResponse updateConnection(UpdateConnectionRequest request) {
@@ -1409,13 +1381,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionRequest 请求对象
+     * @param request UpdateConnectionRequest 请求对象
      * @return SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>
      */
     public SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> updateConnectionInvoker(
         UpdateConnectionRequest request) {
-        return new SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>(request, EgMeta.updateConnection,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.updateConnection, hcClient);
     }
 
     /**
@@ -1425,7 +1396,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointRequest 请求对象
+     * @param request UpdateEndpointRequest 请求对象
      * @return UpdateEndpointResponse
      */
     public UpdateEndpointResponse updateEndpoint(UpdateEndpointRequest request) {
@@ -1439,12 +1410,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointRequest 请求对象
+     * @param request UpdateEndpointRequest 请求对象
      * @return SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>
      */
     public SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse> updateEndpointInvoker(
         UpdateEndpointRequest request) {
-        return new SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>(request, EgMeta.updateEndpoint, hcClient);
+        return new SyncInvoker<>(request, EgMeta.updateEndpoint, hcClient);
     }
 
     /**
@@ -1454,7 +1425,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventSourceRequest 请求对象
+     * @param request UpdateEventSourceRequest 请求对象
      * @return UpdateEventSourceResponse
      */
     public UpdateEventSourceResponse updateEventSource(UpdateEventSourceRequest request) {
@@ -1468,13 +1439,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventSourceRequest 请求对象
+     * @param request UpdateEventSourceRequest 请求对象
      * @return SyncInvoker<UpdateEventSourceRequest, UpdateEventSourceResponse>
      */
     public SyncInvoker<UpdateEventSourceRequest, UpdateEventSourceResponse> updateEventSourceInvoker(
         UpdateEventSourceRequest request) {
-        return new SyncInvoker<UpdateEventSourceRequest, UpdateEventSourceResponse>(request, EgMeta.updateEventSource,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.updateEventSource, hcClient);
     }
 
     /**
@@ -1484,7 +1454,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventStreamingRequest 请求对象
+     * @param request UpdateEventStreamingRequest 请求对象
      * @return UpdateEventStreamingResponse
      */
     public UpdateEventStreamingResponse updateEventStreaming(UpdateEventStreamingRequest request) {
@@ -1498,13 +1468,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEventStreamingRequest 请求对象
+     * @param request UpdateEventStreamingRequest 请求对象
      * @return SyncInvoker<UpdateEventStreamingRequest, UpdateEventStreamingResponse>
      */
     public SyncInvoker<UpdateEventStreamingRequest, UpdateEventStreamingResponse> updateEventStreamingInvoker(
         UpdateEventStreamingRequest request) {
-        return new SyncInvoker<UpdateEventStreamingRequest, UpdateEventStreamingResponse>(request,
-            EgMeta.updateEventStreaming, hcClient);
+        return new SyncInvoker<>(request, EgMeta.updateEventStreaming, hcClient);
     }
 
     /**
@@ -1514,7 +1483,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionRequest 请求对象
+     * @param request UpdateSubscriptionRequest 请求对象
      * @return UpdateSubscriptionResponse
      */
     public UpdateSubscriptionResponse updateSubscription(UpdateSubscriptionRequest request) {
@@ -1528,13 +1497,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionRequest 请求对象
+     * @param request UpdateSubscriptionRequest 请求对象
      * @return SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>
      */
     public SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse> updateSubscriptionInvoker(
         UpdateSubscriptionRequest request) {
-        return new SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>(request,
-            EgMeta.updateSubscription, hcClient);
+        return new SyncInvoker<>(request, EgMeta.updateSubscription, hcClient);
     }
 
     /**
@@ -1544,7 +1512,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionSourceRequest 请求对象
+     * @param request UpdateSubscriptionSourceRequest 请求对象
      * @return UpdateSubscriptionSourceResponse
      */
     public UpdateSubscriptionSourceResponse updateSubscriptionSource(UpdateSubscriptionSourceRequest request) {
@@ -1558,13 +1526,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionSourceRequest 请求对象
+     * @param request UpdateSubscriptionSourceRequest 请求对象
      * @return SyncInvoker<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse>
      */
     public SyncInvoker<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse> updateSubscriptionSourceInvoker(
         UpdateSubscriptionSourceRequest request) {
-        return new SyncInvoker<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse>(request,
-            EgMeta.updateSubscriptionSource, hcClient);
+        return new SyncInvoker<>(request, EgMeta.updateSubscriptionSource, hcClient);
     }
 
     /**
@@ -1574,7 +1541,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionTargetRequest 请求对象
+     * @param request UpdateSubscriptionTargetRequest 请求对象
      * @return UpdateSubscriptionTargetResponse
      */
     public UpdateSubscriptionTargetResponse updateSubscriptionTarget(UpdateSubscriptionTargetRequest request) {
@@ -1588,13 +1555,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSubscriptionTargetRequest 请求对象
+     * @param request UpdateSubscriptionTargetRequest 请求对象
      * @return SyncInvoker<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse>
      */
     public SyncInvoker<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse> updateSubscriptionTargetInvoker(
         UpdateSubscriptionTargetRequest request) {
-        return new SyncInvoker<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse>(request,
-            EgMeta.updateSubscriptionTarget, hcClient);
+        return new SyncInvoker<>(request, EgMeta.updateSubscriptionTarget, hcClient);
     }
 
     /**
@@ -1604,7 +1570,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
      */
     public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
@@ -1618,13 +1584,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsRequest 请求对象
+     * @param request ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
      */
     public SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsInvoker(
         ListApiVersionsRequest request) {
-        return new SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, EgMeta.listApiVersions,
-            hcClient);
+        return new SyncInvoker<>(request, EgMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -1634,7 +1599,7 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketsRequest 请求对象
+     * @param request ListObsBucketsRequest 请求对象
      * @return ListObsBucketsResponse
      */
     public ListObsBucketsResponse listObsBuckets(ListObsBucketsRequest request) {
@@ -1648,12 +1613,12 @@ public class EgClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListObsBucketsRequest 请求对象
+     * @param request ListObsBucketsRequest 请求对象
      * @return SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>
      */
     public SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse> listObsBucketsInvoker(
         ListObsBucketsRequest request) {
-        return new SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>(request, EgMeta.listObsBuckets, hcClient);
+        return new SyncInvoker<>(request, EgMeta.listObsBuckets, hcClient);
     }
 
 }

@@ -51,7 +51,7 @@ public class CheckQuotaRequest {
     }
 
     /**
-     * 产品id
+     * 产品id。
      * @return productId
      */
     public String getProductId() {
@@ -68,7 +68,7 @@ public class CheckQuotaRequest {
     }
 
     /**
-     * 订单需要创建总实例数、订购数量
+     * 订单需要创建总实例数、订购数量。
      * minimum: 1
      * maximum: 100
      * @return subscriptionNum
@@ -87,7 +87,7 @@ public class CheckQuotaRequest {
     }
 
     /**
-     * 单台实例所需的磁盘大小（最大系统盘1块*1024、数据盘10块*32768）
+     * 单台实例所需的磁盘大小（最大系统盘1块*1024、数据盘10块*32768）。
      * minimum: 10
      * maximum: 328704
      * @return diskSize
@@ -106,7 +106,7 @@ public class CheckQuotaRequest {
     }
 
     /**
-     * 单台实例所需的磁盘数量（最大系统盘1块、数据盘10块）
+     * 单台实例所需的磁盘数量（最大系统盘1块、数据盘10块）。
      * minimum: 1
      * maximum: 11
      * @return diskNum
@@ -125,7 +125,7 @@ public class CheckQuotaRequest {
     }
 
     /**
-     * 是否包周期
+     * 是否包周期。
      * @return isPeriod
      */
     public Boolean getIsPeriod() {
@@ -142,7 +142,7 @@ public class CheckQuotaRequest {
     }
 
     /**
-     * 主机id
+     * 主机id。
      * @return dehId
      */
     public String getDehId() {
@@ -159,7 +159,7 @@ public class CheckQuotaRequest {
     }
 
     /**
-     * 云专属分布式存储池id
+     * 云专属分布式存储池id。
      * @return clusterId
      */
     public String getClusterId() {

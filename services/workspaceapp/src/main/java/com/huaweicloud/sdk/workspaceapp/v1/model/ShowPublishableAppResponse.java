@@ -35,7 +35,7 @@ public class ShowPublishableAppResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count
@@ -70,7 +70,7 @@ public class ShowPublishableAppResponse extends SdkResponse {
     }
 
     /**
-     * 组下面的镜像ID列表
+     * 组下面的镜像ID列表。
      * @return groupImages
      */
     public List<String> getGroupImages() {
@@ -103,7 +103,7 @@ public class ShowPublishableAppResponse extends SdkResponse {
     }
 
     /**
-     * 查询到的应用列表
+     * 查询到的应用列表。
      * @return items
      */
     public List<PublishableApp> getItems() {

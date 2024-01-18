@@ -386,7 +386,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCorpRequest 请求对象
+     * @param request AddCorpRequest 请求对象
      * @return AddCorpResponse
      */
     public AddCorpResponse addCorp(AddCorpRequest request) {
@@ -400,11 +400,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCorpRequest 请求对象
+     * @param request AddCorpRequest 请求对象
      * @return SyncInvoker<AddCorpRequest, AddCorpResponse>
      */
     public SyncInvoker<AddCorpRequest, AddCorpResponse> addCorpInvoker(AddCorpRequest request) {
-        return new SyncInvoker<AddCorpRequest, AddCorpResponse>(request, MeetingMeta.addCorp, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.addCorp, hcClient);
     }
 
     /**
@@ -414,7 +414,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCorpAdminRequest 请求对象
+     * @param request AddCorpAdminRequest 请求对象
      * @return AddCorpAdminResponse
      */
     public AddCorpAdminResponse addCorpAdmin(AddCorpAdminRequest request) {
@@ -428,11 +428,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCorpAdminRequest 请求对象
+     * @param request AddCorpAdminRequest 请求对象
      * @return SyncInvoker<AddCorpAdminRequest, AddCorpAdminResponse>
      */
     public SyncInvoker<AddCorpAdminRequest, AddCorpAdminResponse> addCorpAdminInvoker(AddCorpAdminRequest request) {
-        return new SyncInvoker<AddCorpAdminRequest, AddCorpAdminResponse>(request, MeetingMeta.addCorpAdmin, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.addCorpAdmin, hcClient);
     }
 
     /**
@@ -442,7 +442,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDepartmentRequest 请求对象
+     * @param request AddDepartmentRequest 请求对象
      * @return AddDepartmentResponse
      */
     public AddDepartmentResponse addDepartment(AddDepartmentRequest request) {
@@ -456,12 +456,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDepartmentRequest 请求对象
+     * @param request AddDepartmentRequest 请求对象
      * @return SyncInvoker<AddDepartmentRequest, AddDepartmentResponse>
      */
     public SyncInvoker<AddDepartmentRequest, AddDepartmentResponse> addDepartmentInvoker(AddDepartmentRequest request) {
-        return new SyncInvoker<AddDepartmentRequest, AddDepartmentResponse>(request, MeetingMeta.addDepartment,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.addDepartment, hcClient);
     }
 
     /**
@@ -471,7 +470,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeviceRequest 请求对象
+     * @param request AddDeviceRequest 请求对象
      * @return AddDeviceResponse
      */
     public AddDeviceResponse addDevice(AddDeviceRequest request) {
@@ -485,11 +484,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeviceRequest 请求对象
+     * @param request AddDeviceRequest 请求对象
      * @return SyncInvoker<AddDeviceRequest, AddDeviceResponse>
      */
     public SyncInvoker<AddDeviceRequest, AddDeviceResponse> addDeviceInvoker(AddDeviceRequest request) {
-        return new SyncInvoker<AddDeviceRequest, AddDeviceResponse>(request, MeetingMeta.addDevice, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.addDevice, hcClient);
     }
 
     /**
@@ -499,7 +498,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMaterialRequest 请求对象
+     * @param request AddMaterialRequest 请求对象
      * @return AddMaterialResponse
      */
     public AddMaterialResponse addMaterial(AddMaterialRequest request) {
@@ -513,11 +512,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMaterialRequest 请求对象
+     * @param request AddMaterialRequest 请求对象
      * @return SyncInvoker<AddMaterialRequest, AddMaterialResponse>
      */
     public SyncInvoker<AddMaterialRequest, AddMaterialResponse> addMaterialInvoker(AddMaterialRequest request) {
-        return new SyncInvoker<AddMaterialRequest, AddMaterialResponse>(request, MeetingMeta.addMaterial, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.addMaterial, hcClient);
     }
 
     /**
@@ -527,7 +526,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddProgramRequest 请求对象
+     * @param request AddProgramRequest 请求对象
      * @return AddProgramResponse
      */
     public AddProgramResponse addProgram(AddProgramRequest request) {
@@ -541,11 +540,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddProgramRequest 请求对象
+     * @param request AddProgramRequest 请求对象
      * @return SyncInvoker<AddProgramRequest, AddProgramResponse>
      */
     public SyncInvoker<AddProgramRequest, AddProgramResponse> addProgramInvoker(AddProgramRequest request) {
-        return new SyncInvoker<AddProgramRequest, AddProgramResponse>(request, MeetingMeta.addProgram, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.addProgram, hcClient);
     }
 
     /**
@@ -555,7 +554,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPublicationRequest 请求对象
+     * @param request AddPublicationRequest 请求对象
      * @return AddPublicationResponse
      */
     public AddPublicationResponse addPublication(AddPublicationRequest request) {
@@ -569,13 +568,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPublicationRequest 请求对象
+     * @param request AddPublicationRequest 请求对象
      * @return SyncInvoker<AddPublicationRequest, AddPublicationResponse>
      */
     public SyncInvoker<AddPublicationRequest, AddPublicationResponse> addPublicationInvoker(
         AddPublicationRequest request) {
-        return new SyncInvoker<AddPublicationRequest, AddPublicationResponse>(request, MeetingMeta.addPublication,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.addPublication, hcClient);
     }
 
     /**
@@ -585,7 +583,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddResourceRequest 请求对象
+     * @param request AddResourceRequest 请求对象
      * @return AddResourceResponse
      */
     public AddResourceResponse addResource(AddResourceRequest request) {
@@ -599,11 +597,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddResourceRequest 请求对象
+     * @param request AddResourceRequest 请求对象
      * @return SyncInvoker<AddResourceRequest, AddResourceResponse>
      */
     public SyncInvoker<AddResourceRequest, AddResourceResponse> addResourceInvoker(AddResourceRequest request) {
-        return new SyncInvoker<AddResourceRequest, AddResourceResponse>(request, MeetingMeta.addResource, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.addResource, hcClient);
     }
 
     /**
@@ -613,7 +611,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddToPersonalSpaceRequest 请求对象
+     * @param request AddToPersonalSpaceRequest 请求对象
      * @return AddToPersonalSpaceResponse
      */
     public AddToPersonalSpaceResponse addToPersonalSpace(AddToPersonalSpaceRequest request) {
@@ -627,13 +625,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddToPersonalSpaceRequest 请求对象
+     * @param request AddToPersonalSpaceRequest 请求对象
      * @return SyncInvoker<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse>
      */
     public SyncInvoker<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse> addToPersonalSpaceInvoker(
         AddToPersonalSpaceRequest request) {
-        return new SyncInvoker<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse>(request,
-            MeetingMeta.addToPersonalSpace, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.addToPersonalSpace, hcClient);
     }
 
     /**
@@ -644,7 +641,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddUserRequest 请求对象
+     * @param request AddUserRequest 请求对象
      * @return AddUserResponse
      */
     public AddUserResponse addUser(AddUserRequest request) {
@@ -659,11 +656,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddUserRequest 请求对象
+     * @param request AddUserRequest 请求对象
      * @return SyncInvoker<AddUserRequest, AddUserResponse>
      */
     public SyncInvoker<AddUserRequest, AddUserResponse> addUserInvoker(AddUserRequest request) {
-        return new SyncInvoker<AddUserRequest, AddUserResponse>(request, MeetingMeta.addUser, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.addUser, hcClient);
     }
 
     /**
@@ -673,7 +670,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowClientRecordRequest 请求对象
+     * @param request AllowClientRecordRequest 请求对象
      * @return AllowClientRecordResponse
      */
     public AllowClientRecordResponse allowClientRecord(AllowClientRecordRequest request) {
@@ -687,13 +684,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowClientRecordRequest 请求对象
+     * @param request AllowClientRecordRequest 请求对象
      * @return SyncInvoker<AllowClientRecordRequest, AllowClientRecordResponse>
      */
     public SyncInvoker<AllowClientRecordRequest, AllowClientRecordResponse> allowClientRecordInvoker(
         AllowClientRecordRequest request) {
-        return new SyncInvoker<AllowClientRecordRequest, AllowClientRecordResponse>(request,
-            MeetingMeta.allowClientRecord, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.allowClientRecord, hcClient);
     }
 
     /**
@@ -703,7 +699,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowGuestUnmuteRequest 请求对象
+     * @param request AllowGuestUnmuteRequest 请求对象
      * @return AllowGuestUnmuteResponse
      */
     public AllowGuestUnmuteResponse allowGuestUnmute(AllowGuestUnmuteRequest request) {
@@ -717,13 +713,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowGuestUnmuteRequest 请求对象
+     * @param request AllowGuestUnmuteRequest 请求对象
      * @return SyncInvoker<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse>
      */
     public SyncInvoker<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse> allowGuestUnmuteInvoker(
         AllowGuestUnmuteRequest request) {
-        return new SyncInvoker<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse>(request, MeetingMeta.allowGuestUnmute,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.allowGuestUnmute, hcClient);
     }
 
     /**
@@ -733,7 +728,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowWaitingParticipantRequest 请求对象
+     * @param request AllowWaitingParticipantRequest 请求对象
      * @return AllowWaitingParticipantResponse
      */
     public AllowWaitingParticipantResponse allowWaitingParticipant(AllowWaitingParticipantRequest request) {
@@ -747,13 +742,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowWaitingParticipantRequest 请求对象
+     * @param request AllowWaitingParticipantRequest 请求对象
      * @return SyncInvoker<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse>
      */
     public SyncInvoker<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse> allowWaitingParticipantInvoker(
         AllowWaitingParticipantRequest request) {
-        return new SyncInvoker<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse>(request,
-            MeetingMeta.allowWaitingParticipant, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.allowWaitingParticipant, hcClient);
     }
 
     /**
@@ -763,7 +757,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateVmrRequest 请求对象
+     * @param request AssociateVmrRequest 请求对象
      * @return AssociateVmrResponse
      */
     public AssociateVmrResponse associateVmr(AssociateVmrRequest request) {
@@ -777,11 +771,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateVmrRequest 请求对象
+     * @param request AssociateVmrRequest 请求对象
      * @return SyncInvoker<AssociateVmrRequest, AssociateVmrResponse>
      */
     public SyncInvoker<AssociateVmrRequest, AssociateVmrResponse> associateVmrInvoker(AssociateVmrRequest request) {
-        return new SyncInvoker<AssociateVmrRequest, AssociateVmrResponse>(request, MeetingMeta.associateVmr, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.associateVmr, hcClient);
     }
 
     /**
@@ -791,7 +785,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteCorpAdminsRequest 请求对象
+     * @param request BatchDeleteCorpAdminsRequest 请求对象
      * @return BatchDeleteCorpAdminsResponse
      */
     public BatchDeleteCorpAdminsResponse batchDeleteCorpAdmins(BatchDeleteCorpAdminsRequest request) {
@@ -805,13 +799,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteCorpAdminsRequest 请求对象
+     * @param request BatchDeleteCorpAdminsRequest 请求对象
      * @return SyncInvoker<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse>
      */
     public SyncInvoker<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse> batchDeleteCorpAdminsInvoker(
         BatchDeleteCorpAdminsRequest request) {
-        return new SyncInvoker<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse>(request,
-            MeetingMeta.batchDeleteCorpAdmins, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.batchDeleteCorpAdmins, hcClient);
     }
 
     /**
@@ -822,7 +815,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDevicesRequest 请求对象
+     * @param request BatchDeleteDevicesRequest 请求对象
      * @return BatchDeleteDevicesResponse
      */
     public BatchDeleteDevicesResponse batchDeleteDevices(BatchDeleteDevicesRequest request) {
@@ -837,13 +830,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDevicesRequest 请求对象
+     * @param request BatchDeleteDevicesRequest 请求对象
      * @return SyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse>
      */
     public SyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> batchDeleteDevicesInvoker(
         BatchDeleteDevicesRequest request) {
-        return new SyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse>(request,
-            MeetingMeta.batchDeleteDevices, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.batchDeleteDevices, hcClient);
     }
 
     /**
@@ -853,7 +845,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMaterialsRequest 请求对象
+     * @param request BatchDeleteMaterialsRequest 请求对象
      * @return BatchDeleteMaterialsResponse
      */
     public BatchDeleteMaterialsResponse batchDeleteMaterials(BatchDeleteMaterialsRequest request) {
@@ -867,13 +859,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMaterialsRequest 请求对象
+     * @param request BatchDeleteMaterialsRequest 请求对象
      * @return SyncInvoker<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse>
      */
     public SyncInvoker<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> batchDeleteMaterialsInvoker(
         BatchDeleteMaterialsRequest request) {
-        return new SyncInvoker<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse>(request,
-            MeetingMeta.batchDeleteMaterials, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.batchDeleteMaterials, hcClient);
     }
 
     /**
@@ -883,7 +874,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteProgramsRequest 请求对象
+     * @param request BatchDeleteProgramsRequest 请求对象
      * @return BatchDeleteProgramsResponse
      */
     public BatchDeleteProgramsResponse batchDeletePrograms(BatchDeleteProgramsRequest request) {
@@ -897,13 +888,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteProgramsRequest 请求对象
+     * @param request BatchDeleteProgramsRequest 请求对象
      * @return SyncInvoker<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse>
      */
     public SyncInvoker<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> batchDeleteProgramsInvoker(
         BatchDeleteProgramsRequest request) {
-        return new SyncInvoker<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse>(request,
-            MeetingMeta.batchDeletePrograms, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.batchDeletePrograms, hcClient);
     }
 
     /**
@@ -913,7 +903,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeletePublicationsRequest 请求对象
+     * @param request BatchDeletePublicationsRequest 请求对象
      * @return BatchDeletePublicationsResponse
      */
     public BatchDeletePublicationsResponse batchDeletePublications(BatchDeletePublicationsRequest request) {
@@ -927,13 +917,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeletePublicationsRequest 请求对象
+     * @param request BatchDeletePublicationsRequest 请求对象
      * @return SyncInvoker<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse>
      */
     public SyncInvoker<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> batchDeletePublicationsInvoker(
         BatchDeletePublicationsRequest request) {
-        return new SyncInvoker<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse>(request,
-            MeetingMeta.batchDeletePublications, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.batchDeletePublications, hcClient);
     }
 
     /**
@@ -943,7 +932,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteUsersRequest 请求对象
+     * @param request BatchDeleteUsersRequest 请求对象
      * @return BatchDeleteUsersResponse
      */
     public BatchDeleteUsersResponse batchDeleteUsers(BatchDeleteUsersRequest request) {
@@ -957,13 +946,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteUsersRequest 请求对象
+     * @param request BatchDeleteUsersRequest 请求对象
      * @return SyncInvoker<BatchDeleteUsersRequest, BatchDeleteUsersResponse>
      */
     public SyncInvoker<BatchDeleteUsersRequest, BatchDeleteUsersResponse> batchDeleteUsersInvoker(
         BatchDeleteUsersRequest request) {
-        return new SyncInvoker<BatchDeleteUsersRequest, BatchDeleteUsersResponse>(request, MeetingMeta.batchDeleteUsers,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.batchDeleteUsers, hcClient);
     }
 
     /**
@@ -973,7 +961,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchHandRequest 请求对象
+     * @param request BatchHandRequest 请求对象
      * @return BatchHandResponse
      */
     public BatchHandResponse batchHand(BatchHandRequest request) {
@@ -987,11 +975,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchHandRequest 请求对象
+     * @param request BatchHandRequest 请求对象
      * @return SyncInvoker<BatchHandRequest, BatchHandResponse>
      */
     public SyncInvoker<BatchHandRequest, BatchHandResponse> batchHandInvoker(BatchHandRequest request) {
-        return new SyncInvoker<BatchHandRequest, BatchHandResponse>(request, MeetingMeta.batchHand, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.batchHand, hcClient);
     }
 
     /**
@@ -1001,7 +989,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowUserDetailsRequest 请求对象
+     * @param request BatchShowUserDetailsRequest 请求对象
      * @return BatchShowUserDetailsResponse
      */
     public BatchShowUserDetailsResponse batchShowUserDetails(BatchShowUserDetailsRequest request) {
@@ -1015,13 +1003,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowUserDetailsRequest 请求对象
+     * @param request BatchShowUserDetailsRequest 请求对象
      * @return SyncInvoker<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse>
      */
     public SyncInvoker<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse> batchShowUserDetailsInvoker(
         BatchShowUserDetailsRequest request) {
-        return new SyncInvoker<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse>(request,
-            MeetingMeta.batchShowUserDetails, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.batchShowUserDetails, hcClient);
     }
 
     /**
@@ -1031,7 +1018,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateDevicesStatusRequest 请求对象
+     * @param request BatchUpdateDevicesStatusRequest 请求对象
      * @return BatchUpdateDevicesStatusResponse
      */
     public BatchUpdateDevicesStatusResponse batchUpdateDevicesStatus(BatchUpdateDevicesStatusRequest request) {
@@ -1045,13 +1032,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateDevicesStatusRequest 请求对象
+     * @param request BatchUpdateDevicesStatusRequest 请求对象
      * @return SyncInvoker<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse>
      */
     public SyncInvoker<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse> batchUpdateDevicesStatusInvoker(
         BatchUpdateDevicesStatusRequest request) {
-        return new SyncInvoker<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse>(request,
-            MeetingMeta.batchUpdateDevicesStatus, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.batchUpdateDevicesStatus, hcClient);
     }
 
     /**
@@ -1061,7 +1047,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateUserStatusRequest 请求对象
+     * @param request BatchUpdateUserStatusRequest 请求对象
      * @return BatchUpdateUserStatusResponse
      */
     public BatchUpdateUserStatusResponse batchUpdateUserStatus(BatchUpdateUserStatusRequest request) {
@@ -1075,13 +1061,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateUserStatusRequest 请求对象
+     * @param request BatchUpdateUserStatusRequest 请求对象
      * @return SyncInvoker<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse>
      */
     public SyncInvoker<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse> batchUpdateUserStatusInvoker(
         BatchUpdateUserStatusRequest request) {
-        return new SyncInvoker<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse>(request,
-            MeetingMeta.batchUpdateUserStatus, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.batchUpdateUserStatus, hcClient);
     }
 
     /**
@@ -1091,7 +1076,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BroadcastParticipantRequest 请求对象
+     * @param request BroadcastParticipantRequest 请求对象
      * @return BroadcastParticipantResponse
      */
     public BroadcastParticipantResponse broadcastParticipant(BroadcastParticipantRequest request) {
@@ -1105,13 +1090,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BroadcastParticipantRequest 请求对象
+     * @param request BroadcastParticipantRequest 请求对象
      * @return SyncInvoker<BroadcastParticipantRequest, BroadcastParticipantResponse>
      */
     public SyncInvoker<BroadcastParticipantRequest, BroadcastParticipantResponse> broadcastParticipantInvoker(
         BroadcastParticipantRequest request) {
-        return new SyncInvoker<BroadcastParticipantRequest, BroadcastParticipantResponse>(request,
-            MeetingMeta.broadcastParticipant, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.broadcastParticipant, hcClient);
     }
 
     /**
@@ -1121,7 +1105,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelBroadcastRequest 请求对象
+     * @param request CancelBroadcastRequest 请求对象
      * @return CancelBroadcastResponse
      */
     public CancelBroadcastResponse cancelBroadcast(CancelBroadcastRequest request) {
@@ -1135,13 +1119,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelBroadcastRequest 请求对象
+     * @param request CancelBroadcastRequest 请求对象
      * @return SyncInvoker<CancelBroadcastRequest, CancelBroadcastResponse>
      */
     public SyncInvoker<CancelBroadcastRequest, CancelBroadcastResponse> cancelBroadcastInvoker(
         CancelBroadcastRequest request) {
-        return new SyncInvoker<CancelBroadcastRequest, CancelBroadcastResponse>(request, MeetingMeta.cancelBroadcast,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.cancelBroadcast, hcClient);
     }
 
     /**
@@ -1151,7 +1134,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelMeetingRequest 请求对象
+     * @param request CancelMeetingRequest 请求对象
      * @return CancelMeetingResponse
      */
     public CancelMeetingResponse cancelMeeting(CancelMeetingRequest request) {
@@ -1165,12 +1148,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelMeetingRequest 请求对象
+     * @param request CancelMeetingRequest 请求对象
      * @return SyncInvoker<CancelMeetingRequest, CancelMeetingResponse>
      */
     public SyncInvoker<CancelMeetingRequest, CancelMeetingResponse> cancelMeetingInvoker(CancelMeetingRequest request) {
-        return new SyncInvoker<CancelMeetingRequest, CancelMeetingResponse>(request, MeetingMeta.cancelMeeting,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.cancelMeeting, hcClient);
     }
 
     /**
@@ -1180,7 +1162,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelRecurringMeetingRequest 请求对象
+     * @param request CancelRecurringMeetingRequest 请求对象
      * @return CancelRecurringMeetingResponse
      */
     public CancelRecurringMeetingResponse cancelRecurringMeeting(CancelRecurringMeetingRequest request) {
@@ -1194,13 +1176,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelRecurringMeetingRequest 请求对象
+     * @param request CancelRecurringMeetingRequest 请求对象
      * @return SyncInvoker<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse>
      */
     public SyncInvoker<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> cancelRecurringMeetingInvoker(
         CancelRecurringMeetingRequest request) {
-        return new SyncInvoker<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse>(request,
-            MeetingMeta.cancelRecurringMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.cancelRecurringMeeting, hcClient);
     }
 
     /**
@@ -1210,7 +1191,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelRecurringSubMeetingRequest 请求对象
+     * @param request CancelRecurringSubMeetingRequest 请求对象
      * @return CancelRecurringSubMeetingResponse
      */
     public CancelRecurringSubMeetingResponse cancelRecurringSubMeeting(CancelRecurringSubMeetingRequest request) {
@@ -1224,13 +1205,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelRecurringSubMeetingRequest 请求对象
+     * @param request CancelRecurringSubMeetingRequest 请求对象
      * @return SyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse>
      */
     public SyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> cancelRecurringSubMeetingInvoker(
         CancelRecurringSubMeetingRequest request) {
-        return new SyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse>(request,
-            MeetingMeta.cancelRecurringSubMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.cancelRecurringSubMeeting, hcClient);
     }
 
     /**
@@ -1240,7 +1220,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckSlideVerifyCodeRequest 请求对象
+     * @param request CheckSlideVerifyCodeRequest 请求对象
      * @return CheckSlideVerifyCodeResponse
      */
     public CheckSlideVerifyCodeResponse checkSlideVerifyCode(CheckSlideVerifyCodeRequest request) {
@@ -1254,13 +1234,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckSlideVerifyCodeRequest 请求对象
+     * @param request CheckSlideVerifyCodeRequest 请求对象
      * @return SyncInvoker<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse>
      */
     public SyncInvoker<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse> checkSlideVerifyCodeInvoker(
         CheckSlideVerifyCodeRequest request) {
-        return new SyncInvoker<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse>(request,
-            MeetingMeta.checkSlideVerifyCode, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.checkSlideVerifyCode, hcClient);
     }
 
     /**
@@ -1270,7 +1249,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTokenRequest 请求对象
+     * @param request CheckTokenRequest 请求对象
      * @return CheckTokenResponse
      */
     public CheckTokenResponse checkToken(CheckTokenRequest request) {
@@ -1284,11 +1263,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTokenRequest 请求对象
+     * @param request CheckTokenRequest 请求对象
      * @return SyncInvoker<CheckTokenRequest, CheckTokenResponse>
      */
     public SyncInvoker<CheckTokenRequest, CheckTokenResponse> checkTokenInvoker(CheckTokenRequest request) {
-        return new SyncInvoker<CheckTokenRequest, CheckTokenResponse>(request, MeetingMeta.checkToken, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.checkToken, hcClient);
     }
 
     /**
@@ -1298,7 +1277,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVeriCodeForUpdateUserInfoRequest 请求对象
+     * @param request CheckVeriCodeForUpdateUserInfoRequest 请求对象
      * @return CheckVeriCodeForUpdateUserInfoResponse
      */
     public CheckVeriCodeForUpdateUserInfoResponse checkVeriCodeForUpdateUserInfo(
@@ -1313,13 +1292,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVeriCodeForUpdateUserInfoRequest 请求对象
+     * @param request CheckVeriCodeForUpdateUserInfoRequest 请求对象
      * @return SyncInvoker<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse>
      */
     public SyncInvoker<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse> checkVeriCodeForUpdateUserInfoInvoker(
         CheckVeriCodeForUpdateUserInfoRequest request) {
-        return new SyncInvoker<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse>(request,
-            MeetingMeta.checkVeriCodeForUpdateUserInfo, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.checkVeriCodeForUpdateUserInfo, hcClient);
     }
 
     /**
@@ -1329,7 +1307,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVerifyCodeRequest 请求对象
+     * @param request CheckVerifyCodeRequest 请求对象
      * @return CheckVerifyCodeResponse
      */
     public CheckVerifyCodeResponse checkVerifyCode(CheckVerifyCodeRequest request) {
@@ -1343,13 +1321,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVerifyCodeRequest 请求对象
+     * @param request CheckVerifyCodeRequest 请求对象
      * @return SyncInvoker<CheckVerifyCodeRequest, CheckVerifyCodeResponse>
      */
     public SyncInvoker<CheckVerifyCodeRequest, CheckVerifyCodeResponse> checkVerifyCodeInvoker(
         CheckVerifyCodeRequest request) {
-        return new SyncInvoker<CheckVerifyCodeRequest, CheckVerifyCodeResponse>(request, MeetingMeta.checkVerifyCode,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.checkVerifyCode, hcClient);
     }
 
     /**
@@ -1359,7 +1336,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnonymousAuthRandomRequest 请求对象
+     * @param request CreateAnonymousAuthRandomRequest 请求对象
      * @return CreateAnonymousAuthRandomResponse
      */
     public CreateAnonymousAuthRandomResponse createAnonymousAuthRandom(CreateAnonymousAuthRandomRequest request) {
@@ -1373,13 +1350,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnonymousAuthRandomRequest 请求对象
+     * @param request CreateAnonymousAuthRandomRequest 请求对象
      * @return SyncInvoker<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse>
      */
     public SyncInvoker<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse> createAnonymousAuthRandomInvoker(
         CreateAnonymousAuthRandomRequest request) {
-        return new SyncInvoker<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse>(request,
-            MeetingMeta.createAnonymousAuthRandom, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.createAnonymousAuthRandom, hcClient);
     }
 
     /**
@@ -1389,7 +1365,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfTokenRequest 请求对象
+     * @param request CreateConfTokenRequest 请求对象
      * @return CreateConfTokenResponse
      */
     public CreateConfTokenResponse createConfToken(CreateConfTokenRequest request) {
@@ -1403,13 +1379,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfTokenRequest 请求对象
+     * @param request CreateConfTokenRequest 请求对象
      * @return SyncInvoker<CreateConfTokenRequest, CreateConfTokenResponse>
      */
     public SyncInvoker<CreateConfTokenRequest, CreateConfTokenResponse> createConfTokenInvoker(
         CreateConfTokenRequest request) {
-        return new SyncInvoker<CreateConfTokenRequest, CreateConfTokenResponse>(request, MeetingMeta.createConfToken,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.createConfToken, hcClient);
     }
 
     /**
@@ -1419,7 +1394,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMeetingRequest 请求对象
+     * @param request CreateMeetingRequest 请求对象
      * @return CreateMeetingResponse
      */
     public CreateMeetingResponse createMeeting(CreateMeetingRequest request) {
@@ -1433,12 +1408,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMeetingRequest 请求对象
+     * @param request CreateMeetingRequest 请求对象
      * @return SyncInvoker<CreateMeetingRequest, CreateMeetingResponse>
      */
     public SyncInvoker<CreateMeetingRequest, CreateMeetingResponse> createMeetingInvoker(CreateMeetingRequest request) {
-        return new SyncInvoker<CreateMeetingRequest, CreateMeetingResponse>(request, MeetingMeta.createMeeting,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.createMeeting, hcClient);
     }
 
     /**
@@ -1448,7 +1422,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePortalRefNonceRequest 请求对象
+     * @param request CreatePortalRefNonceRequest 请求对象
      * @return CreatePortalRefNonceResponse
      */
     public CreatePortalRefNonceResponse createPortalRefNonce(CreatePortalRefNonceRequest request) {
@@ -1462,13 +1436,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePortalRefNonceRequest 请求对象
+     * @param request CreatePortalRefNonceRequest 请求对象
      * @return SyncInvoker<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse>
      */
     public SyncInvoker<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse> createPortalRefNonceInvoker(
         CreatePortalRefNonceRequest request) {
-        return new SyncInvoker<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse>(request,
-            MeetingMeta.createPortalRefNonce, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.createPortalRefNonce, hcClient);
     }
 
     /**
@@ -1478,7 +1451,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecurringMeetingRequest 请求对象
+     * @param request CreateRecurringMeetingRequest 请求对象
      * @return CreateRecurringMeetingResponse
      */
     public CreateRecurringMeetingResponse createRecurringMeeting(CreateRecurringMeetingRequest request) {
@@ -1492,13 +1465,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecurringMeetingRequest 请求对象
+     * @param request CreateRecurringMeetingRequest 请求对象
      * @return SyncInvoker<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse>
      */
     public SyncInvoker<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> createRecurringMeetingInvoker(
         CreateRecurringMeetingRequest request) {
-        return new SyncInvoker<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse>(request,
-            MeetingMeta.createRecurringMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.createRecurringMeeting, hcClient);
     }
 
     /**
@@ -1508,7 +1480,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVisionActiveCodeRequest 请求对象
+     * @param request CreateVisionActiveCodeRequest 请求对象
      * @return CreateVisionActiveCodeResponse
      */
     public CreateVisionActiveCodeResponse createVisionActiveCode(CreateVisionActiveCodeRequest request) {
@@ -1522,13 +1494,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVisionActiveCodeRequest 请求对象
+     * @param request CreateVisionActiveCodeRequest 请求对象
      * @return SyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse>
      */
     public SyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> createVisionActiveCodeInvoker(
         CreateVisionActiveCodeRequest request) {
-        return new SyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse>(request,
-            MeetingMeta.createVisionActiveCode, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.createVisionActiveCode, hcClient);
     }
 
     /**
@@ -1538,7 +1509,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWebSocketTokenRequest 请求对象
+     * @param request CreateWebSocketTokenRequest 请求对象
      * @return CreateWebSocketTokenResponse
      */
     public CreateWebSocketTokenResponse createWebSocketToken(CreateWebSocketTokenRequest request) {
@@ -1552,13 +1523,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWebSocketTokenRequest 请求对象
+     * @param request CreateWebSocketTokenRequest 请求对象
      * @return SyncInvoker<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse>
      */
     public SyncInvoker<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse> createWebSocketTokenInvoker(
         CreateWebSocketTokenRequest request) {
-        return new SyncInvoker<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse>(request,
-            MeetingMeta.createWebSocketToken, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.createWebSocketToken, hcClient);
     }
 
     /**
@@ -1568,7 +1538,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWebinarRequest 请求对象
+     * @param request CreateWebinarRequest 请求对象
      * @return CreateWebinarResponse
      */
     public CreateWebinarResponse createWebinar(CreateWebinarRequest request) {
@@ -1582,12 +1552,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWebinarRequest 请求对象
+     * @param request CreateWebinarRequest 请求对象
      * @return SyncInvoker<CreateWebinarRequest, CreateWebinarResponse>
      */
     public SyncInvoker<CreateWebinarRequest, CreateWebinarResponse> createWebinarInvoker(CreateWebinarRequest request) {
-        return new SyncInvoker<CreateWebinarRequest, CreateWebinarResponse>(request, MeetingMeta.createWebinar,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.createWebinar, hcClient);
     }
 
     /**
@@ -1597,7 +1566,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAttendeesRequest 请求对象
+     * @param request DeleteAttendeesRequest 请求对象
      * @return DeleteAttendeesResponse
      */
     public DeleteAttendeesResponse deleteAttendees(DeleteAttendeesRequest request) {
@@ -1611,13 +1580,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAttendeesRequest 请求对象
+     * @param request DeleteAttendeesRequest 请求对象
      * @return SyncInvoker<DeleteAttendeesRequest, DeleteAttendeesResponse>
      */
     public SyncInvoker<DeleteAttendeesRequest, DeleteAttendeesResponse> deleteAttendeesInvoker(
         DeleteAttendeesRequest request) {
-        return new SyncInvoker<DeleteAttendeesRequest, DeleteAttendeesResponse>(request, MeetingMeta.deleteAttendees,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteAttendees, hcClient);
     }
 
     /**
@@ -1627,7 +1595,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCorpRequest 请求对象
+     * @param request DeleteCorpRequest 请求对象
      * @return DeleteCorpResponse
      */
     public DeleteCorpResponse deleteCorp(DeleteCorpRequest request) {
@@ -1641,11 +1609,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCorpRequest 请求对象
+     * @param request DeleteCorpRequest 请求对象
      * @return SyncInvoker<DeleteCorpRequest, DeleteCorpResponse>
      */
     public SyncInvoker<DeleteCorpRequest, DeleteCorpResponse> deleteCorpInvoker(DeleteCorpRequest request) {
-        return new SyncInvoker<DeleteCorpRequest, DeleteCorpResponse>(request, MeetingMeta.deleteCorp, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteCorp, hcClient);
     }
 
     /**
@@ -1655,7 +1623,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCorpVmrRequest 请求对象
+     * @param request DeleteCorpVmrRequest 请求对象
      * @return DeleteCorpVmrResponse
      */
     public DeleteCorpVmrResponse deleteCorpVmr(DeleteCorpVmrRequest request) {
@@ -1669,12 +1637,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCorpVmrRequest 请求对象
+     * @param request DeleteCorpVmrRequest 请求对象
      * @return SyncInvoker<DeleteCorpVmrRequest, DeleteCorpVmrResponse>
      */
     public SyncInvoker<DeleteCorpVmrRequest, DeleteCorpVmrResponse> deleteCorpVmrInvoker(DeleteCorpVmrRequest request) {
-        return new SyncInvoker<DeleteCorpVmrRequest, DeleteCorpVmrResponse>(request, MeetingMeta.deleteCorpVmr,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteCorpVmr, hcClient);
     }
 
     /**
@@ -1684,7 +1651,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDepartmentRequest 请求对象
+     * @param request DeleteDepartmentRequest 请求对象
      * @return DeleteDepartmentResponse
      */
     public DeleteDepartmentResponse deleteDepartment(DeleteDepartmentRequest request) {
@@ -1698,13 +1665,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDepartmentRequest 请求对象
+     * @param request DeleteDepartmentRequest 请求对象
      * @return SyncInvoker<DeleteDepartmentRequest, DeleteDepartmentResponse>
      */
     public SyncInvoker<DeleteDepartmentRequest, DeleteDepartmentResponse> deleteDepartmentInvoker(
         DeleteDepartmentRequest request) {
-        return new SyncInvoker<DeleteDepartmentRequest, DeleteDepartmentResponse>(request, MeetingMeta.deleteDepartment,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteDepartment, hcClient);
     }
 
     /**
@@ -1714,7 +1680,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLayoutRequest 请求对象
+     * @param request DeleteLayoutRequest 请求对象
      * @return DeleteLayoutResponse
      */
     public DeleteLayoutResponse deleteLayout(DeleteLayoutRequest request) {
@@ -1728,11 +1694,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLayoutRequest 请求对象
+     * @param request DeleteLayoutRequest 请求对象
      * @return SyncInvoker<DeleteLayoutRequest, DeleteLayoutResponse>
      */
     public SyncInvoker<DeleteLayoutRequest, DeleteLayoutResponse> deleteLayoutInvoker(DeleteLayoutRequest request) {
-        return new SyncInvoker<DeleteLayoutRequest, DeleteLayoutResponse>(request, MeetingMeta.deleteLayout, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteLayout, hcClient);
     }
 
     /**
@@ -1742,7 +1708,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordingsRequest 请求对象
+     * @param request DeleteRecordingsRequest 请求对象
      * @return DeleteRecordingsResponse
      */
     public DeleteRecordingsResponse deleteRecordings(DeleteRecordingsRequest request) {
@@ -1756,13 +1722,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordingsRequest 请求对象
+     * @param request DeleteRecordingsRequest 请求对象
      * @return SyncInvoker<DeleteRecordingsRequest, DeleteRecordingsResponse>
      */
     public SyncInvoker<DeleteRecordingsRequest, DeleteRecordingsResponse> deleteRecordingsInvoker(
         DeleteRecordingsRequest request) {
-        return new SyncInvoker<DeleteRecordingsRequest, DeleteRecordingsResponse>(request, MeetingMeta.deleteRecordings,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteRecordings, hcClient);
     }
 
     /**
@@ -1772,7 +1737,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceRequest 请求对象
+     * @param request DeleteResourceRequest 请求对象
      * @return DeleteResourceResponse
      */
     public DeleteResourceResponse deleteResource(DeleteResourceRequest request) {
@@ -1786,13 +1751,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceRequest 请求对象
+     * @param request DeleteResourceRequest 请求对象
      * @return SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
      */
     public SyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceInvoker(
         DeleteResourceRequest request) {
-        return new SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, MeetingMeta.deleteResource,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteResource, hcClient);
     }
 
     /**
@@ -1802,7 +1766,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTokenRequest 请求对象
+     * @param request DeleteTokenRequest 请求对象
      * @return DeleteTokenResponse
      */
     public DeleteTokenResponse deleteToken(DeleteTokenRequest request) {
@@ -1816,11 +1780,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTokenRequest 请求对象
+     * @param request DeleteTokenRequest 请求对象
      * @return SyncInvoker<DeleteTokenRequest, DeleteTokenResponse>
      */
     public SyncInvoker<DeleteTokenRequest, DeleteTokenResponse> deleteTokenInvoker(DeleteTokenRequest request) {
-        return new SyncInvoker<DeleteTokenRequest, DeleteTokenResponse>(request, MeetingMeta.deleteToken, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteToken, hcClient);
     }
 
     /**
@@ -1830,7 +1794,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVisionActiveCodeRequest 请求对象
+     * @param request DeleteVisionActiveCodeRequest 请求对象
      * @return DeleteVisionActiveCodeResponse
      */
     public DeleteVisionActiveCodeResponse deleteVisionActiveCode(DeleteVisionActiveCodeRequest request) {
@@ -1844,13 +1808,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVisionActiveCodeRequest 请求对象
+     * @param request DeleteVisionActiveCodeRequest 请求对象
      * @return SyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse>
      */
     public SyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> deleteVisionActiveCodeInvoker(
         DeleteVisionActiveCodeRequest request) {
-        return new SyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse>(request,
-            MeetingMeta.deleteVisionActiveCode, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteVisionActiveCode, hcClient);
     }
 
     /**
@@ -1860,7 +1823,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWebHookConfigRequest 请求对象
+     * @param request DeleteWebHookConfigRequest 请求对象
      * @return DeleteWebHookConfigResponse
      */
     public DeleteWebHookConfigResponse deleteWebHookConfig(DeleteWebHookConfigRequest request) {
@@ -1874,13 +1837,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWebHookConfigRequest 请求对象
+     * @param request DeleteWebHookConfigRequest 请求对象
      * @return SyncInvoker<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse>
      */
     public SyncInvoker<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> deleteWebHookConfigInvoker(
         DeleteWebHookConfigRequest request) {
-        return new SyncInvoker<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse>(request,
-            MeetingMeta.deleteWebHookConfig, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteWebHookConfig, hcClient);
     }
 
     /**
@@ -1890,7 +1852,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWebinarRequest 请求对象
+     * @param request DeleteWebinarRequest 请求对象
      * @return DeleteWebinarResponse
      */
     public DeleteWebinarResponse deleteWebinar(DeleteWebinarRequest request) {
@@ -1904,12 +1866,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWebinarRequest 请求对象
+     * @param request DeleteWebinarRequest 请求对象
      * @return SyncInvoker<DeleteWebinarRequest, DeleteWebinarResponse>
      */
     public SyncInvoker<DeleteWebinarRequest, DeleteWebinarResponse> deleteWebinarInvoker(DeleteWebinarRequest request) {
-        return new SyncInvoker<DeleteWebinarRequest, DeleteWebinarResponse>(request, MeetingMeta.deleteWebinar,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.deleteWebinar, hcClient);
     }
 
     /**
@@ -1919,7 +1880,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateVmrRequest 请求对象
+     * @param request DisassociateVmrRequest 请求对象
      * @return DisassociateVmrResponse
      */
     public DisassociateVmrResponse disassociateVmr(DisassociateVmrRequest request) {
@@ -1933,13 +1894,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateVmrRequest 请求对象
+     * @param request DisassociateVmrRequest 请求对象
      * @return SyncInvoker<DisassociateVmrRequest, DisassociateVmrResponse>
      */
     public SyncInvoker<DisassociateVmrRequest, DisassociateVmrResponse> disassociateVmrInvoker(
         DisassociateVmrRequest request) {
-        return new SyncInvoker<DisassociateVmrRequest, DisassociateVmrResponse>(request, MeetingMeta.disassociateVmr,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.disassociateVmr, hcClient);
     }
 
     /**
@@ -1949,7 +1909,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HandRequest 请求对象
+     * @param request HandRequest 请求对象
      * @return HandResponse
      */
     public HandResponse hand(HandRequest request) {
@@ -1963,11 +1923,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HandRequest 请求对象
+     * @param request HandRequest 请求对象
      * @return SyncInvoker<HandRequest, HandResponse>
      */
     public SyncInvoker<HandRequest, HandResponse> handInvoker(HandRequest request) {
-        return new SyncInvoker<HandRequest, HandResponse>(request, MeetingMeta.hand, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.hand, hcClient);
     }
 
     /**
@@ -1977,7 +1937,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HangUpRequest 请求对象
+     * @param request HangUpRequest 请求对象
      * @return HangUpResponse
      */
     public HangUpResponse hangUp(HangUpRequest request) {
@@ -1991,11 +1951,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HangUpRequest 请求对象
+     * @param request HangUpRequest 请求对象
      * @return SyncInvoker<HangUpRequest, HangUpResponse>
      */
     public SyncInvoker<HangUpRequest, HangUpResponse> hangUpInvoker(HangUpRequest request) {
-        return new SyncInvoker<HangUpRequest, HangUpResponse>(request, MeetingMeta.hangUp, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.hangUp, hcClient);
     }
 
     /**
@@ -2005,7 +1965,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteOperateVideoRequest 请求对象
+     * @param request InviteOperateVideoRequest 请求对象
      * @return InviteOperateVideoResponse
      */
     public InviteOperateVideoResponse inviteOperateVideo(InviteOperateVideoRequest request) {
@@ -2019,13 +1979,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteOperateVideoRequest 请求对象
+     * @param request InviteOperateVideoRequest 请求对象
      * @return SyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse>
      */
     public SyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse> inviteOperateVideoInvoker(
         InviteOperateVideoRequest request) {
-        return new SyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse>(request,
-            MeetingMeta.inviteOperateVideo, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.inviteOperateVideo, hcClient);
     }
 
     /**
@@ -2035,7 +1994,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteParticipantRequest 请求对象
+     * @param request InviteParticipantRequest 请求对象
      * @return InviteParticipantResponse
      */
     public InviteParticipantResponse inviteParticipant(InviteParticipantRequest request) {
@@ -2049,13 +2008,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteParticipantRequest 请求对象
+     * @param request InviteParticipantRequest 请求对象
      * @return SyncInvoker<InviteParticipantRequest, InviteParticipantResponse>
      */
     public SyncInvoker<InviteParticipantRequest, InviteParticipantResponse> inviteParticipantInvoker(
         InviteParticipantRequest request) {
-        return new SyncInvoker<InviteParticipantRequest, InviteParticipantResponse>(request,
-            MeetingMeta.inviteParticipant, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.inviteParticipant, hcClient);
     }
 
     /**
@@ -2065,7 +2023,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteShareRequest 请求对象
+     * @param request InviteShareRequest 请求对象
      * @return InviteShareResponse
      */
     public InviteShareResponse inviteShare(InviteShareRequest request) {
@@ -2079,11 +2037,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteShareRequest 请求对象
+     * @param request InviteShareRequest 请求对象
      * @return SyncInvoker<InviteShareRequest, InviteShareResponse>
      */
     public SyncInvoker<InviteShareRequest, InviteShareResponse> inviteShareInvoker(InviteShareRequest request) {
-        return new SyncInvoker<InviteShareRequest, InviteShareResponse>(request, MeetingMeta.inviteShare, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.inviteShare, hcClient);
     }
 
     /**
@@ -2097,7 +2055,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteUserRequest 请求对象
+     * @param request InviteUserRequest 请求对象
      * @return InviteUserResponse
      */
     public InviteUserResponse inviteUser(InviteUserRequest request) {
@@ -2115,11 +2073,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteUserRequest 请求对象
+     * @param request InviteUserRequest 请求对象
      * @return SyncInvoker<InviteUserRequest, InviteUserResponse>
      */
     public SyncInvoker<InviteUserRequest, InviteUserResponse> inviteUserInvoker(InviteUserRequest request) {
-        return new SyncInvoker<InviteUserRequest, InviteUserResponse>(request, MeetingMeta.inviteUser, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.inviteUser, hcClient);
     }
 
     /**
@@ -2130,7 +2088,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteWithPwdRequest 请求对象
+     * @param request InviteWithPwdRequest 请求对象
      * @return InviteWithPwdResponse
      */
     public InviteWithPwdResponse inviteWithPwd(InviteWithPwdRequest request) {
@@ -2145,12 +2103,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteWithPwdRequest 请求对象
+     * @param request InviteWithPwdRequest 请求对象
      * @return SyncInvoker<InviteWithPwdRequest, InviteWithPwdResponse>
      */
     public SyncInvoker<InviteWithPwdRequest, InviteWithPwdResponse> inviteWithPwdInvoker(InviteWithPwdRequest request) {
-        return new SyncInvoker<InviteWithPwdRequest, InviteWithPwdResponse>(request, MeetingMeta.inviteWithPwd,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.inviteWithPwd, hcClient);
     }
 
     /**
@@ -2160,7 +2117,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryWebinarsRequest 请求对象
+     * @param request ListHistoryWebinarsRequest 请求对象
      * @return ListHistoryWebinarsResponse
      */
     public ListHistoryWebinarsResponse listHistoryWebinars(ListHistoryWebinarsRequest request) {
@@ -2174,13 +2131,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryWebinarsRequest 请求对象
+     * @param request ListHistoryWebinarsRequest 请求对象
      * @return SyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse>
      */
     public SyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> listHistoryWebinarsInvoker(
         ListHistoryWebinarsRequest request) {
-        return new SyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse>(request,
-            MeetingMeta.listHistoryWebinars, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.listHistoryWebinars, hcClient);
     }
 
     /**
@@ -2190,7 +2146,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOngoingWebinarsRequest 请求对象
+     * @param request ListOngoingWebinarsRequest 请求对象
      * @return ListOngoingWebinarsResponse
      */
     public ListOngoingWebinarsResponse listOngoingWebinars(ListOngoingWebinarsRequest request) {
@@ -2204,13 +2160,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOngoingWebinarsRequest 请求对象
+     * @param request ListOngoingWebinarsRequest 请求对象
      * @return SyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse>
      */
     public SyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> listOngoingWebinarsInvoker(
         ListOngoingWebinarsRequest request) {
-        return new SyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse>(request,
-            MeetingMeta.listOngoingWebinars, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.listOngoingWebinars, hcClient);
     }
 
     /**
@@ -2220,7 +2175,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpComingWebinarsRequest 请求对象
+     * @param request ListUpComingWebinarsRequest 请求对象
      * @return ListUpComingWebinarsResponse
      */
     public ListUpComingWebinarsResponse listUpComingWebinars(ListUpComingWebinarsRequest request) {
@@ -2234,13 +2189,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpComingWebinarsRequest 请求对象
+     * @param request ListUpComingWebinarsRequest 请求对象
      * @return SyncInvoker<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse>
      */
     public SyncInvoker<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse> listUpComingWebinarsInvoker(
         ListUpComingWebinarsRequest request) {
-        return new SyncInvoker<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse>(request,
-            MeetingMeta.listUpComingWebinars, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.listUpComingWebinars, hcClient);
     }
 
     /**
@@ -2250,7 +2204,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LiveRequest 请求对象
+     * @param request LiveRequest 请求对象
      * @return LiveResponse
      */
     public LiveResponse live(LiveRequest request) {
@@ -2264,11 +2218,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LiveRequest 请求对象
+     * @param request LiveRequest 请求对象
      * @return SyncInvoker<LiveRequest, LiveResponse>
      */
     public SyncInvoker<LiveRequest, LiveResponse> liveInvoker(LiveRequest request) {
-        return new SyncInvoker<LiveRequest, LiveResponse>(request, MeetingMeta.live, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.live, hcClient);
     }
 
     /**
@@ -2278,7 +2232,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LockMeetingRequest 请求对象
+     * @param request LockMeetingRequest 请求对象
      * @return LockMeetingResponse
      */
     public LockMeetingResponse lockMeeting(LockMeetingRequest request) {
@@ -2292,11 +2246,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LockMeetingRequest 请求对象
+     * @param request LockMeetingRequest 请求对象
      * @return SyncInvoker<LockMeetingRequest, LockMeetingResponse>
      */
     public SyncInvoker<LockMeetingRequest, LockMeetingResponse> lockMeetingInvoker(LockMeetingRequest request) {
-        return new SyncInvoker<LockMeetingRequest, LockMeetingResponse>(request, MeetingMeta.lockMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.lockMeeting, hcClient);
     }
 
     /**
@@ -2306,7 +2260,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LockViewRequest 请求对象
+     * @param request LockViewRequest 请求对象
      * @return LockViewResponse
      */
     public LockViewResponse lockView(LockViewRequest request) {
@@ -2320,11 +2274,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LockViewRequest 请求对象
+     * @param request LockViewRequest 请求对象
      * @return SyncInvoker<LockViewRequest, LockViewResponse>
      */
     public SyncInvoker<LockViewRequest, LockViewResponse> lockViewInvoker(LockViewRequest request) {
-        return new SyncInvoker<LockViewRequest, LockViewResponse>(request, MeetingMeta.lockView, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.lockView, hcClient);
     }
 
     /**
@@ -2334,7 +2288,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MoveToWaitingRoomRequest 请求对象
+     * @param request MoveToWaitingRoomRequest 请求对象
      * @return MoveToWaitingRoomResponse
      */
     public MoveToWaitingRoomResponse moveToWaitingRoom(MoveToWaitingRoomRequest request) {
@@ -2348,13 +2302,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MoveToWaitingRoomRequest 请求对象
+     * @param request MoveToWaitingRoomRequest 请求对象
      * @return SyncInvoker<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse>
      */
     public SyncInvoker<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse> moveToWaitingRoomInvoker(
         MoveToWaitingRoomRequest request) {
-        return new SyncInvoker<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse>(request,
-            MeetingMeta.moveToWaitingRoom, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.moveToWaitingRoom, hcClient);
     }
 
     /**
@@ -2364,7 +2317,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MuteMeetingRequest 请求对象
+     * @param request MuteMeetingRequest 请求对象
      * @return MuteMeetingResponse
      */
     public MuteMeetingResponse muteMeeting(MuteMeetingRequest request) {
@@ -2378,11 +2331,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MuteMeetingRequest 请求对象
+     * @param request MuteMeetingRequest 请求对象
      * @return SyncInvoker<MuteMeetingRequest, MuteMeetingResponse>
      */
     public SyncInvoker<MuteMeetingRequest, MuteMeetingResponse> muteMeetingInvoker(MuteMeetingRequest request) {
-        return new SyncInvoker<MuteMeetingRequest, MuteMeetingResponse>(request, MeetingMeta.muteMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.muteMeeting, hcClient);
     }
 
     /**
@@ -2392,7 +2345,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MuteParticipantRequest 请求对象
+     * @param request MuteParticipantRequest 请求对象
      * @return MuteParticipantResponse
      */
     public MuteParticipantResponse muteParticipant(MuteParticipantRequest request) {
@@ -2406,13 +2359,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MuteParticipantRequest 请求对象
+     * @param request MuteParticipantRequest 请求对象
      * @return SyncInvoker<MuteParticipantRequest, MuteParticipantResponse>
      */
     public SyncInvoker<MuteParticipantRequest, MuteParticipantResponse> muteParticipantInvoker(
         MuteParticipantRequest request) {
-        return new SyncInvoker<MuteParticipantRequest, MuteParticipantResponse>(request, MeetingMeta.muteParticipant,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.muteParticipant, hcClient);
     }
 
     /**
@@ -2422,7 +2374,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ProlongMeetingRequest 请求对象
+     * @param request ProlongMeetingRequest 请求对象
      * @return ProlongMeetingResponse
      */
     public ProlongMeetingResponse prolongMeeting(ProlongMeetingRequest request) {
@@ -2436,13 +2388,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ProlongMeetingRequest 请求对象
+     * @param request ProlongMeetingRequest 请求对象
      * @return SyncInvoker<ProlongMeetingRequest, ProlongMeetingResponse>
      */
     public SyncInvoker<ProlongMeetingRequest, ProlongMeetingResponse> prolongMeetingInvoker(
         ProlongMeetingRequest request) {
-        return new SyncInvoker<ProlongMeetingRequest, ProlongMeetingResponse>(request, MeetingMeta.prolongMeeting,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.prolongMeeting, hcClient);
     }
 
     /**
@@ -2452,7 +2403,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecordRequest 请求对象
+     * @param request RecordRequest 请求对象
      * @return RecordResponse
      */
     public RecordResponse record(RecordRequest request) {
@@ -2466,11 +2417,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecordRequest 请求对象
+     * @param request RecordRequest 请求对象
      * @return SyncInvoker<RecordRequest, RecordResponse>
      */
     public SyncInvoker<RecordRequest, RecordResponse> recordInvoker(RecordRequest request) {
-        return new SyncInvoker<RecordRequest, RecordResponse>(request, MeetingMeta.record, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.record, hcClient);
     }
 
     /**
@@ -2480,7 +2431,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenameParticipantRequest 请求对象
+     * @param request RenameParticipantRequest 请求对象
      * @return RenameParticipantResponse
      */
     public RenameParticipantResponse renameParticipant(RenameParticipantRequest request) {
@@ -2494,13 +2445,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenameParticipantRequest 请求对象
+     * @param request RenameParticipantRequest 请求对象
      * @return SyncInvoker<RenameParticipantRequest, RenameParticipantResponse>
      */
     public SyncInvoker<RenameParticipantRequest, RenameParticipantResponse> renameParticipantInvoker(
         RenameParticipantRequest request) {
-        return new SyncInvoker<RenameParticipantRequest, RenameParticipantResponse>(request,
-            MeetingMeta.renameParticipant, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.renameParticipant, hcClient);
     }
 
     /**
@@ -2510,7 +2460,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetActivecodeRequest 请求对象
+     * @param request ResetActivecodeRequest 请求对象
      * @return ResetActivecodeResponse
      */
     public ResetActivecodeResponse resetActivecode(ResetActivecodeRequest request) {
@@ -2524,13 +2474,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetActivecodeRequest 请求对象
+     * @param request ResetActivecodeRequest 请求对象
      * @return SyncInvoker<ResetActivecodeRequest, ResetActivecodeResponse>
      */
     public SyncInvoker<ResetActivecodeRequest, ResetActivecodeResponse> resetActivecodeInvoker(
         ResetActivecodeRequest request) {
-        return new SyncInvoker<ResetActivecodeRequest, ResetActivecodeResponse>(request, MeetingMeta.resetActivecode,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.resetActivecode, hcClient);
     }
 
     /**
@@ -2540,7 +2489,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdRequest 请求对象
+     * @param request ResetPwdRequest 请求对象
      * @return ResetPwdResponse
      */
     public ResetPwdResponse resetPwd(ResetPwdRequest request) {
@@ -2554,11 +2503,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdRequest 请求对象
+     * @param request ResetPwdRequest 请求对象
      * @return SyncInvoker<ResetPwdRequest, ResetPwdResponse>
      */
     public SyncInvoker<ResetPwdRequest, ResetPwdResponse> resetPwdInvoker(ResetPwdRequest request) {
-        return new SyncInvoker<ResetPwdRequest, ResetPwdResponse>(request, MeetingMeta.resetPwd, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.resetPwd, hcClient);
     }
 
     /**
@@ -2568,7 +2517,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdByAdminRequest 请求对象
+     * @param request ResetPwdByAdminRequest 请求对象
      * @return ResetPwdByAdminResponse
      */
     public ResetPwdByAdminResponse resetPwdByAdmin(ResetPwdByAdminRequest request) {
@@ -2582,13 +2531,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdByAdminRequest 请求对象
+     * @param request ResetPwdByAdminRequest 请求对象
      * @return SyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse>
      */
     public SyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse> resetPwdByAdminInvoker(
         ResetPwdByAdminRequest request) {
-        return new SyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse>(request, MeetingMeta.resetPwdByAdmin,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.resetPwdByAdmin, hcClient);
     }
 
     /**
@@ -2598,7 +2546,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetVisionActiveCodeRequest 请求对象
+     * @param request ResetVisionActiveCodeRequest 请求对象
      * @return ResetVisionActiveCodeResponse
      */
     public ResetVisionActiveCodeResponse resetVisionActiveCode(ResetVisionActiveCodeRequest request) {
@@ -2612,13 +2560,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetVisionActiveCodeRequest 请求对象
+     * @param request ResetVisionActiveCodeRequest 请求对象
      * @return SyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse>
      */
     public SyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> resetVisionActiveCodeInvoker(
         ResetVisionActiveCodeRequest request) {
-        return new SyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse>(request,
-            MeetingMeta.resetVisionActiveCode, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.resetVisionActiveCode, hcClient);
     }
 
     /**
@@ -2628,7 +2575,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeSimultaneousInterpretationRequest 请求对象
+     * @param request ResumeSimultaneousInterpretationRequest 请求对象
      * @return ResumeSimultaneousInterpretationResponse
      */
     public ResumeSimultaneousInterpretationResponse resumeSimultaneousInterpretation(
@@ -2643,13 +2590,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeSimultaneousInterpretationRequest 请求对象
+     * @param request ResumeSimultaneousInterpretationRequest 请求对象
      * @return SyncInvoker<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse>
      */
     public SyncInvoker<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse> resumeSimultaneousInterpretationInvoker(
         ResumeSimultaneousInterpretationRequest request) {
-        return new SyncInvoker<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse>(
-            request, MeetingMeta.resumeSimultaneousInterpretation, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.resumeSimultaneousInterpretation, hcClient);
     }
 
     /**
@@ -2659,7 +2605,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollcallParticipantRequest 请求对象
+     * @param request RollcallParticipantRequest 请求对象
      * @return RollcallParticipantResponse
      */
     public RollcallParticipantResponse rollcallParticipant(RollcallParticipantRequest request) {
@@ -2673,13 +2619,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollcallParticipantRequest 请求对象
+     * @param request RollcallParticipantRequest 请求对象
      * @return SyncInvoker<RollcallParticipantRequest, RollcallParticipantResponse>
      */
     public SyncInvoker<RollcallParticipantRequest, RollcallParticipantResponse> rollcallParticipantInvoker(
         RollcallParticipantRequest request) {
-        return new SyncInvoker<RollcallParticipantRequest, RollcallParticipantResponse>(request,
-            MeetingMeta.rollcallParticipant, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.rollcallParticipant, hcClient);
     }
 
     /**
@@ -2689,7 +2634,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveLayoutRequest 请求对象
+     * @param request SaveLayoutRequest 请求对象
      * @return SaveLayoutResponse
      */
     public SaveLayoutResponse saveLayout(SaveLayoutRequest request) {
@@ -2703,11 +2648,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveLayoutRequest 请求对象
+     * @param request SaveLayoutRequest 请求对象
      * @return SyncInvoker<SaveLayoutRequest, SaveLayoutResponse>
      */
     public SyncInvoker<SaveLayoutRequest, SaveLayoutResponse> saveLayoutInvoker(SaveLayoutRequest request) {
-        return new SyncInvoker<SaveLayoutRequest, SaveLayoutResponse>(request, MeetingMeta.saveLayout, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.saveLayout, hcClient);
     }
 
     /**
@@ -2717,7 +2662,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchAttendanceRecordsOfHisMeetingRequest 请求对象
+     * @param request SearchAttendanceRecordsOfHisMeetingRequest 请求对象
      * @return SearchAttendanceRecordsOfHisMeetingResponse
      */
     public SearchAttendanceRecordsOfHisMeetingResponse searchAttendanceRecordsOfHisMeeting(
@@ -2732,13 +2677,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchAttendanceRecordsOfHisMeetingRequest 请求对象
+     * @param request SearchAttendanceRecordsOfHisMeetingRequest 请求对象
      * @return SyncInvoker<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse>
      */
     public SyncInvoker<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse> searchAttendanceRecordsOfHisMeetingInvoker(
         SearchAttendanceRecordsOfHisMeetingRequest request) {
-        return new SyncInvoker<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse>(
-            request, MeetingMeta.searchAttendanceRecordsOfHisMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchAttendanceRecordsOfHisMeeting, hcClient);
     }
 
     /**
@@ -2748,7 +2692,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpRequest 请求对象
+     * @param request SearchCorpRequest 请求对象
      * @return SearchCorpResponse
      */
     public SearchCorpResponse searchCorp(SearchCorpRequest request) {
@@ -2762,11 +2706,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpRequest 请求对象
+     * @param request SearchCorpRequest 请求对象
      * @return SyncInvoker<SearchCorpRequest, SearchCorpResponse>
      */
     public SyncInvoker<SearchCorpRequest, SearchCorpResponse> searchCorpInvoker(SearchCorpRequest request) {
-        return new SyncInvoker<SearchCorpRequest, SearchCorpResponse>(request, MeetingMeta.searchCorp, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchCorp, hcClient);
     }
 
     /**
@@ -2776,7 +2720,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpAdminsRequest 请求对象
+     * @param request SearchCorpAdminsRequest 请求对象
      * @return SearchCorpAdminsResponse
      */
     public SearchCorpAdminsResponse searchCorpAdmins(SearchCorpAdminsRequest request) {
@@ -2790,13 +2734,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpAdminsRequest 请求对象
+     * @param request SearchCorpAdminsRequest 请求对象
      * @return SyncInvoker<SearchCorpAdminsRequest, SearchCorpAdminsResponse>
      */
     public SyncInvoker<SearchCorpAdminsRequest, SearchCorpAdminsResponse> searchCorpAdminsInvoker(
         SearchCorpAdminsRequest request) {
-        return new SyncInvoker<SearchCorpAdminsRequest, SearchCorpAdminsResponse>(request, MeetingMeta.searchCorpAdmins,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchCorpAdmins, hcClient);
     }
 
     /**
@@ -2806,7 +2749,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpDirRequest 请求对象
+     * @param request SearchCorpDirRequest 请求对象
      * @return SearchCorpDirResponse
      */
     public SearchCorpDirResponse searchCorpDir(SearchCorpDirRequest request) {
@@ -2820,12 +2763,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpDirRequest 请求对象
+     * @param request SearchCorpDirRequest 请求对象
      * @return SyncInvoker<SearchCorpDirRequest, SearchCorpDirResponse>
      */
     public SyncInvoker<SearchCorpDirRequest, SearchCorpDirResponse> searchCorpDirInvoker(SearchCorpDirRequest request) {
-        return new SyncInvoker<SearchCorpDirRequest, SearchCorpDirResponse>(request, MeetingMeta.searchCorpDir,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchCorpDir, hcClient);
     }
 
     /**
@@ -2835,7 +2777,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpExternalDirRequest 请求对象
+     * @param request SearchCorpExternalDirRequest 请求对象
      * @return SearchCorpExternalDirResponse
      */
     public SearchCorpExternalDirResponse searchCorpExternalDir(SearchCorpExternalDirRequest request) {
@@ -2849,13 +2791,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpExternalDirRequest 请求对象
+     * @param request SearchCorpExternalDirRequest 请求对象
      * @return SyncInvoker<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse>
      */
     public SyncInvoker<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse> searchCorpExternalDirInvoker(
         SearchCorpExternalDirRequest request) {
-        return new SyncInvoker<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse>(request,
-            MeetingMeta.searchCorpExternalDir, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchCorpExternalDir, hcClient);
     }
 
     /**
@@ -2865,7 +2806,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpResourcesRequest 请求对象
+     * @param request SearchCorpResourcesRequest 请求对象
      * @return SearchCorpResourcesResponse
      */
     public SearchCorpResourcesResponse searchCorpResources(SearchCorpResourcesRequest request) {
@@ -2879,13 +2820,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpResourcesRequest 请求对象
+     * @param request SearchCorpResourcesRequest 请求对象
      * @return SyncInvoker<SearchCorpResourcesRequest, SearchCorpResourcesResponse>
      */
     public SyncInvoker<SearchCorpResourcesRequest, SearchCorpResourcesResponse> searchCorpResourcesInvoker(
         SearchCorpResourcesRequest request) {
-        return new SyncInvoker<SearchCorpResourcesRequest, SearchCorpResourcesResponse>(request,
-            MeetingMeta.searchCorpResources, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchCorpResources, hcClient);
     }
 
     /**
@@ -2895,7 +2835,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpVmrRequest 请求对象
+     * @param request SearchCorpVmrRequest 请求对象
      * @return SearchCorpVmrResponse
      */
     public SearchCorpVmrResponse searchCorpVmr(SearchCorpVmrRequest request) {
@@ -2909,12 +2849,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpVmrRequest 请求对象
+     * @param request SearchCorpVmrRequest 请求对象
      * @return SyncInvoker<SearchCorpVmrRequest, SearchCorpVmrResponse>
      */
     public SyncInvoker<SearchCorpVmrRequest, SearchCorpVmrResponse> searchCorpVmrInvoker(SearchCorpVmrRequest request) {
-        return new SyncInvoker<SearchCorpVmrRequest, SearchCorpVmrResponse>(request, MeetingMeta.searchCorpVmr,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchCorpVmr, hcClient);
     }
 
     /**
@@ -2924,7 +2863,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCtlRecordsOfHisMeetingRequest 请求对象
+     * @param request SearchCtlRecordsOfHisMeetingRequest 请求对象
      * @return SearchCtlRecordsOfHisMeetingResponse
      */
     public SearchCtlRecordsOfHisMeetingResponse searchCtlRecordsOfHisMeeting(
@@ -2939,13 +2878,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCtlRecordsOfHisMeetingRequest 请求对象
+     * @param request SearchCtlRecordsOfHisMeetingRequest 请求对象
      * @return SyncInvoker<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse>
      */
     public SyncInvoker<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse> searchCtlRecordsOfHisMeetingInvoker(
         SearchCtlRecordsOfHisMeetingRequest request) {
-        return new SyncInvoker<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse>(request,
-            MeetingMeta.searchCtlRecordsOfHisMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchCtlRecordsOfHisMeeting, hcClient);
     }
 
     /**
@@ -2955,7 +2893,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchDepartmentByNameRequest 请求对象
+     * @param request SearchDepartmentByNameRequest 请求对象
      * @return SearchDepartmentByNameResponse
      */
     public SearchDepartmentByNameResponse searchDepartmentByName(SearchDepartmentByNameRequest request) {
@@ -2969,13 +2907,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchDepartmentByNameRequest 请求对象
+     * @param request SearchDepartmentByNameRequest 请求对象
      * @return SyncInvoker<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse>
      */
     public SyncInvoker<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse> searchDepartmentByNameInvoker(
         SearchDepartmentByNameRequest request) {
-        return new SyncInvoker<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse>(request,
-            MeetingMeta.searchDepartmentByName, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchDepartmentByName, hcClient);
     }
 
     /**
@@ -2986,7 +2923,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchDevicesRequest 请求对象
+     * @param request SearchDevicesRequest 请求对象
      * @return SearchDevicesResponse
      */
     public SearchDevicesResponse searchDevices(SearchDevicesRequest request) {
@@ -3001,12 +2938,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchDevicesRequest 请求对象
+     * @param request SearchDevicesRequest 请求对象
      * @return SyncInvoker<SearchDevicesRequest, SearchDevicesResponse>
      */
     public SyncInvoker<SearchDevicesRequest, SearchDevicesResponse> searchDevicesInvoker(SearchDevicesRequest request) {
-        return new SyncInvoker<SearchDevicesRequest, SearchDevicesResponse>(request, MeetingMeta.searchDevices,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchDevices, hcClient);
     }
 
     /**
@@ -3019,7 +2955,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchHisMeetingsRequest 请求对象
+     * @param request SearchHisMeetingsRequest 请求对象
      * @return SearchHisMeetingsResponse
      */
     public SearchHisMeetingsResponse searchHisMeetings(SearchHisMeetingsRequest request) {
@@ -3036,13 +2972,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchHisMeetingsRequest 请求对象
+     * @param request SearchHisMeetingsRequest 请求对象
      * @return SyncInvoker<SearchHisMeetingsRequest, SearchHisMeetingsResponse>
      */
     public SyncInvoker<SearchHisMeetingsRequest, SearchHisMeetingsResponse> searchHisMeetingsInvoker(
         SearchHisMeetingsRequest request) {
-        return new SyncInvoker<SearchHisMeetingsRequest, SearchHisMeetingsResponse>(request,
-            MeetingMeta.searchHisMeetings, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchHisMeetings, hcClient);
     }
 
     /**
@@ -3052,7 +2987,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMaterialsRequest 请求对象
+     * @param request SearchMaterialsRequest 请求对象
      * @return SearchMaterialsResponse
      */
     public SearchMaterialsResponse searchMaterials(SearchMaterialsRequest request) {
@@ -3066,13 +3001,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMaterialsRequest 请求对象
+     * @param request SearchMaterialsRequest 请求对象
      * @return SyncInvoker<SearchMaterialsRequest, SearchMaterialsResponse>
      */
     public SyncInvoker<SearchMaterialsRequest, SearchMaterialsResponse> searchMaterialsInvoker(
         SearchMaterialsRequest request) {
-        return new SyncInvoker<SearchMaterialsRequest, SearchMaterialsResponse>(request, MeetingMeta.searchMaterials,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchMaterials, hcClient);
     }
 
     /**
@@ -3082,7 +3016,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMeetingFileListRequest 请求对象
+     * @param request SearchMeetingFileListRequest 请求对象
      * @return SearchMeetingFileListResponse
      */
     public SearchMeetingFileListResponse searchMeetingFileList(SearchMeetingFileListRequest request) {
@@ -3096,13 +3030,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMeetingFileListRequest 请求对象
+     * @param request SearchMeetingFileListRequest 请求对象
      * @return SyncInvoker<SearchMeetingFileListRequest, SearchMeetingFileListResponse>
      */
     public SyncInvoker<SearchMeetingFileListRequest, SearchMeetingFileListResponse> searchMeetingFileListInvoker(
         SearchMeetingFileListRequest request) {
-        return new SyncInvoker<SearchMeetingFileListRequest, SearchMeetingFileListResponse>(request,
-            MeetingMeta.searchMeetingFileList, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchMeetingFileList, hcClient);
     }
 
     /**
@@ -3114,7 +3047,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMeetingsRequest 请求对象
+     * @param request SearchMeetingsRequest 请求对象
      * @return SearchMeetingsResponse
      */
     public SearchMeetingsResponse searchMeetings(SearchMeetingsRequest request) {
@@ -3130,13 +3063,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMeetingsRequest 请求对象
+     * @param request SearchMeetingsRequest 请求对象
      * @return SyncInvoker<SearchMeetingsRequest, SearchMeetingsResponse>
      */
     public SyncInvoker<SearchMeetingsRequest, SearchMeetingsResponse> searchMeetingsInvoker(
         SearchMeetingsRequest request) {
-        return new SyncInvoker<SearchMeetingsRequest, SearchMeetingsResponse>(request, MeetingMeta.searchMeetings,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchMeetings, hcClient);
     }
 
     /**
@@ -3146,7 +3078,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMemberVmrRequest 请求对象
+     * @param request SearchMemberVmrRequest 请求对象
      * @return SearchMemberVmrResponse
      */
     public SearchMemberVmrResponse searchMemberVmr(SearchMemberVmrRequest request) {
@@ -3160,13 +3092,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMemberVmrRequest 请求对象
+     * @param request SearchMemberVmrRequest 请求对象
      * @return SyncInvoker<SearchMemberVmrRequest, SearchMemberVmrResponse>
      */
     public SyncInvoker<SearchMemberVmrRequest, SearchMemberVmrResponse> searchMemberVmrInvoker(
         SearchMemberVmrRequest request) {
-        return new SyncInvoker<SearchMemberVmrRequest, SearchMemberVmrResponse>(request, MeetingMeta.searchMemberVmr,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchMemberVmr, hcClient);
     }
 
     /**
@@ -3176,7 +3107,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchOnlineMeetingsRequest 请求对象
+     * @param request SearchOnlineMeetingsRequest 请求对象
      * @return SearchOnlineMeetingsResponse
      */
     public SearchOnlineMeetingsResponse searchOnlineMeetings(SearchOnlineMeetingsRequest request) {
@@ -3190,13 +3121,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchOnlineMeetingsRequest 请求对象
+     * @param request SearchOnlineMeetingsRequest 请求对象
      * @return SyncInvoker<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse>
      */
     public SyncInvoker<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> searchOnlineMeetingsInvoker(
         SearchOnlineMeetingsRequest request) {
-        return new SyncInvoker<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse>(request,
-            MeetingMeta.searchOnlineMeetings, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchOnlineMeetings, hcClient);
     }
 
     /**
@@ -3206,7 +3136,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchProgramsRequest 请求对象
+     * @param request SearchProgramsRequest 请求对象
      * @return SearchProgramsResponse
      */
     public SearchProgramsResponse searchPrograms(SearchProgramsRequest request) {
@@ -3220,13 +3150,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchProgramsRequest 请求对象
+     * @param request SearchProgramsRequest 请求对象
      * @return SyncInvoker<SearchProgramsRequest, SearchProgramsResponse>
      */
     public SyncInvoker<SearchProgramsRequest, SearchProgramsResponse> searchProgramsInvoker(
         SearchProgramsRequest request) {
-        return new SyncInvoker<SearchProgramsRequest, SearchProgramsResponse>(request, MeetingMeta.searchPrograms,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchPrograms, hcClient);
     }
 
     /**
@@ -3236,7 +3165,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchPublicationsRequest 请求对象
+     * @param request SearchPublicationsRequest 请求对象
      * @return SearchPublicationsResponse
      */
     public SearchPublicationsResponse searchPublications(SearchPublicationsRequest request) {
@@ -3250,13 +3179,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchPublicationsRequest 请求对象
+     * @param request SearchPublicationsRequest 请求对象
      * @return SyncInvoker<SearchPublicationsRequest, SearchPublicationsResponse>
      */
     public SyncInvoker<SearchPublicationsRequest, SearchPublicationsResponse> searchPublicationsInvoker(
         SearchPublicationsRequest request) {
-        return new SyncInvoker<SearchPublicationsRequest, SearchPublicationsResponse>(request,
-            MeetingMeta.searchPublications, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchPublications, hcClient);
     }
 
     /**
@@ -3266,7 +3194,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchRecordingsRequest 请求对象
+     * @param request SearchRecordingsRequest 请求对象
      * @return SearchRecordingsResponse
      */
     public SearchRecordingsResponse searchRecordings(SearchRecordingsRequest request) {
@@ -3280,13 +3208,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchRecordingsRequest 请求对象
+     * @param request SearchRecordingsRequest 请求对象
      * @return SyncInvoker<SearchRecordingsRequest, SearchRecordingsResponse>
      */
     public SyncInvoker<SearchRecordingsRequest, SearchRecordingsResponse> searchRecordingsInvoker(
         SearchRecordingsRequest request) {
-        return new SyncInvoker<SearchRecordingsRequest, SearchRecordingsResponse>(request, MeetingMeta.searchRecordings,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchRecordings, hcClient);
     }
 
     /**
@@ -3296,7 +3223,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceRequest 请求对象
+     * @param request SearchResourceRequest 请求对象
      * @return SearchResourceResponse
      */
     public SearchResourceResponse searchResource(SearchResourceRequest request) {
@@ -3310,13 +3237,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceRequest 请求对象
+     * @param request SearchResourceRequest 请求对象
      * @return SyncInvoker<SearchResourceRequest, SearchResourceResponse>
      */
     public SyncInvoker<SearchResourceRequest, SearchResourceResponse> searchResourceInvoker(
         SearchResourceRequest request) {
-        return new SyncInvoker<SearchResourceRequest, SearchResourceResponse>(request, MeetingMeta.searchResource,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchResource, hcClient);
     }
 
     /**
@@ -3326,7 +3252,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceOpRecordRequest 请求对象
+     * @param request SearchResourceOpRecordRequest 请求对象
      * @return SearchResourceOpRecordResponse
      */
     public SearchResourceOpRecordResponse searchResourceOpRecord(SearchResourceOpRecordRequest request) {
@@ -3340,13 +3266,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceOpRecordRequest 请求对象
+     * @param request SearchResourceOpRecordRequest 请求对象
      * @return SyncInvoker<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse>
      */
     public SyncInvoker<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse> searchResourceOpRecordInvoker(
         SearchResourceOpRecordRequest request) {
-        return new SyncInvoker<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse>(request,
-            MeetingMeta.searchResourceOpRecord, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchResourceOpRecord, hcClient);
     }
 
     /**
@@ -3356,7 +3281,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchUsersRequest 请求对象
+     * @param request SearchUsersRequest 请求对象
      * @return SearchUsersResponse
      */
     public SearchUsersResponse searchUsers(SearchUsersRequest request) {
@@ -3370,11 +3295,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchUsersRequest 请求对象
+     * @param request SearchUsersRequest 请求对象
      * @return SyncInvoker<SearchUsersRequest, SearchUsersResponse>
      */
     public SyncInvoker<SearchUsersRequest, SearchUsersResponse> searchUsersInvoker(SearchUsersRequest request) {
-        return new SyncInvoker<SearchUsersRequest, SearchUsersResponse>(request, MeetingMeta.searchUsers, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchUsers, hcClient);
     }
 
     /**
@@ -3384,7 +3309,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchVisionActiveCodeRequest 请求对象
+     * @param request SearchVisionActiveCodeRequest 请求对象
      * @return SearchVisionActiveCodeResponse
      */
     public SearchVisionActiveCodeResponse searchVisionActiveCode(SearchVisionActiveCodeRequest request) {
@@ -3398,13 +3323,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchVisionActiveCodeRequest 请求对象
+     * @param request SearchVisionActiveCodeRequest 请求对象
      * @return SyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse>
      */
     public SyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> searchVisionActiveCodeInvoker(
         SearchVisionActiveCodeRequest request) {
-        return new SyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse>(request,
-            MeetingMeta.searchVisionActiveCode, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchVisionActiveCode, hcClient);
     }
 
     /**
@@ -3414,7 +3338,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSlideVerifyCodeRequest 请求对象
+     * @param request SendSlideVerifyCodeRequest 请求对象
      * @return SendSlideVerifyCodeResponse
      */
     public SendSlideVerifyCodeResponse sendSlideVerifyCode(SendSlideVerifyCodeRequest request) {
@@ -3428,13 +3352,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSlideVerifyCodeRequest 请求对象
+     * @param request SendSlideVerifyCodeRequest 请求对象
      * @return SyncInvoker<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse>
      */
     public SyncInvoker<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse> sendSlideVerifyCodeInvoker(
         SendSlideVerifyCodeRequest request) {
-        return new SyncInvoker<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse>(request,
-            MeetingMeta.sendSlideVerifyCode, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.sendSlideVerifyCode, hcClient);
     }
 
     /**
@@ -3444,7 +3367,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVeriCodeForChangePwdRequest 请求对象
+     * @param request SendVeriCodeForChangePwdRequest 请求对象
      * @return SendVeriCodeForChangePwdResponse
      */
     public SendVeriCodeForChangePwdResponse sendVeriCodeForChangePwd(SendVeriCodeForChangePwdRequest request) {
@@ -3458,13 +3381,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVeriCodeForChangePwdRequest 请求对象
+     * @param request SendVeriCodeForChangePwdRequest 请求对象
      * @return SyncInvoker<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse>
      */
     public SyncInvoker<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse> sendVeriCodeForChangePwdInvoker(
         SendVeriCodeForChangePwdRequest request) {
-        return new SyncInvoker<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse>(request,
-            MeetingMeta.sendVeriCodeForChangePwd, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.sendVeriCodeForChangePwd, hcClient);
     }
 
     /**
@@ -3474,7 +3396,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVeriCodeForUpdateUserInfoRequest 请求对象
+     * @param request SendVeriCodeForUpdateUserInfoRequest 请求对象
      * @return SendVeriCodeForUpdateUserInfoResponse
      */
     public SendVeriCodeForUpdateUserInfoResponse sendVeriCodeForUpdateUserInfo(
@@ -3489,13 +3411,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVeriCodeForUpdateUserInfoRequest 请求对象
+     * @param request SendVeriCodeForUpdateUserInfoRequest 请求对象
      * @return SyncInvoker<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse>
      */
     public SyncInvoker<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse> sendVeriCodeForUpdateUserInfoInvoker(
         SendVeriCodeForUpdateUserInfoRequest request) {
-        return new SyncInvoker<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse>(request,
-            MeetingMeta.sendVeriCodeForUpdateUserInfo, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.sendVeriCodeForUpdateUserInfo, hcClient);
     }
 
     /**
@@ -3505,7 +3426,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetAttendeeLanChannelRequest 请求对象
+     * @param request SetAttendeeLanChannelRequest 请求对象
      * @return SetAttendeeLanChannelResponse
      */
     public SetAttendeeLanChannelResponse setAttendeeLanChannel(SetAttendeeLanChannelRequest request) {
@@ -3519,13 +3440,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetAttendeeLanChannelRequest 请求对象
+     * @param request SetAttendeeLanChannelRequest 请求对象
      * @return SyncInvoker<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse>
      */
     public SyncInvoker<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse> setAttendeeLanChannelInvoker(
         SetAttendeeLanChannelRequest request) {
-        return new SyncInvoker<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse>(request,
-            MeetingMeta.setAttendeeLanChannel, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setAttendeeLanChannel, hcClient);
     }
 
     /**
@@ -3535,7 +3455,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetCohostRequest 请求对象
+     * @param request SetCohostRequest 请求对象
      * @return SetCohostResponse
      */
     public SetCohostResponse setCohost(SetCohostRequest request) {
@@ -3549,11 +3469,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetCohostRequest 请求对象
+     * @param request SetCohostRequest 请求对象
      * @return SyncInvoker<SetCohostRequest, SetCohostResponse>
      */
     public SyncInvoker<SetCohostRequest, SetCohostResponse> setCohostInvoker(SetCohostRequest request) {
-        return new SyncInvoker<SetCohostRequest, SetCohostResponse>(request, MeetingMeta.setCohost, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setCohost, hcClient);
     }
 
     /**
@@ -3563,7 +3483,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetCustomMultiPictureRequest 请求对象
+     * @param request SetCustomMultiPictureRequest 请求对象
      * @return SetCustomMultiPictureResponse
      */
     public SetCustomMultiPictureResponse setCustomMultiPicture(SetCustomMultiPictureRequest request) {
@@ -3577,13 +3497,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetCustomMultiPictureRequest 请求对象
+     * @param request SetCustomMultiPictureRequest 请求对象
      * @return SyncInvoker<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse>
      */
     public SyncInvoker<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> setCustomMultiPictureInvoker(
         SetCustomMultiPictureRequest request) {
-        return new SyncInvoker<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse>(request,
-            MeetingMeta.setCustomMultiPicture, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setCustomMultiPicture, hcClient);
     }
 
     /**
@@ -3593,7 +3512,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetHostViewRequest 请求对象
+     * @param request SetHostViewRequest 请求对象
      * @return SetHostViewResponse
      */
     public SetHostViewResponse setHostView(SetHostViewRequest request) {
@@ -3607,11 +3526,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetHostViewRequest 请求对象
+     * @param request SetHostViewRequest 请求对象
      * @return SyncInvoker<SetHostViewRequest, SetHostViewResponse>
      */
     public SyncInvoker<SetHostViewRequest, SetHostViewResponse> setHostViewInvoker(SetHostViewRequest request) {
-        return new SyncInvoker<SetHostViewRequest, SetHostViewResponse>(request, MeetingMeta.setHostView, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setHostView, hcClient);
     }
 
     /**
@@ -3621,7 +3540,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetInterpreterGroupRequest 请求对象
+     * @param request SetInterpreterGroupRequest 请求对象
      * @return SetInterpreterGroupResponse
      */
     public SetInterpreterGroupResponse setInterpreterGroup(SetInterpreterGroupRequest request) {
@@ -3635,13 +3554,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetInterpreterGroupRequest 请求对象
+     * @param request SetInterpreterGroupRequest 请求对象
      * @return SyncInvoker<SetInterpreterGroupRequest, SetInterpreterGroupResponse>
      */
     public SyncInvoker<SetInterpreterGroupRequest, SetInterpreterGroupResponse> setInterpreterGroupInvoker(
         SetInterpreterGroupRequest request) {
-        return new SyncInvoker<SetInterpreterGroupRequest, SetInterpreterGroupResponse>(request,
-            MeetingMeta.setInterpreterGroup, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setInterpreterGroup, hcClient);
     }
 
     /**
@@ -3651,7 +3569,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetMultiPictureRequest 请求对象
+     * @param request SetMultiPictureRequest 请求对象
      * @return SetMultiPictureResponse
      */
     public SetMultiPictureResponse setMultiPicture(SetMultiPictureRequest request) {
@@ -3665,13 +3583,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetMultiPictureRequest 请求对象
+     * @param request SetMultiPictureRequest 请求对象
      * @return SyncInvoker<SetMultiPictureRequest, SetMultiPictureResponse>
      */
     public SyncInvoker<SetMultiPictureRequest, SetMultiPictureResponse> setMultiPictureInvoker(
         SetMultiPictureRequest request) {
-        return new SyncInvoker<SetMultiPictureRequest, SetMultiPictureResponse>(request, MeetingMeta.setMultiPicture,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setMultiPicture, hcClient);
     }
 
     /**
@@ -3681,7 +3598,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetParticipantViewRequest 请求对象
+     * @param request SetParticipantViewRequest 请求对象
      * @return SetParticipantViewResponse
      */
     public SetParticipantViewResponse setParticipantView(SetParticipantViewRequest request) {
@@ -3695,13 +3612,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetParticipantViewRequest 请求对象
+     * @param request SetParticipantViewRequest 请求对象
      * @return SyncInvoker<SetParticipantViewRequest, SetParticipantViewResponse>
      */
     public SyncInvoker<SetParticipantViewRequest, SetParticipantViewResponse> setParticipantViewInvoker(
         SetParticipantViewRequest request) {
-        return new SyncInvoker<SetParticipantViewRequest, SetParticipantViewResponse>(request,
-            MeetingMeta.setParticipantView, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setParticipantView, hcClient);
     }
 
     /**
@@ -3711,7 +3627,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRoleRequest 请求对象
+     * @param request SetRoleRequest 请求对象
      * @return SetRoleResponse
      */
     public SetRoleResponse setRole(SetRoleRequest request) {
@@ -3725,11 +3641,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRoleRequest 请求对象
+     * @param request SetRoleRequest 请求对象
      * @return SyncInvoker<SetRoleRequest, SetRoleResponse>
      */
     public SyncInvoker<SetRoleRequest, SetRoleResponse> setRoleInvoker(SetRoleRequest request) {
-        return new SyncInvoker<SetRoleRequest, SetRoleResponse>(request, MeetingMeta.setRole, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setRole, hcClient);
     }
 
     /**
@@ -3739,7 +3655,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetSsoConfigRequest 请求对象
+     * @param request SetSsoConfigRequest 请求对象
      * @return SetSsoConfigResponse
      */
     public SetSsoConfigResponse setSsoConfig(SetSsoConfigRequest request) {
@@ -3753,11 +3669,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetSsoConfigRequest 请求对象
+     * @param request SetSsoConfigRequest 请求对象
      * @return SyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse>
      */
     public SyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse> setSsoConfigInvoker(SetSsoConfigRequest request) {
-        return new SyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse>(request, MeetingMeta.setSsoConfig, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setSsoConfig, hcClient);
     }
 
     /**
@@ -3767,7 +3683,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetWebHookConfigRequest 请求对象
+     * @param request SetWebHookConfigRequest 请求对象
      * @return SetWebHookConfigResponse
      */
     public SetWebHookConfigResponse setWebHookConfig(SetWebHookConfigRequest request) {
@@ -3781,13 +3697,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetWebHookConfigRequest 请求对象
+     * @param request SetWebHookConfigRequest 请求对象
      * @return SyncInvoker<SetWebHookConfigRequest, SetWebHookConfigResponse>
      */
     public SyncInvoker<SetWebHookConfigRequest, SetWebHookConfigResponse> setWebHookConfigInvoker(
         SetWebHookConfigRequest request) {
-        return new SyncInvoker<SetWebHookConfigRequest, SetWebHookConfigResponse>(request, MeetingMeta.setWebHookConfig,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setWebHookConfig, hcClient);
     }
 
     /**
@@ -3797,7 +3712,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfOrgRequest 请求对象
+     * @param request ShowConfOrgRequest 请求对象
      * @return ShowConfOrgResponse
      */
     public ShowConfOrgResponse showConfOrg(ShowConfOrgRequest request) {
@@ -3811,11 +3726,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfOrgRequest 请求对象
+     * @param request ShowConfOrgRequest 请求对象
      * @return SyncInvoker<ShowConfOrgRequest, ShowConfOrgResponse>
      */
     public SyncInvoker<ShowConfOrgRequest, ShowConfOrgResponse> showConfOrgInvoker(ShowConfOrgRequest request) {
-        return new SyncInvoker<ShowConfOrgRequest, ShowConfOrgResponse>(request, MeetingMeta.showConfOrg, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showConfOrg, hcClient);
     }
 
     /**
@@ -3825,7 +3740,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpRequest 请求对象
+     * @param request ShowCorpRequest 请求对象
      * @return ShowCorpResponse
      */
     public ShowCorpResponse showCorp(ShowCorpRequest request) {
@@ -3839,11 +3754,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpRequest 请求对象
+     * @param request ShowCorpRequest 请求对象
      * @return SyncInvoker<ShowCorpRequest, ShowCorpResponse>
      */
     public SyncInvoker<ShowCorpRequest, ShowCorpResponse> showCorpInvoker(ShowCorpRequest request) {
-        return new SyncInvoker<ShowCorpRequest, ShowCorpResponse>(request, MeetingMeta.showCorp, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showCorp, hcClient);
     }
 
     /**
@@ -3853,7 +3768,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpAdminRequest 请求对象
+     * @param request ShowCorpAdminRequest 请求对象
      * @return ShowCorpAdminResponse
      */
     public ShowCorpAdminResponse showCorpAdmin(ShowCorpAdminRequest request) {
@@ -3867,12 +3782,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpAdminRequest 请求对象
+     * @param request ShowCorpAdminRequest 请求对象
      * @return SyncInvoker<ShowCorpAdminRequest, ShowCorpAdminResponse>
      */
     public SyncInvoker<ShowCorpAdminRequest, ShowCorpAdminResponse> showCorpAdminInvoker(ShowCorpAdminRequest request) {
-        return new SyncInvoker<ShowCorpAdminRequest, ShowCorpAdminResponse>(request, MeetingMeta.showCorpAdmin,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showCorpAdmin, hcClient);
     }
 
     /**
@@ -3882,7 +3796,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpBasicInfoRequest 请求对象
+     * @param request ShowCorpBasicInfoRequest 请求对象
      * @return ShowCorpBasicInfoResponse
      */
     public ShowCorpBasicInfoResponse showCorpBasicInfo(ShowCorpBasicInfoRequest request) {
@@ -3896,13 +3810,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpBasicInfoRequest 请求对象
+     * @param request ShowCorpBasicInfoRequest 请求对象
      * @return SyncInvoker<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse>
      */
     public SyncInvoker<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse> showCorpBasicInfoInvoker(
         ShowCorpBasicInfoRequest request) {
-        return new SyncInvoker<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse>(request,
-            MeetingMeta.showCorpBasicInfo, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showCorpBasicInfo, hcClient);
     }
 
     /**
@@ -3912,7 +3825,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpResourceRequest 请求对象
+     * @param request ShowCorpResourceRequest 请求对象
      * @return ShowCorpResourceResponse
      */
     public ShowCorpResourceResponse showCorpResource(ShowCorpResourceRequest request) {
@@ -3926,13 +3839,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpResourceRequest 请求对象
+     * @param request ShowCorpResourceRequest 请求对象
      * @return SyncInvoker<ShowCorpResourceRequest, ShowCorpResourceResponse>
      */
     public SyncInvoker<ShowCorpResourceRequest, ShowCorpResourceResponse> showCorpResourceInvoker(
         ShowCorpResourceRequest request) {
-        return new SyncInvoker<ShowCorpResourceRequest, ShowCorpResourceResponse>(request, MeetingMeta.showCorpResource,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showCorpResource, hcClient);
     }
 
     /**
@@ -3942,7 +3854,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDepartmentRequest 请求对象
+     * @param request ShowDepartmentRequest 请求对象
      * @return ShowDepartmentResponse
      */
     public ShowDepartmentResponse showDepartment(ShowDepartmentRequest request) {
@@ -3956,13 +3868,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDepartmentRequest 请求对象
+     * @param request ShowDepartmentRequest 请求对象
      * @return SyncInvoker<ShowDepartmentRequest, ShowDepartmentResponse>
      */
     public SyncInvoker<ShowDepartmentRequest, ShowDepartmentResponse> showDepartmentInvoker(
         ShowDepartmentRequest request) {
-        return new SyncInvoker<ShowDepartmentRequest, ShowDepartmentResponse>(request, MeetingMeta.showDepartment,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showDepartment, hcClient);
     }
 
     /**
@@ -3972,7 +3883,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeptAndChildDeptRequest 请求对象
+     * @param request ShowDeptAndChildDeptRequest 请求对象
      * @return ShowDeptAndChildDeptResponse
      */
     public ShowDeptAndChildDeptResponse showDeptAndChildDept(ShowDeptAndChildDeptRequest request) {
@@ -3986,13 +3897,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeptAndChildDeptRequest 请求对象
+     * @param request ShowDeptAndChildDeptRequest 请求对象
      * @return SyncInvoker<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse>
      */
     public SyncInvoker<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse> showDeptAndChildDeptInvoker(
         ShowDeptAndChildDeptRequest request) {
-        return new SyncInvoker<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse>(request,
-            MeetingMeta.showDeptAndChildDept, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showDeptAndChildDept, hcClient);
     }
 
     /**
@@ -4003,7 +3913,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceDetailRequest 请求对象
+     * @param request ShowDeviceDetailRequest 请求对象
      * @return ShowDeviceDetailResponse
      */
     public ShowDeviceDetailResponse showDeviceDetail(ShowDeviceDetailRequest request) {
@@ -4018,13 +3928,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceDetailRequest 请求对象
+     * @param request ShowDeviceDetailRequest 请求对象
      * @return SyncInvoker<ShowDeviceDetailRequest, ShowDeviceDetailResponse>
      */
     public SyncInvoker<ShowDeviceDetailRequest, ShowDeviceDetailResponse> showDeviceDetailInvoker(
         ShowDeviceDetailRequest request) {
-        return new SyncInvoker<ShowDeviceDetailRequest, ShowDeviceDetailResponse>(request, MeetingMeta.showDeviceDetail,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showDeviceDetail, hcClient);
     }
 
     /**
@@ -4035,7 +3944,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceStatusRequest 请求对象
+     * @param request ShowDeviceStatusRequest 请求对象
      * @return ShowDeviceStatusResponse
      */
     public ShowDeviceStatusResponse showDeviceStatus(ShowDeviceStatusRequest request) {
@@ -4050,13 +3959,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceStatusRequest 请求对象
+     * @param request ShowDeviceStatusRequest 请求对象
      * @return SyncInvoker<ShowDeviceStatusRequest, ShowDeviceStatusResponse>
      */
     public SyncInvoker<ShowDeviceStatusRequest, ShowDeviceStatusResponse> showDeviceStatusInvoker(
         ShowDeviceStatusRequest request) {
-        return new SyncInvoker<ShowDeviceStatusRequest, ShowDeviceStatusResponse>(request, MeetingMeta.showDeviceStatus,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showDeviceStatus, hcClient);
     }
 
     /**
@@ -4066,7 +3974,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceTypesRequest 请求对象
+     * @param request ShowDeviceTypesRequest 请求对象
      * @return ShowDeviceTypesResponse
      */
     public ShowDeviceTypesResponse showDeviceTypes(ShowDeviceTypesRequest request) {
@@ -4080,13 +3988,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceTypesRequest 请求对象
+     * @param request ShowDeviceTypesRequest 请求对象
      * @return SyncInvoker<ShowDeviceTypesRequest, ShowDeviceTypesResponse>
      */
     public SyncInvoker<ShowDeviceTypesRequest, ShowDeviceTypesResponse> showDeviceTypesInvoker(
         ShowDeviceTypesRequest request) {
-        return new SyncInvoker<ShowDeviceTypesRequest, ShowDeviceTypesResponse>(request, MeetingMeta.showDeviceTypes,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showDeviceTypes, hcClient);
     }
 
     /**
@@ -4096,7 +4003,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHisMeetingDetailRequest 请求对象
+     * @param request ShowHisMeetingDetailRequest 请求对象
      * @return ShowHisMeetingDetailResponse
      */
     public ShowHisMeetingDetailResponse showHisMeetingDetail(ShowHisMeetingDetailRequest request) {
@@ -4110,13 +4017,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHisMeetingDetailRequest 请求对象
+     * @param request ShowHisMeetingDetailRequest 请求对象
      * @return SyncInvoker<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse>
      */
     public SyncInvoker<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse> showHisMeetingDetailInvoker(
         ShowHisMeetingDetailRequest request) {
-        return new SyncInvoker<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse>(request,
-            MeetingMeta.showHisMeetingDetail, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showHisMeetingDetail, hcClient);
     }
 
     /**
@@ -4126,7 +4032,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLayoutRequest 请求对象
+     * @param request ShowLayoutRequest 请求对象
      * @return ShowLayoutResponse
      */
     public ShowLayoutResponse showLayout(ShowLayoutRequest request) {
@@ -4140,11 +4046,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLayoutRequest 请求对象
+     * @param request ShowLayoutRequest 请求对象
      * @return SyncInvoker<ShowLayoutRequest, ShowLayoutResponse>
      */
     public SyncInvoker<ShowLayoutRequest, ShowLayoutResponse> showLayoutInvoker(ShowLayoutRequest request) {
-        return new SyncInvoker<ShowLayoutRequest, ShowLayoutResponse>(request, MeetingMeta.showLayout, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showLayout, hcClient);
     }
 
     /**
@@ -4156,7 +4062,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingDetailRequest 请求对象
+     * @param request ShowMeetingDetailRequest 请求对象
      * @return ShowMeetingDetailResponse
      */
     public ShowMeetingDetailResponse showMeetingDetail(ShowMeetingDetailRequest request) {
@@ -4172,13 +4078,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingDetailRequest 请求对象
+     * @param request ShowMeetingDetailRequest 请求对象
      * @return SyncInvoker<ShowMeetingDetailRequest, ShowMeetingDetailResponse>
      */
     public SyncInvoker<ShowMeetingDetailRequest, ShowMeetingDetailResponse> showMeetingDetailInvoker(
         ShowMeetingDetailRequest request) {
-        return new SyncInvoker<ShowMeetingDetailRequest, ShowMeetingDetailResponse>(request,
-            MeetingMeta.showMeetingDetail, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showMeetingDetail, hcClient);
     }
 
     /**
@@ -4188,7 +4093,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingFileRequest 请求对象
+     * @param request ShowMeetingFileRequest 请求对象
      * @return ShowMeetingFileResponse
      */
     public ShowMeetingFileResponse showMeetingFile(ShowMeetingFileRequest request) {
@@ -4202,13 +4107,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingFileRequest 请求对象
+     * @param request ShowMeetingFileRequest 请求对象
      * @return SyncInvoker<ShowMeetingFileRequest, ShowMeetingFileResponse>
      */
     public SyncInvoker<ShowMeetingFileRequest, ShowMeetingFileResponse> showMeetingFileInvoker(
         ShowMeetingFileRequest request) {
-        return new SyncInvoker<ShowMeetingFileRequest, ShowMeetingFileResponse>(request, MeetingMeta.showMeetingFile,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showMeetingFile, hcClient);
     }
 
     /**
@@ -4218,7 +4122,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingFileListRequest 请求对象
+     * @param request ShowMeetingFileListRequest 请求对象
      * @return ShowMeetingFileListResponse
      */
     public ShowMeetingFileListResponse showMeetingFileList(ShowMeetingFileListRequest request) {
@@ -4232,13 +4136,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingFileListRequest 请求对象
+     * @param request ShowMeetingFileListRequest 请求对象
      * @return SyncInvoker<ShowMeetingFileListRequest, ShowMeetingFileListResponse>
      */
     public SyncInvoker<ShowMeetingFileListRequest, ShowMeetingFileListResponse> showMeetingFileListInvoker(
         ShowMeetingFileListRequest request) {
-        return new SyncInvoker<ShowMeetingFileListRequest, ShowMeetingFileListResponse>(request,
-            MeetingMeta.showMeetingFileList, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showMeetingFileList, hcClient);
     }
 
     /**
@@ -4248,7 +4151,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMyInfoRequest 请求对象
+     * @param request ShowMyInfoRequest 请求对象
      * @return ShowMyInfoResponse
      */
     public ShowMyInfoResponse showMyInfo(ShowMyInfoRequest request) {
@@ -4262,11 +4165,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMyInfoRequest 请求对象
+     * @param request ShowMyInfoRequest 请求对象
      * @return SyncInvoker<ShowMyInfoRequest, ShowMyInfoResponse>
      */
     public SyncInvoker<ShowMyInfoRequest, ShowMyInfoResponse> showMyInfoInvoker(ShowMyInfoRequest request) {
-        return new SyncInvoker<ShowMyInfoRequest, ShowMyInfoResponse>(request, MeetingMeta.showMyInfo, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showMyInfo, hcClient);
     }
 
     /**
@@ -4276,7 +4179,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOnlineMeetingDetailRequest 请求对象
+     * @param request ShowOnlineMeetingDetailRequest 请求对象
      * @return ShowOnlineMeetingDetailResponse
      */
     public ShowOnlineMeetingDetailResponse showOnlineMeetingDetail(ShowOnlineMeetingDetailRequest request) {
@@ -4290,13 +4193,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOnlineMeetingDetailRequest 请求对象
+     * @param request ShowOnlineMeetingDetailRequest 请求对象
      * @return SyncInvoker<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse>
      */
     public SyncInvoker<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse> showOnlineMeetingDetailInvoker(
         ShowOnlineMeetingDetailRequest request) {
-        return new SyncInvoker<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse>(request,
-            MeetingMeta.showOnlineMeetingDetail, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showOnlineMeetingDetail, hcClient);
     }
 
     /**
@@ -4306,7 +4208,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrgResRequest 请求对象
+     * @param request ShowOrgResRequest 请求对象
      * @return ShowOrgResResponse
      */
     public ShowOrgResResponse showOrgRes(ShowOrgResRequest request) {
@@ -4320,11 +4222,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrgResRequest 请求对象
+     * @param request ShowOrgResRequest 请求对象
      * @return SyncInvoker<ShowOrgResRequest, ShowOrgResResponse>
      */
     public SyncInvoker<ShowOrgResRequest, ShowOrgResResponse> showOrgResInvoker(ShowOrgResRequest request) {
-        return new SyncInvoker<ShowOrgResRequest, ShowOrgResResponse>(request, MeetingMeta.showOrgRes, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showOrgRes, hcClient);
     }
 
     /**
@@ -4334,7 +4236,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProgramRequest 请求对象
+     * @param request ShowProgramRequest 请求对象
      * @return ShowProgramResponse
      */
     public ShowProgramResponse showProgram(ShowProgramRequest request) {
@@ -4348,11 +4250,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProgramRequest 请求对象
+     * @param request ShowProgramRequest 请求对象
      * @return SyncInvoker<ShowProgramRequest, ShowProgramResponse>
      */
     public SyncInvoker<ShowProgramRequest, ShowProgramResponse> showProgramInvoker(ShowProgramRequest request) {
-        return new SyncInvoker<ShowProgramRequest, ShowProgramResponse>(request, MeetingMeta.showProgram, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showProgram, hcClient);
     }
 
     /**
@@ -4362,7 +4264,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicationRequest 请求对象
+     * @param request ShowPublicationRequest 请求对象
      * @return ShowPublicationResponse
      */
     public ShowPublicationResponse showPublication(ShowPublicationRequest request) {
@@ -4376,13 +4278,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicationRequest 请求对象
+     * @param request ShowPublicationRequest 请求对象
      * @return SyncInvoker<ShowPublicationRequest, ShowPublicationResponse>
      */
     public SyncInvoker<ShowPublicationRequest, ShowPublicationResponse> showPublicationInvoker(
         ShowPublicationRequest request) {
-        return new SyncInvoker<ShowPublicationRequest, ShowPublicationResponse>(request, MeetingMeta.showPublication,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showPublication, hcClient);
     }
 
     /**
@@ -4392,7 +4293,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealTimeInfoOfMeetingRequest 请求对象
+     * @param request ShowRealTimeInfoOfMeetingRequest 请求对象
      * @return ShowRealTimeInfoOfMeetingResponse
      */
     public ShowRealTimeInfoOfMeetingResponse showRealTimeInfoOfMeeting(ShowRealTimeInfoOfMeetingRequest request) {
@@ -4406,13 +4307,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealTimeInfoOfMeetingRequest 请求对象
+     * @param request ShowRealTimeInfoOfMeetingRequest 请求对象
      * @return SyncInvoker<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse>
      */
     public SyncInvoker<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse> showRealTimeInfoOfMeetingInvoker(
         ShowRealTimeInfoOfMeetingRequest request) {
-        return new SyncInvoker<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse>(request,
-            MeetingMeta.showRealTimeInfoOfMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showRealTimeInfoOfMeeting, hcClient);
     }
 
     /**
@@ -4422,7 +4322,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordingDetailRequest 请求对象
+     * @param request ShowRecordingDetailRequest 请求对象
      * @return ShowRecordingDetailResponse
      */
     public ShowRecordingDetailResponse showRecordingDetail(ShowRecordingDetailRequest request) {
@@ -4436,13 +4336,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordingDetailRequest 请求对象
+     * @param request ShowRecordingDetailRequest 请求对象
      * @return SyncInvoker<ShowRecordingDetailRequest, ShowRecordingDetailResponse>
      */
     public SyncInvoker<ShowRecordingDetailRequest, ShowRecordingDetailResponse> showRecordingDetailInvoker(
         ShowRecordingDetailRequest request) {
-        return new SyncInvoker<ShowRecordingDetailRequest, ShowRecordingDetailResponse>(request,
-            MeetingMeta.showRecordingDetail, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showRecordingDetail, hcClient);
     }
 
     /**
@@ -4454,7 +4353,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordingFileDownloadUrlsRequest 请求对象
+     * @param request ShowRecordingFileDownloadUrlsRequest 请求对象
      * @return ShowRecordingFileDownloadUrlsResponse
      */
     public ShowRecordingFileDownloadUrlsResponse showRecordingFileDownloadUrls(
@@ -4471,13 +4370,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordingFileDownloadUrlsRequest 请求对象
+     * @param request ShowRecordingFileDownloadUrlsRequest 请求对象
      * @return SyncInvoker<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse>
      */
     public SyncInvoker<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse> showRecordingFileDownloadUrlsInvoker(
         ShowRecordingFileDownloadUrlsRequest request) {
-        return new SyncInvoker<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse>(request,
-            MeetingMeta.showRecordingFileDownloadUrls, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showRecordingFileDownloadUrls, hcClient);
     }
 
     /**
@@ -4487,7 +4385,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRegionInfoOfMeetingRequest 请求对象
+     * @param request ShowRegionInfoOfMeetingRequest 请求对象
      * @return ShowRegionInfoOfMeetingResponse
      */
     public ShowRegionInfoOfMeetingResponse showRegionInfoOfMeeting(ShowRegionInfoOfMeetingRequest request) {
@@ -4501,13 +4399,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRegionInfoOfMeetingRequest 请求对象
+     * @param request ShowRegionInfoOfMeetingRequest 请求对象
      * @return SyncInvoker<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse>
      */
     public SyncInvoker<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse> showRegionInfoOfMeetingInvoker(
         ShowRegionInfoOfMeetingRequest request) {
-        return new SyncInvoker<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse>(request,
-            MeetingMeta.showRegionInfoOfMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showRegionInfoOfMeeting, hcClient);
     }
 
     /**
@@ -4517,7 +4414,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRoomSettingRequest 请求对象
+     * @param request ShowRoomSettingRequest 请求对象
      * @return ShowRoomSettingResponse
      */
     public ShowRoomSettingResponse showRoomSetting(ShowRoomSettingRequest request) {
@@ -4531,13 +4428,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRoomSettingRequest 请求对象
+     * @param request ShowRoomSettingRequest 请求对象
      * @return SyncInvoker<ShowRoomSettingRequest, ShowRoomSettingResponse>
      */
     public SyncInvoker<ShowRoomSettingRequest, ShowRoomSettingResponse> showRoomSettingInvoker(
         ShowRoomSettingRequest request) {
-        return new SyncInvoker<ShowRoomSettingRequest, ShowRoomSettingResponse>(request, MeetingMeta.showRoomSetting,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showRoomSetting, hcClient);
     }
 
     /**
@@ -4547,7 +4443,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpResRequest 请求对象
+     * @param request ShowSpResRequest 请求对象
      * @return ShowSpResResponse
      */
     public ShowSpResResponse showSpRes(ShowSpResRequest request) {
@@ -4561,11 +4457,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpResRequest 请求对象
+     * @param request ShowSpResRequest 请求对象
      * @return SyncInvoker<ShowSpResRequest, ShowSpResResponse>
      */
     public SyncInvoker<ShowSpResRequest, ShowSpResResponse> showSpResInvoker(ShowSpResRequest request) {
-        return new SyncInvoker<ShowSpResRequest, ShowSpResResponse>(request, MeetingMeta.showSpRes, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showSpRes, hcClient);
     }
 
     /**
@@ -4575,7 +4471,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpResourceRequest 请求对象
+     * @param request ShowSpResourceRequest 请求对象
      * @return ShowSpResourceResponse
      */
     public ShowSpResourceResponse showSpResource(ShowSpResourceRequest request) {
@@ -4589,13 +4485,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpResourceRequest 请求对象
+     * @param request ShowSpResourceRequest 请求对象
      * @return SyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>
      */
     public SyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse> showSpResourceInvoker(
         ShowSpResourceRequest request) {
-        return new SyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>(request, MeetingMeta.showSpResource,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showSpResource, hcClient);
     }
 
     /**
@@ -4605,7 +4500,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSsoConfigRequest 请求对象
+     * @param request ShowSsoConfigRequest 请求对象
      * @return ShowSsoConfigResponse
      */
     public ShowSsoConfigResponse showSsoConfig(ShowSsoConfigRequest request) {
@@ -4619,12 +4514,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSsoConfigRequest 请求对象
+     * @param request ShowSsoConfigRequest 请求对象
      * @return SyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse>
      */
     public SyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse> showSsoConfigInvoker(ShowSsoConfigRequest request) {
-        return new SyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse>(request, MeetingMeta.showSsoConfig,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showSsoConfig, hcClient);
     }
 
     /**
@@ -4634,7 +4528,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserDetailRequest 请求对象
+     * @param request ShowUserDetailRequest 请求对象
      * @return ShowUserDetailResponse
      */
     public ShowUserDetailResponse showUserDetail(ShowUserDetailRequest request) {
@@ -4648,13 +4542,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserDetailRequest 请求对象
+     * @param request ShowUserDetailRequest 请求对象
      * @return SyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse>
      */
     public SyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse> showUserDetailInvoker(
         ShowUserDetailRequest request) {
-        return new SyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse>(request, MeetingMeta.showUserDetail,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showUserDetail, hcClient);
     }
 
     /**
@@ -4664,7 +4557,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWebHookConfigRequest 请求对象
+     * @param request ShowWebHookConfigRequest 请求对象
      * @return ShowWebHookConfigResponse
      */
     public ShowWebHookConfigResponse showWebHookConfig(ShowWebHookConfigRequest request) {
@@ -4678,13 +4571,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWebHookConfigRequest 请求对象
+     * @param request ShowWebHookConfigRequest 请求对象
      * @return SyncInvoker<ShowWebHookConfigRequest, ShowWebHookConfigResponse>
      */
     public SyncInvoker<ShowWebHookConfigRequest, ShowWebHookConfigResponse> showWebHookConfigInvoker(
         ShowWebHookConfigRequest request) {
-        return new SyncInvoker<ShowWebHookConfigRequest, ShowWebHookConfigResponse>(request,
-            MeetingMeta.showWebHookConfig, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showWebHookConfig, hcClient);
     }
 
     /**
@@ -4694,7 +4586,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWebinarRequest 请求对象
+     * @param request ShowWebinarRequest 请求对象
      * @return ShowWebinarResponse
      */
     public ShowWebinarResponse showWebinar(ShowWebinarRequest request) {
@@ -4708,11 +4600,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWebinarRequest 请求对象
+     * @param request ShowWebinarRequest 请求对象
      * @return SyncInvoker<ShowWebinarRequest, ShowWebinarResponse>
      */
     public SyncInvoker<ShowWebinarRequest, ShowWebinarResponse> showWebinarInvoker(ShowWebinarRequest request) {
-        return new SyncInvoker<ShowWebinarRequest, ShowWebinarResponse>(request, MeetingMeta.showWebinar, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showWebinar, hcClient);
     }
 
     /**
@@ -4723,7 +4615,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartMeetingRequest 请求对象
+     * @param request StartMeetingRequest 请求对象
      * @return StartMeetingResponse
      */
     public StartMeetingResponse startMeeting(StartMeetingRequest request) {
@@ -4738,11 +4630,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartMeetingRequest 请求对象
+     * @param request StartMeetingRequest 请求对象
      * @return SyncInvoker<StartMeetingRequest, StartMeetingResponse>
      */
     public SyncInvoker<StartMeetingRequest, StartMeetingResponse> startMeetingInvoker(StartMeetingRequest request) {
-        return new SyncInvoker<StartMeetingRequest, StartMeetingResponse>(request, MeetingMeta.startMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.startMeeting, hcClient);
     }
 
     /**
@@ -4754,7 +4646,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopMeetingRequest 请求对象
+     * @param request StopMeetingRequest 请求对象
      * @return StopMeetingResponse
      */
     public StopMeetingResponse stopMeeting(StopMeetingRequest request) {
@@ -4770,11 +4662,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopMeetingRequest 请求对象
+     * @param request StopMeetingRequest 请求对象
      * @return SyncInvoker<StopMeetingRequest, StopMeetingResponse>
      */
     public SyncInvoker<StopMeetingRequest, StopMeetingResponse> stopMeetingInvoker(StopMeetingRequest request) {
-        return new SyncInvoker<StopMeetingRequest, StopMeetingResponse>(request, MeetingMeta.stopMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.stopMeeting, hcClient);
     }
 
     /**
@@ -4784,7 +4676,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchModeRequest 请求对象
+     * @param request SwitchModeRequest 请求对象
      * @return SwitchModeResponse
      */
     public SwitchModeResponse switchMode(SwitchModeRequest request) {
@@ -4798,11 +4690,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchModeRequest 请求对象
+     * @param request SwitchModeRequest 请求对象
      * @return SyncInvoker<SwitchModeRequest, SwitchModeResponse>
      */
     public SyncInvoker<SwitchModeRequest, SwitchModeResponse> switchModeInvoker(SwitchModeRequest request) {
-        return new SyncInvoker<SwitchModeRequest, SwitchModeResponse>(request, MeetingMeta.switchMode, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.switchMode, hcClient);
     }
 
     /**
@@ -4812,7 +4704,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateContactRequest 请求对象
+     * @param request UpdateContactRequest 请求对象
      * @return UpdateContactResponse
      */
     public UpdateContactResponse updateContact(UpdateContactRequest request) {
@@ -4826,12 +4718,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateContactRequest 请求对象
+     * @param request UpdateContactRequest 请求对象
      * @return SyncInvoker<UpdateContactRequest, UpdateContactResponse>
      */
     public SyncInvoker<UpdateContactRequest, UpdateContactResponse> updateContactInvoker(UpdateContactRequest request) {
-        return new SyncInvoker<UpdateContactRequest, UpdateContactResponse>(request, MeetingMeta.updateContact,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateContact, hcClient);
     }
 
     /**
@@ -4841,7 +4732,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCorpRequest 请求对象
+     * @param request UpdateCorpRequest 请求对象
      * @return UpdateCorpResponse
      */
     public UpdateCorpResponse updateCorp(UpdateCorpRequest request) {
@@ -4855,11 +4746,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCorpRequest 请求对象
+     * @param request UpdateCorpRequest 请求对象
      * @return SyncInvoker<UpdateCorpRequest, UpdateCorpResponse>
      */
     public SyncInvoker<UpdateCorpRequest, UpdateCorpResponse> updateCorpInvoker(UpdateCorpRequest request) {
-        return new SyncInvoker<UpdateCorpRequest, UpdateCorpResponse>(request, MeetingMeta.updateCorp, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateCorp, hcClient);
     }
 
     /**
@@ -4869,7 +4760,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCorpBasicInfoRequest 请求对象
+     * @param request UpdateCorpBasicInfoRequest 请求对象
      * @return UpdateCorpBasicInfoResponse
      */
     public UpdateCorpBasicInfoResponse updateCorpBasicInfo(UpdateCorpBasicInfoRequest request) {
@@ -4883,13 +4774,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCorpBasicInfoRequest 请求对象
+     * @param request UpdateCorpBasicInfoRequest 请求对象
      * @return SyncInvoker<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse>
      */
     public SyncInvoker<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse> updateCorpBasicInfoInvoker(
         UpdateCorpBasicInfoRequest request) {
-        return new SyncInvoker<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse>(request,
-            MeetingMeta.updateCorpBasicInfo, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateCorpBasicInfo, hcClient);
     }
 
     /**
@@ -4899,7 +4789,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDepartmentRequest 请求对象
+     * @param request UpdateDepartmentRequest 请求对象
      * @return UpdateDepartmentResponse
      */
     public UpdateDepartmentResponse updateDepartment(UpdateDepartmentRequest request) {
@@ -4913,13 +4803,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDepartmentRequest 请求对象
+     * @param request UpdateDepartmentRequest 请求对象
      * @return SyncInvoker<UpdateDepartmentRequest, UpdateDepartmentResponse>
      */
     public SyncInvoker<UpdateDepartmentRequest, UpdateDepartmentResponse> updateDepartmentInvoker(
         UpdateDepartmentRequest request) {
-        return new SyncInvoker<UpdateDepartmentRequest, UpdateDepartmentResponse>(request, MeetingMeta.updateDepartment,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateDepartment, hcClient);
     }
 
     /**
@@ -4930,7 +4819,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceRequest 请求对象
+     * @param request UpdateDeviceRequest 请求对象
      * @return UpdateDeviceResponse
      */
     public UpdateDeviceResponse updateDevice(UpdateDeviceRequest request) {
@@ -4945,11 +4834,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceRequest 请求对象
+     * @param request UpdateDeviceRequest 请求对象
      * @return SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
      */
     public SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse> updateDeviceInvoker(UpdateDeviceRequest request) {
-        return new SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>(request, MeetingMeta.updateDevice, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateDevice, hcClient);
     }
 
     /**
@@ -4959,7 +4848,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMaterialRequest 请求对象
+     * @param request UpdateMaterialRequest 请求对象
      * @return UpdateMaterialResponse
      */
     public UpdateMaterialResponse updateMaterial(UpdateMaterialRequest request) {
@@ -4973,13 +4862,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMaterialRequest 请求对象
+     * @param request UpdateMaterialRequest 请求对象
      * @return SyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse>
      */
     public SyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse> updateMaterialInvoker(
         UpdateMaterialRequest request) {
-        return new SyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse>(request, MeetingMeta.updateMaterial,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateMaterial, hcClient);
     }
 
     /**
@@ -4989,7 +4877,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMeetingRequest 请求对象
+     * @param request UpdateMeetingRequest 请求对象
      * @return UpdateMeetingResponse
      */
     public UpdateMeetingResponse updateMeeting(UpdateMeetingRequest request) {
@@ -5003,12 +4891,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMeetingRequest 请求对象
+     * @param request UpdateMeetingRequest 请求对象
      * @return SyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse>
      */
     public SyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse> updateMeetingInvoker(UpdateMeetingRequest request) {
-        return new SyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse>(request, MeetingMeta.updateMeeting,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateMeeting, hcClient);
     }
 
     /**
@@ -5018,7 +4905,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberVmrRequest 请求对象
+     * @param request UpdateMemberVmrRequest 请求对象
      * @return UpdateMemberVmrResponse
      */
     public UpdateMemberVmrResponse updateMemberVmr(UpdateMemberVmrRequest request) {
@@ -5032,13 +4919,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberVmrRequest 请求对象
+     * @param request UpdateMemberVmrRequest 请求对象
      * @return SyncInvoker<UpdateMemberVmrRequest, UpdateMemberVmrResponse>
      */
     public SyncInvoker<UpdateMemberVmrRequest, UpdateMemberVmrResponse> updateMemberVmrInvoker(
         UpdateMemberVmrRequest request) {
-        return new SyncInvoker<UpdateMemberVmrRequest, UpdateMemberVmrResponse>(request, MeetingMeta.updateMemberVmr,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateMemberVmr, hcClient);
     }
 
     /**
@@ -5048,7 +4934,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMyInfoRequest 请求对象
+     * @param request UpdateMyInfoRequest 请求对象
      * @return UpdateMyInfoResponse
      */
     public UpdateMyInfoResponse updateMyInfo(UpdateMyInfoRequest request) {
@@ -5062,11 +4948,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMyInfoRequest 请求对象
+     * @param request UpdateMyInfoRequest 请求对象
      * @return SyncInvoker<UpdateMyInfoRequest, UpdateMyInfoResponse>
      */
     public SyncInvoker<UpdateMyInfoRequest, UpdateMyInfoResponse> updateMyInfoInvoker(UpdateMyInfoRequest request) {
-        return new SyncInvoker<UpdateMyInfoRequest, UpdateMyInfoResponse>(request, MeetingMeta.updateMyInfo, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateMyInfo, hcClient);
     }
 
     /**
@@ -5076,7 +4962,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProgramRequest 请求对象
+     * @param request UpdateProgramRequest 请求对象
      * @return UpdateProgramResponse
      */
     public UpdateProgramResponse updateProgram(UpdateProgramRequest request) {
@@ -5090,12 +4976,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProgramRequest 请求对象
+     * @param request UpdateProgramRequest 请求对象
      * @return SyncInvoker<UpdateProgramRequest, UpdateProgramResponse>
      */
     public SyncInvoker<UpdateProgramRequest, UpdateProgramResponse> updateProgramInvoker(UpdateProgramRequest request) {
-        return new SyncInvoker<UpdateProgramRequest, UpdateProgramResponse>(request, MeetingMeta.updateProgram,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateProgram, hcClient);
     }
 
     /**
@@ -5105,7 +4990,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicationRequest 请求对象
+     * @param request UpdatePublicationRequest 请求对象
      * @return UpdatePublicationResponse
      */
     public UpdatePublicationResponse updatePublication(UpdatePublicationRequest request) {
@@ -5119,13 +5004,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicationRequest 请求对象
+     * @param request UpdatePublicationRequest 请求对象
      * @return SyncInvoker<UpdatePublicationRequest, UpdatePublicationResponse>
      */
     public SyncInvoker<UpdatePublicationRequest, UpdatePublicationResponse> updatePublicationInvoker(
         UpdatePublicationRequest request) {
-        return new SyncInvoker<UpdatePublicationRequest, UpdatePublicationResponse>(request,
-            MeetingMeta.updatePublication, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updatePublication, hcClient);
     }
 
     /**
@@ -5135,7 +5019,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePwdRequest 请求对象
+     * @param request UpdatePwdRequest 请求对象
      * @return UpdatePwdResponse
      */
     public UpdatePwdResponse updatePwd(UpdatePwdRequest request) {
@@ -5149,11 +5033,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePwdRequest 请求对象
+     * @param request UpdatePwdRequest 请求对象
      * @return SyncInvoker<UpdatePwdRequest, UpdatePwdResponse>
      */
     public SyncInvoker<UpdatePwdRequest, UpdatePwdResponse> updatePwdInvoker(UpdatePwdRequest request) {
-        return new SyncInvoker<UpdatePwdRequest, UpdatePwdResponse>(request, MeetingMeta.updatePwd, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updatePwd, hcClient);
     }
 
     /**
@@ -5163,7 +5047,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecurringMeetingRequest 请求对象
+     * @param request UpdateRecurringMeetingRequest 请求对象
      * @return UpdateRecurringMeetingResponse
      */
     public UpdateRecurringMeetingResponse updateRecurringMeeting(UpdateRecurringMeetingRequest request) {
@@ -5177,13 +5061,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecurringMeetingRequest 请求对象
+     * @param request UpdateRecurringMeetingRequest 请求对象
      * @return SyncInvoker<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse>
      */
     public SyncInvoker<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> updateRecurringMeetingInvoker(
         UpdateRecurringMeetingRequest request) {
-        return new SyncInvoker<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse>(request,
-            MeetingMeta.updateRecurringMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateRecurringMeeting, hcClient);
     }
 
     /**
@@ -5193,7 +5076,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecurringSubMeetingRequest 请求对象
+     * @param request UpdateRecurringSubMeetingRequest 请求对象
      * @return UpdateRecurringSubMeetingResponse
      */
     public UpdateRecurringSubMeetingResponse updateRecurringSubMeeting(UpdateRecurringSubMeetingRequest request) {
@@ -5207,13 +5090,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecurringSubMeetingRequest 请求对象
+     * @param request UpdateRecurringSubMeetingRequest 请求对象
      * @return SyncInvoker<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse>
      */
     public SyncInvoker<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> updateRecurringSubMeetingInvoker(
         UpdateRecurringSubMeetingRequest request) {
-        return new SyncInvoker<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse>(request,
-            MeetingMeta.updateRecurringSubMeeting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateRecurringSubMeeting, hcClient);
     }
 
     /**
@@ -5223,7 +5105,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceRequest 请求对象
+     * @param request UpdateResourceRequest 请求对象
      * @return UpdateResourceResponse
      */
     public UpdateResourceResponse updateResource(UpdateResourceRequest request) {
@@ -5237,13 +5119,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceRequest 请求对象
+     * @param request UpdateResourceRequest 请求对象
      * @return SyncInvoker<UpdateResourceRequest, UpdateResourceResponse>
      */
     public SyncInvoker<UpdateResourceRequest, UpdateResourceResponse> updateResourceInvoker(
         UpdateResourceRequest request) {
-        return new SyncInvoker<UpdateResourceRequest, UpdateResourceResponse>(request, MeetingMeta.updateResource,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateResource, hcClient);
     }
 
     /**
@@ -5253,7 +5134,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoomSettingRequest 请求对象
+     * @param request UpdateRoomSettingRequest 请求对象
      * @return UpdateRoomSettingResponse
      */
     public UpdateRoomSettingResponse updateRoomSetting(UpdateRoomSettingRequest request) {
@@ -5267,13 +5148,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoomSettingRequest 请求对象
+     * @param request UpdateRoomSettingRequest 请求对象
      * @return SyncInvoker<UpdateRoomSettingRequest, UpdateRoomSettingResponse>
      */
     public SyncInvoker<UpdateRoomSettingRequest, UpdateRoomSettingResponse> updateRoomSettingInvoker(
         UpdateRoomSettingRequest request) {
-        return new SyncInvoker<UpdateRoomSettingRequest, UpdateRoomSettingResponse>(request,
-            MeetingMeta.updateRoomSetting, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateRoomSetting, hcClient);
     }
 
     /**
@@ -5283,7 +5163,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStartedConfConfigRequest 请求对象
+     * @param request UpdateStartedConfConfigRequest 请求对象
      * @return UpdateStartedConfConfigResponse
      */
     public UpdateStartedConfConfigResponse updateStartedConfConfig(UpdateStartedConfConfigRequest request) {
@@ -5297,13 +5177,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStartedConfConfigRequest 请求对象
+     * @param request UpdateStartedConfConfigRequest 请求对象
      * @return SyncInvoker<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse>
      */
     public SyncInvoker<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> updateStartedConfConfigInvoker(
         UpdateStartedConfConfigRequest request) {
-        return new SyncInvoker<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse>(request,
-            MeetingMeta.updateStartedConfConfig, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateStartedConfConfig, hcClient);
     }
 
     /**
@@ -5313,7 +5192,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTokenRequest 请求对象
+     * @param request UpdateTokenRequest 请求对象
      * @return UpdateTokenResponse
      */
     public UpdateTokenResponse updateToken(UpdateTokenRequest request) {
@@ -5327,11 +5206,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTokenRequest 请求对象
+     * @param request UpdateTokenRequest 请求对象
      * @return SyncInvoker<UpdateTokenRequest, UpdateTokenResponse>
      */
     public SyncInvoker<UpdateTokenRequest, UpdateTokenResponse> updateTokenInvoker(UpdateTokenRequest request) {
-        return new SyncInvoker<UpdateTokenRequest, UpdateTokenResponse>(request, MeetingMeta.updateToken, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateToken, hcClient);
     }
 
     /**
@@ -5341,7 +5220,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return UpdateUserResponse
      */
     public UpdateUserResponse updateUser(UpdateUserRequest request) {
@@ -5355,11 +5234,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return SyncInvoker<UpdateUserRequest, UpdateUserResponse>
      */
     public SyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserInvoker(UpdateUserRequest request) {
-        return new SyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, MeetingMeta.updateUser, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateUser, hcClient);
     }
 
     /**
@@ -5369,7 +5248,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWebHookConfigStatusRequest 请求对象
+     * @param request UpdateWebHookConfigStatusRequest 请求对象
      * @return UpdateWebHookConfigStatusResponse
      */
     public UpdateWebHookConfigStatusResponse updateWebHookConfigStatus(UpdateWebHookConfigStatusRequest request) {
@@ -5383,13 +5262,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWebHookConfigStatusRequest 请求对象
+     * @param request UpdateWebHookConfigStatusRequest 请求对象
      * @return SyncInvoker<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse>
      */
     public SyncInvoker<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> updateWebHookConfigStatusInvoker(
         UpdateWebHookConfigStatusRequest request) {
-        return new SyncInvoker<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse>(request,
-            MeetingMeta.updateWebHookConfigStatus, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateWebHookConfigStatus, hcClient);
     }
 
     /**
@@ -5399,7 +5277,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWebinarRequest 请求对象
+     * @param request UpdateWebinarRequest 请求对象
      * @return UpdateWebinarResponse
      */
     public UpdateWebinarResponse updateWebinar(UpdateWebinarRequest request) {
@@ -5413,12 +5291,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWebinarRequest 请求对象
+     * @param request UpdateWebinarRequest 请求对象
      * @return SyncInvoker<UpdateWebinarRequest, UpdateWebinarResponse>
      */
     public SyncInvoker<UpdateWebinarRequest, UpdateWebinarResponse> updateWebinarInvoker(UpdateWebinarRequest request) {
-        return new SyncInvoker<UpdateWebinarRequest, UpdateWebinarResponse>(request, MeetingMeta.updateWebinar,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.updateWebinar, hcClient);
     }
 
     /**
@@ -5428,7 +5305,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFileRequest 请求对象
+     * @param request UploadFileRequest 请求对象
      * @return UploadFileResponse
      */
     public UploadFileResponse uploadFile(UploadFileRequest request) {
@@ -5442,11 +5319,11 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFileRequest 请求对象
+     * @param request UploadFileRequest 请求对象
      * @return SyncInvoker<UploadFileRequest, UploadFileResponse>
      */
     public SyncInvoker<UploadFileRequest, UploadFileResponse> uploadFileInvoker(UploadFileRequest request) {
-        return new SyncInvoker<UploadFileRequest, UploadFileResponse>(request, MeetingMeta.uploadFile, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.uploadFile, hcClient);
     }
 
     /**
@@ -5457,7 +5334,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosHistoryMeetingsRequest 请求对象
+     * @param request SearchQosHistoryMeetingsRequest 请求对象
      * @return SearchQosHistoryMeetingsResponse
      */
     public SearchQosHistoryMeetingsResponse searchQosHistoryMeetings(SearchQosHistoryMeetingsRequest request) {
@@ -5472,13 +5349,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosHistoryMeetingsRequest 请求对象
+     * @param request SearchQosHistoryMeetingsRequest 请求对象
      * @return SyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse>
      */
     public SyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> searchQosHistoryMeetingsInvoker(
         SearchQosHistoryMeetingsRequest request) {
-        return new SyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse>(request,
-            MeetingMeta.searchQosHistoryMeetings, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchQosHistoryMeetings, hcClient);
     }
 
     /**
@@ -5489,7 +5365,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosOnlineMeetingsRequest 请求对象
+     * @param request SearchQosOnlineMeetingsRequest 请求对象
      * @return SearchQosOnlineMeetingsResponse
      */
     public SearchQosOnlineMeetingsResponse searchQosOnlineMeetings(SearchQosOnlineMeetingsRequest request) {
@@ -5504,13 +5380,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosOnlineMeetingsRequest 请求对象
+     * @param request SearchQosOnlineMeetingsRequest 请求对象
      * @return SyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse>
      */
     public SyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> searchQosOnlineMeetingsInvoker(
         SearchQosOnlineMeetingsRequest request) {
-        return new SyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse>(request,
-            MeetingMeta.searchQosOnlineMeetings, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchQosOnlineMeetings, hcClient);
     }
 
     /**
@@ -5521,7 +5396,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosParticipantDetailRequest 请求对象
+     * @param request SearchQosParticipantDetailRequest 请求对象
      * @return SearchQosParticipantDetailResponse
      */
     public SearchQosParticipantDetailResponse searchQosParticipantDetail(SearchQosParticipantDetailRequest request) {
@@ -5536,13 +5411,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosParticipantDetailRequest 请求对象
+     * @param request SearchQosParticipantDetailRequest 请求对象
      * @return SyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse>
      */
     public SyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> searchQosParticipantDetailInvoker(
         SearchQosParticipantDetailRequest request) {
-        return new SyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse>(request,
-            MeetingMeta.searchQosParticipantDetail, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchQosParticipantDetail, hcClient);
     }
 
     /**
@@ -5553,7 +5427,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosParticipantsRequest 请求对象
+     * @param request SearchQosParticipantsRequest 请求对象
      * @return SearchQosParticipantsResponse
      */
     public SearchQosParticipantsResponse searchQosParticipants(SearchQosParticipantsRequest request) {
@@ -5568,13 +5442,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosParticipantsRequest 请求对象
+     * @param request SearchQosParticipantsRequest 请求对象
      * @return SyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse>
      */
     public SyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse> searchQosParticipantsInvoker(
         SearchQosParticipantsRequest request) {
-        return new SyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse>(request,
-            MeetingMeta.searchQosParticipants, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchQosParticipants, hcClient);
     }
 
     /**
@@ -5585,7 +5458,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetQosThresholdRequest 请求对象
+     * @param request SetQosThresholdRequest 请求对象
      * @return SetQosThresholdResponse
      */
     public SetQosThresholdResponse setQosThreshold(SetQosThresholdRequest request) {
@@ -5600,13 +5473,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetQosThresholdRequest 请求对象
+     * @param request SetQosThresholdRequest 请求对象
      * @return SyncInvoker<SetQosThresholdRequest, SetQosThresholdResponse>
      */
     public SyncInvoker<SetQosThresholdRequest, SetQosThresholdResponse> setQosThresholdInvoker(
         SetQosThresholdRequest request) {
-        return new SyncInvoker<SetQosThresholdRequest, SetQosThresholdResponse>(request, MeetingMeta.setQosThreshold,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.setQosThreshold, hcClient);
     }
 
     /**
@@ -5617,7 +5489,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQosThresholdRequest 请求对象
+     * @param request ShowQosThresholdRequest 请求对象
      * @return ShowQosThresholdResponse
      */
     public ShowQosThresholdResponse showQosThreshold(ShowQosThresholdRequest request) {
@@ -5632,13 +5504,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQosThresholdRequest 请求对象
+     * @param request ShowQosThresholdRequest 请求对象
      * @return SyncInvoker<ShowQosThresholdRequest, ShowQosThresholdResponse>
      */
     public SyncInvoker<ShowQosThresholdRequest, ShowQosThresholdResponse> showQosThresholdInvoker(
         ShowQosThresholdRequest request) {
-        return new SyncInvoker<ShowQosThresholdRequest, ShowQosThresholdResponse>(request, MeetingMeta.showQosThreshold,
-            hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.showQosThreshold, hcClient);
     }
 
     /**
@@ -5651,7 +5522,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticConferenceInfoRequest 请求对象
+     * @param request SearchStatisticConferenceInfoRequest 请求对象
      * @return SearchStatisticConferenceInfoResponse
      */
     public SearchStatisticConferenceInfoResponse searchStatisticConferenceInfo(
@@ -5669,13 +5540,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticConferenceInfoRequest 请求对象
+     * @param request SearchStatisticConferenceInfoRequest 请求对象
      * @return SyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse>
      */
     public SyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> searchStatisticConferenceInfoInvoker(
         SearchStatisticConferenceInfoRequest request) {
-        return new SyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse>(request,
-            MeetingMeta.searchStatisticConferenceInfo, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchStatisticConferenceInfo, hcClient);
     }
 
     /**
@@ -5689,7 +5559,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticConferenceParticipantRequest 请求对象
+     * @param request SearchStatisticConferenceParticipantRequest 请求对象
      * @return SearchStatisticConferenceParticipantResponse
      */
     public SearchStatisticConferenceParticipantResponse searchStatisticConferenceParticipant(
@@ -5708,13 +5578,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticConferenceParticipantRequest 请求对象
+     * @param request SearchStatisticConferenceParticipantRequest 请求对象
      * @return SyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse>
      */
     public SyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> searchStatisticConferenceParticipantInvoker(
         SearchStatisticConferenceParticipantRequest request) {
-        return new SyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse>(
-            request, MeetingMeta.searchStatisticConferenceParticipant, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchStatisticConferenceParticipant, hcClient);
     }
 
     /**
@@ -5726,7 +5595,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticResourceInfoRequest 请求对象
+     * @param request SearchStatisticResourceInfoRequest 请求对象
      * @return SearchStatisticResourceInfoResponse
      */
     public SearchStatisticResourceInfoResponse searchStatisticResourceInfo(SearchStatisticResourceInfoRequest request) {
@@ -5742,13 +5611,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticResourceInfoRequest 请求对象
+     * @param request SearchStatisticResourceInfoRequest 请求对象
      * @return SyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse>
      */
     public SyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> searchStatisticResourceInfoInvoker(
         SearchStatisticResourceInfoRequest request) {
-        return new SyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse>(request,
-            MeetingMeta.searchStatisticResourceInfo, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchStatisticResourceInfo, hcClient);
     }
 
     /**
@@ -5762,7 +5630,7 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticUserInfoRequest 请求对象
+     * @param request SearchStatisticUserInfoRequest 请求对象
      * @return SearchStatisticUserInfoResponse
      */
     public SearchStatisticUserInfoResponse searchStatisticUserInfo(SearchStatisticUserInfoRequest request) {
@@ -5780,13 +5648,12 @@ public class MeetingClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticUserInfoRequest 请求对象
+     * @param request SearchStatisticUserInfoRequest 请求对象
      * @return SyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse>
      */
     public SyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> searchStatisticUserInfoInvoker(
         SearchStatisticUserInfoRequest request) {
-        return new SyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse>(request,
-            MeetingMeta.searchStatisticUserInfo, hcClient);
+        return new SyncInvoker<>(request, MeetingMeta.searchStatisticUserInfo, hcClient);
     }
 
 }

@@ -36,7 +36,7 @@ public class SessionTypeEntity {
     }
 
     /**
-     * 资源规格编码
+     * 资源规格编码。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -53,7 +53,7 @@ public class SessionTypeEntity {
     }
 
     /**
-     * 会话类型
+     * 会话类型。
      * @return sessionType
      */
     public String getSessionType() {
@@ -70,7 +70,7 @@ public class SessionTypeEntity {
     }
 
     /**
-     * 资源类型字段
+     * 资源类型字段。
      * @return resourceType
      */
     public String getResourceType() {
@@ -87,7 +87,7 @@ public class SessionTypeEntity {
     }
 
     /**
-     * 资源所属云服务类型编码
+     * 资源所属云服务类型编码。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {

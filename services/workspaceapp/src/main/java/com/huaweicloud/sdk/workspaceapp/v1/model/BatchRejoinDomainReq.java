@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量重新加域请求
+ * 批量重新加域请求。
  */
 public class BatchRejoinDomainReq {
 
@@ -40,7 +40,7 @@ public class BatchRejoinDomainReq {
     }
 
     /**
-     * 批量唯一标识请求列表，一次请求数量区间 [1, 20]
+     * 批量唯一标识请求列表，一次请求数量区间 [1, 20]。
      * @return items
      */
     public List<String> getItems() {

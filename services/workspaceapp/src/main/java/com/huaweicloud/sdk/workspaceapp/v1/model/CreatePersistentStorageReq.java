@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建WKS存储
+ * 创建WKS存储。
  */
 public class CreatePersistentStorageReq {
 
@@ -27,7 +27,7 @@ public class CreatePersistentStorageReq {
     }
 
     /**
-     * WKS存储名称,名称需满足如下规则: 1. 名称允许可见字符或空格，不可为全空格 2. 长度1~128个字符
+     * WKS存储名称,名称需满足如下规则: 1. 名称允许可见字符或空格，不可为全空格。 2. 长度1~128个字符。
      * @return name
      */
     public String getName() {

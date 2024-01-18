@@ -95,7 +95,7 @@ public class CaseAwInfo {
     }
 
     /**
-     * aw信息Dto
+     * aw信息
      * @return aw
      */
     public List<AwInfoDTO> getAw() {

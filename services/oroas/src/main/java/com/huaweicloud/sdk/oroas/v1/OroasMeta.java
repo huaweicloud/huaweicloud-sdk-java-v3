@@ -18,9 +18,9 @@ import com.huaweicloud.sdk.oroas.v1.model.TaskDto;
 @SuppressWarnings("unchecked")
 public class OroasMeta {
 
-    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForcreateTask();
+    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForCreateTask();
 
-    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForcreateTask() {
+    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForCreateTask() {
         // basic
         HttpRequestDef.Builder<CreateTaskRequest, CreateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskRequest.class, CreateTaskResponse.class)
@@ -33,39 +33,31 @@ public class OroasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTaskRequest::getServiceGroup, (req, v) -> {
-                req.setServiceGroup(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getServiceGroup, CreateTaskRequest::setServiceGroup));
         builder.<String>withRequestField("service_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTaskRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getServiceType, CreateTaskRequest::setServiceType));
         builder.<String>withRequestField("X-Apig-AppCode",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTaskRequest::getXApigAppCode, (req, v) -> {
-                req.setXApigAppCode(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getXApigAppCode, CreateTaskRequest::setXApigAppCode));
         builder.<TaskDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaskDto.class),
-            f -> f.withMarshaller(CreateTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getBody, CreateTaskRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
+    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genForDeleteTask();
 
-    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
+    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genForDeleteTask() {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
@@ -78,39 +70,31 @@ public class OroasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getServiceGroup, (req, v) -> {
-                req.setServiceGroup(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getServiceGroup, DeleteTaskRequest::setServiceGroup));
         builder.<String>withRequestField("service_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getServiceType, DeleteTaskRequest::setServiceType));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, DeleteTaskRequest::setTaskId));
         builder.<String>withRequestField("X-Apig-AppCode",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getXApigAppCode, (req, v) -> {
-                req.setXApigAppCode(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getXApigAppCode, DeleteTaskRequest::setXApigAppCode));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTaskRequest, ListTaskResponse> listTask = genForlistTask();
+    public static final HttpRequestDef<ListTaskRequest, ListTaskResponse> listTask = genForListTask();
 
-    private static HttpRequestDef<ListTaskRequest, ListTaskResponse> genForlistTask() {
+    private static HttpRequestDef<ListTaskRequest, ListTaskResponse> genForListTask() {
         // basic
         HttpRequestDef.Builder<ListTaskRequest, ListTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTaskRequest.class, ListTaskResponse.class)
@@ -123,46 +107,36 @@ public class OroasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTaskRequest::getServiceGroup, (req, v) -> {
-                req.setServiceGroup(v);
-            }));
+            f -> f.withMarshaller(ListTaskRequest::getServiceGroup, ListTaskRequest::setServiceGroup));
         builder.<String>withRequestField("service_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTaskRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListTaskRequest::getServiceType, ListTaskRequest::setServiceType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTaskRequest::getLimit, ListTaskRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTaskRequest::getOffset, ListTaskRequest::setOffset));
         builder.<String>withRequestField("X-Apig-AppCode",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTaskRequest::getXApigAppCode, (req, v) -> {
-                req.setXApigAppCode(v);
-            }));
+            f -> f.withMarshaller(ListTaskRequest::getXApigAppCode, ListTaskRequest::setXApigAppCode));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForshowTask();
+    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForShowTask();
 
-    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForshowTask() {
+    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForShowTask() {
         // basic
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
@@ -175,37 +149,27 @@ public class OroasMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getServiceGroup, (req, v) -> {
-                req.setServiceGroup(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getServiceGroup, ShowTaskRequest::setServiceGroup));
         builder.<String>withRequestField("service_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getServiceType, ShowTaskRequest::setServiceType));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getTaskId, ShowTaskRequest::setTaskId));
         builder.<Boolean>withRequestField("input_enable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowTaskRequest::getInputEnable, (req, v) -> {
-                req.setInputEnable(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getInputEnable, ShowTaskRequest::setInputEnable));
         builder.<String>withRequestField("X-Apig-AppCode",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getXApigAppCode, (req, v) -> {
-                req.setXApigAppCode(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getXApigAppCode, ShowTaskRequest::setXApigAppCode));
 
         // response
 

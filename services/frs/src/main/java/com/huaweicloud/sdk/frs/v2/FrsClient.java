@@ -94,7 +94,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByBase64Request 请求对象
+     * @param request AddFacesByBase64Request 请求对象
      * @return AddFacesByBase64Response
      */
     public AddFacesByBase64Response addFacesByBase64(AddFacesByBase64Request request) {
@@ -108,13 +108,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByBase64Request 请求对象
+     * @param request AddFacesByBase64Request 请求对象
      * @return SyncInvoker<AddFacesByBase64Request, AddFacesByBase64Response>
      */
     public SyncInvoker<AddFacesByBase64Request, AddFacesByBase64Response> addFacesByBase64Invoker(
         AddFacesByBase64Request request) {
-        return new SyncInvoker<AddFacesByBase64Request, AddFacesByBase64Response>(request, FrsMeta.addFacesByBase64,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.addFacesByBase64, hcClient);
     }
 
     /**
@@ -124,7 +123,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByFileRequest 请求对象
+     * @param request AddFacesByFileRequest 请求对象
      * @return AddFacesByFileResponse
      */
     public AddFacesByFileResponse addFacesByFile(AddFacesByFileRequest request) {
@@ -138,13 +137,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByFileRequest 请求对象
+     * @param request AddFacesByFileRequest 请求对象
      * @return SyncInvoker<AddFacesByFileRequest, AddFacesByFileResponse>
      */
     public SyncInvoker<AddFacesByFileRequest, AddFacesByFileResponse> addFacesByFileInvoker(
         AddFacesByFileRequest request) {
-        return new SyncInvoker<AddFacesByFileRequest, AddFacesByFileResponse>(request, FrsMeta.addFacesByFile,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.addFacesByFile, hcClient);
     }
 
     /**
@@ -154,7 +152,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByUrlRequest 请求对象
+     * @param request AddFacesByUrlRequest 请求对象
      * @return AddFacesByUrlResponse
      */
     public AddFacesByUrlResponse addFacesByUrl(AddFacesByUrlRequest request) {
@@ -168,11 +166,11 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddFacesByUrlRequest 请求对象
+     * @param request AddFacesByUrlRequest 请求对象
      * @return SyncInvoker<AddFacesByUrlRequest, AddFacesByUrlResponse>
      */
     public SyncInvoker<AddFacesByUrlRequest, AddFacesByUrlResponse> addFacesByUrlInvoker(AddFacesByUrlRequest request) {
-        return new SyncInvoker<AddFacesByUrlRequest, AddFacesByUrlResponse>(request, FrsMeta.addFacesByUrl, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.addFacesByUrl, hcClient);
     }
 
     /**
@@ -182,7 +180,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteFacesRequest 请求对象
+     * @param request BatchDeleteFacesRequest 请求对象
      * @return BatchDeleteFacesResponse
      */
     public BatchDeleteFacesResponse batchDeleteFaces(BatchDeleteFacesRequest request) {
@@ -196,13 +194,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteFacesRequest 请求对象
+     * @param request BatchDeleteFacesRequest 请求对象
      * @return SyncInvoker<BatchDeleteFacesRequest, BatchDeleteFacesResponse>
      */
     public SyncInvoker<BatchDeleteFacesRequest, BatchDeleteFacesResponse> batchDeleteFacesInvoker(
         BatchDeleteFacesRequest request) {
-        return new SyncInvoker<BatchDeleteFacesRequest, BatchDeleteFacesResponse>(request, FrsMeta.batchDeleteFaces,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.batchDeleteFaces, hcClient);
     }
 
     /**
@@ -212,7 +209,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByBase64Request 请求对象
+     * @param request CompareFaceByBase64Request 请求对象
      * @return CompareFaceByBase64Response
      */
     public CompareFaceByBase64Response compareFaceByBase64(CompareFaceByBase64Request request) {
@@ -226,13 +223,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByBase64Request 请求对象
+     * @param request CompareFaceByBase64Request 请求对象
      * @return SyncInvoker<CompareFaceByBase64Request, CompareFaceByBase64Response>
      */
     public SyncInvoker<CompareFaceByBase64Request, CompareFaceByBase64Response> compareFaceByBase64Invoker(
         CompareFaceByBase64Request request) {
-        return new SyncInvoker<CompareFaceByBase64Request, CompareFaceByBase64Response>(request,
-            FrsMeta.compareFaceByBase64, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.compareFaceByBase64, hcClient);
     }
 
     /**
@@ -242,7 +238,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByFileRequest 请求对象
+     * @param request CompareFaceByFileRequest 请求对象
      * @return CompareFaceByFileResponse
      */
     public CompareFaceByFileResponse compareFaceByFile(CompareFaceByFileRequest request) {
@@ -256,13 +252,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByFileRequest 请求对象
+     * @param request CompareFaceByFileRequest 请求对象
      * @return SyncInvoker<CompareFaceByFileRequest, CompareFaceByFileResponse>
      */
     public SyncInvoker<CompareFaceByFileRequest, CompareFaceByFileResponse> compareFaceByFileInvoker(
         CompareFaceByFileRequest request) {
-        return new SyncInvoker<CompareFaceByFileRequest, CompareFaceByFileResponse>(request, FrsMeta.compareFaceByFile,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.compareFaceByFile, hcClient);
     }
 
     /**
@@ -272,7 +267,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByUrlRequest 请求对象
+     * @param request CompareFaceByUrlRequest 请求对象
      * @return CompareFaceByUrlResponse
      */
     public CompareFaceByUrlResponse compareFaceByUrl(CompareFaceByUrlRequest request) {
@@ -286,13 +281,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CompareFaceByUrlRequest 请求对象
+     * @param request CompareFaceByUrlRequest 请求对象
      * @return SyncInvoker<CompareFaceByUrlRequest, CompareFaceByUrlResponse>
      */
     public SyncInvoker<CompareFaceByUrlRequest, CompareFaceByUrlResponse> compareFaceByUrlInvoker(
         CompareFaceByUrlRequest request) {
-        return new SyncInvoker<CompareFaceByUrlRequest, CompareFaceByUrlResponse>(request, FrsMeta.compareFaceByUrl,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.compareFaceByUrl, hcClient);
     }
 
     /**
@@ -302,7 +296,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFaceSetRequest 请求对象
+     * @param request CreateFaceSetRequest 请求对象
      * @return CreateFaceSetResponse
      */
     public CreateFaceSetResponse createFaceSet(CreateFaceSetRequest request) {
@@ -316,11 +310,11 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFaceSetRequest 请求对象
+     * @param request CreateFaceSetRequest 请求对象
      * @return SyncInvoker<CreateFaceSetRequest, CreateFaceSetResponse>
      */
     public SyncInvoker<CreateFaceSetRequest, CreateFaceSetResponse> createFaceSetInvoker(CreateFaceSetRequest request) {
-        return new SyncInvoker<CreateFaceSetRequest, CreateFaceSetResponse>(request, FrsMeta.createFaceSet, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.createFaceSet, hcClient);
     }
 
     /**
@@ -330,7 +324,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceByExternalImageIdRequest 请求对象
+     * @param request DeleteFaceByExternalImageIdRequest 请求对象
      * @return DeleteFaceByExternalImageIdResponse
      */
     public DeleteFaceByExternalImageIdResponse deleteFaceByExternalImageId(DeleteFaceByExternalImageIdRequest request) {
@@ -344,13 +338,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceByExternalImageIdRequest 请求对象
+     * @param request DeleteFaceByExternalImageIdRequest 请求对象
      * @return SyncInvoker<DeleteFaceByExternalImageIdRequest, DeleteFaceByExternalImageIdResponse>
      */
     public SyncInvoker<DeleteFaceByExternalImageIdRequest, DeleteFaceByExternalImageIdResponse> deleteFaceByExternalImageIdInvoker(
         DeleteFaceByExternalImageIdRequest request) {
-        return new SyncInvoker<DeleteFaceByExternalImageIdRequest, DeleteFaceByExternalImageIdResponse>(request,
-            FrsMeta.deleteFaceByExternalImageId, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.deleteFaceByExternalImageId, hcClient);
     }
 
     /**
@@ -360,7 +353,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceByFaceIdRequest 请求对象
+     * @param request DeleteFaceByFaceIdRequest 请求对象
      * @return DeleteFaceByFaceIdResponse
      */
     public DeleteFaceByFaceIdResponse deleteFaceByFaceId(DeleteFaceByFaceIdRequest request) {
@@ -374,13 +367,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceByFaceIdRequest 请求对象
+     * @param request DeleteFaceByFaceIdRequest 请求对象
      * @return SyncInvoker<DeleteFaceByFaceIdRequest, DeleteFaceByFaceIdResponse>
      */
     public SyncInvoker<DeleteFaceByFaceIdRequest, DeleteFaceByFaceIdResponse> deleteFaceByFaceIdInvoker(
         DeleteFaceByFaceIdRequest request) {
-        return new SyncInvoker<DeleteFaceByFaceIdRequest, DeleteFaceByFaceIdResponse>(request,
-            FrsMeta.deleteFaceByFaceId, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.deleteFaceByFaceId, hcClient);
     }
 
     /**
@@ -390,7 +382,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceSetRequest 请求对象
+     * @param request DeleteFaceSetRequest 请求对象
      * @return DeleteFaceSetResponse
      */
     public DeleteFaceSetResponse deleteFaceSet(DeleteFaceSetRequest request) {
@@ -404,11 +396,11 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFaceSetRequest 请求对象
+     * @param request DeleteFaceSetRequest 请求对象
      * @return SyncInvoker<DeleteFaceSetRequest, DeleteFaceSetResponse>
      */
     public SyncInvoker<DeleteFaceSetRequest, DeleteFaceSetResponse> deleteFaceSetInvoker(DeleteFaceSetRequest request) {
-        return new SyncInvoker<DeleteFaceSetRequest, DeleteFaceSetResponse>(request, FrsMeta.deleteFaceSet, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.deleteFaceSet, hcClient);
     }
 
     /**
@@ -418,7 +410,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByBase64Request 请求对象
+     * @param request DetectFaceByBase64Request 请求对象
      * @return DetectFaceByBase64Response
      */
     public DetectFaceByBase64Response detectFaceByBase64(DetectFaceByBase64Request request) {
@@ -432,13 +424,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByBase64Request 请求对象
+     * @param request DetectFaceByBase64Request 请求对象
      * @return SyncInvoker<DetectFaceByBase64Request, DetectFaceByBase64Response>
      */
     public SyncInvoker<DetectFaceByBase64Request, DetectFaceByBase64Response> detectFaceByBase64Invoker(
         DetectFaceByBase64Request request) {
-        return new SyncInvoker<DetectFaceByBase64Request, DetectFaceByBase64Response>(request,
-            FrsMeta.detectFaceByBase64, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectFaceByBase64, hcClient);
     }
 
     /**
@@ -448,7 +439,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByBase64IntlRequest 请求对象
+     * @param request DetectFaceByBase64IntlRequest 请求对象
      * @return DetectFaceByBase64IntlResponse
      */
     public DetectFaceByBase64IntlResponse detectFaceByBase64Intl(DetectFaceByBase64IntlRequest request) {
@@ -462,13 +453,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByBase64IntlRequest 请求对象
+     * @param request DetectFaceByBase64IntlRequest 请求对象
      * @return SyncInvoker<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse>
      */
     public SyncInvoker<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse> detectFaceByBase64IntlInvoker(
         DetectFaceByBase64IntlRequest request) {
-        return new SyncInvoker<DetectFaceByBase64IntlRequest, DetectFaceByBase64IntlResponse>(request,
-            FrsMeta.detectFaceByBase64Intl, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectFaceByBase64Intl, hcClient);
     }
 
     /**
@@ -478,7 +468,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByFileRequest 请求对象
+     * @param request DetectFaceByFileRequest 请求对象
      * @return DetectFaceByFileResponse
      */
     public DetectFaceByFileResponse detectFaceByFile(DetectFaceByFileRequest request) {
@@ -492,13 +482,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByFileRequest 请求对象
+     * @param request DetectFaceByFileRequest 请求对象
      * @return SyncInvoker<DetectFaceByFileRequest, DetectFaceByFileResponse>
      */
     public SyncInvoker<DetectFaceByFileRequest, DetectFaceByFileResponse> detectFaceByFileInvoker(
         DetectFaceByFileRequest request) {
-        return new SyncInvoker<DetectFaceByFileRequest, DetectFaceByFileResponse>(request, FrsMeta.detectFaceByFile,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectFaceByFile, hcClient);
     }
 
     /**
@@ -508,7 +497,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByFileIntlRequest 请求对象
+     * @param request DetectFaceByFileIntlRequest 请求对象
      * @return DetectFaceByFileIntlResponse
      */
     public DetectFaceByFileIntlResponse detectFaceByFileIntl(DetectFaceByFileIntlRequest request) {
@@ -522,13 +511,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByFileIntlRequest 请求对象
+     * @param request DetectFaceByFileIntlRequest 请求对象
      * @return SyncInvoker<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse>
      */
     public SyncInvoker<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse> detectFaceByFileIntlInvoker(
         DetectFaceByFileIntlRequest request) {
-        return new SyncInvoker<DetectFaceByFileIntlRequest, DetectFaceByFileIntlResponse>(request,
-            FrsMeta.detectFaceByFileIntl, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectFaceByFileIntl, hcClient);
     }
 
     /**
@@ -538,7 +526,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByUrlRequest 请求对象
+     * @param request DetectFaceByUrlRequest 请求对象
      * @return DetectFaceByUrlResponse
      */
     public DetectFaceByUrlResponse detectFaceByUrl(DetectFaceByUrlRequest request) {
@@ -552,13 +540,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByUrlRequest 请求对象
+     * @param request DetectFaceByUrlRequest 请求对象
      * @return SyncInvoker<DetectFaceByUrlRequest, DetectFaceByUrlResponse>
      */
     public SyncInvoker<DetectFaceByUrlRequest, DetectFaceByUrlResponse> detectFaceByUrlInvoker(
         DetectFaceByUrlRequest request) {
-        return new SyncInvoker<DetectFaceByUrlRequest, DetectFaceByUrlResponse>(request, FrsMeta.detectFaceByUrl,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectFaceByUrl, hcClient);
     }
 
     /**
@@ -568,7 +555,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByUrlIntlRequest 请求对象
+     * @param request DetectFaceByUrlIntlRequest 请求对象
      * @return DetectFaceByUrlIntlResponse
      */
     public DetectFaceByUrlIntlResponse detectFaceByUrlIntl(DetectFaceByUrlIntlRequest request) {
@@ -582,13 +569,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectFaceByUrlIntlRequest 请求对象
+     * @param request DetectFaceByUrlIntlRequest 请求对象
      * @return SyncInvoker<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse>
      */
     public SyncInvoker<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse> detectFaceByUrlIntlInvoker(
         DetectFaceByUrlIntlRequest request) {
-        return new SyncInvoker<DetectFaceByUrlIntlRequest, DetectFaceByUrlIntlResponse>(request,
-            FrsMeta.detectFaceByUrlIntl, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectFaceByUrlIntl, hcClient);
     }
 
     /**
@@ -598,7 +584,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByBase64Request 请求对象
+     * @param request DetectLiveByBase64Request 请求对象
      * @return DetectLiveByBase64Response
      */
     public DetectLiveByBase64Response detectLiveByBase64(DetectLiveByBase64Request request) {
@@ -612,13 +598,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByBase64Request 请求对象
+     * @param request DetectLiveByBase64Request 请求对象
      * @return SyncInvoker<DetectLiveByBase64Request, DetectLiveByBase64Response>
      */
     public SyncInvoker<DetectLiveByBase64Request, DetectLiveByBase64Response> detectLiveByBase64Invoker(
         DetectLiveByBase64Request request) {
-        return new SyncInvoker<DetectLiveByBase64Request, DetectLiveByBase64Response>(request,
-            FrsMeta.detectLiveByBase64, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectLiveByBase64, hcClient);
     }
 
     /**
@@ -628,7 +613,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByBase64IntlRequest 请求对象
+     * @param request DetectLiveByBase64IntlRequest 请求对象
      * @return DetectLiveByBase64IntlResponse
      */
     public DetectLiveByBase64IntlResponse detectLiveByBase64Intl(DetectLiveByBase64IntlRequest request) {
@@ -642,13 +627,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByBase64IntlRequest 请求对象
+     * @param request DetectLiveByBase64IntlRequest 请求对象
      * @return SyncInvoker<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse>
      */
     public SyncInvoker<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse> detectLiveByBase64IntlInvoker(
         DetectLiveByBase64IntlRequest request) {
-        return new SyncInvoker<DetectLiveByBase64IntlRequest, DetectLiveByBase64IntlResponse>(request,
-            FrsMeta.detectLiveByBase64Intl, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectLiveByBase64Intl, hcClient);
     }
 
     /**
@@ -658,7 +642,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByFileRequest 请求对象
+     * @param request DetectLiveByFileRequest 请求对象
      * @return DetectLiveByFileResponse
      */
     public DetectLiveByFileResponse detectLiveByFile(DetectLiveByFileRequest request) {
@@ -672,13 +656,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByFileRequest 请求对象
+     * @param request DetectLiveByFileRequest 请求对象
      * @return SyncInvoker<DetectLiveByFileRequest, DetectLiveByFileResponse>
      */
     public SyncInvoker<DetectLiveByFileRequest, DetectLiveByFileResponse> detectLiveByFileInvoker(
         DetectLiveByFileRequest request) {
-        return new SyncInvoker<DetectLiveByFileRequest, DetectLiveByFileResponse>(request, FrsMeta.detectLiveByFile,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectLiveByFile, hcClient);
     }
 
     /**
@@ -688,7 +671,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByFileIntlRequest 请求对象
+     * @param request DetectLiveByFileIntlRequest 请求对象
      * @return DetectLiveByFileIntlResponse
      */
     public DetectLiveByFileIntlResponse detectLiveByFileIntl(DetectLiveByFileIntlRequest request) {
@@ -702,13 +685,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByFileIntlRequest 请求对象
+     * @param request DetectLiveByFileIntlRequest 请求对象
      * @return SyncInvoker<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse>
      */
     public SyncInvoker<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse> detectLiveByFileIntlInvoker(
         DetectLiveByFileIntlRequest request) {
-        return new SyncInvoker<DetectLiveByFileIntlRequest, DetectLiveByFileIntlResponse>(request,
-            FrsMeta.detectLiveByFileIntl, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectLiveByFileIntl, hcClient);
     }
 
     /**
@@ -718,7 +700,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByUrlRequest 请求对象
+     * @param request DetectLiveByUrlRequest 请求对象
      * @return DetectLiveByUrlResponse
      */
     public DetectLiveByUrlResponse detectLiveByUrl(DetectLiveByUrlRequest request) {
@@ -732,13 +714,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByUrlRequest 请求对象
+     * @param request DetectLiveByUrlRequest 请求对象
      * @return SyncInvoker<DetectLiveByUrlRequest, DetectLiveByUrlResponse>
      */
     public SyncInvoker<DetectLiveByUrlRequest, DetectLiveByUrlResponse> detectLiveByUrlInvoker(
         DetectLiveByUrlRequest request) {
-        return new SyncInvoker<DetectLiveByUrlRequest, DetectLiveByUrlResponse>(request, FrsMeta.detectLiveByUrl,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectLiveByUrl, hcClient);
     }
 
     /**
@@ -748,7 +729,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByUrlIntlRequest 请求对象
+     * @param request DetectLiveByUrlIntlRequest 请求对象
      * @return DetectLiveByUrlIntlResponse
      */
     public DetectLiveByUrlIntlResponse detectLiveByUrlIntl(DetectLiveByUrlIntlRequest request) {
@@ -762,13 +743,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveByUrlIntlRequest 请求对象
+     * @param request DetectLiveByUrlIntlRequest 请求对象
      * @return SyncInvoker<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse>
      */
     public SyncInvoker<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse> detectLiveByUrlIntlInvoker(
         DetectLiveByUrlIntlRequest request) {
-        return new SyncInvoker<DetectLiveByUrlIntlRequest, DetectLiveByUrlIntlResponse>(request,
-            FrsMeta.detectLiveByUrlIntl, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectLiveByUrlIntl, hcClient);
     }
 
     /**
@@ -778,7 +758,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByBase64Request 请求对象
+     * @param request DetectLiveFaceByBase64Request 请求对象
      * @return DetectLiveFaceByBase64Response
      */
     public DetectLiveFaceByBase64Response detectLiveFaceByBase64(DetectLiveFaceByBase64Request request) {
@@ -792,13 +772,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByBase64Request 请求对象
+     * @param request DetectLiveFaceByBase64Request 请求对象
      * @return SyncInvoker<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response>
      */
     public SyncInvoker<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response> detectLiveFaceByBase64Invoker(
         DetectLiveFaceByBase64Request request) {
-        return new SyncInvoker<DetectLiveFaceByBase64Request, DetectLiveFaceByBase64Response>(request,
-            FrsMeta.detectLiveFaceByBase64, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectLiveFaceByBase64, hcClient);
     }
 
     /**
@@ -808,7 +787,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByFileRequest 请求对象
+     * @param request DetectLiveFaceByFileRequest 请求对象
      * @return DetectLiveFaceByFileResponse
      */
     public DetectLiveFaceByFileResponse detectLiveFaceByFile(DetectLiveFaceByFileRequest request) {
@@ -822,13 +801,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByFileRequest 请求对象
+     * @param request DetectLiveFaceByFileRequest 请求对象
      * @return SyncInvoker<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse>
      */
     public SyncInvoker<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse> detectLiveFaceByFileInvoker(
         DetectLiveFaceByFileRequest request) {
-        return new SyncInvoker<DetectLiveFaceByFileRequest, DetectLiveFaceByFileResponse>(request,
-            FrsMeta.detectLiveFaceByFile, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectLiveFaceByFile, hcClient);
     }
 
     /**
@@ -838,7 +816,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByUrlRequest 请求对象
+     * @param request DetectLiveFaceByUrlRequest 请求对象
      * @return DetectLiveFaceByUrlResponse
      */
     public DetectLiveFaceByUrlResponse detectLiveFaceByUrl(DetectLiveFaceByUrlRequest request) {
@@ -852,13 +830,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetectLiveFaceByUrlRequest 请求对象
+     * @param request DetectLiveFaceByUrlRequest 请求对象
      * @return SyncInvoker<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse>
      */
     public SyncInvoker<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse> detectLiveFaceByUrlInvoker(
         DetectLiveFaceByUrlRequest request) {
-        return new SyncInvoker<DetectLiveFaceByUrlRequest, DetectLiveFaceByUrlResponse>(request,
-            FrsMeta.detectLiveFaceByUrl, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.detectLiveFaceByUrl, hcClient);
     }
 
     /**
@@ -869,7 +846,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByBase64Request 请求对象
+     * @param request SearchFaceByBase64Request 请求对象
      * @return SearchFaceByBase64Response
      */
     public SearchFaceByBase64Response searchFaceByBase64(SearchFaceByBase64Request request) {
@@ -884,13 +861,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByBase64Request 请求对象
+     * @param request SearchFaceByBase64Request 请求对象
      * @return SyncInvoker<SearchFaceByBase64Request, SearchFaceByBase64Response>
      */
     public SyncInvoker<SearchFaceByBase64Request, SearchFaceByBase64Response> searchFaceByBase64Invoker(
         SearchFaceByBase64Request request) {
-        return new SyncInvoker<SearchFaceByBase64Request, SearchFaceByBase64Response>(request,
-            FrsMeta.searchFaceByBase64, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.searchFaceByBase64, hcClient);
     }
 
     /**
@@ -901,7 +877,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByFaceIdRequest 请求对象
+     * @param request SearchFaceByFaceIdRequest 请求对象
      * @return SearchFaceByFaceIdResponse
      */
     public SearchFaceByFaceIdResponse searchFaceByFaceId(SearchFaceByFaceIdRequest request) {
@@ -916,13 +892,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByFaceIdRequest 请求对象
+     * @param request SearchFaceByFaceIdRequest 请求对象
      * @return SyncInvoker<SearchFaceByFaceIdRequest, SearchFaceByFaceIdResponse>
      */
     public SyncInvoker<SearchFaceByFaceIdRequest, SearchFaceByFaceIdResponse> searchFaceByFaceIdInvoker(
         SearchFaceByFaceIdRequest request) {
-        return new SyncInvoker<SearchFaceByFaceIdRequest, SearchFaceByFaceIdResponse>(request,
-            FrsMeta.searchFaceByFaceId, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.searchFaceByFaceId, hcClient);
     }
 
     /**
@@ -933,7 +908,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByFileRequest 请求对象
+     * @param request SearchFaceByFileRequest 请求对象
      * @return SearchFaceByFileResponse
      */
     public SearchFaceByFileResponse searchFaceByFile(SearchFaceByFileRequest request) {
@@ -948,13 +923,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByFileRequest 请求对象
+     * @param request SearchFaceByFileRequest 请求对象
      * @return SyncInvoker<SearchFaceByFileRequest, SearchFaceByFileResponse>
      */
     public SyncInvoker<SearchFaceByFileRequest, SearchFaceByFileResponse> searchFaceByFileInvoker(
         SearchFaceByFileRequest request) {
-        return new SyncInvoker<SearchFaceByFileRequest, SearchFaceByFileResponse>(request, FrsMeta.searchFaceByFile,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.searchFaceByFile, hcClient);
     }
 
     /**
@@ -965,7 +939,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByUrlRequest 请求对象
+     * @param request SearchFaceByUrlRequest 请求对象
      * @return SearchFaceByUrlResponse
      */
     public SearchFaceByUrlResponse searchFaceByUrl(SearchFaceByUrlRequest request) {
@@ -980,13 +954,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFaceByUrlRequest 请求对象
+     * @param request SearchFaceByUrlRequest 请求对象
      * @return SyncInvoker<SearchFaceByUrlRequest, SearchFaceByUrlResponse>
      */
     public SyncInvoker<SearchFaceByUrlRequest, SearchFaceByUrlResponse> searchFaceByUrlInvoker(
         SearchFaceByUrlRequest request) {
-        return new SyncInvoker<SearchFaceByUrlRequest, SearchFaceByUrlResponse>(request, FrsMeta.searchFaceByUrl,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.searchFaceByUrl, hcClient);
     }
 
     /**
@@ -996,7 +969,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllFaceSetsRequest 请求对象
+     * @param request ShowAllFaceSetsRequest 请求对象
      * @return ShowAllFaceSetsResponse
      */
     public ShowAllFaceSetsResponse showAllFaceSets(ShowAllFaceSetsRequest request) {
@@ -1010,13 +983,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllFaceSetsRequest 请求对象
+     * @param request ShowAllFaceSetsRequest 请求对象
      * @return SyncInvoker<ShowAllFaceSetsRequest, ShowAllFaceSetsResponse>
      */
     public SyncInvoker<ShowAllFaceSetsRequest, ShowAllFaceSetsResponse> showAllFaceSetsInvoker(
         ShowAllFaceSetsRequest request) {
-        return new SyncInvoker<ShowAllFaceSetsRequest, ShowAllFaceSetsResponse>(request, FrsMeta.showAllFaceSets,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.showAllFaceSets, hcClient);
     }
 
     /**
@@ -1026,7 +998,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFaceSetRequest 请求对象
+     * @param request ShowFaceSetRequest 请求对象
      * @return ShowFaceSetResponse
      */
     public ShowFaceSetResponse showFaceSet(ShowFaceSetRequest request) {
@@ -1040,11 +1012,11 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFaceSetRequest 请求对象
+     * @param request ShowFaceSetRequest 请求对象
      * @return SyncInvoker<ShowFaceSetRequest, ShowFaceSetResponse>
      */
     public SyncInvoker<ShowFaceSetRequest, ShowFaceSetResponse> showFaceSetInvoker(ShowFaceSetRequest request) {
-        return new SyncInvoker<ShowFaceSetRequest, ShowFaceSetResponse>(request, FrsMeta.showFaceSet, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.showFaceSet, hcClient);
     }
 
     /**
@@ -1054,7 +1026,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFacesByFaceIdRequest 请求对象
+     * @param request ShowFacesByFaceIdRequest 请求对象
      * @return ShowFacesByFaceIdResponse
      */
     public ShowFacesByFaceIdResponse showFacesByFaceId(ShowFacesByFaceIdRequest request) {
@@ -1068,13 +1040,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFacesByFaceIdRequest 请求对象
+     * @param request ShowFacesByFaceIdRequest 请求对象
      * @return SyncInvoker<ShowFacesByFaceIdRequest, ShowFacesByFaceIdResponse>
      */
     public SyncInvoker<ShowFacesByFaceIdRequest, ShowFacesByFaceIdResponse> showFacesByFaceIdInvoker(
         ShowFacesByFaceIdRequest request) {
-        return new SyncInvoker<ShowFacesByFaceIdRequest, ShowFacesByFaceIdResponse>(request, FrsMeta.showFacesByFaceId,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.showFacesByFaceId, hcClient);
     }
 
     /**
@@ -1084,7 +1055,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFacesByLimitRequest 请求对象
+     * @param request ShowFacesByLimitRequest 请求对象
      * @return ShowFacesByLimitResponse
      */
     public ShowFacesByLimitResponse showFacesByLimit(ShowFacesByLimitRequest request) {
@@ -1098,13 +1069,12 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFacesByLimitRequest 请求对象
+     * @param request ShowFacesByLimitRequest 请求对象
      * @return SyncInvoker<ShowFacesByLimitRequest, ShowFacesByLimitResponse>
      */
     public SyncInvoker<ShowFacesByLimitRequest, ShowFacesByLimitResponse> showFacesByLimitInvoker(
         ShowFacesByLimitRequest request) {
-        return new SyncInvoker<ShowFacesByLimitRequest, ShowFacesByLimitResponse>(request, FrsMeta.showFacesByLimit,
-            hcClient);
+        return new SyncInvoker<>(request, FrsMeta.showFacesByLimit, hcClient);
     }
 
     /**
@@ -1114,7 +1084,7 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFaceRequest 请求对象
+     * @param request UpdateFaceRequest 请求对象
      * @return UpdateFaceResponse
      */
     public UpdateFaceResponse updateFace(UpdateFaceRequest request) {
@@ -1128,11 +1098,11 @@ public class FrsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFaceRequest 请求对象
+     * @param request UpdateFaceRequest 请求对象
      * @return SyncInvoker<UpdateFaceRequest, UpdateFaceResponse>
      */
     public SyncInvoker<UpdateFaceRequest, UpdateFaceResponse> updateFaceInvoker(UpdateFaceRequest request) {
-        return new SyncInvoker<UpdateFaceRequest, UpdateFaceResponse>(request, FrsMeta.updateFace, hcClient);
+        return new SyncInvoker<>(request, FrsMeta.updateFace, hcClient);
     }
 
 }

@@ -88,7 +88,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddPeersToChannelRequest 请求对象
+     * @param request BatchAddPeersToChannelRequest 请求对象
      * @return BatchAddPeersToChannelResponse
      */
     public BatchAddPeersToChannelResponse batchAddPeersToChannel(BatchAddPeersToChannelRequest request) {
@@ -102,13 +102,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddPeersToChannelRequest 请求对象
+     * @param request BatchAddPeersToChannelRequest 请求对象
      * @return SyncInvoker<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse>
      */
     public SyncInvoker<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse> batchAddPeersToChannelInvoker(
         BatchAddPeersToChannelRequest request) {
-        return new SyncInvoker<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse>(request,
-            BcsMeta.batchAddPeersToChannel, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.batchAddPeersToChannel, hcClient);
     }
 
     /**
@@ -118,7 +117,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateChannelsRequest 请求对象
+     * @param request BatchCreateChannelsRequest 请求对象
      * @return BatchCreateChannelsResponse
      */
     public BatchCreateChannelsResponse batchCreateChannels(BatchCreateChannelsRequest request) {
@@ -132,13 +131,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateChannelsRequest 请求对象
+     * @param request BatchCreateChannelsRequest 请求对象
      * @return SyncInvoker<BatchCreateChannelsRequest, BatchCreateChannelsResponse>
      */
     public SyncInvoker<BatchCreateChannelsRequest, BatchCreateChannelsResponse> batchCreateChannelsInvoker(
         BatchCreateChannelsRequest request) {
-        return new SyncInvoker<BatchCreateChannelsRequest, BatchCreateChannelsResponse>(request,
-            BcsMeta.batchCreateChannels, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.batchCreateChannels, hcClient);
     }
 
     /**
@@ -148,7 +146,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchInviteMembersToChannelRequest 请求对象
+     * @param request BatchInviteMembersToChannelRequest 请求对象
      * @return BatchInviteMembersToChannelResponse
      */
     public BatchInviteMembersToChannelResponse batchInviteMembersToChannel(BatchInviteMembersToChannelRequest request) {
@@ -162,13 +160,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchInviteMembersToChannelRequest 请求对象
+     * @param request BatchInviteMembersToChannelRequest 请求对象
      * @return SyncInvoker<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse>
      */
     public SyncInvoker<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse> batchInviteMembersToChannelInvoker(
         BatchInviteMembersToChannelRequest request) {
-        return new SyncInvoker<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse>(request,
-            BcsMeta.batchInviteMembersToChannel, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.batchInviteMembersToChannel, hcClient);
     }
 
     /**
@@ -178,7 +175,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemoveOrgsFromChannelRequest 请求对象
+     * @param request BatchRemoveOrgsFromChannelRequest 请求对象
      * @return BatchRemoveOrgsFromChannelResponse
      */
     public BatchRemoveOrgsFromChannelResponse batchRemoveOrgsFromChannel(BatchRemoveOrgsFromChannelRequest request) {
@@ -192,13 +189,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemoveOrgsFromChannelRequest 请求对象
+     * @param request BatchRemoveOrgsFromChannelRequest 请求对象
      * @return SyncInvoker<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse>
      */
     public SyncInvoker<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse> batchRemoveOrgsFromChannelInvoker(
         BatchRemoveOrgsFromChannelRequest request) {
-        return new SyncInvoker<BatchRemoveOrgsFromChannelRequest, BatchRemoveOrgsFromChannelResponse>(request,
-            BcsMeta.batchRemoveOrgsFromChannel, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.batchRemoveOrgsFromChannel, hcClient);
     }
 
     /**
@@ -208,7 +204,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemovePeersFromChannelRequest 请求对象
+     * @param request BatchRemovePeersFromChannelRequest 请求对象
      * @return BatchRemovePeersFromChannelResponse
      */
     public BatchRemovePeersFromChannelResponse batchRemovePeersFromChannel(BatchRemovePeersFromChannelRequest request) {
@@ -222,13 +218,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemovePeersFromChannelRequest 请求对象
+     * @param request BatchRemovePeersFromChannelRequest 请求对象
      * @return SyncInvoker<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse>
      */
     public SyncInvoker<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse> batchRemovePeersFromChannelInvoker(
         BatchRemovePeersFromChannelRequest request) {
-        return new SyncInvoker<BatchRemovePeersFromChannelRequest, BatchRemovePeersFromChannelResponse>(request,
-            BcsMeta.batchRemovePeersFromChannel, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.batchRemovePeersFromChannel, hcClient);
     }
 
     /**
@@ -238,7 +233,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBlockchainCertByUserNameRequest 请求对象
+     * @param request CreateBlockchainCertByUserNameRequest 请求对象
      * @return CreateBlockchainCertByUserNameResponse
      */
     public CreateBlockchainCertByUserNameResponse createBlockchainCertByUserName(
@@ -253,13 +248,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBlockchainCertByUserNameRequest 请求对象
+     * @param request CreateBlockchainCertByUserNameRequest 请求对象
      * @return SyncInvoker<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse>
      */
     public SyncInvoker<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse> createBlockchainCertByUserNameInvoker(
         CreateBlockchainCertByUserNameRequest request) {
-        return new SyncInvoker<CreateBlockchainCertByUserNameRequest, CreateBlockchainCertByUserNameResponse>(request,
-            BcsMeta.createBlockchainCertByUserName, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.createBlockchainCertByUserName, hcClient);
     }
 
     /**
@@ -269,7 +263,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNewBlockchainRequest 请求对象
+     * @param request CreateNewBlockchainRequest 请求对象
      * @return CreateNewBlockchainResponse
      */
     public CreateNewBlockchainResponse createNewBlockchain(CreateNewBlockchainRequest request) {
@@ -283,13 +277,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNewBlockchainRequest 请求对象
+     * @param request CreateNewBlockchainRequest 请求对象
      * @return SyncInvoker<CreateNewBlockchainRequest, CreateNewBlockchainResponse>
      */
     public SyncInvoker<CreateNewBlockchainRequest, CreateNewBlockchainResponse> createNewBlockchainInvoker(
         CreateNewBlockchainRequest request) {
-        return new SyncInvoker<CreateNewBlockchainRequest, CreateNewBlockchainResponse>(request,
-            BcsMeta.createNewBlockchain, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.createNewBlockchain, hcClient);
     }
 
     /**
@@ -299,7 +292,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBlockchainRequest 请求对象
+     * @param request DeleteBlockchainRequest 请求对象
      * @return DeleteBlockchainResponse
      */
     public DeleteBlockchainResponse deleteBlockchain(DeleteBlockchainRequest request) {
@@ -313,13 +306,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBlockchainRequest 请求对象
+     * @param request DeleteBlockchainRequest 请求对象
      * @return SyncInvoker<DeleteBlockchainRequest, DeleteBlockchainResponse>
      */
     public SyncInvoker<DeleteBlockchainRequest, DeleteBlockchainResponse> deleteBlockchainInvoker(
         DeleteBlockchainRequest request) {
-        return new SyncInvoker<DeleteBlockchainRequest, DeleteBlockchainResponse>(request, BcsMeta.deleteBlockchain,
-            hcClient);
+        return new SyncInvoker<>(request, BcsMeta.deleteBlockchain, hcClient);
     }
 
     /**
@@ -329,7 +321,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteChannelRequest 请求对象
+     * @param request DeleteChannelRequest 请求对象
      * @return DeleteChannelResponse
      */
     public DeleteChannelResponse deleteChannel(DeleteChannelRequest request) {
@@ -343,11 +335,11 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteChannelRequest 请求对象
+     * @param request DeleteChannelRequest 请求对象
      * @return SyncInvoker<DeleteChannelRequest, DeleteChannelResponse>
      */
     public SyncInvoker<DeleteChannelRequest, DeleteChannelResponse> deleteChannelInvoker(DeleteChannelRequest request) {
-        return new SyncInvoker<DeleteChannelRequest, DeleteChannelResponse>(request, BcsMeta.deleteChannel, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.deleteChannel, hcClient);
     }
 
     /**
@@ -357,7 +349,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberInviteRequest 请求对象
+     * @param request DeleteMemberInviteRequest 请求对象
      * @return DeleteMemberInviteResponse
      */
     public DeleteMemberInviteResponse deleteMemberInvite(DeleteMemberInviteRequest request) {
@@ -371,13 +363,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberInviteRequest 请求对象
+     * @param request DeleteMemberInviteRequest 请求对象
      * @return SyncInvoker<DeleteMemberInviteRequest, DeleteMemberInviteResponse>
      */
     public SyncInvoker<DeleteMemberInviteRequest, DeleteMemberInviteResponse> deleteMemberInviteInvoker(
         DeleteMemberInviteRequest request) {
-        return new SyncInvoker<DeleteMemberInviteRequest, DeleteMemberInviteResponse>(request,
-            BcsMeta.deleteMemberInvite, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.deleteMemberInvite, hcClient);
     }
 
     /**
@@ -387,7 +378,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadBlockchainCertRequest 请求对象
+     * @param request DownloadBlockchainCertRequest 请求对象
      * @return DownloadBlockchainCertResponse
      */
     public DownloadBlockchainCertResponse downloadBlockchainCert(DownloadBlockchainCertRequest request) {
@@ -401,13 +392,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadBlockchainCertRequest 请求对象
+     * @param request DownloadBlockchainCertRequest 请求对象
      * @return SyncInvoker<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse>
      */
     public SyncInvoker<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> downloadBlockchainCertInvoker(
         DownloadBlockchainCertRequest request) {
-        return new SyncInvoker<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse>(request,
-            BcsMeta.downloadBlockchainCert, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.downloadBlockchainCert, hcClient);
     }
 
     /**
@@ -417,7 +407,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadBlockchainSdkConfigRequest 请求对象
+     * @param request DownloadBlockchainSdkConfigRequest 请求对象
      * @return DownloadBlockchainSdkConfigResponse
      */
     public DownloadBlockchainSdkConfigResponse downloadBlockchainSdkConfig(DownloadBlockchainSdkConfigRequest request) {
@@ -431,13 +421,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadBlockchainSdkConfigRequest 请求对象
+     * @param request DownloadBlockchainSdkConfigRequest 请求对象
      * @return SyncInvoker<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse>
      */
     public SyncInvoker<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse> downloadBlockchainSdkConfigInvoker(
         DownloadBlockchainSdkConfigRequest request) {
-        return new SyncInvoker<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse>(request,
-            BcsMeta.downloadBlockchainSdkConfig, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.downloadBlockchainSdkConfig, hcClient);
     }
 
     /**
@@ -447,7 +436,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param FreezeCertRequest 请求对象
+     * @param request FreezeCertRequest 请求对象
      * @return FreezeCertResponse
      */
     public FreezeCertResponse freezeCert(FreezeCertRequest request) {
@@ -461,11 +450,11 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param FreezeCertRequest 请求对象
+     * @param request FreezeCertRequest 请求对象
      * @return SyncInvoker<FreezeCertRequest, FreezeCertResponse>
      */
     public SyncInvoker<FreezeCertRequest, FreezeCertResponse> freezeCertInvoker(FreezeCertRequest request) {
-        return new SyncInvoker<FreezeCertRequest, FreezeCertResponse>(request, BcsMeta.freezeCert, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.freezeCert, hcClient);
     }
 
     /**
@@ -475,7 +464,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HandleNotificationRequest 请求对象
+     * @param request HandleNotificationRequest 请求对象
      * @return HandleNotificationResponse
      */
     public HandleNotificationResponse handleNotification(HandleNotificationRequest request) {
@@ -489,13 +478,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HandleNotificationRequest 请求对象
+     * @param request HandleNotificationRequest 请求对象
      * @return SyncInvoker<HandleNotificationRequest, HandleNotificationResponse>
      */
     public SyncInvoker<HandleNotificationRequest, HandleNotificationResponse> handleNotificationInvoker(
         HandleNotificationRequest request) {
-        return new SyncInvoker<HandleNotificationRequest, HandleNotificationResponse>(request,
-            BcsMeta.handleNotification, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.handleNotification, hcClient);
     }
 
     /**
@@ -505,7 +493,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HandleUnionMemberQuitListRequest 请求对象
+     * @param request HandleUnionMemberQuitListRequest 请求对象
      * @return HandleUnionMemberQuitListResponse
      */
     public HandleUnionMemberQuitListResponse handleUnionMemberQuitList(HandleUnionMemberQuitListRequest request) {
@@ -519,13 +507,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HandleUnionMemberQuitListRequest 请求对象
+     * @param request HandleUnionMemberQuitListRequest 请求对象
      * @return SyncInvoker<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse>
      */
     public SyncInvoker<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse> handleUnionMemberQuitListInvoker(
         HandleUnionMemberQuitListRequest request) {
-        return new SyncInvoker<HandleUnionMemberQuitListRequest, HandleUnionMemberQuitListResponse>(request,
-            BcsMeta.handleUnionMemberQuitList, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.handleUnionMemberQuitList, hcClient);
     }
 
     /**
@@ -535,7 +522,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBcsEventsRequest 请求对象
+     * @param request ListBcsEventsRequest 请求对象
      * @return ListBcsEventsResponse
      */
     public ListBcsEventsResponse listBcsEvents(ListBcsEventsRequest request) {
@@ -549,11 +536,11 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBcsEventsRequest 请求对象
+     * @param request ListBcsEventsRequest 请求对象
      * @return SyncInvoker<ListBcsEventsRequest, ListBcsEventsResponse>
      */
     public SyncInvoker<ListBcsEventsRequest, ListBcsEventsResponse> listBcsEventsInvoker(ListBcsEventsRequest request) {
-        return new SyncInvoker<ListBcsEventsRequest, ListBcsEventsResponse>(request, BcsMeta.listBcsEvents, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listBcsEvents, hcClient);
     }
 
     /**
@@ -563,7 +550,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBcsEventsStatisticRequest 请求对象
+     * @param request ListBcsEventsStatisticRequest 请求对象
      * @return ListBcsEventsStatisticResponse
      */
     public ListBcsEventsStatisticResponse listBcsEventsStatistic(ListBcsEventsStatisticRequest request) {
@@ -577,13 +564,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBcsEventsStatisticRequest 请求对象
+     * @param request ListBcsEventsStatisticRequest 请求对象
      * @return SyncInvoker<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse>
      */
     public SyncInvoker<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse> listBcsEventsStatisticInvoker(
         ListBcsEventsStatisticRequest request) {
-        return new SyncInvoker<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse>(request,
-            BcsMeta.listBcsEventsStatistic, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listBcsEventsStatistic, hcClient);
     }
 
     /**
@@ -593,7 +579,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBcsMetricRequest 请求对象
+     * @param request ListBcsMetricRequest 请求对象
      * @return ListBcsMetricResponse
      */
     public ListBcsMetricResponse listBcsMetric(ListBcsMetricRequest request) {
@@ -607,11 +593,11 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBcsMetricRequest 请求对象
+     * @param request ListBcsMetricRequest 请求对象
      * @return SyncInvoker<ListBcsMetricRequest, ListBcsMetricResponse>
      */
     public SyncInvoker<ListBcsMetricRequest, ListBcsMetricResponse> listBcsMetricInvoker(ListBcsMetricRequest request) {
-        return new SyncInvoker<ListBcsMetricRequest, ListBcsMetricResponse>(request, BcsMeta.listBcsMetric, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listBcsMetric, hcClient);
     }
 
     /**
@@ -621,7 +607,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBlockchainChannelsRequest 请求对象
+     * @param request ListBlockchainChannelsRequest 请求对象
      * @return ListBlockchainChannelsResponse
      */
     public ListBlockchainChannelsResponse listBlockchainChannels(ListBlockchainChannelsRequest request) {
@@ -635,13 +621,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBlockchainChannelsRequest 请求对象
+     * @param request ListBlockchainChannelsRequest 请求对象
      * @return SyncInvoker<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse>
      */
     public SyncInvoker<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> listBlockchainChannelsInvoker(
         ListBlockchainChannelsRequest request) {
-        return new SyncInvoker<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse>(request,
-            BcsMeta.listBlockchainChannels, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listBlockchainChannels, hcClient);
     }
 
     /**
@@ -651,7 +636,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBlockchainsRequest 请求对象
+     * @param request ListBlockchainsRequest 请求对象
      * @return ListBlockchainsResponse
      */
     public ListBlockchainsResponse listBlockchains(ListBlockchainsRequest request) {
@@ -665,13 +650,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBlockchainsRequest 请求对象
+     * @param request ListBlockchainsRequest 请求对象
      * @return SyncInvoker<ListBlockchainsRequest, ListBlockchainsResponse>
      */
     public SyncInvoker<ListBlockchainsRequest, ListBlockchainsResponse> listBlockchainsInvoker(
         ListBlockchainsRequest request) {
-        return new SyncInvoker<ListBlockchainsRequest, ListBlockchainsResponse>(request, BcsMeta.listBlockchains,
-            hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listBlockchains, hcClient);
     }
 
     /**
@@ -681,7 +665,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEntityMetricRequest 请求对象
+     * @param request ListEntityMetricRequest 请求对象
      * @return ListEntityMetricResponse
      */
     public ListEntityMetricResponse listEntityMetric(ListEntityMetricRequest request) {
@@ -695,13 +679,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEntityMetricRequest 请求对象
+     * @param request ListEntityMetricRequest 请求对象
      * @return SyncInvoker<ListEntityMetricRequest, ListEntityMetricResponse>
      */
     public SyncInvoker<ListEntityMetricRequest, ListEntityMetricResponse> listEntityMetricInvoker(
         ListEntityMetricRequest request) {
-        return new SyncInvoker<ListEntityMetricRequest, ListEntityMetricResponse>(request, BcsMeta.listEntityMetric,
-            hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listEntityMetric, hcClient);
     }
 
     /**
@@ -711,7 +694,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceMetricRequest 请求对象
+     * @param request ListInstanceMetricRequest 请求对象
      * @return ListInstanceMetricResponse
      */
     public ListInstanceMetricResponse listInstanceMetric(ListInstanceMetricRequest request) {
@@ -725,13 +708,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceMetricRequest 请求对象
+     * @param request ListInstanceMetricRequest 请求对象
      * @return SyncInvoker<ListInstanceMetricRequest, ListInstanceMetricResponse>
      */
     public SyncInvoker<ListInstanceMetricRequest, ListInstanceMetricResponse> listInstanceMetricInvoker(
         ListInstanceMetricRequest request) {
-        return new SyncInvoker<ListInstanceMetricRequest, ListInstanceMetricResponse>(request,
-            BcsMeta.listInstanceMetric, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listInstanceMetric, hcClient);
     }
 
     /**
@@ -741,7 +723,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMembersRequest 请求对象
+     * @param request ListMembersRequest 请求对象
      * @return ListMembersResponse
      */
     public ListMembersResponse listMembers(ListMembersRequest request) {
@@ -755,11 +737,11 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMembersRequest 请求对象
+     * @param request ListMembersRequest 请求对象
      * @return SyncInvoker<ListMembersRequest, ListMembersResponse>
      */
     public SyncInvoker<ListMembersRequest, ListMembersResponse> listMembersInvoker(ListMembersRequest request) {
-        return new SyncInvoker<ListMembersRequest, ListMembersResponse>(request, BcsMeta.listMembers, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listMembers, hcClient);
     }
 
     /**
@@ -769,7 +751,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationsRequest 请求对象
+     * @param request ListNotificationsRequest 请求对象
      * @return ListNotificationsResponse
      */
     public ListNotificationsResponse listNotifications(ListNotificationsRequest request) {
@@ -783,13 +765,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotificationsRequest 请求对象
+     * @param request ListNotificationsRequest 请求对象
      * @return SyncInvoker<ListNotificationsRequest, ListNotificationsResponse>
      */
     public SyncInvoker<ListNotificationsRequest, ListNotificationsResponse> listNotificationsInvoker(
         ListNotificationsRequest request) {
-        return new SyncInvoker<ListNotificationsRequest, ListNotificationsResponse>(request, BcsMeta.listNotifications,
-            hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listNotifications, hcClient);
     }
 
     /**
@@ -799,7 +780,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOpRecordRequest 请求对象
+     * @param request ListOpRecordRequest 请求对象
      * @return ListOpRecordResponse
      */
     public ListOpRecordResponse listOpRecord(ListOpRecordRequest request) {
@@ -813,11 +794,11 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOpRecordRequest 请求对象
+     * @param request ListOpRecordRequest 请求对象
      * @return SyncInvoker<ListOpRecordRequest, ListOpRecordResponse>
      */
     public SyncInvoker<ListOpRecordRequest, ListOpRecordResponse> listOpRecordInvoker(ListOpRecordRequest request) {
-        return new SyncInvoker<ListOpRecordRequest, ListOpRecordResponse>(request, BcsMeta.listOpRecord, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listOpRecord, hcClient);
     }
 
     /**
@@ -827,7 +808,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return ListQuotasResponse
      */
     public ListQuotasResponse listQuotas(ListQuotasRequest request) {
@@ -841,11 +822,11 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
-        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, BcsMeta.listQuotas, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.listQuotas, hcClient);
     }
 
     /**
@@ -855,7 +836,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockchainDetailRequest 请求对象
+     * @param request ShowBlockchainDetailRequest 请求对象
      * @return ShowBlockchainDetailResponse
      */
     public ShowBlockchainDetailResponse showBlockchainDetail(ShowBlockchainDetailRequest request) {
@@ -869,13 +850,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockchainDetailRequest 请求对象
+     * @param request ShowBlockchainDetailRequest 请求对象
      * @return SyncInvoker<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse>
      */
     public SyncInvoker<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> showBlockchainDetailInvoker(
         ShowBlockchainDetailRequest request) {
-        return new SyncInvoker<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse>(request,
-            BcsMeta.showBlockchainDetail, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.showBlockchainDetail, hcClient);
     }
 
     /**
@@ -885,7 +865,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockchainFlavorsRequest 请求对象
+     * @param request ShowBlockchainFlavorsRequest 请求对象
      * @return ShowBlockchainFlavorsResponse
      */
     public ShowBlockchainFlavorsResponse showBlockchainFlavors(ShowBlockchainFlavorsRequest request) {
@@ -899,13 +879,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockchainFlavorsRequest 请求对象
+     * @param request ShowBlockchainFlavorsRequest 请求对象
      * @return SyncInvoker<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse>
      */
     public SyncInvoker<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse> showBlockchainFlavorsInvoker(
         ShowBlockchainFlavorsRequest request) {
-        return new SyncInvoker<ShowBlockchainFlavorsRequest, ShowBlockchainFlavorsResponse>(request,
-            BcsMeta.showBlockchainFlavors, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.showBlockchainFlavors, hcClient);
     }
 
     /**
@@ -915,7 +894,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockchainNodesRequest 请求对象
+     * @param request ShowBlockchainNodesRequest 请求对象
      * @return ShowBlockchainNodesResponse
      */
     public ShowBlockchainNodesResponse showBlockchainNodes(ShowBlockchainNodesRequest request) {
@@ -929,13 +908,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockchainNodesRequest 请求对象
+     * @param request ShowBlockchainNodesRequest 请求对象
      * @return SyncInvoker<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse>
      */
     public SyncInvoker<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse> showBlockchainNodesInvoker(
         ShowBlockchainNodesRequest request) {
-        return new SyncInvoker<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse>(request,
-            BcsMeta.showBlockchainNodes, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.showBlockchainNodes, hcClient);
     }
 
     /**
@@ -945,7 +923,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockchainStatusRequest 请求对象
+     * @param request ShowBlockchainStatusRequest 请求对象
      * @return ShowBlockchainStatusResponse
      */
     public ShowBlockchainStatusResponse showBlockchainStatus(ShowBlockchainStatusRequest request) {
@@ -959,13 +937,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBlockchainStatusRequest 请求对象
+     * @param request ShowBlockchainStatusRequest 请求对象
      * @return SyncInvoker<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse>
      */
     public SyncInvoker<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> showBlockchainStatusInvoker(
         ShowBlockchainStatusRequest request) {
-        return new SyncInvoker<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse>(request,
-            BcsMeta.showBlockchainStatus, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.showBlockchainStatus, hcClient);
     }
 
     /**
@@ -975,7 +952,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnfreezeCertRequest 请求对象
+     * @param request UnfreezeCertRequest 请求对象
      * @return UnfreezeCertResponse
      */
     public UnfreezeCertResponse unfreezeCert(UnfreezeCertRequest request) {
@@ -989,11 +966,11 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UnfreezeCertRequest 请求对象
+     * @param request UnfreezeCertRequest 请求对象
      * @return SyncInvoker<UnfreezeCertRequest, UnfreezeCertResponse>
      */
     public SyncInvoker<UnfreezeCertRequest, UnfreezeCertResponse> unfreezeCertInvoker(UnfreezeCertRequest request) {
-        return new SyncInvoker<UnfreezeCertRequest, UnfreezeCertResponse>(request, BcsMeta.unfreezeCert, hcClient);
+        return new SyncInvoker<>(request, BcsMeta.unfreezeCert, hcClient);
     }
 
     /**
@@ -1003,7 +980,7 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
      */
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
@@ -1017,13 +994,12 @@ public class BcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
      */
     public SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceInvoker(
         UpdateInstanceRequest request) {
-        return new SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, BcsMeta.updateInstance,
-            hcClient);
+        return new SyncInvoker<>(request, BcsMeta.updateInstance, hcClient);
     }
 
 }

@@ -108,7 +108,7 @@ public class ShowControlResponse extends SdkResponse {
     }
 
     /**
-     * 业务控制策略（SCP），配置规则。
+     * 服务控制策略（SCP），配置规则。
      * @return implementation
      */
     public String getImplementation() {
@@ -275,7 +275,7 @@ public class ShowControlResponse extends SdkResponse {
     }
 
     /**
-     * 策略内容。
+     * 控制策略内容。
      * @return artifacts
      */
     public List<Artifact> getArtifacts() {
@@ -308,7 +308,7 @@ public class ShowControlResponse extends SdkResponse {
     }
 
     /**
-     * 别名列表。
+     * 控制策略别名。
      * @return aliases
      */
     public List<String> getAliases() {
@@ -325,7 +325,7 @@ public class ShowControlResponse extends SdkResponse {
     }
 
     /**
-     * 账号的创建来源，包括CUSTOM和RGC。
+     * 纳管账号的创建来源，包括CUSTOM和RGC。
      * @return owner
      */
     public String getOwner() {
@@ -342,7 +342,7 @@ public class ShowControlResponse extends SdkResponse {
     }
 
     /**
-     * 严重性(High)。
+     * 控制策略严重性。
      * @return severity
      */
     public String getSeverity() {
@@ -359,7 +359,7 @@ public class ShowControlResponse extends SdkResponse {
     }
 
     /**
-     * 版本。
+     * 控制策略版本。
      * @return version
      */
     public String getVersion() {
@@ -376,7 +376,7 @@ public class ShowControlResponse extends SdkResponse {
     }
 
     /**
-     * 发布时间。
+     * 控制策略发布时间。
      * @return releaseDate
      */
     public OffsetDateTime getReleaseDate() {

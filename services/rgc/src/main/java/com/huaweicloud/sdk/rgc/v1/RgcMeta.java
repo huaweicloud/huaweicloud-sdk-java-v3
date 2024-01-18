@@ -19,6 +19,9 @@ import com.huaweicloud.sdk.rgc.v1.model.DisableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DisableControlResponse;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlResponse;
+import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountRequest;
+import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountRequestBody;
+import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListConfigRuleComplianceRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListConfigRuleComplianceResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListControlViolationsRequest;
@@ -39,6 +42,8 @@ import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedOrganizationalUnitsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedOrganizationalUnitsResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ReRegisterOrganizationalUnitRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ReRegisterOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.RegisterOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.RegisterOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.SetupLandingZoneReqBody;
@@ -72,38 +77,32 @@ import com.huaweicloud.sdk.rgc.v1.model.ShowManagedOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowManagedOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowOperationRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowOperationResponse;
+import com.huaweicloud.sdk.rgc.v1.model.UnEnrollAccountRequest;
+import com.huaweicloud.sdk.rgc.v1.model.UnEnrollAccountResponse;
 import com.huaweicloud.sdk.rgc.v1.model.UpdateManagedAccountRequest;
+import com.huaweicloud.sdk.rgc.v1.model.UpdateManagedAccountRequestBody;
 import com.huaweicloud.sdk.rgc.v1.model.UpdateManagedAccountResponse;
 
 @SuppressWarnings("unchecked")
 public class RgcMeta {
 
     public static final HttpRequestDef<DisableControlRequest, DisableControlResponse> disableControl =
-        genFordisableControl();
+        genForDisableControl();
 
-    private static HttpRequestDef<DisableControlRequest, DisableControlResponse> genFordisableControl() {
+    private static HttpRequestDef<DisableControlRequest, DisableControlResponse> genForDisableControl() {
         // basic
         HttpRequestDef.Builder<DisableControlRequest, DisableControlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableControlRequest.class, DisableControlResponse.class)
                 .withName("DisableControl")
-                .withUri("/v1/governance/control/disable")
+                .withUri("/v1/governance/controls/disable")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableControlRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
         builder.<ControlOperateReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ControlOperateReqBody.class),
-            f -> f.withMarshaller(DisableControlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisableControlRequest::getBody, DisableControlRequest::setBody));
 
         // response
 
@@ -111,31 +110,22 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<EnableControlRequest, EnableControlResponse> enableControl =
-        genForenableControl();
+        genForEnableControl();
 
-    private static HttpRequestDef<EnableControlRequest, EnableControlResponse> genForenableControl() {
+    private static HttpRequestDef<EnableControlRequest, EnableControlResponse> genForEnableControl() {
         // basic
         HttpRequestDef.Builder<EnableControlRequest, EnableControlResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableControlRequest.class, EnableControlResponse.class)
                 .withName("EnableControl")
-                .withUri("/v1/governance/control/enable")
+                .withUri("/v1/governance/controls/enable")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableControlRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
         builder.<ControlOperateReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ControlOperateReqBody.class),
-            f -> f.withMarshaller(EnableControlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EnableControlRequest::getBody, EnableControlRequest::setBody));
 
         // response
 
@@ -143,32 +133,24 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ListConfigRuleComplianceRequest, ListConfigRuleComplianceResponse> listConfigRuleCompliance =
-        genForlistConfigRuleCompliance();
+        genForListConfigRuleCompliance();
 
-    private static HttpRequestDef<ListConfigRuleComplianceRequest, ListConfigRuleComplianceResponse> genForlistConfigRuleCompliance() {
+    private static HttpRequestDef<ListConfigRuleComplianceRequest, ListConfigRuleComplianceResponse> genForListConfigRuleCompliance() {
         // basic
         HttpRequestDef.Builder<ListConfigRuleComplianceRequest, ListConfigRuleComplianceResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.GET, ListConfigRuleComplianceRequest.class, ListConfigRuleComplianceResponse.class)
                 .withName("ListConfigRuleCompliance")
-                .withUri("/v1/governance/account/{account_id}/config-rule-compliances")
+                .withUri("/v1/governance/managed-accounts/{managed_account_id}/config-rule-compliances")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("account_id",
+        builder.<String>withRequestField("managed_account_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigRuleComplianceRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfigRuleComplianceRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ListConfigRuleComplianceRequest::getManagedAccountId,
+                ListConfigRuleComplianceRequest::setManagedAccountId));
 
         // response
 
@@ -176,9 +158,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ListControlViolationsRequest, ListControlViolationsResponse> listControlViolations =
-        genForlistControlViolations();
+        genForListControlViolations();
 
-    private static HttpRequestDef<ListControlViolationsRequest, ListControlViolationsResponse> genForlistControlViolations() {
+    private static HttpRequestDef<ListControlViolationsRequest, ListControlViolationsResponse> genForListControlViolations() {
         // basic
         HttpRequestDef.Builder<ListControlViolationsRequest, ListControlViolationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListControlViolationsRequest.class, ListControlViolationsResponse.class)
@@ -191,32 +173,23 @@ public class RgcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlViolationsRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
+            f -> f.withMarshaller(ListControlViolationsRequest::getAccountId,
+                ListControlViolationsRequest::setAccountId));
         builder.<String>withRequestField("organization_unit_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlViolationsRequest::getOrganizationUnitId, (req, v) -> {
-                req.setOrganizationUnitId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlViolationsRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ListControlViolationsRequest::getOrganizationUnitId,
+                ListControlViolationsRequest::setOrganizationUnitId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListControlsRequest, ListControlsResponse> listControls = genForlistControls();
+    public static final HttpRequestDef<ListControlsRequest, ListControlsResponse> listControls = genForListControls();
 
-    private static HttpRequestDef<ListControlsRequest, ListControlsResponse> genForlistControls() {
+    private static HttpRequestDef<ListControlsRequest, ListControlsResponse> genForListControls() {
         // basic
         HttpRequestDef.Builder<ListControlsRequest, ListControlsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListControlsRequest.class, ListControlsResponse.class)
@@ -229,23 +202,12 @@ public class RgcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListControlsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListControlsRequest::getLimit, ListControlsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlsRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ListControlsRequest::getMarker, ListControlsRequest::setMarker));
 
         // response
 
@@ -253,14 +215,14 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ListControlsForAccountRequest, ListControlsForAccountResponse> listControlsForAccount =
-        genForlistControlsForAccount();
+        genForListControlsForAccount();
 
-    private static HttpRequestDef<ListControlsForAccountRequest, ListControlsForAccountResponse> genForlistControlsForAccount() {
+    private static HttpRequestDef<ListControlsForAccountRequest, ListControlsForAccountResponse> genForListControlsForAccount() {
         // basic
         HttpRequestDef.Builder<ListControlsForAccountRequest, ListControlsForAccountResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListControlsForAccountRequest.class, ListControlsForAccountResponse.class)
             .withName("ListControlsForAccount")
-            .withUri("/v1/governance/managed-account/{managed_account_id}/controls")
+            .withUri("/v1/governance/managed-accounts/{managed_account_id}/controls")
             .withContentType("application/json");
 
         // requests
@@ -268,30 +230,18 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlsForAccountRequest::getManagedAccountId, (req, v) -> {
-                req.setManagedAccountId(v);
-            }));
+            f -> f.withMarshaller(ListControlsForAccountRequest::getManagedAccountId,
+                ListControlsForAccountRequest::setManagedAccountId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListControlsForAccountRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListControlsForAccountRequest::getLimit, ListControlsForAccountRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlsForAccountRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlsForAccountRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ListControlsForAccountRequest::getMarker, ListControlsForAccountRequest::setMarker));
 
         // response
 
@@ -299,9 +249,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> listControlsForOrganizationUnit =
-        genForlistControlsForOrganizationUnit();
+        genForListControlsForOrganizationUnit();
 
-    private static HttpRequestDef<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> genForlistControlsForOrganizationUnit() {
+    private static HttpRequestDef<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> genForListControlsForOrganizationUnit() {
         // basic
         HttpRequestDef.Builder<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> builder =
             HttpRequestDef
@@ -309,7 +259,7 @@ public class RgcMeta {
                     ListControlsForOrganizationUnitRequest.class,
                     ListControlsForOrganizationUnitResponse.class)
                 .withName("ListControlsForOrganizationUnit")
-                .withUri("/v1/governance/managed-organization-unit/{managed_organization_unit_id}/controls")
+                .withUri("/v1/governance/managed-organization-units/{managed_organization_unit_id}/controls")
                 .withContentType("application/json");
 
         // requests
@@ -317,30 +267,20 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlsForOrganizationUnitRequest::getManagedOrganizationUnitId, (req, v) -> {
-                req.setManagedOrganizationUnitId(v);
-            }));
+            f -> f.withMarshaller(ListControlsForOrganizationUnitRequest::getManagedOrganizationUnitId,
+                ListControlsForOrganizationUnitRequest::setManagedOrganizationUnitId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListControlsForOrganizationUnitRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListControlsForOrganizationUnitRequest::getLimit,
+                ListControlsForOrganizationUnitRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlsForOrganizationUnitRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlsForOrganizationUnitRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ListControlsForOrganizationUnitRequest::getMarker,
+                ListControlsForOrganizationUnitRequest::setMarker));
 
         // response
 
@@ -348,9 +288,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ListDriftDetailsRequest, ListDriftDetailsResponse> listDriftDetails =
-        genForlistDriftDetails();
+        genForListDriftDetails();
 
-    private static HttpRequestDef<ListDriftDetailsRequest, ListDriftDetailsResponse> genForlistDriftDetails() {
+    private static HttpRequestDef<ListDriftDetailsRequest, ListDriftDetailsResponse> genForListDriftDetails() {
         // basic
         HttpRequestDef.Builder<ListDriftDetailsRequest, ListDriftDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDriftDetailsRequest.class, ListDriftDetailsResponse.class)
@@ -359,13 +299,6 @@ public class RgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDriftDetailsRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
 
         // response
 
@@ -373,9 +306,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ListEnabledControlsRequest, ListEnabledControlsResponse> listEnabledControls =
-        genForlistEnabledControls();
+        genForListEnabledControls();
 
-    private static HttpRequestDef<ListEnabledControlsRequest, ListEnabledControlsResponse> genForlistEnabledControls() {
+    private static HttpRequestDef<ListEnabledControlsRequest, ListEnabledControlsResponse> genForListEnabledControls() {
         // basic
         HttpRequestDef.Builder<ListEnabledControlsRequest, ListEnabledControlsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnabledControlsRequest.class, ListEnabledControlsResponse.class)
@@ -388,23 +321,12 @@ public class RgcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnabledControlsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnabledControlsRequest::getLimit, ListEnabledControlsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnabledControlsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnabledControlsRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ListEnabledControlsRequest::getMarker, ListEnabledControlsRequest::setMarker));
 
         // response
 
@@ -412,9 +334,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowComplianceStatusForAccountRequest, ShowComplianceStatusForAccountResponse> showComplianceStatusForAccount =
-        genForshowComplianceStatusForAccount();
+        genForShowComplianceStatusForAccount();
 
-    private static HttpRequestDef<ShowComplianceStatusForAccountRequest, ShowComplianceStatusForAccountResponse> genForshowComplianceStatusForAccount() {
+    private static HttpRequestDef<ShowComplianceStatusForAccountRequest, ShowComplianceStatusForAccountResponse> genForShowComplianceStatusForAccount() {
         // basic
         HttpRequestDef.Builder<ShowComplianceStatusForAccountRequest, ShowComplianceStatusForAccountResponse> builder =
             HttpRequestDef
@@ -422,7 +344,7 @@ public class RgcMeta {
                     ShowComplianceStatusForAccountRequest.class,
                     ShowComplianceStatusForAccountResponse.class)
                 .withName("ShowComplianceStatusForAccount")
-                .withUri("/v1/governance/managed-account/{managed_account_id}/compliance-status")
+                .withUri("/v1/governance/managed-accounts/{managed_account_id}/compliance-status")
                 .withContentType("application/json");
 
         // requests
@@ -430,16 +352,14 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComplianceStatusForAccountRequest::getManagedAccountId, (req, v) -> {
-                req.setManagedAccountId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
+            f -> f.withMarshaller(ShowComplianceStatusForAccountRequest::getManagedAccountId,
+                ShowComplianceStatusForAccountRequest::setManagedAccountId));
+        builder.<String>withRequestField("control_id",
+            LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComplianceStatusForAccountRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ShowComplianceStatusForAccountRequest::getControlId,
+                ShowComplianceStatusForAccountRequest::setControlId));
 
         // response
 
@@ -447,9 +367,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowComplianceStatusForOrganizationUnitRequest, ShowComplianceStatusForOrganizationUnitResponse> showComplianceStatusForOrganizationUnit =
-        genForshowComplianceStatusForOrganizationUnit();
+        genForShowComplianceStatusForOrganizationUnit();
 
-    private static HttpRequestDef<ShowComplianceStatusForOrganizationUnitRequest, ShowComplianceStatusForOrganizationUnitResponse> genForshowComplianceStatusForOrganizationUnit() {
+    private static HttpRequestDef<ShowComplianceStatusForOrganizationUnitRequest, ShowComplianceStatusForOrganizationUnitResponse> genForShowComplianceStatusForOrganizationUnit() {
         // basic
         HttpRequestDef.Builder<ShowComplianceStatusForOrganizationUnitRequest, ShowComplianceStatusForOrganizationUnitResponse> builder =
             HttpRequestDef
@@ -457,7 +377,7 @@ public class RgcMeta {
                     ShowComplianceStatusForOrganizationUnitRequest.class,
                     ShowComplianceStatusForOrganizationUnitResponse.class)
                 .withName("ShowComplianceStatusForOrganizationUnit")
-                .withUri("/v1/governance/managed-organization-unit/{managed_organization_unit_id}/compliance-status")
+                .withUri("/v1/governance/managed-organization-units/{managed_organization_unit_id}/compliance-status")
                 .withContentType("application/json");
 
         // requests
@@ -466,25 +386,22 @@ public class RgcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowComplianceStatusForOrganizationUnitRequest::getManagedOrganizationUnitId,
-                (req, v) -> {
-                    req.setManagedOrganizationUnitId(v);
-                }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
+                ShowComplianceStatusForOrganizationUnitRequest::setManagedOrganizationUnitId));
+        builder.<String>withRequestField("control_id",
+            LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComplianceStatusForOrganizationUnitRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ShowComplianceStatusForOrganizationUnitRequest::getControlId,
+                ShowComplianceStatusForOrganizationUnitRequest::setControlId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowControlRequest, ShowControlResponse> showControl = genForshowControl();
+    public static final HttpRequestDef<ShowControlRequest, ShowControlResponse> showControl = genForShowControl();
 
-    private static HttpRequestDef<ShowControlRequest, ShowControlResponse> genForshowControl() {
+    private static HttpRequestDef<ShowControlRequest, ShowControlResponse> genForShowControl() {
         // basic
         HttpRequestDef.Builder<ShowControlRequest, ShowControlResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowControlRequest.class, ShowControlResponse.class)
@@ -497,16 +414,7 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowControlRequest::getControlId, (req, v) -> {
-                req.setControlId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowControlRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ShowControlRequest::getControlId, ShowControlRequest::setControlId));
 
         // response
 
@@ -514,31 +422,23 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowControlOperateRequest, ShowControlOperateResponse> showControlOperate =
-        genForshowControlOperate();
+        genForShowControlOperate();
 
-    private static HttpRequestDef<ShowControlOperateRequest, ShowControlOperateResponse> genForshowControlOperate() {
+    private static HttpRequestDef<ShowControlOperateRequest, ShowControlOperateResponse> genForShowControlOperate() {
         // basic
         HttpRequestDef.Builder<ShowControlOperateRequest, ShowControlOperateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowControlOperateRequest.class, ShowControlOperateResponse.class)
                 .withName("ShowControlOperate")
-                .withUri("/v1/governance/operated-controls/{control_operate_request_id}")
+                .withUri("/v1/governance/operation-control-status/{operation_control_status_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("control_operate_request_id",
+        builder.<String>withRequestField("operation_control_status_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowControlOperateRequest::getControlOperateRequestId, (req, v) -> {
-                req.setControlOperateRequestId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowControlOperateRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ShowControlOperateRequest::getOperationControlStatusId,
+                ShowControlOperateRequest::setOperationControlStatusId));
 
         // response
 
@@ -546,9 +446,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowControlsForOrganizationUnitRequest, ShowControlsForOrganizationUnitResponse> showControlsForOrganizationUnit =
-        genForshowControlsForOrganizationUnit();
+        genForShowControlsForOrganizationUnit();
 
-    private static HttpRequestDef<ShowControlsForOrganizationUnitRequest, ShowControlsForOrganizationUnitResponse> genForshowControlsForOrganizationUnit() {
+    private static HttpRequestDef<ShowControlsForOrganizationUnitRequest, ShowControlsForOrganizationUnitResponse> genForShowControlsForOrganizationUnit() {
         // basic
         HttpRequestDef.Builder<ShowControlsForOrganizationUnitRequest, ShowControlsForOrganizationUnitResponse> builder =
             HttpRequestDef
@@ -557,7 +457,7 @@ public class RgcMeta {
                     ShowControlsForOrganizationUnitResponse.class)
                 .withName("ShowControlsForOrganizationUnit")
                 .withUri(
-                    "/v1/governance/managed-organization-unit/{managed_organization_unit_id}/controls/{control_id}")
+                    "/v1/governance/managed-organization-units/{managed_organization_unit_id}/controls/{control_id}")
                 .withContentType("application/json");
 
         // requests
@@ -565,32 +465,23 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowControlsForOrganizationUnitRequest::getManagedOrganizationUnitId, (req, v) -> {
-                req.setManagedOrganizationUnitId(v);
-            }));
+            f -> f.withMarshaller(ShowControlsForOrganizationUnitRequest::getManagedOrganizationUnitId,
+                ShowControlsForOrganizationUnitRequest::setManagedOrganizationUnitId));
         builder.<String>withRequestField("control_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowControlsForOrganizationUnitRequest::getControlId, (req, v) -> {
-                req.setControlId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowControlsForOrganizationUnitRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ShowControlsForOrganizationUnitRequest::getControlId,
+                ShowControlsForOrganizationUnitRequest::setControlId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckLaunchRequest, CheckLaunchResponse> checkLaunch = genForcheckLaunch();
+    public static final HttpRequestDef<CheckLaunchRequest, CheckLaunchResponse> checkLaunch = genForCheckLaunch();
 
-    private static HttpRequestDef<CheckLaunchRequest, CheckLaunchResponse> genForcheckLaunch() {
+    private static HttpRequestDef<CheckLaunchRequest, CheckLaunchResponse> genForCheckLaunch() {
         // basic
         HttpRequestDef.Builder<CheckLaunchRequest, CheckLaunchResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckLaunchRequest.class, CheckLaunchResponse.class)
@@ -599,13 +490,6 @@ public class RgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckLaunchRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
 
         // response
 
@@ -613,9 +497,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<SetupLandingZoneRequest, SetupLandingZoneResponse> setupLandingZone =
-        genForsetupLandingZone();
+        genForSetupLandingZone();
 
-    private static HttpRequestDef<SetupLandingZoneRequest, SetupLandingZoneResponse> genForsetupLandingZone() {
+    private static HttpRequestDef<SetupLandingZoneRequest, SetupLandingZoneResponse> genForSetupLandingZone() {
         // basic
         HttpRequestDef.Builder<SetupLandingZoneRequest, SetupLandingZoneResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SetupLandingZoneRequest.class, SetupLandingZoneResponse.class)
@@ -624,20 +508,11 @@ public class RgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetupLandingZoneRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
         builder.<SetupLandingZoneReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetupLandingZoneReqBody.class),
-            f -> f.withMarshaller(SetupLandingZoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetupLandingZoneRequest::getBody, SetupLandingZoneRequest::setBody));
 
         // response
 
@@ -645,9 +520,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowAvailableUpdatesRequest, ShowAvailableUpdatesResponse> showAvailableUpdates =
-        genForshowAvailableUpdates();
+        genForShowAvailableUpdates();
 
-    private static HttpRequestDef<ShowAvailableUpdatesRequest, ShowAvailableUpdatesResponse> genForshowAvailableUpdates() {
+    private static HttpRequestDef<ShowAvailableUpdatesRequest, ShowAvailableUpdatesResponse> genForShowAvailableUpdates() {
         // basic
         HttpRequestDef.Builder<ShowAvailableUpdatesRequest, ShowAvailableUpdatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAvailableUpdatesRequest.class, ShowAvailableUpdatesResponse.class)
@@ -656,13 +531,6 @@ public class RgcMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAvailableUpdatesRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
 
         // response
 
@@ -670,9 +538,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowHomeRegionRequest, ShowHomeRegionResponse> showHomeRegion =
-        genForshowHomeRegion();
+        genForShowHomeRegion();
 
-    private static HttpRequestDef<ShowHomeRegionRequest, ShowHomeRegionResponse> genForshowHomeRegion() {
+    private static HttpRequestDef<ShowHomeRegionRequest, ShowHomeRegionResponse> genForShowHomeRegion() {
         // basic
         HttpRequestDef.Builder<ShowHomeRegionRequest, ShowHomeRegionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHomeRegionRequest.class, ShowHomeRegionResponse.class)
@@ -681,13 +549,6 @@ public class RgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHomeRegionRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
 
         // response
 
@@ -695,9 +556,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowLandingZoneConfigurationRequest, ShowLandingZoneConfigurationResponse> showLandingZoneConfiguration =
-        genForshowLandingZoneConfiguration();
+        genForShowLandingZoneConfiguration();
 
-    private static HttpRequestDef<ShowLandingZoneConfigurationRequest, ShowLandingZoneConfigurationResponse> genForshowLandingZoneConfiguration() {
+    private static HttpRequestDef<ShowLandingZoneConfigurationRequest, ShowLandingZoneConfigurationResponse> genForShowLandingZoneConfiguration() {
         // basic
         HttpRequestDef.Builder<ShowLandingZoneConfigurationRequest, ShowLandingZoneConfigurationResponse> builder =
             HttpRequestDef
@@ -709,13 +570,6 @@ public class RgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLandingZoneConfigurationRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
 
         // response
 
@@ -723,9 +577,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowLandingZoneIdentityCenterRequest, ShowLandingZoneIdentityCenterResponse> showLandingZoneIdentityCenter =
-        genForshowLandingZoneIdentityCenter();
+        genForShowLandingZoneIdentityCenter();
 
-    private static HttpRequestDef<ShowLandingZoneIdentityCenterRequest, ShowLandingZoneIdentityCenterResponse> genForshowLandingZoneIdentityCenter() {
+    private static HttpRequestDef<ShowLandingZoneIdentityCenterRequest, ShowLandingZoneIdentityCenterResponse> genForShowLandingZoneIdentityCenter() {
         // basic
         HttpRequestDef.Builder<ShowLandingZoneIdentityCenterRequest, ShowLandingZoneIdentityCenterResponse> builder =
             HttpRequestDef
@@ -737,13 +591,6 @@ public class RgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLandingZoneIdentityCenterRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
 
         // response
 
@@ -751,9 +598,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowLandingZoneStatusRequest, ShowLandingZoneStatusResponse> showLandingZoneStatus =
-        genForshowLandingZoneStatus();
+        genForShowLandingZoneStatus();
 
-    private static HttpRequestDef<ShowLandingZoneStatusRequest, ShowLandingZoneStatusResponse> genForshowLandingZoneStatus() {
+    private static HttpRequestDef<ShowLandingZoneStatusRequest, ShowLandingZoneStatusResponse> genForShowLandingZoneStatus() {
         // basic
         HttpRequestDef.Builder<ShowLandingZoneStatusRequest, ShowLandingZoneStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowLandingZoneStatusRequest.class, ShowLandingZoneStatusResponse.class)
@@ -762,13 +609,6 @@ public class RgcMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLandingZoneStatusRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
 
         // response
 
@@ -776,9 +616,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<CreateAccountRequest, CreateAccountResponse> createAccount =
-        genForcreateAccount();
+        genForCreateAccount();
 
-    private static HttpRequestDef<CreateAccountRequest, CreateAccountResponse> genForcreateAccount() {
+    private static HttpRequestDef<CreateAccountRequest, CreateAccountResponse> genForCreateAccount() {
         // basic
         HttpRequestDef.Builder<CreateAccountRequest, CreateAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAccountRequest.class, CreateAccountResponse.class)
@@ -787,20 +627,11 @@ public class RgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAccountRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
         builder.<CreateManagedAccountRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateManagedAccountRequest.class),
-            f -> f.withMarshaller(CreateAccountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAccountRequest::getBody, CreateAccountRequest::setBody));
 
         // response
 
@@ -808,9 +639,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<DeleteManagedOrganizationalUnitsRequest, DeleteManagedOrganizationalUnitsResponse> deleteManagedOrganizationalUnits =
-        genFordeleteManagedOrganizationalUnits();
+        genForDeleteManagedOrganizationalUnits();
 
-    private static HttpRequestDef<DeleteManagedOrganizationalUnitsRequest, DeleteManagedOrganizationalUnitsResponse> genFordeleteManagedOrganizationalUnits() {
+    private static HttpRequestDef<DeleteManagedOrganizationalUnitsRequest, DeleteManagedOrganizationalUnitsResponse> genForDeleteManagedOrganizationalUnits() {
         // basic
         HttpRequestDef.Builder<DeleteManagedOrganizationalUnitsRequest, DeleteManagedOrganizationalUnitsResponse> builder =
             HttpRequestDef
@@ -818,7 +649,7 @@ public class RgcMeta {
                     DeleteManagedOrganizationalUnitsRequest.class,
                     DeleteManagedOrganizationalUnitsResponse.class)
                 .withName("DeleteManagedOrganizationalUnits")
-                .withUri("/v1/managed-organization/managed-organization-unit/{managed_organization_unit_id}")
+                .withUri("/v1/managed-organization/managed-organization-units/{managed_organization_unit_id}")
                 .withContentType("application/json");
 
         // requests
@@ -826,16 +657,8 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteManagedOrganizationalUnitsRequest::getManagedOrganizationUnitId, (req, v) -> {
-                req.setManagedOrganizationUnitId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteManagedOrganizationalUnitsRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(DeleteManagedOrganizationalUnitsRequest::getManagedOrganizationUnitId,
+                DeleteManagedOrganizationalUnitsRequest::setManagedOrganizationUnitId));
 
         // response
 
@@ -843,9 +666,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<DeregisterOrganizationalUnitRequest, DeregisterOrganizationalUnitResponse> deregisterOrganizationalUnit =
-        genForderegisterOrganizationalUnit();
+        genForDeregisterOrganizationalUnit();
 
-    private static HttpRequestDef<DeregisterOrganizationalUnitRequest, DeregisterOrganizationalUnitResponse> genForderegisterOrganizationalUnit() {
+    private static HttpRequestDef<DeregisterOrganizationalUnitRequest, DeregisterOrganizationalUnitResponse> genForDeregisterOrganizationalUnit() {
         // basic
         HttpRequestDef.Builder<DeregisterOrganizationalUnitRequest, DeregisterOrganizationalUnitResponse> builder =
             HttpRequestDef
@@ -854,7 +677,7 @@ public class RgcMeta {
                     DeregisterOrganizationalUnitResponse.class)
                 .withName("DeregisterOrganizationalUnit")
                 .withUri(
-                    "/v1/managed-organization/managed-organization-unit/{managed_organization_unit_id}/de-register")
+                    "/v1/managed-organization/managed-organization-units/{managed_organization_unit_id}/de-register")
                 .withContentType("application/json");
 
         // requests
@@ -862,16 +685,37 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeregisterOrganizationalUnitRequest::getManagedOrganizationUnitId, (req, v) -> {
-                req.setManagedOrganizationUnitId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            f -> f.withMarshaller(DeregisterOrganizationalUnitRequest::getManagedOrganizationUnitId,
+                DeregisterOrganizationalUnitRequest::setManagedOrganizationUnitId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnrollAccountRequest, EnrollAccountResponse> enrollAccount =
+        genForEnrollAccount();
+
+    private static HttpRequestDef<EnrollAccountRequest, EnrollAccountResponse> genForEnrollAccount() {
+        // basic
+        HttpRequestDef.Builder<EnrollAccountRequest, EnrollAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnrollAccountRequest.class, EnrollAccountResponse.class)
+                .withName("EnrollAccount")
+                .withUri("/v1/managed-organization/accounts/{managed_account_id}/enroll")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("managed_account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeregisterOrganizationalUnitRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(EnrollAccountRequest::getManagedAccountId,
+                EnrollAccountRequest::setManagedAccountId));
+        builder.<EnrollAccountRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EnrollAccountRequestBody.class),
+            f -> f.withMarshaller(EnrollAccountRequest::getBody, EnrollAccountRequest::setBody));
 
         // response
 
@@ -879,9 +723,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ListManagedAccountsRequest, ListManagedAccountsResponse> listManagedAccounts =
-        genForlistManagedAccounts();
+        genForListManagedAccounts();
 
-    private static HttpRequestDef<ListManagedAccountsRequest, ListManagedAccountsResponse> genForlistManagedAccounts() {
+    private static HttpRequestDef<ListManagedAccountsRequest, ListManagedAccountsResponse> genForListManagedAccounts() {
         // basic
         HttpRequestDef.Builder<ListManagedAccountsRequest, ListManagedAccountsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListManagedAccountsRequest.class, ListManagedAccountsResponse.class)
@@ -894,30 +738,17 @@ public class RgcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedAccountsRequest::getControlId, (req, v) -> {
-                req.setControlId(v);
-            }));
+            f -> f.withMarshaller(ListManagedAccountsRequest::getControlId, ListManagedAccountsRequest::setControlId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListManagedAccountsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListManagedAccountsRequest::getLimit, ListManagedAccountsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedAccountsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedAccountsRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ListManagedAccountsRequest::getMarker, ListManagedAccountsRequest::setMarker));
 
         // response
 
@@ -925,9 +756,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ListManagedAccountsForParentRequest, ListManagedAccountsForParentResponse> listManagedAccountsForParent =
-        genForlistManagedAccountsForParent();
+        genForListManagedAccountsForParent();
 
-    private static HttpRequestDef<ListManagedAccountsForParentRequest, ListManagedAccountsForParentResponse> genForlistManagedAccountsForParent() {
+    private static HttpRequestDef<ListManagedAccountsForParentRequest, ListManagedAccountsForParentResponse> genForListManagedAccountsForParent() {
         // basic
         HttpRequestDef.Builder<ListManagedAccountsForParentRequest, ListManagedAccountsForParentResponse> builder =
             HttpRequestDef
@@ -936,7 +767,7 @@ public class RgcMeta {
                     ListManagedAccountsForParentResponse.class)
                 .withName("ListManagedAccountsForParent")
                 .withUri(
-                    "/v1/managed-organization/managed-organization-unit/{managed_organization_unit_id}/managed-accounts")
+                    "/v1/managed-organization/managed-organization-units/{managed_organization_unit_id}/managed-accounts")
                 .withContentType("application/json");
 
         // requests
@@ -944,30 +775,20 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedAccountsForParentRequest::getManagedOrganizationUnitId, (req, v) -> {
-                req.setManagedOrganizationUnitId(v);
-            }));
+            f -> f.withMarshaller(ListManagedAccountsForParentRequest::getManagedOrganizationUnitId,
+                ListManagedAccountsForParentRequest::setManagedOrganizationUnitId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListManagedAccountsForParentRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListManagedAccountsForParentRequest::getLimit,
+                ListManagedAccountsForParentRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedAccountsForParentRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedAccountsForParentRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ListManagedAccountsForParentRequest::getMarker,
+                ListManagedAccountsForParentRequest::setMarker));
 
         // response
 
@@ -975,9 +796,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ListManagedOrganizationalUnitsRequest, ListManagedOrganizationalUnitsResponse> listManagedOrganizationalUnits =
-        genForlistManagedOrganizationalUnits();
+        genForListManagedOrganizationalUnits();
 
-    private static HttpRequestDef<ListManagedOrganizationalUnitsRequest, ListManagedOrganizationalUnitsResponse> genForlistManagedOrganizationalUnits() {
+    private static HttpRequestDef<ListManagedOrganizationalUnitsRequest, ListManagedOrganizationalUnitsResponse> genForListManagedOrganizationalUnits() {
         // basic
         HttpRequestDef.Builder<ListManagedOrganizationalUnitsRequest, ListManagedOrganizationalUnitsResponse> builder =
             HttpRequestDef
@@ -993,48 +814,38 @@ public class RgcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedOrganizationalUnitsRequest::getControlId, (req, v) -> {
-                req.setControlId(v);
-            }));
+            f -> f.withMarshaller(ListManagedOrganizationalUnitsRequest::getControlId,
+                ListManagedOrganizationalUnitsRequest::setControlId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListManagedOrganizationalUnitsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListManagedOrganizationalUnitsRequest::getLimit,
+                ListManagedOrganizationalUnitsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedOrganizationalUnitsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManagedOrganizationalUnitsRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ListManagedOrganizationalUnitsRequest::getMarker,
+                ListManagedOrganizationalUnitsRequest::setMarker));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse> registerOrganizationalUnit =
-        genForregisterOrganizationalUnit();
+    public static final HttpRequestDef<ReRegisterOrganizationalUnitRequest, ReRegisterOrganizationalUnitResponse> reRegisterOrganizationalUnit =
+        genForReRegisterOrganizationalUnit();
 
-    private static HttpRequestDef<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse> genForregisterOrganizationalUnit() {
+    private static HttpRequestDef<ReRegisterOrganizationalUnitRequest, ReRegisterOrganizationalUnitResponse> genForReRegisterOrganizationalUnit() {
         // basic
-        HttpRequestDef.Builder<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse> builder =
+        HttpRequestDef.Builder<ReRegisterOrganizationalUnitRequest, ReRegisterOrganizationalUnitResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.POST,
-                    RegisterOrganizationalUnitRequest.class,
-                    RegisterOrganizationalUnitResponse.class)
-                .withName("RegisterOrganizationalUnit")
-                .withUri("/v1/managed-organization/organization-unit/{organization_unit_id}/register")
+                    ReRegisterOrganizationalUnitRequest.class,
+                    ReRegisterOrganizationalUnitResponse.class)
+                .withName("ReRegisterOrganizationalUnit")
+                .withUri("/v1/managed-organization/organization-units/{organization_unit_id}/re-register")
                 .withContentType("application/json");
 
         // requests
@@ -1042,16 +853,35 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RegisterOrganizationalUnitRequest::getOrganizationUnitId, (req, v) -> {
-                req.setOrganizationUnitId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            f -> f.withMarshaller(ReRegisterOrganizationalUnitRequest::getOrganizationUnitId,
+                ReRegisterOrganizationalUnitRequest::setOrganizationUnitId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse> registerOrganizationalUnit =
+        genForRegisterOrganizationalUnit();
+
+    private static HttpRequestDef<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse> genForRegisterOrganizationalUnit() {
+        // basic
+        HttpRequestDef.Builder<RegisterOrganizationalUnitRequest, RegisterOrganizationalUnitResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RegisterOrganizationalUnitRequest.class,
+                    RegisterOrganizationalUnitResponse.class)
+                .withName("RegisterOrganizationalUnit")
+                .withUri("/v1/managed-organization/organization-units/{organization_unit_id}/register")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_unit_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RegisterOrganizationalUnitRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(RegisterOrganizationalUnitRequest::getOrganizationUnitId,
+                RegisterOrganizationalUnitRequest::setOrganizationUnitId));
 
         // response
 
@@ -1059,14 +889,14 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowManagedAccountRequest, ShowManagedAccountResponse> showManagedAccount =
-        genForshowManagedAccount();
+        genForShowManagedAccount();
 
-    private static HttpRequestDef<ShowManagedAccountRequest, ShowManagedAccountResponse> genForshowManagedAccount() {
+    private static HttpRequestDef<ShowManagedAccountRequest, ShowManagedAccountResponse> genForShowManagedAccount() {
         // basic
         HttpRequestDef.Builder<ShowManagedAccountRequest, ShowManagedAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowManagedAccountRequest.class, ShowManagedAccountResponse.class)
                 .withName("ShowManagedAccount")
-                .withUri("/v1/managed-organization/managed-account/{managed_account_id}")
+                .withUri("/v1/managed-organization/managed-accounts/{managed_account_id}")
                 .withContentType("application/json");
 
         // requests
@@ -1074,16 +904,8 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowManagedAccountRequest::getManagedAccountId, (req, v) -> {
-                req.setManagedAccountId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowManagedAccountRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ShowManagedAccountRequest::getManagedAccountId,
+                ShowManagedAccountRequest::setManagedAccountId));
 
         // response
 
@@ -1091,14 +913,14 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowManagedCoreAccountRequest, ShowManagedCoreAccountResponse> showManagedCoreAccount =
-        genForshowManagedCoreAccount();
+        genForShowManagedCoreAccount();
 
-    private static HttpRequestDef<ShowManagedCoreAccountRequest, ShowManagedCoreAccountResponse> genForshowManagedCoreAccount() {
+    private static HttpRequestDef<ShowManagedCoreAccountRequest, ShowManagedCoreAccountResponse> genForShowManagedCoreAccount() {
         // basic
         HttpRequestDef.Builder<ShowManagedCoreAccountRequest, ShowManagedCoreAccountResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowManagedCoreAccountRequest.class, ShowManagedCoreAccountResponse.class)
             .withName("ShowManagedCoreAccount")
-            .withUri("/v1/managed-organization/managed-core-account")
+            .withUri("/v1/managed-organization/managed-core-accounts")
             .withContentType("application/json");
 
         // requests
@@ -1106,16 +928,8 @@ public class RgcMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowManagedCoreAccountRequest::getAccountType, (req, v) -> {
-                req.setAccountType(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowManagedCoreAccountRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ShowManagedCoreAccountRequest::getAccountType,
+                ShowManagedCoreAccountRequest::setAccountType));
 
         // response
 
@@ -1123,9 +937,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowManagedOrganizationalUnitRequest, ShowManagedOrganizationalUnitResponse> showManagedOrganizationalUnit =
-        genForshowManagedOrganizationalUnit();
+        genForShowManagedOrganizationalUnit();
 
-    private static HttpRequestDef<ShowManagedOrganizationalUnitRequest, ShowManagedOrganizationalUnitResponse> genForshowManagedOrganizationalUnit() {
+    private static HttpRequestDef<ShowManagedOrganizationalUnitRequest, ShowManagedOrganizationalUnitResponse> genForShowManagedOrganizationalUnit() {
         // basic
         HttpRequestDef.Builder<ShowManagedOrganizationalUnitRequest, ShowManagedOrganizationalUnitResponse> builder =
             HttpRequestDef
@@ -1133,7 +947,7 @@ public class RgcMeta {
                     ShowManagedOrganizationalUnitRequest.class,
                     ShowManagedOrganizationalUnitResponse.class)
                 .withName("ShowManagedOrganizationalUnit")
-                .withUri("/v1/managed-organization/managed-organization-unit/{managed_organization_unit_id}")
+                .withUri("/v1/managed-organization/managed-organization-units/{managed_organization_unit_id}")
                 .withContentType("application/json");
 
         // requests
@@ -1141,16 +955,8 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowManagedOrganizationalUnitRequest::getManagedOrganizationUnitId, (req, v) -> {
-                req.setManagedOrganizationUnitId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowManagedOrganizationalUnitRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(ShowManagedOrganizationalUnitRequest::getManagedOrganizationUnitId,
+                ShowManagedOrganizationalUnitRequest::setManagedOrganizationUnitId));
 
         // response
 
@@ -1158,9 +964,9 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<ShowOperationRequest, ShowOperationResponse> showOperation =
-        genForshowOperation();
+        genForShowOperation();
 
-    private static HttpRequestDef<ShowOperationRequest, ShowOperationResponse> genForshowOperation() {
+    private static HttpRequestDef<ShowOperationRequest, ShowOperationResponse> genForShowOperation() {
         // basic
         HttpRequestDef.Builder<ShowOperationRequest, ShowOperationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOperationRequest.class, ShowOperationResponse.class)
@@ -1173,16 +979,31 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOperationRequest::getOperationId, (req, v) -> {
-                req.setOperationId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            f -> f.withMarshaller(ShowOperationRequest::getOperationId, ShowOperationRequest::setOperationId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnEnrollAccountRequest, UnEnrollAccountResponse> unEnrollAccount =
+        genForUnEnrollAccount();
+
+    private static HttpRequestDef<UnEnrollAccountRequest, UnEnrollAccountResponse> genForUnEnrollAccount() {
+        // basic
+        HttpRequestDef.Builder<UnEnrollAccountRequest, UnEnrollAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UnEnrollAccountRequest.class, UnEnrollAccountResponse.class)
+                .withName("UnEnrollAccount")
+                .withUri("/v1/managed-organization/managed-accounts/{managed_account_id}/un-enroll")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("managed_account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOperationRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
+            f -> f.withMarshaller(UnEnrollAccountRequest::getManagedAccountId,
+                UnEnrollAccountRequest::setManagedAccountId));
 
         // response
 
@@ -1190,14 +1011,14 @@ public class RgcMeta {
     }
 
     public static final HttpRequestDef<UpdateManagedAccountRequest, UpdateManagedAccountResponse> updateManagedAccount =
-        genForupdateManagedAccount();
+        genForUpdateManagedAccount();
 
-    private static HttpRequestDef<UpdateManagedAccountRequest, UpdateManagedAccountResponse> genForupdateManagedAccount() {
+    private static HttpRequestDef<UpdateManagedAccountRequest, UpdateManagedAccountResponse> genForUpdateManagedAccount() {
         // basic
         HttpRequestDef.Builder<UpdateManagedAccountRequest, UpdateManagedAccountResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateManagedAccountRequest.class, UpdateManagedAccountResponse.class)
             .withName("UpdateManagedAccount")
-            .withUri("/v1/managed-organization/managed-account/{managed_account_id}/update")
+            .withUri("/v1/managed-organization/managed-accounts/{managed_account_id}/update")
             .withContentType("application/json");
 
         // requests
@@ -1205,23 +1026,13 @@ public class RgcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateManagedAccountRequest::getManagedAccountId, (req, v) -> {
-                req.setManagedAccountId(v);
-            }));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateManagedAccountRequest::getXSecurityToken, (req, v) -> {
-                req.setXSecurityToken(v);
-            }));
-        builder.<CreateManagedAccountRequest>withRequestField("body",
+            f -> f.withMarshaller(UpdateManagedAccountRequest::getManagedAccountId,
+                UpdateManagedAccountRequest::setManagedAccountId));
+        builder.<UpdateManagedAccountRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateManagedAccountRequest.class),
-            f -> f.withMarshaller(UpdateManagedAccountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            TypeCasts.uncheckedConversion(UpdateManagedAccountRequestBody.class),
+            f -> f.withMarshaller(UpdateManagedAccountRequest::getBody, UpdateManagedAccountRequest::setBody));
 
         // response
 

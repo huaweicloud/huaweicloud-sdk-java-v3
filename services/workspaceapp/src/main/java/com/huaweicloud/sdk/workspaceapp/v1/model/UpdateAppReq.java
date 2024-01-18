@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 修改应用属性(注意非空字段的限制,操作时会使用入参的字段直接覆盖已有字段的值)
+ * 修改应用属性(注意非空字段的限制,操作时会使用入参的字段直接覆盖已有字段的值)。
  */
 public class UpdateAppReq {
 
@@ -56,7 +56,7 @@ public class UpdateAppReq {
     }
 
     /**
-     * 应用名称,名称需满足如下规则: 1. 名称允许可见字符或空格，不可为全空格 2. 长度1~64个字符
+     * 应用名称,名称需满足如下规则: 1. 名称允许可见字符或空格，不可为全空格。 2. 长度1~64个字符。
      * @return name
      */
     public String getName() {
@@ -73,7 +73,7 @@ public class UpdateAppReq {
     }
 
     /**
-     * 应用版本号
+     * 应用版本号。
      * @return version
      */
     public String getVersion() {
@@ -90,7 +90,7 @@ public class UpdateAppReq {
     }
 
     /**
-     * 执行路径
+     * 执行路径。
      * @return executePath
      */
     public String getExecutePath() {
@@ -107,7 +107,7 @@ public class UpdateAppReq {
     }
 
     /**
-     * 应用工作目录
+     * 应用工作目录。
      * @return workPath
      */
     public String getWorkPath() {
@@ -124,7 +124,7 @@ public class UpdateAppReq {
     }
 
     /**
-     * 应用描述
+     * 应用描述。
      * @return description
      */
     public String getDescription() {
@@ -141,7 +141,7 @@ public class UpdateAppReq {
     }
 
     /**
-     * 启动命令行参数
+     * 启动命令行参数。
      * @return commandParam
      */
     public String getCommandParam() {

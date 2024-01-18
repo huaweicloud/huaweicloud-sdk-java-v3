@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 账号体系基础设置。
+ * 纳管账号体系基础设置。
  */
 public class OrganizationStructureBaseLine {
 
@@ -34,7 +34,7 @@ public class OrganizationStructureBaseLine {
     }
 
     /**
-     * OU名称。
+     * 注册OU名称。
      * @return organizationalUnitName
      */
     public String getOrganizationalUnitName() {
@@ -85,7 +85,7 @@ public class OrganizationStructureBaseLine {
     }
 
     /**
-     * 账号基本信息。
+     * 纳管账号基本信息。
      * @return accounts
      */
     public List<AccountBaseline> getAccounts() {

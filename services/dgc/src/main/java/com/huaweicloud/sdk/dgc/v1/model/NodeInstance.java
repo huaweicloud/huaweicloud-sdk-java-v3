@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.dgc.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -21,6 +22,11 @@ public class NodeInstance {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "queue")
+
+    private String queue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "planTime")
 
     private Long planTime;
@@ -36,14 +42,9 @@ public class NodeInstance {
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "executeTime")
+    @JsonProperty(value = "type")
 
-    private Long executeTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nodeType")
-
-    private String nodeType;
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retryTimes")
@@ -53,17 +54,17 @@ public class NodeInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instanceId")
 
-    private Integer instanceId;
+    private Long instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inputRowCount")
 
-    private Integer inputRowCount;
+    private Long inputRowCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "outputRowCount")
+    @JsonProperty(value = "speed")
 
-    private Integer outputRowCount;
+    private BigDecimal speed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logPath")
@@ -76,7 +77,7 @@ public class NodeInstance {
     }
 
     /**
-     * Get nodeName
+     * 节点名称
      * @return nodeName
      */
     public String getNodeName() {
@@ -93,7 +94,7 @@ public class NodeInstance {
     }
 
     /**
-     * Get status
+     * 节点状态： - waiting：等待运行 - running：运行中 - success：运行成功 - fail： 运行失败 - skip：跳过 - pause： 暂停 - manual-stop：取消
      * @return status
      */
     public String getStatus() {
@@ -104,13 +105,30 @@ public class NodeInstance {
         this.status = status;
     }
 
+    public NodeInstance withQueue(String queue) {
+        this.queue = queue;
+        return this;
+    }
+
+    /**
+     * DLI资源队列名称。在返回响应中，仅DLI SQL或者DLI SPARK算子会返回DLI队列名称。
+     * @return queue
+     */
+    public String getQueue() {
+        return queue;
+    }
+
+    public void setQueue(String queue) {
+        this.queue = queue;
+    }
+
     public NodeInstance withPlanTime(Long planTime) {
         this.planTime = planTime;
         return this;
     }
 
     /**
-     * Get planTime
+     * 作业实例计划执行时间
      * @return planTime
      */
     public Long getPlanTime() {
@@ -127,7 +145,7 @@ public class NodeInstance {
     }
 
     /**
-     * Get startTime
+     * 节点实际执行开始时间
      * @return startTime
      */
     public Long getStartTime() {
@@ -144,7 +162,7 @@ public class NodeInstance {
     }
 
     /**
-     * Get endTime
+     * 节点实际执行结束时间
      * @return endTime
      */
     public Long getEndTime() {
@@ -155,38 +173,21 @@ public class NodeInstance {
         this.endTime = endTime;
     }
 
-    public NodeInstance withExecuteTime(Long executeTime) {
-        this.executeTime = executeTime;
+    public NodeInstance withType(String type) {
+        this.type = type;
         return this;
     }
 
     /**
-     * Get executeTime
-     * @return executeTime
+     * 节点类型： - HiveSQL：执行Hive SQL脚本 - SparkSQL：执行Spark SQL脚本 - DWSSQL：执行DWS SQL脚本 - DLISQL：执行DLI SQL脚本 - Shell：执行Shell SQL脚本 - CDMJob：执行CDM作业 - DISTransferTask：创建DIS转储任务 - CloudTableManager：CloudTable表管理，创建和删除表。 - OBSManager：OBS路径管理，包括创建和删除路径。 - RestClient：REST API请求 - SMN：发送短信或邮件 - MRSSpark：执行MRS服务的Spark作业 - MapReduce：执行MRS服务的MapReduce作业 - MRSFlinkJob：执行MRS服务的FlinkJob作业。 - MRSHetuEngine：执行MRS服务的HetuEngine作业。 - DLISpark：执行DLF服务的Spark作业 - RDSSQL：传递SQL语句到RDS中执行。 - ModelArts Train：执行ModelArts服务的workflow作业。
+     * @return type
      */
-    public Long getExecuteTime() {
-        return executeTime;
+    public String getType() {
+        return type;
     }
 
-    public void setExecuteTime(Long executeTime) {
-        this.executeTime = executeTime;
-    }
-
-    public NodeInstance withNodeType(String nodeType) {
-        this.nodeType = nodeType;
-        return this;
-    }
-
-    /**
-     * Get nodeType
-     * @return nodeType
-     */
-    public String getNodeType() {
-        return nodeType;
-    }
-
-    public void setNodeType(String nodeType) {
-        this.nodeType = nodeType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public NodeInstance withRetryTimes(Integer retryTimes) {
@@ -195,7 +196,7 @@ public class NodeInstance {
     }
 
     /**
-     * Get retryTimes
+     * 失败重试次数
      * @return retryTimes
      */
     public Integer getRetryTimes() {
@@ -206,55 +207,55 @@ public class NodeInstance {
         this.retryTimes = retryTimes;
     }
 
-    public NodeInstance withInstanceId(Integer instanceId) {
+    public NodeInstance withInstanceId(Long instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * Get instanceId
+     * 作业实例id
      * @return instanceId
      */
-    public Integer getInstanceId() {
+    public Long getInstanceId() {
         return instanceId;
     }
 
-    public void setInstanceId(Integer instanceId) {
+    public void setInstanceId(Long instanceId) {
         this.instanceId = instanceId;
     }
 
-    public NodeInstance withInputRowCount(Integer inputRowCount) {
+    public NodeInstance withInputRowCount(Long inputRowCount) {
         this.inputRowCount = inputRowCount;
         return this;
     }
 
     /**
-     * Get inputRowCount
+     * 写入数据行数
      * @return inputRowCount
      */
-    public Integer getInputRowCount() {
+    public Long getInputRowCount() {
         return inputRowCount;
     }
 
-    public void setInputRowCount(Integer inputRowCount) {
+    public void setInputRowCount(Long inputRowCount) {
         this.inputRowCount = inputRowCount;
     }
 
-    public NodeInstance withOutputRowCount(Integer outputRowCount) {
-        this.outputRowCount = outputRowCount;
+    public NodeInstance withSpeed(BigDecimal speed) {
+        this.speed = speed;
         return this;
     }
 
     /**
-     * Get outputRowCount
-     * @return outputRowCount
+     * 写入速度(行/秒)
+     * @return speed
      */
-    public Integer getOutputRowCount() {
-        return outputRowCount;
+    public BigDecimal getSpeed() {
+        return speed;
     }
 
-    public void setOutputRowCount(Integer outputRowCount) {
-        this.outputRowCount = outputRowCount;
+    public void setSpeed(BigDecimal speed) {
+        this.speed = speed;
     }
 
     public NodeInstance withLogPath(String logPath) {
@@ -263,7 +264,7 @@ public class NodeInstance {
     }
 
     /**
-     * Get logPath
+     * 节点执行的日志路径
      * @return logPath
      */
     public String getLogPath() {
@@ -284,27 +285,27 @@ public class NodeInstance {
         }
         NodeInstance that = (NodeInstance) obj;
         return Objects.equals(this.nodeName, that.nodeName) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.planTime, that.planTime) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.executeTime, that.executeTime)
-            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.retryTimes, that.retryTimes)
+            && Objects.equals(this.queue, that.queue) && Objects.equals(this.planTime, that.planTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.retryTimes, that.retryTimes)
             && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.inputRowCount, that.inputRowCount)
-            && Objects.equals(this.outputRowCount, that.outputRowCount) && Objects.equals(this.logPath, that.logPath);
+            && Objects.equals(this.inputRowCount, that.inputRowCount) && Objects.equals(this.speed, that.speed)
+            && Objects.equals(this.logPath, that.logPath);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(nodeName,
             status,
+            queue,
             planTime,
             startTime,
             endTime,
-            executeTime,
-            nodeType,
+            type,
             retryTimes,
             instanceId,
             inputRowCount,
-            outputRowCount,
+            speed,
             logPath);
     }
 
@@ -314,15 +315,15 @@ public class NodeInstance {
         sb.append("class NodeInstance {\n");
         sb.append("    nodeName: ").append(toIndentedString(nodeName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
         sb.append("    planTime: ").append(toIndentedString(planTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-        sb.append("    executeTime: ").append(toIndentedString(executeTime)).append("\n");
-        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    retryTimes: ").append(toIndentedString(retryTimes)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    inputRowCount: ").append(toIndentedString(inputRowCount)).append("\n");
-        sb.append("    outputRowCount: ").append(toIndentedString(outputRowCount)).append("\n");
+        sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
         sb.append("    logPath: ").append(toIndentedString(logPath)).append("\n");
         sb.append("}");
         return sb.toString();

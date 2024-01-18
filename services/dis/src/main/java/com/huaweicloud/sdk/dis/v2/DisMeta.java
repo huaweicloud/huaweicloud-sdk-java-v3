@@ -89,9 +89,9 @@ import com.huaweicloud.sdk.dis.v2.model.UpdateStreamResponse;
 public class DisMeta {
 
     public static final HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTags =
-        genForbatchCreateTags();
+        genForBatchCreateTags();
 
-    private static HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> genForbatchCreateTags() {
+    private static HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> genForBatchCreateTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateTagsRequest, BatchCreateTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateTagsRequest.class, BatchCreateTagsResponse.class)
@@ -104,16 +104,12 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateTagsRequest::getStreamId, (req, v) -> {
-                req.setStreamId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagsRequest::getStreamId, BatchCreateTagsRequest::setStreamId));
         builder.<BatchCreateTagsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateTagsReq.class),
-            f -> f.withMarshaller(BatchCreateTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateTagsRequest::getBody, BatchCreateTagsRequest::setBody));
 
         // response
 
@@ -121,9 +117,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTags =
-        genForbatchDeleteTags();
+        genForBatchDeleteTags();
 
-    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForbatchDeleteTags() {
+    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForBatchDeleteTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteTagsRequest, BatchDeleteTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTagsRequest.class, BatchDeleteTagsResponse.class)
@@ -136,16 +132,12 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getStreamId, (req, v) -> {
-                req.setStreamId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getStreamId, BatchDeleteTagsRequest::setStreamId));
         builder.<BatchDeleteTagsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteTagsReq.class),
-            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, BatchDeleteTagsRequest::setBody));
 
         // response
 
@@ -153,9 +145,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<BatchStartTransferTaskRequest, BatchStartTransferTaskResponse> batchStartTransferTask =
-        genForbatchStartTransferTask();
+        genForBatchStartTransferTask();
 
-    private static HttpRequestDef<BatchStartTransferTaskRequest, BatchStartTransferTaskResponse> genForbatchStartTransferTask() {
+    private static HttpRequestDef<BatchStartTransferTaskRequest, BatchStartTransferTaskResponse> genForBatchStartTransferTask() {
         // basic
         HttpRequestDef.Builder<BatchStartTransferTaskRequest, BatchStartTransferTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchStartTransferTaskRequest.class, BatchStartTransferTaskResponse.class)
@@ -168,33 +160,28 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchStartTransferTaskRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(BatchStartTransferTaskRequest::getStreamName,
+                BatchStartTransferTaskRequest::setStreamName));
         builder.<BatchStartTransferTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchStartTransferTaskReq.class),
-            f -> f.withMarshaller(BatchStartTransferTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStartTransferTaskRequest::getBody, BatchStartTransferTaskRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(BatchStartTransferTaskResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(BatchStartTransferTaskResponse::getBody, BatchStartTransferTaskResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<BatchStopTransferTaskRequest, BatchStopTransferTaskResponse> batchStopTransferTask =
-        genForbatchStopTransferTask();
+        genForBatchStopTransferTask();
 
-    private static HttpRequestDef<BatchStopTransferTaskRequest, BatchStopTransferTaskResponse> genForbatchStopTransferTask() {
+    private static HttpRequestDef<BatchStopTransferTaskRequest, BatchStopTransferTaskResponse> genForBatchStopTransferTask() {
         // basic
         HttpRequestDef.Builder<BatchStopTransferTaskRequest, BatchStopTransferTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchStopTransferTaskRequest.class, BatchStopTransferTaskResponse.class)
@@ -207,16 +194,13 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchStopTransferTaskRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(BatchStopTransferTaskRequest::getStreamName,
+                BatchStopTransferTaskRequest::setStreamName));
         builder.<BatchStopTransferTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchStopTransferTaskReq.class),
-            f -> f.withMarshaller(BatchStopTransferTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStopTransferTaskRequest::getBody, BatchStopTransferTaskRequest::setBody));
 
         // response
 
@@ -224,9 +208,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<ConsumeRecordsRequest, ConsumeRecordsResponse> consumeRecords =
-        genForconsumeRecords();
+        genForConsumeRecords();
 
-    private static HttpRequestDef<ConsumeRecordsRequest, ConsumeRecordsResponse> genForconsumeRecords() {
+    private static HttpRequestDef<ConsumeRecordsRequest, ConsumeRecordsResponse> genForConsumeRecords() {
         // basic
         HttpRequestDef.Builder<ConsumeRecordsRequest, ConsumeRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ConsumeRecordsRequest.class, ConsumeRecordsResponse.class)
@@ -239,16 +223,13 @@ public class DisMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConsumeRecordsRequest::getPartitionCursor, (req, v) -> {
-                req.setPartitionCursor(v);
-            }));
+            f -> f.withMarshaller(ConsumeRecordsRequest::getPartitionCursor,
+                ConsumeRecordsRequest::setPartitionCursor));
         builder.<Integer>withRequestField("max_fetch_bytes",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ConsumeRecordsRequest::getMaxFetchBytes, (req, v) -> {
-                req.setMaxFetchBytes(v);
-            }));
+            f -> f.withMarshaller(ConsumeRecordsRequest::getMaxFetchBytes, ConsumeRecordsRequest::setMaxFetchBytes));
 
         // response
 
@@ -256,9 +237,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<CreateObsTransferTaskRequest, CreateObsTransferTaskResponse> createObsTransferTask =
-        genForcreateObsTransferTask();
+        genForCreateObsTransferTask();
 
-    private static HttpRequestDef<CreateObsTransferTaskRequest, CreateObsTransferTaskResponse> genForcreateObsTransferTask() {
+    private static HttpRequestDef<CreateObsTransferTaskRequest, CreateObsTransferTaskResponse> genForCreateObsTransferTask() {
         // basic
         HttpRequestDef.Builder<CreateObsTransferTaskRequest, CreateObsTransferTaskResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateObsTransferTaskRequest.class, CreateObsTransferTaskResponse.class)
@@ -271,25 +252,22 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateObsTransferTaskRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(CreateObsTransferTaskRequest::getStreamName,
+                CreateObsTransferTaskRequest::setStreamName));
         builder.<CreateTransferTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTransferTaskReq.class),
-            f -> f.withMarshaller(CreateObsTransferTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateObsTransferTaskRequest::getBody, CreateObsTransferTaskRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateStreamRequest, CreateStreamResponse> createStream = genForcreateStream();
+    public static final HttpRequestDef<CreateStreamRequest, CreateStreamResponse> createStream = genForCreateStream();
 
-    private static HttpRequestDef<CreateStreamRequest, CreateStreamResponse> genForcreateStream() {
+    private static HttpRequestDef<CreateStreamRequest, CreateStreamResponse> genForCreateStream() {
         // basic
         HttpRequestDef.Builder<CreateStreamRequest, CreateStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStreamRequest.class, CreateStreamResponse.class)
@@ -302,18 +280,16 @@ public class DisMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateStreamReq.class),
-            f -> f.withMarshaller(CreateStreamRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStreamRequest::getBody, CreateStreamRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForcreateTag();
+    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForCreateTag();
 
-    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForcreateTag() {
+    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForCreateTag() {
         // basic
         HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
@@ -326,25 +302,21 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagRequest::getStreamId, (req, v) -> {
-                req.setStreamId(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getStreamId, CreateTagRequest::setStreamId));
         builder.<CreateTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTagReq.class),
-            f -> f.withMarshaller(CreateTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getBody, CreateTagRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteStreamRequest, DeleteStreamResponse> deleteStream = genFordeleteStream();
+    public static final HttpRequestDef<DeleteStreamRequest, DeleteStreamResponse> deleteStream = genForDeleteStream();
 
-    private static HttpRequestDef<DeleteStreamRequest, DeleteStreamResponse> genFordeleteStream() {
+    private static HttpRequestDef<DeleteStreamRequest, DeleteStreamResponse> genForDeleteStream() {
         // basic
         HttpRequestDef.Builder<DeleteStreamRequest, DeleteStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteStreamRequest.class, DeleteStreamResponse.class)
@@ -357,18 +329,16 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStreamRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(DeleteStreamRequest::getStreamName, DeleteStreamRequest::setStreamName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genFordeleteTag();
+    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genForDeleteTag();
 
-    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genFordeleteTag() {
+    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genForDeleteTag() {
         // basic
         HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
@@ -381,16 +351,12 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getStreamId, (req, v) -> {
-                req.setStreamId(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getStreamId, DeleteTagRequest::setStreamId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getKey, DeleteTagRequest::setKey));
 
         // response
 
@@ -398,9 +364,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<DeleteTransferTaskRequest, DeleteTransferTaskResponse> deleteTransferTask =
-        genFordeleteTransferTask();
+        genForDeleteTransferTask();
 
-    private static HttpRequestDef<DeleteTransferTaskRequest, DeleteTransferTaskResponse> genFordeleteTransferTask() {
+    private static HttpRequestDef<DeleteTransferTaskRequest, DeleteTransferTaskResponse> genForDeleteTransferTask() {
         // basic
         HttpRequestDef.Builder<DeleteTransferTaskRequest, DeleteTransferTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTransferTaskRequest.class, DeleteTransferTaskResponse.class)
@@ -413,25 +379,21 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTransferTaskRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(DeleteTransferTaskRequest::getStreamName, DeleteTransferTaskRequest::setStreamName));
         builder.<String>withRequestField("task_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTransferTaskRequest::getTaskName, (req, v) -> {
-                req.setTaskName(v);
-            }));
+            f -> f.withMarshaller(DeleteTransferTaskRequest::getTaskName, DeleteTransferTaskRequest::setTaskName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> listPolicies = genForlistPolicies();
+    public static final HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> listPolicies = genForListPolicies();
 
-    private static HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> genForlistPolicies() {
+    private static HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> genForListPolicies() {
         // basic
         HttpRequestDef.Builder<ListPoliciesRequest, ListPoliciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPoliciesRequest.class, ListPoliciesResponse.class)
@@ -444,9 +406,7 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoliciesRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ListPoliciesRequest::getStreamName, ListPoliciesRequest::setStreamName));
 
         // response
 
@@ -454,9 +414,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<ListResourcesByTagsRequest, ListResourcesByTagsResponse> listResourcesByTags =
-        genForlistResourcesByTags();
+        genForListResourcesByTags();
 
-    private static HttpRequestDef<ListResourcesByTagsRequest, ListResourcesByTagsResponse> genForlistResourcesByTags() {
+    private static HttpRequestDef<ListResourcesByTagsRequest, ListResourcesByTagsResponse> genForListResourcesByTags() {
         // basic
         HttpRequestDef.Builder<ListResourcesByTagsRequest, ListResourcesByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListResourcesByTagsRequest.class, ListResourcesByTagsResponse.class)
@@ -469,18 +429,16 @@ public class DisMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceInstancesReq.class),
-            f -> f.withMarshaller(ListResourcesByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getBody, ListResourcesByTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListStreamsRequest, ListStreamsResponse> listStreams = genForlistStreams();
+    public static final HttpRequestDef<ListStreamsRequest, ListStreamsResponse> listStreams = genForListStreams();
 
-    private static HttpRequestDef<ListStreamsRequest, ListStreamsResponse> genForlistStreams() {
+    private static HttpRequestDef<ListStreamsRequest, ListStreamsResponse> genForListStreams() {
         // basic
         HttpRequestDef.Builder<ListStreamsRequest, ListStreamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStreamsRequest.class, ListStreamsResponse.class)
@@ -493,25 +451,21 @@ public class DisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStreamsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListStreamsRequest::getLimit, ListStreamsRequest::setLimit));
         builder.<String>withRequestField("start_stream_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStreamsRequest::getStartStreamName, (req, v) -> {
-                req.setStartStreamName(v);
-            }));
+            f -> f.withMarshaller(ListStreamsRequest::getStartStreamName, ListStreamsRequest::setStartStreamName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
 
-    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
         // basic
         HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
@@ -527,9 +481,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<ListTransferTasksRequest, ListTransferTasksResponse> listTransferTasks =
-        genForlistTransferTasks();
+        genForListTransferTasks();
 
-    private static HttpRequestDef<ListTransferTasksRequest, ListTransferTasksResponse> genForlistTransferTasks() {
+    private static HttpRequestDef<ListTransferTasksRequest, ListTransferTasksResponse> genForListTransferTasks() {
         // basic
         HttpRequestDef.Builder<ListTransferTasksRequest, ListTransferTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTransferTasksRequest.class, ListTransferTasksResponse.class)
@@ -542,18 +496,16 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTransferTasksRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ListTransferTasksRequest::getStreamName, ListTransferTasksRequest::setStreamName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SendRecordsRequest, SendRecordsResponse> sendRecords = genForsendRecords();
+    public static final HttpRequestDef<SendRecordsRequest, SendRecordsResponse> sendRecords = genForSendRecords();
 
-    private static HttpRequestDef<SendRecordsRequest, SendRecordsResponse> genForsendRecords() {
+    private static HttpRequestDef<SendRecordsRequest, SendRecordsResponse> genForSendRecords() {
         // basic
         HttpRequestDef.Builder<SendRecordsRequest, SendRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendRecordsRequest.class, SendRecordsResponse.class)
@@ -566,18 +518,16 @@ public class DisMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PutRecordsRequest.class),
-            f -> f.withMarshaller(SendRecordsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendRecordsRequest::getBody, SendRecordsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCursorRequest, ShowCursorResponse> showCursor = genForshowCursor();
+    public static final HttpRequestDef<ShowCursorRequest, ShowCursorResponse> showCursor = genForShowCursor();
 
-    private static HttpRequestDef<ShowCursorRequest, ShowCursorResponse> genForshowCursor() {
+    private static HttpRequestDef<ShowCursorRequest, ShowCursorResponse> genForShowCursor() {
         // basic
         HttpRequestDef.Builder<ShowCursorRequest, ShowCursorResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCursorRequest.class, ShowCursorResponse.class)
@@ -590,37 +540,28 @@ public class DisMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCursorRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ShowCursorRequest::getStreamName, ShowCursorRequest::setStreamName));
         builder.<String>withRequestField("partition-id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCursorRequest::getPartitionId, (req, v) -> {
-                req.setPartitionId(v);
-            }));
+            f -> f.withMarshaller(ShowCursorRequest::getPartitionId, ShowCursorRequest::setPartitionId));
         builder.<ShowCursorRequest.CursorTypeEnum>withRequestField("cursor-type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowCursorRequest.CursorTypeEnum.class),
-            f -> f.withMarshaller(ShowCursorRequest::getCursorType, (req, v) -> {
-                req.setCursorType(v);
-            }));
+            f -> f.withMarshaller(ShowCursorRequest::getCursorType, ShowCursorRequest::setCursorType));
         builder.<String>withRequestField("starting-sequence-number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCursorRequest::getStartingSequenceNumber, (req, v) -> {
-                req.setStartingSequenceNumber(v);
-            }));
+            f -> f.withMarshaller(ShowCursorRequest::getStartingSequenceNumber,
+                ShowCursorRequest::setStartingSequenceNumber));
         builder.<Long>withRequestField("timestamp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowCursorRequest::getTimestamp, (req, v) -> {
-                req.setTimestamp(v);
-            }));
+            f -> f.withMarshaller(ShowCursorRequest::getTimestamp, ShowCursorRequest::setTimestamp));
 
         // response
 
@@ -628,9 +569,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<ShowPartitionMetricsRequest, ShowPartitionMetricsResponse> showPartitionMetrics =
-        genForshowPartitionMetrics();
+        genForShowPartitionMetrics();
 
-    private static HttpRequestDef<ShowPartitionMetricsRequest, ShowPartitionMetricsResponse> genForshowPartitionMetrics() {
+    private static HttpRequestDef<ShowPartitionMetricsRequest, ShowPartitionMetricsResponse> genForShowPartitionMetrics() {
         // basic
         HttpRequestDef.Builder<ShowPartitionMetricsRequest, ShowPartitionMetricsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPartitionMetricsRequest.class, ShowPartitionMetricsResponse.class)
@@ -643,53 +584,45 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionMetricsRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionMetricsRequest::getStreamName,
+                ShowPartitionMetricsRequest::setStreamName));
         builder.<String>withRequestField("partition_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionMetricsRequest::getPartitionId, (req, v) -> {
-                req.setPartitionId(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionMetricsRequest::getPartitionId,
+                ShowPartitionMetricsRequest::setPartitionId));
         builder.<ShowPartitionMetricsRequest.LabelEnum>withRequestField("label",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowPartitionMetricsRequest.LabelEnum.class),
-            f -> f.withMarshaller(ShowPartitionMetricsRequest::getLabel, (req, v) -> {
-                req.setLabel(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionMetricsRequest::getLabel, ShowPartitionMetricsRequest::setLabel));
         builder.<String>withRequestField("label_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionMetricsRequest::getLabelList, (req, v) -> {
-                req.setLabelList(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionMetricsRequest::getLabelList,
+                ShowPartitionMetricsRequest::setLabelList));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowPartitionMetricsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionMetricsRequest::getStartTime,
+                ShowPartitionMetricsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionMetricsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowPartitionMetricsRequest::getEndTime, ShowPartitionMetricsRequest::setEndTime));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowStreamRequest, ShowStreamResponse> showStream = genForshowStream();
+    public static final HttpRequestDef<ShowStreamRequest, ShowStreamResponse> showStream = genForShowStream();
 
-    private static HttpRequestDef<ShowStreamRequest, ShowStreamResponse> genForshowStream() {
+    private static HttpRequestDef<ShowStreamRequest, ShowStreamResponse> genForShowStream() {
         // basic
         HttpRequestDef.Builder<ShowStreamRequest, ShowStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStreamRequest.class, ShowStreamResponse.class)
@@ -702,23 +635,17 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStreamRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ShowStreamRequest::getStreamName, ShowStreamRequest::setStreamName));
         builder.<String>withRequestField("start_partitionId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStreamRequest::getStartPartitionId, (req, v) -> {
-                req.setStartPartitionId(v);
-            }));
+            f -> f.withMarshaller(ShowStreamRequest::getStartPartitionId, ShowStreamRequest::setStartPartitionId));
         builder.<Integer>withRequestField("limit_partitions",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowStreamRequest::getLimitPartitions, (req, v) -> {
-                req.setLimitPartitions(v);
-            }));
+            f -> f.withMarshaller(ShowStreamRequest::getLimitPartitions, ShowStreamRequest::setLimitPartitions));
 
         // response
 
@@ -726,9 +653,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<ShowStreamMetricsRequest, ShowStreamMetricsResponse> showStreamMetrics =
-        genForshowStreamMetrics();
+        genForShowStreamMetrics();
 
-    private static HttpRequestDef<ShowStreamMetricsRequest, ShowStreamMetricsResponse> genForshowStreamMetrics() {
+    private static HttpRequestDef<ShowStreamMetricsRequest, ShowStreamMetricsResponse> genForShowStreamMetrics() {
         // basic
         HttpRequestDef.Builder<ShowStreamMetricsRequest, ShowStreamMetricsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStreamMetricsRequest.class, ShowStreamMetricsResponse.class)
@@ -741,37 +668,27 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStreamMetricsRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ShowStreamMetricsRequest::getStreamName, ShowStreamMetricsRequest::setStreamName));
         builder.<ShowStreamMetricsRequest.LabelEnum>withRequestField("label",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowStreamMetricsRequest.LabelEnum.class),
-            f -> f.withMarshaller(ShowStreamMetricsRequest::getLabel, (req, v) -> {
-                req.setLabel(v);
-            }));
+            f -> f.withMarshaller(ShowStreamMetricsRequest::getLabel, ShowStreamMetricsRequest::setLabel));
         builder.<String>withRequestField("label_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStreamMetricsRequest::getLabelList, (req, v) -> {
-                req.setLabelList(v);
-            }));
+            f -> f.withMarshaller(ShowStreamMetricsRequest::getLabelList, ShowStreamMetricsRequest::setLabelList));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowStreamMetricsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowStreamMetricsRequest::getStartTime, ShowStreamMetricsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowStreamMetricsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowStreamMetricsRequest::getEndTime, ShowStreamMetricsRequest::setEndTime));
 
         // response
 
@@ -779,9 +696,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<ShowStreamTagsRequest, ShowStreamTagsResponse> showStreamTags =
-        genForshowStreamTags();
+        genForShowStreamTags();
 
-    private static HttpRequestDef<ShowStreamTagsRequest, ShowStreamTagsResponse> genForshowStreamTags() {
+    private static HttpRequestDef<ShowStreamTagsRequest, ShowStreamTagsResponse> genForShowStreamTags() {
         // basic
         HttpRequestDef.Builder<ShowStreamTagsRequest, ShowStreamTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStreamTagsRequest.class, ShowStreamTagsResponse.class)
@@ -794,9 +711,7 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStreamTagsRequest::getStreamId, (req, v) -> {
-                req.setStreamId(v);
-            }));
+            f -> f.withMarshaller(ShowStreamTagsRequest::getStreamId, ShowStreamTagsRequest::setStreamId));
 
         // response
 
@@ -804,9 +719,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<ShowTransferTaskRequest, ShowTransferTaskResponse> showTransferTask =
-        genForshowTransferTask();
+        genForShowTransferTask();
 
-    private static HttpRequestDef<ShowTransferTaskRequest, ShowTransferTaskResponse> genForshowTransferTask() {
+    private static HttpRequestDef<ShowTransferTaskRequest, ShowTransferTaskResponse> genForShowTransferTask() {
         // basic
         HttpRequestDef.Builder<ShowTransferTaskRequest, ShowTransferTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTransferTaskRequest.class, ShowTransferTaskResponse.class)
@@ -819,16 +734,12 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTransferTaskRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ShowTransferTaskRequest::getStreamName, ShowTransferTaskRequest::setStreamName));
         builder.<String>withRequestField("task_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTransferTaskRequest::getTaskName, (req, v) -> {
-                req.setTaskName(v);
-            }));
+            f -> f.withMarshaller(ShowTransferTaskRequest::getTaskName, ShowTransferTaskRequest::setTaskName));
 
         // response
 
@@ -836,9 +747,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<UpdatePartitionCountRequest, UpdatePartitionCountResponse> updatePartitionCount =
-        genForupdatePartitionCount();
+        genForUpdatePartitionCount();
 
-    private static HttpRequestDef<UpdatePartitionCountRequest, UpdatePartitionCountResponse> genForupdatePartitionCount() {
+    private static HttpRequestDef<UpdatePartitionCountRequest, UpdatePartitionCountResponse> genForUpdatePartitionCount() {
         // basic
         HttpRequestDef.Builder<UpdatePartitionCountRequest, UpdatePartitionCountResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdatePartitionCountRequest.class, UpdatePartitionCountResponse.class)
@@ -851,25 +762,22 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePartitionCountRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(UpdatePartitionCountRequest::getStreamName,
+                UpdatePartitionCountRequest::setStreamName));
         builder.<UpdatePartitionCountReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePartitionCountReq.class),
-            f -> f.withMarshaller(UpdatePartitionCountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePartitionCountRequest::getBody, UpdatePartitionCountRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateStreamRequest, UpdateStreamResponse> updateStream = genForupdateStream();
+    public static final HttpRequestDef<UpdateStreamRequest, UpdateStreamResponse> updateStream = genForUpdateStream();
 
-    private static HttpRequestDef<UpdateStreamRequest, UpdateStreamResponse> genForupdateStream() {
+    private static HttpRequestDef<UpdateStreamRequest, UpdateStreamResponse> genForUpdateStream() {
         // basic
         HttpRequestDef.Builder<UpdateStreamRequest, UpdateStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateStreamRequest.class, UpdateStreamResponse.class)
@@ -882,25 +790,21 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStreamRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(UpdateStreamRequest::getStreamName, UpdateStreamRequest::setStreamName));
         builder.<UpdateStreamReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateStreamReq.class),
-            f -> f.withMarshaller(UpdateStreamRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStreamRequest::getBody, UpdateStreamRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForcreateApp();
+    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForCreateApp();
 
-    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForcreateApp() {
+    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForCreateApp() {
         // basic
         HttpRequestDef.Builder<CreateAppRequest, CreateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppRequest.class, CreateAppResponse.class)
@@ -913,18 +817,16 @@ public class DisMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppReq.class),
-            f -> f.withMarshaller(CreateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getBody, CreateAppRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genFordeleteApp();
+    public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genForDeleteApp();
 
-    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genFordeleteApp() {
+    private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genForDeleteApp() {
         // basic
         HttpRequestDef.Builder<DeleteAppRequest, DeleteAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppRequest.class, DeleteAppResponse.class)
@@ -937,18 +839,16 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(DeleteAppRequest::getAppName, DeleteAppRequest::setAppName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppRequest, ListAppResponse> listApp = genForlistApp();
+    public static final HttpRequestDef<ListAppRequest, ListAppResponse> listApp = genForListApp();
 
-    private static HttpRequestDef<ListAppRequest, ListAppResponse> genForlistApp() {
+    private static HttpRequestDef<ListAppRequest, ListAppResponse> genForListApp() {
         // basic
         HttpRequestDef.Builder<ListAppRequest, ListAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppRequest.class, ListAppResponse.class)
@@ -961,32 +861,26 @@ public class DisMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppRequest::getLimit, ListAppRequest::setLimit));
         builder.<String>withRequestField("start_app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppRequest::getStartAppName, (req, v) -> {
-                req.setStartAppName(v);
-            }));
+            f -> f.withMarshaller(ListAppRequest::getStartAppName, ListAppRequest::setStartAppName));
         builder.<String>withRequestField("stream_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ListAppRequest::getStreamName, ListAppRequest::setStreamName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForshowApp();
+    public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForShowApp();
 
-    private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForshowApp() {
+    private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForShowApp() {
         // basic
         HttpRequestDef.Builder<ShowAppRequest, ShowAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppRequest.class, ShowAppResponse.class)
@@ -999,9 +893,7 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ShowAppRequest::getAppName, ShowAppRequest::setAppName));
 
         // response
 
@@ -1009,9 +901,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<ShowConsumerStateRequest, ShowConsumerStateResponse> showConsumerState =
-        genForshowConsumerState();
+        genForShowConsumerState();
 
-    private static HttpRequestDef<ShowConsumerStateRequest, ShowConsumerStateResponse> genForshowConsumerState() {
+    private static HttpRequestDef<ShowConsumerStateRequest, ShowConsumerStateResponse> genForShowConsumerState() {
         // basic
         HttpRequestDef.Builder<ShowConsumerStateRequest, ShowConsumerStateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConsumerStateRequest.class, ShowConsumerStateResponse.class)
@@ -1024,37 +916,29 @@ public class DisMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConsumerStateRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerStateRequest::getAppName, ShowConsumerStateRequest::setAppName));
         builder.<String>withRequestField("stream_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConsumerStateRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerStateRequest::getStreamName, ShowConsumerStateRequest::setStreamName));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowConsumerStateRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerStateRequest::getLimit, ShowConsumerStateRequest::setLimit));
         builder.<String>withRequestField("start_partition_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConsumerStateRequest::getStartPartitionId, (req, v) -> {
-                req.setStartPartitionId(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerStateRequest::getStartPartitionId,
+                ShowConsumerStateRequest::setStartPartitionId));
         builder.<ShowConsumerStateRequest.CheckpointTypeEnum>withRequestField("checkpoint_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowConsumerStateRequest.CheckpointTypeEnum.class),
-            f -> f.withMarshaller(ShowConsumerStateRequest::getCheckpointType, (req, v) -> {
-                req.setCheckpointType(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerStateRequest::getCheckpointType,
+                ShowConsumerStateRequest::setCheckpointType));
 
         // response
 
@@ -1062,9 +946,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<CommitCheckpointRequest, CommitCheckpointResponse> commitCheckpoint =
-        genForcommitCheckpoint();
+        genForCommitCheckpoint();
 
-    private static HttpRequestDef<CommitCheckpointRequest, CommitCheckpointResponse> genForcommitCheckpoint() {
+    private static HttpRequestDef<CommitCheckpointRequest, CommitCheckpointResponse> genForCommitCheckpoint() {
         // basic
         HttpRequestDef.Builder<CommitCheckpointRequest, CommitCheckpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CommitCheckpointRequest.class, CommitCheckpointResponse.class)
@@ -1077,9 +961,7 @@ public class DisMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CommitCheckpointReq.class),
-            f -> f.withMarshaller(CommitCheckpointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CommitCheckpointRequest::getBody, CommitCheckpointRequest::setBody));
 
         // response
 
@@ -1087,9 +969,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<DeleteCheckpointRequest, DeleteCheckpointResponse> deleteCheckpoint =
-        genFordeleteCheckpoint();
+        genForDeleteCheckpoint();
 
-    private static HttpRequestDef<DeleteCheckpointRequest, DeleteCheckpointResponse> genFordeleteCheckpoint() {
+    private static HttpRequestDef<DeleteCheckpointRequest, DeleteCheckpointResponse> genForDeleteCheckpoint() {
         // basic
         HttpRequestDef.Builder<DeleteCheckpointRequest, DeleteCheckpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCheckpointRequest.class, DeleteCheckpointResponse.class)
@@ -1102,30 +984,23 @@ public class DisMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCheckpointRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(DeleteCheckpointRequest::getStreamName, DeleteCheckpointRequest::setStreamName));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCheckpointRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(DeleteCheckpointRequest::getAppName, DeleteCheckpointRequest::setAppName));
         builder.<DeleteCheckpointRequest.CheckpointTypeEnum>withRequestField("checkpoint_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteCheckpointRequest.CheckpointTypeEnum.class),
-            f -> f.withMarshaller(DeleteCheckpointRequest::getCheckpointType, (req, v) -> {
-                req.setCheckpointType(v);
-            }));
+            f -> f.withMarshaller(DeleteCheckpointRequest::getCheckpointType,
+                DeleteCheckpointRequest::setCheckpointType));
         builder.<String>withRequestField("partition_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCheckpointRequest::getPartitionId, (req, v) -> {
-                req.setPartitionId(v);
-            }));
+            f -> f.withMarshaller(DeleteCheckpointRequest::getPartitionId, DeleteCheckpointRequest::setPartitionId));
 
         // response
 
@@ -1133,9 +1008,9 @@ public class DisMeta {
     }
 
     public static final HttpRequestDef<ShowCheckpointRequest, ShowCheckpointResponse> showCheckpoint =
-        genForshowCheckpoint();
+        genForShowCheckpoint();
 
-    private static HttpRequestDef<ShowCheckpointRequest, ShowCheckpointResponse> genForshowCheckpoint() {
+    private static HttpRequestDef<ShowCheckpointRequest, ShowCheckpointResponse> genForShowCheckpoint() {
         // basic
         HttpRequestDef.Builder<ShowCheckpointRequest, ShowCheckpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCheckpointRequest.class, ShowCheckpointResponse.class)
@@ -1148,30 +1023,22 @@ public class DisMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCheckpointRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            }));
+            f -> f.withMarshaller(ShowCheckpointRequest::getStreamName, ShowCheckpointRequest::setStreamName));
         builder.<String>withRequestField("partition_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCheckpointRequest::getPartitionId, (req, v) -> {
-                req.setPartitionId(v);
-            }));
+            f -> f.withMarshaller(ShowCheckpointRequest::getPartitionId, ShowCheckpointRequest::setPartitionId));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCheckpointRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ShowCheckpointRequest::getAppName, ShowCheckpointRequest::setAppName));
         builder.<ShowCheckpointRequest.CheckpointTypeEnum>withRequestField("checkpoint_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowCheckpointRequest.CheckpointTypeEnum.class),
-            f -> f.withMarshaller(ShowCheckpointRequest::getCheckpointType, (req, v) -> {
-                req.setCheckpointType(v);
-            }));
+            f -> f.withMarshaller(ShowCheckpointRequest::getCheckpointType, ShowCheckpointRequest::setCheckpointType));
 
         // response
 

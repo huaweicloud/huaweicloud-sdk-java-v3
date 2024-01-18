@@ -220,11 +220,6 @@ public class ResponseVpnGateway {
     private String accessSubnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "access_private_ips")
-
-    private List<String> accessPrivateIps = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_private_ip_1")
 
     private String accessPrivateIp1;
@@ -275,16 +270,6 @@ public class ResponseVpnGateway {
     private String haMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "master_eip")
-
-    private ResponseEip masterEip;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "slave_eip")
-
-    private ResponseEip slaveEip;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip1")
 
     private ResponseEip eip1;
@@ -303,6 +288,21 @@ public class ResponseVpnGateway {
     @JsonProperty(value = "updated_at")
 
     private OffsetDateTime updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_template")
+
+    private PolicyTemplate policyTemplate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_flavors")
+
+    private List<String> supportedFlavors = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<VpnResourceTag> tags = null;
 
     public ResponseVpnGateway withId(String id) {
         this.id = id;
@@ -524,46 +524,13 @@ public class ResponseVpnGateway {
         this.accessSubnetId = accessSubnetId;
     }
 
-    public ResponseVpnGateway withAccessPrivateIps(List<String> accessPrivateIps) {
-        this.accessPrivateIps = accessPrivateIps;
-        return this;
-    }
-
-    public ResponseVpnGateway addAccessPrivateIpsItem(String accessPrivateIpsItem) {
-        if (this.accessPrivateIps == null) {
-            this.accessPrivateIps = new ArrayList<>();
-        }
-        this.accessPrivateIps.add(accessPrivateIpsItem);
-        return this;
-    }
-
-    public ResponseVpnGateway withAccessPrivateIps(Consumer<List<String>> accessPrivateIpsSetter) {
-        if (this.accessPrivateIps == null) {
-            this.accessPrivateIps = new ArrayList<>();
-        }
-        accessPrivateIpsSetter.accept(this.accessPrivateIps);
-        return this;
-    }
-
-    /**
-     * VPN网关北向接入私网IP列表，当VPN网关的北向类型是私网(private)时有值
-     * @return accessPrivateIps
-     */
-    public List<String> getAccessPrivateIps() {
-        return accessPrivateIps;
-    }
-
-    public void setAccessPrivateIps(List<String> accessPrivateIps) {
-        this.accessPrivateIps = accessPrivateIps;
-    }
-
     public ResponseVpnGateway withAccessPrivateIp1(String accessPrivateIp1) {
         this.accessPrivateIp1 = accessPrivateIp1;
         return this;
     }
 
     /**
-     * VPN网关北向接入私网IP列表，当VPN网关的北向类型是私网(private)时有值,主备模式代表主worker的私网IP
+     * VPN网关北向接入私网IP，当VPN网关的北向类型是私网(private)时有值,主备模式代表主worker的私网IP
      * @return accessPrivateIp1
      */
     public String getAccessPrivateIp1() {
@@ -580,7 +547,7 @@ public class ResponseVpnGateway {
     }
 
     /**
-     * VPN网关北向接入私网IP列表，当VPN网关的北向类型是私网(private)时有值,主备模式代表备worker的私网IP
+     * VPN网关北向接入私网IP，当VPN网关的北向类型是私网(private)时有值,主备模式代表备worker的私网IP
      * @return accessPrivateIp2
      */
     public String getAccessPrivateIp2() {
@@ -745,58 +712,6 @@ public class ResponseVpnGateway {
         this.haMode = haMode;
     }
 
-    public ResponseVpnGateway withMasterEip(ResponseEip masterEip) {
-        this.masterEip = masterEip;
-        return this;
-    }
-
-    public ResponseVpnGateway withMasterEip(Consumer<ResponseEip> masterEipSetter) {
-        if (this.masterEip == null) {
-            this.masterEip = new ResponseEip();
-            masterEipSetter.accept(this.masterEip);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get masterEip
-     * @return masterEip
-     */
-    public ResponseEip getMasterEip() {
-        return masterEip;
-    }
-
-    public void setMasterEip(ResponseEip masterEip) {
-        this.masterEip = masterEip;
-    }
-
-    public ResponseVpnGateway withSlaveEip(ResponseEip slaveEip) {
-        this.slaveEip = slaveEip;
-        return this;
-    }
-
-    public ResponseVpnGateway withSlaveEip(Consumer<ResponseEip> slaveEipSetter) {
-        if (this.slaveEip == null) {
-            this.slaveEip = new ResponseEip();
-            slaveEipSetter.accept(this.slaveEip);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get slaveEip
-     * @return slaveEip
-     */
-    public ResponseEip getSlaveEip() {
-        return slaveEip;
-    }
-
-    public void setSlaveEip(ResponseEip slaveEip) {
-        this.slaveEip = slaveEip;
-    }
-
     public ResponseVpnGateway withEip1(ResponseEip eip1) {
         this.eip1 = eip1;
         return this;
@@ -883,6 +798,98 @@ public class ResponseVpnGateway {
         this.updatedAt = updatedAt;
     }
 
+    public ResponseVpnGateway withPolicyTemplate(PolicyTemplate policyTemplate) {
+        this.policyTemplate = policyTemplate;
+        return this;
+    }
+
+    public ResponseVpnGateway withPolicyTemplate(Consumer<PolicyTemplate> policyTemplateSetter) {
+        if (this.policyTemplate == null) {
+            this.policyTemplate = new PolicyTemplate();
+            policyTemplateSetter.accept(this.policyTemplate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get policyTemplate
+     * @return policyTemplate
+     */
+    public PolicyTemplate getPolicyTemplate() {
+        return policyTemplate;
+    }
+
+    public void setPolicyTemplate(PolicyTemplate policyTemplate) {
+        this.policyTemplate = policyTemplate;
+    }
+
+    public ResponseVpnGateway withSupportedFlavors(List<String> supportedFlavors) {
+        this.supportedFlavors = supportedFlavors;
+        return this;
+    }
+
+    public ResponseVpnGateway addSupportedFlavorsItem(String supportedFlavorsItem) {
+        if (this.supportedFlavors == null) {
+            this.supportedFlavors = new ArrayList<>();
+        }
+        this.supportedFlavors.add(supportedFlavorsItem);
+        return this;
+    }
+
+    public ResponseVpnGateway withSupportedFlavors(Consumer<List<String>> supportedFlavorsSetter) {
+        if (this.supportedFlavors == null) {
+            this.supportedFlavors = new ArrayList<>();
+        }
+        supportedFlavorsSetter.accept(this.supportedFlavors);
+        return this;
+    }
+
+    /**
+     * 网关可升配到的目标规格
+     * @return supportedFlavors
+     */
+    public List<String> getSupportedFlavors() {
+        return supportedFlavors;
+    }
+
+    public void setSupportedFlavors(List<String> supportedFlavors) {
+        this.supportedFlavors = supportedFlavors;
+    }
+
+    public ResponseVpnGateway withTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ResponseVpnGateway addTagsItem(VpnResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ResponseVpnGateway withTags(Consumer<List<VpnResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<VpnResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -899,7 +906,6 @@ public class ResponseVpnGateway {
             && Objects.equals(this.connectSubnet, that.connectSubnet)
             && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.accessVpcId, that.accessVpcId)
             && Objects.equals(this.accessSubnetId, that.accessSubnetId)
-            && Objects.equals(this.accessPrivateIps, that.accessPrivateIps)
             && Objects.equals(this.accessPrivateIp1, that.accessPrivateIp1)
             && Objects.equals(this.accessPrivateIp2, that.accessPrivateIp2) && Objects.equals(this.bgpAsn, that.bgpAsn)
             && Objects.equals(this.flavor, that.flavor)
@@ -908,10 +914,11 @@ public class ResponseVpnGateway {
             && Objects.equals(this.usedConnectionNumber, that.usedConnectionNumber)
             && Objects.equals(this.usedConnectionGroup, that.usedConnectionGroup)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.masterEip, that.masterEip)
-            && Objects.equals(this.slaveEip, that.slaveEip) && Objects.equals(this.eip1, that.eip1)
+            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.eip1, that.eip1)
             && Objects.equals(this.eip2, that.eip2) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.policyTemplate, that.policyTemplate)
+            && Objects.equals(this.supportedFlavors, that.supportedFlavors) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -928,7 +935,6 @@ public class ResponseVpnGateway {
             networkType,
             accessVpcId,
             accessSubnetId,
-            accessPrivateIps,
             accessPrivateIp1,
             accessPrivateIp2,
             bgpAsn,
@@ -939,12 +945,13 @@ public class ResponseVpnGateway {
             usedConnectionGroup,
             enterpriseProjectId,
             haMode,
-            masterEip,
-            slaveEip,
             eip1,
             eip2,
             createdAt,
-            updatedAt);
+            updatedAt,
+            policyTemplate,
+            supportedFlavors,
+            tags);
     }
 
     @Override
@@ -963,7 +970,6 @@ public class ResponseVpnGateway {
         sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
         sb.append("    accessVpcId: ").append(toIndentedString(accessVpcId)).append("\n");
         sb.append("    accessSubnetId: ").append(toIndentedString(accessSubnetId)).append("\n");
-        sb.append("    accessPrivateIps: ").append(toIndentedString(accessPrivateIps)).append("\n");
         sb.append("    accessPrivateIp1: ").append(toIndentedString(accessPrivateIp1)).append("\n");
         sb.append("    accessPrivateIp2: ").append(toIndentedString(accessPrivateIp2)).append("\n");
         sb.append("    bgpAsn: ").append(toIndentedString(bgpAsn)).append("\n");
@@ -974,12 +980,13 @@ public class ResponseVpnGateway {
         sb.append("    usedConnectionGroup: ").append(toIndentedString(usedConnectionGroup)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
-        sb.append("    masterEip: ").append(toIndentedString(masterEip)).append("\n");
-        sb.append("    slaveEip: ").append(toIndentedString(slaveEip)).append("\n");
         sb.append("    eip1: ").append(toIndentedString(eip1)).append("\n");
         sb.append("    eip2: ").append(toIndentedString(eip2)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    policyTemplate: ").append(toIndentedString(policyTemplate)).append("\n");
+        sb.append("    supportedFlavors: ").append(toIndentedString(supportedFlavors)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

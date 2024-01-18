@@ -59,7 +59,7 @@ public class HistoryRunInfo {
     }
 
     /**
-     * name
+     * 名称
      * @return name
      */
     public String getName() {
@@ -76,7 +76,7 @@ public class HistoryRunInfo {
     }
 
     /**
-     * run_id
+     * 报告id
      * @return runId
      */
     public Double getRunId() {
@@ -93,7 +93,7 @@ public class HistoryRunInfo {
     }
 
     /**
-     * run_type
+     * 任务类型（0：旧版本任务；1：融合版本任务）
      * @return runType
      */
     public Double getRunType() {
@@ -110,7 +110,7 @@ public class HistoryRunInfo {
     }
 
     /**
-     * start_time
+     * 开始时间
      * @return startTime
      */
     public String getStartTime() {
@@ -144,7 +144,7 @@ public class HistoryRunInfo {
     }
 
     /**
-     * continue_time
+     * 继续时间
      * @return continueTime
      */
     public Double getContinueTime() {
@@ -177,7 +177,7 @@ public class HistoryRunInfo {
     }
 
     /**
-     * temp_names
+     * 用例或者事务名称
      * @return tempNames
      */
     public List<TempName> getTempNames() {

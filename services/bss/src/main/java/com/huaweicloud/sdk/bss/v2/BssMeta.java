@@ -222,9 +222,9 @@ import java.util.List;
 public class BssMeta {
 
     public static final HttpRequestDef<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse> autoRenewalResources =
-        genForautoRenewalResources();
+        genForAutoRenewalResources();
 
-    private static HttpRequestDef<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse> genForautoRenewalResources() {
+    private static HttpRequestDef<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse> genForAutoRenewalResources() {
         // basic
         HttpRequestDef.Builder<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AutoRenewalResourcesRequest.class, AutoRenewalResourcesResponse.class)
@@ -237,9 +237,8 @@ public class BssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AutoRenewalResourcesRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(AutoRenewalResourcesRequest::getResourceId,
+                AutoRenewalResourcesRequest::setResourceId));
 
         // response
 
@@ -247,9 +246,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse> cancelAutoRenewalResources =
-        genForcancelAutoRenewalResources();
+        genForCancelAutoRenewalResources();
 
-    private static HttpRequestDef<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse> genForcancelAutoRenewalResources() {
+    private static HttpRequestDef<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse> genForCancelAutoRenewalResources() {
         // basic
         HttpRequestDef.Builder<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse> builder =
             HttpRequestDef
@@ -265,9 +264,8 @@ public class BssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelAutoRenewalResourcesRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CancelAutoRenewalResourcesRequest::getResourceId,
+                CancelAutoRenewalResourcesRequest::setResourceId));
 
         // response
 
@@ -275,9 +273,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<CancelCustomerOrderRequest, CancelCustomerOrderResponse> cancelCustomerOrder =
-        genForcancelCustomerOrder();
+        genForCancelCustomerOrder();
 
-    private static HttpRequestDef<CancelCustomerOrderRequest, CancelCustomerOrderResponse> genForcancelCustomerOrder() {
+    private static HttpRequestDef<CancelCustomerOrderRequest, CancelCustomerOrderResponse> genForCancelCustomerOrder() {
         // basic
         HttpRequestDef.Builder<CancelCustomerOrderRequest, CancelCustomerOrderResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CancelCustomerOrderRequest.class, CancelCustomerOrderResponse.class)
@@ -290,9 +288,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CancelCustomerOrderReq.class),
-            f -> f.withMarshaller(CancelCustomerOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CancelCustomerOrderRequest::getBody, CancelCustomerOrderRequest::setBody));
 
         // response
 
@@ -300,9 +296,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse> cancelResourcesSubscription =
-        genForcancelResourcesSubscription();
+        genForCancelResourcesSubscription();
 
-    private static HttpRequestDef<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse> genForcancelResourcesSubscription() {
+    private static HttpRequestDef<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse> genForCancelResourcesSubscription() {
         // basic
         HttpRequestDef.Builder<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse> builder =
             HttpRequestDef
@@ -318,9 +314,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UnsubscribeResourcesReq.class),
-            f -> f.withMarshaller(CancelResourcesSubscriptionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CancelResourcesSubscriptionRequest::getBody,
+                CancelResourcesSubscriptionRequest::setBody));
 
         // response
 
@@ -328,9 +323,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse> changeEnterpriseRealnameAuthentication =
-        genForchangeEnterpriseRealnameAuthentication();
+        genForChangeEnterpriseRealnameAuthentication();
 
-    private static HttpRequestDef<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse> genForchangeEnterpriseRealnameAuthentication() {
+    private static HttpRequestDef<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse> genForChangeEnterpriseRealnameAuthentication() {
         // basic
         HttpRequestDef.Builder<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse> builder =
             HttpRequestDef
@@ -346,9 +341,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeEnterpriseRealnameAuthsReq.class),
-            f -> f.withMarshaller(ChangeEnterpriseRealnameAuthenticationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeEnterpriseRealnameAuthenticationRequest::getBody,
+                ChangeEnterpriseRealnameAuthenticationRequest::setBody));
 
         // response
 
@@ -356,9 +350,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<CheckUserIdentityRequest, CheckUserIdentityResponse> checkUserIdentity =
-        genForcheckUserIdentity();
+        genForCheckUserIdentity();
 
-    private static HttpRequestDef<CheckUserIdentityRequest, CheckUserIdentityResponse> genForcheckUserIdentity() {
+    private static HttpRequestDef<CheckUserIdentityRequest, CheckUserIdentityResponse> genForCheckUserIdentity() {
         // basic
         HttpRequestDef.Builder<CheckUserIdentityRequest, CheckUserIdentityResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckUserIdentityRequest.class, CheckUserIdentityResponse.class)
@@ -371,9 +365,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckSubcustomerUserReq.class),
-            f -> f.withMarshaller(CheckUserIdentityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckUserIdentityRequest::getBody, CheckUserIdentityRequest::setBody));
 
         // response
 
@@ -381,9 +373,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse> claimEnterpriseMultiAccountCoupon =
-        genForclaimEnterpriseMultiAccountCoupon();
+        genForClaimEnterpriseMultiAccountCoupon();
 
-    private static HttpRequestDef<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse> genForclaimEnterpriseMultiAccountCoupon() {
+    private static HttpRequestDef<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse> genForClaimEnterpriseMultiAccountCoupon() {
         // basic
         HttpRequestDef.Builder<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse> builder =
             HttpRequestDef
@@ -399,9 +391,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TransferEnterpriseMultiAccountCouponReq.class),
-            f -> f.withMarshaller(ClaimEnterpriseMultiAccountCouponRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ClaimEnterpriseMultiAccountCouponRequest::getBody,
+                ClaimEnterpriseMultiAccountCouponRequest::setBody));
 
         // response
 
@@ -409,9 +400,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> createEnterpriseProjectAuth =
-        genForcreateEnterpriseProjectAuth();
+        genForCreateEnterpriseProjectAuth();
 
-    private static HttpRequestDef<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> genForcreateEnterpriseProjectAuth() {
+    private static HttpRequestDef<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> genForCreateEnterpriseProjectAuth() {
         // basic
         HttpRequestDef.Builder<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> builder =
             HttpRequestDef
@@ -430,9 +421,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse> createEnterpriseRealnameAuthentication =
-        genForcreateEnterpriseRealnameAuthentication();
+        genForCreateEnterpriseRealnameAuthentication();
 
-    private static HttpRequestDef<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse> genForcreateEnterpriseRealnameAuthentication() {
+    private static HttpRequestDef<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse> genForCreateEnterpriseRealnameAuthentication() {
         // basic
         HttpRequestDef.Builder<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse> builder =
             HttpRequestDef
@@ -448,9 +439,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApplyEnterpriseRealnameAuthsReq.class),
-            f -> f.withMarshaller(CreateEnterpriseRealnameAuthenticationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEnterpriseRealnameAuthenticationRequest::getBody,
+                CreateEnterpriseRealnameAuthenticationRequest::setBody));
 
         // response
 
@@ -458,9 +448,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse> createPartnerCoupons =
-        genForcreatePartnerCoupons();
+        genForCreatePartnerCoupons();
 
-    private static HttpRequestDef<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse> genForcreatePartnerCoupons() {
+    private static HttpRequestDef<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse> genForCreatePartnerCoupons() {
         // basic
         HttpRequestDef.Builder<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePartnerCouponsRequest.class, CreatePartnerCouponsResponse.class)
@@ -473,9 +463,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePartnerCouponsReq.class),
-            f -> f.withMarshaller(CreatePartnerCouponsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePartnerCouponsRequest::getBody, CreatePartnerCouponsRequest::setBody));
 
         // response
 
@@ -483,9 +471,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse> createPersonalRealnameAuth =
-        genForcreatePersonalRealnameAuth();
+        genForCreatePersonalRealnameAuth();
 
-    private static HttpRequestDef<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse> genForcreatePersonalRealnameAuth() {
+    private static HttpRequestDef<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse> genForCreatePersonalRealnameAuth() {
         // basic
         HttpRequestDef.Builder<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse> builder =
             HttpRequestDef
@@ -501,9 +489,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApplyIndividualRealnameAuthsReq.class),
-            f -> f.withMarshaller(CreatePersonalRealnameAuthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePersonalRealnameAuthRequest::getBody,
+                CreatePersonalRealnameAuthRequest::setBody));
 
         // response
 
@@ -511,9 +498,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<CreateSubCustomerRequest, CreateSubCustomerResponse> createSubCustomer =
-        genForcreateSubCustomer();
+        genForCreateSubCustomer();
 
-    private static HttpRequestDef<CreateSubCustomerRequest, CreateSubCustomerResponse> genForcreateSubCustomer() {
+    private static HttpRequestDef<CreateSubCustomerRequest, CreateSubCustomerResponse> genForCreateSubCustomer() {
         // basic
         HttpRequestDef.Builder<CreateSubCustomerRequest, CreateSubCustomerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSubCustomerRequest.class, CreateSubCustomerResponse.class)
@@ -526,9 +513,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCustomerV2Req.class),
-            f -> f.withMarshaller(CreateSubCustomerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSubCustomerRequest::getBody, CreateSubCustomerRequest::setBody));
 
         // response
 
@@ -536,9 +521,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse> createSubEnterpriseAccount =
-        genForcreateSubEnterpriseAccount();
+        genForCreateSubEnterpriseAccount();
 
-    private static HttpRequestDef<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse> genForcreateSubEnterpriseAccount() {
+    private static HttpRequestDef<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse> genForCreateSubEnterpriseAccount() {
         // basic
         HttpRequestDef.Builder<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse> builder =
             HttpRequestDef
@@ -554,18 +539,17 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSubCustomerReqV2.class),
-            f -> f.withMarshaller(CreateSubEnterpriseAccountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSubEnterpriseAccountRequest::getBody,
+                CreateSubEnterpriseAccountRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCitiesRequest, ListCitiesResponse> listCities = genForlistCities();
+    public static final HttpRequestDef<ListCitiesRequest, ListCitiesResponse> listCities = genForListCities();
 
-    private static HttpRequestDef<ListCitiesRequest, ListCitiesResponse> genForlistCities() {
+    private static HttpRequestDef<ListCitiesRequest, ListCitiesResponse> genForListCities() {
         // basic
         HttpRequestDef.Builder<ListCitiesRequest, ListCitiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCitiesRequest.class, ListCitiesResponse.class)
@@ -578,30 +562,22 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCitiesRequest::getProvinceCode, (req, v) -> {
-                req.setProvinceCode(v);
-            }));
+            f -> f.withMarshaller(ListCitiesRequest::getProvinceCode, ListCitiesRequest::setProvinceCode));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCitiesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCitiesRequest::getOffset, ListCitiesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCitiesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCitiesRequest::getLimit, ListCitiesRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCitiesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCitiesRequest::getXLanguage, ListCitiesRequest::setXLanguage));
 
         // response
 
@@ -609,9 +585,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse> listConsumeSubCustomers =
-        genForlistConsumeSubCustomers();
+        genForListConsumeSubCustomers();
 
-    private static HttpRequestDef<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse> genForlistConsumeSubCustomers() {
+    private static HttpRequestDef<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse> genForListConsumeSubCustomers() {
         // basic
         HttpRequestDef.Builder<ListConsumeSubCustomersRequest, ListConsumeSubCustomersResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListConsumeSubCustomersRequest.class, ListConsumeSubCustomersResponse.class)
@@ -624,16 +600,13 @@ public class BssMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsumeSubCustomersRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListConsumeSubCustomersRequest::getXLanguage,
+                ListConsumeSubCustomersRequest::setXLanguage));
         builder.<ListConsumeSubCustomersReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListConsumeSubCustomersReq.class),
-            f -> f.withMarshaller(ListConsumeSubCustomersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListConsumeSubCustomersRequest::getBody, ListConsumeSubCustomersRequest::setBody));
 
         // response
 
@@ -641,9 +614,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListConversionsRequest, ListConversionsResponse> listConversions =
-        genForlistConversions();
+        genForListConversions();
 
-    private static HttpRequestDef<ListConversionsRequest, ListConversionsResponse> genForlistConversions() {
+    private static HttpRequestDef<ListConversionsRequest, ListConversionsResponse> genForListConversions() {
         // basic
         HttpRequestDef.Builder<ListConversionsRequest, ListConversionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConversionsRequest.class, ListConversionsResponse.class)
@@ -656,25 +629,21 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConversionsRequest::getMeasureType, (req, v) -> {
-                req.setMeasureType(v);
-            }));
+            f -> f.withMarshaller(ListConversionsRequest::getMeasureType, ListConversionsRequest::setMeasureType));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConversionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListConversionsRequest::getXLanguage, ListConversionsRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCostsRequest, ListCostsResponse> listCosts = genForlistCosts();
+    public static final HttpRequestDef<ListCostsRequest, ListCostsResponse> listCosts = genForListCosts();
 
-    private static HttpRequestDef<ListCostsRequest, ListCostsResponse> genForlistCosts() {
+    private static HttpRequestDef<ListCostsRequest, ListCostsResponse> genForListCosts() {
         // basic
         HttpRequestDef.Builder<ListCostsRequest, ListCostsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListCostsRequest.class, ListCostsResponse.class)
@@ -687,25 +656,21 @@ public class BssMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCostsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCostsRequest::getXLanguage, ListCostsRequest::setXLanguage));
         builder.<ListCostsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListCostsReq.class),
-            f -> f.withMarshaller(ListCostsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListCostsRequest::getBody, ListCostsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCountiesRequest, ListCountiesResponse> listCounties = genForlistCounties();
+    public static final HttpRequestDef<ListCountiesRequest, ListCountiesResponse> listCounties = genForListCounties();
 
-    private static HttpRequestDef<ListCountiesRequest, ListCountiesResponse> genForlistCounties() {
+    private static HttpRequestDef<ListCountiesRequest, ListCountiesResponse> genForListCounties() {
         // basic
         HttpRequestDef.Builder<ListCountiesRequest, ListCountiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCountiesRequest.class, ListCountiesResponse.class)
@@ -718,30 +683,22 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCountiesRequest::getCityCode, (req, v) -> {
-                req.setCityCode(v);
-            }));
+            f -> f.withMarshaller(ListCountiesRequest::getCityCode, ListCountiesRequest::setCityCode));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCountiesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCountiesRequest::getOffset, ListCountiesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCountiesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCountiesRequest::getLimit, ListCountiesRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCountiesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCountiesRequest::getXLanguage, ListCountiesRequest::setXLanguage));
 
         // response
 
@@ -749,9 +706,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse> listCouponQuotasRecords =
-        genForlistCouponQuotasRecords();
+        genForListCouponQuotasRecords();
 
-    private static HttpRequestDef<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse> genForlistCouponQuotasRecords() {
+    private static HttpRequestDef<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse> genForListCouponQuotasRecords() {
         // basic
         HttpRequestDef.Builder<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCouponQuotasRecordsRequest.class, ListCouponQuotasRecordsResponse.class)
@@ -764,58 +721,49 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getIndirectPartnerId,
+                ListCouponQuotasRecordsRequest::setIndirectPartnerId));
         builder.<String>withRequestField("quota_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getQuotaId, (req, v) -> {
-                req.setQuotaId(v);
-            }));
+            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getQuotaId,
+                ListCouponQuotasRecordsRequest::setQuotaId));
         builder.<String>withRequestField("operation_time_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getOperationTimeBegin, (req, v) -> {
-                req.setOperationTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getOperationTimeBegin,
+                ListCouponQuotasRecordsRequest::setOperationTimeBegin));
         builder.<String>withRequestField("operation_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getOperationTimeEnd, (req, v) -> {
-                req.setOperationTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getOperationTimeEnd,
+                ListCouponQuotasRecordsRequest::setOperationTimeEnd));
         builder.<String>withRequestField("parent_quota_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getParentQuotaId, (req, v) -> {
-                req.setParentQuotaId(v);
-            }));
+            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getParentQuotaId,
+                ListCouponQuotasRecordsRequest::setParentQuotaId));
         builder.<String>withRequestField("operation_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getOperationType, (req, v) -> {
-                req.setOperationType(v);
-            }));
+            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getOperationType,
+                ListCouponQuotasRecordsRequest::setOperationType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getOffset,
+                ListCouponQuotasRecordsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCouponQuotasRecordsRequest::getLimit, ListCouponQuotasRecordsRequest::setLimit));
 
         // response
 
@@ -823,9 +771,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse> listCustomerAccountChangeRecords =
-        genForlistCustomerAccountChangeRecords();
+        genForListCustomerAccountChangeRecords();
 
-    private static HttpRequestDef<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse> genForlistCustomerAccountChangeRecords() {
+    private static HttpRequestDef<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse> genForListCustomerAccountChangeRecords() {
         // basic
         HttpRequestDef.Builder<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse> builder =
             HttpRequestDef
@@ -841,72 +789,62 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getBalanceType, (req, v) -> {
-                req.setBalanceType(v);
-            }));
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getBalanceType,
+                ListCustomerAccountChangeRecordsRequest::setBalanceType));
         builder.<String>withRequestField("revenue_expense_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getRevenueExpenseType, (req, v) -> {
-                req.setRevenueExpenseType(v);
-            }));
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getRevenueExpenseType,
+                ListCustomerAccountChangeRecordsRequest::setRevenueExpenseType));
         builder.<String>withRequestField("trade_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeType, (req, v) -> {
-                req.setTradeType(v);
-            }));
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeType,
+                ListCustomerAccountChangeRecordsRequest::setTradeType));
         builder.<String>withRequestField("trade_time_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeTimeBegin, (req, v) -> {
-                req.setTradeTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeTimeBegin,
+                ListCustomerAccountChangeRecordsRequest::setTradeTimeBegin));
         builder.<String>withRequestField("trade_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeTimeEnd, (req, v) -> {
-                req.setTradeTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeTimeEnd,
+                ListCustomerAccountChangeRecordsRequest::setTradeTimeEnd));
         builder.<String>withRequestField("trade_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeId, (req, v) -> {
-                req.setTradeId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeId,
+                ListCustomerAccountChangeRecordsRequest::setTradeId));
         builder.<String>withRequestField("payment_channel_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getPaymentChannelId, (req, v) -> {
-                req.setPaymentChannelId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getPaymentChannelId,
+                ListCustomerAccountChangeRecordsRequest::setPaymentChannelId));
         builder.<String>withRequestField("payment_channel_no",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getPaymentChannelNo, (req, v) -> {
-                req.setPaymentChannelNo(v);
-            }));
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getPaymentChannelNo,
+                ListCustomerAccountChangeRecordsRequest::setPaymentChannelNo));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getOffset,
+                ListCustomerAccountChangeRecordsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getLimit,
+                ListCustomerAccountChangeRecordsRequest::setLimit));
 
         // response
 
@@ -914,9 +852,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> listCustomerBillsFeeRecords =
-        genForlistCustomerBillsFeeRecords();
+        genForListCustomerBillsFeeRecords();
 
-    private static HttpRequestDef<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> genForlistCustomerBillsFeeRecords() {
+    private static HttpRequestDef<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> genForListCustomerBillsFeeRecords() {
         // basic
         HttpRequestDef.Builder<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> builder =
             HttpRequestDef
@@ -932,128 +870,110 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getBillCycle, (req, v) -> {
-                req.setBillCycle(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getBillCycle,
+                ListCustomerBillsFeeRecordsRequest::setBillCycle));
         builder.<Integer>withRequestField("provider_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getProviderType, (req, v) -> {
-                req.setProviderType(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getProviderType,
+                ListCustomerBillsFeeRecordsRequest::setProviderType));
         builder.<String>withRequestField("service_type_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getServiceTypeCode,
+                ListCustomerBillsFeeRecordsRequest::setServiceTypeCode));
         builder.<String>withRequestField("resource_type_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getResourceTypeCode, (req, v) -> {
-                req.setResourceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getResourceTypeCode,
+                ListCustomerBillsFeeRecordsRequest::setResourceTypeCode));
         builder.<String>withRequestField("region_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getRegionCode, (req, v) -> {
-                req.setRegionCode(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getRegionCode,
+                ListCustomerBillsFeeRecordsRequest::setRegionCode));
         builder.<Integer>withRequestField("charging_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getChargingMode, (req, v) -> {
-                req.setChargingMode(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getChargingMode,
+                ListCustomerBillsFeeRecordsRequest::setChargingMode));
         builder.<Integer>withRequestField("bill_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getBillType, (req, v) -> {
-                req.setBillType(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getBillType,
+                ListCustomerBillsFeeRecordsRequest::setBillType));
         builder.<String>withRequestField("trade_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getTradeId, (req, v) -> {
-                req.setTradeId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getTradeId,
+                ListCustomerBillsFeeRecordsRequest::setTradeId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getEnterpriseProjectId,
+                ListCustomerBillsFeeRecordsRequest::setEnterpriseProjectId));
         builder.<Boolean>withRequestField("include_zero_record",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getIncludeZeroRecord, (req, v) -> {
-                req.setIncludeZeroRecord(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getIncludeZeroRecord,
+                ListCustomerBillsFeeRecordsRequest::setIncludeZeroRecord));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getStatus,
+                ListCustomerBillsFeeRecordsRequest::setStatus));
         builder.<String>withRequestField("method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getMethod, (req, v) -> {
-                req.setMethod(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getMethod,
+                ListCustomerBillsFeeRecordsRequest::setMethod));
         builder.<String>withRequestField("sub_customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getSubCustomerId,
+                ListCustomerBillsFeeRecordsRequest::setSubCustomerId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getOffset,
+                ListCustomerBillsFeeRecordsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getLimit,
+                ListCustomerBillsFeeRecordsRequest::setLimit));
         builder.<String>withRequestField("bill_date_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getBillDateBegin, (req, v) -> {
-                req.setBillDateBegin(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getBillDateBegin,
+                ListCustomerBillsFeeRecordsRequest::setBillDateBegin));
         builder.<String>withRequestField("bill_date_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getBillDateEnd, (req, v) -> {
-                req.setBillDateEnd(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getBillDateEnd,
+                ListCustomerBillsFeeRecordsRequest::setBillDateEnd));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getXLanguage,
+                ListCustomerBillsFeeRecordsRequest::setXLanguage));
 
         // response
 
@@ -1061,9 +981,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> listCustomerBillsMonthlyBreakDown =
-        genForlistCustomerBillsMonthlyBreakDown();
+        genForListCustomerBillsMonthlyBreakDown();
 
-    private static HttpRequestDef<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> genForlistCustomerBillsMonthlyBreakDown() {
+    private static HttpRequestDef<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> genForListCustomerBillsMonthlyBreakDown() {
         // basic
         HttpRequestDef.Builder<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> builder =
             HttpRequestDef
@@ -1079,100 +999,86 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getSharedMonth, (req, v) -> {
-                req.setSharedMonth(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getSharedMonth,
+                ListCustomerBillsMonthlyBreakDownRequest::setSharedMonth));
         builder.<String>withRequestField("service_type_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getServiceTypeCode,
+                ListCustomerBillsMonthlyBreakDownRequest::setServiceTypeCode));
         builder.<String>withRequestField("resource_type_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getResourceTypeCode, (req, v) -> {
-                req.setResourceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getResourceTypeCode,
+                ListCustomerBillsMonthlyBreakDownRequest::setResourceTypeCode));
         builder.<String>withRequestField("region_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getRegionCode, (req, v) -> {
-                req.setRegionCode(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getRegionCode,
+                ListCustomerBillsMonthlyBreakDownRequest::setRegionCode));
         builder.<Integer>withRequestField("charging_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getChargingMode, (req, v) -> {
-                req.setChargingMode(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getChargingMode,
+                ListCustomerBillsMonthlyBreakDownRequest::setChargingMode));
         builder.<Integer>withRequestField("bill_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getBillType, (req, v) -> {
-                req.setBillType(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getBillType,
+                ListCustomerBillsMonthlyBreakDownRequest::setBillType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getOffset,
+                ListCustomerBillsMonthlyBreakDownRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getLimit,
+                ListCustomerBillsMonthlyBreakDownRequest::setLimit));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getResourceId,
+                ListCustomerBillsMonthlyBreakDownRequest::setResourceId));
         builder.<String>withRequestField("resource_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getResourceName, (req, v) -> {
-                req.setResourceName(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getResourceName,
+                ListCustomerBillsMonthlyBreakDownRequest::setResourceName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getEnterpriseProjectId,
+                ListCustomerBillsMonthlyBreakDownRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getMethod, (req, v) -> {
-                req.setMethod(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getMethod,
+                ListCustomerBillsMonthlyBreakDownRequest::setMethod));
         builder.<String>withRequestField("sub_customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getSubCustomerId,
+                ListCustomerBillsMonthlyBreakDownRequest::setSubCustomerId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getXLanguage,
+                ListCustomerBillsMonthlyBreakDownRequest::setXLanguage));
 
         // response
 
@@ -1180,9 +1086,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResources =
-        genForlistCustomerOnDemandResources();
+        genForListCustomerOnDemandResources();
 
-    private static HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> genForlistCustomerOnDemandResources() {
+    private static HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> genForListCustomerOnDemandResources() {
         // basic
         HttpRequestDef.Builder<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> builder =
             HttpRequestDef
@@ -1198,16 +1104,14 @@ public class BssMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOnDemandResourcesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOnDemandResourcesRequest::getXLanguage,
+                ListCustomerOnDemandResourcesRequest::setXLanguage));
         builder.<QueryCustomerOnDemandResourcesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryCustomerOnDemandResourcesReq.class),
-            f -> f.withMarshaller(ListCustomerOnDemandResourcesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOnDemandResourcesRequest::getBody,
+                ListCustomerOnDemandResourcesRequest::setBody));
 
         // response
 
@@ -1215,9 +1119,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListCustomerOrdersRequest, ListCustomerOrdersResponse> listCustomerOrders =
-        genForlistCustomerOrders();
+        genForListCustomerOrders();
 
-    private static HttpRequestDef<ListCustomerOrdersRequest, ListCustomerOrdersResponse> genForlistCustomerOrders() {
+    private static HttpRequestDef<ListCustomerOrdersRequest, ListCustomerOrdersResponse> genForListCustomerOrders() {
         // basic
         HttpRequestDef.Builder<ListCustomerOrdersRequest, ListCustomerOrdersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCustomerOrdersRequest.class, ListCustomerOrdersResponse.class)
@@ -1230,93 +1134,73 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getOrderId, ListCustomerOrdersRequest::setOrderId));
         builder.<String>withRequestField("customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getCustomerId, (req, v) -> {
-                req.setCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getCustomerId, ListCustomerOrdersRequest::setCustomerId));
         builder.<String>withRequestField("create_time_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getCreateTimeBegin, (req, v) -> {
-                req.setCreateTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getCreateTimeBegin,
+                ListCustomerOrdersRequest::setCreateTimeBegin));
         builder.<String>withRequestField("create_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getCreateTimeEnd, (req, v) -> {
-                req.setCreateTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getCreateTimeEnd,
+                ListCustomerOrdersRequest::setCreateTimeEnd));
         builder.<String>withRequestField("service_type_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getServiceTypeCode,
+                ListCustomerOrdersRequest::setServiceTypeCode));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getStatus, ListCustomerOrdersRequest::setStatus));
         builder.<String>withRequestField("order_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getOrderType, (req, v) -> {
-                req.setOrderType(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getOrderType, ListCustomerOrdersRequest::setOrderType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getLimit, ListCustomerOrdersRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getOffset, ListCustomerOrdersRequest::setOffset));
         builder.<String>withRequestField("order_by",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getOrderBy, ListCustomerOrdersRequest::setOrderBy));
         builder.<String>withRequestField("payment_time_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getPaymentTimeBegin, (req, v) -> {
-                req.setPaymentTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getPaymentTimeBegin,
+                ListCustomerOrdersRequest::setPaymentTimeBegin));
         builder.<String>withRequestField("payment_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getPaymentTimeEnd, (req, v) -> {
-                req.setPaymentTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getPaymentTimeEnd,
+                ListCustomerOrdersRequest::setPaymentTimeEnd));
         builder.<String>withRequestField("indirect_partner_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerOrdersRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getIndirectPartnerId,
+                ListCustomerOrdersRequest::setIndirectPartnerId));
 
         // response
 
@@ -1324,9 +1208,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse> listCustomersBalancesDetail =
-        genForlistCustomersBalancesDetail();
+        genForListCustomersBalancesDetail();
 
-    private static HttpRequestDef<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse> genForlistCustomersBalancesDetail() {
+    private static HttpRequestDef<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse> genForListCustomersBalancesDetail() {
         // basic
         HttpRequestDef.Builder<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse> builder =
             HttpRequestDef
@@ -1342,9 +1226,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryCustomersBalancesReq.class),
-            f -> f.withMarshaller(ListCustomersBalancesDetailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListCustomersBalancesDetailRequest::getBody,
+                ListCustomersBalancesDetailRequest::setBody));
 
         // response
 
@@ -1352,9 +1235,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse> listCustomerselfResourceRecordDetails =
-        genForlistCustomerselfResourceRecordDetails();
+        genForListCustomerselfResourceRecordDetails();
 
-    private static HttpRequestDef<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse> genForlistCustomerselfResourceRecordDetails() {
+    private static HttpRequestDef<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse> genForListCustomerselfResourceRecordDetails() {
         // basic
         HttpRequestDef.Builder<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse> builder =
             HttpRequestDef
@@ -1370,9 +1253,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryResRecordsDetailReq.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordDetailsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordDetailsRequest::getBody,
+                ListCustomerselfResourceRecordDetailsRequest::setBody));
 
         // response
 
@@ -1380,9 +1262,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse> listCustomerselfResourceRecords =
-        genForlistCustomerselfResourceRecords();
+        genForListCustomerselfResourceRecords();
 
-    private static HttpRequestDef<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse> genForlistCustomerselfResourceRecords() {
+    private static HttpRequestDef<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse> genForListCustomerselfResourceRecords() {
         // basic
         HttpRequestDef.Builder<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse> builder =
             HttpRequestDef
@@ -1398,114 +1280,98 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getCycle, (req, v) -> {
-                req.setCycle(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getCycle,
+                ListCustomerselfResourceRecordsRequest::setCycle));
         builder.<String>withRequestField("cloud_service_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getCloudServiceType, (req, v) -> {
-                req.setCloudServiceType(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getCloudServiceType,
+                ListCustomerselfResourceRecordsRequest::setCloudServiceType));
         builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getRegion,
+                ListCustomerselfResourceRecordsRequest::setRegion));
         builder.<String>withRequestField("charge_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getChargeMode, (req, v) -> {
-                req.setChargeMode(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getChargeMode,
+                ListCustomerselfResourceRecordsRequest::setChargeMode));
         builder.<Integer>withRequestField("bill_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillType, (req, v) -> {
-                req.setBillType(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillType,
+                ListCustomerselfResourceRecordsRequest::setBillType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getOffset,
+                ListCustomerselfResourceRecordsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getLimit,
+                ListCustomerselfResourceRecordsRequest::setLimit));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getResourceId,
+                ListCustomerselfResourceRecordsRequest::setResourceId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getEnterpriseProjectId,
+                ListCustomerselfResourceRecordsRequest::setEnterpriseProjectId));
         builder.<Boolean>withRequestField("include_zero_record",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getIncludeZeroRecord, (req, v) -> {
-                req.setIncludeZeroRecord(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getIncludeZeroRecord,
+                ListCustomerselfResourceRecordsRequest::setIncludeZeroRecord));
         builder.<String>withRequestField("method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getMethod, (req, v) -> {
-                req.setMethod(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getMethod,
+                ListCustomerselfResourceRecordsRequest::setMethod));
         builder.<String>withRequestField("sub_customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getSubCustomerId,
+                ListCustomerselfResourceRecordsRequest::setSubCustomerId));
         builder.<String>withRequestField("trade_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getTradeId, (req, v) -> {
-                req.setTradeId(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getTradeId,
+                ListCustomerselfResourceRecordsRequest::setTradeId));
         builder.<String>withRequestField("bill_date_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillDateBegin, (req, v) -> {
-                req.setBillDateBegin(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillDateBegin,
+                ListCustomerselfResourceRecordsRequest::setBillDateBegin));
         builder.<String>withRequestField("bill_date_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillDateEnd, (req, v) -> {
-                req.setBillDateEnd(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillDateEnd,
+                ListCustomerselfResourceRecordsRequest::setBillDateEnd));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getXLanguage,
+                ListCustomerselfResourceRecordsRequest::setXLanguage));
 
         // response
 
@@ -1513,9 +1379,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse> listEnterpriseMultiAccount =
-        genForlistEnterpriseMultiAccount();
+        genForListEnterpriseMultiAccount();
 
-    private static HttpRequestDef<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse> genForlistEnterpriseMultiAccount() {
+    private static HttpRequestDef<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse> genForListEnterpriseMultiAccount() {
         // basic
         HttpRequestDef.Builder<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse> builder =
             HttpRequestDef
@@ -1531,30 +1397,26 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getSubCustomerId,
+                ListEnterpriseMultiAccountRequest::setSubCustomerId));
         builder.<String>withRequestField("balance_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getBalanceType, (req, v) -> {
-                req.setBalanceType(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getBalanceType,
+                ListEnterpriseMultiAccountRequest::setBalanceType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getOffset,
+                ListEnterpriseMultiAccountRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getLimit,
+                ListEnterpriseMultiAccountRequest::setLimit));
 
         // response
 
@@ -1562,9 +1424,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse> listEnterpriseOrganizations =
-        genForlistEnterpriseOrganizations();
+        genForListEnterpriseOrganizations();
 
-    private static HttpRequestDef<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse> genForlistEnterpriseOrganizations() {
+    private static HttpRequestDef<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse> genForListEnterpriseOrganizations() {
         // basic
         HttpRequestDef.Builder<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse> builder =
             HttpRequestDef
@@ -1580,16 +1442,14 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseOrganizationsRequest::getRecursiveQuery, (req, v) -> {
-                req.setRecursiveQuery(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseOrganizationsRequest::getRecursiveQuery,
+                ListEnterpriseOrganizationsRequest::setRecursiveQuery));
         builder.<String>withRequestField("parent_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseOrganizationsRequest::getParentId, (req, v) -> {
-                req.setParentId(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseOrganizationsRequest::getParentId,
+                ListEnterpriseOrganizationsRequest::setParentId));
 
         // response
 
@@ -1597,9 +1457,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> listEnterpriseSubCustomers =
-        genForlistEnterpriseSubCustomers();
+        genForListEnterpriseSubCustomers();
 
-    private static HttpRequestDef<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> genForlistEnterpriseSubCustomers() {
+    private static HttpRequestDef<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> genForListEnterpriseSubCustomers() {
         // basic
         HttpRequestDef.Builder<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> builder =
             HttpRequestDef
@@ -1615,44 +1475,38 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getSubCustomerAccountName, (req, v) -> {
-                req.setSubCustomerAccountName(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getSubCustomerAccountName,
+                ListEnterpriseSubCustomersRequest::setSubCustomerAccountName));
         builder.<String>withRequestField("sub_customer_display_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getSubCustomerDisplayName, (req, v) -> {
-                req.setSubCustomerDisplayName(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getSubCustomerDisplayName,
+                ListEnterpriseSubCustomersRequest::setSubCustomerDisplayName));
         builder.<Integer>withRequestField("fuzzy_query",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getFuzzyQuery, (req, v) -> {
-                req.setFuzzyQuery(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getFuzzyQuery,
+                ListEnterpriseSubCustomersRequest::setFuzzyQuery));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getOffset,
+                ListEnterpriseSubCustomersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getLimit,
+                ListEnterpriseSubCustomersRequest::setLimit));
         builder.<String>withRequestField("org_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getOrgId, (req, v) -> {
-                req.setOrgId(v);
-            }));
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getOrgId,
+                ListEnterpriseSubCustomersRequest::setOrgId));
 
         // response
 
@@ -1660,9 +1514,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse> listFreeResourceInfos =
-        genForlistFreeResourceInfos();
+        genForListFreeResourceInfos();
 
-    private static HttpRequestDef<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse> genForlistFreeResourceInfos() {
+    private static HttpRequestDef<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse> genForListFreeResourceInfos() {
         // basic
         HttpRequestDef.Builder<ListFreeResourceInfosRequest, ListFreeResourceInfosResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListFreeResourceInfosRequest.class, ListFreeResourceInfosResponse.class)
@@ -1675,16 +1529,13 @@ public class BssMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFreeResourceInfosRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourceInfosRequest::getXLanguage,
+                ListFreeResourceInfosRequest::setXLanguage));
         builder.<ListFreeResourceInfosReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFreeResourceInfosReq.class),
-            f -> f.withMarshaller(ListFreeResourceInfosRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourceInfosRequest::getBody, ListFreeResourceInfosRequest::setBody));
 
         // response
 
@@ -1692,9 +1543,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> listFreeResourceUsages =
-        genForlistFreeResourceUsages();
+        genForListFreeResourceUsages();
 
-    private static HttpRequestDef<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> genForlistFreeResourceUsages() {
+    private static HttpRequestDef<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> genForListFreeResourceUsages() {
         // basic
         HttpRequestDef.Builder<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListFreeResourceUsagesRequest.class, ListFreeResourceUsagesResponse.class)
@@ -1707,16 +1558,13 @@ public class BssMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFreeResourceUsagesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourceUsagesRequest::getXLanguage,
+                ListFreeResourceUsagesRequest::setXLanguage));
         builder.<ListFreeResourceUsagesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListFreeResourceUsagesReq.class),
-            f -> f.withMarshaller(ListFreeResourceUsagesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourceUsagesRequest::getBody, ListFreeResourceUsagesRequest::setBody));
 
         // response
 
@@ -1724,9 +1572,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> listFreeResourcesUsageRecords =
-        genForlistFreeResourcesUsageRecords();
+        genForListFreeResourcesUsageRecords();
 
-    private static HttpRequestDef<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> genForlistFreeResourcesUsageRecords() {
+    private static HttpRequestDef<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> genForListFreeResourcesUsageRecords() {
         // basic
         HttpRequestDef.Builder<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> builder =
             HttpRequestDef
@@ -1742,51 +1590,44 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getFreeResourceId, (req, v) -> {
-                req.setFreeResourceId(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getFreeResourceId,
+                ListFreeResourcesUsageRecordsRequest::setFreeResourceId));
         builder.<String>withRequestField("product_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getProductId,
+                ListFreeResourcesUsageRecordsRequest::setProductId));
         builder.<String>withRequestField("resource_type_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getResourceTypeCode, (req, v) -> {
-                req.setResourceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getResourceTypeCode,
+                ListFreeResourcesUsageRecordsRequest::setResourceTypeCode));
         builder.<String>withRequestField("deduct_time_begin",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getDeductTimeBegin, (req, v) -> {
-                req.setDeductTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getDeductTimeBegin,
+                ListFreeResourcesUsageRecordsRequest::setDeductTimeBegin));
         builder.<String>withRequestField("deduct_time_end",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getDeductTimeEnd, (req, v) -> {
-                req.setDeductTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getDeductTimeEnd,
+                ListFreeResourcesUsageRecordsRequest::setDeductTimeEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getOffset,
+                ListFreeResourcesUsageRecordsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getLimit,
+                ListFreeResourcesUsageRecordsRequest::setLimit));
 
         // response
 
@@ -1794,9 +1635,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> listIncentiveDiscountPolicies =
-        genForlistIncentiveDiscountPolicies();
+        genForListIncentiveDiscountPolicies();
 
-    private static HttpRequestDef<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> genForlistIncentiveDiscountPolicies() {
+    private static HttpRequestDef<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> genForListIncentiveDiscountPolicies() {
         // basic
         HttpRequestDef.Builder<ListIncentiveDiscountPoliciesRequest, ListIncentiveDiscountPoliciesResponse> builder =
             HttpRequestDef
@@ -1812,30 +1653,26 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getTime, (req, v) -> {
-                req.setTime(v);
-            }));
+            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getTime,
+                ListIncentiveDiscountPoliciesRequest::setTime));
         builder.<String>withRequestField("service_type_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getServiceTypeCode,
+                ListIncentiveDiscountPoliciesRequest::setServiceTypeCode));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getOffset,
+                ListIncentiveDiscountPoliciesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListIncentiveDiscountPoliciesRequest::getLimit,
+                ListIncentiveDiscountPoliciesRequest::setLimit));
 
         // response
 
@@ -1843,9 +1680,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListIndirectPartnersRequest, ListIndirectPartnersResponse> listIndirectPartners =
-        genForlistIndirectPartners();
+        genForListIndirectPartners();
 
-    private static HttpRequestDef<ListIndirectPartnersRequest, ListIndirectPartnersResponse> genForlistIndirectPartners() {
+    private static HttpRequestDef<ListIndirectPartnersRequest, ListIndirectPartnersResponse> genForListIndirectPartners() {
         // basic
         HttpRequestDef.Builder<ListIndirectPartnersRequest, ListIndirectPartnersResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListIndirectPartnersRequest.class, ListIndirectPartnersResponse.class)
@@ -1858,9 +1695,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryIndirectPartnersReq.class),
-            f -> f.withMarshaller(ListIndirectPartnersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListIndirectPartnersRequest::getBody, ListIndirectPartnersRequest::setBody));
 
         // response
 
@@ -1868,9 +1703,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse> listIssuedCouponQuotas =
-        genForlistIssuedCouponQuotas();
+        genForListIssuedCouponQuotas();
 
-    private static HttpRequestDef<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse> genForlistIssuedCouponQuotas() {
+    private static HttpRequestDef<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse> genForListIssuedCouponQuotas() {
         // basic
         HttpRequestDef.Builder<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListIssuedCouponQuotasRequest.class, ListIssuedCouponQuotasResponse.class)
@@ -1883,37 +1718,30 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedCouponQuotasRequest::getQuotaId, (req, v) -> {
-                req.setQuotaId(v);
-            }));
+            f -> f.withMarshaller(ListIssuedCouponQuotasRequest::getQuotaId,
+                ListIssuedCouponQuotasRequest::setQuotaId));
         builder.<String>withRequestField("indirect_partner_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedCouponQuotasRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListIssuedCouponQuotasRequest::getIndirectPartnerId,
+                ListIssuedCouponQuotasRequest::setIndirectPartnerId));
         builder.<String>withRequestField("parent_quota_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedCouponQuotasRequest::getParentQuotaId, (req, v) -> {
-                req.setParentQuotaId(v);
-            }));
+            f -> f.withMarshaller(ListIssuedCouponQuotasRequest::getParentQuotaId,
+                ListIssuedCouponQuotasRequest::setParentQuotaId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIssuedCouponQuotasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListIssuedCouponQuotasRequest::getOffset, ListIssuedCouponQuotasRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIssuedCouponQuotasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListIssuedCouponQuotasRequest::getLimit, ListIssuedCouponQuotasRequest::setLimit));
 
         // response
 
@@ -1921,9 +1749,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse> listIssuedPartnerCoupons =
-        genForlistIssuedPartnerCoupons();
+        genForListIssuedPartnerCoupons();
 
-    private static HttpRequestDef<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse> genForlistIssuedPartnerCoupons() {
+    private static HttpRequestDef<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse> genForListIssuedPartnerCoupons() {
         // basic
         HttpRequestDef.Builder<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse> builder =
             HttpRequestDef
@@ -1937,100 +1765,86 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getCouponId, (req, v) -> {
-                req.setCouponId(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getCouponId,
+                ListIssuedPartnerCouponsRequest::setCouponId));
         builder.<String>withRequestField("customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getCustomerId, (req, v) -> {
-                req.setCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getCustomerId,
+                ListIssuedPartnerCouponsRequest::setCustomerId));
         builder.<String>withRequestField("order_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getOrderId,
+                ListIssuedPartnerCouponsRequest::setOrderId));
         builder.<Integer>withRequestField("coupon_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getCouponType, (req, v) -> {
-                req.setCouponType(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getCouponType,
+                ListIssuedPartnerCouponsRequest::setCouponType));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getStatus,
+                ListIssuedPartnerCouponsRequest::setStatus));
         builder.<String>withRequestField("create_time_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getCreateTimeBegin, (req, v) -> {
-                req.setCreateTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getCreateTimeBegin,
+                ListIssuedPartnerCouponsRequest::setCreateTimeBegin));
         builder.<String>withRequestField("create_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getCreateTimeEnd, (req, v) -> {
-                req.setCreateTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getCreateTimeEnd,
+                ListIssuedPartnerCouponsRequest::setCreateTimeEnd));
         builder.<String>withRequestField("effective_time_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getEffectiveTimeBegin, (req, v) -> {
-                req.setEffectiveTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getEffectiveTimeBegin,
+                ListIssuedPartnerCouponsRequest::setEffectiveTimeBegin));
         builder.<String>withRequestField("effective_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getEffectiveTimeEnd, (req, v) -> {
-                req.setEffectiveTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getEffectiveTimeEnd,
+                ListIssuedPartnerCouponsRequest::setEffectiveTimeEnd));
         builder.<String>withRequestField("expire_time_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getExpireTimeBegin, (req, v) -> {
-                req.setExpireTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getExpireTimeBegin,
+                ListIssuedPartnerCouponsRequest::setExpireTimeBegin));
         builder.<String>withRequestField("expire_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getExpireTimeEnd, (req, v) -> {
-                req.setExpireTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getExpireTimeEnd,
+                ListIssuedPartnerCouponsRequest::setExpireTimeEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getOffset,
+                ListIssuedPartnerCouponsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getLimit,
+                ListIssuedPartnerCouponsRequest::setLimit));
         builder.<String>withRequestField("indirect_partner_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getIndirectPartnerId,
+                ListIssuedPartnerCouponsRequest::setIndirectPartnerId));
 
         // response
 
@@ -2038,9 +1852,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListMeasureUnitsRequest, ListMeasureUnitsResponse> listMeasureUnits =
-        genForlistMeasureUnits();
+        genForListMeasureUnits();
 
-    private static HttpRequestDef<ListMeasureUnitsRequest, ListMeasureUnitsResponse> genForlistMeasureUnits() {
+    private static HttpRequestDef<ListMeasureUnitsRequest, ListMeasureUnitsResponse> genForListMeasureUnits() {
         // basic
         HttpRequestDef.Builder<ListMeasureUnitsRequest, ListMeasureUnitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMeasureUnitsRequest.class, ListMeasureUnitsResponse.class)
@@ -2053,9 +1867,7 @@ public class BssMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMeasureUnitsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListMeasureUnitsRequest::getXLanguage, ListMeasureUnitsRequest::setXLanguage));
 
         // response
 
@@ -2063,9 +1875,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse> listMultiAccountRetrieveCoupons =
-        genForlistMultiAccountRetrieveCoupons();
+        genForListMultiAccountRetrieveCoupons();
 
-    private static HttpRequestDef<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse> genForlistMultiAccountRetrieveCoupons() {
+    private static HttpRequestDef<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse> genForListMultiAccountRetrieveCoupons() {
         // basic
         HttpRequestDef.Builder<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse> builder =
             HttpRequestDef
@@ -2081,23 +1893,20 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMultiAccountRetrieveCouponsRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListMultiAccountRetrieveCouponsRequest::getSubCustomerId,
+                ListMultiAccountRetrieveCouponsRequest::setSubCustomerId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMultiAccountRetrieveCouponsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMultiAccountRetrieveCouponsRequest::getOffset,
+                ListMultiAccountRetrieveCouponsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMultiAccountRetrieveCouponsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMultiAccountRetrieveCouponsRequest::getLimit,
+                ListMultiAccountRetrieveCouponsRequest::setLimit));
 
         // response
 
@@ -2105,9 +1914,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse> listMultiAccountTransferCoupons =
-        genForlistMultiAccountTransferCoupons();
+        genForListMultiAccountTransferCoupons();
 
-    private static HttpRequestDef<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse> genForlistMultiAccountTransferCoupons() {
+    private static HttpRequestDef<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse> genForListMultiAccountTransferCoupons() {
         // basic
         HttpRequestDef.Builder<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse> builder =
             HttpRequestDef
@@ -2123,16 +1932,14 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMultiAccountTransferCouponsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMultiAccountTransferCouponsRequest::getOffset,
+                ListMultiAccountTransferCouponsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMultiAccountTransferCouponsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMultiAccountTransferCouponsRequest::getLimit,
+                ListMultiAccountTransferCouponsRequest::setLimit));
 
         // response
 
@@ -2140,9 +1947,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse> listOnDemandResourceRatings =
-        genForlistOnDemandResourceRatings();
+        genForListOnDemandResourceRatings();
 
-    private static HttpRequestDef<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse> genForlistOnDemandResourceRatings() {
+    private static HttpRequestDef<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse> genForListOnDemandResourceRatings() {
         // basic
         HttpRequestDef.Builder<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse> builder =
             HttpRequestDef
@@ -2158,9 +1965,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RateOnDemandReq.class),
-            f -> f.withMarshaller(ListOnDemandResourceRatingsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListOnDemandResourceRatingsRequest::getBody,
+                ListOnDemandResourceRatingsRequest::setBody));
 
         // response
 
@@ -2168,9 +1974,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> listOrderCouponsByOrderId =
-        genForlistOrderCouponsByOrderId();
+        genForListOrderCouponsByOrderId();
 
-    private static HttpRequestDef<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> genForlistOrderCouponsByOrderId() {
+    private static HttpRequestDef<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> genForListOrderCouponsByOrderId() {
         // basic
         HttpRequestDef.Builder<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> builder =
             HttpRequestDef
@@ -2186,9 +1992,8 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderCouponsByOrderIdRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(ListOrderCouponsByOrderIdRequest::getOrderId,
+                ListOrderCouponsByOrderIdRequest::setOrderId));
 
         // response
 
@@ -2196,9 +2001,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListOrderDiscountsRequest, ListOrderDiscountsResponse> listOrderDiscounts =
-        genForlistOrderDiscounts();
+        genForListOrderDiscounts();
 
-    private static HttpRequestDef<ListOrderDiscountsRequest, ListOrderDiscountsResponse> genForlistOrderDiscounts() {
+    private static HttpRequestDef<ListOrderDiscountsRequest, ListOrderDiscountsResponse> genForListOrderDiscounts() {
         // basic
         HttpRequestDef.Builder<ListOrderDiscountsRequest, ListOrderDiscountsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOrderDiscountsRequest.class, ListOrderDiscountsResponse.class)
@@ -2211,9 +2016,7 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderDiscountsRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(ListOrderDiscountsRequest::getOrderId, ListOrderDiscountsRequest::setOrderId));
 
         // response
 
@@ -2221,9 +2024,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> listPartnerAccountChangeRecords =
-        genForlistPartnerAccountChangeRecords();
+        genForListPartnerAccountChangeRecords();
 
-    private static HttpRequestDef<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> genForlistPartnerAccountChangeRecords() {
+    private static HttpRequestDef<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> genForListPartnerAccountChangeRecords() {
         // basic
         HttpRequestDef.Builder<ListPartnerAccountChangeRecordsRequest, ListPartnerAccountChangeRecordsResponse> builder =
             HttpRequestDef
@@ -2239,51 +2042,44 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getBalanceType, (req, v) -> {
-                req.setBalanceType(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getBalanceType,
+                ListPartnerAccountChangeRecordsRequest::setBalanceType));
         builder.<String>withRequestField("trade_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getTradeType, (req, v) -> {
-                req.setTradeType(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getTradeType,
+                ListPartnerAccountChangeRecordsRequest::setTradeType));
         builder.<String>withRequestField("trade_time_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getTradeTimeBegin, (req, v) -> {
-                req.setTradeTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getTradeTimeBegin,
+                ListPartnerAccountChangeRecordsRequest::setTradeTimeBegin));
         builder.<String>withRequestField("trade_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getTradeTimeEnd, (req, v) -> {
-                req.setTradeTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getTradeTimeEnd,
+                ListPartnerAccountChangeRecordsRequest::setTradeTimeEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getOffset,
+                ListPartnerAccountChangeRecordsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getLimit,
+                ListPartnerAccountChangeRecordsRequest::setLimit));
         builder.<String>withRequestField("indirect_partner_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAccountChangeRecordsRequest::getIndirectPartnerId,
+                ListPartnerAccountChangeRecordsRequest::setIndirectPartnerId));
 
         // response
 
@@ -2291,9 +2087,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> listPartnerAdjustRecords =
-        genForlistPartnerAdjustRecords();
+        genForListPartnerAdjustRecords();
 
-    private static HttpRequestDef<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> genForlistPartnerAdjustRecords() {
+    private static HttpRequestDef<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> genForListPartnerAdjustRecords() {
         // basic
         HttpRequestDef.Builder<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> builder =
             HttpRequestDef
@@ -2307,58 +2103,50 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getCustomerId, (req, v) -> {
-                req.setCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getCustomerId,
+                ListPartnerAdjustRecordsRequest::setCustomerId));
         builder.<String>withRequestField("operation_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getOperationType, (req, v) -> {
-                req.setOperationType(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getOperationType,
+                ListPartnerAdjustRecordsRequest::setOperationType));
         builder.<String>withRequestField("operation_time_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getOperationTimeBegin, (req, v) -> {
-                req.setOperationTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getOperationTimeBegin,
+                ListPartnerAdjustRecordsRequest::setOperationTimeBegin));
         builder.<String>withRequestField("operation_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getOperationTimeEnd, (req, v) -> {
-                req.setOperationTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getOperationTimeEnd,
+                ListPartnerAdjustRecordsRequest::setOperationTimeEnd));
         builder.<String>withRequestField("trans_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getTransId, (req, v) -> {
-                req.setTransId(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getTransId,
+                ListPartnerAdjustRecordsRequest::setTransId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getOffset,
+                ListPartnerAdjustRecordsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getLimit,
+                ListPartnerAdjustRecordsRequest::setLimit));
         builder.<String>withRequestField("indirect_partner_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListPartnerAdjustRecordsRequest::getIndirectPartnerId,
+                ListPartnerAdjustRecordsRequest::setIndirectPartnerId));
 
         // response
 
@@ -2366,9 +2154,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListPartnerBalancesRequest, ListPartnerBalancesResponse> listPartnerBalances =
-        genForlistPartnerBalances();
+        genForListPartnerBalances();
 
-    private static HttpRequestDef<ListPartnerBalancesRequest, ListPartnerBalancesResponse> genForlistPartnerBalances() {
+    private static HttpRequestDef<ListPartnerBalancesRequest, ListPartnerBalancesResponse> genForListPartnerBalances() {
         // basic
         HttpRequestDef.Builder<ListPartnerBalancesRequest, ListPartnerBalancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPartnerBalancesRequest.class, ListPartnerBalancesResponse.class)
@@ -2381,9 +2169,8 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerBalancesRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListPartnerBalancesRequest::getIndirectPartnerId,
+                ListPartnerBalancesRequest::setIndirectPartnerId));
 
         // response
 
@@ -2391,9 +2178,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse> listPartnerCouponsRecord =
-        genForlistPartnerCouponsRecord();
+        genForListPartnerCouponsRecord();
 
-    private static HttpRequestDef<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse> genForlistPartnerCouponsRecord() {
+    private static HttpRequestDef<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse> genForListPartnerCouponsRecord() {
         // basic
         HttpRequestDef.Builder<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse> builder =
             HttpRequestDef
@@ -2407,79 +2194,68 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getOperationTypes, (req, v) -> {
-                req.setOperationTypes(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getOperationTypes,
+                ListPartnerCouponsRecordRequest::setOperationTypes));
         builder.<String>withRequestField("quota_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getQuotaId, (req, v) -> {
-                req.setQuotaId(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getQuotaId,
+                ListPartnerCouponsRecordRequest::setQuotaId));
         builder.<Integer>withRequestField("quota_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getQuotaType, (req, v) -> {
-                req.setQuotaType(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getQuotaType,
+                ListPartnerCouponsRecordRequest::setQuotaType));
         builder.<List<String>>withRequestField("coupon_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getCouponIds, (req, v) -> {
-                req.setCouponIds(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getCouponIds,
+                ListPartnerCouponsRecordRequest::setCouponIds));
         builder.<String>withRequestField("customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getCustomerId, (req, v) -> {
-                req.setCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getCustomerId,
+                ListPartnerCouponsRecordRequest::setCustomerId));
         builder.<String>withRequestField("operation_time_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getOperationTimeBegin, (req, v) -> {
-                req.setOperationTimeBegin(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getOperationTimeBegin,
+                ListPartnerCouponsRecordRequest::setOperationTimeBegin));
         builder.<String>withRequestField("operation_time_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getOperationTimeEnd, (req, v) -> {
-                req.setOperationTimeEnd(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getOperationTimeEnd,
+                ListPartnerCouponsRecordRequest::setOperationTimeEnd));
         builder.<String>withRequestField("result",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getResult, (req, v) -> {
-                req.setResult(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getResult,
+                ListPartnerCouponsRecordRequest::setResult));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getOffset,
+                ListPartnerCouponsRecordRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getLimit,
+                ListPartnerCouponsRecordRequest::setLimit));
         builder.<String>withRequestField("indirect_partner_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListPartnerCouponsRecordRequest::getIndirectPartnerId,
+                ListPartnerCouponsRecordRequest::setIndirectPartnerId));
 
         // response
 
@@ -2487,9 +2263,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse> listPayPerUseCustomerResources =
-        genForlistPayPerUseCustomerResources();
+        genForListPayPerUseCustomerResources();
 
-    private static HttpRequestDef<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse> genForlistPayPerUseCustomerResources() {
+    private static HttpRequestDef<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse> genForListPayPerUseCustomerResources() {
         // basic
         HttpRequestDef.Builder<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse> builder =
             HttpRequestDef
@@ -2505,9 +2281,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryResourcesReq.class),
-            f -> f.withMarshaller(ListPayPerUseCustomerResourcesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListPayPerUseCustomerResourcesRequest::getBody,
+                ListPayPerUseCustomerResourcesRequest::setBody));
 
         // response
 
@@ -2515,9 +2290,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListProvincesRequest, ListProvincesResponse> listProvinces =
-        genForlistProvinces();
+        genForListProvinces();
 
-    private static HttpRequestDef<ListProvincesRequest, ListProvincesResponse> genForlistProvinces() {
+    private static HttpRequestDef<ListProvincesRequest, ListProvincesResponse> genForListProvinces() {
         // basic
         HttpRequestDef.Builder<ListProvincesRequest, ListProvincesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProvincesRequest.class, ListProvincesResponse.class)
@@ -2530,23 +2305,17 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProvincesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProvincesRequest::getOffset, ListProvincesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProvincesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProvincesRequest::getLimit, ListProvincesRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProvincesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListProvincesRequest::getXLanguage, ListProvincesRequest::setXLanguage));
 
         // response
 
@@ -2554,9 +2323,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListQuotaCouponsRequest, ListQuotaCouponsResponse> listQuotaCoupons =
-        genForlistQuotaCoupons();
+        genForListQuotaCoupons();
 
-    private static HttpRequestDef<ListQuotaCouponsRequest, ListQuotaCouponsResponse> genForlistQuotaCoupons() {
+    private static HttpRequestDef<ListQuotaCouponsRequest, ListQuotaCouponsResponse> genForListQuotaCoupons() {
         // basic
         HttpRequestDef.Builder<ListQuotaCouponsRequest, ListQuotaCouponsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListQuotaCouponsRequest.class, ListQuotaCouponsResponse.class)
@@ -2569,9 +2338,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryCouponQuotasReqExt.class),
-            f -> f.withMarshaller(ListQuotaCouponsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListQuotaCouponsRequest::getBody, ListQuotaCouponsRequest::setBody));
 
         // response
 
@@ -2579,9 +2346,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse> listRateOnPeriodDetail =
-        genForlistRateOnPeriodDetail();
+        genForListRateOnPeriodDetail();
 
-    private static HttpRequestDef<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse> genForlistRateOnPeriodDetail() {
+    private static HttpRequestDef<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse> genForListRateOnPeriodDetail() {
         // basic
         HttpRequestDef.Builder<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListRateOnPeriodDetailRequest.class, ListRateOnPeriodDetailResponse.class)
@@ -2594,9 +2361,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RateOnPeriodReq.class),
-            f -> f.withMarshaller(ListRateOnPeriodDetailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListRateOnPeriodDetailRequest::getBody, ListRateOnPeriodDetailRequest::setBody));
 
         // response
 
@@ -2604,9 +2369,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> listRenewRateOnPeriod =
-        genForlistRenewRateOnPeriod();
+        genForListRenewRateOnPeriod();
 
-    private static HttpRequestDef<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> genForlistRenewRateOnPeriod() {
+    private static HttpRequestDef<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> genForListRenewRateOnPeriod() {
         // basic
         HttpRequestDef.Builder<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListRenewRateOnPeriodRequest.class, ListRenewRateOnPeriodResponse.class)
@@ -2619,9 +2384,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListRenewRateOnPeriodReq.class),
-            f -> f.withMarshaller(ListRenewRateOnPeriodRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListRenewRateOnPeriodRequest::getBody, ListRenewRateOnPeriodRequest::setBody));
 
         // response
 
@@ -2629,9 +2392,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypes =
-        genForlistResourceTypes();
+        genForListResourceTypes();
 
-    private static HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> genForlistResourceTypes() {
+    private static HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> genForListResourceTypes() {
         // basic
         HttpRequestDef.Builder<ListResourceTypesRequest, ListResourceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceTypesRequest.class, ListResourceTypesResponse.class)
@@ -2644,23 +2407,17 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceTypesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResourceTypesRequest::getLimit, ListResourceTypesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceTypesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListResourceTypesRequest::getOffset, ListResourceTypesRequest::setOffset));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceTypesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListResourceTypesRequest::getXLanguage, ListResourceTypesRequest::setXLanguage));
 
         // response
 
@@ -2668,9 +2425,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListResourceUsageRequest, ListResourceUsageResponse> listResourceUsage =
-        genForlistResourceUsage();
+        genForListResourceUsage();
 
-    private static HttpRequestDef<ListResourceUsageRequest, ListResourceUsageResponse> genForlistResourceUsage() {
+    private static HttpRequestDef<ListResourceUsageRequest, ListResourceUsageResponse> genForListResourceUsage() {
         // basic
         HttpRequestDef.Builder<ListResourceUsageRequest, ListResourceUsageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceUsageRequest.class, ListResourceUsageResponse.class)
@@ -2683,58 +2440,44 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageRequest::getBillCycle, (req, v) -> {
-                req.setBillCycle(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageRequest::getBillCycle, ListResourceUsageRequest::setBillCycle));
         builder.<String>withRequestField("service_type_code",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageRequest::getServiceTypeCode,
+                ListResourceUsageRequest::setServiceTypeCode));
         builder.<String>withRequestField("resource_type_code",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageRequest::getResourceTypeCode, (req, v) -> {
-                req.setResourceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageRequest::getResourceTypeCode,
+                ListResourceUsageRequest::setResourceTypeCode));
         builder.<String>withRequestField("usage_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageRequest::getUsageType, (req, v) -> {
-                req.setUsageType(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageRequest::getUsageType, ListResourceUsageRequest::setUsageType));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageRequest::getResourceId, ListResourceUsageRequest::setResourceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceUsageRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageRequest::getOffset, ListResourceUsageRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceUsageRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageRequest::getLimit, ListResourceUsageRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageRequest::getXLanguage, ListResourceUsageRequest::setXLanguage));
 
         // response
 
@@ -2742,9 +2485,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> listResourceUsageSummary =
-        genForlistResourceUsageSummary();
+        genForListResourceUsageSummary();
 
-    private static HttpRequestDef<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> genForlistResourceUsageSummary() {
+    private static HttpRequestDef<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> genForListResourceUsageSummary() {
         // basic
         HttpRequestDef.Builder<ListResourceUsageSummaryRequest, ListResourceUsageSummaryResponse> builder =
             HttpRequestDef
@@ -2758,51 +2501,44 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getBillCycle, (req, v) -> {
-                req.setBillCycle(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getBillCycle,
+                ListResourceUsageSummaryRequest::setBillCycle));
         builder.<String>withRequestField("service_type_code",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getServiceTypeCode,
+                ListResourceUsageSummaryRequest::setServiceTypeCode));
         builder.<String>withRequestField("resource_type_code",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getResourceTypeCode, (req, v) -> {
-                req.setResourceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getResourceTypeCode,
+                ListResourceUsageSummaryRequest::setResourceTypeCode));
         builder.<String>withRequestField("usage_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getUsageType, (req, v) -> {
-                req.setUsageType(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getUsageType,
+                ListResourceUsageSummaryRequest::setUsageType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getOffset,
+                ListResourceUsageSummaryRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getLimit,
+                ListResourceUsageSummaryRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListResourceUsageSummaryRequest::getXLanguage,
+                ListResourceUsageSummaryRequest::setXLanguage));
 
         // response
 
@@ -2810,9 +2546,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListServiceResourcesRequest, ListServiceResourcesResponse> listServiceResources =
-        genForlistServiceResources();
+        genForListServiceResources();
 
-    private static HttpRequestDef<ListServiceResourcesRequest, ListServiceResourcesResponse> genForlistServiceResources() {
+    private static HttpRequestDef<ListServiceResourcesRequest, ListServiceResourcesResponse> genForListServiceResources() {
         // basic
         HttpRequestDef.Builder<ListServiceResourcesRequest, ListServiceResourcesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListServiceResourcesRequest.class, ListServiceResourcesResponse.class)
@@ -2825,30 +2561,24 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceResourcesRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListServiceResourcesRequest::getServiceTypeCode,
+                ListServiceResourcesRequest::setServiceTypeCode));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServiceResourcesRequest::getLimit, ListServiceResourcesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceResourcesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServiceResourcesRequest::getOffset, ListServiceResourcesRequest::setOffset));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceResourcesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListServiceResourcesRequest::getXLanguage,
+                ListServiceResourcesRequest::setXLanguage));
 
         // response
 
@@ -2856,9 +2586,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListServiceTypesRequest, ListServiceTypesResponse> listServiceTypes =
-        genForlistServiceTypes();
+        genForListServiceTypes();
 
-    private static HttpRequestDef<ListServiceTypesRequest, ListServiceTypesResponse> genForlistServiceTypes() {
+    private static HttpRequestDef<ListServiceTypesRequest, ListServiceTypesResponse> genForListServiceTypes() {
         // basic
         HttpRequestDef.Builder<ListServiceTypesRequest, ListServiceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServiceTypesRequest.class, ListServiceTypesResponse.class)
@@ -2871,23 +2601,17 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceTypesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServiceTypesRequest::getLimit, ListServiceTypesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceTypesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServiceTypesRequest::getOffset, ListServiceTypesRequest::setOffset));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceTypesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListServiceTypesRequest::getXLanguage, ListServiceTypesRequest::setXLanguage));
 
         // response
 
@@ -2895,9 +2619,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListStoredValueCardsRequest, ListStoredValueCardsResponse> listStoredValueCards =
-        genForlistStoredValueCards();
+        genForListStoredValueCards();
 
-    private static HttpRequestDef<ListStoredValueCardsRequest, ListStoredValueCardsResponse> genForlistStoredValueCards() {
+    private static HttpRequestDef<ListStoredValueCardsRequest, ListStoredValueCardsResponse> genForListStoredValueCards() {
         // basic
         HttpRequestDef.Builder<ListStoredValueCardsRequest, ListStoredValueCardsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListStoredValueCardsRequest.class, ListStoredValueCardsResponse.class)
@@ -2910,30 +2634,22 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStoredValueCardsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListStoredValueCardsRequest::getStatus, ListStoredValueCardsRequest::setStatus));
         builder.<String>withRequestField("card_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStoredValueCardsRequest::getCardId, (req, v) -> {
-                req.setCardId(v);
-            }));
+            f -> f.withMarshaller(ListStoredValueCardsRequest::getCardId, ListStoredValueCardsRequest::setCardId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStoredValueCardsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListStoredValueCardsRequest::getOffset, ListStoredValueCardsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStoredValueCardsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListStoredValueCardsRequest::getLimit, ListStoredValueCardsRequest::setLimit));
 
         // response
 
@@ -2941,9 +2657,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> listSubCustomerBillDetail =
-        genForlistSubCustomerBillDetail();
+        genForListSubCustomerBillDetail();
 
-    private static HttpRequestDef<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> genForlistSubCustomerBillDetail() {
+    private static HttpRequestDef<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> genForListSubCustomerBillDetail() {
         // basic
         HttpRequestDef.Builder<ListSubCustomerBillDetailRequest, ListSubCustomerBillDetailResponse> builder =
             HttpRequestDef
@@ -2959,121 +2675,104 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillCycle, (req, v) -> {
-                req.setBillCycle(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillCycle,
+                ListSubCustomerBillDetailRequest::setBillCycle));
         builder.<String>withRequestField("customer_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getCustomerId, (req, v) -> {
-                req.setCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getCustomerId,
+                ListSubCustomerBillDetailRequest::setCustomerId));
         builder.<String>withRequestField("service_type_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getServiceTypeCode,
+                ListSubCustomerBillDetailRequest::setServiceTypeCode));
         builder.<String>withRequestField("region_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getRegionCode, (req, v) -> {
-                req.setRegionCode(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getRegionCode,
+                ListSubCustomerBillDetailRequest::setRegionCode));
         builder.<Integer>withRequestField("charging_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getChargingMode, (req, v) -> {
-                req.setChargingMode(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getChargingMode,
+                ListSubCustomerBillDetailRequest::setChargingMode));
         builder.<Integer>withRequestField("bill_detail_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillDetailType, (req, v) -> {
-                req.setBillDetailType(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillDetailType,
+                ListSubCustomerBillDetailRequest::setBillDetailType));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getResourceId,
+                ListSubCustomerBillDetailRequest::setResourceId));
         builder.<String>withRequestField("resource_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getResourceName, (req, v) -> {
-                req.setResourceName(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getResourceName,
+                ListSubCustomerBillDetailRequest::setResourceName));
         builder.<String>withRequestField("trade_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getTradeId, (req, v) -> {
-                req.setTradeId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getTradeId,
+                ListSubCustomerBillDetailRequest::setTradeId));
         builder.<String>withRequestField("account_manager_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getAccountManagerId, (req, v) -> {
-                req.setAccountManagerId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getAccountManagerId,
+                ListSubCustomerBillDetailRequest::setAccountManagerId));
         builder.<String>withRequestField("association_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getAssociationType, (req, v) -> {
-                req.setAssociationType(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getAssociationType,
+                ListSubCustomerBillDetailRequest::setAssociationType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getOffset,
+                ListSubCustomerBillDetailRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getLimit,
+                ListSubCustomerBillDetailRequest::setLimit));
         builder.<String>withRequestField("indirect_partner_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getIndirectPartnerId,
+                ListSubCustomerBillDetailRequest::setIndirectPartnerId));
         builder.<String>withRequestField("bill_date_begin",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillDateBegin, (req, v) -> {
-                req.setBillDateBegin(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillDateBegin,
+                ListSubCustomerBillDetailRequest::setBillDateBegin));
         builder.<String>withRequestField("bill_date_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillDateEnd, (req, v) -> {
-                req.setBillDateEnd(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getBillDateEnd,
+                ListSubCustomerBillDetailRequest::setBillDateEnd));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerBillDetailRequest::getXLanguage,
+                ListSubCustomerBillDetailRequest::setXLanguage));
 
         // response
 
@@ -3081,9 +2780,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse> listSubCustomerCoupons =
-        genForlistSubCustomerCoupons();
+        genForListSubCustomerCoupons();
 
-    private static HttpRequestDef<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse> genForlistSubCustomerCoupons() {
+    private static HttpRequestDef<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse> genForListSubCustomerCoupons() {
         // basic
         HttpRequestDef.Builder<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSubCustomerCouponsRequest.class, ListSubCustomerCouponsResponse.class)
@@ -3096,79 +2795,65 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getCouponId, (req, v) -> {
-                req.setCouponId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getCouponId,
+                ListSubCustomerCouponsRequest::setCouponId));
         builder.<String>withRequestField("order_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getOrderId,
+                ListSubCustomerCouponsRequest::setOrderId));
         builder.<String>withRequestField("promotion_plan_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getPromotionPlanId, (req, v) -> {
-                req.setPromotionPlanId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getPromotionPlanId,
+                ListSubCustomerCouponsRequest::setPromotionPlanId));
         builder.<Integer>withRequestField("coupon_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getCouponType, (req, v) -> {
-                req.setCouponType(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getCouponType,
+                ListSubCustomerCouponsRequest::setCouponType));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getStatus, ListSubCustomerCouponsRequest::setStatus));
         builder.<String>withRequestField("active_start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getActiveStartTime, (req, v) -> {
-                req.setActiveStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getActiveStartTime,
+                ListSubCustomerCouponsRequest::setActiveStartTime));
         builder.<String>withRequestField("active_end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getActiveEndTime, (req, v) -> {
-                req.setActiveEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getActiveEndTime,
+                ListSubCustomerCouponsRequest::setActiveEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getOffset, ListSubCustomerCouponsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getLimit, ListSubCustomerCouponsRequest::setLimit));
         builder.<String>withRequestField("source_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getSourceId, (req, v) -> {
-                req.setSourceId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getSourceId,
+                ListSubCustomerCouponsRequest::setSourceId));
         builder.<String>withRequestField("indirect_partner_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerCouponsRequest::getIndirectPartnerId,
+                ListSubCustomerCouponsRequest::setIndirectPartnerId));
 
         // response
 
@@ -3176,9 +2861,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse> listSubCustomerNewTag =
-        genForlistSubCustomerNewTag();
+        genForListSubCustomerNewTag();
 
-    private static HttpRequestDef<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse> genForlistSubCustomerNewTag() {
+    private static HttpRequestDef<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse> genForListSubCustomerNewTag() {
         // basic
         HttpRequestDef.Builder<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListSubCustomerNewTagRequest.class, ListSubCustomerNewTagResponse.class)
@@ -3191,9 +2876,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListSubCustomerNewTagReq.class),
-            f -> f.withMarshaller(ListSubCustomerNewTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomerNewTagRequest::getBody, ListSubCustomerNewTagRequest::setBody));
 
         // response
 
@@ -3201,9 +2884,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListSubCustomersRequest, ListSubCustomersResponse> listSubCustomers =
-        genForlistSubCustomers();
+        genForListSubCustomers();
 
-    private static HttpRequestDef<ListSubCustomersRequest, ListSubCustomersResponse> genForlistSubCustomers() {
+    private static HttpRequestDef<ListSubCustomersRequest, ListSubCustomersResponse> genForListSubCustomers() {
         // basic
         HttpRequestDef.Builder<ListSubCustomersRequest, ListSubCustomersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListSubCustomersRequest.class, ListSubCustomersResponse.class)
@@ -3216,9 +2899,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QuerySubCustomerListReq.class),
-            f -> f.withMarshaller(ListSubCustomersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomersRequest::getBody, ListSubCustomersRequest::setBody));
 
         // response
 
@@ -3226,9 +2907,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse> listSubcustomerMonthlyBills =
-        genForlistSubcustomerMonthlyBills();
+        genForListSubcustomerMonthlyBills();
 
-    private static HttpRequestDef<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse> genForlistSubcustomerMonthlyBills() {
+    private static HttpRequestDef<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse> genForListSubcustomerMonthlyBills() {
         // basic
         HttpRequestDef.Builder<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse> builder =
             HttpRequestDef
@@ -3244,58 +2925,50 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getCustomerId, (req, v) -> {
-                req.setCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getCustomerId,
+                ListSubcustomerMonthlyBillsRequest::setCustomerId));
         builder.<String>withRequestField("cycle",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getCycle, (req, v) -> {
-                req.setCycle(v);
-            }));
+            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getCycle,
+                ListSubcustomerMonthlyBillsRequest::setCycle));
         builder.<String>withRequestField("cloud_service_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getCloudServiceType, (req, v) -> {
-                req.setCloudServiceType(v);
-            }));
+            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getCloudServiceType,
+                ListSubcustomerMonthlyBillsRequest::setCloudServiceType));
         builder.<String>withRequestField("charge_mode",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getChargeMode, (req, v) -> {
-                req.setChargeMode(v);
-            }));
+            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getChargeMode,
+                ListSubcustomerMonthlyBillsRequest::setChargeMode));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getOffset,
+                ListSubcustomerMonthlyBillsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getLimit,
+                ListSubcustomerMonthlyBillsRequest::setLimit));
         builder.<String>withRequestField("bill_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getBillType, (req, v) -> {
-                req.setBillType(v);
-            }));
+            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getBillType,
+                ListSubcustomerMonthlyBillsRequest::setBillType));
         builder.<String>withRequestField("indirect_partner_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ListSubcustomerMonthlyBillsRequest::getIndirectPartnerId,
+                ListSubcustomerMonthlyBillsRequest::setIndirectPartnerId));
 
         // response
 
@@ -3303,9 +2976,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ListUsageTypesRequest, ListUsageTypesResponse> listUsageTypes =
-        genForlistUsageTypes();
+        genForListUsageTypes();
 
-    private static HttpRequestDef<ListUsageTypesRequest, ListUsageTypesResponse> genForlistUsageTypes() {
+    private static HttpRequestDef<ListUsageTypesRequest, ListUsageTypesResponse> genForListUsageTypes() {
         // basic
         HttpRequestDef.Builder<ListUsageTypesRequest, ListUsageTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsageTypesRequest.class, ListUsageTypesResponse.class)
@@ -3318,39 +2991,32 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsageTypesRequest::getResourceTypeCode, (req, v) -> {
-                req.setResourceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ListUsageTypesRequest::getResourceTypeCode,
+                ListUsageTypesRequest::setResourceTypeCode));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsageTypesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListUsageTypesRequest::getOffset, ListUsageTypesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsageTypesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListUsageTypesRequest::getLimit, ListUsageTypesRequest::setLimit));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsageTypesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListUsageTypesRequest::getXLanguage, ListUsageTypesRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PayOrdersRequest, PayOrdersResponse> payOrders = genForpayOrders();
+    public static final HttpRequestDef<PayOrdersRequest, PayOrdersResponse> payOrders = genForPayOrders();
 
-    private static HttpRequestDef<PayOrdersRequest, PayOrdersResponse> genForpayOrders() {
+    private static HttpRequestDef<PayOrdersRequest, PayOrdersResponse> genForPayOrders() {
         // basic
         HttpRequestDef.Builder<PayOrdersRequest, PayOrdersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PayOrdersRequest.class, PayOrdersResponse.class)
@@ -3363,9 +3029,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PayCustomerOrderV3Req.class),
-            f -> f.withMarshaller(PayOrdersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PayOrdersRequest::getBody, PayOrdersRequest::setBody));
 
         // response
 
@@ -3373,9 +3037,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse> reclaimCouponQuotas =
-        genForreclaimCouponQuotas();
+        genForReclaimCouponQuotas();
 
-    private static HttpRequestDef<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse> genForreclaimCouponQuotas() {
+    private static HttpRequestDef<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse> genForReclaimCouponQuotas() {
         // basic
         HttpRequestDef.Builder<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ReclaimCouponQuotasRequest.class, ReclaimCouponQuotasResponse.class)
@@ -3388,9 +3052,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReclaimCouponQuotasReq.class),
-            f -> f.withMarshaller(ReclaimCouponQuotasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ReclaimCouponQuotasRequest::getBody, ReclaimCouponQuotasRequest::setBody));
 
         // response
 
@@ -3398,9 +3060,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse> reclaimEnterpriseMultiAccountCoupon =
-        genForreclaimEnterpriseMultiAccountCoupon();
+        genForReclaimEnterpriseMultiAccountCoupon();
 
-    private static HttpRequestDef<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse> genForreclaimEnterpriseMultiAccountCoupon() {
+    private static HttpRequestDef<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse> genForReclaimEnterpriseMultiAccountCoupon() {
         // basic
         HttpRequestDef.Builder<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse> builder =
             HttpRequestDef
@@ -3416,9 +3078,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RetrieveEnterpriseMultiAccountCouponReq.class),
-            f -> f.withMarshaller(ReclaimEnterpriseMultiAccountCouponRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ReclaimEnterpriseMultiAccountCouponRequest::getBody,
+                ReclaimEnterpriseMultiAccountCouponRequest::setBody));
 
         // response
 
@@ -3426,9 +3087,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse> reclaimIndirectPartnerAccount =
-        genForreclaimIndirectPartnerAccount();
+        genForReclaimIndirectPartnerAccount();
 
-    private static HttpRequestDef<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse> genForreclaimIndirectPartnerAccount() {
+    private static HttpRequestDef<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse> genForReclaimIndirectPartnerAccount() {
         // basic
         HttpRequestDef.Builder<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse> builder =
             HttpRequestDef
@@ -3444,9 +3105,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReclaimIndirectPartnerAccountReq.class),
-            f -> f.withMarshaller(ReclaimIndirectPartnerAccountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ReclaimIndirectPartnerAccountRequest::getBody,
+                ReclaimIndirectPartnerAccountRequest::setBody));
 
         // response
 
@@ -3454,9 +3114,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse> reclaimPartnerCoupons =
-        genForreclaimPartnerCoupons();
+        genForReclaimPartnerCoupons();
 
-    private static HttpRequestDef<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse> genForreclaimPartnerCoupons() {
+    private static HttpRequestDef<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse> genForReclaimPartnerCoupons() {
         // basic
         HttpRequestDef.Builder<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ReclaimPartnerCouponsRequest.class, ReclaimPartnerCouponsResponse.class)
@@ -3469,9 +3129,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReclaimPartnerCouponsReq.class),
-            f -> f.withMarshaller(ReclaimPartnerCouponsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ReclaimPartnerCouponsRequest::getBody, ReclaimPartnerCouponsRequest::setBody));
 
         // response
 
@@ -3479,9 +3137,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse> reclaimSubEnterpriseAmount =
-        genForreclaimSubEnterpriseAmount();
+        genForReclaimSubEnterpriseAmount();
 
-    private static HttpRequestDef<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse> genForreclaimSubEnterpriseAmount() {
+    private static HttpRequestDef<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse> genForReclaimSubEnterpriseAmount() {
         // basic
         HttpRequestDef.Builder<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse> builder =
             HttpRequestDef
@@ -3497,9 +3155,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RetrieveEnterpriseMultiAccountReq.class),
-            f -> f.withMarshaller(ReclaimSubEnterpriseAmountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ReclaimSubEnterpriseAmountRequest::getBody,
+                ReclaimSubEnterpriseAmountRequest::setBody));
 
         // response
 
@@ -3507,9 +3164,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse> reclaimToPartnerAccount =
-        genForreclaimToPartnerAccount();
+        genForReclaimToPartnerAccount();
 
-    private static HttpRequestDef<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse> genForreclaimToPartnerAccount() {
+    private static HttpRequestDef<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse> genForReclaimToPartnerAccount() {
         // basic
         HttpRequestDef.Builder<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ReclaimToPartnerAccountRequest.class, ReclaimToPartnerAccountResponse.class)
@@ -3522,9 +3179,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReclaimToPartnerAccountBalancesReq.class),
-            f -> f.withMarshaller(ReclaimToPartnerAccountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ReclaimToPartnerAccountRequest::getBody, ReclaimToPartnerAccountRequest::setBody));
 
         // response
 
@@ -3532,9 +3187,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<RenewalResourcesRequest, RenewalResourcesResponse> renewalResources =
-        genForrenewalResources();
+        genForRenewalResources();
 
-    private static HttpRequestDef<RenewalResourcesRequest, RenewalResourcesResponse> genForrenewalResources() {
+    private static HttpRequestDef<RenewalResourcesRequest, RenewalResourcesResponse> genForRenewalResources() {
         // basic
         HttpRequestDef.Builder<RenewalResourcesRequest, RenewalResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RenewalResourcesRequest.class, RenewalResourcesResponse.class)
@@ -3547,9 +3202,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RenewalResourcesReq.class),
-            f -> f.withMarshaller(RenewalResourcesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RenewalResourcesRequest::getBody, RenewalResourcesRequest::setBody));
 
         // response
 
@@ -3557,9 +3210,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse> sendSmsVerificationCode =
-        genForsendSmsVerificationCode();
+        genForSendSmsVerificationCode();
 
-    private static HttpRequestDef<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse> genForsendSmsVerificationCode() {
+    private static HttpRequestDef<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse> genForSendSmsVerificationCode() {
         // basic
         HttpRequestDef.Builder<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SendSmsVerificationCodeRequest.class, SendSmsVerificationCodeResponse.class)
@@ -3572,9 +3225,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SendSmVerificationCodeReq.class),
-            f -> f.withMarshaller(SendSmsVerificationCodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendSmsVerificationCodeRequest::getBody, SendSmsVerificationCodeRequest::setBody));
 
         // response
 
@@ -3582,9 +3233,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse> sendVerificationMessageCode =
-        genForsendVerificationMessageCode();
+        genForSendVerificationMessageCode();
 
-    private static HttpRequestDef<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse> genForsendVerificationMessageCode() {
+    private static HttpRequestDef<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse> genForSendVerificationMessageCode() {
         // basic
         HttpRequestDef.Builder<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse> builder =
             HttpRequestDef
@@ -3600,9 +3251,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SendVerificationCodeV2Req.class),
-            f -> f.withMarshaller(SendVerificationMessageCodeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendVerificationMessageCodeRequest::getBody,
+                SendVerificationMessageCodeRequest::setBody));
 
         // response
 
@@ -3610,9 +3260,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> showCustomerAccountBalances =
-        genForshowCustomerAccountBalances();
+        genForShowCustomerAccountBalances();
 
-    private static HttpRequestDef<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> genForshowCustomerAccountBalances() {
+    private static HttpRequestDef<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> genForShowCustomerAccountBalances() {
         // basic
         HttpRequestDef.Builder<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> builder =
             HttpRequestDef
@@ -3631,9 +3281,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> showCustomerMonthlySum =
-        genForshowCustomerMonthlySum();
+        genForShowCustomerMonthlySum();
 
-    private static HttpRequestDef<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> genForshowCustomerMonthlySum() {
+    private static HttpRequestDef<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> genForShowCustomerMonthlySum() {
         // basic
         HttpRequestDef.Builder<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowCustomerMonthlySumRequest.class, ShowCustomerMonthlySumResponse.class)
@@ -3646,51 +3296,41 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getBillCycle, (req, v) -> {
-                req.setBillCycle(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getBillCycle,
+                ShowCustomerMonthlySumRequest::setBillCycle));
         builder.<String>withRequestField("service_type_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getServiceTypeCode, (req, v) -> {
-                req.setServiceTypeCode(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getServiceTypeCode,
+                ShowCustomerMonthlySumRequest::setServiceTypeCode));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getEnterpriseProjectId,
+                ShowCustomerMonthlySumRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getOffset, ShowCustomerMonthlySumRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getLimit, ShowCustomerMonthlySumRequest::setLimit));
         builder.<String>withRequestField("method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getMethod, (req, v) -> {
-                req.setMethod(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getMethod, ShowCustomerMonthlySumRequest::setMethod));
         builder.<String>withRequestField("sub_customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getSubCustomerId,
+                ShowCustomerMonthlySumRequest::setSubCustomerId));
 
         // response
 
@@ -3698,9 +3338,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> showCustomerOrderDetails =
-        genForshowCustomerOrderDetails();
+        genForShowCustomerOrderDetails();
 
-    private static HttpRequestDef<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> genForshowCustomerOrderDetails() {
+    private static HttpRequestDef<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> genForShowCustomerOrderDetails() {
         // basic
         HttpRequestDef.Builder<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> builder =
             HttpRequestDef
@@ -3714,37 +3354,32 @@ public class BssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getOrderId,
+                ShowCustomerOrderDetailsRequest::setOrderId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getLimit,
+                ShowCustomerOrderDetailsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getOffset,
+                ShowCustomerOrderDetailsRequest::setOffset));
         builder.<String>withRequestField("indirect_partner_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getIndirectPartnerId, (req, v) -> {
-                req.setIndirectPartnerId(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getIndirectPartnerId,
+                ShowCustomerOrderDetailsRequest::setIndirectPartnerId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getXLanguage,
+                ShowCustomerOrderDetailsRequest::setXLanguage));
 
         // response
 
@@ -3752,9 +3387,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> showMultiAccountTransferAmount =
-        genForshowMultiAccountTransferAmount();
+        genForShowMultiAccountTransferAmount();
 
-    private static HttpRequestDef<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> genForshowMultiAccountTransferAmount() {
+    private static HttpRequestDef<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> genForShowMultiAccountTransferAmount() {
         // basic
         HttpRequestDef.Builder<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> builder =
             HttpRequestDef
@@ -3770,23 +3405,20 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMultiAccountTransferAmountRequest::getBalanceType, (req, v) -> {
-                req.setBalanceType(v);
-            }));
+            f -> f.withMarshaller(ShowMultiAccountTransferAmountRequest::getBalanceType,
+                ShowMultiAccountTransferAmountRequest::setBalanceType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMultiAccountTransferAmountRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowMultiAccountTransferAmountRequest::getOffset,
+                ShowMultiAccountTransferAmountRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMultiAccountTransferAmountRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowMultiAccountTransferAmountRequest::getLimit,
+                ShowMultiAccountTransferAmountRequest::setLimit));
 
         // response
 
@@ -3794,9 +3426,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse> showRealnameAuthenticationReviewResult =
-        genForshowRealnameAuthenticationReviewResult();
+        genForShowRealnameAuthenticationReviewResult();
 
-    private static HttpRequestDef<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse> genForshowRealnameAuthenticationReviewResult() {
+    private static HttpRequestDef<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse> genForShowRealnameAuthenticationReviewResult() {
         // basic
         HttpRequestDef.Builder<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse> builder =
             HttpRequestDef
@@ -3812,9 +3444,8 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRealnameAuthenticationReviewResultRequest::getCustomerId, (req, v) -> {
-                req.setCustomerId(v);
-            }));
+            f -> f.withMarshaller(ShowRealnameAuthenticationReviewResultRequest::getCustomerId,
+                ShowRealnameAuthenticationReviewResultRequest::setCustomerId));
 
         // response
 
@@ -3822,9 +3453,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse> showRefundOrderDetails =
-        genForshowRefundOrderDetails();
+        genForShowRefundOrderDetails();
 
-    private static HttpRequestDef<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse> genForshowRefundOrderDetails() {
+    private static HttpRequestDef<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse> genForShowRefundOrderDetails() {
         // basic
         HttpRequestDef.Builder<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowRefundOrderDetailsRequest.class, ShowRefundOrderDetailsResponse.class)
@@ -3837,9 +3468,8 @@ public class BssMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRefundOrderDetailsRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(ShowRefundOrderDetailsRequest::getOrderId,
+                ShowRefundOrderDetailsRequest::setOrderId));
 
         // response
 
@@ -3847,9 +3477,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse> updateCouponQuotas =
-        genForupdateCouponQuotas();
+        genForUpdateCouponQuotas();
 
-    private static HttpRequestDef<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse> genForupdateCouponQuotas() {
+    private static HttpRequestDef<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse> genForUpdateCouponQuotas() {
         // basic
         HttpRequestDef.Builder<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateCouponQuotasRequest.class, UpdateCouponQuotasResponse.class)
@@ -3862,9 +3492,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AdjustCouponQuotasReq.class),
-            f -> f.withMarshaller(UpdateCouponQuotasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCouponQuotasRequest::getBody, UpdateCouponQuotasRequest::setBody));
 
         // response
 
@@ -3872,9 +3500,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse> updateCustomerAccountAmount =
-        genForupdateCustomerAccountAmount();
+        genForUpdateCustomerAccountAmount();
 
-    private static HttpRequestDef<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse> genForupdateCustomerAccountAmount() {
+    private static HttpRequestDef<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse> genForUpdateCustomerAccountAmount() {
         // basic
         HttpRequestDef.Builder<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse> builder =
             HttpRequestDef
@@ -3890,9 +3518,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AdjustAccountReq.class),
-            f -> f.withMarshaller(UpdateCustomerAccountAmountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCustomerAccountAmountRequest::getBody,
+                UpdateCustomerAccountAmountRequest::setBody));
 
         // response
 
@@ -3900,9 +3527,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse> updateIndirectPartnerAccount =
-        genForupdateIndirectPartnerAccount();
+        genForUpdateIndirectPartnerAccount();
 
-    private static HttpRequestDef<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse> genForupdateIndirectPartnerAccount() {
+    private static HttpRequestDef<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse> genForUpdateIndirectPartnerAccount() {
         // basic
         HttpRequestDef.Builder<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse> builder =
             HttpRequestDef
@@ -3918,9 +3545,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AdjustToIndirectPartnerReq.class),
-            f -> f.withMarshaller(UpdateIndirectPartnerAccountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateIndirectPartnerAccountRequest::getBody,
+                UpdateIndirectPartnerAccountRequest::setBody));
 
         // response
 
@@ -3928,9 +3554,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> updatePeriodToOnDemand =
-        genForupdatePeriodToOnDemand();
+        genForUpdatePeriodToOnDemand();
 
-    private static HttpRequestDef<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> genForupdatePeriodToOnDemand() {
+    private static HttpRequestDef<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> genForUpdatePeriodToOnDemand() {
         // basic
         HttpRequestDef.Builder<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdatePeriodToOnDemandRequest.class, UpdatePeriodToOnDemandResponse.class)
@@ -3943,9 +3569,7 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PeriodToOnDemandReq.class),
-            f -> f.withMarshaller(UpdatePeriodToOnDemandRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePeriodToOnDemandRequest::getBody, UpdatePeriodToOnDemandRequest::setBody));
 
         // response
 
@@ -3953,9 +3577,9 @@ public class BssMeta {
     }
 
     public static final HttpRequestDef<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse> updateSubEnterpriseAmount =
-        genForupdateSubEnterpriseAmount();
+        genForUpdateSubEnterpriseAmount();
 
-    private static HttpRequestDef<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse> genForupdateSubEnterpriseAmount() {
+    private static HttpRequestDef<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse> genForUpdateSubEnterpriseAmount() {
         // basic
         HttpRequestDef.Builder<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse> builder =
             HttpRequestDef
@@ -3971,9 +3595,8 @@ public class BssMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TransferEnterpriseMultiAccountReq.class),
-            f -> f.withMarshaller(UpdateSubEnterpriseAmountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSubEnterpriseAmountRequest::getBody,
+                UpdateSubEnterpriseAmountRequest::setBody));
 
         // response
 

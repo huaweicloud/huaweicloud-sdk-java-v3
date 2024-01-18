@@ -123,9 +123,9 @@ import java.util.List;
 public class CptsMeta {
 
     public static final HttpRequestDef<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse> batchUpdateTaskStatus =
-        genForbatchUpdateTaskStatus();
+        genForBatchUpdateTaskStatus();
 
-    private static HttpRequestDef<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse> genForbatchUpdateTaskStatus() {
+    private static HttpRequestDef<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse> genForBatchUpdateTaskStatus() {
         // basic
         HttpRequestDef.Builder<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchUpdateTaskStatusRequest.class, BatchUpdateTaskStatusResponse.class)
@@ -138,25 +138,22 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchUpdateTaskStatusRequest::getTestSuitId, (req, v) -> {
-                req.setTestSuitId(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateTaskStatusRequest::getTestSuitId,
+                BatchUpdateTaskStatusRequest::setTestSuitId));
         builder.<BatchUpdateTaskStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateTaskStatusRequestBody.class),
-            f -> f.withMarshaller(BatchUpdateTaskStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateTaskStatusRequest::getBody, BatchUpdateTaskStatusRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateCaseRequest, CreateCaseResponse> createCase = genForcreateCase();
+    public static final HttpRequestDef<CreateCaseRequest, CreateCaseResponse> createCase = genForCreateCase();
 
-    private static HttpRequestDef<CreateCaseRequest, CreateCaseResponse> genForcreateCase() {
+    private static HttpRequestDef<CreateCaseRequest, CreateCaseResponse> genForCreateCase() {
         // basic
         HttpRequestDef.Builder<CreateCaseRequest, CreateCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCaseRequest.class, CreateCaseResponse.class)
@@ -169,9 +166,7 @@ public class CptsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCaseRequestBody.class),
-            f -> f.withMarshaller(CreateCaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCaseRequest::getBody, CreateCaseRequest::setBody));
 
         // response
 
@@ -179,9 +174,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<CreateDirectoryRequest, CreateDirectoryResponse> createDirectory =
-        genForcreateDirectory();
+        genForCreateDirectory();
 
-    private static HttpRequestDef<CreateDirectoryRequest, CreateDirectoryResponse> genForcreateDirectory() {
+    private static HttpRequestDef<CreateDirectoryRequest, CreateDirectoryResponse> genForCreateDirectory() {
         // basic
         HttpRequestDef.Builder<CreateDirectoryRequest, CreateDirectoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDirectoryRequest.class, CreateDirectoryResponse.class)
@@ -194,16 +189,12 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateDirectoryRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(CreateDirectoryRequest::getTestSuiteId, CreateDirectoryRequest::setTestSuiteId));
         builder.<CreateDirectoryRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDirectoryRequestBody.class),
-            f -> f.withMarshaller(CreateDirectoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDirectoryRequest::getBody, CreateDirectoryRequest::setBody));
 
         // response
 
@@ -211,9 +202,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<CreateNewCaseRequest, CreateNewCaseResponse> createNewCase =
-        genForcreateNewCase();
+        genForCreateNewCase();
 
-    private static HttpRequestDef<CreateNewCaseRequest, CreateNewCaseResponse> genForcreateNewCase() {
+    private static HttpRequestDef<CreateNewCaseRequest, CreateNewCaseResponse> genForCreateNewCase() {
         // basic
         HttpRequestDef.Builder<CreateNewCaseRequest, CreateNewCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNewCaseRequest.class, CreateNewCaseResponse.class)
@@ -226,9 +217,7 @@ public class CptsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CaseInfoDetail.class),
-            f -> f.withMarshaller(CreateNewCaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNewCaseRequest::getBody, CreateNewCaseRequest::setBody));
 
         // response
 
@@ -236,9 +225,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<CreateNewTaskRequest, CreateNewTaskResponse> createNewTask =
-        genForcreateNewTask();
+        genForCreateNewTask();
 
-    private static HttpRequestDef<CreateNewTaskRequest, CreateNewTaskResponse> genForcreateNewTask() {
+    private static HttpRequestDef<CreateNewTaskRequest, CreateNewTaskResponse> genForCreateNewTask() {
         // basic
         HttpRequestDef.Builder<CreateNewTaskRequest, CreateNewTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNewTaskRequest.class, CreateNewTaskResponse.class)
@@ -251,18 +240,16 @@ public class CptsMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(NewTaskInfo.class),
-            f -> f.withMarshaller(CreateNewTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNewTaskRequest::getBody, CreateNewTaskRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForcreateTask();
+    public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForCreateTask();
 
-    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForcreateTask() {
+    private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForCreateTask() {
         // basic
         HttpRequestDef.Builder<CreateTaskRequest, CreateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskRequest.class, CreateTaskResponse.class)
@@ -275,18 +262,16 @@ public class CptsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTaskRequestBody.class),
-            f -> f.withMarshaller(CreateTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTaskRequest::getBody, CreateTaskRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTempRequest, CreateTempResponse> createTemp = genForcreateTemp();
+    public static final HttpRequestDef<CreateTempRequest, CreateTempResponse> createTemp = genForCreateTemp();
 
-    private static HttpRequestDef<CreateTempRequest, CreateTempResponse> genForcreateTemp() {
+    private static HttpRequestDef<CreateTempRequest, CreateTempResponse> genForCreateTemp() {
         // basic
         HttpRequestDef.Builder<CreateTempRequest, CreateTempResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTempRequest.class, CreateTempResponse.class)
@@ -299,9 +284,7 @@ public class CptsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTempRequestBody.class),
-            f -> f.withMarshaller(CreateTempRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTempRequest::getBody, CreateTempRequest::setBody));
 
         // response
 
@@ -309,9 +292,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<CreateVariableRequest, CreateVariableResponse> createVariable =
-        genForcreateVariable();
+        genForCreateVariable();
 
-    private static HttpRequestDef<CreateVariableRequest, CreateVariableResponse> genForcreateVariable() {
+    private static HttpRequestDef<CreateVariableRequest, CreateVariableResponse> genForCreateVariable() {
         // basic
         HttpRequestDef.Builder<CreateVariableRequest, CreateVariableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVariableRequest.class, CreateVariableResponse.class)
@@ -324,25 +307,22 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateVariableRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(CreateVariableRequest::getTestSuiteId, CreateVariableRequest::setTestSuiteId));
         builder.<List<CreateVariableRequestBody>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateVariableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(CreateVariableRequestBody.class));
+            f -> f.withMarshaller(CreateVariableRequest::getBody, CreateVariableRequest::setBody)
+                .withInnerContainerType(CreateVariableRequestBody.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DebugCaseRequest, DebugCaseResponse> debugCase = genFordebugCase();
+    public static final HttpRequestDef<DebugCaseRequest, DebugCaseResponse> debugCase = genForDebugCase();
 
-    private static HttpRequestDef<DebugCaseRequest, DebugCaseResponse> genFordebugCase() {
+    private static HttpRequestDef<DebugCaseRequest, DebugCaseResponse> genForDebugCase() {
         // basic
         HttpRequestDef.Builder<DebugCaseRequest, DebugCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DebugCaseRequest.class, DebugCaseResponse.class)
@@ -355,39 +335,31 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DebugCaseRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(DebugCaseRequest::getTestSuiteId, DebugCaseRequest::setTestSuiteId));
         builder.<Integer>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DebugCaseRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DebugCaseRequest::getTaskId, DebugCaseRequest::setTaskId));
         builder.<Integer>withRequestField("case_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DebugCaseRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(DebugCaseRequest::getCaseId, DebugCaseRequest::setCaseId));
         builder.<DebugCaseRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DebugCaseRequestBody.class),
-            f -> f.withMarshaller(DebugCaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DebugCaseRequest::getBody, DebugCaseRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteCaseRequest, DeleteCaseResponse> deleteCase = genFordeleteCase();
+    public static final HttpRequestDef<DeleteCaseRequest, DeleteCaseResponse> deleteCase = genForDeleteCase();
 
-    private static HttpRequestDef<DeleteCaseRequest, DeleteCaseResponse> genFordeleteCase() {
+    private static HttpRequestDef<DeleteCaseRequest, DeleteCaseResponse> genForDeleteCase() {
         // basic
         HttpRequestDef.Builder<DeleteCaseRequest, DeleteCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCaseRequest.class, DeleteCaseResponse.class)
@@ -400,9 +372,7 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteCaseRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(DeleteCaseRequest::getCaseId, DeleteCaseRequest::setCaseId));
 
         // response
 
@@ -410,9 +380,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<DeleteDirectoryRequest, DeleteDirectoryResponse> deleteDirectory =
-        genFordeleteDirectory();
+        genForDeleteDirectory();
 
-    private static HttpRequestDef<DeleteDirectoryRequest, DeleteDirectoryResponse> genFordeleteDirectory() {
+    private static HttpRequestDef<DeleteDirectoryRequest, DeleteDirectoryResponse> genForDeleteDirectory() {
         // basic
         HttpRequestDef.Builder<DeleteDirectoryRequest, DeleteDirectoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDirectoryRequest.class, DeleteDirectoryResponse.class)
@@ -425,16 +395,12 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDirectoryRequest::getDirectoryId, (req, v) -> {
-                req.setDirectoryId(v);
-            }));
+            f -> f.withMarshaller(DeleteDirectoryRequest::getDirectoryId, DeleteDirectoryRequest::setDirectoryId));
         builder.<Integer>withRequestField("test_suite_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDirectoryRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(DeleteDirectoryRequest::getTestSuiteId, DeleteDirectoryRequest::setTestSuiteId));
 
         // response
 
@@ -442,9 +408,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<DeleteNewCaseRequest, DeleteNewCaseResponse> deleteNewCase =
-        genFordeleteNewCase();
+        genForDeleteNewCase();
 
-    private static HttpRequestDef<DeleteNewCaseRequest, DeleteNewCaseResponse> genFordeleteNewCase() {
+    private static HttpRequestDef<DeleteNewCaseRequest, DeleteNewCaseResponse> genForDeleteNewCase() {
         // basic
         HttpRequestDef.Builder<DeleteNewCaseRequest, DeleteNewCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNewCaseRequest.class, DeleteNewCaseResponse.class)
@@ -457,9 +423,7 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteNewCaseRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(DeleteNewCaseRequest::getCaseId, DeleteNewCaseRequest::setCaseId));
 
         // response
 
@@ -467,9 +431,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<DeleteNewTaskRequest, DeleteNewTaskResponse> deleteNewTask =
-        genFordeleteNewTask();
+        genForDeleteNewTask();
 
-    private static HttpRequestDef<DeleteNewTaskRequest, DeleteNewTaskResponse> genFordeleteNewTask() {
+    private static HttpRequestDef<DeleteNewTaskRequest, DeleteNewTaskResponse> genForDeleteNewTask() {
         // basic
         HttpRequestDef.Builder<DeleteNewTaskRequest, DeleteNewTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNewTaskRequest.class, DeleteNewTaskResponse.class)
@@ -482,18 +446,16 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteNewTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteNewTaskRequest::getTaskId, DeleteNewTaskRequest::setTaskId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
+    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genForDeleteTask();
 
-    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
+    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genForDeleteTask() {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
@@ -506,18 +468,16 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, DeleteTaskRequest::setTaskId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTempRequest, DeleteTempResponse> deleteTemp = genFordeleteTemp();
+    public static final HttpRequestDef<DeleteTempRequest, DeleteTempResponse> deleteTemp = genForDeleteTemp();
 
-    private static HttpRequestDef<DeleteTempRequest, DeleteTempResponse> genFordeleteTemp() {
+    private static HttpRequestDef<DeleteTempRequest, DeleteTempResponse> genForDeleteTemp() {
         // basic
         HttpRequestDef.Builder<DeleteTempRequest, DeleteTempResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTempRequest.class, DeleteTempResponse.class)
@@ -530,9 +490,7 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteTempRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeleteTempRequest::getTemplateId, DeleteTempRequest::setTemplateId));
 
         // response
 
@@ -540,9 +498,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<DeleteVariableRequest, DeleteVariableResponse> deleteVariable =
-        genFordeleteVariable();
+        genForDeleteVariable();
 
-    private static HttpRequestDef<DeleteVariableRequest, DeleteVariableResponse> genFordeleteVariable() {
+    private static HttpRequestDef<DeleteVariableRequest, DeleteVariableResponse> genForDeleteVariable() {
         // basic
         HttpRequestDef.Builder<DeleteVariableRequest, DeleteVariableResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVariableRequest.class, DeleteVariableResponse.class)
@@ -555,16 +513,12 @@ public class CptsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteVariableRequest::getVariableId, (req, v) -> {
-                req.setVariableId(v);
-            }));
+            f -> f.withMarshaller(DeleteVariableRequest::getVariableId, DeleteVariableRequest::setVariableId));
         builder.<Integer>withRequestField("test_suite_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteVariableRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(DeleteVariableRequest::getTestSuiteId, DeleteVariableRequest::setTestSuiteId));
 
         // response
 
@@ -572,9 +526,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<ListProjectTestCaseRequest, ListProjectTestCaseResponse> listProjectTestCase =
-        genForlistProjectTestCase();
+        genForListProjectTestCase();
 
-    private static HttpRequestDef<ListProjectTestCaseRequest, ListProjectTestCaseResponse> genForlistProjectTestCase() {
+    private static HttpRequestDef<ListProjectTestCaseRequest, ListProjectTestCaseResponse> genForListProjectTestCase() {
         // basic
         HttpRequestDef.Builder<ListProjectTestCaseRequest, ListProjectTestCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTestCaseRequest.class, ListProjectTestCaseResponse.class)
@@ -587,9 +541,8 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectTestCaseRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(ListProjectTestCaseRequest::getTestSuiteId,
+                ListProjectTestCaseRequest::setTestSuiteId));
 
         // response
 
@@ -597,9 +550,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<ListTaskCasesRequest, ListTaskCasesResponse> listTaskCases =
-        genForlistTaskCases();
+        genForListTaskCases();
 
-    private static HttpRequestDef<ListTaskCasesRequest, ListTaskCasesResponse> genForlistTaskCases() {
+    private static HttpRequestDef<ListTaskCasesRequest, ListTaskCasesResponse> genForListTaskCases() {
         // basic
         HttpRequestDef.Builder<ListTaskCasesRequest, ListTaskCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTaskCasesRequest.class, ListTaskCasesResponse.class)
@@ -612,16 +565,12 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskCasesRequest::getTestSuitId, (req, v) -> {
-                req.setTestSuitId(v);
-            }));
+            f -> f.withMarshaller(ListTaskCasesRequest::getTestSuitId, ListTaskCasesRequest::setTestSuitId));
         builder.<Integer>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTaskCasesRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListTaskCasesRequest::getTaskId, ListTaskCasesRequest::setTaskId));
 
         // response
 
@@ -629,9 +578,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<ListVariablesRequest, ListVariablesResponse> listVariables =
-        genForlistVariables();
+        genForListVariables();
 
-    private static HttpRequestDef<ListVariablesRequest, ListVariablesResponse> genForlistVariables() {
+    private static HttpRequestDef<ListVariablesRequest, ListVariablesResponse> genForListVariables() {
         // basic
         HttpRequestDef.Builder<ListVariablesRequest, ListVariablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVariablesRequest.class, ListVariablesResponse.class)
@@ -644,16 +593,12 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVariablesRequest::getVariableType, (req, v) -> {
-                req.setVariableType(v);
-            }));
+            f -> f.withMarshaller(ListVariablesRequest::getVariableType, ListVariablesRequest::setVariableType));
         builder.<Integer>withRequestField("test_suite_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVariablesRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(ListVariablesRequest::getTestSuiteId, ListVariablesRequest::setTestSuiteId));
 
         // response
 
@@ -661,9 +606,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<ShowAgentConfigRequest, ShowAgentConfigResponse> showAgentConfig =
-        genForshowAgentConfig();
+        genForShowAgentConfig();
 
-    private static HttpRequestDef<ShowAgentConfigRequest, ShowAgentConfigResponse> genForshowAgentConfig() {
+    private static HttpRequestDef<ShowAgentConfigRequest, ShowAgentConfigResponse> genForShowAgentConfig() {
         // basic
         HttpRequestDef.Builder<ShowAgentConfigRequest, ShowAgentConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowAgentConfigRequest.class, ShowAgentConfigResponse.class)
@@ -676,18 +621,16 @@ public class CptsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowAgentConfigRequestBody.class),
-            f -> f.withMarshaller(ShowAgentConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowAgentConfigRequest::getBody, ShowAgentConfigRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCaseRequest, ShowCaseResponse> showCase = genForshowCase();
+    public static final HttpRequestDef<ShowCaseRequest, ShowCaseResponse> showCase = genForShowCase();
 
-    private static HttpRequestDef<ShowCaseRequest, ShowCaseResponse> genForshowCase() {
+    private static HttpRequestDef<ShowCaseRequest, ShowCaseResponse> genForShowCase() {
         // basic
         HttpRequestDef.Builder<ShowCaseRequest, ShowCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCaseRequest.class, ShowCaseResponse.class)
@@ -700,9 +643,7 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCaseRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(ShowCaseRequest::getCaseId, ShowCaseRequest::setCaseId));
 
         // response
 
@@ -710,9 +651,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<ShowHistoryRunInfoRequest, ShowHistoryRunInfoResponse> showHistoryRunInfo =
-        genForshowHistoryRunInfo();
+        genForShowHistoryRunInfo();
 
-    private static HttpRequestDef<ShowHistoryRunInfoRequest, ShowHistoryRunInfoResponse> genForshowHistoryRunInfo() {
+    private static HttpRequestDef<ShowHistoryRunInfoRequest, ShowHistoryRunInfoResponse> genForShowHistoryRunInfo() {
         // basic
         HttpRequestDef.Builder<ShowHistoryRunInfoRequest, ShowHistoryRunInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHistoryRunInfoRequest.class, ShowHistoryRunInfoResponse.class)
@@ -725,9 +666,7 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowHistoryRunInfoRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowHistoryRunInfoRequest::getTaskId, ShowHistoryRunInfoRequest::setTaskId));
 
         // response
 
@@ -735,9 +674,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse> showMergeCaseDetail =
-        genForshowMergeCaseDetail();
+        genForShowMergeCaseDetail();
 
-    private static HttpRequestDef<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse> genForshowMergeCaseDetail() {
+    private static HttpRequestDef<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse> genForShowMergeCaseDetail() {
         // basic
         HttpRequestDef.Builder<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMergeCaseDetailRequest.class, ShowMergeCaseDetailResponse.class)
@@ -750,16 +689,12 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMergeCaseDetailRequest::getTaskRunId, (req, v) -> {
-                req.setTaskRunId(v);
-            }));
+            f -> f.withMarshaller(ShowMergeCaseDetailRequest::getTaskRunId, ShowMergeCaseDetailRequest::setTaskRunId));
         builder.<Integer>withRequestField("case_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMergeCaseDetailRequest::getCaseRunId, (req, v) -> {
-                req.setCaseRunId(v);
-            }));
+            f -> f.withMarshaller(ShowMergeCaseDetailRequest::getCaseRunId, ShowMergeCaseDetailRequest::setCaseRunId));
 
         // response
 
@@ -767,9 +702,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse> showMergeReportLogsOutline =
-        genForshowMergeReportLogsOutline();
+        genForShowMergeReportLogsOutline();
 
-    private static HttpRequestDef<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse> genForshowMergeReportLogsOutline() {
+    private static HttpRequestDef<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse> genForShowMergeReportLogsOutline() {
         // basic
         HttpRequestDef.Builder<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse> builder =
             HttpRequestDef
@@ -785,9 +720,8 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMergeReportLogsOutlineRequest::getTaskRunId, (req, v) -> {
-                req.setTaskRunId(v);
-            }));
+            f -> f.withMarshaller(ShowMergeReportLogsOutlineRequest::getTaskRunId,
+                ShowMergeReportLogsOutlineRequest::setTaskRunId));
 
         // response
 
@@ -795,9 +729,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse> showMergeTaskCase =
-        genForshowMergeTaskCase();
+        genForShowMergeTaskCase();
 
-    private static HttpRequestDef<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse> genForshowMergeTaskCase() {
+    private static HttpRequestDef<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse> genForShowMergeTaskCase() {
         // basic
         HttpRequestDef.Builder<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMergeTaskCaseRequest.class, ShowMergeTaskCaseResponse.class)
@@ -810,18 +744,16 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowMergeTaskCaseRequest::getTaskRunId, (req, v) -> {
-                req.setTaskRunId(v);
-            }));
+            f -> f.withMarshaller(ShowMergeTaskCaseRequest::getTaskRunId, ShowMergeTaskCaseRequest::setTaskRunId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowReportRequest, ShowReportResponse> showReport = genForshowReport();
+    public static final HttpRequestDef<ShowReportRequest, ShowReportResponse> showReport = genForShowReport();
 
-    private static HttpRequestDef<ShowReportRequest, ShowReportResponse> genForshowReport() {
+    private static HttpRequestDef<ShowReportRequest, ShowReportResponse> genForShowReport() {
         // basic
         HttpRequestDef.Builder<ShowReportRequest, ShowReportResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowReportRequest.class, ShowReportResponse.class)
@@ -834,32 +766,26 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowReportRequest::getTaskRunId, (req, v) -> {
-                req.setTaskRunId(v);
-            }));
+            f -> f.withMarshaller(ShowReportRequest::getTaskRunId, ShowReportRequest::setTaskRunId));
         builder.<Integer>withRequestField("case_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowReportRequest::getCaseRunId, (req, v) -> {
-                req.setCaseRunId(v);
-            }));
+            f -> f.withMarshaller(ShowReportRequest::getCaseRunId, ShowReportRequest::setCaseRunId));
         builder.<Integer>withRequestField("brokens_limit_count",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowReportRequest::getBrokensLimitCount, (req, v) -> {
-                req.setBrokensLimitCount(v);
-            }));
+            f -> f.withMarshaller(ShowReportRequest::getBrokensLimitCount, ShowReportRequest::setBrokensLimitCount));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForshowTask();
+    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForShowTask();
 
-    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForshowTask() {
+    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForShowTask() {
         // basic
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
@@ -872,9 +798,7 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getTaskId, ShowTaskRequest::setTaskId));
 
         // response
 
@@ -882,9 +806,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse> showTaskCaseAwChart =
-        genForshowTaskCaseAwChart();
+        genForShowTaskCaseAwChart();
 
-    private static HttpRequestDef<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse> genForshowTaskCaseAwChart() {
+    private static HttpRequestDef<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse> genForShowTaskCaseAwChart() {
         // basic
         HttpRequestDef.Builder<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowTaskCaseAwChartRequest.class, ShowTaskCaseAwChartResponse.class)
@@ -898,32 +822,26 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTaskCaseAwChartRequest::getTaskRunId, (req, v) -> {
-                req.setTaskRunId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskCaseAwChartRequest::getTaskRunId, ShowTaskCaseAwChartRequest::setTaskRunId));
         builder.<Integer>withRequestField("case_run_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTaskCaseAwChartRequest::getCaseRunId, (req, v) -> {
-                req.setCaseRunId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskCaseAwChartRequest::getCaseRunId, ShowTaskCaseAwChartRequest::setCaseRunId));
         builder.<String>withRequestField("detail_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskCaseAwChartRequest::getDetailId, (req, v) -> {
-                req.setDetailId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskCaseAwChartRequest::getDetailId, ShowTaskCaseAwChartRequest::setDetailId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskSetRequest, ShowTaskSetResponse> showTaskSet = genForshowTaskSet();
+    public static final HttpRequestDef<ShowTaskSetRequest, ShowTaskSetResponse> showTaskSet = genForShowTaskSet();
 
-    private static HttpRequestDef<ShowTaskSetRequest, ShowTaskSetResponse> genForshowTaskSet() {
+    private static HttpRequestDef<ShowTaskSetRequest, ShowTaskSetResponse> genForShowTaskSet() {
         // basic
         HttpRequestDef.Builder<ShowTaskSetRequest, ShowTaskSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskSetRequest.class, ShowTaskSetResponse.class)
@@ -936,32 +854,26 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTaskSetRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskSetRequest::getTestSuiteId, ShowTaskSetRequest::setTestSuiteId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTaskSetRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowTaskSetRequest::getOffset, ShowTaskSetRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTaskSetRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowTaskSetRequest::getLimit, ShowTaskSetRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTempRequest, ShowTempResponse> showTemp = genForshowTemp();
+    public static final HttpRequestDef<ShowTempRequest, ShowTempResponse> showTemp = genForShowTemp();
 
-    private static HttpRequestDef<ShowTempRequest, ShowTempResponse> genForshowTemp() {
+    private static HttpRequestDef<ShowTempRequest, ShowTempResponse> genForShowTemp() {
         // basic
         HttpRequestDef.Builder<ShowTempRequest, ShowTempResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTempRequest.class, ShowTempResponse.class)
@@ -974,18 +886,16 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTempRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowTempRequest::getTemplateId, ShowTempRequest::setTemplateId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTempSetRequest, ShowTempSetResponse> showTempSet = genForshowTempSet();
+    public static final HttpRequestDef<ShowTempSetRequest, ShowTempSetResponse> showTempSet = genForShowTempSet();
 
-    private static HttpRequestDef<ShowTempSetRequest, ShowTempSetResponse> genForshowTempSet() {
+    private static HttpRequestDef<ShowTempSetRequest, ShowTempSetResponse> genForShowTempSet() {
         // basic
         HttpRequestDef.Builder<ShowTempSetRequest, ShowTempSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTempSetRequest.class, ShowTempSetResponse.class)
@@ -998,23 +908,17 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTempSetRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(ShowTempSetRequest::getTestSuiteId, ShowTempSetRequest::setTestSuiteId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTempSetRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowTempSetRequest::getOffset, ShowTempSetRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTempSetRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowTempSetRequest::getLimit, ShowTempSetRequest::setLimit));
 
         // response
 
@@ -1022,9 +926,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse> updateAgentHealthStatus =
-        genForupdateAgentHealthStatus();
+        genForUpdateAgentHealthStatus();
 
-    private static HttpRequestDef<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse> genForupdateAgentHealthStatus() {
+    private static HttpRequestDef<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse> genForUpdateAgentHealthStatus() {
         // basic
         HttpRequestDef.Builder<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateAgentHealthStatusRequest.class, UpdateAgentHealthStatusResponse.class)
@@ -1037,25 +941,22 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateAgentHealthStatusRequest::getAgentId, (req, v) -> {
-                req.setAgentId(v);
-            }));
+            f -> f.withMarshaller(UpdateAgentHealthStatusRequest::getAgentId,
+                UpdateAgentHealthStatusRequest::setAgentId));
         builder.<UpdateAgentHealthStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAgentHealthStatusRequestBody.class),
-            f -> f.withMarshaller(UpdateAgentHealthStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAgentHealthStatusRequest::getBody, UpdateAgentHealthStatusRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateCaseRequest, UpdateCaseResponse> updateCase = genForupdateCase();
+    public static final HttpRequestDef<UpdateCaseRequest, UpdateCaseResponse> updateCase = genForUpdateCase();
 
-    private static HttpRequestDef<UpdateCaseRequest, UpdateCaseResponse> genForupdateCase() {
+    private static HttpRequestDef<UpdateCaseRequest, UpdateCaseResponse> genForUpdateCase() {
         // basic
         HttpRequestDef.Builder<UpdateCaseRequest, UpdateCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCaseRequest.class, UpdateCaseResponse.class)
@@ -1068,23 +969,17 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateCaseRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(UpdateCaseRequest::getCaseId, UpdateCaseRequest::setCaseId));
         builder.<String>withRequestField("target",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCaseRequest::getTarget, (req, v) -> {
-                req.setTarget(v);
-            }));
+            f -> f.withMarshaller(UpdateCaseRequest::getTarget, UpdateCaseRequest::setTarget));
         builder.<CaseInfoDetail>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CaseInfoDetail.class),
-            f -> f.withMarshaller(UpdateCaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCaseRequest::getBody, UpdateCaseRequest::setBody));
 
         // response
 
@@ -1092,9 +987,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<UpdateDirectoryRequest, UpdateDirectoryResponse> updateDirectory =
-        genForupdateDirectory();
+        genForUpdateDirectory();
 
-    private static HttpRequestDef<UpdateDirectoryRequest, UpdateDirectoryResponse> genForupdateDirectory() {
+    private static HttpRequestDef<UpdateDirectoryRequest, UpdateDirectoryResponse> genForUpdateDirectory() {
         // basic
         HttpRequestDef.Builder<UpdateDirectoryRequest, UpdateDirectoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDirectoryRequest.class, UpdateDirectoryResponse.class)
@@ -1107,23 +1002,17 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateDirectoryRequest::getDirectoryId, (req, v) -> {
-                req.setDirectoryId(v);
-            }));
+            f -> f.withMarshaller(UpdateDirectoryRequest::getDirectoryId, UpdateDirectoryRequest::setDirectoryId));
         builder.<Integer>withRequestField("test_suite_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateDirectoryRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(UpdateDirectoryRequest::getTestSuiteId, UpdateDirectoryRequest::setTestSuiteId));
         builder.<UpdateDirectoryRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDirectoryRequestBody.class),
-            f -> f.withMarshaller(UpdateDirectoryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDirectoryRequest::getBody, UpdateDirectoryRequest::setBody));
 
         // response
 
@@ -1131,9 +1020,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<UpdateNewCaseRequest, UpdateNewCaseResponse> updateNewCase =
-        genForupdateNewCase();
+        genForUpdateNewCase();
 
-    private static HttpRequestDef<UpdateNewCaseRequest, UpdateNewCaseResponse> genForupdateNewCase() {
+    private static HttpRequestDef<UpdateNewCaseRequest, UpdateNewCaseResponse> genForUpdateNewCase() {
         // basic
         HttpRequestDef.Builder<UpdateNewCaseRequest, UpdateNewCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNewCaseRequest.class, UpdateNewCaseResponse.class)
@@ -1146,25 +1035,21 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateNewCaseRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(UpdateNewCaseRequest::getCaseId, UpdateNewCaseRequest::setCaseId));
         builder.<CaseInfoDetail>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CaseInfoDetail.class),
-            f -> f.withMarshaller(UpdateNewCaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNewCaseRequest::getBody, UpdateNewCaseRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> updateTask = genForupdateTask();
+    public static final HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> updateTask = genForUpdateTask();
 
-    private static HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> genForupdateTask() {
+    private static HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> genForUpdateTask() {
         // basic
         HttpRequestDef.Builder<UpdateTaskRequest, UpdateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTaskRequest.class, UpdateTaskResponse.class)
@@ -1177,16 +1062,12 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskRequest::getTaskId, UpdateTaskRequest::setTaskId));
         builder.<UpdateTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTaskRequestBody.class),
-            f -> f.withMarshaller(UpdateTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskRequest::getBody, UpdateTaskRequest::setBody));
 
         // response
 
@@ -1194,9 +1075,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse> updateTaskRelatedTestCase =
-        genForupdateTaskRelatedTestCase();
+        genForUpdateTaskRelatedTestCase();
 
-    private static HttpRequestDef<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse> genForupdateTaskRelatedTestCase() {
+    private static HttpRequestDef<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse> genForUpdateTaskRelatedTestCase() {
         // basic
         HttpRequestDef.Builder<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse> builder =
             HttpRequestDef
@@ -1212,16 +1093,14 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateTaskRelatedTestCaseRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskRelatedTestCaseRequest::getTaskId,
+                UpdateTaskRelatedTestCaseRequest::setTaskId));
         builder.<UpdateNewTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNewTaskRequestBody.class),
-            f -> f.withMarshaller(UpdateTaskRelatedTestCaseRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskRelatedTestCaseRequest::getBody,
+                UpdateTaskRelatedTestCaseRequest::setBody));
 
         // response
 
@@ -1229,9 +1108,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<UpdateTaskStatusRequest, UpdateTaskStatusResponse> updateTaskStatus =
-        genForupdateTaskStatus();
+        genForUpdateTaskStatus();
 
-    private static HttpRequestDef<UpdateTaskStatusRequest, UpdateTaskStatusResponse> genForupdateTaskStatus() {
+    private static HttpRequestDef<UpdateTaskStatusRequest, UpdateTaskStatusResponse> genForUpdateTaskStatus() {
         // basic
         HttpRequestDef.Builder<UpdateTaskStatusRequest, UpdateTaskStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateTaskStatusRequest.class, UpdateTaskStatusResponse.class)
@@ -1244,32 +1123,26 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateTaskStatusRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskStatusRequest::getTestSuiteId, UpdateTaskStatusRequest::setTestSuiteId));
         builder.<Integer>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateTaskStatusRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskStatusRequest::getTaskId, UpdateTaskStatusRequest::setTaskId));
         builder.<UpdateTaskStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTaskStatusRequestBody.class),
-            f -> f.withMarshaller(UpdateTaskStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskStatusRequest::getBody, UpdateTaskStatusRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTempRequest, UpdateTempResponse> updateTemp = genForupdateTemp();
+    public static final HttpRequestDef<UpdateTempRequest, UpdateTempResponse> updateTemp = genForUpdateTemp();
 
-    private static HttpRequestDef<UpdateTempRequest, UpdateTempResponse> genForupdateTemp() {
+    private static HttpRequestDef<UpdateTempRequest, UpdateTempResponse> genForUpdateTemp() {
         // basic
         HttpRequestDef.Builder<UpdateTempRequest, UpdateTempResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTempRequest.class, UpdateTempResponse.class)
@@ -1282,16 +1155,12 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateTempRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(UpdateTempRequest::getTemplateId, UpdateTempRequest::setTemplateId));
         builder.<UpdateTempRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTempRequestBody.class),
-            f -> f.withMarshaller(UpdateTempRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTempRequest::getBody, UpdateTempRequest::setBody));
 
         // response
 
@@ -1299,9 +1168,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<UpdateVariableRequest, UpdateVariableResponse> updateVariable =
-        genForupdateVariable();
+        genForUpdateVariable();
 
-    private static HttpRequestDef<UpdateVariableRequest, UpdateVariableResponse> genForupdateVariable() {
+    private static HttpRequestDef<UpdateVariableRequest, UpdateVariableResponse> genForUpdateVariable() {
         // basic
         HttpRequestDef.Builder<UpdateVariableRequest, UpdateVariableResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVariableRequest.class, UpdateVariableResponse.class)
@@ -1314,16 +1183,13 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateVariableRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(UpdateVariableRequest::getTestSuiteId, UpdateVariableRequest::setTestSuiteId));
         builder.<List<UpdateVariableRequestBody>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdateVariableRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(UpdateVariableRequestBody.class));
+            f -> f.withMarshaller(UpdateVariableRequest::getBody, UpdateVariableRequest::setBody)
+                .withInnerContainerType(UpdateVariableRequestBody.class));
 
         // response
 
@@ -1331,9 +1197,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<CreateProjectRequest, CreateProjectResponse> createProject =
-        genForcreateProject();
+        genForCreateProject();
 
-    private static HttpRequestDef<CreateProjectRequest, CreateProjectResponse> genForcreateProject() {
+    private static HttpRequestDef<CreateProjectRequest, CreateProjectResponse> genForCreateProject() {
         // basic
         HttpRequestDef.Builder<CreateProjectRequest, CreateProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateProjectRequest.class, CreateProjectResponse.class)
@@ -1346,9 +1212,7 @@ public class CptsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateProjectRequestBody.class),
-            f -> f.withMarshaller(CreateProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProjectRequest::getBody, CreateProjectRequest::setBody));
 
         // response
 
@@ -1356,9 +1220,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<DeleteProjectRequest, DeleteProjectResponse> deleteProject =
-        genFordeleteProject();
+        genForDeleteProject();
 
-    private static HttpRequestDef<DeleteProjectRequest, DeleteProjectResponse> genFordeleteProject() {
+    private static HttpRequestDef<DeleteProjectRequest, DeleteProjectResponse> genForDeleteProject() {
         // basic
         HttpRequestDef.Builder<DeleteProjectRequest, DeleteProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteProjectRequest.class, DeleteProjectResponse.class)
@@ -1371,9 +1235,7 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteProjectRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(DeleteProjectRequest::getTestSuiteId, DeleteProjectRequest::setTestSuiteId));
 
         // response
 
@@ -1381,9 +1243,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<ListProjectSetsRequest, ListProjectSetsResponse> listProjectSets =
-        genForlistProjectSets();
+        genForListProjectSets();
 
-    private static HttpRequestDef<ListProjectSetsRequest, ListProjectSetsResponse> genForlistProjectSets() {
+    private static HttpRequestDef<ListProjectSetsRequest, ListProjectSetsResponse> genForListProjectSets() {
         // basic
         HttpRequestDef.Builder<ListProjectSetsRequest, ListProjectSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectSetsRequest.class, ListProjectSetsResponse.class)
@@ -1396,25 +1258,21 @@ public class CptsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectSetsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProjectSetsRequest::getOffset, ListProjectSetsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectSetsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProjectSetsRequest::getLimit, ListProjectSetsRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProcessRequest, ShowProcessResponse> showProcess = genForshowProcess();
+    public static final HttpRequestDef<ShowProcessRequest, ShowProcessResponse> showProcess = genForShowProcess();
 
-    private static HttpRequestDef<ShowProcessRequest, ShowProcessResponse> genForshowProcess() {
+    private static HttpRequestDef<ShowProcessRequest, ShowProcessResponse> genForShowProcess() {
         // basic
         HttpRequestDef.Builder<ShowProcessRequest, ShowProcessResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProcessRequest.class, ShowProcessResponse.class)
@@ -1429,9 +1287,9 @@ public class CptsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProjectRequest, ShowProjectResponse> showProject = genForshowProject();
+    public static final HttpRequestDef<ShowProjectRequest, ShowProjectResponse> showProject = genForShowProject();
 
-    private static HttpRequestDef<ShowProjectRequest, ShowProjectResponse> genForshowProject() {
+    private static HttpRequestDef<ShowProjectRequest, ShowProjectResponse> genForShowProject() {
         // basic
         HttpRequestDef.Builder<ShowProjectRequest, ShowProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectRequest.class, ShowProjectResponse.class)
@@ -1444,9 +1302,7 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProjectRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(ShowProjectRequest::getTestSuiteId, ShowProjectRequest::setTestSuiteId));
 
         // response
 
@@ -1454,9 +1310,9 @@ public class CptsMeta {
     }
 
     public static final HttpRequestDef<UpdateProjectRequest, UpdateProjectResponse> updateProject =
-        genForupdateProject();
+        genForUpdateProject();
 
-    private static HttpRequestDef<UpdateProjectRequest, UpdateProjectResponse> genForupdateProject() {
+    private static HttpRequestDef<UpdateProjectRequest, UpdateProjectResponse> genForUpdateProject() {
         // basic
         HttpRequestDef.Builder<UpdateProjectRequest, UpdateProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProjectRequest.class, UpdateProjectResponse.class)
@@ -1469,16 +1325,12 @@ public class CptsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateProjectRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
-            }));
+            f -> f.withMarshaller(UpdateProjectRequest::getTestSuiteId, UpdateProjectRequest::setTestSuiteId));
         builder.<UpdateProjectRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProjectRequestBody.class),
-            f -> f.withMarshaller(UpdateProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProjectRequest::getBody, UpdateProjectRequest::setBody));
 
         // response
 

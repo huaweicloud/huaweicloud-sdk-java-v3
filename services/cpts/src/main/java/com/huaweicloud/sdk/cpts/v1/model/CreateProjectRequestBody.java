@@ -26,7 +26,7 @@ public class CreateProjectRequestBody {
     }
 
     /**
-     * name
+     * 名称
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class CreateProjectRequestBody {
     }
 
     /**
-     * description
+     * 描述
      * @return description
      */
     public String getDescription() {

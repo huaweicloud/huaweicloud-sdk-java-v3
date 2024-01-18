@@ -74,9 +74,9 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateUsingPostResponse;
 public class IDMEClassicAPIMeta {
 
     public static final HttpRequestDef<BatchCreateUsingPostRequest, BatchCreateUsingPostResponse> batchCreateUsingPost =
-        genForbatchCreateUsingPost();
+        genForBatchCreateUsingPost();
 
-    private static HttpRequestDef<BatchCreateUsingPostRequest, BatchCreateUsingPostResponse> genForbatchCreateUsingPost() {
+    private static HttpRequestDef<BatchCreateUsingPostRequest, BatchCreateUsingPostResponse> genForBatchCreateUsingPost() {
         // basic
         HttpRequestDef.Builder<BatchCreateUsingPostRequest, BatchCreateUsingPostResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateUsingPostRequest.class, BatchCreateUsingPostResponse.class)
@@ -89,23 +89,19 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(BatchCreateUsingPostRequest::getIdentifier,
+                BatchCreateUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(BatchCreateUsingPostRequest::getModelName,
+                BatchCreateUsingPostRequest::setModelName));
         builder.<RDMParamVOListPersistableModelCreateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOListPersistableModelCreateDTO.class),
-            f -> f.withMarshaller(BatchCreateUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateUsingPostRequest::getBody, BatchCreateUsingPostRequest::setBody));
 
         // response
 
@@ -113,9 +109,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteLogicalUsingPostRequest, BatchDeleteLogicalUsingPostResponse> batchDeleteLogicalUsingPost =
-        genForbatchDeleteLogicalUsingPost();
+        genForBatchDeleteLogicalUsingPost();
 
-    private static HttpRequestDef<BatchDeleteLogicalUsingPostRequest, BatchDeleteLogicalUsingPostResponse> genForbatchDeleteLogicalUsingPost() {
+    private static HttpRequestDef<BatchDeleteLogicalUsingPostRequest, BatchDeleteLogicalUsingPostResponse> genForBatchDeleteLogicalUsingPost() {
         // basic
         HttpRequestDef.Builder<BatchDeleteLogicalUsingPostRequest, BatchDeleteLogicalUsingPostResponse> builder =
             HttpRequestDef
@@ -131,23 +127,20 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteLogicalUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteLogicalUsingPostRequest::getIdentifier,
+                BatchDeleteLogicalUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteLogicalUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteLogicalUsingPostRequest::getModelName,
+                BatchDeleteLogicalUsingPostRequest::setModelName));
         builder.<RDMParamVOPersistObjectIdsModifierDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdsModifierDTO.class),
-            f -> f.withMarshaller(BatchDeleteLogicalUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteLogicalUsingPostRequest::getBody,
+                BatchDeleteLogicalUsingPostRequest::setBody));
 
         // response
 
@@ -155,9 +148,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteUsingPostRequest, BatchDeleteUsingPostResponse> batchDeleteUsingPost =
-        genForbatchDeleteUsingPost();
+        genForBatchDeleteUsingPost();
 
-    private static HttpRequestDef<BatchDeleteUsingPostRequest, BatchDeleteUsingPostResponse> genForbatchDeleteUsingPost() {
+    private static HttpRequestDef<BatchDeleteUsingPostRequest, BatchDeleteUsingPostResponse> genForBatchDeleteUsingPost() {
         // basic
         HttpRequestDef.Builder<BatchDeleteUsingPostRequest, BatchDeleteUsingPostResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteUsingPostRequest.class, BatchDeleteUsingPostResponse.class)
@@ -170,23 +163,19 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteUsingPostRequest::getIdentifier,
+                BatchDeleteUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteUsingPostRequest::getModelName,
+                BatchDeleteUsingPostRequest::setModelName));
         builder.<RDMParamVOPersistObjectIdsModifierDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdsModifierDTO.class),
-            f -> f.withMarshaller(BatchDeleteUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteUsingPostRequest::getBody, BatchDeleteUsingPostRequest::setBody));
 
         // response
 
@@ -194,9 +183,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<BatchShowGetUsingPostRequest, BatchShowGetUsingPostResponse> batchShowGetUsingPost =
-        genForbatchShowGetUsingPost();
+        genForBatchShowGetUsingPost();
 
-    private static HttpRequestDef<BatchShowGetUsingPostRequest, BatchShowGetUsingPostResponse> genForbatchShowGetUsingPost() {
+    private static HttpRequestDef<BatchShowGetUsingPostRequest, BatchShowGetUsingPostResponse> genForBatchShowGetUsingPost() {
         // basic
         HttpRequestDef.Builder<BatchShowGetUsingPostRequest, BatchShowGetUsingPostResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchShowGetUsingPostRequest.class, BatchShowGetUsingPostResponse.class)
@@ -209,23 +198,19 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowGetUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(BatchShowGetUsingPostRequest::getIdentifier,
+                BatchShowGetUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowGetUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(BatchShowGetUsingPostRequest::getModelName,
+                BatchShowGetUsingPostRequest::setModelName));
         builder.<RDMParamVOPersistObjectIdsDecryptDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdsDecryptDTO.class),
-            f -> f.withMarshaller(BatchShowGetUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchShowGetUsingPostRequest::getBody, BatchShowGetUsingPostRequest::setBody));
 
         // response
 
@@ -233,9 +218,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateUsingPostRequest, BatchUpdateUsingPostResponse> batchUpdateUsingPost =
-        genForbatchUpdateUsingPost();
+        genForBatchUpdateUsingPost();
 
-    private static HttpRequestDef<BatchUpdateUsingPostRequest, BatchUpdateUsingPostResponse> genForbatchUpdateUsingPost() {
+    private static HttpRequestDef<BatchUpdateUsingPostRequest, BatchUpdateUsingPostResponse> genForBatchUpdateUsingPost() {
         // basic
         HttpRequestDef.Builder<BatchUpdateUsingPostRequest, BatchUpdateUsingPostResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchUpdateUsingPostRequest.class, BatchUpdateUsingPostResponse.class)
@@ -248,23 +233,19 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateUsingPostRequest::getIdentifier,
+                BatchUpdateUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateUsingPostRequest::getModelName,
+                BatchUpdateUsingPostRequest::setModelName));
         builder.<RDMParamVOListPersistableModelUpdateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOListPersistableModelUpdateDTO.class),
-            f -> f.withMarshaller(BatchUpdateUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateUsingPostRequest::getBody, BatchUpdateUsingPostRequest::setBody));
 
         // response
 
@@ -272,9 +253,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<CountUsingPostRequest, CountUsingPostResponse> countUsingPost =
-        genForcountUsingPost();
+        genForCountUsingPost();
 
-    private static HttpRequestDef<CountUsingPostRequest, CountUsingPostResponse> genForcountUsingPost() {
+    private static HttpRequestDef<CountUsingPostRequest, CountUsingPostResponse> genForCountUsingPost() {
         // basic
         HttpRequestDef.Builder<CountUsingPostRequest, CountUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CountUsingPostRequest.class, CountUsingPostResponse.class)
@@ -287,23 +268,17 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(CountUsingPostRequest::getIdentifier, CountUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(CountUsingPostRequest::getModelName, CountUsingPostRequest::setModelName));
         builder.<RDMParamVOQueryRequestCountVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOQueryRequestCountVo.class),
-            f -> f.withMarshaller(CountUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CountUsingPostRequest::getBody, CountUsingPostRequest::setBody));
 
         // response
 
@@ -311,9 +286,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<CreateUsingPostRequest, CreateUsingPostResponse> createUsingPost =
-        genForcreateUsingPost();
+        genForCreateUsingPost();
 
-    private static HttpRequestDef<CreateUsingPostRequest, CreateUsingPostResponse> genForcreateUsingPost() {
+    private static HttpRequestDef<CreateUsingPostRequest, CreateUsingPostResponse> genForCreateUsingPost() {
         // basic
         HttpRequestDef.Builder<CreateUsingPostRequest, CreateUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateUsingPostRequest.class, CreateUsingPostResponse.class)
@@ -326,23 +301,17 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(CreateUsingPostRequest::getIdentifier, CreateUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(CreateUsingPostRequest::getModelName, CreateUsingPostRequest::setModelName));
         builder.<RDMParamVOVersionModelCreateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOVersionModelCreateDTO.class),
-            f -> f.withMarshaller(CreateUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateUsingPostRequest::getBody, CreateUsingPostRequest::setBody));
 
         // response
 
@@ -350,9 +319,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<DeleteByConditionUsingPostRequest, DeleteByConditionUsingPostResponse> deleteByConditionUsingPost =
-        genFordeleteByConditionUsingPost();
+        genForDeleteByConditionUsingPost();
 
-    private static HttpRequestDef<DeleteByConditionUsingPostRequest, DeleteByConditionUsingPostResponse> genFordeleteByConditionUsingPost() {
+    private static HttpRequestDef<DeleteByConditionUsingPostRequest, DeleteByConditionUsingPostResponse> genForDeleteByConditionUsingPost() {
         // basic
         HttpRequestDef.Builder<DeleteByConditionUsingPostRequest, DeleteByConditionUsingPostResponse> builder =
             HttpRequestDef
@@ -368,23 +337,20 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteByConditionUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(DeleteByConditionUsingPostRequest::getIdentifier,
+                DeleteByConditionUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteByConditionUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(DeleteByConditionUsingPostRequest::getModelName,
+                DeleteByConditionUsingPostRequest::setModelName));
         builder.<RDMParamVODeleteByConditionVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVODeleteByConditionVo.class),
-            f -> f.withMarshaller(DeleteByConditionUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteByConditionUsingPostRequest::getBody,
+                DeleteByConditionUsingPostRequest::setBody));
 
         // response
 
@@ -392,9 +358,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<DeleteUsingPostRequest, DeleteUsingPostResponse> deleteUsingPost =
-        genFordeleteUsingPost();
+        genForDeleteUsingPost();
 
-    private static HttpRequestDef<DeleteUsingPostRequest, DeleteUsingPostResponse> genFordeleteUsingPost() {
+    private static HttpRequestDef<DeleteUsingPostRequest, DeleteUsingPostResponse> genForDeleteUsingPost() {
         // basic
         HttpRequestDef.Builder<DeleteUsingPostRequest, DeleteUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteUsingPostRequest.class, DeleteUsingPostResponse.class)
@@ -407,23 +373,17 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(DeleteUsingPostRequest::getIdentifier, DeleteUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(DeleteUsingPostRequest::getModelName, DeleteUsingPostRequest::setModelName));
         builder.<RDMParamVOPersistObjectIdModifierDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdModifierDTO.class),
-            f -> f.withMarshaller(DeleteUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteUsingPostRequest::getBody, DeleteUsingPostRequest::setBody));
 
         // response
 
@@ -431,9 +391,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<ListQueryUsingPostRequest, ListQueryUsingPostResponse> listQueryUsingPost =
-        genForlistQueryUsingPost();
+        genForListQueryUsingPost();
 
-    private static HttpRequestDef<ListQueryUsingPostRequest, ListQueryUsingPostResponse> genForlistQueryUsingPost() {
+    private static HttpRequestDef<ListQueryUsingPostRequest, ListQueryUsingPostResponse> genForListQueryUsingPost() {
         // basic
         HttpRequestDef.Builder<ListQueryUsingPostRequest, ListQueryUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListQueryUsingPostRequest.class, ListQueryUsingPostResponse.class)
@@ -446,86 +406,65 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getIdentifier, ListQueryUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getModelName, ListQueryUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getPageSizePath, (req, v) -> {
-                req.setPageSizePath(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getPageSizePath,
+                ListQueryUsingPostRequest::setPageSizePath));
         builder.<Integer>withRequestField("curPagePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getCurPagePath, (req, v) -> {
-                req.setCurPagePath(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getCurPagePath,
+                ListQueryUsingPostRequest::setCurPagePath));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getCurPage, (req, v) -> {
-                req.setCurPage(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getCurPage, ListQueryUsingPostRequest::setCurPage));
         builder.<Integer>withRequestField("endIndex",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getEndIndex, (req, v) -> {
-                req.setEndIndex(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getEndIndex, ListQueryUsingPostRequest::setEndIndex));
         builder.<Integer>withRequestField("maxPageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getMaxPageSize, (req, v) -> {
-                req.setMaxPageSize(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getMaxPageSize,
+                ListQueryUsingPostRequest::setMaxPageSize));
         builder.<Integer>withRequestField("pageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getPageSize, ListQueryUsingPostRequest::setPageSize));
         builder.<Integer>withRequestField("startIndex",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getStartIndex, (req, v) -> {
-                req.setStartIndex(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getStartIndex, ListQueryUsingPostRequest::setStartIndex));
         builder.<Integer>withRequestField("totalPages",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getTotalPages, (req, v) -> {
-                req.setTotalPages(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getTotalPages, ListQueryUsingPostRequest::setTotalPages));
         builder.<Integer>withRequestField("totalRows",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getTotalRows, (req, v) -> {
-                req.setTotalRows(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getTotalRows, ListQueryUsingPostRequest::setTotalRows));
         builder.<RDMParamVOQueryRequestVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOQueryRequestVo.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getBody, ListQueryUsingPostRequest::setBody));
 
         // response
 
@@ -533,9 +472,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<ListSelectUsingPostRequest, ListSelectUsingPostResponse> listSelectUsingPost =
-        genForlistSelectUsingPost();
+        genForListSelectUsingPost();
 
-    private static HttpRequestDef<ListSelectUsingPostRequest, ListSelectUsingPostResponse> genForlistSelectUsingPost() {
+    private static HttpRequestDef<ListSelectUsingPostRequest, ListSelectUsingPostResponse> genForListSelectUsingPost() {
         // basic
         HttpRequestDef.Builder<ListSelectUsingPostRequest, ListSelectUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListSelectUsingPostRequest.class, ListSelectUsingPostResponse.class)
@@ -548,86 +487,68 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getIdentifier,
+                ListSelectUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getModelName, ListSelectUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getPageSizePath, (req, v) -> {
-                req.setPageSizePath(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getPageSizePath,
+                ListSelectUsingPostRequest::setPageSizePath));
         builder.<Integer>withRequestField("curPagePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getCurPagePath, (req, v) -> {
-                req.setCurPagePath(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getCurPagePath,
+                ListSelectUsingPostRequest::setCurPagePath));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getCurPage, (req, v) -> {
-                req.setCurPage(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getCurPage, ListSelectUsingPostRequest::setCurPage));
         builder.<Integer>withRequestField("endIndex",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getEndIndex, (req, v) -> {
-                req.setEndIndex(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getEndIndex, ListSelectUsingPostRequest::setEndIndex));
         builder.<Integer>withRequestField("maxPageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getMaxPageSize, (req, v) -> {
-                req.setMaxPageSize(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getMaxPageSize,
+                ListSelectUsingPostRequest::setMaxPageSize));
         builder.<Integer>withRequestField("pageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getPageSize, ListSelectUsingPostRequest::setPageSize));
         builder.<Integer>withRequestField("startIndex",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getStartIndex, (req, v) -> {
-                req.setStartIndex(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getStartIndex,
+                ListSelectUsingPostRequest::setStartIndex));
         builder.<Integer>withRequestField("totalPages",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getTotalPages, (req, v) -> {
-                req.setTotalPages(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getTotalPages,
+                ListSelectUsingPostRequest::setTotalPages));
         builder.<Integer>withRequestField("totalRows",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getTotalRows, (req, v) -> {
-                req.setTotalRows(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getTotalRows, ListSelectUsingPostRequest::setTotalRows));
         builder.<RDMParamVOQueryRequestSelectedVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOQueryRequestSelectedVo.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getBody, ListSelectUsingPostRequest::setBody));
 
         // response
 
@@ -635,9 +556,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<ListUsingPostRequest, ListUsingPostResponse> listUsingPost =
-        genForlistUsingPost();
+        genForListUsingPost();
 
-    private static HttpRequestDef<ListUsingPostRequest, ListUsingPostResponse> genForlistUsingPost() {
+    private static HttpRequestDef<ListUsingPostRequest, ListUsingPostResponse> genForListUsingPost() {
         // basic
         HttpRequestDef.Builder<ListUsingPostRequest, ListUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListUsingPostRequest.class, ListUsingPostResponse.class)
@@ -650,86 +571,62 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getIdentifier, ListUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getModelName, ListUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getPageSizePath, (req, v) -> {
-                req.setPageSizePath(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getPageSizePath, ListUsingPostRequest::setPageSizePath));
         builder.<Integer>withRequestField("curPagePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getCurPagePath, (req, v) -> {
-                req.setCurPagePath(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getCurPagePath, ListUsingPostRequest::setCurPagePath));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getCurPage, (req, v) -> {
-                req.setCurPage(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getCurPage, ListUsingPostRequest::setCurPage));
         builder.<Integer>withRequestField("endIndex",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getEndIndex, (req, v) -> {
-                req.setEndIndex(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getEndIndex, ListUsingPostRequest::setEndIndex));
         builder.<Integer>withRequestField("maxPageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getMaxPageSize, (req, v) -> {
-                req.setMaxPageSize(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getMaxPageSize, ListUsingPostRequest::setMaxPageSize));
         builder.<Integer>withRequestField("pageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getPageSize, ListUsingPostRequest::setPageSize));
         builder.<Integer>withRequestField("startIndex",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getStartIndex, (req, v) -> {
-                req.setStartIndex(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getStartIndex, ListUsingPostRequest::setStartIndex));
         builder.<Integer>withRequestField("totalPages",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getTotalPages, (req, v) -> {
-                req.setTotalPages(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getTotalPages, ListUsingPostRequest::setTotalPages));
         builder.<Integer>withRequestField("totalRows",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getTotalRows, (req, v) -> {
-                req.setTotalRows(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getTotalRows, ListUsingPostRequest::setTotalRows));
         builder.<RDMParamVOQueryRequestVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOQueryRequestVo.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListUsingPostRequest::getBody, ListUsingPostRequest::setBody));
 
         // response
 
@@ -737,9 +634,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<SaveAllUsingPostRequest, SaveAllUsingPostResponse> saveAllUsingPost =
-        genForsaveAllUsingPost();
+        genForSaveAllUsingPost();
 
-    private static HttpRequestDef<SaveAllUsingPostRequest, SaveAllUsingPostResponse> genForsaveAllUsingPost() {
+    private static HttpRequestDef<SaveAllUsingPostRequest, SaveAllUsingPostResponse> genForSaveAllUsingPost() {
         // basic
         HttpRequestDef.Builder<SaveAllUsingPostRequest, SaveAllUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SaveAllUsingPostRequest.class, SaveAllUsingPostResponse.class)
@@ -752,23 +649,17 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SaveAllUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(SaveAllUsingPostRequest::getIdentifier, SaveAllUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SaveAllUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(SaveAllUsingPostRequest::getModelName, SaveAllUsingPostRequest::setModelName));
         builder.<RDMParamVOListPersistableModelSaveAllDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOListPersistableModelSaveAllDTO.class),
-            f -> f.withMarshaller(SaveAllUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SaveAllUsingPostRequest::getBody, SaveAllUsingPostRequest::setBody));
 
         // response
 
@@ -776,9 +667,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<SaveAsUsingPostRequest, SaveAsUsingPostResponse> saveAsUsingPost =
-        genForsaveAsUsingPost();
+        genForSaveAsUsingPost();
 
-    private static HttpRequestDef<SaveAsUsingPostRequest, SaveAsUsingPostResponse> genForsaveAsUsingPost() {
+    private static HttpRequestDef<SaveAsUsingPostRequest, SaveAsUsingPostResponse> genForSaveAsUsingPost() {
         // basic
         HttpRequestDef.Builder<SaveAsUsingPostRequest, SaveAsUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SaveAsUsingPostRequest.class, SaveAsUsingPostResponse.class)
@@ -791,23 +682,17 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SaveAsUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(SaveAsUsingPostRequest::getIdentifier, SaveAsUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SaveAsUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(SaveAsUsingPostRequest::getModelName, SaveAsUsingPostRequest::setModelName));
         builder.<RDMParamVOVersionModelSaveAsDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOVersionModelSaveAsDTO.class),
-            f -> f.withMarshaller(SaveAsUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SaveAsUsingPostRequest::getBody, SaveAsUsingPostRequest::setBody));
 
         // response
 
@@ -815,9 +700,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<SaveUsingPostRequest, SaveUsingPostResponse> saveUsingPost =
-        genForsaveUsingPost();
+        genForSaveUsingPost();
 
-    private static HttpRequestDef<SaveUsingPostRequest, SaveUsingPostResponse> genForsaveUsingPost() {
+    private static HttpRequestDef<SaveUsingPostRequest, SaveUsingPostResponse> genForSaveUsingPost() {
         // basic
         HttpRequestDef.Builder<SaveUsingPostRequest, SaveUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SaveUsingPostRequest.class, SaveUsingPostResponse.class)
@@ -830,23 +715,17 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SaveUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(SaveUsingPostRequest::getIdentifier, SaveUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SaveUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(SaveUsingPostRequest::getModelName, SaveUsingPostRequest::setModelName));
         builder.<RDMParamVOListPersistableModelSaveDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOListPersistableModelSaveDTO.class),
-            f -> f.withMarshaller(SaveUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SaveUsingPostRequest::getBody, SaveUsingPostRequest::setBody));
 
         // response
 
@@ -854,9 +733,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<ShowFindUsingPostRequest, ShowFindUsingPostResponse> showFindUsingPost =
-        genForshowFindUsingPost();
+        genForShowFindUsingPost();
 
-    private static HttpRequestDef<ShowFindUsingPostRequest, ShowFindUsingPostResponse> genForshowFindUsingPost() {
+    private static HttpRequestDef<ShowFindUsingPostRequest, ShowFindUsingPostResponse> genForShowFindUsingPost() {
         // basic
         HttpRequestDef.Builder<ShowFindUsingPostRequest, ShowFindUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowFindUsingPostRequest.class, ShowFindUsingPostResponse.class)
@@ -869,86 +748,63 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getIdentifier, ShowFindUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getModelName, ShowFindUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getPageSizePath, (req, v) -> {
-                req.setPageSizePath(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getPageSizePath,
+                ShowFindUsingPostRequest::setPageSizePath));
         builder.<Integer>withRequestField("curPagePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getCurPagePath, (req, v) -> {
-                req.setCurPagePath(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getCurPagePath, ShowFindUsingPostRequest::setCurPagePath));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getCurPage, (req, v) -> {
-                req.setCurPage(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getCurPage, ShowFindUsingPostRequest::setCurPage));
         builder.<Integer>withRequestField("endIndex",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getEndIndex, (req, v) -> {
-                req.setEndIndex(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getEndIndex, ShowFindUsingPostRequest::setEndIndex));
         builder.<Integer>withRequestField("maxPageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getMaxPageSize, (req, v) -> {
-                req.setMaxPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getMaxPageSize, ShowFindUsingPostRequest::setMaxPageSize));
         builder.<Integer>withRequestField("pageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getPageSize, ShowFindUsingPostRequest::setPageSize));
         builder.<Integer>withRequestField("startIndex",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getStartIndex, (req, v) -> {
-                req.setStartIndex(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getStartIndex, ShowFindUsingPostRequest::setStartIndex));
         builder.<Integer>withRequestField("totalPages",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getTotalPages, (req, v) -> {
-                req.setTotalPages(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getTotalPages, ShowFindUsingPostRequest::setTotalPages));
         builder.<Integer>withRequestField("totalRows",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getTotalRows, (req, v) -> {
-                req.setTotalRows(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getTotalRows, ShowFindUsingPostRequest::setTotalRows));
         builder.<RDMParamVOQueryRequestVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOQueryRequestVo.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getBody, ShowFindUsingPostRequest::setBody));
 
         // response
 
@@ -956,9 +812,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<ShowGetByUniqueKeyRequest, ShowGetByUniqueKeyResponse> showGetByUniqueKey =
-        genForshowGetByUniqueKey();
+        genForShowGetByUniqueKey();
 
-    private static HttpRequestDef<ShowGetByUniqueKeyRequest, ShowGetByUniqueKeyResponse> genForshowGetByUniqueKey() {
+    private static HttpRequestDef<ShowGetByUniqueKeyRequest, ShowGetByUniqueKeyResponse> genForShowGetByUniqueKey() {
         // basic
         HttpRequestDef.Builder<ShowGetByUniqueKeyRequest, ShowGetByUniqueKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowGetByUniqueKeyRequest.class, ShowGetByUniqueKeyResponse.class)
@@ -971,30 +827,23 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGetByUniqueKeyRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(ShowGetByUniqueKeyRequest::getIdentifier, ShowGetByUniqueKeyRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGetByUniqueKeyRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(ShowGetByUniqueKeyRequest::getModelName, ShowGetByUniqueKeyRequest::setModelName));
         builder.<String>withRequestField("getUniqueFieldMethod",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGetByUniqueKeyRequest::getGetUniqueFieldMethod, (req, v) -> {
-                req.setGetUniqueFieldMethod(v);
-            }));
+            f -> f.withMarshaller(ShowGetByUniqueKeyRequest::getGetUniqueFieldMethod,
+                ShowGetByUniqueKeyRequest::setGetUniqueFieldMethod));
         builder.<RDMParamVOPersistableModelUniqueKeyDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistableModelUniqueKeyDTO.class),
-            f -> f.withMarshaller(ShowGetByUniqueKeyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowGetByUniqueKeyRequest::getBody, ShowGetByUniqueKeyRequest::setBody));
 
         // response
 
@@ -1002,9 +851,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<ShowGetUsingPostRequest, ShowGetUsingPostResponse> showGetUsingPost =
-        genForshowGetUsingPost();
+        genForShowGetUsingPost();
 
-    private static HttpRequestDef<ShowGetUsingPostRequest, ShowGetUsingPostResponse> genForshowGetUsingPost() {
+    private static HttpRequestDef<ShowGetUsingPostRequest, ShowGetUsingPostResponse> genForShowGetUsingPost() {
         // basic
         HttpRequestDef.Builder<ShowGetUsingPostRequest, ShowGetUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowGetUsingPostRequest.class, ShowGetUsingPostResponse.class)
@@ -1017,23 +866,17 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGetUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(ShowGetUsingPostRequest::getIdentifier, ShowGetUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGetUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(ShowGetUsingPostRequest::getModelName, ShowGetUsingPostRequest::setModelName));
         builder.<RDMParamVOPersistObjectIdDecryptDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdDecryptDTO.class),
-            f -> f.withMarshaller(ShowGetUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowGetUsingPostRequest::getBody, ShowGetUsingPostRequest::setBody));
 
         // response
 
@@ -1041,9 +884,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<ShowLogicalDeleteByConditionUsingPostRequest, ShowLogicalDeleteByConditionUsingPostResponse> showLogicalDeleteByConditionUsingPost =
-        genForshowLogicalDeleteByConditionUsingPost();
+        genForShowLogicalDeleteByConditionUsingPost();
 
-    private static HttpRequestDef<ShowLogicalDeleteByConditionUsingPostRequest, ShowLogicalDeleteByConditionUsingPostResponse> genForshowLogicalDeleteByConditionUsingPost() {
+    private static HttpRequestDef<ShowLogicalDeleteByConditionUsingPostRequest, ShowLogicalDeleteByConditionUsingPostResponse> genForShowLogicalDeleteByConditionUsingPost() {
         // basic
         HttpRequestDef.Builder<ShowLogicalDeleteByConditionUsingPostRequest, ShowLogicalDeleteByConditionUsingPostResponse> builder =
             HttpRequestDef
@@ -1059,23 +902,20 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLogicalDeleteByConditionUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(ShowLogicalDeleteByConditionUsingPostRequest::getIdentifier,
+                ShowLogicalDeleteByConditionUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLogicalDeleteByConditionUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(ShowLogicalDeleteByConditionUsingPostRequest::getModelName,
+                ShowLogicalDeleteByConditionUsingPostRequest::setModelName));
         builder.<RDMParamVODeleteByConditionVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVODeleteByConditionVo.class),
-            f -> f.withMarshaller(ShowLogicalDeleteByConditionUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowLogicalDeleteByConditionUsingPostRequest::getBody,
+                ShowLogicalDeleteByConditionUsingPostRequest::setBody));
 
         // response
 
@@ -1083,9 +923,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<ShowLogicalDeleteUsingPostRequest, ShowLogicalDeleteUsingPostResponse> showLogicalDeleteUsingPost =
-        genForshowLogicalDeleteUsingPost();
+        genForShowLogicalDeleteUsingPost();
 
-    private static HttpRequestDef<ShowLogicalDeleteUsingPostRequest, ShowLogicalDeleteUsingPostResponse> genForshowLogicalDeleteUsingPost() {
+    private static HttpRequestDef<ShowLogicalDeleteUsingPostRequest, ShowLogicalDeleteUsingPostResponse> genForShowLogicalDeleteUsingPost() {
         // basic
         HttpRequestDef.Builder<ShowLogicalDeleteUsingPostRequest, ShowLogicalDeleteUsingPostResponse> builder =
             HttpRequestDef
@@ -1101,23 +941,20 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLogicalDeleteUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(ShowLogicalDeleteUsingPostRequest::getIdentifier,
+                ShowLogicalDeleteUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLogicalDeleteUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(ShowLogicalDeleteUsingPostRequest::getModelName,
+                ShowLogicalDeleteUsingPostRequest::setModelName));
         builder.<RDMParamVOPersistObjectIdModifierDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdModifierDTO.class),
-            f -> f.withMarshaller(ShowLogicalDeleteUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowLogicalDeleteUsingPostRequest::getBody,
+                ShowLogicalDeleteUsingPostRequest::setBody));
 
         // response
 
@@ -1125,9 +962,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<ShowStaticsUsingPostRequest, ShowStaticsUsingPostResponse> showStaticsUsingPost =
-        genForshowStaticsUsingPost();
+        genForShowStaticsUsingPost();
 
-    private static HttpRequestDef<ShowStaticsUsingPostRequest, ShowStaticsUsingPostResponse> genForshowStaticsUsingPost() {
+    private static HttpRequestDef<ShowStaticsUsingPostRequest, ShowStaticsUsingPostResponse> genForShowStaticsUsingPost() {
         // basic
         HttpRequestDef.Builder<ShowStaticsUsingPostRequest, ShowStaticsUsingPostResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowStaticsUsingPostRequest.class, ShowStaticsUsingPostResponse.class)
@@ -1140,23 +977,19 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStaticsUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(ShowStaticsUsingPostRequest::getIdentifier,
+                ShowStaticsUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStaticsUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(ShowStaticsUsingPostRequest::getModelName,
+                ShowStaticsUsingPostRequest::setModelName));
         builder.<RDMParamVOQueryRequestStaticsVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOQueryRequestStaticsVo.class),
-            f -> f.withMarshaller(ShowStaticsUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowStaticsUsingPostRequest::getBody, ShowStaticsUsingPostRequest::setBody));
 
         // response
 
@@ -1164,9 +997,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<UpdateByConditionUsingPostRequest, UpdateByConditionUsingPostResponse> updateByConditionUsingPost =
-        genForupdateByConditionUsingPost();
+        genForUpdateByConditionUsingPost();
 
-    private static HttpRequestDef<UpdateByConditionUsingPostRequest, UpdateByConditionUsingPostResponse> genForupdateByConditionUsingPost() {
+    private static HttpRequestDef<UpdateByConditionUsingPostRequest, UpdateByConditionUsingPostResponse> genForUpdateByConditionUsingPost() {
         // basic
         HttpRequestDef.Builder<UpdateByConditionUsingPostRequest, UpdateByConditionUsingPostResponse> builder =
             HttpRequestDef
@@ -1182,23 +1015,20 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateByConditionUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(UpdateByConditionUsingPostRequest::getIdentifier,
+                UpdateByConditionUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateByConditionUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(UpdateByConditionUsingPostRequest::getModelName,
+                UpdateByConditionUsingPostRequest::setModelName));
         builder.<RDMParamVOUpdateByConditionVoPersistableModelUpdateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOUpdateByConditionVoPersistableModelUpdateDTO.class),
-            f -> f.withMarshaller(UpdateByConditionUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateByConditionUsingPostRequest::getBody,
+                UpdateByConditionUsingPostRequest::setBody));
 
         // response
 
@@ -1206,9 +1036,9 @@ public class IDMEClassicAPIMeta {
     }
 
     public static final HttpRequestDef<UpdateUsingPostRequest, UpdateUsingPostResponse> updateUsingPost =
-        genForupdateUsingPost();
+        genForUpdateUsingPost();
 
-    private static HttpRequestDef<UpdateUsingPostRequest, UpdateUsingPostResponse> genForupdateUsingPost() {
+    private static HttpRequestDef<UpdateUsingPostRequest, UpdateUsingPostResponse> genForUpdateUsingPost() {
         // basic
         HttpRequestDef.Builder<UpdateUsingPostRequest, UpdateUsingPostResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateUsingPostRequest.class, UpdateUsingPostResponse.class)
@@ -1221,23 +1051,17 @@ public class IDMEClassicAPIMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUsingPostRequest::getIdentifier, (req, v) -> {
-                req.setIdentifier(v);
-            }));
+            f -> f.withMarshaller(UpdateUsingPostRequest::getIdentifier, UpdateUsingPostRequest::setIdentifier));
         builder.<String>withRequestField("modelName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUsingPostRequest::getModelName, (req, v) -> {
-                req.setModelName(v);
-            }));
+            f -> f.withMarshaller(UpdateUsingPostRequest::getModelName, UpdateUsingPostRequest::setModelName));
         builder.<RDMParamVOPersistableModelUpdateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistableModelUpdateDTO.class),
-            f -> f.withMarshaller(UpdateUsingPostRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateUsingPostRequest::getBody, UpdateUsingPostRequest::setBody));
 
         // response
 

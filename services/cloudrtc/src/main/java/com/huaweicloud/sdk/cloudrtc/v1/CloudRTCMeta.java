@@ -40,9 +40,9 @@ import java.util.List;
 public class CloudRTCMeta {
 
     public static final HttpRequestDef<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse> listRtcAbnormalEvent =
-        genForlistRtcAbnormalEvent();
+        genForListRtcAbnormalEvent();
 
-    private static HttpRequestDef<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse> genForlistRtcAbnormalEvent() {
+    private static HttpRequestDef<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse> genForListRtcAbnormalEvent() {
         // basic
         HttpRequestDef.Builder<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRtcAbnormalEventRequest.class, ListRtcAbnormalEventResponse.class)
@@ -55,30 +55,23 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getAppId, ListRtcAbnormalEventRequest::setAppId));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getRoomId, ListRtcAbnormalEventRequest::setRoomId));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getStartTime,
+                ListRtcAbnormalEventRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getEndTime, ListRtcAbnormalEventRequest::setEndTime));
 
         // response
 
@@ -91,9 +84,9 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRtcEventRequest, ListRtcEventResponse> listRtcEvent = genForlistRtcEvent();
+    public static final HttpRequestDef<ListRtcEventRequest, ListRtcEventResponse> listRtcEvent = genForListRtcEvent();
 
-    private static HttpRequestDef<ListRtcEventRequest, ListRtcEventResponse> genForlistRtcEvent() {
+    private static HttpRequestDef<ListRtcEventRequest, ListRtcEventResponse> genForListRtcEvent() {
         // basic
         HttpRequestDef.Builder<ListRtcEventRequest, ListRtcEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRtcEventRequest.class, ListRtcEventResponse.class)
@@ -106,30 +99,22 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcEventRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListRtcEventRequest::getAppId, ListRtcEventRequest::setAppId));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcEventRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcEventRequest::getRoomId, ListRtcEventRequest::setRoomId));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcEventRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcEventRequest::getStartTime, ListRtcEventRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcEventRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcEventRequest::getEndTime, ListRtcEventRequest::setEndTime));
 
         // response
 
@@ -142,9 +127,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcAbnormalEventDimensionRequest, ListRtcAbnormalEventDimensionResponse> listRtcAbnormalEventDimension =
-        genForlistRtcAbnormalEventDimension();
+        genForListRtcAbnormalEventDimension();
 
-    private static HttpRequestDef<ListRtcAbnormalEventDimensionRequest, ListRtcAbnormalEventDimensionResponse> genForlistRtcAbnormalEventDimension() {
+    private static HttpRequestDef<ListRtcAbnormalEventDimensionRequest, ListRtcAbnormalEventDimensionResponse> genForListRtcAbnormalEventDimension() {
         // basic
         HttpRequestDef.Builder<ListRtcAbnormalEventDimensionRequest, ListRtcAbnormalEventDimensionResponse> builder =
             HttpRequestDef
@@ -160,37 +145,32 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventDimensionRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventDimensionRequest::getApp,
+                ListRtcAbnormalEventDimensionRequest::setApp));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventDimensionRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventDimensionRequest::getRoomId,
+                ListRtcAbnormalEventDimensionRequest::setRoomId));
         builder.<ListRtcAbnormalEventDimensionRequest.DimensionEnum>withRequestField("dimension",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRtcAbnormalEventDimensionRequest.DimensionEnum.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventDimensionRequest::getDimension, (req, v) -> {
-                req.setDimension(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventDimensionRequest::getDimension,
+                ListRtcAbnormalEventDimensionRequest::setDimension));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventDimensionRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventDimensionRequest::getStartTime,
+                ListRtcAbnormalEventDimensionRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventDimensionRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventDimensionRequest::getEndTime,
+                ListRtcAbnormalEventDimensionRequest::setEndTime));
 
         // response
 
@@ -204,9 +184,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcAbnormalEventsRequest, ListRtcAbnormalEventsResponse> listRtcAbnormalEvents =
-        genForlistRtcAbnormalEvents();
+        genForListRtcAbnormalEvents();
 
-    private static HttpRequestDef<ListRtcAbnormalEventsRequest, ListRtcAbnormalEventsResponse> genForlistRtcAbnormalEvents() {
+    private static HttpRequestDef<ListRtcAbnormalEventsRequest, ListRtcAbnormalEventsResponse> genForListRtcAbnormalEvents() {
         // basic
         HttpRequestDef.Builder<ListRtcAbnormalEventsRequest, ListRtcAbnormalEventsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRtcAbnormalEventsRequest.class, ListRtcAbnormalEventsResponse.class)
@@ -219,51 +199,38 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getApp, ListRtcAbnormalEventsRequest::setApp));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getRoomId, ListRtcAbnormalEventsRequest::setRoomId));
         builder.<String>withRequestField("uid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getUid, (req, v) -> {
-                req.setUid(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getUid, ListRtcAbnormalEventsRequest::setUid));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getStartTime,
+                ListRtcAbnormalEventsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getEndTime, ListRtcAbnormalEventsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getLimit, ListRtcAbnormalEventsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRtcAbnormalEventsRequest::getOffset, ListRtcAbnormalEventsRequest::setOffset));
 
         // response
 
@@ -277,9 +244,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcClientQosDetailsRequest, ListRtcClientQosDetailsResponse> listRtcClientQosDetails =
-        genForlistRtcClientQosDetails();
+        genForListRtcClientQosDetails();
 
-    private static HttpRequestDef<ListRtcClientQosDetailsRequest, ListRtcClientQosDetailsResponse> genForlistRtcClientQosDetails() {
+    private static HttpRequestDef<ListRtcClientQosDetailsRequest, ListRtcClientQosDetailsResponse> genForListRtcClientQosDetails() {
         // basic
         HttpRequestDef.Builder<ListRtcClientQosDetailsRequest, ListRtcClientQosDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRtcClientQosDetailsRequest.class, ListRtcClientQosDetailsResponse.class)
@@ -292,114 +259,95 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getDomain,
+                ListRtcClientQosDetailsRequest::setDomain));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getAppId, ListRtcClientQosDetailsRequest::setAppId));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getRoomId,
+                ListRtcClientQosDetailsRequest::setRoomId));
         builder.<String>withRequestField("user_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getUserId, (req, v) -> {
-                req.setUserId(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getUserId,
+                ListRtcClientQosDetailsRequest::setUserId));
         builder.<String>withRequestField("peer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getPeerId, (req, v) -> {
-                req.setPeerId(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getPeerId,
+                ListRtcClientQosDetailsRequest::setPeerId));
         builder.<String>withRequestField("stream_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getStreamId, (req, v) -> {
-                req.setStreamId(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getStreamId,
+                ListRtcClientQosDetailsRequest::setStreamId));
         builder.<String>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getDirection, (req, v) -> {
-                req.setDirection(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getDirection,
+                ListRtcClientQosDetailsRequest::setDirection));
         builder.<ListRtcClientQosDetailsRequest.MidEnum>withRequestField("mid",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListRtcClientQosDetailsRequest.MidEnum.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getMid, (req, v) -> {
-                req.setMid(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getMid, ListRtcClientQosDetailsRequest::setMid));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getStartTime,
+                ListRtcClientQosDetailsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getEndTime,
+                ListRtcClientQosDetailsRequest::setEndTime));
         builder.<String>withRequestField("time_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getTimeType, (req, v) -> {
-                req.setTimeType(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getTimeType,
+                ListRtcClientQosDetailsRequest::setTimeType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getLimit, ListRtcClientQosDetailsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getOffset,
+                ListRtcClientQosDetailsRequest::setOffset));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getAuthorization,
+                ListRtcClientQosDetailsRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getXSdkDate,
+                ListRtcClientQosDetailsRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRtcClientQosDetailsRequest::getXProjectId,
+                ListRtcClientQosDetailsRequest::setXProjectId));
 
         // response
 
@@ -413,9 +361,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcHistoryQualityRequest, ListRtcHistoryQualityResponse> listRtcHistoryQuality =
-        genForlistRtcHistoryQuality();
+        genForListRtcHistoryQuality();
 
-    private static HttpRequestDef<ListRtcHistoryQualityRequest, ListRtcHistoryQualityResponse> genForlistRtcHistoryQuality() {
+    private static HttpRequestDef<ListRtcHistoryQualityRequest, ListRtcHistoryQualityResponse> genForListRtcHistoryQuality() {
         // basic
         HttpRequestDef.Builder<ListRtcHistoryQualityRequest, ListRtcHistoryQualityResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRtcHistoryQualityRequest.class, ListRtcHistoryQualityResponse.class)
@@ -428,51 +376,41 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getApp, ListRtcHistoryQualityRequest::setApp));
         builder.<List<String>>withRequestField("metric",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getMetric, (req, v) -> {
-                req.setMetric(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getMetric, ListRtcHistoryQualityRequest::setMetric));
         builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getStartDate,
+                ListRtcHistoryQualityRequest::setStartDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getEndDate, ListRtcHistoryQualityRequest::setEndDate));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getAuthorization,
+                ListRtcHistoryQualityRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getXSdkDate,
+                ListRtcHistoryQualityRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryQualityRequest::getXProjectId,
+                ListRtcHistoryQualityRequest::setXProjectId));
 
         // response
 
@@ -486,9 +424,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcHistoryScaleRequest, ListRtcHistoryScaleResponse> listRtcHistoryScale =
-        genForlistRtcHistoryScale();
+        genForListRtcHistoryScale();
 
-    private static HttpRequestDef<ListRtcHistoryScaleRequest, ListRtcHistoryScaleResponse> genForlistRtcHistoryScale() {
+    private static HttpRequestDef<ListRtcHistoryScaleRequest, ListRtcHistoryScaleResponse> genForListRtcHistoryScale() {
         // basic
         HttpRequestDef.Builder<ListRtcHistoryScaleRequest, ListRtcHistoryScaleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRtcHistoryScaleRequest.class, ListRtcHistoryScaleResponse.class)
@@ -501,51 +439,39 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getApp, ListRtcHistoryScaleRequest::setApp));
         builder.<List<String>>withRequestField("metric",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getMetric, (req, v) -> {
-                req.setMetric(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getMetric, ListRtcHistoryScaleRequest::setMetric));
         builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getStartDate, ListRtcHistoryScaleRequest::setStartDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getEndDate, ListRtcHistoryScaleRequest::setEndDate));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getAuthorization,
+                ListRtcHistoryScaleRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getXSdkDate, ListRtcHistoryScaleRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryScaleRequest::getXProjectId,
+                ListRtcHistoryScaleRequest::setXProjectId));
 
         // response
 
@@ -559,9 +485,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcHistoryUsageRequest, ListRtcHistoryUsageResponse> listRtcHistoryUsage =
-        genForlistRtcHistoryUsage();
+        genForListRtcHistoryUsage();
 
-    private static HttpRequestDef<ListRtcHistoryUsageRequest, ListRtcHistoryUsageResponse> genForlistRtcHistoryUsage() {
+    private static HttpRequestDef<ListRtcHistoryUsageRequest, ListRtcHistoryUsageResponse> genForListRtcHistoryUsage() {
         // basic
         HttpRequestDef.Builder<ListRtcHistoryUsageRequest, ListRtcHistoryUsageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRtcHistoryUsageRequest.class, ListRtcHistoryUsageResponse.class)
@@ -574,51 +500,39 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getApp, ListRtcHistoryUsageRequest::setApp));
         builder.<String>withRequestField("metric",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getMetric, (req, v) -> {
-                req.setMetric(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getMetric, ListRtcHistoryUsageRequest::setMetric));
         builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getStartDate, (req, v) -> {
-                req.setStartDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getStartDate, ListRtcHistoryUsageRequest::setStartDate));
         builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getEndDate, (req, v) -> {
-                req.setEndDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getEndDate, ListRtcHistoryUsageRequest::setEndDate));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getAuthorization,
+                ListRtcHistoryUsageRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getXSdkDate, ListRtcHistoryUsageRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRtcHistoryUsageRequest::getXProjectId,
+                ListRtcHistoryUsageRequest::setXProjectId));
 
         // response
 
@@ -632,9 +546,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcRealtimeNetworkRequest, ListRtcRealtimeNetworkResponse> listRtcRealtimeNetwork =
-        genForlistRtcRealtimeNetwork();
+        genForListRtcRealtimeNetwork();
 
-    private static HttpRequestDef<ListRtcRealtimeNetworkRequest, ListRtcRealtimeNetworkResponse> genForlistRtcRealtimeNetwork() {
+    private static HttpRequestDef<ListRtcRealtimeNetworkRequest, ListRtcRealtimeNetworkResponse> genForListRtcRealtimeNetwork() {
         // basic
         HttpRequestDef.Builder<ListRtcRealtimeNetworkRequest, ListRtcRealtimeNetworkResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRtcRealtimeNetworkRequest.class, ListRtcRealtimeNetworkResponse.class)
@@ -647,65 +561,53 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getApp, ListRtcRealtimeNetworkRequest::setApp));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getRoomId, ListRtcRealtimeNetworkRequest::setRoomId));
         builder.<String>withRequestField("metric",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getMetric, (req, v) -> {
-                req.setMetric(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getMetric, ListRtcRealtimeNetworkRequest::setMetric));
         builder.<String>withRequestField("sdk_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getSdkType, (req, v) -> {
-                req.setSdkType(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getSdkType,
+                ListRtcRealtimeNetworkRequest::setSdkType));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getStartTime,
+                ListRtcRealtimeNetworkRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getEndTime,
+                ListRtcRealtimeNetworkRequest::setEndTime));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getAuthorization,
+                ListRtcRealtimeNetworkRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getXSdkDate,
+                ListRtcRealtimeNetworkRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeNetworkRequest::getXProjectId,
+                ListRtcRealtimeNetworkRequest::setXProjectId));
 
         // response
 
@@ -719,9 +621,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcRealtimeQualityRequest, ListRtcRealtimeQualityResponse> listRtcRealtimeQuality =
-        genForlistRtcRealtimeQuality();
+        genForListRtcRealtimeQuality();
 
-    private static HttpRequestDef<ListRtcRealtimeQualityRequest, ListRtcRealtimeQualityResponse> genForlistRtcRealtimeQuality() {
+    private static HttpRequestDef<ListRtcRealtimeQualityRequest, ListRtcRealtimeQualityResponse> genForListRtcRealtimeQuality() {
         // basic
         HttpRequestDef.Builder<ListRtcRealtimeQualityRequest, ListRtcRealtimeQualityResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRtcRealtimeQualityRequest.class, ListRtcRealtimeQualityResponse.class)
@@ -734,65 +636,53 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getApp, ListRtcRealtimeQualityRequest::setApp));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getRoomId, ListRtcRealtimeQualityRequest::setRoomId));
         builder.<String>withRequestField("metric",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getMetric, (req, v) -> {
-                req.setMetric(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getMetric, ListRtcRealtimeQualityRequest::setMetric));
         builder.<String>withRequestField("sdk_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getSdkType, (req, v) -> {
-                req.setSdkType(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getSdkType,
+                ListRtcRealtimeQualityRequest::setSdkType));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getStartTime,
+                ListRtcRealtimeQualityRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getEndTime,
+                ListRtcRealtimeQualityRequest::setEndTime));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getAuthorization,
+                ListRtcRealtimeQualityRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getXSdkDate,
+                ListRtcRealtimeQualityRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeQualityRequest::getXProjectId,
+                ListRtcRealtimeQualityRequest::setXProjectId));
 
         // response
 
@@ -806,9 +696,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcRealtimeScaleRequest, ListRtcRealtimeScaleResponse> listRtcRealtimeScale =
-        genForlistRtcRealtimeScale();
+        genForListRtcRealtimeScale();
 
-    private static HttpRequestDef<ListRtcRealtimeScaleRequest, ListRtcRealtimeScaleResponse> genForlistRtcRealtimeScale() {
+    private static HttpRequestDef<ListRtcRealtimeScaleRequest, ListRtcRealtimeScaleResponse> genForListRtcRealtimeScale() {
         // basic
         HttpRequestDef.Builder<ListRtcRealtimeScaleRequest, ListRtcRealtimeScaleResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRtcRealtimeScaleRequest.class, ListRtcRealtimeScaleResponse.class)
@@ -821,58 +711,45 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getApp, ListRtcRealtimeScaleRequest::setApp));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getRoomId, ListRtcRealtimeScaleRequest::setRoomId));
         builder.<String>withRequestField("metric",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getMetric, (req, v) -> {
-                req.setMetric(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getMetric, ListRtcRealtimeScaleRequest::setMetric));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getStartTime,
+                ListRtcRealtimeScaleRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getEndTime, ListRtcRealtimeScaleRequest::setEndTime));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getAuthorization,
+                ListRtcRealtimeScaleRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getXSdkDate, ListRtcRealtimeScaleRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleRequest::getXProjectId,
+                ListRtcRealtimeScaleRequest::setXProjectId));
 
         // response
 
@@ -886,9 +763,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcRealtimeScaleDimensionRequest, ListRtcRealtimeScaleDimensionResponse> listRtcRealtimeScaleDimension =
-        genForlistRtcRealtimeScaleDimension();
+        genForListRtcRealtimeScaleDimension();
 
-    private static HttpRequestDef<ListRtcRealtimeScaleDimensionRequest, ListRtcRealtimeScaleDimensionResponse> genForlistRtcRealtimeScaleDimension() {
+    private static HttpRequestDef<ListRtcRealtimeScaleDimensionRequest, ListRtcRealtimeScaleDimensionResponse> genForListRtcRealtimeScaleDimension() {
         // basic
         HttpRequestDef.Builder<ListRtcRealtimeScaleDimensionRequest, ListRtcRealtimeScaleDimensionResponse> builder =
             HttpRequestDef
@@ -904,58 +781,50 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getApp,
+                ListRtcRealtimeScaleDimensionRequest::setApp));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getRoomId,
+                ListRtcRealtimeScaleDimensionRequest::setRoomId));
         builder.<String>withRequestField("metric",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getMetric, (req, v) -> {
-                req.setMetric(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getMetric,
+                ListRtcRealtimeScaleDimensionRequest::setMetric));
         builder.<String>withRequestField("dimension",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getDimension, (req, v) -> {
-                req.setDimension(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getDimension,
+                ListRtcRealtimeScaleDimensionRequest::setDimension));
         builder.<String>withRequestField("time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getTime, (req, v) -> {
-                req.setTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getTime,
+                ListRtcRealtimeScaleDimensionRequest::setTime));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getAuthorization,
+                ListRtcRealtimeScaleDimensionRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getXSdkDate,
+                ListRtcRealtimeScaleDimensionRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRtcRealtimeScaleDimensionRequest::getXProjectId,
+                ListRtcRealtimeScaleDimensionRequest::setXProjectId));
 
         // response
 
@@ -969,9 +838,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcRoomListRequest, ListRtcRoomListResponse> listRtcRoomList =
-        genForlistRtcRoomList();
+        genForListRtcRoomList();
 
-    private static HttpRequestDef<ListRtcRoomListRequest, ListRtcRoomListResponse> genForlistRtcRoomList() {
+    private static HttpRequestDef<ListRtcRoomListRequest, ListRtcRoomListResponse> genForListRtcRoomList() {
         // basic
         HttpRequestDef.Builder<ListRtcRoomListRequest, ListRtcRoomListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRtcRoomListRequest.class, ListRtcRoomListResponse.class)
@@ -984,72 +853,52 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRoomListRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcRoomListRequest::getApp, ListRtcRoomListRequest::setApp));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRoomListRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcRoomListRequest::getRoomId, ListRtcRoomListRequest::setRoomId));
         builder.<ListRtcRoomListRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRtcRoomListRequest.StateEnum.class),
-            f -> f.withMarshaller(ListRtcRoomListRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListRtcRoomListRequest::getState, ListRtcRoomListRequest::setState));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRoomListRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcRoomListRequest::getStartTime, ListRtcRoomListRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRoomListRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcRoomListRequest::getEndTime, ListRtcRoomListRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRtcRoomListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRtcRoomListRequest::getLimit, ListRtcRoomListRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRtcRoomListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRtcRoomListRequest::getOffset, ListRtcRoomListRequest::setOffset));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRoomListRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRtcRoomListRequest::getAuthorization, ListRtcRoomListRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRoomListRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcRoomListRequest::getXSdkDate, ListRtcRoomListRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcRoomListRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRtcRoomListRequest::getXProjectId, ListRtcRoomListRequest::setXProjectId));
 
         // response
 
@@ -1062,9 +911,9 @@ public class CloudRTCMeta {
     }
 
     public static final HttpRequestDef<ListRtcUserListRequest, ListRtcUserListResponse> listRtcUserList =
-        genForlistRtcUserList();
+        genForListRtcUserList();
 
-    private static HttpRequestDef<ListRtcUserListRequest, ListRtcUserListResponse> genForlistRtcUserList() {
+    private static HttpRequestDef<ListRtcUserListRequest, ListRtcUserListResponse> genForListRtcUserList() {
         // basic
         HttpRequestDef.Builder<ListRtcUserListRequest, ListRtcUserListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRtcUserListRequest.class, ListRtcUserListResponse.class)
@@ -1077,107 +926,77 @@ public class CloudRTCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getApp, ListRtcUserListRequest::setApp));
         builder.<String>withRequestField("room_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getRoomId, (req, v) -> {
-                req.setRoomId(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getRoomId, ListRtcUserListRequest::setRoomId));
         builder.<String>withRequestField("uid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getUid, (req, v) -> {
-                req.setUid(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getUid, ListRtcUserListRequest::setUid));
         builder.<String>withRequestField("nickname",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getNickname, (req, v) -> {
-                req.setNickname(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getNickname, ListRtcUserListRequest::setNickname));
         builder.<List<String>>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getRegion, ListRtcUserListRequest::setRegion));
         builder.<List<String>>withRequestField("isp",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getIsp, (req, v) -> {
-                req.setIsp(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getIsp, ListRtcUserListRequest::setIsp));
         builder.<List<String>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getState, ListRtcUserListRequest::setState));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getStartTime, ListRtcUserListRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getEndTime, ListRtcUserListRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getLimit, ListRtcUserListRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getOffset, ListRtcUserListRequest::setOffset));
         builder.<ListRtcUserListRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRtcUserListRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getType, ListRtcUserListRequest::setType));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getAuthorization, ListRtcUserListRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getXSdkDate, ListRtcUserListRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRtcUserListRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRtcUserListRequest::getXProjectId, ListRtcUserListRequest::setXProjectId));
 
         // response
 

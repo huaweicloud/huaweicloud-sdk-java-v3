@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -22,32 +24,32 @@ public class CreateCgwRequestBodyContent {
     private String name;
 
     /**
-     * 网关路由模式
+     * 对端网关标识类型
      */
-    public static final class RouteModeEnum {
+    public static final class IdTypeEnum {
 
         /**
-         * Enum STATIC for value: "static"
+         * Enum IP for value: "ip"
          */
-        public static final RouteModeEnum STATIC = new RouteModeEnum("static");
+        public static final IdTypeEnum IP = new IdTypeEnum("ip");
 
         /**
-         * Enum BGP for value: "bgp"
+         * Enum FQDN for value: "fqdn"
          */
-        public static final RouteModeEnum BGP = new RouteModeEnum("bgp");
+        public static final IdTypeEnum FQDN = new IdTypeEnum("fqdn");
 
-        private static final Map<String, RouteModeEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<String, IdTypeEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<String, RouteModeEnum> createStaticFields() {
-            Map<String, RouteModeEnum> map = new HashMap<>();
-            map.put("static", STATIC);
-            map.put("bgp", BGP);
+        private static Map<String, IdTypeEnum> createStaticFields() {
+            Map<String, IdTypeEnum> map = new HashMap<>();
+            map.put("ip", IP);
+            map.put("fqdn", FQDN);
             return Collections.unmodifiableMap(map);
         }
 
         private String value;
 
-        RouteModeEnum(String value) {
+        IdTypeEnum(String value) {
             this.value = value;
         }
 
@@ -62,14 +64,14 @@ public class CreateCgwRequestBodyContent {
         }
 
         @JsonCreator
-        public static RouteModeEnum fromValue(String value) {
+        public static IdTypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RouteModeEnum(value));
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IdTypeEnum(value));
         }
 
-        public static RouteModeEnum valueOf(String value) {
+        public static IdTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
@@ -79,8 +81,8 @@ public class CreateCgwRequestBodyContent {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof RouteModeEnum) {
-                return this.value.equals(((RouteModeEnum) obj).value);
+            if (obj instanceof IdTypeEnum) {
+                return this.value.equals(((IdTypeEnum) obj).value);
             }
             return false;
         }
@@ -92,9 +94,14 @@ public class CreateCgwRequestBodyContent {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "route_mode")
+    @JsonProperty(value = "id_type")
 
-    private RouteModeEnum routeMode;
+    private IdTypeEnum idType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id_value")
+
+    private String idValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bgp_asn")
@@ -102,14 +109,14 @@ public class CreateCgwRequestBodyContent {
     private Long bgpAsn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip")
-
-    private String ip;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ca_certificate")
 
     private CaCertificateRequest caCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<VpnResourceTag> tags = null;
 
     public CreateCgwRequestBodyContent withName(String name) {
         this.name = name;
@@ -128,21 +135,38 @@ public class CreateCgwRequestBodyContent {
         this.name = name;
     }
 
-    public CreateCgwRequestBodyContent withRouteMode(RouteModeEnum routeMode) {
-        this.routeMode = routeMode;
+    public CreateCgwRequestBodyContent withIdType(IdTypeEnum idType) {
+        this.idType = idType;
         return this;
     }
 
     /**
-     * 网关路由模式
-     * @return routeMode
+     * 对端网关标识类型
+     * @return idType
      */
-    public RouteModeEnum getRouteMode() {
-        return routeMode;
+    public IdTypeEnum getIdType() {
+        return idType;
     }
 
-    public void setRouteMode(RouteModeEnum routeMode) {
-        this.routeMode = routeMode;
+    public void setIdType(IdTypeEnum idType) {
+        this.idType = idType;
+    }
+
+    public CreateCgwRequestBodyContent withIdValue(String idValue) {
+        this.idValue = idValue;
+        return this;
+    }
+
+    /**
+     * 对端网关标识值
+     * @return idValue
+     */
+    public String getIdValue() {
+        return idValue;
+    }
+
+    public void setIdValue(String idValue) {
+        this.idValue = idValue;
     }
 
     public CreateCgwRequestBodyContent withBgpAsn(Long bgpAsn) {
@@ -151,7 +175,7 @@ public class CreateCgwRequestBodyContent {
     }
 
     /**
-     * 网关的bgp asn号，仅当route_mode为bgp时需要，默认值为65000
+     * 网关的bgp asn号，默认值为65000
      * minimum: 1
      * maximum: 4294967295
      * @return bgpAsn
@@ -162,23 +186,6 @@ public class CreateCgwRequestBodyContent {
 
     public void setBgpAsn(Long bgpAsn) {
         this.bgpAsn = bgpAsn;
-    }
-
-    public CreateCgwRequestBodyContent withIp(String ip) {
-        this.ip = ip;
-        return this;
-    }
-
-    /**
-     * 网关ip地址
-     * @return ip
-     */
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
     }
 
     public CreateCgwRequestBodyContent withCaCertificate(CaCertificateRequest caCertificate) {
@@ -207,6 +214,39 @@ public class CreateCgwRequestBodyContent {
         this.caCertificate = caCertificate;
     }
 
+    public CreateCgwRequestBodyContent withTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateCgwRequestBodyContent addTagsItem(VpnResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateCgwRequestBodyContent withTags(Consumer<List<VpnResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<VpnResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -216,14 +256,14 @@ public class CreateCgwRequestBodyContent {
             return false;
         }
         CreateCgwRequestBodyContent that = (CreateCgwRequestBodyContent) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.routeMode, that.routeMode)
-            && Objects.equals(this.bgpAsn, that.bgpAsn) && Objects.equals(this.ip, that.ip)
-            && Objects.equals(this.caCertificate, that.caCertificate);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.idType, that.idType)
+            && Objects.equals(this.idValue, that.idValue) && Objects.equals(this.bgpAsn, that.bgpAsn)
+            && Objects.equals(this.caCertificate, that.caCertificate) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, routeMode, bgpAsn, ip, caCertificate);
+        return Objects.hash(name, idType, idValue, bgpAsn, caCertificate, tags);
     }
 
     @Override
@@ -231,10 +271,11 @@ public class CreateCgwRequestBodyContent {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCgwRequestBodyContent {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
+        sb.append("    idType: ").append(toIndentedString(idType)).append("\n");
+        sb.append("    idValue: ").append(toIndentedString(idValue)).append("\n");
         sb.append("    bgpAsn: ").append(toIndentedString(bgpAsn)).append("\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    caCertificate: ").append(toIndentedString(caCertificate)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

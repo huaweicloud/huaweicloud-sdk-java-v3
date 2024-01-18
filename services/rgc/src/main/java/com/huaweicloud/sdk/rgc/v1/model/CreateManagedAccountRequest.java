@@ -57,7 +57,7 @@ public class CreateManagedAccountRequest {
     }
 
     /**
-     * 账号名。
+     * 纳管账号名。
      * @return accountName
      */
     public String getAccountName() {
@@ -74,7 +74,7 @@ public class CreateManagedAccountRequest {
     }
 
     /**
-     * 账号邮箱。
+     * 纳管账号邮箱。
      * @return accountEmail
      */
     public String getAccountEmail() {
@@ -142,7 +142,7 @@ public class CreateManagedAccountRequest {
     }
 
     /**
-     * 父OU ID。
+     * 父注册OU ID。
      * @return parentOrganizationUnitId
      */
     public String getParentOrganizationUnitId() {
@@ -159,7 +159,7 @@ public class CreateManagedAccountRequest {
     }
 
     /**
-     * 父OU名称。
+     * 父注册OU名称。
      * @return parentOrganizationUnitName
      */
     public String getParentOrganizationUnitName() {

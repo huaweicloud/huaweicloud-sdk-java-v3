@@ -39,9 +39,9 @@ import java.util.List;
 public class CloudTableMeta {
 
     public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster =
-        genForcreateCluster();
+        genForCreateCluster();
 
-    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForcreateCluster() {
+    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForCreateCluster() {
         // basic
         HttpRequestDef.Builder<CreateClusterRequest, CreateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClusterRequest.class, CreateClusterResponse.class)
@@ -54,16 +54,12 @@ public class CloudTableMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateClusterRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateClusterRequest::getXLanguage, CreateClusterRequest::setXLanguage));
         builder.<CreateClusterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateClusterRequestBody.class),
-            f -> f.withMarshaller(CreateClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateClusterRequest::getBody, CreateClusterRequest::setBody));
 
         // response
 
@@ -71,9 +67,9 @@ public class CloudTableMeta {
     }
 
     public static final HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> deleteCluster =
-        genFordeleteCluster();
+        genForDeleteCluster();
 
-    private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genFordeleteCluster() {
+    private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genForDeleteCluster() {
         // basic
         HttpRequestDef.Builder<DeleteClusterRequest, DeleteClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteClusterRequest.class, DeleteClusterResponse.class)
@@ -86,16 +82,12 @@ public class CloudTableMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getClusterId, DeleteClusterRequest::setClusterId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getXLanguage, DeleteClusterRequest::setXLanguage));
 
         // response
 
@@ -103,9 +95,9 @@ public class CloudTableMeta {
     }
 
     public static final HttpRequestDef<EnableComponentRequest, EnableComponentResponse> enableComponent =
-        genForenableComponent();
+        genForEnableComponent();
 
-    private static HttpRequestDef<EnableComponentRequest, EnableComponentResponse> genForenableComponent() {
+    private static HttpRequestDef<EnableComponentRequest, EnableComponentResponse> genForEnableComponent() {
         // basic
         HttpRequestDef.Builder<EnableComponentRequest, EnableComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableComponentRequest.class, EnableComponentResponse.class)
@@ -118,30 +110,22 @@ public class CloudTableMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableComponentRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(EnableComponentRequest::getClusterId, EnableComponentRequest::setClusterId));
         builder.<String>withRequestField("component_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableComponentRequest::getComponentName, (req, v) -> {
-                req.setComponentName(v);
-            }));
+            f -> f.withMarshaller(EnableComponentRequest::getComponentName, EnableComponentRequest::setComponentName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableComponentRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(EnableComponentRequest::getXLanguage, EnableComponentRequest::setXLanguage));
         builder.<AddComponentReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddComponentReq.class),
-            f -> f.withMarshaller(EnableComponentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(EnableComponentRequest::getBody, EnableComponentRequest::setBody));
 
         // response
 
@@ -149,9 +133,9 @@ public class CloudTableMeta {
     }
 
     public static final HttpRequestDef<ExpandClusterComponentRequest, ExpandClusterComponentResponse> expandClusterComponent =
-        genForexpandClusterComponent();
+        genForExpandClusterComponent();
 
-    private static HttpRequestDef<ExpandClusterComponentRequest, ExpandClusterComponentResponse> genForexpandClusterComponent() {
+    private static HttpRequestDef<ExpandClusterComponentRequest, ExpandClusterComponentResponse> genForExpandClusterComponent() {
         // basic
         HttpRequestDef.Builder<ExpandClusterComponentRequest, ExpandClusterComponentResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ExpandClusterComponentRequest.class, ExpandClusterComponentResponse.class)
@@ -164,32 +148,28 @@ public class CloudTableMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandClusterComponentRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ExpandClusterComponentRequest::getClusterId,
+                ExpandClusterComponentRequest::setClusterId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandClusterComponentRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ExpandClusterComponentRequest::getXLanguage,
+                ExpandClusterComponentRequest::setXLanguage));
         builder.<GrowNodeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GrowNodeReq.class),
-            f -> f.withMarshaller(ExpandClusterComponentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExpandClusterComponentRequest::getBody, ExpandClusterComponentRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForlistClusters();
+    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForListClusters();
 
-    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForlistClusters() {
+    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForListClusters() {
         // basic
         HttpRequestDef.Builder<ListClustersRequest, ListClustersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClustersRequest.class, ListClustersResponse.class)
@@ -202,16 +182,12 @@ public class CloudTableMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClustersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getOffset, ListClustersRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClustersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getLimit, ListClustersRequest::setLimit));
 
         // response
 
@@ -219,9 +195,9 @@ public class CloudTableMeta {
     }
 
     public static final HttpRequestDef<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse> rebootCloudTableCluster =
-        genForrebootCloudTableCluster();
+        genForRebootCloudTableCluster();
 
-    private static HttpRequestDef<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse> genForrebootCloudTableCluster() {
+    private static HttpRequestDef<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse> genForRebootCloudTableCluster() {
         // basic
         HttpRequestDef.Builder<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RebootCloudTableClusterRequest.class, RebootCloudTableClusterResponse.class)
@@ -234,40 +210,35 @@ public class CloudTableMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RebootCloudTableClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(RebootCloudTableClusterRequest::getClusterId,
+                RebootCloudTableClusterRequest::setClusterId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RebootCloudTableClusterRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(RebootCloudTableClusterRequest::getXLanguage,
+                RebootCloudTableClusterRequest::setXLanguage));
         builder.<HbaseClusterActionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HbaseClusterActionReq.class),
-            f -> f.withMarshaller(RebootCloudTableClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RebootCloudTableClusterRequest::getBody, RebootCloudTableClusterRequest::setBody));
 
         // response
         builder.<List<RestartInstanceRsp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(RebootCloudTableClusterResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(RestartInstanceRsp.class));
+            f -> f.withMarshaller(RebootCloudTableClusterResponse::getBody, RebootCloudTableClusterResponse::setBody)
+                .withInnerContainerType(RestartInstanceRsp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowClusterDetailRequest, ShowClusterDetailResponse> showClusterDetail =
-        genForshowClusterDetail();
+        genForShowClusterDetail();
 
-    private static HttpRequestDef<ShowClusterDetailRequest, ShowClusterDetailResponse> genForshowClusterDetail() {
+    private static HttpRequestDef<ShowClusterDetailRequest, ShowClusterDetailResponse> genForShowClusterDetail() {
         // basic
         HttpRequestDef.Builder<ShowClusterDetailRequest, ShowClusterDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterDetailRequest.class, ShowClusterDetailResponse.class)
@@ -280,16 +251,12 @@ public class CloudTableMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterDetailRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterDetailRequest::getClusterId, ShowClusterDetailRequest::setClusterId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowClusterDetailRequest::getXLanguage, ShowClusterDetailRequest::setXLanguage));
 
         // response
 
@@ -297,9 +264,9 @@ public class CloudTableMeta {
     }
 
     public static final HttpRequestDef<ShowClusterSettingRequest, ShowClusterSettingResponse> showClusterSetting =
-        genForshowClusterSetting();
+        genForShowClusterSetting();
 
-    private static HttpRequestDef<ShowClusterSettingRequest, ShowClusterSettingResponse> genForshowClusterSetting() {
+    private static HttpRequestDef<ShowClusterSettingRequest, ShowClusterSettingResponse> genForShowClusterSetting() {
         // basic
         HttpRequestDef.Builder<ShowClusterSettingRequest, ShowClusterSettingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterSettingRequest.class, ShowClusterSettingResponse.class)
@@ -312,16 +279,12 @@ public class CloudTableMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterSettingRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterSettingRequest::getClusterId, ShowClusterSettingRequest::setClusterId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterSettingRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowClusterSettingRequest::getXLanguage, ShowClusterSettingRequest::setXLanguage));
 
         // response
 
@@ -329,9 +292,9 @@ public class CloudTableMeta {
     }
 
     public static final HttpRequestDef<UpdateClusterSettingRequest, UpdateClusterSettingResponse> updateClusterSetting =
-        genForupdateClusterSetting();
+        genForUpdateClusterSetting();
 
-    private static HttpRequestDef<UpdateClusterSettingRequest, UpdateClusterSettingResponse> genForupdateClusterSetting() {
+    private static HttpRequestDef<UpdateClusterSettingRequest, UpdateClusterSettingResponse> genForUpdateClusterSetting() {
         // basic
         HttpRequestDef.Builder<UpdateClusterSettingRequest, UpdateClusterSettingResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateClusterSettingRequest.class, UpdateClusterSettingResponse.class)
@@ -344,23 +307,19 @@ public class CloudTableMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateClusterSettingRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterSettingRequest::getClusterId,
+                UpdateClusterSettingRequest::setClusterId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateClusterSettingRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterSettingRequest::getXLanguage,
+                UpdateClusterSettingRequest::setXLanguage));
         builder.<HbaseModifySettingV2Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HbaseModifySettingV2Req.class),
-            f -> f.withMarshaller(UpdateClusterSettingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterSettingRequest::getBody, UpdateClusterSettingRequest::setBody));
 
         // response
 
@@ -368,9 +327,9 @@ public class CloudTableMeta {
     }
 
     public static final HttpRequestDef<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse> createCloudTableCluster =
-        genForcreateCloudTableCluster();
+        genForCreateCloudTableCluster();
 
-    private static HttpRequestDef<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse> genForcreateCloudTableCluster() {
+    private static HttpRequestDef<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse> genForCreateCloudTableCluster() {
         // basic
         HttpRequestDef.Builder<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateCloudTableClusterRequest.class, CreateCloudTableClusterResponse.class)
@@ -383,16 +342,13 @@ public class CloudTableMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCloudTableClusterRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateCloudTableClusterRequest::getXLanguage,
+                CreateCloudTableClusterRequest::setXLanguage));
         builder.<CreateClusterReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateClusterReqBody.class),
-            f -> f.withMarshaller(CreateCloudTableClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCloudTableClusterRequest::getBody, CreateCloudTableClusterRequest::setBody));
 
         // response
 

@@ -30,7 +30,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutEventsRequest 请求对象
+     * @param request PutEventsRequest 请求对象
      * @return CompletableFuture<PutEventsResponse>
      */
     public CompletableFuture<PutEventsResponse> putEventsAsync(PutEventsRequest request) {
@@ -44,11 +44,11 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutEventsRequest 请求对象
+     * @param request PutEventsRequest 请求对象
      * @return AsyncInvoker<PutEventsRequest, PutEventsResponse>
      */
     public AsyncInvoker<PutEventsRequest, PutEventsResponse> putEventsAsyncInvoker(PutEventsRequest request) {
-        return new AsyncInvoker<PutEventsRequest, PutEventsResponse>(request, EgMeta.putEvents, hcClient);
+        return new AsyncInvoker<>(request, EgMeta.putEvents, hcClient);
     }
 
     /**
@@ -58,7 +58,7 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutOfficialEventsRequest 请求对象
+     * @param request PutOfficialEventsRequest 请求对象
      * @return CompletableFuture<PutOfficialEventsResponse>
      */
     public CompletableFuture<PutOfficialEventsResponse> putOfficialEventsAsync(PutOfficialEventsRequest request) {
@@ -72,13 +72,12 @@ public class EgAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param PutOfficialEventsRequest 请求对象
+     * @param request PutOfficialEventsRequest 请求对象
      * @return AsyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>
      */
     public AsyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse> putOfficialEventsAsyncInvoker(
         PutOfficialEventsRequest request) {
-        return new AsyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>(request, EgMeta.putOfficialEvents,
-            hcClient);
+        return new AsyncInvoker<>(request, EgMeta.putOfficialEvents, hcClient);
     }
 
 }

@@ -76,7 +76,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEngineRequest 请求对象
+     * @param request CreateEngineRequest 请求对象
      * @return CreateEngineResponse
      */
     public CreateEngineResponse createEngine(CreateEngineRequest request) {
@@ -90,11 +90,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEngineRequest 请求对象
+     * @param request CreateEngineRequest 请求对象
      * @return SyncInvoker<CreateEngineRequest, CreateEngineResponse>
      */
     public SyncInvoker<CreateEngineRequest, CreateEngineResponse> createEngineInvoker(CreateEngineRequest request) {
-        return new SyncInvoker<CreateEngineRequest, CreateEngineResponse>(request, CseMeta.createEngine, hcClient);
+        return new SyncInvoker<>(request, CseMeta.createEngine, hcClient);
     }
 
     /**
@@ -104,7 +104,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGovernancePolicyRequest 请求对象
+     * @param request CreateGovernancePolicyRequest 请求对象
      * @return CreateGovernancePolicyResponse
      */
     public CreateGovernancePolicyResponse createGovernancePolicy(CreateGovernancePolicyRequest request) {
@@ -118,13 +118,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGovernancePolicyRequest 请求对象
+     * @param request CreateGovernancePolicyRequest 请求对象
      * @return SyncInvoker<CreateGovernancePolicyRequest, CreateGovernancePolicyResponse>
      */
     public SyncInvoker<CreateGovernancePolicyRequest, CreateGovernancePolicyResponse> createGovernancePolicyInvoker(
         CreateGovernancePolicyRequest request) {
-        return new SyncInvoker<CreateGovernancePolicyRequest, CreateGovernancePolicyResponse>(request,
-            CseMeta.createGovernancePolicy, hcClient);
+        return new SyncInvoker<>(request, CseMeta.createGovernancePolicy, hcClient);
     }
 
     /**
@@ -134,7 +133,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMicroserviceRouteRuleRequest 请求对象
+     * @param request CreateMicroserviceRouteRuleRequest 请求对象
      * @return CreateMicroserviceRouteRuleResponse
      */
     public CreateMicroserviceRouteRuleResponse createMicroserviceRouteRule(CreateMicroserviceRouteRuleRequest request) {
@@ -148,13 +147,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMicroserviceRouteRuleRequest 请求对象
+     * @param request CreateMicroserviceRouteRuleRequest 请求对象
      * @return SyncInvoker<CreateMicroserviceRouteRuleRequest, CreateMicroserviceRouteRuleResponse>
      */
     public SyncInvoker<CreateMicroserviceRouteRuleRequest, CreateMicroserviceRouteRuleResponse> createMicroserviceRouteRuleInvoker(
         CreateMicroserviceRouteRuleRequest request) {
-        return new SyncInvoker<CreateMicroserviceRouteRuleRequest, CreateMicroserviceRouteRuleResponse>(request,
-            CseMeta.createMicroserviceRouteRule, hcClient);
+        return new SyncInvoker<>(request, CseMeta.createMicroserviceRouteRule, hcClient);
     }
 
     /**
@@ -164,7 +162,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEngineRequest 请求对象
+     * @param request DeleteEngineRequest 请求对象
      * @return DeleteEngineResponse
      */
     public DeleteEngineResponse deleteEngine(DeleteEngineRequest request) {
@@ -178,11 +176,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEngineRequest 请求对象
+     * @param request DeleteEngineRequest 请求对象
      * @return SyncInvoker<DeleteEngineRequest, DeleteEngineResponse>
      */
     public SyncInvoker<DeleteEngineRequest, DeleteEngineResponse> deleteEngineInvoker(DeleteEngineRequest request) {
-        return new SyncInvoker<DeleteEngineRequest, DeleteEngineResponse>(request, CseMeta.deleteEngine, hcClient);
+        return new SyncInvoker<>(request, CseMeta.deleteEngine, hcClient);
     }
 
     /**
@@ -192,7 +190,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGovernancePolicyRequest 请求对象
+     * @param request DeleteGovernancePolicyRequest 请求对象
      * @return DeleteGovernancePolicyResponse
      */
     public DeleteGovernancePolicyResponse deleteGovernancePolicy(DeleteGovernancePolicyRequest request) {
@@ -206,13 +204,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGovernancePolicyRequest 请求对象
+     * @param request DeleteGovernancePolicyRequest 请求对象
      * @return SyncInvoker<DeleteGovernancePolicyRequest, DeleteGovernancePolicyResponse>
      */
     public SyncInvoker<DeleteGovernancePolicyRequest, DeleteGovernancePolicyResponse> deleteGovernancePolicyInvoker(
         DeleteGovernancePolicyRequest request) {
-        return new SyncInvoker<DeleteGovernancePolicyRequest, DeleteGovernancePolicyResponse>(request,
-            CseMeta.deleteGovernancePolicy, hcClient);
+        return new SyncInvoker<>(request, CseMeta.deleteGovernancePolicy, hcClient);
     }
 
     /**
@@ -222,7 +219,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMicroserviceRouteRuleRequest 请求对象
+     * @param request DeleteMicroserviceRouteRuleRequest 请求对象
      * @return DeleteMicroserviceRouteRuleResponse
      */
     public DeleteMicroserviceRouteRuleResponse deleteMicroserviceRouteRule(DeleteMicroserviceRouteRuleRequest request) {
@@ -236,13 +233,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMicroserviceRouteRuleRequest 请求对象
+     * @param request DeleteMicroserviceRouteRuleRequest 请求对象
      * @return SyncInvoker<DeleteMicroserviceRouteRuleRequest, DeleteMicroserviceRouteRuleResponse>
      */
     public SyncInvoker<DeleteMicroserviceRouteRuleRequest, DeleteMicroserviceRouteRuleResponse> deleteMicroserviceRouteRuleInvoker(
         DeleteMicroserviceRouteRuleRequest request) {
-        return new SyncInvoker<DeleteMicroserviceRouteRuleRequest, DeleteMicroserviceRouteRuleResponse>(request,
-            CseMeta.deleteMicroserviceRouteRule, hcClient);
+        return new SyncInvoker<>(request, CseMeta.deleteMicroserviceRouteRule, hcClient);
     }
 
     /**
@@ -252,7 +248,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadKieRequest 请求对象
+     * @param request DownloadKieRequest 请求对象
      * @return DownloadKieResponse
      */
     public DownloadKieResponse downloadKie(DownloadKieRequest request) {
@@ -266,11 +262,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadKieRequest 请求对象
+     * @param request DownloadKieRequest 请求对象
      * @return SyncInvoker<DownloadKieRequest, DownloadKieResponse>
      */
     public SyncInvoker<DownloadKieRequest, DownloadKieResponse> downloadKieInvoker(DownloadKieRequest request) {
-        return new SyncInvoker<DownloadKieRequest, DownloadKieResponse>(request, CseMeta.downloadKie, hcClient);
+        return new SyncInvoker<>(request, CseMeta.downloadKie, hcClient);
     }
 
     /**
@@ -280,7 +276,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnginesRequest 请求对象
+     * @param request ListEnginesRequest 请求对象
      * @return ListEnginesResponse
      */
     public ListEnginesResponse listEngines(ListEnginesRequest request) {
@@ -294,11 +290,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnginesRequest 请求对象
+     * @param request ListEnginesRequest 请求对象
      * @return SyncInvoker<ListEnginesRequest, ListEnginesResponse>
      */
     public SyncInvoker<ListEnginesRequest, ListEnginesResponse> listEnginesInvoker(ListEnginesRequest request) {
-        return new SyncInvoker<ListEnginesRequest, ListEnginesResponse>(request, CseMeta.listEngines, hcClient);
+        return new SyncInvoker<>(request, CseMeta.listEngines, hcClient);
     }
 
     /**
@@ -308,7 +304,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
      */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
@@ -322,11 +318,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
-        return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, CseMeta.listFlavors, hcClient);
+        return new SyncInvoker<>(request, CseMeta.listFlavors, hcClient);
     }
 
     /**
@@ -336,7 +332,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGovernancePolicyRequest 请求对象
+     * @param request ListGovernancePolicyRequest 请求对象
      * @return ListGovernancePolicyResponse
      */
     public ListGovernancePolicyResponse listGovernancePolicy(ListGovernancePolicyRequest request) {
@@ -350,13 +346,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGovernancePolicyRequest 请求对象
+     * @param request ListGovernancePolicyRequest 请求对象
      * @return SyncInvoker<ListGovernancePolicyRequest, ListGovernancePolicyResponse>
      */
     public SyncInvoker<ListGovernancePolicyRequest, ListGovernancePolicyResponse> listGovernancePolicyInvoker(
         ListGovernancePolicyRequest request) {
-        return new SyncInvoker<ListGovernancePolicyRequest, ListGovernancePolicyResponse>(request,
-            CseMeta.listGovernancePolicy, hcClient);
+        return new SyncInvoker<>(request, CseMeta.listGovernancePolicy, hcClient);
     }
 
     /**
@@ -366,7 +361,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGovernancePolicyByPolicyIdRequest 请求对象
+     * @param request ListGovernancePolicyByPolicyIdRequest 请求对象
      * @return ListGovernancePolicyByPolicyIdResponse
      */
     public ListGovernancePolicyByPolicyIdResponse listGovernancePolicyByPolicyId(
@@ -381,13 +376,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGovernancePolicyByPolicyIdRequest 请求对象
+     * @param request ListGovernancePolicyByPolicyIdRequest 请求对象
      * @return SyncInvoker<ListGovernancePolicyByPolicyIdRequest, ListGovernancePolicyByPolicyIdResponse>
      */
     public SyncInvoker<ListGovernancePolicyByPolicyIdRequest, ListGovernancePolicyByPolicyIdResponse> listGovernancePolicyByPolicyIdInvoker(
         ListGovernancePolicyByPolicyIdRequest request) {
-        return new SyncInvoker<ListGovernancePolicyByPolicyIdRequest, ListGovernancePolicyByPolicyIdResponse>(request,
-            CseMeta.listGovernancePolicyByPolicyId, hcClient);
+        return new SyncInvoker<>(request, CseMeta.listGovernancePolicyByPolicyId, hcClient);
     }
 
     /**
@@ -397,7 +391,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGovernancePolicysRequest 请求对象
+     * @param request ListGovernancePolicysRequest 请求对象
      * @return ListGovernancePolicysResponse
      */
     public ListGovernancePolicysResponse listGovernancePolicys(ListGovernancePolicysRequest request) {
@@ -411,13 +405,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGovernancePolicysRequest 请求对象
+     * @param request ListGovernancePolicysRequest 请求对象
      * @return SyncInvoker<ListGovernancePolicysRequest, ListGovernancePolicysResponse>
      */
     public SyncInvoker<ListGovernancePolicysRequest, ListGovernancePolicysResponse> listGovernancePolicysInvoker(
         ListGovernancePolicysRequest request) {
-        return new SyncInvoker<ListGovernancePolicysRequest, ListGovernancePolicysResponse>(request,
-            CseMeta.listGovernancePolicys, hcClient);
+        return new SyncInvoker<>(request, CseMeta.listGovernancePolicys, hcClient);
     }
 
     /**
@@ -427,7 +420,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMicroserviceRouteRuleRequest 请求对象
+     * @param request ListMicroserviceRouteRuleRequest 请求对象
      * @return ListMicroserviceRouteRuleResponse
      */
     public ListMicroserviceRouteRuleResponse listMicroserviceRouteRule(ListMicroserviceRouteRuleRequest request) {
@@ -441,13 +434,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMicroserviceRouteRuleRequest 请求对象
+     * @param request ListMicroserviceRouteRuleRequest 请求对象
      * @return SyncInvoker<ListMicroserviceRouteRuleRequest, ListMicroserviceRouteRuleResponse>
      */
     public SyncInvoker<ListMicroserviceRouteRuleRequest, ListMicroserviceRouteRuleResponse> listMicroserviceRouteRuleInvoker(
         ListMicroserviceRouteRuleRequest request) {
-        return new SyncInvoker<ListMicroserviceRouteRuleRequest, ListMicroserviceRouteRuleResponse>(request,
-            CseMeta.listMicroserviceRouteRule, hcClient);
+        return new SyncInvoker<>(request, CseMeta.listMicroserviceRouteRule, hcClient);
     }
 
     /**
@@ -457,7 +449,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeEngineRequest 请求对象
+     * @param request ResizeEngineRequest 请求对象
      * @return ResizeEngineResponse
      */
     public ResizeEngineResponse resizeEngine(ResizeEngineRequest request) {
@@ -471,11 +463,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeEngineRequest 请求对象
+     * @param request ResizeEngineRequest 请求对象
      * @return SyncInvoker<ResizeEngineRequest, ResizeEngineResponse>
      */
     public SyncInvoker<ResizeEngineRequest, ResizeEngineResponse> resizeEngineInvoker(ResizeEngineRequest request) {
-        return new SyncInvoker<ResizeEngineRequest, ResizeEngineResponse>(request, CseMeta.resizeEngine, hcClient);
+        return new SyncInvoker<>(request, CseMeta.resizeEngine, hcClient);
     }
 
     /**
@@ -485,7 +477,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryEngineRequest 请求对象
+     * @param request RetryEngineRequest 请求对象
      * @return RetryEngineResponse
      */
     public RetryEngineResponse retryEngine(RetryEngineRequest request) {
@@ -499,11 +491,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RetryEngineRequest 请求对象
+     * @param request RetryEngineRequest 请求对象
      * @return SyncInvoker<RetryEngineRequest, RetryEngineResponse>
      */
     public SyncInvoker<RetryEngineRequest, RetryEngineResponse> retryEngineInvoker(RetryEngineRequest request) {
-        return new SyncInvoker<RetryEngineRequest, RetryEngineResponse>(request, CseMeta.retryEngine, hcClient);
+        return new SyncInvoker<>(request, CseMeta.retryEngine, hcClient);
     }
 
     /**
@@ -513,7 +505,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineRequest 请求对象
+     * @param request ShowEngineRequest 请求对象
      * @return ShowEngineResponse
      */
     public ShowEngineResponse showEngine(ShowEngineRequest request) {
@@ -527,11 +519,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineRequest 请求对象
+     * @param request ShowEngineRequest 请求对象
      * @return SyncInvoker<ShowEngineRequest, ShowEngineResponse>
      */
     public SyncInvoker<ShowEngineRequest, ShowEngineResponse> showEngineInvoker(ShowEngineRequest request) {
-        return new SyncInvoker<ShowEngineRequest, ShowEngineResponse>(request, CseMeta.showEngine, hcClient);
+        return new SyncInvoker<>(request, CseMeta.showEngine, hcClient);
     }
 
     /**
@@ -541,7 +533,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineJobRequest 请求对象
+     * @param request ShowEngineJobRequest 请求对象
      * @return ShowEngineJobResponse
      */
     public ShowEngineJobResponse showEngineJob(ShowEngineJobRequest request) {
@@ -555,11 +547,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineJobRequest 请求对象
+     * @param request ShowEngineJobRequest 请求对象
      * @return SyncInvoker<ShowEngineJobRequest, ShowEngineJobResponse>
      */
     public SyncInvoker<ShowEngineJobRequest, ShowEngineJobResponse> showEngineJobInvoker(ShowEngineJobRequest request) {
-        return new SyncInvoker<ShowEngineJobRequest, ShowEngineJobResponse>(request, CseMeta.showEngineJob, hcClient);
+        return new SyncInvoker<>(request, CseMeta.showEngineJob, hcClient);
     }
 
     /**
@@ -569,7 +561,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineQuotasRequest 请求对象
+     * @param request ShowEngineQuotasRequest 请求对象
      * @return ShowEngineQuotasResponse
      */
     public ShowEngineQuotasResponse showEngineQuotas(ShowEngineQuotasRequest request) {
@@ -583,13 +575,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineQuotasRequest 请求对象
+     * @param request ShowEngineQuotasRequest 请求对象
      * @return SyncInvoker<ShowEngineQuotasRequest, ShowEngineQuotasResponse>
      */
     public SyncInvoker<ShowEngineQuotasRequest, ShowEngineQuotasResponse> showEngineQuotasInvoker(
         ShowEngineQuotasRequest request) {
-        return new SyncInvoker<ShowEngineQuotasRequest, ShowEngineQuotasResponse>(request, CseMeta.showEngineQuotas,
-            hcClient);
+        return new SyncInvoker<>(request, CseMeta.showEngineQuotas, hcClient);
     }
 
     /**
@@ -599,7 +590,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGovernancePolicyRequest 请求对象
+     * @param request UpdateGovernancePolicyRequest 请求对象
      * @return UpdateGovernancePolicyResponse
      */
     public UpdateGovernancePolicyResponse updateGovernancePolicy(UpdateGovernancePolicyRequest request) {
@@ -613,13 +604,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGovernancePolicyRequest 请求对象
+     * @param request UpdateGovernancePolicyRequest 请求对象
      * @return SyncInvoker<UpdateGovernancePolicyRequest, UpdateGovernancePolicyResponse>
      */
     public SyncInvoker<UpdateGovernancePolicyRequest, UpdateGovernancePolicyResponse> updateGovernancePolicyInvoker(
         UpdateGovernancePolicyRequest request) {
-        return new SyncInvoker<UpdateGovernancePolicyRequest, UpdateGovernancePolicyResponse>(request,
-            CseMeta.updateGovernancePolicy, hcClient);
+        return new SyncInvoker<>(request, CseMeta.updateGovernancePolicy, hcClient);
     }
 
     /**
@@ -629,7 +619,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeEngineRequest 请求对象
+     * @param request UpgradeEngineRequest 请求对象
      * @return UpgradeEngineResponse
      */
     public UpgradeEngineResponse upgradeEngine(UpgradeEngineRequest request) {
@@ -643,11 +633,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeEngineRequest 请求对象
+     * @param request UpgradeEngineRequest 请求对象
      * @return SyncInvoker<UpgradeEngineRequest, UpgradeEngineResponse>
      */
     public SyncInvoker<UpgradeEngineRequest, UpgradeEngineResponse> upgradeEngineInvoker(UpgradeEngineRequest request) {
-        return new SyncInvoker<UpgradeEngineRequest, UpgradeEngineResponse>(request, CseMeta.upgradeEngine, hcClient);
+        return new SyncInvoker<>(request, CseMeta.upgradeEngine, hcClient);
     }
 
     /**
@@ -657,7 +647,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeEngineConfigRequest 请求对象
+     * @param request UpgradeEngineConfigRequest 请求对象
      * @return UpgradeEngineConfigResponse
      */
     public UpgradeEngineConfigResponse upgradeEngineConfig(UpgradeEngineConfigRequest request) {
@@ -671,13 +661,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpgradeEngineConfigRequest 请求对象
+     * @param request UpgradeEngineConfigRequest 请求对象
      * @return SyncInvoker<UpgradeEngineConfigRequest, UpgradeEngineConfigResponse>
      */
     public SyncInvoker<UpgradeEngineConfigRequest, UpgradeEngineConfigResponse> upgradeEngineConfigInvoker(
         UpgradeEngineConfigRequest request) {
-        return new SyncInvoker<UpgradeEngineConfigRequest, UpgradeEngineConfigResponse>(request,
-            CseMeta.upgradeEngineConfig, hcClient);
+        return new SyncInvoker<>(request, CseMeta.upgradeEngineConfig, hcClient);
     }
 
     /**
@@ -687,7 +676,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadKieRequest 请求对象
+     * @param request UploadKieRequest 请求对象
      * @return UploadKieResponse
      */
     public UploadKieResponse uploadKie(UploadKieRequest request) {
@@ -701,11 +690,11 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadKieRequest 请求对象
+     * @param request UploadKieRequest 请求对象
      * @return SyncInvoker<UploadKieRequest, UploadKieResponse>
      */
     public SyncInvoker<UploadKieRequest, UploadKieResponse> uploadKieInvoker(UploadKieRequest request) {
-        return new SyncInvoker<UploadKieRequest, UploadKieResponse>(request, CseMeta.uploadKie, hcClient);
+        return new SyncInvoker<>(request, CseMeta.uploadKie, hcClient);
     }
 
     /**
@@ -715,7 +704,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNacosNamespacesRequest 请求对象
+     * @param request CreateNacosNamespacesRequest 请求对象
      * @return CreateNacosNamespacesResponse
      */
     public CreateNacosNamespacesResponse createNacosNamespaces(CreateNacosNamespacesRequest request) {
@@ -729,13 +718,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateNacosNamespacesRequest 请求对象
+     * @param request CreateNacosNamespacesRequest 请求对象
      * @return SyncInvoker<CreateNacosNamespacesRequest, CreateNacosNamespacesResponse>
      */
     public SyncInvoker<CreateNacosNamespacesRequest, CreateNacosNamespacesResponse> createNacosNamespacesInvoker(
         CreateNacosNamespacesRequest request) {
-        return new SyncInvoker<CreateNacosNamespacesRequest, CreateNacosNamespacesResponse>(request,
-            CseMeta.createNacosNamespaces, hcClient);
+        return new SyncInvoker<>(request, CseMeta.createNacosNamespaces, hcClient);
     }
 
     /**
@@ -745,7 +733,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNacosNamespacesRequest 请求对象
+     * @param request DeleteNacosNamespacesRequest 请求对象
      * @return DeleteNacosNamespacesResponse
      */
     public DeleteNacosNamespacesResponse deleteNacosNamespaces(DeleteNacosNamespacesRequest request) {
@@ -759,13 +747,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteNacosNamespacesRequest 请求对象
+     * @param request DeleteNacosNamespacesRequest 请求对象
      * @return SyncInvoker<DeleteNacosNamespacesRequest, DeleteNacosNamespacesResponse>
      */
     public SyncInvoker<DeleteNacosNamespacesRequest, DeleteNacosNamespacesResponse> deleteNacosNamespacesInvoker(
         DeleteNacosNamespacesRequest request) {
-        return new SyncInvoker<DeleteNacosNamespacesRequest, DeleteNacosNamespacesResponse>(request,
-            CseMeta.deleteNacosNamespaces, hcClient);
+        return new SyncInvoker<>(request, CseMeta.deleteNacosNamespaces, hcClient);
     }
 
     /**
@@ -775,7 +762,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNacosNamespacesRequest 请求对象
+     * @param request ListNacosNamespacesRequest 请求对象
      * @return ListNacosNamespacesResponse
      */
     public ListNacosNamespacesResponse listNacosNamespaces(ListNacosNamespacesRequest request) {
@@ -789,13 +776,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNacosNamespacesRequest 请求对象
+     * @param request ListNacosNamespacesRequest 请求对象
      * @return SyncInvoker<ListNacosNamespacesRequest, ListNacosNamespacesResponse>
      */
     public SyncInvoker<ListNacosNamespacesRequest, ListNacosNamespacesResponse> listNacosNamespacesInvoker(
         ListNacosNamespacesRequest request) {
-        return new SyncInvoker<ListNacosNamespacesRequest, ListNacosNamespacesResponse>(request,
-            CseMeta.listNacosNamespaces, hcClient);
+        return new SyncInvoker<>(request, CseMeta.listNacosNamespaces, hcClient);
     }
 
     /**
@@ -805,7 +791,7 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNacosNamespacesRequest 请求对象
+     * @param request UpdateNacosNamespacesRequest 请求对象
      * @return UpdateNacosNamespacesResponse
      */
     public UpdateNacosNamespacesResponse updateNacosNamespaces(UpdateNacosNamespacesRequest request) {
@@ -819,13 +805,12 @@ public class CseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNacosNamespacesRequest 请求对象
+     * @param request UpdateNacosNamespacesRequest 请求对象
      * @return SyncInvoker<UpdateNacosNamespacesRequest, UpdateNacosNamespacesResponse>
      */
     public SyncInvoker<UpdateNacosNamespacesRequest, UpdateNacosNamespacesResponse> updateNacosNamespacesInvoker(
         UpdateNacosNamespacesRequest request) {
-        return new SyncInvoker<UpdateNacosNamespacesRequest, UpdateNacosNamespacesResponse>(request,
-            CseMeta.updateNacosNamespaces, hcClient);
+        return new SyncInvoker<>(request, CseMeta.updateNacosNamespaces, hcClient);
     }
 
 }

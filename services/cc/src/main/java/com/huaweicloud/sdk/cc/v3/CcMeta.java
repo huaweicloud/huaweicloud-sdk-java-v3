@@ -170,9 +170,9 @@ import java.util.List;
 public class CcMeta {
 
     public static final HttpRequestDef<CreateAuthorisationRequest, CreateAuthorisationResponse> createAuthorisation =
-        genForcreateAuthorisation();
+        genForCreateAuthorisation();
 
-    private static HttpRequestDef<CreateAuthorisationRequest, CreateAuthorisationResponse> genForcreateAuthorisation() {
+    private static HttpRequestDef<CreateAuthorisationRequest, CreateAuthorisationResponse> genForCreateAuthorisation() {
         // basic
         HttpRequestDef.Builder<CreateAuthorisationRequest, CreateAuthorisationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAuthorisationRequest.class, CreateAuthorisationResponse.class)
@@ -185,9 +185,7 @@ public class CcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAuthorisationRequestBody.class),
-            f -> f.withMarshaller(CreateAuthorisationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAuthorisationRequest::getBody, CreateAuthorisationRequest::setBody));
 
         // response
 
@@ -195,9 +193,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<DeleteAuthorisationRequest, DeleteAuthorisationResponse> deleteAuthorisation =
-        genFordeleteAuthorisation();
+        genForDeleteAuthorisation();
 
-    private static HttpRequestDef<DeleteAuthorisationRequest, DeleteAuthorisationResponse> genFordeleteAuthorisation() {
+    private static HttpRequestDef<DeleteAuthorisationRequest, DeleteAuthorisationResponse> genForDeleteAuthorisation() {
         // basic
         HttpRequestDef.Builder<DeleteAuthorisationRequest, DeleteAuthorisationResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteAuthorisationRequest.class, DeleteAuthorisationResponse.class)
@@ -210,9 +208,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAuthorisationRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteAuthorisationRequest::getId, DeleteAuthorisationRequest::setId));
 
         // response
 
@@ -220,9 +216,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListAuthorisationsRequest, ListAuthorisationsResponse> listAuthorisations =
-        genForlistAuthorisations();
+        genForListAuthorisations();
 
-    private static HttpRequestDef<ListAuthorisationsRequest, ListAuthorisationsResponse> genForlistAuthorisations() {
+    private static HttpRequestDef<ListAuthorisationsRequest, ListAuthorisationsResponse> genForListAuthorisations() {
         // basic
         HttpRequestDef.Builder<ListAuthorisationsRequest, ListAuthorisationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuthorisationsRequest.class, ListAuthorisationsResponse.class)
@@ -235,51 +231,39 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAuthorisationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAuthorisationsRequest::getLimit, ListAuthorisationsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthorisationsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListAuthorisationsRequest::getMarker, ListAuthorisationsRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAuthorisationsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListAuthorisationsRequest::getId, ListAuthorisationsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAuthorisationsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAuthorisationsRequest::getName, ListAuthorisationsRequest::setName));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAuthorisationsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListAuthorisationsRequest::getDescription,
+                ListAuthorisationsRequest::setDescription));
         builder.<List<String>>withRequestField("cloud_connection_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAuthorisationsRequest::getCloudConnectionId, (req, v) -> {
-                req.setCloudConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListAuthorisationsRequest::getCloudConnectionId,
+                ListAuthorisationsRequest::setCloudConnectionId));
         builder.<List<String>>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAuthorisationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAuthorisationsRequest::getInstanceId, ListAuthorisationsRequest::setInstanceId));
 
         // response
 
@@ -287,9 +271,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> listPermissions =
-        genForlistPermissions();
+        genForListPermissions();
 
-    private static HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> genForlistPermissions() {
+    private static HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> genForListPermissions() {
         // basic
         HttpRequestDef.Builder<ListPermissionsRequest, ListPermissionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPermissionsRequest.class, ListPermissionsResponse.class)
@@ -302,51 +286,38 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPermissionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPermissionsRequest::getLimit, ListPermissionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPermissionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPermissionsRequest::getMarker, ListPermissionsRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPermissionsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListPermissionsRequest::getId, ListPermissionsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPermissionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPermissionsRequest::getName, ListPermissionsRequest::setName));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPermissionsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListPermissionsRequest::getDescription, ListPermissionsRequest::setDescription));
         builder.<List<String>>withRequestField("cloud_connection_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPermissionsRequest::getCloudConnectionId, (req, v) -> {
-                req.setCloudConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListPermissionsRequest::getCloudConnectionId,
+                ListPermissionsRequest::setCloudConnectionId));
         builder.<List<String>>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPermissionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPermissionsRequest::getInstanceId, ListPermissionsRequest::setInstanceId));
 
         // response
 
@@ -354,9 +325,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UpdateAuthorisationRequest, UpdateAuthorisationResponse> updateAuthorisation =
-        genForupdateAuthorisation();
+        genForUpdateAuthorisation();
 
-    private static HttpRequestDef<UpdateAuthorisationRequest, UpdateAuthorisationResponse> genForupdateAuthorisation() {
+    private static HttpRequestDef<UpdateAuthorisationRequest, UpdateAuthorisationResponse> genForUpdateAuthorisation() {
         // basic
         HttpRequestDef.Builder<UpdateAuthorisationRequest, UpdateAuthorisationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAuthorisationRequest.class, UpdateAuthorisationResponse.class)
@@ -369,16 +340,12 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAuthorisationRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateAuthorisationRequest::getId, UpdateAuthorisationRequest::setId));
         builder.<UpdateAuthorisationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAuthorisationRequestBody.class),
-            f -> f.withMarshaller(UpdateAuthorisationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAuthorisationRequest::getBody, UpdateAuthorisationRequest::setBody));
 
         // response
 
@@ -386,9 +353,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<AssociateBandwidthPackageRequest, AssociateBandwidthPackageResponse> associateBandwidthPackage =
-        genForassociateBandwidthPackage();
+        genForAssociateBandwidthPackage();
 
-    private static HttpRequestDef<AssociateBandwidthPackageRequest, AssociateBandwidthPackageResponse> genForassociateBandwidthPackage() {
+    private static HttpRequestDef<AssociateBandwidthPackageRequest, AssociateBandwidthPackageResponse> genForAssociateBandwidthPackage() {
         // basic
         HttpRequestDef.Builder<AssociateBandwidthPackageRequest, AssociateBandwidthPackageResponse> builder =
             HttpRequestDef
@@ -404,16 +371,13 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateBandwidthPackageRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(AssociateBandwidthPackageRequest::getId, AssociateBandwidthPackageRequest::setId));
         builder.<AssociateBandwidthPackageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociateBandwidthPackageRequestBody.class),
-            f -> f.withMarshaller(AssociateBandwidthPackageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateBandwidthPackageRequest::getBody,
+                AssociateBandwidthPackageRequest::setBody));
 
         // response
 
@@ -421,9 +385,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<CreateBandwidthPackageRequest, CreateBandwidthPackageResponse> createBandwidthPackage =
-        genForcreateBandwidthPackage();
+        genForCreateBandwidthPackage();
 
-    private static HttpRequestDef<CreateBandwidthPackageRequest, CreateBandwidthPackageResponse> genForcreateBandwidthPackage() {
+    private static HttpRequestDef<CreateBandwidthPackageRequest, CreateBandwidthPackageResponse> genForCreateBandwidthPackage() {
         // basic
         HttpRequestDef.Builder<CreateBandwidthPackageRequest, CreateBandwidthPackageResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateBandwidthPackageRequest.class, CreateBandwidthPackageResponse.class)
@@ -436,9 +400,7 @@ public class CcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateBandwidthPackageRequestBody.class),
-            f -> f.withMarshaller(CreateBandwidthPackageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateBandwidthPackageRequest::getBody, CreateBandwidthPackageRequest::setBody));
 
         // response
 
@@ -446,9 +408,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<DeleteBandwidthPackageRequest, DeleteBandwidthPackageResponse> deleteBandwidthPackage =
-        genFordeleteBandwidthPackage();
+        genForDeleteBandwidthPackage();
 
-    private static HttpRequestDef<DeleteBandwidthPackageRequest, DeleteBandwidthPackageResponse> genFordeleteBandwidthPackage() {
+    private static HttpRequestDef<DeleteBandwidthPackageRequest, DeleteBandwidthPackageResponse> genForDeleteBandwidthPackage() {
         // basic
         HttpRequestDef.Builder<DeleteBandwidthPackageRequest, DeleteBandwidthPackageResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteBandwidthPackageRequest.class, DeleteBandwidthPackageResponse.class)
@@ -461,9 +423,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBandwidthPackageRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteBandwidthPackageRequest::getId, DeleteBandwidthPackageRequest::setId));
 
         // response
 
@@ -471,9 +431,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<DisassociateBandwidthPackageRequest, DisassociateBandwidthPackageResponse> disassociateBandwidthPackage =
-        genFordisassociateBandwidthPackage();
+        genForDisassociateBandwidthPackage();
 
-    private static HttpRequestDef<DisassociateBandwidthPackageRequest, DisassociateBandwidthPackageResponse> genFordisassociateBandwidthPackage() {
+    private static HttpRequestDef<DisassociateBandwidthPackageRequest, DisassociateBandwidthPackageResponse> genForDisassociateBandwidthPackage() {
         // basic
         HttpRequestDef.Builder<DisassociateBandwidthPackageRequest, DisassociateBandwidthPackageResponse> builder =
             HttpRequestDef
@@ -489,16 +449,14 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateBandwidthPackageRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DisassociateBandwidthPackageRequest::getId,
+                DisassociateBandwidthPackageRequest::setId));
         builder.<DisassociateBandwidthPackageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DisassociateBandwidthPackageRequestBody.class),
-            f -> f.withMarshaller(DisassociateBandwidthPackageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DisassociateBandwidthPackageRequest::getBody,
+                DisassociateBandwidthPackageRequest::setBody));
 
         // response
 
@@ -506,9 +464,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListBandwidthPackageTagsRequest, ListBandwidthPackageTagsResponse> listBandwidthPackageTags =
-        genForlistBandwidthPackageTags();
+        genForListBandwidthPackageTags();
 
-    private static HttpRequestDef<ListBandwidthPackageTagsRequest, ListBandwidthPackageTagsResponse> genForlistBandwidthPackageTags() {
+    private static HttpRequestDef<ListBandwidthPackageTagsRequest, ListBandwidthPackageTagsResponse> genForListBandwidthPackageTags() {
         // basic
         HttpRequestDef.Builder<ListBandwidthPackageTagsRequest, ListBandwidthPackageTagsResponse> builder =
             HttpRequestDef
@@ -525,9 +483,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListBandwidthPackagesRequest, ListBandwidthPackagesResponse> listBandwidthPackages =
-        genForlistBandwidthPackages();
+        genForListBandwidthPackages();
 
-    private static HttpRequestDef<ListBandwidthPackagesRequest, ListBandwidthPackagesResponse> genForlistBandwidthPackages() {
+    private static HttpRequestDef<ListBandwidthPackagesRequest, ListBandwidthPackagesResponse> genForListBandwidthPackages() {
         // basic
         HttpRequestDef.Builder<ListBandwidthPackagesRequest, ListBandwidthPackagesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListBandwidthPackagesRequest.class, ListBandwidthPackagesResponse.class)
@@ -540,65 +498,51 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBandwidthPackagesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPackagesRequest::getLimit, ListBandwidthPackagesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBandwidthPackagesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPackagesRequest::getMarker, ListBandwidthPackagesRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthPackagesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPackagesRequest::getId, ListBandwidthPackagesRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthPackagesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPackagesRequest::getName, ListBandwidthPackagesRequest::setName));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthPackagesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPackagesRequest::getEnterpriseProjectId,
+                ListBandwidthPackagesRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("cloud_connection_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthPackagesRequest::getCloudConnectionId, (req, v) -> {
-                req.setCloudConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPackagesRequest::getCloudConnectionId,
+                ListBandwidthPackagesRequest::setCloudConnectionId));
         builder.<List<ListBandwidthPackagesRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthPackagesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPackagesRequest::getStatus, ListBandwidthPackagesRequest::setStatus));
         builder.<List<String>>withRequestField("billing_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthPackagesRequest::getBillingMode, (req, v) -> {
-                req.setBillingMode(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPackagesRequest::getBillingMode,
+                ListBandwidthPackagesRequest::setBillingMode));
         builder.<List<String>>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBandwidthPackagesRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPackagesRequest::getResourceId,
+                ListBandwidthPackagesRequest::setResourceId));
 
         // response
 
@@ -606,9 +550,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListBandwidthPackagesByTagsRequest, ListBandwidthPackagesByTagsResponse> listBandwidthPackagesByTags =
-        genForlistBandwidthPackagesByTags();
+        genForListBandwidthPackagesByTags();
 
-    private static HttpRequestDef<ListBandwidthPackagesByTagsRequest, ListBandwidthPackagesByTagsResponse> genForlistBandwidthPackagesByTags() {
+    private static HttpRequestDef<ListBandwidthPackagesByTagsRequest, ListBandwidthPackagesByTagsResponse> genForListBandwidthPackagesByTags() {
         // basic
         HttpRequestDef.Builder<ListBandwidthPackagesByTagsRequest, ListBandwidthPackagesByTagsResponse> builder =
             HttpRequestDef
@@ -624,9 +568,8 @@ public class CcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListBandwidthPackagesByTagsRequestBody.class),
-            f -> f.withMarshaller(ListBandwidthPackagesByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPackagesByTagsRequest::getBody,
+                ListBandwidthPackagesByTagsRequest::setBody));
 
         // response
 
@@ -634,9 +577,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ShowBandwidthPackageRequest, ShowBandwidthPackageResponse> showBandwidthPackage =
-        genForshowBandwidthPackage();
+        genForShowBandwidthPackage();
 
-    private static HttpRequestDef<ShowBandwidthPackageRequest, ShowBandwidthPackageResponse> genForshowBandwidthPackage() {
+    private static HttpRequestDef<ShowBandwidthPackageRequest, ShowBandwidthPackageResponse> genForShowBandwidthPackage() {
         // basic
         HttpRequestDef.Builder<ShowBandwidthPackageRequest, ShowBandwidthPackageResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowBandwidthPackageRequest.class, ShowBandwidthPackageResponse.class)
@@ -649,9 +592,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBandwidthPackageRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowBandwidthPackageRequest::getId, ShowBandwidthPackageRequest::setId));
 
         // response
 
@@ -659,9 +600,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<TagBandwidthPackageRequest, TagBandwidthPackageResponse> tagBandwidthPackage =
-        genFortagBandwidthPackage();
+        genForTagBandwidthPackage();
 
-    private static HttpRequestDef<TagBandwidthPackageRequest, TagBandwidthPackageResponse> genFortagBandwidthPackage() {
+    private static HttpRequestDef<TagBandwidthPackageRequest, TagBandwidthPackageResponse> genForTagBandwidthPackage() {
         // basic
         HttpRequestDef.Builder<TagBandwidthPackageRequest, TagBandwidthPackageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, TagBandwidthPackageRequest.class, TagBandwidthPackageResponse.class)
@@ -674,16 +615,12 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(TagBandwidthPackageRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(TagBandwidthPackageRequest::getId, TagBandwidthPackageRequest::setId));
         builder.<TagBandwidthPackageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagBandwidthPackageRequestBody.class),
-            f -> f.withMarshaller(TagBandwidthPackageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(TagBandwidthPackageRequest::getBody, TagBandwidthPackageRequest::setBody));
 
         // response
 
@@ -697,9 +634,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UntagBandwidthPackageRequest, UntagBandwidthPackageResponse> untagBandwidthPackage =
-        genForuntagBandwidthPackage();
+        genForUntagBandwidthPackage();
 
-    private static HttpRequestDef<UntagBandwidthPackageRequest, UntagBandwidthPackageResponse> genForuntagBandwidthPackage() {
+    private static HttpRequestDef<UntagBandwidthPackageRequest, UntagBandwidthPackageResponse> genForUntagBandwidthPackage() {
         // basic
         HttpRequestDef.Builder<UntagBandwidthPackageRequest, UntagBandwidthPackageResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UntagBandwidthPackageRequest.class, UntagBandwidthPackageResponse.class)
@@ -712,16 +649,12 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UntagBandwidthPackageRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UntagBandwidthPackageRequest::getId, UntagBandwidthPackageRequest::setId));
         builder.<UntagBandwidthPackageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UntagBandwidthPackageRequestBody.class),
-            f -> f.withMarshaller(UntagBandwidthPackageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UntagBandwidthPackageRequest::getBody, UntagBandwidthPackageRequest::setBody));
 
         // response
 
@@ -735,9 +668,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UpdateBandwidthPackageRequest, UpdateBandwidthPackageResponse> updateBandwidthPackage =
-        genForupdateBandwidthPackage();
+        genForUpdateBandwidthPackage();
 
-    private static HttpRequestDef<UpdateBandwidthPackageRequest, UpdateBandwidthPackageResponse> genForupdateBandwidthPackage() {
+    private static HttpRequestDef<UpdateBandwidthPackageRequest, UpdateBandwidthPackageResponse> genForUpdateBandwidthPackage() {
         // basic
         HttpRequestDef.Builder<UpdateBandwidthPackageRequest, UpdateBandwidthPackageResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateBandwidthPackageRequest.class, UpdateBandwidthPackageResponse.class)
@@ -750,16 +683,12 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBandwidthPackageRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateBandwidthPackageRequest::getId, UpdateBandwidthPackageRequest::setId));
         builder.<UpdateBandwidthPackageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBandwidthPackageRequestBody.class),
-            f -> f.withMarshaller(UpdateBandwidthPackageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBandwidthPackageRequest::getBody, UpdateBandwidthPackageRequest::setBody));
 
         // response
 
@@ -767,9 +696,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ApplyCentralNetworkPolicyRequest, ApplyCentralNetworkPolicyResponse> applyCentralNetworkPolicy =
-        genForapplyCentralNetworkPolicy();
+        genForApplyCentralNetworkPolicy();
 
-    private static HttpRequestDef<ApplyCentralNetworkPolicyRequest, ApplyCentralNetworkPolicyResponse> genForapplyCentralNetworkPolicy() {
+    private static HttpRequestDef<ApplyCentralNetworkPolicyRequest, ApplyCentralNetworkPolicyResponse> genForApplyCentralNetworkPolicy() {
         // basic
         HttpRequestDef.Builder<ApplyCentralNetworkPolicyRequest, ApplyCentralNetworkPolicyResponse> builder =
             HttpRequestDef
@@ -785,16 +714,14 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ApplyCentralNetworkPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(ApplyCentralNetworkPolicyRequest::getPolicyId,
+                ApplyCentralNetworkPolicyRequest::setPolicyId));
         builder.<String>withRequestField("central_network_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ApplyCentralNetworkPolicyRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(ApplyCentralNetworkPolicyRequest::getCentralNetworkId,
+                ApplyCentralNetworkPolicyRequest::setCentralNetworkId));
 
         // response
 
@@ -802,9 +729,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<CreateCentralNetworkRequest, CreateCentralNetworkResponse> createCentralNetwork =
-        genForcreateCentralNetwork();
+        genForCreateCentralNetwork();
 
-    private static HttpRequestDef<CreateCentralNetworkRequest, CreateCentralNetworkResponse> genForcreateCentralNetwork() {
+    private static HttpRequestDef<CreateCentralNetworkRequest, CreateCentralNetworkResponse> genForCreateCentralNetwork() {
         // basic
         HttpRequestDef.Builder<CreateCentralNetworkRequest, CreateCentralNetworkResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateCentralNetworkRequest.class, CreateCentralNetworkResponse.class)
@@ -817,9 +744,7 @@ public class CcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCentralNetworkRequestBody.class),
-            f -> f.withMarshaller(CreateCentralNetworkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCentralNetworkRequest::getBody, CreateCentralNetworkRequest::setBody));
 
         // response
 
@@ -827,9 +752,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<CreateCentralNetworkPolicyRequest, CreateCentralNetworkPolicyResponse> createCentralNetworkPolicy =
-        genForcreateCentralNetworkPolicy();
+        genForCreateCentralNetworkPolicy();
 
-    private static HttpRequestDef<CreateCentralNetworkPolicyRequest, CreateCentralNetworkPolicyResponse> genForcreateCentralNetworkPolicy() {
+    private static HttpRequestDef<CreateCentralNetworkPolicyRequest, CreateCentralNetworkPolicyResponse> genForCreateCentralNetworkPolicy() {
         // basic
         HttpRequestDef.Builder<CreateCentralNetworkPolicyRequest, CreateCentralNetworkPolicyResponse> builder =
             HttpRequestDef
@@ -845,16 +770,14 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCentralNetworkPolicyRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(CreateCentralNetworkPolicyRequest::getCentralNetworkId,
+                CreateCentralNetworkPolicyRequest::setCentralNetworkId));
         builder.<CreateCentralNetworkPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCentralNetworkPolicyRequestBody.class),
-            f -> f.withMarshaller(CreateCentralNetworkPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCentralNetworkPolicyRequest::getBody,
+                CreateCentralNetworkPolicyRequest::setBody));
 
         // response
 
@@ -862,9 +785,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<DeleteCentralNetworkRequest, DeleteCentralNetworkResponse> deleteCentralNetwork =
-        genFordeleteCentralNetwork();
+        genForDeleteCentralNetwork();
 
-    private static HttpRequestDef<DeleteCentralNetworkRequest, DeleteCentralNetworkResponse> genFordeleteCentralNetwork() {
+    private static HttpRequestDef<DeleteCentralNetworkRequest, DeleteCentralNetworkResponse> genForDeleteCentralNetwork() {
         // basic
         HttpRequestDef.Builder<DeleteCentralNetworkRequest, DeleteCentralNetworkResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteCentralNetworkRequest.class, DeleteCentralNetworkResponse.class)
@@ -877,9 +800,8 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCentralNetworkRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(DeleteCentralNetworkRequest::getCentralNetworkId,
+                DeleteCentralNetworkRequest::setCentralNetworkId));
 
         // response
 
@@ -887,9 +809,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<DeleteCentralNetworkPolicyRequest, DeleteCentralNetworkPolicyResponse> deleteCentralNetworkPolicy =
-        genFordeleteCentralNetworkPolicy();
+        genForDeleteCentralNetworkPolicy();
 
-    private static HttpRequestDef<DeleteCentralNetworkPolicyRequest, DeleteCentralNetworkPolicyResponse> genFordeleteCentralNetworkPolicy() {
+    private static HttpRequestDef<DeleteCentralNetworkPolicyRequest, DeleteCentralNetworkPolicyResponse> genForDeleteCentralNetworkPolicy() {
         // basic
         HttpRequestDef.Builder<DeleteCentralNetworkPolicyRequest, DeleteCentralNetworkPolicyResponse> builder =
             HttpRequestDef
@@ -905,16 +827,14 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCentralNetworkPolicyRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(DeleteCentralNetworkPolicyRequest::getPolicyId,
+                DeleteCentralNetworkPolicyRequest::setPolicyId));
         builder.<String>withRequestField("central_network_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCentralNetworkPolicyRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(DeleteCentralNetworkPolicyRequest::getCentralNetworkId,
+                DeleteCentralNetworkPolicyRequest::setCentralNetworkId));
 
         // response
 
@@ -928,9 +848,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCentralNetworkPoliciesRequest, ListCentralNetworkPoliciesResponse> listCentralNetworkPolicies =
-        genForlistCentralNetworkPolicies();
+        genForListCentralNetworkPolicies();
 
-    private static HttpRequestDef<ListCentralNetworkPoliciesRequest, ListCentralNetworkPoliciesResponse> genForlistCentralNetworkPolicies() {
+    private static HttpRequestDef<ListCentralNetworkPoliciesRequest, ListCentralNetworkPoliciesResponse> genForListCentralNetworkPolicies() {
         // basic
         HttpRequestDef.Builder<ListCentralNetworkPoliciesRequest, ListCentralNetworkPoliciesResponse> builder =
             HttpRequestDef
@@ -946,65 +866,55 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getCentralNetworkId,
+                ListCentralNetworkPoliciesRequest::setCentralNetworkId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getLimit,
+                ListCentralNetworkPoliciesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getMarker,
+                ListCentralNetworkPoliciesRequest::setMarker));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getSortKey,
+                ListCentralNetworkPoliciesRequest::setSortKey));
         builder.<SortDir>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SortDir.class),
-            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getSortDir,
+                ListCentralNetworkPoliciesRequest::setSortDir));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getId, ListCentralNetworkPoliciesRequest::setId));
         builder.<List<CentralNetworkPolicyStateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getState,
+                ListCentralNetworkPoliciesRequest::setState));
         builder.<List<Version>>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getVersion,
+                ListCentralNetworkPoliciesRequest::setVersion));
         builder.<Boolean>withRequestField("is_applied",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getIsApplied, (req, v) -> {
-                req.setIsApplied(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPoliciesRequest::getIsApplied,
+                ListCentralNetworkPoliciesRequest::setIsApplied));
 
         // response
 
@@ -1012,9 +922,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCentralNetworkPolicyChangeSetRequest, ListCentralNetworkPolicyChangeSetResponse> listCentralNetworkPolicyChangeSet =
-        genForlistCentralNetworkPolicyChangeSet();
+        genForListCentralNetworkPolicyChangeSet();
 
-    private static HttpRequestDef<ListCentralNetworkPolicyChangeSetRequest, ListCentralNetworkPolicyChangeSetResponse> genForlistCentralNetworkPolicyChangeSet() {
+    private static HttpRequestDef<ListCentralNetworkPolicyChangeSetRequest, ListCentralNetworkPolicyChangeSetResponse> genForListCentralNetworkPolicyChangeSet() {
         // basic
         HttpRequestDef.Builder<ListCentralNetworkPolicyChangeSetRequest, ListCentralNetworkPolicyChangeSetResponse> builder =
             HttpRequestDef
@@ -1030,16 +940,14 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkPolicyChangeSetRequest::getPolicyId, (req, v) -> {
-                req.setPolicyId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPolicyChangeSetRequest::getPolicyId,
+                ListCentralNetworkPolicyChangeSetRequest::setPolicyId));
         builder.<String>withRequestField("central_network_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkPolicyChangeSetRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkPolicyChangeSetRequest::getCentralNetworkId,
+                ListCentralNetworkPolicyChangeSetRequest::setCentralNetworkId));
 
         // response
 
@@ -1047,9 +955,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCentralNetworkTagsRequest, ListCentralNetworkTagsResponse> listCentralNetworkTags =
-        genForlistCentralNetworkTags();
+        genForListCentralNetworkTags();
 
-    private static HttpRequestDef<ListCentralNetworkTagsRequest, ListCentralNetworkTagsResponse> genForlistCentralNetworkTags() {
+    private static HttpRequestDef<ListCentralNetworkTagsRequest, ListCentralNetworkTagsResponse> genForListCentralNetworkTags() {
         // basic
         HttpRequestDef.Builder<ListCentralNetworkTagsRequest, ListCentralNetworkTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCentralNetworkTagsRequest.class, ListCentralNetworkTagsResponse.class)
@@ -1065,9 +973,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCentralNetworksRequest, ListCentralNetworksResponse> listCentralNetworks =
-        genForlistCentralNetworks();
+        genForListCentralNetworks();
 
-    private static HttpRequestDef<ListCentralNetworksRequest, ListCentralNetworksResponse> genForlistCentralNetworks() {
+    private static HttpRequestDef<ListCentralNetworksRequest, ListCentralNetworksResponse> genForListCentralNetworks() {
         // basic
         HttpRequestDef.Builder<ListCentralNetworksRequest, ListCentralNetworksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCentralNetworksRequest.class, ListCentralNetworksResponse.class)
@@ -1080,86 +988,67 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getLimit, ListCentralNetworksRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getMarker, ListCentralNetworksRequest::setMarker));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getSortKey, ListCentralNetworksRequest::setSortKey));
         builder.<SortDir>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SortDir.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getSortDir, ListCentralNetworksRequest::setSortDir));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getId, ListCentralNetworksRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getName, ListCentralNetworksRequest::setName));
         builder.<List<CentralNetworkStateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getState, ListCentralNetworksRequest::setState));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getEnterpriseProjectId,
+                ListCentralNetworksRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("enterprise_router_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getEnterpriseRouterId, (req, v) -> {
-                req.setEnterpriseRouterId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getEnterpriseRouterId,
+                ListCentralNetworksRequest::setEnterpriseRouterId));
         builder.<List<String>>withRequestField("attachment_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getAttachmentInstanceId, (req, v) -> {
-                req.setAttachmentInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getAttachmentInstanceId,
+                ListCentralNetworksRequest::setAttachmentInstanceId));
         builder.<List<String>>withRequestField("global_connection_bandwidth_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getGlobalConnectionBandwidthId, (req, v) -> {
-                req.setGlobalConnectionBandwidthId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getGlobalConnectionBandwidthId,
+                ListCentralNetworksRequest::setGlobalConnectionBandwidthId));
         builder.<List<String>>withRequestField("connection_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworksRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworksRequest::getConnectionId,
+                ListCentralNetworksRequest::setConnectionId));
 
         // response
 
@@ -1167,9 +1056,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ShowCentralNetworkRequest, ShowCentralNetworkResponse> showCentralNetwork =
-        genForshowCentralNetwork();
+        genForShowCentralNetwork();
 
-    private static HttpRequestDef<ShowCentralNetworkRequest, ShowCentralNetworkResponse> genForshowCentralNetwork() {
+    private static HttpRequestDef<ShowCentralNetworkRequest, ShowCentralNetworkResponse> genForShowCentralNetwork() {
         // basic
         HttpRequestDef.Builder<ShowCentralNetworkRequest, ShowCentralNetworkResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCentralNetworkRequest.class, ShowCentralNetworkResponse.class)
@@ -1182,9 +1071,8 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCentralNetworkRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(ShowCentralNetworkRequest::getCentralNetworkId,
+                ShowCentralNetworkRequest::setCentralNetworkId));
 
         // response
 
@@ -1192,9 +1080,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<TagCentralNetworkRequest, TagCentralNetworkResponse> tagCentralNetwork =
-        genFortagCentralNetwork();
+        genForTagCentralNetwork();
 
-    private static HttpRequestDef<TagCentralNetworkRequest, TagCentralNetworkResponse> genFortagCentralNetwork() {
+    private static HttpRequestDef<TagCentralNetworkRequest, TagCentralNetworkResponse> genForTagCentralNetwork() {
         // basic
         HttpRequestDef.Builder<TagCentralNetworkRequest, TagCentralNetworkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, TagCentralNetworkRequest.class, TagCentralNetworkResponse.class)
@@ -1207,16 +1095,13 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(TagCentralNetworkRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(TagCentralNetworkRequest::getCentralNetworkId,
+                TagCentralNetworkRequest::setCentralNetworkId));
         builder.<TagCentralNetworkRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagCentralNetworkRequestBody.class),
-            f -> f.withMarshaller(TagCentralNetworkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(TagCentralNetworkRequest::getBody, TagCentralNetworkRequest::setBody));
 
         // response
 
@@ -1229,9 +1114,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UntagCentralNetworkRequest, UntagCentralNetworkResponse> untagCentralNetwork =
-        genForuntagCentralNetwork();
+        genForUntagCentralNetwork();
 
-    private static HttpRequestDef<UntagCentralNetworkRequest, UntagCentralNetworkResponse> genForuntagCentralNetwork() {
+    private static HttpRequestDef<UntagCentralNetworkRequest, UntagCentralNetworkResponse> genForUntagCentralNetwork() {
         // basic
         HttpRequestDef.Builder<UntagCentralNetworkRequest, UntagCentralNetworkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UntagCentralNetworkRequest.class, UntagCentralNetworkResponse.class)
@@ -1244,16 +1129,13 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UntagCentralNetworkRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(UntagCentralNetworkRequest::getCentralNetworkId,
+                UntagCentralNetworkRequest::setCentralNetworkId));
         builder.<UntagCentralNetworkRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UntagCentralNetworkRequestBody.class),
-            f -> f.withMarshaller(UntagCentralNetworkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UntagCentralNetworkRequest::getBody, UntagCentralNetworkRequest::setBody));
 
         // response
 
@@ -1267,9 +1149,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UpdateCentralNetworkRequest, UpdateCentralNetworkResponse> updateCentralNetwork =
-        genForupdateCentralNetwork();
+        genForUpdateCentralNetwork();
 
-    private static HttpRequestDef<UpdateCentralNetworkRequest, UpdateCentralNetworkResponse> genForupdateCentralNetwork() {
+    private static HttpRequestDef<UpdateCentralNetworkRequest, UpdateCentralNetworkResponse> genForUpdateCentralNetwork() {
         // basic
         HttpRequestDef.Builder<UpdateCentralNetworkRequest, UpdateCentralNetworkResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateCentralNetworkRequest.class, UpdateCentralNetworkResponse.class)
@@ -1282,16 +1164,13 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCentralNetworkRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(UpdateCentralNetworkRequest::getCentralNetworkId,
+                UpdateCentralNetworkRequest::setCentralNetworkId));
         builder.<UpdateCentralNetworkRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCentralNetworkRequestBody.class),
-            f -> f.withMarshaller(UpdateCentralNetworkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCentralNetworkRequest::getBody, UpdateCentralNetworkRequest::setBody));
 
         // response
 
@@ -1299,9 +1178,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<CreateCentralNetworkGdgwAttachmentRequest, CreateCentralNetworkGdgwAttachmentResponse> createCentralNetworkGdgwAttachment =
-        genForcreateCentralNetworkGdgwAttachment();
+        genForCreateCentralNetworkGdgwAttachment();
 
-    private static HttpRequestDef<CreateCentralNetworkGdgwAttachmentRequest, CreateCentralNetworkGdgwAttachmentResponse> genForcreateCentralNetworkGdgwAttachment() {
+    private static HttpRequestDef<CreateCentralNetworkGdgwAttachmentRequest, CreateCentralNetworkGdgwAttachmentResponse> genForCreateCentralNetworkGdgwAttachment() {
         // basic
         HttpRequestDef.Builder<CreateCentralNetworkGdgwAttachmentRequest, CreateCentralNetworkGdgwAttachmentResponse> builder =
             HttpRequestDef
@@ -1317,16 +1196,14 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCentralNetworkGdgwAttachmentRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(CreateCentralNetworkGdgwAttachmentRequest::getCentralNetworkId,
+                CreateCentralNetworkGdgwAttachmentRequest::setCentralNetworkId));
         builder.<CreateCentralNetworkGdgwAttachmentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCentralNetworkGdgwAttachmentRequestBody.class),
-            f -> f.withMarshaller(CreateCentralNetworkGdgwAttachmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCentralNetworkGdgwAttachmentRequest::getBody,
+                CreateCentralNetworkGdgwAttachmentRequest::setBody));
 
         // response
 
@@ -1334,9 +1211,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<DeleteCentralNetworkAttachmentRequest, DeleteCentralNetworkAttachmentResponse> deleteCentralNetworkAttachment =
-        genFordeleteCentralNetworkAttachment();
+        genForDeleteCentralNetworkAttachment();
 
-    private static HttpRequestDef<DeleteCentralNetworkAttachmentRequest, DeleteCentralNetworkAttachmentResponse> genFordeleteCentralNetworkAttachment() {
+    private static HttpRequestDef<DeleteCentralNetworkAttachmentRequest, DeleteCentralNetworkAttachmentResponse> genForDeleteCentralNetworkAttachment() {
         // basic
         HttpRequestDef.Builder<DeleteCentralNetworkAttachmentRequest, DeleteCentralNetworkAttachmentResponse> builder =
             HttpRequestDef
@@ -1352,16 +1229,14 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCentralNetworkAttachmentRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(DeleteCentralNetworkAttachmentRequest::getCentralNetworkId,
+                DeleteCentralNetworkAttachmentRequest::setCentralNetworkId));
         builder.<String>withRequestField("attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCentralNetworkAttachmentRequest::getAttachmentId, (req, v) -> {
-                req.setAttachmentId(v);
-            }));
+            f -> f.withMarshaller(DeleteCentralNetworkAttachmentRequest::getAttachmentId,
+                DeleteCentralNetworkAttachmentRequest::setAttachmentId));
 
         // response
 
@@ -1369,9 +1244,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCentralNetworkAttachmentsRequest, ListCentralNetworkAttachmentsResponse> listCentralNetworkAttachments =
-        genForlistCentralNetworkAttachments();
+        genForListCentralNetworkAttachments();
 
-    private static HttpRequestDef<ListCentralNetworkAttachmentsRequest, ListCentralNetworkAttachmentsResponse> genForlistCentralNetworkAttachments() {
+    private static HttpRequestDef<ListCentralNetworkAttachmentsRequest, ListCentralNetworkAttachmentsResponse> genForListCentralNetworkAttachments() {
         // basic
         HttpRequestDef.Builder<ListCentralNetworkAttachmentsRequest, ListCentralNetworkAttachmentsResponse> builder =
             HttpRequestDef
@@ -1387,72 +1262,62 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getCentralNetworkId,
+                ListCentralNetworkAttachmentsRequest::setCentralNetworkId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getLimit,
+                ListCentralNetworkAttachmentsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getMarker,
+                ListCentralNetworkAttachmentsRequest::setMarker));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getSortKey,
+                ListCentralNetworkAttachmentsRequest::setSortKey));
         builder.<SortDir>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SortDir.class),
-            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getSortDir,
+                ListCentralNetworkAttachmentsRequest::setSortDir));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getId,
+                ListCentralNetworkAttachmentsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getName,
+                ListCentralNetworkAttachmentsRequest::setName));
         builder.<List<AttachmentInstanceTypeEnum>>withRequestField("attachment_instance_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getAttachmentInstanceType, (req, v) -> {
-                req.setAttachmentInstanceType(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getAttachmentInstanceType,
+                ListCentralNetworkAttachmentsRequest::setAttachmentInstanceType));
         builder.<List<CentralNetworkConnectionStateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getState,
+                ListCentralNetworkAttachmentsRequest::setState));
         builder.<List<String>>withRequestField("attachment_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getAttachmentInstanceId, (req, v) -> {
-                req.setAttachmentInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkAttachmentsRequest::getAttachmentInstanceId,
+                ListCentralNetworkAttachmentsRequest::setAttachmentInstanceId));
 
         // response
 
@@ -1460,9 +1325,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCentralNetworkGdgwAttachmentsRequest, ListCentralNetworkGdgwAttachmentsResponse> listCentralNetworkGdgwAttachments =
-        genForlistCentralNetworkGdgwAttachments();
+        genForListCentralNetworkGdgwAttachments();
 
-    private static HttpRequestDef<ListCentralNetworkGdgwAttachmentsRequest, ListCentralNetworkGdgwAttachmentsResponse> genForlistCentralNetworkGdgwAttachments() {
+    private static HttpRequestDef<ListCentralNetworkGdgwAttachmentsRequest, ListCentralNetworkGdgwAttachmentsResponse> genForListCentralNetworkGdgwAttachments() {
         // basic
         HttpRequestDef.Builder<ListCentralNetworkGdgwAttachmentsRequest, ListCentralNetworkGdgwAttachmentsResponse> builder =
             HttpRequestDef
@@ -1478,65 +1343,56 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getCentralNetworkId,
+                ListCentralNetworkGdgwAttachmentsRequest::setCentralNetworkId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getLimit,
+                ListCentralNetworkGdgwAttachmentsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getMarker,
+                ListCentralNetworkGdgwAttachmentsRequest::setMarker));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getSortKey,
+                ListCentralNetworkGdgwAttachmentsRequest::setSortKey));
         builder.<SortDir>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SortDir.class),
-            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getSortDir,
+                ListCentralNetworkGdgwAttachmentsRequest::setSortDir));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getId,
+                ListCentralNetworkGdgwAttachmentsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getName,
+                ListCentralNetworkGdgwAttachmentsRequest::setName));
         builder.<List<CentralNetworkConnectionStateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getState,
+                ListCentralNetworkGdgwAttachmentsRequest::setState));
         builder.<List<String>>withRequestField("global_dc_gateway_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getGlobalDcGatewayId, (req, v) -> {
-                req.setGlobalDcGatewayId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkGdgwAttachmentsRequest::getGlobalDcGatewayId,
+                ListCentralNetworkGdgwAttachmentsRequest::setGlobalDcGatewayId));
 
         // response
 
@@ -1544,9 +1400,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ShowCentralNetworkGdgwAttachmentRequest, ShowCentralNetworkGdgwAttachmentResponse> showCentralNetworkGdgwAttachment =
-        genForshowCentralNetworkGdgwAttachment();
+        genForShowCentralNetworkGdgwAttachment();
 
-    private static HttpRequestDef<ShowCentralNetworkGdgwAttachmentRequest, ShowCentralNetworkGdgwAttachmentResponse> genForshowCentralNetworkGdgwAttachment() {
+    private static HttpRequestDef<ShowCentralNetworkGdgwAttachmentRequest, ShowCentralNetworkGdgwAttachmentResponse> genForShowCentralNetworkGdgwAttachment() {
         // basic
         HttpRequestDef.Builder<ShowCentralNetworkGdgwAttachmentRequest, ShowCentralNetworkGdgwAttachmentResponse> builder =
             HttpRequestDef
@@ -1563,16 +1419,14 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCentralNetworkGdgwAttachmentRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(ShowCentralNetworkGdgwAttachmentRequest::getCentralNetworkId,
+                ShowCentralNetworkGdgwAttachmentRequest::setCentralNetworkId));
         builder.<String>withRequestField("gdgw_attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCentralNetworkGdgwAttachmentRequest::getGdgwAttachmentId, (req, v) -> {
-                req.setGdgwAttachmentId(v);
-            }));
+            f -> f.withMarshaller(ShowCentralNetworkGdgwAttachmentRequest::getGdgwAttachmentId,
+                ShowCentralNetworkGdgwAttachmentRequest::setGdgwAttachmentId));
 
         // response
 
@@ -1580,9 +1434,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UpdateCentralNetworkGdgwAttachmentRequest, UpdateCentralNetworkGdgwAttachmentResponse> updateCentralNetworkGdgwAttachment =
-        genForupdateCentralNetworkGdgwAttachment();
+        genForUpdateCentralNetworkGdgwAttachment();
 
-    private static HttpRequestDef<UpdateCentralNetworkGdgwAttachmentRequest, UpdateCentralNetworkGdgwAttachmentResponse> genForupdateCentralNetworkGdgwAttachment() {
+    private static HttpRequestDef<UpdateCentralNetworkGdgwAttachmentRequest, UpdateCentralNetworkGdgwAttachmentResponse> genForUpdateCentralNetworkGdgwAttachment() {
         // basic
         HttpRequestDef.Builder<UpdateCentralNetworkGdgwAttachmentRequest, UpdateCentralNetworkGdgwAttachmentResponse> builder =
             HttpRequestDef
@@ -1599,23 +1453,20 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCentralNetworkGdgwAttachmentRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(UpdateCentralNetworkGdgwAttachmentRequest::getCentralNetworkId,
+                UpdateCentralNetworkGdgwAttachmentRequest::setCentralNetworkId));
         builder.<String>withRequestField("gdgw_attachment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCentralNetworkGdgwAttachmentRequest::getGdgwAttachmentId, (req, v) -> {
-                req.setGdgwAttachmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateCentralNetworkGdgwAttachmentRequest::getGdgwAttachmentId,
+                UpdateCentralNetworkGdgwAttachmentRequest::setGdgwAttachmentId));
         builder.<UpdateCentralNetworkGdgwAttachmentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCentralNetworkGdgwAttachmentRequestBody.class),
-            f -> f.withMarshaller(UpdateCentralNetworkGdgwAttachmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCentralNetworkGdgwAttachmentRequest::getBody,
+                UpdateCentralNetworkGdgwAttachmentRequest::setBody));
 
         // response
 
@@ -1623,9 +1474,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCentralNetworkCapabilitiesRequest, ListCentralNetworkCapabilitiesResponse> listCentralNetworkCapabilities =
-        genForlistCentralNetworkCapabilities();
+        genForListCentralNetworkCapabilities();
 
-    private static HttpRequestDef<ListCentralNetworkCapabilitiesRequest, ListCentralNetworkCapabilitiesResponse> genForlistCentralNetworkCapabilities() {
+    private static HttpRequestDef<ListCentralNetworkCapabilitiesRequest, ListCentralNetworkCapabilitiesResponse> genForListCentralNetworkCapabilities() {
         // basic
         HttpRequestDef.Builder<ListCentralNetworkCapabilitiesRequest, ListCentralNetworkCapabilitiesResponse> builder =
             HttpRequestDef
@@ -1641,9 +1492,8 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkCapabilitiesRequest::getCapability, (req, v) -> {
-                req.setCapability(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkCapabilitiesRequest::getCapability,
+                ListCentralNetworkCapabilitiesRequest::setCapability));
 
         // response
 
@@ -1651,9 +1501,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCentralNetworkConnectionsRequest, ListCentralNetworkConnectionsResponse> listCentralNetworkConnections =
-        genForlistCentralNetworkConnections();
+        genForListCentralNetworkConnections();
 
-    private static HttpRequestDef<ListCentralNetworkConnectionsRequest, ListCentralNetworkConnectionsResponse> genForlistCentralNetworkConnections() {
+    private static HttpRequestDef<ListCentralNetworkConnectionsRequest, ListCentralNetworkConnectionsResponse> genForListCentralNetworkConnections() {
         // basic
         HttpRequestDef.Builder<ListCentralNetworkConnectionsRequest, ListCentralNetworkConnectionsResponse> builder =
             HttpRequestDef
@@ -1669,86 +1519,74 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getCentralNetworkId,
+                ListCentralNetworkConnectionsRequest::setCentralNetworkId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getLimit,
+                ListCentralNetworkConnectionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getMarker,
+                ListCentralNetworkConnectionsRequest::setMarker));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getSortKey,
+                ListCentralNetworkConnectionsRequest::setSortKey));
         builder.<SortDir>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SortDir.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getSortDir,
+                ListCentralNetworkConnectionsRequest::setSortDir));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getId,
+                ListCentralNetworkConnectionsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getName,
+                ListCentralNetworkConnectionsRequest::setName));
         builder.<List<CentralNetworkConnectionStateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getState,
+                ListCentralNetworkConnectionsRequest::setState));
         builder.<List<String>>withRequestField("global_connection_bandwidth_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getGlobalConnectionBandwidthId, (req, v) -> {
-                req.setGlobalConnectionBandwidthId(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getGlobalConnectionBandwidthId,
+                ListCentralNetworkConnectionsRequest::setGlobalConnectionBandwidthId));
         builder.<BandwidthTypeEnum>withRequestField("bandwidth_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BandwidthTypeEnum.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getBandwidthType, (req, v) -> {
-                req.setBandwidthType(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getBandwidthType,
+                ListCentralNetworkConnectionsRequest::setBandwidthType));
         builder.<ConnectionTypeEnum>withRequestField("connection_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ConnectionTypeEnum.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getConnectionType, (req, v) -> {
-                req.setConnectionType(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getConnectionType,
+                ListCentralNetworkConnectionsRequest::setConnectionType));
         builder.<Boolean>withRequestField("is_cross_region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getIsCrossRegion, (req, v) -> {
-                req.setIsCrossRegion(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkConnectionsRequest::getIsCrossRegion,
+                ListCentralNetworkConnectionsRequest::setIsCrossRegion));
 
         // response
 
@@ -1756,9 +1594,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UpdateCentralNetworkConnectionRequest, UpdateCentralNetworkConnectionResponse> updateCentralNetworkConnection =
-        genForupdateCentralNetworkConnection();
+        genForUpdateCentralNetworkConnection();
 
-    private static HttpRequestDef<UpdateCentralNetworkConnectionRequest, UpdateCentralNetworkConnectionResponse> genForupdateCentralNetworkConnection() {
+    private static HttpRequestDef<UpdateCentralNetworkConnectionRequest, UpdateCentralNetworkConnectionResponse> genForUpdateCentralNetworkConnection() {
         // basic
         HttpRequestDef.Builder<UpdateCentralNetworkConnectionRequest, UpdateCentralNetworkConnectionResponse> builder =
             HttpRequestDef
@@ -1774,23 +1612,20 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCentralNetworkConnectionRequest::getCentralNetworkId, (req, v) -> {
-                req.setCentralNetworkId(v);
-            }));
+            f -> f.withMarshaller(UpdateCentralNetworkConnectionRequest::getCentralNetworkId,
+                UpdateCentralNetworkConnectionRequest::setCentralNetworkId));
         builder.<String>withRequestField("connection_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCentralNetworkConnectionRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
+            f -> f.withMarshaller(UpdateCentralNetworkConnectionRequest::getConnectionId,
+                UpdateCentralNetworkConnectionRequest::setConnectionId));
         builder.<UpdateCentralNetworkConnectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCentralNetworkConnectionRequestBody.class),
-            f -> f.withMarshaller(UpdateCentralNetworkConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCentralNetworkConnectionRequest::getBody,
+                UpdateCentralNetworkConnectionRequest::setBody));
 
         // response
 
@@ -1798,9 +1633,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCentralNetworkQuotasRequest, ListCentralNetworkQuotasResponse> listCentralNetworkQuotas =
-        genForlistCentralNetworkQuotas();
+        genForListCentralNetworkQuotas();
 
-    private static HttpRequestDef<ListCentralNetworkQuotasRequest, ListCentralNetworkQuotasResponse> genForlistCentralNetworkQuotas() {
+    private static HttpRequestDef<ListCentralNetworkQuotasRequest, ListCentralNetworkQuotasResponse> genForListCentralNetworkQuotas() {
         // basic
         HttpRequestDef.Builder<ListCentralNetworkQuotasRequest, ListCentralNetworkQuotasResponse> builder =
             HttpRequestDef
@@ -1814,23 +1649,20 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCentralNetworkQuotasRequest::getQuotaType, (req, v) -> {
-                req.setQuotaType(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkQuotasRequest::getQuotaType,
+                ListCentralNetworkQuotasRequest::setQuotaType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCentralNetworkQuotasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkQuotasRequest::getLimit,
+                ListCentralNetworkQuotasRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCentralNetworkQuotasRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCentralNetworkQuotasRequest::getMarker,
+                ListCentralNetworkQuotasRequest::setMarker));
 
         // response
 
@@ -1838,9 +1670,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<CreateCloudConnectionRequest, CreateCloudConnectionResponse> createCloudConnection =
-        genForcreateCloudConnection();
+        genForCreateCloudConnection();
 
-    private static HttpRequestDef<CreateCloudConnectionRequest, CreateCloudConnectionResponse> genForcreateCloudConnection() {
+    private static HttpRequestDef<CreateCloudConnectionRequest, CreateCloudConnectionResponse> genForCreateCloudConnection() {
         // basic
         HttpRequestDef.Builder<CreateCloudConnectionRequest, CreateCloudConnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateCloudConnectionRequest.class, CreateCloudConnectionResponse.class)
@@ -1853,9 +1685,7 @@ public class CcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCloudConnectionRequestBody.class),
-            f -> f.withMarshaller(CreateCloudConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCloudConnectionRequest::getBody, CreateCloudConnectionRequest::setBody));
 
         // response
 
@@ -1863,9 +1693,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<DeleteCloudConnectionRequest, DeleteCloudConnectionResponse> deleteCloudConnection =
-        genFordeleteCloudConnection();
+        genForDeleteCloudConnection();
 
-    private static HttpRequestDef<DeleteCloudConnectionRequest, DeleteCloudConnectionResponse> genFordeleteCloudConnection() {
+    private static HttpRequestDef<DeleteCloudConnectionRequest, DeleteCloudConnectionResponse> genForDeleteCloudConnection() {
         // basic
         HttpRequestDef.Builder<DeleteCloudConnectionRequest, DeleteCloudConnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteCloudConnectionRequest.class, DeleteCloudConnectionResponse.class)
@@ -1878,9 +1708,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCloudConnectionRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteCloudConnectionRequest::getId, DeleteCloudConnectionRequest::setId));
 
         // response
 
@@ -1888,9 +1716,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCloudConnectionTagsRequest, ListCloudConnectionTagsResponse> listCloudConnectionTags =
-        genForlistCloudConnectionTags();
+        genForListCloudConnectionTags();
 
-    private static HttpRequestDef<ListCloudConnectionTagsRequest, ListCloudConnectionTagsResponse> genForlistCloudConnectionTags() {
+    private static HttpRequestDef<ListCloudConnectionTagsRequest, ListCloudConnectionTagsResponse> genForListCloudConnectionTags() {
         // basic
         HttpRequestDef.Builder<ListCloudConnectionTagsRequest, ListCloudConnectionTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCloudConnectionTagsRequest.class, ListCloudConnectionTagsResponse.class)
@@ -1906,9 +1734,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCloudConnectionsRequest, ListCloudConnectionsResponse> listCloudConnections =
-        genForlistCloudConnections();
+        genForListCloudConnections();
 
-    private static HttpRequestDef<ListCloudConnectionsRequest, ListCloudConnectionsResponse> genForlistCloudConnections() {
+    private static HttpRequestDef<ListCloudConnectionsRequest, ListCloudConnectionsResponse> genForListCloudConnections() {
         // basic
         HttpRequestDef.Builder<ListCloudConnectionsRequest, ListCloudConnectionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCloudConnectionsRequest.class, ListCloudConnectionsResponse.class)
@@ -1921,65 +1749,50 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudConnectionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionsRequest::getLimit, ListCloudConnectionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudConnectionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionsRequest::getMarker, ListCloudConnectionsRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCloudConnectionsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionsRequest::getId, ListCloudConnectionsRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCloudConnectionsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionsRequest::getName, ListCloudConnectionsRequest::setName));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCloudConnectionsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionsRequest::getDescription,
+                ListCloudConnectionsRequest::setDescription));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCloudConnectionsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionsRequest::getEnterpriseProjectId,
+                ListCloudConnectionsRequest::setEnterpriseProjectId));
         builder.<List<ListCloudConnectionsRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCloudConnectionsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionsRequest::getStatus, ListCloudConnectionsRequest::setStatus));
         builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCloudConnectionsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionsRequest::getType, ListCloudConnectionsRequest::setType));
         builder.<List<String>>withRequestField("used_scene",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCloudConnectionsRequest::getUsedScene, (req, v) -> {
-                req.setUsedScene(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionsRequest::getUsedScene,
+                ListCloudConnectionsRequest::setUsedScene));
 
         // response
 
@@ -1987,9 +1800,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCloudConnectionsByTagsRequest, ListCloudConnectionsByTagsResponse> listCloudConnectionsByTags =
-        genForlistCloudConnectionsByTags();
+        genForListCloudConnectionsByTags();
 
-    private static HttpRequestDef<ListCloudConnectionsByTagsRequest, ListCloudConnectionsByTagsResponse> genForlistCloudConnectionsByTags() {
+    private static HttpRequestDef<ListCloudConnectionsByTagsRequest, ListCloudConnectionsByTagsResponse> genForListCloudConnectionsByTags() {
         // basic
         HttpRequestDef.Builder<ListCloudConnectionsByTagsRequest, ListCloudConnectionsByTagsResponse> builder =
             HttpRequestDef
@@ -2005,9 +1818,8 @@ public class CcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListCloudConnectionsByTagsRequestBody.class),
-            f -> f.withMarshaller(ListCloudConnectionsByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionsByTagsRequest::getBody,
+                ListCloudConnectionsByTagsRequest::setBody));
 
         // response
 
@@ -2015,9 +1827,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ShowCloudConnectionRequest, ShowCloudConnectionResponse> showCloudConnection =
-        genForshowCloudConnection();
+        genForShowCloudConnection();
 
-    private static HttpRequestDef<ShowCloudConnectionRequest, ShowCloudConnectionResponse> genForshowCloudConnection() {
+    private static HttpRequestDef<ShowCloudConnectionRequest, ShowCloudConnectionResponse> genForShowCloudConnection() {
         // basic
         HttpRequestDef.Builder<ShowCloudConnectionRequest, ShowCloudConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCloudConnectionRequest.class, ShowCloudConnectionResponse.class)
@@ -2030,9 +1842,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCloudConnectionRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowCloudConnectionRequest::getId, ShowCloudConnectionRequest::setId));
 
         // response
 
@@ -2040,9 +1850,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<TagCloudConnectionRequest, TagCloudConnectionResponse> tagCloudConnection =
-        genFortagCloudConnection();
+        genForTagCloudConnection();
 
-    private static HttpRequestDef<TagCloudConnectionRequest, TagCloudConnectionResponse> genFortagCloudConnection() {
+    private static HttpRequestDef<TagCloudConnectionRequest, TagCloudConnectionResponse> genForTagCloudConnection() {
         // basic
         HttpRequestDef.Builder<TagCloudConnectionRequest, TagCloudConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, TagCloudConnectionRequest.class, TagCloudConnectionResponse.class)
@@ -2055,16 +1865,12 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(TagCloudConnectionRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(TagCloudConnectionRequest::getId, TagCloudConnectionRequest::setId));
         builder.<TagCloudConnectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagCloudConnectionRequestBody.class),
-            f -> f.withMarshaller(TagCloudConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(TagCloudConnectionRequest::getBody, TagCloudConnectionRequest::setBody));
 
         // response
 
@@ -2078,9 +1884,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UntagCloudConnectionRequest, UntagCloudConnectionResponse> untagCloudConnection =
-        genForuntagCloudConnection();
+        genForUntagCloudConnection();
 
-    private static HttpRequestDef<UntagCloudConnectionRequest, UntagCloudConnectionResponse> genForuntagCloudConnection() {
+    private static HttpRequestDef<UntagCloudConnectionRequest, UntagCloudConnectionResponse> genForUntagCloudConnection() {
         // basic
         HttpRequestDef.Builder<UntagCloudConnectionRequest, UntagCloudConnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UntagCloudConnectionRequest.class, UntagCloudConnectionResponse.class)
@@ -2093,16 +1899,12 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UntagCloudConnectionRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UntagCloudConnectionRequest::getId, UntagCloudConnectionRequest::setId));
         builder.<UntagCloudConnectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UntagCloudConnectionRequestBody.class),
-            f -> f.withMarshaller(UntagCloudConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UntagCloudConnectionRequest::getBody, UntagCloudConnectionRequest::setBody));
 
         // response
 
@@ -2116,9 +1918,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UpdateCloudConnectionRequest, UpdateCloudConnectionResponse> updateCloudConnection =
-        genForupdateCloudConnection();
+        genForUpdateCloudConnection();
 
-    private static HttpRequestDef<UpdateCloudConnectionRequest, UpdateCloudConnectionResponse> genForupdateCloudConnection() {
+    private static HttpRequestDef<UpdateCloudConnectionRequest, UpdateCloudConnectionResponse> genForUpdateCloudConnection() {
         // basic
         HttpRequestDef.Builder<UpdateCloudConnectionRequest, UpdateCloudConnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateCloudConnectionRequest.class, UpdateCloudConnectionResponse.class)
@@ -2131,16 +1933,12 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCloudConnectionRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateCloudConnectionRequest::getId, UpdateCloudConnectionRequest::setId));
         builder.<UpdateCloudConnectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCloudConnectionRequestBody.class),
-            f -> f.withMarshaller(UpdateCloudConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCloudConnectionRequest::getBody, UpdateCloudConnectionRequest::setBody));
 
         // response
 
@@ -2148,9 +1946,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCloudConnectionQuotasRequest, ListCloudConnectionQuotasResponse> listCloudConnectionQuotas =
-        genForlistCloudConnectionQuotas();
+        genForListCloudConnectionQuotas();
 
-    private static HttpRequestDef<ListCloudConnectionQuotasRequest, ListCloudConnectionQuotasResponse> genForlistCloudConnectionQuotas() {
+    private static HttpRequestDef<ListCloudConnectionQuotasRequest, ListCloudConnectionQuotasResponse> genForListCloudConnectionQuotas() {
         // basic
         HttpRequestDef.Builder<ListCloudConnectionQuotasRequest, ListCloudConnectionQuotasResponse> builder =
             HttpRequestDef
@@ -2166,37 +1964,32 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getLimit,
+                ListCloudConnectionQuotasRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getMarker,
+                ListCloudConnectionQuotasRequest::setMarker));
         builder.<ListCloudConnectionQuotasRequest.QuotaTypeEnum>withRequestField("quota_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListCloudConnectionQuotasRequest.QuotaTypeEnum.class),
-            f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getQuotaType, (req, v) -> {
-                req.setQuotaType(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getQuotaType,
+                ListCloudConnectionQuotasRequest::setQuotaType));
         builder.<String>withRequestField("cloud_connection_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getCloudConnectionId, (req, v) -> {
-                req.setCloudConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getCloudConnectionId,
+                ListCloudConnectionQuotasRequest::setCloudConnectionId));
         builder.<String>withRequestField("region_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getRegionId,
+                ListCloudConnectionQuotasRequest::setRegionId));
 
         // response
 
@@ -2204,9 +1997,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListCloudConnectionRoutesRequest, ListCloudConnectionRoutesResponse> listCloudConnectionRoutes =
-        genForlistCloudConnectionRoutes();
+        genForListCloudConnectionRoutes();
 
-    private static HttpRequestDef<ListCloudConnectionRoutesRequest, ListCloudConnectionRoutesResponse> genForlistCloudConnectionRoutes() {
+    private static HttpRequestDef<ListCloudConnectionRoutesRequest, ListCloudConnectionRoutesResponse> genForListCloudConnectionRoutes() {
         // basic
         HttpRequestDef.Builder<ListCloudConnectionRoutesRequest, ListCloudConnectionRoutesResponse> builder =
             HttpRequestDef
@@ -2222,44 +2015,37 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getLimit,
+                ListCloudConnectionRoutesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getMarker,
+                ListCloudConnectionRoutesRequest::setMarker));
         builder.<List<String>>withRequestField("cloud_connection_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getCloudConnectionId, (req, v) -> {
-                req.setCloudConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getCloudConnectionId,
+                ListCloudConnectionRoutesRequest::setCloudConnectionId));
         builder.<List<String>>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getInstanceId,
+                ListCloudConnectionRoutesRequest::setInstanceId));
         builder.<String>withRequestField("region_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getRegionId,
+                ListCloudConnectionRoutesRequest::setRegionId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListCloudConnectionRoutesRequest::getId, ListCloudConnectionRoutesRequest::setId));
 
         // response
 
@@ -2267,9 +2053,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ShowCloudConnectionRoutesRequest, ShowCloudConnectionRoutesResponse> showCloudConnectionRoutes =
-        genForshowCloudConnectionRoutes();
+        genForShowCloudConnectionRoutes();
 
-    private static HttpRequestDef<ShowCloudConnectionRoutesRequest, ShowCloudConnectionRoutesResponse> genForshowCloudConnectionRoutes() {
+    private static HttpRequestDef<ShowCloudConnectionRoutesRequest, ShowCloudConnectionRoutesResponse> genForShowCloudConnectionRoutes() {
         // basic
         HttpRequestDef.Builder<ShowCloudConnectionRoutesRequest, ShowCloudConnectionRoutesResponse> builder =
             HttpRequestDef
@@ -2285,9 +2071,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCloudConnectionRoutesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowCloudConnectionRoutesRequest::getId, ShowCloudConnectionRoutesRequest::setId));
 
         // response
 
@@ -2295,9 +2079,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<CreateInterRegionBandwidthRequest, CreateInterRegionBandwidthResponse> createInterRegionBandwidth =
-        genForcreateInterRegionBandwidth();
+        genForCreateInterRegionBandwidth();
 
-    private static HttpRequestDef<CreateInterRegionBandwidthRequest, CreateInterRegionBandwidthResponse> genForcreateInterRegionBandwidth() {
+    private static HttpRequestDef<CreateInterRegionBandwidthRequest, CreateInterRegionBandwidthResponse> genForCreateInterRegionBandwidth() {
         // basic
         HttpRequestDef.Builder<CreateInterRegionBandwidthRequest, CreateInterRegionBandwidthResponse> builder =
             HttpRequestDef
@@ -2313,9 +2097,8 @@ public class CcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInterRegionBandwidthRequestBody.class),
-            f -> f.withMarshaller(CreateInterRegionBandwidthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInterRegionBandwidthRequest::getBody,
+                CreateInterRegionBandwidthRequest::setBody));
 
         // response
 
@@ -2323,9 +2106,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<DeleteInterRegionBandwidthRequest, DeleteInterRegionBandwidthResponse> deleteInterRegionBandwidth =
-        genFordeleteInterRegionBandwidth();
+        genForDeleteInterRegionBandwidth();
 
-    private static HttpRequestDef<DeleteInterRegionBandwidthRequest, DeleteInterRegionBandwidthResponse> genFordeleteInterRegionBandwidth() {
+    private static HttpRequestDef<DeleteInterRegionBandwidthRequest, DeleteInterRegionBandwidthResponse> genForDeleteInterRegionBandwidth() {
         // basic
         HttpRequestDef.Builder<DeleteInterRegionBandwidthRequest, DeleteInterRegionBandwidthResponse> builder =
             HttpRequestDef
@@ -2341,9 +2124,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInterRegionBandwidthRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteInterRegionBandwidthRequest::getId, DeleteInterRegionBandwidthRequest::setId));
 
         // response
 
@@ -2351,9 +2132,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListInterRegionBandwidthsRequest, ListInterRegionBandwidthsResponse> listInterRegionBandwidths =
-        genForlistInterRegionBandwidths();
+        genForListInterRegionBandwidths();
 
-    private static HttpRequestDef<ListInterRegionBandwidthsRequest, ListInterRegionBandwidthsResponse> genForlistInterRegionBandwidths() {
+    private static HttpRequestDef<ListInterRegionBandwidthsRequest, ListInterRegionBandwidthsResponse> genForListInterRegionBandwidths() {
         // basic
         HttpRequestDef.Builder<ListInterRegionBandwidthsRequest, ListInterRegionBandwidthsResponse> builder =
             HttpRequestDef
@@ -2369,44 +2150,37 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getLimit,
+                ListInterRegionBandwidthsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getMarker,
+                ListInterRegionBandwidthsRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getId, ListInterRegionBandwidthsRequest::setId));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getEnterpriseProjectId,
+                ListInterRegionBandwidthsRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("cloud_connection_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getCloudConnectionId, (req, v) -> {
-                req.setCloudConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getCloudConnectionId,
+                ListInterRegionBandwidthsRequest::setCloudConnectionId));
         builder.<List<String>>withRequestField("bandwidth_package_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getBandwidthPackageId, (req, v) -> {
-                req.setBandwidthPackageId(v);
-            }));
+            f -> f.withMarshaller(ListInterRegionBandwidthsRequest::getBandwidthPackageId,
+                ListInterRegionBandwidthsRequest::setBandwidthPackageId));
 
         // response
 
@@ -2414,9 +2188,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ShowInterRegionBandwidthRequest, ShowInterRegionBandwidthResponse> showInterRegionBandwidth =
-        genForshowInterRegionBandwidth();
+        genForShowInterRegionBandwidth();
 
-    private static HttpRequestDef<ShowInterRegionBandwidthRequest, ShowInterRegionBandwidthResponse> genForshowInterRegionBandwidth() {
+    private static HttpRequestDef<ShowInterRegionBandwidthRequest, ShowInterRegionBandwidthResponse> genForShowInterRegionBandwidth() {
         // basic
         HttpRequestDef.Builder<ShowInterRegionBandwidthRequest, ShowInterRegionBandwidthResponse> builder =
             HttpRequestDef
@@ -2430,9 +2204,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInterRegionBandwidthRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowInterRegionBandwidthRequest::getId, ShowInterRegionBandwidthRequest::setId));
 
         // response
 
@@ -2440,9 +2212,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UpdateInterRegionBandwidthRequest, UpdateInterRegionBandwidthResponse> updateInterRegionBandwidth =
-        genForupdateInterRegionBandwidth();
+        genForUpdateInterRegionBandwidth();
 
-    private static HttpRequestDef<UpdateInterRegionBandwidthRequest, UpdateInterRegionBandwidthResponse> genForupdateInterRegionBandwidth() {
+    private static HttpRequestDef<UpdateInterRegionBandwidthRequest, UpdateInterRegionBandwidthResponse> genForUpdateInterRegionBandwidth() {
         // basic
         HttpRequestDef.Builder<UpdateInterRegionBandwidthRequest, UpdateInterRegionBandwidthResponse> builder =
             HttpRequestDef
@@ -2458,16 +2230,13 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInterRegionBandwidthRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateInterRegionBandwidthRequest::getId, UpdateInterRegionBandwidthRequest::setId));
         builder.<UpdateInterRegionBandwidthRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInterRegionBandwidthRequestBody.class),
-            f -> f.withMarshaller(UpdateInterRegionBandwidthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInterRegionBandwidthRequest::getBody,
+                UpdateInterRegionBandwidthRequest::setBody));
 
         // response
 
@@ -2475,9 +2244,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<CreateNetworkInstanceRequest, CreateNetworkInstanceResponse> createNetworkInstance =
-        genForcreateNetworkInstance();
+        genForCreateNetworkInstance();
 
-    private static HttpRequestDef<CreateNetworkInstanceRequest, CreateNetworkInstanceResponse> genForcreateNetworkInstance() {
+    private static HttpRequestDef<CreateNetworkInstanceRequest, CreateNetworkInstanceResponse> genForCreateNetworkInstance() {
         // basic
         HttpRequestDef.Builder<CreateNetworkInstanceRequest, CreateNetworkInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateNetworkInstanceRequest.class, CreateNetworkInstanceResponse.class)
@@ -2490,9 +2259,7 @@ public class CcMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNetworkInstanceRequestBody.class),
-            f -> f.withMarshaller(CreateNetworkInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNetworkInstanceRequest::getBody, CreateNetworkInstanceRequest::setBody));
 
         // response
 
@@ -2500,9 +2267,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<DeleteNetworkInstanceRequest, DeleteNetworkInstanceResponse> deleteNetworkInstance =
-        genFordeleteNetworkInstance();
+        genForDeleteNetworkInstance();
 
-    private static HttpRequestDef<DeleteNetworkInstanceRequest, DeleteNetworkInstanceResponse> genFordeleteNetworkInstance() {
+    private static HttpRequestDef<DeleteNetworkInstanceRequest, DeleteNetworkInstanceResponse> genForDeleteNetworkInstance() {
         // basic
         HttpRequestDef.Builder<DeleteNetworkInstanceRequest, DeleteNetworkInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteNetworkInstanceRequest.class, DeleteNetworkInstanceResponse.class)
@@ -2515,9 +2282,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNetworkInstanceRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteNetworkInstanceRequest::getId, DeleteNetworkInstanceRequest::setId));
 
         // response
 
@@ -2525,9 +2290,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListNetworkInstancesRequest, ListNetworkInstancesResponse> listNetworkInstances =
-        genForlistNetworkInstances();
+        genForListNetworkInstances();
 
-    private static HttpRequestDef<ListNetworkInstancesRequest, ListNetworkInstancesResponse> genForlistNetworkInstances() {
+    private static HttpRequestDef<ListNetworkInstancesRequest, ListNetworkInstancesResponse> genForListNetworkInstances() {
         // basic
         HttpRequestDef.Builder<ListNetworkInstancesRequest, ListNetworkInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListNetworkInstancesRequest.class, ListNetworkInstancesResponse.class)
@@ -2540,72 +2305,55 @@ public class CcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNetworkInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNetworkInstancesRequest::getLimit, ListNetworkInstancesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNetworkInstancesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListNetworkInstancesRequest::getMarker, ListNetworkInstancesRequest::setMarker));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNetworkInstancesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListNetworkInstancesRequest::getId, ListNetworkInstancesRequest::setId));
         builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNetworkInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListNetworkInstancesRequest::getName, ListNetworkInstancesRequest::setName));
         builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNetworkInstancesRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListNetworkInstancesRequest::getDescription,
+                ListNetworkInstancesRequest::setDescription));
         builder.<List<String>>withRequestField("cloud_connection_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNetworkInstancesRequest::getCloudConnectionId, (req, v) -> {
-                req.setCloudConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListNetworkInstancesRequest::getCloudConnectionId,
+                ListNetworkInstancesRequest::setCloudConnectionId));
         builder.<List<ListNetworkInstancesRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNetworkInstancesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListNetworkInstancesRequest::getStatus, ListNetworkInstancesRequest::setStatus));
         builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNetworkInstancesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListNetworkInstancesRequest::getType, ListNetworkInstancesRequest::setType));
         builder.<List<String>>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNetworkInstancesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListNetworkInstancesRequest::getInstanceId,
+                ListNetworkInstancesRequest::setInstanceId));
         builder.<List<String>>withRequestField("region_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNetworkInstancesRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ListNetworkInstancesRequest::getRegionId, ListNetworkInstancesRequest::setRegionId));
 
         // response
 
@@ -2613,9 +2361,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ShowNetworkInstanceRequest, ShowNetworkInstanceResponse> showNetworkInstance =
-        genForshowNetworkInstance();
+        genForShowNetworkInstance();
 
-    private static HttpRequestDef<ShowNetworkInstanceRequest, ShowNetworkInstanceResponse> genForshowNetworkInstance() {
+    private static HttpRequestDef<ShowNetworkInstanceRequest, ShowNetworkInstanceResponse> genForShowNetworkInstance() {
         // basic
         HttpRequestDef.Builder<ShowNetworkInstanceRequest, ShowNetworkInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNetworkInstanceRequest.class, ShowNetworkInstanceResponse.class)
@@ -2628,9 +2376,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNetworkInstanceRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowNetworkInstanceRequest::getId, ShowNetworkInstanceRequest::setId));
 
         // response
 
@@ -2638,9 +2384,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<UpdateNetworkInstanceRequest, UpdateNetworkInstanceResponse> updateNetworkInstance =
-        genForupdateNetworkInstance();
+        genForUpdateNetworkInstance();
 
-    private static HttpRequestDef<UpdateNetworkInstanceRequest, UpdateNetworkInstanceResponse> genForupdateNetworkInstance() {
+    private static HttpRequestDef<UpdateNetworkInstanceRequest, UpdateNetworkInstanceResponse> genForUpdateNetworkInstance() {
         // basic
         HttpRequestDef.Builder<UpdateNetworkInstanceRequest, UpdateNetworkInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateNetworkInstanceRequest.class, UpdateNetworkInstanceResponse.class)
@@ -2653,16 +2399,12 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNetworkInstanceRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateNetworkInstanceRequest::getId, UpdateNetworkInstanceRequest::setId));
         builder.<UpdateNetworkInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNetworkInstanceRequestBody.class),
-            f -> f.withMarshaller(UpdateNetworkInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNetworkInstanceRequest::getBody, UpdateNetworkInstanceRequest::setBody));
 
         // response
 

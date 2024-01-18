@@ -48,7 +48,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckImageModerationRequest 请求对象
+     * @param request CheckImageModerationRequest 请求对象
      * @return CheckImageModerationResponse
      */
     public CheckImageModerationResponse checkImageModeration(CheckImageModerationRequest request) {
@@ -62,13 +62,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckImageModerationRequest 请求对象
+     * @param request CheckImageModerationRequest 请求对象
      * @return SyncInvoker<CheckImageModerationRequest, CheckImageModerationResponse>
      */
     public SyncInvoker<CheckImageModerationRequest, CheckImageModerationResponse> checkImageModerationInvoker(
         CheckImageModerationRequest request) {
-        return new SyncInvoker<CheckImageModerationRequest, CheckImageModerationResponse>(request,
-            ModerationMeta.checkImageModeration, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.checkImageModeration, hcClient);
     }
 
     /**
@@ -78,7 +77,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCloseAudioStreamModerationJobRequest 请求对象
+     * @param request RunCloseAudioStreamModerationJobRequest 请求对象
      * @return RunCloseAudioStreamModerationJobResponse
      */
     public RunCloseAudioStreamModerationJobResponse runCloseAudioStreamModerationJob(
@@ -93,13 +92,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCloseAudioStreamModerationJobRequest 请求对象
+     * @param request RunCloseAudioStreamModerationJobRequest 请求对象
      * @return SyncInvoker<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse>
      */
     public SyncInvoker<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse> runCloseAudioStreamModerationJobInvoker(
         RunCloseAudioStreamModerationJobRequest request) {
-        return new SyncInvoker<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse>(
-            request, ModerationMeta.runCloseAudioStreamModerationJob, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runCloseAudioStreamModerationJob, hcClient);
     }
 
     /**
@@ -109,7 +107,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCloseVideoStreamModerationJobRequest 请求对象
+     * @param request RunCloseVideoStreamModerationJobRequest 请求对象
      * @return RunCloseVideoStreamModerationJobResponse
      */
     public RunCloseVideoStreamModerationJobResponse runCloseVideoStreamModerationJob(
@@ -124,13 +122,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCloseVideoStreamModerationJobRequest 请求对象
+     * @param request RunCloseVideoStreamModerationJobRequest 请求对象
      * @return SyncInvoker<RunCloseVideoStreamModerationJobRequest, RunCloseVideoStreamModerationJobResponse>
      */
     public SyncInvoker<RunCloseVideoStreamModerationJobRequest, RunCloseVideoStreamModerationJobResponse> runCloseVideoStreamModerationJobInvoker(
         RunCloseVideoStreamModerationJobRequest request) {
-        return new SyncInvoker<RunCloseVideoStreamModerationJobRequest, RunCloseVideoStreamModerationJobResponse>(
-            request, ModerationMeta.runCloseVideoStreamModerationJob, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runCloseVideoStreamModerationJob, hcClient);
     }
 
     /**
@@ -140,7 +137,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCreateAudioModerationJobRequest 请求对象
+     * @param request RunCreateAudioModerationJobRequest 请求对象
      * @return RunCreateAudioModerationJobResponse
      */
     public RunCreateAudioModerationJobResponse runCreateAudioModerationJob(RunCreateAudioModerationJobRequest request) {
@@ -154,13 +151,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCreateAudioModerationJobRequest 请求对象
+     * @param request RunCreateAudioModerationJobRequest 请求对象
      * @return SyncInvoker<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse>
      */
     public SyncInvoker<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse> runCreateAudioModerationJobInvoker(
         RunCreateAudioModerationJobRequest request) {
-        return new SyncInvoker<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse>(request,
-            ModerationMeta.runCreateAudioModerationJob, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runCreateAudioModerationJob, hcClient);
     }
 
     /**
@@ -170,7 +166,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCreateAudioStreamModerationJobRequest 请求对象
+     * @param request RunCreateAudioStreamModerationJobRequest 请求对象
      * @return RunCreateAudioStreamModerationJobResponse
      */
     public RunCreateAudioStreamModerationJobResponse runCreateAudioStreamModerationJob(
@@ -185,13 +181,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCreateAudioStreamModerationJobRequest 请求对象
+     * @param request RunCreateAudioStreamModerationJobRequest 请求对象
      * @return SyncInvoker<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse>
      */
     public SyncInvoker<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse> runCreateAudioStreamModerationJobInvoker(
         RunCreateAudioStreamModerationJobRequest request) {
-        return new SyncInvoker<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse>(
-            request, ModerationMeta.runCreateAudioStreamModerationJob, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runCreateAudioStreamModerationJob, hcClient);
     }
 
     /**
@@ -201,7 +196,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCreateDocumentModerationJobRequest 请求对象
+     * @param request RunCreateDocumentModerationJobRequest 请求对象
      * @return RunCreateDocumentModerationJobResponse
      */
     public RunCreateDocumentModerationJobResponse runCreateDocumentModerationJob(
@@ -216,13 +211,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCreateDocumentModerationJobRequest 请求对象
+     * @param request RunCreateDocumentModerationJobRequest 请求对象
      * @return SyncInvoker<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse>
      */
     public SyncInvoker<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse> runCreateDocumentModerationJobInvoker(
         RunCreateDocumentModerationJobRequest request) {
-        return new SyncInvoker<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse>(request,
-            ModerationMeta.runCreateDocumentModerationJob, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runCreateDocumentModerationJob, hcClient);
     }
 
     /**
@@ -232,7 +226,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCreateVideoModerationJobRequest 请求对象
+     * @param request RunCreateVideoModerationJobRequest 请求对象
      * @return RunCreateVideoModerationJobResponse
      */
     public RunCreateVideoModerationJobResponse runCreateVideoModerationJob(RunCreateVideoModerationJobRequest request) {
@@ -246,13 +240,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCreateVideoModerationJobRequest 请求对象
+     * @param request RunCreateVideoModerationJobRequest 请求对象
      * @return SyncInvoker<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse>
      */
     public SyncInvoker<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse> runCreateVideoModerationJobInvoker(
         RunCreateVideoModerationJobRequest request) {
-        return new SyncInvoker<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse>(request,
-            ModerationMeta.runCreateVideoModerationJob, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runCreateVideoModerationJob, hcClient);
     }
 
     /**
@@ -262,7 +255,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCreateVideoStreamModerationJobRequest 请求对象
+     * @param request RunCreateVideoStreamModerationJobRequest 请求对象
      * @return RunCreateVideoStreamModerationJobResponse
      */
     public RunCreateVideoStreamModerationJobResponse runCreateVideoStreamModerationJob(
@@ -277,13 +270,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunCreateVideoStreamModerationJobRequest 请求对象
+     * @param request RunCreateVideoStreamModerationJobRequest 请求对象
      * @return SyncInvoker<RunCreateVideoStreamModerationJobRequest, RunCreateVideoStreamModerationJobResponse>
      */
     public SyncInvoker<RunCreateVideoStreamModerationJobRequest, RunCreateVideoStreamModerationJobResponse> runCreateVideoStreamModerationJobInvoker(
         RunCreateVideoStreamModerationJobRequest request) {
-        return new SyncInvoker<RunCreateVideoStreamModerationJobRequest, RunCreateVideoStreamModerationJobResponse>(
-            request, ModerationMeta.runCreateVideoStreamModerationJob, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runCreateVideoStreamModerationJob, hcClient);
     }
 
     /**
@@ -292,7 +284,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunQueryAudioModerationJobRequest 请求对象
+     * @param request RunQueryAudioModerationJobRequest 请求对象
      * @return RunQueryAudioModerationJobResponse
      */
     public RunQueryAudioModerationJobResponse runQueryAudioModerationJob(RunQueryAudioModerationJobRequest request) {
@@ -305,13 +297,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunQueryAudioModerationJobRequest 请求对象
+     * @param request RunQueryAudioModerationJobRequest 请求对象
      * @return SyncInvoker<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse>
      */
     public SyncInvoker<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse> runQueryAudioModerationJobInvoker(
         RunQueryAudioModerationJobRequest request) {
-        return new SyncInvoker<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse>(request,
-            ModerationMeta.runQueryAudioModerationJob, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runQueryAudioModerationJob, hcClient);
     }
 
     /**
@@ -321,7 +312,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunQueryDocumentModerationJobRequest 请求对象
+     * @param request RunQueryDocumentModerationJobRequest 请求对象
      * @return RunQueryDocumentModerationJobResponse
      */
     public RunQueryDocumentModerationJobResponse runQueryDocumentModerationJob(
@@ -336,13 +327,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunQueryDocumentModerationJobRequest 请求对象
+     * @param request RunQueryDocumentModerationJobRequest 请求对象
      * @return SyncInvoker<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse>
      */
     public SyncInvoker<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse> runQueryDocumentModerationJobInvoker(
         RunQueryDocumentModerationJobRequest request) {
-        return new SyncInvoker<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse>(request,
-            ModerationMeta.runQueryDocumentModerationJob, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runQueryDocumentModerationJob, hcClient);
     }
 
     /**
@@ -352,7 +342,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunQueryVideoModerationJobRequest 请求对象
+     * @param request RunQueryVideoModerationJobRequest 请求对象
      * @return RunQueryVideoModerationJobResponse
      */
     public RunQueryVideoModerationJobResponse runQueryVideoModerationJob(RunQueryVideoModerationJobRequest request) {
@@ -366,13 +356,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunQueryVideoModerationJobRequest 请求对象
+     * @param request RunQueryVideoModerationJobRequest 请求对象
      * @return SyncInvoker<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse>
      */
     public SyncInvoker<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse> runQueryVideoModerationJobInvoker(
         RunQueryVideoModerationJobRequest request) {
-        return new SyncInvoker<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse>(request,
-            ModerationMeta.runQueryVideoModerationJob, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runQueryVideoModerationJob, hcClient);
     }
 
     /**
@@ -382,7 +371,7 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTextModerationRequest 请求对象
+     * @param request RunTextModerationRequest 请求对象
      * @return RunTextModerationResponse
      */
     public RunTextModerationResponse runTextModeration(RunTextModerationRequest request) {
@@ -396,13 +385,12 @@ public class ModerationClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunTextModerationRequest 请求对象
+     * @param request RunTextModerationRequest 请求对象
      * @return SyncInvoker<RunTextModerationRequest, RunTextModerationResponse>
      */
     public SyncInvoker<RunTextModerationRequest, RunTextModerationResponse> runTextModerationInvoker(
         RunTextModerationRequest request) {
-        return new SyncInvoker<RunTextModerationRequest, RunTextModerationResponse>(request,
-            ModerationMeta.runTextModeration, hcClient);
+        return new SyncInvoker<>(request, ModerationMeta.runTextModeration, hcClient);
     }
 
 }

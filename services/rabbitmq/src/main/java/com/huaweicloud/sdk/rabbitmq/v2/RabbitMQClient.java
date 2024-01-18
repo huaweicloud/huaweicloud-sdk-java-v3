@@ -74,7 +74,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteRabbitMqTagRequest 请求对象
+     * @param request BatchCreateOrDeleteRabbitMqTagRequest 请求对象
      * @return BatchCreateOrDeleteRabbitMqTagResponse
      */
     public BatchCreateOrDeleteRabbitMqTagResponse batchCreateOrDeleteRabbitMqTag(
@@ -89,13 +89,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteRabbitMqTagRequest 请求对象
+     * @param request BatchCreateOrDeleteRabbitMqTagRequest 请求对象
      * @return SyncInvoker<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse>
      */
     public SyncInvoker<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> batchCreateOrDeleteRabbitMqTagInvoker(
         BatchCreateOrDeleteRabbitMqTagRequest request) {
-        return new SyncInvoker<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse>(request,
-            RabbitMQMeta.batchCreateOrDeleteRabbitMqTag, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.batchCreateOrDeleteRabbitMqTag, hcClient);
     }
 
     /**
@@ -107,7 +106,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRestartOrDeleteInstancesRequest 请求对象
+     * @param request BatchRestartOrDeleteInstancesRequest 请求对象
      * @return BatchRestartOrDeleteInstancesResponse
      */
     public BatchRestartOrDeleteInstancesResponse batchRestartOrDeleteInstances(
@@ -124,13 +123,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRestartOrDeleteInstancesRequest 请求对象
+     * @param request BatchRestartOrDeleteInstancesRequest 请求对象
      * @return SyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse>
      */
     public SyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstancesInvoker(
         BatchRestartOrDeleteInstancesRequest request) {
-        return new SyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse>(request,
-            RabbitMQMeta.batchRestartOrDeleteInstances, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.batchRestartOrDeleteInstances, hcClient);
     }
 
     /**
@@ -140,7 +138,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceRequest 请求对象
+     * @param request CreatePostPaidInstanceRequest 请求对象
      * @return CreatePostPaidInstanceResponse
      */
     public CreatePostPaidInstanceResponse createPostPaidInstance(CreatePostPaidInstanceRequest request) {
@@ -154,13 +152,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceRequest 请求对象
+     * @param request CreatePostPaidInstanceRequest 请求对象
      * @return SyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>
      */
     public SyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstanceInvoker(
         CreatePostPaidInstanceRequest request) {
-        return new SyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>(request,
-            RabbitMQMeta.createPostPaidInstance, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.createPostPaidInstance, hcClient);
     }
 
     /**
@@ -170,7 +167,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceByEngineRequest 请求对象
+     * @param request CreatePostPaidInstanceByEngineRequest 请求对象
      * @return CreatePostPaidInstanceByEngineResponse
      */
     public CreatePostPaidInstanceByEngineResponse createPostPaidInstanceByEngine(
@@ -185,13 +182,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPaidInstanceByEngineRequest 请求对象
+     * @param request CreatePostPaidInstanceByEngineRequest 请求对象
      * @return SyncInvoker<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse>
      */
     public SyncInvoker<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse> createPostPaidInstanceByEngineInvoker(
         CreatePostPaidInstanceByEngineRequest request) {
-        return new SyncInvoker<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse>(request,
-            RabbitMQMeta.createPostPaidInstanceByEngine, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.createPostPaidInstanceByEngine, hcClient);
     }
 
     /**
@@ -201,7 +197,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackgroundTaskRequest 请求对象
+     * @param request DeleteBackgroundTaskRequest 请求对象
      * @return DeleteBackgroundTaskResponse
      */
     public DeleteBackgroundTaskResponse deleteBackgroundTask(DeleteBackgroundTaskRequest request) {
@@ -215,13 +211,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackgroundTaskRequest 请求对象
+     * @param request DeleteBackgroundTaskRequest 请求对象
      * @return SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>
      */
     public SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTaskInvoker(
         DeleteBackgroundTaskRequest request) {
-        return new SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>(request,
-            RabbitMQMeta.deleteBackgroundTask, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.deleteBackgroundTask, hcClient);
     }
 
     /**
@@ -231,7 +226,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
      */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
@@ -245,13 +240,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
         DeleteInstanceRequest request) {
-        return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, RabbitMQMeta.deleteInstance,
-            hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -261,7 +255,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return ListAvailableZonesResponse
      */
     public ListAvailableZonesResponse listAvailableZones(ListAvailableZonesRequest request) {
@@ -275,13 +269,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
      */
     public SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesInvoker(
         ListAvailableZonesRequest request) {
-        return new SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request,
-            RabbitMQMeta.listAvailableZones, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.listAvailableZones, hcClient);
     }
 
     /**
@@ -291,7 +284,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackgroundTasksRequest 请求对象
+     * @param request ListBackgroundTasksRequest 请求对象
      * @return ListBackgroundTasksResponse
      */
     public ListBackgroundTasksResponse listBackgroundTasks(ListBackgroundTasksRequest request) {
@@ -305,13 +298,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackgroundTasksRequest 请求对象
+     * @param request ListBackgroundTasksRequest 请求对象
      * @return SyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse>
      */
     public SyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasksInvoker(
         ListBackgroundTasksRequest request) {
-        return new SyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse>(request,
-            RabbitMQMeta.listBackgroundTasks, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.listBackgroundTasks, hcClient);
     }
 
     /**
@@ -321,7 +313,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEngineProductsRequest 请求对象
+     * @param request ListEngineProductsRequest 请求对象
      * @return ListEngineProductsResponse
      */
     public ListEngineProductsResponse listEngineProducts(ListEngineProductsRequest request) {
@@ -335,13 +327,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEngineProductsRequest 请求对象
+     * @param request ListEngineProductsRequest 请求对象
      * @return SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>
      */
     public SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProductsInvoker(
         ListEngineProductsRequest request) {
-        return new SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>(request,
-            RabbitMQMeta.listEngineProducts, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.listEngineProducts, hcClient);
     }
 
     /**
@@ -351,7 +342,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesDetailsRequest 请求对象
+     * @param request ListInstancesDetailsRequest 请求对象
      * @return ListInstancesDetailsResponse
      */
     public ListInstancesDetailsResponse listInstancesDetails(ListInstancesDetailsRequest request) {
@@ -365,13 +356,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesDetailsRequest 请求对象
+     * @param request ListInstancesDetailsRequest 请求对象
      * @return SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse>
      */
     public SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse> listInstancesDetailsInvoker(
         ListInstancesDetailsRequest request) {
-        return new SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse>(request,
-            RabbitMQMeta.listInstancesDetails, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.listInstancesDetails, hcClient);
     }
 
     /**
@@ -381,7 +371,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return ListPluginsResponse
      */
     public ListPluginsResponse listPlugins(ListPluginsRequest request) {
@@ -395,11 +385,11 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return SyncInvoker<ListPluginsRequest, ListPluginsResponse>
      */
     public SyncInvoker<ListPluginsRequest, ListPluginsResponse> listPluginsInvoker(ListPluginsRequest request) {
-        return new SyncInvoker<ListPluginsRequest, ListPluginsResponse>(request, RabbitMQMeta.listPlugins, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.listPlugins, hcClient);
     }
 
     /**
@@ -409,7 +399,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return ListProductsResponse
      */
     public ListProductsResponse listProducts(ListProductsRequest request) {
@@ -423,11 +413,11 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProductsRequest 请求对象
+     * @param request ListProductsRequest 请求对象
      * @return SyncInvoker<ListProductsRequest, ListProductsResponse>
      */
     public SyncInvoker<ListProductsRequest, ListProductsResponse> listProductsInvoker(ListProductsRequest request) {
-        return new SyncInvoker<ListProductsRequest, ListProductsResponse>(request, RabbitMQMeta.listProducts, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.listProducts, hcClient);
     }
 
     /**
@@ -437,7 +427,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
      */
     public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
@@ -451,12 +441,11 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
     public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
-        return new SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, RabbitMQMeta.resetPassword,
-            hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.resetPassword, hcClient);
     }
 
     /**
@@ -468,7 +457,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeEngineInstanceRequest 请求对象
+     * @param request ResizeEngineInstanceRequest 请求对象
      * @return ResizeEngineInstanceResponse
      */
     public ResizeEngineInstanceResponse resizeEngineInstance(ResizeEngineInstanceRequest request) {
@@ -484,13 +473,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeEngineInstanceRequest 请求对象
+     * @param request ResizeEngineInstanceRequest 请求对象
      * @return SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>
      */
     public SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstanceInvoker(
         ResizeEngineInstanceRequest request) {
-        return new SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>(request,
-            RabbitMQMeta.resizeEngineInstance, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.resizeEngineInstance, hcClient);
     }
 
     /**
@@ -502,7 +490,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse
      */
     public ResizeInstanceResponse resizeInstance(ResizeInstanceRequest request) {
@@ -518,13 +506,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
      */
     public SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceInvoker(
         ResizeInstanceRequest request) {
-        return new SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request, RabbitMQMeta.resizeInstance,
-            hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.resizeInstance, hcClient);
     }
 
     /**
@@ -534,7 +521,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackgroundTaskRequest 请求对象
+     * @param request ShowBackgroundTaskRequest 请求对象
      * @return ShowBackgroundTaskResponse
      */
     public ShowBackgroundTaskResponse showBackgroundTask(ShowBackgroundTaskRequest request) {
@@ -548,13 +535,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackgroundTaskRequest 请求对象
+     * @param request ShowBackgroundTaskRequest 请求对象
      * @return SyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>
      */
     public SyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTaskInvoker(
         ShowBackgroundTaskRequest request) {
-        return new SyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>(request,
-            RabbitMQMeta.showBackgroundTask, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.showBackgroundTask, hcClient);
     }
 
     /**
@@ -564,7 +550,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCesHierarchyRequest 请求对象
+     * @param request ShowCesHierarchyRequest 请求对象
      * @return ShowCesHierarchyResponse
      */
     public ShowCesHierarchyResponse showCesHierarchy(ShowCesHierarchyRequest request) {
@@ -578,13 +564,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCesHierarchyRequest 请求对象
+     * @param request ShowCesHierarchyRequest 请求对象
      * @return SyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>
      */
     public SyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchyInvoker(
         ShowCesHierarchyRequest request) {
-        return new SyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>(request,
-            RabbitMQMeta.showCesHierarchy, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.showCesHierarchy, hcClient);
     }
 
     /**
@@ -594,7 +579,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowEngineInstanceExtendProductInfoRequest 请求对象
      * @return ShowEngineInstanceExtendProductInfoResponse
      */
     public ShowEngineInstanceExtendProductInfoResponse showEngineInstanceExtendProductInfo(
@@ -609,13 +594,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowEngineInstanceExtendProductInfoRequest 请求对象
      * @return SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>
      */
     public SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoInvoker(
         ShowEngineInstanceExtendProductInfoRequest request) {
-        return new SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>(
-            request, RabbitMQMeta.showEngineInstanceExtendProductInfo, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.showEngineInstanceExtendProductInfo, hcClient);
     }
 
     /**
@@ -625,7 +609,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
      */
     public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
@@ -639,11 +623,11 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
-        return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, RabbitMQMeta.showInstance, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.showInstance, hcClient);
     }
 
     /**
@@ -655,7 +639,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowInstanceExtendProductInfoRequest 请求对象
      * @return ShowInstanceExtendProductInfoResponse
      */
     public ShowInstanceExtendProductInfoResponse showInstanceExtendProductInfo(
@@ -672,13 +656,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceExtendProductInfoRequest 请求对象
+     * @param request ShowInstanceExtendProductInfoRequest 请求对象
      * @return SyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>
      */
     public SyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfoInvoker(
         ShowInstanceExtendProductInfoRequest request) {
-        return new SyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>(request,
-            RabbitMQMeta.showInstanceExtendProductInfo, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.showInstanceExtendProductInfo, hcClient);
     }
 
     /**
@@ -688,7 +671,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMaintainWindowsRequest 请求对象
+     * @param request ShowMaintainWindowsRequest 请求对象
      * @return ShowMaintainWindowsResponse
      */
     public ShowMaintainWindowsResponse showMaintainWindows(ShowMaintainWindowsRequest request) {
@@ -702,13 +685,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMaintainWindowsRequest 请求对象
+     * @param request ShowMaintainWindowsRequest 请求对象
      * @return SyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>
      */
     public SyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindowsInvoker(
         ShowMaintainWindowsRequest request) {
-        return new SyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>(request,
-            RabbitMQMeta.showMaintainWindows, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.showMaintainWindows, hcClient);
     }
 
     /**
@@ -718,7 +700,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRabbitMqProjectTagsRequest 请求对象
+     * @param request ShowRabbitMqProjectTagsRequest 请求对象
      * @return ShowRabbitMqProjectTagsResponse
      */
     public ShowRabbitMqProjectTagsResponse showRabbitMqProjectTags(ShowRabbitMqProjectTagsRequest request) {
@@ -732,13 +714,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRabbitMqProjectTagsRequest 请求对象
+     * @param request ShowRabbitMqProjectTagsRequest 请求对象
      * @return SyncInvoker<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse>
      */
     public SyncInvoker<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> showRabbitMqProjectTagsInvoker(
         ShowRabbitMqProjectTagsRequest request) {
-        return new SyncInvoker<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse>(request,
-            RabbitMQMeta.showRabbitMqProjectTags, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.showRabbitMqProjectTags, hcClient);
     }
 
     /**
@@ -748,7 +729,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRabbitMqTagsRequest 请求对象
+     * @param request ShowRabbitMqTagsRequest 请求对象
      * @return ShowRabbitMqTagsResponse
      */
     public ShowRabbitMqTagsResponse showRabbitMqTags(ShowRabbitMqTagsRequest request) {
@@ -762,13 +743,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRabbitMqTagsRequest 请求对象
+     * @param request ShowRabbitMqTagsRequest 请求对象
      * @return SyncInvoker<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse>
      */
     public SyncInvoker<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> showRabbitMqTagsInvoker(
         ShowRabbitMqTagsRequest request) {
-        return new SyncInvoker<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse>(request,
-            RabbitMQMeta.showRabbitMqTags, hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.showRabbitMqTags, hcClient);
     }
 
     /**
@@ -778,7 +758,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
      */
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
@@ -792,13 +772,12 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
      */
     public SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceInvoker(
         UpdateInstanceRequest request) {
-        return new SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, RabbitMQMeta.updateInstance,
-            hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.updateInstance, hcClient);
     }
 
     /**
@@ -808,7 +787,7 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginsRequest 请求对象
+     * @param request UpdatePluginsRequest 请求对象
      * @return UpdatePluginsResponse
      */
     public UpdatePluginsResponse updatePlugins(UpdatePluginsRequest request) {
@@ -822,12 +801,11 @@ public class RabbitMQClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginsRequest 请求对象
+     * @param request UpdatePluginsRequest 请求对象
      * @return SyncInvoker<UpdatePluginsRequest, UpdatePluginsResponse>
      */
     public SyncInvoker<UpdatePluginsRequest, UpdatePluginsResponse> updatePluginsInvoker(UpdatePluginsRequest request) {
-        return new SyncInvoker<UpdatePluginsRequest, UpdatePluginsResponse>(request, RabbitMQMeta.updatePlugins,
-            hcClient);
+        return new SyncInvoker<>(request, RabbitMQMeta.updatePlugins, hcClient);
     }
 
 }

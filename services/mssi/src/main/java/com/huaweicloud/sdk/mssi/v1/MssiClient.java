@@ -56,7 +56,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionInfoRequest 请求对象
+     * @param request CreateConnectionInfoRequest 请求对象
      * @return CreateConnectionInfoResponse
      */
     public CreateConnectionInfoResponse createConnectionInfo(CreateConnectionInfoRequest request) {
@@ -70,13 +70,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionInfoRequest 请求对象
+     * @param request CreateConnectionInfoRequest 请求对象
      * @return SyncInvoker<CreateConnectionInfoRequest, CreateConnectionInfoResponse>
      */
     public SyncInvoker<CreateConnectionInfoRequest, CreateConnectionInfoResponse> createConnectionInfoInvoker(
         CreateConnectionInfoRequest request) {
-        return new SyncInvoker<CreateConnectionInfoRequest, CreateConnectionInfoResponse>(request,
-            MssiMeta.createConnectionInfo, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.createConnectionInfo, hcClient);
     }
 
     /**
@@ -86,7 +85,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomConnectorFromOpenapiRequest 请求对象
+     * @param request CreateCustomConnectorFromOpenapiRequest 请求对象
      * @return CreateCustomConnectorFromOpenapiResponse
      */
     public CreateCustomConnectorFromOpenapiResponse createCustomConnectorFromOpenapi(
@@ -101,13 +100,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomConnectorFromOpenapiRequest 请求对象
+     * @param request CreateCustomConnectorFromOpenapiRequest 请求对象
      * @return SyncInvoker<CreateCustomConnectorFromOpenapiRequest, CreateCustomConnectorFromOpenapiResponse>
      */
     public SyncInvoker<CreateCustomConnectorFromOpenapiRequest, CreateCustomConnectorFromOpenapiResponse> createCustomConnectorFromOpenapiInvoker(
         CreateCustomConnectorFromOpenapiRequest request) {
-        return new SyncInvoker<CreateCustomConnectorFromOpenapiRequest, CreateCustomConnectorFromOpenapiResponse>(
-            request, MssiMeta.createCustomConnectorFromOpenapi, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.createCustomConnectorFromOpenapi, hcClient);
     }
 
     /**
@@ -117,7 +115,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlowRequest 请求对象
+     * @param request CreateFlowRequest 请求对象
      * @return CreateFlowResponse
      */
     public CreateFlowResponse createFlow(CreateFlowRequest request) {
@@ -131,11 +129,11 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlowRequest 请求对象
+     * @param request CreateFlowRequest 请求对象
      * @return SyncInvoker<CreateFlowRequest, CreateFlowResponse>
      */
     public SyncInvoker<CreateFlowRequest, CreateFlowResponse> createFlowInvoker(CreateFlowRequest request) {
-        return new SyncInvoker<CreateFlowRequest, CreateFlowResponse>(request, MssiMeta.createFlow, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.createFlow, hcClient);
     }
 
     /**
@@ -144,7 +142,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlowTemplateFromFlowRequest 请求对象
+     * @param request CreateFlowTemplateFromFlowRequest 请求对象
      * @return CreateFlowTemplateFromFlowResponse
      */
     public CreateFlowTemplateFromFlowResponse createFlowTemplateFromFlow(CreateFlowTemplateFromFlowRequest request) {
@@ -157,13 +155,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFlowTemplateFromFlowRequest 请求对象
+     * @param request CreateFlowTemplateFromFlowRequest 请求对象
      * @return SyncInvoker<CreateFlowTemplateFromFlowRequest, CreateFlowTemplateFromFlowResponse>
      */
     public SyncInvoker<CreateFlowTemplateFromFlowRequest, CreateFlowTemplateFromFlowResponse> createFlowTemplateFromFlowInvoker(
         CreateFlowTemplateFromFlowRequest request) {
-        return new SyncInvoker<CreateFlowTemplateFromFlowRequest, CreateFlowTemplateFromFlowResponse>(request,
-            MssiMeta.createFlowTemplateFromFlow, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.createFlowTemplateFromFlow, hcClient);
     }
 
     /**
@@ -173,7 +170,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectionInfoRequest 请求对象
+     * @param request DeleteConnectionInfoRequest 请求对象
      * @return DeleteConnectionInfoResponse
      */
     public DeleteConnectionInfoResponse deleteConnectionInfo(DeleteConnectionInfoRequest request) {
@@ -187,13 +184,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectionInfoRequest 请求对象
+     * @param request DeleteConnectionInfoRequest 请求对象
      * @return SyncInvoker<DeleteConnectionInfoRequest, DeleteConnectionInfoResponse>
      */
     public SyncInvoker<DeleteConnectionInfoRequest, DeleteConnectionInfoResponse> deleteConnectionInfoInvoker(
         DeleteConnectionInfoRequest request) {
-        return new SyncInvoker<DeleteConnectionInfoRequest, DeleteConnectionInfoResponse>(request,
-            MssiMeta.deleteConnectionInfo, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.deleteConnectionInfo, hcClient);
     }
 
     /**
@@ -203,7 +199,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomConnectorRequest 请求对象
+     * @param request DeleteCustomConnectorRequest 请求对象
      * @return DeleteCustomConnectorResponse
      */
     public DeleteCustomConnectorResponse deleteCustomConnector(DeleteCustomConnectorRequest request) {
@@ -217,13 +213,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomConnectorRequest 请求对象
+     * @param request DeleteCustomConnectorRequest 请求对象
      * @return SyncInvoker<DeleteCustomConnectorRequest, DeleteCustomConnectorResponse>
      */
     public SyncInvoker<DeleteCustomConnectorRequest, DeleteCustomConnectorResponse> deleteCustomConnectorInvoker(
         DeleteCustomConnectorRequest request) {
-        return new SyncInvoker<DeleteCustomConnectorRequest, DeleteCustomConnectorResponse>(request,
-            MssiMeta.deleteCustomConnector, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.deleteCustomConnector, hcClient);
     }
 
     /**
@@ -233,7 +228,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFlowRequest 请求对象
+     * @param request DeleteFlowRequest 请求对象
      * @return DeleteFlowResponse
      */
     public DeleteFlowResponse deleteFlow(DeleteFlowRequest request) {
@@ -247,11 +242,11 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFlowRequest 请求对象
+     * @param request DeleteFlowRequest 请求对象
      * @return SyncInvoker<DeleteFlowRequest, DeleteFlowResponse>
      */
     public SyncInvoker<DeleteFlowRequest, DeleteFlowResponse> deleteFlowInvoker(DeleteFlowRequest request) {
-        return new SyncInvoker<DeleteFlowRequest, DeleteFlowResponse>(request, MssiMeta.deleteFlow, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.deleteFlow, hcClient);
     }
 
     /**
@@ -261,7 +256,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFlowByIdRequest 请求对象
+     * @param request SearchFlowByIdRequest 请求对象
      * @return SearchFlowByIdResponse
      */
     public SearchFlowByIdResponse searchFlowById(SearchFlowByIdRequest request) {
@@ -275,13 +270,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchFlowByIdRequest 请求对象
+     * @param request SearchFlowByIdRequest 请求对象
      * @return SyncInvoker<SearchFlowByIdRequest, SearchFlowByIdResponse>
      */
     public SyncInvoker<SearchFlowByIdRequest, SearchFlowByIdResponse> searchFlowByIdInvoker(
         SearchFlowByIdRequest request) {
-        return new SyncInvoker<SearchFlowByIdRequest, SearchFlowByIdResponse>(request, MssiMeta.searchFlowById,
-            hcClient);
+        return new SyncInvoker<>(request, MssiMeta.searchFlowById, hcClient);
     }
 
     /**
@@ -291,7 +285,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllConnectionsRequest 请求对象
+     * @param request ShowAllConnectionsRequest 请求对象
      * @return ShowAllConnectionsResponse
      */
     public ShowAllConnectionsResponse showAllConnections(ShowAllConnectionsRequest request) {
@@ -305,13 +299,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllConnectionsRequest 请求对象
+     * @param request ShowAllConnectionsRequest 请求对象
      * @return SyncInvoker<ShowAllConnectionsRequest, ShowAllConnectionsResponse>
      */
     public SyncInvoker<ShowAllConnectionsRequest, ShowAllConnectionsResponse> showAllConnectionsInvoker(
         ShowAllConnectionsRequest request) {
-        return new SyncInvoker<ShowAllConnectionsRequest, ShowAllConnectionsResponse>(request,
-            MssiMeta.showAllConnections, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.showAllConnections, hcClient);
     }
 
     /**
@@ -321,7 +314,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllFlowsRequest 请求对象
+     * @param request ShowAllFlowsRequest 请求对象
      * @return ShowAllFlowsResponse
      */
     public ShowAllFlowsResponse showAllFlows(ShowAllFlowsRequest request) {
@@ -335,11 +328,11 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAllFlowsRequest 请求对象
+     * @param request ShowAllFlowsRequest 请求对象
      * @return SyncInvoker<ShowAllFlowsRequest, ShowAllFlowsResponse>
      */
     public SyncInvoker<ShowAllFlowsRequest, ShowAllFlowsResponse> showAllFlowsInvoker(ShowAllFlowsRequest request) {
-        return new SyncInvoker<ShowAllFlowsRequest, ShowAllFlowsResponse>(request, MssiMeta.showAllFlows, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.showAllFlows, hcClient);
     }
 
     /**
@@ -349,7 +342,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectorsRequest 请求对象
+     * @param request ShowConnectorsRequest 请求对象
      * @return ShowConnectorsResponse
      */
     public ShowConnectorsResponse showConnectors(ShowConnectorsRequest request) {
@@ -363,13 +356,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectorsRequest 请求对象
+     * @param request ShowConnectorsRequest 请求对象
      * @return SyncInvoker<ShowConnectorsRequest, ShowConnectorsResponse>
      */
     public SyncInvoker<ShowConnectorsRequest, ShowConnectorsResponse> showConnectorsInvoker(
         ShowConnectorsRequest request) {
-        return new SyncInvoker<ShowConnectorsRequest, ShowConnectorsResponse>(request, MssiMeta.showConnectors,
-            hcClient);
+        return new SyncInvoker<>(request, MssiMeta.showConnectors, hcClient);
     }
 
     /**
@@ -379,7 +371,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomConnectorRequest 请求对象
+     * @param request ShowCustomConnectorRequest 请求对象
      * @return ShowCustomConnectorResponse
      */
     public ShowCustomConnectorResponse showCustomConnector(ShowCustomConnectorRequest request) {
@@ -393,13 +385,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomConnectorRequest 请求对象
+     * @param request ShowCustomConnectorRequest 请求对象
      * @return SyncInvoker<ShowCustomConnectorRequest, ShowCustomConnectorResponse>
      */
     public SyncInvoker<ShowCustomConnectorRequest, ShowCustomConnectorResponse> showCustomConnectorInvoker(
         ShowCustomConnectorRequest request) {
-        return new SyncInvoker<ShowCustomConnectorRequest, ShowCustomConnectorResponse>(request,
-            MssiMeta.showCustomConnector, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.showCustomConnector, hcClient);
     }
 
     /**
@@ -409,7 +400,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomConnectorsRequest 请求对象
+     * @param request ShowCustomConnectorsRequest 请求对象
      * @return ShowCustomConnectorsResponse
      */
     public ShowCustomConnectorsResponse showCustomConnectors(ShowCustomConnectorsRequest request) {
@@ -423,13 +414,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCustomConnectorsRequest 请求对象
+     * @param request ShowCustomConnectorsRequest 请求对象
      * @return SyncInvoker<ShowCustomConnectorsRequest, ShowCustomConnectorsResponse>
      */
     public SyncInvoker<ShowCustomConnectorsRequest, ShowCustomConnectorsResponse> showCustomConnectorsInvoker(
         ShowCustomConnectorsRequest request) {
-        return new SyncInvoker<ShowCustomConnectorsRequest, ShowCustomConnectorsResponse>(request,
-            MssiMeta.showCustomConnectors, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.showCustomConnectors, hcClient);
     }
 
     /**
@@ -439,7 +429,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSingleConnectionRequest 请求对象
+     * @param request ShowSingleConnectionRequest 请求对象
      * @return ShowSingleConnectionResponse
      */
     public ShowSingleConnectionResponse showSingleConnection(ShowSingleConnectionRequest request) {
@@ -453,13 +443,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSingleConnectionRequest 请求对象
+     * @param request ShowSingleConnectionRequest 请求对象
      * @return SyncInvoker<ShowSingleConnectionRequest, ShowSingleConnectionResponse>
      */
     public SyncInvoker<ShowSingleConnectionRequest, ShowSingleConnectionResponse> showSingleConnectionInvoker(
         ShowSingleConnectionRequest request) {
-        return new SyncInvoker<ShowSingleConnectionRequest, ShowSingleConnectionResponse>(request,
-            MssiMeta.showSingleConnection, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.showSingleConnection, hcClient);
     }
 
     /**
@@ -468,7 +457,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionInfoRequest 请求对象
+     * @param request UpdateConnectionInfoRequest 请求对象
      * @return UpdateConnectionInfoResponse
      */
     public UpdateConnectionInfoResponse updateConnectionInfo(UpdateConnectionInfoRequest request) {
@@ -481,13 +470,12 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionInfoRequest 请求对象
+     * @param request UpdateConnectionInfoRequest 请求对象
      * @return SyncInvoker<UpdateConnectionInfoRequest, UpdateConnectionInfoResponse>
      */
     public SyncInvoker<UpdateConnectionInfoRequest, UpdateConnectionInfoResponse> updateConnectionInfoInvoker(
         UpdateConnectionInfoRequest request) {
-        return new SyncInvoker<UpdateConnectionInfoRequest, UpdateConnectionInfoResponse>(request,
-            MssiMeta.updateConnectionInfo, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.updateConnectionInfo, hcClient);
     }
 
     /**
@@ -497,7 +485,7 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlowRequest 请求对象
+     * @param request UpdateFlowRequest 请求对象
      * @return UpdateFlowResponse
      */
     public UpdateFlowResponse updateFlow(UpdateFlowRequest request) {
@@ -511,11 +499,11 @@ public class MssiClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateFlowRequest 请求对象
+     * @param request UpdateFlowRequest 请求对象
      * @return SyncInvoker<UpdateFlowRequest, UpdateFlowResponse>
      */
     public SyncInvoker<UpdateFlowRequest, UpdateFlowResponse> updateFlowInvoker(UpdateFlowRequest request) {
-        return new SyncInvoker<UpdateFlowRequest, UpdateFlowResponse>(request, MssiMeta.updateFlow, hcClient);
+        return new SyncInvoker<>(request, MssiMeta.updateFlow, hcClient);
     }
 
 }

@@ -97,9 +97,9 @@ import com.huaweicloud.sdk.dlf.v1.model.UpdateScriptResponse;
 @SuppressWarnings("unchecked")
 public class DlfMeta {
 
-    public static final HttpRequestDef<CancelScriptRequest, CancelScriptResponse> cancelScript = genForcancelScript();
+    public static final HttpRequestDef<CancelScriptRequest, CancelScriptResponse> cancelScript = genForCancelScript();
 
-    private static HttpRequestDef<CancelScriptRequest, CancelScriptResponse> genForcancelScript() {
+    private static HttpRequestDef<CancelScriptRequest, CancelScriptResponse> genForCancelScript() {
         // basic
         HttpRequestDef.Builder<CancelScriptRequest, CancelScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CancelScriptRequest.class, CancelScriptResponse.class)
@@ -112,23 +112,17 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelScriptRequest::getScriptName, (req, v) -> {
-                req.setScriptName(v);
-            }));
+            f -> f.withMarshaller(CancelScriptRequest::getScriptName, CancelScriptRequest::setScriptName));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelScriptRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CancelScriptRequest::getInstanceId, CancelScriptRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelScriptRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CancelScriptRequest::getWorkspace, CancelScriptRequest::setWorkspace));
 
         // response
 
@@ -136,9 +130,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> createConnection =
-        genForcreateConnection();
+        genForCreateConnection();
 
-    private static HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> genForcreateConnection() {
+    private static HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> genForCreateConnection() {
         // basic
         HttpRequestDef.Builder<CreateConnectionRequest, CreateConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConnectionRequest.class, CreateConnectionResponse.class)
@@ -151,25 +145,21 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConnectionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateConnectionRequest::getWorkspace, CreateConnectionRequest::setWorkspace));
         builder.<ConnectionInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConnectionInfo.class),
-            f -> f.withMarshaller(CreateConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConnectionRequest::getBody, CreateConnectionRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateJobRequest, CreateJobResponse> createJob = genForcreateJob();
+    public static final HttpRequestDef<CreateJobRequest, CreateJobResponse> createJob = genForCreateJob();
 
-    private static HttpRequestDef<CreateJobRequest, CreateJobResponse> genForcreateJob() {
+    private static HttpRequestDef<CreateJobRequest, CreateJobResponse> genForCreateJob() {
         // basic
         HttpRequestDef.Builder<CreateJobRequest, CreateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateJobRequest.class, CreateJobResponse.class)
@@ -182,16 +172,12 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateJobRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateJobRequest::getWorkspace, CreateJobRequest::setWorkspace));
         builder.<JobInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JobInfo.class),
-            f -> f.withMarshaller(CreateJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateJobRequest::getBody, CreateJobRequest::setBody));
 
         // response
 
@@ -199,9 +185,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<CreateResourceRequest, CreateResourceResponse> createResource =
-        genForcreateResource();
+        genForCreateResource();
 
-    private static HttpRequestDef<CreateResourceRequest, CreateResourceResponse> genForcreateResource() {
+    private static HttpRequestDef<CreateResourceRequest, CreateResourceResponse> genForCreateResource() {
         // basic
         HttpRequestDef.Builder<CreateResourceRequest, CreateResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResourceRequest.class, CreateResourceResponse.class)
@@ -214,32 +200,26 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResourceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateResourceRequest::getWorkspace, CreateResourceRequest::setWorkspace));
         builder.<ResourceInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceInfo.class),
-            f -> f.withMarshaller(CreateResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResourceRequest::getBody, CreateResourceRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateResourceResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateResourceResponse::getBody, CreateResourceResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateScriptRequest, CreateScriptResponse> createScript = genForcreateScript();
+    public static final HttpRequestDef<CreateScriptRequest, CreateScriptResponse> createScript = genForCreateScript();
 
-    private static HttpRequestDef<CreateScriptRequest, CreateScriptResponse> genForcreateScript() {
+    private static HttpRequestDef<CreateScriptRequest, CreateScriptResponse> genForCreateScript() {
         // basic
         HttpRequestDef.Builder<CreateScriptRequest, CreateScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScriptRequest.class, CreateScriptResponse.class)
@@ -252,16 +232,12 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateScriptRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(CreateScriptRequest::getWorkspace, CreateScriptRequest::setWorkspace));
         builder.<ScriptInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ScriptInfo.class),
-            f -> f.withMarshaller(CreateScriptRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateScriptRequest::getBody, CreateScriptRequest::setBody));
 
         // response
 
@@ -269,9 +245,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<DeleteConnctionRequest, DeleteConnctionResponse> deleteConnction =
-        genFordeleteConnction();
+        genForDeleteConnction();
 
-    private static HttpRequestDef<DeleteConnctionRequest, DeleteConnctionResponse> genFordeleteConnction() {
+    private static HttpRequestDef<DeleteConnctionRequest, DeleteConnctionResponse> genForDeleteConnction() {
         // basic
         HttpRequestDef.Builder<DeleteConnctionRequest, DeleteConnctionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteConnctionRequest.class, DeleteConnctionResponse.class)
@@ -284,25 +260,22 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnctionRequest::getConnectionName, (req, v) -> {
-                req.setConnectionName(v);
-            }));
+            f -> f.withMarshaller(DeleteConnctionRequest::getConnectionName,
+                DeleteConnctionRequest::setConnectionName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnctionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteConnctionRequest::getWorkspace, DeleteConnctionRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genFordeleteJob();
+    public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genForDeleteJob();
 
-    private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genFordeleteJob() {
+    private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genForDeleteJob() {
         // basic
         HttpRequestDef.Builder<DeleteJobRequest, DeleteJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobRequest.class, DeleteJobResponse.class)
@@ -315,16 +288,12 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(DeleteJobRequest::getJobName, DeleteJobRequest::setJobName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteJobRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteJobRequest::getWorkspace, DeleteJobRequest::setWorkspace));
 
         // response
 
@@ -332,9 +301,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> deleteResource =
-        genFordeleteResource();
+        genForDeleteResource();
 
-    private static HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> genFordeleteResource() {
+    private static HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> genForDeleteResource() {
         // basic
         HttpRequestDef.Builder<DeleteResourceRequest, DeleteResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceRequest.class, DeleteResourceResponse.class)
@@ -347,25 +316,21 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceRequest::getResourceId, DeleteResourceRequest::setResourceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteResourceRequest::getWorkspace, DeleteResourceRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteScriptRequest, DeleteScriptResponse> deleteScript = genFordeleteScript();
+    public static final HttpRequestDef<DeleteScriptRequest, DeleteScriptResponse> deleteScript = genForDeleteScript();
 
-    private static HttpRequestDef<DeleteScriptRequest, DeleteScriptResponse> genFordeleteScript() {
+    private static HttpRequestDef<DeleteScriptRequest, DeleteScriptResponse> genForDeleteScript() {
         // basic
         HttpRequestDef.Builder<DeleteScriptRequest, DeleteScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScriptRequest.class, DeleteScriptResponse.class)
@@ -378,16 +343,12 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScriptRequest::getScriptName, (req, v) -> {
-                req.setScriptName(v);
-            }));
+            f -> f.withMarshaller(DeleteScriptRequest::getScriptName, DeleteScriptRequest::setScriptName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteScriptRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(DeleteScriptRequest::getWorkspace, DeleteScriptRequest::setWorkspace));
 
         // response
 
@@ -395,9 +356,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ExecuteScriptRequest, ExecuteScriptResponse> executeScript =
-        genForexecuteScript();
+        genForExecuteScript();
 
-    private static HttpRequestDef<ExecuteScriptRequest, ExecuteScriptResponse> genForexecuteScript() {
+    private static HttpRequestDef<ExecuteScriptRequest, ExecuteScriptResponse> genForExecuteScript() {
         // basic
         HttpRequestDef.Builder<ExecuteScriptRequest, ExecuteScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExecuteScriptRequest.class, ExecuteScriptResponse.class)
@@ -410,23 +371,17 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteScriptRequest::getScriptName, (req, v) -> {
-                req.setScriptName(v);
-            }));
+            f -> f.withMarshaller(ExecuteScriptRequest::getScriptName, ExecuteScriptRequest::setScriptName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteScriptRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ExecuteScriptRequest::getWorkspace, ExecuteScriptRequest::setWorkspace));
         builder.<ExecuteScriptReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExecuteScriptReq.class),
-            f -> f.withMarshaller(ExecuteScriptRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExecuteScriptRequest::getBody, ExecuteScriptRequest::setBody));
 
         // response
 
@@ -434,9 +389,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ExportConnectionsRequest, ExportConnectionsResponse> exportConnections =
-        genForexportConnections();
+        genForExportConnections();
 
-    private static HttpRequestDef<ExportConnectionsRequest, ExportConnectionsResponse> genForexportConnections() {
+    private static HttpRequestDef<ExportConnectionsRequest, ExportConnectionsResponse> genForExportConnections() {
         // basic
         HttpRequestDef.Builder<ExportConnectionsRequest, ExportConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportConnectionsRequest.class, ExportConnectionsResponse.class)
@@ -449,18 +404,16 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportConnectionsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ExportConnectionsRequest::getWorkspace, ExportConnectionsRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExportJobRequest, ExportJobResponse> exportJob = genForexportJob();
+    public static final HttpRequestDef<ExportJobRequest, ExportJobResponse> exportJob = genForExportJob();
 
-    private static HttpRequestDef<ExportJobRequest, ExportJobResponse> genForexportJob() {
+    private static HttpRequestDef<ExportJobRequest, ExportJobResponse> genForExportJob() {
         // basic
         HttpRequestDef.Builder<ExportJobRequest, ExportJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportJobRequest.class, ExportJobResponse.class)
@@ -473,16 +426,12 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ExportJobRequest::getJobName, ExportJobRequest::setJobName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportJobRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ExportJobRequest::getWorkspace, ExportJobRequest::setWorkspace));
 
         // response
 
@@ -490,9 +439,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ExportJobListRequest, ExportJobListResponse> exportJobList =
-        genForexportJobList();
+        genForExportJobList();
 
-    private static HttpRequestDef<ExportJobListRequest, ExportJobListResponse> genForexportJobList() {
+    private static HttpRequestDef<ExportJobListRequest, ExportJobListResponse> genForExportJobList() {
         // basic
         HttpRequestDef.Builder<ExportJobListRequest, ExportJobListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportJobListRequest.class, ExportJobListResponse.class)
@@ -505,16 +454,12 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportJobListRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ExportJobListRequest::getWorkspace, ExportJobListRequest::setWorkspace));
         builder.<ExportJobsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportJobsReq.class),
-            f -> f.withMarshaller(ExportJobListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExportJobListRequest::getBody, ExportJobListRequest::setBody));
 
         // response
 
@@ -522,9 +467,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ImportConnectionsRequest, ImportConnectionsResponse> importConnections =
-        genForimportConnections();
+        genForImportConnections();
 
-    private static HttpRequestDef<ImportConnectionsRequest, ImportConnectionsResponse> genForimportConnections() {
+    private static HttpRequestDef<ImportConnectionsRequest, ImportConnectionsResponse> genForImportConnections() {
         // basic
         HttpRequestDef.Builder<ImportConnectionsRequest, ImportConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportConnectionsRequest.class, ImportConnectionsResponse.class)
@@ -537,25 +482,21 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportConnectionsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ImportConnectionsRequest::getWorkspace, ImportConnectionsRequest::setWorkspace));
         builder.<ImportConnectionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportConnectionReq.class),
-            f -> f.withMarshaller(ImportConnectionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportConnectionsRequest::getBody, ImportConnectionsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportJobRequest, ImportJobResponse> importJob = genForimportJob();
+    public static final HttpRequestDef<ImportJobRequest, ImportJobResponse> importJob = genForImportJob();
 
-    private static HttpRequestDef<ImportJobRequest, ImportJobResponse> genForimportJob() {
+    private static HttpRequestDef<ImportJobRequest, ImportJobResponse> genForImportJob() {
         // basic
         HttpRequestDef.Builder<ImportJobRequest, ImportJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportJobRequest.class, ImportJobResponse.class)
@@ -568,16 +509,12 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportJobRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ImportJobRequest::getWorkspace, ImportJobRequest::setWorkspace));
         builder.<ImportFileReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportFileReq.class),
-            f -> f.withMarshaller(ImportJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportJobRequest::getBody, ImportJobRequest::setBody));
 
         // response
 
@@ -585,9 +522,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> listConnections =
-        genForlistConnections();
+        genForListConnections();
 
-    private static HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> genForlistConnections() {
+    private static HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> genForListConnections() {
         // basic
         HttpRequestDef.Builder<ListConnectionsRequest, ListConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConnectionsRequest.class, ListConnectionsResponse.class)
@@ -600,9 +537,7 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListConnectionsRequest::getWorkspace, ListConnectionsRequest::setWorkspace));
 
         // response
 
@@ -610,9 +545,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ListJobInstancesRequest, ListJobInstancesResponse> listJobInstances =
-        genForlistJobInstances();
+        genForListJobInstances();
 
-    private static HttpRequestDef<ListJobInstancesRequest, ListJobInstancesResponse> genForlistJobInstances() {
+    private static HttpRequestDef<ListJobInstancesRequest, ListJobInstancesResponse> genForListJobInstances() {
         // basic
         HttpRequestDef.Builder<ListJobInstancesRequest, ListJobInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobInstancesRequest.class, ListJobInstancesResponse.class)
@@ -625,18 +560,16 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobInstancesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListJobInstancesRequest::getWorkspace, ListJobInstancesRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForlistJobs();
+    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForListJobs();
 
-    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForlistJobs() {
+    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForListJobs() {
         // basic
         HttpRequestDef.Builder<ListJobsRequest, ListJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobsRequest.class, ListJobsResponse.class)
@@ -649,9 +582,7 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListJobsRequest::getWorkspace, ListJobsRequest::setWorkspace));
 
         // response
 
@@ -659,9 +590,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ListResourcesRequest, ListResourcesResponse> listResources =
-        genForlistResources();
+        genForListResources();
 
-    private static HttpRequestDef<ListResourcesRequest, ListResourcesResponse> genForlistResources() {
+    private static HttpRequestDef<ListResourcesRequest, ListResourcesResponse> genForListResources() {
         // basic
         HttpRequestDef.Builder<ListResourcesRequest, ListResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourcesRequest.class, ListResourcesResponse.class)
@@ -674,9 +605,7 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourcesRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListResourcesRequest::getWorkspace, ListResourcesRequest::setWorkspace));
 
         // response
 
@@ -684,9 +613,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ListScriptResultsRequest, ListScriptResultsResponse> listScriptResults =
-        genForlistScriptResults();
+        genForListScriptResults();
 
-    private static HttpRequestDef<ListScriptResultsRequest, ListScriptResultsResponse> genForlistScriptResults() {
+    private static HttpRequestDef<ListScriptResultsRequest, ListScriptResultsResponse> genForListScriptResults() {
         // basic
         HttpRequestDef.Builder<ListScriptResultsRequest, ListScriptResultsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScriptResultsRequest.class, ListScriptResultsResponse.class)
@@ -699,32 +628,26 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScriptResultsRequest::getScriptName, (req, v) -> {
-                req.setScriptName(v);
-            }));
+            f -> f.withMarshaller(ListScriptResultsRequest::getScriptName, ListScriptResultsRequest::setScriptName));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScriptResultsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListScriptResultsRequest::getInstanceId, ListScriptResultsRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScriptResultsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListScriptResultsRequest::getWorkspace, ListScriptResultsRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListScriptsRequest, ListScriptsResponse> listScripts = genForlistScripts();
+    public static final HttpRequestDef<ListScriptsRequest, ListScriptsResponse> listScripts = genForListScripts();
 
-    private static HttpRequestDef<ListScriptsRequest, ListScriptsResponse> genForlistScripts() {
+    private static HttpRequestDef<ListScriptsRequest, ListScriptsResponse> genForListScripts() {
         // basic
         HttpRequestDef.Builder<ListScriptsRequest, ListScriptsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScriptsRequest.class, ListScriptsResponse.class)
@@ -737,9 +660,7 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListScriptsRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListScriptsRequest::getWorkspace, ListScriptsRequest::setWorkspace));
 
         // response
 
@@ -747,9 +668,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ListSystemTasksRequest, ListSystemTasksResponse> listSystemTasks =
-        genForlistSystemTasks();
+        genForListSystemTasks();
 
-    private static HttpRequestDef<ListSystemTasksRequest, ListSystemTasksResponse> genForlistSystemTasks() {
+    private static HttpRequestDef<ListSystemTasksRequest, ListSystemTasksResponse> genForListSystemTasks() {
         // basic
         HttpRequestDef.Builder<ListSystemTasksRequest, ListSystemTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSystemTasksRequest.class, ListSystemTasksResponse.class)
@@ -762,16 +683,12 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSystemTasksRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListSystemTasksRequest::getTaskId, ListSystemTasksRequest::setTaskId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSystemTasksRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ListSystemTasksRequest::getWorkspace, ListSystemTasksRequest::setWorkspace));
 
         // response
 
@@ -779,9 +696,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<RestoreJobInstanceRequest, RestoreJobInstanceResponse> restoreJobInstance =
-        genForrestoreJobInstance();
+        genForRestoreJobInstance();
 
-    private static HttpRequestDef<RestoreJobInstanceRequest, RestoreJobInstanceResponse> genForrestoreJobInstance() {
+    private static HttpRequestDef<RestoreJobInstanceRequest, RestoreJobInstanceResponse> genForRestoreJobInstance() {
         // basic
         HttpRequestDef.Builder<RestoreJobInstanceRequest, RestoreJobInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreJobInstanceRequest.class, RestoreJobInstanceResponse.class)
@@ -794,32 +711,26 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreJobInstanceRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(RestoreJobInstanceRequest::getJobName, RestoreJobInstanceRequest::setJobName));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreJobInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RestoreJobInstanceRequest::getInstanceId, RestoreJobInstanceRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestoreJobInstanceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(RestoreJobInstanceRequest::getWorkspace, RestoreJobInstanceRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunOnceRequest, RunOnceResponse> runOnce = genForrunOnce();
+    public static final HttpRequestDef<RunOnceRequest, RunOnceResponse> runOnce = genForRunOnce();
 
-    private static HttpRequestDef<RunOnceRequest, RunOnceResponse> genForrunOnce() {
+    private static HttpRequestDef<RunOnceRequest, RunOnceResponse> genForRunOnce() {
         // basic
         HttpRequestDef.Builder<RunOnceRequest, RunOnceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunOnceRequest.class, RunOnceResponse.class)
@@ -832,23 +743,17 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunOnceRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(RunOnceRequest::getJobName, RunOnceRequest::setJobName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunOnceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(RunOnceRequest::getWorkspace, RunOnceRequest::setWorkspace));
         builder.<StartJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StartJobReq.class),
-            f -> f.withMarshaller(RunOnceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RunOnceRequest::getBody, RunOnceRequest::setBody));
 
         // response
 
@@ -856,9 +761,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ShowConnectionRequest, ShowConnectionResponse> showConnection =
-        genForshowConnection();
+        genForShowConnection();
 
-    private static HttpRequestDef<ShowConnectionRequest, ShowConnectionResponse> genForshowConnection() {
+    private static HttpRequestDef<ShowConnectionRequest, ShowConnectionResponse> genForShowConnection() {
         // basic
         HttpRequestDef.Builder<ShowConnectionRequest, ShowConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConnectionRequest.class, ShowConnectionResponse.class)
@@ -871,16 +776,12 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectionRequest::getConnectionName, (req, v) -> {
-                req.setConnectionName(v);
-            }));
+            f -> f.withMarshaller(ShowConnectionRequest::getConnectionName, ShowConnectionRequest::setConnectionName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowConnectionRequest::getWorkspace, ShowConnectionRequest::setWorkspace));
 
         // response
 
@@ -888,9 +789,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ShowDirectoryTreeRequest, ShowDirectoryTreeResponse> showDirectoryTree =
-        genForshowDirectoryTree();
+        genForShowDirectoryTree();
 
-    private static HttpRequestDef<ShowDirectoryTreeRequest, ShowDirectoryTreeResponse> genForshowDirectoryTree() {
+    private static HttpRequestDef<ShowDirectoryTreeRequest, ShowDirectoryTreeResponse> genForShowDirectoryTree() {
         // basic
         HttpRequestDef.Builder<ShowDirectoryTreeRequest, ShowDirectoryTreeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDirectoryTreeRequest.class, ShowDirectoryTreeResponse.class)
@@ -903,53 +804,41 @@ public class DlfMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDirectoryTreeRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(ShowDirectoryTreeRequest::getCategory, ShowDirectoryTreeRequest::setCategory));
         builder.<String>withRequestField("directory_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDirectoryTreeRequest::getDirectoryId, (req, v) -> {
-                req.setDirectoryId(v);
-            }));
+            f -> f.withMarshaller(ShowDirectoryTreeRequest::getDirectoryId, ShowDirectoryTreeRequest::setDirectoryId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDirectoryTreeRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ShowDirectoryTreeRequest::getName, ShowDirectoryTreeRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDirectoryTreeRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowDirectoryTreeRequest::getOffset, ShowDirectoryTreeRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDirectoryTreeRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowDirectoryTreeRequest::getLimit, ShowDirectoryTreeRequest::setLimit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDirectoryTreeRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowDirectoryTreeRequest::getWorkspace, ShowDirectoryTreeRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFileInfoRequest, ShowFileInfoResponse> showFileInfo = genForshowFileInfo();
+    public static final HttpRequestDef<ShowFileInfoRequest, ShowFileInfoResponse> showFileInfo = genForShowFileInfo();
 
-    private static HttpRequestDef<ShowFileInfoRequest, ShowFileInfoResponse> genForshowFileInfo() {
+    private static HttpRequestDef<ShowFileInfoRequest, ShowFileInfoResponse> genForShowFileInfo() {
         // basic
         HttpRequestDef.Builder<ShowFileInfoRequest, ShowFileInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowFileInfoRequest.class, ShowFileInfoResponse.class)
@@ -962,25 +851,21 @@ public class DlfMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFileInfoRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowFileInfoRequest::getWorkspace, ShowFileInfoRequest::setWorkspace));
         builder.<FilePath>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FilePath.class),
-            f -> f.withMarshaller(ShowFileInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowFileInfoRequest::getBody, ShowFileInfoRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
+    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForShowJob();
 
-    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForshowJob() {
+    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForShowJob() {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
@@ -993,16 +878,12 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ShowJobRequest::getJobName, ShowJobRequest::setJobName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowJobRequest::getWorkspace, ShowJobRequest::setWorkspace));
 
         // response
 
@@ -1010,9 +891,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ShowJobInstanceRequest, ShowJobInstanceResponse> showJobInstance =
-        genForshowJobInstance();
+        genForShowJobInstance();
 
-    private static HttpRequestDef<ShowJobInstanceRequest, ShowJobInstanceResponse> genForshowJobInstance() {
+    private static HttpRequestDef<ShowJobInstanceRequest, ShowJobInstanceResponse> genForShowJobInstance() {
         // basic
         HttpRequestDef.Builder<ShowJobInstanceRequest, ShowJobInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobInstanceRequest.class, ShowJobInstanceResponse.class)
@@ -1025,23 +906,17 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInstanceRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ShowJobInstanceRequest::getJobName, ShowJobInstanceRequest::setJobName));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowJobInstanceRequest::getInstanceId, ShowJobInstanceRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobInstanceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowJobInstanceRequest::getWorkspace, ShowJobInstanceRequest::setWorkspace));
 
         // response
 
@@ -1049,9 +924,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatus =
-        genForshowJobStatus();
+        genForShowJobStatus();
 
-    private static HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> genForshowJobStatus() {
+    private static HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> genForShowJobStatus() {
         // basic
         HttpRequestDef.Builder<ShowJobStatusRequest, ShowJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobStatusRequest.class, ShowJobStatusResponse.class)
@@ -1064,25 +939,21 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobStatusRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ShowJobStatusRequest::getJobName, ShowJobStatusRequest::setJobName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobStatusRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowJobStatusRequest::getWorkspace, ShowJobStatusRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowResourceRequest, ShowResourceResponse> showResource = genForshowResource();
+    public static final HttpRequestDef<ShowResourceRequest, ShowResourceResponse> showResource = genForShowResource();
 
-    private static HttpRequestDef<ShowResourceRequest, ShowResourceResponse> genForshowResource() {
+    private static HttpRequestDef<ShowResourceRequest, ShowResourceResponse> genForShowResource() {
         // basic
         HttpRequestDef.Builder<ShowResourceRequest, ShowResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceRequest.class, ShowResourceResponse.class)
@@ -1095,25 +966,21 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResourceRequest::getResourceId, ShowResourceRequest::setResourceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowResourceRequest::getWorkspace, ShowResourceRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowScriptRequest, ShowScriptResponse> showScript = genForshowScript();
+    public static final HttpRequestDef<ShowScriptRequest, ShowScriptResponse> showScript = genForShowScript();
 
-    private static HttpRequestDef<ShowScriptRequest, ShowScriptResponse> genForshowScript() {
+    private static HttpRequestDef<ShowScriptRequest, ShowScriptResponse> genForShowScript() {
         // basic
         HttpRequestDef.Builder<ShowScriptRequest, ShowScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScriptRequest.class, ShowScriptResponse.class)
@@ -1126,25 +993,21 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScriptRequest::getScriptName, (req, v) -> {
-                req.setScriptName(v);
-            }));
+            f -> f.withMarshaller(ShowScriptRequest::getScriptName, ShowScriptRequest::setScriptName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowScriptRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(ShowScriptRequest::getWorkspace, ShowScriptRequest::setWorkspace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartJobRequest, StartJobResponse> startJob = genForstartJob();
+    public static final HttpRequestDef<StartJobRequest, StartJobResponse> startJob = genForStartJob();
 
-    private static HttpRequestDef<StartJobRequest, StartJobResponse> genForstartJob() {
+    private static HttpRequestDef<StartJobRequest, StartJobResponse> genForStartJob() {
         // basic
         HttpRequestDef.Builder<StartJobRequest, StartJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartJobRequest.class, StartJobResponse.class)
@@ -1157,32 +1020,26 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(StartJobRequest::getJobName, StartJobRequest::setJobName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartJobRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(StartJobRequest::getWorkspace, StartJobRequest::setWorkspace));
         builder.<StartJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StartJobReq.class),
-            f -> f.withMarshaller(StartJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartJobRequest::getBody, StartJobRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopJobRequest, StopJobResponse> stopJob = genForstopJob();
+    public static final HttpRequestDef<StopJobRequest, StopJobResponse> stopJob = genForStopJob();
 
-    private static HttpRequestDef<StopJobRequest, StopJobResponse> genForstopJob() {
+    private static HttpRequestDef<StopJobRequest, StopJobResponse> genForStopJob() {
         // basic
         HttpRequestDef.Builder<StopJobRequest, StopJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopJobRequest.class, StopJobResponse.class)
@@ -1195,16 +1052,12 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(StopJobRequest::getJobName, StopJobRequest::setJobName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopJobRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(StopJobRequest::getWorkspace, StopJobRequest::setWorkspace));
 
         // response
 
@@ -1212,9 +1065,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<StopJobInstanceRequest, StopJobInstanceResponse> stopJobInstance =
-        genForstopJobInstance();
+        genForStopJobInstance();
 
-    private static HttpRequestDef<StopJobInstanceRequest, StopJobInstanceResponse> genForstopJobInstance() {
+    private static HttpRequestDef<StopJobInstanceRequest, StopJobInstanceResponse> genForStopJobInstance() {
         // basic
         HttpRequestDef.Builder<StopJobInstanceRequest, StopJobInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopJobInstanceRequest.class, StopJobInstanceResponse.class)
@@ -1227,23 +1080,17 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopJobInstanceRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(StopJobInstanceRequest::getJobName, StopJobInstanceRequest::setJobName));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopJobInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(StopJobInstanceRequest::getInstanceId, StopJobInstanceRequest::setInstanceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopJobInstanceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(StopJobInstanceRequest::getWorkspace, StopJobInstanceRequest::setWorkspace));
 
         // response
 
@@ -1251,9 +1098,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> updateConnection =
-        genForupdateConnection();
+        genForUpdateConnection();
 
-    private static HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> genForupdateConnection() {
+    private static HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> genForUpdateConnection() {
         // basic
         HttpRequestDef.Builder<UpdateConnectionRequest, UpdateConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateConnectionRequest.class, UpdateConnectionResponse.class)
@@ -1266,32 +1113,27 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConnectionRequest::getConnectionName, (req, v) -> {
-                req.setConnectionName(v);
-            }));
+            f -> f.withMarshaller(UpdateConnectionRequest::getConnectionName,
+                UpdateConnectionRequest::setConnectionName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConnectionRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateConnectionRequest::getWorkspace, UpdateConnectionRequest::setWorkspace));
         builder.<ConnectionInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConnectionInfo.class),
-            f -> f.withMarshaller(UpdateConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateConnectionRequest::getBody, UpdateConnectionRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateJobRequest, UpdateJobResponse> updateJob = genForupdateJob();
+    public static final HttpRequestDef<UpdateJobRequest, UpdateJobResponse> updateJob = genForUpdateJob();
 
-    private static HttpRequestDef<UpdateJobRequest, UpdateJobResponse> genForupdateJob() {
+    private static HttpRequestDef<UpdateJobRequest, UpdateJobResponse> genForUpdateJob() {
         // basic
         HttpRequestDef.Builder<UpdateJobRequest, UpdateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateJobRequest.class, UpdateJobResponse.class)
@@ -1304,23 +1146,17 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(UpdateJobRequest::getJobName, UpdateJobRequest::setJobName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateJobRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateJobRequest::getWorkspace, UpdateJobRequest::setWorkspace));
         builder.<JobInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JobInfo.class),
-            f -> f.withMarshaller(UpdateJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateJobRequest::getBody, UpdateJobRequest::setBody));
 
         // response
 
@@ -1328,9 +1164,9 @@ public class DlfMeta {
     }
 
     public static final HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> updateResource =
-        genForupdateResource();
+        genForUpdateResource();
 
-    private static HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> genForupdateResource() {
+    private static HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> genForUpdateResource() {
         // basic
         HttpRequestDef.Builder<UpdateResourceRequest, UpdateResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateResourceRequest.class, UpdateResourceResponse.class)
@@ -1343,32 +1179,26 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResourceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResourceRequest::getResourceId, UpdateResourceRequest::setResourceId));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResourceRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateResourceRequest::getWorkspace, UpdateResourceRequest::setWorkspace));
         builder.<ResourceInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ResourceInfo.class),
-            f -> f.withMarshaller(UpdateResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResourceRequest::getBody, UpdateResourceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateScriptRequest, UpdateScriptResponse> updateScript = genForupdateScript();
+    public static final HttpRequestDef<UpdateScriptRequest, UpdateScriptResponse> updateScript = genForUpdateScript();
 
-    private static HttpRequestDef<UpdateScriptRequest, UpdateScriptResponse> genForupdateScript() {
+    private static HttpRequestDef<UpdateScriptRequest, UpdateScriptResponse> genForUpdateScript() {
         // basic
         HttpRequestDef.Builder<UpdateScriptRequest, UpdateScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateScriptRequest.class, UpdateScriptResponse.class)
@@ -1381,23 +1211,17 @@ public class DlfMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateScriptRequest::getScriptName, (req, v) -> {
-                req.setScriptName(v);
-            }));
+            f -> f.withMarshaller(UpdateScriptRequest::getScriptName, UpdateScriptRequest::setScriptName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateScriptRequest::getWorkspace, (req, v) -> {
-                req.setWorkspace(v);
-            }));
+            f -> f.withMarshaller(UpdateScriptRequest::getWorkspace, UpdateScriptRequest::setWorkspace));
         builder.<ScriptInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ScriptInfo.class),
-            f -> f.withMarshaller(UpdateScriptRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateScriptRequest::getBody, UpdateScriptRequest::setBody));
 
         // response
 

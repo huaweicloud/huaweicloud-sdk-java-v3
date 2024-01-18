@@ -110,9 +110,9 @@ import java.util.List;
 public class EipMeta {
 
     public static final HttpRequestDef<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse> addPublicipsIntoSharedBandwidth =
-        genForaddPublicipsIntoSharedBandwidth();
+        genForAddPublicipsIntoSharedBandwidth();
 
-    private static HttpRequestDef<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse> genForaddPublicipsIntoSharedBandwidth() {
+    private static HttpRequestDef<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse> genForAddPublicipsIntoSharedBandwidth() {
         // basic
         HttpRequestDef.Builder<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse> builder =
             HttpRequestDef
@@ -128,16 +128,14 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddPublicipsIntoSharedBandwidthRequest::getBandwidthId, (req, v) -> {
-                req.setBandwidthId(v);
-            }));
+            f -> f.withMarshaller(AddPublicipsIntoSharedBandwidthRequest::getBandwidthId,
+                AddPublicipsIntoSharedBandwidthRequest::setBandwidthId));
         builder.<AddPublicipsIntoSharedBandwidthRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddPublicipsIntoSharedBandwidthRequestBody.class),
-            f -> f.withMarshaller(AddPublicipsIntoSharedBandwidthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddPublicipsIntoSharedBandwidthRequest::getBody,
+                AddPublicipsIntoSharedBandwidthRequest::setBody));
 
         // response
 
@@ -145,9 +143,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse> batchCreateSharedBandwidths =
-        genForbatchCreateSharedBandwidths();
+        genForBatchCreateSharedBandwidths();
 
-    private static HttpRequestDef<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse> genForbatchCreateSharedBandwidths() {
+    private static HttpRequestDef<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse> genForBatchCreateSharedBandwidths() {
         // basic
         HttpRequestDef.Builder<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse> builder =
             HttpRequestDef
@@ -163,9 +161,8 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateBandwidthRequestBody.class),
-            f -> f.withMarshaller(BatchCreateSharedBandwidthsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateSharedBandwidthsRequest::getBody,
+                BatchCreateSharedBandwidthsRequest::setBody));
 
         // response
 
@@ -173,9 +170,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse> batchModifyBandwidth =
-        genForbatchModifyBandwidth();
+        genForBatchModifyBandwidth();
 
-    private static HttpRequestDef<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse> genForbatchModifyBandwidth() {
+    private static HttpRequestDef<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse> genForBatchModifyBandwidth() {
         // basic
         HttpRequestDef.Builder<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, BatchModifyBandwidthRequest.class, BatchModifyBandwidthResponse.class)
@@ -188,9 +185,7 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyBandwidthRequestBody.class),
-            f -> f.withMarshaller(BatchModifyBandwidthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchModifyBandwidthRequest::getBody, BatchModifyBandwidthRequest::setBody));
 
         // response
 
@@ -198,9 +193,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse> changeBandwidthToPeriod =
-        genForchangeBandwidthToPeriod();
+        genForChangeBandwidthToPeriod();
 
-    private static HttpRequestDef<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse> genForchangeBandwidthToPeriod() {
+    private static HttpRequestDef<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse> genForChangeBandwidthToPeriod() {
         // basic
         HttpRequestDef.Builder<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ChangeBandwidthToPeriodRequest.class, ChangeBandwidthToPeriodResponse.class)
@@ -213,9 +208,7 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BwChangeToPeriodReq.class),
-            f -> f.withMarshaller(ChangeBandwidthToPeriodRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeBandwidthToPeriodRequest::getBody, ChangeBandwidthToPeriodRequest::setBody));
 
         // response
 
@@ -223,9 +216,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse> createSharedBandwidth =
-        genForcreateSharedBandwidth();
+        genForCreateSharedBandwidth();
 
-    private static HttpRequestDef<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse> genForcreateSharedBandwidth() {
+    private static HttpRequestDef<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse> genForCreateSharedBandwidth() {
         // basic
         HttpRequestDef.Builder<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateSharedBandwidthRequest.class, CreateSharedBandwidthResponse.class)
@@ -238,9 +231,7 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSharedBandwidhRequestBody.class),
-            f -> f.withMarshaller(CreateSharedBandwidthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSharedBandwidthRequest::getBody, CreateSharedBandwidthRequest::setBody));
 
         // response
 
@@ -248,9 +239,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse> deleteSharedBandwidth =
-        genFordeleteSharedBandwidth();
+        genForDeleteSharedBandwidth();
 
-    private static HttpRequestDef<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse> genFordeleteSharedBandwidth() {
+    private static HttpRequestDef<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse> genForDeleteSharedBandwidth() {
         // basic
         HttpRequestDef.Builder<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteSharedBandwidthRequest.class, DeleteSharedBandwidthResponse.class)
@@ -263,9 +254,8 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSharedBandwidthRequest::getBandwidthId, (req, v) -> {
-                req.setBandwidthId(v);
-            }));
+            f -> f.withMarshaller(DeleteSharedBandwidthRequest::getBandwidthId,
+                DeleteSharedBandwidthRequest::setBandwidthId));
 
         // response
 
@@ -273,9 +263,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ListBandwidthPkgRequest, ListBandwidthPkgResponse> listBandwidthPkg =
-        genForlistBandwidthPkg();
+        genForListBandwidthPkg();
 
-    private static HttpRequestDef<ListBandwidthPkgRequest, ListBandwidthPkgResponse> genForlistBandwidthPkg() {
+    private static HttpRequestDef<ListBandwidthPkgRequest, ListBandwidthPkgResponse> genForListBandwidthPkg() {
         // basic
         HttpRequestDef.Builder<ListBandwidthPkgRequest, ListBandwidthPkgResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBandwidthPkgRequest.class, ListBandwidthPkgResponse.class)
@@ -288,23 +278,17 @@ public class EipMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBandwidthPkgRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPkgRequest::getLimit, ListBandwidthPkgRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBandwidthPkgRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPkgRequest::getMarker, ListBandwidthPkgRequest::setMarker));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBandwidthPkgRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthPkgRequest::getOffset, ListBandwidthPkgRequest::setOffset));
 
         // response
 
@@ -312,9 +296,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ListBandwidthsRequest, ListBandwidthsResponse> listBandwidths =
-        genForlistBandwidths();
+        genForListBandwidths();
 
-    private static HttpRequestDef<ListBandwidthsRequest, ListBandwidthsResponse> genForlistBandwidths() {
+    private static HttpRequestDef<ListBandwidthsRequest, ListBandwidthsResponse> genForListBandwidths() {
         // basic
         HttpRequestDef.Builder<ListBandwidthsRequest, ListBandwidthsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBandwidthsRequest.class, ListBandwidthsResponse.class)
@@ -327,39 +311,32 @@ public class EipMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBandwidthsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthsRequest::getMarker, ListBandwidthsRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBandwidthsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthsRequest::getLimit, ListBandwidthsRequest::setLimit));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBandwidthsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthsRequest::getEnterpriseProjectId,
+                ListBandwidthsRequest::setEnterpriseProjectId));
         builder.<ListBandwidthsRequest.ShareTypeEnum>withRequestField("share_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBandwidthsRequest.ShareTypeEnum.class),
-            f -> f.withMarshaller(ListBandwidthsRequest::getShareType, (req, v) -> {
-                req.setShareType(v);
-            }));
+            f -> f.withMarshaller(ListBandwidthsRequest::getShareType, ListBandwidthsRequest::setShareType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForListQuotas();
 
-    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForListQuotas() {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
@@ -372,9 +349,7 @@ public class EipMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQuotasRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListQuotasRequest::getType, ListQuotasRequest::setType));
 
         // response
 
@@ -382,9 +357,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse> removePublicipsFromSharedBandwidth =
-        genForremovePublicipsFromSharedBandwidth();
+        genForRemovePublicipsFromSharedBandwidth();
 
-    private static HttpRequestDef<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse> genForremovePublicipsFromSharedBandwidth() {
+    private static HttpRequestDef<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse> genForRemovePublicipsFromSharedBandwidth() {
         // basic
         HttpRequestDef.Builder<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse> builder =
             HttpRequestDef
@@ -400,16 +375,14 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemovePublicipsFromSharedBandwidthRequest::getBandwidthId, (req, v) -> {
-                req.setBandwidthId(v);
-            }));
+            f -> f.withMarshaller(RemovePublicipsFromSharedBandwidthRequest::getBandwidthId,
+                RemovePublicipsFromSharedBandwidthRequest::setBandwidthId));
         builder.<RemovePublicipsFromSharedBandwidthRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemovePublicipsFromSharedBandwidthRequestBody.class),
-            f -> f.withMarshaller(RemovePublicipsFromSharedBandwidthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RemovePublicipsFromSharedBandwidthRequest::getBody,
+                RemovePublicipsFromSharedBandwidthRequest::setBody));
 
         // response
 
@@ -417,9 +390,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ShowBandwidthRequest, ShowBandwidthResponse> showBandwidth =
-        genForshowBandwidth();
+        genForShowBandwidth();
 
-    private static HttpRequestDef<ShowBandwidthRequest, ShowBandwidthResponse> genForshowBandwidth() {
+    private static HttpRequestDef<ShowBandwidthRequest, ShowBandwidthResponse> genForShowBandwidth() {
         // basic
         HttpRequestDef.Builder<ShowBandwidthRequest, ShowBandwidthResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBandwidthRequest.class, ShowBandwidthResponse.class)
@@ -432,9 +405,7 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBandwidthRequest::getBandwidthId, (req, v) -> {
-                req.setBandwidthId(v);
-            }));
+            f -> f.withMarshaller(ShowBandwidthRequest::getBandwidthId, ShowBandwidthRequest::setBandwidthId));
 
         // response
 
@@ -442,9 +413,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidth =
-        genForupdateBandwidth();
+        genForUpdateBandwidth();
 
-    private static HttpRequestDef<UpdateBandwidthRequest, UpdateBandwidthResponse> genForupdateBandwidth() {
+    private static HttpRequestDef<UpdateBandwidthRequest, UpdateBandwidthResponse> genForUpdateBandwidth() {
         // basic
         HttpRequestDef.Builder<UpdateBandwidthRequest, UpdateBandwidthResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateBandwidthRequest.class, UpdateBandwidthResponse.class)
@@ -457,16 +428,12 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBandwidthRequest::getBandwidthId, (req, v) -> {
-                req.setBandwidthId(v);
-            }));
+            f -> f.withMarshaller(UpdateBandwidthRequest::getBandwidthId, UpdateBandwidthRequest::setBandwidthId));
         builder.<UpdateBandwidthRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBandwidthRequestBody.class),
-            f -> f.withMarshaller(UpdateBandwidthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBandwidthRequest::getBody, UpdateBandwidthRequest::setBody));
 
         // response
 
@@ -474,9 +441,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse> updatePrePaidBandwidth =
-        genForupdatePrePaidBandwidth();
+        genForUpdatePrePaidBandwidth();
 
-    private static HttpRequestDef<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse> genForupdatePrePaidBandwidth() {
+    private static HttpRequestDef<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse> genForUpdatePrePaidBandwidth() {
         // basic
         HttpRequestDef.Builder<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdatePrePaidBandwidthRequest.class, UpdatePrePaidBandwidthResponse.class)
@@ -489,16 +456,13 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePrePaidBandwidthRequest::getBandwidthId, (req, v) -> {
-                req.setBandwidthId(v);
-            }));
+            f -> f.withMarshaller(UpdatePrePaidBandwidthRequest::getBandwidthId,
+                UpdatePrePaidBandwidthRequest::setBandwidthId));
         builder.<UpdatePrePaidBandwidthRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePrePaidBandwidthRequestBody.class),
-            f -> f.withMarshaller(UpdatePrePaidBandwidthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePrePaidBandwidthRequest::getBody, UpdatePrePaidBandwidthRequest::setBody));
 
         // response
 
@@ -506,9 +470,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse> batchCreatePublicipTags =
-        genForbatchCreatePublicipTags();
+        genForBatchCreatePublicipTags();
 
-    private static HttpRequestDef<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse> genForbatchCreatePublicipTags() {
+    private static HttpRequestDef<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse> genForBatchCreatePublicipTags() {
         // basic
         HttpRequestDef.Builder<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreatePublicipTagsRequest.class, BatchCreatePublicipTagsResponse.class)
@@ -521,16 +485,13 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreatePublicipTagsRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
+            f -> f.withMarshaller(BatchCreatePublicipTagsRequest::getPublicipId,
+                BatchCreatePublicipTagsRequest::setPublicipId));
         builder.<BatchCreatePublicipTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreatePublicipTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreatePublicipTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreatePublicipTagsRequest::getBody, BatchCreatePublicipTagsRequest::setBody));
 
         // response
 
@@ -538,9 +499,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse> batchCreatePublicips =
-        genForbatchCreatePublicips();
+        genForBatchCreatePublicips();
 
-    private static HttpRequestDef<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse> genForbatchCreatePublicips() {
+    private static HttpRequestDef<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse> genForBatchCreatePublicips() {
         // basic
         HttpRequestDef.Builder<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreatePublicipsRequest.class, BatchCreatePublicipsResponse.class)
@@ -553,9 +514,7 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreatePublicipsV2RequestBody.class),
-            f -> f.withMarshaller(BatchCreatePublicipsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreatePublicipsRequest::getBody, BatchCreatePublicipsRequest::setBody));
 
         // response
 
@@ -563,9 +522,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse> batchDeletePublicIp =
-        genForbatchDeletePublicIp();
+        genForBatchDeletePublicIp();
 
-    private static HttpRequestDef<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse> genForbatchDeletePublicIp() {
+    private static HttpRequestDef<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse> genForBatchDeletePublicIp() {
         // basic
         HttpRequestDef.Builder<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, BatchDeletePublicIpRequest.class, BatchDeletePublicIpResponse.class)
@@ -578,9 +537,7 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeletePublicIpRequestBody.class),
-            f -> f.withMarshaller(BatchDeletePublicIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePublicIpRequest::getBody, BatchDeletePublicIpRequest::setBody));
 
         // response
 
@@ -588,9 +545,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse> batchDeletePublicipTags =
-        genForbatchDeletePublicipTags();
+        genForBatchDeletePublicipTags();
 
-    private static HttpRequestDef<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse> genForbatchDeletePublicipTags() {
+    private static HttpRequestDef<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse> genForBatchDeletePublicipTags() {
         // basic
         HttpRequestDef.Builder<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeletePublicipTagsRequest.class, BatchDeletePublicipTagsResponse.class)
@@ -603,16 +560,13 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeletePublicipTagsRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePublicipTagsRequest::getPublicipId,
+                BatchDeletePublicipTagsRequest::setPublicipId));
         builder.<BatchDeletePublicipTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeletePublicipTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeletePublicipTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeletePublicipTagsRequest::getBody, BatchDeletePublicipTagsRequest::setBody));
 
         // response
 
@@ -620,9 +574,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse> batchDisassociatePublicips =
-        genForbatchDisassociatePublicips();
+        genForBatchDisassociatePublicips();
 
-    private static HttpRequestDef<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse> genForbatchDisassociatePublicips() {
+    private static HttpRequestDef<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse> genForBatchDisassociatePublicips() {
         // basic
         HttpRequestDef.Builder<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse> builder =
             HttpRequestDef
@@ -638,9 +592,8 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeletePublicIpRequestBody.class),
-            f -> f.withMarshaller(BatchDisassociatePublicipsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociatePublicipsRequest::getBody,
+                BatchDisassociatePublicipsRequest::setBody));
 
         // response
 
@@ -648,9 +601,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse> changePublicipToPeriod =
-        genForchangePublicipToPeriod();
+        genForChangePublicipToPeriod();
 
-    private static HttpRequestDef<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse> genForchangePublicipToPeriod() {
+    private static HttpRequestDef<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse> genForChangePublicipToPeriod() {
         // basic
         HttpRequestDef.Builder<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ChangePublicipToPeriodRequest.class, ChangePublicipToPeriodResponse.class)
@@ -663,9 +616,7 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeToPeriodReq.class),
-            f -> f.withMarshaller(ChangePublicipToPeriodRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangePublicipToPeriodRequest::getBody, ChangePublicipToPeriodRequest::setBody));
 
         // response
 
@@ -673,9 +624,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<CountPublicIpRequest, CountPublicIpResponse> countPublicIp =
-        genForcountPublicIp();
+        genForCountPublicIp();
 
-    private static HttpRequestDef<CountPublicIpRequest, CountPublicIpResponse> genForcountPublicIp() {
+    private static HttpRequestDef<CountPublicIpRequest, CountPublicIpResponse> genForCountPublicIp() {
         // basic
         HttpRequestDef.Builder<CountPublicIpRequest, CountPublicIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CountPublicIpRequest.class, CountPublicIpResponse.class)
@@ -691,9 +642,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse> countPublicIpInstance =
-        genForcountPublicIpInstance();
+        genForCountPublicIpInstance();
 
-    private static HttpRequestDef<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse> genForcountPublicIpInstance() {
+    private static HttpRequestDef<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse> genForCountPublicIpInstance() {
         // basic
         HttpRequestDef.Builder<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, CountPublicIpInstanceRequest.class, CountPublicIpInstanceResponse.class)
@@ -708,17 +659,15 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CountPublicIpInstanceResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CountPublicIpInstanceResponse::getBody, CountPublicIpInstanceResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse> createPrePaidPublicip =
-        genForcreatePrePaidPublicip();
+        genForCreatePrePaidPublicip();
 
-    private static HttpRequestDef<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse> genForcreatePrePaidPublicip() {
+    private static HttpRequestDef<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse> genForCreatePrePaidPublicip() {
         // basic
         HttpRequestDef.Builder<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePrePaidPublicipRequest.class, CreatePrePaidPublicipResponse.class)
@@ -731,9 +680,7 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePrePaidPublicipRequestBody.class),
-            f -> f.withMarshaller(CreatePrePaidPublicipRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePrePaidPublicipRequest::getBody, CreatePrePaidPublicipRequest::setBody));
 
         // response
 
@@ -741,9 +688,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<CreatePublicipRequest, CreatePublicipResponse> createPublicip =
-        genForcreatePublicip();
+        genForCreatePublicip();
 
-    private static HttpRequestDef<CreatePublicipRequest, CreatePublicipResponse> genForcreatePublicip() {
+    private static HttpRequestDef<CreatePublicipRequest, CreatePublicipResponse> genForCreatePublicip() {
         // basic
         HttpRequestDef.Builder<CreatePublicipRequest, CreatePublicipResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePublicipRequest.class, CreatePublicipResponse.class)
@@ -756,9 +703,7 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePublicipRequestBody.class),
-            f -> f.withMarshaller(CreatePublicipRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePublicipRequest::getBody, CreatePublicipRequest::setBody));
 
         // response
 
@@ -766,9 +711,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<CreatePublicipTagRequest, CreatePublicipTagResponse> createPublicipTag =
-        genForcreatePublicipTag();
+        genForCreatePublicipTag();
 
-    private static HttpRequestDef<CreatePublicipTagRequest, CreatePublicipTagResponse> genForcreatePublicipTag() {
+    private static HttpRequestDef<CreatePublicipTagRequest, CreatePublicipTagResponse> genForCreatePublicipTag() {
         // basic
         HttpRequestDef.Builder<CreatePublicipTagRequest, CreatePublicipTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePublicipTagRequest.class, CreatePublicipTagResponse.class)
@@ -781,16 +726,12 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePublicipTagRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
+            f -> f.withMarshaller(CreatePublicipTagRequest::getPublicipId, CreatePublicipTagRequest::setPublicipId));
         builder.<CreatePublicipTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePublicipTagRequestBody.class),
-            f -> f.withMarshaller(CreatePublicipTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePublicipTagRequest::getBody, CreatePublicipTagRequest::setBody));
 
         // response
 
@@ -798,9 +739,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<DeletePublicipRequest, DeletePublicipResponse> deletePublicip =
-        genFordeletePublicip();
+        genForDeletePublicip();
 
-    private static HttpRequestDef<DeletePublicipRequest, DeletePublicipResponse> genFordeletePublicip() {
+    private static HttpRequestDef<DeletePublicipRequest, DeletePublicipResponse> genForDeletePublicip() {
         // basic
         HttpRequestDef.Builder<DeletePublicipRequest, DeletePublicipResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePublicipRequest.class, DeletePublicipResponse.class)
@@ -813,9 +754,7 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePublicipRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
+            f -> f.withMarshaller(DeletePublicipRequest::getPublicipId, DeletePublicipRequest::setPublicipId));
 
         // response
 
@@ -823,9 +762,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<DeletePublicipTagRequest, DeletePublicipTagResponse> deletePublicipTag =
-        genFordeletePublicipTag();
+        genForDeletePublicipTag();
 
-    private static HttpRequestDef<DeletePublicipTagRequest, DeletePublicipTagResponse> genFordeletePublicipTag() {
+    private static HttpRequestDef<DeletePublicipTagRequest, DeletePublicipTagResponse> genForDeletePublicipTag() {
         // basic
         HttpRequestDef.Builder<DeletePublicipTagRequest, DeletePublicipTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePublicipTagRequest.class, DeletePublicipTagResponse.class)
@@ -838,16 +777,12 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePublicipTagRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
+            f -> f.withMarshaller(DeletePublicipTagRequest::getPublicipId, DeletePublicipTagRequest::setPublicipId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePublicipTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeletePublicipTagRequest::getKey, DeletePublicipTagRequest::setKey));
 
         // response
 
@@ -855,9 +790,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ListPublicipTagsRequest, ListPublicipTagsResponse> listPublicipTags =
-        genForlistPublicipTags();
+        genForListPublicipTags();
 
-    private static HttpRequestDef<ListPublicipTagsRequest, ListPublicipTagsResponse> genForlistPublicipTags() {
+    private static HttpRequestDef<ListPublicipTagsRequest, ListPublicipTagsResponse> genForListPublicipTags() {
         // basic
         HttpRequestDef.Builder<ListPublicipTagsRequest, ListPublicipTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublicipTagsRequest.class, ListPublicipTagsResponse.class)
@@ -873,9 +808,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ListPublicipsRequest, ListPublicipsResponse> listPublicips =
-        genForlistPublicips();
+        genForListPublicips();
 
-    private static HttpRequestDef<ListPublicipsRequest, ListPublicipsResponse> genForlistPublicips() {
+    private static HttpRequestDef<ListPublicipsRequest, ListPublicipsResponse> genForListPublicips() {
         // basic
         HttpRequestDef.Builder<ListPublicipsRequest, ListPublicipsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublicipsRequest.class, ListPublicipsResponse.class)
@@ -888,65 +823,50 @@ public class EipMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicipsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPublicipsRequest::getMarker, ListPublicipsRequest::setMarker));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPublicipsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPublicipsRequest::getLimit, ListPublicipsRequest::setLimit));
         builder.<ListPublicipsRequest.IpVersionEnum>withRequestField("ip_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPublicipsRequest.IpVersionEnum.class),
-            f -> f.withMarshaller(ListPublicipsRequest::getIpVersion, (req, v) -> {
-                req.setIpVersion(v);
-            }));
+            f -> f.withMarshaller(ListPublicipsRequest::getIpVersion, ListPublicipsRequest::setIpVersion));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicipsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPublicipsRequest::getEnterpriseProjectId,
+                ListPublicipsRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("port_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPublicipsRequest::getPortId, (req, v) -> {
-                req.setPortId(v);
-            }));
+            f -> f.withMarshaller(ListPublicipsRequest::getPortId, ListPublicipsRequest::setPortId));
         builder.<List<String>>withRequestField("public_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPublicipsRequest::getPublicIpAddress, (req, v) -> {
-                req.setPublicIpAddress(v);
-            }));
+            f -> f.withMarshaller(ListPublicipsRequest::getPublicIpAddress, ListPublicipsRequest::setPublicIpAddress));
         builder.<List<String>>withRequestField("private_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPublicipsRequest::getPrivateIpAddress, (req, v) -> {
-                req.setPrivateIpAddress(v);
-            }));
+            f -> f.withMarshaller(ListPublicipsRequest::getPrivateIpAddress,
+                ListPublicipsRequest::setPrivateIpAddress));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPublicipsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListPublicipsRequest::getId, ListPublicipsRequest::setId));
         builder.<List<String>>withRequestField("allow_share_bandwidth_type_any",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPublicipsRequest::getAllowShareBandwidthTypeAny, (req, v) -> {
-                req.setAllowShareBandwidthTypeAny(v);
-            }));
+            f -> f.withMarshaller(ListPublicipsRequest::getAllowShareBandwidthTypeAny,
+                ListPublicipsRequest::setAllowShareBandwidthTypeAny));
 
         // response
 
@@ -954,9 +874,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse> listPublicipsByTags =
-        genForlistPublicipsByTags();
+        genForListPublicipsByTags();
 
-    private static HttpRequestDef<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse> genForlistPublicipsByTags() {
+    private static HttpRequestDef<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse> genForListPublicipsByTags() {
         // basic
         HttpRequestDef.Builder<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListPublicipsByTagsRequest.class, ListPublicipsByTagsResponse.class)
@@ -969,9 +889,7 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListPublicipsByTagsRequestBody.class),
-            f -> f.withMarshaller(ListPublicipsByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListPublicipsByTagsRequest::getBody, ListPublicipsByTagsRequest::setBody));
 
         // response
 
@@ -979,9 +897,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse> showPublicIpType =
-        genForshowPublicIpType();
+        genForShowPublicIpType();
 
-    private static HttpRequestDef<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse> genForshowPublicIpType() {
+    private static HttpRequestDef<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse> genForShowPublicIpType() {
         // basic
         HttpRequestDef.Builder<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPublicIpTypeRequest.class, ShowPublicIpTypeResponse.class)
@@ -996,16 +914,14 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ShowPublicIpTypeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ShowPublicIpTypeResponse::getBody, ShowPublicIpTypeResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPublicipRequest, ShowPublicipResponse> showPublicip = genForshowPublicip();
+    public static final HttpRequestDef<ShowPublicipRequest, ShowPublicipResponse> showPublicip = genForShowPublicip();
 
-    private static HttpRequestDef<ShowPublicipRequest, ShowPublicipResponse> genForshowPublicip() {
+    private static HttpRequestDef<ShowPublicipRequest, ShowPublicipResponse> genForShowPublicip() {
         // basic
         HttpRequestDef.Builder<ShowPublicipRequest, ShowPublicipResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPublicipRequest.class, ShowPublicipResponse.class)
@@ -1018,9 +934,7 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicipRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
+            f -> f.withMarshaller(ShowPublicipRequest::getPublicipId, ShowPublicipRequest::setPublicipId));
 
         // response
 
@@ -1028,9 +942,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ShowPublicipTagsRequest, ShowPublicipTagsResponse> showPublicipTags =
-        genForshowPublicipTags();
+        genForShowPublicipTags();
 
-    private static HttpRequestDef<ShowPublicipTagsRequest, ShowPublicipTagsResponse> genForshowPublicipTags() {
+    private static HttpRequestDef<ShowPublicipTagsRequest, ShowPublicipTagsResponse> genForShowPublicipTags() {
         // basic
         HttpRequestDef.Builder<ShowPublicipTagsRequest, ShowPublicipTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPublicipTagsRequest.class, ShowPublicipTagsResponse.class)
@@ -1043,9 +957,7 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicipTagsRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
+            f -> f.withMarshaller(ShowPublicipTagsRequest::getPublicipId, ShowPublicipTagsRequest::setPublicipId));
 
         // response
 
@@ -1053,9 +965,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<UpdatePublicipRequest, UpdatePublicipResponse> updatePublicip =
-        genForupdatePublicip();
+        genForUpdatePublicip();
 
-    private static HttpRequestDef<UpdatePublicipRequest, UpdatePublicipResponse> genForupdatePublicip() {
+    private static HttpRequestDef<UpdatePublicipRequest, UpdatePublicipResponse> genForUpdatePublicip() {
         // basic
         HttpRequestDef.Builder<UpdatePublicipRequest, UpdatePublicipResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePublicipRequest.class, UpdatePublicipResponse.class)
@@ -1068,16 +980,12 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePublicipRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
+            f -> f.withMarshaller(UpdatePublicipRequest::getPublicipId, UpdatePublicipRequest::setPublicipId));
         builder.<UpdatePublicipsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePublicipsRequestBody.class),
-            f -> f.withMarshaller(UpdatePublicipRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePublicipRequest::getBody, UpdatePublicipRequest::setBody));
 
         // response
 
@@ -1085,9 +993,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse> showResourcesJobDetail =
-        genForshowResourcesJobDetail();
+        genForShowResourcesJobDetail();
 
-    private static HttpRequestDef<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse> genForshowResourcesJobDetail() {
+    private static HttpRequestDef<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse> genForShowResourcesJobDetail() {
         // basic
         HttpRequestDef.Builder<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowResourcesJobDetailRequest.class, ShowResourcesJobDetailResponse.class)
@@ -1100,9 +1008,7 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourcesJobDetailRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ShowResourcesJobDetailRequest::getJobId, ShowResourcesJobDetailRequest::setJobId));
 
         // response
 
@@ -1110,9 +1016,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse> neutronCreateFloatingIp =
-        genForneutronCreateFloatingIp();
+        genForNeutronCreateFloatingIp();
 
-    private static HttpRequestDef<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse> genForneutronCreateFloatingIp() {
+    private static HttpRequestDef<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse> genForNeutronCreateFloatingIp() {
         // basic
         HttpRequestDef.Builder<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, NeutronCreateFloatingIpRequest.class, NeutronCreateFloatingIpResponse.class)
@@ -1125,9 +1031,7 @@ public class EipMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NeutronCreateFloatingIpRequestBody.class),
-            f -> f.withMarshaller(NeutronCreateFloatingIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(NeutronCreateFloatingIpRequest::getBody, NeutronCreateFloatingIpRequest::setBody));
 
         // response
 
@@ -1135,9 +1039,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse> neutronDeleteFloatingIp =
-        genForneutronDeleteFloatingIp();
+        genForNeutronDeleteFloatingIp();
 
-    private static HttpRequestDef<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse> genForneutronDeleteFloatingIp() {
+    private static HttpRequestDef<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse> genForNeutronDeleteFloatingIp() {
         // basic
         HttpRequestDef.Builder<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, NeutronDeleteFloatingIpRequest.class, NeutronDeleteFloatingIpResponse.class)
@@ -1150,9 +1054,8 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronDeleteFloatingIpRequest::getFloatingipId, (req, v) -> {
-                req.setFloatingipId(v);
-            }));
+            f -> f.withMarshaller(NeutronDeleteFloatingIpRequest::getFloatingipId,
+                NeutronDeleteFloatingIpRequest::setFloatingipId));
 
         // response
 
@@ -1160,9 +1063,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse> neutronListFloatingIps =
-        genForneutronListFloatingIps();
+        genForNeutronListFloatingIps();
 
-    private static HttpRequestDef<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse> genForneutronListFloatingIps() {
+    private static HttpRequestDef<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse> genForNeutronListFloatingIps() {
         // basic
         HttpRequestDef.Builder<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, NeutronListFloatingIpsRequest.class, NeutronListFloatingIpsResponse.class)
@@ -1175,72 +1078,58 @@ public class EipMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getLimit, NeutronListFloatingIpsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getMarker, NeutronListFloatingIpsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getPageReverse,
+                NeutronListFloatingIpsRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getId, NeutronListFloatingIpsRequest::setId));
         builder.<String>withRequestField("floating_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getFloatingIpAddress, (req, v) -> {
-                req.setFloatingIpAddress(v);
-            }));
+            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getFloatingIpAddress,
+                NeutronListFloatingIpsRequest::setFloatingIpAddress));
         builder.<String>withRequestField("router_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getRouterId, (req, v) -> {
-                req.setRouterId(v);
-            }));
+            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getRouterId,
+                NeutronListFloatingIpsRequest::setRouterId));
         builder.<String>withRequestField("port_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getPortId, (req, v) -> {
-                req.setPortId(v);
-            }));
+            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getPortId, NeutronListFloatingIpsRequest::setPortId));
         builder.<String>withRequestField("fixed_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getFixedIpAddress, (req, v) -> {
-                req.setFixedIpAddress(v);
-            }));
+            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getFixedIpAddress,
+                NeutronListFloatingIpsRequest::setFixedIpAddress));
         builder.<String>withRequestField("tenant_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            }));
+            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getTenantId,
+                NeutronListFloatingIpsRequest::setTenantId));
         builder.<String>withRequestField("floating_network_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getFloatingNetworkId, (req, v) -> {
-                req.setFloatingNetworkId(v);
-            }));
+            f -> f.withMarshaller(NeutronListFloatingIpsRequest::getFloatingNetworkId,
+                NeutronListFloatingIpsRequest::setFloatingNetworkId));
 
         // response
 
@@ -1248,9 +1137,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse> neutronShowFloatingIp =
-        genForneutronShowFloatingIp();
+        genForNeutronShowFloatingIp();
 
-    private static HttpRequestDef<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse> genForneutronShowFloatingIp() {
+    private static HttpRequestDef<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse> genForNeutronShowFloatingIp() {
         // basic
         HttpRequestDef.Builder<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, NeutronShowFloatingIpRequest.class, NeutronShowFloatingIpResponse.class)
@@ -1263,9 +1152,8 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronShowFloatingIpRequest::getFloatingipId, (req, v) -> {
-                req.setFloatingipId(v);
-            }));
+            f -> f.withMarshaller(NeutronShowFloatingIpRequest::getFloatingipId,
+                NeutronShowFloatingIpRequest::setFloatingipId));
 
         // response
 
@@ -1273,9 +1161,9 @@ public class EipMeta {
     }
 
     public static final HttpRequestDef<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse> neutronUpdateFloatingIp =
-        genForneutronUpdateFloatingIp();
+        genForNeutronUpdateFloatingIp();
 
-    private static HttpRequestDef<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse> genForneutronUpdateFloatingIp() {
+    private static HttpRequestDef<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse> genForNeutronUpdateFloatingIp() {
         // basic
         HttpRequestDef.Builder<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, NeutronUpdateFloatingIpRequest.class, NeutronUpdateFloatingIpResponse.class)
@@ -1288,16 +1176,13 @@ public class EipMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(NeutronUpdateFloatingIpRequest::getFloatingipId, (req, v) -> {
-                req.setFloatingipId(v);
-            }));
+            f -> f.withMarshaller(NeutronUpdateFloatingIpRequest::getFloatingipId,
+                NeutronUpdateFloatingIpRequest::setFloatingipId));
         builder.<NeutronUpdateFloatingIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NeutronUpdateFloatingIpRequestBody.class),
-            f -> f.withMarshaller(NeutronUpdateFloatingIpRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(NeutronUpdateFloatingIpRequest::getBody, NeutronUpdateFloatingIpRequest::setBody));
 
         // response
 

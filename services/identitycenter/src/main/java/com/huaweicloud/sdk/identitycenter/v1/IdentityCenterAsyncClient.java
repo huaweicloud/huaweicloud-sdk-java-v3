@@ -75,7 +75,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccountAssignmentRequest 请求对象
+     * @param request CreateAccountAssignmentRequest 请求对象
      * @return CompletableFuture<CreateAccountAssignmentResponse>
      */
     public CompletableFuture<CreateAccountAssignmentResponse> createAccountAssignmentAsync(
@@ -90,13 +90,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAccountAssignmentRequest 请求对象
+     * @param request CreateAccountAssignmentRequest 请求对象
      * @return AsyncInvoker<CreateAccountAssignmentRequest, CreateAccountAssignmentResponse>
      */
     public AsyncInvoker<CreateAccountAssignmentRequest, CreateAccountAssignmentResponse> createAccountAssignmentAsyncInvoker(
         CreateAccountAssignmentRequest request) {
-        return new AsyncInvoker<CreateAccountAssignmentRequest, CreateAccountAssignmentResponse>(request,
-            IdentityCenterMeta.createAccountAssignment, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.createAccountAssignment, hcClient);
     }
 
     /**
@@ -106,7 +105,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAccountAssignmentRequest 请求对象
+     * @param request DeleteAccountAssignmentRequest 请求对象
      * @return CompletableFuture<DeleteAccountAssignmentResponse>
      */
     public CompletableFuture<DeleteAccountAssignmentResponse> deleteAccountAssignmentAsync(
@@ -121,13 +120,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAccountAssignmentRequest 请求对象
+     * @param request DeleteAccountAssignmentRequest 请求对象
      * @return AsyncInvoker<DeleteAccountAssignmentRequest, DeleteAccountAssignmentResponse>
      */
     public AsyncInvoker<DeleteAccountAssignmentRequest, DeleteAccountAssignmentResponse> deleteAccountAssignmentAsyncInvoker(
         DeleteAccountAssignmentRequest request) {
-        return new AsyncInvoker<DeleteAccountAssignmentRequest, DeleteAccountAssignmentResponse>(request,
-            IdentityCenterMeta.deleteAccountAssignment, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.deleteAccountAssignment, hcClient);
     }
 
     /**
@@ -137,7 +135,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribeAccountAssignmentCreationStatusRequest 请求对象
+     * @param request DescribeAccountAssignmentCreationStatusRequest 请求对象
      * @return CompletableFuture<DescribeAccountAssignmentCreationStatusResponse>
      */
     public CompletableFuture<DescribeAccountAssignmentCreationStatusResponse> describeAccountAssignmentCreationStatusAsync(
@@ -152,13 +150,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribeAccountAssignmentCreationStatusRequest 请求对象
+     * @param request DescribeAccountAssignmentCreationStatusRequest 请求对象
      * @return AsyncInvoker<DescribeAccountAssignmentCreationStatusRequest, DescribeAccountAssignmentCreationStatusResponse>
      */
     public AsyncInvoker<DescribeAccountAssignmentCreationStatusRequest, DescribeAccountAssignmentCreationStatusResponse> describeAccountAssignmentCreationStatusAsyncInvoker(
         DescribeAccountAssignmentCreationStatusRequest request) {
-        return new AsyncInvoker<DescribeAccountAssignmentCreationStatusRequest, DescribeAccountAssignmentCreationStatusResponse>(
-            request, IdentityCenterMeta.describeAccountAssignmentCreationStatus, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.describeAccountAssignmentCreationStatus, hcClient);
     }
 
     /**
@@ -168,7 +165,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribeAccountAssignmentDeletionStatusRequest 请求对象
+     * @param request DescribeAccountAssignmentDeletionStatusRequest 请求对象
      * @return CompletableFuture<DescribeAccountAssignmentDeletionStatusResponse>
      */
     public CompletableFuture<DescribeAccountAssignmentDeletionStatusResponse> describeAccountAssignmentDeletionStatusAsync(
@@ -183,13 +180,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribeAccountAssignmentDeletionStatusRequest 请求对象
+     * @param request DescribeAccountAssignmentDeletionStatusRequest 请求对象
      * @return AsyncInvoker<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResponse>
      */
     public AsyncInvoker<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResponse> describeAccountAssignmentDeletionStatusAsyncInvoker(
         DescribeAccountAssignmentDeletionStatusRequest request) {
-        return new AsyncInvoker<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResponse>(
-            request, IdentityCenterMeta.describeAccountAssignmentDeletionStatus, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.describeAccountAssignmentDeletionStatus, hcClient);
     }
 
     /**
@@ -199,7 +195,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccountAssignmentCreationStatusRequest 请求对象
+     * @param request ListAccountAssignmentCreationStatusRequest 请求对象
      * @return CompletableFuture<ListAccountAssignmentCreationStatusResponse>
      */
     public CompletableFuture<ListAccountAssignmentCreationStatusResponse> listAccountAssignmentCreationStatusAsync(
@@ -214,13 +210,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccountAssignmentCreationStatusRequest 请求对象
+     * @param request ListAccountAssignmentCreationStatusRequest 请求对象
      * @return AsyncInvoker<ListAccountAssignmentCreationStatusRequest, ListAccountAssignmentCreationStatusResponse>
      */
     public AsyncInvoker<ListAccountAssignmentCreationStatusRequest, ListAccountAssignmentCreationStatusResponse> listAccountAssignmentCreationStatusAsyncInvoker(
         ListAccountAssignmentCreationStatusRequest request) {
-        return new AsyncInvoker<ListAccountAssignmentCreationStatusRequest, ListAccountAssignmentCreationStatusResponse>(
-            request, IdentityCenterMeta.listAccountAssignmentCreationStatus, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listAccountAssignmentCreationStatus, hcClient);
     }
 
     /**
@@ -230,7 +225,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccountAssignmentDeletionStatusRequest 请求对象
+     * @param request ListAccountAssignmentDeletionStatusRequest 请求对象
      * @return CompletableFuture<ListAccountAssignmentDeletionStatusResponse>
      */
     public CompletableFuture<ListAccountAssignmentDeletionStatusResponse> listAccountAssignmentDeletionStatusAsync(
@@ -245,13 +240,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccountAssignmentDeletionStatusRequest 请求对象
+     * @param request ListAccountAssignmentDeletionStatusRequest 请求对象
      * @return AsyncInvoker<ListAccountAssignmentDeletionStatusRequest, ListAccountAssignmentDeletionStatusResponse>
      */
     public AsyncInvoker<ListAccountAssignmentDeletionStatusRequest, ListAccountAssignmentDeletionStatusResponse> listAccountAssignmentDeletionStatusAsyncInvoker(
         ListAccountAssignmentDeletionStatusRequest request) {
-        return new AsyncInvoker<ListAccountAssignmentDeletionStatusRequest, ListAccountAssignmentDeletionStatusResponse>(
-            request, IdentityCenterMeta.listAccountAssignmentDeletionStatus, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listAccountAssignmentDeletionStatus, hcClient);
     }
 
     /**
@@ -261,7 +255,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccountAssignmentsRequest 请求对象
+     * @param request ListAccountAssignmentsRequest 请求对象
      * @return CompletableFuture<ListAccountAssignmentsResponse>
      */
     public CompletableFuture<ListAccountAssignmentsResponse> listAccountAssignmentsAsync(
@@ -276,13 +270,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccountAssignmentsRequest 请求对象
+     * @param request ListAccountAssignmentsRequest 请求对象
      * @return AsyncInvoker<ListAccountAssignmentsRequest, ListAccountAssignmentsResponse>
      */
     public AsyncInvoker<ListAccountAssignmentsRequest, ListAccountAssignmentsResponse> listAccountAssignmentsAsyncInvoker(
         ListAccountAssignmentsRequest request) {
-        return new AsyncInvoker<ListAccountAssignmentsRequest, ListAccountAssignmentsResponse>(request,
-            IdentityCenterMeta.listAccountAssignments, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listAccountAssignments, hcClient);
     }
 
     /**
@@ -292,7 +285,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProfileAssociationsRequest 请求对象
+     * @param request ListProfileAssociationsRequest 请求对象
      * @return CompletableFuture<ListProfileAssociationsResponse>
      */
     public CompletableFuture<ListProfileAssociationsResponse> listProfileAssociationsAsync(
@@ -307,13 +300,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProfileAssociationsRequest 请求对象
+     * @param request ListProfileAssociationsRequest 请求对象
      * @return AsyncInvoker<ListProfileAssociationsRequest, ListProfileAssociationsResponse>
      */
     public AsyncInvoker<ListProfileAssociationsRequest, ListProfileAssociationsResponse> listProfileAssociationsAsyncInvoker(
         ListProfileAssociationsRequest request) {
-        return new AsyncInvoker<ListProfileAssociationsRequest, ListProfileAssociationsResponse>(request,
-            IdentityCenterMeta.listProfileAssociations, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listProfileAssociations, hcClient);
     }
 
     /**
@@ -323,7 +315,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
      */
     public CompletableFuture<ListInstancesResponse> listInstancesAsync(ListInstancesRequest request) {
@@ -337,13 +329,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
-        return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, IdentityCenterMeta.listInstances,
-            hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listInstances, hcClient);
     }
 
     /**
@@ -353,7 +344,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachCustomerManagedPolicyToPermissionSetRequest 请求对象
+     * @param request AttachCustomerManagedPolicyToPermissionSetRequest 请求对象
      * @return CompletableFuture<AttachCustomerManagedPolicyToPermissionSetResponse>
      */
     public CompletableFuture<AttachCustomerManagedPolicyToPermissionSetResponse> attachCustomerManagedPolicyToPermissionSetAsync(
@@ -368,13 +359,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachCustomerManagedPolicyToPermissionSetRequest 请求对象
+     * @param request AttachCustomerManagedPolicyToPermissionSetRequest 请求对象
      * @return AsyncInvoker<AttachCustomerManagedPolicyToPermissionSetRequest, AttachCustomerManagedPolicyToPermissionSetResponse>
      */
     public AsyncInvoker<AttachCustomerManagedPolicyToPermissionSetRequest, AttachCustomerManagedPolicyToPermissionSetResponse> attachCustomerManagedPolicyToPermissionSetAsyncInvoker(
         AttachCustomerManagedPolicyToPermissionSetRequest request) {
-        return new AsyncInvoker<AttachCustomerManagedPolicyToPermissionSetRequest, AttachCustomerManagedPolicyToPermissionSetResponse>(
-            request, IdentityCenterMeta.attachCustomerManagedPolicyToPermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.attachCustomerManagedPolicyToPermissionSet, hcClient);
     }
 
     /**
@@ -384,7 +374,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachManagedPolicyToPermissionSetRequest 请求对象
+     * @param request AttachManagedPolicyToPermissionSetRequest 请求对象
      * @return CompletableFuture<AttachManagedPolicyToPermissionSetResponse>
      */
     public CompletableFuture<AttachManagedPolicyToPermissionSetResponse> attachManagedPolicyToPermissionSetAsync(
@@ -399,13 +389,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachManagedPolicyToPermissionSetRequest 请求对象
+     * @param request AttachManagedPolicyToPermissionSetRequest 请求对象
      * @return AsyncInvoker<AttachManagedPolicyToPermissionSetRequest, AttachManagedPolicyToPermissionSetResponse>
      */
     public AsyncInvoker<AttachManagedPolicyToPermissionSetRequest, AttachManagedPolicyToPermissionSetResponse> attachManagedPolicyToPermissionSetAsyncInvoker(
         AttachManagedPolicyToPermissionSetRequest request) {
-        return new AsyncInvoker<AttachManagedPolicyToPermissionSetRequest, AttachManagedPolicyToPermissionSetResponse>(
-            request, IdentityCenterMeta.attachManagedPolicyToPermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.attachManagedPolicyToPermissionSet, hcClient);
     }
 
     /**
@@ -415,7 +404,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePermissionSetRequest 请求对象
+     * @param request CreatePermissionSetRequest 请求对象
      * @return CompletableFuture<CreatePermissionSetResponse>
      */
     public CompletableFuture<CreatePermissionSetResponse> createPermissionSetAsync(CreatePermissionSetRequest request) {
@@ -429,13 +418,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePermissionSetRequest 请求对象
+     * @param request CreatePermissionSetRequest 请求对象
      * @return AsyncInvoker<CreatePermissionSetRequest, CreatePermissionSetResponse>
      */
     public AsyncInvoker<CreatePermissionSetRequest, CreatePermissionSetResponse> createPermissionSetAsyncInvoker(
         CreatePermissionSetRequest request) {
-        return new AsyncInvoker<CreatePermissionSetRequest, CreatePermissionSetResponse>(request,
-            IdentityCenterMeta.createPermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.createPermissionSet, hcClient);
     }
 
     /**
@@ -445,7 +433,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePermissionSetRequest 请求对象
+     * @param request DeletePermissionSetRequest 请求对象
      * @return CompletableFuture<DeletePermissionSetResponse>
      */
     public CompletableFuture<DeletePermissionSetResponse> deletePermissionSetAsync(DeletePermissionSetRequest request) {
@@ -459,13 +447,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePermissionSetRequest 请求对象
+     * @param request DeletePermissionSetRequest 请求对象
      * @return AsyncInvoker<DeletePermissionSetRequest, DeletePermissionSetResponse>
      */
     public AsyncInvoker<DeletePermissionSetRequest, DeletePermissionSetResponse> deletePermissionSetAsyncInvoker(
         DeletePermissionSetRequest request) {
-        return new AsyncInvoker<DeletePermissionSetRequest, DeletePermissionSetResponse>(request,
-            IdentityCenterMeta.deletePermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.deletePermissionSet, hcClient);
     }
 
     /**
@@ -475,7 +462,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribePermissionSetRequest 请求对象
+     * @param request DescribePermissionSetRequest 请求对象
      * @return CompletableFuture<DescribePermissionSetResponse>
      */
     public CompletableFuture<DescribePermissionSetResponse> describePermissionSetAsync(
@@ -490,13 +477,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribePermissionSetRequest 请求对象
+     * @param request DescribePermissionSetRequest 请求对象
      * @return AsyncInvoker<DescribePermissionSetRequest, DescribePermissionSetResponse>
      */
     public AsyncInvoker<DescribePermissionSetRequest, DescribePermissionSetResponse> describePermissionSetAsyncInvoker(
         DescribePermissionSetRequest request) {
-        return new AsyncInvoker<DescribePermissionSetRequest, DescribePermissionSetResponse>(request,
-            IdentityCenterMeta.describePermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.describePermissionSet, hcClient);
     }
 
     /**
@@ -506,7 +492,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribePermissionSetProvisioningStatusRequest 请求对象
+     * @param request DescribePermissionSetProvisioningStatusRequest 请求对象
      * @return CompletableFuture<DescribePermissionSetProvisioningStatusResponse>
      */
     public CompletableFuture<DescribePermissionSetProvisioningStatusResponse> describePermissionSetProvisioningStatusAsync(
@@ -521,13 +507,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DescribePermissionSetProvisioningStatusRequest 请求对象
+     * @param request DescribePermissionSetProvisioningStatusRequest 请求对象
      * @return AsyncInvoker<DescribePermissionSetProvisioningStatusRequest, DescribePermissionSetProvisioningStatusResponse>
      */
     public AsyncInvoker<DescribePermissionSetProvisioningStatusRequest, DescribePermissionSetProvisioningStatusResponse> describePermissionSetProvisioningStatusAsyncInvoker(
         DescribePermissionSetProvisioningStatusRequest request) {
-        return new AsyncInvoker<DescribePermissionSetProvisioningStatusRequest, DescribePermissionSetProvisioningStatusResponse>(
-            request, IdentityCenterMeta.describePermissionSetProvisioningStatus, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.describePermissionSetProvisioningStatus, hcClient);
     }
 
     /**
@@ -537,7 +522,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachCustomerManagedPolicyReferenceFromPermissionSetRequest 请求对象
+     * @param request DetachCustomerManagedPolicyReferenceFromPermissionSetRequest 请求对象
      * @return CompletableFuture<DetachCustomerManagedPolicyReferenceFromPermissionSetResponse>
      */
     public CompletableFuture<DetachCustomerManagedPolicyReferenceFromPermissionSetResponse> detachCustomerManagedPolicyReferenceFromPermissionSetAsync(
@@ -553,13 +538,13 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachCustomerManagedPolicyReferenceFromPermissionSetRequest 请求对象
+     * @param request DetachCustomerManagedPolicyReferenceFromPermissionSetRequest 请求对象
      * @return AsyncInvoker<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest, DetachCustomerManagedPolicyReferenceFromPermissionSetResponse>
      */
     public AsyncInvoker<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest, DetachCustomerManagedPolicyReferenceFromPermissionSetResponse> detachCustomerManagedPolicyReferenceFromPermissionSetAsyncInvoker(
         DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request) {
-        return new AsyncInvoker<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest, DetachCustomerManagedPolicyReferenceFromPermissionSetResponse>(
-            request, IdentityCenterMeta.detachCustomerManagedPolicyReferenceFromPermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.detachCustomerManagedPolicyReferenceFromPermissionSet,
+            hcClient);
     }
 
     /**
@@ -569,7 +554,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachManagedPolicyFromPermissionSetRequest 请求对象
+     * @param request DetachManagedPolicyFromPermissionSetRequest 请求对象
      * @return CompletableFuture<DetachManagedPolicyFromPermissionSetResponse>
      */
     public CompletableFuture<DetachManagedPolicyFromPermissionSetResponse> detachManagedPolicyFromPermissionSetAsync(
@@ -584,13 +569,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachManagedPolicyFromPermissionSetRequest 请求对象
+     * @param request DetachManagedPolicyFromPermissionSetRequest 请求对象
      * @return AsyncInvoker<DetachManagedPolicyFromPermissionSetRequest, DetachManagedPolicyFromPermissionSetResponse>
      */
     public AsyncInvoker<DetachManagedPolicyFromPermissionSetRequest, DetachManagedPolicyFromPermissionSetResponse> detachManagedPolicyFromPermissionSetAsyncInvoker(
         DetachManagedPolicyFromPermissionSetRequest request) {
-        return new AsyncInvoker<DetachManagedPolicyFromPermissionSetRequest, DetachManagedPolicyFromPermissionSetResponse>(
-            request, IdentityCenterMeta.detachManagedPolicyFromPermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.detachManagedPolicyFromPermissionSet, hcClient);
     }
 
     /**
@@ -600,7 +584,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccountsForProvisionedPermissionSetRequest 请求对象
+     * @param request ListAccountsForProvisionedPermissionSetRequest 请求对象
      * @return CompletableFuture<ListAccountsForProvisionedPermissionSetResponse>
      */
     public CompletableFuture<ListAccountsForProvisionedPermissionSetResponse> listAccountsForProvisionedPermissionSetAsync(
@@ -615,13 +599,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccountsForProvisionedPermissionSetRequest 请求对象
+     * @param request ListAccountsForProvisionedPermissionSetRequest 请求对象
      * @return AsyncInvoker<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResponse>
      */
     public AsyncInvoker<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResponse> listAccountsForProvisionedPermissionSetAsyncInvoker(
         ListAccountsForProvisionedPermissionSetRequest request) {
-        return new AsyncInvoker<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResponse>(
-            request, IdentityCenterMeta.listAccountsForProvisionedPermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listAccountsForProvisionedPermissionSet, hcClient);
     }
 
     /**
@@ -631,7 +614,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerManagedPolicyReferencesInPermissionSetRequest 请求对象
+     * @param request ListCustomerManagedPolicyReferencesInPermissionSetRequest 请求对象
      * @return CompletableFuture<ListCustomerManagedPolicyReferencesInPermissionSetResponse>
      */
     public CompletableFuture<ListCustomerManagedPolicyReferencesInPermissionSetResponse> listCustomerManagedPolicyReferencesInPermissionSetAsync(
@@ -646,13 +629,13 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomerManagedPolicyReferencesInPermissionSetRequest 请求对象
+     * @param request ListCustomerManagedPolicyReferencesInPermissionSetRequest 请求对象
      * @return AsyncInvoker<ListCustomerManagedPolicyReferencesInPermissionSetRequest, ListCustomerManagedPolicyReferencesInPermissionSetResponse>
      */
     public AsyncInvoker<ListCustomerManagedPolicyReferencesInPermissionSetRequest, ListCustomerManagedPolicyReferencesInPermissionSetResponse> listCustomerManagedPolicyReferencesInPermissionSetAsyncInvoker(
         ListCustomerManagedPolicyReferencesInPermissionSetRequest request) {
-        return new AsyncInvoker<ListCustomerManagedPolicyReferencesInPermissionSetRequest, ListCustomerManagedPolicyReferencesInPermissionSetResponse>(
-            request, IdentityCenterMeta.listCustomerManagedPolicyReferencesInPermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listCustomerManagedPolicyReferencesInPermissionSet,
+            hcClient);
     }
 
     /**
@@ -662,7 +645,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedPoliciesInPermissionSetRequest 请求对象
+     * @param request ListManagedPoliciesInPermissionSetRequest 请求对象
      * @return CompletableFuture<ListManagedPoliciesInPermissionSetResponse>
      */
     public CompletableFuture<ListManagedPoliciesInPermissionSetResponse> listManagedPoliciesInPermissionSetAsync(
@@ -677,13 +660,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListManagedPoliciesInPermissionSetRequest 请求对象
+     * @param request ListManagedPoliciesInPermissionSetRequest 请求对象
      * @return AsyncInvoker<ListManagedPoliciesInPermissionSetRequest, ListManagedPoliciesInPermissionSetResponse>
      */
     public AsyncInvoker<ListManagedPoliciesInPermissionSetRequest, ListManagedPoliciesInPermissionSetResponse> listManagedPoliciesInPermissionSetAsyncInvoker(
         ListManagedPoliciesInPermissionSetRequest request) {
-        return new AsyncInvoker<ListManagedPoliciesInPermissionSetRequest, ListManagedPoliciesInPermissionSetResponse>(
-            request, IdentityCenterMeta.listManagedPoliciesInPermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listManagedPoliciesInPermissionSet, hcClient);
     }
 
     /**
@@ -693,7 +675,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionSetProvisioningStatusRequest 请求对象
+     * @param request ListPermissionSetProvisioningStatusRequest 请求对象
      * @return CompletableFuture<ListPermissionSetProvisioningStatusResponse>
      */
     public CompletableFuture<ListPermissionSetProvisioningStatusResponse> listPermissionSetProvisioningStatusAsync(
@@ -708,13 +690,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionSetProvisioningStatusRequest 请求对象
+     * @param request ListPermissionSetProvisioningStatusRequest 请求对象
      * @return AsyncInvoker<ListPermissionSetProvisioningStatusRequest, ListPermissionSetProvisioningStatusResponse>
      */
     public AsyncInvoker<ListPermissionSetProvisioningStatusRequest, ListPermissionSetProvisioningStatusResponse> listPermissionSetProvisioningStatusAsyncInvoker(
         ListPermissionSetProvisioningStatusRequest request) {
-        return new AsyncInvoker<ListPermissionSetProvisioningStatusRequest, ListPermissionSetProvisioningStatusResponse>(
-            request, IdentityCenterMeta.listPermissionSetProvisioningStatus, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listPermissionSetProvisioningStatus, hcClient);
     }
 
     /**
@@ -724,7 +705,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionSetsRequest 请求对象
+     * @param request ListPermissionSetsRequest 请求对象
      * @return CompletableFuture<ListPermissionSetsResponse>
      */
     public CompletableFuture<ListPermissionSetsResponse> listPermissionSetsAsync(ListPermissionSetsRequest request) {
@@ -738,13 +719,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionSetsRequest 请求对象
+     * @param request ListPermissionSetsRequest 请求对象
      * @return AsyncInvoker<ListPermissionSetsRequest, ListPermissionSetsResponse>
      */
     public AsyncInvoker<ListPermissionSetsRequest, ListPermissionSetsResponse> listPermissionSetsAsyncInvoker(
         ListPermissionSetsRequest request) {
-        return new AsyncInvoker<ListPermissionSetsRequest, ListPermissionSetsResponse>(request,
-            IdentityCenterMeta.listPermissionSets, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listPermissionSets, hcClient);
     }
 
     /**
@@ -754,7 +734,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionSetsProvisionedToAccountRequest 请求对象
+     * @param request ListPermissionSetsProvisionedToAccountRequest 请求对象
      * @return CompletableFuture<ListPermissionSetsProvisionedToAccountResponse>
      */
     public CompletableFuture<ListPermissionSetsProvisionedToAccountResponse> listPermissionSetsProvisionedToAccountAsync(
@@ -769,13 +749,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionSetsProvisionedToAccountRequest 请求对象
+     * @param request ListPermissionSetsProvisionedToAccountRequest 请求对象
      * @return AsyncInvoker<ListPermissionSetsProvisionedToAccountRequest, ListPermissionSetsProvisionedToAccountResponse>
      */
     public AsyncInvoker<ListPermissionSetsProvisionedToAccountRequest, ListPermissionSetsProvisionedToAccountResponse> listPermissionSetsProvisionedToAccountAsyncInvoker(
         ListPermissionSetsProvisionedToAccountRequest request) {
-        return new AsyncInvoker<ListPermissionSetsProvisionedToAccountRequest, ListPermissionSetsProvisionedToAccountResponse>(
-            request, IdentityCenterMeta.listPermissionSetsProvisionedToAccount, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.listPermissionSetsProvisionedToAccount, hcClient);
     }
 
     /**
@@ -785,7 +764,7 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePermissionSetRequest 请求对象
+     * @param request UpdatePermissionSetRequest 请求对象
      * @return CompletableFuture<UpdatePermissionSetResponse>
      */
     public CompletableFuture<UpdatePermissionSetResponse> updatePermissionSetAsync(UpdatePermissionSetRequest request) {
@@ -799,13 +778,12 @@ public class IdentityCenterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePermissionSetRequest 请求对象
+     * @param request UpdatePermissionSetRequest 请求对象
      * @return AsyncInvoker<UpdatePermissionSetRequest, UpdatePermissionSetResponse>
      */
     public AsyncInvoker<UpdatePermissionSetRequest, UpdatePermissionSetResponse> updatePermissionSetAsyncInvoker(
         UpdatePermissionSetRequest request) {
-        return new AsyncInvoker<UpdatePermissionSetRequest, UpdatePermissionSetResponse>(request,
-            IdentityCenterMeta.updatePermissionSet, hcClient);
+        return new AsyncInvoker<>(request, IdentityCenterMeta.updatePermissionSet, hcClient);
     }
 
 }

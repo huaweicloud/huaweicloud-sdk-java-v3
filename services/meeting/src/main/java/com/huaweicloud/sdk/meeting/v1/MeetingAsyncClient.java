@@ -389,7 +389,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCorpRequest 请求对象
+     * @param request AddCorpRequest 请求对象
      * @return CompletableFuture<AddCorpResponse>
      */
     public CompletableFuture<AddCorpResponse> addCorpAsync(AddCorpRequest request) {
@@ -403,11 +403,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCorpRequest 请求对象
+     * @param request AddCorpRequest 请求对象
      * @return AsyncInvoker<AddCorpRequest, AddCorpResponse>
      */
     public AsyncInvoker<AddCorpRequest, AddCorpResponse> addCorpAsyncInvoker(AddCorpRequest request) {
-        return new AsyncInvoker<AddCorpRequest, AddCorpResponse>(request, MeetingMeta.addCorp, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.addCorp, hcClient);
     }
 
     /**
@@ -417,7 +417,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCorpAdminRequest 请求对象
+     * @param request AddCorpAdminRequest 请求对象
      * @return CompletableFuture<AddCorpAdminResponse>
      */
     public CompletableFuture<AddCorpAdminResponse> addCorpAdminAsync(AddCorpAdminRequest request) {
@@ -431,12 +431,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddCorpAdminRequest 请求对象
+     * @param request AddCorpAdminRequest 请求对象
      * @return AsyncInvoker<AddCorpAdminRequest, AddCorpAdminResponse>
      */
     public AsyncInvoker<AddCorpAdminRequest, AddCorpAdminResponse> addCorpAdminAsyncInvoker(
         AddCorpAdminRequest request) {
-        return new AsyncInvoker<AddCorpAdminRequest, AddCorpAdminResponse>(request, MeetingMeta.addCorpAdmin, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.addCorpAdmin, hcClient);
     }
 
     /**
@@ -446,7 +446,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDepartmentRequest 请求对象
+     * @param request AddDepartmentRequest 请求对象
      * @return CompletableFuture<AddDepartmentResponse>
      */
     public CompletableFuture<AddDepartmentResponse> addDepartmentAsync(AddDepartmentRequest request) {
@@ -460,13 +460,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDepartmentRequest 请求对象
+     * @param request AddDepartmentRequest 请求对象
      * @return AsyncInvoker<AddDepartmentRequest, AddDepartmentResponse>
      */
     public AsyncInvoker<AddDepartmentRequest, AddDepartmentResponse> addDepartmentAsyncInvoker(
         AddDepartmentRequest request) {
-        return new AsyncInvoker<AddDepartmentRequest, AddDepartmentResponse>(request, MeetingMeta.addDepartment,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.addDepartment, hcClient);
     }
 
     /**
@@ -476,7 +475,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeviceRequest 请求对象
+     * @param request AddDeviceRequest 请求对象
      * @return CompletableFuture<AddDeviceResponse>
      */
     public CompletableFuture<AddDeviceResponse> addDeviceAsync(AddDeviceRequest request) {
@@ -490,11 +489,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddDeviceRequest 请求对象
+     * @param request AddDeviceRequest 请求对象
      * @return AsyncInvoker<AddDeviceRequest, AddDeviceResponse>
      */
     public AsyncInvoker<AddDeviceRequest, AddDeviceResponse> addDeviceAsyncInvoker(AddDeviceRequest request) {
-        return new AsyncInvoker<AddDeviceRequest, AddDeviceResponse>(request, MeetingMeta.addDevice, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.addDevice, hcClient);
     }
 
     /**
@@ -504,7 +503,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMaterialRequest 请求对象
+     * @param request AddMaterialRequest 请求对象
      * @return CompletableFuture<AddMaterialResponse>
      */
     public CompletableFuture<AddMaterialResponse> addMaterialAsync(AddMaterialRequest request) {
@@ -518,11 +517,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddMaterialRequest 请求对象
+     * @param request AddMaterialRequest 请求对象
      * @return AsyncInvoker<AddMaterialRequest, AddMaterialResponse>
      */
     public AsyncInvoker<AddMaterialRequest, AddMaterialResponse> addMaterialAsyncInvoker(AddMaterialRequest request) {
-        return new AsyncInvoker<AddMaterialRequest, AddMaterialResponse>(request, MeetingMeta.addMaterial, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.addMaterial, hcClient);
     }
 
     /**
@@ -532,7 +531,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddProgramRequest 请求对象
+     * @param request AddProgramRequest 请求对象
      * @return CompletableFuture<AddProgramResponse>
      */
     public CompletableFuture<AddProgramResponse> addProgramAsync(AddProgramRequest request) {
@@ -546,11 +545,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddProgramRequest 请求对象
+     * @param request AddProgramRequest 请求对象
      * @return AsyncInvoker<AddProgramRequest, AddProgramResponse>
      */
     public AsyncInvoker<AddProgramRequest, AddProgramResponse> addProgramAsyncInvoker(AddProgramRequest request) {
-        return new AsyncInvoker<AddProgramRequest, AddProgramResponse>(request, MeetingMeta.addProgram, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.addProgram, hcClient);
     }
 
     /**
@@ -560,7 +559,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPublicationRequest 请求对象
+     * @param request AddPublicationRequest 请求对象
      * @return CompletableFuture<AddPublicationResponse>
      */
     public CompletableFuture<AddPublicationResponse> addPublicationAsync(AddPublicationRequest request) {
@@ -574,13 +573,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddPublicationRequest 请求对象
+     * @param request AddPublicationRequest 请求对象
      * @return AsyncInvoker<AddPublicationRequest, AddPublicationResponse>
      */
     public AsyncInvoker<AddPublicationRequest, AddPublicationResponse> addPublicationAsyncInvoker(
         AddPublicationRequest request) {
-        return new AsyncInvoker<AddPublicationRequest, AddPublicationResponse>(request, MeetingMeta.addPublication,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.addPublication, hcClient);
     }
 
     /**
@@ -590,7 +588,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddResourceRequest 请求对象
+     * @param request AddResourceRequest 请求对象
      * @return CompletableFuture<AddResourceResponse>
      */
     public CompletableFuture<AddResourceResponse> addResourceAsync(AddResourceRequest request) {
@@ -604,11 +602,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddResourceRequest 请求对象
+     * @param request AddResourceRequest 请求对象
      * @return AsyncInvoker<AddResourceRequest, AddResourceResponse>
      */
     public AsyncInvoker<AddResourceRequest, AddResourceResponse> addResourceAsyncInvoker(AddResourceRequest request) {
-        return new AsyncInvoker<AddResourceRequest, AddResourceResponse>(request, MeetingMeta.addResource, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.addResource, hcClient);
     }
 
     /**
@@ -618,7 +616,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddToPersonalSpaceRequest 请求对象
+     * @param request AddToPersonalSpaceRequest 请求对象
      * @return CompletableFuture<AddToPersonalSpaceResponse>
      */
     public CompletableFuture<AddToPersonalSpaceResponse> addToPersonalSpaceAsync(AddToPersonalSpaceRequest request) {
@@ -632,13 +630,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddToPersonalSpaceRequest 请求对象
+     * @param request AddToPersonalSpaceRequest 请求对象
      * @return AsyncInvoker<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse>
      */
     public AsyncInvoker<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse> addToPersonalSpaceAsyncInvoker(
         AddToPersonalSpaceRequest request) {
-        return new AsyncInvoker<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse>(request,
-            MeetingMeta.addToPersonalSpace, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.addToPersonalSpace, hcClient);
     }
 
     /**
@@ -649,7 +646,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddUserRequest 请求对象
+     * @param request AddUserRequest 请求对象
      * @return CompletableFuture<AddUserResponse>
      */
     public CompletableFuture<AddUserResponse> addUserAsync(AddUserRequest request) {
@@ -664,11 +661,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddUserRequest 请求对象
+     * @param request AddUserRequest 请求对象
      * @return AsyncInvoker<AddUserRequest, AddUserResponse>
      */
     public AsyncInvoker<AddUserRequest, AddUserResponse> addUserAsyncInvoker(AddUserRequest request) {
-        return new AsyncInvoker<AddUserRequest, AddUserResponse>(request, MeetingMeta.addUser, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.addUser, hcClient);
     }
 
     /**
@@ -678,7 +675,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowClientRecordRequest 请求对象
+     * @param request AllowClientRecordRequest 请求对象
      * @return CompletableFuture<AllowClientRecordResponse>
      */
     public CompletableFuture<AllowClientRecordResponse> allowClientRecordAsync(AllowClientRecordRequest request) {
@@ -692,13 +689,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowClientRecordRequest 请求对象
+     * @param request AllowClientRecordRequest 请求对象
      * @return AsyncInvoker<AllowClientRecordRequest, AllowClientRecordResponse>
      */
     public AsyncInvoker<AllowClientRecordRequest, AllowClientRecordResponse> allowClientRecordAsyncInvoker(
         AllowClientRecordRequest request) {
-        return new AsyncInvoker<AllowClientRecordRequest, AllowClientRecordResponse>(request,
-            MeetingMeta.allowClientRecord, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.allowClientRecord, hcClient);
     }
 
     /**
@@ -708,7 +704,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowGuestUnmuteRequest 请求对象
+     * @param request AllowGuestUnmuteRequest 请求对象
      * @return CompletableFuture<AllowGuestUnmuteResponse>
      */
     public CompletableFuture<AllowGuestUnmuteResponse> allowGuestUnmuteAsync(AllowGuestUnmuteRequest request) {
@@ -722,13 +718,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowGuestUnmuteRequest 请求对象
+     * @param request AllowGuestUnmuteRequest 请求对象
      * @return AsyncInvoker<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse>
      */
     public AsyncInvoker<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse> allowGuestUnmuteAsyncInvoker(
         AllowGuestUnmuteRequest request) {
-        return new AsyncInvoker<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse>(request,
-            MeetingMeta.allowGuestUnmute, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.allowGuestUnmute, hcClient);
     }
 
     /**
@@ -738,7 +733,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowWaitingParticipantRequest 请求对象
+     * @param request AllowWaitingParticipantRequest 请求对象
      * @return CompletableFuture<AllowWaitingParticipantResponse>
      */
     public CompletableFuture<AllowWaitingParticipantResponse> allowWaitingParticipantAsync(
@@ -753,13 +748,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AllowWaitingParticipantRequest 请求对象
+     * @param request AllowWaitingParticipantRequest 请求对象
      * @return AsyncInvoker<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse>
      */
     public AsyncInvoker<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse> allowWaitingParticipantAsyncInvoker(
         AllowWaitingParticipantRequest request) {
-        return new AsyncInvoker<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse>(request,
-            MeetingMeta.allowWaitingParticipant, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.allowWaitingParticipant, hcClient);
     }
 
     /**
@@ -769,7 +763,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateVmrRequest 请求对象
+     * @param request AssociateVmrRequest 请求对象
      * @return CompletableFuture<AssociateVmrResponse>
      */
     public CompletableFuture<AssociateVmrResponse> associateVmrAsync(AssociateVmrRequest request) {
@@ -783,12 +777,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateVmrRequest 请求对象
+     * @param request AssociateVmrRequest 请求对象
      * @return AsyncInvoker<AssociateVmrRequest, AssociateVmrResponse>
      */
     public AsyncInvoker<AssociateVmrRequest, AssociateVmrResponse> associateVmrAsyncInvoker(
         AssociateVmrRequest request) {
-        return new AsyncInvoker<AssociateVmrRequest, AssociateVmrResponse>(request, MeetingMeta.associateVmr, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.associateVmr, hcClient);
     }
 
     /**
@@ -798,7 +792,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteCorpAdminsRequest 请求对象
+     * @param request BatchDeleteCorpAdminsRequest 请求对象
      * @return CompletableFuture<BatchDeleteCorpAdminsResponse>
      */
     public CompletableFuture<BatchDeleteCorpAdminsResponse> batchDeleteCorpAdminsAsync(
@@ -813,13 +807,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteCorpAdminsRequest 请求对象
+     * @param request BatchDeleteCorpAdminsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse>
      */
     public AsyncInvoker<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse> batchDeleteCorpAdminsAsyncInvoker(
         BatchDeleteCorpAdminsRequest request) {
-        return new AsyncInvoker<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse>(request,
-            MeetingMeta.batchDeleteCorpAdmins, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.batchDeleteCorpAdmins, hcClient);
     }
 
     /**
@@ -830,7 +823,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDevicesRequest 请求对象
+     * @param request BatchDeleteDevicesRequest 请求对象
      * @return CompletableFuture<BatchDeleteDevicesResponse>
      */
     public CompletableFuture<BatchDeleteDevicesResponse> batchDeleteDevicesAsync(BatchDeleteDevicesRequest request) {
@@ -845,13 +838,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteDevicesRequest 请求对象
+     * @param request BatchDeleteDevicesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse>
      */
     public AsyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> batchDeleteDevicesAsyncInvoker(
         BatchDeleteDevicesRequest request) {
-        return new AsyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse>(request,
-            MeetingMeta.batchDeleteDevices, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.batchDeleteDevices, hcClient);
     }
 
     /**
@@ -861,7 +853,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMaterialsRequest 请求对象
+     * @param request BatchDeleteMaterialsRequest 请求对象
      * @return CompletableFuture<BatchDeleteMaterialsResponse>
      */
     public CompletableFuture<BatchDeleteMaterialsResponse> batchDeleteMaterialsAsync(
@@ -876,13 +868,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteMaterialsRequest 请求对象
+     * @param request BatchDeleteMaterialsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse>
      */
     public AsyncInvoker<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> batchDeleteMaterialsAsyncInvoker(
         BatchDeleteMaterialsRequest request) {
-        return new AsyncInvoker<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse>(request,
-            MeetingMeta.batchDeleteMaterials, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.batchDeleteMaterials, hcClient);
     }
 
     /**
@@ -892,7 +883,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteProgramsRequest 请求对象
+     * @param request BatchDeleteProgramsRequest 请求对象
      * @return CompletableFuture<BatchDeleteProgramsResponse>
      */
     public CompletableFuture<BatchDeleteProgramsResponse> batchDeleteProgramsAsync(BatchDeleteProgramsRequest request) {
@@ -906,13 +897,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteProgramsRequest 请求对象
+     * @param request BatchDeleteProgramsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse>
      */
     public AsyncInvoker<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> batchDeleteProgramsAsyncInvoker(
         BatchDeleteProgramsRequest request) {
-        return new AsyncInvoker<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse>(request,
-            MeetingMeta.batchDeletePrograms, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.batchDeletePrograms, hcClient);
     }
 
     /**
@@ -922,7 +912,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeletePublicationsRequest 请求对象
+     * @param request BatchDeletePublicationsRequest 请求对象
      * @return CompletableFuture<BatchDeletePublicationsResponse>
      */
     public CompletableFuture<BatchDeletePublicationsResponse> batchDeletePublicationsAsync(
@@ -937,13 +927,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeletePublicationsRequest 请求对象
+     * @param request BatchDeletePublicationsRequest 请求对象
      * @return AsyncInvoker<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse>
      */
     public AsyncInvoker<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> batchDeletePublicationsAsyncInvoker(
         BatchDeletePublicationsRequest request) {
-        return new AsyncInvoker<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse>(request,
-            MeetingMeta.batchDeletePublications, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.batchDeletePublications, hcClient);
     }
 
     /**
@@ -953,7 +942,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteUsersRequest 请求对象
+     * @param request BatchDeleteUsersRequest 请求对象
      * @return CompletableFuture<BatchDeleteUsersResponse>
      */
     public CompletableFuture<BatchDeleteUsersResponse> batchDeleteUsersAsync(BatchDeleteUsersRequest request) {
@@ -967,13 +956,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteUsersRequest 请求对象
+     * @param request BatchDeleteUsersRequest 请求对象
      * @return AsyncInvoker<BatchDeleteUsersRequest, BatchDeleteUsersResponse>
      */
     public AsyncInvoker<BatchDeleteUsersRequest, BatchDeleteUsersResponse> batchDeleteUsersAsyncInvoker(
         BatchDeleteUsersRequest request) {
-        return new AsyncInvoker<BatchDeleteUsersRequest, BatchDeleteUsersResponse>(request,
-            MeetingMeta.batchDeleteUsers, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.batchDeleteUsers, hcClient);
     }
 
     /**
@@ -983,7 +971,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchHandRequest 请求对象
+     * @param request BatchHandRequest 请求对象
      * @return CompletableFuture<BatchHandResponse>
      */
     public CompletableFuture<BatchHandResponse> batchHandAsync(BatchHandRequest request) {
@@ -997,11 +985,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchHandRequest 请求对象
+     * @param request BatchHandRequest 请求对象
      * @return AsyncInvoker<BatchHandRequest, BatchHandResponse>
      */
     public AsyncInvoker<BatchHandRequest, BatchHandResponse> batchHandAsyncInvoker(BatchHandRequest request) {
-        return new AsyncInvoker<BatchHandRequest, BatchHandResponse>(request, MeetingMeta.batchHand, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.batchHand, hcClient);
     }
 
     /**
@@ -1011,7 +999,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowUserDetailsRequest 请求对象
+     * @param request BatchShowUserDetailsRequest 请求对象
      * @return CompletableFuture<BatchShowUserDetailsResponse>
      */
     public CompletableFuture<BatchShowUserDetailsResponse> batchShowUserDetailsAsync(
@@ -1026,13 +1014,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowUserDetailsRequest 请求对象
+     * @param request BatchShowUserDetailsRequest 请求对象
      * @return AsyncInvoker<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse>
      */
     public AsyncInvoker<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse> batchShowUserDetailsAsyncInvoker(
         BatchShowUserDetailsRequest request) {
-        return new AsyncInvoker<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse>(request,
-            MeetingMeta.batchShowUserDetails, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.batchShowUserDetails, hcClient);
     }
 
     /**
@@ -1042,7 +1029,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateDevicesStatusRequest 请求对象
+     * @param request BatchUpdateDevicesStatusRequest 请求对象
      * @return CompletableFuture<BatchUpdateDevicesStatusResponse>
      */
     public CompletableFuture<BatchUpdateDevicesStatusResponse> batchUpdateDevicesStatusAsync(
@@ -1057,13 +1044,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateDevicesStatusRequest 请求对象
+     * @param request BatchUpdateDevicesStatusRequest 请求对象
      * @return AsyncInvoker<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse>
      */
     public AsyncInvoker<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse> batchUpdateDevicesStatusAsyncInvoker(
         BatchUpdateDevicesStatusRequest request) {
-        return new AsyncInvoker<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse>(request,
-            MeetingMeta.batchUpdateDevicesStatus, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.batchUpdateDevicesStatus, hcClient);
     }
 
     /**
@@ -1073,7 +1059,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateUserStatusRequest 请求对象
+     * @param request BatchUpdateUserStatusRequest 请求对象
      * @return CompletableFuture<BatchUpdateUserStatusResponse>
      */
     public CompletableFuture<BatchUpdateUserStatusResponse> batchUpdateUserStatusAsync(
@@ -1088,13 +1074,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchUpdateUserStatusRequest 请求对象
+     * @param request BatchUpdateUserStatusRequest 请求对象
      * @return AsyncInvoker<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse>
      */
     public AsyncInvoker<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse> batchUpdateUserStatusAsyncInvoker(
         BatchUpdateUserStatusRequest request) {
-        return new AsyncInvoker<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse>(request,
-            MeetingMeta.batchUpdateUserStatus, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.batchUpdateUserStatus, hcClient);
     }
 
     /**
@@ -1104,7 +1089,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BroadcastParticipantRequest 请求对象
+     * @param request BroadcastParticipantRequest 请求对象
      * @return CompletableFuture<BroadcastParticipantResponse>
      */
     public CompletableFuture<BroadcastParticipantResponse> broadcastParticipantAsync(
@@ -1119,13 +1104,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BroadcastParticipantRequest 请求对象
+     * @param request BroadcastParticipantRequest 请求对象
      * @return AsyncInvoker<BroadcastParticipantRequest, BroadcastParticipantResponse>
      */
     public AsyncInvoker<BroadcastParticipantRequest, BroadcastParticipantResponse> broadcastParticipantAsyncInvoker(
         BroadcastParticipantRequest request) {
-        return new AsyncInvoker<BroadcastParticipantRequest, BroadcastParticipantResponse>(request,
-            MeetingMeta.broadcastParticipant, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.broadcastParticipant, hcClient);
     }
 
     /**
@@ -1135,7 +1119,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelBroadcastRequest 请求对象
+     * @param request CancelBroadcastRequest 请求对象
      * @return CompletableFuture<CancelBroadcastResponse>
      */
     public CompletableFuture<CancelBroadcastResponse> cancelBroadcastAsync(CancelBroadcastRequest request) {
@@ -1149,13 +1133,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelBroadcastRequest 请求对象
+     * @param request CancelBroadcastRequest 请求对象
      * @return AsyncInvoker<CancelBroadcastRequest, CancelBroadcastResponse>
      */
     public AsyncInvoker<CancelBroadcastRequest, CancelBroadcastResponse> cancelBroadcastAsyncInvoker(
         CancelBroadcastRequest request) {
-        return new AsyncInvoker<CancelBroadcastRequest, CancelBroadcastResponse>(request, MeetingMeta.cancelBroadcast,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.cancelBroadcast, hcClient);
     }
 
     /**
@@ -1165,7 +1148,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelMeetingRequest 请求对象
+     * @param request CancelMeetingRequest 请求对象
      * @return CompletableFuture<CancelMeetingResponse>
      */
     public CompletableFuture<CancelMeetingResponse> cancelMeetingAsync(CancelMeetingRequest request) {
@@ -1179,13 +1162,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelMeetingRequest 请求对象
+     * @param request CancelMeetingRequest 请求对象
      * @return AsyncInvoker<CancelMeetingRequest, CancelMeetingResponse>
      */
     public AsyncInvoker<CancelMeetingRequest, CancelMeetingResponse> cancelMeetingAsyncInvoker(
         CancelMeetingRequest request) {
-        return new AsyncInvoker<CancelMeetingRequest, CancelMeetingResponse>(request, MeetingMeta.cancelMeeting,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.cancelMeeting, hcClient);
     }
 
     /**
@@ -1195,7 +1177,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelRecurringMeetingRequest 请求对象
+     * @param request CancelRecurringMeetingRequest 请求对象
      * @return CompletableFuture<CancelRecurringMeetingResponse>
      */
     public CompletableFuture<CancelRecurringMeetingResponse> cancelRecurringMeetingAsync(
@@ -1210,13 +1192,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelRecurringMeetingRequest 请求对象
+     * @param request CancelRecurringMeetingRequest 请求对象
      * @return AsyncInvoker<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse>
      */
     public AsyncInvoker<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse> cancelRecurringMeetingAsyncInvoker(
         CancelRecurringMeetingRequest request) {
-        return new AsyncInvoker<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse>(request,
-            MeetingMeta.cancelRecurringMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.cancelRecurringMeeting, hcClient);
     }
 
     /**
@@ -1226,7 +1207,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelRecurringSubMeetingRequest 请求对象
+     * @param request CancelRecurringSubMeetingRequest 请求对象
      * @return CompletableFuture<CancelRecurringSubMeetingResponse>
      */
     public CompletableFuture<CancelRecurringSubMeetingResponse> cancelRecurringSubMeetingAsync(
@@ -1241,13 +1222,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelRecurringSubMeetingRequest 请求对象
+     * @param request CancelRecurringSubMeetingRequest 请求对象
      * @return AsyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse>
      */
     public AsyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> cancelRecurringSubMeetingAsyncInvoker(
         CancelRecurringSubMeetingRequest request) {
-        return new AsyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse>(request,
-            MeetingMeta.cancelRecurringSubMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.cancelRecurringSubMeeting, hcClient);
     }
 
     /**
@@ -1257,7 +1237,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckSlideVerifyCodeRequest 请求对象
+     * @param request CheckSlideVerifyCodeRequest 请求对象
      * @return CompletableFuture<CheckSlideVerifyCodeResponse>
      */
     public CompletableFuture<CheckSlideVerifyCodeResponse> checkSlideVerifyCodeAsync(
@@ -1272,13 +1252,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckSlideVerifyCodeRequest 请求对象
+     * @param request CheckSlideVerifyCodeRequest 请求对象
      * @return AsyncInvoker<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse>
      */
     public AsyncInvoker<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse> checkSlideVerifyCodeAsyncInvoker(
         CheckSlideVerifyCodeRequest request) {
-        return new AsyncInvoker<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse>(request,
-            MeetingMeta.checkSlideVerifyCode, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.checkSlideVerifyCode, hcClient);
     }
 
     /**
@@ -1288,7 +1267,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTokenRequest 请求对象
+     * @param request CheckTokenRequest 请求对象
      * @return CompletableFuture<CheckTokenResponse>
      */
     public CompletableFuture<CheckTokenResponse> checkTokenAsync(CheckTokenRequest request) {
@@ -1302,11 +1281,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckTokenRequest 请求对象
+     * @param request CheckTokenRequest 请求对象
      * @return AsyncInvoker<CheckTokenRequest, CheckTokenResponse>
      */
     public AsyncInvoker<CheckTokenRequest, CheckTokenResponse> checkTokenAsyncInvoker(CheckTokenRequest request) {
-        return new AsyncInvoker<CheckTokenRequest, CheckTokenResponse>(request, MeetingMeta.checkToken, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.checkToken, hcClient);
     }
 
     /**
@@ -1316,7 +1295,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVeriCodeForUpdateUserInfoRequest 请求对象
+     * @param request CheckVeriCodeForUpdateUserInfoRequest 请求对象
      * @return CompletableFuture<CheckVeriCodeForUpdateUserInfoResponse>
      */
     public CompletableFuture<CheckVeriCodeForUpdateUserInfoResponse> checkVeriCodeForUpdateUserInfoAsync(
@@ -1331,13 +1310,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVeriCodeForUpdateUserInfoRequest 请求对象
+     * @param request CheckVeriCodeForUpdateUserInfoRequest 请求对象
      * @return AsyncInvoker<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse>
      */
     public AsyncInvoker<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse> checkVeriCodeForUpdateUserInfoAsyncInvoker(
         CheckVeriCodeForUpdateUserInfoRequest request) {
-        return new AsyncInvoker<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse>(request,
-            MeetingMeta.checkVeriCodeForUpdateUserInfo, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.checkVeriCodeForUpdateUserInfo, hcClient);
     }
 
     /**
@@ -1347,7 +1325,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVerifyCodeRequest 请求对象
+     * @param request CheckVerifyCodeRequest 请求对象
      * @return CompletableFuture<CheckVerifyCodeResponse>
      */
     public CompletableFuture<CheckVerifyCodeResponse> checkVerifyCodeAsync(CheckVerifyCodeRequest request) {
@@ -1361,13 +1339,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVerifyCodeRequest 请求对象
+     * @param request CheckVerifyCodeRequest 请求对象
      * @return AsyncInvoker<CheckVerifyCodeRequest, CheckVerifyCodeResponse>
      */
     public AsyncInvoker<CheckVerifyCodeRequest, CheckVerifyCodeResponse> checkVerifyCodeAsyncInvoker(
         CheckVerifyCodeRequest request) {
-        return new AsyncInvoker<CheckVerifyCodeRequest, CheckVerifyCodeResponse>(request, MeetingMeta.checkVerifyCode,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.checkVerifyCode, hcClient);
     }
 
     /**
@@ -1377,7 +1354,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnonymousAuthRandomRequest 请求对象
+     * @param request CreateAnonymousAuthRandomRequest 请求对象
      * @return CompletableFuture<CreateAnonymousAuthRandomResponse>
      */
     public CompletableFuture<CreateAnonymousAuthRandomResponse> createAnonymousAuthRandomAsync(
@@ -1392,13 +1369,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnonymousAuthRandomRequest 请求对象
+     * @param request CreateAnonymousAuthRandomRequest 请求对象
      * @return AsyncInvoker<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse>
      */
     public AsyncInvoker<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse> createAnonymousAuthRandomAsyncInvoker(
         CreateAnonymousAuthRandomRequest request) {
-        return new AsyncInvoker<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse>(request,
-            MeetingMeta.createAnonymousAuthRandom, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.createAnonymousAuthRandom, hcClient);
     }
 
     /**
@@ -1408,7 +1384,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfTokenRequest 请求对象
+     * @param request CreateConfTokenRequest 请求对象
      * @return CompletableFuture<CreateConfTokenResponse>
      */
     public CompletableFuture<CreateConfTokenResponse> createConfTokenAsync(CreateConfTokenRequest request) {
@@ -1422,13 +1398,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfTokenRequest 请求对象
+     * @param request CreateConfTokenRequest 请求对象
      * @return AsyncInvoker<CreateConfTokenRequest, CreateConfTokenResponse>
      */
     public AsyncInvoker<CreateConfTokenRequest, CreateConfTokenResponse> createConfTokenAsyncInvoker(
         CreateConfTokenRequest request) {
-        return new AsyncInvoker<CreateConfTokenRequest, CreateConfTokenResponse>(request, MeetingMeta.createConfToken,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.createConfToken, hcClient);
     }
 
     /**
@@ -1438,7 +1413,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMeetingRequest 请求对象
+     * @param request CreateMeetingRequest 请求对象
      * @return CompletableFuture<CreateMeetingResponse>
      */
     public CompletableFuture<CreateMeetingResponse> createMeetingAsync(CreateMeetingRequest request) {
@@ -1452,13 +1427,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMeetingRequest 请求对象
+     * @param request CreateMeetingRequest 请求对象
      * @return AsyncInvoker<CreateMeetingRequest, CreateMeetingResponse>
      */
     public AsyncInvoker<CreateMeetingRequest, CreateMeetingResponse> createMeetingAsyncInvoker(
         CreateMeetingRequest request) {
-        return new AsyncInvoker<CreateMeetingRequest, CreateMeetingResponse>(request, MeetingMeta.createMeeting,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.createMeeting, hcClient);
     }
 
     /**
@@ -1468,7 +1442,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePortalRefNonceRequest 请求对象
+     * @param request CreatePortalRefNonceRequest 请求对象
      * @return CompletableFuture<CreatePortalRefNonceResponse>
      */
     public CompletableFuture<CreatePortalRefNonceResponse> createPortalRefNonceAsync(
@@ -1483,13 +1457,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePortalRefNonceRequest 请求对象
+     * @param request CreatePortalRefNonceRequest 请求对象
      * @return AsyncInvoker<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse>
      */
     public AsyncInvoker<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse> createPortalRefNonceAsyncInvoker(
         CreatePortalRefNonceRequest request) {
-        return new AsyncInvoker<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse>(request,
-            MeetingMeta.createPortalRefNonce, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.createPortalRefNonce, hcClient);
     }
 
     /**
@@ -1499,7 +1472,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecurringMeetingRequest 请求对象
+     * @param request CreateRecurringMeetingRequest 请求对象
      * @return CompletableFuture<CreateRecurringMeetingResponse>
      */
     public CompletableFuture<CreateRecurringMeetingResponse> createRecurringMeetingAsync(
@@ -1514,13 +1487,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRecurringMeetingRequest 请求对象
+     * @param request CreateRecurringMeetingRequest 请求对象
      * @return AsyncInvoker<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse>
      */
     public AsyncInvoker<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse> createRecurringMeetingAsyncInvoker(
         CreateRecurringMeetingRequest request) {
-        return new AsyncInvoker<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse>(request,
-            MeetingMeta.createRecurringMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.createRecurringMeeting, hcClient);
     }
 
     /**
@@ -1530,7 +1502,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVisionActiveCodeRequest 请求对象
+     * @param request CreateVisionActiveCodeRequest 请求对象
      * @return CompletableFuture<CreateVisionActiveCodeResponse>
      */
     public CompletableFuture<CreateVisionActiveCodeResponse> createVisionActiveCodeAsync(
@@ -1545,13 +1517,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVisionActiveCodeRequest 请求对象
+     * @param request CreateVisionActiveCodeRequest 请求对象
      * @return AsyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse>
      */
     public AsyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> createVisionActiveCodeAsyncInvoker(
         CreateVisionActiveCodeRequest request) {
-        return new AsyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse>(request,
-            MeetingMeta.createVisionActiveCode, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.createVisionActiveCode, hcClient);
     }
 
     /**
@@ -1561,7 +1532,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWebSocketTokenRequest 请求对象
+     * @param request CreateWebSocketTokenRequest 请求对象
      * @return CompletableFuture<CreateWebSocketTokenResponse>
      */
     public CompletableFuture<CreateWebSocketTokenResponse> createWebSocketTokenAsync(
@@ -1576,13 +1547,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWebSocketTokenRequest 请求对象
+     * @param request CreateWebSocketTokenRequest 请求对象
      * @return AsyncInvoker<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse>
      */
     public AsyncInvoker<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse> createWebSocketTokenAsyncInvoker(
         CreateWebSocketTokenRequest request) {
-        return new AsyncInvoker<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse>(request,
-            MeetingMeta.createWebSocketToken, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.createWebSocketToken, hcClient);
     }
 
     /**
@@ -1592,7 +1562,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWebinarRequest 请求对象
+     * @param request CreateWebinarRequest 请求对象
      * @return CompletableFuture<CreateWebinarResponse>
      */
     public CompletableFuture<CreateWebinarResponse> createWebinarAsync(CreateWebinarRequest request) {
@@ -1606,13 +1576,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWebinarRequest 请求对象
+     * @param request CreateWebinarRequest 请求对象
      * @return AsyncInvoker<CreateWebinarRequest, CreateWebinarResponse>
      */
     public AsyncInvoker<CreateWebinarRequest, CreateWebinarResponse> createWebinarAsyncInvoker(
         CreateWebinarRequest request) {
-        return new AsyncInvoker<CreateWebinarRequest, CreateWebinarResponse>(request, MeetingMeta.createWebinar,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.createWebinar, hcClient);
     }
 
     /**
@@ -1622,7 +1591,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAttendeesRequest 请求对象
+     * @param request DeleteAttendeesRequest 请求对象
      * @return CompletableFuture<DeleteAttendeesResponse>
      */
     public CompletableFuture<DeleteAttendeesResponse> deleteAttendeesAsync(DeleteAttendeesRequest request) {
@@ -1636,13 +1605,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAttendeesRequest 请求对象
+     * @param request DeleteAttendeesRequest 请求对象
      * @return AsyncInvoker<DeleteAttendeesRequest, DeleteAttendeesResponse>
      */
     public AsyncInvoker<DeleteAttendeesRequest, DeleteAttendeesResponse> deleteAttendeesAsyncInvoker(
         DeleteAttendeesRequest request) {
-        return new AsyncInvoker<DeleteAttendeesRequest, DeleteAttendeesResponse>(request, MeetingMeta.deleteAttendees,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteAttendees, hcClient);
     }
 
     /**
@@ -1652,7 +1620,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCorpRequest 请求对象
+     * @param request DeleteCorpRequest 请求对象
      * @return CompletableFuture<DeleteCorpResponse>
      */
     public CompletableFuture<DeleteCorpResponse> deleteCorpAsync(DeleteCorpRequest request) {
@@ -1666,11 +1634,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCorpRequest 请求对象
+     * @param request DeleteCorpRequest 请求对象
      * @return AsyncInvoker<DeleteCorpRequest, DeleteCorpResponse>
      */
     public AsyncInvoker<DeleteCorpRequest, DeleteCorpResponse> deleteCorpAsyncInvoker(DeleteCorpRequest request) {
-        return new AsyncInvoker<DeleteCorpRequest, DeleteCorpResponse>(request, MeetingMeta.deleteCorp, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteCorp, hcClient);
     }
 
     /**
@@ -1680,7 +1648,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCorpVmrRequest 请求对象
+     * @param request DeleteCorpVmrRequest 请求对象
      * @return CompletableFuture<DeleteCorpVmrResponse>
      */
     public CompletableFuture<DeleteCorpVmrResponse> deleteCorpVmrAsync(DeleteCorpVmrRequest request) {
@@ -1694,13 +1662,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCorpVmrRequest 请求对象
+     * @param request DeleteCorpVmrRequest 请求对象
      * @return AsyncInvoker<DeleteCorpVmrRequest, DeleteCorpVmrResponse>
      */
     public AsyncInvoker<DeleteCorpVmrRequest, DeleteCorpVmrResponse> deleteCorpVmrAsyncInvoker(
         DeleteCorpVmrRequest request) {
-        return new AsyncInvoker<DeleteCorpVmrRequest, DeleteCorpVmrResponse>(request, MeetingMeta.deleteCorpVmr,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteCorpVmr, hcClient);
     }
 
     /**
@@ -1710,7 +1677,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDepartmentRequest 请求对象
+     * @param request DeleteDepartmentRequest 请求对象
      * @return CompletableFuture<DeleteDepartmentResponse>
      */
     public CompletableFuture<DeleteDepartmentResponse> deleteDepartmentAsync(DeleteDepartmentRequest request) {
@@ -1724,13 +1691,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDepartmentRequest 请求对象
+     * @param request DeleteDepartmentRequest 请求对象
      * @return AsyncInvoker<DeleteDepartmentRequest, DeleteDepartmentResponse>
      */
     public AsyncInvoker<DeleteDepartmentRequest, DeleteDepartmentResponse> deleteDepartmentAsyncInvoker(
         DeleteDepartmentRequest request) {
-        return new AsyncInvoker<DeleteDepartmentRequest, DeleteDepartmentResponse>(request,
-            MeetingMeta.deleteDepartment, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteDepartment, hcClient);
     }
 
     /**
@@ -1740,7 +1706,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLayoutRequest 请求对象
+     * @param request DeleteLayoutRequest 请求对象
      * @return CompletableFuture<DeleteLayoutResponse>
      */
     public CompletableFuture<DeleteLayoutResponse> deleteLayoutAsync(DeleteLayoutRequest request) {
@@ -1754,12 +1720,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteLayoutRequest 请求对象
+     * @param request DeleteLayoutRequest 请求对象
      * @return AsyncInvoker<DeleteLayoutRequest, DeleteLayoutResponse>
      */
     public AsyncInvoker<DeleteLayoutRequest, DeleteLayoutResponse> deleteLayoutAsyncInvoker(
         DeleteLayoutRequest request) {
-        return new AsyncInvoker<DeleteLayoutRequest, DeleteLayoutResponse>(request, MeetingMeta.deleteLayout, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteLayout, hcClient);
     }
 
     /**
@@ -1769,7 +1735,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordingsRequest 请求对象
+     * @param request DeleteRecordingsRequest 请求对象
      * @return CompletableFuture<DeleteRecordingsResponse>
      */
     public CompletableFuture<DeleteRecordingsResponse> deleteRecordingsAsync(DeleteRecordingsRequest request) {
@@ -1783,13 +1749,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRecordingsRequest 请求对象
+     * @param request DeleteRecordingsRequest 请求对象
      * @return AsyncInvoker<DeleteRecordingsRequest, DeleteRecordingsResponse>
      */
     public AsyncInvoker<DeleteRecordingsRequest, DeleteRecordingsResponse> deleteRecordingsAsyncInvoker(
         DeleteRecordingsRequest request) {
-        return new AsyncInvoker<DeleteRecordingsRequest, DeleteRecordingsResponse>(request,
-            MeetingMeta.deleteRecordings, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteRecordings, hcClient);
     }
 
     /**
@@ -1799,7 +1764,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceRequest 请求对象
+     * @param request DeleteResourceRequest 请求对象
      * @return CompletableFuture<DeleteResourceResponse>
      */
     public CompletableFuture<DeleteResourceResponse> deleteResourceAsync(DeleteResourceRequest request) {
@@ -1813,13 +1778,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceRequest 请求对象
+     * @param request DeleteResourceRequest 请求对象
      * @return AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
      */
     public AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceAsyncInvoker(
         DeleteResourceRequest request) {
-        return new AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, MeetingMeta.deleteResource,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteResource, hcClient);
     }
 
     /**
@@ -1829,7 +1793,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTokenRequest 请求对象
+     * @param request DeleteTokenRequest 请求对象
      * @return CompletableFuture<DeleteTokenResponse>
      */
     public CompletableFuture<DeleteTokenResponse> deleteTokenAsync(DeleteTokenRequest request) {
@@ -1843,11 +1807,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTokenRequest 请求对象
+     * @param request DeleteTokenRequest 请求对象
      * @return AsyncInvoker<DeleteTokenRequest, DeleteTokenResponse>
      */
     public AsyncInvoker<DeleteTokenRequest, DeleteTokenResponse> deleteTokenAsyncInvoker(DeleteTokenRequest request) {
-        return new AsyncInvoker<DeleteTokenRequest, DeleteTokenResponse>(request, MeetingMeta.deleteToken, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteToken, hcClient);
     }
 
     /**
@@ -1857,7 +1821,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVisionActiveCodeRequest 请求对象
+     * @param request DeleteVisionActiveCodeRequest 请求对象
      * @return CompletableFuture<DeleteVisionActiveCodeResponse>
      */
     public CompletableFuture<DeleteVisionActiveCodeResponse> deleteVisionActiveCodeAsync(
@@ -1872,13 +1836,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVisionActiveCodeRequest 请求对象
+     * @param request DeleteVisionActiveCodeRequest 请求对象
      * @return AsyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse>
      */
     public AsyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> deleteVisionActiveCodeAsyncInvoker(
         DeleteVisionActiveCodeRequest request) {
-        return new AsyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse>(request,
-            MeetingMeta.deleteVisionActiveCode, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteVisionActiveCode, hcClient);
     }
 
     /**
@@ -1888,7 +1851,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWebHookConfigRequest 请求对象
+     * @param request DeleteWebHookConfigRequest 请求对象
      * @return CompletableFuture<DeleteWebHookConfigResponse>
      */
     public CompletableFuture<DeleteWebHookConfigResponse> deleteWebHookConfigAsync(DeleteWebHookConfigRequest request) {
@@ -1902,13 +1865,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWebHookConfigRequest 请求对象
+     * @param request DeleteWebHookConfigRequest 请求对象
      * @return AsyncInvoker<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse>
      */
     public AsyncInvoker<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse> deleteWebHookConfigAsyncInvoker(
         DeleteWebHookConfigRequest request) {
-        return new AsyncInvoker<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse>(request,
-            MeetingMeta.deleteWebHookConfig, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteWebHookConfig, hcClient);
     }
 
     /**
@@ -1918,7 +1880,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWebinarRequest 请求对象
+     * @param request DeleteWebinarRequest 请求对象
      * @return CompletableFuture<DeleteWebinarResponse>
      */
     public CompletableFuture<DeleteWebinarResponse> deleteWebinarAsync(DeleteWebinarRequest request) {
@@ -1932,13 +1894,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWebinarRequest 请求对象
+     * @param request DeleteWebinarRequest 请求对象
      * @return AsyncInvoker<DeleteWebinarRequest, DeleteWebinarResponse>
      */
     public AsyncInvoker<DeleteWebinarRequest, DeleteWebinarResponse> deleteWebinarAsyncInvoker(
         DeleteWebinarRequest request) {
-        return new AsyncInvoker<DeleteWebinarRequest, DeleteWebinarResponse>(request, MeetingMeta.deleteWebinar,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.deleteWebinar, hcClient);
     }
 
     /**
@@ -1948,7 +1909,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateVmrRequest 请求对象
+     * @param request DisassociateVmrRequest 请求对象
      * @return CompletableFuture<DisassociateVmrResponse>
      */
     public CompletableFuture<DisassociateVmrResponse> disassociateVmrAsync(DisassociateVmrRequest request) {
@@ -1962,13 +1923,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateVmrRequest 请求对象
+     * @param request DisassociateVmrRequest 请求对象
      * @return AsyncInvoker<DisassociateVmrRequest, DisassociateVmrResponse>
      */
     public AsyncInvoker<DisassociateVmrRequest, DisassociateVmrResponse> disassociateVmrAsyncInvoker(
         DisassociateVmrRequest request) {
-        return new AsyncInvoker<DisassociateVmrRequest, DisassociateVmrResponse>(request, MeetingMeta.disassociateVmr,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.disassociateVmr, hcClient);
     }
 
     /**
@@ -1978,7 +1938,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HandRequest 请求对象
+     * @param request HandRequest 请求对象
      * @return CompletableFuture<HandResponse>
      */
     public CompletableFuture<HandResponse> handAsync(HandRequest request) {
@@ -1992,11 +1952,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HandRequest 请求对象
+     * @param request HandRequest 请求对象
      * @return AsyncInvoker<HandRequest, HandResponse>
      */
     public AsyncInvoker<HandRequest, HandResponse> handAsyncInvoker(HandRequest request) {
-        return new AsyncInvoker<HandRequest, HandResponse>(request, MeetingMeta.hand, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.hand, hcClient);
     }
 
     /**
@@ -2006,7 +1966,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HangUpRequest 请求对象
+     * @param request HangUpRequest 请求对象
      * @return CompletableFuture<HangUpResponse>
      */
     public CompletableFuture<HangUpResponse> hangUpAsync(HangUpRequest request) {
@@ -2020,11 +1980,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param HangUpRequest 请求对象
+     * @param request HangUpRequest 请求对象
      * @return AsyncInvoker<HangUpRequest, HangUpResponse>
      */
     public AsyncInvoker<HangUpRequest, HangUpResponse> hangUpAsyncInvoker(HangUpRequest request) {
-        return new AsyncInvoker<HangUpRequest, HangUpResponse>(request, MeetingMeta.hangUp, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.hangUp, hcClient);
     }
 
     /**
@@ -2034,7 +1994,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteOperateVideoRequest 请求对象
+     * @param request InviteOperateVideoRequest 请求对象
      * @return CompletableFuture<InviteOperateVideoResponse>
      */
     public CompletableFuture<InviteOperateVideoResponse> inviteOperateVideoAsync(InviteOperateVideoRequest request) {
@@ -2048,13 +2008,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteOperateVideoRequest 请求对象
+     * @param request InviteOperateVideoRequest 请求对象
      * @return AsyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse>
      */
     public AsyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse> inviteOperateVideoAsyncInvoker(
         InviteOperateVideoRequest request) {
-        return new AsyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse>(request,
-            MeetingMeta.inviteOperateVideo, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.inviteOperateVideo, hcClient);
     }
 
     /**
@@ -2064,7 +2023,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteParticipantRequest 请求对象
+     * @param request InviteParticipantRequest 请求对象
      * @return CompletableFuture<InviteParticipantResponse>
      */
     public CompletableFuture<InviteParticipantResponse> inviteParticipantAsync(InviteParticipantRequest request) {
@@ -2078,13 +2037,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteParticipantRequest 请求对象
+     * @param request InviteParticipantRequest 请求对象
      * @return AsyncInvoker<InviteParticipantRequest, InviteParticipantResponse>
      */
     public AsyncInvoker<InviteParticipantRequest, InviteParticipantResponse> inviteParticipantAsyncInvoker(
         InviteParticipantRequest request) {
-        return new AsyncInvoker<InviteParticipantRequest, InviteParticipantResponse>(request,
-            MeetingMeta.inviteParticipant, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.inviteParticipant, hcClient);
     }
 
     /**
@@ -2094,7 +2052,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteShareRequest 请求对象
+     * @param request InviteShareRequest 请求对象
      * @return CompletableFuture<InviteShareResponse>
      */
     public CompletableFuture<InviteShareResponse> inviteShareAsync(InviteShareRequest request) {
@@ -2108,11 +2066,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteShareRequest 请求对象
+     * @param request InviteShareRequest 请求对象
      * @return AsyncInvoker<InviteShareRequest, InviteShareResponse>
      */
     public AsyncInvoker<InviteShareRequest, InviteShareResponse> inviteShareAsyncInvoker(InviteShareRequest request) {
-        return new AsyncInvoker<InviteShareRequest, InviteShareResponse>(request, MeetingMeta.inviteShare, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.inviteShare, hcClient);
     }
 
     /**
@@ -2126,7 +2084,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteUserRequest 请求对象
+     * @param request InviteUserRequest 请求对象
      * @return CompletableFuture<InviteUserResponse>
      */
     public CompletableFuture<InviteUserResponse> inviteUserAsync(InviteUserRequest request) {
@@ -2144,11 +2102,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteUserRequest 请求对象
+     * @param request InviteUserRequest 请求对象
      * @return AsyncInvoker<InviteUserRequest, InviteUserResponse>
      */
     public AsyncInvoker<InviteUserRequest, InviteUserResponse> inviteUserAsyncInvoker(InviteUserRequest request) {
-        return new AsyncInvoker<InviteUserRequest, InviteUserResponse>(request, MeetingMeta.inviteUser, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.inviteUser, hcClient);
     }
 
     /**
@@ -2159,7 +2117,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteWithPwdRequest 请求对象
+     * @param request InviteWithPwdRequest 请求对象
      * @return CompletableFuture<InviteWithPwdResponse>
      */
     public CompletableFuture<InviteWithPwdResponse> inviteWithPwdAsync(InviteWithPwdRequest request) {
@@ -2174,13 +2132,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteWithPwdRequest 请求对象
+     * @param request InviteWithPwdRequest 请求对象
      * @return AsyncInvoker<InviteWithPwdRequest, InviteWithPwdResponse>
      */
     public AsyncInvoker<InviteWithPwdRequest, InviteWithPwdResponse> inviteWithPwdAsyncInvoker(
         InviteWithPwdRequest request) {
-        return new AsyncInvoker<InviteWithPwdRequest, InviteWithPwdResponse>(request, MeetingMeta.inviteWithPwd,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.inviteWithPwd, hcClient);
     }
 
     /**
@@ -2190,7 +2147,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryWebinarsRequest 请求对象
+     * @param request ListHistoryWebinarsRequest 请求对象
      * @return CompletableFuture<ListHistoryWebinarsResponse>
      */
     public CompletableFuture<ListHistoryWebinarsResponse> listHistoryWebinarsAsync(ListHistoryWebinarsRequest request) {
@@ -2204,13 +2161,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHistoryWebinarsRequest 请求对象
+     * @param request ListHistoryWebinarsRequest 请求对象
      * @return AsyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse>
      */
     public AsyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> listHistoryWebinarsAsyncInvoker(
         ListHistoryWebinarsRequest request) {
-        return new AsyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse>(request,
-            MeetingMeta.listHistoryWebinars, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.listHistoryWebinars, hcClient);
     }
 
     /**
@@ -2220,7 +2176,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOngoingWebinarsRequest 请求对象
+     * @param request ListOngoingWebinarsRequest 请求对象
      * @return CompletableFuture<ListOngoingWebinarsResponse>
      */
     public CompletableFuture<ListOngoingWebinarsResponse> listOngoingWebinarsAsync(ListOngoingWebinarsRequest request) {
@@ -2234,13 +2190,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOngoingWebinarsRequest 请求对象
+     * @param request ListOngoingWebinarsRequest 请求对象
      * @return AsyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse>
      */
     public AsyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> listOngoingWebinarsAsyncInvoker(
         ListOngoingWebinarsRequest request) {
-        return new AsyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse>(request,
-            MeetingMeta.listOngoingWebinars, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.listOngoingWebinars, hcClient);
     }
 
     /**
@@ -2250,7 +2205,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpComingWebinarsRequest 请求对象
+     * @param request ListUpComingWebinarsRequest 请求对象
      * @return CompletableFuture<ListUpComingWebinarsResponse>
      */
     public CompletableFuture<ListUpComingWebinarsResponse> listUpComingWebinarsAsync(
@@ -2265,13 +2220,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUpComingWebinarsRequest 请求对象
+     * @param request ListUpComingWebinarsRequest 请求对象
      * @return AsyncInvoker<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse>
      */
     public AsyncInvoker<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse> listUpComingWebinarsAsyncInvoker(
         ListUpComingWebinarsRequest request) {
-        return new AsyncInvoker<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse>(request,
-            MeetingMeta.listUpComingWebinars, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.listUpComingWebinars, hcClient);
     }
 
     /**
@@ -2281,7 +2235,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LiveRequest 请求对象
+     * @param request LiveRequest 请求对象
      * @return CompletableFuture<LiveResponse>
      */
     public CompletableFuture<LiveResponse> liveAsync(LiveRequest request) {
@@ -2295,11 +2249,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LiveRequest 请求对象
+     * @param request LiveRequest 请求对象
      * @return AsyncInvoker<LiveRequest, LiveResponse>
      */
     public AsyncInvoker<LiveRequest, LiveResponse> liveAsyncInvoker(LiveRequest request) {
-        return new AsyncInvoker<LiveRequest, LiveResponse>(request, MeetingMeta.live, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.live, hcClient);
     }
 
     /**
@@ -2309,7 +2263,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LockMeetingRequest 请求对象
+     * @param request LockMeetingRequest 请求对象
      * @return CompletableFuture<LockMeetingResponse>
      */
     public CompletableFuture<LockMeetingResponse> lockMeetingAsync(LockMeetingRequest request) {
@@ -2323,11 +2277,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LockMeetingRequest 请求对象
+     * @param request LockMeetingRequest 请求对象
      * @return AsyncInvoker<LockMeetingRequest, LockMeetingResponse>
      */
     public AsyncInvoker<LockMeetingRequest, LockMeetingResponse> lockMeetingAsyncInvoker(LockMeetingRequest request) {
-        return new AsyncInvoker<LockMeetingRequest, LockMeetingResponse>(request, MeetingMeta.lockMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.lockMeeting, hcClient);
     }
 
     /**
@@ -2337,7 +2291,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LockViewRequest 请求对象
+     * @param request LockViewRequest 请求对象
      * @return CompletableFuture<LockViewResponse>
      */
     public CompletableFuture<LockViewResponse> lockViewAsync(LockViewRequest request) {
@@ -2351,11 +2305,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LockViewRequest 请求对象
+     * @param request LockViewRequest 请求对象
      * @return AsyncInvoker<LockViewRequest, LockViewResponse>
      */
     public AsyncInvoker<LockViewRequest, LockViewResponse> lockViewAsyncInvoker(LockViewRequest request) {
-        return new AsyncInvoker<LockViewRequest, LockViewResponse>(request, MeetingMeta.lockView, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.lockView, hcClient);
     }
 
     /**
@@ -2365,7 +2319,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MoveToWaitingRoomRequest 请求对象
+     * @param request MoveToWaitingRoomRequest 请求对象
      * @return CompletableFuture<MoveToWaitingRoomResponse>
      */
     public CompletableFuture<MoveToWaitingRoomResponse> moveToWaitingRoomAsync(MoveToWaitingRoomRequest request) {
@@ -2379,13 +2333,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MoveToWaitingRoomRequest 请求对象
+     * @param request MoveToWaitingRoomRequest 请求对象
      * @return AsyncInvoker<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse>
      */
     public AsyncInvoker<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse> moveToWaitingRoomAsyncInvoker(
         MoveToWaitingRoomRequest request) {
-        return new AsyncInvoker<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse>(request,
-            MeetingMeta.moveToWaitingRoom, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.moveToWaitingRoom, hcClient);
     }
 
     /**
@@ -2395,7 +2348,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MuteMeetingRequest 请求对象
+     * @param request MuteMeetingRequest 请求对象
      * @return CompletableFuture<MuteMeetingResponse>
      */
     public CompletableFuture<MuteMeetingResponse> muteMeetingAsync(MuteMeetingRequest request) {
@@ -2409,11 +2362,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MuteMeetingRequest 请求对象
+     * @param request MuteMeetingRequest 请求对象
      * @return AsyncInvoker<MuteMeetingRequest, MuteMeetingResponse>
      */
     public AsyncInvoker<MuteMeetingRequest, MuteMeetingResponse> muteMeetingAsyncInvoker(MuteMeetingRequest request) {
-        return new AsyncInvoker<MuteMeetingRequest, MuteMeetingResponse>(request, MeetingMeta.muteMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.muteMeeting, hcClient);
     }
 
     /**
@@ -2423,7 +2376,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MuteParticipantRequest 请求对象
+     * @param request MuteParticipantRequest 请求对象
      * @return CompletableFuture<MuteParticipantResponse>
      */
     public CompletableFuture<MuteParticipantResponse> muteParticipantAsync(MuteParticipantRequest request) {
@@ -2437,13 +2390,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MuteParticipantRequest 请求对象
+     * @param request MuteParticipantRequest 请求对象
      * @return AsyncInvoker<MuteParticipantRequest, MuteParticipantResponse>
      */
     public AsyncInvoker<MuteParticipantRequest, MuteParticipantResponse> muteParticipantAsyncInvoker(
         MuteParticipantRequest request) {
-        return new AsyncInvoker<MuteParticipantRequest, MuteParticipantResponse>(request, MeetingMeta.muteParticipant,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.muteParticipant, hcClient);
     }
 
     /**
@@ -2453,7 +2405,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ProlongMeetingRequest 请求对象
+     * @param request ProlongMeetingRequest 请求对象
      * @return CompletableFuture<ProlongMeetingResponse>
      */
     public CompletableFuture<ProlongMeetingResponse> prolongMeetingAsync(ProlongMeetingRequest request) {
@@ -2467,13 +2419,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ProlongMeetingRequest 请求对象
+     * @param request ProlongMeetingRequest 请求对象
      * @return AsyncInvoker<ProlongMeetingRequest, ProlongMeetingResponse>
      */
     public AsyncInvoker<ProlongMeetingRequest, ProlongMeetingResponse> prolongMeetingAsyncInvoker(
         ProlongMeetingRequest request) {
-        return new AsyncInvoker<ProlongMeetingRequest, ProlongMeetingResponse>(request, MeetingMeta.prolongMeeting,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.prolongMeeting, hcClient);
     }
 
     /**
@@ -2483,7 +2434,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecordRequest 请求对象
+     * @param request RecordRequest 请求对象
      * @return CompletableFuture<RecordResponse>
      */
     public CompletableFuture<RecordResponse> recordAsync(RecordRequest request) {
@@ -2497,11 +2448,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RecordRequest 请求对象
+     * @param request RecordRequest 请求对象
      * @return AsyncInvoker<RecordRequest, RecordResponse>
      */
     public AsyncInvoker<RecordRequest, RecordResponse> recordAsyncInvoker(RecordRequest request) {
-        return new AsyncInvoker<RecordRequest, RecordResponse>(request, MeetingMeta.record, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.record, hcClient);
     }
 
     /**
@@ -2511,7 +2462,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenameParticipantRequest 请求对象
+     * @param request RenameParticipantRequest 请求对象
      * @return CompletableFuture<RenameParticipantResponse>
      */
     public CompletableFuture<RenameParticipantResponse> renameParticipantAsync(RenameParticipantRequest request) {
@@ -2525,13 +2476,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RenameParticipantRequest 请求对象
+     * @param request RenameParticipantRequest 请求对象
      * @return AsyncInvoker<RenameParticipantRequest, RenameParticipantResponse>
      */
     public AsyncInvoker<RenameParticipantRequest, RenameParticipantResponse> renameParticipantAsyncInvoker(
         RenameParticipantRequest request) {
-        return new AsyncInvoker<RenameParticipantRequest, RenameParticipantResponse>(request,
-            MeetingMeta.renameParticipant, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.renameParticipant, hcClient);
     }
 
     /**
@@ -2541,7 +2491,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetActivecodeRequest 请求对象
+     * @param request ResetActivecodeRequest 请求对象
      * @return CompletableFuture<ResetActivecodeResponse>
      */
     public CompletableFuture<ResetActivecodeResponse> resetActivecodeAsync(ResetActivecodeRequest request) {
@@ -2555,13 +2505,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetActivecodeRequest 请求对象
+     * @param request ResetActivecodeRequest 请求对象
      * @return AsyncInvoker<ResetActivecodeRequest, ResetActivecodeResponse>
      */
     public AsyncInvoker<ResetActivecodeRequest, ResetActivecodeResponse> resetActivecodeAsyncInvoker(
         ResetActivecodeRequest request) {
-        return new AsyncInvoker<ResetActivecodeRequest, ResetActivecodeResponse>(request, MeetingMeta.resetActivecode,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.resetActivecode, hcClient);
     }
 
     /**
@@ -2571,7 +2520,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdRequest 请求对象
+     * @param request ResetPwdRequest 请求对象
      * @return CompletableFuture<ResetPwdResponse>
      */
     public CompletableFuture<ResetPwdResponse> resetPwdAsync(ResetPwdRequest request) {
@@ -2585,11 +2534,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdRequest 请求对象
+     * @param request ResetPwdRequest 请求对象
      * @return AsyncInvoker<ResetPwdRequest, ResetPwdResponse>
      */
     public AsyncInvoker<ResetPwdRequest, ResetPwdResponse> resetPwdAsyncInvoker(ResetPwdRequest request) {
-        return new AsyncInvoker<ResetPwdRequest, ResetPwdResponse>(request, MeetingMeta.resetPwd, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.resetPwd, hcClient);
     }
 
     /**
@@ -2599,7 +2548,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdByAdminRequest 请求对象
+     * @param request ResetPwdByAdminRequest 请求对象
      * @return CompletableFuture<ResetPwdByAdminResponse>
      */
     public CompletableFuture<ResetPwdByAdminResponse> resetPwdByAdminAsync(ResetPwdByAdminRequest request) {
@@ -2613,13 +2562,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPwdByAdminRequest 请求对象
+     * @param request ResetPwdByAdminRequest 请求对象
      * @return AsyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse>
      */
     public AsyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse> resetPwdByAdminAsyncInvoker(
         ResetPwdByAdminRequest request) {
-        return new AsyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse>(request, MeetingMeta.resetPwdByAdmin,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.resetPwdByAdmin, hcClient);
     }
 
     /**
@@ -2629,7 +2577,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetVisionActiveCodeRequest 请求对象
+     * @param request ResetVisionActiveCodeRequest 请求对象
      * @return CompletableFuture<ResetVisionActiveCodeResponse>
      */
     public CompletableFuture<ResetVisionActiveCodeResponse> resetVisionActiveCodeAsync(
@@ -2644,13 +2592,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetVisionActiveCodeRequest 请求对象
+     * @param request ResetVisionActiveCodeRequest 请求对象
      * @return AsyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse>
      */
     public AsyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> resetVisionActiveCodeAsyncInvoker(
         ResetVisionActiveCodeRequest request) {
-        return new AsyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse>(request,
-            MeetingMeta.resetVisionActiveCode, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.resetVisionActiveCode, hcClient);
     }
 
     /**
@@ -2660,7 +2607,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeSimultaneousInterpretationRequest 请求对象
+     * @param request ResumeSimultaneousInterpretationRequest 请求对象
      * @return CompletableFuture<ResumeSimultaneousInterpretationResponse>
      */
     public CompletableFuture<ResumeSimultaneousInterpretationResponse> resumeSimultaneousInterpretationAsync(
@@ -2675,13 +2622,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeSimultaneousInterpretationRequest 请求对象
+     * @param request ResumeSimultaneousInterpretationRequest 请求对象
      * @return AsyncInvoker<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse>
      */
     public AsyncInvoker<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse> resumeSimultaneousInterpretationAsyncInvoker(
         ResumeSimultaneousInterpretationRequest request) {
-        return new AsyncInvoker<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse>(
-            request, MeetingMeta.resumeSimultaneousInterpretation, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.resumeSimultaneousInterpretation, hcClient);
     }
 
     /**
@@ -2691,7 +2637,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollcallParticipantRequest 请求对象
+     * @param request RollcallParticipantRequest 请求对象
      * @return CompletableFuture<RollcallParticipantResponse>
      */
     public CompletableFuture<RollcallParticipantResponse> rollcallParticipantAsync(RollcallParticipantRequest request) {
@@ -2705,13 +2651,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollcallParticipantRequest 请求对象
+     * @param request RollcallParticipantRequest 请求对象
      * @return AsyncInvoker<RollcallParticipantRequest, RollcallParticipantResponse>
      */
     public AsyncInvoker<RollcallParticipantRequest, RollcallParticipantResponse> rollcallParticipantAsyncInvoker(
         RollcallParticipantRequest request) {
-        return new AsyncInvoker<RollcallParticipantRequest, RollcallParticipantResponse>(request,
-            MeetingMeta.rollcallParticipant, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.rollcallParticipant, hcClient);
     }
 
     /**
@@ -2721,7 +2666,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveLayoutRequest 请求对象
+     * @param request SaveLayoutRequest 请求对象
      * @return CompletableFuture<SaveLayoutResponse>
      */
     public CompletableFuture<SaveLayoutResponse> saveLayoutAsync(SaveLayoutRequest request) {
@@ -2735,11 +2680,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SaveLayoutRequest 请求对象
+     * @param request SaveLayoutRequest 请求对象
      * @return AsyncInvoker<SaveLayoutRequest, SaveLayoutResponse>
      */
     public AsyncInvoker<SaveLayoutRequest, SaveLayoutResponse> saveLayoutAsyncInvoker(SaveLayoutRequest request) {
-        return new AsyncInvoker<SaveLayoutRequest, SaveLayoutResponse>(request, MeetingMeta.saveLayout, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.saveLayout, hcClient);
     }
 
     /**
@@ -2749,7 +2694,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchAttendanceRecordsOfHisMeetingRequest 请求对象
+     * @param request SearchAttendanceRecordsOfHisMeetingRequest 请求对象
      * @return CompletableFuture<SearchAttendanceRecordsOfHisMeetingResponse>
      */
     public CompletableFuture<SearchAttendanceRecordsOfHisMeetingResponse> searchAttendanceRecordsOfHisMeetingAsync(
@@ -2764,13 +2709,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchAttendanceRecordsOfHisMeetingRequest 请求对象
+     * @param request SearchAttendanceRecordsOfHisMeetingRequest 请求对象
      * @return AsyncInvoker<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse>
      */
     public AsyncInvoker<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse> searchAttendanceRecordsOfHisMeetingAsyncInvoker(
         SearchAttendanceRecordsOfHisMeetingRequest request) {
-        return new AsyncInvoker<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse>(
-            request, MeetingMeta.searchAttendanceRecordsOfHisMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchAttendanceRecordsOfHisMeeting, hcClient);
     }
 
     /**
@@ -2780,7 +2724,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpRequest 请求对象
+     * @param request SearchCorpRequest 请求对象
      * @return CompletableFuture<SearchCorpResponse>
      */
     public CompletableFuture<SearchCorpResponse> searchCorpAsync(SearchCorpRequest request) {
@@ -2794,11 +2738,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpRequest 请求对象
+     * @param request SearchCorpRequest 请求对象
      * @return AsyncInvoker<SearchCorpRequest, SearchCorpResponse>
      */
     public AsyncInvoker<SearchCorpRequest, SearchCorpResponse> searchCorpAsyncInvoker(SearchCorpRequest request) {
-        return new AsyncInvoker<SearchCorpRequest, SearchCorpResponse>(request, MeetingMeta.searchCorp, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchCorp, hcClient);
     }
 
     /**
@@ -2808,7 +2752,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpAdminsRequest 请求对象
+     * @param request SearchCorpAdminsRequest 请求对象
      * @return CompletableFuture<SearchCorpAdminsResponse>
      */
     public CompletableFuture<SearchCorpAdminsResponse> searchCorpAdminsAsync(SearchCorpAdminsRequest request) {
@@ -2822,13 +2766,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpAdminsRequest 请求对象
+     * @param request SearchCorpAdminsRequest 请求对象
      * @return AsyncInvoker<SearchCorpAdminsRequest, SearchCorpAdminsResponse>
      */
     public AsyncInvoker<SearchCorpAdminsRequest, SearchCorpAdminsResponse> searchCorpAdminsAsyncInvoker(
         SearchCorpAdminsRequest request) {
-        return new AsyncInvoker<SearchCorpAdminsRequest, SearchCorpAdminsResponse>(request,
-            MeetingMeta.searchCorpAdmins, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchCorpAdmins, hcClient);
     }
 
     /**
@@ -2838,7 +2781,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpDirRequest 请求对象
+     * @param request SearchCorpDirRequest 请求对象
      * @return CompletableFuture<SearchCorpDirResponse>
      */
     public CompletableFuture<SearchCorpDirResponse> searchCorpDirAsync(SearchCorpDirRequest request) {
@@ -2852,13 +2795,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpDirRequest 请求对象
+     * @param request SearchCorpDirRequest 请求对象
      * @return AsyncInvoker<SearchCorpDirRequest, SearchCorpDirResponse>
      */
     public AsyncInvoker<SearchCorpDirRequest, SearchCorpDirResponse> searchCorpDirAsyncInvoker(
         SearchCorpDirRequest request) {
-        return new AsyncInvoker<SearchCorpDirRequest, SearchCorpDirResponse>(request, MeetingMeta.searchCorpDir,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchCorpDir, hcClient);
     }
 
     /**
@@ -2868,7 +2810,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpExternalDirRequest 请求对象
+     * @param request SearchCorpExternalDirRequest 请求对象
      * @return CompletableFuture<SearchCorpExternalDirResponse>
      */
     public CompletableFuture<SearchCorpExternalDirResponse> searchCorpExternalDirAsync(
@@ -2883,13 +2825,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpExternalDirRequest 请求对象
+     * @param request SearchCorpExternalDirRequest 请求对象
      * @return AsyncInvoker<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse>
      */
     public AsyncInvoker<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse> searchCorpExternalDirAsyncInvoker(
         SearchCorpExternalDirRequest request) {
-        return new AsyncInvoker<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse>(request,
-            MeetingMeta.searchCorpExternalDir, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchCorpExternalDir, hcClient);
     }
 
     /**
@@ -2899,7 +2840,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpResourcesRequest 请求对象
+     * @param request SearchCorpResourcesRequest 请求对象
      * @return CompletableFuture<SearchCorpResourcesResponse>
      */
     public CompletableFuture<SearchCorpResourcesResponse> searchCorpResourcesAsync(SearchCorpResourcesRequest request) {
@@ -2913,13 +2854,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpResourcesRequest 请求对象
+     * @param request SearchCorpResourcesRequest 请求对象
      * @return AsyncInvoker<SearchCorpResourcesRequest, SearchCorpResourcesResponse>
      */
     public AsyncInvoker<SearchCorpResourcesRequest, SearchCorpResourcesResponse> searchCorpResourcesAsyncInvoker(
         SearchCorpResourcesRequest request) {
-        return new AsyncInvoker<SearchCorpResourcesRequest, SearchCorpResourcesResponse>(request,
-            MeetingMeta.searchCorpResources, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchCorpResources, hcClient);
     }
 
     /**
@@ -2929,7 +2869,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpVmrRequest 请求对象
+     * @param request SearchCorpVmrRequest 请求对象
      * @return CompletableFuture<SearchCorpVmrResponse>
      */
     public CompletableFuture<SearchCorpVmrResponse> searchCorpVmrAsync(SearchCorpVmrRequest request) {
@@ -2943,13 +2883,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCorpVmrRequest 请求对象
+     * @param request SearchCorpVmrRequest 请求对象
      * @return AsyncInvoker<SearchCorpVmrRequest, SearchCorpVmrResponse>
      */
     public AsyncInvoker<SearchCorpVmrRequest, SearchCorpVmrResponse> searchCorpVmrAsyncInvoker(
         SearchCorpVmrRequest request) {
-        return new AsyncInvoker<SearchCorpVmrRequest, SearchCorpVmrResponse>(request, MeetingMeta.searchCorpVmr,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchCorpVmr, hcClient);
     }
 
     /**
@@ -2959,7 +2898,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCtlRecordsOfHisMeetingRequest 请求对象
+     * @param request SearchCtlRecordsOfHisMeetingRequest 请求对象
      * @return CompletableFuture<SearchCtlRecordsOfHisMeetingResponse>
      */
     public CompletableFuture<SearchCtlRecordsOfHisMeetingResponse> searchCtlRecordsOfHisMeetingAsync(
@@ -2974,13 +2913,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchCtlRecordsOfHisMeetingRequest 请求对象
+     * @param request SearchCtlRecordsOfHisMeetingRequest 请求对象
      * @return AsyncInvoker<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse>
      */
     public AsyncInvoker<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse> searchCtlRecordsOfHisMeetingAsyncInvoker(
         SearchCtlRecordsOfHisMeetingRequest request) {
-        return new AsyncInvoker<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse>(request,
-            MeetingMeta.searchCtlRecordsOfHisMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchCtlRecordsOfHisMeeting, hcClient);
     }
 
     /**
@@ -2990,7 +2928,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchDepartmentByNameRequest 请求对象
+     * @param request SearchDepartmentByNameRequest 请求对象
      * @return CompletableFuture<SearchDepartmentByNameResponse>
      */
     public CompletableFuture<SearchDepartmentByNameResponse> searchDepartmentByNameAsync(
@@ -3005,13 +2943,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchDepartmentByNameRequest 请求对象
+     * @param request SearchDepartmentByNameRequest 请求对象
      * @return AsyncInvoker<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse>
      */
     public AsyncInvoker<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse> searchDepartmentByNameAsyncInvoker(
         SearchDepartmentByNameRequest request) {
-        return new AsyncInvoker<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse>(request,
-            MeetingMeta.searchDepartmentByName, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchDepartmentByName, hcClient);
     }
 
     /**
@@ -3022,7 +2959,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchDevicesRequest 请求对象
+     * @param request SearchDevicesRequest 请求对象
      * @return CompletableFuture<SearchDevicesResponse>
      */
     public CompletableFuture<SearchDevicesResponse> searchDevicesAsync(SearchDevicesRequest request) {
@@ -3037,13 +2974,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchDevicesRequest 请求对象
+     * @param request SearchDevicesRequest 请求对象
      * @return AsyncInvoker<SearchDevicesRequest, SearchDevicesResponse>
      */
     public AsyncInvoker<SearchDevicesRequest, SearchDevicesResponse> searchDevicesAsyncInvoker(
         SearchDevicesRequest request) {
-        return new AsyncInvoker<SearchDevicesRequest, SearchDevicesResponse>(request, MeetingMeta.searchDevices,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchDevices, hcClient);
     }
 
     /**
@@ -3056,7 +2992,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchHisMeetingsRequest 请求对象
+     * @param request SearchHisMeetingsRequest 请求对象
      * @return CompletableFuture<SearchHisMeetingsResponse>
      */
     public CompletableFuture<SearchHisMeetingsResponse> searchHisMeetingsAsync(SearchHisMeetingsRequest request) {
@@ -3073,13 +3009,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchHisMeetingsRequest 请求对象
+     * @param request SearchHisMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchHisMeetingsRequest, SearchHisMeetingsResponse>
      */
     public AsyncInvoker<SearchHisMeetingsRequest, SearchHisMeetingsResponse> searchHisMeetingsAsyncInvoker(
         SearchHisMeetingsRequest request) {
-        return new AsyncInvoker<SearchHisMeetingsRequest, SearchHisMeetingsResponse>(request,
-            MeetingMeta.searchHisMeetings, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchHisMeetings, hcClient);
     }
 
     /**
@@ -3089,7 +3024,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMaterialsRequest 请求对象
+     * @param request SearchMaterialsRequest 请求对象
      * @return CompletableFuture<SearchMaterialsResponse>
      */
     public CompletableFuture<SearchMaterialsResponse> searchMaterialsAsync(SearchMaterialsRequest request) {
@@ -3103,13 +3038,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMaterialsRequest 请求对象
+     * @param request SearchMaterialsRequest 请求对象
      * @return AsyncInvoker<SearchMaterialsRequest, SearchMaterialsResponse>
      */
     public AsyncInvoker<SearchMaterialsRequest, SearchMaterialsResponse> searchMaterialsAsyncInvoker(
         SearchMaterialsRequest request) {
-        return new AsyncInvoker<SearchMaterialsRequest, SearchMaterialsResponse>(request, MeetingMeta.searchMaterials,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchMaterials, hcClient);
     }
 
     /**
@@ -3119,7 +3053,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMeetingFileListRequest 请求对象
+     * @param request SearchMeetingFileListRequest 请求对象
      * @return CompletableFuture<SearchMeetingFileListResponse>
      */
     public CompletableFuture<SearchMeetingFileListResponse> searchMeetingFileListAsync(
@@ -3134,13 +3068,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMeetingFileListRequest 请求对象
+     * @param request SearchMeetingFileListRequest 请求对象
      * @return AsyncInvoker<SearchMeetingFileListRequest, SearchMeetingFileListResponse>
      */
     public AsyncInvoker<SearchMeetingFileListRequest, SearchMeetingFileListResponse> searchMeetingFileListAsyncInvoker(
         SearchMeetingFileListRequest request) {
-        return new AsyncInvoker<SearchMeetingFileListRequest, SearchMeetingFileListResponse>(request,
-            MeetingMeta.searchMeetingFileList, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchMeetingFileList, hcClient);
     }
 
     /**
@@ -3152,7 +3085,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMeetingsRequest 请求对象
+     * @param request SearchMeetingsRequest 请求对象
      * @return CompletableFuture<SearchMeetingsResponse>
      */
     public CompletableFuture<SearchMeetingsResponse> searchMeetingsAsync(SearchMeetingsRequest request) {
@@ -3168,13 +3101,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMeetingsRequest 请求对象
+     * @param request SearchMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchMeetingsRequest, SearchMeetingsResponse>
      */
     public AsyncInvoker<SearchMeetingsRequest, SearchMeetingsResponse> searchMeetingsAsyncInvoker(
         SearchMeetingsRequest request) {
-        return new AsyncInvoker<SearchMeetingsRequest, SearchMeetingsResponse>(request, MeetingMeta.searchMeetings,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchMeetings, hcClient);
     }
 
     /**
@@ -3184,7 +3116,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMemberVmrRequest 请求对象
+     * @param request SearchMemberVmrRequest 请求对象
      * @return CompletableFuture<SearchMemberVmrResponse>
      */
     public CompletableFuture<SearchMemberVmrResponse> searchMemberVmrAsync(SearchMemberVmrRequest request) {
@@ -3198,13 +3130,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchMemberVmrRequest 请求对象
+     * @param request SearchMemberVmrRequest 请求对象
      * @return AsyncInvoker<SearchMemberVmrRequest, SearchMemberVmrResponse>
      */
     public AsyncInvoker<SearchMemberVmrRequest, SearchMemberVmrResponse> searchMemberVmrAsyncInvoker(
         SearchMemberVmrRequest request) {
-        return new AsyncInvoker<SearchMemberVmrRequest, SearchMemberVmrResponse>(request, MeetingMeta.searchMemberVmr,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchMemberVmr, hcClient);
     }
 
     /**
@@ -3214,7 +3145,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchOnlineMeetingsRequest 请求对象
+     * @param request SearchOnlineMeetingsRequest 请求对象
      * @return CompletableFuture<SearchOnlineMeetingsResponse>
      */
     public CompletableFuture<SearchOnlineMeetingsResponse> searchOnlineMeetingsAsync(
@@ -3229,13 +3160,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchOnlineMeetingsRequest 请求对象
+     * @param request SearchOnlineMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse>
      */
     public AsyncInvoker<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> searchOnlineMeetingsAsyncInvoker(
         SearchOnlineMeetingsRequest request) {
-        return new AsyncInvoker<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse>(request,
-            MeetingMeta.searchOnlineMeetings, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchOnlineMeetings, hcClient);
     }
 
     /**
@@ -3245,7 +3175,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchProgramsRequest 请求对象
+     * @param request SearchProgramsRequest 请求对象
      * @return CompletableFuture<SearchProgramsResponse>
      */
     public CompletableFuture<SearchProgramsResponse> searchProgramsAsync(SearchProgramsRequest request) {
@@ -3259,13 +3189,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchProgramsRequest 请求对象
+     * @param request SearchProgramsRequest 请求对象
      * @return AsyncInvoker<SearchProgramsRequest, SearchProgramsResponse>
      */
     public AsyncInvoker<SearchProgramsRequest, SearchProgramsResponse> searchProgramsAsyncInvoker(
         SearchProgramsRequest request) {
-        return new AsyncInvoker<SearchProgramsRequest, SearchProgramsResponse>(request, MeetingMeta.searchPrograms,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchPrograms, hcClient);
     }
 
     /**
@@ -3275,7 +3204,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchPublicationsRequest 请求对象
+     * @param request SearchPublicationsRequest 请求对象
      * @return CompletableFuture<SearchPublicationsResponse>
      */
     public CompletableFuture<SearchPublicationsResponse> searchPublicationsAsync(SearchPublicationsRequest request) {
@@ -3289,13 +3218,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchPublicationsRequest 请求对象
+     * @param request SearchPublicationsRequest 请求对象
      * @return AsyncInvoker<SearchPublicationsRequest, SearchPublicationsResponse>
      */
     public AsyncInvoker<SearchPublicationsRequest, SearchPublicationsResponse> searchPublicationsAsyncInvoker(
         SearchPublicationsRequest request) {
-        return new AsyncInvoker<SearchPublicationsRequest, SearchPublicationsResponse>(request,
-            MeetingMeta.searchPublications, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchPublications, hcClient);
     }
 
     /**
@@ -3305,7 +3233,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchRecordingsRequest 请求对象
+     * @param request SearchRecordingsRequest 请求对象
      * @return CompletableFuture<SearchRecordingsResponse>
      */
     public CompletableFuture<SearchRecordingsResponse> searchRecordingsAsync(SearchRecordingsRequest request) {
@@ -3319,13 +3247,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchRecordingsRequest 请求对象
+     * @param request SearchRecordingsRequest 请求对象
      * @return AsyncInvoker<SearchRecordingsRequest, SearchRecordingsResponse>
      */
     public AsyncInvoker<SearchRecordingsRequest, SearchRecordingsResponse> searchRecordingsAsyncInvoker(
         SearchRecordingsRequest request) {
-        return new AsyncInvoker<SearchRecordingsRequest, SearchRecordingsResponse>(request,
-            MeetingMeta.searchRecordings, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchRecordings, hcClient);
     }
 
     /**
@@ -3335,7 +3262,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceRequest 请求对象
+     * @param request SearchResourceRequest 请求对象
      * @return CompletableFuture<SearchResourceResponse>
      */
     public CompletableFuture<SearchResourceResponse> searchResourceAsync(SearchResourceRequest request) {
@@ -3349,13 +3276,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceRequest 请求对象
+     * @param request SearchResourceRequest 请求对象
      * @return AsyncInvoker<SearchResourceRequest, SearchResourceResponse>
      */
     public AsyncInvoker<SearchResourceRequest, SearchResourceResponse> searchResourceAsyncInvoker(
         SearchResourceRequest request) {
-        return new AsyncInvoker<SearchResourceRequest, SearchResourceResponse>(request, MeetingMeta.searchResource,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchResource, hcClient);
     }
 
     /**
@@ -3365,7 +3291,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceOpRecordRequest 请求对象
+     * @param request SearchResourceOpRecordRequest 请求对象
      * @return CompletableFuture<SearchResourceOpRecordResponse>
      */
     public CompletableFuture<SearchResourceOpRecordResponse> searchResourceOpRecordAsync(
@@ -3380,13 +3306,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceOpRecordRequest 请求对象
+     * @param request SearchResourceOpRecordRequest 请求对象
      * @return AsyncInvoker<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse>
      */
     public AsyncInvoker<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse> searchResourceOpRecordAsyncInvoker(
         SearchResourceOpRecordRequest request) {
-        return new AsyncInvoker<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse>(request,
-            MeetingMeta.searchResourceOpRecord, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchResourceOpRecord, hcClient);
     }
 
     /**
@@ -3396,7 +3321,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchUsersRequest 请求对象
+     * @param request SearchUsersRequest 请求对象
      * @return CompletableFuture<SearchUsersResponse>
      */
     public CompletableFuture<SearchUsersResponse> searchUsersAsync(SearchUsersRequest request) {
@@ -3410,11 +3335,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchUsersRequest 请求对象
+     * @param request SearchUsersRequest 请求对象
      * @return AsyncInvoker<SearchUsersRequest, SearchUsersResponse>
      */
     public AsyncInvoker<SearchUsersRequest, SearchUsersResponse> searchUsersAsyncInvoker(SearchUsersRequest request) {
-        return new AsyncInvoker<SearchUsersRequest, SearchUsersResponse>(request, MeetingMeta.searchUsers, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchUsers, hcClient);
     }
 
     /**
@@ -3424,7 +3349,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchVisionActiveCodeRequest 请求对象
+     * @param request SearchVisionActiveCodeRequest 请求对象
      * @return CompletableFuture<SearchVisionActiveCodeResponse>
      */
     public CompletableFuture<SearchVisionActiveCodeResponse> searchVisionActiveCodeAsync(
@@ -3439,13 +3364,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchVisionActiveCodeRequest 请求对象
+     * @param request SearchVisionActiveCodeRequest 请求对象
      * @return AsyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse>
      */
     public AsyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> searchVisionActiveCodeAsyncInvoker(
         SearchVisionActiveCodeRequest request) {
-        return new AsyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse>(request,
-            MeetingMeta.searchVisionActiveCode, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchVisionActiveCode, hcClient);
     }
 
     /**
@@ -3455,7 +3379,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSlideVerifyCodeRequest 请求对象
+     * @param request SendSlideVerifyCodeRequest 请求对象
      * @return CompletableFuture<SendSlideVerifyCodeResponse>
      */
     public CompletableFuture<SendSlideVerifyCodeResponse> sendSlideVerifyCodeAsync(SendSlideVerifyCodeRequest request) {
@@ -3469,13 +3393,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendSlideVerifyCodeRequest 请求对象
+     * @param request SendSlideVerifyCodeRequest 请求对象
      * @return AsyncInvoker<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse>
      */
     public AsyncInvoker<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse> sendSlideVerifyCodeAsyncInvoker(
         SendSlideVerifyCodeRequest request) {
-        return new AsyncInvoker<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse>(request,
-            MeetingMeta.sendSlideVerifyCode, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.sendSlideVerifyCode, hcClient);
     }
 
     /**
@@ -3485,7 +3408,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVeriCodeForChangePwdRequest 请求对象
+     * @param request SendVeriCodeForChangePwdRequest 请求对象
      * @return CompletableFuture<SendVeriCodeForChangePwdResponse>
      */
     public CompletableFuture<SendVeriCodeForChangePwdResponse> sendVeriCodeForChangePwdAsync(
@@ -3500,13 +3423,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVeriCodeForChangePwdRequest 请求对象
+     * @param request SendVeriCodeForChangePwdRequest 请求对象
      * @return AsyncInvoker<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse>
      */
     public AsyncInvoker<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse> sendVeriCodeForChangePwdAsyncInvoker(
         SendVeriCodeForChangePwdRequest request) {
-        return new AsyncInvoker<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse>(request,
-            MeetingMeta.sendVeriCodeForChangePwd, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.sendVeriCodeForChangePwd, hcClient);
     }
 
     /**
@@ -3516,7 +3438,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVeriCodeForUpdateUserInfoRequest 请求对象
+     * @param request SendVeriCodeForUpdateUserInfoRequest 请求对象
      * @return CompletableFuture<SendVeriCodeForUpdateUserInfoResponse>
      */
     public CompletableFuture<SendVeriCodeForUpdateUserInfoResponse> sendVeriCodeForUpdateUserInfoAsync(
@@ -3531,13 +3453,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendVeriCodeForUpdateUserInfoRequest 请求对象
+     * @param request SendVeriCodeForUpdateUserInfoRequest 请求对象
      * @return AsyncInvoker<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse>
      */
     public AsyncInvoker<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse> sendVeriCodeForUpdateUserInfoAsyncInvoker(
         SendVeriCodeForUpdateUserInfoRequest request) {
-        return new AsyncInvoker<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse>(request,
-            MeetingMeta.sendVeriCodeForUpdateUserInfo, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.sendVeriCodeForUpdateUserInfo, hcClient);
     }
 
     /**
@@ -3547,7 +3468,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetAttendeeLanChannelRequest 请求对象
+     * @param request SetAttendeeLanChannelRequest 请求对象
      * @return CompletableFuture<SetAttendeeLanChannelResponse>
      */
     public CompletableFuture<SetAttendeeLanChannelResponse> setAttendeeLanChannelAsync(
@@ -3562,13 +3483,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetAttendeeLanChannelRequest 请求对象
+     * @param request SetAttendeeLanChannelRequest 请求对象
      * @return AsyncInvoker<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse>
      */
     public AsyncInvoker<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse> setAttendeeLanChannelAsyncInvoker(
         SetAttendeeLanChannelRequest request) {
-        return new AsyncInvoker<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse>(request,
-            MeetingMeta.setAttendeeLanChannel, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setAttendeeLanChannel, hcClient);
     }
 
     /**
@@ -3578,7 +3498,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetCohostRequest 请求对象
+     * @param request SetCohostRequest 请求对象
      * @return CompletableFuture<SetCohostResponse>
      */
     public CompletableFuture<SetCohostResponse> setCohostAsync(SetCohostRequest request) {
@@ -3592,11 +3512,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetCohostRequest 请求对象
+     * @param request SetCohostRequest 请求对象
      * @return AsyncInvoker<SetCohostRequest, SetCohostResponse>
      */
     public AsyncInvoker<SetCohostRequest, SetCohostResponse> setCohostAsyncInvoker(SetCohostRequest request) {
-        return new AsyncInvoker<SetCohostRequest, SetCohostResponse>(request, MeetingMeta.setCohost, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setCohost, hcClient);
     }
 
     /**
@@ -3606,7 +3526,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetCustomMultiPictureRequest 请求对象
+     * @param request SetCustomMultiPictureRequest 请求对象
      * @return CompletableFuture<SetCustomMultiPictureResponse>
      */
     public CompletableFuture<SetCustomMultiPictureResponse> setCustomMultiPictureAsync(
@@ -3621,13 +3541,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetCustomMultiPictureRequest 请求对象
+     * @param request SetCustomMultiPictureRequest 请求对象
      * @return AsyncInvoker<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse>
      */
     public AsyncInvoker<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> setCustomMultiPictureAsyncInvoker(
         SetCustomMultiPictureRequest request) {
-        return new AsyncInvoker<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse>(request,
-            MeetingMeta.setCustomMultiPicture, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setCustomMultiPicture, hcClient);
     }
 
     /**
@@ -3637,7 +3556,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetHostViewRequest 请求对象
+     * @param request SetHostViewRequest 请求对象
      * @return CompletableFuture<SetHostViewResponse>
      */
     public CompletableFuture<SetHostViewResponse> setHostViewAsync(SetHostViewRequest request) {
@@ -3651,11 +3570,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetHostViewRequest 请求对象
+     * @param request SetHostViewRequest 请求对象
      * @return AsyncInvoker<SetHostViewRequest, SetHostViewResponse>
      */
     public AsyncInvoker<SetHostViewRequest, SetHostViewResponse> setHostViewAsyncInvoker(SetHostViewRequest request) {
-        return new AsyncInvoker<SetHostViewRequest, SetHostViewResponse>(request, MeetingMeta.setHostView, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setHostView, hcClient);
     }
 
     /**
@@ -3665,7 +3584,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetInterpreterGroupRequest 请求对象
+     * @param request SetInterpreterGroupRequest 请求对象
      * @return CompletableFuture<SetInterpreterGroupResponse>
      */
     public CompletableFuture<SetInterpreterGroupResponse> setInterpreterGroupAsync(SetInterpreterGroupRequest request) {
@@ -3679,13 +3598,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetInterpreterGroupRequest 请求对象
+     * @param request SetInterpreterGroupRequest 请求对象
      * @return AsyncInvoker<SetInterpreterGroupRequest, SetInterpreterGroupResponse>
      */
     public AsyncInvoker<SetInterpreterGroupRequest, SetInterpreterGroupResponse> setInterpreterGroupAsyncInvoker(
         SetInterpreterGroupRequest request) {
-        return new AsyncInvoker<SetInterpreterGroupRequest, SetInterpreterGroupResponse>(request,
-            MeetingMeta.setInterpreterGroup, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setInterpreterGroup, hcClient);
     }
 
     /**
@@ -3695,7 +3613,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetMultiPictureRequest 请求对象
+     * @param request SetMultiPictureRequest 请求对象
      * @return CompletableFuture<SetMultiPictureResponse>
      */
     public CompletableFuture<SetMultiPictureResponse> setMultiPictureAsync(SetMultiPictureRequest request) {
@@ -3709,13 +3627,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetMultiPictureRequest 请求对象
+     * @param request SetMultiPictureRequest 请求对象
      * @return AsyncInvoker<SetMultiPictureRequest, SetMultiPictureResponse>
      */
     public AsyncInvoker<SetMultiPictureRequest, SetMultiPictureResponse> setMultiPictureAsyncInvoker(
         SetMultiPictureRequest request) {
-        return new AsyncInvoker<SetMultiPictureRequest, SetMultiPictureResponse>(request, MeetingMeta.setMultiPicture,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setMultiPicture, hcClient);
     }
 
     /**
@@ -3725,7 +3642,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetParticipantViewRequest 请求对象
+     * @param request SetParticipantViewRequest 请求对象
      * @return CompletableFuture<SetParticipantViewResponse>
      */
     public CompletableFuture<SetParticipantViewResponse> setParticipantViewAsync(SetParticipantViewRequest request) {
@@ -3739,13 +3656,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetParticipantViewRequest 请求对象
+     * @param request SetParticipantViewRequest 请求对象
      * @return AsyncInvoker<SetParticipantViewRequest, SetParticipantViewResponse>
      */
     public AsyncInvoker<SetParticipantViewRequest, SetParticipantViewResponse> setParticipantViewAsyncInvoker(
         SetParticipantViewRequest request) {
-        return new AsyncInvoker<SetParticipantViewRequest, SetParticipantViewResponse>(request,
-            MeetingMeta.setParticipantView, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setParticipantView, hcClient);
     }
 
     /**
@@ -3755,7 +3671,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRoleRequest 请求对象
+     * @param request SetRoleRequest 请求对象
      * @return CompletableFuture<SetRoleResponse>
      */
     public CompletableFuture<SetRoleResponse> setRoleAsync(SetRoleRequest request) {
@@ -3769,11 +3685,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetRoleRequest 请求对象
+     * @param request SetRoleRequest 请求对象
      * @return AsyncInvoker<SetRoleRequest, SetRoleResponse>
      */
     public AsyncInvoker<SetRoleRequest, SetRoleResponse> setRoleAsyncInvoker(SetRoleRequest request) {
-        return new AsyncInvoker<SetRoleRequest, SetRoleResponse>(request, MeetingMeta.setRole, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setRole, hcClient);
     }
 
     /**
@@ -3783,7 +3699,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetSsoConfigRequest 请求对象
+     * @param request SetSsoConfigRequest 请求对象
      * @return CompletableFuture<SetSsoConfigResponse>
      */
     public CompletableFuture<SetSsoConfigResponse> setSsoConfigAsync(SetSsoConfigRequest request) {
@@ -3797,12 +3713,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetSsoConfigRequest 请求对象
+     * @param request SetSsoConfigRequest 请求对象
      * @return AsyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse>
      */
     public AsyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse> setSsoConfigAsyncInvoker(
         SetSsoConfigRequest request) {
-        return new AsyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse>(request, MeetingMeta.setSsoConfig, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setSsoConfig, hcClient);
     }
 
     /**
@@ -3812,7 +3728,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetWebHookConfigRequest 请求对象
+     * @param request SetWebHookConfigRequest 请求对象
      * @return CompletableFuture<SetWebHookConfigResponse>
      */
     public CompletableFuture<SetWebHookConfigResponse> setWebHookConfigAsync(SetWebHookConfigRequest request) {
@@ -3826,13 +3742,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetWebHookConfigRequest 请求对象
+     * @param request SetWebHookConfigRequest 请求对象
      * @return AsyncInvoker<SetWebHookConfigRequest, SetWebHookConfigResponse>
      */
     public AsyncInvoker<SetWebHookConfigRequest, SetWebHookConfigResponse> setWebHookConfigAsyncInvoker(
         SetWebHookConfigRequest request) {
-        return new AsyncInvoker<SetWebHookConfigRequest, SetWebHookConfigResponse>(request,
-            MeetingMeta.setWebHookConfig, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setWebHookConfig, hcClient);
     }
 
     /**
@@ -3842,7 +3757,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfOrgRequest 请求对象
+     * @param request ShowConfOrgRequest 请求对象
      * @return CompletableFuture<ShowConfOrgResponse>
      */
     public CompletableFuture<ShowConfOrgResponse> showConfOrgAsync(ShowConfOrgRequest request) {
@@ -3856,11 +3771,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfOrgRequest 请求对象
+     * @param request ShowConfOrgRequest 请求对象
      * @return AsyncInvoker<ShowConfOrgRequest, ShowConfOrgResponse>
      */
     public AsyncInvoker<ShowConfOrgRequest, ShowConfOrgResponse> showConfOrgAsyncInvoker(ShowConfOrgRequest request) {
-        return new AsyncInvoker<ShowConfOrgRequest, ShowConfOrgResponse>(request, MeetingMeta.showConfOrg, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showConfOrg, hcClient);
     }
 
     /**
@@ -3870,7 +3785,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpRequest 请求对象
+     * @param request ShowCorpRequest 请求对象
      * @return CompletableFuture<ShowCorpResponse>
      */
     public CompletableFuture<ShowCorpResponse> showCorpAsync(ShowCorpRequest request) {
@@ -3884,11 +3799,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpRequest 请求对象
+     * @param request ShowCorpRequest 请求对象
      * @return AsyncInvoker<ShowCorpRequest, ShowCorpResponse>
      */
     public AsyncInvoker<ShowCorpRequest, ShowCorpResponse> showCorpAsyncInvoker(ShowCorpRequest request) {
-        return new AsyncInvoker<ShowCorpRequest, ShowCorpResponse>(request, MeetingMeta.showCorp, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showCorp, hcClient);
     }
 
     /**
@@ -3898,7 +3813,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpAdminRequest 请求对象
+     * @param request ShowCorpAdminRequest 请求对象
      * @return CompletableFuture<ShowCorpAdminResponse>
      */
     public CompletableFuture<ShowCorpAdminResponse> showCorpAdminAsync(ShowCorpAdminRequest request) {
@@ -3912,13 +3827,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpAdminRequest 请求对象
+     * @param request ShowCorpAdminRequest 请求对象
      * @return AsyncInvoker<ShowCorpAdminRequest, ShowCorpAdminResponse>
      */
     public AsyncInvoker<ShowCorpAdminRequest, ShowCorpAdminResponse> showCorpAdminAsyncInvoker(
         ShowCorpAdminRequest request) {
-        return new AsyncInvoker<ShowCorpAdminRequest, ShowCorpAdminResponse>(request, MeetingMeta.showCorpAdmin,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showCorpAdmin, hcClient);
     }
 
     /**
@@ -3928,7 +3842,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpBasicInfoRequest 请求对象
+     * @param request ShowCorpBasicInfoRequest 请求对象
      * @return CompletableFuture<ShowCorpBasicInfoResponse>
      */
     public CompletableFuture<ShowCorpBasicInfoResponse> showCorpBasicInfoAsync(ShowCorpBasicInfoRequest request) {
@@ -3942,13 +3856,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpBasicInfoRequest 请求对象
+     * @param request ShowCorpBasicInfoRequest 请求对象
      * @return AsyncInvoker<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse>
      */
     public AsyncInvoker<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse> showCorpBasicInfoAsyncInvoker(
         ShowCorpBasicInfoRequest request) {
-        return new AsyncInvoker<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse>(request,
-            MeetingMeta.showCorpBasicInfo, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showCorpBasicInfo, hcClient);
     }
 
     /**
@@ -3958,7 +3871,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpResourceRequest 请求对象
+     * @param request ShowCorpResourceRequest 请求对象
      * @return CompletableFuture<ShowCorpResourceResponse>
      */
     public CompletableFuture<ShowCorpResourceResponse> showCorpResourceAsync(ShowCorpResourceRequest request) {
@@ -3972,13 +3885,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCorpResourceRequest 请求对象
+     * @param request ShowCorpResourceRequest 请求对象
      * @return AsyncInvoker<ShowCorpResourceRequest, ShowCorpResourceResponse>
      */
     public AsyncInvoker<ShowCorpResourceRequest, ShowCorpResourceResponse> showCorpResourceAsyncInvoker(
         ShowCorpResourceRequest request) {
-        return new AsyncInvoker<ShowCorpResourceRequest, ShowCorpResourceResponse>(request,
-            MeetingMeta.showCorpResource, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showCorpResource, hcClient);
     }
 
     /**
@@ -3988,7 +3900,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDepartmentRequest 请求对象
+     * @param request ShowDepartmentRequest 请求对象
      * @return CompletableFuture<ShowDepartmentResponse>
      */
     public CompletableFuture<ShowDepartmentResponse> showDepartmentAsync(ShowDepartmentRequest request) {
@@ -4002,13 +3914,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDepartmentRequest 请求对象
+     * @param request ShowDepartmentRequest 请求对象
      * @return AsyncInvoker<ShowDepartmentRequest, ShowDepartmentResponse>
      */
     public AsyncInvoker<ShowDepartmentRequest, ShowDepartmentResponse> showDepartmentAsyncInvoker(
         ShowDepartmentRequest request) {
-        return new AsyncInvoker<ShowDepartmentRequest, ShowDepartmentResponse>(request, MeetingMeta.showDepartment,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showDepartment, hcClient);
     }
 
     /**
@@ -4018,7 +3929,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeptAndChildDeptRequest 请求对象
+     * @param request ShowDeptAndChildDeptRequest 请求对象
      * @return CompletableFuture<ShowDeptAndChildDeptResponse>
      */
     public CompletableFuture<ShowDeptAndChildDeptResponse> showDeptAndChildDeptAsync(
@@ -4033,13 +3944,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeptAndChildDeptRequest 请求对象
+     * @param request ShowDeptAndChildDeptRequest 请求对象
      * @return AsyncInvoker<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse>
      */
     public AsyncInvoker<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse> showDeptAndChildDeptAsyncInvoker(
         ShowDeptAndChildDeptRequest request) {
-        return new AsyncInvoker<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse>(request,
-            MeetingMeta.showDeptAndChildDept, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showDeptAndChildDept, hcClient);
     }
 
     /**
@@ -4050,7 +3960,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceDetailRequest 请求对象
+     * @param request ShowDeviceDetailRequest 请求对象
      * @return CompletableFuture<ShowDeviceDetailResponse>
      */
     public CompletableFuture<ShowDeviceDetailResponse> showDeviceDetailAsync(ShowDeviceDetailRequest request) {
@@ -4065,13 +3975,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceDetailRequest 请求对象
+     * @param request ShowDeviceDetailRequest 请求对象
      * @return AsyncInvoker<ShowDeviceDetailRequest, ShowDeviceDetailResponse>
      */
     public AsyncInvoker<ShowDeviceDetailRequest, ShowDeviceDetailResponse> showDeviceDetailAsyncInvoker(
         ShowDeviceDetailRequest request) {
-        return new AsyncInvoker<ShowDeviceDetailRequest, ShowDeviceDetailResponse>(request,
-            MeetingMeta.showDeviceDetail, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showDeviceDetail, hcClient);
     }
 
     /**
@@ -4082,7 +3991,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceStatusRequest 请求对象
+     * @param request ShowDeviceStatusRequest 请求对象
      * @return CompletableFuture<ShowDeviceStatusResponse>
      */
     public CompletableFuture<ShowDeviceStatusResponse> showDeviceStatusAsync(ShowDeviceStatusRequest request) {
@@ -4097,13 +4006,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceStatusRequest 请求对象
+     * @param request ShowDeviceStatusRequest 请求对象
      * @return AsyncInvoker<ShowDeviceStatusRequest, ShowDeviceStatusResponse>
      */
     public AsyncInvoker<ShowDeviceStatusRequest, ShowDeviceStatusResponse> showDeviceStatusAsyncInvoker(
         ShowDeviceStatusRequest request) {
-        return new AsyncInvoker<ShowDeviceStatusRequest, ShowDeviceStatusResponse>(request,
-            MeetingMeta.showDeviceStatus, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showDeviceStatus, hcClient);
     }
 
     /**
@@ -4113,7 +4021,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceTypesRequest 请求对象
+     * @param request ShowDeviceTypesRequest 请求对象
      * @return CompletableFuture<ShowDeviceTypesResponse>
      */
     public CompletableFuture<ShowDeviceTypesResponse> showDeviceTypesAsync(ShowDeviceTypesRequest request) {
@@ -4127,13 +4035,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDeviceTypesRequest 请求对象
+     * @param request ShowDeviceTypesRequest 请求对象
      * @return AsyncInvoker<ShowDeviceTypesRequest, ShowDeviceTypesResponse>
      */
     public AsyncInvoker<ShowDeviceTypesRequest, ShowDeviceTypesResponse> showDeviceTypesAsyncInvoker(
         ShowDeviceTypesRequest request) {
-        return new AsyncInvoker<ShowDeviceTypesRequest, ShowDeviceTypesResponse>(request, MeetingMeta.showDeviceTypes,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showDeviceTypes, hcClient);
     }
 
     /**
@@ -4143,7 +4050,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHisMeetingDetailRequest 请求对象
+     * @param request ShowHisMeetingDetailRequest 请求对象
      * @return CompletableFuture<ShowHisMeetingDetailResponse>
      */
     public CompletableFuture<ShowHisMeetingDetailResponse> showHisMeetingDetailAsync(
@@ -4158,13 +4065,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHisMeetingDetailRequest 请求对象
+     * @param request ShowHisMeetingDetailRequest 请求对象
      * @return AsyncInvoker<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse>
      */
     public AsyncInvoker<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse> showHisMeetingDetailAsyncInvoker(
         ShowHisMeetingDetailRequest request) {
-        return new AsyncInvoker<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse>(request,
-            MeetingMeta.showHisMeetingDetail, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showHisMeetingDetail, hcClient);
     }
 
     /**
@@ -4174,7 +4080,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLayoutRequest 请求对象
+     * @param request ShowLayoutRequest 请求对象
      * @return CompletableFuture<ShowLayoutResponse>
      */
     public CompletableFuture<ShowLayoutResponse> showLayoutAsync(ShowLayoutRequest request) {
@@ -4188,11 +4094,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowLayoutRequest 请求对象
+     * @param request ShowLayoutRequest 请求对象
      * @return AsyncInvoker<ShowLayoutRequest, ShowLayoutResponse>
      */
     public AsyncInvoker<ShowLayoutRequest, ShowLayoutResponse> showLayoutAsyncInvoker(ShowLayoutRequest request) {
-        return new AsyncInvoker<ShowLayoutRequest, ShowLayoutResponse>(request, MeetingMeta.showLayout, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showLayout, hcClient);
     }
 
     /**
@@ -4204,7 +4110,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingDetailRequest 请求对象
+     * @param request ShowMeetingDetailRequest 请求对象
      * @return CompletableFuture<ShowMeetingDetailResponse>
      */
     public CompletableFuture<ShowMeetingDetailResponse> showMeetingDetailAsync(ShowMeetingDetailRequest request) {
@@ -4220,13 +4126,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingDetailRequest 请求对象
+     * @param request ShowMeetingDetailRequest 请求对象
      * @return AsyncInvoker<ShowMeetingDetailRequest, ShowMeetingDetailResponse>
      */
     public AsyncInvoker<ShowMeetingDetailRequest, ShowMeetingDetailResponse> showMeetingDetailAsyncInvoker(
         ShowMeetingDetailRequest request) {
-        return new AsyncInvoker<ShowMeetingDetailRequest, ShowMeetingDetailResponse>(request,
-            MeetingMeta.showMeetingDetail, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showMeetingDetail, hcClient);
     }
 
     /**
@@ -4236,7 +4141,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingFileRequest 请求对象
+     * @param request ShowMeetingFileRequest 请求对象
      * @return CompletableFuture<ShowMeetingFileResponse>
      */
     public CompletableFuture<ShowMeetingFileResponse> showMeetingFileAsync(ShowMeetingFileRequest request) {
@@ -4250,13 +4155,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingFileRequest 请求对象
+     * @param request ShowMeetingFileRequest 请求对象
      * @return AsyncInvoker<ShowMeetingFileRequest, ShowMeetingFileResponse>
      */
     public AsyncInvoker<ShowMeetingFileRequest, ShowMeetingFileResponse> showMeetingFileAsyncInvoker(
         ShowMeetingFileRequest request) {
-        return new AsyncInvoker<ShowMeetingFileRequest, ShowMeetingFileResponse>(request, MeetingMeta.showMeetingFile,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showMeetingFile, hcClient);
     }
 
     /**
@@ -4266,7 +4170,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingFileListRequest 请求对象
+     * @param request ShowMeetingFileListRequest 请求对象
      * @return CompletableFuture<ShowMeetingFileListResponse>
      */
     public CompletableFuture<ShowMeetingFileListResponse> showMeetingFileListAsync(ShowMeetingFileListRequest request) {
@@ -4280,13 +4184,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMeetingFileListRequest 请求对象
+     * @param request ShowMeetingFileListRequest 请求对象
      * @return AsyncInvoker<ShowMeetingFileListRequest, ShowMeetingFileListResponse>
      */
     public AsyncInvoker<ShowMeetingFileListRequest, ShowMeetingFileListResponse> showMeetingFileListAsyncInvoker(
         ShowMeetingFileListRequest request) {
-        return new AsyncInvoker<ShowMeetingFileListRequest, ShowMeetingFileListResponse>(request,
-            MeetingMeta.showMeetingFileList, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showMeetingFileList, hcClient);
     }
 
     /**
@@ -4296,7 +4199,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMyInfoRequest 请求对象
+     * @param request ShowMyInfoRequest 请求对象
      * @return CompletableFuture<ShowMyInfoResponse>
      */
     public CompletableFuture<ShowMyInfoResponse> showMyInfoAsync(ShowMyInfoRequest request) {
@@ -4310,11 +4213,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMyInfoRequest 请求对象
+     * @param request ShowMyInfoRequest 请求对象
      * @return AsyncInvoker<ShowMyInfoRequest, ShowMyInfoResponse>
      */
     public AsyncInvoker<ShowMyInfoRequest, ShowMyInfoResponse> showMyInfoAsyncInvoker(ShowMyInfoRequest request) {
-        return new AsyncInvoker<ShowMyInfoRequest, ShowMyInfoResponse>(request, MeetingMeta.showMyInfo, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showMyInfo, hcClient);
     }
 
     /**
@@ -4324,7 +4227,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOnlineMeetingDetailRequest 请求对象
+     * @param request ShowOnlineMeetingDetailRequest 请求对象
      * @return CompletableFuture<ShowOnlineMeetingDetailResponse>
      */
     public CompletableFuture<ShowOnlineMeetingDetailResponse> showOnlineMeetingDetailAsync(
@@ -4339,13 +4242,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOnlineMeetingDetailRequest 请求对象
+     * @param request ShowOnlineMeetingDetailRequest 请求对象
      * @return AsyncInvoker<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse>
      */
     public AsyncInvoker<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse> showOnlineMeetingDetailAsyncInvoker(
         ShowOnlineMeetingDetailRequest request) {
-        return new AsyncInvoker<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse>(request,
-            MeetingMeta.showOnlineMeetingDetail, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showOnlineMeetingDetail, hcClient);
     }
 
     /**
@@ -4355,7 +4257,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrgResRequest 请求对象
+     * @param request ShowOrgResRequest 请求对象
      * @return CompletableFuture<ShowOrgResResponse>
      */
     public CompletableFuture<ShowOrgResResponse> showOrgResAsync(ShowOrgResRequest request) {
@@ -4369,11 +4271,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrgResRequest 请求对象
+     * @param request ShowOrgResRequest 请求对象
      * @return AsyncInvoker<ShowOrgResRequest, ShowOrgResResponse>
      */
     public AsyncInvoker<ShowOrgResRequest, ShowOrgResResponse> showOrgResAsyncInvoker(ShowOrgResRequest request) {
-        return new AsyncInvoker<ShowOrgResRequest, ShowOrgResResponse>(request, MeetingMeta.showOrgRes, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showOrgRes, hcClient);
     }
 
     /**
@@ -4383,7 +4285,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProgramRequest 请求对象
+     * @param request ShowProgramRequest 请求对象
      * @return CompletableFuture<ShowProgramResponse>
      */
     public CompletableFuture<ShowProgramResponse> showProgramAsync(ShowProgramRequest request) {
@@ -4397,11 +4299,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowProgramRequest 请求对象
+     * @param request ShowProgramRequest 请求对象
      * @return AsyncInvoker<ShowProgramRequest, ShowProgramResponse>
      */
     public AsyncInvoker<ShowProgramRequest, ShowProgramResponse> showProgramAsyncInvoker(ShowProgramRequest request) {
-        return new AsyncInvoker<ShowProgramRequest, ShowProgramResponse>(request, MeetingMeta.showProgram, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showProgram, hcClient);
     }
 
     /**
@@ -4411,7 +4313,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicationRequest 请求对象
+     * @param request ShowPublicationRequest 请求对象
      * @return CompletableFuture<ShowPublicationResponse>
      */
     public CompletableFuture<ShowPublicationResponse> showPublicationAsync(ShowPublicationRequest request) {
@@ -4425,13 +4327,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPublicationRequest 请求对象
+     * @param request ShowPublicationRequest 请求对象
      * @return AsyncInvoker<ShowPublicationRequest, ShowPublicationResponse>
      */
     public AsyncInvoker<ShowPublicationRequest, ShowPublicationResponse> showPublicationAsyncInvoker(
         ShowPublicationRequest request) {
-        return new AsyncInvoker<ShowPublicationRequest, ShowPublicationResponse>(request, MeetingMeta.showPublication,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showPublication, hcClient);
     }
 
     /**
@@ -4441,7 +4342,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealTimeInfoOfMeetingRequest 请求对象
+     * @param request ShowRealTimeInfoOfMeetingRequest 请求对象
      * @return CompletableFuture<ShowRealTimeInfoOfMeetingResponse>
      */
     public CompletableFuture<ShowRealTimeInfoOfMeetingResponse> showRealTimeInfoOfMeetingAsync(
@@ -4456,13 +4357,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRealTimeInfoOfMeetingRequest 请求对象
+     * @param request ShowRealTimeInfoOfMeetingRequest 请求对象
      * @return AsyncInvoker<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse>
      */
     public AsyncInvoker<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse> showRealTimeInfoOfMeetingAsyncInvoker(
         ShowRealTimeInfoOfMeetingRequest request) {
-        return new AsyncInvoker<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse>(request,
-            MeetingMeta.showRealTimeInfoOfMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showRealTimeInfoOfMeeting, hcClient);
     }
 
     /**
@@ -4472,7 +4372,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordingDetailRequest 请求对象
+     * @param request ShowRecordingDetailRequest 请求对象
      * @return CompletableFuture<ShowRecordingDetailResponse>
      */
     public CompletableFuture<ShowRecordingDetailResponse> showRecordingDetailAsync(ShowRecordingDetailRequest request) {
@@ -4486,13 +4386,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordingDetailRequest 请求对象
+     * @param request ShowRecordingDetailRequest 请求对象
      * @return AsyncInvoker<ShowRecordingDetailRequest, ShowRecordingDetailResponse>
      */
     public AsyncInvoker<ShowRecordingDetailRequest, ShowRecordingDetailResponse> showRecordingDetailAsyncInvoker(
         ShowRecordingDetailRequest request) {
-        return new AsyncInvoker<ShowRecordingDetailRequest, ShowRecordingDetailResponse>(request,
-            MeetingMeta.showRecordingDetail, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showRecordingDetail, hcClient);
     }
 
     /**
@@ -4504,7 +4403,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordingFileDownloadUrlsRequest 请求对象
+     * @param request ShowRecordingFileDownloadUrlsRequest 请求对象
      * @return CompletableFuture<ShowRecordingFileDownloadUrlsResponse>
      */
     public CompletableFuture<ShowRecordingFileDownloadUrlsResponse> showRecordingFileDownloadUrlsAsync(
@@ -4521,13 +4420,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordingFileDownloadUrlsRequest 请求对象
+     * @param request ShowRecordingFileDownloadUrlsRequest 请求对象
      * @return AsyncInvoker<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse>
      */
     public AsyncInvoker<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse> showRecordingFileDownloadUrlsAsyncInvoker(
         ShowRecordingFileDownloadUrlsRequest request) {
-        return new AsyncInvoker<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse>(request,
-            MeetingMeta.showRecordingFileDownloadUrls, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showRecordingFileDownloadUrls, hcClient);
     }
 
     /**
@@ -4537,7 +4435,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRegionInfoOfMeetingRequest 请求对象
+     * @param request ShowRegionInfoOfMeetingRequest 请求对象
      * @return CompletableFuture<ShowRegionInfoOfMeetingResponse>
      */
     public CompletableFuture<ShowRegionInfoOfMeetingResponse> showRegionInfoOfMeetingAsync(
@@ -4552,13 +4450,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRegionInfoOfMeetingRequest 请求对象
+     * @param request ShowRegionInfoOfMeetingRequest 请求对象
      * @return AsyncInvoker<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse>
      */
     public AsyncInvoker<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse> showRegionInfoOfMeetingAsyncInvoker(
         ShowRegionInfoOfMeetingRequest request) {
-        return new AsyncInvoker<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse>(request,
-            MeetingMeta.showRegionInfoOfMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showRegionInfoOfMeeting, hcClient);
     }
 
     /**
@@ -4568,7 +4465,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRoomSettingRequest 请求对象
+     * @param request ShowRoomSettingRequest 请求对象
      * @return CompletableFuture<ShowRoomSettingResponse>
      */
     public CompletableFuture<ShowRoomSettingResponse> showRoomSettingAsync(ShowRoomSettingRequest request) {
@@ -4582,13 +4479,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRoomSettingRequest 请求对象
+     * @param request ShowRoomSettingRequest 请求对象
      * @return AsyncInvoker<ShowRoomSettingRequest, ShowRoomSettingResponse>
      */
     public AsyncInvoker<ShowRoomSettingRequest, ShowRoomSettingResponse> showRoomSettingAsyncInvoker(
         ShowRoomSettingRequest request) {
-        return new AsyncInvoker<ShowRoomSettingRequest, ShowRoomSettingResponse>(request, MeetingMeta.showRoomSetting,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showRoomSetting, hcClient);
     }
 
     /**
@@ -4598,7 +4494,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpResRequest 请求对象
+     * @param request ShowSpResRequest 请求对象
      * @return CompletableFuture<ShowSpResResponse>
      */
     public CompletableFuture<ShowSpResResponse> showSpResAsync(ShowSpResRequest request) {
@@ -4612,11 +4508,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpResRequest 请求对象
+     * @param request ShowSpResRequest 请求对象
      * @return AsyncInvoker<ShowSpResRequest, ShowSpResResponse>
      */
     public AsyncInvoker<ShowSpResRequest, ShowSpResResponse> showSpResAsyncInvoker(ShowSpResRequest request) {
-        return new AsyncInvoker<ShowSpResRequest, ShowSpResResponse>(request, MeetingMeta.showSpRes, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showSpRes, hcClient);
     }
 
     /**
@@ -4626,7 +4522,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpResourceRequest 请求对象
+     * @param request ShowSpResourceRequest 请求对象
      * @return CompletableFuture<ShowSpResourceResponse>
      */
     public CompletableFuture<ShowSpResourceResponse> showSpResourceAsync(ShowSpResourceRequest request) {
@@ -4640,13 +4536,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSpResourceRequest 请求对象
+     * @param request ShowSpResourceRequest 请求对象
      * @return AsyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>
      */
     public AsyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse> showSpResourceAsyncInvoker(
         ShowSpResourceRequest request) {
-        return new AsyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>(request, MeetingMeta.showSpResource,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showSpResource, hcClient);
     }
 
     /**
@@ -4656,7 +4551,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSsoConfigRequest 请求对象
+     * @param request ShowSsoConfigRequest 请求对象
      * @return CompletableFuture<ShowSsoConfigResponse>
      */
     public CompletableFuture<ShowSsoConfigResponse> showSsoConfigAsync(ShowSsoConfigRequest request) {
@@ -4670,13 +4565,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowSsoConfigRequest 请求对象
+     * @param request ShowSsoConfigRequest 请求对象
      * @return AsyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse>
      */
     public AsyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse> showSsoConfigAsyncInvoker(
         ShowSsoConfigRequest request) {
-        return new AsyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse>(request, MeetingMeta.showSsoConfig,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showSsoConfig, hcClient);
     }
 
     /**
@@ -4686,7 +4580,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserDetailRequest 请求对象
+     * @param request ShowUserDetailRequest 请求对象
      * @return CompletableFuture<ShowUserDetailResponse>
      */
     public CompletableFuture<ShowUserDetailResponse> showUserDetailAsync(ShowUserDetailRequest request) {
@@ -4700,13 +4594,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowUserDetailRequest 请求对象
+     * @param request ShowUserDetailRequest 请求对象
      * @return AsyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse>
      */
     public AsyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse> showUserDetailAsyncInvoker(
         ShowUserDetailRequest request) {
-        return new AsyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse>(request, MeetingMeta.showUserDetail,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showUserDetail, hcClient);
     }
 
     /**
@@ -4716,7 +4609,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWebHookConfigRequest 请求对象
+     * @param request ShowWebHookConfigRequest 请求对象
      * @return CompletableFuture<ShowWebHookConfigResponse>
      */
     public CompletableFuture<ShowWebHookConfigResponse> showWebHookConfigAsync(ShowWebHookConfigRequest request) {
@@ -4730,13 +4623,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWebHookConfigRequest 请求对象
+     * @param request ShowWebHookConfigRequest 请求对象
      * @return AsyncInvoker<ShowWebHookConfigRequest, ShowWebHookConfigResponse>
      */
     public AsyncInvoker<ShowWebHookConfigRequest, ShowWebHookConfigResponse> showWebHookConfigAsyncInvoker(
         ShowWebHookConfigRequest request) {
-        return new AsyncInvoker<ShowWebHookConfigRequest, ShowWebHookConfigResponse>(request,
-            MeetingMeta.showWebHookConfig, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showWebHookConfig, hcClient);
     }
 
     /**
@@ -4746,7 +4638,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWebinarRequest 请求对象
+     * @param request ShowWebinarRequest 请求对象
      * @return CompletableFuture<ShowWebinarResponse>
      */
     public CompletableFuture<ShowWebinarResponse> showWebinarAsync(ShowWebinarRequest request) {
@@ -4760,11 +4652,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowWebinarRequest 请求对象
+     * @param request ShowWebinarRequest 请求对象
      * @return AsyncInvoker<ShowWebinarRequest, ShowWebinarResponse>
      */
     public AsyncInvoker<ShowWebinarRequest, ShowWebinarResponse> showWebinarAsyncInvoker(ShowWebinarRequest request) {
-        return new AsyncInvoker<ShowWebinarRequest, ShowWebinarResponse>(request, MeetingMeta.showWebinar, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showWebinar, hcClient);
     }
 
     /**
@@ -4775,7 +4667,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartMeetingRequest 请求对象
+     * @param request StartMeetingRequest 请求对象
      * @return CompletableFuture<StartMeetingResponse>
      */
     public CompletableFuture<StartMeetingResponse> startMeetingAsync(StartMeetingRequest request) {
@@ -4790,12 +4682,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartMeetingRequest 请求对象
+     * @param request StartMeetingRequest 请求对象
      * @return AsyncInvoker<StartMeetingRequest, StartMeetingResponse>
      */
     public AsyncInvoker<StartMeetingRequest, StartMeetingResponse> startMeetingAsyncInvoker(
         StartMeetingRequest request) {
-        return new AsyncInvoker<StartMeetingRequest, StartMeetingResponse>(request, MeetingMeta.startMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.startMeeting, hcClient);
     }
 
     /**
@@ -4807,7 +4699,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopMeetingRequest 请求对象
+     * @param request StopMeetingRequest 请求对象
      * @return CompletableFuture<StopMeetingResponse>
      */
     public CompletableFuture<StopMeetingResponse> stopMeetingAsync(StopMeetingRequest request) {
@@ -4823,11 +4715,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopMeetingRequest 请求对象
+     * @param request StopMeetingRequest 请求对象
      * @return AsyncInvoker<StopMeetingRequest, StopMeetingResponse>
      */
     public AsyncInvoker<StopMeetingRequest, StopMeetingResponse> stopMeetingAsyncInvoker(StopMeetingRequest request) {
-        return new AsyncInvoker<StopMeetingRequest, StopMeetingResponse>(request, MeetingMeta.stopMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.stopMeeting, hcClient);
     }
 
     /**
@@ -4837,7 +4729,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchModeRequest 请求对象
+     * @param request SwitchModeRequest 请求对象
      * @return CompletableFuture<SwitchModeResponse>
      */
     public CompletableFuture<SwitchModeResponse> switchModeAsync(SwitchModeRequest request) {
@@ -4851,11 +4743,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SwitchModeRequest 请求对象
+     * @param request SwitchModeRequest 请求对象
      * @return AsyncInvoker<SwitchModeRequest, SwitchModeResponse>
      */
     public AsyncInvoker<SwitchModeRequest, SwitchModeResponse> switchModeAsyncInvoker(SwitchModeRequest request) {
-        return new AsyncInvoker<SwitchModeRequest, SwitchModeResponse>(request, MeetingMeta.switchMode, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.switchMode, hcClient);
     }
 
     /**
@@ -4865,7 +4757,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateContactRequest 请求对象
+     * @param request UpdateContactRequest 请求对象
      * @return CompletableFuture<UpdateContactResponse>
      */
     public CompletableFuture<UpdateContactResponse> updateContactAsync(UpdateContactRequest request) {
@@ -4879,13 +4771,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateContactRequest 请求对象
+     * @param request UpdateContactRequest 请求对象
      * @return AsyncInvoker<UpdateContactRequest, UpdateContactResponse>
      */
     public AsyncInvoker<UpdateContactRequest, UpdateContactResponse> updateContactAsyncInvoker(
         UpdateContactRequest request) {
-        return new AsyncInvoker<UpdateContactRequest, UpdateContactResponse>(request, MeetingMeta.updateContact,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateContact, hcClient);
     }
 
     /**
@@ -4895,7 +4786,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCorpRequest 请求对象
+     * @param request UpdateCorpRequest 请求对象
      * @return CompletableFuture<UpdateCorpResponse>
      */
     public CompletableFuture<UpdateCorpResponse> updateCorpAsync(UpdateCorpRequest request) {
@@ -4909,11 +4800,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCorpRequest 请求对象
+     * @param request UpdateCorpRequest 请求对象
      * @return AsyncInvoker<UpdateCorpRequest, UpdateCorpResponse>
      */
     public AsyncInvoker<UpdateCorpRequest, UpdateCorpResponse> updateCorpAsyncInvoker(UpdateCorpRequest request) {
-        return new AsyncInvoker<UpdateCorpRequest, UpdateCorpResponse>(request, MeetingMeta.updateCorp, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateCorp, hcClient);
     }
 
     /**
@@ -4923,7 +4814,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCorpBasicInfoRequest 请求对象
+     * @param request UpdateCorpBasicInfoRequest 请求对象
      * @return CompletableFuture<UpdateCorpBasicInfoResponse>
      */
     public CompletableFuture<UpdateCorpBasicInfoResponse> updateCorpBasicInfoAsync(UpdateCorpBasicInfoRequest request) {
@@ -4937,13 +4828,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCorpBasicInfoRequest 请求对象
+     * @param request UpdateCorpBasicInfoRequest 请求对象
      * @return AsyncInvoker<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse>
      */
     public AsyncInvoker<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse> updateCorpBasicInfoAsyncInvoker(
         UpdateCorpBasicInfoRequest request) {
-        return new AsyncInvoker<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse>(request,
-            MeetingMeta.updateCorpBasicInfo, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateCorpBasicInfo, hcClient);
     }
 
     /**
@@ -4953,7 +4843,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDepartmentRequest 请求对象
+     * @param request UpdateDepartmentRequest 请求对象
      * @return CompletableFuture<UpdateDepartmentResponse>
      */
     public CompletableFuture<UpdateDepartmentResponse> updateDepartmentAsync(UpdateDepartmentRequest request) {
@@ -4967,13 +4857,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDepartmentRequest 请求对象
+     * @param request UpdateDepartmentRequest 请求对象
      * @return AsyncInvoker<UpdateDepartmentRequest, UpdateDepartmentResponse>
      */
     public AsyncInvoker<UpdateDepartmentRequest, UpdateDepartmentResponse> updateDepartmentAsyncInvoker(
         UpdateDepartmentRequest request) {
-        return new AsyncInvoker<UpdateDepartmentRequest, UpdateDepartmentResponse>(request,
-            MeetingMeta.updateDepartment, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateDepartment, hcClient);
     }
 
     /**
@@ -4984,7 +4873,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceRequest 请求对象
+     * @param request UpdateDeviceRequest 请求对象
      * @return CompletableFuture<UpdateDeviceResponse>
      */
     public CompletableFuture<UpdateDeviceResponse> updateDeviceAsync(UpdateDeviceRequest request) {
@@ -4999,12 +4888,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDeviceRequest 请求对象
+     * @param request UpdateDeviceRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
      */
     public AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse> updateDeviceAsyncInvoker(
         UpdateDeviceRequest request) {
-        return new AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>(request, MeetingMeta.updateDevice, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateDevice, hcClient);
     }
 
     /**
@@ -5014,7 +4903,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMaterialRequest 请求对象
+     * @param request UpdateMaterialRequest 请求对象
      * @return CompletableFuture<UpdateMaterialResponse>
      */
     public CompletableFuture<UpdateMaterialResponse> updateMaterialAsync(UpdateMaterialRequest request) {
@@ -5028,13 +4917,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMaterialRequest 请求对象
+     * @param request UpdateMaterialRequest 请求对象
      * @return AsyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse>
      */
     public AsyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse> updateMaterialAsyncInvoker(
         UpdateMaterialRequest request) {
-        return new AsyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse>(request, MeetingMeta.updateMaterial,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateMaterial, hcClient);
     }
 
     /**
@@ -5044,7 +4932,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMeetingRequest 请求对象
+     * @param request UpdateMeetingRequest 请求对象
      * @return CompletableFuture<UpdateMeetingResponse>
      */
     public CompletableFuture<UpdateMeetingResponse> updateMeetingAsync(UpdateMeetingRequest request) {
@@ -5058,13 +4946,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMeetingRequest 请求对象
+     * @param request UpdateMeetingRequest 请求对象
      * @return AsyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse>
      */
     public AsyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse> updateMeetingAsyncInvoker(
         UpdateMeetingRequest request) {
-        return new AsyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse>(request, MeetingMeta.updateMeeting,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateMeeting, hcClient);
     }
 
     /**
@@ -5074,7 +4961,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberVmrRequest 请求对象
+     * @param request UpdateMemberVmrRequest 请求对象
      * @return CompletableFuture<UpdateMemberVmrResponse>
      */
     public CompletableFuture<UpdateMemberVmrResponse> updateMemberVmrAsync(UpdateMemberVmrRequest request) {
@@ -5088,13 +4975,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberVmrRequest 请求对象
+     * @param request UpdateMemberVmrRequest 请求对象
      * @return AsyncInvoker<UpdateMemberVmrRequest, UpdateMemberVmrResponse>
      */
     public AsyncInvoker<UpdateMemberVmrRequest, UpdateMemberVmrResponse> updateMemberVmrAsyncInvoker(
         UpdateMemberVmrRequest request) {
-        return new AsyncInvoker<UpdateMemberVmrRequest, UpdateMemberVmrResponse>(request, MeetingMeta.updateMemberVmr,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateMemberVmr, hcClient);
     }
 
     /**
@@ -5104,7 +4990,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMyInfoRequest 请求对象
+     * @param request UpdateMyInfoRequest 请求对象
      * @return CompletableFuture<UpdateMyInfoResponse>
      */
     public CompletableFuture<UpdateMyInfoResponse> updateMyInfoAsync(UpdateMyInfoRequest request) {
@@ -5118,12 +5004,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMyInfoRequest 请求对象
+     * @param request UpdateMyInfoRequest 请求对象
      * @return AsyncInvoker<UpdateMyInfoRequest, UpdateMyInfoResponse>
      */
     public AsyncInvoker<UpdateMyInfoRequest, UpdateMyInfoResponse> updateMyInfoAsyncInvoker(
         UpdateMyInfoRequest request) {
-        return new AsyncInvoker<UpdateMyInfoRequest, UpdateMyInfoResponse>(request, MeetingMeta.updateMyInfo, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateMyInfo, hcClient);
     }
 
     /**
@@ -5133,7 +5019,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProgramRequest 请求对象
+     * @param request UpdateProgramRequest 请求对象
      * @return CompletableFuture<UpdateProgramResponse>
      */
     public CompletableFuture<UpdateProgramResponse> updateProgramAsync(UpdateProgramRequest request) {
@@ -5147,13 +5033,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateProgramRequest 请求对象
+     * @param request UpdateProgramRequest 请求对象
      * @return AsyncInvoker<UpdateProgramRequest, UpdateProgramResponse>
      */
     public AsyncInvoker<UpdateProgramRequest, UpdateProgramResponse> updateProgramAsyncInvoker(
         UpdateProgramRequest request) {
-        return new AsyncInvoker<UpdateProgramRequest, UpdateProgramResponse>(request, MeetingMeta.updateProgram,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateProgram, hcClient);
     }
 
     /**
@@ -5163,7 +5048,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicationRequest 请求对象
+     * @param request UpdatePublicationRequest 请求对象
      * @return CompletableFuture<UpdatePublicationResponse>
      */
     public CompletableFuture<UpdatePublicationResponse> updatePublicationAsync(UpdatePublicationRequest request) {
@@ -5177,13 +5062,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePublicationRequest 请求对象
+     * @param request UpdatePublicationRequest 请求对象
      * @return AsyncInvoker<UpdatePublicationRequest, UpdatePublicationResponse>
      */
     public AsyncInvoker<UpdatePublicationRequest, UpdatePublicationResponse> updatePublicationAsyncInvoker(
         UpdatePublicationRequest request) {
-        return new AsyncInvoker<UpdatePublicationRequest, UpdatePublicationResponse>(request,
-            MeetingMeta.updatePublication, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updatePublication, hcClient);
     }
 
     /**
@@ -5193,7 +5077,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePwdRequest 请求对象
+     * @param request UpdatePwdRequest 请求对象
      * @return CompletableFuture<UpdatePwdResponse>
      */
     public CompletableFuture<UpdatePwdResponse> updatePwdAsync(UpdatePwdRequest request) {
@@ -5207,11 +5091,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePwdRequest 请求对象
+     * @param request UpdatePwdRequest 请求对象
      * @return AsyncInvoker<UpdatePwdRequest, UpdatePwdResponse>
      */
     public AsyncInvoker<UpdatePwdRequest, UpdatePwdResponse> updatePwdAsyncInvoker(UpdatePwdRequest request) {
-        return new AsyncInvoker<UpdatePwdRequest, UpdatePwdResponse>(request, MeetingMeta.updatePwd, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updatePwd, hcClient);
     }
 
     /**
@@ -5221,7 +5105,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecurringMeetingRequest 请求对象
+     * @param request UpdateRecurringMeetingRequest 请求对象
      * @return CompletableFuture<UpdateRecurringMeetingResponse>
      */
     public CompletableFuture<UpdateRecurringMeetingResponse> updateRecurringMeetingAsync(
@@ -5236,13 +5120,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecurringMeetingRequest 请求对象
+     * @param request UpdateRecurringMeetingRequest 请求对象
      * @return AsyncInvoker<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse>
      */
     public AsyncInvoker<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse> updateRecurringMeetingAsyncInvoker(
         UpdateRecurringMeetingRequest request) {
-        return new AsyncInvoker<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse>(request,
-            MeetingMeta.updateRecurringMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateRecurringMeeting, hcClient);
     }
 
     /**
@@ -5252,7 +5135,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecurringSubMeetingRequest 请求对象
+     * @param request UpdateRecurringSubMeetingRequest 请求对象
      * @return CompletableFuture<UpdateRecurringSubMeetingResponse>
      */
     public CompletableFuture<UpdateRecurringSubMeetingResponse> updateRecurringSubMeetingAsync(
@@ -5267,13 +5150,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRecurringSubMeetingRequest 请求对象
+     * @param request UpdateRecurringSubMeetingRequest 请求对象
      * @return AsyncInvoker<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse>
      */
     public AsyncInvoker<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse> updateRecurringSubMeetingAsyncInvoker(
         UpdateRecurringSubMeetingRequest request) {
-        return new AsyncInvoker<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse>(request,
-            MeetingMeta.updateRecurringSubMeeting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateRecurringSubMeeting, hcClient);
     }
 
     /**
@@ -5283,7 +5165,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceRequest 请求对象
+     * @param request UpdateResourceRequest 请求对象
      * @return CompletableFuture<UpdateResourceResponse>
      */
     public CompletableFuture<UpdateResourceResponse> updateResourceAsync(UpdateResourceRequest request) {
@@ -5297,13 +5179,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceRequest 请求对象
+     * @param request UpdateResourceRequest 请求对象
      * @return AsyncInvoker<UpdateResourceRequest, UpdateResourceResponse>
      */
     public AsyncInvoker<UpdateResourceRequest, UpdateResourceResponse> updateResourceAsyncInvoker(
         UpdateResourceRequest request) {
-        return new AsyncInvoker<UpdateResourceRequest, UpdateResourceResponse>(request, MeetingMeta.updateResource,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateResource, hcClient);
     }
 
     /**
@@ -5313,7 +5194,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoomSettingRequest 请求对象
+     * @param request UpdateRoomSettingRequest 请求对象
      * @return CompletableFuture<UpdateRoomSettingResponse>
      */
     public CompletableFuture<UpdateRoomSettingResponse> updateRoomSettingAsync(UpdateRoomSettingRequest request) {
@@ -5327,13 +5208,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRoomSettingRequest 请求对象
+     * @param request UpdateRoomSettingRequest 请求对象
      * @return AsyncInvoker<UpdateRoomSettingRequest, UpdateRoomSettingResponse>
      */
     public AsyncInvoker<UpdateRoomSettingRequest, UpdateRoomSettingResponse> updateRoomSettingAsyncInvoker(
         UpdateRoomSettingRequest request) {
-        return new AsyncInvoker<UpdateRoomSettingRequest, UpdateRoomSettingResponse>(request,
-            MeetingMeta.updateRoomSetting, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateRoomSetting, hcClient);
     }
 
     /**
@@ -5343,7 +5223,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStartedConfConfigRequest 请求对象
+     * @param request UpdateStartedConfConfigRequest 请求对象
      * @return CompletableFuture<UpdateStartedConfConfigResponse>
      */
     public CompletableFuture<UpdateStartedConfConfigResponse> updateStartedConfConfigAsync(
@@ -5358,13 +5238,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStartedConfConfigRequest 请求对象
+     * @param request UpdateStartedConfConfigRequest 请求对象
      * @return AsyncInvoker<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse>
      */
     public AsyncInvoker<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> updateStartedConfConfigAsyncInvoker(
         UpdateStartedConfConfigRequest request) {
-        return new AsyncInvoker<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse>(request,
-            MeetingMeta.updateStartedConfConfig, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateStartedConfConfig, hcClient);
     }
 
     /**
@@ -5374,7 +5253,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTokenRequest 请求对象
+     * @param request UpdateTokenRequest 请求对象
      * @return CompletableFuture<UpdateTokenResponse>
      */
     public CompletableFuture<UpdateTokenResponse> updateTokenAsync(UpdateTokenRequest request) {
@@ -5388,11 +5267,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTokenRequest 请求对象
+     * @param request UpdateTokenRequest 请求对象
      * @return AsyncInvoker<UpdateTokenRequest, UpdateTokenResponse>
      */
     public AsyncInvoker<UpdateTokenRequest, UpdateTokenResponse> updateTokenAsyncInvoker(UpdateTokenRequest request) {
-        return new AsyncInvoker<UpdateTokenRequest, UpdateTokenResponse>(request, MeetingMeta.updateToken, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateToken, hcClient);
     }
 
     /**
@@ -5402,7 +5281,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return CompletableFuture<UpdateUserResponse>
      */
     public CompletableFuture<UpdateUserResponse> updateUserAsync(UpdateUserRequest request) {
@@ -5416,11 +5295,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return AsyncInvoker<UpdateUserRequest, UpdateUserResponse>
      */
     public AsyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserAsyncInvoker(UpdateUserRequest request) {
-        return new AsyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, MeetingMeta.updateUser, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateUser, hcClient);
     }
 
     /**
@@ -5430,7 +5309,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWebHookConfigStatusRequest 请求对象
+     * @param request UpdateWebHookConfigStatusRequest 请求对象
      * @return CompletableFuture<UpdateWebHookConfigStatusResponse>
      */
     public CompletableFuture<UpdateWebHookConfigStatusResponse> updateWebHookConfigStatusAsync(
@@ -5445,13 +5324,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWebHookConfigStatusRequest 请求对象
+     * @param request UpdateWebHookConfigStatusRequest 请求对象
      * @return AsyncInvoker<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse>
      */
     public AsyncInvoker<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse> updateWebHookConfigStatusAsyncInvoker(
         UpdateWebHookConfigStatusRequest request) {
-        return new AsyncInvoker<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse>(request,
-            MeetingMeta.updateWebHookConfigStatus, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateWebHookConfigStatus, hcClient);
     }
 
     /**
@@ -5461,7 +5339,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWebinarRequest 请求对象
+     * @param request UpdateWebinarRequest 请求对象
      * @return CompletableFuture<UpdateWebinarResponse>
      */
     public CompletableFuture<UpdateWebinarResponse> updateWebinarAsync(UpdateWebinarRequest request) {
@@ -5475,13 +5353,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWebinarRequest 请求对象
+     * @param request UpdateWebinarRequest 请求对象
      * @return AsyncInvoker<UpdateWebinarRequest, UpdateWebinarResponse>
      */
     public AsyncInvoker<UpdateWebinarRequest, UpdateWebinarResponse> updateWebinarAsyncInvoker(
         UpdateWebinarRequest request) {
-        return new AsyncInvoker<UpdateWebinarRequest, UpdateWebinarResponse>(request, MeetingMeta.updateWebinar,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.updateWebinar, hcClient);
     }
 
     /**
@@ -5491,7 +5368,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFileRequest 请求对象
+     * @param request UploadFileRequest 请求对象
      * @return CompletableFuture<UploadFileResponse>
      */
     public CompletableFuture<UploadFileResponse> uploadFileAsync(UploadFileRequest request) {
@@ -5505,11 +5382,11 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UploadFileRequest 请求对象
+     * @param request UploadFileRequest 请求对象
      * @return AsyncInvoker<UploadFileRequest, UploadFileResponse>
      */
     public AsyncInvoker<UploadFileRequest, UploadFileResponse> uploadFileAsyncInvoker(UploadFileRequest request) {
-        return new AsyncInvoker<UploadFileRequest, UploadFileResponse>(request, MeetingMeta.uploadFile, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.uploadFile, hcClient);
     }
 
     /**
@@ -5520,7 +5397,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosHistoryMeetingsRequest 请求对象
+     * @param request SearchQosHistoryMeetingsRequest 请求对象
      * @return CompletableFuture<SearchQosHistoryMeetingsResponse>
      */
     public CompletableFuture<SearchQosHistoryMeetingsResponse> searchQosHistoryMeetingsAsync(
@@ -5536,13 +5413,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosHistoryMeetingsRequest 请求对象
+     * @param request SearchQosHistoryMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse>
      */
     public AsyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> searchQosHistoryMeetingsAsyncInvoker(
         SearchQosHistoryMeetingsRequest request) {
-        return new AsyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse>(request,
-            MeetingMeta.searchQosHistoryMeetings, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchQosHistoryMeetings, hcClient);
     }
 
     /**
@@ -5553,7 +5429,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosOnlineMeetingsRequest 请求对象
+     * @param request SearchQosOnlineMeetingsRequest 请求对象
      * @return CompletableFuture<SearchQosOnlineMeetingsResponse>
      */
     public CompletableFuture<SearchQosOnlineMeetingsResponse> searchQosOnlineMeetingsAsync(
@@ -5569,13 +5445,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosOnlineMeetingsRequest 请求对象
+     * @param request SearchQosOnlineMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse>
      */
     public AsyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> searchQosOnlineMeetingsAsyncInvoker(
         SearchQosOnlineMeetingsRequest request) {
-        return new AsyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse>(request,
-            MeetingMeta.searchQosOnlineMeetings, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchQosOnlineMeetings, hcClient);
     }
 
     /**
@@ -5586,7 +5461,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosParticipantDetailRequest 请求对象
+     * @param request SearchQosParticipantDetailRequest 请求对象
      * @return CompletableFuture<SearchQosParticipantDetailResponse>
      */
     public CompletableFuture<SearchQosParticipantDetailResponse> searchQosParticipantDetailAsync(
@@ -5602,13 +5477,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosParticipantDetailRequest 请求对象
+     * @param request SearchQosParticipantDetailRequest 请求对象
      * @return AsyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse>
      */
     public AsyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> searchQosParticipantDetailAsyncInvoker(
         SearchQosParticipantDetailRequest request) {
-        return new AsyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse>(request,
-            MeetingMeta.searchQosParticipantDetail, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchQosParticipantDetail, hcClient);
     }
 
     /**
@@ -5619,7 +5493,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosParticipantsRequest 请求对象
+     * @param request SearchQosParticipantsRequest 请求对象
      * @return CompletableFuture<SearchQosParticipantsResponse>
      */
     public CompletableFuture<SearchQosParticipantsResponse> searchQosParticipantsAsync(
@@ -5635,13 +5509,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchQosParticipantsRequest 请求对象
+     * @param request SearchQosParticipantsRequest 请求对象
      * @return AsyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse>
      */
     public AsyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse> searchQosParticipantsAsyncInvoker(
         SearchQosParticipantsRequest request) {
-        return new AsyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse>(request,
-            MeetingMeta.searchQosParticipants, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchQosParticipants, hcClient);
     }
 
     /**
@@ -5652,7 +5525,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetQosThresholdRequest 请求对象
+     * @param request SetQosThresholdRequest 请求对象
      * @return CompletableFuture<SetQosThresholdResponse>
      */
     public CompletableFuture<SetQosThresholdResponse> setQosThresholdAsync(SetQosThresholdRequest request) {
@@ -5667,13 +5540,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetQosThresholdRequest 请求对象
+     * @param request SetQosThresholdRequest 请求对象
      * @return AsyncInvoker<SetQosThresholdRequest, SetQosThresholdResponse>
      */
     public AsyncInvoker<SetQosThresholdRequest, SetQosThresholdResponse> setQosThresholdAsyncInvoker(
         SetQosThresholdRequest request) {
-        return new AsyncInvoker<SetQosThresholdRequest, SetQosThresholdResponse>(request, MeetingMeta.setQosThreshold,
-            hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.setQosThreshold, hcClient);
     }
 
     /**
@@ -5684,7 +5556,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQosThresholdRequest 请求对象
+     * @param request ShowQosThresholdRequest 请求对象
      * @return CompletableFuture<ShowQosThresholdResponse>
      */
     public CompletableFuture<ShowQosThresholdResponse> showQosThresholdAsync(ShowQosThresholdRequest request) {
@@ -5699,13 +5571,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQosThresholdRequest 请求对象
+     * @param request ShowQosThresholdRequest 请求对象
      * @return AsyncInvoker<ShowQosThresholdRequest, ShowQosThresholdResponse>
      */
     public AsyncInvoker<ShowQosThresholdRequest, ShowQosThresholdResponse> showQosThresholdAsyncInvoker(
         ShowQosThresholdRequest request) {
-        return new AsyncInvoker<ShowQosThresholdRequest, ShowQosThresholdResponse>(request,
-            MeetingMeta.showQosThreshold, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.showQosThreshold, hcClient);
     }
 
     /**
@@ -5718,7 +5589,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticConferenceInfoRequest 请求对象
+     * @param request SearchStatisticConferenceInfoRequest 请求对象
      * @return CompletableFuture<SearchStatisticConferenceInfoResponse>
      */
     public CompletableFuture<SearchStatisticConferenceInfoResponse> searchStatisticConferenceInfoAsync(
@@ -5736,13 +5607,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticConferenceInfoRequest 请求对象
+     * @param request SearchStatisticConferenceInfoRequest 请求对象
      * @return AsyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse>
      */
     public AsyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse> searchStatisticConferenceInfoAsyncInvoker(
         SearchStatisticConferenceInfoRequest request) {
-        return new AsyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse>(request,
-            MeetingMeta.searchStatisticConferenceInfo, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchStatisticConferenceInfo, hcClient);
     }
 
     /**
@@ -5756,7 +5626,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticConferenceParticipantRequest 请求对象
+     * @param request SearchStatisticConferenceParticipantRequest 请求对象
      * @return CompletableFuture<SearchStatisticConferenceParticipantResponse>
      */
     public CompletableFuture<SearchStatisticConferenceParticipantResponse> searchStatisticConferenceParticipantAsync(
@@ -5775,13 +5645,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticConferenceParticipantRequest 请求对象
+     * @param request SearchStatisticConferenceParticipantRequest 请求对象
      * @return AsyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse>
      */
     public AsyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse> searchStatisticConferenceParticipantAsyncInvoker(
         SearchStatisticConferenceParticipantRequest request) {
-        return new AsyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse>(
-            request, MeetingMeta.searchStatisticConferenceParticipant, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchStatisticConferenceParticipant, hcClient);
     }
 
     /**
@@ -5793,7 +5662,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticResourceInfoRequest 请求对象
+     * @param request SearchStatisticResourceInfoRequest 请求对象
      * @return CompletableFuture<SearchStatisticResourceInfoResponse>
      */
     public CompletableFuture<SearchStatisticResourceInfoResponse> searchStatisticResourceInfoAsync(
@@ -5810,13 +5679,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticResourceInfoRequest 请求对象
+     * @param request SearchStatisticResourceInfoRequest 请求对象
      * @return AsyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse>
      */
     public AsyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse> searchStatisticResourceInfoAsyncInvoker(
         SearchStatisticResourceInfoRequest request) {
-        return new AsyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse>(request,
-            MeetingMeta.searchStatisticResourceInfo, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchStatisticResourceInfo, hcClient);
     }
 
     /**
@@ -5830,7 +5698,7 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticUserInfoRequest 请求对象
+     * @param request SearchStatisticUserInfoRequest 请求对象
      * @return CompletableFuture<SearchStatisticUserInfoResponse>
      */
     public CompletableFuture<SearchStatisticUserInfoResponse> searchStatisticUserInfoAsync(
@@ -5849,13 +5717,12 @@ public class MeetingAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchStatisticUserInfoRequest 请求对象
+     * @param request SearchStatisticUserInfoRequest 请求对象
      * @return AsyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse>
      */
     public AsyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse> searchStatisticUserInfoAsyncInvoker(
         SearchStatisticUserInfoRequest request) {
-        return new AsyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse>(request,
-            MeetingMeta.searchStatisticUserInfo, hcClient);
+        return new AsyncInvoker<>(request, MeetingMeta.searchStatisticUserInfo, hcClient);
     }
 
 }

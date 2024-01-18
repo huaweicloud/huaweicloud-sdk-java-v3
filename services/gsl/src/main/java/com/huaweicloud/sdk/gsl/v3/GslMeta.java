@@ -93,9 +93,9 @@ import java.util.List;
 public class GslMeta {
 
     public static final HttpRequestDef<BatchSetAttributesRequest, BatchSetAttributesResponse> batchSetAttributes =
-        genForbatchSetAttributes();
+        genForBatchSetAttributes();
 
-    private static HttpRequestDef<BatchSetAttributesRequest, BatchSetAttributesResponse> genForbatchSetAttributes() {
+    private static HttpRequestDef<BatchSetAttributesRequest, BatchSetAttributesResponse> genForBatchSetAttributes() {
         // basic
         HttpRequestDef.Builder<BatchSetAttributesRequest, BatchSetAttributesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSetAttributesRequest.class, BatchSetAttributesResponse.class)
@@ -108,26 +108,22 @@ public class GslMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchSetAttributesReq.class),
-            f -> f.withMarshaller(BatchSetAttributesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchSetAttributesRequest::getBody, BatchSetAttributesRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(BatchSetAttributesResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(BatchSetAttributesResponse::getBody, BatchSetAttributesResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateAttributeRequest, CreateAttributeResponse> createAttribute =
-        genForcreateAttribute();
+        genForCreateAttribute();
 
-    private static HttpRequestDef<CreateAttributeRequest, CreateAttributeResponse> genForcreateAttribute() {
+    private static HttpRequestDef<CreateAttributeRequest, CreateAttributeResponse> genForCreateAttribute() {
         // basic
         HttpRequestDef.Builder<CreateAttributeRequest, CreateAttributeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAttributeRequest.class, CreateAttributeResponse.class)
@@ -140,9 +136,7 @@ public class GslMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddOrModifyAttributeReq.class),
-            f -> f.withMarshaller(CreateAttributeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAttributeRequest::getBody, CreateAttributeRequest::setBody));
 
         // response
 
@@ -150,9 +144,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<DisableAttributeRequest, DisableAttributeResponse> disableAttribute =
-        genFordisableAttribute();
+        genForDisableAttribute();
 
-    private static HttpRequestDef<DisableAttributeRequest, DisableAttributeResponse> genFordisableAttribute() {
+    private static HttpRequestDef<DisableAttributeRequest, DisableAttributeResponse> genForDisableAttribute() {
         // basic
         HttpRequestDef.Builder<DisableAttributeRequest, DisableAttributeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableAttributeRequest.class, DisableAttributeResponse.class)
@@ -165,26 +159,22 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DisableAttributeRequest::getAttributeId, (req, v) -> {
-                req.setAttributeId(v);
-            }));
+            f -> f.withMarshaller(DisableAttributeRequest::getAttributeId, DisableAttributeRequest::setAttributeId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DisableAttributeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DisableAttributeResponse::getBody, DisableAttributeResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<EnableAttributeRequest, EnableAttributeResponse> enableAttribute =
-        genForenableAttribute();
+        genForEnableAttribute();
 
-    private static HttpRequestDef<EnableAttributeRequest, EnableAttributeResponse> genForenableAttribute() {
+    private static HttpRequestDef<EnableAttributeRequest, EnableAttributeResponse> genForEnableAttribute() {
         // basic
         HttpRequestDef.Builder<EnableAttributeRequest, EnableAttributeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableAttributeRequest.class, EnableAttributeResponse.class)
@@ -197,26 +187,22 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(EnableAttributeRequest::getAttributeId, (req, v) -> {
-                req.setAttributeId(v);
-            }));
+            f -> f.withMarshaller(EnableAttributeRequest::getAttributeId, EnableAttributeRequest::setAttributeId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(EnableAttributeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(EnableAttributeResponse::getBody, EnableAttributeResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListAttributesRequest, ListAttributesResponse> listAttributes =
-        genForlistAttributes();
+        genForListAttributes();
 
-    private static HttpRequestDef<ListAttributesRequest, ListAttributesResponse> genForlistAttributes() {
+    private static HttpRequestDef<ListAttributesRequest, ListAttributesResponse> genForListAttributes() {
         // basic
         HttpRequestDef.Builder<ListAttributesRequest, ListAttributesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAttributesRequest.class, ListAttributesResponse.class)
@@ -229,30 +215,22 @@ public class GslMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttributesRequest::getCustAttrName, (req, v) -> {
-                req.setCustAttrName(v);
-            }));
+            f -> f.withMarshaller(ListAttributesRequest::getCustAttrName, ListAttributesRequest::setCustAttrName));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAttributesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAttributesRequest::getLimit, ListAttributesRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAttributesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAttributesRequest::getOffset, ListAttributesRequest::setOffset));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAttributesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAttributesRequest::getStatus, ListAttributesRequest::setStatus));
 
         // response
 
@@ -260,9 +238,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<UpdateAttributeRequest, UpdateAttributeResponse> updateAttribute =
-        genForupdateAttribute();
+        genForUpdateAttribute();
 
-    private static HttpRequestDef<UpdateAttributeRequest, UpdateAttributeResponse> genForupdateAttribute() {
+    private static HttpRequestDef<UpdateAttributeRequest, UpdateAttributeResponse> genForUpdateAttribute() {
         // basic
         HttpRequestDef.Builder<UpdateAttributeRequest, UpdateAttributeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAttributeRequest.class, UpdateAttributeResponse.class)
@@ -275,33 +253,27 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(UpdateAttributeRequest::getAttributeId, (req, v) -> {
-                req.setAttributeId(v);
-            }));
+            f -> f.withMarshaller(UpdateAttributeRequest::getAttributeId, UpdateAttributeRequest::setAttributeId));
         builder.<AddOrModifyAttributeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddOrModifyAttributeReq.class),
-            f -> f.withMarshaller(UpdateAttributeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAttributeRequest::getBody, UpdateAttributeRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateAttributeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateAttributeResponse::getBody, UpdateAttributeResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListBackPoolMembersRequest, ListBackPoolMembersResponse> listBackPoolMembers =
-        genForlistBackPoolMembers();
+        genForListBackPoolMembers();
 
-    private static HttpRequestDef<ListBackPoolMembersRequest, ListBackPoolMembersResponse> genForlistBackPoolMembers() {
+    private static HttpRequestDef<ListBackPoolMembersRequest, ListBackPoolMembersResponse> genForListBackPoolMembers() {
         // basic
         HttpRequestDef.Builder<ListBackPoolMembersRequest, ListBackPoolMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackPoolMembersRequest.class, ListBackPoolMembersResponse.class)
@@ -314,37 +286,29 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackPoolMembersRequest::getBackPoolId, (req, v) -> {
-                req.setBackPoolId(v);
-            }));
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getBackPoolId,
+                ListBackPoolMembersRequest::setBackPoolId));
         builder.<String>withRequestField("cid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackPoolMembersRequest::getCid, (req, v) -> {
-                req.setCid(v);
-            }));
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getCid, ListBackPoolMembersRequest::setCid));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackPoolMembersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getLimit, ListBackPoolMembersRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackPoolMembersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getOffset, ListBackPoolMembersRequest::setOffset));
         builder.<String>withRequestField("billing_cycle",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackPoolMembersRequest::getBillingCycle, (req, v) -> {
-                req.setBillingCycle(v);
-            }));
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getBillingCycle,
+                ListBackPoolMembersRequest::setBillingCycle));
 
         // response
 
@@ -352,9 +316,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<ListBackPoolsRequest, ListBackPoolsResponse> listBackPools =
-        genForlistBackPools();
+        genForListBackPools();
 
-    private static HttpRequestDef<ListBackPoolsRequest, ListBackPoolsResponse> genForlistBackPools() {
+    private static HttpRequestDef<ListBackPoolsRequest, ListBackPoolsResponse> genForListBackPools() {
         // basic
         HttpRequestDef.Builder<ListBackPoolsRequest, ListBackPoolsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackPoolsRequest.class, ListBackPoolsResponse.class)
@@ -367,37 +331,27 @@ public class GslMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackPoolsRequest::getPoolName, (req, v) -> {
-                req.setPoolName(v);
-            }));
+            f -> f.withMarshaller(ListBackPoolsRequest::getPoolName, ListBackPoolsRequest::setPoolName));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackPoolsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackPoolsRequest::getLimit, ListBackPoolsRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackPoolsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBackPoolsRequest::getOffset, ListBackPoolsRequest::setOffset));
         builder.<String>withRequestField("billing_cycle",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackPoolsRequest::getBillingCycle, (req, v) -> {
-                req.setBillingCycle(v);
-            }));
+            f -> f.withMarshaller(ListBackPoolsRequest::getBillingCycle, ListBackPoolsRequest::setBillingCycle));
         builder.<Boolean>withRequestField("all_billing_cycle",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListBackPoolsRequest::getAllBillingCycle, (req, v) -> {
-                req.setAllBillingCycle(v);
-            }));
+            f -> f.withMarshaller(ListBackPoolsRequest::getAllBillingCycle, ListBackPoolsRequest::setAllBillingCycle));
 
         // response
 
@@ -405,9 +359,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<ListProPricePlansRequest, ListProPricePlansResponse> listProPricePlans =
-        genForlistProPricePlans();
+        genForListProPricePlans();
 
-    private static HttpRequestDef<ListProPricePlansRequest, ListProPricePlansResponse> genForlistProPricePlans() {
+    private static HttpRequestDef<ListProPricePlansRequest, ListProPricePlansResponse> genForListProPricePlans() {
         // basic
         HttpRequestDef.Builder<ListProPricePlansRequest, ListProPricePlansResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProPricePlansRequest.class, ListProPricePlansResponse.class)
@@ -420,58 +374,44 @@ public class GslMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProPricePlansRequest::getLimit, ListProPricePlansRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProPricePlansRequest::getOffset, ListProPricePlansRequest::setOffset));
         builder.<String>withRequestField("main_search_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getMainSearchKey, (req, v) -> {
-                req.setMainSearchKey(v);
-            }));
+            f -> f.withMarshaller(ListProPricePlansRequest::getMainSearchKey,
+                ListProPricePlansRequest::setMainSearchKey));
         builder.<Long>withRequestField("flow_total",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getFlowTotal, (req, v) -> {
-                req.setFlowTotal(v);
-            }));
+            f -> f.withMarshaller(ListProPricePlansRequest::getFlowTotal, ListProPricePlansRequest::setFlowTotal));
         builder.<Long>withRequestField("network_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getNetworkType, (req, v) -> {
-                req.setNetworkType(v);
-            }));
+            f -> f.withMarshaller(ListProPricePlansRequest::getNetworkType, ListProPricePlansRequest::setNetworkType));
         builder.<Long>withRequestField("location_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getLocationType, (req, v) -> {
-                req.setLocationType(v);
-            }));
+            f -> f.withMarshaller(ListProPricePlansRequest::getLocationType,
+                ListProPricePlansRequest::setLocationType));
         builder.<Integer>withRequestField("carrier_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getCarrierType, (req, v) -> {
-                req.setCarrierType(v);
-            }));
+            f -> f.withMarshaller(ListProPricePlansRequest::getCarrierType, ListProPricePlansRequest::setCarrierType));
         builder.<Long>withRequestField("country_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getCountryType, (req, v) -> {
-                req.setCountryType(v);
-            }));
+            f -> f.withMarshaller(ListProPricePlansRequest::getCountryType, ListProPricePlansRequest::setCountryType));
 
         // response
 
@@ -479,9 +419,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<DeleteRealNameRequest, DeleteRealNameResponse> deleteRealName =
-        genFordeleteRealName();
+        genForDeleteRealName();
 
-    private static HttpRequestDef<DeleteRealNameRequest, DeleteRealNameResponse> genFordeleteRealName() {
+    private static HttpRequestDef<DeleteRealNameRequest, DeleteRealNameResponse> genForDeleteRealName() {
         // basic
         HttpRequestDef.Builder<DeleteRealNameRequest, DeleteRealNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteRealNameRequest.class, DeleteRealNameResponse.class)
@@ -494,16 +434,12 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteRealNameRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(DeleteRealNameRequest::getSimCardId, DeleteRealNameRequest::setSimCardId));
         builder.<String>withRequestField("iccid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRealNameRequest::getIccid, (req, v) -> {
-                req.setIccid(v);
-            }));
+            f -> f.withMarshaller(DeleteRealNameRequest::getIccid, DeleteRealNameRequest::setIccid));
 
         // response
 
@@ -511,9 +447,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<EnableSimCardRequest, EnableSimCardResponse> enableSimCard =
-        genForenableSimCard();
+        genForEnableSimCard();
 
-    private static HttpRequestDef<EnableSimCardRequest, EnableSimCardResponse> genForenableSimCard() {
+    private static HttpRequestDef<EnableSimCardRequest, EnableSimCardResponse> genForEnableSimCard() {
         // basic
         HttpRequestDef.Builder<EnableSimCardRequest, EnableSimCardResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableSimCardRequest.class, EnableSimCardResponse.class)
@@ -526,25 +462,21 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(EnableSimCardRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(EnableSimCardRequest::getSimCardId, EnableSimCardRequest::setSimCardId));
         builder.<String>withRequestField("iccid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableSimCardRequest::getIccid, (req, v) -> {
-                req.setIccid(v);
-            }));
+            f -> f.withMarshaller(EnableSimCardRequest::getIccid, EnableSimCardRequest::setIccid));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSimCardsRequest, ListSimCardsResponse> listSimCards = genForlistSimCards();
+    public static final HttpRequestDef<ListSimCardsRequest, ListSimCardsResponse> listSimCards = genForListSimCards();
 
-    private static HttpRequestDef<ListSimCardsRequest, ListSimCardsResponse> genForlistSimCards() {
+    private static HttpRequestDef<ListSimCardsRequest, ListSimCardsResponse> genForListSimCards() {
         // basic
         HttpRequestDef.Builder<ListSimCardsRequest, ListSimCardsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSimCardsRequest.class, ListSimCardsResponse.class)
@@ -557,193 +489,148 @@ public class GslMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getMainSearchType, (req, v) -> {
-                req.setMainSearchType(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getMainSearchType, ListSimCardsRequest::setMainSearchType));
         builder.<String>withRequestField("main_search_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getMainSearchKey, (req, v) -> {
-                req.setMainSearchKey(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getMainSearchKey, ListSimCardsRequest::setMainSearchKey));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getLimit, ListSimCardsRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getOffset, ListSimCardsRequest::setOffset));
         builder.<Integer>withRequestField("sim_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getSimStatus, (req, v) -> {
-                req.setSimStatus(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getSimStatus, ListSimCardsRequest::setSimStatus));
         builder.<Integer>withRequestField("device_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getDeviceStatus, (req, v) -> {
-                req.setDeviceStatus(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getDeviceStatus, ListSimCardsRequest::setDeviceStatus));
         builder.<List<Long>>withRequestField("tag_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getTagId, (req, v) -> {
-                req.setTagId(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getTagId, ListSimCardsRequest::setTagId));
         builder.<Integer>withRequestField("sim_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getSimType, (req, v) -> {
-                req.setSimType(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getSimType, ListSimCardsRequest::setSimType));
         builder.<ListSimCardsRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSimCardsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getOrder, ListSimCardsRequest::setOrder));
         builder.<ListSimCardsRequest.SortEnum>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSimCardsRequest.SortEnum.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getSort, ListSimCardsRequest::setSort));
         builder.<String>withRequestField("msisdn",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getMsisdn, (req, v) -> {
-                req.setMsisdn(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getMsisdn, ListSimCardsRequest::setMsisdn));
         builder.<String>withRequestField("customer_attribute1",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute1, (req, v) -> {
-                req.setCustomerAttribute1(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute1,
+                ListSimCardsRequest::setCustomerAttribute1));
         builder.<String>withRequestField("customer_attribute2",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute2, (req, v) -> {
-                req.setCustomerAttribute2(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute2,
+                ListSimCardsRequest::setCustomerAttribute2));
         builder.<String>withRequestField("customer_attribute3",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute3, (req, v) -> {
-                req.setCustomerAttribute3(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute3,
+                ListSimCardsRequest::setCustomerAttribute3));
         builder.<String>withRequestField("customer_attribute4",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute4, (req, v) -> {
-                req.setCustomerAttribute4(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute4,
+                ListSimCardsRequest::setCustomerAttribute4));
         builder.<String>withRequestField("customer_attribute5",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute5, (req, v) -> {
-                req.setCustomerAttribute5(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute5,
+                ListSimCardsRequest::setCustomerAttribute5));
         builder.<String>withRequestField("customer_attribute6",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute6, (req, v) -> {
-                req.setCustomerAttribute6(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getCustomerAttribute6,
+                ListSimCardsRequest::setCustomerAttribute6));
         builder.<Long>withRequestField("min_used_flow",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getMinUsedFlow, (req, v) -> {
-                req.setMinUsedFlow(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getMinUsedFlow, ListSimCardsRequest::setMinUsedFlow));
         builder.<Long>withRequestField("max_used_flow",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getMaxUsedFlow, (req, v) -> {
-                req.setMaxUsedFlow(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getMaxUsedFlow, ListSimCardsRequest::setMaxUsedFlow));
         builder.<Long>withRequestField("min_left_flow",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getMinLeftFlow, (req, v) -> {
-                req.setMinLeftFlow(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getMinLeftFlow, ListSimCardsRequest::setMinLeftFlow));
         builder.<Long>withRequestField("max_left_flow",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getMaxLeftFlow, (req, v) -> {
-                req.setMaxLeftFlow(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getMaxLeftFlow, ListSimCardsRequest::setMaxLeftFlow));
         builder.<Boolean>withRequestField("real_named",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getRealNamed, (req, v) -> {
-                req.setRealNamed(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getRealNamed, ListSimCardsRequest::setRealNamed));
         builder.<Long>withRequestField("order_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getOrderId, ListSimCardsRequest::setOrderId));
         builder.<Boolean>withRequestField("filter_downtime_period",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getFilterDowntimePeriod, (req, v) -> {
-                req.setFilterDowntimePeriod(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getFilterDowntimePeriod,
+                ListSimCardsRequest::setFilterDowntimePeriod));
         builder.<List<Long>>withRequestField("order_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getOrderIds, (req, v) -> {
-                req.setOrderIds(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getOrderIds, ListSimCardsRequest::setOrderIds));
         builder.<List<String>>withRequestField("price_plan_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSimCardsRequest::getPricePlanId, (req, v) -> {
-                req.setPricePlanId(v);
-            }));
+            f -> f.withMarshaller(ListSimCardsRequest::getPricePlanId, ListSimCardsRequest::setPricePlanId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RegisterImeiRequest, RegisterImeiResponse> registerImei = genForregisterImei();
+    public static final HttpRequestDef<RegisterImeiRequest, RegisterImeiResponse> registerImei = genForRegisterImei();
 
-    private static HttpRequestDef<RegisterImeiRequest, RegisterImeiResponse> genForregisterImei() {
+    private static HttpRequestDef<RegisterImeiRequest, RegisterImeiResponse> genForRegisterImei() {
         // basic
         HttpRequestDef.Builder<RegisterImeiRequest, RegisterImeiResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RegisterImeiRequest.class, RegisterImeiResponse.class)
@@ -756,25 +643,21 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(RegisterImeiRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(RegisterImeiRequest::getSimCardId, RegisterImeiRequest::setSimCardId));
         builder.<RegisterImeiReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RegisterImeiReq.class),
-            f -> f.withMarshaller(RegisterImeiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(RegisterImeiRequest::getBody, RegisterImeiRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetSimCardRequest, ResetSimCardResponse> resetSimCard = genForresetSimCard();
+    public static final HttpRequestDef<ResetSimCardRequest, ResetSimCardResponse> resetSimCard = genForResetSimCard();
 
-    private static HttpRequestDef<ResetSimCardRequest, ResetSimCardResponse> genForresetSimCard() {
+    private static HttpRequestDef<ResetSimCardRequest, ResetSimCardResponse> genForResetSimCard() {
         // basic
         HttpRequestDef.Builder<ResetSimCardRequest, ResetSimCardResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetSimCardRequest.class, ResetSimCardResponse.class)
@@ -787,16 +670,12 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ResetSimCardRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(ResetSimCardRequest::getSimCardId, ResetSimCardRequest::setSimCardId));
         builder.<DownUpTimeForSimCardReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DownUpTimeForSimCardReq.class),
-            f -> f.withMarshaller(ResetSimCardRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetSimCardRequest::getBody, ResetSimCardRequest::setBody));
 
         // response
 
@@ -804,9 +683,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<SetExceedCutNetRequest, SetExceedCutNetResponse> setExceedCutNet =
-        genForsetExceedCutNet();
+        genForSetExceedCutNet();
 
-    private static HttpRequestDef<SetExceedCutNetRequest, SetExceedCutNetResponse> genForsetExceedCutNet() {
+    private static HttpRequestDef<SetExceedCutNetRequest, SetExceedCutNetResponse> genForSetExceedCutNet() {
         // basic
         HttpRequestDef.Builder<SetExceedCutNetRequest, SetExceedCutNetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SetExceedCutNetRequest.class, SetExceedCutNetResponse.class)
@@ -819,16 +698,12 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SetExceedCutNetRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(SetExceedCutNetRequest::getSimCardId, SetExceedCutNetRequest::setSimCardId));
         builder.<ExceedCutNetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExceedCutNetReq.class),
-            f -> f.withMarshaller(SetExceedCutNetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetExceedCutNetRequest::getBody, SetExceedCutNetRequest::setBody));
 
         // response
 
@@ -836,9 +711,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<SetSpeedValueRequest, SetSpeedValueResponse> setSpeedValue =
-        genForsetSpeedValue();
+        genForSetSpeedValue();
 
-    private static HttpRequestDef<SetSpeedValueRequest, SetSpeedValueResponse> genForsetSpeedValue() {
+    private static HttpRequestDef<SetSpeedValueRequest, SetSpeedValueResponse> genForSetSpeedValue() {
         // basic
         HttpRequestDef.Builder<SetSpeedValueRequest, SetSpeedValueResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SetSpeedValueRequest.class, SetSpeedValueResponse.class)
@@ -851,16 +726,12 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(SetSpeedValueRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(SetSpeedValueRequest::getSimCardId, SetSpeedValueRequest::setSimCardId));
         builder.<SetSpeedValueReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SetSpeedValueReq.class),
-            f -> f.withMarshaller(SetSpeedValueRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetSpeedValueRequest::getBody, SetSpeedValueRequest::setBody));
 
         // response
 
@@ -868,9 +739,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<ShowMonthUsagesRequest, ShowMonthUsagesResponse> showMonthUsages =
-        genForshowMonthUsages();
+        genForShowMonthUsages();
 
-    private static HttpRequestDef<ShowMonthUsagesRequest, ShowMonthUsagesResponse> genForshowMonthUsages() {
+    private static HttpRequestDef<ShowMonthUsagesRequest, ShowMonthUsagesResponse> genForShowMonthUsages() {
         // basic
         HttpRequestDef.Builder<ShowMonthUsagesRequest, ShowMonthUsagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowMonthUsagesRequest.class, ShowMonthUsagesResponse.class)
@@ -883,9 +754,7 @@ public class GslMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowMonthUsageReq.class),
-            f -> f.withMarshaller(ShowMonthUsagesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowMonthUsagesRequest::getBody, ShowMonthUsagesRequest::setBody));
 
         // response
 
@@ -893,9 +762,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<ShowRealNamedRequest, ShowRealNamedResponse> showRealNamed =
-        genForshowRealNamed();
+        genForShowRealNamed();
 
-    private static HttpRequestDef<ShowRealNamedRequest, ShowRealNamedResponse> genForshowRealNamed() {
+    private static HttpRequestDef<ShowRealNamedRequest, ShowRealNamedResponse> genForShowRealNamed() {
         // basic
         HttpRequestDef.Builder<ShowRealNamedRequest, ShowRealNamedResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRealNamedRequest.class, ShowRealNamedResponse.class)
@@ -908,25 +777,21 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowRealNamedRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(ShowRealNamedRequest::getSimCardId, ShowRealNamedRequest::setSimCardId));
         builder.<String>withRequestField("iccid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRealNamedRequest::getIccid, (req, v) -> {
-                req.setIccid(v);
-            }));
+            f -> f.withMarshaller(ShowRealNamedRequest::getIccid, ShowRealNamedRequest::setIccid));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSimCardRequest, ShowSimCardResponse> showSimCard = genForshowSimCard();
+    public static final HttpRequestDef<ShowSimCardRequest, ShowSimCardResponse> showSimCard = genForShowSimCard();
 
-    private static HttpRequestDef<ShowSimCardRequest, ShowSimCardResponse> genForshowSimCard() {
+    private static HttpRequestDef<ShowSimCardRequest, ShowSimCardResponse> genForShowSimCard() {
         // basic
         HttpRequestDef.Builder<ShowSimCardRequest, ShowSimCardResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSimCardRequest.class, ShowSimCardResponse.class)
@@ -939,25 +804,21 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowSimCardRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(ShowSimCardRequest::getSimCardId, ShowSimCardRequest::setSimCardId));
         builder.<String>withRequestField("iccid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSimCardRequest::getIccid, (req, v) -> {
-                req.setIccid(v);
-            }));
+            f -> f.withMarshaller(ShowSimCardRequest::getIccid, ShowSimCardRequest::setIccid));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartStopNetRequest, StartStopNetResponse> startStopNet = genForstartStopNet();
+    public static final HttpRequestDef<StartStopNetRequest, StartStopNetResponse> startStopNet = genForStartStopNet();
 
-    private static HttpRequestDef<StartStopNetRequest, StartStopNetResponse> genForstartStopNet() {
+    private static HttpRequestDef<StartStopNetRequest, StartStopNetResponse> genForStartStopNet() {
         // basic
         HttpRequestDef.Builder<StartStopNetRequest, StartStopNetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartStopNetRequest.class, StartStopNetResponse.class)
@@ -970,25 +831,21 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(StartStopNetRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(StartStopNetRequest::getSimCardId, StartStopNetRequest::setSimCardId));
         builder.<CutNetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CutNetReq.class),
-            f -> f.withMarshaller(StartStopNetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartStopNetRequest::getBody, StartStopNetRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopSimCardRequest, StopSimCardResponse> stopSimCard = genForstopSimCard();
+    public static final HttpRequestDef<StopSimCardRequest, StopSimCardResponse> stopSimCard = genForStopSimCard();
 
-    private static HttpRequestDef<StopSimCardRequest, StopSimCardResponse> genForstopSimCard() {
+    private static HttpRequestDef<StopSimCardRequest, StopSimCardResponse> genForStopSimCard() {
         // basic
         HttpRequestDef.Builder<StopSimCardRequest, StopSimCardResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopSimCardRequest.class, StopSimCardResponse.class)
@@ -1001,16 +858,12 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(StopSimCardRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(StopSimCardRequest::getSimCardId, StopSimCardRequest::setSimCardId));
         builder.<DownUpTimeForSimCardReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DownUpTimeForSimCardReq.class),
-            f -> f.withMarshaller(StopSimCardRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StopSimCardRequest::getBody, StopSimCardRequest::setBody));
 
         // response
 
@@ -1018,9 +871,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<ListSimPoolMembersRequest, ListSimPoolMembersResponse> listSimPoolMembers =
-        genForlistSimPoolMembers();
+        genForListSimPoolMembers();
 
-    private static HttpRequestDef<ListSimPoolMembersRequest, ListSimPoolMembersResponse> genForlistSimPoolMembers() {
+    private static HttpRequestDef<ListSimPoolMembersRequest, ListSimPoolMembersResponse> genForListSimPoolMembers() {
         // basic
         HttpRequestDef.Builder<ListSimPoolMembersRequest, ListSimPoolMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSimPoolMembersRequest.class, ListSimPoolMembersResponse.class)
@@ -1033,46 +886,37 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimPoolMembersRequest::getSimPoolId, (req, v) -> {
-                req.setSimPoolId(v);
-            }));
+            f -> f.withMarshaller(ListSimPoolMembersRequest::getSimPoolId, ListSimPoolMembersRequest::setSimPoolId));
         builder.<String>withRequestField("cid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimPoolMembersRequest::getCid, (req, v) -> {
-                req.setCid(v);
-            }));
+            f -> f.withMarshaller(ListSimPoolMembersRequest::getCid, ListSimPoolMembersRequest::setCid));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimPoolMembersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSimPoolMembersRequest::getLimit, ListSimPoolMembersRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimPoolMembersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSimPoolMembersRequest::getOffset, ListSimPoolMembersRequest::setOffset));
         builder.<String>withRequestField("billing_cycle",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimPoolMembersRequest::getBillingCycle, (req, v) -> {
-                req.setBillingCycle(v);
-            }));
+            f -> f.withMarshaller(ListSimPoolMembersRequest::getBillingCycle,
+                ListSimPoolMembersRequest::setBillingCycle));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSimPoolsRequest, ListSimPoolsResponse> listSimPools = genForlistSimPools();
+    public static final HttpRequestDef<ListSimPoolsRequest, ListSimPoolsResponse> listSimPools = genForListSimPools();
 
-    private static HttpRequestDef<ListSimPoolsRequest, ListSimPoolsResponse> genForlistSimPools() {
+    private static HttpRequestDef<ListSimPoolsRequest, ListSimPoolsResponse> genForListSimPools() {
         // basic
         HttpRequestDef.Builder<ListSimPoolsRequest, ListSimPoolsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSimPoolsRequest.class, ListSimPoolsResponse.class)
@@ -1085,37 +929,27 @@ public class GslMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimPoolsRequest::getPoolName, (req, v) -> {
-                req.setPoolName(v);
-            }));
+            f -> f.withMarshaller(ListSimPoolsRequest::getPoolName, ListSimPoolsRequest::setPoolName));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimPoolsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSimPoolsRequest::getLimit, ListSimPoolsRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimPoolsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSimPoolsRequest::getOffset, ListSimPoolsRequest::setOffset));
         builder.<String>withRequestField("billing_cycle",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimPoolsRequest::getBillingCycle, (req, v) -> {
-                req.setBillingCycle(v);
-            }));
+            f -> f.withMarshaller(ListSimPoolsRequest::getBillingCycle, ListSimPoolsRequest::setBillingCycle));
         builder.<Boolean>withRequestField("all_billing_cycle",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListSimPoolsRequest::getAllBillingCycle, (req, v) -> {
-                req.setAllBillingCycle(v);
-            }));
+            f -> f.withMarshaller(ListSimPoolsRequest::getAllBillingCycle, ListSimPoolsRequest::setAllBillingCycle));
 
         // response
 
@@ -1123,9 +957,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse> listFlowBySimCards =
-        genForlistFlowBySimCards();
+        genForListFlowBySimCards();
 
-    private static HttpRequestDef<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse> genForlistFlowBySimCards() {
+    private static HttpRequestDef<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse> genForListFlowBySimCards() {
         // basic
         HttpRequestDef.Builder<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListFlowBySimCardsRequest.class, ListFlowBySimCardsResponse.class)
@@ -1138,26 +972,23 @@ public class GslMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListFlowBySimCardsReq.class),
-            f -> f.withMarshaller(ListFlowBySimCardsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListFlowBySimCardsRequest::getBody, ListFlowBySimCardsRequest::setBody));
 
         // response
         builder.<List<SimCardsFlowVO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListFlowBySimCardsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(SimCardsFlowVO.class));
+            f -> f.withMarshaller(ListFlowBySimCardsResponse::getBody, ListFlowBySimCardsResponse::setBody)
+                .withInnerContainerType(SimCardsFlowVO.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListSimPricePlansRequest, ListSimPricePlansResponse> listSimPricePlans =
-        genForlistSimPricePlans();
+        genForListSimPricePlans();
 
-    private static HttpRequestDef<ListSimPricePlansRequest, ListSimPricePlansResponse> genForlistSimPricePlans() {
+    private static HttpRequestDef<ListSimPricePlansRequest, ListSimPricePlansResponse> genForListSimPricePlans() {
         // basic
         HttpRequestDef.Builder<ListSimPricePlansRequest, ListSimPricePlansResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSimPricePlansRequest.class, ListSimPricePlansResponse.class)
@@ -1170,54 +1001,43 @@ public class GslMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimPricePlansRequest::getSimCardId, (req, v) -> {
-                req.setSimCardId(v);
-            }));
+            f -> f.withMarshaller(ListSimPricePlansRequest::getSimCardId, ListSimPricePlansRequest::setSimCardId));
         builder.<String>withRequestField("iccid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSimPricePlansRequest::getIccid, (req, v) -> {
-                req.setIccid(v);
-            }));
+            f -> f.withMarshaller(ListSimPricePlansRequest::getIccid, ListSimPricePlansRequest::setIccid));
         builder.<Boolean>withRequestField("real_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListSimPricePlansRequest::getRealTime, (req, v) -> {
-                req.setRealTime(v);
-            }));
+            f -> f.withMarshaller(ListSimPricePlansRequest::getRealTime, ListSimPricePlansRequest::setRealTime));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimPricePlansRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSimPricePlansRequest::getLimit, ListSimPricePlansRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSimPricePlansRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSimPricePlansRequest::getOffset, ListSimPricePlansRequest::setOffset));
 
         // response
         builder.<List<SimPricePlanVO>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSimPricePlansResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(SimPricePlanVO.class));
+            f -> f.withMarshaller(ListSimPricePlansResponse::getBody, ListSimPricePlansResponse::setBody)
+                .withInnerContainerType(SimPricePlanVO.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListSmsDetailsRequest, ListSmsDetailsResponse> listSmsDetails =
-        genForlistSmsDetails();
+        genForListSmsDetails();
 
-    private static HttpRequestDef<ListSmsDetailsRequest, ListSmsDetailsResponse> genForlistSmsDetails() {
+    private static HttpRequestDef<ListSmsDetailsRequest, ListSmsDetailsResponse> genForListSmsDetails() {
         // basic
         HttpRequestDef.Builder<ListSmsDetailsRequest, ListSmsDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSmsDetailsRequest.class, ListSmsDetailsResponse.class)
@@ -1230,46 +1050,36 @@ public class GslMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSmsDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSmsDetailsRequest::getLimit, ListSmsDetailsRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSmsDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSmsDetailsRequest::getOffset, ListSmsDetailsRequest::setOffset));
         builder.<String>withRequestField("cid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSmsDetailsRequest::getCid, (req, v) -> {
-                req.setCid(v);
-            }));
+            f -> f.withMarshaller(ListSmsDetailsRequest::getCid, ListSmsDetailsRequest::setCid));
         builder.<OffsetDateTime>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListSmsDetailsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSmsDetailsRequest::getStartTime, ListSmsDetailsRequest::setStartTime));
         builder.<OffsetDateTime>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListSmsDetailsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSmsDetailsRequest::getEndTime, ListSmsDetailsRequest::setEndTime));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SendSmsRequest, SendSmsResponse> sendSms = genForsendSms();
+    public static final HttpRequestDef<SendSmsRequest, SendSmsResponse> sendSms = genForSendSms();
 
-    private static HttpRequestDef<SendSmsRequest, SendSmsResponse> genForsendSms() {
+    private static HttpRequestDef<SendSmsRequest, SendSmsResponse> genForSendSms() {
         // basic
         HttpRequestDef.Builder<SendSmsRequest, SendSmsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendSmsRequest.class, SendSmsResponse.class)
@@ -1282,25 +1092,21 @@ public class GslMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSendSmsReq.class),
-            f -> f.withMarshaller(SendSmsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendSmsRequest::getBody, SendSmsRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(SendSmsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(SendSmsResponse::getBody, SendSmsResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchSetTagsRequest, BatchSetTagsResponse> batchSetTags = genForbatchSetTags();
+    public static final HttpRequestDef<BatchSetTagsRequest, BatchSetTagsResponse> batchSetTags = genForBatchSetTags();
 
-    private static HttpRequestDef<BatchSetTagsRequest, BatchSetTagsResponse> genForbatchSetTags() {
+    private static HttpRequestDef<BatchSetTagsRequest, BatchSetTagsResponse> genForBatchSetTags() {
         // basic
         HttpRequestDef.Builder<BatchSetTagsRequest, BatchSetTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSetTagsRequest.class, BatchSetTagsResponse.class)
@@ -1313,25 +1119,21 @@ public class GslMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchSetTagsReq.class),
-            f -> f.withMarshaller(BatchSetTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchSetTagsRequest::getBody, BatchSetTagsRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(BatchSetTagsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(BatchSetTagsResponse::getBody, BatchSetTagsResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForcreateTag();
+    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForCreateTag();
 
-    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForcreateTag() {
+    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForCreateTag() {
         // basic
         HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
@@ -1344,18 +1146,16 @@ public class GslMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddOrModifyTagReq.class),
-            f -> f.withMarshaller(CreateTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getBody, CreateTagRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genFordeleteTag();
+    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genForDeleteTag();
 
-    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genFordeleteTag() {
+    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genForDeleteTag() {
         // basic
         HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
@@ -1368,25 +1168,21 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteTagRequest::getTagId, (req, v) -> {
-                req.setTagId(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getTagId, DeleteTagRequest::setTagId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteTagResponse::getBody, DeleteTagResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
 
-    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
         // basic
         HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
@@ -1399,30 +1195,22 @@ public class GslMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsRequest::getTagName, (req, v) -> {
-                req.setTagName(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getTagName, ListTagsRequest::setTagName));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getLimit, ListTagsRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTagsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getOffset, ListTagsRequest::setOffset));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getStatus, ListTagsRequest::setStatus));
 
         // response
 
@@ -1430,9 +1218,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse> listWorkOrderDetails =
-        genForlistWorkOrderDetails();
+        genForListWorkOrderDetails();
 
-    private static HttpRequestDef<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse> genForlistWorkOrderDetails() {
+    private static HttpRequestDef<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse> genForListWorkOrderDetails() {
         // basic
         HttpRequestDef.Builder<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListWorkOrderDetailsRequest.class, ListWorkOrderDetailsResponse.class)
@@ -1445,44 +1233,34 @@ public class GslMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getWorkOrderId, (req, v) -> {
-                req.setWorkOrderId(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getWorkOrderId,
+                ListWorkOrderDetailsRequest::setWorkOrderId));
         builder.<String>withRequestField("main_search_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getMainSearchKey, (req, v) -> {
-                req.setMainSearchKey(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getMainSearchKey,
+                ListWorkOrderDetailsRequest::setMainSearchKey));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getLimit, ListWorkOrderDetailsRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getOffset, ListWorkOrderDetailsRequest::setOffset));
         builder.<Integer>withRequestField("sim_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getSimType, (req, v) -> {
-                req.setSimType(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getSimType, ListWorkOrderDetailsRequest::setSimType));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getStatus, ListWorkOrderDetailsRequest::setStatus));
 
         // response
 
@@ -1490,9 +1268,9 @@ public class GslMeta {
     }
 
     public static final HttpRequestDef<ListWorkOrdersRequest, ListWorkOrdersResponse> listWorkOrders =
-        genForlistWorkOrders();
+        genForListWorkOrders();
 
-    private static HttpRequestDef<ListWorkOrdersRequest, ListWorkOrdersResponse> genForlistWorkOrders() {
+    private static HttpRequestDef<ListWorkOrdersRequest, ListWorkOrdersResponse> genForListWorkOrders() {
         // basic
         HttpRequestDef.Builder<ListWorkOrdersRequest, ListWorkOrdersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWorkOrdersRequest.class, ListWorkOrdersResponse.class)
@@ -1505,44 +1283,32 @@ public class GslMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkOrdersRequest::getMainSearchKey, (req, v) -> {
-                req.setMainSearchKey(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrdersRequest::getMainSearchKey, ListWorkOrdersRequest::setMainSearchKey));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListWorkOrdersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrdersRequest::getLimit, ListWorkOrdersRequest::setLimit));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListWorkOrdersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrdersRequest::getOffset, ListWorkOrdersRequest::setOffset));
         builder.<Integer>withRequestField("sim_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkOrdersRequest::getSimType, (req, v) -> {
-                req.setSimType(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrdersRequest::getSimType, ListWorkOrdersRequest::setSimType));
         builder.<Integer>withRequestField("work_order_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkOrdersRequest::getWorkOrderType, (req, v) -> {
-                req.setWorkOrderType(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrdersRequest::getWorkOrderType, ListWorkOrdersRequest::setWorkOrderType));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkOrdersRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListWorkOrdersRequest::getStatus, ListWorkOrdersRequest::setStatus));
 
         // response
 

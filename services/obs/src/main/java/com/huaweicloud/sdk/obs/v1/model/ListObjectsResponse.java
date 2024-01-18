@@ -24,11 +24,10 @@ public class ListObjectsResponse extends SdkXmlResponse<ListObjectsResponse> {
     private List<Contents> contents = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "CommonPrefix")
+    @JsonProperty(value = "CommonPrefixes")
 
-    @JacksonXmlProperty(localName = "CommonPrefix")
-
-    private String commonPrefix;
+    @JacksonXmlProperty(localName = "CommonPrefixes")
+    private List<CommonPrefixes> commonPrefixes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Delimiter")
@@ -168,21 +167,37 @@ public class ListObjectsResponse extends SdkXmlResponse<ListObjectsResponse> {
         this.contents = contents;
     }
 
-    public ListObjectsResponse withCommonPrefix(String commonPrefix) {
-        this.commonPrefix = commonPrefix;
+    public ListObjectsResponse withCommonPrefixes(List<CommonPrefixes> commonPrefixes) {
+        this.commonPrefixes = commonPrefixes;
+        return this;
+    }
+
+    public ListObjectsResponse addCommonPrefixesItem(CommonPrefixes commonPrefixesItem) {
+        if (this.commonPrefixes == null) {
+            this.commonPrefixes = new ArrayList<>();
+        }
+        this.commonPrefixes.add(commonPrefixesItem);
+        return this;
+    }
+
+    public ListObjectsResponse withCommonPrefixes(Consumer<List<CommonPrefixes>> commonPrefixesSetter) {
+        if (this.commonPrefixes == null) {
+            this.commonPrefixes = new ArrayList<>();
+        }
+        commonPrefixesSetter.accept(this.commonPrefixes);
         return this;
     }
 
     /**
-     * 请求中带delimiter参数时，返回消息带CommonPrefixes分组信息。 
-     * @return commonPrefix
+     * Get commonPrefixes
+     * @return commonPrefixes
      */
-    public String getCommonPrefix() {
-        return commonPrefix;
+    public List<CommonPrefixes> getCommonPrefixes() {
+        return commonPrefixes;
     }
 
-    public void setCommonPrefix(String commonPrefix) {
-        this.commonPrefix = commonPrefix;
+    public void setCommonPrefixes(List<CommonPrefixes> commonPrefixes) {
+        this.commonPrefixes = commonPrefixes;
     }
 
     public ListObjectsResponse withDelimiter(String delimiter) {
@@ -455,7 +470,7 @@ public class ListObjectsResponse extends SdkXmlResponse<ListObjectsResponse> {
             return false;
         }
         ListObjectsResponse that = (ListObjectsResponse) obj;
-        return Objects.equals(this.contents, that.contents) && Objects.equals(this.commonPrefix, that.commonPrefix)
+        return Objects.equals(this.contents, that.contents) && Objects.equals(this.commonPrefixes, that.commonPrefixes)
             && Objects.equals(this.delimiter, that.delimiter) && Objects.equals(this.encodingType, that.encodingType)
             && Objects.equals(this.isTruncated, that.isTruncated) && Objects.equals(this.marker, that.marker)
             && Objects.equals(this.nextMarker, that.nextMarker) && Objects.equals(this.maxKeys, that.maxKeys)
@@ -469,7 +484,7 @@ public class ListObjectsResponse extends SdkXmlResponse<ListObjectsResponse> {
     @Override
     public int hashCode() {
         return Objects.hash(contents,
-            commonPrefix,
+            commonPrefixes,
             delimiter,
             encodingType,
             isTruncated,
@@ -492,7 +507,7 @@ public class ListObjectsResponse extends SdkXmlResponse<ListObjectsResponse> {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListObjectsResponse {\n");
         sb.append("    contents: ").append(toIndentedString(contents)).append("\n");
-        sb.append("    commonPrefix: ").append(toIndentedString(commonPrefix)).append("\n");
+        sb.append("    commonPrefixes: ").append(toIndentedString(commonPrefixes)).append("\n");
         sb.append("    delimiter: ").append(toIndentedString(delimiter)).append("\n");
         sb.append("    encodingType: ").append(toIndentedString(encodingType)).append("\n");
         sb.append("    isTruncated: ").append(toIndentedString(isTruncated)).append("\n");

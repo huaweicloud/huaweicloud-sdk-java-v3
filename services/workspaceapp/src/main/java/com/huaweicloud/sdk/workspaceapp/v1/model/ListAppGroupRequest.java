@@ -51,7 +51,7 @@ public class ListAppGroupRequest {
     }
 
     /**
-     * 单次查询的大小[1-100]
+     * 单次查询的大小[1-100]。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -70,7 +70,7 @@ public class ListAppGroupRequest {
     }
 
     /**
-     * 查询的偏移量
+     * 查询的偏移量。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -89,7 +89,7 @@ public class ListAppGroupRequest {
     }
 
     /**
-     * 应用服务器组ID
+     * 应用服务器组ID。
      * @return appServerGroupId
      */
     public String getAppServerGroupId() {
@@ -106,7 +106,7 @@ public class ListAppGroupRequest {
     }
 
     /**
-     * 应用组ID
+     * 应用组ID。
      * @return appGroupId
      */
     public String getAppGroupId() {
@@ -140,7 +140,7 @@ public class ListAppGroupRequest {
     }
 
     /**
-     * 授权类型(APP、APP_GROUP)
+     * 授权类型： * `APP` - 应用 * `APP_GROUP` - 应用组
      * @return authorizationType
      */
     public String getAuthorizationType() {
@@ -157,7 +157,7 @@ public class ListAppGroupRequest {
     }
 
     /**
-     * 应用组类型(SESSION_DESKTOP_APP、COMMON_APP)
+     * 应用组类型： * `SESSION_DESKTOP_APP` - 会话桌面app * `COMMON_APP` - 普通app
      * @return appType
      */
     public String getAppType() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量服务器更新虚拟会话IP配置请求内容
+ * 批量服务器更新虚拟会话IP配置请求内容。
  */
 public class UpdateTsviReq {
 
@@ -40,7 +40,7 @@ public class UpdateTsviReq {
     }
 
     /**
-     * 批量请求列表，一次请求数量区间 [1, 20]
+     * 批量请求列表，一次请求数量区间 [1, 20]。
      * @return items
      */
     public List<UpdateTsvi> getItems() {

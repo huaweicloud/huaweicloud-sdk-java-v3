@@ -28,7 +28,7 @@ public class SecMasterClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckProductHealthyRequest 请求对象
+     * @param request CheckProductHealthyRequest 请求对象
      * @return CheckProductHealthyResponse
      */
     public CheckProductHealthyResponse checkProductHealthy(CheckProductHealthyRequest request) {
@@ -42,13 +42,12 @@ public class SecMasterClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckProductHealthyRequest 请求对象
+     * @param request CheckProductHealthyRequest 请求对象
      * @return SyncInvoker<CheckProductHealthyRequest, CheckProductHealthyResponse>
      */
     public SyncInvoker<CheckProductHealthyRequest, CheckProductHealthyResponse> checkProductHealthyInvoker(
         CheckProductHealthyRequest request) {
-        return new SyncInvoker<CheckProductHealthyRequest, CheckProductHealthyResponse>(request,
-            SecMasterMeta.checkProductHealthy, hcClient);
+        return new SyncInvoker<>(request, SecMasterMeta.checkProductHealthy, hcClient);
     }
 
     /**
@@ -58,7 +57,7 @@ public class SecMasterClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportEventsRequest 请求对象
+     * @param request ImportEventsRequest 请求对象
      * @return ImportEventsResponse
      */
     public ImportEventsResponse importEvents(ImportEventsRequest request) {
@@ -72,12 +71,11 @@ public class SecMasterClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportEventsRequest 请求对象
+     * @param request ImportEventsRequest 请求对象
      * @return SyncInvoker<ImportEventsRequest, ImportEventsResponse>
      */
     public SyncInvoker<ImportEventsRequest, ImportEventsResponse> importEventsInvoker(ImportEventsRequest request) {
-        return new SyncInvoker<ImportEventsRequest, ImportEventsResponse>(request, SecMasterMeta.importEvents,
-            hcClient);
+        return new SyncInvoker<>(request, SecMasterMeta.importEvents, hcClient);
     }
 
 }

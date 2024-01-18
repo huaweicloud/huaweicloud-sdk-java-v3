@@ -122,9 +122,9 @@ import java.util.List;
 public class SwrMeta {
 
     public static final HttpRequestDef<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse> createImageSyncRepo =
-        genForcreateImageSyncRepo();
+        genForCreateImageSyncRepo();
 
-    private static HttpRequestDef<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse> genForcreateImageSyncRepo() {
+    private static HttpRequestDef<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse> genForCreateImageSyncRepo() {
         // basic
         HttpRequestDef.Builder<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateImageSyncRepoRequest.class, CreateImageSyncRepoResponse.class)
@@ -137,23 +137,18 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateImageSyncRepoRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(CreateImageSyncRepoRequest::getNamespace, CreateImageSyncRepoRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateImageSyncRepoRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(CreateImageSyncRepoRequest::getRepository,
+                CreateImageSyncRepoRequest::setRepository));
         builder.<CreateImageSyncRepoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateImageSyncRepoRequestBody.class),
-            f -> f.withMarshaller(CreateImageSyncRepoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateImageSyncRepoRequest::getBody, CreateImageSyncRepoRequest::setBody));
 
         // response
 
@@ -161,9 +156,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse> createManualImageSyncRepo =
-        genForcreateManualImageSyncRepo();
+        genForCreateManualImageSyncRepo();
 
-    private static HttpRequestDef<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse> genForcreateManualImageSyncRepo() {
+    private static HttpRequestDef<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse> genForCreateManualImageSyncRepo() {
         // basic
         HttpRequestDef.Builder<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse> builder =
             HttpRequestDef
@@ -179,40 +174,37 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateManualImageSyncRepoRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(CreateManualImageSyncRepoRequest::getNamespace,
+                CreateManualImageSyncRepoRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateManualImageSyncRepoRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(CreateManualImageSyncRepoRequest::getRepository,
+                CreateManualImageSyncRepoRequest::setRepository));
         builder.<CreateManualImageSyncRepoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateManualImageSyncRepoRequestBody.class),
-            f -> f.withMarshaller(CreateManualImageSyncRepoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateManualImageSyncRepoRequest::getBody,
+                CreateManualImageSyncRepoRequest::setBody));
 
         // response
         builder.<List<String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateManualImageSyncRepoResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
+            f -> f
+                .withMarshaller(CreateManualImageSyncRepoResponse::getBody, CreateManualImageSyncRepoResponse::setBody)
+                .withInnerContainerType(String.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<CreateNamespaceRequest, CreateNamespaceResponse> createNamespace =
-        genForcreateNamespace();
+        genForCreateNamespace();
 
-    private static HttpRequestDef<CreateNamespaceRequest, CreateNamespaceResponse> genForcreateNamespace() {
+    private static HttpRequestDef<CreateNamespaceRequest, CreateNamespaceResponse> genForCreateNamespace() {
         // basic
         HttpRequestDef.Builder<CreateNamespaceRequest, CreateNamespaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNamespaceRequest.class, CreateNamespaceResponse.class)
@@ -225,9 +217,7 @@ public class SwrMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNamespaceRequestBody.class),
-            f -> f.withMarshaller(CreateNamespaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNamespaceRequest::getBody, CreateNamespaceRequest::setBody));
 
         // response
 
@@ -235,9 +225,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse> createNamespaceAuth =
-        genForcreateNamespaceAuth();
+        genForCreateNamespaceAuth();
 
-    private static HttpRequestDef<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse> genForcreateNamespaceAuth() {
+    private static HttpRequestDef<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse> genForCreateNamespaceAuth() {
         // basic
         HttpRequestDef.Builder<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNamespaceAuthRequest.class, CreateNamespaceAuthResponse.class)
@@ -250,25 +240,22 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNamespaceAuthRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(CreateNamespaceAuthRequest::getNamespace, CreateNamespaceAuthRequest::setNamespace));
         builder.<List<UserAuth>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateNamespaceAuthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(UserAuth.class));
+            f -> f.withMarshaller(CreateNamespaceAuthRequest::getBody, CreateNamespaceAuthRequest::setBody)
+                .withInnerContainerType(UserAuth.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRepoRequest, CreateRepoResponse> createRepo = genForcreateRepo();
+    public static final HttpRequestDef<CreateRepoRequest, CreateRepoResponse> createRepo = genForCreateRepo();
 
-    private static HttpRequestDef<CreateRepoRequest, CreateRepoResponse> genForcreateRepo() {
+    private static HttpRequestDef<CreateRepoRequest, CreateRepoResponse> genForCreateRepo() {
         // basic
         HttpRequestDef.Builder<CreateRepoRequest, CreateRepoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRepoRequest.class, CreateRepoResponse.class)
@@ -281,16 +268,12 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRepoRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(CreateRepoRequest::getNamespace, CreateRepoRequest::setNamespace));
         builder.<CreateRepoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRepoRequestBody.class),
-            f -> f.withMarshaller(CreateRepoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRepoRequest::getBody, CreateRepoRequest::setBody));
 
         // response
 
@@ -298,9 +281,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<CreateRepoDomainsRequest, CreateRepoDomainsResponse> createRepoDomains =
-        genForcreateRepoDomains();
+        genForCreateRepoDomains();
 
-    private static HttpRequestDef<CreateRepoDomainsRequest, CreateRepoDomainsResponse> genForcreateRepoDomains() {
+    private static HttpRequestDef<CreateRepoDomainsRequest, CreateRepoDomainsResponse> genForCreateRepoDomains() {
         // basic
         HttpRequestDef.Builder<CreateRepoDomainsRequest, CreateRepoDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRepoDomainsRequest.class, CreateRepoDomainsResponse.class)
@@ -313,23 +296,17 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRepoDomainsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(CreateRepoDomainsRequest::getNamespace, CreateRepoDomainsRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRepoDomainsRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(CreateRepoDomainsRequest::getRepository, CreateRepoDomainsRequest::setRepository));
         builder.<CreateRepoDomainsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRepoDomainsRequestBody.class),
-            f -> f.withMarshaller(CreateRepoDomainsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRepoDomainsRequest::getBody, CreateRepoDomainsRequest::setBody));
 
         // response
 
@@ -337,9 +314,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<CreateRetentionRequest, CreateRetentionResponse> createRetention =
-        genForcreateRetention();
+        genForCreateRetention();
 
-    private static HttpRequestDef<CreateRetentionRequest, CreateRetentionResponse> genForcreateRetention() {
+    private static HttpRequestDef<CreateRetentionRequest, CreateRetentionResponse> genForCreateRetention() {
         // basic
         HttpRequestDef.Builder<CreateRetentionRequest, CreateRetentionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRetentionRequest.class, CreateRetentionResponse.class)
@@ -352,32 +329,26 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRetentionRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(CreateRetentionRequest::getNamespace, CreateRetentionRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRetentionRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(CreateRetentionRequest::getRepository, CreateRetentionRequest::setRepository));
         builder.<CreateRetentionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRetentionRequestBody.class),
-            f -> f.withMarshaller(CreateRetentionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRetentionRequest::getBody, CreateRetentionRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForcreateSecret();
+    public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForCreateSecret();
 
-    private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForcreateSecret() {
+    private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForCreateSecret() {
         // basic
         HttpRequestDef.Builder<CreateSecretRequest, CreateSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecretRequest.class, CreateSecretResponse.class)
@@ -390,9 +361,7 @@ public class SwrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSecretRequest::getProjectname, (req, v) -> {
-                req.setProjectname(v);
-            }));
+            f -> f.withMarshaller(CreateSecretRequest::getProjectname, CreateSecretRequest::setProjectname));
 
         // response
 
@@ -405,9 +374,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<CreateTriggerRequest, CreateTriggerResponse> createTrigger =
-        genForcreateTrigger();
+        genForCreateTrigger();
 
-    private static HttpRequestDef<CreateTriggerRequest, CreateTriggerResponse> genForcreateTrigger() {
+    private static HttpRequestDef<CreateTriggerRequest, CreateTriggerResponse> genForCreateTrigger() {
         // basic
         HttpRequestDef.Builder<CreateTriggerRequest, CreateTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTriggerRequest.class, CreateTriggerResponse.class)
@@ -420,23 +389,17 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTriggerRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(CreateTriggerRequest::getNamespace, CreateTriggerRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTriggerRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(CreateTriggerRequest::getRepository, CreateTriggerRequest::setRepository));
         builder.<CreateTriggerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTriggerRequestBody.class),
-            f -> f.withMarshaller(CreateTriggerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTriggerRequest::getBody, CreateTriggerRequest::setBody));
 
         // response
 
@@ -444,9 +407,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse> createUserRepositoryAuth =
-        genForcreateUserRepositoryAuth();
+        genForCreateUserRepositoryAuth();
 
-    private static HttpRequestDef<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse> genForcreateUserRepositoryAuth() {
+    private static HttpRequestDef<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse> genForCreateUserRepositoryAuth() {
         // basic
         HttpRequestDef.Builder<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse> builder =
             HttpRequestDef
@@ -460,23 +423,20 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateUserRepositoryAuthRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(CreateUserRepositoryAuthRequest::getNamespace,
+                CreateUserRepositoryAuthRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateUserRepositoryAuthRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(CreateUserRepositoryAuthRequest::getRepository,
+                CreateUserRepositoryAuthRequest::setRepository));
         builder.<List<UserAuth>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateUserRepositoryAuthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(UserAuth.class));
+            f -> f.withMarshaller(CreateUserRepositoryAuthRequest::getBody, CreateUserRepositoryAuthRequest::setBody)
+                .withInnerContainerType(UserAuth.class));
 
         // response
 
@@ -484,9 +444,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse> deleteImageSyncRepo =
-        genFordeleteImageSyncRepo();
+        genForDeleteImageSyncRepo();
 
-    private static HttpRequestDef<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse> genFordeleteImageSyncRepo() {
+    private static HttpRequestDef<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse> genForDeleteImageSyncRepo() {
         // basic
         HttpRequestDef.Builder<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteImageSyncRepoRequest.class, DeleteImageSyncRepoResponse.class)
@@ -499,23 +459,18 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteImageSyncRepoRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteImageSyncRepoRequest::getNamespace, DeleteImageSyncRepoRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteImageSyncRepoRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(DeleteImageSyncRepoRequest::getRepository,
+                DeleteImageSyncRepoRequest::setRepository));
         builder.<DeleteImageSyncRepoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteImageSyncRepoRequestBody.class),
-            f -> f.withMarshaller(DeleteImageSyncRepoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteImageSyncRepoRequest::getBody, DeleteImageSyncRepoRequest::setBody));
 
         // response
 
@@ -523,9 +478,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse> deleteNamespaceAuth =
-        genFordeleteNamespaceAuth();
+        genForDeleteNamespaceAuth();
 
-    private static HttpRequestDef<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse> genFordeleteNamespaceAuth() {
+    private static HttpRequestDef<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse> genForDeleteNamespaceAuth() {
         // basic
         HttpRequestDef.Builder<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteNamespaceAuthRequest.class, DeleteNamespaceAuthResponse.class)
@@ -538,16 +493,13 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNamespaceAuthRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteNamespaceAuthRequest::getNamespace, DeleteNamespaceAuthRequest::setNamespace));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteNamespaceAuthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(DeleteNamespaceAuthRequest::getBody, DeleteNamespaceAuthRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -555,9 +507,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<DeleteNamespacesRequest, DeleteNamespacesResponse> deleteNamespaces =
-        genFordeleteNamespaces();
+        genForDeleteNamespaces();
 
-    private static HttpRequestDef<DeleteNamespacesRequest, DeleteNamespacesResponse> genFordeleteNamespaces() {
+    private static HttpRequestDef<DeleteNamespacesRequest, DeleteNamespacesResponse> genForDeleteNamespaces() {
         // basic
         HttpRequestDef.Builder<DeleteNamespacesRequest, DeleteNamespacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNamespacesRequest.class, DeleteNamespacesResponse.class)
@@ -570,18 +522,16 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNamespacesRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteNamespacesRequest::getNamespace, DeleteNamespacesRequest::setNamespace));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRepoRequest, DeleteRepoResponse> deleteRepo = genFordeleteRepo();
+    public static final HttpRequestDef<DeleteRepoRequest, DeleteRepoResponse> deleteRepo = genForDeleteRepo();
 
-    private static HttpRequestDef<DeleteRepoRequest, DeleteRepoResponse> genFordeleteRepo() {
+    private static HttpRequestDef<DeleteRepoRequest, DeleteRepoResponse> genForDeleteRepo() {
         // basic
         HttpRequestDef.Builder<DeleteRepoRequest, DeleteRepoResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRepoRequest.class, DeleteRepoResponse.class)
@@ -594,16 +544,12 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepoRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteRepoRequest::getNamespace, DeleteRepoRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepoRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(DeleteRepoRequest::getRepository, DeleteRepoRequest::setRepository));
 
         // response
 
@@ -611,9 +557,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse> deleteRepoDomains =
-        genFordeleteRepoDomains();
+        genForDeleteRepoDomains();
 
-    private static HttpRequestDef<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse> genFordeleteRepoDomains() {
+    private static HttpRequestDef<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse> genForDeleteRepoDomains() {
         // basic
         HttpRequestDef.Builder<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRepoDomainsRequest.class, DeleteRepoDomainsResponse.class)
@@ -626,23 +572,18 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepoDomainsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteRepoDomainsRequest::getNamespace, DeleteRepoDomainsRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepoDomainsRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(DeleteRepoDomainsRequest::getRepository, DeleteRepoDomainsRequest::setRepository));
         builder.<String>withRequestField("access_domain",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepoDomainsRequest::getAccessDomain, (req, v) -> {
-                req.setAccessDomain(v);
-            }));
+            f -> f.withMarshaller(DeleteRepoDomainsRequest::getAccessDomain,
+                DeleteRepoDomainsRequest::setAccessDomain));
 
         // response
 
@@ -650,9 +591,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<DeleteRepoTagRequest, DeleteRepoTagResponse> deleteRepoTag =
-        genFordeleteRepoTag();
+        genForDeleteRepoTag();
 
-    private static HttpRequestDef<DeleteRepoTagRequest, DeleteRepoTagResponse> genFordeleteRepoTag() {
+    private static HttpRequestDef<DeleteRepoTagRequest, DeleteRepoTagResponse> genForDeleteRepoTag() {
         // basic
         HttpRequestDef.Builder<DeleteRepoTagRequest, DeleteRepoTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRepoTagRequest.class, DeleteRepoTagResponse.class)
@@ -665,23 +606,17 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepoTagRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteRepoTagRequest::getNamespace, DeleteRepoTagRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepoTagRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(DeleteRepoTagRequest::getRepository, DeleteRepoTagRequest::setRepository));
         builder.<String>withRequestField("tag",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepoTagRequest::getTag, (req, v) -> {
-                req.setTag(v);
-            }));
+            f -> f.withMarshaller(DeleteRepoTagRequest::getTag, DeleteRepoTagRequest::setTag));
 
         // response
 
@@ -689,9 +624,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<DeleteRetentionRequest, DeleteRetentionResponse> deleteRetention =
-        genFordeleteRetention();
+        genForDeleteRetention();
 
-    private static HttpRequestDef<DeleteRetentionRequest, DeleteRetentionResponse> genFordeleteRetention() {
+    private static HttpRequestDef<DeleteRetentionRequest, DeleteRetentionResponse> genForDeleteRetention() {
         // basic
         HttpRequestDef.Builder<DeleteRetentionRequest, DeleteRetentionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRetentionRequest.class, DeleteRetentionResponse.class)
@@ -704,23 +639,17 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRetentionRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteRetentionRequest::getNamespace, DeleteRetentionRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRetentionRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(DeleteRetentionRequest::getRepository, DeleteRetentionRequest::setRepository));
         builder.<Integer>withRequestField("retention_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteRetentionRequest::getRetentionId, (req, v) -> {
-                req.setRetentionId(v);
-            }));
+            f -> f.withMarshaller(DeleteRetentionRequest::getRetentionId, DeleteRetentionRequest::setRetentionId));
 
         // response
 
@@ -728,9 +657,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<DeleteTriggerRequest, DeleteTriggerResponse> deleteTrigger =
-        genFordeleteTrigger();
+        genForDeleteTrigger();
 
-    private static HttpRequestDef<DeleteTriggerRequest, DeleteTriggerResponse> genFordeleteTrigger() {
+    private static HttpRequestDef<DeleteTriggerRequest, DeleteTriggerResponse> genForDeleteTrigger() {
         // basic
         HttpRequestDef.Builder<DeleteTriggerRequest, DeleteTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTriggerRequest.class, DeleteTriggerResponse.class)
@@ -743,23 +672,17 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTriggerRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteTriggerRequest::getNamespace, DeleteTriggerRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTriggerRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(DeleteTriggerRequest::getRepository, DeleteTriggerRequest::setRepository));
         builder.<String>withRequestField("trigger",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTriggerRequest::getTrigger, (req, v) -> {
-                req.setTrigger(v);
-            }));
+            f -> f.withMarshaller(DeleteTriggerRequest::getTrigger, DeleteTriggerRequest::setTrigger));
 
         // response
 
@@ -767,9 +690,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse> deleteUserRepositoryAuth =
-        genFordeleteUserRepositoryAuth();
+        genForDeleteUserRepositoryAuth();
 
-    private static HttpRequestDef<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse> genFordeleteUserRepositoryAuth() {
+    private static HttpRequestDef<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse> genForDeleteUserRepositoryAuth() {
         // basic
         HttpRequestDef.Builder<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse> builder =
             HttpRequestDef
@@ -785,23 +708,20 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteUserRepositoryAuthRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(DeleteUserRepositoryAuthRequest::getNamespace,
+                DeleteUserRepositoryAuthRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteUserRepositoryAuthRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(DeleteUserRepositoryAuthRequest::getRepository,
+                DeleteUserRepositoryAuthRequest::setRepository));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteUserRepositoryAuthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(String.class));
+            f -> f.withMarshaller(DeleteUserRepositoryAuthRequest::getBody, DeleteUserRepositoryAuthRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -809,9 +729,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse> listImageAutoSyncReposDetails =
-        genForlistImageAutoSyncReposDetails();
+        genForListImageAutoSyncReposDetails();
 
-    private static HttpRequestDef<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse> genForlistImageAutoSyncReposDetails() {
+    private static HttpRequestDef<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse> genForListImageAutoSyncReposDetails() {
         // basic
         HttpRequestDef.Builder<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse> builder =
             HttpRequestDef
@@ -827,33 +747,32 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImageAutoSyncReposDetailsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListImageAutoSyncReposDetailsRequest::getNamespace,
+                ListImageAutoSyncReposDetailsRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImageAutoSyncReposDetailsRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ListImageAutoSyncReposDetailsRequest::getRepository,
+                ListImageAutoSyncReposDetailsRequest::setRepository));
 
         // response
         builder.<List<SyncRepo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListImageAutoSyncReposDetailsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(SyncRepo.class));
+            f -> f
+                .withMarshaller(ListImageAutoSyncReposDetailsResponse::getBody,
+                    ListImageAutoSyncReposDetailsResponse::setBody)
+                .withInnerContainerType(SyncRepo.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListNamespacesRequest, ListNamespacesResponse> listNamespaces =
-        genForlistNamespaces();
+        genForListNamespaces();
 
-    private static HttpRequestDef<ListNamespacesRequest, ListNamespacesResponse> genForlistNamespaces() {
+    private static HttpRequestDef<ListNamespacesRequest, ListNamespacesResponse> genForListNamespaces() {
         // basic
         HttpRequestDef.Builder<ListNamespacesRequest, ListNamespacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNamespacesRequest.class, ListNamespacesResponse.class)
@@ -866,25 +785,21 @@ public class SwrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNamespacesRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListNamespacesRequest::getNamespace, ListNamespacesRequest::setNamespace));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNamespacesRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListNamespacesRequest::getFilter, ListNamespacesRequest::setFilter));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForListQuotas();
 
-    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForListQuotas() {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
@@ -900,9 +815,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ListRepoDomainsRequest, ListRepoDomainsResponse> listRepoDomains =
-        genForlistRepoDomains();
+        genForListRepoDomains();
 
-    private static HttpRequestDef<ListRepoDomainsRequest, ListRepoDomainsResponse> genForlistRepoDomains() {
+    private static HttpRequestDef<ListRepoDomainsRequest, ListRepoDomainsResponse> genForListRepoDomains() {
         // basic
         HttpRequestDef.Builder<ListRepoDomainsRequest, ListRepoDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRepoDomainsRequest.class, ListRepoDomainsResponse.class)
@@ -915,33 +830,28 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepoDomainsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListRepoDomainsRequest::getNamespace, ListRepoDomainsRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepoDomainsRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ListRepoDomainsRequest::getRepository, ListRepoDomainsRequest::setRepository));
 
         // response
         builder.<List<ShowRepoDomainsResponse>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRepoDomainsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ShowRepoDomainsResponse.class));
+            f -> f.withMarshaller(ListRepoDomainsResponse::getBody, ListRepoDomainsResponse::setBody)
+                .withInnerContainerType(ShowRepoDomainsResponse.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListReposDetailsRequest, ListReposDetailsResponse> listReposDetails =
-        genForlistReposDetails();
+        genForListReposDetails();
 
-    private static HttpRequestDef<ListReposDetailsRequest, ListReposDetailsResponse> genForlistReposDetails() {
+    private static HttpRequestDef<ListReposDetailsRequest, ListReposDetailsResponse> genForListReposDetails() {
         // basic
         HttpRequestDef.Builder<ListReposDetailsRequest, ListReposDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListReposDetailsRequest.class, ListReposDetailsResponse.class)
@@ -954,67 +864,50 @@ public class SwrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReposDetailsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListReposDetailsRequest::getNamespace, ListReposDetailsRequest::setNamespace));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReposDetailsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListReposDetailsRequest::getName, ListReposDetailsRequest::setName));
         builder.<String>withRequestField("category",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReposDetailsRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(ListReposDetailsRequest::getCategory, ListReposDetailsRequest::setCategory));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReposDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListReposDetailsRequest::getLimit, ListReposDetailsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReposDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListReposDetailsRequest::getOffset, ListReposDetailsRequest::setOffset));
         builder.<String>withRequestField("order_column",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReposDetailsRequest::getOrderColumn, (req, v) -> {
-                req.setOrderColumn(v);
-            }));
+            f -> f.withMarshaller(ListReposDetailsRequest::getOrderColumn, ListReposDetailsRequest::setOrderColumn));
         builder.<String>withRequestField("order_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReposDetailsRequest::getOrderType, (req, v) -> {
-                req.setOrderType(v);
-            }));
+            f -> f.withMarshaller(ListReposDetailsRequest::getOrderType, ListReposDetailsRequest::setOrderType));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListReposDetailsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListReposDetailsRequest::getFilter, ListReposDetailsRequest::setFilter));
 
         // response
         builder.<List<ShowReposResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListReposDetailsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ShowReposResp.class));
+            f -> f.withMarshaller(ListReposDetailsResponse::getBody, ListReposDetailsResponse::setBody)
+                .withInnerContainerType(ShowReposResp.class));
 
         builder.<String>withResponseField("Content-Range",
             LocationType.Header,
@@ -1026,9 +919,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ListRepositoryTagsRequest, ListRepositoryTagsResponse> listRepositoryTags =
-        genForlistRepositoryTags();
+        genForListRepositoryTags();
 
-    private static HttpRequestDef<ListRepositoryTagsRequest, ListRepositoryTagsResponse> genForlistRepositoryTags() {
+    private static HttpRequestDef<ListRepositoryTagsRequest, ListRepositoryTagsResponse> genForListRepositoryTags() {
         // basic
         HttpRequestDef.Builder<ListRepositoryTagsRequest, ListRepositoryTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRepositoryTagsRequest.class, ListRepositoryTagsResponse.class)
@@ -1041,67 +934,51 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryTagsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListRepositoryTagsRequest::getNamespace, ListRepositoryTagsRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryTagsRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ListRepositoryTagsRequest::getRepository, ListRepositoryTagsRequest::setRepository));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRepositoryTagsRequest::getLimit, ListRepositoryTagsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryTagsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRepositoryTagsRequest::getOffset, ListRepositoryTagsRequest::setOffset));
         builder.<String>withRequestField("order_column",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryTagsRequest::getOrderColumn, (req, v) -> {
-                req.setOrderColumn(v);
-            }));
+            f -> f.withMarshaller(ListRepositoryTagsRequest::getOrderColumn,
+                ListRepositoryTagsRequest::setOrderColumn));
         builder.<String>withRequestField("order_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryTagsRequest::getOrderType, (req, v) -> {
-                req.setOrderType(v);
-            }));
+            f -> f.withMarshaller(ListRepositoryTagsRequest::getOrderType, ListRepositoryTagsRequest::setOrderType));
         builder.<String>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryTagsRequest::getTag, (req, v) -> {
-                req.setTag(v);
-            }));
+            f -> f.withMarshaller(ListRepositoryTagsRequest::getTag, ListRepositoryTagsRequest::setTag));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryTagsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListRepositoryTagsRequest::getFilter, ListRepositoryTagsRequest::setFilter));
 
         // response
         builder.<List<ShowReposTagResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRepositoryTagsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ShowReposTagResp.class));
+            f -> f.withMarshaller(ListRepositoryTagsResponse::getBody, ListRepositoryTagsResponse::setBody)
+                .withInnerContainerType(ShowReposTagResp.class));
 
         builder.<String>withResponseField("Content-Range",
             LocationType.Header,
@@ -1113,9 +990,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse> listRetentionHistories =
-        genForlistRetentionHistories();
+        genForListRetentionHistories();
 
-    private static HttpRequestDef<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse> genForlistRetentionHistories() {
+    private static HttpRequestDef<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse> genForListRetentionHistories() {
         // basic
         HttpRequestDef.Builder<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRetentionHistoriesRequest.class, ListRetentionHistoriesResponse.class)
@@ -1128,23 +1005,19 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRetentionHistoriesRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListRetentionHistoriesRequest::getNamespace,
+                ListRetentionHistoriesRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRetentionHistoriesRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ListRetentionHistoriesRequest::getRepository,
+                ListRetentionHistoriesRequest::setRepository));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRetentionHistoriesRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListRetentionHistoriesRequest::getFilter, ListRetentionHistoriesRequest::setFilter));
 
         // response
 
@@ -1158,9 +1031,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ListRetentionsRequest, ListRetentionsResponse> listRetentions =
-        genForlistRetentions();
+        genForListRetentions();
 
-    private static HttpRequestDef<ListRetentionsRequest, ListRetentionsResponse> genForlistRetentions() {
+    private static HttpRequestDef<ListRetentionsRequest, ListRetentionsResponse> genForListRetentions() {
         // basic
         HttpRequestDef.Builder<ListRetentionsRequest, ListRetentionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRetentionsRequest.class, ListRetentionsResponse.class)
@@ -1173,33 +1046,28 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRetentionsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListRetentionsRequest::getNamespace, ListRetentionsRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRetentionsRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ListRetentionsRequest::getRepository, ListRetentionsRequest::setRepository));
 
         // response
         builder.<List<Retention>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRetentionsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Retention.class));
+            f -> f.withMarshaller(ListRetentionsResponse::getBody, ListRetentionsResponse::setBody)
+                .withInnerContainerType(Retention.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse> listSharedReposDetails =
-        genForlistSharedReposDetails();
+        genForListSharedReposDetails();
 
-    private static HttpRequestDef<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse> genForlistSharedReposDetails() {
+    private static HttpRequestDef<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse> genForListSharedReposDetails() {
         // basic
         HttpRequestDef.Builder<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSharedReposDetailsRequest.class, ListSharedReposDetailsResponse.class)
@@ -1212,67 +1080,53 @@ public class SwrMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSharedReposDetailsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getNamespace,
+                ListSharedReposDetailsRequest::setNamespace));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSharedReposDetailsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getName, ListSharedReposDetailsRequest::setName));
         builder.<String>withRequestField("center",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSharedReposDetailsRequest::getCenter, (req, v) -> {
-                req.setCenter(v);
-            }));
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getCenter, ListSharedReposDetailsRequest::setCenter));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSharedReposDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getLimit, ListSharedReposDetailsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSharedReposDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getOffset, ListSharedReposDetailsRequest::setOffset));
         builder.<String>withRequestField("order_column",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSharedReposDetailsRequest::getOrderColumn, (req, v) -> {
-                req.setOrderColumn(v);
-            }));
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getOrderColumn,
+                ListSharedReposDetailsRequest::setOrderColumn));
         builder.<String>withRequestField("order_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSharedReposDetailsRequest::getOrderType, (req, v) -> {
-                req.setOrderType(v);
-            }));
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getOrderType,
+                ListSharedReposDetailsRequest::setOrderType));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSharedReposDetailsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getFilter, ListSharedReposDetailsRequest::setFilter));
 
         // response
         builder.<List<ShowReposResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSharedReposDetailsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ShowReposResp.class));
+            f -> f.withMarshaller(ListSharedReposDetailsResponse::getBody, ListSharedReposDetailsResponse::setBody)
+                .withInnerContainerType(ShowReposResp.class));
 
         builder.<String>withResponseField("Content-Range",
             LocationType.Header,
@@ -1284,9 +1138,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ListTriggersDetailsRequest, ListTriggersDetailsResponse> listTriggersDetails =
-        genForlistTriggersDetails();
+        genForListTriggersDetails();
 
-    private static HttpRequestDef<ListTriggersDetailsRequest, ListTriggersDetailsResponse> genForlistTriggersDetails() {
+    private static HttpRequestDef<ListTriggersDetailsRequest, ListTriggersDetailsResponse> genForListTriggersDetails() {
         // basic
         HttpRequestDef.Builder<ListTriggersDetailsRequest, ListTriggersDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTriggersDetailsRequest.class, ListTriggersDetailsResponse.class)
@@ -1299,33 +1153,29 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTriggersDetailsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ListTriggersDetailsRequest::getNamespace, ListTriggersDetailsRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTriggersDetailsRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ListTriggersDetailsRequest::getRepository,
+                ListTriggersDetailsRequest::setRepository));
 
         // response
         builder.<List<Trigger>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTriggersDetailsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Trigger.class));
+            f -> f.withMarshaller(ListTriggersDetailsResponse::getBody, ListTriggersDetailsResponse::setBody)
+                .withInnerContainerType(Trigger.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ShowAccessDomainRequest, ShowAccessDomainResponse> showAccessDomain =
-        genForshowAccessDomain();
+        genForShowAccessDomain();
 
-    private static HttpRequestDef<ShowAccessDomainRequest, ShowAccessDomainResponse> genForshowAccessDomain() {
+    private static HttpRequestDef<ShowAccessDomainRequest, ShowAccessDomainResponse> genForShowAccessDomain() {
         // basic
         HttpRequestDef.Builder<ShowAccessDomainRequest, ShowAccessDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAccessDomainRequest.class, ShowAccessDomainResponse.class)
@@ -1338,23 +1188,17 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccessDomainRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ShowAccessDomainRequest::getNamespace, ShowAccessDomainRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccessDomainRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ShowAccessDomainRequest::getRepository, ShowAccessDomainRequest::setRepository));
         builder.<String>withRequestField("access_domain",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccessDomainRequest::getAccessDomain, (req, v) -> {
-                req.setAccessDomain(v);
-            }));
+            f -> f.withMarshaller(ShowAccessDomainRequest::getAccessDomain, ShowAccessDomainRequest::setAccessDomain));
 
         // response
 
@@ -1362,9 +1206,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ShowNamespaceRequest, ShowNamespaceResponse> showNamespace =
-        genForshowNamespace();
+        genForShowNamespace();
 
-    private static HttpRequestDef<ShowNamespaceRequest, ShowNamespaceResponse> genForshowNamespace() {
+    private static HttpRequestDef<ShowNamespaceRequest, ShowNamespaceResponse> genForShowNamespace() {
         // basic
         HttpRequestDef.Builder<ShowNamespaceRequest, ShowNamespaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNamespaceRequest.class, ShowNamespaceResponse.class)
@@ -1377,9 +1221,7 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNamespaceRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ShowNamespaceRequest::getNamespace, ShowNamespaceRequest::setNamespace));
 
         // response
 
@@ -1387,9 +1229,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse> showNamespaceAuth =
-        genForshowNamespaceAuth();
+        genForShowNamespaceAuth();
 
-    private static HttpRequestDef<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse> genForshowNamespaceAuth() {
+    private static HttpRequestDef<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse> genForShowNamespaceAuth() {
         // basic
         HttpRequestDef.Builder<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNamespaceAuthRequest.class, ShowNamespaceAuthResponse.class)
@@ -1402,9 +1244,7 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNamespaceAuthRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ShowNamespaceAuthRequest::getNamespace, ShowNamespaceAuthRequest::setNamespace));
 
         // response
 
@@ -1412,9 +1252,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ShowRepositoryRequest, ShowRepositoryResponse> showRepository =
-        genForshowRepository();
+        genForShowRepository();
 
-    private static HttpRequestDef<ShowRepositoryRequest, ShowRepositoryResponse> genForshowRepository() {
+    private static HttpRequestDef<ShowRepositoryRequest, ShowRepositoryResponse> genForShowRepository() {
         // basic
         HttpRequestDef.Builder<ShowRepositoryRequest, ShowRepositoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRepositoryRequest.class, ShowRepositoryResponse.class)
@@ -1427,16 +1267,12 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryRequest::getNamespace, ShowRepositoryRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ShowRepositoryRequest::getRepository, ShowRepositoryRequest::setRepository));
 
         // response
 
@@ -1444,9 +1280,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ShowRetentionRequest, ShowRetentionResponse> showRetention =
-        genForshowRetention();
+        genForShowRetention();
 
-    private static HttpRequestDef<ShowRetentionRequest, ShowRetentionResponse> genForshowRetention() {
+    private static HttpRequestDef<ShowRetentionRequest, ShowRetentionResponse> genForShowRetention() {
         // basic
         HttpRequestDef.Builder<ShowRetentionRequest, ShowRetentionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRetentionRequest.class, ShowRetentionResponse.class)
@@ -1459,32 +1295,26 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRetentionRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ShowRetentionRequest::getNamespace, ShowRetentionRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRetentionRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ShowRetentionRequest::getRepository, ShowRetentionRequest::setRepository));
         builder.<Integer>withRequestField("retention_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRetentionRequest::getRetentionId, (req, v) -> {
-                req.setRetentionId(v);
-            }));
+            f -> f.withMarshaller(ShowRetentionRequest::getRetentionId, ShowRetentionRequest::setRetentionId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSyncJobRequest, ShowSyncJobResponse> showSyncJob = genForshowSyncJob();
+    public static final HttpRequestDef<ShowSyncJobRequest, ShowSyncJobResponse> showSyncJob = genForShowSyncJob();
 
-    private static HttpRequestDef<ShowSyncJobRequest, ShowSyncJobResponse> genForshowSyncJob() {
+    private static HttpRequestDef<ShowSyncJobRequest, ShowSyncJobResponse> genForShowSyncJob() {
         // basic
         HttpRequestDef.Builder<ShowSyncJobRequest, ShowSyncJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSyncJobRequest.class, ShowSyncJobResponse.class)
@@ -1497,32 +1327,25 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSyncJobRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ShowSyncJobRequest::getNamespace, ShowSyncJobRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSyncJobRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ShowSyncJobRequest::getRepository, ShowSyncJobRequest::setRepository));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSyncJobRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ShowSyncJobRequest::getFilter, ShowSyncJobRequest::setFilter));
 
         // response
         builder.<List<SyncJob>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowSyncJobResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(SyncJob.class));
+            f -> f.withMarshaller(ShowSyncJobResponse::getBody, ShowSyncJobResponse::setBody)
+                .withInnerContainerType(SyncJob.class));
 
         builder.<String>withResponseField("Content-Range",
             LocationType.Header,
@@ -1532,9 +1355,9 @@ public class SwrMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTriggerRequest, ShowTriggerResponse> showTrigger = genForshowTrigger();
+    public static final HttpRequestDef<ShowTriggerRequest, ShowTriggerResponse> showTrigger = genForShowTrigger();
 
-    private static HttpRequestDef<ShowTriggerRequest, ShowTriggerResponse> genForshowTrigger() {
+    private static HttpRequestDef<ShowTriggerRequest, ShowTriggerResponse> genForShowTrigger() {
         // basic
         HttpRequestDef.Builder<ShowTriggerRequest, ShowTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTriggerRequest.class, ShowTriggerResponse.class)
@@ -1547,23 +1370,17 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTriggerRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ShowTriggerRequest::getNamespace, ShowTriggerRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTriggerRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ShowTriggerRequest::getRepository, ShowTriggerRequest::setRepository));
         builder.<String>withRequestField("trigger",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTriggerRequest::getTrigger, (req, v) -> {
-                req.setTrigger(v);
-            }));
+            f -> f.withMarshaller(ShowTriggerRequest::getTrigger, ShowTriggerRequest::setTrigger));
 
         // response
 
@@ -1571,9 +1388,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse> showUserRepositoryAuth =
-        genForshowUserRepositoryAuth();
+        genForShowUserRepositoryAuth();
 
-    private static HttpRequestDef<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse> genForshowUserRepositoryAuth() {
+    private static HttpRequestDef<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse> genForShowUserRepositoryAuth() {
         // basic
         HttpRequestDef.Builder<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowUserRepositoryAuthRequest.class, ShowUserRepositoryAuthResponse.class)
@@ -1586,16 +1403,14 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUserRepositoryAuthRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(ShowUserRepositoryAuthRequest::getNamespace,
+                ShowUserRepositoryAuthRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUserRepositoryAuthRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(ShowUserRepositoryAuthRequest::getRepository,
+                ShowUserRepositoryAuthRequest::setRepository));
 
         // response
 
@@ -1603,9 +1418,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse> updateNamespaceAuth =
-        genForupdateNamespaceAuth();
+        genForUpdateNamespaceAuth();
 
-    private static HttpRequestDef<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse> genForupdateNamespaceAuth() {
+    private static HttpRequestDef<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse> genForUpdateNamespaceAuth() {
         // basic
         HttpRequestDef.Builder<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse> builder = HttpRequestDef
             .builder(HttpMethod.PATCH, UpdateNamespaceAuthRequest.class, UpdateNamespaceAuthResponse.class)
@@ -1618,25 +1433,22 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNamespaceAuthRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(UpdateNamespaceAuthRequest::getNamespace, UpdateNamespaceAuthRequest::setNamespace));
         builder.<List<UserAuth>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdateNamespaceAuthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(UserAuth.class));
+            f -> f.withMarshaller(UpdateNamespaceAuthRequest::getBody, UpdateNamespaceAuthRequest::setBody)
+                .withInnerContainerType(UserAuth.class));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateRepoRequest, UpdateRepoResponse> updateRepo = genForupdateRepo();
+    public static final HttpRequestDef<UpdateRepoRequest, UpdateRepoResponse> updateRepo = genForUpdateRepo();
 
-    private static HttpRequestDef<UpdateRepoRequest, UpdateRepoResponse> genForupdateRepo() {
+    private static HttpRequestDef<UpdateRepoRequest, UpdateRepoResponse> genForUpdateRepo() {
         // basic
         HttpRequestDef.Builder<UpdateRepoRequest, UpdateRepoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateRepoRequest.class, UpdateRepoResponse.class)
@@ -1649,23 +1461,17 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRepoRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(UpdateRepoRequest::getNamespace, UpdateRepoRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRepoRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(UpdateRepoRequest::getRepository, UpdateRepoRequest::setRepository));
         builder.<UpdateRepoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRepoRequestBody.class),
-            f -> f.withMarshaller(UpdateRepoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRepoRequest::getBody, UpdateRepoRequest::setBody));
 
         // response
 
@@ -1673,9 +1479,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse> updateRepoDomains =
-        genForupdateRepoDomains();
+        genForUpdateRepoDomains();
 
-    private static HttpRequestDef<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse> genForupdateRepoDomains() {
+    private static HttpRequestDef<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse> genForUpdateRepoDomains() {
         // basic
         HttpRequestDef.Builder<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateRepoDomainsRequest.class, UpdateRepoDomainsResponse.class)
@@ -1688,30 +1494,23 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRepoDomainsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(UpdateRepoDomainsRequest::getNamespace, UpdateRepoDomainsRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRepoDomainsRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(UpdateRepoDomainsRequest::getRepository, UpdateRepoDomainsRequest::setRepository));
         builder.<String>withRequestField("access_domain",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRepoDomainsRequest::getAccessDomain, (req, v) -> {
-                req.setAccessDomain(v);
-            }));
+            f -> f.withMarshaller(UpdateRepoDomainsRequest::getAccessDomain,
+                UpdateRepoDomainsRequest::setAccessDomain));
         builder.<UpdateRepoDomainsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRepoDomainsRequestBody.class),
-            f -> f.withMarshaller(UpdateRepoDomainsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRepoDomainsRequest::getBody, UpdateRepoDomainsRequest::setBody));
 
         // response
 
@@ -1719,9 +1518,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<UpdateRetentionRequest, UpdateRetentionResponse> updateRetention =
-        genForupdateRetention();
+        genForUpdateRetention();
 
-    private static HttpRequestDef<UpdateRetentionRequest, UpdateRetentionResponse> genForupdateRetention() {
+    private static HttpRequestDef<UpdateRetentionRequest, UpdateRetentionResponse> genForUpdateRetention() {
         // basic
         HttpRequestDef.Builder<UpdateRetentionRequest, UpdateRetentionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateRetentionRequest.class, UpdateRetentionResponse.class)
@@ -1734,30 +1533,22 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRetentionRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(UpdateRetentionRequest::getNamespace, UpdateRetentionRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRetentionRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(UpdateRetentionRequest::getRepository, UpdateRetentionRequest::setRepository));
         builder.<Integer>withRequestField("retention_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateRetentionRequest::getRetentionId, (req, v) -> {
-                req.setRetentionId(v);
-            }));
+            f -> f.withMarshaller(UpdateRetentionRequest::getRetentionId, UpdateRetentionRequest::setRetentionId));
         builder.<UpdateRetentionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateRetentionRequestBody.class),
-            f -> f.withMarshaller(UpdateRetentionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRetentionRequest::getBody, UpdateRetentionRequest::setBody));
 
         // response
 
@@ -1765,9 +1556,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<UpdateTriggerRequest, UpdateTriggerResponse> updateTrigger =
-        genForupdateTrigger();
+        genForUpdateTrigger();
 
-    private static HttpRequestDef<UpdateTriggerRequest, UpdateTriggerResponse> genForupdateTrigger() {
+    private static HttpRequestDef<UpdateTriggerRequest, UpdateTriggerResponse> genForUpdateTrigger() {
         // basic
         HttpRequestDef.Builder<UpdateTriggerRequest, UpdateTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateTriggerRequest.class, UpdateTriggerResponse.class)
@@ -1780,30 +1571,22 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTriggerRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(UpdateTriggerRequest::getNamespace, UpdateTriggerRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTriggerRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(UpdateTriggerRequest::getRepository, UpdateTriggerRequest::setRepository));
         builder.<String>withRequestField("trigger",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTriggerRequest::getTrigger, (req, v) -> {
-                req.setTrigger(v);
-            }));
+            f -> f.withMarshaller(UpdateTriggerRequest::getTrigger, UpdateTriggerRequest::setTrigger));
         builder.<UpdateTriggerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTriggerRequestBody.class),
-            f -> f.withMarshaller(UpdateTriggerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTriggerRequest::getBody, UpdateTriggerRequest::setBody));
 
         // response
 
@@ -1811,9 +1594,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse> updateUserRepositoryAuth =
-        genForupdateUserRepositoryAuth();
+        genForUpdateUserRepositoryAuth();
 
-    private static HttpRequestDef<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse> genForupdateUserRepositoryAuth() {
+    private static HttpRequestDef<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse> genForUpdateUserRepositoryAuth() {
         // basic
         HttpRequestDef.Builder<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse> builder =
             HttpRequestDef
@@ -1829,23 +1612,20 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserRepositoryAuthRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRepositoryAuthRequest::getNamespace,
+                UpdateUserRepositoryAuthRequest::setNamespace));
         builder.<String>withRequestField("repository",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserRepositoryAuthRequest::getRepository, (req, v) -> {
-                req.setRepository(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRepositoryAuthRequest::getRepository,
+                UpdateUserRepositoryAuthRequest::setRepository));
         builder.<List<UserAuth>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdateUserRepositoryAuthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(UserAuth.class));
+            f -> f.withMarshaller(UpdateUserRepositoryAuthRequest::getBody, UpdateUserRepositoryAuthRequest::setBody)
+                .withInnerContainerType(UserAuth.class));
 
         // response
 
@@ -1853,9 +1633,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForlistApiVersions();
+        genForListApiVersions();
 
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
@@ -1871,9 +1651,9 @@ public class SwrMeta {
     }
 
     public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
-        genForshowApiVersion();
+        genForShowApiVersion();
 
-    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
+    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForShowApiVersion() {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
@@ -1886,9 +1666,7 @@ public class SwrMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, (req, v) -> {
-                req.setApiVersion(v);
-            }));
+            f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, ShowApiVersionRequest::setApiVersion));
 
         // response
 

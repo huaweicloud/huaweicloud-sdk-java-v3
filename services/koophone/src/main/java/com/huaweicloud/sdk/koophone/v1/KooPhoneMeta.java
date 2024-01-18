@@ -27,9 +27,9 @@ import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceResponse;
 public class KooPhoneMeta {
 
     public static final HttpRequestDef<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse> asyncInvokeInstance =
-        genForasyncInvokeInstance();
+        genForAsyncInvokeInstance();
 
-    private static HttpRequestDef<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse> genForasyncInvokeInstance() {
+    private static HttpRequestDef<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse> genForAsyncInvokeInstance() {
         // basic
         HttpRequestDef.Builder<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AsyncInvokeInstanceRequest.class, AsyncInvokeInstanceResponse.class)
@@ -42,16 +42,13 @@ public class KooPhoneMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AsyncInvokeInstanceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(AsyncInvokeInstanceRequest::getXRequestId,
+                AsyncInvokeInstanceRequest::setXRequestId));
         builder.<InstanceAsyncCommandsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceAsyncCommandsReq.class),
-            f -> f.withMarshaller(AsyncInvokeInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AsyncInvokeInstanceRequest::getBody, AsyncInvokeInstanceRequest::setBody));
 
         // response
 
@@ -59,9 +56,9 @@ public class KooPhoneMeta {
     }
 
     public static final HttpRequestDef<BatchResetInstanceRequest, BatchResetInstanceResponse> batchResetInstance =
-        genForbatchResetInstance();
+        genForBatchResetInstance();
 
-    private static HttpRequestDef<BatchResetInstanceRequest, BatchResetInstanceResponse> genForbatchResetInstance() {
+    private static HttpRequestDef<BatchResetInstanceRequest, BatchResetInstanceResponse> genForBatchResetInstance() {
         // basic
         HttpRequestDef.Builder<BatchResetInstanceRequest, BatchResetInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchResetInstanceRequest.class, BatchResetInstanceResponse.class)
@@ -74,16 +71,12 @@ public class KooPhoneMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchResetInstanceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchResetInstanceRequest::getXRequestId, BatchResetInstanceRequest::setXRequestId));
         builder.<InstanceResetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceResetReq.class),
-            f -> f.withMarshaller(BatchResetInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchResetInstanceRequest::getBody, BatchResetInstanceRequest::setBody));
 
         // response
 
@@ -91,9 +84,9 @@ public class KooPhoneMeta {
     }
 
     public static final HttpRequestDef<BatchShowInstanceRequest, BatchShowInstanceResponse> batchShowInstance =
-        genForbatchShowInstance();
+        genForBatchShowInstance();
 
-    private static HttpRequestDef<BatchShowInstanceRequest, BatchShowInstanceResponse> genForbatchShowInstance() {
+    private static HttpRequestDef<BatchShowInstanceRequest, BatchShowInstanceResponse> genForBatchShowInstance() {
         // basic
         HttpRequestDef.Builder<BatchShowInstanceRequest, BatchShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchShowInstanceRequest.class, BatchShowInstanceResponse.class)
@@ -106,25 +99,21 @@ public class KooPhoneMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowInstanceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(BatchShowInstanceRequest::getXRequestId, BatchShowInstanceRequest::setXRequestId));
         builder.<InstanceStatusReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceStatusReq.class),
-            f -> f.withMarshaller(BatchShowInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchShowInstanceRequest::getBody, BatchShowInstanceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExecuteJobRequest, ExecuteJobResponse> executeJob = genForexecuteJob();
+    public static final HttpRequestDef<ExecuteJobRequest, ExecuteJobResponse> executeJob = genForExecuteJob();
 
-    private static HttpRequestDef<ExecuteJobRequest, ExecuteJobResponse> genForexecuteJob() {
+    private static HttpRequestDef<ExecuteJobRequest, ExecuteJobResponse> genForExecuteJob() {
         // basic
         HttpRequestDef.Builder<ExecuteJobRequest, ExecuteJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ExecuteJobRequest.class, ExecuteJobResponse.class)
@@ -137,25 +126,21 @@ public class KooPhoneMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteJobRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ExecuteJobRequest::getTaskId, ExecuteJobRequest::setTaskId));
         builder.<String>withRequestField("x-request-id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteJobRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(ExecuteJobRequest::getXRequestId, ExecuteJobRequest::setXRequestId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetVideoRequest, SetVideoResponse> setVideo = genForsetVideo();
+    public static final HttpRequestDef<SetVideoRequest, SetVideoResponse> setVideo = genForSetVideo();
 
-    private static HttpRequestDef<SetVideoRequest, SetVideoResponse> genForsetVideo() {
+    private static HttpRequestDef<SetVideoRequest, SetVideoResponse> genForSetVideo() {
         // basic
         HttpRequestDef.Builder<SetVideoRequest, SetVideoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetVideoRequest.class, SetVideoResponse.class)
@@ -168,16 +153,12 @@ public class KooPhoneMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetVideoRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SetVideoRequest::getXRequestId, SetVideoRequest::setXRequestId));
         builder.<InstanceVideoSettingReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceVideoSettingReq.class),
-            f -> f.withMarshaller(SetVideoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SetVideoRequest::getBody, SetVideoRequest::setBody));
 
         // response
 
@@ -185,9 +166,9 @@ public class KooPhoneMeta {
     }
 
     public static final HttpRequestDef<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse> syncInvokeInstance =
-        genForsyncInvokeInstance();
+        genForSyncInvokeInstance();
 
-    private static HttpRequestDef<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse> genForsyncInvokeInstance() {
+    private static HttpRequestDef<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse> genForSyncInvokeInstance() {
         // basic
         HttpRequestDef.Builder<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SyncInvokeInstanceRequest.class, SyncInvokeInstanceResponse.class)
@@ -200,16 +181,12 @@ public class KooPhoneMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SyncInvokeInstanceRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            }));
+            f -> f.withMarshaller(SyncInvokeInstanceRequest::getXRequestId, SyncInvokeInstanceRequest::setXRequestId));
         builder.<InstanceSyncCommandsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceSyncCommandsReq.class),
-            f -> f.withMarshaller(SyncInvokeInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SyncInvokeInstanceRequest::getBody, SyncInvokeInstanceRequest::setBody));
 
         // response
 

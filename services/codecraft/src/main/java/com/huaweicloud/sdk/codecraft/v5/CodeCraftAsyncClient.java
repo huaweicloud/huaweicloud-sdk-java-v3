@@ -35,7 +35,7 @@ public class CodeCraftAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCompetitionScoreRequest 请求对象
+     * @param request CreateCompetitionScoreRequest 请求对象
      * @return CompletableFuture<CreateCompetitionScoreResponse>
      */
     public CompletableFuture<CreateCompetitionScoreResponse> createCompetitionScoreAsync(
@@ -50,13 +50,12 @@ public class CodeCraftAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCompetitionScoreRequest 请求对象
+     * @param request CreateCompetitionScoreRequest 请求对象
      * @return AsyncInvoker<CreateCompetitionScoreRequest, CreateCompetitionScoreResponse>
      */
     public AsyncInvoker<CreateCompetitionScoreRequest, CreateCompetitionScoreResponse> createCompetitionScoreAsyncInvoker(
         CreateCompetitionScoreRequest request) {
-        return new AsyncInvoker<CreateCompetitionScoreRequest, CreateCompetitionScoreResponse>(request,
-            CodeCraftMeta.createCompetitionScore, hcClient);
+        return new AsyncInvoker<>(request, CodeCraftMeta.createCompetitionScore, hcClient);
     }
 
     /**
@@ -66,7 +65,7 @@ public class CodeCraftAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCompetitionWorksRequest 请求对象
+     * @param request ListCompetitionWorksRequest 请求对象
      * @return CompletableFuture<ListCompetitionWorksResponse>
      */
     public CompletableFuture<ListCompetitionWorksResponse> listCompetitionWorksAsync(
@@ -81,13 +80,12 @@ public class CodeCraftAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCompetitionWorksRequest 请求对象
+     * @param request ListCompetitionWorksRequest 请求对象
      * @return AsyncInvoker<ListCompetitionWorksRequest, ListCompetitionWorksResponse>
      */
     public AsyncInvoker<ListCompetitionWorksRequest, ListCompetitionWorksResponse> listCompetitionWorksAsyncInvoker(
         ListCompetitionWorksRequest request) {
-        return new AsyncInvoker<ListCompetitionWorksRequest, ListCompetitionWorksResponse>(request,
-            CodeCraftMeta.listCompetitionWorks, hcClient);
+        return new AsyncInvoker<>(request, CodeCraftMeta.listCompetitionWorks, hcClient);
     }
 
     /**
@@ -97,7 +95,7 @@ public class CodeCraftAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterCompetitionInfoRequest 请求对象
+     * @param request RegisterCompetitionInfoRequest 请求对象
      * @return CompletableFuture<RegisterCompetitionInfoResponse>
      */
     public CompletableFuture<RegisterCompetitionInfoResponse> registerCompetitionInfoAsync(
@@ -112,13 +110,12 @@ public class CodeCraftAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterCompetitionInfoRequest 请求对象
+     * @param request RegisterCompetitionInfoRequest 请求对象
      * @return AsyncInvoker<RegisterCompetitionInfoRequest, RegisterCompetitionInfoResponse>
      */
     public AsyncInvoker<RegisterCompetitionInfoRequest, RegisterCompetitionInfoResponse> registerCompetitionInfoAsyncInvoker(
         RegisterCompetitionInfoRequest request) {
-        return new AsyncInvoker<RegisterCompetitionInfoRequest, RegisterCompetitionInfoResponse>(request,
-            CodeCraftMeta.registerCompetitionInfo, hcClient);
+        return new AsyncInvoker<>(request, CodeCraftMeta.registerCompetitionInfo, hcClient);
     }
 
     /**
@@ -128,7 +125,7 @@ public class CodeCraftAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCompetitionScoreRequest 请求对象
+     * @param request UpdateCompetitionScoreRequest 请求对象
      * @return CompletableFuture<UpdateCompetitionScoreResponse>
      */
     public CompletableFuture<UpdateCompetitionScoreResponse> updateCompetitionScoreAsync(
@@ -143,13 +140,12 @@ public class CodeCraftAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCompetitionScoreRequest 请求对象
+     * @param request UpdateCompetitionScoreRequest 请求对象
      * @return AsyncInvoker<UpdateCompetitionScoreRequest, UpdateCompetitionScoreResponse>
      */
     public AsyncInvoker<UpdateCompetitionScoreRequest, UpdateCompetitionScoreResponse> updateCompetitionScoreAsyncInvoker(
         UpdateCompetitionScoreRequest request) {
-        return new AsyncInvoker<UpdateCompetitionScoreRequest, UpdateCompetitionScoreResponse>(request,
-            CodeCraftMeta.updateCompetitionScore, hcClient);
+        return new AsyncInvoker<>(request, CodeCraftMeta.updateCompetitionScore, hcClient);
     }
 
 }

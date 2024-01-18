@@ -40,7 +40,7 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAutoLaunchGroupRequest 请求对象
+     * @param request CreateAutoLaunchGroupRequest 请求对象
      * @return CompletableFuture<CreateAutoLaunchGroupResponse>
      */
     public CompletableFuture<CreateAutoLaunchGroupResponse> createAutoLaunchGroupAsync(
@@ -55,13 +55,12 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAutoLaunchGroupRequest 请求对象
+     * @param request CreateAutoLaunchGroupRequest 请求对象
      * @return AsyncInvoker<CreateAutoLaunchGroupRequest, CreateAutoLaunchGroupResponse>
      */
     public AsyncInvoker<CreateAutoLaunchGroupRequest, CreateAutoLaunchGroupResponse> createAutoLaunchGroupAsyncInvoker(
         CreateAutoLaunchGroupRequest request) {
-        return new AsyncInvoker<CreateAutoLaunchGroupRequest, CreateAutoLaunchGroupResponse>(request,
-            CmsMeta.createAutoLaunchGroup, hcClient);
+        return new AsyncInvoker<>(request, CmsMeta.createAutoLaunchGroup, hcClient);
     }
 
     /**
@@ -71,7 +70,7 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAutoLaunchGroupRequest 请求对象
+     * @param request DeleteAutoLaunchGroupRequest 请求对象
      * @return CompletableFuture<DeleteAutoLaunchGroupResponse>
      */
     public CompletableFuture<DeleteAutoLaunchGroupResponse> deleteAutoLaunchGroupAsync(
@@ -86,13 +85,12 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAutoLaunchGroupRequest 请求对象
+     * @param request DeleteAutoLaunchGroupRequest 请求对象
      * @return AsyncInvoker<DeleteAutoLaunchGroupRequest, DeleteAutoLaunchGroupResponse>
      */
     public AsyncInvoker<DeleteAutoLaunchGroupRequest, DeleteAutoLaunchGroupResponse> deleteAutoLaunchGroupAsyncInvoker(
         DeleteAutoLaunchGroupRequest request) {
-        return new AsyncInvoker<DeleteAutoLaunchGroupRequest, DeleteAutoLaunchGroupResponse>(request,
-            CmsMeta.deleteAutoLaunchGroup, hcClient);
+        return new AsyncInvoker<>(request, CmsMeta.deleteAutoLaunchGroup, hcClient);
     }
 
     /**
@@ -102,7 +100,7 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoLaunchGroupsRequest 请求对象
+     * @param request ListAutoLaunchGroupsRequest 请求对象
      * @return CompletableFuture<ListAutoLaunchGroupsResponse>
      */
     public CompletableFuture<ListAutoLaunchGroupsResponse> listAutoLaunchGroupsAsync(
@@ -117,13 +115,12 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAutoLaunchGroupsRequest 请求对象
+     * @param request ListAutoLaunchGroupsRequest 请求对象
      * @return AsyncInvoker<ListAutoLaunchGroupsRequest, ListAutoLaunchGroupsResponse>
      */
     public AsyncInvoker<ListAutoLaunchGroupsRequest, ListAutoLaunchGroupsResponse> listAutoLaunchGroupsAsyncInvoker(
         ListAutoLaunchGroupsRequest request) {
-        return new AsyncInvoker<ListAutoLaunchGroupsRequest, ListAutoLaunchGroupsResponse>(request,
-            CmsMeta.listAutoLaunchGroups, hcClient);
+        return new AsyncInvoker<>(request, CmsMeta.listAutoLaunchGroups, hcClient);
     }
 
     /**
@@ -133,7 +130,7 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
      */
     public CompletableFuture<ListInstancesResponse> listInstancesAsync(ListInstancesRequest request) {
@@ -147,12 +144,12 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
-        return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, CmsMeta.listInstances, hcClient);
+        return new AsyncInvoker<>(request, CmsMeta.listInstances, hcClient);
     }
 
     /**
@@ -162,7 +159,7 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSupplyRecommendationRequest 请求对象
+     * @param request ListSupplyRecommendationRequest 请求对象
      * @return CompletableFuture<ListSupplyRecommendationResponse>
      */
     public CompletableFuture<ListSupplyRecommendationResponse> listSupplyRecommendationAsync(
@@ -177,13 +174,12 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSupplyRecommendationRequest 请求对象
+     * @param request ListSupplyRecommendationRequest 请求对象
      * @return AsyncInvoker<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse>
      */
     public AsyncInvoker<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> listSupplyRecommendationAsyncInvoker(
         ListSupplyRecommendationRequest request) {
-        return new AsyncInvoker<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse>(request,
-            CmsMeta.listSupplyRecommendation, hcClient);
+        return new AsyncInvoker<>(request, CmsMeta.listSupplyRecommendation, hcClient);
     }
 
     /**
@@ -193,7 +189,7 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoLaunchGroupRequest 请求对象
+     * @param request ShowAutoLaunchGroupRequest 请求对象
      * @return CompletableFuture<ShowAutoLaunchGroupResponse>
      */
     public CompletableFuture<ShowAutoLaunchGroupResponse> showAutoLaunchGroupAsync(ShowAutoLaunchGroupRequest request) {
@@ -207,13 +203,12 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAutoLaunchGroupRequest 请求对象
+     * @param request ShowAutoLaunchGroupRequest 请求对象
      * @return AsyncInvoker<ShowAutoLaunchGroupRequest, ShowAutoLaunchGroupResponse>
      */
     public AsyncInvoker<ShowAutoLaunchGroupRequest, ShowAutoLaunchGroupResponse> showAutoLaunchGroupAsyncInvoker(
         ShowAutoLaunchGroupRequest request) {
-        return new AsyncInvoker<ShowAutoLaunchGroupRequest, ShowAutoLaunchGroupResponse>(request,
-            CmsMeta.showAutoLaunchGroup, hcClient);
+        return new AsyncInvoker<>(request, CmsMeta.showAutoLaunchGroup, hcClient);
     }
 
     /**
@@ -223,7 +218,7 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAutoLaunchGroupRequest 请求对象
+     * @param request UpdateAutoLaunchGroupRequest 请求对象
      * @return CompletableFuture<UpdateAutoLaunchGroupResponse>
      */
     public CompletableFuture<UpdateAutoLaunchGroupResponse> updateAutoLaunchGroupAsync(
@@ -238,13 +233,12 @@ public class CmsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAutoLaunchGroupRequest 请求对象
+     * @param request UpdateAutoLaunchGroupRequest 请求对象
      * @return AsyncInvoker<UpdateAutoLaunchGroupRequest, UpdateAutoLaunchGroupResponse>
      */
     public AsyncInvoker<UpdateAutoLaunchGroupRequest, UpdateAutoLaunchGroupResponse> updateAutoLaunchGroupAsyncInvoker(
         UpdateAutoLaunchGroupRequest request) {
-        return new AsyncInvoker<UpdateAutoLaunchGroupRequest, UpdateAutoLaunchGroupResponse>(request,
-            CmsMeta.updateAutoLaunchGroup, hcClient);
+        return new AsyncInvoker<>(request, CmsMeta.updateAutoLaunchGroup, hcClient);
     }
 
 }

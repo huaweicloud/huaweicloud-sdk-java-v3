@@ -38,7 +38,7 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDeleteTagsRequest 请求对象
+     * @param request BatchCreateDeleteTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateDeleteTagsResponse>
      */
     public CompletableFuture<BatchCreateDeleteTagsResponse> batchCreateDeleteTagsAsync(
@@ -53,13 +53,12 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateDeleteTagsRequest 请求对象
+     * @param request BatchCreateDeleteTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse>
      */
     public AsyncInvoker<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse> batchCreateDeleteTagsAsyncInvoker(
         BatchCreateDeleteTagsRequest request) {
-        return new AsyncInvoker<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse>(request,
-            CcMeta.batchCreateDeleteTags, hcClient);
+        return new AsyncInvoker<>(request, CcMeta.batchCreateDeleteTags, hcClient);
     }
 
     /**
@@ -69,7 +68,7 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return CompletableFuture<CreateTagResponse>
      */
     public CompletableFuture<CreateTagResponse> createTagAsync(CreateTagRequest request) {
@@ -83,11 +82,11 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
      */
     public AsyncInvoker<CreateTagRequest, CreateTagResponse> createTagAsyncInvoker(CreateTagRequest request) {
-        return new AsyncInvoker<CreateTagRequest, CreateTagResponse>(request, CcMeta.createTag, hcClient);
+        return new AsyncInvoker<>(request, CcMeta.createTag, hcClient);
     }
 
     /**
@@ -97,7 +96,7 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return CompletableFuture<DeleteTagResponse>
      */
     public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
@@ -111,11 +110,11 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
      */
     public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
-        return new AsyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, CcMeta.deleteTag, hcClient);
+        return new AsyncInvoker<>(request, CcMeta.deleteTag, hcClient);
     }
 
     /**
@@ -125,7 +124,7 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTagsRequest 请求对象
+     * @param request ListDomainTagsRequest 请求对象
      * @return CompletableFuture<ListDomainTagsResponse>
      */
     public CompletableFuture<ListDomainTagsResponse> listDomainTagsAsync(ListDomainTagsRequest request) {
@@ -139,13 +138,12 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDomainTagsRequest 请求对象
+     * @param request ListDomainTagsRequest 请求对象
      * @return AsyncInvoker<ListDomainTagsRequest, ListDomainTagsResponse>
      */
     public AsyncInvoker<ListDomainTagsRequest, ListDomainTagsResponse> listDomainTagsAsyncInvoker(
         ListDomainTagsRequest request) {
-        return new AsyncInvoker<ListDomainTagsRequest, ListDomainTagsResponse>(request, CcMeta.listDomainTags,
-            hcClient);
+        return new AsyncInvoker<>(request, CcMeta.listDomainTags, hcClient);
     }
 
     /**
@@ -155,7 +153,7 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceByFilterTagRequest 请求对象
+     * @param request ListResourceByFilterTagRequest 请求对象
      * @return CompletableFuture<ListResourceByFilterTagResponse>
      */
     public CompletableFuture<ListResourceByFilterTagResponse> listResourceByFilterTagAsync(
@@ -170,13 +168,12 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceByFilterTagRequest 请求对象
+     * @param request ListResourceByFilterTagRequest 请求对象
      * @return AsyncInvoker<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse>
      */
     public AsyncInvoker<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse> listResourceByFilterTagAsyncInvoker(
         ListResourceByFilterTagRequest request) {
-        return new AsyncInvoker<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse>(request,
-            CcMeta.listResourceByFilterTag, hcClient);
+        return new AsyncInvoker<>(request, CcMeta.listResourceByFilterTag, hcClient);
     }
 
     /**
@@ -186,7 +183,7 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return CompletableFuture<ListTagsResponse>
      */
     public CompletableFuture<ListTagsResponse> listTagsAsync(ListTagsRequest request) {
@@ -200,11 +197,11 @@ public class CcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
      */
     public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
-        return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, CcMeta.listTags, hcClient);
+        return new AsyncInvoker<>(request, CcMeta.listTags, hcClient);
     }
 
 }

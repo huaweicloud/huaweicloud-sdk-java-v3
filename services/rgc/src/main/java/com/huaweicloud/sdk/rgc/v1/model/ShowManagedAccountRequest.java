@@ -15,18 +15,13 @@ public class ShowManagedAccountRequest {
 
     private String managedAccountId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-
-    private String xSecurityToken;
-
     public ShowManagedAccountRequest withManagedAccountId(String managedAccountId) {
         this.managedAccountId = managedAccountId;
         return this;
     }
 
     /**
-     * 账号ID。
+     * 纳管账号ID。
      * @return managedAccountId
      */
     public String getManagedAccountId() {
@@ -35,25 +30,6 @@ public class ShowManagedAccountRequest {
 
     public void setManagedAccountId(String managedAccountId) {
         this.managedAccountId = managedAccountId;
-    }
-
-    public ShowManagedAccountRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-        return this;
-    }
-
-    /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
-    }
-
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
     }
 
     @Override
@@ -65,13 +41,12 @@ public class ShowManagedAccountRequest {
             return false;
         }
         ShowManagedAccountRequest that = (ShowManagedAccountRequest) obj;
-        return Objects.equals(this.managedAccountId, that.managedAccountId)
-            && Objects.equals(this.xSecurityToken, that.xSecurityToken);
+        return Objects.equals(this.managedAccountId, that.managedAccountId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(managedAccountId, xSecurityToken);
+        return Objects.hash(managedAccountId);
     }
 
     @Override
@@ -79,7 +54,6 @@ public class ShowManagedAccountRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowManagedAccountRequest {\n");
         sb.append("    managedAccountId: ").append(toIndentedString(managedAccountId)).append("\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("}");
         return sb.toString();
     }

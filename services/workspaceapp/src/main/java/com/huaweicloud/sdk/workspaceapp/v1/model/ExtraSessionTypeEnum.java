@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 付费会话类型， * &#x60;GPU&#x60; - GPU规格会话 * &#x60;CPU&#x60; - 普通CPU规格会话
+ * 付费会话类型： * &#x60;GPU&#x60; - GPU规格会话。 * &#x60;CPU&#x60; - 普通CPU规格会话。
  */
 public class ExtraSessionTypeEnum {
 

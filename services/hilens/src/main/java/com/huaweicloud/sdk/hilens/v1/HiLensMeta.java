@@ -14,9 +14,9 @@ import com.huaweicloud.sdk.hilens.v1.model.ListDevicesResponse;
 public class HiLensMeta {
 
     public static final HttpRequestDef<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse> listDeviceAlarms =
-        genForlistDeviceAlarms();
+        genForListDeviceAlarms();
 
-    private static HttpRequestDef<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse> genForlistDeviceAlarms() {
+    private static HttpRequestDef<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse> genForListDeviceAlarms() {
         // basic
         HttpRequestDef.Builder<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDeviceAlarmsRequest.class, ListDeviceAlarmsResponse.class)
@@ -29,32 +29,26 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDeviceAlarmsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDeviceAlarmsRequest::getOffset, ListDeviceAlarmsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDeviceAlarmsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDeviceAlarmsRequest::getLimit, ListDeviceAlarmsRequest::setLimit));
         builder.<String>withRequestField("device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDeviceAlarmsRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ListDeviceAlarmsRequest::getDeviceId, ListDeviceAlarmsRequest::setDeviceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDevicesRequest, ListDevicesResponse> listDevices = genForlistDevices();
+    public static final HttpRequestDef<ListDevicesRequest, ListDevicesResponse> listDevices = genForListDevices();
 
-    private static HttpRequestDef<ListDevicesRequest, ListDevicesResponse> genForlistDevices() {
+    private static HttpRequestDef<ListDevicesRequest, ListDevicesResponse> genForListDevices() {
         // basic
         HttpRequestDef.Builder<ListDevicesRequest, ListDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDevicesRequest.class, ListDevicesResponse.class)
@@ -67,23 +61,17 @@ public class HiLensMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDevicesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getOffset, ListDevicesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDevicesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getLimit, ListDevicesRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getName, ListDevicesRequest::setName));
 
         // response
 

@@ -86,7 +86,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptOrRejectEndpointRequest 请求对象
+     * @param request AcceptOrRejectEndpointRequest 请求对象
      * @return CompletableFuture<AcceptOrRejectEndpointResponse>
      */
     public CompletableFuture<AcceptOrRejectEndpointResponse> acceptOrRejectEndpointAsync(
@@ -101,13 +101,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptOrRejectEndpointRequest 请求对象
+     * @param request AcceptOrRejectEndpointRequest 请求对象
      * @return AsyncInvoker<AcceptOrRejectEndpointRequest, AcceptOrRejectEndpointResponse>
      */
     public AsyncInvoker<AcceptOrRejectEndpointRequest, AcceptOrRejectEndpointResponse> acceptOrRejectEndpointAsyncInvoker(
         AcceptOrRejectEndpointRequest request) {
-        return new AsyncInvoker<AcceptOrRejectEndpointRequest, AcceptOrRejectEndpointResponse>(request,
-            VpcepMeta.acceptOrRejectEndpoint, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.acceptOrRejectEndpoint, hcClient);
     }
 
     /**
@@ -119,7 +118,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddOrRemoveServicePermissionsRequest 请求对象
+     * @param request AddOrRemoveServicePermissionsRequest 请求对象
      * @return CompletableFuture<AddOrRemoveServicePermissionsResponse>
      */
     public CompletableFuture<AddOrRemoveServicePermissionsResponse> addOrRemoveServicePermissionsAsync(
@@ -136,13 +135,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddOrRemoveServicePermissionsRequest 请求对象
+     * @param request AddOrRemoveServicePermissionsRequest 请求对象
      * @return AsyncInvoker<AddOrRemoveServicePermissionsRequest, AddOrRemoveServicePermissionsResponse>
      */
     public AsyncInvoker<AddOrRemoveServicePermissionsRequest, AddOrRemoveServicePermissionsResponse> addOrRemoveServicePermissionsAsyncInvoker(
         AddOrRemoveServicePermissionsRequest request) {
-        return new AsyncInvoker<AddOrRemoveServicePermissionsRequest, AddOrRemoveServicePermissionsResponse>(request,
-            VpcepMeta.addOrRemoveServicePermissions, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.addOrRemoveServicePermissions, hcClient);
     }
 
     /**
@@ -154,7 +152,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddEndpointServicePermissionsRequest 请求对象
+     * @param request BatchAddEndpointServicePermissionsRequest 请求对象
      * @return CompletableFuture<BatchAddEndpointServicePermissionsResponse>
      */
     public CompletableFuture<BatchAddEndpointServicePermissionsResponse> batchAddEndpointServicePermissionsAsync(
@@ -171,13 +169,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddEndpointServicePermissionsRequest 请求对象
+     * @param request BatchAddEndpointServicePermissionsRequest 请求对象
      * @return AsyncInvoker<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse>
      */
     public AsyncInvoker<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse> batchAddEndpointServicePermissionsAsyncInvoker(
         BatchAddEndpointServicePermissionsRequest request) {
-        return new AsyncInvoker<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse>(
-            request, VpcepMeta.batchAddEndpointServicePermissions, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.batchAddEndpointServicePermissions, hcClient);
     }
 
     /**
@@ -187,7 +184,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemoveEndpointServicePermissionsRequest 请求对象
+     * @param request BatchRemoveEndpointServicePermissionsRequest 请求对象
      * @return CompletableFuture<BatchRemoveEndpointServicePermissionsResponse>
      */
     public CompletableFuture<BatchRemoveEndpointServicePermissionsResponse> batchRemoveEndpointServicePermissionsAsync(
@@ -202,13 +199,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchRemoveEndpointServicePermissionsRequest 请求对象
+     * @param request BatchRemoveEndpointServicePermissionsRequest 请求对象
      * @return AsyncInvoker<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse>
      */
     public AsyncInvoker<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse> batchRemoveEndpointServicePermissionsAsyncInvoker(
         BatchRemoveEndpointServicePermissionsRequest request) {
-        return new AsyncInvoker<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse>(
-            request, VpcepMeta.batchRemoveEndpointServicePermissions, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.batchRemoveEndpointServicePermissions, hcClient);
     }
 
     /**
@@ -218,7 +214,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointRequest 请求对象
+     * @param request CreateEndpointRequest 请求对象
      * @return CompletableFuture<CreateEndpointResponse>
      */
     public CompletableFuture<CreateEndpointResponse> createEndpointAsync(CreateEndpointRequest request) {
@@ -232,13 +228,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointRequest 请求对象
+     * @param request CreateEndpointRequest 请求对象
      * @return AsyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
      */
     public AsyncInvoker<CreateEndpointRequest, CreateEndpointResponse> createEndpointAsyncInvoker(
         CreateEndpointRequest request) {
-        return new AsyncInvoker<CreateEndpointRequest, CreateEndpointResponse>(request, VpcepMeta.createEndpoint,
-            hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.createEndpoint, hcClient);
     }
 
     /**
@@ -252,7 +247,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointServiceRequest 请求对象
+     * @param request CreateEndpointServiceRequest 请求对象
      * @return CompletableFuture<CreateEndpointServiceResponse>
      */
     public CompletableFuture<CreateEndpointServiceResponse> createEndpointServiceAsync(
@@ -271,13 +266,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEndpointServiceRequest 请求对象
+     * @param request CreateEndpointServiceRequest 请求对象
      * @return AsyncInvoker<CreateEndpointServiceRequest, CreateEndpointServiceResponse>
      */
     public AsyncInvoker<CreateEndpointServiceRequest, CreateEndpointServiceResponse> createEndpointServiceAsyncInvoker(
         CreateEndpointServiceRequest request) {
-        return new AsyncInvoker<CreateEndpointServiceRequest, CreateEndpointServiceResponse>(request,
-            VpcepMeta.createEndpointService, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.createEndpointService, hcClient);
     }
 
     /**
@@ -287,7 +281,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointRequest 请求对象
+     * @param request DeleteEndpointRequest 请求对象
      * @return CompletableFuture<DeleteEndpointResponse>
      */
     public CompletableFuture<DeleteEndpointResponse> deleteEndpointAsync(DeleteEndpointRequest request) {
@@ -301,13 +295,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointRequest 请求对象
+     * @param request DeleteEndpointRequest 请求对象
      * @return AsyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>
      */
     public AsyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpointAsyncInvoker(
         DeleteEndpointRequest request) {
-        return new AsyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>(request, VpcepMeta.deleteEndpoint,
-            hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.deleteEndpoint, hcClient);
     }
 
     /**
@@ -317,7 +310,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointPolicyRequest 请求对象
+     * @param request DeleteEndpointPolicyRequest 请求对象
      * @return CompletableFuture<DeleteEndpointPolicyResponse>
      */
     public CompletableFuture<DeleteEndpointPolicyResponse> deleteEndpointPolicyAsync(
@@ -332,13 +325,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointPolicyRequest 请求对象
+     * @param request DeleteEndpointPolicyRequest 请求对象
      * @return AsyncInvoker<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse>
      */
     public AsyncInvoker<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse> deleteEndpointPolicyAsyncInvoker(
         DeleteEndpointPolicyRequest request) {
-        return new AsyncInvoker<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse>(request,
-            VpcepMeta.deleteEndpointPolicy, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.deleteEndpointPolicy, hcClient);
     }
 
     /**
@@ -348,7 +340,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointServiceRequest 请求对象
+     * @param request DeleteEndpointServiceRequest 请求对象
      * @return CompletableFuture<DeleteEndpointServiceResponse>
      */
     public CompletableFuture<DeleteEndpointServiceResponse> deleteEndpointServiceAsync(
@@ -363,13 +355,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointServiceRequest 请求对象
+     * @param request DeleteEndpointServiceRequest 请求对象
      * @return AsyncInvoker<DeleteEndpointServiceRequest, DeleteEndpointServiceResponse>
      */
     public AsyncInvoker<DeleteEndpointServiceRequest, DeleteEndpointServiceResponse> deleteEndpointServiceAsyncInvoker(
         DeleteEndpointServiceRequest request) {
-        return new AsyncInvoker<DeleteEndpointServiceRequest, DeleteEndpointServiceResponse>(request,
-            VpcepMeta.deleteEndpointService, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.deleteEndpointService, hcClient);
     }
 
     /**
@@ -379,7 +370,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointInfoDetailsRequest 请求对象
+     * @param request ListEndpointInfoDetailsRequest 请求对象
      * @return CompletableFuture<ListEndpointInfoDetailsResponse>
      */
     public CompletableFuture<ListEndpointInfoDetailsResponse> listEndpointInfoDetailsAsync(
@@ -394,13 +385,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointInfoDetailsRequest 请求对象
+     * @param request ListEndpointInfoDetailsRequest 请求对象
      * @return AsyncInvoker<ListEndpointInfoDetailsRequest, ListEndpointInfoDetailsResponse>
      */
     public AsyncInvoker<ListEndpointInfoDetailsRequest, ListEndpointInfoDetailsResponse> listEndpointInfoDetailsAsyncInvoker(
         ListEndpointInfoDetailsRequest request) {
-        return new AsyncInvoker<ListEndpointInfoDetailsRequest, ListEndpointInfoDetailsResponse>(request,
-            VpcepMeta.listEndpointInfoDetails, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listEndpointInfoDetails, hcClient);
     }
 
     /**
@@ -410,7 +400,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointServiceRequest 请求对象
+     * @param request ListEndpointServiceRequest 请求对象
      * @return CompletableFuture<ListEndpointServiceResponse>
      */
     public CompletableFuture<ListEndpointServiceResponse> listEndpointServiceAsync(ListEndpointServiceRequest request) {
@@ -424,13 +414,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointServiceRequest 请求对象
+     * @param request ListEndpointServiceRequest 请求对象
      * @return AsyncInvoker<ListEndpointServiceRequest, ListEndpointServiceResponse>
      */
     public AsyncInvoker<ListEndpointServiceRequest, ListEndpointServiceResponse> listEndpointServiceAsyncInvoker(
         ListEndpointServiceRequest request) {
-        return new AsyncInvoker<ListEndpointServiceRequest, ListEndpointServiceResponse>(request,
-            VpcepMeta.listEndpointService, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listEndpointService, hcClient);
     }
 
     /**
@@ -440,7 +429,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointsRequest 请求对象
+     * @param request ListEndpointsRequest 请求对象
      * @return CompletableFuture<ListEndpointsResponse>
      */
     public CompletableFuture<ListEndpointsResponse> listEndpointsAsync(ListEndpointsRequest request) {
@@ -454,13 +443,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointsRequest 请求对象
+     * @param request ListEndpointsRequest 请求对象
      * @return AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
      */
     public AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse> listEndpointsAsyncInvoker(
         ListEndpointsRequest request) {
-        return new AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse>(request, VpcepMeta.listEndpoints,
-            hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listEndpoints, hcClient);
     }
 
     /**
@@ -470,7 +458,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaDetailsRequest 请求对象
+     * @param request ListQuotaDetailsRequest 请求对象
      * @return CompletableFuture<ListQuotaDetailsResponse>
      */
     public CompletableFuture<ListQuotaDetailsResponse> listQuotaDetailsAsync(ListQuotaDetailsRequest request) {
@@ -484,13 +472,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaDetailsRequest 请求对象
+     * @param request ListQuotaDetailsRequest 请求对象
      * @return AsyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse>
      */
     public AsyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse> listQuotaDetailsAsyncInvoker(
         ListQuotaDetailsRequest request) {
-        return new AsyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse>(request, VpcepMeta.listQuotaDetails,
-            hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listQuotaDetails, hcClient);
     }
 
     /**
@@ -500,7 +487,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceConnectionsRequest 请求对象
+     * @param request ListServiceConnectionsRequest 请求对象
      * @return CompletableFuture<ListServiceConnectionsResponse>
      */
     public CompletableFuture<ListServiceConnectionsResponse> listServiceConnectionsAsync(
@@ -515,13 +502,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceConnectionsRequest 请求对象
+     * @param request ListServiceConnectionsRequest 请求对象
      * @return AsyncInvoker<ListServiceConnectionsRequest, ListServiceConnectionsResponse>
      */
     public AsyncInvoker<ListServiceConnectionsRequest, ListServiceConnectionsResponse> listServiceConnectionsAsyncInvoker(
         ListServiceConnectionsRequest request) {
-        return new AsyncInvoker<ListServiceConnectionsRequest, ListServiceConnectionsResponse>(request,
-            VpcepMeta.listServiceConnections, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listServiceConnections, hcClient);
     }
 
     /**
@@ -531,7 +517,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceDescribeDetailsRequest 请求对象
+     * @param request ListServiceDescribeDetailsRequest 请求对象
      * @return CompletableFuture<ListServiceDescribeDetailsResponse>
      */
     public CompletableFuture<ListServiceDescribeDetailsResponse> listServiceDescribeDetailsAsync(
@@ -546,13 +532,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceDescribeDetailsRequest 请求对象
+     * @param request ListServiceDescribeDetailsRequest 请求对象
      * @return AsyncInvoker<ListServiceDescribeDetailsRequest, ListServiceDescribeDetailsResponse>
      */
     public AsyncInvoker<ListServiceDescribeDetailsRequest, ListServiceDescribeDetailsResponse> listServiceDescribeDetailsAsyncInvoker(
         ListServiceDescribeDetailsRequest request) {
-        return new AsyncInvoker<ListServiceDescribeDetailsRequest, ListServiceDescribeDetailsResponse>(request,
-            VpcepMeta.listServiceDescribeDetails, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listServiceDescribeDetails, hcClient);
     }
 
     /**
@@ -562,7 +547,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceDetailsRequest 请求对象
+     * @param request ListServiceDetailsRequest 请求对象
      * @return CompletableFuture<ListServiceDetailsResponse>
      */
     public CompletableFuture<ListServiceDetailsResponse> listServiceDetailsAsync(ListServiceDetailsRequest request) {
@@ -576,13 +561,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServiceDetailsRequest 请求对象
+     * @param request ListServiceDetailsRequest 请求对象
      * @return AsyncInvoker<ListServiceDetailsRequest, ListServiceDetailsResponse>
      */
     public AsyncInvoker<ListServiceDetailsRequest, ListServiceDetailsResponse> listServiceDetailsAsyncInvoker(
         ListServiceDetailsRequest request) {
-        return new AsyncInvoker<ListServiceDetailsRequest, ListServiceDetailsResponse>(request,
-            VpcepMeta.listServiceDetails, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listServiceDetails, hcClient);
     }
 
     /**
@@ -594,7 +578,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServicePermissionsDetailsRequest 请求对象
+     * @param request ListServicePermissionsDetailsRequest 请求对象
      * @return CompletableFuture<ListServicePermissionsDetailsResponse>
      */
     public CompletableFuture<ListServicePermissionsDetailsResponse> listServicePermissionsDetailsAsync(
@@ -611,13 +595,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServicePermissionsDetailsRequest 请求对象
+     * @param request ListServicePermissionsDetailsRequest 请求对象
      * @return AsyncInvoker<ListServicePermissionsDetailsRequest, ListServicePermissionsDetailsResponse>
      */
     public AsyncInvoker<ListServicePermissionsDetailsRequest, ListServicePermissionsDetailsResponse> listServicePermissionsDetailsAsyncInvoker(
         ListServicePermissionsDetailsRequest request) {
-        return new AsyncInvoker<ListServicePermissionsDetailsRequest, ListServicePermissionsDetailsResponse>(request,
-            VpcepMeta.listServicePermissionsDetails, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listServicePermissionsDetails, hcClient);
     }
 
     /**
@@ -628,7 +611,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServicePublicDetailsRequest 请求对象
+     * @param request ListServicePublicDetailsRequest 请求对象
      * @return CompletableFuture<ListServicePublicDetailsResponse>
      */
     public CompletableFuture<ListServicePublicDetailsResponse> listServicePublicDetailsAsync(
@@ -644,13 +627,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServicePublicDetailsRequest 请求对象
+     * @param request ListServicePublicDetailsRequest 请求对象
      * @return AsyncInvoker<ListServicePublicDetailsRequest, ListServicePublicDetailsResponse>
      */
     public AsyncInvoker<ListServicePublicDetailsRequest, ListServicePublicDetailsResponse> listServicePublicDetailsAsyncInvoker(
         ListServicePublicDetailsRequest request) {
-        return new AsyncInvoker<ListServicePublicDetailsRequest, ListServicePublicDetailsResponse>(request,
-            VpcepMeta.listServicePublicDetails, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listServicePublicDetails, hcClient);
     }
 
     /**
@@ -660,7 +642,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpecifiedVersionDetailsRequest 请求对象
+     * @param request ListSpecifiedVersionDetailsRequest 请求对象
      * @return CompletableFuture<ListSpecifiedVersionDetailsResponse>
      */
     public CompletableFuture<ListSpecifiedVersionDetailsResponse> listSpecifiedVersionDetailsAsync(
@@ -675,13 +657,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpecifiedVersionDetailsRequest 请求对象
+     * @param request ListSpecifiedVersionDetailsRequest 请求对象
      * @return AsyncInvoker<ListSpecifiedVersionDetailsRequest, ListSpecifiedVersionDetailsResponse>
      */
     public AsyncInvoker<ListSpecifiedVersionDetailsRequest, ListSpecifiedVersionDetailsResponse> listSpecifiedVersionDetailsAsyncInvoker(
         ListSpecifiedVersionDetailsRequest request) {
-        return new AsyncInvoker<ListSpecifiedVersionDetailsRequest, ListSpecifiedVersionDetailsResponse>(request,
-            VpcepMeta.listSpecifiedVersionDetails, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listSpecifiedVersionDetails, hcClient);
     }
 
     /**
@@ -691,7 +672,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionDetailsRequest 请求对象
+     * @param request ListVersionDetailsRequest 请求对象
      * @return CompletableFuture<ListVersionDetailsResponse>
      */
     public CompletableFuture<ListVersionDetailsResponse> listVersionDetailsAsync(ListVersionDetailsRequest request) {
@@ -705,13 +686,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVersionDetailsRequest 请求对象
+     * @param request ListVersionDetailsRequest 请求对象
      * @return AsyncInvoker<ListVersionDetailsRequest, ListVersionDetailsResponse>
      */
     public AsyncInvoker<ListVersionDetailsRequest, ListVersionDetailsResponse> listVersionDetailsAsyncInvoker(
         ListVersionDetailsRequest request) {
-        return new AsyncInvoker<ListVersionDetailsRequest, ListVersionDetailsResponse>(request,
-            VpcepMeta.listVersionDetails, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listVersionDetails, hcClient);
     }
 
     /**
@@ -721,7 +701,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointConnectionsDescRequest 请求对象
+     * @param request UpdateEndpointConnectionsDescRequest 请求对象
      * @return CompletableFuture<UpdateEndpointConnectionsDescResponse>
      */
     public CompletableFuture<UpdateEndpointConnectionsDescResponse> updateEndpointConnectionsDescAsync(
@@ -736,13 +716,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointConnectionsDescRequest 请求对象
+     * @param request UpdateEndpointConnectionsDescRequest 请求对象
      * @return AsyncInvoker<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse>
      */
     public AsyncInvoker<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse> updateEndpointConnectionsDescAsyncInvoker(
         UpdateEndpointConnectionsDescRequest request) {
-        return new AsyncInvoker<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse>(request,
-            VpcepMeta.updateEndpointConnectionsDesc, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.updateEndpointConnectionsDesc, hcClient);
     }
 
     /**
@@ -752,7 +731,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointPolicyRequest 请求对象
+     * @param request UpdateEndpointPolicyRequest 请求对象
      * @return CompletableFuture<UpdateEndpointPolicyResponse>
      */
     public CompletableFuture<UpdateEndpointPolicyResponse> updateEndpointPolicyAsync(
@@ -767,13 +746,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointPolicyRequest 请求对象
+     * @param request UpdateEndpointPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse>
      */
     public AsyncInvoker<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse> updateEndpointPolicyAsyncInvoker(
         UpdateEndpointPolicyRequest request) {
-        return new AsyncInvoker<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse>(request,
-            VpcepMeta.updateEndpointPolicy, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.updateEndpointPolicy, hcClient);
     }
 
     /**
@@ -783,7 +761,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointRoutetableRequest 请求对象
+     * @param request UpdateEndpointRoutetableRequest 请求对象
      * @return CompletableFuture<UpdateEndpointRoutetableResponse>
      */
     public CompletableFuture<UpdateEndpointRoutetableResponse> updateEndpointRoutetableAsync(
@@ -798,13 +776,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointRoutetableRequest 请求对象
+     * @param request UpdateEndpointRoutetableRequest 请求对象
      * @return AsyncInvoker<UpdateEndpointRoutetableRequest, UpdateEndpointRoutetableResponse>
      */
     public AsyncInvoker<UpdateEndpointRoutetableRequest, UpdateEndpointRoutetableResponse> updateEndpointRoutetableAsyncInvoker(
         UpdateEndpointRoutetableRequest request) {
-        return new AsyncInvoker<UpdateEndpointRoutetableRequest, UpdateEndpointRoutetableResponse>(request,
-            VpcepMeta.updateEndpointRoutetable, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.updateEndpointRoutetable, hcClient);
     }
 
     /**
@@ -814,7 +791,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointServiceRequest 请求对象
+     * @param request UpdateEndpointServiceRequest 请求对象
      * @return CompletableFuture<UpdateEndpointServiceResponse>
      */
     public CompletableFuture<UpdateEndpointServiceResponse> updateEndpointServiceAsync(
@@ -829,13 +806,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointServiceRequest 请求对象
+     * @param request UpdateEndpointServiceRequest 请求对象
      * @return AsyncInvoker<UpdateEndpointServiceRequest, UpdateEndpointServiceResponse>
      */
     public AsyncInvoker<UpdateEndpointServiceRequest, UpdateEndpointServiceResponse> updateEndpointServiceAsyncInvoker(
         UpdateEndpointServiceRequest request) {
-        return new AsyncInvoker<UpdateEndpointServiceRequest, UpdateEndpointServiceResponse>(request,
-            VpcepMeta.updateEndpointService, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.updateEndpointService, hcClient);
     }
 
     /**
@@ -845,7 +821,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointServiceNameRequest 请求对象
+     * @param request UpdateEndpointServiceNameRequest 请求对象
      * @return CompletableFuture<UpdateEndpointServiceNameResponse>
      */
     public CompletableFuture<UpdateEndpointServiceNameResponse> updateEndpointServiceNameAsync(
@@ -860,13 +836,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointServiceNameRequest 请求对象
+     * @param request UpdateEndpointServiceNameRequest 请求对象
      * @return AsyncInvoker<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse>
      */
     public AsyncInvoker<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse> updateEndpointServiceNameAsyncInvoker(
         UpdateEndpointServiceNameRequest request) {
-        return new AsyncInvoker<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse>(request,
-            VpcepMeta.updateEndpointServiceName, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.updateEndpointServiceName, hcClient);
     }
 
     /**
@@ -876,7 +851,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointServicePermissionDescRequest 请求对象
+     * @param request UpdateEndpointServicePermissionDescRequest 请求对象
      * @return CompletableFuture<UpdateEndpointServicePermissionDescResponse>
      */
     public CompletableFuture<UpdateEndpointServicePermissionDescResponse> updateEndpointServicePermissionDescAsync(
@@ -891,13 +866,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointServicePermissionDescRequest 请求对象
+     * @param request UpdateEndpointServicePermissionDescRequest 请求对象
      * @return AsyncInvoker<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse>
      */
     public AsyncInvoker<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse> updateEndpointServicePermissionDescAsyncInvoker(
         UpdateEndpointServicePermissionDescRequest request) {
-        return new AsyncInvoker<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse>(
-            request, VpcepMeta.updateEndpointServicePermissionDesc, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.updateEndpointServicePermissionDesc, hcClient);
     }
 
     /**
@@ -907,7 +881,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointWhiteRequest 请求对象
+     * @param request UpdateEndpointWhiteRequest 请求对象
      * @return CompletableFuture<UpdateEndpointWhiteResponse>
      */
     public CompletableFuture<UpdateEndpointWhiteResponse> updateEndpointWhiteAsync(UpdateEndpointWhiteRequest request) {
@@ -921,13 +895,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEndpointWhiteRequest 请求对象
+     * @param request UpdateEndpointWhiteRequest 请求对象
      * @return AsyncInvoker<UpdateEndpointWhiteRequest, UpdateEndpointWhiteResponse>
      */
     public AsyncInvoker<UpdateEndpointWhiteRequest, UpdateEndpointWhiteResponse> updateEndpointWhiteAsyncInvoker(
         UpdateEndpointWhiteRequest request) {
-        return new AsyncInvoker<UpdateEndpointWhiteRequest, UpdateEndpointWhiteResponse>(request,
-            VpcepMeta.updateEndpointWhite, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.updateEndpointWhite, hcClient);
     }
 
     /**
@@ -938,7 +911,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddOrRemoveResourceInstanceRequest 请求对象
+     * @param request BatchAddOrRemoveResourceInstanceRequest 请求对象
      * @return CompletableFuture<BatchAddOrRemoveResourceInstanceResponse>
      */
     public CompletableFuture<BatchAddOrRemoveResourceInstanceResponse> batchAddOrRemoveResourceInstanceAsync(
@@ -954,13 +927,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAddOrRemoveResourceInstanceRequest 请求对象
+     * @param request BatchAddOrRemoveResourceInstanceRequest 请求对象
      * @return AsyncInvoker<BatchAddOrRemoveResourceInstanceRequest, BatchAddOrRemoveResourceInstanceResponse>
      */
     public AsyncInvoker<BatchAddOrRemoveResourceInstanceRequest, BatchAddOrRemoveResourceInstanceResponse> batchAddOrRemoveResourceInstanceAsyncInvoker(
         BatchAddOrRemoveResourceInstanceRequest request) {
-        return new AsyncInvoker<BatchAddOrRemoveResourceInstanceRequest, BatchAddOrRemoveResourceInstanceResponse>(
-            request, VpcepMeta.batchAddOrRemoveResourceInstance, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.batchAddOrRemoveResourceInstance, hcClient);
     }
 
     /**
@@ -970,7 +942,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryProjectResourceTagsRequest 请求对象
+     * @param request ListQueryProjectResourceTagsRequest 请求对象
      * @return CompletableFuture<ListQueryProjectResourceTagsResponse>
      */
     public CompletableFuture<ListQueryProjectResourceTagsResponse> listQueryProjectResourceTagsAsync(
@@ -985,13 +957,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQueryProjectResourceTagsRequest 请求对象
+     * @param request ListQueryProjectResourceTagsRequest 请求对象
      * @return AsyncInvoker<ListQueryProjectResourceTagsRequest, ListQueryProjectResourceTagsResponse>
      */
     public AsyncInvoker<ListQueryProjectResourceTagsRequest, ListQueryProjectResourceTagsResponse> listQueryProjectResourceTagsAsyncInvoker(
         ListQueryProjectResourceTagsRequest request) {
-        return new AsyncInvoker<ListQueryProjectResourceTagsRequest, ListQueryProjectResourceTagsResponse>(request,
-            VpcepMeta.listQueryProjectResourceTags, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listQueryProjectResourceTags, hcClient);
     }
 
     /**
@@ -1001,7 +972,7 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return CompletableFuture<ListResourceInstancesResponse>
      */
     public CompletableFuture<ListResourceInstancesResponse> listResourceInstancesAsync(
@@ -1016,13 +987,12 @@ public class VpcepAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
      */
     public AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesAsyncInvoker(
         ListResourceInstancesRequest request) {
-        return new AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
-            VpcepMeta.listResourceInstances, hcClient);
+        return new AsyncInvoker<>(request, VpcepMeta.listResourceInstances, hcClient);
     }
 
 }

@@ -59,7 +59,7 @@ public class ShowAvailableUpdatesResponse extends SdkResponse {
     }
 
     /**
-     * 控制策略是否可用。
+     * 当前账号下是否有新的控制策略。
      * @return controlUpdateAvailable
      */
     public Boolean getControlUpdateAvailable() {

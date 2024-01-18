@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 为用户直接自动创建和分配WSK存储目录
+ * 为用户直接自动创建和分配WSK存储目录。
  */
 public class AssignUserFolderReq {
 
@@ -40,7 +40,7 @@ public class AssignUserFolderReq {
     }
 
     /**
-     * 存储分配目标
+     * 存储分配目标。
      * @return items
      */
     public List<UserAssignment> getItems() {

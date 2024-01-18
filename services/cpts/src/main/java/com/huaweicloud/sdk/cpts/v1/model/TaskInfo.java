@@ -75,7 +75,7 @@ public class TaskInfo {
     }
 
     /**
-     * bench_concurrent
+     * 基准并发
      * minimum: 0
      * maximum: 2147483647
      * @return benchConcurrent
@@ -110,7 +110,7 @@ public class TaskInfo {
     }
 
     /**
-     * case_list
+     * 用例Id列表
      * @return caseList
      */
     public List<CaseInfoDetail> getCaseList() {
@@ -144,7 +144,7 @@ public class TaskInfo {
     }
 
     /**
-     * description
+     * 描述信息
      * @return description
      */
     public String getDescription() {
@@ -161,7 +161,7 @@ public class TaskInfo {
     }
 
     /**
-     * name
+     * 任务名称
      * @return name
      */
     public String getName() {
@@ -178,7 +178,7 @@ public class TaskInfo {
     }
 
     /**
-     * operate_mode
+     * 任务模式（0：时长模式；1：次数模式；2：混合模式）
      * minimum: 0
      * maximum: 2147483647
      * @return operateMode
@@ -197,7 +197,7 @@ public class TaskInfo {
     }
 
     /**
-     * project_id
+     * 任务所属工程id
      * minimum: 0
      * maximum: 2147483647
      * @return projectId
@@ -232,7 +232,7 @@ public class TaskInfo {
     }
 
     /**
-     * related_temp_running_data
+     * 最近一次运行的报告简略信息，包括运行任务id，即本对象的task_run_info_id。运行用例id，即本对象的related_temp_running_id。
      * @return relatedTempRunningData
      */
     public List<RelatedTempRunningData> getRelatedTempRunningData() {
@@ -249,7 +249,7 @@ public class TaskInfo {
     }
 
     /**
-     * run_status
+     * 任务运行状态（9：等待运行；0：运行中；1：暂停；2：结束； 3：异常中止；4：用户主动终止（完成状态）；5：用户主动终止）
      * minimum: 0
      * maximum: 2147483647
      * @return runStatus
@@ -268,7 +268,7 @@ public class TaskInfo {
     }
 
     /**
-     * update_time
+     * 任务更新时间
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -285,7 +285,7 @@ public class TaskInfo {
     }
 
     /**
-     * parallel
+     * 任务间用例是否并行执行
      * @return parallel
      */
     public Boolean getParallel() {

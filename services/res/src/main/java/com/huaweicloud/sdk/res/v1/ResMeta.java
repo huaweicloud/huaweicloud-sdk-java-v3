@@ -90,9 +90,9 @@ import com.huaweicloud.sdk.res.v1.model.UpdateResWorkspaceResponse;
 public class ResMeta {
 
     public static final HttpRequestDef<CreateResDatasourceRequest, CreateResDatasourceResponse> createResDatasource =
-        genForcreateResDatasource();
+        genForCreateResDatasource();
 
-    private static HttpRequestDef<CreateResDatasourceRequest, CreateResDatasourceResponse> genForcreateResDatasource() {
+    private static HttpRequestDef<CreateResDatasourceRequest, CreateResDatasourceResponse> genForCreateResDatasource() {
         // basic
         HttpRequestDef.Builder<CreateResDatasourceRequest, CreateResDatasourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResDatasourceRequest.class, CreateResDatasourceResponse.class)
@@ -105,16 +105,13 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResDatasourceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(CreateResDatasourceRequest::getWorkspaceId,
+                CreateResDatasourceRequest::setWorkspaceId));
         builder.<CreateResDatasourceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResDatasourceRequestBody.class),
-            f -> f.withMarshaller(CreateResDatasourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResDatasourceRequest::getBody, CreateResDatasourceRequest::setBody));
 
         // response
 
@@ -122,9 +119,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse> createResIntelligentScene =
-        genForcreateResIntelligentScene();
+        genForCreateResIntelligentScene();
 
-    private static HttpRequestDef<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse> genForcreateResIntelligentScene() {
+    private static HttpRequestDef<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse> genForCreateResIntelligentScene() {
         // basic
         HttpRequestDef.Builder<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse> builder =
             HttpRequestDef
@@ -140,25 +137,23 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResIntelligentSceneRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(CreateResIntelligentSceneRequest::getWorkspaceId,
+                CreateResIntelligentSceneRequest::setWorkspaceId));
         builder.<CreateResIntelligentSceneRequestNBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResIntelligentSceneRequestNBody.class),
-            f -> f.withMarshaller(CreateResIntelligentSceneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResIntelligentSceneRequest::getBody,
+                CreateResIntelligentSceneRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateResJobRequest, CreateResJobResponse> createResJob = genForcreateResJob();
+    public static final HttpRequestDef<CreateResJobRequest, CreateResJobResponse> createResJob = genForCreateResJob();
 
-    private static HttpRequestDef<CreateResJobRequest, CreateResJobResponse> genForcreateResJob() {
+    private static HttpRequestDef<CreateResJobRequest, CreateResJobResponse> genForCreateResJob() {
         // basic
         HttpRequestDef.Builder<CreateResJobRequest, CreateResJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResJobRequest.class, CreateResJobResponse.class)
@@ -171,23 +166,17 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResJobRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateResJobRequest::getResourceId, CreateResJobRequest::setResourceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResJobRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(CreateResJobRequest::getWorkspaceId, CreateResJobRequest::setWorkspaceId));
         builder.<CreateResJobRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResJobRequestBody.class),
-            f -> f.withMarshaller(CreateResJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResJobRequest::getBody, CreateResJobRequest::setBody));
 
         // response
 
@@ -195,9 +184,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<CreateResJobsRequest, CreateResJobsResponse> createResJobs =
-        genForcreateResJobs();
+        genForCreateResJobs();
 
-    private static HttpRequestDef<CreateResJobsRequest, CreateResJobsResponse> genForcreateResJobs() {
+    private static HttpRequestDef<CreateResJobsRequest, CreateResJobsResponse> genForCreateResJobs() {
         // basic
         HttpRequestDef.Builder<CreateResJobsRequest, CreateResJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResJobsRequest.class, CreateResJobsResponse.class)
@@ -210,23 +199,17 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResJobsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateResJobsRequest::getResourceId, CreateResJobsRequest::setResourceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResJobsRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(CreateResJobsRequest::getWorkspaceId, CreateResJobsRequest::setWorkspaceId));
         builder.<CreateResJobsReququestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResJobsReququestBody.class),
-            f -> f.withMarshaller(CreateResJobsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResJobsRequest::getBody, CreateResJobsRequest::setBody));
 
         // response
 
@@ -234,9 +217,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse> createResOnlineInstance =
-        genForcreateResOnlineInstance();
+        genForCreateResOnlineInstance();
 
-    private static HttpRequestDef<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse> genForcreateResOnlineInstance() {
+    private static HttpRequestDef<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse> genForCreateResOnlineInstance() {
         // basic
         HttpRequestDef.Builder<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateResOnlineInstanceRequest.class, CreateResOnlineInstanceResponse.class)
@@ -249,23 +232,19 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResOnlineInstanceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateResOnlineInstanceRequest::getResourceId,
+                CreateResOnlineInstanceRequest::setResourceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResOnlineInstanceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(CreateResOnlineInstanceRequest::getWorkspaceId,
+                CreateResOnlineInstanceRequest::setWorkspaceId));
         builder.<CreateResOnlineInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResOnlineInstanceRequestBody.class),
-            f -> f.withMarshaller(CreateResOnlineInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResOnlineInstanceRequest::getBody, CreateResOnlineInstanceRequest::setBody));
 
         // response
 
@@ -273,9 +252,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<CreateResSceneRequest, CreateResSceneResponse> createResScene =
-        genForcreateResScene();
+        genForCreateResScene();
 
-    private static HttpRequestDef<CreateResSceneRequest, CreateResSceneResponse> genForcreateResScene() {
+    private static HttpRequestDef<CreateResSceneRequest, CreateResSceneResponse> genForCreateResScene() {
         // basic
         HttpRequestDef.Builder<CreateResSceneRequest, CreateResSceneResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResSceneRequest.class, CreateResSceneResponse.class)
@@ -288,16 +267,12 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResSceneRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(CreateResSceneRequest::getWorkspaceId, CreateResSceneRequest::setWorkspaceId));
         builder.<CreateResSceneRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResSceneRequestBody.class),
-            f -> f.withMarshaller(CreateResSceneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResSceneRequest::getBody, CreateResSceneRequest::setBody));
 
         // response
 
@@ -305,9 +280,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<CreateResWorkspaceRequest, CreateResWorkspaceResponse> createResWorkspace =
-        genForcreateResWorkspace();
+        genForCreateResWorkspace();
 
-    private static HttpRequestDef<CreateResWorkspaceRequest, CreateResWorkspaceResponse> genForcreateResWorkspace() {
+    private static HttpRequestDef<CreateResWorkspaceRequest, CreateResWorkspaceResponse> genForCreateResWorkspace() {
         // basic
         HttpRequestDef.Builder<CreateResWorkspaceRequest, CreateResWorkspaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResWorkspaceRequest.class, CreateResWorkspaceResponse.class)
@@ -320,9 +295,7 @@ public class ResMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResWorkspaceRequestBody.class),
-            f -> f.withMarshaller(CreateResWorkspaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResWorkspaceRequest::getBody, CreateResWorkspaceRequest::setBody));
 
         // response
 
@@ -330,9 +303,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<DeleteResDatasourceRequest, DeleteResDatasourceResponse> deleteResDatasource =
-        genFordeleteResDatasource();
+        genForDeleteResDatasource();
 
-    private static HttpRequestDef<DeleteResDatasourceRequest, DeleteResDatasourceResponse> genFordeleteResDatasource() {
+    private static HttpRequestDef<DeleteResDatasourceRequest, DeleteResDatasourceResponse> genForDeleteResDatasource() {
         // basic
         HttpRequestDef.Builder<DeleteResDatasourceRequest, DeleteResDatasourceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteResDatasourceRequest.class, DeleteResDatasourceResponse.class)
@@ -345,25 +318,23 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResDatasourceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResDatasourceRequest::getWorkspaceId,
+                DeleteResDatasourceRequest::setWorkspaceId));
         builder.<String>withRequestField("datasource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResDatasourceRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResDatasourceRequest::getDatasourceId,
+                DeleteResDatasourceRequest::setDatasourceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteResJobRequest, DeleteResJobResponse> deleteResJob = genFordeleteResJob();
+    public static final HttpRequestDef<DeleteResJobRequest, DeleteResJobResponse> deleteResJob = genForDeleteResJob();
 
-    private static HttpRequestDef<DeleteResJobRequest, DeleteResJobResponse> genFordeleteResJob() {
+    private static HttpRequestDef<DeleteResJobRequest, DeleteResJobResponse> genForDeleteResJob() {
         // basic
         HttpRequestDef.Builder<DeleteResJobRequest, DeleteResJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResJobRequest.class, DeleteResJobResponse.class)
@@ -376,23 +347,17 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResJobRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResJobRequest::getWorkspaceId, DeleteResJobRequest::setWorkspaceId));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResJobRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResJobRequest::getResourceId, DeleteResJobRequest::setResourceId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteResJobRequest::getJobId, DeleteResJobRequest::setJobId));
 
         // response
 
@@ -400,9 +365,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse> deleteResOnlineInstance =
-        genFordeleteResOnlineInstance();
+        genForDeleteResOnlineInstance();
 
-    private static HttpRequestDef<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse> genFordeleteResOnlineInstance() {
+    private static HttpRequestDef<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse> genForDeleteResOnlineInstance() {
         // basic
         HttpRequestDef.Builder<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteResOnlineInstanceRequest.class, DeleteResOnlineInstanceResponse.class)
@@ -415,23 +380,19 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResOnlineInstanceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResOnlineInstanceRequest::getWorkspaceId,
+                DeleteResOnlineInstanceRequest::setWorkspaceId));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResOnlineInstanceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResOnlineInstanceRequest::getResourceId,
+                DeleteResOnlineInstanceRequest::setResourceId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResOnlineInstanceRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(DeleteResOnlineInstanceRequest::getJobId, DeleteResOnlineInstanceRequest::setJobId));
 
         // response
 
@@ -439,9 +400,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<DeleteResSceneRequest, DeleteResSceneResponse> deleteResScene =
-        genFordeleteResScene();
+        genForDeleteResScene();
 
-    private static HttpRequestDef<DeleteResSceneRequest, DeleteResSceneResponse> genFordeleteResScene() {
+    private static HttpRequestDef<DeleteResSceneRequest, DeleteResSceneResponse> genForDeleteResScene() {
         // basic
         HttpRequestDef.Builder<DeleteResSceneRequest, DeleteResSceneResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResSceneRequest.class, DeleteResSceneResponse.class)
@@ -454,16 +415,12 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResSceneRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResSceneRequest::getWorkspaceId, DeleteResSceneRequest::setWorkspaceId));
         builder.<String>withRequestField("scene_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResSceneRequest::getSceneId, (req, v) -> {
-                req.setSceneId(v);
-            }));
+            f -> f.withMarshaller(DeleteResSceneRequest::getSceneId, DeleteResSceneRequest::setSceneId));
 
         // response
 
@@ -471,9 +428,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse> deleteResWorkspace =
-        genFordeleteResWorkspace();
+        genForDeleteResWorkspace();
 
-    private static HttpRequestDef<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse> genFordeleteResWorkspace() {
+    private static HttpRequestDef<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse> genForDeleteResWorkspace() {
         // basic
         HttpRequestDef.Builder<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResWorkspaceRequest.class, DeleteResWorkspaceResponse.class)
@@ -486,9 +443,8 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResWorkspaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResWorkspaceRequest::getWorkspaceId,
+                DeleteResWorkspaceRequest::setWorkspaceId));
 
         // response
 
@@ -496,9 +452,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<ListResDatasourcesRequest, ListResDatasourcesResponse> listResDatasources =
-        genForlistResDatasources();
+        genForListResDatasources();
 
-    private static HttpRequestDef<ListResDatasourcesRequest, ListResDatasourcesResponse> genForlistResDatasources() {
+    private static HttpRequestDef<ListResDatasourcesRequest, ListResDatasourcesResponse> genForListResDatasources() {
         // basic
         HttpRequestDef.Builder<ListResDatasourcesRequest, ListResDatasourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResDatasourcesRequest.class, ListResDatasourcesResponse.class)
@@ -511,9 +467,8 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResDatasourcesRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListResDatasourcesRequest::getWorkspaceId,
+                ListResDatasourcesRequest::setWorkspaceId));
 
         // response
 
@@ -521,9 +476,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<ListResEnterprisesRequest, ListResEnterprisesResponse> listResEnterprises =
-        genForlistResEnterprises();
+        genForListResEnterprises();
 
-    private static HttpRequestDef<ListResEnterprisesRequest, ListResEnterprisesResponse> genForlistResEnterprises() {
+    private static HttpRequestDef<ListResEnterprisesRequest, ListResEnterprisesResponse> genForListResEnterprises() {
         // basic
         HttpRequestDef.Builder<ListResEnterprisesRequest, ListResEnterprisesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResEnterprisesRequest.class, ListResEnterprisesResponse.class)
@@ -539,9 +494,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse> listResOnlineServiceDetails =
-        genForlistResOnlineServiceDetails();
+        genForListResOnlineServiceDetails();
 
-    private static HttpRequestDef<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse> genForlistResOnlineServiceDetails() {
+    private static HttpRequestDef<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse> genForListResOnlineServiceDetails() {
         // basic
         HttpRequestDef.Builder<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse> builder =
             HttpRequestDef
@@ -557,23 +512,20 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResOnlineServiceDetailsRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListResOnlineServiceDetailsRequest::getWorkspaceId,
+                ListResOnlineServiceDetailsRequest::setWorkspaceId));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResOnlineServiceDetailsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListResOnlineServiceDetailsRequest::getResourceId,
+                ListResOnlineServiceDetailsRequest::setResourceId));
         builder.<String>withRequestField("category",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResOnlineServiceDetailsRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(ListResOnlineServiceDetailsRequest::getCategory,
+                ListResOnlineServiceDetailsRequest::setCategory));
 
         // response
 
@@ -581,9 +533,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<ListResResourceSpecRequest, ListResResourceSpecResponse> listResResourceSpec =
-        genForlistResResourceSpec();
+        genForListResResourceSpec();
 
-    private static HttpRequestDef<ListResResourceSpecRequest, ListResResourceSpecResponse> genForlistResResourceSpec() {
+    private static HttpRequestDef<ListResResourceSpecRequest, ListResResourceSpecResponse> genForListResResourceSpec() {
         // basic
         HttpRequestDef.Builder<ListResResourceSpecRequest, ListResResourceSpecResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResResourceSpecRequest.class, ListResResourceSpecResponse.class)
@@ -599,9 +551,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<ListResScenesRequest, ListResScenesResponse> listResScenes =
-        genForlistResScenes();
+        genForListResScenes();
 
-    private static HttpRequestDef<ListResScenesRequest, ListResScenesResponse> genForlistResScenes() {
+    private static HttpRequestDef<ListResScenesRequest, ListResScenesResponse> genForListResScenes() {
         // basic
         HttpRequestDef.Builder<ListResScenesRequest, ListResScenesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResScenesRequest.class, ListResScenesResponse.class)
@@ -614,16 +566,12 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResScenesRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListResScenesRequest::getWorkspaceId, ListResScenesRequest::setWorkspaceId));
         builder.<String>withRequestField("category",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResScenesRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(ListResScenesRequest::getCategory, ListResScenesRequest::setCategory));
 
         // response
 
@@ -631,9 +579,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<ListResWorkspacesRequest, ListResWorkspacesResponse> listResWorkspaces =
-        genForlistResWorkspaces();
+        genForListResWorkspaces();
 
-    private static HttpRequestDef<ListResWorkspacesRequest, ListResWorkspacesResponse> genForlistResWorkspaces() {
+    private static HttpRequestDef<ListResWorkspacesRequest, ListResWorkspacesResponse> genForListResWorkspaces() {
         // basic
         HttpRequestDef.Builder<ListResWorkspacesRequest, ListResWorkspacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResWorkspacesRequest.class, ListResWorkspacesResponse.class)
@@ -649,9 +597,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<ShowResDatasourceRequest, ShowResDatasourceResponse> showResDatasource =
-        genForshowResDatasource();
+        genForShowResDatasource();
 
-    private static HttpRequestDef<ShowResDatasourceRequest, ShowResDatasourceResponse> genForshowResDatasource() {
+    private static HttpRequestDef<ShowResDatasourceRequest, ShowResDatasourceResponse> genForShowResDatasource() {
         // basic
         HttpRequestDef.Builder<ShowResDatasourceRequest, ShowResDatasourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResDatasourceRequest.class, ShowResDatasourceResponse.class)
@@ -664,16 +612,13 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResDatasourceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowResDatasourceRequest::getWorkspaceId, ShowResDatasourceRequest::setWorkspaceId));
         builder.<String>withRequestField("datasource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResDatasourceRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResDatasourceRequest::getDatasourceId,
+                ShowResDatasourceRequest::setDatasourceId));
 
         // response
 
@@ -681,9 +626,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse> showResDatasourceWorkDetail =
-        genForshowResDatasourceWorkDetail();
+        genForShowResDatasourceWorkDetail();
 
-    private static HttpRequestDef<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse> genForshowResDatasourceWorkDetail() {
+    private static HttpRequestDef<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse> genForShowResDatasourceWorkDetail() {
         // basic
         HttpRequestDef.Builder<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse> builder =
             HttpRequestDef
@@ -699,32 +644,29 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResDatasourceWorkDetailRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowResDatasourceWorkDetailRequest::getWorkspaceId,
+                ShowResDatasourceWorkDetailRequest::setWorkspaceId));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResDatasourceWorkDetailRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResDatasourceWorkDetailRequest::getResourceId,
+                ShowResDatasourceWorkDetailRequest::setResourceId));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResDatasourceWorkDetailRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowResDatasourceWorkDetailRequest::getType,
+                ShowResDatasourceWorkDetailRequest::setType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowResJobRequest, ShowResJobResponse> showResJob = genForshowResJob();
+    public static final HttpRequestDef<ShowResJobRequest, ShowResJobResponse> showResJob = genForShowResJob();
 
-    private static HttpRequestDef<ShowResJobRequest, ShowResJobResponse> genForshowResJob() {
+    private static HttpRequestDef<ShowResJobRequest, ShowResJobResponse> genForShowResJob() {
         // basic
         HttpRequestDef.Builder<ShowResJobRequest, ShowResJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResJobRequest.class, ShowResJobResponse.class)
@@ -737,23 +679,17 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResJobRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowResJobRequest::getWorkspaceId, ShowResJobRequest::setWorkspaceId));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResJobRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResJobRequest::getResourceId, ShowResJobRequest::setResourceId));
         builder.<String>withRequestField("category",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResJobRequest::getCategory, (req, v) -> {
-                req.setCategory(v);
-            }));
+            f -> f.withMarshaller(ShowResJobRequest::getCategory, ShowResJobRequest::setCategory));
 
         // response
 
@@ -761,9 +697,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<ShowResRecallSetRequest, ShowResRecallSetResponse> showResRecallSet =
-        genForshowResRecallSet();
+        genForShowResRecallSet();
 
-    private static HttpRequestDef<ShowResRecallSetRequest, ShowResRecallSetResponse> genForshowResRecallSet() {
+    private static HttpRequestDef<ShowResRecallSetRequest, ShowResRecallSetResponse> genForShowResRecallSet() {
         // basic
         HttpRequestDef.Builder<ShowResRecallSetRequest, ShowResRecallSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResRecallSetRequest.class, ShowResRecallSetResponse.class)
@@ -776,32 +712,26 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResRecallSetRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowResRecallSetRequest::getWorkspaceId, ShowResRecallSetRequest::setWorkspaceId));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResRecallSetRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ShowResRecallSetRequest::getResourceId, ShowResRecallSetRequest::setResourceId));
         builder.<String>withRequestField("use_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResRecallSetRequest::getUseType, (req, v) -> {
-                req.setUseType(v);
-            }));
+            f -> f.withMarshaller(ShowResRecallSetRequest::getUseType, ShowResRecallSetRequest::setUseType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowResSceneRequest, ShowResSceneResponse> showResScene = genForshowResScene();
+    public static final HttpRequestDef<ShowResSceneRequest, ShowResSceneResponse> showResScene = genForShowResScene();
 
-    private static HttpRequestDef<ShowResSceneRequest, ShowResSceneResponse> genForshowResScene() {
+    private static HttpRequestDef<ShowResSceneRequest, ShowResSceneResponse> genForShowResScene() {
         // basic
         HttpRequestDef.Builder<ShowResSceneRequest, ShowResSceneResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResSceneRequest.class, ShowResSceneResponse.class)
@@ -814,16 +744,12 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResSceneRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowResSceneRequest::getWorkspaceId, ShowResSceneRequest::setWorkspaceId));
         builder.<String>withRequestField("scene_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResSceneRequest::getSceneId, (req, v) -> {
-                req.setSceneId(v);
-            }));
+            f -> f.withMarshaller(ShowResSceneRequest::getSceneId, ShowResSceneRequest::setSceneId));
 
         // response
 
@@ -831,9 +757,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<ShowResWrokspaceRequest, ShowResWrokspaceResponse> showResWrokspace =
-        genForshowResWrokspace();
+        genForShowResWrokspace();
 
-    private static HttpRequestDef<ShowResWrokspaceRequest, ShowResWrokspaceResponse> genForshowResWrokspace() {
+    private static HttpRequestDef<ShowResWrokspaceRequest, ShowResWrokspaceResponse> genForShowResWrokspace() {
         // basic
         HttpRequestDef.Builder<ShowResWrokspaceRequest, ShowResWrokspaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResWrokspaceRequest.class, ShowResWrokspaceResponse.class)
@@ -846,18 +772,16 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResWrokspaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ShowResWrokspaceRequest::getWorkspaceId, ShowResWrokspaceRequest::setWorkspaceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartResJobRequest, StartResJobResponse> startResJob = genForstartResJob();
+    public static final HttpRequestDef<StartResJobRequest, StartResJobResponse> startResJob = genForStartResJob();
 
-    private static HttpRequestDef<StartResJobRequest, StartResJobResponse> genForstartResJob() {
+    private static HttpRequestDef<StartResJobRequest, StartResJobResponse> genForStartResJob() {
         // basic
         HttpRequestDef.Builder<StartResJobRequest, StartResJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartResJobRequest.class, StartResJobResponse.class)
@@ -871,30 +795,22 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartResJobRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(StartResJobRequest::getWorkspaceId, StartResJobRequest::setWorkspaceId));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartResJobRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(StartResJobRequest::getResourceId, StartResJobRequest::setResourceId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartResJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(StartResJobRequest::getJobId, StartResJobRequest::setJobId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartResJobRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(StartResJobRequest::getAction, StartResJobRequest::setAction));
 
         // response
 
@@ -902,9 +818,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<StartResSceneJobsRequest, StartResSceneJobsResponse> startResSceneJobs =
-        genForstartResSceneJobs();
+        genForStartResSceneJobs();
 
-    private static HttpRequestDef<StartResSceneJobsRequest, StartResSceneJobsResponse> genForstartResSceneJobs() {
+    private static HttpRequestDef<StartResSceneJobsRequest, StartResSceneJobsResponse> genForStartResSceneJobs() {
         // basic
         HttpRequestDef.Builder<StartResSceneJobsRequest, StartResSceneJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartResSceneJobsRequest.class, StartResSceneJobsResponse.class)
@@ -917,23 +833,17 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartResSceneJobsRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(StartResSceneJobsRequest::getWorkspaceId, StartResSceneJobsRequest::setWorkspaceId));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartResSceneJobsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(StartResSceneJobsRequest::getResourceId, StartResSceneJobsRequest::setResourceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartResSceneJobsRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(StartResSceneJobsRequest::getAction, StartResSceneJobsRequest::setAction));
 
         // response
 
@@ -941,9 +851,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<UpdateResDatasourceRequest, UpdateResDatasourceResponse> updateResDatasource =
-        genForupdateResDatasource();
+        genForUpdateResDatasource();
 
-    private static HttpRequestDef<UpdateResDatasourceRequest, UpdateResDatasourceResponse> genForupdateResDatasource() {
+    private static HttpRequestDef<UpdateResDatasourceRequest, UpdateResDatasourceResponse> genForUpdateResDatasource() {
         // basic
         HttpRequestDef.Builder<UpdateResDatasourceRequest, UpdateResDatasourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateResDatasourceRequest.class, UpdateResDatasourceResponse.class)
@@ -956,23 +866,19 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResDatasourceRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResDatasourceRequest::getDatasourceId,
+                UpdateResDatasourceRequest::setDatasourceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResDatasourceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResDatasourceRequest::getWorkspaceId,
+                UpdateResDatasourceRequest::setWorkspaceId));
         builder.<UpdateResDatastructRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResDatastructRequestBody.class),
-            f -> f.withMarshaller(UpdateResDatasourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResDatasourceRequest::getBody, UpdateResDatasourceRequest::setBody));
 
         // response
 
@@ -980,9 +886,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<UpdateResDatastructRequest, UpdateResDatastructResponse> updateResDatastruct =
-        genForupdateResDatastruct();
+        genForUpdateResDatastruct();
 
-    private static HttpRequestDef<UpdateResDatastructRequest, UpdateResDatastructResponse> genForupdateResDatastruct() {
+    private static HttpRequestDef<UpdateResDatastructRequest, UpdateResDatastructResponse> genForUpdateResDatastruct() {
         // basic
         HttpRequestDef.Builder<UpdateResDatastructRequest, UpdateResDatastructResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateResDatastructRequest.class, UpdateResDatastructResponse.class)
@@ -995,23 +901,19 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResDatastructRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResDatastructRequest::getDatasourceId,
+                UpdateResDatastructRequest::setDatasourceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResDatastructRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResDatastructRequest::getWorkspaceId,
+                UpdateResDatastructRequest::setWorkspaceId));
         builder.<UpdateResDatastructRequestBodyBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResDatastructRequestBodyBody.class),
-            f -> f.withMarshaller(UpdateResDatastructRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResDatastructRequest::getBody, UpdateResDatastructRequest::setBody));
 
         // response
 
@@ -1019,9 +921,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse> updateResIntelligentScene =
-        genForupdateResIntelligentScene();
+        genForUpdateResIntelligentScene();
 
-    private static HttpRequestDef<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse> genForupdateResIntelligentScene() {
+    private static HttpRequestDef<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse> genForUpdateResIntelligentScene() {
         // basic
         HttpRequestDef.Builder<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse> builder =
             HttpRequestDef
@@ -1037,32 +939,29 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResIntelligentSceneRequest::getSceneId, (req, v) -> {
-                req.setSceneId(v);
-            }));
+            f -> f.withMarshaller(UpdateResIntelligentSceneRequest::getSceneId,
+                UpdateResIntelligentSceneRequest::setSceneId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResIntelligentSceneRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResIntelligentSceneRequest::getWorkspaceId,
+                UpdateResIntelligentSceneRequest::setWorkspaceId));
         builder.<UpdateResIntelligentSceneRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResIntelligentSceneRequestBody.class),
-            f -> f.withMarshaller(UpdateResIntelligentSceneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResIntelligentSceneRequest::getBody,
+                UpdateResIntelligentSceneRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateResJobRequest, UpdateResJobResponse> updateResJob = genForupdateResJob();
+    public static final HttpRequestDef<UpdateResJobRequest, UpdateResJobResponse> updateResJob = genForUpdateResJob();
 
-    private static HttpRequestDef<UpdateResJobRequest, UpdateResJobResponse> genForupdateResJob() {
+    private static HttpRequestDef<UpdateResJobRequest, UpdateResJobResponse> genForUpdateResJob() {
         // basic
         HttpRequestDef.Builder<UpdateResJobRequest, UpdateResJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateResJobRequest.class, UpdateResJobResponse.class)
@@ -1075,30 +974,22 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateResJobRequest::getJobId, UpdateResJobRequest::setJobId));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResJobRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResJobRequest::getResourceId, UpdateResJobRequest::setResourceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResJobRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResJobRequest::getWorkspaceId, UpdateResJobRequest::setWorkspaceId));
         builder.<UpdateResJobRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResJobRequestBody.class),
-            f -> f.withMarshaller(UpdateResJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResJobRequest::getBody, UpdateResJobRequest::setBody));
 
         // response
 
@@ -1106,9 +997,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse> updateResOnlineInstance =
-        genForupdateResOnlineInstance();
+        genForUpdateResOnlineInstance();
 
-    private static HttpRequestDef<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse> genForupdateResOnlineInstance() {
+    private static HttpRequestDef<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse> genForUpdateResOnlineInstance() {
         // basic
         HttpRequestDef.Builder<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateResOnlineInstanceRequest.class, UpdateResOnlineInstanceResponse.class)
@@ -1121,30 +1012,24 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResOnlineInstanceRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(UpdateResOnlineInstanceRequest::getJobId, UpdateResOnlineInstanceRequest::setJobId));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResOnlineInstanceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResOnlineInstanceRequest::getResourceId,
+                UpdateResOnlineInstanceRequest::setResourceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResOnlineInstanceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResOnlineInstanceRequest::getWorkspaceId,
+                UpdateResOnlineInstanceRequest::setWorkspaceId));
         builder.<UpdateResOnlineInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResOnlineInstanceRequestBody.class),
-            f -> f.withMarshaller(UpdateResOnlineInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResOnlineInstanceRequest::getBody, UpdateResOnlineInstanceRequest::setBody));
 
         // response
 
@@ -1152,9 +1037,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<UpdateResSceneRequest, UpdateResSceneResponse> updateResScene =
-        genForupdateResScene();
+        genForUpdateResScene();
 
-    private static HttpRequestDef<UpdateResSceneRequest, UpdateResSceneResponse> genForupdateResScene() {
+    private static HttpRequestDef<UpdateResSceneRequest, UpdateResSceneResponse> genForUpdateResScene() {
         // basic
         HttpRequestDef.Builder<UpdateResSceneRequest, UpdateResSceneResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateResSceneRequest.class, UpdateResSceneResponse.class)
@@ -1167,23 +1052,17 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResSceneRequest::getSceneId, (req, v) -> {
-                req.setSceneId(v);
-            }));
+            f -> f.withMarshaller(UpdateResSceneRequest::getSceneId, UpdateResSceneRequest::setSceneId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResSceneRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResSceneRequest::getWorkspaceId, UpdateResSceneRequest::setWorkspaceId));
         builder.<UpdateResSceneRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResSceneRequestBody.class),
-            f -> f.withMarshaller(UpdateResSceneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResSceneRequest::getBody, UpdateResSceneRequest::setBody));
 
         // response
 
@@ -1191,9 +1070,9 @@ public class ResMeta {
     }
 
     public static final HttpRequestDef<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse> updateResWorkspace =
-        genForupdateResWorkspace();
+        genForUpdateResWorkspace();
 
-    private static HttpRequestDef<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse> genForupdateResWorkspace() {
+    private static HttpRequestDef<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse> genForUpdateResWorkspace() {
         // basic
         HttpRequestDef.Builder<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateResWorkspaceRequest.class, UpdateResWorkspaceResponse.class)
@@ -1206,16 +1085,13 @@ public class ResMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResWorkspaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResWorkspaceRequest::getWorkspaceId,
+                UpdateResWorkspaceRequest::setWorkspaceId));
         builder.<UpdateResWorkspaceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateResWorkspaceRequestBody.class),
-            f -> f.withMarshaller(UpdateResWorkspaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResWorkspaceRequest::getBody, UpdateResWorkspaceRequest::setBody));
 
         // response
 

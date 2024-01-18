@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 关联对象类型 * &#x60;USER&#x60; -  用户 * &#x60;USER_GROUP&#x60; - 用户组
+ * 关联对象类型： * &#x60;USER&#x60; -  用户 * &#x60;USER_GROUP&#x60; - 用户组
  */
 public class AttachType {
 

@@ -148,7 +148,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAggregationAuthorizationRequest 请求对象
+     * @param request CreateAggregationAuthorizationRequest 请求对象
      * @return CreateAggregationAuthorizationResponse
      */
     public CreateAggregationAuthorizationResponse createAggregationAuthorization(
@@ -163,13 +163,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAggregationAuthorizationRequest 请求对象
+     * @param request CreateAggregationAuthorizationRequest 请求对象
      * @return SyncInvoker<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse>
      */
     public SyncInvoker<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse> createAggregationAuthorizationInvoker(
         CreateAggregationAuthorizationRequest request) {
-        return new SyncInvoker<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse>(request,
-            RmsMeta.createAggregationAuthorization, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.createAggregationAuthorization, hcClient);
     }
 
     /**
@@ -179,7 +178,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfigurationAggregatorRequest 请求对象
+     * @param request CreateConfigurationAggregatorRequest 请求对象
      * @return CreateConfigurationAggregatorResponse
      */
     public CreateConfigurationAggregatorResponse createConfigurationAggregator(
@@ -194,13 +193,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConfigurationAggregatorRequest 请求对象
+     * @param request CreateConfigurationAggregatorRequest 请求对象
      * @return SyncInvoker<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse>
      */
     public SyncInvoker<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse> createConfigurationAggregatorInvoker(
         CreateConfigurationAggregatorRequest request) {
-        return new SyncInvoker<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse>(request,
-            RmsMeta.createConfigurationAggregator, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.createConfigurationAggregator, hcClient);
     }
 
     /**
@@ -210,7 +208,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAggregationAuthorizationRequest 请求对象
+     * @param request DeleteAggregationAuthorizationRequest 请求对象
      * @return DeleteAggregationAuthorizationResponse
      */
     public DeleteAggregationAuthorizationResponse deleteAggregationAuthorization(
@@ -225,13 +223,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAggregationAuthorizationRequest 请求对象
+     * @param request DeleteAggregationAuthorizationRequest 请求对象
      * @return SyncInvoker<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse>
      */
     public SyncInvoker<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse> deleteAggregationAuthorizationInvoker(
         DeleteAggregationAuthorizationRequest request) {
-        return new SyncInvoker<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse>(request,
-            RmsMeta.deleteAggregationAuthorization, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.deleteAggregationAuthorization, hcClient);
     }
 
     /**
@@ -241,7 +238,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConfigurationAggregatorRequest 请求对象
+     * @param request DeleteConfigurationAggregatorRequest 请求对象
      * @return DeleteConfigurationAggregatorResponse
      */
     public DeleteConfigurationAggregatorResponse deleteConfigurationAggregator(
@@ -256,13 +253,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConfigurationAggregatorRequest 请求对象
+     * @param request DeleteConfigurationAggregatorRequest 请求对象
      * @return SyncInvoker<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse>
      */
     public SyncInvoker<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse> deleteConfigurationAggregatorInvoker(
         DeleteConfigurationAggregatorRequest request) {
-        return new SyncInvoker<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse>(request,
-            RmsMeta.deleteConfigurationAggregator, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.deleteConfigurationAggregator, hcClient);
     }
 
     /**
@@ -272,7 +268,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePendingAggregationRequestRequest 请求对象
+     * @param request DeletePendingAggregationRequestRequest 请求对象
      * @return DeletePendingAggregationRequestResponse
      */
     public DeletePendingAggregationRequestResponse deletePendingAggregationRequest(
@@ -287,13 +283,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePendingAggregationRequestRequest 请求对象
+     * @param request DeletePendingAggregationRequestRequest 请求对象
      * @return SyncInvoker<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse>
      */
     public SyncInvoker<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse> deletePendingAggregationRequestInvoker(
         DeletePendingAggregationRequestRequest request) {
-        return new SyncInvoker<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse>(request,
-            RmsMeta.deletePendingAggregationRequest, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.deletePendingAggregationRequest, hcClient);
     }
 
     /**
@@ -303,7 +298,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAggregateComplianceByPolicyAssignmentRequest 请求对象
+     * @param request ListAggregateComplianceByPolicyAssignmentRequest 请求对象
      * @return ListAggregateComplianceByPolicyAssignmentResponse
      */
     public ListAggregateComplianceByPolicyAssignmentResponse listAggregateComplianceByPolicyAssignment(
@@ -318,13 +313,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAggregateComplianceByPolicyAssignmentRequest 请求对象
+     * @param request ListAggregateComplianceByPolicyAssignmentRequest 请求对象
      * @return SyncInvoker<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse>
      */
     public SyncInvoker<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse> listAggregateComplianceByPolicyAssignmentInvoker(
         ListAggregateComplianceByPolicyAssignmentRequest request) {
-        return new SyncInvoker<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse>(
-            request, RmsMeta.listAggregateComplianceByPolicyAssignment, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listAggregateComplianceByPolicyAssignment, hcClient);
     }
 
     /**
@@ -334,7 +328,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAggregateDiscoveredResourcesRequest 请求对象
+     * @param request ListAggregateDiscoveredResourcesRequest 请求对象
      * @return ListAggregateDiscoveredResourcesResponse
      */
     public ListAggregateDiscoveredResourcesResponse listAggregateDiscoveredResources(
@@ -349,13 +343,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAggregateDiscoveredResourcesRequest 请求对象
+     * @param request ListAggregateDiscoveredResourcesRequest 请求对象
      * @return SyncInvoker<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse>
      */
     public SyncInvoker<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse> listAggregateDiscoveredResourcesInvoker(
         ListAggregateDiscoveredResourcesRequest request) {
-        return new SyncInvoker<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse>(
-            request, RmsMeta.listAggregateDiscoveredResources, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listAggregateDiscoveredResources, hcClient);
     }
 
     /**
@@ -365,7 +358,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAggregationAuthorizationsRequest 请求对象
+     * @param request ListAggregationAuthorizationsRequest 请求对象
      * @return ListAggregationAuthorizationsResponse
      */
     public ListAggregationAuthorizationsResponse listAggregationAuthorizations(
@@ -380,13 +373,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAggregationAuthorizationsRequest 请求对象
+     * @param request ListAggregationAuthorizationsRequest 请求对象
      * @return SyncInvoker<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse>
      */
     public SyncInvoker<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse> listAggregationAuthorizationsInvoker(
         ListAggregationAuthorizationsRequest request) {
-        return new SyncInvoker<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse>(request,
-            RmsMeta.listAggregationAuthorizations, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listAggregationAuthorizations, hcClient);
     }
 
     /**
@@ -396,7 +388,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationAggregatorsRequest 请求对象
+     * @param request ListConfigurationAggregatorsRequest 请求对象
      * @return ListConfigurationAggregatorsResponse
      */
     public ListConfigurationAggregatorsResponse listConfigurationAggregators(
@@ -411,13 +403,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationAggregatorsRequest 请求对象
+     * @param request ListConfigurationAggregatorsRequest 请求对象
      * @return SyncInvoker<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse>
      */
     public SyncInvoker<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse> listConfigurationAggregatorsInvoker(
         ListConfigurationAggregatorsRequest request) {
-        return new SyncInvoker<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse>(request,
-            RmsMeta.listConfigurationAggregators, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listConfigurationAggregators, hcClient);
     }
 
     /**
@@ -427,7 +418,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPendingAggregationRequestsRequest 请求对象
+     * @param request ListPendingAggregationRequestsRequest 请求对象
      * @return ListPendingAggregationRequestsResponse
      */
     public ListPendingAggregationRequestsResponse listPendingAggregationRequests(
@@ -442,13 +433,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPendingAggregationRequestsRequest 请求对象
+     * @param request ListPendingAggregationRequestsRequest 请求对象
      * @return SyncInvoker<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse>
      */
     public SyncInvoker<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse> listPendingAggregationRequestsInvoker(
         ListPendingAggregationRequestsRequest request) {
-        return new SyncInvoker<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse>(request,
-            RmsMeta.listPendingAggregationRequests, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listPendingAggregationRequests, hcClient);
     }
 
     /**
@@ -458,7 +448,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAggregateResourceQueryRequest 请求对象
+     * @param request RunAggregateResourceQueryRequest 请求对象
      * @return RunAggregateResourceQueryResponse
      */
     public RunAggregateResourceQueryResponse runAggregateResourceQuery(RunAggregateResourceQueryRequest request) {
@@ -472,13 +462,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunAggregateResourceQueryRequest 请求对象
+     * @param request RunAggregateResourceQueryRequest 请求对象
      * @return SyncInvoker<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse>
      */
     public SyncInvoker<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse> runAggregateResourceQueryInvoker(
         RunAggregateResourceQueryRequest request) {
-        return new SyncInvoker<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse>(request,
-            RmsMeta.runAggregateResourceQuery, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.runAggregateResourceQuery, hcClient);
     }
 
     /**
@@ -488,7 +477,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAggregateComplianceDetailsByPolicyAssignmentRequest 请求对象
+     * @param request ShowAggregateComplianceDetailsByPolicyAssignmentRequest 请求对象
      * @return ShowAggregateComplianceDetailsByPolicyAssignmentResponse
      */
     public ShowAggregateComplianceDetailsByPolicyAssignmentResponse showAggregateComplianceDetailsByPolicyAssignment(
@@ -503,13 +492,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAggregateComplianceDetailsByPolicyAssignmentRequest 请求对象
+     * @param request ShowAggregateComplianceDetailsByPolicyAssignmentRequest 请求对象
      * @return SyncInvoker<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse>
      */
     public SyncInvoker<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse> showAggregateComplianceDetailsByPolicyAssignmentInvoker(
         ShowAggregateComplianceDetailsByPolicyAssignmentRequest request) {
-        return new SyncInvoker<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse>(
-            request, RmsMeta.showAggregateComplianceDetailsByPolicyAssignment, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showAggregateComplianceDetailsByPolicyAssignment, hcClient);
     }
 
     /**
@@ -519,7 +507,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAggregateDiscoveredResourceCountsRequest 请求对象
+     * @param request ShowAggregateDiscoveredResourceCountsRequest 请求对象
      * @return ShowAggregateDiscoveredResourceCountsResponse
      */
     public ShowAggregateDiscoveredResourceCountsResponse showAggregateDiscoveredResourceCounts(
@@ -534,13 +522,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAggregateDiscoveredResourceCountsRequest 请求对象
+     * @param request ShowAggregateDiscoveredResourceCountsRequest 请求对象
      * @return SyncInvoker<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse>
      */
     public SyncInvoker<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse> showAggregateDiscoveredResourceCountsInvoker(
         ShowAggregateDiscoveredResourceCountsRequest request) {
-        return new SyncInvoker<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse>(
-            request, RmsMeta.showAggregateDiscoveredResourceCounts, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showAggregateDiscoveredResourceCounts, hcClient);
     }
 
     /**
@@ -550,7 +537,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAggregatePolicyAssignmentDetailRequest 请求对象
+     * @param request ShowAggregatePolicyAssignmentDetailRequest 请求对象
      * @return ShowAggregatePolicyAssignmentDetailResponse
      */
     public ShowAggregatePolicyAssignmentDetailResponse showAggregatePolicyAssignmentDetail(
@@ -565,13 +552,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAggregatePolicyAssignmentDetailRequest 请求对象
+     * @param request ShowAggregatePolicyAssignmentDetailRequest 请求对象
      * @return SyncInvoker<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse>
      */
     public SyncInvoker<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse> showAggregatePolicyAssignmentDetailInvoker(
         ShowAggregatePolicyAssignmentDetailRequest request) {
-        return new SyncInvoker<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse>(
-            request, RmsMeta.showAggregatePolicyAssignmentDetail, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showAggregatePolicyAssignmentDetail, hcClient);
     }
 
     /**
@@ -581,7 +567,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAggregatePolicyStateComplianceSummaryRequest 请求对象
+     * @param request ShowAggregatePolicyStateComplianceSummaryRequest 请求对象
      * @return ShowAggregatePolicyStateComplianceSummaryResponse
      */
     public ShowAggregatePolicyStateComplianceSummaryResponse showAggregatePolicyStateComplianceSummary(
@@ -596,13 +582,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAggregatePolicyStateComplianceSummaryRequest 请求对象
+     * @param request ShowAggregatePolicyStateComplianceSummaryRequest 请求对象
      * @return SyncInvoker<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse>
      */
     public SyncInvoker<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse> showAggregatePolicyStateComplianceSummaryInvoker(
         ShowAggregatePolicyStateComplianceSummaryRequest request) {
-        return new SyncInvoker<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse>(
-            request, RmsMeta.showAggregatePolicyStateComplianceSummary, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showAggregatePolicyStateComplianceSummary, hcClient);
     }
 
     /**
@@ -612,7 +597,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAggregateResourceConfigRequest 请求对象
+     * @param request ShowAggregateResourceConfigRequest 请求对象
      * @return ShowAggregateResourceConfigResponse
      */
     public ShowAggregateResourceConfigResponse showAggregateResourceConfig(ShowAggregateResourceConfigRequest request) {
@@ -626,13 +611,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAggregateResourceConfigRequest 请求对象
+     * @param request ShowAggregateResourceConfigRequest 请求对象
      * @return SyncInvoker<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse>
      */
     public SyncInvoker<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse> showAggregateResourceConfigInvoker(
         ShowAggregateResourceConfigRequest request) {
-        return new SyncInvoker<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse>(request,
-            RmsMeta.showAggregateResourceConfig, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showAggregateResourceConfig, hcClient);
     }
 
     /**
@@ -642,7 +626,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigurationAggregatorRequest 请求对象
+     * @param request ShowConfigurationAggregatorRequest 请求对象
      * @return ShowConfigurationAggregatorResponse
      */
     public ShowConfigurationAggregatorResponse showConfigurationAggregator(ShowConfigurationAggregatorRequest request) {
@@ -656,13 +640,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigurationAggregatorRequest 请求对象
+     * @param request ShowConfigurationAggregatorRequest 请求对象
      * @return SyncInvoker<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse>
      */
     public SyncInvoker<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse> showConfigurationAggregatorInvoker(
         ShowConfigurationAggregatorRequest request) {
-        return new SyncInvoker<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse>(request,
-            RmsMeta.showConfigurationAggregator, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showConfigurationAggregator, hcClient);
     }
 
     /**
@@ -672,7 +655,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigurationAggregatorSourcesStatusRequest 请求对象
+     * @param request ShowConfigurationAggregatorSourcesStatusRequest 请求对象
      * @return ShowConfigurationAggregatorSourcesStatusResponse
      */
     public ShowConfigurationAggregatorSourcesStatusResponse showConfigurationAggregatorSourcesStatus(
@@ -687,13 +670,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigurationAggregatorSourcesStatusRequest 请求对象
+     * @param request ShowConfigurationAggregatorSourcesStatusRequest 请求对象
      * @return SyncInvoker<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse>
      */
     public SyncInvoker<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse> showConfigurationAggregatorSourcesStatusInvoker(
         ShowConfigurationAggregatorSourcesStatusRequest request) {
-        return new SyncInvoker<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse>(
-            request, RmsMeta.showConfigurationAggregatorSourcesStatus, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showConfigurationAggregatorSourcesStatus, hcClient);
     }
 
     /**
@@ -703,7 +685,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigurationAggregatorRequest 请求对象
+     * @param request UpdateConfigurationAggregatorRequest 请求对象
      * @return UpdateConfigurationAggregatorResponse
      */
     public UpdateConfigurationAggregatorResponse updateConfigurationAggregator(
@@ -718,13 +700,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigurationAggregatorRequest 请求对象
+     * @param request UpdateConfigurationAggregatorRequest 请求对象
      * @return SyncInvoker<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse>
      */
     public SyncInvoker<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse> updateConfigurationAggregatorInvoker(
         UpdateConfigurationAggregatorRequest request) {
-        return new SyncInvoker<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse>(request,
-            RmsMeta.updateConfigurationAggregator, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.updateConfigurationAggregator, hcClient);
     }
 
     /**
@@ -734,7 +715,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceHistoryRequest 请求对象
+     * @param request ShowResourceHistoryRequest 请求对象
      * @return ShowResourceHistoryResponse
      */
     public ShowResourceHistoryResponse showResourceHistory(ShowResourceHistoryRequest request) {
@@ -748,13 +729,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceHistoryRequest 请求对象
+     * @param request ShowResourceHistoryRequest 请求对象
      * @return SyncInvoker<ShowResourceHistoryRequest, ShowResourceHistoryResponse>
      */
     public SyncInvoker<ShowResourceHistoryRequest, ShowResourceHistoryResponse> showResourceHistoryInvoker(
         ShowResourceHistoryRequest request) {
-        return new SyncInvoker<ShowResourceHistoryRequest, ShowResourceHistoryResponse>(request,
-            RmsMeta.showResourceHistory, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showResourceHistory, hcClient);
     }
 
     /**
@@ -764,7 +744,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrganizationPolicyAssignmentRequest 请求对象
+     * @param request CreateOrganizationPolicyAssignmentRequest 请求对象
      * @return CreateOrganizationPolicyAssignmentResponse
      */
     public CreateOrganizationPolicyAssignmentResponse createOrganizationPolicyAssignment(
@@ -779,13 +759,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrganizationPolicyAssignmentRequest 请求对象
+     * @param request CreateOrganizationPolicyAssignmentRequest 请求对象
      * @return SyncInvoker<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse>
      */
     public SyncInvoker<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse> createOrganizationPolicyAssignmentInvoker(
         CreateOrganizationPolicyAssignmentRequest request) {
-        return new SyncInvoker<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse>(
-            request, RmsMeta.createOrganizationPolicyAssignment, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.createOrganizationPolicyAssignment, hcClient);
     }
 
     /**
@@ -795,7 +774,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyAssignmentsRequest 请求对象
+     * @param request CreatePolicyAssignmentsRequest 请求对象
      * @return CreatePolicyAssignmentsResponse
      */
     public CreatePolicyAssignmentsResponse createPolicyAssignments(CreatePolicyAssignmentsRequest request) {
@@ -809,13 +788,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyAssignmentsRequest 请求对象
+     * @param request CreatePolicyAssignmentsRequest 请求对象
      * @return SyncInvoker<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse>
      */
     public SyncInvoker<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse> createPolicyAssignmentsInvoker(
         CreatePolicyAssignmentsRequest request) {
-        return new SyncInvoker<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse>(request,
-            RmsMeta.createPolicyAssignments, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.createPolicyAssignments, hcClient);
     }
 
     /**
@@ -825,7 +803,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOrganizationPolicyAssignmentRequest 请求对象
+     * @param request DeleteOrganizationPolicyAssignmentRequest 请求对象
      * @return DeleteOrganizationPolicyAssignmentResponse
      */
     public DeleteOrganizationPolicyAssignmentResponse deleteOrganizationPolicyAssignment(
@@ -840,13 +818,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOrganizationPolicyAssignmentRequest 请求对象
+     * @param request DeleteOrganizationPolicyAssignmentRequest 请求对象
      * @return SyncInvoker<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse>
      */
     public SyncInvoker<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse> deleteOrganizationPolicyAssignmentInvoker(
         DeleteOrganizationPolicyAssignmentRequest request) {
-        return new SyncInvoker<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse>(
-            request, RmsMeta.deleteOrganizationPolicyAssignment, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.deleteOrganizationPolicyAssignment, hcClient);
     }
 
     /**
@@ -856,7 +833,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyAssignmentRequest 请求对象
+     * @param request DeletePolicyAssignmentRequest 请求对象
      * @return DeletePolicyAssignmentResponse
      */
     public DeletePolicyAssignmentResponse deletePolicyAssignment(DeletePolicyAssignmentRequest request) {
@@ -870,13 +847,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyAssignmentRequest 请求对象
+     * @param request DeletePolicyAssignmentRequest 请求对象
      * @return SyncInvoker<DeletePolicyAssignmentRequest, DeletePolicyAssignmentResponse>
      */
     public SyncInvoker<DeletePolicyAssignmentRequest, DeletePolicyAssignmentResponse> deletePolicyAssignmentInvoker(
         DeletePolicyAssignmentRequest request) {
-        return new SyncInvoker<DeletePolicyAssignmentRequest, DeletePolicyAssignmentResponse>(request,
-            RmsMeta.deletePolicyAssignment, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.deletePolicyAssignment, hcClient);
     }
 
     /**
@@ -886,7 +862,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisablePolicyAssignmentRequest 请求对象
+     * @param request DisablePolicyAssignmentRequest 请求对象
      * @return DisablePolicyAssignmentResponse
      */
     public DisablePolicyAssignmentResponse disablePolicyAssignment(DisablePolicyAssignmentRequest request) {
@@ -900,13 +876,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisablePolicyAssignmentRequest 请求对象
+     * @param request DisablePolicyAssignmentRequest 请求对象
      * @return SyncInvoker<DisablePolicyAssignmentRequest, DisablePolicyAssignmentResponse>
      */
     public SyncInvoker<DisablePolicyAssignmentRequest, DisablePolicyAssignmentResponse> disablePolicyAssignmentInvoker(
         DisablePolicyAssignmentRequest request) {
-        return new SyncInvoker<DisablePolicyAssignmentRequest, DisablePolicyAssignmentResponse>(request,
-            RmsMeta.disablePolicyAssignment, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.disablePolicyAssignment, hcClient);
     }
 
     /**
@@ -916,7 +891,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnablePolicyAssignmentRequest 请求对象
+     * @param request EnablePolicyAssignmentRequest 请求对象
      * @return EnablePolicyAssignmentResponse
      */
     public EnablePolicyAssignmentResponse enablePolicyAssignment(EnablePolicyAssignmentRequest request) {
@@ -930,13 +905,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnablePolicyAssignmentRequest 请求对象
+     * @param request EnablePolicyAssignmentRequest 请求对象
      * @return SyncInvoker<EnablePolicyAssignmentRequest, EnablePolicyAssignmentResponse>
      */
     public SyncInvoker<EnablePolicyAssignmentRequest, EnablePolicyAssignmentResponse> enablePolicyAssignmentInvoker(
         EnablePolicyAssignmentRequest request) {
-        return new SyncInvoker<EnablePolicyAssignmentRequest, EnablePolicyAssignmentResponse>(request,
-            RmsMeta.enablePolicyAssignment, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.enablePolicyAssignment, hcClient);
     }
 
     /**
@@ -946,7 +920,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBuiltInPolicyDefinitionsRequest 请求对象
+     * @param request ListBuiltInPolicyDefinitionsRequest 请求对象
      * @return ListBuiltInPolicyDefinitionsResponse
      */
     public ListBuiltInPolicyDefinitionsResponse listBuiltInPolicyDefinitions(
@@ -961,13 +935,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBuiltInPolicyDefinitionsRequest 请求对象
+     * @param request ListBuiltInPolicyDefinitionsRequest 请求对象
      * @return SyncInvoker<ListBuiltInPolicyDefinitionsRequest, ListBuiltInPolicyDefinitionsResponse>
      */
     public SyncInvoker<ListBuiltInPolicyDefinitionsRequest, ListBuiltInPolicyDefinitionsResponse> listBuiltInPolicyDefinitionsInvoker(
         ListBuiltInPolicyDefinitionsRequest request) {
-        return new SyncInvoker<ListBuiltInPolicyDefinitionsRequest, ListBuiltInPolicyDefinitionsResponse>(request,
-            RmsMeta.listBuiltInPolicyDefinitions, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listBuiltInPolicyDefinitions, hcClient);
     }
 
     /**
@@ -977,7 +950,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrganizationPolicyAssignmentsRequest 请求对象
+     * @param request ListOrganizationPolicyAssignmentsRequest 请求对象
      * @return ListOrganizationPolicyAssignmentsResponse
      */
     public ListOrganizationPolicyAssignmentsResponse listOrganizationPolicyAssignments(
@@ -992,13 +965,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrganizationPolicyAssignmentsRequest 请求对象
+     * @param request ListOrganizationPolicyAssignmentsRequest 请求对象
      * @return SyncInvoker<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse>
      */
     public SyncInvoker<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse> listOrganizationPolicyAssignmentsInvoker(
         ListOrganizationPolicyAssignmentsRequest request) {
-        return new SyncInvoker<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse>(
-            request, RmsMeta.listOrganizationPolicyAssignments, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listOrganizationPolicyAssignments, hcClient);
     }
 
     /**
@@ -1008,7 +980,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyAssignmentsRequest 请求对象
+     * @param request ListPolicyAssignmentsRequest 请求对象
      * @return ListPolicyAssignmentsResponse
      */
     public ListPolicyAssignmentsResponse listPolicyAssignments(ListPolicyAssignmentsRequest request) {
@@ -1022,13 +994,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyAssignmentsRequest 请求对象
+     * @param request ListPolicyAssignmentsRequest 请求对象
      * @return SyncInvoker<ListPolicyAssignmentsRequest, ListPolicyAssignmentsResponse>
      */
     public SyncInvoker<ListPolicyAssignmentsRequest, ListPolicyAssignmentsResponse> listPolicyAssignmentsInvoker(
         ListPolicyAssignmentsRequest request) {
-        return new SyncInvoker<ListPolicyAssignmentsRequest, ListPolicyAssignmentsResponse>(request,
-            RmsMeta.listPolicyAssignments, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listPolicyAssignments, hcClient);
     }
 
     /**
@@ -1038,7 +1009,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyStatesByAssignmentIdRequest 请求对象
+     * @param request ListPolicyStatesByAssignmentIdRequest 请求对象
      * @return ListPolicyStatesByAssignmentIdResponse
      */
     public ListPolicyStatesByAssignmentIdResponse listPolicyStatesByAssignmentId(
@@ -1053,13 +1024,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyStatesByAssignmentIdRequest 请求对象
+     * @param request ListPolicyStatesByAssignmentIdRequest 请求对象
      * @return SyncInvoker<ListPolicyStatesByAssignmentIdRequest, ListPolicyStatesByAssignmentIdResponse>
      */
     public SyncInvoker<ListPolicyStatesByAssignmentIdRequest, ListPolicyStatesByAssignmentIdResponse> listPolicyStatesByAssignmentIdInvoker(
         ListPolicyStatesByAssignmentIdRequest request) {
-        return new SyncInvoker<ListPolicyStatesByAssignmentIdRequest, ListPolicyStatesByAssignmentIdResponse>(request,
-            RmsMeta.listPolicyStatesByAssignmentId, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listPolicyStatesByAssignmentId, hcClient);
     }
 
     /**
@@ -1069,7 +1039,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyStatesByDomainIdRequest 请求对象
+     * @param request ListPolicyStatesByDomainIdRequest 请求对象
      * @return ListPolicyStatesByDomainIdResponse
      */
     public ListPolicyStatesByDomainIdResponse listPolicyStatesByDomainId(ListPolicyStatesByDomainIdRequest request) {
@@ -1083,13 +1053,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyStatesByDomainIdRequest 请求对象
+     * @param request ListPolicyStatesByDomainIdRequest 请求对象
      * @return SyncInvoker<ListPolicyStatesByDomainIdRequest, ListPolicyStatesByDomainIdResponse>
      */
     public SyncInvoker<ListPolicyStatesByDomainIdRequest, ListPolicyStatesByDomainIdResponse> listPolicyStatesByDomainIdInvoker(
         ListPolicyStatesByDomainIdRequest request) {
-        return new SyncInvoker<ListPolicyStatesByDomainIdRequest, ListPolicyStatesByDomainIdResponse>(request,
-            RmsMeta.listPolicyStatesByDomainId, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listPolicyStatesByDomainId, hcClient);
     }
 
     /**
@@ -1099,7 +1068,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyStatesByResourceIdRequest 请求对象
+     * @param request ListPolicyStatesByResourceIdRequest 请求对象
      * @return ListPolicyStatesByResourceIdResponse
      */
     public ListPolicyStatesByResourceIdResponse listPolicyStatesByResourceId(
@@ -1114,13 +1083,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyStatesByResourceIdRequest 请求对象
+     * @param request ListPolicyStatesByResourceIdRequest 请求对象
      * @return SyncInvoker<ListPolicyStatesByResourceIdRequest, ListPolicyStatesByResourceIdResponse>
      */
     public SyncInvoker<ListPolicyStatesByResourceIdRequest, ListPolicyStatesByResourceIdResponse> listPolicyStatesByResourceIdInvoker(
         ListPolicyStatesByResourceIdRequest request) {
-        return new SyncInvoker<ListPolicyStatesByResourceIdRequest, ListPolicyStatesByResourceIdResponse>(request,
-            RmsMeta.listPolicyStatesByResourceId, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listPolicyStatesByResourceId, hcClient);
     }
 
     /**
@@ -1130,7 +1098,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunEvaluationByPolicyAssignmentIdRequest 请求对象
+     * @param request RunEvaluationByPolicyAssignmentIdRequest 请求对象
      * @return RunEvaluationByPolicyAssignmentIdResponse
      */
     public RunEvaluationByPolicyAssignmentIdResponse runEvaluationByPolicyAssignmentId(
@@ -1145,13 +1113,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunEvaluationByPolicyAssignmentIdRequest 请求对象
+     * @param request RunEvaluationByPolicyAssignmentIdRequest 请求对象
      * @return SyncInvoker<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse>
      */
     public SyncInvoker<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse> runEvaluationByPolicyAssignmentIdInvoker(
         RunEvaluationByPolicyAssignmentIdRequest request) {
-        return new SyncInvoker<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse>(
-            request, RmsMeta.runEvaluationByPolicyAssignmentId, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.runEvaluationByPolicyAssignmentId, hcClient);
     }
 
     /**
@@ -1161,7 +1128,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBuiltInPolicyDefinitionRequest 请求对象
+     * @param request ShowBuiltInPolicyDefinitionRequest 请求对象
      * @return ShowBuiltInPolicyDefinitionResponse
      */
     public ShowBuiltInPolicyDefinitionResponse showBuiltInPolicyDefinition(ShowBuiltInPolicyDefinitionRequest request) {
@@ -1175,13 +1142,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBuiltInPolicyDefinitionRequest 请求对象
+     * @param request ShowBuiltInPolicyDefinitionRequest 请求对象
      * @return SyncInvoker<ShowBuiltInPolicyDefinitionRequest, ShowBuiltInPolicyDefinitionResponse>
      */
     public SyncInvoker<ShowBuiltInPolicyDefinitionRequest, ShowBuiltInPolicyDefinitionResponse> showBuiltInPolicyDefinitionInvoker(
         ShowBuiltInPolicyDefinitionRequest request) {
-        return new SyncInvoker<ShowBuiltInPolicyDefinitionRequest, ShowBuiltInPolicyDefinitionResponse>(request,
-            RmsMeta.showBuiltInPolicyDefinition, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showBuiltInPolicyDefinition, hcClient);
     }
 
     /**
@@ -1191,7 +1157,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEvaluationStateByAssignmentIdRequest 请求对象
+     * @param request ShowEvaluationStateByAssignmentIdRequest 请求对象
      * @return ShowEvaluationStateByAssignmentIdResponse
      */
     public ShowEvaluationStateByAssignmentIdResponse showEvaluationStateByAssignmentId(
@@ -1206,13 +1172,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEvaluationStateByAssignmentIdRequest 请求对象
+     * @param request ShowEvaluationStateByAssignmentIdRequest 请求对象
      * @return SyncInvoker<ShowEvaluationStateByAssignmentIdRequest, ShowEvaluationStateByAssignmentIdResponse>
      */
     public SyncInvoker<ShowEvaluationStateByAssignmentIdRequest, ShowEvaluationStateByAssignmentIdResponse> showEvaluationStateByAssignmentIdInvoker(
         ShowEvaluationStateByAssignmentIdRequest request) {
-        return new SyncInvoker<ShowEvaluationStateByAssignmentIdRequest, ShowEvaluationStateByAssignmentIdResponse>(
-            request, RmsMeta.showEvaluationStateByAssignmentId, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showEvaluationStateByAssignmentId, hcClient);
     }
 
     /**
@@ -1222,7 +1187,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationPolicyAssignmentRequest 请求对象
+     * @param request ShowOrganizationPolicyAssignmentRequest 请求对象
      * @return ShowOrganizationPolicyAssignmentResponse
      */
     public ShowOrganizationPolicyAssignmentResponse showOrganizationPolicyAssignment(
@@ -1237,13 +1202,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationPolicyAssignmentRequest 请求对象
+     * @param request ShowOrganizationPolicyAssignmentRequest 请求对象
      * @return SyncInvoker<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse>
      */
     public SyncInvoker<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse> showOrganizationPolicyAssignmentInvoker(
         ShowOrganizationPolicyAssignmentRequest request) {
-        return new SyncInvoker<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse>(
-            request, RmsMeta.showOrganizationPolicyAssignment, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showOrganizationPolicyAssignment, hcClient);
     }
 
     /**
@@ -1253,7 +1217,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationPolicyAssignmentDetailedStatusRequest 请求对象
+     * @param request ShowOrganizationPolicyAssignmentDetailedStatusRequest 请求对象
      * @return ShowOrganizationPolicyAssignmentDetailedStatusResponse
      */
     public ShowOrganizationPolicyAssignmentDetailedStatusResponse showOrganizationPolicyAssignmentDetailedStatus(
@@ -1268,13 +1232,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationPolicyAssignmentDetailedStatusRequest 请求对象
+     * @param request ShowOrganizationPolicyAssignmentDetailedStatusRequest 请求对象
      * @return SyncInvoker<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse>
      */
     public SyncInvoker<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse> showOrganizationPolicyAssignmentDetailedStatusInvoker(
         ShowOrganizationPolicyAssignmentDetailedStatusRequest request) {
-        return new SyncInvoker<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse>(
-            request, RmsMeta.showOrganizationPolicyAssignmentDetailedStatus, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showOrganizationPolicyAssignmentDetailedStatus, hcClient);
     }
 
     /**
@@ -1284,7 +1247,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationPolicyAssignmentStatusesRequest 请求对象
+     * @param request ShowOrganizationPolicyAssignmentStatusesRequest 请求对象
      * @return ShowOrganizationPolicyAssignmentStatusesResponse
      */
     public ShowOrganizationPolicyAssignmentStatusesResponse showOrganizationPolicyAssignmentStatuses(
@@ -1299,13 +1262,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationPolicyAssignmentStatusesRequest 请求对象
+     * @param request ShowOrganizationPolicyAssignmentStatusesRequest 请求对象
      * @return SyncInvoker<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse>
      */
     public SyncInvoker<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse> showOrganizationPolicyAssignmentStatusesInvoker(
         ShowOrganizationPolicyAssignmentStatusesRequest request) {
-        return new SyncInvoker<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse>(
-            request, RmsMeta.showOrganizationPolicyAssignmentStatuses, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showOrganizationPolicyAssignmentStatuses, hcClient);
     }
 
     /**
@@ -1315,7 +1277,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyAssignmentRequest 请求对象
+     * @param request ShowPolicyAssignmentRequest 请求对象
      * @return ShowPolicyAssignmentResponse
      */
     public ShowPolicyAssignmentResponse showPolicyAssignment(ShowPolicyAssignmentRequest request) {
@@ -1329,13 +1291,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyAssignmentRequest 请求对象
+     * @param request ShowPolicyAssignmentRequest 请求对象
      * @return SyncInvoker<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse>
      */
     public SyncInvoker<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse> showPolicyAssignmentInvoker(
         ShowPolicyAssignmentRequest request) {
-        return new SyncInvoker<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse>(request,
-            RmsMeta.showPolicyAssignment, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showPolicyAssignment, hcClient);
     }
 
     /**
@@ -1345,7 +1306,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyAssignmentRequest 请求对象
+     * @param request UpdatePolicyAssignmentRequest 请求对象
      * @return UpdatePolicyAssignmentResponse
      */
     public UpdatePolicyAssignmentResponse updatePolicyAssignment(UpdatePolicyAssignmentRequest request) {
@@ -1359,13 +1320,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyAssignmentRequest 请求对象
+     * @param request UpdatePolicyAssignmentRequest 请求对象
      * @return SyncInvoker<UpdatePolicyAssignmentRequest, UpdatePolicyAssignmentResponse>
      */
     public SyncInvoker<UpdatePolicyAssignmentRequest, UpdatePolicyAssignmentResponse> updatePolicyAssignmentInvoker(
         UpdatePolicyAssignmentRequest request) {
-        return new SyncInvoker<UpdatePolicyAssignmentRequest, UpdatePolicyAssignmentResponse>(request,
-            RmsMeta.updatePolicyAssignment, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.updatePolicyAssignment, hcClient);
     }
 
     /**
@@ -1375,7 +1335,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyStateRequest 请求对象
+     * @param request UpdatePolicyStateRequest 请求对象
      * @return UpdatePolicyStateResponse
      */
     public UpdatePolicyStateResponse updatePolicyState(UpdatePolicyStateRequest request) {
@@ -1389,13 +1349,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyStateRequest 请求对象
+     * @param request UpdatePolicyStateRequest 请求对象
      * @return SyncInvoker<UpdatePolicyStateRequest, UpdatePolicyStateResponse>
      */
     public SyncInvoker<UpdatePolicyStateRequest, UpdatePolicyStateResponse> updatePolicyStateInvoker(
         UpdatePolicyStateRequest request) {
-        return new SyncInvoker<UpdatePolicyStateRequest, UpdatePolicyStateResponse>(request, RmsMeta.updatePolicyState,
-            hcClient);
+        return new SyncInvoker<>(request, RmsMeta.updatePolicyState, hcClient);
     }
 
     /**
@@ -1405,7 +1364,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStoredQueryRequest 请求对象
+     * @param request CreateStoredQueryRequest 请求对象
      * @return CreateStoredQueryResponse
      */
     public CreateStoredQueryResponse createStoredQuery(CreateStoredQueryRequest request) {
@@ -1419,13 +1378,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStoredQueryRequest 请求对象
+     * @param request CreateStoredQueryRequest 请求对象
      * @return SyncInvoker<CreateStoredQueryRequest, CreateStoredQueryResponse>
      */
     public SyncInvoker<CreateStoredQueryRequest, CreateStoredQueryResponse> createStoredQueryInvoker(
         CreateStoredQueryRequest request) {
-        return new SyncInvoker<CreateStoredQueryRequest, CreateStoredQueryResponse>(request, RmsMeta.createStoredQuery,
-            hcClient);
+        return new SyncInvoker<>(request, RmsMeta.createStoredQuery, hcClient);
     }
 
     /**
@@ -1435,7 +1393,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStoredQueryRequest 请求对象
+     * @param request DeleteStoredQueryRequest 请求对象
      * @return DeleteStoredQueryResponse
      */
     public DeleteStoredQueryResponse deleteStoredQuery(DeleteStoredQueryRequest request) {
@@ -1449,13 +1407,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStoredQueryRequest 请求对象
+     * @param request DeleteStoredQueryRequest 请求对象
      * @return SyncInvoker<DeleteStoredQueryRequest, DeleteStoredQueryResponse>
      */
     public SyncInvoker<DeleteStoredQueryRequest, DeleteStoredQueryResponse> deleteStoredQueryInvoker(
         DeleteStoredQueryRequest request) {
-        return new SyncInvoker<DeleteStoredQueryRequest, DeleteStoredQueryResponse>(request, RmsMeta.deleteStoredQuery,
-            hcClient);
+        return new SyncInvoker<>(request, RmsMeta.deleteStoredQuery, hcClient);
     }
 
     /**
@@ -1465,7 +1422,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSchemasRequest 请求对象
+     * @param request ListSchemasRequest 请求对象
      * @return ListSchemasResponse
      */
     public ListSchemasResponse listSchemas(ListSchemasRequest request) {
@@ -1479,11 +1436,11 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSchemasRequest 请求对象
+     * @param request ListSchemasRequest 请求对象
      * @return SyncInvoker<ListSchemasRequest, ListSchemasResponse>
      */
     public SyncInvoker<ListSchemasRequest, ListSchemasResponse> listSchemasInvoker(ListSchemasRequest request) {
-        return new SyncInvoker<ListSchemasRequest, ListSchemasResponse>(request, RmsMeta.listSchemas, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listSchemas, hcClient);
     }
 
     /**
@@ -1493,7 +1450,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoredQueriesRequest 请求对象
+     * @param request ListStoredQueriesRequest 请求对象
      * @return ListStoredQueriesResponse
      */
     public ListStoredQueriesResponse listStoredQueries(ListStoredQueriesRequest request) {
@@ -1507,13 +1464,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStoredQueriesRequest 请求对象
+     * @param request ListStoredQueriesRequest 请求对象
      * @return SyncInvoker<ListStoredQueriesRequest, ListStoredQueriesResponse>
      */
     public SyncInvoker<ListStoredQueriesRequest, ListStoredQueriesResponse> listStoredQueriesInvoker(
         ListStoredQueriesRequest request) {
-        return new SyncInvoker<ListStoredQueriesRequest, ListStoredQueriesResponse>(request, RmsMeta.listStoredQueries,
-            hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listStoredQueries, hcClient);
     }
 
     /**
@@ -1523,7 +1479,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunQueryRequest 请求对象
+     * @param request RunQueryRequest 请求对象
      * @return RunQueryResponse
      */
     public RunQueryResponse runQuery(RunQueryRequest request) {
@@ -1537,11 +1493,11 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunQueryRequest 请求对象
+     * @param request RunQueryRequest 请求对象
      * @return SyncInvoker<RunQueryRequest, RunQueryResponse>
      */
     public SyncInvoker<RunQueryRequest, RunQueryResponse> runQueryInvoker(RunQueryRequest request) {
-        return new SyncInvoker<RunQueryRequest, RunQueryResponse>(request, RmsMeta.runQuery, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.runQuery, hcClient);
     }
 
     /**
@@ -1551,7 +1507,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStoredQueryRequest 请求对象
+     * @param request ShowStoredQueryRequest 请求对象
      * @return ShowStoredQueryResponse
      */
     public ShowStoredQueryResponse showStoredQuery(ShowStoredQueryRequest request) {
@@ -1565,13 +1521,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStoredQueryRequest 请求对象
+     * @param request ShowStoredQueryRequest 请求对象
      * @return SyncInvoker<ShowStoredQueryRequest, ShowStoredQueryResponse>
      */
     public SyncInvoker<ShowStoredQueryRequest, ShowStoredQueryResponse> showStoredQueryInvoker(
         ShowStoredQueryRequest request) {
-        return new SyncInvoker<ShowStoredQueryRequest, ShowStoredQueryResponse>(request, RmsMeta.showStoredQuery,
-            hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showStoredQuery, hcClient);
     }
 
     /**
@@ -1581,7 +1536,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStoredQueryRequest 请求对象
+     * @param request UpdateStoredQueryRequest 请求对象
      * @return UpdateStoredQueryResponse
      */
     public UpdateStoredQueryResponse updateStoredQuery(UpdateStoredQueryRequest request) {
@@ -1595,13 +1550,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStoredQueryRequest 请求对象
+     * @param request UpdateStoredQueryRequest 请求对象
      * @return SyncInvoker<UpdateStoredQueryRequest, UpdateStoredQueryResponse>
      */
     public SyncInvoker<UpdateStoredQueryRequest, UpdateStoredQueryResponse> updateStoredQueryInvoker(
         UpdateStoredQueryRequest request) {
-        return new SyncInvoker<UpdateStoredQueryRequest, UpdateStoredQueryResponse>(request, RmsMeta.updateStoredQuery,
-            hcClient);
+        return new SyncInvoker<>(request, RmsMeta.updateStoredQuery, hcClient);
     }
 
     /**
@@ -1611,7 +1565,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRegionsRequest 请求对象
+     * @param request ListRegionsRequest 请求对象
      * @return ListRegionsResponse
      */
     public ListRegionsResponse listRegions(ListRegionsRequest request) {
@@ -1625,11 +1579,11 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRegionsRequest 请求对象
+     * @param request ListRegionsRequest 请求对象
      * @return SyncInvoker<ListRegionsRequest, ListRegionsResponse>
      */
     public SyncInvoker<ListRegionsRequest, ListRegionsResponse> listRegionsInvoker(ListRegionsRequest request) {
-        return new SyncInvoker<ListRegionsRequest, ListRegionsResponse>(request, RmsMeta.listRegions, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listRegions, hcClient);
     }
 
     /**
@@ -1639,7 +1593,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceRelationsRequest 请求对象
+     * @param request ShowResourceRelationsRequest 请求对象
      * @return ShowResourceRelationsResponse
      */
     public ShowResourceRelationsResponse showResourceRelations(ShowResourceRelationsRequest request) {
@@ -1653,13 +1607,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceRelationsRequest 请求对象
+     * @param request ShowResourceRelationsRequest 请求对象
      * @return SyncInvoker<ShowResourceRelationsRequest, ShowResourceRelationsResponse>
      */
     public SyncInvoker<ShowResourceRelationsRequest, ShowResourceRelationsResponse> showResourceRelationsInvoker(
         ShowResourceRelationsRequest request) {
-        return new SyncInvoker<ShowResourceRelationsRequest, ShowResourceRelationsResponse>(request,
-            RmsMeta.showResourceRelations, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showResourceRelations, hcClient);
     }
 
     /**
@@ -1669,7 +1622,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceRelationsDetailRequest 请求对象
+     * @param request ShowResourceRelationsDetailRequest 请求对象
      * @return ShowResourceRelationsDetailResponse
      */
     public ShowResourceRelationsDetailResponse showResourceRelationsDetail(ShowResourceRelationsDetailRequest request) {
@@ -1683,13 +1636,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceRelationsDetailRequest 请求对象
+     * @param request ShowResourceRelationsDetailRequest 请求对象
      * @return SyncInvoker<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse>
      */
     public SyncInvoker<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse> showResourceRelationsDetailInvoker(
         ShowResourceRelationsDetailRequest request) {
-        return new SyncInvoker<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse>(request,
-            RmsMeta.showResourceRelationsDetail, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showResourceRelationsDetail, hcClient);
     }
 
     /**
@@ -1699,7 +1651,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectAllResourcesSummaryRequest 请求对象
+     * @param request CollectAllResourcesSummaryRequest 请求对象
      * @return CollectAllResourcesSummaryResponse
      */
     public CollectAllResourcesSummaryResponse collectAllResourcesSummary(CollectAllResourcesSummaryRequest request) {
@@ -1713,13 +1665,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CollectAllResourcesSummaryRequest 请求对象
+     * @param request CollectAllResourcesSummaryRequest 请求对象
      * @return SyncInvoker<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse>
      */
     public SyncInvoker<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse> collectAllResourcesSummaryInvoker(
         CollectAllResourcesSummaryRequest request) {
-        return new SyncInvoker<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse>(request,
-            RmsMeta.collectAllResourcesSummary, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.collectAllResourcesSummary, hcClient);
     }
 
     /**
@@ -1729,7 +1680,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountAllResourcesRequest 请求对象
+     * @param request CountAllResourcesRequest 请求对象
      * @return CountAllResourcesResponse
      */
     public CountAllResourcesResponse countAllResources(CountAllResourcesRequest request) {
@@ -1743,13 +1694,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CountAllResourcesRequest 请求对象
+     * @param request CountAllResourcesRequest 请求对象
      * @return SyncInvoker<CountAllResourcesRequest, CountAllResourcesResponse>
      */
     public SyncInvoker<CountAllResourcesRequest, CountAllResourcesResponse> countAllResourcesInvoker(
         CountAllResourcesRequest request) {
-        return new SyncInvoker<CountAllResourcesRequest, CountAllResourcesResponse>(request, RmsMeta.countAllResources,
-            hcClient);
+        return new SyncInvoker<>(request, RmsMeta.countAllResources, hcClient);
     }
 
     /**
@@ -1759,7 +1709,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllResourcesRequest 请求对象
+     * @param request ListAllResourcesRequest 请求对象
      * @return ListAllResourcesResponse
      */
     public ListAllResourcesResponse listAllResources(ListAllResourcesRequest request) {
@@ -1773,13 +1723,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllResourcesRequest 请求对象
+     * @param request ListAllResourcesRequest 请求对象
      * @return SyncInvoker<ListAllResourcesRequest, ListAllResourcesResponse>
      */
     public SyncInvoker<ListAllResourcesRequest, ListAllResourcesResponse> listAllResourcesInvoker(
         ListAllResourcesRequest request) {
-        return new SyncInvoker<ListAllResourcesRequest, ListAllResourcesResponse>(request, RmsMeta.listAllResources,
-            hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listAllResources, hcClient);
     }
 
     /**
@@ -1789,7 +1738,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllTagsRequest 请求对象
+     * @param request ListAllTagsRequest 请求对象
      * @return ListAllTagsResponse
      */
     public ListAllTagsResponse listAllTags(ListAllTagsRequest request) {
@@ -1803,11 +1752,11 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllTagsRequest 请求对象
+     * @param request ListAllTagsRequest 请求对象
      * @return SyncInvoker<ListAllTagsRequest, ListAllTagsResponse>
      */
     public SyncInvoker<ListAllTagsRequest, ListAllTagsResponse> listAllTagsInvoker(ListAllTagsRequest request) {
-        return new SyncInvoker<ListAllTagsRequest, ListAllTagsResponse>(request, RmsMeta.listAllTags, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listAllTags, hcClient);
     }
 
     /**
@@ -1817,7 +1766,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProvidersRequest 请求对象
+     * @param request ListProvidersRequest 请求对象
      * @return ListProvidersResponse
      */
     public ListProvidersResponse listProviders(ListProvidersRequest request) {
@@ -1831,11 +1780,11 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProvidersRequest 请求对象
+     * @param request ListProvidersRequest 请求对象
      * @return SyncInvoker<ListProvidersRequest, ListProvidersResponse>
      */
     public SyncInvoker<ListProvidersRequest, ListProvidersResponse> listProvidersInvoker(ListProvidersRequest request) {
-        return new SyncInvoker<ListProvidersRequest, ListProvidersResponse>(request, RmsMeta.listProviders, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listProviders, hcClient);
     }
 
     /**
@@ -1845,7 +1794,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesRequest 请求对象
+     * @param request ListResourcesRequest 请求对象
      * @return ListResourcesResponse
      */
     public ListResourcesResponse listResources(ListResourcesRequest request) {
@@ -1859,11 +1808,11 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesRequest 请求对象
+     * @param request ListResourcesRequest 请求对象
      * @return SyncInvoker<ListResourcesRequest, ListResourcesResponse>
      */
     public SyncInvoker<ListResourcesRequest, ListResourcesResponse> listResourcesInvoker(ListResourcesRequest request) {
-        return new SyncInvoker<ListResourcesRequest, ListResourcesResponse>(request, RmsMeta.listResources, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.listResources, hcClient);
     }
 
     /**
@@ -1873,7 +1822,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceByIdRequest 请求对象
+     * @param request ShowResourceByIdRequest 请求对象
      * @return ShowResourceByIdResponse
      */
     public ShowResourceByIdResponse showResourceById(ShowResourceByIdRequest request) {
@@ -1887,13 +1836,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceByIdRequest 请求对象
+     * @param request ShowResourceByIdRequest 请求对象
      * @return SyncInvoker<ShowResourceByIdRequest, ShowResourceByIdResponse>
      */
     public SyncInvoker<ShowResourceByIdRequest, ShowResourceByIdResponse> showResourceByIdInvoker(
         ShowResourceByIdRequest request) {
-        return new SyncInvoker<ShowResourceByIdRequest, ShowResourceByIdResponse>(request, RmsMeta.showResourceById,
-            hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showResourceById, hcClient);
     }
 
     /**
@@ -1903,7 +1851,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceDetailRequest 请求对象
+     * @param request ShowResourceDetailRequest 请求对象
      * @return ShowResourceDetailResponse
      */
     public ShowResourceDetailResponse showResourceDetail(ShowResourceDetailRequest request) {
@@ -1917,13 +1865,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceDetailRequest 请求对象
+     * @param request ShowResourceDetailRequest 请求对象
      * @return SyncInvoker<ShowResourceDetailRequest, ShowResourceDetailResponse>
      */
     public SyncInvoker<ShowResourceDetailRequest, ShowResourceDetailResponse> showResourceDetailInvoker(
         ShowResourceDetailRequest request) {
-        return new SyncInvoker<ShowResourceDetailRequest, ShowResourceDetailResponse>(request,
-            RmsMeta.showResourceDetail, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showResourceDetail, hcClient);
     }
 
     /**
@@ -1933,7 +1880,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrackerConfigRequest 请求对象
+     * @param request CreateTrackerConfigRequest 请求对象
      * @return CreateTrackerConfigResponse
      */
     public CreateTrackerConfigResponse createTrackerConfig(CreateTrackerConfigRequest request) {
@@ -1947,13 +1894,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTrackerConfigRequest 请求对象
+     * @param request CreateTrackerConfigRequest 请求对象
      * @return SyncInvoker<CreateTrackerConfigRequest, CreateTrackerConfigResponse>
      */
     public SyncInvoker<CreateTrackerConfigRequest, CreateTrackerConfigResponse> createTrackerConfigInvoker(
         CreateTrackerConfigRequest request) {
-        return new SyncInvoker<CreateTrackerConfigRequest, CreateTrackerConfigResponse>(request,
-            RmsMeta.createTrackerConfig, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.createTrackerConfig, hcClient);
     }
 
     /**
@@ -1963,7 +1909,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrackerConfigRequest 请求对象
+     * @param request DeleteTrackerConfigRequest 请求对象
      * @return DeleteTrackerConfigResponse
      */
     public DeleteTrackerConfigResponse deleteTrackerConfig(DeleteTrackerConfigRequest request) {
@@ -1977,13 +1923,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTrackerConfigRequest 请求对象
+     * @param request DeleteTrackerConfigRequest 请求对象
      * @return SyncInvoker<DeleteTrackerConfigRequest, DeleteTrackerConfigResponse>
      */
     public SyncInvoker<DeleteTrackerConfigRequest, DeleteTrackerConfigResponse> deleteTrackerConfigInvoker(
         DeleteTrackerConfigRequest request) {
-        return new SyncInvoker<DeleteTrackerConfigRequest, DeleteTrackerConfigResponse>(request,
-            RmsMeta.deleteTrackerConfig, hcClient);
+        return new SyncInvoker<>(request, RmsMeta.deleteTrackerConfig, hcClient);
     }
 
     /**
@@ -1993,7 +1938,7 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrackerConfigRequest 请求对象
+     * @param request ShowTrackerConfigRequest 请求对象
      * @return ShowTrackerConfigResponse
      */
     public ShowTrackerConfigResponse showTrackerConfig(ShowTrackerConfigRequest request) {
@@ -2007,13 +1952,12 @@ public class RmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTrackerConfigRequest 请求对象
+     * @param request ShowTrackerConfigRequest 请求对象
      * @return SyncInvoker<ShowTrackerConfigRequest, ShowTrackerConfigResponse>
      */
     public SyncInvoker<ShowTrackerConfigRequest, ShowTrackerConfigResponse> showTrackerConfigInvoker(
         ShowTrackerConfigRequest request) {
-        return new SyncInvoker<ShowTrackerConfigRequest, ShowTrackerConfigResponse>(request, RmsMeta.showTrackerConfig,
-            hcClient);
+        return new SyncInvoker<>(request, RmsMeta.showTrackerConfig, hcClient);
     }
 
 }

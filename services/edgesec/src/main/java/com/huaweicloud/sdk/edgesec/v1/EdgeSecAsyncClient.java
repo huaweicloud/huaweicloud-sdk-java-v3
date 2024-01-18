@@ -70,7 +70,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSecSubscriptionRequest 请求对象
+     * @param request ListEdgeSecSubscriptionRequest 请求对象
      * @return CompletableFuture<ListEdgeSecSubscriptionResponse>
      */
     public CompletableFuture<ListEdgeSecSubscriptionResponse> listEdgeSecSubscriptionAsync(
@@ -85,13 +85,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeSecSubscriptionRequest 请求对象
+     * @param request ListEdgeSecSubscriptionRequest 请求对象
      * @return AsyncInvoker<ListEdgeSecSubscriptionRequest, ListEdgeSecSubscriptionResponse>
      */
     public AsyncInvoker<ListEdgeSecSubscriptionRequest, ListEdgeSecSubscriptionResponse> listEdgeSecSubscriptionAsyncInvoker(
         ListEdgeSecSubscriptionRequest request) {
-        return new AsyncInvoker<ListEdgeSecSubscriptionRequest, ListEdgeSecSubscriptionResponse>(request,
-            EdgeSecMeta.listEdgeSecSubscription, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.listEdgeSecSubscription, hcClient);
     }
 
     /**
@@ -101,7 +100,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeDDoSDomainsRequest 请求对象
+     * @param request CreateEdgeDDoSDomainsRequest 请求对象
      * @return CompletableFuture<CreateEdgeDDoSDomainsResponse>
      */
     public CompletableFuture<CreateEdgeDDoSDomainsResponse> createEdgeDDoSDomainsAsync(
@@ -116,13 +115,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeDDoSDomainsRequest 请求对象
+     * @param request CreateEdgeDDoSDomainsRequest 请求对象
      * @return AsyncInvoker<CreateEdgeDDoSDomainsRequest, CreateEdgeDDoSDomainsResponse>
      */
     public AsyncInvoker<CreateEdgeDDoSDomainsRequest, CreateEdgeDDoSDomainsResponse> createEdgeDDoSDomainsAsyncInvoker(
         CreateEdgeDDoSDomainsRequest request) {
-        return new AsyncInvoker<CreateEdgeDDoSDomainsRequest, CreateEdgeDDoSDomainsResponse>(request,
-            EdgeSecMeta.createEdgeDDoSDomains, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.createEdgeDDoSDomains, hcClient);
     }
 
     /**
@@ -132,7 +130,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeDDoSDomainsRequest 请求对象
+     * @param request DeleteEdgeDDoSDomainsRequest 请求对象
      * @return CompletableFuture<DeleteEdgeDDoSDomainsResponse>
      */
     public CompletableFuture<DeleteEdgeDDoSDomainsResponse> deleteEdgeDDoSDomainsAsync(
@@ -147,13 +145,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeDDoSDomainsRequest 请求对象
+     * @param request DeleteEdgeDDoSDomainsRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeDDoSDomainsRequest, DeleteEdgeDDoSDomainsResponse>
      */
     public AsyncInvoker<DeleteEdgeDDoSDomainsRequest, DeleteEdgeDDoSDomainsResponse> deleteEdgeDDoSDomainsAsyncInvoker(
         DeleteEdgeDDoSDomainsRequest request) {
-        return new AsyncInvoker<DeleteEdgeDDoSDomainsRequest, DeleteEdgeDDoSDomainsResponse>(request,
-            EdgeSecMeta.deleteEdgeDDoSDomains, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.deleteEdgeDDoSDomains, hcClient);
     }
 
     /**
@@ -163,7 +160,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeDDoSDomainsRequest 请求对象
+     * @param request ListEdgeDDoSDomainsRequest 请求对象
      * @return CompletableFuture<ListEdgeDDoSDomainsResponse>
      */
     public CompletableFuture<ListEdgeDDoSDomainsResponse> listEdgeDDoSDomainsAsync(ListEdgeDDoSDomainsRequest request) {
@@ -177,13 +174,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeDDoSDomainsRequest 请求对象
+     * @param request ListEdgeDDoSDomainsRequest 请求对象
      * @return AsyncInvoker<ListEdgeDDoSDomainsRequest, ListEdgeDDoSDomainsResponse>
      */
     public AsyncInvoker<ListEdgeDDoSDomainsRequest, ListEdgeDDoSDomainsResponse> listEdgeDDoSDomainsAsyncInvoker(
         ListEdgeDDoSDomainsRequest request) {
-        return new AsyncInvoker<ListEdgeDDoSDomainsRequest, ListEdgeDDoSDomainsResponse>(request,
-            EdgeSecMeta.listEdgeDDoSDomains, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.listEdgeDDoSDomains, hcClient);
     }
 
     /**
@@ -193,7 +189,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticsEventRequest 请求对象
+     * @param request ShowStatisticsEventRequest 请求对象
      * @return CompletableFuture<ShowStatisticsEventResponse>
      */
     public CompletableFuture<ShowStatisticsEventResponse> showStatisticsEventAsync(ShowStatisticsEventRequest request) {
@@ -207,13 +203,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticsEventRequest 请求对象
+     * @param request ShowStatisticsEventRequest 请求对象
      * @return AsyncInvoker<ShowStatisticsEventRequest, ShowStatisticsEventResponse>
      */
     public AsyncInvoker<ShowStatisticsEventRequest, ShowStatisticsEventResponse> showStatisticsEventAsyncInvoker(
         ShowStatisticsEventRequest request) {
-        return new AsyncInvoker<ShowStatisticsEventRequest, ShowStatisticsEventResponse>(request,
-            EdgeSecMeta.showStatisticsEvent, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.showStatisticsEvent, hcClient);
     }
 
     /**
@@ -223,7 +218,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticsTrafficRequest 请求对象
+     * @param request ShowStatisticsTrafficRequest 请求对象
      * @return CompletableFuture<ShowStatisticsTrafficResponse>
      */
     public CompletableFuture<ShowStatisticsTrafficResponse> showStatisticsTrafficAsync(
@@ -238,13 +233,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStatisticsTrafficRequest 请求对象
+     * @param request ShowStatisticsTrafficRequest 请求对象
      * @return AsyncInvoker<ShowStatisticsTrafficRequest, ShowStatisticsTrafficResponse>
      */
     public AsyncInvoker<ShowStatisticsTrafficRequest, ShowStatisticsTrafficResponse> showStatisticsTrafficAsyncInvoker(
         ShowStatisticsTrafficRequest request) {
-        return new AsyncInvoker<ShowStatisticsTrafficRequest, ShowStatisticsTrafficResponse>(request,
-            EdgeSecMeta.showStatisticsTraffic, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.showStatisticsTraffic, hcClient);
     }
 
     /**
@@ -254,7 +248,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeDDoSDomainsRequest 请求对象
+     * @param request UpdateEdgeDDoSDomainsRequest 请求对象
      * @return CompletableFuture<UpdateEdgeDDoSDomainsResponse>
      */
     public CompletableFuture<UpdateEdgeDDoSDomainsResponse> updateEdgeDDoSDomainsAsync(
@@ -269,13 +263,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeDDoSDomainsRequest 请求对象
+     * @param request UpdateEdgeDDoSDomainsRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeDDoSDomainsRequest, UpdateEdgeDDoSDomainsResponse>
      */
     public AsyncInvoker<UpdateEdgeDDoSDomainsRequest, UpdateEdgeDDoSDomainsResponse> updateEdgeDDoSDomainsAsyncInvoker(
         UpdateEdgeDDoSDomainsRequest request) {
-        return new AsyncInvoker<UpdateEdgeDDoSDomainsRequest, UpdateEdgeDDoSDomainsResponse>(request,
-            EdgeSecMeta.updateEdgeDDoSDomains, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.updateEdgeDDoSDomains, hcClient);
     }
 
     /**
@@ -285,7 +278,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyWafPolicyRequest 请求对象
+     * @param request ApplyWafPolicyRequest 请求对象
      * @return CompletableFuture<ApplyWafPolicyResponse>
      */
     public CompletableFuture<ApplyWafPolicyResponse> applyWafPolicyAsync(ApplyWafPolicyRequest request) {
@@ -299,13 +292,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ApplyWafPolicyRequest 请求对象
+     * @param request ApplyWafPolicyRequest 请求对象
      * @return AsyncInvoker<ApplyWafPolicyRequest, ApplyWafPolicyResponse>
      */
     public AsyncInvoker<ApplyWafPolicyRequest, ApplyWafPolicyResponse> applyWafPolicyAsyncInvoker(
         ApplyWafPolicyRequest request) {
-        return new AsyncInvoker<ApplyWafPolicyRequest, ApplyWafPolicyResponse>(request, EdgeSecMeta.applyWafPolicy,
-            hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.applyWafPolicy, hcClient);
     }
 
     /**
@@ -315,7 +307,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return CompletableFuture<CreateCertificateResponse>
      */
     public CompletableFuture<CreateCertificateResponse> createCertificateAsync(CreateCertificateRequest request) {
@@ -329,13 +321,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateRequest 请求对象
+     * @param request CreateCertificateRequest 请求对象
      * @return AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
      */
     public AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateAsyncInvoker(
         CreateCertificateRequest request) {
-        return new AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request,
-            EdgeSecMeta.createCertificate, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.createCertificate, hcClient);
     }
 
     /**
@@ -345,7 +336,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeWafDomainsRequest 请求对象
+     * @param request CreateEdgeWafDomainsRequest 请求对象
      * @return CompletableFuture<CreateEdgeWafDomainsResponse>
      */
     public CompletableFuture<CreateEdgeWafDomainsResponse> createEdgeWafDomainsAsync(
@@ -360,13 +351,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEdgeWafDomainsRequest 请求对象
+     * @param request CreateEdgeWafDomainsRequest 请求对象
      * @return AsyncInvoker<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse>
      */
     public AsyncInvoker<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse> createEdgeWafDomainsAsyncInvoker(
         CreateEdgeWafDomainsRequest request) {
-        return new AsyncInvoker<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse>(request,
-            EdgeSecMeta.createEdgeWafDomains, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.createEdgeWafDomains, hcClient);
     }
 
     /**
@@ -376,7 +366,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return CompletableFuture<CreatePolicyResponse>
      */
     public CompletableFuture<CreatePolicyResponse> createPolicyAsync(CreatePolicyRequest request) {
@@ -390,12 +380,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>
      */
     public AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse> createPolicyAsyncInvoker(
         CreatePolicyRequest request) {
-        return new AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>(request, EdgeSecMeta.createPolicy, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.createPolicy, hcClient);
     }
 
     /**
@@ -405,7 +395,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return CompletableFuture<DeleteCertificateResponse>
      */
     public CompletableFuture<DeleteCertificateResponse> deleteCertificateAsync(DeleteCertificateRequest request) {
@@ -419,13 +409,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateRequest 请求对象
+     * @param request DeleteCertificateRequest 请求对象
      * @return AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
      */
     public AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateAsyncInvoker(
         DeleteCertificateRequest request) {
-        return new AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request,
-            EdgeSecMeta.deleteCertificate, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.deleteCertificate, hcClient);
     }
 
     /**
@@ -435,7 +424,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeWafDomainsRequest 请求对象
+     * @param request DeleteEdgeWafDomainsRequest 请求对象
      * @return CompletableFuture<DeleteEdgeWafDomainsResponse>
      */
     public CompletableFuture<DeleteEdgeWafDomainsResponse> deleteEdgeWafDomainsAsync(
@@ -450,13 +439,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEdgeWafDomainsRequest 请求对象
+     * @param request DeleteEdgeWafDomainsRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeWafDomainsRequest, DeleteEdgeWafDomainsResponse>
      */
     public AsyncInvoker<DeleteEdgeWafDomainsRequest, DeleteEdgeWafDomainsResponse> deleteEdgeWafDomainsAsyncInvoker(
         DeleteEdgeWafDomainsRequest request) {
-        return new AsyncInvoker<DeleteEdgeWafDomainsRequest, DeleteEdgeWafDomainsResponse>(request,
-            EdgeSecMeta.deleteEdgeWafDomains, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.deleteEdgeWafDomains, hcClient);
     }
 
     /**
@@ -466,7 +454,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return CompletableFuture<DeletePolicyResponse>
      */
     public CompletableFuture<DeletePolicyResponse> deletePolicyAsync(DeletePolicyRequest request) {
@@ -480,12 +468,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse>
      */
     public AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse> deletePolicyAsyncInvoker(
         DeletePolicyRequest request) {
-        return new AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse>(request, EdgeSecMeta.deletePolicy, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.deletePolicy, hcClient);
     }
 
     /**
@@ -495,7 +483,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCdnDomainsRequest 请求对象
+     * @param request ListCdnDomainsRequest 请求对象
      * @return CompletableFuture<ListCdnDomainsResponse>
      */
     public CompletableFuture<ListCdnDomainsResponse> listCdnDomainsAsync(ListCdnDomainsRequest request) {
@@ -509,13 +497,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCdnDomainsRequest 请求对象
+     * @param request ListCdnDomainsRequest 请求对象
      * @return AsyncInvoker<ListCdnDomainsRequest, ListCdnDomainsResponse>
      */
     public AsyncInvoker<ListCdnDomainsRequest, ListCdnDomainsResponse> listCdnDomainsAsyncInvoker(
         ListCdnDomainsRequest request) {
-        return new AsyncInvoker<ListCdnDomainsRequest, ListCdnDomainsResponse>(request, EdgeSecMeta.listCdnDomains,
-            hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.listCdnDomains, hcClient);
     }
 
     /**
@@ -525,7 +512,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return CompletableFuture<ListCertificatesResponse>
      */
     public CompletableFuture<ListCertificatesResponse> listCertificatesAsync(ListCertificatesRequest request) {
@@ -539,13 +526,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesRequest 请求对象
+     * @param request ListCertificatesRequest 请求对象
      * @return AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
      */
     public AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesAsyncInvoker(
         ListCertificatesRequest request) {
-        return new AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request,
-            EdgeSecMeta.listCertificates, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.listCertificates, hcClient);
     }
 
     /**
@@ -555,7 +541,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeWafDomainsRequest 请求对象
+     * @param request ListEdgeWafDomainsRequest 请求对象
      * @return CompletableFuture<ListEdgeWafDomainsResponse>
      */
     public CompletableFuture<ListEdgeWafDomainsResponse> listEdgeWafDomainsAsync(ListEdgeWafDomainsRequest request) {
@@ -569,13 +555,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEdgeWafDomainsRequest 请求对象
+     * @param request ListEdgeWafDomainsRequest 请求对象
      * @return AsyncInvoker<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse>
      */
     public AsyncInvoker<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse> listEdgeWafDomainsAsyncInvoker(
         ListEdgeWafDomainsRequest request) {
-        return new AsyncInvoker<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse>(request,
-            EdgeSecMeta.listEdgeWafDomains, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.listEdgeWafDomains, hcClient);
     }
 
     /**
@@ -585,7 +570,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyRequest 请求对象
+     * @param request ListPolicyRequest 请求对象
      * @return CompletableFuture<ListPolicyResponse>
      */
     public CompletableFuture<ListPolicyResponse> listPolicyAsync(ListPolicyRequest request) {
@@ -599,11 +584,11 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPolicyRequest 请求对象
+     * @param request ListPolicyRequest 请求对象
      * @return AsyncInvoker<ListPolicyRequest, ListPolicyResponse>
      */
     public AsyncInvoker<ListPolicyRequest, ListPolicyResponse> listPolicyAsyncInvoker(ListPolicyRequest request) {
-        return new AsyncInvoker<ListPolicyRequest, ListPolicyResponse>(request, EdgeSecMeta.listPolicy, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.listPolicy, hcClient);
     }
 
     /**
@@ -613,7 +598,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return CompletableFuture<ShowCertificateResponse>
      */
     public CompletableFuture<ShowCertificateResponse> showCertificateAsync(ShowCertificateRequest request) {
@@ -627,13 +612,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCertificateRequest 请求对象
+     * @param request ShowCertificateRequest 请求对象
      * @return AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
      */
     public AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateAsyncInvoker(
         ShowCertificateRequest request) {
-        return new AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse>(request, EdgeSecMeta.showCertificate,
-            hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.showCertificate, hcClient);
     }
 
     /**
@@ -643,7 +627,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeWafDomainsRequest 请求对象
+     * @param request ShowEdgeWafDomainsRequest 请求对象
      * @return CompletableFuture<ShowEdgeWafDomainsResponse>
      */
     public CompletableFuture<ShowEdgeWafDomainsResponse> showEdgeWafDomainsAsync(ShowEdgeWafDomainsRequest request) {
@@ -657,13 +641,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEdgeWafDomainsRequest 请求对象
+     * @param request ShowEdgeWafDomainsRequest 请求对象
      * @return AsyncInvoker<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse>
      */
     public AsyncInvoker<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse> showEdgeWafDomainsAsyncInvoker(
         ShowEdgeWafDomainsRequest request) {
-        return new AsyncInvoker<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse>(request,
-            EdgeSecMeta.showEdgeWafDomains, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.showEdgeWafDomains, hcClient);
     }
 
     /**
@@ -673,7 +656,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateRequest 请求对象
+     * @param request UpdateCertificateRequest 请求对象
      * @return CompletableFuture<UpdateCertificateResponse>
      */
     public CompletableFuture<UpdateCertificateResponse> updateCertificateAsync(UpdateCertificateRequest request) {
@@ -687,13 +670,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateRequest 请求对象
+     * @param request UpdateCertificateRequest 请求对象
      * @return AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>
      */
     public AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateAsyncInvoker(
         UpdateCertificateRequest request) {
-        return new AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>(request,
-            EdgeSecMeta.updateCertificate, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.updateCertificate, hcClient);
     }
 
     /**
@@ -703,7 +685,7 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeWafDomainsRequest 请求对象
+     * @param request UpdateEdgeWafDomainsRequest 请求对象
      * @return CompletableFuture<UpdateEdgeWafDomainsResponse>
      */
     public CompletableFuture<UpdateEdgeWafDomainsResponse> updateEdgeWafDomainsAsync(
@@ -718,13 +700,12 @@ public class EdgeSecAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEdgeWafDomainsRequest 请求对象
+     * @param request UpdateEdgeWafDomainsRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeWafDomainsRequest, UpdateEdgeWafDomainsResponse>
      */
     public AsyncInvoker<UpdateEdgeWafDomainsRequest, UpdateEdgeWafDomainsResponse> updateEdgeWafDomainsAsyncInvoker(
         UpdateEdgeWafDomainsRequest request) {
-        return new AsyncInvoker<UpdateEdgeWafDomainsRequest, UpdateEdgeWafDomainsResponse>(request,
-            EdgeSecMeta.updateEdgeWafDomains, hcClient);
+        return new AsyncInvoker<>(request, EdgeSecMeta.updateEdgeWafDomains, hcClient);
     }
 
 }

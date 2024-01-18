@@ -31,9 +31,9 @@ import java.util.List;
 public class DataArtsInsightMeta {
 
     public static final HttpRequestDef<BatchSaveAuthRequest, BatchSaveAuthResponse> batchSaveAuth =
-        genForbatchSaveAuth();
+        genForBatchSaveAuth();
 
-    private static HttpRequestDef<BatchSaveAuthRequest, BatchSaveAuthResponse> genForbatchSaveAuth() {
+    private static HttpRequestDef<BatchSaveAuthRequest, BatchSaveAuthResponse> genForBatchSaveAuth() {
         // basic
         HttpRequestDef.Builder<BatchSaveAuthRequest, BatchSaveAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSaveAuthRequest.class, BatchSaveAuthResponse.class)
@@ -46,16 +46,13 @@ public class DataArtsInsightMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchSaveAuthRequest::getXWorkspaceId, (req, v) -> {
-                req.setXWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(BatchSaveAuthRequest::getXWorkspaceId, BatchSaveAuthRequest::setXWorkspaceId));
         builder.<List<CooperateAuthorizationRuleDto>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchSaveAuthRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(CooperateAuthorizationRuleDto.class));
+            f -> f.withMarshaller(BatchSaveAuthRequest::getBody, BatchSaveAuthRequest::setBody)
+                .withInnerContainerType(CooperateAuthorizationRuleDto.class));
 
         // response
 
@@ -63,9 +60,9 @@ public class DataArtsInsightMeta {
     }
 
     public static final HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> createWorkspace =
-        genForcreateWorkspace();
+        genForCreateWorkspace();
 
-    private static HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> genForcreateWorkspace() {
+    private static HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> genForCreateWorkspace() {
         // basic
         HttpRequestDef.Builder<CreateWorkspaceRequest, CreateWorkspaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateWorkspaceRequest.class, CreateWorkspaceResponse.class)
@@ -78,16 +75,12 @@ public class DataArtsInsightMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateWorkspaceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateWorkspaceRequest::getInstanceId, CreateWorkspaceRequest::setInstanceId));
         builder.<WorkspaceDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WorkspaceDTO.class),
-            f -> f.withMarshaller(CreateWorkspaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateWorkspaceRequest::getBody, CreateWorkspaceRequest::setBody));
 
         // response
 
@@ -95,9 +88,9 @@ public class DataArtsInsightMeta {
     }
 
     public static final HttpRequestDef<DeleteWorkspaceRequest, DeleteWorkspaceResponse> deleteWorkspace =
-        genFordeleteWorkspace();
+        genForDeleteWorkspace();
 
-    private static HttpRequestDef<DeleteWorkspaceRequest, DeleteWorkspaceResponse> genFordeleteWorkspace() {
+    private static HttpRequestDef<DeleteWorkspaceRequest, DeleteWorkspaceResponse> genForDeleteWorkspace() {
         // basic
         HttpRequestDef.Builder<DeleteWorkspaceRequest, DeleteWorkspaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteWorkspaceRequest.class, DeleteWorkspaceResponse.class)
@@ -110,16 +103,12 @@ public class DataArtsInsightMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWorkspaceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteWorkspaceRequest::getInstanceId, DeleteWorkspaceRequest::setInstanceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWorkspaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(DeleteWorkspaceRequest::getWorkspaceId, DeleteWorkspaceRequest::setWorkspaceId));
 
         // response
 
@@ -127,9 +116,9 @@ public class DataArtsInsightMeta {
     }
 
     public static final HttpRequestDef<ListAuthPropertiesRequest, ListAuthPropertiesResponse> listAuthProperties =
-        genForlistAuthProperties();
+        genForListAuthProperties();
 
-    private static HttpRequestDef<ListAuthPropertiesRequest, ListAuthPropertiesResponse> genForlistAuthProperties() {
+    private static HttpRequestDef<ListAuthPropertiesRequest, ListAuthPropertiesResponse> genForListAuthProperties() {
         // basic
         HttpRequestDef.Builder<ListAuthPropertiesRequest, ListAuthPropertiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuthPropertiesRequest.class, ListAuthPropertiesResponse.class)
@@ -142,32 +131,28 @@ public class DataArtsInsightMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthPropertiesRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListAuthPropertiesRequest::getResourceId, ListAuthPropertiesRequest::setResourceId));
         builder.<String>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthPropertiesRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListAuthPropertiesRequest::getResourceType,
+                ListAuthPropertiesRequest::setResourceType));
         builder.<String>withRequestField("X-Workspace-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthPropertiesRequest::getXWorkspaceId, (req, v) -> {
-                req.setXWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListAuthPropertiesRequest::getXWorkspaceId,
+                ListAuthPropertiesRequest::setXWorkspaceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAuthedRequest, ListAuthedResponse> listAuthed = genForlistAuthed();
+    public static final HttpRequestDef<ListAuthedRequest, ListAuthedResponse> listAuthed = genForListAuthed();
 
-    private static HttpRequestDef<ListAuthedRequest, ListAuthedResponse> genForlistAuthed() {
+    private static HttpRequestDef<ListAuthedRequest, ListAuthedResponse> genForListAuthed() {
         // basic
         HttpRequestDef.Builder<ListAuthedRequest, ListAuthedResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuthedRequest.class, ListAuthedResponse.class)
@@ -180,37 +165,47 @@ public class DataArtsInsightMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthedRequest::getAuthLevel, (req, v) -> {
-                req.setAuthLevel(v);
-            }));
+            f -> f.withMarshaller(ListAuthedRequest::getAuthLevel, ListAuthedRequest::setAuthLevel));
         builder.<Boolean>withRequestField("filter_authed",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAuthedRequest::getFilterAuthed, (req, v) -> {
-                req.setFilterAuthed(v);
-            }));
+            f -> f.withMarshaller(ListAuthedRequest::getFilterAuthed, ListAuthedRequest::setFilterAuthed));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthedRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListAuthedRequest::getResourceId, ListAuthedRequest::setResourceId));
         builder.<String>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthedRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListAuthedRequest::getResourceType, ListAuthedRequest::setResourceType));
+        builder.<String>withRequestField("auth_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuthedRequest::getAuthName, ListAuthedRequest::setAuthName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAuthedRequest::getLimit, ListAuthedRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAuthedRequest::getOffset, ListAuthedRequest::setOffset));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuthedRequest::getSortDir, ListAuthedRequest::setSortDir));
         builder.<String>withRequestField("X-Workspace-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthedRequest::getXWorkspaceId, (req, v) -> {
-                req.setXWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(ListAuthedRequest::getXWorkspaceId, ListAuthedRequest::setXWorkspaceId));
 
         // response
 
@@ -218,9 +213,9 @@ public class DataArtsInsightMeta {
     }
 
     public static final HttpRequestDef<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspaces =
-        genForlistWorkspaces();
+        genForListWorkspaces();
 
-    private static HttpRequestDef<ListWorkspacesRequest, ListWorkspacesResponse> genForlistWorkspaces() {
+    private static HttpRequestDef<ListWorkspacesRequest, ListWorkspacesResponse> genForListWorkspaces() {
         // basic
         HttpRequestDef.Builder<ListWorkspacesRequest, ListWorkspacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWorkspacesRequest.class, ListWorkspacesResponse.class)
@@ -233,30 +228,22 @@ public class DataArtsInsightMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListWorkspacesRequest::getInstanceId, ListWorkspacesRequest::setInstanceId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListWorkspacesRequest::getName, ListWorkspacesRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListWorkspacesRequest::getOffset, ListWorkspacesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListWorkspacesRequest::getLimit, ListWorkspacesRequest::setLimit));
 
         // response
 
@@ -264,9 +251,9 @@ public class DataArtsInsightMeta {
     }
 
     public static final HttpRequestDef<SaveOrUpdateAuthPropertiesRequest, SaveOrUpdateAuthPropertiesResponse> saveOrUpdateAuthProperties =
-        genForsaveOrUpdateAuthProperties();
+        genForSaveOrUpdateAuthProperties();
 
-    private static HttpRequestDef<SaveOrUpdateAuthPropertiesRequest, SaveOrUpdateAuthPropertiesResponse> genForsaveOrUpdateAuthProperties() {
+    private static HttpRequestDef<SaveOrUpdateAuthPropertiesRequest, SaveOrUpdateAuthPropertiesResponse> genForSaveOrUpdateAuthProperties() {
         // basic
         HttpRequestDef.Builder<SaveOrUpdateAuthPropertiesRequest, SaveOrUpdateAuthPropertiesResponse> builder =
             HttpRequestDef
@@ -282,16 +269,14 @@ public class DataArtsInsightMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SaveOrUpdateAuthPropertiesRequest::getXWorkspaceId, (req, v) -> {
-                req.setXWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(SaveOrUpdateAuthPropertiesRequest::getXWorkspaceId,
+                SaveOrUpdateAuthPropertiesRequest::setXWorkspaceId));
         builder.<CooperateAuthorizationDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CooperateAuthorizationDto.class),
-            f -> f.withMarshaller(SaveOrUpdateAuthPropertiesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SaveOrUpdateAuthPropertiesRequest::getBody,
+                SaveOrUpdateAuthPropertiesRequest::setBody));
 
         // response
 
@@ -299,9 +284,9 @@ public class DataArtsInsightMeta {
     }
 
     public static final HttpRequestDef<UpdateWorkspaceRequest, UpdateWorkspaceResponse> updateWorkspace =
-        genForupdateWorkspace();
+        genForUpdateWorkspace();
 
-    private static HttpRequestDef<UpdateWorkspaceRequest, UpdateWorkspaceResponse> genForupdateWorkspace() {
+    private static HttpRequestDef<UpdateWorkspaceRequest, UpdateWorkspaceResponse> genForUpdateWorkspace() {
         // basic
         HttpRequestDef.Builder<UpdateWorkspaceRequest, UpdateWorkspaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateWorkspaceRequest.class, UpdateWorkspaceResponse.class)
@@ -314,23 +299,17 @@ public class DataArtsInsightMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWorkspaceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkspaceRequest::getInstanceId, UpdateWorkspaceRequest::setInstanceId));
         builder.<String>withRequestField("workspace_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWorkspaceRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkspaceRequest::getWorkspaceId, UpdateWorkspaceRequest::setWorkspaceId));
         builder.<WorkspaceDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WorkspaceDTO.class),
-            f -> f.withMarshaller(UpdateWorkspaceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateWorkspaceRequest::getBody, UpdateWorkspaceRequest::setBody));
 
         // response
 

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 共享目录分配关联对象
+ * 共享目录分配关联对象。
  */
 public class AssignShareFolderReq {
 
@@ -34,7 +34,7 @@ public class AssignShareFolderReq {
     }
 
     /**
-     * WKS存储目录声明ID
+     * WKS存储目录声明ID。
      * @return storageClaimId
      */
     public String getStorageClaimId() {
@@ -67,7 +67,7 @@ public class AssignShareFolderReq {
     }
 
     /**
-     * 增加的成员列表
+     * 增加的成员列表。
      * @return addItems
      */
     public List<Assignment> getAddItems() {
@@ -100,7 +100,7 @@ public class AssignShareFolderReq {
     }
 
     /**
-     * 移除的成员列表
+     * 移除的成员列表。
      * @return delItems
      */
     public List<Attachment> getDelItems() {

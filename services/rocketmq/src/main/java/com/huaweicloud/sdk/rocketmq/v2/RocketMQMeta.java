@@ -126,9 +126,9 @@ import java.util.List;
 public class RocketMQMeta {
 
     public static final HttpRequestDef<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse> batchCreateOrDeleteRocketmqTag =
-        genForbatchCreateOrDeleteRocketmqTag();
+        genForBatchCreateOrDeleteRocketmqTag();
 
-    private static HttpRequestDef<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse> genForbatchCreateOrDeleteRocketmqTag() {
+    private static HttpRequestDef<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse> genForBatchCreateOrDeleteRocketmqTag() {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse> builder =
             HttpRequestDef
@@ -144,16 +144,14 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteRocketmqTagRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteRocketmqTagRequest::getInstanceId,
+                BatchCreateOrDeleteRocketmqTagRequest::setInstanceId));
         builder.<BatchCreateOrDeleteTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagReq.class),
-            f -> f.withMarshaller(BatchCreateOrDeleteRocketmqTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateOrDeleteRocketmqTagRequest::getBody,
+                BatchCreateOrDeleteRocketmqTagRequest::setBody));
 
         // response
 
@@ -161,9 +159,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> batchDeleteInstances =
-        genForbatchDeleteInstances();
+        genForBatchDeleteInstances();
 
-    private static HttpRequestDef<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> genForbatchDeleteInstances() {
+    private static HttpRequestDef<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> genForBatchDeleteInstances() {
         // basic
         HttpRequestDef.Builder<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteInstancesRequest.class, BatchDeleteInstancesResponse.class)
@@ -176,9 +174,7 @@ public class RocketMQMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteInstanceReq.class),
-            f -> f.withMarshaller(BatchDeleteInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteInstancesRequest::getBody, BatchDeleteInstancesRequest::setBody));
 
         // response
 
@@ -186,9 +182,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateConsumerGroupRequest, BatchUpdateConsumerGroupResponse> batchUpdateConsumerGroup =
-        genForbatchUpdateConsumerGroup();
+        genForBatchUpdateConsumerGroup();
 
-    private static HttpRequestDef<BatchUpdateConsumerGroupRequest, BatchUpdateConsumerGroupResponse> genForbatchUpdateConsumerGroup() {
+    private static HttpRequestDef<BatchUpdateConsumerGroupRequest, BatchUpdateConsumerGroupResponse> genForBatchUpdateConsumerGroup() {
         // basic
         HttpRequestDef.Builder<BatchUpdateConsumerGroupRequest, BatchUpdateConsumerGroupResponse> builder =
             HttpRequestDef
@@ -202,16 +198,13 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateConsumerGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateConsumerGroupRequest::getInstanceId,
+                BatchUpdateConsumerGroupRequest::setInstanceId));
         builder.<BatchUpdateConsumerGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateConsumerGroupReq.class),
-            f -> f.withMarshaller(BatchUpdateConsumerGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateConsumerGroupRequest::getBody, BatchUpdateConsumerGroupRequest::setBody));
 
         // response
 
@@ -219,9 +212,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<CreateConsumerGroupOrBatchDeleteConsumerGroupRequest, CreateConsumerGroupOrBatchDeleteConsumerGroupResponse> createConsumerGroupOrBatchDeleteConsumerGroup =
-        genForcreateConsumerGroupOrBatchDeleteConsumerGroup();
+        genForCreateConsumerGroupOrBatchDeleteConsumerGroup();
 
-    private static HttpRequestDef<CreateConsumerGroupOrBatchDeleteConsumerGroupRequest, CreateConsumerGroupOrBatchDeleteConsumerGroupResponse> genForcreateConsumerGroupOrBatchDeleteConsumerGroup() {
+    private static HttpRequestDef<CreateConsumerGroupOrBatchDeleteConsumerGroupRequest, CreateConsumerGroupOrBatchDeleteConsumerGroupResponse> genForCreateConsumerGroupOrBatchDeleteConsumerGroup() {
         // basic
         HttpRequestDef.Builder<CreateConsumerGroupOrBatchDeleteConsumerGroupRequest, CreateConsumerGroupOrBatchDeleteConsumerGroupResponse> builder =
             HttpRequestDef
@@ -237,23 +230,20 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::getInstanceId,
+                CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::setInstanceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::getAction,
+                CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::setAction));
         builder.<CreateConsumerGroupOrBatchDeleteConsumerGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateConsumerGroupOrBatchDeleteConsumerGroupReq.class),
-            f -> f.withMarshaller(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::getBody,
+                CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::setBody));
 
         // response
 
@@ -261,9 +251,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> createInstanceByEngine =
-        genForcreateInstanceByEngine();
+        genForCreateInstanceByEngine();
 
-    private static HttpRequestDef<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> genForcreateInstanceByEngine() {
+    private static HttpRequestDef<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> genForCreateInstanceByEngine() {
         // basic
         HttpRequestDef.Builder<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateInstanceByEngineRequest.class, CreateInstanceByEngineResponse.class)
@@ -276,16 +266,12 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceByEngineRequest.EngineEnum.class),
-            f -> f.withMarshaller(CreateInstanceByEngineRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceByEngineRequest::getEngine, CreateInstanceByEngineRequest::setEngine));
         builder.<CreateInstanceByEngineReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceByEngineReq.class),
-            f -> f.withMarshaller(CreateInstanceByEngineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateInstanceByEngineRequest::getBody, CreateInstanceByEngineRequest::setBody));
 
         // response
 
@@ -293,9 +279,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstance =
-        genForcreatePostPaidInstance();
+        genForCreatePostPaidInstance();
 
-    private static HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> genForcreatePostPaidInstance() {
+    private static HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> genForCreatePostPaidInstance() {
         // basic
         HttpRequestDef.Builder<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreatePostPaidInstanceRequest.class, CreatePostPaidInstanceResponse.class)
@@ -308,9 +294,7 @@ public class RocketMQMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePostPaidInstanceReq.class),
-            f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, CreatePostPaidInstanceRequest::setBody));
 
         // response
 
@@ -318,9 +302,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<CreateRocketMqMigrationTaskRequest, CreateRocketMqMigrationTaskResponse> createRocketMqMigrationTask =
-        genForcreateRocketMqMigrationTask();
+        genForCreateRocketMqMigrationTask();
 
-    private static HttpRequestDef<CreateRocketMqMigrationTaskRequest, CreateRocketMqMigrationTaskResponse> genForcreateRocketMqMigrationTask() {
+    private static HttpRequestDef<CreateRocketMqMigrationTaskRequest, CreateRocketMqMigrationTaskResponse> genForCreateRocketMqMigrationTask() {
         // basic
         HttpRequestDef.Builder<CreateRocketMqMigrationTaskRequest, CreateRocketMqMigrationTaskResponse> builder =
             HttpRequestDef
@@ -336,46 +320,41 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getInstanceId,
+                CreateRocketMqMigrationTaskRequest::setInstanceId));
         builder.<CreateRocketMqMigrationTaskRequest.OverwriteEnum>withRequestField("overwrite",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRocketMqMigrationTaskRequest.OverwriteEnum.class),
-            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getOverwrite, (req, v) -> {
-                req.setOverwrite(v);
-            }));
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getOverwrite,
+                CreateRocketMqMigrationTaskRequest::setOverwrite));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getName,
+                CreateRocketMqMigrationTaskRequest::setName));
         builder.<CreateRocketMqMigrationTaskRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRocketMqMigrationTaskRequest.TypeEnum.class),
-            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getType,
+                CreateRocketMqMigrationTaskRequest::setType));
         builder.<CreateRocketMqMigrationTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRocketMqMigrationTaskReq.class),
-            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getBody,
+                CreateRocketMqMigrationTaskRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateUserRequest, CreateUserResponse> createUser = genForcreateUser();
+    public static final HttpRequestDef<CreateUserRequest, CreateUserResponse> createUser = genForCreateUser();
 
-    private static HttpRequestDef<CreateUserRequest, CreateUserResponse> genForcreateUser() {
+    private static HttpRequestDef<CreateUserRequest, CreateUserResponse> genForCreateUser() {
         // basic
         HttpRequestDef.Builder<CreateUserRequest, CreateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateUserRequest.class, CreateUserResponse.class)
@@ -388,16 +367,12 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateUserRequest::getInstanceId, CreateUserRequest::setInstanceId));
         builder.<User>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(User.class),
-            f -> f.withMarshaller(CreateUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateUserRequest::getBody, CreateUserRequest::setBody));
 
         // response
 
@@ -405,9 +380,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse> deleteConsumerGroup =
-        genFordeleteConsumerGroup();
+        genForDeleteConsumerGroup();
 
-    private static HttpRequestDef<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse> genFordeleteConsumerGroup() {
+    private static HttpRequestDef<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse> genForDeleteConsumerGroup() {
         // basic
         HttpRequestDef.Builder<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteConsumerGroupRequest.class, DeleteConsumerGroupResponse.class)
@@ -420,16 +395,13 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConsumerGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteConsumerGroupRequest::getInstanceId,
+                DeleteConsumerGroupRequest::setInstanceId));
         builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConsumerGroupRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(DeleteConsumerGroupRequest::getGroup, DeleteConsumerGroupRequest::setGroup));
 
         // response
 
@@ -437,9 +409,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
-        genFordeleteInstance();
+        genForDeleteInstance();
 
-    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genFordeleteInstance() {
+    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genForDeleteInstance() {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
@@ -452,9 +424,7 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
 
         // response
 
@@ -462,9 +432,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> deleteRocketMqMigrationTask =
-        genFordeleteRocketMqMigrationTask();
+        genForDeleteRocketMqMigrationTask();
 
-    private static HttpRequestDef<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> genFordeleteRocketMqMigrationTask() {
+    private static HttpRequestDef<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> genForDeleteRocketMqMigrationTask() {
         // basic
         HttpRequestDef.Builder<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> builder =
             HttpRequestDef
@@ -480,32 +450,29 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRocketMqMigrationTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRocketMqMigrationTaskRequest::getInstanceId,
+                DeleteRocketMqMigrationTaskRequest::setInstanceId));
         builder.<MetadataDeleteReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MetadataDeleteReq.class),
-            f -> f.withMarshaller(DeleteRocketMqMigrationTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteRocketMqMigrationTaskRequest::getBody,
+                DeleteRocketMqMigrationTaskRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteRocketMqMigrationTaskResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteRocketMqMigrationTaskResponse::getBody,
+                DeleteRocketMqMigrationTaskResponse::setBody));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteUserRequest, DeleteUserResponse> deleteUser = genFordeleteUser();
+    public static final HttpRequestDef<DeleteUserRequest, DeleteUserResponse> deleteUser = genForDeleteUser();
 
-    private static HttpRequestDef<DeleteUserRequest, DeleteUserResponse> genFordeleteUser() {
+    private static HttpRequestDef<DeleteUserRequest, DeleteUserResponse> genForDeleteUser() {
         // basic
         HttpRequestDef.Builder<DeleteUserRequest, DeleteUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteUserRequest.class, DeleteUserResponse.class)
@@ -518,16 +485,12 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteUserRequest::getInstanceId, DeleteUserRequest::setInstanceId));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteUserRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(DeleteUserRequest::getUserName, DeleteUserRequest::setUserName));
 
         // response
 
@@ -535,9 +498,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ExportDlqMessageRequest, ExportDlqMessageResponse> exportDlqMessage =
-        genForexportDlqMessage();
+        genForExportDlqMessage();
 
-    private static HttpRequestDef<ExportDlqMessageRequest, ExportDlqMessageResponse> genForexportDlqMessage() {
+    private static HttpRequestDef<ExportDlqMessageRequest, ExportDlqMessageResponse> genForExportDlqMessage() {
         // basic
         HttpRequestDef.Builder<ExportDlqMessageRequest, ExportDlqMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportDlqMessageRequest.class, ExportDlqMessageResponse.class)
@@ -550,33 +513,28 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportDlqMessageRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportDlqMessageRequest::getInstanceId, ExportDlqMessageRequest::setInstanceId));
         builder.<ExportDlqMessageReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportDlqMessageReq.class),
-            f -> f.withMarshaller(ExportDlqMessageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExportDlqMessageRequest::getBody, ExportDlqMessageRequest::setBody));
 
         // response
         builder.<List<Message>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ExportDlqMessageResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(Message.class));
+            f -> f.withMarshaller(ExportDlqMessageResponse::getBody, ExportDlqMessageResponse::setBody)
+                .withInnerContainerType(Message.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones =
-        genForlistAvailableZones();
+        genForListAvailableZones();
 
-    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForlistAvailableZones() {
+    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForListAvailableZones() {
         // basic
         HttpRequestDef.Builder<ListAvailableZonesRequest, ListAvailableZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAvailableZonesRequest.class, ListAvailableZonesResponse.class)
@@ -591,9 +549,9 @@ public class RocketMQMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBrokersRequest, ListBrokersResponse> listBrokers = genForlistBrokers();
+    public static final HttpRequestDef<ListBrokersRequest, ListBrokersResponse> listBrokers = genForListBrokers();
 
-    private static HttpRequestDef<ListBrokersRequest, ListBrokersResponse> genForlistBrokers() {
+    private static HttpRequestDef<ListBrokersRequest, ListBrokersResponse> genForListBrokers() {
         // basic
         HttpRequestDef.Builder<ListBrokersRequest, ListBrokersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBrokersRequest.class, ListBrokersResponse.class)
@@ -606,9 +564,7 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBrokersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBrokersRequest::getInstanceId, ListBrokersRequest::setInstanceId));
 
         // response
 
@@ -616,9 +572,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ListConsumeGroupAccessPolicyRequest, ListConsumeGroupAccessPolicyResponse> listConsumeGroupAccessPolicy =
-        genForlistConsumeGroupAccessPolicy();
+        genForListConsumeGroupAccessPolicy();
 
-    private static HttpRequestDef<ListConsumeGroupAccessPolicyRequest, ListConsumeGroupAccessPolicyResponse> genForlistConsumeGroupAccessPolicy() {
+    private static HttpRequestDef<ListConsumeGroupAccessPolicyRequest, ListConsumeGroupAccessPolicyResponse> genForListConsumeGroupAccessPolicy() {
         // basic
         HttpRequestDef.Builder<ListConsumeGroupAccessPolicyRequest, ListConsumeGroupAccessPolicyResponse> builder =
             HttpRequestDef
@@ -634,37 +590,32 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListConsumeGroupAccessPolicyRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getEngine,
+                ListConsumeGroupAccessPolicyRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getInstanceId,
+                ListConsumeGroupAccessPolicyRequest::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getGroupId,
+                ListConsumeGroupAccessPolicyRequest::setGroupId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getOffset,
+                ListConsumeGroupAccessPolicyRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getLimit,
+                ListConsumeGroupAccessPolicyRequest::setLimit));
 
         // response
 
@@ -672,9 +623,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> listInstanceConsumerGroups =
-        genForlistInstanceConsumerGroups();
+        genForListInstanceConsumerGroups();
 
-    private static HttpRequestDef<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> genForlistInstanceConsumerGroups() {
+    private static HttpRequestDef<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> genForListInstanceConsumerGroups() {
         // basic
         HttpRequestDef.Builder<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse> builder =
             HttpRequestDef
@@ -690,30 +641,26 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getInstanceId,
+                ListInstanceConsumerGroupsRequest::setInstanceId));
         builder.<String>withRequestField("group",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getGroup,
+                ListInstanceConsumerGroupsRequest::setGroup));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getLimit,
+                ListInstanceConsumerGroupsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstanceConsumerGroupsRequest::getOffset,
+                ListInstanceConsumerGroupsRequest::setOffset));
 
         // response
 
@@ -721,9 +668,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
-        genForlistInstances();
+        genForListInstances();
 
-    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
@@ -736,65 +683,48 @@ public class RocketMQMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getEngine, ListInstancesRequest::setEngine));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getName, ListInstancesRequest::setName));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getInstanceId, ListInstancesRequest::setInstanceId));
         builder.<ListInstancesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getStatus, ListInstancesRequest::setStatus));
         builder.<ListInstancesRequest.IncludeFailureEnum>withRequestField("include_failure",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.IncludeFailureEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getIncludeFailure, (req, v) -> {
-                req.setIncludeFailure(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getIncludeFailure, ListInstancesRequest::setIncludeFailure));
         builder.<ListInstancesRequest.ExactMatchNameEnum>withRequestField("exact_match_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.ExactMatchNameEnum.class),
-            f -> f.withMarshaller(ListInstancesRequest::getExactMatchName, (req, v) -> {
-                req.setExactMatchName(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getExactMatchName, ListInstancesRequest::setExactMatchName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getEnterpriseProjectId,
+                ListInstancesRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, ListInstancesRequest::setOffset));
 
         // response
 
@@ -802,9 +732,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ListMessageTraceRequest, ListMessageTraceResponse> listMessageTrace =
-        genForlistMessageTrace();
+        genForListMessageTrace();
 
-    private static HttpRequestDef<ListMessageTraceRequest, ListMessageTraceResponse> genForlistMessageTrace() {
+    private static HttpRequestDef<ListMessageTraceRequest, ListMessageTraceResponse> genForListMessageTrace() {
         // basic
         HttpRequestDef.Builder<ListMessageTraceRequest, ListMessageTraceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMessageTraceRequest.class, ListMessageTraceResponse.class)
@@ -817,32 +747,26 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListMessageTraceRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListMessageTraceRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListMessageTraceRequest::getEngine, ListMessageTraceRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessageTraceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMessageTraceRequest::getInstanceId, ListMessageTraceRequest::setInstanceId));
         builder.<String>withRequestField("msg_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessageTraceRequest::getMsgId, (req, v) -> {
-                req.setMsgId(v);
-            }));
+            f -> f.withMarshaller(ListMessageTraceRequest::getMsgId, ListMessageTraceRequest::setMsgId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMessagesRequest, ListMessagesResponse> listMessages = genForlistMessages();
+    public static final HttpRequestDef<ListMessagesRequest, ListMessagesResponse> listMessages = genForListMessages();
 
-    private static HttpRequestDef<ListMessagesRequest, ListMessagesResponse> genForlistMessages() {
+    private static HttpRequestDef<ListMessagesRequest, ListMessagesResponse> genForListMessages() {
         // basic
         HttpRequestDef.Builder<ListMessagesRequest, ListMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMessagesRequest.class, ListMessagesResponse.class)
@@ -855,65 +779,47 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListMessagesRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListMessagesRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getEngine, ListMessagesRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getInstanceId, ListMessagesRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getTopic, ListMessagesRequest::setTopic));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getLimit, ListMessagesRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getOffset, ListMessagesRequest::setOffset));
         builder.<String>withRequestField("key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getKey, ListMessagesRequest::setKey));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getStartTime, ListMessagesRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getEndTime, ListMessagesRequest::setEndTime));
         builder.<String>withRequestField("msg_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getMsgId, (req, v) -> {
-                req.setMsgId(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getMsgId, ListMessagesRequest::setMsgId));
 
         // response
 
@@ -921,9 +827,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse> listRocketMqMigrationTask =
-        genForlistRocketMqMigrationTask();
+        genForListRocketMqMigrationTask();
 
-    private static HttpRequestDef<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse> genForlistRocketMqMigrationTask() {
+    private static HttpRequestDef<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse> genForListRocketMqMigrationTask() {
         // basic
         HttpRequestDef.Builder<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse> builder =
             HttpRequestDef
@@ -939,44 +845,37 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getInstanceId,
+                ListRocketMqMigrationTaskRequest::setInstanceId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getId, ListRocketMqMigrationTaskRequest::setId));
         builder.<ListRocketMqMigrationTaskRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRocketMqMigrationTaskRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getType,
+                ListRocketMqMigrationTaskRequest::setType));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getOffset,
+                ListRocketMqMigrationTaskRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getLimit,
+                ListRocketMqMigrationTaskRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getName,
+                ListRocketMqMigrationTaskRequest::setName));
 
         // response
 
@@ -984,9 +883,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ListTopicAccessPolicyRequest, ListTopicAccessPolicyResponse> listTopicAccessPolicy =
-        genForlistTopicAccessPolicy();
+        genForListTopicAccessPolicy();
 
-    private static HttpRequestDef<ListTopicAccessPolicyRequest, ListTopicAccessPolicyResponse> genForlistTopicAccessPolicy() {
+    private static HttpRequestDef<ListTopicAccessPolicyRequest, ListTopicAccessPolicyResponse> genForListTopicAccessPolicy() {
         // basic
         HttpRequestDef.Builder<ListTopicAccessPolicyRequest, ListTopicAccessPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTopicAccessPolicyRequest.class, ListTopicAccessPolicyResponse.class)
@@ -999,39 +898,32 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopicAccessPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTopicAccessPolicyRequest::getInstanceId,
+                ListTopicAccessPolicyRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopicAccessPolicyRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ListTopicAccessPolicyRequest::getTopic, ListTopicAccessPolicyRequest::setTopic));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopicAccessPolicyRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTopicAccessPolicyRequest::getOffset, ListTopicAccessPolicyRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopicAccessPolicyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTopicAccessPolicyRequest::getLimit, ListTopicAccessPolicyRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListUserRequest, ListUserResponse> listUser = genForlistUser();
+    public static final HttpRequestDef<ListUserRequest, ListUserResponse> listUser = genForListUser();
 
-    private static HttpRequestDef<ListUserRequest, ListUserResponse> genForlistUser() {
+    private static HttpRequestDef<ListUserRequest, ListUserResponse> genForListUser() {
         // basic
         HttpRequestDef.Builder<ListUserRequest, ListUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUserRequest.class, ListUserResponse.class)
@@ -1044,23 +936,17 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListUserRequest::getInstanceId, ListUserRequest::setInstanceId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUserRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListUserRequest::getOffset, ListUserRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUserRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListUserRequest::getLimit, ListUserRequest::setLimit));
 
         // response
 
@@ -1068,9 +954,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse> resetConsumeOffset =
-        genForresetConsumeOffset();
+        genForResetConsumeOffset();
 
-    private static HttpRequestDef<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse> genForresetConsumeOffset() {
+    private static HttpRequestDef<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse> genForResetConsumeOffset() {
         // basic
         HttpRequestDef.Builder<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetConsumeOffsetRequest.class, ResetConsumeOffsetResponse.class)
@@ -1083,30 +969,22 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetConsumeOffsetRequest.EngineEnum.class),
-            f -> f.withMarshaller(ResetConsumeOffsetRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ResetConsumeOffsetRequest::getEngine, ResetConsumeOffsetRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetConsumeOffsetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetConsumeOffsetRequest::getInstanceId, ResetConsumeOffsetRequest::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetConsumeOffsetRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ResetConsumeOffsetRequest::getGroupId, ResetConsumeOffsetRequest::setGroupId));
         builder.<ResetConsumeOffsetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetConsumeOffsetReq.class),
-            f -> f.withMarshaller(ResetConsumeOffsetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetConsumeOffsetRequest::getBody, ResetConsumeOffsetRequest::setBody));
 
         // response
 
@@ -1114,9 +992,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
-        genForresizeInstance();
+        genForResizeInstance();
 
-    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
+    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForResizeInstance() {
         // basic
         HttpRequestDef.Builder<ResizeInstanceRequest, ResizeInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeInstanceRequest.class, ResizeInstanceResponse.class)
@@ -1129,23 +1007,17 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getEngine, ResizeInstanceRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, ResizeInstanceRequest::setInstanceId));
         builder.<ResizeEngineInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeEngineInstanceReq.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResizeInstanceRequest::getBody, ResizeInstanceRequest::setBody));
 
         // response
 
@@ -1153,9 +1025,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<SendDlqMessageRequest, SendDlqMessageResponse> sendDlqMessage =
-        genForsendDlqMessage();
+        genForSendDlqMessage();
 
-    private static HttpRequestDef<SendDlqMessageRequest, SendDlqMessageResponse> genForsendDlqMessage() {
+    private static HttpRequestDef<SendDlqMessageRequest, SendDlqMessageResponse> genForSendDlqMessage() {
         // basic
         HttpRequestDef.Builder<SendDlqMessageRequest, SendDlqMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendDlqMessageRequest.class, SendDlqMessageResponse.class)
@@ -1168,23 +1040,17 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SendDlqMessageRequest.EngineEnum.class),
-            f -> f.withMarshaller(SendDlqMessageRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(SendDlqMessageRequest::getEngine, SendDlqMessageRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendDlqMessageRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SendDlqMessageRequest::getInstanceId, SendDlqMessageRequest::setInstanceId));
         builder.<DeadletterResendReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeadletterResendReq.class),
-            f -> f.withMarshaller(SendDlqMessageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendDlqMessageRequest::getBody, SendDlqMessageRequest::setBody));
 
         // response
 
@@ -1192,9 +1058,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse> showConsumerConnections =
-        genForshowConsumerConnections();
+        genForShowConsumerConnections();
 
-    private static HttpRequestDef<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse> genForshowConsumerConnections() {
+    private static HttpRequestDef<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse> genForShowConsumerConnections() {
         // basic
         HttpRequestDef.Builder<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowConsumerConnectionsRequest.class, ShowConsumerConnectionsResponse.class)
@@ -1207,37 +1073,30 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getInstanceId,
+                ShowConsumerConnectionsRequest::setInstanceId));
         builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getGroup, ShowConsumerConnectionsRequest::setGroup));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getLimit, ShowConsumerConnectionsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getOffset,
+                ShowConsumerConnectionsRequest::setOffset));
         builder.<Boolean>withRequestField("is_detail",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getIsDetail, (req, v) -> {
-                req.setIsDetail(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getIsDetail,
+                ShowConsumerConnectionsRequest::setIsDetail));
 
         // response
 
@@ -1245,9 +1104,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ShowConsumerListOrDetailsRequest, ShowConsumerListOrDetailsResponse> showConsumerListOrDetails =
-        genForshowConsumerListOrDetails();
+        genForShowConsumerListOrDetails();
 
-    private static HttpRequestDef<ShowConsumerListOrDetailsRequest, ShowConsumerListOrDetailsResponse> genForshowConsumerListOrDetails() {
+    private static HttpRequestDef<ShowConsumerListOrDetailsRequest, ShowConsumerListOrDetailsResponse> genForShowConsumerListOrDetails() {
         // basic
         HttpRequestDef.Builder<ShowConsumerListOrDetailsRequest, ShowConsumerListOrDetailsResponse> builder =
             HttpRequestDef
@@ -1263,37 +1122,32 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getInstanceId,
+                ShowConsumerListOrDetailsRequest::setInstanceId));
         builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getGroup,
+                ShowConsumerListOrDetailsRequest::setGroup));
         builder.<String>withRequestField("topic",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getTopic,
+                ShowConsumerListOrDetailsRequest::setTopic));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getLimit,
+                ShowConsumerListOrDetailsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getOffset,
+                ShowConsumerListOrDetailsRequest::setOffset));
 
         // response
 
@@ -1301,9 +1155,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfo =
-        genForshowEngineInstanceExtendProductInfo();
+        genForShowEngineInstanceExtendProductInfo();
 
-    private static HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> genForshowEngineInstanceExtendProductInfo() {
+    private static HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> genForShowEngineInstanceExtendProductInfo() {
         // basic
         HttpRequestDef.Builder<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> builder =
             HttpRequestDef
@@ -1319,32 +1173,29 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getEngine,
+                ShowEngineInstanceExtendProductInfoRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getInstanceId,
+                ShowEngineInstanceExtendProductInfoRequest::setInstanceId));
         builder.<ShowEngineInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getType,
+                ShowEngineInstanceExtendProductInfoRequest::setType));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowGroupRequest, ShowGroupResponse> showGroup = genForshowGroup();
+    public static final HttpRequestDef<ShowGroupRequest, ShowGroupResponse> showGroup = genForShowGroup();
 
-    private static HttpRequestDef<ShowGroupRequest, ShowGroupResponse> genForshowGroup() {
+    private static HttpRequestDef<ShowGroupRequest, ShowGroupResponse> genForShowGroup() {
         // basic
         HttpRequestDef.Builder<ShowGroupRequest, ShowGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowGroupRequest.class, ShowGroupResponse.class)
@@ -1357,25 +1208,21 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowGroupRequest::getInstanceId, ShowGroupRequest::setInstanceId));
         builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowGroupRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(ShowGroupRequest::getGroup, ShowGroupRequest::setGroup));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForshowInstance();
+    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForShowInstance();
 
-    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForshowInstance() {
+    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForShowInstance() {
         // basic
         HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
@@ -1388,9 +1235,7 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, ShowInstanceRequest::setInstanceId));
 
         // response
 
@@ -1398,9 +1243,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse> showRocketMqConfigs =
-        genForshowRocketMqConfigs();
+        genForShowRocketMqConfigs();
 
-    private static HttpRequestDef<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse> genForshowRocketMqConfigs() {
+    private static HttpRequestDef<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse> genForShowRocketMqConfigs() {
         // basic
         HttpRequestDef.Builder<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRocketMqConfigsRequest.class, ShowRocketMqConfigsResponse.class)
@@ -1413,9 +1258,8 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRocketMqConfigsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRocketMqConfigsRequest::getInstanceId,
+                ShowRocketMqConfigsRequest::setInstanceId));
 
         // response
 
@@ -1423,9 +1267,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse> showRocketmqProjectTags =
-        genForshowRocketmqProjectTags();
+        genForShowRocketmqProjectTags();
 
-    private static HttpRequestDef<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse> genForshowRocketmqProjectTags() {
+    private static HttpRequestDef<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse> genForShowRocketmqProjectTags() {
         // basic
         HttpRequestDef.Builder<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowRocketmqProjectTagsRequest.class, ShowRocketmqProjectTagsResponse.class)
@@ -1441,9 +1285,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse> showRocketmqTags =
-        genForshowRocketmqTags();
+        genForShowRocketmqTags();
 
-    private static HttpRequestDef<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse> genForshowRocketmqTags() {
+    private static HttpRequestDef<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse> genForShowRocketmqTags() {
         // basic
         HttpRequestDef.Builder<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRocketmqTagsRequest.class, ShowRocketmqTagsResponse.class)
@@ -1456,18 +1300,16 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRocketmqTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRocketmqTagsRequest::getInstanceId, ShowRocketmqTagsRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowUserRequest, ShowUserResponse> showUser = genForshowUser();
+    public static final HttpRequestDef<ShowUserRequest, ShowUserResponse> showUser = genForShowUser();
 
-    private static HttpRequestDef<ShowUserRequest, ShowUserResponse> genForshowUser() {
+    private static HttpRequestDef<ShowUserRequest, ShowUserResponse> genForShowUser() {
         // basic
         HttpRequestDef.Builder<ShowUserRequest, ShowUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserRequest.class, ShowUserResponse.class)
@@ -1480,16 +1322,12 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowUserRequest::getInstanceId, ShowUserRequest::setInstanceId));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUserRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(ShowUserRequest::getUserName, ShowUserRequest::setUserName));
 
         // response
 
@@ -1497,9 +1335,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<UpdateConsumerGroupRequest, UpdateConsumerGroupResponse> updateConsumerGroup =
-        genForupdateConsumerGroup();
+        genForUpdateConsumerGroup();
 
-    private static HttpRequestDef<UpdateConsumerGroupRequest, UpdateConsumerGroupResponse> genForupdateConsumerGroup() {
+    private static HttpRequestDef<UpdateConsumerGroupRequest, UpdateConsumerGroupResponse> genForUpdateConsumerGroup() {
         // basic
         HttpRequestDef.Builder<UpdateConsumerGroupRequest, UpdateConsumerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateConsumerGroupRequest.class, UpdateConsumerGroupResponse.class)
@@ -1512,23 +1350,18 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConsumerGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateConsumerGroupRequest::getInstanceId,
+                UpdateConsumerGroupRequest::setInstanceId));
         builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConsumerGroupRequest::getGroup, (req, v) -> {
-                req.setGroup(v);
-            }));
+            f -> f.withMarshaller(UpdateConsumerGroupRequest::getGroup, UpdateConsumerGroupRequest::setGroup));
         builder.<UpdateConsumerGroup>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateConsumerGroup.class),
-            f -> f.withMarshaller(UpdateConsumerGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateConsumerGroupRequest::getBody, UpdateConsumerGroupRequest::setBody));
 
         // response
 
@@ -1536,9 +1369,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
-        genForupdateInstance();
+        genForUpdateInstance();
 
-    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
+    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForUpdateInstance() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
@@ -1551,16 +1384,12 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, UpdateInstanceRequest::setInstanceId));
         builder.<UpdateInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceReq.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateInstanceRequest::getBody, UpdateInstanceRequest::setBody));
 
         // response
 
@@ -1568,9 +1397,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse> updateRocketMqConfigs =
-        genForupdateRocketMqConfigs();
+        genForUpdateRocketMqConfigs();
 
-    private static HttpRequestDef<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse> genForupdateRocketMqConfigs() {
+    private static HttpRequestDef<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse> genForUpdateRocketMqConfigs() {
         // basic
         HttpRequestDef.Builder<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateRocketMqConfigsRequest.class, UpdateRocketMqConfigsResponse.class)
@@ -1583,25 +1412,22 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRocketMqConfigsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRocketMqConfigsRequest::getInstanceId,
+                UpdateRocketMqConfigsRequest::setInstanceId));
         builder.<ModifyConfigReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyConfigReq.class),
-            f -> f.withMarshaller(UpdateRocketMqConfigsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRocketMqConfigsRequest::getBody, UpdateRocketMqConfigsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForupdateUser();
+    public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForUpdateUser();
 
-    private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForupdateUser() {
+    private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForUpdateUser() {
         // basic
         HttpRequestDef.Builder<UpdateUserRequest, UpdateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateUserRequest.class, UpdateUserResponse.class)
@@ -1614,23 +1440,17 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getInstanceId, UpdateUserRequest::setInstanceId));
         builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUserRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getUserName, UpdateUserRequest::setUserName));
         builder.<User>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(User.class),
-            f -> f.withMarshaller(UpdateUserRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateUserRequest::getBody, UpdateUserRequest::setBody));
 
         // response
 
@@ -1638,9 +1458,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> validateConsumedMessage =
-        genForvalidateConsumedMessage();
+        genForValidateConsumedMessage();
 
-    private static HttpRequestDef<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> genForvalidateConsumedMessage() {
+    private static HttpRequestDef<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> genForValidateConsumedMessage() {
         // basic
         HttpRequestDef.Builder<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ValidateConsumedMessageRequest.class, ValidateConsumedMessageResponse.class)
@@ -1653,23 +1473,19 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ValidateConsumedMessageRequest.EngineEnum.class),
-            f -> f.withMarshaller(ValidateConsumedMessageRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
+            f -> f.withMarshaller(ValidateConsumedMessageRequest::getEngine,
+                ValidateConsumedMessageRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateConsumedMessageRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ValidateConsumedMessageRequest::getInstanceId,
+                ValidateConsumedMessageRequest::setInstanceId));
         builder.<ResendReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResendReq.class),
-            f -> f.withMarshaller(ValidateConsumedMessageRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ValidateConsumedMessageRequest::getBody, ValidateConsumedMessageRequest::setBody));
 
         // response
 
@@ -1677,9 +1493,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<CreateTopicOrBatchDeleteTopicRequest, CreateTopicOrBatchDeleteTopicResponse> createTopicOrBatchDeleteTopic =
-        genForcreateTopicOrBatchDeleteTopic();
+        genForCreateTopicOrBatchDeleteTopic();
 
-    private static HttpRequestDef<CreateTopicOrBatchDeleteTopicRequest, CreateTopicOrBatchDeleteTopicResponse> genForcreateTopicOrBatchDeleteTopic() {
+    private static HttpRequestDef<CreateTopicOrBatchDeleteTopicRequest, CreateTopicOrBatchDeleteTopicResponse> genForCreateTopicOrBatchDeleteTopic() {
         // basic
         HttpRequestDef.Builder<CreateTopicOrBatchDeleteTopicRequest, CreateTopicOrBatchDeleteTopicResponse> builder =
             HttpRequestDef
@@ -1695,32 +1511,29 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTopicOrBatchDeleteTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateTopicOrBatchDeleteTopicRequest::getInstanceId,
+                CreateTopicOrBatchDeleteTopicRequest::setInstanceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTopicOrBatchDeleteTopicRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(CreateTopicOrBatchDeleteTopicRequest::getAction,
+                CreateTopicOrBatchDeleteTopicRequest::setAction));
         builder.<CreateTopicOrBatchDeleteTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTopicOrBatchDeleteTopicReq.class),
-            f -> f.withMarshaller(CreateTopicOrBatchDeleteTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTopicOrBatchDeleteTopicRequest::getBody,
+                CreateTopicOrBatchDeleteTopicRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTopicRequest, DeleteTopicResponse> deleteTopic = genFordeleteTopic();
+    public static final HttpRequestDef<DeleteTopicRequest, DeleteTopicResponse> deleteTopic = genForDeleteTopic();
 
-    private static HttpRequestDef<DeleteTopicRequest, DeleteTopicResponse> genFordeleteTopic() {
+    private static HttpRequestDef<DeleteTopicRequest, DeleteTopicResponse> genForDeleteTopic() {
         // basic
         HttpRequestDef.Builder<DeleteTopicRequest, DeleteTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTopicRequest.class, DeleteTopicResponse.class)
@@ -1733,16 +1546,12 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTopicRequest::getInstanceId, DeleteTopicRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTopicRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(DeleteTopicRequest::getTopic, DeleteTopicRequest::setTopic));
 
         // response
 
@@ -1750,9 +1559,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ListConsumerGroupOfTopicRequest, ListConsumerGroupOfTopicResponse> listConsumerGroupOfTopic =
-        genForlistConsumerGroupOfTopic();
+        genForListConsumerGroupOfTopic();
 
-    private static HttpRequestDef<ListConsumerGroupOfTopicRequest, ListConsumerGroupOfTopicResponse> genForlistConsumerGroupOfTopic() {
+    private static HttpRequestDef<ListConsumerGroupOfTopicRequest, ListConsumerGroupOfTopicResponse> genForListConsumerGroupOfTopic() {
         // basic
         HttpRequestDef.Builder<ListConsumerGroupOfTopicRequest, ListConsumerGroupOfTopicResponse> builder =
             HttpRequestDef
@@ -1766,30 +1575,26 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getInstanceId,
+                ListConsumerGroupOfTopicRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getTopic,
+                ListConsumerGroupOfTopicRequest::setTopic));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getLimit,
+                ListConsumerGroupOfTopicRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getOffset,
+                ListConsumerGroupOfTopicRequest::setOffset));
 
         // response
 
@@ -1797,9 +1602,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse> listRocketInstanceTopics =
-        genForlistRocketInstanceTopics();
+        genForListRocketInstanceTopics();
 
-    private static HttpRequestDef<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse> genForlistRocketInstanceTopics() {
+    private static HttpRequestDef<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse> genForListRocketInstanceTopics() {
         // basic
         HttpRequestDef.Builder<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse> builder =
             HttpRequestDef
@@ -1813,32 +1618,29 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRocketInstanceTopicsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRocketInstanceTopicsRequest::getInstanceId,
+                ListRocketInstanceTopicsRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRocketInstanceTopicsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRocketInstanceTopicsRequest::getLimit,
+                ListRocketInstanceTopicsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRocketInstanceTopicsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRocketInstanceTopicsRequest::getOffset,
+                ListRocketInstanceTopicsRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowOneTopicRequest, ShowOneTopicResponse> showOneTopic = genForshowOneTopic();
+    public static final HttpRequestDef<ShowOneTopicRequest, ShowOneTopicResponse> showOneTopic = genForShowOneTopic();
 
-    private static HttpRequestDef<ShowOneTopicRequest, ShowOneTopicResponse> genForshowOneTopic() {
+    private static HttpRequestDef<ShowOneTopicRequest, ShowOneTopicResponse> genForShowOneTopic() {
         // basic
         HttpRequestDef.Builder<ShowOneTopicRequest, ShowOneTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOneTopicRequest.class, ShowOneTopicResponse.class)
@@ -1851,16 +1653,12 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOneTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowOneTopicRequest::getInstanceId, ShowOneTopicRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOneTopicRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ShowOneTopicRequest::getTopic, ShowOneTopicRequest::setTopic));
 
         // response
 
@@ -1868,9 +1666,9 @@ public class RocketMQMeta {
     }
 
     public static final HttpRequestDef<ShowTopicStatusRequest, ShowTopicStatusResponse> showTopicStatus =
-        genForshowTopicStatus();
+        genForShowTopicStatus();
 
-    private static HttpRequestDef<ShowTopicStatusRequest, ShowTopicStatusResponse> genForshowTopicStatus() {
+    private static HttpRequestDef<ShowTopicStatusRequest, ShowTopicStatusResponse> genForShowTopicStatus() {
         // basic
         HttpRequestDef.Builder<ShowTopicStatusRequest, ShowTopicStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTopicStatusRequest.class, ShowTopicStatusResponse.class)
@@ -1883,25 +1681,21 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTopicStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowTopicStatusRequest::getInstanceId, ShowTopicStatusRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTopicStatusRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ShowTopicStatusRequest::getTopic, ShowTopicStatusRequest::setTopic));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTopicRequest, UpdateTopicResponse> updateTopic = genForupdateTopic();
+    public static final HttpRequestDef<UpdateTopicRequest, UpdateTopicResponse> updateTopic = genForUpdateTopic();
 
-    private static HttpRequestDef<UpdateTopicRequest, UpdateTopicResponse> genForupdateTopic() {
+    private static HttpRequestDef<UpdateTopicRequest, UpdateTopicResponse> genForUpdateTopic() {
         // basic
         HttpRequestDef.Builder<UpdateTopicRequest, UpdateTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTopicRequest.class, UpdateTopicResponse.class)
@@ -1914,23 +1708,17 @@ public class RocketMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateTopicRequest::getInstanceId, UpdateTopicRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTopicRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(UpdateTopicRequest::getTopic, UpdateTopicRequest::setTopic));
         builder.<UpdateTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTopicReq.class),
-            f -> f.withMarshaller(UpdateTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTopicRequest::getBody, UpdateTopicRequest::setBody));
 
         // response
 

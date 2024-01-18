@@ -30,7 +30,7 @@ public class ListAppGroupAuthorizationResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count
@@ -65,7 +65,7 @@ public class ListAppGroupAuthorizationResponse extends SdkResponse {
     }
 
     /**
-     * 授权信息
+     * 授权信息。
      * @return authorizations
      */
     public List<Authorization> getAuthorizations() {

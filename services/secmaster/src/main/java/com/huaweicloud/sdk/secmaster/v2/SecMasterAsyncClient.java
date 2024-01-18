@@ -152,7 +152,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeAlertRequest 请求对象
+     * @param request ChangeAlertRequest 请求对象
      * @return CompletableFuture<ChangeAlertResponse>
      */
     public CompletableFuture<ChangeAlertResponse> changeAlertAsync(ChangeAlertRequest request) {
@@ -166,11 +166,11 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeAlertRequest 请求对象
+     * @param request ChangeAlertRequest 请求对象
      * @return AsyncInvoker<ChangeAlertRequest, ChangeAlertResponse>
      */
     public AsyncInvoker<ChangeAlertRequest, ChangeAlertResponse> changeAlertAsyncInvoker(ChangeAlertRequest request) {
-        return new AsyncInvoker<ChangeAlertRequest, ChangeAlertResponse>(request, SecMasterMeta.changeAlert, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.changeAlert, hcClient);
     }
 
     /**
@@ -180,7 +180,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeIncidentRequest 请求对象
+     * @param request ChangeIncidentRequest 请求对象
      * @return CompletableFuture<ChangeIncidentResponse>
      */
     public CompletableFuture<ChangeIncidentResponse> changeIncidentAsync(ChangeIncidentRequest request) {
@@ -194,13 +194,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeIncidentRequest 请求对象
+     * @param request ChangeIncidentRequest 请求对象
      * @return AsyncInvoker<ChangeIncidentRequest, ChangeIncidentResponse>
      */
     public AsyncInvoker<ChangeIncidentRequest, ChangeIncidentResponse> changeIncidentAsyncInvoker(
         ChangeIncidentRequest request) {
-        return new AsyncInvoker<ChangeIncidentRequest, ChangeIncidentResponse>(request, SecMasterMeta.changeIncident,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.changeIncident, hcClient);
     }
 
     /**
@@ -210,7 +209,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePlaybookInstanceRequest 请求对象
+     * @param request ChangePlaybookInstanceRequest 请求对象
      * @return CompletableFuture<ChangePlaybookInstanceResponse>
      */
     public CompletableFuture<ChangePlaybookInstanceResponse> changePlaybookInstanceAsync(
@@ -225,13 +224,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangePlaybookInstanceRequest 请求对象
+     * @param request ChangePlaybookInstanceRequest 请求对象
      * @return AsyncInvoker<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse>
      */
     public AsyncInvoker<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse> changePlaybookInstanceAsyncInvoker(
         ChangePlaybookInstanceRequest request) {
-        return new AsyncInvoker<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse>(request,
-            SecMasterMeta.changePlaybookInstance, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.changePlaybookInstance, hcClient);
     }
 
     /**
@@ -241,7 +239,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyPlaybookVersionRequest 请求对象
+     * @param request CopyPlaybookVersionRequest 请求对象
      * @return CompletableFuture<CopyPlaybookVersionResponse>
      */
     public CompletableFuture<CopyPlaybookVersionResponse> copyPlaybookVersionAsync(CopyPlaybookVersionRequest request) {
@@ -255,13 +253,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyPlaybookVersionRequest 请求对象
+     * @param request CopyPlaybookVersionRequest 请求对象
      * @return AsyncInvoker<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse>
      */
     public AsyncInvoker<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse> copyPlaybookVersionAsyncInvoker(
         CopyPlaybookVersionRequest request) {
-        return new AsyncInvoker<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse>(request,
-            SecMasterMeta.copyPlaybookVersion, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.copyPlaybookVersion, hcClient);
     }
 
     /**
@@ -271,7 +268,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRequest 请求对象
+     * @param request CreateAlertRequest 请求对象
      * @return CompletableFuture<CreateAlertResponse>
      */
     public CompletableFuture<CreateAlertResponse> createAlertAsync(CreateAlertRequest request) {
@@ -285,11 +282,11 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRequest 请求对象
+     * @param request CreateAlertRequest 请求对象
      * @return AsyncInvoker<CreateAlertRequest, CreateAlertResponse>
      */
     public AsyncInvoker<CreateAlertRequest, CreateAlertResponse> createAlertAsyncInvoker(CreateAlertRequest request) {
-        return new AsyncInvoker<CreateAlertRequest, CreateAlertResponse>(request, SecMasterMeta.createAlert, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createAlert, hcClient);
     }
 
     /**
@@ -299,7 +296,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRuleRequest 请求对象
+     * @param request CreateAlertRuleRequest 请求对象
      * @return CompletableFuture<CreateAlertRuleResponse>
      */
     public CompletableFuture<CreateAlertRuleResponse> createAlertRuleAsync(CreateAlertRuleRequest request) {
@@ -313,13 +310,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRuleRequest 请求对象
+     * @param request CreateAlertRuleRequest 请求对象
      * @return AsyncInvoker<CreateAlertRuleRequest, CreateAlertRuleResponse>
      */
     public AsyncInvoker<CreateAlertRuleRequest, CreateAlertRuleResponse> createAlertRuleAsyncInvoker(
         CreateAlertRuleRequest request) {
-        return new AsyncInvoker<CreateAlertRuleRequest, CreateAlertRuleResponse>(request, SecMasterMeta.createAlertRule,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createAlertRule, hcClient);
     }
 
     /**
@@ -329,7 +325,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRuleSimulationRequest 请求对象
+     * @param request CreateAlertRuleSimulationRequest 请求对象
      * @return CompletableFuture<CreateAlertRuleSimulationResponse>
      */
     public CompletableFuture<CreateAlertRuleSimulationResponse> createAlertRuleSimulationAsync(
@@ -344,13 +340,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlertRuleSimulationRequest 请求对象
+     * @param request CreateAlertRuleSimulationRequest 请求对象
      * @return AsyncInvoker<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse>
      */
     public AsyncInvoker<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse> createAlertRuleSimulationAsyncInvoker(
         CreateAlertRuleSimulationRequest request) {
-        return new AsyncInvoker<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse>(request,
-            SecMasterMeta.createAlertRuleSimulation, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createAlertRuleSimulation, hcClient);
     }
 
     /**
@@ -360,7 +355,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBatchOrderAlertsRequest 请求对象
+     * @param request CreateBatchOrderAlertsRequest 请求对象
      * @return CompletableFuture<CreateBatchOrderAlertsResponse>
      */
     public CompletableFuture<CreateBatchOrderAlertsResponse> createBatchOrderAlertsAsync(
@@ -375,13 +370,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBatchOrderAlertsRequest 请求对象
+     * @param request CreateBatchOrderAlertsRequest 请求对象
      * @return AsyncInvoker<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse>
      */
     public AsyncInvoker<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse> createBatchOrderAlertsAsyncInvoker(
         CreateBatchOrderAlertsRequest request) {
-        return new AsyncInvoker<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse>(request,
-            SecMasterMeta.createBatchOrderAlerts, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createBatchOrderAlerts, hcClient);
     }
 
     /**
@@ -391,7 +385,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataobjectRelationsRequest 请求对象
+     * @param request CreateDataobjectRelationsRequest 请求对象
      * @return CompletableFuture<CreateDataobjectRelationsResponse>
      */
     public CompletableFuture<CreateDataobjectRelationsResponse> createDataobjectRelationsAsync(
@@ -406,13 +400,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataobjectRelationsRequest 请求对象
+     * @param request CreateDataobjectRelationsRequest 请求对象
      * @return AsyncInvoker<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse>
      */
     public AsyncInvoker<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse> createDataobjectRelationsAsyncInvoker(
         CreateDataobjectRelationsRequest request) {
-        return new AsyncInvoker<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse>(request,
-            SecMasterMeta.createDataobjectRelations, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createDataobjectRelations, hcClient);
     }
 
     /**
@@ -422,7 +415,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataspaceRequest 请求对象
+     * @param request CreateDataspaceRequest 请求对象
      * @return CompletableFuture<CreateDataspaceResponse>
      */
     public CompletableFuture<CreateDataspaceResponse> createDataspaceAsync(CreateDataspaceRequest request) {
@@ -436,13 +429,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataspaceRequest 请求对象
+     * @param request CreateDataspaceRequest 请求对象
      * @return AsyncInvoker<CreateDataspaceRequest, CreateDataspaceResponse>
      */
     public AsyncInvoker<CreateDataspaceRequest, CreateDataspaceResponse> createDataspaceAsyncInvoker(
         CreateDataspaceRequest request) {
-        return new AsyncInvoker<CreateDataspaceRequest, CreateDataspaceResponse>(request, SecMasterMeta.createDataspace,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createDataspace, hcClient);
     }
 
     /**
@@ -452,7 +444,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIncidentRequest 请求对象
+     * @param request CreateIncidentRequest 请求对象
      * @return CompletableFuture<CreateIncidentResponse>
      */
     public CompletableFuture<CreateIncidentResponse> createIncidentAsync(CreateIncidentRequest request) {
@@ -466,13 +458,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIncidentRequest 请求对象
+     * @param request CreateIncidentRequest 请求对象
      * @return AsyncInvoker<CreateIncidentRequest, CreateIncidentResponse>
      */
     public AsyncInvoker<CreateIncidentRequest, CreateIncidentResponse> createIncidentAsyncInvoker(
         CreateIncidentRequest request) {
-        return new AsyncInvoker<CreateIncidentRequest, CreateIncidentResponse>(request, SecMasterMeta.createIncident,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createIncident, hcClient);
     }
 
     /**
@@ -482,7 +473,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIndicatorRequest 请求对象
+     * @param request CreateIndicatorRequest 请求对象
      * @return CompletableFuture<CreateIndicatorResponse>
      */
     public CompletableFuture<CreateIndicatorResponse> createIndicatorAsync(CreateIndicatorRequest request) {
@@ -496,13 +487,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateIndicatorRequest 请求对象
+     * @param request CreateIndicatorRequest 请求对象
      * @return AsyncInvoker<CreateIndicatorRequest, CreateIndicatorResponse>
      */
     public AsyncInvoker<CreateIndicatorRequest, CreateIndicatorResponse> createIndicatorAsyncInvoker(
         CreateIndicatorRequest request) {
-        return new AsyncInvoker<CreateIndicatorRequest, CreateIndicatorResponse>(request, SecMasterMeta.createIndicator,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createIndicator, hcClient);
     }
 
     /**
@@ -512,7 +502,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipeRequest 请求对象
+     * @param request CreatePipeRequest 请求对象
      * @return CompletableFuture<CreatePipeResponse>
      */
     public CompletableFuture<CreatePipeResponse> createPipeAsync(CreatePipeRequest request) {
@@ -526,11 +516,11 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePipeRequest 请求对象
+     * @param request CreatePipeRequest 请求对象
      * @return AsyncInvoker<CreatePipeRequest, CreatePipeResponse>
      */
     public AsyncInvoker<CreatePipeRequest, CreatePipeResponse> createPipeAsyncInvoker(CreatePipeRequest request) {
-        return new AsyncInvoker<CreatePipeRequest, CreatePipeResponse>(request, SecMasterMeta.createPipe, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createPipe, hcClient);
     }
 
     /**
@@ -540,7 +530,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookRequest 请求对象
+     * @param request CreatePlaybookRequest 请求对象
      * @return CompletableFuture<CreatePlaybookResponse>
      */
     public CompletableFuture<CreatePlaybookResponse> createPlaybookAsync(CreatePlaybookRequest request) {
@@ -554,13 +544,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookRequest 请求对象
+     * @param request CreatePlaybookRequest 请求对象
      * @return AsyncInvoker<CreatePlaybookRequest, CreatePlaybookResponse>
      */
     public AsyncInvoker<CreatePlaybookRequest, CreatePlaybookResponse> createPlaybookAsyncInvoker(
         CreatePlaybookRequest request) {
-        return new AsyncInvoker<CreatePlaybookRequest, CreatePlaybookResponse>(request, SecMasterMeta.createPlaybook,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createPlaybook, hcClient);
     }
 
     /**
@@ -570,7 +559,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookActionRequest 请求对象
+     * @param request CreatePlaybookActionRequest 请求对象
      * @return CompletableFuture<CreatePlaybookActionResponse>
      */
     public CompletableFuture<CreatePlaybookActionResponse> createPlaybookActionAsync(
@@ -585,13 +574,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookActionRequest 请求对象
+     * @param request CreatePlaybookActionRequest 请求对象
      * @return AsyncInvoker<CreatePlaybookActionRequest, CreatePlaybookActionResponse>
      */
     public AsyncInvoker<CreatePlaybookActionRequest, CreatePlaybookActionResponse> createPlaybookActionAsyncInvoker(
         CreatePlaybookActionRequest request) {
-        return new AsyncInvoker<CreatePlaybookActionRequest, CreatePlaybookActionResponse>(request,
-            SecMasterMeta.createPlaybookAction, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createPlaybookAction, hcClient);
     }
 
     /**
@@ -601,7 +589,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookApproveRequest 请求对象
+     * @param request CreatePlaybookApproveRequest 请求对象
      * @return CompletableFuture<CreatePlaybookApproveResponse>
      */
     public CompletableFuture<CreatePlaybookApproveResponse> createPlaybookApproveAsync(
@@ -616,13 +604,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookApproveRequest 请求对象
+     * @param request CreatePlaybookApproveRequest 请求对象
      * @return AsyncInvoker<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse>
      */
     public AsyncInvoker<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse> createPlaybookApproveAsyncInvoker(
         CreatePlaybookApproveRequest request) {
-        return new AsyncInvoker<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse>(request,
-            SecMasterMeta.createPlaybookApprove, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createPlaybookApprove, hcClient);
     }
 
     /**
@@ -632,7 +619,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookRuleRequest 请求对象
+     * @param request CreatePlaybookRuleRequest 请求对象
      * @return CompletableFuture<CreatePlaybookRuleResponse>
      */
     public CompletableFuture<CreatePlaybookRuleResponse> createPlaybookRuleAsync(CreatePlaybookRuleRequest request) {
@@ -646,13 +633,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookRuleRequest 请求对象
+     * @param request CreatePlaybookRuleRequest 请求对象
      * @return AsyncInvoker<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse>
      */
     public AsyncInvoker<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse> createPlaybookRuleAsyncInvoker(
         CreatePlaybookRuleRequest request) {
-        return new AsyncInvoker<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse>(request,
-            SecMasterMeta.createPlaybookRule, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createPlaybookRule, hcClient);
     }
 
     /**
@@ -662,7 +648,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookVersionRequest 请求对象
+     * @param request CreatePlaybookVersionRequest 请求对象
      * @return CompletableFuture<CreatePlaybookVersionResponse>
      */
     public CompletableFuture<CreatePlaybookVersionResponse> createPlaybookVersionAsync(
@@ -677,13 +663,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePlaybookVersionRequest 请求对象
+     * @param request CreatePlaybookVersionRequest 请求对象
      * @return AsyncInvoker<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse>
      */
     public AsyncInvoker<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse> createPlaybookVersionAsyncInvoker(
         CreatePlaybookVersionRequest request) {
-        return new AsyncInvoker<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse>(request,
-            SecMasterMeta.createPlaybookVersion, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.createPlaybookVersion, hcClient);
     }
 
     /**
@@ -693,7 +678,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlertRequest 请求对象
+     * @param request DeleteAlertRequest 请求对象
      * @return CompletableFuture<DeleteAlertResponse>
      */
     public CompletableFuture<DeleteAlertResponse> deleteAlertAsync(DeleteAlertRequest request) {
@@ -707,11 +692,11 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlertRequest 请求对象
+     * @param request DeleteAlertRequest 请求对象
      * @return AsyncInvoker<DeleteAlertRequest, DeleteAlertResponse>
      */
     public AsyncInvoker<DeleteAlertRequest, DeleteAlertResponse> deleteAlertAsyncInvoker(DeleteAlertRequest request) {
-        return new AsyncInvoker<DeleteAlertRequest, DeleteAlertResponse>(request, SecMasterMeta.deleteAlert, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.deleteAlert, hcClient);
     }
 
     /**
@@ -721,7 +706,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlertRuleRequest 请求对象
+     * @param request DeleteAlertRuleRequest 请求对象
      * @return CompletableFuture<DeleteAlertRuleResponse>
      */
     public CompletableFuture<DeleteAlertRuleResponse> deleteAlertRuleAsync(DeleteAlertRuleRequest request) {
@@ -735,13 +720,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlertRuleRequest 请求对象
+     * @param request DeleteAlertRuleRequest 请求对象
      * @return AsyncInvoker<DeleteAlertRuleRequest, DeleteAlertRuleResponse>
      */
     public AsyncInvoker<DeleteAlertRuleRequest, DeleteAlertRuleResponse> deleteAlertRuleAsyncInvoker(
         DeleteAlertRuleRequest request) {
-        return new AsyncInvoker<DeleteAlertRuleRequest, DeleteAlertRuleResponse>(request, SecMasterMeta.deleteAlertRule,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.deleteAlertRule, hcClient);
     }
 
     /**
@@ -751,7 +735,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataobjectRelationsRequest 请求对象
+     * @param request DeleteDataobjectRelationsRequest 请求对象
      * @return CompletableFuture<DeleteDataobjectRelationsResponse>
      */
     public CompletableFuture<DeleteDataobjectRelationsResponse> deleteDataobjectRelationsAsync(
@@ -766,13 +750,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataobjectRelationsRequest 请求对象
+     * @param request DeleteDataobjectRelationsRequest 请求对象
      * @return AsyncInvoker<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse>
      */
     public AsyncInvoker<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse> deleteDataobjectRelationsAsyncInvoker(
         DeleteDataobjectRelationsRequest request) {
-        return new AsyncInvoker<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse>(request,
-            SecMasterMeta.deleteDataobjectRelations, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.deleteDataobjectRelations, hcClient);
     }
 
     /**
@@ -782,7 +765,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIncidentRequest 请求对象
+     * @param request DeleteIncidentRequest 请求对象
      * @return CompletableFuture<DeleteIncidentResponse>
      */
     public CompletableFuture<DeleteIncidentResponse> deleteIncidentAsync(DeleteIncidentRequest request) {
@@ -796,13 +779,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIncidentRequest 请求对象
+     * @param request DeleteIncidentRequest 请求对象
      * @return AsyncInvoker<DeleteIncidentRequest, DeleteIncidentResponse>
      */
     public AsyncInvoker<DeleteIncidentRequest, DeleteIncidentResponse> deleteIncidentAsyncInvoker(
         DeleteIncidentRequest request) {
-        return new AsyncInvoker<DeleteIncidentRequest, DeleteIncidentResponse>(request, SecMasterMeta.deleteIncident,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.deleteIncident, hcClient);
     }
 
     /**
@@ -812,7 +794,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIndicatorRequest 请求对象
+     * @param request DeleteIndicatorRequest 请求对象
      * @return CompletableFuture<DeleteIndicatorResponse>
      */
     public CompletableFuture<DeleteIndicatorResponse> deleteIndicatorAsync(DeleteIndicatorRequest request) {
@@ -826,13 +808,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIndicatorRequest 请求对象
+     * @param request DeleteIndicatorRequest 请求对象
      * @return AsyncInvoker<DeleteIndicatorRequest, DeleteIndicatorResponse>
      */
     public AsyncInvoker<DeleteIndicatorRequest, DeleteIndicatorResponse> deleteIndicatorAsyncInvoker(
         DeleteIndicatorRequest request) {
-        return new AsyncInvoker<DeleteIndicatorRequest, DeleteIndicatorResponse>(request, SecMasterMeta.deleteIndicator,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.deleteIndicator, hcClient);
     }
 
     /**
@@ -842,7 +823,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookRequest 请求对象
+     * @param request DeletePlaybookRequest 请求对象
      * @return CompletableFuture<DeletePlaybookResponse>
      */
     public CompletableFuture<DeletePlaybookResponse> deletePlaybookAsync(DeletePlaybookRequest request) {
@@ -856,13 +837,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookRequest 请求对象
+     * @param request DeletePlaybookRequest 请求对象
      * @return AsyncInvoker<DeletePlaybookRequest, DeletePlaybookResponse>
      */
     public AsyncInvoker<DeletePlaybookRequest, DeletePlaybookResponse> deletePlaybookAsyncInvoker(
         DeletePlaybookRequest request) {
-        return new AsyncInvoker<DeletePlaybookRequest, DeletePlaybookResponse>(request, SecMasterMeta.deletePlaybook,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.deletePlaybook, hcClient);
     }
 
     /**
@@ -872,7 +852,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookActionRequest 请求对象
+     * @param request DeletePlaybookActionRequest 请求对象
      * @return CompletableFuture<DeletePlaybookActionResponse>
      */
     public CompletableFuture<DeletePlaybookActionResponse> deletePlaybookActionAsync(
@@ -887,13 +867,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookActionRequest 请求对象
+     * @param request DeletePlaybookActionRequest 请求对象
      * @return AsyncInvoker<DeletePlaybookActionRequest, DeletePlaybookActionResponse>
      */
     public AsyncInvoker<DeletePlaybookActionRequest, DeletePlaybookActionResponse> deletePlaybookActionAsyncInvoker(
         DeletePlaybookActionRequest request) {
-        return new AsyncInvoker<DeletePlaybookActionRequest, DeletePlaybookActionResponse>(request,
-            SecMasterMeta.deletePlaybookAction, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.deletePlaybookAction, hcClient);
     }
 
     /**
@@ -903,7 +882,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookRuleRequest 请求对象
+     * @param request DeletePlaybookRuleRequest 请求对象
      * @return CompletableFuture<DeletePlaybookRuleResponse>
      */
     public CompletableFuture<DeletePlaybookRuleResponse> deletePlaybookRuleAsync(DeletePlaybookRuleRequest request) {
@@ -917,13 +896,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookRuleRequest 请求对象
+     * @param request DeletePlaybookRuleRequest 请求对象
      * @return AsyncInvoker<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse>
      */
     public AsyncInvoker<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse> deletePlaybookRuleAsyncInvoker(
         DeletePlaybookRuleRequest request) {
-        return new AsyncInvoker<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse>(request,
-            SecMasterMeta.deletePlaybookRule, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.deletePlaybookRule, hcClient);
     }
 
     /**
@@ -933,7 +911,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookVersionRequest 请求对象
+     * @param request DeletePlaybookVersionRequest 请求对象
      * @return CompletableFuture<DeletePlaybookVersionResponse>
      */
     public CompletableFuture<DeletePlaybookVersionResponse> deletePlaybookVersionAsync(
@@ -948,13 +926,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePlaybookVersionRequest 请求对象
+     * @param request DeletePlaybookVersionRequest 请求对象
      * @return AsyncInvoker<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse>
      */
     public AsyncInvoker<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse> deletePlaybookVersionAsyncInvoker(
         DeletePlaybookVersionRequest request) {
-        return new AsyncInvoker<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse>(request,
-            SecMasterMeta.deletePlaybookVersion, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.deletePlaybookVersion, hcClient);
     }
 
     /**
@@ -964,7 +941,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableAlertRuleRequest 请求对象
+     * @param request DisableAlertRuleRequest 请求对象
      * @return CompletableFuture<DisableAlertRuleResponse>
      */
     public CompletableFuture<DisableAlertRuleResponse> disableAlertRuleAsync(DisableAlertRuleRequest request) {
@@ -978,13 +955,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableAlertRuleRequest 请求对象
+     * @param request DisableAlertRuleRequest 请求对象
      * @return AsyncInvoker<DisableAlertRuleRequest, DisableAlertRuleResponse>
      */
     public AsyncInvoker<DisableAlertRuleRequest, DisableAlertRuleResponse> disableAlertRuleAsyncInvoker(
         DisableAlertRuleRequest request) {
-        return new AsyncInvoker<DisableAlertRuleRequest, DisableAlertRuleResponse>(request,
-            SecMasterMeta.disableAlertRule, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.disableAlertRule, hcClient);
     }
 
     /**
@@ -994,7 +970,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableAlertRuleRequest 请求对象
+     * @param request EnableAlertRuleRequest 请求对象
      * @return CompletableFuture<EnableAlertRuleResponse>
      */
     public CompletableFuture<EnableAlertRuleResponse> enableAlertRuleAsync(EnableAlertRuleRequest request) {
@@ -1008,13 +984,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableAlertRuleRequest 请求对象
+     * @param request EnableAlertRuleRequest 请求对象
      * @return AsyncInvoker<EnableAlertRuleRequest, EnableAlertRuleResponse>
      */
     public AsyncInvoker<EnableAlertRuleRequest, EnableAlertRuleResponse> enableAlertRuleAsyncInvoker(
         EnableAlertRuleRequest request) {
-        return new AsyncInvoker<EnableAlertRuleRequest, EnableAlertRuleResponse>(request, SecMasterMeta.enableAlertRule,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.enableAlertRule, hcClient);
     }
 
     /**
@@ -1024,7 +999,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRuleMetricsRequest 请求对象
+     * @param request ListAlertRuleMetricsRequest 请求对象
      * @return CompletableFuture<ListAlertRuleMetricsResponse>
      */
     public CompletableFuture<ListAlertRuleMetricsResponse> listAlertRuleMetricsAsync(
@@ -1039,13 +1014,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRuleMetricsRequest 请求对象
+     * @param request ListAlertRuleMetricsRequest 请求对象
      * @return AsyncInvoker<ListAlertRuleMetricsRequest, ListAlertRuleMetricsResponse>
      */
     public AsyncInvoker<ListAlertRuleMetricsRequest, ListAlertRuleMetricsResponse> listAlertRuleMetricsAsyncInvoker(
         ListAlertRuleMetricsRequest request) {
-        return new AsyncInvoker<ListAlertRuleMetricsRequest, ListAlertRuleMetricsResponse>(request,
-            SecMasterMeta.listAlertRuleMetrics, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listAlertRuleMetrics, hcClient);
     }
 
     /**
@@ -1055,7 +1029,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRuleTemplatesRequest 请求对象
+     * @param request ListAlertRuleTemplatesRequest 请求对象
      * @return CompletableFuture<ListAlertRuleTemplatesResponse>
      */
     public CompletableFuture<ListAlertRuleTemplatesResponse> listAlertRuleTemplatesAsync(
@@ -1070,13 +1044,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRuleTemplatesRequest 请求对象
+     * @param request ListAlertRuleTemplatesRequest 请求对象
      * @return AsyncInvoker<ListAlertRuleTemplatesRequest, ListAlertRuleTemplatesResponse>
      */
     public AsyncInvoker<ListAlertRuleTemplatesRequest, ListAlertRuleTemplatesResponse> listAlertRuleTemplatesAsyncInvoker(
         ListAlertRuleTemplatesRequest request) {
-        return new AsyncInvoker<ListAlertRuleTemplatesRequest, ListAlertRuleTemplatesResponse>(request,
-            SecMasterMeta.listAlertRuleTemplates, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listAlertRuleTemplates, hcClient);
     }
 
     /**
@@ -1086,7 +1059,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRulesRequest 请求对象
+     * @param request ListAlertRulesRequest 请求对象
      * @return CompletableFuture<ListAlertRulesResponse>
      */
     public CompletableFuture<ListAlertRulesResponse> listAlertRulesAsync(ListAlertRulesRequest request) {
@@ -1100,13 +1073,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertRulesRequest 请求对象
+     * @param request ListAlertRulesRequest 请求对象
      * @return AsyncInvoker<ListAlertRulesRequest, ListAlertRulesResponse>
      */
     public AsyncInvoker<ListAlertRulesRequest, ListAlertRulesResponse> listAlertRulesAsyncInvoker(
         ListAlertRulesRequest request) {
-        return new AsyncInvoker<ListAlertRulesRequest, ListAlertRulesResponse>(request, SecMasterMeta.listAlertRules,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listAlertRules, hcClient);
     }
 
     /**
@@ -1116,7 +1088,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertsRequest 请求对象
+     * @param request ListAlertsRequest 请求对象
      * @return CompletableFuture<ListAlertsResponse>
      */
     public CompletableFuture<ListAlertsResponse> listAlertsAsync(ListAlertsRequest request) {
@@ -1130,11 +1102,11 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlertsRequest 请求对象
+     * @param request ListAlertsRequest 请求对象
      * @return AsyncInvoker<ListAlertsRequest, ListAlertsResponse>
      */
     public AsyncInvoker<ListAlertsRequest, ListAlertsResponse> listAlertsAsyncInvoker(ListAlertsRequest request) {
-        return new AsyncInvoker<ListAlertsRequest, ListAlertsResponse>(request, SecMasterMeta.listAlerts, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listAlerts, hcClient);
     }
 
     /**
@@ -1144,7 +1116,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataclassRequest 请求对象
+     * @param request ListDataclassRequest 请求对象
      * @return CompletableFuture<ListDataclassResponse>
      */
     public CompletableFuture<ListDataclassResponse> listDataclassAsync(ListDataclassRequest request) {
@@ -1158,13 +1130,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataclassRequest 请求对象
+     * @param request ListDataclassRequest 请求对象
      * @return AsyncInvoker<ListDataclassRequest, ListDataclassResponse>
      */
     public AsyncInvoker<ListDataclassRequest, ListDataclassResponse> listDataclassAsyncInvoker(
         ListDataclassRequest request) {
-        return new AsyncInvoker<ListDataclassRequest, ListDataclassResponse>(request, SecMasterMeta.listDataclass,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listDataclass, hcClient);
     }
 
     /**
@@ -1174,7 +1145,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataclassFieldsRequest 请求对象
+     * @param request ListDataclassFieldsRequest 请求对象
      * @return CompletableFuture<ListDataclassFieldsResponse>
      */
     public CompletableFuture<ListDataclassFieldsResponse> listDataclassFieldsAsync(ListDataclassFieldsRequest request) {
@@ -1188,13 +1159,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataclassFieldsRequest 请求对象
+     * @param request ListDataclassFieldsRequest 请求对象
      * @return AsyncInvoker<ListDataclassFieldsRequest, ListDataclassFieldsResponse>
      */
     public AsyncInvoker<ListDataclassFieldsRequest, ListDataclassFieldsResponse> listDataclassFieldsAsyncInvoker(
         ListDataclassFieldsRequest request) {
-        return new AsyncInvoker<ListDataclassFieldsRequest, ListDataclassFieldsResponse>(request,
-            SecMasterMeta.listDataclassFields, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listDataclassFields, hcClient);
     }
 
     /**
@@ -1204,7 +1174,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataobjectRelationsRequest 请求对象
+     * @param request ListDataobjectRelationsRequest 请求对象
      * @return CompletableFuture<ListDataobjectRelationsResponse>
      */
     public CompletableFuture<ListDataobjectRelationsResponse> listDataobjectRelationsAsync(
@@ -1219,13 +1189,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataobjectRelationsRequest 请求对象
+     * @param request ListDataobjectRelationsRequest 请求对象
      * @return AsyncInvoker<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse>
      */
     public AsyncInvoker<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse> listDataobjectRelationsAsyncInvoker(
         ListDataobjectRelationsRequest request) {
-        return new AsyncInvoker<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse>(request,
-            SecMasterMeta.listDataobjectRelations, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listDataobjectRelations, hcClient);
     }
 
     /**
@@ -1235,7 +1204,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIncidentsRequest 请求对象
+     * @param request ListIncidentsRequest 请求对象
      * @return CompletableFuture<ListIncidentsResponse>
      */
     public CompletableFuture<ListIncidentsResponse> listIncidentsAsync(ListIncidentsRequest request) {
@@ -1249,13 +1218,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIncidentsRequest 请求对象
+     * @param request ListIncidentsRequest 请求对象
      * @return AsyncInvoker<ListIncidentsRequest, ListIncidentsResponse>
      */
     public AsyncInvoker<ListIncidentsRequest, ListIncidentsResponse> listIncidentsAsyncInvoker(
         ListIncidentsRequest request) {
-        return new AsyncInvoker<ListIncidentsRequest, ListIncidentsResponse>(request, SecMasterMeta.listIncidents,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listIncidents, hcClient);
     }
 
     /**
@@ -1265,7 +1233,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIndicatorsRequest 请求对象
+     * @param request ListIndicatorsRequest 请求对象
      * @return CompletableFuture<ListIndicatorsResponse>
      */
     public CompletableFuture<ListIndicatorsResponse> listIndicatorsAsync(ListIndicatorsRequest request) {
@@ -1279,13 +1247,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListIndicatorsRequest 请求对象
+     * @param request ListIndicatorsRequest 请求对象
      * @return AsyncInvoker<ListIndicatorsRequest, ListIndicatorsResponse>
      */
     public AsyncInvoker<ListIndicatorsRequest, ListIndicatorsResponse> listIndicatorsAsyncInvoker(
         ListIndicatorsRequest request) {
-        return new AsyncInvoker<ListIndicatorsRequest, ListIndicatorsResponse>(request, SecMasterMeta.listIndicators,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listIndicators, hcClient);
     }
 
     /**
@@ -1295,7 +1262,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookActionsRequest 请求对象
+     * @param request ListPlaybookActionsRequest 请求对象
      * @return CompletableFuture<ListPlaybookActionsResponse>
      */
     public CompletableFuture<ListPlaybookActionsResponse> listPlaybookActionsAsync(ListPlaybookActionsRequest request) {
@@ -1309,13 +1276,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookActionsRequest 请求对象
+     * @param request ListPlaybookActionsRequest 请求对象
      * @return AsyncInvoker<ListPlaybookActionsRequest, ListPlaybookActionsResponse>
      */
     public AsyncInvoker<ListPlaybookActionsRequest, ListPlaybookActionsResponse> listPlaybookActionsAsyncInvoker(
         ListPlaybookActionsRequest request) {
-        return new AsyncInvoker<ListPlaybookActionsRequest, ListPlaybookActionsResponse>(request,
-            SecMasterMeta.listPlaybookActions, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listPlaybookActions, hcClient);
     }
 
     /**
@@ -1325,7 +1291,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookApprovesRequest 请求对象
+     * @param request ListPlaybookApprovesRequest 请求对象
      * @return CompletableFuture<ListPlaybookApprovesResponse>
      */
     public CompletableFuture<ListPlaybookApprovesResponse> listPlaybookApprovesAsync(
@@ -1340,13 +1306,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookApprovesRequest 请求对象
+     * @param request ListPlaybookApprovesRequest 请求对象
      * @return AsyncInvoker<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse>
      */
     public AsyncInvoker<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse> listPlaybookApprovesAsyncInvoker(
         ListPlaybookApprovesRequest request) {
-        return new AsyncInvoker<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse>(request,
-            SecMasterMeta.listPlaybookApproves, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listPlaybookApproves, hcClient);
     }
 
     /**
@@ -1356,7 +1321,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookAuditLogsRequest 请求对象
+     * @param request ListPlaybookAuditLogsRequest 请求对象
      * @return CompletableFuture<ListPlaybookAuditLogsResponse>
      */
     public CompletableFuture<ListPlaybookAuditLogsResponse> listPlaybookAuditLogsAsync(
@@ -1371,13 +1336,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookAuditLogsRequest 请求对象
+     * @param request ListPlaybookAuditLogsRequest 请求对象
      * @return AsyncInvoker<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse>
      */
     public AsyncInvoker<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse> listPlaybookAuditLogsAsyncInvoker(
         ListPlaybookAuditLogsRequest request) {
-        return new AsyncInvoker<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse>(request,
-            SecMasterMeta.listPlaybookAuditLogs, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listPlaybookAuditLogs, hcClient);
     }
 
     /**
@@ -1387,7 +1351,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookInstancesRequest 请求对象
+     * @param request ListPlaybookInstancesRequest 请求对象
      * @return CompletableFuture<ListPlaybookInstancesResponse>
      */
     public CompletableFuture<ListPlaybookInstancesResponse> listPlaybookInstancesAsync(
@@ -1402,13 +1366,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookInstancesRequest 请求对象
+     * @param request ListPlaybookInstancesRequest 请求对象
      * @return AsyncInvoker<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse>
      */
     public AsyncInvoker<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse> listPlaybookInstancesAsyncInvoker(
         ListPlaybookInstancesRequest request) {
-        return new AsyncInvoker<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse>(request,
-            SecMasterMeta.listPlaybookInstances, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listPlaybookInstances, hcClient);
     }
 
     /**
@@ -1418,7 +1381,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookVersionsRequest 请求对象
+     * @param request ListPlaybookVersionsRequest 请求对象
      * @return CompletableFuture<ListPlaybookVersionsResponse>
      */
     public CompletableFuture<ListPlaybookVersionsResponse> listPlaybookVersionsAsync(
@@ -1433,13 +1396,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybookVersionsRequest 请求对象
+     * @param request ListPlaybookVersionsRequest 请求对象
      * @return AsyncInvoker<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse>
      */
     public AsyncInvoker<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse> listPlaybookVersionsAsyncInvoker(
         ListPlaybookVersionsRequest request) {
-        return new AsyncInvoker<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse>(request,
-            SecMasterMeta.listPlaybookVersions, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listPlaybookVersions, hcClient);
     }
 
     /**
@@ -1449,7 +1411,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybooksRequest 请求对象
+     * @param request ListPlaybooksRequest 请求对象
      * @return CompletableFuture<ListPlaybooksResponse>
      */
     public CompletableFuture<ListPlaybooksResponse> listPlaybooksAsync(ListPlaybooksRequest request) {
@@ -1463,13 +1425,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPlaybooksRequest 请求对象
+     * @param request ListPlaybooksRequest 请求对象
      * @return AsyncInvoker<ListPlaybooksRequest, ListPlaybooksResponse>
      */
     public AsyncInvoker<ListPlaybooksRequest, ListPlaybooksResponse> listPlaybooksAsyncInvoker(
         ListPlaybooksRequest request) {
-        return new AsyncInvoker<ListPlaybooksRequest, ListPlaybooksResponse>(request, SecMasterMeta.listPlaybooks,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listPlaybooks, hcClient);
     }
 
     /**
@@ -1479,7 +1440,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowsRequest 请求对象
+     * @param request ListWorkflowsRequest 请求对象
      * @return CompletableFuture<ListWorkflowsResponse>
      */
     public CompletableFuture<ListWorkflowsResponse> listWorkflowsAsync(ListWorkflowsRequest request) {
@@ -1493,13 +1454,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWorkflowsRequest 请求对象
+     * @param request ListWorkflowsRequest 请求对象
      * @return AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>
      */
     public AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsAsyncInvoker(
         ListWorkflowsRequest request) {
-        return new AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>(request, SecMasterMeta.listWorkflows,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.listWorkflows, hcClient);
     }
 
     /**
@@ -1509,7 +1469,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRequest 请求对象
+     * @param request ShowAlertRequest 请求对象
      * @return CompletableFuture<ShowAlertResponse>
      */
     public CompletableFuture<ShowAlertResponse> showAlertAsync(ShowAlertRequest request) {
@@ -1523,11 +1483,11 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRequest 请求对象
+     * @param request ShowAlertRequest 请求对象
      * @return AsyncInvoker<ShowAlertRequest, ShowAlertResponse>
      */
     public AsyncInvoker<ShowAlertRequest, ShowAlertResponse> showAlertAsyncInvoker(ShowAlertRequest request) {
-        return new AsyncInvoker<ShowAlertRequest, ShowAlertResponse>(request, SecMasterMeta.showAlert, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showAlert, hcClient);
     }
 
     /**
@@ -1537,7 +1497,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRuleRequest 请求对象
+     * @param request ShowAlertRuleRequest 请求对象
      * @return CompletableFuture<ShowAlertRuleResponse>
      */
     public CompletableFuture<ShowAlertRuleResponse> showAlertRuleAsync(ShowAlertRuleRequest request) {
@@ -1551,13 +1511,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRuleRequest 请求对象
+     * @param request ShowAlertRuleRequest 请求对象
      * @return AsyncInvoker<ShowAlertRuleRequest, ShowAlertRuleResponse>
      */
     public AsyncInvoker<ShowAlertRuleRequest, ShowAlertRuleResponse> showAlertRuleAsyncInvoker(
         ShowAlertRuleRequest request) {
-        return new AsyncInvoker<ShowAlertRuleRequest, ShowAlertRuleResponse>(request, SecMasterMeta.showAlertRule,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showAlertRule, hcClient);
     }
 
     /**
@@ -1567,7 +1526,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRuleTemplateRequest 请求对象
+     * @param request ShowAlertRuleTemplateRequest 请求对象
      * @return CompletableFuture<ShowAlertRuleTemplateResponse>
      */
     public CompletableFuture<ShowAlertRuleTemplateResponse> showAlertRuleTemplateAsync(
@@ -1582,13 +1541,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlertRuleTemplateRequest 请求对象
+     * @param request ShowAlertRuleTemplateRequest 请求对象
      * @return AsyncInvoker<ShowAlertRuleTemplateRequest, ShowAlertRuleTemplateResponse>
      */
     public AsyncInvoker<ShowAlertRuleTemplateRequest, ShowAlertRuleTemplateResponse> showAlertRuleTemplateAsyncInvoker(
         ShowAlertRuleTemplateRequest request) {
-        return new AsyncInvoker<ShowAlertRuleTemplateRequest, ShowAlertRuleTemplateResponse>(request,
-            SecMasterMeta.showAlertRuleTemplate, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showAlertRuleTemplate, hcClient);
     }
 
     /**
@@ -1598,7 +1556,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIncidentRequest 请求对象
+     * @param request ShowIncidentRequest 请求对象
      * @return CompletableFuture<ShowIncidentResponse>
      */
     public CompletableFuture<ShowIncidentResponse> showIncidentAsync(ShowIncidentRequest request) {
@@ -1612,13 +1570,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIncidentRequest 请求对象
+     * @param request ShowIncidentRequest 请求对象
      * @return AsyncInvoker<ShowIncidentRequest, ShowIncidentResponse>
      */
     public AsyncInvoker<ShowIncidentRequest, ShowIncidentResponse> showIncidentAsyncInvoker(
         ShowIncidentRequest request) {
-        return new AsyncInvoker<ShowIncidentRequest, ShowIncidentResponse>(request, SecMasterMeta.showIncident,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showIncident, hcClient);
     }
 
     /**
@@ -1628,7 +1585,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIndicatorDetailRequest 请求对象
+     * @param request ShowIndicatorDetailRequest 请求对象
      * @return CompletableFuture<ShowIndicatorDetailResponse>
      */
     public CompletableFuture<ShowIndicatorDetailResponse> showIndicatorDetailAsync(ShowIndicatorDetailRequest request) {
@@ -1642,13 +1599,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIndicatorDetailRequest 请求对象
+     * @param request ShowIndicatorDetailRequest 请求对象
      * @return AsyncInvoker<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse>
      */
     public AsyncInvoker<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse> showIndicatorDetailAsyncInvoker(
         ShowIndicatorDetailRequest request) {
-        return new AsyncInvoker<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse>(request,
-            SecMasterMeta.showIndicatorDetail, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showIndicatorDetail, hcClient);
     }
 
     /**
@@ -1658,7 +1614,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookRequest 请求对象
+     * @param request ShowPlaybookRequest 请求对象
      * @return CompletableFuture<ShowPlaybookResponse>
      */
     public CompletableFuture<ShowPlaybookResponse> showPlaybookAsync(ShowPlaybookRequest request) {
@@ -1672,13 +1628,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookRequest 请求对象
+     * @param request ShowPlaybookRequest 请求对象
      * @return AsyncInvoker<ShowPlaybookRequest, ShowPlaybookResponse>
      */
     public AsyncInvoker<ShowPlaybookRequest, ShowPlaybookResponse> showPlaybookAsyncInvoker(
         ShowPlaybookRequest request) {
-        return new AsyncInvoker<ShowPlaybookRequest, ShowPlaybookResponse>(request, SecMasterMeta.showPlaybook,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showPlaybook, hcClient);
     }
 
     /**
@@ -1688,7 +1643,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookInstanceRequest 请求对象
+     * @param request ShowPlaybookInstanceRequest 请求对象
      * @return CompletableFuture<ShowPlaybookInstanceResponse>
      */
     public CompletableFuture<ShowPlaybookInstanceResponse> showPlaybookInstanceAsync(
@@ -1703,13 +1658,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookInstanceRequest 请求对象
+     * @param request ShowPlaybookInstanceRequest 请求对象
      * @return AsyncInvoker<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse>
      */
     public AsyncInvoker<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse> showPlaybookInstanceAsyncInvoker(
         ShowPlaybookInstanceRequest request) {
-        return new AsyncInvoker<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse>(request,
-            SecMasterMeta.showPlaybookInstance, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showPlaybookInstance, hcClient);
     }
 
     /**
@@ -1719,7 +1673,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookMonitorsRequest 请求对象
+     * @param request ShowPlaybookMonitorsRequest 请求对象
      * @return CompletableFuture<ShowPlaybookMonitorsResponse>
      */
     public CompletableFuture<ShowPlaybookMonitorsResponse> showPlaybookMonitorsAsync(
@@ -1734,13 +1688,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookMonitorsRequest 请求对象
+     * @param request ShowPlaybookMonitorsRequest 请求对象
      * @return AsyncInvoker<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse>
      */
     public AsyncInvoker<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse> showPlaybookMonitorsAsyncInvoker(
         ShowPlaybookMonitorsRequest request) {
-        return new AsyncInvoker<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse>(request,
-            SecMasterMeta.showPlaybookMonitors, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showPlaybookMonitors, hcClient);
     }
 
     /**
@@ -1750,7 +1703,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookRuleRequest 请求对象
+     * @param request ShowPlaybookRuleRequest 请求对象
      * @return CompletableFuture<ShowPlaybookRuleResponse>
      */
     public CompletableFuture<ShowPlaybookRuleResponse> showPlaybookRuleAsync(ShowPlaybookRuleRequest request) {
@@ -1764,13 +1717,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookRuleRequest 请求对象
+     * @param request ShowPlaybookRuleRequest 请求对象
      * @return AsyncInvoker<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse>
      */
     public AsyncInvoker<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse> showPlaybookRuleAsyncInvoker(
         ShowPlaybookRuleRequest request) {
-        return new AsyncInvoker<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse>(request,
-            SecMasterMeta.showPlaybookRule, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showPlaybookRule, hcClient);
     }
 
     /**
@@ -1780,7 +1732,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookStatisticsRequest 请求对象
+     * @param request ShowPlaybookStatisticsRequest 请求对象
      * @return CompletableFuture<ShowPlaybookStatisticsResponse>
      */
     public CompletableFuture<ShowPlaybookStatisticsResponse> showPlaybookStatisticsAsync(
@@ -1795,13 +1747,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookStatisticsRequest 请求对象
+     * @param request ShowPlaybookStatisticsRequest 请求对象
      * @return AsyncInvoker<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse>
      */
     public AsyncInvoker<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse> showPlaybookStatisticsAsyncInvoker(
         ShowPlaybookStatisticsRequest request) {
-        return new AsyncInvoker<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse>(request,
-            SecMasterMeta.showPlaybookStatistics, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showPlaybookStatistics, hcClient);
     }
 
     /**
@@ -1811,7 +1762,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookTopologyRequest 请求对象
+     * @param request ShowPlaybookTopologyRequest 请求对象
      * @return CompletableFuture<ShowPlaybookTopologyResponse>
      */
     public CompletableFuture<ShowPlaybookTopologyResponse> showPlaybookTopologyAsync(
@@ -1826,13 +1777,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookTopologyRequest 请求对象
+     * @param request ShowPlaybookTopologyRequest 请求对象
      * @return AsyncInvoker<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse>
      */
     public AsyncInvoker<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse> showPlaybookTopologyAsyncInvoker(
         ShowPlaybookTopologyRequest request) {
-        return new AsyncInvoker<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse>(request,
-            SecMasterMeta.showPlaybookTopology, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showPlaybookTopology, hcClient);
     }
 
     /**
@@ -1842,7 +1792,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookVersionRequest 请求对象
+     * @param request ShowPlaybookVersionRequest 请求对象
      * @return CompletableFuture<ShowPlaybookVersionResponse>
      */
     public CompletableFuture<ShowPlaybookVersionResponse> showPlaybookVersionAsync(ShowPlaybookVersionRequest request) {
@@ -1856,13 +1806,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPlaybookVersionRequest 请求对象
+     * @param request ShowPlaybookVersionRequest 请求对象
      * @return AsyncInvoker<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse>
      */
     public AsyncInvoker<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse> showPlaybookVersionAsyncInvoker(
         ShowPlaybookVersionRequest request) {
-        return new AsyncInvoker<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse>(request,
-            SecMasterMeta.showPlaybookVersion, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.showPlaybookVersion, hcClient);
     }
 
     /**
@@ -1872,7 +1821,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlertRuleRequest 请求对象
+     * @param request UpdateAlertRuleRequest 请求对象
      * @return CompletableFuture<UpdateAlertRuleResponse>
      */
     public CompletableFuture<UpdateAlertRuleResponse> updateAlertRuleAsync(UpdateAlertRuleRequest request) {
@@ -1886,13 +1835,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlertRuleRequest 请求对象
+     * @param request UpdateAlertRuleRequest 请求对象
      * @return AsyncInvoker<UpdateAlertRuleRequest, UpdateAlertRuleResponse>
      */
     public AsyncInvoker<UpdateAlertRuleRequest, UpdateAlertRuleResponse> updateAlertRuleAsyncInvoker(
         UpdateAlertRuleRequest request) {
-        return new AsyncInvoker<UpdateAlertRuleRequest, UpdateAlertRuleResponse>(request, SecMasterMeta.updateAlertRule,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.updateAlertRule, hcClient);
     }
 
     /**
@@ -1902,7 +1850,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIndicatorRequest 请求对象
+     * @param request UpdateIndicatorRequest 请求对象
      * @return CompletableFuture<UpdateIndicatorResponse>
      */
     public CompletableFuture<UpdateIndicatorResponse> updateIndicatorAsync(UpdateIndicatorRequest request) {
@@ -1916,13 +1864,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIndicatorRequest 请求对象
+     * @param request UpdateIndicatorRequest 请求对象
      * @return AsyncInvoker<UpdateIndicatorRequest, UpdateIndicatorResponse>
      */
     public AsyncInvoker<UpdateIndicatorRequest, UpdateIndicatorResponse> updateIndicatorAsyncInvoker(
         UpdateIndicatorRequest request) {
-        return new AsyncInvoker<UpdateIndicatorRequest, UpdateIndicatorResponse>(request, SecMasterMeta.updateIndicator,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.updateIndicator, hcClient);
     }
 
     /**
@@ -1932,7 +1879,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookRequest 请求对象
+     * @param request UpdatePlaybookRequest 请求对象
      * @return CompletableFuture<UpdatePlaybookResponse>
      */
     public CompletableFuture<UpdatePlaybookResponse> updatePlaybookAsync(UpdatePlaybookRequest request) {
@@ -1946,13 +1893,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookRequest 请求对象
+     * @param request UpdatePlaybookRequest 请求对象
      * @return AsyncInvoker<UpdatePlaybookRequest, UpdatePlaybookResponse>
      */
     public AsyncInvoker<UpdatePlaybookRequest, UpdatePlaybookResponse> updatePlaybookAsyncInvoker(
         UpdatePlaybookRequest request) {
-        return new AsyncInvoker<UpdatePlaybookRequest, UpdatePlaybookResponse>(request, SecMasterMeta.updatePlaybook,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.updatePlaybook, hcClient);
     }
 
     /**
@@ -1962,7 +1908,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookActionRequest 请求对象
+     * @param request UpdatePlaybookActionRequest 请求对象
      * @return CompletableFuture<UpdatePlaybookActionResponse>
      */
     public CompletableFuture<UpdatePlaybookActionResponse> updatePlaybookActionAsync(
@@ -1977,13 +1923,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookActionRequest 请求对象
+     * @param request UpdatePlaybookActionRequest 请求对象
      * @return AsyncInvoker<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse>
      */
     public AsyncInvoker<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse> updatePlaybookActionAsyncInvoker(
         UpdatePlaybookActionRequest request) {
-        return new AsyncInvoker<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse>(request,
-            SecMasterMeta.updatePlaybookAction, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.updatePlaybookAction, hcClient);
     }
 
     /**
@@ -1993,7 +1938,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookRuleRequest 请求对象
+     * @param request UpdatePlaybookRuleRequest 请求对象
      * @return CompletableFuture<UpdatePlaybookRuleResponse>
      */
     public CompletableFuture<UpdatePlaybookRuleResponse> updatePlaybookRuleAsync(UpdatePlaybookRuleRequest request) {
@@ -2007,13 +1952,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookRuleRequest 请求对象
+     * @param request UpdatePlaybookRuleRequest 请求对象
      * @return AsyncInvoker<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse>
      */
     public AsyncInvoker<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse> updatePlaybookRuleAsyncInvoker(
         UpdatePlaybookRuleRequest request) {
-        return new AsyncInvoker<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse>(request,
-            SecMasterMeta.updatePlaybookRule, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.updatePlaybookRule, hcClient);
     }
 
     /**
@@ -2023,7 +1967,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookVersionRequest 请求对象
+     * @param request UpdatePlaybookVersionRequest 请求对象
      * @return CompletableFuture<UpdatePlaybookVersionResponse>
      */
     public CompletableFuture<UpdatePlaybookVersionResponse> updatePlaybookVersionAsync(
@@ -2038,13 +1982,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePlaybookVersionRequest 请求对象
+     * @param request UpdatePlaybookVersionRequest 请求对象
      * @return AsyncInvoker<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse>
      */
     public AsyncInvoker<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse> updatePlaybookVersionAsyncInvoker(
         UpdatePlaybookVersionRequest request) {
-        return new AsyncInvoker<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse>(request,
-            SecMasterMeta.updatePlaybookVersion, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.updatePlaybookVersion, hcClient);
     }
 
 }

@@ -74,7 +74,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListMetricDataRequest 请求对象
+     * @param request BatchListMetricDataRequest 请求对象
      * @return BatchListMetricDataResponse
      */
     public BatchListMetricDataResponse batchListMetricData(BatchListMetricDataRequest request) {
@@ -88,13 +88,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchListMetricDataRequest 请求对象
+     * @param request BatchListMetricDataRequest 请求对象
      * @return SyncInvoker<BatchListMetricDataRequest, BatchListMetricDataResponse>
      */
     public SyncInvoker<BatchListMetricDataRequest, BatchListMetricDataResponse> batchListMetricDataInvoker(
         BatchListMetricDataRequest request) {
-        return new SyncInvoker<BatchListMetricDataRequest, BatchListMetricDataResponse>(request,
-            CesMeta.batchListMetricData, hcClient);
+        return new SyncInvoker<>(request, CesMeta.batchListMetricData, hcClient);
     }
 
     /**
@@ -104,7 +103,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlarmRequest 请求对象
+     * @param request CreateAlarmRequest 请求对象
      * @return CreateAlarmResponse
      */
     public CreateAlarmResponse createAlarm(CreateAlarmRequest request) {
@@ -118,11 +117,11 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlarmRequest 请求对象
+     * @param request CreateAlarmRequest 请求对象
      * @return SyncInvoker<CreateAlarmRequest, CreateAlarmResponse>
      */
     public SyncInvoker<CreateAlarmRequest, CreateAlarmResponse> createAlarmInvoker(CreateAlarmRequest request) {
-        return new SyncInvoker<CreateAlarmRequest, CreateAlarmResponse>(request, CesMeta.createAlarm, hcClient);
+        return new SyncInvoker<>(request, CesMeta.createAlarm, hcClient);
     }
 
     /**
@@ -132,7 +131,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlarmTemplateRequest 请求对象
+     * @param request CreateAlarmTemplateRequest 请求对象
      * @return CreateAlarmTemplateResponse
      */
     public CreateAlarmTemplateResponse createAlarmTemplate(CreateAlarmTemplateRequest request) {
@@ -146,13 +145,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAlarmTemplateRequest 请求对象
+     * @param request CreateAlarmTemplateRequest 请求对象
      * @return SyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse>
      */
     public SyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse> createAlarmTemplateInvoker(
         CreateAlarmTemplateRequest request) {
-        return new SyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse>(request,
-            CesMeta.createAlarmTemplate, hcClient);
+        return new SyncInvoker<>(request, CesMeta.createAlarmTemplate, hcClient);
     }
 
     /**
@@ -162,7 +160,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventsRequest 请求对象
+     * @param request CreateEventsRequest 请求对象
      * @return CreateEventsResponse
      */
     public CreateEventsResponse createEvents(CreateEventsRequest request) {
@@ -176,11 +174,11 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEventsRequest 请求对象
+     * @param request CreateEventsRequest 请求对象
      * @return SyncInvoker<CreateEventsRequest, CreateEventsResponse>
      */
     public SyncInvoker<CreateEventsRequest, CreateEventsResponse> createEventsInvoker(CreateEventsRequest request) {
-        return new SyncInvoker<CreateEventsRequest, CreateEventsResponse>(request, CesMeta.createEvents, hcClient);
+        return new SyncInvoker<>(request, CesMeta.createEvents, hcClient);
     }
 
     /**
@@ -190,7 +188,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMetricDataRequest 请求对象
+     * @param request CreateMetricDataRequest 请求对象
      * @return CreateMetricDataResponse
      */
     public CreateMetricDataResponse createMetricData(CreateMetricDataRequest request) {
@@ -204,13 +202,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMetricDataRequest 请求对象
+     * @param request CreateMetricDataRequest 请求对象
      * @return SyncInvoker<CreateMetricDataRequest, CreateMetricDataResponse>
      */
     public SyncInvoker<CreateMetricDataRequest, CreateMetricDataResponse> createMetricDataInvoker(
         CreateMetricDataRequest request) {
-        return new SyncInvoker<CreateMetricDataRequest, CreateMetricDataResponse>(request, CesMeta.createMetricData,
-            hcClient);
+        return new SyncInvoker<>(request, CesMeta.createMetricData, hcClient);
     }
 
     /**
@@ -220,7 +217,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceGroupRequest 请求对象
+     * @param request CreateResourceGroupRequest 请求对象
      * @return CreateResourceGroupResponse
      */
     public CreateResourceGroupResponse createResourceGroup(CreateResourceGroupRequest request) {
@@ -234,13 +231,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceGroupRequest 请求对象
+     * @param request CreateResourceGroupRequest 请求对象
      * @return SyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse>
      */
     public SyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse> createResourceGroupInvoker(
         CreateResourceGroupRequest request) {
-        return new SyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse>(request,
-            CesMeta.createResourceGroup, hcClient);
+        return new SyncInvoker<>(request, CesMeta.createResourceGroup, hcClient);
     }
 
     /**
@@ -250,7 +246,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmRequest 请求对象
+     * @param request DeleteAlarmRequest 请求对象
      * @return DeleteAlarmResponse
      */
     public DeleteAlarmResponse deleteAlarm(DeleteAlarmRequest request) {
@@ -264,11 +260,11 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmRequest 请求对象
+     * @param request DeleteAlarmRequest 请求对象
      * @return SyncInvoker<DeleteAlarmRequest, DeleteAlarmResponse>
      */
     public SyncInvoker<DeleteAlarmRequest, DeleteAlarmResponse> deleteAlarmInvoker(DeleteAlarmRequest request) {
-        return new SyncInvoker<DeleteAlarmRequest, DeleteAlarmResponse>(request, CesMeta.deleteAlarm, hcClient);
+        return new SyncInvoker<>(request, CesMeta.deleteAlarm, hcClient);
     }
 
     /**
@@ -278,7 +274,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmTemplateRequest 请求对象
+     * @param request DeleteAlarmTemplateRequest 请求对象
      * @return DeleteAlarmTemplateResponse
      */
     public DeleteAlarmTemplateResponse deleteAlarmTemplate(DeleteAlarmTemplateRequest request) {
@@ -292,13 +288,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAlarmTemplateRequest 请求对象
+     * @param request DeleteAlarmTemplateRequest 请求对象
      * @return SyncInvoker<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse>
      */
     public SyncInvoker<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> deleteAlarmTemplateInvoker(
         DeleteAlarmTemplateRequest request) {
-        return new SyncInvoker<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse>(request,
-            CesMeta.deleteAlarmTemplate, hcClient);
+        return new SyncInvoker<>(request, CesMeta.deleteAlarmTemplate, hcClient);
     }
 
     /**
@@ -308,7 +303,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceGroupRequest 请求对象
+     * @param request DeleteResourceGroupRequest 请求对象
      * @return DeleteResourceGroupResponse
      */
     public DeleteResourceGroupResponse deleteResourceGroup(DeleteResourceGroupRequest request) {
@@ -322,13 +317,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceGroupRequest 请求对象
+     * @param request DeleteResourceGroupRequest 请求对象
      * @return SyncInvoker<DeleteResourceGroupRequest, DeleteResourceGroupResponse>
      */
     public SyncInvoker<DeleteResourceGroupRequest, DeleteResourceGroupResponse> deleteResourceGroupInvoker(
         DeleteResourceGroupRequest request) {
-        return new SyncInvoker<DeleteResourceGroupRequest, DeleteResourceGroupResponse>(request,
-            CesMeta.deleteResourceGroup, hcClient);
+        return new SyncInvoker<>(request, CesMeta.deleteResourceGroup, hcClient);
     }
 
     /**
@@ -338,7 +332,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmHistoriesRequest 请求对象
+     * @param request ListAlarmHistoriesRequest 请求对象
      * @return ListAlarmHistoriesResponse
      */
     public ListAlarmHistoriesResponse listAlarmHistories(ListAlarmHistoriesRequest request) {
@@ -352,13 +346,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmHistoriesRequest 请求对象
+     * @param request ListAlarmHistoriesRequest 请求对象
      * @return SyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse>
      */
     public SyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> listAlarmHistoriesInvoker(
         ListAlarmHistoriesRequest request) {
-        return new SyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse>(request,
-            CesMeta.listAlarmHistories, hcClient);
+        return new SyncInvoker<>(request, CesMeta.listAlarmHistories, hcClient);
     }
 
     /**
@@ -368,7 +361,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmTemplatesRequest 请求对象
+     * @param request ListAlarmTemplatesRequest 请求对象
      * @return ListAlarmTemplatesResponse
      */
     public ListAlarmTemplatesResponse listAlarmTemplates(ListAlarmTemplatesRequest request) {
@@ -382,13 +375,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmTemplatesRequest 请求对象
+     * @param request ListAlarmTemplatesRequest 请求对象
      * @return SyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse>
      */
     public SyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse> listAlarmTemplatesInvoker(
         ListAlarmTemplatesRequest request) {
-        return new SyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse>(request,
-            CesMeta.listAlarmTemplates, hcClient);
+        return new SyncInvoker<>(request, CesMeta.listAlarmTemplates, hcClient);
     }
 
     /**
@@ -398,7 +390,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmsRequest 请求对象
+     * @param request ListAlarmsRequest 请求对象
      * @return ListAlarmsResponse
      */
     public ListAlarmsResponse listAlarms(ListAlarmsRequest request) {
@@ -412,11 +404,11 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAlarmsRequest 请求对象
+     * @param request ListAlarmsRequest 请求对象
      * @return SyncInvoker<ListAlarmsRequest, ListAlarmsResponse>
      */
     public SyncInvoker<ListAlarmsRequest, ListAlarmsResponse> listAlarmsInvoker(ListAlarmsRequest request) {
-        return new SyncInvoker<ListAlarmsRequest, ListAlarmsResponse>(request, CesMeta.listAlarms, hcClient);
+        return new SyncInvoker<>(request, CesMeta.listAlarms, hcClient);
     }
 
     /**
@@ -426,7 +418,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventDetailRequest 请求对象
+     * @param request ListEventDetailRequest 请求对象
      * @return ListEventDetailResponse
      */
     public ListEventDetailResponse listEventDetail(ListEventDetailRequest request) {
@@ -440,13 +432,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventDetailRequest 请求对象
+     * @param request ListEventDetailRequest 请求对象
      * @return SyncInvoker<ListEventDetailRequest, ListEventDetailResponse>
      */
     public SyncInvoker<ListEventDetailRequest, ListEventDetailResponse> listEventDetailInvoker(
         ListEventDetailRequest request) {
-        return new SyncInvoker<ListEventDetailRequest, ListEventDetailResponse>(request, CesMeta.listEventDetail,
-            hcClient);
+        return new SyncInvoker<>(request, CesMeta.listEventDetail, hcClient);
     }
 
     /**
@@ -456,7 +447,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventsRequest 请求对象
+     * @param request ListEventsRequest 请求对象
      * @return ListEventsResponse
      */
     public ListEventsResponse listEvents(ListEventsRequest request) {
@@ -470,11 +461,11 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEventsRequest 请求对象
+     * @param request ListEventsRequest 请求对象
      * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
      */
     public SyncInvoker<ListEventsRequest, ListEventsResponse> listEventsInvoker(ListEventsRequest request) {
-        return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, CesMeta.listEvents, hcClient);
+        return new SyncInvoker<>(request, CesMeta.listEvents, hcClient);
     }
 
     /**
@@ -484,7 +475,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetricsRequest 请求对象
+     * @param request ListMetricsRequest 请求对象
      * @return ListMetricsResponse
      */
     public ListMetricsResponse listMetrics(ListMetricsRequest request) {
@@ -498,11 +489,11 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetricsRequest 请求对象
+     * @param request ListMetricsRequest 请求对象
      * @return SyncInvoker<ListMetricsRequest, ListMetricsResponse>
      */
     public SyncInvoker<ListMetricsRequest, ListMetricsResponse> listMetricsInvoker(ListMetricsRequest request) {
-        return new SyncInvoker<ListMetricsRequest, ListMetricsResponse>(request, CesMeta.listMetrics, hcClient);
+        return new SyncInvoker<>(request, CesMeta.listMetrics, hcClient);
     }
 
     /**
@@ -512,7 +503,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceGroupRequest 请求对象
+     * @param request ListResourceGroupRequest 请求对象
      * @return ListResourceGroupResponse
      */
     public ListResourceGroupResponse listResourceGroup(ListResourceGroupRequest request) {
@@ -526,13 +517,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceGroupRequest 请求对象
+     * @param request ListResourceGroupRequest 请求对象
      * @return SyncInvoker<ListResourceGroupRequest, ListResourceGroupResponse>
      */
     public SyncInvoker<ListResourceGroupRequest, ListResourceGroupResponse> listResourceGroupInvoker(
         ListResourceGroupRequest request) {
-        return new SyncInvoker<ListResourceGroupRequest, ListResourceGroupResponse>(request, CesMeta.listResourceGroup,
-            hcClient);
+        return new SyncInvoker<>(request, CesMeta.listResourceGroup, hcClient);
     }
 
     /**
@@ -542,7 +532,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlarmRequest 请求对象
+     * @param request ShowAlarmRequest 请求对象
      * @return ShowAlarmResponse
      */
     public ShowAlarmResponse showAlarm(ShowAlarmRequest request) {
@@ -556,11 +546,11 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAlarmRequest 请求对象
+     * @param request ShowAlarmRequest 请求对象
      * @return SyncInvoker<ShowAlarmRequest, ShowAlarmResponse>
      */
     public SyncInvoker<ShowAlarmRequest, ShowAlarmResponse> showAlarmInvoker(ShowAlarmRequest request) {
-        return new SyncInvoker<ShowAlarmRequest, ShowAlarmResponse>(request, CesMeta.showAlarm, hcClient);
+        return new SyncInvoker<>(request, CesMeta.showAlarm, hcClient);
     }
 
     /**
@@ -570,7 +560,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventDataRequest 请求对象
+     * @param request ShowEventDataRequest 请求对象
      * @return ShowEventDataResponse
      */
     public ShowEventDataResponse showEventData(ShowEventDataRequest request) {
@@ -584,11 +574,11 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEventDataRequest 请求对象
+     * @param request ShowEventDataRequest 请求对象
      * @return SyncInvoker<ShowEventDataRequest, ShowEventDataResponse>
      */
     public SyncInvoker<ShowEventDataRequest, ShowEventDataResponse> showEventDataInvoker(ShowEventDataRequest request) {
-        return new SyncInvoker<ShowEventDataRequest, ShowEventDataResponse>(request, CesMeta.showEventData, hcClient);
+        return new SyncInvoker<>(request, CesMeta.showEventData, hcClient);
     }
 
     /**
@@ -598,7 +588,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetricDataRequest 请求对象
+     * @param request ShowMetricDataRequest 请求对象
      * @return ShowMetricDataResponse
      */
     public ShowMetricDataResponse showMetricData(ShowMetricDataRequest request) {
@@ -612,13 +602,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMetricDataRequest 请求对象
+     * @param request ShowMetricDataRequest 请求对象
      * @return SyncInvoker<ShowMetricDataRequest, ShowMetricDataResponse>
      */
     public SyncInvoker<ShowMetricDataRequest, ShowMetricDataResponse> showMetricDataInvoker(
         ShowMetricDataRequest request) {
-        return new SyncInvoker<ShowMetricDataRequest, ShowMetricDataResponse>(request, CesMeta.showMetricData,
-            hcClient);
+        return new SyncInvoker<>(request, CesMeta.showMetricData, hcClient);
     }
 
     /**
@@ -628,7 +617,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return ShowQuotasResponse
      */
     public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
@@ -642,11 +631,11 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotasRequest 请求对象
+     * @param request ShowQuotasRequest 请求对象
      * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
      */
     public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
-        return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, CesMeta.showQuotas, hcClient);
+        return new SyncInvoker<>(request, CesMeta.showQuotas, hcClient);
     }
 
     /**
@@ -656,7 +645,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceGroupRequest 请求对象
+     * @param request ShowResourceGroupRequest 请求对象
      * @return ShowResourceGroupResponse
      */
     public ShowResourceGroupResponse showResourceGroup(ShowResourceGroupRequest request) {
@@ -670,13 +659,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceGroupRequest 请求对象
+     * @param request ShowResourceGroupRequest 请求对象
      * @return SyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse>
      */
     public SyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse> showResourceGroupInvoker(
         ShowResourceGroupRequest request) {
-        return new SyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse>(request, CesMeta.showResourceGroup,
-            hcClient);
+        return new SyncInvoker<>(request, CesMeta.showResourceGroup, hcClient);
     }
 
     /**
@@ -686,7 +674,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmRequest 请求对象
+     * @param request UpdateAlarmRequest 请求对象
      * @return UpdateAlarmResponse
      */
     public UpdateAlarmResponse updateAlarm(UpdateAlarmRequest request) {
@@ -700,11 +688,11 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmRequest 请求对象
+     * @param request UpdateAlarmRequest 请求对象
      * @return SyncInvoker<UpdateAlarmRequest, UpdateAlarmResponse>
      */
     public SyncInvoker<UpdateAlarmRequest, UpdateAlarmResponse> updateAlarmInvoker(UpdateAlarmRequest request) {
-        return new SyncInvoker<UpdateAlarmRequest, UpdateAlarmResponse>(request, CesMeta.updateAlarm, hcClient);
+        return new SyncInvoker<>(request, CesMeta.updateAlarm, hcClient);
     }
 
     /**
@@ -714,7 +702,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmActionRequest 请求对象
+     * @param request UpdateAlarmActionRequest 请求对象
      * @return UpdateAlarmActionResponse
      */
     public UpdateAlarmActionResponse updateAlarmAction(UpdateAlarmActionRequest request) {
@@ -728,13 +716,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmActionRequest 请求对象
+     * @param request UpdateAlarmActionRequest 请求对象
      * @return SyncInvoker<UpdateAlarmActionRequest, UpdateAlarmActionResponse>
      */
     public SyncInvoker<UpdateAlarmActionRequest, UpdateAlarmActionResponse> updateAlarmActionInvoker(
         UpdateAlarmActionRequest request) {
-        return new SyncInvoker<UpdateAlarmActionRequest, UpdateAlarmActionResponse>(request, CesMeta.updateAlarmAction,
-            hcClient);
+        return new SyncInvoker<>(request, CesMeta.updateAlarmAction, hcClient);
     }
 
     /**
@@ -744,7 +731,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmTemplateRequest 请求对象
+     * @param request UpdateAlarmTemplateRequest 请求对象
      * @return UpdateAlarmTemplateResponse
      */
     public UpdateAlarmTemplateResponse updateAlarmTemplate(UpdateAlarmTemplateRequest request) {
@@ -758,13 +745,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAlarmTemplateRequest 请求对象
+     * @param request UpdateAlarmTemplateRequest 请求对象
      * @return SyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse>
      */
     public SyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse> updateAlarmTemplateInvoker(
         UpdateAlarmTemplateRequest request) {
-        return new SyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse>(request,
-            CesMeta.updateAlarmTemplate, hcClient);
+        return new SyncInvoker<>(request, CesMeta.updateAlarmTemplate, hcClient);
     }
 
     /**
@@ -774,7 +760,7 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceGroupRequest 请求对象
+     * @param request UpdateResourceGroupRequest 请求对象
      * @return UpdateResourceGroupResponse
      */
     public UpdateResourceGroupResponse updateResourceGroup(UpdateResourceGroupRequest request) {
@@ -788,13 +774,12 @@ public class CesClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceGroupRequest 请求对象
+     * @param request UpdateResourceGroupRequest 请求对象
      * @return SyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse>
      */
     public SyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse> updateResourceGroupInvoker(
         UpdateResourceGroupRequest request) {
-        return new SyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse>(request,
-            CesMeta.updateResourceGroup, hcClient);
+        return new SyncInvoker<>(request, CesMeta.updateResourceGroup, hcClient);
     }
 
 }

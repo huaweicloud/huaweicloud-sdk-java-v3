@@ -80,7 +80,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateResourceSharePermissionRequest 请求对象
+     * @param request AssociateResourceSharePermissionRequest 请求对象
      * @return CompletableFuture<AssociateResourceSharePermissionResponse>
      */
     public CompletableFuture<AssociateResourceSharePermissionResponse> associateResourceSharePermissionAsync(
@@ -95,13 +95,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateResourceSharePermissionRequest 请求对象
+     * @param request AssociateResourceSharePermissionRequest 请求对象
      * @return AsyncInvoker<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResponse>
      */
     public AsyncInvoker<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResponse> associateResourceSharePermissionAsyncInvoker(
         AssociateResourceSharePermissionRequest request) {
-        return new AsyncInvoker<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResponse>(
-            request, RamMeta.associateResourceSharePermission, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.associateResourceSharePermission, hcClient);
     }
 
     /**
@@ -111,7 +110,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateResourceSharePermissionRequest 请求对象
+     * @param request DisassociateResourceSharePermissionRequest 请求对象
      * @return CompletableFuture<DisassociateResourceSharePermissionResponse>
      */
     public CompletableFuture<DisassociateResourceSharePermissionResponse> disassociateResourceSharePermissionAsync(
@@ -126,13 +125,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateResourceSharePermissionRequest 请求对象
+     * @param request DisassociateResourceSharePermissionRequest 请求对象
      * @return AsyncInvoker<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResponse>
      */
     public AsyncInvoker<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResponse> disassociateResourceSharePermissionAsyncInvoker(
         DisassociateResourceSharePermissionRequest request) {
-        return new AsyncInvoker<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResponse>(
-            request, RamMeta.disassociateResourceSharePermission, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.disassociateResourceSharePermission, hcClient);
     }
 
     /**
@@ -142,7 +140,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceSharePermissionsRequest 请求对象
+     * @param request ListResourceSharePermissionsRequest 请求对象
      * @return CompletableFuture<ListResourceSharePermissionsResponse>
      */
     public CompletableFuture<ListResourceSharePermissionsResponse> listResourceSharePermissionsAsync(
@@ -157,13 +155,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceSharePermissionsRequest 请求对象
+     * @param request ListResourceSharePermissionsRequest 请求对象
      * @return AsyncInvoker<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse>
      */
     public AsyncInvoker<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse> listResourceSharePermissionsAsyncInvoker(
         ListResourceSharePermissionsRequest request) {
-        return new AsyncInvoker<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse>(request,
-            RamMeta.listResourceSharePermissions, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.listResourceSharePermissions, hcClient);
     }
 
     /**
@@ -173,7 +170,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaRequest 请求对象
+     * @param request ListQuotaRequest 请求对象
      * @return CompletableFuture<ListQuotaResponse>
      */
     public CompletableFuture<ListQuotaResponse> listQuotaAsync(ListQuotaRequest request) {
@@ -187,11 +184,11 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotaRequest 请求对象
+     * @param request ListQuotaRequest 请求对象
      * @return AsyncInvoker<ListQuotaRequest, ListQuotaResponse>
      */
     public AsyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaAsyncInvoker(ListQuotaRequest request) {
-        return new AsyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, RamMeta.listQuota, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.listQuota, hcClient);
     }
 
     /**
@@ -201,7 +198,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTypesRequest 请求对象
+     * @param request ListResourceTypesRequest 请求对象
      * @return CompletableFuture<ListResourceTypesResponse>
      */
     public CompletableFuture<ListResourceTypesResponse> listResourceTypesAsync(ListResourceTypesRequest request) {
@@ -215,13 +212,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTypesRequest 请求对象
+     * @param request ListResourceTypesRequest 请求对象
      * @return AsyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>
      */
     public AsyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypesAsyncInvoker(
         ListResourceTypesRequest request) {
-        return new AsyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>(request, RamMeta.listResourceTypes,
-            hcClient);
+        return new AsyncInvoker<>(request, RamMeta.listResourceTypes, hcClient);
     }
 
     /**
@@ -231,7 +227,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableOrganizationShareRequest 请求对象
+     * @param request DisableOrganizationShareRequest 请求对象
      * @return CompletableFuture<DisableOrganizationShareResponse>
      */
     public CompletableFuture<DisableOrganizationShareResponse> disableOrganizationShareAsync(
@@ -246,13 +242,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableOrganizationShareRequest 请求对象
+     * @param request DisableOrganizationShareRequest 请求对象
      * @return AsyncInvoker<DisableOrganizationShareRequest, DisableOrganizationShareResponse>
      */
     public AsyncInvoker<DisableOrganizationShareRequest, DisableOrganizationShareResponse> disableOrganizationShareAsyncInvoker(
         DisableOrganizationShareRequest request) {
-        return new AsyncInvoker<DisableOrganizationShareRequest, DisableOrganizationShareResponse>(request,
-            RamMeta.disableOrganizationShare, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.disableOrganizationShare, hcClient);
     }
 
     /**
@@ -262,7 +257,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableOrganizationShareRequest 请求对象
+     * @param request EnableOrganizationShareRequest 请求对象
      * @return CompletableFuture<EnableOrganizationShareResponse>
      */
     public CompletableFuture<EnableOrganizationShareResponse> enableOrganizationShareAsync(
@@ -277,13 +272,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableOrganizationShareRequest 请求对象
+     * @param request EnableOrganizationShareRequest 请求对象
      * @return AsyncInvoker<EnableOrganizationShareRequest, EnableOrganizationShareResponse>
      */
     public AsyncInvoker<EnableOrganizationShareRequest, EnableOrganizationShareResponse> enableOrganizationShareAsyncInvoker(
         EnableOrganizationShareRequest request) {
-        return new AsyncInvoker<EnableOrganizationShareRequest, EnableOrganizationShareResponse>(request,
-            RamMeta.enableOrganizationShare, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.enableOrganizationShare, hcClient);
     }
 
     /**
@@ -293,7 +287,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationShareRequest 请求对象
+     * @param request ShowOrganizationShareRequest 请求对象
      * @return CompletableFuture<ShowOrganizationShareResponse>
      */
     public CompletableFuture<ShowOrganizationShareResponse> showOrganizationShareAsync(
@@ -308,13 +302,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationShareRequest 请求对象
+     * @param request ShowOrganizationShareRequest 请求对象
      * @return AsyncInvoker<ShowOrganizationShareRequest, ShowOrganizationShareResponse>
      */
     public AsyncInvoker<ShowOrganizationShareRequest, ShowOrganizationShareResponse> showOrganizationShareAsyncInvoker(
         ShowOrganizationShareRequest request) {
-        return new AsyncInvoker<ShowOrganizationShareRequest, ShowOrganizationShareResponse>(request,
-            RamMeta.showOrganizationShare, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.showOrganizationShare, hcClient);
     }
 
     /**
@@ -324,7 +317,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionsRequest 请求对象
+     * @param request ListPermissionsRequest 请求对象
      * @return CompletableFuture<ListPermissionsResponse>
      */
     public CompletableFuture<ListPermissionsResponse> listPermissionsAsync(ListPermissionsRequest request) {
@@ -338,13 +331,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPermissionsRequest 请求对象
+     * @param request ListPermissionsRequest 请求对象
      * @return AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse>
      */
     public AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse> listPermissionsAsyncInvoker(
         ListPermissionsRequest request) {
-        return new AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse>(request, RamMeta.listPermissions,
-            hcClient);
+        return new AsyncInvoker<>(request, RamMeta.listPermissions, hcClient);
     }
 
     /**
@@ -354,7 +346,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPermissionRequest 请求对象
+     * @param request ShowPermissionRequest 请求对象
      * @return CompletableFuture<ShowPermissionResponse>
      */
     public CompletableFuture<ShowPermissionResponse> showPermissionAsync(ShowPermissionRequest request) {
@@ -368,13 +360,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPermissionRequest 请求对象
+     * @param request ShowPermissionRequest 请求对象
      * @return AsyncInvoker<ShowPermissionRequest, ShowPermissionResponse>
      */
     public AsyncInvoker<ShowPermissionRequest, ShowPermissionResponse> showPermissionAsyncInvoker(
         ShowPermissionRequest request) {
-        return new AsyncInvoker<ShowPermissionRequest, ShowPermissionResponse>(request, RamMeta.showPermission,
-            hcClient);
+        return new AsyncInvoker<>(request, RamMeta.showPermission, hcClient);
     }
 
     /**
@@ -384,7 +375,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchSharedPrincipalsRequest 请求对象
+     * @param request SearchSharedPrincipalsRequest 请求对象
      * @return CompletableFuture<SearchSharedPrincipalsResponse>
      */
     public CompletableFuture<SearchSharedPrincipalsResponse> searchSharedPrincipalsAsync(
@@ -399,13 +390,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchSharedPrincipalsRequest 请求对象
+     * @param request SearchSharedPrincipalsRequest 请求对象
      * @return AsyncInvoker<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse>
      */
     public AsyncInvoker<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse> searchSharedPrincipalsAsyncInvoker(
         SearchSharedPrincipalsRequest request) {
-        return new AsyncInvoker<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse>(request,
-            RamMeta.searchSharedPrincipals, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.searchSharedPrincipals, hcClient);
     }
 
     /**
@@ -415,7 +405,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchSharedResourcesRequest 请求对象
+     * @param request SearchSharedResourcesRequest 请求对象
      * @return CompletableFuture<SearchSharedResourcesResponse>
      */
     public CompletableFuture<SearchSharedResourcesResponse> searchSharedResourcesAsync(
@@ -430,13 +420,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchSharedResourcesRequest 请求对象
+     * @param request SearchSharedResourcesRequest 请求对象
      * @return AsyncInvoker<SearchSharedResourcesRequest, SearchSharedResourcesResponse>
      */
     public AsyncInvoker<SearchSharedResourcesRequest, SearchSharedResourcesResponse> searchSharedResourcesAsyncInvoker(
         SearchSharedResourcesRequest request) {
-        return new AsyncInvoker<SearchSharedResourcesRequest, SearchSharedResourcesResponse>(request,
-            RamMeta.searchSharedResources, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.searchSharedResources, hcClient);
     }
 
     /**
@@ -446,7 +435,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceShareRequest 请求对象
+     * @param request CreateResourceShareRequest 请求对象
      * @return CompletableFuture<CreateResourceShareResponse>
      */
     public CompletableFuture<CreateResourceShareResponse> createResourceShareAsync(CreateResourceShareRequest request) {
@@ -460,13 +449,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceShareRequest 请求对象
+     * @param request CreateResourceShareRequest 请求对象
      * @return AsyncInvoker<CreateResourceShareRequest, CreateResourceShareResponse>
      */
     public AsyncInvoker<CreateResourceShareRequest, CreateResourceShareResponse> createResourceShareAsyncInvoker(
         CreateResourceShareRequest request) {
-        return new AsyncInvoker<CreateResourceShareRequest, CreateResourceShareResponse>(request,
-            RamMeta.createResourceShare, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.createResourceShare, hcClient);
     }
 
     /**
@@ -476,7 +464,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceShareRequest 请求对象
+     * @param request DeleteResourceShareRequest 请求对象
      * @return CompletableFuture<DeleteResourceShareResponse>
      */
     public CompletableFuture<DeleteResourceShareResponse> deleteResourceShareAsync(DeleteResourceShareRequest request) {
@@ -490,13 +478,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceShareRequest 请求对象
+     * @param request DeleteResourceShareRequest 请求对象
      * @return AsyncInvoker<DeleteResourceShareRequest, DeleteResourceShareResponse>
      */
     public AsyncInvoker<DeleteResourceShareRequest, DeleteResourceShareResponse> deleteResourceShareAsyncInvoker(
         DeleteResourceShareRequest request) {
-        return new AsyncInvoker<DeleteResourceShareRequest, DeleteResourceShareResponse>(request,
-            RamMeta.deleteResourceShare, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.deleteResourceShare, hcClient);
     }
 
     /**
@@ -506,7 +493,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceSharesRequest 请求对象
+     * @param request SearchResourceSharesRequest 请求对象
      * @return CompletableFuture<SearchResourceSharesResponse>
      */
     public CompletableFuture<SearchResourceSharesResponse> searchResourceSharesAsync(
@@ -521,13 +508,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceSharesRequest 请求对象
+     * @param request SearchResourceSharesRequest 请求对象
      * @return AsyncInvoker<SearchResourceSharesRequest, SearchResourceSharesResponse>
      */
     public AsyncInvoker<SearchResourceSharesRequest, SearchResourceSharesResponse> searchResourceSharesAsyncInvoker(
         SearchResourceSharesRequest request) {
-        return new AsyncInvoker<SearchResourceSharesRequest, SearchResourceSharesResponse>(request,
-            RamMeta.searchResourceShares, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.searchResourceShares, hcClient);
     }
 
     /**
@@ -537,7 +523,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceShareRequest 请求对象
+     * @param request UpdateResourceShareRequest 请求对象
      * @return CompletableFuture<UpdateResourceShareResponse>
      */
     public CompletableFuture<UpdateResourceShareResponse> updateResourceShareAsync(UpdateResourceShareRequest request) {
@@ -551,13 +537,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceShareRequest 请求对象
+     * @param request UpdateResourceShareRequest 请求对象
      * @return AsyncInvoker<UpdateResourceShareRequest, UpdateResourceShareResponse>
      */
     public AsyncInvoker<UpdateResourceShareRequest, UpdateResourceShareResponse> updateResourceShareAsyncInvoker(
         UpdateResourceShareRequest request) {
-        return new AsyncInvoker<UpdateResourceShareRequest, UpdateResourceShareResponse>(request,
-            RamMeta.updateResourceShare, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.updateResourceShare, hcClient);
     }
 
     /**
@@ -567,7 +552,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateResourceShareRequest 请求对象
+     * @param request AssociateResourceShareRequest 请求对象
      * @return CompletableFuture<AssociateResourceShareResponse>
      */
     public CompletableFuture<AssociateResourceShareResponse> associateResourceShareAsync(
@@ -582,13 +567,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateResourceShareRequest 请求对象
+     * @param request AssociateResourceShareRequest 请求对象
      * @return AsyncInvoker<AssociateResourceShareRequest, AssociateResourceShareResponse>
      */
     public AsyncInvoker<AssociateResourceShareRequest, AssociateResourceShareResponse> associateResourceShareAsyncInvoker(
         AssociateResourceShareRequest request) {
-        return new AsyncInvoker<AssociateResourceShareRequest, AssociateResourceShareResponse>(request,
-            RamMeta.associateResourceShare, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.associateResourceShare, hcClient);
     }
 
     /**
@@ -598,7 +582,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateResourceShareRequest 请求对象
+     * @param request DisassociateResourceShareRequest 请求对象
      * @return CompletableFuture<DisassociateResourceShareResponse>
      */
     public CompletableFuture<DisassociateResourceShareResponse> disassociateResourceShareAsync(
@@ -613,13 +597,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateResourceShareRequest 请求对象
+     * @param request DisassociateResourceShareRequest 请求对象
      * @return AsyncInvoker<DisassociateResourceShareRequest, DisassociateResourceShareResponse>
      */
     public AsyncInvoker<DisassociateResourceShareRequest, DisassociateResourceShareResponse> disassociateResourceShareAsyncInvoker(
         DisassociateResourceShareRequest request) {
-        return new AsyncInvoker<DisassociateResourceShareRequest, DisassociateResourceShareResponse>(request,
-            RamMeta.disassociateResourceShare, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.disassociateResourceShare, hcClient);
     }
 
     /**
@@ -629,7 +612,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareAssociationsRequest 请求对象
+     * @param request SearchResourceShareAssociationsRequest 请求对象
      * @return CompletableFuture<SearchResourceShareAssociationsResponse>
      */
     public CompletableFuture<SearchResourceShareAssociationsResponse> searchResourceShareAssociationsAsync(
@@ -644,13 +627,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareAssociationsRequest 请求对象
+     * @param request SearchResourceShareAssociationsRequest 请求对象
      * @return AsyncInvoker<SearchResourceShareAssociationsRequest, SearchResourceShareAssociationsResponse>
      */
     public AsyncInvoker<SearchResourceShareAssociationsRequest, SearchResourceShareAssociationsResponse> searchResourceShareAssociationsAsyncInvoker(
         SearchResourceShareAssociationsRequest request) {
-        return new AsyncInvoker<SearchResourceShareAssociationsRequest, SearchResourceShareAssociationsResponse>(
-            request, RamMeta.searchResourceShareAssociations, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.searchResourceShareAssociations, hcClient);
     }
 
     /**
@@ -660,7 +642,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptResourceShareInvitationRequest 请求对象
+     * @param request AcceptResourceShareInvitationRequest 请求对象
      * @return CompletableFuture<AcceptResourceShareInvitationResponse>
      */
     public CompletableFuture<AcceptResourceShareInvitationResponse> acceptResourceShareInvitationAsync(
@@ -675,13 +657,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptResourceShareInvitationRequest 请求对象
+     * @param request AcceptResourceShareInvitationRequest 请求对象
      * @return AsyncInvoker<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResponse>
      */
     public AsyncInvoker<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResponse> acceptResourceShareInvitationAsyncInvoker(
         AcceptResourceShareInvitationRequest request) {
-        return new AsyncInvoker<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResponse>(request,
-            RamMeta.acceptResourceShareInvitation, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.acceptResourceShareInvitation, hcClient);
     }
 
     /**
@@ -691,7 +672,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RejectResourceShareInvitationRequest 请求对象
+     * @param request RejectResourceShareInvitationRequest 请求对象
      * @return CompletableFuture<RejectResourceShareInvitationResponse>
      */
     public CompletableFuture<RejectResourceShareInvitationResponse> rejectResourceShareInvitationAsync(
@@ -706,13 +687,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RejectResourceShareInvitationRequest 请求对象
+     * @param request RejectResourceShareInvitationRequest 请求对象
      * @return AsyncInvoker<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResponse>
      */
     public AsyncInvoker<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResponse> rejectResourceShareInvitationAsyncInvoker(
         RejectResourceShareInvitationRequest request) {
-        return new AsyncInvoker<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResponse>(request,
-            RamMeta.rejectResourceShareInvitation, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.rejectResourceShareInvitation, hcClient);
     }
 
     /**
@@ -722,7 +702,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareInvitationRequest 请求对象
+     * @param request SearchResourceShareInvitationRequest 请求对象
      * @return CompletableFuture<SearchResourceShareInvitationResponse>
      */
     public CompletableFuture<SearchResourceShareInvitationResponse> searchResourceShareInvitationAsync(
@@ -737,13 +717,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareInvitationRequest 请求对象
+     * @param request SearchResourceShareInvitationRequest 请求对象
      * @return AsyncInvoker<SearchResourceShareInvitationRequest, SearchResourceShareInvitationResponse>
      */
     public AsyncInvoker<SearchResourceShareInvitationRequest, SearchResourceShareInvitationResponse> searchResourceShareInvitationAsyncInvoker(
         SearchResourceShareInvitationRequest request) {
-        return new AsyncInvoker<SearchResourceShareInvitationRequest, SearchResourceShareInvitationResponse>(request,
-            RamMeta.searchResourceShareInvitation, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.searchResourceShareInvitation, hcClient);
     }
 
     /**
@@ -753,7 +732,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceShareTagsRequest 请求对象
+     * @param request BatchCreateResourceShareTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateResourceShareTagsResponse>
      */
     public CompletableFuture<BatchCreateResourceShareTagsResponse> batchCreateResourceShareTagsAsync(
@@ -768,13 +747,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateResourceShareTagsRequest 请求对象
+     * @param request BatchCreateResourceShareTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse>
      */
     public AsyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> batchCreateResourceShareTagsAsyncInvoker(
         BatchCreateResourceShareTagsRequest request) {
-        return new AsyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse>(request,
-            RamMeta.batchCreateResourceShareTags, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.batchCreateResourceShareTags, hcClient);
     }
 
     /**
@@ -784,7 +762,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceShareTagsRequest 请求对象
+     * @param request BatchDeleteResourceShareTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteResourceShareTagsResponse>
      */
     public CompletableFuture<BatchDeleteResourceShareTagsResponse> batchDeleteResourceShareTagsAsync(
@@ -799,13 +777,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteResourceShareTagsRequest 请求对象
+     * @param request BatchDeleteResourceShareTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse>
      */
     public AsyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> batchDeleteResourceShareTagsAsyncInvoker(
         BatchDeleteResourceShareTagsRequest request) {
-        return new AsyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse>(request,
-            RamMeta.batchDeleteResourceShareTags, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.batchDeleteResourceShareTags, hcClient);
     }
 
     /**
@@ -815,7 +792,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceShareTagsRequest 请求对象
+     * @param request ListResourceShareTagsRequest 请求对象
      * @return CompletableFuture<ListResourceShareTagsResponse>
      */
     public CompletableFuture<ListResourceShareTagsResponse> listResourceShareTagsAsync(
@@ -830,13 +807,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceShareTagsRequest 请求对象
+     * @param request ListResourceShareTagsRequest 请求对象
      * @return AsyncInvoker<ListResourceShareTagsRequest, ListResourceShareTagsResponse>
      */
     public AsyncInvoker<ListResourceShareTagsRequest, ListResourceShareTagsResponse> listResourceShareTagsAsyncInvoker(
         ListResourceShareTagsRequest request) {
-        return new AsyncInvoker<ListResourceShareTagsRequest, ListResourceShareTagsResponse>(request,
-            RamMeta.listResourceShareTags, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.listResourceShareTags, hcClient);
     }
 
     /**
@@ -846,7 +822,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceSharesByTagsRequest 请求对象
+     * @param request ListResourceSharesByTagsRequest 请求对象
      * @return CompletableFuture<ListResourceSharesByTagsResponse>
      */
     public CompletableFuture<ListResourceSharesByTagsResponse> listResourceSharesByTagsAsync(
@@ -861,13 +837,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceSharesByTagsRequest 请求对象
+     * @param request ListResourceSharesByTagsRequest 请求对象
      * @return AsyncInvoker<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse>
      */
     public AsyncInvoker<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse> listResourceSharesByTagsAsyncInvoker(
         ListResourceSharesByTagsRequest request) {
-        return new AsyncInvoker<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse>(request,
-            RamMeta.listResourceSharesByTags, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.listResourceSharesByTags, hcClient);
     }
 
     /**
@@ -877,7 +852,7 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareCountByTagsRequest 请求对象
+     * @param request SearchResourceShareCountByTagsRequest 请求对象
      * @return CompletableFuture<SearchResourceShareCountByTagsResponse>
      */
     public CompletableFuture<SearchResourceShareCountByTagsResponse> searchResourceShareCountByTagsAsync(
@@ -892,13 +867,12 @@ public class RamAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SearchResourceShareCountByTagsRequest 请求对象
+     * @param request SearchResourceShareCountByTagsRequest 请求对象
      * @return AsyncInvoker<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse>
      */
     public AsyncInvoker<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse> searchResourceShareCountByTagsAsyncInvoker(
         SearchResourceShareCountByTagsRequest request) {
-        return new AsyncInvoker<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse>(request,
-            RamMeta.searchResourceShareCountByTags, hcClient);
+        return new AsyncInvoker<>(request, RamMeta.searchResourceShareCountByTags, hcClient);
     }
 
 }

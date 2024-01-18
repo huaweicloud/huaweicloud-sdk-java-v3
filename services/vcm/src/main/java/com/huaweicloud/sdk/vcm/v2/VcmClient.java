@@ -40,7 +40,7 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAudioJobRequest 请求对象
+     * @param request CheckAudioJobRequest 请求对象
      * @return CheckAudioJobResponse
      */
     public CheckAudioJobResponse checkAudioJob(CheckAudioJobRequest request) {
@@ -54,11 +54,11 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAudioJobRequest 请求对象
+     * @param request CheckAudioJobRequest 请求对象
      * @return SyncInvoker<CheckAudioJobRequest, CheckAudioJobResponse>
      */
     public SyncInvoker<CheckAudioJobRequest, CheckAudioJobResponse> checkAudioJobInvoker(CheckAudioJobRequest request) {
-        return new SyncInvoker<CheckAudioJobRequest, CheckAudioJobResponse>(request, VcmMeta.checkAudioJob, hcClient);
+        return new SyncInvoker<>(request, VcmMeta.checkAudioJob, hcClient);
     }
 
     /**
@@ -68,7 +68,7 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVideoJobRequest 请求对象
+     * @param request CheckVideoJobRequest 请求对象
      * @return CheckVideoJobResponse
      */
     public CheckVideoJobResponse checkVideoJob(CheckVideoJobRequest request) {
@@ -82,11 +82,11 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckVideoJobRequest 请求对象
+     * @param request CheckVideoJobRequest 请求对象
      * @return SyncInvoker<CheckVideoJobRequest, CheckVideoJobResponse>
      */
     public SyncInvoker<CheckVideoJobRequest, CheckVideoJobResponse> checkVideoJobInvoker(CheckVideoJobRequest request) {
-        return new SyncInvoker<CheckVideoJobRequest, CheckVideoJobResponse>(request, VcmMeta.checkVideoJob, hcClient);
+        return new SyncInvoker<>(request, VcmMeta.checkVideoJob, hcClient);
     }
 
     /**
@@ -96,7 +96,7 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAudioJobRequest 请求对象
+     * @param request CreateAudioJobRequest 请求对象
      * @return CreateAudioJobResponse
      */
     public CreateAudioJobResponse createAudioJob(CreateAudioJobRequest request) {
@@ -110,13 +110,12 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAudioJobRequest 请求对象
+     * @param request CreateAudioJobRequest 请求对象
      * @return SyncInvoker<CreateAudioJobRequest, CreateAudioJobResponse>
      */
     public SyncInvoker<CreateAudioJobRequest, CreateAudioJobResponse> createAudioJobInvoker(
         CreateAudioJobRequest request) {
-        return new SyncInvoker<CreateAudioJobRequest, CreateAudioJobResponse>(request, VcmMeta.createAudioJob,
-            hcClient);
+        return new SyncInvoker<>(request, VcmMeta.createAudioJob, hcClient);
     }
 
     /**
@@ -126,7 +125,7 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVideoJobRequest 请求对象
+     * @param request CreateVideoJobRequest 请求对象
      * @return CreateVideoJobResponse
      */
     public CreateVideoJobResponse createVideoJob(CreateVideoJobRequest request) {
@@ -140,13 +139,12 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVideoJobRequest 请求对象
+     * @param request CreateVideoJobRequest 请求对象
      * @return SyncInvoker<CreateVideoJobRequest, CreateVideoJobResponse>
      */
     public SyncInvoker<CreateVideoJobRequest, CreateVideoJobResponse> createVideoJobInvoker(
         CreateVideoJobRequest request) {
-        return new SyncInvoker<CreateVideoJobRequest, CreateVideoJobResponse>(request, VcmMeta.createVideoJob,
-            hcClient);
+        return new SyncInvoker<>(request, VcmMeta.createVideoJob, hcClient);
     }
 
     /**
@@ -156,7 +154,7 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDemoInfoRequest 请求对象
+     * @param request DeleteDemoInfoRequest 请求对象
      * @return DeleteDemoInfoResponse
      */
     public DeleteDemoInfoResponse deleteDemoInfo(DeleteDemoInfoRequest request) {
@@ -170,13 +168,12 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDemoInfoRequest 请求对象
+     * @param request DeleteDemoInfoRequest 请求对象
      * @return SyncInvoker<DeleteDemoInfoRequest, DeleteDemoInfoResponse>
      */
     public SyncInvoker<DeleteDemoInfoRequest, DeleteDemoInfoResponse> deleteDemoInfoInvoker(
         DeleteDemoInfoRequest request) {
-        return new SyncInvoker<DeleteDemoInfoRequest, DeleteDemoInfoResponse>(request, VcmMeta.deleteDemoInfo,
-            hcClient);
+        return new SyncInvoker<>(request, VcmMeta.deleteDemoInfo, hcClient);
     }
 
     /**
@@ -186,7 +183,7 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVideoJobRequest 请求对象
+     * @param request DeleteVideoJobRequest 请求对象
      * @return DeleteVideoJobResponse
      */
     public DeleteVideoJobResponse deleteVideoJob(DeleteVideoJobRequest request) {
@@ -200,13 +197,12 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVideoJobRequest 请求对象
+     * @param request DeleteVideoJobRequest 请求对象
      * @return SyncInvoker<DeleteVideoJobRequest, DeleteVideoJobResponse>
      */
     public SyncInvoker<DeleteVideoJobRequest, DeleteVideoJobResponse> deleteVideoJobInvoker(
         DeleteVideoJobRequest request) {
-        return new SyncInvoker<DeleteVideoJobRequest, DeleteVideoJobResponse>(request, VcmMeta.deleteVideoJob,
-            hcClient);
+        return new SyncInvoker<>(request, VcmMeta.deleteVideoJob, hcClient);
     }
 
     /**
@@ -216,7 +212,7 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAudioJobsRequest 请求对象
+     * @param request ListAudioJobsRequest 请求对象
      * @return ListAudioJobsResponse
      */
     public ListAudioJobsResponse listAudioJobs(ListAudioJobsRequest request) {
@@ -230,11 +226,11 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAudioJobsRequest 请求对象
+     * @param request ListAudioJobsRequest 请求对象
      * @return SyncInvoker<ListAudioJobsRequest, ListAudioJobsResponse>
      */
     public SyncInvoker<ListAudioJobsRequest, ListAudioJobsResponse> listAudioJobsInvoker(ListAudioJobsRequest request) {
-        return new SyncInvoker<ListAudioJobsRequest, ListAudioJobsResponse>(request, VcmMeta.listAudioJobs, hcClient);
+        return new SyncInvoker<>(request, VcmMeta.listAudioJobs, hcClient);
     }
 
     /**
@@ -244,7 +240,7 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVideoJobsRequest 请求对象
+     * @param request ListVideoJobsRequest 请求对象
      * @return ListVideoJobsResponse
      */
     public ListVideoJobsResponse listVideoJobs(ListVideoJobsRequest request) {
@@ -258,11 +254,11 @@ public class VcmClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVideoJobsRequest 请求对象
+     * @param request ListVideoJobsRequest 请求对象
      * @return SyncInvoker<ListVideoJobsRequest, ListVideoJobsResponse>
      */
     public SyncInvoker<ListVideoJobsRequest, ListVideoJobsResponse> listVideoJobsInvoker(ListVideoJobsRequest request) {
-        return new SyncInvoker<ListVideoJobsRequest, ListVideoJobsResponse>(request, VcmMeta.listVideoJobs, hcClient);
+        return new SyncInvoker<>(request, VcmMeta.listVideoJobs, hcClient);
     }
 
 }

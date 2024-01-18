@@ -1234,7 +1234,7 @@ public class CaseReportDetail {
     }
 
     /**
-     * awId
+     * 请求id
      * @return awId
      */
     public String getAwId() {

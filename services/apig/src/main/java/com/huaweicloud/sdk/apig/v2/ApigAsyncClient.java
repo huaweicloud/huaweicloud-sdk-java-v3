@@ -416,7 +416,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptOrRejectEndpointConnectionsRequest 请求对象
+     * @param request AcceptOrRejectEndpointConnectionsRequest 请求对象
      * @return CompletableFuture<AcceptOrRejectEndpointConnectionsResponse>
      */
     public CompletableFuture<AcceptOrRejectEndpointConnectionsResponse> acceptOrRejectEndpointConnectionsAsync(
@@ -431,13 +431,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptOrRejectEndpointConnectionsRequest 请求对象
+     * @param request AcceptOrRejectEndpointConnectionsRequest 请求对象
      * @return AsyncInvoker<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse>
      */
     public AsyncInvoker<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse> acceptOrRejectEndpointConnectionsAsyncInvoker(
         AcceptOrRejectEndpointConnectionsRequest request) {
-        return new AsyncInvoker<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse>(
-            request, ApigMeta.acceptOrRejectEndpointConnections, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.acceptOrRejectEndpointConnections, hcClient);
     }
 
     /**
@@ -447,7 +446,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEipV2Request 请求对象
+     * @param request AddEipV2Request 请求对象
      * @return CompletableFuture<AddEipV2Response>
      */
     public CompletableFuture<AddEipV2Response> addEipV2Async(AddEipV2Request request) {
@@ -461,11 +460,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEipV2Request 请求对象
+     * @param request AddEipV2Request 请求对象
      * @return AsyncInvoker<AddEipV2Request, AddEipV2Response>
      */
     public AsyncInvoker<AddEipV2Request, AddEipV2Response> addEipV2AsyncInvoker(AddEipV2Request request) {
-        return new AsyncInvoker<AddEipV2Request, AddEipV2Response>(request, ApigMeta.addEipV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.addEipV2, hcClient);
     }
 
     /**
@@ -475,7 +474,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEndpointPermissionsRequest 请求对象
+     * @param request AddEndpointPermissionsRequest 请求对象
      * @return CompletableFuture<AddEndpointPermissionsResponse>
      */
     public CompletableFuture<AddEndpointPermissionsResponse> addEndpointPermissionsAsync(
@@ -490,13 +489,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEndpointPermissionsRequest 请求对象
+     * @param request AddEndpointPermissionsRequest 请求对象
      * @return AsyncInvoker<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse>
      */
     public AsyncInvoker<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse> addEndpointPermissionsAsyncInvoker(
         AddEndpointPermissionsRequest request) {
-        return new AsyncInvoker<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse>(request,
-            ApigMeta.addEndpointPermissions, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.addEndpointPermissions, hcClient);
     }
 
     /**
@@ -506,7 +504,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEngressEipV2Request 请求对象
+     * @param request AddEngressEipV2Request 请求对象
      * @return CompletableFuture<AddEngressEipV2Response>
      */
     public CompletableFuture<AddEngressEipV2Response> addEngressEipV2Async(AddEngressEipV2Request request) {
@@ -520,13 +518,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddEngressEipV2Request 请求对象
+     * @param request AddEngressEipV2Request 请求对象
      * @return AsyncInvoker<AddEngressEipV2Request, AddEngressEipV2Response>
      */
     public AsyncInvoker<AddEngressEipV2Request, AddEngressEipV2Response> addEngressEipV2AsyncInvoker(
         AddEngressEipV2Request request) {
-        return new AsyncInvoker<AddEngressEipV2Request, AddEngressEipV2Response>(request, ApigMeta.addEngressEipV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.addEngressEipV2, hcClient);
     }
 
     /**
@@ -536,7 +533,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddIngressEipV2Request 请求对象
+     * @param request AddIngressEipV2Request 请求对象
      * @return CompletableFuture<AddIngressEipV2Response>
      */
     public CompletableFuture<AddIngressEipV2Response> addIngressEipV2Async(AddIngressEipV2Request request) {
@@ -550,13 +547,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddIngressEipV2Request 请求对象
+     * @param request AddIngressEipV2Request 请求对象
      * @return AsyncInvoker<AddIngressEipV2Request, AddIngressEipV2Response>
      */
     public AsyncInvoker<AddIngressEipV2Request, AddIngressEipV2Response> addIngressEipV2AsyncInvoker(
         AddIngressEipV2Request request) {
-        return new AsyncInvoker<AddIngressEipV2Request, AddIngressEipV2Response>(request, ApigMeta.addIngressEipV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.addIngressEipV2, hcClient);
     }
 
     /**
@@ -566,7 +562,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAppsForAppQuotaRequest 请求对象
+     * @param request AssociateAppsForAppQuotaRequest 请求对象
      * @return CompletableFuture<AssociateAppsForAppQuotaResponse>
      */
     public CompletableFuture<AssociateAppsForAppQuotaResponse> associateAppsForAppQuotaAsync(
@@ -581,13 +577,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateAppsForAppQuotaRequest 请求对象
+     * @param request AssociateAppsForAppQuotaRequest 请求对象
      * @return AsyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse>
      */
     public AsyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> associateAppsForAppQuotaAsyncInvoker(
         AssociateAppsForAppQuotaRequest request) {
-        return new AsyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse>(request,
-            ApigMeta.associateAppsForAppQuota, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.associateAppsForAppQuota, hcClient);
     }
 
     /**
@@ -598,7 +593,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateCertificateV2Request 请求对象
+     * @param request AssociateCertificateV2Request 请求对象
      * @return CompletableFuture<AssociateCertificateV2Response>
      */
     public CompletableFuture<AssociateCertificateV2Response> associateCertificateV2Async(
@@ -614,13 +609,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateCertificateV2Request 请求对象
+     * @param request AssociateCertificateV2Request 请求对象
      * @return AsyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response>
      */
     public AsyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response> associateCertificateV2AsyncInvoker(
         AssociateCertificateV2Request request) {
-        return new AsyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response>(request,
-            ApigMeta.associateCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.associateCertificateV2, hcClient);
     }
 
     /**
@@ -632,7 +626,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateDomainV2Request 请求对象
+     * @param request AssociateDomainV2Request 请求对象
      * @return CompletableFuture<AssociateDomainV2Response>
      */
     public CompletableFuture<AssociateDomainV2Response> associateDomainV2Async(AssociateDomainV2Request request) {
@@ -648,13 +642,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateDomainV2Request 请求对象
+     * @param request AssociateDomainV2Request 请求对象
      * @return AsyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>
      */
     public AsyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response> associateDomainV2AsyncInvoker(
         AssociateDomainV2Request request) {
-        return new AsyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>(request,
-            ApigMeta.associateDomainV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.associateDomainV2, hcClient);
     }
 
     /**
@@ -670,7 +663,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateSignatureKeyV2Request 请求对象
+     * @param request AssociateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<AssociateSignatureKeyV2Response>
      */
     public CompletableFuture<AssociateSignatureKeyV2Response> associateSignatureKeyV2Async(
@@ -691,13 +684,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateSignatureKeyV2Request 请求对象
+     * @param request AssociateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response>
      */
     public AsyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> associateSignatureKeyV2AsyncInvoker(
         AssociateSignatureKeyV2Request request) {
-        return new AsyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response>(request,
-            ApigMeta.associateSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.associateSignatureKeyV2, hcClient);
     }
 
     /**
@@ -711,7 +703,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachApiToPluginRequest 请求对象
+     * @param request AttachApiToPluginRequest 请求对象
      * @return CompletableFuture<AttachApiToPluginResponse>
      */
     public CompletableFuture<AttachApiToPluginResponse> attachApiToPluginAsync(AttachApiToPluginRequest request) {
@@ -729,13 +721,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachApiToPluginRequest 请求对象
+     * @param request AttachApiToPluginRequest 请求对象
      * @return AsyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>
      */
     public AsyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse> attachApiToPluginAsyncInvoker(
         AttachApiToPluginRequest request) {
-        return new AsyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>(request,
-            ApigMeta.attachApiToPlugin, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.attachApiToPlugin, hcClient);
     }
 
     /**
@@ -749,7 +740,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachPluginToApiRequest 请求对象
+     * @param request AttachPluginToApiRequest 请求对象
      * @return CompletableFuture<AttachPluginToApiResponse>
      */
     public CompletableFuture<AttachPluginToApiResponse> attachPluginToApiAsync(AttachPluginToApiRequest request) {
@@ -767,13 +758,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachPluginToApiRequest 请求对象
+     * @param request AttachPluginToApiRequest 请求对象
      * @return AsyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>
      */
     public AsyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse> attachPluginToApiAsyncInvoker(
         AttachPluginToApiRequest request) {
-        return new AsyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>(request,
-            ApigMeta.attachPluginToApi, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.attachPluginToApi, hcClient);
     }
 
     /**
@@ -783,7 +773,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteInstanceTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteInstanceTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateOrDeleteInstanceTagsResponse>
      */
     public CompletableFuture<BatchCreateOrDeleteInstanceTagsResponse> batchCreateOrDeleteInstanceTagsAsync(
@@ -798,13 +788,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteInstanceTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteInstanceTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse>
      */
     public AsyncInvoker<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse> batchCreateOrDeleteInstanceTagsAsyncInvoker(
         BatchCreateOrDeleteInstanceTagsRequest request) {
-        return new AsyncInvoker<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse>(
-            request, ApigMeta.batchCreateOrDeleteInstanceTags, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchCreateOrDeleteInstanceTags, hcClient);
     }
 
     /**
@@ -815,7 +804,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAppV2Request 请求对象
+     * @param request CheckAppV2Request 请求对象
      * @return CompletableFuture<CheckAppV2Response>
      */
     public CompletableFuture<CheckAppV2Response> checkAppV2Async(CheckAppV2Request request) {
@@ -830,11 +819,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckAppV2Request 请求对象
+     * @param request CheckAppV2Request 请求对象
      * @return AsyncInvoker<CheckAppV2Request, CheckAppV2Response>
      */
     public AsyncInvoker<CheckAppV2Request, CheckAppV2Response> checkAppV2AsyncInvoker(CheckAppV2Request request) {
-        return new AsyncInvoker<CheckAppV2Request, CheckAppV2Response>(request, ApigMeta.checkAppV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.checkAppV2, hcClient);
     }
 
     /**
@@ -845,7 +834,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnAppV2Request 请求对象
+     * @param request CreateAnAppV2Request 请求对象
      * @return CompletableFuture<CreateAnAppV2Response>
      */
     public CompletableFuture<CreateAnAppV2Response> createAnAppV2Async(CreateAnAppV2Request request) {
@@ -860,12 +849,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnAppV2Request 请求对象
+     * @param request CreateAnAppV2Request 请求对象
      * @return AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response>
      */
     public AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response> createAnAppV2AsyncInvoker(
         CreateAnAppV2Request request) {
-        return new AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response>(request, ApigMeta.createAnAppV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createAnAppV2, hcClient);
     }
 
     /**
@@ -875,7 +864,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeAutoV2Request 请求对象
+     * @param request CreateAppCodeAutoV2Request 请求对象
      * @return CompletableFuture<CreateAppCodeAutoV2Response>
      */
     public CompletableFuture<CreateAppCodeAutoV2Response> createAppCodeAutoV2Async(CreateAppCodeAutoV2Request request) {
@@ -889,13 +878,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeAutoV2Request 请求对象
+     * @param request CreateAppCodeAutoV2Request 请求对象
      * @return AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>
      */
     public AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2AsyncInvoker(
         CreateAppCodeAutoV2Request request) {
-        return new AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>(request,
-            ApigMeta.createAppCodeAutoV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createAppCodeAutoV2, hcClient);
     }
 
     /**
@@ -905,7 +893,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeV2Request 请求对象
+     * @param request CreateAppCodeV2Request 请求对象
      * @return CompletableFuture<CreateAppCodeV2Response>
      */
     public CompletableFuture<CreateAppCodeV2Response> createAppCodeV2Async(CreateAppCodeV2Request request) {
@@ -919,13 +907,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppCodeV2Request 请求对象
+     * @param request CreateAppCodeV2Request 请求对象
      * @return AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>
      */
     public AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2AsyncInvoker(
         CreateAppCodeV2Request request) {
-        return new AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>(request, ApigMeta.createAppCodeV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createAppCodeV2, hcClient);
     }
 
     /**
@@ -935,7 +922,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppQuotaRequest 请求对象
+     * @param request CreateAppQuotaRequest 请求对象
      * @return CompletableFuture<CreateAppQuotaResponse>
      */
     public CompletableFuture<CreateAppQuotaResponse> createAppQuotaAsync(CreateAppQuotaRequest request) {
@@ -949,13 +936,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppQuotaRequest 请求对象
+     * @param request CreateAppQuotaRequest 请求对象
      * @return AsyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse>
      */
     public AsyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse> createAppQuotaAsyncInvoker(
         CreateAppQuotaRequest request) {
-        return new AsyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse>(request, ApigMeta.createAppQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createAppQuota, hcClient);
     }
 
     /**
@@ -965,7 +951,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomAuthorizerV2Request 请求对象
+     * @param request CreateCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<CreateCustomAuthorizerV2Response>
      */
     public CompletableFuture<CreateCustomAuthorizerV2Response> createCustomAuthorizerV2Async(
@@ -980,13 +966,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomAuthorizerV2Request 请求对象
+     * @param request CreateCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>
      */
     public AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2AsyncInvoker(
         CreateCustomAuthorizerV2Request request) {
-        return new AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>(request,
-            ApigMeta.createCustomAuthorizerV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createCustomAuthorizerV2, hcClient);
     }
 
     /**
@@ -1002,7 +987,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentV2Request 请求对象
+     * @param request CreateEnvironmentV2Request 请求对象
      * @return CompletableFuture<CreateEnvironmentV2Response>
      */
     public CompletableFuture<CreateEnvironmentV2Response> createEnvironmentV2Async(CreateEnvironmentV2Request request) {
@@ -1022,13 +1007,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentV2Request 请求对象
+     * @param request CreateEnvironmentV2Request 请求对象
      * @return AsyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response>
      */
     public AsyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response> createEnvironmentV2AsyncInvoker(
         CreateEnvironmentV2Request request) {
-        return new AsyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response>(request,
-            ApigMeta.createEnvironmentV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createEnvironmentV2, hcClient);
     }
 
     /**
@@ -1049,7 +1033,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentVariableV2Request 请求对象
+     * @param request CreateEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<CreateEnvironmentVariableV2Response>
      */
     public CompletableFuture<CreateEnvironmentVariableV2Response> createEnvironmentVariableV2Async(
@@ -1075,13 +1059,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEnvironmentVariableV2Request 请求对象
+     * @param request CreateEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response>
      */
     public AsyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> createEnvironmentVariableV2AsyncInvoker(
         CreateEnvironmentVariableV2Request request) {
-        return new AsyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response>(request,
-            ApigMeta.createEnvironmentVariableV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -1093,7 +1076,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFeatureV2Request 请求对象
+     * @param request CreateFeatureV2Request 请求对象
      * @return CompletableFuture<CreateFeatureV2Response>
      */
     public CompletableFuture<CreateFeatureV2Response> createFeatureV2Async(CreateFeatureV2Request request) {
@@ -1109,13 +1092,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateFeatureV2Request 请求对象
+     * @param request CreateFeatureV2Request 请求对象
      * @return AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response>
      */
     public AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response> createFeatureV2AsyncInvoker(
         CreateFeatureV2Request request) {
-        return new AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response>(request, ApigMeta.createFeatureV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createFeatureV2, hcClient);
     }
 
     /**
@@ -1125,7 +1107,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGatewayResponseV2Request 请求对象
+     * @param request CreateGatewayResponseV2Request 请求对象
      * @return CompletableFuture<CreateGatewayResponseV2Response>
      */
     public CompletableFuture<CreateGatewayResponseV2Response> createGatewayResponseV2Async(
@@ -1140,13 +1122,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateGatewayResponseV2Request 请求对象
+     * @param request CreateGatewayResponseV2Request 请求对象
      * @return AsyncInvoker<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response>
      */
     public AsyncInvoker<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response> createGatewayResponseV2AsyncInvoker(
         CreateGatewayResponseV2Request request) {
-        return new AsyncInvoker<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response>(request,
-            ApigMeta.createGatewayResponseV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createGatewayResponseV2, hcClient);
     }
 
     /**
@@ -1156,7 +1137,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceV2Request 请求对象
+     * @param request CreateInstanceV2Request 请求对象
      * @return CompletableFuture<CreateInstanceV2Response>
      */
     public CompletableFuture<CreateInstanceV2Response> createInstanceV2Async(CreateInstanceV2Request request) {
@@ -1170,13 +1151,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceV2Request 请求对象
+     * @param request CreateInstanceV2Request 请求对象
      * @return AsyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response>
      */
     public AsyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response> createInstanceV2AsyncInvoker(
         CreateInstanceV2Request request) {
-        return new AsyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response>(request, ApigMeta.createInstanceV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createInstanceV2, hcClient);
     }
 
     /**
@@ -1186,7 +1166,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrderRequest 请求对象
+     * @param request CreateOrderRequest 请求对象
      * @return CompletableFuture<CreateOrderResponse>
      */
     public CompletableFuture<CreateOrderResponse> createOrderAsync(CreateOrderRequest request) {
@@ -1200,11 +1180,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrderRequest 请求对象
+     * @param request CreateOrderRequest 请求对象
      * @return AsyncInvoker<CreateOrderRequest, CreateOrderResponse>
      */
     public AsyncInvoker<CreateOrderRequest, CreateOrderResponse> createOrderAsyncInvoker(CreateOrderRequest request) {
-        return new AsyncInvoker<CreateOrderRequest, CreateOrderResponse>(request, ApigMeta.createOrder, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createOrder, hcClient);
     }
 
     /**
@@ -1216,7 +1196,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePluginRequest 请求对象
+     * @param request CreatePluginRequest 请求对象
      * @return CompletableFuture<CreatePluginResponse>
      */
     public CompletableFuture<CreatePluginResponse> createPluginAsync(CreatePluginRequest request) {
@@ -1232,12 +1212,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePluginRequest 请求对象
+     * @param request CreatePluginRequest 请求对象
      * @return AsyncInvoker<CreatePluginRequest, CreatePluginResponse>
      */
     public AsyncInvoker<CreatePluginRequest, CreatePluginResponse> createPluginAsyncInvoker(
         CreatePluginRequest request) {
-        return new AsyncInvoker<CreatePluginRequest, CreatePluginResponse>(request, ApigMeta.createPlugin, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createPlugin, hcClient);
     }
 
     /**
@@ -1247,7 +1227,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPayResizeOrderRequest 请求对象
+     * @param request CreatePostPayResizeOrderRequest 请求对象
      * @return CompletableFuture<CreatePostPayResizeOrderResponse>
      */
     public CompletableFuture<CreatePostPayResizeOrderResponse> createPostPayResizeOrderAsync(
@@ -1262,13 +1242,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePostPayResizeOrderRequest 请求对象
+     * @param request CreatePostPayResizeOrderRequest 请求对象
      * @return AsyncInvoker<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse>
      */
     public AsyncInvoker<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse> createPostPayResizeOrderAsyncInvoker(
         CreatePostPayResizeOrderRequest request) {
-        return new AsyncInvoker<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse>(request,
-            ApigMeta.createPostPayResizeOrder, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createPostPayResizeOrder, hcClient);
     }
 
     /**
@@ -1278,7 +1257,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrepayResizeRequest 请求对象
+     * @param request CreatePrepayResizeRequest 请求对象
      * @return CompletableFuture<CreatePrepayResizeResponse>
      */
     public CompletableFuture<CreatePrepayResizeResponse> createPrepayResizeAsync(CreatePrepayResizeRequest request) {
@@ -1292,13 +1271,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePrepayResizeRequest 请求对象
+     * @param request CreatePrepayResizeRequest 请求对象
      * @return AsyncInvoker<CreatePrepayResizeRequest, CreatePrepayResizeResponse>
      */
     public AsyncInvoker<CreatePrepayResizeRequest, CreatePrepayResizeResponse> createPrepayResizeAsyncInvoker(
         CreatePrepayResizeRequest request) {
-        return new AsyncInvoker<CreatePrepayResizeRequest, CreatePrepayResizeResponse>(request,
-            ApigMeta.createPrepayResize, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createPrepayResize, hcClient);
     }
 
     /**
@@ -1309,7 +1287,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestThrottlingPolicyV2Request 请求对象
+     * @param request CreateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<CreateRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<CreateRequestThrottlingPolicyV2Response> createRequestThrottlingPolicyV2Async(
@@ -1325,13 +1303,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRequestThrottlingPolicyV2Request 请求对象
+     * @param request CreateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> createRequestThrottlingPolicyV2AsyncInvoker(
         CreateRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.createRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -1347,7 +1324,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSignatureKeyV2Request 请求对象
+     * @param request CreateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<CreateSignatureKeyV2Response>
      */
     public CompletableFuture<CreateSignatureKeyV2Response> createSignatureKeyV2Async(
@@ -1368,13 +1345,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSignatureKeyV2Request 请求对象
+     * @param request CreateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response>
      */
     public AsyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> createSignatureKeyV2AsyncInvoker(
         CreateSignatureKeyV2Request request) {
-        return new AsyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response>(request,
-            ApigMeta.createSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createSignatureKeyV2, hcClient);
     }
 
     /**
@@ -1388,7 +1364,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<CreateSpecialThrottlingConfigurationV2Response>
      */
     public CompletableFuture<CreateSpecialThrottlingConfigurationV2Response> createSpecialThrottlingConfigurationV2Async(
@@ -1407,13 +1383,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response>
      */
     public AsyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> createSpecialThrottlingConfigurationV2AsyncInvoker(
         CreateSpecialThrottlingConfigurationV2Request request) {
-        return new AsyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response>(
-            request, ApigMeta.createSpecialThrottlingConfigurationV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createSpecialThrottlingConfigurationV2, hcClient);
     }
 
     /**
@@ -1423,7 +1398,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppAclRequest 请求对象
+     * @param request DeleteAppAclRequest 请求对象
      * @return CompletableFuture<DeleteAppAclResponse>
      */
     public CompletableFuture<DeleteAppAclResponse> deleteAppAclAsync(DeleteAppAclRequest request) {
@@ -1437,12 +1412,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppAclRequest 请求对象
+     * @param request DeleteAppAclRequest 请求对象
      * @return AsyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse>
      */
     public AsyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse> deleteAppAclAsyncInvoker(
         DeleteAppAclRequest request) {
-        return new AsyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse>(request, ApigMeta.deleteAppAcl, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteAppAcl, hcClient);
     }
 
     /**
@@ -1452,7 +1427,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppCodeV2Request 请求对象
+     * @param request DeleteAppCodeV2Request 请求对象
      * @return CompletableFuture<DeleteAppCodeV2Response>
      */
     public CompletableFuture<DeleteAppCodeV2Response> deleteAppCodeV2Async(DeleteAppCodeV2Request request) {
@@ -1466,13 +1441,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppCodeV2Request 请求对象
+     * @param request DeleteAppCodeV2Request 请求对象
      * @return AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>
      */
     public AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2AsyncInvoker(
         DeleteAppCodeV2Request request) {
-        return new AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>(request, ApigMeta.deleteAppCodeV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteAppCodeV2, hcClient);
     }
 
     /**
@@ -1482,7 +1456,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppQuotaRequest 请求对象
+     * @param request DeleteAppQuotaRequest 请求对象
      * @return CompletableFuture<DeleteAppQuotaResponse>
      */
     public CompletableFuture<DeleteAppQuotaResponse> deleteAppQuotaAsync(DeleteAppQuotaRequest request) {
@@ -1496,13 +1470,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppQuotaRequest 请求对象
+     * @param request DeleteAppQuotaRequest 请求对象
      * @return AsyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse>
      */
     public AsyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse> deleteAppQuotaAsyncInvoker(
         DeleteAppQuotaRequest request) {
-        return new AsyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse>(request, ApigMeta.deleteAppQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteAppQuota, hcClient);
     }
 
     /**
@@ -1513,7 +1486,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppV2Request 请求对象
+     * @param request DeleteAppV2Request 请求对象
      * @return CompletableFuture<DeleteAppV2Response>
      */
     public CompletableFuture<DeleteAppV2Response> deleteAppV2Async(DeleteAppV2Request request) {
@@ -1528,11 +1501,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppV2Request 请求对象
+     * @param request DeleteAppV2Request 请求对象
      * @return AsyncInvoker<DeleteAppV2Request, DeleteAppV2Response>
      */
     public AsyncInvoker<DeleteAppV2Request, DeleteAppV2Response> deleteAppV2AsyncInvoker(DeleteAppV2Request request) {
-        return new AsyncInvoker<DeleteAppV2Request, DeleteAppV2Response>(request, ApigMeta.deleteAppV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteAppV2, hcClient);
     }
 
     /**
@@ -1542,7 +1515,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomAuthorizerV2Request 请求对象
+     * @param request DeleteCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<DeleteCustomAuthorizerV2Response>
      */
     public CompletableFuture<DeleteCustomAuthorizerV2Response> deleteCustomAuthorizerV2Async(
@@ -1557,13 +1530,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCustomAuthorizerV2Request 请求对象
+     * @param request DeleteCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>
      */
     public AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> deleteCustomAuthorizerV2AsyncInvoker(
         DeleteCustomAuthorizerV2Request request) {
-        return new AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>(request,
-            ApigMeta.deleteCustomAuthorizerV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteCustomAuthorizerV2, hcClient);
     }
 
     /**
@@ -1573,7 +1545,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointPermissionsRequest 请求对象
+     * @param request DeleteEndpointPermissionsRequest 请求对象
      * @return CompletableFuture<DeleteEndpointPermissionsResponse>
      */
     public CompletableFuture<DeleteEndpointPermissionsResponse> deleteEndpointPermissionsAsync(
@@ -1588,13 +1560,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEndpointPermissionsRequest 请求对象
+     * @param request DeleteEndpointPermissionsRequest 请求对象
      * @return AsyncInvoker<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse>
      */
     public AsyncInvoker<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse> deleteEndpointPermissionsAsyncInvoker(
         DeleteEndpointPermissionsRequest request) {
-        return new AsyncInvoker<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse>(request,
-            ApigMeta.deleteEndpointPermissions, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteEndpointPermissions, hcClient);
     }
 
     /**
@@ -1608,7 +1579,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentV2Request 请求对象
+     * @param request DeleteEnvironmentV2Request 请求对象
      * @return CompletableFuture<DeleteEnvironmentV2Response>
      */
     public CompletableFuture<DeleteEnvironmentV2Response> deleteEnvironmentV2Async(DeleteEnvironmentV2Request request) {
@@ -1626,13 +1597,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentV2Request 请求对象
+     * @param request DeleteEnvironmentV2Request 请求对象
      * @return AsyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>
      */
     public AsyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> deleteEnvironmentV2AsyncInvoker(
         DeleteEnvironmentV2Request request) {
-        return new AsyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>(request,
-            ApigMeta.deleteEnvironmentV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteEnvironmentV2, hcClient);
     }
 
     /**
@@ -1642,7 +1612,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentVariableV2Request 请求对象
+     * @param request DeleteEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<DeleteEnvironmentVariableV2Response>
      */
     public CompletableFuture<DeleteEnvironmentVariableV2Response> deleteEnvironmentVariableV2Async(
@@ -1657,13 +1627,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEnvironmentVariableV2Request 请求对象
+     * @param request DeleteEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response>
      */
     public AsyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> deleteEnvironmentVariableV2AsyncInvoker(
         DeleteEnvironmentVariableV2Request request) {
-        return new AsyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response>(request,
-            ApigMeta.deleteEnvironmentVariableV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -1673,7 +1642,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGatewayResponseTypeV2Request 请求对象
+     * @param request DeleteGatewayResponseTypeV2Request 请求对象
      * @return CompletableFuture<DeleteGatewayResponseTypeV2Response>
      */
     public CompletableFuture<DeleteGatewayResponseTypeV2Response> deleteGatewayResponseTypeV2Async(
@@ -1688,13 +1657,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGatewayResponseTypeV2Request 请求对象
+     * @param request DeleteGatewayResponseTypeV2Request 请求对象
      * @return AsyncInvoker<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response>
      */
     public AsyncInvoker<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response> deleteGatewayResponseTypeV2AsyncInvoker(
         DeleteGatewayResponseTypeV2Request request) {
-        return new AsyncInvoker<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response>(request,
-            ApigMeta.deleteGatewayResponseTypeV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteGatewayResponseTypeV2, hcClient);
     }
 
     /**
@@ -1704,7 +1672,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGatewayResponseV2Request 请求对象
+     * @param request DeleteGatewayResponseV2Request 请求对象
      * @return CompletableFuture<DeleteGatewayResponseV2Response>
      */
     public CompletableFuture<DeleteGatewayResponseV2Response> deleteGatewayResponseV2Async(
@@ -1719,13 +1687,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteGatewayResponseV2Request 请求对象
+     * @param request DeleteGatewayResponseV2Request 请求对象
      * @return AsyncInvoker<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response>
      */
     public AsyncInvoker<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response> deleteGatewayResponseV2AsyncInvoker(
         DeleteGatewayResponseV2Request request) {
-        return new AsyncInvoker<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response>(request,
-            ApigMeta.deleteGatewayResponseV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteGatewayResponseV2, hcClient);
     }
 
     /**
@@ -1735,7 +1702,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstancesV2Request 请求对象
+     * @param request DeleteInstancesV2Request 请求对象
      * @return CompletableFuture<DeleteInstancesV2Response>
      */
     public CompletableFuture<DeleteInstancesV2Response> deleteInstancesV2Async(DeleteInstancesV2Request request) {
@@ -1749,13 +1716,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstancesV2Request 请求对象
+     * @param request DeleteInstancesV2Request 请求对象
      * @return AsyncInvoker<DeleteInstancesV2Request, DeleteInstancesV2Response>
      */
     public AsyncInvoker<DeleteInstancesV2Request, DeleteInstancesV2Response> deleteInstancesV2AsyncInvoker(
         DeleteInstancesV2Request request) {
-        return new AsyncInvoker<DeleteInstancesV2Request, DeleteInstancesV2Response>(request,
-            ApigMeta.deleteInstancesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteInstancesV2, hcClient);
     }
 
     /**
@@ -1766,7 +1732,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePluginRequest 请求对象
+     * @param request DeletePluginRequest 请求对象
      * @return CompletableFuture<DeletePluginResponse>
      */
     public CompletableFuture<DeletePluginResponse> deletePluginAsync(DeletePluginRequest request) {
@@ -1781,12 +1747,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePluginRequest 请求对象
+     * @param request DeletePluginRequest 请求对象
      * @return AsyncInvoker<DeletePluginRequest, DeletePluginResponse>
      */
     public AsyncInvoker<DeletePluginRequest, DeletePluginResponse> deletePluginAsyncInvoker(
         DeletePluginRequest request) {
-        return new AsyncInvoker<DeletePluginRequest, DeletePluginResponse>(request, ApigMeta.deletePlugin, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deletePlugin, hcClient);
     }
 
     /**
@@ -1796,7 +1762,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRequestThrottlingPolicyV2Request 请求对象
+     * @param request DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<DeleteRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<DeleteRequestThrottlingPolicyV2Response> deleteRequestThrottlingPolicyV2Async(
@@ -1811,13 +1777,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRequestThrottlingPolicyV2Request 请求对象
+     * @param request DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> deleteRequestThrottlingPolicyV2AsyncInvoker(
         DeleteRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.deleteRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -1827,7 +1792,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSignatureKeyV2Request 请求对象
+     * @param request DeleteSignatureKeyV2Request 请求对象
      * @return CompletableFuture<DeleteSignatureKeyV2Response>
      */
     public CompletableFuture<DeleteSignatureKeyV2Response> deleteSignatureKeyV2Async(
@@ -1842,13 +1807,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSignatureKeyV2Request 请求对象
+     * @param request DeleteSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response>
      */
     public AsyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> deleteSignatureKeyV2AsyncInvoker(
         DeleteSignatureKeyV2Request request) {
-        return new AsyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response>(request,
-            ApigMeta.deleteSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteSignatureKeyV2, hcClient);
     }
 
     /**
@@ -1858,7 +1822,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<DeleteSpecialThrottlingConfigurationV2Response>
      */
     public CompletableFuture<DeleteSpecialThrottlingConfigurationV2Response> deleteSpecialThrottlingConfigurationV2Async(
@@ -1873,13 +1837,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response>
      */
     public AsyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> deleteSpecialThrottlingConfigurationV2AsyncInvoker(
         DeleteSpecialThrottlingConfigurationV2Request request) {
-        return new AsyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response>(
-            request, ApigMeta.deleteSpecialThrottlingConfigurationV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteSpecialThrottlingConfigurationV2, hcClient);
     }
 
     /**
@@ -1890,7 +1853,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachApiFromPluginRequest 请求对象
+     * @param request DetachApiFromPluginRequest 请求对象
      * @return CompletableFuture<DetachApiFromPluginResponse>
      */
     public CompletableFuture<DetachApiFromPluginResponse> detachApiFromPluginAsync(DetachApiFromPluginRequest request) {
@@ -1905,13 +1868,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachApiFromPluginRequest 请求对象
+     * @param request DetachApiFromPluginRequest 请求对象
      * @return AsyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>
      */
     public AsyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse> detachApiFromPluginAsyncInvoker(
         DetachApiFromPluginRequest request) {
-        return new AsyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>(request,
-            ApigMeta.detachApiFromPlugin, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.detachApiFromPlugin, hcClient);
     }
 
     /**
@@ -1922,7 +1884,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachPluginFromApiRequest 请求对象
+     * @param request DetachPluginFromApiRequest 请求对象
      * @return CompletableFuture<DetachPluginFromApiResponse>
      */
     public CompletableFuture<DetachPluginFromApiResponse> detachPluginFromApiAsync(DetachPluginFromApiRequest request) {
@@ -1937,13 +1899,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachPluginFromApiRequest 请求对象
+     * @param request DetachPluginFromApiRequest 请求对象
      * @return AsyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>
      */
     public AsyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse> detachPluginFromApiAsyncInvoker(
         DetachPluginFromApiRequest request) {
-        return new AsyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>(request,
-            ApigMeta.detachPluginFromApi, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.detachPluginFromApi, hcClient);
     }
 
     /**
@@ -1953,7 +1914,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateAppQuotaWithAppRequest 请求对象
+     * @param request DisassociateAppQuotaWithAppRequest 请求对象
      * @return CompletableFuture<DisassociateAppQuotaWithAppResponse>
      */
     public CompletableFuture<DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithAppAsync(
@@ -1968,13 +1929,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateAppQuotaWithAppRequest 请求对象
+     * @param request DisassociateAppQuotaWithAppRequest 请求对象
      * @return AsyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse>
      */
     public AsyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithAppAsyncInvoker(
         DisassociateAppQuotaWithAppRequest request) {
-        return new AsyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse>(request,
-            ApigMeta.disassociateAppQuotaWithApp, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.disassociateAppQuotaWithApp, hcClient);
     }
 
     /**
@@ -1984,7 +1944,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateCertificateV2Request 请求对象
+     * @param request DisassociateCertificateV2Request 请求对象
      * @return CompletableFuture<DisassociateCertificateV2Response>
      */
     public CompletableFuture<DisassociateCertificateV2Response> disassociateCertificateV2Async(
@@ -1999,13 +1959,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateCertificateV2Request 请求对象
+     * @param request DisassociateCertificateV2Request 请求对象
      * @return AsyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response>
      */
     public AsyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response> disassociateCertificateV2AsyncInvoker(
         DisassociateCertificateV2Request request) {
-        return new AsyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response>(request,
-            ApigMeta.disassociateCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.disassociateCertificateV2, hcClient);
     }
 
     /**
@@ -2015,7 +1974,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateDomainV2Request 请求对象
+     * @param request DisassociateDomainV2Request 请求对象
      * @return CompletableFuture<DisassociateDomainV2Response>
      */
     public CompletableFuture<DisassociateDomainV2Response> disassociateDomainV2Async(
@@ -2030,13 +1989,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateDomainV2Request 请求对象
+     * @param request DisassociateDomainV2Request 请求对象
      * @return AsyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response>
      */
     public AsyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response> disassociateDomainV2AsyncInvoker(
         DisassociateDomainV2Request request) {
-        return new AsyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response>(request,
-            ApigMeta.disassociateDomainV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.disassociateDomainV2, hcClient);
     }
 
     /**
@@ -2046,7 +2004,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateSignatureKeyV2Request 请求对象
+     * @param request DisassociateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<DisassociateSignatureKeyV2Response>
      */
     public CompletableFuture<DisassociateSignatureKeyV2Response> disassociateSignatureKeyV2Async(
@@ -2061,13 +2019,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateSignatureKeyV2Request 请求对象
+     * @param request DisassociateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response>
      */
     public AsyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> disassociateSignatureKeyV2AsyncInvoker(
         DisassociateSignatureKeyV2Request request) {
-        return new AsyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response>(request,
-            ApigMeta.disassociateSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.disassociateSignatureKeyV2, hcClient);
     }
 
     /**
@@ -2077,7 +2034,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportMicroserviceRequest 请求对象
+     * @param request ImportMicroserviceRequest 请求对象
      * @return CompletableFuture<ImportMicroserviceResponse>
      */
     public CompletableFuture<ImportMicroserviceResponse> importMicroserviceAsync(ImportMicroserviceRequest request) {
@@ -2091,13 +2048,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportMicroserviceRequest 请求对象
+     * @param request ImportMicroserviceRequest 请求对象
      * @return AsyncInvoker<ImportMicroserviceRequest, ImportMicroserviceResponse>
      */
     public AsyncInvoker<ImportMicroserviceRequest, ImportMicroserviceResponse> importMicroserviceAsyncInvoker(
         ImportMicroserviceRequest request) {
-        return new AsyncInvoker<ImportMicroserviceRequest, ImportMicroserviceResponse>(request,
-            ApigMeta.importMicroservice, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.importMicroservice, hcClient);
     }
 
     /**
@@ -2109,7 +2065,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachablePluginsRequest 请求对象
+     * @param request ListApiAttachablePluginsRequest 请求对象
      * @return CompletableFuture<ListApiAttachablePluginsResponse>
      */
     public CompletableFuture<ListApiAttachablePluginsResponse> listApiAttachablePluginsAsync(
@@ -2126,13 +2082,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachablePluginsRequest 请求对象
+     * @param request ListApiAttachablePluginsRequest 请求对象
      * @return AsyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>
      */
     public AsyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> listApiAttachablePluginsAsyncInvoker(
         ListApiAttachablePluginsRequest request) {
-        return new AsyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>(request,
-            ApigMeta.listApiAttachablePlugins, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApiAttachablePlugins, hcClient);
     }
 
     /**
@@ -2145,7 +2100,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachedPluginsRequest 请求对象
+     * @param request ListApiAttachedPluginsRequest 请求对象
      * @return CompletableFuture<ListApiAttachedPluginsResponse>
      */
     public CompletableFuture<ListApiAttachedPluginsResponse> listApiAttachedPluginsAsync(
@@ -2163,13 +2118,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiAttachedPluginsRequest 请求对象
+     * @param request ListApiAttachedPluginsRequest 请求对象
      * @return AsyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>
      */
     public AsyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> listApiAttachedPluginsAsyncInvoker(
         ListApiAttachedPluginsRequest request) {
-        return new AsyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>(request,
-            ApigMeta.listApiAttachedPlugins, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApiAttachedPlugins, hcClient);
     }
 
     /**
@@ -2179,7 +2133,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiGroupsQuantitiesV2Request 请求对象
+     * @param request ListApiGroupsQuantitiesV2Request 请求对象
      * @return CompletableFuture<ListApiGroupsQuantitiesV2Response>
      */
     public CompletableFuture<ListApiGroupsQuantitiesV2Response> listApiGroupsQuantitiesV2Async(
@@ -2194,13 +2148,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiGroupsQuantitiesV2Request 请求对象
+     * @param request ListApiGroupsQuantitiesV2Request 请求对象
      * @return AsyncInvoker<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response>
      */
     public AsyncInvoker<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response> listApiGroupsQuantitiesV2AsyncInvoker(
         ListApiGroupsQuantitiesV2Request request) {
-        return new AsyncInvoker<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response>(request,
-            ApigMeta.listApiGroupsQuantitiesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApiGroupsQuantitiesV2, hcClient);
     }
 
     /**
@@ -2210,7 +2163,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiQuantitiesV2Request 请求对象
+     * @param request ListApiQuantitiesV2Request 请求对象
      * @return CompletableFuture<ListApiQuantitiesV2Response>
      */
     public CompletableFuture<ListApiQuantitiesV2Response> listApiQuantitiesV2Async(ListApiQuantitiesV2Request request) {
@@ -2224,13 +2177,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiQuantitiesV2Request 请求对象
+     * @param request ListApiQuantitiesV2Request 请求对象
      * @return AsyncInvoker<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response>
      */
     public AsyncInvoker<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response> listApiQuantitiesV2AsyncInvoker(
         ListApiQuantitiesV2Request request) {
-        return new AsyncInvoker<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response>(request,
-            ApigMeta.listApiQuantitiesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApiQuantitiesV2, hcClient);
     }
 
     /**
@@ -2240,7 +2192,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToSignatureKeyV2Request 请求对象
+     * @param request ListApisBindedToSignatureKeyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToSignatureKeyV2Response>
      */
     public CompletableFuture<ListApisBindedToSignatureKeyV2Response> listApisBindedToSignatureKeyV2Async(
@@ -2255,13 +2207,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToSignatureKeyV2Request 请求对象
+     * @param request ListApisBindedToSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response>
      */
     public AsyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> listApisBindedToSignatureKeyV2AsyncInvoker(
         ListApisBindedToSignatureKeyV2Request request) {
-        return new AsyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response>(request,
-            ApigMeta.listApisBindedToSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApisBindedToSignatureKeyV2, hcClient);
     }
 
     /**
@@ -2271,7 +2222,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
+     * @param request ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return CompletableFuture<ListApisNotBoundWithSignatureKeyV2Response>
      */
     public CompletableFuture<ListApisNotBoundWithSignatureKeyV2Response> listApisNotBoundWithSignatureKeyV2Async(
@@ -2286,13 +2237,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
+     * @param request ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response>
      */
     public AsyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> listApisNotBoundWithSignatureKeyV2AsyncInvoker(
         ListApisNotBoundWithSignatureKeyV2Request request) {
-        return new AsyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response>(
-            request, ApigMeta.listApisNotBoundWithSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApisNotBoundWithSignatureKeyV2, hcClient);
     }
 
     /**
@@ -2302,7 +2252,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppCodesV2Request 请求对象
+     * @param request ListAppCodesV2Request 请求对象
      * @return CompletableFuture<ListAppCodesV2Response>
      */
     public CompletableFuture<ListAppCodesV2Response> listAppCodesV2Async(ListAppCodesV2Request request) {
@@ -2316,13 +2266,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppCodesV2Request 请求对象
+     * @param request ListAppCodesV2Request 请求对象
      * @return AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>
      */
     public AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2AsyncInvoker(
         ListAppCodesV2Request request) {
-        return new AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>(request, ApigMeta.listAppCodesV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAppCodesV2, hcClient);
     }
 
     /**
@@ -2332,7 +2281,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuantitiesV2Request 请求对象
+     * @param request ListAppQuantitiesV2Request 请求对象
      * @return CompletableFuture<ListAppQuantitiesV2Response>
      */
     public CompletableFuture<ListAppQuantitiesV2Response> listAppQuantitiesV2Async(ListAppQuantitiesV2Request request) {
@@ -2346,13 +2295,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuantitiesV2Request 请求对象
+     * @param request ListAppQuantitiesV2Request 请求对象
      * @return AsyncInvoker<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response>
      */
     public AsyncInvoker<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response> listAppQuantitiesV2AsyncInvoker(
         ListAppQuantitiesV2Request request) {
-        return new AsyncInvoker<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response>(request,
-            ApigMeta.listAppQuantitiesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAppQuantitiesV2, hcClient);
     }
 
     /**
@@ -2362,7 +2310,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBindableAppsRequest 请求对象
+     * @param request ListAppQuotaBindableAppsRequest 请求对象
      * @return CompletableFuture<ListAppQuotaBindableAppsResponse>
      */
     public CompletableFuture<ListAppQuotaBindableAppsResponse> listAppQuotaBindableAppsAsync(
@@ -2377,13 +2325,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBindableAppsRequest 请求对象
+     * @param request ListAppQuotaBindableAppsRequest 请求对象
      * @return AsyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse>
      */
     public AsyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> listAppQuotaBindableAppsAsyncInvoker(
         ListAppQuotaBindableAppsRequest request) {
-        return new AsyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse>(request,
-            ApigMeta.listAppQuotaBindableApps, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAppQuotaBindableApps, hcClient);
     }
 
     /**
@@ -2393,7 +2340,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBoundAppsRequest 请求对象
+     * @param request ListAppQuotaBoundAppsRequest 请求对象
      * @return CompletableFuture<ListAppQuotaBoundAppsResponse>
      */
     public CompletableFuture<ListAppQuotaBoundAppsResponse> listAppQuotaBoundAppsAsync(
@@ -2408,13 +2355,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotaBoundAppsRequest 请求对象
+     * @param request ListAppQuotaBoundAppsRequest 请求对象
      * @return AsyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse>
      */
     public AsyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> listAppQuotaBoundAppsAsyncInvoker(
         ListAppQuotaBoundAppsRequest request) {
-        return new AsyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse>(request,
-            ApigMeta.listAppQuotaBoundApps, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAppQuotaBoundApps, hcClient);
     }
 
     /**
@@ -2424,7 +2370,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotasRequest 请求对象
+     * @param request ListAppQuotasRequest 请求对象
      * @return CompletableFuture<ListAppQuotasResponse>
      */
     public CompletableFuture<ListAppQuotasResponse> listAppQuotasAsync(ListAppQuotasRequest request) {
@@ -2438,12 +2384,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppQuotasRequest 请求对象
+     * @param request ListAppQuotasRequest 请求对象
      * @return AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>
      */
     public AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse> listAppQuotasAsyncInvoker(
         ListAppQuotasRequest request) {
-        return new AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>(request, ApigMeta.listAppQuotas, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAppQuotas, hcClient);
     }
 
     /**
@@ -2453,7 +2399,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsV2Request 请求对象
+     * @param request ListAppsV2Request 请求对象
      * @return CompletableFuture<ListAppsV2Response>
      */
     public CompletableFuture<ListAppsV2Response> listAppsV2Async(ListAppsV2Request request) {
@@ -2467,11 +2413,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsV2Request 请求对象
+     * @param request ListAppsV2Request 请求对象
      * @return AsyncInvoker<ListAppsV2Request, ListAppsV2Response>
      */
     public AsyncInvoker<ListAppsV2Request, ListAppsV2Response> listAppsV2AsyncInvoker(ListAppsV2Request request) {
-        return new AsyncInvoker<ListAppsV2Request, ListAppsV2Response>(request, ApigMeta.listAppsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAppsV2, hcClient);
     }
 
     /**
@@ -2481,7 +2427,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesV2Request 请求对象
+     * @param request ListAvailableZonesV2Request 请求对象
      * @return CompletableFuture<ListAvailableZonesV2Response>
      */
     public CompletableFuture<ListAvailableZonesV2Response> listAvailableZonesV2Async(
@@ -2496,13 +2442,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesV2Request 请求对象
+     * @param request ListAvailableZonesV2Request 请求对象
      * @return AsyncInvoker<ListAvailableZonesV2Request, ListAvailableZonesV2Response>
      */
     public AsyncInvoker<ListAvailableZonesV2Request, ListAvailableZonesV2Response> listAvailableZonesV2AsyncInvoker(
         ListAvailableZonesV2Request request) {
-        return new AsyncInvoker<ListAvailableZonesV2Request, ListAvailableZonesV2Response>(request,
-            ApigMeta.listAvailableZonesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAvailableZonesV2, hcClient);
     }
 
     /**
@@ -2512,7 +2457,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomAuthorizersV2Request 请求对象
+     * @param request ListCustomAuthorizersV2Request 请求对象
      * @return CompletableFuture<ListCustomAuthorizersV2Response>
      */
     public CompletableFuture<ListCustomAuthorizersV2Response> listCustomAuthorizersV2Async(
@@ -2527,13 +2472,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCustomAuthorizersV2Request 请求对象
+     * @param request ListCustomAuthorizersV2Request 请求对象
      * @return AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>
      */
     public AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> listCustomAuthorizersV2AsyncInvoker(
         ListCustomAuthorizersV2Request request) {
-        return new AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>(request,
-            ApigMeta.listCustomAuthorizersV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listCustomAuthorizersV2, hcClient);
     }
 
     /**
@@ -2543,7 +2487,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointConnectionsRequest 请求对象
+     * @param request ListEndpointConnectionsRequest 请求对象
      * @return CompletableFuture<ListEndpointConnectionsResponse>
      */
     public CompletableFuture<ListEndpointConnectionsResponse> listEndpointConnectionsAsync(
@@ -2558,13 +2502,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointConnectionsRequest 请求对象
+     * @param request ListEndpointConnectionsRequest 请求对象
      * @return AsyncInvoker<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse>
      */
     public AsyncInvoker<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse> listEndpointConnectionsAsyncInvoker(
         ListEndpointConnectionsRequest request) {
-        return new AsyncInvoker<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse>(request,
-            ApigMeta.listEndpointConnections, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listEndpointConnections, hcClient);
     }
 
     /**
@@ -2574,7 +2517,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointPermissionsRequest 请求对象
+     * @param request ListEndpointPermissionsRequest 请求对象
      * @return CompletableFuture<ListEndpointPermissionsResponse>
      */
     public CompletableFuture<ListEndpointPermissionsResponse> listEndpointPermissionsAsync(
@@ -2589,13 +2532,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEndpointPermissionsRequest 请求对象
+     * @param request ListEndpointPermissionsRequest 请求对象
      * @return AsyncInvoker<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse>
      */
     public AsyncInvoker<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse> listEndpointPermissionsAsyncInvoker(
         ListEndpointPermissionsRequest request) {
-        return new AsyncInvoker<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse>(request,
-            ApigMeta.listEndpointPermissions, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listEndpointPermissions, hcClient);
     }
 
     /**
@@ -2605,7 +2547,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentVariablesV2Request 请求对象
+     * @param request ListEnvironmentVariablesV2Request 请求对象
      * @return CompletableFuture<ListEnvironmentVariablesV2Response>
      */
     public CompletableFuture<ListEnvironmentVariablesV2Response> listEnvironmentVariablesV2Async(
@@ -2620,13 +2562,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentVariablesV2Request 请求对象
+     * @param request ListEnvironmentVariablesV2Request 请求对象
      * @return AsyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response>
      */
     public AsyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> listEnvironmentVariablesV2AsyncInvoker(
         ListEnvironmentVariablesV2Request request) {
-        return new AsyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response>(request,
-            ApigMeta.listEnvironmentVariablesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listEnvironmentVariablesV2, hcClient);
     }
 
     /**
@@ -2636,7 +2577,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentsV2Request 请求对象
+     * @param request ListEnvironmentsV2Request 请求对象
      * @return CompletableFuture<ListEnvironmentsV2Response>
      */
     public CompletableFuture<ListEnvironmentsV2Response> listEnvironmentsV2Async(ListEnvironmentsV2Request request) {
@@ -2650,13 +2591,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnvironmentsV2Request 请求对象
+     * @param request ListEnvironmentsV2Request 请求对象
      * @return AsyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response>
      */
     public AsyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response> listEnvironmentsV2AsyncInvoker(
         ListEnvironmentsV2Request request) {
-        return new AsyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response>(request,
-            ApigMeta.listEnvironmentsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listEnvironmentsV2, hcClient);
     }
 
     /**
@@ -2668,7 +2608,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFeaturesV2Request 请求对象
+     * @param request ListFeaturesV2Request 请求对象
      * @return CompletableFuture<ListFeaturesV2Response>
      */
     public CompletableFuture<ListFeaturesV2Response> listFeaturesV2Async(ListFeaturesV2Request request) {
@@ -2684,13 +2624,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFeaturesV2Request 请求对象
+     * @param request ListFeaturesV2Request 请求对象
      * @return AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response>
      */
     public AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response> listFeaturesV2AsyncInvoker(
         ListFeaturesV2Request request) {
-        return new AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response>(request, ApigMeta.listFeaturesV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listFeaturesV2, hcClient);
     }
 
     /**
@@ -2700,7 +2639,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGatewayResponsesV2Request 请求对象
+     * @param request ListGatewayResponsesV2Request 请求对象
      * @return CompletableFuture<ListGatewayResponsesV2Response>
      */
     public CompletableFuture<ListGatewayResponsesV2Response> listGatewayResponsesV2Async(
@@ -2715,13 +2654,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGatewayResponsesV2Request 请求对象
+     * @param request ListGatewayResponsesV2Request 请求对象
      * @return AsyncInvoker<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response>
      */
     public AsyncInvoker<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response> listGatewayResponsesV2AsyncInvoker(
         ListGatewayResponsesV2Request request) {
-        return new AsyncInvoker<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response>(request,
-            ApigMeta.listGatewayResponsesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listGatewayResponsesV2, hcClient);
     }
 
     /**
@@ -2731,7 +2669,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConfigsV2Request 请求对象
+     * @param request ListInstanceConfigsV2Request 请求对象
      * @return CompletableFuture<ListInstanceConfigsV2Response>
      */
     public CompletableFuture<ListInstanceConfigsV2Response> listInstanceConfigsV2Async(
@@ -2746,13 +2684,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceConfigsV2Request 请求对象
+     * @param request ListInstanceConfigsV2Request 请求对象
      * @return AsyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response>
      */
     public AsyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response> listInstanceConfigsV2AsyncInvoker(
         ListInstanceConfigsV2Request request) {
-        return new AsyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response>(request,
-            ApigMeta.listInstanceConfigsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listInstanceConfigsV2, hcClient);
     }
 
     /**
@@ -2762,7 +2699,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTagsRequest 请求对象
+     * @param request ListInstanceTagsRequest 请求对象
      * @return CompletableFuture<ListInstanceTagsResponse>
      */
     public CompletableFuture<ListInstanceTagsResponse> listInstanceTagsAsync(ListInstanceTagsRequest request) {
@@ -2776,13 +2713,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceTagsRequest 请求对象
+     * @param request ListInstanceTagsRequest 请求对象
      * @return AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
      */
     public AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsAsyncInvoker(
         ListInstanceTagsRequest request) {
-        return new AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, ApigMeta.listInstanceTags,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listInstanceTags, hcClient);
     }
 
     /**
@@ -2792,7 +2728,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesV2Request 请求对象
+     * @param request ListInstancesV2Request 请求对象
      * @return CompletableFuture<ListInstancesV2Response>
      */
     public CompletableFuture<ListInstancesV2Response> listInstancesV2Async(ListInstancesV2Request request) {
@@ -2806,13 +2742,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesV2Request 请求对象
+     * @param request ListInstancesV2Request 请求对象
      * @return AsyncInvoker<ListInstancesV2Request, ListInstancesV2Response>
      */
     public AsyncInvoker<ListInstancesV2Request, ListInstancesV2Response> listInstancesV2AsyncInvoker(
         ListInstancesV2Request request) {
-        return new AsyncInvoker<ListInstancesV2Request, ListInstancesV2Response>(request, ApigMeta.listInstancesV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listInstancesV2, hcClient);
     }
 
     /**
@@ -2823,7 +2758,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLatelyApiStatisticsV2Request 请求对象
+     * @param request ListLatelyApiStatisticsV2Request 请求对象
      * @return CompletableFuture<ListLatelyApiStatisticsV2Response>
      */
     public CompletableFuture<ListLatelyApiStatisticsV2Response> listLatelyApiStatisticsV2Async(
@@ -2839,13 +2774,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLatelyApiStatisticsV2Request 请求对象
+     * @param request ListLatelyApiStatisticsV2Request 请求对象
      * @return AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response>
      */
     public AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> listLatelyApiStatisticsV2AsyncInvoker(
         ListLatelyApiStatisticsV2Request request) {
-        return new AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response>(request,
-            ApigMeta.listLatelyApiStatisticsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listLatelyApiStatisticsV2, hcClient);
     }
 
     /**
@@ -2856,7 +2790,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLatelyGroupStatisticsV2Request 请求对象
+     * @param request ListLatelyGroupStatisticsV2Request 请求对象
      * @return CompletableFuture<ListLatelyGroupStatisticsV2Response>
      */
     public CompletableFuture<ListLatelyGroupStatisticsV2Response> listLatelyGroupStatisticsV2Async(
@@ -2872,13 +2806,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListLatelyGroupStatisticsV2Request 请求对象
+     * @param request ListLatelyGroupStatisticsV2Request 请求对象
      * @return AsyncInvoker<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response>
      */
     public AsyncInvoker<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response> listLatelyGroupStatisticsV2AsyncInvoker(
         ListLatelyGroupStatisticsV2Request request) {
-        return new AsyncInvoker<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response>(request,
-            ApigMeta.listLatelyGroupStatisticsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listLatelyGroupStatisticsV2, hcClient);
     }
 
     /**
@@ -2888,7 +2821,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetricDataRequest 请求对象
+     * @param request ListMetricDataRequest 请求对象
      * @return CompletableFuture<ListMetricDataResponse>
      */
     public CompletableFuture<ListMetricDataResponse> listMetricDataAsync(ListMetricDataRequest request) {
@@ -2902,13 +2835,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMetricDataRequest 请求对象
+     * @param request ListMetricDataRequest 请求对象
      * @return AsyncInvoker<ListMetricDataRequest, ListMetricDataResponse>
      */
     public AsyncInvoker<ListMetricDataRequest, ListMetricDataResponse> listMetricDataAsyncInvoker(
         ListMetricDataRequest request) {
-        return new AsyncInvoker<ListMetricDataRequest, ListMetricDataResponse>(request, ApigMeta.listMetricData,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listMetricData, hcClient);
     }
 
     /**
@@ -2921,7 +2853,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachableApisRequest 请求对象
+     * @param request ListPluginAttachableApisRequest 请求对象
      * @return CompletableFuture<ListPluginAttachableApisResponse>
      */
     public CompletableFuture<ListPluginAttachableApisResponse> listPluginAttachableApisAsync(
@@ -2939,13 +2871,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachableApisRequest 请求对象
+     * @param request ListPluginAttachableApisRequest 请求对象
      * @return AsyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>
      */
     public AsyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> listPluginAttachableApisAsyncInvoker(
         ListPluginAttachableApisRequest request) {
-        return new AsyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>(request,
-            ApigMeta.listPluginAttachableApis, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listPluginAttachableApis, hcClient);
     }
 
     /**
@@ -2959,7 +2890,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachedApisRequest 请求对象
+     * @param request ListPluginAttachedApisRequest 请求对象
      * @return CompletableFuture<ListPluginAttachedApisResponse>
      */
     public CompletableFuture<ListPluginAttachedApisResponse> listPluginAttachedApisAsync(
@@ -2978,13 +2909,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginAttachedApisRequest 请求对象
+     * @param request ListPluginAttachedApisRequest 请求对象
      * @return AsyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>
      */
     public AsyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> listPluginAttachedApisAsyncInvoker(
         ListPluginAttachedApisRequest request) {
-        return new AsyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>(request,
-            ApigMeta.listPluginAttachedApis, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listPluginAttachedApis, hcClient);
     }
 
     /**
@@ -2999,7 +2929,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return CompletableFuture<ListPluginsResponse>
      */
     public CompletableFuture<ListPluginsResponse> listPluginsAsync(ListPluginsRequest request) {
@@ -3018,11 +2948,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPluginsRequest 请求对象
+     * @param request ListPluginsRequest 请求对象
      * @return AsyncInvoker<ListPluginsRequest, ListPluginsResponse>
      */
     public AsyncInvoker<ListPluginsRequest, ListPluginsResponse> listPluginsAsyncInvoker(ListPluginsRequest request) {
-        return new AsyncInvoker<ListPluginsRequest, ListPluginsResponse>(request, ApigMeta.listPlugins, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listPlugins, hcClient);
     }
 
     /**
@@ -3032,7 +2962,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectCofigsV2Request 请求对象
+     * @param request ListProjectCofigsV2Request 请求对象
      * @return CompletableFuture<ListProjectCofigsV2Response>
      */
     public CompletableFuture<ListProjectCofigsV2Response> listProjectCofigsV2Async(ListProjectCofigsV2Request request) {
@@ -3046,13 +2976,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectCofigsV2Request 请求对象
+     * @param request ListProjectCofigsV2Request 请求对象
      * @return AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>
      */
     public AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response> listProjectCofigsV2AsyncInvoker(
         ListProjectCofigsV2Request request) {
-        return new AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>(request,
-            ApigMeta.listProjectCofigsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listProjectCofigsV2, hcClient);
     }
 
     /**
@@ -3062,7 +2991,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectInstanceTagsRequest 请求对象
+     * @param request ListProjectInstanceTagsRequest 请求对象
      * @return CompletableFuture<ListProjectInstanceTagsResponse>
      */
     public CompletableFuture<ListProjectInstanceTagsResponse> listProjectInstanceTagsAsync(
@@ -3077,13 +3006,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListProjectInstanceTagsRequest 请求对象
+     * @param request ListProjectInstanceTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse>
      */
     public AsyncInvoker<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse> listProjectInstanceTagsAsyncInvoker(
         ListProjectInstanceTagsRequest request) {
-        return new AsyncInvoker<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse>(request,
-            ApigMeta.listProjectInstanceTags, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listProjectInstanceTags, hcClient);
     }
 
     /**
@@ -3093,7 +3021,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<ListRequestThrottlingPolicyV2Response> listRequestThrottlingPolicyV2Async(
@@ -3108,13 +3036,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> listRequestThrottlingPolicyV2AsyncInvoker(
         ListRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response>(request,
-            ApigMeta.listRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -3124,7 +3051,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysBindedToApiV2Request 请求对象
+     * @param request ListSignatureKeysBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListSignatureKeysBindedToApiV2Response>
      */
     public CompletableFuture<ListSignatureKeysBindedToApiV2Response> listSignatureKeysBindedToApiV2Async(
@@ -3139,13 +3066,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysBindedToApiV2Request 请求对象
+     * @param request ListSignatureKeysBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response>
      */
     public AsyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> listSignatureKeysBindedToApiV2AsyncInvoker(
         ListSignatureKeysBindedToApiV2Request request) {
-        return new AsyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response>(request,
-            ApigMeta.listSignatureKeysBindedToApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listSignatureKeysBindedToApiV2, hcClient);
     }
 
     /**
@@ -3155,7 +3081,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysV2Request 请求对象
+     * @param request ListSignatureKeysV2Request 请求对象
      * @return CompletableFuture<ListSignatureKeysV2Response>
      */
     public CompletableFuture<ListSignatureKeysV2Response> listSignatureKeysV2Async(ListSignatureKeysV2Request request) {
@@ -3169,13 +3095,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSignatureKeysV2Request 请求对象
+     * @param request ListSignatureKeysV2Request 请求对象
      * @return AsyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response>
      */
     public AsyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response> listSignatureKeysV2AsyncInvoker(
         ListSignatureKeysV2Request request) {
-        return new AsyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response>(request,
-            ApigMeta.listSignatureKeysV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listSignatureKeysV2, hcClient);
     }
 
     /**
@@ -3185,7 +3110,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
+     * @param request ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return CompletableFuture<ListSpecialThrottlingConfigurationsV2Response>
      */
     public CompletableFuture<ListSpecialThrottlingConfigurationsV2Response> listSpecialThrottlingConfigurationsV2Async(
@@ -3200,13 +3125,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
+     * @param request ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return AsyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response>
      */
     public AsyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> listSpecialThrottlingConfigurationsV2AsyncInvoker(
         ListSpecialThrottlingConfigurationsV2Request request) {
-        return new AsyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response>(
-            request, ApigMeta.listSpecialThrottlingConfigurationsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listSpecialThrottlingConfigurationsV2, hcClient);
     }
 
     /**
@@ -3216,7 +3140,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsV2Request 请求对象
+     * @param request ListTagsV2Request 请求对象
      * @return CompletableFuture<ListTagsV2Response>
      */
     public CompletableFuture<ListTagsV2Response> listTagsV2Async(ListTagsV2Request request) {
@@ -3230,11 +3154,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsV2Request 请求对象
+     * @param request ListTagsV2Request 请求对象
      * @return AsyncInvoker<ListTagsV2Request, ListTagsV2Response>
      */
     public AsyncInvoker<ListTagsV2Request, ListTagsV2Response> listTagsV2AsyncInvoker(ListTagsV2Request request) {
-        return new AsyncInvoker<ListTagsV2Request, ListTagsV2Response>(request, ApigMeta.listTagsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listTagsV2, hcClient);
     }
 
     /**
@@ -3244,7 +3168,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveEipV2Request 请求对象
+     * @param request RemoveEipV2Request 请求对象
      * @return CompletableFuture<RemoveEipV2Response>
      */
     public CompletableFuture<RemoveEipV2Response> removeEipV2Async(RemoveEipV2Request request) {
@@ -3258,11 +3182,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveEipV2Request 请求对象
+     * @param request RemoveEipV2Request 请求对象
      * @return AsyncInvoker<RemoveEipV2Request, RemoveEipV2Response>
      */
     public AsyncInvoker<RemoveEipV2Request, RemoveEipV2Response> removeEipV2AsyncInvoker(RemoveEipV2Request request) {
-        return new AsyncInvoker<RemoveEipV2Request, RemoveEipV2Response>(request, ApigMeta.removeEipV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.removeEipV2, hcClient);
     }
 
     /**
@@ -3272,7 +3196,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveEngressEipV2Request 请求对象
+     * @param request RemoveEngressEipV2Request 请求对象
      * @return CompletableFuture<RemoveEngressEipV2Response>
      */
     public CompletableFuture<RemoveEngressEipV2Response> removeEngressEipV2Async(RemoveEngressEipV2Request request) {
@@ -3286,13 +3210,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveEngressEipV2Request 请求对象
+     * @param request RemoveEngressEipV2Request 请求对象
      * @return AsyncInvoker<RemoveEngressEipV2Request, RemoveEngressEipV2Response>
      */
     public AsyncInvoker<RemoveEngressEipV2Request, RemoveEngressEipV2Response> removeEngressEipV2AsyncInvoker(
         RemoveEngressEipV2Request request) {
-        return new AsyncInvoker<RemoveEngressEipV2Request, RemoveEngressEipV2Response>(request,
-            ApigMeta.removeEngressEipV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.removeEngressEipV2, hcClient);
     }
 
     /**
@@ -3302,7 +3225,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveIngressEipV2Request 请求对象
+     * @param request RemoveIngressEipV2Request 请求对象
      * @return CompletableFuture<RemoveIngressEipV2Response>
      */
     public CompletableFuture<RemoveIngressEipV2Response> removeIngressEipV2Async(RemoveIngressEipV2Request request) {
@@ -3316,13 +3239,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveIngressEipV2Request 请求对象
+     * @param request RemoveIngressEipV2Request 请求对象
      * @return AsyncInvoker<RemoveIngressEipV2Request, RemoveIngressEipV2Response>
      */
     public AsyncInvoker<RemoveIngressEipV2Request, RemoveIngressEipV2Response> removeIngressEipV2AsyncInvoker(
         RemoveIngressEipV2Request request) {
-        return new AsyncInvoker<RemoveIngressEipV2Request, RemoveIngressEipV2Response>(request,
-            ApigMeta.removeIngressEipV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.removeIngressEipV2, hcClient);
     }
 
     /**
@@ -3332,7 +3254,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResettingAppSecretV2Request 请求对象
+     * @param request ResettingAppSecretV2Request 请求对象
      * @return CompletableFuture<ResettingAppSecretV2Response>
      */
     public CompletableFuture<ResettingAppSecretV2Response> resettingAppSecretV2Async(
@@ -3347,13 +3269,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResettingAppSecretV2Request 请求对象
+     * @param request ResettingAppSecretV2Request 请求对象
      * @return AsyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response>
      */
     public AsyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response> resettingAppSecretV2AsyncInvoker(
         ResettingAppSecretV2Request request) {
-        return new AsyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response>(request,
-            ApigMeta.resettingAppSecretV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.resettingAppSecretV2, hcClient);
     }
 
     /**
@@ -3363,7 +3284,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppBoundAppQuotaRequest 请求对象
+     * @param request ShowAppBoundAppQuotaRequest 请求对象
      * @return CompletableFuture<ShowAppBoundAppQuotaResponse>
      */
     public CompletableFuture<ShowAppBoundAppQuotaResponse> showAppBoundAppQuotaAsync(
@@ -3378,13 +3299,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppBoundAppQuotaRequest 请求对象
+     * @param request ShowAppBoundAppQuotaRequest 请求对象
      * @return AsyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse>
      */
     public AsyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> showAppBoundAppQuotaAsyncInvoker(
         ShowAppBoundAppQuotaRequest request) {
-        return new AsyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse>(request,
-            ApigMeta.showAppBoundAppQuota, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showAppBoundAppQuota, hcClient);
     }
 
     /**
@@ -3394,7 +3314,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppQuotaRequest 请求对象
+     * @param request ShowAppQuotaRequest 请求对象
      * @return CompletableFuture<ShowAppQuotaResponse>
      */
     public CompletableFuture<ShowAppQuotaResponse> showAppQuotaAsync(ShowAppQuotaRequest request) {
@@ -3408,12 +3328,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppQuotaRequest 请求对象
+     * @param request ShowAppQuotaRequest 请求对象
      * @return AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse>
      */
     public AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse> showAppQuotaAsyncInvoker(
         ShowAppQuotaRequest request) {
-        return new AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse>(request, ApigMeta.showAppQuota, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showAppQuota, hcClient);
     }
 
     /**
@@ -3423,7 +3343,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppAclRequest 请求对象
+     * @param request ShowDetailsOfAppAclRequest 请求对象
      * @return CompletableFuture<ShowDetailsOfAppAclResponse>
      */
     public CompletableFuture<ShowDetailsOfAppAclResponse> showDetailsOfAppAclAsync(ShowDetailsOfAppAclRequest request) {
@@ -3437,13 +3357,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppAclRequest 请求对象
+     * @param request ShowDetailsOfAppAclRequest 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse>
      */
     public AsyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> showDetailsOfAppAclAsyncInvoker(
         ShowDetailsOfAppAclRequest request) {
-        return new AsyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse>(request,
-            ApigMeta.showDetailsOfAppAcl, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfAppAcl, hcClient);
     }
 
     /**
@@ -3453,7 +3372,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppCodeV2Request 请求对象
+     * @param request ShowDetailsOfAppCodeV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAppCodeV2Response>
      */
     public CompletableFuture<ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2Async(
@@ -3468,13 +3387,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppCodeV2Request 请求对象
+     * @param request ShowDetailsOfAppCodeV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>
      */
     public AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2AsyncInvoker(
         ShowDetailsOfAppCodeV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>(request,
-            ApigMeta.showDetailsOfAppCodeV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfAppCodeV2, hcClient);
     }
 
     /**
@@ -3484,7 +3402,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppV2Request 请求对象
+     * @param request ShowDetailsOfAppV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAppV2Response>
      */
     public CompletableFuture<ShowDetailsOfAppV2Response> showDetailsOfAppV2Async(ShowDetailsOfAppV2Request request) {
@@ -3498,13 +3416,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAppV2Request 请求对象
+     * @param request ShowDetailsOfAppV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>
      */
     public AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> showDetailsOfAppV2AsyncInvoker(
         ShowDetailsOfAppV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>(request,
-            ApigMeta.showDetailsOfAppV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfAppV2, hcClient);
     }
 
     /**
@@ -3514,7 +3431,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
+     * @param request ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfCustomAuthorizersV2Response>
      */
     public CompletableFuture<ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2Async(
@@ -3529,13 +3446,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
+     * @param request ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response>
      */
     public AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2AsyncInvoker(
         ShowDetailsOfCustomAuthorizersV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response>(
-            request, ApigMeta.showDetailsOfCustomAuthorizersV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfCustomAuthorizersV2, hcClient);
     }
 
     /**
@@ -3545,7 +3461,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
+     * @param request ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfDomainNameCertificateV2Response>
      */
     public CompletableFuture<ShowDetailsOfDomainNameCertificateV2Response> showDetailsOfDomainNameCertificateV2Async(
@@ -3560,13 +3476,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
+     * @param request ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response>
      */
     public AsyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> showDetailsOfDomainNameCertificateV2AsyncInvoker(
         ShowDetailsOfDomainNameCertificateV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response>(
-            request, ApigMeta.showDetailsOfDomainNameCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfDomainNameCertificateV2, hcClient);
     }
 
     /**
@@ -3576,7 +3491,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
+     * @param request ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfEnvironmentVariableV2Response>
      */
     public CompletableFuture<ShowDetailsOfEnvironmentVariableV2Response> showDetailsOfEnvironmentVariableV2Async(
@@ -3591,13 +3506,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
+     * @param request ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response>
      */
     public AsyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> showDetailsOfEnvironmentVariableV2AsyncInvoker(
         ShowDetailsOfEnvironmentVariableV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response>(
-            request, ApigMeta.showDetailsOfEnvironmentVariableV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -3607,7 +3521,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfGatewayResponseTypeV2Request 请求对象
+     * @param request ShowDetailsOfGatewayResponseTypeV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfGatewayResponseTypeV2Response>
      */
     public CompletableFuture<ShowDetailsOfGatewayResponseTypeV2Response> showDetailsOfGatewayResponseTypeV2Async(
@@ -3622,13 +3536,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfGatewayResponseTypeV2Request 请求对象
+     * @param request ShowDetailsOfGatewayResponseTypeV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response>
      */
     public AsyncInvoker<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response> showDetailsOfGatewayResponseTypeV2AsyncInvoker(
         ShowDetailsOfGatewayResponseTypeV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response>(
-            request, ApigMeta.showDetailsOfGatewayResponseTypeV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfGatewayResponseTypeV2, hcClient);
     }
 
     /**
@@ -3638,7 +3551,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfGatewayResponseV2Request 请求对象
+     * @param request ShowDetailsOfGatewayResponseV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfGatewayResponseV2Response>
      */
     public CompletableFuture<ShowDetailsOfGatewayResponseV2Response> showDetailsOfGatewayResponseV2Async(
@@ -3653,13 +3566,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfGatewayResponseV2Request 请求对象
+     * @param request ShowDetailsOfGatewayResponseV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response>
      */
     public AsyncInvoker<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response> showDetailsOfGatewayResponseV2AsyncInvoker(
         ShowDetailsOfGatewayResponseV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response>(request,
-            ApigMeta.showDetailsOfGatewayResponseV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfGatewayResponseV2, hcClient);
     }
 
     /**
@@ -3669,7 +3581,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfInstanceProgressV2Request 请求对象
+     * @param request ShowDetailsOfInstanceProgressV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfInstanceProgressV2Response>
      */
     public CompletableFuture<ShowDetailsOfInstanceProgressV2Response> showDetailsOfInstanceProgressV2Async(
@@ -3684,13 +3596,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfInstanceProgressV2Request 请求对象
+     * @param request ShowDetailsOfInstanceProgressV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response>
      */
     public AsyncInvoker<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response> showDetailsOfInstanceProgressV2AsyncInvoker(
         ShowDetailsOfInstanceProgressV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response>(
-            request, ApigMeta.showDetailsOfInstanceProgressV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfInstanceProgressV2, hcClient);
     }
 
     /**
@@ -3700,7 +3611,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfInstanceV2Request 请求对象
+     * @param request ShowDetailsOfInstanceV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfInstanceV2Response>
      */
     public CompletableFuture<ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2Async(
@@ -3715,13 +3626,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfInstanceV2Request 请求对象
+     * @param request ShowDetailsOfInstanceV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>
      */
     public AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2AsyncInvoker(
         ShowDetailsOfInstanceV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>(request,
-            ApigMeta.showDetailsOfInstanceV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfInstanceV2, hcClient);
     }
 
     /**
@@ -3731,7 +3641,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
+     * @param request ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2Async(
@@ -3746,13 +3656,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
+     * @param request ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2AsyncInvoker(
         ShowDetailsOfRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.showDetailsOfRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -3762,7 +3671,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginRequest 请求对象
+     * @param request ShowPluginRequest 请求对象
      * @return CompletableFuture<ShowPluginResponse>
      */
     public CompletableFuture<ShowPluginResponse> showPluginAsync(ShowPluginRequest request) {
@@ -3776,11 +3685,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPluginRequest 请求对象
+     * @param request ShowPluginRequest 请求对象
      * @return AsyncInvoker<ShowPluginRequest, ShowPluginResponse>
      */
     public AsyncInvoker<ShowPluginRequest, ShowPluginResponse> showPluginAsyncInvoker(ShowPluginRequest request) {
-        return new AsyncInvoker<ShowPluginRequest, ShowPluginResponse>(request, ApigMeta.showPlugin, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showPlugin, hcClient);
     }
 
     /**
@@ -3790,7 +3699,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @param request ShowRestrictionOfInstanceV2Request 请求对象
      * @return CompletableFuture<ShowRestrictionOfInstanceV2Response>
      */
     public CompletableFuture<ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2Async(
@@ -3805,13 +3714,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @param request ShowRestrictionOfInstanceV2Request 请求对象
      * @return AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>
      */
     public AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2AsyncInvoker(
         ShowRestrictionOfInstanceV2Request request) {
-        return new AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>(request,
-            ApigMeta.showRestrictionOfInstanceV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showRestrictionOfInstanceV2, hcClient);
     }
 
     /**
@@ -3821,7 +3729,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppAclRequest 请求对象
+     * @param request UpdateAppAclRequest 请求对象
      * @return CompletableFuture<UpdateAppAclResponse>
      */
     public CompletableFuture<UpdateAppAclResponse> updateAppAclAsync(UpdateAppAclRequest request) {
@@ -3835,12 +3743,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppAclRequest 请求对象
+     * @param request UpdateAppAclRequest 请求对象
      * @return AsyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse>
      */
     public AsyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse> updateAppAclAsyncInvoker(
         UpdateAppAclRequest request) {
-        return new AsyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse>(request, ApigMeta.updateAppAcl, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateAppAcl, hcClient);
     }
 
     /**
@@ -3850,7 +3758,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppQuotaRequest 请求对象
+     * @param request UpdateAppQuotaRequest 请求对象
      * @return CompletableFuture<UpdateAppQuotaResponse>
      */
     public CompletableFuture<UpdateAppQuotaResponse> updateAppQuotaAsync(UpdateAppQuotaRequest request) {
@@ -3864,13 +3772,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppQuotaRequest 请求对象
+     * @param request UpdateAppQuotaRequest 请求对象
      * @return AsyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse>
      */
     public AsyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse> updateAppQuotaAsyncInvoker(
         UpdateAppQuotaRequest request) {
-        return new AsyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse>(request, ApigMeta.updateAppQuota,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateAppQuota, hcClient);
     }
 
     /**
@@ -3880,7 +3787,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppV2Request 请求对象
+     * @param request UpdateAppV2Request 请求对象
      * @return CompletableFuture<UpdateAppV2Response>
      */
     public CompletableFuture<UpdateAppV2Response> updateAppV2Async(UpdateAppV2Request request) {
@@ -3894,11 +3801,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAppV2Request 请求对象
+     * @param request UpdateAppV2Request 请求对象
      * @return AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response>
      */
     public AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response> updateAppV2AsyncInvoker(UpdateAppV2Request request) {
-        return new AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response>(request, ApigMeta.updateAppV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateAppV2, hcClient);
     }
 
     /**
@@ -3908,7 +3815,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomAuthorizerV2Request 请求对象
+     * @param request UpdateCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<UpdateCustomAuthorizerV2Response>
      */
     public CompletableFuture<UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2Async(
@@ -3923,13 +3830,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCustomAuthorizerV2Request 请求对象
+     * @param request UpdateCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response>
      */
     public AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2AsyncInvoker(
         UpdateCustomAuthorizerV2Request request) {
-        return new AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response>(request,
-            ApigMeta.updateCustomAuthorizerV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateCustomAuthorizerV2, hcClient);
     }
 
     /**
@@ -3939,7 +3845,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainV2Request 请求对象
+     * @param request UpdateDomainV2Request 请求对象
      * @return CompletableFuture<UpdateDomainV2Response>
      */
     public CompletableFuture<UpdateDomainV2Response> updateDomainV2Async(UpdateDomainV2Request request) {
@@ -3953,13 +3859,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDomainV2Request 请求对象
+     * @param request UpdateDomainV2Request 请求对象
      * @return AsyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>
      */
     public AsyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response> updateDomainV2AsyncInvoker(
         UpdateDomainV2Request request) {
-        return new AsyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>(request, ApigMeta.updateDomainV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateDomainV2, hcClient);
     }
 
     /**
@@ -3969,7 +3874,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEngressEipV2Request 请求对象
+     * @param request UpdateEngressEipV2Request 请求对象
      * @return CompletableFuture<UpdateEngressEipV2Response>
      */
     public CompletableFuture<UpdateEngressEipV2Response> updateEngressEipV2Async(UpdateEngressEipV2Request request) {
@@ -3983,13 +3888,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEngressEipV2Request 请求对象
+     * @param request UpdateEngressEipV2Request 请求对象
      * @return AsyncInvoker<UpdateEngressEipV2Request, UpdateEngressEipV2Response>
      */
     public AsyncInvoker<UpdateEngressEipV2Request, UpdateEngressEipV2Response> updateEngressEipV2AsyncInvoker(
         UpdateEngressEipV2Request request) {
-        return new AsyncInvoker<UpdateEngressEipV2Request, UpdateEngressEipV2Response>(request,
-            ApigMeta.updateEngressEipV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateEngressEipV2, hcClient);
     }
 
     /**
@@ -3999,7 +3903,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentV2Request 请求对象
+     * @param request UpdateEnvironmentV2Request 请求对象
      * @return CompletableFuture<UpdateEnvironmentV2Response>
      */
     public CompletableFuture<UpdateEnvironmentV2Response> updateEnvironmentV2Async(UpdateEnvironmentV2Request request) {
@@ -4013,13 +3917,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentV2Request 请求对象
+     * @param request UpdateEnvironmentV2Request 请求对象
      * @return AsyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>
      */
     public AsyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> updateEnvironmentV2AsyncInvoker(
         UpdateEnvironmentV2Request request) {
-        return new AsyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>(request,
-            ApigMeta.updateEnvironmentV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateEnvironmentV2, hcClient);
     }
 
     /**
@@ -4029,7 +3932,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentVariableV2Request 请求对象
+     * @param request UpdateEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<UpdateEnvironmentVariableV2Response>
      */
     public CompletableFuture<UpdateEnvironmentVariableV2Response> updateEnvironmentVariableV2Async(
@@ -4044,13 +3947,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateEnvironmentVariableV2Request 请求对象
+     * @param request UpdateEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response>
      */
     public AsyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> updateEnvironmentVariableV2AsyncInvoker(
         UpdateEnvironmentVariableV2Request request) {
-        return new AsyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response>(request,
-            ApigMeta.updateEnvironmentVariableV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -4060,7 +3962,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGatewayResponseTypeV2Request 请求对象
+     * @param request UpdateGatewayResponseTypeV2Request 请求对象
      * @return CompletableFuture<UpdateGatewayResponseTypeV2Response>
      */
     public CompletableFuture<UpdateGatewayResponseTypeV2Response> updateGatewayResponseTypeV2Async(
@@ -4075,13 +3977,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGatewayResponseTypeV2Request 请求对象
+     * @param request UpdateGatewayResponseTypeV2Request 请求对象
      * @return AsyncInvoker<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response>
      */
     public AsyncInvoker<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response> updateGatewayResponseTypeV2AsyncInvoker(
         UpdateGatewayResponseTypeV2Request request) {
-        return new AsyncInvoker<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response>(request,
-            ApigMeta.updateGatewayResponseTypeV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateGatewayResponseTypeV2, hcClient);
     }
 
     /**
@@ -4091,7 +3992,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGatewayResponseV2Request 请求对象
+     * @param request UpdateGatewayResponseV2Request 请求对象
      * @return CompletableFuture<UpdateGatewayResponseV2Response>
      */
     public CompletableFuture<UpdateGatewayResponseV2Response> updateGatewayResponseV2Async(
@@ -4106,13 +4007,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateGatewayResponseV2Request 请求对象
+     * @param request UpdateGatewayResponseV2Request 请求对象
      * @return AsyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response>
      */
     public AsyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response> updateGatewayResponseV2AsyncInvoker(
         UpdateGatewayResponseV2Request request) {
-        return new AsyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response>(request,
-            ApigMeta.updateGatewayResponseV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateGatewayResponseV2, hcClient);
     }
 
     /**
@@ -4122,7 +4022,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIngressEipV2Request 请求对象
+     * @param request UpdateIngressEipV2Request 请求对象
      * @return CompletableFuture<UpdateIngressEipV2Response>
      */
     public CompletableFuture<UpdateIngressEipV2Response> updateIngressEipV2Async(UpdateIngressEipV2Request request) {
@@ -4136,13 +4036,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIngressEipV2Request 请求对象
+     * @param request UpdateIngressEipV2Request 请求对象
      * @return AsyncInvoker<UpdateIngressEipV2Request, UpdateIngressEipV2Response>
      */
     public AsyncInvoker<UpdateIngressEipV2Request, UpdateIngressEipV2Response> updateIngressEipV2AsyncInvoker(
         UpdateIngressEipV2Request request) {
-        return new AsyncInvoker<UpdateIngressEipV2Request, UpdateIngressEipV2Response>(request,
-            ApigMeta.updateIngressEipV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateIngressEipV2, hcClient);
     }
 
     /**
@@ -4152,7 +4051,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceV2Request 请求对象
+     * @param request UpdateInstanceV2Request 请求对象
      * @return CompletableFuture<UpdateInstanceV2Response>
      */
     public CompletableFuture<UpdateInstanceV2Response> updateInstanceV2Async(UpdateInstanceV2Request request) {
@@ -4166,13 +4065,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceV2Request 请求对象
+     * @param request UpdateInstanceV2Request 请求对象
      * @return AsyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response>
      */
     public AsyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response> updateInstanceV2AsyncInvoker(
         UpdateInstanceV2Request request) {
-        return new AsyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response>(request, ApigMeta.updateInstanceV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateInstanceV2, hcClient);
     }
 
     /**
@@ -4184,7 +4082,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginRequest 请求对象
+     * @param request UpdatePluginRequest 请求对象
      * @return CompletableFuture<UpdatePluginResponse>
      */
     public CompletableFuture<UpdatePluginResponse> updatePluginAsync(UpdatePluginRequest request) {
@@ -4200,12 +4098,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePluginRequest 请求对象
+     * @param request UpdatePluginRequest 请求对象
      * @return AsyncInvoker<UpdatePluginRequest, UpdatePluginResponse>
      */
     public AsyncInvoker<UpdatePluginRequest, UpdatePluginResponse> updatePluginAsyncInvoker(
         UpdatePluginRequest request) {
-        return new AsyncInvoker<UpdatePluginRequest, UpdatePluginResponse>(request, ApigMeta.updatePlugin, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updatePlugin, hcClient);
     }
 
     /**
@@ -4215,7 +4113,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRequestThrottlingPolicyV2Request 请求对象
+     * @param request UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<UpdateRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<UpdateRequestThrottlingPolicyV2Response> updateRequestThrottlingPolicyV2Async(
@@ -4230,13 +4128,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateRequestThrottlingPolicyV2Request 请求对象
+     * @param request UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> updateRequestThrottlingPolicyV2AsyncInvoker(
         UpdateRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.updateRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -4246,7 +4143,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSignatureKeyV2Request 请求对象
+     * @param request UpdateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<UpdateSignatureKeyV2Response>
      */
     public CompletableFuture<UpdateSignatureKeyV2Response> updateSignatureKeyV2Async(
@@ -4261,13 +4158,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSignatureKeyV2Request 请求对象
+     * @param request UpdateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response>
      */
     public AsyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> updateSignatureKeyV2AsyncInvoker(
         UpdateSignatureKeyV2Request request) {
-        return new AsyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response>(request,
-            ApigMeta.updateSignatureKeyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateSignatureKeyV2, hcClient);
     }
 
     /**
@@ -4277,7 +4173,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<UpdateSpecialThrottlingConfigurationV2Response>
      */
     public CompletableFuture<UpdateSpecialThrottlingConfigurationV2Response> updateSpecialThrottlingConfigurationV2Async(
@@ -4292,13 +4188,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
+     * @param request UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response>
      */
     public AsyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> updateSpecialThrottlingConfigurationV2AsyncInvoker(
         UpdateSpecialThrottlingConfigurationV2Request request) {
-        return new AsyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response>(
-            request, ApigMeta.updateSpecialThrottlingConfigurationV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateSpecialThrottlingConfigurationV2, hcClient);
     }
 
     /**
@@ -4310,7 +4205,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAclV2Request 请求对象
+     * @param request BatchDeleteAclV2Request 请求对象
      * @return CompletableFuture<BatchDeleteAclV2Response>
      */
     public CompletableFuture<BatchDeleteAclV2Response> batchDeleteAclV2Async(BatchDeleteAclV2Request request) {
@@ -4326,13 +4221,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteAclV2Request 请求对象
+     * @param request BatchDeleteAclV2Request 请求对象
      * @return AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response>
      */
     public AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response> batchDeleteAclV2AsyncInvoker(
         BatchDeleteAclV2Request request) {
-        return new AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response>(request, ApigMeta.batchDeleteAclV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchDeleteAclV2, hcClient);
     }
 
     /**
@@ -4342,7 +4236,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAclStrategyV2Request 请求对象
+     * @param request CreateAclStrategyV2Request 请求对象
      * @return CompletableFuture<CreateAclStrategyV2Response>
      */
     public CompletableFuture<CreateAclStrategyV2Response> createAclStrategyV2Async(CreateAclStrategyV2Request request) {
@@ -4356,13 +4250,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAclStrategyV2Request 请求对象
+     * @param request CreateAclStrategyV2Request 请求对象
      * @return AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response>
      */
     public AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response> createAclStrategyV2AsyncInvoker(
         CreateAclStrategyV2Request request) {
-        return new AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response>(request,
-            ApigMeta.createAclStrategyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createAclStrategyV2, hcClient);
     }
 
     /**
@@ -4372,7 +4265,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAclV2Request 请求对象
+     * @param request DeleteAclV2Request 请求对象
      * @return CompletableFuture<DeleteAclV2Response>
      */
     public CompletableFuture<DeleteAclV2Response> deleteAclV2Async(DeleteAclV2Request request) {
@@ -4386,11 +4279,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAclV2Request 请求对象
+     * @param request DeleteAclV2Request 请求对象
      * @return AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response>
      */
     public AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response> deleteAclV2AsyncInvoker(DeleteAclV2Request request) {
-        return new AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response>(request, ApigMeta.deleteAclV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteAclV2, hcClient);
     }
 
     /**
@@ -4400,7 +4293,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclStrategiesV2Request 请求对象
+     * @param request ListAclStrategiesV2Request 请求对象
      * @return CompletableFuture<ListAclStrategiesV2Response>
      */
     public CompletableFuture<ListAclStrategiesV2Response> listAclStrategiesV2Async(ListAclStrategiesV2Request request) {
@@ -4414,13 +4307,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclStrategiesV2Request 请求对象
+     * @param request ListAclStrategiesV2Request 请求对象
      * @return AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response>
      */
     public AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response> listAclStrategiesV2AsyncInvoker(
         ListAclStrategiesV2Request request) {
-        return new AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response>(request,
-            ApigMeta.listAclStrategiesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAclStrategiesV2, hcClient);
     }
 
     /**
@@ -4430,7 +4322,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAclPolicyV2Request 请求对象
+     * @param request ShowDetailsOfAclPolicyV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAclPolicyV2Response>
      */
     public CompletableFuture<ShowDetailsOfAclPolicyV2Response> showDetailsOfAclPolicyV2Async(
@@ -4445,13 +4337,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfAclPolicyV2Request 请求对象
+     * @param request ShowDetailsOfAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response>
      */
     public AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> showDetailsOfAclPolicyV2AsyncInvoker(
         ShowDetailsOfAclPolicyV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response>(request,
-            ApigMeta.showDetailsOfAclPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfAclPolicyV2, hcClient);
     }
 
     /**
@@ -4461,7 +4352,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclStrategyV2Request 请求对象
+     * @param request UpdateAclStrategyV2Request 请求对象
      * @return CompletableFuture<UpdateAclStrategyV2Response>
      */
     public CompletableFuture<UpdateAclStrategyV2Response> updateAclStrategyV2Async(UpdateAclStrategyV2Request request) {
@@ -4475,13 +4366,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclStrategyV2Request 请求对象
+     * @param request UpdateAclStrategyV2Request 请求对象
      * @return AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response>
      */
     public AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> updateAclStrategyV2AsyncInvoker(
         UpdateAclStrategyV2Request request) {
-        return new AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response>(request,
-            ApigMeta.updateAclStrategyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateAclStrategyV2, hcClient);
     }
 
     /**
@@ -4497,7 +4387,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<AssociateRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<AssociateRequestThrottlingPolicyV2Response> associateRequestThrottlingPolicyV2Async(
@@ -4518,13 +4408,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> associateRequestThrottlingPolicyV2AsyncInvoker(
         AssociateRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.associateRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.associateRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -4534,7 +4423,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
+     * @param request BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<BatchDisassociateThrottlingPolicyV2Response>
      */
     public CompletableFuture<BatchDisassociateThrottlingPolicyV2Response> batchDisassociateThrottlingPolicyV2Async(
@@ -4549,13 +4438,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
+     * @param request BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response>
      */
     public AsyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> batchDisassociateThrottlingPolicyV2AsyncInvoker(
         BatchDisassociateThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response>(
-            request, ApigMeta.batchDisassociateThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchDisassociateThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -4565,7 +4453,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPublishOrOfflineApiV2Request 请求对象
+     * @param request BatchPublishOrOfflineApiV2Request 请求对象
      * @return CompletableFuture<BatchPublishOrOfflineApiV2Response>
      */
     public CompletableFuture<BatchPublishOrOfflineApiV2Response> batchPublishOrOfflineApiV2Async(
@@ -4580,13 +4468,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchPublishOrOfflineApiV2Request 请求对象
+     * @param request BatchPublishOrOfflineApiV2Request 请求对象
      * @return AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>
      */
     public AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> batchPublishOrOfflineApiV2AsyncInvoker(
         BatchPublishOrOfflineApiV2Request request) {
-        return new AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>(request,
-            ApigMeta.batchPublishOrOfflineApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchPublishOrOfflineApiV2, hcClient);
     }
 
     /**
@@ -4598,7 +4485,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeApiVersionV2Request 请求对象
+     * @param request ChangeApiVersionV2Request 请求对象
      * @return CompletableFuture<ChangeApiVersionV2Response>
      */
     public CompletableFuture<ChangeApiVersionV2Response> changeApiVersionV2Async(ChangeApiVersionV2Request request) {
@@ -4614,13 +4501,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeApiVersionV2Request 请求对象
+     * @param request ChangeApiVersionV2Request 请求对象
      * @return AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>
      */
     public AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response> changeApiVersionV2AsyncInvoker(
         ChangeApiVersionV2Request request) {
-        return new AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>(request,
-            ApigMeta.changeApiVersionV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.changeApiVersionV2, hcClient);
     }
 
     /**
@@ -4630,7 +4516,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApiGroupsV2Request 请求对象
+     * @param request CheckApiGroupsV2Request 请求对象
      * @return CompletableFuture<CheckApiGroupsV2Response>
      */
     public CompletableFuture<CheckApiGroupsV2Response> checkApiGroupsV2Async(CheckApiGroupsV2Request request) {
@@ -4644,13 +4530,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApiGroupsV2Request 请求对象
+     * @param request CheckApiGroupsV2Request 请求对象
      * @return AsyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response>
      */
     public AsyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response> checkApiGroupsV2AsyncInvoker(
         CheckApiGroupsV2Request request) {
-        return new AsyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response>(request, ApigMeta.checkApiGroupsV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.checkApiGroupsV2, hcClient);
     }
 
     /**
@@ -4660,7 +4545,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApisV2Request 请求对象
+     * @param request CheckApisV2Request 请求对象
      * @return CompletableFuture<CheckApisV2Response>
      */
     public CompletableFuture<CheckApisV2Response> checkApisV2Async(CheckApisV2Request request) {
@@ -4674,11 +4559,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckApisV2Request 请求对象
+     * @param request CheckApisV2Request 请求对象
      * @return AsyncInvoker<CheckApisV2Request, CheckApisV2Response>
      */
     public AsyncInvoker<CheckApisV2Request, CheckApisV2Response> checkApisV2AsyncInvoker(CheckApisV2Request request) {
-        return new AsyncInvoker<CheckApisV2Request, CheckApisV2Response>(request, ApigMeta.checkApisV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.checkApisV2, hcClient);
     }
 
     /**
@@ -4688,7 +4573,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiGroupV2Request 请求对象
+     * @param request CreateApiGroupV2Request 请求对象
      * @return CompletableFuture<CreateApiGroupV2Response>
      */
     public CompletableFuture<CreateApiGroupV2Response> createApiGroupV2Async(CreateApiGroupV2Request request) {
@@ -4702,13 +4587,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiGroupV2Request 请求对象
+     * @param request CreateApiGroupV2Request 请求对象
      * @return AsyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response>
      */
     public AsyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response> createApiGroupV2AsyncInvoker(
         CreateApiGroupV2Request request) {
-        return new AsyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response>(request, ApigMeta.createApiGroupV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createApiGroupV2, hcClient);
     }
 
     /**
@@ -4721,7 +4605,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiV2Request 请求对象
+     * @param request CreateApiV2Request 请求对象
      * @return CompletableFuture<CreateApiV2Response>
      */
     public CompletableFuture<CreateApiV2Response> createApiV2Async(CreateApiV2Request request) {
@@ -4738,11 +4622,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiV2Request 请求对象
+     * @param request CreateApiV2Request 请求对象
      * @return AsyncInvoker<CreateApiV2Request, CreateApiV2Response>
      */
     public AsyncInvoker<CreateApiV2Request, CreateApiV2Response> createApiV2AsyncInvoker(CreateApiV2Request request) {
-        return new AsyncInvoker<CreateApiV2Request, CreateApiV2Response>(request, ApigMeta.createApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createApiV2, hcClient);
     }
 
     /**
@@ -4756,7 +4640,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
+     * @param request CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return CompletableFuture<CreateOrDeletePublishRecordForApiV2Response>
      */
     public CompletableFuture<CreateOrDeletePublishRecordForApiV2Response> createOrDeletePublishRecordForApiV2Async(
@@ -4775,13 +4659,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
+     * @param request CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return AsyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response>
      */
     public AsyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> createOrDeletePublishRecordForApiV2AsyncInvoker(
         CreateOrDeletePublishRecordForApiV2Request request) {
-        return new AsyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response>(
-            request, ApigMeta.createOrDeletePublishRecordForApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createOrDeletePublishRecordForApiV2, hcClient);
     }
 
     /**
@@ -4791,7 +4674,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DebugApiV2Request 请求对象
+     * @param request DebugApiV2Request 请求对象
      * @return CompletableFuture<DebugApiV2Response>
      */
     public CompletableFuture<DebugApiV2Response> debugApiV2Async(DebugApiV2Request request) {
@@ -4805,11 +4688,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DebugApiV2Request 请求对象
+     * @param request DebugApiV2Request 请求对象
      * @return AsyncInvoker<DebugApiV2Request, DebugApiV2Response>
      */
     public AsyncInvoker<DebugApiV2Request, DebugApiV2Response> debugApiV2AsyncInvoker(DebugApiV2Request request) {
-        return new AsyncInvoker<DebugApiV2Request, DebugApiV2Response>(request, ApigMeta.debugApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.debugApiV2, hcClient);
     }
 
     /**
@@ -4819,7 +4702,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiByVersionIdV2Request 请求对象
+     * @param request DeleteApiByVersionIdV2Request 请求对象
      * @return CompletableFuture<DeleteApiByVersionIdV2Response>
      */
     public CompletableFuture<DeleteApiByVersionIdV2Response> deleteApiByVersionIdV2Async(
@@ -4834,13 +4717,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiByVersionIdV2Request 请求对象
+     * @param request DeleteApiByVersionIdV2Request 请求对象
      * @return AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>
      */
     public AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> deleteApiByVersionIdV2AsyncInvoker(
         DeleteApiByVersionIdV2Request request) {
-        return new AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>(request,
-            ApigMeta.deleteApiByVersionIdV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteApiByVersionIdV2, hcClient);
     }
 
     /**
@@ -4854,7 +4736,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiGroupV2Request 请求对象
+     * @param request DeleteApiGroupV2Request 请求对象
      * @return CompletableFuture<DeleteApiGroupV2Response>
      */
     public CompletableFuture<DeleteApiGroupV2Response> deleteApiGroupV2Async(DeleteApiGroupV2Request request) {
@@ -4872,13 +4754,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiGroupV2Request 请求对象
+     * @param request DeleteApiGroupV2Request 请求对象
      * @return AsyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response>
      */
     public AsyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response> deleteApiGroupV2AsyncInvoker(
         DeleteApiGroupV2Request request) {
-        return new AsyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response>(request, ApigMeta.deleteApiGroupV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteApiGroupV2, hcClient);
     }
 
     /**
@@ -4890,7 +4771,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiV2Request 请求对象
+     * @param request DeleteApiV2Request 请求对象
      * @return CompletableFuture<DeleteApiV2Response>
      */
     public CompletableFuture<DeleteApiV2Response> deleteApiV2Async(DeleteApiV2Request request) {
@@ -4906,11 +4787,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiV2Request 请求对象
+     * @param request DeleteApiV2Request 请求对象
      * @return AsyncInvoker<DeleteApiV2Request, DeleteApiV2Response>
      */
     public AsyncInvoker<DeleteApiV2Request, DeleteApiV2Response> deleteApiV2AsyncInvoker(DeleteApiV2Request request) {
-        return new AsyncInvoker<DeleteApiV2Request, DeleteApiV2Response>(request, ApigMeta.deleteApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteApiV2, hcClient);
     }
 
     /**
@@ -4920,7 +4801,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<DisassociateRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<DisassociateRequestThrottlingPolicyV2Response> disassociateRequestThrottlingPolicyV2Async(
@@ -4935,13 +4816,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
+     * @param request DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> disassociateRequestThrottlingPolicyV2AsyncInvoker(
         DisassociateRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.disassociateRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.disassociateRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -4953,7 +4833,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiGroupsV2Request 请求对象
+     * @param request ListApiGroupsV2Request 请求对象
      * @return CompletableFuture<ListApiGroupsV2Response>
      */
     public CompletableFuture<ListApiGroupsV2Response> listApiGroupsV2Async(ListApiGroupsV2Request request) {
@@ -4969,13 +4849,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiGroupsV2Request 请求对象
+     * @param request ListApiGroupsV2Request 请求对象
      * @return AsyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response>
      */
     public AsyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response> listApiGroupsV2AsyncInvoker(
         ListApiGroupsV2Request request) {
-        return new AsyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response>(request, ApigMeta.listApiGroupsV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApiGroupsV2, hcClient);
     }
 
     /**
@@ -4991,7 +4870,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiRuntimeDefinitionV2Request 请求对象
+     * @param request ListApiRuntimeDefinitionV2Request 请求对象
      * @return CompletableFuture<ListApiRuntimeDefinitionV2Response>
      */
     public CompletableFuture<ListApiRuntimeDefinitionV2Response> listApiRuntimeDefinitionV2Async(
@@ -5012,13 +4891,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiRuntimeDefinitionV2Request 请求对象
+     * @param request ListApiRuntimeDefinitionV2Request 请求对象
      * @return AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response>
      */
     public AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> listApiRuntimeDefinitionV2AsyncInvoker(
         ListApiRuntimeDefinitionV2Request request) {
-        return new AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response>(request,
-            ApigMeta.listApiRuntimeDefinitionV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApiRuntimeDefinitionV2, hcClient);
     }
 
     /**
@@ -5028,7 +4906,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionDetailV2Request 请求对象
+     * @param request ListApiVersionDetailV2Request 请求对象
      * @return CompletableFuture<ListApiVersionDetailV2Response>
      */
     public CompletableFuture<ListApiVersionDetailV2Response> listApiVersionDetailV2Async(
@@ -5043,13 +4921,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionDetailV2Request 请求对象
+     * @param request ListApiVersionDetailV2Request 请求对象
      * @return AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response>
      */
     public AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> listApiVersionDetailV2AsyncInvoker(
         ListApiVersionDetailV2Request request) {
-        return new AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response>(request,
-            ApigMeta.listApiVersionDetailV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApiVersionDetailV2, hcClient);
     }
 
     /**
@@ -5059,7 +4936,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsV2Request 请求对象
+     * @param request ListApiVersionsV2Request 请求对象
      * @return CompletableFuture<ListApiVersionsV2Response>
      */
     public CompletableFuture<ListApiVersionsV2Response> listApiVersionsV2Async(ListApiVersionsV2Request request) {
@@ -5073,13 +4950,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApiVersionsV2Request 请求对象
+     * @param request ListApiVersionsV2Request 请求对象
      * @return AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response>
      */
     public AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response> listApiVersionsV2AsyncInvoker(
         ListApiVersionsV2Request request) {
-        return new AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response>(request,
-            ApigMeta.listApiVersionsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApiVersionsV2, hcClient);
     }
 
     /**
@@ -5089,7 +4965,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<ListApisBindedToRequestThrottlingPolicyV2Response> listApisBindedToRequestThrottlingPolicyV2Async(
@@ -5104,13 +4980,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> listApisBindedToRequestThrottlingPolicyV2AsyncInvoker(
         ListApisBindedToRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.listApisBindedToRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApisBindedToRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -5120,7 +4995,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToRequestThrottlingPolicyV2Response>
      */
     public CompletableFuture<ListApisUnbindedToRequestThrottlingPolicyV2Response> listApisUnbindedToRequestThrottlingPolicyV2Async(
@@ -5135,13 +5010,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response>
      */
     public AsyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> listApisUnbindedToRequestThrottlingPolicyV2AsyncInvoker(
         ListApisUnbindedToRequestThrottlingPolicyV2Request request) {
-        return new AsyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response>(
-            request, ApigMeta.listApisUnbindedToRequestThrottlingPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApisUnbindedToRequestThrottlingPolicyV2, hcClient);
     }
 
     /**
@@ -5151,7 +5025,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisV2Request 请求对象
+     * @param request ListApisV2Request 请求对象
      * @return CompletableFuture<ListApisV2Response>
      */
     public CompletableFuture<ListApisV2Response> listApisV2Async(ListApisV2Request request) {
@@ -5165,11 +5039,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisV2Request 请求对象
+     * @param request ListApisV2Request 请求对象
      * @return AsyncInvoker<ListApisV2Request, ListApisV2Response>
      */
     public AsyncInvoker<ListApisV2Request, ListApisV2Response> listApisV2AsyncInvoker(ListApisV2Request request) {
-        return new AsyncInvoker<ListApisV2Request, ListApisV2Response>(request, ApigMeta.listApisV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApisV2, hcClient);
     }
 
     /**
@@ -5179,7 +5053,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
+     * @param request ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListRequestThrottlingPoliciesBindedToApiV2Response>
      */
     public CompletableFuture<ListRequestThrottlingPoliciesBindedToApiV2Response> listRequestThrottlingPoliciesBindedToApiV2Async(
@@ -5194,13 +5068,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
+     * @param request ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response>
      */
     public AsyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> listRequestThrottlingPoliciesBindedToApiV2AsyncInvoker(
         ListRequestThrottlingPoliciesBindedToApiV2Request request) {
-        return new AsyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response>(
-            request, ApigMeta.listRequestThrottlingPoliciesBindedToApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listRequestThrottlingPoliciesBindedToApiV2, hcClient);
     }
 
     /**
@@ -5210,7 +5083,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiGroupV2Request 请求对象
+     * @param request ShowDetailsOfApiGroupV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfApiGroupV2Response>
      */
     public CompletableFuture<ShowDetailsOfApiGroupV2Response> showDetailsOfApiGroupV2Async(
@@ -5225,13 +5098,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiGroupV2Request 请求对象
+     * @param request ShowDetailsOfApiGroupV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response>
      */
     public AsyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> showDetailsOfApiGroupV2AsyncInvoker(
         ShowDetailsOfApiGroupV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response>(request,
-            ApigMeta.showDetailsOfApiGroupV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfApiGroupV2, hcClient);
     }
 
     /**
@@ -5241,7 +5113,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiV2Request 请求对象
+     * @param request ShowDetailsOfApiV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfApiV2Response>
      */
     public CompletableFuture<ShowDetailsOfApiV2Response> showDetailsOfApiV2Async(ShowDetailsOfApiV2Request request) {
@@ -5255,13 +5127,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfApiV2Request 请求对象
+     * @param request ShowDetailsOfApiV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response>
      */
     public AsyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> showDetailsOfApiV2AsyncInvoker(
         ShowDetailsOfApiV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response>(request,
-            ApigMeta.showDetailsOfApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfApiV2, hcClient);
     }
 
     /**
@@ -5271,7 +5142,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiGroupV2Request 请求对象
+     * @param request UpdateApiGroupV2Request 请求对象
      * @return CompletableFuture<UpdateApiGroupV2Response>
      */
     public CompletableFuture<UpdateApiGroupV2Response> updateApiGroupV2Async(UpdateApiGroupV2Request request) {
@@ -5285,13 +5156,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiGroupV2Request 请求对象
+     * @param request UpdateApiGroupV2Request 请求对象
      * @return AsyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response>
      */
     public AsyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response> updateApiGroupV2AsyncInvoker(
         UpdateApiGroupV2Request request) {
-        return new AsyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response>(request, ApigMeta.updateApiGroupV2,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateApiGroupV2, hcClient);
     }
 
     /**
@@ -5301,7 +5171,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiV2Request 请求对象
+     * @param request UpdateApiV2Request 请求对象
      * @return CompletableFuture<UpdateApiV2Response>
      */
     public CompletableFuture<UpdateApiV2Response> updateApiV2Async(UpdateApiV2Request request) {
@@ -5315,11 +5185,11 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateApiV2Request 请求对象
+     * @param request UpdateApiV2Request 请求对象
      * @return AsyncInvoker<UpdateApiV2Request, UpdateApiV2Response>
      */
     public AsyncInvoker<UpdateApiV2Request, UpdateApiV2Response> updateApiV2AsyncInvoker(UpdateApiV2Request request) {
-        return new AsyncInvoker<UpdateApiV2Request, UpdateApiV2Response>(request, ApigMeta.updateApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateApiV2, hcClient);
     }
 
     /**
@@ -5329,7 +5199,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteApiAclBindingV2Request 请求对象
+     * @param request BatchDeleteApiAclBindingV2Request 请求对象
      * @return CompletableFuture<BatchDeleteApiAclBindingV2Response>
      */
     public CompletableFuture<BatchDeleteApiAclBindingV2Response> batchDeleteApiAclBindingV2Async(
@@ -5344,13 +5214,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteApiAclBindingV2Request 请求对象
+     * @param request BatchDeleteApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response>
      */
     public AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> batchDeleteApiAclBindingV2AsyncInvoker(
         BatchDeleteApiAclBindingV2Request request) {
-        return new AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response>(request,
-            ApigMeta.batchDeleteApiAclBindingV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchDeleteApiAclBindingV2, hcClient);
     }
 
     /**
@@ -5362,7 +5231,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiAclBindingV2Request 请求对象
+     * @param request CreateApiAclBindingV2Request 请求对象
      * @return CompletableFuture<CreateApiAclBindingV2Response>
      */
     public CompletableFuture<CreateApiAclBindingV2Response> createApiAclBindingV2Async(
@@ -5379,13 +5248,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateApiAclBindingV2Request 请求对象
+     * @param request CreateApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response>
      */
     public AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> createApiAclBindingV2AsyncInvoker(
         CreateApiAclBindingV2Request request) {
-        return new AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response>(request,
-            ApigMeta.createApiAclBindingV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createApiAclBindingV2, hcClient);
     }
 
     /**
@@ -5395,7 +5263,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiAclBindingV2Request 请求对象
+     * @param request DeleteApiAclBindingV2Request 请求对象
      * @return CompletableFuture<DeleteApiAclBindingV2Response>
      */
     public CompletableFuture<DeleteApiAclBindingV2Response> deleteApiAclBindingV2Async(
@@ -5410,13 +5278,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteApiAclBindingV2Request 请求对象
+     * @param request DeleteApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response>
      */
     public AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> deleteApiAclBindingV2AsyncInvoker(
         DeleteApiAclBindingV2Request request) {
-        return new AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response>(request,
-            ApigMeta.deleteApiAclBindingV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteApiAclBindingV2, hcClient);
     }
 
     /**
@@ -5426,7 +5293,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclPolicyBindedToApiV2Request 请求对象
+     * @param request ListAclPolicyBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListAclPolicyBindedToApiV2Response>
      */
     public CompletableFuture<ListAclPolicyBindedToApiV2Response> listAclPolicyBindedToApiV2Async(
@@ -5441,13 +5308,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclPolicyBindedToApiV2Request 请求对象
+     * @param request ListAclPolicyBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response>
      */
     public AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> listAclPolicyBindedToApiV2AsyncInvoker(
         ListAclPolicyBindedToApiV2Request request) {
-        return new AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response>(request,
-            ApigMeta.listAclPolicyBindedToApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAclPolicyBindedToApiV2, hcClient);
     }
 
     /**
@@ -5457,7 +5323,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAclPolicyV2Request 请求对象
+     * @param request ListApisBindedToAclPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToAclPolicyV2Response>
      */
     public CompletableFuture<ListApisBindedToAclPolicyV2Response> listApisBindedToAclPolicyV2Async(
@@ -5472,13 +5338,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAclPolicyV2Request 请求对象
+     * @param request ListApisBindedToAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response>
      */
     public AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> listApisBindedToAclPolicyV2AsyncInvoker(
         ListApisBindedToAclPolicyV2Request request) {
-        return new AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response>(request,
-            ApigMeta.listApisBindedToAclPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApisBindedToAclPolicyV2, hcClient);
     }
 
     /**
@@ -5488,7 +5353,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAclPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToAclPolicyV2Response>
      */
     public CompletableFuture<ListApisUnbindedToAclPolicyV2Response> listApisUnbindedToAclPolicyV2Async(
@@ -5503,13 +5368,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAclPolicyV2Request 请求对象
+     * @param request ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response>
      */
     public AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> listApisUnbindedToAclPolicyV2AsyncInvoker(
         ListApisUnbindedToAclPolicyV2Request request) {
-        return new AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response>(request,
-            ApigMeta.listApisUnbindedToAclPolicyV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApisUnbindedToAclPolicyV2, hcClient);
     }
 
     /**
@@ -5519,7 +5383,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelingAuthorizationV2Request 请求对象
+     * @param request CancelingAuthorizationV2Request 请求对象
      * @return CompletableFuture<CancelingAuthorizationV2Response>
      */
     public CompletableFuture<CancelingAuthorizationV2Response> cancelingAuthorizationV2Async(
@@ -5534,13 +5398,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelingAuthorizationV2Request 请求对象
+     * @param request CancelingAuthorizationV2Request 请求对象
      * @return AsyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response>
      */
     public AsyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> cancelingAuthorizationV2AsyncInvoker(
         CancelingAuthorizationV2Request request) {
-        return new AsyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response>(request,
-            ApigMeta.cancelingAuthorizationV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.cancelingAuthorizationV2, hcClient);
     }
 
     /**
@@ -5550,7 +5413,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAuthorizingAppsV2Request 请求对象
+     * @param request CreateAuthorizingAppsV2Request 请求对象
      * @return CompletableFuture<CreateAuthorizingAppsV2Response>
      */
     public CompletableFuture<CreateAuthorizingAppsV2Response> createAuthorizingAppsV2Async(
@@ -5565,13 +5428,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAuthorizingAppsV2Request 请求对象
+     * @param request CreateAuthorizingAppsV2Request 请求对象
      * @return AsyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>
      */
     public AsyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> createAuthorizingAppsV2AsyncInvoker(
         CreateAuthorizingAppsV2Request request) {
-        return new AsyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>(request,
-            ApigMeta.createAuthorizingAppsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createAuthorizingAppsV2, hcClient);
     }
 
     /**
@@ -5581,7 +5443,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAppV2Request 请求对象
+     * @param request ListApisBindedToAppV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToAppV2Response>
      */
     public CompletableFuture<ListApisBindedToAppV2Response> listApisBindedToAppV2Async(
@@ -5596,13 +5458,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisBindedToAppV2Request 请求对象
+     * @param request ListApisBindedToAppV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response>
      */
     public AsyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> listApisBindedToAppV2AsyncInvoker(
         ListApisBindedToAppV2Request request) {
-        return new AsyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response>(request,
-            ApigMeta.listApisBindedToAppV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApisBindedToAppV2, hcClient);
     }
 
     /**
@@ -5612,7 +5473,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAppV2Request 请求对象
+     * @param request ListApisUnbindedToAppV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToAppV2Response>
      */
     public CompletableFuture<ListApisUnbindedToAppV2Response> listApisUnbindedToAppV2Async(
@@ -5627,13 +5488,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListApisUnbindedToAppV2Request 请求对象
+     * @param request ListApisUnbindedToAppV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response>
      */
     public AsyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> listApisUnbindedToAppV2AsyncInvoker(
         ListApisUnbindedToAppV2Request request) {
-        return new AsyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response>(request,
-            ApigMeta.listApisUnbindedToAppV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listApisUnbindedToAppV2, hcClient);
     }
 
     /**
@@ -5643,7 +5503,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsBindedToApiV2Request 请求对象
+     * @param request ListAppsBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListAppsBindedToApiV2Response>
      */
     public CompletableFuture<ListAppsBindedToApiV2Response> listAppsBindedToApiV2Async(
@@ -5658,13 +5518,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppsBindedToApiV2Request 请求对象
+     * @param request ListAppsBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response>
      */
     public AsyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> listAppsBindedToApiV2AsyncInvoker(
         ListAppsBindedToApiV2Request request) {
-        return new AsyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response>(request,
-            ApigMeta.listAppsBindedToApiV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAppsBindedToApiV2, hcClient);
     }
 
     /**
@@ -5674,7 +5533,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportApiDefinitionsV2Request 请求对象
+     * @param request ExportApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ExportApiDefinitionsV2Response>
      */
     public CompletableFuture<ExportApiDefinitionsV2Response> exportApiDefinitionsV2Async(
@@ -5689,13 +5548,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportApiDefinitionsV2Request 请求对象
+     * @param request ExportApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response>
      */
     public AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> exportApiDefinitionsV2AsyncInvoker(
         ExportApiDefinitionsV2Request request) {
-        return new AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response>(request,
-            ApigMeta.exportApiDefinitionsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.exportApiDefinitionsV2, hcClient);
     }
 
     /**
@@ -5705,7 +5563,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportApiDefinitionsV2Request 请求对象
+     * @param request ImportApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ImportApiDefinitionsV2Response>
      */
     public CompletableFuture<ImportApiDefinitionsV2Response> importApiDefinitionsV2Async(
@@ -5720,13 +5578,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportApiDefinitionsV2Request 请求对象
+     * @param request ImportApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>
      */
     public AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> importApiDefinitionsV2AsyncInvoker(
         ImportApiDefinitionsV2Request request) {
-        return new AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>(request,
-            ApigMeta.importApiDefinitionsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.importApiDefinitionsV2, hcClient);
     }
 
     /**
@@ -5736,7 +5593,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateCertsV2Request 请求对象
+     * @param request BatchAssociateCertsV2Request 请求对象
      * @return CompletableFuture<BatchAssociateCertsV2Response>
      */
     public CompletableFuture<BatchAssociateCertsV2Response> batchAssociateCertsV2Async(
@@ -5751,13 +5608,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateCertsV2Request 请求对象
+     * @param request BatchAssociateCertsV2Request 请求对象
      * @return AsyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response>
      */
     public AsyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> batchAssociateCertsV2AsyncInvoker(
         BatchAssociateCertsV2Request request) {
-        return new AsyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response>(request,
-            ApigMeta.batchAssociateCertsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchAssociateCertsV2, hcClient);
     }
 
     /**
@@ -5767,7 +5623,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateDomainsV2Request 请求对象
+     * @param request BatchAssociateDomainsV2Request 请求对象
      * @return CompletableFuture<BatchAssociateDomainsV2Response>
      */
     public CompletableFuture<BatchAssociateDomainsV2Response> batchAssociateDomainsV2Async(
@@ -5782,13 +5638,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateDomainsV2Request 请求对象
+     * @param request BatchAssociateDomainsV2Request 请求对象
      * @return AsyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response>
      */
     public AsyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> batchAssociateDomainsV2AsyncInvoker(
         BatchAssociateDomainsV2Request request) {
-        return new AsyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response>(request,
-            ApigMeta.batchAssociateDomainsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchAssociateDomainsV2, hcClient);
     }
 
     /**
@@ -5798,7 +5653,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateCertsV2Request 请求对象
+     * @param request BatchDisassociateCertsV2Request 请求对象
      * @return CompletableFuture<BatchDisassociateCertsV2Response>
      */
     public CompletableFuture<BatchDisassociateCertsV2Response> batchDisassociateCertsV2Async(
@@ -5813,13 +5668,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateCertsV2Request 请求对象
+     * @param request BatchDisassociateCertsV2Request 请求对象
      * @return AsyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response>
      */
     public AsyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> batchDisassociateCertsV2AsyncInvoker(
         BatchDisassociateCertsV2Request request) {
-        return new AsyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response>(request,
-            ApigMeta.batchDisassociateCertsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchDisassociateCertsV2, hcClient);
     }
 
     /**
@@ -5829,7 +5683,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateDomainsV2Request 请求对象
+     * @param request BatchDisassociateDomainsV2Request 请求对象
      * @return CompletableFuture<BatchDisassociateDomainsV2Response>
      */
     public CompletableFuture<BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2Async(
@@ -5844,13 +5698,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisassociateDomainsV2Request 请求对象
+     * @param request BatchDisassociateDomainsV2Request 请求对象
      * @return AsyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response>
      */
     public AsyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2AsyncInvoker(
         BatchDisassociateDomainsV2Request request) {
-        return new AsyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response>(request,
-            ApigMeta.batchDisassociateDomainsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchDisassociateDomainsV2, hcClient);
     }
 
     /**
@@ -5860,7 +5713,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateV2Request 请求对象
+     * @param request CreateCertificateV2Request 请求对象
      * @return CompletableFuture<CreateCertificateV2Response>
      */
     public CompletableFuture<CreateCertificateV2Response> createCertificateV2Async(CreateCertificateV2Request request) {
@@ -5874,13 +5727,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCertificateV2Request 请求对象
+     * @param request CreateCertificateV2Request 请求对象
      * @return AsyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response>
      */
     public AsyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response> createCertificateV2AsyncInvoker(
         CreateCertificateV2Request request) {
-        return new AsyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response>(request,
-            ApigMeta.createCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createCertificateV2, hcClient);
     }
 
     /**
@@ -5890,7 +5742,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateV2Request 请求对象
+     * @param request DeleteCertificateV2Request 请求对象
      * @return CompletableFuture<DeleteCertificateV2Response>
      */
     public CompletableFuture<DeleteCertificateV2Response> deleteCertificateV2Async(DeleteCertificateV2Request request) {
@@ -5904,13 +5756,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCertificateV2Request 请求对象
+     * @param request DeleteCertificateV2Request 请求对象
      * @return AsyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response>
      */
     public AsyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response> deleteCertificateV2AsyncInvoker(
         DeleteCertificateV2Request request) {
-        return new AsyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response>(request,
-            ApigMeta.deleteCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteCertificateV2, hcClient);
     }
 
     /**
@@ -5920,7 +5771,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttachedDomainsV2Request 请求对象
+     * @param request ListAttachedDomainsV2Request 请求对象
      * @return CompletableFuture<ListAttachedDomainsV2Response>
      */
     public CompletableFuture<ListAttachedDomainsV2Response> listAttachedDomainsV2Async(
@@ -5935,13 +5786,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAttachedDomainsV2Request 请求对象
+     * @param request ListAttachedDomainsV2Request 请求对象
      * @return AsyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response>
      */
     public AsyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> listAttachedDomainsV2AsyncInvoker(
         ListAttachedDomainsV2Request request) {
-        return new AsyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response>(request,
-            ApigMeta.listAttachedDomainsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listAttachedDomainsV2, hcClient);
     }
 
     /**
@@ -5951,7 +5801,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesV2Request 请求对象
+     * @param request ListCertificatesV2Request 请求对象
      * @return CompletableFuture<ListCertificatesV2Response>
      */
     public CompletableFuture<ListCertificatesV2Response> listCertificatesV2Async(ListCertificatesV2Request request) {
@@ -5965,13 +5815,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCertificatesV2Request 请求对象
+     * @param request ListCertificatesV2Request 请求对象
      * @return AsyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response>
      */
     public AsyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response> listCertificatesV2AsyncInvoker(
         ListCertificatesV2Request request) {
-        return new AsyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response>(request,
-            ApigMeta.listCertificatesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listCertificatesV2, hcClient);
     }
 
     /**
@@ -5981,7 +5830,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCertificateV2Request 请求对象
+     * @param request ShowDetailsOfCertificateV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfCertificateV2Response>
      */
     public CompletableFuture<ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2Async(
@@ -5996,13 +5845,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfCertificateV2Request 请求对象
+     * @param request ShowDetailsOfCertificateV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response>
      */
     public AsyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2AsyncInvoker(
         ShowDetailsOfCertificateV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response>(request,
-            ApigMeta.showDetailsOfCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfCertificateV2, hcClient);
     }
 
     /**
@@ -6012,7 +5860,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateV2Request 请求对象
+     * @param request UpdateCertificateV2Request 请求对象
      * @return CompletableFuture<UpdateCertificateV2Response>
      */
     public CompletableFuture<UpdateCertificateV2Response> updateCertificateV2Async(UpdateCertificateV2Request request) {
@@ -6026,13 +5874,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateCertificateV2Request 请求对象
+     * @param request UpdateCertificateV2Request 请求对象
      * @return AsyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response>
      */
     public AsyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response> updateCertificateV2AsyncInvoker(
         UpdateCertificateV2Request request) {
-        return new AsyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response>(request,
-            ApigMeta.updateCertificateV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateCertificateV2, hcClient);
     }
 
     /**
@@ -6044,7 +5891,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddingBackendInstancesV2Request 请求对象
+     * @param request AddingBackendInstancesV2Request 请求对象
      * @return CompletableFuture<AddingBackendInstancesV2Response>
      */
     public CompletableFuture<AddingBackendInstancesV2Response> addingBackendInstancesV2Async(
@@ -6061,13 +5908,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddingBackendInstancesV2Request 请求对象
+     * @param request AddingBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response>
      */
     public AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> addingBackendInstancesV2AsyncInvoker(
         AddingBackendInstancesV2Request request) {
-        return new AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response>(request,
-            ApigMeta.addingBackendInstancesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.addingBackendInstancesV2, hcClient);
     }
 
     /**
@@ -6077,7 +5923,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisableMembersRequest 请求对象
+     * @param request BatchDisableMembersRequest 请求对象
      * @return CompletableFuture<BatchDisableMembersResponse>
      */
     public CompletableFuture<BatchDisableMembersResponse> batchDisableMembersAsync(BatchDisableMembersRequest request) {
@@ -6091,13 +5937,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDisableMembersRequest 请求对象
+     * @param request BatchDisableMembersRequest 请求对象
      * @return AsyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse>
      */
     public AsyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse> batchDisableMembersAsyncInvoker(
         BatchDisableMembersRequest request) {
-        return new AsyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse>(request,
-            ApigMeta.batchDisableMembers, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchDisableMembers, hcClient);
     }
 
     /**
@@ -6107,7 +5952,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchEnableMembersRequest 请求对象
+     * @param request BatchEnableMembersRequest 请求对象
      * @return CompletableFuture<BatchEnableMembersResponse>
      */
     public CompletableFuture<BatchEnableMembersResponse> batchEnableMembersAsync(BatchEnableMembersRequest request) {
@@ -6121,13 +5966,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchEnableMembersRequest 请求对象
+     * @param request BatchEnableMembersRequest 请求对象
      * @return AsyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse>
      */
     public AsyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse> batchEnableMembersAsyncInvoker(
         BatchEnableMembersRequest request) {
-        return new AsyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse>(request,
-            ApigMeta.batchEnableMembers, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.batchEnableMembers, hcClient);
     }
 
     /**
@@ -6139,7 +5983,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMemberGroupRequest 请求对象
+     * @param request CreateMemberGroupRequest 请求对象
      * @return CompletableFuture<CreateMemberGroupResponse>
      */
     public CompletableFuture<CreateMemberGroupResponse> createMemberGroupAsync(CreateMemberGroupRequest request) {
@@ -6155,13 +5999,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMemberGroupRequest 请求对象
+     * @param request CreateMemberGroupRequest 请求对象
      * @return AsyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse>
      */
     public AsyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse> createMemberGroupAsyncInvoker(
         CreateMemberGroupRequest request) {
-        return new AsyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse>(request,
-            ApigMeta.createMemberGroup, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createMemberGroup, hcClient);
     }
 
     /**
@@ -6172,7 +6015,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcChannelV2Request 请求对象
+     * @param request CreateVpcChannelV2Request 请求对象
      * @return CompletableFuture<CreateVpcChannelV2Response>
      */
     public CompletableFuture<CreateVpcChannelV2Response> createVpcChannelV2Async(CreateVpcChannelV2Request request) {
@@ -6187,13 +6030,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateVpcChannelV2Request 请求对象
+     * @param request CreateVpcChannelV2Request 请求对象
      * @return AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response>
      */
     public AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response> createVpcChannelV2AsyncInvoker(
         CreateVpcChannelV2Request request) {
-        return new AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response>(request,
-            ApigMeta.createVpcChannelV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.createVpcChannelV2, hcClient);
     }
 
     /**
@@ -6203,7 +6045,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackendInstanceV2Request 请求对象
+     * @param request DeleteBackendInstanceV2Request 请求对象
      * @return CompletableFuture<DeleteBackendInstanceV2Response>
      */
     public CompletableFuture<DeleteBackendInstanceV2Response> deleteBackendInstanceV2Async(
@@ -6218,13 +6060,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackendInstanceV2Request 请求对象
+     * @param request DeleteBackendInstanceV2Request 请求对象
      * @return AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>
      */
     public AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> deleteBackendInstanceV2AsyncInvoker(
         DeleteBackendInstanceV2Request request) {
-        return new AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>(request,
-            ApigMeta.deleteBackendInstanceV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteBackendInstanceV2, hcClient);
     }
 
     /**
@@ -6234,7 +6075,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberGroupRequest 请求对象
+     * @param request DeleteMemberGroupRequest 请求对象
      * @return CompletableFuture<DeleteMemberGroupResponse>
      */
     public CompletableFuture<DeleteMemberGroupResponse> deleteMemberGroupAsync(DeleteMemberGroupRequest request) {
@@ -6248,13 +6089,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMemberGroupRequest 请求对象
+     * @param request DeleteMemberGroupRequest 请求对象
      * @return AsyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse>
      */
     public AsyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse> deleteMemberGroupAsyncInvoker(
         DeleteMemberGroupRequest request) {
-        return new AsyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse>(request,
-            ApigMeta.deleteMemberGroup, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteMemberGroup, hcClient);
     }
 
     /**
@@ -6264,7 +6104,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcChannelV2Request 请求对象
+     * @param request DeleteVpcChannelV2Request 请求对象
      * @return CompletableFuture<DeleteVpcChannelV2Response>
      */
     public CompletableFuture<DeleteVpcChannelV2Response> deleteVpcChannelV2Async(DeleteVpcChannelV2Request request) {
@@ -6278,13 +6118,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteVpcChannelV2Request 请求对象
+     * @param request DeleteVpcChannelV2Request 请求对象
      * @return AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response>
      */
     public AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> deleteVpcChannelV2AsyncInvoker(
         DeleteVpcChannelV2Request request) {
-        return new AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response>(request,
-            ApigMeta.deleteVpcChannelV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.deleteVpcChannelV2, hcClient);
     }
 
     /**
@@ -6294,7 +6133,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackendInstancesV2Request 请求对象
+     * @param request ListBackendInstancesV2Request 请求对象
      * @return CompletableFuture<ListBackendInstancesV2Response>
      */
     public CompletableFuture<ListBackendInstancesV2Response> listBackendInstancesV2Async(
@@ -6309,13 +6148,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackendInstancesV2Request 请求对象
+     * @param request ListBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>
      */
     public AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response> listBackendInstancesV2AsyncInvoker(
         ListBackendInstancesV2Request request) {
-        return new AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>(request,
-            ApigMeta.listBackendInstancesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listBackendInstancesV2, hcClient);
     }
 
     /**
@@ -6325,7 +6163,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMemberGroupsRequest 请求对象
+     * @param request ListMemberGroupsRequest 请求对象
      * @return CompletableFuture<ListMemberGroupsResponse>
      */
     public CompletableFuture<ListMemberGroupsResponse> listMemberGroupsAsync(ListMemberGroupsRequest request) {
@@ -6339,13 +6177,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMemberGroupsRequest 请求对象
+     * @param request ListMemberGroupsRequest 请求对象
      * @return AsyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse>
      */
     public AsyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse> listMemberGroupsAsyncInvoker(
         ListMemberGroupsRequest request) {
-        return new AsyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse>(request, ApigMeta.listMemberGroups,
-            hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listMemberGroups, hcClient);
     }
 
     /**
@@ -6355,7 +6192,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcChannelsV2Request 请求对象
+     * @param request ListVpcChannelsV2Request 请求对象
      * @return CompletableFuture<ListVpcChannelsV2Response>
      */
     public CompletableFuture<ListVpcChannelsV2Response> listVpcChannelsV2Async(ListVpcChannelsV2Request request) {
@@ -6369,13 +6206,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListVpcChannelsV2Request 请求对象
+     * @param request ListVpcChannelsV2Request 请求对象
      * @return AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response>
      */
     public AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response> listVpcChannelsV2AsyncInvoker(
         ListVpcChannelsV2Request request) {
-        return new AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response>(request,
-            ApigMeta.listVpcChannelsV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.listVpcChannelsV2, hcClient);
     }
 
     /**
@@ -6385,7 +6221,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfMemberGroupRequest 请求对象
+     * @param request ShowDetailsOfMemberGroupRequest 请求对象
      * @return CompletableFuture<ShowDetailsOfMemberGroupResponse>
      */
     public CompletableFuture<ShowDetailsOfMemberGroupResponse> showDetailsOfMemberGroupAsync(
@@ -6400,13 +6236,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfMemberGroupRequest 请求对象
+     * @param request ShowDetailsOfMemberGroupRequest 请求对象
      * @return AsyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse>
      */
     public AsyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> showDetailsOfMemberGroupAsyncInvoker(
         ShowDetailsOfMemberGroupRequest request) {
-        return new AsyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse>(request,
-            ApigMeta.showDetailsOfMemberGroup, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfMemberGroup, hcClient);
     }
 
     /**
@@ -6416,7 +6251,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfVpcChannelV2Request 请求对象
+     * @param request ShowDetailsOfVpcChannelV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfVpcChannelV2Response>
      */
     public CompletableFuture<ShowDetailsOfVpcChannelV2Response> showDetailsOfVpcChannelV2Async(
@@ -6431,13 +6266,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailsOfVpcChannelV2Request 请求对象
+     * @param request ShowDetailsOfVpcChannelV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response>
      */
     public AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> showDetailsOfVpcChannelV2AsyncInvoker(
         ShowDetailsOfVpcChannelV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response>(request,
-            ApigMeta.showDetailsOfVpcChannelV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfVpcChannelV2, hcClient);
     }
 
     /**
@@ -6447,7 +6281,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackendInstancesV2Request 请求对象
+     * @param request UpdateBackendInstancesV2Request 请求对象
      * @return CompletableFuture<UpdateBackendInstancesV2Response>
      */
     public CompletableFuture<UpdateBackendInstancesV2Response> updateBackendInstancesV2Async(
@@ -6462,13 +6296,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBackendInstancesV2Request 请求对象
+     * @param request UpdateBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response>
      */
     public AsyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> updateBackendInstancesV2AsyncInvoker(
         UpdateBackendInstancesV2Request request) {
-        return new AsyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response>(request,
-            ApigMeta.updateBackendInstancesV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateBackendInstancesV2, hcClient);
     }
 
     /**
@@ -6478,7 +6311,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthCheckRequest 请求对象
+     * @param request UpdateHealthCheckRequest 请求对象
      * @return CompletableFuture<UpdateHealthCheckResponse>
      */
     public CompletableFuture<UpdateHealthCheckResponse> updateHealthCheckAsync(UpdateHealthCheckRequest request) {
@@ -6492,13 +6325,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHealthCheckRequest 请求对象
+     * @param request UpdateHealthCheckRequest 请求对象
      * @return AsyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>
      */
     public AsyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse> updateHealthCheckAsyncInvoker(
         UpdateHealthCheckRequest request) {
-        return new AsyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>(request,
-            ApigMeta.updateHealthCheck, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateHealthCheck, hcClient);
     }
 
     /**
@@ -6508,7 +6340,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberGroupRequest 请求对象
+     * @param request UpdateMemberGroupRequest 请求对象
      * @return CompletableFuture<UpdateMemberGroupResponse>
      */
     public CompletableFuture<UpdateMemberGroupResponse> updateMemberGroupAsync(UpdateMemberGroupRequest request) {
@@ -6522,13 +6354,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMemberGroupRequest 请求对象
+     * @param request UpdateMemberGroupRequest 请求对象
      * @return AsyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse>
      */
     public AsyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse> updateMemberGroupAsyncInvoker(
         UpdateMemberGroupRequest request) {
-        return new AsyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse>(request,
-            ApigMeta.updateMemberGroup, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateMemberGroup, hcClient);
     }
 
     /**
@@ -6542,7 +6373,7 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcChannelV2Request 请求对象
+     * @param request UpdateVpcChannelV2Request 请求对象
      * @return CompletableFuture<UpdateVpcChannelV2Response>
      */
     public CompletableFuture<UpdateVpcChannelV2Response> updateVpcChannelV2Async(UpdateVpcChannelV2Request request) {
@@ -6560,13 +6391,12 @@ public class ApigAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateVpcChannelV2Request 请求对象
+     * @param request UpdateVpcChannelV2Request 请求对象
      * @return AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response>
      */
     public AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> updateVpcChannelV2AsyncInvoker(
         UpdateVpcChannelV2Request request) {
-        return new AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response>(request,
-            ApigMeta.updateVpcChannelV2, hcClient);
+        return new AsyncInvoker<>(request, ApigMeta.updateVpcChannelV2, hcClient);
     }
 
 }

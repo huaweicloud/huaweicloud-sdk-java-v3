@@ -34,7 +34,7 @@ public class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return CreateClusterResponse
      */
     public CreateClusterResponse createCluster(CreateClusterRequest request) {
@@ -48,11 +48,11 @@ public class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return SyncInvoker<CreateClusterRequest, CreateClusterResponse>
      */
     public SyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterInvoker(CreateClusterRequest request) {
-        return new SyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, CssMeta.createCluster, hcClient);
+        return new SyncInvoker<>(request, CssMeta.createCluster, hcClient);
     }
 
     /**
@@ -62,7 +62,7 @@ public class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartClusterRequest 请求对象
+     * @param request RestartClusterRequest 请求对象
      * @return RestartClusterResponse
      */
     public RestartClusterResponse restartCluster(RestartClusterRequest request) {
@@ -76,13 +76,12 @@ public class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartClusterRequest 请求对象
+     * @param request RestartClusterRequest 请求对象
      * @return SyncInvoker<RestartClusterRequest, RestartClusterResponse>
      */
     public SyncInvoker<RestartClusterRequest, RestartClusterResponse> restartClusterInvoker(
         RestartClusterRequest request) {
-        return new SyncInvoker<RestartClusterRequest, RestartClusterResponse>(request, CssMeta.restartCluster,
-            hcClient);
+        return new SyncInvoker<>(request, CssMeta.restartCluster, hcClient);
     }
 
     /**
@@ -94,7 +93,7 @@ public class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollingRestartRequest 请求对象
+     * @param request RollingRestartRequest 请求对象
      * @return RollingRestartResponse
      */
     public RollingRestartResponse rollingRestart(RollingRestartRequest request) {
@@ -110,13 +109,12 @@ public class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RollingRestartRequest 请求对象
+     * @param request RollingRestartRequest 请求对象
      * @return SyncInvoker<RollingRestartRequest, RollingRestartResponse>
      */
     public SyncInvoker<RollingRestartRequest, RollingRestartResponse> rollingRestartInvoker(
         RollingRestartRequest request) {
-        return new SyncInvoker<RollingRestartRequest, RollingRestartResponse>(request, CssMeta.rollingRestart,
-            hcClient);
+        return new SyncInvoker<>(request, CssMeta.rollingRestart, hcClient);
     }
 
     /**
@@ -126,7 +124,7 @@ public class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAutoCreateSnapshotsRequest 请求对象
+     * @param request StartAutoCreateSnapshotsRequest 请求对象
      * @return StartAutoCreateSnapshotsResponse
      */
     public StartAutoCreateSnapshotsResponse startAutoCreateSnapshots(StartAutoCreateSnapshotsRequest request) {
@@ -140,13 +138,12 @@ public class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartAutoCreateSnapshotsRequest 请求对象
+     * @param request StartAutoCreateSnapshotsRequest 请求对象
      * @return SyncInvoker<StartAutoCreateSnapshotsRequest, StartAutoCreateSnapshotsResponse>
      */
     public SyncInvoker<StartAutoCreateSnapshotsRequest, StartAutoCreateSnapshotsResponse> startAutoCreateSnapshotsInvoker(
         StartAutoCreateSnapshotsRequest request) {
-        return new SyncInvoker<StartAutoCreateSnapshotsRequest, StartAutoCreateSnapshotsResponse>(request,
-            CssMeta.startAutoCreateSnapshots, hcClient);
+        return new SyncInvoker<>(request, CssMeta.startAutoCreateSnapshots, hcClient);
     }
 
     /**
@@ -156,7 +153,7 @@ public class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopAutoCreateSnapshotsRequest 请求对象
+     * @param request StopAutoCreateSnapshotsRequest 请求对象
      * @return StopAutoCreateSnapshotsResponse
      */
     public StopAutoCreateSnapshotsResponse stopAutoCreateSnapshots(StopAutoCreateSnapshotsRequest request) {
@@ -170,13 +167,12 @@ public class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopAutoCreateSnapshotsRequest 请求对象
+     * @param request StopAutoCreateSnapshotsRequest 请求对象
      * @return SyncInvoker<StopAutoCreateSnapshotsRequest, StopAutoCreateSnapshotsResponse>
      */
     public SyncInvoker<StopAutoCreateSnapshotsRequest, StopAutoCreateSnapshotsResponse> stopAutoCreateSnapshotsInvoker(
         StopAutoCreateSnapshotsRequest request) {
-        return new SyncInvoker<StopAutoCreateSnapshotsRequest, StopAutoCreateSnapshotsResponse>(request,
-            CssMeta.stopAutoCreateSnapshots, hcClient);
+        return new SyncInvoker<>(request, CssMeta.stopAutoCreateSnapshots, hcClient);
     }
 
 }

@@ -57,9 +57,9 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class MsgsmsMeta {
 
-    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForcreateApp();
+    public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForCreateApp();
 
-    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForcreateApp() {
+    private static HttpRequestDef<CreateAppRequest, CreateAppResponse> genForCreateApp() {
         // basic
         HttpRequestDef.Builder<CreateAppRequest, CreateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppRequest.class, CreateAppResponse.class)
@@ -72,9 +72,7 @@ public class MsgsmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SmsAppAddReq.class),
-            f -> f.withMarshaller(CreateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppRequest::getBody, CreateAppRequest::setBody));
 
         // response
 
@@ -82,9 +80,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<ListAppDetailsRequest, ListAppDetailsResponse> listAppDetails =
-        genForlistAppDetails();
+        genForListAppDetails();
 
-    private static HttpRequestDef<ListAppDetailsRequest, ListAppDetailsResponse> genForlistAppDetails() {
+    private static HttpRequestDef<ListAppDetailsRequest, ListAppDetailsResponse> genForListAppDetails() {
         // basic
         HttpRequestDef.Builder<ListAppDetailsRequest, ListAppDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppDetailsRequest.class, ListAppDetailsResponse.class)
@@ -97,74 +95,56 @@ public class MsgsmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppDetailsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListAppDetailsRequest::getAppName, ListAppDetailsRequest::setAppName));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppDetailsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListAppDetailsRequest::getStartTime, ListAppDetailsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppDetailsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAppDetailsRequest::getEndTime, ListAppDetailsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppDetailsRequest::getLimit, ListAppDetailsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppDetailsRequest::getOffset, ListAppDetailsRequest::setOffset));
         builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppDetailsRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListAppDetailsRequest::getRegion, ListAppDetailsRequest::setRegion));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppDetailsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListAppDetailsRequest::getSortDir, ListAppDetailsRequest::setSortDir));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppDetailsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListAppDetailsRequest::getSortKey, ListAppDetailsRequest::setSortKey));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppDetailsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAppDetailsRequest::getStatus, ListAppDetailsRequest::setStatus));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForshowApp();
+    public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForShowApp();
 
-    private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForshowApp() {
+    private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForShowApp() {
         // basic
         HttpRequestDef.Builder<ShowAppRequest, ShowAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppRequest.class, ShowAppResponse.class)
@@ -177,18 +157,16 @@ public class MsgsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowAppRequest::getId, ShowAppRequest::setId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppCountRequest, ShowAppCountResponse> showAppCount = genForshowAppCount();
+    public static final HttpRequestDef<ShowAppCountRequest, ShowAppCountResponse> showAppCount = genForShowAppCount();
 
-    private static HttpRequestDef<ShowAppCountRequest, ShowAppCountResponse> genForshowAppCount() {
+    private static HttpRequestDef<ShowAppCountRequest, ShowAppCountResponse> genForShowAppCount() {
         // basic
         HttpRequestDef.Builder<ShowAppCountRequest, ShowAppCountResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppCountRequest.class, ShowAppCountResponse.class)
@@ -201,18 +179,16 @@ public class MsgsmsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppCountRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ShowAppCountRequest::getRegion, ShowAppCountRequest::setRegion));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForupdateApp();
+    public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForUpdateApp();
 
-    private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForupdateApp() {
+    private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForUpdateApp() {
         // basic
         HttpRequestDef.Builder<UpdateAppRequest, UpdateAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppRequest.class, UpdateAppResponse.class)
@@ -225,16 +201,12 @@ public class MsgsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getId, UpdateAppRequest::setId));
         builder.<SmsAppUpdateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SmsAppUpdateReq.class),
-            f -> f.withMarshaller(UpdateAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppRequest::getBody, UpdateAppRequest::setBody));
 
         // response
 
@@ -242,9 +214,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<CreateSignatureRequest, CreateSignatureResponse> createSignature =
-        genForcreateSignature();
+        genForCreateSignature();
 
-    private static HttpRequestDef<CreateSignatureRequest, CreateSignatureResponse> genForcreateSignature() {
+    private static HttpRequestDef<CreateSignatureRequest, CreateSignatureResponse> genForCreateSignature() {
         // basic
         HttpRequestDef.Builder<CreateSignatureRequest, CreateSignatureResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSignatureRequest.class, CreateSignatureResponse.class)
@@ -257,9 +229,7 @@ public class MsgsmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SmsSignatureReq.class),
-            f -> f.withMarshaller(CreateSignatureRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSignatureRequest::getBody, CreateSignatureRequest::setBody));
 
         // response
 
@@ -267,9 +237,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<DeleteSignatureRequest, DeleteSignatureResponse> deleteSignature =
-        genFordeleteSignature();
+        genForDeleteSignature();
 
-    private static HttpRequestDef<DeleteSignatureRequest, DeleteSignatureResponse> genFordeleteSignature() {
+    private static HttpRequestDef<DeleteSignatureRequest, DeleteSignatureResponse> genForDeleteSignature() {
         // basic
         HttpRequestDef.Builder<DeleteSignatureRequest, DeleteSignatureResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSignatureRequest.class, DeleteSignatureResponse.class)
@@ -282,9 +252,7 @@ public class MsgsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSignatureRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteSignatureRequest::getId, DeleteSignatureRequest::setId));
 
         // response
 
@@ -292,9 +260,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<EnableSignatureRequest, EnableSignatureResponse> enableSignature =
-        genForenableSignature();
+        genForEnableSignature();
 
-    private static HttpRequestDef<EnableSignatureRequest, EnableSignatureResponse> genForenableSignature() {
+    private static HttpRequestDef<EnableSignatureRequest, EnableSignatureResponse> genForEnableSignature() {
         // basic
         HttpRequestDef.Builder<EnableSignatureRequest, EnableSignatureResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, EnableSignatureRequest.class, EnableSignatureResponse.class)
@@ -307,9 +275,7 @@ public class MsgsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableSignatureRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(EnableSignatureRequest::getId, EnableSignatureRequest::setId));
 
         // response
 
@@ -317,9 +283,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<ListSignatureDetailsRequest, ListSignatureDetailsResponse> listSignatureDetails =
-        genForlistSignatureDetails();
+        genForListSignatureDetails();
 
-    private static HttpRequestDef<ListSignatureDetailsRequest, ListSignatureDetailsResponse> genForlistSignatureDetails() {
+    private static HttpRequestDef<ListSignatureDetailsRequest, ListSignatureDetailsResponse> genForListSignatureDetails() {
         // basic
         HttpRequestDef.Builder<ListSignatureDetailsRequest, ListSignatureDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSignatureDetailsRequest.class, ListSignatureDetailsResponse.class)
@@ -332,86 +298,66 @@ public class MsgsmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getAppName, ListSignatureDetailsRequest::setAppName));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getStartTime,
+                ListSignatureDetailsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getEndTime, ListSignatureDetailsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getLimit, ListSignatureDetailsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getOffset, ListSignatureDetailsRequest::setOffset));
         builder.<String>withRequestField("signature_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getSignatureId, (req, v) -> {
-                req.setSignatureId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getSignatureId,
+                ListSignatureDetailsRequest::setSignatureId));
         builder.<String>withRequestField("signature_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getSignatureName, (req, v) -> {
-                req.setSignatureName(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getSignatureName,
+                ListSignatureDetailsRequest::setSignatureName));
         builder.<String>withRequestField("signature_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getSignatureType, (req, v) -> {
-                req.setSignatureType(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getSignatureType,
+                ListSignatureDetailsRequest::setSignatureType));
         builder.<String>withRequestField("site",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getSite, (req, v) -> {
-                req.setSite(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getSite, ListSignatureDetailsRequest::setSite));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getSortDir, ListSignatureDetailsRequest::setSortDir));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getSortKey, ListSignatureDetailsRequest::setSortKey));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureDetailsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListSignatureDetailsRequest::getStatus, ListSignatureDetailsRequest::setStatus));
 
         // response
 
@@ -419,9 +365,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<ShowSignatureRequest, ShowSignatureResponse> showSignature =
-        genForshowSignature();
+        genForShowSignature();
 
-    private static HttpRequestDef<ShowSignatureRequest, ShowSignatureResponse> genForshowSignature() {
+    private static HttpRequestDef<ShowSignatureRequest, ShowSignatureResponse> genForShowSignature() {
         // basic
         HttpRequestDef.Builder<ShowSignatureRequest, ShowSignatureResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSignatureRequest.class, ShowSignatureResponse.class)
@@ -434,9 +380,7 @@ public class MsgsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSignatureRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowSignatureRequest::getId, ShowSignatureRequest::setId));
 
         // response
 
@@ -444,9 +388,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<ShowSignatureFileRequest, ShowSignatureFileResponse> showSignatureFile =
-        genForshowSignatureFile();
+        genForShowSignatureFile();
 
-    private static HttpRequestDef<ShowSignatureFileRequest, ShowSignatureFileResponse> genForshowSignatureFile() {
+    private static HttpRequestDef<ShowSignatureFileRequest, ShowSignatureFileResponse> genForShowSignatureFile() {
         // basic
         HttpRequestDef.Builder<ShowSignatureFileRequest, ShowSignatureFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSignatureFileRequest.class, ShowSignatureFileResponse.class)
@@ -459,9 +403,7 @@ public class MsgsmsMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSignatureFileRequest::getFileId, (req, v) -> {
-                req.setFileId(v);
-            }));
+            f -> f.withMarshaller(ShowSignatureFileRequest::getFileId, ShowSignatureFileRequest::setFileId));
 
         // response
 
@@ -469,9 +411,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<UpdateSignatureRequest, UpdateSignatureResponse> updateSignature =
-        genForupdateSignature();
+        genForUpdateSignature();
 
-    private static HttpRequestDef<UpdateSignatureRequest, UpdateSignatureResponse> genForupdateSignature() {
+    private static HttpRequestDef<UpdateSignatureRequest, UpdateSignatureResponse> genForUpdateSignature() {
         // basic
         HttpRequestDef.Builder<UpdateSignatureRequest, UpdateSignatureResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSignatureRequest.class, UpdateSignatureResponse.class)
@@ -484,16 +426,12 @@ public class MsgsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSignatureRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateSignatureRequest::getId, UpdateSignatureRequest::setId));
         builder.<SmsSignatureReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SmsSignatureReq.class),
-            f -> f.withMarshaller(UpdateSignatureRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSignatureRequest::getBody, UpdateSignatureRequest::setBody));
 
         // response
 
@@ -501,9 +439,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<UploadSignatureFileRequest, UploadSignatureFileResponse> uploadSignatureFile =
-        genForuploadSignatureFile();
+        genForUploadSignatureFile();
 
-    private static HttpRequestDef<UploadSignatureFileRequest, UploadSignatureFileResponse> genForuploadSignatureFile() {
+    private static HttpRequestDef<UploadSignatureFileRequest, UploadSignatureFileResponse> genForUploadSignatureFile() {
         // basic
         HttpRequestDef.Builder<UploadSignatureFileRequest, UploadSignatureFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadSignatureFileRequest.class, UploadSignatureFileResponse.class)
@@ -516,16 +454,12 @@ public class MsgsmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadSignatureFileRequest::getFileDesc, (req, v) -> {
-                req.setFileDesc(v);
-            }));
+            f -> f.withMarshaller(UploadSignatureFileRequest::getFileDesc, UploadSignatureFileRequest::setFileDesc));
         builder.<UploadSignatureFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadSignatureFileRequestBody.class),
-            f -> f.withMarshaller(UploadSignatureFileRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadSignatureFileRequest::getBody, UploadSignatureFileRequest::setBody));
 
         // response
 
@@ -533,9 +467,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> createTemplate =
-        genForcreateTemplate();
+        genForCreateTemplate();
 
-    private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForcreateTemplate() {
+    private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForCreateTemplate() {
         // basic
         HttpRequestDef.Builder<CreateTemplateRequest, CreateTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTemplateRequest.class, CreateTemplateResponse.class)
@@ -548,9 +482,7 @@ public class MsgsmsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SmsTemplateReq.class),
-            f -> f.withMarshaller(CreateTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTemplateRequest::getBody, CreateTemplateRequest::setBody));
 
         // response
 
@@ -558,9 +490,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate =
-        genFordeleteTemplate();
+        genForDeleteTemplate();
 
-    private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genFordeleteTemplate() {
+    private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genForDeleteTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteTemplateRequest, DeleteTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateRequest.class, DeleteTemplateResponse.class)
@@ -573,9 +505,7 @@ public class MsgsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateRequest::getId, DeleteTemplateRequest::setId));
 
         // response
 
@@ -583,9 +513,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<ListSendCountryDetailsRequest, ListSendCountryDetailsResponse> listSendCountryDetails =
-        genForlistSendCountryDetails();
+        genForListSendCountryDetails();
 
-    private static HttpRequestDef<ListSendCountryDetailsRequest, ListSendCountryDetailsResponse> genForlistSendCountryDetails() {
+    private static HttpRequestDef<ListSendCountryDetailsRequest, ListSendCountryDetailsResponse> genForListSendCountryDetails() {
         // basic
         HttpRequestDef.Builder<ListSendCountryDetailsRequest, ListSendCountryDetailsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSendCountryDetailsRequest.class, ListSendCountryDetailsResponse.class)
@@ -598,33 +528,30 @@ public class MsgsmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSendCountryDetailsRequest::getCountryNameEn, (req, v) -> {
-                req.setCountryNameEn(v);
-            }));
+            f -> f.withMarshaller(ListSendCountryDetailsRequest::getCountryNameEn,
+                ListSendCountryDetailsRequest::setCountryNameEn));
         builder.<String>withRequestField("country_name_zh",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSendCountryDetailsRequest::getCountryNameZh, (req, v) -> {
-                req.setCountryNameZh(v);
-            }));
+            f -> f.withMarshaller(ListSendCountryDetailsRequest::getCountryNameZh,
+                ListSendCountryDetailsRequest::setCountryNameZh));
 
         // response
         builder.<List<SmsCountryResp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListSendCountryDetailsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(SmsCountryResp.class));
+            f -> f.withMarshaller(ListSendCountryDetailsResponse::getBody, ListSendCountryDetailsResponse::setBody)
+                .withInnerContainerType(SmsCountryResp.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListTemplateDetailsRequest, ListTemplateDetailsResponse> listTemplateDetails =
-        genForlistTemplateDetails();
+        genForListTemplateDetails();
 
-    private static HttpRequestDef<ListTemplateDetailsRequest, ListTemplateDetailsResponse> genForlistTemplateDetails() {
+    private static HttpRequestDef<ListTemplateDetailsRequest, ListTemplateDetailsResponse> genForListTemplateDetails() {
         // basic
         HttpRequestDef.Builder<ListTemplateDetailsRequest, ListTemplateDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplateDetailsRequest.class, ListTemplateDetailsResponse.class)
@@ -637,107 +564,82 @@ public class MsgsmsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getAppKey, (req, v) -> {
-                req.setAppKey(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getAppKey, ListTemplateDetailsRequest::setAppKey));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getAppName, ListTemplateDetailsRequest::setAppName));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getStartTime, ListTemplateDetailsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getEndTime, ListTemplateDetailsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getLimit, ListTemplateDetailsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getOffset, ListTemplateDetailsRequest::setOffset));
         builder.<String>withRequestField("flow_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getFlowStatus, (req, v) -> {
-                req.setFlowStatus(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getFlowStatus,
+                ListTemplateDetailsRequest::setFlowStatus));
         builder.<String>withRequestField("has_variable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getHasVariable, (req, v) -> {
-                req.setHasVariable(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getHasVariable,
+                ListTemplateDetailsRequest::setHasVariable));
         builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getRegion, ListTemplateDetailsRequest::setRegion));
         builder.<String>withRequestField("sign_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getSignName, (req, v) -> {
-                req.setSignName(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getSignName, ListTemplateDetailsRequest::setSignName));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getSortDir, ListTemplateDetailsRequest::setSortDir));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getSortKey, ListTemplateDetailsRequest::setSortKey));
         builder.<String>withRequestField("template_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getTemplateId,
+                ListTemplateDetailsRequest::setTemplateId));
         builder.<String>withRequestField("template_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getTemplateName,
+                ListTemplateDetailsRequest::setTemplateName));
         builder.<String>withRequestField("template_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateDetailsRequest::getTemplateType, (req, v) -> {
-                req.setTemplateType(v);
-            }));
+            f -> f.withMarshaller(ListTemplateDetailsRequest::getTemplateType,
+                ListTemplateDetailsRequest::setTemplateType));
 
         // response
 
@@ -745,9 +647,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<ListTemplateVarilableDetailsRequest, ListTemplateVarilableDetailsResponse> listTemplateVarilableDetails =
-        genForlistTemplateVarilableDetails();
+        genForListTemplateVarilableDetails();
 
-    private static HttpRequestDef<ListTemplateVarilableDetailsRequest, ListTemplateVarilableDetailsResponse> genForlistTemplateVarilableDetails() {
+    private static HttpRequestDef<ListTemplateVarilableDetailsRequest, ListTemplateVarilableDetailsResponse> genForListTemplateVarilableDetails() {
         // basic
         HttpRequestDef.Builder<ListTemplateVarilableDetailsRequest, ListTemplateVarilableDetailsResponse> builder =
             HttpRequestDef
@@ -763,18 +665,17 @@ public class MsgsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateVarilableDetailsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListTemplateVarilableDetailsRequest::getId,
+                ListTemplateVarilableDetailsRequest::setId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTemplateRequest, ShowTemplateResponse> showTemplate = genForshowTemplate();
+    public static final HttpRequestDef<ShowTemplateRequest, ShowTemplateResponse> showTemplate = genForShowTemplate();
 
-    private static HttpRequestDef<ShowTemplateRequest, ShowTemplateResponse> genForshowTemplate() {
+    private static HttpRequestDef<ShowTemplateRequest, ShowTemplateResponse> genForShowTemplate() {
         // basic
         HttpRequestDef.Builder<ShowTemplateRequest, ShowTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateRequest.class, ShowTemplateResponse.class)
@@ -787,9 +688,7 @@ public class MsgsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateRequest::getId, ShowTemplateRequest::setId));
 
         // response
 
@@ -797,9 +696,9 @@ public class MsgsmsMeta {
     }
 
     public static final HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplate =
-        genForupdateTemplate();
+        genForUpdateTemplate();
 
-    private static HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> genForupdateTemplate() {
+    private static HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> genForUpdateTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateTemplateRequest, UpdateTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTemplateRequest.class, UpdateTemplateResponse.class)
@@ -812,16 +711,12 @@ public class MsgsmsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTemplateRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateRequest::getId, UpdateTemplateRequest::setId));
         builder.<SmsTemplateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SmsTemplateReq.class),
-            f -> f.withMarshaller(UpdateTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateRequest::getBody, UpdateTemplateRequest::setBody));
 
         // response
 
